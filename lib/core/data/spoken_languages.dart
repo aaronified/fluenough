@@ -191,9 +191,10 @@ class SpokenLanguage {
   /// hand; every language starts at [NativeVerification.none]).
   final NativeVerification verification;
 
-  /// Whether Add a language lists it first, under Popular (`popular: true`,
-  /// a hand-kept list in the bundled `assets/languages.yaml`, so a change
-  /// reaches learners with the next app release).
+  /// Whether Add a language may show it as a big tile on its first screen
+  /// (`popular: true`, a hand-kept list in the bundled
+  /// `assets/languages.yaml`, so a change reaches learners with the next app
+  /// release). The tiles are the first eight such languages in file order.
   final bool popular;
 
   /// Whether the entry comes from a private language package the learner

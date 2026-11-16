@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - **Report a mistake in what you are learning.** The bug icon now appears only on cards, decks, units, topics and culture items, and opens a short list of what is wrong with that one thing; a general problem report is in the Settings menu.
+- **Adding a language starts with eight big tiles.** Add a language now asks what you want to learn, shows Spanish, French, Telugu, Hindustani, Bengali, Marathi, Kannada and Japanese with how far each course is written, and keeps the full list one tap away, with languages that have no course yet folded under Coming soon, where they cannot be added until they have a course.
 - **Each language has its own culture options.** In a language's details, one Culture switch opens to whether culture counts toward your path and whether the creator shows, and the old Settings page for culture is gone.
 - **Culture items fill your path as the course needs.** The path now spreads all the culture items of your level across its units, so the "How many" choice is gone.
 - **Search always shows everything.** The "Hide what is above my level" choice is removed; results above your level stay in the list, marked with their level.
