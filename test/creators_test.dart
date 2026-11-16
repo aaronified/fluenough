@@ -8,6 +8,7 @@ import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/core/data/creators.dart';
 import 'package:fluenough/core/data/deck_parser.dart' show DeckParseException;
 import 'package:fluenough/core/decks/timeline.dart';
+import 'package:fluenough/core/models/card_source.dart';
 import 'package:fluenough/core/models/creator.dart';
 import 'package:fluenough/core/models/level.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -22,6 +23,16 @@ CreatorsFile _fixture() => parseCreators(
 );
 
 void main() {
+  test('a source date gives its first year, BCE included', () {
+    int? yearOf(String date) => CardSource(date: date).year;
+    expect(yearOf('1892-1909'), 1892);
+    expect(yearOf('c. 1750'), 1750);
+    expect(yearOf('-479'), -479);
+    expect(yearOf('-44'), -44);
+    expect(yearOf('-50 to 50'), -50);
+    expect(yearOf('c. -400'), -400);
+  });
+
   group('the creators file', () {
     final file = _fixture();
 

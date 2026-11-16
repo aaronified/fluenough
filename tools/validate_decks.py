@@ -7343,8 +7343,10 @@ def parse_years(value: object) -> tuple[int, int] | None:
     if isinstance(value, int):
         return (value, value) if (1 <= value <= 9999 or -9999 <= value <= -1) else None
     if isinstance(value, str):
-        num = r"(?:[0-9]{3,4}|-[0-9]{1,4})"
-        m = re.fullmatch(rf"(?:c\.\s?)?({num})(?:(?:\s+to\s+|-)({num}))?", value.strip())
+        first_re = r"(?:[0-9]{3,4}|-[0-9]{1,4})"
+        last_re = r"-?[0-9]{1,4}"
+        m = re.fullmatch(
+            rf"(?:c\.\s?)?({first_re})(?:(?:\s+to\s+|-)({last_re}))?", value.strip())
         if m:
             first = int(m.group(1))
             last = int(m.group(2)) if m.group(2) else first
