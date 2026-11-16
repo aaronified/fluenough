@@ -370,6 +370,15 @@ B1_TOTAL = (2000, 3500)
 # is held to half to one and a half times their sum.
 # A course's phrasebook (words-rules-sentences.md, section 1).
 PHRASEBOOK_SIZE = (15, 25)
+# First-words-only courses whose sources attest too few phrases for a
+# phrasebook (owner brief 2026-11-16: first words for every planned language,
+# no gaps accepted but nothing invented). A course listed here may have no
+# phrasebook card at all; one that has some is still held to the size. Remove
+# a code as soon as its phrasebook is written.
+PHRASEBOOK_PENDING = {
+    "lus", "kha", "gom", "brx", "sd", "ks", "tcy", "mni", "sat",
+    "arc", "gmy", "sux", "egy", "ine",
+}
 # Parts of speech whose several-word cards still count as one word.
 LEXICAL_POS = {"noun", "verb", "adj", "adv", "pronoun"}
 # Scripts written without spaces: a card of a B1 deck in one gives its
@@ -6999,6 +7008,8 @@ def check_phrasebook_across(reports: list[Report]) -> list[str]:
                                         for cid, c in cards_of[d].items() if c.phrasebook))
         n = len(phrasebook)
         if n == 0 and not has_plan:
+            continue
+        if n == 0 and code in PHRASEBOOK_PENDING:
             continue
         lo, hi = PHRASEBOOK_SIZE
         # A course with no written deck yet (a path, and perhaps its script
