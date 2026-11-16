@@ -1,6 +1,9 @@
 // The content report (owner, 2026-11-16): the bug icon stays only where
 // something is taught, and opens a five-row sheet about the content.
 // Behaviour only: what the learner sees and what the report carries.
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:fluenough/app/app_info.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/core/feedback/content_report.dart';
@@ -19,6 +22,7 @@ import 'package:fluenough/features/stats/over_time_page.dart';
 import 'package:fluenough/ui/widgets/content_report.dart';
 import 'package:fluenough/ui/widgets/drill_frame.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show FontLoader;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/harness.dart';
@@ -50,6 +54,20 @@ const ContentTarget _plain = ContentTarget(
   deckId: 'te-en-family',
   pair: 'te from en',
 );
+
+/// Loads the app's own Roboto: a widget test draws every glyph as a
+/// full-width box until a font is loaded, which wraps text far more than a
+/// phone does, so the fit is measured with the real font.
+Future<void> _loadRoboto(WidgetTester tester) async {
+  await tester.runAsync(() async {
+    final loader = FontLoader('Roboto');
+    for (final style in <String>['Regular', 'Medium', 'Bold']) {
+      final bytes = File('assets/fonts/Roboto-$style.ttf').readAsBytesSync();
+      loader.addFont(Future<ByteData>.value(ByteData.sublistView(bytes)));
+    }
+    await loader.load();
+  });
+}
 
 /// The phone of the mockup's measurement: 360 x 740 dp, text at 1.4x.
 void _smallPhone(WidgetTester tester) {
@@ -89,6 +107,7 @@ void main() {
     testWidgets('shows five rows and fits at 1.4x on 360 x 740 without '
         'scrolling, even with a reason chosen', (tester) async {
       _smallPhone(tester);
+      await _loadRoboto(tester);
       await _pumpButton(tester, _choice);
       final l10n = l10nOf(tester);
       for (final category in ContentCategory.values) {

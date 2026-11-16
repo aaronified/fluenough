@@ -253,9 +253,9 @@ class _ContentReportSheetState extends State<ContentReportSheet> {
               width: 32,
               height: 4,
               margin: const EdgeInsets.symmetric(vertical: 10),
-              decoration: BoxDecoration(
+              decoration: ShapeDecoration(
                 color: scheme.onSurfaceVariant.withValues(alpha: 0.4),
-                borderRadius: BorderRadius.circular(2),
+                shape: const StadiumBorder(),
               ),
             ),
           ),
@@ -359,6 +359,7 @@ class _ContentReportSheetState extends State<ContentReportSheet> {
     final target = widget.target;
     final popup = category.hasPopup(target);
     final chosen = _category == category ? _reason : null;
+    // hint-ok: the row is text, with its radio and chevron
     return InkWell(
       key: ValueKey<String>('content-report-${category.name}'),
       onTap: () => _pick(category),
