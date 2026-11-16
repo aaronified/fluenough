@@ -2,12 +2,14 @@ schema: 1
 id: "tok-family-sentences"
 part: "core"
 kind: "vocab"
-language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", scripts: ["latin", "sitelen_pona"], icon: "Tp" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "tok-0163"
     target: "mama mi li lukin e sina."
+    target_scripts:
+      sitelen_pona: "󱤱 󱤴 󱤧 󱤮 󱤉 󱥞."
     ipa: "ˈmama mi li ˈlukin e ˈsina"
     pos: "phrase"
     bases:
@@ -22,6 +24,8 @@ cards:
       - { id: "w2", ref: "tok-0007", kind: "word" }
   - id: "tok-0164"
     target: "ona li meli mi."
+    target_scripts:
+      sitelen_pona: "󱥆 󱤧 󱤳 󱤴."
     ipa: "ˈona li ˈmeli mi"
     pos: "phrase"
     bases:
@@ -34,6 +38,8 @@ cards:
       - { id: "w2", ref: "tok-0157", kind: "word" }
   - id: "tok-0165"
     target: "jan mije li tawa."
+    target_scripts:
+      sitelen_pona: "󱤑 󱤵 󱤧 󱥩."
     ipa: "jan ˈmije li ˈtawa"
     pos: "phrase"
     bases:
@@ -46,6 +52,8 @@ cards:
       - { id: "w2", ref: "tok-0087", kind: "word" }
   - id: "tok-0166"
     target: "kulupu ni li pona."
+    target_scripts:
+      sitelen_pona: "󱤟 󱥁 󱤧 󱥔."
     ipa: "ˈkulupu ni li ˈpona"
     pos: "phrase"
     bases:
@@ -58,6 +66,8 @@ cards:
       - { id: "w2", ref: "tok-0121", kind: "word" }
   - id: "tok-0167"
     target: "mi olin e kulupu ni."
+    target_scripts:
+      sitelen_pona: "󱤴 󱥅 󱤉 󱤟 󱥁."
     ipa: "mi ˈolin e ˈkulupu ni"
     pos: "phrase"
     bases:
@@ -71,6 +81,8 @@ cards:
       - { id: "w2", ref: "tok-0085", kind: "word" }
   - id: "tok-0168"
     target: "sina lon poka mi anu ala?"
+    target_scripts:
+      sitelen_pona: "󱥞 󱤬 󱥒 󱤴 󱤇 󱤂?"
     ipa: "ˈsina lon ˈpoka mi ˈanu ˈala"
     pos: "phrase"
     bases:
@@ -85,6 +97,8 @@ cards:
       - { id: "w2", ref: "tok-0087", kind: "word" }
   - id: "tok-0169"
     target: "mama ona li kama ala."
+    target_scripts:
+      sitelen_pona: "󱤱 󱥆 󱤧 󱤖 󱤂."
     ipa: "ˈmama ˈona li ˈkama ˈala"
     pos: "phrase"
     bases:
@@ -98,6 +112,8 @@ cards:
       - { id: "w2", ref: "tok-0088", kind: "word" }
   - id: "tok-0170"
     target: "jan meli li moku e pan."
+    target_scripts:
+      sitelen_pona: "󱤑 󱤳 󱤧 󱤶 󱤉 󱥋."
     ipa: "jan ˈmeli li ˈmoku e pan"
     pos: "phrase"
     bases:
