@@ -1,0 +1,43 @@
+schema: 1
+id: "sa-directions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3130"
+    target: "उपरि जलम्."
+    reading: "upari jalam."
+    ipa: "upəri dʒələm"
+    pos: "phrase"
+    bases: [{ word: "उपरि", ref: "sa-1586" }, { word: "जलम्", ref: "sa-0023" }]
+    confusables: [{ id: "w1", ref: "sa-1587", kind: "word" }, { id: "w2", ref: "sa-1585", kind: "word" }]
+  - id: "sa-3131"
+    target: "अग्रे गच्छामि."
+    reading: "agre gacchāmi."
+    ipa: "əɡreː ɡətʃtʃʰaːmi"
+    pos: "phrase"
+    bases: [{ word: "अग्रे", ref: "sa-1592" }, { word: "गच्छामि", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-1585", kind: "word" }, { id: "w2", ref: "sa-1586", kind: "word" }]
+  - id: "sa-3132"
+    target: "पश्चात् पठति."
+    reading: "paścāt paṭhati."
+    ipa: "pəʃtʃaːt̪ pəʈʰət̪i"
+    pos: "phrase"
+    bases: [{ word: "पश्चात्", ref: "sa-1585" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1592", kind: "word" }, { id: "w2", ref: "sa-1587", kind: "word" }]
+  - id: "sa-3133"
+    target: "पूर्वः पतिः."
+    reading: "pūrvaḥ patiḥ."
+    ipa: "puːrʋəh pət̪ih"
+    pos: "phrase"
+    bases: [{ word: "पूर्वः", ref: "sa-1590" }, { word: "पतिः", ref: "sa-1036" }]
+    confusables: [{ id: "w1", ref: "sa-1591", kind: "word" }, { id: "w2", ref: "sa-1589", kind: "word" }]
+  - id: "sa-3134"
+    target: "दक्षिणः पादः."
+    reading: "dakṣiṇaḥ pādaḥ."
+    ipa: "d̪əkʂiɳəh paːd̪əh"
+    pos: "phrase"
+    bases: [{ word: "दक्षिणः", ref: "sa-1588" }, { word: "पादः", ref: "sa-1568" }]
+    confusables: [{ id: "w1", ref: "sa-1589", kind: "word" }, { id: "w2", ref: "sa-1590", kind: "word" }]

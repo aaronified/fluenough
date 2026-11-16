@@ -1,0 +1,27 @@
+schema: 1
+id: "sa-en-directions-sentences"
+kind: "layer"
+core: "sa-directions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about direction"
+description: "Short sentences about direction and position, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3130":
+    native: "Water is above."
+    confusables: { "w1": { why: "Below, not above: अधस्तात् (adhastāt) means below." }, "w2": { why: "Behind, not above: पश्चात् (paścāt) means behind." } }
+  "sa-3131":
+    native: "I go in front."
+    bases: { "गच्छामि": "to go (I go)" }
+    confusables: { "w1": { why: "Behind, not in front: पश्चात् (paścāt) means behind." }, "w2": { why: "Above, not in front: उपरि (upari) means above." } }
+  "sa-3132":
+    native: "He reads behind."
+    bases: { "पठति": "to read (he reads)" }
+    confusables: { "w1": { why: "In front, not behind: अग्रे (agre) means in front." }, "w2": { why: "Below, not behind: अधस्तात् (adhastāt) means below." } }
+  "sa-3133":
+    native: "The former husband."
+    confusables: { "w1": { why: "Later, not former: अपरः (aparaḥ) means later." }, "w2": { why: "Northern, not former: उत्तरः (uttaraḥ) means northern or upper." } }
+  "sa-3134":
+    native: "The right foot."
+    confusables: { "w1": { why: "Upper, not right-hand: उत्तरः (uttaraḥ) means northern or upper." }, "w2": { why: "Eastern, not right-hand: पूर्वः (pūrvaḥ) means eastern or former." } }
