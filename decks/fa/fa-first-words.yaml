@@ -1,0 +1,369 @@
+schema: 1
+id: "fa-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "fa", iso639_3: "fas", name: "Persian", script: "perso_arabic", tts: "fa-IR", icon: "ف" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "fa-0101"
+    target: "بله"
+    reading: "bale"
+    ipa: "beˈle"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "بله، هستم.", reading: "bale, hastam.", ipa: "beˈle hæstæm", bases: [{ word: "بله", base: "بله", reading: "bale" }, { word: "هستم", base: "بودن", reading: "hastam" }] }
+      - { target: "بله، لطفا.", reading: "bale, lotfan.", ipa: "beˈle ˈlotfæn", bases: [{ word: "بله", base: "بله", reading: "bale" }, { word: "لطفا", base: "لطفا", reading: "lotfan" }] }
+  - id: "fa-0102"
+    target: "نه"
+    reading: "na"
+    ipa: "næ"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "نه، ممنون.", reading: "na, mamnun.", ipa: "næ mæmˈnuːn", bases: [{ word: "نه", base: "نه", reading: "na" }, { word: "ممنون", base: "ممنون", reading: "mamnun" }] }
+      - { target: "نه، نیستم.", reading: "na, nistam.", ipa: "næ ˈnistæm", bases: [{ word: "نه", base: "نه", reading: "na" }, { word: "نیستم", base: "بودن", reading: "nistam" }] }
+  - id: "fa-0103"
+    target: "من"
+    reading: "man"
+    ipa: "mæn"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "من هستم.", reading: "man hastam.", ipa: "mæn hæstæm", bases: [{ word: "من", base: "من", reading: "man" }, { word: "هستم", base: "بودن", reading: "hastam" }] }
+      - { target: "من اینجا هستم.", reading: "man injâ hastam.", ipa: "mæn inˈdʒɒː hæstæm", bases: [{ word: "من", base: "من", reading: "man" }, { word: "اینجا", base: "اینجا", reading: "injâ" }, { word: "هستم", base: "بودن", reading: "hastam" }] }
+  - id: "fa-0104"
+    target: "تو"
+    reading: "to"
+    ipa: "to"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "تو اینجا هستی؟", reading: "to injâ hasti?", ipa: "to inˈdʒɒː hæsti", bases: [{ word: "تو", base: "تو", reading: "to" }, { word: "اینجا", base: "اینجا", reading: "injâ" }, { word: "هستی", base: "بودن", reading: "hasti" }] }
+      - { target: "تو کی هستی؟", reading: "to ki hasti?", ipa: "to ki hæsti", bases: [{ word: "تو", base: "تو", reading: "to" }, { word: "کی", base: "کی", reading: "ki" }, { word: "هستی", base: "بودن", reading: "hasti" }] }
+  - id: "fa-0105"
+    target: "او"
+    reading: "u"
+    ipa: "u"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "او اینجا است.", reading: "u injâ ast.", ipa: "u inˈdʒɒː æst", bases: [{ word: "او", base: "او", reading: "u" }, { word: "اینجا", base: "اینجا", reading: "injâ" }, { word: "است", base: "بودن", reading: "ast" }] }
+      - { target: "او دانشجو است.", reading: "u dânešju ast.", ipa: "u dɒːneʃˈdʒuː æst", bases: [{ word: "او", base: "او", reading: "u" }, { word: "دانشجو", base: "دانشجو", reading: "dânešju" }, { word: "است", base: "بودن", reading: "ast" }] }
+  - id: "fa-0106"
+    target: "ما"
+    reading: "mâ"
+    ipa: "mɒː"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "ما اینجا هستیم.", reading: "mâ injâ hastim.", ipa: "mɒː inˈdʒɒː hæstim", bases: [{ word: "ما", base: "ما", reading: "mâ" }, { word: "اینجا", base: "اینجا", reading: "injâ" }, { word: "هستیم", base: "بودن", reading: "hastim" }] }
+      - { target: "ما نان داریم.", reading: "mâ nân dârim.", ipa: "mɒː nɒːn dɒːˈrim", bases: [{ word: "ما", base: "ما", reading: "mâ" }, { word: "نان", base: "نان", reading: "nân" }, { word: "داریم", base: "داشتن", reading: "dârim" }] }
+  - id: "fa-0107"
+    target: "آنها"
+    reading: "ânhâ"
+    ipa: "ɒːnˈhɒː"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "آنها اینجا هستند.", reading: "ânhâ injâ hastand.", ipa: "ɒːnˈhɒː inˈdʒɒː hæstænd", bases: [{ word: "آنها", base: "آنها", reading: "ânhâ" }, { word: "اینجا", base: "اینجا", reading: "injâ" }, { word: "هستند", base: "بودن", reading: "hastand" }] }
+      - { target: "آنها آنجا هستند.", reading: "ânhâ ânjâ hastand.", ipa: "ɒːnˈhɒː ɒːnˈdʒɒː hæstænd", bases: [{ word: "آنها", base: "آنها", reading: "ânhâ" }, { word: "آنجا", base: "آنجا", reading: "ânjâ" }, { word: "هستند", base: "بودن", reading: "hastand" }] }
+  - id: "fa-0108"
+    target: "یک"
+    reading: "yek"
+    ipa: "jek"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "یک، دو، سه.", reading: "yek, do, se.", ipa: "jek do se", bases: [{ word: "یک", base: "یک", reading: "yek" }, { word: "دو", base: "دو", reading: "do" }, { word: "سه", base: "سه", reading: "se" }] }
+      - { target: "یک نان، لطفا.", reading: "yek nân, lotfan.", ipa: "jek nɒːn ˈlotfæn", bases: [{ word: "یک", base: "یک", reading: "yek" }, { word: "نان", base: "نان", reading: "nân" }, { word: "لطفا", base: "لطفا", reading: "lotfan" }] }
+  - id: "fa-0109"
+    target: "دو"
+    reading: "do"
+    ipa: "do"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "دو چای، لطفا.", reading: "do čây, lotfan.", ipa: "do tʃɒːj ˈlotfæn", bases: [{ word: "دو", base: "دو", reading: "do" }, { word: "چای", base: "چای", reading: "čây" }, { word: "لطفا", base: "لطفا", reading: "lotfan" }] }
+      - { target: "یک، دو، سه.", reading: "yek, do, se.", ipa: "jek do se", bases: [{ word: "یک", base: "یک", reading: "yek" }, { word: "دو", base: "دو", reading: "do" }, { word: "سه", base: "سه", reading: "se" }] }
+  - id: "fa-0110"
+    target: "سه"
+    reading: "se"
+    ipa: "se"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "سه، چهار، پنج.", reading: "se, čahâr, panj.", ipa: "se tʃæhɒːr pændʒ", bases: [{ word: "سه", base: "سه", reading: "se" }, { word: "چهار", base: "چهار", reading: "čahâr" }, { word: "پنج", base: "پنج", reading: "panj" }] }
+      - { target: "سه نان، لطفا.", reading: "se nân, lotfan.", ipa: "se nɒːn ˈlotfæn", bases: [{ word: "سه", base: "سه", reading: "se" }, { word: "نان", base: "نان", reading: "nân" }, { word: "لطفا", base: "لطفا", reading: "lotfan" }] }
+  - id: "fa-0111"
+    target: "پنج"
+    reading: "panj"
+    ipa: "pændʒ"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "پنج نان، لطفا.", reading: "panj nân, lotfan.", ipa: "pændʒ nɒːn ˈlotfæn", bases: [{ word: "پنج", base: "پنج", reading: "panj" }, { word: "نان", base: "نان", reading: "nân" }, { word: "لطفا", base: "لطفا", reading: "lotfan" }] }
+      - { target: "سه، چهار، پنج.", reading: "se, čahâr, panj.", ipa: "se tʃæhɒːr pændʒ", bases: [{ word: "سه", base: "سه", reading: "se" }, { word: "چهار", base: "چهار", reading: "čahâr" }, { word: "پنج", base: "پنج", reading: "panj" }] }
+  - id: "fa-0112"
+    target: "ده"
+    reading: "dah"
+    ipa: "dæh"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "یک تا ده.", reading: "yek tâ dah.", ipa: "jek tɒː dæh", bases: [{ word: "یک", base: "یک", reading: "yek" }, { word: "تا", base: "تا", reading: "tâ" }, { word: "ده", base: "ده", reading: "dah" }] }
+      - { target: "ده نان، لطفا.", reading: "dah nân, lotfan.", ipa: "dæh nɒːn ˈlotfæn", bases: [{ word: "ده", base: "ده", reading: "dah" }, { word: "نان", base: "نان", reading: "nân" }, { word: "لطفا", base: "لطفا", reading: "lotfan" }] }
+  - id: "fa-0113"
+    target: "مادر"
+    reading: "mâdar"
+    ipa: "mɒːˈdæɾ"
+    pos: "noun"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "مادر من.", reading: "mâdar-e man.", ipa: "mɒːˈdæɾ e mæn", bases: [{ word: "مادر", base: "مادر", reading: "mâdar" }, { word: "من", base: "من", reading: "man" }] }
+      - { target: "مادرم اینجا است.", reading: "mâdaram injâ ast.", ipa: "mɒːˈdæɾæm inˈdʒɒː æst", bases: [{ word: "مادرم", base: "مادر", reading: "mâdaram" }, { word: "اینجا", base: "اینجا", reading: "injâ" }, { word: "است", base: "بودن", reading: "ast" }] }
+  - id: "fa-0114"
+    target: "پدر"
+    reading: "pedar"
+    ipa: "pedæɾ"
+    pos: "noun"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "پدر من.", reading: "pedar-e man.", ipa: "pedæɾ e mæn", bases: [{ word: "پدر", base: "پدر", reading: "pedar" }, { word: "من", base: "من", reading: "man" }] }
+      - { target: "پدرم آنجا است.", reading: "pedaram ânjâ ast.", ipa: "pedæɾæm ɒːnˈdʒɒː æst", bases: [{ word: "پدرم", base: "پدر", reading: "pedaram" }, { word: "آنجا", base: "آنجا", reading: "ânjâ" }, { word: "است", base: "بودن", reading: "ast" }] }
+  - id: "fa-0115"
+    target: "بچه"
+    reading: "bačče"
+    ipa: "bætʃe"
+    pos: "noun"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "این بچه است.", reading: "in bačče ast.", ipa: "in bætʃe æst", bases: [{ word: "این", base: "این", reading: "in" }, { word: "بچه", base: "بچه", reading: "bačče" }, { word: "است", base: "بودن", reading: "ast" }] }
+      - { target: "بچه کوچک است.", reading: "bačče kuček ast.", ipa: "bætʃe kuˈtʃæk æst", bases: [{ word: "بچه", base: "بچه", reading: "bačče" }, { word: "کوچک", base: "کوچک", reading: "kuček" }, { word: "است", base: "بودن", reading: "ast" }] }
+  - id: "fa-0116"
+    target: "مرد"
+    reading: "mard"
+    ipa: "mæɾd"
+    pos: "noun"
+    tags: ["people"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "این مرد است.", reading: "in mard ast.", ipa: "in mæɾd æst", bases: [{ word: "این", base: "این", reading: "in" }, { word: "مرد", base: "مرد", reading: "mard" }, { word: "است", base: "بودن", reading: "ast" }] }
+      - { target: "مرد خوب است.", reading: "mard xub ast.", ipa: "mæɾd xub æst", bases: [{ word: "مرد", base: "مرد", reading: "mard" }, { word: "خوب", base: "خوب", reading: "xub" }, { word: "است", base: "بودن", reading: "ast" }] }
+  - id: "fa-0117"
+    target: "زن"
+    reading: "zan"
+    ipa: "zæn"
+    pos: "noun"
+    tags: ["people"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "این زن است.", reading: "in zan ast.", ipa: "in zæn æst", bases: [{ word: "این", base: "این", reading: "in" }, { word: "زن", base: "زن", reading: "zan" }, { word: "است", base: "بودن", reading: "ast" }] }
+      - { target: "زن خوب است.", reading: "zan xub ast.", ipa: "zæn xub æst", bases: [{ word: "زن", base: "زن", reading: "zan" }, { word: "خوب", base: "خوب", reading: "xub" }, { word: "است", base: "بودن", reading: "ast" }] }
+  - id: "fa-0118"
+    target: "آب"
+    reading: "âb"
+    ipa: "ɒːb"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "این آب است.", reading: "in âb ast.", ipa: "in ɒːb æst", bases: [{ word: "این", base: "این", reading: "in" }, { word: "آب", base: "آب", reading: "âb" }, { word: "است", base: "بودن", reading: "ast" }] }
+      - { target: "آب، لطفا.", reading: "âb, lotfan.", ipa: "ɒːb ˈlotfæn", bases: [{ word: "آب", base: "آب", reading: "âb" }, { word: "لطفا", base: "لطفا", reading: "lotfan" }] }
+  - id: "fa-0119"
+    target: "نان"
+    reading: "nân"
+    ipa: "nɒːn"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "نان، لطفا.", reading: "nân, lotfan.", ipa: "nɒːn ˈlotfæn", bases: [{ word: "نان", base: "نان", reading: "nân" }, { word: "لطفا", base: "لطفا", reading: "lotfan" }] }
+      - { target: "این نان است.", reading: "in nân ast.", ipa: "in nɒːn æst", bases: [{ word: "این", base: "این", reading: "in" }, { word: "نان", base: "نان", reading: "nân" }, { word: "است", base: "بودن", reading: "ast" }] }
+  - id: "fa-0120"
+    target: "چای"
+    reading: "čây"
+    ipa: "tʃɒːj"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "چای، لطفا.", reading: "čây, lotfan.", ipa: "tʃɒːj ˈlotfæn", bases: [{ word: "چای", base: "چای", reading: "čây" }, { word: "لطفا", base: "لطفا", reading: "lotfan" }] }
+      - { target: "این چای است.", reading: "in čây ast.", ipa: "in tʃɒːj æst", bases: [{ word: "این", base: "این", reading: "in" }, { word: "چای", base: "چای", reading: "čây" }, { word: "است", base: "بودن", reading: "ast" }] }
+  - id: "fa-0121"
+    target: "خانه"
+    reading: "xâne"
+    ipa: "xɒːne"
+    pos: "noun"
+    tags: ["home"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "خانه‌ی من.", reading: "xâne-ye man.", ipa: "xɒːne je mæn", bases: [{ word: "خانه‌ی", base: "خانه", reading: "xâne" }, { word: "من", base: "من", reading: "man" }] }
+      - { target: "خانه‌ی من کوچک است.", reading: "xâne-ye man kuček ast.", ipa: "xɒːne je mæn kuˈtʃæk æst", bases: [{ word: "خانه‌ی", base: "خانه", reading: "xâne" }, { word: "من", base: "من", reading: "man" }, { word: "کوچک", base: "کوچک", reading: "kuček" }, { word: "است", base: "بودن", reading: "ast" }] }
+  - id: "fa-0122"
+    target: "نام"
+    reading: "nâm"
+    ipa: "nɒːm"
+    pos: "noun"
+    tags: ["greeting"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "نام من.", reading: "nâm-e man.", ipa: "nɒːm e mæn", bases: [{ word: "نام", base: "نام", reading: "nâm" }, { word: "من", base: "من", reading: "man" }] }
+      - { target: "نام شما چیست؟", reading: "nâm-e šomâ čist?", ipa: "nɒːm e ʃomɒː tʃist", bases: [{ word: "نام", base: "نام", reading: "nâm" }, { word: "شما", base: "شما", reading: "šomâ" }, { word: "چیست", base: "چه", reading: "čist" }] }
+  - id: "fa-0123"
+    target: "خوب"
+    reading: "xub"
+    ipa: "xub"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "خوب است.", reading: "xub ast.", ipa: "xub æst", bases: [{ word: "خوب", base: "خوب", reading: "xub" }, { word: "است", base: "بودن", reading: "ast" }] }
+      - { target: "آب خوب است.", reading: "âb xub ast.", ipa: "ɒːb xub æst", bases: [{ word: "آب", base: "آب", reading: "âb" }, { word: "خوب", base: "خوب", reading: "xub" }, { word: "است", base: "بودن", reading: "ast" }] }
+  - id: "fa-0124"
+    target: "بزرگ"
+    reading: "bozorg"
+    ipa: "bozoɾg"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "خانه بزرگ است.", reading: "xâne bozorg ast.", ipa: "xɒːne bozoɾg æst", bases: [{ word: "خانه", base: "خانه", reading: "xâne" }, { word: "بزرگ", base: "بزرگ", reading: "bozorg" }, { word: "است", base: "بودن", reading: "ast" }] }
+      - { target: "این بزرگ است.", reading: "in bozorg ast.", ipa: "in bozoɾg æst", bases: [{ word: "این", base: "این", reading: "in" }, { word: "بزرگ", base: "بزرگ", reading: "bozorg" }, { word: "است", base: "بودن", reading: "ast" }] }
+  - id: "fa-0125"
+    target: "کوچک"
+    reading: "kuček"
+    ipa: "kuˈtʃæk"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "خانه کوچک است.", reading: "xâne kuček ast.", ipa: "xɒːne kuˈtʃæk æst", bases: [{ word: "خانه", base: "خانه", reading: "xâne" }, { word: "کوچک", base: "کوچک", reading: "kuček" }, { word: "است", base: "بودن", reading: "ast" }] }
+      - { target: "این کوچک است.", reading: "in kuček ast.", ipa: "in kuˈtʃæk æst", bases: [{ word: "این", base: "این", reading: "in" }, { word: "کوچک", base: "کوچک", reading: "kuček" }, { word: "است", base: "بودن", reading: "ast" }] }
+  - id: "fa-0126"
+    target: "اینجا"
+    reading: "injâ"
+    ipa: "inˈdʒɒː"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "اینجا آب است.", reading: "injâ âb ast.", ipa: "inˈdʒɒː ɒːb æst", bases: [{ word: "اینجا", base: "اینجا", reading: "injâ" }, { word: "آب", base: "آب", reading: "âb" }, { word: "است", base: "بودن", reading: "ast" }] }
+      - { target: "من اینجا هستم.", reading: "man injâ hastam.", ipa: "mæn inˈdʒɒː hæstæm", bases: [{ word: "من", base: "من", reading: "man" }, { word: "اینجا", base: "اینجا", reading: "injâ" }, { word: "هستم", base: "بودن", reading: "hastam" }] }
+  - id: "fa-0127"
+    target: "آنجا"
+    reading: "ânjâ"
+    ipa: "ɒːnˈdʒɒː"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "آنجا خانه است.", reading: "ânjâ xâne ast.", ipa: "ɒːnˈdʒɒː xɒːne æst", bases: [{ word: "آنجا", base: "آنجا", reading: "ânjâ" }, { word: "خانه", base: "خانه", reading: "xâne" }, { word: "است", base: "بودن", reading: "ast" }] }
+      - { target: "آنجا نان است.", reading: "ânjâ nân ast.", ipa: "ɒːnˈdʒɒː nɒːn æst", bases: [{ word: "آنجا", base: "آنجا", reading: "ânjâ" }, { word: "نان", base: "نان", reading: "nân" }, { word: "است", base: "بودن", reading: "ast" }] }
+  - id: "fa-0128"
+    target: "چه"
+    reading: "če"
+    ipa: "tʃe"
+    pos: "pronoun"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "چه دارید؟", reading: "če dârid?", ipa: "tʃe dɒːˈɾid", bases: [{ word: "چه", base: "چه", reading: "če" }, { word: "دارید", base: "داشتن", reading: "dârid" }] }
+      - { target: "چه؟", reading: "če?", ipa: "tʃe", bases: [{ word: "چه", base: "چه", reading: "če" }] }
+  - id: "fa-0129"
+    target: "کی"
+    reading: "ki"
+    ipa: "ki"
+    pos: "pronoun"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "او کیست؟", reading: "u kist?", ipa: "u kist", bases: [{ word: "او", base: "او", reading: "u" }, { word: "کیست", base: "کی", reading: "kist" }] }
+      - { target: "کی اینجا است؟", reading: "ki injâ ast?", ipa: "ki inˈdʒɒː æst", bases: [{ word: "کی", base: "کی", reading: "ki" }, { word: "اینجا", base: "اینجا", reading: "injâ" }, { word: "است", base: "بودن", reading: "ast" }] }
+  - id: "fa-0130"
+    target: "کجا"
+    reading: "kojâ"
+    ipa: "kodʒɒː"
+    pos: "adv"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "دستشویی کجاست؟", reading: "dastshuyi kojâst?", ipa: "dæstʃuˈjiː kodʒɒːst", bases: [{ word: "دستشویی", base: "دستشویی", reading: "dastshuyi" }, { word: "کجاست", base: "کجا", reading: "kojâst" }] }
+      - { target: "خانه کجاست؟", reading: "xâne kojâst?", ipa: "xɒːne kodʒɒːst", bases: [{ word: "خانه", base: "خانه", reading: "xâne" }, { word: "کجاست", base: "کجا", reading: "kojâst" }] }

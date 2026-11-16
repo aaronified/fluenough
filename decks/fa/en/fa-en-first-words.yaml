@@ -1,0 +1,501 @@
+schema: 1
+id: "fa-en-first-words"
+kind: "layer"
+core: "fa-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes and no, the pronouns I, you, he or she, we and they, the numbers one to ten, family, people, and a few everyday words (water, bread, tea, house, good, big, small, here, there, what, who, where). Greetings and please are in the phrasebook. Not yet checked by a Persian speaker: please report any mistake."
+cards:
+  "fa-0101":
+    native: "yes"
+    notes:
+      "n1": "بله (bale) is the plain yes. Persian often answers with the verb, so Yes, I am is بله، هستم (bale, hastam)."
+    examples:
+      "بله، هستم.":
+        native: "Yes, I am."
+        bases:
+          "بله": "yes"
+          "هستم": "I am"
+      "بله، لطفا.":
+        native: "Yes, please."
+        bases:
+          "بله": "yes"
+          "لطفا": "please"
+  "fa-0102":
+    native: "no"
+    notes:
+      "n1": "نه (na) is no. To turn down food or a second helping politely, say نه، ممنون (na, mamnun): No, thank you."
+    examples:
+      "نه، ممنون.":
+        native: "No, thank you."
+        bases:
+          "نه": "no"
+          "ممنون": "thankful"
+      "نه، نیستم.":
+        native: "No, I am not."
+        bases:
+          "نه": "no"
+          "نیستم": "I am not"
+  "fa-0103":
+    native: "I; me"
+    notes:
+      "n1": "من (man) is I and me. Persian drops the verb's subject when it is clear, so the verb ending already says I, and من (man) is added to stress it."
+    examples:
+      "من هستم.":
+        native: "I am."
+        bases:
+          "من": "I"
+          "هستم": "am"
+      "من اینجا هستم.":
+        native: "I am here."
+        bases:
+          "من": "I"
+          "اینجا": "here"
+          "هستم": "am"
+  "fa-0104":
+    native: "you (informal)"
+    notes:
+      "n1": "تو (to) is you for one friend, a child or someone very close. To a stranger or an elder, use شما (šomâ), the polite you, with a plural verb."
+    examples:
+      "تو اینجا هستی؟":
+        native: "Are you here?"
+        bases:
+          "تو": "you"
+          "اینجا": "here"
+          "هستی": "are"
+      "تو کی هستی؟":
+        native: "Who are you?"
+        bases:
+          "تو": "you"
+          "کی": "who"
+          "هستی": "are"
+  "fa-0105":
+    native: "he; she"
+    notes:
+      "n1": "او (u) is he and she alike: Persian does not mark the gender of a pronoun. It is the same whether the person is a man or a woman."
+    examples:
+      "او اینجا است.":
+        native: "He is here."
+        bases:
+          "او": "he"
+          "اینجا": "here"
+          "است": "is"
+      "او دانشجو است.":
+        native: "She is a student."
+        bases:
+          "او": "she"
+          "دانشجو": "student"
+          "است": "is"
+  "fa-0106":
+    native: "we; us"
+    notes:
+      "n1": "ما (mâ) is we. The verb ending says the person too, so ما (mâ) is used mostly to stress the word."
+    examples:
+      "ما اینجا هستیم.":
+        native: "We are here."
+        bases:
+          "ما": "we"
+          "اینجا": "here"
+          "هستیم": "are"
+      "ما نان داریم.":
+        native: "We have bread."
+        bases:
+          "ما": "we"
+          "نان": "bread"
+          "داریم": "have"
+  "fa-0107":
+    native: "they"
+    notes:
+      "n1": "آنها (ânhâ) is they, for things and people alike. Politely for people, ایشان (išân) is also used."
+    examples:
+      "آنها اینجا هستند.":
+        native: "They are here."
+        bases:
+          "آنها": "they"
+          "اینجا": "here"
+          "هستند": "are"
+      "آنها آنجا هستند.":
+        native: "They are there."
+        bases:
+          "آنها": "they"
+          "آنجا": "there"
+          "هستند": "are"
+  "fa-0108":
+    native: "one"
+    notes:
+      "n1": "یک (yek) is one. Before a noun it is also the word for a, as in یک نان (yek nân), a loaf of bread."
+    examples:
+      "یک، دو، سه.":
+        native: "One, two, three."
+        bases:
+          "یک": "one"
+          "دو": "two"
+          "سه": "three"
+      "یک نان، لطفا.":
+        native: "One bread, please."
+        bases:
+          "یک": "one"
+          "نان": "bread"
+          "لطفا": "please"
+  "fa-0109":
+    native: "two"
+    notes:
+      "n1": "دو (do) is two."
+    examples:
+      "دو چای، لطفا.":
+        native: "Two teas, please."
+        bases:
+          "دو": "two"
+          "چای": "tea"
+          "لطفا": "please"
+      "یک، دو، سه.":
+        native: "One, two, three."
+        bases:
+          "یک": "one"
+          "دو": "two"
+          "سه": "three"
+  "fa-0110":
+    native: "three"
+    notes:
+      "n1": "سه (se) is three."
+    examples:
+      "سه، چهار، پنج.":
+        native: "Three, four, five."
+        bases:
+          "سه": "three"
+          "چهار": "four"
+          "پنج": "five"
+      "سه نان، لطفا.":
+        native: "Three breads, please."
+        bases:
+          "سه": "three"
+          "نان": "bread"
+          "لطفا": "please"
+  "fa-0111":
+    native: "five"
+    notes:
+      "n1": "پنج (panj) is five."
+    examples:
+      "پنج نان، لطفا.":
+        native: "Five breads, please."
+        bases:
+          "پنج": "five"
+          "نان": "bread"
+          "لطفا": "please"
+      "سه، چهار، پنج.":
+        native: "Three, four, five."
+        bases:
+          "سه": "three"
+          "چهار": "four"
+          "پنج": "five"
+  "fa-0112":
+    native: "ten"
+    notes:
+      "n1": "ده (dah) is ten. Counting from one to ten is یک تا ده (yek tâ dah): from one to ten."
+    examples:
+      "یک تا ده.":
+        native: "From one to ten."
+        bases:
+          "یک": "one"
+          "تا": "to"
+          "ده": "ten"
+      "ده نان، لطفا.":
+        native: "Ten breads, please."
+        bases:
+          "ده": "ten"
+          "نان": "bread"
+          "لطفا": "please"
+  "fa-0113":
+    native: "mother"
+    notes:
+      "n1": "مادر (mâdar) is mother. To say my mother, add -م (-am) to it: مادرم (mâdaram). Between a noun and its owner, Persian puts -e (-e): مادر من (mâdar-e man), my mother."
+    examples:
+      "مادر من.":
+        native: "My mother."
+        bases:
+          "مادر": "mother"
+          "من": "my"
+      "مادرم اینجا است.":
+        native: "My mother is here."
+        bases:
+          "مادرم": "my mother"
+          "اینجا": "here"
+          "است": "is"
+  "fa-0114":
+    native: "father"
+    notes:
+      "n1": "پدر (pedar) is father. Its owner ending works like مادر (mâdar): پدرم (pedaram) is my father."
+    examples:
+      "پدر من.":
+        native: "My father."
+        bases:
+          "پدر": "father"
+          "من": "my"
+      "پدرم آنجا است.":
+        native: "My father is there."
+        bases:
+          "پدرم": "my father"
+          "آنجا": "there"
+          "است": "is"
+  "fa-0115":
+    native: "child"
+    notes:
+      "n1": "بچه (bačče) is a child, and also a baby. The more formal word is کودک (kudak)."
+    examples:
+      "این بچه است.":
+        native: "This is a child."
+        bases:
+          "این": "this"
+          "بچه": "child"
+          "است": "is"
+      "بچه کوچک است.":
+        native: "The child is small."
+        bases:
+          "بچه": "child"
+          "کوچک": "small"
+          "است": "is"
+  "fa-0116":
+    native: "man"
+    notes:
+      "n1": "مرد (mard) is a man, an adult male. For a person in general, say آدم (âdam), a human being."
+    examples:
+      "این مرد است.":
+        native: "This is a man."
+        bases:
+          "این": "this"
+          "مرد": "man"
+          "است": "is"
+      "مرد خوب است.":
+        native: "The man is good."
+        bases:
+          "مرد": "man"
+          "خوب": "good"
+          "است": "is"
+  "fa-0117":
+    native: "woman"
+    notes:
+      "n1": "زن (zan) is a woman, and also a wife. Its context tells the two apart."
+    examples:
+      "این زن است.":
+        native: "This is a woman."
+        bases:
+          "این": "this"
+          "زن": "woman"
+          "است": "is"
+      "زن خوب است.":
+        native: "The woman is good."
+        bases:
+          "زن": "woman"
+          "خوب": "good"
+          "است": "is"
+  "fa-0118":
+    native: "water"
+    notes:
+      "n1": "آب (âb) is water, the first drink a learner asks for."
+    examples:
+      "این آب است.":
+        native: "This is water."
+        bases:
+          "این": "this"
+          "آب": "water"
+          "است": "is"
+      "آب، لطفا.":
+        native: "Water, please."
+        bases:
+          "آب": "water"
+          "لطفا": "please"
+  "fa-0119":
+    native: "bread"
+    notes:
+      "n1": "نان (nân) is bread, of any kind."
+    examples:
+      "نان، لطفا.":
+        native: "Bread, please."
+        bases:
+          "نان": "bread"
+          "لطفا": "please"
+      "این نان است.":
+        native: "This is bread."
+        bases:
+          "این": "this"
+          "نان": "bread"
+          "است": "is"
+  "fa-0120":
+    native: "tea"
+    notes:
+      "n1": "چای (čây) is tea, the drink served at almost every visit in Iran."
+    examples:
+      "چای، لطفا.":
+        native: "Tea, please."
+        bases:
+          "چای": "tea"
+          "لطفا": "please"
+      "این چای است.":
+        native: "This is tea."
+        bases:
+          "این": "this"
+          "چای": "tea"
+          "است": "is"
+  "fa-0121":
+    native: "house; home"
+    notes:
+      "n1": "خانه (xâne) is a house, and also home. The owner ending -ی (-ye) works as in مادر من (mâdar-e man), my mother: خانه‌ی من (xâne-ye man), my house."
+    examples:
+      "خانه‌ی من.":
+        native: "My house."
+        bases:
+          "خانه‌ی": "house"
+          "من": "my"
+      "خانه‌ی من کوچک است.":
+        native: "My house is small."
+        bases:
+          "خانه‌ی": "house"
+          "من": "my"
+          "کوچک": "small"
+          "است": "is"
+  "fa-0122":
+    native: "name"
+    notes:
+      "n1": "نام (nâm) is name. In everyday speech many people say اسم (esm), with the same meaning."
+    examples:
+      "نام من.":
+        native: "My name."
+        bases:
+          "نام": "name"
+          "من": "my"
+      "نام شما چیست؟":
+        native: "What is your name?"
+        bases:
+          "نام": "name"
+          "شما": "your"
+          "چیست": "is what"
+  "fa-0123":
+    native: "good"
+    notes:
+      "n1": "خوب (xub) is good, fine, well. It is used for almost any kind of good."
+    examples:
+      "خوب است.":
+        native: "It is good."
+        bases:
+          "خوب": "good"
+          "است": "is"
+      "آب خوب است.":
+        native: "The water is good."
+        bases:
+          "آب": "water"
+          "خوب": "good"
+          "است": "is"
+  "fa-0124":
+    native: "big"
+    notes:
+      "n1": "بزرگ (bozorg) is big. It is the opposite of کوچک (kuček), small."
+    examples:
+      "خانه بزرگ است.":
+        native: "The house is big."
+        bases:
+          "خانه": "house"
+          "بزرگ": "big"
+          "است": "is"
+      "این بزرگ است.":
+        native: "This is big."
+        bases:
+          "این": "this"
+          "بزرگ": "big"
+          "است": "is"
+  "fa-0125":
+    native: "small"
+    notes:
+      "n1": "کوچک (kuček) is small. It is the opposite of بزرگ (bozorg), big."
+    examples:
+      "خانه کوچک است.":
+        native: "The house is small."
+        bases:
+          "خانه": "house"
+          "کوچک": "small"
+          "است": "is"
+      "این کوچک است.":
+        native: "This is small."
+        bases:
+          "این": "this"
+          "کوچک": "small"
+          "است": "is"
+  "fa-0126":
+    native: "here"
+    notes:
+      "n1": "اینجا (injâ) is here. Its partner is آنجا (ânjâ), there."
+    examples:
+      "اینجا آب است.":
+        native: "Water is here."
+        bases:
+          "اینجا": "here"
+          "آب": "water"
+          "است": "is"
+      "من اینجا هستم.":
+        native: "I am here."
+        bases:
+          "من": "I"
+          "اینجا": "here"
+          "هستم": "am"
+  "fa-0127":
+    native: "there"
+    notes:
+      "n1": "آنجا (ânjâ) is there, away from the speaker. It is the partner of اینجا (injâ), here."
+    examples:
+      "آنجا خانه است.":
+        native: "There is a house."
+        bases:
+          "آنجا": "there"
+          "خانه": "house"
+          "است": "is"
+      "آنجا نان است.":
+        native: "There is bread."
+        bases:
+          "آنجا": "there"
+          "نان": "bread"
+          "است": "is"
+  "fa-0128":
+    native: "what"
+    notes:
+      "n1": "چه (če) is what. Used alone with a rising tone, چه؟ (če?) asks What? It is not the same word as چیست (čist), what is, which the phrasebook uses."
+    examples:
+      "چه دارید؟":
+        native: "What do you have?"
+        bases:
+          "چه": "what"
+          "دارید": "you have (polite)"
+      "چه؟":
+        native: "What?"
+        bases:
+          "چه": "what"
+  "fa-0129":
+    native: "who"
+    notes:
+      "n1": "کی (ki) is who. With است (ast) or the ending -ست (-st) it asks who someone is, as in کیست؟ (kist?), who is he or she?"
+    examples:
+      "او کیست؟":
+        native: "Who is he (or she)?"
+        bases:
+          "او": "he or she"
+          "کیست": "who is"
+      "کی اینجا است؟":
+        native: "Who is here?"
+        bases:
+          "کی": "who"
+          "اینجا": "here"
+          "است": "is"
+  "fa-0130":
+    native: "where"
+    notes:
+      "n1": "کجا (kojâ) is where. It is put before a verb of being, as in کجاست؟ (kojâst?), where is it?"
+    examples:
+      "دستشویی کجاست؟":
+        native: "Where is the toilet?"
+        bases:
+          "دستشویی": "toilet"
+          "کجاست": "where is"
+      "خانه کجاست؟":
+        native: "Where is the house?"
+        bases:
+          "خانه": "house"
+          "کجاست": "where is"

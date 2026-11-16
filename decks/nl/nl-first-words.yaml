@@ -1,0 +1,333 @@
+schema: 1
+id: "nl-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "nl", iso639_3: "nld", name: "Dutch", script: "latin", tts: "nl-NL", icon: "Nl" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "nl-0101"
+    target: "ja"
+    ipa: "jaː"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ja, dank je.", ipa: "jaː dɑŋk jə", bases: [{ word: "Ja", base: "ja" }, { word: "dank", base: "dank" }, { word: "je", base: "je" }] }
+      - { target: "Ja, ik begrijp het.", ipa: "jaː ɪk bəˈɣrɛip ɦɛt", bases: [{ word: "Ja", base: "ja" }, { word: "ik", base: "ik" }, { word: "begrijp", base: "begrijpen" }, { word: "het", base: "het" }] }
+  - id: "nl-0102"
+    target: "nee"
+    ipa: "neː"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nee, dank je.", ipa: "neː dɑŋk jə", bases: [{ word: "Nee", base: "nee" }, { word: "dank", base: "dank" }, { word: "je", base: "je" }] }
+      - { target: "Nee, ik weet het niet.", ipa: "neː ɪk ʋeːt ɦɛt nit", bases: [{ word: "Nee", base: "nee" }, { word: "ik", base: "ik" }, { word: "weet", base: "weten" }, { word: "het", base: "het" }, { word: "niet", base: "niet" }] }
+  - id: "nl-0103"
+    target: "ik"
+    ipa: "ɪk"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ik ben student.", ipa: "ɪk bɛn styˈdɛnt", bases: [{ word: "Ik", base: "ik" }, { word: "ben", base: "zijn" }, { word: "student", base: "student" }] }
+      - { target: "Ik begrijp het niet.", ipa: "ɪk bəˈɣrɛip ɦɛt nit", bases: [{ word: "Ik", base: "ik" }, { word: "begrijp", base: "begrijpen" }, { word: "het", base: "het" }, { word: "niet", base: "niet" }] }
+  - id: "nl-0104"
+    target: "jij"
+    ipa: "jɛi"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Jij spreekt Engels.", ipa: "jɛi spreːkt ˈɛŋəls", bases: [{ word: "Jij", base: "jij" }, { word: "spreekt", base: "spreken" }, { word: "Engels", base: "Engels" }] }
+      - { target: "Jij bent hier.", ipa: "jɛi bɛnt hir", bases: [{ word: "Jij", base: "jij" }, { word: "bent", base: "zijn" }, { word: "hier", base: "hier" }] }
+  - id: "nl-0105"
+    target: "hij"
+    ipa: "ɦɛi"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hij is mijn vader.", ipa: "ɦɛi ɪs mɛin ˈvaːdər", bases: [{ word: "Hij", base: "hij" }, { word: "is", base: "zijn" }, { word: "mijn", base: "mijn" }, { word: "vader", base: "vader" }] }
+      - { target: "Hij is groot.", ipa: "ɦɛi ɪs ɣroːt", bases: [{ word: "Hij", base: "hij" }, { word: "is", base: "zijn" }, { word: "groot", base: "groot" }] }
+  - id: "nl-0106"
+    target: "zij"
+    ipa: "zɛi"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Zij is mijn moeder.", ipa: "zɛi ɪs mɛin ˈmudər", bases: [{ word: "Zij", base: "zij" }, { word: "is", base: "zijn" }, { word: "mijn", base: "mijn" }, { word: "moeder", base: "moeder" }] }
+      - { target: "Zij is klein.", ipa: "zɛi ɪs klɛin", bases: [{ word: "Zij", base: "zij" }, { word: "is", base: "zijn" }, { word: "klein", base: "klein" }] }
+  - id: "nl-0107"
+    target: "wij"
+    ipa: "ʋɛi"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Wij zijn hier.", ipa: "ʋɛi zɛin hir", bases: [{ word: "Wij", base: "wij" }, { word: "zijn", base: "zijn" }, { word: "hier", base: "hier" }] }
+      - { target: "Wij spreken Nederlands.", ipa: "ʋɛi ˈspreːkən ˈneːdərlɑnts", bases: [{ word: "Wij", base: "wij" }, { word: "spreken", base: "spreken" }, { word: "Nederlands", base: "Nederlands" }] }
+  - id: "nl-0108"
+    target: "ze"
+    ipa: "zə"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ze zijn hier.", ipa: "zə zɛin hir", bases: [{ word: "Ze", base: "ze" }, { word: "zijn", base: "zijn" }, { word: "hier", base: "hier" }] }
+      - { target: "Ze zijn groot.", ipa: "zə zɛin ɣroːt", bases: [{ word: "Ze", base: "ze" }, { word: "zijn", base: "zijn" }, { word: "groot", base: "groot" }] }
+  - id: "nl-0109"
+    target: "een"
+    ipa: "ən"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Een, twee, drie.", ipa: "ən tʋeː dri", bases: [{ word: "Een", base: "een" }, { word: "twee", base: "twee" }, { word: "drie", base: "drie" }] }
+      - { target: "Een glas water, alstublieft.", ipa: "ən ɣlɑs ˈʋaːtər ɑlstyˈblift", bases: [{ word: "Een", base: "een" }, { word: "glas", base: "glas" }, { word: "water", base: "water" }, { word: "alstublieft", base: "alstublieft" }] }
+  - id: "nl-0110"
+    target: "twee"
+    ipa: "tʋeː"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dat kost twee euro.", ipa: "dɑt kɔst tʋeː ˈøːro", bases: [{ word: "Dat", base: "dat" }, { word: "kost", base: "kosten" }, { word: "twee", base: "twee" }, { word: "euro", base: "euro" }] }
+      - { target: "Ik heb twee honden.", ipa: "ɪk ɦɛp tʋeː ˈɦɔndən", bases: [{ word: "Ik", base: "ik" }, { word: "heb", base: "hebben" }, { word: "twee", base: "twee" }, { word: "honden", base: "hond" }] }
+  - id: "nl-0111"
+    target: "drie"
+    ipa: "dri"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Een, twee, drie.", ipa: "ən tʋeː dri", bases: [{ word: "Een", base: "een" }, { word: "twee", base: "twee" }, { word: "drie", base: "drie" }] }
+      - { target: "Dat kost drie euro.", ipa: "dɑt kɔst dri ˈøːro", bases: [{ word: "Dat", base: "dat" }, { word: "kost", base: "kosten" }, { word: "drie", base: "drie" }, { word: "euro", base: "euro" }] }
+  - id: "nl-0112"
+    target: "vier"
+    ipa: "vir"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vier, vijf, zes.", ipa: "vir vɛif zɛs", bases: [{ word: "Vier", base: "vier" }, { word: "vijf", base: "vijf" }, { word: "zes", base: "zes" }] }
+      - { target: "Dat kost vier euro.", ipa: "dɑt kɔst vir ˈøːro", bases: [{ word: "Dat", base: "dat" }, { word: "kost", base: "kosten" }, { word: "vier", base: "vier" }, { word: "euro", base: "euro" }] }
+  - id: "nl-0113"
+    target: "vijf"
+    ipa: "vɛif"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vijf, zes, zeven.", ipa: "vɛif zɛs ˈzeːvən", bases: [{ word: "Vijf", base: "vijf" }, { word: "zes", base: "zes" }, { word: "zeven", base: "zeven" }] }
+      - { target: "Dat kost vijf euro.", ipa: "dɑt kɔst vɛif ˈøːro", bases: [{ word: "Dat", base: "dat" }, { word: "kost", base: "kosten" }, { word: "vijf", base: "vijf" }, { word: "euro", base: "euro" }] }
+  - id: "nl-0114"
+    target: "zes"
+    ipa: "zɛs"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Zes, zeven, acht.", ipa: "zɛs ˈzeːvən ɑxt", bases: [{ word: "Zes", base: "zes" }, { word: "zeven", base: "zeven" }, { word: "acht", base: "acht" }] }
+      - { target: "Dat kost zes euro.", ipa: "dɑt kɔst zɛs ˈøːro", bases: [{ word: "Dat", base: "dat" }, { word: "kost", base: "kosten" }, { word: "zes", base: "zes" }, { word: "euro", base: "euro" }] }
+  - id: "nl-0115"
+    target: "zeven"
+    ipa: "ˈzeːvən"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Zeven, acht, negen.", ipa: "ˈzeːvən ɑxt ˈneːɣən", bases: [{ word: "Zeven", base: "zeven" }, { word: "acht", base: "acht" }, { word: "negen", base: "negen" }] }
+      - { target: "Dat kost zeven euro.", ipa: "dɑt kɔst ˈzeːvən ˈøːro", bases: [{ word: "Dat", base: "dat" }, { word: "kost", base: "kosten" }, { word: "zeven", base: "zeven" }, { word: "euro", base: "euro" }] }
+  - id: "nl-0116"
+    target: "acht"
+    ipa: "ɑxt"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Acht, negen, tien.", ipa: "ɑxt ˈneːɣən tin", bases: [{ word: "Acht", base: "acht" }, { word: "negen", base: "negen" }, { word: "tien", base: "tien" }] }
+      - { target: "Dat kost acht euro.", ipa: "dɑt kɔst ɑxt ˈøːro", bases: [{ word: "Dat", base: "dat" }, { word: "kost", base: "kosten" }, { word: "acht", base: "acht" }, { word: "euro", base: "euro" }] }
+  - id: "nl-0117"
+    target: "negen"
+    ipa: "ˈneːɣən"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Negen, tien, elf.", ipa: "ˈneːɣən tin ɛlf", bases: [{ word: "Negen", base: "negen" }, { word: "tien", base: "tien" }, { word: "elf", base: "elf" }] }
+      - { target: "Dat kost negen euro.", ipa: "dɑt kɔst ˈneːɣən ˈøːro", bases: [{ word: "Dat", base: "dat" }, { word: "kost", base: "kosten" }, { word: "negen", base: "negen" }, { word: "euro", base: "euro" }] }
+  - id: "nl-0118"
+    target: "tien"
+    ipa: "tin"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Een tot tien.", ipa: "ən tɔt tin", bases: [{ word: "Een", base: "een" }, { word: "tot", base: "tot" }, { word: "tien", base: "tien" }] }
+      - { target: "Dat kost tien euro.", ipa: "dɑt kɔst tin ˈøːro", bases: [{ word: "Dat", base: "dat" }, { word: "kost", base: "kosten" }, { word: "tien", base: "tien" }, { word: "euro", base: "euro" }] }
+  - id: "nl-0119"
+    target: "moeder"
+    ipa: "ˈmudər"
+    pos: "noun"
+    gender: "common"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Zij is mijn moeder.", ipa: "zɛi ɪs mɛin ˈmudər", bases: [{ word: "Zij", base: "zij" }, { word: "is", base: "zijn" }, { word: "mijn", base: "mijn" }, { word: "moeder", base: "moeder" }] }
+      - { target: "Hallo, moeder.", ipa: "ɦɑˈloː ˈmudər", bases: [{ word: "Hallo", base: "hallo" }, { word: "moeder", base: "moeder" }] }
+  - id: "nl-0120"
+    target: "vader"
+    ipa: "ˈvaːdər"
+    pos: "noun"
+    gender: "common"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hij is mijn vader.", ipa: "ɦɛi ɪs mɛin ˈvaːdər", bases: [{ word: "Hij", base: "hij" }, { word: "is", base: "zijn" }, { word: "mijn", base: "mijn" }, { word: "vader", base: "vader" }] }
+      - { target: "Ik praat met mijn vader.", ipa: "ɪk praːt mɛt mɛin ˈvaːdər", bases: [{ word: "Ik", base: "ik" }, { word: "praat", base: "praten" }, { word: "met", base: "met" }, { word: "mijn", base: "mijn" }, { word: "vader", base: "vader" }] }
+  - id: "nl-0121"
+    target: "water"
+    ipa: "ˈʋaːtər"
+    pos: "noun"
+    gender: "n"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Water, alstublieft.", ipa: "ˈʋaːtər ɑlstyˈblift", bases: [{ word: "Water", base: "water" }, { word: "alstublieft", base: "alstublieft" }] }
+      - { target: "Dit is water.", ipa: "dɪt ɪs ˈʋaːtər", bases: [{ word: "Dit", base: "dit" }, { word: "is", base: "zijn" }, { word: "water", base: "water" }] }
+  - id: "nl-0122"
+    target: "eten"
+    ipa: "ˈeːtən"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Het eten is lekker.", ipa: "ɦɛt ˈeːtən ɪs ˈlɛkər", bases: [{ word: "Het", base: "het" }, { word: "eten", base: "eten" }, { word: "is", base: "zijn" }, { word: "lekker", base: "lekker" }] }
+      - { target: "Ik eet thuis.", ipa: "ɪk eːt tœys", bases: [{ word: "Ik", base: "ik" }, { word: "eet", base: "eten" }, { word: "thuis", base: "thuis" }] }
+  - id: "nl-0123"
+    target: "huis"
+    ipa: "ɦœys"
+    pos: "noun"
+    gender: "n"
+    tags: ["home"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dit is mijn huis.", ipa: "dɪt ɪs mɛin ɦœys", bases: [{ word: "Dit", base: "dit" }, { word: "is", base: "zijn" }, { word: "mijn", base: "mijn" }, { word: "huis", base: "huis" }] }
+      - { target: "Ons huis is groot.", ipa: "ɔns ɦœys ɪs ɣroːt", bases: [{ word: "Ons", base: "ons" }, { word: "huis", base: "huis" }, { word: "is", base: "zijn" }, { word: "groot", base: "groot" }] }
+  - id: "nl-0124"
+    target: "goed"
+    ipa: "ɣut"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dit is goed.", ipa: "dɪt ɪs ɣut", bases: [{ word: "Dit", base: "dit" }, { word: "is", base: "zijn" }, { word: "goed", base: "goed" }] }
+      - { target: "Goedemorgen!", ipa: "ˌɣudəˈmɔrɣən", bases: [{ word: "Goedemorgen", base: "goedemorgen" }] }
+  - id: "nl-0125"
+    target: "groot"
+    ipa: "ɣroːt"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Het huis is groot.", ipa: "ɦɛt ɦœys ɪs ɣroːt", bases: [{ word: "Het", base: "het" }, { word: "huis", base: "huis" }, { word: "is", base: "zijn" }, { word: "groot", base: "groot" }] }
+      - { target: "Een groot huis.", ipa: "ən ɣroːt ɦœys", bases: [{ word: "Een", base: "een" }, { word: "groot", base: "groot" }, { word: "huis", base: "huis" }] }
+  - id: "nl-0126"
+    target: "klein"
+    ipa: "klɛin"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Het kind is klein.", ipa: "ɦɛt kɪnt ɪs klɛin", bases: [{ word: "Het", base: "het" }, { word: "kind", base: "kind" }, { word: "is", base: "zijn" }, { word: "klein", base: "klein" }] }
+      - { target: "Ik ben klein.", ipa: "ɪk bɛn klɛin", bases: [{ word: "Ik", base: "ik" }, { word: "ben", base: "zijn" }, { word: "klein", base: "klein" }] }
+  - id: "nl-0127"
+    target: "hier"
+    ipa: "ɦir"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Wij zijn hier.", ipa: "ʋɛi zɛin ɦir", bases: [{ word: "Wij", base: "wij" }, { word: "zijn", base: "zijn" }, { word: "hier", base: "hier" }] }
+      - { target: "Kom hier.", ipa: "kɔm ɦir", bases: [{ word: "Kom", base: "komen" }, { word: "hier", base: "hier" }] }
+  - id: "nl-0128"
+    target: "daar"
+    ipa: "daːr"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Het toilet is daar.", ipa: "ɦɛt tʋaːˈlɛt ɪs daːr", bases: [{ word: "Het", base: "het" }, { word: "toilet", base: "toilet" }, { word: "is", base: "zijn" }, { word: "daar", base: "daar" }] }
+      - { target: "Het huis is daar.", ipa: "ɦɛt ɦœys ɪs daːr", bases: [{ word: "Het", base: "het" }, { word: "huis", base: "huis" }, { word: "is", base: "zijn" }, { word: "daar", base: "daar" }] }
+  - id: "nl-0129"
+    target: "wat"
+    ipa: "ʋɑt"
+    pos: "pronoun"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Wat is dit?", ipa: "ʋɑt ɪs dɪt", bases: [{ word: "Wat", base: "wat" }, { word: "is", base: "zijn" }, { word: "dit", base: "dit" }] }
+      - { target: "Wat is je naam?", ipa: "ʋɑt ɪs jə naːm", bases: [{ word: "Wat", base: "wat" }, { word: "is", base: "zijn" }, { word: "je", base: "je" }, { word: "naam", base: "naam" }] }
