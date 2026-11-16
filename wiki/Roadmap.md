@@ -389,10 +389,12 @@ A plan with no tracking issue is flagged.
 - [Kannada genre decks, verified sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Kannada), **no tracking issue**
 - [Marathi genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Marathi), **no tracking issue**
 - [Marathi culture 4, sourcing addendum 2 (task MR-R2)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Marathi-Addendum-2), **no tracking issue**
+- [Marathi sourcing, addendum 3 (recommendations and multi-word verbs)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Marathi-Addendum-3), **no tracking issue**
 - [Classical Sanskrit genre decks, verified sourcing list (culture, subhāṣita proverbs, multi-word families, recommendations, creators, Aṣṭādhyāyī sūtras)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Sanskrit), **no tracking issue**
 - [Spanish genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Spanish), **no tracking issue**
 - [Tamil genre decks, verified sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Tamil), **no tracking issue**
 - [Telugu genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Telugu), **no tracking issue**
+- [Vedic Sanskrit genre decks, verified sourcing list (culture, creators, sayings, multi-word verbs, recommendations, facts)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Vedic), **no tracking issue**
 - [reviewing decks in the app, sent by mail](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Browser) (Written 2026-10-06), tracks #403
 - [deck kinds, levels, hidden decks, sources, creators, recommendations, topics and search kinds as data](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Kinds-And-Topics), **no tracking issue**
 - [deck-owned data on decks-live](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Owned-Data), **no tracking issue**

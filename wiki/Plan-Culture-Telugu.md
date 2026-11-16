@@ -60,7 +60,7 @@ Reserve: another Pothana verse, another Peddana verse. This task creates `decks/
 
 **Third sourcing attempt, 2026-11-16.**
 
-- **Result:** 4 more Tikkana items te-8754 to te-8757 (PR #1500, pending merge), from proofread te.wikisource Page: pages (Page:భారతం-విరాటోద్యోగం.pdf/9 and /175, Page:నిర్వచనోత్తరరామాయణము.pdf/18). Dates 1205-1288 agreed by en.wikipedia and te.wikipedia (Wikidata's authority record says 1220-1300: not used). te.wikipedia also names him author of the Nirvachanottara Ramayanam, which supports that card.
+- **Result:** 4 more Tikkana items te-8754 to te-8757 (PR #1500, merged), from proofread te.wikisource Page: pages (Page:భారతం-విరాటోద్యోగం.pdf/9 and /175, Page:నిర్వచనోత్తరరామాయణము.pdf/18). Dates 1205-1288 agreed by en.wikipedia and te.wikipedia (Wikidata's authority record says 1220-1300: not used). te.wikipedia also names him author of the Nirvachanottara Ramayanam, which supports that card.
 - **Nannaya:** no lifespan years in any source: en and te Wikipedia say only "11th century"; Wikidata Q3595179 has no dates; te.wikisource Adi Parvam is an index with no readable text: dropped.
 - **Errana / Errapragada:** only one lifespan source: te.wikipedia c. 1280-1364 (estimate); en.wikipedia gives only the court period 1325-1353; no readable Aranya or Narasimha ashvasa page found; the existing card te-8752 stays: dropped.
 - **Srinatha:** sources disagree: en.wikipedia c. 1355-1360 to 1441, Wikidata 1365-1440, te.wikipedia 1360-1470; te.wikisource Sringara Naishadham page missing: dropped.
