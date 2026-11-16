@@ -8,13 +8,13 @@ import '../../app/situations.dart';
 import '../../core/models/recommendation.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
-import 'recommendations_page.dart';
+import 'culture_works.dart';
 
 /// The works the learner completed, on Today (approved mockup
 /// `culture-recommendations`, screen 3, variant A: the cover strip): the title,
 /// how many works and how many of them have questions, a cover for each with
 /// its tick, and "See all and recommendations". A cover opens that work in the
-/// list. With nothing completed yet it says so and still offers the list; with
+/// culture list of the Decks screen. With nothing completed yet it says so and still offers the list; with
 /// no recommended work for the language it is not drawn.
 class CompletedWorksCard extends StatelessWidget {
   const CompletedWorksCard({super.key});
@@ -95,7 +95,7 @@ class CompletedWorksCard extends StatelessWidget {
             TextButton(
               style: AppButtonStyles.inline(context),
               onPressed: () =>
-                  AppNavigator.openRecommendations(context, language),
+                  AppNavigator.openCultureList(context, language),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -128,11 +128,11 @@ class _Cover extends StatelessWidget {
       label: l10n.recCoverLabel(work.title),
       excludeSemantics: true,
       onTap: () =>
-          AppNavigator.openRecommendations(context, language, openId: work.id),
+          AppNavigator.openCultureList(context, language, openId: work.id),
       // hint-ok: shows text
       child: InkWell(
         borderRadius: BorderRadius.circular(AppRadii.field),
-        onTap: () => AppNavigator.openRecommendations(
+        onTap: () => AppNavigator.openCultureList(
           context,
           language,
           openId: work.id,

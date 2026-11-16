@@ -21,6 +21,7 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/visible_listenable_builder.dart';
 import 'broken_deck_tile.dart';
 import 'course_card.dart';
+import 'culture_list.dart';
 import 'course_hours.dart';
 import 'deck_search_bar.dart';
 import 'number_practice_tile.dart';
@@ -91,6 +92,62 @@ class _DecksPageState extends State<DecksPage> {
   late String _applied = _search.text;
   Timer? _debounce;
 
+  /// Whether the culture list shows in place of the deck path (the course
+  /// card's Culture button), and the language it was switched on for: the
+  /// path is back when the bar shows another language. Not saved.
+  bool _culture = false;
+  String? _cultureFor;
+
+  /// The recommended work whose row is open in the culture list, `''` for
+  /// none.
+  String? _openWork = '';
+
+  /// The state whose culture-list requests this screen listens to.
+  AppState? _scopeState;
+
+  bool _cultureShown(String? code) =>
+      _culture && code != null && _cultureFor == code;
+
+  /// A cover on Today asked for the culture list with one work open.
+  void _applyCultureRequest() {
+    final state = _scopeState;
+    final request = state?.decksCultureRequest.value;
+    if (state == null || request == null) return;
+    state.decksCultureRequest.value = null;
+    _culture = true;
+    _cultureFor = request.language;
+    _openWork = request.openId ?? '';
+    _search.clear();
+    _chips.clear();
+    _sync();
+  }
+
+  void _onCultureRequest() {
+    if (!mounted) return;
+    setState(_applyCultureRequest);
+  }
+
+  /// The course card's button: the culture list in place of the path, or the
+  /// path back.
+  void _toggleCulture(String? code) => setState(() {
+    final shown = _cultureShown(code);
+    _culture = !shown;
+    _cultureFor = code;
+    _openWork = '';
+  });
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final state = AppScope.read(context);
+    if (!identical(state, _scopeState)) {
+      _scopeState?.decksCultureRequest.removeListener(_onCultureRequest);
+      _scopeState = state;
+      state.decksCultureRequest.addListener(_onCultureRequest);
+      _applyCultureRequest();
+    }
+  }
+
   void _sync() {
     _debounce?.cancel();
     _applied = _search.text;
@@ -116,6 +173,7 @@ class _DecksPageState extends State<DecksPage> {
 
   @override
   void dispose() {
+    _scopeState?.decksCultureRequest.removeListener(_onCultureRequest);
     _debounce?.cancel();
     _focus.removeListener(_onFocus);
     _focus.dispose();
@@ -472,7 +530,7 @@ class _DecksPageState extends State<DecksPage> {
       },
       child: Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-        floatingActionButton: open || !ready
+        floatingActionButton: open || !ready || _cultureShown(code)
             ? null
             : _WhereIAmButton(label: l10n.decksWhereIAm, onPressed: _toUpNext),
         body: SafeArea(
@@ -572,7 +630,11 @@ class _DecksPageState extends State<DecksPage> {
         }
         _wasOpen = open;
         final language = languages.firstOrNull;
-        final outcome = searching
+        // The culture list is the one search's other list: the path's tabs and
+        // chips do not apply to it.
+        if (_culture && _cultureFor != code) _culture = false;
+        final cultureMode = _cultureShown(code);
+        final outcome = searching && !cultureMode
             ? runSearch(
                 state,
                 l10n,
@@ -582,10 +644,10 @@ class _DecksPageState extends State<DecksPage> {
                 planOf: widget.planOf,
               )
             : null;
-        final menu = _menu(l10n, state, parsed, code);
+        final menu = cultureMode ? null : _menu(l10n, state, parsed, code);
         // The path stays under the search while nothing is typed, darkened.
         final dim = open && !searching ? 0.5 : 1.0;
-        final view = searching || code == null
+        final view = (searching && !cultureMode) || code == null
             ? null
             : courseView(
                 state,
@@ -601,7 +663,7 @@ class _DecksPageState extends State<DecksPage> {
           null => null,
         };
         // The level up next starts unfolded: _toUpNext unfolds it.
-        if (view != null && _openedAt != code) {
+        if (view != null && !cultureMode && _openedAt != code) {
           _openedAt = code;
           WidgetsBinding.instance.addPostFrameCallback((_) {
             if (mounted) _toUpNext(animate: false);
@@ -635,6 +697,7 @@ class _DecksPageState extends State<DecksPage> {
                           _searchBar(l10n, state, language?.name),
                           ?menu,
                           if (outcome == null &&
+                              !cultureMode &&
                               _focus.hasFocus &&
                               _chips.isEmpty &&
                               _search.text.trim().isEmpty)
@@ -679,6 +742,8 @@ class _DecksPageState extends State<DecksPage> {
                                     state.decks,
                                   ),
                                   hours: courseHours(state, code!),
+                                  onCulture: () => _toggleCulture(code),
+                                  cultureShown: cultureMode,
                                 ),
                               ),
                             ),
@@ -708,7 +773,24 @@ class _DecksPageState extends State<DecksPage> {
                           onRemoveKind: () =>
                               setState(() => _chips.remove(SearchToken.kind)),
                         ),
-                    if (!searching && view != null) ...<Widget>[
+                    if (cultureMode && code != null)
+                      SliverIgnorePointer(
+                        ignoring: scrim,
+                        sliver: SliverOpacity(
+                          opacity: dim,
+                          sliver: SliverToBoxAdapter(
+                            child: CultureList(
+                              language: code,
+                              query: applied.text,
+                              openWork: _openWork,
+                              onToggleWork: (id) => setState(
+                                () => _openWork = _openWork == id ? '' : id,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    if (!searching && !cultureMode && view != null) ...<Widget>[
                       SliverIgnorePointer(
                         ignoring: scrim,
                         sliver: SliverOpacity(

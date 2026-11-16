@@ -792,6 +792,12 @@ class AppState extends ChangeNotifier {
     ShellTab.today,
   );
 
+  /// A request, from a page over the shell, for the Decks screen to show its
+  /// culture list (`AppNavigator.openCultureList`). The Decks screen clears it
+  /// once it has acted on it.
+  final ValueNotifier<CultureListRequest?> decksCultureRequest =
+      ValueNotifier<CultureListRequest?>(null);
+
   /// True while the tab pages slide; see `TabPager.moving`.
   final ValueNotifier<bool> shellTabMoving = ValueNotifier<bool>(false);
 
@@ -4310,6 +4316,7 @@ class AppState extends ChangeNotifier {
     shellTabMoving
       ..removeListener(_logTab)
       ..dispose();
+    decksCultureRequest.dispose();
     updates.dispose();
     wallpaper.dispose();
     _fontCheck?.dispose();

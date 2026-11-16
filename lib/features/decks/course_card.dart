@@ -26,9 +26,18 @@ class CourseCard extends StatefulWidget {
     required this.view,
     required this.glyph,
     this.hours = (spent: 0, left: 0),
+    this.onCulture,
+    this.cultureShown = false,
   });
 
   final CourseView view;
+
+  /// The Culture button's action: switches the Decks screen between the deck
+  /// path and the culture list. Null draws no button.
+  final VoidCallback? onCulture;
+
+  /// Whether the culture list is showing: the button then reads "Deck path".
+  final bool cultureShown;
 
   /// The language's hours spent, and about how many are left in the decks
   /// its course has ([courseHours]).
@@ -155,6 +164,24 @@ class _CourseCardState extends State<CourseCard> {
             l10n.pathHoursSpent(widget.hours.spent),
           ),
         ),
+        if (widget.onCulture != null) ...<Widget>[
+          const SizedBox(height: 14),
+          FilledButton.tonalIcon(
+            key: const ValueKey<String>('course-culture-button'),
+            onPressed: widget.onCulture,
+            icon: Icon(
+              widget.cultureShown
+                  ? Icons.arrow_back
+                  : Icons.theater_comedy_outlined,
+              size: 20,
+            ),
+            label: Text(
+              widget.cultureShown
+                  ? l10n.decksPathButton
+                  : l10n.decksCultureButton,
+            ),
+          ),
+        ],
       ],
     );
     return Container(

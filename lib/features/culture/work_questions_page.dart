@@ -9,7 +9,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/system_bar.dart';
 import 'culture_parts.dart';
-import 'recommendations_page.dart' show briefingLine;
+import 'culture_works.dart' show briefingLine;
 
 /// What opens the questions of a completed work.
 class WorkQuestionsRequest {
