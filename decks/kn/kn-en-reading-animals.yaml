@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-animals"
+name: "Reading: the zoo board"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (a zoo board with each animal and what it eats). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-zoo-board"
+    title: "Zoo board"
+    sentences:
+      - text: "ಆನೆ ಬಾಳೆಹಣ್ಣು ತಿನ್ನುತ್ತದೆ."
+        reading: "āne bāḷehaṇṇu tinnuttade."
+        ipa: "aːne baːɭehaɳɳu t̪innut̪t̪ad̪e"
+      - text: "ಹುಲಿ ಮಾಂಸ ತಿನ್ನುತ್ತದೆ."
+        reading: "huli māmsa tinnuttade."
+        ipa: "huli maːmsa t̪innut̪t̪ad̪e"
+      - text: "ಬೆಕ್ಕು ಮೀನು ತಿನ್ನುತ್ತದೆ."
+        reading: "bekku mīnu tinnuttade."
+        ipa: "bekku miːnu t̪innut̪t̪ad̪e"
+      - text: "ಗಿಳಿ ಹಣ್ಣು ತಿನ್ನುತ್ತದೆ."
+        reading: "giḷi haṇṇu tinnuttade."
+        ipa: "ɡiɭi haɳɳu t̪innut̪t̪ad̪e"
+      - text: "ಕಪ್ಪೆ ಇರುವೆ ತಿನ್ನುತ್ತದೆ."
+        reading: "kappe iruve tinnuttade."
+        ipa: "kappe iruʋe t̪innut̪t̪ad̪e"
+    questions:
+      - id: "kn-9343"
+        prompt: { en: "What does the tiger eat?" }
+        options:
+          - { en: "Banana" }
+          - { en: "Fish" }
+          - { en: "Meat" }
+        answer: 3
+      - id: "kn-9344"
+        prompt: { en: "Which animal eats fish?" }
+        options:
+          - { en: "Tiger" }
+          - { en: "Cat" }
+          - { en: "Parrot" }
+        answer: 2
+      - id: "kn-9345"
+        prompt: { en: "The parrot eats fruit." }
+        answer: true

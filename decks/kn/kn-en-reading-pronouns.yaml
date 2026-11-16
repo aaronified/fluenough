@@ -1,0 +1,50 @@
+schema: 1
+id: "kn-en-reading-pronouns"
+name: "Reading: the seating chart"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A seating chart for a wedding lunch: who sits where, and who is related to whom, using the pronouns and the family words taught so far. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-pronouns-passage"
+    title: "The seating chart"
+    sentences:
+      - text: "ಇಲ್ಲಿ ರವಿ ಇದ್ದಾನೆ."
+        reading: "illi ravi iddāne."
+        ipa: "illi raʋi id̪d̪aːne"
+      - text: "ಅಜ್ಜಿ, ಇಲ್ಲಿ ಕುಳಿತುಕೊಳ್ಳಿ."
+        reading: "ajji, illi kuḷitukoḷḷi."
+        ipa: "adʒdʒi illi kuɭit̪ukoɭɭi"
+      - text: "ಅವನು ನನ್ನ ಅಣ್ಣ."
+        reading: "avanu nanna aṇṇa."
+        ipa: "aʋanu nanna aɳɳa"
+      - text: "ಅವಳು ನಿನ್ನ ತಂಗಿ."
+        reading: "avaḷu ninna taṅgi."
+        ipa: "aʋaɭu ninna t̪aŋɡi"
+      - text: "ಅವರು ನಮ್ಮ ಸ್ನೇಹಿತರು."
+        reading: "avaru namma snēhitaru."
+        ipa: "aʋaru namma sneːhit̪aru"
+      - text: "ಯಾರು ಇಲ್ಲಿ ಇದ್ದಾರೆ?"
+        reading: "yāru illi iddāre?"
+        ipa: "jaːru illi id̪d̪aːre"
+    questions:
+      - id: "kn-9000"
+        prompt: { en: "Who is the speaker's elder brother?" }
+        options:
+          - { en: "He" }
+          - { en: "She" }
+          - { en: "We" }
+        answer: 1
+      - id: "kn-9001"
+        prompt: { en: "Who is your younger sister?" }
+        options:
+          - { en: "She" }
+          - { en: "He" }
+          - { en: "They" }
+        answer: 1
+      - id: "kn-9002"
+        prompt: { en: "They are our friends." }
+        answer: true

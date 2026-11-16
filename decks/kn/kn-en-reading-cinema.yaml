@@ -1,0 +1,43 @@
+schema: 1
+id: "kn-en-reading-cinema"
+name: "Reading: a film review"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (a short film review). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-film-review"
+    title: "Film review"
+    sentences:
+      - text: "ಈ ಸಿನಿಮಾ ತುಂಬಾ ಚೆನ್ನಾಗಿದೆ."
+        reading: "ī sinimā tumbā cennāgide."
+        ipa: "iː sinimaː t̪umbaː tʃennaːɡid̪e"
+      - text: "ನಟಿಯ ಪಾತ್ರ ತುಂಬಾ ಒಳ್ಳೆಯದು."
+        reading: "naṭiya pātra tumbā oḷḷeyadu."
+        ipa: "naʈija paːt̪ra t̪umbaː oɭɭejad̪u"
+      - text: "ಕಥೆ ಸ್ವಲ್ಪ ಕಷ್ಟವಾಗಿದೆ."
+        reading: "kathe svalpa kaṣṭavāgide."
+        ipa: "kat̪ʰe sʋalpa kaʂʈaʋaːɡid̪e"
+      - text: "ಗೀತೆಗಳು ತುಂಬಾ ಸುಂದರವಾಗಿವೆ."
+        reading: "gītegaḷu tumbā sundaravāgive."
+        ipa: "ɡiːt̪eɡaɭu t̪umbaː sund̪araʋaːɡiʋe"
+      - text: "ಪ್ರೇಕ್ಷಕರಿಗೆ ಸಂತೋಷವಾಯಿತು."
+        reading: "prēkṣakarige santōṣavāyitu."
+        ipa: "preːkʂakariɡe sant̪oːʂaʋaːjit̪u"
+    questions:
+      - id: "kn-9370"
+        prompt: { en: "What does the reviewer think of the film?" }
+        options:
+          - { en: "It is very good" }
+          - { en: "It is very long" }
+          - { en: "It is very sad" }
+        answer: 1
+      - id: "kn-9371"
+        prompt: { en: "The story is a bit difficult." }
+        answer: true
+      - id: "kn-9372"
+        prompt: { en: "The film has no songs." }
+        answer: false

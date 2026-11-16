@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-en-reading-weddings"
+name: "Reading: wedding card"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-wedding-card"
+    title: "Wedding card"
+    sentences:
+      - text: "ನಮ್ಮ ಮಗಳ ಮದುವೆ ಇದೆ."
+        reading: "namma magaḷa maduve ide."
+        ipa: "namma maɡaɭa mad̪uʋe id̪e"
+      - text: "ವರ ಮತ್ತು ವಧು ಆಶೀರ್ವಾದ ಕೇಳುತ್ತಾರೆ."
+        reading: "vara mattu vadhu āśīrvāda kēḷuttāre."
+        ipa: "ʋara mat̪t̪u ʋad̪ʱu aːʃiːrʋaːd̪a keːɭut̪t̪aːre"
+      - text: "ಮಂಟಪದಲ್ಲಿ ಸಮಾರಂಭ ಇದೆ."
+        reading: "maṇṭapadalli samārambha ide."
+        ipa: "maɳʈapad̪alli samaːrambʱa id̪e"
+      - text: "ಆರತಕ್ಷತೆ ಸಂಜೆ ಏಳು ಗಂಟೆಗೆ ಇದೆ."
+        reading: "āratakṣate sañje ēḷu gaṇṭege ide."
+        ipa: "aːrat̪akʂat̪e saɲdʒe eːɭu ɡaɳʈeɡe id̪e"
+    questions:
+      - id: "kn-9718"
+        prompt: { en: "What is the time of the reception?" }
+        options:
+          - { en: "7 in the evening" }
+          - { en: "7 in the morning" }
+          - { en: "10 at night" }
+        answer: 1
+      - id: "kn-9719"
+        prompt: { en: "The bride and groom ask for blessings." }
+        answer: true
+      - id: "kn-9720"
+        prompt: { en: "The card is for a funeral." }
+        answer: false

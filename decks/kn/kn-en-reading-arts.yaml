@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-en-reading-arts"
+name: "Reading: exhibition notice"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-exhibition-notice"
+    title: "Exhibition notice"
+    sentences:
+      - text: "ಚಿತ್ರ ಪ್ರದರ್ಶನ ಇದೆ."
+        reading: "citra pradarśana ide."
+        ipa: "tʃit̪ra prad̪arʃana id̪e"
+      - text: "ಶಿಲ್ಪ ಮತ್ತು ಮೂರ್ತಿ ಕೂಡ ಇದೆ."
+        reading: "śilpa mattu mūrti kūḍa ide."
+        ipa: "ʃilpa mat̪t̪u muːrt̪i kuːɖa id̪e"
+      - text: "ಶನಿವಾರ ಮತ್ತು ಭಾನುವಾರ ಪ್ರವೇಶ ಉಚಿತ."
+        reading: "śanivāra mattu bhānuvāra pravēśa ucita."
+        ipa: "ʃaniʋaːra mat̪t̪u bʱaːnuʋaːra praʋeːʃa utʃit̪a"
+      - text: "ವೀಣೆ ವಾದಕರು ಬರುತ್ತಾರೆ."
+        reading: "vīṇe vādakaru baruttāre."
+        ipa: "ʋiːɳe ʋaːd̪akaru barut̪t̪aːre"
+    questions:
+      - id: "kn-9715"
+        prompt: { en: "What is on show?" }
+        options:
+          - { en: "Sculptures and paintings" }
+          - { en: "Cars and phones" }
+          - { en: "Shoes and clothes" }
+        answer: 1
+      - id: "kn-9716"
+        prompt: { en: "Entry is free on Saturday and Sunday." }
+        answer: true
+      - id: "kn-9717"
+        prompt: { en: "The notice is about a cricket match." }
+        answer: false
