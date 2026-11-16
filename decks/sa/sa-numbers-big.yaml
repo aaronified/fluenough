@@ -1,0 +1,193 @@
+schema: 1
+id: "sa-numbers-big"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "numbers-big"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-1559"
+    target: "शतम्"
+    reading: "śatam"
+    ipa: "ʃət̪əm"
+    pos: "noun"
+    gender: "n"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "शतम्", base: "शत", reading: "śata" }
+    examples:
+      - target: "शतं वर्षाणि"
+        reading: "śataṃ varṣāṇi"
+        ipa: "ʃət̪əm ʋərʂaːɳi"
+        bases:
+          - { word: "शतं", base: "शत", reading: "śata" }
+          - { word: "वर्षाणि", base: "वर्ष", reading: "varṣa" }
+      - target: "शतं पुस्तकानि"
+        reading: "śataṃ pustakāni"
+        ipa: "ʃət̪əm pust̪əkaːni"
+        bases:
+          - { word: "शतं", base: "शत", reading: "śata" }
+          - { word: "पुस्तकानि", base: "पुस्तक", reading: "pustaka" }
+  - id: "sa-1560"
+    target: "सहस्रम्"
+    reading: "sahasram"
+    ipa: "səɦəsrəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["number"]
+    bases:
+      - { word: "सहस्रम्", base: "सहस्र", reading: "sahasra" }
+    examples:
+      - target: "सहस्रं पुरुषाः"
+        reading: "sahasraṃ puruṣāḥ"
+        ipa: "səɦəsrəm puruʂaːh"
+        bases:
+          - { word: "सहस्रं", base: "सहस्र", reading: "sahasra" }
+          - { word: "पुरुषाः", base: "पुरुष", reading: "puruṣa" }
+      - target: "सहस्रं फलानि"
+        reading: "sahasraṃ phalāni"
+        ipa: "səɦəsrəm pʰəlaːni"
+        bases:
+          - { word: "सहस्रं", base: "सहस्र", reading: "sahasra" }
+          - { word: "फलानि", base: "फल", reading: "phala" }
+  - id: "sa-1561"
+    target: "अयुतम्"
+    reading: "ayutam"
+    ipa: "əjut̪əm"
+    pos: "noun"
+    gender: "n"
+    tags: ["number"]
+    bases:
+      - { word: "अयुतम्", base: "अयुत", reading: "ayuta" }
+    examples:
+      - target: "अयुतं पुष्पाणि"
+        reading: "ayutaṃ puṣpāṇi"
+        ipa: "əjut̪əm puʂpaːɳi"
+        bases:
+          - { word: "अयुतं", base: "अयुत", reading: "ayuta" }
+          - { word: "पुष्पाणि", base: "पुष्प", reading: "puṣpa" }
+      - target: "अयुतं जनाः"
+        reading: "ayutaṃ janāḥ"
+        ipa: "əjut̪əm dʒənaːh"
+        bases:
+          - { word: "अयुतं", base: "अयुत", reading: "ayuta" }
+          - { word: "जनाः", base: "जन", reading: "jana" }
+  - id: "sa-1562"
+    target: "लक्षम्"
+    reading: "lakṣam"
+    ipa: "ləkʂəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["number"]
+    bases:
+      - { word: "लक्षम्", base: "लक्ष", reading: "lakṣa" }
+    examples:
+      - target: "लक्षं गृहाणि"
+        reading: "lakṣaṃ gṛhāṇi"
+        ipa: "ləkʂəm ɡr̩ɦaːɳi"
+        bases:
+          - { word: "लक्षं", base: "लक्ष", reading: "lakṣa" }
+          - { word: "गृहाणि", base: "गृह", reading: "gṛha" }
+      - target: "लक्षं वर्षाणि"
+        reading: "lakṣaṃ varṣāṇi"
+        ipa: "ləkʂəm ʋərʂaːɳi"
+        bases:
+          - { word: "लक्षं", base: "लक्ष", reading: "lakṣa" }
+          - { word: "वर्षाणि", base: "वर्ष", reading: "varṣa" }
+  - id: "sa-1563"
+    target: "नियुतम्"
+    reading: "niyutam"
+    ipa: "nijut̪əm"
+    pos: "noun"
+    gender: "n"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "नियुतम्", base: "नियुत", reading: "niyuta" }
+    examples:
+      - target: "नियुतं पुरुषाः"
+        reading: "niyutaṃ puruṣāḥ"
+        ipa: "nijut̪əm puruʂaːh"
+        bases:
+          - { word: "नियुतं", base: "नियुत", reading: "niyuta" }
+          - { word: "पुरुषाः", base: "पुरुष", reading: "puruṣa" }
+      - target: "नियुतं फलानि"
+        reading: "niyutaṃ phalāni"
+        ipa: "nijut̪əm pʰəlaːni"
+        bases:
+          - { word: "नियुतं", base: "नियुत", reading: "niyuta" }
+          - { word: "फलानि", base: "फल", reading: "phala" }
+  - id: "sa-1564"
+    target: "अर्बुदम्"
+    reading: "arbudam"
+    ipa: "ərbud̪əm"
+    pos: "noun"
+    gender: "n"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "अर्बुदम्", base: "अर्बुद", reading: "arbuda" }
+    examples:
+      - target: "अर्बुदं वर्षाणि"
+        reading: "arbudaṃ varṣāṇi"
+        ipa: "ərbud̪əm ʋərʂaːɳi"
+        bases:
+          - { word: "अर्बुदं", base: "अर्बुद", reading: "arbuda" }
+          - { word: "वर्षाणि", base: "वर्ष", reading: "varṣa" }
+      - target: "अर्बुदं जनाः"
+        reading: "arbudaṃ janāḥ"
+        ipa: "ərbud̪əm dʒənaːh"
+        bases:
+          - { word: "अर्बुदं", base: "अर्बुद", reading: "arbuda" }
+          - { word: "जनाः", base: "जन", reading: "jana" }
+  - id: "sa-1565"
+    target: "प्रयुतम्"
+    reading: "prayutam"
+    ipa: "prəjut̪əm"
+    pos: "noun"
+    gender: "n"
+    tags: ["number"]
+    bases:
+      - { word: "प्रयुतम्", base: "प्रयुत", reading: "prayuta" }
+    examples:
+      - target: "प्रयुतं पुस्तकानि"
+        reading: "prayutaṃ pustakāni"
+        ipa: "prəjut̪əm pust̪əkaːni"
+        bases:
+          - { word: "प्रयुतं", base: "प्रयुत", reading: "prayuta" }
+          - { word: "पुस्तकानि", base: "पुस्तक", reading: "pustaka" }
+      - target: "प्रयुतं फलानि"
+        reading: "prayutaṃ phalāni"
+        ipa: "prəjut̪əm pʰəlaːni"
+        bases:
+          - { word: "प्रयुतं", base: "प्रयुत", reading: "prayuta" }
+          - { word: "फलानि", base: "फल", reading: "phala" }
+  - id: "sa-1566"
+    target: "कोटिः"
+    reading: "koṭiḥ"
+    ipa: "koːʈih"
+    pos: "noun"
+    gender: "f"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "कोटिः", base: "कोटि", reading: "koṭi" }
+    examples:
+      - target: "कोटिः जनाः"
+        reading: "koṭiḥ janāḥ"
+        ipa: "koːʈih dʒənaːh"
+        bases:
+          - { word: "कोटिः", base: "कोटि", reading: "koṭi" }
+          - { word: "जनाः", base: "जन", reading: "jana" }
+      - target: "कोटिः वर्षाणि"
+        reading: "koṭiḥ varṣāṇi"
+        ipa: "koːʈih ʋərʂaːɳi"
+        bases:
+          - { word: "कोटिः", base: "कोटि", reading: "koṭi" }
+          - { word: "वर्षाणि", base: "वर्ष", reading: "varṣa" }

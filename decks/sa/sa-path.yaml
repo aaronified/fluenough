@@ -124,11 +124,8 @@ units:
       - { id: "grammar-atmanepada-heard", text: { "en": "A short passage in Classical Sanskrit showing atmanepada, read aloud" } }
     reading_passages:
       - { id: "grammar-atmanepada-text", text: { "en": "A short written text in Classical Sanskrit showing atmanepada" } }
-  - planned: { id: "sa-numbers-big", theme: "numbers-big", words: 9 }
-    listening_passages:
-      - { id: "numbers-big-heard", text: { "en": "A short passage in Classical Sanskrit on the theme tens and big numbers, read aloud" } }
-    reading_passages:
-      - { id: "numbers-big-text", text: { "en": "A short written text in Classical Sanskrit on the theme tens and big numbers" } }
+  - decks: ["sa-numbers-big"]
+    words: 8
   - planned: { id: "sa-body", theme: "body", words: 18 }
     listening_passages:
       - { id: "body-heard", text: { "en": "A short passage in Classical Sanskrit on the theme the body, read aloud" } }
