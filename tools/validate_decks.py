@@ -377,7 +377,7 @@ PHRASEBOOK_SIZE = (15, 25)
 # a code as soon as its phrasebook is written.
 PHRASEBOOK_PENDING = {
     "lus", "kha", "gom", "brx", "sd", "ks", "tcy", "mni", "sat",
-    "arc", "gmy", "sux", "egy", "ine",
+    "arc", "gmy", "sux", "egy", "ine", "raj", "hne", "bgc", "mag", "kfy", "doi",
 }
 # Parts of speech whose several-word cards still count as one word.
 LEXICAL_POS = {"noun", "verb", "adj", "adv", "pronoun"}
