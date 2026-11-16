@@ -102,7 +102,7 @@ Owner directive (2026-11-16, token budget): at most four language sessions run a
 | Audit, this queue page, grid row | Done (main) |
 | GU-001 sourcing list | Done: `Plan-Culture-Gujarati` (main). Poem lines were not readable by the page reader; see 6.4 |
 | A1 path (14 units) | **Merged**: PR #1453 into decks-live |
-| A2 path (22 units) | PR #1485 (`decks/gu-a2-wave1`), CI fixes pushed; merge when green after the one Sonnet review |
+| A2 path (22 units) | **Merged**: PR #1485 into decks-live (2026-11-16), after one Sonnet review whose two blocking findings (past continuous forms, gu-3094) were fixed |
 | Proverbs 1 to 3 | On `decks/gu-kinds-wave1`: 60 cards, three uncertain literals (gu-6317, 6326, 6355) |
 | Situations | On `decks/gu-kinds-wave1`: `gu-situations.yaml`, 10 sheets, 6 new cards (gu-6600..6606) |
 | Multiword | On `decks/gu-kinds-wave1`: 11 verified cards of 80 planned (conjunct 4, compound 1, idiomatic 3, dative 3) |
@@ -110,7 +110,7 @@ Owner directive (2026-11-16, token budget): at most four language sessions run a
 
 ### 6.2 To do, in order
 
-1. Merge PR #1485 (read CI with `gh api repos/aaronified/fluenough/commits/<sha>/check-runs`; one Sonnet review, report only; fixes by the workers). Then open ONE PR for `decks/gu-kinds-wave1` (base decks-live), one review, merge.
+1. Open ONE PR for `decks/gu-kinds-wave1` (base decks-live; read CI with `gh api repos/aaronified/fluenough/commits/<sha>/check-runs`), one Sonnet review (report only, fixes by the workers), merge when green. The culture worker was cut off by the rate limit; its agent can be resumed. Open A2 review nits for the queue: ડબ્બો and ગૂંથવું same-word pairs need a speaker check (and the cooking card may be ગૂંદવું); journey cards still use ઊતરવું and ચઢવું while the grammar rows use ઉતરવું and ચડવું; the habitual-past layer claim about હતાં for a respected woman is doubtful; sentence ids gu-5555.. and gu-56xx lie outside the plan's 7000..8499; the path description of the states map; the path entries dropped the planned listening passages.
 2. **B1 wave (38 planned entries, positions 74 to 113)**, branch `decks/gu-b1-wave1` (never merge another work branch into it; start only after A2 is merged, so workers see the A2 cards). Ids: `gu-3500..5499` (A2 used 3200..3349 and 5500..5692; do not reuse), grammar units: relative, subjunctive, conditional, purpose, before-after, while, causative, concessive, indefinites, emphasis, passive, reported-speech, honorifics (13); the rest are word units (25) with a sentences deck and one reading deck each. Match path entries by `planned.id`, not position.
 3. **Notes** (GU-130..132, owner directive 2026-11-15): a note on every card with any real teachable point; only plainly self-explanatory cards stay without. About 190 old cards plus the new ones.
 4. **Culture, multiword, proverb gaps**: retry every reachable source before dropping an item (en/gu Wikipedia, Wikidata, Wikiquote, Wikisource, Britannica, national library pages), 3 s pacing, raw wikitext via curl (`index.php?title=...&action=raw` with a User-Agent header; the page reader refuses verse and `api.php` answers 429); a one-line reason for every dropped item.
