@@ -166,3 +166,11 @@ All of these are merged to `decks-live` (PRs #1462, #1463, #1464, #1465, #1467, 
 | Narrow IPA | `phonetic` on every card with a broad `ipa` |
 | Held | Professional situations (owner), culture beyond the 34 cards (needs sources), the review-queue rows for a Kannada speaker, the four vowel-lowering rules (phonetician) |
 | Branches left for the owner to delete | `decks/kn-culture-wave1`, `decks/kn-multiword-wave1` |
+
+## 9. Recommendations wave 2 and professional decks (2026-11-16)
+
+**Recommendations: 20 of 20** on branch `decks/kn-recs-wave2` (no PR yet). Added: Bedara Kannappa, Kittur Chennamma, Sandhya Raga, Kasturi Nivasa (films), Marali Mannige, Mookajjiya Kanasugalu, Malegalalli Madumagalu, Sri Ramayana Darshanam (books), and the 2019 film of Mookajjiya Kanasugalu as the twentieth. Creators added: H. L. N. Simha (kn.wikipedia), A. N. Krishna Rao, S. K. Bhagavan, P. Sheshadri (en.wikipedia). Sources: en and kn Wikipedia; Marali Mannige's plot questions come from the 1959 Bengali translation scanned by the Digital Library of India on archive.org, plus en.wikipedia.
+
+Doubts for a Kannada speaker: Kittur Chennamma's film plot is on no readable page, so its questions rest on cast, credits, soundtrack and premise; Marali Mannige's plot questions come from a translation, not the Kannada text; the year of Sri Ramayana Darshanam is the first volume (1949; the volume and Jnanpith years conflict between en and kn Wikipedia); Sandhya Raga's director credit is disputed (Narasimha Murthy credited, Bhagavan says he directed), so only Anakru is the creator.
+
+Still dropped: the national anthem poem (lyrics). **Professional decks: still held.** The profession list is open owner question 6 of Plan-Deck-Kinds-And-Topics (`professions` is one shared list in `decks/sections.yaml`, not per language), so no Kannada professional deck was built.
