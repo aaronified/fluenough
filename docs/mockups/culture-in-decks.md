@@ -1,6 +1,6 @@
 # Culture in Decks: diagnosis, self-check and notes
 
-Companion to `culture-in-decks.html`. Owner feedback, 2026-11-16 (verbatim in the task): with "Show culture decks" on, the recommendations page still says "above level" and lists nothing; it should not be called "culture recommendations"; it acts on the top-bar language while sitting in Settings; the right place is the Decks screen; nothing locked, only "Learn" held back when a deck is too far above the learner. Titles, levels and counts in the page are the real data on decks-live (`decks/recommendations/{te,hi,bn}.yaml`, the culture and proverbs decks); the example verses are from those decks, for a bilingual reviewer to check.
+Companion to `culture-in-decks.html`. Owner feedback, 2026-11-16, and the owner's answers to the first version (see Resolved): with "Show culture decks" on, the recommendations page still says "above level" and lists nothing; it should not be called "culture recommendations"; it acts on the top-bar language while sitting in Settings; the right place is the Decks screen; nothing locked, only "Learn" held back when a deck is too far above the learner. Titles, levels and counts in the page are the real data on decks-live (`decks/recommendations/{te,hi,bn}.yaml`, the culture and proverbs decks); the example verses are from those decks, for a bilingual reviewer to check.
 
 ## 1. Diagnosis: why "Show with support" still hides everything
 
@@ -12,73 +12,94 @@ The setting is never read by the recommendations page. Exact path:
 4. The data explains the exact screen: all 15 Telugu works are A2 (6) or B1 (9) and no culture deck is A1, while the learner is at A1 (`levelIn`: furthest unit studied or placed past). `offered` is empty, `hiddenAbove` is 15, `unlocksAt` is A2, which prints `recHiddenAbove(15, 'A2')` ("15 more works are above your level. They unlock at A2.") and `recNothingAtLevel` ("Nothing yet at this level."). Hindustani has 16 works, 11 of them B2 or C1, which no path reaches (paths end at B1), so they would say "unlocks at B2" and never open.
 5. Fix: the level must stop being a filter on this page. Make `recommendationList` keep every work and return its gate (`ok`, `reach`, `far`) instead of dropping it; remove `hiddenAbove`, `unlocksAt` and the two strings above; apply the gate where it matters, which is starting FSRS (below). The book and script rules in `recommendationOffered` (books only for a learner who learns scripts; a script-only learner sees only books) are also hiding rules: turn them into a tag and a note ("Telugu script") so nothing is hidden. The language comes from the page showing it in the Decks screen, for the selected language, not from Settings.
 
-## 2. What changes
+## 2. What changes (as the owner decided, 2026-11-16)
 
-Decks screen (screens A): the culture decks and the works of the selected language in one searchable place. Chips are the kinds the data has, in the order of `RecommendationMedium`, and only those present: Telugu has Books 4, Films 9, Plays 1, Songs 1; Hindustani Books 4, Films 9, Series 2, Songs 1; Bengali Books 6, Comics 2, Films 10, Podcasts 1, Songs 1; plus "Decks" for the culture and proverbs decks. A search field filters both (title, reading, deck name, kind, year; accent-insensitive, so "maha" finds Mahanati). Rows carry the level; a deck row shows "With support" or "Learn at A2" when it is not at the learner's level. Nothing is locked, everything opens. Two entries are offered as a tweak: A, a Path and Culture switch under the search; B, a Culture section after the path, filling the "Beyond the course" placeholder (`BeyondTheCourse`, #215, still "Feature incoming").
+**Decks screen (screens A).** The top card of the Decks screen (the course card: course, progress bar, hours left and spent, update button; `CourseCard` in `course_card.dart`) gets a **Culture** button. It opens the culture view of the language shown: its own search field and its own tab bar (a native scrollable `TabBar`, like the search results tabs), one tab per kind the data has, plus **Culture decks**. Only tabs with rows show, with counts, and a search narrows them the same way the Decks search does. Telugu: Culture decks 7, Books 4, Films 9, Plays 1, Songs 1; Hindustani: Culture decks 6, Books 4, Films 9, Series 2, Songs 1; Bengali: Culture decks 7, Books 6, Comics 2, Films 10, Podcasts 1, Songs 1. The search matches title, reading, deck name, kind and year, ignoring accents ("maha" finds Mahanati). Nothing is hidden or locked: every row opens, and a row above the learner's level shows "Unlocks at B1". The two entries tried before (a Path and Culture switch, a section after the path) are dropped. The old "Beyond the course" placeholder (`BeyondTheCourse`, #215) is not used for this.
 
-The work page (screen C, last phone) opens and reads at any level. "I've completed this" is always allowed (someone may have watched the film already); a too-far work simply keeps its questions out of lessons until the learner is in reach, and says so in one line. Today `worksDecks` joins the questions of completed works to drills; that join gets the same gate.
+**The work page (screens C, last phone).** Opens and reads at any level. "I've completed this" is always allowed (someone may have watched the film already); a work above the learner keeps its questions out of lessons until the learner reaches its level, and says so in one line. Today `worksDecks` joins the questions of completed works to drills; that join gets the same gate.
 
-### The Learn gate (deck page, three states)
+### The Learn gate: one rule for every deck kind
 
-The code has one level rule today: `LevelGate.allows(item, learner)` is true when the learner is at or above the item, and `isAbove` is its opposite. A deck above the learner already cannot be practised: `culture_item_page.dart` shows `AboveLevelNotice` ("Will not count toward your progress or be scheduled for review") instead of "Practise this item". There is no "how far above" threshold. The design adds one derived from `Level.index`:
+Resolved (owner): a deck can be learnt only if it is judged applicable to the learner: their level reaches the deck's level, by the app's existing judgement, which includes the placement result. This is one rule for every deck kind, not a culture special case: a culture deck, a proverbs deck, a multi-word verbs deck and an ordinary vocabulary deck go through the same check. Otherwise the deck opens and reads, its Learn is disabled, and one line says when it unlocks. There is no "one level above" tier and no "With support" state, tag or string.
+
+**The existing logic, and what the build reuses.** The judgement is two pieces that already exist:
+- `AppState.levelIn(language)` (`lib/app/app_state.dart`): the learner's level in the language, from the furthest path unit studied or placed past (`LearnerLevels.levels(studied:, placedDecks:)`, so a placement result counts).
+- `LevelGate.allows(deck.level, learnerLevel)` (`lib/core/models/level.dart`), and `LevelGate.isAbove` as its opposite. A deck with no `level` is open to everyone, so most ordinary vocabulary decks (which carry no level; the path orders them) are always learnable; decks that do carry one (multi-word verbs, culture, proverbs) are gated by it.
+
+Where it is used today: `Deck.forLevel` / `Catalog.forLevels` drop an above-level deck from `state.decks`, which is why the path and Decks lists never offer one; `topic_page.dart` computes `startable = !deckAbove && state.deckById(...) != null` and opens `showAboveLevelSheet` for a deck above; `culture_item_page.dart` replaces "Practise this item" with a notice. The gap: the deck page's own Learn button (`_ActionBar` in `deck_detail_page.dart`) is enabled by `learnEnabled: words.isNotEmpty` only, with no level test, so a deck opened from a search or the culture view (`catalogWithAboveLevel`) could be learnt. **The build should add one function, `bool AppState.deckLearnable(DeckEntry entry)` = `LevelGate.allows(entry.deck.level, levelIn(entry.language.code))`, and call it from `_ActionBar.learnEnabled` (and its reason line), from the culture item page's Practise, and from `topic_page.dart`'s `startable`, so every deck, culture included, goes through the same gate.** The reason line is "Unlocks at {deck level}. You are at {current level}."
 
 | State | Rule | Learn |
 |---|---|---|
-| Learnable | deck level at or below the learner (`LevelGate.allows`) | enabled; "counts" or "bonus" line from the setting |
-| Within reach | deck level exactly one above (`level.index == learner.index + 1`, new) | enabled as "Learn with support": words glossed, not counted toward progress |
-| Too far | two or more above, or B2 and up while paths end at B1 | disabled, lock icon, one line: "Learn unlocks at A2. This deck is B1." (the needed level is the deck's level minus one) |
-| Culture off | the Culture switch is off | disabled, one line: "Culture is off for Telugu. Turn it on in Telugu details." |
+| Learnable | `deckLearnable` true | enabled; for culture, the "counts" or "bonus" line from the language's setting |
+| Too far (view only) | `deckLearnable` false, including B2 and up while paths end at B1 | disabled, lock icon, one line: "Unlocks at B1. You are at A1." |
+| Culture off for this language | the language's Culture switch is off | disabled, one line: "Culture is off for Telugu. Turn it on in Telugu details." (the one culture-only extra: it is about the switch, not the level) |
 
-The reading, quoted text, creator and legacy block show in all states. Open question 1 asks whether "within reach" should exist or Learn should open only at the deck's own level.
+The mockup shows the culture deck states and, in the last phone of section C, an ordinary vocabulary deck (Telugu "Multi-word verbs: compound verbs", A2; Hindustani idioms, B1; Bengali multi-word verbs, B1) in the same too-far state with the same button and line.
 
-### Settings > Culture is removed; the options move into the language details
+The reading, quoted text, creator and legacy block show in every state. Old "Show with support" behaviour (words glossed, a lock mark, not counted, not scheduled): the glosses are part of an item's page at the learner's own level and below; they no longer exist as a separate mode for items above. Nothing above the learner is ever scheduled.
 
-`LanguageSkillsSheet` (`lib/features/languages/language_skills_sheet.dart`, the screen that chooses which skills to learn) gets one `Culture` row after the Learning block (screens B). Collapsed it is a single switch row. Expanded in place it holds: "Items above my level" as a two-way segmented control (Hide, Show with support), "Count toward path progress" (switch), "Show creator and legacy" (switch), and a one-line "Applies to all your languages." Meaning of Hide and Show with support after this change: they control only the path and Today (whether an item one level above is woven in with a lock mark); the Decks screen ignores them.
+### What "Items above my level" now decides (language details)
+
+Plainly: it decides whether culture items above the learner's level appear in the **path and on Today** as view-only previews, or are left out of them. **Hide** (the default): the path and Today show only items the learner can learn now. **Show** (was "Show with support"; the string is renamed): the path and Today also list items above the level, marked "Preview · unlocks at B1", which open to read but have no Learn. **Reviews never include an item above the learner's level, whichever is chosen.** The Decks culture view and search ignore this option: they always show everything. In code, `weaveCulture` already puts above-level items in `WovenCulture.above` and never weaves them; "Show" lists `above` after the woven items of a unit's own level, and `cultureAboveSupport` is renamed `cultureShowAbove`.
+
+### Settings > Culture is removed; the options live in each language's details
+
+`LanguageSkillsSheet` (`lib/features/languages/language_skills_sheet.dart`, the screen where the learner chooses which skills to learn in a language) gets one `Culture` row after the Learning block (screens B). Collapsed it is a single switch row. Expanded in place it holds "Items above my level" (a two-way Hide / Show control with one explaining line), "Count toward path progress" (switch) and "Show creator and legacy" (switch). The group belongs to that language: there is no "applies to all languages" line.
+
+**Per-language settings and migration.** The four options become per-language, stored like `daily_minutes` is today: one JSON map keyed by language code, `culture_by_language`, with `{items, show_above, counts, creators}` per language. Migration, once at first start after the update (and when an old backup with the global keys is restored): copy each global value (`culture_items`, `culture_above_support`, `culture_counts`, `culture_creators`) into the entry of every language the profile has, then stop reading and writing the global keys. A language added later starts from the defaults (items on, Hide, bonus, creators shown). Accessors become `cultureItemsIn(code)` and so on, and every reader below takes the language it is showing.
 
 ### "How many" is removed
 
-Today `culturePerUnit` (1 to 3, default 1, `weave.dart`: `defaultCulturePerUnit`, `maxCulturePerUnit`) is read only by `wovenCultureOf` in `lib/app/culture.dart`, which passes it to `weaveCulture`; the unit cards and Today follow from that. Owner: show however many the course has. Proposal: the path computes the number itself, per level: `ceil(items at that level / units of that level)`, minimum 1, so every item at or below the learner's level appears and none piles into the first unit. `weaveCulture` keeps its `perUnit` parameter (pure, tested); `wovenCultureOf` passes the computed value and its cache key loses `per`.
+Today `culturePerUnit` (1 to 3, default 1, `weave.dart`: `defaultCulturePerUnit`, `maxCulturePerUnit`) is read only by `wovenCultureOf` in `lib/app/culture.dart`, which passes it to `weaveCulture`; the unit cards and Today follow from that. Owner: show however many the course has. The path computes the number itself, per level: `ceil(items at that level / units of that level)`, minimum 1, so every item at or below the learner's level appears and none piles into the first unit. `weaveCulture` keeps its `perUnit` parameter (pure, tested); `wovenCultureOf` passes the computed value and its cache key loses `per`.
+
+### "Hide what is above my level" is removed
+
+Owner: remove it; search always shows everything, view-only when too far. On current main it is a toggle on Settings > Languages (`lib/features/settings/languages_page.dart`, strings `settingsHideAbove`, `settingsHideAboveOn`, `settingsHideAboveOff`); no other menu on main has it (if the Languages three-dot menu build lands one, delete it there too). Delete: that tile; the setting `hideAboveLevel` and its key `hide_above_level` (stop writing it, ignore it on restore); the filtering in `lib/app/item_search.dart` (line 258), `lib/features/topics/topic_page.dart` (703) and `lib/features/topics/unit_topics.dart` (42); the "N results above your level are hidden" row in `search_tabs.dart` (`_HiddenAbove`, `searchAboveHidden`, `searchShowAbove`, `searchHideAboveHint`). Search results above the level keep their level mark and open the preview sheet or page, never a lesson.
 
 ## 3. Removed, moved, strings
 
-Removed: `CultureSettingsPage`, `AppRoutes.settingsCulture` and its route entry, the Culture row in `settings_page.dart` (summary `cultureItems`), the "How many" setting, the name "Culture recommendations".
+Removed: `CultureSettingsPage`, `AppRoutes.settingsCulture` and its route entry, the Culture row in `settings_page.dart`, the "How many" setting, the name "Culture recommendations", the "Hide what is above my level" setting.
 
-Strings to remove (`lib/l10n/app_en.arb`): `settingsRowCulture`, `settingsSumCultureOn`, `settingsSumCultureOff`, `cultureSettingHowMany`, `cultureSettingPerUnit`, `cultureSettingPerUnitValue`, `cultureSettingOpenDeck`, `cultureSettingNote`, `recHiddenAbove`, `recNothingAtLevel`, `cultureNotShownTitle`, `cultureNotShownBody` (an item is never "not shown" now), `recScriptOnlyTitle` and `recScriptOnlyBody` (become a tag), and `recTitle` ("Culture recommendations"). Keep and move (reworded for the sheet): `cultureSettingShow`, `...ShowOn`, `...ShowOff`, `cultureSettingAboveHeading`, `cultureSettingAboveHide`, `cultureSettingAboveSupport`, `cultureSettingCounts`, `...CountsOn/Off`, `cultureSettingCreators`, `...CreatorsOn/Off`; `cultureSettingAboveHideBody` and `...SupportBody` become the one line under the control. Keep `recMediumBook` to `recMediumComic` (singular, for tags and the work page).
+Strings to remove (`lib/l10n/app_en.arb`): `settingsRowCulture`, `settingsSumCultureOn`, `settingsSumCultureOff`, `cultureSettingHowMany`, `cultureSettingPerUnit`, `cultureSettingPerUnitValue`, `cultureSettingOpenDeck`, `cultureSettingNote`, `cultureSettingAboveSupport`, `cultureSettingAboveSupportBody`, `cultureSettingAboveHideBody`, `recHiddenAbove`, `recNothingAtLevel`, `cultureNotShownTitle`, `cultureNotShownBody`, `cultureAboveTitle`, `cultureAboveBody` (replaced by the Learn reason), `recScriptOnlyTitle`, `recScriptOnlyBody` (become a tag), `recTitle`, `settingsHideAbove`, `settingsHideAboveOn`, `settingsHideAboveOff`, `searchAboveHidden`, `searchShowAbove`, `searchHideAboveHint`. Keep and move to the language details, reworded: `cultureSettingShow` (`...On`, `...Off`), `cultureSettingAboveHeading`, `cultureSettingAboveHide`, `cultureSettingCounts` (`...On`, `...Off`), `cultureSettingCreators` (`...On`, `...Off`). Keep `recMediumBook` to `recMediumComic` (singular, for tags and the work page) and `cultureUnlocksAt`.
 
-New strings (proposed keys): `languagesCulture` ("Culture"), `languagesCultureOn`, `languagesCultureOff`, `languagesCultureAll` ("Applies to all your languages."), `decksTabPath`, `decksTabCulture`, `decksCultureSearchHint` ("Search culture in {language}"), `decksCultureDecks` ("Culture decks"), `recKindBooks`, `recKindFilms`, `recKindSeries`, `recKindSongs`, `recKindPlays`, `recKindPodcasts`, `recKindComics`, `learnLockedLevel` ("Learn unlocks at {level}. This deck is {deck}."), `learnLockedCultureOff`, `learnWithSupport`, `learnWithSupportNote`, `recQuestionsHeld` ("Its questions join your lessons at {level}."), `cultureSearchNothing`.
+New strings (proposed keys): `languagesCulture`, `languagesCultureOn`, `languagesCultureOff`, `languagesCultureAboveShow` ("Show"), `languagesCultureAboveHideLine`, `languagesCultureAboveShowLine`, `decksCultureButton` ("Culture"), `cultureViewTitle` ("{language} culture"), `cultureViewSearchHint` ("Search culture in {language}"), `cultureTabDecks` ("Culture decks"), `recKindBooks`, `recKindFilms`, `recKindSeries`, `recKindSongs`, `recKindPlays`, `recKindPodcasts`, `recKindComics`, `learnUnlocksAt` ("Unlocks at {level}. You are at {current}."), `learnLockedCultureOff`, `culturePreviewTag` ("Preview · unlocks at {level}"), `recQuestionsHeld` ("Its questions join your lessons at {level}."), `cultureSearchNothing`.
 
 ## 4. Data and model
 
-Keep: `culture_items`, `culture_above_support`, `culture_counts`, `culture_creators` (same keys, same meaning, global, so no migration; backups keep restoring). Delete: `culture_per_unit` (stop writing it; the restore code ignores an old value instead of failing; `maxCulturePerUnit` and `culturePerUnit` go). Code: `RecommendationList.hiddenAbove` and `unlocksAt` go; a work gets a gate value; `recommendationOffered` loses its level test.
+Per-language (new map `culture_by_language`): items, show-above, counts, creators. Deleted: `culture_per_unit`, `hide_above_level`, and, after the migration above, the four global culture keys. `maxCulturePerUnit`, `culturePerUnit` and `hideAboveLevel` go. `RecommendationList.hiddenAbove` and `unlocksAt` go; a work carries its gate; `recommendationOffered` loses its level test. Backups: an old file with global keys migrates as above; a new file carries the map.
 
-## 5. Every screen that reads the culture settings
+**Hindustani titles (data task, not part of this app build).** The Hindustani works file (`decks/recommendations/hi.yaml` on decks-live) has Latin-script titles only; Telugu and Bengali are in their scripts. A task for the Hindustani session: add the Devanagari titles (and readings where the file has them) to the file. The mockup shows the titles as the data has them today.
+
+## 5. Every screen that reads the culture settings (per language after this change)
 
 | Screen or place | Reads | After |
 |---|---|---|
 | Settings list row (`settings_page.dart`) | `cultureItems` | row removed |
 | Culture settings page | all five | removed |
-| Language details sheet | none | new Culture group: `cultureItems`, `cultureAboveSupport`, `cultureCounts`, `cultureCreators` |
-| Path unit culture cards (`culture_cards.dart`) | `cultureItems`, `cultureCounts`, woven via `culturePerUnit` | `culturePerUnit` replaced by the computed number |
-| Today culture card (`nextCultureItem`) | `cultureItems` | unchanged |
-| `wovenCultureOf` (`culture.dart`) | `culturePerUnit` | computed number |
-| Reviews and sessions (`AppState.drillDecks`, `_cultureOff`) | `cultureItems` | unchanged; adds the level gate for Learn |
-| Culture item page | `cultureAboveSupport`, `cultureCreators`, `cultureItems`, `cultureCounts` | never hides; Learn gate; same counts and creator reads |
-| Culture deck page | `cultureAboveSupport`, `cultureCreators` | folds into the Decks screen's Culture view |
-| Recommendations page | none (the bug) | Decks screen; gate per work, no filtering |
-| Search (`item_search.dart`) | `hideAboveLevel` (a different setting) | see open question 4 |
-| Settings backup (`settings.dart` export and import) | all five keys | four keys |
+| Language details sheet | none | new Culture group, writes the language's own `items`, `show_above`, `counts`, `creators` |
+| Path unit culture cards (`culture_cards.dart`) | `cultureItems`, `cultureCounts`, items via `culturePerUnit` | the language's `items`, `counts`; computed number per unit; Show adds preview items |
+| Today culture card (`nextCultureItem`) | `cultureItems` | the shown language's `items` and `show_above` (previews only) |
+| `wovenCultureOf` (`culture.dart`) | `culturePerUnit` | computed number; `show_above` |
+| Reviews and sessions (`AppState.drillDecks`, `_cultureOff`) | `cultureItems` | the language's `items`; never an item above the level |
+| Culture item page | `cultureAboveSupport`, `cultureCreators`, `cultureItems`, `cultureCounts` | never hides; Learn gate; the language's `creators`, `counts` |
+| Culture deck page | `cultureAboveSupport`, `cultureCreators` | replaced by the culture view and its tabs |
+| Recommendations page | none (the bug) | replaced by the culture view; a gate per work, no filtering |
+| Search (`item_search.dart`), topics, unit topics | `hideAboveLevel` | setting removed; always shown |
+| Settings backup (`settings.dart` export and import) | `hide_above_level` and the five culture keys | `culture_by_language`; old keys migrate |
 
 ## Design choices (tweaks in the page)
 
-Theme; language (Telugu, Hindustani, Bengali); learner level (A1, A2, B1) which drives the marks in the Decks lists; Culture items on or off (also the switch in the language details); Decks entry A or B; deck page state (all, learnable, within reach, too far); highlight of what changed (new, changed, removed). The deck page phones show fixed scenarios: Learnable is a proverbs deck at A2 for an A2 learner; Within reach and Too far are the same B1 culture deck for an A2 and an A1 learner. One empty state: a search with no match (Telugu "zzq"), which keeps the chips and offers "Clear search".
+Theme; language (Telugu, Hindustani, Bengali); learner level (A1, A2, B1), which drives the marks in the lists and the top card; Culture items on or off (also the switch in the language details); deck page state (all, learnable, too far); highlight of what changed. The deck page phones show fixed scenarios: Learnable is a proverbs deck at A2 for an A2 learner; Too far is a B1 culture deck for an A1 learner. The path-unit phone follows the Hide / Show control. One empty state: a search with no match (Telugu "zzq").
 
-## Open questions for the owner
+## Resolved (owner, 2026-11-16)
 
-1. Should a deck one level above the learner be learnable with support, as shown, or should Learn open only at the deck's own level?
-2. The Culture options in the language details apply to all languages, as the settings do today. Should each language keep its own?
-3. Decks entry: A, a Path and Culture switch under the search, or B, a Culture section after the path?
-4. Settings > Languages has "Hide what is above my level", which makes search leave out above-level decks, topics and units. Should it go too, so search always shows everything, view-only?
-5. Hindustani works are titled in Latin script in the data (Telugu and Bengali are in their scripts). Should the Devanagari titles be added to the file?
+1. Learn gate: one rule for every deck kind (the learner's level, placement included, reaches the deck's level, through `AppState.levelIn` and `LevelGate`); no "within reach" tier, no "With support" tag or strings. Everything above is view-only with a disabled Learn and a one-line reason.
+2. Scope: each language keeps its own culture options, in its own details screen; the global values are copied into every language's own setting.
+3. Entry: a Culture button on the Decks screen's top card, opening a culture view with its own search and tab bar (kinds from the data plus Culture decks).
+4. "Hide what is above my level" is removed from the menu, the setting and the search filtering; search always shows everything, view-only when too far.
+5. Hindustani works in Latin script: the Devanagari titles are added to the data file as a task for the Hindustani session.
+
+No open questions are left.
 
 ## Contrast self-check (WCAG 2.1)
 
@@ -91,8 +112,7 @@ Computed from the app palette used in the page (same tokens as `culture-in-cours
 | Muted text on the high container | 7.6:1 | 8.5:1 | 4.5:1 |
 | Chip text on `secondaryContainer` | 7.2:1 | 7.2:1 | 4.5:1 |
 | Filled button text on `primary` | 6.5:1 | 7.7:1 | 4.5:1 |
-| "With support" tag (`primary`) on the screen | 6.2:1 | 10.9:1 | 4.5:1 |
-| "Learn at A2" tag (amber) on the screen | 5.7:1 | 8.5:1 | 4.5:1 |
+| "Unlocks at B1" tag (amber) on the screen | 5.7:1 | 8.5:1 | 4.5:1 |
 | Reason line under a disabled Learn (`onSurface`) on the card | 15.5:1 | 13.3:1 | 4.5:1 |
 
-The disabled Learn button itself is exempt from the contrast rule (inactive control), so its reason is a separate full-contrast line, not text inside the button. No cue is colour alone: the lock icon and the words "Learn at A2", "With support" and "Completed" carry the meaning. Checked in Chromium (Playwright) in light and dark, Telugu, Hindustani and Bengali, 360 dp phones at 1.4x text, no horizontal page scroll and no script errors.
+The disabled Learn button itself is exempt from the contrast rule (inactive control), so its reason is a separate full-contrast line, not text inside the button. No cue is colour alone: the lock icon and the words "Unlocks at B1", "Preview" and "Completed" carry the meaning. Checked in Chromium (Playwright) in light and dark, Telugu, Hindustani and Bengali, 360 dp phones at 1.4x text, no horizontal page scroll and no script errors.
