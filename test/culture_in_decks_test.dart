@@ -301,10 +301,7 @@ void main() {
       );
       await _tap(tester, find.text(_novel));
       await _tap(tester, find.text(_l10n.recIComplete));
-      expect(
-        state.recommendationProgress.isCompleted('zz-rec-novela'),
-        isTrue,
-      );
+      expect(state.recommendationProgress.isCompleted('zz-rec-novela'), isTrue);
       expect(find.text(_l10n.recCompleted), findsOneWidget);
       expect(find.text(_l10n.recQuestions), findsOneWidget);
     });
@@ -342,11 +339,7 @@ void main() {
       tester,
     ) async {
       usePhone(tester);
-      final state = await pumpScreen(
-        tester,
-        card(),
-        state: await cultureApp(),
-      );
+      final state = await pumpScreen(tester, card(), state: await cultureApp());
       expect(find.text(_l10n.recHomeTitle), findsOneWidget);
       expect(find.text(_l10n.recHomeNone), findsOneWidget);
       await tester.tap(find.text(_l10n.recHomeSeeAll));
@@ -469,26 +462,23 @@ void main() {
     screen('the culture list at B1', on(reach: 'b1'));
     screen('the culture list with a completed work', on(done: true));
     screen('the culture list, nothing found', on(search: 'zzq'));
-    screen(
-      'the completed works on Today',
-      (tester, mode) async {
-        final state = await cultureApp();
-        await _complete(state, 'zz-rec-camino');
-        await pumpScreen(
-          tester,
-          const Scaffold(
-            body: SafeArea(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.all(16),
-                child: CompletedWorksCard(),
-              ),
+    screen('the completed works on Today', (tester, mode) async {
+      final state = await cultureApp();
+      await _complete(state, 'zz-rec-camino');
+      await pumpScreen(
+        tester,
+        const Scaffold(
+          body: SafeArea(
+            child: SingleChildScrollView(
+              padding: EdgeInsets.all(16),
+              child: CompletedWorksCard(),
             ),
           ),
-          state: state,
-          themeMode: mode,
-        );
-      },
-    );
+        ),
+        state: state,
+        themeMode: mode,
+      );
+    });
     screen('the questions', (tester, mode) async {
       final state = await cultureApp();
       await _complete(state, 'zz-rec-camino');
