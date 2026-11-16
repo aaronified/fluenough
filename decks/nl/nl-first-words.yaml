@@ -38,7 +38,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Ik ben student.", ipa: "ɪk bɛn ˈstyːdɛnt", bases: [{ word: "Ik", base: "ik" }, { word: "ben", base: "zijn" }, { word: "student", base: "student" }] }
+      - { target: "Ik ben student.", ipa: "ɪk bɛn styˈdɛnt", bases: [{ word: "Ik", base: "ik" }, { word: "ben", base: "zijn" }, { word: "student", base: "student" }] }
       - { target: "Ik begrijp het niet.", ipa: "ɪk bəˈɣrɛip ɦɛt nit", bases: [{ word: "Ik", base: "ik" }, { word: "begrijp", base: "begrijpen" }, { word: "het", base: "het" }, { word: "niet", base: "niet" }] }
   - id: "nl-0104"
     target: "jij"
@@ -98,7 +98,7 @@ cards:
   - id: "nl-0109"
     target: "een"
     ipa: "ən"
-    pos: "num"
+    pos: "other"
     tags: ["number"]
     notes:
       - { id: "n1", kind: "note" }
@@ -109,7 +109,7 @@ cards:
   - id: "nl-0110"
     target: "twee"
     ipa: "tʋeː"
-    pos: "num"
+    pos: "other"
     tags: ["number"]
     notes:
       - { id: "n1", kind: "note" }
@@ -120,7 +120,7 @@ cards:
   - id: "nl-0111"
     target: "drie"
     ipa: "dri"
-    pos: "num"
+    pos: "other"
     tags: ["number"]
     notes:
       - { id: "n1", kind: "note" }
@@ -131,7 +131,7 @@ cards:
   - id: "nl-0112"
     target: "vier"
     ipa: "vir"
-    pos: "num"
+    pos: "other"
     tags: ["number"]
     notes:
       - { id: "n1", kind: "note" }
@@ -142,7 +142,7 @@ cards:
   - id: "nl-0113"
     target: "vijf"
     ipa: "vɛif"
-    pos: "num"
+    pos: "other"
     tags: ["number"]
     notes:
       - { id: "n1", kind: "note" }
@@ -153,7 +153,7 @@ cards:
   - id: "nl-0114"
     target: "zes"
     ipa: "zɛs"
-    pos: "num"
+    pos: "other"
     tags: ["number"]
     notes:
       - { id: "n1", kind: "note" }
@@ -164,7 +164,7 @@ cards:
   - id: "nl-0115"
     target: "zeven"
     ipa: "ˈzeːvən"
-    pos: "num"
+    pos: "other"
     tags: ["number"]
     notes:
       - { id: "n1", kind: "note" }
@@ -175,7 +175,7 @@ cards:
   - id: "nl-0116"
     target: "acht"
     ipa: "ɑxt"
-    pos: "num"
+    pos: "other"
     tags: ["number"]
     notes:
       - { id: "n1", kind: "note" }
@@ -186,7 +186,7 @@ cards:
   - id: "nl-0117"
     target: "negen"
     ipa: "ˈneːɣən"
-    pos: "num"
+    pos: "other"
     tags: ["number"]
     notes:
       - { id: "n1", kind: "note" }
@@ -197,7 +197,7 @@ cards:
   - id: "nl-0118"
     target: "tien"
     ipa: "tin"
-    pos: "num"
+    pos: "other"
     tags: ["number"]
     notes:
       - { id: "n1", kind: "note" }
@@ -216,7 +216,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Zij is mijn moeder.", ipa: "zɛi ɪs mɛin ˈmudər", bases: [{ word: "Zij", base: "zij" }, { word: "is", base: "zijn" }, { word: "mijn", base: "mijn" }, { word: "moeder", base: "moeder" }] }
-      - { target: "Hallo, moeder.", ipa: "ɦɑloː ˈmudər", bases: [{ word: "Hallo", base: "hallo" }, { word: "moeder", base: "moeder" }] }
+      - { target: "Hallo, moeder.", ipa: "ɦɑˈloː ˈmudər", bases: [{ word: "Hallo", base: "hallo" }, { word: "moeder", base: "moeder" }] }
   - id: "nl-0120"
     target: "vader"
     ipa: "ˈvaːdər"
@@ -252,7 +252,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Het eten is lekker.", ipa: "ɦɛt ˈeːtən ɪs ˈlɛkər", bases: [{ word: "Het", base: "het" }, { word: "eten", base: "eten" }, { word: "is", base: "zijn" }, { word: "lekker", base: "lekker" }] }
-      - { target: "Ik eet thuis.", ipa: "ɪk eːt ˈtɦœys", bases: [{ word: "Ik", base: "ik" }, { word: "eet", base: "eten" }, { word: "thuis", base: "thuis" }] }
+      - { target: "Ik eet thuis.", ipa: "ɪk eːt tœys", bases: [{ word: "Ik", base: "ik" }, { word: "eet", base: "eten" }, { word: "thuis", base: "thuis" }] }
   - id: "nl-0123"
     target: "huis"
     ipa: "ɦœys"
@@ -318,12 +318,12 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Het toilet is daar.", ipa: "ɦɛt tʋaˈlɛt ɪs daːr", bases: [{ word: "Het", base: "het" }, { word: "toilet", base: "toilet" }, { word: "is", base: "zijn" }, { word: "daar", base: "daar" }] }
+      - { target: "Het toilet is daar.", ipa: "ɦɛt tʋaːˈlɛt ɪs daːr", bases: [{ word: "Het", base: "het" }, { word: "toilet", base: "toilet" }, { word: "is", base: "zijn" }, { word: "daar", base: "daar" }] }
       - { target: "Het huis is daar.", ipa: "ɦɛt ɦœys ɪs daːr", bases: [{ word: "Het", base: "het" }, { word: "huis", base: "huis" }, { word: "is", base: "zijn" }, { word: "daar", base: "daar" }] }
   - id: "nl-0129"
     target: "wat"
     ipa: "ʋɑt"
-    pos: "pron"
+    pos: "pronoun"
     tags: ["question"]
     notes:
       - { id: "n1", kind: "note" }
