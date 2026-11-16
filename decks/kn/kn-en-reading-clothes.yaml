@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-clothes"
+name: "Reading: the shop sign"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A clothes shop's sign, with what is on offer, using the clothes words taught up to this unit. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-clothes-passage"
+    title: "The shop sign"
+    sentences:
+      - text: "ಇಲ್ಲಿ ಅಂಗಿ, ಪ್ಯಾಂಟ್, ಸೀರೆ ಎಲ್ಲಾ ಇದೆ."
+        reading: "illi aṅgi, pyāṇṭ, sīre ellā ide."
+        ipa: "illi aŋɡi pjaːɳʈ siːre ellaː id̪e"
+      - text: "ಶೂ ಮತ್ತು ಚಪ್ಪಲಿ ಹೊಸದು."
+        reading: "śū mattu cappali hosadu."
+        ipa: "ʃuː mat̪t̪u tʃappali hosad̪u"
+      - text: "ಕನ್ನಡಕ ಮತ್ತು ಟೋಪಿ ಇಲ್ಲಿ ಇದೆ."
+        reading: "kannaḍaka mattu ṭōpi illi ide."
+        ipa: "kannaɖaka mat̪t̪u ʈoːpi illi id̪e"
+      - text: "ಸ್ವೆಟರ್ ತುಂಬಾ ಚೆನ್ನಾಗಿದೆ."
+        reading: "sveṭar tumbā cennāgide."
+        ipa: "sʋeʈar t̪umbaː tʃennaːɡid̪e"
+      - text: "ಸಾಕ್ಸ್ ಮತ್ತು ಬೆಲ್ಟ್ ಇದೆ."
+        reading: "sāks mattu belṭ ide."
+        ipa: "saːks mat̪t̪u belʈ id̪e"
+    questions:
+      - id: "kn-9009"
+        prompt: { en: "Which items are new?" }
+        options:
+          - { en: "Shoes and sandals" }
+          - { en: "Saris and shirts" }
+          - { en: "Caps and belts" }
+        answer: 1
+      - id: "kn-9010"
+        prompt: { en: "What is worn on the head?" }
+        options:
+          - { en: "A cap" }
+          - { en: "A shoe" }
+          - { en: "A belt" }
+        answer: 1
+      - id: "kn-9011"
+        prompt: { en: "Saris are on sale here." }
+        answer: true
