@@ -1001,23 +1001,39 @@
   "@situationsEditTitle": {
     "description": "Title of the popup where the learner picks and orders the situations Today's card shows (#1145)."
   },
-  "situationsEditHelp": "Tap a situation to add or remove it. Hold and drag to reorder. The first {count} are shown on Today.",
-  "@situationsEditHelp": {
-    "description": "Help line in the situations editor: tapping toggles a tile, a long press drags it, and only the first few chosen are on the card.",
+  "situationsEditOnToday": "On Today",
+  "@situationsEditOnToday": {
+    "description": "Title of the first section of the situations editor: the situations Today's card shows, at most six, in their order (#1145)."
+  },
+  "situationsEditCount": "{count} of {max}",
+  "@situationsEditCount": {
+    "description": "Counter beside the On Today title in the situations editor: how many situations are on Today of the most it can show.",
     "placeholders": {
       "count": {
+        "type": "int",
+        "example": "4"
+      },
+      "max": {
         "type": "int",
         "example": "6"
       }
     }
   },
+  "situationsEditMore": "More situations",
+  "@situationsEditMore": {
+    "description": "Title of the second section of the situations editor: the situations that are not on Today, which a tap adds."
+  },
+  "situationsEditReorder": "Drag to order",
+  "@situationsEditReorder": {
+    "description": "The one instruction in the situations editor, under On Today: a long press then a drag moves a tile to another place in the order."
+  },
   "situationsEditReset": "Reset to defaults",
   "@situationsEditReset": {
     "description": "Button in the situations editor: goes back to the situations each language starts with."
   },
-  "situationsEditShown": "{title}, shown, number {position}",
+  "situationsEditShown": "{title}, on Today, place {position}",
   "@situationsEditShown": {
-    "description": "Screen reader label of a chosen situation's tile in the editor: its name and its place in the chosen order.",
+    "description": "Screen reader label of a situation's tile in the On Today section of the editor: its name and its place in the order.",
     "placeholders": {
       "title": {
         "type": "String",
@@ -1029,9 +1045,19 @@
       }
     }
   },
-  "situationsEditHidden": "{title}, not shown",
+  "situationsEditHidden": "{title}, not on Today, tap to add",
   "@situationsEditHidden": {
     "description": "Screen reader label of a situation's tile in the editor when it is not chosen; a tap adds it.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Taxi"
+      }
+    }
+  },
+  "situationsEditFull": "{title}, not on Today. Remove one first to add another",
+  "@situationsEditFull": {
+    "description": "Screen reader label of a disabled tile under More situations, while six are on Today: it says what to do first. Nothing of it is shown on screen.",
     "placeholders": {
       "title": {
         "type": "String",

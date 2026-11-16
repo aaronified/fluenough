@@ -89,9 +89,7 @@ void main() {
   });
 
   testWidgets('the menu lists the switches, then a divider, then Fact '
-      'languages and Sources, and no Your decks or Learn from', (
-    tester,
-  ) async {
+      'languages and Sources, and no Your decks or Learn from', (tester) async {
     await _pump(tester, state: _learner());
     await _openMenu(tester);
     final l10n = _l10n(tester);

@@ -82,10 +82,7 @@ class TodayPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         bottom: false,
-        child: LanguageBarFrame(
-          screen: LanguageBarScreen.today,
-          child: body,
-        ),
+        child: LanguageBarFrame(screen: LanguageBarScreen.today, child: body),
       ),
     );
   }

@@ -56,10 +56,7 @@ class _LanguageBarFrameState extends State<LanguageBarFrame> {
   Widget build(BuildContext context) => Column(
     crossAxisAlignment: CrossAxisAlignment.stretch,
     children: <Widget>[
-      LanguageBar(
-        screen: widget.screen,
-        scrolledUnder: _scrolledUnder,
-      ),
+      LanguageBar(screen: widget.screen, scrolledUnder: _scrolledUnder),
       ?widget.below,
       Expanded(
         child: NotificationListener<ScrollNotification>(

@@ -98,3 +98,43 @@ MR-080..091: sentences decks for the 75 word decks without one, 12 workers of ab
 - Professional decks need the owner's profession list.
 - A source-it-yourself mode for recommendations is specified in [Plan-Language-Completeness](Plan-Language-Completeness.md) but not implemented; MR-060 and MR-061 use the shape of `recommendations/es.yaml`.
 - The `mr` registry entry is shared tooling; MR-110 goes through the parent.
+
+## 6. Status and resume plan (2026-11-16, paused at the owner's instruction until 2 PM IST)
+
+### Done and merged into decks-live
+
+| PR | Content |
+|---|---|
+| #1456 | 72 sentence decks (861 cards), in the path |
+| #1457 | `mr-topics` (12), `mr-situations` (10 sheets), `mr-proverbs-1..3` (60), `mr-culture-1` (18), creators |
+| #1477 | `mr-multiword-1` (10 conjunct verbs) |
+| #1478 | 72 reading decks (216 questions, mr-7000..7535), in the path |
+| #1479 | `mr-culture-2` (18), `mr-culture-3` (8), 11 recommendations, creators |
+| #1490 | 47 review-queue rows |
+| #1497 | 156 notes on word cards (incl. 95 numeral notes), 20 queue rows |
+
+### Merged since (2026-11-16)
+
+| PR | Content |
+|---|---|
+| #1506 | `mr-multiword-2..5` (23 + 9 + 15 + 13 cards); one Sonnet review, two BLOCKING fixed |
+| #1509 | `mr-culture-4` (6 cards), 11 more recommendations, creators; one Sonnet review, IPA slashes fixed |
+
+No PR is open.
+
+### Resume plan (after 2 PM IST, when the parent says go)
+
+1. Merging: `gh api repos/aaronified/fluenough/pulls/N/merge -X PUT -f merge_method=squash` when every check is green; on 'Base branch was modified' use `update-branch`. If red: pull the validate log (`gh api .../actions/jobs/<id>/logs`), send a Haiku to fix exactly the errors, rerun only what failed.
+2. Culture top-up from `wiki/Plan-Culture-Marathi-Addendum-1.md` (verified rows: culture 1 rows 19 to 39, culture 2 rows 10 to 27, culture 3 rows 19 to 48): one Haiku worker, serial because of `decks/creators/mr.yaml`, branch `decks/mr-kinds-wave4` from decks-live (#1509 is merged): (a) append 10 cards to `mr-culture-3` (8 to 18), ids mr-4108 to mr-4149; (b) append 12 cards to `mr-culture-4` (6 to 18; sant poets who died before 1900, theme older verse), ids mr-4156 to mr-4199. Verified rows only; creators appended; one Sonnet review; readings by the tool; no slashes in `ipa`.
+3. Narrow IPA (MR-110/111): the rules file is on branch `decks/mr-phonetics`; open its PR to decks-live (Sonnet review); the registry entry (branch `mr-phonetics-design`, issue #1476) needs the parent or owner (shared tooling) and the `ṁ` vs `m̐` question. After both merge: `python3 tools/derive_phonetic.py mr --write` and `--bracket-unchanged --write` on decks-live (tool run, no hand edits).
+4. Review-queue: append the rows of the last builders' reports (multi-word 2-5, culture 4, recommendations, fixes) to `docs/review-queue/mr.md` (parser: first cell one card id or `unit-level`/`course-wide`; extra ids go in the question text; question at most 400 characters).
+5. Update the Marathi row of [Plan-Language-Completeness](Plan-Language-Completeness.md) and issue #1177; send the parent the final summary table.
+
+### Left out, with reasons (not accepted shortfalls: re-open when a source appears)
+
+- Culture 4 and situations: ~30 phrases of `mr-situations` have no card (need Marathi from a reviewer); culture 4 reaches 18 only through step 2.
+- Recommendations: songs and podcasts (no page found); Shwaas, Sant Tukaram, Sant Dnyaneshwar film, Ventilator (creator dates unreadable); Natsamrat/Katyar film pages.
+- Multi-word: structure-only compound-verb entries (no stated meaning) and five gloss-only dative-subject rows; ten bases without a gloss (404 on both wiktionaries).
+- Notes: set cards (mr-0694, mr-0695, mr-1001) cannot carry notes; mr-0474, mr-0606, mr-0393, mr-0562, mr-0403 have no certain note.
+- Hosts blocked through the proxy: archive.org, britannica.com, imdb.com, wikibooks (en and mr), gutenberg.org, hathitrust.org, loc.gov, dsal.uchicago.edu, ncert.nic.in, ebalbharati.in, indianculture.gov.in, sahitya-akademi.gov.in, marathivishwakosh.org; the Wikimedia APIs rate-limit (429): pace 10 to 20 s.
+- Open owner questions: grammar-unit reading decks (the wiki pages disagree; te and es list them); professional decks; `ṁ` for Marathi; whether set cards may carry notes.

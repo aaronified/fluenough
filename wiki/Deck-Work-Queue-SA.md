@@ -188,3 +188,16 @@ The sandbox's egress proxy allows only some hosts. A blocked host answers `CONNE
 
 - 2026-11-16, SA-003: branch `decks/sa-a1-wave1` pushed at `86651e5e` with the re-planned `decks/sa/sa-path.yaml`: 77 units (unit 1 is `sa-phrasebook`, `sa-first-words`, `*`; then 76 planned): A1 33 units (mark on `sa-work`, 400 words), A2 22 (mark on `sa-verbs-3`, 600), B1 21 (mark on `sa-verbs-4`, 900). Grammar units follow SA-100 to SA-139 with `sa-grammar-sutra-1` to `-4`. Three themes added to `decks/themes.yaml` on that branch: `dharma`, `ritual`, `learning`. `alphabet` is `[]` until the script decks exist.
 - 2026-11-16: the parent confirmed IAST readings (ṃ, ṛ) as vsn does, and is building the `sa` engine in `tools/transcribe.py`; readings of word decks wait for it.
+
+## Pause and resume plan (2026-11-16)
+
+Owner instruction relayed by the parent: pause the deck workers until 2 PM IST on 2026-11-16; start no new workers or phases; running workers finish and push; merge nothing new unless CI is already green.
+
+State at the pause: shared branch `decks/sa-a1-wave1` at `4ca09dbf8` (no PR yet, CI not yet run on it). On it: the re-planned path (77 units; units 7 and 8 are the written script units; `alphabet` lists the six script decks), `sa-phrasebook` and `sa-first-words` (ids sa-0001 to sa-0030), `sa-facts` (30), six script decks (sa-4000 to sa-4101), `docs/review-queue/sa.md`, and every file at minimum app version 0.10.7 in `decks/min_app.json` (the parent cuts 0.10.7 with the Dart IAST parser). One Sonnet worker (SA-016, SA-017, SA-100 to SA-102: script/spelling/romanisation, sounds and sound-differences, case system, a-stems, present system) was still running at the pause and finishes on its own.
+
+Resume, in order:
+1. Read the Sonnet worker's report (or `git log origin/decks/sa-a1-wave1`); re-brief it for anything unfinished.
+2. Open ONE PR `decks/sa-a1-wave1` to `decks-live`; read CI (`gh api repos/aaronified/fluenough/commits/<sha>/check-runs`); only "Validate decks" and "Released app reads the decks" matter; fix failures on the branch.
+3. Run, on the same branch, Haiku word-unit workers (SA-200.., ids sa-1000..2999, one worktree each, at most 6) for the A1 word units in path order, then sentences (SA-300..), readings (SA-400..), and Sonnet rules units SA-103, SA-104, SA-105; drop 2 workers per running review.
+4. One Sonnet review of the A1 PR (report-only, BLOCKING/NIT); workers apply fixes; merge when green.
+5. Then `decks/sa-a2-wave1` (SA-110..120) and `decks/sa-b1-wave1` (SA-130..139, SA-410..413), the genre decks (SA-500..550, from Plan-Culture-Sanskrit), the narrow IPA (SA-600..602) and the review queue (SA-620), each on its own shared branch and PR.

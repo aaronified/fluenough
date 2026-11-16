@@ -365,10 +365,8 @@ Finder zone() => find
 
 /// The word All on the language bar: Progress had it as a button until the
 /// owner removed it (2026-11-16).
-Finder allText() => find.descendant(
-  of: find.byType(LanguageBar),
-  matching: find.text('All'),
-);
+Finder allText() =>
+    find.descendant(of: find.byType(LanguageBar), matching: find.text('All'));
 
 Future<void> openMenu(WidgetTester tester) async {
   await tester.tap(zone());
@@ -1089,9 +1087,7 @@ void main() {
         await pumpBar(tester, screen: screen);
         expect(find.byIcon(Icons.bug_report_outlined), findsNothing);
         expect(allText(), findsNothing, reason: screen.name);
-        final wheel = find.byKey(
-          const ValueKey<String>('language-bar-mask'),
-        );
+        final wheel = find.byKey(const ValueKey<String>('language-bar-mask'));
         expect(tester.getCenter(wheel).dx, closeTo(195, 1));
         expect(tester.getSize(wheel).width, closeTo(390 - 8, 1));
       }
