@@ -432,6 +432,7 @@ A plan with no tracking issue is flagged.
 - [synonym sets for typed English meanings](https://github.com/aaronified/fluenough/wiki/Plan-Synonym-Dictionary), **no tracking issue**
 - [cut the tests down to behaviour](https://github.com/aaronified/fluenough/wiki/Plan-Test-Cut) (Written 2026-10-20), **no tracking issue**
 - [Vedic accent marks, and one Devanagari engine for Vedic and Classical Sanskrit](https://github.com/aaronified/fluenough/wiki/Plan-Vedic-Engine), **no tracking issue**
+- [the Vedic Sanskrit reading path](https://github.com/aaronified/fluenough/wiki/Plan-Vedic-Path), **no tracking issue**
 - [Fluenough on the web, as a PWA on GitHub Pages](https://github.com/aaronified/fluenough/wiki/Plan-Web-Pwa), tracks #218
 - [word-order tiles without giveaways, and with extra tiles](https://github.com/aaronified/fluenough/wiki/Plan-Word-Order-Tiles) (Written 2026-10-05), tracks #234
 - [a phrasebook, then words, then rules, then sentences](https://github.com/aaronified/fluenough/wiki/Plan-Words-Rules-Sentences) (Written 2026-10-07), tracks #413
