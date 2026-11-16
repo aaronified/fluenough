@@ -26,7 +26,7 @@ State was read from `origin/decks-live` on 2026-11-16 (`git ls-tree` over `decks
 | 14 | Recommendations | **MISSING** | no `decks/recommendations/vsn.yaml`; public-domain editions and translations only (source-it-yourself does not apply: these are all public domain) | VSA-060 |
 | 15 | Narrow IPA and broad `ipa` | **BLOCKED** | no `vsn` engine in `tools/transcribe.py` (`python3 tools/transcribe.py vsn ...` fails in `parse`); no `vsn` entry in `tools/phonetic_languages.yaml`; no `vsn-phonetics.yaml`. The 30 existing readings and broad IPA were hand-written. 0 `phonetic` | VSA-110 first |
 | 16 | Review-queue rows | **MISSING** | no `docs/review-queue/vsn.md` | VSA-120 |
-| 17 | Sourcing list | **THIS PAGE, section 4** | host test and candidate works below; the verified list is VSA-001 | VSA-001 |
+| 17 | Sourcing list | **DONE** | host test and candidate works in section 2; the verified list is [Plan-Culture-Vedic](Plan-Culture-Vedic.md) (VSA-001, 2026-11-16) | none |
 | 18 | Facts file | **MISSING** | no `vsn-facts.yaml` | VSA-080 |
 
 ### A1 gap, from the path (units 1 to 33)
@@ -47,7 +47,7 @@ Ids: highest today `vsn-0030`; reserved ranges (never reused, ascending inside a
 
 | Id | Model | Branch | Spec |
 |---|---|---|---|
-| VSA-001 | Sonnet | main (docs) | Sourcing list: for each public-domain work above, which host serves a readable copy, then verified lists for culture decks, recommendations, proverbs and multi-word verbs; every entry read on a cited page; one-line drop reasons |
+| VSA-001 | Sonnet | main (docs) | **DONE 2026-11-16**, [Plan-Culture-Vedic](Plan-Culture-Vedic.md). Hosts: sa.wikisource, en.wikisource, en.wikipedia, commons, wikiquote, wikidata reachable (hard 429 rate limit, honour `retry-after`); archive.org, gutenberg, sacred-texts, sanskritdocuments, GRETIL, TITUS, books.google and also hathitrust, dsal, wisdomlib, wikibooks, bare wikisource.org, mediawiki.org blocked (403). Readable: Rigveda Devanagari per hymn (sa.wikisource, rishi, deity, metre in the header), Griffith per hymn, Whitney's Grammar per chapter, Macdonell's History per chapter, Macdonell's Vedic Mythology as OCR (edit view of the `Page:` namespace). Not readable: Macdonell's Vedic Grammar and Reader, Müller, Lanman's Vedic selections, Monier-Williams, Muir, Bloomfield's Concordance. Verified lists: 25 hymns in 3 culture decks (10, 8, 7) plus a 4-card Vedas deck, 12 creators with years (rishis get no years), 8 sayings (6 after the cap), 20 multi-word verbs (16 attested in a read hymn), 14 recommendations, 45 facts, grammar table (injunctive and tmesis as labels UNVERIFIED, the phenomena confirmed in Whitney), 32 dropped items |
 | VSA-010 | Sonnet | main (docs) then `decks/vsn-a1-wave1` | Re-plan `vsn-path.yaml` units 2 to 33 as a Vedic reading syllabus, themes drawn from the Rigveda's own vocabulary, with word counts inside `levels` |
 | VSA-100 | Sonnet | main (docs) | Validator and app check: do Vedic accent marks (U+0951, U+0952, U+1CDA and others) pass `validate_decks.py` in `target`; does the font cover them (`decks/fonts`); record result |
 | VSA-110 | Sonnet | `tools/vsn-transcribe` (tools PR to main, via parent) | `vedic` engine in `tools/transcribe.py`, shared with `sa` if that engine exists by then; accent policy from VSA-100; tests; verified against the 30 existing cards (a disagreement goes to the review queue, never silently edited) |
