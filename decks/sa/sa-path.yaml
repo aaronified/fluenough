@@ -55,11 +55,8 @@ alphabet:
 units:
   - decks: ["sa-phrasebook", "sa-first-words", "*"]
     words: 10
-  - planned: { id: "sa-sound-differences", grammar: ["sound-differences", "vowel-length", "sthana", "pratyahara"] }
-    listening_passages:
-      - { id: "sound-differences-heard", text: { "en": "A short passage in Classical Sanskrit showing sound differences, vowel length, sthana, pratyahara, read aloud" } }
-    reading_passages:
-      - { id: "sound-differences-text", text: { "en": "A short written text in Classical Sanskrit showing sound differences, vowel length, sthana, pratyahara" } }
+  - decks: ["sa-sound-differences"]
+    words: 22
   - planned: { id: "sa-questions", theme: "questions", words: 7 }
     listening_passages:
       - { id: "questions-heard", text: { "en": "A short passage in Classical Sanskrit on the theme yes, no and questions, read aloud" } }
