@@ -1,0 +1,99 @@
+# The kinds of compound (samasa), one row each, with three examples. An example comes from a Wiktionary entry (and the meaning given there) or from the examples of Whitney, whose Roman spelling the Devanagari here was checked against with tools/transcribe.py (sa).
+# The kind of each Wiktionary example is the one the entry names where it names one (matapitr: dvandva; trailoka: dvigu; jalacara: tatpurusa); for the others the kind is read from the structure of the compound and Whitney's definitions.
+schema: 1
+id: "sa-grammar-samasa"
+part: "core"
+kind: "grammar"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+source: "Whitney, Sanskrit Grammar 1246 to 1248, 1252, 1262 to 1264, 1279, 1280, 1293, 1298, 1312 and 1313 (the classes of compound and their examples, chapter XVIII) on en.wikisource, read 2026-11-16; en.wiktionary.org entries of matapitr, mahatman, saptaha, triloka, cakrapani, pratidinam, maharsi, rajadhani, vidyalaya, himapata, padatrana, padodaka, adharma, ajnana, amitra and jalacara (the compound type where the entry names it, the meaning in every case), read 2026-11-16; Panini, Astadhyayi 2.1.5, 2.1.22, 2.1.23, 2.1.37, 2.1.40, 2.1.52, 2.1.57, 2.2.6, 2.2.8 and 2.2.23 as typed on sa.wikisource.org/wiki/अष्टाध्यायी (the second chapter page), read 2026-11-16; readings and IPA from tools/transcribe.py (sa)."
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["compound-1", "compound-2", "compound-3"]
+  entries:
+    - lemma: "द्वन्द्वः"
+      key: "dvandva"
+      reading: "dvandvaḥ"
+      ipa: "d̪ʋənd̪ʋəh"
+      forms: { "compound-1": "मातापितृ", "compound-2": "इन्द्रावरुणौ", "compound-3": "सत्यानृते" }
+      readings: { "compound-1": "mātāpitṛ", "compound-2": "indrāvaruṇau", "compound-3": "satyānṛte" }
+      ipas: { "compound-1": "maːt̪aːpit̪r̩", "compound-2": "ind̪raːʋəruɳəu", "compound-3": "sət̪jaːnr̩t̪eː" }
+    - lemma: "द्वितीया-तत्पुरुषः"
+      key: "tp-dvitiya"
+      reading: "dvitīyā-tatpuruṣaḥ"
+      ipa: "d̪ʋit̪iːjaːt̪ət̪puruʂəh"
+      forms: { "compound-1": "नगरगमन", "compound-2": "आयुर्दा", "compound-3": null }
+      readings: { "compound-1": "nagaragamana", "compound-2": "āyurdā" }
+      ipas: { "compound-1": "nəɡərəɡəmənə", "compound-2": "aːjurd̪aː" }
+    - lemma: "तृतीया-तत्पुरुषः"
+      key: "tp-trtiya"
+      reading: "tṛtīyā-tatpuruṣaḥ"
+      ipa: "t̪r̩t̪iːjaːt̪ət̪puruʂəh"
+      forms: { "compound-1": "हस्तकृत", "compound-2": "आत्मसादृश्य", "compound-3": "धान्यार्थ" }
+      readings: { "compound-1": "hastakṛta", "compound-2": "ātmasādṛśya", "compound-3": "dhānyārtha" }
+      ipas: { "compound-1": "ɦəst̪əkr̩t̪ə", "compound-2": "aːt̪məsaːd̪r̩ʃjə", "compound-3": "d̪ʱaːnjaːrt̪ʰə" }
+    - lemma: "चतुर्थी-तत्पुरुषः"
+      key: "tp-caturthi"
+      reading: "caturthī-tatpuruṣaḥ"
+      ipa: "tʃət̪urt̪ʰiːt̪ət̪puruʂəh"
+      forms: { "compound-1": "पादोदक", "compound-2": "पादत्राण", "compound-3": "मासनिचय" }
+      readings: { "compound-1": "pādodaka", "compound-2": "pādatrāṇa", "compound-3": "māsanicaya" }
+      ipas: { "compound-1": "paːd̪oːd̪əkə", "compound-2": "paːd̪ət̪raːɳə", "compound-3": "maːsənitʃəjə" }
+    - lemma: "पञ्चमी-तत्पुरुषः"
+      key: "tp-pancami"
+      reading: "pañcamī-tatpuruṣaḥ"
+      ipa: "pəɲtʃəmiːt̪ət̪puruʂəh"
+      forms: { "compound-1": "मद्वियोग", "compound-2": "अप्सरःसम्भव", "compound-3": null }
+      readings: { "compound-1": "madviyoga", "compound-2": "apsaraḥsambhava" }
+      ipas: { "compound-1": "məd̪ʋijoːɡə", "compound-2": "əpsərəhsəmbʱəʋə" }
+    - lemma: "षष्ठी-तत्पुरुषः"
+      key: "tp-sasthi"
+      reading: "ṣaṣṭhī-tatpuruṣaḥ"
+      ipa: "ʂəʂʈʰiːt̪ət̪puruʂəh"
+      forms: { "compound-1": "राजधानी", "compound-2": "विद्यालय", "compound-3": "हिमपात" }
+      readings: { "compound-1": "rājadhānī", "compound-2": "vidyālaya", "compound-3": "himapāta" }
+      ipas: { "compound-1": "raːdʒəd̪ʱaːniː", "compound-2": "ʋid̪jaːləjə", "compound-3": "ɦiməpaːt̪ə" }
+    - lemma: "सप्तमी-तत्पुरुषः"
+      key: "tp-saptami"
+      reading: "saptamī-tatpuruṣaḥ"
+      ipa: "səpt̪əmiːt̪ət̪puruʂəh"
+      forms: { "compound-1": "जलक्रीडा", "compound-2": "ग्रामवास", "compound-3": "जलचर" }
+      readings: { "compound-1": "jalakrīḍā", "compound-2": "grāmavāsa", "compound-3": "jalacara" }
+      ipas: { "compound-1": "dʒələkriːɖaː", "compound-2": "ɡraːməʋaːsə", "compound-3": "dʒələtʃərə" }
+    - lemma: "नञ्-तत्पुरुषः"
+      key: "tp-nan"
+      reading: "nañ-tatpuruṣaḥ"
+      ipa: "nəɲt̪ət̪puruʂəh"
+      forms: { "compound-1": "अधर्म", "compound-2": "अज्ञान", "compound-3": "अमित्र" }
+      readings: { "compound-1": "adharma", "compound-2": "ajñāna", "compound-3": "amitra" }
+      ipas: { "compound-1": "əd̪ʱərmə", "compound-2": "ədʒɲaːnə", "compound-3": "əmit̪rə" }
+    - lemma: "कर्मधारयः"
+      key: "karmadharaya"
+      reading: "karmadhārayaḥ"
+      ipa: "kərməd̪ʱaːrəjəh"
+      forms: { "compound-1": "महर्षि", "compound-2": "प्रियसखि", "compound-3": "सुकृत" }
+      readings: { "compound-1": "maharṣi", "compound-2": "priyasakhi", "compound-3": "sukṛta" }
+      ipas: { "compound-1": "məɦərʂi", "compound-2": "prijəsəkʰi", "compound-3": "sukr̩t̪ə" }
+    - lemma: "द्विगुः"
+      key: "dvigu"
+      reading: "dviguḥ"
+      ipa: "d̪ʋiɡuh"
+      forms: { "compound-1": "सप्ताह", "compound-2": "त्रिलोक", "compound-3": "पञ्चयोजन" }
+      readings: { "compound-1": "saptāha", "compound-2": "triloka", "compound-3": "pañcayojana" }
+      ipas: { "compound-1": "səpt̪aːɦə", "compound-2": "t̪riloːkə", "compound-3": "pəɲtʃəjoːdʒənə" }
+    - lemma: "बहुव्रीहिः"
+      key: "bahuvrihi"
+      reading: "bahuvrīhiḥ"
+      ipa: "bəɦuʋriːɦih"
+      forms: { "compound-1": "महात्मन्", "compound-2": "चक्रपाणि", "compound-3": "उग्रबाहु" }
+      readings: { "compound-1": "mahātman", "compound-2": "cakrapāṇi", "compound-3": "ugrabāhu" }
+      ipas: { "compound-1": "məɦaːt̪mən", "compound-2": "tʃəkrəpaːɳi", "compound-3": "uɡrəbaːɦu" }
+    - lemma: "अव्ययीभावः"
+      key: "avyayibhava"
+      reading: "avyayībhāvaḥ"
+      ipa: "əʋjəjiːbʱaːʋəh"
+      forms: { "compound-1": "प्रतिदिनम्", "compound-2": "उपनदि", "compound-3": "प्रतिनिशम्" }
+      readings: { "compound-1": "pratidinam", "compound-2": "upanadi", "compound-3": "pratiniśam" }
+      ipas: { "compound-1": "prət̪id̪inəm", "compound-2": "upənəd̪i", "compound-3": "prət̪iniʃəm" }
