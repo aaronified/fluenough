@@ -394,6 +394,7 @@ A plan with no tracking issue is flagged.
 - [Spanish genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Spanish), **no tracking issue**
 - [Tamil genre decks, verified sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Tamil), **no tracking issue**
 - [Telugu genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Telugu), **no tracking issue**
+- [Vedic Sanskrit genre decks, verified sourcing list (culture, creators, sayings, multi-word verbs, recommendations, facts)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Vedic), **no tracking issue**
 - [reviewing decks in the app, sent by mail](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Browser) (Written 2026-10-06), tracks #403
 - [deck kinds, levels, hidden decks, sources, creators, recommendations, topics and search kinds as data](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Kinds-And-Topics), **no tracking issue**
 - [deck-owned data on decks-live](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Owned-Data), **no tracking issue**
