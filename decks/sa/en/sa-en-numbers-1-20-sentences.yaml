@@ -1,0 +1,32 @@
+schema: 1
+id: "sa-en-numbers-1-20-sentences"
+kind: "layer"
+core: "sa-numbers-1-20-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with numbers"
+description: "Short sentences with the numbers of Numbers 1 to 20, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3040":
+    native: "Five gods."
+    bases: { "देवाः": "god (plural: gods)" }
+    confusables: { "w1": { why: "Six, not five: षट् (ṣaṭ) means six." }, "w2": { why: "Seven, not five: सप्त (sapta) means seven." } }
+    notes: { "n1": "देवाः (devāḥ), gods, is the plural of देवः (devaḥ), god." }
+  "sa-3041":
+    native: "Nine cows."
+    bases: { "गावः": "cow (plural: cows)" }
+    confusables: { "w1": { why: "Ten, not nine: दश (daśa) means ten." }, "w2": { why: "Eight, not nine: अष्ट (aṣṭa) means eight." } }
+    notes: { "n1": "गावः (gāvaḥ), cows, is the plural of गौः (gauḥ), cow, built on the stem गाव (gāv)." }
+  "sa-3042":
+    native: "How many daughters?"
+    bases: { "सुताः": "daughter (plural: daughters)" }
+    confusables: { "w1": { why: "Who, not how many: कः (kaḥ) asks who." }, "w2": { why: "Where, not how many: कुत्र (kutra) asks where." } }
+  "sa-3043":
+    native: "Seven wives."
+    bases: { "पत्न्यः": "wife (plural: wives)" }
+    confusables: { "w1": { why: "Three, not seven: त्रयः (trayaḥ) means three." }, "w2": { why: "Nine, not seven: नव (nava) means nine." } }
+  "sa-3044":
+    native: "Six friends."
+    bases: { "सखायः": "friend (plural: friends)" }
+    confusables: { "w1": { why: "Five, not six: पञ्च (pañca) means five." }, "w2": { why: "Seven, not six: सप्त (sapta) means seven." } }

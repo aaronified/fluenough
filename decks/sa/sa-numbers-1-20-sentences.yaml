@@ -1,0 +1,45 @@
+schema: 1
+id: "sa-numbers-1-20-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3040"
+    target: "पञ्च देवाः."
+    reading: "pañca devāḥ."
+    ipa: "pəɲtʃə d̪eːʋaːh"
+    pos: "phrase"
+    bases: [{ word: "पञ्च", ref: "sa-1053" }, { word: "देवाः", base: "देवः", reading: "devaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1054", kind: "word" }, { id: "w2", ref: "sa-1055", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3041"
+    target: "नव गावः."
+    reading: "nava gāvaḥ."
+    ipa: "nəʋə ɡaːʋəh"
+    pos: "phrase"
+    bases: [{ word: "नव", ref: "sa-1057" }, { word: "गावः", base: "गौः", reading: "gauḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1058", kind: "word" }, { id: "w2", ref: "sa-1056", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3042"
+    target: "कति सुताः?"
+    reading: "kati sutāḥ?"
+    ipa: "kət̪i sut̪aːh"
+    pos: "phrase"
+    bases: [{ word: "कति", ref: "sa-1005" }, { word: "सुताः", base: "सुता", reading: "sutā" }]
+    confusables: [{ id: "w1", ref: "sa-1001", kind: "word" }, { id: "w2", ref: "sa-1002", kind: "word" }]
+  - id: "sa-3043"
+    target: "सप्त पत्न्यः."
+    reading: "sapta patnyaḥ."
+    ipa: "səpt̪ə pət̪njəh"
+    pos: "phrase"
+    bases: [{ word: "सप्त", ref: "sa-1055" }, { word: "पत्न्यः", base: "पत्नी", reading: "patnī" }]
+    confusables: [{ id: "w1", ref: "sa-1051", kind: "word" }, { id: "w2", ref: "sa-1057", kind: "word" }]
+  - id: "sa-3044"
+    target: "षट् सखायः."
+    reading: "ṣaṭ sakhāyaḥ."
+    ipa: "ʂəʈ səkʰaːjəh"
+    pos: "phrase"
+    bases: [{ word: "षट्", ref: "sa-1054" }, { word: "सखायः", base: "सखा", reading: "sakhā" }]
+    confusables: [{ id: "w1", ref: "sa-1053", kind: "word" }, { id: "w2", ref: "sa-1055", kind: "word" }]
