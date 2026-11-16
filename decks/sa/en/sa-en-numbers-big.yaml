@@ -4,7 +4,7 @@ kind: "layer"
 core: "sa-numbers-big"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Hundreds, thousands and big numbers"
-description: "Hundreds, thousands and the larger counts of Classical Sanskrit, with the count noun that follows them."
+description: "Thirty, forty and fifty, then hundreds, thousands and the larger counts of Classical Sanskrit, with the count noun that follows them."
 license: "CC-BY-SA-4.0"
 tags: ["unreviewed"]
 cards:
@@ -76,40 +76,6 @@ cards:
         bases:
           "लक्षं": "hundred thousand"
           "वर्षाणि": "years"
-  "sa-1563":
-    native: "A very large number; its value varies by count."
-    notes:
-      "n1": "The old counts do not agree on the value of नियुत (niyuta), so the deck gives only its size."
-    bases:
-      "नियुतम्": "a very large number"
-    examples:
-      "नियुतं पुरुषाः":
-        native: "Very many men."
-        bases:
-          "नियुतं": "very large number"
-          "पुरुषाः": "men"
-      "नियुतं फलानि":
-        native: "Very many fruits."
-        bases:
-          "नियुतं": "very large number"
-          "फलानि": "fruits"
-  "sa-1564":
-    native: "A very large number; its value varies by count."
-    notes:
-      "n1": "The old counts do not agree on the value of अर्बुद (arbuda), so the deck gives only its size."
-    bases:
-      "अर्बुदम्": "a very large number"
-    examples:
-      "अर्बुदं वर्षाणि":
-        native: "Very many years."
-        bases:
-          "अर्बुदं": "very large number"
-          "वर्षाणि": "years"
-      "अर्बुदं जनाः":
-        native: "Very many people."
-        bases:
-          "अर्बुदं": "very large number"
-          "जनाः": "people"
   "sa-1565":
     native: "Ten lakhs; a million."
     notes:
@@ -144,3 +110,42 @@ cards:
         bases:
           "कोटिः": "ten million"
           "वर्षाणि": "years"
+  "sa-1610":
+    native: "Thirty."
+    notes:
+      "n1": "Thirty. A feminine noun ending in a consonant (stem triṃśat), so it is not in the a-stems table; the count noun follows it in the plural."
+    examples:
+      "त्रिंशत् पुस्तकानि":
+        native: "Thirty books."
+        bases:
+          "पुस्तकानि": "books (plural)"
+      "त्रिंशत् कुम्भाः":
+        native: "Thirty jars."
+        bases:
+          "कुम्भाः": "jars (plural)"
+  "sa-1611":
+    native: "Forty."
+    notes:
+      "n1": "Forty. A feminine noun ending in a consonant (stem catvāriṃśat), so it is not in the a-stems table; the count noun follows it in the plural."
+    examples:
+      "चत्वारिंशत् पुस्तकानि":
+        native: "Forty books."
+        bases:
+          "पुस्तकानि": "books (plural)"
+      "चत्वारिंशत् कुम्भाः":
+        native: "Forty jars."
+        bases:
+          "कुम्भाः": "jars (plural)"
+  "sa-1612":
+    native: "Fifty."
+    notes:
+      "n1": "Fifty. A feminine noun ending in a consonant (stem pañcāśat), so it is not in the a-stems table; the count noun follows it in the plural."
+    examples:
+      "पञ्चाशत् पुस्तकानि":
+        native: "Fifty books."
+        bases:
+          "पुस्तकानि": "books (plural)"
+      "पञ्चाशत् पुष्पाणि":
+        native: "Fifty flowers."
+        bases:
+          "पुष्पाणि": "flowers (plural)"

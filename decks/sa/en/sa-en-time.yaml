@@ -4,144 +4,10 @@ kind: "layer"
 core: "sa-time"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Time and days"
-description: "Time and days in Classical Sanskrit: today, yesterday, tomorrow, now, always, when, then, again, before, evening and morning, and night."
+description: "Time and days in Classical Sanskrit: now, long ago, for a long time, evening and morning, night, dawn, the time of day, the seasons and the rains."
 license: "CC-BY-SA-4.0"
 tags: ["unreviewed"]
 cards:
-  "sa-1538":
-    native: "Today."
-    notes:
-      "n1": "An adverb: it never changes its form."
-    examples:
-      "अद्य शीतम्":
-        native: "It is cold today."
-        bases:
-          "अद्य": "today"
-          "शीतम्": "cold"
-      "अद्य माता दुःखिनी":
-        native: "Today the mother is sad."
-        bases:
-          "अद्य": "today"
-          "माता": "mother"
-          "दुःखिनी": "sad"
-  "sa-1539":
-    native: "Yesterday."
-    notes:
-      "n1": "Built on the old stem ह्यस् (hyas); the form ends in ḥ and does not change."
-    bases:
-      "ह्यः": "yesterday"
-    examples:
-      "ह्यः पिता सुखी":
-        native: "Yesterday the father was happy."
-        bases:
-          "ह्यः": "yesterday"
-          "पिता": "father"
-          "सुखी": "happy"
-      "ह्यः जलं शीतम्":
-        native: "Yesterday the water was cold."
-        bases:
-          "ह्यः": "yesterday"
-          "जलं": "water"
-          "शीतम्": "cold"
-  "sa-1540":
-    native: "Tomorrow."
-    notes:
-      "n1": "Built on the stem श्वस् (śvas), like ह्यः (hyaḥ), and it is the day after today."
-    bases:
-      "श्वः": "tomorrow"
-    examples:
-      "श्वः पाठः कठिनः":
-        native: "Tomorrow the lesson is difficult."
-        bases:
-          "श्वः": "tomorrow"
-          "पाठः": "lesson"
-          "कठिनः": "difficult"
-      "श्वः मधुरं फलम्":
-        native: "Tomorrow, a sweet fruit."
-        bases:
-          "श्वः": "tomorrow"
-          "मधुरं": "sweet"
-          "फलम्": "fruit"
-  "sa-1541":
-    native: "Now; at this time."
-    examples:
-      "इदानीं जलं शीतम्":
-        native: "Now the water is cold."
-        bases:
-          "इदानीं": "now"
-          "जलं": "water"
-          "शीतम्": "cold"
-      "इदानीं माता दुःखिनी":
-        native: "Now the mother is sad."
-        bases:
-          "इदानीं": "now"
-          "माता": "mother"
-          "दुःखिनी": "sad"
-  "sa-1542":
-    native: "Always."
-    examples:
-      "सदा सुखी पिता":
-        native: "A father who is always happy."
-        bases:
-          "सदा": "always"
-          "सुखी": "happy"
-          "पिता": "father"
-      "गङ्गा सदा पवित्रा":
-        native: "The Ganges is always pure."
-        bases:
-          "गङ्गा": "Ganges"
-          "सदा": "always"
-          "पवित्रा": "pure"
-  "sa-1543":
-    native: "When?"
-    notes:
-      "n1": "A question word; its answer is a time word such as सायम् (sāyam), in the evening, or तदा (tadā), then."
-    examples:
-      "कदा पाठः":
-        native: "When is the lesson?"
-        bases:
-          "कदा": "when"
-          "पाठः": "lesson"
-      "कदा जलं शीतम्":
-        native: "When is the water cold?"
-        bases:
-          "कदा": "when"
-          "जलं": "water"
-          "शीतम्": "cold"
-  "sa-1544":
-    native: "Then; at that time."
-    notes:
-      "n1": "The answer to कदा (kadā), when; it points back to a time already named."
-    examples:
-      "तदा पाठः कठिनः":
-        native: "Then the lesson was difficult."
-        bases:
-          "तदा": "then"
-          "पाठः": "lesson"
-          "कठिनः": "difficult"
-      "तदा माता दुःखिनी":
-        native: "Then the mother was sad."
-        bases:
-          "तदा": "then"
-          "माता": "mother"
-          "दुःखिनी": "sad"
-  "sa-1545":
-    native: "Again; once more."
-    notes:
-      "n1": "Built on the stem पुनर् (punar); the ending ḥ is the form the word takes as an adverb."
-    bases:
-      "पुनः": "again"
-    examples:
-      "पुनः पाठः":
-        native: "The lesson again."
-        bases:
-          "पुनः": "again"
-          "पाठः": "lesson"
-      "पुनः शीतम्":
-        native: "Cold again."
-        bases:
-          "पुनः": "again"
-          "शीतम्": "cold"
   "sa-1546":
     native: "Before; earlier."
     notes:
@@ -212,3 +78,116 @@ cards:
           "रात्रौ": "at night"
           "जलं": "water"
           "शीतम्": "cold"
+  "sa-1630":
+    native: "For a long time."
+    notes:
+      "n1": "Wiktionary lists चिरम् (ciram) as an adverb: for a long time, or after a long time; it never changes its form."
+    examples:
+      "चिरं जानामि":
+        native: "I have known it for a long time."
+        bases:
+          "चिरं": "for a long time"
+          "जानामि": "to know (I know)"
+      "चिरं जानन्ति":
+        native: "They have known it for a long time."
+        bases:
+          "चिरं": "for a long time"
+          "जानन्ति": "to know (they know)"
+  "sa-1631":
+    native: "Now."
+    notes:
+      "n1": "Wiktionary lists अधुना (adhunā) as an adverb meaning at this time, now; it never changes its form."
+    examples:
+      "अधुना जानामि":
+        native: "Now I know."
+        bases:
+          "जानामि": "to know (I know)"
+      "अधुना माता दुःखिनी":
+        native: "Now the mother is sad."
+        bases:
+          "माता": "mother"
+          "दुःखिनी": "sad"
+  "sa-1632":
+    native: "Formerly; of old."
+    notes:
+      "n1": "Wiktionary lists पुरा (purā) as an adverb: before, formerly, of old; it never changes its form."
+    examples:
+      "पुरा पुस्तकं नवम्":
+        native: "Formerly the book was new."
+        bases:
+          "पुस्तकं": "book"
+          "नवम्": "new"
+      "पुरा पिता सुखी":
+        native: "Formerly the father was happy."
+        bases:
+          "पिता": "father"
+          "सुखी": "happy"
+  "sa-1633":
+    native: "Season."
+    notes:
+      "n1": "A masculine noun in u (stem ऋतु, ṛtu), so it is not in the a-stems table; Wiktionary gives its senses as a fixed point of time and a season of the year."
+    bases:
+      "ऋतुः": "season"
+    examples:
+      "ऋतुः कठिनः":
+        native: "The season is harsh."
+        bases:
+          "ऋतुः": "season"
+          "कठिनः": "harsh"
+      "ऋतुः पवित्रः":
+        native: "The season is sacred."
+        bases:
+          "ऋतुः": "season"
+          "पवित्रः": "sacred"
+  "sa-1634":
+    native: "Night."
+    notes:
+      "n1": "A feminine noun in ā, a word for night beside रात्रि (rātri); it is not in the a-stems table, which covers masculine and neuter nouns."
+    examples:
+      "निशा दीर्घा":
+        native: "The night is long."
+        bases:
+          "दीर्घा": "long"
+      "निशा शीता":
+        native: "The night is cold."
+        bases:
+          "शीता": "cold"
+  "sa-1635":
+    native: "Dawn; morning light."
+    notes:
+      "n1": "A feminine noun in ā: the morning light, or dawn; it is not in the a-stems table, which covers masculine and neuter nouns."
+    examples:
+      "उषा सुन्दरा":
+        native: "The dawn is beautiful."
+        bases:
+          "सुन्दरा": "beautiful"
+      "उषा शीता":
+        native: "The dawn is cold."
+        bases:
+          "शीता": "cold"
+  "sa-1636":
+    native: "Time; the time of day."
+    notes:
+      "n1": "A feminine noun in ā: time, or the time of day; it is not in the a-stems table, which covers masculine and neuter nouns."
+    examples:
+      "का वेला":
+        native: "What time is it?"
+        bases:
+          "का": "who, what (feminine)"
+      "वेला दीर्घा":
+        native: "The time is long."
+        bases:
+          "दीर्घा": "long"
+  "sa-1637":
+    native: "Rain; the rainy season."
+    notes:
+      "n1": "A feminine noun in ā: rain, and in the plural the rains, the rainy season; it is not in the a-stems table, which covers masculine and neuter nouns."
+    examples:
+      "वर्षा सुन्दरा":
+        native: "The rains are beautiful."
+        bases:
+          "सुन्दरा": "beautiful"
+      "वर्षा दीर्घा":
+        native: "The rainy season is long."
+        bases:
+          "दीर्घा": "long"

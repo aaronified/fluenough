@@ -4,7 +4,7 @@ kind: "layer"
 core: "sa-quantities"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "How much and how many"
-description: "How much and how many in Classical Sanskrit: little and much, all and some, full and empty, only, again, and how many."
+description: "How much and how many in Classical Sanskrit: little and much, all and some, more and less, full and empty, enough and plentiful."
 license: "CC-BY-SA-4.0"
 tags: ["unreviewed"]
 cards:
@@ -180,21 +180,6 @@ cards:
         bases:
           "कतिपयानि": "some"
           "पुस्तकानि": "books"
-  "sa-1510":
-    native: "Only; merely."
-    notes:
-      "n1": "It follows the word it limits: जलं (jalaṃ) मात्र (mātra) is only water."
-    examples:
-      "जलं मात्र":
-        native: "Only water."
-        bases:
-          "जलं": "water"
-          "मात्र": "only"
-      "देवाः मात्र":
-        native: "Only gods."
-        bases:
-          "देवाः": "gods"
-          "मात्र": "only"
   "sa-1511":
     native: "Again; more; further."
     notes:
@@ -212,21 +197,6 @@ cards:
         bases:
           "भूयः": "again"
           "देवाः": "gods"
-  "sa-1512":
-    native: "How many?"
-    notes:
-      "n1": "A question word: the counted noun follows it, as in कति (kati) देवाः (devāḥ), how many gods."
-    examples:
-      "कति देवाः":
-        native: "How many gods?"
-        bases:
-          "कति": "how many"
-          "देवाः": "gods"
-      "कति पुस्तकानि":
-        native: "How many books?"
-        bases:
-          "कति": "how many"
-          "पुस्तकानि": "books"
   "sa-1513":
     native: "Whole; entire."
     notes:
@@ -244,3 +214,35 @@ cards:
         bases:
           "सकलः": "whole"
           "देशः": "country"
+  "sa-1620":
+    native: "Enough; sufficient."
+    notes:
+      "n1": "Enough; sufficient. Wiktionary lists the adjective पर्याप्त (paryāpta), which also means full or abundant; the ending follows the noun it describes."
+    bases:
+      "पर्याप्तः": "enough (stem paryāpta)"
+    examples:
+      "पर्याप्तं जलम्":
+        native: "Enough water."
+        bases:
+          "पर्याप्तं": "enough"
+          "जलम्": "water"
+      "पर्याप्तः कुम्भः":
+        native: "One jar is enough."
+        bases:
+          "पर्याप्तः": "enough"
+          "कुम्भः": "jar"
+  "sa-1621":
+    native: "Much; many; plentiful."
+    notes:
+      "n1": "Much, many or plentiful. Wiktionary lists the adjective भूरि (bhūri); in the neuter nominative it keeps this form, as in भूरि (bhūri) जलम् (jalam), much water."
+    examples:
+      "भूरि जलम्":
+        native: "Much water."
+        bases:
+          "भूरि": "much"
+          "जलम्": "water"
+      "भूरि पुस्तकम्":
+        native: "Many books."
+        bases:
+          "भूरि": "many"
+          "पुस्तकम्": "book"
