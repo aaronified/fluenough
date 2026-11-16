@@ -2,6 +2,7 @@
 # the questions after the learner has marked the work as seen, read or heard. Nothing of a work is quoted (wiki/Plan-Language-Completeness.md,
 # "Source-it-yourself works"). No links are given: no link has been checked. Briefings and questions use only what the page named in the creators file or the work's own
 # Wikipedia article says (read 2026-11-15). Levels are defaults (B1) until a reviewer sets them. Not reviewed by a Kannada speaker (docs/review-queue/kn.md).
+# Wave 2 (2026-11-16): eight works added from en and kn Wikipedia and, for Marali Mannige, the 1959 Bengali translation scanned in the Digital Library of India (archive.org); creators added from their Wikipedia pages.
 schema: 1
 kind: "recommendations"
 id: "recommendations-kn"
@@ -141,4 +142,129 @@ recommendations:
       - { id: "q1", prompt: { en: "Who first completed the remaining eight chapters that Kumara Vyasa left incomplete?" }, options: { en: ["Thimmanna Kavi", "Lakshmisha", "Chamarasa"] }, answer: 1 }
       - { id: "q2", prompt: { en: "According to local belief, who narrated the story to the poet from behind the statue?" }, options: { en: ["Sri Veera Narayana, the Lord Vishnu", "The sage Vyasa", "The poet's teacher"] }, answer: 1 }
       - { id: "q3", prompt: { en: "What condition did the narrator lay down for the poet?" }, options: { en: ["To write only at night", "He must not try to see the source of the voice", "To tell no one the story"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-bedara-kannappa"
+    medium: "film"
+    title: { text: "ಬೇಡರ ಕಣ್ಣಪ್ಪ", reading: "bēḍara kaṇṇappa" }
+    creator: ["kn-h-l-n-simha"]
+    year: 1954
+    level: "B1"
+    briefing: { en: "A 1954 Kannada devotional film directed by H. L. N. Simha, about a young man of a hunter tribe. It began as a stage play." }
+    questions:
+      - { id: "q1", prompt: { en: "Who are Dinna and Neela in the film's story?" }, options: { en: ["Gods banished to earth, born into a tribe of hunters", "Two priests of the village temple", "Children of a king raised in the forest"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who accuses Dinna of theft?" }, options: { en: ["The village headman", "A corrupt temple priest", "A rival hunter"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What record did the film set in the cinemas?" }, options: { en: ["The first Kannada film shot in colour", "The first Kannada film shown abroad", "The first Kannada film to run for 365 days straight"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "What name was the young man Muthuraj given when he was cast as Kannappa?" }, options: { en: ["Rajkumar", "Kannappa Kumar", "Simha Kumar"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-kittur-chennamma"
+    medium: "film"
+    title: { text: "ಕಿತ್ತೂರು ಚೆನ್ನಮ್ಮ", reading: "kittūru cennamma" }
+    creator: ["kn-b-r-panthulu", "kn-an-krishna-rao"]
+    year: 1961
+    level: "B1"
+    briefing: { en: "A 1961 Kannada historical film directed and produced by B. R. Panthulu, about the queen of Kittur who rose against foreign rule." }
+    questions:
+      - { id: "q1", prompt: { en: "Which character does Dr. Rajkumar play?" }, options: { en: ["Harana Setty", "Raja Mallasarja", "The British collector"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Against which power does the queen lead her armed rebellion in 1824?" }, options: { en: ["The Marathas", "The Nizam of Hyderabad", "The British East India Company"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "What did Panthulu adapt for the story of the film?" }, options: { en: ["A novel by Kuvempu", "A play by Anakru (A. N. Krishna Rao)", "A poem by Pampa"] }, answer: 2 }
+      - { id: "q4", prompt: { en: "Which twelfth-century poet's poems were taken for two of the film's songs?" }, options: { en: ["Basavanna", "Akka Mahadevi", "Purandara Dasa"] }, answer: 2 }
+      - { id: "q5", prompt: { en: "What did the film win at the 9th National Film Awards?" }, options: { en: ["Best Feature Film in Kannada", "Best Actress", "Best Music Direction"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-sandhya-raga"
+    medium: "film"
+    title: { text: "ಸಂಧ್ಯಾರಾಗ", reading: "sandhyārāga" }
+    creator: ["kn-an-krishna-rao"]
+    year: 1966
+    level: "B1"
+    briefing: { en: "A 1966 Kannada musical film, based on a novel of the same name by A. N. Krishna Rao (Anakru)." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Lakshmana choose over fame and wealth?" }, options: { en: ["A life of trade", "Mastering music", "Service in the army"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "How many versions of the song \"Nambide Ninna Nada Devathe\" does the film have?" }, options: { en: ["Two", "Three", "Four"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Whose version of that song is heard during the climax?" }, options: { en: ["S. Janaki's", "M. Balamuralikrishna's", "Bhimsen Joshi's"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "Who says he directed the film although he was not officially credited?" }, options: { en: ["S. K. Bhagavan", "G. K. Venkatesh", "B. Dorairaj"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-kasturi-nivasa"
+    medium: "film"
+    title: { text: "ಕಸ್ತೂರಿ ನಿವಾಸ", reading: "kastūri nivāsa" }
+    creator: ["kn-s-k-bhagavan"]
+    year: 1971
+    level: "B1"
+    briefing: { en: "A 1971 Kannada family drama written and directed by the duo Dorai-Bhagavan, about a man who is generous to a fault." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Ravi Varma own?" }, options: { en: ["A coffee estate", "A matchbox factory", "A cinema hall"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Why does Chandru resign and start his own company?" }, options: { en: ["Ravi, a traditionalist, is angered by his idea of changing the company's structure", "He is offered a job in a bank", "He quarrels with Ravi over Neela"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What has Ravi just sold when Neela asks him for it for her sick daughter?" }, options: { en: ["His house", "A gold ring", "The dove"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "Which Shakespeare play loosely inspired the story?" }, options: { en: ["King Lear", "Timon of Athens", "Hamlet"] }, answer: 2 }
+      - { id: "q5", prompt: { en: "Why did Sivaji Ganesan decline the story when it was first written for him?" }, options: { en: ["Its tragic ending", "He disliked the title", "He was too busy"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-marali-mannige"
+    medium: "book"
+    title: { text: "ಮರಳಿ ಮಣ್ಣಿಗೆ", reading: "maraḷi maṇṇige" }
+    creator: ["kn-k-shivaram-karanth"]
+    year: 1941
+    level: "B1"
+    script: "kannada"
+    briefing: { en: "A Kannada novel by K. Shivaram Karanth. Its English title is Back to the Soil." }
+    questions:
+      - { id: "q1", prompt: { en: "Whose wedding, held in a monsoon downpour, opens the story?" }, options: { en: ["Parvati's", "Saraswati's", "Nagaveni's"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "How many generations of a family does the story follow, from about 1850 to 1940?" }, options: { en: ["Two", "Five", "Three"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "What strikes the villages after the chariot fair at Salagrama?" }, options: { en: ["A flood", "An epidemic of fever", "A famine"] }, answer: 2 }
+      - { id: "q4", prompt: { en: "Whose marriage is being fixed at the end, with Saraswati, the daughter of Nagappa of Brahmavara?" }, options: { en: ["Ram's", "Janardan's", "Nagappa's"] }, answer: 1 }
+      - { id: "q5", prompt: { en: "Which regional dialect is the book written in?" }, options: { en: ["The Dakshina Kannada dialect", "The Dharwad dialect", "The Mysore dialect"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-mookajjiya-kanasugalu"
+    medium: "book"
+    title: { text: "ಮೂಕಜ್ಜಿಯ ಕನಸುಗಳು", reading: "mūkajjiya kanasugaḷu" }
+    creator: ["kn-k-shivaram-karanth"]
+    year: 1968
+    level: "B1"
+    script: "kannada"
+    briefing: { en: "A 1968 Kannada novel by K. Shivaram Karanth about an old woman and her grandson. The title means Dreams of Mookajji." }
+    questions:
+      - { id: "q1", prompt: { en: "In which village is the novel set?" }, options: { en: ["Mooduru", "Kote", "Hindgana"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "At what age did Mookajji lose her husband?" }, options: { en: ["Twenty", "Ten", "Forty"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What special power does Mookajji have?" }, options: { en: ["She can cure the sick", "She can speak to animals", "She sees what will happen and what has happened, like waking dreams"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "What does her grandson Subbaraya keep asking her about?" }, options: { en: ["God, tradition, belief and other social questions", "Prices at the market", "The history of the royal family"] }, answer: 1 }
+      - { id: "q5", prompt: { en: "In which year did the novel win the Jnanpith Award?" }, options: { en: ["1968", "1977", "1985"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-mookajjiya-kanasugalu-film"
+    medium: "film"
+    title: { text: "ಮೂಕಜ್ಜಿಯ ಕನಸುಗಳು", reading: "mūkajjiya kanasugaḷu" }
+    creator: ["kn-p-sheshadri", "kn-k-shivaram-karanth"]
+    year: 2019
+    level: "B1"
+    briefing: { en: "A 2019 Kannada film directed by P. Sheshadri, based on K. Shivaram Karanth's novel of the same name, set in coastal Karnataka." }
+    questions:
+      - { id: "q1", prompt: { en: "What object does Subbaraya bring home that starts Mookajji's first story?" }, options: { en: ["A wicker basket", "A gold chain", "A clay pot"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is the rich merchant who pursues Naagi?" }, options: { en: ["Ramanna", "Sheenappa", "Anant Rao"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What leads Mookajji to stop speaking?" }, options: { en: ["An illness in childhood", "A quarrel with her brother", "Being rudely told to leave the temple by the priest"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "Who is Thippi?" }, options: { en: ["Mookajji's childhood friend in a neighbouring village", "Subbaraya's wife", "Naagi's daughter"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-malegalalli-madumagalu"
+    medium: "book"
+    title: { text: "ಮಲೆಗಳಲ್ಲಿ ಮದುಮಗಳು", reading: "malegaḷalli madumagaḷu" }
+    creator: ["kn-kuvempu"]
+    year: 1967
+    level: "B1"
+    script: "kannada"
+    briefing: { en: "A Kannada novel by Kuvempu, first published in 1967, set among the hills and villages of the Malnad in the nineteenth century." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the name of Guthi's dog?" }, options: { en: ["Moti", "Tiger", "Huliya"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "Why does Guthi set out on his long journey from Simbavi?" }, options: { en: ["To bring away his cousin Timmi, whose father plans to marry her to another man", "To look for work in a town", "To attend a temple festival"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What is Jeevaratnayya's role in the story?" }, options: { en: ["A landowner", "A priest who spreads Christianity", "A village astrologer"] }, answer: 2 }
+      - { id: "q4", prompt: { en: "To whom does Venkanna of Huvalli plan to give his daughter Chinnamma?" }, options: { en: ["Mukundayya", "Shankara Heggade", "Timmappa Heggade"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-sri-ramayana-darshanam"
+    medium: "book"
+    title: { text: "ಶ್ರೀ ರಾಮಾಯಣ ದರ್ಶನಂ", reading: "śrī rāmāyaṇa darśanaṁ" }
+    creator: ["kn-kuvempu"]
+    year: 1949
+    level: "B1"
+    script: "kannada"
+    briefing: { en: "A modern Kannada epic poem by Kuvempu that retells the Ramayana. Its first volume came out in 1949." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Rama do when Sita enters the fire in Kuvempu's telling?" }, options: { en: ["He enters the flames too and comes out holding her hand", "He turns away and leaves", "He stops her with a word"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is the poem dedicated to?" }, options: { en: ["His king", "His teacher Sri Venkannayya", "His mother"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Into how many volumes is the poem divided?" }, options: { en: ["Three", "Seven", "Four"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "What did the work bring Kannada literature?" }, options: { en: ["The first Jnanpith Award for a Kannada writer", "A Nobel Prize", "A seat in the Rajya Sabha"] }, answer: 1 }
     tags: ["unreviewed"]
