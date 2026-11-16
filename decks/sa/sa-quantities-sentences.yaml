@@ -1,0 +1,50 @@
+schema: 1
+id: "sa-quantities-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3070"
+    target: "सर्वं जलम्."
+    reading: "sarvaṃ jalam."
+    ipa: "sərʋəm dʒələm"
+    pos: "phrase"
+    bases: [{ word: "सर्वं", base: "सर्वः", reading: "sarvaḥ" }, { word: "जलम्", ref: "sa-0023" }]
+    confusables: [{ id: "w1", ref: "sa-1500", kind: "word" }, { id: "w2", ref: "sa-1502", kind: "word" }]
+  - id: "sa-3071"
+    target: "भूयः पिबामि."
+    reading: "bhūyaḥ pibāmi."
+    ipa: "bʱuːjəh pibaːmi"
+    pos: "phrase"
+    bases: [{ word: "भूयः", ref: "sa-1511" }, { word: "पिबामि", base: "पा", reading: "pā" }]
+    confusables: [{ id: "w1", ref: "sa-1092", kind: "word" }, { id: "w2", ref: "sa-1096", kind: "word" }]
+  - id: "sa-3072"
+    target: "न सर्वं जानामि."
+    reading: "na sarvaṃ jānāmi."
+    ipa: "nə sərʋəm dʒaːnaːmi"
+    pos: "phrase"
+    bases: [{ word: "न", ref: "sa-0026" }, { word: "सर्वं", base: "सर्वः", reading: "sarvaḥ" }, { word: "जानामि", base: "ज्ञा", reading: "jñā" }]
+    confusables: [{ id: "w1", ref: "sa-1500", kind: "word" }, { id: "w2", ref: "sa-1509", kind: "word" }]
+  - id: "sa-3073"
+    target: "कतिपयं जानामि."
+    reading: "katipayaṃ jānāmi."
+    ipa: "kət̪ipəjəm dʒaːnaːmi"
+    pos: "phrase"
+    bases: [{ word: "कतिपयं", base: "कतिपयः", reading: "katipayaḥ" }, { word: "जानामि", base: "ज्ञा", reading: "jñā" }]
+    confusables: [{ id: "w1", ref: "sa-1503", kind: "word" }, { id: "w2", ref: "sa-1502", kind: "word" }]
+  - id: "sa-3074"
+    target: "अहं सर्वं वदामि."
+    reading: "ahaṃ sarvaṃ vadāmi."
+    ipa: "əɦəm sərʋəm ʋəd̪aːmi"
+    pos: "phrase"
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "सर्वं", base: "सर्वः", reading: "sarvaḥ" }, { word: "वदामि", base: "वद्", reading: "vad" }]
+    confusables: [{ id: "w1", ref: "sa-1500", kind: "word" }, { id: "w2", ref: "sa-1509", kind: "word" }]
+  - id: "sa-3075"
+    target: "नित्यं गच्छामि."
+    reading: "nityaṃ gacchāmi."
+    ipa: "nit̪jəm ɡətʃtʃʰaːmi"
+    pos: "phrase"
+    bases: [{ word: "नित्यं", base: "नित्यम्", reading: "nityam" }, { word: "गच्छामि", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-1087", kind: "word" }, { id: "w2", ref: "sa-1097", kind: "word" }]

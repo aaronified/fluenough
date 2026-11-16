@@ -1,0 +1,34 @@
+schema: 1
+id: "sa-en-quantities-sentences"
+kind: "layer"
+core: "sa-quantities-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with quantities"
+description: "Short sentences with the quantity words of Quantities, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3070":
+    native: "All the water."
+    bases: { "सर्वं": "all" }
+    confusables: { "w1": { why: "Little, not all: अल्पः (alpaḥ) means little." }, "w2": { why: "Many, not all: अनेकः (anekaḥ) means many or several." } }
+  "sa-3071":
+    native: "I drink more."
+    bases: { "पिबामि": "to drink (I drink)" }
+    confusables: { "w1": { why: "Also, not more: अपि (api) means also." }, "w2": { why: "Much, not more: बहु (bahu) means much." } }
+  "sa-3072":
+    native: "I do not know everything."
+    bases: { "सर्वं": "all", "जानामि": "to know (I know)" }
+    confusables: { "w1": { why: "Little, not all: अल्पः (alpaḥ) means little." }, "w2": { why: "Some, not all: कतिपयः (katipayaḥ) means some." } }
+  "sa-3073":
+    native: "I know some."
+    bases: { "कतिपयं": "some", "जानामि": "to know (I know)" }
+    confusables: { "w1": { why: "All, not some: सर्वः (sarvaḥ) means all." }, "w2": { why: "Many, not some: अनेकः (anekaḥ) means many or several." } }
+  "sa-3074":
+    native: "I say everything."
+    bases: { "अहं": "I", "सर्वं": "all", "वदामि": "to speak (I speak)" }
+    confusables: { "w1": { why: "Little, not all: अल्पः (alpaḥ) means little." }, "w2": { why: "Some, not all: कतिपयः (katipayaḥ) means some." } }
+  "sa-3075":
+    native: "I always go."
+    bases: { "नित्यं": "always", "गच्छामि": "to go (I go)" }
+    confusables: { "w1": { why: "Sometimes, not always: कदाचित् (kadācit) means sometimes." }, "w2": { why: "Quickly, not always: शीघ्रम् (śīghram) means quickly." } }
