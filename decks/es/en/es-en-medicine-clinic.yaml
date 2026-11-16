@@ -30,7 +30,13 @@ cards:
     native: "Come back in a week."
   "es-4670":
     native: "blood pressure"
-    bases: { "la": "the", "presión": "pressure", "arterial": "arterial" }
+    bases: { "la": "the", "tensión": "pressure", "arterial": "arterial" }
     examples:
-      "Me miden la presión arterial.": { native: "They take my blood pressure." }
-      "La presión arterial está alta.": { native: "My blood pressure is high." }
+      "Me toman la tensión.": { native: "They take my blood pressure.", bases: { "Me": "me", "toman": "take", "la": "the", "tensión": "pressure" } }
+      "La tensión está alta.": { native: "My blood pressure is high.", bases: { "La": "the", "tensión": "pressure", "está": "is", "alta": "high" } }
+  "es-4721":
+    native: "prescription"
+    bases: { "la": "the", "receta": "prescription", "médica": "medical" }
+    examples:
+      "Necesito una receta médica para este antibiótico.": { native: "I need a prescription for this antibiotic.", bases: { "Necesito": "I need", "una": "a", "receta": "prescription", "médica": "medical", "para": "for", "este": "this", "antibiótico": "antibiotic" } }
+      "El médico me escribió una receta médica.": { native: "The doctor wrote me a prescription.", bases: { "El": "the", "médico": "doctor", "me": "me", "escribió": "wrote", "una": "a", "receta": "prescription", "médica": "medical" } }

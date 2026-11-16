@@ -56,23 +56,36 @@ cards:
     pos: "phrase"
     modes: ["recognition", "production", "listening"]
   - id: "es-4670"
-    target: "la presión arterial"
-    ipa: "la pɾeˈsjon aɾteˈɾjal"
+    target: "la tensión arterial"
+    ipa: "la tenˈsjon aɾteˈɾjal"
     pos: "noun"
     gender: "f"
     modes: ["recognition", "production"]
-    bases: [{ word: "la", base: "la" }, { word: "presión", base: "presión" }, { word: "arterial", base: "arterial" }]
+    bases: [{ word: "la", base: "la" }, { word: "tensión", base: "tensión" }, { word: "arterial", base: "arterial" }]
     examples:
-      - target: "Me miden la presión arterial."
-        ipa: "me ˈmiden la pɾeˈsjon aɾteˈɾjal"
-        bases: [{ word: "Me", base: "me" }, { word: "miden", base: "medir" }, { word: "la", base: "la" }, { word: "presión", base: "presión" }, { word: "arterial", base: "arterial" }]
-      - target: "La presión arterial está alta."
-        ipa: "la pɾeˈsjon aɾteˈɾjal esˈta ˈalta"
-        bases: [{ word: "La", base: "la" }, { word: "presión", base: "presión" }, { word: "arterial", base: "arterial" }, { word: "está", base: "estar" }, { word: "alta", base: "alto" }]
+      - target: "Me toman la tensión."
+        ipa: "me ˈtoman la tenˈsjon"
+        bases: [{ word: "Me", base: "me" }, { word: "toman", base: "tomar" }, { word: "la", base: "la" }, { word: "tensión", base: "tensión" }]
+      - target: "La tensión está alta."
+        ipa: "la tenˈsjon esˈta ˈalta"
+        bases: [{ word: "La", base: "la" }, { word: "tensión", base: "tensión" }, { word: "está", base: "estar" }, { word: "alta", base: "alto" }]
   - ref: "es-4607"
   - ref: "es-0506"
   - ref: "es-0844"
   - ref: "es-1470"
   - ref: "es-0873"
   - ref: "es-1488"
-  - ref: "es-1302"
+  - id: "es-4721"
+    target: "la receta médica"
+    ipa: "la reˈθeta ˈmedika"
+    pos: "noun"
+    gender: "f"
+    modes: ["recognition", "production"]
+    bases: [{ word: "la", base: "la" }, { word: "receta", base: "receta" }, { word: "médica", base: "médica" }]
+    examples:
+      - target: "Necesito una receta médica para este antibiótico."
+        ipa: "neθeˈsito ˈuna reˈθeta ˈmedika ˈpaɾa ˈeste antiˈbjotiko"
+        bases: [{ word: "Necesito", base: "necesitar" }, { word: "una", base: "una" }, { word: "receta", base: "receta" }, { word: "médica", base: "médica" }, { word: "para", base: "para" }, { word: "este", base: "este" }, { word: "antibiótico", base: "antibiótico" }]
+      - target: "El médico me escribió una receta médica."
+        ipa: "el ˈmediko me eskɾiˈbjo ˈuna reˈθeta ˈmedika"
+        bases: [{ word: "El", base: "el" }, { word: "médico", base: "médico" }, { word: "me", base: "me" }, { word: "escribió", base: "escribir" }, { word: "una", base: "una" }, { word: "receta", base: "receta" }, { word: "médica", base: "médica" }]

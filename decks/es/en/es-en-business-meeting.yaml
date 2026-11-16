@@ -24,17 +24,19 @@ cards:
   "es-4705":
     native: "We have to make a decision."
   "es-4706":
-    native: "We agreed on that."
+    native: "Let's agree on that."
   "es-4707":
     native: "Thank you for your time."
-    notes: { n1: "Su is the usted form of your." }
+    notes: { n1: "Su is your when speaking formally (to usted); it can also mean his, her or their." }
   "es-4708":
     native: "proposal"
+    bases: { "la": "the", "propuesta": "proposal" }
     examples:
-      "Tengo una propuesta para el proyecto.": { native: "I have a proposal for the project." }
-      "Esta propuesta es buena para nuestra empresa.": { native: "This proposal is good for our company." }
+      "Tengo una propuesta para el proyecto.": { native: "I have a proposal for the project.", bases: { "Tengo": "I have", "una": "a", "propuesta": "proposal", "para": "for", "el": "the", "proyecto": "project" } }
+      "Esta propuesta es buena para nuestra empresa.": { native: "This proposal is good for our company.", bases: { "Esta": "this", "propuesta": "proposal", "es": "is", "buena": "good", "para": "for", "nuestra": "our", "empresa": "company" } }
   "es-4709":
     native: "presentation"
+    bases: { "la": "the", "presentación": "presentation" }
     examples:
-      "La presentación empieza a las diez.": { native: "The presentation starts at ten." }
-      "Hago una presentación sobre el nuevo producto.": { native: "I am giving a presentation on the new product." }
+      "La presentación empieza a las diez.": { native: "The presentation starts at ten.", bases: { "La": "the", "presentación": "presentation", "empieza": "starts", "a": "at", "las": "the", "diez": "ten" } }
+      "Hago una presentación sobre el nuevo producto.": { native: "I am giving a presentation on the new product.", bases: { "Hago": "I give", "una": "a", "presentación": "presentation", "sobre": "on", "el": "the", "nuevo": "new", "producto": "product" } }
