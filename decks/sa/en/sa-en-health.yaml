@@ -1,0 +1,1018 @@
+schema: 1
+id: "sa-en-health"
+kind: "layer"
+core: "sa-health"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Health"
+description: "Health and the body: illness, remedies and the bodily humours."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-7000":
+    native: "Health, the state of being free from disease."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "आरोग्यम्": "health"
+    examples:
+      "आरोग्यं भवति":
+        native: "There is health."
+        bases:
+          "आरोग्यं": "health"
+          "भवति": "to be, become"
+      "आरोग्यं पश्यति जनः":
+        native: "A person sees health."
+        bases:
+          "आरोग्यं": "health"
+          "पश्यति": "to see"
+          "जनः": "person"
+  "sa-7001":
+    native: "Health and well-being of the body and mind."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "स्वास्थ्यम्": "health"
+    examples:
+      "स्वास्थ्यं भवति":
+        native: "There is well-being."
+        bases:
+          "स्वास्थ्यं": "health"
+          "भवति": "to be, become"
+      "स्वास्थ्यं करोति वैद्यः":
+        native: "The physician restores well-being."
+        bases:
+          "स्वास्थ्यं": "health"
+          "करोति": "to do, make"
+          "वैद्यः": "physician"
+  "sa-7002":
+    native: "Healthy, sound in body."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "स्वस्थः": "healthy"
+    examples:
+      "स्वस्थो भवति":
+        native: "He becomes healthy."
+        bases:
+          "स्वस्थो": "healthy"
+          "भवति": "to be, become"
+      "स्वस्थो बालः":
+        native: "A healthy child."
+        bases:
+          "स्वस्थो": "healthy"
+          "बालः": "child"
+  "sa-7003":
+    native: "Fever, a raised body heat that comes with illness."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "ज्वरः": "fever"
+    examples:
+      "ज्वरो भवति":
+        native: "A fever arises."
+        bases:
+          "ज्वरो": "fever"
+          "भवति": "to be, become"
+      "ज्वरं पश्यति वैद्यः":
+        native: "The physician looks at the fever."
+        bases:
+          "ज्वरं": "fever"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+  "sa-7004":
+    native: "A medicine or remedy for illness."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "भेषजम्": "medicine"
+    examples:
+      "भेषजं भवति":
+        native: "A remedy is ready."
+        bases:
+          "भेषजं": "medicine"
+          "भवति": "to be, become"
+      "भेषजं करोति वैद्यः":
+        native: "The physician prepares a remedy."
+        bases:
+          "भेषजं": "medicine"
+          "करोति": "to do, make"
+          "वैद्यः": "physician"
+  "sa-7005":
+    native: "Medical treatment, the practice of healing."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "चिकित्सा": "treatment"
+    examples:
+      "चिकित्सा भवति":
+        native: "Treatment takes place."
+        bases:
+          "चिकित्सा": "treatment"
+          "भवति": "to be, become"
+      "चिकित्सां करोति वैद्यः":
+        native: "The physician gives treatment."
+        bases:
+          "चिकित्सां": "treatment"
+          "करोति": "to do, make"
+          "वैद्यः": "physician"
+  "sa-7006":
+    native: "The science of health and medicine, the Ayurveda."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "आयुर्वेदः": "science of health"
+    examples:
+      "आयुर्वेदो भवति":
+        native: "The science of health exists."
+        bases:
+          "आयुर्वेदो": "science of health"
+          "भवति": "to be, become"
+      "आयुर्वेदं पठति बालः":
+        native: "The child studies the science of health."
+        bases:
+          "आयुर्वेदं": "science of health"
+          "पठति": "to read"
+          "बालः": "child"
+  "sa-7007":
+    native: "A medicine said to prevent old age and prolong life."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "रसायनम्": "rejuvenating medicine"
+    examples:
+      "रसायनं भवति":
+        native: "A rejuvenating medicine is ready."
+        bases:
+          "रसायनं": "rejuvenating medicine"
+          "भवति": "to be, become"
+      "रसायनं पिबति जनः":
+        native: "A person drinks a rejuvenating medicine."
+        bases:
+          "रसायनं": "rejuvenating medicine"
+          "पिबति": "to drink"
+          "जनः": "person"
+  "sa-7008":
+    native: "The body, the bodily frame."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "शरीरम्": "body"
+    examples:
+      "शरीरं पश्यति वैद्यः":
+        native: "The physician examines the body."
+        bases:
+          "शरीरं": "body"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+      "शरीरं जानाति जनः":
+        native: "A person knows the body."
+        bases:
+          "शरीरं": "body"
+          "जानाति": "to know"
+          "जनः": "person"
+  "sa-7009":
+    native: "A swelling of the body from an injury or illness."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "शोथः": "swelling"
+    examples:
+      "शोथो भवति":
+        native: "A swelling forms."
+        bases:
+          "शोथो": "swelling"
+          "भवति": "to be, become"
+      "शोथं पश्यति वैद्यः":
+        native: "The physician examines the swelling."
+        bases:
+          "शोथं": "swelling"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+  "sa-7010":
+    native: "A tumour or hard swelling in the flesh."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "अर्बुदः": "tumour"
+    examples:
+      "अर्बुदो भवति":
+        native: "A tumour forms."
+        bases:
+          "अर्बुदो": "tumour"
+          "भवति": "to be, become"
+      "अर्बुदं पश्यति वैद्यः":
+        native: "The physician examines the tumour."
+        bases:
+          "अर्बुदं": "tumour"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+  "sa-7011":
+    native: "A sickness or disease of the body."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "आमयः": "sickness"
+    examples:
+      "आमयो भवति":
+        native: "A sickness arises."
+        bases:
+          "आमयो": "sickness"
+          "भवति": "to be, become"
+      "आमयं पश्यति बालः":
+        native: "The child sees a sickness."
+        bases:
+          "आमयं": "sickness"
+          "पश्यति": "to see"
+          "बालः": "child"
+  "sa-7012":
+    native: "A burning heat in the body, as in a fever."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "दाहः": "burning heat"
+    examples:
+      "दाहो भवति":
+        native: "A burning heat arises."
+        bases:
+          "दाहो": "burning heat"
+          "भवति": "to be, become"
+      "दाहं पश्यति वैद्यः":
+        native: "The physician feels the burning heat."
+        bases:
+          "दाहं": "burning heat"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+  "sa-7013":
+    native: "A trembling or shaking of the body."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "कम्पः": "tremor"
+    examples:
+      "कम्पो भवति":
+        native: "A tremor begins."
+        bases:
+          "कम्पो": "tremor"
+          "भवति": "to be, become"
+      "कम्पं पश्यति वैद्यः":
+        native: "The physician watches the tremor."
+        bases:
+          "कम्पं": "tremor"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+  "sa-7014":
+    native: "Epilepsy, the falling sickness."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "अपस्मारः": "epilepsy"
+    examples:
+      "अपस्मारो भवति":
+        native: "Epilepsy occurs."
+        bases:
+          "अपस्मारो": "epilepsy"
+          "भवति": "to be, become"
+      "अपस्मारं पश्यति वैद्यः":
+        native: "The physician looks at the epilepsy."
+        bases:
+          "अपस्मारं": "epilepsy"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+  "sa-7015":
+    native: "Tuberculosis, a wasting disease of the lungs."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "क्षयरोगः": "tuberculosis"
+    examples:
+      "क्षयरोगो भवति":
+        native: "Tuberculosis occurs."
+        bases:
+          "क्षयरोगो": "tuberculosis"
+          "भवति": "to be, become"
+      "क्षयरोगं पश्यति वैद्यः":
+        native: "The physician examines the tuberculosis."
+        bases:
+          "क्षयरोगं": "tuberculosis"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+  "sa-7016":
+    native: "A disease of the heart."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "हृद्रोगः": "heart disease"
+    examples:
+      "हृद्रोगो भवति":
+        native: "A heart disease occurs."
+        bases:
+          "हृद्रोगो": "heart disease"
+          "भवति": "to be, become"
+      "हृद्रोगं पश्यति वैद्यः":
+        native: "The physician examines the heart disease."
+        bases:
+          "हृद्रोगं": "heart disease"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+  "sa-7017":
+    native: "Phlegm, one of the three humours of the body."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "कफः": "phlegm"
+    examples:
+      "कफो भवति":
+        native: "Phlegm forms."
+        bases:
+          "कफो": "phlegm"
+          "भवति": "to be, become"
+      "कफं पश्यति वैद्यः":
+        native: "The physician sees the phlegm."
+        bases:
+          "कफं": "phlegm"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+  "sa-7018":
+    native: "Bile, one of the three humours of the body."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "पित्तम्": "bile"
+    examples:
+      "पित्तं भवति":
+        native: "Bile is present."
+        bases:
+          "पित्तं": "bile"
+          "भवति": "to be, become"
+      "पित्तं पचति जनः":
+        native: "A person digests with bile."
+        bases:
+          "पित्तं": "bile"
+          "पचति": "to cook"
+          "जनः": "person"
+  "sa-7019":
+    native: "Wind, the humour of the body that moves the breath and limbs."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "वातः": "wind humour"
+    examples:
+      "वातो गच्छति":
+        native: "The wind humour moves."
+        bases:
+          "वातो": "wind humour"
+          "गच्छति": "to go"
+      "वातं स्मरति वैद्यः":
+        native: "The physician remembers the wind humour."
+        bases:
+          "वातं": "wind humour"
+          "स्मरति": "to remember"
+          "वैद्यः": "physician"
+  "sa-7020":
+    native: "Urine."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "मूत्रम्": "urine"
+    examples:
+      "मूत्रं पश्यति वैद्यः":
+        native: "The physician looks at the urine."
+        bases:
+          "मूत्रं": "urine"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+      "वैद्यो मूत्रं पश्यति":
+        native: "The physician looks at the urine."
+        bases:
+          "वैद्यो": "physician"
+          "मूत्रं": "urine"
+          "पश्यति": "to see"
+  "sa-7021":
+    native: "Sweat, the moisture that the body gives off."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "स्वेदः": "sweat"
+    examples:
+      "स्वेदो गच्छति":
+        native: "Sweat flows."
+        bases:
+          "स्वेदो": "sweat"
+          "गच्छति": "to go"
+      "स्वेदं पिबति बालः":
+        native: "The child drinks sweat."
+        bases:
+          "स्वेदं": "sweat"
+          "पिबति": "to drink"
+          "बालः": "child"
+  "sa-7022":
+    native: "Breath, the air drawn in and let out through the nose."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "श्वासः": "breath"
+    examples:
+      "श्वासो गच्छति":
+        native: "The breath goes out."
+        bases:
+          "श्वासो": "breath"
+          "गच्छति": "to go"
+      "श्वासं जानाति वैद्यः":
+        native: "The physician knows the breath."
+        bases:
+          "श्वासं": "breath"
+          "जानाति": "to know"
+          "वैद्यः": "physician"
+  "sa-7023":
+    native: "The vital breath, the life-breath that keeps a body alive."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "प्राणः": "breath of life"
+    examples:
+      "प्राणो भवति":
+        native: "The life-breath is present."
+        bases:
+          "प्राणो": "breath of life"
+          "भवति": "to be, become"
+      "प्राणं स्मरति जनः":
+        native: "A person remembers the life-breath."
+        bases:
+          "प्राणं": "breath of life"
+          "स्मरति": "to remember"
+          "जनः": "person"
+  "sa-7024":
+    native: "A breath that is breathed out."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "उच्छ्वासः": "exhaled breath"
+    examples:
+      "उच्छ्वासो गच्छति":
+        native: "The exhaled breath goes out."
+        bases:
+          "उच्छ्वासो": "exhaled breath"
+          "गच्छति": "to go"
+      "उच्छ्वासं शृणोति वैद्यः":
+        native: "The physician hears the breathing out."
+        bases:
+          "उच्छ्वासं": "exhaled breath"
+          "शृणोति": "to hear"
+          "वैद्यः": "physician"
+  "sa-7025":
+    native: "Vomiting, the act of bringing up what is in the stomach."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "वमनम्": "vomiting"
+    examples:
+      "वमनं भवति":
+        native: "Vomiting occurs."
+        bases:
+          "वमनं": "vomiting"
+          "भवति": "to be, become"
+      "वमनं करोति वैद्यः":
+        native: "The physician induces vomiting."
+        bases:
+          "वमनं": "vomiting"
+          "करोति": "to do, make"
+          "वैद्यः": "physician"
+  "sa-7026":
+    native: "A hiccup, the sudden spasm of the breath."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "हिक्का": "hiccup"
+    examples:
+      "हिक्का भवति":
+        native: "A hiccup comes."
+        bases:
+          "हिक्का": "hiccup"
+          "भवति": "to be, become"
+      "हिक्कां करोति बालः":
+        native: "The child gets the hiccups."
+        bases:
+          "हिक्कां": "hiccup"
+          "करोति": "to do, make"
+          "बालः": "child"
+  "sa-7027":
+    native: "Drowsiness or lassitude, a heavy tiredness."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "तन्द्रा": "drowsiness"
+    examples:
+      "तन्द्रा भवति":
+        native: "Drowsiness comes."
+        bases:
+          "तन्द्रा": "drowsiness"
+          "भवति": "to be, become"
+      "तन्द्रां पश्यति जनः":
+        native: "A person notices drowsiness."
+        bases:
+          "तन्द्रां": "drowsiness"
+          "पश्यति": "to see"
+          "जनः": "person"
+  "sa-7028":
+    native: "A fainting or loss of consciousness."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "मूर्छा": "fainting"
+    examples:
+      "मूर्छा भवति":
+        native: "A fainting spell comes."
+        bases:
+          "मूर्छा": "fainting"
+          "भवति": "to be, become"
+      "मूर्छां स्मरति जनः":
+        native: "A person recalls a fainting spell."
+        bases:
+          "मूर्छां": "fainting"
+          "स्मरति": "to remember"
+          "जनः": "person"
+  "sa-7029":
+    native: "Sleep, the rest in which the senses are still."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "निद्रा": "sleep"
+    examples:
+      "निद्रा भवति":
+        native: "Sleep comes."
+        bases:
+          "निद्रा": "sleep"
+          "भवति": "to be, become"
+      "निद्रां करोति बालः":
+        native: "The child goes to sleep."
+        bases:
+          "निद्रां": "sleep"
+          "करोति": "to do, make"
+          "बालः": "child"
+  "sa-7030":
+    native: "Marrow, the soft tissue inside the bones."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "मज्जा": "marrow"
+    examples:
+      "मज्जा भवति":
+        native: "Marrow is present."
+        bases:
+          "मज्जा": "marrow"
+          "भवति": "to be, become"
+      "मज्जां पश्यति वैद्यः":
+        native: "The physician looks at the marrow."
+        bases:
+          "मज्जां": "marrow"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+  "sa-7031":
+    native: "The brain, the organ in the head."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "मस्तिष्कः": "brain"
+    examples:
+      "मस्तिष्को भवति":
+        native: "The brain is present."
+        bases:
+          "मस्तिष्को": "brain"
+          "भवति": "to be, become"
+      "मस्तिष्कं पश्यति वैद्यः":
+        native: "The physician examines the brain."
+        bases:
+          "मस्तिष्कं": "brain"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+  "sa-7032":
+    native: "The womb, where a child develops before birth."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "गर्भः": "womb"
+    examples:
+      "गर्भो भवति":
+        native: "A pregnancy begins."
+        bases:
+          "गर्भो": "womb"
+          "भवति": "to be, become"
+      "गर्भं पश्यति वैद्यः":
+        native: "The physician examines the womb."
+        bases:
+          "गर्भं": "womb"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+  "sa-7033":
+    native: "A breast, the mammary gland of a female body."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "स्तनः": "breast"
+    examples:
+      "स्तनो भवति":
+        native: "A breast is present."
+        bases:
+          "स्तनो": "breast"
+          "भवति": "to be, become"
+      "स्तनं पश्यति बालः":
+        native: "The child sees the breast."
+        bases:
+          "स्तनं": "breast"
+          "पश्यति": "to see"
+          "बालः": "child"
+  "sa-7034":
+    native: "The cheek, the fleshy part of the face below the eye."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "गण्डः": "cheek"
+    examples:
+      "गण्डो भवति":
+        native: "A swelling of the cheek forms."
+        bases:
+          "गण्डो": "cheek"
+          "भवति": "to be, become"
+      "गण्डं पश्यति वैद्यः":
+        native: "The physician looks at the cheek."
+        bases:
+          "गण्डं": "cheek"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+  "sa-7035":
+    native: "Oil, used in medicine and in massage."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "तैलम्": "oil"
+    examples:
+      "तैलं भवति":
+        native: "Oil is ready."
+        bases:
+          "तैलं": "oil"
+          "भवति": "to be, become"
+      "तैलं पचति जनः":
+        native: "A person cooks with oil."
+        bases:
+          "तैलं": "oil"
+          "पचति": "to cook"
+          "जनः": "person"
+  "sa-7036":
+    native: "Ashwagandha, a medicinal plant whose root is used as a tonic."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "अश्वगन्धा": "ashwagandha"
+    examples:
+      "अश्वगन्धा भवति":
+        native: "Ashwagandha is present."
+        bases:
+          "अश्वगन्धा": "ashwagandha"
+          "भवति": "to be, become"
+      "अश्वगन्धां करोति वैद्यः":
+        native: "The physician prepares ashwagandha."
+        bases:
+          "अश्वगन्धां": "ashwagandha"
+          "करोति": "to do, make"
+          "वैद्यः": "physician"
+  "sa-7037":
+    native: "Physical exercise and bodily training."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "व्यायामः": "exercise"
+    examples:
+      "व्यायामो भवति":
+        native: "Exercise takes place."
+        bases:
+          "व्यायामो": "exercise"
+          "भवति": "to be, become"
+      "व्यायामं करोति बालः":
+        native: "The child does exercise."
+        bases:
+          "व्यायामं": "exercise"
+          "करोति": "to do, make"
+          "बालः": "child"
+  "sa-7038":
+    native: "Poison, a substance that harms or kills."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "विषम्": "poison"
+    examples:
+      "विषं भवति":
+        native: "Poison is present."
+        bases:
+          "विषं": "poison"
+          "भवति": "to be, become"
+      "विषं पिबति बालः":
+        native: "The child drinks poison."
+        bases:
+          "विषं": "poison"
+          "पिबति": "to drink"
+          "बालः": "child"
+  "sa-7039":
+    native: "Pain or suffering felt in the body."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "पीडा": "pain"
+    examples:
+      "पीडा भवति":
+        native: "Pain arises."
+        bases:
+          "पीडा": "pain"
+          "भवति": "to be, become"
+      "पीडां करोति रोगः":
+        native: "The disease causes pain."
+        bases:
+          "पीडां": "pain"
+          "करोति": "to do, make"
+          "रोगः": "disease"
+  "sa-7040":
+    native: "Pain felt as an ache or agony, a sensation of hurt."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "वेदना": "pain"
+    examples:
+      "वेदना भवति":
+        native: "A pain is felt."
+        bases:
+          "वेदना": "pain"
+          "भवति": "to be, become"
+      "वेदनां जानाति वैद्यः":
+        native: "The physician knows the pain."
+        bases:
+          "वेदनां": "pain"
+          "जानाति": "to know"
+          "वैद्यः": "physician"
+  "sa-7041":
+    native: "A sharp, stabbing pain."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "शूलम्": "sharp pain"
+    examples:
+      "शूलं भवति":
+        native: "A sharp pain arises."
+        bases:
+          "शूलं": "sharp pain"
+          "भवति": "to be, become"
+      "शूलं करोति रोगः":
+        native: "The disease causes a stabbing pain."
+        bases:
+          "शूलं": "sharp pain"
+          "करोति": "to do, make"
+          "रोगः": "disease"
+  "sa-7042":
+    native: "Pain or disease that breaks the body's ease."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "रुजा": "pain"
+    examples:
+      "रुजा भवति":
+        native: "Pain arises."
+        bases:
+          "रुजा": "pain"
+          "भवति": "to be, become"
+      "रुजां पश्यति वैद्यः":
+        native: "The physician looks at the pain."
+        bases:
+          "रुजां": "pain"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+  "sa-7043":
+    native: "Affliction, a hardship and suffering of body or mind."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "क्लेशः": "affliction"
+    examples:
+      "क्लेशो भवति":
+        native: "Affliction arises."
+        bases:
+          "क्लेशो": "affliction"
+          "भवति": "to be, become"
+      "क्लेशं पश्यति जनः":
+        native: "A person sees the affliction."
+        bases:
+          "क्लेशं": "affliction"
+          "पश्यति": "to see"
+          "जनः": "person"
+  "sa-7044":
+    native: "Hunger, the need for food."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "क्षुधा": "hunger"
+    examples:
+      "क्षुधा भवति":
+        native: "Hunger comes."
+        bases:
+          "क्षुधा": "hunger"
+          "भवति": "to be, become"
+      "क्षुधां जानाति बालः":
+        native: "The child knows hunger."
+        bases:
+          "क्षुधां": "hunger"
+          "जानाति": "to know"
+          "बालः": "child"
+  "sa-7045":
+    native: "Thirst, the need for water."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "तृष्णा": "thirst"
+    examples:
+      "तृष्णा भवति":
+        native: "Thirst comes."
+        bases:
+          "तृष्णा": "thirst"
+          "भवति": "to be, become"
+      "तृष्णां स्मरति जनः":
+        native: "A person remembers thirst."
+        bases:
+          "तृष्णां": "thirst"
+          "स्मरति": "to remember"
+          "जनः": "person"
+  "sa-7046":
+    native: "Life, the state of being alive."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "जीवनम्": "life"
+    examples:
+      "जीवनं भवति":
+        native: "Life is present."
+        bases:
+          "जीवनं": "life"
+          "भवति": "to be, become"
+      "जीवनं स्मरति जनः":
+        native: "A person remembers life."
+        bases:
+          "जीवनं": "life"
+          "स्मरति": "to remember"
+          "जनः": "person"
+  "sa-7047":
+    native: "A symptom, a sign by which an illness is known."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "लक्षणम्": "symptom"
+    examples:
+      "लक्षणं भवति":
+        native: "A symptom appears."
+        bases:
+          "लक्षणं": "symptom"
+          "भवति": "to be, become"
+      "लक्षणं पश्यति वैद्यः":
+        native: "The physician looks at the symptom."
+        bases:
+          "लक्षणं": "symptom"
+          "पश्यति": "to see"
+          "वैद्यः": "physician"
+  "sa-7048":
+    native: "Sick, ill with a disease."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "रुग्णः": "sick"
+    examples:
+      "रुग्णो भवति":
+        native: "He becomes sick."
+        bases:
+          "रुग्णो": "sick"
+          "भवति": "to be, become"
+      "रुग्णो बालः":
+        native: "A sick child."
+        bases:
+          "रुग्णो": "sick"
+          "बालः": "child"
+  "sa-7049":
+    native: "Suffering from sickness, distressed by illness."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "आतुरः": "suffering"
+    examples:
+      "आतुरो भवति":
+        native: "He becomes ill."
+        bases:
+          "आतुरो": "suffering"
+          "भवति": "to be, become"
+      "आतुरो जनः":
+        native: "A suffering person."
+        bases:
+          "आतुरो": "suffering"
+          "जनः": "person"
+  "sa-7050":
+    native: "Affected by a disorder of the wind humour, deranged."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "वातुलः": "affected by wind disorder"
+    examples:
+      "वातुलो भवति":
+        native: "He becomes deranged."
+        bases:
+          "वातुलो": "affected by wind disorder"
+          "भवति": "to be, become"
+      "वातुलो जनः":
+        native: "A person afflicted by the wind humour."
+        bases:
+          "वातुलो": "affected by wind disorder"
+          "जनः": "person"
+  "sa-7051":
+    native: "Unhurt, not injured or broken."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "अक्षतः": "unhurt"
+    examples:
+      "अक्षतो भवति":
+        native: "He remains unhurt."
+        bases:
+          "अक्षतो": "unhurt"
+          "भवति": "to be, become"
+      "अक्षतो बालः":
+        native: "An unhurt child."
+        bases:
+          "अक्षतो": "unhurt"
+          "बालः": "child"

@@ -1,0 +1,688 @@
+schema: 1
+id: "sa-en-opinions"
+kind: "layer"
+core: "sa-opinions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Opinions"
+description: "Opinions and judgement: praise and blame, trust, doubt, reasons, and how we rate people and things."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-7400":
+    native: "A decision or settled conviction reached after inquiry."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "निश्चयः": "decision"
+    examples:
+      "निश्चयो भवति":
+        native: "A decision is made."
+        bases:
+          "निश्चयो": "decision"
+          "भवति": "to be, become"
+      "निश्चयं करोति जनः":
+        native: "A person makes a decision."
+        bases:
+          "निश्चयं": "decision"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-7401":
+    native: "A resolve, a notion formed in the mind and held firmly."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "संकल्पः": "resolve"
+    examples:
+      "संकल्पो भवति":
+        native: "A resolve forms."
+        bases:
+          "संकल्पो": "resolve"
+          "भवति": "to be, become"
+      "संकल्पं स्मरति जनः":
+        native: "A person remembers a resolve."
+        bases:
+          "संकल्पं": "resolve"
+          "स्मरति": "to remember"
+          "जनः": "person"
+  "sa-7402":
+    native: "A close examination or critical review of something."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "समीक्षा": "examination"
+    examples:
+      "समीक्षा भवति":
+        native: "An examination takes place."
+        bases:
+          "समीक्षा": "examination"
+          "भवति": "to be, become"
+      "समीक्षां करोति जनः":
+        native: "A person makes a review."
+        bases:
+          "समीक्षां": "examination"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-7403":
+    native: "A careful critical inquiry or reasoned investigation."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "मीमांसा": "critical inquiry"
+    examples:
+      "मीमांसा भवति":
+        native: "An inquiry takes place."
+        bases:
+          "मीमांसा": "critical inquiry"
+          "भवति": "to be, become"
+      "मीमांसां पठति बालः":
+        native: "The child studies the critical inquiry."
+        bases:
+          "मीमांसां": "critical inquiry"
+          "पठति": "to read"
+          "बालः": "child"
+  "sa-7404":
+    native: "Reasoning, an argument built step by step to a conclusion."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "तर्कः": "reasoning"
+    examples:
+      "तर्को भवति":
+        native: "Reasoning takes place."
+        bases:
+          "तर्को": "reasoning"
+          "भवति": "to be, become"
+      "तर्कं करोति जनः":
+        native: "A person reasons."
+        bases:
+          "तर्कं": "reasoning"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-7405":
+    native: "Trust or confidence that someone or something is reliable."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "विश्वासः": "trust"
+    examples:
+      "विश्वासो भवति":
+        native: "Trust arises."
+        bases:
+          "विश्वासो": "trust"
+          "भवति": "to be, become"
+      "विश्वासं करोति बालः":
+        native: "The child trusts."
+        bases:
+          "विश्वासं": "trust"
+          "करोति": "to do, make"
+          "बालः": "child"
+  "sa-7406":
+    native: "Praise, a statement of approval of someone's worth."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "प्रशंसा": "praise"
+    examples:
+      "प्रशंसा भवति":
+        native: "Praise is given."
+        bases:
+          "प्रशंसा": "praise"
+          "भवति": "to be, become"
+      "प्रशंसां करोति जनः":
+        native: "A person praises."
+        bases:
+          "प्रशंसां": "praise"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-7407":
+    native: "An accusation or charge laid against someone."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "आरोपः": "accusation"
+    examples:
+      "आरोपो भवति":
+        native: "An accusation is made."
+        bases:
+          "आरोपो": "accusation"
+          "भवति": "to be, become"
+      "आरोपं पश्यति जनः":
+        native: "A person sees the charge."
+        bases:
+          "आरोपं": "accusation"
+          "पश्यति": "to see"
+          "जनः": "person"
+  "sa-7408":
+    native: "A notice or indication that conveys information."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "सूचना": "notice"
+    examples:
+      "सूचना भवति":
+        native: "A notice is given."
+        bases:
+          "सूचना": "notice"
+          "भवति": "to be, become"
+      "सूचनां लिखति बालः":
+        native: "The child writes a notice."
+        bases:
+          "सूचनां": "notice"
+          "लिखति": "to write"
+          "बालः": "child"
+  "sa-7409":
+    native: "An example or illustration used to make a point clear."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "दृष्टान्तः": "example"
+    examples:
+      "दृष्टान्तो भवति":
+        native: "An example is given."
+        bases:
+          "दृष्टान्तो": "example"
+          "भवति": "to be, become"
+      "दृष्टान्तं कथयति वैद्यः":
+        native: "The physician tells an example."
+        bases:
+          "दृष्टान्तं": "example"
+          "कथयति": "to tell"
+          "वैद्यः": "physician"
+  "sa-7410":
+    native: "A simile, a comparison of one thing with another."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "उपमा": "simile"
+    examples:
+      "उपमा भवति":
+        native: "A simile is found."
+        bases:
+          "उपमा": "simile"
+          "भवति": "to be, become"
+      "उपमां वदति जनः":
+        native: "A person speaks a simile."
+        bases:
+          "उपमां": "simile"
+          "वदति": "to speak"
+          "जनः": "person"
+  "sa-7411":
+    native: "Imagination, the making of a picture or supposition in the mind."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "कल्पना": "imagination"
+    examples:
+      "कल्पना भवति":
+        native: "An imagining arises."
+        bases:
+          "कल्पना": "imagination"
+          "भवति": "to be, become"
+      "कल्पनां करोति बालः":
+        native: "The child imagines."
+        bases:
+          "कल्पनां": "imagination"
+          "करोति": "to do, make"
+          "बालः": "child"
+  "sa-7412":
+    native: "Acceptance, the act of taking something as one's own."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "स्वीकारः": "acceptance"
+    examples:
+      "स्वीकारो भवति":
+        native: "Acceptance is given."
+        bases:
+          "स्वीकारो": "acceptance"
+          "भवति": "to be, become"
+      "स्वीकारं करोति जनः":
+        native: "A person accepts."
+        bases:
+          "स्वीकारं": "acceptance"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-7413":
+    native: "A vow or solemn promise to do or not to do something."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "प्रतिज्ञा": "vow"
+    examples:
+      "प्रतिज्ञा भवति":
+        native: "A vow is made."
+        bases:
+          "प्रतिज्ञा": "vow"
+          "भवति": "to be, become"
+      "प्रतिज्ञां करोति बालः":
+        native: "The child makes a vow."
+        bases:
+          "प्रतिज्ञां": "vow"
+          "करोति": "to do, make"
+          "बालः": "child"
+  "sa-7414":
+    native: "A debate or argument in which a view is stated and tested."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "वादः": "debate"
+    examples:
+      "वादो भवति":
+        native: "A debate takes place."
+        bases:
+          "वादो": "debate"
+          "भवति": "to be, become"
+      "वादं करोति जनः":
+        native: "A person argues."
+        bases:
+          "वादं": "debate"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-7415":
+    native: "A joke or banter made in fun."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "परिहासः": "joke"
+    examples:
+      "परिहासो भवति":
+        native: "A joke is made."
+        bases:
+          "परिहासो": "joke"
+          "भवति": "to be, become"
+      "परिहासं करोति बालः":
+        native: "The child makes a joke."
+        bases:
+          "परिहासं": "joke"
+          "करोति": "to do, make"
+          "बालः": "child"
+  "sa-7416":
+    native: "A distinction, a feature that marks one thing off from another."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "विशेषः": "distinction"
+    examples:
+      "विशेषो भवति":
+        native: "A distinction is made."
+        bases:
+          "विशेषो": "distinction"
+          "भवति": "to be, become"
+      "विशेषं जानाति जनः":
+        native: "A person knows the distinction."
+        bases:
+          "विशेषं": "distinction"
+          "जानाति": "to know"
+          "जनः": "person"
+  "sa-7417":
+    native: "Self-interest, the concern for one's own advantage."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "स्वार्थः": "self-interest"
+    examples:
+      "स्वार्थो भवति":
+        native: "Self-interest appears."
+        bases:
+          "स्वार्थो": "self-interest"
+          "भवति": "to be, become"
+      "स्वार्थं पश्यति जनः":
+        native: "A person sees self-interest."
+        bases:
+          "स्वार्थं": "self-interest"
+          "पश्यति": "to see"
+          "जनः": "person"
+  "sa-7418":
+    native: "Strange and odd, unlike what is usual."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "विचित्रः": "strange"
+    examples:
+      "विचित्रो भवति":
+        native: "It becomes strange."
+        bases:
+          "विचित्रो": "strange"
+          "भवति": "to be, become"
+      "विचित्रो बालः":
+        native: "A strange child."
+        bases:
+          "विचित्रो": "strange"
+          "बालः": "child"
+  "sa-7419":
+    native: "Base and low in character or rank."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "नीचः": "base"
+    examples:
+      "नीचो भवति":
+        native: "He becomes base."
+        bases:
+          "नीचो": "base"
+          "भवति": "to be, become"
+      "नीचो जनः":
+        native: "A base person."
+        bases:
+          "नीचो": "base"
+          "जनः": "person"
+  "sa-7420":
+    native: "Ignorant, lacking knowledge."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "अज्ञः": "ignorant"
+    examples:
+      "अज्ञो भवति":
+        native: "He becomes ignorant."
+        bases:
+          "अज्ञो": "ignorant"
+          "भवति": "to be, become"
+      "अज्ञो बालः":
+        native: "An ignorant child."
+        bases:
+          "अज्ञो": "ignorant"
+          "बालः": "child"
+  "sa-7421":
+    native: "Excellent and highest, the best of its kind."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "उत्तमः": "excellent"
+    examples:
+      "उत्तमो भवति":
+        native: "He becomes excellent."
+        bases:
+          "उत्तमो": "excellent"
+          "भवति": "to be, become"
+      "उत्तमो जनः":
+        native: "An excellent person."
+        bases:
+          "उत्तमो": "excellent"
+          "जनः": "person"
+  "sa-7422":
+    native: "The best, most excellent among others."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "श्रेष्ठः": "best"
+    examples:
+      "श्रेष्ठो भवति":
+        native: "He becomes the best."
+        bases:
+          "श्रेष्ठो": "best"
+          "भवति": "to be, become"
+      "श्रेष्ठो जनः":
+        native: "The best person."
+        bases:
+          "श्रेष्ठो": "best"
+          "जनः": "person"
+  "sa-7423":
+    native: "Inferior, lacking in worth or quality."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "हीनः": "inferior"
+    examples:
+      "हीनो भवति":
+        native: "He becomes inferior."
+        bases:
+          "हीनो": "inferior"
+          "भवति": "to be, become"
+      "हीनो जनः":
+        native: "An inferior person."
+        bases:
+          "हीनो": "inferior"
+          "जनः": "person"
+  "sa-7424":
+    native: "Lowest and most base in worth."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "Shares a sense of baseness with नीचः (nīcaḥ); अधमः (adhamaḥ) is the lowest in a series, नीचः (nīcaḥ) is low in character."
+    bases:
+      "अधमः": "lowest"
+    examples:
+      "अधमो भवति":
+        native: "He becomes the lowest."
+        bases:
+          "अधमो": "lowest"
+          "भवति": "to be, become"
+      "अधमो जनः":
+        native: "A base person."
+        bases:
+          "अधमो": "lowest"
+          "जनः": "person"
+  "sa-7425":
+    native: "Pleasing and lovely, delightful to see or hear."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "रम्यः": "pleasing"
+    examples:
+      "रम्यो भवति":
+        native: "It becomes pleasing."
+        bases:
+          "रम्यो": "pleasing"
+          "भवति": "to be, become"
+      "रम्यो बालः":
+        native: "A lovely child."
+        bases:
+          "रम्यो": "pleasing"
+          "बालः": "child"
+  "sa-7426":
+    native: "True and real, in agreement with fact."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "सत्यः": "true"
+    examples:
+      "सत्यो भवति":
+        native: "It becomes true."
+        bases:
+          "सत्यो": "true"
+          "भवति": "to be, become"
+      "सत्यो जनः":
+        native: "A truthful person."
+        bases:
+          "सत्यो": "true"
+          "जनः": "person"
+  "sa-7427":
+    native: "Unfit, not suited for a task or role."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "अयोग्यः": "unfit"
+    examples:
+      "अयोग्यो भवति":
+        native: "He becomes unfit."
+        bases:
+          "अयोग्यो": "unfit"
+          "भवति": "to be, become"
+      "अयोग्यो जनः":
+        native: "An unfit person."
+        bases:
+          "अयोग्यो": "unfit"
+          "जनः": "person"
+  "sa-7428":
+    native: "Appropriate and fitting, as custom and reason require."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "उचितः": "appropriate"
+    examples:
+      "उचितो भवति":
+        native: "It becomes appropriate."
+        bases:
+          "उचितो": "appropriate"
+          "भवति": "to be, become"
+      "उचितो जनः":
+        native: "A fitting person."
+        bases:
+          "उचितो": "appropriate"
+          "जनः": "person"
+  "sa-7429":
+    native: "Meaningless or useless, having no purpose."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "निरर्थकः": "meaningless"
+    examples:
+      "निरर्थको भवति":
+        native: "It becomes meaningless."
+        bases:
+          "निरर्थको": "meaningless"
+          "भवति": "to be, become"
+      "निरर्थको वादः":
+        native: "A meaningless debate."
+        bases:
+          "निरर्थको": "meaningless"
+          "वादः": "debate"
+  "sa-7430":
+    native: "Similar to, resembling something else."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "सदृशः": "similar"
+    examples:
+      "सदृशो भवति":
+        native: "It becomes similar."
+        bases:
+          "सदृशो": "similar"
+          "भवति": "to be, become"
+      "सदृशो बालः":
+        native: "A child like that."
+        bases:
+          "सदृशो": "similar"
+          "बालः": "child"
+  "sa-7431":
+    native: "Famous and well known to all."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "प्रसिद्धः": "famous"
+    examples:
+      "प्रसिद्धो भवति":
+        native: "He becomes famous."
+        bases:
+          "प्रसिद्धो": "famous"
+          "भवति": "to be, become"
+      "प्रसिद्धो जनः":
+        native: "A famous person."
+        bases:
+          "प्रसिद्धो": "famous"
+          "जनः": "person"
+  "sa-7432":
+    native: "Childish, foolish in judgement like a child."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "बालिशः": "childish"
+    examples:
+      "बालिशो भवति":
+        native: "He becomes childish."
+        bases:
+          "बालिशो": "childish"
+          "भवति": "to be, become"
+      "बालिशो जनः":
+        native: "A foolish person."
+        bases:
+          "बालिशो": "childish"
+          "जनः": "person"
+  "sa-7433":
+    native: "Clever and discerning, quick to see what matters."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "विचक्षणः": "clever"
+    examples:
+      "विचक्षणो भवति":
+        native: "He becomes clever."
+        bases:
+          "विचक्षणो": "clever"
+          "भवति": "to be, become"
+      "विचक्षणो बालः":
+        native: "A clever child."
+        bases:
+          "विचक्षणो": "clever"
+          "बालः": "child"
+  "sa-7434":
+    native: "Wise and intelligent in judgement."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "मेधिरः": "wise"
+    examples:
+      "मेधिरो भवति":
+        native: "He becomes wise."
+        bases:
+          "मेधिरो": "wise"
+          "भवति": "to be, become"
+      "मेधिरो जनः":
+        native: "A wise person."
+        bases:
+          "मेधिरो": "wise"
+          "जनः": "person"
+  "sa-7435":
+    native: "Evident and plain to the senses."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "प्रत्यक्षः": "evident"
+    examples:
+      "प्रत्यक्षो भवति":
+        native: "It becomes evident."
+        bases:
+          "प्रत्यक्षो": "evident"
+          "भवति": "to be, become"
+      "प्रत्यक्षो वादः":
+        native: "An evident argument."
+        bases:
+          "प्रत्यक्षो": "evident"
+          "वादः": "debate"

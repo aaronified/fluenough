@@ -1,0 +1,644 @@
+schema: 1
+id: "sa-en-feelings"
+kind: "layer"
+core: "sa-feelings"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Feelings"
+description: "Feelings and moods: love, fear, anger, grief, joy and calm in classical Sanskrit."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-7200":
+    native: "Affection, a tender liking and fondness for someone."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "स्नेहः": "affection"
+    examples:
+      "स्नेहो भवति":
+        native: "Affection arises."
+        bases:
+          "स्नेहो": "affection"
+          "भवति": "to be, become"
+      "स्नेहं पश्यति बालः":
+        native: "The child sees affection."
+        bases:
+          "स्नेहं": "affection"
+          "पश्यति": "to see"
+          "बालः": "child"
+  "sa-7201":
+    native: "Weeping, the act of crying out in grief."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "रोदनम्": "weeping"
+    examples:
+      "रोदनं भवति":
+        native: "Weeping starts."
+        bases:
+          "रोदनं": "weeping"
+          "भवति": "to be, become"
+      "रोदनं शृणोति जनः":
+        native: "A person hears the weeping."
+        bases:
+          "रोदनं": "weeping"
+          "शृणोति": "to hear"
+          "जनः": "person"
+  "sa-7202":
+    native: "Worry, an anxious thinking about what may happen."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "चिन्ता": "worry"
+    examples:
+      "चिन्ता भवति":
+        native: "Worry arises."
+        bases:
+          "चिन्ता": "worry"
+          "भवति": "to be, become"
+      "चिन्तां करोति जनः":
+        native: "A person worries."
+        bases:
+          "चिन्तां": "worry"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-7203":
+    native: "Fear or terror that makes someone shrink back."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "त्रासः": "fear"
+    examples:
+      "त्रासो भवति":
+        native: "Fear arises."
+        bases:
+          "त्रासो": "fear"
+          "भवति": "to be, become"
+      "त्रासं पश्यति बालः":
+        native: "The child sees the terror."
+        bases:
+          "त्रासं": "fear"
+          "पश्यति": "to see"
+          "बालः": "child"
+  "sa-7204":
+    native: "Hope, the expectation that something good will happen."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "आशा": "hope"
+    examples:
+      "आशा भवति":
+        native: "Hope arises."
+        bases:
+          "आशा": "hope"
+          "भवति": "to be, become"
+      "आशां स्मरति जनः":
+        native: "A person remembers a hope."
+        bases:
+          "आशां": "hope"
+          "स्मरति": "to remember"
+          "जनः": "person"
+  "sa-7205":
+    native: "Disgust or loathing at something unpleasant."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "घृणा": "disgust"
+    examples:
+      "घृणा भवति":
+        native: "Disgust arises."
+        bases:
+          "घृणा": "disgust"
+          "भवति": "to be, become"
+      "घृणां पश्यति जनः":
+        native: "A person looks at with disgust."
+        bases:
+          "घृणां": "disgust"
+          "पश्यति": "to see"
+          "जनः": "person"
+  "sa-7206":
+    native: "Compassion, the pain felt at another's suffering."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Shares its gloss with दया (dayā, sympathy); करुणा (karuṇā) is pity at another’s suffering, दया (dayā) is the wider kindly feeling."
+    bases:
+      "करुणा": "compassion"
+    examples:
+      "करुणा भवति":
+        native: "Compassion arises."
+        bases:
+          "करुणा": "compassion"
+          "भवति": "to be, become"
+      "करुणां करोति वैद्यः":
+        native: "The physician shows compassion."
+        bases:
+          "करुणां": "compassion"
+          "करोति": "to do, make"
+          "वैद्यः": "physician"
+  "sa-7207":
+    native: "Pride, an inflated sense of one's own worth."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "गर्वः": "pride"
+    examples:
+      "गर्वो भवति":
+        native: "Pride arises."
+        bases:
+          "गर्वो": "pride"
+          "भवति": "to be, become"
+      "गर्वं जानाति बालः":
+        native: "The child knows pride."
+        bases:
+          "गर्वं": "pride"
+          "जानाति": "to know"
+          "बालः": "child"
+  "sa-7208":
+    native: "Grief, the deep sorrow felt at a loss."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n4": "Its gloss is close to खेद (khedaḥ, dejection); शोकः (śokaḥ) is grief at a loss, खेदः (khedaḥ) a wearied dejection."
+    bases:
+      "शोकः": "grief"
+    examples:
+      "शोको भवति":
+        native: "Grief arises."
+        bases:
+          "शोको": "grief"
+          "भवति": "to be, become"
+      "शोकं स्मरति जनः":
+        native: "A person remembers grief."
+        bases:
+          "शोकं": "grief"
+          "स्मरति": "to remember"
+          "जनः": "person"
+  "sa-7209":
+    native: "Wonder or amazement at something unexpected."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "विस्मयः": "wonder"
+    examples:
+      "विस्मयो भवति":
+        native: "Wonder arises."
+        bases:
+          "विस्मयो": "wonder"
+          "भवति": "to be, become"
+      "विस्मयं पश्यति बालः":
+        native: "The child looks with wonder."
+        bases:
+          "विस्मयं": "wonder"
+          "पश्यति": "to see"
+          "बालः": "child"
+  "sa-7210":
+    native: "Dejection, a weary sadness and regret."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "खेदः": "dejection"
+    examples:
+      "खेदो भवति":
+        native: "Dejection arises."
+        bases:
+          "खेदो": "dejection"
+          "भवति": "to be, become"
+      "खेदं जानाति जनः":
+        native: "A person knows dejection."
+        bases:
+          "खेदं": "dejection"
+          "जानाति": "to know"
+          "जनः": "person"
+  "sa-7211":
+    native: "Remorse, the sorrow felt after doing wrong."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "पश्चात्तापः": "remorse"
+    examples:
+      "पश्चात्तापो भवति":
+        native: "Remorse arises."
+        bases:
+          "पश्चात्तापो": "remorse"
+          "भवति": "to be, become"
+      "पश्चात्तापं करोति जनः":
+        native: "A person feels remorse."
+        bases:
+          "पश्चात्तापं": "remorse"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-7212":
+    native: "Regret, the pain felt over a past act."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "अनुतापः": "regret"
+    examples:
+      "अनुतापो भवति":
+        native: "Regret arises."
+        bases:
+          "अनुतापो": "regret"
+          "भवति": "to be, become"
+      "अनुतापं स्मरति जनः":
+        native: "A person recalls a regret."
+        bases:
+          "अनुतापं": "regret"
+          "स्मरति": "to remember"
+          "जनः": "person"
+  "sa-7213":
+    native: "Anger, a rising displeasure against someone."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "रोषः": "anger"
+    examples:
+      "रोषो भवति":
+        native: "Anger arises."
+        bases:
+          "रोषो": "anger"
+          "भवति": "to be, become"
+      "रोषं पश्यति बालः":
+        native: "The child sees the anger."
+        bases:
+          "रोषं": "anger"
+          "पश्यति": "to see"
+          "बालः": "child"
+  "sa-7214":
+    native: "Wrath, a fierce and sudden anger."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n4": "Shares a sense of anger with रोषः (roṣaḥ); कोपः (kopaḥ) is the stronger and more sudden anger."
+    bases:
+      "कोपः": "wrath"
+    examples:
+      "कोपो भवति":
+        native: "Wrath arises."
+        bases:
+          "कोपो": "wrath"
+          "भवति": "to be, become"
+      "कोपं करोति जनः":
+        native: "A person shows wrath."
+        bases:
+          "कोपं": "wrath"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-7215":
+    native: "Agitation, an excited and disturbed state of mind."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "संवेगः": "agitation"
+    examples:
+      "संवेगो भवति":
+        native: "Agitation arises."
+        bases:
+          "संवेगो": "agitation"
+          "भवति": "to be, become"
+      "संवेगं पश्यति जनः":
+        native: "A person sees the agitation."
+        bases:
+          "संवेगं": "agitation"
+          "पश्यति": "to see"
+          "जनः": "person"
+  "sa-7216":
+    native: "Contentment, the calm satisfaction of having enough."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "तोषः": "contentment"
+    examples:
+      "तोषो भवति":
+        native: "Contentment arises."
+        bases:
+          "तोषो": "contentment"
+          "भवति": "to be, become"
+      "तोषं करोति जनः":
+        native: "A person brings about contentment."
+        bases:
+          "तोषं": "contentment"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-7217":
+    native: "A wish or desire for something."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Shares its gloss with कामना (kāmanā); इच्छा (icchā) is the simple wish, कामना (kāmanā) the longing for an object."
+    bases:
+      "इच्छा": "wish"
+    examples:
+      "इच्छा भवति":
+        native: "A wish arises."
+        bases:
+          "इच्छा": "wish"
+          "भवति": "to be, become"
+      "इच्छां पश्यति बालः":
+        native: "The child sees a wish."
+        bases:
+          "इच्छां": "wish"
+          "पश्यति": "to see"
+          "बालः": "child"
+  "sa-7218":
+    native: "A longing or desire for an object."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "कामना": "wish"
+    examples:
+      "कामना भवति":
+        native: "A longing arises."
+        bases:
+          "कामना": "wish"
+          "भवति": "to be, become"
+      "कामनां करोति जनः":
+        native: "A person longs."
+        bases:
+          "कामनां": "wish"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-7219":
+    native: "Apprehension, a doubt or fear that something may go wrong."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "शङ्का": "apprehension"
+    examples:
+      "शङ्का भवति":
+        native: "Apprehension arises."
+        bases:
+          "शङ्का": "apprehension"
+          "भवति": "to be, become"
+      "शङ्कां जानाति जनः":
+        native: "A person knows apprehension."
+        bases:
+          "शङ्कां": "apprehension"
+          "जानाति": "to know"
+          "जनः": "person"
+  "sa-7220":
+    native: "Eagerness, a restless longing to see or do something."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "औत्सुक्यम्": "eagerness"
+    examples:
+      "औत्सुक्यं भवति":
+        native: "Eagerness arises."
+        bases:
+          "औत्सुक्यं": "eagerness"
+          "भवति": "to be, become"
+      "औत्सुक्यं करोति बालः":
+        native: "The child shows eagerness."
+        bases:
+          "औत्सुक्यं": "eagerness"
+          "करोति": "to do, make"
+          "बालः": "child"
+  "sa-7221":
+    native: "Tender parental affection and care."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "वात्सल्यम्": "affection"
+    examples:
+      "वात्सल्यं भवति":
+        native: "Tender affection arises."
+        bases:
+          "वात्सल्यं": "affection"
+          "भवति": "to be, become"
+      "वात्सल्यं पश्यति जनः":
+        native: "A person sees tender affection."
+        bases:
+          "वात्सल्यं": "affection"
+          "पश्यति": "to see"
+          "जनः": "person"
+  "sa-7222":
+    native: "Happiness, the state of ease and well-being."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "सौख्यम्": "happiness"
+    examples:
+      "सौख्यं भवति":
+        native: "Happiness arises."
+        bases:
+          "सौख्यं": "happiness"
+          "भवति": "to be, become"
+      "सौख्यं पश्यति बालः":
+        native: "The child sees happiness."
+        bases:
+          "सौख्यं": "happiness"
+          "पश्यति": "to see"
+          "बालः": "child"
+  "sa-7223":
+    native: "Pleased and cheerful, glad at heart."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "प्रसन्नः": "pleased"
+    examples:
+      "प्रसन्नो भवति":
+        native: "He becomes pleased."
+        bases:
+          "प्रसन्नो": "pleased"
+          "भवति": "to be, become"
+      "प्रसन्नो बालः":
+        native: "A pleased child."
+        bases:
+          "प्रसन्नो": "pleased"
+          "बालः": "child"
+  "sa-7224":
+    native: "Sad and depressed in spirit."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "खिन्नः": "sad"
+    examples:
+      "खिन्नो भवति":
+        native: "He becomes sad."
+        bases:
+          "खिन्नो": "sad"
+          "भवति": "to be, become"
+      "खिन्नो जनः":
+        native: "A sad person."
+        bases:
+          "खिन्नो": "sad"
+          "जनः": "person"
+  "sa-7225":
+    native: "Agitated and troubled, in a state of distress."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "Shares a sense of distress with क्षुब्धः (kṣubdhaḥ) and उद्विग्नः (udvignaḥ); आकुलः (ākulaḥ) is the confused agitation of a crowded mind."
+    bases:
+      "आकुलः": "agitated"
+    examples:
+      "आकुलो भवति":
+        native: "He becomes agitated."
+        bases:
+          "आकुलो": "agitated"
+          "भवति": "to be, become"
+      "आकुलो बालः":
+        native: "An agitated child."
+        bases:
+          "आकुलो": "agitated"
+          "बालः": "child"
+  "sa-7226":
+    native: "Shaken and disturbed, roused up inside."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "क्षुब्धः": "agitated"
+    examples:
+      "क्षुब्धो भवति":
+        native: "He is shaken."
+        bases:
+          "क्षुब्धो": "agitated"
+          "भवति": "to be, become"
+      "क्षुब्धो जनः":
+        native: "A disturbed person."
+        bases:
+          "क्षुब्धो": "agitated"
+          "जनः": "person"
+  "sa-7227":
+    native: "Anxious, grieving and uneasy about something."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "उद्विग्नः": "anxious"
+    examples:
+      "उद्विग्नो भवति":
+        native: "He becomes anxious."
+        bases:
+          "उद्विग्नो": "anxious"
+          "भवति": "to be, become"
+      "उद्विग्नो बालः":
+        native: "An anxious child."
+        bases:
+          "उद्विग्नो": "anxious"
+          "बालः": "child"
+  "sa-7228":
+    native: "Angry and irritated, provoked to wrath."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "कुपितः": "angry"
+    examples:
+      "कुपितो भवति":
+        native: "He becomes angry."
+        bases:
+          "कुपितो": "angry"
+          "भवति": "to be, become"
+      "कुपितो जनः":
+        native: "An angry person."
+        bases:
+          "कुपितो": "angry"
+          "जनः": "person"
+  "sa-7229":
+    native: "Calm and at peace, settled and quiet."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "शान्तः": "calm"
+    examples:
+      "शान्तो भवति":
+        native: "He becomes calm."
+        bases:
+          "शान्तो": "calm"
+          "भवति": "to be, become"
+      "शान्तो जनः":
+        native: "A calm person."
+        bases:
+          "शान्तो": "calm"
+          "जनः": "person"
+  "sa-7230":
+    native: "Content and well satisfied."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "संतुष्टः": "content"
+    examples:
+      "संतुष्टो भवति":
+        native: "He becomes content."
+        bases:
+          "संतुष्टो": "content"
+          "भवति": "to be, become"
+      "संतुष्टो बालः":
+        native: "A content child."
+        bases:
+          "संतुष्टो": "content"
+          "बालः": "child"
+  "sa-7231":
+    native: "Fearless, not afraid of anything."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "निर्भयः": "fearless"
+    examples:
+      "निर्भयो भवति":
+        native: "He becomes fearless."
+        bases:
+          "निर्भयो": "fearless"
+          "भवति": "to be, become"
+      "निर्भयो जनः":
+        native: "A fearless person."
+        bases:
+          "निर्भयो": "fearless"
+          "जनः": "person"
+  "sa-7232":
+    native: "Terrible and dreadful, causing fear."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+    bases:
+      "भयंकरः": "terrible"
+    examples:
+      "भयंकरो भवति":
+        native: "It becomes terrible."
+        bases:
+          "भयंकरो": "terrible"
+          "भवति": "to be, become"
+      "भयंकरो रोगः":
+        native: "A terrible disease."
+        bases:
+          "भयंकरो": "terrible"
+          "रोगः": "disease"
