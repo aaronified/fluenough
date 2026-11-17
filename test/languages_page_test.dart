@@ -401,7 +401,9 @@ void main() {
   });
 
   testWidgets('Learn on a skill downloads nothing here but leaves the button '
-      'reading Check; a failed sound test keeps it', (tester) async {
+      'reading Check; a failed sound test is skipped, not owed', (
+    tester,
+  ) async {
     final state = await pumpLanguages(tester);
     await tapKey(tester, 'language-es');
     final text = l10n(tester);
@@ -422,7 +424,9 @@ void main() {
     expect(find.text(text.languagesCheckSoundBad), findsOneWidget);
     await tester.tap(find.text(text.commonClose));
     await tester.pumpAndSettle();
-    expect(find.text(text.languagesCheck), findsOneWidget);
+    // Skipped: it never blocks Done, and the Voices page tests it again.
+    expect(find.text(text.languagesCheck), findsNothing);
+    expect(find.text(text.languagesDone), findsOneWidget);
   });
 
   testWidgets('minutes a day step by 5 and show just "20 mins"', (
