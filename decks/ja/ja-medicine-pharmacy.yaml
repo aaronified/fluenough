@@ -1,0 +1,154 @@
+schema: 1
+id: "ja-medicine-pharmacy"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+genre: "professional"
+professional: "medicine"
+hidden: true
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "ja-7511"
+    target: "しょほうせんをおあずかりします"
+    words: ["しょほうせん", "を", "おあずかりします"]
+    reading: "shohousen o oazukarishimasu"
+    ipa: "ɕohoːseɴ o oadzɯkaɾiɕimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "しょほうせん", ref: "ja-2065" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "おあずかりします", ref: "ja-2926" }
+  - id: "ja-7512"
+    target: "おくすりてちょうはおもちですか"
+    words: ["おくすりてちょう", "は", "おもち", "です", "か"]
+    reading: "okusuritechou wa omochi desu ka"
+    ipa: "okɯsɯɾitetɕoː wa omotɕi desɯ ka"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "おくすりてちょう", base: "おくすりてちょう", reading: "okusuritechou" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おもち", ref: "ja-0359" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-7513"
+    target: "すこしおまちください"
+    words: ["すこし", "おまち", "ください"]
+    reading: "sukoshi omachi kudasai"
+    ipa: "sɯkoɕi omatɕi kɯdasai"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "すこし", ref: "ja-0395" }
+      - { word: "おまち", ref: "ja-0358" }
+      - { word: "ください", base: "くださる", reading: "kudasaru" }
+  - id: "ja-7514"
+    target: "いちにちさんかいしょくごにのんでください"
+    words: ["いちにち", "さんかい", "しょくご", "に", "のんで", "ください"]
+    reading: "ichinichi sankai shokugo ni nonde kudasai"
+    ipa: "itɕinitɕi saɴkai ɕokɯɡo ni noɴde kɯdasai"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "いちにち", base: "いちにち", reading: "ichinichi" }
+      - { word: "さんかい", base: "さんかい", reading: "sankai" }
+      - { word: "しょくご", base: "しょくご", reading: "shokugo" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "のんで", ref: "ja-0342" }
+      - { word: "ください", base: "くださる", reading: "kudasaru" }
+  - id: "ja-7515"
+    target: "ねるまえにのんでください"
+    words: ["ねる", "まえ", "に", "のんで", "ください"]
+    reading: "neru mae ni nonde kudasai"
+    ipa: "neɾɯ mae ni noɴde kɯdasai"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "ねる", ref: "ja-0352" }
+      - { word: "まえ", ref: "ja-0518" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "のんで", ref: "ja-0342" }
+      - { word: "ください", base: "くださる", reading: "kudasaru" }
+  - id: "ja-7516"
+    target: "ほかにのんでいるくすりはありますか"
+    words: ["ほか", "に", "のんで", "いる", "くすり", "は", "あります", "か"]
+    reading: "hoka ni nonde iru kusuri wa arimasu ka"
+    ipa: "hoka ni noɴde iɾɯ kɯsɯɾi wa aɾimasɯ ka"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "ほか", ref: "ja-8909" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "のんで", ref: "ja-0342" }
+      - { word: "いる", base: "いる", reading: "iru" }
+      - { word: "くすり", ref: "ja-1103" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "あります", base: "ある", reading: "aru" }
+      - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-7517"
+    target: "みずでのんでください"
+    words: ["みず", "で", "のんで", "ください"]
+    reading: "mizu de nonde kudasai"
+    ipa: "midzɯ de noɴde kɯdasai"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "みず", ref: "ja-0073" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "のんで", ref: "ja-0342" }
+      - { word: "ください", base: "くださる", reading: "kudasaru" }
+  - id: "ja-7518"
+    target: "くすりはなのかぶんです"
+    words: ["くすり", "は", "なのかぶん", "です"]
+    reading: "kusuri wa nanokabun desu"
+    ipa: "kɯsɯɾi wa nanokabɯɴ desɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "くすり", ref: "ja-1103" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "なのかぶん", base: "なのかぶん", reading: "nanokabun" }
+      - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-7519"
+    target: "ぐあいがわるくなったらいしゃにそうだんしてください"
+    words: ["ぐあい", "が", "わるく", "なったら", "いしゃ", "に", "そうだん", "して", "ください"]
+    reading: "guai ga waruku nattara isha ni soudan shite kudasai"
+    ipa: "ɡɯai ɡa waɾɯkɯ nattaɾa iɕa ni soːdaɴ ɕite kɯdasai"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "ぐあい", ref: "ja-1229" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "わるく", ref: "ja-0465" }
+      - { word: "なったら", ref: "ja-2220" }
+      - { word: "いしゃ", ref: "ja-0696" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "そうだん", ref: "ja-2570" }
+      - { word: "して", ref: "ja-0375" }
+      - { word: "ください", base: "くださる", reading: "kudasaru" }
+  - id: "ja-7520"
+    target: "ぜんぶでさんびゃくえんです"
+    words: ["ぜんぶ", "で", "さんびゃく", "えん", "です"]
+    reading: "zenbu de sanbyaku en desu"
+    ipa: "dzeɴbɯ de saɴbjakɯ eɴ desɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "ぜんぶ", ref: "ja-0432" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "さんびゃく", ref: "ja-0757" }
+      - { word: "えん", ref: "ja-0753" }
+      - { word: "です", base: "です", reading: "desu" }
