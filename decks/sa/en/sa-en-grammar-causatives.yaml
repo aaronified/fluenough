@@ -1,0 +1,35 @@
+schema: 1
+id: "sa-en-grammar-causatives"
+kind: "layer"
+core: "sa-grammar-causatives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The causative: ṇic, vṛddhi and the p"
+description: "The causative of the verbs of the course: the stem in -aya with vṛddhi or guṇa of the root and the p that most roots in ā take, and its nine present active forms. Stems Wiktionary does not list are made by the rules and marked derived in the review queue. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "causative form"
+  slots:
+    "stem": "causative stem (the root with aya)"
+    "p3-sg": "causative present, third person singular (he makes it be done)"
+    "p3-du": "causative present, third person dual (the two of them make it be done)"
+    "p3-pl": "causative present, third person plural (they make it be done)"
+    "p2-sg": "causative present, second person singular (you make it be done)"
+    "p2-du": "causative present, second person dual (the two of you make it be done)"
+    "p2-pl": "causative present, second person plural (you all make it be done)"
+    "p1-sg": "causative present, first person singular (I make it be done)"
+    "p1-du": "causative present, first person dual (the two of us make it be done)"
+    "p1-pl": "causative present, first person plural (we make it be done)"
+rules:
+  "sa-rule-causative-stem":
+    name: "Causative stem in -aya (ṇic): vṛddhi, guṇa and the p"
+    explanation: "Pāṇini 3.1.26, {1}, as typed on the page, gives ṇic for the action of the one who causes it. Whitney 1041 says the causative stem is the root, usually strengthened, with the sign aya, and 1042 gives the treatment of the root. A final vowel has vṛddhi (Whitney 1042 c): {2} gives {3}, {4} gives {5}, {6} gives {7} and {8} gives {9}; a medial a is often lengthened ({10}, {11}; {12}, {13}), where Pāṇini 7.2.116, {14}, as typed, is the sūtra for the vṛddhi of a medial a before a suffix marked ṇ, while the roots that keep their short a include {15}, {16} (1042 g, which also lists nam, pat, cal and khan with both forms); a medial or initial i, u or ṛ has guṇa (1042 a): {17} gives {18}, {19} gives {20} and {21} gives {22}. Most roots in final ā, and ṛ, add p before the sign (1042 i), as Pāṇini 7.3.36, {23}, as typed, gives: {24} gives {25}, {26} gives {27}, {28} gives {29}, {30} gives {31} and {32} gives {33}; so do the roots in i of 1042 l: {34} gives {35} and {36} gives {37}. But {38} and {39} take y, not p (1042 k): {40} and {41}; 7.3.37, {42}, as typed, gives yuk to some such roots. A root of the tenth class already ends in aya, and is not given here."
+  "sa-rule-causative-third":
+    name: "Causative, third person: -ti, -taḥ, -nti"
+    explanation: "The causative stem is inflected in the present like any other a-stem (Whitney 1043): the endings are -ti, -taḥ, -nti, so from {1} come {2} (he makes become, he brings about), {3} and {4}. The doer of the action that is caused is put in the accusative when the verb is one of motion or knowing: {5} (he makes me go); the word for he drops its visarga before m by 6.1.132, {6}, as typed, and the m of the word for me is written ṃ before g by 8.3.23. The causative takes the endings of the middle voice too when the fruit of the action is for the doer (Pāṇini 1.3.74, {7}, as typed); this unit teaches the active."
+  "sa-rule-causative-second":
+    name: "Causative, second person: -si, -thaḥ, -tha"
+    explanation: "The second person has -si, -thaḥ, -tha on the causative stem (Whitney 1043): from {1}, {2} (you cause to do), {3} and {4}; from {5}, {6}, {7} and {8}. The final a of the stem is kept before these endings."
+  "sa-rule-causative-first":
+    name: "Causative, first person: -āmi, -āvaḥ, -āmaḥ"
+    explanation: "The first person has -āmi, -āvaḥ, -āmaḥ, and the a of the stem merges with the ā of the ending (Whitney 1043): from {1} come {2} (I cause to do), {3} and {4}; the a is lengthened before the v and m of the endings -vaḥ and -maḥ, which Pāṇini 7.3.101 gives as {5}, as typed, and which is why the stem of the present has -āvaḥ and -āmaḥ and not -avaḥ and -amaḥ."
