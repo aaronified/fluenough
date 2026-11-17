@@ -1,0 +1,834 @@
+schema: 1
+id: "sa-en-journey"
+kind: "layer"
+core: "sa-journey"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Journey"
+description: "Journey: roads, travellers, vehicles, boats and the stops along the way."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-5500":
+    native: "Journey, travel."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "Also a festive procession or pilgrimage, the sense of तीर्थयात्रा (tīrtha-yātrā); the card gives the plain sense of a journey."
+    bases:
+      "यात्रा": "journey, travel"
+    examples:
+      "अस्ति यात्रा दीर्घा":
+        native: "There is a long journey."
+        bases:
+          "अस्ति": "is"
+          "यात्रा": "journey, travel"
+          "दीर्घा": "long"
+      "अस्ति मार्गे यात्रा":
+        native: "There is a journey on the road."
+        bases:
+          "अस्ति": "is"
+          "मार्गे": "road (locative)"
+          "यात्रा": "journey, travel"
+  "sa-5501":
+    native: "Wayfarer, traveller."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is पथिक (pathika); the card shows the isolated nominative singular पथिकः (pathikaḥ)."
+      "n3": "A wayfarer on the road; near synonym of यात्री (yātrī), which is the more general word for someone who travels."
+    bases:
+      "पथिकः": "wayfarer, traveller"
+    examples:
+      "अस्ति पथिकः तत्र":
+        native: "There is a traveller there."
+        bases:
+          "अस्ति": "is"
+          "पथिकः": "wayfarer, traveller"
+          "तत्र": "there"
+      "अस्ति सुखी पथिकः":
+        native: "There is a happy wayfarer."
+        bases:
+          "अस्ति": "is"
+          "सुखी": "happy"
+          "पथिकः": "wayfarer, traveller"
+  "sa-5502":
+    native: "Traveller."
+    notes:
+      "n1": "Masculine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is यात्रिन् (yātrin); the card shows the isolated nominative singular यात्री (yātrī)."
+      "n3": "A traveller in general; near synonym of पथिकः (pathikaḥ), the word for a wayfarer on the road."
+    bases:
+      "यात्री": "traveller"
+    examples:
+      "अस्ति यात्री तत्र":
+        native: "There is a traveller there."
+        bases:
+          "अस्ति": "is"
+          "यात्री": "traveller"
+          "तत्र": "there"
+      "अस्ति यात्री क्लान्तः":
+        native: "There is a tired traveller."
+        bases:
+          "अस्ति": "is"
+          "यात्री": "traveller"
+          "क्लान्तः": "tired"
+  "sa-5503":
+    native: "Chariot."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is रथ (ratha); the card shows the isolated nominative singular रथः (rathaḥ)."
+      "n3": "A two-wheeled chariot, often for war or racing; contrasted with शकटम् (śakaṭam), a cart."
+    bases:
+      "रथः": "chariot"
+    examples:
+      "अस्ति रथः तत्र":
+        native: "There is a chariot there."
+        bases:
+          "अस्ति": "is"
+          "रथः": "chariot"
+          "तत्र": "there"
+      "अस्ति रथे चक्रम्":
+        native: "There is a wheel on the chariot."
+        bases:
+          "अस्ति": "is"
+          "रथे": "chariot (locative)"
+          "चक्रम्": "wheel"
+  "sa-5504":
+    native: "Cart."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is शकट (śakaṭa); the card shows the isolated nominative singular शकटम् (śakaṭam)."
+      "n3": "Before a consonant the final म् (m) of शकटम् (śakaṭam) is written ं (ṃ), as in शकटं (śakaṭaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "A cart or wagon for goods; contrasted with रथः (rathaḥ), the chariot."
+    bases:
+      "शकटम्": "cart"
+    examples:
+      "अस्ति मार्गे शकटम्":
+        native: "There is a cart on the road."
+        bases:
+          "अस्ति": "is"
+          "मार्गे": "road (locative)"
+          "शकटम्": "cart"
+      "अस्ति शकटं तत्र":
+        native: "There is a cart there."
+        bases:
+          "अस्ति": "is"
+          "शकटं": "cart"
+          "तत्र": "there"
+  "sa-5505":
+    native: "Ship."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is पोत (pota); the card shows the isolated nominative singular पोतः (potaḥ)."
+    bases:
+      "पोतः": "ship"
+    examples:
+      "अस्ति पोतः तत्र":
+        native: "There is a ship there."
+        bases:
+          "अस्ति": "is"
+          "पोतः": "ship"
+          "तत्र": "there"
+      "अस्ति पोते यात्री":
+        native: "There is a traveller on the ship."
+        bases:
+          "अस्ति": "is"
+          "पोते": "ship (locative)"
+          "यात्री": "traveller"
+  "sa-5506":
+    native: "Boat."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "Before a consonant the final म् (m) of नौकायाम् (naukāyām) is written ं (ṃ), as in नौकायां (naukāyāṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "नौका": "boat"
+    examples:
+      "अस्ति नौका तत्र":
+        native: "There is a boat there."
+        bases:
+          "अस्ति": "is"
+          "नौका": "boat"
+          "तत्र": "there"
+      "अस्ति नौकायां कर्णधारः":
+        native: "There is a helmsman in the boat."
+        bases:
+          "अस्ति": "is"
+          "नौकायां": "boat (locative)"
+          "कर्णधारः": "helmsman"
+  "sa-5507":
+    native: "Shore."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is तीर (tīra); the card shows the isolated nominative singular तीरम् (tīram)."
+      "n3": "Before a consonant the final म् (m) of तीरम् (tīram) is written ं (ṃ), as in तीरं (tīraṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "तीरम्": "shore"
+    examples:
+      "अस्ति तीरं तत्र":
+        native: "There is a shore there."
+        bases:
+          "अस्ति": "is"
+          "तीरं": "shore"
+          "तत्र": "there"
+      "अस्ति नौका तीरे":
+        native: "There is a boat at the shore."
+        bases:
+          "अस्ति": "is"
+          "नौका": "boat"
+          "तीरे": "shore (nominative dual)"
+  "sa-5508":
+    native: "Bridge."
+    notes:
+      "n1": "Masculine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is सेतु (setu); the card shows the isolated nominative singular सेतुः (setuḥ)."
+    bases:
+      "सेतुः": "bridge"
+    examples:
+      "अस्ति सेतुः तत्र":
+        native: "There is a bridge there."
+        bases:
+          "अस्ति": "is"
+          "सेतुः": "bridge"
+          "तत्र": "there"
+      "अस्ति सेतौ पथिकः":
+        native: "There is a traveller on the bridge."
+        bases:
+          "अस्ति": "is"
+          "सेतौ": "bridge (locative)"
+          "पथिकः": "wayfarer, traveller"
+  "sa-5509":
+    native: "Departure."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is प्रस्थान (prasthāna); the card shows the isolated nominative singular प्रस्थानम् (prasthānam)."
+    bases:
+      "प्रस्थानम्": "departure"
+    examples:
+      "अस्ति यात्रायाः प्रस्थानम्":
+        native: "There is the departure of the journey."
+        bases:
+          "अस्ति": "is"
+          "यात्रायाः": "journey, travel (ablative)"
+          "प्रस्थानम्": "departure"
+      "अस्ति तीरात् प्रस्थानम्":
+        native: "There is a departure from the shore."
+        bases:
+          "अस्ति": "is"
+          "तीरात्": "shore (ablative)"
+          "प्रस्थानम्": "departure"
+  "sa-5510":
+    native: "Going, journey."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is गमन (gamana); the card shows the isolated nominative singular गमनम् (gamanam)."
+      "n3": "Before a consonant the final म् (m) of गमनम् (gamanam) is written ं (ṃ), as in गमनं (gamanaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "Going or the act of going; near synonym of गतिः (gatiḥ), which also means a course or path."
+    bases:
+      "गमनम्": "going, journey"
+    examples:
+      "अस्ति गमनं यात्रायाः":
+        native: "There is the going of the journey."
+        bases:
+          "अस्ति": "is"
+          "गमनं": "going, journey"
+          "यात्रायाः": "journey, travel (ablative)"
+      "अस्ति गमनं दीर्घम्":
+        native: "The journey is long."
+        bases:
+          "अस्ति": "is"
+          "गमनं": "going, journey"
+          "दीर्घम्": "long"
+  "sa-5511":
+    native: "Guest."
+    notes:
+      "n1": "Masculine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is अतिथि (atithi); the card shows the isolated nominative singular अतिथिः (atithiḥ)."
+    bases:
+      "अतिथिः": "guest"
+    examples:
+      "अतिथिः तत्र":
+        native: "A guest is there."
+        bases:
+          "अतिथिः": "guest"
+          "तत्र": "there"
+      "अतिथिः सुखी":
+        native: "The guest is happy."
+        bases:
+          "अतिथिः": "guest"
+          "सुखी": "happy"
+  "sa-5512":
+    native: "Fee, toll."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is शुल्क (śulka); the card shows the isolated nominative singular शुल्कम् (śulkam)."
+      "n3": "Before a consonant the final म् (m) of शुल्कम् (śulkam) is written ं (ṃ), as in शुल्कं (śulkaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "The same word also means a price or a dowry; on the road it is the fee levied at a ferry, pass or road."
+    bases:
+      "शुल्कम्": "fee, toll"
+    examples:
+      "अस्ति शुल्कं तत्र":
+        native: "There is a fee there."
+        bases:
+          "अस्ति": "is"
+          "शुल्कं": "fee, toll"
+          "तत्र": "there"
+      "अस्ति सेतौ शुल्कम्":
+        native: "There is a fee on the bridge."
+        bases:
+          "अस्ति": "is"
+          "सेतौ": "bridge (locative)"
+          "शुल्कम्": "fee, toll"
+  "sa-5513":
+    native: "Vehicle."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is यान (yāna); the card shows the isolated nominative singular यानम् (yānam)."
+      "n3": "Before a consonant the final म् (m) of यानम् (yānam) is written ं (ṃ), as in यानं (yānaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "A general word for a conveyance; near synonym of वाहनम् (vāhanam), which stresses carrying."
+    bases:
+      "यानम्": "vehicle"
+    examples:
+      "अस्ति यानं तत्र":
+        native: "There is a vehicle there."
+        bases:
+          "अस्ति": "is"
+          "यानं": "vehicle"
+          "तत्र": "there"
+      "अस्ति यानं मार्गे":
+        native: "There is a vehicle on the road."
+        bases:
+          "अस्ति": "is"
+          "यानं": "vehicle"
+          "मार्गे": "road (locative)"
+  "sa-5514":
+    native: "Carriage, vehicle."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is वाहन (vāhana); the card shows the isolated nominative singular वाहनम् (vāhanam)."
+      "n3": "Before a consonant the final म् (m) of वाहनम् (vāhanam) is written ं (ṃ), as in वाहनं (vāhanaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "A carriage or mount, from the root वह् (vah), to carry; near synonym of यानम् (yānam)."
+    bases:
+      "वाहनम्": "carriage, vehicle"
+    examples:
+      "अस्ति वाहनं तत्र":
+        native: "There is a carriage there."
+        bases:
+          "अस्ति": "is"
+          "वाहनं": "carriage, vehicle"
+          "तत्र": "there"
+      "अस्ति वाहनं पोते":
+        native: "There is a carriage on the ship."
+        bases:
+          "अस्ति": "is"
+          "वाहनं": "carriage, vehicle"
+          "पोते": "ship (locative)"
+  "sa-5515":
+    native: "Measure of distance, a krośa."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is क्रोश (krośa); the card shows the isolated nominative singular क्रोशः (krośaḥ)."
+      "n3": "A measure of distance; the unit of the road measure in the same family as योजनम् (yojanam)."
+    bases:
+      "क्रोशः": "measure of distance, a krośa"
+    examples:
+      "एकः क्रोशः तत्र":
+        native: "There is one krośa there."
+        bases:
+          "एकः": "one"
+          "क्रोशः": "measure of distance, a krośa"
+          "तत्र": "there"
+      "अस्ति मार्गे क्रोशः":
+        native: "There is a krośa on the road."
+        bases:
+          "अस्ति": "is"
+          "मार्गे": "road (locative)"
+          "क्रोशः": "measure of distance, a krośa"
+  "sa-5516":
+    native: "Measure of distance, a yojana."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is योजन (yojana); the card shows the isolated nominative singular योजनम् (yojanam)."
+      "n3": "Before a consonant the final म् (m) of योजनम् (yojanam) is written ं (ṃ), as in योजनं (yojanaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "A measure of distance, larger than the krośa; the two are measures of distance on the road."
+    bases:
+      "योजनम्": "measure of distance, a yojana"
+    examples:
+      "अस्ति योजनं तत्र":
+        native: "There is a yojana there."
+        bases:
+          "अस्ति": "is"
+          "योजनं": "measure of distance, a yojana"
+          "तत्र": "there"
+      "अस्ति मार्गे योजनम्":
+        native: "There is a yojana on the road."
+        bases:
+          "अस्ति": "is"
+          "मार्गे": "road (locative)"
+          "योजनम्": "measure of distance, a yojana"
+  "sa-5517":
+    native: "Path, track."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is पद्धति (paddhati); the card shows the isolated nominative singular पद्धतिः (paddhatiḥ)."
+      "n3": "A track or way, the usual word for a path laid out on the ground."
+    bases:
+      "पद्धतिः": "path, track"
+    examples:
+      "अस्ति पद्धतिः तत्र":
+        native: "There is a path there."
+        bases:
+          "अस्ति": "is"
+          "पद्धतिः": "path, track"
+          "तत्र": "there"
+      "अस्ति पद्धतौ पथिकः":
+        native: "There is a traveller on the path."
+        bases:
+          "अस्ति": "is"
+          "पद्धतौ": "path, track (locative)"
+          "पथिकः": "wayfarer, traveller"
+  "sa-5518":
+    native: "Gateway."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is तोरण (toraṇa); the card shows the isolated nominative singular तोरणम् (toraṇam)."
+      "n3": "Before a consonant the final म् (m) of तोरणम् (toraṇam) is written ं (ṃ), as in तोरणं (toraṇaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "तोरणम्": "gateway"
+    examples:
+      "अस्ति तोरणं तत्र":
+        native: "There is a gateway there."
+        bases:
+          "अस्ति": "is"
+          "तोरणं": "gateway"
+          "तत्र": "there"
+      "अस्ति नगरे तोरणम्":
+        native: "There is a gateway in the city."
+        bases:
+          "अस्ति": "is"
+          "नगरे": "city (locative)"
+          "तोरणम्": "gateway"
+  "sa-5519":
+    native: "Roadside shed with water for travellers."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A roadside shed or reservoir where water is given to travellers."
+    bases:
+      "प्रपा": "roadside shed with water for travellers"
+    examples:
+      "अस्ति प्रपा तत्र":
+        native: "There is a roadside water shed there."
+        bases:
+          "अस्ति": "is"
+          "प्रपा": "roadside shed with water for travellers"
+          "तत्र": "there"
+      "अस्ति मार्गे प्रपा":
+        native: "There is a roadside water shed on the road."
+        bases:
+          "अस्ति": "is"
+          "मार्गे": "road (locative)"
+          "प्रपा": "roadside shed with water for travellers"
+  "sa-5520":
+    native: "Staff, stick."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is यष्टि (yaṣṭi); the card shows the isolated nominative singular यष्टिः (yaṣṭiḥ)."
+    bases:
+      "यष्टिः": "staff, stick"
+    examples:
+      "अस्ति यष्टिः तत्र":
+        native: "There is a staff there."
+        bases:
+          "अस्ति": "is"
+          "यष्टिः": "staff, stick"
+          "तत्र": "there"
+      "अस्ति पथिकस्य यष्टिः":
+        native: "There is a traveller's staff."
+        bases:
+          "अस्ति": "is"
+          "पथिकस्य": "wayfarer, traveller (genitive)"
+          "यष्टिः": "staff, stick"
+  "sa-5521":
+    native: "Ascent."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is आरोह (āroha); the card shows the isolated nominative singular आरोहः (ārohaḥ)."
+    bases:
+      "आरोहः": "ascent"
+    examples:
+      "आरोहः तत्र":
+        native: "There is an ascent there."
+        bases:
+          "आरोहः": "ascent"
+          "तत्र": "there"
+      "आरोहः पर्वते":
+        native: "There is an ascent on the mountain."
+        bases:
+          "आरोहः": "ascent"
+          "पर्वते": "mountain (locative)"
+  "sa-5522":
+    native: "Pavilion."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is मण्डप (maṇḍapa); the card shows the isolated nominative singular मण्डपः (maṇḍapaḥ)."
+    bases:
+      "मण्डपः": "pavilion"
+    examples:
+      "अस्ति मण्डपः तत्र":
+        native: "There is a pavilion there."
+        bases:
+          "अस्ति": "is"
+          "मण्डपः": "pavilion"
+          "तत्र": "there"
+      "अस्ति मार्गे मण्डपः":
+        native: "There is a pavilion on the road."
+        bases:
+          "अस्ति": "is"
+          "मार्गे": "road (locative)"
+          "मण्डपः": "pavilion"
+  "sa-5523":
+    native: "Helmsman."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is कर्णधार (karṇadhāra); the card shows the isolated nominative singular कर्णधारः (karṇadhāraḥ)."
+      "n3": "Before a consonant the final म् (m) of नौकायाम् (naukāyām) is written ं (ṃ), as in नौकायां (naukāyāṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "कर्णधारः": "helmsman"
+    examples:
+      "अस्ति कर्णधारः तत्र":
+        native: "There is a helmsman there."
+        bases:
+          "अस्ति": "is"
+          "कर्णधारः": "helmsman"
+          "तत्र": "there"
+      "अस्ति नौकायां कर्णधारः":
+        native: "There is a helmsman in the boat."
+        bases:
+          "अस्ति": "is"
+          "नौकायां": "boat (locative)"
+          "कर्णधारः": "helmsman"
+  "sa-5524":
+    native: "Companion."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is सहाय (sahāya); the card shows the isolated nominative singular सहायः (sahāyaḥ)."
+    bases:
+      "सहायः": "companion"
+    examples:
+      "अस्ति सहायः तत्र":
+        native: "There is a companion there."
+        bases:
+          "अस्ति": "is"
+          "सहायः": "companion"
+          "तत्र": "there"
+      "अस्ति यात्रायाः सहायः":
+        native: "There is a companion of the journey."
+        bases:
+          "अस्ति": "is"
+          "यात्रायाः": "journey, travel (ablative)"
+          "सहायः": "companion"
+  "sa-5525":
+    native: "Hospitality."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is सत्कार (satkāra); the card shows the isolated nominative singular सत्कारः (satkāraḥ)."
+    bases:
+      "सत्कारः": "hospitality"
+    examples:
+      "अस्ति सत्कारः तत्र":
+        native: "There is hospitality there."
+        bases:
+          "अस्ति": "is"
+          "सत्कारः": "hospitality"
+          "तत्र": "there"
+      "अतिथेः सत्कारः":
+        native: "There is hospitality for the guest."
+        bases:
+          "अतिथेः": "guest (ablative)"
+          "सत्कारः": "hospitality"
+  "sa-5526":
+    native: "Drinking water."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is पानीय (pānīya); the card shows the isolated nominative singular पानीयम् (pānīyam)."
+      "n3": "Before a consonant the final म् (m) of पानीयम् (pānīyam) is written ं (ṃ), as in पानीयं (pānīyaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "Drinking water; the form is a future passive participle in origin, from पा (pā), to drink."
+    bases:
+      "पानीयम्": "drinking water"
+    examples:
+      "अस्ति पानीयं तत्र":
+        native: "There is drinking water there."
+        bases:
+          "अस्ति": "is"
+          "पानीयं": "drinking water"
+          "तत्र": "there"
+      "अस्ति मार्गे पानीयम्":
+        native: "There is drinking water on the road."
+        bases:
+          "अस्ति": "is"
+          "मार्गे": "road (locative)"
+          "पानीयम्": "drinking water"
+  "sa-5527":
+    native: "Abode, lodging."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is आवास (āvāsa); the card shows the isolated nominative singular आवासः (āvāsaḥ)."
+    bases:
+      "आवासः": "abode, lodging"
+    examples:
+      "आवासः तत्र":
+        native: "There is a lodging there."
+        bases:
+          "आवासः": "abode, lodging"
+          "तत्र": "there"
+      "आवासः पर्वते":
+        native: "There is a lodging on the mountain."
+        bases:
+          "आवासः": "abode, lodging"
+          "पर्वते": "mountain (locative)"
+  "sa-5528":
+    native: "Path, way."
+    notes:
+      "n1": "Neuter noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is वर्त्मन् (vartman); the card shows the isolated nominative singular वर्त्म (vartma)."
+    bases:
+      "वर्त्म": "path, way"
+    examples:
+      "अस्ति तत्र वर्त्म":
+        native: "There is a path there."
+        bases:
+          "अस्ति": "is"
+          "तत्र": "there"
+          "वर्त्म": "path, way"
+      "अस्ति मार्गे वर्त्म":
+        native: "There is a path on the road."
+        bases:
+          "अस्ति": "is"
+          "मार्गे": "road (locative)"
+          "वर्त्म": "path, way"
+  "sa-5529":
+    native: "Tunnel."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A tunnel or a hidden passage; the same word also means a hole cut through a wall."
+    bases:
+      "सुरङ्गा": "tunnel"
+    examples:
+      "अस्ति सुरङ्गा तत्र":
+        native: "There is a tunnel there."
+        bases:
+          "अस्ति": "is"
+          "सुरङ्गा": "tunnel"
+          "तत्र": "there"
+      "अस्ति पर्वते सुरङ्गा":
+        native: "There is a tunnel in the mountain."
+        bases:
+          "अस्ति": "is"
+          "पर्वते": "mountain (locative)"
+          "सुरङ्गा": "tunnel"
+  "sa-5530":
+    native: "Road, way."
+    notes:
+      "n1": "Masculine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is अध्वन् (adhvan); the card shows the isolated nominative singular अध्वा (adhvā)."
+    bases:
+      "अध्वा": "road, way"
+    examples:
+      "अध्वा तत्र":
+        native: "There is a road there."
+        bases:
+          "अध्वा": "road, way"
+          "तत्र": "there"
+      "अध्वनि सुरङ्गा":
+        native: "There is a tunnel on the road."
+        bases:
+          "अध्वनि": "road, way (locative)"
+          "सुरङ्गा": "tunnel"
+  "sa-5531":
+    native: "Axle."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is अक्ष (akṣa); the card shows the isolated nominative singular अक्षः (akṣaḥ)."
+    bases:
+      "अक्षः": "axle"
+    examples:
+      "अक्षः तत्र":
+        native: "There is an axle there."
+        bases:
+          "अक्षः": "axle"
+          "तत्र": "there"
+      "अक्षः चक्रे":
+        native: "There is an axle on the wheel."
+        bases:
+          "अक्षः": "axle"
+          "चक्रे": "wheel (locative)"
+  "sa-5532":
+    native: "Rim of a wheel."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is नेमि (nemi); the card shows the isolated nominative singular नेमिः (nemiḥ)."
+      "n3": "The rim of a wheel, the outer ring of the wheel of a chariot or cart."
+    bases:
+      "नेमिः": "rim of a wheel"
+    examples:
+      "अस्ति नेमिः तत्र":
+        native: "There is a rim there."
+        bases:
+          "अस्ति": "is"
+          "नेमिः": "rim of a wheel"
+          "तत्र": "there"
+      "अस्ति चक्रे नेमिः":
+        native: "There is a rim on the wheel."
+        bases:
+          "अस्ति": "is"
+          "चक्रे": "wheel (locative)"
+          "नेमिः": "rim of a wheel"
+  "sa-5533":
+    native: "Forest."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is अटवि (aṭavi); the card shows the isolated nominative singular अटविः (aṭaviḥ)."
+      "n3": "A wild forest or wilderness, a place to roam in; not the same as a cultivated grove."
+    bases:
+      "अटविः": "forest"
+    examples:
+      "अटविः तत्र":
+        native: "There is a forest there."
+        bases:
+          "अटविः": "forest"
+          "तत्र": "there"
+      "अटवौ पथिकः":
+        native: "A traveller is in the forest."
+        bases:
+          "अटवौ": "forest (locative)"
+          "पथिकः": "wayfarer, traveller"
+  "sa-5534":
+    native: "Going, course."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is गति (gati); the card shows the isolated nominative singular गतिः (gatiḥ)."
+      "n3": "Motion, gait or a course; near synonym of गमनम् (gamanam), the act of going."
+    bases:
+      "गतिः": "going, course"
+    examples:
+      "अस्ति गतिः पथः":
+        native: "There is a course of the road."
+        bases:
+          "अस्ति": "is"
+          "गतिः": "going, course"
+          "पथः": "way, road"
+      "अस्ति गतिः तत्र":
+        native: "There is a course there."
+        bases:
+          "अस्ति": "is"
+          "गतिः": "going, course"
+          "तत्र": "there"
+  "sa-5535":
+    native: "Slow."
+    notes:
+      "n1": "An adjective: it takes the case, number and gender of the noun it describes, and the card shows the masculine nominative singular मन्दः (mandaḥ), from the stem मन्द (manda)."
+      "n2": "Before a consonant the final म् (m) of यानम् (yānam) is written ं (ṃ), as in यानं (yānaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n3": "Slow in movement; the same word also means dull or weak in other senses."
+    bases:
+      "मन्दः": "slow"
+    examples:
+      "तत्र मन्दः पथिकः":
+        native: "There is a slow traveller there."
+        bases:
+          "तत्र": "there"
+          "मन्दः": "slow"
+          "पथिकः": "wayfarer, traveller"
+      "अस्ति यानं मन्दम्":
+        native: "The vehicle is slow."
+        bases:
+          "अस्ति": "is"
+          "यानं": "vehicle"
+          "मन्दम्": "slow"
+  "sa-5536":
+    native: "Tired."
+    notes:
+      "n1": "An adjective: it takes the case, number and gender of the noun it describes, and the card shows the masculine nominative singular क्लान्तः (klāntaḥ), from the stem क्लान्त (klānta)."
+    bases:
+      "क्लान्तः": "tired"
+    examples:
+      "तत्र क्लान्तः पथिकः":
+        native: "There is a tired traveller there."
+        bases:
+          "तत्र": "there"
+          "क्लान्तः": "tired"
+          "पथिकः": "wayfarer, traveller"
+      "अस्ति यात्री क्लान्तः":
+        native: "There is a tired traveller."
+        bases:
+          "अस्ति": "is"
+          "यात्री": "traveller"
+          "क्लान्तः": "tired"
+  "sa-5537":
+    native: "Easy to reach."
+    notes:
+      "n1": "An adjective: it takes the case, number and gender of the noun it describes, and the card shows the masculine nominative singular सुगमः (sugamaḥ), from the stem सुगम (sugama)."
+    bases:
+      "सुगमः": "easy to reach"
+    examples:
+      "अस्ति मार्गः सुगमः":
+        native: "There is a road that is easy to reach."
+        bases:
+          "अस्ति": "is"
+          "मार्गः": "road"
+          "सुगमः": "easy to reach"
+      "अस्ति पद्धतिः सुगमा":
+        native: "There is an easy path."
+        bases:
+          "अस्ति": "is"
+          "पद्धतिः": "path, track"
+          "सुगमा": "easy to reach"
+  "sa-5538":
+    native: "From here."
+    notes:
+      "n1": "An adverb: its form does not change; the card shows इतः (itaḥ), from the stem इतस् (itas)."
+      "n2": "The pair for from here is इतः (itaḥ) and for from there is ततः (tataḥ); with तत्र (tatra), there, it marks place."
+    bases:
+      "इतः": "from here"
+    examples:
+      "इतः पथः":
+        native: "A road from here."
+        bases:
+          "इतः": "from here"
+          "पथः": "way, road"
+      "इतः तत्र":
+        native: "From here to there."
+        bases:
+          "इतः": "from here"
+          "तत्र": "there"
+  "sa-5539":
+    native: "Where."
+    notes:
+      "n1": "An adverb: its form does not change; the card shows क्व (kva), from the stem क्व (kva)."
+      "n2": "An interrogative adverb: the answer names a place, as in तत्र (tatra), there."
+    bases:
+      "क्व": "where"
+    examples:
+      "पथिकः क्व":
+        native: "Where is the traveller?"
+        bases:
+          "पथिकः": "wayfarer, traveller"
+          "क्व": "where"
+      "यात्रा क्व":
+        native: "Where is the journey?"
+        bases:
+          "यात्रा": "journey, travel"
+          "क्व": "where"
+  "sa-5540":
+    native: "In front."
+    notes:
+      "n1": "An adverb: its form does not change; the card shows पुरः (puraḥ), from the stem पुरस् (puras)."
+    bases:
+      "पुरः": "in front"
+    examples:
+      "पुरः पथिकः":
+        native: "A traveller is in front."
+        bases:
+          "पुरः": "in front"
+          "पथिकः": "wayfarer, traveller"
+      "पुरः शकटम्":
+        native: "A cart is in front."
+        bases:
+          "पुरः": "in front"
+          "शकटम्": "cart"
