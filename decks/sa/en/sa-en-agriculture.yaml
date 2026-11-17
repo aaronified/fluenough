@@ -1,0 +1,738 @@
+schema: 1
+id: "sa-en-agriculture"
+kind: "layer"
+core: "sa-agriculture"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Agriculture"
+description: "Agriculture: farms, crops, tools, animals and the harvest."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-5600":
+    native: "Crop, standing grain."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is सस्य (sasya); the card shows the isolated nominative singular सस्यम् (sasyam)."
+      "n3": "Before a consonant the final म् (m) of सस्यम् (sasyam) is written ं (ṃ), as in सस्यं (sasyaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "Standing crop or grain on the field; the same word also means a plant in general."
+    bases:
+      "सस्यम्": "crop, standing grain"
+    examples:
+      "अस्ति सस्यं क्षेत्रे":
+        native: "There is a crop in the field."
+        bases:
+          "अस्ति": "is"
+          "सस्यं": "crop, standing grain"
+          "क्षेत्रे": "field (locative)"
+      "अस्ति सस्यं शुष्कम्":
+        native: "The crop is dry."
+        bases:
+          "अस्ति": "is"
+          "सस्यं": "crop, standing grain"
+          "शुष्कम्": "dry"
+  "sa-5601":
+    native: "Rice."
+    notes:
+      "n1": "Masculine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is व्रीहि (vrīhi); the card shows the isolated nominative singular व्रीहिः (vrīhiḥ)."
+      "n3": "Rice as a grain; near synonym of शालिः (śāliḥ), a kind of rice."
+    bases:
+      "व्रीहिः": "rice"
+    examples:
+      "अस्ति व्रीहिः क्षेत्रे":
+        native: "There is rice in the field."
+        bases:
+          "अस्ति": "is"
+          "व्रीहिः": "rice"
+          "क्षेत्रे": "field (locative)"
+      "अस्ति गृहे व्रीहिः":
+        native: "There is rice in the house."
+        bases:
+          "अस्ति": "is"
+          "गृहे": "house (locative)"
+          "व्रीहिः": "rice"
+  "sa-5602":
+    native: "Rice, a kind of rice."
+    notes:
+      "n1": "Masculine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is शालि (śāli); the card shows the isolated nominative singular शालिः (śāliḥ)."
+      "n3": "A kind of rice, the paddy of the fields; near synonym of व्रीहिः (vrīhiḥ), rice in general."
+    bases:
+      "शालिः": "rice, a kind of rice"
+    examples:
+      "अस्ति शालिः क्षेत्रे":
+        native: "There is shali rice in the field."
+        bases:
+          "अस्ति": "is"
+          "शालिः": "rice, a kind of rice"
+          "क्षेत्रे": "field (locative)"
+      "अस्ति गृहे शालिः":
+        native: "There is shali rice in the house."
+        bases:
+          "अस्ति": "is"
+          "गृहे": "house (locative)"
+          "शालिः": "rice, a kind of rice"
+  "sa-5603":
+    native: "Mung bean."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is मुद्ग (mudga); the card shows the isolated nominative singular मुद्गः (mudgaḥ)."
+      "n3": "The mung bean; a pulse, not a grain; near synonym of माषः (māṣaḥ), a bean."
+    bases:
+      "मुद्गः": "mung bean"
+    examples:
+      "अस्ति मुद्गः क्षेत्रे":
+        native: "There is mung bean in the field."
+        bases:
+          "अस्ति": "is"
+          "मुद्गः": "mung bean"
+          "क्षेत्रे": "field (locative)"
+      "अस्ति गृहे मुद्गः":
+        native: "There is mung bean in the house."
+        bases:
+          "अस्ति": "is"
+          "गृहे": "house (locative)"
+          "मुद्गः": "mung bean"
+  "sa-5604":
+    native: "Bean."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is माष (māṣa); the card shows the isolated nominative singular माषः (māṣaḥ)."
+      "n3": "A bean of the Old World; near synonym of मुद्गः (mudgaḥ), the mung bean."
+    bases:
+      "माषः": "bean"
+    examples:
+      "अस्ति माषः क्षेत्रे":
+        native: "There is a bean in the field."
+        bases:
+          "अस्ति": "is"
+          "माषः": "bean"
+          "क्षेत्रे": "field (locative)"
+      "अस्ति गृहे माषः":
+        native: "There is a bean in the house."
+        bases:
+          "अस्ति": "is"
+          "गृहे": "house (locative)"
+          "माषः": "bean"
+  "sa-5605":
+    native: "Farmer."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is कर्षक (karṣaka); the card shows the isolated nominative singular कर्षकः (karṣakaḥ)."
+    bases:
+      "कर्षकः": "farmer"
+    examples:
+      "अस्ति कर्षकः क्षेत्रे":
+        native: "There is a farmer in the field."
+        bases:
+          "अस्ति": "is"
+          "कर्षकः": "farmer"
+          "क्षेत्रे": "field (locative)"
+      "कर्षकः तत्र":
+        native: "A farmer is there."
+        bases:
+          "कर्षकः": "farmer"
+          "तत्र": "there"
+  "sa-5606":
+    native: "Plough."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is लाङ्गल (lāṅgala); the card shows the isolated nominative singular लाङ्गलम् (lāṅgalam)."
+      "n3": "Before a consonant the final म् (m) of लाङ्गलम् (lāṅgalam) is written ं (ṃ), as in लाङ्गलं (lāṅgalaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "The whole plough; फालः (phālaḥ) is only its iron point."
+    bases:
+      "लाङ्गलम्": "plough"
+    examples:
+      "अस्ति लाङ्गलं क्षेत्रे":
+        native: "There is a plough in the field."
+        bases:
+          "अस्ति": "is"
+          "लाङ्गलं": "plough"
+          "क्षेत्रे": "field (locative)"
+      "अस्ति गृहे लाङ्गलम्":
+        native: "There is a plough in the house."
+        bases:
+          "अस्ति": "is"
+          "गृहे": "house (locative)"
+          "लाङ्गलम्": "plough"
+  "sa-5607":
+    native: "Ploughshare."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is फाल (phāla); the card shows the isolated nominative singular फालः (phālaḥ)."
+      "n3": "The ploughshare, the iron point of the plough; part of लाङ्गलम् (lāṅgalam)."
+    bases:
+      "फालः": "ploughshare"
+    examples:
+      "अस्ति लाङ्गले फालः":
+        native: "There is a ploughshare on the plough."
+        bases:
+          "अस्ति": "is"
+          "लाङ्गले": "plough (nominative dual)"
+          "फालः": "ploughshare"
+      "अस्ति फालः तत्र":
+        native: "There is a ploughshare there."
+        bases:
+          "अस्ति": "is"
+          "फालः": "ploughshare"
+          "तत्र": "there"
+  "sa-5608":
+    native: "Spade."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is खनित्र (khanitra); the card shows the isolated nominative singular खनित्रम् (khanitram)."
+      "n3": "Before a consonant the final म् (m) of खनित्रम् (khanitram) is written ं (ṃ), as in खनित्रं (khanitraṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "खनित्रम्": "spade"
+    examples:
+      "अस्ति खनित्रं तत्र":
+        native: "There is a spade there."
+        bases:
+          "अस्ति": "is"
+          "खनित्रं": "spade"
+          "तत्र": "there"
+      "अस्ति क्षेत्रे खनित्रम्":
+        native: "There is a spade in the field."
+        bases:
+          "अस्ति": "is"
+          "क्षेत्रे": "field (locative)"
+          "खनित्रम्": "spade"
+  "sa-5609":
+    native: "Sickle."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is दात्र (dātra); the card shows the isolated nominative singular दात्रम् (dātram)."
+      "n3": "Before a consonant the final म् (m) of दात्रम् (dātram) is written ं (ṃ), as in दात्रं (dātraṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "दात्रम्": "sickle"
+    examples:
+      "अस्ति दात्रं तत्र":
+        native: "There is a sickle there."
+        bases:
+          "अस्ति": "is"
+          "दात्रं": "sickle"
+          "तत्र": "there"
+      "अस्ति क्षेत्रे दात्रम्":
+        native: "There is a sickle in the field."
+        bases:
+          "अस्ति": "is"
+          "क्षेत्रे": "field (locative)"
+          "दात्रम्": "sickle"
+  "sa-5610":
+    native: "Threshing floor."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is खल (khala); the card shows the isolated nominative singular खलः (khalaḥ)."
+      "n3": "A threshing floor; the same word also means an oil-cake."
+    bases:
+      "खलः": "threshing floor"
+    examples:
+      "अस्ति खलः तत्र":
+        native: "There is a threshing floor there."
+        bases:
+          "अस्ति": "is"
+          "खलः": "threshing floor"
+          "तत्र": "there"
+      "अस्ति क्षेत्रे खलः":
+        native: "There is a threshing floor in the field."
+        bases:
+          "अस्ति": "is"
+          "क्षेत्रे": "field (locative)"
+          "खलः": "threshing floor"
+  "sa-5611":
+    native: "Irrigation channel."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A small channel for irrigation or a canal; the same word may also mean a family custom."
+    bases:
+      "कुल्या": "irrigation channel"
+    examples:
+      "अस्ति कुल्या क्षेत्रे":
+        native: "There is an irrigation channel in the field."
+        bases:
+          "अस्ति": "is"
+          "कुल्या": "irrigation channel"
+          "क्षेत्रे": "field (locative)"
+      "अस्ति कुल्या तत्र":
+        native: "There is an irrigation channel there."
+        bases:
+          "अस्ति": "is"
+          "कुल्या": "irrigation channel"
+          "तत्र": "there"
+  "sa-5612":
+    native: "Ox."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is बलीवर्द (balīvarda); the card shows the isolated nominative singular बलीवर्दः (balīvardaḥ)."
+    bases:
+      "बलीवर्दः": "ox"
+    examples:
+      "अस्ति बलीवर्दः क्षेत्रे":
+        native: "There is an ox in the field."
+        bases:
+          "अस्ति": "is"
+          "बलीवर्दः": "ox"
+          "क्षेत्रे": "field (locative)"
+      "अस्ति गृहे बलीवर्दः":
+        native: "There is an ox in the house."
+        bases:
+          "अस्ति": "is"
+          "गृहे": "house (locative)"
+          "बलीवर्दः": "ox"
+  "sa-5613":
+    native: "Cow."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is धेनु (dhenu); the card shows the isolated nominative singular धेनुः (dhenuḥ)."
+      "n3": "A milk cow; the same word also means a gift to Brahmans made in the shape of a cow."
+    bases:
+      "धेनुः": "cow"
+    examples:
+      "अस्ति गृहे धेनुः":
+        native: "There is a cow in the house."
+        bases:
+          "अस्ति": "is"
+          "गृहे": "house (locative)"
+          "धेनुः": "cow"
+      "अस्ति धेनुः तत्र":
+        native: "There is a cow there."
+        bases:
+          "अस्ति": "is"
+          "धेनुः": "cow"
+          "तत्र": "there"
+  "sa-5614":
+    native: "Insect."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is कीट (kīṭa); the card shows the isolated nominative singular कीटः (kīṭaḥ)."
+      "n3": "An insect or worm; near synonym of कृमिः (kṛmiḥ), a worm."
+    bases:
+      "कीटः": "insect"
+    examples:
+      "अस्ति कीटः तत्र":
+        native: "There is an insect there."
+        bases:
+          "अस्ति": "is"
+          "कीटः": "insect"
+          "तत्र": "there"
+      "अस्ति क्षेत्रे कीटः":
+        native: "There is an insect in the field."
+        bases:
+          "अस्ति": "is"
+          "क्षेत्रे": "field (locative)"
+          "कीटः": "insect"
+  "sa-5615":
+    native: "Worm."
+    notes:
+      "n1": "Masculine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is कृमि (kṛmi); the card shows the isolated nominative singular कृमिः (kṛmiḥ)."
+      "n3": "A worm or insect; near synonym of कीटः (kīṭaḥ)."
+    bases:
+      "कृमिः": "worm"
+    examples:
+      "अस्ति कृमिः तत्र":
+        native: "There is a worm there."
+        bases:
+          "अस्ति": "is"
+          "कृमिः": "worm"
+          "तत्र": "there"
+      "अस्ति भूमौ कृमिः":
+        native: "There is a worm in the soil."
+        bases:
+          "अस्ति": "is"
+          "भूमौ": "land, ground (locative)"
+          "कृमिः": "worm"
+  "sa-5616":
+    native: "Land, ground."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is भूमि (bhūmi); the card shows the isolated nominative singular भूमिः (bhūmiḥ)."
+      "n3": "Land, ground or the earth; also the name of the earth goddess."
+    bases:
+      "भूमिः": "land, ground"
+    examples:
+      "अस्ति भूमिः तत्र":
+        native: "There is land there."
+        bases:
+          "अस्ति": "is"
+          "भूमिः": "land, ground"
+          "तत्र": "there"
+      "अस्ति भूमिः क्षेत्रे":
+        native: "There is land in the field."
+        bases:
+          "अस्ति": "is"
+          "भूमिः": "land, ground"
+          "क्षेत्रे": "field (locative)"
+  "sa-5617":
+    native: "Cattle."
+    notes:
+      "n1": "Masculine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is पशु (paśu); the card shows the isolated nominative singular पशुः (paśuḥ)."
+      "n3": "Before a consonant the final म् (m) of गोशालायाम् (gośālāyām) is written ं (ṃ), as in गोशालायां (gośālāyāṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "Cattle or any domesticated animal; the card gives the collective sense."
+    bases:
+      "पशुः": "cattle"
+    examples:
+      "अस्ति पशुः तत्र":
+        native: "There is cattle there."
+        bases:
+          "अस्ति": "is"
+          "पशुः": "cattle"
+          "तत्र": "there"
+      "अस्ति गोशालायां पशुः":
+        native: "There is cattle in the cowshed."
+        bases:
+          "अस्ति": "is"
+          "गोशालायां": "cowshed (locative)"
+          "पशुः": "cattle"
+  "sa-5618":
+    native: "Heap, pile."
+    notes:
+      "n1": "Masculine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is राशि (rāśi); the card shows the isolated nominative singular राशिः (rāśiḥ)."
+      "n3": "A heap, pile or mass; in arithmetic it is a sum."
+    bases:
+      "राशिः": "heap, pile"
+    examples:
+      "अस्ति राशिः तत्र":
+        native: "There is a heap there."
+        bases:
+          "अस्ति": "is"
+          "राशिः": "heap, pile"
+          "तत्र": "there"
+      "अस्ति धान्यस्य राशिः":
+        native: "There is a heap of grain."
+        bases:
+          "अस्ति": "is"
+          "धान्यस्य": "grain (genitive)"
+          "राशिः": "heap, pile"
+  "sa-5619":
+    native: "Husk, chaff."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is तुष (tuṣa); the card shows the isolated nominative singular तुषः (tuṣaḥ)."
+      "n3": "The husk or chaff of grain; the straw is पलालम् (palālam)."
+    bases:
+      "तुषः": "husk, chaff"
+    examples:
+      "अस्ति तुषः तत्र":
+        native: "There is husk there."
+        bases:
+          "अस्ति": "is"
+          "तुषः": "husk, chaff"
+          "तत्र": "there"
+      "अस्ति क्षेत्रे तुषः":
+        native: "There is husk in the field."
+        bases:
+          "अस्ति": "is"
+          "क्षेत्रे": "field (locative)"
+          "तुषः": "husk, chaff"
+  "sa-5620":
+    native: "Straw, stalk."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is पलाल (palāla); the card shows the isolated nominative singular पलालम् (palālam)."
+      "n3": "Before a consonant the final म् (m) of पलालम् (palālam) is written ं (ṃ), as in पलालं (palālaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "Straw, the stalk of the plant; near synonym of तुषः (tuṣaḥ), the husk."
+    bases:
+      "पलालम्": "straw, stalk"
+    examples:
+      "अस्ति पलालं तत्र":
+        native: "There is straw there."
+        bases:
+          "अस्ति": "is"
+          "पलालं": "straw, stalk"
+          "तत्र": "there"
+      "अस्ति क्षेत्रे पलालम्":
+        native: "There is straw in the field."
+        bases:
+          "अस्ति": "is"
+          "क्षेत्रे": "field (locative)"
+          "पलालम्": "straw, stalk"
+  "sa-5621":
+    native: "Axe."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is कुठार (kuṭhāra); the card shows the isolated nominative singular कुठारः (kuṭhāraḥ)."
+    bases:
+      "कुठारः": "axe"
+    examples:
+      "अस्ति कुठारः तत्र":
+        native: "There is an axe there."
+        bases:
+          "अस्ति": "is"
+          "कुठारः": "axe"
+          "तत्र": "there"
+      "अस्ति गृहे कुठारः":
+        native: "There is an axe in the house."
+        bases:
+          "अस्ति": "is"
+          "गृहे": "house (locative)"
+          "कुठारः": "axe"
+  "sa-5622":
+    native: "Famine."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is दुर्भिक्ष (durbhikṣa); the card shows the isolated nominative singular दुर्भिक्षम् (durbhikṣam)."
+      "n3": "Before a consonant the final म् (m) of दुर्भिक्षम् (durbhikṣam) is written ं (ṃ), as in दुर्भिक्षं (durbhikṣaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "Famine, the failure of crops and of food."
+    bases:
+      "दुर्भिक्षम्": "famine"
+    examples:
+      "अस्ति दुर्भिक्षं ग्रामे":
+        native: "There is famine in the village."
+        bases:
+          "अस्ति": "is"
+          "दुर्भिक्षं": "famine"
+          "ग्रामे": "village (locative)"
+      "अस्ति क्षेत्रे दुर्भिक्षम्":
+        native: "There is famine in the field."
+        bases:
+          "अस्ति": "is"
+          "क्षेत्रे": "field (locative)"
+          "दुर्भिक्षम्": "famine"
+  "sa-5623":
+    native: "Furrow."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The furrow, the track of a ploughshare in the soil."
+    bases:
+      "सीता": "furrow"
+    examples:
+      "अस्ति सीता क्षेत्रे":
+        native: "There is a furrow in the field."
+        bases:
+          "अस्ति": "is"
+          "सीता": "furrow"
+          "क्षेत्रे": "field (locative)"
+      "अस्ति सीता तत्र":
+        native: "There is a furrow there."
+        bases:
+          "अस्ति": "is"
+          "सीता": "furrow"
+          "तत्र": "there"
+  "sa-5624":
+    native: "Grass, fodder."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is घास (ghāsa); the card shows the isolated nominative singular घासः (ghāsaḥ)."
+      "n3": "Before a consonant the final म् (m) of गोशालायाम् (gośālāyām) is written ं (ṃ), as in गोशालायां (gośālāyāṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "Grass cut as fodder for animals."
+    bases:
+      "घासः": "grass, fodder"
+    examples:
+      "अस्ति घासः तत्र":
+        native: "There is fodder there."
+        bases:
+          "अस्ति": "is"
+          "घासः": "grass, fodder"
+          "तत्र": "there"
+      "अस्ति गोशालायां घासः":
+        native: "There is fodder in the cowshed."
+        bases:
+          "अस्ति": "is"
+          "गोशालायां": "cowshed (locative)"
+          "घासः": "grass, fodder"
+  "sa-5625":
+    native: "Water."
+    notes:
+      "n1": "Neuter noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "Water; the word also means water as a drink."
+    bases:
+      "वारि": "water"
+    examples:
+      "अस्ति वारि तत्र":
+        native: "There is water there."
+        bases:
+          "अस्ति": "is"
+          "वारि": "water"
+          "तत्र": "there"
+      "अस्ति क्षेत्रे वारि":
+        native: "There is water in the field."
+        bases:
+          "अस्ति": "is"
+          "क्षेत्रे": "field (locative)"
+          "वारि": "water"
+  "sa-5626":
+    native: "Cowshed."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A cowshed, a house for cattle."
+    bases:
+      "गोशाला": "cowshed"
+    examples:
+      "अस्ति गोशाला तत्र":
+        native: "There is a cowshed there."
+        bases:
+          "अस्ति": "is"
+          "गोशाला": "cowshed"
+          "तत्र": "there"
+      "अस्ति गोशाला क्षेत्रे":
+        native: "There is a cowshed in the field."
+        bases:
+          "अस्ति": "is"
+          "गोशाला": "cowshed"
+          "क्षेत्रे": "field (locative)"
+  "sa-5627":
+    native: "Fuel."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is इन्धन (indhana); the card shows the isolated nominative singular इन्धनम् (indhanam)."
+      "n3": "Before a consonant the final म् (m) of इन्धनम् (indhanam) is written ं (ṃ), as in इन्धनं (indhanaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "Fuel for a fire; दारु (dāru) is wood as timber."
+    bases:
+      "इन्धनम्": "fuel"
+    examples:
+      "इन्धनं शुष्कम्":
+        native: "Dry fuel."
+        bases:
+          "इन्धनं": "fuel"
+          "शुष्कम्": "dry"
+      "इन्धनं गृहे":
+        native: "Fuel in the house."
+        bases:
+          "इन्धनं": "fuel"
+          "गृहे": "house (locative)"
+  "sa-5628":
+    native: "Wood, timber."
+    notes:
+      "n1": "Neuter noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "Wood or timber; इन्धनम् (indhanam) is fuel."
+    bases:
+      "दारु": "wood, timber"
+    examples:
+      "अस्ति दारु तत्र":
+        native: "There is wood there."
+        bases:
+          "अस्ति": "is"
+          "दारु": "wood, timber"
+          "तत्र": "there"
+      "अस्ति गृहे दारु":
+        native: "There is wood in the house."
+        bases:
+          "अस्ति": "is"
+          "गृहे": "house (locative)"
+          "दारु": "wood, timber"
+  "sa-5629":
+    native: "Nourishment, growth."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is पुष्टि (puṣṭi); the card shows the isolated nominative singular पुष्टिः (puṣṭiḥ)."
+      "n3": "Nourishment, growth and well-nourished condition."
+    bases:
+      "पुष्टिः": "nourishment, growth"
+    examples:
+      "अस्ति पुष्टिः तत्र":
+        native: "There is nourishment there."
+        bases:
+          "अस्ति": "is"
+          "पुष्टिः": "nourishment, growth"
+          "तत्र": "there"
+      "अस्ति सस्यस्य पुष्टिः":
+        native: "There is the nourishment of the crop."
+        bases:
+          "अस्ति": "is"
+          "सस्यस्य": "crop (genitive)"
+          "पुष्टिः": "nourishment, growth"
+  "sa-5630":
+    native: "Plough."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is सीर (sīra); the card shows the isolated nominative singular सीरः (sīraḥ)."
+      "n3": "A plough; near synonym of लाङ्गलम् (lāṅgalam), the plough as a whole."
+    bases:
+      "सीरः": "plough"
+    examples:
+      "अस्ति सीरः क्षेत्रे":
+        native: "There is a plough in the field."
+        bases:
+          "अस्ति": "is"
+          "सीरः": "plough"
+          "क्षेत्रे": "field (locative)"
+      "अस्ति गृहे सीरः":
+        native: "There is a plough in the house."
+        bases:
+          "अस्ति": "is"
+          "गृहे": "house (locative)"
+          "सीरः": "plough"
+  "sa-5631":
+    native: "Storeroom, granary."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is कोष्ठागार (koṣṭhāgāra); the card shows the isolated nominative singular कोष्ठागारम् (koṣṭhāgāram)."
+      "n3": "Before a consonant the final म् (m) of कोष्ठागारम् (koṣṭhāgāram) is written ं (ṃ), as in कोष्ठागारं (koṣṭhāgāraṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "A storeroom for goods, grain among them."
+    bases:
+      "कोष्ठागारम्": "storeroom, granary"
+    examples:
+      "अस्ति कोष्ठागारं गृहे":
+        native: "There is a storeroom in the house."
+        bases:
+          "अस्ति": "is"
+          "कोष्ठागारं": "storeroom, granary"
+          "गृहे": "house (locative)"
+      "अस्ति कोष्ठागारं तत्र":
+        native: "There is a storeroom there."
+        bases:
+          "अस्ति": "is"
+          "कोष्ठागारं": "storeroom, granary"
+          "तत्र": "there"
+  "sa-5632":
+    native: "Wild rice."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is नीवार (nīvāra); the card shows the isolated nominative singular नीवारः (nīvāraḥ)."
+      "n3": "Rice growing wild, without cultivation; contrasted with व्रीहिः (vrīhiḥ), cultivated rice."
+    bases:
+      "नीवारः": "wild rice"
+    examples:
+      "अस्ति नीवारः क्षेत्रे":
+        native: "There is wild rice in the field."
+        bases:
+          "अस्ति": "is"
+          "नीवारः": "wild rice"
+          "क्षेत्रे": "field (locative)"
+      "अस्ति वने नीवारः":
+        native: "There is wild rice in the forest."
+        bases:
+          "अस्ति": "is"
+          "वने": "forest (locative)"
+          "नीवारः": "wild rice"
+  "sa-5633":
+    native: "Bottle gourd."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is अलाबु (alābu); the card shows the isolated nominative singular अलाबुः (alābuḥ)."
+      "n3": "The bottle gourd, a climbing plant grown for its fruit."
+    bases:
+      "अलाबुः": "bottle gourd"
+    examples:
+      "अलाबुः क्षेत्रे":
+        native: "A bottle gourd in the field."
+        bases:
+          "अलाबुः": "bottle gourd"
+          "क्षेत्रे": "field (locative)"
+      "अलाबुः तत्र":
+        native: "A bottle gourd there."
+        bases:
+          "अलाबुः": "bottle gourd"
+          "तत्र": "there"
+  "sa-5634":
+    native: "Origin, growth."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is उत्पत्ति (utpatti); the card shows the isolated nominative singular उत्पत्तिः (utpattiḥ)."
+      "n3": "Origin or birth, the coming into being of a thing."
+    bases:
+      "उत्पत्तिः": "origin, growth"
+    examples:
+      "उत्पत्तिः क्षेत्रे":
+        native: "Growth in the field."
+        bases:
+          "उत्पत्तिः": "origin, growth"
+          "क्षेत्रे": "field (locative)"
+      "उत्पत्तिः पशोः":
+        native: "The origin of cattle."
+        bases:
+          "उत्पत्तिः": "origin, growth"
+          "पशोः": "cattle (genitive)"
