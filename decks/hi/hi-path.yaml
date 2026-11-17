@@ -147,30 +147,30 @@ units:
     words: 19
   # 5. Rules as forms, practised on the words known: noun forms,
   # postpositions and conjunctions first, then pronoun and verb forms.
-  - decks: ["hi-grammar-nouns"]
+  - decks: ["hi-grammar-nouns", "hi-grammar-noun-forms"]
     words: 0
-    grammar: ["nouns"]
+    grammar: ["nouns", "noun-plural", "noun-oblique-sg", "noun-oblique-pl"]
   - decks: ["hi-grammar-postpositions"]
     words: 6
     grammar: ["postpositions"]
   - decks: ["hi-grammar-conjunctions"]
     words: 8
     grammar: ["conjunctions"]
-  - decks: ["hi-grammar-pronouns", "hi-grammar-possessives"]
+  - decks: ["hi-grammar-pronouns", "hi-grammar-possessives", "hi-grammar-pronoun-forms", "hi-grammar-possessive-forms"]
     words: 0
-    grammar: ["pronouns", "possessives"]
+    grammar: ["pronouns", "possessives", "pronoun-oblique", "pronoun-ko", "pronoun-se", "pronoun-ne", "pronoun-ka", "possessive-fem", "possessive-masc-obl"]
   - decks: ["hi-grammar-be"]
     words: 0
     grammar: ["be"]
-  - decks: ["hi-grammar-present"]
+  - decks: ["hi-grammar-present", "hi-grammar-verb-present"]
     words: 0
-    grammar: ["present"]
+    grammar: ["present", "present-first", "present-second", "present-third", "present-plural"]
   - decks: ["hi-grammar-demonstratives"]
     words: 0
     grammar: ["demonstratives"]
-  - decks: ["hi-grammar-adjectives"]
+  - decks: ["hi-grammar-adjectives", "hi-grammar-adjective-forms"]
     words: 0
-    grammar: ["adjectives"]
+    grammar: ["adjectives", "adjective-fem", "adjective-masc-obl"]
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
   - decks: ["hi-numbers-big", "hi-numbers-big-sentences", "*"]
@@ -198,9 +198,9 @@ units:
   - decks: ["hi-grammar-differences"]
     words: 0
     grammar: ["differences"]
-  - decks: ["hi-directions", "hi-directions-sentences", "hi-grammar-continuous", "*"]
+  - decks: ["hi-directions", "hi-directions-sentences", "hi-grammar-continuous", "hi-grammar-verb-continuous", "*"]
     words: 12
-    grammar: ["continuous"]
+    grammar: ["continuous", "continuous-first", "continuous-second", "continuous-third", "continuous-plural"]
   - decks: ["hi-transport", "hi-transport-sentences", "*"]
     words: 8
   - decks: ["hi-body", "hi-body-sentences", "*"]
@@ -238,9 +238,9 @@ units:
       - { id: "village-visit", text: { "en": "A child names the animals seen on a visit to a village" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - decks: ["hi-grammar-future"]
+  - decks: ["hi-grammar-future", "hi-grammar-verb-future"]
     words: 0
-    grammar: ["future"]
+    grammar: ["future", "future-first", "future-second", "future-third", "future-plural"]
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences.
@@ -253,9 +253,9 @@ units:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the monsoon" } }
-  - decks: ["hi-calendar", "hi-calendar-sentences", "hi-grammar-past", "*"]
+  - decks: ["hi-calendar", "hi-calendar-sentences", "hi-grammar-past", "hi-grammar-verb-past", "*"]
     words: 15
-    grammar: ["past"]
+    grammar: ["past", "past-masc", "past-fem"]
   - decks: ["hi-grammar-ordinals", "hi-reading-ordinals"]
     words: 0
     grammar: ["ordinals"]
@@ -282,9 +282,9 @@ units:
       - { id: "shopkeepers-and-houses", text: { "en": "Naming people and places by what they hold: shopkeeper, post office, library" } }
     reading_passages:
       - { id: "office-doors", text: { "en": "Signs on the doors of a government office" } }
-  - decks: ["hi-grammar-ne", "hi-grammar-perfect"]
+  - decks: ["hi-grammar-ne", "hi-grammar-perfect", "hi-grammar-verb-perfect"]
     words: 0
-    grammar: ["ne", "perfect"]
+    grammar: ["ne", "perfect", "perfect-first", "perfect-second", "perfect-third", "perfect-plural"]
   - decks: ["hi-shopping", "hi-shopping-sentences", "hi-reading-shopping", "*"]
     words: 50
     listening_passages:
@@ -330,16 +330,16 @@ units:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
     reading_passages:
       - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
-  - decks: ["hi-grammar-imperatives"]
+  - decks: ["hi-grammar-imperatives", "hi-grammar-verb-imperative"]
     words: 0
-    grammar: ["imperatives"]
+    grammar: ["imperatives", "imperative"]
     listening_passages:
       - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
     reading_passages:
       - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
-  - decks: ["hi-grammar-past-continuous"]
+  - decks: ["hi-grammar-past-continuous", "hi-grammar-verb-past-continuous"]
     words: 0
-    grammar: ["past-continuous"]
+    grammar: ["past-continuous", "past-continuous-masc", "past-continuous-fem"]
     listening_passages:
       - { id: "what-was-happening", text: { "en": "Saying what you were doing when the lights went out" } }
     reading_passages:
@@ -458,16 +458,16 @@ units:
   - decks: ["hi-grammar-can-must"]
     words: 1
     grammar: ["can-must"]
-  - decks: ["hi-grammar-subjunctive"]
+  - decks: ["hi-grammar-subjunctive", "hi-grammar-verb-subjunctive"]
     words: 0
-    grammar: ["subjunctive"]
+    grammar: ["subjunctive", "subjunctive-first", "subjunctive-second", "subjunctive-third", "subjunctive-plural"]
     listening_passages:
       - { id: "making-suggestions", text: { "en": "Friends make suggestions and wishes: let us go, may it go well" } }
     reading_passages:
       - { id: "friendly-advice", text: { "en": "A friendly note that suggests what to do and what to hope for" } }
-  - decks: ["hi-grammar-conditional"]
+  - decks: ["hi-grammar-conditional", "hi-grammar-verb-conditional"]
     words: 0
-    grammar: ["conditional"]
+    grammar: ["conditional", "conditional-masc", "conditional-fem"]
     listening_passages:
       - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
     reading_passages:
@@ -655,9 +655,9 @@ units:
       - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
     reading_passages:
       - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
-  - decks: ["hi-grammar-habitual-past"]
+  - decks: ["hi-grammar-habitual-past", "hi-grammar-verb-habitual-past"]
     words: 0
-    grammar: ["habitual-past"]
+    grammar: ["habitual-past", "habitual-past-masc", "habitual-past-fem"]
     listening_passages:
       - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
     reading_passages:

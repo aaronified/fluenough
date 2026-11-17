@@ -1,0 +1,29 @@
+schema: 1
+id: "hi-en-grammar-verb-subjunctive"
+kind: "layer"
+core: "hi-grammar-verb-subjunctive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs: the subjunctive"
+description: "Every verb the course teaches, in the subjunctive (may, let, should), for each person. The forms are written in Devanagari for now. Not yet checked by a Hindustani speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "main": "I, in the subjunctive"
+    "tum": "you (familiar), in the subjunctive"
+    "vah": "he, she, or you (intimate), in the subjunctive"
+    "ham": "we, they, or you (respectful), in the subjunctive"
+rules:
+  "hi-rule-subjunctive-first":
+    name: "-ूँ (-ūm̐), -ऊँ (-ūm̐): I may"
+    explanation: "For I, a stem that ends in a consonant takes {1}, and one that ends in a vowel takes {2}: {3}, to do, gives {4}; {5}, to go, gives {6}. It is the form for {7} in 'may I' and 'let me', and it is the base of the future."
+  "hi-rule-subjunctive-second":
+    name: "-ो (-ō), -ओ (-ō): you (tum) may"
+    explanation: "For you (familiar), a consonant stem takes {1} and a vowel stem takes {2}: {3}, to do, gives {4}; {5}, to go, gives {6}. The same form is the command for {7}."
+  "hi-rule-subjunctive-third":
+    name: "-े (-ē), -ए (-ē): he, she may"
+    explanation: "For he or she, a consonant stem takes {1} and a vowel stem takes {2}: {3}, to do, gives {4}; {5}, to go, gives {6}. It serves {7}, he, she, and {8}, the very close you."
+  "hi-rule-subjunctive-plural":
+    name: "-ें (-ēm̐), -एँ (-ēm̐): we, they may"
+    explanation: "For we, they and the respectful you, a consonant stem takes {1} and a vowel stem takes {2}: {3}, to do, gives {4}; {5}, to go, gives {6}. It serves {7}, we, {8}, you (respectful), and {9}, they."
