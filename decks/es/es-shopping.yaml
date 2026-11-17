@@ -336,7 +336,7 @@ cards:
     bases: [{ word: "la", base: "la" }, { word: "garantía", base: "garantía" }]
     examples:
       - { target: "La garantía cubre dos años.", ipa: "la ɡaɾanˈtia ˈkubɾe dos ˈaɲos", bases: [{ word: "La", base: "la" }, { word: "garantía", base: "garantía" }, { word: "cubre", base: "cubrir" }, { word: "dos", ref: "es-0206" }, { word: "años", ref: "es-0021" }] }
-      - { target: "¿Tiene garantía este móvil?", ipa: "ˈtjene ɡaɾanˈtia ˈeste ˈmobil", bases: [{ word: "Tiene", ref: "es-0024" }, { word: "garantía", base: "garantía" }, { word: "este", ref: "es-1897" }, { word: "móvil", ref: "es-0920" }] }
+      - { target: "¿Tiene garantía este móvil?", ipa: "ˈtjene ɡaɾanˈtia ˈeste ˈmobil", bases: [{ word: "Tiene", ref: "es-0024" }, { word: "garantía", base: "garantía" }, { word: "este", base: "este" }, { word: "móvil", ref: "es-0920" }] }
   - id: "es-4751"
     target: "el envío"
     ipa: "el enˈbio"
@@ -362,7 +362,7 @@ cards:
     bases: [{ word: "la", base: "la" }, { word: "devolución", base: "devolución" }]
     examples:
       - { target: "Quiero hacer una devolución.", ipa: "ˈkjeɾo aˈθeɾ ˈuna deboluˈθjon", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "hacer", ref: "es-0025" }, { word: "una", base: "una" }, { word: "devolución", base: "devolución" }] }
-      - { target: "Me dan la devolución en efectivo.", ipa: "me dan la deboluˈθjon en efekˈtibo", bases: [{ word: "Me", base: "me" }, { word: "dan", ref: "es-1629" }, { word: "la", base: "la" }, { word: "devolución", base: "devolución" }, { word: "en", base: "en" }, { word: "efectivo", ref: "es-1220" }] }
+      - { target: "Me devuelven el dinero en efectivo.", ipa: "me deˈbwelben el diˈneɾo en efekˈtibo", bases: [{ word: "Me", base: "me" }, { word: "devuelven", ref: "es-1230" }, { word: "el", base: "el" }, { word: "dinero", ref: "es-0513" }, { word: "en", base: "en" }, { word: "efectivo", ref: "es-1220" }] }
   - id: "es-4753"
     target: "la marca"
     ipa: "la ˈmaɾka"
@@ -374,7 +374,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "la", base: "la" }, { word: "marca", base: "marca" }]
     examples:
-      - { target: "¿Qué marca es este reloj?", ipa: "ke ˈmaɾka es ˈeste reˈlox", bases: [{ word: "Qué", ref: "es-0054" }, { word: "marca", base: "marca" }, { word: "es", ref: "es-0022" }, { word: "este", ref: "es-1897" }, { word: "reloj", ref: "es-0845" }] }
+      - { target: "¿Qué marca es este reloj?", ipa: "ke ˈmaɾka es ˈeste reˈlox", bases: [{ word: "Qué", ref: "es-0054" }, { word: "marca", base: "marca" }, { word: "es", ref: "es-0022" }, { word: "este", base: "este" }, { word: "reloj", ref: "es-0845" }] }
       - { target: "Compro siempre la misma marca.", ipa: "ˈkompɾo ˈsjempɾe la ˈmisma ˈmaɾka", bases: [{ word: "Compro", ref: "es-0280" }, { word: "siempre", ref: "es-0320" }, { word: "la", base: "la" }, { word: "misma", base: "mismo" }, { word: "marca", base: "marca" }] }
   - id: "es-4754"
     target: "el modelo"
@@ -387,8 +387,8 @@ cards:
       - { id: "n1", kind: "behaviour" }
     bases: [{ word: "el", base: "el" }, { word: "modelo", base: "modelo" }]
     examples:
-      - { target: "Este modelo es nuevo.", ipa: "ˈeste moˈdelo es ˈnwebo", bases: [{ word: "Este", ref: "es-1897" }, { word: "modelo", base: "modelo" }, { word: "es", ref: "es-0022" }, { word: "nuevo", ref: "es-0035" }] }
-      - { target: "¿Hay este modelo en azul?", ipa: "aj ˈeste moˈdelo en aˈθul", bases: [{ word: "Hay", base: "haber" }, { word: "este", ref: "es-1897" }, { word: "modelo", base: "modelo" }, { word: "en", base: "en" }, { word: "azul", ref: "es-1008" }] }
+      - { target: "Este modelo es nuevo.", ipa: "ˈeste moˈdelo es ˈnwebo", bases: [{ word: "Este", base: "este" }, { word: "modelo", base: "modelo" }, { word: "es", ref: "es-0022" }, { word: "nuevo", ref: "es-0035" }] }
+      - { target: "¿Hay este modelo en azul?", ipa: "aj ˈeste moˈdelo en aˈθul", bases: [{ word: "Hay", base: "haber" }, { word: "este", base: "este" }, { word: "modelo", base: "modelo" }, { word: "en", base: "en" }, { word: "azul", ref: "es-1008" }] }
   - id: "es-4755"
     target: "la calidad"
     ipa: "la kaliˈdad"
@@ -514,5 +514,5 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: [{ word: "rebajado", base: "rebajado" }]
     examples:
-      - { target: "Esta camisa está rebajada.", ipa: "ˈesta kaˈmisa esˈta rebaˈxada", bases: [{ word: "Esta", ref: "es-1897" }, { word: "camisa", ref: "es-1017" }, { word: "está", ref: "es-0023" }, { word: "rebajada", base: "rebajado" }] }
+      - { target: "Esta camisa está rebajada.", ipa: "ˈesta kaˈmisa esˈta rebaˈxada", bases: [{ word: "Esta", base: "este" }, { word: "camisa", ref: "es-1017" }, { word: "está", ref: "es-0023" }, { word: "rebajada", base: "rebajado" }] }
       - { target: "El precio rebajado es bueno.", ipa: "el ˈpɾeθjo rebaˈxado es ˈbweno", bases: [{ word: "El", base: "el" }, { word: "precio", ref: "es-0580" }, { word: "rebajado", base: "rebajado" }, { word: "es", ref: "es-0022" }, { word: "bueno", ref: "es-0033" }] }
