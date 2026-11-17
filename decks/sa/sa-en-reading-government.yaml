@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-government"
+name: "Reading: government"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-government-text-1"
+    title: "King and court"
+    theme: "government"
+    sentences:
+      - { text: "राजा सदा जनपदं रक्षति.", reading: "rājā sadā janapadaṃ rakṣati.", ipa: "raːdʒaː səd̪aː dʒənəpəd̪əm rəkʂət̪i" }
+      - { text: "आज्ञां राज्ञो दूतो वहति.", reading: "ājñāṃ rājño dūto vahati.", ipa: "aːdʒɲaːm raːdʒɲoː d̪uːt̪oː ʋəɦət̪i" }
+      - { text: "उपायं मन्त्री राज्ञे वदति.", reading: "upāyaṃ mantrī rājñe vadati.", ipa: "upaːjəm mənt̪riː raːdʒɲeː ʋəd̪ət̪i" }
+      - { text: "चोरो बन्धनेन कारागारं गच्छति.", reading: "coro bandhanena kārāgāraṃ gacchati.", ipa: "tʃoːroː bənd̪ʱəneːnə kaːraːɡaːrəm ɡətʃtʃʰət̪i" }
+      - { text: "सभायां सिंहासने राजा तिष्ठति.", reading: "sabhāyāṃ siṃhāsane rājā tiṣṭhati.", ipa: "səbʱaːjaːm sĩɦaːsəneː raːdʒaː t̪iʂʈʰət̪i" }
+    questions:
+      - id: "sa-6616"
+        prompt: { en: "What does the king always do for the country?" }
+        options: [{ en: "He leads it" }, { en: "He protects it" }, { en: "He praises it" }]
+        answer: 2
+      - id: "sa-6617"
+        prompt: { en: "What does the minister tell the king?" }
+        options: [{ en: "A plan" }, { en: "A story" }, { en: "A command" }]
+        answer: 1
+      - id: "sa-6618"
+        prompt: { en: "Which word means 'prison'?" }
+        options: [{ en: "बन्धनेन (bandhanena)" }, { en: "सिंहासने (siṃhāsane)" }, { en: "कारागारं (kārāgāraṃ)" }]
+        answer: 3
+      - id: "sa-6619"
+        prompt: { en: "The thief goes to the assembly in fetters." }
+        answer: false
+  - id: "sa-government-text-2"
+    title: "Treasury, army and trade"
+    theme: "government"
+    sentences:
+      - { text: "कोशे सुवर्णं रत्नं च भवतः.", reading: "kośe suvarṇaṃ ratnaṃ ca bhavataḥ.", ipa: "koːʃeː suʋərɳəm rət̪nəm tʃə bʱəʋət̪əh" }
+      - { text: "सेनाया नायको बलवान् भवति.", reading: "senāyā nāyako balavān bhavati.", ipa: "seːnaːjaː naːjəkoː bələʋaːn bʱəʋət̪i" }
+      - { text: "सभायां साक्षी साक्ष्यं वदति.", reading: "sabhāyāṃ sākṣī sākṣyaṃ vadati.", ipa: "səbʱaːjaːm saːkʂiː saːkʂjəm ʋəd̪ət̪i" }
+      - { text: "क्षत्रियो युद्धे राष्ट्रं रक्षति.", reading: "kṣatriyo yuddhe rāṣṭraṃ rakṣati.", ipa: "kʂət̪rijoː jud̪d̪ʱeː raːʂʈrəm rəkʂət̪i" }
+      - { text: "वैश्यो नगरे वाणिज्यं करोति.", reading: "vaiśyo nagare vāṇijyaṃ karoti.", ipa: "ʋəiʃjoː nəɡəreː ʋaːɳidʒjəm kəroːt̪i" }
+    questions:
+      - id: "sa-6620"
+        prompt: { en: "What is in the treasury?" }
+        options: [{ en: "Grain and a jewel" }, { en: "Gold and a jewel" }, { en: "Gold and a sword" }]
+        answer: 2
+      - id: "sa-6621"
+        prompt: { en: "What is the leader of the army like?" }
+        options: [{ en: "Wise" }, { en: "Brave" }, { en: "Strong" }]
+        answer: 3
+      - id: "sa-6622"
+        prompt: { en: "Which word means 'trade'?" }
+        options: [{ en: "वाणिज्यं (vāṇijyaṃ)" }, { en: "युद्धे (yuddhe)" }, { en: "साक्ष्यं (sākṣyaṃ)" }]
+        answer: 1
+      - id: "sa-6623"
+        prompt: { en: "The kshatriya protects the kingdom in war." }
+        answer: true

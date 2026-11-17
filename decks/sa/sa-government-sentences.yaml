@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-government-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3820"
+    target: "राजा सदा जनपदं रक्षति."
+    reading: "rājā sadā janapadaṃ rakṣati."
+    ipa: "raːdʒaː səd̪aː dʒənəpəd̪əm rəkʂət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "राजा", base: "राजन्", reading: "rājan" }, { word: "सदा", ref: "sa-1086" }, { word: "जनपदं", base: "जनपदः", reading: "janapadaḥ" }, { word: "रक्षति", base: "रक्ष्", reading: "rakṣ" }]
+    confusables: [{ id: "w1", ref: "sa-5731", kind: "word" }, { id: "w2", ref: "sa-2007", kind: "word" }, { id: "w3", ref: "sa-5760", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3821"
+    target: "आज्ञां राज्ञो दूतो वहति."
+    reading: "ājñāṃ rājño dūto vahati."
+    ipa: "aːdʒɲaːm raːdʒɲoː d̪uːt̪oː ʋəɦət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "आज्ञां", base: "आज्ञा", reading: "ājñā" }, { word: "राज्ञो", base: "राजन्", reading: "rājan" }, { word: "दूतो", base: "दूतः", reading: "dūtaḥ" }, { word: "वहति", base: "वह्", reading: "vah" }]
+    confusables: [{ id: "w1", ref: "sa-5711", kind: "word" }, { id: "w2", ref: "sa-5735", kind: "word" }, { id: "w3", ref: "sa-2016", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3822"
+    target: "उपायं मन्त्री राज्ञे वदति."
+    reading: "upāyaṃ mantrī rājñe vadati."
+    ipa: "upaːjəm mənt̪riː raːdʒɲeː ʋəd̪ət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "उपायं", base: "उपायः", reading: "upāyaḥ" }, { word: "मन्त्री", ref: "sa-5717" }, { word: "राज्ञे", base: "राजन्", reading: "rājan" }, { word: "वदति", base: "वद्", reading: "vad" }]
+    confusables: [{ id: "w1", ref: "sa-5730", kind: "word" }, { id: "w2", ref: "sa-5721", kind: "word" }, { id: "w3", ref: "sa-2122", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3823"
+    target: "चोरो बन्धनेन कारागारं गच्छति."
+    reading: "coro bandhanena kārāgāraṃ gacchati."
+    ipa: "tʃoːroː bənd̪ʱəneːnə kaːraːɡaːrəm ɡətʃtʃʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "चोरो", base: "चोरः", reading: "coraḥ" }, { word: "बन्धनेन", base: "बन्धनम्", reading: "bandhanam" }, { word: "कारागारं", base: "कारागारम्", reading: "kārāgāram" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-5745", kind: "word" }, { id: "w2", ref: "sa-5758", kind: "word" }, { id: "w3", ref: "sa-5709", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3824"
+    target: "सभायां सिंहासने राजा तिष्ठति."
+    reading: "sabhāyāṃ siṃhāsane rājā tiṣṭhati."
+    ipa: "səbʱaːjaːm sĩɦaːsəneː raːdʒaː t̪iʂʈʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सभायां", base: "सभा", reading: "sabhā" }, { word: "सिंहासने", base: "सिंहासनम्", reading: "siṃhāsanam" }, { word: "राजा", base: "राजन्", reading: "rājan" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+    confusables: [{ id: "w1", ref: "sa-5716", kind: "word" }, { id: "w2", ref: "sa-1752", kind: "word" }, { id: "w3", ref: "sa-2005", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3825"
+    target: "कोशे सुवर्णं रत्नं च भवतः."
+    reading: "kośe suvarṇaṃ ratnaṃ ca bhavataḥ."
+    ipa: "koːʃeː suʋərɳəm rət̪nəm tʃə bʱəʋət̪əh"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कोशे", base: "कोशः", reading: "kośaḥ" }, { word: "सुवर्णं", base: "सुवर्णम्", reading: "suvarṇam" }, { word: "रत्नं", base: "रत्नम्", reading: "ratnam" }, { word: "च", ref: "sa-1104" }, { word: "भवतः", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5758", kind: "word" }, { id: "w2", ref: "sa-1804", kind: "word" }, { id: "w3", ref: "sa-1812", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3826"
+    target: "सेनाया नायको बलवान् भवति."
+    reading: "senāyā nāyako balavān bhavati."
+    ipa: "seːnaːjaː naːjəkoː bələʋaːn bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सेनाया", base: "सेना", reading: "senā" }, { word: "नायको", base: "नायकः", reading: "nāyakaḥ" }, { word: "बलवान्", ref: "sa-5748" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5729", kind: "word" }, { id: "w2", ref: "sa-5749", kind: "word" }, { id: "w3", ref: "sa-5727", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3827"
+    target: "सभायां साक्षी साक्ष्यं वदति."
+    reading: "sabhāyāṃ sākṣī sākṣyaṃ vadati."
+    ipa: "səbʱaːjaːm saːkʂiː saːkʂjəm ʋəd̪ət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सभायां", base: "सभा", reading: "sabhā" }, { word: "साक्षी", ref: "sa-5735" }, { word: "साक्ष्यं", base: "साक्ष्यम्", reading: "sākṣyam" }, { word: "वदति", base: "वद्", reading: "vad" }]
+    confusables: [{ id: "w1", ref: "sa-5741", kind: "word" }, { id: "w2", ref: "sa-5703", kind: "word" }, { id: "w3", ref: "sa-2108", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3828"
+    target: "क्षत्रियो युद्धे राष्ट्रं रक्षति."
+    reading: "kṣatriyo yuddhe rāṣṭraṃ rakṣati."
+    ipa: "kʂət̪rijoː jud̪d̪ʱeː raːʂʈrəm rəkʂət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "क्षत्रियो", base: "क्षत्रियः", reading: "kṣatriyaḥ" }, { word: "युद्धे", base: "युद्धम्", reading: "yuddham" }, { word: "राष्ट्रं", base: "राष्ट्रम्", reading: "rāṣṭram" }, { word: "रक्षति", base: "रक्ष्", reading: "rakṣ" }]
+    confusables: [{ id: "w1", ref: "sa-5737", kind: "word" }, { id: "w2", ref: "sa-5762", kind: "word" }, { id: "w3", ref: "sa-5725", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3829"
+    target: "वैश्यो नगरे वाणिज्यं करोति."
+    reading: "vaiśyo nagare vāṇijyaṃ karoti."
+    ipa: "ʋəiʃjoː nəɡəreː ʋaːɳidʒjəm kəroːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वैश्यो", base: "वैश्यः", reading: "vaiśyaḥ" }, { word: "नगरे", base: "नगरम्", reading: "nagaram" }, { word: "वाणिज्यं", base: "वाणिज्यम्", reading: "vāṇijyam" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+    confusables: [{ id: "w1", ref: "sa-5738", kind: "word" }, { id: "w2", ref: "sa-1857", kind: "word" }, { id: "w3", ref: "sa-1761", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
