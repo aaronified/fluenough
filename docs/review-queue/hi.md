@@ -231,3 +231,5 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | hi-4058 to hi-4063 | hi-culture-2 | These dohas are attributed to Amir Khusrau on the Hindi Wikipedia page; no early source is known, and the Hindi wording is modern. Confirm the attribution or drop them. | Haiku builder | 2026-11-17 |
 | hi-4110 | hi-culture-3 | The date c. 1913-1914 is from the Hindi Wikipedia pages on the poem (1913); the second year is approximate. Confirm. | Haiku builder | 2026-11-17 |
 | hi-4111 | hi-culture-3 | The work the verse belongs to is unconfirmed; it is quoted on the Hindi Wikipedia page about Aansu. Confirm the work or drop the card. | Haiku builder | 2026-11-17 |
+| hi-4152 | hi-culture-4 | After the ی change in the tool (#1612), the reviewer's ālam-e nāpāēdār printed a '?'. The hint nāpāyedār (the same vowels, with y) is written; please check. | Haiku builder | 2026-11-17 |
+| hi-4163 | hi-culture-4 | After the ی change, siyah and suvaidā did not fit the letters, and the printed reading had '?'. The hints sīh (for سیہ) and suidā (for سویدا) are written; please check the vowels of both words. | Haiku builder | 2026-11-17 |
