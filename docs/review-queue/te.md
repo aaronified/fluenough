@@ -76,3 +76,10 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | te-8812 | see card | గగనాధిప is glossed 'lord of the sky' (tentative): is the gloss right? | Telugu architect | 2026-11-17 |
 | te-8813 | see card | The word వశిష్టుడు is joined from two printed lines (వ / శిష్టుడు); the edition field says so: is the join right? | Telugu architect | 2026-11-17 |
 | te-8816 | see card | గుణమేలరా is glossed 'this behaviour' (tentative): is the gloss right? | Telugu architect | 2026-11-17 |
+| te-8758 | see card | The printed page has a space inside విస్తార as వి స్తార; the card writes it without a space: is that right? | Telugu architect | 2026-11-17 |
+| te-8759 | see card | The printed page prints a space inside this word as బెడం గై; the card writes బెడంగై, glossed 'beautifully' from the base బెడగు (beauty): please check the spelling and the gloss. | Telugu architect | 2026-11-17 |
+| te-8762 | see card | The printed page has a space inside ధర్మోత్తరమును as ధర్మో త్తరమును; the card writes it without a space: is that right? | Telugu architect | 2026-11-17 |
+| te-8764 | see card | The printed page has a space inside సైన్యోద్దాముల as సైన్యో ద్దాముల; the card writes it without a space. The base for ఏమగలును is మగడు and for బ్రతియె is ప్రతి: please check both bases and glosses. | Telugu architect | 2026-11-17 |
+| te-8765 | see card | గుమతి is read as కుమతి ('evil-minded') and యనక as 'without saying' (base అను): these two glosses are the builder's tentative reading: please check them. | Telugu architect | 2026-11-17 |
+| te-8766 | see card | The printed page has a space inside మదీయాగ్రపురోహితుఁ as మదీయాగ్రపురో హితుఁ; the card writes it without a space: is that right? | Telugu architect | 2026-11-17 |
+| te-8767 | see card | The printed page has a space inside య ట్లగుటఁ as య ట్లగుటఁ with a space; the card writes యట్లగుటఁ. The word నేరిమిమెయి is printed unbroken and is glossed 'by skill': please check the gloss. | Telugu architect | 2026-11-17 |
