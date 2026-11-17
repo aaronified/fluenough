@@ -253,8 +253,8 @@ The app comes with no decks. It downloads a language's decks from this
 repository's `decks-live` branch when you choose it, and you can start once its
 first five are in; after that it works offline. Fixed and new decks arrive
 without an app update: once a day at most it asks whether to fetch them, and
-Settings > Deck downloads lists each language, with Update and Remove, and
-can turn the daily check off
+Settings > Your languages > Languages lists each language, with an update
+check and Remove in its sheet, and can turn the daily check off
 ([ADR-0037](https://github.com/aaronified/fluenough/wiki/ADR-0037-Decks-Download-From-Main)).
 
 ## Documentation
