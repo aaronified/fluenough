@@ -1,0 +1,721 @@
+schema: 1
+id: "hi-grammar-verb-continuous"
+part: "core"
+kind: "rules"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["hi-0240", "hi-0273", "hi-0290", "hi-0460"]
+  slots: ["main-m", "main-f", "tum-m", "tum-f", "vah-m", "vah-f", "ham-m", "ham-f"]
+  rows:
+    - word: "hi-0441"
+      forms: { "main-m": "उठ रहा हूँ", "main-f": "उठ रही हूँ", "tum-m": "उठ रहे हो", "tum-f": "उठ रही हो", "vah-m": "उठ रहा है", "vah-f": "उठ रही है", "ham-m": "उठ रहे हैं", "ham-f": "उठ रही हैं" }
+      readings: { "main-m": "uṭh rahā hūm̐", "main-f": "uṭh rahī hūm̐", "tum-m": "uṭh rahē hō", "tum-f": "uṭh rahī hō", "vah-m": "uṭh rahā hai", "vah-f": "uṭh rahī hai", "ham-m": "uṭh rahē haim̐", "ham-f": "uṭh rahī haim̐" }
+    - word: "hi-0442"
+      forms: { "main-m": "नहा रहा हूँ", "main-f": "नहा रही हूँ", "tum-m": "नहा रहे हो", "tum-f": "नहा रही हो", "vah-m": "नहा रहा है", "vah-f": "नहा रही है", "ham-m": "नहा रहे हैं", "ham-f": "नहा रही हैं" }
+      readings: { "main-m": "nahā rahā hūm̐", "main-f": "nahā rahī hūm̐", "tum-m": "nahā rahē hō", "tum-f": "nahā rahī hō", "vah-m": "nahā rahā hai", "vah-f": "nahā rahī hai", "ham-m": "nahā rahē haim̐", "ham-f": "nahā rahī haim̐" }
+    - word: "hi-0450"
+      forms: { "main-m": "सो रहा हूँ", "main-f": "सो रही हूँ", "tum-m": "सो रहे हो", "tum-f": "सो रही हो", "vah-m": "सो रहा है", "vah-f": "सो रही है", "ham-m": "सो रहे हैं", "ham-f": "सो रही हैं" }
+      readings: { "main-m": "sō rahā hūm̐", "main-f": "sō rahī hūm̐", "tum-m": "sō rahē hō", "tum-f": "sō rahī hō", "vah-m": "sō rahā hai", "vah-f": "sō rahī hai", "ham-m": "sō rahē haim̐", "ham-f": "sō rahī haim̐" }
+    - word: "hi-0513"
+      forms: { "main-m": "सक रहा हूँ", "main-f": "सक रही हूँ", "tum-m": "सक रहे हो", "tum-f": "सक रही हो", "vah-m": "सक रहा है", "vah-f": "सक रही है", "ham-m": "सक रहे हैं", "ham-f": "सक रही हैं" }
+      readings: { "main-m": "sak rahā hūm̐", "main-f": "sak rahī hūm̐", "tum-m": "sak rahē hō", "tum-f": "sak rahī hō", "vah-m": "sak rahā hai", "vah-f": "sak rahī hai", "ham-m": "sak rahē haim̐", "ham-f": "sak rahī haim̐" }
+    - word: "hi-0602"
+      forms: { "main-m": "पी रहा हूँ", "main-f": "पी रही हूँ", "tum-m": "पी रहे हो", "tum-f": "पी रही हो", "vah-m": "पी रहा है", "vah-f": "पी रही है", "ham-m": "पी रहे हैं", "ham-f": "पी रही हैं" }
+      readings: { "main-m": "pī rahā hūm̐", "main-f": "pī rahī hūm̐", "tum-m": "pī rahē hō", "tum-f": "pī rahī hō", "vah-m": "pī rahā hai", "vah-f": "pī rahī hai", "ham-m": "pī rahē haim̐", "ham-f": "pī rahī haim̐" }
+    - word: "hi-0623"
+      forms: { "main-m": "हंस रहा हूँ", "main-f": "हंस रही हूँ", "tum-m": "हंस रहे हो", "tum-f": "हंस रही हो", "vah-m": "हंस रहा है", "vah-f": "हंस रही है", "ham-m": "हंस रहे हैं", "ham-f": "हंस रही हैं" }
+      readings: { "main-m": "haṁs rahā hūm̐", "main-f": "haṁs rahī hūm̐", "tum-m": "haṁs rahē hō", "tum-f": "haṁs rahī hō", "vah-m": "haṁs rahā hai", "vah-f": "haṁs rahī hai", "ham-m": "haṁs rahē haim̐", "ham-f": "haṁs rahī haim̐" }
+    - word: "hi-0777"
+      forms: { "main-m": "जा रहा हूँ", "main-f": "जा रही हूँ", "tum-m": "जा रहे हो", "tum-f": "जा रही हो", "vah-m": "जा रहा है", "vah-f": "जा रही है", "ham-m": "जा रहे हैं", "ham-f": "जा रही हैं" }
+      readings: { "main-m": "jā rahā hūm̐", "main-f": "jā rahī hūm̐", "tum-m": "jā rahē hō", "tum-f": "jā rahī hō", "vah-m": "jā rahā hai", "vah-f": "jā rahī hai", "ham-m": "jā rahē haim̐", "ham-f": "jā rahī haim̐" }
+    - word: "hi-0778"
+      forms: { "main-m": "आ रहा हूँ", "main-f": "आ रही हूँ", "tum-m": "आ रहे हो", "tum-f": "आ रही हो", "vah-m": "आ रहा है", "vah-f": "आ रही है", "ham-m": "आ रहे हैं", "ham-f": "आ रही हैं" }
+      readings: { "main-m": "ā rahā hūm̐", "main-f": "ā rahī hūm̐", "tum-m": "ā rahē hō", "tum-f": "ā rahī hō", "vah-m": "ā rahā hai", "vah-f": "ā rahī hai", "ham-m": "ā rahē haim̐", "ham-f": "ā rahī haim̐" }
+    - word: "hi-0779"
+      forms: { "main-m": "कर रहा हूँ", "main-f": "कर रही हूँ", "tum-m": "कर रहे हो", "tum-f": "कर रही हो", "vah-m": "कर रहा है", "vah-f": "कर रही है", "ham-m": "कर रहे हैं", "ham-f": "कर रही हैं" }
+      readings: { "main-m": "kar rahā hūm̐", "main-f": "kar rahī hūm̐", "tum-m": "kar rahē hō", "tum-f": "kar rahī hō", "vah-m": "kar rahā hai", "vah-f": "kar rahī hai", "ham-m": "kar rahē haim̐", "ham-f": "kar rahī haim̐" }
+    - word: "hi-0780"
+      forms: { "main-m": "हो रहा हूँ", "main-f": "हो रही हूँ", "tum-m": "हो रहे हो", "tum-f": "हो रही हो", "vah-m": "हो रहा है", "vah-f": "हो रही है", "ham-m": "हो रहे हैं", "ham-f": "हो रही हैं" }
+      readings: { "main-m": "hō rahā hūm̐", "main-f": "hō rahī hūm̐", "tum-m": "hō rahē hō", "tum-f": "hō rahī hō", "vah-m": "hō rahā hai", "vah-f": "hō rahī hai", "ham-m": "hō rahē haim̐", "ham-f": "hō rahī haim̐" }
+    - word: "hi-0781"
+      forms: { "main-m": "लिख रहा हूँ", "main-f": "लिख रही हूँ", "tum-m": "लिख रहे हो", "tum-f": "लिख रही हो", "vah-m": "लिख रहा है", "vah-f": "लिख रही है", "ham-m": "लिख रहे हैं", "ham-f": "लिख रही हैं" }
+      readings: { "main-m": "likh rahā hūm̐", "main-f": "likh rahī hūm̐", "tum-m": "likh rahē hō", "tum-f": "likh rahī hō", "vah-m": "likh rahā hai", "vah-f": "likh rahī hai", "ham-m": "likh rahē haim̐", "ham-f": "likh rahī haim̐" }
+    - word: "hi-0782"
+      forms: { "main-m": "बोल रहा हूँ", "main-f": "बोल रही हूँ", "tum-m": "बोल रहे हो", "tum-f": "बोल रही हो", "vah-m": "बोल रहा है", "vah-f": "बोल रही है", "ham-m": "बोल रहे हैं", "ham-f": "बोल रही हैं" }
+      readings: { "main-m": "bōl rahā hūm̐", "main-f": "bōl rahī hūm̐", "tum-m": "bōl rahē hō", "tum-f": "bōl rahī hō", "vah-m": "bōl rahā hai", "vah-f": "bōl rahī hai", "ham-m": "bōl rahē haim̐", "ham-f": "bōl rahī haim̐" }
+    - word: "hi-0783"
+      forms: { "main-m": "सुन रहा हूँ", "main-f": "सुन रही हूँ", "tum-m": "सुन रहे हो", "tum-f": "सुन रही हो", "vah-m": "सुन रहा है", "vah-f": "सुन रही है", "ham-m": "सुन रहे हैं", "ham-f": "सुन रही हैं" }
+      readings: { "main-m": "sun rahā hūm̐", "main-f": "sun rahī hūm̐", "tum-m": "sun rahē hō", "tum-f": "sun rahī hō", "vah-m": "sun rahā hai", "vah-f": "sun rahī hai", "ham-m": "sun rahē haim̐", "ham-f": "sun rahī haim̐" }
+    - word: "hi-0784"
+      forms: { "main-m": "देख रहा हूँ", "main-f": "देख रही हूँ", "tum-m": "देख रहे हो", "tum-f": "देख रही हो", "vah-m": "देख रहा है", "vah-f": "देख रही है", "ham-m": "देख रहे हैं", "ham-f": "देख रही हैं" }
+      readings: { "main-m": "dēkh rahā hūm̐", "main-f": "dēkh rahī hūm̐", "tum-m": "dēkh rahē hō", "tum-f": "dēkh rahī hō", "vah-m": "dēkh rahā hai", "vah-f": "dēkh rahī hai", "ham-m": "dēkh rahē haim̐", "ham-f": "dēkh rahī haim̐" }
+    - word: "hi-0785"
+      forms: { "main-m": "दे रहा हूँ", "main-f": "दे रही हूँ", "tum-m": "दे रहे हो", "tum-f": "दे रही हो", "vah-m": "दे रहा है", "vah-f": "दे रही है", "ham-m": "दे रहे हैं", "ham-f": "दे रही हैं" }
+      readings: { "main-m": "dē rahā hūm̐", "main-f": "dē rahī hūm̐", "tum-m": "dē rahē hō", "tum-f": "dē rahī hō", "vah-m": "dē rahā hai", "vah-f": "dē rahī hai", "ham-m": "dē rahē haim̐", "ham-f": "dē rahī haim̐" }
+    - word: "hi-0786"
+      forms: { "main-m": "ले रहा हूँ", "main-f": "ले रही हूँ", "tum-m": "ले रहे हो", "tum-f": "ले रही हो", "vah-m": "ले रहा है", "vah-f": "ले रही है", "ham-m": "ले रहे हैं", "ham-f": "ले रही हैं" }
+      readings: { "main-m": "lē rahā hūm̐", "main-f": "lē rahī hūm̐", "tum-m": "lē rahē hō", "tum-f": "lē rahī hō", "vah-m": "lē rahā hai", "vah-f": "lē rahī hai", "ham-m": "lē rahē haim̐", "ham-f": "lē rahī haim̐" }
+    - word: "hi-0787"
+      forms: { "main-m": "खेल रहा हूँ", "main-f": "खेल रही हूँ", "tum-m": "खेल रहे हो", "tum-f": "खेल रही हो", "vah-m": "खेल रहा है", "vah-f": "खेल रही है", "ham-m": "खेल रहे हैं", "ham-f": "खेल रही हैं" }
+      readings: { "main-m": "khēl rahā hūm̐", "main-f": "khēl rahī hūm̐", "tum-m": "khēl rahē hō", "tum-f": "khēl rahī hō", "vah-m": "khēl rahā hai", "vah-f": "khēl rahī hai", "ham-m": "khēl rahē haim̐", "ham-f": "khēl rahī haim̐" }
+    - word: "hi-0788"
+      forms: { "main-m": "बैठ रहा हूँ", "main-f": "बैठ रही हूँ", "tum-m": "बैठ रहे हो", "tum-f": "बैठ रही हो", "vah-m": "बैठ रहा है", "vah-f": "बैठ रही है", "ham-m": "बैठ रहे हैं", "ham-f": "बैठ रही हैं" }
+      readings: { "main-m": "baiṭh rahā hūm̐", "main-f": "baiṭh rahī hūm̐", "tum-m": "baiṭh rahē hō", "tum-f": "baiṭh rahī hō", "vah-m": "baiṭh rahā hai", "vah-f": "baiṭh rahī hai", "ham-m": "baiṭh rahē haim̐", "ham-f": "baiṭh rahī haim̐" }
+    - word: "hi-0789"
+      forms: { "main-m": "समझ रहा हूँ", "main-f": "समझ रही हूँ", "tum-m": "समझ रहे हो", "tum-f": "समझ रही हो", "vah-m": "समझ रहा है", "vah-f": "समझ रही है", "ham-m": "समझ रहे हैं", "ham-f": "समझ रही हैं" }
+      readings: { "main-m": "samjh rahā hūm̐", "main-f": "samjh rahī hūm̐", "tum-m": "samjh rahē hō", "tum-f": "samjh rahī hō", "vah-m": "samjh rahā hai", "vah-f": "samjh rahī hai", "ham-m": "samjh rahē haim̐", "ham-f": "samjh rahī haim̐" }
+    - word: "hi-0790"
+      forms: { "main-m": "जान रहा हूँ", "main-f": "जान रही हूँ", "tum-m": "जान रहे हो", "tum-f": "जान रही हो", "vah-m": "जान रहा है", "vah-f": "जान रही है", "ham-m": "जान रहे हैं", "ham-f": "जान रही हैं" }
+      readings: { "main-m": "jān rahā hūm̐", "main-f": "jān rahī hūm̐", "tum-m": "jān rahē hō", "tum-f": "jān rahī hō", "vah-m": "jān rahā hai", "vah-f": "jān rahī hai", "ham-m": "jān rahē haim̐", "ham-f": "jān rahī haim̐" }
+    - word: "hi-0791"
+      forms: { "main-m": "रह रहा हूँ", "main-f": "रह रही हूँ", "tum-m": "रह रहे हो", "tum-f": "रह रही हो", "vah-m": "रह रहा है", "vah-f": "रह रही है", "ham-m": "रह रहे हैं", "ham-f": "रह रही हैं" }
+      readings: { "main-m": "rah rahā hūm̐", "main-f": "rah rahī hūm̐", "tum-m": "rah rahē hō", "tum-f": "rah rahī hō", "vah-m": "rah rahā hai", "vah-f": "rah rahī hai", "ham-m": "rah rahē haim̐", "ham-f": "rah rahī haim̐" }
+    - word: "hi-0792"
+      forms: { "main-m": "चाह रहा हूँ", "main-f": "चाह रही हूँ", "tum-m": "चाह रहे हो", "tum-f": "चाह रही हो", "vah-m": "चाह रहा है", "vah-f": "चाह रही है", "ham-m": "चाह रहे हैं", "ham-f": "चाह रही हैं" }
+      readings: { "main-m": "cāh rahā hūm̐", "main-f": "cāh rahī hūm̐", "tum-m": "cāh rahē hō", "tum-f": "cāh rahī hō", "vah-m": "cāh rahā hai", "vah-f": "cāh rahī hai", "ham-m": "cāh rahē haim̐", "ham-f": "cāh rahī haim̐" }
+    - word: "hi-0793"
+      forms: { "main-m": "मिल रहा हूँ", "main-f": "मिल रही हूँ", "tum-m": "मिल रहे हो", "tum-f": "मिल रही हो", "vah-m": "मिल रहा है", "vah-f": "मिल रही है", "ham-m": "मिल रहे हैं", "ham-f": "मिल रही हैं" }
+      readings: { "main-m": "mil rahā hūm̐", "main-f": "mil rahī hūm̐", "tum-m": "mil rahē hō", "tum-f": "mil rahī hō", "vah-m": "mil rahā hai", "vah-f": "mil rahī hai", "ham-m": "mil rahē haim̐", "ham-f": "mil rahī haim̐" }
+    - word: "hi-0794"
+      forms: { "main-m": "ख़रीद रहा हूँ", "main-f": "ख़रीद रही हूँ", "tum-m": "ख़रीद रहे हो", "tum-f": "ख़रीद रही हो", "vah-m": "ख़रीद रहा है", "vah-f": "ख़रीद रही है", "ham-m": "ख़रीद रहे हैं", "ham-f": "ख़रीद रही हैं" }
+      readings: { "main-m": "k͟harīd rahā hūm̐", "main-f": "k͟harīd rahī hūm̐", "tum-m": "k͟harīd rahē hō", "tum-f": "k͟harīd rahī hō", "vah-m": "k͟harīd rahā hai", "vah-f": "k͟harīd rahī hai", "ham-m": "k͟harīd rahē haim̐", "ham-f": "k͟harīd rahī haim̐" }
+    - word: "hi-0795"
+      forms: { "main-m": "बेच रहा हूँ", "main-f": "बेच रही हूँ", "tum-m": "बेच रहे हो", "tum-f": "बेच रही हो", "vah-m": "बेच रहा है", "vah-f": "बेच रही है", "ham-m": "बेच रहे हैं", "ham-f": "बेच रही हैं" }
+      readings: { "main-m": "bēc rahā hūm̐", "main-f": "bēc rahī hūm̐", "tum-m": "bēc rahē hō", "tum-f": "bēc rahī hō", "vah-m": "bēc rahā hai", "vah-f": "bēc rahī hai", "ham-m": "bēc rahē haim̐", "ham-f": "bēc rahī haim̐" }
+    - word: "hi-0796"
+      forms: { "main-m": "बता रहा हूँ", "main-f": "बता रही हूँ", "tum-m": "बता रहे हो", "tum-f": "बता रही हो", "vah-m": "बता रहा है", "vah-f": "बता रही है", "ham-m": "बता रहे हैं", "ham-f": "बता रही हैं" }
+      readings: { "main-m": "batā rahā hūm̐", "main-f": "batā rahī hūm̐", "tum-m": "batā rahē hō", "tum-f": "batā rahī hō", "vah-m": "batā rahā hai", "vah-f": "batā rahī hai", "ham-m": "batā rahē haim̐", "ham-f": "batā rahī haim̐" }
+    - word: "hi-0797"
+      forms: { "main-m": "भेज रहा हूँ", "main-f": "भेज रही हूँ", "tum-m": "भेज रहे हो", "tum-f": "भेज रही हो", "vah-m": "भेज रहा है", "vah-f": "भेज रही है", "ham-m": "भेज रहे हैं", "ham-f": "भेज रही हैं" }
+      readings: { "main-m": "bhēj rahā hūm̐", "main-f": "bhēj rahī hūm̐", "tum-m": "bhēj rahē hō", "tum-f": "bhēj rahī hō", "vah-m": "bhēj rahā hai", "vah-f": "bhēj rahī hai", "ham-m": "bhēj rahē haim̐", "ham-f": "bhēj rahī haim̐" }
+    - word: "hi-0798"
+      forms: { "main-m": "धो रहा हूँ", "main-f": "धो रही हूँ", "tum-m": "धो रहे हो", "tum-f": "धो रही हो", "vah-m": "धो रहा है", "vah-f": "धो रही है", "ham-m": "धो रहे हैं", "ham-f": "धो रही हैं" }
+      readings: { "main-m": "dhō rahā hūm̐", "main-f": "dhō rahī hūm̐", "tum-m": "dhō rahē hō", "tum-f": "dhō rahī hō", "vah-m": "dhō rahā hai", "vah-f": "dhō rahī hai", "ham-m": "dhō rahē haim̐", "ham-f": "dhō rahī haim̐" }
+    - word: "hi-0799"
+      forms: { "main-m": "पूछ रहा हूँ", "main-f": "पूछ रही हूँ", "tum-m": "पूछ रहे हो", "tum-f": "पूछ रही हो", "vah-m": "पूछ रहा है", "vah-f": "पूछ रही है", "ham-m": "पूछ रहे हैं", "ham-f": "पूछ रही हैं" }
+      readings: { "main-m": "pūch rahā hūm̐", "main-f": "pūch rahī hūm̐", "tum-m": "pūch rahē hō", "tum-f": "pūch rahī hō", "vah-m": "pūch rahā hai", "vah-f": "pūch rahī hai", "ham-m": "pūch rahē haim̐", "ham-f": "pūch rahī haim̐" }
+    - word: "hi-0800"
+      forms: { "main-m": "कह रहा हूँ", "main-f": "कह रही हूँ", "tum-m": "कह रहे हो", "tum-f": "कह रही हो", "vah-m": "कह रहा है", "vah-f": "कह रही है", "ham-m": "कह रहे हैं", "ham-f": "कह रही हैं" }
+      readings: { "main-m": "kah rahā hūm̐", "main-f": "kah rahī hūm̐", "tum-m": "kah rahē hō", "tum-f": "kah rahī hō", "vah-m": "kah rahā hai", "vah-f": "kah rahī hai", "ham-m": "kah rahē haim̐", "ham-f": "kah rahī haim̐" }
+    - word: "hi-0801"
+      forms: { "main-m": "चल रहा हूँ", "main-f": "चल रही हूँ", "tum-m": "चल रहे हो", "tum-f": "चल रही हो", "vah-m": "चल रहा है", "vah-f": "चल रही है", "ham-m": "चल रहे हैं", "ham-f": "चल रही हैं" }
+      readings: { "main-m": "cal rahā hūm̐", "main-f": "cal rahī hūm̐", "tum-m": "cal rahē hō", "tum-f": "cal rahī hō", "vah-m": "cal rahā hai", "vah-f": "cal rahī hai", "ham-m": "cal rahē haim̐", "ham-f": "cal rahī haim̐" }
+    - word: "hi-0937"
+      forms: { "main-m": "खोल रहा हूँ", "main-f": "खोल रही हूँ", "tum-m": "खोल रहे हो", "tum-f": "खोल रही हो", "vah-m": "खोल रहा है", "vah-f": "खोल रही है", "ham-m": "खोल रहे हैं", "ham-f": "खोल रही हैं" }
+      readings: { "main-m": "khōl rahā hūm̐", "main-f": "khōl rahī hūm̐", "tum-m": "khōl rahē hō", "tum-f": "khōl rahī hō", "vah-m": "khōl rahā hai", "vah-f": "khōl rahī hai", "ham-m": "khōl rahē haim̐", "ham-f": "khōl rahī haim̐" }
+    - word: "hi-0938"
+      forms: { "main-m": "पका रहा हूँ", "main-f": "पका रही हूँ", "tum-m": "पका रहे हो", "tum-f": "पका रही हो", "vah-m": "पका रहा है", "vah-f": "पका रही है", "ham-m": "पका रहे हैं", "ham-f": "पका रही हैं" }
+      readings: { "main-m": "pakā rahā hūm̐", "main-f": "pakā rahī hūm̐", "tum-m": "pakā rahē hō", "tum-f": "pakā rahī hō", "vah-m": "pakā rahā hai", "vah-f": "pakā rahī hai", "ham-m": "pakā rahē haim̐", "ham-f": "pakā rahī haim̐" }
+    - word: "hi-0939"
+      forms: { "main-m": "काट रहा हूँ", "main-f": "काट रही हूँ", "tum-m": "काट रहे हो", "tum-f": "काट रही हो", "vah-m": "काट रहा है", "vah-f": "काट रही है", "ham-m": "काट रहे हैं", "ham-f": "काट रही हैं" }
+      readings: { "main-m": "kāṭ rahā hūm̐", "main-f": "kāṭ rahī hūm̐", "tum-m": "kāṭ rahē hō", "tum-f": "kāṭ rahī hō", "vah-m": "kāṭ rahā hai", "vah-f": "kāṭ rahī hai", "ham-m": "kāṭ rahē haim̐", "ham-f": "kāṭ rahī haim̐" }
+    - word: "hi-0940"
+      forms: { "main-m": "उबाल रहा हूँ", "main-f": "उबाल रही हूँ", "tum-m": "उबाल रहे हो", "tum-f": "उबाल रही हो", "vah-m": "उबाल रहा है", "vah-f": "उबाल रही है", "ham-m": "उबाल रहे हैं", "ham-f": "उबाल रही हैं" }
+      readings: { "main-m": "ubāl rahā hūm̐", "main-f": "ubāl rahī hūm̐", "tum-m": "ubāl rahē hō", "tum-f": "ubāl rahī hō", "vah-m": "ubāl rahā hai", "vah-f": "ubāl rahī hai", "ham-m": "ubāl rahē haim̐", "ham-f": "ubāl rahī haim̐" }
+    - word: "hi-0941"
+      forms: { "main-m": "डाल रहा हूँ", "main-f": "डाल रही हूँ", "tum-m": "डाल रहे हो", "tum-f": "डाल रही हो", "vah-m": "डाल रहा है", "vah-f": "डाल रही है", "ham-m": "डाल रहे हैं", "ham-f": "डाल रही हैं" }
+      readings: { "main-m": "ḍāl rahā hūm̐", "main-f": "ḍāl rahī hūm̐", "tum-m": "ḍāl rahē hō", "tum-f": "ḍāl rahī hō", "vah-m": "ḍāl rahā hai", "vah-f": "ḍāl rahī hai", "ham-m": "ḍāl rahē haim̐", "ham-f": "ḍāl rahī haim̐" }
+    - word: "hi-0942"
+      forms: { "main-m": "छान रहा हूँ", "main-f": "छान रही हूँ", "tum-m": "छान रहे हो", "tum-f": "छान रही हो", "vah-m": "छान रहा है", "vah-f": "छान रही है", "ham-m": "छान रहे हैं", "ham-f": "छान रही हैं" }
+      readings: { "main-m": "chān rahā hūm̐", "main-f": "chān rahī hūm̐", "tum-m": "chān rahē hō", "tum-f": "chān rahī hō", "vah-m": "chān rahā hai", "vah-f": "chān rahī hai", "ham-m": "chān rahē haim̐", "ham-f": "chān rahī haim̐" }
+    - word: "hi-0943"
+      forms: { "main-m": "परोस रहा हूँ", "main-f": "परोस रही हूँ", "tum-m": "परोस रहे हो", "tum-f": "परोस रही हो", "vah-m": "परोस रहा है", "vah-f": "परोस रही है", "ham-m": "परोस रहे हैं", "ham-f": "परोस रही हैं" }
+      readings: { "main-m": "parōs rahā hūm̐", "main-f": "parōs rahī hūm̐", "tum-m": "parōs rahē hō", "tum-f": "parōs rahī hō", "vah-m": "parōs rahā hai", "vah-f": "parōs rahī hai", "ham-m": "parōs rahē haim̐", "ham-f": "parōs rahī haim̐" }
+    - word: "hi-0944"
+      forms: { "main-m": "जाग रहा हूँ", "main-f": "जाग रही हूँ", "tum-m": "जाग रहे हो", "tum-f": "जाग रही हो", "vah-m": "जाग रहा है", "vah-f": "जाग रही है", "ham-m": "जाग रहे हैं", "ham-f": "जाग रही हैं" }
+      readings: { "main-m": "jāg rahā hūm̐", "main-f": "jāg rahī hūm̐", "tum-m": "jāg rahē hō", "tum-f": "jāg rahī hō", "vah-m": "jāg rahā hai", "vah-f": "jāg rahī hai", "ham-m": "jāg rahē haim̐", "ham-f": "jāg rahī haim̐" }
+    - word: "hi-0945"
+      forms: { "main-m": "भूल रहा हूँ", "main-f": "भूल रही हूँ", "tum-m": "भूल रहे हो", "tum-f": "भूल रही हो", "vah-m": "भूल रहा है", "vah-f": "भूल रही है", "ham-m": "भूल रहे हैं", "ham-f": "भूल रही हैं" }
+      readings: { "main-m": "bhūl rahā hūm̐", "main-f": "bhūl rahī hūm̐", "tum-m": "bhūl rahē hō", "tum-f": "bhūl rahī hō", "vah-m": "bhūl rahā hai", "vah-f": "bhūl rahī hai", "ham-m": "bhūl rahē haim̐", "ham-f": "bhūl rahī haim̐" }
+    - word: "hi-0946"
+      forms: { "main-m": "दौड़ रहा हूँ", "main-f": "दौड़ रही हूँ", "tum-m": "दौड़ रहे हो", "tum-f": "दौड़ रही हो", "vah-m": "दौड़ रहा है", "vah-f": "दौड़ रही है", "ham-m": "दौड़ रहे हैं", "ham-f": "दौड़ रही हैं" }
+      readings: { "main-m": "dauṛ rahā hūm̐", "main-f": "dauṛ rahī hūm̐", "tum-m": "dauṛ rahē hō", "tum-f": "dauṛ rahī hō", "vah-m": "dauṛ rahā hai", "vah-f": "dauṛ rahī hai", "ham-m": "dauṛ rahē haim̐", "ham-f": "dauṛ rahī haim̐" }
+    - word: "hi-0947"
+      forms: { "main-m": "गिर रहा हूँ", "main-f": "गिर रही हूँ", "tum-m": "गिर रहे हो", "tum-f": "गिर रही हो", "vah-m": "गिर रहा है", "vah-f": "गिर रही है", "ham-m": "गिर रहे हैं", "ham-f": "गिर रही हैं" }
+      readings: { "main-m": "gir rahā hūm̐", "main-f": "gir rahī hūm̐", "tum-m": "gir rahē hō", "tum-f": "gir rahī hō", "vah-m": "gir rahā hai", "vah-f": "gir rahī hai", "ham-m": "gir rahē haim̐", "ham-f": "gir rahī haim̐" }
+    - word: "hi-0948"
+      forms: { "main-m": "लौट रहा हूँ", "main-f": "लौट रही हूँ", "tum-m": "लौट रहे हो", "tum-f": "लौट रही हो", "vah-m": "लौट रहा है", "vah-f": "लौट रही है", "ham-m": "लौट रहे हैं", "ham-f": "लौट रही हैं" }
+      readings: { "main-m": "lauṭ rahā hūm̐", "main-f": "lauṭ rahī hūm̐", "tum-m": "lauṭ rahē hō", "tum-f": "lauṭ rahī hō", "vah-m": "lauṭ rahā hai", "vah-f": "lauṭ rahī hai", "ham-m": "lauṭ rahē haim̐", "ham-f": "lauṭ rahī haim̐" }
+    - word: "hi-0949"
+      forms: { "main-m": "ला रहा हूँ", "main-f": "ला रही हूँ", "tum-m": "ला रहे हो", "tum-f": "ला रही हो", "vah-m": "ला रहा है", "vah-f": "ला रही है", "ham-m": "ला रहे हैं", "ham-f": "ला रही हैं" }
+      readings: { "main-m": "lā rahā hūm̐", "main-f": "lā rahī hūm̐", "tum-m": "lā rahē hō", "tum-f": "lā rahī hō", "vah-m": "lā rahā hai", "vah-f": "lā rahī hai", "ham-m": "lā rahē haim̐", "ham-f": "lā rahī haim̐" }
+    - word: "hi-0950"
+      forms: { "main-m": "रख रहा हूँ", "main-f": "रख रही हूँ", "tum-m": "रख रहे हो", "tum-f": "रख रही हो", "vah-m": "रख रहा है", "vah-f": "रख रही है", "ham-m": "रख रहे हैं", "ham-f": "रख रही हैं" }
+      readings: { "main-m": "rakh rahā hūm̐", "main-f": "rakh rahī hūm̐", "tum-m": "rakh rahē hō", "tum-f": "rakh rahī hō", "vah-m": "rakh rahā hai", "vah-f": "rakh rahī hai", "ham-m": "rakh rahē haim̐", "ham-f": "rakh rahī haim̐" }
+    - word: "hi-0951"
+      forms: { "main-m": "छोड़ रहा हूँ", "main-f": "छोड़ रही हूँ", "tum-m": "छोड़ रहे हो", "tum-f": "छोड़ रही हो", "vah-m": "छोड़ रहा है", "vah-f": "छोड़ रही है", "ham-m": "छोड़ रहे हैं", "ham-f": "छोड़ रही हैं" }
+      readings: { "main-m": "chōṛ rahā hūm̐", "main-f": "chōṛ rahī hūm̐", "tum-m": "chōṛ rahē hō", "tum-f": "chōṛ rahī hō", "vah-m": "chōṛ rahā hai", "vah-f": "chōṛ rahī hai", "ham-m": "chōṛ rahē haim̐", "ham-f": "chōṛ rahī haim̐" }
+    - word: "hi-0952"
+      forms: { "main-m": "सीख रहा हूँ", "main-f": "सीख रही हूँ", "tum-m": "सीख रहे हो", "tum-f": "सीख रही हो", "vah-m": "सीख रहा है", "vah-f": "सीख रही है", "ham-m": "सीख रहे हैं", "ham-f": "सीख रही हैं" }
+      readings: { "main-m": "sīkh rahā hūm̐", "main-f": "sīkh rahī hūm̐", "tum-m": "sīkh rahē hō", "tum-f": "sīkh rahī hō", "vah-m": "sīkh rahā hai", "vah-f": "sīkh rahī hai", "ham-m": "sīkh rahē haim̐", "ham-f": "sīkh rahī haim̐" }
+    - word: "hi-0953"
+      forms: { "main-m": "सोच रहा हूँ", "main-f": "सोच रही हूँ", "tum-m": "सोच रहे हो", "tum-f": "सोच रही हो", "vah-m": "सोच रहा है", "vah-f": "सोच रही है", "ham-m": "सोच रहे हैं", "ham-f": "सोच रही हैं" }
+      readings: { "main-m": "sōc rahā hūm̐", "main-f": "sōc rahī hūm̐", "tum-m": "sōc rahē hō", "tum-f": "sōc rahī hō", "vah-m": "sōc rahā hai", "vah-f": "sōc rahī hai", "ham-m": "sōc rahē haim̐", "ham-f": "sōc rahī haim̐" }
+    - word: "hi-0954"
+      forms: { "main-m": "सिखा रहा हूँ", "main-f": "सिखा रही हूँ", "tum-m": "सिखा रहे हो", "tum-f": "सिखा रही हो", "vah-m": "सिखा रहा है", "vah-f": "सिखा रही है", "ham-m": "सिखा रहे हैं", "ham-f": "सिखा रही हैं" }
+      readings: { "main-m": "sikhā rahā hūm̐", "main-f": "sikhā rahī hūm̐", "tum-m": "sikhā rahē hō", "tum-f": "sikhā rahī hō", "vah-m": "sikhā rahā hai", "vah-f": "sikhā rahī hai", "ham-m": "sikhā rahē haim̐", "ham-f": "sikhā rahī haim̐" }
+    - word: "hi-0955"
+      forms: { "main-m": "ढूँढ रहा हूँ", "main-f": "ढूँढ रही हूँ", "tum-m": "ढूँढ रहे हो", "tum-f": "ढूँढ रही हो", "vah-m": "ढूँढ रहा है", "vah-f": "ढूँढ रही है", "ham-m": "ढूँढ रहे हैं", "ham-f": "ढूँढ रही हैं" }
+      readings: { "main-m": "ḍhūm̐ḍh rahā hūm̐", "main-f": "ḍhūm̐ḍh rahī hūm̐", "tum-m": "ḍhūm̐ḍh rahē hō", "tum-f": "ḍhūm̐ḍh rahī hō", "vah-m": "ḍhūm̐ḍh rahā hai", "vah-f": "ḍhūm̐ḍh rahī hai", "ham-m": "ḍhūm̐ḍh rahē haim̐", "ham-f": "ḍhūm̐ḍh rahī haim̐" }
+    - word: "hi-0956"
+      forms: { "main-m": "जीत रहा हूँ", "main-f": "जीत रही हूँ", "tum-m": "जीत रहे हो", "tum-f": "जीत रही हो", "vah-m": "जीत रहा है", "vah-f": "जीत रही है", "ham-m": "जीत रहे हैं", "ham-f": "जीत रही हैं" }
+      readings: { "main-m": "jīt rahā hūm̐", "main-f": "jīt rahī hūm̐", "tum-m": "jīt rahē hō", "tum-f": "jīt rahī hō", "vah-m": "jīt rahā hai", "vah-f": "jīt rahī hai", "ham-m": "jīt rahē haim̐", "ham-f": "jīt rahī haim̐" }
+    - word: "hi-0957"
+      forms: { "main-m": "हार रहा हूँ", "main-f": "हार रही हूँ", "tum-m": "हार रहे हो", "tum-f": "हार रही हो", "vah-m": "हार रहा है", "vah-f": "हार रही है", "ham-m": "हार रहे हैं", "ham-f": "हार रही हैं" }
+      readings: { "main-m": "hār rahā hūm̐", "main-f": "hār rahī hūm̐", "tum-m": "hār rahē hō", "tum-f": "hār rahī hō", "vah-m": "hār rahā hai", "vah-f": "hār rahī hai", "ham-m": "hār rahē haim̐", "ham-f": "hār rahī haim̐" }
+    - word: "hi-0958"
+      forms: { "main-m": "कमा रहा हूँ", "main-f": "कमा रही हूँ", "tum-m": "कमा रहे हो", "tum-f": "कमा रही हो", "vah-m": "कमा रहा है", "vah-f": "कमा रही है", "ham-m": "कमा रहे हैं", "ham-f": "कमा रही हैं" }
+      readings: { "main-m": "kamā rahā hūm̐", "main-f": "kamā rahī hūm̐", "tum-m": "kamā rahē hō", "tum-f": "kamā rahī hō", "vah-m": "kamā rahā hai", "vah-f": "kamā rahī hai", "ham-m": "kamā rahē haim̐", "ham-f": "kamā rahī haim̐" }
+    - word: "hi-0959"
+      forms: { "main-m": "हँस रहा हूँ", "main-f": "हँस रही हूँ", "tum-m": "हँस रहे हो", "tum-f": "हँस रही हो", "vah-m": "हँस रहा है", "vah-f": "हँस रही है", "ham-m": "हँस रहे हैं", "ham-f": "हँस रही हैं" }
+      readings: { "main-m": "ham̐s rahā hūm̐", "main-f": "ham̐s rahī hūm̐", "tum-m": "ham̐s rahē hō", "tum-f": "ham̐s rahī hō", "vah-m": "ham̐s rahā hai", "vah-f": "ham̐s rahī hai", "ham-m": "ham̐s rahē haim̐", "ham-f": "ham̐s rahī haim̐" }
+    - word: "hi-0960"
+      forms: { "main-m": "रो रहा हूँ", "main-f": "रो रही हूँ", "tum-m": "रो रहे हो", "tum-f": "रो रही हो", "vah-m": "रो रहा है", "vah-f": "रो रही है", "ham-m": "रो रहे हैं", "ham-f": "रो रही हैं" }
+      readings: { "main-m": "rō rahā hūm̐", "main-f": "rō rahī hūm̐", "tum-m": "rō rahē hō", "tum-f": "rō rahī hō", "vah-m": "rō rahā hai", "vah-f": "rō rahī hai", "ham-m": "rō rahē haim̐", "ham-f": "rō rahī haim̐" }
+    - word: "hi-0961"
+      forms: { "main-m": "बुला रहा हूँ", "main-f": "बुला रही हूँ", "tum-m": "बुला रहे हो", "tum-f": "बुला रही हो", "vah-m": "बुला रहा है", "vah-f": "बुला रही है", "ham-m": "बुला रहे हैं", "ham-f": "बुला रही हैं" }
+      readings: { "main-m": "bulā rahā hūm̐", "main-f": "bulā rahī hūm̐", "tum-m": "bulā rahē hō", "tum-f": "bulā rahī hō", "vah-m": "bulā rahā hai", "vah-f": "bulā rahī hai", "ham-m": "bulā rahē haim̐", "ham-f": "bulā rahī haim̐" }
+    - word: "hi-1287"
+      forms: { "main-m": "गरज रहा हूँ", "main-f": "गरज रही हूँ", "tum-m": "गरज रहे हो", "tum-f": "गरज रही हो", "vah-m": "गरज रहा है", "vah-f": "गरज रही है", "ham-m": "गरज रहे हैं", "ham-f": "गरज रही हैं" }
+      readings: { "main-m": "garj rahā hūm̐", "main-f": "garj rahī hūm̐", "tum-m": "garj rahē hō", "tum-f": "garj rahī hō", "vah-m": "garj rahā hai", "vah-f": "garj rahī hai", "ham-m": "garj rahē haim̐", "ham-f": "garj rahī haim̐" }
+    - word: "hi-1292"
+      forms: { "main-m": "बरस रहा हूँ", "main-f": "बरस रही हूँ", "tum-m": "बरस रहे हो", "tum-f": "बरस रही हो", "vah-m": "बरस रहा है", "vah-f": "बरस रही है", "ham-m": "बरस रहे हैं", "ham-f": "बरस रही हैं" }
+      readings: { "main-m": "bars rahā hūm̐", "main-f": "bars rahī hūm̐", "tum-m": "bars rahē hō", "tum-f": "bars rahī hō", "vah-m": "bars rahā hai", "vah-f": "bars rahī hai", "ham-m": "bars rahē haim̐", "ham-f": "bars rahī haim̐" }
+    - word: "hi-1293"
+      forms: { "main-m": "कड़क रहा हूँ", "main-f": "कड़क रही हूँ", "tum-m": "कड़क रहे हो", "tum-f": "कड़क रही हो", "vah-m": "कड़क रहा है", "vah-f": "कड़क रही है", "ham-m": "कड़क रहे हैं", "ham-f": "कड़क रही हैं" }
+      readings: { "main-m": "kaṛk rahā hūm̐", "main-f": "kaṛk rahī hūm̐", "tum-m": "kaṛk rahē hō", "tum-f": "kaṛk rahī hō", "vah-m": "kaṛk rahā hai", "vah-f": "kaṛk rahī hai", "ham-m": "kaṛk rahē haim̐", "ham-f": "kaṛk rahī haim̐" }
+    - word: "hi-1294"
+      forms: { "main-m": "चमक रहा हूँ", "main-f": "चमक रही हूँ", "tum-m": "चमक रहे हो", "tum-f": "चमक रही हो", "vah-m": "चमक रहा है", "vah-f": "चमक रही है", "ham-m": "चमक रहे हैं", "ham-f": "चमक रही हैं" }
+      readings: { "main-m": "camk rahā hūm̐", "main-f": "camk rahī hūm̐", "tum-m": "camk rahē hō", "tum-f": "camk rahī hō", "vah-m": "camk rahā hai", "vah-f": "camk rahī hai", "ham-m": "camk rahē haim̐", "ham-f": "camk rahī haim̐" }
+    - word: "hi-1334"
+      forms: { "main-m": "मना रहा हूँ", "main-f": "मना रही हूँ", "tum-m": "मना रहे हो", "tum-f": "मना रही हो", "vah-m": "मना रहा है", "vah-f": "मना रही है", "ham-m": "मना रहे हैं", "ham-f": "मना रही हैं" }
+      readings: { "main-m": "manā rahā hūm̐", "main-f": "manā rahī hūm̐", "tum-m": "manā rahē hō", "tum-f": "manā rahī hō", "vah-m": "manā rahā hai", "vah-f": "manā rahī hai", "ham-m": "manā rahē haim̐", "ham-f": "manā rahī haim̐" }
+    - word: "hi-1335"
+      forms: { "main-m": "जला रहा हूँ", "main-f": "जला रही हूँ", "tum-m": "जला रहे हो", "tum-f": "जला रही हो", "vah-m": "जला रहा है", "vah-f": "जला रही है", "ham-m": "जला रहे हैं", "ham-f": "जला रही हैं" }
+      readings: { "main-m": "jalā rahā hūm̐", "main-f": "jalā rahī hūm̐", "tum-m": "jalā rahē hō", "tum-f": "jalā rahī hō", "vah-m": "jalā rahā hai", "vah-f": "jalā rahī hai", "ham-m": "jalā rahē haim̐", "ham-f": "jalā rahī haim̐" }
+    - word: "hi-1336"
+      forms: { "main-m": "बाँट रहा हूँ", "main-f": "बाँट रही हूँ", "tum-m": "बाँट रहे हो", "tum-f": "बाँट रही हो", "vah-m": "बाँट रहा है", "vah-f": "बाँट रही है", "ham-m": "बाँट रहे हैं", "ham-f": "बाँट रही हैं" }
+      readings: { "main-m": "bām̐ṭa rahā hūm̐", "main-f": "bām̐ṭa rahī hūm̐", "tum-m": "bām̐ṭa rahē hō", "tum-f": "bām̐ṭa rahī hō", "vah-m": "bām̐ṭa rahā hai", "vah-f": "bām̐ṭa rahī hai", "ham-m": "bām̐ṭa rahē haim̐", "ham-f": "bām̐ṭa rahī haim̐" }
+    - word: "hi-1337"
+      forms: { "main-m": "सजा रहा हूँ", "main-f": "सजा रही हूँ", "tum-m": "सजा रहे हो", "tum-f": "सजा रही हो", "vah-m": "सजा रहा है", "vah-f": "सजा रही है", "ham-m": "सजा रहे हैं", "ham-f": "सजा रही हैं" }
+      readings: { "main-m": "sajā rahā hūm̐", "main-f": "sajā rahī hūm̐", "tum-m": "sajā rahē hō", "tum-f": "sajā rahī hō", "vah-m": "sajā rahā hai", "vah-f": "sajā rahī hai", "ham-m": "sajā rahē haim̐", "ham-f": "sajā rahī haim̐" }
+    - word: "hi-1364"
+      forms: { "main-m": "बदल रहा हूँ", "main-f": "बदल रही हूँ", "tum-m": "बदल रहे हो", "tum-f": "बदल रही हो", "vah-m": "बदल रहा है", "vah-f": "बदल रही है", "ham-m": "बदल रहे हैं", "ham-f": "बदल रही हैं" }
+      readings: { "main-m": "badl rahā hūm̐", "main-f": "badl rahī hūm̐", "tum-m": "badl rahē hō", "tum-f": "badl rahī hō", "vah-m": "badl rahā hai", "vah-f": "badl rahī hai", "ham-m": "badl rahē haim̐", "ham-f": "badl rahī haim̐" }
+    - word: "hi-1385"
+      forms: { "main-m": "तौल रहा हूँ", "main-f": "तौल रही हूँ", "tum-m": "तौल रहे हो", "tum-f": "तौल रही हो", "vah-m": "तौल रहा है", "vah-f": "तौल रही है", "ham-m": "तौल रहे हैं", "ham-f": "तौल रही हैं" }
+      readings: { "main-m": "taul rahā hūm̐", "main-f": "taul rahī hūm̐", "tum-m": "taul rahē hō", "tum-f": "taul rahī hō", "vah-m": "taul rahā hai", "vah-f": "taul rahī hai", "ham-m": "taul rahē haim̐", "ham-f": "taul rahī haim̐" }
+    - word: "hi-1460"
+      forms: { "main-m": "खाँस रहा हूँ", "main-f": "खाँस रही हूँ", "tum-m": "खाँस रहे हो", "tum-f": "खाँस रही हो", "vah-m": "खाँस रहा है", "vah-f": "खाँस रही है", "ham-m": "खाँस रहे हैं", "ham-f": "खाँस रही हैं" }
+      readings: { "main-m": "khām̐sa rahā hūm̐", "main-f": "khām̐sa rahī hūm̐", "tum-m": "khām̐sa rahē hō", "tum-f": "khām̐sa rahī hō", "vah-m": "khām̐sa rahā hai", "vah-f": "khām̐sa rahī hai", "ham-m": "khām̐sa rahē haim̐", "ham-f": "khām̐sa rahī haim̐" }
+    - word: "hi-1461"
+      forms: { "main-m": "छींक रहा हूँ", "main-f": "छींक रही हूँ", "tum-m": "छींक रहे हो", "tum-f": "छींक रही हो", "vah-m": "छींक रहा है", "vah-f": "छींक रही है", "ham-m": "छींक रहे हैं", "ham-f": "छींक रही हैं" }
+      readings: { "main-m": "chīṅka rahā hūm̐", "main-f": "chīṅka rahī hūm̐", "tum-m": "chīṅka rahē hō", "tum-f": "chīṅka rahī hō", "vah-m": "chīṅka rahā hai", "vah-f": "chīṅka rahī hai", "ham-m": "chīṅka rahē haim̐", "ham-f": "chīṅka rahī haim̐" }
+    - word: "hi-1462"
+      forms: { "main-m": "लेट रहा हूँ", "main-f": "लेट रही हूँ", "tum-m": "लेट रहे हो", "tum-f": "लेट रही हो", "vah-m": "लेट रहा है", "vah-f": "लेट रही है", "ham-m": "लेट रहे हैं", "ham-f": "लेट रही हैं" }
+      readings: { "main-m": "lēṭ rahā hūm̐", "main-f": "lēṭ rahī hūm̐", "tum-m": "lēṭ rahē hō", "tum-f": "lēṭ rahī hō", "vah-m": "lēṭ rahā hai", "vah-f": "lēṭ rahī hai", "ham-m": "lēṭ rahē haim̐", "ham-f": "lēṭ rahī haim̐" }
+    - word: "hi-1463"
+      forms: { "main-m": "दुख रहा हूँ", "main-f": "दुख रही हूँ", "tum-m": "दुख रहे हो", "tum-f": "दुख रही हो", "vah-m": "दुख रहा है", "vah-f": "दुख रही है", "ham-m": "दुख रहे हैं", "ham-f": "दुख रही हैं" }
+      readings: { "main-m": "dukh rahā hūm̐", "main-f": "dukh rahī hūm̐", "tum-m": "dukh rahē hō", "tum-f": "dukh rahī hō", "vah-m": "dukh rahā hai", "vah-f": "dukh rahī hai", "ham-m": "dukh rahē haim̐", "ham-f": "dukh rahī haim̐" }
+    - word: "hi-1496"
+      forms: { "main-m": "तल रहा हूँ", "main-f": "तल रही हूँ", "tum-m": "तल रहे हो", "tum-f": "तल रही हो", "vah-m": "तल रहा है", "vah-f": "तल रही है", "ham-m": "तल रहे हैं", "ham-f": "तल रही हैं" }
+      readings: { "main-m": "tal rahā hūm̐", "main-f": "tal rahī hūm̐", "tum-m": "tal rahē hō", "tum-f": "tal rahī hō", "vah-m": "tal rahā hai", "vah-f": "tal rahī hai", "ham-m": "tal rahē haim̐", "ham-f": "tal rahī haim̐" }
+    - word: "hi-1497"
+      forms: { "main-m": "भून रहा हूँ", "main-f": "भून रही हूँ", "tum-m": "भून रहे हो", "tum-f": "भून रही हो", "vah-m": "भून रहा है", "vah-f": "भून रही है", "ham-m": "भून रहे हैं", "ham-f": "भून रही हैं" }
+      readings: { "main-m": "bhūn rahā hūm̐", "main-f": "bhūn rahī hūm̐", "tum-m": "bhūn rahē hō", "tum-f": "bhūn rahī hō", "vah-m": "bhūn rahā hai", "vah-f": "bhūn rahī hai", "ham-m": "bhūn rahē haim̐", "ham-f": "bhūn rahī haim̐" }
+    - word: "hi-1498"
+      forms: { "main-m": "छील रहा हूँ", "main-f": "छील रही हूँ", "tum-m": "छील रहे हो", "tum-f": "छील रही हो", "vah-m": "छील रहा है", "vah-f": "छील रही है", "ham-m": "छील रहे हैं", "ham-f": "छील रही हैं" }
+      readings: { "main-m": "chīl rahā hūm̐", "main-f": "chīl rahī hūm̐", "tum-m": "chīl rahē hō", "tum-f": "chīl rahī hō", "vah-m": "chīl rahā hai", "vah-f": "chīl rahī hai", "ham-m": "chīl rahē haim̐", "ham-f": "chīl rahī haim̐" }
+    - word: "hi-1499"
+      forms: { "main-m": "पीस रहा हूँ", "main-f": "पीस रही हूँ", "tum-m": "पीस रहे हो", "tum-f": "पीस रही हो", "vah-m": "पीस रहा है", "vah-f": "पीस रही है", "ham-m": "पीस रहे हैं", "ham-f": "पीस रही हैं" }
+      readings: { "main-m": "pīs rahā hūm̐", "main-f": "pīs rahī hūm̐", "tum-m": "pīs rahē hō", "tum-f": "pīs rahī hō", "vah-m": "pīs rahā hai", "vah-f": "pīs rahī hai", "ham-m": "pīs rahē haim̐", "ham-f": "pīs rahī haim̐" }
+    - word: "hi-1500"
+      forms: { "main-m": "गूँध रहा हूँ", "main-f": "गूँध रही हूँ", "tum-m": "गूँध रहे हो", "tum-f": "गूँध रही हो", "vah-m": "गूँध रहा है", "vah-f": "गूँध रही है", "ham-m": "गूँध रहे हैं", "ham-f": "गूँध रही हैं" }
+      readings: { "main-m": "gūm̐dha rahā hūm̐", "main-f": "gūm̐dha rahī hūm̐", "tum-m": "gūm̐dha rahē hō", "tum-f": "gūm̐dha rahī hō", "vah-m": "gūm̐dha rahā hai", "vah-f": "gūm̐dha rahī hai", "ham-m": "gūm̐dha rahē haim̐", "ham-f": "gūm̐dha rahī haim̐" }
+    - word: "hi-1501"
+      forms: { "main-m": "बेल रहा हूँ", "main-f": "बेल रही हूँ", "tum-m": "बेल रहे हो", "tum-f": "बेल रही हो", "vah-m": "बेल रहा है", "vah-f": "बेल रही है", "ham-m": "बेल रहे हैं", "ham-f": "बेल रही हैं" }
+      readings: { "main-m": "bēl rahā hūm̐", "main-f": "bēl rahī hūm̐", "tum-m": "bēl rahē hō", "tum-f": "bēl rahī hō", "vah-m": "bēl rahā hai", "vah-f": "bēl rahī hai", "ham-m": "bēl rahē haim̐", "ham-f": "bēl rahī haim̐" }
+    - word: "hi-1502"
+      forms: { "main-m": "बना रहा हूँ", "main-f": "बना रही हूँ", "tum-m": "बना रहे हो", "tum-f": "बना रही हो", "vah-m": "बना रहा है", "vah-f": "बना रही है", "ham-m": "बना रहे हैं", "ham-f": "बना रही हैं" }
+      readings: { "main-m": "banā rahā hūm̐", "main-f": "banā rahī hūm̐", "tum-m": "banā rahē hō", "tum-f": "banā rahī hō", "vah-m": "banā rahā hai", "vah-f": "banā rahī hai", "ham-m": "banā rahē haim̐", "ham-f": "banā rahī haim̐" }
+    - word: "hi-1503"
+      forms: { "main-m": "सेंक रहा हूँ", "main-f": "सेंक रही हूँ", "tum-m": "सेंक रहे हो", "tum-f": "सेंक रही हो", "vah-m": "सेंक रहा है", "vah-f": "सेंक रही है", "ham-m": "सेंक रहे हैं", "ham-f": "सेंक रही हैं" }
+      readings: { "main-m": "sēṅka rahā hūm̐", "main-f": "sēṅka rahī hūm̐", "tum-m": "sēṅka rahē hō", "tum-f": "sēṅka rahī hō", "vah-m": "sēṅka rahā hai", "vah-f": "sēṅka rahī hai", "ham-m": "sēṅka rahē haim̐", "ham-f": "sēṅka rahī haim̐" }
+    - word: "hi-1504"
+      forms: { "main-m": "मिला रहा हूँ", "main-f": "मिला रही हूँ", "tum-m": "मिला रहे हो", "tum-f": "मिला रही हो", "vah-m": "मिला रहा है", "vah-f": "मिला रही है", "ham-m": "मिला रहे हैं", "ham-f": "मिला रही हैं" }
+      readings: { "main-m": "milā rahā hūm̐", "main-f": "milā rahī hūm̐", "tum-m": "milā rahē hō", "tum-f": "milā rahī hō", "vah-m": "milā rahā hai", "vah-f": "milā rahī hai", "ham-m": "milā rahē haim̐", "ham-f": "milā rahī haim̐" }
+    - word: "hi-1601"
+      forms: { "main-m": "पढ़ा रहा हूँ", "main-f": "पढ़ा रही हूँ", "tum-m": "पढ़ा रहे हो", "tum-f": "पढ़ा रही हो", "vah-m": "पढ़ा रहा है", "vah-f": "पढ़ा रही है", "ham-m": "पढ़ा रहे हैं", "ham-f": "पढ़ा रही हैं" }
+      readings: { "main-m": "paṛhā rahā hūm̐", "main-f": "paṛhā rahī hūm̐", "tum-m": "paṛhā rahē hō", "tum-f": "paṛhā rahī hō", "vah-m": "paṛhā rahā hai", "vah-f": "paṛhā rahī hai", "ham-m": "paṛhā rahē haim̐", "ham-f": "paṛhā rahī haim̐" }
+    - word: "hi-1639"
+      forms: { "main-m": "गा रहा हूँ", "main-f": "गा रही हूँ", "tum-m": "गा रहे हो", "tum-f": "गा रही हो", "vah-m": "गा रहा है", "vah-f": "गा रही है", "ham-m": "गा रहे हैं", "ham-f": "गा रही हैं" }
+      readings: { "main-m": "gā rahā hūm̐", "main-f": "gā rahī hūm̐", "tum-m": "gā rahē hō", "tum-f": "gā rahī hō", "vah-m": "gā rahā hai", "vah-f": "gā rahī hai", "ham-m": "gā rahē haim̐", "ham-f": "gā rahī haim̐" }
+    - word: "hi-1642"
+      forms: { "main-m": "नाच रहा हूँ", "main-f": "नाच रही हूँ", "tum-m": "नाच रहे हो", "tum-f": "नाच रही हो", "vah-m": "नाच रहा है", "vah-f": "नाच रही है", "ham-m": "नाच रहे हैं", "ham-f": "नाच रही हैं" }
+      readings: { "main-m": "nāc rahā hūm̐", "main-f": "nāc rahī hūm̐", "tum-m": "nāc rahē hō", "tum-f": "nāc rahī hō", "vah-m": "nāc rahā hai", "vah-f": "nāc rahī hai", "ham-m": "nāc rahē haim̐", "ham-f": "nāc rahī haim̐" }
+    - word: "hi-1644"
+      forms: { "main-m": "तैर रहा हूँ", "main-f": "तैर रही हूँ", "tum-m": "तैर रहे हो", "tum-f": "तैर रही हो", "vah-m": "तैर रहा है", "vah-f": "तैर रही है", "ham-m": "तैर रहे हैं", "ham-f": "तैर रही हैं" }
+      readings: { "main-m": "tair rahā hūm̐", "main-f": "tair rahī hūm̐", "tum-m": "tair rahē hō", "tum-f": "tair rahī hō", "vah-m": "tair rahā hai", "vah-f": "tair rahī hai", "ham-m": "tair rahē haim̐", "ham-f": "tair rahī haim̐" }
+    - word: "hi-1661"
+      forms: { "main-m": "घूम रहा हूँ", "main-f": "घूम रही हूँ", "tum-m": "घूम रहे हो", "tum-f": "घूम रही हो", "vah-m": "घूम रहा है", "vah-f": "घूम रही है", "ham-m": "घूम रहे हैं", "ham-f": "घूम रही हैं" }
+      readings: { "main-m": "ghūm rahā hūm̐", "main-f": "ghūm rahī hūm̐", "tum-m": "ghūm rahē hō", "tum-f": "ghūm rahī hō", "vah-m": "ghūm rahā hai", "vah-f": "ghūm rahī hai", "ham-m": "ghūm rahē haim̐", "ham-f": "ghūm rahī haim̐" }
+    - word: "hi-1662"
+      forms: { "main-m": "टहल रहा हूँ", "main-f": "टहल रही हूँ", "tum-m": "टहल रहे हो", "tum-f": "टहल रही हो", "vah-m": "टहल रहा है", "vah-f": "टहल रही है", "ham-m": "टहल रहे हैं", "ham-f": "टहल रही हैं" }
+      readings: { "main-m": "ṭahl rahā hūm̐", "main-f": "ṭahl rahī hūm̐", "tum-m": "ṭahl rahē hō", "tum-f": "ṭahl rahī hō", "vah-m": "ṭahl rahā hai", "vah-f": "ṭahl rahī hai", "ham-m": "ṭahl rahē haim̐", "ham-f": "ṭahl rahī haim̐" }
+    - word: "hi-1725"
+      forms: { "main-m": "झाड़ रहा हूँ", "main-f": "झाड़ रही हूँ", "tum-m": "झाड़ रहे हो", "tum-f": "झाड़ रही हो", "vah-m": "झाड़ रहा है", "vah-f": "झाड़ रही है", "ham-m": "झाड़ रहे हैं", "ham-f": "झाड़ रही हैं" }
+      readings: { "main-m": "jhāṛ rahā hūm̐", "main-f": "jhāṛ rahī hūm̐", "tum-m": "jhāṛ rahē hō", "tum-f": "jhāṛ rahī hō", "vah-m": "jhāṛ rahā hai", "vah-f": "jhāṛ rahī hai", "ham-m": "jhāṛ rahē haim̐", "ham-f": "jhāṛ rahī haim̐" }
+    - word: "hi-1726"
+      forms: { "main-m": "पोंछ रहा हूँ", "main-f": "पोंछ रही हूँ", "tum-m": "पोंछ रहे हो", "tum-f": "पोंछ रही हो", "vah-m": "पोंछ रहा है", "vah-f": "पोंछ रही है", "ham-m": "पोंछ रहे हैं", "ham-f": "पोंछ रही हैं" }
+      readings: { "main-m": "pōñcha rahā hūm̐", "main-f": "pōñcha rahī hūm̐", "tum-m": "pōñcha rahē hō", "tum-f": "pōñcha rahī hō", "vah-m": "pōñcha rahā hai", "vah-f": "pōñcha rahī hai", "ham-m": "pōñcha rahē haim̐", "ham-f": "pōñcha rahī haim̐" }
+    - word: "hi-1727"
+      forms: { "main-m": "सुखा रहा हूँ", "main-f": "सुखा रही हूँ", "tum-m": "सुखा रहे हो", "tum-f": "सुखा रही हो", "vah-m": "सुखा रहा है", "vah-f": "सुखा रही है", "ham-m": "सुखा रहे हैं", "ham-f": "सुखा रही हैं" }
+      readings: { "main-m": "sukhā rahā hūm̐", "main-f": "sukhā rahī hūm̐", "tum-m": "sukhā rahē hō", "tum-f": "sukhā rahī hō", "vah-m": "sukhā rahā hai", "vah-f": "sukhā rahī hai", "ham-m": "sukhā rahē haim̐", "ham-f": "sukhā rahī haim̐" }
+    - word: "hi-1728"
+      forms: { "main-m": "सूख रहा हूँ", "main-f": "सूख रही हूँ", "tum-m": "सूख रहे हो", "tum-f": "सूख रही हो", "vah-m": "सूख रहा है", "vah-f": "सूख रही है", "ham-m": "सूख रहे हैं", "ham-f": "सूख रही हैं" }
+      readings: { "main-m": "sūkh rahā hūm̐", "main-f": "sūkh rahī hūm̐", "tum-m": "sūkh rahē hō", "tum-f": "sūkh rahī hō", "vah-m": "sūkh rahā hai", "vah-f": "sūkh rahī hai", "ham-m": "sūkh rahē haim̐", "ham-f": "sūkh rahī haim̐" }
+    - word: "hi-1729"
+      forms: { "main-m": "निकाल रहा हूँ", "main-f": "निकाल रही हूँ", "tum-m": "निकाल रहे हो", "tum-f": "निकाल रही हो", "vah-m": "निकाल रहा है", "vah-f": "निकाल रही है", "ham-m": "निकाल रहे हैं", "ham-f": "निकाल रही हैं" }
+      readings: { "main-m": "nikāl rahā hūm̐", "main-f": "nikāl rahī hūm̐", "tum-m": "nikāl rahē hō", "tum-f": "nikāl rahī hō", "vah-m": "nikāl rahā hai", "vah-f": "nikāl rahī hai", "ham-m": "nikāl rahē haim̐", "ham-f": "nikāl rahī haim̐" }
+    - word: "hi-1730"
+      forms: { "main-m": "फेंक रहा हूँ", "main-f": "फेंक रही हूँ", "tum-m": "फेंक रहे हो", "tum-f": "फेंक रही हो", "vah-m": "फेंक रहा है", "vah-f": "फेंक रही है", "ham-m": "फेंक रहे हैं", "ham-f": "फेंक रही हैं" }
+      readings: { "main-m": "phēṅka rahā hūm̐", "main-f": "phēṅka rahī hūm̐", "tum-m": "phēṅka rahē hō", "tum-f": "phēṅka rahī hō", "vah-m": "phēṅka rahā hai", "vah-f": "phēṅka rahī hai", "ham-m": "phēṅka rahē haim̐", "ham-f": "phēṅka rahī haim̐" }
+    - word: "hi-1731"
+      forms: { "main-m": "उठा रहा हूँ", "main-f": "उठा रही हूँ", "tum-m": "उठा रहे हो", "tum-f": "उठा रही हो", "vah-m": "उठा रहा है", "vah-f": "उठा रही है", "ham-m": "उठा रहे हैं", "ham-f": "उठा रही हैं" }
+      readings: { "main-m": "uṭhā rahā hūm̐", "main-f": "uṭhā rahī hūm̐", "tum-m": "uṭhā rahē hō", "tum-f": "uṭhā rahī hō", "vah-m": "uṭhā rahā hai", "vah-f": "uṭhā rahī hai", "ham-m": "uṭhā rahē haim̐", "ham-f": "uṭhā rahī haim̐" }
+    - word: "hi-1732"
+      forms: { "main-m": "भर रहा हूँ", "main-f": "भर रही हूँ", "tum-m": "भर रहे हो", "tum-f": "भर रही हो", "vah-m": "भर रहा है", "vah-f": "भर रही है", "ham-m": "भर रहे हैं", "ham-f": "भर रही हैं" }
+      readings: { "main-m": "bhar rahā hūm̐", "main-f": "bhar rahī hūm̐", "tum-m": "bhar rahē hō", "tum-f": "bhar rahī hō", "vah-m": "bhar rahā hai", "vah-f": "bhar rahī hai", "ham-m": "bhar rahē haim̐", "ham-f": "bhar rahī haim̐" }
+    - word: "hi-1733"
+      forms: { "main-m": "फैला रहा हूँ", "main-f": "फैला रही हूँ", "tum-m": "फैला रहे हो", "tum-f": "फैला रही हो", "vah-m": "फैला रहा है", "vah-f": "फैला रही है", "ham-m": "फैला रहे हैं", "ham-f": "फैला रही हैं" }
+      readings: { "main-m": "phailā rahā hūm̐", "main-f": "phailā rahī hūm̐", "tum-m": "phailā rahē hō", "tum-f": "phailā rahī hō", "vah-m": "phailā rahā hai", "vah-f": "phailā rahī hai", "ham-m": "phailā rahē haim̐", "ham-f": "phailā rahī haim̐" }
+    - word: "hi-1734"
+      forms: { "main-m": "समेट रहा हूँ", "main-f": "समेट रही हूँ", "tum-m": "समेट रहे हो", "tum-f": "समेट रही हो", "vah-m": "समेट रहा है", "vah-f": "समेट रही है", "ham-m": "समेट रहे हैं", "ham-f": "समेट रही हैं" }
+      readings: { "main-m": "samēṭ rahā hūm̐", "main-f": "samēṭ rahī hūm̐", "tum-m": "samēṭ rahē hō", "tum-f": "samēṭ rahī hō", "vah-m": "samēṭ rahā hai", "vah-f": "samēṭ rahī hai", "ham-m": "samēṭ rahē haim̐", "ham-f": "samēṭ rahī haim̐" }
+    - word: "hi-1735"
+      forms: { "main-m": "भीग रहा हूँ", "main-f": "भीग रही हूँ", "tum-m": "भीग रहे हो", "tum-f": "भीग रही हो", "vah-m": "भीग रहा है", "vah-f": "भीग रही है", "ham-m": "भीग रहे हैं", "ham-f": "भीग रही हैं" }
+      readings: { "main-m": "bhīg rahā hūm̐", "main-f": "bhīg rahī hūm̐", "tum-m": "bhīg rahē hō", "tum-f": "bhīg rahī hō", "vah-m": "bhīg rahā hai", "vah-f": "bhīg rahī hai", "ham-m": "bhīg rahē haim̐", "ham-f": "bhīg rahī haim̐" }
+    - word: "hi-1736"
+      forms: { "main-m": "उतार रहा हूँ", "main-f": "उतार रही हूँ", "tum-m": "उतार रहे हो", "tum-f": "उतार रही हो", "vah-m": "उतार रहा है", "vah-f": "उतार रही है", "ham-m": "उतार रहे हैं", "ham-f": "उतार रही हैं" }
+      readings: { "main-m": "utār rahā hūm̐", "main-f": "utār rahī hūm̐", "tum-m": "utār rahē hō", "tum-f": "utār rahī hō", "vah-m": "utār rahā hai", "vah-f": "utār rahī hai", "ham-m": "utār rahē haim̐", "ham-f": "utār rahī haim̐" }
+    - word: "hi-1737"
+      forms: { "main-m": "चढ़ा रहा हूँ", "main-f": "चढ़ा रही हूँ", "tum-m": "चढ़ा रहे हो", "tum-f": "चढ़ा रही हो", "vah-m": "चढ़ा रहा है", "vah-f": "चढ़ा रही है", "ham-m": "चढ़ा रहे हैं", "ham-f": "चढ़ा रही हैं" }
+      readings: { "main-m": "caṛhā rahā hūm̐", "main-f": "caṛhā rahī hūm̐", "tum-m": "caṛhā rahē hō", "tum-f": "caṛhā rahī hō", "vah-m": "caṛhā rahā hai", "vah-f": "caṛhā rahī hai", "ham-m": "caṛhā rahē haim̐", "ham-f": "caṛhā rahī haim̐" }
+    - word: "hi-1740"
+      forms: { "main-m": "टूट रहा हूँ", "main-f": "टूट रही हूँ", "tum-m": "टूट रहे हो", "tum-f": "टूट रही हो", "vah-m": "टूट रहा है", "vah-f": "टूट रही है", "ham-m": "टूट रहे हैं", "ham-f": "टूट रही हैं" }
+      readings: { "main-m": "ṭūṭ rahā hūm̐", "main-f": "ṭūṭ rahī hūm̐", "tum-m": "ṭūṭ rahē hō", "tum-f": "ṭūṭ rahī hō", "vah-m": "ṭūṭ rahā hai", "vah-f": "ṭūṭ rahī hai", "ham-m": "ṭūṭ rahē haim̐", "ham-f": "ṭūṭ rahī haim̐" }
+    - word: "hi-1779"
+      forms: { "main-m": "दिख रहा हूँ", "main-f": "दिख रही हूँ", "tum-m": "दिख रहे हो", "tum-f": "दिख रही हो", "vah-m": "दिख रहा है", "vah-f": "दिख रही है", "ham-m": "दिख रहे हैं", "ham-f": "दिख रही हैं" }
+      readings: { "main-m": "dikh rahā hūm̐", "main-f": "dikh rahī hūm̐", "tum-m": "dikh rahē hō", "tum-f": "dikh rahī hō", "vah-m": "dikh rahā hai", "vah-f": "dikh rahī hai", "ham-m": "dikh rahē haim̐", "ham-f": "dikh rahī haim̐" }
+    - word: "hi-1780"
+      forms: { "main-m": "लग रहा हूँ", "main-f": "लग रही हूँ", "tum-m": "लग रहे हो", "tum-f": "लग रही हो", "vah-m": "लग रहा है", "vah-f": "लग रही है", "ham-m": "लग रहे हैं", "ham-f": "लग रही हैं" }
+      readings: { "main-m": "lag rahā hūm̐", "main-f": "lag rahī hūm̐", "tum-m": "lag rahē hō", "tum-f": "lag rahī hō", "vah-m": "lag rahā hai", "vah-f": "lag rahī hai", "ham-m": "lag rahē haim̐", "ham-f": "lag rahī haim̐" }
+    - word: "hi-1781"
+      forms: { "main-m": "सज रहा हूँ", "main-f": "सज रही हूँ", "tum-m": "सज रहे हो", "tum-f": "सज रही हो", "vah-m": "सज रहा है", "vah-f": "सज रही है", "ham-m": "सज रहे हैं", "ham-f": "सज रही हैं" }
+      readings: { "main-m": "saj rahā hūm̐", "main-f": "saj rahī hūm̐", "tum-m": "saj rahē hō", "tum-f": "saj rahī hō", "vah-m": "saj rahā hai", "vah-f": "saj rahī hai", "ham-m": "saj rahē haim̐", "ham-f": "saj rahī haim̐" }
+    - word: "hi-1782"
+      forms: { "main-m": "पहन रहा हूँ", "main-f": "पहन रही हूँ", "tum-m": "पहन रहे हो", "tum-f": "पहन रही हो", "vah-m": "पहन रहा है", "vah-f": "पहन रही है", "ham-m": "पहन रहे हैं", "ham-f": "पहन रही हैं" }
+      readings: { "main-m": "pahn rahā hūm̐", "main-f": "pahn rahī hūm̐", "tum-m": "pahn rahē hō", "tum-f": "pahn rahī hō", "vah-m": "pahn rahā hai", "vah-f": "pahn rahī hai", "ham-m": "pahn rahē haim̐", "ham-f": "pahn rahī haim̐" }
+    - word: "hi-1783"
+      forms: { "main-m": "मुस्कुरा रहा हूँ", "main-f": "मुस्कुरा रही हूँ", "tum-m": "मुस्कुरा रहे हो", "tum-f": "मुस्कुरा रही हो", "vah-m": "मुस्कुरा रहा है", "vah-f": "मुस्कुरा रही है", "ham-m": "मुस्कुरा रहे हैं", "ham-f": "मुस्कुरा रही हैं" }
+      readings: { "main-m": "muskurā rahā hūm̐", "main-f": "muskurā rahī hūm̐", "tum-m": "muskurā rahē hō", "tum-f": "muskurā rahī hō", "vah-m": "muskurā rahā hai", "vah-f": "muskurā rahī hai", "ham-m": "muskurā rahē haim̐", "ham-f": "muskurā rahī haim̐" }
+    - word: "hi-1785"
+      forms: { "main-m": "निखर रहा हूँ", "main-f": "निखर रही हूँ", "tum-m": "निखर रहे हो", "tum-f": "निखर रही हो", "vah-m": "निखर रहा है", "vah-f": "निखर रही है", "ham-m": "निखर रहे हैं", "ham-f": "निखर रही हैं" }
+      readings: { "main-m": "nikhr rahā hūm̐", "main-f": "nikhr rahī hūm̐", "tum-m": "nikhr rahē hō", "tum-f": "nikhr rahī hō", "vah-m": "nikhr rahā hai", "vah-f": "nikhr rahī hai", "ham-m": "nikhr rahē haim̐", "ham-f": "nikhr rahī haim̐" }
+    - word: "hi-1795"
+      forms: { "main-m": "ओढ़ रहा हूँ", "main-f": "ओढ़ रही हूँ", "tum-m": "ओढ़ रहे हो", "tum-f": "ओढ़ रही हो", "vah-m": "ओढ़ रहा है", "vah-f": "ओढ़ रही है", "ham-m": "ओढ़ रहे हैं", "ham-f": "ओढ़ रही हैं" }
+      readings: { "main-m": "ōṛh rahā hūm̐", "main-f": "ōṛh rahī hūm̐", "tum-m": "ōṛh rahē hō", "tum-f": "ōṛh rahī hō", "vah-m": "ōṛh rahā hai", "vah-f": "ōṛh rahī hai", "ham-m": "ōṛh rahē haim̐", "ham-f": "ōṛh rahī haim̐" }
+    - word: "hi-1796"
+      forms: { "main-m": "बिछा रहा हूँ", "main-f": "बिछा रही हूँ", "tum-m": "बिछा रहे हो", "tum-f": "बिछा रही हो", "vah-m": "बिछा रहा है", "vah-f": "बिछा रही है", "ham-m": "बिछा रहे हैं", "ham-f": "बिछा रही हैं" }
+      readings: { "main-m": "bichā rahā hūm̐", "main-f": "bichā rahī hūm̐", "tum-m": "bichā rahē hō", "tum-f": "bichā rahī hō", "vah-m": "bichā rahā hai", "vah-f": "bichā rahī hai", "ham-m": "bichā rahē haim̐", "ham-f": "bichā rahī haim̐" }
+    - word: "hi-1797"
+      forms: { "main-m": "छू रहा हूँ", "main-f": "छू रही हूँ", "tum-m": "छू रहे हो", "tum-f": "छू रही हो", "vah-m": "छू रहा है", "vah-f": "छू रही है", "ham-m": "छू रहे हैं", "ham-f": "छू रही हैं" }
+      readings: { "main-m": "chū rahā hūm̐", "main-f": "chū rahī hūm̐", "tum-m": "chū rahē hō", "tum-f": "chū rahī hō", "vah-m": "chū rahā hai", "vah-f": "chū rahī hai", "ham-m": "chū rahē haim̐", "ham-f": "chū rahī haim̐" }
+    - word: "hi-1798"
+      forms: { "main-m": "पकड़ रहा हूँ", "main-f": "पकड़ रही हूँ", "tum-m": "पकड़ रहे हो", "tum-f": "पकड़ रही हो", "vah-m": "पकड़ रहा है", "vah-f": "पकड़ रही है", "ham-m": "पकड़ रहे हैं", "ham-f": "पकड़ रही हैं" }
+      readings: { "main-m": "pakṛ rahā hūm̐", "main-f": "pakṛ rahī hūm̐", "tum-m": "pakṛ rahē hō", "tum-f": "pakṛ rahī hō", "vah-m": "pakṛ rahā hai", "vah-f": "pakṛ rahī hai", "ham-m": "pakṛ rahē haim̐", "ham-f": "pakṛ rahī haim̐" }
+    - word: "hi-1799"
+      forms: { "main-m": "खींच रहा हूँ", "main-f": "खींच रही हूँ", "tum-m": "खींच रहे हो", "tum-f": "खींच रही हो", "vah-m": "खींच रहा है", "vah-f": "खींच रही है", "ham-m": "खींच रहे हैं", "ham-f": "खींच रही हैं" }
+      readings: { "main-m": "khīñca rahā hūm̐", "main-f": "khīñca rahī hūm̐", "tum-m": "khīñca rahē hō", "tum-f": "khīñca rahī hō", "vah-m": "khīñca rahā hai", "vah-f": "khīñca rahī hai", "ham-m": "khīñca rahē haim̐", "ham-f": "khīñca rahī haim̐" }
+    - word: "hi-1800"
+      forms: { "main-m": "धकेल रहा हूँ", "main-f": "धकेल रही हूँ", "tum-m": "धकेल रहे हो", "tum-f": "धकेल रही हो", "vah-m": "धकेल रहा है", "vah-f": "धकेल रही है", "ham-m": "धकेल रहे हैं", "ham-f": "धकेल रही हैं" }
+      readings: { "main-m": "dhakēl rahā hūm̐", "main-f": "dhakēl rahī hūm̐", "tum-m": "dhakēl rahē hō", "tum-f": "dhakēl rahī hō", "vah-m": "dhakēl rahā hai", "vah-f": "dhakēl rahī hai", "ham-m": "dhakēl rahē haim̐", "ham-f": "dhakēl rahī haim̐" }
+    - word: "hi-1801"
+      forms: { "main-m": "फँस रहा हूँ", "main-f": "फँस रही हूँ", "tum-m": "फँस रहे हो", "tum-f": "फँस रही हो", "vah-m": "फँस रहा है", "vah-f": "फँस रही है", "ham-m": "फँस रहे हैं", "ham-f": "फँस रही हैं" }
+      readings: { "main-m": "pham̐sa rahā hūm̐", "main-f": "pham̐sa rahī hūm̐", "tum-m": "pham̐sa rahē hō", "tum-f": "pham̐sa rahī hō", "vah-m": "pham̐sa rahā hai", "vah-f": "pham̐sa rahī hai", "ham-m": "pham̐sa rahē haim̐", "ham-f": "pham̐sa rahī haim̐" }
+    - word: "hi-1802"
+      forms: { "main-m": "मार रहा हूँ", "main-f": "मार रही हूँ", "tum-m": "मार रहे हो", "tum-f": "मार रही हो", "vah-m": "मार रहा है", "vah-f": "मार रही है", "ham-m": "मार रहे हैं", "ham-f": "मार रही हैं" }
+      readings: { "main-m": "mār rahā hūm̐", "main-f": "mār rahī hūm̐", "tum-m": "mār rahē hō", "tum-f": "mār rahī hō", "vah-m": "mār rahā hai", "vah-f": "mār rahī hai", "ham-m": "mār rahē haim̐", "ham-f": "mār rahī haim̐" }
+    - word: "hi-1803"
+      forms: { "main-m": "झुक रहा हूँ", "main-f": "झुक रही हूँ", "tum-m": "झुक रहे हो", "tum-f": "झुक रही हो", "vah-m": "झुक रहा है", "vah-f": "झुक रही है", "ham-m": "झुक रहे हैं", "ham-f": "झुक रही हैं" }
+      readings: { "main-m": "jhuk rahā hūm̐", "main-f": "jhuk rahī hūm̐", "tum-m": "jhuk rahē hō", "tum-f": "jhuk rahī hō", "vah-m": "jhuk rahā hai", "vah-f": "jhuk rahī hai", "ham-m": "jhuk rahē haim̐", "ham-f": "jhuk rahī haim̐" }
+    - word: "hi-1804"
+      forms: { "main-m": "चला रहा हूँ", "main-f": "चला रही हूँ", "tum-m": "चला रहे हो", "tum-f": "चला रही हो", "vah-m": "चला रहा है", "vah-f": "चला रही है", "ham-m": "चला रहे हैं", "ham-f": "चला रही हैं" }
+      readings: { "main-m": "calā rahā hūm̐", "main-f": "calā rahī hūm̐", "tum-m": "calā rahē hō", "tum-f": "calā rahī hō", "vah-m": "calā rahā hai", "vah-f": "calā rahī hai", "ham-m": "calā rahē haim̐", "ham-f": "calā rahī haim̐" }
+    - word: "hi-1805"
+      forms: { "main-m": "मिटा रहा हूँ", "main-f": "मिटा रही हूँ", "tum-m": "मिटा रहे हो", "tum-f": "मिटा रही हो", "vah-m": "मिटा रहा है", "vah-f": "मिटा रही है", "ham-m": "मिटा रहे हैं", "ham-f": "मिटा रही हैं" }
+      readings: { "main-m": "miṭā rahā hūm̐", "main-f": "miṭā rahī hūm̐", "tum-m": "miṭā rahē hō", "tum-f": "miṭā rahī hō", "vah-m": "miṭā rahā hai", "vah-f": "miṭā rahī hai", "ham-m": "miṭā rahē haim̐", "ham-f": "miṭā rahī haim̐" }
+    - word: "hi-1806"
+      forms: { "main-m": "खोज रहा हूँ", "main-f": "खोज रही हूँ", "tum-m": "खोज रहे हो", "tum-f": "खोज रही हो", "vah-m": "खोज रहा है", "vah-f": "खोज रही है", "ham-m": "खोज रहे हैं", "ham-f": "खोज रही हैं" }
+      readings: { "main-m": "khōj rahā hūm̐", "main-f": "khōj rahī hūm̐", "tum-m": "khōj rahē hō", "tum-f": "khōj rahī hō", "vah-m": "khōj rahā hai", "vah-f": "khōj rahī hai", "ham-m": "khōj rahē haim̐", "ham-f": "khōj rahī haim̐" }
+    - word: "hi-1807"
+      forms: { "main-m": "गिन रहा हूँ", "main-f": "गिन रही हूँ", "tum-m": "गिन रहे हो", "tum-f": "गिन रही हो", "vah-m": "गिन रहा है", "vah-f": "गिन रही है", "ham-m": "गिन रहे हैं", "ham-f": "गिन रही हैं" }
+      readings: { "main-m": "gin rahā hūm̐", "main-f": "gin rahī hūm̐", "tum-m": "gin rahē hō", "tum-f": "gin rahī hō", "vah-m": "gin rahā hai", "vah-f": "gin rahī hai", "ham-m": "gin rahē haim̐", "ham-f": "gin rahī haim̐" }
+    - word: "hi-1808"
+      forms: { "main-m": "नाप रहा हूँ", "main-f": "नाप रही हूँ", "tum-m": "नाप रहे हो", "tum-f": "नाप रही हो", "vah-m": "नाप रहा है", "vah-f": "नाप रही है", "ham-m": "नाप रहे हैं", "ham-f": "नाप रही हैं" }
+      readings: { "main-m": "nāp rahā hūm̐", "main-f": "nāp rahī hūm̐", "tum-m": "nāp rahē hō", "tum-f": "nāp rahī hō", "vah-m": "nāp rahā hai", "vah-f": "nāp rahī hai", "ham-m": "nāp rahē haim̐", "ham-f": "nāp rahī haim̐" }
+    - word: "hi-1809"
+      forms: { "main-m": "जोड़ रहा हूँ", "main-f": "जोड़ रही हूँ", "tum-m": "जोड़ रहे हो", "tum-f": "जोड़ रही हो", "vah-m": "जोड़ रहा है", "vah-f": "जोड़ रही है", "ham-m": "जोड़ रहे हैं", "ham-f": "जोड़ रही हैं" }
+      readings: { "main-m": "jōṛ rahā hūm̐", "main-f": "jōṛ rahī hūm̐", "tum-m": "jōṛ rahē hō", "tum-f": "jōṛ rahī hō", "vah-m": "jōṛ rahā hai", "vah-f": "jōṛ rahī hai", "ham-m": "jōṛ rahē haim̐", "ham-f": "jōṛ rahī haim̐" }
+    - word: "hi-1810"
+      forms: { "main-m": "घटा रहा हूँ", "main-f": "घटा रही हूँ", "tum-m": "घटा रहे हो", "tum-f": "घटा रही हो", "vah-m": "घटा रहा है", "vah-f": "घटा रही है", "ham-m": "घटा रहे हैं", "ham-f": "घटा रही हैं" }
+      readings: { "main-m": "ghaṭā rahā hūm̐", "main-f": "ghaṭā rahī hūm̐", "tum-m": "ghaṭā rahē hō", "tum-f": "ghaṭā rahī hō", "vah-m": "ghaṭā rahā hai", "vah-f": "ghaṭā rahī hai", "ham-m": "ghaṭā rahē haim̐", "ham-f": "ghaṭā rahī haim̐" }
+    - word: "hi-1811"
+      forms: { "main-m": "बाँध रहा हूँ", "main-f": "बाँध रही हूँ", "tum-m": "बाँध रहे हो", "tum-f": "बाँध रही हो", "vah-m": "बाँध रहा है", "vah-f": "बाँध रही है", "ham-m": "बाँध रहे हैं", "ham-f": "बाँध रही हैं" }
+      readings: { "main-m": "bām̐dha rahā hūm̐", "main-f": "bām̐dha rahī hūm̐", "tum-m": "bām̐dha rahē hō", "tum-f": "bām̐dha rahī hō", "vah-m": "bām̐dha rahā hai", "vah-f": "bām̐dha rahī hai", "ham-m": "bām̐dha rahē haim̐", "ham-f": "bām̐dha rahī haim̐" }
+    - word: "hi-1812"
+      forms: { "main-m": "गिरा रहा हूँ", "main-f": "गिरा रही हूँ", "tum-m": "गिरा रहे हो", "tum-f": "गिरा रही हो", "vah-m": "गिरा रहा है", "vah-f": "गिरा रही है", "ham-m": "गिरा रहे हैं", "ham-f": "गिरा रही हैं" }
+      readings: { "main-m": "girā rahā hūm̐", "main-f": "girā rahī hūm̐", "tum-m": "girā rahē hō", "tum-f": "girā rahī hō", "vah-m": "girā rahā hai", "vah-f": "girā rahī hai", "ham-m": "girā rahē haim̐", "ham-f": "girā rahī haim̐" }
+    - word: "hi-1813"
+      forms: { "main-m": "रोक रहा हूँ", "main-f": "रोक रही हूँ", "tum-m": "रोक रहे हो", "tum-f": "रोक रही हो", "vah-m": "रोक रहा है", "vah-f": "रोक रही है", "ham-m": "रोक रहे हैं", "ham-f": "रोक रही हैं" }
+      readings: { "main-m": "rōk rahā hūm̐", "main-f": "rōk rahī hūm̐", "tum-m": "rōk rahē hō", "tum-f": "rōk rahī hō", "vah-m": "rōk rahā hai", "vah-f": "rōk rahī hai", "ham-m": "rōk rahē haim̐", "ham-f": "rōk rahī haim̐" }
+    - word: "hi-1814"
+      forms: { "main-m": "छुपा रहा हूँ", "main-f": "छुपा रही हूँ", "tum-m": "छुपा रहे हो", "tum-f": "छुपा रही हो", "vah-m": "छुपा रहा है", "vah-f": "छुपा रही है", "ham-m": "छुपा रहे हैं", "ham-f": "छुपा रही हैं" }
+      readings: { "main-m": "chupā rahā hūm̐", "main-f": "chupā rahī hūm̐", "tum-m": "chupā rahē hō", "tum-f": "chupā rahī hō", "vah-m": "chupā rahā hai", "vah-f": "chupā rahī hai", "ham-m": "chupā rahē haim̐", "ham-f": "chupā rahī haim̐" }
+    - word: "hi-1815"
+      forms: { "main-m": "दिखा रहा हूँ", "main-f": "दिखा रही हूँ", "tum-m": "दिखा रहे हो", "tum-f": "दिखा रही हो", "vah-m": "दिखा रहा है", "vah-f": "दिखा रही है", "ham-m": "दिखा रहे हैं", "ham-f": "दिखा रही हैं" }
+      readings: { "main-m": "dikhā rahā hūm̐", "main-f": "dikhā rahī hūm̐", "tum-m": "dikhā rahē hō", "tum-f": "dikhā rahī hō", "vah-m": "dikhā rahā hai", "vah-f": "dikhā rahī hai", "ham-m": "dikhā rahē haim̐", "ham-f": "dikhā rahī haim̐" }
+    - word: "hi-1816"
+      forms: { "main-m": "चुन रहा हूँ", "main-f": "चुन रही हूँ", "tum-m": "चुन रहे हो", "tum-f": "चुन रही हो", "vah-m": "चुन रहा है", "vah-f": "चुन रही है", "ham-m": "चुन रहे हैं", "ham-f": "चुन रही हैं" }
+      readings: { "main-m": "cun rahā hūm̐", "main-f": "cun rahī hūm̐", "tum-m": "cun rahē hō", "tum-f": "cun rahī hō", "vah-m": "cun rahā hai", "vah-f": "cun rahī hai", "ham-m": "cun rahē haim̐", "ham-f": "cun rahī haim̐" }
+    - word: "hi-1817"
+      forms: { "main-m": "फोड़ रहा हूँ", "main-f": "फोड़ रही हूँ", "tum-m": "फोड़ रहे हो", "tum-f": "फोड़ रही हो", "vah-m": "फोड़ रहा है", "vah-f": "फोड़ रही है", "ham-m": "फोड़ रहे हैं", "ham-f": "फोड़ रही हैं" }
+      readings: { "main-m": "phōṛ rahā hūm̐", "main-f": "phōṛ rahī hūm̐", "tum-m": "phōṛ rahē hō", "tum-f": "phōṛ rahī hō", "vah-m": "phōṛ rahā hai", "vah-f": "phōṛ rahī hai", "ham-m": "phōṛ rahē haim̐", "ham-f": "phōṛ rahī haim̐" }
+    - word: "hi-1818"
+      forms: { "main-m": "टपक रहा हूँ", "main-f": "टपक रही हूँ", "tum-m": "टपक रहे हो", "tum-f": "टपक रही हो", "vah-m": "टपक रहा है", "vah-f": "टपक रही है", "ham-m": "टपक रहे हैं", "ham-f": "टपक रही हैं" }
+      readings: { "main-m": "ṭapk rahā hūm̐", "main-f": "ṭapk rahī hūm̐", "tum-m": "ṭapk rahē hō", "tum-f": "ṭapk rahī hō", "vah-m": "ṭapk rahā hai", "vah-f": "ṭapk rahī hai", "ham-m": "ṭapk rahē haim̐", "ham-f": "ṭapk rahī haim̐" }
+    - word: "hi-1819"
+      forms: { "main-m": "भाग रहा हूँ", "main-f": "भाग रही हूँ", "tum-m": "भाग रहे हो", "tum-f": "भाग रही हो", "vah-m": "भाग रहा है", "vah-f": "भाग रही है", "ham-m": "भाग रहे हैं", "ham-f": "भाग रही हैं" }
+      readings: { "main-m": "bhāg rahā hūm̐", "main-f": "bhāg rahī hūm̐", "tum-m": "bhāg rahē hō", "tum-f": "bhāg rahī hō", "vah-m": "bhāg rahā hai", "vah-f": "bhāg rahī hai", "ham-m": "bhāg rahē haim̐", "ham-f": "bhāg rahī haim̐" }
+    - word: "hi-1820"
+      forms: { "main-m": "चिल्ला रहा हूँ", "main-f": "चिल्ला रही हूँ", "tum-m": "चिल्ला रहे हो", "tum-f": "चिल्ला रही हो", "vah-m": "चिल्ला रहा है", "vah-f": "चिल्ला रही है", "ham-m": "चिल्ला रहे हैं", "ham-f": "चिल्ला रही हैं" }
+      readings: { "main-m": "cillā rahā hūm̐", "main-f": "cillā rahī hūm̐", "tum-m": "cillā rahē hō", "tum-f": "cillā rahī hō", "vah-m": "cillā rahā hai", "vah-f": "cillā rahī hai", "ham-m": "cillā rahē haim̐", "ham-f": "cillā rahī haim̐" }
+    - word: "hi-1821"
+      forms: { "main-m": "सह रहा हूँ", "main-f": "सह रही हूँ", "tum-m": "सह रहे हो", "tum-f": "सह रही हो", "vah-m": "सह रहा है", "vah-f": "सह रही है", "ham-m": "सह रहे हैं", "ham-f": "सह रही हैं" }
+      readings: { "main-m": "sah rahā hūm̐", "main-f": "sah rahī hūm̐", "tum-m": "sah rahē hō", "tum-f": "sah rahī hō", "vah-m": "sah rahā hai", "vah-f": "sah rahī hai", "ham-m": "sah rahē haim̐", "ham-f": "sah rahī haim̐" }
+    - word: "hi-1822"
+      forms: { "main-m": "समझा रहा हूँ", "main-f": "समझा रही हूँ", "tum-m": "समझा रहे हो", "tum-f": "समझा रही हो", "vah-m": "समझा रहा है", "vah-f": "समझा रही है", "ham-m": "समझा रहे हैं", "ham-f": "समझा रही हैं" }
+      readings: { "main-m": "samjhā rahā hūm̐", "main-f": "samjhā rahī hūm̐", "tum-m": "samjhā rahē hō", "tum-f": "samjhā rahī hō", "vah-m": "samjhā rahā hai", "vah-f": "samjhā rahī hai", "ham-m": "samjhā rahē haim̐", "ham-f": "samjhā rahī haim̐" }
+    - word: "hi-1823"
+      forms: { "main-m": "डर रहा हूँ", "main-f": "डर रही हूँ", "tum-m": "डर रहे हो", "tum-f": "डर रही हो", "vah-m": "डर रहा है", "vah-f": "डर रही है", "ham-m": "डर रहे हैं", "ham-f": "डर रही हैं" }
+      readings: { "main-m": "ḍar rahā hūm̐", "main-f": "ḍar rahī hūm̐", "tum-m": "ḍar rahē hō", "tum-f": "ḍar rahī hō", "vah-m": "ḍar rahā hai", "vah-f": "ḍar rahī hai", "ham-m": "ḍar rahē haim̐", "ham-f": "ḍar rahī haim̐" }
+    - word: "hi-1824"
+      forms: { "main-m": "सुलझा रहा हूँ", "main-f": "सुलझा रही हूँ", "tum-m": "सुलझा रहे हो", "tum-f": "सुलझा रही हो", "vah-m": "सुलझा रहा है", "vah-f": "सुलझा रही है", "ham-m": "सुलझा रहे हैं", "ham-f": "सुलझा रही हैं" }
+      readings: { "main-m": "suljhā rahā hūm̐", "main-f": "suljhā rahī hūm̐", "tum-m": "suljhā rahē hō", "tum-f": "suljhā rahī hō", "vah-m": "suljhā rahā hai", "vah-f": "suljhā rahī hai", "ham-m": "suljhā rahē haim̐", "ham-f": "suljhā rahī haim̐" }
+    - word: "hi-1825"
+      forms: { "main-m": "बचा रहा हूँ", "main-f": "बचा रही हूँ", "tum-m": "बचा रहे हो", "tum-f": "बचा रही हो", "vah-m": "बचा रहा है", "vah-f": "बचा रही है", "ham-m": "बचा रहे हैं", "ham-f": "बचा रही हैं" }
+      readings: { "main-m": "bacā rahā hūm̐", "main-f": "bacā rahī hūm̐", "tum-m": "bacā rahē hō", "tum-f": "bacā rahī hō", "vah-m": "bacā rahā hai", "vah-f": "bacā rahī hai", "ham-m": "bacā rahē haim̐", "ham-f": "bacā rahī haim̐" }
+    - word: "hi-1826"
+      forms: { "main-m": "बच रहा हूँ", "main-f": "बच रही हूँ", "tum-m": "बच रहे हो", "tum-f": "बच रही हो", "vah-m": "बच रहा है", "vah-f": "बच रही है", "ham-m": "बच रहे हैं", "ham-f": "बच रही हैं" }
+      readings: { "main-m": "bac rahā hūm̐", "main-f": "bac rahī hūm̐", "tum-m": "bac rahē hō", "tum-f": "bac rahī hō", "vah-m": "bac rahā hai", "vah-f": "bac rahī hai", "ham-m": "bac rahē haim̐", "ham-f": "bac rahī haim̐" }
+    - word: "hi-1827"
+      forms: { "main-m": "पा रहा हूँ", "main-f": "पा रही हूँ", "tum-m": "पा रहे हो", "tum-f": "पा रही हो", "vah-m": "पा रहा है", "vah-f": "पा रही है", "ham-m": "पा रहे हैं", "ham-f": "पा रही हैं" }
+      readings: { "main-m": "pā rahā hūm̐", "main-f": "pā rahī hūm̐", "tum-m": "pā rahē hō", "tum-f": "pā rahī hō", "vah-m": "pā rahā hai", "vah-f": "pā rahī hai", "ham-m": "pā rahē haim̐", "ham-f": "pā rahī haim̐" }
+    - word: "hi-1828"
+      forms: { "main-m": "दबा रहा हूँ", "main-f": "दबा रही हूँ", "tum-m": "दबा रहे हो", "tum-f": "दबा रही हो", "vah-m": "दबा रहा है", "vah-f": "दबा रही है", "ham-m": "दबा रहे हैं", "ham-f": "दबा रही हैं" }
+      readings: { "main-m": "dabā rahā hūm̐", "main-f": "dabā rahī hūm̐", "tum-m": "dabā rahē hō", "tum-f": "dabā rahī hō", "vah-m": "dabā rahā hai", "vah-f": "dabā rahī hai", "ham-m": "dabā rahē haim̐", "ham-f": "dabā rahī haim̐" }
+    - word: "hi-1829"
+      forms: { "main-m": "लपेट रहा हूँ", "main-f": "लपेट रही हूँ", "tum-m": "लपेट रहे हो", "tum-f": "लपेट रही हो", "vah-m": "लपेट रहा है", "vah-f": "लपेट रही है", "ham-m": "लपेट रहे हैं", "ham-f": "लपेट रही हैं" }
+      readings: { "main-m": "lapēṭ rahā hūm̐", "main-f": "lapēṭ rahī hūm̐", "tum-m": "lapēṭ rahē hō", "tum-f": "lapēṭ rahī hō", "vah-m": "lapēṭ rahā hai", "vah-f": "lapēṭ rahī hai", "ham-m": "lapēṭ rahē haim̐", "ham-f": "lapēṭ rahī haim̐" }
+    - word: "hi-1830"
+      forms: { "main-m": "टाँग रहा हूँ", "main-f": "टाँग रही हूँ", "tum-m": "टाँग रहे हो", "tum-f": "टाँग रही हो", "vah-m": "टाँग रहा है", "vah-f": "टाँग रही है", "ham-m": "टाँग रहे हैं", "ham-f": "टाँग रही हैं" }
+      readings: { "main-m": "ṭām̐ga rahā hūm̐", "main-f": "ṭām̐ga rahī hūm̐", "tum-m": "ṭām̐ga rahē hō", "tum-f": "ṭām̐ga rahī hō", "vah-m": "ṭām̐ga rahā hai", "vah-f": "ṭām̐ga rahī hai", "ham-m": "ṭām̐ga rahē haim̐", "ham-f": "ṭām̐ga rahī haim̐" }
+    - word: "hi-1831"
+      forms: { "main-m": "लटका रहा हूँ", "main-f": "लटका रही हूँ", "tum-m": "लटका रहे हो", "tum-f": "लटका रही हो", "vah-m": "लटका रहा है", "vah-f": "लटका रही है", "ham-m": "लटका रहे हैं", "ham-f": "लटका रही हैं" }
+      readings: { "main-m": "laṭkā rahā hūm̐", "main-f": "laṭkā rahī hūm̐", "tum-m": "laṭkā rahē hō", "tum-f": "laṭkā rahī hō", "vah-m": "laṭkā rahā hai", "vah-f": "laṭkā rahī hai", "ham-m": "laṭkā rahē haim̐", "ham-f": "laṭkā rahī haim̐" }
+    - word: "hi-1832"
+      forms: { "main-m": "चिपका रहा हूँ", "main-f": "चिपका रही हूँ", "tum-m": "चिपका रहे हो", "tum-f": "चिपका रही हो", "vah-m": "चिपका रहा है", "vah-f": "चिपका रही है", "ham-m": "चिपका रहे हैं", "ham-f": "चिपका रही हैं" }
+      readings: { "main-m": "cipkā rahā hūm̐", "main-f": "cipkā rahī hūm̐", "tum-m": "cipkā rahē hō", "tum-f": "cipkā rahī hō", "vah-m": "cipkā rahā hai", "vah-f": "cipkā rahī hai", "ham-m": "cipkā rahē haim̐", "ham-f": "cipkā rahī haim̐" }
+    - word: "hi-1833"
+      forms: { "main-m": "बन रहा हूँ", "main-f": "बन रही हूँ", "tum-m": "बन रहे हो", "tum-f": "बन रही हो", "vah-m": "बन रहा है", "vah-f": "बन रही है", "ham-m": "बन रहे हैं", "ham-f": "बन रही हैं" }
+      readings: { "main-m": "ban rahā hūm̐", "main-f": "ban rahī hūm̐", "tum-m": "ban rahē hō", "tum-f": "ban rahī hō", "vah-m": "ban rahā hai", "vah-f": "ban rahī hai", "ham-m": "ban rahē haim̐", "ham-f": "ban rahī haim̐" }
+    - word: "hi-1834"
+      forms: { "main-m": "ढक रहा हूँ", "main-f": "ढक रही हूँ", "tum-m": "ढक रहे हो", "tum-f": "ढक रही हो", "vah-m": "ढक रहा है", "vah-f": "ढक रही है", "ham-m": "ढक रहे हैं", "ham-f": "ढक रही हैं" }
+      readings: { "main-m": "ḍhak rahā hūm̐", "main-f": "ḍhak rahī hūm̐", "tum-m": "ḍhak rahē hō", "tum-f": "ḍhak rahī hō", "vah-m": "ḍhak rahā hai", "vah-f": "ḍhak rahī hai", "ham-m": "ḍhak rahē haim̐", "ham-f": "ḍhak rahī haim̐" }
+    - word: "hi-1835"
+      forms: { "main-m": "खिला रहा हूँ", "main-f": "खिला रही हूँ", "tum-m": "खिला रहे हो", "tum-f": "खिला रही हो", "vah-m": "खिला रहा है", "vah-f": "खिला रही है", "ham-m": "खिला रहे हैं", "ham-f": "खिला रही हैं" }
+      readings: { "main-m": "khilā rahā hūm̐", "main-f": "khilā rahī hūm̐", "tum-m": "khilā rahē hō", "tum-f": "khilā rahī hō", "vah-m": "khilā rahā hai", "vah-f": "khilā rahī hai", "ham-m": "khilā rahē haim̐", "ham-f": "khilā rahī haim̐" }
+    - word: "hi-1836"
+      forms: { "main-m": "पिला रहा हूँ", "main-f": "पिला रही हूँ", "tum-m": "पिला रहे हो", "tum-f": "पिला रही हो", "vah-m": "पिला रहा है", "vah-f": "पिला रही है", "ham-m": "पिला रहे हैं", "ham-f": "पिला रही हैं" }
+      readings: { "main-m": "pilā rahā hūm̐", "main-f": "pilā rahī hūm̐", "tum-m": "pilā rahē hō", "tum-f": "pilā rahī hō", "vah-m": "pilā rahā hai", "vah-f": "pilā rahī hai", "ham-m": "pilā rahē haim̐", "ham-f": "pilā rahī haim̐" }
+    - word: "hi-1837"
+      forms: { "main-m": "जगा रहा हूँ", "main-f": "जगा रही हूँ", "tum-m": "जगा रहे हो", "tum-f": "जगा रही हो", "vah-m": "जगा रहा है", "vah-f": "जगा रही है", "ham-m": "जगा रहे हैं", "ham-f": "जगा रही हैं" }
+      readings: { "main-m": "jagā rahā hūm̐", "main-f": "jagā rahī hūm̐", "tum-m": "jagā rahē hō", "tum-f": "jagā rahī hō", "vah-m": "jagā rahā hai", "vah-f": "jagā rahī hai", "ham-m": "jagā rahē haim̐", "ham-f": "jagā rahī haim̐" }
+    - word: "hi-1838"
+      forms: { "main-m": "उगा रहा हूँ", "main-f": "उगा रही हूँ", "tum-m": "उगा रहे हो", "tum-f": "उगा रही हो", "vah-m": "उगा रहा है", "vah-f": "उगा रही है", "ham-m": "उगा रहे हैं", "ham-f": "उगा रही हैं" }
+      readings: { "main-m": "ugā rahā hūm̐", "main-f": "ugā rahī hūm̐", "tum-m": "ugā rahē hō", "tum-f": "ugā rahī hō", "vah-m": "ugā rahā hai", "vah-f": "ugā rahī hai", "ham-m": "ugā rahē haim̐", "ham-f": "ugā rahī haim̐" }
+    - word: "hi-1878"
+      forms: { "main-m": "बज रहा हूँ", "main-f": "बज रही हूँ", "tum-m": "बज रहे हो", "tum-f": "बज रही हो", "vah-m": "बज रहा है", "vah-f": "बज रही है", "ham-m": "बज रहे हैं", "ham-f": "बज रही हैं" }
+      readings: { "main-m": "baj rahā hūm̐", "main-f": "baj rahī hūm̐", "tum-m": "baj rahē hō", "tum-f": "baj rahī hō", "vah-m": "baj rahā hai", "vah-f": "baj rahī hai", "ham-m": "baj rahē haim̐", "ham-f": "baj rahī haim̐" }
+    - word: "hi-1913"
+      forms: { "main-m": "पहुँच रहा हूँ", "main-f": "पहुँच रही हूँ", "tum-m": "पहुँच रहे हो", "tum-f": "पहुँच रही हो", "vah-m": "पहुँच रहा है", "vah-f": "पहुँच रही है", "ham-m": "पहुँच रहे हैं", "ham-f": "पहुँच रही हैं" }
+      readings: { "main-m": "pahum̐ca rahā hūm̐", "main-f": "pahum̐ca rahī hūm̐", "tum-m": "pahum̐ca rahē hō", "tum-f": "pahum̐ca rahī hō", "vah-m": "pahum̐ca rahā hai", "vah-f": "pahum̐ca rahī hai", "ham-m": "pahum̐ca rahē haim̐", "ham-f": "pahum̐ca rahī haim̐" }
+    - word: "hi-1914"
+      forms: { "main-m": "रुक रहा हूँ", "main-f": "रुक रही हूँ", "tum-m": "रुक रहे हो", "tum-f": "रुक रही हो", "vah-m": "रुक रहा है", "vah-f": "रुक रही है", "ham-m": "रुक रहे हैं", "ham-f": "रुक रही हैं" }
+      readings: { "main-m": "ruk rahā hūm̐", "main-f": "ruk rahī hūm̐", "tum-m": "ruk rahē hō", "tum-f": "ruk rahī hō", "vah-m": "ruk rahā hai", "vah-f": "ruk rahī hai", "ham-m": "ruk rahē haim̐", "ham-f": "ruk rahī haim̐" }
+    - word: "hi-1915"
+      forms: { "main-m": "ठहर रहा हूँ", "main-f": "ठहर रही हूँ", "tum-m": "ठहर रहे हो", "tum-f": "ठहर रही हो", "vah-m": "ठहर रहा है", "vah-f": "ठहर रही है", "ham-m": "ठहर रहे हैं", "ham-f": "ठहर रही हैं" }
+      readings: { "main-m": "ṭhahr rahā hūm̐", "main-f": "ṭhahr rahī hūm̐", "tum-m": "ṭhahr rahē hō", "tum-f": "ṭhahr rahī hō", "vah-m": "ṭhahr rahā hai", "vah-f": "ṭhahr rahī hai", "ham-m": "ṭhahr rahē haim̐", "ham-f": "ṭhahr rahī haim̐" }
+    - word: "hi-1916"
+      forms: { "main-m": "चढ़ रहा हूँ", "main-f": "चढ़ रही हूँ", "tum-m": "चढ़ रहे हो", "tum-f": "चढ़ रही हो", "vah-m": "चढ़ रहा है", "vah-f": "चढ़ रही है", "ham-m": "चढ़ रहे हैं", "ham-f": "चढ़ रही हैं" }
+      readings: { "main-m": "caṛh rahā hūm̐", "main-f": "caṛh rahī hūm̐", "tum-m": "caṛh rahē hō", "tum-f": "caṛh rahī hō", "vah-m": "caṛh rahā hai", "vah-f": "caṛh rahī hai", "ham-m": "caṛh rahē haim̐", "ham-f": "caṛh rahī haim̐" }
+    - word: "hi-1917"
+      forms: { "main-m": "उतर रहा हूँ", "main-f": "उतर रही हूँ", "tum-m": "उतर रहे हो", "tum-f": "उतर रही हो", "vah-m": "उतर रहा है", "vah-f": "उतर रही है", "ham-m": "उतर रहे हैं", "ham-f": "उतर रही हैं" }
+      readings: { "main-m": "utr rahā hūm̐", "main-f": "utr rahī hūm̐", "tum-m": "utr rahē hō", "tum-f": "utr rahī hō", "vah-m": "utr rahā hai", "vah-f": "utr rahī hai", "ham-m": "utr rahē haim̐", "ham-f": "utr rahī haim̐" }
+    - word: "hi-1918"
+      forms: { "main-m": "छूट रहा हूँ", "main-f": "छूट रही हूँ", "tum-m": "छूट रहे हो", "tum-f": "छूट रही हो", "vah-m": "छूट रहा है", "vah-f": "छूट रही है", "ham-m": "छूट रहे हैं", "ham-f": "छूट रही हैं" }
+      readings: { "main-m": "chūṭ rahā hūm̐", "main-f": "chūṭ rahī hūm̐", "tum-m": "chūṭ rahē hō", "tum-f": "chūṭ rahī hō", "vah-m": "chūṭ rahā hai", "vah-f": "chūṭ rahī hai", "ham-m": "chūṭ rahē haim̐", "ham-f": "chūṭ rahī haim̐" }
+    - word: "hi-1919"
+      forms: { "main-m": "खो रहा हूँ", "main-f": "खो रही हूँ", "tum-m": "खो रहे हो", "tum-f": "खो रही हो", "vah-m": "खो रहा है", "vah-f": "खो रही है", "ham-m": "खो रहे हैं", "ham-f": "खो रही हैं" }
+      readings: { "main-m": "khō rahā hūm̐", "main-f": "khō rahī hūm̐", "tum-m": "khō rahē hō", "tum-f": "khō rahī hō", "vah-m": "khō rahā hai", "vah-f": "khō rahī hai", "ham-m": "khō rahē haim̐", "ham-f": "khō rahī haim̐" }
+    - word: "hi-1950"
+      forms: { "main-m": "उग रहा हूँ", "main-f": "उग रही हूँ", "tum-m": "उग रहे हो", "tum-f": "उग रही हो", "vah-m": "उग रहा है", "vah-f": "उग रही है", "ham-m": "उग रहे हैं", "ham-f": "उग रही हैं" }
+      readings: { "main-m": "ug rahā hūm̐", "main-f": "ug rahī hūm̐", "tum-m": "ug rahē hō", "tum-f": "ug rahī hō", "vah-m": "ug rahā hai", "vah-f": "ug rahī hai", "ham-m": "ug rahē haim̐", "ham-f": "ug rahī haim̐" }
+    - word: "hi-1951"
+      forms: { "main-m": "बह रहा हूँ", "main-f": "बह रही हूँ", "tum-m": "बह रहे हो", "tum-f": "बह रही हो", "vah-m": "बह रहा है", "vah-f": "बह रही है", "ham-m": "बह रहे हैं", "ham-f": "बह रही हैं" }
+      readings: { "main-m": "bah rahā hūm̐", "main-f": "bah rahī hūm̐", "tum-m": "bah rahē hō", "tum-f": "bah rahī hō", "vah-m": "bah rahā hai", "vah-f": "bah rahī hai", "ham-m": "bah rahē haim̐", "ham-f": "bah rahī haim̐" }
+    - word: "hi-1952"
+      forms: { "main-m": "खिल रहा हूँ", "main-f": "खिल रही हूँ", "tum-m": "खिल रहे हो", "tum-f": "खिल रही हो", "vah-m": "खिल रहा है", "vah-f": "खिल रही है", "ham-m": "खिल रहे हैं", "ham-f": "खिल रही हैं" }
+      readings: { "main-m": "khil rahā hūm̐", "main-f": "khil rahī hūm̐", "tum-m": "khil rahē hō", "tum-f": "khil rahī hō", "vah-m": "khil rahā hai", "vah-f": "khil rahī hai", "ham-m": "khil rahē haim̐", "ham-f": "khil rahī haim̐" }
+    - word: "hi-1953"
+      forms: { "main-m": "झड़ रहा हूँ", "main-f": "झड़ रही हूँ", "tum-m": "झड़ रहे हो", "tum-f": "झड़ रही हो", "vah-m": "झड़ रहा है", "vah-f": "झड़ रही है", "ham-m": "झड़ रहे हैं", "ham-f": "झड़ रही हैं" }
+      readings: { "main-m": "jhaṛ rahā hūm̐", "main-f": "jhaṛ rahī hūm̐", "tum-m": "jhaṛ rahē hō", "tum-f": "jhaṛ rahī hō", "vah-m": "jhaṛ rahā hai", "vah-f": "jhaṛ rahī hai", "ham-m": "jhaṛ rahē haim̐", "ham-f": "jhaṛ rahī haim̐" }
+    - word: "hi-1954"
+      forms: { "main-m": "फैल रहा हूँ", "main-f": "फैल रही हूँ", "tum-m": "फैल रहे हो", "tum-f": "फैल रही हो", "vah-m": "फैल रहा है", "vah-f": "फैल रही है", "ham-m": "फैल रहे हैं", "ham-f": "फैल रही हैं" }
+      readings: { "main-m": "phail rahā hūm̐", "main-f": "phail rahī hūm̐", "tum-m": "phail rahē hō", "tum-f": "phail rahī hō", "vah-m": "phail rahā hai", "vah-f": "phail rahī hai", "ham-m": "phail rahē haim̐", "ham-f": "phail rahī haim̐" }
+    - word: "hi-1955"
+      forms: { "main-m": "डूब रहा हूँ", "main-f": "डूब रही हूँ", "tum-m": "डूब रहे हो", "tum-f": "डूब रही हो", "vah-m": "डूब रहा है", "vah-f": "डूब रही है", "ham-m": "डूब रहे हैं", "ham-f": "डूब रही हैं" }
+      readings: { "main-m": "ḍūb rahā hūm̐", "main-f": "ḍūb rahī hūm̐", "tum-m": "ḍūb rahē hō", "tum-f": "ḍūb rahī hō", "vah-m": "ḍūb rahā hai", "vah-f": "ḍūb rahī hai", "ham-m": "ḍūb rahē haim̐", "ham-f": "ḍūb rahī haim̐" }
+    - word: "hi-1956"
+      forms: { "main-m": "उड़ रहा हूँ", "main-f": "उड़ रही हूँ", "tum-m": "उड़ रहे हो", "tum-f": "उड़ रही हो", "vah-m": "उड़ रहा है", "vah-f": "उड़ रही है", "ham-m": "उड़ रहे हैं", "ham-f": "उड़ रही हैं" }
+      readings: { "main-m": "uṛ rahā hūm̐", "main-f": "uṛ rahī hūm̐", "tum-m": "uṛ rahē hō", "tum-f": "uṛ rahī hō", "vah-m": "uṛ rahā hai", "vah-f": "uṛ rahī hai", "ham-m": "uṛ rahē haim̐", "ham-f": "uṛ rahī haim̐" }
+    - word: "hi-1957"
+      forms: { "main-m": "चहचहा रहा हूँ", "main-f": "चहचहा रही हूँ", "tum-m": "चहचहा रहे हो", "tum-f": "चहचहा रही हो", "vah-m": "चहचहा रहा है", "vah-f": "चहचहा रही है", "ham-m": "चहचहा रहे हैं", "ham-f": "चहचहा रही हैं" }
+      readings: { "main-m": "cahchā rahā hūm̐", "main-f": "cahchā rahī hūm̐", "tum-m": "cahchā rahē hō", "tum-f": "cahchā rahī hō", "vah-m": "cahchā rahā hai", "vah-f": "cahchā rahī hai", "ham-m": "cahchā rahē haim̐", "ham-f": "cahchā rahī haim̐" }
+    - word: "hi-2029"
+      forms: { "main-m": "सौंप रहा हूँ", "main-f": "सौंप रही हूँ", "tum-m": "सौंप रहे हो", "tum-f": "सौंप रही हो", "vah-m": "सौंप रहा है", "vah-f": "सौंप रही है", "ham-m": "सौंप रहे हैं", "ham-f": "सौंप रही हैं" }
+      readings: { "main-m": "saumpa rahā hūm̐", "main-f": "saumpa rahī hūm̐", "tum-m": "saumpa rahē hō", "tum-f": "saumpa rahī hō", "vah-m": "saumpa rahā hai", "vah-f": "saumpa rahī hai", "ham-m": "saumpa rahē haim̐", "ham-f": "saumpa rahī haim̐" }
+    - word: "hi-2030"
+      forms: { "main-m": "निपटा रहा हूँ", "main-f": "निपटा रही हूँ", "tum-m": "निपटा रहे हो", "tum-f": "निपटा रही हो", "vah-m": "निपटा रहा है", "vah-f": "निपटा रही है", "ham-m": "निपटा रहे हैं", "ham-f": "निपटा रही हैं" }
+      readings: { "main-m": "nipṭā rahā hūm̐", "main-f": "nipṭā rahī hūm̐", "tum-m": "nipṭā rahē hō", "tum-f": "nipṭā rahī hō", "vah-m": "nipṭā rahā hai", "vah-f": "nipṭā rahī hai", "ham-m": "nipṭā rahē haim̐", "ham-f": "nipṭā rahī haim̐" }
+    - word: "hi-2031"
+      forms: { "main-m": "संभाल रहा हूँ", "main-f": "संभाल रही हूँ", "tum-m": "संभाल रहे हो", "tum-f": "संभाल रही हो", "vah-m": "संभाल रहा है", "vah-f": "संभाल रही है", "ham-m": "संभाल रहे हैं", "ham-f": "संभाल रही हैं" }
+      readings: { "main-m": "sambhāl rahā hūm̐", "main-f": "sambhāl rahī hūm̐", "tum-m": "sambhāl rahē hō", "tum-f": "sambhāl rahī hō", "vah-m": "sambhāl rahā hai", "vah-f": "sambhāl rahī hai", "ham-m": "sambhāl rahē haim̐", "ham-f": "sambhāl rahī haim̐" }
+    - word: "hi-2091"
+      forms: { "main-m": "सूज रहा हूँ", "main-f": "सूज रही हूँ", "tum-m": "सूज रहे हो", "tum-f": "सूज रही हो", "vah-m": "सूज रहा है", "vah-f": "सूज रही है", "ham-m": "सूज रहे हैं", "ham-f": "सूज रही हैं" }
+      readings: { "main-m": "sūj rahā hūm̐", "main-f": "sūj rahī hūm̐", "tum-m": "sūj rahē hō", "tum-f": "sūj rahī hō", "vah-m": "sūj rahā hai", "vah-f": "sūj rahī hai", "ham-m": "sūj rahē haim̐", "ham-f": "sūj rahī haim̐" }
+    - word: "hi-2137"
+      forms: { "main-m": "घबरा रहा हूँ", "main-f": "घबरा रही हूँ", "tum-m": "घबरा रहे हो", "tum-f": "घबरा रही हो", "vah-m": "घबरा रहा है", "vah-f": "घबरा रही है", "ham-m": "घबरा रहे हैं", "ham-f": "घबरा रही हैं" }
+      readings: { "main-m": "ghabrā rahā hūm̐", "main-f": "ghabrā rahī hūm̐", "tum-m": "ghabrā rahē hō", "tum-f": "ghabrā rahī hō", "vah-m": "ghabrā rahā hai", "vah-f": "ghabrā rahī hai", "ham-m": "ghabrā rahē haim̐", "ham-f": "ghabrā rahī haim̐" }
+    - word: "hi-2138"
+      forms: { "main-m": "झुंझला रहा हूँ", "main-f": "झुंझला रही हूँ", "tum-m": "झुंझला रहे हो", "tum-f": "झुंझला रही हो", "vah-m": "झुंझला रहा है", "vah-f": "झुंझला रही है", "ham-m": "झुंझला रहे हैं", "ham-f": "झुंझला रही हैं" }
+      readings: { "main-m": "jhuñjhalā rahā hūm̐", "main-f": "jhuñjhalā rahī hūm̐", "tum-m": "jhuñjhalā rahē hō", "tum-f": "jhuñjhalā rahī hō", "vah-m": "jhuñjhalā rahā hai", "vah-f": "jhuñjhalā rahī hai", "ham-m": "jhuñjhalā rahē haim̐", "ham-f": "jhuñjhalā rahī haim̐" }
+    - word: "hi-2139"
+      forms: { "main-m": "चिढ़ रहा हूँ", "main-f": "चिढ़ रही हूँ", "tum-m": "चिढ़ रहे हो", "tum-f": "चिढ़ रही हो", "vah-m": "चिढ़ रहा है", "vah-f": "चिढ़ रही है", "ham-m": "चिढ़ रहे हैं", "ham-f": "चिढ़ रही हैं" }
+      readings: { "main-m": "ciṛh rahā hūm̐", "main-f": "ciṛh rahī hūm̐", "tum-m": "ciṛh rahē hō", "tum-f": "ciṛh rahī hō", "vah-m": "ciṛh rahā hai", "vah-f": "ciṛh rahī hai", "ham-m": "ciṛh rahē haim̐", "ham-f": "ciṛh rahī haim̐" }
+    - word: "hi-2140"
+      forms: { "main-m": "शर्मा रहा हूँ", "main-f": "शर्मा रही हूँ", "tum-m": "शर्मा रहे हो", "tum-f": "शर्मा रही हो", "vah-m": "शर्मा रहा है", "vah-f": "शर्मा रही है", "ham-m": "शर्मा रहे हैं", "ham-f": "शर्मा रही हैं" }
+      readings: { "main-m": "śarmā rahā hūm̐", "main-f": "śarmā rahī hūm̐", "tum-m": "śarmā rahē hō", "tum-f": "śarmā rahī hō", "vah-m": "śarmā rahā hai", "vah-f": "śarmā rahī hai", "ham-m": "śarmā rahē haim̐", "ham-f": "śarmā rahī haim̐" }
+    - word: "hi-2172"
+      forms: { "main-m": "छप रहा हूँ", "main-f": "छप रही हूँ", "tum-m": "छप रहे हो", "tum-f": "छप रही हो", "vah-m": "छप रहा है", "vah-f": "छप रही है", "ham-m": "छप रहे हैं", "ham-f": "छप रही हैं" }
+      readings: { "main-m": "chap rahā hūm̐", "main-f": "chap rahī hūm̐", "tum-m": "chap rahē hō", "tum-f": "chap rahī hō", "vah-m": "chap rahā hai", "vah-f": "chap rahī hai", "ham-m": "chap rahē haim̐", "ham-f": "chap rahī haim̐" }
+    - word: "hi-2173"
+      forms: { "main-m": "सुना रहा हूँ", "main-f": "सुना रही हूँ", "tum-m": "सुना रहे हो", "tum-f": "सुना रही हो", "vah-m": "सुना रहा है", "vah-f": "सुना रही है", "ham-m": "सुना रहे हैं", "ham-f": "सुना रही हैं" }
+      readings: { "main-m": "sunā rahā hūm̐", "main-f": "sunā rahī hūm̐", "tum-m": "sunā rahē hō", "tum-f": "sunā rahī hō", "vah-m": "sunā rahā hai", "vah-f": "sunā rahī hai", "ham-m": "sunā rahē haim̐", "ham-f": "sunā rahī haim̐" }
+    - word: "hi-2184"
+      forms: { "main-m": "मान रहा हूँ", "main-f": "मान रही हूँ", "tum-m": "मान रहे हो", "tum-f": "मान रही हो", "vah-m": "मान रहा है", "vah-f": "मान रही है", "ham-m": "मान रहे हैं", "ham-f": "मान रही हैं" }
+      readings: { "main-m": "mān rahā hūm̐", "main-f": "mān rahī hūm̐", "tum-m": "mān rahē hō", "tum-f": "mān rahī hō", "vah-m": "mān rahā hai", "vah-f": "mān rahī hai", "ham-m": "mān rahē haim̐", "ham-f": "mān rahī haim̐" }
+    - word: "hi-2205"
+      forms: { "main-m": "सुझा रहा हूँ", "main-f": "सुझा रही हूँ", "tum-m": "सुझा रहे हो", "tum-f": "सुझा रही हो", "vah-m": "सुझा रहा है", "vah-f": "सुझा रही है", "ham-m": "सुझा रहे हैं", "ham-f": "सुझा रही हैं" }
+      readings: { "main-m": "sujhā rahā hūm̐", "main-f": "sujhā rahī hūm̐", "tum-m": "sujhā rahē hō", "tum-f": "sujhā rahī hō", "vah-m": "sujhā rahā hai", "vah-f": "sujhā rahī hai", "ham-m": "sujhā rahē haim̐", "ham-f": "sujhā rahī haim̐" }
+    - word: "hi-2207"
+      forms: { "main-m": "स्वीकार रहा हूँ", "main-f": "स्वीकार रही हूँ", "tum-m": "स्वीकार रहे हो", "tum-f": "स्वीकार रही हो", "vah-m": "स्वीकार रहा है", "vah-f": "स्वीकार रही है", "ham-m": "स्वीकार रहे हैं", "ham-f": "स्वीकार रही हैं" }
+      readings: { "main-m": "svīkār rahā hūm̐", "main-f": "svīkār rahī hūm̐", "tum-m": "svīkār rahē hō", "tum-f": "svīkār rahī hō", "vah-m": "svīkār rahā hai", "vah-f": "svīkār rahī hai", "ham-m": "svīkār rahē haim̐", "ham-f": "svīkār rahī haim̐" }
+    - word: "hi-2229"
+      forms: { "main-m": "घुमा रहा हूँ", "main-f": "घुमा रही हूँ", "tum-m": "घुमा रहे हो", "tum-f": "घुमा रही हो", "vah-m": "घुमा रहा है", "vah-f": "घुमा रही है", "ham-m": "घुमा रहे हैं", "ham-f": "घुमा रही हैं" }
+      readings: { "main-m": "ghumā rahā hūm̐", "main-f": "ghumā rahī hūm̐", "tum-m": "ghumā rahē hō", "tum-f": "ghumā rahī hō", "vah-m": "ghumā rahā hai", "vah-f": "ghumā rahī hai", "ham-m": "ghumā rahē haim̐", "ham-f": "ghumā rahī haim̐" }
+    - word: "hi-2581"
+      forms: { "main-m": "झगड़ रहा हूँ", "main-f": "झगड़ रही हूँ", "tum-m": "झगड़ रहे हो", "tum-f": "झगड़ रही हो", "vah-m": "झगड़ रहा है", "vah-f": "झगड़ रही है", "ham-m": "झगड़ रहे हैं", "ham-f": "झगड़ रही हैं" }
+      readings: { "main-m": "jhagṛ rahā hūm̐", "main-f": "jhagṛ rahī hūm̐", "tum-m": "jhagṛ rahē hō", "tum-f": "jhagṛ rahī hō", "vah-m": "jhagṛ rahā hai", "vah-f": "jhagṛ rahī hai", "ham-m": "jhagṛ rahē haim̐", "ham-f": "jhagṛ rahī haim̐" }
+    - word: "hi-2582"
+      forms: { "main-m": "रूठ रहा हूँ", "main-f": "रूठ रही हूँ", "tum-m": "रूठ रहे हो", "tum-f": "रूठ रही हो", "vah-m": "रूठ रहा है", "vah-f": "रूठ रही है", "ham-m": "रूठ रहे हैं", "ham-f": "रूठ रही हैं" }
+      readings: { "main-m": "rūṭh rahā hūm̐", "main-f": "rūṭh rahī hūm̐", "tum-m": "rūṭh rahē hō", "tum-f": "rūṭh rahī hō", "vah-m": "rūṭh rahā hai", "vah-f": "rūṭh rahī hai", "ham-m": "rūṭh rahē haim̐", "ham-f": "rūṭh rahī haim̐" }
+    - word: "hi-2583"
+      forms: { "main-m": "जुड़ रहा हूँ", "main-f": "जुड़ रही हूँ", "tum-m": "जुड़ रहे हो", "tum-f": "जुड़ रही हो", "vah-m": "जुड़ रहा है", "vah-f": "जुड़ रही है", "ham-m": "जुड़ रहे हैं", "ham-f": "जुड़ रही हैं" }
+      readings: { "main-m": "juṛ rahā hūm̐", "main-f": "juṛ rahī hūm̐", "tum-m": "juṛ rahē hō", "tum-f": "juṛ rahī hō", "vah-m": "juṛ rahā hai", "vah-f": "juṛ rahī hai", "ham-m": "juṛ rahē haim̐", "ham-f": "juṛ rahī haim̐" }
+    - word: "hi-2607"
+      forms: { "main-m": "बस रहा हूँ", "main-f": "बस रही हूँ", "tum-m": "बस रहे हो", "tum-f": "बस रही हो", "vah-m": "बस रहा है", "vah-f": "बस रही है", "ham-m": "बस रहे हैं", "ham-f": "बस रही हैं" }
+      readings: { "main-m": "bas rahā hūm̐", "main-f": "bas rahī hūm̐", "tum-m": "bas rahē hō", "tum-f": "bas rahī hō", "vah-m": "bas rahā hai", "vah-f": "bas rahī hai", "ham-m": "bas rahē haim̐", "ham-f": "bas rahī haim̐" }
+    - word: "hi-2614"
+      forms: { "main-m": "जम रहा हूँ", "main-f": "जम रही हूँ", "tum-m": "जम रहे हो", "tum-f": "जम रही हो", "vah-m": "जम रहा है", "vah-f": "जम रही है", "ham-m": "जम रहे हैं", "ham-f": "जम रही हैं" }
+      readings: { "main-m": "jam rahā hūm̐", "main-f": "jam rahī hūm̐", "tum-m": "jam rahē hō", "tum-f": "jam rahī hō", "vah-m": "jam rahā hai", "vah-f": "jam rahī hai", "ham-m": "jam rahē haim̐", "ham-f": "jam rahī haim̐" }
+    - word: "hi-2615"
+      forms: { "main-m": "पिघल रहा हूँ", "main-f": "पिघल रही हूँ", "tum-m": "पिघल रहे हो", "tum-f": "पिघल रही हो", "vah-m": "पिघल रहा है", "vah-f": "पिघल रही है", "ham-m": "पिघल रहे हैं", "ham-f": "पिघल रही हैं" }
+      readings: { "main-m": "pighl rahā hūm̐", "main-f": "pighl rahī hūm̐", "tum-m": "pighl rahē hō", "tum-f": "pighl rahī hō", "vah-m": "pighl rahā hai", "vah-f": "pighl rahī hai", "ham-m": "pighl rahē haim̐", "ham-f": "pighl rahī haim̐" }
+    - word: "hi-2616"
+      forms: { "main-m": "उबल रहा हूँ", "main-f": "उबल रही हूँ", "tum-m": "उबल रहे हो", "tum-f": "उबल रही हो", "vah-m": "उबल रहा है", "vah-f": "उबल रही है", "ham-m": "उबल रहे हैं", "ham-f": "उबल रही हैं" }
+      readings: { "main-m": "ubl rahā hūm̐", "main-f": "ubl rahī hūm̐", "tum-m": "ubl rahē hō", "tum-f": "ubl rahī hō", "vah-m": "ubl rahā hai", "vah-f": "ubl rahī hai", "ham-m": "ubl rahē haim̐", "ham-f": "ubl rahī haim̐" }
+    - word: "hi-2617"
+      forms: { "main-m": "जल रहा हूँ", "main-f": "जल रही हूँ", "tum-m": "जल रहे हो", "tum-f": "जल रही हो", "vah-m": "जल रहा है", "vah-f": "जल रही है", "ham-m": "जल रहे हैं", "ham-f": "जल रही हैं" }
+      readings: { "main-m": "jal rahā hūm̐", "main-f": "jal rahī hūm̐", "tum-m": "jal rahē hō", "tum-f": "jal rahī hō", "vah-m": "jal rahā hai", "vah-f": "jal rahī hai", "ham-m": "jal rahē haim̐", "ham-f": "jal rahī haim̐" }
+    - word: "hi-2618"
+      forms: { "main-m": "बुझ रहा हूँ", "main-f": "बुझ रही हूँ", "tum-m": "बुझ रहे हो", "tum-f": "बुझ रही हो", "vah-m": "बुझ रहा है", "vah-f": "बुझ रही है", "ham-m": "बुझ रहे हैं", "ham-f": "बुझ रही हैं" }
+      readings: { "main-m": "bujh rahā hūm̐", "main-f": "bujh rahī hūm̐", "tum-m": "bujh rahē hō", "tum-f": "bujh rahī hō", "vah-m": "bujh rahā hai", "vah-f": "bujh rahī hai", "ham-m": "bujh rahē haim̐", "ham-f": "bujh rahī haim̐" }
+    - word: "hi-2619"
+      forms: { "main-m": "भटक रहा हूँ", "main-f": "भटक रही हूँ", "tum-m": "भटक रहे हो", "tum-f": "भटक रही हो", "vah-m": "भटक रहा है", "vah-f": "भटक रही है", "ham-m": "भटक रहे हैं", "ham-f": "भटक रही हैं" }
+      readings: { "main-m": "bhaṭk rahā hūm̐", "main-f": "bhaṭk rahī hūm̐", "tum-m": "bhaṭk rahē hō", "tum-f": "bhaṭk rahī hō", "vah-m": "bhaṭk rahā hai", "vah-f": "bhaṭk rahī hai", "ham-m": "bhaṭk rahē haim̐", "ham-f": "bhaṭk rahī haim̐" }
+    - word: "hi-2620"
+      forms: { "main-m": "छिप रहा हूँ", "main-f": "छिप रही हूँ", "tum-m": "छिप रहे हो", "tum-f": "छिप रही हो", "vah-m": "छिप रहा है", "vah-f": "छिप रही है", "ham-m": "छिप रहे हैं", "ham-f": "छिप रही हैं" }
+      readings: { "main-m": "chip rahā hūm̐", "main-f": "chip rahī hūm̐", "tum-m": "chip rahē hō", "tum-f": "chip rahī hō", "vah-m": "chip rahā hai", "vah-f": "chip rahī hai", "ham-m": "chip rahē haim̐", "ham-f": "chip rahī haim̐" }
+    - word: "hi-2621"
+      forms: { "main-m": "कूद रहा हूँ", "main-f": "कूद रही हूँ", "tum-m": "कूद रहे हो", "tum-f": "कूद रही हो", "vah-m": "कूद रहा है", "vah-f": "कूद रही है", "ham-m": "कूद रहे हैं", "ham-f": "कूद रही हैं" }
+      readings: { "main-m": "kūd rahā hūm̐", "main-f": "kūd rahī hūm̐", "tum-m": "kūd rahē hō", "tum-f": "kūd rahī hō", "vah-m": "kūd rahā hai", "vah-f": "kūd rahī hai", "ham-m": "kūd rahē haim̐", "ham-f": "kūd rahī haim̐" }
+    - word: "hi-2622"
+      forms: { "main-m": "फिसल रहा हूँ", "main-f": "फिसल रही हूँ", "tum-m": "फिसल रहे हो", "tum-f": "फिसल रही हो", "vah-m": "फिसल रहा है", "vah-f": "फिसल रही है", "ham-m": "फिसल रहे हैं", "ham-f": "फिसल रही हैं" }
+      readings: { "main-m": "phisl rahā hūm̐", "main-f": "phisl rahī hūm̐", "tum-m": "phisl rahē hō", "tum-f": "phisl rahī hō", "vah-m": "phisl rahā hai", "vah-f": "phisl rahī hai", "ham-m": "phisl rahē haim̐", "ham-f": "phisl rahī haim̐" }
+    - word: "hi-2623"
+      forms: { "main-m": "थाम रहा हूँ", "main-f": "थाम रही हूँ", "tum-m": "थाम रहे हो", "tum-f": "थाम रही हो", "vah-m": "थाम रहा है", "vah-f": "थाम रही है", "ham-m": "थाम रहे हैं", "ham-f": "थाम रही हैं" }
+      readings: { "main-m": "thām rahā hūm̐", "main-f": "thām rahī hūm̐", "tum-m": "thām rahē hō", "tum-f": "thām rahī hō", "vah-m": "thām rahā hai", "vah-f": "thām rahī hai", "ham-m": "thām rahē haim̐", "ham-f": "thām rahī haim̐" }
+    - word: "hi-2624"
+      forms: { "main-m": "रगड़ रहा हूँ", "main-f": "रगड़ रही हूँ", "tum-m": "रगड़ रहे हो", "tum-f": "रगड़ रही हो", "vah-m": "रगड़ रहा है", "vah-f": "रगड़ रही है", "ham-m": "रगड़ रहे हैं", "ham-f": "रगड़ रही हैं" }
+      readings: { "main-m": "ragṛ rahā hūm̐", "main-f": "ragṛ rahī hūm̐", "tum-m": "ragṛ rahē hō", "tum-f": "ragṛ rahī hō", "vah-m": "ragṛ rahā hai", "vah-f": "ragṛ rahī hai", "ham-m": "ragṛ rahē haim̐", "ham-f": "ragṛ rahī haim̐" }
+    - word: "hi-2625"
+      forms: { "main-m": "तोड़ रहा हूँ", "main-f": "तोड़ रही हूँ", "tum-m": "तोड़ रहे हो", "tum-f": "तोड़ रही हो", "vah-m": "तोड़ रहा है", "vah-f": "तोड़ रही है", "ham-m": "तोड़ रहे हैं", "ham-f": "तोड़ रही हैं" }
+      readings: { "main-m": "tōṛ rahā hūm̐", "main-f": "tōṛ rahī hūm̐", "tum-m": "tōṛ rahē hō", "tum-f": "tōṛ rahī hō", "vah-m": "tōṛ rahā hai", "vah-f": "tōṛ rahī hai", "ham-m": "tōṛ rahē haim̐", "ham-f": "tōṛ rahī haim̐" }
+    - word: "hi-2626"
+      forms: { "main-m": "मोड़ रहा हूँ", "main-f": "मोड़ रही हूँ", "tum-m": "मोड़ रहे हो", "tum-f": "मोड़ रही हो", "vah-m": "मोड़ रहा है", "vah-f": "मोड़ रही है", "ham-m": "मोड़ रहे हैं", "ham-f": "मोड़ रही हैं" }
+      readings: { "main-m": "mōṛ rahā hūm̐", "main-f": "mōṛ rahī hūm̐", "tum-m": "mōṛ rahē hō", "tum-f": "mōṛ rahī hō", "vah-m": "mōṛ rahā hai", "vah-f": "mōṛ rahī hai", "ham-m": "mōṛ rahē haim̐", "ham-f": "mōṛ rahī haim̐" }
+    - word: "hi-2627"
+      forms: { "main-m": "लड़ रहा हूँ", "main-f": "लड़ रही हूँ", "tum-m": "लड़ रहे हो", "tum-f": "लड़ रही हो", "vah-m": "लड़ रहा है", "vah-f": "लड़ रही है", "ham-m": "लड़ रहे हैं", "ham-f": "लड़ रही हैं" }
+      readings: { "main-m": "laṛ rahā hūm̐", "main-f": "laṛ rahī hūm̐", "tum-m": "laṛ rahē hō", "tum-f": "laṛ rahī hō", "vah-m": "laṛ rahā hai", "vah-f": "laṛ rahī hai", "ham-m": "laṛ rahē haim̐", "ham-f": "laṛ rahī haim̐" }
+    - word: "hi-2628"
+      forms: { "main-m": "सुधार रहा हूँ", "main-f": "सुधार रही हूँ", "tum-m": "सुधार रहे हो", "tum-f": "सुधार रही हो", "vah-m": "सुधार रहा है", "vah-f": "सुधार रही है", "ham-m": "सुधार रहे हैं", "ham-f": "सुधार रही हैं" }
+      readings: { "main-m": "sudhār rahā hūm̐", "main-f": "sudhār rahī hūm̐", "tum-m": "sudhār rahē hō", "tum-f": "sudhār rahī hō", "vah-m": "sudhār rahā hai", "vah-f": "sudhār rahī hai", "ham-m": "sudhār rahē haim̐", "ham-f": "sudhār rahī haim̐" }
+    - word: "hi-2629"
+      forms: { "main-m": "लगा रहा हूँ", "main-f": "लगा रही हूँ", "tum-m": "लगा रहे हो", "tum-f": "लगा रही हो", "vah-m": "लगा रहा है", "vah-f": "लगा रही है", "ham-m": "लगा रहे हैं", "ham-f": "लगा रही हैं" }
+      readings: { "main-m": "lagā rahā hūm̐", "main-f": "lagā rahī hūm̐", "tum-m": "lagā rahē hō", "tum-f": "lagā rahī hō", "vah-m": "lagā rahā hai", "vah-f": "lagā rahī hai", "ham-m": "lagā rahē haim̐", "ham-f": "lagā rahī haim̐" }
+    - word: "hi-2630"
+      forms: { "main-m": "लगवा रहा हूँ", "main-f": "लगवा रही हूँ", "tum-m": "लगवा रहे हो", "tum-f": "लगवा रही हो", "vah-m": "लगवा रहा है", "vah-f": "लगवा रही है", "ham-m": "लगवा रहे हैं", "ham-f": "लगवा रही हैं" }
+      readings: { "main-m": "lagvā rahā hūm̐", "main-f": "lagvā rahī hūm̐", "tum-m": "lagvā rahē hō", "tum-f": "lagvā rahī hō", "vah-m": "lagvā rahā hai", "vah-f": "lagvā rahī hai", "ham-m": "lagvā rahē haim̐", "ham-f": "lagvā rahī haim̐" }
+    - word: "hi-2631"
+      forms: { "main-m": "पहचान रहा हूँ", "main-f": "पहचान रही हूँ", "tum-m": "पहचान रहे हो", "tum-f": "पहचान रही हो", "vah-m": "पहचान रहा है", "vah-f": "पहचान रही है", "ham-m": "पहचान रहे हैं", "ham-f": "पहचान रही हैं" }
+      readings: { "main-m": "pahcān rahā hūm̐", "main-f": "pahcān rahī hūm̐", "tum-m": "pahcān rahē hō", "tum-f": "pahcān rahī hō", "vah-m": "pahcān rahā hai", "vah-f": "pahcān rahī hai", "ham-m": "pahcān rahē haim̐", "ham-f": "pahcān rahī haim̐" }
+    - word: "hi-2632"
+      forms: { "main-m": "सींच रहा हूँ", "main-f": "सींच रही हूँ", "tum-m": "सींच रहे हो", "tum-f": "सींच रही हो", "vah-m": "सींच रहा है", "vah-f": "सींच रही है", "ham-m": "सींच रहे हैं", "ham-f": "सींच रही हैं" }
+      readings: { "main-m": "sīñca rahā hūm̐", "main-f": "sīñca rahī hūm̐", "tum-m": "sīñca rahē hō", "tum-f": "sīñca rahī hō", "vah-m": "sīñca rahā hai", "vah-f": "sīñca rahī hai", "ham-m": "sīñca rahē haim̐", "ham-f": "sīñca rahī haim̐" }
+    - word: "hi-2633"
+      forms: { "main-m": "बो रहा हूँ", "main-f": "बो रही हूँ", "tum-m": "बो रहे हो", "tum-f": "बो रही हो", "vah-m": "बो रहा है", "vah-f": "बो रही है", "ham-m": "बो रहे हैं", "ham-f": "बो रही हैं" }
+      readings: { "main-m": "bō rahā hūm̐", "main-f": "bō rahī hūm̐", "tum-m": "bō rahē hō", "tum-f": "bō rahī hō", "vah-m": "bō rahā hai", "vah-f": "bō rahī hai", "ham-m": "bō rahē haim̐", "ham-f": "bō rahī haim̐" }
+    - word: "hi-2634"
+      forms: { "main-m": "माँग रहा हूँ", "main-f": "माँग रही हूँ", "tum-m": "माँग रहे हो", "tum-f": "माँग रही हो", "vah-m": "माँग रहा है", "vah-f": "माँग रही है", "ham-m": "माँग रहे हैं", "ham-f": "माँग रही हैं" }
+      readings: { "main-m": "mām̐ga rahā hūm̐", "main-f": "mām̐ga rahī hūm̐", "tum-m": "mām̐ga rahē hō", "tum-f": "mām̐ga rahī hō", "vah-m": "mām̐ga rahā hai", "vah-f": "mām̐ga rahī hai", "ham-m": "mām̐ga rahē haim̐", "ham-f": "mām̐ga rahī haim̐" }
+    - word: "hi-2635"
+      forms: { "main-m": "निकल रहा हूँ", "main-f": "निकल रही हूँ", "tum-m": "निकल रहे हो", "tum-f": "निकल रही हो", "vah-m": "निकल रहा है", "vah-f": "निकल रही है", "ham-m": "निकल रहे हैं", "ham-f": "निकल रही हैं" }
+      readings: { "main-m": "nikl rahā hūm̐", "main-f": "nikl rahī hūm̐", "tum-m": "nikl rahē hō", "tum-f": "nikl rahī hō", "vah-m": "nikl rahā hai", "vah-f": "nikl rahī hai", "ham-m": "nikl rahē haim̐", "ham-f": "nikl rahī haim̐" }
+    - word: "hi-2636"
+      forms: { "main-m": "गाड़ रहा हूँ", "main-f": "गाड़ रही हूँ", "tum-m": "गाड़ रहे हो", "tum-f": "गाड़ रही हो", "vah-m": "गाड़ रहा है", "vah-f": "गाड़ रही है", "ham-m": "गाड़ रहे हैं", "ham-f": "गाड़ रही हैं" }
+      readings: { "main-m": "gāṛ rahā hūm̐", "main-f": "gāṛ rahī hūm̐", "tum-m": "gāṛ rahē hō", "tum-f": "gāṛ rahī hō", "vah-m": "gāṛ rahā hai", "vah-f": "gāṛ rahī hai", "ham-m": "gāṛ rahē haim̐", "ham-f": "gāṛ rahī haim̐" }
+    - word: "hi-2637"
+      forms: { "main-m": "उड़ा रहा हूँ", "main-f": "उड़ा रही हूँ", "tum-m": "उड़ा रहे हो", "tum-f": "उड़ा रही हो", "vah-m": "उड़ा रहा है", "vah-f": "उड़ा रही है", "ham-m": "उड़ा रहे हैं", "ham-f": "उड़ा रही हैं" }
+      readings: { "main-m": "uṛā rahā hūm̐", "main-f": "uṛā rahī hūm̐", "tum-m": "uṛā rahē hō", "tum-f": "uṛā rahī hō", "vah-m": "uṛā rahā hai", "vah-f": "uṛā rahī hai", "ham-m": "uṛā rahē haim̐", "ham-f": "uṛā rahī haim̐" }
+    - word: "hi-2638"
+      forms: { "main-m": "हटा रहा हूँ", "main-f": "हटा रही हूँ", "tum-m": "हटा रहे हो", "tum-f": "हटा रही हो", "vah-m": "हटा रहा है", "vah-f": "हटा रही है", "ham-m": "हटा रहे हैं", "ham-f": "हटा रही हैं" }
+      readings: { "main-m": "haṭā rahā hūm̐", "main-f": "haṭā rahī hūm̐", "tum-m": "haṭā rahē hō", "tum-f": "haṭā rahī hō", "vah-m": "haṭā rahā hai", "vah-f": "haṭā rahī hai", "ham-m": "haṭā rahē haim̐", "ham-f": "haṭā rahī haim̐" }
+    - word: "hi-2639"
+      forms: { "main-m": "निगल रहा हूँ", "main-f": "निगल रही हूँ", "tum-m": "निगल रहे हो", "tum-f": "निगल रही हो", "vah-m": "निगल रहा है", "vah-f": "निगल रही है", "ham-m": "निगल रहे हैं", "ham-f": "निगल रही हैं" }
+      readings: { "main-m": "nigl rahā hūm̐", "main-f": "nigl rahī hūm̐", "tum-m": "nigl rahē hō", "tum-f": "nigl rahī hō", "vah-m": "nigl rahā hai", "vah-f": "nigl rahī hai", "ham-m": "nigl rahē haim̐", "ham-f": "nigl rahī haim̐" }
+    - word: "hi-2640"
+      forms: { "main-m": "चबा रहा हूँ", "main-f": "चबा रही हूँ", "tum-m": "चबा रहे हो", "tum-f": "चबा रही हो", "vah-m": "चबा रहा है", "vah-f": "चबा रही है", "ham-m": "चबा रहे हैं", "ham-f": "चबा रही हैं" }
+      readings: { "main-m": "cabā rahā hūm̐", "main-f": "cabā rahī hūm̐", "tum-m": "cabā rahē hō", "tum-f": "cabā rahī hō", "vah-m": "cabā rahā hai", "vah-f": "cabā rahī hai", "ham-m": "cabā rahē haim̐", "ham-f": "cabā rahī haim̐" }
+    - word: "hi-2641"
+      forms: { "main-m": "निचोड़ रहा हूँ", "main-f": "निचोड़ रही हूँ", "tum-m": "निचोड़ रहे हो", "tum-f": "निचोड़ रही हो", "vah-m": "निचोड़ रहा है", "vah-f": "निचोड़ रही है", "ham-m": "निचोड़ रहे हैं", "ham-f": "निचोड़ रही हैं" }
+      readings: { "main-m": "nicōṛ rahā hūm̐", "main-f": "nicōṛ rahī hūm̐", "tum-m": "nicōṛ rahē hō", "tum-f": "nicōṛ rahī hō", "vah-m": "nicōṛ rahā hai", "vah-f": "nicōṛ rahī hai", "ham-m": "nicōṛ rahē haim̐", "ham-f": "nicōṛ rahī haim̐" }
+    - word: "hi-2642"
+      forms: { "main-m": "सूँघ रहा हूँ", "main-f": "सूँघ रही हूँ", "tum-m": "सूँघ रहे हो", "tum-f": "सूँघ रही हो", "vah-m": "सूँघ रहा है", "vah-f": "सूँघ रही है", "ham-m": "सूँघ रहे हैं", "ham-f": "सूँघ रही हैं" }
+      readings: { "main-m": "sūm̐gha rahā hūm̐", "main-f": "sūm̐gha rahī hūm̐", "tum-m": "sūm̐gha rahē hō", "tum-f": "sūm̐gha rahī hō", "vah-m": "sūm̐gha rahā hai", "vah-f": "sūm̐gha rahī hai", "ham-m": "sūm̐gha rahē haim̐", "ham-f": "sūm̐gha rahī haim̐" }
+    - word: "hi-2643"
+      forms: { "main-m": "चख रहा हूँ", "main-f": "चख रही हूँ", "tum-m": "चख रहे हो", "tum-f": "चख रही हो", "vah-m": "चख रहा है", "vah-f": "चख रही है", "ham-m": "चख रहे हैं", "ham-f": "चख रही हैं" }
+      readings: { "main-m": "cakh rahā hūm̐", "main-f": "cakh rahī hūm̐", "tum-m": "cakh rahē hō", "tum-f": "cakh rahī hō", "vah-m": "cakh rahā hai", "vah-f": "cakh rahī hai", "ham-m": "cakh rahē haim̐", "ham-f": "cakh rahī haim̐" }
+    - word: "hi-2790"
+      forms: { "main-m": "बढ़ रहा हूँ", "main-f": "बढ़ रही हूँ", "tum-m": "बढ़ रहे हो", "tum-f": "बढ़ रही हो", "vah-m": "बढ़ रहा है", "vah-f": "बढ़ रही है", "ham-m": "बढ़ रहे हैं", "ham-f": "बढ़ रही हैं" }
+      readings: { "main-m": "baṛh rahā hūm̐", "main-f": "baṛh rahī hūm̐", "tum-m": "baṛh rahē hō", "tum-f": "baṛh rahī hō", "vah-m": "baṛh rahā hai", "vah-f": "baṛh rahī hai", "ham-m": "baṛh rahē haim̐", "ham-f": "baṛh rahī haim̐" }
+    - word: "hi-2791"
+      forms: { "main-m": "बढ़ा रहा हूँ", "main-f": "बढ़ा रही हूँ", "tum-m": "बढ़ा रहे हो", "tum-f": "बढ़ा रही हो", "vah-m": "बढ़ा रहा है", "vah-f": "बढ़ा रही है", "ham-m": "बढ़ा रहे हैं", "ham-f": "बढ़ा रही हैं" }
+      readings: { "main-m": "baṛhā rahā hūm̐", "main-f": "baṛhā rahī hūm̐", "tum-m": "baṛhā rahē hō", "tum-f": "baṛhā rahī hō", "vah-m": "baṛhā rahā hai", "vah-f": "baṛhā rahī hai", "ham-m": "baṛhā rahē haim̐", "ham-f": "baṛhā rahī haim̐" }
+    - word: "hi-2792"
+      forms: { "main-m": "गुज़र रहा हूँ", "main-f": "गुज़र रही हूँ", "tum-m": "गुज़र रहे हो", "tum-f": "गुज़र रही हो", "vah-m": "गुज़र रहा है", "vah-f": "गुज़र रही है", "ham-m": "गुज़र रहे हैं", "ham-f": "गुज़र रही हैं" }
+      readings: { "main-m": "guzr rahā hūm̐", "main-f": "guzr rahī hūm̐", "tum-m": "guzr rahē hō", "tum-f": "guzr rahī hō", "vah-m": "guzr rahā hai", "vah-f": "guzr rahī hai", "ham-m": "guzr rahē haim̐", "ham-f": "guzr rahī haim̐" }
+    - word: "hi-2793"
+      forms: { "main-m": "झपट रहा हूँ", "main-f": "झपट रही हूँ", "tum-m": "झपट रहे हो", "tum-f": "झपट रही हो", "vah-m": "झपट रहा है", "vah-f": "झपट रही है", "ham-m": "झपट रहे हैं", "ham-f": "झपट रही हैं" }
+      readings: { "main-m": "jhapṭ rahā hūm̐", "main-f": "jhapṭ rahī hūm̐", "tum-m": "jhapṭ rahē hō", "tum-f": "jhapṭ rahī hō", "vah-m": "jhapṭ rahā hai", "vah-f": "jhapṭ rahī hai", "ham-m": "jhapṭ rahē haim̐", "ham-f": "jhapṭ rahī haim̐" }
+    - word: "hi-2794"
+      forms: { "main-m": "पलट रहा हूँ", "main-f": "पलट रही हूँ", "tum-m": "पलट रहे हो", "tum-f": "पलट रही हो", "vah-m": "पलट रहा है", "vah-f": "पलट रही है", "ham-m": "पलट रहे हैं", "ham-f": "पलट रही हैं" }
+      readings: { "main-m": "palṭ rahā hūm̐", "main-f": "palṭ rahī hūm̐", "tum-m": "palṭ rahē hō", "tum-f": "palṭ rahī hō", "vah-m": "palṭ rahā hai", "vah-f": "palṭ rahī hai", "ham-m": "palṭ rahē haim̐", "ham-f": "palṭ rahī haim̐" }
+    - word: "hi-2795"
+      forms: { "main-m": "सोख रहा हूँ", "main-f": "सोख रही हूँ", "tum-m": "सोख रहे हो", "tum-f": "सोख रही हो", "vah-m": "सोख रहा है", "vah-f": "सोख रही है", "ham-m": "सोख रहे हैं", "ham-f": "सोख रही हैं" }
+      readings: { "main-m": "sōkh rahā hūm̐", "main-f": "sōkh rahī hūm̐", "tum-m": "sōkh rahē hō", "tum-f": "sōkh rahī hō", "vah-m": "sōkh rahā hai", "vah-f": "sōkh rahī hai", "ham-m": "sōkh rahē haim̐", "ham-f": "sōkh rahī haim̐" }
+    - word: "hi-2796"
+      forms: { "main-m": "बहा रहा हूँ", "main-f": "बहा रही हूँ", "tum-m": "बहा रहे हो", "tum-f": "बहा रही हो", "vah-m": "बहा रहा है", "vah-f": "बहा रही है", "ham-m": "बहा रहे हैं", "ham-f": "बहा रही हैं" }
+      readings: { "main-m": "bahā rahā hūm̐", "main-f": "bahā rahī hūm̐", "tum-m": "bahā rahē hō", "tum-f": "bahā rahī hō", "vah-m": "bahā rahā hai", "vah-f": "bahā rahī hai", "ham-m": "bahā rahē haim̐", "ham-f": "bahā rahī haim̐" }
+    - word: "hi-2797"
+      forms: { "main-m": "मल रहा हूँ", "main-f": "मल रही हूँ", "tum-m": "मल रहे हो", "tum-f": "मल रही हो", "vah-m": "मल रहा है", "vah-f": "मल रही है", "ham-m": "मल रहे हैं", "ham-f": "मल रही हैं" }
+      readings: { "main-m": "mal rahā hūm̐", "main-f": "mal rahī hūm̐", "tum-m": "mal rahē hō", "tum-f": "mal rahī hō", "vah-m": "mal rahā hai", "vah-f": "mal rahī hai", "ham-m": "mal rahē haim̐", "ham-f": "mal rahī haim̐" }
+    - word: "hi-2798"
+      forms: { "main-m": "भिगो रहा हूँ", "main-f": "भिगो रही हूँ", "tum-m": "भिगो रहे हो", "tum-f": "भिगो रही हो", "vah-m": "भिगो रहा है", "vah-f": "भिगो रही है", "ham-m": "भिगो रहे हैं", "ham-f": "भिगो रही हैं" }
+      readings: { "main-m": "bhigō rahā hūm̐", "main-f": "bhigō rahī hūm̐", "tum-m": "bhigō rahē hō", "tum-f": "bhigō rahī hō", "vah-m": "bhigō rahā hai", "vah-f": "bhigō rahī hai", "ham-m": "bhigō rahē haim̐", "ham-f": "bhigō rahī haim̐" }
+    - word: "hi-2799"
+      forms: { "main-m": "पकड़ा रहा हूँ", "main-f": "पकड़ा रही हूँ", "tum-m": "पकड़ा रहे हो", "tum-f": "पकड़ा रही हो", "vah-m": "पकड़ा रहा है", "vah-f": "पकड़ा रही है", "ham-m": "पकड़ा रहे हैं", "ham-f": "पकड़ा रही हैं" }
+      readings: { "main-m": "pakṛā rahā hūm̐", "main-f": "pakṛā rahī hūm̐", "tum-m": "pakṛā rahē hō", "tum-f": "pakṛā rahī hō", "vah-m": "pakṛā rahā hai", "vah-f": "pakṛā rahī hai", "ham-m": "pakṛā rahē haim̐", "ham-f": "pakṛā rahī haim̐" }
+    - word: "hi-2800"
+      forms: { "main-m": "खुजला रहा हूँ", "main-f": "खुजला रही हूँ", "tum-m": "खुजला रहे हो", "tum-f": "खुजला रही हो", "vah-m": "खुजला रहा है", "vah-f": "खुजला रही है", "ham-m": "खुजला रहे हैं", "ham-f": "खुजला रही हैं" }
+      readings: { "main-m": "khujlā rahā hūm̐", "main-f": "khujlā rahī hūm̐", "tum-m": "khujlā rahē hō", "tum-f": "khujlā rahī hō", "vah-m": "khujlā rahā hai", "vah-f": "khujlā rahī hai", "ham-m": "khujlā rahē haim̐", "ham-f": "khujlā rahī haim̐" }
+    - word: "hi-2801"
+      forms: { "main-m": "दबोच रहा हूँ", "main-f": "दबोच रही हूँ", "tum-m": "दबोच रहे हो", "tum-f": "दबोच रही हो", "vah-m": "दबोच रहा है", "vah-f": "दबोच रही है", "ham-m": "दबोच रहे हैं", "ham-f": "दबोच रही हैं" }
+      readings: { "main-m": "dabōc rahā hūm̐", "main-f": "dabōc rahī hūm̐", "tum-m": "dabōc rahē hō", "tum-f": "dabōc rahī hō", "vah-m": "dabōc rahā hai", "vah-f": "dabōc rahī hai", "ham-m": "dabōc rahē haim̐", "ham-f": "dabōc rahī haim̐" }
+    - word: "hi-2803"
+      forms: { "main-m": "भुन रहा हूँ", "main-f": "भुन रही हूँ", "tum-m": "भुन रहे हो", "tum-f": "भुन रही हो", "vah-m": "भुन रहा है", "vah-f": "भुन रही है", "ham-m": "भुन रहे हैं", "ham-f": "भुन रही हैं" }
+      readings: { "main-m": "bhun rahā hūm̐", "main-f": "bhun rahī hūm̐", "tum-m": "bhun rahē hō", "tum-f": "bhun rahī hō", "vah-m": "bhun rahā hai", "vah-f": "bhun rahī hai", "ham-m": "bhun rahē haim̐", "ham-f": "bhun rahī haim̐" }
+    - word: "hi-2804"
+      forms: { "main-m": "चमका रहा हूँ", "main-f": "चमका रही हूँ", "tum-m": "चमका रहे हो", "tum-f": "चमका रही हो", "vah-m": "चमका रहा है", "vah-f": "चमका रही है", "ham-m": "चमका रहे हैं", "ham-f": "चमका रही हैं" }
+      readings: { "main-m": "camkā rahā hūm̐", "main-f": "camkā rahī hūm̐", "tum-m": "camkā rahē hō", "tum-f": "camkā rahī hō", "vah-m": "camkā rahā hai", "vah-f": "camkā rahī hai", "ham-m": "camkā rahē haim̐", "ham-f": "camkā rahī haim̐" }
+    - word: "hi-2805"
+      forms: { "main-m": "हिला रहा हूँ", "main-f": "हिला रही हूँ", "tum-m": "हिला रहे हो", "tum-f": "हिला रही हो", "vah-m": "हिला रहा है", "vah-f": "हिला रही है", "ham-m": "हिला रहे हैं", "ham-f": "हिला रही हैं" }
+      readings: { "main-m": "hilā rahā hūm̐", "main-f": "hilā rahī hūm̐", "tum-m": "hilā rahē hō", "tum-f": "hilā rahī hō", "vah-m": "hilā rahā hai", "vah-f": "hilā rahī hai", "ham-m": "hilā rahē haim̐", "ham-f": "hilā rahī haim̐" }
+    - word: "hi-2806"
+      forms: { "main-m": "हिल रहा हूँ", "main-f": "हिल रही हूँ", "tum-m": "हिल रहे हो", "tum-f": "हिल रही हो", "vah-m": "हिल रहा है", "vah-f": "हिल रही है", "ham-m": "हिल रहे हैं", "ham-f": "हिल रही हैं" }
+      readings: { "main-m": "hil rahā hūm̐", "main-f": "hil rahī hūm̐", "tum-m": "hil rahē hō", "tum-f": "hil rahī hō", "vah-m": "hil rahā hai", "vah-f": "hil rahī hai", "ham-m": "hil rahē haim̐", "ham-f": "hil rahī haim̐" }
+    - word: "hi-2807"
+      forms: { "main-m": "झूल रहा हूँ", "main-f": "झूल रही हूँ", "tum-m": "झूल रहे हो", "tum-f": "झूल रही हो", "vah-m": "झूल रहा है", "vah-f": "झूल रही है", "ham-m": "झूल रहे हैं", "ham-f": "झूल रही हैं" }
+      readings: { "main-m": "jhūl rahā hūm̐", "main-f": "jhūl rahī hūm̐", "tum-m": "jhūl rahē hō", "tum-f": "jhūl rahī hō", "vah-m": "jhūl rahā hai", "vah-f": "jhūl rahī hai", "ham-m": "jhūl rahē haim̐", "ham-f": "jhūl rahī haim̐" }
+    - word: "hi-2808"
+      forms: { "main-m": "झूला रहा हूँ", "main-f": "झूला रही हूँ", "tum-m": "झूला रहे हो", "tum-f": "झूला रही हो", "vah-m": "झूला रहा है", "vah-f": "झूला रही है", "ham-m": "झूला रहे हैं", "ham-f": "झूला रही हैं" }
+      readings: { "main-m": "jhūlā rahā hūm̐", "main-f": "jhūlā rahī hūm̐", "tum-m": "jhūlā rahē hō", "tum-f": "jhūlā rahī hō", "vah-m": "jhūlā rahā hai", "vah-f": "jhūlā rahī hai", "ham-m": "jhūlā rahē haim̐", "ham-f": "jhūlā rahī haim̐" }
+rules:
+  - id: "hi-rule-continuous-first"
+    slots: ["main-m", "main-f"]
+    words: [{ word: "रहा हूँ", reading: "rahā hūm̐" }, { word: "रही हूँ", reading: "rahī hūm̐" }, { word: "करना", reading: "karnā" }, { word: "कर रहा हूँ", reading: "kar rahā hūm̐" }, { word: "कर रही हूँ", reading: "kar rahī hūm̐" }, { word: "जाना", reading: "jānā" }, { word: "जा रहा हूँ", reading: "jā rahā hūm̐" }]
+  - id: "hi-rule-continuous-second"
+    slots: ["tum-m", "tum-f"]
+    words: [{ word: "रहे हो", reading: "rahē hō" }, { word: "रही हो", reading: "rahī hō" }, { word: "करना", reading: "karnā" }, { word: "कर रहे हो", reading: "kar rahē hō" }, { word: "कर रही हो", reading: "kar rahī hō" }, { word: "जाना", reading: "jānā" }, { word: "जा रहे हो", reading: "jā rahē hō" }]
+  - id: "hi-rule-continuous-third"
+    slots: ["vah-m", "vah-f"]
+    words: [{ word: "रहा है", reading: "rahā hai" }, { word: "रही है", reading: "rahī hai" }, { word: "करना", reading: "karnā" }, { word: "कर रहा है", reading: "kar rahā hai" }, { word: "कर रही है", reading: "kar rahī hai" }, { word: "जाना", reading: "jānā" }, { word: "जा रहा है", reading: "jā rahā hai" }, { word: "तू", reading: "tū" }]
+  - id: "hi-rule-continuous-plural"
+    slots: ["ham-m", "ham-f"]
+    words: [{ word: "रहे हैं", reading: "rahē haim̐" }, { word: "रही हैं", reading: "rahī haim̐" }, { word: "करना", reading: "karnā" }, { word: "कर रहे हैं", reading: "kar rahē haim̐" }, { word: "कर रही हैं", reading: "kar rahī haim̐" }, { word: "जाना", reading: "jānā" }, { word: "जा रहे हैं", reading: "jā rahē haim̐" }, { word: "आप", reading: "āp" }, { word: "वे", reading: "vē" }]

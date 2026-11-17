@@ -1,0 +1,43 @@
+schema: 1
+id: "hi-grammar-possessive-forms"
+part: "core"
+kind: "rules"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["pronoun"]
+    except: ["hi-0053", "hi-0134", "hi-0745", "hi-0746", "hi-0747", "hi-0748", "hi-0749", "hi-0750", "hi-0751", "hi-0758", "hi-0759"]
+  slots: ["fem", "masc-obl"]
+  rows:
+    - word: "hi-0752"
+      forms: { "fem": "मेरी", "masc-obl": "मेरे" }
+      readings: { "fem": "mērī", "masc-obl": "mērē" }
+    - word: "hi-0753"
+      forms: { "fem": "तेरी", "masc-obl": "तेरे" }
+      readings: { "fem": "tērī", "masc-obl": "tērē" }
+    - word: "hi-0754"
+      forms: { "fem": "तुम्हारी", "masc-obl": "तुम्हारे" }
+      readings: { "fem": "tumhārī", "masc-obl": "tumhārē" }
+    - word: "hi-0755"
+      forms: { "fem": "आपकी", "masc-obl": "आपके" }
+      readings: { "fem": "āpkī", "masc-obl": "āpkē" }
+    - word: "hi-0756"
+      forms: { "fem": "हमारी", "masc-obl": "हमारे" }
+      readings: { "fem": "hamārī", "masc-obl": "hamārē" }
+    - word: "hi-0757"
+      forms: { "fem": "उसकी", "masc-obl": "उसके" }
+      readings: { "fem": "uskī", "masc-obl": "uskē" }
+    - word: "hi-0760"
+      forms: { "fem": "अपनी", "masc-obl": "अपने" }
+      readings: { "fem": "apnī", "masc-obl": "apnē" }
+rules:
+  - id: "hi-rule-possessive-fem"
+    slots: ["fem"]
+    words: [{ word: "-ी", reading: "-ī" }, { word: "मेरा", reading: "mērā" }, { word: "मेरी", reading: "mērī" }, { word: "हमारा", reading: "hamārā" }, { word: "हमारी", reading: "hamārī" }, { word: "किताब", reading: "kitāb" }]
+  - id: "hi-rule-possessive-masc-obl"
+    slots: ["masc-obl"]
+    words: [{ word: "-े", reading: "-ē" }, { word: "मेरा", reading: "mērā" }, { word: "मेरे", reading: "mērē" }, { word: "हमारा", reading: "hamārā" }, { word: "हमारे", reading: "hamārē" }, { word: "कमरा", reading: "kamrā" }]

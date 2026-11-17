@@ -1,0 +1,23 @@
+schema: 1
+id: "hi-en-grammar-verb-past-continuous"
+kind: "layer"
+core: "hi-grammar-verb-past-continuous"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs: the past continuous"
+description: "Every verb the course teaches, in the past continuous (was doing), for a man or a woman and for one or many. The forms are written in Devanagari for now. Not yet checked by a Hindustani speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "m-sg": "was doing, masculine singular (he, or I or you as a man)"
+    "f-sg": "was doing, feminine singular (she, or I or you as a woman)"
+    "m-pl": "was doing, masculine plural (they, we, you respectful, men or a mixed group)"
+    "f-pl": "was doing, feminine plural (women)"
+rules:
+  "hi-rule-past-continuous-masc":
+    name: "रहा था, रहे थे (rahā thā, rahē thē): was doing, masculine"
+    explanation: "For a man the bare stem is followed by {1} for one and {2} for many: {3}, to do, gives {4} and {5}; {6}, to go, gives {7}."
+  "hi-rule-past-continuous-fem":
+    name: "रही थी, रही थीं (rahī thī, rahī thīm̐): was doing, feminine"
+    explanation: "For a woman the stem is followed by {1} for one and {2} for many: {3}, to do, gives {4} and {5}; {6}, to go, gives {7}."

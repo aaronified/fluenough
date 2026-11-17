@@ -1,0 +1,721 @@
+schema: 1
+id: "hi-grammar-verb-subjunctive"
+part: "core"
+kind: "rules"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["hi-0240", "hi-0273", "hi-0290", "hi-0460"]
+  slots: ["main", "tum", "vah", "ham"]
+  rows:
+    - word: "hi-0441"
+      forms: { "main": "उठूँ", "tum": "उठो", "vah": "उठे", "ham": "उठें" }
+      readings: { "main": "uṭhūm̐", "tum": "uṭhō", "vah": "uṭhē", "ham": "uṭhēm̐" }
+    - word: "hi-0442"
+      forms: { "main": "नहाऊँ", "tum": "नहाओ", "vah": "नहाए", "ham": "नहाएँ" }
+      readings: { "main": "nahāūm̐", "tum": "nahāō", "vah": "nahāē", "ham": "nahāēm̐" }
+    - word: "hi-0450"
+      forms: { "main": "सोऊँ", "tum": "सोओ", "vah": "सोए", "ham": "सोएँ" }
+      readings: { "main": "sōūm̐", "tum": "sōō", "vah": "sōē", "ham": "sōēm̐" }
+    - word: "hi-0513"
+      forms: { "main": "सकूँ", "tum": "सको", "vah": "सके", "ham": "सकें" }
+      readings: { "main": "sakūm̐", "tum": "sakō", "vah": "sakē", "ham": "sakēm̐" }
+    - word: "hi-0602"
+      forms: { "main": "पीऊँ", "tum": "पियो", "vah": "पिए", "ham": "पिएँ" }
+      readings: { "main": "pīūm̐", "tum": "piyō", "vah": "piē", "ham": "piēm̐" }
+    - word: "hi-0623"
+      forms: { "main": "हंसूँ", "tum": "हंसो", "vah": "हंसे", "ham": "हंसें" }
+      readings: { "main": "haṁsūm̐", "tum": "haṁsō", "vah": "haṁsē", "ham": "haṁsēm̐" }
+    - word: "hi-0777"
+      forms: { "main": "जाऊँ", "tum": "जाओ", "vah": "जाए", "ham": "जाएँ" }
+      readings: { "main": "jāūm̐", "tum": "jāō", "vah": "jāē", "ham": "jāēm̐" }
+    - word: "hi-0778"
+      forms: { "main": "आऊँ", "tum": "आओ", "vah": "आए", "ham": "आएँ" }
+      readings: { "main": "āūm̐", "tum": "āō", "vah": "āē", "ham": "āēm̐" }
+    - word: "hi-0779"
+      forms: { "main": "करूँ", "tum": "करो", "vah": "करे", "ham": "करें" }
+      readings: { "main": "karūm̐", "tum": "karō", "vah": "karē", "ham": "karēm̐" }
+    - word: "hi-0780"
+      forms: { "main": "हूँ", "tum": "हो", "vah": "हो", "ham": "हों" }
+      readings: { "main": "hūm̐", "tum": "hō", "vah": "hō", "ham": "hōm̐" }
+    - word: "hi-0781"
+      forms: { "main": "लिखूँ", "tum": "लिखो", "vah": "लिखे", "ham": "लिखें" }
+      readings: { "main": "likhūm̐", "tum": "likhō", "vah": "likhē", "ham": "likhēm̐" }
+    - word: "hi-0782"
+      forms: { "main": "बोलूँ", "tum": "बोलो", "vah": "बोले", "ham": "बोलें" }
+      readings: { "main": "bōlūm̐", "tum": "bōlō", "vah": "bōlē", "ham": "bōlēm̐" }
+    - word: "hi-0783"
+      forms: { "main": "सुनूँ", "tum": "सुनो", "vah": "सुने", "ham": "सुनें" }
+      readings: { "main": "sunūm̐", "tum": "sunō", "vah": "sunē", "ham": "sunēm̐" }
+    - word: "hi-0784"
+      forms: { "main": "देखूँ", "tum": "देखो", "vah": "देखे", "ham": "देखें" }
+      readings: { "main": "dēkhūm̐", "tum": "dēkhō", "vah": "dēkhē", "ham": "dēkhēm̐" }
+    - word: "hi-0785"
+      forms: { "main": "दूँ", "tum": "दो", "vah": "दे", "ham": "दें" }
+      readings: { "main": "dūm̐", "tum": "dō", "vah": "dē", "ham": "dēm̐" }
+    - word: "hi-0786"
+      forms: { "main": "लूँ", "tum": "लो", "vah": "ले", "ham": "लें" }
+      readings: { "main": "lūm̐", "tum": "lō", "vah": "lē", "ham": "lēm̐" }
+    - word: "hi-0787"
+      forms: { "main": "खेलूँ", "tum": "खेलो", "vah": "खेले", "ham": "खेलें" }
+      readings: { "main": "khēlūm̐", "tum": "khēlō", "vah": "khēlē", "ham": "khēlēm̐" }
+    - word: "hi-0788"
+      forms: { "main": "बैठूँ", "tum": "बैठो", "vah": "बैठे", "ham": "बैठें" }
+      readings: { "main": "baiṭhūm̐", "tum": "baiṭhō", "vah": "baiṭhē", "ham": "baiṭhēm̐" }
+    - word: "hi-0789"
+      forms: { "main": "समझूँ", "tum": "समझो", "vah": "समझे", "ham": "समझें" }
+      readings: { "main": "samjhūm̐", "tum": "samjhō", "vah": "samjhē", "ham": "samjhēm̐" }
+    - word: "hi-0790"
+      forms: { "main": "जानूँ", "tum": "जानो", "vah": "जाने", "ham": "जानें" }
+      readings: { "main": "jānūm̐", "tum": "jānō", "vah": "jānē", "ham": "jānēm̐" }
+    - word: "hi-0791"
+      forms: { "main": "रहूँ", "tum": "रहो", "vah": "रहे", "ham": "रहें" }
+      readings: { "main": "rahūm̐", "tum": "rahō", "vah": "rahē", "ham": "rahēm̐" }
+    - word: "hi-0792"
+      forms: { "main": "चाहूँ", "tum": "चाहो", "vah": "चाहे", "ham": "चाहें" }
+      readings: { "main": "cāhūm̐", "tum": "cāhō", "vah": "cāhē", "ham": "cāhēm̐" }
+    - word: "hi-0793"
+      forms: { "main": "मिलूँ", "tum": "मिलो", "vah": "मिले", "ham": "मिलें" }
+      readings: { "main": "milūm̐", "tum": "milō", "vah": "milē", "ham": "milēm̐" }
+    - word: "hi-0794"
+      forms: { "main": "ख़रीदूँ", "tum": "ख़रीदो", "vah": "ख़रीदे", "ham": "ख़रीदें" }
+      readings: { "main": "k͟harīdūm̐", "tum": "k͟harīdō", "vah": "k͟harīdē", "ham": "k͟harīdēm̐" }
+    - word: "hi-0795"
+      forms: { "main": "बेचूँ", "tum": "बेचो", "vah": "बेचे", "ham": "बेचें" }
+      readings: { "main": "bēcūm̐", "tum": "bēcō", "vah": "bēcē", "ham": "bēcēm̐" }
+    - word: "hi-0796"
+      forms: { "main": "बताऊँ", "tum": "बताओ", "vah": "बताए", "ham": "बताएँ" }
+      readings: { "main": "batāūm̐", "tum": "batāō", "vah": "batāē", "ham": "batāēm̐" }
+    - word: "hi-0797"
+      forms: { "main": "भेजूँ", "tum": "भेजो", "vah": "भेजे", "ham": "भेजें" }
+      readings: { "main": "bhējūm̐", "tum": "bhējō", "vah": "bhējē", "ham": "bhējēm̐" }
+    - word: "hi-0798"
+      forms: { "main": "धोऊँ", "tum": "धोओ", "vah": "धोए", "ham": "धोएँ" }
+      readings: { "main": "dhōūm̐", "tum": "dhōō", "vah": "dhōē", "ham": "dhōēm̐" }
+    - word: "hi-0799"
+      forms: { "main": "पूछूँ", "tum": "पूछो", "vah": "पूछे", "ham": "पूछें" }
+      readings: { "main": "pūchūm̐", "tum": "pūchō", "vah": "pūchē", "ham": "pūchēm̐" }
+    - word: "hi-0800"
+      forms: { "main": "कहूँ", "tum": "कहो", "vah": "कहे", "ham": "कहें" }
+      readings: { "main": "kahūm̐", "tum": "kahō", "vah": "kahē", "ham": "kahēm̐" }
+    - word: "hi-0801"
+      forms: { "main": "चलूँ", "tum": "चलो", "vah": "चले", "ham": "चलें" }
+      readings: { "main": "calūm̐", "tum": "calō", "vah": "calē", "ham": "calēm̐" }
+    - word: "hi-0937"
+      forms: { "main": "खोलूँ", "tum": "खोलो", "vah": "खोले", "ham": "खोलें" }
+      readings: { "main": "khōlūm̐", "tum": "khōlō", "vah": "khōlē", "ham": "khōlēm̐" }
+    - word: "hi-0938"
+      forms: { "main": "पकाऊँ", "tum": "पकाओ", "vah": "पकाए", "ham": "पकाएँ" }
+      readings: { "main": "pakāūm̐", "tum": "pakāō", "vah": "pakāē", "ham": "pakāēm̐" }
+    - word: "hi-0939"
+      forms: { "main": "काटूँ", "tum": "काटो", "vah": "काटे", "ham": "काटें" }
+      readings: { "main": "kāṭūm̐", "tum": "kāṭō", "vah": "kāṭē", "ham": "kāṭēm̐" }
+    - word: "hi-0940"
+      forms: { "main": "उबालूँ", "tum": "उबालो", "vah": "उबाले", "ham": "उबालें" }
+      readings: { "main": "ubālūm̐", "tum": "ubālō", "vah": "ubālē", "ham": "ubālēm̐" }
+    - word: "hi-0941"
+      forms: { "main": "डालूँ", "tum": "डालो", "vah": "डाले", "ham": "डालें" }
+      readings: { "main": "ḍālūm̐", "tum": "ḍālō", "vah": "ḍālē", "ham": "ḍālēm̐" }
+    - word: "hi-0942"
+      forms: { "main": "छानूँ", "tum": "छानो", "vah": "छाने", "ham": "छानें" }
+      readings: { "main": "chānūm̐", "tum": "chānō", "vah": "chānē", "ham": "chānēm̐" }
+    - word: "hi-0943"
+      forms: { "main": "परोसूँ", "tum": "परोसो", "vah": "परोसे", "ham": "परोसें" }
+      readings: { "main": "parōsūm̐", "tum": "parōsō", "vah": "parōsē", "ham": "parōsēm̐" }
+    - word: "hi-0944"
+      forms: { "main": "जागूँ", "tum": "जागो", "vah": "जागे", "ham": "जागें" }
+      readings: { "main": "jāgūm̐", "tum": "jāgō", "vah": "jāgē", "ham": "jāgēm̐" }
+    - word: "hi-0945"
+      forms: { "main": "भूलूँ", "tum": "भूलो", "vah": "भूले", "ham": "भूलें" }
+      readings: { "main": "bhūlūm̐", "tum": "bhūlō", "vah": "bhūlē", "ham": "bhūlēm̐" }
+    - word: "hi-0946"
+      forms: { "main": "दौड़ूँ", "tum": "दौड़ो", "vah": "दौड़े", "ham": "दौड़ें" }
+      readings: { "main": "dauṛūm̐", "tum": "dauṛō", "vah": "dauṛē", "ham": "dauṛēm̐" }
+    - word: "hi-0947"
+      forms: { "main": "गिरूँ", "tum": "गिरो", "vah": "गिरे", "ham": "गिरें" }
+      readings: { "main": "girūm̐", "tum": "girō", "vah": "girē", "ham": "girēm̐" }
+    - word: "hi-0948"
+      forms: { "main": "लौटूँ", "tum": "लौटो", "vah": "लौटे", "ham": "लौटें" }
+      readings: { "main": "lauṭūm̐", "tum": "lauṭō", "vah": "lauṭē", "ham": "lauṭēm̐" }
+    - word: "hi-0949"
+      forms: { "main": "लाऊँ", "tum": "लाओ", "vah": "लाए", "ham": "लाएँ" }
+      readings: { "main": "lāūm̐", "tum": "lāō", "vah": "lāē", "ham": "lāēm̐" }
+    - word: "hi-0950"
+      forms: { "main": "रखूँ", "tum": "रखो", "vah": "रखे", "ham": "रखें" }
+      readings: { "main": "rakhūm̐", "tum": "rakhō", "vah": "rakhē", "ham": "rakhēm̐" }
+    - word: "hi-0951"
+      forms: { "main": "छोड़ूँ", "tum": "छोड़ो", "vah": "छोड़े", "ham": "छोड़ें" }
+      readings: { "main": "chōṛūm̐", "tum": "chōṛō", "vah": "chōṛē", "ham": "chōṛēm̐" }
+    - word: "hi-0952"
+      forms: { "main": "सीखूँ", "tum": "सीखो", "vah": "सीखे", "ham": "सीखें" }
+      readings: { "main": "sīkhūm̐", "tum": "sīkhō", "vah": "sīkhē", "ham": "sīkhēm̐" }
+    - word: "hi-0953"
+      forms: { "main": "सोचूँ", "tum": "सोचो", "vah": "सोचे", "ham": "सोचें" }
+      readings: { "main": "sōcūm̐", "tum": "sōcō", "vah": "sōcē", "ham": "sōcēm̐" }
+    - word: "hi-0954"
+      forms: { "main": "सिखाऊँ", "tum": "सिखाओ", "vah": "सिखाए", "ham": "सिखाएँ" }
+      readings: { "main": "sikhāūm̐", "tum": "sikhāō", "vah": "sikhāē", "ham": "sikhāēm̐" }
+    - word: "hi-0955"
+      forms: { "main": "ढूँढूँ", "tum": "ढूँढो", "vah": "ढूँढे", "ham": "ढूँढें" }
+      readings: { "main": "ḍhūm̐ḍhūm̐", "tum": "ḍhūm̐ḍhō", "vah": "ḍhūm̐ḍhē", "ham": "ḍhūm̐ḍhēm̐" }
+    - word: "hi-0956"
+      forms: { "main": "जीतूँ", "tum": "जीतो", "vah": "जीते", "ham": "जीतें" }
+      readings: { "main": "jītūm̐", "tum": "jītō", "vah": "jītē", "ham": "jītēm̐" }
+    - word: "hi-0957"
+      forms: { "main": "हारूँ", "tum": "हारो", "vah": "हारे", "ham": "हारें" }
+      readings: { "main": "hārūm̐", "tum": "hārō", "vah": "hārē", "ham": "hārēm̐" }
+    - word: "hi-0958"
+      forms: { "main": "कमाऊँ", "tum": "कमाओ", "vah": "कमाए", "ham": "कमाएँ" }
+      readings: { "main": "kamāūm̐", "tum": "kamāō", "vah": "kamāē", "ham": "kamāēm̐" }
+    - word: "hi-0959"
+      forms: { "main": "हँसूँ", "tum": "हँसो", "vah": "हँसे", "ham": "हँसें" }
+      readings: { "main": "ham̐sūm̐", "tum": "ham̐sō", "vah": "ham̐sē", "ham": "ham̐sēm̐" }
+    - word: "hi-0960"
+      forms: { "main": "रोऊँ", "tum": "रोओ", "vah": "रोए", "ham": "रोएँ" }
+      readings: { "main": "rōūm̐", "tum": "rōō", "vah": "rōē", "ham": "rōēm̐" }
+    - word: "hi-0961"
+      forms: { "main": "बुलाऊँ", "tum": "बुलाओ", "vah": "बुलाए", "ham": "बुलाएँ" }
+      readings: { "main": "bulāūm̐", "tum": "bulāō", "vah": "bulāē", "ham": "bulāēm̐" }
+    - word: "hi-1287"
+      forms: { "main": "गरजूँ", "tum": "गरजो", "vah": "गरजे", "ham": "गरजें" }
+      readings: { "main": "garjūm̐", "tum": "garjō", "vah": "garjē", "ham": "garjēm̐" }
+    - word: "hi-1292"
+      forms: { "main": "बरसूँ", "tum": "बरसो", "vah": "बरसे", "ham": "बरसें" }
+      readings: { "main": "barsūm̐", "tum": "barsō", "vah": "barsē", "ham": "barsēm̐" }
+    - word: "hi-1293"
+      forms: { "main": "कड़कूँ", "tum": "कड़को", "vah": "कड़के", "ham": "कड़कें" }
+      readings: { "main": "kaṛkūm̐", "tum": "kaṛkō", "vah": "kaṛkē", "ham": "kaṛkēm̐" }
+    - word: "hi-1294"
+      forms: { "main": "चमकूँ", "tum": "चमको", "vah": "चमके", "ham": "चमकें" }
+      readings: { "main": "camkūm̐", "tum": "camkō", "vah": "camkē", "ham": "camkēm̐" }
+    - word: "hi-1334"
+      forms: { "main": "मनाऊँ", "tum": "मनाओ", "vah": "मनाए", "ham": "मनाएँ" }
+      readings: { "main": "manāūm̐", "tum": "manāō", "vah": "manāē", "ham": "manāēm̐" }
+    - word: "hi-1335"
+      forms: { "main": "जलाऊँ", "tum": "जलाओ", "vah": "जलाए", "ham": "जलाएँ" }
+      readings: { "main": "jalāūm̐", "tum": "jalāō", "vah": "jalāē", "ham": "jalāēm̐" }
+    - word: "hi-1336"
+      forms: { "main": "बाँटूँ", "tum": "बाँटो", "vah": "बाँटे", "ham": "बाँटें" }
+      readings: { "main": "bām̐ṭūm̐", "tum": "bām̐ṭō", "vah": "bām̐ṭē", "ham": "bām̐ṭēm̐" }
+    - word: "hi-1337"
+      forms: { "main": "सजाऊँ", "tum": "सजाओ", "vah": "सजाए", "ham": "सजाएँ" }
+      readings: { "main": "sajāūm̐", "tum": "sajāō", "vah": "sajāē", "ham": "sajāēm̐" }
+    - word: "hi-1364"
+      forms: { "main": "बदलूँ", "tum": "बदलो", "vah": "बदले", "ham": "बदलें" }
+      readings: { "main": "badlūm̐", "tum": "badlō", "vah": "badlē", "ham": "badlēm̐" }
+    - word: "hi-1385"
+      forms: { "main": "तौलूँ", "tum": "तौलो", "vah": "तौले", "ham": "तौलें" }
+      readings: { "main": "taulūm̐", "tum": "taulō", "vah": "taulē", "ham": "taulēm̐" }
+    - word: "hi-1460"
+      forms: { "main": "खाँसूँ", "tum": "खाँसो", "vah": "खाँसे", "ham": "खाँसें" }
+      readings: { "main": "khām̐sūm̐", "tum": "khām̐sō", "vah": "khām̐sē", "ham": "khām̐sēm̐" }
+    - word: "hi-1461"
+      forms: { "main": "छींकूँ", "tum": "छींको", "vah": "छींके", "ham": "छींकें" }
+      readings: { "main": "chīṅkūm̐", "tum": "chīṅkō", "vah": "chīṅkē", "ham": "chīṅkēm̐" }
+    - word: "hi-1462"
+      forms: { "main": "लेटूँ", "tum": "लेटो", "vah": "लेटे", "ham": "लेटें" }
+      readings: { "main": "lēṭūm̐", "tum": "lēṭō", "vah": "lēṭē", "ham": "lēṭēm̐" }
+    - word: "hi-1463"
+      forms: { "main": "दुखूँ", "tum": "दुखो", "vah": "दुखे", "ham": "दुखें" }
+      readings: { "main": "dukhūm̐", "tum": "dukhō", "vah": "dukhē", "ham": "dukhēm̐" }
+    - word: "hi-1496"
+      forms: { "main": "तलूँ", "tum": "तलो", "vah": "तले", "ham": "तलें" }
+      readings: { "main": "talūm̐", "tum": "talō", "vah": "talē", "ham": "talēm̐" }
+    - word: "hi-1497"
+      forms: { "main": "भूनूँ", "tum": "भूनो", "vah": "भूने", "ham": "भूनें" }
+      readings: { "main": "bhūnūm̐", "tum": "bhūnō", "vah": "bhūnē", "ham": "bhūnēm̐" }
+    - word: "hi-1498"
+      forms: { "main": "छीलूँ", "tum": "छीलो", "vah": "छीले", "ham": "छीलें" }
+      readings: { "main": "chīlūm̐", "tum": "chīlō", "vah": "chīlē", "ham": "chīlēm̐" }
+    - word: "hi-1499"
+      forms: { "main": "पीसूँ", "tum": "पीसो", "vah": "पीसे", "ham": "पीसें" }
+      readings: { "main": "pīsūm̐", "tum": "pīsō", "vah": "pīsē", "ham": "pīsēm̐" }
+    - word: "hi-1500"
+      forms: { "main": "गूँधूँ", "tum": "गूँधो", "vah": "गूँधे", "ham": "गूँधें" }
+      readings: { "main": "gūm̐dhūm̐", "tum": "gūm̐dhō", "vah": "gūm̐dhē", "ham": "gūm̐dhēm̐" }
+    - word: "hi-1501"
+      forms: { "main": "बेलूँ", "tum": "बेलो", "vah": "बेले", "ham": "बेलें" }
+      readings: { "main": "bēlūm̐", "tum": "bēlō", "vah": "bēlē", "ham": "bēlēm̐" }
+    - word: "hi-1502"
+      forms: { "main": "बनाऊँ", "tum": "बनाओ", "vah": "बनाए", "ham": "बनाएँ" }
+      readings: { "main": "banāūm̐", "tum": "banāō", "vah": "banāē", "ham": "banāēm̐" }
+    - word: "hi-1503"
+      forms: { "main": "सेंकूँ", "tum": "सेंको", "vah": "सेंके", "ham": "सेंकें" }
+      readings: { "main": "sēṅkūm̐", "tum": "sēṅkō", "vah": "sēṅkē", "ham": "sēṅkēm̐" }
+    - word: "hi-1504"
+      forms: { "main": "मिलाऊँ", "tum": "मिलाओ", "vah": "मिलाए", "ham": "मिलाएँ" }
+      readings: { "main": "milāūm̐", "tum": "milāō", "vah": "milāē", "ham": "milāēm̐" }
+    - word: "hi-1601"
+      forms: { "main": "पढ़ाऊँ", "tum": "पढ़ाओ", "vah": "पढ़ाए", "ham": "पढ़ाएँ" }
+      readings: { "main": "paṛhāūm̐", "tum": "paṛhāō", "vah": "paṛhāē", "ham": "paṛhāēm̐" }
+    - word: "hi-1639"
+      forms: { "main": "गाऊँ", "tum": "गाओ", "vah": "गाए", "ham": "गाएँ" }
+      readings: { "main": "gāūm̐", "tum": "gāō", "vah": "gāē", "ham": "gāēm̐" }
+    - word: "hi-1642"
+      forms: { "main": "नाचूँ", "tum": "नाचो", "vah": "नाचे", "ham": "नाचें" }
+      readings: { "main": "nācūm̐", "tum": "nācō", "vah": "nācē", "ham": "nācēm̐" }
+    - word: "hi-1644"
+      forms: { "main": "तैरूँ", "tum": "तैरो", "vah": "तैरे", "ham": "तैरें" }
+      readings: { "main": "tairūm̐", "tum": "tairō", "vah": "tairē", "ham": "tairēm̐" }
+    - word: "hi-1661"
+      forms: { "main": "घूमूँ", "tum": "घूमो", "vah": "घूमे", "ham": "घूमें" }
+      readings: { "main": "ghūmūm̐", "tum": "ghūmō", "vah": "ghūmē", "ham": "ghūmēm̐" }
+    - word: "hi-1662"
+      forms: { "main": "टहलूँ", "tum": "टहलो", "vah": "टहले", "ham": "टहलें" }
+      readings: { "main": "ṭahlūm̐", "tum": "ṭahlō", "vah": "ṭahlē", "ham": "ṭahlēm̐" }
+    - word: "hi-1725"
+      forms: { "main": "झाड़ूँ", "tum": "झाड़ो", "vah": "झाड़े", "ham": "झाड़ें" }
+      readings: { "main": "jhāṛūm̐", "tum": "jhāṛō", "vah": "jhāṛē", "ham": "jhāṛēm̐" }
+    - word: "hi-1726"
+      forms: { "main": "पोंछूँ", "tum": "पोंछो", "vah": "पोंछे", "ham": "पोंछें" }
+      readings: { "main": "pōñchūm̐", "tum": "pōñchō", "vah": "pōñchē", "ham": "pōñchēm̐" }
+    - word: "hi-1727"
+      forms: { "main": "सुखाऊँ", "tum": "सुखाओ", "vah": "सुखाए", "ham": "सुखाएँ" }
+      readings: { "main": "sukhāūm̐", "tum": "sukhāō", "vah": "sukhāē", "ham": "sukhāēm̐" }
+    - word: "hi-1728"
+      forms: { "main": "सूखूँ", "tum": "सूखो", "vah": "सूखे", "ham": "सूखें" }
+      readings: { "main": "sūkhūm̐", "tum": "sūkhō", "vah": "sūkhē", "ham": "sūkhēm̐" }
+    - word: "hi-1729"
+      forms: { "main": "निकालूँ", "tum": "निकालो", "vah": "निकाले", "ham": "निकालें" }
+      readings: { "main": "nikālūm̐", "tum": "nikālō", "vah": "nikālē", "ham": "nikālēm̐" }
+    - word: "hi-1730"
+      forms: { "main": "फेंकूँ", "tum": "फेंको", "vah": "फेंके", "ham": "फेंकें" }
+      readings: { "main": "phēṅkūm̐", "tum": "phēṅkō", "vah": "phēṅkē", "ham": "phēṅkēm̐" }
+    - word: "hi-1731"
+      forms: { "main": "उठाऊँ", "tum": "उठाओ", "vah": "उठाए", "ham": "उठाएँ" }
+      readings: { "main": "uṭhāūm̐", "tum": "uṭhāō", "vah": "uṭhāē", "ham": "uṭhāēm̐" }
+    - word: "hi-1732"
+      forms: { "main": "भरूँ", "tum": "भरो", "vah": "भरे", "ham": "भरें" }
+      readings: { "main": "bharūm̐", "tum": "bharō", "vah": "bharē", "ham": "bharēm̐" }
+    - word: "hi-1733"
+      forms: { "main": "फैलाऊँ", "tum": "फैलाओ", "vah": "फैलाए", "ham": "फैलाएँ" }
+      readings: { "main": "phailāūm̐", "tum": "phailāō", "vah": "phailāē", "ham": "phailāēm̐" }
+    - word: "hi-1734"
+      forms: { "main": "समेटूँ", "tum": "समेटो", "vah": "समेटे", "ham": "समेटें" }
+      readings: { "main": "samēṭūm̐", "tum": "samēṭō", "vah": "samēṭē", "ham": "samēṭēm̐" }
+    - word: "hi-1735"
+      forms: { "main": "भीगूँ", "tum": "भीगो", "vah": "भीगे", "ham": "भीगें" }
+      readings: { "main": "bhīgūm̐", "tum": "bhīgō", "vah": "bhīgē", "ham": "bhīgēm̐" }
+    - word: "hi-1736"
+      forms: { "main": "उतारूँ", "tum": "उतारो", "vah": "उतारे", "ham": "उतारें" }
+      readings: { "main": "utārūm̐", "tum": "utārō", "vah": "utārē", "ham": "utārēm̐" }
+    - word: "hi-1737"
+      forms: { "main": "चढ़ाऊँ", "tum": "चढ़ाओ", "vah": "चढ़ाए", "ham": "चढ़ाएँ" }
+      readings: { "main": "caṛhāūm̐", "tum": "caṛhāō", "vah": "caṛhāē", "ham": "caṛhāēm̐" }
+    - word: "hi-1740"
+      forms: { "main": "टूटूँ", "tum": "टूटो", "vah": "टूटे", "ham": "टूटें" }
+      readings: { "main": "ṭūṭūm̐", "tum": "ṭūṭō", "vah": "ṭūṭē", "ham": "ṭūṭēm̐" }
+    - word: "hi-1779"
+      forms: { "main": "दिखूँ", "tum": "दिखो", "vah": "दिखे", "ham": "दिखें" }
+      readings: { "main": "dikhūm̐", "tum": "dikhō", "vah": "dikhē", "ham": "dikhēm̐" }
+    - word: "hi-1780"
+      forms: { "main": "लगूँ", "tum": "लगो", "vah": "लगे", "ham": "लगें" }
+      readings: { "main": "lagūm̐", "tum": "lagō", "vah": "lagē", "ham": "lagēm̐" }
+    - word: "hi-1781"
+      forms: { "main": "सजूँ", "tum": "सजो", "vah": "सजे", "ham": "सजें" }
+      readings: { "main": "sajūm̐", "tum": "sajō", "vah": "sajē", "ham": "sajēm̐" }
+    - word: "hi-1782"
+      forms: { "main": "पहनूँ", "tum": "पहनो", "vah": "पहने", "ham": "पहनें" }
+      readings: { "main": "pahnūm̐", "tum": "pahnō", "vah": "pahnē", "ham": "pahnēm̐" }
+    - word: "hi-1783"
+      forms: { "main": "मुस्कुराऊँ", "tum": "मुस्कुराओ", "vah": "मुस्कुराए", "ham": "मुस्कुराएँ" }
+      readings: { "main": "muskurāūm̐", "tum": "muskurāō", "vah": "muskurāē", "ham": "muskurāēm̐" }
+    - word: "hi-1785"
+      forms: { "main": "निखरूँ", "tum": "निखरो", "vah": "निखरे", "ham": "निखरें" }
+      readings: { "main": "nikhrūm̐", "tum": "nikhrō", "vah": "nikhrē", "ham": "nikhrēm̐" }
+    - word: "hi-1795"
+      forms: { "main": "ओढ़ूँ", "tum": "ओढ़ो", "vah": "ओढ़े", "ham": "ओढ़ें" }
+      readings: { "main": "ōṛhūm̐", "tum": "ōṛhō", "vah": "ōṛhē", "ham": "ōṛhēm̐" }
+    - word: "hi-1796"
+      forms: { "main": "बिछाऊँ", "tum": "बिछाओ", "vah": "बिछाए", "ham": "बिछाएँ" }
+      readings: { "main": "bichāūm̐", "tum": "bichāō", "vah": "bichāē", "ham": "bichāēm̐" }
+    - word: "hi-1797"
+      forms: { "main": "छुऊँ", "tum": "छुओ", "vah": "छुए", "ham": "छुएँ" }
+      readings: { "main": "chuūm̐", "tum": "chuō", "vah": "chuē", "ham": "chuēm̐" }
+    - word: "hi-1798"
+      forms: { "main": "पकड़ूँ", "tum": "पकड़ो", "vah": "पकड़े", "ham": "पकड़ें" }
+      readings: { "main": "pakṛūm̐", "tum": "pakṛō", "vah": "pakṛē", "ham": "pakṛēm̐" }
+    - word: "hi-1799"
+      forms: { "main": "खींचूँ", "tum": "खींचो", "vah": "खींचे", "ham": "खींचें" }
+      readings: { "main": "khīñcūm̐", "tum": "khīñcō", "vah": "khīñcē", "ham": "khīñcēm̐" }
+    - word: "hi-1800"
+      forms: { "main": "धकेलूँ", "tum": "धकेलो", "vah": "धकेले", "ham": "धकेलें" }
+      readings: { "main": "dhakēlūm̐", "tum": "dhakēlō", "vah": "dhakēlē", "ham": "dhakēlēm̐" }
+    - word: "hi-1801"
+      forms: { "main": "फँसूँ", "tum": "फँसो", "vah": "फँसे", "ham": "फँसें" }
+      readings: { "main": "pham̐sūm̐", "tum": "pham̐sō", "vah": "pham̐sē", "ham": "pham̐sēm̐" }
+    - word: "hi-1802"
+      forms: { "main": "मारूँ", "tum": "मारो", "vah": "मारे", "ham": "मारें" }
+      readings: { "main": "mārūm̐", "tum": "mārō", "vah": "mārē", "ham": "mārēm̐" }
+    - word: "hi-1803"
+      forms: { "main": "झुकूँ", "tum": "झुको", "vah": "झुके", "ham": "झुकें" }
+      readings: { "main": "jhukūm̐", "tum": "jhukō", "vah": "jhukē", "ham": "jhukēm̐" }
+    - word: "hi-1804"
+      forms: { "main": "चलाऊँ", "tum": "चलाओ", "vah": "चलाए", "ham": "चलाएँ" }
+      readings: { "main": "calāūm̐", "tum": "calāō", "vah": "calāē", "ham": "calāēm̐" }
+    - word: "hi-1805"
+      forms: { "main": "मिटाऊँ", "tum": "मिटाओ", "vah": "मिटाए", "ham": "मिटाएँ" }
+      readings: { "main": "miṭāūm̐", "tum": "miṭāō", "vah": "miṭāē", "ham": "miṭāēm̐" }
+    - word: "hi-1806"
+      forms: { "main": "खोजूँ", "tum": "खोजो", "vah": "खोजे", "ham": "खोजें" }
+      readings: { "main": "khōjūm̐", "tum": "khōjō", "vah": "khōjē", "ham": "khōjēm̐" }
+    - word: "hi-1807"
+      forms: { "main": "गिनूँ", "tum": "गिनो", "vah": "गिने", "ham": "गिनें" }
+      readings: { "main": "ginūm̐", "tum": "ginō", "vah": "ginē", "ham": "ginēm̐" }
+    - word: "hi-1808"
+      forms: { "main": "नापूँ", "tum": "नापो", "vah": "नापे", "ham": "नापें" }
+      readings: { "main": "nāpūm̐", "tum": "nāpō", "vah": "nāpē", "ham": "nāpēm̐" }
+    - word: "hi-1809"
+      forms: { "main": "जोड़ूँ", "tum": "जोड़ो", "vah": "जोड़े", "ham": "जोड़ें" }
+      readings: { "main": "jōṛūm̐", "tum": "jōṛō", "vah": "jōṛē", "ham": "jōṛēm̐" }
+    - word: "hi-1810"
+      forms: { "main": "घटाऊँ", "tum": "घटाओ", "vah": "घटाए", "ham": "घटाएँ" }
+      readings: { "main": "ghaṭāūm̐", "tum": "ghaṭāō", "vah": "ghaṭāē", "ham": "ghaṭāēm̐" }
+    - word: "hi-1811"
+      forms: { "main": "बाँधूँ", "tum": "बाँधो", "vah": "बाँधे", "ham": "बाँधें" }
+      readings: { "main": "bām̐dhūm̐", "tum": "bām̐dhō", "vah": "bām̐dhē", "ham": "bām̐dhēm̐" }
+    - word: "hi-1812"
+      forms: { "main": "गिराऊँ", "tum": "गिराओ", "vah": "गिराए", "ham": "गिराएँ" }
+      readings: { "main": "girāūm̐", "tum": "girāō", "vah": "girāē", "ham": "girāēm̐" }
+    - word: "hi-1813"
+      forms: { "main": "रोकूँ", "tum": "रोको", "vah": "रोके", "ham": "रोकें" }
+      readings: { "main": "rōkūm̐", "tum": "rōkō", "vah": "rōkē", "ham": "rōkēm̐" }
+    - word: "hi-1814"
+      forms: { "main": "छुपाऊँ", "tum": "छुपाओ", "vah": "छुपाए", "ham": "छुपाएँ" }
+      readings: { "main": "chupāūm̐", "tum": "chupāō", "vah": "chupāē", "ham": "chupāēm̐" }
+    - word: "hi-1815"
+      forms: { "main": "दिखाऊँ", "tum": "दिखाओ", "vah": "दिखाए", "ham": "दिखाएँ" }
+      readings: { "main": "dikhāūm̐", "tum": "dikhāō", "vah": "dikhāē", "ham": "dikhāēm̐" }
+    - word: "hi-1816"
+      forms: { "main": "चुनूँ", "tum": "चुनो", "vah": "चुने", "ham": "चुनें" }
+      readings: { "main": "cunūm̐", "tum": "cunō", "vah": "cunē", "ham": "cunēm̐" }
+    - word: "hi-1817"
+      forms: { "main": "फोड़ूँ", "tum": "फोड़ो", "vah": "फोड़े", "ham": "फोड़ें" }
+      readings: { "main": "phōṛūm̐", "tum": "phōṛō", "vah": "phōṛē", "ham": "phōṛēm̐" }
+    - word: "hi-1818"
+      forms: { "main": "टपकूँ", "tum": "टपको", "vah": "टपके", "ham": "टपकें" }
+      readings: { "main": "ṭapkūm̐", "tum": "ṭapkō", "vah": "ṭapkē", "ham": "ṭapkēm̐" }
+    - word: "hi-1819"
+      forms: { "main": "भागूँ", "tum": "भागो", "vah": "भागे", "ham": "भागें" }
+      readings: { "main": "bhāgūm̐", "tum": "bhāgō", "vah": "bhāgē", "ham": "bhāgēm̐" }
+    - word: "hi-1820"
+      forms: { "main": "चिल्लाऊँ", "tum": "चिल्लाओ", "vah": "चिल्लाए", "ham": "चिल्लाएँ" }
+      readings: { "main": "cillāūm̐", "tum": "cillāō", "vah": "cillāē", "ham": "cillāēm̐" }
+    - word: "hi-1821"
+      forms: { "main": "सहूँ", "tum": "सहो", "vah": "सहे", "ham": "सहें" }
+      readings: { "main": "sahūm̐", "tum": "sahō", "vah": "sahē", "ham": "sahēm̐" }
+    - word: "hi-1822"
+      forms: { "main": "समझाऊँ", "tum": "समझाओ", "vah": "समझाए", "ham": "समझाएँ" }
+      readings: { "main": "samjhāūm̐", "tum": "samjhāō", "vah": "samjhāē", "ham": "samjhāēm̐" }
+    - word: "hi-1823"
+      forms: { "main": "डरूँ", "tum": "डरो", "vah": "डरे", "ham": "डरें" }
+      readings: { "main": "ḍarūm̐", "tum": "ḍarō", "vah": "ḍarē", "ham": "ḍarēm̐" }
+    - word: "hi-1824"
+      forms: { "main": "सुलझाऊँ", "tum": "सुलझाओ", "vah": "सुलझाए", "ham": "सुलझाएँ" }
+      readings: { "main": "suljhāūm̐", "tum": "suljhāō", "vah": "suljhāē", "ham": "suljhāēm̐" }
+    - word: "hi-1825"
+      forms: { "main": "बचाऊँ", "tum": "बचाओ", "vah": "बचाए", "ham": "बचाएँ" }
+      readings: { "main": "bacāūm̐", "tum": "bacāō", "vah": "bacāē", "ham": "bacāēm̐" }
+    - word: "hi-1826"
+      forms: { "main": "बचूँ", "tum": "बचो", "vah": "बचे", "ham": "बचें" }
+      readings: { "main": "bacūm̐", "tum": "bacō", "vah": "bacē", "ham": "bacēm̐" }
+    - word: "hi-1827"
+      forms: { "main": "पाऊँ", "tum": "पाओ", "vah": "पाए", "ham": "पाएँ" }
+      readings: { "main": "pāūm̐", "tum": "pāō", "vah": "pāē", "ham": "pāēm̐" }
+    - word: "hi-1828"
+      forms: { "main": "दबाऊँ", "tum": "दबाओ", "vah": "दबाए", "ham": "दबाएँ" }
+      readings: { "main": "dabāūm̐", "tum": "dabāō", "vah": "dabāē", "ham": "dabāēm̐" }
+    - word: "hi-1829"
+      forms: { "main": "लपेटूँ", "tum": "लपेटो", "vah": "लपेटे", "ham": "लपेटें" }
+      readings: { "main": "lapēṭūm̐", "tum": "lapēṭō", "vah": "lapēṭē", "ham": "lapēṭēm̐" }
+    - word: "hi-1830"
+      forms: { "main": "टाँगूँ", "tum": "टाँगो", "vah": "टाँगे", "ham": "टाँगें" }
+      readings: { "main": "ṭām̐gūm̐", "tum": "ṭām̐gō", "vah": "ṭām̐gē", "ham": "ṭām̐gēm̐" }
+    - word: "hi-1831"
+      forms: { "main": "लटकाऊँ", "tum": "लटकाओ", "vah": "लटकाए", "ham": "लटकाएँ" }
+      readings: { "main": "laṭkāūm̐", "tum": "laṭkāō", "vah": "laṭkāē", "ham": "laṭkāēm̐" }
+    - word: "hi-1832"
+      forms: { "main": "चिपकाऊँ", "tum": "चिपकाओ", "vah": "चिपकाए", "ham": "चिपकाएँ" }
+      readings: { "main": "cipkāūm̐", "tum": "cipkāō", "vah": "cipkāē", "ham": "cipkāēm̐" }
+    - word: "hi-1833"
+      forms: { "main": "बनूँ", "tum": "बनो", "vah": "बने", "ham": "बनें" }
+      readings: { "main": "banūm̐", "tum": "banō", "vah": "banē", "ham": "banēm̐" }
+    - word: "hi-1834"
+      forms: { "main": "ढकूँ", "tum": "ढको", "vah": "ढके", "ham": "ढकें" }
+      readings: { "main": "ḍhakūm̐", "tum": "ḍhakō", "vah": "ḍhakē", "ham": "ḍhakēm̐" }
+    - word: "hi-1835"
+      forms: { "main": "खिलाऊँ", "tum": "खिलाओ", "vah": "खिलाए", "ham": "खिलाएँ" }
+      readings: { "main": "khilāūm̐", "tum": "khilāō", "vah": "khilāē", "ham": "khilāēm̐" }
+    - word: "hi-1836"
+      forms: { "main": "पिलाऊँ", "tum": "पिलाओ", "vah": "पिलाए", "ham": "पिलाएँ" }
+      readings: { "main": "pilāūm̐", "tum": "pilāō", "vah": "pilāē", "ham": "pilāēm̐" }
+    - word: "hi-1837"
+      forms: { "main": "जगाऊँ", "tum": "जगाओ", "vah": "जगाए", "ham": "जगाएँ" }
+      readings: { "main": "jagāūm̐", "tum": "jagāō", "vah": "jagāē", "ham": "jagāēm̐" }
+    - word: "hi-1838"
+      forms: { "main": "उगाऊँ", "tum": "उगाओ", "vah": "उगाए", "ham": "उगाएँ" }
+      readings: { "main": "ugāūm̐", "tum": "ugāō", "vah": "ugāē", "ham": "ugāēm̐" }
+    - word: "hi-1878"
+      forms: { "main": "बजूँ", "tum": "बजो", "vah": "बजे", "ham": "बजें" }
+      readings: { "main": "bajūm̐", "tum": "bajō", "vah": "bajē", "ham": "bajēm̐" }
+    - word: "hi-1913"
+      forms: { "main": "पहुँचूँ", "tum": "पहुँचो", "vah": "पहुँचे", "ham": "पहुँचें" }
+      readings: { "main": "pahum̐cūm̐", "tum": "pahum̐cō", "vah": "pahum̐cē", "ham": "pahum̐cēm̐" }
+    - word: "hi-1914"
+      forms: { "main": "रुकूँ", "tum": "रुको", "vah": "रुके", "ham": "रुकें" }
+      readings: { "main": "rukūm̐", "tum": "rukō", "vah": "rukē", "ham": "rukēm̐" }
+    - word: "hi-1915"
+      forms: { "main": "ठहरूँ", "tum": "ठहरो", "vah": "ठहरे", "ham": "ठहरें" }
+      readings: { "main": "ṭhahrūm̐", "tum": "ṭhahrō", "vah": "ṭhahrē", "ham": "ṭhahrēm̐" }
+    - word: "hi-1916"
+      forms: { "main": "चढ़ूँ", "tum": "चढ़ो", "vah": "चढ़े", "ham": "चढ़ें" }
+      readings: { "main": "caṛhūm̐", "tum": "caṛhō", "vah": "caṛhē", "ham": "caṛhēm̐" }
+    - word: "hi-1917"
+      forms: { "main": "उतरूँ", "tum": "उतरो", "vah": "उतरे", "ham": "उतरें" }
+      readings: { "main": "utrūm̐", "tum": "utrō", "vah": "utrē", "ham": "utrēm̐" }
+    - word: "hi-1918"
+      forms: { "main": "छूटूँ", "tum": "छूटो", "vah": "छूटे", "ham": "छूटें" }
+      readings: { "main": "chūṭūm̐", "tum": "chūṭō", "vah": "chūṭē", "ham": "chūṭēm̐" }
+    - word: "hi-1919"
+      forms: { "main": "खोऊँ", "tum": "खोओ", "vah": "खोए", "ham": "खोएँ" }
+      readings: { "main": "khōūm̐", "tum": "khōō", "vah": "khōē", "ham": "khōēm̐" }
+    - word: "hi-1950"
+      forms: { "main": "उगूँ", "tum": "उगो", "vah": "उगे", "ham": "उगें" }
+      readings: { "main": "ugūm̐", "tum": "ugō", "vah": "ugē", "ham": "ugēm̐" }
+    - word: "hi-1951"
+      forms: { "main": "बहूँ", "tum": "बहो", "vah": "बहे", "ham": "बहें" }
+      readings: { "main": "bahūm̐", "tum": "bahō", "vah": "bahē", "ham": "bahēm̐" }
+    - word: "hi-1952"
+      forms: { "main": "खिलूँ", "tum": "खिलो", "vah": "खिले", "ham": "खिलें" }
+      readings: { "main": "khilūm̐", "tum": "khilō", "vah": "khilē", "ham": "khilēm̐" }
+    - word: "hi-1953"
+      forms: { "main": "झड़ूँ", "tum": "झड़ो", "vah": "झड़े", "ham": "झड़ें" }
+      readings: { "main": "jhaṛūm̐", "tum": "jhaṛō", "vah": "jhaṛē", "ham": "jhaṛēm̐" }
+    - word: "hi-1954"
+      forms: { "main": "फैलूँ", "tum": "फैलो", "vah": "फैले", "ham": "फैलें" }
+      readings: { "main": "phailūm̐", "tum": "phailō", "vah": "phailē", "ham": "phailēm̐" }
+    - word: "hi-1955"
+      forms: { "main": "डूबूँ", "tum": "डूबो", "vah": "डूबे", "ham": "डूबें" }
+      readings: { "main": "ḍūbūm̐", "tum": "ḍūbō", "vah": "ḍūbē", "ham": "ḍūbēm̐" }
+    - word: "hi-1956"
+      forms: { "main": "उड़ूँ", "tum": "उड़ो", "vah": "उड़े", "ham": "उड़ें" }
+      readings: { "main": "uṛūm̐", "tum": "uṛō", "vah": "uṛē", "ham": "uṛēm̐" }
+    - word: "hi-1957"
+      forms: { "main": "चहचहाऊँ", "tum": "चहचहाओ", "vah": "चहचहाए", "ham": "चहचहाएँ" }
+      readings: { "main": "cahchāūm̐", "tum": "cahchāō", "vah": "cahchāē", "ham": "cahchāēm̐" }
+    - word: "hi-2029"
+      forms: { "main": "सौंपूँ", "tum": "सौंपो", "vah": "सौंपे", "ham": "सौंपें" }
+      readings: { "main": "saumpūm̐", "tum": "saumpō", "vah": "saumpē", "ham": "saumpēm̐" }
+    - word: "hi-2030"
+      forms: { "main": "निपटाऊँ", "tum": "निपटाओ", "vah": "निपटाए", "ham": "निपटाएँ" }
+      readings: { "main": "nipṭāūm̐", "tum": "nipṭāō", "vah": "nipṭāē", "ham": "nipṭāēm̐" }
+    - word: "hi-2031"
+      forms: { "main": "संभालूँ", "tum": "संभालो", "vah": "संभाले", "ham": "संभालें" }
+      readings: { "main": "sambhālūm̐", "tum": "sambhālō", "vah": "sambhālē", "ham": "sambhālēm̐" }
+    - word: "hi-2091"
+      forms: { "main": "सूजूँ", "tum": "सूजो", "vah": "सूजे", "ham": "सूजें" }
+      readings: { "main": "sūjūm̐", "tum": "sūjō", "vah": "sūjē", "ham": "sūjēm̐" }
+    - word: "hi-2137"
+      forms: { "main": "घबराऊँ", "tum": "घबराओ", "vah": "घबराए", "ham": "घबराएँ" }
+      readings: { "main": "ghabrāūm̐", "tum": "ghabrāō", "vah": "ghabrāē", "ham": "ghabrāēm̐" }
+    - word: "hi-2138"
+      forms: { "main": "झुंझलाऊँ", "tum": "झुंझलाओ", "vah": "झुंझलाए", "ham": "झुंझलाएँ" }
+      readings: { "main": "jhuñjhalāūm̐", "tum": "jhuñjhalāō", "vah": "jhuñjhalāē", "ham": "jhuñjhalāēm̐" }
+    - word: "hi-2139"
+      forms: { "main": "चिढ़ूँ", "tum": "चिढ़ो", "vah": "चिढ़े", "ham": "चिढ़ें" }
+      readings: { "main": "ciṛhūm̐", "tum": "ciṛhō", "vah": "ciṛhē", "ham": "ciṛhēm̐" }
+    - word: "hi-2140"
+      forms: { "main": "शर्माऊँ", "tum": "शर्माओ", "vah": "शर्माए", "ham": "शर्माएँ" }
+      readings: { "main": "śarmāūm̐", "tum": "śarmāō", "vah": "śarmāē", "ham": "śarmāēm̐" }
+    - word: "hi-2172"
+      forms: { "main": "छपूँ", "tum": "छपो", "vah": "छपे", "ham": "छपें" }
+      readings: { "main": "chapūm̐", "tum": "chapō", "vah": "chapē", "ham": "chapēm̐" }
+    - word: "hi-2173"
+      forms: { "main": "सुनाऊँ", "tum": "सुनाओ", "vah": "सुनाए", "ham": "सुनाएँ" }
+      readings: { "main": "sunāūm̐", "tum": "sunāō", "vah": "sunāē", "ham": "sunāēm̐" }
+    - word: "hi-2184"
+      forms: { "main": "मानूँ", "tum": "मानो", "vah": "माने", "ham": "मानें" }
+      readings: { "main": "mānūm̐", "tum": "mānō", "vah": "mānē", "ham": "mānēm̐" }
+    - word: "hi-2205"
+      forms: { "main": "सुझाऊँ", "tum": "सुझाओ", "vah": "सुझाए", "ham": "सुझाएँ" }
+      readings: { "main": "sujhāūm̐", "tum": "sujhāō", "vah": "sujhāē", "ham": "sujhāēm̐" }
+    - word: "hi-2207"
+      forms: { "main": "स्वीकारूँ", "tum": "स्वीकारो", "vah": "स्वीकारे", "ham": "स्वीकारें" }
+      readings: { "main": "svīkārūm̐", "tum": "svīkārō", "vah": "svīkārē", "ham": "svīkārēm̐" }
+    - word: "hi-2229"
+      forms: { "main": "घुमाऊँ", "tum": "घुमाओ", "vah": "घुमाए", "ham": "घुमाएँ" }
+      readings: { "main": "ghumāūm̐", "tum": "ghumāō", "vah": "ghumāē", "ham": "ghumāēm̐" }
+    - word: "hi-2581"
+      forms: { "main": "झगड़ूँ", "tum": "झगड़ो", "vah": "झगड़े", "ham": "झगड़ें" }
+      readings: { "main": "jhagṛūm̐", "tum": "jhagṛō", "vah": "jhagṛē", "ham": "jhagṛēm̐" }
+    - word: "hi-2582"
+      forms: { "main": "रूठूँ", "tum": "रूठो", "vah": "रूठे", "ham": "रूठें" }
+      readings: { "main": "rūṭhūm̐", "tum": "rūṭhō", "vah": "rūṭhē", "ham": "rūṭhēm̐" }
+    - word: "hi-2583"
+      forms: { "main": "जुड़ूँ", "tum": "जुड़ो", "vah": "जुड़े", "ham": "जुड़ें" }
+      readings: { "main": "juṛūm̐", "tum": "juṛō", "vah": "juṛē", "ham": "juṛēm̐" }
+    - word: "hi-2607"
+      forms: { "main": "बसूँ", "tum": "बसो", "vah": "बसे", "ham": "बसें" }
+      readings: { "main": "basūm̐", "tum": "basō", "vah": "basē", "ham": "basēm̐" }
+    - word: "hi-2614"
+      forms: { "main": "जमूँ", "tum": "जमो", "vah": "जमे", "ham": "जमें" }
+      readings: { "main": "jamūm̐", "tum": "jamō", "vah": "jamē", "ham": "jamēm̐" }
+    - word: "hi-2615"
+      forms: { "main": "पिघलूँ", "tum": "पिघलो", "vah": "पिघले", "ham": "पिघलें" }
+      readings: { "main": "pighlūm̐", "tum": "pighlō", "vah": "pighlē", "ham": "pighlēm̐" }
+    - word: "hi-2616"
+      forms: { "main": "उबलूँ", "tum": "उबलो", "vah": "उबले", "ham": "उबलें" }
+      readings: { "main": "ublūm̐", "tum": "ublō", "vah": "ublē", "ham": "ublēm̐" }
+    - word: "hi-2617"
+      forms: { "main": "जलूँ", "tum": "जलो", "vah": "जले", "ham": "जलें" }
+      readings: { "main": "jalūm̐", "tum": "jalō", "vah": "jalē", "ham": "jalēm̐" }
+    - word: "hi-2618"
+      forms: { "main": "बुझूँ", "tum": "बुझो", "vah": "बुझे", "ham": "बुझें" }
+      readings: { "main": "bujhūm̐", "tum": "bujhō", "vah": "bujhē", "ham": "bujhēm̐" }
+    - word: "hi-2619"
+      forms: { "main": "भटकूँ", "tum": "भटको", "vah": "भटके", "ham": "भटकें" }
+      readings: { "main": "bhaṭkūm̐", "tum": "bhaṭkō", "vah": "bhaṭkē", "ham": "bhaṭkēm̐" }
+    - word: "hi-2620"
+      forms: { "main": "छिपूँ", "tum": "छिपो", "vah": "छिपे", "ham": "छिपें" }
+      readings: { "main": "chipūm̐", "tum": "chipō", "vah": "chipē", "ham": "chipēm̐" }
+    - word: "hi-2621"
+      forms: { "main": "कूदूँ", "tum": "कूदो", "vah": "कूदे", "ham": "कूदें" }
+      readings: { "main": "kūdūm̐", "tum": "kūdō", "vah": "kūdē", "ham": "kūdēm̐" }
+    - word: "hi-2622"
+      forms: { "main": "फिसलूँ", "tum": "फिसलो", "vah": "फिसले", "ham": "फिसलें" }
+      readings: { "main": "phislūm̐", "tum": "phislō", "vah": "phislē", "ham": "phislēm̐" }
+    - word: "hi-2623"
+      forms: { "main": "थामूँ", "tum": "थामो", "vah": "थामे", "ham": "थामें" }
+      readings: { "main": "thāmūm̐", "tum": "thāmō", "vah": "thāmē", "ham": "thāmēm̐" }
+    - word: "hi-2624"
+      forms: { "main": "रगड़ूँ", "tum": "रगड़ो", "vah": "रगड़े", "ham": "रगड़ें" }
+      readings: { "main": "ragṛūm̐", "tum": "ragṛō", "vah": "ragṛē", "ham": "ragṛēm̐" }
+    - word: "hi-2625"
+      forms: { "main": "तोड़ूँ", "tum": "तोड़ो", "vah": "तोड़े", "ham": "तोड़ें" }
+      readings: { "main": "tōṛūm̐", "tum": "tōṛō", "vah": "tōṛē", "ham": "tōṛēm̐" }
+    - word: "hi-2626"
+      forms: { "main": "मोड़ूँ", "tum": "मोड़ो", "vah": "मोड़े", "ham": "मोड़ें" }
+      readings: { "main": "mōṛūm̐", "tum": "mōṛō", "vah": "mōṛē", "ham": "mōṛēm̐" }
+    - word: "hi-2627"
+      forms: { "main": "लड़ूँ", "tum": "लड़ो", "vah": "लड़े", "ham": "लड़ें" }
+      readings: { "main": "laṛūm̐", "tum": "laṛō", "vah": "laṛē", "ham": "laṛēm̐" }
+    - word: "hi-2628"
+      forms: { "main": "सुधारूँ", "tum": "सुधारो", "vah": "सुधारे", "ham": "सुधारें" }
+      readings: { "main": "sudhārūm̐", "tum": "sudhārō", "vah": "sudhārē", "ham": "sudhārēm̐" }
+    - word: "hi-2629"
+      forms: { "main": "लगाऊँ", "tum": "लगाओ", "vah": "लगाए", "ham": "लगाएँ" }
+      readings: { "main": "lagāūm̐", "tum": "lagāō", "vah": "lagāē", "ham": "lagāēm̐" }
+    - word: "hi-2630"
+      forms: { "main": "लगवाऊँ", "tum": "लगवाओ", "vah": "लगवाए", "ham": "लगवाएँ" }
+      readings: { "main": "lagvāūm̐", "tum": "lagvāō", "vah": "lagvāē", "ham": "lagvāēm̐" }
+    - word: "hi-2631"
+      forms: { "main": "पहचानूँ", "tum": "पहचानो", "vah": "पहचाने", "ham": "पहचानें" }
+      readings: { "main": "pahcānūm̐", "tum": "pahcānō", "vah": "pahcānē", "ham": "pahcānēm̐" }
+    - word: "hi-2632"
+      forms: { "main": "सींचूँ", "tum": "सींचो", "vah": "सींचे", "ham": "सींचें" }
+      readings: { "main": "sīñcūm̐", "tum": "sīñcō", "vah": "sīñcē", "ham": "sīñcēm̐" }
+    - word: "hi-2633"
+      forms: { "main": "बोऊँ", "tum": "बोओ", "vah": "बोए", "ham": "बोएँ" }
+      readings: { "main": "bōūm̐", "tum": "bōō", "vah": "bōē", "ham": "bōēm̐" }
+    - word: "hi-2634"
+      forms: { "main": "माँगूँ", "tum": "माँगो", "vah": "माँगे", "ham": "माँगें" }
+      readings: { "main": "mām̐gūm̐", "tum": "mām̐gō", "vah": "mām̐gē", "ham": "mām̐gēm̐" }
+    - word: "hi-2635"
+      forms: { "main": "निकलूँ", "tum": "निकलो", "vah": "निकले", "ham": "निकलें" }
+      readings: { "main": "niklūm̐", "tum": "niklō", "vah": "niklē", "ham": "niklēm̐" }
+    - word: "hi-2636"
+      forms: { "main": "गाड़ूँ", "tum": "गाड़ो", "vah": "गाड़े", "ham": "गाड़ें" }
+      readings: { "main": "gāṛūm̐", "tum": "gāṛō", "vah": "gāṛē", "ham": "gāṛēm̐" }
+    - word: "hi-2637"
+      forms: { "main": "उड़ाऊँ", "tum": "उड़ाओ", "vah": "उड़ाए", "ham": "उड़ाएँ" }
+      readings: { "main": "uṛāūm̐", "tum": "uṛāō", "vah": "uṛāē", "ham": "uṛāēm̐" }
+    - word: "hi-2638"
+      forms: { "main": "हटाऊँ", "tum": "हटाओ", "vah": "हटाए", "ham": "हटाएँ" }
+      readings: { "main": "haṭāūm̐", "tum": "haṭāō", "vah": "haṭāē", "ham": "haṭāēm̐" }
+    - word: "hi-2639"
+      forms: { "main": "निगलूँ", "tum": "निगलो", "vah": "निगले", "ham": "निगलें" }
+      readings: { "main": "niglūm̐", "tum": "niglō", "vah": "niglē", "ham": "niglēm̐" }
+    - word: "hi-2640"
+      forms: { "main": "चबाऊँ", "tum": "चबाओ", "vah": "चबाए", "ham": "चबाएँ" }
+      readings: { "main": "cabāūm̐", "tum": "cabāō", "vah": "cabāē", "ham": "cabāēm̐" }
+    - word: "hi-2641"
+      forms: { "main": "निचोड़ूँ", "tum": "निचोड़ो", "vah": "निचोड़े", "ham": "निचोड़ें" }
+      readings: { "main": "nicōṛūm̐", "tum": "nicōṛō", "vah": "nicōṛē", "ham": "nicōṛēm̐" }
+    - word: "hi-2642"
+      forms: { "main": "सूँघूँ", "tum": "सूँघो", "vah": "सूँघे", "ham": "सूँघें" }
+      readings: { "main": "sūm̐ghūm̐", "tum": "sūm̐ghō", "vah": "sūm̐ghē", "ham": "sūm̐ghēm̐" }
+    - word: "hi-2643"
+      forms: { "main": "चखूँ", "tum": "चखो", "vah": "चखे", "ham": "चखें" }
+      readings: { "main": "cakhūm̐", "tum": "cakhō", "vah": "cakhē", "ham": "cakhēm̐" }
+    - word: "hi-2790"
+      forms: { "main": "बढ़ूँ", "tum": "बढ़ो", "vah": "बढ़े", "ham": "बढ़ें" }
+      readings: { "main": "baṛhūm̐", "tum": "baṛhō", "vah": "baṛhē", "ham": "baṛhēm̐" }
+    - word: "hi-2791"
+      forms: { "main": "बढ़ाऊँ", "tum": "बढ़ाओ", "vah": "बढ़ाए", "ham": "बढ़ाएँ" }
+      readings: { "main": "baṛhāūm̐", "tum": "baṛhāō", "vah": "baṛhāē", "ham": "baṛhāēm̐" }
+    - word: "hi-2792"
+      forms: { "main": "गुज़रूँ", "tum": "गुज़रो", "vah": "गुज़रे", "ham": "गुज़रें" }
+      readings: { "main": "guzrūm̐", "tum": "guzrō", "vah": "guzrē", "ham": "guzrēm̐" }
+    - word: "hi-2793"
+      forms: { "main": "झपटूँ", "tum": "झपटो", "vah": "झपटे", "ham": "झपटें" }
+      readings: { "main": "jhapṭūm̐", "tum": "jhapṭō", "vah": "jhapṭē", "ham": "jhapṭēm̐" }
+    - word: "hi-2794"
+      forms: { "main": "पलटूँ", "tum": "पलटो", "vah": "पलटे", "ham": "पलटें" }
+      readings: { "main": "palṭūm̐", "tum": "palṭō", "vah": "palṭē", "ham": "palṭēm̐" }
+    - word: "hi-2795"
+      forms: { "main": "सोखूँ", "tum": "सोखो", "vah": "सोखे", "ham": "सोखें" }
+      readings: { "main": "sōkhūm̐", "tum": "sōkhō", "vah": "sōkhē", "ham": "sōkhēm̐" }
+    - word: "hi-2796"
+      forms: { "main": "बहाऊँ", "tum": "बहाओ", "vah": "बहाए", "ham": "बहाएँ" }
+      readings: { "main": "bahāūm̐", "tum": "bahāō", "vah": "bahāē", "ham": "bahāēm̐" }
+    - word: "hi-2797"
+      forms: { "main": "मलूँ", "tum": "मलो", "vah": "मले", "ham": "मलें" }
+      readings: { "main": "malūm̐", "tum": "malō", "vah": "malē", "ham": "malēm̐" }
+    - word: "hi-2798"
+      forms: { "main": "भिगोऊँ", "tum": "भिगोओ", "vah": "भिगोए", "ham": "भिगोएँ" }
+      readings: { "main": "bhigōūm̐", "tum": "bhigōō", "vah": "bhigōē", "ham": "bhigōēm̐" }
+    - word: "hi-2799"
+      forms: { "main": "पकड़ाऊँ", "tum": "पकड़ाओ", "vah": "पकड़ाए", "ham": "पकड़ाएँ" }
+      readings: { "main": "pakṛāūm̐", "tum": "pakṛāō", "vah": "pakṛāē", "ham": "pakṛāēm̐" }
+    - word: "hi-2800"
+      forms: { "main": "खुजलाऊँ", "tum": "खुजलाओ", "vah": "खुजलाए", "ham": "खुजलाएँ" }
+      readings: { "main": "khujlāūm̐", "tum": "khujlāō", "vah": "khujlāē", "ham": "khujlāēm̐" }
+    - word: "hi-2801"
+      forms: { "main": "दबोचूँ", "tum": "दबोचो", "vah": "दबोचे", "ham": "दबोचें" }
+      readings: { "main": "dabōcūm̐", "tum": "dabōcō", "vah": "dabōcē", "ham": "dabōcēm̐" }
+    - word: "hi-2803"
+      forms: { "main": "भुनूँ", "tum": "भुनो", "vah": "भुने", "ham": "भुनें" }
+      readings: { "main": "bhunūm̐", "tum": "bhunō", "vah": "bhunē", "ham": "bhunēm̐" }
+    - word: "hi-2804"
+      forms: { "main": "चमकाऊँ", "tum": "चमकाओ", "vah": "चमकाए", "ham": "चमकाएँ" }
+      readings: { "main": "camkāūm̐", "tum": "camkāō", "vah": "camkāē", "ham": "camkāēm̐" }
+    - word: "hi-2805"
+      forms: { "main": "हिलाऊँ", "tum": "हिलाओ", "vah": "हिलाए", "ham": "हिलाएँ" }
+      readings: { "main": "hilāūm̐", "tum": "hilāō", "vah": "hilāē", "ham": "hilāēm̐" }
+    - word: "hi-2806"
+      forms: { "main": "हिलूँ", "tum": "हिलो", "vah": "हिले", "ham": "हिलें" }
+      readings: { "main": "hilūm̐", "tum": "hilō", "vah": "hilē", "ham": "hilēm̐" }
+    - word: "hi-2807"
+      forms: { "main": "झूलूँ", "tum": "झूलो", "vah": "झूले", "ham": "झूलें" }
+      readings: { "main": "jhūlūm̐", "tum": "jhūlō", "vah": "jhūlē", "ham": "jhūlēm̐" }
+    - word: "hi-2808"
+      forms: { "main": "झूलाऊँ", "tum": "झूलाओ", "vah": "झूलाए", "ham": "झूलाएँ" }
+      readings: { "main": "jhūlāūm̐", "tum": "jhūlāō", "vah": "jhūlāē", "ham": "jhūlāēm̐" }
+rules:
+  - id: "hi-rule-subjunctive-first"
+    slots: ["main"]
+    words: [{ word: "-ूँ", reading: "-ūm̐" }, { word: "-ऊँ", reading: "-ūm̐" }, { word: "करना", reading: "karnā" }, { word: "करूँ", reading: "karūm̐" }, { word: "जाना", reading: "jānā" }, { word: "जाऊँ", reading: "jāūm̐" }, { word: "मैं", reading: "maim̐" }]
+  - id: "hi-rule-subjunctive-second"
+    slots: ["tum"]
+    words: [{ word: "-ो", reading: "-ō" }, { word: "-ओ", reading: "-ō" }, { word: "करना", reading: "karnā" }, { word: "करो", reading: "karō" }, { word: "जाना", reading: "jānā" }, { word: "जाओ", reading: "jāō" }, { word: "तुम", reading: "tum" }]
+  - id: "hi-rule-subjunctive-third"
+    slots: ["vah"]
+    words: [{ word: "-े", reading: "-ē" }, { word: "-ए", reading: "-ē" }, { word: "करना", reading: "karnā" }, { word: "करे", reading: "karē" }, { word: "जाना", reading: "jānā" }, { word: "जाए", reading: "jāē" }, { word: "वह", reading: "vah" }, { word: "तू", reading: "tū" }]
+  - id: "hi-rule-subjunctive-plural"
+    slots: ["ham"]
+    words: [{ word: "-ें", reading: "-ēm̐" }, { word: "-एँ", reading: "-ēm̐" }, { word: "करना", reading: "karnā" }, { word: "करें", reading: "karēm̐" }, { word: "जाना", reading: "jānā" }, { word: "जाएँ", reading: "jāēm̐" }, { word: "हम", reading: "ham" }, { word: "आप", reading: "āp" }, { word: "वे", reading: "vē" }]

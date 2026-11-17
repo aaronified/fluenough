@@ -1,0 +1,33 @@
+schema: 1
+id: "hi-en-grammar-verb-perfect"
+kind: "layer"
+core: "hi-grammar-verb-perfect"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs: the perfect, for every person"
+description: "Every verb the course teaches, in the perfect (have done), for each person and for a man or a woman. The forms are written in Devanagari for now. Not yet checked by a Hindustani speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "main-m": "I, a man, as having done"
+    "main-f": "I, a woman, as having done"
+    "tum-m": "you (familiar), a man, as having done"
+    "tum-f": "you (familiar), a woman, as having done"
+    "vah-m": "he, or you (intimate), a man, as having done"
+    "vah-f": "she, or you (intimate), a woman, as having done"
+    "ham-m": "we, they or you (respectful), men or a mixed group, as having done"
+    "ham-f": "we, they or you (respectful), women, as having done"
+rules:
+  "hi-rule-perfect-first":
+    name: "-ा/-ी हूँ (-ā/-ī hūm̐): I have"
+    explanation: "For I have done, the past form of the verb comes first and agrees with the speaker, then the verb to be. A man's form ends in {1} and a woman's in {2}: {3}, to do, gives {4} or {5}; {6}, to go, gives {7}."
+  "hi-rule-perfect-second":
+    name: "-े/-ी हो (-ē/-ī hō): you (tum) have"
+    explanation: "For you (familiar) a man's past form takes {1} and a woman's takes {2}, then the verb to be: {3}, to do, gives {4} or {5}; {6}, to go, gives {7}."
+  "hi-rule-perfect-third":
+    name: "-ा/-ी है (-ā/-ī hai): he, she has"
+    explanation: "For he or she a man's past form takes {1} and a woman's takes {2}, then the verb to be: {3}, to do, gives {4} or {5}; {6}, to go, gives {7}. The very close you, {8}, uses the same form."
+  "hi-rule-perfect-plural":
+    name: "-े/-ी हैं (-ē/-ī haim̐): we, they have"
+    explanation: "For we, they and the respectful you the past form takes {1} for men and {2} for women, then the verb to be: {3}, to do, gives {4} or {5}; {6}, to go, gives {7}. The same form serves {8}, you (respectful), and {9}, they."

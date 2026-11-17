@@ -1,0 +1,712 @@
+schema: 1
+id: "hi-grammar-verb-imperative"
+part: "core"
+kind: "rules"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["hi-0240", "hi-0273", "hi-0290", "hi-0460"]
+  slots: ["tu", "tum", "aap", "mat-tum"]
+  rows:
+    - word: "hi-0441"
+      forms: { "tu": "उठ", "tum": "उठो", "aap": "उठिए", "mat-tum": "मत उठो" }
+      readings: { "tu": "uṭh", "tum": "uṭhō", "aap": "uṭhiē", "mat-tum": "mat uṭhō" }
+    - word: "hi-0442"
+      forms: { "tu": "नहा", "tum": "नहाओ", "aap": "नहाइए", "mat-tum": "मत नहाओ" }
+      readings: { "tu": "nahā", "tum": "nahāō", "aap": "nahāiē", "mat-tum": "mat nahāō" }
+    - word: "hi-0450"
+      forms: { "tu": "सो", "tum": "सोओ", "aap": "सोइए", "mat-tum": "मत सोओ" }
+      readings: { "tu": "sō", "tum": "sōō", "aap": "sōiē", "mat-tum": "mat sōō" }
+    - word: "hi-0513"
+      forms: { "tu": "सक", "tum": "सको", "aap": "सकिए", "mat-tum": "मत सको" }
+      readings: { "tu": "sak", "tum": "sakō", "aap": "sakiē", "mat-tum": "mat sakō" }
+    - word: "hi-0602"
+      forms: { "tu": "पी", "tum": "पियो", "aap": "पीजिए", "mat-tum": "मत पियो" }
+      readings: { "tu": "pī", "tum": "piyō", "aap": "pījiē", "mat-tum": "mat piyō" }
+    - word: "hi-0623"
+      forms: { "tu": "हंस", "tum": "हंसो", "aap": "हंसिए", "mat-tum": "मत हंसो" }
+      readings: { "tu": "haṁs", "tum": "haṁsō", "aap": "haṁsiē", "mat-tum": "mat haṁsō" }
+    - word: "hi-0777"
+      forms: { "tu": "जा", "tum": "जाओ", "aap": "जाइए", "mat-tum": "मत जाओ" }
+      readings: { "tu": "jā", "tum": "jāō", "aap": "jāiē", "mat-tum": "mat jāō" }
+    - word: "hi-0778"
+      forms: { "tu": "आ", "tum": "आओ", "aap": "आइए", "mat-tum": "मत आओ" }
+      readings: { "tu": "ā", "tum": "āō", "aap": "āiē", "mat-tum": "mat āō" }
+    - word: "hi-0779"
+      forms: { "tu": "कर", "tum": "करो", "aap": "कीजिए", "mat-tum": "मत करो" }
+      readings: { "tu": "kar", "tum": "karō", "aap": "kījiē", "mat-tum": "mat karō" }
+    - word: "hi-0780"
+      forms: { "tu": "हो", "tum": "हो", "aap": "होइए", "mat-tum": "मत हो" }
+      readings: { "tu": "hō", "tum": "hō", "aap": "hōiē", "mat-tum": "mat hō" }
+    - word: "hi-0781"
+      forms: { "tu": "लिख", "tum": "लिखो", "aap": "लिखिए", "mat-tum": "मत लिखो" }
+      readings: { "tu": "likh", "tum": "likhō", "aap": "likhiē", "mat-tum": "mat likhō" }
+    - word: "hi-0782"
+      forms: { "tu": "बोल", "tum": "बोलो", "aap": "बोलिए", "mat-tum": "मत बोलो" }
+      readings: { "tu": "bōl", "tum": "bōlō", "aap": "bōliē", "mat-tum": "mat bōlō" }
+    - word: "hi-0783"
+      forms: { "tu": "सुन", "tum": "सुनो", "aap": "सुनिए", "mat-tum": "मत सुनो" }
+      readings: { "tu": "sun", "tum": "sunō", "aap": "suniē", "mat-tum": "mat sunō" }
+    - word: "hi-0784"
+      forms: { "tu": "देख", "tum": "देखो", "aap": "देखिए", "mat-tum": "मत देखो" }
+      readings: { "tu": "dēkh", "tum": "dēkhō", "aap": "dēkhiē", "mat-tum": "mat dēkhō" }
+    - word: "hi-0785"
+      forms: { "tu": "दे", "tum": "दो", "aap": "दीजिए", "mat-tum": "मत दो" }
+      readings: { "tu": "dē", "tum": "dō", "aap": "dījiē", "mat-tum": "mat dō" }
+    - word: "hi-0786"
+      forms: { "tu": "ले", "tum": "लो", "aap": "लीजिए", "mat-tum": "मत लो" }
+      readings: { "tu": "lē", "tum": "lō", "aap": "lījiē", "mat-tum": "mat lō" }
+    - word: "hi-0787"
+      forms: { "tu": "खेल", "tum": "खेलो", "aap": "खेलिए", "mat-tum": "मत खेलो" }
+      readings: { "tu": "khēl", "tum": "khēlō", "aap": "khēliē", "mat-tum": "mat khēlō" }
+    - word: "hi-0788"
+      forms: { "tu": "बैठ", "tum": "बैठो", "aap": "बैठिए", "mat-tum": "मत बैठो" }
+      readings: { "tu": "baiṭh", "tum": "baiṭhō", "aap": "baiṭhiē", "mat-tum": "mat baiṭhō" }
+    - word: "hi-0789"
+      forms: { "tu": "समझ", "tum": "समझो", "aap": "समझिए", "mat-tum": "मत समझो" }
+      readings: { "tu": "samjh", "tum": "samjhō", "aap": "samjhiē", "mat-tum": "mat samjhō" }
+    - word: "hi-0790"
+      forms: { "tu": "जान", "tum": "जानो", "aap": "जानिए", "mat-tum": "मत जानो" }
+      readings: { "tu": "jān", "tum": "jānō", "aap": "jāniē", "mat-tum": "mat jānō" }
+    - word: "hi-0791"
+      forms: { "tu": "रह", "tum": "रहो", "aap": "रहिए", "mat-tum": "मत रहो" }
+      readings: { "tu": "rah", "tum": "rahō", "aap": "rahiē", "mat-tum": "mat rahō" }
+    - word: "hi-0792"
+      forms: { "tu": "चाह", "tum": "चाहो", "aap": "चाहिए", "mat-tum": "मत चाहो" }
+      readings: { "tu": "cāh", "tum": "cāhō", "aap": "cāhiē", "mat-tum": "mat cāhō" }
+    - word: "hi-0793"
+      forms: { "tu": "मिल", "tum": "मिलो", "aap": "मिलिए", "mat-tum": "मत मिलो" }
+      readings: { "tu": "mil", "tum": "milō", "aap": "miliē", "mat-tum": "mat milō" }
+    - word: "hi-0794"
+      forms: { "tu": "ख़रीद", "tum": "ख़रीदो", "aap": "ख़रीदिए", "mat-tum": "मत ख़रीदो" }
+      readings: { "tu": "k͟harīd", "tum": "k͟harīdō", "aap": "k͟harīdiē", "mat-tum": "mat k͟harīdō" }
+    - word: "hi-0795"
+      forms: { "tu": "बेच", "tum": "बेचो", "aap": "बेचिए", "mat-tum": "मत बेचो" }
+      readings: { "tu": "bēc", "tum": "bēcō", "aap": "bēciē", "mat-tum": "mat bēcō" }
+    - word: "hi-0796"
+      forms: { "tu": "बता", "tum": "बताओ", "aap": "बताइए", "mat-tum": "मत बताओ" }
+      readings: { "tu": "batā", "tum": "batāō", "aap": "batāiē", "mat-tum": "mat batāō" }
+    - word: "hi-0797"
+      forms: { "tu": "भेज", "tum": "भेजो", "aap": "भेजिए", "mat-tum": "मत भेजो" }
+      readings: { "tu": "bhēj", "tum": "bhējō", "aap": "bhējiē", "mat-tum": "mat bhējō" }
+    - word: "hi-0798"
+      forms: { "tu": "धो", "tum": "धोओ", "aap": "धोइए", "mat-tum": "मत धोओ" }
+      readings: { "tu": "dhō", "tum": "dhōō", "aap": "dhōiē", "mat-tum": "mat dhōō" }
+    - word: "hi-0799"
+      forms: { "tu": "पूछ", "tum": "पूछो", "aap": "पूछिए", "mat-tum": "मत पूछो" }
+      readings: { "tu": "pūch", "tum": "pūchō", "aap": "pūchiē", "mat-tum": "mat pūchō" }
+    - word: "hi-0800"
+      forms: { "tu": "कह", "tum": "कहो", "aap": "कहिए", "mat-tum": "मत कहो" }
+      readings: { "tu": "kah", "tum": "kahō", "aap": "kahiē", "mat-tum": "mat kahō" }
+    - word: "hi-0801"
+      forms: { "tu": "चल", "tum": "चलो", "aap": "चलिए", "mat-tum": "मत चलो" }
+      readings: { "tu": "cal", "tum": "calō", "aap": "caliē", "mat-tum": "mat calō" }
+    - word: "hi-0937"
+      forms: { "tu": "खोल", "tum": "खोलो", "aap": "खोलिए", "mat-tum": "मत खोलो" }
+      readings: { "tu": "khōl", "tum": "khōlō", "aap": "khōliē", "mat-tum": "mat khōlō" }
+    - word: "hi-0938"
+      forms: { "tu": "पका", "tum": "पकाओ", "aap": "पकाइए", "mat-tum": "मत पकाओ" }
+      readings: { "tu": "pakā", "tum": "pakāō", "aap": "pakāiē", "mat-tum": "mat pakāō" }
+    - word: "hi-0939"
+      forms: { "tu": "काट", "tum": "काटो", "aap": "काटिए", "mat-tum": "मत काटो" }
+      readings: { "tu": "kāṭ", "tum": "kāṭō", "aap": "kāṭiē", "mat-tum": "mat kāṭō" }
+    - word: "hi-0940"
+      forms: { "tu": "उबाल", "tum": "उबालो", "aap": "उबालिए", "mat-tum": "मत उबालो" }
+      readings: { "tu": "ubāl", "tum": "ubālō", "aap": "ubāliē", "mat-tum": "mat ubālō" }
+    - word: "hi-0941"
+      forms: { "tu": "डाल", "tum": "डालो", "aap": "डालिए", "mat-tum": "मत डालो" }
+      readings: { "tu": "ḍāl", "tum": "ḍālō", "aap": "ḍāliē", "mat-tum": "mat ḍālō" }
+    - word: "hi-0942"
+      forms: { "tu": "छान", "tum": "छानो", "aap": "छानिए", "mat-tum": "मत छानो" }
+      readings: { "tu": "chān", "tum": "chānō", "aap": "chāniē", "mat-tum": "mat chānō" }
+    - word: "hi-0943"
+      forms: { "tu": "परोस", "tum": "परोसो", "aap": "परोसिए", "mat-tum": "मत परोसो" }
+      readings: { "tu": "parōs", "tum": "parōsō", "aap": "parōsiē", "mat-tum": "mat parōsō" }
+    - word: "hi-0944"
+      forms: { "tu": "जाग", "tum": "जागो", "aap": "जागिए", "mat-tum": "मत जागो" }
+      readings: { "tu": "jāg", "tum": "jāgō", "aap": "jāgiē", "mat-tum": "mat jāgō" }
+    - word: "hi-0945"
+      forms: { "tu": "भूल", "tum": "भूलो", "aap": "भूलिए", "mat-tum": "मत भूलो" }
+      readings: { "tu": "bhūl", "tum": "bhūlō", "aap": "bhūliē", "mat-tum": "mat bhūlō" }
+    - word: "hi-0946"
+      forms: { "tu": "दौड़", "tum": "दौड़ो", "aap": "दौड़िए", "mat-tum": "मत दौड़ो" }
+      readings: { "tu": "dauṛ", "tum": "dauṛō", "aap": "dauṛiē", "mat-tum": "mat dauṛō" }
+    - word: "hi-0947"
+      forms: { "tu": "गिर", "tum": "गिरो", "aap": "गिरिए", "mat-tum": "मत गिरो" }
+      readings: { "tu": "gir", "tum": "girō", "aap": "giriē", "mat-tum": "mat girō" }
+    - word: "hi-0948"
+      forms: { "tu": "लौट", "tum": "लौटो", "aap": "लौटिए", "mat-tum": "मत लौटो" }
+      readings: { "tu": "lauṭ", "tum": "lauṭō", "aap": "lauṭiē", "mat-tum": "mat lauṭō" }
+    - word: "hi-0949"
+      forms: { "tu": "ला", "tum": "लाओ", "aap": "लाइए", "mat-tum": "मत लाओ" }
+      readings: { "tu": "lā", "tum": "lāō", "aap": "lāiē", "mat-tum": "mat lāō" }
+    - word: "hi-0950"
+      forms: { "tu": "रख", "tum": "रखो", "aap": "रखिए", "mat-tum": "मत रखो" }
+      readings: { "tu": "rakh", "tum": "rakhō", "aap": "rakhiē", "mat-tum": "mat rakhō" }
+    - word: "hi-0951"
+      forms: { "tu": "छोड़", "tum": "छोड़ो", "aap": "छोड़िए", "mat-tum": "मत छोड़ो" }
+      readings: { "tu": "chōṛ", "tum": "chōṛō", "aap": "chōṛiē", "mat-tum": "mat chōṛō" }
+    - word: "hi-0952"
+      forms: { "tu": "सीख", "tum": "सीखो", "aap": "सीखिए", "mat-tum": "मत सीखो" }
+      readings: { "tu": "sīkh", "tum": "sīkhō", "aap": "sīkhiē", "mat-tum": "mat sīkhō" }
+    - word: "hi-0953"
+      forms: { "tu": "सोच", "tum": "सोचो", "aap": "सोचिए", "mat-tum": "मत सोचो" }
+      readings: { "tu": "sōc", "tum": "sōcō", "aap": "sōciē", "mat-tum": "mat sōcō" }
+    - word: "hi-0954"
+      forms: { "tu": "सिखा", "tum": "सिखाओ", "aap": "सिखाइए", "mat-tum": "मत सिखाओ" }
+      readings: { "tu": "sikhā", "tum": "sikhāō", "aap": "sikhāiē", "mat-tum": "mat sikhāō" }
+    - word: "hi-0955"
+      forms: { "tu": "ढूँढ", "tum": "ढूँढो", "aap": "ढूँढिए", "mat-tum": "मत ढूँढो" }
+      readings: { "tu": "ḍhūm̐ḍh", "tum": "ḍhūm̐ḍhō", "aap": "ḍhūm̐ḍhiē", "mat-tum": "mat ḍhūm̐ḍhō" }
+    - word: "hi-0956"
+      forms: { "tu": "जीत", "tum": "जीतो", "aap": "जीतिए", "mat-tum": "मत जीतो" }
+      readings: { "tu": "jīt", "tum": "jītō", "aap": "jītiē", "mat-tum": "mat jītō" }
+    - word: "hi-0957"
+      forms: { "tu": "हार", "tum": "हारो", "aap": "हारिए", "mat-tum": "मत हारो" }
+      readings: { "tu": "hār", "tum": "hārō", "aap": "hāriē", "mat-tum": "mat hārō" }
+    - word: "hi-0958"
+      forms: { "tu": "कमा", "tum": "कमाओ", "aap": "कमाइए", "mat-tum": "मत कमाओ" }
+      readings: { "tu": "kamā", "tum": "kamāō", "aap": "kamāiē", "mat-tum": "mat kamāō" }
+    - word: "hi-0959"
+      forms: { "tu": "हँस", "tum": "हँसो", "aap": "हँसिए", "mat-tum": "मत हँसो" }
+      readings: { "tu": "ham̐s", "tum": "ham̐sō", "aap": "ham̐siē", "mat-tum": "mat ham̐sō" }
+    - word: "hi-0960"
+      forms: { "tu": "रो", "tum": "रोओ", "aap": "रोइए", "mat-tum": "मत रोओ" }
+      readings: { "tu": "rō", "tum": "rōō", "aap": "rōiē", "mat-tum": "mat rōō" }
+    - word: "hi-0961"
+      forms: { "tu": "बुला", "tum": "बुलाओ", "aap": "बुलाइए", "mat-tum": "मत बुलाओ" }
+      readings: { "tu": "bulā", "tum": "bulāō", "aap": "bulāiē", "mat-tum": "mat bulāō" }
+    - word: "hi-1287"
+      forms: { "tu": "गरज", "tum": "गरजो", "aap": "गरजिए", "mat-tum": "मत गरजो" }
+      readings: { "tu": "garj", "tum": "garjō", "aap": "garjiē", "mat-tum": "mat garjō" }
+    - word: "hi-1292"
+      forms: { "tu": "बरस", "tum": "बरसो", "aap": "बरसिए", "mat-tum": "मत बरसो" }
+      readings: { "tu": "bars", "tum": "barsō", "aap": "barsiē", "mat-tum": "mat barsō" }
+    - word: "hi-1293"
+      forms: { "tu": "कड़क", "tum": "कड़को", "aap": "कड़किए", "mat-tum": "मत कड़को" }
+      readings: { "tu": "kaṛk", "tum": "kaṛkō", "aap": "kaṛkiē", "mat-tum": "mat kaṛkō" }
+    - word: "hi-1294"
+      forms: { "tu": "चमक", "tum": "चमको", "aap": "चमकिए", "mat-tum": "मत चमको" }
+      readings: { "tu": "camk", "tum": "camkō", "aap": "camkiē", "mat-tum": "mat camkō" }
+    - word: "hi-1334"
+      forms: { "tu": "मना", "tum": "मनाओ", "aap": "मनाइए", "mat-tum": "मत मनाओ" }
+      readings: { "tu": "manā", "tum": "manāō", "aap": "manāiē", "mat-tum": "mat manāō" }
+    - word: "hi-1335"
+      forms: { "tu": "जला", "tum": "जलाओ", "aap": "जलाइए", "mat-tum": "मत जलाओ" }
+      readings: { "tu": "jalā", "tum": "jalāō", "aap": "jalāiē", "mat-tum": "mat jalāō" }
+    - word: "hi-1336"
+      forms: { "tu": "बाँट", "tum": "बाँटो", "aap": "बाँटिए", "mat-tum": "मत बाँटो" }
+      readings: { "tu": "bām̐ṭa", "tum": "bām̐ṭō", "aap": "bām̐ṭiē", "mat-tum": "mat bām̐ṭō" }
+    - word: "hi-1337"
+      forms: { "tu": "सजा", "tum": "सजाओ", "aap": "सजाइए", "mat-tum": "मत सजाओ" }
+      readings: { "tu": "sajā", "tum": "sajāō", "aap": "sajāiē", "mat-tum": "mat sajāō" }
+    - word: "hi-1364"
+      forms: { "tu": "बदल", "tum": "बदलो", "aap": "बदलिए", "mat-tum": "मत बदलो" }
+      readings: { "tu": "badl", "tum": "badlō", "aap": "badliē", "mat-tum": "mat badlō" }
+    - word: "hi-1385"
+      forms: { "tu": "तौल", "tum": "तौलो", "aap": "तौलिए", "mat-tum": "मत तौलो" }
+      readings: { "tu": "taul", "tum": "taulō", "aap": "tauliē", "mat-tum": "mat taulō" }
+    - word: "hi-1460"
+      forms: { "tu": "खाँस", "tum": "खाँसो", "aap": "खाँसिए", "mat-tum": "मत खाँसो" }
+      readings: { "tu": "khām̐sa", "tum": "khām̐sō", "aap": "khām̐siē", "mat-tum": "mat khām̐sō" }
+    - word: "hi-1461"
+      forms: { "tu": "छींक", "tum": "छींको", "aap": "छींकिए", "mat-tum": "मत छींको" }
+      readings: { "tu": "chīṅka", "tum": "chīṅkō", "aap": "chīṅkiē", "mat-tum": "mat chīṅkō" }
+    - word: "hi-1462"
+      forms: { "tu": "लेट", "tum": "लेटो", "aap": "लेटिए", "mat-tum": "मत लेटो" }
+      readings: { "tu": "lēṭ", "tum": "lēṭō", "aap": "lēṭiē", "mat-tum": "mat lēṭō" }
+    - word: "hi-1463"
+      forms: { "tu": "दुख", "tum": "दुखो", "aap": "दुखिए", "mat-tum": "मत दुखो" }
+      readings: { "tu": "dukh", "tum": "dukhō", "aap": "dukhiē", "mat-tum": "mat dukhō" }
+    - word: "hi-1496"
+      forms: { "tu": "तल", "tum": "तलो", "aap": "तलिए", "mat-tum": "मत तलो" }
+      readings: { "tu": "tal", "tum": "talō", "aap": "taliē", "mat-tum": "mat talō" }
+    - word: "hi-1497"
+      forms: { "tu": "भून", "tum": "भूनो", "aap": "भूनिए", "mat-tum": "मत भूनो" }
+      readings: { "tu": "bhūn", "tum": "bhūnō", "aap": "bhūniē", "mat-tum": "mat bhūnō" }
+    - word: "hi-1498"
+      forms: { "tu": "छील", "tum": "छीलो", "aap": "छीलिए", "mat-tum": "मत छीलो" }
+      readings: { "tu": "chīl", "tum": "chīlō", "aap": "chīliē", "mat-tum": "mat chīlō" }
+    - word: "hi-1499"
+      forms: { "tu": "पीस", "tum": "पीसो", "aap": "पीसिए", "mat-tum": "मत पीसो" }
+      readings: { "tu": "pīs", "tum": "pīsō", "aap": "pīsiē", "mat-tum": "mat pīsō" }
+    - word: "hi-1500"
+      forms: { "tu": "गूँध", "tum": "गूँधो", "aap": "गूँधिए", "mat-tum": "मत गूँधो" }
+      readings: { "tu": "gūm̐dha", "tum": "gūm̐dhō", "aap": "gūm̐dhiē", "mat-tum": "mat gūm̐dhō" }
+    - word: "hi-1501"
+      forms: { "tu": "बेल", "tum": "बेलो", "aap": "बेलिए", "mat-tum": "मत बेलो" }
+      readings: { "tu": "bēl", "tum": "bēlō", "aap": "bēliē", "mat-tum": "mat bēlō" }
+    - word: "hi-1502"
+      forms: { "tu": "बना", "tum": "बनाओ", "aap": "बनाइए", "mat-tum": "मत बनाओ" }
+      readings: { "tu": "banā", "tum": "banāō", "aap": "banāiē", "mat-tum": "mat banāō" }
+    - word: "hi-1503"
+      forms: { "tu": "सेंक", "tum": "सेंको", "aap": "सेंकिए", "mat-tum": "मत सेंको" }
+      readings: { "tu": "sēṅka", "tum": "sēṅkō", "aap": "sēṅkiē", "mat-tum": "mat sēṅkō" }
+    - word: "hi-1504"
+      forms: { "tu": "मिला", "tum": "मिलाओ", "aap": "मिलाइए", "mat-tum": "मत मिलाओ" }
+      readings: { "tu": "milā", "tum": "milāō", "aap": "milāiē", "mat-tum": "mat milāō" }
+    - word: "hi-1601"
+      forms: { "tu": "पढ़ा", "tum": "पढ़ाओ", "aap": "पढ़ाइए", "mat-tum": "मत पढ़ाओ" }
+      readings: { "tu": "paṛhā", "tum": "paṛhāō", "aap": "paṛhāiē", "mat-tum": "mat paṛhāō" }
+    - word: "hi-1639"
+      forms: { "tu": "गा", "tum": "गाओ", "aap": "गाइए", "mat-tum": "मत गाओ" }
+      readings: { "tu": "gā", "tum": "gāō", "aap": "gāiē", "mat-tum": "mat gāō" }
+    - word: "hi-1642"
+      forms: { "tu": "नाच", "tum": "नाचो", "aap": "नाचिए", "mat-tum": "मत नाचो" }
+      readings: { "tu": "nāc", "tum": "nācō", "aap": "nāciē", "mat-tum": "mat nācō" }
+    - word: "hi-1644"
+      forms: { "tu": "तैर", "tum": "तैरो", "aap": "तैरिए", "mat-tum": "मत तैरो" }
+      readings: { "tu": "tair", "tum": "tairō", "aap": "tairiē", "mat-tum": "mat tairō" }
+    - word: "hi-1661"
+      forms: { "tu": "घूम", "tum": "घूमो", "aap": "घूमिए", "mat-tum": "मत घूमो" }
+      readings: { "tu": "ghūm", "tum": "ghūmō", "aap": "ghūmiē", "mat-tum": "mat ghūmō" }
+    - word: "hi-1662"
+      forms: { "tu": "टहल", "tum": "टहलो", "aap": "टहलिए", "mat-tum": "मत टहलो" }
+      readings: { "tu": "ṭahl", "tum": "ṭahlō", "aap": "ṭahliē", "mat-tum": "mat ṭahlō" }
+    - word: "hi-1725"
+      forms: { "tu": "झाड़", "tum": "झाड़ो", "aap": "झाड़िए", "mat-tum": "मत झाड़ो" }
+      readings: { "tu": "jhāṛ", "tum": "jhāṛō", "aap": "jhāṛiē", "mat-tum": "mat jhāṛō" }
+    - word: "hi-1726"
+      forms: { "tu": "पोंछ", "tum": "पोंछो", "aap": "पोंछिए", "mat-tum": "मत पोंछो" }
+      readings: { "tu": "pōñcha", "tum": "pōñchō", "aap": "pōñchiē", "mat-tum": "mat pōñchō" }
+    - word: "hi-1727"
+      forms: { "tu": "सुखा", "tum": "सुखाओ", "aap": "सुखाइए", "mat-tum": "मत सुखाओ" }
+      readings: { "tu": "sukhā", "tum": "sukhāō", "aap": "sukhāiē", "mat-tum": "mat sukhāō" }
+    - word: "hi-1728"
+      forms: { "tu": "सूख", "tum": "सूखो", "aap": "सूखिए", "mat-tum": "मत सूखो" }
+      readings: { "tu": "sūkh", "tum": "sūkhō", "aap": "sūkhiē", "mat-tum": "mat sūkhō" }
+    - word: "hi-1729"
+      forms: { "tu": "निकाल", "tum": "निकालो", "aap": "निकालिए", "mat-tum": "मत निकालो" }
+      readings: { "tu": "nikāl", "tum": "nikālō", "aap": "nikāliē", "mat-tum": "mat nikālō" }
+    - word: "hi-1730"
+      forms: { "tu": "फेंक", "tum": "फेंको", "aap": "फेंकिए", "mat-tum": "मत फेंको" }
+      readings: { "tu": "phēṅka", "tum": "phēṅkō", "aap": "phēṅkiē", "mat-tum": "mat phēṅkō" }
+    - word: "hi-1731"
+      forms: { "tu": "उठा", "tum": "उठाओ", "aap": "उठाइए", "mat-tum": "मत उठाओ" }
+      readings: { "tu": "uṭhā", "tum": "uṭhāō", "aap": "uṭhāiē", "mat-tum": "mat uṭhāō" }
+    - word: "hi-1732"
+      forms: { "tu": "भर", "tum": "भरो", "aap": "भरिए", "mat-tum": "मत भरो" }
+      readings: { "tu": "bhar", "tum": "bharō", "aap": "bhariē", "mat-tum": "mat bharō" }
+    - word: "hi-1733"
+      forms: { "tu": "फैला", "tum": "फैलाओ", "aap": "फैलाइए", "mat-tum": "मत फैलाओ" }
+      readings: { "tu": "phailā", "tum": "phailāō", "aap": "phailāiē", "mat-tum": "mat phailāō" }
+    - word: "hi-1734"
+      forms: { "tu": "समेट", "tum": "समेटो", "aap": "समेटिए", "mat-tum": "मत समेटो" }
+      readings: { "tu": "samēṭ", "tum": "samēṭō", "aap": "samēṭiē", "mat-tum": "mat samēṭō" }
+    - word: "hi-1735"
+      forms: { "tu": "भीग", "tum": "भीगो", "aap": "भीगिए", "mat-tum": "मत भीगो" }
+      readings: { "tu": "bhīg", "tum": "bhīgō", "aap": "bhīgiē", "mat-tum": "mat bhīgō" }
+    - word: "hi-1736"
+      forms: { "tu": "उतार", "tum": "उतारो", "aap": "उतारिए", "mat-tum": "मत उतारो" }
+      readings: { "tu": "utār", "tum": "utārō", "aap": "utāriē", "mat-tum": "mat utārō" }
+    - word: "hi-1737"
+      forms: { "tu": "चढ़ा", "tum": "चढ़ाओ", "aap": "चढ़ाइए", "mat-tum": "मत चढ़ाओ" }
+      readings: { "tu": "caṛhā", "tum": "caṛhāō", "aap": "caṛhāiē", "mat-tum": "mat caṛhāō" }
+    - word: "hi-1740"
+      forms: { "tu": "टूट", "tum": "टूटो", "aap": "टूटिए", "mat-tum": "मत टूटो" }
+      readings: { "tu": "ṭūṭ", "tum": "ṭūṭō", "aap": "ṭūṭiē", "mat-tum": "mat ṭūṭō" }
+    - word: "hi-1779"
+      forms: { "tu": "दिख", "tum": "दिखो", "aap": "दिखिए", "mat-tum": "मत दिखो" }
+      readings: { "tu": "dikh", "tum": "dikhō", "aap": "dikhiē", "mat-tum": "mat dikhō" }
+    - word: "hi-1780"
+      forms: { "tu": "लग", "tum": "लगो", "aap": "लगिए", "mat-tum": "मत लगो" }
+      readings: { "tu": "lag", "tum": "lagō", "aap": "lagiē", "mat-tum": "mat lagō" }
+    - word: "hi-1781"
+      forms: { "tu": "सज", "tum": "सजो", "aap": "सजिए", "mat-tum": "मत सजो" }
+      readings: { "tu": "saj", "tum": "sajō", "aap": "sajiē", "mat-tum": "mat sajō" }
+    - word: "hi-1782"
+      forms: { "tu": "पहन", "tum": "पहनो", "aap": "पहनिए", "mat-tum": "मत पहनो" }
+      readings: { "tu": "pahn", "tum": "pahnō", "aap": "pahniē", "mat-tum": "mat pahnō" }
+    - word: "hi-1783"
+      forms: { "tu": "मुस्कुरा", "tum": "मुस्कुराओ", "aap": "मुस्कुराइए", "mat-tum": "मत मुस्कुराओ" }
+      readings: { "tu": "muskurā", "tum": "muskurāō", "aap": "muskurāiē", "mat-tum": "mat muskurāō" }
+    - word: "hi-1785"
+      forms: { "tu": "निखर", "tum": "निखरो", "aap": "निखरिए", "mat-tum": "मत निखरो" }
+      readings: { "tu": "nikhr", "tum": "nikhrō", "aap": "nikhriē", "mat-tum": "mat nikhrō" }
+    - word: "hi-1795"
+      forms: { "tu": "ओढ़", "tum": "ओढ़ो", "aap": "ओढ़िए", "mat-tum": "मत ओढ़ो" }
+      readings: { "tu": "ōṛh", "tum": "ōṛhō", "aap": "ōṛhiē", "mat-tum": "mat ōṛhō" }
+    - word: "hi-1796"
+      forms: { "tu": "बिछा", "tum": "बिछाओ", "aap": "बिछाइए", "mat-tum": "मत बिछाओ" }
+      readings: { "tu": "bichā", "tum": "bichāō", "aap": "bichāiē", "mat-tum": "mat bichāō" }
+    - word: "hi-1797"
+      forms: { "tu": "छू", "tum": "छुओ", "aap": "छुइए", "mat-tum": "मत छुओ" }
+      readings: { "tu": "chū", "tum": "chuō", "aap": "chuiē", "mat-tum": "mat chuō" }
+    - word: "hi-1798"
+      forms: { "tu": "पकड़", "tum": "पकड़ो", "aap": "पकड़िए", "mat-tum": "मत पकड़ो" }
+      readings: { "tu": "pakṛ", "tum": "pakṛō", "aap": "pakṛiē", "mat-tum": "mat pakṛō" }
+    - word: "hi-1799"
+      forms: { "tu": "खींच", "tum": "खींचो", "aap": "खींचिए", "mat-tum": "मत खींचो" }
+      readings: { "tu": "khīñca", "tum": "khīñcō", "aap": "khīñciē", "mat-tum": "mat khīñcō" }
+    - word: "hi-1800"
+      forms: { "tu": "धकेल", "tum": "धकेलो", "aap": "धकेलिए", "mat-tum": "मत धकेलो" }
+      readings: { "tu": "dhakēl", "tum": "dhakēlō", "aap": "dhakēliē", "mat-tum": "mat dhakēlō" }
+    - word: "hi-1801"
+      forms: { "tu": "फँस", "tum": "फँसो", "aap": "फँसिए", "mat-tum": "मत फँसो" }
+      readings: { "tu": "pham̐sa", "tum": "pham̐sō", "aap": "pham̐siē", "mat-tum": "mat pham̐sō" }
+    - word: "hi-1802"
+      forms: { "tu": "मार", "tum": "मारो", "aap": "मारिए", "mat-tum": "मत मारो" }
+      readings: { "tu": "mār", "tum": "mārō", "aap": "māriē", "mat-tum": "mat mārō" }
+    - word: "hi-1803"
+      forms: { "tu": "झुक", "tum": "झुको", "aap": "झुकिए", "mat-tum": "मत झुको" }
+      readings: { "tu": "jhuk", "tum": "jhukō", "aap": "jhukiē", "mat-tum": "mat jhukō" }
+    - word: "hi-1804"
+      forms: { "tu": "चला", "tum": "चलाओ", "aap": "चलाइए", "mat-tum": "मत चलाओ" }
+      readings: { "tu": "calā", "tum": "calāō", "aap": "calāiē", "mat-tum": "mat calāō" }
+    - word: "hi-1805"
+      forms: { "tu": "मिटा", "tum": "मिटाओ", "aap": "मिटाइए", "mat-tum": "मत मिटाओ" }
+      readings: { "tu": "miṭā", "tum": "miṭāō", "aap": "miṭāiē", "mat-tum": "mat miṭāō" }
+    - word: "hi-1806"
+      forms: { "tu": "खोज", "tum": "खोजो", "aap": "खोजिए", "mat-tum": "मत खोजो" }
+      readings: { "tu": "khōj", "tum": "khōjō", "aap": "khōjiē", "mat-tum": "mat khōjō" }
+    - word: "hi-1807"
+      forms: { "tu": "गिन", "tum": "गिनो", "aap": "गिनिए", "mat-tum": "मत गिनो" }
+      readings: { "tu": "gin", "tum": "ginō", "aap": "giniē", "mat-tum": "mat ginō" }
+    - word: "hi-1808"
+      forms: { "tu": "नाप", "tum": "नापो", "aap": "नापिए", "mat-tum": "मत नापो" }
+      readings: { "tu": "nāp", "tum": "nāpō", "aap": "nāpiē", "mat-tum": "mat nāpō" }
+    - word: "hi-1809"
+      forms: { "tu": "जोड़", "tum": "जोड़ो", "aap": "जोड़िए", "mat-tum": "मत जोड़ो" }
+      readings: { "tu": "jōṛ", "tum": "jōṛō", "aap": "jōṛiē", "mat-tum": "mat jōṛō" }
+    - word: "hi-1810"
+      forms: { "tu": "घटा", "tum": "घटाओ", "aap": "घटाइए", "mat-tum": "मत घटाओ" }
+      readings: { "tu": "ghaṭā", "tum": "ghaṭāō", "aap": "ghaṭāiē", "mat-tum": "mat ghaṭāō" }
+    - word: "hi-1811"
+      forms: { "tu": "बाँध", "tum": "बाँधो", "aap": "बाँधिए", "mat-tum": "मत बाँधो" }
+      readings: { "tu": "bām̐dha", "tum": "bām̐dhō", "aap": "bām̐dhiē", "mat-tum": "mat bām̐dhō" }
+    - word: "hi-1812"
+      forms: { "tu": "गिरा", "tum": "गिराओ", "aap": "गिराइए", "mat-tum": "मत गिराओ" }
+      readings: { "tu": "girā", "tum": "girāō", "aap": "girāiē", "mat-tum": "mat girāō" }
+    - word: "hi-1813"
+      forms: { "tu": "रोक", "tum": "रोको", "aap": "रोकिए", "mat-tum": "मत रोको" }
+      readings: { "tu": "rōk", "tum": "rōkō", "aap": "rōkiē", "mat-tum": "mat rōkō" }
+    - word: "hi-1814"
+      forms: { "tu": "छुपा", "tum": "छुपाओ", "aap": "छुपाइए", "mat-tum": "मत छुपाओ" }
+      readings: { "tu": "chupā", "tum": "chupāō", "aap": "chupāiē", "mat-tum": "mat chupāō" }
+    - word: "hi-1815"
+      forms: { "tu": "दिखा", "tum": "दिखाओ", "aap": "दिखाइए", "mat-tum": "मत दिखाओ" }
+      readings: { "tu": "dikhā", "tum": "dikhāō", "aap": "dikhāiē", "mat-tum": "mat dikhāō" }
+    - word: "hi-1816"
+      forms: { "tu": "चुन", "tum": "चुनो", "aap": "चुनिए", "mat-tum": "मत चुनो" }
+      readings: { "tu": "cun", "tum": "cunō", "aap": "cuniē", "mat-tum": "mat cunō" }
+    - word: "hi-1817"
+      forms: { "tu": "फोड़", "tum": "फोड़ो", "aap": "फोड़िए", "mat-tum": "मत फोड़ो" }
+      readings: { "tu": "phōṛ", "tum": "phōṛō", "aap": "phōṛiē", "mat-tum": "mat phōṛō" }
+    - word: "hi-1818"
+      forms: { "tu": "टपक", "tum": "टपको", "aap": "टपकिए", "mat-tum": "मत टपको" }
+      readings: { "tu": "ṭapk", "tum": "ṭapkō", "aap": "ṭapkiē", "mat-tum": "mat ṭapkō" }
+    - word: "hi-1819"
+      forms: { "tu": "भाग", "tum": "भागो", "aap": "भागिए", "mat-tum": "मत भागो" }
+      readings: { "tu": "bhāg", "tum": "bhāgō", "aap": "bhāgiē", "mat-tum": "mat bhāgō" }
+    - word: "hi-1820"
+      forms: { "tu": "चिल्ला", "tum": "चिल्लाओ", "aap": "चिल्लाइए", "mat-tum": "मत चिल्लाओ" }
+      readings: { "tu": "cillā", "tum": "cillāō", "aap": "cillāiē", "mat-tum": "mat cillāō" }
+    - word: "hi-1821"
+      forms: { "tu": "सह", "tum": "सहो", "aap": "सहिए", "mat-tum": "मत सहो" }
+      readings: { "tu": "sah", "tum": "sahō", "aap": "sahiē", "mat-tum": "mat sahō" }
+    - word: "hi-1822"
+      forms: { "tu": "समझा", "tum": "समझाओ", "aap": "समझाइए", "mat-tum": "मत समझाओ" }
+      readings: { "tu": "samjhā", "tum": "samjhāō", "aap": "samjhāiē", "mat-tum": "mat samjhāō" }
+    - word: "hi-1823"
+      forms: { "tu": "डर", "tum": "डरो", "aap": "डरिए", "mat-tum": "मत डरो" }
+      readings: { "tu": "ḍar", "tum": "ḍarō", "aap": "ḍariē", "mat-tum": "mat ḍarō" }
+    - word: "hi-1824"
+      forms: { "tu": "सुलझा", "tum": "सुलझाओ", "aap": "सुलझाइए", "mat-tum": "मत सुलझाओ" }
+      readings: { "tu": "suljhā", "tum": "suljhāō", "aap": "suljhāiē", "mat-tum": "mat suljhāō" }
+    - word: "hi-1825"
+      forms: { "tu": "बचा", "tum": "बचाओ", "aap": "बचाइए", "mat-tum": "मत बचाओ" }
+      readings: { "tu": "bacā", "tum": "bacāō", "aap": "bacāiē", "mat-tum": "mat bacāō" }
+    - word: "hi-1826"
+      forms: { "tu": "बच", "tum": "बचो", "aap": "बचिए", "mat-tum": "मत बचो" }
+      readings: { "tu": "bac", "tum": "bacō", "aap": "baciē", "mat-tum": "mat bacō" }
+    - word: "hi-1827"
+      forms: { "tu": "पा", "tum": "पाओ", "aap": "पाइए", "mat-tum": "मत पाओ" }
+      readings: { "tu": "pā", "tum": "pāō", "aap": "pāiē", "mat-tum": "mat pāō" }
+    - word: "hi-1828"
+      forms: { "tu": "दबा", "tum": "दबाओ", "aap": "दबाइए", "mat-tum": "मत दबाओ" }
+      readings: { "tu": "dabā", "tum": "dabāō", "aap": "dabāiē", "mat-tum": "mat dabāō" }
+    - word: "hi-1829"
+      forms: { "tu": "लपेट", "tum": "लपेटो", "aap": "लपेटिए", "mat-tum": "मत लपेटो" }
+      readings: { "tu": "lapēṭ", "tum": "lapēṭō", "aap": "lapēṭiē", "mat-tum": "mat lapēṭō" }
+    - word: "hi-1830"
+      forms: { "tu": "टाँग", "tum": "टाँगो", "aap": "टाँगिए", "mat-tum": "मत टाँगो" }
+      readings: { "tu": "ṭām̐ga", "tum": "ṭām̐gō", "aap": "ṭām̐giē", "mat-tum": "mat ṭām̐gō" }
+    - word: "hi-1831"
+      forms: { "tu": "लटका", "tum": "लटकाओ", "aap": "लटकाइए", "mat-tum": "मत लटकाओ" }
+      readings: { "tu": "laṭkā", "tum": "laṭkāō", "aap": "laṭkāiē", "mat-tum": "mat laṭkāō" }
+    - word: "hi-1832"
+      forms: { "tu": "चिपका", "tum": "चिपकाओ", "aap": "चिपकाइए", "mat-tum": "मत चिपकाओ" }
+      readings: { "tu": "cipkā", "tum": "cipkāō", "aap": "cipkāiē", "mat-tum": "mat cipkāō" }
+    - word: "hi-1833"
+      forms: { "tu": "बन", "tum": "बनो", "aap": "बनिए", "mat-tum": "मत बनो" }
+      readings: { "tu": "ban", "tum": "banō", "aap": "baniē", "mat-tum": "mat banō" }
+    - word: "hi-1834"
+      forms: { "tu": "ढक", "tum": "ढको", "aap": "ढकिए", "mat-tum": "मत ढको" }
+      readings: { "tu": "ḍhak", "tum": "ḍhakō", "aap": "ḍhakiē", "mat-tum": "mat ḍhakō" }
+    - word: "hi-1835"
+      forms: { "tu": "खिला", "tum": "खिलाओ", "aap": "खिलाइए", "mat-tum": "मत खिलाओ" }
+      readings: { "tu": "khilā", "tum": "khilāō", "aap": "khilāiē", "mat-tum": "mat khilāō" }
+    - word: "hi-1836"
+      forms: { "tu": "पिला", "tum": "पिलाओ", "aap": "पिलाइए", "mat-tum": "मत पिलाओ" }
+      readings: { "tu": "pilā", "tum": "pilāō", "aap": "pilāiē", "mat-tum": "mat pilāō" }
+    - word: "hi-1837"
+      forms: { "tu": "जगा", "tum": "जगाओ", "aap": "जगाइए", "mat-tum": "मत जगाओ" }
+      readings: { "tu": "jagā", "tum": "jagāō", "aap": "jagāiē", "mat-tum": "mat jagāō" }
+    - word: "hi-1838"
+      forms: { "tu": "उगा", "tum": "उगाओ", "aap": "उगाइए", "mat-tum": "मत उगाओ" }
+      readings: { "tu": "ugā", "tum": "ugāō", "aap": "ugāiē", "mat-tum": "mat ugāō" }
+    - word: "hi-1878"
+      forms: { "tu": "बज", "tum": "बजो", "aap": "बजिए", "mat-tum": "मत बजो" }
+      readings: { "tu": "baj", "tum": "bajō", "aap": "bajiē", "mat-tum": "mat bajō" }
+    - word: "hi-1913"
+      forms: { "tu": "पहुँच", "tum": "पहुँचो", "aap": "पहुँचिए", "mat-tum": "मत पहुँचो" }
+      readings: { "tu": "pahum̐ca", "tum": "pahum̐cō", "aap": "pahum̐ciē", "mat-tum": "mat pahum̐cō" }
+    - word: "hi-1914"
+      forms: { "tu": "रुक", "tum": "रुको", "aap": "रुकिए", "mat-tum": "मत रुको" }
+      readings: { "tu": "ruk", "tum": "rukō", "aap": "rukiē", "mat-tum": "mat rukō" }
+    - word: "hi-1915"
+      forms: { "tu": "ठहर", "tum": "ठहरो", "aap": "ठहरिए", "mat-tum": "मत ठहरो" }
+      readings: { "tu": "ṭhahr", "tum": "ṭhahrō", "aap": "ṭhahriē", "mat-tum": "mat ṭhahrō" }
+    - word: "hi-1916"
+      forms: { "tu": "चढ़", "tum": "चढ़ो", "aap": "चढ़िए", "mat-tum": "मत चढ़ो" }
+      readings: { "tu": "caṛh", "tum": "caṛhō", "aap": "caṛhiē", "mat-tum": "mat caṛhō" }
+    - word: "hi-1917"
+      forms: { "tu": "उतर", "tum": "उतरो", "aap": "उतरिए", "mat-tum": "मत उतरो" }
+      readings: { "tu": "utr", "tum": "utrō", "aap": "utriē", "mat-tum": "mat utrō" }
+    - word: "hi-1918"
+      forms: { "tu": "छूट", "tum": "छूटो", "aap": "छूटिए", "mat-tum": "मत छूटो" }
+      readings: { "tu": "chūṭ", "tum": "chūṭō", "aap": "chūṭiē", "mat-tum": "mat chūṭō" }
+    - word: "hi-1919"
+      forms: { "tu": "खो", "tum": "खोओ", "aap": "खोइए", "mat-tum": "मत खोओ" }
+      readings: { "tu": "khō", "tum": "khōō", "aap": "khōiē", "mat-tum": "mat khōō" }
+    - word: "hi-1950"
+      forms: { "tu": "उग", "tum": "उगो", "aap": "उगिए", "mat-tum": "मत उगो" }
+      readings: { "tu": "ug", "tum": "ugō", "aap": "ugiē", "mat-tum": "mat ugō" }
+    - word: "hi-1951"
+      forms: { "tu": "बह", "tum": "बहो", "aap": "बहिए", "mat-tum": "मत बहो" }
+      readings: { "tu": "bah", "tum": "bahō", "aap": "bahiē", "mat-tum": "mat bahō" }
+    - word: "hi-1952"
+      forms: { "tu": "खिल", "tum": "खिलो", "aap": "खिलिए", "mat-tum": "मत खिलो" }
+      readings: { "tu": "khil", "tum": "khilō", "aap": "khiliē", "mat-tum": "mat khilō" }
+    - word: "hi-1953"
+      forms: { "tu": "झड़", "tum": "झड़ो", "aap": "झड़िए", "mat-tum": "मत झड़ो" }
+      readings: { "tu": "jhaṛ", "tum": "jhaṛō", "aap": "jhaṛiē", "mat-tum": "mat jhaṛō" }
+    - word: "hi-1954"
+      forms: { "tu": "फैल", "tum": "फैलो", "aap": "फैलिए", "mat-tum": "मत फैलो" }
+      readings: { "tu": "phail", "tum": "phailō", "aap": "phailiē", "mat-tum": "mat phailō" }
+    - word: "hi-1955"
+      forms: { "tu": "डूब", "tum": "डूबो", "aap": "डूबिए", "mat-tum": "मत डूबो" }
+      readings: { "tu": "ḍūb", "tum": "ḍūbō", "aap": "ḍūbiē", "mat-tum": "mat ḍūbō" }
+    - word: "hi-1956"
+      forms: { "tu": "उड़", "tum": "उड़ो", "aap": "उड़िए", "mat-tum": "मत उड़ो" }
+      readings: { "tu": "uṛ", "tum": "uṛō", "aap": "uṛiē", "mat-tum": "mat uṛō" }
+    - word: "hi-1957"
+      forms: { "tu": "चहचहा", "tum": "चहचहाओ", "aap": "चहचहाइए", "mat-tum": "मत चहचहाओ" }
+      readings: { "tu": "cahchā", "tum": "cahchāō", "aap": "cahchāiē", "mat-tum": "mat cahchāō" }
+    - word: "hi-2029"
+      forms: { "tu": "सौंप", "tum": "सौंपो", "aap": "सौंपिए", "mat-tum": "मत सौंपो" }
+      readings: { "tu": "saumpa", "tum": "saumpō", "aap": "saumpiē", "mat-tum": "mat saumpō" }
+    - word: "hi-2030"
+      forms: { "tu": "निपटा", "tum": "निपटाओ", "aap": "निपटाइए", "mat-tum": "मत निपटाओ" }
+      readings: { "tu": "nipṭā", "tum": "nipṭāō", "aap": "nipṭāiē", "mat-tum": "mat nipṭāō" }
+    - word: "hi-2031"
+      forms: { "tu": "संभाल", "tum": "संभालो", "aap": "संभालिए", "mat-tum": "मत संभालो" }
+      readings: { "tu": "sambhāl", "tum": "sambhālō", "aap": "sambhāliē", "mat-tum": "mat sambhālō" }
+    - word: "hi-2091"
+      forms: { "tu": "सूज", "tum": "सूजो", "aap": "सूजिए", "mat-tum": "मत सूजो" }
+      readings: { "tu": "sūj", "tum": "sūjō", "aap": "sūjiē", "mat-tum": "mat sūjō" }
+    - word: "hi-2137"
+      forms: { "tu": "घबरा", "tum": "घबराओ", "aap": "घबराइए", "mat-tum": "मत घबराओ" }
+      readings: { "tu": "ghabrā", "tum": "ghabrāō", "aap": "ghabrāiē", "mat-tum": "mat ghabrāō" }
+    - word: "hi-2138"
+      forms: { "tu": "झुंझला", "tum": "झुंझलाओ", "aap": "झुंझलाइए", "mat-tum": "मत झुंझलाओ" }
+      readings: { "tu": "jhuñjhalā", "tum": "jhuñjhalāō", "aap": "jhuñjhalāiē", "mat-tum": "mat jhuñjhalāō" }
+    - word: "hi-2139"
+      forms: { "tu": "चिढ़", "tum": "चिढ़ो", "aap": "चिढ़िए", "mat-tum": "मत चिढ़ो" }
+      readings: { "tu": "ciṛh", "tum": "ciṛhō", "aap": "ciṛhiē", "mat-tum": "mat ciṛhō" }
+    - word: "hi-2140"
+      forms: { "tu": "शर्मा", "tum": "शर्माओ", "aap": "शर्माइए", "mat-tum": "मत शर्माओ" }
+      readings: { "tu": "śarmā", "tum": "śarmāō", "aap": "śarmāiē", "mat-tum": "mat śarmāō" }
+    - word: "hi-2172"
+      forms: { "tu": "छप", "tum": "छपो", "aap": "छपिए", "mat-tum": "मत छपो" }
+      readings: { "tu": "chap", "tum": "chapō", "aap": "chapiē", "mat-tum": "mat chapō" }
+    - word: "hi-2173"
+      forms: { "tu": "सुना", "tum": "सुनाओ", "aap": "सुनाइए", "mat-tum": "मत सुनाओ" }
+      readings: { "tu": "sunā", "tum": "sunāō", "aap": "sunāiē", "mat-tum": "mat sunāō" }
+    - word: "hi-2184"
+      forms: { "tu": "मान", "tum": "मानो", "aap": "मानिए", "mat-tum": "मत मानो" }
+      readings: { "tu": "mān", "tum": "mānō", "aap": "māniē", "mat-tum": "mat mānō" }
+    - word: "hi-2205"
+      forms: { "tu": "सुझा", "tum": "सुझाओ", "aap": "सुझाइए", "mat-tum": "मत सुझाओ" }
+      readings: { "tu": "sujhā", "tum": "sujhāō", "aap": "sujhāiē", "mat-tum": "mat sujhāō" }
+    - word: "hi-2207"
+      forms: { "tu": "स्वीकार", "tum": "स्वीकारो", "aap": "स्वीकारिए", "mat-tum": "मत स्वीकारो" }
+      readings: { "tu": "svīkār", "tum": "svīkārō", "aap": "svīkāriē", "mat-tum": "mat svīkārō" }
+    - word: "hi-2229"
+      forms: { "tu": "घुमा", "tum": "घुमाओ", "aap": "घुमाइए", "mat-tum": "मत घुमाओ" }
+      readings: { "tu": "ghumā", "tum": "ghumāō", "aap": "ghumāiē", "mat-tum": "mat ghumāō" }
+    - word: "hi-2581"
+      forms: { "tu": "झगड़", "tum": "झगड़ो", "aap": "झगड़िए", "mat-tum": "मत झगड़ो" }
+      readings: { "tu": "jhagṛ", "tum": "jhagṛō", "aap": "jhagṛiē", "mat-tum": "mat jhagṛō" }
+    - word: "hi-2582"
+      forms: { "tu": "रूठ", "tum": "रूठो", "aap": "रूठिए", "mat-tum": "मत रूठो" }
+      readings: { "tu": "rūṭh", "tum": "rūṭhō", "aap": "rūṭhiē", "mat-tum": "mat rūṭhō" }
+    - word: "hi-2583"
+      forms: { "tu": "जुड़", "tum": "जुड़ो", "aap": "जुड़िए", "mat-tum": "मत जुड़ो" }
+      readings: { "tu": "juṛ", "tum": "juṛō", "aap": "juṛiē", "mat-tum": "mat juṛō" }
+    - word: "hi-2607"
+      forms: { "tu": "बस", "tum": "बसो", "aap": "बसिए", "mat-tum": "मत बसो" }
+      readings: { "tu": "bas", "tum": "basō", "aap": "basiē", "mat-tum": "mat basō" }
+    - word: "hi-2614"
+      forms: { "tu": "जम", "tum": "जमो", "aap": "जमिए", "mat-tum": "मत जमो" }
+      readings: { "tu": "jam", "tum": "jamō", "aap": "jamiē", "mat-tum": "mat jamō" }
+    - word: "hi-2615"
+      forms: { "tu": "पिघल", "tum": "पिघलो", "aap": "पिघलिए", "mat-tum": "मत पिघलो" }
+      readings: { "tu": "pighl", "tum": "pighlō", "aap": "pighliē", "mat-tum": "mat pighlō" }
+    - word: "hi-2616"
+      forms: { "tu": "उबल", "tum": "उबलो", "aap": "उबलिए", "mat-tum": "मत उबलो" }
+      readings: { "tu": "ubl", "tum": "ublō", "aap": "ubliē", "mat-tum": "mat ublō" }
+    - word: "hi-2617"
+      forms: { "tu": "जल", "tum": "जलो", "aap": "जलिए", "mat-tum": "मत जलो" }
+      readings: { "tu": "jal", "tum": "jalō", "aap": "jaliē", "mat-tum": "mat jalō" }
+    - word: "hi-2618"
+      forms: { "tu": "बुझ", "tum": "बुझो", "aap": "बुझिए", "mat-tum": "मत बुझो" }
+      readings: { "tu": "bujh", "tum": "bujhō", "aap": "bujhiē", "mat-tum": "mat bujhō" }
+    - word: "hi-2619"
+      forms: { "tu": "भटक", "tum": "भटको", "aap": "भटकिए", "mat-tum": "मत भटको" }
+      readings: { "tu": "bhaṭk", "tum": "bhaṭkō", "aap": "bhaṭkiē", "mat-tum": "mat bhaṭkō" }
+    - word: "hi-2620"
+      forms: { "tu": "छिप", "tum": "छिपो", "aap": "छिपिए", "mat-tum": "मत छिपो" }
+      readings: { "tu": "chip", "tum": "chipō", "aap": "chipiē", "mat-tum": "mat chipō" }
+    - word: "hi-2621"
+      forms: { "tu": "कूद", "tum": "कूदो", "aap": "कूदिए", "mat-tum": "मत कूदो" }
+      readings: { "tu": "kūd", "tum": "kūdō", "aap": "kūdiē", "mat-tum": "mat kūdō" }
+    - word: "hi-2622"
+      forms: { "tu": "फिसल", "tum": "फिसलो", "aap": "फिसलिए", "mat-tum": "मत फिसलो" }
+      readings: { "tu": "phisl", "tum": "phislō", "aap": "phisliē", "mat-tum": "mat phislō" }
+    - word: "hi-2623"
+      forms: { "tu": "थाम", "tum": "थामो", "aap": "थामिए", "mat-tum": "मत थामो" }
+      readings: { "tu": "thām", "tum": "thāmō", "aap": "thāmiē", "mat-tum": "mat thāmō" }
+    - word: "hi-2624"
+      forms: { "tu": "रगड़", "tum": "रगड़ो", "aap": "रगड़िए", "mat-tum": "मत रगड़ो" }
+      readings: { "tu": "ragṛ", "tum": "ragṛō", "aap": "ragṛiē", "mat-tum": "mat ragṛō" }
+    - word: "hi-2625"
+      forms: { "tu": "तोड़", "tum": "तोड़ो", "aap": "तोड़िए", "mat-tum": "मत तोड़ो" }
+      readings: { "tu": "tōṛ", "tum": "tōṛō", "aap": "tōṛiē", "mat-tum": "mat tōṛō" }
+    - word: "hi-2626"
+      forms: { "tu": "मोड़", "tum": "मोड़ो", "aap": "मोड़िए", "mat-tum": "मत मोड़ो" }
+      readings: { "tu": "mōṛ", "tum": "mōṛō", "aap": "mōṛiē", "mat-tum": "mat mōṛō" }
+    - word: "hi-2627"
+      forms: { "tu": "लड़", "tum": "लड़ो", "aap": "लड़िए", "mat-tum": "मत लड़ो" }
+      readings: { "tu": "laṛ", "tum": "laṛō", "aap": "laṛiē", "mat-tum": "mat laṛō" }
+    - word: "hi-2628"
+      forms: { "tu": "सुधार", "tum": "सुधारो", "aap": "सुधारिए", "mat-tum": "मत सुधारो" }
+      readings: { "tu": "sudhār", "tum": "sudhārō", "aap": "sudhāriē", "mat-tum": "mat sudhārō" }
+    - word: "hi-2629"
+      forms: { "tu": "लगा", "tum": "लगाओ", "aap": "लगाइए", "mat-tum": "मत लगाओ" }
+      readings: { "tu": "lagā", "tum": "lagāō", "aap": "lagāiē", "mat-tum": "mat lagāō" }
+    - word: "hi-2630"
+      forms: { "tu": "लगवा", "tum": "लगवाओ", "aap": "लगवाइए", "mat-tum": "मत लगवाओ" }
+      readings: { "tu": "lagvā", "tum": "lagvāō", "aap": "lagvāiē", "mat-tum": "mat lagvāō" }
+    - word: "hi-2631"
+      forms: { "tu": "पहचान", "tum": "पहचानो", "aap": "पहचानिए", "mat-tum": "मत पहचानो" }
+      readings: { "tu": "pahcān", "tum": "pahcānō", "aap": "pahcāniē", "mat-tum": "mat pahcānō" }
+    - word: "hi-2632"
+      forms: { "tu": "सींच", "tum": "सींचो", "aap": "सींचिए", "mat-tum": "मत सींचो" }
+      readings: { "tu": "sīñca", "tum": "sīñcō", "aap": "sīñciē", "mat-tum": "mat sīñcō" }
+    - word: "hi-2633"
+      forms: { "tu": "बो", "tum": "बोओ", "aap": "बोइए", "mat-tum": "मत बोओ" }
+      readings: { "tu": "bō", "tum": "bōō", "aap": "bōiē", "mat-tum": "mat bōō" }
+    - word: "hi-2634"
+      forms: { "tu": "माँग", "tum": "माँगो", "aap": "माँगिए", "mat-tum": "मत माँगो" }
+      readings: { "tu": "mām̐ga", "tum": "mām̐gō", "aap": "mām̐giē", "mat-tum": "mat mām̐gō" }
+    - word: "hi-2635"
+      forms: { "tu": "निकल", "tum": "निकलो", "aap": "निकलिए", "mat-tum": "मत निकलो" }
+      readings: { "tu": "nikl", "tum": "niklō", "aap": "nikliē", "mat-tum": "mat niklō" }
+    - word: "hi-2636"
+      forms: { "tu": "गाड़", "tum": "गाड़ो", "aap": "गाड़िए", "mat-tum": "मत गाड़ो" }
+      readings: { "tu": "gāṛ", "tum": "gāṛō", "aap": "gāṛiē", "mat-tum": "mat gāṛō" }
+    - word: "hi-2637"
+      forms: { "tu": "उड़ा", "tum": "उड़ाओ", "aap": "उड़ाइए", "mat-tum": "मत उड़ाओ" }
+      readings: { "tu": "uṛā", "tum": "uṛāō", "aap": "uṛāiē", "mat-tum": "mat uṛāō" }
+    - word: "hi-2638"
+      forms: { "tu": "हटा", "tum": "हटाओ", "aap": "हटाइए", "mat-tum": "मत हटाओ" }
+      readings: { "tu": "haṭā", "tum": "haṭāō", "aap": "haṭāiē", "mat-tum": "mat haṭāō" }
+    - word: "hi-2639"
+      forms: { "tu": "निगल", "tum": "निगलो", "aap": "निगलिए", "mat-tum": "मत निगलो" }
+      readings: { "tu": "nigl", "tum": "niglō", "aap": "nigliē", "mat-tum": "mat niglō" }
+    - word: "hi-2640"
+      forms: { "tu": "चबा", "tum": "चबाओ", "aap": "चबाइए", "mat-tum": "मत चबाओ" }
+      readings: { "tu": "cabā", "tum": "cabāō", "aap": "cabāiē", "mat-tum": "mat cabāō" }
+    - word: "hi-2641"
+      forms: { "tu": "निचोड़", "tum": "निचोड़ो", "aap": "निचोड़िए", "mat-tum": "मत निचोड़ो" }
+      readings: { "tu": "nicōṛ", "tum": "nicōṛō", "aap": "nicōṛiē", "mat-tum": "mat nicōṛō" }
+    - word: "hi-2642"
+      forms: { "tu": "सूँघ", "tum": "सूँघो", "aap": "सूँघिए", "mat-tum": "मत सूँघो" }
+      readings: { "tu": "sūm̐gha", "tum": "sūm̐ghō", "aap": "sūm̐ghiē", "mat-tum": "mat sūm̐ghō" }
+    - word: "hi-2643"
+      forms: { "tu": "चख", "tum": "चखो", "aap": "चखिए", "mat-tum": "मत चखो" }
+      readings: { "tu": "cakh", "tum": "cakhō", "aap": "cakhiē", "mat-tum": "mat cakhō" }
+    - word: "hi-2790"
+      forms: { "tu": "बढ़", "tum": "बढ़ो", "aap": "बढ़िए", "mat-tum": "मत बढ़ो" }
+      readings: { "tu": "baṛh", "tum": "baṛhō", "aap": "baṛhiē", "mat-tum": "mat baṛhō" }
+    - word: "hi-2791"
+      forms: { "tu": "बढ़ा", "tum": "बढ़ाओ", "aap": "बढ़ाइए", "mat-tum": "मत बढ़ाओ" }
+      readings: { "tu": "baṛhā", "tum": "baṛhāō", "aap": "baṛhāiē", "mat-tum": "mat baṛhāō" }
+    - word: "hi-2792"
+      forms: { "tu": "गुज़र", "tum": "गुज़रो", "aap": "गुज़रिए", "mat-tum": "मत गुज़रो" }
+      readings: { "tu": "guzr", "tum": "guzrō", "aap": "guzriē", "mat-tum": "mat guzrō" }
+    - word: "hi-2793"
+      forms: { "tu": "झपट", "tum": "झपटो", "aap": "झपटिए", "mat-tum": "मत झपटो" }
+      readings: { "tu": "jhapṭ", "tum": "jhapṭō", "aap": "jhapṭiē", "mat-tum": "mat jhapṭō" }
+    - word: "hi-2794"
+      forms: { "tu": "पलट", "tum": "पलटो", "aap": "पलटिए", "mat-tum": "मत पलटो" }
+      readings: { "tu": "palṭ", "tum": "palṭō", "aap": "palṭiē", "mat-tum": "mat palṭō" }
+    - word: "hi-2795"
+      forms: { "tu": "सोख", "tum": "सोखो", "aap": "सोखिए", "mat-tum": "मत सोखो" }
+      readings: { "tu": "sōkh", "tum": "sōkhō", "aap": "sōkhiē", "mat-tum": "mat sōkhō" }
+    - word: "hi-2796"
+      forms: { "tu": "बहा", "tum": "बहाओ", "aap": "बहाइए", "mat-tum": "मत बहाओ" }
+      readings: { "tu": "bahā", "tum": "bahāō", "aap": "bahāiē", "mat-tum": "mat bahāō" }
+    - word: "hi-2797"
+      forms: { "tu": "मल", "tum": "मलो", "aap": "मलिए", "mat-tum": "मत मलो" }
+      readings: { "tu": "mal", "tum": "malō", "aap": "maliē", "mat-tum": "mat malō" }
+    - word: "hi-2798"
+      forms: { "tu": "भिगो", "tum": "भिगोओ", "aap": "भिगोइए", "mat-tum": "मत भिगोओ" }
+      readings: { "tu": "bhigō", "tum": "bhigōō", "aap": "bhigōiē", "mat-tum": "mat bhigōō" }
+    - word: "hi-2799"
+      forms: { "tu": "पकड़ा", "tum": "पकड़ाओ", "aap": "पकड़ाइए", "mat-tum": "मत पकड़ाओ" }
+      readings: { "tu": "pakṛā", "tum": "pakṛāō", "aap": "pakṛāiē", "mat-tum": "mat pakṛāō" }
+    - word: "hi-2800"
+      forms: { "tu": "खुजला", "tum": "खुजलाओ", "aap": "खुजलाइए", "mat-tum": "मत खुजलाओ" }
+      readings: { "tu": "khujlā", "tum": "khujlāō", "aap": "khujlāiē", "mat-tum": "mat khujlāō" }
+    - word: "hi-2801"
+      forms: { "tu": "दबोच", "tum": "दबोचो", "aap": "दबोचिए", "mat-tum": "मत दबोचो" }
+      readings: { "tu": "dabōc", "tum": "dabōcō", "aap": "dabōciē", "mat-tum": "mat dabōcō" }
+    - word: "hi-2803"
+      forms: { "tu": "भुन", "tum": "भुनो", "aap": "भुनिए", "mat-tum": "मत भुनो" }
+      readings: { "tu": "bhun", "tum": "bhunō", "aap": "bhuniē", "mat-tum": "mat bhunō" }
+    - word: "hi-2804"
+      forms: { "tu": "चमका", "tum": "चमकाओ", "aap": "चमकाइए", "mat-tum": "मत चमकाओ" }
+      readings: { "tu": "camkā", "tum": "camkāō", "aap": "camkāiē", "mat-tum": "mat camkāō" }
+    - word: "hi-2805"
+      forms: { "tu": "हिला", "tum": "हिलाओ", "aap": "हिलाइए", "mat-tum": "मत हिलाओ" }
+      readings: { "tu": "hilā", "tum": "hilāō", "aap": "hilāiē", "mat-tum": "mat hilāō" }
+    - word: "hi-2806"
+      forms: { "tu": "हिल", "tum": "हिलो", "aap": "हिलिए", "mat-tum": "मत हिलो" }
+      readings: { "tu": "hil", "tum": "hilō", "aap": "hiliē", "mat-tum": "mat hilō" }
+    - word: "hi-2807"
+      forms: { "tu": "झूल", "tum": "झूलो", "aap": "झूलिए", "mat-tum": "मत झूलो" }
+      readings: { "tu": "jhūl", "tum": "jhūlō", "aap": "jhūliē", "mat-tum": "mat jhūlō" }
+    - word: "hi-2808"
+      forms: { "tu": "झूला", "tum": "झूलाओ", "aap": "झूलाइए", "mat-tum": "मत झूलाओ" }
+      readings: { "tu": "jhūlā", "tum": "jhūlāō", "aap": "jhūlāiē", "mat-tum": "mat jhūlāō" }
+rules:
+  - id: "hi-rule-imperative"
+    slots: ["tu", "tum", "aap", "mat-tum"]
+    words: [{ word: "-इए", reading: "-iē" }, { word: "करना", reading: "karnā" }, { word: "कर", reading: "kar" }, { word: "करो", reading: "karō" }, { word: "कीजिए", reading: "kījiē" }, { word: "मत करो", reading: "mat karō" }, { word: "मत", reading: "mat" }, { word: "तू", reading: "tū" }, { word: "तुम", reading: "tum" }, { word: "आप", reading: "āp" }, { word: "जाना", reading: "jānā" }, { word: "जाइए", reading: "jāiē" }]
