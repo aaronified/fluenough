@@ -62,7 +62,7 @@ topics:
     topics: ["ja-te-form"]
   - id: "ja-compound-verbs"
     name: { en: "Compound verbs" }
-    summary: { en: "Two verbs joined into one: a verb stem and a second verb that adds a meaning, such as begin, finish, keep, burst into, too much or do again." }
+    summary: { en: "Two verbs joined into one: a verb stem and a second verb that adds a meaning, such as begin, finish, keep, burst into, too much or do again, or do to each other." }
     term: { text: "複合動詞", reading: "fukugou doushi" }
     kind: "verbs"
     level: "B1"
@@ -190,13 +190,20 @@ topics:
     kind: "verbs"
     level: "B1"
     decks: ["ja-multiword-suru-verbs"]
-  - id: "ja-joining-sentences"
-    name: { en: "Joining sentences and describing nouns with a clause" }
-    summary: { en: "Words that join one sentence to the next, such as and then, but, so and or, and a clause placed before a noun to describe it, such as きのう かった ほん (the book I bought yesterday)." }
+  - id: "ja-conjunctions"
+    name: { en: "Joining sentences" }
+    summary: { en: "Joining sentences with そして (and then), それから (after that), でも (but) and それで (so)." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["ja-grammar-conjunctions"]
+    grammar: ["conjunctions"]
+  - id: "ja-relative-clauses"
+    name: { en: "Describing nouns with a clause" }
+    summary: { en: "Describing a noun with a clause placed before it, such as きのう かった ほん (the book I bought yesterday)." }
     kind: "grammar"
     level: "B1"
-    decks: ["ja-grammar-conjunctions", "ja-grammar-relative-clauses"]
-    grammar: ["conjunctions", "relative-clauses"]
+    decks: ["ja-grammar-relative-clauses"]
+    grammar: ["relative-clauses"]
   - id: "ja-adjective-forms"
     name: { en: "Adjectives: past forms, comparison and liking" }
     summary: { en: "How adjectives change: the negative and polite past of i- and na-adjectives, comparing with より (yori) and いちばん (ichiban), and saying what you like or are good at with すき (suki) and じょうず (jouzu)." }
@@ -214,12 +221,18 @@ topics:
     grammar: ["sonkeigo", "kenjougo", "teineigo"]
   - id: "ja-transitive-verbs"
     name: { en: "Intransitive and transitive verbs" }
-    summary: { en: "Verbs that come in pairs, such as the door opens by itself and someone opens the door. The same topic holds fifty verbs of what happens next, such as spreading, filling and cutting." }
+    summary: { en: "Verbs that come in pairs, such as the door opens by itself and someone opens the door." }
     term: { text: "自動詞・他動詞", reading: "jidoushi, tadoushi" }
     kind: "verbs"
     level: "B1"
-    decks: ["ja-grammar-transitivity", "ja-verbs-5"]
+    decks: ["ja-grammar-transitivity"]
     grammar: ["intransitive", "transitive"]
+  - id: "ja-more-verbs-b1"
+    name: { en: "Verbs of what happens next" }
+    summary: { en: "Fifty more verbs for B1, such as ひろがる (to spread), みたす (to fill) and けずる (to cut)." }
+    kind: "verbs"
+    level: "B1"
+    decks: ["ja-verbs-5"]
   - id: "ja-money"
     name: { en: "Money" }
     summary: { en: "Words for money: bills and prices, savings and debt, paying, haggling and saving." }
