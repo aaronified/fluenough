@@ -303,7 +303,8 @@ units:
       - { id: "feelings-heard", text: { "en": "A short passage in Classical Sanskrit on the theme feelings, read aloud" } }
     reading_passages:
       - { id: "feelings-text", text: { "en": "A short written text in Classical Sanskrit on the theme feelings" } }
-  - planned: { id: "sa-grammar-passive", grammar: ["passive"] }
+  - decks: ["sa-grammar-passive"]
+    grammar: ["passive-stem", "passive-third", "passive-second", "passive-first"]
     listening_passages:
       - { id: "grammar-passive-heard", text: { "en": "A short passage in Classical Sanskrit showing passive, read aloud" } }
     reading_passages:
