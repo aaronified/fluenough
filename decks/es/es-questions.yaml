@@ -261,7 +261,7 @@ cards:
     bases: [{ word: "cuáles", ref: "es-0059" }]
     examples:
       - { target: "No sé cuáles son.", ipa: "no se ˈkwales son", bases: [{ word: "No", ref: "es-0043" }, { word: "sé", base: "saber" }, { word: "cuáles", base: "cuál" }, { word: "son", ref: "es-0022" }] }
-      - { target: "¿Cuáles son tus amigos?", ipa: "ˈkwales son tus aˈmiɡos", bases: [{ word: "Cuáles", base: "cuál" }, { word: "son", ref: "es-0022" }, { word: "tus", base: "tu" }, { word: "amigos", base: "amigo" }] }
+      - { target: "¿Cuáles son tus zapatos?", ipa: "ˈkwales son tus θaˈpatos", bases: [{ word: "Cuáles", base: "cuál" }, { word: "son", ref: "es-0022" }, { word: "tus", base: "tu" }, { word: "zapatos", base: "zapato" }] }
   - id: "es-4725"
     target: "quiénes"
     ipa: "ˈkjenes"
@@ -293,7 +293,7 @@ cards:
     ipa: "poɾ ˈdonde"
     phonetic: "[poɾ ˈðon̪d̪e]"
     phonetic_source: "rules"
-    pos: "adv"
+    pos: "phrase"
     tags: ["question"]
     notes:
       - { id: "n1", kind: "note" }
@@ -306,7 +306,7 @@ cards:
     ipa: "ˈasta ˈkwando"
     phonetic: "[ˈast̪a ˈkwan̪d̪o]"
     phonetic_source: "rules"
-    pos: "adv"
+    pos: "phrase"
     tags: ["question"]
     notes:
       - { id: "n1", kind: "note" }
@@ -319,7 +319,7 @@ cards:
     ipa: "ˈdesde ˈkwando"
     phonetic: "[ˈd̪ezðe ˈkwan̪d̪o]"
     phonetic_source: "rules"
-    pos: "adv"
+    pos: "phrase"
     tags: ["question"]
     notes:
       - { id: "n1", kind: "note" }
@@ -327,3 +327,44 @@ cards:
     examples:
       - { target: "¿Desde cuándo vives aquí?", ipa: "ˈdesde ˈkwando ˈbibes aˈki", bases: [{ word: "Desde", base: "desde" }, { word: "cuándo", ref: "es-0057" }, { word: "vives", ref: "es-0030" }, { word: "aquí", ref: "es-0051" }] }
       - { target: "¿Desde cuándo estudias español?", ipa: "ˈdesde ˈkwando esˈtudjas espaˈɲol", bases: [{ word: "Desde", base: "desde" }, { word: "cuándo", ref: "es-0057" }, { word: "estudias", ref: "es-0258" }, { word: "español", base: "español" }] }
+  - id: "es-4744"
+    target: "cuánta"
+    ipa: "ˈkwanta"
+    phonetic: "[ˈkwan̪t̪a]"
+    phonetic_source: "rules"
+    pos: "adj"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "cuánta", ref: "es-0060" }]
+    examples:
+      - { target: "¿Cuánta sal necesitas?", ipa: "ˈkwanta sal neθeˈsitas", bases: [{ word: "Cuánta", base: "cuánto" }, { word: "sal", base: "sal" }, { word: "necesitas", ref: "es-0288" }] }
+      - { target: "No sé cuánta leche hay.", ipa: "no se ˈkwanta ˈletʃe aj", bases: [{ word: "No", ref: "es-0043" }, { word: "sé", base: "saber" }, { word: "cuánta", base: "cuánto" }, { word: "leche", base: "leche" }, { word: "hay", base: "haber" }] }
+  - id: "es-4745"
+    target: "la pregunta"
+    ipa: "la pɾeˈɡunta"
+    phonetic: "[la pɾeˈɣun̪t̪a]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "pregunta", base: "pregunta" }]
+    examples:
+      - { target: "Tengo una pregunta.", ipa: "ˈtenɡo ˈuna pɾeˈɡunta", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "pregunta", base: "pregunta" }] }
+      - { target: "La pregunta es muy fácil.", ipa: "la pɾeˈɡunta es mwi ˈfaθil", bases: [{ word: "La", base: "la" }, { word: "pregunta", base: "pregunta" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "fácil", base: "fácil" }] }
+  - id: "es-4746"
+    target: "la cuestión"
+    ipa: "la kwesˈtjon"
+    phonetic: "[la kwesˈt̪jon]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "cuestión", base: "cuestión" }]
+    examples:
+      - { target: "Es una cuestión importante.", ipa: "es ˈuna kwesˈtjon impoɾˈtante", bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "cuestión", base: "cuestión" }, { word: "importante", base: "importante" }] }
+      - { target: "La cuestión es el precio.", ipa: "la kwesˈtjon es el ˈpɾeθjo", bases: [{ word: "La", base: "la" }, { word: "cuestión", base: "cuestión" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "precio", base: "precio" }] }
