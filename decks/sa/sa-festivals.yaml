@@ -1,0 +1,561 @@
+schema: 1
+id: "sa-festivals"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "festivals"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-5909"
+    target: "वाद्यम्"
+    reading: "vādyam"
+    ipa: "ʋaːd̪jəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+    bases:
+          - { word: "वाद्यम्", base: "वाद्य", reading: "vādya" }
+    examples:
+      - target: "वाद्यं भवति"
+        reading: "vādyaṃ bhavati"
+        ipa: "ʋaːd̪jəm bʱəʋət̪i"
+        bases:
+          - { word: "वाद्यं", base: "वाद्य", reading: "vādyaṃ" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "वाद्यं तत्र भवति"
+        reading: "vādyaṃ tatra bhavati"
+        ipa: "ʋaːd̪jəm t̪ət̪rə bʱəʋət̪i"
+        bases:
+          - { word: "वाद्यं", base: "वाद्य", reading: "vādyaṃ" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5910"
+    target: "भेरी"
+    reading: "bherī"
+    ipa: "bʱeːriː"
+    pos: "noun"
+    gender: "f"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "भेरी भवति"
+        reading: "bherī bhavati"
+        ipa: "bʱeːriː bʱəʋət̪i"
+        bases:
+          - { word: "भेरी", base: "भेरी", reading: "bherī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "भेरी तत्र भवति"
+        reading: "bherī tatra bhavati"
+        ipa: "bʱeːriː t̪ət̪rə bʱəʋət̪i"
+        bases:
+          - { word: "भेरी", base: "भेरी", reading: "bherī" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5911"
+    target: "शङ्खः"
+    reading: "śaṅkhaḥ"
+    ipa: "ʃəŋkʰəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "शङ्खः", base: "शङ्ख", reading: "śaṅkha" }
+    examples:
+      - target: "शङ्खो भवति"
+        reading: "śaṅkho bhavati"
+        ipa: "ʃəŋkʰoː bʱəʋət̪i"
+        bases:
+          - { word: "शङ्खो", base: "शङ्ख", reading: "śaṅkho" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "शङ्खस् तत्र भवति"
+        reading: "śaṅkhas tatra bhavati"
+        ipa: "ʃəŋkʰəs t̪ət̪rə bʱəʋət̪i"
+        bases:
+          - { word: "शङ्खस्", base: "शङ्ख", reading: "śaṅkhas" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5912"
+    target: "घण्टा"
+    reading: "ghaṇṭā"
+    ipa: "ɡʱəɳʈaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "घण्टा भवति"
+        reading: "ghaṇṭā bhavati"
+        ipa: "ɡʱəɳʈaː bʱəʋət̪i"
+        bases:
+          - { word: "घण्टा", base: "घण्टा", reading: "ghaṇṭā" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "घण्टा तत्र भवति"
+        reading: "ghaṇṭā tatra bhavati"
+        ipa: "ɡʱəɳʈaː t̪ət̪rə bʱəʋət̪i"
+        bases:
+          - { word: "घण्टा", base: "घण्टा", reading: "ghaṇṭā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5913"
+    target: "रङ्गः"
+    reading: "raṅgaḥ"
+    ipa: "rəŋɡəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "रङ्गः", base: "रङ्ग", reading: "raṅga" }
+    examples:
+      - target: "रङ्गो भवति"
+        reading: "raṅgo bhavati"
+        ipa: "rəŋɡoː bʱəʋət̪i"
+        bases:
+          - { word: "रङ्गो", base: "रङ्ग", reading: "raṅgo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "रङ्गस् तत्र भवति"
+        reading: "raṅgas tatra bhavati"
+        ipa: "rəŋɡəs t̪ət̪rə bʱəʋət̪i"
+        bases:
+          - { word: "रङ्गस्", base: "रङ्ग", reading: "raṅgas" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5914"
+    target: "मूर्तिः"
+    reading: "mūrtiḥ"
+    ipa: "muːrt̪ih"
+    pos: "noun"
+    gender: "f"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "मूर्तिः", base: "मूर्ति", reading: "mūrti" }
+    examples:
+      - target: "मूर्तिर् भवति"
+        reading: "mūrtir bhavati"
+        ipa: "muːrt̪ir bʱəʋət̪i"
+        bases:
+          - { word: "मूर्तिर्", base: "मूर्ति", reading: "mūrtir" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "मूर्तिस् तत्र भवति"
+        reading: "mūrtis tatra bhavati"
+        ipa: "muːrt̪is t̪ət̪rə bʱəʋət̪i"
+        bases:
+          - { word: "मूर्तिस्", base: "मूर्ति", reading: "mūrtis" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5915"
+    target: "वरः"
+    reading: "varaḥ"
+    ipa: "ʋərəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "वरः", base: "वर", reading: "vara" }
+    examples:
+      - target: "वरो वदति"
+        reading: "varo vadati"
+        ipa: "ʋəroː ʋəd̪ət̪i"
+        bases:
+          - { word: "वरो", base: "वर", reading: "varo" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "वरस् तत्र तिष्ठति"
+        reading: "varas tatra tiṣṭhati"
+        ipa: "ʋərəs t̪ət̪rə t̪iʂʈʰət̪i"
+        bases:
+          - { word: "वरस्", base: "वर", reading: "varas" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+  - id: "sa-5916"
+    target: "विवाहः"
+    reading: "vivāhaḥ"
+    ipa: "ʋiʋaːɦəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "विवाहः", base: "विवाह", reading: "vivāha" }
+    examples:
+      - target: "जनो विवाहं करोति"
+        reading: "jano vivāhaṃ karoti"
+        ipa: "dʒənoː ʋiʋaːɦəm kəroːt̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "विवाहं", base: "विवाह", reading: "vivāhaṃ" }
+          - { word: "करोति", base: "कृ", reading: "karoti" }
+      - target: "विवाहो भवति"
+        reading: "vivāho bhavati"
+        ipa: "ʋiʋaːɦoː bʱəʋət̪i"
+        bases:
+          - { word: "विवाहो", base: "विवाह", reading: "vivāho" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5917"
+    target: "नाट्यम्"
+    reading: "nāṭyam"
+    ipa: "naːʈjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "नाट्यम्", base: "नाट्य", reading: "nāṭya" }
+    examples:
+      - target: "जनो नाट्यं करोति"
+        reading: "jano nāṭyaṃ karoti"
+        ipa: "dʒənoː naːʈjəm kəroːt̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "नाट्यं", base: "नाट्य", reading: "nāṭyaṃ" }
+          - { word: "करोति", base: "कृ", reading: "karoti" }
+      - target: "नाट्यं भवति"
+        reading: "nāṭyaṃ bhavati"
+        ipa: "naːʈjəm bʱəʋət̪i"
+        bases:
+          - { word: "नाट्यं", base: "नाट्य", reading: "nāṭyaṃ" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5918"
+    target: "सङ्गीतः"
+    reading: "saṅgītaḥ"
+    ipa: "səŋɡiːt̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "सङ्गीतः", base: "सङ्गीत", reading: "saṅgīta" }
+    examples:
+      - target: "सङ्गीतो भवति"
+        reading: "saṅgīto bhavati"
+        ipa: "səŋɡiːt̪oː bʱəʋət̪i"
+        bases:
+          - { word: "सङ्गीतो", base: "सङ्गीत", reading: "saṅgīto" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "सङ्गीतस् तत्र भवति"
+        reading: "saṅgītas tatra bhavati"
+        ipa: "səŋɡiːt̪əs t̪ət̪rə bʱəʋət̪i"
+        bases:
+          - { word: "सङ्गीतस्", base: "सङ्गीत", reading: "saṅgītas" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5919"
+    target: "गीतः"
+    reading: "gītaḥ"
+    ipa: "ɡiːt̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "गीतः", base: "गीत", reading: "gīta" }
+    examples:
+      - target: "जनो गीतं करोति"
+        reading: "jano gītaṃ karoti"
+        ipa: "dʒənoː ɡiːt̪əm kəroːt̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "गीतं", base: "गीत", reading: "gītaṃ" }
+          - { word: "करोति", base: "कृ", reading: "karoti" }
+      - target: "गीतो भवति"
+        reading: "gīto bhavati"
+        ipa: "ɡiːt̪oː bʱəʋət̪i"
+        bases:
+          - { word: "गीतो", base: "गीत", reading: "gīto" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5920"
+    target: "चित्रः"
+    reading: "citraḥ"
+    ipa: "tʃit̪rəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "चित्रः", base: "चित्र", reading: "citra" }
+    examples:
+      - target: "चित्रो भवति"
+        reading: "citro bhavati"
+        ipa: "tʃit̪roː bʱəʋət̪i"
+        bases:
+          - { word: "चित्रो", base: "चित्र", reading: "citro" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "चित्रस् तत्र भवति"
+        reading: "citras tatra bhavati"
+        ipa: "tʃit̪rəs t̪ət̪rə bʱəʋət̪i"
+        bases:
+          - { word: "चित्रस्", base: "चित्र", reading: "citras" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5921"
+    target: "प्रभातः"
+    reading: "prabhātaḥ"
+    ipa: "prəbʱaːt̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "प्रभातः", base: "प्रभात", reading: "prabhāta" }
+    examples:
+      - target: "प्रभातो भवति"
+        reading: "prabhāto bhavati"
+        ipa: "prəbʱaːt̪oː bʱəʋət̪i"
+        bases:
+          - { word: "प्रभातो", base: "प्रभात", reading: "prabhāto" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "प्रभातस् तत्र भवति"
+        reading: "prabhātas tatra bhavati"
+        ipa: "prəbʱaːt̪əs t̪ət̪rə bʱəʋət̪i"
+        bases:
+          - { word: "प्रभातस्", base: "प्रभात", reading: "prabhātas" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5922"
+    target: "भक्तः"
+    reading: "bhaktaḥ"
+    ipa: "bʱəkt̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "भक्तः", base: "भक्त", reading: "bhakta" }
+    examples:
+      - target: "भक्तो वदति"
+        reading: "bhakto vadati"
+        ipa: "bʱəkt̪oː ʋəd̪ət̪i"
+        bases:
+          - { word: "भक्तो", base: "भक्त", reading: "bhakto" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "भक्तस् तत्र तिष्ठति"
+        reading: "bhaktas tatra tiṣṭhati"
+        ipa: "bʱəkt̪əs t̪ət̪rə t̪iʂʈʰət̪i"
+        bases:
+          - { word: "भक्तस्", base: "भक्त", reading: "bhaktas" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+  - id: "sa-5923"
+    target: "मङ्गलम्"
+    reading: "maṅgalam"
+    ipa: "məŋɡələm"
+    pos: "noun"
+    gender: "n"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+    bases:
+          - { word: "मङ्गलम्", base: "मङ्गल", reading: "maṅgala" }
+    examples:
+      - target: "मङ्गलं भवति"
+        reading: "maṅgalaṃ bhavati"
+        ipa: "məŋɡələm bʱəʋət̪i"
+        bases:
+          - { word: "मङ्गलं", base: "मङ्गल", reading: "maṅgalaṃ" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "मङ्गलं तत्र भवति"
+        reading: "maṅgalaṃ tatra bhavati"
+        ipa: "məŋɡələm t̪ət̪rə bʱəʋət̪i"
+        bases:
+          - { word: "मङ्गलं", base: "मङ्गल", reading: "maṅgalaṃ" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5924"
+    target: "सौभाग्यम्"
+    reading: "saubhāgyam"
+    ipa: "səubʱaːɡjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+    bases:
+          - { word: "सौभाग्यम्", base: "सौभाग्य", reading: "saubhāgya" }
+    examples:
+      - target: "सौभाग्यं भवति"
+        reading: "saubhāgyaṃ bhavati"
+        ipa: "səubʱaːɡjəm bʱəʋət̪i"
+        bases:
+          - { word: "सौभाग्यं", base: "सौभाग्य", reading: "saubhāgyaṃ" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "सौभाग्यं तत्र भवति"
+        reading: "saubhāgyaṃ tatra bhavati"
+        ipa: "səubʱaːɡjəm t̪ət̪rə bʱəʋət̪i"
+        bases:
+          - { word: "सौभाग्यं", base: "सौभाग्य", reading: "saubhāgyaṃ" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5925"
+    target: "बलिः"
+    reading: "baliḥ"
+    ipa: "bəlih"
+    pos: "noun"
+    gender: "m"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "बलिः", base: "बलि", reading: "bali" }
+    examples:
+      - target: "जनो बलिं करोति"
+        reading: "jano baliṃ karoti"
+        ipa: "dʒənoː bəlim kəroːt̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "बलिं", base: "बलि", reading: "baliṃ" }
+          - { word: "करोति", base: "कृ", reading: "karoti" }
+      - target: "बलिर् भवति"
+        reading: "balir bhavati"
+        ipa: "bəlir bʱəʋət̪i"
+        bases:
+          - { word: "बलिर्", base: "बलि", reading: "balir" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5926"
+    target: "देवी"
+    reading: "devī"
+    ipa: "d̪eːʋiː"
+    pos: "noun"
+    gender: "f"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "देवी भवति"
+        reading: "devī bhavati"
+        ipa: "d̪eːʋiː bʱəʋət̪i"
+        bases:
+          - { word: "देवी", base: "देवी", reading: "devī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "देवी जनं रक्षति"
+        reading: "devī janaṃ rakṣati"
+        ipa: "d̪eːʋiː dʒənəm rəkʂət̪i"
+        bases:
+          - { word: "देवी", base: "देवी", reading: "devī" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+  - id: "sa-5927"
+    target: "कल्याणः"
+    reading: "kalyāṇaḥ"
+    ipa: "kəljaːɳəh"
+    pos: "adj"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "कल्याणः", base: "कल्याण", reading: "kalyāṇa" }
+    examples:
+      - target: "कल्याणो जनो वदति"
+        reading: "kalyāṇo jano vadati"
+        ipa: "kəljaːɳoː dʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "कल्याणो", base: "कल्याण", reading: "kalyāṇo" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "जनः कल्याणो भवति"
+        reading: "janaḥ kalyāṇo bhavati"
+        ipa: "dʒənəh kəljaːɳoː bʱəʋət̪i"
+        bases:
+          - { word: "जनः", base: "जन", reading: "janaḥ" }
+          - { word: "कल्याणो", base: "कल्याण", reading: "kalyāṇo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5928"
+    target: "पूज्यः"
+    reading: "pūjyaḥ"
+    ipa: "puːdʒjəh"
+    pos: "adj"
+    tags: ["festivals"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "पूज्यः", base: "पूज्य", reading: "pūjya" }
+    examples:
+      - target: "पूज्यो जनो वदति"
+        reading: "pūjyo jano vadati"
+        ipa: "puːdʒjoː dʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "पूज्यो", base: "पूज्य", reading: "pūjyo" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "जनः पूज्यो भवति"
+        reading: "janaḥ pūjyo bhavati"
+        ipa: "dʒənəh puːdʒjoː bʱəʋət̪i"
+        bases:
+          - { word: "जनः", base: "जन", reading: "janaḥ" }
+          - { word: "पूज्यो", base: "पूज्य", reading: "pūjyo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
