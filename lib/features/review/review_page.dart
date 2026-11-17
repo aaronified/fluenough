@@ -449,6 +449,7 @@ class _ReviewRow extends StatelessWidget {
                             language: language,
                             fontSize: 20,
                             textAlign: TextAlign.start,
+                            card: card,
                           ),
                           if (reading != null)
                             Text(

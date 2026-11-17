@@ -301,7 +301,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       for (final key in keys) {
         // A gesture skill has nothing to check, and neither has a notation:
         // the IPA and braille have no voice and no font to try.
-        toLearn && !key.kind.isGesture && !_view.language.isNotation
+        toLearn &&
+                !key.kind.isGesture &&
+                !_view.language.isNotation &&
+                (key.kind.isScript || _soundCheckApplies)
             ? _pending.add(key)
             : _pending.remove(key);
       }
@@ -325,6 +328,11 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       Navigator.of(context).pop();
     }
   }
+
+  /// Whether the sound test means anything for this language: not when its
+  /// decks, on the phone, declare no voice (no `tts` tag), as Toki Pona's
+  /// do, since no voice exists to test.
+  bool get _soundCheckApplies => _state.hasDeclaredVoice(_code);
 
   Future<bool> _confirmDownload() async {
     final l10n = AppLocalizations.of(context)!;
@@ -363,7 +371,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
           SoundCheck() => _soundCheck(),
           ScriptCheck(:final script) => _scriptCheck(script),
         },
-        (check) => setState(() {
+        // A check that failed or was dismissed ("Later", Close) is skipped,
+        // not owed: it never blocks adding or saving the language, and the
+        // font check is offered again where a deck is opened.
+        (check, _) => setState(() {
           _pending.removeWhere(
             (k) => switch (check) {
               SoundCheck() => !k.kind.isScript,

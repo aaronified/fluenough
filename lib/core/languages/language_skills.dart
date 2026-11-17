@@ -577,20 +577,21 @@ List<SkillCheck> checksOwed(Iterable<SkillKey> changedToLearn) {
   return list;
 }
 
-/// Runs [checks] one after another with [run], and gives the ones that passed
-/// as they pass to [passed]. A check that fails stays owed and never stops the
-/// next: a language with no voice on the phone, Toki Pona, fails its sound test
-/// and must still get its script's font check. [stop] says the screen is gone.
+/// Runs [checks] one after another with [run], and tells [done] how each
+/// ended, passed or not. A check that fails or is dismissed never stops the
+/// next, and never blocks the learner: a language with no voice on the phone
+/// fails its sound test and must still get its script's font check. [stop]
+/// says the screen is gone.
 Future<void> runChecks(
   List<SkillCheck> checks,
   Future<bool> Function(SkillCheck check) run,
-  void Function(SkillCheck check) passed, {
+  void Function(SkillCheck check, bool passed) done, {
   bool Function()? stop,
 }) async {
   for (final check in checks) {
     final ok = await run(check);
     if (stop?.call() ?? false) return;
-    if (ok) passed(check);
+    done(check, ok);
   }
 }
 

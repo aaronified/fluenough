@@ -207,6 +207,7 @@ class LeechCard extends StatelessWidget {
                         language: entry.language,
                         fontSize: 26,
                         textAlign: TextAlign.start,
+                        card: leech.card,
                       ),
                     ),
                   ),

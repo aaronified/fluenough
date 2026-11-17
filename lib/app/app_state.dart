@@ -1304,18 +1304,19 @@ class AppState extends ChangeNotifier {
     return started;
   }
 
-  /// Offers the font check for what [language]'s deck draws: the script its
-  /// text is written in, and each script the learner reads it in, that has a
-  /// font to download and no answer yet (ADR-0042). Called where a deck or a
-  /// card is opened, so a script whose course was downloaded before it had a
-  /// font, or whose script the learner chose later, is still checked.
+  /// Offers the font check for the scripts [language]'s text is actually
+  /// shown to this learner in, that have a font to download and no answer yet
+  /// (ADR-0042): the ones they learn, or read already ([_shownScripts]). A
+  /// learner who reads the romanisation, or the Latin spelling of a deck
+  /// written in another script, is shown no such script and is asked nothing.
+  /// Called where a deck or a card is opened, so a script whose course was
+  /// downloaded before it had a font, or that the learner chose later, is
+  /// still checked.
   void offerFonts(LanguageInfo language) {
-    final scripts = <String>{
-      fontScriptFor(language.code, language.script),
-      for (final script in learnedScripts(language))
+    fontCheck.request(<String>{
+      for (final script in _shownScripts(language))
         fontScriptFor(language.code, script),
-    };
-    fontCheck.request(scripts);
+    });
   }
 
   /// The font check: [language]'s scripts the learner reads that have a
@@ -1708,6 +1709,14 @@ class AppState extends ChangeNotifier {
     for (final language in voiceLanguages)
       if (language.code == code) language,
   ];
+
+  /// Whether a voice can exist for [code]: its decks on the phone declare one
+  /// (a `tts` tag), or none are on the phone to say. A language whose decks
+  /// declare none, such as Toki Pona, has no voice to test or install.
+  bool hasDeclaredVoice(String code) {
+    final blocks = voiceBlocksOf(code);
+    return blocks.isEmpty || blocks.any((language) => language.tts != null);
+  }
 
   /// Whether [language] can be heard now: the phone has a voice for it, and
   /// sound is on in Settings. What decides whether listening is drilled;

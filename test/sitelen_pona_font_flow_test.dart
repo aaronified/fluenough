@@ -15,7 +15,13 @@ import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/decks/deck_index.dart';
 import 'package:fluenough/core/decks/font_check.dart';
 import 'package:fluenough/core/decks/sha256.dart';
+import 'package:fluenough/core/data/course_path.dart' show Milestone;
+import 'package:fluenough/core/data/spoken_languages.dart';
+import 'package:fluenough/core/decks/language_catalog.dart';
 import 'package:fluenough/core/languages/language_skills.dart';
+import 'package:fluenough/features/languages/language_skills_sheet.dart';
+import 'package:fluenough/features/languages/language_views.dart';
+import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/fonts/font_check_prompt.dart';
 import 'package:fluenough/ui/script_name.dart';
@@ -25,6 +31,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'support/deck_remote.dart';
 import 'support/harness.dart';
+import 'support/picker.dart';
 
 const String _toki = '\u{F196C}';
 const String _fontPath = 'decks/fonts/sitelen_pona/SitelenSeliKiwen.ttf';
@@ -216,17 +223,17 @@ void main() {
     }
   });
 
-  test('a failed sound test does not stop the script\'s font check', () async {
+  test('a failed or dismissed check never stops the next, and is done', () async {
     const sound = SoundCheck();
     const script = ScriptCheck('sitelen_pona');
     final ran = <SkillCheck>[];
-    final passed = <SkillCheck>[];
+    final done = <(SkillCheck, bool)>[];
     await runChecks(<SkillCheck>[sound, script], (check) async {
       ran.add(check);
       return check is! SoundCheck;
-    }, passed.add);
+    }, (check, passed) => done.add((check, passed)));
     expect(ran, <SkillCheck>[sound, script]);
-    expect(passed, <SkillCheck>[script]);
+    expect(done, <(SkillCheck, bool)>[(sound, false), (script, true)]);
   });
 
   test('runChecks stops when the screen is gone', () async {
@@ -237,9 +244,140 @@ void main() {
         ran.add(check);
         return true;
       },
-      (_) {},
+      (_, _) {},
       stop: () => true,
     );
     expect(ran, hasLength(1));
+  });
+
+  group('only scripts shown to the learner are offered', () {
+    AppState tok(Set<String>? scripts, {Set<String> noAlphabet = const {}}) {
+      final s = AppState.test(
+        decks: MemoryDeckSource(_course),
+        deckDownloads: downloads,
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['tok'],
+          learningChosen: true,
+          noAlphabet: noAlphabet,
+          scriptsLearned: <String, Set<String>>{'tok': ?scripts},
+        ),
+      );
+      addTearDown(s.dispose);
+      return s;
+    }
+
+    test('a Latin-only Toki Pona learner opening the glyph deck is not asked '
+        'about sitelen pona, since its cards show Latin', () async {
+      final s = tok(<String>{'latin'});
+      await s.load();
+      final deck = s.deckById('tok-en-script-sitelen-pona')!;
+      s.offerFonts(deck.language);
+      expect(s.fontCheck.pending, isNull);
+    });
+
+    test('a learner who reads the romanisation is asked about no script', () async {
+      final s = tok(null, noAlphabet: <String>{'tok'});
+      await s.load();
+      final deck = s.deckById('tok-en-script-sitelen-pona')!;
+      expect(s.readsFirst(deck.language), isTrue);
+      s.offerFonts(deck.language);
+      expect(s.fontCheck.pending, isNull);
+    });
+
+    test('a learner of sitelen pona is asked about it', () async {
+      final s = tok(<String>{'latin', 'sitelen_pona'});
+      await s.load();
+      final deck = s.deckById('tok-en-script-sitelen-pona')!;
+      s.offerFonts(deck.language);
+      expect(s.fontCheck.pending, 'sitelen_pona');
+    });
+  });
+
+  group('the Languages sheet', () {
+    SpokenLanguage tokLanguage() =>
+        pickerSpokenList.firstWhere((l) => l.code == 'tok');
+
+    CatalogLanguage course() => CatalogLanguage(
+      code: 'tok',
+      name: 'Toki Pona',
+      natives: <CatalogNative>[
+        (
+          code: 'en',
+          name: 'English',
+          progress: B1Progress.of(<B1Unit>[
+            B1Unit(words: 10, milestone: Milestone.a1, has: 10),
+          ]),
+        ),
+      ],
+    );
+
+    Future<AppState> pumpDraft(WidgetTester tester) async {
+      final s = AppState.test(
+        decks: MemoryDeckSource(_course),
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningChosen: true,
+        ),
+      );
+      addTearDown(s.dispose);
+      usePhone(tester);
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: LanguageSkillsSheet(
+            view: LanguageView(tokLanguage(), course()),
+            draft: true,
+          ),
+        ),
+        state: s,
+      );
+      return s;
+    }
+
+    Finder add(AppLocalizations l10n) =>
+        find.widgetWithText(FilledButton, l10n.languagesAddLanguage('Toki Pona'));
+
+    Future<void> tap(WidgetTester tester, String key) async {
+      final finder = find.byKey(ValueKey<String>(key));
+      await tester.ensureVisible(finder);
+      await tester.pumpAndSettle();
+      await tester.tap(finder);
+      await tester.pumpAndSettle();
+    }
+
+    testWidgets('a language with no voice can be added with Hear and Speak '
+        'on: no sound test is owed', (tester) async {
+      await pumpDraft(tester);
+      final l10n = l10nOf(tester);
+      // Leave, Learn, Hear: at each, Add is offered and no test is owed.
+      for (var i = 0; i < 2; i++) {
+        await tap(tester, 'skill-spoken');
+        expect(find.text(l10n.languagesCheck), findsNothing);
+        expect(add(l10n), findsOneWidget);
+        expect(tester.widget<FilledButton>(add(l10n)).onPressed, isNotNull);
+      }
+    });
+
+    testWidgets('dismissing the font check with Later does not block adding the '
+        'language', (tester) async {
+      await pumpDraft(tester);
+      final l10n = l10nOf(tester);
+      // Cycle the sitelen pona pill until it is Learn: Check appears.
+      for (var i = 0; i < 4; i++) {
+        if (find.text(l10n.languagesCheck).evaluate().isNotEmpty) break;
+        await tap(tester, 'skill-script:sitelen_pona');
+      }
+      expect(find.text(l10n.languagesCheck), findsOneWidget);
+      await tester.tap(find.text(l10n.languagesCheck));
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.fontCheckLater), findsOneWidget);
+      await tester.tap(find.text(l10n.fontCheckLater));
+      await tester.pumpAndSettle();
+      // Skipped, not owed: the button is Add again, and enabled.
+      expect(find.text(l10n.languagesCheck), findsNothing);
+      expect(add(l10n), findsOneWidget);
+      expect(tester.widget<FilledButton>(add(l10n)).onPressed, isNotNull);
+    });
   });
 }
