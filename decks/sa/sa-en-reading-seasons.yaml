@@ -19,8 +19,8 @@ passages:
       - { text: "ग्रीष्मे तापो भवति शिशिरे तुषारः.", reading: "grīṣme tāpo bhavati śiśire tuṣāraḥ.", ipa: "ɡriːʂmeː t̪aːpoː bʱəʋət̪i ʃiʃireː t̪uʂaːrəh" }
     questions:
       - id: "sa-3707"
-        prompt: { en: "When does the cuckoo sing sweetly?" }
-        options: [{ en: "In summer" }, { en: "In spring" }, { en: "In the cool season" }]
+        prompt: { en: "Which word means 'cuckoo'?" }
+        options: [{ en: "आतपो (ātapo)" }, { en: "कोकिलो (kokilo)" }, { en: "शीतला (śītalā)" }]
         answer: 2
       - id: "sa-3708"
         prompt: { en: "Which season is named in the most sentences?" }
@@ -31,7 +31,7 @@ passages:
         options: [{ en: "आतपो (ātapo)" }, { en: "तापो (tāpo)" }, { en: "छाया (chāyā)" }]
         answer: 3
       - id: "sa-3710"
-        prompt: { en: "The shade is hot in summer." }
+        prompt: { en: "The cuckoo sings sweetly in summer." }
         answer: false
   - id: "sa-seasons-text-2"
     title: "Winter, the cool season and flowers"
@@ -51,5 +51,5 @@ passages:
         options: [{ en: "पुष्पाणि (puṣpāṇi)" }, { en: "पुष्पस्य (puṣpasya)" }, { en: "कानने (kānane)" }]
         answer: 1
       - id: "sa-3713"
-        prompt: { en: "In winter snow falls on the mountain." }
+        prompt: { en: "The cool season is named before spring in the passage." }
         answer: true

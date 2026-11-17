@@ -16,12 +16,12 @@ passages:
       - { text: "संवत्सरे द्वादश मासा भवन्ति.", reading: "saṃvatsare dvādaśa māsā bhavanti.", ipa: "sə̃ʋət̪səreː d̪ʋaːd̪əʃə maːsaː bʱəʋənt̪i" }
       - { text: "सप्ताहे सप्त दिनानि भवन्ति.", reading: "saptāhe sapta dināni bhavanti.", ipa: "səpt̪aːɦeː səpt̪ə d̪inaːni bʱəʋənt̪i" }
       - { text: "यदा चन्द्रः पूर्णो भवति तदा पूर्णिमा भवति.", reading: "yadā candraḥ pūrṇo bhavati tadā pūrṇimā bhavati.", ipa: "jəd̪aː tʃənd̪rəh puːrɳoː bʱəʋət̪i t̪əd̪aː puːrɳimaː bʱəʋət̪i" }
-      - { text: "यदा सूर्यो न तपति तदा रजनी भवति.", reading: "yadā sūryo na tapati tadā rajanī bhavati.", ipa: "jəd̪aː suːrjoː nə t̪əpət̪i t̪əd̪aː rədʒəniː bʱəʋət̪i" }
+      - { text: "सूर्यास्तस्य पश्चाद् रजनी भवति.", reading: "sūryāstasya paścād rajanī bhavati.", ipa: "suːrjaːst̪əsjə pəʃtʃaːd̪ rədʒəniː bʱəʋət̪i" }
     questions:
       - id: "sa-3714"
         prompt: { en: "Which word means 'twelve'?" }
-        options: [{ en: "द्वादश (dvādaśa)" }, { en: "सप्त (sapta)" }, { en: "रजनी (rajanī)" }]
-        answer: 1
+        options: [{ en: "सप्त (sapta)" }, { en: "द्वादश (dvādaśa)" }, { en: "रजनी (rajanī)" }]
+        answer: 2
       - id: "sa-3715"
         prompt: { en: "Which word means 'in a week'?" }
         options: [{ en: "संवत्सरे (saṃvatsare)" }, { en: "पूर्णिमा (pūrṇimā)" }, { en: "सप्ताहे (saptāhe)" }]
@@ -29,9 +29,9 @@ passages:
       - id: "sa-3716"
         prompt: { en: "How many sentences use यदा (yadā), 'when'?" }
         options: [{ en: "One" }, { en: "Two" }, { en: "Three" }]
-        answer: 2
+        answer: 1
       - id: "sa-3717"
-        prompt: { en: "The full moon day comes when the moon is full." }
+        prompt: { en: "The passage names the moon in one sentence." }
         answer: true
   - id: "sa-calendar-text-2"
     title: "Sunrise, midday and the months"
@@ -51,8 +51,8 @@ passages:
         options: [{ en: "Two" }, { en: "Three" }, { en: "Four" }]
         answer: 3
       - id: "sa-3720"
-        prompt: { en: "In Phālguna there is rain." }
-        answer: false
+        prompt: { en: "In Bhādrapada there is rain." }
+        answer: true
       - id: "sa-3721"
         prompt: { en: "Which season is in Caitra and Vaiśākha?" }
         options: [{ en: "Summer" }, { en: "Spring" }, { en: "The rainy season" }]

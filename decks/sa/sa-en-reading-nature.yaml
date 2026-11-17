@@ -43,13 +43,14 @@ passages:
       - { text: "सिंहः कानने वसति वानरो वृक्षे वसति.", reading: "siṃhaḥ kānane vasati vānaro vṛkṣe vasati.", ipa: "sĩɦəh kaːnəneː ʋəsət̪i ʋaːnəroː ʋr̩kʂeː ʋəsət̪i" }
     questions:
       - id: "sa-3704"
-        prompt: { en: "Where does the monkey live?" }
-        options: [{ en: "In the forest" }, { en: "In the tree" }, { en: "In the water" }]
+        prompt: { en: "How many animals does the passage name?" }
+        options: [{ en: "One" }, { en: "Two" }, { en: "Three" }]
         answer: 2
       - id: "sa-3705"
         prompt: { en: "Which word means 'on the peak'?" }
         options: [{ en: "शिखरे (śikhare)" }, { en: "जले (jale)" }, { en: "कानने (kānane)" }]
         answer: 1
       - id: "sa-3706"
-        prompt: { en: "There is little water in a pond." }
-        answer: true
+        prompt: { en: "How many of the four sentences use the verb भवति (bhavati), 'to be'?" }
+        options: [{ en: "Two" }, { en: "Four" }, { en: "Three" }]
+        answer: 3
