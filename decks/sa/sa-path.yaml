@@ -281,7 +281,8 @@ units:
       - { id: "grammar-krt-heard", text: { "en": "A short passage in Classical Sanskrit showing krt, read aloud" } }
     reading_passages:
       - { id: "grammar-krt-text", text: { "en": "A short written text in Classical Sanskrit showing krt" } }
-  - planned: { id: "sa-grammar-gerundives", grammar: ["gerundives"] }
+  - decks: ["sa-grammar-gerundives"]
+    grammar: ["gerundive-tavya", "gerundive-aniya", "gerundive-ya"]
     listening_passages:
       - { id: "grammar-gerundives-heard", text: { "en": "A short passage in Classical Sanskrit showing gerundives, read aloud" } }
     reading_passages:
