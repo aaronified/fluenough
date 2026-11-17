@@ -1,4 +1,4 @@
-# Every sūtra number and text was read on the sa.wikisource.org page of the Aṣṭādhyāyī chapter (read 2026-11-17) and checked against the Aṣṭādhyāyī of the GRETIL corpus (the Kāśikā edition of Aryendra Sharma); the unsplit text, the padaccheda with the case and number of each word, and the anuvṛtti and adhikāra come from the data of ashtadhyayi.com (raw.githubusercontent.com/ashtadhyayi-com/data, sutraani/data.txt, read 2026-11-17). Where the sūtra page types a sūtra defectively, the text of the other two sources is used and the sūtra is listed in docs/review-queue/sa.md. The English sense of each sūtra is the course's own plain wording, read against the translation of Śrīśa Chandra Vasu (1891 to 1897, archive.org). Examples are words of the course or standard forms; the readings and the IPA are from tools/transcribe.py (sa).
+# Every sūtra number and text was read on the sa.wikisource.org page of the Aṣṭādhyāyī chapter (read 2026-11-17) and checked against the Aṣṭādhyāyī of the GRETIL corpus (the Kāśikā edition of Aryendra Sharma); the unsplit text, the padaccheda with the case and number of each word, and the anuvṛtti and adhikāra come from the data of ashtadhyayi.com (raw.githubusercontent.com/ashtadhyayi-com/data, sutraani/data.txt, read 2026-11-17). Where the sūtra page types a sūtra defectively, the text of the other two sources is used and the sūtra is listed in docs/review-queue/sa.md. The English sense of each sūtra is the course's own plain wording, read against the translation of Śrīśa Chandra Vasu (1891 to 1897, archive.org). Examples are words of the course, or forms Whitney (1889, A Sanskrit Grammar, read in the archive.org text) or Vasu give; the Whitney section of each rule is named in its note, and 'not located' means no section was found in the text read; the readings and the IPA are from tools/transcribe.py (sa).
 schema: 1
 id: "sa-grammar-sutra-1"
 part: "core"
@@ -41,9 +41,9 @@ pattern:
       ipas: { "sutra": "ɦəloːnənt̪əraːh sə̃joːɡəh", "padaccheda": "ɦələh ənənt̪əraːh sə̃joːɡəh", "example": "əst̪i" }
     - lemma: "1.1.8"
       key: "1-1-8"
-      forms: { "sutra": "मुखनासिकावचनोऽनुनासिकः", "padaccheda": "मुख-नासिका-वचनः अनुनासिकः", "anuvrtti": null, "example": null }
-      readings: { "sutra": "mukhanāsikāvacano'nunāsikaḥ", "padaccheda": "mukha-nāsikā-vacanaḥ anunāsikaḥ" }
-      ipas: { "sutra": "mukʰənaːsikaːʋətʃənoːnunaːsikəh", "padaccheda": "mukʰənaːsikaːʋətʃənəh ənunaːsikəh" }
+      forms: { "sutra": "मुखनासिकावचनोऽनुनासिकः", "padaccheda": "मुख-नासिका-वचनः अनुनासिकः", "anuvrtti": null, "example": "ङ ञ ण न म" }
+      readings: { "sutra": "mukhanāsikāvacano'nunāsikaḥ", "padaccheda": "mukha-nāsikā-vacanaḥ anunāsikaḥ", "example": "ṅa ña ṇa na ma" }
+      ipas: { "sutra": "mukʰənaːsikaːʋətʃənoːnunaːsikəh", "padaccheda": "mukʰənaːsikaːʋətʃənəh ənunaːsikəh", "example": "ŋə ɲə ɳə nə mə" }
     - lemma: "1.1.9"
       key: "1-1-9"
       forms: { "sutra": "तुल्यास्यप्रयत्नं सवर्णम्", "padaccheda": "तुल्य-आस्य-प्रयत्नम् सवर्णम्", "anuvrtti": null, "example": "अ आ" }
@@ -116,9 +116,9 @@ pattern:
       ipas: { "sutra": "aːd̪eːh pərəsjə", "padaccheda": "aːd̪eːh pərəsjə", "anuvrtti": "ʂəʂʈʰiː st̪ʰaːneː ələh" }
     - lemma: "1.1.55"
       key: "1-1-55"
-      forms: { "sutra": "अनेकाल्शित्सर्वस्य", "padaccheda": "अनेकाल्-शित् सर्वस्य", "anuvrtti": "षष्ठी स्थाने", "example": null }
-      readings: { "sutra": "anekālśitsarvasya", "padaccheda": "anekāl-śit sarvasya", "anuvrtti": "ṣaṣṭhī sthāne" }
-      ipas: { "sutra": "əneːkaːlʃit̪sərʋəsjə", "padaccheda": "əneːkaːlʃit̪ sərʋəsjə", "anuvrtti": "ʂəʂʈʰiː st̪ʰaːneː" }
+      forms: { "sutra": "अनेकाल्शित्सर्वस्य", "padaccheda": "अनेकाल्-शित् सर्वस्य", "anuvrtti": "षष्ठी स्थाने", "example": "अवधीत्" }
+      readings: { "sutra": "anekālśitsarvasya", "padaccheda": "anekāl-śit sarvasya", "anuvrtti": "ṣaṣṭhī sthāne", "example": "avadhīt" }
+      ipas: { "sutra": "əneːkaːlʃit̪sərʋəsjə", "padaccheda": "əneːkaːlʃit̪ sərʋəsjə", "anuvrtti": "ʂəʂʈʰiː st̪ʰaːneː", "example": "əʋəd̪ʱiːt̪" }
     - lemma: "1.1.56"
       key: "1-1-56"
       forms: { "sutra": "स्थानिवदादेशोऽनल्विधौ", "padaccheda": "स्थानिवत् आदेशः अनल्विधौ", "anuvrtti": null, "example": null }
@@ -126,9 +126,9 @@ pattern:
       ipas: { "sutra": "st̪ʰaːniʋəd̪aːd̪eːʃoːnəlʋid̪ʱəu", "padaccheda": "st̪ʰaːniʋət̪ aːd̪eːʃəh ənəlʋid̪ʱəu" }
     - lemma: "1.1.60"
       key: "1-1-60"
-      forms: { "sutra": "अदर्शनं लोपः", "padaccheda": "अदर्शनं लोपः", "anuvrtti": "स्थाने", "example": null }
-      readings: { "sutra": "adarśanaṃ lopaḥ", "padaccheda": "adarśanaṃ lopaḥ", "anuvrtti": "sthāne" }
-      ipas: { "sutra": "əd̪ərʃənəm loːpəh", "padaccheda": "əd̪ərʃənəm loːpəh", "anuvrtti": "st̪ʰaːneː" }
+      forms: { "sutra": "अदर्शनं लोपः", "padaccheda": "अदर्शनं लोपः", "anuvrtti": "स्थाने", "example": "अभरन्" }
+      readings: { "sutra": "adarśanaṃ lopaḥ", "padaccheda": "adarśanaṃ lopaḥ", "anuvrtti": "sthāne", "example": "abharan" }
+      ipas: { "sutra": "əd̪ərʃənəm loːpəh", "padaccheda": "əd̪ərʃənəm loːpəh", "anuvrtti": "st̪ʰaːneː", "example": "əbʱərən" }
     - lemma: "1.1.61"
       key: "1-1-61"
       forms: { "sutra": "प्रत्ययस्य लुक्श्लुलुपः", "padaccheda": "प्रत्ययस्य लुक्-श्लु-लुपः", "anuvrtti": "अदर्शनं", "example": "जुहोति" }
@@ -156,14 +156,14 @@ pattern:
       ipas: { "sutra": "t̪əsmaːd̪it̪jut̪t̪ərəsjə", "padaccheda": "t̪əsmaːt̪ it̪i ut̪t̪ərəsjə", "anuvrtti": "nird̪iʂʈeː", "example": "aːd̪ɡuɳəh" }
     - lemma: "1.1.68"
       key: "1-1-68"
-      forms: { "sutra": "स्वं रूपं शब्दस्याशब्दसंज्ञा", "padaccheda": "स्वम् रूपम् शब्दस्य अ-शब्दसंज्ञा", "anuvrtti": null, "example": null }
-      readings: { "sutra": "svaṃ rūpaṃ śabdasyāśabdasaṃjñā", "padaccheda": "svam rūpam śabdasya a-śabdasaṃjñā" }
-      ipas: { "sutra": "sʋəm ruːpəm ʃəbd̪əsjaːʃəbd̪əsəɲdʒɲaː", "padaccheda": "sʋəm ruːpəm ʃəbd̪əsjə əʃəbd̪əsəɲdʒɲaː" }
+      forms: { "sutra": "स्वं रूपं शब्दस्याशब्दसंज्ञा", "padaccheda": "स्वम् रूपम् शब्दस्य अ-शब्दसंज्ञा", "anuvrtti": null, "example": "अग्नि" }
+      readings: { "sutra": "svaṃ rūpaṃ śabdasyāśabdasaṃjñā", "padaccheda": "svam rūpam śabdasya a-śabdasaṃjñā", "example": "agni" }
+      ipas: { "sutra": "sʋəm ruːpəm ʃəbd̪əsjaːʃəbd̪əsəɲdʒɲaː", "padaccheda": "sʋəm ruːpəm ʃəbd̪əsjə əʃəbd̪əsəɲdʒɲaː", "example": "əɡni" }
     - lemma: "1.1.70"
       key: "1-1-70"
-      forms: { "sutra": "तपरस्तत्कालस्य", "padaccheda": "तपरः तत्कालस्य", "anuvrtti": "स्वम् रूपम् सवर्णस्य", "example": null }
-      readings: { "sutra": "taparastatkālasya", "padaccheda": "taparaḥ tatkālasya", "anuvrtti": "svam rūpam savarṇasya" }
-      ipas: { "sutra": "t̪əpərəst̪ət̪kaːləsjə", "padaccheda": "t̪əpərəh t̪ət̪kaːləsjə", "anuvrtti": "sʋəm ruːpəm səʋərɳəsjə" }
+      forms: { "sutra": "तपरस्तत्कालस्य", "padaccheda": "तपरः तत्कालस्य", "anuvrtti": "स्वम् रूपम् सवर्णस्य", "example": "अत्" }
+      readings: { "sutra": "taparastatkālasya", "padaccheda": "taparaḥ tatkālasya", "anuvrtti": "svam rūpam savarṇasya", "example": "at" }
+      ipas: { "sutra": "t̪əpərəst̪ət̪kaːləsjə", "padaccheda": "t̪əpərəh t̪ət̪kaːləsjə", "anuvrtti": "sʋəm ruːpəm səʋərɳəsjə", "example": "ət̪" }
     - lemma: "1.1.71"
       key: "1-1-71"
       forms: { "sutra": "आदिरन्त्येन सहेता", "padaccheda": "आदिः अन्त्येन सह इता", "anuvrtti": "स्वम् रूपम्", "example": "इक्" }
@@ -171,9 +171,9 @@ pattern:
       ipas: { "sutra": "aːd̪irənt̪jeːnə səɦeːt̪aː", "padaccheda": "aːd̪ih ənt̪jeːnə səɦə it̪aː", "anuvrtti": "sʋəm ruːpəm", "example": "ik" }
     - lemma: "1.1.72"
       key: "1-1-72"
-      forms: { "sutra": "येन विधिस्तदन्तस्य", "padaccheda": "येन विधिः तदन्तस्य", "anuvrtti": "स्वम् रूपम्", "example": null }
-      readings: { "sutra": "yena vidhistadantasya", "padaccheda": "yena vidhiḥ tadantasya", "anuvrtti": "svam rūpam" }
-      ipas: { "sutra": "jeːnə ʋid̪ʱist̪əd̪ənt̪əsjə", "padaccheda": "jeːnə ʋid̪ʱih t̪əd̪ənt̪əsjə", "anuvrtti": "sʋəm ruːpəm" }
+      forms: { "sutra": "येन विधिस्तदन्तस्य", "padaccheda": "येन विधिः तदन्तस्य", "anuvrtti": "स्वम् रूपम्", "example": "जेयम्" }
+      readings: { "sutra": "yena vidhistadantasya", "padaccheda": "yena vidhiḥ tadantasya", "anuvrtti": "svam rūpam", "example": "jeyam" }
+      ipas: { "sutra": "jeːnə ʋid̪ʱist̪əd̪ənt̪əsjə", "padaccheda": "jeːnə ʋid̪ʱih t̪əd̪ənt̪əsjə", "anuvrtti": "sʋəm ruːpəm", "example": "dʒeːjəm" }
     - lemma: "1.1.73"
       key: "1-1-73"
       forms: { "sutra": "वृद्धिर्यस्याचामादिस्तद् वृद्धम्", "padaccheda": "वृद्धिः यस्य अचाम् आदिः तत् वृद्धम्", "anuvrtti": null, "example": "भारतः" }
