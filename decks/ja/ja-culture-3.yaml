@@ -2,7 +2,7 @@
 # each with its source, its rights basis and its creator (wiki/Plan-Deck-Kinds-And-Topics.md).
 # Each text was read on the cited ja.wikipedia page, or on ja.wikisource for the items ja-4655, ja-4660, ja-4663 and ja-4665
 # (checked against Wikisource: Kumo no Ito, the Kandata line this-spider-thread-is-mine; the first sentence of Lemon; the opening of Botchan;
-# Takuboku's Ichiaku no Suna tanka). A text that could not be read on a page is not in this deck.
+# Takuboku's Ichiaku no Suna tanka). The last card, ja-4668 (Ozaki Hosai), was read on Wikipedia. The deck holds eighteen cards; ja-4656 was dropped as unverified and its id is never reused. A text that could not be read on a page is not in this deck.
 # The text is shown in modern kana, with kanji left out, so that a learner who knows only the kana can read it.
 schema: 1
 id: "ja-culture-3"
@@ -561,3 +561,30 @@ cards:
       author_died: 1902
       jurisdiction: "JP"
       rights_checked: "2026-11-15"
+  - id: "ja-4668"
+    target: "せきをしてもひとり"
+    words: ["せき", "を", "して", "も", "ひとり"]
+    reading: "seki o shite mo hitori"
+    ipa: "seki o ɕite mo çitoɾi"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "ja-ozaki-hosai"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "せき", base: "せき", reading: "seki" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "して", base: "する", reading: "shite" }
+      - { word: "も", base: "も", reading: "mo" }
+      - { word: "ひとり", base: "ひとり", reading: "hitori" }
+    source:
+      author: "Ozaki Hosai"
+      work: "a free-verse haiku, Seki o shite mo hitori"
+      date: "1925-1926"
+      edition: "Listed among his representative haiku, in the Shodoshima years (Taisho 14 and 15), on the Japanese Wikipedia page of Ozaki Hosai; the page prints it as 咳をしても一人, shown here in kana"
+      url: "https://ja.wikipedia.org/wiki/%E5%B0%BE%E5%B4%8E%E6%94%BE%E5%93%89"
+      basis: "public-domain"
+      author_died: 1926
+      jurisdiction: "JP"
+      rights_checked: "2026-11-17"
