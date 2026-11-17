@@ -1,0 +1,158 @@
+schema: 1
+id: "ja-hospitality-reception"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+genre: "professional"
+professional: "hospitality"
+hidden: true
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "ja-7521"
+    target: "いらっしゃいませ"
+    words: ["いらっしゃいませ"]
+    reading: "irasshaimase"
+    ipa: "iɾaɕɕaimase"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases:
+      - { word: "いらっしゃいませ", base: "いらっしゃる", reading: "irassharu" }
+  - id: "ja-7522"
+    target: "ごよやくのおなまえをおねがいします"
+    words: ["ごよやく", "の", "おなまえ", "を", "おねがいします"]
+    reading: "goyoyaku no onamae o onegaishimasu"
+    ipa: "ɡojojakɯ no onamae o oneɡaiɕimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "ごよやく", ref: "ja-1424" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "おなまえ", ref: "ja-0145" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "おねがいします", base: "おねがいする", reading: "onegaisuru" }
+  - id: "ja-7523"
+    target: "パスポートをおみせください"
+    words: ["パスポート", "を", "おみせ", "ください"]
+    reading: "pasupooto o omise kudasai"
+    ipa: "pasɯpoːto o omise kɯdasai"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "パスポート", ref: "ja-2390" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "おみせ", ref: "ja-0591" }
+      - { word: "ください", base: "くださる", reading: "kudasaru" }
+  - id: "ja-7524"
+    target: "チェックインはさんじからです"
+    words: ["チェックイン", "は", "さんじ", "から", "です"]
+    reading: "chekkuin wa sanji kara desu"
+    ipa: "tɕekkɯiɴ wa saɴdʑi kaɾa desɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "チェックイン", ref: "ja-2399" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "さんじ", base: "さんじ", reading: "sanji" }
+      - { word: "から", base: "から", reading: "kara" }
+      - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-7525"
+    target: "チェックアウトはじゅういちじまでです"
+    words: ["チェックアウト", "は", "じゅういちじ", "まで", "です"]
+    reading: "chekkuauto wa juuichiji made desu"
+    ipa: "tɕekkɯaɯto wa dʑɯːitɕidʑi made desɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "チェックアウト", ref: "ja-2400" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "じゅういちじ", base: "じゅういちじ", reading: "juuichiji" }
+      - { word: "まで", base: "まで", reading: "made" }
+      - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-7526"
+    target: "おへやはさんびゃくじゅうごうしつです"
+    words: ["おへや", "は", "さんびゃく", "じゅう", "ごうしつ", "です"]
+    reading: "oheya wa sanbyaku juu goushitsu desu"
+    ipa: "oheja wa saɴbjakɯ dʑɯː ɡoːɕitsɯ desɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "おへや", ref: "ja-1168" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "さんびゃく", ref: "ja-0757" }
+      - { word: "じゅう", ref: "ja-0238" }
+      - { word: "ごうしつ", base: "ごうしつ", reading: "goushitsu" }
+      - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-7527"
+    target: "おにもつをおあずかりします"
+    words: ["おにもつ", "を", "おあずかりします"]
+    reading: "onimotsu o oazukarishimasu"
+    ipa: "onimotsɯ o oadzɯkaɾiɕimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "おにもつ", ref: "ja-1024" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "おあずかりします", ref: "ja-2926" }
+  - id: "ja-7528"
+    target: "あさごはんはろくじからくじまでです"
+    words: ["あさごはん", "は", "ろくじ", "から", "くじ", "まで", "です"]
+    reading: "asagohan wa rokuji kara kuji made desu"
+    ipa: "asaɡohaɴ wa ɾokɯdʑi kaɾa kɯdʑi made desɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "あさごはん", ref: "ja-0955" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ろくじ", base: "ろくじ", reading: "rokuji" }
+      - { word: "から", base: "から", reading: "kara" }
+      - { word: "くじ", base: "くじ", reading: "kuji" }
+      - { word: "まで", base: "まで", reading: "made" }
+      - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-7529"
+    target: "ごゆっくりどうぞ"
+    words: ["ごゆっくり", "どうぞ"]
+    reading: "goyukkuri douzo"
+    ipa: "ɡojɯkkɯɾi doːdzo"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "ごゆっくり", base: "ごゆっくり", reading: "goyukkuri" }
+      - { word: "どうぞ", base: "どうぞ", reading: "douzo" }
+  - id: "ja-7530"
+    target: "しょうしょうおまちください"
+    words: ["しょうしょう", "おまち", "ください"]
+    reading: "shoushou omachi kudasai"
+    ipa: "ɕoːɕoː omatɕi kɯdasai"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "しょうしょう", base: "しょうしょう", reading: "shoushou" }
+      - { word: "おまち", ref: "ja-0358" }
+      - { word: "ください", base: "くださる", reading: "kudasaru" }
+  - id: "ja-7531"
+    target: "またのおこしをおまちしております"
+    words: ["また", "の", "おこし", "を", "おまちして", "おります"]
+    reading: "mata no okoshi o omachishite orimasu"
+    ipa: "mata no okoɕi o omatɕiɕite oɾimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "また", ref: "ja-0411" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "おこし", base: "おこし", reading: "okoshi" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "おまちして", ref: "ja-0358" }
+      - { word: "おります", base: "おる", reading: "oru" }

@@ -1,0 +1,49 @@
+schema: 1
+id: "ja-en-hospitality-restaurant"
+kind: "layer"
+core: "ja-hospitality-restaurant"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Hospitality: in a restaurant"
+license: "CC-BY-SA-4.0"
+description: "Phrases restaurant staff say to guests: seating, taking the order, serving, clearing and the bill."
+cards:
+  "ja-7532":
+    native: "How many people are in your party?"
+    notes: { n1: "なんめい (nanmei) asks the number of people and さま (sama) is the honorific for the guest. なんめいさまですか (nanmeisama desu ka) is the standard way a restaurant asks." }
+    bases: { "なんめい": { meaning: "how many people" }, "です": { meaning: "to be (polite)" }, "か": { meaning: "(makes a question)" } }
+  "ja-7533":
+    native: "This way, please."
+    notes: { n1: "こちら (kochira) is the polite word for here or this way, and へ (e) marks the direction. Staff use it as they show guests to a table." }
+    bases: { "こちら": { meaning: "this way, here (polite)" }, "へ": { meaning: "(marks a direction)" }, "どうぞ": { meaning: "please, go ahead" } }
+  "ja-7534":
+    native: "Have you decided on your order?"
+    notes: { n1: "ごちゅうもん (gochuumon) takes ご (go) because it is a word of Chinese origin and the order is the guest's. おきまりですか (okimari desu ka) is the honorific way to ask whether it has been decided." }
+    bases: { "は": { meaning: "(marks the topic)" }, "おきまり": { meaning: "to be decided" }, "です": { meaning: "to be (polite)" }, "か": { meaning: "(makes a question)" } }
+  "ja-7535":
+    native: "Certainly. (I understand)"
+    notes: { n1: "かしこまりました (kashikomarimashita) is what staff say when they accept an order or a request. It is humbler than わかりました (wakarimashita)." }
+    bases: { "かしこまりました": { meaning: "to understand, to acknowledge (humble)" } }
+  "ja-7536":
+    native: "Would you like something to drink?"
+    notes: { n1: "いかが (ikaga) is the polite form of どう (dou) (how about). おのみもの (onomimono) takes お (o) because it is offered to the guest." }
+    bases: { "は": { meaning: "(marks the topic)" }, "です": { meaning: "to be (polite)" }, "か": { meaning: "(makes a question)" } }
+  "ja-7537":
+    native: "Thank you for waiting. (I have kept you waiting)"
+    notes: { n1: "おまたせいたしました (omatase itashimashita) is said when serving food or returning after a wait. いたしました (itashimashita) is humble for しました (shimashita)." }
+    bases: { "おまたせ": { meaning: "to keep someone waiting" } }
+  "ja-7538":
+    native: "Is that all?"
+    notes: { n1: "いじょうでよろしいでしょうか (ijou de yoroshii deshou ka) is said after repeating the order, to check that nothing is missing. よろしい (yoroshii) is the polite form of いい (ii)." }
+    bases: { "いじょう": { meaning: "that is all, the above" }, "で": { meaning: "(marks the means, the place or the total)" }, "よろしい": { meaning: "good, all right (polite)" }, "でしょう": { meaning: "to be (polite)" }, "か": { meaning: "(makes a question)" } }
+  "ja-7539":
+    native: "May I clear this away?"
+    notes: { n1: "おさげして (osageshite) is the humble form (お (o) plus the verb stem plus して (shite)) of さげる (sageru). It is a standard phrase when a guest has finished eating." }
+    bases: { "おさげして": { meaning: "to take away, to clear (a table)" }, "も": { meaning: "(also)" }, "よろしい": { meaning: "good, all right (polite)" }, "です": { meaning: "to be (polite)" }, "か": { meaning: "(makes a question)" } }
+  "ja-7540":
+    native: "The bill is paid over there."
+    notes: { n1: "かいけい (kaikei) means paying the bill at a restaurant. Many Japanese restaurants have the guest pay at the cash register at the door." }
+    bases: { "おかいけい": { meaning: "paying the bill" }, "は": { meaning: "(marks the topic)" }, "あちら": { meaning: "over there (polite)" }, "です": { meaning: "to be (polite)" } }
+  "ja-7541":
+    native: "Thank you for coming today."
+    notes: { n1: "ほんじつ (honjitsu) is a formal word for today, used by staff. ありがとうございました (arigatou gozaimashita) in the past tense thanks the guest for a visit that is over." }
+    bases: { "ほんじつ": { meaning: "today (formal)" }, "は": { meaning: "(marks the topic)" }, "ありがとう": { meaning: "thank you" }, "ございました": { meaning: "to be, to have (for things; very polite)" } }

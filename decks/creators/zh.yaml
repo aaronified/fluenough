@@ -1,0 +1,779 @@
+schema: 1
+kind: creators
+id: creators-zh
+language: zh
+license: CC-BY-SA-4.0
+eras:
+- id: spring-autumn
+  name:
+    zh: 春秋时代
+    en: Spring and Autumn period
+  reading:
+    zh: chūnqiū shídài
+  from: -770
+  to: -476
+- id: warring-states
+  name:
+    zh: 战国时代
+    en: Warring States period
+  reading:
+    zh: zhànguó shídài
+  from: -475
+  to: -221
+- id: tang
+  name:
+    zh: 唐朝
+    en: Tang dynasty
+  reading:
+    zh: tángcháo
+  from: 618
+  to: 907
+- id: song
+  name:
+    zh: 宋朝
+    en: Song dynasty
+  reading:
+    zh: sòngcháo
+  from: 960
+  to: 1279
+- id: han
+  name:
+    zh: 汉朝
+    en: Han dynasty
+  reading:
+    zh: Hàncháo
+  from: -202
+  to: 220
+- id: three-kingdoms
+  name:
+    zh: 三国时代
+    en: Three Kingdoms period
+  reading:
+    zh: Sānguó shídài
+  from: 220
+  to: 280
+- id: southern-northern
+  name:
+    zh: 南北朝
+    en: Northern and Southern dynasties
+  reading:
+    zh: Nánběi cháo
+  from: 420
+  to: 589
+- id: republic
+  name:
+    zh: 民国时期
+    en: Republican period
+  reading:
+    zh: Mínguó shíqī
+  from: 1912
+  to: 1949
+creators:
+- id: zh-meng-haoran
+  name:
+    zh:
+      text: 孟浩然
+      reading: Mèng Hàorán
+    en:
+      text: Meng Haoran
+  born:
+    year: 689
+    circa: true
+  died: 740
+  era: tang
+  bio:
+    en: A Tang poet who wrote about nature, friends and quiet country life.
+  legacy:
+    text:
+      en: "Fifteen of his poems are included in Three Hundred Tang Poems, a popular Qing anthology."
+    items:
+    - kind: other
+      text:
+        en: "Fifteen of his poems are included in Three Hundred Tang Poems, a popular Qing anthology."
+      source:
+        url: https://en.wikipedia.org/wiki/Meng_Haoran
+        accessed: '2026-11-17'
+- id: zh-li-bai
+  name:
+    zh:
+      text: 李白
+      reading: Lǐ Bái
+    en:
+      text: Li Bai
+  born:
+    year: 701
+    circa: true
+  died: 762
+  era: tang
+  bio:
+    en: A Tang poet famous for bold, free poems about travel, wine and the moon.
+  legacy:
+    text:
+      en: A monument in Zhongba Town, Jiangyou, Sichuan, commemorates his childhood there.
+    items:
+    - kind: commemoration
+      text:
+        en: A monument in Zhongba Town, Jiangyou, Sichuan, commemorates his childhood there.
+      source:
+        url: https://en.wikipedia.org/wiki/Li_Bai
+        accessed: '2026-11-17'
+- id: zh-wang-zhihuan
+  name:
+    zh:
+      text: 王之涣
+      reading: Wáng Zhīhuàn
+    en:
+      text: Wang Zhihuan
+  born:
+    year: 688
+    circa: true
+  died:
+    year: 742
+    circa: true
+  era: tang
+  bio:
+    en: A Tang poet known for a few short poems about rivers, towers and far places.
+  legacy:
+    text:
+      en: "He is best known for the short poem Climbing the Stork Tower."
+    items:
+    - kind: other
+      text:
+        en: "He is best known for the short poem Climbing the Stork Tower."
+      source:
+        url: https://en.wikipedia.org/wiki/Wang_Zhihuan
+        accessed: '2026-11-17'
+- id: zh-liu-zongyuan
+  name:
+    zh:
+      text: 柳宗元
+      reading: Liǔ Zōngyuán
+    en:
+      text: Liu Zongyuan
+  born: 773
+  died: 819
+  era: tang
+  bio:
+    en: A Tang poet, writer and official who was sent away from the capital and later governed Liuzhou.
+  legacy:
+    text:
+      en: A park and temple in Liuzhou are dedicated to his memory.
+    items:
+    - kind: place
+      text:
+        en: A park and temple in Liuzhou are dedicated to his memory.
+      source:
+        url: https://en.wikipedia.org/wiki/Liu_Zongyuan
+        accessed: '2026-11-17'
+- id: zh-meng-jiao
+  name:
+    zh:
+      text: 孟郊
+      reading: Mèng Jiāo
+    en:
+      text: Meng Jiao
+  born: 751
+  died: 814
+  era: tang
+  bio:
+    en: A Tang poet who wrote short, plain poems, many of them about his mother and his life as a poor scholar.
+  legacy:
+    text:
+      en: "Two of his poems are included in Three Hundred Tang Poems."
+    items:
+    - kind: other
+      text:
+        en: "Two of his poems are included in Three Hundred Tang Poems."
+      source:
+        url: https://en.wikipedia.org/wiki/Meng_Jiao
+        accessed: '2026-11-17'
+- id: zh-wang-anshi
+  name:
+    zh:
+      text: 王安石
+      reading: Wáng Ānshí
+    en:
+      text: Wang Anshi
+  born: 1021
+  died: 1086
+  era: song
+  bio:
+    en: A Song poet and statesman who led reforms and wrote poems about the seasons and nature.
+  legacy:
+    text:
+      en: "As chancellor he led the New Policies, a set of major socioeconomic reforms."
+    items:
+    - kind: other
+      text:
+        en: "As chancellor he led the New Policies, a set of major socioeconomic reforms."
+      source:
+        url: https://en.wikipedia.org/wiki/Wang_Anshi
+        accessed: '2026-11-17'
+- id: zh-du-fu
+  name:
+    zh:
+      text: 杜甫
+      reading: Dù Fǔ
+    en:
+      text: Du Fu
+  born: 712
+  died: 770
+  era: tang
+  bio:
+    en: A Tang poet who wrote about war, family and daily life, and is one of the most read Chinese poets.
+  legacy:
+    text:
+      en: A statue of him stands in his Thatched Cottage in Chengdu.
+    items:
+    - kind: place
+      text:
+        en: A statue of him stands in his Thatched Cottage in Chengdu.
+      source:
+        url: https://en.wikipedia.org/wiki/Du_Fu
+        accessed: '2026-11-17'
+- id: zh-he-zhizhang
+  name:
+    zh:
+      text: 贺知章
+      reading: Hè Zhīzhāng
+    en:
+      text: He Zhizhang
+  born:
+    year: 659
+    circa: true
+  died:
+    year: 744
+    circa: true
+  era: tang
+  bio:
+    en: A Tang poet and court official who wrote the poem about coming home after a long absence.
+  legacy:
+    text:
+      en: "His poem Returning Home as an Unrecognized Old Man was copied in calligraphy by the Qing reformer Kang Youwei."
+    items:
+    - kind: other
+      text:
+        en: "His poem Returning Home as an Unrecognized Old Man was copied in calligraphy by the Qing reformer Kang Youwei."
+      source:
+        url: https://en.wikipedia.org/wiki/He_Zhizhang
+        accessed: '2026-11-17'
+- id: zh-su-shi
+  name:
+    zh:
+      text: 苏轼
+      reading: Sū Shì
+    en:
+      text: Su Shi
+  born: 1037
+  died: 1101
+  era: song
+  bio:
+    en: A Song poet, painter and official, known also as Su Dongpo.
+  legacy:
+    text:
+      en: "Dongpo pork, a famous dish, is named after him, but the story that he invented it has no evidence."
+    items:
+    - kind: other
+      text:
+        en: "Dongpo pork, a famous dish, is named after him, but the story that he invented it has no evidence."
+      source:
+        url: https://en.wikipedia.org/wiki/Su_Shi
+        accessed: '2026-11-17'
+- id: zh-bai-juyi
+  name:
+    zh:
+      text: 白居易
+      reading: Bái Jūyì
+    en:
+      text: Bai Juyi
+  born: 772
+  died: 846
+  era: tang
+  bio:
+    en: A Tang poet who wrote plain, clear poems that were read by ordinary people as well as scholars.
+  legacy:
+    text:
+      en: "His long narrative poem Song of Everlasting Sorrow tells the story of Yang Guifei."
+    items:
+    - kind: other
+      text:
+        en: "His long narrative poem Song of Everlasting Sorrow tells the story of Yang Guifei."
+      source:
+        url: https://en.wikipedia.org/wiki/Bai_Juyi
+        accessed: '2026-11-17'
+- id: zh-wang-wei
+  name:
+    zh:
+      text: 王维
+      reading: Wáng Wéi
+    en:
+      text: Wang Wei
+  born: 699
+  died:
+    year: 761
+    circa: true
+  era: tang
+  bio:
+    en: A Tang poet and painter who wrote quiet poems about mountains, rivers and friends.
+  legacy:
+    text:
+      en: "29 of his poems are included in Three Hundred Tang Poems, an 18th-century anthology."
+    items:
+    - kind: other
+      text:
+        en: "29 of his poems are included in Three Hundred Tang Poems, an 18th-century anthology."
+      source:
+        url: https://en.wikipedia.org/wiki/Wang_Wei
+        accessed: '2026-11-17'
+- id: zh-confucius
+  name:
+    zh:
+      text: 孔子
+      reading: Kǒngzǐ
+    en:
+      text: Confucius
+  born:
+    year: -551
+    circa: true
+  died:
+    year: -479
+    circa: true
+  era: spring-autumn
+  bio:
+    en: A teacher of the Spring and Autumn period whose sayings were gathered in the Analects.
+  legacy:
+    text:
+      en: "In South Korea a grand memorial ceremony called Seokjeon Daeje is held twice a year, on Confucius's birthday and on the anniversary of his death."
+    items:
+    - kind: commemoration
+      text:
+        en: "In South Korea a grand memorial ceremony called Seokjeon Daeje is held twice a year, on Confucius's birthday and on the anniversary of his death."
+      source:
+        url: https://en.wikipedia.org/wiki/Confucius
+        accessed: '2026-11-17'
+- id: zh-mencius
+  name:
+    zh:
+      text: 孟子
+      reading: Mèngzǐ
+    en:
+      text: Mencius
+  born:
+    year: -371
+    circa: true
+  died:
+    year: -289
+    circa: true
+  era: warring-states
+  bio:
+    en: A Warring States philosopher who taught that people are good by nature and that a ruler must care for the people.
+  legacy:
+    text:
+      en: "His book Mencius is one of the Four Books, the core texts of Confucian teaching."
+    items:
+    - kind: curriculum
+      text:
+        en: "His book Mencius is one of the Four Books, the core texts of Confucian teaching."
+      source:
+        url: https://en.wikipedia.org/wiki/Mencius
+        accessed: '2026-11-17'
+- id: zh-xunzi
+  name:
+    zh:
+      text: 荀子
+      reading: Xúnzǐ
+    en:
+      text: Xunzi
+  born:
+    year: -310
+    circa: true
+  died:
+    year: -238
+    circa: true
+  era: warring-states
+  bio:
+    en: A Warring States philosopher who taught that people become good through learning and practice.
+  legacy:
+    text:
+      en: "Han Fei and Li Si are listed among his notable students."
+    items:
+    - kind: other
+      text:
+        en: "Han Fei and Li Si are listed among his notable students."
+      source:
+        url: https://en.wikipedia.org/wiki/Xunzi_(philosopher)
+        accessed: '2026-11-17'
+- id: zh-han-fei
+  name:
+    zh:
+      text: "韩非"
+      reading: "Hán Fēi"
+    en:
+      text: "Han Fei"
+  born: {year: -280, circa: true}
+  died: {year: -233, circa: true}
+  era: warring-states
+  bio:
+    en: "A Warring States philosopher and statesman who wrote the Han Feizi and taught Legalism, a system of strict laws and clear rewards."
+  legacy:
+    text:
+      en: "The Han Feizi is seen as the main text of Legalism, a philosophy of strict laws and clear rewards."
+    items:
+    - kind: other
+      text:
+        en: "The Han Feizi is seen as the main text of Legalism, a philosophy of strict laws and clear rewards."
+      source:
+        url: "https://en.wikipedia.org/wiki/Han_Fei"
+        accessed: '2026-11-17'
+- id: zh-liu-xiang
+  name:
+    zh:
+      text: "刘向"
+      reading: "Liú Xiàng"
+    en:
+      text: "Liu Xiang"
+  born: -77
+  died: -6
+  era: han
+  bio:
+    en: "A Han scholar who looked after the imperial library and compiled the Warring States stories known as the Zhanguo Ce."
+  legacy:
+    text:
+      en: "He compiled the first catalogue of the imperial library, called the Bielu."
+    items:
+    - kind: other
+      text:
+        en: "He compiled the first catalogue of the imperial library, called the Bielu."
+      source:
+        url: "https://en.wikipedia.org/wiki/Liu_Xiang_(scholar)"
+        accessed: '2026-11-17'
+- id: zh-liu-an
+  name:
+    zh:
+      text: "刘安"
+      reading: "Liú Ān"
+    en:
+      text: "Liu An"
+  born: -179
+  died: -122
+  era: han
+  bio:
+    en: "A Han prince who ruled the Huainan kingdom and gathered the Huainanzi, a book of many philosophies."
+  legacy:
+    text:
+      en: "He is credited, though with no contemporary evidence, with inventing tofu."
+    items:
+    - kind: other
+      text:
+        en: "He is credited, though with no contemporary evidence, with inventing tofu."
+      source:
+        url: "https://en.wikipedia.org/wiki/Liu_An"
+        accessed: '2026-11-17'
+- id: zh-sima-qian
+  name:
+    zh:
+      text: "司马迁"
+      reading: "Sīmǎ Qiān"
+    en:
+      text: "Sima Qian"
+  born: {year: -145, circa: true}
+  died: {year: -86, circa: true}
+  era: han
+  bio:
+    en: "A Han court historian who wrote the Shiji, a history of China from the legendary emperors to his own time."
+  legacy:
+    text:
+      en: "His Shiji is still used as a textbook for the study of classical Chinese."
+    items:
+    - kind: curriculum
+      text:
+        en: "His Shiji is still used as a textbook for the study of classical Chinese."
+      source:
+        url: "https://en.wikipedia.org/wiki/Sima_Qian"
+        accessed: '2026-11-17'
+- id: zh-zhuang-zhou
+  name:
+    zh:
+      text: "庄周"
+      reading: "Zhuāng Zhōu"
+    en:
+      text: "Zhuang Zhou"
+  born: {year: -369, circa: true}
+  died: {year: -288, circa: true}
+  era: warring-states
+  bio:
+    en: "A Warring States philosopher who wrote, in part, the Zhuangzi, one of the two main Taoist texts."
+  legacy:
+    text:
+      en: "The Zhuangzi is one of two foundational texts of Taoism, along with the Tao Te Ching."
+    items:
+    - kind: other
+      text:
+        en: "The Zhuangzi is one of two foundational texts of Taoism, along with the Tao Te Ching."
+      source:
+        url: "https://en.wikipedia.org/wiki/Zhuang_Zhou"
+        accessed: '2026-11-17'
+- id: zh-zhuge-liang
+  name:
+    zh:
+      text: "诸葛亮"
+      reading: "Zhūgě Liàng"
+    en:
+      text: "Zhuge Liang"
+  born: 181
+  died: 234
+  era: three-kingdoms
+  bio:
+    en: "A statesman and strategist of the Three Kingdoms period who served the state of Shu Han and wrote the Former Chu Shi Biao."
+  legacy:
+    text:
+      en: "The Former Chu Shi Biao is engraved in the Temple of Marquis Wu in Chengdu."
+    items:
+    - kind: place
+      text:
+        en: "The Former Chu Shi Biao is engraved in the Temple of Marquis Wu in Chengdu."
+      source:
+        url: "https://en.wikipedia.org/wiki/Zhuge_Liang"
+        accessed: '2026-11-17'
+- id: zh-du-mu
+  name:
+    zh:
+      text: "杜牧"
+      reading: "Dù Mù"
+    en:
+      text: "Du Mu"
+  born: 803
+  died: 852
+  era: tang
+  bio:
+    en: "A late Tang poet and politician known for short, lively and romantic poems."
+  legacy:
+    text:
+      en: "His poem Qingming Festival, about the day of visiting the graves of ancestors, is one of his best-known."
+    items:
+    - kind: festival
+      text:
+        en: "His poem Qingming Festival, about the day of visiting the graves of ancestors, is one of his best-known."
+      source:
+        url: "https://en.wikipedia.org/wiki/Du_Mu"
+        accessed: '2026-11-17'
+- id: zh-qin-guan
+  name:
+    zh:
+      text: "秦观"
+      reading: "Qín Guān"
+    en:
+      text: "Qin Guan"
+  born: 1049
+  died: {year: 1100, circa: true}
+  era: song
+  bio:
+    en: "A Song poet famous for gentle love poems and song lyrics, admired by his friend Su Shi."
+  legacy:
+    text:
+      en: "He was one of the Four Scholars of Sumen, and Su Shi greatly admired his talent."
+    items:
+    - kind: other
+      text:
+        en: "He was one of the Four Scholars of Sumen, and Su Shi greatly admired his talent."
+      source:
+        url: "https://en.wikipedia.org/wiki/Qin_Guan"
+        accessed: '2026-11-17'
+- id: zh-wang-jian
+  name:
+    zh:
+      text: "王建"
+      reading: "Wáng Jiàn"
+    en:
+      text: "Wang Jian"
+  born: {year: 766, circa: true}
+  died: {year: 831, circa: true}
+  era: tang
+  bio:
+    en: "A Tang poet who wrote plain poems about everyday life, some in a rare six-syllable line."
+  legacy:
+    text:
+      en: "One of his poems is included in Three Hundred Tang Poems, a popular Qing anthology."
+    items:
+    - kind: other
+      text:
+        en: "One of his poems is included in Three Hundred Tang Poems, a popular Qing anthology."
+      source:
+        url: "https://en.wikipedia.org/wiki/Wang_Jian_(poet)"
+        accessed: '2026-11-17'
+- id: zh-xin-qiji
+  name:
+    zh:
+      text: "辛弃疾"
+      reading: "Xīn Qìjí"
+    en:
+      text: "Xin Qiji"
+  born: 1140
+  died: 1207
+  era: song
+  bio:
+    en: "A Song poet, calligrapher and general who wrote patriotic lyrics and hoped to win back the north."
+  legacy:
+    text:
+      en: "A piece of his calligraphy, the Quguo Tie, is kept in the Palace Museum in Beijing."
+    items:
+    - kind: other
+      text:
+        en: "A piece of his calligraphy, the Quguo Tie, is kept in the Palace Museum in Beijing."
+      source:
+        url: "https://en.wikipedia.org/wiki/Xin_Qiji"
+        accessed: '2026-11-17'
+- id: zh-zhu-ziqing
+  name:
+    zh:
+      text: "朱自清"
+      reading: "Zhū Zìqīng"
+    en:
+      text: "Zhu Ziqing"
+  born: 1898
+  died: 1948
+  era: republic
+  bio:
+    en: "A Chinese essayist, poet and professor of the early twentieth century, known for his prose about family and nature."
+  legacy:
+    text:
+      en: "His prose pieces, such as Retreating Figure and Moonlight over the Lotus Pond, are especially well known."
+    items:
+    - kind: other
+      text:
+        en: "His prose pieces, such as Retreating Figure and Moonlight over the Lotus Pond, are especially well known."
+      source:
+        url: "https://en.wikipedia.org/wiki/Zhu_Ziqing"
+        accessed: '2026-11-17'
+- id: zh-zhou-xingsi
+  name:
+    zh:
+      text: "周兴嗣"
+      reading: "Zhōu Xìngsì"
+    en:
+      text: "Zhou Xingsi"
+  born: {year: 470, circa: true}
+  died: 521
+  era: southern-northern
+  bio:
+    en: "A scholar of the Liang dynasty, said to have been asked by Emperor Wu to write a poem of one thousand different characters."
+  legacy:
+    text:
+      en: "The Thousand Character Classic, which he is said to have composed, was used as a children's primer from the sixth century onward."
+    items:
+    - kind: curriculum
+      text:
+        en: "The Thousand Character Classic, which he is said to have composed, was used as a children's primer from the sixth century onward."
+      source:
+        url: "https://en.wikipedia.org/wiki/Thousand_Character_Classic"
+        accessed: '2026-11-17'
+- id: zh-zhou-dunyi
+  name:
+    zh:
+      text: "周敦颐"
+      reading: "Zhōu Dūnyí"
+    en:
+      text: "Zhou Dunyi"
+  born: 1017
+  died: 1073
+  era: song
+  bio:
+    en: "A Song philosopher who wrote the Taiji Tu Shuo and is known for his love of the lotus."
+  legacy:
+    text:
+      en: "He was a major influence on Zhu Xi, who was the architect of Neo-Confucianism."
+    items:
+    - kind: other
+      text:
+        en: "He was a major influence on Zhu Xi, who was the architect of Neo-Confucianism."
+      source:
+        url: "https://en.wikipedia.org/wiki/Zhou_Dunyi"
+        accessed: '2026-11-17'
+- id: zh-liu-yuxi
+  name:
+    zh:
+      text: "刘禹锡"
+      reading: "Liú Yǔxī"
+    en:
+      text: "Liu Yuxi"
+  born: 772
+  died: 842
+  era: tang
+  bio:
+    en: "A Tang poet, essayist and philosopher, active during the Tang dynasty."
+  legacy:
+    text:
+      en: "His short essay The Scholar's Humble Dwelling is one of his notable works."
+    items:
+    - kind: other
+      text:
+        en: "His short essay The Scholar's Humble Dwelling is one of his notable works."
+      source:
+        url: "https://en.wikipedia.org/wiki/Liu_Yuxi"
+        accessed: '2026-11-17'
+- id: zh-fan-zhongyan
+  name:
+    zh:
+      text: "范仲淹"
+      reading: "Fàn Zhòngyān"
+    en:
+      text: "Fan Zhongyan"
+  born: 989
+  died: 1052
+  era: song
+  bio:
+    en: "A Song statesman and writer who led the Qingli reforms and wrote the essay On Yueyang Tower."
+  legacy:
+    text:
+      en: "His essay On Yueyang Tower is the most quoted of his writings."
+    items:
+    - kind: other
+      text:
+        en: "His essay On Yueyang Tower is the most quoted of his writings."
+      source:
+        url: "https://en.wikipedia.org/wiki/Fan_Zhongyan"
+        accessed: '2026-11-17'
+- id: zh-ouyang-xiu
+  name:
+    zh:
+      text: "欧阳修"
+      reading: "Ōuyáng Xiū"
+    en:
+      text: "Ouyang Xiu"
+  born: 1007
+  died: 1072
+  era: song
+  bio:
+    en: "A Song historian, essayist, poet and politician, and a leading writer of his time."
+  legacy:
+    text:
+      en: "He is considered the central figure of the Eight Masters of the Tang and Song prose writers."
+    items:
+    - kind: other
+      text:
+        en: "He is considered the central figure of the Eight Masters of the Tang and Song prose writers."
+      source:
+        url: "https://en.wikipedia.org/wiki/Ouyang_Xiu"
+        accessed: '2026-11-17'
+- id: zh-tao-yuanming
+  name:
+    zh:
+      text: "陶渊明"
+      reading: "Táo Yuānmíng"
+    en:
+      text: "Tao Yuanming"
+  born: {year: 365, circa: true}
+  died: 427
+  era: southern-northern
+  bio:
+    en: "A poet of the Six Dynasties period who lived in the countryside, farmed, drank wine and wrote about rural life."
+  legacy:
+    text:
+      en: "He is one of the best-known poets of the Six Dynasties period."
+    items:
+    - kind: other
+      text:
+        en: "He is one of the best-known poets of the Six Dynasties period."
+      source:
+        url: "https://en.wikipedia.org/wiki/Tao_Yuanming"
+        accessed: '2026-11-17'
