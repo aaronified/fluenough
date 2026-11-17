@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-dharma-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3830"
+    target: "दया धर्मस्य मूलं भवति."
+    reading: "dayā dharmasya mūlaṃ bhavati."
+    ipa: "d̪əjaː d̪ʱərməsjə muːləm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "दया", ref: "sa-5801" }, { word: "धर्मस्य", base: "धर्मः", reading: "dharmaḥ" }, { word: "मूलं", base: "मूलम्", reading: "mūlam" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5800", kind: "word" }, { id: "w2", ref: "sa-5029", kind: "word" }, { id: "w3", ref: "sa-5003", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3831"
+    target: "क्रोधो लोभश् च दोषौ भवतः."
+    reading: "krodho lobhaś ca doṣau bhavataḥ."
+    ipa: "kroːd̪ʱoː loːbʱəʃ tʃə d̪oːʂəu bʱəʋət̪əh"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "क्रोधो", base: "क्रोधः", reading: "krodhaḥ" }, { word: "लोभश्", base: "लोभः", reading: "lobhaḥ" }, { word: "च", ref: "sa-1104" }, { word: "दोषौ", base: "दोषः", reading: "doṣaḥ" }, { word: "भवतः", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5810", kind: "word" }, { id: "w2", ref: "sa-5825", kind: "word" }, { id: "w3", ref: "sa-5841", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3832"
+    target: "साधुः क्षमया क्रोधं जयति."
+    reading: "sādhuḥ kṣamayā krodhaṃ jayati."
+    ipa: "saːd̪ʱuh kʂəməjaː kroːd̪ʱəm dʒəjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "साधुः", ref: "sa-5863" }, { word: "क्षमया", base: "क्षमा", reading: "kṣamā" }, { word: "क्रोधं", base: "क्रोधः", reading: "krodhaḥ" }, { word: "जयति", base: "जि", reading: "ji" }]
+    confusables: [{ id: "w1", ref: "sa-5820", kind: "word" }, { id: "w2", ref: "sa-5821", kind: "word" }, { id: "w3", ref: "sa-5810", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3833"
+    target: "आचार्यो विद्याम् आदरेण ददाति."
+    reading: "ācāryo vidyām ādareṇa dadāti."
+    ipa: "aːtʃaːrjoː ʋid̪jaːm aːd̪əreːɳə d̪əd̪aːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "आचार्यो", base: "आचार्यः", reading: "ācāryaḥ" }, { word: "विद्याम्", base: "विद्या", reading: "vidyā" }, { word: "आदरेण", base: "आदरः", reading: "ādaraḥ" }, { word: "ददाति", base: "दा", reading: "dā" }]
+    confusables: [{ id: "w1", ref: "sa-5817", kind: "word" }, { id: "w2", ref: "sa-5852", kind: "word" }, { id: "w3", ref: "sa-5848", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3834"
+    target: "धैर्यं दुःखे गुणो ऽस्ति."
+    reading: "dhairyaṃ duḥkhe guṇo 'sti."
+    ipa: "d̪ʱəirjəm d̪uhkʰeː ɡuɳoː st̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "धैर्यं", base: "धैर्यम्", reading: "dhairyam" }, { word: "दुःखे", base: "दुःखम्", reading: "duḥkham" }, { word: "गुणो", base: "गुणः", reading: "guṇaḥ" }, { word: "ऽस्ति", base: "अस्", reading: "as" }]
+    confusables: [{ id: "w1", ref: "sa-5822", kind: "word" }, { id: "w2", ref: "sa-5802", kind: "word" }, { id: "w3", ref: "sa-5833", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3835"
+    target: "आलस्यं सदा शत्रुर् अस्ति."
+    reading: "ālasyaṃ sadā śatrur asti."
+    ipa: "aːləsjəm səd̪aː ʃət̪rur əst̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "आलस्यं", base: "आलस्यम्", reading: "ālasyam" }, { word: "सदा", ref: "sa-1086" }, { word: "शत्रुर्", base: "शत्रुः", reading: "śatruḥ" }, { word: "अस्ति", base: "अस्", reading: "as" }]
+    confusables: [{ id: "w1", ref: "sa-5822", kind: "word" }, { id: "w2", ref: "sa-5744", kind: "word" }, { id: "w3", ref: "sa-5811", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3836"
+    target: "दुर्जनो द्वेषेण दुःखं लभते."
+    reading: "durjano dveṣeṇa duḥkhaṃ labhate."
+    ipa: "d̪urdʒənoː d̪ʋeːʂeːɳə d̪uhkʰəm ləbʱət̪eː"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "दुर्जनो", base: "दुर्जनः", reading: "durjanaḥ" }, { word: "द्वेषेण", base: "द्वेषः", reading: "dveṣaḥ" }, { word: "दुःखं", base: "दुःखम्", reading: "duḥkham" }, { word: "लभते", base: "लभ्", reading: "labh" }]
+    confusables: [{ id: "w1", ref: "sa-6001", kind: "word" }, { id: "w2", ref: "sa-5855", kind: "word" }, { id: "w3", ref: "sa-5833", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3837"
+    target: "भिक्षुर् अहिंसां संयमेन रक्षति."
+    reading: "bhikṣur ahiṃsāṃ saṃyamena rakṣati."
+    ipa: "bʱikʂur əɦĩsaːm sə̃jəmeːnə rəkʂət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "भिक्षुर्", base: "भिक्षुः", reading: "bhikṣuḥ" }, { word: "अहिंसां", base: "अहिंसा", reading: "ahiṃsā" }, { word: "संयमेन", base: "संयमः", reading: "saṃyamaḥ" }, { word: "रक्षति", base: "रक्ष्", reading: "rakṣ" }]
+    confusables: [{ id: "w1", ref: "sa-5805", kind: "word" }, { id: "w2", ref: "sa-6003", kind: "word" }, { id: "w3", ref: "sa-5801", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3838"
+    target: "धार्मिको विवेकेन गुणं दोषं च जानाति."
+    reading: "dhārmiko vivekena guṇaṃ doṣaṃ ca jānāti."
+    ipa: "d̪ʱaːrmikoː ʋiʋeːkeːnə ɡuɳəm d̪oːʂəm tʃə dʒaːnaːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "धार्मिको", base: "धार्मिकः", reading: "dhārmikaḥ" }, { word: "विवेकेन", base: "विवेकः", reading: "vivekaḥ" }, { word: "गुणं", base: "गुणः", reading: "guṇaḥ" }, { word: "दोषं", base: "दोषः", reading: "doṣaḥ" }, { word: "च", ref: "sa-1104" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+    confusables: [{ id: "w1", ref: "sa-5861", kind: "word" }, { id: "w2", ref: "sa-5844", kind: "word" }, { id: "w3", ref: "sa-5817", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3839"
+    target: "विद्या धनाद् अधिका भवति."
+    reading: "vidyā dhanād adhikā bhavati."
+    ipa: "ʋid̪jaː d̪ʱənaːd̪ əd̪ʱikaː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "विद्या", ref: "sa-5818" }, { word: "धनाद्", base: "धनम्", reading: "dhanam" }, { word: "अधिका", base: "अधिकः", reading: "adhikaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5817", kind: "word" }, { id: "w2", ref: "sa-1505", kind: "word" }, { id: "w3", ref: "sa-5847", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]

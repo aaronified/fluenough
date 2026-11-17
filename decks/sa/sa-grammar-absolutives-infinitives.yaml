@@ -1,0 +1,182 @@
+# The gerunds and the infinitive of the verbs of the course: -tvā (ktvā), -ya and -tya with a prefix (lyap) and -tum (tumun).
+# A form listed on the root entry on en.wiktionary.org is taught as listed; any other form is made by the sūtras and Whitney 968, 990 to 992 and is marked derived in docs/review-queue/sa.md. The lyap column uses the prefix pra for every verb as a model.
+# sa-2105 as, sa-2108 brū and sa-2111 paś are excepted: as and brū are defective and paś is only the present stem of dṛś.
+schema: 1
+id: "sa-grammar-absolutives-infinitives"
+part: "core"
+kind: "rules"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+source: "en.wiktionary.org: the infinitive and gerund lists of the Non-finite forms of the root entry of each verb, read 2026-11-17, and the kaikki.org Wiktionary dump of 2026-10-30 for the roots whose pages were not read live; Whitney, Sanskrit Grammar 968, 988 to 993 on en.wikisource, read 2026-11-17; Panini, Astadhyayi 3.3.10, 3.3.158, 3.4.21, 6.1.71, 6.1.132, 7.1.37 and 8.4.14 as typed on sa.wikisource.org/wiki/अष्टाध्यायी (the third, sixth and seventh chapter pages), read 2026-11-17; readings from tools/transcribe.py (sa)."
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["sa-2105", "sa-2108", "sa-2111"]
+  slots: ["ktva", "lyap", "tum"]
+  rows:
+    - word: "sa-0430"
+      forms: { "ktva": "भूत्वा", "lyap": "प्रभूय", "tum": "भवितुम्" }
+      readings: { "ktva": "bhūtvā", "lyap": "prabhūya", "tum": "bhavitum" }
+    - word: "sa-0431"
+      forms: { "ktva": "गत्वा", "lyap": "प्रगम्य", "tum": "गन्तुम्" }
+      readings: { "ktva": "gatvā", "lyap": "pragamya", "tum": "gantum" }
+    - word: "sa-0432"
+      forms: { "ktva": "पठित्वा", "lyap": "प्रपठ्य", "tum": "पठितुम्" }
+      readings: { "ktva": "paṭhitvā", "lyap": "prapaṭhya", "tum": "paṭhitum" }
+    - word: "sa-0433"
+      forms: { "ktva": "उदित्वा", "lyap": "प्रोद्य", "tum": "वदितुम्" }
+      readings: { "ktva": "uditvā", "lyap": "prodya", "tum": "vaditum" }
+    - word: "sa-0434"
+      forms: { "ktva": "पक्त्वा", "lyap": "प्रपच्य", "tum": "पक्तुम्" }
+      readings: { "ktva": "paktvā", "lyap": "prapacya", "tum": "paktum" }
+    - word: "sa-0435"
+      forms: { "ktva": "नीत्वा", "lyap": "प्रणीय", "tum": "नेतुम्" }
+      readings: { "ktva": "nītvā", "lyap": "praṇīya", "tum": "netum" }
+    - word: "sa-2000"
+      forms: { "ktva": "खदित्वा", "lyap": "प्रखाद्य", "tum": "खादितुम्" }
+      readings: { "ktva": "khaditvā", "lyap": "prakhādya", "tum": "khāditum" }
+    - word: "sa-2001"
+      forms: { "ktva": "पीत्वा", "lyap": "प्रपीय", "tum": "पातुम्" }
+      readings: { "ktva": "pītvā", "lyap": "prapīya", "tum": "pātum" }
+    - word: "sa-2002"
+      forms: { "ktva": "स्थित्वा", "lyap": "प्रस्थाय", "tum": "स्थातुम्" }
+      readings: { "ktva": "sthitvā", "lyap": "prasthāya", "tum": "sthātum" }
+    - word: "sa-2003"
+      forms: { "ktva": "हसित्वा", "lyap": "प्रहस्य", "tum": "हसितुम्" }
+      readings: { "ktva": "hasitvā", "lyap": "prahasya", "tum": "hasitum" }
+    - word: "sa-2004"
+      forms: { "ktva": "रक्षित्वा", "lyap": "प्ररक्ष्य", "tum": "रक्षितुम्" }
+      readings: { "ktva": "rakṣitvā", "lyap": "prarakṣya", "tum": "rakṣitum" }
+    - word: "sa-2005"
+      forms: { "ktva": "वसित्वा", "lyap": "प्रोष्य", "tum": "वसितुम्" }
+      readings: { "ktva": "vasitvā", "lyap": "proṣya", "tum": "vasitum" }
+    - word: "sa-2006"
+      forms: { "ktva": "नत्वा", "lyap": "प्रणत्य", "tum": "नन्तुम्" }
+      readings: { "ktva": "natvā", "lyap": "praṇatya", "tum": "nantum" }
+    - word: "sa-2007"
+      forms: { "ktva": "जित्वा", "lyap": "प्रजित्य", "tum": "जेतुम्" }
+      readings: { "ktva": "jitvā", "lyap": "prajitya", "tum": "jetum" }
+    - word: "sa-2008"
+      forms: { "ktva": "स्मृत्वा", "lyap": "प्रस्मृत्य", "tum": "स्मर्तुम्" }
+      readings: { "ktva": "smṛtvā", "lyap": "prasmṛtya", "tum": "smartum" }
+    - word: "sa-2009"
+      forms: { "ktva": "धावित्वा", "lyap": "प्रधाव्य", "tum": "धावितुम्" }
+      readings: { "ktva": "dhāvitvā", "lyap": "pradhāvya", "tum": "dhāvitum" }
+    - word: "sa-2010"
+      forms: { "ktva": "पतित्वा", "lyap": "प्रपत्य", "tum": "पतितुम्" }
+      readings: { "ktva": "patitvā", "lyap": "prapatya", "tum": "patitum" }
+    - word: "sa-2011"
+      forms: { "ktva": "चलित्वा", "lyap": "प्रचल्य", "tum": "चलितुम्" }
+      readings: { "ktva": "calitvā", "lyap": "pracalya", "tum": "calitum" }
+    - word: "sa-2012"
+      forms: { "ktva": "क्रीडित्वा", "lyap": "प्रक्रीड्य", "tum": "क्रीडितुम्" }
+      readings: { "ktva": "krīḍitvā", "lyap": "prakrīḍya", "tum": "krīḍitum" }
+    - word: "sa-2013"
+      forms: { "ktva": "जीवित्वा", "lyap": "प्रजीव्य", "tum": "जीवितुम्" }
+      readings: { "ktva": "jīvitvā", "lyap": "prajīvya", "tum": "jīvitum" }
+    - word: "sa-2014"
+      forms: { "ktva": "चरित्वा", "lyap": "प्रचर्य", "tum": "चरितुम्" }
+      readings: { "ktva": "caritvā", "lyap": "pracarya", "tum": "caritum" }
+    - word: "sa-2015"
+      forms: { "ktva": "ऊढ्वा", "lyap": "प्रोह्य", "tum": "वोढुम्" }
+      readings: { "ktva": "ūḍhvā", "lyap": "prohya", "tum": "voḍhum" }
+    - word: "sa-2016"
+      forms: { "ktva": "हृत्वा", "lyap": "प्रहृत्य", "tum": "हर्तुम्" }
+      readings: { "ktva": "hṛtvā", "lyap": "prahṛtya", "tum": "hartum" }
+    - word: "sa-2017"
+      forms: { "ktva": "सृत्वा", "lyap": "प्रसृत्य", "tum": "सर्तुम्" }
+      readings: { "ktva": "sṛtvā", "lyap": "prasṛtya", "tum": "sartum" }
+    - word: "sa-2018"
+      forms: { "ktva": "गीत्वा", "lyap": "प्रगाय", "tum": "गातुम्" }
+      readings: { "ktva": "gītvā", "lyap": "pragāya", "tum": "gātum" }
+    - word: "sa-2019"
+      forms: { "ktva": "तप्त्वा", "lyap": "प्रतप्य", "tum": "तप्तुम्" }
+      readings: { "ktva": "taptvā", "lyap": "pratapya", "tum": "taptum" }
+    - word: "sa-2020"
+      forms: { "ktva": "धृत्वा", "lyap": "प्रधृत्य", "tum": "धर्तुम्" }
+      readings: { "ktva": "dhṛtvā", "lyap": "pradhṛtya", "tum": "dhartum" }
+    - word: "sa-2021"
+      forms: { "ktva": "जपित्वा", "lyap": "प्रजप्य", "tum": "जपितुम्" }
+      readings: { "ktva": "japitvā", "lyap": "prajapya", "tum": "japitum" }
+    - word: "sa-2022"
+      forms: { "ktva": "खनित्वा", "lyap": "प्रखाय", "tum": "खनितुम्" }
+      readings: { "ktva": "khanitvā", "lyap": "prakhāya", "tum": "khanitum" }
+    - word: "sa-2023"
+      forms: { "ktva": "हूत्वा", "lyap": "प्रहूय", "tum": "ह्वातुम्" }
+      readings: { "ktva": "hūtvā", "lyap": "prahūya", "tum": "hvātum" }
+    - word: "sa-2100"
+      forms: { "ktva": "क्षरित्वा", "lyap": "प्रक्षर्य", "tum": "क्षरितुम्" }
+      readings: { "ktva": "kṣaritvā", "lyap": "prakṣarya", "tum": "kṣaritum" }
+    - word: "sa-2101"
+      forms: { "ktva": "रुद्ध्वा", "lyap": "प्ररुध्य", "tum": "रोद्धुम्" }
+      readings: { "ktva": "ruddhvā", "lyap": "prarudhya", "tum": "roddhum" }
+    - word: "sa-2102"
+      forms: { "ktva": "लब्ध्वा", "lyap": "प्रलभ्य", "tum": "लब्धुम्" }
+      readings: { "ktva": "labdhvā", "lyap": "pralabhya", "tum": "labdhum" }
+    - word: "sa-2103"
+      forms: { "ktva": "वर्तित्वा", "lyap": "प्रवृत्य", "tum": "वर्तितुम्" }
+      readings: { "ktva": "vartitvā", "lyap": "pravṛtya", "tum": "vartitum" }
+    - word: "sa-2104"
+      forms: { "ktva": "ईक्षित्वा", "lyap": "प्रेक्ष्य", "tum": "ईक्षितुम्" }
+      readings: { "ktva": "īkṣitvā", "lyap": "prekṣya", "tum": "īkṣitum" }
+    - word: "sa-2106"
+      forms: { "ktva": "रुदित्वा", "lyap": "प्ररुद्य", "tum": "रोदितुम्" }
+      readings: { "ktva": "ruditvā", "lyap": "prarudya", "tum": "roditum" }
+    - word: "sa-2107"
+      forms: { "ktva": "यात्वा", "lyap": "प्रयाय", "tum": "यातुम्" }
+      readings: { "ktva": "yātvā", "lyap": "prayāya", "tum": "yātum" }
+    - word: "sa-2109"
+      forms: { "ktva": "दत्त्वा", "lyap": "प्रदाय", "tum": "दातुम्" }
+      readings: { "ktva": "dattvā", "lyap": "pradāya", "tum": "dātum" }
+    - word: "sa-2110"
+      forms: { "ktva": "हित्वा", "lyap": "प्रधाय", "tum": "धातुम्" }
+      readings: { "ktva": "hitvā", "lyap": "pradhāya", "tum": "dhātum" }
+    - word: "sa-2112"
+      forms: { "ktva": "नर्तित्वा", "lyap": "प्रणृत्य", "tum": "नर्तितुम्" }
+      readings: { "ktva": "nartitvā", "lyap": "praṇṛtya", "tum": "nartitum" }
+    - word: "sa-2113"
+      forms: { "ktva": "श्रुत्वा", "lyap": "प्रश्रुत्य", "tum": "श्रोतुम्" }
+      readings: { "ktva": "śrutvā", "lyap": "praśrutya", "tum": "śrotum" }
+    - word: "sa-2114"
+      forms: { "ktva": "लिखित्वा", "lyap": "प्रलिख्य", "tum": "लिखितुम्" }
+      readings: { "ktva": "likhitvā", "lyap": "pralikhya", "tum": "likhitum" }
+    - word: "sa-2115"
+      forms: { "ktva": "विष्ट्वा", "lyap": "प्रविश्य", "tum": "वेष्टुम्" }
+      readings: { "ktva": "viṣṭvā", "lyap": "praviśya", "tum": "veṣṭum" }
+    - word: "sa-2116"
+      forms: { "ktva": "इष्ट्वा", "lyap": "प्रेष्य", "tum": "एष्टुम्" }
+      readings: { "ktva": "iṣṭvā", "lyap": "preṣya", "tum": "eṣṭum" }
+    - word: "sa-2117"
+      forms: { "ktva": "तुत्त्वा", "lyap": "प्रतुद्य", "tum": "तोत्तुम्" }
+      readings: { "ktva": "tuttvā", "lyap": "pratudya", "tum": "tottum" }
+    - word: "sa-2118"
+      forms: { "ktva": "कृत्वा", "lyap": "प्रकृत्य", "tum": "कर्तुम्" }
+      readings: { "ktva": "kṛtvā", "lyap": "prakṛtya", "tum": "kartum" }
+    - word: "sa-2119"
+      forms: { "ktva": "ज्ञात्वा", "lyap": "प्रज्ञाय", "tum": "ज्ञातुम्" }
+      readings: { "ktva": "jñātvā", "lyap": "prajñāya", "tum": "jñātum" }
+    - word: "sa-2120"
+      forms: { "ktva": "क्रीत्वा", "lyap": "प्रक्रीय", "tum": "क्रेतुम्" }
+      readings: { "ktva": "krītvā", "lyap": "prakrīya", "tum": "kretum" }
+    - word: "sa-2121"
+      forms: { "ktva": "गृहीत्वा", "lyap": "प्रगृह्य", "tum": "ग्रहीतुम्" }
+      readings: { "ktva": "gṛhītvā", "lyap": "pragṛhya", "tum": "grahītum" }
+    - word: "sa-2122"
+      forms: { "ktva": "कथयित्वा", "lyap": "प्रकथ्य", "tum": "कथयितुम्" }
+      readings: { "ktva": "kathayitvā", "lyap": "prakathya", "tum": "kathayitum" }
+    - word: "sa-2123"
+      forms: { "ktva": "पूजयित्वा", "lyap": "प्रपूज्य", "tum": "पूजयितुम्" }
+      readings: { "ktva": "pūjayitvā", "lyap": "prapūjya", "tum": "pūjayitum" }
+rules:
+  - id: "sa-rule-absolutive-ktva"
+    slots: ["ktva"]
+    words: [{ word: "समानकर्तृकयोः पूर्वकाले", reading: "samānakartṛkayoḥ pūrvakāle" }, { word: "स गत्वा पठति", reading: "sa gatvā paṭhati" }, { word: "एतद् तदोः सुलोपः अकोः अनञ्संआसे हलि", reading: "etad tadoḥ sulopaḥ akoḥ anañsaṃāse hali" }, { word: "कृ", reading: "kṛ" }, { word: "कृत्वा", reading: "kṛtvā" }, { word: "गम्", reading: "gam" }, { word: "गत्वा", reading: "gatvā" }, { word: "भू", reading: "bhū" }, { word: "भूत्वा", reading: "bhūtvā" }, { word: "पठ्", reading: "paṭh" }, { word: "पठित्वा", reading: "paṭhitvā" }, { word: "स्था", reading: "sthā" }, { word: "स्थित्वा", reading: "sthitvā" }, { word: "पा", reading: "pā" }, { word: "पीत्वा", reading: "pītvā" }, { word: "दा", reading: "dā" }, { word: "दत्त्वा", reading: "dattvā" }]
+  - id: "sa-rule-absolutive-lyap"
+    slots: ["lyap"]
+    words: [{ word: "संआसे अनञ्पूर्वे क्त्वः ल्यप्", reading: "saṃāse anañpūrve ktvaḥ lyap" }, { word: "ह्रस्वस्य पिति कृति तुक्", reading: "hrasvasya piti kṛti tuk" }, { word: "कृ", reading: "kṛ" }, { word: "प्रकृत्य", reading: "prakṛtya" }, { word: "जि", reading: "ji" }, { word: "प्रजित्य", reading: "prajitya" }, { word: "श्रु", reading: "śru" }, { word: "प्रश्रुत्य", reading: "praśrutya" }, { word: "उपसर्गाद् असमासेऽपि णोपदेशस्य", reading: "upasargād asamāse'pi ṇopadeśasya" }, { word: "नी", reading: "nī" }, { word: "प्रणीय", reading: "praṇīya" }, { word: "नम्", reading: "nam" }, { word: "प्रणत्य", reading: "praṇatya" }, { word: "नृत्", reading: "nṛt" }, { word: "प्रणृत्य", reading: "praṇṛtya" }, { word: "प्रस्थाय", reading: "prasthāya" }, { word: "प्रदाय", reading: "pradāya" }, { word: "प्रज्ञाय", reading: "prajñāya" }, { word: "प्रगम्य", reading: "pragamya" }, { word: "प्रोद्य", reading: "prodya" }, { word: "प्रोह्य", reading: "prohya" }, { word: "प्रोष्य", reading: "proṣya" }]
+  - id: "sa-rule-infinitive-tum"
+    slots: ["tum"]
+    words: [{ word: "तुमुन् ण्वुलौ क्रियायां क्रियाअर्थायाम्", reading: "tumun ṇvulau kriyāyāṃ kriyāarthāyām" }, { word: "समानकर्तृकेषु तुमुन्", reading: "samānakartṛkeṣu tumun" }, { word: "कृ", reading: "kṛ" }, { word: "कर्तुम्", reading: "kartum" }, { word: "गम्", reading: "gam" }, { word: "गन्तुम्", reading: "gantum" }, { word: "वह्", reading: "vah" }, { word: "वोढुम्", reading: "voḍhum" }, { word: "पठ्", reading: "paṭh" }, { word: "पठितुम्", reading: "paṭhitum" }, { word: "भू", reading: "bhū" }, { word: "भवितुम्", reading: "bhavitum" }, { word: "स पठितुम् इच्छति", reading: "sa paṭhitum icchati" }]

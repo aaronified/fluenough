@@ -1,0 +1,57 @@
+schema: 1
+id: "sa-en-reading-quantities"
+name: "Reading: quantities"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-quantities-text-1"
+    title: "Enough and more"
+    theme: "quantities"
+    sentences:
+      - { text: "अहं जलं न पिबामि जलं च पर्याप्तं भवति.", reading: "ahaṃ jalaṃ na pibāmi jalaṃ ca paryāptaṃ bhavati.", ipa: "əɦəm dʒələm nə pibaːmi dʒələm tʃə pərjaːpt̪əm bʱəʋət̪i" }
+      - { text: "पिता भूयो जलं पिबति माता च भूयः पठति.", reading: "pitā bhūyo jalaṃ pibati mātā ca bhūyaḥ paṭhati.", ipa: "pit̪aː bʱuːjoː dʒələm pibət̪i maːt̪aː tʃə bʱuːjəh pəʈʰət̪i" }
+      - { text: "अल्पं जलं पिबामि बहु च जलं न पिबामि.", reading: "alpaṃ jalaṃ pibāmi bahu ca jalaṃ na pibāmi.", ipa: "əlpəm dʒələm pibaːmi bəɦu tʃə dʒələm nə pibaːmi" }
+      - { text: "अधिकं जलं पिबामि त्वं च न्यूनं जलं पिबसि.", reading: "adhikaṃ jalaṃ pibāmi tvaṃ ca nyūnaṃ jalaṃ pibasi.", ipa: "əd̪ʱikəm dʒələm pibaːmi t̪ʋəm tʃə njuːnəm dʒələm pibəsi" }
+    questions:
+      - id: "sa-3443"
+        prompt: { en: "What is said of the water in the first sentence?" }
+        options: [{ en: "It is enough" }, { en: "It is a little" }, { en: "It is more" }]
+        answer: 1
+      - id: "sa-3444"
+        prompt: { en: "Who drinks more water in the second sentence?" }
+        options: [{ en: "Mother" }, { en: "Father" }, { en: "The friend" }]
+        answer: 2
+      - id: "sa-3445"
+        prompt: { en: "In the last sentence, 'you' drink less water." }
+        answer: true
+      - id: "sa-3446"
+        prompt: { en: "The speaker drinks much water in the third sentence." }
+        answer: false
+  - id: "sa-quantities-text-2"
+    title: "All and some"
+    theme: "quantities"
+    sentences:
+      - { text: "अहं सर्वं न पठामि त्वं च सर्वं पठसि.", reading: "ahaṃ sarvaṃ na paṭhāmi tvaṃ ca sarvaṃ paṭhasi.", ipa: "əɦəm sərʋəm nə pəʈʰaːmi t̪ʋəm tʃə sərʋəm pəʈʰəsi" }
+      - { text: "कतिपया देवा गच्छन्ति माता च पठति.", reading: "katipayā devā gacchanti mātā ca paṭhati.", ipa: "kət̪ipəjaː d̪eːʋaː ɡətʃtʃʰənt̪i maːt̪aː tʃə pəʈʰət̪i" }
+      - { text: "अहं पुनः पठामि पुस्तकं च पूर्णं न भवति.", reading: "ahaṃ punaḥ paṭhāmi pustakaṃ ca pūrṇaṃ na bhavati.", ipa: "əɦəm punəh pəʈʰaːmi pust̪əkəm tʃə puːrɳəm nə bʱəʋət̪i" }
+      - { text: "सर्वं जलं कुत्र गच्छति?", reading: "sarvaṃ jalaṃ kutra gacchati?", ipa: "sərʋəm dʒələm kut̪rə ɡətʃtʃʰət̪i" }
+    questions:
+      - id: "sa-3447"
+        prompt: { en: "Who reads everything?" }
+        options: [{ en: "I" }, { en: "Mother" }, { en: "You" }]
+        answer: 3
+      - id: "sa-3448"
+        prompt: { en: "Some gods go." }
+        answer: true
+      - id: "sa-3449"
+        prompt: { en: "What is not complete in the third sentence?" }
+        options: [{ en: "The book" }, { en: "The water" }, { en: "The name" }]
+        answer: 1
+      - id: "sa-3450"
+        prompt: { en: "The last sentence asks where a little water goes." }
+        answer: false

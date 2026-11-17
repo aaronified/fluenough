@@ -1,0 +1,2079 @@
+schema: 1
+id: "sa-dharma"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "dharma"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-5800"
+    target: "अहिंसा"
+    reading: "ahiṃsā"
+    ipa: "əɦĩsaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "अहिंसा परमो धर्मो भवति"
+        reading: "ahiṃsā paramo dharmo bhavati"
+        ipa: "əɦĩsaː pərəmoː d̪ʱərmoː bʱəʋət̪i"
+        bases:
+          - { word: "अहिंसा", base: "अहिंसा", reading: "ahiṃsā" }
+          - { word: "परमो", base: "पर", reading: "paramo" }
+          - { word: "धर्मो", base: "धर्म", reading: "dharmo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "अहिंसां जनः करोति"
+        reading: "ahiṃsāṃ janaḥ karoti"
+        ipa: "əɦĩsaːm dʒənəh kəroːt̪i"
+        bases:
+          - { word: "अहिंसां", base: "अहिंसा", reading: "ahiṃsāṃ" }
+          - { word: "जनः", base: "जन", reading: "janaḥ" }
+          - { word: "करोति", base: "कृ", reading: "karoti" }
+  - id: "sa-5801"
+    target: "दया"
+    reading: "dayā"
+    ipa: "d̪əjaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "जनस्य दया भवति"
+        reading: "janasya dayā bhavati"
+        ipa: "dʒənəsjə d̪əjaː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "दया", base: "दया", reading: "dayā" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "दयया सुखी जनो भवति"
+        reading: "dayayā sukhī jano bhavati"
+        ipa: "d̪əjəjaː sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "दयया", base: "दया", reading: "dayayā" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5802"
+    target: "क्षमा"
+    reading: "kṣamā"
+    ipa: "kʂəmaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "क्षमा सदा जनं रक्षति"
+        reading: "kṣamā sadā janaṃ rakṣati"
+        ipa: "kʂəmaː səd̪aː dʒənəm rəkʂət̪i"
+        bases:
+          - { word: "क्षमा", base: "क्षमा", reading: "kṣamā" }
+          - { word: "सदा", base: "सदा", reading: "sadā" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+      - target: "क्षमां जनः करोति"
+        reading: "kṣamāṃ janaḥ karoti"
+        ipa: "kʂəmaːm dʒənəh kəroːt̪i"
+        bases:
+          - { word: "क्षमां", base: "क्षमा", reading: "kṣamāṃ" }
+          - { word: "जनः", base: "जन", reading: "janaḥ" }
+          - { word: "करोति", base: "कृ", reading: "karoti" }
+  - id: "sa-5803"
+    target: "तपः"
+    reading: "tapaḥ"
+    ipa: "t̪əpəh"
+    pos: "noun"
+    gender: "n"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "तपः", base: "तपस्", reading: "tapas" }
+    examples:
+      - target: "जनस्य तपो भवति"
+        reading: "janasya tapo bhavati"
+        ipa: "dʒənəsjə t̪əpoː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "तपो", base: "तपस्", reading: "tapo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "स तपः करोति"
+        reading: "sa tapaḥ karoti"
+        ipa: "sə t̪əpəh kəroːt̪i"
+        bases:
+          - { word: "स", base: "तद्", reading: "sa" }
+          - { word: "तपः", base: "तपस्", reading: "tapaḥ" }
+          - { word: "करोति", base: "कृ", reading: "karoti" }
+  - id: "sa-5804"
+    target: "शीलम्"
+    reading: "śīlam"
+    ipa: "ʃiːləm"
+    pos: "noun"
+    gender: "n"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "शीलम्", base: "शील", reading: "śīla" }
+    examples:
+      - target: "जनस्य शीलं भवति"
+        reading: "janasya śīlaṃ bhavati"
+        ipa: "dʒənəsjə ʃiːləm bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "शीलं", base: "शील", reading: "śīlaṃ" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "सदा शीलं जनो धरति"
+        reading: "sadā śīlaṃ jano dharati"
+        ipa: "səd̪aː ʃiːləm dʒənoː d̪ʱərət̪i"
+        bases:
+          - { word: "सदा", base: "सदा", reading: "sadā" }
+          - { word: "शीलं", base: "शील", reading: "śīlaṃ" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "धरति", base: "धृ", reading: "dharati" }
+  - id: "sa-5805"
+    target: "आचार्यः"
+    reading: "ācāryaḥ"
+    ipa: "aːtʃaːrjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "आचार्यः", base: "आचार्य", reading: "ācārya" }
+    examples:
+      - target: "आचार्यो वदति"
+        reading: "ācāryo vadati"
+        ipa: "aːtʃaːrjoː ʋəd̪ət̪i"
+        bases:
+          - { word: "आचार्यो", base: "आचार्य", reading: "ācāryo" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "आचार्यो जनं रक्षति"
+        reading: "ācāryo janaṃ rakṣati"
+        ipa: "aːtʃaːrjoː dʒənəm rəkʂət̪i"
+        bases:
+          - { word: "आचार्यो", base: "आचार्य", reading: "ācāryo" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+  - id: "sa-5806"
+    target: "ऋणम्"
+    reading: "ṛṇam"
+    ipa: "r̩ɳəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "ऋणम्", base: "ऋण", reading: "ṛṇa" }
+    examples:
+      - target: "ऋणं जनं हरति"
+        reading: "ṛṇaṃ janaṃ harati"
+        ipa: "r̩ɳəm dʒənəm ɦərət̪i"
+        bases:
+          - { word: "ऋणं", base: "ऋण", reading: "ṛṇaṃ" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "ऋणेन जनो दुःखी भवति"
+        reading: "ṛṇena jano duḥkhī bhavati"
+        ipa: "r̩ɳeːnə dʒənoː d̪uhkʰiː bʱəʋət̪i"
+        bases:
+          - { word: "ऋणेन", base: "ऋण", reading: "ṛṇena" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5807"
+    target: "अहंकारः"
+    reading: "ahaṃkāraḥ"
+    ipa: "əɦəŋkaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "अहंकारः", base: "अहंकार", reading: "ahaṃkāra" }
+    examples:
+      - target: "अहंकारो भवति"
+        reading: "ahaṃkāro bhavati"
+        ipa: "əɦəŋkaːroː bʱəʋət̪i"
+        bases:
+          - { word: "अहंकारो", base: "अहंकार", reading: "ahaṃkāro" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "अहंकारो जनं हरति"
+        reading: "ahaṃkāro janaṃ harati"
+        ipa: "əɦəŋkaːroː dʒənəm ɦərət̪i"
+        bases:
+          - { word: "अहंकारो", base: "अहंकार", reading: "ahaṃkāro" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+  - id: "sa-5808"
+    target: "क्रोधः"
+    reading: "krodhaḥ"
+    ipa: "kroːd̪ʱəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "क्रोधः", base: "क्रोध", reading: "krodha" }
+    examples:
+      - target: "सदा क्रोधो जनं हरति"
+        reading: "sadā krodho janaṃ harati"
+        ipa: "səd̪aː kroːd̪ʱoː dʒənəm ɦərət̪i"
+        bases:
+          - { word: "सदा", base: "सदा", reading: "sadā" }
+          - { word: "क्रोधो", base: "क्रोध", reading: "krodho" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "जनः क्रोधेन दुःखी भवति"
+        reading: "janaḥ krodhena duḥkhī bhavati"
+        ipa: "dʒənəh kroːd̪ʱeːnə d̪uhkʰiː bʱəʋət̪i"
+        bases:
+          - { word: "जनः", base: "जन", reading: "janaḥ" }
+          - { word: "क्रोधेन", base: "क्रोध", reading: "krodhena" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5809"
+    target: "लोभः"
+    reading: "lobhaḥ"
+    ipa: "loːbʱəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "लोभः", base: "लोभ", reading: "lobha" }
+    examples:
+      - target: "जनस्य लोभो भवति"
+        reading: "janasya lobho bhavati"
+        ipa: "dʒənəsjə loːbʱoː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "लोभो", base: "लोभ", reading: "lobho" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "जनो लोभेन दुःखी भवति"
+        reading: "jano lobhena duḥkhī bhavati"
+        ipa: "dʒənoː loːbʱeːnə d̪uhkʰiː bʱəʋət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "लोभेन", base: "लोभ", reading: "lobhena" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5810"
+    target: "मोहः"
+    reading: "mohaḥ"
+    ipa: "moːɦəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "मोहः", base: "मोह", reading: "moha" }
+    examples:
+      - target: "जनस्य मोहो भवति"
+        reading: "janasya moho bhavati"
+        ipa: "dʒənəsjə moːɦoː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "मोहो", base: "मोह", reading: "moho" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "मोहेन न सुखी जनो भवति"
+        reading: "mohena na sukhī jano bhavati"
+        ipa: "moːɦeːnə nə sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "मोहेन", base: "मोह", reading: "mohena" }
+          - { word: "न", base: "न", reading: "na" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5811"
+    target: "मैत्री"
+    reading: "maitrī"
+    ipa: "məit̪riː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "जनस्य मैत्री भवति"
+        reading: "janasya maitrī bhavati"
+        ipa: "dʒənəsjə məit̪riː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "मैत्री", base: "मैत्री", reading: "maitrī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "मैत्र्या जीवन्ति जनाः"
+        reading: "maitryā jīvanti janāḥ"
+        ipa: "məit̪rjaː dʒiːʋənt̪i dʒənaːh"
+        bases:
+          - { word: "मैत्र्या", base: "मैत्री", reading: "maitryā" }
+          - { word: "जीवन्ति", base: "जीव्", reading: "jīvanti" }
+          - { word: "जनाः", base: "जन", reading: "janāḥ" }
+  - id: "sa-5812"
+    target: "भक्तिः"
+    reading: "bhaktiḥ"
+    ipa: "bʱəkt̪ih"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "भक्तिः", base: "भक्ति", reading: "bhakti" }
+    examples:
+      - target: "जनस्य भक्तिर् भवति"
+        reading: "janasya bhaktir bhavati"
+        ipa: "dʒənəsjə bʱəkt̪ir bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "भक्तिर्", base: "भक्ति", reading: "bhaktir" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "भक्त्या सुखी जनो भवति"
+        reading: "bhaktyā sukhī jano bhavati"
+        ipa: "bʱəkt̪jaː sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "भक्त्या", base: "भक्ति", reading: "bhaktyā" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5813"
+    target: "ब्रह्मचर्यम्"
+    reading: "brahmacaryam"
+    ipa: "brəɦmətʃərjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "ब्रह्मचर्यम्", base: "ब्रह्मचर्य", reading: "brahmacarya" }
+    examples:
+      - target: "जनस्य ब्रह्मचर्यं भवति"
+        reading: "janasya brahmacaryaṃ bhavati"
+        ipa: "dʒənəsjə brəɦmətʃərjəm bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "ब्रह्मचर्यं", base: "ब्रह्मचर्य", reading: "brahmacaryaṃ" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "बालो ब्रह्मचर्यं चरति"
+        reading: "bālo brahmacaryaṃ carati"
+        ipa: "baːloː brəɦmətʃərjəm tʃərət̪i"
+        bases:
+          - { word: "बालो", base: "बाल", reading: "bālo" }
+          - { word: "ब्रह्मचर्यं", base: "ब्रह्मचर्य", reading: "brahmacaryaṃ" }
+          - { word: "चरति", base: "चर्", reading: "carati" }
+  - id: "sa-5814"
+    target: "दुःखम्"
+    reading: "duḥkham"
+    ipa: "d̪uhkʰəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "दुःखम्", base: "दुःख", reading: "duḥkha" }
+    examples:
+      - target: "जनस्य दुःखं भवति"
+        reading: "janasya duḥkhaṃ bhavati"
+        ipa: "dʒənəsjə d̪uhkʰəm bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "दुःखं", base: "दुःख", reading: "duḥkhaṃ" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "दुःखेन न सुखी जनो भवति"
+        reading: "duḥkhena na sukhī jano bhavati"
+        ipa: "d̪uhkʰeːnə nə sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "दुःखेन", base: "दुःख", reading: "duḥkhena" }
+          - { word: "न", base: "न", reading: "na" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5815"
+    target: "कामः"
+    reading: "kāmaḥ"
+    ipa: "kaːməh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "कामः", base: "काम", reading: "kāma" }
+    examples:
+      - target: "जनस्य कामो भवति"
+        reading: "janasya kāmo bhavati"
+        ipa: "dʒənəsjə kaːmoː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "कामो", base: "काम", reading: "kāmo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "जनः कामेन दुःखी भवति"
+        reading: "janaḥ kāmena duḥkhī bhavati"
+        ipa: "dʒənəh kaːmeːnə d̪uhkʰiː bʱəʋət̪i"
+        bases:
+          - { word: "जनः", base: "जन", reading: "janaḥ" }
+          - { word: "कामेन", base: "काम", reading: "kāmena" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5816"
+    target: "मृत्युः"
+    reading: "mṛtyuḥ"
+    ipa: "mr̩t̪juh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+      - { id: "n6", kind: "note" }
+    bases:
+          - { word: "मृत्युः", base: "मृत्यु", reading: "mṛtyu" }
+    examples:
+      - target: "मृत्युर् जनं हरति"
+        reading: "mṛtyur janaṃ harati"
+        ipa: "mr̩t̪jur dʒənəm ɦərət̪i"
+        bases:
+          - { word: "मृत्युर्", base: "मृत्यु", reading: "mṛtyur" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "जनो मृत्युं स्मरति"
+        reading: "jano mṛtyuṃ smarati"
+        ipa: "dʒənoː mr̩t̪jum smərət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "मृत्युं", base: "मृत्यु", reading: "mṛtyuṃ" }
+          - { word: "स्मरति", base: "स्मृ", reading: "smarati" }
+  - id: "sa-5817"
+    target: "बुद्धिः"
+    reading: "buddhiḥ"
+    ipa: "bud̪d̪ʱih"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "बुद्धिः", base: "बुद्धि", reading: "buddhi" }
+    examples:
+      - target: "जनस्य बुद्धिर् भवति"
+        reading: "janasya buddhir bhavati"
+        ipa: "dʒənəsjə bud̪d̪ʱir bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "बुद्धिर्", base: "बुद्धि", reading: "buddhir" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "जनो बुद्ध्या वदति"
+        reading: "jano buddhyā vadati"
+        ipa: "dʒənoː bud̪d̪ʱjaː ʋəd̪ət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "बुद्ध्या", base: "बुद्धि", reading: "buddhyā" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+  - id: "sa-5818"
+    target: "विद्या"
+    reading: "vidyā"
+    ipa: "ʋid̪jaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "जनस्य विद्या भवति"
+        reading: "janasya vidyā bhavati"
+        ipa: "dʒənəsjə ʋid̪jaː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "विद्या", base: "विद्या", reading: "vidyā" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "जनो विद्यां पठति"
+        reading: "jano vidyāṃ paṭhati"
+        ipa: "dʒənoː ʋid̪jaːm pəʈʰət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "विद्यां", base: "विद्या", reading: "vidyāṃ" }
+          - { word: "पठति", base: "पठ्", reading: "paṭhati" }
+  - id: "sa-5819"
+    target: "अधर्मः"
+    reading: "adharmaḥ"
+    ipa: "əd̪ʱərməh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "अधर्मः", base: "अधर्म", reading: "adharma" }
+    examples:
+      - target: "अधर्मो भवति"
+        reading: "adharmo bhavati"
+        ipa: "əd̪ʱərmoː bʱəʋət̪i"
+        bases:
+          - { word: "अधर्मो", base: "अधर्म", reading: "adharmo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "अधर्मो जनं हरति"
+        reading: "adharmo janaṃ harati"
+        ipa: "əd̪ʱərmoː dʒənəm ɦərət̪i"
+        bases:
+          - { word: "अधर्मो", base: "अधर्म", reading: "adharmo" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+  - id: "sa-5820"
+    target: "दुर्जनः"
+    reading: "durjanaḥ"
+    ipa: "d̪urdʒənəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+    bases:
+          - { word: "दुर्जनः", base: "दुर्जन", reading: "durjana" }
+    examples:
+      - target: "दुर्जनो वदति"
+        reading: "durjano vadati"
+        ipa: "d̪urdʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "दुर्जनो", base: "दुर्जन", reading: "durjano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "सदा दुर्जनो दुःखी भवति"
+        reading: "sadā durjano duḥkhī bhavati"
+        ipa: "səd̪aː d̪urdʒənoː d̪uhkʰiː bʱəʋət̪i"
+        bases:
+          - { word: "सदा", base: "सदा", reading: "sadā" }
+          - { word: "दुर्जनो", base: "दुर्जन", reading: "durjano" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5821"
+    target: "धैर्यम्"
+    reading: "dhairyam"
+    ipa: "d̪ʱəirjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "धैर्यम्", base: "धैर्य", reading: "dhairya" }
+    examples:
+      - target: "जनस्य धैर्यं भवति"
+        reading: "janasya dhairyaṃ bhavati"
+        ipa: "dʒənəsjə d̪ʱəirjəm bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "धैर्यं", base: "धैर्य", reading: "dhairyaṃ" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "धैर्येण जनस् तिष्ठति"
+        reading: "dhairyeṇa janas tiṣṭhati"
+        ipa: "d̪ʱəirjeːɳə dʒənəs t̪iʂʈʰət̪i"
+        bases:
+          - { word: "धैर्येण", base: "धैर्य", reading: "dhairyeṇa" }
+          - { word: "जनस्", base: "जन", reading: "janas" }
+          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+  - id: "sa-5822"
+    target: "उत्साहः"
+    reading: "utsāhaḥ"
+    ipa: "ut̪saːɦəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "उत्साहः", base: "उत्साह", reading: "utsāha" }
+    examples:
+      - target: "उत्साहो जनं रक्षति"
+        reading: "utsāho janaṃ rakṣati"
+        ipa: "ut̪saːɦoː dʒənəm rəkʂət̪i"
+        bases:
+          - { word: "उत्साहो", base: "उत्साह", reading: "utsāho" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+      - target: "उत्साहेन जनो गच्छति"
+        reading: "utsāhena jano gacchati"
+        ipa: "ut̪saːɦeːnə dʒənoː ɡətʃtʃʰət̪i"
+        bases:
+          - { word: "उत्साहेन", base: "उत्साह", reading: "utsāhena" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "गच्छति", base: "गम्", reading: "gacchati" }
+  - id: "sa-5823"
+    target: "आलस्यम्"
+    reading: "ālasyam"
+    ipa: "aːləsjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "आलस्यम्", base: "आलस्य", reading: "ālasya" }
+    examples:
+      - target: "आलस्यं दुःखं वहति"
+        reading: "ālasyaṃ duḥkhaṃ vahati"
+        ipa: "aːləsjəm d̪uhkʰəm ʋəɦət̪i"
+        bases:
+          - { word: "आलस्यं", base: "आलस्य", reading: "ālasyaṃ" }
+          - { word: "दुःखं", base: "दुःख", reading: "duḥkhaṃ" }
+          - { word: "वहति", base: "वह्", reading: "vahati" }
+      - target: "आलस्यं जनं हरति"
+        reading: "ālasyaṃ janaṃ harati"
+        ipa: "aːləsjəm dʒənəm ɦərət̪i"
+        bases:
+          - { word: "आलस्यं", base: "आलस्य", reading: "ālasyaṃ" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+  - id: "sa-5824"
+    target: "दोषः"
+    reading: "doṣaḥ"
+    ipa: "d̪oːʂəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "दोषः", base: "दोष", reading: "doṣa" }
+    examples:
+      - target: "दोषो भवति"
+        reading: "doṣo bhavati"
+        ipa: "d̪oːʂoː bʱəʋət̪i"
+        bases:
+          - { word: "दोषो", base: "दोष", reading: "doṣo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "दोषो जनं हरति"
+        reading: "doṣo janaṃ harati"
+        ipa: "d̪oːʂoː dʒənəm ɦərət̪i"
+        bases:
+          - { word: "दोषो", base: "दोष", reading: "doṣo" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+  - id: "sa-5825"
+    target: "गुणः"
+    reading: "guṇaḥ"
+    ipa: "ɡuɳəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "गुणः", base: "गुण", reading: "guṇa" }
+    examples:
+      - target: "गुणो भवति"
+        reading: "guṇo bhavati"
+        ipa: "ɡuɳoː bʱəʋət̪i"
+        bases:
+          - { word: "गुणो", base: "गुण", reading: "guṇo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "गुणो जनं रक्षति"
+        reading: "guṇo janaṃ rakṣati"
+        ipa: "ɡuɳoː dʒənəm rəkʂət̪i"
+        bases:
+          - { word: "गुणो", base: "गुण", reading: "guṇo" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+  - id: "sa-5826"
+    target: "योगः"
+    reading: "yogaḥ"
+    ipa: "joːɡəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "योगः", base: "योग", reading: "yoga" }
+    examples:
+      - target: "जनस्य योगो भवति"
+        reading: "janasya yogo bhavati"
+        ipa: "dʒənəsjə joːɡoː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "योगो", base: "योग", reading: "yogo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "योगेन सुखी जनो भवति"
+        reading: "yogena sukhī jano bhavati"
+        ipa: "joːɡeːnə sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "योगेन", base: "योग", reading: "yogena" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5827"
+    target: "संन्यासः"
+    reading: "saṃnyāsaḥ"
+    ipa: "sənnjaːsəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "संन्यासः", base: "संन्यास", reading: "saṃnyāsa" }
+    examples:
+      - target: "संन्यासो भवति"
+        reading: "saṃnyāso bhavati"
+        ipa: "sənnjaːsoː bʱəʋət̪i"
+        bases:
+          - { word: "संन्यासो", base: "संन्यास", reading: "saṃnyāso" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "संन्यासेन सुखी जनो भवति"
+        reading: "saṃnyāsena sukhī jano bhavati"
+        ipa: "sənnjaːseːnə sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "संन्यासेन", base: "संन्यास", reading: "saṃnyāsena" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5828"
+    target: "त्यागः"
+    reading: "tyāgaḥ"
+    ipa: "t̪jaːɡəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "त्यागः", base: "त्याग", reading: "tyāga" }
+    examples:
+      - target: "जनस्य त्यागो भवति"
+        reading: "janasya tyāgo bhavati"
+        ipa: "dʒənəsjə t̪jaːɡoː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "त्यागो", base: "त्याग", reading: "tyāgo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "त्यागेन सुखी जनो भवति"
+        reading: "tyāgena sukhī jano bhavati"
+        ipa: "t̪jaːɡeːnə sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "त्यागेन", base: "त्याग", reading: "tyāgena" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5829"
+    target: "संयमः"
+    reading: "saṃyamaḥ"
+    ipa: "sə̃jəməh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "संयमः", base: "संयम", reading: "saṃyama" }
+    examples:
+      - target: "जनस्य संयमो भवति"
+        reading: "janasya saṃyamo bhavati"
+        ipa: "dʒənəsjə sə̃jəmoː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "संयमो", base: "संयम", reading: "saṃyamo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "संयमेन सुखी जनो भवति"
+        reading: "saṃyamena sukhī jano bhavati"
+        ipa: "sə̃jəmeːnə sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "संयमेन", base: "संयम", reading: "saṃyamena" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5830"
+    target: "भिक्षुः"
+    reading: "bhikṣuḥ"
+    ipa: "bʱikʂuh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "भिक्षुः", base: "भिक्षु", reading: "bhikṣu" }
+    examples:
+      - target: "भिक्षुर् वदति"
+        reading: "bhikṣur vadati"
+        ipa: "bʱikʂur ʋəd̪ət̪i"
+        bases:
+          - { word: "भिक्षुर्", base: "भिक्षु", reading: "bhikṣur" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "भिक्षुस् तत्र तिष्ठति"
+        reading: "bhikṣus tatra tiṣṭhati"
+        ipa: "bʱikʂus t̪ət̪rə t̪iʂʈʰət̪i"
+        bases:
+          - { word: "भिक्षुस्", base: "भिक्षु", reading: "bhikṣus" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+  - id: "sa-5831"
+    target: "प्रसादः"
+    reading: "prasādaḥ"
+    ipa: "prəsaːd̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "प्रसादः", base: "प्रसाद", reading: "prasāda" }
+    examples:
+      - target: "प्रसादो जनं रक्षति"
+        reading: "prasādo janaṃ rakṣati"
+        ipa: "prəsaːd̪oː dʒənəm rəkʂət̪i"
+        bases:
+          - { word: "प्रसादो", base: "प्रसाद", reading: "prasādo" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+      - target: "प्रसादेन सुखी जनो भवति"
+        reading: "prasādena sukhī jano bhavati"
+        ipa: "prəsaːd̪eːnə sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "प्रसादेन", base: "प्रसाद", reading: "prasādena" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5832"
+    target: "आनन्दः"
+    reading: "ānandaḥ"
+    ipa: "aːnənd̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "आनन्दः", base: "आनन्द", reading: "ānanda" }
+    examples:
+      - target: "आनन्दो जनं रक्षति"
+        reading: "ānando janaṃ rakṣati"
+        ipa: "aːnənd̪oː dʒənəm rəkʂət̪i"
+        bases:
+          - { word: "आनन्दो", base: "आनन्द", reading: "ānando" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+      - target: "आनन्देन सुखी जनो भवति"
+        reading: "ānandena sukhī jano bhavati"
+        ipa: "aːnənd̪eːnə sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "आनन्देन", base: "आनन्द", reading: "ānandena" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5833"
+    target: "हर्षः"
+    reading: "harṣaḥ"
+    ipa: "ɦərʂəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "हर्षः", base: "हर्ष", reading: "harṣa" }
+    examples:
+      - target: "हर्षो भवति"
+        reading: "harṣo bhavati"
+        ipa: "ɦərʂoː bʱəʋət̪i"
+        bases:
+          - { word: "हर्षो", base: "हर्ष", reading: "harṣo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "जनो हर्षेण गायति"
+        reading: "jano harṣeṇa gāyati"
+        ipa: "dʒənoː ɦərʂeːɳə ɡaːjət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "हर्षेण", base: "हर्ष", reading: "harṣeṇa" }
+          - { word: "गायति", base: "गै", reading: "gāyati" }
+  - id: "sa-5834"
+    target: "नीतिः"
+    reading: "nītiḥ"
+    ipa: "niːt̪ih"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "नीतिः", base: "नीति", reading: "nīti" }
+    examples:
+      - target: "नीतिर् जनं रक्षति"
+        reading: "nītir janaṃ rakṣati"
+        ipa: "niːt̪ir dʒənəm rəkʂət̪i"
+        bases:
+          - { word: "नीतिर्", base: "नीति", reading: "nītir" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+      - target: "नीत्या सुखी जनो भवति"
+        reading: "nītyā sukhī jano bhavati"
+        ipa: "niːt̪jaː sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "नीत्या", base: "नीति", reading: "nītyā" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5835"
+    target: "निन्दा"
+    reading: "nindā"
+    ipa: "nind̪aː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "निन्दा जनं हरति"
+        reading: "nindā janaṃ harati"
+        ipa: "nind̪aː dʒənəm ɦərət̪i"
+        bases:
+          - { word: "निन्दा", base: "निन्दा", reading: "nindā" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "जनो निन्दया दुःखी भवति"
+        reading: "jano nindayā duḥkhī bhavati"
+        ipa: "dʒənoː nind̪əjaː d̪uhkʰiː bʱəʋət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "निन्दया", base: "निन्दा", reading: "nindayā" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5836"
+    target: "स्तुतिः"
+    reading: "stutiḥ"
+    ipa: "st̪ut̪ih"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+      - { id: "n6", kind: "note" }
+    bases:
+          - { word: "स्तुतिः", base: "स्तुति", reading: "stuti" }
+    examples:
+      - target: "स्तुतिं जनो गायति"
+        reading: "stutiṃ jano gāyati"
+        ipa: "st̪ut̪im dʒənoː ɡaːjət̪i"
+        bases:
+          - { word: "स्तुतिं", base: "स्तुति", reading: "stutiṃ" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "गायति", base: "गै", reading: "gāyati" }
+      - target: "स्तुतिर् जनं रक्षति"
+        reading: "stutir janaṃ rakṣati"
+        ipa: "st̪ut̪ir dʒənəm rəkʂət̪i"
+        bases:
+          - { word: "स्तुतिर्", base: "स्तुति", reading: "stutir" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+  - id: "sa-5837"
+    target: "कीर्तिः"
+    reading: "kīrtiḥ"
+    ipa: "kiːrt̪ih"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "कीर्तिः", base: "कीर्ति", reading: "kīrti" }
+    examples:
+      - target: "कीर्तिर् जनं रक्षति"
+        reading: "kīrtir janaṃ rakṣati"
+        ipa: "kiːrt̪ir dʒənəm rəkʂət̪i"
+        bases:
+          - { word: "कीर्तिर्", base: "कीर्ति", reading: "kīrtir" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+      - target: "कीर्त्या सुखी जनो भवति"
+        reading: "kīrtyā sukhī jano bhavati"
+        ipa: "kiːrt̪jaː sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "कीर्त्या", base: "कीर्ति", reading: "kīrtyā" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5838"
+    target: "यशः"
+    reading: "yaśaḥ"
+    ipa: "jəʃəh"
+    pos: "noun"
+    gender: "n"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "यशः", base: "यशस्", reading: "yaśas" }
+    examples:
+      - target: "यशो भवति"
+        reading: "yaśo bhavati"
+        ipa: "jəʃoː bʱəʋət̪i"
+        bases:
+          - { word: "यशो", base: "यशस्", reading: "yaśo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "यशसा सुखी जनो भवति"
+        reading: "yaśasā sukhī jano bhavati"
+        ipa: "jəʃəsaː sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "यशसा", base: "यशस्", reading: "yaśasā" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5839"
+    target: "उपकारः"
+    reading: "upakāraḥ"
+    ipa: "upəkaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "उपकारः", base: "उपकार", reading: "upakāra" }
+    examples:
+      - target: "उपकारो भवति"
+        reading: "upakāro bhavati"
+        ipa: "upəkaːroː bʱəʋət̪i"
+        bases:
+          - { word: "उपकारो", base: "उपकार", reading: "upakāro" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "उपकारं जनः करोति"
+        reading: "upakāraṃ janaḥ karoti"
+        ipa: "upəkaːrəm dʒənəh kəroːt̪i"
+        bases:
+          - { word: "उपकारं", base: "उपकार", reading: "upakāraṃ" }
+          - { word: "जनः", base: "जन", reading: "janaḥ" }
+          - { word: "करोति", base: "कृ", reading: "karoti" }
+  - id: "sa-5840"
+    target: "लज्जा"
+    reading: "lajjā"
+    ipa: "lədʒdʒaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "जनस्य लज्जा भवति"
+        reading: "janasya lajjā bhavati"
+        ipa: "dʒənəsjə lədʒdʒaː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "लज्जा", base: "लज्जा", reading: "lajjā" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "लज्जया न सुखी जनो भवति"
+        reading: "lajjayā na sukhī jano bhavati"
+        ipa: "lədʒdʒəjaː nə sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "लज्जया", base: "लज्जा", reading: "lajjayā" }
+          - { word: "न", base: "न", reading: "na" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5841"
+    target: "भयम्"
+    reading: "bhayam"
+    ipa: "bʱəjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "भयम्", base: "भय", reading: "bhaya" }
+    examples:
+      - target: "भयं जनं हरति"
+        reading: "bhayaṃ janaṃ harati"
+        ipa: "bʱəjəm dʒənəm ɦərət̪i"
+        bases:
+          - { word: "भयं", base: "भय", reading: "bhayaṃ" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "जनो भयेन दुःखी भवति"
+        reading: "jano bhayena duḥkhī bhavati"
+        ipa: "dʒənoː bʱəjeːnə d̪uhkʰiː bʱəʋət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भयेन", base: "भय", reading: "bhayena" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5842"
+    target: "श्रद्धा"
+    reading: "śraddhā"
+    ipa: "ʃrəd̪d̪ʱaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "जनस्य श्रद्धा भवति"
+        reading: "janasya śraddhā bhavati"
+        ipa: "dʒənəsjə ʃrəd̪d̪ʱaː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "श्रद्धा", base: "श्रद्धा", reading: "śraddhā" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "श्रद्धया जनस् तिष्ठति"
+        reading: "śraddhayā janas tiṣṭhati"
+        ipa: "ʃrəd̪d̪ʱəjaː dʒənəs t̪iʂʈʰət̪i"
+        bases:
+          - { word: "श्रद्धया", base: "श्रद्धा", reading: "śraddhayā" }
+          - { word: "जनस्", base: "जन", reading: "janas" }
+          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+  - id: "sa-5843"
+    target: "विवेकः"
+    reading: "vivekaḥ"
+    ipa: "ʋiʋeːkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "विवेकः", base: "विवेक", reading: "viveka" }
+    examples:
+      - target: "जनस्य विवेको भवति"
+        reading: "janasya viveko bhavati"
+        ipa: "dʒənəsjə ʋiʋeːkoː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "विवेको", base: "विवेक", reading: "viveko" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "जनो विवेकेन सुखी भवति"
+        reading: "jano vivekena sukhī bhavati"
+        ipa: "dʒənoː ʋiʋeːkeːnə sukʰiː bʱəʋət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "विवेकेन", base: "विवेक", reading: "vivekena" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5844"
+    target: "प्रज्ञा"
+    reading: "prajñā"
+    ipa: "prədʒɲaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "जनस्य प्रज्ञा भवति"
+        reading: "janasya prajñā bhavati"
+        ipa: "dʒənəsjə prədʒɲaː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "प्रज्ञा", base: "प्रज्ञा", reading: "prajñā" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "जनः प्रज्ञया सुखी भवति"
+        reading: "janaḥ prajñayā sukhī bhavati"
+        ipa: "dʒənəh prədʒɲəjaː sukʰiː bʱəʋət̪i"
+        bases:
+          - { word: "जनः", base: "जन", reading: "janaḥ" }
+          - { word: "प्रज्ञया", base: "प्रज्ञा", reading: "prajñayā" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5845"
+    target: "मेधा"
+    reading: "medhā"
+    ipa: "meːd̪ʱaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "जनस्य मेधा भवति"
+        reading: "janasya medhā bhavati"
+        ipa: "dʒənəsjə meːd̪ʱaː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "मेधा", base: "मेधा", reading: "medhā" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "मेधया जनः पठति"
+        reading: "medhayā janaḥ paṭhati"
+        ipa: "meːd̪ʱəjaː dʒənəh pəʈʰət̪i"
+        bases:
+          - { word: "मेधया", base: "मेधा", reading: "medhayā" }
+          - { word: "जनः", base: "जन", reading: "janaḥ" }
+          - { word: "पठति", base: "पठ्", reading: "paṭhati" }
+  - id: "sa-5846"
+    target: "धनम्"
+    reading: "dhanam"
+    ipa: "d̪ʱənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "धनम्", base: "धन", reading: "dhana" }
+    examples:
+      - target: "धनं भवति"
+        reading: "dhanaṃ bhavati"
+        ipa: "d̪ʱənəm bʱəʋət̪i"
+        bases:
+          - { word: "धनं", base: "धन", reading: "dhanaṃ" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "धनं जनं हरति"
+        reading: "dhanaṃ janaṃ harati"
+        ipa: "d̪ʱənəm dʒənəm ɦərət̪i"
+        bases:
+          - { word: "धनं", base: "धन", reading: "dhanaṃ" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+  - id: "sa-5847"
+    target: "दारिद्र्यम्"
+    reading: "dāridryam"
+    ipa: "d̪aːrid̪rjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "दारिद्र्यम्", base: "दारिद्र्य", reading: "dāridrya" }
+    examples:
+      - target: "दारिद्र्यं जनं हरति"
+        reading: "dāridryaṃ janaṃ harati"
+        ipa: "d̪aːrid̪rjəm dʒənəm ɦərət̪i"
+        bases:
+          - { word: "दारिद्र्यं", base: "दारिद्र्य", reading: "dāridryaṃ" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "जनो दारिद्र्येण दुःखी भवति"
+        reading: "jano dāridryeṇa duḥkhī bhavati"
+        ipa: "dʒənoː d̪aːrid̪rjeːɳə d̪uhkʰiː bʱəʋət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "दारिद्र्येण", base: "दारिद्र्य", reading: "dāridryeṇa" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5848"
+    target: "अनुग्रहः"
+    reading: "anugrahaḥ"
+    ipa: "ənuɡrəɦəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "अनुग्रहः", base: "अनुग्रह", reading: "anugraha" }
+    examples:
+      - target: "अनुग्रहो भवति"
+        reading: "anugraho bhavati"
+        ipa: "ənuɡrəɦoː bʱəʋət̪i"
+        bases:
+          - { word: "अनुग्रहो", base: "अनुग्रह", reading: "anugraho" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "अनुग्रहेण सुखी जनो भवति"
+        reading: "anugraheṇa sukhī jano bhavati"
+        ipa: "ənuɡrəɦeːɳə sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "अनुग्रहेण", base: "अनुग्रह", reading: "anugraheṇa" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5849"
+    target: "कृपा"
+    reading: "kṛpā"
+    ipa: "kr̩paː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "जनस्य कृपा भवति"
+        reading: "janasya kṛpā bhavati"
+        ipa: "dʒənəsjə kr̩paː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "कृपा", base: "कृपा", reading: "kṛpā" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "कृपया सुखी जनो भवति"
+        reading: "kṛpayā sukhī jano bhavati"
+        ipa: "kr̩pəjaː sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "कृपया", base: "कृपा", reading: "kṛpayā" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5850"
+    target: "मर्यादा"
+    reading: "maryādā"
+    ipa: "mərjaːd̪aː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "जनस्य मर्यादा भवति"
+        reading: "janasya maryādā bhavati"
+        ipa: "dʒənəsjə mərjaːd̪aː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "मर्यादा", base: "मर्यादा", reading: "maryādā" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "मर्यादया जनस् तिष्ठति"
+        reading: "maryādayā janas tiṣṭhati"
+        ipa: "mərjaːd̪əjaː dʒənəs t̪iʂʈʰət̪i"
+        bases:
+          - { word: "मर्यादया", base: "मर्यादा", reading: "maryādayā" }
+          - { word: "जनस्", base: "जन", reading: "janas" }
+          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+  - id: "sa-5851"
+    target: "आदरः"
+    reading: "ādaraḥ"
+    ipa: "aːd̪ərəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "आदरः", base: "आदर", reading: "ādara" }
+    examples:
+      - target: "आदरो भवति"
+        reading: "ādaro bhavati"
+        ipa: "aːd̪əroː bʱəʋət̪i"
+        bases:
+          - { word: "आदरो", base: "आदर", reading: "ādaro" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "आदरं जनः करोति"
+        reading: "ādaraṃ janaḥ karoti"
+        ipa: "aːd̪ərəm dʒənəh kəroːt̪i"
+        bases:
+          - { word: "आदरं", base: "आदर", reading: "ādaraṃ" }
+          - { word: "जनः", base: "जन", reading: "janaḥ" }
+          - { word: "करोति", base: "कृ", reading: "karoti" }
+  - id: "sa-5852"
+    target: "सम्मानः"
+    reading: "sammānaḥ"
+    ipa: "səmmaːnəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "सम्मानः", base: "सम्मान", reading: "sammāna" }
+    examples:
+      - target: "सम्मानो जनं रक्षति"
+        reading: "sammāno janaṃ rakṣati"
+        ipa: "səmmaːnoː dʒənəm rəkʂət̪i"
+        bases:
+          - { word: "सम्मानो", base: "सम्मान", reading: "sammāno" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+      - target: "सम्मानेन सुखी जनो भवति"
+        reading: "sammānena sukhī jano bhavati"
+        ipa: "səmmaːneːnə sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "सम्मानेन", base: "सम्मान", reading: "sammānena" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5853"
+    target: "उपदेशः"
+    reading: "upadeśaḥ"
+    ipa: "upəd̪eːʃəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "उपदेशः", base: "उपदेश", reading: "upadeśa" }
+    examples:
+      - target: "उपदेशो भवति"
+        reading: "upadeśo bhavati"
+        ipa: "upəd̪eːʃoː bʱəʋət̪i"
+        bases:
+          - { word: "उपदेशो", base: "उपदेश", reading: "upadeśo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "उपदेशेन जनो दुःखी न भवति"
+        reading: "upadeśena jano duḥkhī na bhavati"
+        ipa: "upəd̪eːʃeːnə dʒənoː d̪uhkʰiː nə bʱəʋət̪i"
+        bases:
+          - { word: "उपदेशेन", base: "उपदेश", reading: "upadeśena" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "न", base: "न", reading: "na" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5854"
+    target: "प्रीतिः"
+    reading: "prītiḥ"
+    ipa: "priːt̪ih"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "प्रीतिः", base: "प्रीति", reading: "prīti" }
+    examples:
+      - target: "जनस्य प्रीतिर् भवति"
+        reading: "janasya prītir bhavati"
+        ipa: "dʒənəsjə priːt̪ir bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "प्रीतिर्", base: "प्रीति", reading: "prītir" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "प्रीत्या सुखी जनो भवति"
+        reading: "prītyā sukhī jano bhavati"
+        ipa: "priːt̪jaː sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "प्रीत्या", base: "प्रीति", reading: "prītyā" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5855"
+    target: "ईर्ष्या"
+    reading: "īrṣyā"
+    ipa: "iːrʂjaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ईर्ष्या जनं हरति"
+        reading: "īrṣyā janaṃ harati"
+        ipa: "iːrʂjaː dʒənəm ɦərət̪i"
+        bases:
+          - { word: "ईर्ष्या", base: "ईर्ष्या", reading: "īrṣyā" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "ईर्ष्यया जनो दुःखी भवति"
+        reading: "īrṣyayā jano duḥkhī bhavati"
+        ipa: "iːrʂjəjaː dʒənoː d̪uhkʰiː bʱəʋət̪i"
+        bases:
+          - { word: "ईर्ष्यया", base: "ईर्ष्या", reading: "īrṣyayā" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5856"
+    target: "मात्सर्यम्"
+    reading: "mātsaryam"
+    ipa: "maːt̪sərjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "मात्सर्यम्", base: "मात्सर्य", reading: "mātsarya" }
+    examples:
+      - target: "मात्सर्यं जनं हरति"
+        reading: "mātsaryaṃ janaṃ harati"
+        ipa: "maːt̪sərjəm dʒənəm ɦərət̪i"
+        bases:
+          - { word: "मात्सर्यं", base: "मात्सर्य", reading: "mātsaryaṃ" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "मात्सर्येण जनो दुःखी भवति"
+        reading: "mātsaryeṇa jano duḥkhī bhavati"
+        ipa: "maːt̪sərjeːɳə dʒənoː d̪uhkʰiː bʱəʋət̪i"
+        bases:
+          - { word: "मात्सर्येण", base: "मात्सर्य", reading: "mātsaryeṇa" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5857"
+    target: "असूया"
+    reading: "asūyā"
+    ipa: "əsuːjaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "असूया जनं हरति"
+        reading: "asūyā janaṃ harati"
+        ipa: "əsuːjaː dʒənəm ɦərət̪i"
+        bases:
+          - { word: "असूया", base: "असूया", reading: "asūyā" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "असूयया जनो दुःखी भवति"
+        reading: "asūyayā jano duḥkhī bhavati"
+        ipa: "əsuːjəjaː dʒənoː d̪uhkʰiː bʱəʋət̪i"
+        bases:
+          - { word: "असूयया", base: "असूया", reading: "asūyayā" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5858"
+    target: "मदः"
+    reading: "madaḥ"
+    ipa: "məd̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "मदः", base: "मद", reading: "mada" }
+    examples:
+      - target: "मदो जनं हरति"
+        reading: "mado janaṃ harati"
+        ipa: "məd̪oː dʒənəm ɦərət̪i"
+        bases:
+          - { word: "मदो", base: "मद", reading: "mado" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "मदेन जनो दुःखी भवति"
+        reading: "madena jano duḥkhī bhavati"
+        ipa: "məd̪eːnə dʒənoː d̪uhkʰiː bʱəʋət̪i"
+        bases:
+          - { word: "मदेन", base: "मद", reading: "madena" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5859"
+    target: "माया"
+    reading: "māyā"
+    ipa: "maːjaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "जनस्य माया भवति"
+        reading: "janasya māyā bhavati"
+        ipa: "dʒənəsjə maːjaː bʱəʋət̪i"
+        bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
+          - { word: "माया", base: "माया", reading: "māyā" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "मायया न सुखी जनो भवति"
+        reading: "māyayā na sukhī jano bhavati"
+        ipa: "maːjəjaː nə sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "मायया", base: "माया", reading: "māyayā" }
+          - { word: "न", base: "न", reading: "na" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5860"
+    target: "पुण्यः"
+    reading: "puṇyaḥ"
+    ipa: "puɳjəh"
+    pos: "adj"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "पुण्यः", base: "पुण्य", reading: "puṇya" }
+    examples:
+      - target: "पुण्यो जनो वदति"
+        reading: "puṇyo jano vadati"
+        ipa: "puɳjoː dʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "पुण्यो", base: "पुण्य", reading: "puṇyo" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "जनः पुण्यो भवति"
+        reading: "janaḥ puṇyo bhavati"
+        ipa: "dʒənəh puɳjoː bʱəʋət̪i"
+        bases:
+          - { word: "जनः", base: "जन", reading: "janaḥ" }
+          - { word: "पुण्यो", base: "पुण्य", reading: "puṇyo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5861"
+    target: "पापः"
+    reading: "pāpaḥ"
+    ipa: "paːpəh"
+    pos: "adj"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "पापः", base: "पाप", reading: "pāpa" }
+    examples:
+      - target: "पापो जनो वदति"
+        reading: "pāpo jano vadati"
+        ipa: "paːpoː dʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "पापो", base: "पाप", reading: "pāpo" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "जनः पापो भवति"
+        reading: "janaḥ pāpo bhavati"
+        ipa: "dʒənəh paːpoː bʱəʋət̪i"
+        bases:
+          - { word: "जनः", base: "जन", reading: "janaḥ" }
+          - { word: "पापो", base: "पाप", reading: "pāpo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5862"
+    target: "धार्मिकः"
+    reading: "dhārmikaḥ"
+    ipa: "d̪ʱaːrmikəh"
+    pos: "adj"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "धार्मिकः", base: "धार्मिक", reading: "dhārmika" }
+    examples:
+      - target: "धार्मिको जनो वदति"
+        reading: "dhārmiko jano vadati"
+        ipa: "d̪ʱaːrmikoː dʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "धार्मिको", base: "धार्मिक", reading: "dhārmiko" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "जनो धार्मिको भवति"
+        reading: "jano dhārmiko bhavati"
+        ipa: "dʒənoː d̪ʱaːrmikoː bʱəʋət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "धार्मिको", base: "धार्मिक", reading: "dhārmiko" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5863"
+    target: "साधुः"
+    reading: "sādhuḥ"
+    ipa: "saːd̪ʱuh"
+    pos: "adj"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "साधुः", base: "साधु", reading: "sādhu" }
+    examples:
+      - target: "साधुर् जनो वदति"
+        reading: "sādhur jano vadati"
+        ipa: "saːd̪ʱur dʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "साधुर्", base: "साधु", reading: "sādhur" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "साधुस् तत्र तिष्ठति"
+        reading: "sādhus tatra tiṣṭhati"
+        ipa: "saːd̪ʱus t̪ət̪rə t̪iʂʈʰət̪i"
+        bases:
+          - { word: "साधुस्", base: "साधु", reading: "sādhus" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+  - id: "sa-5864"
+    target: "असत्यः"
+    reading: "asatyaḥ"
+    ipa: "əsət̪jəh"
+    pos: "adj"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "असत्यः", base: "असत्य", reading: "asatya" }
+    examples:
+      - target: "असत्यं जनो वदति"
+        reading: "asatyaṃ jano vadati"
+        ipa: "əsət̪jəm dʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "असत्यं", base: "असत्य", reading: "asatyaṃ" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "असत्यं जनं हरति"
+        reading: "asatyaṃ janaṃ harati"
+        ipa: "əsət̪jəm dʒənəm ɦərət̪i"
+        bases:
+          - { word: "असत्यं", base: "असत्य", reading: "asatyaṃ" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+  - id: "sa-5865"
+    target: "मिथ्या"
+    reading: "mithyā"
+    ipa: "mit̪ʰjaː"
+    pos: "adv"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "मिथ्या वदति"
+        reading: "mithyā vadati"
+        ipa: "mit̪ʰjaː ʋəd̪ət̪i"
+        bases:
+          - { word: "मिथ्या", base: "मिथ्या", reading: "mithyā" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "जनो मिथ्या वदति"
+        reading: "jano mithyā vadati"
+        ipa: "dʒənoː mit̪ʰjaː ʋəd̪ət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "मिथ्या", base: "मिथ्या", reading: "mithyā" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+  - id: "sa-6000"
+    target: "द्वेषः"
+    reading: "dveṣaḥ"
+    ipa: "d̪ʋeːʂəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "द्वेषः", base: "द्वेष", reading: "dveṣa" }
+    examples:
+      - target: "द्वेषो जनं हरति"
+        reading: "dveṣo janaṃ harati"
+        ipa: "d̪ʋeːʂoː dʒənəm ɦərət̪i"
+        bases:
+          - { word: "द्वेषो", base: "द्वेष", reading: "dveṣo" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "जनो द्वेषेण दुःखी भवति"
+        reading: "jano dveṣeṇa duḥkhī bhavati"
+        ipa: "dʒənoː d̪ʋeːʂeːɳə d̪uhkʰiː bʱəʋət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "द्वेषेण", base: "द्वेष", reading: "dveṣeṇa" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-6001"
+    target: "वैरम्"
+    reading: "vairam"
+    ipa: "ʋəirəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "वैरम्", base: "वैर", reading: "vaira" }
+    examples:
+      - target: "वैरं जनं हरति"
+        reading: "vairaṃ janaṃ harati"
+        ipa: "ʋəirəm dʒənəm ɦərət̪i"
+        bases:
+          - { word: "वैरं", base: "वैर", reading: "vairaṃ" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "वैरेण जनो दुःखी भवति"
+        reading: "vaireṇa jano duḥkhī bhavati"
+        ipa: "ʋəireːɳə dʒənoː d̪uhkʰiː bʱəʋət̪i"
+        bases:
+          - { word: "वैरेण", base: "वैर", reading: "vaireṇa" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-6002"
+    target: "तितिक्षा"
+    reading: "titikṣā"
+    ipa: "t̪it̪ikʂaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "तितिक्षा जनं रक्षति"
+        reading: "titikṣā janaṃ rakṣati"
+        ipa: "t̪it̪ikʂaː dʒənəm rəkʂət̪i"
+        bases:
+          - { word: "तितिक्षा", base: "तितिक्षा", reading: "titikṣā" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+      - target: "तितिक्षया सुखी जनो भवति"
+        reading: "titikṣayā sukhī jano bhavati"
+        ipa: "t̪it̪ikʂəjaː sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "तितिक्षया", base: "तितिक्षा", reading: "titikṣayā" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-6003"
+    target: "दमः"
+    reading: "damaḥ"
+    ipa: "d̪əməh"
+    pos: "noun"
+    gender: "m"
+    tags: ["dharma"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "दमः", base: "दम", reading: "dama" }
+    examples:
+      - target: "दमो जनं रक्षति"
+        reading: "damo janaṃ rakṣati"
+        ipa: "d̪əmoː dʒənəm rəkʂət̪i"
+        bases:
+          - { word: "दमो", base: "दम", reading: "damo" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+      - target: "दमेन सुखी जनो भवति"
+        reading: "damena sukhī jano bhavati"
+        ipa: "d̪əmeːnə sukʰiː dʒənoː bʱəʋət̪i"
+        bases:
+          - { word: "दमेन", base: "दम", reading: "damena" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }

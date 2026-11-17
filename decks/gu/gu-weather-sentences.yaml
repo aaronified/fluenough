@@ -1,0 +1,173 @@
+schema: 1
+id: "gu-weather-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC-BY-SA-4.0"
+
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "gu-2041"
+    target: "આજે વરસાદ પડે છે."
+    reading: "āje varsād paḍe che."
+    ipa: "adʒe ʋərsad̪ pəɖe tʃʰe"
+    pos: "phrase"
+    bases:
+          - { word: "આજે", ref: "gu-0482" }
+          - { word: "વરસાદ", ref: "gu-2000" }
+          - { word: "પડે", ref: "gu-2034" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+    confusables:
+      - { id: "w1", ref: "gu-2001", kind: "word" }
+      - { id: "w2", ref: "gu-2006", kind: "word" }
+  - id: "gu-2042"
+    target: "બહાર ખૂબ તડકો છે."
+    reading: "bahār khub taḍko che."
+    ipa: "bəɦar kʰub t̪əɖko tʃʰe"
+    pos: "phrase"
+    bases:
+          - { word: "બહાર", base: "બહાર", reading: "bahār" }
+          - { word: "ખૂબ", base: "ખૂબ", reading: "khub" }
+          - { word: "તડકો", ref: "gu-2001" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+    confusables:
+      - { id: "w1", ref: "gu-2002", kind: "word" }
+      - { id: "w2", ref: "gu-2006", kind: "word" }
+  - id: "gu-2043"
+    target: "સવારે સૂરજ ઊગ્યો."
+    reading: "savāre suraj ugyo."
+    ipa: "səʋare surədʒ uɡjo"
+    pos: "phrase"
+    bases:
+          - { word: "સવારે", ref: "gu-0486" }
+          - { word: "સૂરજ", ref: "gu-2002" }
+          - { word: "ઊગ્યો", ref: "gu-2039" }
+    confusables:
+      - { id: "w1", ref: "gu-2040", kind: "word" }
+      - { id: "w2", ref: "gu-2001", kind: "word" }
+  - id: "gu-2044"
+    target: "આકાશમાં કાળું વાદળ છે."
+    reading: "ākāśmām̐ kāḷum̐ vādaḷ che."
+    ipa: "akaʃmã kaɭũ ʋad̪əɭ tʃʰe"
+    pos: "phrase"
+    bases:
+          - { word: "આકાશમાં", ref: "gu-2005" }
+          - { word: "કાળું", base: "કાળો", reading: "kāḷo" }
+          - { word: "વાદળ", ref: "gu-2004" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+    confusables:
+      - { id: "w1", ref: "gu-2012", kind: "word" }
+      - { id: "w2", ref: "gu-2016", kind: "word" }
+  - id: "gu-2045"
+    target: "રાત્રે ઠંડી પડે છે."
+    reading: "rātre ṭhaṇḍi paḍe che."
+    ipa: "rat̪re ʈʰəɳɖi pəɖe tʃʰe"
+    pos: "phrase"
+    bases:
+          - { word: "રાત્રે", ref: "gu-0489" }
+          - { word: "ઠંડી", ref: "gu-2006" }
+          - { word: "પડે", ref: "gu-2034" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+    confusables:
+      - { id: "w1", ref: "gu-2007", kind: "word" }
+      - { id: "w2", ref: "gu-0057", kind: "word" }
+  - id: "gu-2046"
+    target: "ઉનાળામાં ભારે ગરમી પડે છે."
+    reading: "unāḷāmām̐ bhāre garmi paḍe che."
+    ipa: "unaɭamã bʱare ɡərmi pəɖe tʃʰe"
+    pos: "phrase"
+    bases:
+          - { word: "ઉનાળામાં", ref: "gu-0529" }
+          - { word: "ભારે", ref: "gu-1249" }
+          - { word: "ગરમી", ref: "gu-2007" }
+          - { word: "પડે", ref: "gu-2034" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+    confusables:
+      - { id: "w1", ref: "gu-0530", kind: "word" }
+      - { id: "w2", ref: "gu-0531", kind: "word" }
+  - id: "gu-2047"
+    target: "અહીં વરસાદ વરસે છે."
+    reading: "ahim̐ varsād varse che."
+    ipa: "əɦĩ ʋərsad̪ ʋərse tʃʰe"
+    pos: "phrase"
+    bases:
+          - { word: "અહીં", ref: "gu-0693" }
+          - { word: "વરસાદ", ref: "gu-2000" }
+          - { word: "વરસે", ref: "gu-2033" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+    confusables:
+      - { id: "w1", ref: "gu-2035", kind: "word" }
+      - { id: "w2", ref: "gu-2038", kind: "word" }
+  - id: "gu-2048"
+    target: "છત્રી લઈ જાઓ, વરસાદ આવશે."
+    reading: "chatri lai jāo, varsād āvśe."
+    ipa: "tʃʰət̪ri ləi dʒao ʋərsad̪ aʋʃe"
+    pos: "phrase"
+    bases:
+          - { word: "છત્રી", ref: "gu-1765" }
+          - { word: "લઈ", base: "લેવું", reading: "levum̐" }
+          - { word: "જાઓ", ref: "gu-0508" }
+          - { word: "વરસાદ", ref: "gu-2000" }
+          - { word: "આવશે", ref: "gu-0509" }
+    confusables:
+      - { id: "w1", ref: "gu-2018", kind: "word" }
+      - { id: "w2", ref: "gu-2024", kind: "word" }
+  - id: "gu-2049"
+    target: "ભેજ વધારે હતો, પણ હવા સારી હતી."
+    reading: "bhej vadhāre hato, paṇ havā sāri hati."
+    ipa: "bʱedʒ ʋəd̪ʱare ɦət̪o pəɳ ɦəʋa sari ɦət̪i"
+    pos: "phrase"
+    bases:
+          - { word: "ભેજ", ref: "gu-2016" }
+          - { word: "વધારે", base: "વધારે", reading: "vadhāre" }
+          - { word: "હતો", base: "હોવું", reading: "hovum̐" }
+          - { word: "પણ", ref: "gu-0055" }
+          - { word: "હવા", ref: "gu-2025" }
+          - { word: "સારી", base: "સારો", reading: "sāro" }
+          - { word: "હતી", base: "હોવું", reading: "hovum̐" }
+    confusables:
+      - { id: "w1", ref: "gu-2019", kind: "word" }
+      - { id: "w2", ref: "gu-2027", kind: "word" }
+  - id: "gu-2050"
+    target: "વીજળી અને ગર્જના થઈ."
+    reading: "vijḷi ane garjanā thai."
+    ipa: "ʋidʒɭi əne ɡərdʒəna t̪ʰəi"
+    pos: "phrase"
+    bases:
+          - { word: "વીજળી", ref: "gu-2011" }
+          - { word: "અને", ref: "gu-0579" }
+          - { word: "ગર્જના", ref: "gu-2012" }
+          - { word: "થઈ", base: "થવું", reading: "thavum̐" }
+    confusables:
+      - { id: "w1", ref: "gu-2036", kind: "word" }
+      - { id: "w2", ref: "gu-2037", kind: "word" }
+  - id: "gu-2051"
+    target: "વીજળી ચમકી ત્યારે અમે ઘરમાં ગયા."
+    reading: "vijḷi camki tyāre ame gharmām̐ gayā."
+    ipa: "ʋidʒɭi tʃəmki t̪jare əme ɡʱərmã ɡəja"
+    pos: "phrase"
+    bases:
+          - { word: "વીજળી", ref: "gu-2011" }
+          - { word: "ચમકી", ref: "gu-2036" }
+          - { word: "ત્યારે", base: "ત્યારે", reading: "tyāre" }
+          - { word: "અમે", ref: "gu-0252" }
+          - { word: "ઘરમાં", ref: "gu-0048" }
+          - { word: "ગયા", ref: "gu-0508" }
+    confusables:
+      - { id: "w1", ref: "gu-2012", kind: "word" }
+      - { id: "w2", ref: "gu-2014", kind: "word" }
+  - id: "gu-2052"
+    target: "સવારે ધુમ્મસ હતું, પછી તડકો નીકળ્યો."
+    reading: "savāre dhummas hatum̐, pachi taḍko nikaḷyo."
+    ipa: "səʋare d̪ʱumməs ɦət̪ũ pətʃʰi t̪əɖko nikəɭjo"
+    pos: "phrase"
+    bases:
+          - { word: "સવારે", ref: "gu-0486" }
+          - { word: "ધુમ્મસ", ref: "gu-2014" }
+          - { word: "હતું", base: "હોવું", reading: "hovum̐" }
+          - { word: "પછી", base: "પછી", reading: "pachi" }
+          - { word: "તડકો", ref: "gu-2001" }
+          - { word: "નીકળ્યો", base: "નીકળવું", reading: "nikḷvum̐" }
+    confusables:
+      - { id: "w1", ref: "gu-2015", kind: "word" }
+      - { id: "w2", ref: "gu-2013", kind: "word" }

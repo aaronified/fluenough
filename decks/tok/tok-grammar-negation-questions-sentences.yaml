@@ -2,12 +2,14 @@ schema: 1
 id: "tok-grammar-negation-questions-sentences"
 part: "core"
 kind: "vocab"
-language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", scripts: ["latin", "sitelen_pona"], icon: "Tp" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "tok-0141"
     target: "mi wile ala e moku."
+    target_scripts:
+      sitelen_pona: "󱤴 󱥷 󱤂 󱤉 󱤶."
     ipa: "mi ˈwile ˈala e ˈmoku"
     pos: "phrase"
     bases:
@@ -21,6 +23,8 @@ cards:
       - { id: "w2", ref: "tok-0007", kind: "word" }
   - id: "tok-0142"
     target: "ona li wile e seme?"
+    target_scripts:
+      sitelen_pona: "󱥆 󱤧 󱥷 󱤉 󱥙?"
     ipa: "ˈona li ˈwile e ˈseme"
     pos: "phrase"
     bases:
@@ -34,6 +38,8 @@ cards:
       - { id: "w2", ref: "tok-0083", kind: "word" }
   - id: "tok-0143"
     target: "ni li pona ala pona?"
+    target_scripts:
+      sitelen_pona: "󱥁 󱤧 󱥔 󱤂 󱥔?"
     ipa: "ni li ˈpona ˈala ˈpona"
     pos: "phrase"
     bases:
@@ -46,6 +52,8 @@ cards:
       - { id: "w2", ref: "tok-0121", kind: "word" }
   - id: "tok-0144"
     target: "jan ni li lape ala."
+    target_scripts:
+      sitelen_pona: "󱤑 󱥁 󱤧 󱤢 󱤂."
     ipa: "jan ni li ˈlape ˈala"
     pos: "phrase"
     bases:
@@ -59,6 +67,8 @@ cards:
       - { id: "w2", ref: "tok-0087", kind: "word" }
   - id: "tok-0145"
     target: "ona li sona ala e ni."
+    target_scripts:
+      sitelen_pona: "󱥆 󱤧 󱥡 󱤂 󱤉 󱥁."
     ipa: "ˈona li ˈsona ˈala e ni"
     pos: "phrase"
     bases:
@@ -73,6 +83,8 @@ cards:
       - { id: "w2", ref: "tok-0086", kind: "word" }
   - id: "tok-0146"
     target: "sina kama anu ala?"
+    target_scripts:
+      sitelen_pona: "󱥞 󱤖 󱤇 󱤂?"
     ipa: "ˈsina ˈkama ˈanu ˈala"
     pos: "phrase"
     bases:
@@ -85,6 +97,8 @@ cards:
       - { id: "w2", ref: "tok-0086", kind: "word" }
   - id: "tok-0147"
     target: "mi kute e seme?"
+    target_scripts:
+      sitelen_pona: "󱤴 󱤠 󱤉 󱥙?"
     ipa: "mi ˈkute e ˈseme"
     pos: "phrase"
     bases:
@@ -97,6 +111,8 @@ cards:
       - { id: "w2", ref: "tok-0085", kind: "word" }
   - id: "tok-0148"
     target: "jan ala li kama."
+    target_scripts:
+      sitelen_pona: "󱤑 󱤂 󱤧 󱤖."
     ipa: "jan ˈala li ˈkama"
     pos: "phrase"
     bases:
@@ -109,6 +125,8 @@ cards:
       - { id: "w2", ref: "tok-0088", kind: "word" }
   - id: "tok-0149"
     target: "pan ala li lon."
+    target_scripts:
+      sitelen_pona: "󱥋 󱤂 󱤧 󱤬."
     ipa: "pan ˈala li lon"
     pos: "phrase"
     bases:
@@ -121,6 +139,8 @@ cards:
       - { id: "w2", ref: "tok-0036", kind: "word" }
   - id: "tok-0150"
     target: "ijo ni li sin ala."
+    target_scripts:
+      sitelen_pona: "󱤌 󱥁 󱤧 󱥝 󱤂."
     ipa: "ˈijo ni li sin ˈala"
     pos: "phrase"
     bases:

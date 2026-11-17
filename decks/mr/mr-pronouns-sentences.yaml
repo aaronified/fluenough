@@ -10,6 +10,8 @@ cards:
     target: "तो आणि ती मित्र आहेत."
     reading: "to āṇi ti mitra āhet."
     ipa: "t̪o aɳi t̪i mit̪r aɦet̪"
+    phonetic: "[t̪o aɳi t̪i mit̪ɾ aɦet̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     bases: [{ word: "आहेत", reading: "āhet", base: "असणे" }]
     confusables: [{ id: "w1", ref: "mr-0080", kind: "word" }, { id: "f1", word: "आहे", reading: "āhe", kind: "form" }]
@@ -17,6 +19,8 @@ cards:
     target: "आपण सगळे एकत्र जेवू."
     reading: "āpaṇ sagḷe ekatr jevu."
     ipa: "apəɳ səɡɭe ekət̪r dʒeʋu"
+    phonetic: "[apəɳ səɡɭ̆e ekət̪ɾ dʒeʋu]"
+    phonetic_source: "rules"
     pos: "phrase"
     bases: [{ word: "एकत्र", base: "एकत्र", reading: "ekatr" }, { word: "जेवू", reading: "jevu", base: "जेवणे" }]
     confusables: [{ id: "w1", ref: "mr-0138", kind: "word" }, { id: "f1", word: "जेवतो", reading: "jevto", kind: "form" }]
@@ -24,6 +28,8 @@ cards:
     target: "हा माणूस कुठे राहतो?"
     reading: "hā māṇus kuṭhe rāhto?"
     ipa: "ɦa maɳus kuʈʰe raɦt̪o"
+    phonetic: "[ɦa maɳus kuʈʰe ɾaɦt̪o]"
+    phonetic_source: "rules"
     pos: "phrase"
     bases: [{ word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "राहतो", reading: "rāhto", base: "राहणे" }]
     confusables:
@@ -34,16 +40,21 @@ cards:
     target: "हे शेजारी माझे नातेवाईक आहेत."
     reading: "he śejāri mājhe nātevāik āhet."
     ipa: "ɦe ʃedzari madʒʱe nat̪eʋaik aɦet̪"
+    phonetic: "[ɦe ʃedzaɾi madʒʱe nat̪eʋaik aɦet̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     bases: [{ word: "माझे", reading: "mājhe", base: "मी" }, { word: "आहेत", reading: "āhet", base: "असणे" }]
     confusables:
       - { id: "w1", word: "हा", reading: "hā", kind: "word" }
       - { id: "f1", word: "आहे", reading: "āhe", kind: "form" }
       - { id: "w2", word: "ते", reading: "te", kind: "word" }
+    notes: [{ id: "n1", kind: "behaviour" }]
   - id: "mr-0700"
     target: "कोणी इथे येणार आहे का?"
     reading: "koṇi ithe yeṇār āhe kā?"
     ipa: "koɳi it̪ʰe jeɳar aɦe ka"
+    phonetic: "[koɳi it̪ʰe jeɳaɾ aɦe ka]"
+    phonetic_source: "rules"
     pos: "phrase"
     bases:
       - { word: "इथे", base: "इथे", reading: "ithe" }
@@ -51,10 +62,13 @@ cards:
       - { word: "आहे", reading: "āhe", base: "असणे" }
       - { word: "का", base: "का", reading: "kā" }
     confusables: [{ id: "w1", word: "कोणीही", reading: "koṇihi", kind: "word" }, { id: "w2", word: "कधी", reading: "kadhi", kind: "word" }]
+    notes: [{ id: "n1", kind: "behaviour" }]
   - id: "mr-0701"
     target: "पाहुणे आता घरी जातात."
     reading: "pāhuṇe ātā ghari jātāt."
     ipa: "paɦuɳe at̪a ɡʱəri dzat̪at̪"
+    phonetic: "[paɦuɳe at̪a ɡʱəɾi dzat̪at̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     bases:
       - { word: "पाहुणे", reading: "pāhuṇe", base: "पाहुणा" }
@@ -62,3 +76,4 @@ cards:
       - { word: "घरी", base: "घर", reading: "ghari" }
       - { word: "जातात", reading: "jātāt", base: "जाणे" }
     confusables: [{ id: "w1", word: "ते", reading: "te", kind: "word" }, { id: "f1", word: "जातो", reading: "jāto", kind: "form" }]
+    notes: [{ id: "n1", kind: "behaviour" }]

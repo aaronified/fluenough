@@ -1,0 +1,57 @@
+schema: 1
+id: "sa-en-reading-adverbs"
+name: "Reading: adverbs"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-adverbs-text-1"
+    title: "Today, tomorrow, always"
+    theme: "adverbs"
+    sentences:
+      - { text: "अद्य वयं जलं पिबामः पुस्तकं च पठामः.", reading: "adya vayaṃ jalaṃ pibāmaḥ pustakaṃ ca paṭhāmaḥ.", ipa: "əd̪jə ʋəjəm dʒələm pibaːməh pust̪əkəm tʃə pəʈʰaːməh" }
+      - { text: "श्वः पिता कुत्र गच्छति माता च कुत्र तिष्ठति?", reading: "śvaḥ pitā kutra gacchati mātā ca kutra tiṣṭhati?", ipa: "ʃʋəh pit̪aː kut̪rə ɡətʃtʃʰət̪i maːt̪aː tʃə kut̪rə t̪iʂʈʰət̪i" }
+      - { text: "सदा सखा जलं पिबति भ्राता च खादति.", reading: "sadā sakhā jalaṃ pibati bhrātā ca khādati.", ipa: "səd̪aː səkʰaː dʒələm pibət̪i bʱraːt̪aː tʃə kʰaːd̪ət̪i" }
+      - { text: "त्वं शीघ्रं न धावसि वयं च शीघ्रं धावामः.", reading: "tvaṃ śīghraṃ na dhāvasi vayaṃ ca śīghraṃ dhāvāmaḥ.", ipa: "t̪ʋəm ʃiːɡʱrəm nə d̪ʱaːʋəsi ʋəjəm tʃə ʃiːɡʱrəm d̪ʱaːʋaːməh" }
+    questions:
+      - id: "sa-3435"
+        prompt: { en: "When do 'we' drink water and read?" }
+        options: [{ en: "Tomorrow" }, { en: "Always" }, { en: "Today" }]
+        answer: 3
+      - id: "sa-3436"
+        prompt: { en: "Who always drinks water?" }
+        options: [{ en: "The friend" }, { en: "The brother" }, { en: "Father" }]
+        answer: 1
+      - id: "sa-3437"
+        prompt: { en: "Someone asks where father goes tomorrow." }
+        answer: true
+      - id: "sa-3438"
+        prompt: { en: "'You' run quickly and we do not." }
+        answer: false
+  - id: "sa-adverbs-text-2"
+    title: "Again, a lot, sometimes"
+    theme: "adverbs"
+    sentences:
+      - { text: "सखा पुनः पिबति माता च पुनः पठति.", reading: "sakhā punaḥ pibati mātā ca punaḥ paṭhati.", ipa: "səkʰaː punəh pibət̪i maːt̪aː tʃə punəh pəʈʰət̪i" }
+      - { text: "भ्राता बहु खादति पिता च बहु जलं पिबति.", reading: "bhrātā bahu khādati pitā ca bahu jalaṃ pibati.", ipa: "bʱraːt̪aː bəɦu kʰaːd̪ət̪i pit̪aː tʃə bəɦu dʒələm pibət̪i" }
+      - { text: "कदाचित् पिता हसति कदाचित् पुत्री च गायति.", reading: "kadācit pitā hasati kadācit putrī ca gāyati.", ipa: "kəd̪aːtʃit̪ pit̪aː ɦəsət̪i kəd̪aːtʃit̪ put̪riː tʃə ɡaːjət̪i" }
+      - { text: "इदानीं का संस्कृतं वदति का च गायति?", reading: "idānīṃ kā saṃskṛtaṃ vadati kā ca gāyati?", ipa: "id̪aːniːm kaː sə̃skr̩t̪əm ʋəd̪ət̪i kaː tʃə ɡaːjət̪i" }
+    questions:
+      - id: "sa-3439"
+        prompt: { en: "Who eats a lot?" }
+        options: [{ en: "Father" }, { en: "The brother" }, { en: "The friend" }]
+        answer: 2
+      - id: "sa-3440"
+        prompt: { en: "Who sings sometimes?" }
+        options: [{ en: "Father" }, { en: "Mother" }, { en: "The daughter" }]
+        answer: 3
+      - id: "sa-3441"
+        prompt: { en: "Mother reads again in the first sentence." }
+        answer: true
+      - id: "sa-3442"
+        prompt: { en: "Father drinks a little water in the second sentence." }
+        answer: false

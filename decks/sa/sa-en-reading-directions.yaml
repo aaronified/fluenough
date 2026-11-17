@@ -1,0 +1,57 @@
+schema: 1
+id: "sa-en-reading-directions"
+name: "Reading: directions"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-directions-text-1"
+    title: "In front and behind"
+    theme: "directions"
+    sentences:
+      - { text: "अग्रे सखा गच्छति पश्चात् पिता च गच्छति.", reading: "agre sakhā gacchati paścāt pitā ca gacchati.", ipa: "əɡreː səkʰaː ɡətʃtʃʰət̪i pəʃtʃaːt̪ pit̪aː tʃə ɡətʃtʃʰət̪i" }
+      - { text: "अग्रे माता तिष्ठति पश्चात् पिता च पठति.", reading: "agre mātā tiṣṭhati paścāt pitā ca paṭhati.", ipa: "əɡreː maːt̪aː t̪iʂʈʰət̪i pəʃtʃaːt̪ pit̪aː tʃə pəʈʰət̪i" }
+      - { text: "अग्रे का तिष्ठति पश्चात् का च गच्छति?", reading: "agre kā tiṣṭhati paścāt kā ca gacchati?", ipa: "əɡreː kaː t̪iʂʈʰət̪i pəʃtʃaːt̪ kaː tʃə ɡətʃtʃʰət̪i" }
+      - { text: "उपरि को वसति माता च कुत्र वसति?", reading: "upari ko vasati mātā ca kutra vasati?", ipa: "upəri koː ʋəsət̪i maːt̪aː tʃə kut̪rə ʋəsət̪i" }
+    questions:
+      - id: "sa-3499"
+        prompt: { en: "Who goes in front in the first sentence?" }
+        options: [{ en: "Father" }, { en: "Mother" }, { en: "The friend" }]
+        answer: 3
+      - id: "sa-3500"
+        prompt: { en: "Who stands in front in the second sentence?" }
+        options: [{ en: "Mother" }, { en: "Father" }, { en: "The friend" }]
+        answer: 1
+      - id: "sa-3501"
+        prompt: { en: "Father reads behind." }
+        answer: true
+      - id: "sa-3502"
+        prompt: { en: "The last sentence asks who lives below." }
+        answer: false
+  - id: "sa-directions-text-2"
+    title: "Above, below, right"
+    theme: "directions"
+    sentences:
+      - { text: "उपरि जलं भवति पिता च तत्र गच्छति.", reading: "upari jalaṃ bhavati pitā ca tatra gacchati.", ipa: "upəri dʒələm bʱəʋət̪i pit̪aː tʃə t̪ət̪rə ɡətʃtʃʰət̪i" }
+      - { text: "अधस्तात् पुस्तकं तिष्ठति माता च तत्र पठति.", reading: "adhastāt pustakaṃ tiṣṭhati mātā ca tatra paṭhati.", ipa: "əd̪ʱəst̪aːt̪ pust̪əkəm t̪iʂʈʰət̪i maːt̪aː tʃə t̪ət̪rə pəʈʰət̪i" }
+      - { text: "दक्षिणो हस्तो जलं नयति.", reading: "dakṣiṇo hasto jalaṃ nayati.", ipa: "d̪əkʂiɳoː ɦəst̪oː dʒələm nəjət̪i" }
+      - { text: "दक्षिणः पादो न चलति माता च तत्र पठति.", reading: "dakṣiṇaḥ pādo na calati mātā ca tatra paṭhati.", ipa: "d̪əkʂiɳəh paːd̪oː nə tʃələt̪i maːt̪aː tʃə t̪ət̪rə pəʈʰət̪i" }
+    questions:
+      - id: "sa-3503"
+        prompt: { en: "What is above in the first sentence?" }
+        options: [{ en: "The book" }, { en: "Water" }, { en: "Father" }]
+        answer: 2
+      - id: "sa-3504"
+        prompt: { en: "What is below in the second sentence?" }
+        options: [{ en: "Mother" }, { en: "Water" }, { en: "The book" }]
+        answer: 3
+      - id: "sa-3505"
+        prompt: { en: "The right hand brings water." }
+        answer: true
+      - id: "sa-3506"
+        prompt: { en: "The right foot moves." }
+        answer: false

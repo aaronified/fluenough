@@ -1,0 +1,65 @@
+# Active (parasmaipada) against middle (atmanepada) endings of the present. The middle forms were
+# read in the conjugation tables of the en.wiktionary entries of labhate, vartate, ikshate and
+# janite; the active forms of jnana in the table of janati (which gives both voices side by side); the
+# four verbs of both voices (bru, dha, sru, kri) in the tables of bravati, dadhati, srnoti and krinati;
+# the voice each verb of the course takes is the P or A on the sa-verb line of the entry of its
+# present form, 2026-11-16. Readings from tools/transcribe.py (sa).
+schema: 1
+id: "sa-grammar-atmanepada"
+part: "core"
+kind: "rules"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+source: "en.wiktionary.org conjugation tables of लभते, वर्तते, ईक्षते, जानीते and जानाति (both voices side by side), and the tables on the entries of ब्रवीति (ब्रू), दधाति (धा), शृणोति (श्रु) and क्रीणाति (क्री), and the voice marked on the entry of each verb's present form, read 2026-11-16."
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    tags: ["atmanepada"]
+  slots: ["p3-sg", "p3-du", "p3-pl", "p2-sg", "p2-du", "p2-pl", "p1-sg", "p1-du", "p1-pl", "m3-sg", "m3-du", "m3-pl", "m2-sg", "m2-du", "m2-pl", "m1-sg", "m1-du", "m1-pl"]
+  rows:
+    - word: "sa-2102"
+      forms: {"p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "लभते", "m3-du": "लभेते", "m3-pl": "लभन्ते", "m2-sg": "लभसे", "m2-du": "लभेथे", "m2-pl": "लभध्वे", "m1-sg": "लभे", "m1-du": "लभावहे", "m1-pl": "लभामहे"}
+      readings: {"m3-sg": "labhate", "m3-du": "labhete", "m3-pl": "labhante", "m2-sg": "labhase", "m2-du": "labhethe", "m2-pl": "labhadhve", "m1-sg": "labhe", "m1-du": "labhāvahe", "m1-pl": "labhāmahe"}
+    - word: "sa-2103"
+      forms: {"p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "वर्तते", "m3-du": "वर्तेते", "m3-pl": "वर्तन्ते", "m2-sg": "वर्तसे", "m2-du": "वर्तेथे", "m2-pl": "वर्तध्वे", "m1-sg": "वर्ते", "m1-du": "वर्तावहे", "m1-pl": "वर्तामहे"}
+      readings: {"m3-sg": "vartate", "m3-du": "vartete", "m3-pl": "vartante", "m2-sg": "vartase", "m2-du": "vartethe", "m2-pl": "vartadhve", "m1-sg": "varte", "m1-du": "vartāvahe", "m1-pl": "vartāmahe"}
+    - word: "sa-2104"
+      forms: {"p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "ईक्षते", "m3-du": "ईक्षेते", "m3-pl": "ईक्षन्ते", "m2-sg": "ईक्षसे", "m2-du": "ईक्षेथे", "m2-pl": "ईक्षध्वे", "m1-sg": "ईक्षे", "m1-du": "ईक्षावहे", "m1-pl": "ईक्षामहे"}
+      readings: {"m3-sg": "īkṣate", "m3-du": "īkṣete", "m3-pl": "īkṣante", "m2-sg": "īkṣase", "m2-du": "īkṣethe", "m2-pl": "īkṣadhve", "m1-sg": "īkṣe", "m1-du": "īkṣāvahe", "m1-pl": "īkṣāmahe"}
+    - word: "sa-2119"
+      forms: {"p3-sg": "जानाति", "p3-du": "जानीतः", "p3-pl": "जानन्ति", "p2-sg": "जानासि", "p2-du": "जानीथः", "p2-pl": "जानीथ", "p1-sg": "जानामि", "p1-du": "जानीवः", "p1-pl": "जानीमः", "m3-sg": "जानीते", "m3-du": "जानाते", "m3-pl": "जानते", "m2-sg": "जानीषे", "m2-du": "जानाथे", "m2-pl": "जानीध्वे", "m1-sg": "जाने", "m1-du": "जानीवहे", "m1-pl": "जानीमहे"}
+      readings: {"p3-sg": "jānāti", "p3-du": "jānītaḥ", "p3-pl": "jānanti", "p2-sg": "jānāsi", "p2-du": "jānīthaḥ", "p2-pl": "jānītha", "p1-sg": "jānāmi", "p1-du": "jānīvaḥ", "p1-pl": "jānīmaḥ", "m3-sg": "jānīte", "m3-du": "jānāte", "m3-pl": "jānate", "m2-sg": "jānīṣe", "m2-du": "jānāthe", "m2-pl": "jānīdhve", "m1-sg": "jāne", "m1-du": "jānīvahe", "m1-pl": "jānīmahe"}
+    - word: "sa-2108"
+      forms: {"p3-sg": "ब्रवीति", "p3-du": "ब्रूतः", "p3-pl": "ब्रुवन्ति", "p2-sg": "ब्रवीषि", "p2-du": "ब्रूथः", "p2-pl": "ब्रूथ", "p1-sg": "ब्रवीमि", "p1-du": "ब्रूवः", "p1-pl": "ब्रूमः", "m3-sg": "ब्रूते", "m3-du": "ब्रुवाते", "m3-pl": "ब्रुवते", "m2-sg": "ब्रूषे", "m2-du": "ब्रुवाथे", "m2-pl": "ब्रूध्वे", "m1-sg": "ब्रुवे", "m1-du": "ब्रूवहे", "m1-pl": "ब्रूमहे"}
+      readings: {"p3-sg": "bravīti", "p3-du": "brūtaḥ", "p3-pl": "bruvanti", "p2-sg": "bravīṣi", "p2-du": "brūthaḥ", "p2-pl": "brūtha", "p1-sg": "bravīmi", "p1-du": "brūvaḥ", "p1-pl": "brūmaḥ", "m3-sg": "brūte", "m3-du": "bruvāte", "m3-pl": "bruvate", "m2-sg": "brūṣe", "m2-du": "bruvāthe", "m2-pl": "brūdhve", "m1-sg": "bruve", "m1-du": "brūvahe", "m1-pl": "brūmahe"}
+    - word: "sa-2110"
+      forms: {"p3-sg": "दधाति", "p3-du": "धत्तः", "p3-pl": "दधति", "p2-sg": "दधासि", "p2-du": "धत्थः", "p2-pl": "धत्थ", "p1-sg": "दधामि", "p1-du": "दध्वः", "p1-pl": "दध्मः", "m3-sg": "धत्ते", "m3-du": "दधाते", "m3-pl": "दधते", "m2-sg": "धत्से", "m2-du": "दधाथे", "m2-pl": "धद्ध्वे", "m1-sg": "दधे", "m1-du": "दध्वहे", "m1-pl": "दध्महे"}
+      readings: {"p3-sg": "dadhāti", "p3-du": "dhattaḥ", "p3-pl": "dadhati", "p2-sg": "dadhāsi", "p2-du": "dhatthaḥ", "p2-pl": "dhattha", "p1-sg": "dadhāmi", "p1-du": "dadhvaḥ", "p1-pl": "dadhmaḥ", "m3-sg": "dhatte", "m3-du": "dadhāte", "m3-pl": "dadhate", "m2-sg": "dhatse", "m2-du": "dadhāthe", "m2-pl": "dhaddhve", "m1-sg": "dadhe", "m1-du": "dadhvahe", "m1-pl": "dadhmahe"}
+    - word: "sa-2113"
+      forms: {"p3-sg": "शृणोति", "p3-du": "शृणुतः", "p3-pl": "शृण्वन्ति", "p2-sg": "शृणोषि", "p2-du": "शृणुथः", "p2-pl": "शृणुथ", "p1-sg": "शृणोमि", "p1-du": "शृण्वः", "p1-pl": "शृण्मः", "m3-sg": "शृणुते", "m3-du": "शृण्वाते", "m3-pl": "शृण्वते", "m2-sg": "शृणुषे", "m2-du": "शृण्वाथे", "m2-pl": "शृणुध्वे", "m1-sg": "शृण्वे", "m1-du": "शृण्वहे", "m1-pl": "शृण्महे"}
+      readings: {"p3-sg": "śṛṇoti", "p3-du": "śṛṇutaḥ", "p3-pl": "śṛṇvanti", "p2-sg": "śṛṇoṣi", "p2-du": "śṛṇuthaḥ", "p2-pl": "śṛṇutha", "p1-sg": "śṛṇomi", "p1-du": "śṛṇvaḥ", "p1-pl": "śṛṇmaḥ", "m3-sg": "śṛṇute", "m3-du": "śṛṇvāte", "m3-pl": "śṛṇvate", "m2-sg": "śṛṇuṣe", "m2-du": "śṛṇvāthe", "m2-pl": "śṛṇudhve", "m1-sg": "śṛṇve", "m1-du": "śṛṇvahe", "m1-pl": "śṛṇmahe"}
+    - word: "sa-2120"
+      forms: {"p3-sg": "क्रीणाति", "p3-du": "क्रीणीतः", "p3-pl": "क्रीणन्ति", "p2-sg": "क्रीणासि", "p2-du": "क्रीणीथः", "p2-pl": "क्रीणीथ", "p1-sg": "क्रीणामि", "p1-du": "क्रीणीवः", "p1-pl": "क्रीणीमः", "m3-sg": "क्रीणीते", "m3-du": "क्रीणाते", "m3-pl": "क्रीणते", "m2-sg": "क्रीणीषे", "m2-du": "क्रीणाथे", "m2-pl": "क्रीणीध्वे", "m1-sg": "क्रीणे", "m1-du": "क्रीणीवहे", "m1-pl": "क्रीणीमहे"}
+      readings: {"p3-sg": "krīṇāti", "p3-du": "krīṇītaḥ", "p3-pl": "krīṇanti", "p2-sg": "krīṇāsi", "p2-du": "krīṇīthaḥ", "p2-pl": "krīṇītha", "p1-sg": "krīṇāmi", "p1-du": "krīṇīvaḥ", "p1-pl": "krīṇīmaḥ", "m3-sg": "krīṇīte", "m3-du": "krīṇāte", "m3-pl": "krīṇate", "m2-sg": "krīṇīṣe", "m2-du": "krīṇāthe", "m2-pl": "krīṇīdhve", "m1-sg": "krīṇe", "m1-du": "krīṇīvahe", "m1-pl": "krīṇīmahe"}
+rules:
+  - id: "sa-rule-atm-third"
+    slots: ["m3-sg", "m3-du", "m3-pl"]
+    words: [{ word: "लभते", reading: "labhate" }, { word: "लभेते", reading: "labhete" }, { word: "लभन्ते", reading: "labhante" }, { word: "लभ्", reading: "labh" }, { word: "भवति", reading: "bhavati" }, { word: "भवतः", reading: "bhavataḥ" }, { word: "भवन्ति", reading: "bhavanti" }, { word: "लः परस्मैपदम्", reading: "laḥ parasmaipadam" }, { word: "शेषात् कर्तरि परस्मैपदम्", reading: "śeṣāt kartari parasmaipadam" }]
+  - id: "sa-rule-atm-second"
+    slots: ["m2-sg", "m2-du", "m2-pl"]
+    words: [{ word: "लभसे", reading: "labhase" }, { word: "लभेथे", reading: "labhethe" }, { word: "लभध्वे", reading: "labhadhve" }, { word: "भवसि", reading: "bhavasi" }, { word: "भवथः", reading: "bhavathaḥ" }, { word: "भवथ", reading: "bhavatha" }]
+  - id: "sa-rule-atm-first"
+    slots: ["m1-sg", "m1-du", "m1-pl"]
+    words: [{ word: "लभे", reading: "labhe" }, { word: "लभावहे", reading: "labhāvahe" }, { word: "लभामहे", reading: "labhāmahe" }, { word: "भवामि", reading: "bhavāmi" }, { word: "भवावः", reading: "bhavāvaḥ" }, { word: "भवामः", reading: "bhavāmaḥ" }]
+  - id: "sa-rule-par-third"
+    slots: ["p3-sg", "p3-du", "p3-pl"]
+    words: [{ word: "जानाति", reading: "jānāti" }, { word: "जानीतः", reading: "jānītaḥ" }, { word: "जानन्ति", reading: "jānanti" }, { word: "जानीते", reading: "jānīte" }, { word: "जानाति", reading: "jānāti" }]
+  - id: "sa-rule-par-second"
+    slots: ["p2-sg", "p2-du", "p2-pl"]
+    words: [{ word: "जानासि", reading: "jānāsi" }, { word: "जानीथः", reading: "jānīthaḥ" }, { word: "जानीथ", reading: "jānītha" }, { word: "जानीषे", reading: "jānīṣe" }]
+  - id: "sa-rule-par-first"
+    slots: ["p1-sg", "p1-du", "p1-pl"]
+    words: [{ word: "जानामि", reading: "jānāmi" }, { word: "जानीवः", reading: "jānīvaḥ" }, { word: "जानीमः", reading: "jānīmaḥ" }, { word: "जाने", reading: "jāne" }]

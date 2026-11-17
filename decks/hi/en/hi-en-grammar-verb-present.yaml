@@ -1,0 +1,33 @@
+schema: 1
+id: "hi-en-grammar-verb-present"
+kind: "layer"
+core: "hi-grammar-verb-present"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs: the present, for every person"
+description: "Every verb the course teaches, in the present for habits and general facts, for each person and for a man or a woman. The forms are written in Devanagari for now. Not yet checked by a Hindustani speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "main-m": "I, a man, in the present"
+    "main-f": "I, a woman, in the present"
+    "tum-m": "you (familiar), a man, in the present"
+    "tum-f": "you (familiar), a woman, in the present"
+    "vah-m": "he, or you (intimate), a man, in the present"
+    "vah-f": "she, or you (intimate), a woman, in the present"
+    "ham-m": "we, they or you (respectful), men or a mixed group, in the present"
+    "ham-f": "we, they or you (respectful), women, in the present"
+rules:
+  "hi-rule-present-first":
+    name: "-ता (-tā)/-ती (-tī) हूँ (hūm̐): I"
+    explanation: "For I, the stem takes {1} for a man and {2} for a woman: {3}, to do, gives {4} or {5}; {6}, to go, gives {7}. The present says what you do as a habit or what is generally true."
+  "hi-rule-present-second":
+    name: "-ते (-tē)/-ती (-tī) हो (hō): you (tum)"
+    explanation: "For you (familiar), the stem takes {1} for a man and {2} for a woman: {3}, to do, gives {4} or {5}; {6}, to go, gives {7}. The word that follows the stem is the verb to be, a separate word."
+  "hi-rule-present-third":
+    name: "-ता (-tā)/-ती (-tī) है (hai): he, she, you (tū)"
+    explanation: "For he or she the stem takes {1} or {2}: {3}, to do, gives {4} or {5}; {6}, to go, gives {7}. The very close you, {8}, uses the same form."
+  "hi-rule-present-plural":
+    name: "-ते (-tē)/-ती (-tī) हैं (haim̐): we, they, you (āp)"
+    explanation: "For we, they and the respectful you, the stem takes {1} or {2}: {3}, to do, gives {4} or {5}; {6}, to go, gives {7}. The same form serves {8}, you (respectful), and {9}, they."

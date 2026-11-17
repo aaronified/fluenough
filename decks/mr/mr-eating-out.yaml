@@ -12,6 +12,8 @@ cards:
     picture: "💧"
     reading: "pāṇi"
     ipa: "paɳi"
+    phonetic: "[paɳi]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "n"
     notes:
@@ -25,6 +27,8 @@ cards:
     picture: "🍵"
     reading: "cahā"
     ipa: "tsəɦa"
+    phonetic: "[tsəɦa]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "m"
     notes:
@@ -37,8 +41,12 @@ cards:
     target: "कॉफी"
     reading: "kôfi"
     ipa: "kɔfi"
+    phonetic: "[kɔfi]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "f"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     "examples": [
       {"target": "मला कॉफी आवडते.", "reading": "malā kôfi āvaḍte.", "ipa": "məla kɔfi aʋəɖt̪e", "bases": [{"word": "मला", "ref": "mr-0080"}]}
     ]
@@ -47,6 +55,8 @@ cards:
     picture: "🍚"
     reading: "bhāt"
     ipa: "bʱat̪"
+    phonetic: "[bʱat̪]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "m"
     notes:
@@ -59,14 +69,20 @@ cards:
     target: "मेनू"
     reading: "menu"
     ipa: "menu"
+    phonetic: "[menu]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "m"
   - id: "mr-0563"
     target: "बिल"
     reading: "bil"
     ipa: "bil"
+    phonetic: "[bil]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "n"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     "examples": [
       {"target": "बिल आणा.", "reading": "bil āṇā.", "ipa": "bil aɳa", "bases": [{"word": "आणा", "base": "आणणे", "reading": "āṇṇe"}]}
     ]
@@ -74,6 +90,8 @@ cards:
     target: "बिल आणा."
     reading: "bil āṇā."
     ipa: "bil aɳa"
+    phonetic: "[bil aɳa]"
+    phonetic_source: "rules"
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
@@ -83,6 +101,8 @@ cards:
     target: "तिखट"
     reading: "tikhaṭ"
     ipa: "t̪ikʰəʈ"
+    phonetic: "[t̪ikʰəʈ]"
+    phonetic_source: "rules"
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
@@ -94,6 +114,8 @@ cards:
     target: "गोड"
     reading: "goḍ"
     ipa: "ɡoɖ"
+    phonetic: "[ɡoɖ]"
+    phonetic_source: "rules"
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
@@ -105,14 +127,22 @@ cards:
     target: "मला एक चहा द्या."
     reading: "malā ek cahā dyā."
     ipa: "məla ek tsəɦa d̪ja"
+    phonetic: "[məla ek tsəɦa d̪ja]"
+    phonetic_source: "rules"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     bases:
       - { word: "मला", ref: "mr-0080" }
   - id: "mr-0568"
     target: "कमी तिखट करा."
     reading: "kami tikhaṭ karā."
     ipa: "kəmi t̪ikʰəʈ kəra"
+    phonetic: "[kəmi t̪ikʰəʈ kəɾa]"
+    phonetic_source: "rules"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     bases:
       - { word: "कमी", base: "कमी", reading: "kami" }
       - { word: "करा", base: "करणे", reading: "karṇe" }
@@ -120,6 +150,8 @@ cards:
     target: "खूप छान आहे!"
     reading: "khup chān āhe!"
     ipa: "kʰup tʃʰan aɦe"
+    phonetic: "[kʰup tʃʰan aɦe]"
+    phonetic_source: "rules"
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
@@ -132,6 +164,8 @@ cards:
     picture: "🫓"
     reading: "poḷi"
     ipa: "poɭi"
+    phonetic: "[poɭ̆i]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "f"
     notes:
@@ -145,6 +179,8 @@ cards:
     picture: "🫓"
     reading: "bhākri"
     ipa: "bʱakri"
+    phonetic: "[bʱakɾi]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "f"
     notes:
@@ -157,6 +193,8 @@ cards:
     target: "वडापाव"
     reading: "vaḍāpāv"
     ipa: "ʋəɖapaʋ"
+    phonetic: "[ʋəɖapaʋ]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "m"
     notes:
@@ -165,6 +203,8 @@ cards:
     target: "थाळी"
     reading: "thāḷi"
     ipa: "t̪ʰaɭi"
+    phonetic: "[t̪ʰaɭ̆i]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "f"
     notes:
@@ -173,6 +213,8 @@ cards:
     target: "हॉटेल"
     reading: "hôṭel"
     ipa: "ɦɔʈel"
+    phonetic: "[ɦɔʈel]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "n"
     notes:
@@ -180,3 +222,11 @@ cards:
     "examples": [
       {"target": "हे हॉटेल शाकाहारी आहे.", "reading": "he hôṭel śākāhāri āhe.", "ipa": "ɦe ɦɔʈel ʃakaɦari aɦe", "bases": [{"word": "हे", "base": "हे", "reading": "he"}, {"word": "आहे", "base": "असणे", "reading": "asṇe"}]}
     ]
+  - id: "mr-8108"
+    target: "हे तिखट आहे का?"
+    reading: "he tikhaṭ āhe kā?"
+    ipa: "ɦe t̪ikʰəʈ aɦe ka"
+    phonetic: "[ɦe t̪ikʰəʈ aɦe ka]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }]

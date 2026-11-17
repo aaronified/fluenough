@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-adverbs"
+name: "Reading: habit survey"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-habit-survey"
+    title: "Habit survey"
+    sentences:
+      - text: "ನಾನು ಸಾಮಾನ್ಯವಾಗಿ ಓದುತ್ತೇನೆ."
+        reading: "nānu sāmānyavāgi ōduttēne."
+        ipa: "naːnu saːmaːnjaʋaːɡi oːd̪ut̪t̪eːne"
+      - text: "ನಾನು ಆಗಾಗ ಹಾಡುತ್ತೇನೆ."
+        reading: "nānu āgāga hāḍuttēne."
+        ipa: "naːnu aːɡaːɡa haːɖut̪t̪eːne"
+      - text: "ನಾನು ಎಂದೂ ಓಡುವುದಿಲ್ಲ."
+        reading: "nānu endū ōḍuvudilla."
+        ipa: "naːnu end̪uː oːɖuʋud̪illa"
+      - text: "ನನ್ನ ಗೆಳೆಯ ಚೆನ್ನಾಗಿ ಆಡುತ್ತಾನೆ."
+        reading: "nanna geḷeya cennāgi āḍuttāne."
+        ipa: "nanna ɡeɭeja tʃennaːɡi aːɖut̪t̪aːne"
+      - text: "ಅವನು ಕೆಲವೊಮ್ಮೆ ತಡವಾಗಿ ಬರುತ್ತಾನೆ."
+        reading: "avanu kelavomme taḍavāgi baruttāne."
+        ipa: "aʋanu kelaʋomme t̪aɖaʋaːɡi barut̪t̪aːne"
+    questions:
+      - id: "kn-9667"
+        prompt: { en: "How often does the writer sing?" }
+        options:
+          - { en: "Now and then" }
+          - { en: "Never" }
+          - { en: "Always" }
+        answer: 1
+      - id: "kn-9668"
+        prompt: { en: "The writer never runs." }
+        answer: true
+      - id: "kn-9669"
+        prompt: { en: "How does the friend play?" }
+        options:
+          - { en: "Well" }
+          - { en: "Badly" }
+          - { en: "Never" }
+        answer: 1

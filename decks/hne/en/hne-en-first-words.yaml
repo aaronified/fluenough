@@ -1,0 +1,645 @@
+schema: 1
+id: "hne-en-first-words"
+kind: "layer"
+core: "hne-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "The first words of Chhattisgarhi: the pronouns, yes and no, the numbers 1 to 10, the family, and the everyday words for food, house, name and time. Not yet checked by a Chhattisgarhi speaker: please report any mistake."
+cards:
+  "hne-0101":
+    native: "yes"
+    notes:
+      "n1": "The usual 'yes'."
+    examples:
+      "हाँ, यह पानी हे।":
+        native: "Yes, this is water."
+        bases:
+          "हाँ": "yes"
+          "यह": "this"
+          "पानी": "water"
+          "हे": "is"
+  "hne-0102":
+    native: "no; not"
+    notes:
+      "n1": "The negative. Before a verb it means 'not'."
+    examples:
+      "नई, मैं आवत नइं हवं।":
+        native: "No, I am not coming."
+        bases:
+          "नई": "no"
+          "मैं": "I"
+          "आवत": "come"
+          "नइं": "not"
+          "हवं": "am"
+  "hne-0103":
+    native: "I"
+    notes:
+      "n1": "The first person. The Survey gives mai (or moi) for 'I'; mor is 'my'. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "मैं डाक्टर हवं।":
+        native: "I am a doctor."
+        bases:
+          "मैं": "I"
+          "डाक्टर": "doctor"
+          "हवं": "am"
+      "मैं ठीक हवं।":
+        native: "I am fine."
+        bases:
+          "मैं": "I"
+          "ठीक": "fine"
+          "हवं": "am"
+  "hne-0104":
+    native: "you (to a friend or child)"
+    notes:
+      "n1": "The Survey gives tai (or toi) for 'you' to one person; tor is 'your'. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "तैं कहाँ हस?":
+        native: "Where are you?"
+        bases:
+          "तैं": "you"
+          "कहाँ": "where"
+          "हस": "are"
+      "तैं बढ़िया हस।":
+        native: "You are well."
+        bases:
+          "तैं": "you"
+          "बढ़िया": "good"
+          "हस": "are"
+  "hne-0105":
+    native: "he; she"
+    notes:
+      "n1": "The Survey gives wo for 'that, he'. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "वो घर में हे।":
+        native: "He is at home."
+        bases:
+          "वो": "he"
+          "घर": "home"
+          "में": "at"
+          "हे": "is"
+      "वो डाक्टर हे।":
+        native: "She is a doctor."
+        bases:
+          "वो": "she"
+          "डाक्टर": "doctor"
+          "हे": "is"
+  "hne-0106":
+    native: "we"
+    notes:
+      "n1": "The Survey gives ham and ham-man for 'we'. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    bases:
+      "हम": "we"
+      "मन": "people (plural marker)"
+    examples:
+      "हम मन घर जावत हन।":
+        native: "We are going home."
+        bases:
+          "हम": "we"
+          "मन": "people"
+          "घर": "home"
+          "जावत": "go"
+          "हन": "are"
+      "हम मन छत्तीसगढ़िया हन।":
+        native: "We are Chhattisgarhi."
+        bases:
+          "हम": "we"
+          "मन": "people"
+          "छत्तीसगढ़िया": "Chhattisgarhi"
+          "हन": "are"
+  "hne-0107":
+    native: "they"
+    notes:
+      "n1": "The Survey gives wo-man for 'they' (the plural is made with -man). Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "वोमन पढ़थें।":
+        native: "They study."
+        bases:
+          "वोमन": "they"
+          "पढ़थें": "study"
+      "वोमन नेपाली हन।":
+        native: "They are Nepali."
+        bases:
+          "वोमन": "they"
+          "नेपाली": "Nepali"
+          "हन": "are"
+  "hne-0108":
+    native: "one"
+    notes:
+      "n1": "The number one. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "एक घर।":
+        native: "One house."
+        bases:
+          "एक": "one"
+          "घर": "home"
+      "एक भाई।":
+        native: "One brother."
+        bases:
+          "एक": "one"
+          "भाई": "brother"
+  "hne-0109":
+    native: "two"
+    notes:
+      "n1": "The list of words (Raipur) gives dui for 'two'. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "दुइ घर।":
+        native: "Two houses."
+        bases:
+          "दुइ": "two"
+          "घर": "home"
+      "दुइ भाई।":
+        native: "Two brothers."
+        bases:
+          "दुइ": "two"
+          "भाई": "brother"
+  "hne-0110":
+    native: "three"
+    notes:
+      "n1": "The list of words gives tin for 'three'. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "तीन घर।":
+        native: "Three houses."
+        bases:
+          "तीन": "three"
+          "घर": "home"
+      "तीन भाई।":
+        native: "Three brothers."
+        bases:
+          "तीन": "three"
+          "भाई": "brother"
+  "hne-0111":
+    native: "four"
+    notes:
+      "n1": "The number four. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "चार घर।":
+        native: "Four houses."
+        bases:
+          "चार": "four"
+          "घर": "home"
+      "चार भाई।":
+        native: "Four brothers."
+        bases:
+          "चार": "four"
+          "भाई": "brother"
+  "hne-0112":
+    native: "five"
+    notes:
+      "n1": "The number five. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "पाँच घर।":
+        native: "Five houses."
+        bases:
+          "पाँच": "five"
+          "घर": "home"
+      "पाँच भाई।":
+        native: "Five brothers."
+        bases:
+          "पाँच": "five"
+          "भाई": "brother"
+  "hne-0113":
+    native: "six"
+    notes:
+      "n1": "The number 6."
+    examples:
+      "छे गिलास पानी।":
+        native: "Six glases of water."
+        bases:
+          "छे": "six"
+          "गिलास": "glass"
+          "पानी": "water"
+      "छे कप चाय।":
+        native: "Six cups of tea."
+        bases:
+          "छे": "six"
+          "कप": "cup"
+          "चाय": "tea"
+  "hne-0114":
+    native: "seven"
+    notes:
+      "n1": "The number seven. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "सात घर।":
+        native: "Seven houses."
+        bases:
+          "सात": "seven"
+          "घर": "home"
+      "सात भाई।":
+        native: "Seven brothers."
+        bases:
+          "सात": "seven"
+          "भाई": "brother"
+  "hne-0115":
+    native: "eight"
+    notes:
+      "n1": "The number eight. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "आठ घर।":
+        native: "Eight houses."
+        bases:
+          "आठ": "eight"
+          "घर": "home"
+      "आठ भाई।":
+        native: "Eight brothers."
+        bases:
+          "आठ": "eight"
+          "भाई": "brother"
+  "hne-0116":
+    native: "nine"
+    notes:
+      "n1": "The number 9."
+    examples:
+      "नौ गिलास पानी।":
+        native: "Nine glases of water."
+        bases:
+          "नौ": "nine"
+          "गिलास": "glass"
+          "पानी": "water"
+      "नौ कप चाय।":
+        native: "Nine cups of tea."
+        bases:
+          "नौ": "nine"
+          "कप": "cup"
+          "चाय": "tea"
+  "hne-0117":
+    native: "ten"
+    notes:
+      "n1": "The number ten. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "दस घर।":
+        native: "Ten houses."
+        bases:
+          "दस": "ten"
+          "घर": "home"
+      "दस भाई।":
+        native: "Ten brothers."
+        bases:
+          "दस": "ten"
+          "भाई": "brother"
+  "hne-0118":
+    native: "mother"
+    notes:
+      "n1": "The Survey's list of words gives dai for 'mother'. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "मोर दाई।":
+        native: "My mother."
+        bases:
+          "मोर": "my"
+          "दाई": "mother"
+      "मोर दाई अर भाई।":
+        native: "My mother and brother."
+        bases:
+          "मोर": "my"
+          "दाई": "mother"
+          "अर": "and"
+          "भाई": "brother"
+  "hne-0119":
+    native: "father"
+    notes:
+      "n1": "Not yet checked: the Survey's list of words has a form for father, but the reading is not clear. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "मोर ददा मास्टर हे।":
+        native: "My father is a teacher."
+        bases:
+          "मोर": "my"
+          "ददा": "father"
+          "मास्टर": "teacher"
+          "हे": "is"
+      "ददा, पानी?":
+        native: "Dad, water?"
+        bases:
+          "ददा": "father"
+          "पानी": "water"
+  "hne-0120":
+    native: "brother"
+    notes:
+      "n1": "The Survey gives bhai. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "मोर भाई।":
+        native: "My brother."
+        bases:
+          "मोर": "my"
+          "भाई": "brother"
+      "तोर भाई।":
+        native: "Your brother."
+        bases:
+          "तोर": "your"
+          "भाई": "brother"
+  "hne-0121":
+    native: "sister"
+    notes:
+      "n1": "The Survey's list of words gives bahini. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "मोर बहिनी।":
+        native: "My sister."
+        bases:
+          "मोर": "my"
+          "बहिनी": "sister"
+      "तोर बहिनी।":
+        native: "Your sister."
+        bases:
+          "तोर": "your"
+          "बहिनी": "sister"
+  "hne-0122":
+    native: "boy; child"
+    notes:
+      "n1": "The Survey gives laika for 'a boy'; the plural is laika-man. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "मोर लइका।":
+        native: "My boy."
+        bases:
+          "मोर": "my"
+          "लइका": "child"
+      "तोर लइका।":
+        native: "Your boy."
+        bases:
+          "तोर": "your"
+          "लइका": "child"
+  "hne-0123":
+    native: "man; person"
+    notes:
+      "n1": "The Survey gives manukh, with the plural manukh-man, in its sketch of the grammar. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "वो मनुख नीक हे।":
+        native: "That man is good."
+        bases:
+          "वो": "that"
+          "मनुख": "man"
+          "नीक": "good"
+          "हे": "is"
+      "मनुख घर में हे।":
+        native: "The man is at home."
+        bases:
+          "मनुख": "man"
+          "घर": "home"
+          "में": "at"
+          "हे": "is"
+  "hne-0124":
+    native: "woman; wife"
+    notes:
+      "n1": "An adult woman."
+    examples:
+      "वो मेहरारू डाक्टर हे।":
+        native: "That woman is a doctor."
+        bases:
+          "वो": "that"
+          "मेहरारू": "woman"
+          "डाक्टर": "doctor"
+          "हे": "is"
+      "मेहरारू, पानी दे।":
+        native: "Woman, give water."
+        bases:
+          "मेहरारू": "woman"
+          "पानी": "water"
+          "दे": "give"
+  "hne-0125":
+    native: "water"
+    notes:
+      "n1": "Water. The Survey's list of words gives pani. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "पानी अर घर।":
+        native: "Water and a house."
+        bases:
+          "पानी": "water"
+          "अर": "and"
+          "घर": "home"
+      "तोर पानी।":
+        native: "Your water."
+        bases:
+          "तोर": "your"
+          "पानी": "water"
+  "hne-0126":
+    native: "food; meal"
+    notes:
+      "n1": "Food in general, or a meal."
+    examples:
+      "खाना तइयार हे।":
+        native: "The food is ready."
+        bases:
+          "खाना": "food"
+          "तइयार": "ready"
+          "हे": "is"
+      "मैं खाना खाहूँ।":
+        native: "I will eat food."
+        bases:
+          "मैं": "I"
+          "खाना": "food"
+          "खाहूँ": "eat"
+  "hne-0127":
+    native: "tea"
+    notes:
+      "n1": "Milk tea is the everyday tea."
+    examples:
+      "चाय गरम हे।":
+        native: "The tea is hot."
+        bases:
+          "चाय": "tea"
+          "गरम": "hot"
+          "हे": "is"
+      "मोला चाय नीक लागथे।":
+        native: "I like tea."
+        bases:
+          "मोला": "to me"
+          "चाय": "tea"
+          "नीक": "good"
+          "लागथे": "like"
+  "hne-0128":
+    native: "house; home"
+    notes:
+      "n1": "The Survey's list of words gives ghar. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "मोर घर।":
+        native: "My house."
+        bases:
+          "मोर": "my"
+          "घर": "home"
+      "तोर घर।":
+        native: "Your house."
+        bases:
+          "तोर": "your"
+          "घर": "home"
+  "hne-0129":
+    native: "name"
+    notes:
+      "n1": "Your name is आपके (āpke) नाम (nām)."
+    examples:
+      "आपके नाव का हे?":
+        native: "What is your name?"
+        bases:
+          "आपके": "your"
+          "नाव": "name"
+          "का": "what"
+          "हे": "is"
+      "नाव नीक हे।":
+        native: "The name is good."
+        bases:
+          "नाव": "name"
+          "नीक": "good"
+          "हे": "is"
+  "hne-0130":
+    native: "good; nice"
+    notes:
+      "n1": "Good or nice."
+    examples:
+      "ई नीक हे।":
+        native: "This is good."
+        bases:
+          "ई": "this"
+          "नीक": "good"
+          "हे": "is"
+      "आज मौसम नीक हे।":
+        native: "The weather is good today."
+        bases:
+          "आज": "today"
+          "मौसम": "weather"
+          "नीक": "good"
+          "हे": "is"
+  "hne-0131":
+    native: "big; large"
+    notes:
+      "n1": "Of a thing or a person. छोटे (chhoṭe) is 'small'."
+    examples:
+      "घर बड़े हे।":
+        native: "The house is big."
+        bases:
+          "घर": "house"
+          "बड़े": "big"
+          "हे": "is"
+      "बड़े कुकुर।":
+        native: "A big dog."
+        bases:
+          "बड़े": "big"
+          "कुकुर": "dog"
+  "hne-0132":
+    native: "small; little"
+    notes:
+      "n1": "Of a thing or a person."
+    examples:
+      "लइका छोटे हे।":
+        native: "The child is small."
+        bases:
+          "लइका": "child"
+          "छोटे": "small"
+          "हे": "is"
+      "छोटे घर।":
+        native: "A small house."
+        bases:
+          "छोटे": "small"
+          "घर": "house"
+  "hne-0133":
+    native: "here"
+    notes:
+      "n1": "Wiktionary lists इहाँ (ihām̐) for 'here', from Chandrakar's Chhattisgarhi dictionary (2012). The sentences have no verb; whether Chhattisgarhi leaves out the verb here is not checked. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "मोर घर इहाँ।":
+        native: "My house is here."
+        bases:
+          "मोर": "my"
+          "घर": "home"
+          "इहाँ": "here"
+      "मोर भाई इहाँ।":
+        native: "My brother is here."
+        bases:
+          "मोर": "my"
+          "भाई": "brother"
+          "इहाँ": "here"
+  "hne-0134":
+    native: "there"
+    notes:
+      "n1": "Wiktionary's example इहाँ (ihām̐) खाना (khānā) उहाँ (uhām̐) पानी (pānī) uses उहाँ (uhām̐) for 'there'. The sentences have no verb: not checked. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "तोर घर उहाँ।":
+        native: "Your house is there."
+        bases:
+          "तोर": "your"
+          "घर": "home"
+          "उहाँ": "there"
+      "तोर भाई उहाँ।":
+        native: "Your brother is there."
+        bases:
+          "तोर": "your"
+          "भाई": "brother"
+          "उहाँ": "there"
+  "hne-0135":
+    native: "what"
+    notes:
+      "n1": "The Survey's pronoun table gives ka for 'what'. The sentences have no verb: not checked. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "ए का?":
+        native: "What is this?"
+        bases:
+          "ए": "this"
+          "का": "what"
+      "वो का?":
+        native: "What is that?"
+        bases:
+          "वो": "that"
+          "का": "what"
+  "hne-0136":
+    native: "who"
+    notes:
+      "n1": "The Survey's pronoun table gives kon (or kaun) for 'who'. The sentences have no verb: not checked. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "वो कोन?":
+        native: "Who is that?"
+        bases:
+          "वो": "that"
+          "कोन": "who"
+      "तैं कोन?":
+        native: "Who are you?"
+        bases:
+          "तैं": "you"
+          "कोन": "who"
+  "hne-0137":
+    native: "where"
+    notes:
+      "n1": "Asks about a place."
+    examples:
+      "तैं कहाँ हस?":
+        native: "Where are you?"
+        bases:
+          "तैं": "you"
+          "कहाँ": "where"
+          "हस": "are"
+      "घर कहाँ हे?":
+        native: "Where is the house?"
+        bases:
+          "घर": "house"
+          "कहाँ": "where"
+          "हे": "is"
+  "hne-0138":
+    native: "and"
+    notes:
+      "n1": "The Survey's specimens have 'ar' for 'and'. Source: Grierson, Linguistic Survey of India, vol. VI (1904), the Chhattisgarhi section and the list of words (Raipur)."
+    examples:
+      "मोर दाई अर भाई।":
+        native: "My mother and brother."
+        bases:
+          "मोर": "my"
+          "दाई": "mother"
+          "अर": "and"
+          "भाई": "brother"
+      "पानी अर घर।":
+        native: "Water and a house."
+        bases:
+          "पानी": "water"
+          "अर": "and"
+          "घर": "home"
+  "hne-0139":
+    native: "today"
+    notes:
+      "n1": "The day you are in now."
+    examples:
+      "आज घाम निकलिस।":
+        native: "The sun came out today."
+        bases:
+          "आज": "today"
+          "घाम": "sun"
+          "निकलिस": "come out"
+      "आज पानी गिरही।":
+        native: "It will rain today."
+        bases:
+          "आज": "today"
+          "पानी": "water"
+          "गिरही": "fall"

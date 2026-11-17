@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-verbs-3"
+name: "Reading: a diary entry"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short diary entry about a lost book, using the verbs taught up to this unit. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-verbs-3-passage"
+    title: "A diary entry"
+    sentences:
+      - text: "ಇವತ್ತು ನಾನು ನನ್ನ ಪುಸ್ತಕ ಹುಡುಕಿದೆ."
+        reading: "ivattu nānu nanna pustaka huḍukide."
+        ipa: "iʋat̪t̪u naːnu nanna pust̪aka huɖukid̪e"
+      - text: "ಅದು ಮೇಜಿನ ಮೇಲೆ ಇತ್ತು."
+        reading: "adu mējina mēle ittu."
+        ipa: "ad̪u meːdʒina meːle it̪t̪u"
+      - text: "ಮೊದಲು ನಾನು ಅದನ್ನು ಚೀಲದಲ್ಲಿ ನೋಡಿದೆ."
+        reading: "modalu nānu adannu cīladalli nōḍide."
+        ipa: "mod̪alu naːnu ad̪annu tʃiːlad̪alli noːɖid̪e"
+      - text: "ಸಂಜೆ ಬ್ಯಾಗ್ ಬಿಚ್ಚಿದೆ."
+        reading: "sañje byāg biccide."
+        ipa: "saɲdʒe bjaːɡ bitʃtʃid̪e"
+      - text: "ನಾನು ಇದನ್ನು ಮರೆಯುವುದಿಲ್ಲ."
+        reading: "nānu idannu mareyuvudilla."
+        ipa: "naːnu id̪annu marejuʋud̪illa"
+    questions:
+      - id: "kn-9015"
+        prompt: { en: "What did the writer search for?" }
+        options:
+          - { en: "A book" }
+          - { en: "A bag" }
+          - { en: "A ring" }
+        answer: 1
+      - id: "kn-9016"
+        prompt: { en: "Where was the book?" }
+        options:
+          - { en: "On the table" }
+          - { en: "In the sea" }
+          - { en: "In the park" }
+        answer: 1
+      - id: "kn-9017"
+        prompt: { en: "The writer forgot the book." }
+        answer: false

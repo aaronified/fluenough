@@ -10,6 +10,8 @@ cards:
     target: "नमस्कार"
     reading: "namaskār"
     ipa: "nəməskar"
+    phonetic: "[nəməskaɾ]"
+    phonetic_source: "rules"
     pos: "other"
     tags: ["greeting"]
     phrasebook: true
@@ -21,6 +23,8 @@ cards:
     target: "कसे आहात?"
     reading: "kase āhāt?"
     ipa: "kəse aɦat̪"
+    phonetic: "[kəse aɦat̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["greeting"]
     phrasebook: true
@@ -32,6 +36,8 @@ cards:
     target: "मी ठीक आहे."
     reading: "mi ṭhik āhe."
     ipa: "mi ʈʰik aɦe"
+    phonetic: "[mi ʈʰik aɦe]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["greeting"]
     phrasebook: true
@@ -44,6 +50,8 @@ cards:
     target: "धन्यवाद"
     reading: "dhanyavād"
     ipa: "d̪ʱənjəʋad̪"
+    phonetic: "[d̪ʱənjəʋad̪]"
+    phonetic_source: "rules"
     pos: "other"
     tags: ["polite"]
     phrasebook: true
@@ -55,6 +63,8 @@ cards:
     target: "आभारी आहे."
     reading: "ābhāri āhe."
     ipa: "abʱari aɦe"
+    phonetic: "[abʱaɾi aɦe]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["polite"]
     phrasebook: true
@@ -67,6 +77,8 @@ cards:
     target: "ठीक आहे"
     reading: "ṭhik āhe"
     ipa: "ʈʰik aɦe"
+    phonetic: "[ʈʰik aɦe]"
+    phonetic_source: "rules"
     pos: "phrase"
     phrasebook: true
     notes:
@@ -78,6 +90,8 @@ cards:
     target: "येतो"
     reading: "yeto"
     ipa: "jet̪o"
+    phonetic: "[jet̪o]"
+    phonetic_source: "rules"
     alt_target: ["येते"]
     pos: "other"
     tags: ["greeting"]
@@ -90,6 +104,8 @@ cards:
     target: "माफ करा."
     reading: "māf karā."
     ipa: "maf kəra"
+    phonetic: "[maf kəɾa]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["polite"]
     phrasebook: true
@@ -102,6 +118,8 @@ cards:
     target: "कृपया"
     reading: "krupayā"
     ipa: "krupəja"
+    phonetic: "[kɾupəja]"
+    phonetic_source: "rules"
     pos: "other"
     tags: ["polite"]
     phrasebook: true
@@ -113,6 +131,8 @@ cards:
     target: "हो"
     reading: "ho"
     ipa: "ɦo"
+    phonetic: "[ɦo]"
+    phonetic_source: "rules"
     alt_target: ["होय"]
     pos: "other"
     phrasebook: true
@@ -124,6 +144,8 @@ cards:
     target: "नाही"
     reading: "nāhi"
     ipa: "naɦi"
+    phonetic: "[naɦi]"
+    phonetic_source: "rules"
     pos: "other"
     phrasebook: true
     notes:
@@ -134,6 +156,8 @@ cards:
     target: "माझे नाव अनिता आहे."
     reading: "mājhe nāv anitā āhe."
     ipa: "madʒʱe naʋ ənit̪a aɦe"
+    phonetic: "[madʒʱe naʋ ənit̪a aɦe]"
+    phonetic_source: "rules"
     pos: "phrase"
     phrasebook: true
     notes:
@@ -146,6 +170,8 @@ cards:
     target: "मला मराठी येत नाही."
     reading: "malā marāṭhi yet nāhi."
     ipa: "məla məraʈʰi jet̪ naɦi"
+    phonetic: "[məla məɾaʈʰi jet̪ naɦi]"
+    phonetic_source: "rules"
     pos: "phrase"
     phrasebook: true
     notes:
@@ -159,6 +185,8 @@ cards:
     target: "मी अजून मराठी शिकत आहे."
     reading: "mi ajun marāṭhi śikat āhe."
     ipa: "mi ədzun məraʈʰi ʃikət̪ aɦe"
+    phonetic: "[mi ədzun məɾaʈʰi ʃikət̪ aɦe]"
+    phonetic_source: "rules"
     pos: "phrase"
     phrasebook: true
     notes:
@@ -172,6 +200,8 @@ cards:
     target: "जरा हळू बोला."
     reading: "jarā haḷu bolā."
     ipa: "dzəra ɦəɭu bola"
+    phonetic: "[dzəɾa ɦəɭ̆u bola]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["polite"]
     phrasebook: true
@@ -185,26 +215,36 @@ cards:
     target: "पुन्हा सांगा."
     reading: "punhā sāṅgā."
     ipa: "punɦa saŋɡa"
+    phonetic: "[punʱa saŋɡa]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["polite"]
     phrasebook: true
     bases:
       - { word: "पुन्हा", base: "पुन्हा", reading: "punhā" }
       - { word: "सांगा", base: "सांगणे", reading: "sāṅgṇe" }
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "mr-0180"
     target: "मला माहीत नाही."
     reading: "malā māhit nāhi."
     ipa: "məla maɦit̪ naɦi"
+    phonetic: "[məla maɦit̪ naɦi]"
+    phonetic_source: "rules"
     pos: "phrase"
     phrasebook: true
     bases:
       - { word: "मला", ref: "mr-0080" }
       - { word: "माहीत", base: "माहीत", reading: "māhit" }
       - { word: "नाही", ref: "mr-0169" }
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "mr-0603"
     target: "मला बरे वाटत नाही."
     reading: "malā bare vāṭat nāhi."
     ipa: "məla bəre ʋaʈət̪ naɦi"
+    phonetic: "[məla bəɾe ʋaʈət̪ naɦi]"
+    phonetic_source: "rules"
     pos: "phrase"
     phrasebook: true
     bases:
@@ -212,10 +252,14 @@ cards:
       - { word: "बरे", base: "बरा", reading: "barā" }
       - { word: "वाटत", base: "वाटणे", reading: "vāṭṇe" }
       - { word: "नाही", ref: "mr-0169" }
+    notes:
+      - { id: "n1", kind: "usage" }
   - id: "mr-0599"
     target: "मी हरवलो आहे."
     reading: "mi haravlo āhe."
     ipa: "mi ɦərəʋlo aɦe"
+    phonetic: "[mi ɦəɾəʋlo aɦe]"
+    phonetic_source: "rules"
     alt_target: ["मी हरवले आहे."]
     pos: "phrase"
     phrasebook: true
@@ -228,6 +272,8 @@ cards:
     target: "मदत करा!"
     reading: "madat karā!"
     ipa: "məd̪ət̪ kəra"
+    phonetic: "[məd̪ət̪ kəɾa]"
+    phonetic_source: "rules"
     pos: "phrase"
     phrasebook: true
     notes:

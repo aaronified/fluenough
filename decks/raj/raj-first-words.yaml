@@ -1,0 +1,907 @@
+schema: 1
+id: "raj-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "raj", iso639_3: "raj", name: "Rajasthani", script: "devanagari", tts: "hi-IN", icon: "रा" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "raj-0101"
+    target: "हाँ"
+    reading: "hām̐"
+    ipa: "ɦaːĩ"
+    pos: "other"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "हाँ, यो पाणी है।"
+        reading: "hām̐, yo pāṇī hai."
+        ipa: "ɦaːĩ jo paːɳiː ɦɛ"
+        bases:
+          - { word: "हाँ", base: "हाँ", reading: "hām̐" }
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0102"
+    target: "कोनी"
+    reading: "konī"
+    ipa: "konīː"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यो घर कोनी।"
+        reading: "yo ghar konī."
+        ipa: "jo ɡʱər konīː"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "कोनी", base: "कोनी", reading: "konī" }
+      - target: "वो अठै कोनी।"
+        reading: "vo aṭhai konī."
+        ipa: "ʋo əʈʰəi konīː"
+        bases:
+          - { word: "वो", base: "वो", reading: "vo" }
+          - { word: "अठै", base: "अठै", reading: "aṭhai" }
+          - { word: "कोनी", base: "कोनी", reading: "konī" }
+  - id: "raj-0103"
+    target: "म्हैं"
+    reading: "mhaiṁ"
+    ipa: "mʰɛ̃"
+    pos: "pronoun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "म्हैं डॉक्टर हूँ।"
+        reading: "mhaiṁ ḍākṭar hūṁ."
+        ipa: "mʰɛ̃ ɖaːkʈər ɦuː"
+        bases:
+          - { word: "म्हैं", base: "म्हैं", reading: "mhaiṁ" }
+          - { word: "डॉक्टर", base: "डॉक्टर", reading: "ḍākṭar" }
+          - { word: "हूँ", base: "हूँ", reading: "hūṁ" }
+      - target: "म्हैं ठीक हूँ।"
+        reading: "mhaiṁ ṭhīk hūṁ."
+        ipa: "mʰɛ̃ ʈʰiːk ɦuː"
+        bases:
+          - { word: "म्हैं", base: "म्हैं", reading: "mhaiṁ" }
+          - { word: "ठीक", base: "ठीक", reading: "ṭhīk" }
+          - { word: "हूँ", base: "हूँ", reading: "hūṁ" }
+  - id: "raj-0104"
+    target: "थे"
+    reading: "the"
+    ipa: "tʰe"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "थारो घर।"
+        reading: "thāro ghar."
+        ipa: "tʰaːro ɡʱər"
+        bases:
+          - { word: "थारो", base: "थारो", reading: "thāro" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "थे अर म्हे।"
+        reading: "the ar mhe."
+        ipa: "tʰe əɾ mʰe"
+        bases:
+          - { word: "थे", base: "थे", reading: "the" }
+          - { word: "अर", base: "अर", reading: "ar" }
+          - { word: "म्हे", base: "म्हे", reading: "mhe" }
+  - id: "raj-0105"
+    target: "वो"
+    reading: "vo"
+    ipa: "ʋo"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वो अठै है।"
+        reading: "vo aṭhai hai."
+        ipa: "ʋo əʈʰəi ɦɛ"
+        bases:
+          - { word: "वो", base: "वो", reading: "vo" }
+          - { word: "अठै", base: "अठै", reading: "aṭhai" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "वो कुण है?"
+        reading: "vo kuṇ hai?"
+        ipa: "ʋo kuɳ ɦɛ"
+        bases:
+          - { word: "वो", base: "वो", reading: "vo" }
+          - { word: "कुण", base: "कुण", reading: "kuṇ" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0106"
+    target: "म्हे"
+    reading: "mhe"
+    ipa: "mʰe"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "म्हे अठै हां।"
+        reading: "mhe aṭhai hāṁ."
+        ipa: "mʰe əʈʰəi ɦaːĩ"
+        bases:
+          - { word: "म्हे", base: "म्हे", reading: "mhe" }
+          - { word: "अठै", base: "अठै", reading: "aṭhai" }
+          - { word: "हां", base: "हां", reading: "hāṁ" }
+      - target: "म्हे अर थे।"
+        reading: "mhe ar the."
+        ipa: "mʰe əɾ tʰe"
+        bases:
+          - { word: "म्हे", base: "म्हे", reading: "mhe" }
+          - { word: "अर", base: "अर", reading: "ar" }
+          - { word: "थे", base: "थे", reading: "the" }
+  - id: "raj-0107"
+    target: "वै"
+    reading: "vai"
+    ipa: "ʋəi"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वै अठै हां।"
+        reading: "vai aṭhai hāṁ."
+        ipa: "ʋəi əʈʰəi ɦaːĩ"
+        bases:
+          - { word: "वै", base: "वै", reading: "vai" }
+          - { word: "अठै", base: "अठै", reading: "aṭhai" }
+          - { word: "हां", base: "हां", reading: "hāṁ" }
+      - target: "वै कुण हां?"
+        reading: "vai kuṇ hāṁ?"
+        ipa: "ʋəi kuɳ ɦaːĩ"
+        bases:
+          - { word: "वै", base: "वै", reading: "vai" }
+          - { word: "कुण", base: "कुण", reading: "kuṇ" }
+          - { word: "हां", base: "हां", reading: "hāṁ" }
+  - id: "raj-0108"
+    target: "एक"
+    reading: "ek"
+    ipa: "ek"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "एक घर।"
+        reading: "ek ghar."
+        ipa: "ek ɡʱər"
+        bases:
+          - { word: "एक", base: "एक", reading: "ek" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "एक भाई।"
+        reading: "ek bhāī."
+        ipa: "ek bʰaːiː"
+        bases:
+          - { word: "एक", base: "एक", reading: "ek" }
+          - { word: "भाई", base: "भाई", reading: "bhāī" }
+  - id: "raj-0109"
+    target: "दो"
+    reading: "do"
+    ipa: "do"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "दो घर।"
+        reading: "do ghar."
+        ipa: "do ɡʱər"
+        bases:
+          - { word: "दो", base: "दो", reading: "do" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "दो भाई।"
+        reading: "do bhāī."
+        ipa: "do bʰaːiː"
+        bases:
+          - { word: "दो", base: "दो", reading: "do" }
+          - { word: "भाई", base: "भाई", reading: "bhāī" }
+  - id: "raj-0110"
+    target: "तीन"
+    reading: "tīn"
+    ipa: "tiːn"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "तीन घर।"
+        reading: "tīn ghar."
+        ipa: "tiːn ɡʱər"
+        bases:
+          - { word: "तीन", base: "तीन", reading: "tīn" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "तीन भाई।"
+        reading: "tīn bhāī."
+        ipa: "tiːn bʰaːiː"
+        bases:
+          - { word: "तीन", base: "तीन", reading: "tīn" }
+          - { word: "भाई", base: "भाई", reading: "bhāī" }
+  - id: "raj-0111"
+    target: "च्यार"
+    reading: "cyār"
+    ipa: "t͡ʃjaːr"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "च्यार घर।"
+        reading: "cyār ghar."
+        ipa: "t͡ʃjaːr ɡʱər"
+        bases:
+          - { word: "च्यार", base: "च्यार", reading: "cyār" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "च्यार भाई।"
+        reading: "cyār bhāī."
+        ipa: "t͡ʃjaːr bʰaːiː"
+        bases:
+          - { word: "च्यार", base: "च्यार", reading: "cyār" }
+          - { word: "भाई", base: "भाई", reading: "bhāī" }
+  - id: "raj-0112"
+    target: "पाँच"
+    reading: "pām̐c"
+    ipa: "paːɲt͡ʃ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "पाँच घर।"
+        reading: "pām̐c ghar."
+        ipa: "paːɲt͡ʃ ɡʱər"
+        bases:
+          - { word: "पाँच", base: "पाँच", reading: "pām̐c" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "पाँच भाई।"
+        reading: "pām̐c bhāī."
+        ipa: "paːɲt͡ʃ bʰaːiː"
+        bases:
+          - { word: "पाँच", base: "पाँच", reading: "pām̐c" }
+          - { word: "भाई", base: "भाई", reading: "bhāī" }
+  - id: "raj-0113"
+    target: "छै"
+    reading: "chhai"
+    ipa: "t͡ʃʰəi"
+    pos: "other"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "छै गिलास पाणी।"
+        reading: "chhai gilās pāṇī."
+        ipa: "t͡ʃʰəi ɡilaːs paːɳiː"
+        bases:
+          - { word: "छै", base: "छै", reading: "chhai" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+      - target: "छै कप चाय।"
+        reading: "chhai kap chāy."
+        ipa: "t͡ʃʰəi kəp t͡ʃaːj"
+        bases:
+          - { word: "छै", base: "छै", reading: "chhai" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+  - id: "raj-0114"
+    target: "सात"
+    reading: "sāt"
+    ipa: "saːt"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "सात घर।"
+        reading: "sāt ghar."
+        ipa: "saːt ɡʱər"
+        bases:
+          - { word: "सात", base: "सात", reading: "sāt" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "सात भाई।"
+        reading: "sāt bhāī."
+        ipa: "saːt bʰaːiː"
+        bases:
+          - { word: "सात", base: "सात", reading: "sāt" }
+          - { word: "भाई", base: "भाई", reading: "bhāī" }
+  - id: "raj-0115"
+    target: "आठ"
+    reading: "āṭh"
+    ipa: "aːʈʰ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "आठ घर।"
+        reading: "āṭh ghar."
+        ipa: "aːʈʰ ɡʱər"
+        bases:
+          - { word: "आठ", base: "आठ", reading: "āṭh" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "आठ भाई।"
+        reading: "āṭh bhāī."
+        ipa: "aːʈʰ bʰaːiː"
+        bases:
+          - { word: "आठ", base: "आठ", reading: "āṭh" }
+          - { word: "भाई", base: "भाई", reading: "bhāī" }
+  - id: "raj-0116"
+    target: "नौ"
+    reading: "nau"
+    ipa: "nəu"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "नौ घर।"
+        reading: "nau ghar."
+        ipa: "nəu ɡʱər"
+        bases:
+          - { word: "नौ", base: "नौ", reading: "nau" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "नौ भाई।"
+        reading: "nau bhāī."
+        ipa: "nəu bʰaːiː"
+        bases:
+          - { word: "नौ", base: "नौ", reading: "nau" }
+          - { word: "भाई", base: "भाई", reading: "bhāī" }
+  - id: "raj-0117"
+    target: "दस"
+    reading: "das"
+    ipa: "dəs"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "दस घर।"
+        reading: "das ghar."
+        ipa: "dəs ɡʱər"
+        bases:
+          - { word: "दस", base: "दस", reading: "das" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "दस भाई।"
+        reading: "das bhāī."
+        ipa: "dəs bʰaːiː"
+        bases:
+          - { word: "दस", base: "दस", reading: "das" }
+          - { word: "भाई", base: "भाई", reading: "bhāī" }
+  - id: "raj-0118"
+    target: "माँ"
+    reading: "mām̐"
+    ipa: "maːĩ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "म्हारी माँ अठै है।"
+        reading: "mhārī mām̐ aṭhai hai."
+        ipa: "mʰaːriː maːĩ əʈʰəi ɦɛ"
+        bases:
+          - { word: "म्हारी", base: "म्हारी", reading: "mhārī" }
+          - { word: "माँ", base: "माँ", reading: "mām̐" }
+          - { word: "अठै", base: "अठै", reading: "aṭhai" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "यो म्हारी माँ है।"
+        reading: "yo mhārī mām̐ hai."
+        ipa: "jo mʰaːriː maːĩ ɦɛ"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "म्हारी", base: "म्हारी", reading: "mhārī" }
+          - { word: "माँ", base: "माँ", reading: "mām̐" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0119"
+    target: "बाप"
+    reading: "bāp"
+    ipa: "baːp"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "म्हारो बाप अठै है।"
+        reading: "mhāro bāp aṭhai hai."
+        ipa: "mʰaːro baːp əʈʰəi ɦɛ"
+        bases:
+          - { word: "म्हारो", base: "म्हारो", reading: "mhāro" }
+          - { word: "बाप", base: "बाप", reading: "bāp" }
+          - { word: "अठै", base: "अठै", reading: "aṭhai" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "यो म्हारो बाप है।"
+        reading: "yo mhāro bāp hai."
+        ipa: "jo mʰaːro baːp ɦɛ"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "म्हारो", base: "म्हारो", reading: "mhāro" }
+          - { word: "बाप", base: "बाप", reading: "bāp" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0120"
+    target: "भाई"
+    reading: "bhāī"
+    ipa: "bʰaːiː"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "म्हारो भाई अठै है।"
+        reading: "mhāro bhāī aṭhai hai."
+        ipa: "mʰaːro bʰaːiː əʈʰəi ɦɛ"
+        bases:
+          - { word: "म्हारो", base: "म्हारो", reading: "mhāro" }
+          - { word: "भाई", base: "भाई", reading: "bhāī" }
+          - { word: "अठै", base: "अठै", reading: "aṭhai" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "यो म्हारो भाई है।"
+        reading: "yo mhāro bhāī hai."
+        ipa: "jo mʰaːro bʰaːiː ɦɛ"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "म्हारो", base: "म्हारो", reading: "mhāro" }
+          - { word: "भाई", base: "भाई", reading: "bhāī" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0121"
+    target: "भैन"
+    reading: "bhain"
+    ipa: "bʰəin"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "म्हारी भैन अठै है।"
+        reading: "mhārī bhain aṭhai hai."
+        ipa: "mʰaːriː bʰəin əʈʰəi ɦɛ"
+        bases:
+          - { word: "म्हारी", base: "म्हारी", reading: "mhārī" }
+          - { word: "भैन", base: "भैन", reading: "bhain" }
+          - { word: "अठै", base: "अठै", reading: "aṭhai" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "यो म्हारी भैन है।"
+        reading: "yo mhārī bhain hai."
+        ipa: "jo mʰaːriː bʰəin ɦɛ"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "म्हारी", base: "म्हारी", reading: "mhārī" }
+          - { word: "भैन", base: "भैन", reading: "bhain" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0122"
+    target: "बालक"
+    reading: "bālak"
+    ipa: "baːlək"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "म्हारो बालक अठै है।"
+        reading: "mhāro bālak aṭhai hai."
+        ipa: "mʰaːro baːlək əʈʰəi ɦɛ"
+        bases:
+          - { word: "म्हारो", base: "म्हारो", reading: "mhāro" }
+          - { word: "बालक", base: "बालक", reading: "bālak" }
+          - { word: "अठै", base: "अठै", reading: "aṭhai" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "यो बालक कुण है?"
+        reading: "yo bālak kuṇ hai?"
+        ipa: "jo baːlək kuɳ ɦɛ"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "बालक", base: "बालक", reading: "bālak" }
+          - { word: "कुण", base: "कुण", reading: "kuṇ" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0123"
+    target: "मिनख"
+    reading: "minakh"
+    ipa: "mɪnəkʰ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वो मिनख अठै है।"
+        reading: "vo minakh aṭhai hai."
+        ipa: "ʋo mɪnəkʰ əʈʰəi ɦɛ"
+        bases:
+          - { word: "वो", base: "वो", reading: "vo" }
+          - { word: "मिनख", base: "मिनख", reading: "minakh" }
+          - { word: "अठै", base: "अठै", reading: "aṭhai" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "यो मिनख कुण है?"
+        reading: "yo minakh kuṇ hai?"
+        ipa: "jo mɪnəkʰ kuɳ ɦɛ"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "मिनख", base: "मिनख", reading: "minakh" }
+          - { word: "कुण", base: "कुण", reading: "kuṇ" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0124"
+    target: "लुगाई"
+    reading: "lugāī"
+    ipa: "lʊɡaːiː"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "म्हारी लुगाई अठै है।"
+        reading: "mhārī lugāī aṭhai hai."
+        ipa: "mʰaːriː lʊɡaːiː əʈʰəi ɦɛ"
+        bases:
+          - { word: "म्हारी", base: "म्हारी", reading: "mhārī" }
+          - { word: "लुगाई", base: "लुगाई", reading: "lugāī" }
+          - { word: "अठै", base: "अठै", reading: "aṭhai" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "लुगाई अर बालक।"
+        reading: "lugāī ar bālak."
+        ipa: "lʊɡaːiː əɾ baːlək"
+        bases:
+          - { word: "लुगाई", base: "लुगाई", reading: "lugāī" }
+          - { word: "अर", base: "अर", reading: "ar" }
+          - { word: "बालक", base: "बालक", reading: "bālak" }
+  - id: "raj-0125"
+    target: "पाणी"
+    reading: "pāṇī"
+    ipa: "paːɳiː"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यो पाणी है।"
+        reading: "yo pāṇī hai."
+        ipa: "jo paːɳiː ɦɛ"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "पाणी अठै है।"
+        reading: "pāṇī aṭhai hai."
+        ipa: "paːɳiː əʈʰəi ɦɛ"
+        bases:
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "अठै", base: "अठै", reading: "aṭhai" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0126"
+    target: "खाणो"
+    reading: "khāṇo"
+    ipa: "kʰaːɳo"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "खाणो तैयार है।"
+        reading: "khāṇo taiyār hai."
+        ipa: "kʰaːɳo təijaːr ɦɛ"
+        bases:
+          - { word: "खाणो", base: "खाणो", reading: "khāṇo" }
+          - { word: "तैयार", base: "तैयार", reading: "taiyār" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "म्हैं खाणो खास्यूं।"
+        reading: "mhaiṁ khāṇo khāsyūṁ."
+        ipa: "mʰɛ̃ kʰaːɳo kʰaːsjuː"
+        bases:
+          - { word: "म्हैं", base: "म्हैं", reading: "mhaiṁ" }
+          - { word: "खाणो", base: "खाणो", reading: "khāṇo" }
+          - { word: "खास्यूं", base: "खाणो", reading: "khāsyūṁ" }
+  - id: "raj-0127"
+    target: "चाय"
+    reading: "chāy"
+    ipa: "t͡ʃaːj"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "चाय गरम है।"
+        reading: "chāy garam hai."
+        ipa: "t͡ʃaːj ɡərəm ɦɛ"
+        bases:
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+          - { word: "गरम", base: "गरम", reading: "garam" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "म्हानै चाय नीकी लागै।"
+        reading: "mhānai chāy nīkī lāgai."
+        ipa: "mʰaːnɛ t͡ʃaːj niːkiː laːɡəi"
+        bases:
+          - { word: "म्हानै", base: "म्हानै", reading: "mhānai" }
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+          - { word: "नीकी", base: "नीको", reading: "nīkī" }
+          - { word: "लागै", base: "लागणो", reading: "lāgai" }
+  - id: "raj-0128"
+    target: "घर"
+    reading: "ghar"
+    ipa: "ɡʱər"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यो म्हारो घर है।"
+        reading: "yo mhāro ghar hai."
+        ipa: "jo mʰaːro ɡʱər ɦɛ"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "म्हारो", base: "म्हारो", reading: "mhāro" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "म्हारो घर अठै है।"
+        reading: "mhāro ghar aṭhai hai."
+        ipa: "mʰaːro ɡʱər əʈʰəi ɦɛ"
+        bases:
+          - { word: "म्हारो", base: "म्हारो", reading: "mhāro" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "अठै", base: "अठै", reading: "aṭhai" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0129"
+    target: "नाम"
+    reading: "nām"
+    ipa: "naːm"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "थारो नाम कांई है?"
+        reading: "thāro nām kāṁī hai?"
+        ipa: "tʰaːro naːm kaːĩ ɦɛ"
+        bases:
+          - { word: "थारो", base: "थारो", reading: "thāro" }
+          - { word: "नाम", base: "नाम", reading: "nām" }
+          - { word: "कांई", base: "कांई", reading: "kāṁī" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "नाम नीकों है।"
+        reading: "nām nīkoṁ hai."
+        ipa: "naːm niːkõ ɦɛ"
+        bases:
+          - { word: "नाम", base: "नाम", reading: "nām" }
+          - { word: "नीकों", base: "नीको", reading: "nīkoṁ" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0130"
+    target: "भलो"
+    reading: "bhalo"
+    ipa: "bʰəlo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यो भलो है।"
+        reading: "yo bhalo hai."
+        ipa: "jo bʰəlo ɦɛ"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "भलो", base: "भलो", reading: "bhalo" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "वो मिनख भलो है।"
+        reading: "vo minakh bhalo hai."
+        ipa: "ʋo mɪnəkʰ bʰəlo ɦɛ"
+        bases:
+          - { word: "वो", base: "वो", reading: "vo" }
+          - { word: "मिनख", base: "मिनख", reading: "minakh" }
+          - { word: "भलो", base: "भलो", reading: "bhalo" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0131"
+    target: "मोटो"
+    reading: "moṭo"
+    ipa: "moʈo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यो मोटो है।"
+        reading: "yo moṭo hai."
+        ipa: "jo moʈo ɦɛ"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "मोटो", base: "मोटो", reading: "moṭo" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "घर मोटो है।"
+        reading: "ghar moṭo hai."
+        ipa: "ɡʱər moʈo ɦɛ"
+        bases:
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "मोटो", base: "मोटो", reading: "moṭo" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0132"
+    target: "छोटो"
+    reading: "chhoṭo"
+    ipa: "t͡ʃʰoʈo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यो छोटो है।"
+        reading: "yo chhoṭo hai."
+        ipa: "jo t͡ʃʰoʈo ɦɛ"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "छोटो", base: "छोटो", reading: "chhoṭo" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "घर छोटो है।"
+        reading: "ghar chhoṭo hai."
+        ipa: "ɡʱər t͡ʃʰoʈo ɦɛ"
+        bases:
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "छोटो", base: "छोटो", reading: "chhoṭo" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0133"
+    target: "अठै"
+    reading: "aṭhai"
+    ipa: "əʈʰəi"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "म्हे अठै हां।"
+        reading: "mhe aṭhai hāṁ."
+        ipa: "mʰe əʈʰəi ɦaːĩ"
+        bases:
+          - { word: "म्हे", base: "म्हे", reading: "mhe" }
+          - { word: "अठै", base: "अठै", reading: "aṭhai" }
+          - { word: "हां", base: "हां", reading: "hāṁ" }
+      - target: "पाणी अठै है।"
+        reading: "pāṇī aṭhai hai."
+        ipa: "paːɳiː əʈʰəi ɦɛ"
+        bases:
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "अठै", base: "अठै", reading: "aṭhai" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0134"
+    target: "बठै"
+    reading: "baṭhai"
+    ipa: "bəʈʰəi"
+    pos: "adv"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "बठै पाणी है।"
+        reading: "baṭhai pāṇī hai."
+        ipa: "bəʈʰəi paːɳiː ɦɛ"
+        bases:
+          - { word: "बठै", base: "बठै", reading: "baṭhai" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "बठै जाओ।"
+        reading: "baṭhai jāo."
+        ipa: "bəʈʰəi dʒaːəu"
+        bases:
+          - { word: "बठै", base: "बठै", reading: "baṭhai" }
+          - { word: "जाओ", base: "जावणो", reading: "jāo" }
+  - id: "raj-0135"
+    target: "कांई"
+    reading: "kāṁī"
+    ipa: "kaːĩ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यो कांई है?"
+        reading: "yo kāṁī hai?"
+        ipa: "jo kaːĩ ɦɛ"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "कांई", base: "कांई", reading: "kāṁī" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "वो कांई है?"
+        reading: "vo kāṁī hai?"
+        ipa: "ʋo kaːĩ ɦɛ"
+        bases:
+          - { word: "वो", base: "वो", reading: "vo" }
+          - { word: "कांई", base: "कांई", reading: "kāṁī" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0136"
+    target: "कुण"
+    reading: "kuṇ"
+    ipa: "kuɳ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यो कुण है?"
+        reading: "yo kuṇ hai?"
+        ipa: "jo kuɳ ɦɛ"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "कुण", base: "कुण", reading: "kuṇ" }
+          - { word: "है", base: "है", reading: "hai" }
+      - target: "वो कुण है?"
+        reading: "vo kuṇ hai?"
+        ipa: "ʋo kuɳ ɦɛ"
+        bases:
+          - { word: "वो", base: "वो", reading: "vo" }
+          - { word: "कुण", base: "कुण", reading: "kuṇ" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0137"
+    target: "कठै"
+    reading: "kaṭhai"
+    ipa: "kəʈʰəi"
+    pos: "adv"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "थे कठै हो?"
+        reading: "the kaṭhai ho?"
+        ipa: "tʰe kəʈʰəi ɦo"
+        bases:
+          - { word: "थे", base: "थे", reading: "the" }
+          - { word: "कठै", base: "कठै", reading: "kaṭhai" }
+          - { word: "हो", base: "हो", reading: "ho" }
+      - target: "घर कठै है?"
+        reading: "ghar kaṭhai hai?"
+        ipa: "ɡʱər kəʈʰəi ɦɛ"
+        bases:
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "कठै", base: "कठै", reading: "kaṭhai" }
+          - { word: "है", base: "है", reading: "hai" }
+  - id: "raj-0138"
+    target: "अर"
+    reading: "ar"
+    ipa: "əɾ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "म्हे अर थे।"
+        reading: "mhe ar the."
+        ipa: "mʰe əɾ tʰe"
+        bases:
+          - { word: "म्हे", base: "म्हे", reading: "mhe" }
+          - { word: "अर", base: "अर", reading: "ar" }
+          - { word: "थे", base: "थे", reading: "the" }
+      - target: "घर अर पाणी।"
+        reading: "ghar ar pāṇī."
+        ipa: "ɡʱər əɾ paːɳiː"
+        bases:
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "अर", base: "अर", reading: "ar" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+  - id: "raj-0139"
+    target: "आज"
+    reading: "āj"
+    ipa: "aːdʒ"
+    pos: "adv"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "आज घाम निकळ्यो।"
+        reading: "āj ghām nikaḷyo."
+        ipa: "aːdʒ ɡʱaːm nikəɭjo"
+        bases:
+          - { word: "आज", base: "आज", reading: "āj" }
+          - { word: "घाम", base: "घाम", reading: "ghām" }
+          - { word: "निकळ्यो", base: "निकळणो", reading: "nikaḷyo" }
+      - target: "आज पाणी बरसैलो।"
+        reading: "āj pāṇī barsailo."
+        ipa: "aːdʒ paːɳiː bərsɛilo"
+        bases:
+          - { word: "आज", base: "आज", reading: "āj" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "बरसैलो", base: "बरसणो", reading: "barsailo" }

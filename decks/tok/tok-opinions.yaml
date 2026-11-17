@@ -7,6 +7,7 @@
   "iso639_3": "tok"
   "name": "Toki Pona"
   "script": "latin"
+  "scripts": ["latin", "sitelen_pona"]
   "icon": "Tp"
 "license": "CC-BY-SA-4.0"
 "theme": "opinions"
@@ -16,6 +17,8 @@
 "cards":
 - "id": "tok-0604"
   "target": "kin"
+  "target_scripts":
+    "sitelen_pona": "󱥹"
   "ipa": "kin"
   "pos": "other"
   "bases": "self"
@@ -26,6 +29,8 @@
     "kind": "behaviour"
   "examples":
   - "target": "ilo ni li pona kin."
+    "target_scripts":
+      "sitelen_pona": "󱤎 󱥁 󱤧 󱥔 󱥹."
     "ipa": "ˈilo ni li ˈpona kin"
     "bases":
     - "word": "ilo"
@@ -39,6 +44,8 @@
     - "word": "kin"
       "base": "kin"
   - "target": "mi kin wile moku."
+    "target_scripts":
+      "sitelen_pona": "󱤴 󱥹 󱥷 󱤶."
     "ipa": "mi kin ˈwile ˈmoku"
     "bases":
     - "word": "mi"
@@ -51,6 +58,8 @@
       "ref": "tok-0080"
 - "id": "tok-0605"
   "target": "n"
+  "target_scripts":
+    "sitelen_pona": "󱦆"
   "ipa": "n"
   "pos": "other"
   "bases": "self"
@@ -61,6 +70,8 @@
     "kind": "note"
   "examples":
   - "target": "n, mi wile moku."
+    "target_scripts":
+      "sitelen_pona": "󱦆, 󱤴 󱥷 󱤶."
     "ipa": "n mi ˈwile ˈmoku"
     "bases":
     - "word": "n"
@@ -72,6 +83,8 @@
     - "word": "moku"
       "ref": "tok-0080"
   - "target": "n, ona li pona."
+    "target_scripts":
+      "sitelen_pona": "󱦆, 󱥆 󱤧 󱥔."
     "ipa": "n ˈona li ˈpona"
     "bases":
     - "word": "n"
@@ -84,6 +97,8 @@
       "ref": "tok-0002"
 - "id": "tok-0606"
   "target": "meso"
+  "target_scripts":
+    "sitelen_pona": "󱦂"
   "ipa": "ˈmeso"
   "pos": "noun"
   "bases": "self"
@@ -94,6 +109,8 @@
     "kind": "behaviour"
   "examples":
   - "target": "mi lon meso tomo."
+    "target_scripts":
+      "sitelen_pona": "󱤴 󱤬 󱦂 󱥭."
     "ipa": "mi lon ˈmeso ˈtomo"
     "bases":
     - "word": "mi"
@@ -105,6 +122,8 @@
     - "word": "tomo"
       "ref": "tok-0245"
   - "target": "meso ilo li suli."
+    "target_scripts":
+      "sitelen_pona": "󱦂 󱤎 󱤧 󱥣."
     "ipa": "ˈmeso ˈilo li ˈsuli"
     "bases":
     - "word": "meso"

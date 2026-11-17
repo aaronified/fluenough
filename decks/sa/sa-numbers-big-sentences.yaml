@@ -1,0 +1,78 @@
+schema: 1
+id: "sa-numbers-big-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3110"
+    target: "अहं शतं पुस्तकानि पठामि."
+    reading: "ahaṃ śataṃ pustakāni paṭhāmi."
+    ipa: "əɦəm ʃət̪əm pust̪əkaːni pəʈʰaːmi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "शतं", base: "शतम्", reading: "śatam" }, { word: "पुस्तकानि", base: "पुस्तकम्", reading: "pustakam" }, { word: "पठामि", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-0022", kind: "word" }, { id: "w2", ref: "sa-1560", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3111"
+    target: "सहस्रं शिष्याः पुस्तकानि पठन्ति."
+    reading: "sahasraṃ śiṣyāḥ pustakāni paṭhanti."
+    ipa: "səɦəsrəm ʃiʂjaːh pust̪əkaːni pəʈʰənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सहस्रं", base: "सहस्रम्", reading: "sahasram" }, { word: "शिष्याः", base: "शिष्यः", reading: "śiṣyaḥ" }, { word: "पुस्तकानि", base: "पुस्तकम्", reading: "pustakam" }, { word: "पठन्ति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1561", kind: "word" }, { id: "w2", ref: "sa-0023", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3112"
+    target: "त्रिंशत् पुस्तकानि क्रीणाति माता पञ्चाशत् पुस्तकानि च पठति."
+    reading: "triṃśat pustakāni krīṇāti mātā pañcāśat pustakāni ca paṭhati."
+    ipa: "t̪rĩʃət̪ pust̪əkaːni kriːɳaːt̪i maːt̪aː pəɲtʃaːʃət̪ pust̪əkaːni tʃə pəʈʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "त्रिंशत्", ref: "sa-1610" }, { word: "पुस्तकानि", base: "पुस्तकम्", reading: "pustakam" }, { word: "क्रीणाति", base: "क्री", reading: "krī" }, { word: "माता", ref: "sa-1030" }, { word: "पञ्चाशत्", ref: "sa-1612" }, { word: "च", ref: "sa-1104" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1611", kind: "word" }, { id: "w2", ref: "sa-4101", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "sa-3113"
+    target: "पञ्चाशत् पुस्तकानि पिता वहति."
+    reading: "pañcāśat pustakāni pitā vahati."
+    ipa: "pəɲtʃaːʃət̪ pust̪əkaːni pit̪aː ʋəɦət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पञ्चाशत्", ref: "sa-1612" }, { word: "पुस्तकानि", base: "पुस्तकम्", reading: "pustakam" }, { word: "पिता", ref: "sa-1031" }, { word: "वहति", base: "वह्", reading: "vah" }]
+    confusables: [{ id: "w1", ref: "sa-1559", kind: "word" }, { id: "w2", ref: "sa-4101", kind: "word" }]
+  - id: "sa-3114"
+    target: "त्वं चत्वारिंशत् पुस्तकानि पठसि माता च शतं पठति."
+    reading: "tvaṃ catvāriṃśat pustakāni paṭhasi mātā ca śataṃ paṭhati."
+    ipa: "t̪ʋəm tʃət̪ʋaːrĩʃət̪ pust̪əkaːni pəʈʰəsi maːt̪aː tʃə ʃət̪əm pəʈʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "चत्वारिंशत्", ref: "sa-1611" }, { word: "पुस्तकानि", base: "पुस्तकम्", reading: "pustakam" }, { word: "पठसि", base: "पठ्", reading: "paṭh" }, { word: "माता", ref: "sa-1030" }, { word: "च", ref: "sa-1104" }, { word: "शतं", base: "शतम्", reading: "śatam" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1010", kind: "word" }, { id: "w2", ref: "sa-1612", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3115"
+    target: "अयुतं शिष्या गच्छन्ति लक्षं च शिष्याः पठन्ति."
+    reading: "ayutaṃ śiṣyā gacchanti lakṣaṃ ca śiṣyāḥ paṭhanti."
+    ipa: "əjut̪əm ʃiʂjaː ɡətʃtʃʰənt̪i ləkʂəm tʃə ʃiʂjaːh pəʈʰənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अयुतं", base: "अयुतम्", reading: "ayutam" }, { word: "शिष्या", base: "शिष्यः", reading: "śiṣyaḥ" }, { word: "गच्छन्ति", base: "गम्", reading: "gam" }, { word: "लक्षं", base: "लक्षम्", reading: "lakṣam" }, { word: "च", ref: "sa-1104" }, { word: "शिष्याः", base: "शिष्यः", reading: "śiṣyaḥ" }, { word: "पठन्ति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1610", kind: "word" }, { id: "w2", ref: "sa-0023", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3116"
+    target: "तत्र लक्षं पुस्तकानि भवन्ति."
+    reading: "tatra lakṣaṃ pustakāni bhavanti."
+    ipa: "t̪ət̪rə ləkʂəm pust̪əkaːni bʱəʋənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "तत्र", ref: "sa-1081" }, { word: "लक्षं", base: "लक्षम्", reading: "lakṣam" }, { word: "पुस्तकानि", base: "पुस्तकम्", reading: "pustakam" }, { word: "भवन्ति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-1083", kind: "word" }, { id: "w2", ref: "sa-1610", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3117"
+    target: "सप्त शतानि पुस्तकानि पठामि."
+    reading: "sapta śatāni pustakāni paṭhāmi."
+    ipa: "səpt̪ə ʃət̪aːni pust̪əkaːni pəʈʰaːmi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सप्त", ref: "sa-1055" }, { word: "शतानि", base: "शतम्", reading: "śatam" }, { word: "पुस्तकानि", base: "पुस्तकम्", reading: "pustakam" }, { word: "पठामि", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1056", kind: "word" }, { id: "w2", ref: "sa-1560", kind: "word" }]

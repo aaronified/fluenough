@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-en-reading-news"
+name: "Reading: headlines"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-headline-list"
+    title: "Headlines"
+    sentences:
+      - text: "ಶೀರ್ಷಿಕೆ: ಚುನಾವಣೆ ಘೋಷಿಸಲಾಗಿದೆ."
+        reading: "śīrṣike: cunāvaṇe ghōṣisalāgide."
+        ipa: "ʃiːrʂike tʃunaːʋaɳe ɡʱoːʂisalaːɡid̪e"
+      - text: "ಮತದಾನ ನಾಳೆ."
+        reading: "matadāna nāḷe."
+        ipa: "mat̪ad̪aːna naːɭe"
+      - text: "ರಸ್ತೆಯಲ್ಲಿ ಅಪಘಾತ ಆಗಿದೆ."
+        reading: "rasteyalli apaghāta āgide."
+        ipa: "rast̪ejalli apaɡʱaːt̪a aːɡid̪e"
+      - text: "ರೇಡಿಯೋದಲ್ಲಿ ಸುದ್ದಿ ಇದೆ."
+        reading: "rēḍiyōdalli suddi ide."
+        ipa: "reːɖijoːd̪alli sud̪d̪i id̪e"
+    questions:
+      - id: "kn-9703"
+        prompt: { en: "What is announced in the first headline?" }
+        options:
+          - { en: "An election" }
+          - { en: "A football match" }
+          - { en: "A festival" }
+        answer: 1
+      - id: "kn-9704"
+        prompt: { en: "Voting is tomorrow." }
+        answer: true
+      - id: "kn-9705"
+        prompt: { en: "There was an accident on the road." }
+        answer: true

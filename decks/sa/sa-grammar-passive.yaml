@@ -1,0 +1,185 @@
+# The passive (yak) of the verbs of the course: the passive stem and the nine forms of the present middle endings, third, second and first person.
+# The stem and the third person singular are checked against the present passive listed on the root entry on en.wiktionary.org where it is listed; the other forms are the stem with the endings of Whitney 771 and every cell not listed there is marked derived in docs/review-queue/sa.md.
+# sa-2105 as, sa-2108 brū and sa-2111 paś are excepted: as and brū are defective and paś is only the present stem of dṛś.
+schema: 1
+id: "sa-grammar-passive"
+part: "core"
+kind: "rules"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+source: "en.wiktionary.org: the present passive on the root entry of each verb, read 2026-11-17, and the kaikki.org Wiktionary dump of 2026-10-30 for the roots whose pages were not read live; Whitney, Sanskrit Grammar 768 to 774 on en.wikisource, read 2026-11-17; Panini, Astadhyayi 1.3.13, 3.1.67, 3.4.69 and 8.3.23 as typed on sa.wikisource.org/wiki/अष्टाध्यायी (the first, third and eighth chapter pages), read 2026-11-17; readings from tools/transcribe.py (sa)."
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["sa-2105", "sa-2108", "sa-2111"]
+  slots: ["stem", "m3-sg", "m3-du", "m3-pl", "m2-sg", "m2-du", "m2-pl", "m1-sg", "m1-du", "m1-pl"]
+  rows:
+    - word: "sa-0430"
+      forms: { "stem": "भूय", "m3-sg": "भूयते", "m3-du": "भूयेते", "m3-pl": "भूयन्ते", "m2-sg": "भूयसे", "m2-du": "भूयेथे", "m2-pl": "भूयध्वे", "m1-sg": "भूये", "m1-du": "भूयावहे", "m1-pl": "भूयामहे" }
+      readings: { "stem": "bhūya", "m3-sg": "bhūyate", "m3-du": "bhūyete", "m3-pl": "bhūyante", "m2-sg": "bhūyase", "m2-du": "bhūyethe", "m2-pl": "bhūyadhve", "m1-sg": "bhūye", "m1-du": "bhūyāvahe", "m1-pl": "bhūyāmahe" }
+    - word: "sa-0431"
+      forms: { "stem": "गम्य", "m3-sg": "गम्यते", "m3-du": "गम्येते", "m3-pl": "गम्यन्ते", "m2-sg": "गम्यसे", "m2-du": "गम्येथे", "m2-pl": "गम्यध्वे", "m1-sg": "गम्ये", "m1-du": "गम्यावहे", "m1-pl": "गम्यामहे" }
+      readings: { "stem": "gamya", "m3-sg": "gamyate", "m3-du": "gamyete", "m3-pl": "gamyante", "m2-sg": "gamyase", "m2-du": "gamyethe", "m2-pl": "gamyadhve", "m1-sg": "gamye", "m1-du": "gamyāvahe", "m1-pl": "gamyāmahe" }
+    - word: "sa-0432"
+      forms: { "stem": "पठ्य", "m3-sg": "पठ्यते", "m3-du": "पठ्येते", "m3-pl": "पठ्यन्ते", "m2-sg": "पठ्यसे", "m2-du": "पठ्येथे", "m2-pl": "पठ्यध्वे", "m1-sg": "पठ्ये", "m1-du": "पठ्यावहे", "m1-pl": "पठ्यामहे" }
+      readings: { "stem": "paṭhya", "m3-sg": "paṭhyate", "m3-du": "paṭhyete", "m3-pl": "paṭhyante", "m2-sg": "paṭhyase", "m2-du": "paṭhyethe", "m2-pl": "paṭhyadhve", "m1-sg": "paṭhye", "m1-du": "paṭhyāvahe", "m1-pl": "paṭhyāmahe" }
+    - word: "sa-0433"
+      forms: { "stem": "उद्य", "m3-sg": "उद्यते", "m3-du": "उद्येते", "m3-pl": "उद्यन्ते", "m2-sg": "उद्यसे", "m2-du": "उद्येथे", "m2-pl": "उद्यध्वे", "m1-sg": "उद्ये", "m1-du": "उद्यावहे", "m1-pl": "उद्यामहे" }
+      readings: { "stem": "udya", "m3-sg": "udyate", "m3-du": "udyete", "m3-pl": "udyante", "m2-sg": "udyase", "m2-du": "udyethe", "m2-pl": "udyadhve", "m1-sg": "udye", "m1-du": "udyāvahe", "m1-pl": "udyāmahe" }
+    - word: "sa-0434"
+      forms: { "stem": "पच्य", "m3-sg": "पच्यते", "m3-du": "पच्येते", "m3-pl": "पच्यन्ते", "m2-sg": "पच्यसे", "m2-du": "पच्येथे", "m2-pl": "पच्यध्वे", "m1-sg": "पच्ये", "m1-du": "पच्यावहे", "m1-pl": "पच्यामहे" }
+      readings: { "stem": "pacya", "m3-sg": "pacyate", "m3-du": "pacyete", "m3-pl": "pacyante", "m2-sg": "pacyase", "m2-du": "pacyethe", "m2-pl": "pacyadhve", "m1-sg": "pacye", "m1-du": "pacyāvahe", "m1-pl": "pacyāmahe" }
+    - word: "sa-0435"
+      forms: { "stem": "नीय", "m3-sg": "नीयते", "m3-du": "नीयेते", "m3-pl": "नीयन्ते", "m2-sg": "नीयसे", "m2-du": "नीयेथे", "m2-pl": "नीयध्वे", "m1-sg": "नीये", "m1-du": "नीयावहे", "m1-pl": "नीयामहे" }
+      readings: { "stem": "nīya", "m3-sg": "nīyate", "m3-du": "nīyete", "m3-pl": "nīyante", "m2-sg": "nīyase", "m2-du": "nīyethe", "m2-pl": "nīyadhve", "m1-sg": "nīye", "m1-du": "nīyāvahe", "m1-pl": "nīyāmahe" }
+    - word: "sa-2000"
+      forms: { "stem": "खाद्य", "m3-sg": "खाद्यते", "m3-du": "खाद्येते", "m3-pl": "खाद्यन्ते", "m2-sg": "खाद्यसे", "m2-du": "खाद्येथे", "m2-pl": "खाद्यध्वे", "m1-sg": "खाद्ये", "m1-du": "खाद्यावहे", "m1-pl": "खाद्यामहे" }
+      readings: { "stem": "khādya", "m3-sg": "khādyate", "m3-du": "khādyete", "m3-pl": "khādyante", "m2-sg": "khādyase", "m2-du": "khādyethe", "m2-pl": "khādyadhve", "m1-sg": "khādye", "m1-du": "khādyāvahe", "m1-pl": "khādyāmahe" }
+    - word: "sa-2001"
+      forms: { "stem": "पीय", "m3-sg": "पीयते", "m3-du": "पीयेते", "m3-pl": "पीयन्ते", "m2-sg": "पीयसे", "m2-du": "पीयेथे", "m2-pl": "पीयध्वे", "m1-sg": "पीये", "m1-du": "पीयावहे", "m1-pl": "पीयामहे" }
+      readings: { "stem": "pīya", "m3-sg": "pīyate", "m3-du": "pīyete", "m3-pl": "pīyante", "m2-sg": "pīyase", "m2-du": "pīyethe", "m2-pl": "pīyadhve", "m1-sg": "pīye", "m1-du": "pīyāvahe", "m1-pl": "pīyāmahe" }
+    - word: "sa-2002"
+      forms: { "stem": "स्थीय", "m3-sg": "स्थीयते", "m3-du": "स्थीयेते", "m3-pl": "स्थीयन्ते", "m2-sg": "स्थीयसे", "m2-du": "स्थीयेथे", "m2-pl": "स्थीयध्वे", "m1-sg": "स्थीये", "m1-du": "स्थीयावहे", "m1-pl": "स्थीयामहे" }
+      readings: { "stem": "sthīya", "m3-sg": "sthīyate", "m3-du": "sthīyete", "m3-pl": "sthīyante", "m2-sg": "sthīyase", "m2-du": "sthīyethe", "m2-pl": "sthīyadhve", "m1-sg": "sthīye", "m1-du": "sthīyāvahe", "m1-pl": "sthīyāmahe" }
+    - word: "sa-2003"
+      forms: { "stem": "हस्य", "m3-sg": "हस्यते", "m3-du": "हस्येते", "m3-pl": "हस्यन्ते", "m2-sg": "हस्यसे", "m2-du": "हस्येथे", "m2-pl": "हस्यध्वे", "m1-sg": "हस्ये", "m1-du": "हस्यावहे", "m1-pl": "हस्यामहे" }
+      readings: { "stem": "hasya", "m3-sg": "hasyate", "m3-du": "hasyete", "m3-pl": "hasyante", "m2-sg": "hasyase", "m2-du": "hasyethe", "m2-pl": "hasyadhve", "m1-sg": "hasye", "m1-du": "hasyāvahe", "m1-pl": "hasyāmahe" }
+    - word: "sa-2004"
+      forms: { "stem": "रक्ष्य", "m3-sg": "रक्ष्यते", "m3-du": "रक्ष्येते", "m3-pl": "रक्ष्यन्ते", "m2-sg": "रक्ष्यसे", "m2-du": "रक्ष्येथे", "m2-pl": "रक्ष्यध्वे", "m1-sg": "रक्ष्ये", "m1-du": "रक्ष्यावहे", "m1-pl": "रक्ष्यामहे" }
+      readings: { "stem": "rakṣya", "m3-sg": "rakṣyate", "m3-du": "rakṣyete", "m3-pl": "rakṣyante", "m2-sg": "rakṣyase", "m2-du": "rakṣyethe", "m2-pl": "rakṣyadhve", "m1-sg": "rakṣye", "m1-du": "rakṣyāvahe", "m1-pl": "rakṣyāmahe" }
+    - word: "sa-2005"
+      forms: { "stem": "उष्य", "m3-sg": "उष्यते", "m3-du": "उष्येते", "m3-pl": "उष्यन्ते", "m2-sg": "उष्यसे", "m2-du": "उष्येथे", "m2-pl": "उष्यध्वे", "m1-sg": "उष्ये", "m1-du": "उष्यावहे", "m1-pl": "उष्यामहे" }
+      readings: { "stem": "uṣya", "m3-sg": "uṣyate", "m3-du": "uṣyete", "m3-pl": "uṣyante", "m2-sg": "uṣyase", "m2-du": "uṣyethe", "m2-pl": "uṣyadhve", "m1-sg": "uṣye", "m1-du": "uṣyāvahe", "m1-pl": "uṣyāmahe" }
+    - word: "sa-2006"
+      forms: { "stem": "नम्य", "m3-sg": "नम्यते", "m3-du": "नम्येते", "m3-pl": "नम्यन्ते", "m2-sg": "नम्यसे", "m2-du": "नम्येथे", "m2-pl": "नम्यध्वे", "m1-sg": "नम्ये", "m1-du": "नम्यावहे", "m1-pl": "नम्यामहे" }
+      readings: { "stem": "namya", "m3-sg": "namyate", "m3-du": "namyete", "m3-pl": "namyante", "m2-sg": "namyase", "m2-du": "namyethe", "m2-pl": "namyadhve", "m1-sg": "namye", "m1-du": "namyāvahe", "m1-pl": "namyāmahe" }
+    - word: "sa-2007"
+      forms: { "stem": "जीय", "m3-sg": "जीयते", "m3-du": "जीयेते", "m3-pl": "जीयन्ते", "m2-sg": "जीयसे", "m2-du": "जीयेथे", "m2-pl": "जीयध्वे", "m1-sg": "जीये", "m1-du": "जीयावहे", "m1-pl": "जीयामहे" }
+      readings: { "stem": "jīya", "m3-sg": "jīyate", "m3-du": "jīyete", "m3-pl": "jīyante", "m2-sg": "jīyase", "m2-du": "jīyethe", "m2-pl": "jīyadhve", "m1-sg": "jīye", "m1-du": "jīyāvahe", "m1-pl": "jīyāmahe" }
+    - word: "sa-2008"
+      forms: { "stem": "स्मर्य", "m3-sg": "स्मर्यते", "m3-du": "स्मर्येते", "m3-pl": "स्मर्यन्ते", "m2-sg": "स्मर्यसे", "m2-du": "स्मर्येथे", "m2-pl": "स्मर्यध्वे", "m1-sg": "स्मर्ये", "m1-du": "स्मर्यावहे", "m1-pl": "स्मर्यामहे" }
+      readings: { "stem": "smarya", "m3-sg": "smaryate", "m3-du": "smaryete", "m3-pl": "smaryante", "m2-sg": "smaryase", "m2-du": "smaryethe", "m2-pl": "smaryadhve", "m1-sg": "smarye", "m1-du": "smaryāvahe", "m1-pl": "smaryāmahe" }
+    - word: "sa-2009"
+      forms: { "stem": "धाव्य", "m3-sg": "धाव्यते", "m3-du": "धाव्येते", "m3-pl": "धाव्यन्ते", "m2-sg": "धाव्यसे", "m2-du": "धाव्येथे", "m2-pl": "धाव्यध्वे", "m1-sg": "धाव्ये", "m1-du": "धाव्यावहे", "m1-pl": "धाव्यामहे" }
+      readings: { "stem": "dhāvya", "m3-sg": "dhāvyate", "m3-du": "dhāvyete", "m3-pl": "dhāvyante", "m2-sg": "dhāvyase", "m2-du": "dhāvyethe", "m2-pl": "dhāvyadhve", "m1-sg": "dhāvye", "m1-du": "dhāvyāvahe", "m1-pl": "dhāvyāmahe" }
+    - word: "sa-2010"
+      forms: { "stem": "पत्य", "m3-sg": "पत्यते", "m3-du": "पत्येते", "m3-pl": "पत्यन्ते", "m2-sg": "पत्यसे", "m2-du": "पत्येथे", "m2-pl": "पत्यध्वे", "m1-sg": "पत्ये", "m1-du": "पत्यावहे", "m1-pl": "पत्यामहे" }
+      readings: { "stem": "patya", "m3-sg": "patyate", "m3-du": "patyete", "m3-pl": "patyante", "m2-sg": "patyase", "m2-du": "patyethe", "m2-pl": "patyadhve", "m1-sg": "patye", "m1-du": "patyāvahe", "m1-pl": "patyāmahe" }
+    - word: "sa-2011"
+      forms: { "stem": "चल्य", "m3-sg": "चल्यते", "m3-du": "चल्येते", "m3-pl": "चल्यन्ते", "m2-sg": "चल्यसे", "m2-du": "चल्येथे", "m2-pl": "चल्यध्वे", "m1-sg": "चल्ये", "m1-du": "चल्यावहे", "m1-pl": "चल्यामहे" }
+      readings: { "stem": "calya", "m3-sg": "calyate", "m3-du": "calyete", "m3-pl": "calyante", "m2-sg": "calyase", "m2-du": "calyethe", "m2-pl": "calyadhve", "m1-sg": "calye", "m1-du": "calyāvahe", "m1-pl": "calyāmahe" }
+    - word: "sa-2012"
+      forms: { "stem": "क्रीड्य", "m3-sg": "क्रीड्यते", "m3-du": "क्रीड्येते", "m3-pl": "क्रीड्यन्ते", "m2-sg": "क्रीड्यसे", "m2-du": "क्रीड्येथे", "m2-pl": "क्रीड्यध्वे", "m1-sg": "क्रीड्ये", "m1-du": "क्रीड्यावहे", "m1-pl": "क्रीड्यामहे" }
+      readings: { "stem": "krīḍya", "m3-sg": "krīḍyate", "m3-du": "krīḍyete", "m3-pl": "krīḍyante", "m2-sg": "krīḍyase", "m2-du": "krīḍyethe", "m2-pl": "krīḍyadhve", "m1-sg": "krīḍye", "m1-du": "krīḍyāvahe", "m1-pl": "krīḍyāmahe" }
+    - word: "sa-2013"
+      forms: { "stem": "जीव्य", "m3-sg": "जीव्यते", "m3-du": "जीव्येते", "m3-pl": "जीव्यन्ते", "m2-sg": "जीव्यसे", "m2-du": "जीव्येथे", "m2-pl": "जीव्यध्वे", "m1-sg": "जीव्ये", "m1-du": "जीव्यावहे", "m1-pl": "जीव्यामहे" }
+      readings: { "stem": "jīvya", "m3-sg": "jīvyate", "m3-du": "jīvyete", "m3-pl": "jīvyante", "m2-sg": "jīvyase", "m2-du": "jīvyethe", "m2-pl": "jīvyadhve", "m1-sg": "jīvye", "m1-du": "jīvyāvahe", "m1-pl": "jīvyāmahe" }
+    - word: "sa-2014"
+      forms: { "stem": "चर्य", "m3-sg": "चर्यते", "m3-du": "चर्येते", "m3-pl": "चर्यन्ते", "m2-sg": "चर्यसे", "m2-du": "चर्येथे", "m2-pl": "चर्यध्वे", "m1-sg": "चर्ये", "m1-du": "चर्यावहे", "m1-pl": "चर्यामहे" }
+      readings: { "stem": "carya", "m3-sg": "caryate", "m3-du": "caryete", "m3-pl": "caryante", "m2-sg": "caryase", "m2-du": "caryethe", "m2-pl": "caryadhve", "m1-sg": "carye", "m1-du": "caryāvahe", "m1-pl": "caryāmahe" }
+    - word: "sa-2015"
+      forms: { "stem": "उह्य", "m3-sg": "उह्यते", "m3-du": "उह्येते", "m3-pl": "उह्यन्ते", "m2-sg": "उह्यसे", "m2-du": "उह्येथे", "m2-pl": "उह्यध्वे", "m1-sg": "उह्ये", "m1-du": "उह्यावहे", "m1-pl": "उह्यामहे" }
+      readings: { "stem": "uhya", "m3-sg": "uhyate", "m3-du": "uhyete", "m3-pl": "uhyante", "m2-sg": "uhyase", "m2-du": "uhyethe", "m2-pl": "uhyadhve", "m1-sg": "uhye", "m1-du": "uhyāvahe", "m1-pl": "uhyāmahe" }
+    - word: "sa-2016"
+      forms: { "stem": "ह्रिय", "m3-sg": "ह्रियते", "m3-du": "ह्रियेते", "m3-pl": "ह्रियन्ते", "m2-sg": "ह्रियसे", "m2-du": "ह्रियेथे", "m2-pl": "ह्रियध्वे", "m1-sg": "ह्रिये", "m1-du": "ह्रियावहे", "m1-pl": "ह्रियामहे" }
+      readings: { "stem": "hriya", "m3-sg": "hriyate", "m3-du": "hriyete", "m3-pl": "hriyante", "m2-sg": "hriyase", "m2-du": "hriyethe", "m2-pl": "hriyadhve", "m1-sg": "hriye", "m1-du": "hriyāvahe", "m1-pl": "hriyāmahe" }
+    - word: "sa-2017"
+      forms: { "stem": "स्रिय", "m3-sg": "स्रियते", "m3-du": "स्रियेते", "m3-pl": "स्रियन्ते", "m2-sg": "स्रियसे", "m2-du": "स्रियेथे", "m2-pl": "स्रियध्वे", "m1-sg": "स्रिये", "m1-du": "स्रियावहे", "m1-pl": "स्रियामहे" }
+      readings: { "stem": "sriya", "m3-sg": "sriyate", "m3-du": "sriyete", "m3-pl": "sriyante", "m2-sg": "sriyase", "m2-du": "sriyethe", "m2-pl": "sriyadhve", "m1-sg": "sriye", "m1-du": "sriyāvahe", "m1-pl": "sriyāmahe" }
+    - word: "sa-2018"
+      forms: { "stem": "गीय", "m3-sg": "गीयते", "m3-du": "गीयेते", "m3-pl": "गीयन्ते", "m2-sg": "गीयसे", "m2-du": "गीयेथे", "m2-pl": "गीयध्वे", "m1-sg": "गीये", "m1-du": "गीयावहे", "m1-pl": "गीयामहे" }
+      readings: { "stem": "gīya", "m3-sg": "gīyate", "m3-du": "gīyete", "m3-pl": "gīyante", "m2-sg": "gīyase", "m2-du": "gīyethe", "m2-pl": "gīyadhve", "m1-sg": "gīye", "m1-du": "gīyāvahe", "m1-pl": "gīyāmahe" }
+    - word: "sa-2019"
+      forms: { "stem": "तप्य", "m3-sg": "तप्यते", "m3-du": "तप्येते", "m3-pl": "तप्यन्ते", "m2-sg": "तप्यसे", "m2-du": "तप्येथे", "m2-pl": "तप्यध्वे", "m1-sg": "तप्ये", "m1-du": "तप्यावहे", "m1-pl": "तप्यामहे" }
+      readings: { "stem": "tapya", "m3-sg": "tapyate", "m3-du": "tapyete", "m3-pl": "tapyante", "m2-sg": "tapyase", "m2-du": "tapyethe", "m2-pl": "tapyadhve", "m1-sg": "tapye", "m1-du": "tapyāvahe", "m1-pl": "tapyāmahe" }
+    - word: "sa-2020"
+      forms: { "stem": "ध्रिय", "m3-sg": "ध्रियते", "m3-du": "ध्रियेते", "m3-pl": "ध्रियन्ते", "m2-sg": "ध्रियसे", "m2-du": "ध्रियेथे", "m2-pl": "ध्रियध्वे", "m1-sg": "ध्रिये", "m1-du": "ध्रियावहे", "m1-pl": "ध्रियामहे" }
+      readings: { "stem": "dhriya", "m3-sg": "dhriyate", "m3-du": "dhriyete", "m3-pl": "dhriyante", "m2-sg": "dhriyase", "m2-du": "dhriyethe", "m2-pl": "dhriyadhve", "m1-sg": "dhriye", "m1-du": "dhriyāvahe", "m1-pl": "dhriyāmahe" }
+    - word: "sa-2021"
+      forms: { "stem": "जप्य", "m3-sg": "जप्यते", "m3-du": "जप्येते", "m3-pl": "जप्यन्ते", "m2-sg": "जप्यसे", "m2-du": "जप्येथे", "m2-pl": "जप्यध्वे", "m1-sg": "जप्ये", "m1-du": "जप्यावहे", "m1-pl": "जप्यामहे" }
+      readings: { "stem": "japya", "m3-sg": "japyate", "m3-du": "japyete", "m3-pl": "japyante", "m2-sg": "japyase", "m2-du": "japyethe", "m2-pl": "japyadhve", "m1-sg": "japye", "m1-du": "japyāvahe", "m1-pl": "japyāmahe" }
+    - word: "sa-2022"
+      forms: { "stem": "खाय", "m3-sg": "खायते", "m3-du": "खायेते", "m3-pl": "खायन्ते", "m2-sg": "खायसे", "m2-du": "खायेथे", "m2-pl": "खायध्वे", "m1-sg": "खाये", "m1-du": "खायावहे", "m1-pl": "खायामहे" }
+      readings: { "stem": "khāya", "m3-sg": "khāyate", "m3-du": "khāyete", "m3-pl": "khāyante", "m2-sg": "khāyase", "m2-du": "khāyethe", "m2-pl": "khāyadhve", "m1-sg": "khāye", "m1-du": "khāyāvahe", "m1-pl": "khāyāmahe" }
+    - word: "sa-2023"
+      forms: { "stem": "हूय", "m3-sg": "हूयते", "m3-du": "हूयेते", "m3-pl": "हूयन्ते", "m2-sg": "हूयसे", "m2-du": "हूयेथे", "m2-pl": "हूयध्वे", "m1-sg": "हूये", "m1-du": "हूयावहे", "m1-pl": "हूयामहे" }
+      readings: { "stem": "hūya", "m3-sg": "hūyate", "m3-du": "hūyete", "m3-pl": "hūyante", "m2-sg": "hūyase", "m2-du": "hūyethe", "m2-pl": "hūyadhve", "m1-sg": "hūye", "m1-du": "hūyāvahe", "m1-pl": "hūyāmahe" }
+    - word: "sa-2100"
+      forms: { "stem": "क्षर्य", "m3-sg": "क्षर्यते", "m3-du": "क्षर्येते", "m3-pl": "क्षर्यन्ते", "m2-sg": "क्षर्यसे", "m2-du": "क्षर्येथे", "m2-pl": "क्षर्यध्वे", "m1-sg": "क्षर्ये", "m1-du": "क्षर्यावहे", "m1-pl": "क्षर्यामहे" }
+      readings: { "stem": "kṣarya", "m3-sg": "kṣaryate", "m3-du": "kṣaryete", "m3-pl": "kṣaryante", "m2-sg": "kṣaryase", "m2-du": "kṣaryethe", "m2-pl": "kṣaryadhve", "m1-sg": "kṣarye", "m1-du": "kṣaryāvahe", "m1-pl": "kṣaryāmahe" }
+    - word: "sa-2101"
+      forms: { "stem": "रुध्य", "m3-sg": "रुध्यते", "m3-du": "रुध्येते", "m3-pl": "रुध्यन्ते", "m2-sg": "रुध्यसे", "m2-du": "रुध्येथे", "m2-pl": "रुध्यध्वे", "m1-sg": "रुध्ये", "m1-du": "रुध्यावहे", "m1-pl": "रुध्यामहे" }
+      readings: { "stem": "rudhya", "m3-sg": "rudhyate", "m3-du": "rudhyete", "m3-pl": "rudhyante", "m2-sg": "rudhyase", "m2-du": "rudhyethe", "m2-pl": "rudhyadhve", "m1-sg": "rudhye", "m1-du": "rudhyāvahe", "m1-pl": "rudhyāmahe" }
+    - word: "sa-2102"
+      forms: { "stem": "लभ्य", "m3-sg": "लभ्यते", "m3-du": "लभ्येते", "m3-pl": "लभ्यन्ते", "m2-sg": "लभ्यसे", "m2-du": "लभ्येथे", "m2-pl": "लभ्यध्वे", "m1-sg": "लभ्ये", "m1-du": "लभ्यावहे", "m1-pl": "लभ्यामहे" }
+      readings: { "stem": "labhya", "m3-sg": "labhyate", "m3-du": "labhyete", "m3-pl": "labhyante", "m2-sg": "labhyase", "m2-du": "labhyethe", "m2-pl": "labhyadhve", "m1-sg": "labhye", "m1-du": "labhyāvahe", "m1-pl": "labhyāmahe" }
+    - word: "sa-2103"
+      forms: { "stem": "वृत्य", "m3-sg": "वृत्यते", "m3-du": "वृत्येते", "m3-pl": "वृत्यन्ते", "m2-sg": "वृत्यसे", "m2-du": "वृत्येथे", "m2-pl": "वृत्यध्वे", "m1-sg": "वृत्ये", "m1-du": "वृत्यावहे", "m1-pl": "वृत्यामहे" }
+      readings: { "stem": "vṛtya", "m3-sg": "vṛtyate", "m3-du": "vṛtyete", "m3-pl": "vṛtyante", "m2-sg": "vṛtyase", "m2-du": "vṛtyethe", "m2-pl": "vṛtyadhve", "m1-sg": "vṛtye", "m1-du": "vṛtyāvahe", "m1-pl": "vṛtyāmahe" }
+    - word: "sa-2104"
+      forms: { "stem": "ईक्ष्य", "m3-sg": "ईक्ष्यते", "m3-du": "ईक्ष्येते", "m3-pl": "ईक्ष्यन्ते", "m2-sg": "ईक्ष्यसे", "m2-du": "ईक्ष्येथे", "m2-pl": "ईक्ष्यध्वे", "m1-sg": "ईक्ष्ये", "m1-du": "ईक्ष्यावहे", "m1-pl": "ईक्ष्यामहे" }
+      readings: { "stem": "īkṣya", "m3-sg": "īkṣyate", "m3-du": "īkṣyete", "m3-pl": "īkṣyante", "m2-sg": "īkṣyase", "m2-du": "īkṣyethe", "m2-pl": "īkṣyadhve", "m1-sg": "īkṣye", "m1-du": "īkṣyāvahe", "m1-pl": "īkṣyāmahe" }
+    - word: "sa-2106"
+      forms: { "stem": "रुद्य", "m3-sg": "रुद्यते", "m3-du": "रुद्येते", "m3-pl": "रुद्यन्ते", "m2-sg": "रुद्यसे", "m2-du": "रुद्येथे", "m2-pl": "रुद्यध्वे", "m1-sg": "रुद्ये", "m1-du": "रुद्यावहे", "m1-pl": "रुद्यामहे" }
+      readings: { "stem": "rudya", "m3-sg": "rudyate", "m3-du": "rudyete", "m3-pl": "rudyante", "m2-sg": "rudyase", "m2-du": "rudyethe", "m2-pl": "rudyadhve", "m1-sg": "rudye", "m1-du": "rudyāvahe", "m1-pl": "rudyāmahe" }
+    - word: "sa-2107"
+      forms: { "stem": "याय", "m3-sg": "यायते", "m3-du": "यायेते", "m3-pl": "यायन्ते", "m2-sg": "यायसे", "m2-du": "यायेथे", "m2-pl": "यायध्वे", "m1-sg": "याये", "m1-du": "यायावहे", "m1-pl": "यायामहे" }
+      readings: { "stem": "yāya", "m3-sg": "yāyate", "m3-du": "yāyete", "m3-pl": "yāyante", "m2-sg": "yāyase", "m2-du": "yāyethe", "m2-pl": "yāyadhve", "m1-sg": "yāye", "m1-du": "yāyāvahe", "m1-pl": "yāyāmahe" }
+    - word: "sa-2109"
+      forms: { "stem": "दीय", "m3-sg": "दीयते", "m3-du": "दीयेते", "m3-pl": "दीयन्ते", "m2-sg": "दीयसे", "m2-du": "दीयेथे", "m2-pl": "दीयध्वे", "m1-sg": "दीये", "m1-du": "दीयावहे", "m1-pl": "दीयामहे" }
+      readings: { "stem": "dīya", "m3-sg": "dīyate", "m3-du": "dīyete", "m3-pl": "dīyante", "m2-sg": "dīyase", "m2-du": "dīyethe", "m2-pl": "dīyadhve", "m1-sg": "dīye", "m1-du": "dīyāvahe", "m1-pl": "dīyāmahe" }
+    - word: "sa-2110"
+      forms: { "stem": "धीय", "m3-sg": "धीयते", "m3-du": "धीयेते", "m3-pl": "धीयन्ते", "m2-sg": "धीयसे", "m2-du": "धीयेथे", "m2-pl": "धीयध्वे", "m1-sg": "धीये", "m1-du": "धीयावहे", "m1-pl": "धीयामहे" }
+      readings: { "stem": "dhīya", "m3-sg": "dhīyate", "m3-du": "dhīyete", "m3-pl": "dhīyante", "m2-sg": "dhīyase", "m2-du": "dhīyethe", "m2-pl": "dhīyadhve", "m1-sg": "dhīye", "m1-du": "dhīyāvahe", "m1-pl": "dhīyāmahe" }
+    - word: "sa-2112"
+      forms: { "stem": "नृत्य", "m3-sg": "नृत्यते", "m3-du": "नृत्येते", "m3-pl": "नृत्यन्ते", "m2-sg": "नृत्यसे", "m2-du": "नृत्येथे", "m2-pl": "नृत्यध्वे", "m1-sg": "नृत्ये", "m1-du": "नृत्यावहे", "m1-pl": "नृत्यामहे" }
+      readings: { "stem": "nṛtya", "m3-sg": "nṛtyate", "m3-du": "nṛtyete", "m3-pl": "nṛtyante", "m2-sg": "nṛtyase", "m2-du": "nṛtyethe", "m2-pl": "nṛtyadhve", "m1-sg": "nṛtye", "m1-du": "nṛtyāvahe", "m1-pl": "nṛtyāmahe" }
+    - word: "sa-2113"
+      forms: { "stem": "श्रूय", "m3-sg": "श्रूयते", "m3-du": "श्रूयेते", "m3-pl": "श्रूयन्ते", "m2-sg": "श्रूयसे", "m2-du": "श्रूयेथे", "m2-pl": "श्रूयध्वे", "m1-sg": "श्रूये", "m1-du": "श्रूयावहे", "m1-pl": "श्रूयामहे" }
+      readings: { "stem": "śrūya", "m3-sg": "śrūyate", "m3-du": "śrūyete", "m3-pl": "śrūyante", "m2-sg": "śrūyase", "m2-du": "śrūyethe", "m2-pl": "śrūyadhve", "m1-sg": "śrūye", "m1-du": "śrūyāvahe", "m1-pl": "śrūyāmahe" }
+    - word: "sa-2114"
+      forms: { "stem": "लिख्य", "m3-sg": "लिख्यते", "m3-du": "लिख्येते", "m3-pl": "लिख्यन्ते", "m2-sg": "लिख्यसे", "m2-du": "लिख्येथे", "m2-pl": "लिख्यध्वे", "m1-sg": "लिख्ये", "m1-du": "लिख्यावहे", "m1-pl": "लिख्यामहे" }
+      readings: { "stem": "likhya", "m3-sg": "likhyate", "m3-du": "likhyete", "m3-pl": "likhyante", "m2-sg": "likhyase", "m2-du": "likhyethe", "m2-pl": "likhyadhve", "m1-sg": "likhye", "m1-du": "likhyāvahe", "m1-pl": "likhyāmahe" }
+    - word: "sa-2115"
+      forms: { "stem": "विश्य", "m3-sg": "विश्यते", "m3-du": "विश्येते", "m3-pl": "विश्यन्ते", "m2-sg": "विश्यसे", "m2-du": "विश्येथे", "m2-pl": "विश्यध्वे", "m1-sg": "विश्ये", "m1-du": "विश्यावहे", "m1-pl": "विश्यामहे" }
+      readings: { "stem": "viśya", "m3-sg": "viśyate", "m3-du": "viśyete", "m3-pl": "viśyante", "m2-sg": "viśyase", "m2-du": "viśyethe", "m2-pl": "viśyadhve", "m1-sg": "viśye", "m1-du": "viśyāvahe", "m1-pl": "viśyāmahe" }
+    - word: "sa-2116"
+      forms: { "stem": "इष्य", "m3-sg": "इष्यते", "m3-du": "इष्येते", "m3-pl": "इष्यन्ते", "m2-sg": "इष्यसे", "m2-du": "इष्येथे", "m2-pl": "इष्यध्वे", "m1-sg": "इष्ये", "m1-du": "इष्यावहे", "m1-pl": "इष्यामहे" }
+      readings: { "stem": "iṣya", "m3-sg": "iṣyate", "m3-du": "iṣyete", "m3-pl": "iṣyante", "m2-sg": "iṣyase", "m2-du": "iṣyethe", "m2-pl": "iṣyadhve", "m1-sg": "iṣye", "m1-du": "iṣyāvahe", "m1-pl": "iṣyāmahe" }
+    - word: "sa-2117"
+      forms: { "stem": "तुद्य", "m3-sg": "तुद्यते", "m3-du": "तुद्येते", "m3-pl": "तुद्यन्ते", "m2-sg": "तुद्यसे", "m2-du": "तुद्येथे", "m2-pl": "तुद्यध्वे", "m1-sg": "तुद्ये", "m1-du": "तुद्यावहे", "m1-pl": "तुद्यामहे" }
+      readings: { "stem": "tudya", "m3-sg": "tudyate", "m3-du": "tudyete", "m3-pl": "tudyante", "m2-sg": "tudyase", "m2-du": "tudyethe", "m2-pl": "tudyadhve", "m1-sg": "tudye", "m1-du": "tudyāvahe", "m1-pl": "tudyāmahe" }
+    - word: "sa-2118"
+      forms: { "stem": "क्रिय", "m3-sg": "क्रियते", "m3-du": "क्रियेते", "m3-pl": "क्रियन्ते", "m2-sg": "क्रियसे", "m2-du": "क्रियेथे", "m2-pl": "क्रियध्वे", "m1-sg": "क्रिये", "m1-du": "क्रियावहे", "m1-pl": "क्रियामहे" }
+      readings: { "stem": "kriya", "m3-sg": "kriyate", "m3-du": "kriyete", "m3-pl": "kriyante", "m2-sg": "kriyase", "m2-du": "kriyethe", "m2-pl": "kriyadhve", "m1-sg": "kriye", "m1-du": "kriyāvahe", "m1-pl": "kriyāmahe" }
+    - word: "sa-2119"
+      forms: { "stem": "ज्ञाय", "m3-sg": "ज्ञायते", "m3-du": "ज्ञायेते", "m3-pl": "ज्ञायन्ते", "m2-sg": "ज्ञायसे", "m2-du": "ज्ञायेथे", "m2-pl": "ज्ञायध्वे", "m1-sg": "ज्ञाये", "m1-du": "ज्ञायावहे", "m1-pl": "ज्ञायामहे" }
+      readings: { "stem": "jñāya", "m3-sg": "jñāyate", "m3-du": "jñāyete", "m3-pl": "jñāyante", "m2-sg": "jñāyase", "m2-du": "jñāyethe", "m2-pl": "jñāyadhve", "m1-sg": "jñāye", "m1-du": "jñāyāvahe", "m1-pl": "jñāyāmahe" }
+    - word: "sa-2120"
+      forms: { "stem": "क्रीय", "m3-sg": "क्रीयते", "m3-du": "क्रीयेते", "m3-pl": "क्रीयन्ते", "m2-sg": "क्रीयसे", "m2-du": "क्रीयेथे", "m2-pl": "क्रीयध्वे", "m1-sg": "क्रीये", "m1-du": "क्रीयावहे", "m1-pl": "क्रीयामहे" }
+      readings: { "stem": "krīya", "m3-sg": "krīyate", "m3-du": "krīyete", "m3-pl": "krīyante", "m2-sg": "krīyase", "m2-du": "krīyethe", "m2-pl": "krīyadhve", "m1-sg": "krīye", "m1-du": "krīyāvahe", "m1-pl": "krīyāmahe" }
+    - word: "sa-2121"
+      forms: { "stem": "गृह्य", "m3-sg": "गृह्यते", "m3-du": "गृह्येते", "m3-pl": "गृह्यन्ते", "m2-sg": "गृह्यसे", "m2-du": "गृह्येथे", "m2-pl": "गृह्यध्वे", "m1-sg": "गृह्ये", "m1-du": "गृह्यावहे", "m1-pl": "गृह्यामहे" }
+      readings: { "stem": "gṛhya", "m3-sg": "gṛhyate", "m3-du": "gṛhyete", "m3-pl": "gṛhyante", "m2-sg": "gṛhyase", "m2-du": "gṛhyethe", "m2-pl": "gṛhyadhve", "m1-sg": "gṛhye", "m1-du": "gṛhyāvahe", "m1-pl": "gṛhyāmahe" }
+    - word: "sa-2122"
+      forms: { "stem": "कथ्य", "m3-sg": "कथ्यते", "m3-du": "कथ्येते", "m3-pl": "कथ्यन्ते", "m2-sg": "कथ्यसे", "m2-du": "कथ्येथे", "m2-pl": "कथ्यध्वे", "m1-sg": "कथ्ये", "m1-du": "कथ्यावहे", "m1-pl": "कथ्यामहे" }
+      readings: { "stem": "kathya", "m3-sg": "kathyate", "m3-du": "kathyete", "m3-pl": "kathyante", "m2-sg": "kathyase", "m2-du": "kathyethe", "m2-pl": "kathyadhve", "m1-sg": "kathye", "m1-du": "kathyāvahe", "m1-pl": "kathyāmahe" }
+    - word: "sa-2123"
+      forms: { "stem": "पूज्य", "m3-sg": "पूज्यते", "m3-du": "पूज्येते", "m3-pl": "पूज्यन्ते", "m2-sg": "पूज्यसे", "m2-du": "पूज्येथे", "m2-pl": "पूज्यध्वे", "m1-sg": "पूज्ये", "m1-du": "पूज्यावहे", "m1-pl": "पूज्यामहे" }
+      readings: { "stem": "pūjya", "m3-sg": "pūjyate", "m3-du": "pūjyete", "m3-pl": "pūjyante", "m2-sg": "pūjyase", "m2-du": "pūjyethe", "m2-pl": "pūjyadhve", "m1-sg": "pūjye", "m1-du": "pūjyāvahe", "m1-pl": "pūjyāmahe" }
+rules:
+  - id: "sa-rule-passive-stem"
+    slots: ["stem"]
+    words: [{ word: "सार्वधातुके यक्", reading: "sārvadhātuke yak" }, { word: "भाव-कर्मणोः", reading: "bhāva-karmaṇoḥ" }, { word: "कृ", reading: "kṛ" }, { word: "क्रिय", reading: "kriya" }, { word: "वद्", reading: "vad" }, { word: "उद्य", reading: "udya" }, { word: "वह्", reading: "vah" }, { word: "उह्य", reading: "uhya" }, { word: "वस्", reading: "vas" }, { word: "उष्य", reading: "uṣya" }, { word: "ग्रह्", reading: "grah" }, { word: "गृह्य", reading: "gṛhya" }, { word: "ह्वे", reading: "hve" }, { word: "हूय", reading: "hūya" }, { word: "जि", reading: "ji" }, { word: "जीय", reading: "jīya" }, { word: "श्रु", reading: "śru" }, { word: "श्रूय", reading: "śrūya" }, { word: "भू", reading: "bhū" }, { word: "भूय", reading: "bhūya" }, { word: "दा", reading: "dā" }, { word: "दीय", reading: "dīya" }, { word: "धा", reading: "dhā" }, { word: "धीय", reading: "dhīya" }, { word: "पा", reading: "pā" }, { word: "पीय", reading: "pīya" }, { word: "ज्ञा", reading: "jñā" }, { word: "ज्ञाय", reading: "jñāya" }, { word: "हृ", reading: "hṛ" }, { word: "ह्रिय", reading: "hriya" }, { word: "धृ", reading: "dhṛ" }, { word: "ध्रिय", reading: "dhriya" }, { word: "स्मृ", reading: "smṛ" }, { word: "स्मर्य", reading: "smarya" }, { word: "खाय", reading: "khāya" }, { word: "खन्य", reading: "khanya" }, { word: "कथ्य", reading: "kathya" }]
+  - id: "sa-rule-passive-third"
+    slots: ["m3-sg", "m3-du", "m3-pl"]
+    words: [{ word: "मया क्षीरं पीयते", reading: "mayā kṣīraṃ pīyate" }, { word: "मः अनुस्वारः", reading: "maḥ anusvāraḥ" }, { word: "लः कर्मणि च भावे च अकर्मकेभ्यः", reading: "laḥ karmaṇi ca bhāve ca akarmakebhyaḥ" }, { word: "मया गम्यते", reading: "mayā gamyate" }, { word: "कृ", reading: "kṛ" }, { word: "क्रियते", reading: "kriyate" }, { word: "क्रियेते", reading: "kriyete" }, { word: "क्रियन्ते", reading: "kriyante" }]
+  - id: "sa-rule-passive-second"
+    slots: ["m2-sg", "m2-du", "m2-pl"]
+    words: [{ word: "कृ", reading: "kṛ" }, { word: "क्रियसे", reading: "kriyase" }, { word: "क्रियेथे", reading: "kriyethe" }, { word: "क्रियध्वे", reading: "kriyadhve" }, { word: "त्वं क्रियसे", reading: "tvaṃ kriyase" }, { word: "त्वया क्रियते", reading: "tvayā kriyate" }]
+  - id: "sa-rule-passive-first"
+    slots: ["m1-sg", "m1-du", "m1-pl"]
+    words: [{ word: "कृ", reading: "kṛ" }, { word: "क्रिये", reading: "kriye" }, { word: "क्रियावहे", reading: "kriyāvahe" }, { word: "क्रियामहे", reading: "kriyāmahe" }]

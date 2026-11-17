@@ -1,0 +1,57 @@
+schema: 1
+id: "sa-en-reading-time"
+name: "Reading: time"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-time-text-1"
+    title: "Morning, evening, night"
+    theme: "time"
+    sentences:
+      - { text: "प्रातः पिता पठति सायं च माता गायति.", reading: "prātaḥ pitā paṭhati sāyaṃ ca mātā gāyati.", ipa: "praːt̪əh pit̪aː pəʈʰət̪i saːjəm tʃə maːt̪aː ɡaːjət̪i" }
+      - { text: "अधुना वयं पठामो रात्रौ च न पठामः.", reading: "adhunā vayaṃ paṭhāmo rātrau ca na paṭhāmaḥ.", ipa: "əd̪ʱunaː ʋəjəm pəʈʰaːmoː raːt̪rəu tʃə nə pəʈʰaːməh" }
+      - { text: "अधुना सा गायति चिरं च सखा हसति.", reading: "adhunā sā gāyati ciraṃ ca sakhā hasati.", ipa: "əd̪ʱunaː saː ɡaːjət̪i tʃirəm tʃə səkʰaː ɦəsət̪i" }
+      - { text: "चिरं सखा पठति सायं च भ्राता खादति.", reading: "ciraṃ sakhā paṭhati sāyaṃ ca bhrātā khādati.", ipa: "tʃirəm səkʰaː pəʈʰət̪i saːjəm tʃə bʱraːt̪aː kʰaːd̪ət̪i" }
+    questions:
+      - id: "sa-3459"
+        prompt: { en: "When does mother sing?" }
+        options: [{ en: "In the evening" }, { en: "In the morning" }, { en: "At night" }]
+        answer: 1
+      - id: "sa-3460"
+        prompt: { en: "'We' read at night." }
+        answer: false
+      - id: "sa-3461"
+        prompt: { en: "Who eats in the evening?" }
+        options: [{ en: "The friend" }, { en: "The brother" }, { en: "Father" }]
+        answer: 2
+      - id: "sa-3462"
+        prompt: { en: "The friend laughs for a long time." }
+        answer: true
+  - id: "sa-time-text-2"
+    title: "Rain and night"
+    theme: "time"
+    sentences:
+      - { text: "वर्षा जलं नयति निशा च शीता भवति.", reading: "varṣā jalaṃ nayati niśā ca śītā bhavati.", ipa: "ʋərʂaː dʒələm nəjət̪i niʃaː tʃə ʃiːt̪aː bʱəʋət̪i" }
+      - { text: "रात्रौ वर्षा शीता भवति प्रातः पिता च पठति.", reading: "rātrau varṣā śītā bhavati prātaḥ pitā ca paṭhati.", ipa: "raːt̪rəu ʋərʂaː ʃiːt̪aː bʱəʋət̪i praːt̪əh pit̪aː tʃə pəʈʰət̪i" }
+      - { text: "रात्रौ पिता कुत्र तिष्ठति?", reading: "rātrau pitā kutra tiṣṭhati?", ipa: "raːt̪rəu pit̪aː kut̪rə t̪iʂʈʰət̪i" }
+      - { text: "का वेला भवति पिता च कदा पठति?", reading: "kā velā bhavati pitā ca kadā paṭhati?", ipa: "kaː ʋeːlaː bʱəʋət̪i pit̪aː tʃə kəd̪aː pəʈʰət̪i" }
+    questions:
+      - id: "sa-3463"
+        prompt: { en: "What is cold in the first sentence?" }
+        options: [{ en: "The rain" }, { en: "The water" }, { en: "The night" }]
+        answer: 3
+      - id: "sa-3464"
+        prompt: { en: "When does father read in the second sentence?" }
+        options: [{ en: "In the morning" }, { en: "At night" }, { en: "In the evening" }]
+        answer: 1
+      - id: "sa-3465"
+        prompt: { en: "The rain brings water in the first sentence." }
+        answer: true
+      - id: "sa-3466"
+        prompt: { en: "Someone asks where mother stands at night." }
+        answer: false

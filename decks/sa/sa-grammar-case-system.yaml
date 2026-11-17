@@ -1,0 +1,44 @@
+schema: 1
+id: "sa-grammar-case-system"
+part: "core"
+kind: "rules"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+source: "Wikipedia, Sanskrit nouns (cases) and Whitney, Sanskrit Grammar chapter V (a-stems), read 2026-11-16; Panini, Astadhyayi 2.3 as typed on sa.wikisource.org/wiki/अष्टाध्यायी/द्वितीयः_अध्यायः, read 2026-11-16; forms from the en.wiktionary.org declension table of राम (rama)."
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["noun"]
+    tags: ["case-model"]
+  slots: ["nom-sg", "nom-du", "nom-pl", "acc-sg", "acc-du", "acc-pl", "ins-sg", "ins-du", "ins-pl", "dat-sg", "dat-du", "dat-pl", "abl-sg", "abl-du", "abl-pl", "gen-sg", "gen-du", "gen-pl", "loc-sg", "loc-du", "loc-pl", "voc-sg", "voc-du", "voc-pl"]
+  rows:
+    - word: "sa-4094"
+      forms: { "nom-sg": "रामः", "nom-du": "रामौ", "nom-pl": "रामाः", "acc-sg": "रामम्", "acc-du": "रामौ", "acc-pl": "रामान्", "ins-sg": "रामेण", "ins-du": "रामाभ्याम्", "ins-pl": "रामैः", "dat-sg": "रामाय", "dat-du": "रामाभ्याम्", "dat-pl": "रामेभ्यः", "abl-sg": "रामात्", "abl-du": "रामाभ्याम्", "abl-pl": "रामेभ्यः", "gen-sg": "रामस्य", "gen-du": "रामयोः", "gen-pl": "रामाणाम्", "loc-sg": "रामे", "loc-du": "रामयोः", "loc-pl": "रामेषु", "voc-sg": "राम", "voc-du": "रामौ", "voc-pl": "रामाः" }
+      readings: { "nom-sg": "rāmaḥ", "nom-du": "rāmau", "nom-pl": "rāmāḥ", "acc-sg": "rāmam", "acc-du": "rāmau", "acc-pl": "rāmān", "ins-sg": "rāmeṇa", "ins-du": "rāmābhyām", "ins-pl": "rāmaiḥ", "dat-sg": "rāmāya", "dat-du": "rāmābhyām", "dat-pl": "rāmebhyaḥ", "abl-sg": "rāmāt", "abl-du": "rāmābhyām", "abl-pl": "rāmebhyaḥ", "gen-sg": "rāmasya", "gen-du": "rāmayoḥ", "gen-pl": "rāmāṇām", "loc-sg": "rāme", "loc-du": "rāmayoḥ", "loc-pl": "rāmeṣu", "voc-sg": "rāma", "voc-du": "rāmau", "voc-pl": "rāmāḥ" }
+rules:
+  - id: "sa-rule-nominative"
+    slots: ["nom-sg", "nom-du", "nom-pl"]
+    words: [{ word: "प्रथमा", reading: "prathamā" }, { word: "रामः", reading: "rāmaḥ" }, { word: "रामौ", reading: "rāmau" }, { word: "रामाः", reading: "rāmāḥ" }, { word: "प्रातिपदिक अर्थलिङ्गपरिमाणवचनमात्रे प्रथमा", reading: "prātipadika arthaliṅgaparimāṇavacanamātre prathamā" }]
+  - id: "sa-rule-accusative"
+    slots: ["acc-sg", "acc-du", "acc-pl"]
+    words: [{ word: "द्वितीया", reading: "dvitīyā" }, { word: "रामम्", reading: "rāmam" }, { word: "रामौ", reading: "rāmau" }, { word: "रामान्", reading: "rāmān" }, { word: "कर्मणि द्वितीया", reading: "karmaṇi dvitīyā" }]
+  - id: "sa-rule-instrumental"
+    slots: ["ins-sg", "ins-du", "ins-pl"]
+    words: [{ word: "तृतीया", reading: "tṛtīyā" }, { word: "रामेण", reading: "rāmeṇa" }, { word: "रामाभ्याम्", reading: "rāmābhyām" }, { word: "रामैः", reading: "rāmaiḥ" }, { word: "करणयोः तृतीया", reading: "karaṇayoḥ tṛtīyā" }]
+  - id: "sa-rule-dative"
+    slots: ["dat-sg", "dat-du", "dat-pl"]
+    words: [{ word: "चतुर्थी", reading: "caturthī" }, { word: "रामाय", reading: "rāmāya" }, { word: "रामाभ्याम्", reading: "rāmābhyām" }, { word: "रामेभ्यः", reading: "rāmebhyaḥ" }, { word: "चतुर्थी सम्प्रदाने", reading: "caturthī sampradāne" }]
+  - id: "sa-rule-ablative"
+    slots: ["abl-sg", "abl-du", "abl-pl"]
+    words: [{ word: "पञ्चमी", reading: "pañcamī" }, { word: "रामात्", reading: "rāmāt" }, { word: "रामाभ्याम्", reading: "rāmābhyām" }, { word: "रामेभ्यः", reading: "rāmebhyaḥ" }, { word: "अपादाने पञ्चमी", reading: "apādāne pañcamī" }]
+  - id: "sa-rule-genitive"
+    slots: ["gen-sg", "gen-du", "gen-pl"]
+    words: [{ word: "षष्ठी", reading: "ṣaṣṭhī" }, { word: "रामस्य", reading: "rāmasya" }, { word: "रामयोः", reading: "rāmayoḥ" }, { word: "रामाणाम्", reading: "rāmāṇām" }, { word: "षष्ठी शेषे", reading: "ṣaṣṭhī śeṣe" }]
+  - id: "sa-rule-locative"
+    slots: ["loc-sg", "loc-du", "loc-pl"]
+    words: [{ word: "सप्तमी", reading: "saptamī" }, { word: "रामे", reading: "rāme" }, { word: "रामयोः", reading: "rāmayoḥ" }, { word: "रामेषु", reading: "rāmeṣu" }, { word: "सप्तमी अधिकरणे", reading: "saptamī adhikaraṇe" }]
+  - id: "sa-rule-vocative"
+    slots: ["voc-sg", "voc-du", "voc-pl"]
+    words: [{ word: "सम्बोधन", reading: "sambodhana" }, { word: "राम", reading: "rāma" }, { word: "रामौ", reading: "rāmau" }, { word: "रामाः", reading: "rāmāḥ" }, { word: "सम्बोधने च", reading: "sambodhane ca" }]

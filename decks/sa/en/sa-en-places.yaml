@@ -1,0 +1,408 @@
+schema: 1
+id: "sa-en-places"
+kind: "layer"
+core: "sa-places"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places"
+description: "Places: villages, cities, nature and the buildings of a town."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1759":
+    native: "Village."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is ग्राम (grāma); the card shows the isolated nominative singular ग्रामः (grāmaḥ)."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign. A final अः (aḥ) before a voiced consonant becomes ओ (o) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114). A final अः (aḥ) before अ (a) becomes ओ (o) and the अ (a) is shown by the sign ऽ (avagraha) (Whitney 175 a)."
+    bases:
+      "ग्रामः": "village"
+    examples:
+      "ग्रामो विशालः":
+        native: "The village is large."
+        bases:
+          "ग्रामो": "village"
+          "विशालः": "large"
+      "नद्यां ग्रामो ऽस्ति":
+        native: "There is a village on the river."
+        bases:
+          "नद्यां": "river (locative)"
+          "ग्रामो": "village"
+          "ऽस्ति": "is"
+  "sa-1760":
+    native: "City."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is नगर (nagara); the card shows the isolated nominative singular नगरम् (nagaram)."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign. Before a vowel the final म् (m) stays and is not joined to the next word: written apart, sandhi not applied (Whitney 213 a)."
+    bases:
+      "नगरम्": "city"
+    examples:
+      "नगरं विशालम्":
+        native: "The city is large."
+        bases:
+          "नगरं": "city"
+          "विशालम्": "large"
+      "नद्यां नगरम् अस्ति":
+        native: "There is a city on the river."
+        bases:
+          "नद्यां": "river (locative)"
+          "नगरम्": "city"
+          "अस्ति": "is"
+  "sa-1761":
+    native: "Forest."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is वन (vana); the card shows the isolated nominative singular वनम् (vanam)."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign. Before a vowel the final म् (m) stays and is not joined to the next word: written apart, sandhi not applied (Whitney 213 a)."
+    bases:
+      "वनम्": "forest"
+    examples:
+      "वनं सुन्दरम्":
+        native: "The forest is beautiful."
+        bases:
+          "वनं": "forest"
+          "सुन्दरम्": "beautiful"
+      "ग्रामे वनम् अस्ति":
+        native: "There is a forest by the village."
+        bases:
+          "ग्रामे": "village (locative)"
+          "वनम्": "forest"
+          "अस्ति": "is"
+  "sa-1762":
+    native: "River."
+    notes:
+      "n1": "A feminine ī-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
+      "n2": "The dictionary stem is नदी (nadī); the card shows the isolated nominative singular नदी (nadī)."
+    bases:
+      "नदी": "river"
+    examples:
+      "नदी दीर्घा":
+        native: "The river is long."
+        bases:
+          "नदी": "river"
+          "दीर्घा": "long"
+      "अस्ति वने नदी":
+        native: "There is a river in the forest."
+        bases:
+          "अस्ति": "is"
+          "वने": "forest (locative)"
+          "नदी": "river"
+  "sa-1763":
+    native: "Mountain."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is पर्वत (parvata); the card shows the isolated nominative singular पर्वतः (parvataḥ)."
+      "n3": "A final अः (aḥ) before अ (a) becomes ओ (o) and the अ (a) is shown by the sign ऽ (avagraha) (Whitney 175 a). A final अः (aḥ) before a vowel other than अ (a) loses its visarga and the vowels stay apart (Whitney 175 c)."
+    bases:
+      "पर्वतः": "mountain"
+    examples:
+      "पर्वत उच्चः":
+        native: "The mountain is high."
+        bases:
+          "पर्वत": "mountain"
+          "उच्चः": "high"
+      "मरौ पर्वतो ऽस्ति":
+        native: "There is a mountain in the desert."
+        bases:
+          "मरौ": "desert (locative)"
+          "पर्वतो": "mountain"
+          "ऽस्ति": "is"
+  "sa-1764":
+    native: "Sea."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is सागर (sāgara); the card shows the isolated nominative singular सागरः (sāgaraḥ)."
+      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114). A final अः (aḥ) before अ (a) becomes ओ (o) and the अ (a) is shown by the sign ऽ (avagraha) (Whitney 175 a)."
+    bases:
+      "सागरः": "sea"
+    examples:
+      "सागरो गभीरः":
+        native: "The sea is deep."
+        bases:
+          "सागरो": "sea"
+          "गभीरः": "deep"
+      "सागरे मत्स्यो ऽस्ति":
+        native: "There is a fish in the sea."
+        bases:
+          "सागरे": "sea (locative)"
+          "मत्स्यो": "fish"
+          "ऽस्ति": "is"
+  "sa-1765":
+    native: "Ocean."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is समुद्र (samudra); the card shows the isolated nominative singular समुद्रः (samudraḥ)."
+      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114). A final अः (aḥ) before अ (a) becomes ओ (o) and the अ (a) is shown by the sign ऽ (avagraha) (Whitney 175 a)."
+    bases:
+      "समुद्रः": "ocean"
+    examples:
+      "समुद्रो विशालः":
+        native: "The ocean is vast."
+        bases:
+          "समुद्रो": "ocean"
+          "विशालः": "large"
+      "समुद्रे द्वीपो ऽस्ति":
+        native: "There is an island in the ocean."
+        bases:
+          "समुद्रे": "ocean (locative)"
+          "द्वीपो": "island"
+          "ऽस्ति": "is"
+  "sa-1766":
+    native: "Pond."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is तडाग (taḍāga); the card shows the isolated nominative singular तडागम् (taḍāgam)."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign. Before a vowel the final म् (m) stays and is not joined to the next word: written apart, sandhi not applied (Whitney 213 a)."
+    bases:
+      "तडागम्": "pond"
+    examples:
+      "तडागं शीतलम्":
+        native: "The pond is cool."
+        bases:
+          "तडागं": "pond"
+          "शीतलम्": "cold"
+      "उद्याने तडागम् अस्ति":
+        native: "There is a pond in the garden."
+        bases:
+          "उद्याने": "garden (locative)"
+          "तडागम्": "pond"
+          "अस्ति": "is"
+  "sa-1767":
+    native: "Park, garden."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is उद्यान (udyāna); the card shows the isolated nominative singular उद्यानम् (udyānam)."
+      "n3": "Before a consonant the final म् (m) is written ं (ṃ), as in उद्यानं (udyānaṃ) from उद्यानम् (udyānam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    bases:
+      "उद्यानम्": "park, garden"
+    examples:
+      "उद्यानं सुन्दरम्":
+        native: "The garden is beautiful."
+        bases:
+          "उद्यानं": "park, garden"
+          "सुन्दरम्": "beautiful"
+      "उद्यानं भवति ग्रामे":
+        native: "There is a garden in the village."
+        bases:
+          "उद्यानं": "park, garden"
+          "भवति": "is"
+          "ग्रामे": "village (locative)"
+  "sa-1768":
+    native: "Market."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is आपण (āpaṇa); the card shows the isolated nominative singular आपणः (āpaṇaḥ)."
+      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o), as in आपणो (āpaṇo) from आपणः (āpaṇaḥ) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114)."
+    bases:
+      "आपणः": "market"
+    examples:
+      "आपणो विशालः":
+        native: "The market is large."
+        bases:
+          "आपणो": "market"
+          "विशालः": "large"
+      "आपणो भवति नगरे":
+        native: "There is a market in the city."
+        bases:
+          "आपणो": "market"
+          "भवति": "is"
+          "नगरे": "city (locative)"
+  "sa-1769":
+    native: "Temple."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is मन्दिर (mandira); the card shows the isolated nominative singular मन्दिरम् (mandiram)."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign. Before a vowel the final म् (m) stays and is not joined to the next word: written apart, sandhi not applied (Whitney 213 a)."
+    bases:
+      "मन्दिरम्": "temple"
+    examples:
+      "मन्दिरं सुन्दरम्":
+        native: "The temple is beautiful."
+        bases:
+          "मन्दिरं": "temple"
+          "सुन्दरम्": "beautiful"
+      "नगरे मन्दिरम् अस्ति":
+        native: "There is a temple in the city."
+        bases:
+          "नगरे": "city (locative)"
+          "मन्दिरम्": "temple"
+          "अस्ति": "is"
+  "sa-1770":
+    native: "School."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is विद्यालय (vidyālaya); the card shows the isolated nominative singular विद्यालयः (vidyālayaḥ)."
+      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114). A final अः (aḥ) before अ (a) becomes ओ (o) and the अ (a) is shown by the sign ऽ (avagraha) (Whitney 175 a)."
+    bases:
+      "विद्यालयः": "school"
+    examples:
+      "विद्यालयो नवः":
+        native: "The school is new."
+        bases:
+          "विद्यालयो": "school"
+          "नवः": "new"
+      "नगरे विद्यालयो ऽस्ति":
+        native: "There is a school in the city."
+        bases:
+          "नगरे": "city (locative)"
+          "विद्यालयो": "school"
+          "ऽस्ति": "is"
+  "sa-1771":
+    native: "Capital."
+    notes:
+      "n1": "A feminine ī-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
+      "n2": "The dictionary stem is राजधानी (rājadhānī); the card shows the isolated nominative singular राजधानी (rājadhānī)."
+      "n3": "Before a consonant the final म् (m) is written ं (ṃ), as in नद्यां (nadyāṃ) from नद्याम् (nadyām) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    bases:
+      "राजधानी": "capital"
+    examples:
+      "राजधानी विशाला":
+        native: "The capital is vast."
+        bases:
+          "राजधानी": "capital"
+          "विशाला": "large"
+      "अस्ति नद्यां राजधानी":
+        native: "There is a capital on the river."
+        bases:
+          "अस्ति": "is"
+          "नद्यां": "river (locative)"
+          "राजधानी": "capital"
+  "sa-1772":
+    native: "Cave."
+    notes:
+      "n1": "A feminine ā-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
+      "n2": "The dictionary stem is गुहा (guhā); the card shows the isolated nominative singular गुहा (guhā)."
+    bases:
+      "गुहा": "cave"
+    examples:
+      "गुहा गभीरा":
+        native: "The cave is deep."
+        bases:
+          "गुहा": "cave"
+          "गभीरा": "deep"
+      "अस्ति पर्वते गुहा":
+        native: "There is a cave in the mountain."
+        bases:
+          "अस्ति": "is"
+          "पर्वते": "mountain (locative)"
+          "गुहा": "cave"
+  "sa-1773":
+    native: "Desert."
+    notes:
+      "n1": "A u-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
+      "n2": "The dictionary stem is मरु (maru); the card shows the isolated nominative singular मरुः (maruḥ)."
+      "n3": "A final अः (aḥ) before अ (a) becomes ओ (o) and the अ (a) is shown by the sign ऽ (avagraha) (Whitney 175 a). A final visarga after a vowel other than अ (a) or आ (ā) becomes र् (r) before a voiced consonant or a vowel (Whitney 174)."
+    bases:
+      "मरुः": "desert"
+    examples:
+      "मरुर् विशालः":
+        native: "The desert is vast."
+        bases:
+          "मरुर्": "desert"
+          "विशालः": "large"
+      "मरौ कूपो ऽस्ति":
+        native: "There is a well in the desert."
+        bases:
+          "मरौ": "desert (locative)"
+          "कूपो": "well"
+          "ऽस्ति": "is"
+  "sa-1774":
+    native: "Island."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is द्वीप (dvīpa); the card shows the isolated nominative singular द्वीपः (dvīpaḥ)."
+      "n3": "A final अः (aḥ) before अ (a) becomes ओ (o) and the अ (a) is shown by the sign ऽ (avagraha) (Whitney 175 a)."
+    bases:
+      "द्वीपः": "island"
+    examples:
+      "द्वीपः सुन्दरः":
+        native: "The island is beautiful."
+        bases:
+          "द्वीपः": "island"
+          "सुन्दरः": "beautiful"
+      "सागरे द्वीपो ऽस्ति":
+        native: "There is an island in the sea."
+        bases:
+          "सागरे": "sea (locative)"
+          "द्वीपो": "island"
+          "ऽस्ति": "is"
+  "sa-1775":
+    native: "Holy place, ford."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is तीर्थ (tīrtha); the card shows the isolated nominative singular तीर्थम् (tīrtham)."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign. Before a vowel the final म् (m) stays and is not joined to the next word: written apart, sandhi not applied (Whitney 213 a)."
+    bases:
+      "तीर्थम्": "holy place, ford"
+    examples:
+      "तीर्थं पवित्रम्":
+        native: "The holy place is sacred."
+        bases:
+          "तीर्थं": "holy place, ford"
+          "पवित्रम्": "sacred"
+      "नद्यां तीर्थम् अस्ति":
+        native: "There is a holy ford in the river."
+        bases:
+          "नद्यां": "river (locative)"
+          "तीर्थम्": "holy place, ford"
+          "अस्ति": "is"
+  "sa-1776":
+    native: "Lake."
+    notes:
+      "n1": "An s-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
+      "n2": "The dictionary stem is सरस् (saras); the card shows the isolated nominative singular सरः (saraḥ)."
+      "n3": "A final अः (aḥ) before अ (a) becomes ओ (o) and the अ (a) is shown by the sign ऽ (avagraha) (Whitney 175 a)."
+    bases:
+      "सरः": "lake"
+    examples:
+      "सरः शीतलम्":
+        native: "The lake is cool."
+        bases:
+          "सरः": "lake"
+          "शीतलम्": "cold"
+      "ग्रामे सरो ऽस्ति":
+        native: "There is a lake in the village."
+        bases:
+          "ग्रामे": "village (locative)"
+          "सरो": "lake"
+          "ऽस्ति": "is"
+  "sa-1777":
+    native: "Field."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is क्षेत्र (kṣetra); the card shows the isolated nominative singular क्षेत्रम् (kṣetram)."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign. Before a vowel the final म् (m) stays and is not joined to the next word: written apart, sandhi not applied (Whitney 213 a)."
+    bases:
+      "क्षेत्रम्": "field"
+    examples:
+      "क्षेत्रं विशालम्":
+        native: "The field is vast."
+        bases:
+          "क्षेत्रं": "field"
+          "विशालम्": "large"
+      "ग्रामे क्षेत्रम् अस्ति":
+        native: "There is a field in the village."
+        bases:
+          "ग्रामे": "village (locative)"
+          "क्षेत्रम्": "field"
+          "अस्ति": "is"
+  "sa-1778":
+    native: "Hermitage."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is आश्रम (āśrama); the card shows the isolated nominative singular आश्रमः (āśramaḥ)."
+      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o), as in आश्रमो (āśramo) from आश्रमः (āśramaḥ) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114)."
+    bases:
+      "आश्रमः": "hermitage"
+    examples:
+      "आश्रमः शान्तः":
+        native: "The hermitage is calm."
+        bases:
+          "आश्रमः": "hermitage"
+          "शान्तः": "calm"
+      "आश्रमो भवति वने":
+        native: "There is a hermitage in the forest."
+        bases:
+          "आश्रमो": "hermitage"
+          "भवति": "is"
+          "वने": "forest (locative)"
