@@ -1,0 +1,49 @@
+schema: 1
+id: "ja-en-medicine-pharmacy"
+kind: "layer"
+core: "ja-medicine-pharmacy"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Medicine: at the pharmacy"
+license: "CC-BY-SA-4.0"
+description: "Phrases a pharmacist says at the counter: the prescription, how to take the medicine, and when to ask a doctor."
+cards:
+  "ja-7511":
+    native: "I will take your prescription."
+    notes: { n1: "おあずかりします (oazukarishimasu) is the humble form (お (o) plus the verb stem plus します (shimasu)) of あずかる (azukaru): the speaker lowers their own action out of respect for the customer." }
+    bases: { "を": { meaning: "(marks the object)" } }
+  "ja-7512":
+    native: "Do you have your medication notebook with you?"
+    notes: { n1: "おくすりてちょう (okusuritechou) is a small booklet that a person takes to every pharmacy. おもちですか (omochi desu ka) is the honorific way to ask whether someone has something." }
+    bases: { "おくすりてちょう": { meaning: "medication notebook (a record of the medicines a person takes)" }, "は": { meaning: "(marks the topic)" }, "です": { meaning: "to be (polite)" }, "か": { meaning: "(makes a question)" } }
+  "ja-7513":
+    native: "Please wait a moment."
+    notes: { n1: "おまちください (omachi kudasai) is the polite request form of まつ (matsu) (to wait)." }
+    bases: { "ください": { meaning: "to give (honorific); with a verb, please do" } }
+  "ja-7514":
+    native: "Please take it three times a day, after meals."
+    notes: { n1: "This is the standard instruction on a Japanese prescription: いちにちさんかい (ichinichi sankai) is three times a day and しょくご (shokugo) is after meals." }
+    bases: { "いちにち": { meaning: "one day" }, "さんかい": { meaning: "three times" }, "しょくご": { meaning: "after a meal" }, "に": { meaning: "(marks a time, a place or a target)" }, "ください": { meaning: "to give (honorific); with a verb, please do" } }
+  "ja-7515":
+    native: "Please take it before going to bed."
+    notes: { n1: "まえに (mae ni) after a dictionary-form verb means before doing it: ねるまえに (neru mae ni) is before sleeping." }
+    bases: { "に": { meaning: "(marks a time, a place or a target)" }, "ください": { meaning: "to give (honorific); with a verb, please do" } }
+  "ja-7516":
+    native: "Are you taking any other medicine?"
+    notes: { n1: "のんでいる (nonde iru) is the continuing form and means is taking (a medicine regularly). ほか (hoka) means other." }
+    bases: { "に": { meaning: "(marks a time, a place or a target)" }, "いる": { meaning: "to be, to stay (for living things); after a verb, a continuing action" }, "は": { meaning: "(marks the topic)" }, "あります": { meaning: "to be, to have (for things)" }, "か": { meaning: "(makes a question)" } }
+  "ja-7517":
+    native: "Please take it with water."
+    notes: { n1: "で (de) marks the means: みずで (mizu de) is with water. The pharmacist may add お (o) before the noun for politeness." }
+    bases: { "で": { meaning: "(marks the means, the place or the total)" }, "ください": { meaning: "to give (honorific); with a verb, please do" } }
+  "ja-7518":
+    native: "The medicine is for seven days."
+    notes: { n1: "ぶん (bun) after a number of days means that many days' worth: なのかぶん (nanokabun) is seven days' worth." }
+    bases: { "は": { meaning: "(marks the topic)" }, "なのかぶん": { meaning: "seven days' worth" }, "です": { meaning: "to be (polite)" } }
+  "ja-7519":
+    native: "If you feel worse, please consult a doctor."
+    notes: { n1: "なったら (nattara) means if it becomes: it is the conditional of なる (naru). ぐあいがわるい (guai ga warui) means to feel unwell." }
+    bases: { "が": { meaning: "(marks the subject)" }, "に": { meaning: "(marks a time, a place or a target)" }, "ください": { meaning: "to give (honorific); with a verb, please do" } }
+  "ja-7520":
+    native: "That will be 300 yen in total."
+    notes: { n1: "ぜんぶで (zenbu de) means in total. さんびゃく (sanbyaku) is 300; the counter えん (en) (yen) follows the number." }
+    bases: { "で": { meaning: "(marks the means, the place or the total)" }, "です": { meaning: "to be (polite)" } }

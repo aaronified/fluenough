@@ -1,0 +1,52 @@
+schema: 1
+id: "ja-en-medicine-clinic"
+kind: "layer"
+core: "ja-medicine-clinic"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Medicine: a clinic appointment"
+license: "CC-BY-SA-4.0"
+description: "Phrases a clinic receptionist, nurse or doctor says to a patient, in polite Japanese."
+cards:
+  "ja-7500":
+    native: "What seems to be the trouble?"
+    notes: { n1: "されました (saremashita) is the honorific form of しました (shimashita); a doctor or nurse uses どうされましたか (dou saremashita ka) to ask what brought the patient in. A plain どうしましたか (dou shimashita ka) is for friends or family." }
+    bases: { "か": { meaning: "(makes a question)" } }
+  "ja-7501":
+    native: "Please hand in your patient card."
+    notes: { n1: "The pattern おだしください (o dashi kudasai) (お (o), the verb stem, then ください (kudasai)) is the polite request staff use. A patient card (しんさつけん (shinsatsuken)) is the card a clinic gives to a returning patient." }
+    bases: { "しんさつけん": { meaning: "patient card (the card a clinic gives, with a number)" }, "を": { meaning: "(marks the object)" }, "ください": { meaning: "to give (honorific); with a verb, please do" } }
+  "ja-7502":
+    native: "Please show your health insurance card."
+    notes: { n1: "おみせください (omise kudasai) is the same polite request pattern, from みせる (miseru). In Japan the insurance card is shown at the clinic's reception." }
+    bases: { "を": { meaning: "(marks the object)" }, "ください": { meaning: "to give (honorific); with a verb, please do" } }
+  "ja-7503":
+    native: "Your name, please."
+    notes: { n1: "おなまえ (onamae) takes お (o) because it is the patient's name. Reception uses おねがいします (onegaishimasu) to ask for something politely." }
+    bases: { "を": { meaning: "(marks the object)" } }
+  "ja-7504":
+    native: "Where does it hurt?"
+    notes: { n1: "いたい (itai) is the adjective for pain: あたまがいたいです (atama ga itai desu) means My head hurts." }
+    bases: { "が": { meaning: "(marks the subject)" }, "です": { meaning: "to be (polite)" }, "か": { meaning: "(makes a question)" } }
+  "ja-7505":
+    native: "Since when does it hurt?"
+    notes: { n1: "から (kara) marks the starting point in time, so いつから (itsu kara) asks since when." }
+    bases: { "から": { meaning: "(from; starting at)" }, "です": { meaning: "to be (polite)" }, "か": { meaning: "(makes a question)" } }
+  "ja-7506":
+    native: "Do you have a fever?"
+    notes: { n1: "あります (arimasu) is used for things a person has, such as a fever or an allergy." }
+    bases: { "は": { meaning: "(marks the topic)" }, "あります": { meaning: "to be, to have (for things)" }, "か": { meaning: "(makes a question)" } }
+  "ja-7507":
+    native: "Do you have any drug allergies?"
+    notes: { n1: "アレルギー (arerugii) is a loanword and written in katakana. The staff always ask this before giving a prescription." }
+    bases: { "の": { meaning: "(links two nouns, like of)" }, "は": { meaning: "(marks the topic)" }, "あります": { meaning: "to be, to have (for things)" }, "か": { meaning: "(makes a question)" } }
+  "ja-7508":
+    native: "Please take a deep breath."
+    notes: { n1: "おおきく (ookiku) (big) is the adverb form of おおきい (ookii); すってください (sutte kudasai) is a polite request made with the te-form." }
+    bases: { "いき": { meaning: "breath" }, "を": { meaning: "(marks the object)" }, "すって": { meaning: "to breathe in, to inhale" }, "ください": { meaning: "to give (honorific); with a verb, please do" } }
+  "ja-7509":
+    native: "Please come again next week."
+    notes: { n1: "いらして (irashite) is the te-form of the honorific いらっしゃる (irassharu), used for the patient's coming. The honorific forms of くる (kuru) are taught in the sonkeigo unit." }
+    bases: { "ください": { meaning: "to give (honorific); with a verb, please do" } }
+  "ja-7510":
+    native: "Take care. (said to someone who is ill)"
+    notes: { n1: "おだいじに (odaijini) is what staff say when a patient leaves. It means take good care of your health and is said to people who are ill." }
