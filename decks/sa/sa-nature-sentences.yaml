@@ -1,0 +1,107 @@
+schema: 1
+id: "sa-nature-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3600"
+    target: "प्रवाहः पर्वतात् सागरं गच्छति."
+    reading: "pravāhaḥ parvatāt sāgaraṃ gacchati."
+    ipa: "prəʋaːɦəh pərʋət̪aːt̪ saːɡərəm ɡətʃtʃʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "प्रवाहः", ref: "sa-5060" }, { word: "पर्वतात्", base: "पर्वतः", reading: "parvataḥ" }, { word: "सागरं", base: "सागरः", reading: "sāgaraḥ" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-1766", kind: "word" }, { id: "w2", ref: "sa-1762", kind: "word" }, { id: "w3", ref: "sa-2011", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3601"
+    target: "पवनेन शुष्कं पर्णं चलति."
+    reading: "pavanena śuṣkaṃ parṇaṃ calati."
+    ipa: "pəʋəneːnə ʃuʂkəm pərɳəm tʃələt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पवनेन", base: "पवनः", reading: "pavanaḥ" }, { word: "शुष्कं", base: "शुष्कः", reading: "śuṣkaḥ" }, { word: "पर्णं", base: "पर्णम्", reading: "parṇam" }, { word: "चलति", base: "चल्", reading: "cal" }]
+    confusables: [{ id: "w1", ref: "sa-5057", kind: "word" }, { id: "w2", ref: "sa-1801", kind: "word" }, { id: "w3", ref: "sa-2009", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3602"
+    target: "रात्रौ चन्द्रस्य ज्योत्स्ना शुक्ला भवति."
+    reading: "rātrau candrasya jyotsnā śuklā bhavati."
+    ipa: "raːt̪rəu tʃənd̪rəsjə dʒjoːt̪snaː ʃuklaː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "रात्रौ", ref: "sa-1549" }, { word: "चन्द्रस्य", base: "चन्द्रः", reading: "candraḥ" }, { word: "ज्योत्स्ना", ref: "sa-5082" }, { word: "शुक्ला", base: "शुक्लः", reading: "śuklaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5012", kind: "word" }, { id: "w2", ref: "sa-1515", kind: "word" }, { id: "w3", ref: "sa-5014", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "sa-3603"
+    target: "पवनो मेघं दूरं नयति."
+    reading: "pavano meghaṃ dūraṃ nayati."
+    ipa: "pəʋənoː meːɡʱəm d̪uːrəm nəjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पवनो", base: "पवनः", reading: "pavanaḥ" }, { word: "मेघं", base: "मेघः", reading: "meghaḥ" }, { word: "दूरं", base: "दूरम्", reading: "dūram" }, { word: "नयति", base: "नी", reading: "nī" }]
+    confusables: [{ id: "w1", ref: "sa-2016", kind: "word" }, { id: "w2", ref: "sa-2015", kind: "word" }, { id: "w3", ref: "sa-5063", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3604"
+    target: "कमलं जले भवति शैले न भवति."
+    reading: "kamalaṃ jale bhavati śaile na bhavati."
+    ipa: "kəmələm dʒəleː bʱəʋət̪i ʃəileː nə bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कमलं", base: "कमलम्", reading: "kamalam" }, { word: "जले", base: "जलम्", reading: "jalam" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "शैले", base: "शैलः", reading: "śailaḥ" }, { word: "न", ref: "sa-0026" }]
+    confusables: [{ id: "w1", ref: "sa-5044", kind: "word" }, { id: "w2", ref: "sa-5035", kind: "word" }, { id: "w3", ref: "sa-5039", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3605"
+    target: "वृक्षो मूलेन जलं पिबति."
+    reading: "vṛkṣo mūlena jalaṃ pibati."
+    ipa: "ʋr̩kʂoː muːleːnə dʒələm pibət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वृक्षो", base: "वृक्षः", reading: "vṛkṣaḥ" }, { word: "मूलेन", base: "मूलम्", reading: "mūlam" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "पिबति", base: "पा", reading: "pā" }]
+    confusables: [{ id: "w1", ref: "sa-5003", kind: "word" }, { id: "w2", ref: "sa-2000", kind: "word" }, { id: "w3", ref: "sa-5030", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3606"
+    target: "उच्चस्य पर्वतस्य शिखरे हिमं भवति."
+    reading: "uccasya parvatasya śikhare himaṃ bhavati."
+    ipa: "utʃtʃəsjə pərʋət̪əsjə ʃikʰəreː ɦiməm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "उच्चस्य", base: "उच्चः", reading: "uccaḥ" }, { word: "पर्वतस्य", base: "पर्वतः", reading: "parvataḥ" }, { word: "शिखरे", base: "शिखरम्", reading: "śikharam" }, { word: "हिमं", base: "हिमम्", reading: "himam" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5026", kind: "word" }, { id: "w2", ref: "sa-5032", kind: "word" }, { id: "w3", ref: "sa-5009", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3607"
+    target: "तडागे जलम् अल्पं भवति सागरे जलं बहु भवति."
+    reading: "taḍāge jalam alpaṃ bhavati sāgare jalaṃ bahu bhavati."
+    ipa: "t̪əɖaːɡeː dʒələm əlpəm bʱəʋət̪i saːɡəreː dʒələm bəɦu bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "तडागे", base: "तडागम्", reading: "taḍāgam" }, { word: "जलम्", ref: "sa-0023" }, { word: "अल्पं", base: "अल्पः", reading: "alpaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "सागरे", base: "सागरः", reading: "sāgaraḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "बहु", ref: "sa-1096" }]
+    confusables: [{ id: "w1", ref: "sa-1506", kind: "word" }, { id: "w2", ref: "sa-5075", kind: "word" }, { id: "w3", ref: "sa-1505", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3608"
+    target: "सदा बीजाद् वृक्षो भवति."
+    reading: "sadā bījād vṛkṣo bhavati."
+    ipa: "səd̪aː biːdʒaːd̪ ʋr̩kʂoː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सदा", ref: "sa-1086" }, { word: "बीजाद्", base: "बीजम्", reading: "bījam" }, { word: "वृक्षो", base: "वृक्षः", reading: "vṛkṣaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-1722", kind: "word" }, { id: "w2", ref: "sa-5002", kind: "word" }, { id: "w3", ref: "sa-1087", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3609"
+    target: "सिंहः कानने वसति वानरो वृक्षे वसति."
+    reading: "siṃhaḥ kānane vasati vānaro vṛkṣe vasati."
+    ipa: "sĩɦəh kaːnəneː ʋəsət̪i ʋaːnəroː ʋr̩kʂeː ʋəsət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सिंहः", ref: "sa-1723" }, { word: "कानने", base: "काननम्", reading: "kānanam" }, { word: "वसति", base: "वस्", reading: "vas" }, { word: "वानरो", base: "वानरः", reading: "vānaraḥ" }, { word: "वृक्षे", base: "वृक्षः", reading: "vṛkṣaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1724", kind: "word" }, { id: "w2", ref: "sa-1730", kind: "word" }, { id: "w3", ref: "sa-5036", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3610"
+    target: "यदा मेघाद् वृष्टिः पतति तदा पृथिवी शीतला भवति."
+    reading: "yadā meghād vṛṣṭiḥ patati tadā pṛthivī śītalā bhavati."
+    ipa: "jəd̪aː meːɡʱaːd̪ ʋr̩ʂʈih pət̪ət̪i t̪əd̪aː pr̩t̪ʰiʋiː ʃiːt̪əlaː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "यदा", ref: "sa-1085" }, { word: "मेघाद्", base: "मेघः", reading: "meghaḥ" }, { word: "वृष्टिः", ref: "sa-5085" }, { word: "पतति", base: "पत्", reading: "pat" }, { word: "तदा", ref: "sa-1084" }, { word: "पृथिवी", ref: "sa-5016" }, { word: "शीतला", base: "शीतलः", reading: "śītalaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5087", kind: "word" }, { id: "w2", ref: "sa-1531", kind: "word" }, { id: "w3", ref: "sa-5069", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]

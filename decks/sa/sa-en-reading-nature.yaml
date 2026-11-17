@@ -1,0 +1,55 @@
+schema: 1
+id: "sa-en-reading-nature"
+name: "Reading: nature"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-nature-text-1"
+    title: "Stream, wind and rain"
+    theme: "nature"
+    sentences:
+      - { text: "प्रवाहः पर्वतात् सागरं गच्छति.", reading: "pravāhaḥ parvatāt sāgaraṃ gacchati.", ipa: "prəʋaːɦəh pərʋət̪aːt̪ saːɡərəm ɡətʃtʃʰət̪i" }
+      - { text: "पवनेन शुष्कं पर्णं चलति.", reading: "pavanena śuṣkaṃ parṇaṃ calati.", ipa: "pəʋəneːnə ʃuʂkəm pərɳəm tʃələt̪i" }
+      - { text: "पवनो मेघं दूरं नयति.", reading: "pavano meghaṃ dūraṃ nayati.", ipa: "pəʋənoː meːɡʱəm d̪uːrəm nəjət̪i" }
+      - { text: "यदा मेघाद् वृष्टिः पतति तदा पृथिवी शीतला भवति.", reading: "yadā meghād vṛṣṭiḥ patati tadā pṛthivī śītalā bhavati.", ipa: "jəd̪aː meːɡʱaːd̪ ʋr̩ʂʈih pət̪ət̪i t̪əd̪aː pr̩t̪ʰiʋiː ʃiːt̪əlaː bʱəʋət̪i" }
+    questions:
+      - id: "sa-3700"
+        prompt: { en: "What does the wind carry far away?" }
+        options: [{ en: "The leaf" }, { en: "The stream" }, { en: "The cloud" }]
+        answer: 3
+      - id: "sa-3701"
+        prompt: { en: "Which word means 'leaf'?" }
+        options: [{ en: "पर्णं (parṇaṃ)" }, { en: "मेघं (meghaṃ)" }, { en: "सागरं (sāgaraṃ)" }]
+        answer: 1
+      - id: "sa-3702"
+        prompt: { en: "How many sentences name the wind?" }
+        options: [{ en: "One" }, { en: "Two" }, { en: "Three" }]
+        answer: 2
+      - id: "sa-3703"
+        prompt: { en: "A dry leaf moves along with the stream." }
+        answer: false
+  - id: "sa-nature-text-2"
+    title: "Lotus, pond, peak and forest"
+    theme: "nature"
+    sentences:
+      - { text: "कमलं जले भवति शैले न भवति.", reading: "kamalaṃ jale bhavati śaile na bhavati.", ipa: "kəmələm dʒəleː bʱəʋət̪i ʃəileː nə bʱəʋət̪i" }
+      - { text: "तडागे जलम् अल्पं भवति सागरे जलं बहु भवति.", reading: "taḍāge jalam alpaṃ bhavati sāgare jalaṃ bahu bhavati.", ipa: "t̪əɖaːɡeː dʒələm əlpəm bʱəʋət̪i saːɡəreː dʒələm bəɦu bʱəʋət̪i" }
+      - { text: "उच्चस्य पर्वतस्य शिखरे हिमं भवति.", reading: "uccasya parvatasya śikhare himaṃ bhavati.", ipa: "utʃtʃəsjə pərʋət̪əsjə ʃikʰəreː ɦiməm bʱəʋət̪i" }
+      - { text: "सिंहः कानने वसति वानरो वृक्षे वसति.", reading: "siṃhaḥ kānane vasati vānaro vṛkṣe vasati.", ipa: "sĩɦəh kaːnəneː ʋəsət̪i ʋaːnəroː ʋr̩kʂeː ʋəsət̪i" }
+    questions:
+      - id: "sa-3704"
+        prompt: { en: "Where does the monkey live?" }
+        options: [{ en: "In the forest" }, { en: "In the tree" }, { en: "In the water" }]
+        answer: 2
+      - id: "sa-3705"
+        prompt: { en: "Which word means 'on the peak'?" }
+        options: [{ en: "शिखरे (śikhare)" }, { en: "जले (jale)" }, { en: "कानने (kānane)" }]
+        answer: 1
+      - id: "sa-3706"
+        prompt: { en: "There is little water in a pond." }
+        answer: true

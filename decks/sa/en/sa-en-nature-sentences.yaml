@@ -1,0 +1,65 @@
+schema: 1
+id: "sa-en-nature-sentences"
+kind: "layer"
+core: "sa-nature-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about nature"
+description: "Short sentences about nature, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3600":
+    native: "The stream goes from the mountain to the sea."
+    bases: { "पर्वतात्": "from the mountain", "सागरं": "sea", "गच्छति": "to go (goes)" }
+    confusables: { "w1": { why: "Pond, not sea: तडागम् (taḍāgam) means pond." }, "w2": { why: "River, not stream: नदी (nadī) means river." }, "w3": { why: "To walk, not to go: चल् (cal) means to walk." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. सागरम् (sāgaram) is written सागरं (sāgaraṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of गच्छति (gacchati) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "पर्वतात् (parvatāt) is the ablative case of पर्वतः (parvataḥ): it says from where. सागरम् (sāgaram) is the accusative case of सागरः (sāgaraḥ): it says the place that गच्छति (gacchati) goes to." }
+  "sa-3601":
+    native: "A dry leaf moves along with the wind."
+    bases: { "पवनेन": "with the wind", "शुष्कं": "dry", "पर्णं": "leaf", "चलति": "to move (moves)" }
+    confusables: { "w1": { why: "Wet, not dry: आर्द्रः (ārdraḥ) means wet." }, "w2": { why: "Flower, not leaf: पुष्पम् (puṣpam) means flower." }, "w3": { why: "To run, not to move: धाव् (dhāv) means to run." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. शुष्कम् (śuṣkam) is written शुष्कं (śuṣkaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of पर्णं (parṇaṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i). पर्णम् (parṇam) is written पर्णं (parṇaṃ), for the same reason, before चलति (calati).", "n2": "पवनेन (pavanena) is the instrumental case of पवनः (pavanaḥ): it says with what; the leaf moves along with the wind." }
+  "sa-3602":
+    native: "At night the moon's light is white."
+    bases: { "चन्द्रस्य": "of the moon", "शुक्ला": "white", "भवति": "to be (is)" }
+    confusables: { "w1": { why: "Sun, not moon: सूर्यः (sūryaḥ) means sun." }, "w2": { why: "Black, not white: कृष्णः (kṛṣṇaḥ) means black." }, "w3": { why: "Star, not moon: तारा (tārā) means star." } }
+    notes: { "n1": "रात्रौ (rātrau) means at night. चन्द्रस्य (candrasya) is the genitive case of चन्द्रः (candraḥ): of the moon. शुक्ला (śuklā) is the feminine form of शुक्लः (śuklaḥ), to agree with ज्योत्स्ना (jyotsnā), a feminine word." }
+  "sa-3603":
+    native: "The wind carries the cloud far away."
+    bases: { "पवनो": "wind", "मेघं": "cloud", "दूरं": "far", "नयति": "to lead (takes along)" }
+    confusables: { "w1": { why: "To carry off, not to lead: हृ (hṛ) means to carry off." }, "w2": { why: "To carry, not to lead: वह् (vah) means to carry." }, "w3": { why: "Breeze, not wind: समीरः (samīraḥ) means breeze." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. पवनः (pavanaḥ) is written पवनो (pavano) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of मेघं (meghaṃ) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). मेघम् (megham) is written मेघं (meghaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of दूरं (dūraṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). दूरम् (dūram) is written दूरं (dūraṃ), for the same reason, before नयति (nayati).", "n2": "नयति (nayati) is the present of नी (nī), which means to lead; here the wind takes the cloud along. दूरम् (dūram) is an adverb: far." }
+  "sa-3604":
+    native: "The lotus is in the water and not on the rock."
+    bases: { "कमलं": "lotus", "जले": "in the water", "भवति": "to be (is)", "शैले": "on the rock" }
+    confusables: { "w1": { why: "Water lily, not lotus: कुमुदम् (kumudam) means water lily." }, "w2": { why: "Mud, not water: पङ्कः (paṅkaḥ) means mud." }, "w3": { why: "Stone, not rock: पाषाणः (pāṣāṇaḥ) means stone." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. कमलम् (kamalam) is written कमलं (kamalaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of जले (jale) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "जले (jale) and शैले (śaile) are the locative case of जलम् (jalam) and शैलः (śailaḥ): they say where. न (na) stands right before the verb it denies: न (na) भवति (bhavati) means is not." }
+  "sa-3605":
+    native: "The tree drinks water with its root."
+    bases: { "वृक्षो": "tree", "मूलेन": "with its root", "जलं": "water", "पिबति": "to drink (drinks)" }
+    confusables: { "w1": { why: "Branch, not root: शाखा (śākhā) means branch." }, "w2": { why: "To eat, not to drink: खाद् (khād) means to eat." }, "w3": { why: "Leaf, not root: पर्णम् (parṇam) means leaf." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. वृक्षः (vṛkṣaḥ) is written वृक्षो (vṛkṣo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of मूलेन (mūlena) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). जलम् (jalam) is written जलं (jalaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of पिबति (pibati) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i).", "n2": "मूलेन (mūlena) is the instrumental case of मूलम् (mūlam): it says with what, here with its root." }
+  "sa-3606":
+    native: "There is snow on the peak of a high mountain."
+    bases: { "उच्चस्य": "of a high", "पर्वतस्य": "mountain's", "शिखरे": "on the peak", "हिमं": "snow", "भवति": "to be (is)" }
+    confusables: { "w1": { why: "Shore, not peak: तटः (taṭaḥ) means shore." }, "w2": { why: "Cave, not peak: कन्दरा (kandarā) means cave." }, "w3": { why: "Cloud, not snow: मेघः (meghaḥ) means cloud." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. हिमम् (himam) is written हिमं (himaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of भवति (bhavati) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i).", "n2": "उच्चस्य (uccasya) is the genitive case of उच्चः (uccaḥ), an adjective that agrees with पर्वतस्य (parvatasya), the genitive case of पर्वतः (parvataḥ): of a high mountain. शिखरे (śikhare) is the locative case of शिखरम् (śikharam): on the peak." }
+  "sa-3607":
+    native: "There is little water in a pond and much water in the sea."
+    bases: { "तडागे": "in the pond", "अल्पं": "little", "भवति": "to be (is)", "सागरे": "in the sea", "जलं": "water" }
+    confusables: { "w1": { why: "Full, not little: पूर्णः (pūrṇaḥ) means full." }, "w2": { why: "Lake, not pond: सरसी (sarasī) means lake." }, "w3": { why: "Less, not much: न्यूनः (nyūnaḥ) means less." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. अल्पम् (alpam) is written अल्पं (alpaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of भवति (bhavati) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i). जलम् (jalam) is written जलं (jalaṃ), for the same reason, before बहु (bahu).", "n2": "अल्पम् (alpam) is the neuter form of अल्पः (alpaḥ); it agrees with जलम् (jalam), a neuter word. बहु (bahu) says there is much. The verb भवति (bhavati) is said in each half." }
+  "sa-3608":
+    native: "A tree always comes from a seed."
+    bases: { "बीजाद्": "from a seed", "वृक्षो": "tree", "भवति": "to be (is)" }
+    confusables: { "w1": { why: "Bulb, not seed: कन्दः (kandaḥ) means bulb." }, "w2": { why: "Root, not seed: मूलम् (mūlam) means root." }, "w3": { why: "Sometimes, not always: कदाचित् (kadācit) means sometimes." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. बीजात् (bījāt) is written बीजाद् (bījād) because a final त् (t) becomes द् (d) before a voiced consonant, here the start of वृक्षो (vṛkṣo) (Aṣṭādhyāyī 8.2.39, झलां जशः अन्ते (jhalāṃ jaśaḥ ante); Whitney 159). वृक्षः (vṛkṣaḥ) is written वृक्षो (vṛkṣo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of भवति (bhavati) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)).", "n2": "बीजात् (bījāt) is the ablative case of बीजम् (bījam): it says the source, here a seed. सदा (sadā) means always." }
+  "sa-3609":
+    native: "The lion lives in the forest and the monkey lives in the tree."
+    bases: { "कानने": "in the forest", "वसति": "to dwell (lives)", "वानरो": "monkey", "वृक्षे": "in the tree" }
+    confusables: { "w1": { why: "Tiger, not lion: व्याघ्रः (vyāghraḥ) means tiger." }, "w2": { why: "Bear, not monkey: ऋक्षः (ṛkṣaḥ) means bear." }, "w3": { why: "Grove, not forest: उपवनम् (upavanam) means grove." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. वानरः (vānaraḥ) is written वानरो (vānaro) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of वृक्षे (vṛkṣe) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)).", "n2": "कानने (kānane) and वृक्षे (vṛkṣe) are the locative case of काननम् (kānanam) and वृक्षः (vṛkṣaḥ): they say where each one lives. वसति (vasati) is the present of वस् (vas) and is said in each half." }
+  "sa-3610":
+    native: "When rain falls from the cloud the earth becomes cool."
+    bases: { "मेघाद्": "from the cloud", "पतति": "to fall (falls)", "शीतला": "cool", "भवति": "to be (is)" }
+    confusables: { "w1": { why: "Dust, not rain: धूलिः (dhūliḥ) means dust." }, "w2": { why: "Hot, not cool: उष्णः (uṣṇaḥ) means hot." }, "w3": { why: "Water, not rain: तोयम् (toyam) means water." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. मेघात् (meghāt) is written मेघाद् (meghād) because a final त् (t) becomes द् (d) before a voiced consonant, here the start of वृष्टिः (vṛṣṭiḥ) (Aṣṭādhyāyī 8.2.39, झलां जशः अन्ते (jhalāṃ jaśaḥ ante); Whitney 159).", "n2": "यदा (yadā) and तदा (tadā) go as a pair: when ... then .... शीतला (śītalā) is the feminine form of शीतलः (śītalaḥ), to agree with पृथिवी (pṛthivī), a feminine word." }
