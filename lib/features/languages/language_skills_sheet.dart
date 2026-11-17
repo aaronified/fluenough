@@ -333,8 +333,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
   /// constructed language whose decks, on the phone, declare no voice (no
   /// `tts` tag), as Toki Pona's, since no voice exists to test or install.
   bool get _soundCheckApplies =>
-      _view.language.family != 'constructed' ||
-      _state.hasDeclaredVoice(_code);
+      _view.language.family != 'constructed' || _state.hasDeclaredVoice(_code);
 
   Future<bool> _confirmDownload() async {
     final l10n = AppLocalizations.of(context)!;
