@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.1] - 2026-11-17
+
 - **Sitelen pona no longer shows boxes, and its font is offered.** Opening a sitelen pona deck or card now asks to download the font, shows the Latin word instead of boxes until it arrives, and a failed sound test on Languages no longer stops the font check.
+
 ## [0.11.0] - 2026-11-16
 
 - **No more boxes on script buttons, and no typing in sitelen pona.** The script buttons on Languages draw their glyph in the script's downloaded font, or the first letter of its name until it arrives, and a Toki Pona learner who reads sitelen pona answers in Latin letters, since no keyboard types it.
