@@ -223,3 +223,107 @@ cards:
   - id: "es-0069"
     kind: "set"
     members: [{ ref: "es-0054" }, { ref: "es-0055" }, { ref: "es-0056" }, { ref: "es-0057" }, { ref: "es-0058" }, { ref: "es-0059" }, { ref: "es-0060" }]
+  - id: "es-4722"
+    target: "cuántos"
+    ipa: "ˈkwantos"
+    phonetic: "[ˈkwan̪t̪os]"
+    phonetic_source: "rules"
+    pos: "adj"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "cuántos", ref: "es-0060" }]
+    examples:
+      - { target: "No sé cuántos hay.", ipa: "no se ˈkwantos aj", bases: [{ word: "No", ref: "es-0043" }, { word: "sé", base: "saber" }, { word: "cuántos", base: "cuánto" }, { word: "hay", base: "haber" }] }
+      - { target: "¿Cuántos libros tienes?", ipa: "ˈkwantos ˈlibɾos ˈtjenes", bases: [{ word: "Cuántos", base: "cuánto" }, { word: "libros", ref: "es-0011" }, { word: "tienes", ref: "es-0024" }] }
+  - id: "es-4723"
+    target: "cuántas"
+    ipa: "ˈkwantas"
+    phonetic: "[ˈkwan̪t̪as]"
+    phonetic_source: "rules"
+    pos: "adj"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "cuántas", ref: "es-0060" }]
+    examples:
+      - { target: "¿Cuántas personas hay aquí?", ipa: "ˈkwantas peɾˈsonas aj aˈki", bases: [{ word: "Cuántas", base: "cuánto" }, { word: "personas", ref: "es-0135" }, { word: "hay", base: "haber" }, { word: "aquí", ref: "es-0051" }] }
+      - { target: "¿Cuántas horas duermes?", ipa: "ˈkwantas ˈoɾas ˈdweɾmes", bases: [{ word: "Cuántas", base: "cuánto" }, { word: "horas", ref: "es-0838" }, { word: "duermes", ref: "es-0904" }] }
+  - id: "es-4724"
+    target: "cuáles"
+    ipa: "ˈkwales"
+    phonetic: "[ˈkwales]"
+    phonetic_source: "rules"
+    pos: "pronoun"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "cuáles", ref: "es-0059" }]
+    examples:
+      - { target: "No sé cuáles son.", ipa: "no se ˈkwales son", bases: [{ word: "No", ref: "es-0043" }, { word: "sé", base: "saber" }, { word: "cuáles", base: "cuál" }, { word: "son", ref: "es-0022" }] }
+      - { target: "¿Cuáles son tus amigos?", ipa: "ˈkwales son tus aˈmiɡos", bases: [{ word: "Cuáles", base: "cuál" }, { word: "son", ref: "es-0022" }, { word: "tus", base: "tu" }, { word: "amigos", base: "amigo" }] }
+  - id: "es-4725"
+    target: "quiénes"
+    ipa: "ˈkjenes"
+    phonetic: "[ˈkjenes]"
+    phonetic_source: "rules"
+    pos: "pronoun"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "quiénes", ref: "es-0055" }]
+    examples:
+      - { target: "¿Quiénes son ellos?", ipa: "ˈkjenes son ˈeʝos", bases: [{ word: "Quiénes", base: "quién" }, { word: "son", ref: "es-0022" }, { word: "ellos", ref: "es-0124" }] }
+      - { target: "¿Quiénes vienen a la fiesta?", ipa: "ˈkjenes ˈbjenen a la ˈfjesta", bases: [{ word: "Quiénes", base: "quién" }, { word: "vienen", ref: "es-1632" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "fiesta", base: "fiesta" }] }
+  - id: "es-4726"
+    target: "adónde"
+    ipa: "aˈdonde"
+    phonetic: "[aˈðon̪d̪e]"
+    phonetic_source: "rules"
+    pos: "adv"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "¿Adónde vas?", ipa: "aˈdonde bas", bases: [{ word: "Adónde", base: "adónde" }, { word: "vas", ref: "es-0026" }] }
+      - { target: "No sé adónde va el tren.", ipa: "no se aˈdonde ba el tɾen", bases: [{ word: "No", ref: "es-0043" }, { word: "sé", base: "saber" }, { word: "adónde", base: "adónde" }, { word: "va", ref: "es-0026" }, { word: "el", base: "el" }, { word: "tren", base: "tren" }] }
+  - id: "es-4727"
+    target: "por dónde"
+    ipa: "poɾ ˈdonde"
+    phonetic: "[poɾ ˈðon̪d̪e]"
+    phonetic_source: "rules"
+    pos: "adv"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "por", base: "por" }, { word: "dónde", ref: "es-0056" }]
+    examples:
+      - { target: "¿Por dónde se va al centro?", ipa: "poɾ ˈdonde se ba al ˈθentɾo", bases: [{ word: "Por", base: "por" }, { word: "dónde", ref: "es-0056" }, { word: "se", base: "se" }, { word: "va", ref: "es-0026" }, { word: "al", base: "al" }, { word: "centro", base: "centro" }] }
+      - { target: "No sé por dónde empezar.", ipa: "no se poɾ ˈdonde empeˈθaɾ", bases: [{ word: "No", ref: "es-0043" }, { word: "sé", base: "saber" }, { word: "por", base: "por" }, { word: "dónde", ref: "es-0056" }, { word: "empezar", ref: "es-0852" }] }
+  - id: "es-4728"
+    target: "hasta cuándo"
+    ipa: "ˈasta ˈkwando"
+    phonetic: "[ˈast̪a ˈkwan̪d̪o]"
+    phonetic_source: "rules"
+    pos: "adv"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "hasta", base: "hasta" }, { word: "cuándo", ref: "es-0057" }]
+    examples:
+      - { target: "¿Hasta cuándo te quedas?", ipa: "ˈasta ˈkwando te ˈkedas", bases: [{ word: "Hasta", base: "hasta" }, { word: "cuándo", ref: "es-0057" }, { word: "te", base: "te" }, { word: "quedas", ref: "es-1616" }] }
+      - { target: "¿Hasta cuándo está abierto el museo?", ipa: "ˈasta ˈkwando esˈta aˈbjeɾto el muˈseo", bases: [{ word: "Hasta", base: "hasta" }, { word: "cuándo", ref: "es-0057" }, { word: "está", ref: "es-0023" }, { word: "abierto", ref: "es-0848" }, { word: "el", base: "el" }, { word: "museo", base: "museo" }] }
+  - id: "es-4729"
+    target: "desde cuándo"
+    ipa: "ˈdesde ˈkwando"
+    phonetic: "[ˈd̪ezðe ˈkwan̪d̪o]"
+    phonetic_source: "rules"
+    pos: "adv"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "desde", base: "desde" }, { word: "cuándo", ref: "es-0057" }]
+    examples:
+      - { target: "¿Desde cuándo vives aquí?", ipa: "ˈdesde ˈkwando ˈbibes aˈki", bases: [{ word: "Desde", base: "desde" }, { word: "cuándo", ref: "es-0057" }, { word: "vives", ref: "es-0030" }, { word: "aquí", ref: "es-0051" }] }
+      - { target: "¿Desde cuándo estudias español?", ipa: "ˈdesde ˈkwando esˈtudjas espaˈɲol", bases: [{ word: "Desde", base: "desde" }, { word: "cuándo", ref: "es-0057" }, { word: "estudias", ref: "es-0258" }, { word: "español", base: "español" }] }
