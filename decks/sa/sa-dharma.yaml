@@ -51,13 +51,13 @@ cards:
       - { id: "n4", kind: "note" }
     bases: "self"
     examples:
-      - target: "दया जनं रक्षति"
-        reading: "dayā janaṃ rakṣati"
-        ipa: "d̪əjaː dʒənəm rəkʂət̪i"
+      - target: "जनस्य दया भवति"
+        reading: "janasya dayā bhavati"
+        ipa: "dʒənəsjə d̪əjaː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "दया", base: "दया", reading: "dayā" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "दयया सुखी जनो भवति"
         reading: "dayayā sukhī jano bhavati"
         ipa: "d̪əjəjaː sukʰiː dʒənoː bʱəʋət̪i"
@@ -111,13 +111,13 @@ cards:
     bases:
           - { word: "तपः", base: "तपस्", reading: "tapas" }
     examples:
-      - target: "तपो जनं रक्षति"
-        reading: "tapo janaṃ rakṣati"
-        ipa: "t̪əpoː dʒənəm rəkʂət̪i"
+      - target: "जनस्य तपो भवति"
+        reading: "janasya tapo bhavati"
+        ipa: "dʒənəsjə t̪əpoː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "तपो", base: "तपस्", reading: "tapo" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "स तपः करोति"
         reading: "sa tapaḥ karoti"
         ipa: "sə t̪əpəh kəroːt̪i"
@@ -141,13 +141,13 @@ cards:
     bases:
           - { word: "शीलम्", base: "शील", reading: "śīla" }
     examples:
-      - target: "शीलं जनं रक्षति"
-        reading: "śīlaṃ janaṃ rakṣati"
-        ipa: "ʃiːləm dʒənəm rəkʂət̪i"
+      - target: "जनस्य शीलं भवति"
+        reading: "janasya śīlaṃ bhavati"
+        ipa: "dʒənəsjə ʃiːləm bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "शीलं", base: "शील", reading: "śīlaṃ" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "सदा शीलं जनो धरति"
         reading: "sadā śīlaṃ jano dharati"
         ipa: "səd̪aː ʃiːləm dʒənoː d̪ʱərət̪i"
@@ -290,13 +290,13 @@ cards:
     bases:
           - { word: "लोभः", base: "लोभ", reading: "lobha" }
     examples:
-      - target: "लोभो जनं हरति"
-        reading: "lobho janaṃ harati"
-        ipa: "loːbʱoː dʒənəm ɦərət̪i"
+      - target: "जनस्य लोभो भवति"
+        reading: "janasya lobho bhavati"
+        ipa: "dʒənəsjə loːbʱoː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "लोभो", base: "लोभ", reading: "lobho" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "हरति", base: "हृ", reading: "harati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "जनो लोभेन दुःखी भवति"
         reading: "jano lobhena duḥkhī bhavati"
         ipa: "dʒənoː loːbʱeːnə d̪uhkʰiː bʱəʋət̪i"
@@ -321,13 +321,13 @@ cards:
     bases:
           - { word: "मोहः", base: "मोह", reading: "moha" }
     examples:
-      - target: "मोहो जनं हरति"
-        reading: "moho janaṃ harati"
-        ipa: "moːɦoː dʒənəm ɦərət̪i"
+      - target: "जनस्य मोहो भवति"
+        reading: "janasya moho bhavati"
+        ipa: "dʒənəsjə moːɦoː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "मोहो", base: "मोह", reading: "moho" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "हरति", base: "हृ", reading: "harati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "मोहेन न सुखी जनो भवति"
         reading: "mohena na sukhī jano bhavati"
         ipa: "moːɦeːnə nə sukʰiː dʒənoː bʱəʋət̪i"
@@ -350,21 +350,20 @@ cards:
       - { id: "n3", kind: "note" }
     bases: "self"
     examples:
-      - target: "मैत्री जनं रक्षति"
-        reading: "maitrī janaṃ rakṣati"
-        ipa: "məit̪riː dʒənəm rəkʂət̪i"
+      - target: "जनस्य मैत्री भवति"
+        reading: "janasya maitrī bhavati"
+        ipa: "dʒənəsjə məit̪riː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "मैत्री", base: "मैत्री", reading: "maitrī" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
-      - target: "मैत्र्या जनाः खलु जीवन्ति"
-        reading: "maitryā janāḥ khalu jīvanti"
-        ipa: "məit̪rjaː dʒənaːh kʰəlu dʒiːʋənt̪i"
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "मैत्र्या जीवन्ति जनाः"
+        reading: "maitryā jīvanti janāḥ"
+        ipa: "məit̪rjaː dʒiːʋənt̪i dʒənaːh"
         bases:
           - { word: "मैत्र्या", base: "मैत्री", reading: "maitryā" }
-          - { word: "जनाः", base: "जन", reading: "janāḥ" }
-          - { word: "खलु", base: "खलु", reading: "khalu" }
           - { word: "जीवन्ति", base: "जीव्", reading: "jīvanti" }
+          - { word: "जनाः", base: "जन", reading: "janāḥ" }
   - id: "sa-5812"
     target: "भक्तिः"
     reading: "bhaktiḥ"
@@ -381,13 +380,13 @@ cards:
     bases:
           - { word: "भक्तिः", base: "भक्ति", reading: "bhakti" }
     examples:
-      - target: "भक्तिर् जनं रक्षति"
-        reading: "bhaktir janaṃ rakṣati"
-        ipa: "bʱəkt̪ir dʒənəm rəkʂət̪i"
+      - target: "जनस्य भक्तिर् भवति"
+        reading: "janasya bhaktir bhavati"
+        ipa: "dʒənəsjə bʱəkt̪ir bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "भक्तिर्", base: "भक्ति", reading: "bhaktir" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "भक्त्या सुखी जनो भवति"
         reading: "bhaktyā sukhī jano bhavati"
         ipa: "bʱəkt̪jaː sukʰiː dʒənoː bʱəʋət̪i"
@@ -412,13 +411,13 @@ cards:
     bases:
           - { word: "ब्रह्मचर्यम्", base: "ब्रह्मचर्य", reading: "brahmacarya" }
     examples:
-      - target: "ब्रह्मचर्यं जनं रक्षति"
-        reading: "brahmacaryaṃ janaṃ rakṣati"
-        ipa: "brəɦmətʃərjəm dʒənəm rəkʂət̪i"
+      - target: "जनस्य ब्रह्मचर्यं भवति"
+        reading: "janasya brahmacaryaṃ bhavati"
+        ipa: "dʒənəsjə brəɦmətʃərjəm bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "ब्रह्मचर्यं", base: "ब्रह्मचर्य", reading: "brahmacaryaṃ" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "बालो ब्रह्मचर्यं चरति"
         reading: "bālo brahmacaryaṃ carati"
         ipa: "baːloː brəɦmətʃərjəm tʃərət̪i"
@@ -442,13 +441,13 @@ cards:
     bases:
           - { word: "दुःखम्", base: "दुःख", reading: "duḥkha" }
     examples:
-      - target: "दुःखं जनं हरति"
-        reading: "duḥkhaṃ janaṃ harati"
-        ipa: "d̪uhkʰəm dʒənəm ɦərət̪i"
+      - target: "जनस्य दुःखं भवति"
+        reading: "janasya duḥkhaṃ bhavati"
+        ipa: "dʒənəsjə d̪uhkʰəm bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "दुःखं", base: "दुःख", reading: "duḥkhaṃ" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "हरति", base: "हृ", reading: "harati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "दुःखेन न सुखी जनो भवति"
         reading: "duḥkhena na sukhī jano bhavati"
         ipa: "d̪uhkʰeːnə nə sukʰiː dʒənoː bʱəʋət̪i"
@@ -473,13 +472,13 @@ cards:
     bases:
           - { word: "कामः", base: "काम", reading: "kāma" }
     examples:
-      - target: "कामो जनं हरति"
-        reading: "kāmo janaṃ harati"
-        ipa: "kaːmoː dʒənəm ɦərət̪i"
+      - target: "जनस्य कामो भवति"
+        reading: "janasya kāmo bhavati"
+        ipa: "dʒənəsjə kaːmoː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "कामो", base: "काम", reading: "kāmo" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "हरति", base: "हृ", reading: "harati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "जनः कामेन दुःखी भवति"
         reading: "janaḥ kāmena duḥkhī bhavati"
         ipa: "dʒənəh kaːmeːnə d̪uhkʰiː bʱəʋət̪i"
@@ -535,13 +534,13 @@ cards:
     bases:
           - { word: "बुद्धिः", base: "बुद्धि", reading: "buddhi" }
     examples:
-      - target: "बुद्धिर् जनं रक्षति"
-        reading: "buddhir janaṃ rakṣati"
-        ipa: "bud̪d̪ʱir dʒənəm rəkʂət̪i"
+      - target: "जनस्य बुद्धिर् भवति"
+        reading: "janasya buddhir bhavati"
+        ipa: "dʒənəsjə bud̪d̪ʱir bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "बुद्धिर्", base: "बुद्धि", reading: "buddhir" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "जनो बुद्ध्या वदति"
         reading: "jano buddhyā vadati"
         ipa: "dʒənoː bud̪d̪ʱjaː ʋəd̪ət̪i"
@@ -564,13 +563,13 @@ cards:
       - { id: "n5", kind: "note" }
     bases: "self"
     examples:
-      - target: "विद्या जनं रक्षति"
-        reading: "vidyā janaṃ rakṣati"
-        ipa: "ʋid̪jaː dʒənəm rəkʂət̪i"
+      - target: "जनस्य विद्या भवति"
+        reading: "janasya vidyā bhavati"
+        ipa: "dʒənəsjə ʋid̪jaː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "विद्या", base: "विद्या", reading: "vidyā" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "जनो विद्यां पठति"
         reading: "jano vidyāṃ paṭhati"
         ipa: "dʒənoː ʋid̪jaːm pəʈʰət̪i"
@@ -650,13 +649,13 @@ cards:
     bases:
           - { word: "धैर्यम्", base: "धैर्य", reading: "dhairya" }
     examples:
-      - target: "धैर्यं जनं रक्षति"
-        reading: "dhairyaṃ janaṃ rakṣati"
-        ipa: "d̪ʱəirjəm dʒənəm rəkʂət̪i"
+      - target: "जनस्य धैर्यं भवति"
+        reading: "janasya dhairyaṃ bhavati"
+        ipa: "dʒənəsjə d̪ʱəirjəm bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "धैर्यं", base: "धैर्य", reading: "dhairyaṃ" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "धैर्येण जनस् तिष्ठति"
         reading: "dhairyeṇa janas tiṣṭhati"
         ipa: "d̪ʱəirjeːɳə dʒənəs t̪iʂʈʰət̪i"
@@ -796,13 +795,13 @@ cards:
     bases:
           - { word: "योगः", base: "योग", reading: "yoga" }
     examples:
-      - target: "योगो जनं रक्षति"
-        reading: "yogo janaṃ rakṣati"
-        ipa: "joːɡoː dʒənəm rəkʂət̪i"
+      - target: "जनस्य योगो भवति"
+        reading: "janasya yogo bhavati"
+        ipa: "dʒənəsjə joːɡoː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "योगो", base: "योग", reading: "yogo" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "योगेन सुखी जनो भवति"
         reading: "yogena sukhī jano bhavati"
         ipa: "joːɡeːnə sukʰiː dʒənoː bʱəʋət̪i"
@@ -856,13 +855,13 @@ cards:
     bases:
           - { word: "त्यागः", base: "त्याग", reading: "tyāga" }
     examples:
-      - target: "त्यागो जनं रक्षति"
-        reading: "tyāgo janaṃ rakṣati"
-        ipa: "t̪jaːɡoː dʒənəm rəkʂət̪i"
+      - target: "जनस्य त्यागो भवति"
+        reading: "janasya tyāgo bhavati"
+        ipa: "dʒənəsjə t̪jaːɡoː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "त्यागो", base: "त्याग", reading: "tyāgo" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "त्यागेन सुखी जनो भवति"
         reading: "tyāgena sukhī jano bhavati"
         ipa: "t̪jaːɡeːnə sukʰiː dʒənoː bʱəʋət̪i"
@@ -887,13 +886,13 @@ cards:
     bases:
           - { word: "संयमः", base: "संयम", reading: "saṃyama" }
     examples:
-      - target: "संयमो जनं रक्षति"
-        reading: "saṃyamo janaṃ rakṣati"
-        ipa: "sə̃jəmoː dʒənəm rəkʂət̪i"
+      - target: "जनस्य संयमो भवति"
+        reading: "janasya saṃyamo bhavati"
+        ipa: "dʒənəsjə sə̃jəmoː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "संयमो", base: "संयम", reading: "saṃyamo" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "संयमेन सुखी जनो भवति"
         reading: "saṃyamena sukhī jano bhavati"
         ipa: "sə̃jəmeːnə sukʰiː dʒənoː bʱəʋət̪i"
@@ -1213,13 +1212,13 @@ cards:
       - { id: "n4", kind: "note" }
     bases: "self"
     examples:
-      - target: "लज्जा जनं रक्षति"
-        reading: "lajjā janaṃ rakṣati"
-        ipa: "lədʒdʒaː dʒənəm rəkʂət̪i"
+      - target: "जनस्य लज्जा भवति"
+        reading: "janasya lajjā bhavati"
+        ipa: "dʒənəsjə lədʒdʒaː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "लज्जा", base: "लज्जा", reading: "lajjā" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "लज्जया न सुखी जनो भवति"
         reading: "lajjayā na sukhī jano bhavati"
         ipa: "lədʒdʒəjaː nə sukʰiː dʒənoː bʱəʋət̪i"
@@ -1274,13 +1273,13 @@ cards:
       - { id: "n4", kind: "note" }
     bases: "self"
     examples:
-      - target: "श्रद्धा जनं रक्षति"
-        reading: "śraddhā janaṃ rakṣati"
-        ipa: "ʃrəd̪d̪ʱaː dʒənəm rəkʂət̪i"
+      - target: "जनस्य श्रद्धा भवति"
+        reading: "janasya śraddhā bhavati"
+        ipa: "dʒənəsjə ʃrəd̪d̪ʱaː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "श्रद्धा", base: "श्रद्धा", reading: "śraddhā" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "श्रद्धया जनस् तिष्ठति"
         reading: "śraddhayā janas tiṣṭhati"
         ipa: "ʃrəd̪d̪ʱəjaː dʒənəs t̪iʂʈʰət̪i"
@@ -1304,20 +1303,20 @@ cards:
     bases:
           - { word: "विवेकः", base: "विवेक", reading: "viveka" }
     examples:
-      - target: "विवेको जनं रक्षति"
-        reading: "viveko janaṃ rakṣati"
-        ipa: "ʋiʋeːkoː dʒənəm rəkʂət̪i"
+      - target: "जनस्य विवेको भवति"
+        reading: "janasya viveko bhavati"
+        ipa: "dʒənəsjə ʋiʋeːkoː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "विवेको", base: "विवेक", reading: "viveko" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
-      - target: "जनो विवेकेन बुद्धिमान् भवति"
-        reading: "jano vivekena buddhimān bhavati"
-        ipa: "dʒənoː ʋiʋeːkeːnə bud̪d̪ʱimaːn bʱəʋət̪i"
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "जनो विवेकेन सुखी भवति"
+        reading: "jano vivekena sukhī bhavati"
+        ipa: "dʒənoː ʋiʋeːkeːnə sukʰiː bʱəʋət̪i"
         bases:
           - { word: "जनो", base: "जन", reading: "jano" }
           - { word: "विवेकेन", base: "विवेक", reading: "vivekena" }
-          - { word: "बुद्धिमान्", base: "बुद्धिमत्", reading: "buddhimān" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
           - { word: "भवति", base: "भू", reading: "bhavati" }
   - id: "sa-5844"
     target: "प्रज्ञा"
@@ -1332,20 +1331,20 @@ cards:
       - { id: "n3", kind: "note" }
     bases: "self"
     examples:
-      - target: "प्रज्ञा जनं रक्षति"
-        reading: "prajñā janaṃ rakṣati"
-        ipa: "prədʒɲaː dʒənəm rəkʂət̪i"
+      - target: "जनस्य प्रज्ञा भवति"
+        reading: "janasya prajñā bhavati"
+        ipa: "dʒənəsjə prədʒɲaː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "प्रज्ञा", base: "प्रज्ञा", reading: "prajñā" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
-      - target: "जनः प्रज्ञया बुद्धिमान् भवति"
-        reading: "janaḥ prajñayā buddhimān bhavati"
-        ipa: "dʒənəh prədʒɲəjaː bud̪d̪ʱimaːn bʱəʋət̪i"
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "जनः प्रज्ञया सुखी भवति"
+        reading: "janaḥ prajñayā sukhī bhavati"
+        ipa: "dʒənəh prədʒɲəjaː sukʰiː bʱəʋət̪i"
         bases:
           - { word: "जनः", base: "जन", reading: "janaḥ" }
           - { word: "प्रज्ञया", base: "प्रज्ञा", reading: "prajñayā" }
-          - { word: "बुद्धिमान्", base: "बुद्धिमत्", reading: "buddhimān" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhī" }
           - { word: "भवति", base: "भू", reading: "bhavati" }
   - id: "sa-5845"
     target: "मेधा"
@@ -1360,13 +1359,13 @@ cards:
       - { id: "n3", kind: "note" }
     bases: "self"
     examples:
-      - target: "मेधा जनं रक्षति"
-        reading: "medhā janaṃ rakṣati"
-        ipa: "meːd̪ʱaː dʒənəm rəkʂət̪i"
+      - target: "जनस्य मेधा भवति"
+        reading: "janasya medhā bhavati"
+        ipa: "dʒənəsjə meːd̪ʱaː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "मेधा", base: "मेधा", reading: "medhā" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "मेधया जनः पठति"
         reading: "medhayā janaḥ paṭhati"
         ipa: "meːd̪ʱəjaː dʒənəh pəʈʰət̪i"
@@ -1476,13 +1475,13 @@ cards:
       - { id: "n4", kind: "note" }
     bases: "self"
     examples:
-      - target: "कृपा जनं रक्षति"
-        reading: "kṛpā janaṃ rakṣati"
-        ipa: "kr̩paː dʒənəm rəkʂət̪i"
+      - target: "जनस्य कृपा भवति"
+        reading: "janasya kṛpā bhavati"
+        ipa: "dʒənəsjə kr̩paː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "कृपा", base: "कृपा", reading: "kṛpā" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "कृपया सुखी जनो भवति"
         reading: "kṛpayā sukhī jano bhavati"
         ipa: "kr̩pəjaː sukʰiː dʒənoː bʱəʋət̪i"
@@ -1505,13 +1504,13 @@ cards:
       - { id: "n4", kind: "note" }
     bases: "self"
     examples:
-      - target: "मर्यादा जनं रक्षति"
-        reading: "maryādā janaṃ rakṣati"
-        ipa: "mərjaːd̪aː dʒənəm rəkʂət̪i"
+      - target: "जनस्य मर्यादा भवति"
+        reading: "janasya maryādā bhavati"
+        ipa: "dʒənəsjə mərjaːd̪aː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "मर्यादा", base: "मर्यादा", reading: "maryādā" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "मर्यादया जनस् तिष्ठति"
         reading: "maryādayā janas tiṣṭhati"
         ipa: "mərjaːd̪əjaː dʒənəs t̪iʂʈʰət̪i"
@@ -1599,13 +1598,14 @@ cards:
         bases:
           - { word: "उपदेशो", base: "उपदेश", reading: "upadeśo" }
           - { word: "भवति", base: "भू", reading: "bhavati" }
-      - target: "उपदेशेन जनो बुद्धिमान् भवति"
-        reading: "upadeśena jano buddhimān bhavati"
-        ipa: "upəd̪eːʃeːnə dʒənoː bud̪d̪ʱimaːn bʱəʋət̪i"
+      - target: "उपदेशेन जनो दुःखी न भवति"
+        reading: "upadeśena jano duḥkhī na bhavati"
+        ipa: "upəd̪eːʃeːnə dʒənoː d̪uhkʰiː nə bʱəʋət̪i"
         bases:
           - { word: "उपदेशेन", base: "उपदेश", reading: "upadeśena" }
           - { word: "जनो", base: "जन", reading: "jano" }
-          - { word: "बुद्धिमान्", base: "बुद्धिमत्", reading: "buddhimān" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "न", base: "न", reading: "na" }
           - { word: "भवति", base: "भू", reading: "bhavati" }
   - id: "sa-5854"
     target: "प्रीतिः"
@@ -1623,13 +1623,13 @@ cards:
     bases:
           - { word: "प्रीतिः", base: "प्रीति", reading: "prīti" }
     examples:
-      - target: "प्रीतिर् जनं रक्षति"
-        reading: "prītir janaṃ rakṣati"
-        ipa: "priːt̪ir dʒənəm rəkʂət̪i"
+      - target: "जनस्य प्रीतिर् भवति"
+        reading: "janasya prītir bhavati"
+        ipa: "dʒənəsjə priːt̪ir bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "प्रीतिर्", base: "प्रीति", reading: "prītir" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "प्रीत्या सुखी जनो भवति"
         reading: "prītyā sukhī jano bhavati"
         ipa: "priːt̪jaː sukʰiː dʒənoː bʱəʋət̪i"
@@ -1772,13 +1772,13 @@ cards:
       - { id: "n4", kind: "note" }
     bases: "self"
     examples:
-      - target: "माया जनं हरति"
-        reading: "māyā janaṃ harati"
-        ipa: "maːjaː dʒənəm ɦərət̪i"
+      - target: "जनस्य माया भवति"
+        reading: "janasya māyā bhavati"
+        ipa: "dʒənəsjə maːjaː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "माया", base: "माया", reading: "māyā" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "हरति", base: "हृ", reading: "harati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "मायया न सुखी जनो भवति"
         reading: "māyayā na sukhī jano bhavati"
         ipa: "maːjəjaː nə sukʰiː dʒənoː bʱəʋət̪i"
@@ -1987,11 +1987,11 @@ cards:
           - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
           - { word: "भवति", base: "भू", reading: "bhavati" }
   - id: "sa-6001"
-    target: "वैरः"
-    reading: "vairaḥ"
-    ipa: "ʋəirəh"
+    target: "वैरम्"
+    reading: "vairam"
+    ipa: "ʋəirəm"
     pos: "noun"
-    gender: "m"
+    gender: "n"
     tags: ["dharma"]
     notes:
       - { id: "n1", kind: "note" }
@@ -2000,13 +2000,13 @@ cards:
       - { id: "n4", kind: "note" }
       - { id: "n5", kind: "note" }
     bases:
-          - { word: "वैरः", base: "वैर", reading: "vaira" }
+          - { word: "वैरम्", base: "वैर", reading: "vaira" }
     examples:
-      - target: "वैरो जनं हरति"
-        reading: "vairo janaṃ harati"
-        ipa: "ʋəiroː dʒənəm ɦərət̪i"
+      - target: "वैरं जनं हरति"
+        reading: "vairaṃ janaṃ harati"
+        ipa: "ʋəirəm dʒənəm ɦərət̪i"
         bases:
-          - { word: "वैरो", base: "वैर", reading: "vairo" }
+          - { word: "वैरं", base: "वैर", reading: "vairaṃ" }
           - { word: "जनं", base: "जन", reading: "janaṃ" }
           - { word: "हरति", base: "हृ", reading: "harati" }
       - target: "वैरेण जनो दुःखी भवति"

@@ -19,21 +19,22 @@ cards:
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
       - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
     bases:
           - { word: "वणिक्", base: "वणिज्", reading: "vaṇij" }
     examples:
-      - target: "वणिक् धनं रक्षति"
-        reading: "vaṇik dhanaṃ rakṣati"
-        ipa: "ʋəɳik d̪ʱənəm rəkʂət̪i"
+      - target: "वणिग् धनं रक्षति"
+        reading: "vaṇig dhanaṃ rakṣati"
+        ipa: "ʋəɳiɡ d̪ʱənəm rəkʂət̪i"
         bases:
-          - { word: "वणिक्", base: "वणिज्", reading: "vaṇik" }
+          - { word: "वणिग्", base: "वणिज्", reading: "vaṇig" }
           - { word: "धनं", base: "धन", reading: "dhanaṃ" }
           - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
-      - target: "वणिक् नगरं गच्छति"
-        reading: "vaṇik nagaraṃ gacchati"
-        ipa: "ʋəɳik nəɡərəm ɡətʃtʃʰət̪i"
+      - target: "वणिग् नगरं गच्छति"
+        reading: "vaṇig nagaraṃ gacchati"
+        ipa: "ʋəɳiɡ nəɡərəm ɡətʃtʃʰət̪i"
         bases:
-          - { word: "वणिक्", base: "वणिज्", reading: "vaṇik" }
+          - { word: "वणिग्", base: "वणिज्", reading: "vaṇig" }
           - { word: "नगरं", base: "नगर", reading: "nagaraṃ" }
           - { word: "गच्छति", base: "गम्", reading: "gacchati" }
   - id: "sa-5871"
@@ -278,13 +279,13 @@ cards:
     bases:
           - { word: "चातुर्यम्", base: "चातुर्य", reading: "cāturya" }
     examples:
-      - target: "चातुर्यं जनं रक्षति"
-        reading: "cāturyaṃ janaṃ rakṣati"
-        ipa: "tʃaːt̪urjəm dʒənəm rəkʂət̪i"
+      - target: "जनस्य चातुर्यं भवति"
+        reading: "janasya cāturyaṃ bhavati"
+        ipa: "dʒənəsjə tʃaːt̪urjəm bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "चातुर्यं", base: "चातुर्य", reading: "cāturyaṃ" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "जनश् चातुर्येण जयति"
         reading: "janaś cāturyeṇa jayati"
         ipa: "dʒənəʃ tʃaːt̪urjeːɳə dʒəjət̪i"
@@ -333,15 +334,16 @@ cards:
       - { id: "n1", kind: "usage" }
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
     bases:
           - { word: "असुरः", base: "असुर", reading: "asura" }
     examples:
-      - target: "असुरो देवान् जयति"
-        reading: "asuro devān jayati"
-        ipa: "əsuroː d̪eːʋaːn dʒəjət̪i"
+      - target: "असुरो देवाञ् जयति"
+        reading: "asuro devāñ jayati"
+        ipa: "əsuroː d̪eːʋaːɲ dʒəjət̪i"
         bases:
           - { word: "असुरो", base: "असुर", reading: "asuro" }
-          - { word: "देवान्", base: "देव", reading: "devān" }
+          - { word: "देवाञ्", base: "देव", reading: "devāñ" }
           - { word: "जयति", base: "जि", reading: "jayati" }
       - target: "असुरो वदति"
         reading: "asuro vadati"
@@ -1338,13 +1340,13 @@ cards:
     bases:
           - { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }
     examples:
-      - target: "वैद्यो रोगं रक्षति"
-        reading: "vaidyo rogaṃ rakṣati"
-        ipa: "ʋəid̪joː roːɡəm rəkʂət̪i"
+      - target: "वैद्यो रोगं जयति"
+        reading: "vaidyo rogaṃ jayati"
+        ipa: "ʋəid̪joː roːɡəm dʒəjət̪i"
         bases:
           - { word: "वैद्यो", base: "वैद्य", reading: "vaidyo" }
           - { word: "रोगं", base: "रोग", reading: "rogaṃ" }
-          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+          - { word: "जयति", base: "जि", reading: "jayati" }
       - target: "वैद्यो गृहं गच्छति"
         reading: "vaidyo gṛhaṃ gacchati"
         ipa: "ʋəid̪joː ɡr̩ɦəm ɡətʃtʃʰət̪i"
@@ -1365,13 +1367,13 @@ cards:
       - { id: "n3", kind: "note" }
     bases: "self"
     examples:
-      - target: "जरा जनं हरति"
-        reading: "jarā janaṃ harati"
-        ipa: "dʒəraː dʒənəm ɦərət̪i"
+      - target: "जनस्य जरा भवति"
+        reading: "janasya jarā bhavati"
+        ipa: "dʒənəsjə dʒəraː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "जरा", base: "जरा", reading: "jarā" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "हरति", base: "हृ", reading: "harati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "जरा भवति"
         reading: "jarā bhavati"
         ipa: "dʒəraː bʱəʋət̪i"
@@ -1393,13 +1395,13 @@ cards:
     bases:
           - { word: "रोगः", base: "रोग", reading: "roga" }
     examples:
-      - target: "रोगो जनं हरति"
-        reading: "rogo janaṃ harati"
-        ipa: "roːɡoː dʒənəm ɦərət̪i"
+      - target: "जनस्य रोगो भवति"
+        reading: "janasya rogo bhavati"
+        ipa: "dʒənəsjə roːɡoː bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "रोगो", base: "रोग", reading: "rogo" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "हरति", base: "हृ", reading: "harati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "रोगो भवति"
         reading: "rogo bhavati"
         ipa: "roːɡoː bʱəʋət̪i"
@@ -1506,13 +1508,13 @@ cards:
     bases:
           - { word: "छलम्", base: "छल", reading: "chala" }
     examples:
-      - target: "छलं जनं हरति"
-        reading: "chalaṃ janaṃ harati"
-        ipa: "tʃʰələm dʒənəm ɦərət̪i"
+      - target: "जनस्य छलं भवति"
+        reading: "janasya chalaṃ bhavati"
+        ipa: "dʒənəsjə tʃʰələm bʱəʋət̪i"
         bases:
+          - { word: "जनस्य", base: "जन", reading: "janasya" }
           - { word: "छलं", base: "छल", reading: "chalaṃ" }
-          - { word: "जनं", base: "जन", reading: "janaṃ" }
-          - { word: "हरति", base: "हृ", reading: "harati" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "छलं भवति"
         reading: "chalaṃ bhavati"
         ipa: "tʃʰələm bʱəʋət̪i"
@@ -1520,31 +1522,32 @@ cards:
           - { word: "छलं", base: "छल", reading: "chalaṃ" }
           - { word: "भवति", base: "भू", reading: "bhavati" }
   - id: "sa-5943"
-    target: "मूल्यः"
-    reading: "mūlyaḥ"
-    ipa: "muːljəh"
+    target: "मूल्यम्"
+    reading: "mūlyam"
+    ipa: "muːljəm"
     pos: "noun"
-    gender: "m"
+    gender: "n"
     tags: ["stories"]
     notes:
       - { id: "n1", kind: "note" }
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
     bases:
-          - { word: "मूल्यः", base: "मूल्य", reading: "mūlya" }
+          - { word: "मूल्यम्", base: "मूल्य", reading: "mūlya" }
     examples:
-      - target: "मूल्यो भवति"
-        reading: "mūlyo bhavati"
-        ipa: "muːljoː bʱəʋət̪i"
+      - target: "मूल्यं भवति"
+        reading: "mūlyaṃ bhavati"
+        ipa: "muːljəm bʱəʋət̪i"
         bases:
-          - { word: "मूल्यो", base: "मूल्य", reading: "mūlyo" }
+          - { word: "मूल्यं", base: "मूल्य", reading: "mūlyaṃ" }
           - { word: "भवति", base: "भू", reading: "bhavati" }
-      - target: "वणिक् मूल्यो रक्षति"
-        reading: "vaṇik mūlyo rakṣati"
-        ipa: "ʋəɳik muːljoː rəkʂət̪i"
+      - target: "वणिग् मूल्यं रक्षति"
+        reading: "vaṇig mūlyaṃ rakṣati"
+        ipa: "ʋəɳiɡ muːljəm rəkʂət̪i"
         bases:
-          - { word: "वणिक्", base: "वणिज्", reading: "vaṇik" }
-          - { word: "मूल्यो", base: "मूल्य", reading: "mūlyo" }
+          - { word: "वणिग्", base: "वणिज्", reading: "vaṇig" }
+          - { word: "मूल्यं", base: "मूल्य", reading: "mūlyaṃ" }
           - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
   - id: "sa-5944"
     target: "शृङ्गम्"
