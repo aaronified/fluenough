@@ -1,23 +1,3 @@
-schema: 1
-id: zh-culture-2
-part: core
-kind: vocab
-language:
-  code: zh
-  iso639_3: cmn
-  name: Mandarin Chinese
-  script: han_simplified
-  scripts:
-  - han_simplified
-  - han_traditional
-  tts: zh-CN
-  icon: 中
-license: CC-BY-SA-4.0
-genre: culture
-level: A2
-tags:
-- unreviewed
-cards:
 - id: zh-6050
   target: 学而时习之，不亦说乎？有朋自远方来，不亦乐乎？
   words:
@@ -44,6 +24,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E5%AD%B8%E8%80%8C%E7%AC%AC%E4%B8%80"
   bases:
   - word: 学而
     base: 学而
@@ -106,6 +87,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E5%AD%B8%E8%80%8C%E7%AC%AC%E4%B8%80"
   bases:
   - word: 过
     ref: zh-1019
@@ -151,6 +133,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E7%88%B2%E6%94%BF%E7%AC%AC%E4%BA%8C"
   bases:
   - word: 温故
     base: 温故
@@ -204,6 +187,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E7%88%B2%E6%94%BF%E7%AC%AC%E4%BA%8C"
   bases:
   - word: 学而
     base: 学而
@@ -260,6 +244,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E7%88%B2%E6%94%BF%E7%AC%AC%E4%BA%8C"
   bases:
   - word: 知之
     base: 知之
@@ -306,6 +291,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E9%87%8C%E4%BB%81%E7%AC%AC%E5%9B%9B"
   bases:
   - word: 君子
     base: 君子
@@ -351,6 +337,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E9%87%8C%E4%BB%81%E7%AC%AC%E5%9B%9B"
   bases:
   - word: 德
     base: 德
@@ -395,6 +382,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E8%BF%B0%E8%80%8C%E7%AC%AC%E4%B8%83"
   bases:
   - word: 三人行
     base: 三人行
@@ -440,6 +428,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E5%AD%90%E7%BD%95%E7%AC%AC%E4%B9%9D"
   bases:
   - word: 岁寒
     base: 岁寒
@@ -489,6 +478,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E8%A1%9E%E9%9D%88%E5%85%AC%E7%AC%AC%E5%8D%81%E4%BA%94"
   bases:
   - word: 己所
     base: 己所
@@ -535,6 +525,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E8%A1%9E%E9%9D%88%E5%85%AC%E7%AC%AC%E5%8D%81%E4%BA%94"
   bases:
   - word: 君子
     base: 君子
@@ -582,6 +573,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E8%8D%80%E5%AD%90/%E5%8B%B8%E5%AD%B8%E7%AF%87"
   bases:
   - word: 不积
     base: 不积
@@ -639,6 +631,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E8%8D%80%E5%AD%90/%E5%8B%B8%E5%AD%B8%E7%AF%87"
   bases:
   - word: 青
     base: 青
@@ -690,6 +683,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E5%AD%9F%E5%AD%90/%E6%A2%81%E6%83%A0%E7%8E%8B%E4%B8%8A"
   bases:
   - word: 老
     ref: zh-0064
@@ -705,8 +699,6 @@ cards:
   - word: 幼
     base: 幼
     reading: yòu
-  target_scripts:
-    han_traditional: 老吾老，以及人之老；幼吾幼，以及人之幼。
   source:
     author: Mencius
     work: Mencius 1A (Liang Hui Wang, Shang)
@@ -735,6 +727,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E5%AD%9F%E5%AD%90/%E5%85%AC%E5%AD%AB%E4%B8%91%E4%B8%8B"
   bases:
   - word: 天时
     base: 天时
@@ -776,6 +769,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E5%AD%9F%E5%AD%90/%E5%85%AC%E5%AD%AB%E4%B8%91%E4%B8%8B"
   bases:
   - word: 得道者
     base: 得道者
@@ -789,8 +783,6 @@ cards:
   - word: 寡助
     base: 寡助
     reading: guǎzhù
-  target_scripts:
-    han_traditional: 得道者多助，失道者寡助。
   source:
     author: Mencius
     work: Mencius 2B (Gong Sun Chou, Xia)
@@ -826,6 +818,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E8%8D%80%E5%AD%90/%E5%8B%B8%E5%AD%B8%E7%AF%87"
   bases:
   - word: 君子
     base: 君子
@@ -890,6 +883,7 @@ cards:
   notes:
   - id: n1
     kind: culture
+    source: "https://zh.wikisource.org/wiki/%E8%8D%80%E5%AD%90/%E5%8B%B8%E5%AD%B8%E7%AF%87"
   bases:
   - word: 蓬生
     base: 蓬生
@@ -905,8 +899,6 @@ cards:
     reading: ér
   - word: 直
     ref: zh-1018
-  target_scripts:
-    han_traditional: 蓬生麻中，不扶而直。
   source:
     author: Xunzi
     work: Xunzi, Quan Xue (Encouraging Learning)
