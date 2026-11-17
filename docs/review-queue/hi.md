@@ -181,3 +181,11 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | hi-4017 | hi-culture-1 | Padmakar's years 1753-1833 come from the Hindi Wikipedia page only (single-source). Confirm. | Haiku builder | 2026-11-17 |
 | hi-4018 | hi-culture-1 | Nanddas's years 1515-1583 are converted from the Samvat years 1572-1640 on the Hindi Wikipedia page (single-source, converted). Confirm the conversion. | Haiku builder | 2026-11-17 |
 | hi-4019 | hi-culture-1 | Narottam's years 1493-1542 come from the Hindi Wikipedia page only; the page's order of the two dates (birth, death) should be confirmed. | Haiku builder | 2026-11-17 |
+| hi-4015 | hi-culture-1 | The printed word संदर्भ does not fit the sense of the line ('in battle' does not work): check the original (possibly सदंभ, proud). The layer gloss is marked unclear. | Haiku builder | 2026-11-17 |
+| hi-4015 | hi-culture-1 | The syntax of सु ('and' or 'like'): the layer gives 'like'; check against the full kavitt in the original. | Haiku builder | 2026-11-17 |
+| hi-4019 | hi-culture-1 | The meaning of जानें को आहि बसै केहि ग्रामा (the doorkeeper speaks about the visitor) and the reading of दुपटी (dupaṭī): confirm both. | Haiku builder | 2026-11-17 |
+| hi-4018, hi-4019 | hi-culture-1 | The dates are circa: Nanddas converted from Samvat, Narottam's order of the two Common Era years on the Hindi Wikipedia page. Confirm. | Haiku builder | 2026-11-17 |
+| hi-4008 | hi-culture-1 | The date given is the 1926 edition year, not the date of composition, which is not on the page. | Haiku builder | 2026-11-17 |
+| hi-4058 to hi-4063 | hi-culture-2 | These dohas are attributed to Amir Khusrau on the Hindi Wikipedia page; no early source is known, and the Hindi wording is modern. Confirm the attribution or drop them. | Haiku builder | 2026-11-17 |
+| hi-4110 | hi-culture-3 | The date c. 1913-1914 is from the Hindi Wikipedia pages on the poem (1913); the second year is approximate. Confirm. | Haiku builder | 2026-11-17 |
+| hi-4111 | hi-culture-3 | The work the verse belongs to is unconfirmed; it is quoted on the Hindi Wikipedia page about Aansu. Confirm the work or drop the card. | Haiku builder | 2026-11-17 |
