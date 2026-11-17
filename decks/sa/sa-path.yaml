@@ -275,7 +275,8 @@ units:
     reading_passages:
       - { id: "verbs-3-text", text: { "en": "A short written text in Classical Sanskrit on the theme more daily actions" } }
     milestone: "A2"
-  - planned: { id: "sa-grammar-krt", grammar: ["krt"] }
+  - decks: ["sa-grammar-krt"]
+    grammar: ["krt-ghan", "krt-lyut", "krt-trc", "krt-ktin", "krt-nvul"]
     listening_passages:
       - { id: "grammar-krt-heard", text: { "en": "A short passage in Classical Sanskrit showing krt, read aloud" } }
     reading_passages:
