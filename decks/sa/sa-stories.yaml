@@ -17,22 +17,25 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
       - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
     bases:
           - { word: "वणिक्", base: "वणिज्", reading: "vaṇij" }
     examples:
-      - target: "वणिक् वदति"
-        reading: "vaṇik vadati"
-        ipa: "ʋəɳik ʋəd̪ət̪i"
+      - target: "वणिक् धनं रक्षति"
+        reading: "vaṇik dhanaṃ rakṣati"
+        ipa: "ʋəɳik d̪ʱənəm rəkʂət̪i"
         bases:
           - { word: "वणिक्", base: "वणिज्", reading: "vaṇik" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "वणिक् तत्र तिष्ठति"
-        reading: "vaṇik tatra tiṣṭhati"
-        ipa: "ʋəɳik t̪ət̪rə t̪iʂʈʰət̪i"
+          - { word: "धनं", base: "धन", reading: "dhanaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+      - target: "वणिक् नगरं गच्छति"
+        reading: "vaṇik nagaraṃ gacchati"
+        ipa: "ʋəɳik nəɡərəm ɡətʃtʃʰət̪i"
         bases:
           - { word: "वणिक्", base: "वणिज्", reading: "vaṇik" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "नगरं", base: "नगर", reading: "nagaraṃ" }
+          - { word: "गच्छति", base: "गम्", reading: "gacchati" }
   - id: "sa-5871"
     target: "कपोतः"
     reading: "kapotaḥ"
@@ -45,15 +48,10 @@ cards:
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
       - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
     bases:
           - { word: "कपोतः", base: "कपोत", reading: "kapota" }
     examples:
-      - target: "कपोतो वदति"
-        reading: "kapoto vadati"
-        ipa: "kəpoːt̪oː ʋəd̪ət̪i"
-        bases:
-          - { word: "कपोतो", base: "कपोत", reading: "kapoto" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
       - target: "कपोतस् तत्र तिष्ठति"
         reading: "kapotas tatra tiṣṭhati"
         ipa: "kəpoːt̪əs t̪ət̪rə t̪iʂʈʰət̪i"
@@ -61,6 +59,13 @@ cards:
           - { word: "कपोतस्", base: "कपोत", reading: "kapotas" }
           - { word: "तत्र", base: "तत्र", reading: "tatra" }
           - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+      - target: "कपोतो जलं पिबति"
+        reading: "kapoto jalaṃ pibati"
+        ipa: "kəpoːt̪oː dʒələm pibət̪i"
+        bases:
+          - { word: "कपोतो", base: "कपोत", reading: "kapoto" }
+          - { word: "जलं", base: "जल", reading: "jalaṃ" }
+          - { word: "पिबति", base: "पा", reading: "pibati" }
   - id: "sa-5872"
     target: "नकुलः"
     reading: "nakulaḥ"
@@ -73,22 +78,24 @@ cards:
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
       - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
     bases:
           - { word: "नकुलः", base: "नकुल", reading: "nakula" }
     examples:
-      - target: "नकुलो वदति"
-        reading: "nakulo vadati"
-        ipa: "nəkuloː ʋəd̪ət̪i"
+      - target: "सर्पं नकुलो जयति"
+        reading: "sarpaṃ nakulo jayati"
+        ipa: "sərpəm nəkuloː dʒəjət̪i"
+        bases:
+          - { word: "सर्पं", base: "सर्प", reading: "sarpaṃ" }
+          - { word: "नकुलो", base: "नकुल", reading: "nakulo" }
+          - { word: "जयति", base: "जि", reading: "jayati" }
+      - target: "नकुलो वनं गच्छति"
+        reading: "nakulo vanaṃ gacchati"
+        ipa: "nəkuloː ʋənəm ɡətʃtʃʰət̪i"
         bases:
           - { word: "नकुलो", base: "नकुल", reading: "nakulo" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "नकुलस् तत्र तिष्ठति"
-        reading: "nakulas tatra tiṣṭhati"
-        ipa: "nəkuləs t̪ət̪rə t̪iʂʈʰət̪i"
-        bases:
-          - { word: "नकुलस्", base: "नकुल", reading: "nakulas" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "वनं", base: "वन", reading: "vanaṃ" }
+          - { word: "गच्छति", base: "गम्", reading: "gacchati" }
   - id: "sa-5873"
     target: "वृकः"
     reading: "vṛkaḥ"
@@ -101,22 +108,24 @@ cards:
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
       - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
     bases:
           - { word: "वृकः", base: "वृक", reading: "vṛka" }
     examples:
-      - target: "वृको वदति"
-        reading: "vṛko vadati"
-        ipa: "ʋr̩koː ʋəd̪ət̪i"
+      - target: "वृको वनं चरति"
+        reading: "vṛko vanaṃ carati"
+        ipa: "ʋr̩koː ʋənəm tʃərət̪i"
         bases:
           - { word: "वृको", base: "वृक", reading: "vṛko" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "वृकस् तत्र तिष्ठति"
-        reading: "vṛkas tatra tiṣṭhati"
-        ipa: "ʋr̩kəs t̪ət̪rə t̪iʂʈʰət̪i"
+          - { word: "वनं", base: "वन", reading: "vanaṃ" }
+          - { word: "चरति", base: "चर्", reading: "carati" }
+      - target: "अजां वृको हरति"
+        reading: "ajāṃ vṛko harati"
+        ipa: "ədʒaːm ʋr̩koː ɦərət̪i"
         bases:
-          - { word: "वृकस्", base: "वृक", reading: "vṛkas" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "अजां", base: "अजा", reading: "ajāṃ" }
+          - { word: "वृको", base: "वृक", reading: "vṛko" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
   - id: "sa-5874"
     target: "बालकः"
     reading: "bālakaḥ"
@@ -132,19 +141,19 @@ cards:
     bases:
           - { word: "बालकः", base: "बालक", reading: "bālaka" }
     examples:
-      - target: "बालको वदति"
-        reading: "bālako vadati"
-        ipa: "baːləkoː ʋəd̪ət̪i"
+      - target: "बालकः क्रीडति"
+        reading: "bālakaḥ krīḍati"
+        ipa: "baːləkəh kriːɖət̪i"
+        bases:
+          - { word: "बालकः", base: "बालक", reading: "bālakaḥ" }
+          - { word: "क्रीडति", base: "क्रीड्", reading: "krīḍati" }
+      - target: "बालको गृहं गच्छति"
+        reading: "bālako gṛhaṃ gacchati"
+        ipa: "baːləkoː ɡr̩ɦəm ɡətʃtʃʰət̪i"
         bases:
           - { word: "बालको", base: "बालक", reading: "bālako" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "बालकस् तत्र तिष्ठति"
-        reading: "bālakas tatra tiṣṭhati"
-        ipa: "baːləkəs t̪ət̪rə t̪iʂʈʰət̪i"
-        bases:
-          - { word: "बालकस्", base: "बालक", reading: "bālakas" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "गृहं", base: "गृह", reading: "gṛhaṃ" }
+          - { word: "गच्छति", base: "गम्", reading: "gacchati" }
   - id: "sa-5875"
     target: "कुमारः"
     reading: "kumāraḥ"
@@ -160,19 +169,19 @@ cards:
     bases:
           - { word: "कुमारः", base: "कुमार", reading: "kumāra" }
     examples:
-      - target: "कुमारो वदति"
-        reading: "kumāro vadati"
-        ipa: "kumaːroː ʋəd̪ət̪i"
+      - target: "कुमारो जयति"
+        reading: "kumāro jayati"
+        ipa: "kumaːroː dʒəjət̪i"
         bases:
           - { word: "कुमारो", base: "कुमार", reading: "kumāro" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "कुमारस् तत्र तिष्ठति"
-        reading: "kumāras tatra tiṣṭhati"
-        ipa: "kumaːrəs t̪ət̪rə t̪iʂʈʰət̪i"
+          - { word: "जयति", base: "जि", reading: "jayati" }
+      - target: "कुमारो नगरं जयति"
+        reading: "kumāro nagaraṃ jayati"
+        ipa: "kumaːroː nəɡərəm dʒəjət̪i"
         bases:
-          - { word: "कुमारस्", base: "कुमार", reading: "kumāras" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "कुमारो", base: "कुमार", reading: "kumāro" }
+          - { word: "नगरं", base: "नगर", reading: "nagaraṃ" }
+          - { word: "जयति", base: "जि", reading: "jayati" }
   - id: "sa-5876"
     target: "कन्या"
     reading: "kanyā"
@@ -183,21 +192,22 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
       - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
     bases: "self"
     examples:
-      - target: "कन्या वदति"
-        reading: "kanyā vadati"
-        ipa: "kənjaː ʋəd̪ət̪i"
+      - target: "कन्या गायति"
+        reading: "kanyā gāyati"
+        ipa: "kənjaː ɡaːjət̪i"
         bases:
           - { word: "कन्या", base: "कन्या", reading: "kanyā" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "कन्या तत्र तिष्ठति"
-        reading: "kanyā tatra tiṣṭhati"
-        ipa: "kənjaː t̪ət̪rə t̪iʂʈʰət̪i"
+          - { word: "गायति", base: "गै", reading: "gāyati" }
+      - target: "कन्या वनं गच्छति"
+        reading: "kanyā vanaṃ gacchati"
+        ipa: "kənjaː ʋənəm ɡətʃtʃʰət̪i"
         bases:
           - { word: "कन्या", base: "कन्या", reading: "kanyā" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "वनं", base: "वन", reading: "vanaṃ" }
+          - { word: "गच्छति", base: "गम्", reading: "gacchati" }
   - id: "sa-5877"
     target: "भार्या"
     reading: "bhāryā"
@@ -210,19 +220,19 @@ cards:
       - { id: "n2", kind: "behaviour" }
     bases: "self"
     examples:
+      - target: "भार्या गृहे तिष्ठति"
+        reading: "bhāryā gṛhe tiṣṭhati"
+        ipa: "bʱaːrjaː ɡr̩ɦeː t̪iʂʈʰət̪i"
+        bases:
+          - { word: "भार्या", base: "भार्या", reading: "bhāryā" }
+          - { word: "गृहे", base: "गृह", reading: "gṛhe" }
+          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
       - target: "भार्या वदति"
         reading: "bhāryā vadati"
         ipa: "bʱaːrjaː ʋəd̪ət̪i"
         bases:
           - { word: "भार्या", base: "भार्या", reading: "bhāryā" }
           - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "भार्या तत्र तिष्ठति"
-        reading: "bhāryā tatra tiṣṭhati"
-        ipa: "bʱaːrjaː t̪ət̪rə t̪iʂʈʰət̪i"
-        bases:
-          - { word: "भार्या", base: "भार्या", reading: "bhāryā" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
   - id: "sa-5878"
     target: "वल्मीकः"
     reading: "valmīkaḥ"
@@ -238,12 +248,6 @@ cards:
     bases:
           - { word: "वल्मीकः", base: "वल्मीक", reading: "valmīka" }
     examples:
-      - target: "वल्मीको भवति"
-        reading: "valmīko bhavati"
-        ipa: "ʋəlmiːkoː bʱəʋət̪i"
-        bases:
-          - { word: "वल्मीको", base: "वल्मीक", reading: "valmīko" }
-          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "वल्मीकस् तत्र भवति"
         reading: "valmīkas tatra bhavati"
         ipa: "ʋəlmiːkəs t̪ət̪rə bʱəʋət̪i"
@@ -251,6 +255,13 @@ cards:
           - { word: "वल्मीकस्", base: "वल्मीक", reading: "valmīkas" }
           - { word: "तत्र", base: "तत्र", reading: "tatra" }
           - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "सर्पा वल्मीके वसन्ति"
+        reading: "sarpā valmīke vasanti"
+        ipa: "sərpaː ʋəlmiːkeː ʋəsənt̪i"
+        bases:
+          - { word: "सर्पा", base: "सर्प", reading: "sarpā" }
+          - { word: "वल्मीके", base: "वल्मीक", reading: "valmīke" }
+          - { word: "वसन्ति", base: "वस्", reading: "vasanti" }
   - id: "sa-5879"
     target: "चातुर्यम्"
     reading: "cāturyam"
@@ -262,22 +273,25 @@ cards:
       - { id: "n1", kind: "usage" }
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
     bases:
           - { word: "चातुर्यम्", base: "चातुर्य", reading: "cāturya" }
     examples:
-      - target: "चातुर्यं भवति"
-        reading: "cāturyaṃ bhavati"
-        ipa: "tʃaːt̪urjəm bʱəʋət̪i"
+      - target: "चातुर्यं जनं रक्षति"
+        reading: "cāturyaṃ janaṃ rakṣati"
+        ipa: "tʃaːt̪urjəm dʒənəm rəkʂət̪i"
         bases:
           - { word: "चातुर्यं", base: "चातुर्य", reading: "cāturyaṃ" }
-          - { word: "भवति", base: "भू", reading: "bhavati" }
-      - target: "चातुर्यं तत्र भवति"
-        reading: "cāturyaṃ tatra bhavati"
-        ipa: "tʃaːt̪urjəm t̪ət̪rə bʱəʋət̪i"
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+      - target: "जनश् चातुर्येण जयति"
+        reading: "janaś cāturyeṇa jayati"
+        ipa: "dʒənəʃ tʃaːt̪urjeːɳə dʒəjət̪i"
         bases:
-          - { word: "चातुर्यं", base: "चातुर्य", reading: "cāturyaṃ" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "भवति", base: "भू", reading: "bhavati" }
+          - { word: "जनश्", base: "जन", reading: "janaś" }
+          - { word: "चातुर्येण", base: "चातुर्य", reading: "cāturyeṇa" }
+          - { word: "जयति", base: "जि", reading: "jayati" }
   - id: "sa-5880"
     target: "पिशाचः"
     reading: "piśācaḥ"
@@ -290,22 +304,24 @@ cards:
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
       - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
     bases:
           - { word: "पिशाचः", base: "पिशाच", reading: "piśāca" }
     examples:
-      - target: "पिशाचो वदति"
-        reading: "piśāco vadati"
-        ipa: "piʃaːtʃoː ʋəd̪ət̪i"
+      - target: "पिशाचो वनं चरति"
+        reading: "piśāco vanaṃ carati"
+        ipa: "piʃaːtʃoː ʋənəm tʃərət̪i"
         bases:
           - { word: "पिशाचो", base: "पिशाच", reading: "piśāco" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "पिशाचस् तत्र तिष्ठति"
-        reading: "piśācas tatra tiṣṭhati"
-        ipa: "piʃaːtʃəs t̪ət̪rə t̪iʂʈʰət̪i"
+          - { word: "वनं", base: "वन", reading: "vanaṃ" }
+          - { word: "चरति", base: "चर्", reading: "carati" }
+      - target: "पिशाचो जनं हरति"
+        reading: "piśāco janaṃ harati"
+        ipa: "piʃaːtʃoː dʒənəm ɦərət̪i"
         bases:
-          - { word: "पिशाचस्", base: "पिशाच", reading: "piśācas" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "पिशाचो", base: "पिशाच", reading: "piśāco" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
   - id: "sa-5881"
     target: "असुरः"
     reading: "asuraḥ"
@@ -317,23 +333,22 @@ cards:
       - { id: "n1", kind: "usage" }
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
-      - { id: "n4", kind: "note" }
     bases:
           - { word: "असुरः", base: "असुर", reading: "asura" }
     examples:
+      - target: "असुरो देवान् जयति"
+        reading: "asuro devān jayati"
+        ipa: "əsuroː d̪eːʋaːn dʒəjət̪i"
+        bases:
+          - { word: "असुरो", base: "असुर", reading: "asuro" }
+          - { word: "देवान्", base: "देव", reading: "devān" }
+          - { word: "जयति", base: "जि", reading: "jayati" }
       - target: "असुरो वदति"
         reading: "asuro vadati"
         ipa: "əsuroː ʋəd̪ət̪i"
         bases:
           - { word: "असुरो", base: "असुर", reading: "asuro" }
           - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "असुरस् तत्र तिष्ठति"
-        reading: "asuras tatra tiṣṭhati"
-        ipa: "əsurəs t̪ət̪rə t̪iʂʈʰət̪i"
-        bases:
-          - { word: "असुरस्", base: "असुर", reading: "asuras" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
   - id: "sa-5882"
     target: "स्वप्नः"
     reading: "svapnaḥ"
@@ -346,6 +361,7 @@ cards:
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
       - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
     bases:
           - { word: "स्वप्नः", base: "स्वप्न", reading: "svapna" }
     examples:
@@ -355,13 +371,13 @@ cards:
         bases:
           - { word: "स्वप्नो", base: "स्वप्न", reading: "svapno" }
           - { word: "भवति", base: "भू", reading: "bhavati" }
-      - target: "स्वप्नस् तत्र भवति"
-        reading: "svapnas tatra bhavati"
-        ipa: "sʋəpnəs t̪ət̪rə bʱəʋət̪i"
+      - target: "स्वप्नं जनो वदति"
+        reading: "svapnaṃ jano vadati"
+        ipa: "sʋəpnəm dʒənoː ʋəd̪ət̪i"
         bases:
-          - { word: "स्वप्नस्", base: "स्वप्न", reading: "svapnas" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "भवति", base: "भू", reading: "bhavati" }
+          - { word: "स्वप्नं", base: "स्वप्न", reading: "svapnaṃ" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
   - id: "sa-5883"
     target: "तस्करः"
     reading: "taskaraḥ"
@@ -374,22 +390,24 @@ cards:
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
       - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
     bases:
           - { word: "तस्करः", base: "तस्कर", reading: "taskara" }
     examples:
-      - target: "तस्करो वदति"
-        reading: "taskaro vadati"
-        ipa: "t̪əskəroː ʋəd̪ət̪i"
+      - target: "तस्करो धनं हरति"
+        reading: "taskaro dhanaṃ harati"
+        ipa: "t̪əskəroː d̪ʱənəm ɦərət̪i"
         bases:
           - { word: "तस्करो", base: "तस्कर", reading: "taskaro" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "तस्करस् तत्र तिष्ठति"
-        reading: "taskaras tatra tiṣṭhati"
-        ipa: "t̪əskərəs t̪ət̪rə t̪iʂʈʰət̪i"
+          - { word: "धनं", base: "धन", reading: "dhanaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "तस्करो गृहं गच्छति"
+        reading: "taskaro gṛhaṃ gacchati"
+        ipa: "t̪əskəroː ɡr̩ɦəm ɡətʃtʃʰət̪i"
         bases:
-          - { word: "तस्करस्", base: "तस्कर", reading: "taskaras" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "तस्करो", base: "तस्कर", reading: "taskaro" }
+          - { word: "गृहं", base: "गृह", reading: "gṛhaṃ" }
+          - { word: "गच्छति", base: "गम्", reading: "gacchati" }
   - id: "sa-5884"
     target: "दासी"
     reading: "dāsī"
@@ -400,21 +418,24 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
       - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
     bases: "self"
     examples:
-      - target: "दासी वदति"
-        reading: "dāsī vadati"
-        ipa: "d̪aːsiː ʋəd̪ət̪i"
+      - target: "दासी गृहं रक्षति"
+        reading: "dāsī gṛhaṃ rakṣati"
+        ipa: "d̪aːsiː ɡr̩ɦəm rəkʂət̪i"
         bases:
           - { word: "दासी", base: "दासी", reading: "dāsī" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "दासी तत्र तिष्ठति"
-        reading: "dāsī tatra tiṣṭhati"
-        ipa: "d̪aːsiː t̪ət̪rə t̪iʂʈʰət̪i"
+          - { word: "गृहं", base: "गृह", reading: "gṛhaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+      - target: "दासी जलं हरति"
+        reading: "dāsī jalaṃ harati"
+        ipa: "d̪aːsiː dʒələm ɦərət̪i"
         bases:
           - { word: "दासी", base: "दासी", reading: "dāsī" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "जलं", base: "जल", reading: "jalaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
   - id: "sa-5885"
     target: "राज्ञी"
     reading: "rājñī"
@@ -425,20 +446,22 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
       - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
     bases: "self"
     examples:
-      - target: "राज्ञी वदति"
-        reading: "rājñī vadati"
-        ipa: "raːdʒɲiː ʋəd̪ət̪i"
+      - target: "राज्ञी नगरं रक्षति"
+        reading: "rājñī nagaraṃ rakṣati"
+        ipa: "raːdʒɲiː nəɡərəm rəkʂət̪i"
         bases:
           - { word: "राज्ञी", base: "राज्ञी", reading: "rājñī" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "राज्ञी तत्र तिष्ठति"
-        reading: "rājñī tatra tiṣṭhati"
-        ipa: "raːdʒɲiː t̪ət̪rə t̪iʂʈʰət̪i"
+          - { word: "नगरं", base: "नगर", reading: "nagaraṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+      - target: "राज्ञी गृहे तिष्ठति"
+        reading: "rājñī gṛhe tiṣṭhati"
+        ipa: "raːdʒɲiː ɡr̩ɦeː t̪iʂʈʰət̪i"
         bases:
           - { word: "राज्ञी", base: "राज्ञी", reading: "rājñī" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "गृहे", base: "गृह", reading: "gṛhe" }
           - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
   - id: "sa-5886"
     target: "उपाख्यानम्"
@@ -478,6 +501,7 @@ cards:
       - { id: "n1", kind: "note" }
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
     bases:
           - { word: "आख्यानम्", base: "आख्यान", reading: "ākhyāna" }
     examples:
@@ -487,13 +511,13 @@ cards:
         bases:
           - { word: "आख्यानं", base: "आख्यान", reading: "ākhyānaṃ" }
           - { word: "भवति", base: "भू", reading: "bhavati" }
-      - target: "आख्यानं तत्र भवति"
-        reading: "ākhyānaṃ tatra bhavati"
-        ipa: "aːkʰjaːnəm t̪ət̪rə bʱəʋət̪i"
+      - target: "आख्यानं जनो वदति"
+        reading: "ākhyānaṃ jano vadati"
+        ipa: "aːkʰjaːnəm dʒənoː ʋəd̪ət̪i"
         bases:
           - { word: "आख्यानं", base: "आख्यान", reading: "ākhyānaṃ" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "भवति", base: "भू", reading: "bhavati" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
   - id: "sa-5888"
     target: "मुनिः"
     reading: "muniḥ"
@@ -515,13 +539,13 @@ cards:
         bases:
           - { word: "मुनिर्", base: "मुनि", reading: "munir" }
           - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "मुनिस् तत्र तिष्ठति"
-        reading: "munis tatra tiṣṭhati"
-        ipa: "munis t̪ət̪rə t̪iʂʈʰət̪i"
+      - target: "मुनिर् वनं गच्छति"
+        reading: "munir vanaṃ gacchati"
+        ipa: "munir ʋənəm ɡətʃtʃʰət̪i"
         bases:
-          - { word: "मुनिस्", base: "मुनि", reading: "munis" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "मुनिर्", base: "मुनि", reading: "munir" }
+          - { word: "वनं", base: "वन", reading: "vanaṃ" }
+          - { word: "गच्छति", base: "गम्", reading: "gacchati" }
   - id: "sa-5889"
     target: "शापः"
     reading: "śāpaḥ"
@@ -543,13 +567,13 @@ cards:
         bases:
           - { word: "शापो", base: "शाप", reading: "śāpo" }
           - { word: "भवति", base: "भू", reading: "bhavati" }
-      - target: "शापस् तत्र भवति"
-        reading: "śāpas tatra bhavati"
-        ipa: "ʃaːpəs t̪ət̪rə bʱəʋət̪i"
+      - target: "शापो जनं हरति"
+        reading: "śāpo janaṃ harati"
+        ipa: "ʃaːpoː dʒənəm ɦərət̪i"
         bases:
-          - { word: "शापस्", base: "शाप", reading: "śāpas" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "भवति", base: "भू", reading: "bhavati" }
+          - { word: "शापो", base: "शाप", reading: "śāpo" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
   - id: "sa-5890"
     target: "सेवकः"
     reading: "sevakaḥ"
@@ -562,22 +586,24 @@ cards:
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
       - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
     bases:
           - { word: "सेवकः", base: "सेवक", reading: "sevaka" }
     examples:
-      - target: "सेवको वदति"
-        reading: "sevako vadati"
-        ipa: "seːʋəkoː ʋəd̪ət̪i"
+      - target: "सेवको गृहं रक्षति"
+        reading: "sevako gṛhaṃ rakṣati"
+        ipa: "seːʋəkoː ɡr̩ɦəm rəkʂət̪i"
         bases:
           - { word: "सेवको", base: "सेवक", reading: "sevako" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "सेवकस् तत्र तिष्ठति"
-        reading: "sevakas tatra tiṣṭhati"
-        ipa: "seːʋəkəs t̪ət̪rə t̪iʂʈʰət̪i"
+          - { word: "गृहं", base: "गृह", reading: "gṛhaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+      - target: "सेवको वनं गच्छति"
+        reading: "sevako vanaṃ gacchati"
+        ipa: "seːʋəkoː ʋənəm ɡətʃtʃʰət̪i"
         bases:
-          - { word: "सेवकस्", base: "सेवक", reading: "sevakas" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "सेवको", base: "सेवक", reading: "sevako" }
+          - { word: "वनं", base: "वन", reading: "vanaṃ" }
+          - { word: "गच्छति", base: "गम्", reading: "gacchati" }
   - id: "sa-5891"
     target: "मूर्खः"
     reading: "mūrkhaḥ"
@@ -599,13 +625,13 @@ cards:
         bases:
           - { word: "मूर्खो", base: "मूर्ख", reading: "mūrkho" }
           - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "मूर्खस् तत्र तिष्ठति"
-        reading: "mūrkhas tatra tiṣṭhati"
-        ipa: "muːrkʰəs t̪ət̪rə t̪iʂʈʰət̪i"
+      - target: "मूर्खो जलं पिबति"
+        reading: "mūrkho jalaṃ pibati"
+        ipa: "muːrkʰoː dʒələm pibət̪i"
         bases:
-          - { word: "मूर्खस्", base: "मूर्ख", reading: "mūrkhas" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "मूर्खो", base: "मूर्ख", reading: "mūrkho" }
+          - { word: "जलं", base: "जल", reading: "jalaṃ" }
+          - { word: "पिबति", base: "पा", reading: "pibati" }
   - id: "sa-5892"
     target: "दासः"
     reading: "dāsaḥ"
@@ -621,12 +647,6 @@ cards:
     bases:
           - { word: "दासः", base: "दास", reading: "dāsa" }
     examples:
-      - target: "दासो वदति"
-        reading: "dāso vadati"
-        ipa: "d̪aːsoː ʋəd̪ət̪i"
-        bases:
-          - { word: "दासो", base: "दास", reading: "dāso" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
       - target: "दासस् तत्र तिष्ठति"
         reading: "dāsas tatra tiṣṭhati"
         ipa: "d̪aːsəs t̪ət̪rə t̪iʂʈʰət̪i"
@@ -634,6 +654,12 @@ cards:
           - { word: "दासस्", base: "दास", reading: "dāsas" }
           - { word: "तत्र", base: "तत्र", reading: "tatra" }
           - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+      - target: "दासो वदति"
+        reading: "dāso vadati"
+        ipa: "d̪aːsoː ʋəd̪ət̪i"
+        bases:
+          - { word: "दासो", base: "दास", reading: "dāso" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
   - id: "sa-5893"
     target: "सर्पः"
     reading: "sarpaḥ"
@@ -645,23 +671,23 @@ cards:
       - { id: "n1", kind: "note" }
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
-      - { id: "n4", kind: "note" }
     bases:
           - { word: "सर्पः", base: "सर्प", reading: "sarpa" }
     examples:
-      - target: "सर्पो वदति"
-        reading: "sarpo vadati"
-        ipa: "sərpoː ʋəd̪ət̪i"
+      - target: "सर्पो वल्मीके तिष्ठति"
+        reading: "sarpo valmīke tiṣṭhati"
+        ipa: "sərpoː ʋəlmiːkeː t̪iʂʈʰət̪i"
         bases:
           - { word: "सर्पो", base: "सर्प", reading: "sarpo" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "सर्पस् तत्र तिष्ठति"
-        reading: "sarpas tatra tiṣṭhati"
-        ipa: "sərpəs t̪ət̪rə t̪iʂʈʰət̪i"
-        bases:
-          - { word: "सर्पस्", base: "सर्प", reading: "sarpas" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "वल्मीके", base: "वल्मीक", reading: "valmīke" }
           - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+      - target: "सर्पो मार्गे चलति"
+        reading: "sarpo mārge calati"
+        ipa: "sərpoː maːrɡeː tʃələt̪i"
+        bases:
+          - { word: "सर्पो", base: "सर्प", reading: "sarpo" }
+          - { word: "मार्गे", base: "मार्ग", reading: "mārge" }
+          - { word: "चलति", base: "चल्", reading: "calati" }
   - id: "sa-5894"
     target: "भोजनम्"
     reading: "bhojanam"
@@ -673,15 +699,17 @@ cards:
       - { id: "n1", kind: "usage" }
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
     bases:
           - { word: "भोजनम्", base: "भोजन", reading: "bhojana" }
     examples:
-      - target: "भोजनं भवति"
-        reading: "bhojanaṃ bhavati"
-        ipa: "bʱoːdʒənəm bʱəʋət̪i"
+      - target: "जनो भोजनं खादति"
+        reading: "jano bhojanaṃ khādati"
+        ipa: "dʒənoː bʱoːdʒənəm kʰaːd̪ət̪i"
         bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
           - { word: "भोजनं", base: "भोजन", reading: "bhojanaṃ" }
-          - { word: "भवति", base: "भू", reading: "bhavati" }
+          - { word: "खादति", base: "खाद्", reading: "khādati" }
       - target: "भोजनं तत्र भवति"
         reading: "bhojanaṃ tatra bhavati"
         ipa: "bʱoːdʒənəm t̪ət̪rə bʱəʋət̪i"
@@ -700,7 +728,6 @@ cards:
       - { id: "n1", kind: "note" }
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
-      - { id: "n4", kind: "note" }
     bases:
           - { word: "अप्सराः", base: "अप्सरस्", reading: "apsaras" }
     examples:
@@ -710,13 +737,12 @@ cards:
         bases:
           - { word: "अप्सरा", base: "अप्सरस्", reading: "apsarā" }
           - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "अप्सरास् तत्र तिष्ठति"
-        reading: "apsarās tatra tiṣṭhati"
-        ipa: "əpsəraːs t̪ət̪rə t̪iʂʈʰət̪i"
+      - target: "अप्सरा गायति"
+        reading: "apsarā gāyati"
+        ipa: "əpsəraː ɡaːjət̪i"
         bases:
-          - { word: "अप्सरास्", base: "अप्सरस्", reading: "apsarās" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "अप्सरा", base: "अप्सरस्", reading: "apsarā" }
+          - { word: "गायति", base: "गै", reading: "gāyati" }
   - id: "sa-5896"
     target: "मणिः"
     reading: "maṇiḥ"
@@ -729,6 +755,7 @@ cards:
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
       - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
     bases:
           - { word: "मणिः", base: "मणि", reading: "maṇi" }
     examples:
@@ -738,13 +765,13 @@ cards:
         bases:
           - { word: "मणिर्", base: "मणि", reading: "maṇir" }
           - { word: "भवति", base: "भू", reading: "bhavati" }
-      - target: "मणिस् तत्र भवति"
-        reading: "maṇis tatra bhavati"
-        ipa: "məɳis t̪ət̪rə bʱəʋət̪i"
+      - target: "जनो मणिं धरति"
+        reading: "jano maṇiṃ dharati"
+        ipa: "dʒənoː məɳim d̪ʱərət̪i"
         bases:
-          - { word: "मणिस्", base: "मणि", reading: "maṇis" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "भवति", base: "भू", reading: "bhavati" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "मणिं", base: "मणि", reading: "maṇiṃ" }
+          - { word: "धरति", base: "धृ", reading: "dharati" }
   - id: "sa-5897"
     target: "खड्गः"
     reading: "khaḍgaḥ"
@@ -760,19 +787,19 @@ cards:
     bases:
           - { word: "खड्गः", base: "खड्ग", reading: "khaḍga" }
     examples:
-      - target: "खड्गो भवति"
-        reading: "khaḍgo bhavati"
-        ipa: "kʰəɖɡoː bʱəʋət̪i"
+      - target: "खड्गो जयति"
+        reading: "khaḍgo jayati"
+        ipa: "kʰəɖɡoː dʒəjət̪i"
         bases:
           - { word: "खड्गो", base: "खड्ग", reading: "khaḍgo" }
-          - { word: "भवति", base: "भू", reading: "bhavati" }
-      - target: "खड्गस् तत्र भवति"
-        reading: "khaḍgas tatra bhavati"
-        ipa: "kʰəɖɡəs t̪ət̪rə bʱəʋət̪i"
+          - { word: "जयति", base: "जि", reading: "jayati" }
+      - target: "जनः खड्गं धरति"
+        reading: "janaḥ khaḍgaṃ dharati"
+        ipa: "dʒənəh kʰəɖɡəm d̪ʱərət̪i"
         bases:
-          - { word: "खड्गस्", base: "खड्ग", reading: "khaḍgas" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "भवति", base: "भू", reading: "bhavati" }
+          - { word: "जनः", base: "जन", reading: "janaḥ" }
+          - { word: "खड्गं", base: "खड्ग", reading: "khaḍgaṃ" }
+          - { word: "धरति", base: "धृ", reading: "dharati" }
   - id: "sa-5898"
     target: "शरः"
     reading: "śaraḥ"
@@ -788,19 +815,19 @@ cards:
     bases:
           - { word: "शरः", base: "शर", reading: "śara" }
     examples:
-      - target: "शरो भवति"
-        reading: "śaro bhavati"
-        ipa: "ʃəroː bʱəʋət̪i"
+      - target: "शरो गच्छति"
+        reading: "śaro gacchati"
+        ipa: "ʃəroː ɡətʃtʃʰət̪i"
         bases:
           - { word: "शरो", base: "शर", reading: "śaro" }
-          - { word: "भवति", base: "भू", reading: "bhavati" }
-      - target: "शरस् तत्र भवति"
-        reading: "śaras tatra bhavati"
-        ipa: "ʃərəs t̪ət̪rə bʱəʋət̪i"
+          - { word: "गच्छति", base: "गम्", reading: "gacchati" }
+      - target: "शरो वनं पतति"
+        reading: "śaro vanaṃ patati"
+        ipa: "ʃəroː ʋənəm pət̪ət̪i"
         bases:
-          - { word: "शरस्", base: "शर", reading: "śaras" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "भवति", base: "भू", reading: "bhavati" }
+          - { word: "शरो", base: "शर", reading: "śaro" }
+          - { word: "वनं", base: "वन", reading: "vanaṃ" }
+          - { word: "पतति", base: "पत्", reading: "patati" }
   - id: "sa-5899"
     target: "योद्धा"
     reading: "yoddhā"
@@ -811,22 +838,23 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
       - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
     bases:
           - { word: "योद्धा", base: "योद्धृ", reading: "yoddhṛ" }
     examples:
-      - target: "योद्धा वदति"
-        reading: "yoddhā vadati"
-        ipa: "joːd̪d̪ʱaː ʋəd̪ət̪i"
+      - target: "योद्धा जयति"
+        reading: "yoddhā jayati"
+        ipa: "joːd̪d̪ʱaː dʒəjət̪i"
         bases:
           - { word: "योद्धा", base: "योद्धृ", reading: "yoddhā" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "योद्धा तत्र तिष्ठति"
-        reading: "yoddhā tatra tiṣṭhati"
-        ipa: "joːd̪d̪ʱaː t̪ət̪rə t̪iʂʈʰət̪i"
+          - { word: "जयति", base: "जि", reading: "jayati" }
+      - target: "योद्धा राज्यं रक्षति"
+        reading: "yoddhā rājyaṃ rakṣati"
+        ipa: "joːd̪d̪ʱaː raːdʒjəm rəkʂət̪i"
         bases:
           - { word: "योद्धा", base: "योद्धृ", reading: "yoddhā" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "राज्यं", base: "राज्य", reading: "rājyaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
   - id: "sa-5900"
     target: "गोधा"
     reading: "godhā"
@@ -837,14 +865,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
       - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
     bases: "self"
     examples:
-      - target: "गोधा वदति"
-        reading: "godhā vadati"
-        ipa: "ɡoːd̪ʱaː ʋəd̪ət̪i"
-        bases:
-          - { word: "गोधा", base: "गोधा", reading: "godhā" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
       - target: "गोधा तत्र तिष्ठति"
         reading: "godhā tatra tiṣṭhati"
         ipa: "ɡoːd̪ʱaː t̪ət̪rə t̪iʂʈʰət̪i"
@@ -852,6 +875,13 @@ cards:
           - { word: "गोधा", base: "गोधा", reading: "godhā" }
           - { word: "तत्र", base: "तत्र", reading: "tatra" }
           - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+      - target: "गोधा गृहं चरति"
+        reading: "godhā gṛhaṃ carati"
+        ipa: "ɡoːd̪ʱaː ɡr̩ɦəm tʃərət̪i"
+        bases:
+          - { word: "गोधा", base: "गोधा", reading: "godhā" }
+          - { word: "गृहं", base: "गृह", reading: "gṛhaṃ" }
+          - { word: "चरति", base: "चर्", reading: "carati" }
   - id: "sa-5901"
     target: "शिशुः"
     reading: "śiśuḥ"
@@ -863,23 +893,22 @@ cards:
       - { id: "n1", kind: "note" }
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
-      - { id: "n4", kind: "note" }
     bases:
           - { word: "शिशुः", base: "शिशु", reading: "śiśu" }
     examples:
-      - target: "शिशुर् वदति"
-        reading: "śiśur vadati"
-        ipa: "ʃiʃur ʋəd̪ət̪i"
+      - target: "शिशुः क्रीडति"
+        reading: "śiśuḥ krīḍati"
+        ipa: "ʃiʃuh kriːɖət̪i"
         bases:
-          - { word: "शिशुर्", base: "शिशु", reading: "śiśur" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "शिशुस् तत्र तिष्ठति"
-        reading: "śiśus tatra tiṣṭhati"
-        ipa: "ʃiʃus t̪ət̪rə t̪iʂʈʰət̪i"
+          - { word: "शिशुः", base: "शिशु", reading: "śiśuḥ" }
+          - { word: "क्रीडति", base: "क्रीड्", reading: "krīḍati" }
+      - target: "शिशुः क्षीरं पिबति"
+        reading: "śiśuḥ kṣīraṃ pibati"
+        ipa: "ʃiʃuh kʂiːrəm pibət̪i"
         bases:
-          - { word: "शिशुस्", base: "शिशु", reading: "śiśus" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "शिशुः", base: "शिशु", reading: "śiśuḥ" }
+          - { word: "क्षीरं", base: "क्षीर", reading: "kṣīraṃ" }
+          - { word: "पिबति", base: "पा", reading: "pibati" }
   - id: "sa-5902"
     target: "धीवरः"
     reading: "dhīvaraḥ"
@@ -892,22 +921,24 @@ cards:
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
       - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
     bases:
           - { word: "धीवरः", base: "धीवर", reading: "dhīvara" }
     examples:
-      - target: "धीवरो वदति"
-        reading: "dhīvaro vadati"
-        ipa: "d̪ʱiːʋəroː ʋəd̪ət̪i"
+      - target: "धीवरो मत्स्यं हरति"
+        reading: "dhīvaro matsyaṃ harati"
+        ipa: "d̪ʱiːʋəroː mət̪sjəm ɦərət̪i"
         bases:
           - { word: "धीवरो", base: "धीवर", reading: "dhīvaro" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "धीवरस् तत्र तिष्ठति"
-        reading: "dhīvaras tatra tiṣṭhati"
-        ipa: "d̪ʱiːʋərəs t̪ət̪rə t̪iʂʈʰət̪i"
+          - { word: "मत्स्यं", base: "मत्स्य", reading: "matsyaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "धीवरो नदीं गच्छति"
+        reading: "dhīvaro nadīṃ gacchati"
+        ipa: "d̪ʱiːʋəroː nəd̪iːm ɡətʃtʃʰət̪i"
         bases:
-          - { word: "धीवरस्", base: "धीवर", reading: "dhīvaras" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "धीवरो", base: "धीवर", reading: "dhīvaro" }
+          - { word: "नदीं", base: "नदी", reading: "nadīṃ" }
+          - { word: "गच्छति", base: "गम्", reading: "gacchati" }
   - id: "sa-5903"
     target: "छागः"
     reading: "chāgaḥ"
@@ -920,22 +951,25 @@ cards:
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
       - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+      - { id: "n6", kind: "note" }
     bases:
           - { word: "छागः", base: "छाग", reading: "chāga" }
     examples:
-      - target: "छागो वदति"
-        reading: "chāgo vadati"
-        ipa: "tʃʰaːɡoː ʋəd̪ət̪i"
-        bases:
-          - { word: "छागो", base: "छाग", reading: "chāgo" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "छागस् तत्र तिष्ठति"
-        reading: "chāgas tatra tiṣṭhati"
-        ipa: "tʃʰaːɡəs t̪ət̪rə t̪iʂʈʰət̪i"
+      - target: "छागस् तृणं खादति"
+        reading: "chāgas tṛṇaṃ khādati"
+        ipa: "tʃʰaːɡəs t̪r̩ɳəm kʰaːd̪ət̪i"
         bases:
           - { word: "छागस्", base: "छाग", reading: "chāgas" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "तृणं", base: "तृण", reading: "tṛṇaṃ" }
+          - { word: "खादति", base: "खाद्", reading: "khādati" }
+      - target: "छागो वनं गच्छति"
+        reading: "chāgo vanaṃ gacchati"
+        ipa: "tʃʰaːɡoː ʋənəm ɡətʃtʃʰət̪i"
+        bases:
+          - { word: "छागो", base: "छाग", reading: "chāgo" }
+          - { word: "वनं", base: "वन", reading: "vanaṃ" }
+          - { word: "गच्छति", base: "गम्", reading: "gacchati" }
   - id: "sa-5904"
     target: "हरिणः"
     reading: "hariṇaḥ"
@@ -948,22 +982,24 @@ cards:
       - { id: "n2", kind: "behaviour" }
       - { id: "n3", kind: "note" }
       - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
     bases:
           - { word: "हरिणः", base: "हरिण", reading: "hariṇa" }
     examples:
-      - target: "हरिणो वदति"
-        reading: "hariṇo vadati"
-        ipa: "ɦəriɳoː ʋəd̪ət̪i"
+      - target: "हरिणो वनं चरति"
+        reading: "hariṇo vanaṃ carati"
+        ipa: "ɦəriɳoː ʋənəm tʃərət̪i"
         bases:
           - { word: "हरिणो", base: "हरिण", reading: "hariṇo" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "हरिणस् तत्र तिष्ठति"
-        reading: "hariṇas tatra tiṣṭhati"
-        ipa: "ɦəriɳəs t̪ət̪rə t̪iʂʈʰət̪i"
+          - { word: "वनं", base: "वन", reading: "vanaṃ" }
+          - { word: "चरति", base: "चर्", reading: "carati" }
+      - target: "हरिणो जलं पिबति"
+        reading: "hariṇo jalaṃ pibati"
+        ipa: "ɦəriɳoː dʒələm pibət̪i"
         bases:
-          - { word: "हरिणस्", base: "हरिण", reading: "hariṇas" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "हरिणो", base: "हरिण", reading: "hariṇo" }
+          - { word: "जलं", base: "जल", reading: "jalaṃ" }
+          - { word: "पिबति", base: "पा", reading: "pibati" }
   - id: "sa-5905"
     target: "पण्डितः"
     reading: "paṇḍitaḥ"
@@ -1015,13 +1051,13 @@ cards:
           - { word: "धूर्तो", base: "धूर्त", reading: "dhūrto" }
           - { word: "जनो", base: "जन", reading: "jano" }
           - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "धूर्तस् तत्र तिष्ठति"
-        reading: "dhūrtas tatra tiṣṭhati"
-        ipa: "d̪ʱuːrt̪əs t̪ət̪rə t̪iʂʈʰət̪i"
+      - target: "धूर्तो धनं हरति"
+        reading: "dhūrto dhanaṃ harati"
+        ipa: "d̪ʱuːrt̪oː d̪ʱənəm ɦərət̪i"
         bases:
-          - { word: "धूर्तस्", base: "धूर्त", reading: "dhūrtas" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "धूर्तो", base: "धूर्त", reading: "dhūrto" }
+          - { word: "धनं", base: "धन", reading: "dhanaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
   - id: "sa-5907"
     target: "धनिकः"
     reading: "dhanikaḥ"
@@ -1044,13 +1080,13 @@ cards:
           - { word: "धनिको", base: "धनिक", reading: "dhaniko" }
           - { word: "जनो", base: "जन", reading: "jano" }
           - { word: "वदति", base: "वद्", reading: "vadati" }
-      - target: "धनिकस् तत्र तिष्ठति"
-        reading: "dhanikas tatra tiṣṭhati"
-        ipa: "d̪ʱənikəs t̪ət̪rə t̪iʂʈʰət̪i"
+      - target: "धनिको धनं रक्षति"
+        reading: "dhaniko dhanaṃ rakṣati"
+        ipa: "d̪ʱənikoː d̪ʱənəm rəkʂət̪i"
         bases:
-          - { word: "धनिकस्", base: "धनिक", reading: "dhanikas" }
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+          - { word: "धनिको", base: "धनिक", reading: "dhaniko" }
+          - { word: "धनं", base: "धन", reading: "dhanaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
   - id: "sa-5908"
     target: "दरिद्रः"
     reading: "daridraḥ"
@@ -1066,13 +1102,14 @@ cards:
     bases:
           - { word: "दरिद्रः", base: "दरिद्र", reading: "daridra" }
     examples:
-      - target: "दरिद्रो जनो वदति"
-        reading: "daridro jano vadati"
-        ipa: "d̪ərid̪roː dʒənoː ʋəd̪ət̪i"
+      - target: "दरिद्रो जनो दुःखी भवति"
+        reading: "daridro jano duḥkhī bhavati"
+        ipa: "d̪ərid̪roː dʒənoː d̪uhkʰiː bʱəʋət̪i"
         bases:
           - { word: "दरिद्रो", base: "दरिद्र", reading: "daridro" }
           - { word: "जनो", base: "जन", reading: "jano" }
-          - { word: "वदति", base: "वद्", reading: "vadati" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
       - target: "दरिद्रस् तत्र तिष्ठति"
         reading: "daridras tatra tiṣṭhati"
         ipa: "d̪ərid̪rəs t̪ət̪rə t̪iʂʈʰət̪i"
@@ -1080,3 +1117,745 @@ cards:
           - { word: "दरिद्रस्", base: "दरिद्र", reading: "daridras" }
           - { word: "तत्र", base: "तत्र", reading: "tatra" }
           - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+  - id: "sa-5929"
+    target: "गर्दभः"
+    reading: "gardabhaḥ"
+    ipa: "ɡərd̪əbʱəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "गर्दभः", base: "गर्दभ", reading: "gardabha" }
+    examples:
+      - target: "गर्दभो वनं गच्छति"
+        reading: "gardabho vanaṃ gacchati"
+        ipa: "ɡərd̪əbʱoː ʋənəm ɡətʃtʃʰət̪i"
+        bases:
+          - { word: "गर्दभो", base: "गर्दभ", reading: "gardabho" }
+          - { word: "वनं", base: "वन", reading: "vanaṃ" }
+          - { word: "गच्छति", base: "गम्", reading: "gacchati" }
+      - target: "गर्दभो भारं वहति"
+        reading: "gardabho bhāraṃ vahati"
+        ipa: "ɡərd̪əbʱoː bʱaːrəm ʋəɦət̪i"
+        bases:
+          - { word: "गर्दभो", base: "गर्दभ", reading: "gardabho" }
+          - { word: "भारं", base: "भार", reading: "bhāraṃ" }
+          - { word: "वहति", base: "वह्", reading: "vahati" }
+  - id: "sa-5930"
+    target: "कुक्कुटः"
+    reading: "kukkuṭaḥ"
+    ipa: "kukkuʈəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "कुक्कुटः", base: "कुक्कुट", reading: "kukkuṭa" }
+    examples:
+      - target: "कुक्कुटः प्रभाते वदति"
+        reading: "kukkuṭaḥ prabhāte vadati"
+        ipa: "kukkuʈəh prəbʱaːt̪eː ʋəd̪ət̪i"
+        bases:
+          - { word: "कुक्कुटः", base: "कुक्कुट", reading: "kukkuṭaḥ" }
+          - { word: "प्रभाते", base: "प्रभात", reading: "prabhāte" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "कुक्कुटो गृहं रक्षति"
+        reading: "kukkuṭo gṛhaṃ rakṣati"
+        ipa: "kukkuʈoː ɡr̩ɦəm rəkʂət̪i"
+        bases:
+          - { word: "कुक्कुटो", base: "कुक्कुट", reading: "kukkuṭo" }
+          - { word: "गृहं", base: "गृह", reading: "gṛhaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+  - id: "sa-5931"
+    target: "कपिः"
+    reading: "kapiḥ"
+    ipa: "kəpih"
+    pos: "noun"
+    gender: "m"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "कपिः", base: "कपि", reading: "kapi" }
+    examples:
+      - target: "कपिर् वृक्षे चरति"
+        reading: "kapir vṛkṣe carati"
+        ipa: "kəpir ʋr̩kʂeː tʃərət̪i"
+        bases:
+          - { word: "कपिर्", base: "कपि", reading: "kapir" }
+          - { word: "वृक्षे", base: "वृक्ष", reading: "vṛkṣe" }
+          - { word: "चरति", base: "चर्", reading: "carati" }
+      - target: "कपिः फलं हरति"
+        reading: "kapiḥ phalaṃ harati"
+        ipa: "kəpih pʰələm ɦərət̪i"
+        bases:
+          - { word: "कपिः", base: "कपि", reading: "kapiḥ" }
+          - { word: "फलं", base: "फल", reading: "phalaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+  - id: "sa-5932"
+    target: "चटकः"
+    reading: "caṭakaḥ"
+    ipa: "tʃəʈəkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "चटकः", base: "चटक", reading: "caṭaka" }
+    examples:
+      - target: "चटको गृहे तिष्ठति"
+        reading: "caṭako gṛhe tiṣṭhati"
+        ipa: "tʃəʈəkoː ɡr̩ɦeː t̪iʂʈʰət̪i"
+        bases:
+          - { word: "चटको", base: "चटक", reading: "caṭako" }
+          - { word: "गृहे", base: "गृह", reading: "gṛhe" }
+          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+      - target: "चटको धान्यं खादति"
+        reading: "caṭako dhānyaṃ khādati"
+        ipa: "tʃəʈəkoː d̪ʱaːnjəm kʰaːd̪ət̪i"
+        bases:
+          - { word: "चटको", base: "चटक", reading: "caṭako" }
+          - { word: "धान्यं", base: "धान्य", reading: "dhānyaṃ" }
+          - { word: "खादति", base: "खाद्", reading: "khādati" }
+  - id: "sa-5933"
+    target: "उलूकः"
+    reading: "ulūkaḥ"
+    ipa: "uluːkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+    bases:
+          - { word: "उलूकः", base: "उलूक", reading: "ulūka" }
+    examples:
+      - target: "उलूको रात्रौ चरति"
+        reading: "ulūko rātrau carati"
+        ipa: "uluːkoː raːt̪rəu tʃərət̪i"
+        bases:
+          - { word: "उलूको", base: "उलूक", reading: "ulūko" }
+          - { word: "रात्रौ", base: "रात्रि", reading: "rātrau" }
+          - { word: "चरति", base: "चर्", reading: "carati" }
+      - target: "उलूको वृक्षे तिष्ठति"
+        reading: "ulūko vṛkṣe tiṣṭhati"
+        ipa: "uluːkoː ʋr̩kʂeː t̪iʂʈʰət̪i"
+        bases:
+          - { word: "उलूको", base: "उलूक", reading: "ulūko" }
+          - { word: "वृक्षे", base: "वृक्ष", reading: "vṛkṣe" }
+          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+  - id: "sa-5934"
+    target: "गृध्रः"
+    reading: "gṛdhraḥ"
+    ipa: "ɡr̩d̪ʱrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "गृध्रः", base: "गृध्र", reading: "gṛdhra" }
+    examples:
+      - target: "आकाशे गृध्रश् चरति"
+        reading: "ākāśe gṛdhraś carati"
+        ipa: "aːkaːʃeː ɡr̩d̪ʱrəʃ tʃərət̪i"
+        bases:
+          - { word: "आकाशे", base: "आकाश", reading: "ākāśe" }
+          - { word: "गृध्रश्", base: "गृध्र", reading: "gṛdhraś" }
+          - { word: "चरति", base: "चर्", reading: "carati" }
+      - target: "गृध्रो मांसं खादति"
+        reading: "gṛdhro māṃsaṃ khādati"
+        ipa: "ɡr̩d̪ʱroː mãːsəm kʰaːd̪ət̪i"
+        bases:
+          - { word: "गृध्रो", base: "गृध्र", reading: "gṛdhro" }
+          - { word: "मांसं", base: "मांस", reading: "māṃsaṃ" }
+          - { word: "खादति", base: "खाद्", reading: "khādati" }
+  - id: "sa-5935"
+    target: "श्येनः"
+    reading: "śyenaḥ"
+    ipa: "ʃjeːnəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "श्येनः", base: "श्येन", reading: "śyena" }
+    examples:
+      - target: "श्येनो वृक्षे तिष्ठति"
+        reading: "śyeno vṛkṣe tiṣṭhati"
+        ipa: "ʃjeːnoː ʋr̩kʂeː t̪iʂʈʰət̪i"
+        bases:
+          - { word: "श्येनो", base: "श्येन", reading: "śyeno" }
+          - { word: "वृक्षे", base: "वृक्ष", reading: "vṛkṣe" }
+          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+      - target: "श्येनश् चटकं हरति"
+        reading: "śyenaś caṭakaṃ harati"
+        ipa: "ʃjeːnəʃ tʃəʈəkəm ɦərət̪i"
+        bases:
+          - { word: "श्येनश्", base: "श्येन", reading: "śyenaś" }
+          - { word: "चटकं", base: "चटक", reading: "caṭakaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+  - id: "sa-5936"
+    target: "वैद्यः"
+    reading: "vaidyaḥ"
+    ipa: "ʋəid̪jəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }
+    examples:
+      - target: "वैद्यो रोगं रक्षति"
+        reading: "vaidyo rogaṃ rakṣati"
+        ipa: "ʋəid̪joː roːɡəm rəkʂət̪i"
+        bases:
+          - { word: "वैद्यो", base: "वैद्य", reading: "vaidyo" }
+          - { word: "रोगं", base: "रोग", reading: "rogaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+      - target: "वैद्यो गृहं गच्छति"
+        reading: "vaidyo gṛhaṃ gacchati"
+        ipa: "ʋəid̪joː ɡr̩ɦəm ɡətʃtʃʰət̪i"
+        bases:
+          - { word: "वैद्यो", base: "वैद्य", reading: "vaidyo" }
+          - { word: "गृहं", base: "गृह", reading: "gṛhaṃ" }
+          - { word: "गच्छति", base: "गम्", reading: "gacchati" }
+  - id: "sa-5937"
+    target: "जरा"
+    reading: "jarā"
+    ipa: "dʒəraː"
+    pos: "noun"
+    gender: "f"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "जरा जनं हरति"
+        reading: "jarā janaṃ harati"
+        ipa: "dʒəraː dʒənəm ɦərət̪i"
+        bases:
+          - { word: "जरा", base: "जरा", reading: "jarā" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "जरा भवति"
+        reading: "jarā bhavati"
+        ipa: "dʒəraː bʱəʋət̪i"
+        bases:
+          - { word: "जरा", base: "जरा", reading: "jarā" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5938"
+    target: "रोगः"
+    reading: "rogaḥ"
+    ipa: "roːɡəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "रोगः", base: "रोग", reading: "roga" }
+    examples:
+      - target: "रोगो जनं हरति"
+        reading: "rogo janaṃ harati"
+        ipa: "roːɡoː dʒənəm ɦərət̪i"
+        bases:
+          - { word: "रोगो", base: "रोग", reading: "rogo" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "रोगो भवति"
+        reading: "rogo bhavati"
+        ipa: "roːɡoː bʱəʋət̪i"
+        bases:
+          - { word: "रोगो", base: "रोग", reading: "rogo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5939"
+    target: "औषधम्"
+    reading: "auṣadham"
+    ipa: "əuʂəd̪ʱəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "औषधम्", base: "औषध", reading: "auṣadha" }
+    examples:
+      - target: "औषधं रोगं हरति"
+        reading: "auṣadhaṃ rogaṃ harati"
+        ipa: "əuʂəd̪ʱəm roːɡəm ɦərət̪i"
+        bases:
+          - { word: "औषधं", base: "औषध", reading: "auṣadhaṃ" }
+          - { word: "रोगं", base: "रोग", reading: "rogaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "औषधं गृहे तिष्ठति"
+        reading: "auṣadhaṃ gṛhe tiṣṭhati"
+        ipa: "əuʂəd̪ʱəm ɡr̩ɦeː t̪iʂʈʰət̪i"
+        bases:
+          - { word: "औषधं", base: "औषध", reading: "auṣadhaṃ" }
+          - { word: "गृहे", base: "गृह", reading: "gṛhe" }
+          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+  - id: "sa-5940"
+    target: "हिरण्यम्"
+    reading: "hiraṇyam"
+    ipa: "ɦirəɳjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "हिरण्यम्", base: "हिरण्य", reading: "hiraṇya" }
+    examples:
+      - target: "हिरण्यं भवति"
+        reading: "hiraṇyaṃ bhavati"
+        ipa: "ɦirəɳjəm bʱəʋət̪i"
+        bases:
+          - { word: "हिरण्यं", base: "हिरण्य", reading: "hiraṇyaṃ" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "जनो हिरण्यं रक्षति"
+        reading: "jano hiraṇyaṃ rakṣati"
+        ipa: "dʒənoː ɦirəɳjəm rəkʂət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "हिरण्यं", base: "हिरण्य", reading: "hiraṇyaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+  - id: "sa-5941"
+    target: "कलहः"
+    reading: "kalahaḥ"
+    ipa: "kələɦəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "कलहः", base: "कलह", reading: "kalaha" }
+    examples:
+      - target: "कलहो भवति"
+        reading: "kalaho bhavati"
+        ipa: "kələɦoː bʱəʋət̪i"
+        bases:
+          - { word: "कलहो", base: "कलह", reading: "kalaho" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "कलहो मित्रं हरति"
+        reading: "kalaho mitraṃ harati"
+        ipa: "kələɦoː mit̪rəm ɦərət̪i"
+        bases:
+          - { word: "कलहो", base: "कलह", reading: "kalaho" }
+          - { word: "मित्रं", base: "मित्र", reading: "mitraṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+  - id: "sa-5942"
+    target: "छलम्"
+    reading: "chalam"
+    ipa: "tʃʰələm"
+    pos: "noun"
+    gender: "n"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "छलम्", base: "छल", reading: "chala" }
+    examples:
+      - target: "छलं जनं हरति"
+        reading: "chalaṃ janaṃ harati"
+        ipa: "tʃʰələm dʒənəm ɦərət̪i"
+        bases:
+          - { word: "छलं", base: "छल", reading: "chalaṃ" }
+          - { word: "जनं", base: "जन", reading: "janaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+      - target: "छलं भवति"
+        reading: "chalaṃ bhavati"
+        ipa: "tʃʰələm bʱəʋət̪i"
+        bases:
+          - { word: "छलं", base: "छल", reading: "chalaṃ" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5943"
+    target: "मूल्यः"
+    reading: "mūlyaḥ"
+    ipa: "muːljəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+    bases:
+          - { word: "मूल्यः", base: "मूल्य", reading: "mūlya" }
+    examples:
+      - target: "मूल्यो भवति"
+        reading: "mūlyo bhavati"
+        ipa: "muːljoː bʱəʋət̪i"
+        bases:
+          - { word: "मूल्यो", base: "मूल्य", reading: "mūlyo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "वणिक् मूल्यो रक्षति"
+        reading: "vaṇik mūlyo rakṣati"
+        ipa: "ʋəɳik muːljoː rəkʂət̪i"
+        bases:
+          - { word: "वणिक्", base: "वणिज्", reading: "vaṇik" }
+          - { word: "मूल्यो", base: "मूल्य", reading: "mūlyo" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+  - id: "sa-5944"
+    target: "शृङ्गम्"
+    reading: "śṛṅgam"
+    ipa: "ʃr̩ŋɡəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+    bases:
+          - { word: "शृङ्गम्", base: "शृङ्ग", reading: "śṛṅga" }
+    examples:
+      - target: "शृङ्गं वृषभस्य तिष्ठति"
+        reading: "śṛṅgaṃ vṛṣabhasya tiṣṭhati"
+        ipa: "ʃr̩ŋɡəm ʋr̩ʂəbʱəsjə t̪iʂʈʰət̪i"
+        bases:
+          - { word: "शृङ्गं", base: "शृङ्ग", reading: "śṛṅgaṃ" }
+          - { word: "वृषभस्य", base: "वृषभ", reading: "vṛṣabhasya" }
+          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+      - target: "शृङ्गं भवति"
+        reading: "śṛṅgaṃ bhavati"
+        ipa: "ʃr̩ŋɡəm bʱəʋət̪i"
+        bases:
+          - { word: "शृङ्गं", base: "शृङ्ग", reading: "śṛṅgaṃ" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5945"
+    target: "वृद्धः"
+    reading: "vṛddhaḥ"
+    ipa: "ʋr̩d̪d̪ʱəh"
+    pos: "adj"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "वृद्धः", base: "वृद्ध", reading: "vṛddha" }
+    examples:
+      - target: "वृद्धो जनो वदति"
+        reading: "vṛddho jano vadati"
+        ipa: "ʋr̩d̪d̪ʱoː dʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "वृद्धो", base: "वृद्ध", reading: "vṛddho" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "जनो वृद्धो भवति"
+        reading: "jano vṛddho bhavati"
+        ipa: "dʒənoː ʋr̩d̪d̪ʱoː bʱəʋət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वृद्धो", base: "वृद्ध", reading: "vṛddho" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5946"
+    target: "शूरः"
+    reading: "śūraḥ"
+    ipa: "ʃuːrəh"
+    pos: "adj"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "शूरः", base: "शूर", reading: "śūra" }
+    examples:
+      - target: "शूरो योद्धा वदति"
+        reading: "śūro yoddhā vadati"
+        ipa: "ʃuːroː joːd̪d̪ʱaː ʋəd̪ət̪i"
+        bases:
+          - { word: "शूरो", base: "शूर", reading: "śūro" }
+          - { word: "योद्धा", base: "योद्धृ", reading: "yoddhā" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "शूरो जनो जयति"
+        reading: "śūro jano jayati"
+        ipa: "ʃuːroː dʒənoː dʒəjət̪i"
+        bases:
+          - { word: "शूरो", base: "शूर", reading: "śūro" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "जयति", base: "जि", reading: "jayati" }
+  - id: "sa-5947"
+    target: "भीतः"
+    reading: "bhītaḥ"
+    ipa: "bʱiːt̪əh"
+    pos: "adj"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "भीतः", base: "भीत", reading: "bhīta" }
+    examples:
+      - target: "भीतो जनो वदति"
+        reading: "bhīto jano vadati"
+        ipa: "bʱiːt̪oː dʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "भीतो", base: "भीत", reading: "bhīto" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "जनो भीतो भवति"
+        reading: "jano bhīto bhavati"
+        ipa: "dʒənoː bʱiːt̪oː bʱəʋət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "भीतो", base: "भीत", reading: "bhīto" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5948"
+    target: "क्रुद्धः"
+    reading: "kruddhaḥ"
+    ipa: "krud̪d̪ʱəh"
+    pos: "adj"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "क्रुद्धः", base: "क्रुद्ध", reading: "kruddha" }
+    examples:
+      - target: "क्रुद्धो जनो वदति"
+        reading: "kruddho jano vadati"
+        ipa: "krud̪d̪ʱoː dʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "क्रुद्धो", base: "क्रुद्ध", reading: "kruddho" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "जनः क्रुद्धो भवति"
+        reading: "janaḥ kruddho bhavati"
+        ipa: "dʒənəh krud̪d̪ʱoː bʱəʋət̪i"
+        bases:
+          - { word: "जनः", base: "जन", reading: "janaḥ" }
+          - { word: "क्रुद्धो", base: "क्रुद्ध", reading: "kruddho" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5949"
+    target: "चतुरः"
+    reading: "caturaḥ"
+    ipa: "tʃət̪urəh"
+    pos: "adj"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "चतुरः", base: "चतुर", reading: "catura" }
+    examples:
+      - target: "चतुरो जनो वदति"
+        reading: "caturo jano vadati"
+        ipa: "tʃət̪uroː dʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "चतुरो", base: "चतुर", reading: "caturo" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "चतुरो धनं रक्षति"
+        reading: "caturo dhanaṃ rakṣati"
+        ipa: "tʃət̪uroː d̪ʱənəm rəkʂət̪i"
+        bases:
+          - { word: "चतुरो", base: "चतुर", reading: "caturo" }
+          - { word: "धनं", base: "धन", reading: "dhanaṃ" }
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣati" }
+  - id: "sa-5950"
+    target: "मूढः"
+    reading: "mūḍhaḥ"
+    ipa: "muːɖʱəh"
+    pos: "adj"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+          - { word: "मूढः", base: "मूढ", reading: "mūḍha" }
+    examples:
+      - target: "मूढो जनो वदति"
+        reading: "mūḍho jano vadati"
+        ipa: "muːɖʱoː dʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "मूढो", base: "मूढ", reading: "mūḍho" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "जनो मूढो भवति"
+        reading: "jano mūḍho bhavati"
+        ipa: "dʒənoː muːɖʱoː bʱəʋət̪i"
+        bases:
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "मूढो", base: "मूढ", reading: "mūḍho" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+  - id: "sa-5951"
+    target: "लुब्धः"
+    reading: "lubdhaḥ"
+    ipa: "lubd̪ʱəh"
+    pos: "adj"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "लुब्धः", base: "लुब्ध", reading: "lubdha" }
+    examples:
+      - target: "लुब्धो जनो वदति"
+        reading: "lubdho jano vadati"
+        ipa: "lubd̪ʱoː dʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "लुब्धो", base: "लुब्ध", reading: "lubdho" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "लुब्धो धनं हरति"
+        reading: "lubdho dhanaṃ harati"
+        ipa: "lubd̪ʱoː d̪ʱənəm ɦərət̪i"
+        bases:
+          - { word: "लुब्धो", base: "लुब्ध", reading: "lubdho" }
+          - { word: "धनं", base: "धन", reading: "dhanaṃ" }
+          - { word: "हरति", base: "हृ", reading: "harati" }
+  - id: "sa-5952"
+    target: "निर्धनः"
+    reading: "nirdhanaḥ"
+    ipa: "nird̪ʱənəh"
+    pos: "adj"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "निर्धनः", base: "निर्धन", reading: "nirdhana" }
+    examples:
+      - target: "निर्धनो जनो दुःखी भवति"
+        reading: "nirdhano jano duḥkhī bhavati"
+        ipa: "nird̪ʱənoː dʒənoː d̪uhkʰiː bʱəʋət̪i"
+        bases:
+          - { word: "निर्धनो", base: "निर्धन", reading: "nirdhano" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhī" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "निर्धनस् तत्र तिष्ठति"
+        reading: "nirdhanas tatra tiṣṭhati"
+        ipa: "nird̪ʱənəs t̪ət̪rə t̪iʂʈʰət̪i"
+        bases:
+          - { word: "निर्धनस्", base: "निर्धन", reading: "nirdhanas" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+  - id: "sa-5953"
+    target: "भीरुः"
+    reading: "bhīruḥ"
+    ipa: "bʱiːruh"
+    pos: "adj"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "भीरुः", base: "भीरु", reading: "bhīru" }
+    examples:
+      - target: "भीरुर् जनो वदति"
+        reading: "bhīrur jano vadati"
+        ipa: "bʱiːrur dʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "भीरुर्", base: "भीरु", reading: "bhīrur" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "भीरुस् तत्र तिष्ठति"
+        reading: "bhīrus tatra tiṣṭhati"
+        ipa: "bʱiːrus t̪ət̪rə t̪iʂʈʰət̪i"
+        bases:
+          - { word: "भीरुस्", base: "भीरु", reading: "bhīrus" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "तिष्ठति", base: "स्था", reading: "tiṣṭhati" }
+  - id: "sa-5954"
+    target: "चपलः"
+    reading: "capalaḥ"
+    ipa: "tʃəpələh"
+    pos: "adj"
+    tags: ["stories"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+          - { word: "चपलः", base: "चपल", reading: "capala" }
+    examples:
+      - target: "चपलो जनो वदति"
+        reading: "capalo jano vadati"
+        ipa: "tʃəpəloː dʒənoː ʋəd̪ət̪i"
+        bases:
+          - { word: "चपलो", base: "चपल", reading: "capalo" }
+          - { word: "जनो", base: "जन", reading: "jano" }
+          - { word: "वदति", base: "वद्", reading: "vadati" }
+      - target: "जनश् चपलो भवति"
+        reading: "janaś capalo bhavati"
+        ipa: "dʒənəʃ tʃəpəloː bʱəʋət̪i"
+        bases:
+          - { word: "जनश्", base: "जन", reading: "janaś" }
+          - { word: "चपलो", base: "चपल", reading: "capalo" }
+          - { word: "भवति", base: "भू", reading: "bhavati" }
