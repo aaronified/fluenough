@@ -1,0 +1,60 @@
+schema: 1
+id: "sa-en-agriculture-sentences"
+kind: "layer"
+core: "sa-agriculture-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about farming and the harvest"
+description: "Short sentences about farming and the harvest, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3810":
+    native: "The farmer digs the ground with a spade."
+    bases: { "खनित्रेण": "with a spade", "भूमिं": "ground", "खनति": "to dig (digs)" }
+    confusables: { "w1": { why: "Plough, not spade: लाङ्गलम् (lāṅgalam) means plough." }, "w2": { why: "Sickle, not spade: दात्रम् (dātram) means sickle." }, "w3": { why: "Field, not ground: क्षेत्रम् (kṣetram) means field." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. भूमिम् (bhūmim) is written भूमिं (bhūmiṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of खनति (khanati) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "खनित्रेण (khanitreṇa) is the instrumental case of खनित्रम् (khanitram): with what. भूमिम् (bhūmim) is the accusative case of भूमिः (bhūmiḥ): what is dug." }
+  "sa-3811":
+    native: "The cow gives milk in the cowshed."
+    bases: { "धेनुर्": "cow", "गोशालायां": "in the cowshed", "क्षीरं": "milk", "ददाति": "to give (gives)" }
+    confusables: { "w1": { why: "Ox, not cow: बलीवर्दः (balīvardaḥ) means ox." }, "w2": { why: "Curd, not milk: दधि (dadhi) means curd." }, "w3": { why: "To take, not to give: हृ (hṛ) means to take." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. धेनुः (dhenuḥ) is written धेनुर् (dhenur) because a final ः (ḥ) after उ (u) becomes र् (r) before a voiced sound, here the start of गोशालायां (gośālāyāṃ) (Aṣṭādhyāyī 8.2.66, ससजुषो रुः (sasajuṣo ruḥ); Whitney 174). गोशालायाम् (gośālāyām) is written गोशालायां (gośālāyāṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of क्षीरं (kṣīraṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). क्षीरम् (kṣīram) is written क्षीरं (kṣīraṃ), for the same reason, before ददाति (dadāti).", "n2": "गोशालायाम् (gośālāyām) is the locative case of गोशाला (gośālā): in the cowshed. ददाति (dadāti) is the present of दा (dā): gives." }
+  "sa-3812":
+    native: "The ox pulls the plough in the field."
+    bases: { "क्षेत्रे": "in the field", "लाङ्गलं": "plough", "वहति": "to carry (pulls)" }
+    confusables: { "w1": { why: "Bull, not ox: वृषभः (vṛṣabhaḥ) means bull." }, "w2": { why: "Ploughshare, not plough: फालः (phālaḥ) means ploughshare." }, "w3": { why: "Furrow, not field: सीता (sītā) means furrow." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. लाङ्गलम् (lāṅgalam) is written लाङ्गलं (lāṅgalaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of वहति (vahati) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "क्षेत्रे (kṣetre) is the locative case of क्षेत्रम् (kṣetram): in the field. वहति (vahati) is the present of वह् (vah): carries, here pulls." }
+  "sa-3813":
+    native: "With the rain the crop grows."
+    bases: { "वृष्ट्या": "with the rain", "सस्यस्य": "of the crop", "वृद्धिर्": "growth", "भवति": "to be (there is)" }
+    confusables: { "w1": { why: "Sprinkling, not rain: सेकः (sekaḥ) means sprinkling." }, "w2": { why: "Origin, not growth: उत्पत्तिः (utpattiḥ) means origin." }, "w3": { why: "Grain, not crop: धान्यम् (dhānyam) means grain." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. वृद्धिः (vṛddhiḥ) is written वृद्धिर् (vṛddhir) because a final ः (ḥ) after इ (i) becomes र् (r) before a voiced sound, here the start of भवति (bhavati) (Aṣṭādhyāyī 8.2.66, ससजुषो रुः (sasajuṣo ruḥ); Whitney 174).", "n2": "वृष्ट्या (vṛṣṭyā) is the instrumental case of वृष्टिः (vṛṣṭiḥ): with rain. सस्यस्य (sasyasya) is the genitive case of सस्यम् (sasyam): of the crop. वृद्धिः भवति (vṛddhiḥ bhavati) says there is growth: the crop grows." }
+  "sa-3814":
+    native: "There is a heap of grain on the threshing floor."
+    bases: { "खले": "on the threshing floor", "धान्यस्य": "of grain", "राशिर्": "heap", "अस्ति": "to be (there is)" }
+    confusables: { "w1": { why: "Fist, not heap: मुष्टिः (muṣṭiḥ) means fist." }, "w2": { why: "Storeroom, not threshing floor: कोष्ठागारम् (koṣṭhāgāram) means storeroom." }, "w3": { why: "Husk, not grain: तुषः (tuṣaḥ) means husk." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. राशिः (rāśiḥ) is written राशिर् (rāśir) because a final ः (ḥ) after इ (i) becomes र् (r) before a voiced sound, here the start of अस्ति (asti) (Aṣṭādhyāyī 8.2.66, ससजुषो रुः (sasajuṣo ruḥ); Whitney 174).", "n2": "खले (khale) is the locative case of खलः (khalaḥ): on the threshing floor. धान्यस्य (dhānyasya) is the genitive case of धान्यम् (dhānyam): of grain." }
+  "sa-3815":
+    native: "Water goes to the field along the irrigation channel."
+    bases: { "कुल्यया": "along the irrigation channel", "क्षेत्रं": "field", "जलं": "water", "गच्छति": "to go (goes)" }
+    confusables: { "w1": { why: "Sprinkling, not channel: सेकः (sekaḥ) means sprinkling." }, "w2": { why: "Embankment, not channel: वप्रः (vapraḥ) means embankment." }, "w3": { why: "Well, not channel: कूपः (kūpaḥ) means well." } }
+    notes: { "n1": "कुल्यया (kulyayā) is the instrumental case of कुल्या (kulyā): by way of the channel. क्षेत्रम् (kṣetram) is the accusative case of क्षेत्रम् (kṣetram), the place the water goes to." }
+  "sa-3816":
+    native: "The cowherd leads the cows to the cowshed."
+    bases: { "गोपालो": "cowherd", "धेनूर्": "cows", "गोशालां": "to the cowshed", "नयति": "to lead (leads)" }
+    confusables: { "w1": { why: "Farmer, not cowherd: कर्षकः (karṣakaḥ) means farmer." }, "w2": { why: "Ox, not cow: बलीवर्दः (balīvardaḥ) means ox." }, "w3": { why: "House, not cowshed: गृहम् (gṛham) means house." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. गोपालः (gopālaḥ) is written गोपालो (gopālo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of धेनूर् (dhenūr) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). धेनूः (dhenūḥ) is written धेनूर् (dhenūr) because a final ः (ḥ) after ऊ (ū) becomes र् (r) before a voiced sound, here the start of गोशालां (gośālāṃ) (Aṣṭādhyāyī 8.2.66, ससजुषो रुः (sasajuṣo ruḥ); Whitney 174). गोशालाम् (gośālām) is written गोशालां (gośālāṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of नयति (nayati) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "धेनूः (dhenūḥ) is the accusative plural of धेनुः (dhenuḥ): cows. गोशालाम् (gośālām) is the accusative case of गोशाला (gośālā): the place they are led to." }
+  "sa-3817":
+    native: "In a field a crop comes from a seed."
+    bases: { "क्षेत्रे": "in a field", "बीजात्": "from a seed", "सस्यं": "crop", "भवति": "to be (comes)" }
+    confusables: { "w1": { why: "Husk, not seed: तुषः (tuṣaḥ) means husk." }, "w2": { why: "Grain, not crop: धान्यम् (dhānyam) means grain." }, "w3": { why: "Rice, not crop: व्रीहिः (vrīhiḥ) means rice." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. सस्यम् (sasyam) is written सस्यं (sasyaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of भवति (bhavati) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i).", "n2": "बीजात् (bījāt) is the ablative case of बीजम् (bījam): it says the source, here a seed. क्षेत्रे (kṣetre) is the locative case of क्षेत्रम् (kṣetram): in a field." }
+  "sa-3818":
+    native: "Cattle eat grass and straw."
+    bases: { "पशवो": "cattle", "घासं": "grass", "पलालं": "straw", "खादन्ति": "to eat (eat)" }
+    confusables: { "w1": { why: "Fodder, not grass: यवसम् (yavasam) means fodder." }, "w2": { why: "Young grass, not grass: शष्पम् (śaṣpam) means young grass." }, "w3": { why: "To drink, not to eat: पा (pā) means to drink." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. पशवः (paśavaḥ) is written पशवो (paśavo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of घासं (ghāsaṃ) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). घासम् (ghāsam) is written घासं (ghāsaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of पलालं (palālaṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i). पलालम् (palālam) is written पलालं (palālaṃ), for the same reason, before च (ca).", "n2": "पशवः (paśavaḥ) is the nominative plural of पशुः (paśuḥ): cattle. खादन्ति (khādanti) is the third person plural: they eat." }
+  "sa-3819":
+    native: "In a famine there is little grain."
+    bases: { "दुर्भिक्षे": "in a famine", "अल्पं": "little", "भवति": "to be (is)" }
+    confusables: { "w1": { why: "More, not little: अधिकः (adhikaḥ) means more." }, "w2": { why: "Much, not little: बहुः (bahuḥ) means much." }, "w3": { why: "Empty, not little: शून्यः (śūnyaḥ) means empty." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. अल्पम् (alpam) is written अल्पं (alpaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of भवति (bhavati) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i).", "n2": "दुर्भिक्षे (durbhikṣe) is the locative case of दुर्भिक्षम् (durbhikṣam): in a famine. अल्पम् (alpam) is the neuter form of अल्पः (alpaḥ); it agrees with धान्यम् (dhānyam), a neuter word." }
