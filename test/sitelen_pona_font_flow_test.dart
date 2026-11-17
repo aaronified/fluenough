@@ -55,6 +55,19 @@ cards:
 ''',
 };
 
+const Map<String, String> _teCourse = <String, String>{
+  'decks/te/te-en-first-words.yaml': '''
+schema: 1
+id: te-en-first-words
+name: "First words"
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - { id: te-en-first-words-0001, target: "నమస్తే", native: "hello", reading: "namastē" }
+''',
+};
+
 /// The remote's index with Toki Pona's sitelen pona font, as decks-live has it.
 void _serveFont(FakeDeckRemote remote) {
   final json = jsonDecode(indexFor(remote.files)) as Map<String, Object?>;
@@ -279,17 +292,37 @@ void main() {
       expect(s.fontCheck.pending, isNull);
     });
 
-    test(
-      'a learner who reads the romanisation is asked about no script',
-      () async {
-        final s = tok(null, noAlphabet: <String>{'tok'});
-        await s.load();
-        final deck = s.deckById('tok-en-script-sitelen-pona')!;
-        expect(s.readsFirst(deck.language), isTrue);
-        s.offerFonts(deck.language);
-        expect(s.fontCheck.pending, isNull);
-      },
-    );
+    AppState te({Set<String>? scripts, Set<String> noAlphabet = const {}}) {
+      final s = AppState.test(
+        decks: MemoryDeckSource(_teCourse),
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['te'],
+          learningChosen: true,
+          noAlphabet: noAlphabet,
+          scriptsLearned: <String, Set<String>>{'te': ?scripts},
+        ),
+      );
+      addTearDown(s.dispose);
+      return s;
+    }
+
+    test('a learner who reads Telugu in romanisation is asked about no '
+        'script, on a deck or a word', () async {
+      final s = te(noAlphabet: <String>{'te'});
+      await s.load();
+      final deck = s.deckById('te-en-first-words')!;
+      expect(s.readsFirst(deck.language), isTrue);
+      s.offerFonts(deck.language);
+      expect(s.fontCheck.pending, isNull);
+    });
+
+    test('a learner of the Telugu script is asked about it', () async {
+      final s = te(scripts: <String>{'telugu'});
+      await s.load();
+      s.offerFonts(s.deckById('te-en-first-words')!.language);
+      expect(s.fontCheck.pending, 'telugu');
+    });
 
     test('a learner of sitelen pona is asked about it', () async {
       final s = tok(<String>{'latin', 'sitelen_pona'});

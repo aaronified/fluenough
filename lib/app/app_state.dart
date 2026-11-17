@@ -1712,7 +1712,8 @@ class AppState extends ChangeNotifier {
 
   /// Whether a voice can exist for [code]: its decks on the phone declare one
   /// (a `tts` tag), or none are on the phone to say. A language whose decks
-  /// declare none, such as Toki Pona, has no voice to test or install.
+  /// declare none, as a constructed language's often do, has no voice to
+  /// test or install.
   bool hasDeclaredVoice(String code) {
     final blocks = voiceBlocksOf(code);
     return blocks.isEmpty || blocks.any((language) => language.tts != null);

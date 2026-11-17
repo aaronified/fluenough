@@ -329,10 +329,12 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     }
   }
 
-  /// Whether the sound test means anything for this language: not when its
-  /// decks, on the phone, declare no voice (no `tts` tag), as Toki Pona's
-  /// do, since no voice exists to test.
-  bool get _soundCheckApplies => _state.hasDeclaredVoice(_code);
+  /// Whether the sound test means anything for this language: not for a
+  /// constructed language whose decks, on the phone, declare no voice (no
+  /// `tts` tag), as Toki Pona's, since no voice exists to test or install.
+  bool get _soundCheckApplies =>
+      _view.language.family != 'constructed' ||
+      _state.hasDeclaredVoice(_code);
 
   Future<bool> _confirmDownload() async {
     final l10n = AppLocalizations.of(context)!;
