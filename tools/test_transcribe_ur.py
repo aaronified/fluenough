@@ -23,6 +23,18 @@ class UrduTest(unittest.TestCase):
         self.assertEqual(read("کتنا", "kitna", "hi").ipa, "kɪt̪naː")
         self.assertEqual(transcribe("कितना", "hi", "kitna").reading, "kitnā")
 
+    def test_devanagari_with_arabic_punctuation_stays_on_the_hi_path(
+            self) -> None:
+        self.assertTrue(transcribe("कितना ۱", "hi", "kitna").reading
+                        .startswith("kitnā "))
+        self.assertTrue(transcribe("कितना،", "hi", "kitna").reading
+                        .startswith("kitnā"))
+        self.assertTrue(transcribe("नमस्ते؟", "hi", "namaste").reading
+                        .startswith("namastē"))
+
+    def test_a_urdu_line_with_its_punctuation(self) -> None:
+        self.assertEqual(read("دل، جان؟ ہے۔").reading, "dil, jān? hai.")
+
     def test_marks_written_are_read_as_written(self) -> None:
         t = read("نَقْش")
         self.assertEqual((t.reading, t.ipa), ("naqś", "nəqʃ"))

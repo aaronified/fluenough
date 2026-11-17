@@ -814,8 +814,12 @@ def transcribe(text: str, lang: str, hint: str | None = None
 
 
 def _perso_arabic(text: str) -> bool:
-    return any(0x0600 <= ord(c) <= 0x06FF or 0x0750 <= ord(c) <= 0x077F
-               for c in text)
+    """Whether [text] is Perso-Arabic: it has an Arabic-block letter and no
+    Devanagari letter (an Arabic comma or digit does not make it Urdu)."""
+    arabic = any(c.isalpha() and (0x0600 <= ord(c) <= 0x06FF or
+                                  0x0750 <= ord(c) <= 0x077F) for c in text)
+    deva = any(c.isalpha() and 0x0900 <= ord(c) <= 0x097F for c in text)
+    return arabic and not deva
 
 
 def _bare(word: str) -> str:
@@ -2729,7 +2733,7 @@ UR_CONSONANTS = {
 # Letters written in another form by an Arabic keyboard, to the Urdu form.
 UR_NORMALISE = str.maketrans({"ي": "ی", "ى": "ی", "ك": "ک", "ه": "ہ",
                               "ۃ": "ہ", "ۓ": "ے", "ؤ": "و"})
-UR_IGNORE = {"ـ", "‌", "‍", "‎", "‏"}
+UR_IGNORE = {"ـ", "‌", "‍", "‎", "‏", "\ufeff"}
 UR_ZABAR, UR_ZER, UR_PESH = "َ", "ِ", "ُ"
 UR_SHADDA, UR_SUKUN, UR_DAGGER, UR_HAMZA_ABOVE = "ّ", "ْ", "ٰ", "ٔ"
 UR_MARKS = {UR_ZABAR: "a", UR_ZER: "i", UR_PESH: "u"}
@@ -3074,9 +3078,13 @@ def urdu_lexicon() -> dict[str, tuple[str, str]]:
         for line in lines:
             if not line.strip() or line.lstrip().startswith("#"):
                 continue
-            cols = line.split("\t")
+            cols = line.lstrip("\ufeff").split("\t")
             if len(cols) >= 2:
                 key = _ur_bare(cols[0].strip())
+                if key in _UR_LEXICON:
+                    _UR_LEXICON = None
+                    raise ValueError(
+                        f"urdu_words.tsv: {cols[0].strip()} is listed twice")
                 _UR_LEXICON[key] = (
                     unicodedata.normalize("NFC", cols[1].strip()),
                     cols[2].strip() if len(cols) > 2 else "")
