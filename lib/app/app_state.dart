@@ -1304,6 +1304,20 @@ class AppState extends ChangeNotifier {
     return started;
   }
 
+  /// Offers the font check for what [language]'s deck draws: the script its
+  /// text is written in, and each script the learner reads it in, that has a
+  /// font to download and no answer yet (ADR-0042). Called where a deck or a
+  /// card is opened, so a script whose course was downloaded before it had a
+  /// font, or whose script the learner chose later, is still checked.
+  void offerFonts(LanguageInfo language) {
+    final scripts = <String>{
+      fontScriptFor(language.code, language.script),
+      for (final script in learnedScripts(language))
+        fontScriptFor(language.code, script),
+    };
+    fontCheck.request(scripts);
+  }
+
   /// The font check: [language]'s scripts the learner reads that have a
   /// font to download and no answer yet.
   void _askAboutFonts(String language) {

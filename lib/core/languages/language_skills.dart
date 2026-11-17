@@ -577,6 +577,23 @@ List<SkillCheck> checksOwed(Iterable<SkillKey> changedToLearn) {
   return list;
 }
 
+/// Runs [checks] one after another with [run], and gives the ones that passed
+/// as they pass to [passed]. A check that fails stays owed and never stops the
+/// next: a language with no voice on the phone, Toki Pona, fails its sound test
+/// and must still get its script's font check. [stop] says the screen is gone.
+Future<void> runChecks(
+  List<SkillCheck> checks,
+  Future<bool> Function(SkillCheck check) run,
+  void Function(SkillCheck check) passed, {
+  bool Function()? stop,
+}) async {
+  for (final check in checks) {
+    final ok = await run(check);
+    if (stop?.call() ?? false) return;
+    if (ok) passed(check);
+  }
+}
+
 /// Whether [skills] needs the language's full decks on the phone: one Learn
 /// skill, in any script, is enough.
 bool needsFullDecks(LanguageSkills skills) => skills.anyLearn;

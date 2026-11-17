@@ -72,6 +72,19 @@ class DeckDetailPage extends StatefulWidget {
 class _DeckDetailPageState extends State<DeckDetailPage> {
   late Set<String> _tags = Set<String>.of(widget.initialTags);
 
+  @override
+  void initState() {
+    super.initState();
+    // A deck written in a script whose font is not on the phone offers the
+    // font check, as a course does when it is downloaded.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final state = AppScope.read(context);
+      final entry = state.deckById(widget.deckId);
+      if (entry != null) state.offerFonts(entry.language);
+    });
+  }
+
   void _toggle(String tag, bool on) => setState(() {
     _tags = Set<String>.of(_tags);
     on ? _tags.add(tag) : _tags.remove(tag);

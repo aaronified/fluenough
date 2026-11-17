@@ -357,22 +357,22 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     if (_busy) return;
     setState(() => _busy = true);
     try {
-      for (final check in checksOwed(_pending.toList())) {
-        final ok = switch (check) {
-          SoundCheck() => await _soundCheck(),
-          ScriptCheck(:final script) => await _scriptCheck(script),
-        };
-        if (!mounted) return;
-        if (!ok) return;
-        setState(() {
+      await runChecks(
+        checksOwed(_pending.toList()),
+        (check) => switch (check) {
+          SoundCheck() => _soundCheck(),
+          ScriptCheck(:final script) => _scriptCheck(script),
+        },
+        (check) => setState(() {
           _pending.removeWhere(
             (k) => switch (check) {
               SoundCheck() => !k.kind.isScript,
               ScriptCheck(:final script) => k.script == script,
             },
           );
-        });
-      }
+        }),
+        stop: () => !mounted,
+      );
     } finally {
       if (mounted) setState(() => _busy = false);
     }
