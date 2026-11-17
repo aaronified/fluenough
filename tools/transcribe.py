@@ -7,6 +7,7 @@
     python3 tools/transcribe.py fr "les enfants"      # IPA
     python3 tools/transcribe.py ml "ഞാൻ വരുന്നു"       # reading and IPA
     python3 tools/transcribe.py sa "संस्कृतम्"          # IAST reading and IPA
+    python3 tools/transcribe.py ur "کتنا" kitna       # Urdu script (also `hi`)
 
 ISO 15919 writes letters, not sounds: कितना is `kitanā` letter for letter.
 The decks write the word as it is said, in ISO 15919's letters: `kitnā`.
@@ -29,6 +30,7 @@ import re
 import sys
 import unicodedata
 from dataclasses import dataclass, field
+from pathlib import Path
 
 # --- Scripts -----------------------------------------------------------------
 
@@ -768,6 +770,9 @@ WORDS = {
 def transcribe(text: str, lang: str, hint: str | None = None
                ) -> Transcription:
     """[text]'s reading in ISO 15919 letters as said, and its broad IPA."""
+    if lang in PERSO_ARABIC and (lang in PERSO_ARABIC_ONLY or
+                                 _perso_arabic(text)):
+        return urdu(text, hint)
     if lang == "es":
         return Transcription(text, spanish_ipa(text), True)
     if lang == "fr":
@@ -806,6 +811,11 @@ def transcribe(text: str, lang: str, hint: str | None = None
                              " ".join(p.ipa for p in parts if p.ipa),
                              all(p.fitted for p in parts))
     return _transcribe(text, lang, hint)
+
+
+def _perso_arabic(text: str) -> bool:
+    return any(0x0600 <= ord(c) <= 0x06FF or 0x0750 <= ord(c) <= 0x077F
+               for c in text)
 
 
 def _bare(word: str) -> str:
@@ -2685,6 +2695,464 @@ def sanskrit(text: str, variety: str = "sa") -> Transcription:
         _tidy("".join(iso)),
         unicodedata.normalize("NFC", " ".join("".join(ipa).split())), True,
         notes)
+
+
+# --- Urdu (Perso-Arabic script) ----------------------------------------------
+
+# Hindustani is one course with two scripts, so Urdu-script text is read into
+# the same reading letters and IPA as the Devanagari cards, by the `hi`
+# tables above (UR_READING_LANG). `transcribe.py ur "..."` always reads
+# Perso-Arabic; `transcribe.py hi "..."` does so when the text is in that
+# script. A language joins this engine by adding a row to PERSO_ARABIC and its
+# letter tables below; the lexicon is a plain data file.
+#
+# Urdu leaves its short vowels unwritten, so the engine never invents them:
+#  - a word with its marks (zabar, zer, pesh, sukun) is read as written;
+#  - a hint (the word in Devanagari or typed in Latin letters) is read against
+#    the consonants, as for the Indic scripts, and supplies the vowels;
+#  - a word in tools/urdu_words.tsv (extendable: word, reading, optional note)
+#    takes its reading from there;
+#  - otherwise the consonant skeleton is printed, with `?` where a short vowel
+#    may be, and a note, so a person reviews it.
+# A letter that has several readings (و ō/ū/v/au, ی ī/ē/y, ے ē/ai, a final
+# ہ) gets its commonest one and a note.
+PERSO_ARABIC = {"ur": "hi", "hi": "hi"}    # language code -> reading tables
+PERSO_ARABIC_ONLY = {"ur"}                 # always read in this script
+UR_READING_LANG = "hi"
+
+UR_CONSONANTS = {
+    "ب": "b", "پ": "p", "ت": "t", "ٹ": "ṭ", "ث": "s", "ج": "j", "چ": "c",
+    "ح": "h", "خ": "k͟h", "د": "d", "ڈ": "ḍ", "ذ": "z", "ر": "r", "ڑ": "ṛ",
+    "ز": "z", "ژ": "z͟h", "س": "s", "ش": "ś", "ص": "s", "ض": "z", "ط": "t",
+    "ظ": "z", "غ": "ġ", "ف": "f", "ق": "q", "ک": "k", "گ": "g", "ل": "l",
+    "م": "m", "ن": "n", "ہ": "h"}
+# Letters written in another form by an Arabic keyboard, to the Urdu form.
+UR_NORMALISE = str.maketrans({"ي": "ی", "ى": "ی", "ك": "ک", "ه": "ہ",
+                              "ۃ": "ہ", "ۓ": "ے", "ؤ": "و"})
+UR_IGNORE = {"ـ", "‌", "‍", "‎", "‏"}
+UR_ZABAR, UR_ZER, UR_PESH = "َ", "ِ", "ُ"
+UR_SHADDA, UR_SUKUN, UR_DAGGER, UR_HAMZA_ABOVE = "ّ", "ْ", "ٰ", "ٔ"
+UR_MARKS = {UR_ZABAR: "a", UR_ZER: "i", UR_PESH: "u"}
+UR_OTHER_MARKS = {"ً", "ٌ", "ٍ", UR_SHADDA, UR_SUKUN, UR_DAGGER,
+                  UR_HAMZA_ABOVE, "ٖ", "ٗ", "٘", "ٙ", "ٚ", "ٛ", "ٜ", "ٝ", "ٞ"}
+UR_ASPIRATE = "ھ"
+UR_NASAL = "ں"
+UR_EZAFE = ("-i", "ɪ")                    # the written linking vowel, its IPA
+UR_NASAL_MARK = "m̐"
+UR_UNKNOWN = "?"
+UR_PUNCT = {"،": ",", "؛": ";", "؟": "?", "۔": ".", "٫": ".", "٪": "%"}
+UR_SHORT = {"a": "a", "i": "i", "u": "u"}
+# Sonorants take the aspirate too (lh, mh, nh, rh), said breathy.
+UR_BREATHY = {"l", "m", "n", "r"}
+UR_EXTRA_IPA = {"z͟h": "ʒ"}
+# Letters that are the same sound for judging whether a hint fits.
+UR_FOLD = {"k͟h": "kh", "ġ": "g", "q": "k", "z͟h": "z", "ṭ": "t", "ḍ": "d",
+           "ṇ": "n", "ṛ": "r", "ś": "s", "ṣ": "s", "ṭh": "th", "ḍh": "dh",
+           "ṛh": "rh", "gh": "g", "ṅ": "n", "ñ": "n"}
+
+
+def _ur_vowel_ipa() -> dict[str, str]:
+    return {iso: ipa for iso, ipa in VOWEL_TABLES[UR_READING_LANG].values()}
+
+
+def _ur_consonant_ipa(letter: str) -> str | None:
+    if letter in UR_EXTRA_IPA:
+        return UR_EXTRA_IPA[letter]
+    if letter in _IPA:
+        return consonant(letter, UR_READING_LANG)[1]
+    if len(letter) > 1 and letter.endswith("h") and letter[:-1] in UR_BREATHY:
+        return consonant(letter[:-1], UR_READING_LANG)[1] + "ʱ"
+    return None
+
+
+def _ur_tokens(reading: str) -> list[tuple[str, str]]:
+    """[reading] split into ("C", letter), ("V", vowel), ("N", nasal) and
+    ("X", anything else) pieces, longest letter first."""
+    reading = unicodedata.normalize("NFC", reading)
+    vowels = _ur_vowel_ipa()
+    letters = sorted(set(_IPA) | set(UR_EXTRA_IPA) |
+                     {c + "h" for c in UR_BREATHY}, key=len, reverse=True)
+    out: list[tuple[str, str]] = []
+    i = 0
+    while i < len(reading):
+        if reading.startswith(UR_NASAL_MARK, i):
+            out.append(("N", UR_NASAL_MARK))
+            i += len(UR_NASAL_MARK)
+            continue
+        hit = next((v for v in sorted(vowels, key=len, reverse=True)
+                    if reading.startswith(v, i)), None)
+        cons = next((c for c in letters if reading.startswith(c, i)), None)
+        # A vowel letter beats a consonant that starts the same way (a, ai).
+        if hit and (not cons or len(hit) >= len(cons)):
+            out.append(("V", hit))
+            i += len(hit)
+        elif cons:
+            out.append(("C", cons))
+            i += len(cons)
+        else:
+            out.append(("X", reading[i]))
+            i += 1
+    return out
+
+
+def reading_to_ipa(reading: str) -> str:
+    """The broad IPA of a reading written in the course's letters."""
+    vowels = _ur_vowel_ipa()
+    out: list[str] = []
+    for kind, tok in _ur_tokens(reading):
+        if kind == "V":
+            out.append(vowels[tok])
+        elif kind == "C":
+            out.append(_ur_consonant_ipa(tok) or tok)
+        elif kind == "N":
+            if out:
+                last = out[-1]
+                out[-1] = last[0] + "̃" + last[1:]
+        elif tok == "'":
+            out.append("ʔ")
+        elif tok != "-":
+            out.append(tok)
+    return unicodedata.normalize("NFC", "".join(out))
+
+
+@dataclass
+class _UrLetter:
+    ch: str
+    vow: str | None = None        # a, i, u written on it
+    shadda: bool = False
+    sukun: bool = False
+    dagger: bool = False
+    hamza: bool = False
+
+
+@dataclass
+class _UrTok:
+    kind: str                     # C, V, Q (hamza), A (a silent carrier), X
+    iso: str = ""
+    mark: str | None = None       # a consonant's written vowel; "0" for none
+    nasal: bool = False
+
+
+def _ur_letters(word: str) -> list[_UrLetter]:
+    word = unicodedata.normalize("NFC", word).translate(UR_NORMALISE)
+    out: list[_UrLetter] = []
+    for c in word:
+        if c in UR_IGNORE:
+            continue
+        if c == "ۂ":
+            out.append(_UrLetter("ہ", hamza=True))
+        elif c == "ئ":
+            out.append(_UrLetter("ی", hamza=True))
+        elif c in "أإ":
+            out.append(_UrLetter("ا"))
+        elif c in UR_MARKS and out:
+            out[-1].vow = UR_MARKS[c]
+        elif c == UR_SHADDA and out:
+            out[-1].shadda = True
+        elif c == UR_SUKUN and out:
+            out[-1].sukun = True
+        elif c == UR_DAGGER and out:
+            out[-1].dagger = True
+        elif c == UR_HAMZA_ABOVE and out:
+            out[-1].hamza = True
+        elif c in UR_OTHER_MARKS:
+            continue
+        else:
+            out.append(_UrLetter(c))
+    return out
+
+
+def _ur_bare(word: str) -> str:
+    """[word]'s letters alone, to look it up in the lexicon."""
+    return "".join(l.ch for l in _ur_letters(word))
+
+
+def _ur_parse(word: str) -> tuple[list[_UrTok], bool, list[str]]:
+    """[word] as tokens; whether it ends in the linking vowel; and notes on
+    letters that could be read more than one way."""
+    letters = _ur_letters(word)
+    notes: list[str] = []
+    ezafe = False
+    if len(letters) > 1:
+        last = letters[-1]
+        if last.ch == "ہ" and last.hamza:
+            ezafe = True
+        elif last.vow == "i" and last.ch not in "اآو":
+            ezafe = True
+            last.vow = None
+    toks: list[_UrTok] = []
+    aspirable = {"b", "p", "t", "ṭ", "j", "c", "d", "ḍ", "ṛ", "k", "g",
+                 "l", "m", "n", "r"}
+
+    def add_c(iso: str, L: _UrLetter) -> None:
+        if L.shadda:
+            toks.append(_UrTok("C", iso, "0"))
+        mark = L.vow if L.vow else ("0" if L.sukun else None)
+        toks.append(_UrTok("C", iso, mark))
+        if L.dagger:
+            toks.append(_UrTok("V", "ā"))
+
+    for i, L in enumerate(letters):
+        ch = L.ch
+        nxt = letters[i + 1] if i + 1 < len(letters) else None
+        prev = toks[-1] if toks else None
+        after_c = prev is not None and prev.kind == "C"
+        if ch == "آ":
+            toks.append(_UrTok("V", "ā"))
+        elif ch == "ا":
+            if L.vow:
+                toks.append(_UrTok("V", UR_SHORT[L.vow]))
+            elif len(letters) == 1 or after_c or (
+                    prev is not None and prev.kind in ("V", "A", "Q")):
+                toks.append(_UrTok("V", "ā"))
+            elif nxt is not None and nxt.ch in "وی ے".replace(" ", "") \
+                    and not nxt.vow:
+                toks.append(_UrTok("A"))
+            else:
+                toks.append(_UrTok("V", UR_UNKNOWN))
+        elif ch == "ع":
+            if L.vow:
+                toks.append(_UrTok("V", UR_SHORT[L.vow]))
+            elif nxt is None:
+                toks.append(_UrTok("A"))
+            elif nxt.ch in "اآوی" and not nxt.vow:
+                toks.append(_UrTok("A"))
+            else:
+                toks.append(_UrTok("V", UR_UNKNOWN))
+        elif ch == "ء":
+            toks.append(_UrTok("Q", "'"))
+        elif ch == "و":
+            if L.vow:
+                add_c("v", L)
+            elif after_c and prev.mark in ("u", "a", "i"):
+                # The mark and the letter write one long vowel or diphthong.
+                toks.append(_UrTok("V", {"u": "ū", "a": "au", "i": "ō"}[
+                    prev.mark]))
+                prev.mark = "0"
+            elif prev is None or prev.kind in ("Q",):
+                add_c("v", L)
+            elif prev.kind == "A":
+                toks.append(_UrTok("V", "ō"))
+                notes.append("و: ō, ū or au")
+            elif after_c and nxt is not None and nxt.ch in "اآ":
+                add_c("v", L)
+            elif after_c:
+                toks.append(_UrTok("V", "ō"))
+                notes.append("و: ō, ū or au")
+            elif prev.kind == "V" and nxt is not None and nxt.ch not in "ںی":
+                add_c("v", L)
+            else:
+                toks.append(_UrTok("V", "ō"))
+                notes.append("و: ō, ū or au")
+        elif ch == "ی":
+            glide = nxt is not None and not (
+                nxt.ch == "و" and not nxt.vow) and (
+                nxt.ch in "اآوے" or (L.hamza and nxt.ch == "ی"))
+            if L.vow:
+                add_c("y", L)
+            elif prev is None and nxt is not None:
+                add_c("y", L)
+            elif L.hamza and glide:
+                add_c("y", L)
+            elif prev is not None and prev.kind in ("V", "Q") and glide:
+                add_c("y", L)
+            elif after_c and nxt is not None and nxt.ch in "اآ":
+                add_c("y", L)
+            elif after_c and prev.mark in ("i", "a"):
+                toks.append(_UrTok("V", {"i": "ī", "a": "ai"}[prev.mark]))
+                prev.mark = "0"
+            else:
+                toks.append(_UrTok("V", "ī"))
+                notes.append("ی: ī or ē")
+        elif ch == "ے":
+            if after_c and prev.mark == "a":
+                toks.append(_UrTok("V", "ai"))
+                prev.mark = "0"
+            else:
+                toks.append(_UrTok("V", "ē"))
+                if len(letters) > 1:
+                    notes.append("ے: ē or ai")
+        elif ch == UR_ASPIRATE:
+            if after_c and prev.iso in aspirable and not prev.iso.endswith("h"):
+                prev.iso += "h"
+                if L.vow:
+                    prev.mark = L.vow
+                elif L.sukun:
+                    prev.mark = "0"
+            else:
+                add_c("h", L)
+        elif ch == "ہ":
+            final = nxt is None
+            if ezafe and final and L.hamza:
+                toks.append(_UrTok("V", "a"))
+            elif L.vow or prev is None or not final:
+                add_c("h", L)
+            elif prev.kind == "V":
+                add_c("h", L)
+            elif after_c:
+                toks.append(_UrTok("V", UR_UNKNOWN))
+                notes.append("final ہ: a silent vowel (a, ā or ē) or h")
+            else:
+                add_c("h", L)
+        elif ch == UR_NASAL:
+            if prev is not None and prev.kind == "V":
+                prev.nasal = True
+            else:
+                toks.append(_UrTok("V", UR_UNKNOWN, nasal=True))
+        elif ch in UR_CONSONANTS:
+            add_c(UR_CONSONANTS[ch], L)
+        elif ch.isdigit():
+            toks.append(_UrTok("X", str(unicodedata.digit(ch, 0))))
+        else:
+            toks.append(_UrTok("X", UR_PUNCT.get(ch, ch)))
+    return toks, ezafe, sorted(set(notes))
+
+
+def _ur_reading(toks: list[_UrTok], ezafe: bool) -> str:
+    out: list[str] = []
+    for k, t in enumerate(toks):
+        if t.kind == "C":
+            out.append(t.iso)
+            nxt = toks[k + 1] if k + 1 < len(toks) else None
+            if t.mark in UR_SHORT:
+                out.append(UR_SHORT[t.mark])
+            elif t.mark is None and nxt is not None and nxt.kind == "C":
+                out.append(UR_UNKNOWN)
+        elif t.kind in ("V", "Q", "X"):
+            out.append(t.iso + (UR_NASAL_MARK if t.nasal else ""))
+    return "".join(out) + (UR_EZAFE[0] if ezafe else "")
+
+
+def _ur_skeleton(items: list[str]) -> list[str]:
+    folded = [UR_FOLD.get(c, c) for c in items]
+    return [c for k, c in enumerate(folded) if k == 0 or c != folded[k - 1]]
+
+
+def _ur_typed_to_reading(hint: str) -> str:
+    """A hint as a reading: Devanagari is read by the Hindi engine, a hint
+    with accented letters is kept, and one typed in plain Latin letters is
+    turned into the reading's letters (aa to ā, sh to ś, lone e to ē, a final
+    a to ā)."""
+    hint = unicodedata.normalize("NFC", hint.strip())
+    if any(0x0900 <= ord(c) < 0x0980 for c in hint):
+        return transcribe(hint, "hi").reading
+    if any(ord(c) > 127 for c in hint):
+        return hint
+    table = {"chh": "ch", "ch": "c", "sh": "ś", "aa": "ā", "ee": "ī",
+             "ii": "ī", "oo": "ū", "uu": "ū"}
+    s = re.sub(r"chh|ch|sh|aa|ee|ii|oo|uu",
+               lambda m: table[m.group(0)], hint.lower())
+    s = s.replace("e", "ē").replace("o", "ō")
+    return re.sub(r"(?<=[^aāeēiīoōuūh\W])a(?=\b)", "ā", s)
+
+
+_UR_LEXICON: dict[str, tuple[str, str]] | None = None
+
+
+def urdu_lexicon() -> dict[str, tuple[str, str]]:
+    """tools/urdu_words.tsv: bare Urdu word, reading, optional note."""
+    global _UR_LEXICON
+    if _UR_LEXICON is None:
+        _UR_LEXICON = {}
+        path = Path(__file__).with_name("urdu_words.tsv")
+        try:
+            lines = path.read_text(encoding="utf-8").splitlines()
+        except OSError:
+            lines = []
+        for line in lines:
+            if not line.strip() or line.lstrip().startswith("#"):
+                continue
+            cols = line.split("\t")
+            if len(cols) >= 2:
+                key = _ur_bare(cols[0].strip())
+                _UR_LEXICON[key] = (
+                    unicodedata.normalize("NFC", cols[1].strip()),
+                    cols[2].strip() if len(cols) > 2 else "")
+    return _UR_LEXICON
+
+
+def _ur_word(word: str, hint: str | None
+             ) -> tuple[str, bool | None, list[str]]:
+    """One Urdu word's reading; whether its hint fitted (None: no hint); and
+    notes."""
+    toks, ezafe, notes = _ur_parse(word)
+    reading = _ur_reading(toks, ezafe)
+    unknown = UR_UNKNOWN in reading
+    fitted: bool | None = None
+    if hint:
+        head, _, tail = _ur_typed_to_reading(hint).partition("-")
+        theirs = _ur_skeleton([t for k, t in _ur_tokens(head) if k == "C"])
+        ours = _ur_skeleton([t.iso for t in toks if t.kind == "C"])
+        # A typed final n stands for ں, which is no consonant.
+        if any(t.nasal for t in toks) and theirs and theirs[-1] == "n" and (
+                not ours or ours[-1] != "n"):
+            theirs = theirs[:-1]
+            if head.endswith("n"):
+                head = head[:-1] + UR_NASAL_MARK
+        if ours == theirs:
+            fitted = True
+            reading = head + (("-" + tail) if tail else
+                              (UR_EZAFE[0] if ezafe else ""))
+            return reading, fitted, []
+        fitted = False
+    if not unknown and not notes:
+        return reading, fitted, []
+    entry = urdu_lexicon().get(_ur_bare(word))
+    if entry:
+        extra = [f"{word}: {entry[1]}"] if entry[1] else []
+        return entry[0] + (UR_EZAFE[0] if ezafe else ""), fitted, extra
+    if unknown:
+        notes = notes + [
+            "unvowelled: short vowels are not written; the ? marks where "
+            "one may be, so a person must review this reading"]
+    return reading, fitted, [f"{word}: {n}" for n in notes]
+
+
+def urdu(text: str, hint: str | None = None) -> Transcription:
+    """[text], Urdu in Perso-Arabic script, as a reading and its broad IPA.
+    The hint, if any, is one reading per word (see this section's header)."""
+    words = text.split()
+    hints = hint.split() if hint else []
+    n_words = sum(1 for w in words
+                  if any(c.isalpha() or unicodedata.category(c) == "Mn"
+                         for c in w))
+    notes: list[str] = []
+    if hints and len(hints) != n_words:
+        notes.append("the hint has a different number of words; ignored")
+        hints = []
+    readings: list[str] = []
+    fitted_all = True
+    h = 0
+    for w in words:
+        start = 0
+        while start < len(w) and not (w[start].isalpha() or
+                                      unicodedata.category(w[start]) in
+                                      ("Mn", "Nd")):
+            start += 1
+        end = len(w)
+        while end > start and not (w[end - 1].isalpha() or
+                                   unicodedata.category(w[end - 1]) in
+                                   ("Mn", "Nd")):
+            end -= 1
+        core = w[start:end]
+        lead = "".join(UR_PUNCT.get(c, c) for c in w[:start])
+        trail = "".join(UR_PUNCT.get(c, c) for c in w[end:])
+        if not core:
+            readings.append(lead + trail)
+            continue
+        if not any(c.isalpha() for c in core):
+            readings.append(lead + "".join(
+                str(unicodedata.digit(c, 0)) if c.isdigit() else c
+                for c in core) + trail)
+            continue
+        r, fit, n = _ur_word(core, hints[h] if hints else None)
+        h += 1 if hints else 0
+        if fit is False:
+            fitted_all = False
+        notes.extend(n)
+        readings.append(lead + r + trail)
+    reading = " ".join(readings)
+    return Transcription(reading, reading_to_ipa(reading), fitted_all, notes)
 
 
 def main(argv: list[str]) -> int:

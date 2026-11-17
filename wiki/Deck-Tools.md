@@ -318,6 +318,37 @@ when a topic differs, `--all-targets` also lists two-character cards). The
 validator checks `chars` against the same decks. See
 [Deck-Format](Deck-Format#script-topics), "Script topics".
 
+## `transcribe.py`
+
+`python3 tools/transcribe.py <code> "<text>" [hint]` prints a reading in the
+course's letters (based on ISO 15919) and the broad IPA of a word or sentence
+([ADR-0025](ADR-0025-Iso-15919-And-Ipa)). Each language has its own engine;
+a hint is how the word is said, and the tool says when it did not fit.
+
+**Urdu script** (`ur`, or `hi` when the text is Perso-Arabic). Hindustani is
+one course in two scripts, so Urdu-script text is read into the same letters
+and IPA as the Devanagari cards, by the `hi` tables:
+
+```sh
+python3 tools/transcribe.py ur "نقش فریادی ہے کس کی شوخیِ تحریر کا"
+python3 tools/transcribe.py ur "کتنا" kitna          # a hint, one reading per word
+python3 tools/transcribe.py ur "نَقْش"                # marks written: read as written
+```
+
+Urdu leaves its short vowels unwritten, so the tool never invents them. A word
+is read, in this order, from its hint (Devanagari, accented letters, or plain
+Latin letters, which it must fit the word's consonants); from its marks (zabar,
+zer, pesh, sukun, shadda) when they are all written; from
+`tools/urdu_words.tsv`, a plain list of bare word, reading and an optional note
+that anyone can extend; or else as its consonant skeleton with `?` where a
+short vowel may be, and a note, so a person reviews it. A letter with several
+readings (و ō, ū, v or au; ی ī, ē or y; ے ē or ai; a final ہ) gets its
+commonest one and a note. The ezafe (a zer ending a word) is written `-i`,
+IPA `ɪ`; the Perso-Arabic script cards write it `-e`, so a card that follows
+them changes the one constant `UR_EZAFE`. Readings follow the decks: ش is `ś`,
+ح `h`, خ `k͟h`, ق `q`, ں `m̐`. There is no Perso-Arabic to Devanagari helper:
+Hindi's dropped inherent vowels cannot be read back from a reading.
+
 ## `transcribe_decks.py`
 
 Checks, and fixes, a language's stored `reading` and `ipa` against
