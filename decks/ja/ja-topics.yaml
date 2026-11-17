@@ -66,7 +66,7 @@ topics:
     term: { text: "複合動詞", reading: "fukugou doushi" }
     kind: "verbs"
     level: "B1"
-    decks: ["ja-multiword-compound-verbs"]
+    decks: ["ja-multiword-compound-verbs", "ja-multiword-compound-verbs-2"]
   - id: "ja-popular-works"
     name: { en: "Popular films, books, songs and comics" }
     summary: { en: "Well-known Japanese works that are still protected by copyright. You find them yourself; the app asks questions about them afterwards." }
@@ -86,7 +86,7 @@ topics:
     term: { text: "和歌", reading: "waka" }
     kind: "other"
     level: "B1"
-    cards: ["ja-4316", "ja-4317", "ja-4319", "ja-4320", "ja-4601", "ja-4609", "ja-4700", "ja-4704", "ja-4324", "ja-4651", "ja-4652", "ja-4602", "ja-4603", "ja-4617", "ja-4608", "ja-4610", "ja-4701", "ja-4702", "ja-4703", "ja-4705", "ja-4706", "ja-4707", "ja-4604", "ja-4605", "ja-4606", "ja-4607", "ja-4664", "ja-4665", "ja-4666", "ja-4667"]
+    cards: ["ja-4316", "ja-4317", "ja-4319", "ja-4320", "ja-4601", "ja-4609", "ja-4700", "ja-4704", "ja-4324", "ja-4651", "ja-4652", "ja-4602", "ja-4603", "ja-4617", "ja-4608", "ja-4610", "ja-4701", "ja-4702", "ja-4703", "ja-4705", "ja-4706", "ja-4707", "ja-4604", "ja-4605", "ja-4606", "ja-4607", "ja-4664", "ja-4665", "ja-4666", "ja-4667", "ja-4709", "ja-4710", "ja-4711", "ja-4712", "ja-4713", "ja-4714", "ja-4715", "ja-4716", "ja-4717"]
   - id: "ja-classical-prose"
     name: { en: "Classical prose" }
     summary: { en: "Prose written in the classical Japanese of the Heian and Edo periods, such as diaries, essays and travel accounts, with the grammar of the old texts kept as written." }
@@ -170,3 +170,77 @@ topics:
     level: "B1"
     decks: ["ja-kanji-32", "ja-kanji-33", "ja-kanji-34", "ja-kanji-35", "ja-kanji-36", "ja-kanji-37", "ja-kanji-38"]
     chars: ["亡", "寸", "己", "干", "仁", "収", "尺", "片", "冊", "処", "幼", "庁", "穴", "危", "后", "吸", "存", "宅", "宇", "机", "灰", "至", "舌", "乱", "卵", "否", "困", "孝", "忘", "我", "批", "私", "系", "並", "乳", "供", "券", "刻", "呼", "垂", "宗", "宙", "宝", "届", "延", "忠", "承", "担", "拝", "拡", "枚", "沿", "若", "奏", "姿", "宣", "専", "巻", "律", "映", "染", "段", "泉", "洗", "派", "皇", "看", "砂", "紅", "肺", "胃", "背", "退", "革", "俳", "俵", "値", "党", "射", "将", "展", "座", "従", "恩", "朗", "株", "班", "秘", "納", "純", "胸", "蚕", "討", "針", "降", "陛", "除", "骨", "域", "密", "捨", "探", "推", "欲", "済", "異", "盛", "窓", "翌", "脳", "著", "視", "訪", "訳", "郵", "郷", "閉", "頂", "割", "創", "勤", "善", "尊", "就", "揮", "敬", "晩", "棒", "痛", "筋", "策", "衆", "裁", "装", "補", "詞", "貴", "傷", "幕", "暖", "源", "盟", "絹", "署", "聖", "腸", "腹", "蒸", "裏", "誠", "賃", "預", "層", "暮", "模", "疑", "磁", "穀", "誌", "認", "誤", "銭", "閣", "障", "劇", "敵", "権", "潮", "熟", "蔵", "誕", "論", "諸", "遺", "奮", "憲", "操", "樹", "激", "糖", "縦", "鋼", "優", "厳", "縮", "覧", "簡", "臨", "難", "臓", "警"]
+  - id: "ja-noh-and-puppet-theatre"
+    name: { en: "Noh and puppet theatre" }
+    summary: { en: "Lines from two works of the stage: Zeami's Fushikaden, the treatise on noh written from 1402, and Chikamatsu Monzaemon's puppet play Sonezaki Shinju of 1703." }
+    term: { text: "能楽", reading: "nougaku" }
+    kind: "other"
+    level: "B1"
+    cards: ["ja-4611", "ja-4612", "ja-4614", "ja-4615"]
+  - id: "ja-idiomatic-verbs"
+    name: { en: "Idiomatic verbs" }
+    summary: { en: "Idioms made from a noun with its particle and a verb, such as 気をつける (to take care) and 気にする (to mind), whose meaning is not the literal one." }
+    kind: "verbs"
+    level: "B1"
+    decks: ["ja-multiword-idiomatic-verbs"]
+  - id: "ja-suru-verbs"
+    name: { en: "Verbs made with suru" }
+    summary: { en: "Verbs made from a noun and the verb する (suru), such as しごとする (to work), インストールする (to install) and おしゃべりする (to chat)." }
+    term: { text: "サ変動詞", reading: "sahen doushi" }
+    kind: "verbs"
+    level: "B1"
+    decks: ["ja-multiword-suru-verbs"]
+  - id: "ja-joining-sentences"
+    name: { en: "Joining sentences and describing nouns with a clause" }
+    summary: { en: "Words that join one sentence to the next, such as and then, but, so and or, and a clause placed before a noun to describe it, such as きのう かった ほん (the book I bought yesterday)." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["ja-grammar-conjunctions", "ja-grammar-relative-clauses"]
+    grammar: ["conjunctions", "relative-clauses"]
+  - id: "ja-adjective-forms"
+    name: { en: "Adjectives: past forms, comparison and liking" }
+    summary: { en: "How adjectives change: the negative and polite past of i- and na-adjectives, comparing with より (yori) and いちばん (ichiban), and saying what you like or are good at with すき (suki) and じょうず (jouzu)." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["ja-grammar-adjective-past", "ja-grammar-yori", "ja-grammar-ichiban", "ja-grammar-suki", "ja-grammar-jouzu"]
+    grammar: ["i-nakatta", "i-polite-past", "na-datta", "na-janakatta", "na-polite-past", "yori", "ichiban", "suki", "jouzu"]
+  - id: "ja-honorifics"
+    name: { en: "Polite and honorific speech" }
+    summary: { en: "The three levels of polite Japanese: sonkeigo, which raises the person who acts, kenjougo, which lowers your own side, and teineigo, the polite level with its very polite forms でございます (de gozaimasu) and ございます (gozaimasu)." }
+    term: { text: "敬語", reading: "keigo" }
+    kind: "grammar"
+    level: "B1"
+    decks: ["ja-grammar-keigo-sonkeigo", "ja-grammar-keigo-kenjougo", "ja-grammar-teineigo"]
+    grammar: ["sonkeigo", "kenjougo", "teineigo"]
+  - id: "ja-transitive-verbs"
+    name: { en: "Intransitive and transitive verbs" }
+    summary: { en: "Verbs that come in pairs, such as the door opens by itself and someone opens the door. The same topic holds fifty verbs of what happens next, such as spreading, filling and cutting." }
+    term: { text: "自動詞・他動詞", reading: "jidoushi, tadoushi" }
+    kind: "verbs"
+    level: "B1"
+    decks: ["ja-grammar-transitivity", "ja-verbs-5"]
+    grammar: ["intransitive", "transitive"]
+  - id: "ja-money"
+    name: { en: "Money" }
+    summary: { en: "Words for money: bills and prices, savings and debt, paying, haggling and saving." }
+    kind: "words"
+    level: "B1"
+    decks: ["ja-money"]
+  - id: "ja-society-and-university"
+    name: { en: "Society and university" }
+    summary: { en: "Words for people and groups, ageing and work, and for university life: courses and exams, fees and scholarships, and degrees from a bachelor's to a doctorate." }
+    kind: "words"
+    level: "B1"
+    decks: ["ja-society", "ja-university"]
+  - id: "ja-food-and-literature"
+    name: { en: "Food culture and literature" }
+    summary: { en: "Words for food culture, such as わしょく (washoku), ようしょく (yoshoku), おでん (oden) and おこのみやき (okonomiyaki), and for literature: novels, poems and the short forms of haiku, tanka and senryu." }
+    kind: "words"
+    level: "B1"
+    decks: ["ja-food-culture", "ja-literature"]
+  - id: "ja-abstract-words"
+    name: { en: "Abstract words" }
+    summary: { en: "Abstract nouns and adjectives of kind, degree, process, reason and possibility, such as こと (thing, matter), わけ (reason), はず (should be) and つもり (intention)." }
+    kind: "words"
+    level: "B1"
+    decks: ["ja-abstract-words"]
