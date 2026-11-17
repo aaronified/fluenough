@@ -2737,7 +2737,7 @@ UR_OTHER_MARKS = {"ً", "ٌ", "ٍ", UR_SHADDA, UR_SUKUN, UR_DAGGER,
                   UR_HAMZA_ABOVE, "ٖ", "ٗ", "٘", "ٙ", "ٚ", "ٛ", "ٜ", "ٝ", "ٞ"}
 UR_ASPIRATE = "ھ"
 UR_NASAL = "ں"
-UR_EZAFE = ("-i", "ɪ")                    # the written linking vowel, its IPA
+UR_EZAFE = ("-e", "ɪ")                    # the written linking vowel, its IPA
 UR_NASAL_MARK = "m̐"
 UR_UNKNOWN = "?"
 UR_PUNCT = {"،": ",", "؛": ";", "؟": "?", "۔": ".", "٫": ".", "٪": "%"}
@@ -2799,7 +2799,19 @@ def reading_to_ipa(reading: str) -> str:
     """The broad IPA of a reading written in the course's letters."""
     vowels = _ur_vowel_ipa()
     out: list[str] = []
-    for kind, tok in _ur_tokens(reading):
+    toks = _ur_tokens(reading)
+    ez = UR_EZAFE[0]
+    skip = False
+    for k, (kind, tok) in enumerate(toks):
+        if skip:
+            skip = False
+            continue
+        if (kind == "X" and tok == "-" and k + 1 < len(toks)
+                and toks[k + 1] == ("V", ez[1:]) and (
+                    k + 2 == len(toks) or toks[k + 2][0] == "X")):
+            out.append(UR_EZAFE[1])
+            skip = True
+            continue
         if kind == "V":
             out.append(vowels[tok])
         elif kind == "C":
@@ -3091,8 +3103,7 @@ def _ur_word(word: str, hint: str | None
                 head = head[:-1] + UR_NASAL_MARK
         if ours == theirs:
             fitted = True
-            reading = head + (("-" + tail) if tail else
-                              (UR_EZAFE[0] if ezafe else ""))
+            reading = head + (UR_EZAFE[0] if tail or ezafe else "")
             return reading, fitted, []
         fitted = False
     if not unknown and not notes:

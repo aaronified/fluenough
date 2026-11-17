@@ -13,7 +13,7 @@ class UrduTest(unittest.TestCase):
     def test_the_couplet_with_the_ezafe(self) -> None:
         t = read("نقش فریادی ہے کس کی شوخیِ تحریر کا")
         self.assertEqual(
-            t.reading, "naqś fariyādī hai kis kī śōkhī-i tahrīr kā")
+            t.reading, "naqś fariyādī hai kis kī śōkhī-e tahrīr kā")
         self.assertEqual(
             t.ipa, "nəqʃ fərɪjaːd̪iː ɦɛː kɪs kiː ʃoːkʰiːɪ t̪əɦriːr kaː")
         self.assertEqual(t.notes, [])
@@ -61,7 +61,7 @@ class UrduTest(unittest.TestCase):
 
     def test_a_hint_for_the_ezafe_keeps_the_linking_vowel(self) -> None:
         t = read("شوخیِ", "śōkhī")
-        self.assertEqual(t.reading, "śōkhī-i")
+        self.assertEqual(t.reading, "śōkhī-e")
         self.assertTrue(t.ipa.endswith("ɪ"))
 
     def test_a_hint_with_the_wrong_word_count_is_ignored(self) -> None:
@@ -127,7 +127,7 @@ class UrduTest(unittest.TestCase):
         self.assertEqual(read("دل، جان۔").reading, "dil, jān.")
 
     def test_the_ipa_of_a_reading(self) -> None:
-        self.assertEqual(reading_to_ipa("śōkhī-i"), "ʃoːkʰiːɪ")
+        self.assertEqual(reading_to_ipa("śōkhī-e"), "ʃoːkʰiːɪ")
         self.assertEqual(reading_to_ipa("vaqt"), "ʋəqt̪")
         self.assertEqual(reading_to_ipa("haim̐"), "ɦɛ̃ː")
         self.assertEqual(reading_to_ipa("k͟hās"), "xaːs")

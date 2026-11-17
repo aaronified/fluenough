@@ -343,9 +343,9 @@ zer, pesh, sukun, shadda) when they are all written; from
 that anyone can extend; or else as its consonant skeleton with `?` where a
 short vowel may be, and a note, so a person reviews it. A letter with several
 readings (و ō, ū, v or au; ی ī, ē or y; ے ē or ai; a final ہ) gets its
-commonest one and a note. The ezafe (a zer ending a word) is written `-i`,
-IPA `ɪ`; the Perso-Arabic script cards write it `-e`, so a card that follows
-them changes the one constant `UR_EZAFE`. Readings follow the decks: ش is `ś`,
+commonest one and a note. The ezafe (a zer ending a word) is written `-e`, as in
+the Perso-Arabic script cards (`vazīr-e azam`), and its IPA is `ɪ`, as theirs;
+both are the one constant `UR_EZAFE`. Readings follow the decks: ش is `ś`,
 ح `h`, خ `k͟h`, ق `q`, ں `m̐`. There is no Perso-Arabic to Devanagari helper:
 Hindi's dropped inherent vowels cannot be read back from a reading.
 
