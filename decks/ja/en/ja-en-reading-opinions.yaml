@@ -1,0 +1,54 @@
+"schema": !!int "1"
+"id": "ja-en-reading-opinions"
+"name": "Japanese reading: opinions"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "ja-opinions-1"
+  "title": "A letter to the paper"
+  "sentences":
+  - "text": "わたしは きじの いけんに さんせいです。"
+    "reading": "watashi wa kiji no iken ni sansei desu."
+  - "text": "でも、はんだんを まちがえました。"
+    "reading": "demo, handan o machigaemashita."
+  - "text": "わたしは いけんを かんがえます。"
+    "reading": "watashi wa iken o kangaemasu."
+  - "text": "たしかに ぎろんは だいじです。"
+    "reading": "tashika ni giron wa daiji desu."
+  - "text": "けれども、ふへいが おおいです。"
+    "reading": "keredomo, fuhei ga ooi desu."
+  - "text": "わたしは ほんねを みとめません。"
+    "reading": "watashi wa honne o mitomemasen."
+  "questions":
+  - "id": "ja-9657"
+    "prompt":
+      "en": "Which line says that the writer agrees with an opinion?"
+    "options":
+    - "en": "The first line"
+    - "en": "The third line"
+    "answer": !!int "1"
+  - "id": "ja-9658"
+    "prompt":
+      "en": "The writer made a wrong judgement."
+    "answer": !!bool "true"
+  - "id": "ja-9659"
+    "prompt":
+      "en": "Which line says that a debate is important?"
+    "options":
+    - "en": "The fourth line"
+    - "en": "The sixth line"
+    "answer": !!int "1"
