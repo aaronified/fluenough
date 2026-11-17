@@ -32,8 +32,8 @@ passages:
         options: [{ en: "लाङ्गलं (lāṅgalaṃ)" }, { en: "खनित्रेण (khanitreṇa)" }, { en: "क्षीरं (kṣīraṃ)" }]
         answer: 1
       - id: "sa-6611"
-        prompt: { en: "The cow gives milk on the threshing floor." }
-        answer: false
+        prompt: { en: "The ox pulls the plough in the field." }
+        answer: true
   - id: "sa-agriculture-text-2"
     title: "Water, cows and crops"
     theme: "agriculture"
@@ -57,5 +57,5 @@ passages:
         options: [{ en: "धान्यम् (dhānyam)" }, { en: "दुर्भिक्षे (durbhikṣe)" }, { en: "अल्पं (alpaṃ)" }]
         answer: 2
       - id: "sa-6615"
-        prompt: { en: "In a famine there is little grain." }
-        answer: true
+        prompt: { en: "Cattle eat grass and husk." }
+        answer: false

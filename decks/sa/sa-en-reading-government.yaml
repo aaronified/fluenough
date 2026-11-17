@@ -15,13 +15,13 @@ passages:
     sentences:
       - { text: "राजा सदा जनपदं रक्षति.", reading: "rājā sadā janapadaṃ rakṣati.", ipa: "raːdʒaː səd̪aː dʒənəpəd̪əm rəkʂət̪i" }
       - { text: "आज्ञां राज्ञो दूतो वहति.", reading: "ājñāṃ rājño dūto vahati.", ipa: "aːdʒɲaːm raːdʒɲoː d̪uːt̪oː ʋəɦət̪i" }
-      - { text: "उपायं मन्त्री राज्ञे वदति.", reading: "upāyaṃ mantrī rājñe vadati.", ipa: "upaːjəm mənt̪riː raːdʒɲeː ʋəd̪ət̪i" }
+      - { text: "उपायं मन्त्री राज्ञे कथयति.", reading: "upāyaṃ mantrī rājñe kathayati.", ipa: "upaːjəm mənt̪riː raːdʒɲeː kət̪ʰəjət̪i" }
       - { text: "चोरो बन्धनेन कारागारं गच्छति.", reading: "coro bandhanena kārāgāraṃ gacchati.", ipa: "tʃoːroː bənd̪ʱəneːnə kaːraːɡaːrəm ɡətʃtʃʰət̪i" }
       - { text: "सभायां सिंहासने राजा तिष्ठति.", reading: "sabhāyāṃ siṃhāsane rājā tiṣṭhati.", ipa: "səbʱaːjaːm sĩɦaːsəneː raːdʒaː t̪iʂʈʰət̪i" }
     questions:
       - id: "sa-6616"
-        prompt: { en: "What does the king always do for the country?" }
-        options: [{ en: "He leads it" }, { en: "He protects it" }, { en: "He praises it" }]
+        prompt: { en: "What does the king always protect?" }
+        options: [{ en: "The treasury" }, { en: "The country" }, { en: "The army" }]
         answer: 2
       - id: "sa-6617"
         prompt: { en: "What does the minister tell the king?" }
@@ -32,8 +32,8 @@ passages:
         options: [{ en: "बन्धनेन (bandhanena)" }, { en: "सिंहासने (siṃhāsane)" }, { en: "कारागारं (kārāgāraṃ)" }]
         answer: 3
       - id: "sa-6619"
-        prompt: { en: "The thief goes to the assembly in fetters." }
-        answer: false
+        prompt: { en: "The minister tells the king a plan." }
+        answer: true
   - id: "sa-government-text-2"
     title: "Treasury, army and trade"
     theme: "government"
@@ -45,8 +45,8 @@ passages:
       - { text: "वैश्यो नगरे वाणिज्यं करोति.", reading: "vaiśyo nagare vāṇijyaṃ karoti.", ipa: "ʋəiʃjoː nəɡəreː ʋaːɳidʒjəm kəroːt̪i" }
     questions:
       - id: "sa-6620"
-        prompt: { en: "What is in the treasury?" }
-        options: [{ en: "Grain and a jewel" }, { en: "Gold and a jewel" }, { en: "Gold and a sword" }]
+        prompt: { en: "What is in the treasury besides gold?" }
+        options: [{ en: "A pearl" }, { en: "A jewel" }, { en: "A crown" }]
         answer: 2
       - id: "sa-6621"
         prompt: { en: "What is the leader of the army like?" }
@@ -57,5 +57,5 @@ passages:
         options: [{ en: "वाणिज्यं (vāṇijyaṃ)" }, { en: "युद्धे (yuddhe)" }, { en: "साक्ष्यं (sākṣyaṃ)" }]
         answer: 1
       - id: "sa-6623"
-        prompt: { en: "The kshatriya protects the kingdom in war." }
-        answer: true
+        prompt: { en: "The vaishya does trade in the village." }
+        answer: false
