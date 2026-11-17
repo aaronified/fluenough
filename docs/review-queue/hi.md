@@ -94,3 +94,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | hi-transport-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
 | unit-level | hi-workplace-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
 | course-wide | `decks/hi/en/*` | Which Hindustani speaker can confirm the notes in decks/hi/en/*? Two are formulaic (conjunct-verbs, calendar months). | Haiku builder | 2026-11-15 |
+| — | hi-culture-2 | Dropped candidate: Ghalib, the second couplet of the ghazal Naqsh-e-faryadi hai ("काव-ए-काव-ए-सख़्त-जानीहा-ए-तन्हाई न पूछ"): the Devanagari text on Hindi Wikisource is cut off after the second line's first words, so the couplet was not read in full. | Haiku builder | 2026-11-17 |
+| — | hi-culture-2 | Dropped candidate: Ghalib, the maqta "बस कि हूँ ग़ालिब": no Devanagari text of this couplet was on a page the builder could read. | Haiku builder | 2026-11-17 |
+| — | hi-culture-2 | Dropped candidate: Mir Taqi Mir, a couplet other than hi-4050 and hi-4054: the Hindi Wikipedia page quotes only hi-4050, and no Devanagari text of another couplet was on a readable page. | Haiku builder | 2026-11-17 |
+| — | hi-culture-2 | Dropped candidate: Nazeer Akbarabadi: the Hindi Wikipedia page quotes no couplet, and the Hindi Wikisource search found no couplet text. | Haiku builder | 2026-11-17 |
+| — | hi-culture-2 | Dropped candidate: Momin Khan Momin: the Hindi Wikipedia page mentions a couplet only in prose and does not write it out in full. | Haiku builder | 2026-11-17 |
+| — | hi-culture-2 | Dropped candidate: Hali (Altaf Husain Hali): the Hindi Wikipedia page under that title does not exist, and no couplet text was found on Hindi Wikisource. | Haiku builder | 2026-11-17 |
