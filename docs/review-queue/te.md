@@ -71,3 +71,10 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | te-8858 | see card | The Sakshi scan's year 2006 is the edition year on the book's index page, and the first printing year of the essays is not given on the page. Should the card show the edition year as its date? | Telugu architect | 2026-11-17 |
 | te-8860 | see card | Narayanarao's date 1963 is the year of the seventh edition on the Telugu Wikisource page; the first printing year is not given. Should the card show the edition year as its date? | Telugu architect | 2026-11-17 |
 | te-8864 | see card | Gona Gannareddy's date 1978 is the edition year on the Telugu Wikisource index page; the first printing year is not given. Should the card show the edition year as its date? | Telugu architect | 2026-11-17 |
+| te-8805 | see card | The last line's gloss 'call them in, won't you' (పిలువరే) is tentative, and the base for పెక్కుచేఁతలు is చేత (cēta): are both right? | Telugu architect | 2026-11-17 |
+| te-8806 | see card | The couplet's archaic grammar (కట్టునా, 'would bind'; గాలిఁ బోవుఁ, 'will be blown away') is tentative, and the assertive గాక is glossed 'will surely, indeed' (tentative): is the English right? | Telugu architect | 2026-11-17 |
+| te-8807 | see card | The assertive particle గాక is glossed 'will surely, indeed' (tentative), as in te-8806, and the verbs బెనఁగేను and పొరలేను are read as first-person future: is the rendering right? | Telugu architect | 2026-11-17 |
+| te-8808 | see card | The base lemma నేరు for నేరనయితిఁగా and the gloss 'could not, was not able to' are tentative: are both right? | Telugu architect | 2026-11-17 |
+| te-8812 | see card | గగనాధిప is glossed 'lord of the sky' (tentative): is the gloss right? | Telugu architect | 2026-11-17 |
+| te-8813 | see card | The word వశిష్టుడు is joined from two printed lines (వ / శిష్టుడు); the edition field says so: is the join right? | Telugu architect | 2026-11-17 |
+| te-8816 | see card | గుణమేలరా is glossed 'this behaviour' (tentative): is the gloss right? | Telugu architect | 2026-11-17 |
