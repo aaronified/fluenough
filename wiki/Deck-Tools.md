@@ -340,7 +340,8 @@ is read, in this order, from its hint (Devanagari, accented letters, or plain
 Latin letters, which it must fit the word's consonants); from its marks (zabar,
 zer, pesh, sukun, shadda) when they are all written; from
 `tools/urdu_words.tsv`, a plain list of bare word, reading and an optional note
-that anyone can extend; or else as its consonant skeleton with `?` where a
+that anyone can extend, or else from `tools/urdu_lexicon_kaikki.tsv` (below);
+or else as its consonant skeleton with `?` where a
 short vowel may be, and a note, so a person reviews it. A letter with several
 readings (و ō, ū, v or au; ی ī, ē or y; ے ē or ai; a final ہ) gets its
 commonest one and a note. The ezafe (a zer ending a word) is written `-e`, as in
@@ -348,6 +349,28 @@ the Perso-Arabic script cards (`vazīr-e azam`), and its IPA is `ɪ`, as theirs;
 both are the one constant `UR_EZAFE`. Readings follow the decks: ش is `ś`,
 ح `h`, خ `k͟h`, ق `q`, ں `m̐`. There is no Perso-Arabic to Devanagari helper:
 Hindi's dropped inherent vowels cannot be read back from a reading.
+
+**The bulk Urdu lexicon** (`tools/urdu_lexicon_kaikki.tsv`). Fetching hints
+word by word is slow, so `tools/build_urdu_lexicon.py` builds a lexicon from the
+[kaikki.org Urdu dump](https://kaikki.org/dictionary/Urdu/kaikki.org-dictionary-Urdu.jsonl)
+of Wiktionary: one row per headword and per single-word inflected form for which
+the dump gives an explicit transliteration. No vowel is inferred: an entry
+without a transliteration gives no row (its IPA alone is not used). Each
+transliteration is converted to the decks' letters (`ś`, `ṭ ḍ ṛ`, `ġ`, `k͟h`
+for x, `m̐` for a nasal vowel, long `ē ō`) and kept only when its consonants are
+the Urdu word's, so a wrong transliteration in the dump is dropped. The key is
+the bare word. A spelling with several readings is listed with all of them,
+`|`-separated, and the engine prints it as `ambiguous: a / b, review` without
+picking one. `tools/urdu_words.tsv` wins over the generated file.
+
+```sh
+python3 tools/build_urdu_lexicon.py              # downloads the dump once, to ~/.cache/fluenough/kaikki
+python3 tools/build_urdu_lexicon.py --dump PATH --dump-date 2026-10-30
+```
+
+The dump's text is from Wiktionary and is CC-BY-SA 4.0: the generated file says
+so in its header and is shared under the same licence. Do not edit it by hand;
+rerun the script, and pin or fix a word in `tools/urdu_words.tsv`.
 
 ## `transcribe_decks.py`
 

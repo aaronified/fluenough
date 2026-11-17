@@ -2,6 +2,7 @@
 
 import unittest
 
+import transcribe as tr
 from transcribe import reading_to_ipa, transcribe, urdu_lexicon
 
 
@@ -10,6 +11,18 @@ def read(text, hint=None, lang="ur"):
 
 
 class UrduTest(unittest.TestCase):
+    """The engine's rules, with the hand-written word list only: the bulk
+    lexicon (test_build_urdu_lexicon.py) would answer where these rules are
+    what is tested."""
+
+    def setUp(self) -> None:
+        self._files, self._lex = tr.UR_LEXICON_FILES, tr._UR_LEXICON
+        tr.UR_LEXICON_FILES = ("urdu_words.tsv",)
+        tr._UR_LEXICON = None
+
+    def tearDown(self) -> None:
+        tr.UR_LEXICON_FILES, tr._UR_LEXICON = self._files, self._lex
+
     def test_the_couplet_with_the_ezafe(self) -> None:
         t = read("نقش فریادی ہے کس کی شوخیِ تحریر کا")
         self.assertEqual(

@@ -2715,7 +2715,9 @@ def sanskrit(text: str, variety: str = "sa") -> Transcription:
 #  - a hint (the word in Devanagari or typed in Latin letters) is read against
 #    the consonants, as for the Indic scripts, and supplies the vowels;
 #  - a word in tools/urdu_words.tsv (extendable: word, reading, optional note)
-#    takes its reading from there;
+#    takes its reading from there, else one in tools/urdu_lexicon_kaikki.tsv
+#    (generated from Wiktionary by tools/build_urdu_lexicon.py); a spelling
+#    with several readings there is printed as ambiguous, never picked;
 #  - otherwise the consonant skeleton is printed, with `?` where a short vowel
 #    may be, and a note, so a person reviews it.
 # A letter that has several readings (و ō/ū/v/au, ی ī/ē/y, ے ē/ai, a final
@@ -3065,29 +3067,44 @@ def _ur_typed_to_reading(hint: str) -> str:
 _UR_LEXICON: dict[str, tuple[str, str]] | None = None
 
 
+UR_LEXICON_FILES = ("urdu_lexicon_kaikki.tsv", "urdu_words.tsv")
+UR_LEXICON_DIR = Path(__file__).resolve().parent
+
+
+def _ur_read_lexicon(name: str, into: dict[str, tuple[str, str]]) -> None:
+    """The rows of the lexicon file [name] (beside this script) put in
+    [into], replacing a word already there; a word listed twice in one file
+    is an error."""
+    path = UR_LEXICON_DIR / name
+    try:
+        lines = path.read_text(encoding="utf-8").splitlines()
+    except OSError:
+        return
+    seen: set[str] = set()
+    for line in lines:
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+        cols = line.lstrip("\ufeff").split("\t")
+        if len(cols) >= 2:
+            key = _ur_bare(cols[0].strip())
+            if key in seen:
+                raise ValueError(f"{name}: {cols[0].strip()} is listed twice")
+            seen.add(key)
+            into[key] = (unicodedata.normalize("NFC", cols[1].strip()),
+                         cols[2].strip() if len(cols) > 2 else "")
+
+
 def urdu_lexicon() -> dict[str, tuple[str, str]]:
-    """tools/urdu_words.tsv: bare Urdu word, reading, optional note."""
+    """Bare Urdu word -> (reading, note). tools/urdu_lexicon_kaikki.tsv (made
+    by tools/build_urdu_lexicon.py from the kaikki.org dump) is read first, and
+    tools/urdu_words.tsv, the hand-written list, wins over it. A reading
+    with `|` holds several readings of one spelling: it is ambiguous."""
     global _UR_LEXICON
     if _UR_LEXICON is None:
-        _UR_LEXICON = {}
-        path = Path(__file__).with_name("urdu_words.tsv")
-        try:
-            lines = path.read_text(encoding="utf-8").splitlines()
-        except OSError:
-            lines = []
-        for line in lines:
-            if not line.strip() or line.lstrip().startswith("#"):
-                continue
-            cols = line.lstrip("\ufeff").split("\t")
-            if len(cols) >= 2:
-                key = _ur_bare(cols[0].strip())
-                if key in _UR_LEXICON:
-                    _UR_LEXICON = None
-                    raise ValueError(
-                        f"urdu_words.tsv: {cols[0].strip()} is listed twice")
-                _UR_LEXICON[key] = (
-                    unicodedata.normalize("NFC", cols[1].strip()),
-                    cols[2].strip() if len(cols) > 2 else "")
+        lex: dict[str, tuple[str, str]] = {}
+        for name in UR_LEXICON_FILES:
+            _ur_read_lexicon(name, lex)
+        _UR_LEXICON = lex
     return _UR_LEXICON
 
 
@@ -3117,10 +3134,14 @@ def _ur_word(word: str, hint: str | None
     if not unknown and not notes:
         return reading, fitted, []
     entry = urdu_lexicon().get(_ur_bare(word))
-    if entry:
+    if entry and "|" in entry[0]:
+        # Several readings are listed for this spelling: none is picked.
+        alts = entry[0].split("|")
+        notes = notes + ["ambiguous: " + " / ".join(alts) + ", review"]
+    elif entry:
         extra = [f"{word}: {entry[1]}"] if entry[1] else []
         return entry[0] + (UR_EZAFE[0] if ezafe else ""), fitted, extra
-    if unknown:
+    elif unknown:
         notes = notes + [
             "unvowelled: short vowels are not written; the ? marks where "
             "one may be, so a person must review this reading"]
