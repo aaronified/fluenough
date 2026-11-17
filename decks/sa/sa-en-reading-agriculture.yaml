@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-agriculture"
+name: "Reading: agriculture"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-agriculture-text-1"
+    title: "Field and cowshed"
+    theme: "agriculture"
+    sentences:
+      - { text: "कर्षकः खनित्रेण भूमिं खनति.", reading: "karṣakaḥ khanitreṇa bhūmiṃ khanati.", ipa: "kərʂəkəh kʰənit̪reːɳə bʱuːmim kʰənət̪i" }
+      - { text: "धेनुर् गोशालायां क्षीरं ददाति.", reading: "dhenur gośālāyāṃ kṣīraṃ dadāti.", ipa: "d̪ʱeːnur ɡoːʃaːlaːjaːm kʂiːrəm d̪əd̪aːt̪i" }
+      - { text: "बलीवर्दः क्षेत्रे लाङ्गलं वहति.", reading: "balīvardaḥ kṣetre lāṅgalaṃ vahati.", ipa: "bəliːʋərd̪əh kʂeːt̪reː laːŋɡələm ʋəɦət̪i" }
+      - { text: "वृष्ट्या सस्यस्य वृद्धिर् भवति.", reading: "vṛṣṭyā sasyasya vṛddhir bhavati.", ipa: "ʋr̩ʂʈjaː səsjəsjə ʋr̩d̪d̪ʱir bʱəʋət̪i" }
+      - { text: "खले धान्यस्य राशिर् अस्ति.", reading: "khale dhānyasya rāśir asti.", ipa: "kʰəleː d̪ʱaːnjəsjə raːʃir əst̪i" }
+    questions:
+      - id: "sa-6608"
+        prompt: { en: "What does the farmer dig the ground with?" }
+        options: [{ en: "A plough" }, { en: "A sickle" }, { en: "A spade" }]
+        answer: 3
+      - id: "sa-6609"
+        prompt: { en: "Where does the cow give milk?" }
+        options: [{ en: "In the field" }, { en: "In the cowshed" }, { en: "On the threshing floor" }]
+        answer: 2
+      - id: "sa-6610"
+        prompt: { en: "Which word means 'plough'?" }
+        options: [{ en: "लाङ्गलं (lāṅgalaṃ)" }, { en: "खनित्रेण (khanitreṇa)" }, { en: "क्षीरं (kṣīraṃ)" }]
+        answer: 1
+      - id: "sa-6611"
+        prompt: { en: "The ox pulls the plough in the field." }
+        answer: true
+  - id: "sa-agriculture-text-2"
+    title: "Water, cows and crops"
+    theme: "agriculture"
+    sentences:
+      - { text: "कुल्यया क्षेत्रं जलं गच्छति.", reading: "kulyayā kṣetraṃ jalaṃ gacchati.", ipa: "kuljəjaː kʂeːt̪rəm dʒələm ɡətʃtʃʰət̪i" }
+      - { text: "गोपालो धेनूर् गोशालां नयति.", reading: "gopālo dhenūr gośālāṃ nayati.", ipa: "ɡoːpaːloː d̪ʱeːnuːr ɡoːʃaːlaːm nəjət̪i" }
+      - { text: "क्षेत्रे बीजात् सस्यं भवति.", reading: "kṣetre bījāt sasyaṃ bhavati.", ipa: "kʂeːt̪reː biːdʒaːt̪ səsjəm bʱəʋət̪i" }
+      - { text: "पशवो घासं पलालं च खादन्ति.", reading: "paśavo ghāsaṃ palālaṃ ca khādanti.", ipa: "pəʃəʋoː ɡʱaːsəm pəlaːləm tʃə kʰaːd̪ənt̪i" }
+      - { text: "दुर्भिक्षे धान्यम् अल्पं भवति.", reading: "durbhikṣe dhānyam alpaṃ bhavati.", ipa: "d̪urbʱikʂeː d̪ʱaːnjəm əlpəm bʱəʋət̪i" }
+    questions:
+      - id: "sa-6612"
+        prompt: { en: "Where does the cowherd lead the cows?" }
+        options: [{ en: "To the river" }, { en: "To the field" }, { en: "To the cowshed" }]
+        answer: 3
+      - id: "sa-6613"
+        prompt: { en: "What do the cattle eat with the grass?" }
+        options: [{ en: "Straw" }, { en: "Barley" }, { en: "Husk" }]
+        answer: 1
+      - id: "sa-6614"
+        prompt: { en: "Which word means 'in a famine'?" }
+        options: [{ en: "धान्यम् (dhānyam)" }, { en: "दुर्भिक्षे (durbhikṣe)" }, { en: "अल्पं (alpaṃ)" }]
+        answer: 2
+      - id: "sa-6615"
+        prompt: { en: "Cattle eat grass and husk." }
+        answer: false
