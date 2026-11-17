@@ -36,6 +36,12 @@ const Map<String, String> scriptFontAliases = <String, String>{
 /// tools/deck_index.py).
 const List<String> contentFontScripts = <String>['latin', 'cyrillic', 'greek'];
 
+/// The scripts written in the Unicode private-use area, which no phone has a
+/// font for: sitelen pona's (U+F1900 to U+F19FF). Drawn before their font is
+/// on the phone they are boxes, so text in them shows its other spelling, or a
+/// mark, until the font is downloaded (ADR-0055).
+const Set<String> privateUseScripts = <String>{'sitelen_pona'};
+
 /// The font key to draw [language]'s text in [script] with: [script] itself
 /// unless [languageFontScripts] names another, or it shares another's font
 /// ([scriptFontAliases]).

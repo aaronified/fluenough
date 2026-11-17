@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
+import '../../app/app_state.dart';
+import '../../core/decks/font_check.dart';
 import '../../core/decks/script_fonts.dart';
 import '../../core/models/aksharas.dart';
 import '../../core/models/card.dart';
@@ -116,9 +118,25 @@ class TargetText extends StatelessWidget {
     if (card == null) return _build(context);
     final state = AppScope.of(context);
     return ListenableBuilder(
-      listenable: state.settings,
+      listenable: Listenable.merge(<Listenable?>[
+        state.settings,
+        state.deckDownloads?.fonts,
+      ]),
       builder: (context, _) {
-        final shown = state.targetShown(card, language, scripts: scripts);
+        var shown = state.targetShown(card, language, scripts: scripts);
+        // Glyphs with no font on the phone are boxes: until the font is
+        // downloaded the card shows its spelling in another script.
+        if (_boxed(state, shown.language)) {
+          for (final script in language.allScripts) {
+            final other = card.targetIn(script, firstScript: language.script);
+            if (other != null &&
+                !privateUseScripts.contains(script) &&
+                script != shown.language.script) {
+              shown = (text: other, language: language.inScript(script));
+              break;
+            }
+          }
+        }
         final main = shown.text == text
             ? _build(context)
             : TargetText._raw(
@@ -130,7 +148,14 @@ class TargetText extends StatelessWidget {
                 textAlign,
                 _sizing,
               )._build(context);
-        final others = state.otherSpellings(card, language, scripts: scripts);
+        final others = <({String text, LanguageInfo language})>[
+          for (final other in state.otherSpellings(
+            card,
+            language,
+            scripts: scripts,
+          ))
+            if (!_boxed(state, other.language)) other,
+        ];
         if (others.isEmpty) return main;
         return Column(
           mainAxisSize: MainAxisSize.min,
@@ -161,15 +186,42 @@ class TargetText extends StatelessWidget {
     // the app (#835): never the phone's.
     if (language.isBraille) return _sized(context, brailleFontFamily, null);
     if (fonts == null) return _sized(context, null, null);
+    final state = scope?.notifier;
     return ListenableBuilder(
-      listenable: fonts,
+      listenable: Listenable.merge(<Listenable?>[fonts, state?.settings]),
       builder: (context, _) {
         final family = fonts.familyFor(
           fontScriptFor(language.code, language.script),
         );
+        // Private-use glyphs without their font are boxes: a mark stands in
+        // until it is downloaded.
+        if (state != null && _boxed(state, language)) {
+          return TargetText._raw(
+            _missing,
+            language.inScript('latin'),
+            fontSize,
+            fontWeight,
+            color,
+            textAlign,
+            _sizing,
+          )._build(context);
+        }
         return _sized(context, family, fonts.fallbackFor(family));
       },
     );
+  }
+
+  /// What stands in for text whose script's font is not downloaded yet.
+  static const String _missing = '\u2026';
+
+  /// Whether [language]'s text would be drawn as boxes: it is in a
+  /// private-use script, its font is not loaded, and the learner has not said
+  /// the phone's own font draws it.
+  static bool _boxed(AppState state, LanguageInfo language) {
+    final script = fontScriptFor(language.code, language.script);
+    if (!privateUseScripts.contains(script)) return false;
+    if (state.deckDownloads?.fonts.familyFor(script) != null) return false;
+    return state.settings.fontChoice(script) != FontChoice.phone;
   }
 
   /// The text at its size, in [family], the script's downloaded font, or

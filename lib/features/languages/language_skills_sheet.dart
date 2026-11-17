@@ -301,7 +301,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       for (final key in keys) {
         // A gesture skill has nothing to check, and neither has a notation:
         // the IPA and braille have no voice and no font to try.
-        toLearn && !key.kind.isGesture && !_view.language.isNotation
+        toLearn &&
+                !key.kind.isGesture &&
+                !_view.language.isNotation &&
+                (key.kind.isScript || _soundCheckApplies)
             ? _pending.add(key)
             : _pending.remove(key);
       }
@@ -325,6 +328,12 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       Navigator.of(context).pop();
     }
   }
+
+  /// Whether the sound test means anything for this language: not for a
+  /// constructed language whose decks, on the phone, declare no voice (no
+  /// `tts` tag), as Toki Pona's, since no voice exists to test or install.
+  bool get _soundCheckApplies =>
+      _view.language.family != 'constructed' || _state.hasDeclaredVoice(_code);
 
   Future<bool> _confirmDownload() async {
     final l10n = AppLocalizations.of(context)!;
@@ -357,22 +366,25 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     if (_busy) return;
     setState(() => _busy = true);
     try {
-      for (final check in checksOwed(_pending.toList())) {
-        final ok = switch (check) {
-          SoundCheck() => await _soundCheck(),
-          ScriptCheck(:final script) => await _scriptCheck(script),
-        };
-        if (!mounted) return;
-        if (!ok) return;
-        setState(() {
+      await runChecks(
+        checksOwed(_pending.toList()),
+        (check) => switch (check) {
+          SoundCheck() => _soundCheck(),
+          ScriptCheck(:final script) => _scriptCheck(script),
+        },
+        // A check that failed or was dismissed ("Later", Close) is skipped,
+        // not owed: it never blocks adding or saving the language, and the
+        // font check is offered again where a deck is opened.
+        (check, _) => setState(() {
           _pending.removeWhere(
             (k) => switch (check) {
               SoundCheck() => !k.kind.isScript,
               ScriptCheck(:final script) => k.script == script,
             },
           );
-        });
-      }
+        }),
+        stop: () => !mounted,
+      );
     } finally {
       if (mounted) setState(() => _busy = false);
     }

@@ -356,7 +356,7 @@ class CardFace extends StatelessWidget {
       spacing: 4,
       children: <Widget>[
         if (card.hasPicture) Center(child: CardPicture(card, size: 72)),
-        TargetText(card.target, language: language, fontSize: 40),
+        TargetText(card.target, language: language, fontSize: 40, card: card),
         if (reading != null)
           Text(
             reading,

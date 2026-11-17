@@ -33,12 +33,15 @@ Future<void> showWordSheet(
   BuildContext context, {
   required Card card,
   required LanguageInfo language,
-}) => showModalBottomSheet<void>(
-  context: context,
-  showDragHandle: true,
-  isScrollControlled: true,
-  builder: (_) => WordSheet(card: card, language: language),
-);
+}) {
+  AppScope.read(context).offerFonts(language);
+  return showModalBottomSheet<void>(
+    context: context,
+    showDragHandle: true,
+    isScrollControlled: true,
+    builder: (_) => WordSheet(card: card, language: language),
+  );
+}
 
 /// The tag that marks a rude card: one an `audience: adult` deck would hold
 /// (#96, docs/plans/offensive-words.md). No bundled card carries it yet.
