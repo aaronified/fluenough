@@ -172,7 +172,10 @@ void main() {
     );
     await tester.pump();
     expect(textOf('with-card').data, _toki);
-    expect(textOf('with-card').style!.fontFamily, 'FluenoughScript-sitelen_pona');
+    expect(
+      textOf('with-card').style!.fontFamily,
+      'FluenoughScript-sitelen_pona',
+    );
     expect(textOf('raw').data, _toki);
     expect(textOf('raw').style!.fontFamily, 'FluenoughScript-sitelen_pona');
   });
@@ -194,10 +197,7 @@ void main() {
       state: state,
     );
     final text = tester.widget<Text>(
-      find.descendant(
-        of: find.byType(TargetText),
-        matching: find.byType(Text),
-      ),
+      find.descendant(of: find.byType(TargetText), matching: find.byType(Text)),
     );
     expect(text.data, _toki);
   });
@@ -221,14 +221,10 @@ void main() {
     const script = ScriptCheck('sitelen_pona');
     final ran = <SkillCheck>[];
     final passed = <SkillCheck>[];
-    await runChecks(
-      <SkillCheck>[sound, script],
-      (check) async {
-        ran.add(check);
-        return check is! SoundCheck;
-      },
-      passed.add,
-    );
+    await runChecks(<SkillCheck>[sound, script], (check) async {
+      ran.add(check);
+      return check is! SoundCheck;
+    }, passed.add);
     expect(ran, <SkillCheck>[sound, script]);
     expect(passed, <SkillCheck>[script]);
   });
