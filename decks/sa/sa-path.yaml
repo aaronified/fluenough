@@ -278,17 +278,20 @@ units:
     reading_passages:
       - { id: "verbs-3-text", text: { "en": "A short written text in Classical Sanskrit on the theme more daily actions" } }
     milestone: "A2"
-  - planned: { id: "sa-grammar-krt", grammar: ["krt"] }
+  - decks: ["sa-grammar-krt"]
+    grammar: ["krt-ghan", "krt-lyut", "krt-trc", "krt-ktin", "krt-nvul"]
     listening_passages:
       - { id: "grammar-krt-heard", text: { "en": "A short passage in Classical Sanskrit showing krt, read aloud" } }
     reading_passages:
       - { id: "grammar-krt-text", text: { "en": "A short written text in Classical Sanskrit showing krt" } }
-  - planned: { id: "sa-grammar-gerundives", grammar: ["gerundives"] }
+  - decks: ["sa-grammar-gerundives"]
+    grammar: ["gerundive-tavya", "gerundive-aniya", "gerundive-ya"]
     listening_passages:
       - { id: "grammar-gerundives-heard", text: { "en": "A short passage in Classical Sanskrit showing gerundives, read aloud" } }
     reading_passages:
       - { id: "grammar-gerundives-text", text: { "en": "A short written text in Classical Sanskrit showing gerundives" } }
-  - planned: { id: "sa-grammar-absolutives-infinitives", grammar: ["absolutives", "infinitives"] }
+  - decks: ["sa-grammar-absolutives-infinitives"]
+    grammar: ["absolutive-ktva", "absolutive-lyap", "infinitive-tum"]
     listening_passages:
       - { id: "grammar-absolutives-infinitives-heard", text: { "en": "A short passage in Classical Sanskrit showing absolutives, infinitives, read aloud" } }
     reading_passages:
@@ -303,17 +306,20 @@ units:
       - { id: "feelings-heard", text: { "en": "A short passage in Classical Sanskrit on the theme feelings, read aloud" } }
     reading_passages:
       - { id: "feelings-text", text: { "en": "A short written text in Classical Sanskrit on the theme feelings" } }
-  - planned: { id: "sa-grammar-passive", grammar: ["passive"] }
+  - decks: ["sa-grammar-passive"]
+    grammar: ["passive-stem", "passive-third", "passive-second", "passive-first"]
     listening_passages:
       - { id: "grammar-passive-heard", text: { "en": "A short passage in Classical Sanskrit showing passive, read aloud" } }
     reading_passages:
       - { id: "grammar-passive-text", text: { "en": "A short written text in Classical Sanskrit showing passive" } }
-  - planned: { id: "sa-grammar-causatives", grammar: ["causatives"] }
+  - decks: ["sa-grammar-causatives"]
+    grammar: ["causative-stem", "causative-third", "causative-second", "causative-first"]
     listening_passages:
       - { id: "grammar-causatives-heard", text: { "en": "A short passage in Classical Sanskrit showing causatives, read aloud" } }
     reading_passages:
       - { id: "grammar-causatives-text", text: { "en": "A short written text in Classical Sanskrit showing causatives" } }
-  - planned: { id: "sa-grammar-optative", grammar: ["optative"] }
+  - decks: ["sa-grammar-optative"]
+    grammar: ["optative-active", "optative-middle"]
     listening_passages:
       - { id: "grammar-optative-heard", text: { "en": "A short passage in Classical Sanskrit showing optative, read aloud" } }
     reading_passages:

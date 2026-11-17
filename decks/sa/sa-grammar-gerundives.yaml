@@ -1,0 +1,182 @@
+# The gerundives (future passive participles, kṛtya) of the verbs of the course: -tavya, -anīya and -ya (yat, ṇyat, kyap).
+# A form listed on the root entry of the verb on en.wiktionary.org is taught as listed; a form not listed there is made by the sūtras and by Whitney 961 to 964 and 968, and is marked derived in docs/review-queue/sa.md.
+# sa-2105 as, sa-2108 brū and sa-2111 paś are excepted: as and brū are defective (other roots supply their forms) and paś is only the present stem of dṛś, so no gerundive of their own is taught.
+schema: 1
+id: "sa-grammar-gerundives"
+part: "core"
+kind: "rules"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+source: "en.wiktionary.org: the Non-finite forms of the root entry of each verb (gerundive), read 2026-11-17, and the same lists in the kaikki.org Wiktionary dump of 2026-10-30 for the verbs whose pages were not read live; Whitney, Sanskrit Grammar 961 to 964, 968 and 992 on en.wikisource, read 2026-11-17; Panini, Astadhyayi 3.1.95, 3.1.96, 3.1.97, 3.1.98, 3.1.100, 3.1.110, 3.1.124 and 3.4.70 as typed on sa.wikisource.org/wiki/अष्टाध्यायी (the third chapter page), read 2026-11-17; readings from tools/transcribe.py (sa)."
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["sa-2105", "sa-2108", "sa-2111"]
+  slots: ["tavya", "aniya", "ya"]
+  rows:
+    - word: "sa-0430"
+      forms: { "tavya": "भवितव्य", "aniya": "भवनीय", "ya": "भव्य" }
+      readings: { "tavya": "bhavitavya", "aniya": "bhavanīya", "ya": "bhavya" }
+    - word: "sa-0431"
+      forms: { "tavya": "गन्तव्य", "aniya": "गमनीय", "ya": "गम्य" }
+      readings: { "tavya": "gantavya", "aniya": "gamanīya", "ya": "gamya" }
+    - word: "sa-0432"
+      forms: { "tavya": "पठितव्य", "aniya": "पठनीय", "ya": "पाठ्य" }
+      readings: { "tavya": "paṭhitavya", "aniya": "paṭhanīya", "ya": "pāṭhya" }
+    - word: "sa-0433"
+      forms: { "tavya": "वदितव्य", "aniya": "वदनीय", "ya": "वाद्य" }
+      readings: { "tavya": "vaditavya", "aniya": "vadanīya", "ya": "vādya" }
+    - word: "sa-0434"
+      forms: { "tavya": "पक्तव्य", "aniya": "पचनीय", "ya": "पाक्य" }
+      readings: { "tavya": "paktavya", "aniya": "pacanīya", "ya": "pākya" }
+    - word: "sa-0435"
+      forms: { "tavya": "नेतव्य", "aniya": "नयनीय", "ya": "नेय" }
+      readings: { "tavya": "netavya", "aniya": "nayanīya", "ya": "neya" }
+    - word: "sa-2000"
+      forms: { "tavya": "खादितव्य", "aniya": "खादनीय", "ya": "खाद्य" }
+      readings: { "tavya": "khāditavya", "aniya": "khādanīya", "ya": "khādya" }
+    - word: "sa-2001"
+      forms: { "tavya": "पातव्य", "aniya": "पानीय", "ya": "पेय" }
+      readings: { "tavya": "pātavya", "aniya": "pānīya", "ya": "peya" }
+    - word: "sa-2002"
+      forms: { "tavya": "स्थातव्य", "aniya": "स्थानीय", "ya": "स्थेय" }
+      readings: { "tavya": "sthātavya", "aniya": "sthānīya", "ya": "stheya" }
+    - word: "sa-2003"
+      forms: { "tavya": "हसितव्य", "aniya": "हसनीय", "ya": "हास्य" }
+      readings: { "tavya": "hasitavya", "aniya": "hasanīya", "ya": "hāsya" }
+    - word: "sa-2004"
+      forms: { "tavya": "रक्षितव्य", "aniya": "रक्षणीय", "ya": "रक्ष्य" }
+      readings: { "tavya": "rakṣitavya", "aniya": "rakṣaṇīya", "ya": "rakṣya" }
+    - word: "sa-2005"
+      forms: { "tavya": "वसितव्य", "aniya": "वसनीय", "ya": "वास्य" }
+      readings: { "tavya": "vasitavya", "aniya": "vasanīya", "ya": "vāsya" }
+    - word: "sa-2006"
+      forms: { "tavya": "नन्तव्य", "aniya": "नमनीय", "ya": "नम्य" }
+      readings: { "tavya": "nantavya", "aniya": "namanīya", "ya": "namya" }
+    - word: "sa-2007"
+      forms: { "tavya": "जेतव्य", "aniya": "जयनीय", "ya": "जेय" }
+      readings: { "tavya": "jetavya", "aniya": "jayanīya", "ya": "jeya" }
+    - word: "sa-2008"
+      forms: { "tavya": "स्मर्तव्य", "aniya": "स्मरणीय", "ya": "स्मार्य" }
+      readings: { "tavya": "smartavya", "aniya": "smaraṇīya", "ya": "smārya" }
+    - word: "sa-2009"
+      forms: { "tavya": "धावितव्य", "aniya": "धावनीय", "ya": "धाव्य" }
+      readings: { "tavya": "dhāvitavya", "aniya": "dhāvanīya", "ya": "dhāvya" }
+    - word: "sa-2010"
+      forms: { "tavya": "पतितव्य", "aniya": "पतनीय", "ya": "पात्य" }
+      readings: { "tavya": "patitavya", "aniya": "patanīya", "ya": "pātya" }
+    - word: "sa-2011"
+      forms: { "tavya": "चलितव्य", "aniya": "चलनीय", "ya": "चाल्य" }
+      readings: { "tavya": "calitavya", "aniya": "calanīya", "ya": "cālya" }
+    - word: "sa-2012"
+      forms: { "tavya": "क्रीडितव्य", "aniya": "क्रीडनीय", "ya": "क्रीड्य" }
+      readings: { "tavya": "krīḍitavya", "aniya": "krīḍanīya", "ya": "krīḍya" }
+    - word: "sa-2013"
+      forms: { "tavya": "जीवितव्य", "aniya": "जीवनीय", "ya": "जीव्य" }
+      readings: { "tavya": "jīvitavya", "aniya": "jīvanīya", "ya": "jīvya" }
+    - word: "sa-2014"
+      forms: { "tavya": "चरितव्य", "aniya": "चरणीय", "ya": "चर्य" }
+      readings: { "tavya": "caritavya", "aniya": "caraṇīya", "ya": "carya" }
+    - word: "sa-2015"
+      forms: { "tavya": "वोढव्य", "aniya": "वहनीय", "ya": "वाह्य" }
+      readings: { "tavya": "voḍhavya", "aniya": "vahanīya", "ya": "vāhya" }
+    - word: "sa-2016"
+      forms: { "tavya": "हर्तव्य", "aniya": "हरणीय", "ya": "हार्य" }
+      readings: { "tavya": "hartavya", "aniya": "haraṇīya", "ya": "hārya" }
+    - word: "sa-2017"
+      forms: { "tavya": "सर्तव्य", "aniya": "सरणीय", "ya": "सार्य" }
+      readings: { "tavya": "sartavya", "aniya": "saraṇīya", "ya": "sārya" }
+    - word: "sa-2018"
+      forms: { "tavya": "गातव्य", "aniya": "गानीय", "ya": "गेय" }
+      readings: { "tavya": "gātavya", "aniya": "gānīya", "ya": "geya" }
+    - word: "sa-2019"
+      forms: { "tavya": "तप्तव्य", "aniya": "तपनीय", "ya": "तप्य" }
+      readings: { "tavya": "taptavya", "aniya": "tapanīya", "ya": "tapya" }
+    - word: "sa-2020"
+      forms: { "tavya": "धर्तव्य", "aniya": "धरणीय", "ya": "धार्य" }
+      readings: { "tavya": "dhartavya", "aniya": "dharaṇīya", "ya": "dhārya" }
+    - word: "sa-2021"
+      forms: { "tavya": "जपितव्य", "aniya": "जपनीय", "ya": "जप्य" }
+      readings: { "tavya": "japitavya", "aniya": "japanīya", "ya": "japya" }
+    - word: "sa-2022"
+      forms: { "tavya": "खनितव्य", "aniya": "खननीय", "ya": "खेय" }
+      readings: { "tavya": "khanitavya", "aniya": "khananīya", "ya": "kheya" }
+    - word: "sa-2023"
+      forms: { "tavya": "ह्वातव्य", "aniya": "ह्वानीय", "ya": "हव्य" }
+      readings: { "tavya": "hvātavya", "aniya": "hvānīya", "ya": "havya" }
+    - word: "sa-2100"
+      forms: { "tavya": "क्षरितव्य", "aniya": "क्षरणीय", "ya": "क्षार्य" }
+      readings: { "tavya": "kṣaritavya", "aniya": "kṣaraṇīya", "ya": "kṣārya" }
+    - word: "sa-2101"
+      forms: { "tavya": "रोद्धव्य", "aniya": "रोधनीय", "ya": "रोध्य" }
+      readings: { "tavya": "roddhavya", "aniya": "rodhanīya", "ya": "rodhya" }
+    - word: "sa-2102"
+      forms: { "tavya": "लब्धव्य", "aniya": "लभनीय", "ya": "लभ्य" }
+      readings: { "tavya": "labdhavya", "aniya": "labhanīya", "ya": "labhya" }
+    - word: "sa-2103"
+      forms: { "tavya": "वर्तितव्य", "aniya": "वर्तनीय", "ya": "वृत्य" }
+      readings: { "tavya": "vartitavya", "aniya": "vartanīya", "ya": "vṛtya" }
+    - word: "sa-2104"
+      forms: { "tavya": "ईक्षितव्य", "aniya": "ईक्षणीय", "ya": "ईक्ष्य" }
+      readings: { "tavya": "īkṣitavya", "aniya": "īkṣaṇīya", "ya": "īkṣya" }
+    - word: "sa-2106"
+      forms: { "tavya": "रोदितव्य", "aniya": "रोदनीय", "ya": "रोद्य" }
+      readings: { "tavya": "roditavya", "aniya": "rodanīya", "ya": "rodya" }
+    - word: "sa-2107"
+      forms: { "tavya": "यातव्य", "aniya": "यानीय", "ya": "येय" }
+      readings: { "tavya": "yātavya", "aniya": "yānīya", "ya": "yeya" }
+    - word: "sa-2109"
+      forms: { "tavya": "दातव्य", "aniya": "दानीय", "ya": "देय" }
+      readings: { "tavya": "dātavya", "aniya": "dānīya", "ya": "deya" }
+    - word: "sa-2110"
+      forms: { "tavya": "धातव्य", "aniya": "धानीय", "ya": "धेय" }
+      readings: { "tavya": "dhātavya", "aniya": "dhānīya", "ya": "dheya" }
+    - word: "sa-2112"
+      forms: { "tavya": "नर्तितव्य", "aniya": "नर्तनीय", "ya": "नृत्य" }
+      readings: { "tavya": "nartitavya", "aniya": "nartanīya", "ya": "nṛtya" }
+    - word: "sa-2113"
+      forms: { "tavya": "श्रोतव्य", "aniya": "श्रवणीय", "ya": "श्रव्य" }
+      readings: { "tavya": "śrotavya", "aniya": "śravaṇīya", "ya": "śravya" }
+    - word: "sa-2114"
+      forms: { "tavya": "लिखितव्य", "aniya": "लिखनीय", "ya": "लेख्य" }
+      readings: { "tavya": "likhitavya", "aniya": "likhanīya", "ya": "lekhya" }
+    - word: "sa-2115"
+      forms: { "tavya": "वेष्टव्य", "aniya": "वेशनीय", "ya": "वेश्य" }
+      readings: { "tavya": "veṣṭavya", "aniya": "veśanīya", "ya": "veśya" }
+    - word: "sa-2116"
+      forms: { "tavya": "एष्टव्य", "aniya": "एषणीय", "ya": "एष्य" }
+      readings: { "tavya": "eṣṭavya", "aniya": "eṣaṇīya", "ya": "eṣya" }
+    - word: "sa-2117"
+      forms: { "tavya": "तोत्तव्य", "aniya": "तोदनीय", "ya": "तोद्य" }
+      readings: { "tavya": "tottavya", "aniya": "todanīya", "ya": "todya" }
+    - word: "sa-2118"
+      forms: { "tavya": "कर्तव्य", "aniya": "करणीय", "ya": "कार्य" }
+      readings: { "tavya": "kartavya", "aniya": "karaṇīya", "ya": "kārya" }
+    - word: "sa-2119"
+      forms: { "tavya": "ज्ञातव्य", "aniya": "ज्ञानीय", "ya": "ज्ञेय" }
+      readings: { "tavya": "jñātavya", "aniya": "jñānīya", "ya": "jñeya" }
+    - word: "sa-2120"
+      forms: { "tavya": "क्रेतव्य", "aniya": "क्रयणीय", "ya": "क्रेय" }
+      readings: { "tavya": "kretavya", "aniya": "krayaṇīya", "ya": "kreya" }
+    - word: "sa-2121"
+      forms: { "tavya": "ग्रहीतव्य", "aniya": "ग्रहणीय", "ya": "ग्राह्य" }
+      readings: { "tavya": "grahītavya", "aniya": "grahaṇīya", "ya": "grāhya" }
+    - word: "sa-2122"
+      forms: { "tavya": "कथयितव्य", "aniya": "कथनीय", "ya": "कथ्य" }
+      readings: { "tavya": "kathayitavya", "aniya": "kathanīya", "ya": "kathya" }
+    - word: "sa-2123"
+      forms: { "tavya": "पूजयितव्य", "aniya": "पूजनीय", "ya": "पूज्य" }
+      readings: { "tavya": "pūjayitavya", "aniya": "pūjanīya", "ya": "pūjya" }
+rules:
+  - id: "sa-rule-gerundive-tavya"
+    slots: ["tavya"]
+    words: [{ word: "कृत्याः प्राङ् ण्वुलः", reading: "kṛtyāḥ prāṅ ṇvulaḥ" }, { word: "तव्यत्तव्य अनीयरः", reading: "tavyattavya anīyaraḥ" }, { word: "कृ", reading: "kṛ" }, { word: "कर्तव्य", reading: "kartavya" }, { word: "गम्", reading: "gam" }, { word: "गन्तव्य", reading: "gantavya" }, { word: "पठ्", reading: "paṭh" }, { word: "पठितव्य", reading: "paṭhitavya" }, { word: "भू", reading: "bhū" }, { word: "भवितव्य", reading: "bhavitavya" }, { word: "त्वया कर्तव्यम्", reading: "tvayā kartavyam" }, { word: "मया गन्तव्यम्", reading: "mayā gantavyam" }, { word: "तयोरेव कृत्यक्तखलर्थाः", reading: "tayoreva kṛtyaktakhalarthāḥ" }]
+  - id: "sa-rule-gerundive-aniya"
+    slots: ["aniya"]
+    words: [{ word: "तव्यत्तव्य अनीयरः", reading: "tavyattavya anīyaraḥ" }, { word: "भू", reading: "bhū" }, { word: "भवनीय", reading: "bhavanīya" }, { word: "गम्", reading: "gam" }, { word: "गमनीय", reading: "gamanīya" }, { word: "कृ", reading: "kṛ" }, { word: "करणीय", reading: "karaṇīya" }, { word: "स्मृ", reading: "smṛ" }, { word: "स्मरणीय", reading: "smaraṇīya" }, { word: "पा", reading: "pā" }, { word: "पानीय", reading: "pānīya" }]
+  - id: "sa-rule-gerundive-ya"
+    slots: ["ya"]
+    words: [{ word: "अचः यत्", reading: "acaḥ yat" }, { word: "नी", reading: "nī" }, { word: "नेय", reading: "neya" }, { word: "भू", reading: "bhū" }, { word: "भव्य", reading: "bhavya" }, { word: "श्रु", reading: "śru" }, { word: "श्रव्य", reading: "śravya" }, { word: "जि", reading: "ji" }, { word: "जेय", reading: "jeya" }, { word: "दा", reading: "dā" }, { word: "देय", reading: "deya" }, { word: "पा", reading: "pā" }, { word: "पेय", reading: "peya" }, { word: "ज्ञा", reading: "jñā" }, { word: "ज्ञेय", reading: "jñeya" }, { word: "गै", reading: "gai" }, { word: "गेय", reading: "geya" }, { word: "ऋहलोर्ण्यत्", reading: "ṛhalorṇyat" }, { word: "कृ", reading: "kṛ" }, { word: "कार्य", reading: "kārya" }, { word: "हृ", reading: "hṛ" }, { word: "हार्य", reading: "hārya" }, { word: "पठ्", reading: "paṭh" }, { word: "पाठ्य", reading: "pāṭhya" }, { word: "वह्", reading: "vah" }, { word: "वाह्य", reading: "vāhya" }, { word: "पच्", reading: "pac" }, { word: "पाक्य", reading: "pākya" }, { word: "पोरत् उपधात्", reading: "porat upadhāt" }, { word: "तप्", reading: "tap" }, { word: "तप्य", reading: "tapya" }, { word: "जप्", reading: "jap" }, { word: "जप्य", reading: "japya" }, { word: "लभ्", reading: "labh" }, { word: "लभ्य", reading: "labhya" }, { word: "चर्", reading: "car" }, { word: "चर्य", reading: "carya" }, { word: "गदमदचरयमश्च अनुपसर्गे", reading: "gadamadacarayamaśca anupasarge" }, { word: "ऋत् उपधात् च अक्ल्पिचृतेः", reading: "ṛt upadhāt ca aklpicṛteḥ" }, { word: "नृत्य", reading: "nṛtya" }, { word: "वृत्य", reading: "vṛtya" }]
