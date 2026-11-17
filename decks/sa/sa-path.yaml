@@ -287,7 +287,8 @@ units:
       - { id: "grammar-gerundives-heard", text: { "en": "A short passage in Classical Sanskrit showing gerundives, read aloud" } }
     reading_passages:
       - { id: "grammar-gerundives-text", text: { "en": "A short written text in Classical Sanskrit showing gerundives" } }
-  - planned: { id: "sa-grammar-absolutives-infinitives", grammar: ["absolutives", "infinitives"] }
+  - decks: ["sa-grammar-absolutives-infinitives"]
+    grammar: ["absolutive-ktva", "absolutive-lyap", "infinitive-tum"]
     listening_passages:
       - { id: "grammar-absolutives-infinitives-heard", text: { "en": "A short passage in Classical Sanskrit showing absolutives, infinitives, read aloud" } }
     reading_passages:
