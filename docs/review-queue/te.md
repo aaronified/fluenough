@@ -68,3 +68,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | te-8812 | see card | గగనాధిప is glossed 'lord of the sky' (tentative): is the gloss right? | Telugu architect | 2026-11-17 |
 | te-8813 | see card | The word వశిష్టుడు is joined from two printed lines (వ / శిష్టుడు); the edition field says so: is the join right? | Telugu architect | 2026-11-17 |
 | te-8816 | see card | గుణమేలరా is glossed 'this behaviour' (tentative): is the gloss right? | Telugu architect | 2026-11-17 |
+| te-8758 | see card | The printed Virata Parvam line breaks విస్తార as వి / స్తార; the card joins it into one word: is the join right against the printed page? | Telugu architect | 2026-11-17 |
+| te-8759 | see card | The last word బెడంగై is printed as బెడం / గై and joined here; its base lemma బెడంగు and the gloss 'in the manner of' are tentative: please check the spelling, the base and the sense. | Telugu architect | 2026-11-17 |
+| te-8762 | see card | The printed text breaks ధర్మోత్తరమును as ధర్మో / త్తరమును; the card joins it: is the join right? | Telugu architect | 2026-11-17 |
+| te-8765 | see card | గుమతి (base sense 'sense, wisdom') and యనక ('without refusing') are the builder's tentative readings of the printed words: please check both glosses. | Telugu architect | 2026-11-17 |
+| te-8767 | see card | The printed text breaks య ట్లగుటఁ and నే రిమిమెయి; the card joins them as యట్లగుటఁ and నేరిమిమెయి: please check the spelling. | Telugu architect | 2026-11-17 |
