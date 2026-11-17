@@ -1,0 +1,1090 @@
+schema: 1
+id: "sa-en-government"
+kind: "layer"
+core: "sa-government"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Government"
+description: "Government: kingdoms, offices, laws, assemblies and the classes of the realm."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-5700":
+    native: "Kingdom, rule."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is राज्य (rājya); the card shows the isolated nominative singular राज्यम् (rājyam)."
+      "n3": "Before a consonant the final म् (m) of राज्यम् (rājyam) is written ं (ṃ), as in राज्यं (rājyaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "A kingdom or realm, the state as a whole; जनपदः (janapadaḥ) is a district or country of a people."
+    bases:
+      "राज्यम्": "kingdom, rule"
+    examples:
+      "अस्ति राज्यं तत्र":
+        native: "There is a kingdom there."
+        bases:
+          "अस्ति": "is"
+          "राज्यं": "kingdom, rule"
+          "तत्र": "there"
+      "राज्ये नृपः":
+        native: "A king in the kingdom."
+        bases:
+          "राज्ये": "kingdom, rule (nominative dual)"
+          "नृपः": "king"
+  "sa-5701":
+    native: "Assembly."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "Before a consonant the final म् (m) of सभायाम् (sabhāyām) is written ं (ṃ), as in सभायां (sabhāyāṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n3": "An assembly or council that meets; near synonym of परिषत् (pariṣat)."
+    bases:
+      "सभा": "assembly"
+    examples:
+      "अस्ति सभा तत्र":
+        native: "There is an assembly there."
+        bases:
+          "अस्ति": "is"
+          "सभा": "assembly"
+          "तत्र": "there"
+      "सभायां साक्षी":
+        native: "A witness in the assembly."
+        bases:
+          "सभायां": "assembly (locative)"
+          "साक्षी": "witness"
+  "sa-5702":
+    native: "Minister."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is अमात्य (amātya); the card shows the isolated nominative singular अमात्यः (amātyaḥ)."
+    bases:
+      "अमात्यः": "minister"
+    examples:
+      "अमात्यः तत्र":
+        native: "A minister is there."
+        bases:
+          "अमात्यः": "minister"
+          "तत्र": "there"
+      "अमात्यः सुखी":
+        native: "The minister is happy."
+        bases:
+          "अमात्यः": "minister"
+          "सुखी": "happy"
+  "sa-5703":
+    native: "Envoy."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is दूत (dūta); the card shows the isolated nominative singular दूतः (dūtaḥ)."
+    bases:
+      "दूतः": "envoy"
+    examples:
+      "दूतः तत्र":
+        native: "An envoy is there."
+        bases:
+          "दूतः": "envoy"
+          "तत्र": "there"
+      "अस्ति राज्ये दूतः":
+        native: "There is an envoy in the kingdom."
+        bases:
+          "अस्ति": "is"
+          "राज्ये": "kingdom, rule (nominative dual)"
+          "दूतः": "envoy"
+  "sa-5704":
+    native: "Rule, regulation."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is नियम (niyama); the card shows the isolated nominative singular नियमः (niyamaḥ)."
+      "n3": "A rule or regulation that holds in practice; contrasted with विधिः (vidhiḥ), the law."
+    bases:
+      "नियमः": "rule, regulation"
+    examples:
+      "अस्ति नियमः तत्र":
+        native: "There is a rule there."
+        bases:
+          "अस्ति": "is"
+          "नियमः": "rule, regulation"
+          "तत्र": "there"
+      "अस्ति शासने नियमः":
+        native: "There is a rule in the edict."
+        bases:
+          "अस्ति": "is"
+          "शासने": "edict (nominative dual)"
+          "नियमः": "rule, regulation"
+  "sa-5705":
+    native: "Law."
+    notes:
+      "n1": "Masculine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is विधि (vidhi); the card shows the isolated nominative singular विधिः (vidhiḥ)."
+      "n3": "A rule or law made by authority; near synonym of नियमः (niyamaḥ)."
+    bases:
+      "विधिः": "law"
+    examples:
+      "अस्ति विधिः तत्र":
+        native: "There is a law there."
+        bases:
+          "अस्ति": "is"
+          "विधिः": "law"
+          "तत्र": "there"
+      "अस्ति राज्ये विधिः":
+        native: "There is a law in the kingdom."
+        bases:
+          "अस्ति": "is"
+          "राज्ये": "kingdom, rule (nominative dual)"
+          "विधिः": "law"
+  "sa-5706":
+    native: "War."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is युद्ध (yuddha); the card shows the isolated nominative singular युद्धम् (yuddham)."
+      "n3": "Before a consonant the final म् (m) of युद्धम् (yuddham) is written ं (ṃ), as in युद्धं (yuddhaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "युद्धम्": "war"
+    examples:
+      "अस्ति युद्धं तत्र":
+        native: "There is a war there."
+        bases:
+          "अस्ति": "is"
+          "युद्धं": "war"
+          "तत्र": "there"
+      "अस्ति युद्धं वने":
+        native: "There is a battle in the forest."
+        bases:
+          "अस्ति": "is"
+          "युद्धं": "war"
+          "वने": "forest (locative)"
+  "sa-5707":
+    native: "Peace."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is शान्ति (śānti); the card shows the isolated nominative singular शान्तिः (śāntiḥ)."
+    bases:
+      "शान्तिः": "peace"
+    examples:
+      "अस्ति शान्तिः तत्र":
+        native: "There is peace there."
+        bases:
+          "अस्ति": "is"
+          "शान्तिः": "peace"
+          "तत्र": "there"
+      "राज्ये शान्तिः":
+        native: "Peace in the kingdom."
+        bases:
+          "राज्ये": "kingdom, rule (nominative dual)"
+          "शान्तिः": "peace"
+  "sa-5708":
+    native: "Justice."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is न्याय (nyāya); the card shows the isolated nominative singular न्यायः (nyāyaḥ)."
+      "n3": "Justice, the standard or method, and a legal judgement."
+    bases:
+      "न्यायः": "justice"
+    examples:
+      "अस्ति न्यायः तत्र":
+        native: "There is justice there."
+        bases:
+          "अस्ति": "is"
+          "न्यायः": "justice"
+          "तत्र": "there"
+      "नृपस्य न्यायः":
+        native: "The king's justice."
+        bases:
+          "नृपस्य": "king (genitive)"
+          "न्यायः": "justice"
+  "sa-5709":
+    native: "Document, written record."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is लेख (lekha); the card shows the isolated nominative singular लेखः (lekhaḥ)."
+      "n3": "Before a consonant the final म् (m) of सभायाम् (sabhāyām) is written ं (ṃ), as in सभायां (sabhāyāṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "लेखः": "document, written record"
+    examples:
+      "अस्ति लेखः तत्र":
+        native: "There is a document there."
+        bases:
+          "अस्ति": "is"
+          "लेखः": "document, written record"
+          "तत्र": "there"
+      "अस्ति सभायां लेखः":
+        native: "There is a document in the assembly."
+        bases:
+          "अस्ति": "is"
+          "सभायां": "assembly (locative)"
+          "लेखः": "document, written record"
+  "sa-5710":
+    native: "Command."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A command given by someone in authority; near synonym of आदेशः (ādeśaḥ), an order."
+    bases:
+      "आज्ञा": "command"
+    examples:
+      "आज्ञा तत्र":
+        native: "There is a command there."
+        bases:
+          "आज्ञा": "command"
+          "तत्र": "there"
+      "आज्ञा पुरे":
+        native: "A command in the city."
+        bases:
+          "आज्ञा": "command"
+          "पुरे": "city, fortress (nominative dual)"
+  "sa-5711":
+    native: "Order, instruction."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is आदेश (ādeśa); the card shows the isolated nominative singular आदेशः (ādeśaḥ)."
+      "n3": "An order or instruction; near synonym of आज्ञा (ājñā), a command."
+    bases:
+      "आदेशः": "order, instruction"
+    examples:
+      "आदेशः तत्र":
+        native: "There is an order there."
+        bases:
+          "आदेशः": "order, instruction"
+          "तत्र": "there"
+      "आदेशः पुरे":
+        native: "An order in the city."
+        bases:
+          "आदेशः": "order, instruction"
+          "पुरे": "city, fortress (nominative dual)"
+  "sa-5712":
+    native: "Duty."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is कर्तव्य (kartavya); the card shows the isolated nominative singular कर्तव्यम् (kartavyam)."
+      "n3": "Before a consonant the final म् (m) of कर्तव्यम् (kartavyam) is written ं (ṃ), as in कर्तव्यं (kartavyaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "कर्तव्यम्": "duty"
+    examples:
+      "अस्ति कर्तव्यं तत्र":
+        native: "There is a duty there."
+        bases:
+          "अस्ति": "is"
+          "कर्तव्यं": "duty"
+          "तत्र": "there"
+      "अस्ति प्रजायाः कर्तव्यम्":
+        native: "There is a duty of the subjects."
+        bases:
+          "अस्ति": "is"
+          "प्रजायाः": "subjects (genitive)"
+          "कर्तव्यम्": "duty"
+  "sa-5713":
+    native: "Authority."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is अधिकार (adhikāra); the card shows the isolated nominative singular अधिकारः (adhikāraḥ)."
+    bases:
+      "अधिकारः": "authority"
+    examples:
+      "अधिकारः तत्र":
+        native: "There is authority there."
+        bases:
+          "अधिकारः": "authority"
+          "तत्र": "there"
+      "अधिकारः सुगमः":
+        native: "Authority is easy to reach."
+        bases:
+          "अधिकारः": "authority"
+          "सुगमः": "easy to reach"
+  "sa-5714":
+    native: "Country, district."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is जनपद (janapada); the card shows the isolated nominative singular जनपदः (janapadaḥ)."
+      "n3": "A district or country of a people; राज्यम् (rājyam) is the kingdom or rule itself."
+    bases:
+      "जनपदः": "country, district"
+    examples:
+      "अस्ति जनपदः तत्र":
+        native: "There is a district there."
+        bases:
+          "अस्ति": "is"
+          "जनपदः": "country, district"
+          "तत्र": "there"
+      "राज्ये जनपदः":
+        native: "A district in the kingdom."
+        bases:
+          "राज्ये": "kingdom, rule (nominative dual)"
+          "जनपदः": "country, district"
+  "sa-5715":
+    native: "Rampart, city wall."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is प्राकार (prākāra); the card shows the isolated nominative singular प्राकारः (prākāraḥ)."
+    bases:
+      "प्राकारः": "rampart, city wall"
+    examples:
+      "अस्ति प्राकारः तत्र":
+        native: "There is a rampart there."
+        bases:
+          "अस्ति": "is"
+          "प्राकारः": "rampart, city wall"
+          "तत्र": "there"
+      "नगरे प्राकारः":
+        native: "A rampart in the city."
+        bases:
+          "नगरे": "city (locative)"
+          "प्राकारः": "rampart, city wall"
+  "sa-5716":
+    native: "Council, assembly."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is परिषद् (pariṣad); the card shows the isolated nominative singular परिषत् (pariṣat)."
+      "n3": "Before a consonant the final म् (m) of सभायाम् (sabhāyām) is written ं (ṃ), as in सभायां (sabhāyāṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "A council or assembly of people; near synonym of सभा (sabhā)."
+    bases:
+      "परिषत्": "council, assembly"
+    examples:
+      "अस्ति तत्र परिषत्":
+        native: "There is a council there."
+        bases:
+          "अस्ति": "is"
+          "तत्र": "there"
+          "परिषत्": "council, assembly"
+      "सभायां परिषत्":
+        native: "A council in the assembly."
+        bases:
+          "सभायां": "assembly (locative)"
+          "परिषत्": "council, assembly"
+  "sa-5717":
+    native: "Minister, counsellor."
+    notes:
+      "n1": "Masculine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is मन्त्रिन् (mantrin); the card shows the isolated nominative singular मन्त्री (mantrī)."
+    bases:
+      "मन्त्री": "minister, counsellor"
+    examples:
+      "अस्ति मन्त्री तत्र":
+        native: "There is a minister there."
+        bases:
+          "अस्ति": "is"
+          "मन्त्री": "minister, counsellor"
+          "तत्र": "there"
+      "नृपस्य मन्त्री":
+        native: "The king's minister."
+        bases:
+          "नृपस्य": "king (genitive)"
+          "मन्त्री": "minister, counsellor"
+  "sa-5718":
+    native: "King."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is नृप (nṛpa); the card shows the isolated nominative singular नृपः (nṛpaḥ)."
+      "n3": "A king or sovereign; राजन् (rājan) is the other common word for a king."
+    bases:
+      "नृपः": "king"
+    examples:
+      "अस्ति नृपः तत्र":
+        native: "There is a king there."
+        bases:
+          "अस्ति": "is"
+          "नृपः": "king"
+          "तत्र": "there"
+      "राज्ये नृपः":
+        native: "A king in the kingdom."
+        bases:
+          "राज्ये": "kingdom, rule (nominative dual)"
+          "नृपः": "king"
+  "sa-5719":
+    native: "Livelihood."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is वृत्ति (vṛtti); the card shows the isolated nominative singular वृत्तिः (vṛttiḥ)."
+    bases:
+      "वृत्तिः": "livelihood"
+    examples:
+      "अस्ति वृत्तिः तत्र":
+        native: "There is a livelihood there."
+        bases:
+          "अस्ति": "is"
+          "वृत्तिः": "livelihood"
+          "तत्र": "there"
+      "वृत्तिः प्रजायाः":
+        native: "The livelihood of the subjects."
+        bases:
+          "वृत्तिः": "livelihood"
+          "प्रजायाः": "subjects (genitive)"
+  "sa-5720":
+    native: "Edict."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is शासन (śāsana); the card shows the isolated nominative singular शासनम् (śāsanam)."
+      "n3": "Before a consonant the final म् (m) of शासनम् (śāsanam) is written ं (ṃ), as in शासनं (śāsanaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "An order, edict or command from authority; also a scripture in some senses."
+    bases:
+      "शासनम्": "edict"
+    examples:
+      "अस्ति शासनं तत्र":
+        native: "There is an edict there."
+        bases:
+          "अस्ति": "is"
+          "शासनं": "edict"
+          "तत्र": "there"
+      "नृपस्य शासनम्":
+        native: "The king's edict."
+        bases:
+          "नृपस्य": "king (genitive)"
+          "शासनम्": "edict"
+  "sa-5721":
+    native: "Deliberation."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is विचार (vicāra); the card shows the isolated nominative singular विचारः (vicāraḥ)."
+      "n3": "Before a consonant the final म् (m) of सभायाम् (sabhāyām) is written ं (ṃ), as in सभायां (sabhāyāṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "विचारः": "deliberation"
+    examples:
+      "अस्ति विचारः तत्र":
+        native: "There is a deliberation there."
+        bases:
+          "अस्ति": "is"
+          "विचारः": "deliberation"
+          "तत्र": "there"
+      "सभायां विचारः":
+        native: "A deliberation in the assembly."
+        bases:
+          "सभायां": "assembly (locative)"
+          "विचारः": "deliberation"
+  "sa-5722":
+    native: "Evidence."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is साक्ष्य (sākṣya); the card shows the isolated nominative singular साक्ष्यम् (sākṣyam)."
+      "n3": "Before a consonant the final म् (m) of साक्ष्यम् (sākṣyam) is written ं (ṃ), as in साक्ष्यं (sākṣyaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "साक्ष्यम्": "evidence"
+    examples:
+      "अस्ति साक्ष्यं तत्र":
+        native: "There is evidence there."
+        bases:
+          "अस्ति": "is"
+          "साक्ष्यं": "evidence"
+          "तत्र": "there"
+      "सभायां साक्ष्यम्":
+        native: "Evidence in the assembly."
+        bases:
+          "सभायां": "assembly (locative)"
+          "साक्ष्यम्": "evidence"
+  "sa-5723":
+    native: "Administration of justice."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is दण्डनीति (daṇḍanīti); the card shows the isolated nominative singular दण्डनीतिः (daṇḍanītiḥ)."
+      "n3": "The administration of justice, the science of applying punishment as a rule of government."
+    bases:
+      "दण्डनीतिः": "administration of justice"
+    examples:
+      "अस्ति दण्डनीतिः तत्र":
+        native: "There is a policy of justice there."
+        bases:
+          "अस्ति": "is"
+          "दण्डनीतिः": "administration of justice"
+          "तत्र": "there"
+      "नृपस्य दण्डनीतिः":
+        native: "The king's administration of justice."
+        bases:
+          "नृपस्य": "king (genitive)"
+          "दण्डनीतिः": "administration of justice"
+  "sa-5724":
+    native: "Free, independent."
+    notes:
+      "n1": "An adjective: it takes the case, number and gender of the noun it describes, and the card shows the masculine nominative singular स्वतन्त्रः (svatantraḥ), from the stem स्वतन्त्र (svatantra)."
+      "n2": "Before a consonant the final म् (m) of राज्यम् (rājyam) is written ं (ṃ), as in राज्यं (rājyaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "स्वतन्त्रः": "free, independent"
+    examples:
+      "प्रजा स्वतन्त्रा":
+        native: "The subjects are free."
+        bases:
+          "प्रजा": "subjects"
+          "स्वतन्त्रा": "free"
+      "राज्यं स्वतन्त्रम्":
+        native: "A free kingdom."
+        bases:
+          "राज्यं": "kingdom, rule"
+          "स्वतन्त्रम्": "free"
+  "sa-5725":
+    native: "Army."
+    notes:
+      "n1": "Feminine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "An army or armed force, troops in general."
+    bases:
+      "सेना": "army"
+    examples:
+      "अस्ति सेना तत्र":
+        native: "There is an army there."
+        bases:
+          "अस्ति": "is"
+          "सेना": "army"
+          "तत्र": "there"
+      "राज्ये सेना":
+        native: "An army in the kingdom."
+        bases:
+          "राज्ये": "kingdom, rule (nominative dual)"
+          "सेना": "army"
+  "sa-5726":
+    native: "Leader."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is नायक (nāyaka); the card shows the isolated nominative singular नायकः (nāyakaḥ)."
+      "n3": "Before a consonant the final म् (m) of सेनायाम् (senāyām) is written ं (ṃ), as in सेनायां (senāyāṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "A leader or guide; near synonym of मुख्यः (mukhyaḥ), the chief."
+    bases:
+      "नायकः": "leader"
+    examples:
+      "अस्ति नायकः तत्र":
+        native: "There is a leader there."
+        bases:
+          "अस्ति": "is"
+          "नायकः": "leader"
+          "तत्र": "there"
+      "सेनायां नायकः":
+        native: "A leader of the army."
+        bases:
+          "सेनायां": "army (locative)"
+          "नायकः": "leader"
+  "sa-5727":
+    native: "Ruler."
+    notes:
+      "n1": "Masculine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is अधिपति (adhipati); the card shows the isolated nominative singular अधिपतिः (adhipatiḥ)."
+      "n3": "A ruler or lord; near synonym of स्वामी (svāmī), a master."
+    bases:
+      "अधिपतिः": "ruler"
+    examples:
+      "अधिपतिः तत्र":
+        native: "A ruler is there."
+        bases:
+          "अधिपतिः": "ruler"
+          "तत्र": "there"
+      "अधिपतिः पुरे":
+        native: "A ruler of the city."
+        bases:
+          "अधिपतिः": "ruler"
+          "पुरे": "city, fortress (nominative dual)"
+  "sa-5728":
+    native: "Master, lord."
+    notes:
+      "n1": "Masculine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is स्वामिन् (svāmin); the card shows the isolated nominative singular स्वामी (svāmī)."
+      "n3": "A master or owner; near synonym of अधिपतिः (adhipatiḥ), a ruler."
+    bases:
+      "स्वामी": "master, lord"
+    examples:
+      "अस्ति स्वामी तत्र":
+        native: "There is a master there."
+        bases:
+          "अस्ति": "is"
+          "स्वामी": "master, lord"
+          "तत्र": "there"
+      "गृहे स्वामी":
+        native: "The master of the house."
+        bases:
+          "गृहे": "house (locative)"
+          "स्वामी": "master, lord"
+  "sa-5729":
+    native: "Chief, leader."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is मुख्य (mukhya); the card shows the isolated nominative singular मुख्यः (mukhyaḥ)."
+      "n3": "Before a consonant the final म् (m) of सभायाम् (sabhāyām) is written ं (ṃ), as in सभायां (sabhāyāṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "The chief or leader; near synonym of नायकः (nāyakaḥ)."
+    bases:
+      "मुख्यः": "chief, leader"
+    examples:
+      "अस्ति मुख्यः तत्र":
+        native: "There is a chief there."
+        bases:
+          "अस्ति": "is"
+          "मुख्यः": "chief, leader"
+          "तत्र": "there"
+      "सभायां मुख्यः":
+        native: "The chief in the assembly."
+        bases:
+          "सभायां": "assembly (locative)"
+          "मुख्यः": "chief, leader"
+  "sa-5730":
+    native: "Overseer, superintendent."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is अध्यक्ष (adhyakṣa); the card shows the isolated nominative singular अध्यक्षः (adhyakṣaḥ)."
+    bases:
+      "अध्यक्षः": "overseer, superintendent"
+    examples:
+      "अध्यक्षः तत्र":
+        native: "An overseer is there."
+        bases:
+          "अध्यक्षः": "overseer, superintendent"
+          "तत्र": "there"
+      "अध्यक्षः पुरे":
+        native: "An overseer in the city."
+        bases:
+          "अध्यक्षः": "overseer, superintendent"
+          "पुरे": "city, fortress (nominative dual)"
+  "sa-5731":
+    native: "Royal dynasty."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is राजवंश (rājavaṃśa); the card shows the isolated nominative singular राजवंशः (rājavaṃśaḥ)."
+      "n3": "A dynasty, a line of kings of one family."
+    bases:
+      "राजवंशः": "royal dynasty"
+    examples:
+      "अस्ति राजवंशः तत्र":
+        native: "There is a royal dynasty there."
+        bases:
+          "अस्ति": "is"
+          "राजवंशः": "royal dynasty"
+          "तत्र": "there"
+      "राजवंशस्य राज्यम्":
+        native: "The kingdom of the dynasty."
+        bases:
+          "राजवंशस्य": "royal dynasty (genitive)"
+          "राज्यम्": "kingdom, rule"
+  "sa-5732":
+    native: "Throne."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is सिंहासन (siṃhāsana); the card shows the isolated nominative singular सिंहासनम् (siṃhāsanam)."
+      "n3": "Before a consonant the final म् (m) of सिंहासनम् (siṃhāsanam) is written ं (ṃ), as in सिंहासनं (siṃhāsanaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "A throne; the word literally means a lion's seat."
+    bases:
+      "सिंहासनम्": "throne"
+    examples:
+      "अस्ति सिंहासनं तत्र":
+        native: "There is a throne there."
+        bases:
+          "अस्ति": "is"
+          "सिंहासनं": "throne"
+          "तत्र": "there"
+      "नृपस्य सिंहासनम्":
+        native: "The king's throne."
+        bases:
+          "नृपस्य": "king (genitive)"
+          "सिंहासनम्": "throne"
+  "sa-5733":
+    native: "Prison."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is कारागार (kārāgāra); the card shows the isolated nominative singular कारागारम् (kārāgāram)."
+      "n3": "Before a consonant the final म् (m) of कारागारम् (kārāgāram) is written ं (ṃ), as in कारागारं (kārāgāraṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "A prison-house or jail."
+    bases:
+      "कारागारम्": "prison"
+    examples:
+      "अस्ति कारागारं तत्र":
+        native: "There is a prison there."
+        bases:
+          "अस्ति": "is"
+          "कारागारं": "prison"
+          "तत्र": "there"
+      "नगरे कारागारम्":
+        native: "A prison in the city."
+        bases:
+          "नगरे": "city (locative)"
+          "कारागारम्": "prison"
+  "sa-5734":
+    native: "Bond, fetter."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is बन्धन (bandhana); the card shows the isolated nominative singular बन्धनम् (bandhanam)."
+      "n3": "Before a consonant the final म् (m) of बन्धनम् (bandhanam) is written ं (ṃ), as in बन्धनं (bandhanaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "A bond or fetter; also a rope or cord."
+    bases:
+      "बन्धनम्": "bond, fetter"
+    examples:
+      "अस्ति बन्धनं तत्र":
+        native: "There are bonds there."
+        bases:
+          "अस्ति": "is"
+          "बन्धनं": "bond, fetter"
+          "तत्र": "there"
+      "कारागारे बन्धनम्":
+        native: "Bonds in the prison."
+        bases:
+          "कारागारे": "prison (nominative dual)"
+          "बन्धनम्": "bond, fetter"
+  "sa-5735":
+    native: "Witness."
+    notes:
+      "n1": "Masculine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is साक्षिन् (sākṣin); the card shows the isolated nominative singular साक्षी (sākṣī)."
+      "n3": "Before a consonant the final म् (m) of सभायाम् (sabhāyām) is written ं (ṃ), as in सभायां (sabhāyāṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "साक्षी": "witness"
+    examples:
+      "अस्ति साक्षी तत्र":
+        native: "There is a witness there."
+        bases:
+          "अस्ति": "is"
+          "साक्षी": "witness"
+          "तत्र": "there"
+      "सभायां साक्षी":
+        native: "A witness in the assembly."
+        bases:
+          "सभायां": "assembly (locative)"
+          "साक्षी": "witness"
+  "sa-5736":
+    native: "Member of the warrior class."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is क्षत्रिय (kṣatriya); the card shows the isolated nominative singular क्षत्रियः (kṣatriyaḥ)."
+      "n3": "One of the four classes (varṇa) of the traditional order: the warrior and ruling class."
+    bases:
+      "क्षत्रियः": "member of the warrior class"
+    examples:
+      "क्षत्रियः तत्र":
+        native: "A warrior is there."
+        bases:
+          "क्षत्रियः": "member of the warrior class"
+          "तत्र": "there"
+      "राज्ये क्षत्रियः":
+        native: "A warrior of the kingdom."
+        bases:
+          "राज्ये": "kingdom, rule (nominative dual)"
+          "क्षत्रियः": "member of the warrior class"
+  "sa-5737":
+    native: "Member of the merchant class."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is वैश्य (vaiśya); the card shows the isolated nominative singular वैश्यः (vaiśyaḥ)."
+      "n3": "The third of the four classes (varṇa) of the traditional order: traders and farmers."
+    bases:
+      "वैश्यः": "member of the merchant class"
+    examples:
+      "वैश्यः तत्र":
+        native: "A merchant is there."
+        bases:
+          "वैश्यः": "member of the merchant class"
+          "तत्र": "there"
+      "नगरे वैश्यः":
+        native: "A merchant in the city."
+        bases:
+          "नगरे": "city (locative)"
+          "वैश्यः": "member of the merchant class"
+  "sa-5738":
+    native: "Member of the servant class."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is शूद्र (śūdra); the card shows the isolated nominative singular शूद्रः (śūdraḥ)."
+      "n3": "The fourth of the four classes (varṇa) of the traditional order: the class of service."
+    bases:
+      "शूद्रः": "member of the servant class"
+    examples:
+      "शूद्रः तत्र":
+        native: "A servant is there."
+        bases:
+          "शूद्रः": "member of the servant class"
+          "तत्र": "there"
+      "ग्रामे शूद्रः":
+        native: "A servant in the village."
+        bases:
+          "ग्रामे": "village (locative)"
+          "शूद्रः": "member of the servant class"
+  "sa-5739":
+    native: "Group, troop."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is गण (gaṇa); the card shows the isolated nominative singular गणः (gaṇaḥ)."
+      "n3": "Before a consonant the final म् (m) of सभायाम् (sabhāyām) is written ं (ṃ), as in सभायां (sabhāyāṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "A group, troop or tribe; in religion, a class of attendant deities."
+    bases:
+      "गणः": "group, troop"
+    examples:
+      "अस्ति गणः तत्र":
+        native: "There is a group there."
+        bases:
+          "अस्ति": "is"
+          "गणः": "group, troop"
+          "तत्र": "there"
+      "सभायां गणः":
+        native: "A group in the assembly."
+        bases:
+          "सभायां": "assembly (locative)"
+          "गणः": "group, troop"
+  "sa-5740":
+    native: "Conduct, custom."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is आचार (ācāra); the card shows the isolated nominative singular आचारः (ācāraḥ)."
+    bases:
+      "आचारः": "conduct, custom"
+    examples:
+      "आचारः तत्र":
+        native: "Custom is there."
+        bases:
+          "आचारः": "conduct, custom"
+          "तत्र": "there"
+      "आचारः पुरे":
+        native: "A custom of the city."
+        bases:
+          "आचारः": "conduct, custom"
+          "पुरे": "city, fortress (nominative dual)"
+  "sa-5741":
+    native: "Proof, authority."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is प्रमाण (pramāṇa); the card shows the isolated nominative singular प्रमाणम् (pramāṇam)."
+      "n3": "Before a consonant the final म् (m) of प्रमाणम् (pramāṇam) is written ं (ṃ), as in प्रमाणं (pramāṇaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "Proof, evidence or authority; in other senses a measure."
+    bases:
+      "प्रमाणम्": "proof, authority"
+    examples:
+      "अस्ति प्रमाणं तत्र":
+        native: "There is proof there."
+        bases:
+          "अस्ति": "is"
+          "प्रमाणं": "proof, authority"
+          "तत्र": "there"
+      "सभायां प्रमाणम्":
+        native: "Proof in the assembly."
+        bases:
+          "सभायां": "assembly (locative)"
+          "प्रमाणम्": "proof, authority"
+  "sa-5742":
+    native: "Decision, verdict."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is निर्णय (nirṇaya); the card shows the isolated nominative singular निर्णयः (nirṇayaḥ)."
+      "n3": "Before a consonant the final म् (m) of सभायाम् (sabhāyām) is written ं (ṃ), as in सभायां (sabhāyāṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "निर्णयः": "decision, verdict"
+    examples:
+      "अस्ति निर्णयः तत्र":
+        native: "There is a decision there."
+        bases:
+          "अस्ति": "is"
+          "निर्णयः": "decision, verdict"
+          "तत्र": "there"
+      "सभायां निर्णयः":
+        native: "A decision in the assembly."
+        bases:
+          "सभायां": "assembly (locative)"
+          "निर्णयः": "decision, verdict"
+  "sa-5743":
+    native: "Hidden, secret."
+    notes:
+      "n1": "An adjective: it takes the case, number and gender of the noun it describes, and the card shows the masculine nominative singular गुप्तः (guptaḥ), from the stem गुप्त (gupta)."
+      "n2": "Before a consonant the final म् (m) of गुप्तम् (guptam) is written ं (ṃ), as in गुप्तं (guptaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n3": "Guarded or hidden; also protected."
+    bases:
+      "गुप्तः": "hidden, secret"
+    examples:
+      "गुप्तः चोरः":
+        native: "A hidden thief."
+        bases:
+          "गुप्तः": "hidden, secret"
+          "चोरः": "thief"
+      "गुप्तं स्थानम्":
+        native: "A hidden place."
+        bases:
+          "गुप्तं": "hidden"
+          "स्थानम्": "place"
+  "sa-5744":
+    native: "Friend, ally."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is मित्र (mitra); the card shows the isolated nominative singular मित्रम् (mitram)."
+      "n3": "Before a consonant the final म् (m) of मित्रम् (mitram) is written ं (ṃ), as in मित्रं (mitraṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+      "n4": "The same word also means the sun; here it means a friend or ally."
+    bases:
+      "मित्रम्": "friend, ally"
+    examples:
+      "अस्ति मित्रं तत्र":
+        native: "There is a friend there."
+        bases:
+          "अस्ति": "is"
+          "मित्रं": "friend, ally"
+          "तत्र": "there"
+      "नृपस्य मित्रम्":
+        native: "The king's friend."
+        bases:
+          "नृपस्य": "king (genitive)"
+          "मित्रम्": "friend, ally"
+  "sa-5745":
+    native: "Enemy."
+    notes:
+      "n1": "Masculine noun noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table; its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "The dictionary stem is शत्रु (śatru); the card shows the isolated nominative singular शत्रुः (śatruḥ)."
+      "n3": "An enemy or foe; the same word also means a rival."
+    bases:
+      "शत्रुः": "enemy"
+    examples:
+      "अस्ति शत्रुः तत्र":
+        native: "There is an enemy there."
+        bases:
+          "अस्ति": "is"
+          "शत्रुः": "enemy"
+          "तत्र": "there"
+      "राज्ये शत्रुः":
+        native: "An enemy in the kingdom."
+        bases:
+          "राज्ये": "kingdom, rule (nominative dual)"
+          "शत्रुः": "enemy"
+  "sa-5746":
+    native: "Thief."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is चोर (cora); the card shows the isolated nominative singular चोरः (coraḥ)."
+      "n3": "A thief or robber; the same word also means a plagiarist."
+    bases:
+      "चोरः": "thief"
+    examples:
+      "अस्ति चोरः तत्र":
+        native: "There is a thief there."
+        bases:
+          "अस्ति": "is"
+          "चोरः": "thief"
+          "तत्र": "there"
+      "नगरे चोरः":
+        native: "A thief in the city."
+        bases:
+          "नगरे": "city (locative)"
+          "चोरः": "thief"
+  "sa-5747":
+    native: "City, fortress."
+    notes:
+      "n1": "Neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is पुर (pura); the card shows the isolated nominative singular पुरम् (puram)."
+      "n3": "Before a consonant the final म् (m) of पुरम् (puram) is written ं (ṃ), as in पुरं (puraṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "पुरम्": "city, fortress"
+    examples:
+      "अस्ति पुरं तत्र":
+        native: "There is a city there."
+        bases:
+          "अस्ति": "is"
+          "पुरं": "city, fortress"
+          "तत्र": "there"
+      "पुरे नृपः":
+        native: "A king in the city."
+        bases:
+          "पुरे": "city, fortress (nominative dual)"
+          "नृपः": "king"
+  "sa-5748":
+    native: "Strong."
+    notes:
+      "n1": "An adjective: it takes the case, number and gender of the noun it describes, and the card shows the masculine nominative singular बलवान् (balavān), from the stem बलवत् (balavat)."
+    bases:
+      "बलवान्": "strong"
+    examples:
+      "नृपः तत्र बलवान्":
+        native: "The king there is strong."
+        bases:
+          "नृपः": "king"
+          "तत्र": "there"
+          "बलवान्": "strong"
+      "पुरे बलवान्":
+        native: "Strong in the city."
+        bases:
+          "पुरे": "city, fortress (nominative dual)"
+          "बलवान्": "strong"
+  "sa-5749":
+    native: "Weak."
+    notes:
+      "n1": "An adjective: it takes the case, number and gender of the noun it describes, and the card shows the masculine nominative singular दुर्बलः (durbalaḥ), from the stem दुर्बल (durbala)."
+    bases:
+      "दुर्बलः": "weak"
+    examples:
+      "अस्ति दुर्बलः तत्र":
+        native: "There is a weak one there."
+        bases:
+          "अस्ति": "is"
+          "दुर्बलः": "weak"
+          "तत्र": "there"
+      "सेना दुर्बला":
+        native: "The army is weak."
+        bases:
+          "सेना": "army"
+          "दुर्बला": "weak"
+  "sa-5750":
+    native: "Common, ordinary."
+    notes:
+      "n1": "An adjective: it takes the case, number and gender of the noun it describes, and the card shows the masculine nominative singular सामान्यः (sāmānyaḥ), from the stem सामान्य (sāmānya)."
+    bases:
+      "सामान्यः": "common, ordinary"
+    examples:
+      "सामान्यः तत्र नियमः":
+        native: "A common rule there."
+        bases:
+          "सामान्यः": "common, ordinary"
+          "तत्र": "there"
+          "नियमः": "rule, regulation"
+      "नियमः सामान्यः":
+        native: "The rule is common."
+        bases:
+          "नियमः": "rule, regulation"
+          "सामान्यः": "common, ordinary"
+  "sa-5751":
+    native: "New, modern."
+    notes:
+      "n1": "An adjective: it takes the case, number and gender of the noun it describes, and the card shows the masculine nominative singular नूतनः (nūtanaḥ), from the stem नूतन (nūtana)."
+      "n2": "Before a consonant the final म् (m) of नूतनम् (nūtanam) is written ं (ṃ), as in नूतनं (nūtanaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "नूतनः": "new, modern"
+    examples:
+      "नूतनं शासनम्":
+        native: "A new edict."
+        bases:
+          "नूतनं": "new, modern"
+          "शासनम्": "edict"
+      "शासनं नूतनम्":
+        native: "The edict is new."
+        bases:
+          "शासनं": "edict"
+          "नूतनम्": "new, modern"
+  "sa-5752":
+    native: "Old, worn."
+    notes:
+      "n1": "An adjective: it takes the case, number and gender of the noun it describes, and the card shows the masculine nominative singular जीर्णः (jīrṇaḥ), from the stem जीर्ण (jīrṇa)."
+      "n2": "Before a consonant the final म् (m) of जीर्णम् (jīrṇam) is written ं (ṃ), as in जीर्णं (jīrṇaṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "जीर्णः": "old, worn"
+    examples:
+      "जीर्णं शासनम्":
+        native: "An old edict."
+        bases:
+          "जीर्णं": "old, worn"
+          "शासनम्": "edict"
+      "सिंहासनं जीर्णम्":
+        native: "The throne is old."
+        bases:
+          "सिंहासनं": "throne"
+          "जीर्णम्": "old, worn"
+  "sa-5753":
+    native: "Dispute."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is विवाद (vivāda); the card shows the isolated nominative singular विवादः (vivādaḥ)."
+      "n3": "Before a consonant the final म् (m) of सभायाम् (sabhāyām) is written ं (ṃ), as in सभायां (sabhāyāṃ); Aṣṭādhyāyī 8.3.23, the rule of the anusvāra, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213."
+    bases:
+      "विवादः": "dispute"
+    examples:
+      "अस्ति विवादः तत्र":
+        native: "There is a dispute there."
+        bases:
+          "अस्ति": "is"
+          "विवादः": "dispute"
+          "तत्र": "there"
+      "सभायां विवादः":
+        native: "A dispute in the assembly."
+        bases:
+          "सभायां": "assembly (locative)"
+          "विवादः": "dispute"
+  "sa-5754":
+    native: "Means, method."
+    notes:
+      "n1": "Masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is उपाय (upāya); the card shows the isolated nominative singular उपायः (upāyaḥ)."
+    bases:
+      "उपायः": "means, method"
+    examples:
+      "उपायः तत्र":
+        native: "There is a method there."
+        bases:
+          "उपायः": "means, method"
+          "तत्र": "there"
+      "उपायः सुगमः":
+        native: "An easy method."
+        bases:
+          "उपायः": "means, method"
+          "सुगमः": "easy to reach"
