@@ -99,7 +99,7 @@ MR-080..091: sentences decks for the 75 word decks without one, 12 workers of ab
 - A source-it-yourself mode for recommendations is specified in [Plan-Language-Completeness](Plan-Language-Completeness.md) but not implemented; MR-060 and MR-061 use the shape of `recommendations/es.yaml`.
 - The `mr` registry entry is shared tooling; MR-110 goes through the parent.
 
-## 6. Status (2026-11-16)
+## 6. Status (2026-11-17)
 
 ### Done and merged into decks-live
 
@@ -141,3 +141,20 @@ d. Owner questions: grammar-unit reading decks, professional decks, set cards wi
 - Notes: set cards (mr-0694, mr-0695, mr-1001) cannot carry notes; mr-0474, mr-0606, mr-0393, mr-0562, mr-0403 have no certain note.
 - Hosts blocked through the proxy: archive.org, britannica.com, imdb.com, wikibooks (en and mr), gutenberg.org, hathitrust.org, loc.gov, dsal.uchicago.edu, ncert.nic.in, ebalbharati.in, indianculture.gov.in, sahitya-akademi.gov.in, marathivishwakosh.org; the Wikimedia APIs rate-limit (429): pace 10 to 20 s.
 - Open owner questions: grammar-unit reading decks (the wiki pages disagree; te and es list them); professional decks; `ṁ` for Marathi; whether set cards may carry notes.
+
+### Final state (2026-11-17)
+
+1. Merged deck PRs into decks-live (all one Sonnet review each): #1456 #1457 #1477 #1478 #1479 #1490 #1497 #1506 #1509 #1518 #1519 #1520 #1521 #1546 #1552 #1553 #1557 #1559 #1564 #1566. Plus #1457-era items already listed above.
+2. Final counts: phonetic on 2,949 of 2,949 core cards (#1566: 92 cards, 40 of them bracketed copies of broad ipa via `--bracket-unchanged`); professional decks built (6 decks: medicine-clinic, medicine-pharmacy, hospitality-reception, hospitality-restaurant, business-email, business-meeting; 54 cards, hidden, unreviewed); situations complete (26 new phrase cards, mr-8100..8125; phrases written by the builder, unreviewed, because en/mr.wikivoyage are not allowlisted and the Marathi sheet titles are unsourced).
+3. Left over, not done: review-queue rows from the later waves (professional decks, situations, multiword-6, recommendations wave 5, sentence notes, fixes wave 1, review NITs) are NOT yet in `docs/review-queue/mr.md` (91 rows there); needs a data PR to decks-live. Also: Sandeep Sawant and Sheikh Fattelal dates unsourced; no podcasts found; TV series lack dated creators; seven base words without sourced gloss (अटकेपार, विश्वे, सर्वस्व, पणाला, सामोरे, घिसाडघाई, पदरी); mr-4427 तटास लागणे not built; data questions from note workers: mr-5698 आंबा/आंबे, mr-6029 singular/plural English, mr-6828 वाढतो आहे, mr-6342 जवळ separate word, base readings, mr-5846 base reading.
+4. Open owner questions: Marathi sheet titles and Wikivoyage allowlist; professions beyond medicine/hospitality/business; may a grammar unit list a reading deck (20 mr grammar-unit reading decks exist); may set cards carry notes (mr-0694, mr-0695, mr-1001 have none); is `ṁ` correct for Marathi (CLAUDE.md fixes it for Telugu only).
+
+### Tools tasks (for the parent; tools/ is not edited by the Marathi session)
+
+| Task | File | Failing example | Expected output |
+|---|---|---|---|
+| a. Anusvara | `tools/transcribe.py` (mr) | final anusvara is written `m̐` (existing `sagaḷyāṁvar` shows the course form); before a consonant it writes plain `m` (`mulāmpāsun` in mr-8018) | `ṁ` in both positions, per course convention: `mulāṁpāsun` |
+| b. Schwa deletion | `tools/transcribe.py` (mr) | over-deletes in long words: स्वजनजनधनाचा gives `svajnjndhnācā` (also `gajvdan`, `saklmti`); wrongly drops a mid-word schwa: लवकरच gives `lavkrac`, आदरणीय gives `ādrṇiy`, कृपया gives `krupyā`, काहीतरी gives `kāhitri` | mid-word schwa retained, in course spelling: लवकरच (not `lavkrac`), आदरणीय `ādaraṇīya`, कृपया `kr̥payā`, काहीतरी `kāhītari`. A typed Latin hint must fit the whole sentence, so mixed text needs a per-word run. ॐ and ASCII-colon edge cases appear in some verses |
+| c. Registry entry | `tools/phonetic_languages.yaml` | no `mr` entry (issue #1476, branch `mr-phonetics-design`) | entry for `mr` with `untagged: false` and `dump: "Marathi"`; the rules in `decks/mr/mr-phonetics.yaml` already exist |
+| d. Broad-ipa data (not tools) | rule `mr-sonorant-murmured` | false positives on दरमहा and सकलही; missed murmur on loanwords नोव्हेंबर and ड्रायव्हर | no murmur on दरमहा and सकलही; murmur on the loanwords नोव्हेंबर and ड्रायव्हर |
+| e. Unrelated failing tests on main | font-sample test; script-list test; Persian/Pashto/Sindhi Naskh test | font-sample test fails for Thai, Meitex Mayek and Brahmi (writes "Meitei Mayek"); script-list test sees `latin`; Persian/Pashto/Sindhi Naskh test | each test passes; these failures are unrelated to Marathi |
