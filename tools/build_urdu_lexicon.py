@@ -81,13 +81,20 @@ for _base, _marks, _out in (
         ("n", MACRON_BELOW, "n"), ("m", DOT_BELOW, "m")):
     _g(_base, _marks, _out)
 APOSTROPHE = {"'", "’"}
+ASPIRABLE = set("bptṭjcdḍṛkglmnr")
 DROPPED = set("ʻʿ‘ʾ")                      # ʿain: the decks do not write it
 
 
-def roman_to_reading(text: str) -> str | None:
+def roman_to_reading(text: str, word: str = "") -> str | None:
     """Wiktionary's transliteration of one Urdu word as a reading in the
     decks' letters, or None when it holds anything this does not know (a
-    space, a hyphen, a capital in the middle, an odd letter)."""
+    space, a hyphen, a capital in the middle, an odd letter) or when its
+    vowels cannot be trusted: a doubled short vowel (ʿain written `a'a`), or
+    a final `ah`, which the dump writes for a final ہ that may be said a, ā
+    or ē: such a row is dropped rather than guessed. [word] is the Urdu
+    spelling: an apostrophe is kept (as the engine writes it) only for a
+    hamza ء, never for ع, which the decks do not write."""
+    keep_hamza = "ء" in word and "ع" not in word
     s = unicodedata.normalize("NFD", text.strip().lower())
     groups: list[list[str]] = []
     for ch in s:
@@ -102,7 +109,8 @@ def roman_to_reading(text: str) -> str | None:
         if base in DROPPED:
             continue
         if base in APOSTROPHE and not marks:
-            units.append("'")
+            if keep_hamza:
+                units.append("'")
             after_nasal_vowel = False
             continue
         mset = set(marks)
@@ -142,21 +150,27 @@ def roman_to_reading(text: str) -> str | None:
         if k in inserts:
             out_text.append(tr.UR_NASAL_MARK)
     result = unicodedata.normalize("NFC", "".join(out_text))
-    return result or None
+    if not result or any(v * 2 in result for v in "aiu"):
+        return None
+    key = unicodedata.normalize("NFC", word)
+    if result.endswith("ah") and key.endswith("ہ") and len(key) > 1 and (
+            key[-2] not in "اآے"):
+        return None
+    return result
 
 
 def _skeleton(letters: Iterable[str]) -> list[str]:
     """Consonant letters folded to what a reading and the Urdu spelling can
-    be compared by: aspirates and the glides y, v, h (which Urdu spells with
-    letters that also write vowels) are left out, m and n are one nasal, and
-    runs of one letter are one."""
+    be compared by: the aspirate h of kh, bh... is left out, so are the glides
+    y, v (which Urdu spells with letters that also write vowels), m and n are
+    one nasal, and runs of one letter are one. A lone h counts."""
     out: list[str] = []
     for c in letters:
         c = tr.UR_FOLD.get(c, c)
         if len(c) > 1 and c.endswith("h"):
             c = c[:-1]
         c = {"m": "n", "ṅ": "n"}.get(c, c)
-        if c in ("y", "v", "h", "w", "'"):
+        if c in ("y", "v", "w", "'"):
             continue
         if not out or out[-1] != c:
             out.append(c)
@@ -174,7 +188,10 @@ def _reading_letters(reading: str) -> list[str]:
             out.append(reading[i:i + 3])
             i += 3
             continue
-        if c not in VOWELS:
+        if c == "h" and out and i > 0 and reading[i - 1] == out[-1] \
+                and out[-1] in ASPIRABLE:
+            out[-1] += "h"
+        elif c not in VOWELS:
             out.append(c)
         i += 1
     return out
@@ -182,17 +199,22 @@ def _reading_letters(reading: str) -> list[str]:
 
 def consistent(word: str, reading: str) -> bool:
     """Whether [reading] has the consonants that [word] has, as the engine
-    reads them (see `_skeleton`). The one letter the reading may lack is an n:
-    ن also writes the nasal of a vowel (ن٘, a nasal before a stop), which a
-    reading writes as m̐."""
+    reads them (see `_skeleton`). The reading may lack an n (ن also writes the
+    nasal of a vowel, ن٘ before a stop, which a reading writes as m̐), an h
+    after one of the letters that take an aspirate (nh, lh, rh...), and a
+    final h (a silent ہ)."""
     toks, _, _ = tr._ur_parse(word)
     ours = _skeleton(t.iso for t in toks if t.kind == "C")
     theirs = _skeleton(_reading_letters(reading))
     j = 0
-    for c in ours:
+    for k, c in enumerate(ours):
         if j < len(theirs) and theirs[j] == c:
             j += 1
-        elif c != "n":
+        elif c == "n":
+            continue
+        elif c == "h" and (k == len(ours) - 1 or ours[k - 1] in ASPIRABLE):
+            continue            # a final silent ہ; the h of nh, lh... (ں)
+        else:
             return False
     return j == len(theirs)
 
@@ -233,7 +255,7 @@ def build(lines: Iterable[str]) -> tuple[dict[str, set[str]], dict[str, int]]:
             if not form or any(c.isspace() for c in form):
                 n["multi-word"] += 1
                 continue
-            reading = roman_to_reading(roman)
+            reading = roman_to_reading(roman, form)
             if reading is None:
                 n["unconvertible"] += 1
                 continue

@@ -40,12 +40,29 @@ class RomanToReadingTest(unittest.TestCase):
                 ("baṛā", "baṛā"),
                 ("ḍāk", "ḍāk"),
                 ("ʻīsā", "īsā"),                # ʿain is not written
-                ("asmā'", "asmā'"),             # hamza is
+                ("ʻām", "ām"),
+                ("'ām", "ām"),                  # ع, plain apostrophe too
                 ("ṣabr", "sabr"),
                 ("Lālī", "lālī"),
                 ("bañā", "banā"),
         ]:
             self.assertEqual(b.roman_to_reading(roman), reading, roman)
+
+    def test_a_hamza_keeps_its_apostrophe_and_ain_does_not(self) -> None:
+        self.assertEqual(b.roman_to_reading("asmā'", "اسماء"), "asmā'")
+        self.assertEqual(b.roman_to_reading("asmā'", "اسما"), "asmā")
+        self.assertEqual(b.roman_to_reading("'ām", "عام"), "ām")
+        self.assertEqual(b.roman_to_reading("'ām"), "ām")
+
+    def test_a_final_ah_is_dropped_but_not_after_a_vowel_or_ha(self) -> None:
+        self.assertIsNone(b.roman_to_reading("ālūdah", "آلودہ"))
+        self.assertIsNone(b.roman_to_reading("siyah", "سیہ"))
+        self.assertEqual(b.roman_to_reading("baccā", "بچہ"), "baccā")
+        self.assertEqual(b.roman_to_reading("subah", "صبح"), "subah")
+        self.assertEqual(b.roman_to_reading("rāh", "راہ"), "rāh")
+
+    def test_a_doubled_short_vowel_gives_none(self) -> None:
+        self.assertIsNone(b.roman_to_reading("baa'z", "بعض"))
 
     def test_anything_unknown_gives_none(self) -> None:
         for roman in ["kyā hai", "-bāz", "ik-hattar", "alif madda ", "ma(r)",
@@ -67,6 +84,12 @@ class ConsistentTest(unittest.TestCase):
         self.assertTrue(b.consistent("کھانا", "khānā"))
         self.assertTrue(b.consistent("ہَن٘سی", "ham̐sī"))
         self.assertTrue(b.consistent("بچہ", "baccā"))
+        self.assertTrue(b.consistent("جِنِہیں", "jinhēm̐"))
+        self.assertTrue(b.consistent("پایہ", "pāyā"))
+
+    def test_an_h_in_the_middle_is_checked(self) -> None:
+        self.assertFalse(b.consistent("بنا", "bahnā"))
+        self.assertTrue(b.consistent("بہنا", "bahnā"))
 
 
 class BuildTest(unittest.TestCase):
@@ -76,6 +99,15 @@ class BuildTest(unittest.TestCase):
         self.assertEqual(lex["کتابوں"], {"kitābōm̐"})     # an inflected form
         self.assertEqual(lex["کتابیں"], {"kitābēm̐"})
         self.assertEqual(lex["میں"], {"maim̐"})
+
+    def test_a_final_h_and_ain_in_the_rows(self) -> None:
+        lex, _ = build_sample()
+        self.assertEqual(lex["بچہ"], {"baccā"})     # baccah is dropped
+        self.assertNotIn("آلودہ", lex)             # only ālūdah: dropped
+        self.assertEqual(lex["عام"], {"ām"})        # ʿain and ' are not written
+        self.assertNotIn("بعض", lex)               # baa'z: a doubled vowel
+        self.assertEqual(lex["اسماء"], {"asmā'"})   # a hamza is
+        self.assertEqual(lex["صبح"], {"subah"})     # ح, not a silent ہ
 
     def test_a_homograph_keeps_both_readings(self) -> None:
         lex, _ = build_sample()
