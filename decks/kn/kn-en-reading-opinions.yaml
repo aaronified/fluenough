@@ -1,0 +1,42 @@
+schema: 1
+id: "kn-en-reading-opinions"
+name: "Reading: letters to a newspaper"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "Two short letters to a newspaper about a plan, using the opinion words taught up to this unit. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-opinions-passage"
+    title: "Two letters to the paper"
+    sentences:
+      - text: "ನನ್ನ ಅಭಿಪ್ರಾಯ ಬೇರೆ ಇದೆ."
+        reading: "nanna abhiprāya bēre ide."
+        ipa: "nanna abʱipraːja beːre id̪e"
+      - text: "ನಾನು ಈ ಯೋಜನೆಗೆ ಒಪ್ಪುವುದಿಲ್ಲ."
+        reading: "nānu ī yōjanege oppuvudilla."
+        ipa: "naːnu iː joːdʒaneɡe oppuʋud̪illa"
+      - text: "ಕಾರಣ ಸರಿಯಲ್ಲ."
+        reading: "kāraṇa sariyalla."
+        ipa: "kaːraɳa sarijalla"
+      - text: "ಚರ್ಚೆ ಉತ್ತಮ."
+        reading: "carce uttama."
+        ipa: "tʃartʃe ut̪t̪ama"
+      - text: "ಸತ್ಯ ಹೇಳಬೇಕು."
+        reading: "satya hēḷabēku."
+        ipa: "sat̪ja heːɭabeːku"
+    questions:
+      - id: "kn-9027"
+        prompt: { en: "Does the writer agree with the plan?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+        answer: 2
+      - id: "kn-9028"
+        prompt: { en: "The reason is not right." }
+        answer: true
+      - id: "kn-9029"
+        prompt: { en: "The truth must be told." }
+        answer: true

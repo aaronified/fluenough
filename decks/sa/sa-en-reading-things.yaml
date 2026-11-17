@@ -1,0 +1,57 @@
+schema: 1
+id: "sa-en-reading-things"
+name: "Reading: things"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-things-text-1"
+    title: "Who carries what"
+    theme: "things"
+    sentences:
+      - { text: "सखा ग्रन्थं पठति कलमेन लिखति.", reading: "sakhā granthaṃ paṭhati kalamena likhati.", ipa: "səkʰaː ɡrənt̪ʰəm pəʈʰət̪i kələmeːnə likʰət̪i" }
+      - { text: "सा नारी दर्पणे मुखं पश्यति.", reading: "sā nārī darpaṇe mukhaṃ paśyati.", ipa: "saː naːriː d̪ərpəɳeː mukʰəm pəʃjət̪i" }
+      - { text: "वर्षायां पिता छत्त्रं वहति.", reading: "varṣāyāṃ pitā chattraṃ vahati.", ipa: "ʋərʂaːjaːm pit̪aː tʃʰət̪t̪rəm ʋəɦət̪i" }
+      - { text: "माता वीणां वहति पिता मृदङ्गं वहति.", reading: "mātā vīṇāṃ vahati pitā mṛdaṅgaṃ vahati.", ipa: "maːt̪aː ʋiːɳaːm ʋəɦət̪i pit̪aː mr̩d̪əŋɡəm ʋəɦət̪i" }
+    questions:
+      - id: "sa-3555"
+        prompt: { en: "Who carries an umbrella in the rain?" }
+        options: [{ en: "Mother" }, { en: "Father" }, { en: "The friend" }]
+        answer: 2
+      - id: "sa-3556"
+        prompt: { en: "Who carries a lute?" }
+        options: [{ en: "Father" }, { en: "The friend" }, { en: "Mother" }]
+        answer: 3
+      - id: "sa-3557"
+        prompt: { en: "The friend reads a book." }
+        answer: true
+      - id: "sa-3558"
+        prompt: { en: "Mother carries a drum." }
+        answer: false
+  - id: "sa-things-text-2"
+    title: "Pot, iron, wood"
+    theme: "things"
+    sentences:
+      - { text: "घटो जलेन पूर्णो भवति पात्रं च रिक्तं भवति.", reading: "ghaṭo jalena pūrṇo bhavati pātraṃ ca riktaṃ bhavati.", ipa: "ɡʱəʈoː dʒəleːnə puːrɳoː bʱəʋət̪i paːt̪rəm tʃə rikt̪əm bʱəʋət̪i" }
+      - { text: "लोहं कठिनं भवति सुवर्णं च सुन्दरं भवति.", reading: "lohaṃ kaṭhinaṃ bhavati suvarṇaṃ ca sundaraṃ bhavati.", ipa: "loːɦəm kəʈʰinəm bʱəʋət̪i suʋərɳəm tʃə sund̪ərəm bʱəʋət̪i" }
+      - { text: "शस्त्रं पतति चक्रं च न चलति.", reading: "śastraṃ patati cakraṃ ca na calati.", ipa: "ʃəst̪rəm pət̪ət̪i tʃəkrəm tʃə nə tʃələt̪i" }
+      - { text: "पिता काष्ठेन गृहं करोति.", reading: "pitā kāṣṭhena gṛhaṃ karoti.", ipa: "pit̪aː kaːʂʈʰeːnə ɡr̩ɦəm kəroːt̪i" }
+    questions:
+      - id: "sa-3559"
+        prompt: { en: "What is empty?" }
+        options: [{ en: "The vessel" }, { en: "The pot" }, { en: "The wheel" }]
+        answer: 1
+      - id: "sa-3560"
+        prompt: { en: "What falls in the third sentence?" }
+        options: [{ en: "The wheel" }, { en: "The weapon" }, { en: "The pot" }]
+        answer: 2
+      - id: "sa-3561"
+        prompt: { en: "The wheel does not move." }
+        answer: true
+      - id: "sa-3562"
+        prompt: { en: "Father makes a house of iron." }
+        answer: false

@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-en-reading-health"
+name: "Reading: clinic notice"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-clinic-notice"
+    title: "Clinic notice"
+    sentences:
+      - text: "ಪ್ರತಿದಿನ ವ್ಯಾಯಾಮ ಮಾಡಿ."
+        reading: "pratidina vyāyāma māḍi."
+        ipa: "prat̪id̪ina ʋjaːjaːma maːɖi"
+      - text: "ಹಾಲು ಕುಡಿಯಿರಿ ಮತ್ತು ನಿದ್ರೆ ಮಾಡಿ."
+        reading: "hālu kuḍiyiri mattu nidre māḍi."
+        ipa: "haːlu kuɖijiri mat̪t̪u nid̪re maːɖi"
+      - text: "ಜ್ವರ ಇದ್ದರೆ ವಿಶ್ರಾಂತಿ ತೆಗೆದುಕೊಳ್ಳಿ."
+        reading: "jvara iddare viśrānti tegedukoḷḷi."
+        ipa: "dʒʋara id̪d̪are ʋiʃraːnt̪i t̪eɡed̪ukoɭɭi"
+      - text: "ವೈದ್ಯರು ಇಲ್ಲಿ ಇದ್ದಾರೆ."
+        reading: "vaidyaru illi iddāre."
+        ipa: "ʋaid̪jaru illi id̪d̪aːre"
+    questions:
+      - id: "kn-9700"
+        prompt: { en: "What should you do every day?" }
+        options:
+          - { en: "Exercise" }
+          - { en: "Smoke" }
+          - { en: "Stay in bed" }
+        answer: 1
+      - id: "kn-9701"
+        prompt: { en: "Take rest if you have fever." }
+        answer: true
+      - id: "kn-9702"
+        prompt: { en: "Drink milk and sleep." }
+        answer: true

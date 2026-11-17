@@ -1,0 +1,151 @@
+schema: 1
+id: "sa-grammar-present-system"
+part: "core"
+kind: "rules"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+source: "Whitney, Sanskrit Grammar 551 to 553 (endings), 599 to 608 (the classes) and 734 to 735 (the bhū class) on en.wikisource, and the Wikipedia pages Sanskrit nouns and Sanskrit grammar, read 2026-11-16; Panini, Astadhyayi 1.3.1, 3.1.68, 3.2.123 as typed on sa.wikisource.org/wiki/अष्टाध्यायी, read 2026-11-16; each verb's forms read in the present table of its en.wiktionary.org entry (2026-11-16)."
+tags: ["grammar", "unreviewed"]
+table:
+  # The verbs of other classes (2 to 10) and the first-class verbs that take the middle
+  # endings (atmanepada) are not rows of this table: their present stems or endings
+  # differ, and the notes of their cards say how. They are listed here as `except`.
+  # Class (gana) of each, as the sa-verb line of the en.wiktionary entry of its present form gives it
+  # (2026-11-16); the ones in the first class marked atmanepada take the middle endings:
+  #   sa-2101 रुध्: gana-7
+  #   sa-2102 लभ्: gana-1-atmanepada, atmanepada
+  #   sa-2103 वृत्: gana-1-atmanepada, atmanepada
+  #   sa-2104 ईक्ष्: gana-1-atmanepada, atmanepada
+  #   sa-2105 अस्: gana-2
+  #   sa-2106 रुद्: gana-2
+  #   sa-2107 या: gana-2
+  #   sa-2108 ब्रू: gana-2
+  #   sa-2109 दा: gana-3
+  #   sa-2110 धा: gana-3
+  #   sa-2111 पश्: gana-4
+  #   sa-2112 नृत्: gana-4
+  #   sa-2113 श्रु: gana-5
+  #   sa-2114 लिख्: gana-6
+  #   sa-2115 विश्: gana-6
+  #   sa-2116 इष्: gana-6
+  #   sa-2117 तुद्: gana-6
+  #   sa-2118 कृ: gana-8
+  #   sa-2119 ज्ञा: gana-9
+  #   sa-2120 क्री: gana-9
+  #   sa-2121 ग्रह्: gana-9
+  #   sa-2122 कथ्: gana-10
+  #   sa-2123 पूज्: gana-10
+  applies_to:
+    pos: ["verb"]
+    tags: ["gana-1"]
+    except: ["sa-2101", "sa-2102", "sa-2103", "sa-2104", "sa-2105", "sa-2106", "sa-2107", "sa-2108", "sa-2109", "sa-2110", "sa-2111", "sa-2112", "sa-2113", "sa-2114", "sa-2115", "sa-2116", "sa-2117", "sa-2118", "sa-2119", "sa-2120", "sa-2121", "sa-2122", "sa-2123"]
+  slots: ["stem", "p3-sg", "p3-du", "p3-pl", "p2-sg", "p2-du", "p2-pl", "p1-sg", "p1-du", "p1-pl"]
+  rows:
+    - word: "sa-0430"
+      forms: { "stem": "भव", "p3-sg": "भवति", "p3-du": "भवतः", "p3-pl": "भवन्ति", "p2-sg": "भवसि", "p2-du": "भवथः", "p2-pl": "भवथ", "p1-sg": "भवामि", "p1-du": "भवावः", "p1-pl": "भवामः" }
+      readings: { "stem": "bhava", "p3-sg": "bhavati", "p3-du": "bhavataḥ", "p3-pl": "bhavanti", "p2-sg": "bhavasi", "p2-du": "bhavathaḥ", "p2-pl": "bhavatha", "p1-sg": "bhavāmi", "p1-du": "bhavāvaḥ", "p1-pl": "bhavāmaḥ" }
+    - word: "sa-0431"
+      forms: { "stem": "गच्छ", "p3-sg": "गच्छति", "p3-du": "गच्छतः", "p3-pl": "गच्छन्ति", "p2-sg": "गच्छसि", "p2-du": "गच्छथः", "p2-pl": "गच्छथ", "p1-sg": "गच्छामि", "p1-du": "गच्छावः", "p1-pl": "गच्छामः" }
+      readings: { "stem": "gaccha", "p3-sg": "gacchati", "p3-du": "gacchataḥ", "p3-pl": "gacchanti", "p2-sg": "gacchasi", "p2-du": "gacchathaḥ", "p2-pl": "gacchatha", "p1-sg": "gacchāmi", "p1-du": "gacchāvaḥ", "p1-pl": "gacchāmaḥ" }
+    - word: "sa-0432"
+      forms: { "stem": "पठ", "p3-sg": "पठति", "p3-du": "पठतः", "p3-pl": "पठन्ति", "p2-sg": "पठसि", "p2-du": "पठथः", "p2-pl": "पठथ", "p1-sg": "पठामि", "p1-du": "पठावः", "p1-pl": "पठामः" }
+      readings: { "stem": "paṭha", "p3-sg": "paṭhati", "p3-du": "paṭhataḥ", "p3-pl": "paṭhanti", "p2-sg": "paṭhasi", "p2-du": "paṭhathaḥ", "p2-pl": "paṭhatha", "p1-sg": "paṭhāmi", "p1-du": "paṭhāvaḥ", "p1-pl": "paṭhāmaḥ" }
+    - word: "sa-0433"
+      forms: { "stem": "वद", "p3-sg": "वदति", "p3-du": "वदतः", "p3-pl": "वदन्ति", "p2-sg": "वदसि", "p2-du": "वदथः", "p2-pl": "वदथ", "p1-sg": "वदामि", "p1-du": "वदावः", "p1-pl": "वदामः" }
+      readings: { "stem": "vada", "p3-sg": "vadati", "p3-du": "vadataḥ", "p3-pl": "vadanti", "p2-sg": "vadasi", "p2-du": "vadathaḥ", "p2-pl": "vadatha", "p1-sg": "vadāmi", "p1-du": "vadāvaḥ", "p1-pl": "vadāmaḥ" }
+    - word: "sa-0434"
+      forms: { "stem": "पच", "p3-sg": "पचति", "p3-du": "पचतः", "p3-pl": "पचन्ति", "p2-sg": "पचसि", "p2-du": "पचथः", "p2-pl": "पचथ", "p1-sg": "पचामि", "p1-du": "पचावः", "p1-pl": "पचामः" }
+      readings: { "stem": "paca", "p3-sg": "pacati", "p3-du": "pacataḥ", "p3-pl": "pacanti", "p2-sg": "pacasi", "p2-du": "pacathaḥ", "p2-pl": "pacatha", "p1-sg": "pacāmi", "p1-du": "pacāvaḥ", "p1-pl": "pacāmaḥ" }
+    - word: "sa-0435"
+      forms: { "stem": "नय", "p3-sg": "नयति", "p3-du": "नयतः", "p3-pl": "नयन्ति", "p2-sg": "नयसि", "p2-du": "नयथः", "p2-pl": "नयथ", "p1-sg": "नयामि", "p1-du": "नयावः", "p1-pl": "नयामः" }
+      readings: { "stem": "naya", "p3-sg": "nayati", "p3-du": "nayataḥ", "p3-pl": "nayanti", "p2-sg": "nayasi", "p2-du": "nayathaḥ", "p2-pl": "nayatha", "p1-sg": "nayāmi", "p1-du": "nayāvaḥ", "p1-pl": "nayāmaḥ" }
+    - word: "sa-2000"
+      forms: {"stem": "खाद", "p3-sg": "खादति", "p3-du": "खादतः", "p3-pl": "खादन्ति", "p2-sg": "खादसि", "p2-du": "खादथः", "p2-pl": "खादथ", "p1-sg": "खादामि", "p1-du": "खादावः", "p1-pl": "खादामः"}
+      readings: {"stem": "khāda", "p3-sg": "khādati", "p3-du": "khādataḥ", "p3-pl": "khādanti", "p2-sg": "khādasi", "p2-du": "khādathaḥ", "p2-pl": "khādatha", "p1-sg": "khādāmi", "p1-du": "khādāvaḥ", "p1-pl": "khādāmaḥ"}
+    - word: "sa-2001"
+      forms: {"stem": "पिब", "p3-sg": "पिबति", "p3-du": "पिबतः", "p3-pl": "पिबन्ति", "p2-sg": "पिबसि", "p2-du": "पिबथः", "p2-pl": "पिबथ", "p1-sg": "पिबामि", "p1-du": "पिबावः", "p1-pl": "पिबामः"}
+      readings: {"stem": "piba", "p3-sg": "pibati", "p3-du": "pibataḥ", "p3-pl": "pibanti", "p2-sg": "pibasi", "p2-du": "pibathaḥ", "p2-pl": "pibatha", "p1-sg": "pibāmi", "p1-du": "pibāvaḥ", "p1-pl": "pibāmaḥ"}
+    - word: "sa-2002"
+      forms: {"stem": "तिष्ठ", "p3-sg": "तिष्ठति", "p3-du": "तिष्ठतः", "p3-pl": "तिष्ठन्ति", "p2-sg": "तिष्ठसि", "p2-du": "तिष्ठथः", "p2-pl": "तिष्ठथ", "p1-sg": "तिष्ठामि", "p1-du": "तिष्ठावः", "p1-pl": "तिष्ठामः"}
+      readings: {"stem": "tiṣṭha", "p3-sg": "tiṣṭhati", "p3-du": "tiṣṭhataḥ", "p3-pl": "tiṣṭhanti", "p2-sg": "tiṣṭhasi", "p2-du": "tiṣṭhathaḥ", "p2-pl": "tiṣṭhatha", "p1-sg": "tiṣṭhāmi", "p1-du": "tiṣṭhāvaḥ", "p1-pl": "tiṣṭhāmaḥ"}
+    - word: "sa-2003"
+      forms: {"stem": "हस", "p3-sg": "हसति", "p3-du": "हसतः", "p3-pl": "हसन्ति", "p2-sg": "हससि", "p2-du": "हसथः", "p2-pl": "हसथ", "p1-sg": "हसामि", "p1-du": "हसावः", "p1-pl": "हसामः"}
+      readings: {"stem": "hasa", "p3-sg": "hasati", "p3-du": "hasataḥ", "p3-pl": "hasanti", "p2-sg": "hasasi", "p2-du": "hasathaḥ", "p2-pl": "hasatha", "p1-sg": "hasāmi", "p1-du": "hasāvaḥ", "p1-pl": "hasāmaḥ"}
+    - word: "sa-2004"
+      forms: {"stem": "रक्ष", "p3-sg": "रक्षति", "p3-du": "रक्षतः", "p3-pl": "रक्षन्ति", "p2-sg": "रक्षसि", "p2-du": "रक्षथः", "p2-pl": "रक्षथ", "p1-sg": "रक्षामि", "p1-du": "रक्षावः", "p1-pl": "रक्षामः"}
+      readings: {"stem": "rakṣa", "p3-sg": "rakṣati", "p3-du": "rakṣataḥ", "p3-pl": "rakṣanti", "p2-sg": "rakṣasi", "p2-du": "rakṣathaḥ", "p2-pl": "rakṣatha", "p1-sg": "rakṣāmi", "p1-du": "rakṣāvaḥ", "p1-pl": "rakṣāmaḥ"}
+    - word: "sa-2005"
+      forms: {"stem": "वस", "p3-sg": "वसति", "p3-du": "वसतः", "p3-pl": "वसन्ति", "p2-sg": "वससि", "p2-du": "वसथः", "p2-pl": "वसथ", "p1-sg": "वसामि", "p1-du": "वसावः", "p1-pl": "वसामः"}
+      readings: {"stem": "vasa", "p3-sg": "vasati", "p3-du": "vasataḥ", "p3-pl": "vasanti", "p2-sg": "vasasi", "p2-du": "vasathaḥ", "p2-pl": "vasatha", "p1-sg": "vasāmi", "p1-du": "vasāvaḥ", "p1-pl": "vasāmaḥ"}
+    - word: "sa-2006"
+      forms: {"stem": "नम", "p3-sg": "नमति", "p3-du": "नमतः", "p3-pl": "नमन्ति", "p2-sg": "नमसि", "p2-du": "नमथः", "p2-pl": "नमथ", "p1-sg": "नमामि", "p1-du": "नमावः", "p1-pl": "नमामः"}
+      readings: {"stem": "nama", "p3-sg": "namati", "p3-du": "namataḥ", "p3-pl": "namanti", "p2-sg": "namasi", "p2-du": "namathaḥ", "p2-pl": "namatha", "p1-sg": "namāmi", "p1-du": "namāvaḥ", "p1-pl": "namāmaḥ"}
+    - word: "sa-2007"
+      forms: {"stem": "जय", "p3-sg": "जयति", "p3-du": "जयतः", "p3-pl": "जयन्ति", "p2-sg": "जयसि", "p2-du": "जयथः", "p2-pl": "जयथ", "p1-sg": "जयामि", "p1-du": "जयावः", "p1-pl": "जयामः"}
+      readings: {"stem": "jaya", "p3-sg": "jayati", "p3-du": "jayataḥ", "p3-pl": "jayanti", "p2-sg": "jayasi", "p2-du": "jayathaḥ", "p2-pl": "jayatha", "p1-sg": "jayāmi", "p1-du": "jayāvaḥ", "p1-pl": "jayāmaḥ"}
+    - word: "sa-2008"
+      forms: {"stem": "स्मर", "p3-sg": "स्मरति", "p3-du": "स्मरतः", "p3-pl": "स्मरन्ति", "p2-sg": "स्मरसि", "p2-du": "स्मरथः", "p2-pl": "स्मरथ", "p1-sg": "स्मरामि", "p1-du": "स्मरावः", "p1-pl": "स्मरामः"}
+      readings: {"stem": "smara", "p3-sg": "smarati", "p3-du": "smarataḥ", "p3-pl": "smaranti", "p2-sg": "smarasi", "p2-du": "smarathaḥ", "p2-pl": "smaratha", "p1-sg": "smarāmi", "p1-du": "smarāvaḥ", "p1-pl": "smarāmaḥ"}
+    - word: "sa-2009"
+      forms: {"stem": "धाव", "p3-sg": "धावति", "p3-du": "धावतः", "p3-pl": "धावन्ति", "p2-sg": "धावसि", "p2-du": "धावथः", "p2-pl": "धावथ", "p1-sg": "धावामि", "p1-du": "धावावः", "p1-pl": "धावामः"}
+      readings: {"stem": "dhāva", "p3-sg": "dhāvati", "p3-du": "dhāvataḥ", "p3-pl": "dhāvanti", "p2-sg": "dhāvasi", "p2-du": "dhāvathaḥ", "p2-pl": "dhāvatha", "p1-sg": "dhāvāmi", "p1-du": "dhāvāvaḥ", "p1-pl": "dhāvāmaḥ"}
+    - word: "sa-2010"
+      forms: {"stem": "पत", "p3-sg": "पतति", "p3-du": "पततः", "p3-pl": "पतन्ति", "p2-sg": "पतसि", "p2-du": "पतथः", "p2-pl": "पतथ", "p1-sg": "पतामि", "p1-du": "पतावः", "p1-pl": "पतामः"}
+      readings: {"stem": "pata", "p3-sg": "patati", "p3-du": "patataḥ", "p3-pl": "patanti", "p2-sg": "patasi", "p2-du": "patathaḥ", "p2-pl": "patatha", "p1-sg": "patāmi", "p1-du": "patāvaḥ", "p1-pl": "patāmaḥ"}
+    - word: "sa-2011"
+      forms: {"stem": "चल", "p3-sg": "चलति", "p3-du": "चलतः", "p3-pl": "चलन्ति", "p2-sg": "चलसि", "p2-du": "चलथः", "p2-pl": "चलथ", "p1-sg": "चलामि", "p1-du": "चलावः", "p1-pl": "चलामः"}
+      readings: {"stem": "cala", "p3-sg": "calati", "p3-du": "calataḥ", "p3-pl": "calanti", "p2-sg": "calasi", "p2-du": "calathaḥ", "p2-pl": "calatha", "p1-sg": "calāmi", "p1-du": "calāvaḥ", "p1-pl": "calāmaḥ"}
+    - word: "sa-2012"
+      forms: {"stem": "क्रीड", "p3-sg": "क्रीडति", "p3-du": "क्रीडतः", "p3-pl": "क्रीडन्ति", "p2-sg": "क्रीडसि", "p2-du": "क्रीडथः", "p2-pl": "क्रीडथ", "p1-sg": "क्रीडामि", "p1-du": "क्रीडावः", "p1-pl": "क्रीडामः"}
+      readings: {"stem": "krīḍa", "p3-sg": "krīḍati", "p3-du": "krīḍataḥ", "p3-pl": "krīḍanti", "p2-sg": "krīḍasi", "p2-du": "krīḍathaḥ", "p2-pl": "krīḍatha", "p1-sg": "krīḍāmi", "p1-du": "krīḍāvaḥ", "p1-pl": "krīḍāmaḥ"}
+    - word: "sa-2013"
+      forms: {"stem": "जीव", "p3-sg": "जीवति", "p3-du": "जीवतः", "p3-pl": "जीवन्ति", "p2-sg": "जीवसि", "p2-du": "जीवथः", "p2-pl": "जीवथ", "p1-sg": "जीवामि", "p1-du": "जीवावः", "p1-pl": "जीवामः"}
+      readings: {"stem": "jīva", "p3-sg": "jīvati", "p3-du": "jīvataḥ", "p3-pl": "jīvanti", "p2-sg": "jīvasi", "p2-du": "jīvathaḥ", "p2-pl": "jīvatha", "p1-sg": "jīvāmi", "p1-du": "jīvāvaḥ", "p1-pl": "jīvāmaḥ"}
+    - word: "sa-2014"
+      forms: {"stem": "चर", "p3-sg": "चरति", "p3-du": "चरतः", "p3-pl": "चरन्ति", "p2-sg": "चरसि", "p2-du": "चरथः", "p2-pl": "चरथ", "p1-sg": "चरामि", "p1-du": "चरावः", "p1-pl": "चरामः"}
+      readings: {"stem": "cara", "p3-sg": "carati", "p3-du": "carataḥ", "p3-pl": "caranti", "p2-sg": "carasi", "p2-du": "carathaḥ", "p2-pl": "caratha", "p1-sg": "carāmi", "p1-du": "carāvaḥ", "p1-pl": "carāmaḥ"}
+    - word: "sa-2015"
+      forms: {"stem": "वह", "p3-sg": "वहति", "p3-du": "वहतः", "p3-pl": "वहन्ति", "p2-sg": "वहसि", "p2-du": "वहथः", "p2-pl": "वहथ", "p1-sg": "वहामि", "p1-du": "वहावः", "p1-pl": "वहामः"}
+      readings: {"stem": "vaha", "p3-sg": "vahati", "p3-du": "vahataḥ", "p3-pl": "vahanti", "p2-sg": "vahasi", "p2-du": "vahathaḥ", "p2-pl": "vahatha", "p1-sg": "vahāmi", "p1-du": "vahāvaḥ", "p1-pl": "vahāmaḥ"}
+    - word: "sa-2016"
+      forms: {"stem": "हर", "p3-sg": "हरति", "p3-du": "हरतः", "p3-pl": "हरन्ति", "p2-sg": "हरसि", "p2-du": "हरथः", "p2-pl": "हरथ", "p1-sg": "हरामि", "p1-du": "हरावः", "p1-pl": "हरामः"}
+      readings: {"stem": "hara", "p3-sg": "harati", "p3-du": "harataḥ", "p3-pl": "haranti", "p2-sg": "harasi", "p2-du": "harathaḥ", "p2-pl": "haratha", "p1-sg": "harāmi", "p1-du": "harāvaḥ", "p1-pl": "harāmaḥ"}
+    - word: "sa-2017"
+      forms: {"stem": "सर", "p3-sg": "सरति", "p3-du": "सरतः", "p3-pl": "सरन्ति", "p2-sg": "सरसि", "p2-du": "सरथः", "p2-pl": "सरथ", "p1-sg": "सरामि", "p1-du": "सरावः", "p1-pl": "सरामः"}
+      readings: {"stem": "sara", "p3-sg": "sarati", "p3-du": "sarataḥ", "p3-pl": "saranti", "p2-sg": "sarasi", "p2-du": "sarathaḥ", "p2-pl": "saratha", "p1-sg": "sarāmi", "p1-du": "sarāvaḥ", "p1-pl": "sarāmaḥ"}
+    - word: "sa-2018"
+      forms: {"stem": "गाय", "p3-sg": "गायति", "p3-du": "गायतः", "p3-pl": "गायन्ति", "p2-sg": "गायसि", "p2-du": "गायथः", "p2-pl": "गायथ", "p1-sg": "गायामि", "p1-du": "गायावः", "p1-pl": "गायामः"}
+      readings: {"stem": "gāya", "p3-sg": "gāyati", "p3-du": "gāyataḥ", "p3-pl": "gāyanti", "p2-sg": "gāyasi", "p2-du": "gāyathaḥ", "p2-pl": "gāyatha", "p1-sg": "gāyāmi", "p1-du": "gāyāvaḥ", "p1-pl": "gāyāmaḥ"}
+    - word: "sa-2019"
+      forms: {"stem": "तप", "p3-sg": "तपति", "p3-du": "तपतः", "p3-pl": "तपन्ति", "p2-sg": "तपसि", "p2-du": "तपथः", "p2-pl": "तपथ", "p1-sg": "तपामि", "p1-du": "तपावः", "p1-pl": "तपामः"}
+      readings: {"stem": "tapa", "p3-sg": "tapati", "p3-du": "tapataḥ", "p3-pl": "tapanti", "p2-sg": "tapasi", "p2-du": "tapathaḥ", "p2-pl": "tapatha", "p1-sg": "tapāmi", "p1-du": "tapāvaḥ", "p1-pl": "tapāmaḥ"}
+    - word: "sa-2020"
+      forms: {"stem": "धर", "p3-sg": "धरति", "p3-du": "धरतः", "p3-pl": "धरन्ति", "p2-sg": "धरसि", "p2-du": "धरथः", "p2-pl": "धरथ", "p1-sg": "धरामि", "p1-du": "धरावः", "p1-pl": "धरामः"}
+      readings: {"stem": "dhara", "p3-sg": "dharati", "p3-du": "dharataḥ", "p3-pl": "dharanti", "p2-sg": "dharasi", "p2-du": "dharathaḥ", "p2-pl": "dharatha", "p1-sg": "dharāmi", "p1-du": "dharāvaḥ", "p1-pl": "dharāmaḥ"}
+    - word: "sa-2021"
+      forms: {"stem": "जप", "p3-sg": "जपति", "p3-du": "जपतः", "p3-pl": "जपन्ति", "p2-sg": "जपसि", "p2-du": "जपथः", "p2-pl": "जपथ", "p1-sg": "जपामि", "p1-du": "जपावः", "p1-pl": "जपामः"}
+      readings: {"stem": "japa", "p3-sg": "japati", "p3-du": "japataḥ", "p3-pl": "japanti", "p2-sg": "japasi", "p2-du": "japathaḥ", "p2-pl": "japatha", "p1-sg": "japāmi", "p1-du": "japāvaḥ", "p1-pl": "japāmaḥ"}
+    - word: "sa-2022"
+      forms: {"stem": "खन", "p3-sg": "खनति", "p3-du": "खनतः", "p3-pl": "खनन्ति", "p2-sg": "खनसि", "p2-du": "खनथः", "p2-pl": "खनथ", "p1-sg": "खनामि", "p1-du": "खनावः", "p1-pl": "खनामः"}
+      readings: {"stem": "khana", "p3-sg": "khanati", "p3-du": "khanataḥ", "p3-pl": "khananti", "p2-sg": "khanasi", "p2-du": "khanathaḥ", "p2-pl": "khanatha", "p1-sg": "khanāmi", "p1-du": "khanāvaḥ", "p1-pl": "khanāmaḥ"}
+    - word: "sa-2023"
+      forms: {"stem": "ह्वय", "p3-sg": "ह्वयति", "p3-du": "ह्वयतः", "p3-pl": "ह्वयन्ति", "p2-sg": "ह्वयसि", "p2-du": "ह्वयथः", "p2-pl": "ह्वयथ", "p1-sg": "ह्वयामि", "p1-du": "ह्वयावः", "p1-pl": "ह्वयामः"}
+      readings: {"stem": "hvaya", "p3-sg": "hvayati", "p3-du": "hvayataḥ", "p3-pl": "hvayanti", "p2-sg": "hvayasi", "p2-du": "hvayathaḥ", "p2-pl": "hvayatha", "p1-sg": "hvayāmi", "p1-du": "hvayāvaḥ", "p1-pl": "hvayāmaḥ"}
+    - word: "sa-2100"
+      forms: {"stem": "क्षर", "p3-sg": "क्षरति", "p3-du": "क्षरतः", "p3-pl": "क्षरन्ति", "p2-sg": "क्षरसि", "p2-du": "क्षरथः", "p2-pl": "क्षरथ", "p1-sg": "क्षरामि", "p1-du": "क्षरावः", "p1-pl": "क्षरामः"}
+      readings: {"stem": "kṣara", "p3-sg": "kṣarati", "p3-du": "kṣarataḥ", "p3-pl": "kṣaranti", "p2-sg": "kṣarasi", "p2-du": "kṣarathaḥ", "p2-pl": "kṣaratha", "p1-sg": "kṣarāmi", "p1-du": "kṣarāvaḥ", "p1-pl": "kṣarāmaḥ"}
+rules:
+  - id: "sa-rule-present-stem"
+    slots: ["stem"]
+    words: [{ word: "वर्तमाने लट्", reading: "vartamāne laṭ" }, { word: "कर्तरि शप्", reading: "kartari śap" }, { word: "भूवादयो धातवः", reading: "bhūvādayo dhātavaḥ" }, { word: "भू", reading: "bhū" }, { word: "भव", reading: "bhava" }, { word: "अद्", reading: "ad" }, { word: "अद्", reading: "ad" }, { word: "हु", reading: "hu" }, { word: "जुहु", reading: "juhu" }, { word: "दिव्", reading: "div" }, { word: "दीव्य", reading: "dīvya" }, { word: "सु", reading: "su" }, { word: "सुनु", reading: "sunu" }, { word: "तुद्", reading: "tud" }, { word: "तुद", reading: "tuda" }, { word: "रुध्", reading: "rudh" }, { word: "रुन्ध्", reading: "rundh" }, { word: "तन्", reading: "tan" }, { word: "तनु", reading: "tanu" }, { word: "क्री", reading: "krī" }, { word: "क्रीणा", reading: "krīṇā" }, { word: "चुर्", reading: "cur" }, { word: "चोरय", reading: "coraya" }]
+  - id: "sa-rule-present-third"
+    slots: ["p3-sg", "p3-du", "p3-pl"]
+    words: [{ word: "भवति", reading: "bhavati" }, { word: "भवतः", reading: "bhavataḥ" }, { word: "भवन्ति", reading: "bhavanti" }, { word: "अतः गुणे", reading: "ataḥ guṇe" }]
+  - id: "sa-rule-present-second"
+    slots: ["p2-sg", "p2-du", "p2-pl"]
+    words: [{ word: "भवसि", reading: "bhavasi" }, { word: "भवथः", reading: "bhavathaḥ" }, { word: "भवथ", reading: "bhavatha" }]
+  - id: "sa-rule-present-first"
+    slots: ["p1-sg", "p1-du", "p1-pl"]
+    words: [{ word: "भवामि", reading: "bhavāmi" }, { word: "भवावः", reading: "bhavāvaḥ" }, { word: "भवामः", reading: "bhavāmaḥ" }]

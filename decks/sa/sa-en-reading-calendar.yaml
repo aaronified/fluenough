@@ -1,0 +1,59 @@
+schema: 1
+id: "sa-en-reading-calendar"
+name: "Reading: calendar"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-calendar-text-1"
+    title: "Year, week, moon and night"
+    theme: "calendar"
+    sentences:
+      - { text: "संवत्सरे द्वादश मासा भवन्ति.", reading: "saṃvatsare dvādaśa māsā bhavanti.", ipa: "sə̃ʋət̪səreː d̪ʋaːd̪əʃə maːsaː bʱəʋənt̪i" }
+      - { text: "सप्ताहे सप्त दिनानि भवन्ति.", reading: "saptāhe sapta dināni bhavanti.", ipa: "səpt̪aːɦeː səpt̪ə d̪inaːni bʱəʋənt̪i" }
+      - { text: "यदा चन्द्रः पूर्णो भवति तदा पूर्णिमा भवति.", reading: "yadā candraḥ pūrṇo bhavati tadā pūrṇimā bhavati.", ipa: "jəd̪aː tʃənd̪rəh puːrɳoː bʱəʋət̪i t̪əd̪aː puːrɳimaː bʱəʋət̪i" }
+      - { text: "सूर्यास्तस्य पश्चाद् रजनी भवति.", reading: "sūryāstasya paścād rajanī bhavati.", ipa: "suːrjaːst̪əsjə pəʃtʃaːd̪ rədʒəniː bʱəʋət̪i" }
+    questions:
+      - id: "sa-3714"
+        prompt: { en: "Which word means 'twelve'?" }
+        options: [{ en: "सप्त (sapta)" }, { en: "द्वादश (dvādaśa)" }, { en: "रजनी (rajanī)" }]
+        answer: 2
+      - id: "sa-3715"
+        prompt: { en: "Which word means 'in a week'?" }
+        options: [{ en: "संवत्सरे (saṃvatsare)" }, { en: "पूर्णिमा (pūrṇimā)" }, { en: "सप्ताहे (saptāhe)" }]
+        answer: 3
+      - id: "sa-3716"
+        prompt: { en: "How many sentences use यदा (yadā), 'when'?" }
+        options: [{ en: "One" }, { en: "Two" }, { en: "Three" }]
+        answer: 1
+      - id: "sa-3717"
+        prompt: { en: "The passage names the moon in one sentence." }
+        answer: true
+  - id: "sa-calendar-text-2"
+    title: "Sunrise, midday and the months"
+    theme: "calendar"
+    sentences:
+      - { text: "उदये सूर्यो रक्तो भवति.", reading: "udaye sūryo rakto bhavati.", ipa: "ud̪əjeː suːrjoː rəkt̪oː bʱəʋət̪i" }
+      - { text: "मध्याह्ने सूर्यो बहु तपति.", reading: "madhyāhne sūryo bahu tapati.", ipa: "məd̪ʱjaːɦneː suːrjoː bəɦu t̪əpət̪i" }
+      - { text: "चैत्रे वैशाखे च वसन्तो भवति.", reading: "caitre vaiśākhe ca vasanto bhavati.", ipa: "tʃəit̪reː ʋəiʃaːkʰeː tʃə ʋəsənt̪oː bʱəʋət̪i" }
+      - { text: "भाद्रपदे वर्षा भवति फाल्गुने न भवति.", reading: "bhādrapade varṣā bhavati phālgune na bhavati.", ipa: "bʱaːd̪rəpəd̪eː ʋərʂaː bʱəʋət̪i pʰaːlɡuneː nə bʱəʋət̪i" }
+    questions:
+      - id: "sa-3718"
+        prompt: { en: "Which word means 'at midday'?" }
+        options: [{ en: "मध्याह्ने (madhyāhne)" }, { en: "उदये (udaye)" }, { en: "भाद्रपदे (bhādrapade)" }]
+        answer: 1
+      - id: "sa-3719"
+        prompt: { en: "How many months does the passage name?" }
+        options: [{ en: "Two" }, { en: "Three" }, { en: "Four" }]
+        answer: 3
+      - id: "sa-3720"
+        prompt: { en: "In Bhādrapada there is rain." }
+        answer: true
+      - id: "sa-3721"
+        prompt: { en: "Which season is in Caitra and Vaiśākha?" }
+        options: [{ en: "Summer" }, { en: "Spring" }, { en: "The rainy season" }]
+        answer: 2

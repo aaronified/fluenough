@@ -1,0 +1,375 @@
+schema: 1
+id: "uk-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "uk", iso639_3: "ukr", name: "Ukrainian", script: "cyrillic", tts: "uk-UA", icon: "Ук" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "uk-0101"
+    target: "так"
+    reading: "tak"
+    ipa: "tɑk"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Так, дякую.", reading: "Tak, diakuiu.", ipa: "tɑk ˈdʲɑkuju", bases: [{ word: "Так", base: "так", reading: "tak" }, { word: "дякую", base: "дякувати", reading: "diakuiu" }] }
+      - { target: "Так, я розумію.", reading: "Tak, ya rozumiiu.", ipa: "tɑk jɑ rɔzuˈmiju", bases: [{ word: "Так", base: "так", reading: "tak" }, { word: "я", base: "я", reading: "ya" }, { word: "розумію", base: "розуміти", reading: "rozumiiu" }] }
+  - id: "uk-0102"
+    target: "ні"
+    reading: "ni"
+    ipa: "nʲi"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ні, дякую.", reading: "Ni, diakuiu.", ipa: "nʲi ˈdʲɑkuju", bases: [{ word: "Ні", base: "ні", reading: "ni" }, { word: "дякую", base: "дякувати", reading: "diakuiu" }] }
+      - { target: "Ні, я не знаю.", reading: "Ni, ya ne znaiu.", ipa: "nʲi jɑ nɛ ˈznɑju", bases: [{ word: "Ні", base: "ні", reading: "ni" }, { word: "я", base: "я", reading: "ya" }, { word: "не", base: "не", reading: "ne" }, { word: "знаю", base: "знати", reading: "znaiu" }] }
+  - id: "uk-0103"
+    target: "я"
+    reading: "ya"
+    ipa: "jɑ"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Я студент.", reading: "Ya student.", ipa: "jɑ stuˈdɛnt", bases: [{ word: "Я", base: "я", reading: "ya" }, { word: "студент", base: "студент", reading: "student" }] }
+      - { target: "Я не розумію.", reading: "Ya ne rozumiiu.", ipa: "jɑ nɛ rɔzuˈmiju", bases: [{ word: "Я", base: "я", reading: "ya" }, { word: "не", base: "не", reading: "ne" }, { word: "розумію", base: "розуміти", reading: "rozumiiu" }] }
+  - id: "uk-0104"
+    target: "ти"
+    reading: "ty"
+    ipa: "tɪ"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ти говориш англійською?", reading: "Ty hovorysh anhliiskoiu?", ipa: "tɪ ɦɔʋɔˈrɪʃ ɑnɦliˈjsʲkɔju", bases: [{ word: "Ти", base: "ти", reading: "ty" }, { word: "говориш", base: "говорити", reading: "hovorysh" }, { word: "англійською", base: "англійська", reading: "anhliiskoiu" }] }
+      - { target: "Ти тут.", reading: "Ty tut.", ipa: "tɪ tut", bases: [{ word: "Ти", base: "ти", reading: "ty" }, { word: "тут", base: "тут", reading: "tut" }] }
+  - id: "uk-0105"
+    target: "він"
+    reading: "vin"
+    ipa: "ʋin"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Він мій батько.", reading: "Vin mii batko.", ipa: "ʋin mij ˈbɑtʲkɔ", bases: [{ word: "Він", base: "він", reading: "vin" }, { word: "мій", base: "мій", reading: "mii" }, { word: "батько", base: "батько", reading: "batko" }] }
+      - { target: "Він великий.", reading: "Vin velykyi.", ipa: "ʋin ʋɛˈlɪkɪj", bases: [{ word: "Він", base: "він", reading: "vin" }, { word: "великий", base: "великий", reading: "velykyi" }] }
+  - id: "uk-0106"
+    target: "вона"
+    reading: "vona"
+    ipa: "ʋɔˈna"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Вона моя мама.", reading: "Vona moia mama.", ipa: "ʋɔˈna mɔˈja ˈmɑmɑ", bases: [{ word: "Вона", base: "вона", reading: "vona" }, { word: "моя", base: "мій", reading: "moia" }, { word: "мама", base: "мама", reading: "mama" }] }
+      - { target: "Дитина мала.", reading: "Dytyna mala.", ipa: "dɪˈtɪnɑ mɑˈlɑ", bases: [{ word: "Дитина", base: "дитина", reading: "dytyna" }, { word: "мала", base: "малий", reading: "mala" }] }
+  - id: "uk-0107"
+    target: "ми"
+    reading: "my"
+    ipa: "mɪ"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ми тут.", reading: "My tut.", ipa: "mɪ tut", bases: [{ word: "Ми", base: "ми", reading: "my" }, { word: "тут", base: "тут", reading: "tut" }] }
+      - { target: "Ми говоримо українською.", reading: "My hovorymo ukraiinskoiu.", ipa: "mɪ ɦɔʋɔˈrɪmɔ ukrɑˈjinsʲkɔju", bases: [{ word: "Ми", base: "ми", reading: "my" }, { word: "говоримо", base: "говорити", reading: "hovorymo" }, { word: "українською", base: "українська", reading: "ukraiinskoiu" }] }
+  - id: "uk-0108"
+    target: "вони"
+    reading: "vony"
+    ipa: "ʋɔˈnɪ"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Вони тут.", reading: "Vony tut.", ipa: "ʋɔˈnɪ tut", bases: [{ word: "Вони", base: "вони", reading: "vony" }, { word: "тут", base: "тут", reading: "tut" }] }
+      - { target: "Вони великі.", reading: "Vony velyki.", ipa: "ʋɔˈnɪ ʋɛˈlɪkʲi", bases: [{ word: "Вони", base: "вони", reading: "vony" }, { word: "великі", base: "великий", reading: "velyki" }] }
+  - id: "uk-0109"
+    target: "один"
+    reading: "odyn"
+    ipa: "ɔˈdɪn"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Один, два, три.", reading: "Odyn, dva, try.", ipa: "ɔˈdɪn dʋɑ trɪ", bases: [{ word: "Один", base: "один", reading: "odyn" }, { word: "два", base: "два", reading: "dva" }, { word: "три", base: "три", reading: "try" }] }
+      - { target: "Одна вода, будь ласка.", reading: "Odna voda, bud laska.", ipa: "ɔdˈnɑ ʋɔˈdɑ budʲ ˈlɑskɑ", bases: [{ word: "Одна", base: "один", reading: "odna" }, { word: "вода", base: "вода", reading: "voda" }, { word: "будь", base: "бути", reading: "bud" }, { word: "ласка", base: "ласка", reading: "laska" }] }
+  - id: "uk-0110"
+    target: "два"
+    reading: "dva"
+    ipa: "dʋɑ"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Два, три, чотири.", reading: "Dva, try, chotyry.", ipa: "dʋɑ trɪ tʃɔˈtɪrɪ", bases: [{ word: "Два", base: "два", reading: "dva" }, { word: "три", base: "три", reading: "try" }, { word: "чотири", base: "чотири", reading: "chotyry" }] }
+      - { target: "Це коштує дві гривні.", reading: "Tse koshtuie dvi hryvni.", ipa: "tsɛ kɔʃˈtujɛ dʋi ˈɦrɪʋnʲi", bases: [{ word: "Це", base: "це", reading: "tse" }, { word: "коштує", base: "коштувати", reading: "koshtuie" }, { word: "дві", base: "два", reading: "dvi" }, { word: "гривні", base: "гривня", reading: "hryvni" }] }
+  - id: "uk-0111"
+    target: "три"
+    reading: "try"
+    ipa: "trɪ"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Один, два, три.", reading: "Odyn, dva, try.", ipa: "ɔˈdɪn dʋɑ trɪ", bases: [{ word: "Один", base: "один", reading: "odyn" }, { word: "два", base: "два", reading: "dva" }, { word: "три", base: "три", reading: "try" }] }
+      - { target: "Це коштує три гривні.", reading: "Tse koshtuie try hryvni.", ipa: "tsɛ kɔʃˈtujɛ trɪ ˈɦrɪʋnʲi", bases: [{ word: "Це", base: "це", reading: "tse" }, { word: "коштує", base: "коштувати", reading: "koshtuie" }, { word: "три", base: "три", reading: "try" }, { word: "гривні", base: "гривня", reading: "hryvni" }] }
+  - id: "uk-0112"
+    target: "чотири"
+    reading: "chotyry"
+    ipa: "tʃɔˈtɪrɪ"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Три, чотири, п'ять.", reading: "Try, chotyry, piat.", ipa: "trɪ tʃɔˈtɪrɪ pʲatʲ", bases: [{ word: "Три", base: "три", reading: "try" }, { word: "чотири", base: "чотири", reading: "chotyry" }, { word: "п'ять", base: "п'ять", reading: "piat" }] }
+      - { target: "Це коштує чотири гривні.", reading: "Tse koshtuie chotyry hryvni.", ipa: "tsɛ kɔʃˈtujɛ tʃɔˈtɪrɪ ˈɦrɪʋnʲi", bases: [{ word: "Це", base: "це", reading: "tse" }, { word: "коштує", base: "коштувати", reading: "koshtuie" }, { word: "чотири", base: "чотири", reading: "chotyry" }, { word: "гривні", base: "гривня", reading: "hryvni" }] }
+  - id: "uk-0113"
+    target: "п'ять"
+    reading: "piat"
+    ipa: "pʲatʲ"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Чотири, п'ять, шість.", reading: "Chotyry, piat, shist.", ipa: "tʃɔˈtɪrɪ pʲatʲ ʃistʲ", bases: [{ word: "Чотири", base: "чотири", reading: "chotyry" }, { word: "п'ять", base: "п'ять", reading: "piat" }, { word: "шість", base: "шість", reading: "shist" }] }
+      - { target: "Це коштує п'ять гривень.", reading: "Tse koshtuie piat hryven.", ipa: "tsɛ kɔʃˈtujɛ pʲatʲ ˈɦrɪʋɛnʲ", bases: [{ word: "Це", base: "це", reading: "tse" }, { word: "коштує", base: "коштувати", reading: "koshtuie" }, { word: "п'ять", base: "п'ять", reading: "piat" }, { word: "гривень", base: "гривня", reading: "hryven" }] }
+  - id: "uk-0114"
+    target: "шість"
+    reading: "shist"
+    ipa: "ʃistʲ"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "П'ять, шість, сім.", reading: "Piat, shist, sim.", ipa: "pʲatʲ ʃistʲ sʲim", bases: [{ word: "П'ять", base: "п'ять", reading: "piat" }, { word: "шість", base: "шість", reading: "shist" }, { word: "сім", base: "сім", reading: "sim" }] }
+      - { target: "Це коштує шість гривень.", reading: "Tse koshtuie shist hryven.", ipa: "tsɛ kɔʃˈtujɛ ʃistʲ ˈɦrɪʋɛnʲ", bases: [{ word: "Це", base: "це", reading: "tse" }, { word: "коштує", base: "коштувати", reading: "koshtuie" }, { word: "шість", base: "шість", reading: "shist" }, { word: "гривень", base: "гривня", reading: "hryven" }] }
+  - id: "uk-0115"
+    target: "сім"
+    reading: "sim"
+    ipa: "sʲim"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Шість, сім, вісім.", reading: "Shist, sim, visim.", ipa: "ʃistʲ sʲim ˈʋisʲim", bases: [{ word: "Шість", base: "шість", reading: "shist" }, { word: "сім", base: "сім", reading: "sim" }, { word: "вісім", base: "вісім", reading: "visim" }] }
+      - { target: "Це коштує сім гривень.", reading: "Tse koshtuie sim hryven.", ipa: "tsɛ kɔʃˈtujɛ sʲim ˈɦrɪʋɛnʲ", bases: [{ word: "Це", base: "це", reading: "tse" }, { word: "коштує", base: "коштувати", reading: "koshtuie" }, { word: "сім", base: "сім", reading: "sim" }, { word: "гривень", base: "гривня", reading: "hryven" }] }
+  - id: "uk-0116"
+    target: "вісім"
+    reading: "visim"
+    ipa: "ˈʋisʲim"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Сім, вісім, дев'ять.", reading: "Sim, visim, deviat.", ipa: "sʲim ˈʋisʲim ˈdɛʋʲatʲ", bases: [{ word: "Сім", base: "сім", reading: "sim" }, { word: "вісім", base: "вісім", reading: "visim" }, { word: "дев'ять", base: "дев'ять", reading: "deviat" }] }
+      - { target: "Це коштує вісім гривень.", reading: "Tse koshtuie visim hryven.", ipa: "tsɛ kɔʃˈtujɛ ˈʋisʲim ˈɦrɪʋɛnʲ", bases: [{ word: "Це", base: "це", reading: "tse" }, { word: "коштує", base: "коштувати", reading: "koshtuie" }, { word: "вісім", base: "вісім", reading: "visim" }, { word: "гривень", base: "гривня", reading: "hryven" }] }
+  - id: "uk-0117"
+    target: "дев'ять"
+    reading: "deviat"
+    ipa: "ˈdɛʋʲatʲ"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Вісім, дев'ять, десять.", reading: "Visim, deviat, desiat.", ipa: "ˈʋisʲim ˈdɛʋʲatʲ ˈdɛsʲatʲ", bases: [{ word: "Вісім", base: "вісім", reading: "visim" }, { word: "дев'ять", base: "дев'ять", reading: "deviat" }, { word: "десять", base: "десять", reading: "desiat" }] }
+      - { target: "Це коштує дев'ять гривень.", reading: "Tse koshtuie deviat hryven.", ipa: "tsɛ kɔʃˈtujɛ ˈdɛʋʲatʲ ˈɦrɪʋɛnʲ", bases: [{ word: "Це", base: "це", reading: "tse" }, { word: "коштує", base: "коштувати", reading: "koshtuie" }, { word: "дев'ять", base: "дев'ять", reading: "deviat" }, { word: "гривень", base: "гривня", reading: "hryven" }] }
+  - id: "uk-0118"
+    target: "десять"
+    reading: "desiat"
+    ipa: "ˈdɛsʲatʲ"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Від одного до десяти.", reading: "Vid odnoho do desiaty.", ipa: "ʋid ɔdˈnɔɦɔ dɔ dɛˈsʲɑtɪ", bases: [{ word: "Від", base: "від", reading: "vid" }, { word: "одного", base: "один", reading: "odnoho" }, { word: "до", base: "до", reading: "do" }, { word: "десяти", base: "десять", reading: "desiaty" }] }
+      - { target: "Це коштує десять гривень.", reading: "Tse koshtuie desiat hryven.", ipa: "tsɛ kɔʃˈtujɛ ˈdɛsʲatʲ ˈɦrɪʋɛnʲ", bases: [{ word: "Це", base: "це", reading: "tse" }, { word: "коштує", base: "коштувати", reading: "koshtuie" }, { word: "десять", base: "десять", reading: "desiat" }, { word: "гривень", base: "гривня", reading: "hryven" }] }
+  - id: "uk-0119"
+    target: "мама"
+    reading: "mama"
+    ipa: "ˈmɑmɑ"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Вона моя мама.", reading: "Vona moia mama.", ipa: "ʋɔˈna mɔˈja ˈmɑmɑ", bases: [{ word: "Вона", base: "вона", reading: "vona" }, { word: "моя", base: "мій", reading: "moia" }, { word: "мама", base: "мама", reading: "mama" }] }
+      - { target: "Привіт, мамо.", reading: "Pryvit, mamo.", ipa: "prɪˈʋit ˈmɑmɔ", bases: [{ word: "Привіт", base: "привіт", reading: "pryvit" }, { word: "мамо", base: "мама", reading: "mamo" }] }
+  - id: "uk-0120"
+    target: "батько"
+    reading: "batko"
+    ipa: "ˈbɑtʲkɔ"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Він мій батько.", reading: "Vin mii batko.", ipa: "ʋin mij ˈbɑtʲkɔ", bases: [{ word: "Він", base: "він", reading: "vin" }, { word: "мій", base: "мій", reading: "mii" }, { word: "батько", base: "батько", reading: "batko" }] }
+      - { target: "Я говорю з батьком.", reading: "Ya hovoriu z batkom.", ipa: "jɑ ɦɔʋɔˈrʲu z ˈbɑtʲkɔm", bases: [{ word: "Я", base: "я", reading: "ya" }, { word: "говорю", base: "говорити", reading: "hovoriu" }, { word: "з", base: "з", reading: "z" }, { word: "батьком", base: "батько", reading: "batkom" }] }
+  - id: "uk-0121"
+    target: "вода"
+    reading: "voda"
+    ipa: "ʋɔˈdɑ"
+    pos: "noun"
+    gender: "f"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Воду, будь ласка.", reading: "Vodu, bud laska.", ipa: "ˈʋɔdu budʲ ˈlɑskɑ", bases: [{ word: "Воду", base: "вода", reading: "vodu" }, { word: "будь", base: "бути", reading: "bud" }, { word: "ласка", base: "ласка", reading: "laska" }] }
+      - { target: "Це вода.", reading: "Tse voda.", ipa: "tsɛ ʋɔˈdɑ", bases: [{ word: "Це", base: "це", reading: "tse" }, { word: "вода", base: "вода", reading: "voda" }] }
+  - id: "uk-0122"
+    target: "їжа"
+    reading: "yizha"
+    ipa: "ˈjiʒɑ"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Їжа смачна.", reading: "Yizha smachna.", ipa: "ˈjiʒɑ ˈsmɑtʃnɑ", bases: [{ word: "Їжа", base: "їжа", reading: "yizha" }, { word: "смачна", base: "смачний", reading: "smachna" }] }
+      - { target: "Я їм удома.", reading: "Ya yim udoma.", ipa: "jɑ jim uˈdɔmɑ", bases: [{ word: "Я", base: "я", reading: "ya" }, { word: "їм", base: "їсти", reading: "yim" }, { word: "удома", base: "удома", reading: "udoma" }] }
+  - id: "uk-0123"
+    target: "будинок"
+    reading: "budynok"
+    ipa: "buˈdɪnɔk"
+    pos: "noun"
+    gender: "m"
+    tags: ["home"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Це мій будинок.", reading: "Tse mij budynok.", ipa: "tsɛ mij buˈdɪnɔk", bases: [{ word: "Це", base: "це", reading: "tse" }, { word: "мій", base: "мій", reading: "mii" }, { word: "будинок", base: "будинок", reading: "budynok" }] }
+      - { target: "Наш будинок великий.", reading: "Nash budynok velykyi.", ipa: "naʃ buˈdɪnɔk ʋɛˈlɪkɪj", bases: [{ word: "Наш", base: "наш", reading: "nash" }, { word: "будинок", base: "будинок", reading: "budynok" }, { word: "великий", base: "великий", reading: "velykyi" }] }
+  - id: "uk-0124"
+    target: "ім'я"
+    reading: "imia"
+    ipa: "imˈjɑ"
+    pos: "noun"
+    gender: "n"
+    tags: ["introduction"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Моє ім'я Олена.", reading: "Moie imia Olena.", ipa: "mɔˈjɛ imˈjɑ ɔˈlɛnɑ", bases: [{ word: "Моє", base: "мій", reading: "moie" }, { word: "ім'я", base: "ім'я", reading: "imia" }, { word: "Олена", base: "Олена", reading: "Olena" }] }
+      - { target: "Як вас звати?", reading: "Yak vas zvaty?", ipa: "jɑk ʋɑs ˈzʋɑtɪ", bases: [{ word: "Як", base: "як", reading: "yak" }, { word: "вас", base: "ви", reading: "vas" }, { word: "звати", base: "звати", reading: "zvaty" }] }
+  - id: "uk-0125"
+    target: "добрий"
+    reading: "dobryi"
+    ipa: "ˈdɔbrɪj"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Це добре.", reading: "Tse dobre.", ipa: "tsɛ ˈdɔbrɛ", bases: [{ word: "Це", base: "це", reading: "tse" }, { word: "добре", base: "добре", reading: "dobre" }] }
+      - { target: "Добрий день!", reading: "Dobryi den!", ipa: "ˈdɔbrɪj dʲɛnʲ", bases: [{ word: "Добрий", base: "добрий", reading: "dobryi" }, { word: "день", base: "день", reading: "den" }] }
+  - id: "uk-0126"
+    target: "великий"
+    reading: "velykyi"
+    ipa: "ʋɛˈlɪkɪj"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Велике місто.", reading: "Velyke misto.", ipa: "ʋɛˈlɪkɛ ˈmɪstɔ", bases: [{ word: "Велике", base: "великий", reading: "velyke" }, { word: "місто", base: "місто", reading: "misto" }] }
+      - { target: "Він великий.", reading: "Vin velykyi.", ipa: "ʋin ʋɛˈlɪkɪj", bases: [{ word: "Він", base: "він", reading: "vin" }, { word: "великий", base: "великий", reading: "velykyi" }] }
+  - id: "uk-0127"
+    target: "малий"
+    reading: "malyi"
+    ipa: "mɑˈlɪj"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Дитина мала.", reading: "Dytyna mala.", ipa: "dɪˈtɪnɑ mɑˈlɑ", bases: [{ word: "Дитина", base: "дитина", reading: "dytyna" }, { word: "мала", base: "малий", reading: "mala" }] }
+      - { target: "Малий будинок.", reading: "Malyi budynok.", ipa: "mɑˈlɪj buˈdɪnɔk", bases: [{ word: "Малий", base: "малий", reading: "malyi" }, { word: "будинок", base: "будинок", reading: "budynok" }] }
+  - id: "uk-0128"
+    target: "тут"
+    reading: "tut"
+    ipa: "tut"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ми тут.", reading: "My tut.", ipa: "mɪ tut", bases: [{ word: "Ми", base: "ми", reading: "my" }, { word: "тут", base: "тут", reading: "tut" }] }
+      - { target: "Сідай тут.", reading: "Sidai tut.", ipa: "sʲiˈdɑj tut", bases: [{ word: "Сідай", base: "сідати", reading: "sidai" }, { word: "тут", base: "тут", reading: "tut" }] }
+  - id: "uk-0129"
+    target: "там"
+    reading: "tam"
+    ipa: "tɑm"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Туалет там.", reading: "Tualet tam.", ipa: "tuɑˈlɛt tɑm", bases: [{ word: "Туалет", base: "туалет", reading: "tualet" }, { word: "там", base: "там", reading: "tam" }] }
+      - { target: "Будинок там.", reading: "Budynok tam.", ipa: "buˈdɪnɔk tɑm", bases: [{ word: "Будинок", base: "будинок", reading: "budynok" }, { word: "там", base: "там", reading: "tam" }] }
+  - id: "uk-0130"
+    target: "що"
+    reading: "shcho"
+    ipa: "ʃtɔ"
+    pos: "pronoun"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Що це?", reading: "Shcho tse?", ipa: "ʃtɔ tsɛ", bases: [{ word: "Що", base: "що", reading: "shcho" }, { word: "це", base: "це", reading: "tse" }] }
+      - { target: "Що ти робиш?", reading: "Shcho ty robysh?", ipa: "ʃtɔ tɪ ˈrɔbɪʃ", bases: [{ word: "Що", base: "що", reading: "shcho" }, { word: "ти", base: "ти", reading: "ty" }, { word: "робиш", base: "робити", reading: "robysh" }] }

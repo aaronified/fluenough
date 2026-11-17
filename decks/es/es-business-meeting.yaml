@@ -1,0 +1,123 @@
+schema: 1
+id: "es-business-meeting"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+genre: "professional"
+professional: "business"
+hidden: true
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "es-4699"
+    target: "Buenos días a todos."
+    ipa: "ˈbwenos ˈdias a ˈtodos"
+    phonetic: "[ˈbwenoz ˈðias a ˈt̪oðos]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+  - id: "es-4700"
+    target: "Empecemos la reunión."
+    ipa: "empeˈθemos la rewˈnjon"
+    phonetic: "[empeˈθemoz la rewˈnjon]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+  - id: "es-4701"
+    target: "Estoy de acuerdo con usted."
+    ipa: "esˈtoj de aˈkweɾdo kon usˈted"
+    phonetic: "[esˈt̪oj ðe aˈkweɾðo kon usˈt̪eð]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4702"
+    target: "No estoy seguro de eso."
+    ipa: "no esˈtoj seˈɡuɾo de ˈeso"
+    phonetic: "[no esˈt̪oj seˈɣuɾo ðe ˈeso]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4703"
+    target: "¿Podría repetir la última parte?"
+    ipa: "poˈdɾia repeˈtiɾ la ˈultima ˈpaɾte"
+    phonetic: "[poˈðɾia repeˈt̪iɾ la ˈul̪t̪ima ˈpaɾt̪e]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4704"
+    target: "Lo voy a comprobar y le aviso."
+    ipa: "lo boj a kompɾoˈbaɾ i le aˈbiso"
+    phonetic: "[lo βoj a kompɾoˈβaɾ i le aˈβiso]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "es-4705"
+    target: "Tenemos que tomar una decisión."
+    ipa: "teˈnemos ke toˈmaɾ ˈuna deθiˈsjon"
+    phonetic: "[t̪eˈnemos ke t̪oˈmaɾ ˈuna ðeθiˈsjon]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "es-4706"
+    target: "Quedamos en eso."
+    ipa: "keˈdamos en ˈeso"
+    phonetic: "[keˈðamos en ˈeso]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4707"
+    target: "Muchas gracias por su tiempo."
+    ipa: "ˈmutʃas ˈɡɾaθjas poɾ su ˈtjempo"
+    phonetic: "[ˈmutʃaz ˈɣɾaθjas poɾ su ˈt̪jempo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4708"
+    target: "la propuesta"
+    ipa: "la pɾoˈpwesta"
+    phonetic: "[la pɾoˈpwest̪a]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    modes: ["recognition", "production"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "la", base: "la" }, { word: "propuesta", base: "propuesta" }]
+    examples:
+      - target: "Tengo una propuesta para el proyecto."
+        ipa: "ˈtenɡo ˈuna pɾoˈpwesta ˈpaɾa el pɾoˈʝekto"
+        bases: [{ word: "Tengo", base: "tener" }, { word: "una", base: "una" }, { word: "propuesta", base: "propuesta" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "proyecto", base: "proyecto" }]
+      - target: "Esta propuesta es buena para nuestra empresa."
+        ipa: "ˈesta pɾoˈpwesta es ˈbwena ˈpaɾa ˈnwestɾa emˈpɾesa"
+        bases: [{ word: "Esta", base: "este" }, { word: "propuesta", base: "propuesta" }, { word: "es", base: "ser" }, { word: "buena", base: "bueno" }, { word: "para", base: "para" }, { word: "nuestra", base: "nuestro" }, { word: "empresa", base: "empresa" }]
+  - id: "es-4709"
+    target: "la presentación"
+    ipa: "la pɾesentaˈθjon"
+    phonetic: "[la pɾesen̪t̪aˈθjon]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    modes: ["recognition", "production"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "la", base: "la" }, { word: "presentación", base: "presentación" }]
+    examples:
+      - target: "La presentación empieza a las diez."
+        ipa: "la pɾesentaˈθjon emˈpjeθa a las djeθ"
+        bases: [{ word: "La", base: "la" }, { word: "presentación", base: "presentación" }, { word: "empieza", base: "empezar" }, { word: "a", base: "a" }, { word: "las", base: "el" }, { word: "diez", base: "diez" }]
+      - target: "Hago una presentación sobre el nuevo producto."
+        ipa: "ˈaɡo ˈuna pɾesentaˈθjon ˈsobɾe el ˈnwebo pɾoˈdukto"
+        bases: [{ word: "Hago", base: "hacer" }, { word: "una", base: "una" }, { word: "presentación", base: "presentación" }, { word: "sobre", base: "sobre" }, { word: "el", base: "el" }, { word: "nuevo", base: "nuevo" }, { word: "producto", base: "producto" }]
+  - ref: "es-0511"
+  - ref: "es-2367"
+  - ref: "es-2993"
+  - ref: "es-0515"
+  - ref: "es-2104"
+  - ref: "es-1854"

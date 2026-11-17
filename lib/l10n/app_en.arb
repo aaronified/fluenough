@@ -173,18 +173,6 @@
       }
     }
   },
-  "languageBarAll": "All",
-  "@languageBarAll": {
-    "description": "The button on Progress's language bar, just before the bug report button, that counts every language's numbers together. Short: it sits in a 48 dp slot."
-  },
-  "languageBarAllLabel": "All languages",
-  "@languageBarAllLabel": {
-    "description": "What the screen reader calls Progress's All button, a toggle."
-  },
-  "languageBarAllHint": "show every language's numbers together",
-  "@languageBarAllHint": {
-    "description": "The screen reader's hint for Progress's All button, after \"Double-tap to\"."
-  },
   "languageMenuLabel": "Language shown: {language}",
   "@languageMenuLabel": {
     "description": "Tooltip and screen-reader label of the language menu button at the top of a deck's or a unit's page, and what the screen reader says once the language bar at the top of Today, Decks and Progress shows another language. It names which language's lessons, decks and numbers the whole app shows. The placeholder is a language's name, such as \"Telugu\".",
@@ -995,6 +983,96 @@
       }
     }
   },
+  "languageHasCardsToDo": "{label}, has cards to do",
+  "@languageHasCardsToDo": {
+    "description": "What the screen reader says of a language in the language bar and its menu when it has a review due or a new card waiting (the accent dot, #681): the language's usual label, then this.",
+    "placeholders": {
+      "label": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "situationsEditLabel": "Choose which situations to show",
+  "@situationsEditLabel": {
+    "description": "Screen reader label of the pencil at the top right of the Situations card on Today, whose tooltip is hintEdit. It opens the editor of which situations the card shows (#1145)."
+  },
+  "situationsEditTitle": "Choose situations",
+  "@situationsEditTitle": {
+    "description": "Title of the popup where the learner picks and orders the situations Today's card shows (#1145)."
+  },
+  "situationsEditOnToday": "On Today",
+  "@situationsEditOnToday": {
+    "description": "Title of the first section of the situations editor: the situations Today's card shows, at most six, in their order (#1145)."
+  },
+  "situationsEditCount": "{count} of {max}",
+  "@situationsEditCount": {
+    "description": "Counter beside the On Today title in the situations editor: how many situations are on Today of the most it can show.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "4"
+      },
+      "max": {
+        "type": "int",
+        "example": "6"
+      }
+    }
+  },
+  "situationsEditMore": "More situations",
+  "@situationsEditMore": {
+    "description": "Title of the second section of the situations editor: the situations that are not on Today, which a tap adds."
+  },
+  "situationsEditReorder": "Drag to order",
+  "@situationsEditReorder": {
+    "description": "The one instruction in the situations editor, under On Today: a long press then a drag moves a tile to another place in the order."
+  },
+  "situationsEditReset": "Reset to defaults",
+  "@situationsEditReset": {
+    "description": "Button in the situations editor: goes back to the situations each language starts with."
+  },
+  "situationsEditShown": "{title}, on Today, place {position}",
+  "@situationsEditShown": {
+    "description": "Screen reader label of a situation's tile in the On Today section of the editor: its name and its place in the order.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Taxi"
+      },
+      "position": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "situationsEditHidden": "{title}, not on Today, tap to add",
+  "@situationsEditHidden": {
+    "description": "Screen reader label of a situation's tile in the editor when it is not chosen; a tap adds it.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Taxi"
+      }
+    }
+  },
+  "situationsEditFull": "{title}, not on Today. Remove one first to add another",
+  "@situationsEditFull": {
+    "description": "Screen reader label of a disabled tile under More situations, while six are on Today: it says what to do first. Nothing of it is shown on screen.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Taxi"
+      }
+    }
+  },
+  "situationsEditEarlier": "Move earlier",
+  "@situationsEditEarlier": {
+    "description": "Screen reader action on a chosen situation's tile in the editor: moves it one place earlier in the order, instead of dragging."
+  },
+  "situationsEditLater": "Move later",
+  "@situationsEditLater": {
+    "description": "Screen reader action on a chosen situation's tile in the editor: moves it one place later in the order, instead of dragging."
+  },
   "todaySituationsTitle": "Situations",
   "@todaySituationsTitle": {
     "description": "The Situations card on Today, under the buttons (#724)."
@@ -1026,6 +1104,38 @@
   "situationRail": "Rail",
   "@situationRail": {
     "description": "Today's button for the rail station sheet."
+  },
+  "situationHotel": "Hotel",
+  "@situationHotel": {
+    "description": "Today's button for the hotel and lodging sheet (#1269)."
+  },
+  "situationPost": "Post",
+  "@situationPost": {
+    "description": "Today's button for the post office sheet (#1269)."
+  },
+  "situationBank": "Bank",
+  "@situationBank": {
+    "description": "Today's button for the bank and money sheet (#1269)."
+  },
+  "situationGreeting": "Greetings",
+  "@situationGreeting": {
+    "description": "Today's button for the greetings and apologies sheet (#1269)."
+  },
+  "situationEmergency": "Emergency",
+  "@situationEmergency": {
+    "description": "Today's button for the emergencies sheet (#1269)."
+  },
+  "situationSchool": "School",
+  "@situationSchool": {
+    "description": "Today's button for the school sheet (#1269)."
+  },
+  "situationWork": "Work",
+  "@situationWork": {
+    "description": "Today's button for the work sheet (#1269)."
+  },
+  "situationTravel": "Travel",
+  "@situationTravel": {
+    "description": "Today's button for the travel sheet (#1269)."
   },
   "situationUpcoming": "Upcoming",
   "@situationUpcoming": {
@@ -1253,6 +1363,90 @@
   "decksFilterAll": "All",
   "@decksFilterAll": {
     "description": "Language chip that shows every deck."
+  },
+  "decksCultureButton": "Culture",
+  "@decksCultureButton": {
+    "description": "Button on the Decks screen's course card that switches the screen from the deck path to the culture list."
+  },
+  "decksPathButton": "Deck path",
+  "@decksPathButton": {
+    "description": "Button on the Decks screen's course card, while the culture list shows, that switches back to the deck path."
+  },
+  "decksCultureDecksHeader": "Culture decks",
+  "@decksCultureDecksHeader": {
+    "description": "Heading of the culture list's section of culture and proverbs decks."
+  },
+  "decksCultureHeader": "{name} · {count}",
+  "@decksCultureHeader": {
+    "description": "Heading of a section of the culture list: its name and how many rows it has.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Films"
+      },
+      "count": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "decksCultureNone": "{language} has no culture yet.",
+  "@decksCultureNone": {
+    "description": "Shown in the culture list when the language has no culture decks and no recommended works.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "recKindBooks": "Books",
+  "@recKindBooks": {
+    "description": "Heading of the culture list's recommended books."
+  },
+  "recKindFilms": "Films",
+  "@recKindFilms": {
+    "description": "Heading of the culture list's recommended films."
+  },
+  "recKindSeries": "Series",
+  "@recKindSeries": {
+    "description": "Heading of the culture list's recommended series."
+  },
+  "recKindSongs": "Songs",
+  "@recKindSongs": {
+    "description": "Heading of the culture list's recommended songs."
+  },
+  "recKindPlays": "Plays",
+  "@recKindPlays": {
+    "description": "Heading of the culture list's recommended plays."
+  },
+  "recKindPodcasts": "Podcasts",
+  "@recKindPodcasts": {
+    "description": "Heading of the culture list's recommended podcasts."
+  },
+  "recKindComics": "Comics",
+  "@recKindComics": {
+    "description": "Heading of the culture list's recommended comics."
+  },
+  "decksCultureAll": "All",
+  "@decksCultureAll": {
+    "description": "First tab of the culture list: every section together."
+  },
+  "searchStatusDone": "Done",
+  "@searchStatusDone": {
+    "description": "Value of the status: token for a recommended work: marked completed."
+  },
+  "searchStatusTodo": "To do",
+  "@searchStatusTodo": {
+    "description": "Value of the status: token for a recommended work: not marked completed."
+  },
+  "searchTokenCreatorLine": "A creator's name, such as creator:tagore",
+  "@searchTokenCreatorLine": {
+    "description": "The line under the creator: token in the search's menu."
+  },
+  "searchTokenYearLine": "A year or years, such as year:1950 or year:1900-1950",
+  "@searchTokenYearLine": {
+    "description": "The line under the year: token in the search's menu."
   },
   "decksEmptySearch": "No decks match that search.",
   "@decksEmptySearch": {
@@ -2389,8 +2583,50 @@
   },
   "reportOpen": "Get support or report a problem",
   "@reportOpen": {
-    "description": "Screen reader label of the bug icon on every screen, which opens a report from that screen: support, a bug or feedback. The long-press hint is hintReport."
+    "description": "Screen reader label of a button that opens the general report: support, a bug or feedback. The long-press hint is hintReport."
   },
+  "contentReportTitle": "{subject, select, deck{Report a problem with this deck} unit{Report a problem with this unit} topic{Report a problem with this topic} item{Report a problem with this item} other{Report a problem with this card}}",
+  "@contentReportTitle": {"description": "Title of the content report sheet and screen reader label of the bug icon on content screens. {subject} is card, deck, unit, topic or item.", "placeholders": {"subject": {"type": "String"}}},
+  "contentReportGroup": "What is wrong",
+  "@contentReportGroup": {"description": "Screen reader label of the group of reasons in the content report sheet."},
+  "contentReportWrongOptions": "Wrong options",
+  "@contentReportWrongOptions": {"description": "Row of the content report: the options of a question are wrong. Opens a popup of what exactly."},
+  "contentReportReadingOrSound": "Reading or sound",
+  "@contentReportReadingOrSound": {"description": "Row of the content report: the reading, the IPA or the audio is wrong. Opens a popup of what exactly."},
+  "contentReportPictureOrExample": "Picture or example",
+  "@contentReportPictureOrExample": {"description": "Row of the content report: the picture or the example sentence is wrong. Opens a popup of what exactly."},
+  "contentReportOffensive": "Offensive or inappropriate",
+  "@contentReportOffensive": {"description": "Row of the content report: the content is offensive or inappropriate."},
+  "contentReportSomethingElse": "Something else",
+  "@contentReportSomethingElse": {"description": "Row of the content report for anything else; the note says what."},
+  "contentReasonTranslation": "The translation is wrong",
+  "@contentReasonTranslation": {"description": "A reason in the content report."},
+  "contentReasonNoCorrect": "No correct option is listed",
+  "@contentReasonNoCorrect": {"description": "A reason in the content report, for a question that lists options."},
+  "contentReasonMoreThanOne": "More than one option is correct",
+  "@contentReasonMoreThanOne": {"description": "A reason in the content report, for a question that lists options."},
+  "contentReasonReading": "The reading or IPA is wrong",
+  "@contentReasonReading": {"description": "A reason in the content report."},
+  "contentReasonAudio": "The audio is wrong or missing",
+  "@contentReasonAudio": {"description": "A reason in the content report."},
+  "contentReasonPicture": "The picture is wrong",
+  "@contentReasonPicture": {"description": "A reason in the content report."},
+  "contentReasonExample": "The example sentence is wrong",
+  "@contentReasonExample": {"description": "A reason in the content report."},
+  "contentReportNote": "Add a note (optional)",
+  "@contentReportNote": {"description": "Label of the one-line note field of the content report, at most 140 characters."},
+  "contentReportNoteRequired": "Say what is wrong",
+  "@contentReportNoteRequired": {"description": "Label of the note field of the content report once Something else is chosen: the note is required, and is where the reporter says what is wrong."},
+  "contentReportSend": "Send",
+  "@contentReportSend": {"description": "Button that sends the content report to the reporter's mail app."},
+  "contentReportDoneTitle": "Your report is ready",
+  "@contentReportDoneTitle": {"description": "Title of the content report sheet once the report is in the reporter's mail app."},
+  "contentReportDoneBody": "Your mail app has the report. Send it from there.",
+  "@contentReportDoneBody": {"description": "Body of the content report sheet once the report is in the reporter's mail app."},
+  "settingsTabMoreOptions": "More options",
+  "@settingsTabMoreOptions": {"description": "Screen reader label of the three-dot button of the Settings tab."},
+  "settingsReportProblem": "Report a problem",
+  "@settingsReportProblem": {"description": "Item of the Settings tab's three-dot menu: opens the general report, which goes to the mail app."},
   "reportTitle": "Support and feedback",
   "@reportTitle": {
     "description": "Title of the report screen, where the reporter gets support, reports a bug or gives feedback."
@@ -2863,6 +3099,34 @@
   "@brailleSpace": {
     "description": "Button of the braille keyboard: adds a space, an empty cell between words, to the answer."
   },
+  "ipaKeyboard": "IPA keyboard",
+  "@ipaKeyboard": {
+    "description": "Names, for a screen reader, the app's own keyboard of IPA symbols under a typed answer in the IPA course (#836)."
+  },
+  "ipaTabVowels": "Vowels",
+  "@ipaTabVowels": {
+    "description": "Tab of the IPA keyboard: the vowel symbols."
+  },
+  "ipaTabConsonants": "Consonants",
+  "@ipaTabConsonants": {
+    "description": "Tab of the IPA keyboard: the pulmonic consonant symbols, the ones made with the breath from the lungs."
+  },
+  "ipaTabOther": "Other",
+  "@ipaTabOther": {
+    "description": "Tab of the IPA keyboard: the symbols that are neither vowels nor pulmonic consonants, such as clicks, implosives, ties and brackets."
+  },
+  "ipaTabMarks": "Marks",
+  "@ipaTabMarks": {
+    "description": "Tab of the IPA keyboard: diacritics and suprasegmentals, the small marks that go with a letter, and stress, length and tone."
+  },
+  "ipaBackspace": "Backspace",
+  "@ipaBackspace": {
+    "description": "Button of the IPA keyboard, an icon with this as its tooltip: deletes the symbol before the cursor in the answer."
+  },
+  "ipaSpace": "Space",
+  "@ipaSpace": {
+    "description": "Button of the IPA keyboard, an icon with this as its tooltip: adds a space to the answer."
+  },
   "pinDeleteLabel": "Delete last digit",
   "@pinDeleteLabel": {
     "description": "Screen reader label of the PIN pad's delete button, whose tooltip is the one word of brailleBackspace."
@@ -3288,16 +3552,6 @@
       "project": {
         "type": "String",
         "example": "wiktionary"
-      }
-    }
-  },
-  "settingsSourcesSummary": "{count, plural, =1{1 source} other{{count} sources}}",
-  "@settingsSourcesSummary": {
-    "description": "The line under Settings' Sources row: how many sources the decks name.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "3"
       }
     }
   },
@@ -3887,6 +4141,14 @@
   "@drillEndKeepGoing": {
     "description": "Button that stays in the session."
   },
+  "learnLearned": "Learned",
+  "@learnLearned": {
+    "description": "Small notice after the second question of a new word is answered right, when both of its questions were right: the word is learned."
+  },
+  "learnNotYet": "Not yet",
+  "@learnNotYet": {
+    "description": "Small notice after a new word's question is missed: the word is not learned yet and will come back."
+  },
   "feedbackCorrect": "Correct",
   "@feedbackCorrect": {
     "description": "Feedback: the typed answer was right."
@@ -4066,9 +4328,9 @@
   "@rateHard": {
     "description": "Self-rating: remembered it with effort."
   },
-  "rateGood": "Good",
+  "rateGood": "Okay",
   "@rateGood": {
-    "description": "Self-rating: remembered it."
+    "description": "Self-rating: remembered it. The key still says Good; the label is Okay, one of the four shared Again / Hard / Okay / Easy ratings (owner, 2026-11-13). Records grade 4."
   },
   "rateEasy": "Easy",
   "@rateEasy": {
@@ -4094,7 +4356,7 @@
     "placeholders": {
       "rating": {
         "type": "String",
-        "example": "Good"
+        "example": "Okay"
       },
       "interval": {
         "type": "String",
@@ -4882,7 +5144,7 @@
   "@onboardingSpokenNeedOne": {
     "description": "First-launch question, just above the button while it is disabled: why it is."
   },
-  "scriptName": "{script, select, bengali{Eastern Nagari} devanagari{Devanagari} gurmukhi{Gurmukhi} shahmukhi{Shahmukhi} gujarati{Gujarati} odia{Odia} kannada{Kannada} telugu{Telugu} tamil{Tamil} malayalam{Malayalam} ol_chiki{Ol Chiki} arabic{Arabic} perso_arabic{Perso-Arabic} perso_arabic_naskh{Perso-Arabic (Naskh)} meitei_mayek{Meitei Mayek} egyptian_hieroglyphs{Egyptian hieroglyphs} cuneiform{Cuneiform} linear_b{Linear B} brahmi{Brahmi} latin{Latin} cyrillic{Cyrillic} greek{Greek} hebrew{Hebrew} thai{Thai} han{Kanji} han_simplified{Simplified Hanzi} han_traditional{Traditional Hanzi} kana{Kana} hangul{Hangul} ipa{IPA} braille{Braille} other{}}",
+  "scriptName": "{script, select, bengali{Eastern Nagari} devanagari{Devanagari} gurmukhi{Gurmukhi} shahmukhi{Shahmukhi} gujarati{Gujarati} odia{Odia} kannada{Kannada} telugu{Telugu} tamil{Tamil} malayalam{Malayalam} ol_chiki{Ol Chiki} arabic{Arabic} perso_arabic{Perso-Arabic} perso_arabic_naskh{Perso-Arabic (Naskh)} meitei_mayek{Meitei Mayek} egyptian_hieroglyphs{Egyptian hieroglyphs} cuneiform{Cuneiform} linear_b{Linear B} brahmi{Brahmi} sitelen_pona{Sitelen pona} latin{Latin} cyrillic{Cyrillic} greek{Greek} hebrew{Hebrew} thai{Thai} han{Kanji} han_simplified{Simplified Hanzi} han_traditional{Traditional Hanzi} kana{Kana} hangul{Hangul} ipa{IPA} braille{Braille} other{}}",
   "@scriptName": {
     "description": "A script's own name, never a language's (owner, 2026-10-17, #551: \"All scripts should have their own names, not just inherit the language\"). {script} is the code in assets/languages.yaml and the deck files: bengali is Eastern Nagari, the script of Bengali, Assamese and Manipuri; arabic is the Arabic script of Modern Standard Arabic; perso_arabic is the Perso-Arabic script as Hindustani, Urdu, Kashmiri and Sindhi write it, in Nastaliq (#623, #959); shahmukhi is the Perso-Arabic alphabet as Punjabi writes it. han_simplified and han_traditional are the two forms of Chinese characters Mandarin is written in, shown as Simplified Hanzi and Traditional Hanzi, and han the same characters as Japanese writes them, shown as Kanji (owner, 2026-10-24: the Japanese call their Chinese script kanji). The codes never change, only the names shown; kana is Japanese's hiragana and katakana, hangul Korean's alphabet, and cyrillic Interslavic's second script (#613). A code with no name here gives nothing, and the app then names the script after its language. Every sentence that names a script takes this.",
     "placeholders": {
@@ -7077,6 +7339,146 @@
   "voicesSpeechMissing": "Not recognised on this phone",
   "@voicesSpeechMissing": {
     "description": "Status: the phone cannot recognise this language."
+  },
+  "voicesAiTitle": "AI listener",
+  "@voicesAiTitle": {
+    "description": "Heading of the row on a language’s card on the Voices page, under Speaking, for the offline speech recogniser that downloads to the phone. AI listener is the feature’s name."
+  },
+  "voicesAiNotInstalled": "Not installed, about {size}",
+  "@voicesAiNotInstalled": {
+    "description": "Status under the AI listener heading before it is downloaded; the size is the download, such as 131.1 MB.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "131.1 MB"
+      }
+    }
+  },
+  "voicesAiNotInstalledNoSize": "Not installed",
+  "@voicesAiNotInstalledNoSize": {
+    "description": "Status under the AI listener heading before it is downloaded, while the download’s size is not known."
+  },
+  "voicesAiInstall": "Install",
+  "@voicesAiInstall": {
+    "description": "Button of the AI listener row: downloads it."
+  },
+  "voicesAiInstallLabel": "Install the AI listener for {language}",
+  "@voicesAiInstallLabel": {
+    "description": "Screen-reader label of the AI listener’s Install and Try again buttons.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "voicesAiDownloading": "Downloading {done} of {total}",
+  "@voicesAiDownloading": {
+    "description": "Status of the AI listener row while it downloads; both are sizes, such as 40.2 MB.",
+    "placeholders": {
+      "done": {
+        "type": "String",
+        "example": "40.2 MB"
+      },
+      "total": {
+        "type": "String",
+        "example": "131.1 MB"
+      }
+    }
+  },
+  "voicesAiProgressLabel": "Downloading the AI listener for {language}, {percent} percent",
+  "@voicesAiProgressLabel": {
+    "description": "Screen-reader label of the AI listener’s progress bar.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      },
+      "percent": {
+        "type": "int",
+        "example": "40"
+      }
+    }
+  },
+  "voicesAiCancel": "Cancel",
+  "@voicesAiCancel": {
+    "description": "Button of the AI listener row while it downloads: stops the download."
+  },
+  "voicesAiCancelLabel": "Cancel the AI listener download for {language}",
+  "@voicesAiCancelLabel": {
+    "description": "Screen-reader label of the AI listener’s Cancel button.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "voicesAiInstalled": "Installed. Works without a connection",
+  "@voicesAiInstalled": {
+    "description": "Status of the AI listener row once downloaded."
+  },
+  "voicesAiRemove": "Remove",
+  "@voicesAiRemove": {
+    "description": "Button of the AI listener row once installed: deletes the download to free the space."
+  },
+  "voicesAiRemoveLabel": "Remove the AI listener for {language}",
+  "@voicesAiRemoveLabel": {
+    "description": "Screen-reader label of the AI listener’s Remove button.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "voicesAiRetry": "Try again",
+  "@voicesAiRetry": {
+    "description": "Button of the AI listener row after a failed download."
+  },
+  "voicesAiFailedNetwork": "Could not download. Check the connection and try again",
+  "@voicesAiFailedNetwork": {
+    "description": "Status of the AI listener row when the download failed for want of a network."
+  },
+  "voicesAiFailedSpace": "Not enough room on this phone",
+  "@voicesAiFailedSpace": {
+    "description": "Status of the AI listener row when the phone ran out of storage."
+  },
+  "voicesAiFailedChecksum": "The download was damaged. Try again",
+  "@voicesAiFailedChecksum": {
+    "description": "Status of the AI listener row when a downloaded file did not match what was published."
+  },
+  "voicesAiFailedOther": "Could not install. Try again",
+  "@voicesAiFailedOther": {
+    "description": "Status of the AI listener row when the download failed for another reason; the app log has the detail."
+  },
+  "sourcesListener": "AI listener",
+  "@sourcesListener": {
+    "description": "Heading of a group on the Sources screen: the credits of the offline speech recogniser. AI listener is the feature’s name."
+  },
+  "sourcesListenerOnnx": "ONNX Runtime: MIT",
+  "@sourcesListenerOnnx": {
+    "description": "Credit on the Sources screen for the runtime that runs the AI listener’s model. Names stay as they are."
+  },
+  "sourcesListenerOnnxLine": "The AI listener runs on Microsoft’s ONNX Runtime, under the MIT licence.",
+  "@sourcesListenerOnnxLine": {
+    "description": "The line under the ONNX Runtime credit. Names stay as they are."
+  },
+  "sourcesListenerModel": "IndicConformer: MIT",
+  "@sourcesListenerModel": {
+    "description": "Credit on the Sources screen for the speech model behind the AI listener. Names stay as they are."
+  },
+  "sourcesListenerModelLine": "The Telugu AI listener is AI4Bharat’s IndicConformer model, under the MIT licence, converted to run on the phone.",
+  "@sourcesListenerModelLine": {
+    "description": "The line under the IndicConformer credit. Names stay as they are."
+  },
+  "sourcesListenerData": "IndicVoices: CC BY 4.0",
+  "@sourcesListenerData": {
+    "description": "Credit on the Sources screen for the speech recordings the AI listener’s model was trained on. Names stay as they are."
+  },
+  "sourcesListenerDataLine": "The model was trained on AI4Bharat’s IndicVoices recordings, licensed CC BY 4.0.",
+  "@sourcesListenerDataLine": {
+    "description": "The line under the IndicVoices credit. Names stay as they are."
   },
   "voicesNone": "No decks are loaded, so there are no languages to check.",
   "@voicesNone": {
@@ -10232,7 +10634,7 @@
   "@settingsDecksTemplate": {
     "description": "A row on Your decks: save a template of a deck to fill in."
   },
-  "settingsDecksTemplateDesc": "A single deck, or a full language: a deck and its path",
+  "settingsDecksTemplateDesc": "A single deck to fill in, as a file. For a whole language, use the starter package",
   "@settingsDecksTemplateDesc": {
     "description": "Under Get a template."
   },
@@ -10261,10 +10663,6 @@
   "@settingsDecksOpen": {
     "description": "A button on a deck of the learner’s own on Your decks: opens the deck."
   },
-  "settingsDecksSend": "Send it to us",
-  "@settingsDecksSend": {
-    "description": "A button on a deck of the learner’s own on Your decks: sends the deck to the project to check and add for everyone."
-  },
   "settingsDecksRemove": "Remove",
   "@settingsDecksRemove": {
     "description": "A button on a deck of the learner’s own on Your decks: removes it, after asking. Shown in the error colour."
@@ -10273,9 +10671,9 @@
   "@settingsDecksNone": {
     "description": "On Your decks when the learner has added no deck."
   },
-  "settingsDecksAbout": "We check it, and add it to Fluenough for everyone.",
+  "settingsDecksAbout": "Decks you add stay on this phone and in your backups. Nothing is sent anywhere.",
   "@settingsDecksAbout": {
-    "description": "A line on Your decks about what happens to a deck that is sent."
+    "description": "A line at the foot of Your decks: what happens to a deck the learner added."
   },
   "settingsRemindersLanguages": "Languages",
   "@settingsRemindersLanguages": {
@@ -11615,6 +12013,74 @@
       }
     }
   },
+  "progressOfTaughtPlaced": "of {taught} taught (+{placed} placed)",
+  "@progressOfTaughtPlaced": {
+    "description": "Under a Progress tile's count when some of what the course credited from Find my level has not been answered yet: what it is out of, what is taught so far, and how many more are placed. May wrap to two lines.",
+    "placeholders": {
+      "taught": {
+        "type": "String",
+        "example": "540"
+      },
+      "placed": {
+        "type": "String",
+        "example": "90"
+      }
+    }
+  },
+  "progressWordsPlacedSemantics": "Words: {known} known of {taught} taught, and {placed} placed",
+  "@progressWordsPlacedSemantics": {
+    "description": "Screen-reader label of the Words tile when some words are placed: credited by Find my level and not answered yet.",
+    "placeholders": {
+      "known": {
+        "type": "String",
+        "example": "312"
+      },
+      "taught": {
+        "type": "String",
+        "example": "540"
+      },
+      "placed": {
+        "type": "String",
+        "example": "90"
+      }
+    }
+  },
+  "progressRulesPlacedSemantics": "Rules: {known} known of {taught} taught, and {placed} placed",
+  "@progressRulesPlacedSemantics": {
+    "description": "Screen-reader label of the Rules tile when some rules are placed: credited by Find my level and not answered yet.",
+    "placeholders": {
+      "known": {
+        "type": "String",
+        "example": "14"
+      },
+      "taught": {
+        "type": "String",
+        "example": "22"
+      },
+      "placed": {
+        "type": "String",
+        "example": "6"
+      }
+    }
+  },
+  "progressLevelPlaced": "Placed",
+  "@progressLevelPlaced": {
+    "description": "A small mark on the Level tile: the level was credited by Find my level and no unit of it has been answered yet."
+  },
+  "progressLevelPlacedSemantics": "Level {level}, placed, started {date}",
+  "@progressLevelPlacedSemantics": {
+    "description": "Screen-reader label of the Level tile when the level is only placed.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A2"
+      },
+      "date": {
+        "type": "String",
+        "example": "3 Aug 2026"
+      }
+    }
+  },
   "progressWordsSemantics": "Words: {known} known of {taught} taught",
   "@progressWordsSemantics": {
     "description": "Screen-reader label of the Words tile.",
@@ -12556,16 +13022,6 @@
   "@languagesTitle": {
     "description": "Title of the Languages page (#907), where each language's four skills, Speak, Hear, Read and Write, are set to Know, Learn or Leave, and the Settings row that opens it."
   },
-  "languagesSettingsSummary": "{count, plural, =0{Not learning any language} =1{1 language learning} other{{count} languages learning}}",
-  "@languagesSettingsSummary": {
-    "description": "Second line of the Languages row in Settings: how many languages have a skill set to Learn.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "3"
-      }
-    }
-  },
   "settingsFactLanguages": "Fact languages",
   "@settingsFactLanguages": {
     "description": "Title of the Settings row under Your languages that opens the choice of the languages Today's fact is shown in (#926)."
@@ -12595,6 +13051,22 @@
   "languagesAdd": "Add a language",
   "@languagesAdd": {
     "description": "Button and row on the Languages page that opens the list of languages to add."
+  },
+  "languagesMenuMore": "More options",
+  "@languagesMenuMore": {
+    "description": "The screen reader's label, and the long-press hint, of the three-dot icon at the top right of the Languages screen that opens the menu of reading and content switches."
+  },
+  "languagesMenuMoreHint": "More",
+  "@languagesMenuMoreHint": {
+    "description": "The one-word hint shown on a long press of the three-dot icon at the top right of the Languages screen."
+  },
+  "languagesMenuShow": "Show",
+  "@languagesMenuShow": {
+    "description": "Small heading over the switches in the Languages screen's three-dot menu: what the app shows."
+  },
+  "languagesMenuOpen": "Open",
+  "@languagesMenuOpen": {
+    "description": "Small heading over the rows that open more choices or another screen at the end of the Languages screen's three-dot menu."
   },
   "languagesEmptyTitle": "No languages yet",
   "@languagesEmptyTitle": {
@@ -12986,9 +13458,9 @@
       }
     }
   },
-  "languagesDeleteData": "Delete data now",
+  "languagesDeleteData": "Delete data",
   "@languagesDeleteData": {
-    "description": "Screen reader label of the bin on the sheet, which removes a language's decks and progress at once."
+    "description": "Screen reader label of the red bin on a language's sheet, which opens the dialog that deletes its data."
   },
   "languagesUpdateIcon": "Check for deck updates",
   "@languagesUpdateIcon": {
@@ -13112,9 +13584,9 @@
   "@languagesDownloadGo": {
     "description": "Download dialog's action."
   },
-  "languagesDeleteTitle": "Delete {language} data now?",
+  "languagesDeleteTitle": "Delete {language} data?",
   "@languagesDeleteTitle": {
-    "description": "Title of the dialog that removes a language's decks and progress at once.",
+    "description": "Title of the dialog that deletes some of a language's data.",
     "placeholders": {
       "language": {
         "type": "String",
@@ -13122,15 +13594,9 @@
       }
     }
   },
-  "languagesDeleteBody": "Removes the decks for {language} at once, instead of at the next app open. What you are learning stops; what you already know stays. Your progress stays in the review log and comes back with the decks.",
+  "languagesDeleteBody": "Tick what to delete. Nothing of any other language is touched. A backup of everything is kept first, and you can restore it from Settings, Your data.",
   "@languagesDeleteBody": {
-    "description": "Body of the delete dialog.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindustani"
-      }
-    }
+    "description": "Body of the delete dialog."
   },
   "languagesDeleteType": "Type {language} to confirm",
   "@languagesDeleteType": {
@@ -13139,6 +13605,132 @@
       "language": {
         "type": "String",
         "example": "Hindustani"
+      }
+    }
+  },
+  "languagesDeleteReviews": "Reviews",
+  "@languagesDeleteReviews": {
+    "description": "Tick box of the delete dialog: the language's reviews."
+  },
+  "languagesDeleteReviewsSub": "Your answers in {language}. Progress, streaks, hours and when words are due are worked out again from what is left.",
+  "@languagesDeleteReviewsSub": {
+    "description": "Explains what deleting the reviews does.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesDeleteAllDates": "All dates",
+  "@languagesDeleteAllDates": {
+    "description": "Choice in the delete dialog: delete the reviews of every day."
+  },
+  "languagesDeleteSomeDates": "Only these days",
+  "@languagesDeleteSomeDates": {
+    "description": "Choice in the delete dialog: delete the reviews of a range of days, such as when someone else tested the app."
+  },
+  "languagesDeleteFrom": "From {date}",
+  "@languagesDeleteFrom": {
+    "description": "Button that picks the first day of the reviews to delete. date is a short date.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "Nov 3"
+      }
+    }
+  },
+  "languagesDeleteTo": "To {date}",
+  "@languagesDeleteTo": {
+    "description": "Button that picks the last day of the reviews to delete, which is included. date is a short date.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "Nov 5"
+      }
+    }
+  },
+  "languagesDeleteFromLabel": "First day to delete, {date}",
+  "@languagesDeleteFromLabel": {
+    "description": "Screen reader label of the From button. date is a short date.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "Nov 3"
+      }
+    }
+  },
+  "languagesDeleteToLabel": "Last day to delete, {date}",
+  "@languagesDeleteToLabel": {
+    "description": "Screen reader label of the To button. date is a short date.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "Nov 5"
+      }
+    }
+  },
+  "languagesDeleteRangeOrder": "The first day cannot come after the last.",
+  "@languagesDeleteRangeOrder": {
+    "description": "Shown when the From day is after the To day."
+  },
+  "languagesDeletePlacement": "Placement",
+  "@languagesDeletePlacement": {
+    "description": "Tick box of the delete dialog: what placement found."
+  },
+  "languagesDeletePlacementSub": "The words placement credited and what it found. {language} asks for placement again.",
+  "@languagesDeletePlacementSub": {
+    "description": "Explains what deleting the placement does.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesDeleteSettings": "Language settings",
+  "@languagesDeleteSettings": {
+    "description": "Tick box of the delete dialog: the language's own settings."
+  },
+  "languagesDeleteSettingsSub": "Minutes a day, scripts and fonts chosen, how credited words are reviewed, and the study time kept for {language}.",
+  "@languagesDeleteSettingsSub": {
+    "description": "Explains what deleting the language settings does.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesDeleteDecks": "Deck data",
+  "@languagesDeleteDecks": {
+    "description": "Tick box of the delete dialog: the decks on the phone."
+  },
+  "languagesDeleteDecksSub": "The decks of {language} on this phone, now. What you are learning stops; what you already know stays. They download again when you need them.",
+  "@languagesDeleteDecksSub": {
+    "description": "Explains what deleting the deck data does.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesDeleteBackupNote": "A backup is kept first, in Settings, Your data, Recent backups.",
+  "@languagesDeleteBackupNote": {
+    "description": "Line of the delete dialog about the backup made before deleting."
+  },
+  "languagesDeleteFailed": "Nothing was deleted: the backup could not be kept.",
+  "@languagesDeleteFailed": {
+    "description": "Toast when the backup made before deleting failed, so nothing was deleted."
+  },
+  "settingsBackupBeforeDelete": "Before deleting data, {date}",
+  "@settingsBackupBeforeDelete": {
+    "description": "A backup in Recent backups: the copy made before a language's data was deleted. date is a short date.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "Nov 7"
       }
     }
   },
@@ -13316,9 +13908,9 @@
       }
     }
   },
-  "languagesToastDeleted": "{language} data deleted",
+  "languagesToastDeleted": "{language} data deleted. A backup was kept in Settings, Your data.",
   "@languagesToastDeleted": {
-    "description": "Toast after delete data now.",
+    "description": "Toast after the chosen data of a language was deleted.",
     "placeholders": {
       "language": {
         "type": "String",
@@ -13430,13 +14022,17 @@
   "@reviewGuideQuestionsCount": {
     "description": "Third paragraph of the daily questions step of How reviewing works, above the choice of how many a day (docs/REVIEWING.md says the same)."
   },
-  "reviewGuideQuestionsBuilder": "Some cards come with a question from the deck builder, a doubt they could not settle, such as a gender or a tone. Those cards are asked first, and the question is shown as a note, under Question from the deck builder, on the daily question and on the card in a unit\u2019s review. It is a hint for you, not part of your answer: answer the daily question as usual. If the builder\u2019s doubt turns out to be a mistake, open the card in a unit\u2019s review and use Suggest a change there, which the daily question does not offer.",
+  "reviewGuideQuestionsBuilder": "Some cards come with a question from the deck builder, a doubt they could not settle, such as a gender or a tone. Those cards are asked first. The builder\u2019s question is a daily question of its own, under Question from the deck builder, with the whole card in front of you, its word, its meaning and every example, and its own Yes and No. It is also shown as a note on the card in a unit\u2019s review. Only questions that can be answered Yes or No are asked. If the builder\u2019s doubt turns out to be a mistake, open the card in a unit\u2019s review and use Suggest a change there, which the daily question does not offer.",
   "@reviewGuideQuestionsBuilder": {
     "description": "Fourth paragraph of the daily questions step of How reviewing works (docs/REVIEWING.md says the same). “Question from the deck builder” must match reviewBuilderQuestion, “Suggest a change” reviewSuggest."
   },
   "reviewBuilderQuestion": "Question from the deck builder",
   "@reviewBuilderQuestion": {
-    "description": "Label of the note on a card, in a daily question and in a card's review sheet, that holds a question the deck's builder could not settle and asks the reviewer (docs/review-queue/README.md)."
+    "description": "Label of a question the deck's builder could not settle and asks the reviewer (docs/review-queue/README.md): above the question on its own daily-question step, and on the note in a card's review sheet."
+  },
+  "reviewBuilderExamples": "Examples on this card",
+  "@reviewBuilderExamples": {
+    "description": "Label above the card's example sentences, on a daily question from the deck builder, where the reviewer needs them to judge the builder's question."
   },
   "reviewQuestionsPerDayTitle": "Questions a day",
   "@reviewQuestionsPerDayTitle": {
@@ -14131,45 +14727,13 @@
       }
     }
   },
-  "findLevelSayMeaning": "Say what this means in {language}",
-  "@findLevelSayMeaning": {
-    "description": "Find my level: a sentence written in the script, to be said back in the learner’s own language. {language} is that language.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "English"
-      }
-    }
-  },
-  "findLevelListenSayMeaning": "Listen, then say what it means in {language}",
-  "@findLevelListenSayMeaning": {
-    "description": "Find my level: a sentence played aloud, to be said back in the learner’s own language. {language} is that language.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "English"
-      }
-    }
-  },
   "findLevelWordMeaning": "What does this word mean?",
   "@findLevelWordMeaning": {
     "description": "Find my level: a word to choose the meaning of."
   },
-  "findLevelPickBlank": "Which form fits the blank?",
-  "@findLevelPickBlank": {
-    "description": "Find my level: a sentence with one word form blanked out, to choose from."
-  },
-  "findLevelWhichSentence": "Which sentence is right?",
-  "@findLevelWhichSentence": {
-    "description": "Find my level: two sentences, one with its words in the right order."
-  },
-  "findLevelWhichSentenceSounds": "Which sentence sounds right?",
-  "@findLevelWhichSentenceSounds": {
-    "description": "Find my level: two sentences, one with its words in the right order, with the right one played aloud."
-  },
-  "findLevelBuildFromAudio": "Listen, then put the words in order",
-  "@findLevelBuildFromAudio": {
-    "description": "Find my level: a sentence played aloud, to build from word tiles."
+  "findLevelSentenceMeaning": "What does this sentence mean?",
+  "@findLevelSentenceMeaning": {
+    "description": "Find my level: a sentence, written or played aloud, to choose the meaning of."
   },
   "findLevelBuildFromMeaning": "Put the words in order",
   "@findLevelBuildFromMeaning": {
@@ -14197,27 +14761,9 @@
   "@findLevelPaused": {
     "description": "Toast after the learner leaves Find my level part-way."
   },
-  "findLevelCheckpointTitle": "{count} questions answered",
-  "@findLevelCheckpointTitle": {
-    "description": "Find my level, every 25 questions: the heading of the pause.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "25"
-      }
-    }
-  },
-  "findLevelCheckpointBody": "This is where you stand now. If you think you are better than this, keep going. Or stop here and we will place you at these levels.",
-  "@findLevelCheckpointBody": {
-    "description": "Find my level, every 25 questions: what the learner is asked to choose."
-  },
   "findLevelKeepGoing": "Keep going",
   "@findLevelKeepGoing": {
     "description": "Find my level checkpoint: carries on with more questions."
-  },
-  "findLevelStopHere": "Stop here",
-  "@findLevelStopHere": {
-    "description": "Find my level checkpoint: ends the check and places the learner at the levels shown."
   },
   "findLevelSkillRead": "Read",
   "@findLevelSkillRead": {
@@ -14259,125 +14805,9 @@
   "@findLevelLabelVerySure": {
     "description": "Find my level: how sure the check is, 95% or more."
   },
-  "findLevelLabelVerified": "Verified",
+  "findLevelLabelVerified": "Earlier check (not verified)",
   "@findLevelLabelVerified": {
-    "description": "Find my level: the learner showed the whole course up to B1 in this skill."
-  },
-  "findLevelStandUnit": "{skill}: unit {unit} · {label}",
-  "@findLevelStandUnit": {
-    "description": "Find my level: where one skill is placed. {unit} is the unit the learner knows up to.",
-    "placeholders": {
-      "skill": {
-        "type": "String",
-        "example": "Hear"
-      },
-      "unit": {
-        "type": "int",
-        "example": "40"
-      },
-      "label": {
-        "type": "String",
-        "example": "Very sure"
-      }
-    }
-  },
-  "findLevelStandStart": "{skill}: from the beginning · {label}",
-  "@findLevelStandStart": {
-    "description": "Find my level: a skill placed at the very start.",
-    "placeholders": {
-      "skill": {
-        "type": "String",
-        "example": "Hear"
-      },
-      "label": {
-        "type": "String",
-        "example": "Very sure"
-      }
-    }
-  },
-  "findLevelStandScriptKnown": "{skill}: known · {label}",
-  "@findLevelStandScriptKnown": {
-    "description": "Find my level: the script is read.",
-    "placeholders": {
-      "skill": {
-        "type": "String",
-        "example": "Hear"
-      },
-      "label": {
-        "type": "String",
-        "example": "Very sure"
-      }
-    }
-  },
-  "findLevelStandScriptNot": "{skill}: not yet · {label}",
-  "@findLevelStandScriptNot": {
-    "description": "Find my level: the script is not read yet.",
-    "placeholders": {
-      "skill": {
-        "type": "String",
-        "example": "Hear"
-      },
-      "label": {
-        "type": "String",
-        "example": "Very sure"
-      }
-    }
-  },
-  "findLevelStandNotTested": "{skill}: not tested",
-  "@findLevelStandNotTested": {
-    "description": "Find my level: a skill that was not asked.",
-    "placeholders": {
-      "skill": {
-        "type": "String",
-        "example": "Hear"
-      }
-    }
-  },
-  "findLevelSummaryTitle": "Where you start",
-  "@findLevelSummaryTitle": {
-    "description": "Find my level: the heading of the result."
-  },
-  "findLevelSummaryIntro": "This is where we think you are. Tap a line to see how sure we are.",
-  "@findLevelSummaryIntro": {
-    "description": "Find my level: under the heading of the result."
-  },
-  "findLevelNoteNotSureYet": "A first guess. Low is fine: you can find your level again later.",
-  "@findLevelNoteNotSureYet": {
-    "description": "Find my level: said under a skill the check is not yet sure of (under 50%). Calm, never a fail."
-  },
-  "findLevelNoteFairlySure": "A fair guess. You can find your level again later to sharpen it.",
-  "@findLevelNoteFairlySure": {
-    "description": "Find my level: said under a skill the check is fairly sure of (50% to 79%)."
-  },
-  "findLevelNoteVerified": "You showed this across the whole course up to B1.",
-  "@findLevelNoteVerified": {
-    "description": "Find my level: said under a Verified skill."
-  },
-  "findLevelNotTestedNoMic": "The microphone was not available or was given up, so this was not tested. Nothing is held against you.",
-  "@findLevelNotTestedNoMic": {
-    "description": "Find my level: why Say was not tested (no microphone from the start, or the learner gave it up)."
-  },
-  "findLevelNotTestedUnavailable": "A question for this one could not be played or shown, so it was not tested. Nothing is held against you.",
-  "@findLevelNotTestedUnavailable": {
-    "description": "Find my level: why a skill was not tested, when its questions could not be built, such as a sound that would not play."
-  },
-  "findLevelNotTestedNotAsked": "We did not ask about this one, so it was not tested.",
-  "@findLevelNotTestedNotAsked": {
-    "description": "Find my level: why a skill was not tested, when no question could be asked about it."
-  },
-  "findLevelDetailPercent": "About {percent}% sure, from {count, plural, =1{1 answer} other{{count} answers}}.",
-  "@findLevelDetailPercent": {
-    "description": "Find my level: the detail of a skill's result, the only place a percentage is shown.",
-    "placeholders": {
-      "percent": {
-        "type": "int",
-        "example": "85"
-      },
-      "count": {
-        "type": "int",
-        "example": "9"
-      }
-    }
+    "description": "Find my level: a skill an earlier version marked Verified. The mark is not kept as a claim: the check before V3 stopped at 95% on thin evidence, so it is shown as an earlier check until the skill is checked again."
   },
   "findLevelSheetLabel": "{skill}: {label}",
   "@findLevelSheetLabel": {
@@ -14467,17 +14897,145 @@
   "@languagesVerifyKnownSub": {
     "description": "Under Verify what you know."
   },
-  "languagesPopular": "Popular",
-  "@languagesPopular": {
-    "description": "The heading of the languages Add a language lists first: a hand-kept list, `popular` in assets/languages.yaml."
+  "languagesCheckAgain": "Check your level again",
+  "@languagesCheckAgain": {
+    "description": "Languages page, a language's row, for a level an earlier version found and the learner has not confirmed: runs Find my level on the skills that were credited, then compares."
   },
-  "languagesPopularNote": "Our most complete courses",
-  "@languagesPopularNote": {
-    "description": "The line under the Popular heading on Add a language."
+  "languagesCheckAgainSub": "An earlier version found this level. Check it to keep it or correct it.",
+  "@languagesCheckAgainSub": {
+    "description": "Under Check your level again."
   },
-  "languagesAllLanguages": "All languages",
+  "findLevelCompareLine": "{skill}: {before} → {now} · {label}",
+  "@findLevelCompareLine": {
+    "description": "Check your level again: one skill, its level before and its level now. {before} and {now} are the next three strings.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Read"
+      },
+      "before": {
+        "type": "String",
+        "example": "unit 108"
+      },
+      "now": {
+        "type": "String",
+        "example": "from the start"
+      },
+      "label": {
+        "type": "String",
+        "example": "Not sure yet"
+      }
+    }
+  },
+  "findLevelCompareUnit": "unit {unit}",
+  "@findLevelCompareUnit": {
+    "description": "Check your level again: a level as a unit.",
+    "placeholders": {
+      "unit": {
+        "type": "int",
+        "example": "108"
+      }
+    }
+  },
+  "findLevelCompareStart": "from the start",
+  "@findLevelCompareStart": {
+    "description": "Check your level again: a level at the very start of the course."
+  },
+  "findLevelUseNew": "Use the new level",
+  "@findLevelUseNew": {
+    "description": "Check your level again: the main button. Takes back the credit above the new level and credits up to it."
+  },
+  "findLevelKeepOld": "Keep the old level",
+  "@findLevelKeepOld": {
+    "description": "Check your level again: the second button. Keeps the level an earlier version found and writes nothing else."
+  },
+  "findLevelToastNewSet": "{language}: your new level is set. Words you have reviewed keep their reviews.",
+  "@findLevelToastNewSet": {
+    "description": "Toast after Use the new level.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Spanish"
+      }
+    }
+  },
+  "findLevelToastOldKept": "{language}: your old level is kept.",
+  "@findLevelToastOldKept": {
+    "description": "Toast after Keep the old level.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Spanish"
+      }
+    }
+  },
+  "settingsRestoreNewerNote": "This backup is from a newer version. A level you corrected there with Check your level again comes back as it was here, and is flagged again until you check it.",
+  "@settingsRestoreNewerNote": {
+    "description": "Restore sheet, when the backup was made by a newer app than this one: what an older app does not know about is lost, such as levels the learner corrected."
+  },
+  "languagesAddQuestion": "What do you want to learn?",
+  "@languagesAddQuestion": {
+    "description": "The heading of Add a language's first screen, above the search and the big tiles of the popular languages."
+  },
+  "languagesSeeAll": "See all languages",
+  "@languagesSeeAll": {
+    "description": "The link under the big tiles on Add a language that opens the full list of languages."
+  },
+  "languagesAllLanguages": "Languages",
   "@languagesAllLanguages": {
-    "description": "The heading of the full alphabetical list under Popular on Add a language."
+    "description": "The heading of the alphabetical list of the languages that have a course, on Add a language's full list."
+  },
+  "languagesTileStatusA1B1": "A1 to B1 ready",
+  "@languagesTileStatusA1B1": {
+    "description": "The line under a language's name on a tile of Add a language: the course has A1, A2 and B1 fully written."
+  },
+  "languagesTileStatusA1A2": "A1 and A2 ready",
+  "@languagesTileStatusA1A2": {
+    "description": "The line under a language's name on a tile of Add a language: the course has A1 and A2 fully written."
+  },
+  "languagesTileStatusA1": "A1 ready",
+  "@languagesTileStatusA1": {
+    "description": "The line under a language's name on a tile of Add a language: the course has A1 fully written."
+  },
+  "languagesTileStatusBeginner": "Beginner course",
+  "@languagesTileStatusBeginner": {
+    "description": "The line under a language's name on a tile of Add a language: the course has A1 partly written."
+  },
+  "languagesScriptsAndSounds": "Scripts and sounds",
+  "@languagesScriptsAndSounds": {
+    "description": "The heading of the group on Add a language's full list that holds the notations taught like languages, the IPA and English Braille."
+  },
+  "languagesScriptsAndSoundsNote": "Learn to read and say, not a language to speak.",
+  "@languagesScriptsAndSoundsNote": {
+    "description": "The line under the Scripts and sounds heading on Add a language."
+  },
+  "languagesComingSoon": "Coming soon",
+  "@languagesComingSoon": {
+    "description": "The header of the folded group on Add a language's full list that holds the languages that have no course yet."
+  },
+  "languagesNoCourseLabel": "{name}, no course yet",
+  "@languagesNoCourseLabel": {
+    "description": "What a screen reader reads for a language in Coming soon on Add a language, which cannot be picked.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Afrikaans"
+      }
+    }
+  },
+  "languagesCourseMadeKey": "How much of the course is made",
+  "@languagesCourseMadeKey": {
+    "description": "The title of the key at the top of Add a language's full list: each language's bar shows how much of its A1, A2, B1 and Culture parts is written. It describes the course, not the learner's own progress."
+  },
+  "languagesCourseMadeLabel": "How much of the course is made: {levels}",
+  "@languagesCourseMadeLabel": {
+    "description": "What a screen reader reads for a language's four-part bar on Add a language; {levels} is the parts with their shares, such as A1 100%, joined with commonListSeparator. It describes the course, not the learner's own progress.",
+    "placeholders": {
+      "levels": {
+        "type": "String",
+        "example": "A1 100%, A2 40%, B1 0%, Culture 10%"
+      }
+    }
   },
   "languagesVerifiedHeading": "Verified by native speakers",
   "@languagesVerifiedHeading": {
@@ -14489,7 +15047,7 @@
   },
   "languagesVerifiedShort": "Verified:",
   "@languagesVerifiedShort": {
-    "description": "Starts the mark under a language's names on Add a language; the state's word follows it."
+    "description": "The start of the tooltip a verification flag shows on Add a language when tapped; the state's word follows it, such as Verified: Somewhat."
   },
   "languagesVerifiedNone": "Not at all",
   "@languagesVerifiedNone": {
@@ -14532,5 +15090,1915 @@
         "example": "somewhat"
       }
     }
-  }
+  },
+  "findLevelScriptWhichLetter": "Which letter makes this sound?",
+  "@findLevelScriptWhichLetter": {
+    "description": "V3 script check, heard: pick the letter."
+  },
+  "findLevelScriptWhichSound": "What sound does this letter make?",
+  "@findLevelScriptWhichSound": {
+    "description": "V3 script check, shown: pick the reading."
+  },
+  "findLevelRateSay": "Say the word in {language}",
+  "@findLevelRateSay": {
+    "description": "V3 Say without a recogniser: the heading.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "findLevelRateSayBody": "Say it aloud, then tell us how it went. This is not scored.",
+  "@findLevelRateSayBody": {
+    "description": "V3 self-rated Say: the instruction."
+  },
+  "findLevelSaidWell": "I said it",
+  "@findLevelSaidWell": {
+    "description": "V3 self-rated Say: the learner said the word."
+  },
+  "findLevelSaidNot": "Not yet",
+  "@findLevelSaidNot": {
+    "description": "V3 self-rated Say: the learner could not say the word."
+  },
+  "findLevelTypeWord": "Type the word in {language}",
+  "@findLevelTypeWord": {
+    "description": "V3 typing question: the heading.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Spanish"
+      }
+    }
+  },
+  "findLevelFillGap": "Type the missing letters",
+  "@findLevelFillGap": {
+    "description": "V3 gap-spelling question: the heading."
+  },
+  "findLevelGapHint": "Missing letters",
+  "@findLevelGapHint": {
+    "description": "V3 gap-spelling field hint."
+  },
+  "findLevelTypeHint": "Type here",
+  "@findLevelTypeHint": {
+    "description": "V3 typing field hint."
+  },
+  "findLevelYesNo": "Do you know this word?",
+  "@findLevelYesNo": {
+    "description": "V3 yes/no question: the heading."
+  },
+  "findLevelHeardYesNo": "Do you know the word you heard?",
+  "@findLevelHeardYesNo": {
+    "description": "V3 heard yes/no question: the heading."
+  },
+  "findLevelYes": "Yes, I know it",
+  "@findLevelYes": {
+    "description": "V3 yes/no: yes."
+  },
+  "findLevelNo": "No",
+  "@findLevelNo": {
+    "description": "V3 yes/no: no."
+  },
+  "findLevelLevelBeginner": "Beginner",
+  "@findLevelLevelBeginner": {
+    "description": "Result card: the level name of a skill that covers under 20% of the path."
+  },
+  "findLevelLevelAmateur": "Amateur",
+  "@findLevelLevelAmateur": {
+    "description": "Result card: the level name from 20% of the path."
+  },
+  "findLevelLevelFluent": "Fluent",
+  "@findLevelLevelFluent": {
+    "description": "Result card: the level name from 45% of the path."
+  },
+  "findLevelLevelExpert": "Expert",
+  "@findLevelLevelExpert": {
+    "description": "Result card: the level name from 75% of the path."
+  },
+  "findLevelPercentRange": "{low}% to {high}% of the path",
+  "@findLevelPercentRange": {
+    "description": "Result card: the range of the whole language path a skill covers, drawn as a bar.",
+    "placeholders": {
+      "low": {"type": "int", "example": "30"},
+      "high": {"type": "int", "example": "45"}
+    }
+  },
+  "findLevelPercentOne": "{percent}% of the path",
+  "@findLevelPercentOne": {
+    "description": "Result card: a skill whose range is one point.",
+    "placeholders": {
+      "percent": {"type": "int", "example": "30"}
+    }
+  },
+  "findLevelResultTitle": "Where you start",
+  "@findLevelResultTitle": {
+    "description": "V3 result: heading."
+  },
+  "findLevelResultSelfRated": "{skill}: self-rated, not placed",
+  "@findLevelResultSelfRated": {
+    "description": "V3 result: Say without a recogniser.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Say"
+      }
+    }
+  },
+  "findLevelResultSelfRatedBody": "Nothing here can hear you, so Say is not placed. You can still practise it from the beginning.",
+  "@findLevelResultSelfRatedBody": {
+    "description": "V3 result: why Say is not placed."
+  },
+  "findLevelResultNotTested": "{skill}: not tested ({reason})",
+  "@findLevelResultNotTested": {
+    "description": "V3 result: a skill left out.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Hear"
+      },
+      "reason": {
+        "type": "String",
+        "example": "no sound"
+      }
+    }
+  },
+  "findLevelReasonNoSound": "no sound on this phone",
+  "@findLevelReasonNoSound": {
+    "description": "V3 result: why Hear was not tested."
+  },
+  "findLevelReasonNoMic": "no microphone available",
+  "@findLevelReasonNoMic": {
+    "description": "V3 result: why Say was not tested."
+  },
+  "findLevelReasonNotEnough": "not enough answers",
+  "@findLevelReasonNotEnough": {
+    "description": "V3 result: why a skill was not placed."
+  },
+  "findLevelResultNeedsScript": "{skill}: needs the script first",
+  "@findLevelResultNeedsScript": {
+    "description": "V3 result: Read or Write while the letters are not known.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Read"
+      }
+    }
+  },
+  "findLevelResultNeedsScriptBody": "Your answers show the letters of this script are not familiar yet, so reading and writing cannot be placed. Learn the letters first. Until then these start from the beginning.",
+  "@findLevelResultNeedsScriptBody": {
+    "description": "V3 result: the why."
+  },
+  "findLevelIReadIt": "I do read it: check again",
+  "@findLevelIReadIt": {
+    "description": "V3 result: the learner says they read the script."
+  },
+  "findLevelCheckLetters": "Check the letters again",
+  "@findLevelCheckLetters": {
+    "description": "V3 result: ask the letters again."
+  },
+  "findLevelScriptPartly": "You know some of the letters, so Read and Write were asked as if you read the script. If a line looks low, check again.",
+  "@findLevelScriptPartly": {
+    "description": "V3 result: note for a partly known script."
+  },
+  "findLevelChange": "Change",
+  "@findLevelChange": {
+    "description": "V3 result: the learner changes a start."
+  },
+  "findLevelChangeTitle": "Start {skill} at unit",
+  "@findLevelChangeTitle": {
+    "description": "V3 result: heading of the change dialog.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Read"
+      }
+    }
+  },
+  "findLevelChangeUse": "Use this",
+  "@findLevelChangeUse": {
+    "description": "V3 result: confirms the change."
+  },
+  "findLevelChangeLess": "One unit earlier",
+  "@findLevelChangeLess": {
+    "description": "V3 result: stepper down."
+  },
+  "findLevelChangeMore": "One unit later",
+  "@findLevelChangeMore": {
+    "description": "V3 result: stepper up."
+  },
+  "findLevelPreparing": "Getting your questions ready…",
+  "@findLevelPreparing": {
+    "description": "Find my level: shown while the questions are made from the decks."
+  },
+  "findLevelPreparingPercent": "Getting your questions ready, {percent} percent",
+  "@findLevelPreparingPercent": {
+    "description": "Find my level: what a screen reader says while the questions are made.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "40"
+      }
+    }
+  },
+  "findLevelPreparingFailed": "The questions could not be made just now. Nothing was changed.",
+  "@findLevelPreparingFailed": {
+    "description": "Find my level: the questions could not be made; Retry follows."
+  },
+  "findLevelPreparingBody": "This happens once for each language. You can leave: it keeps going, and next time it is ready.",
+  "@findLevelPreparingBody": {
+    "description": "Find my level: why the learner waits, and that they may leave."
+  },
+  "findLevelCarryOnNoSound": "Carry on without sound",
+  "@findLevelCarryOnNoSound": {
+    "description": "Find my level: after the sound failed twice in a row, leaves Hear and Say out."
+  },
+  "findLevelChangeUnit": "Unit {unit}",
+  "@findLevelChangeUnit": {
+    "description": "Find my level result: what a screen reader says of the unit a learner is changing a start to.",
+    "placeholders": {
+      "unit": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "progressStarLegend": "Placed and earned {percent}",
+  "@progressStarLegend": {
+    "description": "Under the star, beside a hatched swatch: the share of the star that placement and earning together cover (the hatched layer reaches as far); the solid fill is earned alone.",
+    "placeholders": {
+      "percent": {
+        "type": "double",
+        "example": "0.40",
+        "format": "percentPattern"
+      }
+    }
+  },
+  "progressStarLegendSemantics": "Hatched layer: placed, not yet earned, {percent} with earned",
+  "@progressStarLegendSemantics": {
+    "description": "In the star's screen-reader label: what the hatched layer is.",
+    "placeholders": {
+      "percent": {
+        "type": "double",
+        "example": "0.40",
+        "format": "percentPattern"
+      }
+    }
+  },
+  "progressStarSkillPlaced": "{skill} {fill}, {outline}, {placed} with placed",
+  "@progressStarSkillPlaced": {
+    "description": "One skill's values in the star's screen-reader label when placement credit is held: known of the B1 total, known of what is taught, and with placed pairs counted.",
+    "placeholders": {
+      "skill": {"type": "String", "example": "Read"},
+      "fill": {"type": "double", "example": "0.34", "format": "percentPattern"},
+      "outline": {"type": "String", "example": "57%"},
+      "placed": {"type": "double", "example": "0.60", "format": "percentPattern"}
+    }
+  },
+  "findLevelSheetRange": "{skill}: unit {unit}, {range} · {label}",
+  "@findLevelSheetRange": {
+    "description": "Languages sheet, under a skill's row: where the last check started the skill, the range it is sure of, and how sure.",
+    "placeholders": {
+      "skill": {"type": "String", "example": "Read"},
+      "unit": {"type": "int", "example": "14"},
+      "range": {"type": "String", "example": "likely 11 to 17"},
+      "label": {"type": "String", "example": "Fairly sure"}
+    }
+  },
+  "findLevelSheetRangeBetween": "likely {low} to {high}",
+  "@findLevelSheetRangeBetween": {
+    "description": "Languages sheet: the unit range a check is 80% sure of.",
+    "placeholders": {
+      "low": {"type": "int", "example": "11"},
+      "high": {"type": "int", "example": "17"}
+    }
+  },
+  "findLevelSheetRangeOne": "likely unit {unit}",
+  "@findLevelSheetRangeOne": {
+    "description": "Languages sheet: a range of one unit.",
+    "placeholders": {
+      "unit": {"type": "int", "example": "3"}
+    }
+  },
+  "settingsSharePlacement": "Share placement data",
+  "@settingsSharePlacement": {
+    "description": "Your data: saves the placement records, for the maintainers, where the learner picks."
+  },
+  "settingsSharePlacementDesc": "{count, plural, =1{1 placement} other{{count} placements}} · no words, answers or audio",
+  "@settingsSharePlacementDesc": {
+    "description": "Your data: what the placement file holds.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "searchTabsLabel": "Result types",
+  "@searchTabsLabel": {
+    "description": "Semantic label of the tab bar above search results: one tab per type of result."
+  },
+  "searchTabSemantics": "{name}, {count, plural, one{1 result} other{{count} results}}",
+  "@searchTabSemantics": {
+    "description": "Screen-reader label of a search result tab: the type and how many results it has.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Topics"
+      },
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "searchTabBestMatch": "Best match",
+  "@searchTabBestMatch": {
+    "description": "Screen-reader label of the dot on the first search result tab, which holds the best match."
+  },
+  "searchKindSituations": "Situations",
+  "@searchKindSituations": {
+    "description": "Tab of search results: situation sheets. Used when the sections file gives no name."
+  },
+  "searchKindTopics": "Topics",
+  "@searchKindTopics": {
+    "description": "Tab of search results: topics such as a verb form. Used when the sections file gives no name."
+  },
+  "searchKindDecks": "Decks",
+  "@searchKindDecks": {
+    "description": "Tab of search results: decks. Used when the sections file gives no name."
+  },
+  "searchKindConcepts": "Grammar concepts",
+  "@searchKindConcepts": {
+    "description": "Tab of search results: grammar concepts. Used when the sections file gives no name."
+  },
+  "searchKindUnits": "Units",
+  "@searchKindUnits": {
+    "description": "Tab of search results: units of the course path. Used when the sections file gives no name."
+  },
+  "searchKindCulture": "Culture",
+  "@searchKindCulture": {
+    "description": "Tab of search results: culture cards. Used when the sections file gives no name."
+  },
+  "searchKindProverbs": "Proverbs",
+  "@searchKindProverbs": {
+    "description": "Tab of search results: proverbs. Used when the sections file gives no name."
+  },
+  "searchKindMultiword": "Multi-word verbs",
+  "@searchKindMultiword": {
+    "description": "Tab of search results: multi-word verbs. Used when the sections file gives no name."
+  },
+  "searchTagSituation": "Situation",
+  "@searchTagSituation": {
+    "description": "Small tag on a situation result."
+  },
+  "searchTagGrammar": "Grammar",
+  "@searchTagGrammar": {
+    "description": "Small tag on a grammar concept result."
+  },
+  "searchTagProfessional": "Professional · {profession}",
+  "@searchTagProfessional": {
+    "description": "Small tag on a professional situation found in search: the profession it is for.",
+    "placeholders": {
+      "profession": {
+        "type": "String",
+        "example": "Medicine"
+      }
+    }
+  },
+  "searchTagProfessionalPlain": "Professional",
+  "@searchTagProfessionalPlain": {
+    "description": "Small tag on a professional situation whose profession is not named."
+  },
+  "searchPhraseCount": "{count, plural, one{1 phrase} other{{count} phrases}}",
+  "@searchPhraseCount": {
+    "description": "How many phrases a situation sheet or a professional deck has.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "searchDeckSummary": "{language} · {cards}",
+  "@searchDeckSummary": {
+    "description": "Line under a deck result: its language and how many cards it has.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Spanish"
+      },
+      "cards": {
+        "type": "String",
+        "example": "30 cards"
+      }
+    }
+  },
+  "searchSituationProfession": "{profession} · {phrases}",
+  "@searchSituationProfession": {
+    "description": "Line under a professional situation: the profession and how many phrases it has.",
+    "placeholders": {
+      "profession": {
+        "type": "String",
+        "example": "Medicine"
+      },
+      "phrases": {
+        "type": "String",
+        "example": "11 phrases"
+      }
+    }
+  },
+  "searchTopicSummary": "{language} · {cards}, {units}, {decks}",
+  "@searchTopicSummary": {
+    "description": "Line under a topic result: its language and how many cards, units and decks it names.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Japanese"
+      },
+      "cards": {
+        "type": "String",
+        "example": "31 cards"
+      },
+      "units": {
+        "type": "String",
+        "example": "4 units"
+      },
+      "decks": {
+        "type": "String",
+        "example": "3 decks"
+      }
+    }
+  },
+  "searchUnitsCount": "{count, plural, one{1 unit} other{{count} units}}",
+  "@searchUnitsCount": {
+    "description": "How many units a topic names.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "searchDecksCount": "{count, plural, one{1 deck} other{{count} decks}}",
+  "@searchDecksCount": {
+    "description": "How many decks a topic or a unit names.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "searchTopicKnown": "You know {percent}% of it",
+  "@searchTopicKnown": {
+    "description": "Under the coverage bar of a topic result: the share of its cards the learner knows.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "39"
+      }
+    }
+  },
+  "searchTopicKnownLabel": "You know {percent} percent of this topic",
+  "@searchTopicKnownLabel": {
+    "description": "Screen-reader label of the coverage bar of a topic result.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "39"
+      }
+    }
+  },
+  "searchUnitTitle": "Unit {number}: {title}",
+  "@searchUnitTitle": {
+    "description": "Title of a unit result.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "21"
+      },
+      "title": {
+        "type": "String",
+        "example": "Asking and requesting"
+      }
+    }
+  },
+  "searchUnitPath": "Path · {decks}",
+  "@searchUnitPath": {
+    "description": "Line under a unit result: it is a unit of the course path, and how many decks it has.",
+    "placeholders": {
+      "decks": {
+        "type": "String",
+        "example": "2 decks"
+      }
+    }
+  },
+  "searchAddToCourses": "Add to my courses",
+  "@searchAddToCourses": {
+    "description": "Button on a professional situation found in search: downloads it and adds it to the learner's courses."
+  },
+  "searchAddedToCourses": "Added to your courses",
+  "@searchAddedToCourses": {
+    "description": "Shown on a professional situation the learner added."
+  },
+  "searchOpenDeck": "Open",
+  "@searchOpenDeck": {
+    "description": "Button on a professional situation that was added: opens it."
+  },
+  "searchAdding": "Adding…",
+  "@searchAdding": {
+    "description": "Shown on the Add to my courses button while the deck downloads."
+  },
+  "searchProfessionalNote": "Not shown on Today or the path unless you add it.",
+  "@searchProfessionalNote": {
+    "description": "Under a professional situation found in search: it stays out of Today and the path until added."
+  },
+  "searchProfessionFilterAll": "All professions",
+  "@searchProfessionFilterAll": {
+    "description": "Chip above the situations found in search: no profession chosen."
+  },
+  "searchShowingResultsFor": "Showing results for {query}",
+  "@searchShowingResultsFor": {
+    "description": "Line above results found despite a typo: what the search understood.",
+    "placeholders": {
+      "query": {
+        "type": "String",
+        "example": "te-form"
+      }
+    }
+  },
+  "searchOnlyFor": "Search only for “{query}”",
+  "@searchOnlyFor": {
+    "description": "Link after the corrected search line: searches exactly what was typed.",
+    "placeholders": {
+      "query": {
+        "type": "String",
+        "example": "teform"
+      }
+    }
+  },
+  "searchNothingTypedBody": "Try fewer or shorter words, or the English meaning. Search finds situations, topics, decks, grammar, words, units and proverbs in {language} and the languages you learn.",
+  "@searchNothingTypedBody": {
+    "description": "What the search looks in, under the heading of the empty search state.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Japanese"
+      }
+    }
+  },
+  "searchTry": "Try",
+  "@searchTry": {
+    "description": "Heading above suggested searches under the empty search state."
+  },
+  "searchRecent": "Recent",
+  "@searchRecent": {
+    "description": "Heading above the searches the learner made recently, shown before typing."
+  },
+  "searchFindByType": "Find by type",
+  "@searchFindByType": {
+    "description": "Heading above the types of result, shown before typing."
+  },
+  "searchTabsHint": "Tabs appear after you type, and only for types that have results.",
+  "@searchTabsHint": {
+    "description": "Hint under the types of result, shown before typing."
+  },
+  "topicNotFound": "This topic is not available.",
+  "@topicNotFound": {
+    "description": "Shown on a topic page whose topic the phone does not have."
+  },
+  "topicSubtitle": "{language} · {kind}",
+  "@topicSubtitle": {
+    "description": "Line above a topic's name: its language and what kind of topic it is.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Japanese"
+      },
+      "kind": {
+        "type": "String",
+        "example": "verb forms"
+      }
+    }
+  },
+  "topicKindGrammar": "grammar",
+  "@topicKindGrammar": {
+    "description": "Kind of a topic, in the line above its name."
+  },
+  "topicKindVerbs": "verb forms",
+  "@topicKindVerbs": {
+    "description": "Kind of a topic, in the line above its name."
+  },
+  "topicKindWords": "word class",
+  "@topicKindWords": {
+    "description": "Kind of a topic, in the line above its name."
+  },
+  "topicKindScript": "script",
+  "@topicKindScript": {
+    "description": "Kind of a topic, in the line above its name."
+  },
+  "topicKindRegister": "register",
+  "@topicKindRegister": {
+    "description": "Kind of a topic, in the line above its name."
+  },
+  "topicKindProfession": "profession",
+  "@topicKindProfession": {
+    "description": "Kind of a topic, in the line above its name."
+  },
+  "topicKindOther": "topic",
+  "@topicKindOther": {
+    "description": "Kind of a topic, in the line above its name."
+  },
+  "topicKnownOf": "You know {known} of {total}.",
+  "@topicKnownOf": {
+    "description": "Under a topic's coverage bar: how many of its cards the learner knows.",
+    "placeholders": {
+      "known": {
+        "type": "int",
+        "example": "12"
+      },
+      "total": {
+        "type": "int",
+        "example": "31"
+      }
+    }
+  },
+  "topicKnownBarLabel": "{known} of {total} known",
+  "@topicKnownBarLabel": {
+    "description": "Screen-reader label of a topic's coverage bar.",
+    "placeholders": {
+      "known": {
+        "type": "int",
+        "example": "12"
+      },
+      "total": {
+        "type": "int",
+        "example": "31"
+      }
+    }
+  },
+  "topicUnits": "Units",
+  "@topicUnits": {
+    "description": "Heading above the path units a topic names."
+  },
+  "topicDecks": "Decks",
+  "@topicDecks": {
+    "description": "Heading above the decks a topic names."
+  },
+  "topicConcepts": "Grammar",
+  "@topicConcepts": {
+    "description": "Heading above the grammar concepts a topic names."
+  },
+  "topicSituations": "Situations",
+  "@topicSituations": {
+    "description": "Heading above the situation sheets a topic names."
+  },
+  "topicRelated": "Related topics",
+  "@topicRelated": {
+    "description": "Heading above the topics related to a topic."
+  },
+  "topicCharacters": "Characters",
+  "@topicCharacters": {
+    "description": "Heading above the letters, signs and conjuncts a script topic lists."
+  },
+  "topicCardsHeading": "Cards ({shown} of {total})",
+  "@topicCardsHeading": {
+    "description": "Heading above a topic's cards: how many are listed of how many it names at the learner's level.",
+    "placeholders": {
+      "shown": {
+        "type": "int",
+        "example": "5"
+      },
+      "total": {
+        "type": "int",
+        "example": "31"
+      }
+    }
+  },
+  "topicShowAll": "Show all {count}",
+  "@topicShowAll": {
+    "description": "Button under a topic's first cards: lists every one.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "31"
+      }
+    }
+  },
+  "topicShowFewer": "Show fewer",
+  "@topicShowFewer": {
+    "description": "Button that folds a topic's long list of cards."
+  },
+  "topicDeckCards": "Topic cards: {topic} of {total} cards",
+  "@topicDeckCards": {
+    "description": "Line under a deck on a topic page: how many of its cards belong to the topic.",
+    "placeholders": {
+      "topic": {
+        "type": "int",
+        "example": "18"
+      },
+      "total": {
+        "type": "int",
+        "example": "40"
+      }
+    }
+  },
+  "topicNoCards": "This topic has no cards yet.",
+  "@topicNoCards": {
+    "description": "Shown on a topic page that has no card the learner may be given."
+  },
+  "topicDrill": "Drill this topic",
+  "@topicDrill": {
+    "description": "Button at the foot of a topic page: starts a drill on the topic's cards only."
+  },
+  "topicDrillCount": "Drill this topic · {count, plural, one{1 card} other{{count} cards}}",
+  "@topicDrillCount": {
+    "description": "Button at the foot of a topic page with how many cards the drill uses.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "topicChoose": "Choose…",
+  "@topicChoose": {
+    "description": "Button under the drill button: opens the sheet that chooses how many cards and which skills."
+  },
+  "topicNothingToDrill": "Nothing to drill here yet.",
+  "@topicNothingToDrill": {
+    "description": "Under the disabled drill button of a topic with no card at the learner's level."
+  },
+  "topicSheetTitle": "Drill: {name}",
+  "@topicSheetTitle": {
+    "description": "Title of the sheet that chooses a topic's drill.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Te-form"
+      }
+    }
+  },
+  "topicSheetBody": "Cards from this topic only, in the order the scheduler picks them.",
+  "@topicSheetBody": {
+    "description": "First line of the topic drill sheet."
+  },
+  "topicHowMany": "How many",
+  "@topicHowMany": {
+    "description": "Heading of the choice of how many cards a topic drill uses."
+  },
+  "topicHowManyN": "{count} cards",
+  "@topicHowManyN": {
+    "description": "A choice of how many cards a topic drill uses.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "topicHowManyAll": "All ({count})",
+  "@topicHowManyAll": {
+    "description": "The choice that uses every card of the topic at the learner's level.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "topicChooseASkill": "Choose at least one skill.",
+  "@topicChooseASkill": {
+    "description": "Under the skills of the topic drill sheet when none is ticked (Start is disabled)."
+  },
+  "topicSkills": "Skills",
+  "@topicSkills": {
+    "description": "Heading of the choice of skills a topic drill asks."
+  },
+  "topicSkillRead": "Read",
+  "@topicSkillRead": {
+    "description": "Skill chip in the topic drill sheet: recognising the word."
+  },
+  "topicSkillHear": "Hear",
+  "@topicSkillHear": {
+    "description": "Skill chip in the topic drill sheet: listening."
+  },
+  "topicSkillSay": "Say",
+  "@topicSkillSay": {
+    "description": "Skill chip in the topic drill sheet: speaking."
+  },
+  "topicSkillWrite": "Write",
+  "@topicSkillWrite": {
+    "description": "Skill chip in the topic drill sheet: typing the word."
+  },
+  "topicStartDrill": "Start drill",
+  "@topicStartDrill": {
+    "description": "Button of the topic drill sheet."
+  },
+  "topicOnUnit": "Topics in this unit",
+  "@topicOnUnit": {
+    "description": "Heading above the topics a unit page lists as chips."
+  },
+  "topicLevelLine": "Starts at {level}",
+  "@topicLevelLine": {
+    "description": "Spoken label of a topic's level.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A2"
+      }
+    }
+  },
+  "languagesCulture": "Culture",
+  "@languagesCulture": {
+    "description": "Switch in a language’s details: culture items (proverbs, songs, verse) in that language’s path, on Today and in reviews. Opens its options in place."
+  },
+  "languagesCultureOn": "Proverbs, songs and verse in the path, on Today and in reviews",
+  "@languagesCultureOn": {
+    "description": "Line under the Culture switch of a language’s details while it is on."
+  },
+  "languagesCultureOff": "Off. You can still read and search it in Decks",
+  "@languagesCultureOff": {
+    "description": "Line under the Culture switch of a language’s details while it is off."
+  },
+  "cultureSettingCounts": "Count toward path progress",
+  "@cultureSettingCounts": {
+    "description": "Switch of the culture settings: whether a woven culture item counts as a step of its unit."
+  },
+  "cultureSettingCountsOn": "A culture item counts as a step of its unit",
+  "@cultureSettingCountsOn": {
+    "description": "Line under the counting switch while it is on."
+  },
+  "cultureSettingCountsOff": "Off: culture is a bonus",
+  "@cultureSettingCountsOff": {
+    "description": "Line under the counting switch while it is off."
+  },
+  "cultureSettingCreators": "Show creator and legacy",
+  "@cultureSettingCreators": {
+    "description": "Switch of the culture settings: the person behind an item and what still lives today."
+  },
+  "cultureSettingCreatorsOn": "Who made it and what still lives today",
+  "@cultureSettingCreatorsOn": {
+    "description": "Line under the creator switch while it is on."
+  },
+  "cultureSettingCreatorsOff": "Only the item and its source",
+  "@cultureSettingCreatorsOff": {
+    "description": "Line under the creator switch while it is off."
+  },
+  "cultureKindProverb": "Proverb",
+  "@cultureKindProverb": {
+    "description": "What a culture item is: a proverb."
+  },
+  "cultureKindLine": "Line",
+  "@cultureKindLine": {
+    "description": "What a culture item is: a line or stanza of verse or prose."
+  },
+  "cultureKindPassage": "Passage",
+  "@cultureKindPassage": {
+    "description": "What a culture item is: a passage of prose."
+  },
+  "cultureItemTitle": "Culture · {level}",
+  "@cultureItemTitle": {
+    "description": "Title of a culture item’s page.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "cultureItemNotFound": "This culture item isn’t here",
+  "@cultureItemNotFound": {
+    "description": "Shown when a culture item cannot be found."
+  },
+  "cultureListen": "Listen",
+  "@cultureListen": {
+    "description": "Tooltip of the button that plays a culture item aloud."
+  },
+  "cultureGlossTitle": "Words",
+  "@cultureGlossTitle": {
+    "description": "Heading above the glossed words of a passage."
+  },
+  "cultureGlossEntry": "{word} · {meaning}",
+  "@cultureGlossEntry": {
+    "description": "A glossed word and what it means.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "देश"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "country"
+      }
+    }
+  },
+  "cultureNoAuthorTitle": "No single author",
+  "@cultureNoAuthorTitle": {
+    "description": "Title of the note on a folk saying nobody wrote."
+  },
+  "cultureNoAuthorBody": "A folk saying, in use for centuries.",
+  "@cultureNoAuthorBody": {
+    "description": "Body of the note on a folk saying nobody wrote."
+  },
+  "cultureNoKnownAuthor": "No known author",
+  "@cultureNoKnownAuthor": {
+    "description": "The author of a source line when the source names none."
+  },
+  "culturePractise": "Practise this item",
+  "@culturePractise": {
+    "description": "Button that practises a culture item."
+  },
+  "culturePractiseAgain": "Practise again",
+  "@culturePractiseAgain": {
+    "description": "Button that practises a culture item already met."
+  },
+  "cultureMet": "You have met this item",
+  "@cultureMet": {
+    "description": "Line on a culture item the learner has met."
+  },
+  "cultureBonusNote": "A bonus: it does not count toward your progress.",
+  "@cultureBonusNote": {
+    "description": "Note under the practise button while culture is a bonus."
+  },
+  "cultureCountsNote": "It counts toward your progress in this unit.",
+  "@cultureCountsNote": {
+    "description": "Note under the practise button while culture counts toward the unit."
+  },
+  "cultureAllItems": "All culture items",
+  "@cultureAllItems": {
+    "description": "Link from a culture item to the whole culture deck."
+  },
+  "cultureBasisPublicDomain": "public domain",
+  "@cultureBasisPublicDomain": {
+    "description": "Part of a source line: the text is in the public domain."
+  },
+  "cultureBasisPublicDomainDied": "public domain: author died {year}",
+  "@cultureBasisPublicDomainDied": {
+    "description": "Part of a source line: the text is in the public domain because its author died in {year}.",
+    "placeholders": {
+      "year": {
+        "type": "String",
+        "example": "1936"
+      }
+    }
+  },
+  "cultureBasisLicensed": "licensed: {licence}",
+  "@cultureBasisLicensed": {
+    "description": "Part of a source line: the text is used under a licence.",
+    "placeholders": {
+      "licence": {
+        "type": "String",
+        "example": "CC-BY-4.0"
+      }
+    }
+  },
+  "cultureBasisQuotation": "short quotation",
+  "@cultureBasisQuotation": {
+    "description": "Part of a source line: the text is a short quotation the law allows."
+  },
+  "cultureBasisOral": "oral tradition",
+  "@cultureBasisOral": {
+    "description": "Part of a source line: the text is from oral tradition."
+  },
+  "cultureLegacyTitle": "Still alive today",
+  "@cultureLegacyTitle": {
+    "description": "Heading of the block on how a person and their work still shape the culture."
+  },
+  "cultureLegacyMore": "Tap the person for more",
+  "@cultureLegacyMore": {
+    "description": "Under the one legacy line on an item."
+  },
+  "cultureLegacyYear": "{year}: {text}",
+  "@cultureLegacyYear": {
+    "description": "A legacy example with its year.",
+    "placeholders": {
+      "year": {
+        "type": "int",
+        "example": "1990"
+      },
+      "text": {
+        "type": "String",
+        "example": "Taught in schools."
+      }
+    }
+  },
+  "cultureCreatorOpens": "Opens the person’s card",
+  "@cultureCreatorOpens": {
+    "description": "Spoken hint of the creator chip."
+  },
+  "cultureAbout": "About {name}",
+  "@cultureAbout": {
+    "description": "Heading above a creator’s bio.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Kabir"
+      }
+    }
+  },
+  "cultureTimelineHeading": "Timeline",
+  "@cultureTimelineHeading": {
+    "description": "Heading above the timeline strip on a creator’s card."
+  },
+  "cultureImageNone": "No licensed image yet",
+  "@cultureImageNone": {
+    "description": "Under a creator’s picture when the file has no licensed image, and the placeholder’s spoken label."
+  },
+  "cultureImageCredit": "Image: {credit}",
+  "@cultureImageCredit": {
+    "description": "Credit line under a creator’s picture: who made it and the licence.",
+    "placeholders": {
+      "credit": {
+        "type": "String",
+        "example": "Wikimedia Commons · public domain"
+      }
+    }
+  },
+  "cultureImagePublicDomain": "public domain",
+  "@cultureImagePublicDomain": {
+    "description": "Licence in a creator picture’s credit line."
+  },
+  "cultureImageOf": "Picture of {name}",
+  "@cultureImageOf": {
+    "description": "Spoken label of a creator’s picture.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Kabir"
+      }
+    }
+  },
+  "cultureImageLicenceLink": "Licence and source",
+  "@cultureImageLicenceLink": {
+    "description": "Link under a creator’s picture to its licence page."
+  },
+  "cultureLinkCopied": "Link copied",
+  "@cultureLinkCopied": {
+    "description": "Toast when a link could not be opened and was copied."
+  },
+  "cultureYearBce": "{year} BCE",
+  "@cultureYearBce": {
+    "description": "A year before the common era.",
+    "placeholders": {
+      "year": {
+        "type": "int",
+        "example": "500"
+      }
+    }
+  },
+  "cultureYearCirca": "c. {year}",
+  "@cultureYearCirca": {
+    "description": "An uncertain year.",
+    "placeholders": {
+      "year": {
+        "type": "String",
+        "example": "1500"
+      }
+    }
+  },
+  "cultureLifespan": "{born} to {died}",
+  "@cultureLifespan": {
+    "description": "A person’s dates.",
+    "placeholders": {
+      "born": {
+        "type": "String",
+        "example": "1861"
+      },
+      "died": {
+        "type": "String",
+        "example": "1941"
+      }
+    }
+  },
+  "cultureLifespanLiving": "{born}, living",
+  "@cultureLifespanLiving": {
+    "description": "A living person’s birth year.",
+    "placeholders": {
+      "born": {
+        "type": "String",
+        "example": "1962"
+      }
+    }
+  },
+  "cultureBorn": "Born {year}",
+  "@cultureBorn": {
+    "description": "A person whose death is not known.",
+    "placeholders": {
+      "year": {
+        "type": "String",
+        "example": "1962"
+      }
+    }
+  },
+  "cultureDied": "Died {year}",
+  "@cultureDied": {
+    "description": "A person whose birth is not known.",
+    "placeholders": {
+      "year": {
+        "type": "String",
+        "example": "1941"
+      }
+    }
+  },
+  "cultureTimelineTitle": "Timeline",
+  "@cultureTimelineTitle": {
+    "description": "Title of the full timeline screen."
+  },
+  "cultureTimelineStripLabel": "Timeline",
+  "@cultureTimelineStripLabel": {
+    "description": "Spoken label of the timeline strip."
+  },
+  "cultureTimelineFull": "Full timeline",
+  "@cultureTimelineFull": {
+    "description": "Button under the strip that opens the full timeline."
+  },
+  "cultureTimelineToday": "Today",
+  "@cultureTimelineToday": {
+    "description": "The right end of the timeline."
+  },
+  "cultureTimelineThis": "this one",
+  "@cultureTimelineThis": {
+    "description": "Spoken state of the timeline event of the work or person being looked at."
+  },
+  "cultureTimelineMet": "you met this",
+  "@cultureTimelineMet": {
+    "description": "State of a timeline event the learner has met."
+  },
+  "cultureTimelineNotYet": "not met yet",
+  "@cultureTimelineNotYet": {
+    "description": "State of a timeline event the learner has not met."
+  },
+  "cultureTimelineEventLabel": "{year}: {label}. {state}",
+  "@cultureTimelineEventLabel": {
+    "description": "Spoken label of a timeline event.",
+    "placeholders": {
+      "year": {
+        "type": "String",
+        "example": "1933"
+      },
+      "label": {
+        "type": "String",
+        "example": "Premchand · Idgah"
+      },
+      "state": {
+        "type": "String",
+        "example": "you met this"
+      }
+    }
+  },
+  "cultureTimelineWork": "{who} · {work}",
+  "@cultureTimelineWork": {
+    "description": "A work on the timeline: its creator and its name.",
+    "placeholders": {
+      "who": {
+        "type": "String",
+        "example": "Premchand"
+      },
+      "work": {
+        "type": "String",
+        "example": "Idgah"
+      }
+    }
+  },
+  "cultureTimelineYearLabel": "{year} · {label}",
+  "@cultureTimelineYearLabel": {
+    "description": "A timeline event with its year.",
+    "placeholders": {
+      "year": {
+        "type": "int",
+        "example": "1933"
+      },
+      "label": {
+        "type": "String",
+        "example": "Premchand · Idgah"
+      }
+    }
+  },
+  "cultureTimelineIntro": "Where the works you have met in {language} sit in time. Filled marks are works you have met.",
+  "@cultureTimelineIntro": {
+    "description": "Intro of the full timeline.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "cultureTimelineIntroCreator": "Where {name} sits among the works you have met in {language}. Filled marks are works you have met.",
+  "@cultureTimelineIntroCreator": {
+    "description": "Intro of the full timeline from a creator’s card.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Kabir"
+      },
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "cultureTimelineEmpty": "Nothing on the timeline yet",
+  "@cultureTimelineEmpty": {
+    "description": "Shown when there is nothing on the timeline."
+  },
+  "cultureDeckTitle": "{language} culture",
+  "@cultureDeckTitle": {
+    "description": "Title of the full culture deck of a course.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "cultureDeckCount": "{count, plural, =1{1 item} other{{count} items}}",
+  "@cultureDeckCount": {
+    "description": "Under the title of the culture deck.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "cultureDeckEmpty": "No culture items yet",
+  "@cultureDeckEmpty": {
+    "description": "Empty state of the culture deck."
+  },
+  "cultureDeckEmptyBody": "This course has no proverbs or culture decks yet.",
+  "@cultureDeckEmptyBody": {
+    "description": "Body of the empty culture deck."
+  },
+  "culturePeople": "People",
+  "@culturePeople": {
+    "description": "Heading of the list of creators in the culture deck."
+  },
+  "cultureRowKindSource": "{kind} · {source}",
+  "@cultureRowKindSource": {
+    "description": "Line under a culture item in the deck: its kind and where it comes from.",
+    "placeholders": {
+      "kind": {
+        "type": "String",
+        "example": "Stanza"
+      },
+      "source": {
+        "type": "String",
+        "example": "Kabir · Dohavali · c. 1500"
+      }
+    }
+  },
+  "cultureDeckSourcesNote": "Every source line shows the author, the work, the date and why it may be quoted.",
+  "@cultureDeckSourcesNote": {
+    "description": "Note at the foot of the culture deck."
+  },
+  "cultureCardKind": "{kind}:",
+  "@cultureCardKind": {
+    "description": "The kind of a culture item on its card, before its first words.",
+    "placeholders": {
+      "kind": {
+        "type": "String",
+        "example": "Proverb"
+      }
+    }
+  },
+  "cultureCardLineBonus": "Culture · {level} · bonus",
+  "@cultureCardLineBonus": {
+    "description": "Line on the culture card of a unit while culture is a bonus.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "cultureCardLineCounts": "Culture · {level} · counts toward the unit",
+  "@cultureCardLineCounts": {
+    "description": "Line on the culture card of a unit while culture counts.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "cultureOffHint": "Culture items are off for this language. Turn them on in its details.",
+  "@cultureOffHint": {
+    "description": "Shown in a unit while culture items are off for the language."
+  },
+  "cultureTodayTitle": "Culture · {level}",
+  "@cultureTodayTitle": {
+    "description": "Title of Today’s culture row.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "cultureTodayLine": "{kind}, skip anytime",
+  "@cultureTodayLine": {
+    "description": "Line of Today’s culture row.",
+    "placeholders": {
+      "kind": {
+        "type": "String",
+        "example": "Proverb"
+      }
+    }
+  },
+  "recMediumBook": "Book",
+  "@recMediumBook": {
+    "description": "Kind of work: a book."
+  },
+  "recMediumFilm": "Film",
+  "@recMediumFilm": {
+    "description": "Kind of work: a film."
+  },
+  "recMediumSeries": "Series",
+  "@recMediumSeries": {
+    "description": "Kind of work: a series."
+  },
+  "recMediumSong": "Song",
+  "@recMediumSong": {
+    "description": "Kind of work: a song."
+  },
+  "recMediumPlay": "Play",
+  "@recMediumPlay": {
+    "description": "Kind of work: a play."
+  },
+  "recMediumPodcast": "Podcast",
+  "@recMediumPodcast": {
+    "description": "Kind of work: a podcast."
+  },
+  "recMediumComic": "Comic",
+  "@recMediumComic": {
+    "description": "Kind of work: a comic."
+  },
+  "recPublicDomain": "Public domain",
+  "@recPublicDomain": {
+    "description": "Badge on a recommended work in the public domain."
+  },
+  "recAlsoInDeck": "Also in your culture deck: {deck}",
+  "@recAlsoInDeck": {
+    "description": "Line on a recommended work that a culture deck also quotes.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Premchand: Idgah"
+      }
+    }
+  },
+  "recNotIncluded": "Not included in the app: find it where you read, watch or listen.",
+  "@recNotIncluded": {
+    "description": "Line on the open recommended work."
+  },
+  "recLegalLine": "{kind}: {note}",
+  "@recLegalLine": {
+    "description": "A legal way to get a work, with its note.",
+    "placeholders": {
+      "kind": {
+        "type": "String",
+        "example": "Library"
+      },
+      "note": {
+        "type": "String",
+        "example": "Free: public domain"
+      }
+    }
+  },
+  "recLegalLibrary": "Library",
+  "@recLegalLibrary": {
+    "description": "Kind of legal route: a library."
+  },
+  "recLegalPublisher": "Publisher",
+  "@recLegalPublisher": {
+    "description": "Kind of legal route: the publisher."
+  },
+  "recLegalStore": "Store",
+  "@recLegalStore": {
+    "description": "Kind of legal route: a store."
+  },
+  "recLegalStream": "Stream",
+  "@recLegalStream": {
+    "description": "Kind of legal route: a streaming service."
+  },
+  "recLegalArchive": "Archive",
+  "@recLegalArchive": {
+    "description": "Kind of legal route: an archive."
+  },
+  "recLegalPublicDomain": "Public-domain copy",
+  "@recLegalPublicDomain": {
+    "description": "Kind of legal route: a public-domain copy."
+  },
+  "recIComplete": "I’ve completed this",
+  "@recIComplete": {
+    "description": "Button that marks a recommended work completed."
+  },
+  "recCompleted": "Completed",
+  "@recCompleted": {
+    "description": "Button and spoken label of a completed recommended work."
+  },
+  "recNotCompleted": "Marked as not completed",
+  "@recNotCompleted": {
+    "description": "Toast after a work’s completed mark is taken away."
+  },
+  "recQuestions": "Questions",
+  "@recQuestions": {
+    "description": "Button that opens the questions of a completed work."
+  },
+  "recHomeTitle": "Culture you have completed",
+  "@recHomeTitle": {
+    "description": "Title of the completed works card on Today."
+  },
+  "recHomeNone": "Nothing completed yet.",
+  "@recHomeNone": {
+    "description": "Line of the completed works card when there are none."
+  },
+  "recHomeCount": "{works, plural, =1{1 work} other{{works} works}} · {questions} with questions",
+  "@recHomeCount": {
+    "description": "Line of the completed works card: how many works and how many have questions.",
+    "placeholders": {
+      "works": {
+        "type": "int",
+        "example": "2"
+      },
+      "questions": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "recHomeSeeAll": "See all and recommendations",
+  "@recHomeSeeAll": {
+    "description": "Button of the completed works card."
+  },
+  "recCoverLabel": "{title}, completed",
+  "@recCoverLabel": {
+    "description": "Spoken label of a completed work’s cover.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Idgah"
+      }
+    }
+  },
+  "recWorkNotFound": "This work isn’t here",
+  "@recWorkNotFound": {
+    "description": "Shown when a recommended work cannot be found."
+  },
+  "recNoQuestions": "This work has no questions yet",
+  "@recNoQuestions": {
+    "description": "Shown for a completed work that has no questions."
+  },
+  "recQuestionsLocked": "Questions come after you complete the work",
+  "@recQuestionsLocked": {
+    "description": "Title shown when the questions of a work not completed are asked for."
+  },
+  "recQuestionsLockedBody": "Mark the work completed to answer its questions. They also join your lessons then.",
+  "@recQuestionsLockedBody": {
+    "description": "Body shown when the questions of a work not completed are asked for."
+  },
+  "recQuestionsIntro": "Questions in {language} about the work you completed. They are not graded against a score; a miss shows what to re-read.",
+  "@recQuestionsIntro": {
+    "description": "Intro of the questions of a completed work.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "recQuestionOf": "Question {number} of {total}",
+  "@recQuestionOf": {
+    "description": "Which question of a work is shown.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "recOptionRight": "right answer",
+  "@recOptionRight": {
+    "description": "Spoken state of the right choice after answering."
+  },
+  "recOptionWrong": "your answer, not right",
+  "@recOptionWrong": {
+    "description": "Spoken state of a wrong choice after answering."
+  },
+  "recOptionLabel": "{option}, {state}",
+  "@recOptionLabel": {
+    "description": "Spoken label of a choice after answering.",
+    "placeholders": {
+      "option": {
+        "type": "String",
+        "example": "a pair of tongs"
+      },
+      "state": {
+        "type": "String",
+        "example": "right answer"
+      }
+    }
+  },
+  "recFeedbackRight": "Right",
+  "@recFeedbackRight": {
+    "description": "Feedback after a right answer."
+  },
+  "recFeedbackWrong": "Not quite",
+  "@recFeedbackWrong": {
+    "description": "Feedback after a wrong answer."
+  },
+  "recReread": "Re-read: {line}",
+  "@recReread": {
+    "description": "What to re-read after a miss.",
+    "placeholders": {
+      "line": {
+        "type": "String",
+        "example": "A short story about a boy at the Eid fair."
+      }
+    }
+  },
+  "recQuestionsNext": "Next",
+  "@recQuestionsNext": {
+    "description": "Button to the next question."
+  },
+  "recQuestionsFinish": "Finish",
+  "@recQuestionsFinish": {
+    "description": "Button after the last question."
+  },
+  "recQuestionsDone": "All questions answered",
+  "@recQuestionsDone": {
+    "description": "Title when the last question of a work is answered."
+  },
+  "recQuestionsScore": "You answered {right} of {total} right.",
+  "@recQuestionsScore": {
+    "description": "Score when the questions of a work are done.",
+    "placeholders": {
+      "right": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "recQuestionsNote": "The same questions come back in your lessons and reviews while the work is marked completed.",
+  "@recQuestionsNote": {
+    "description": "Note under the questions of a completed work."
+  },
+  "privateIntro": "Whole languages and changed courses you bring as a file. They stay on this phone and in your backups. Nothing is sent anywhere.",
+  "@privateIntro": {"description": "Intro line at the top of the private languages part of Your decks."},
+  "privateAdd": "Add a private language",
+  "@privateAdd": {"description": "The main button on Your decks: opens a file chooser for a .fnzip package."},
+  "privateDownload": "Download a course to change",
+  "@privateDownload": {"description": "A row on Your decks: opens the list of courses on the phone to save one as a package to edit."},
+  "privateDownloadDesc": "Any course already on this phone",
+  "@privateDownloadDesc": {"description": "Under Download a course to change."},
+  "privateStarter": "Get a starter package",
+  "@privateStarter": {"description": "A row on Your decks: saves a small example package."},
+  "privateStarterDesc": "A small example you can edit",
+  "@privateStarterDesc": {"description": "Under Get a starter package."},
+  "privateListHeading": "Your private languages · {count}",
+  "@privateListHeading": {"description": "Heading above the private language groups on Your decks.", "placeholders": {"count": {"type": "int"}}},
+  "privateUsage": "{active} of 3 active. {size} used on this phone.",
+  "@privateUsage": {"description": "Line under the heading of the private languages: how many are active of the 3 allowed, and the disk they use.", "placeholders": {"active": {"type": "int"}, "size": {"type": "String"}}},
+  "privateUnavailable": "Private languages cannot be added on this device.",
+  "@privateUnavailable": {"description": "Shown on Your decks where private packages cannot be kept (the web)."},
+  "privateEmptyTitle": "No private languages yet",
+  "@privateEmptyTitle": {"description": "Empty state of the private languages on Your decks."},
+  "privateEmptyBody": "A private language is a file (.fnzip) that you bring: a whole new language, or your own version of a course. It stays on this phone and in your backups.",
+  "@privateEmptyBody": {"description": "Empty state body of the private languages on Your decks."},
+  "privateKindNew": "New language",
+  "@privateKindNew": {"description": "Tag on a private package that adds a language the app does not teach."},
+  "privateKindChanged": "Changed course",
+  "@privateKindChanged": {"description": "Tag on a private package that changes a course the app teaches."},
+  "privateModified": "Privately modified",
+  "@privateModified": {"description": "Small tag shown wherever a course or path is changed by a private package."},
+  "privateModifiedOpen": "Privately modified, open Your decks",
+  "@privateModifiedOpen": {"description": "Screen reader label of the privately modified tag, which opens Your decks."},
+  "privateActive": "Active",
+  "@privateActive": {"description": "Tag and switch label: the private package is read by the app."},
+  "privateNotActive": "Not active",
+  "@privateNotActive": {"description": "Tag: the private package is installed but switched off."},
+  "privateNeedsSlot": "Needs a free slot",
+  "@privateNeedsSlot": {"description": "Tag: the private package is off because three others are active."},
+  "privateNoVoiceTag": "No voice",
+  "@privateNoVoiceTag": {"description": "Tag: the phone has no voice for this private language."},
+  "privateSubtitle": "{ownName} · {id} · revision {revision}",
+  "@privateSubtitle": {"description": "Line under a private package’s name: its name for itself, package id and revision.", "placeholders": {"ownName": {"type": "String"}, "id": {"type": "String"}, "revision": {"type": "int"}}},
+  "privateSize": "Size",
+  "@privateSize": {"description": "Label in a private package’s group: its size."},
+  "privateSizeValue": "{size} of 10 MB",
+  "@privateSizeValue": {"description": "The package’s size against the 10 MB limit.", "placeholders": {"size": {"type": "String"}}},
+  "privateBarLabel": "{size} of the 10 MB limit",
+  "@privateBarLabel": {"description": "Screen reader label of the size bar of a private package.", "placeholders": {"size": {"type": "String"}}},
+  "privateHolds": "Holds",
+  "@privateHolds": {"description": "Label in a private package’s group: what it holds."},
+  "privateHoldsValue": "{cards, plural, =1{1 card} other{{cards} cards}}, {units, plural, =1{1 unit} other{{units} units}}, {decks, plural, =1{1 deck} other{{decks} decks}}",
+  "@privateHoldsValue": {"description": "What a private package holds.", "placeholders": {"cards": {"type": "int"}, "units": {"type": "int"}, "decks": {"type": "int"}}},
+  "privateBasedOn": "Based on",
+  "@privateBasedOn": {"description": "Label in a private package’s group: the course revision it starts from."},
+  "privateAddedOn": "Added",
+  "@privateAddedOn": {"description": "Label in a private package’s group: when it was added."},
+  "privateSwitchOn": "Shown in Languages, Today and drills.",
+  "@privateSwitchOn": {"description": "Under the Active switch of a private package that is on."},
+  "privateSwitchOff": "Hidden everywhere. Your progress is kept.",
+  "@privateSwitchOff": {"description": "Under the Active switch of a private package that is off."},
+  "privateSwitchNeeds": "Off. Three are active, the most at a time.",
+  "@privateSwitchNeeds": {"description": "Under the Active switch of a package waiting for a free slot."},
+  "privateSwitchLabel": "Active: {name}",
+  "@privateSwitchLabel": {"description": "Screen reader label of a private package’s Active switch.", "placeholders": {"name": {"type": "String"}}},
+  "privateUpdate": "Update",
+  "@privateUpdate": {"description": "Button on a private package: choose a newer file of it."},
+  "privateExport": "Export",
+  "@privateExport": {"description": "Button on a private package: save it as a .fnzip."},
+  "privateRemove": "Remove",
+  "@privateRemove": {"description": "Button on a private package: remove it, after asking. Error colour."},
+  "privateNoVoiceTitle": "No voice on your phone.",
+  "@privateNoVoiceTitle": {"description": "Bold start of the no-voice notice on a private language."},
+  "privateNoVoiceBody": "This language has no voice on your phone: speaking and sound drills are hidden.",
+  "@privateNoVoiceBody": {"description": "The no-voice notice on a private language (owner’s wording)."},
+  "privateWhy": "Why?",
+  "@privateWhy": {"description": "Button on the no-voice notice: opens an explanation."},
+  "privateWhyTitle": "No voice for {name}",
+  "@privateWhyTitle": {"description": "Title of the sheet that explains the missing voice.", "placeholders": {"name": {"type": "String"}}},
+  "privateWhyBody": "This language has no voice on your phone: speaking and sound drills are hidden. Reading and writing drills work as usual.",
+  "@privateWhyBody": {"description": "Body of the sheet that explains the missing voice."},
+  "privateWhyHint": "If you install a text-to-speech voice for it in your phone’s settings, turn {name} off and on in Your decks and the app checks again.",
+  "@privateWhyHint": {"description": "Hint in the sheet that explains the missing voice.", "placeholders": {"name": {"type": "String"}}},
+  "privateCheckAgain": "Check again now",
+  "@privateCheckAgain": {"description": "Button in the missing-voice sheet: asks the phone for its voices again."},
+  "privateCapTitle": "Turn one off first",
+  "@privateCapTitle": {"description": "Title of the sheet shown when a fourth private language is added."},
+  "privateCapBody": "Three private languages are active, the most at a time. To use {name}, turn one off. Nothing is deleted and your progress is kept.",
+  "@privateCapBody": {"description": "Body of the fourth-package sheet.", "placeholders": {"name": {"type": "String"}}},
+  "privateCapTurnOff": "Turn off",
+  "@privateCapTurnOff": {"description": "Heading above the choice of which private language to turn off."},
+  "privateStudiedOn": "Last studied {date} · {size}",
+  "@privateStudiedOn": {"description": "Under a choice in the fourth-package sheet: when it was last studied and its size.", "placeholders": {"date": {"type": "String"}, "size": {"type": "String"}}},
+  "privateNeverStudied": "Not studied yet · {size}",
+  "@privateNeverStudied": {"description": "Under a choice in the fourth-package sheet when never studied.", "placeholders": {"size": {"type": "String"}}},
+  "privateCapSwap": "Turn off {off} and turn on {on}",
+  "@privateCapSwap": {"description": "Button of the fourth-package sheet.", "placeholders": {"off": {"type": "String"}, "on": {"type": "String"}}},
+  "privateCapKeep": "Keep {name} off",
+  "@privateCapKeep": {"description": "Button of the fourth-package sheet: leaves the new package off.", "placeholders": {"name": {"type": "String"}}},
+  "privateRemoveTitle": "Remove {name}?",
+  "@privateRemoveTitle": {"description": "Title of the dialog that asks before removing a private package.", "placeholders": {"name": {"type": "String"}}},
+  "privateRemoveBody": "This deletes the package’s files from this phone. Your progress on its cards is kept, and comes back if you add the package again.",
+  "@privateRemoveBody": {"description": "Body of the remove dialog for a private package."},
+  "privateRemoveCourse": "The built-in {course} course returns, with its own path.",
+  "@privateRemoveCourse": {"description": "Line of the remove dialog for a package that changed a built-in course.", "placeholders": {"course": {"type": "String"}}},
+  "privateRemoveConfirm": "Remove",
+  "@privateRemoveConfirm": {"description": "Button of the remove dialog, error colour: removes the package and keeps the progress."},
+  "privateRemoveDelete": "Remove and delete my progress",
+  "@privateRemoveDelete": {"description": "Second button of the remove dialog, error colour: also deletes the learner’s reviews of the package’s cards."},
+  "privateRemoveDeleteNote": "Remove and delete my progress also deletes your reviews of its cards. A backup of everything is kept first.",
+  "@privateRemoveDeleteNote": {"description": "Line of the remove dialog about the second choice."},
+  "privateRemoved": "{name} removed",
+  "@privateRemoved": {"description": "Toast after a private package is removed.", "placeholders": {"name": {"type": "String"}}},
+  "privateRemoveFailed": "The package could not be removed.",
+  "@privateRemoveFailed": {"description": "Toast when removing a private package failed."},
+  "privateSwitchFailed": "The package could not be changed.",
+  "@privateSwitchFailed": {"description": "Toast when switching a private package on or off failed."},
+  "privatePickTitle": "Choose a package file",
+  "@privatePickTitle": {"description": "Title of the system file chooser for a private package."},
+  "privateReadFailed": "That file could not be read.",
+  "@privateReadFailed": {"description": "Toast when the chosen package file could not be read."},
+  "privateReviewTitle": "Check the package",
+  "@privateReviewTitle": {"description": "Title of the screen that checks a private package."},
+  "privateChecking": "Checking…",
+  "@privateChecking": {"description": "Under the file name while a private package is checked."},
+  "privateCancel": "Cancel",
+  "@privateCancel": {"description": "Button while a private package is checked."},
+  "privateFileSize": "{size} of 10 MB",
+  "@privateFileSize": {"description": "The chosen file’s size against the 10 MB limit.", "placeholders": {"size": {"type": "String"}}},
+  "privateLabelLanguage": "Language",
+  "@privateLabelLanguage": {"description": "Label on the review screen of a package: its language."},
+  "privateLabelPackage": "Package",
+  "@privateLabelPackage": {"description": "Label on the review screen of a package: its id and revision."},
+  "privateLabelKind": "Kind",
+  "@privateLabelKind": {"description": "Label on the review screen of a package: new language or changed course."},
+  "privatePackageRevision": "{package} · revision {revision}",
+  "@privatePackageRevision": {"description": "A package id and its revision.", "placeholders": {"package": {"type": "String"}, "revision": {"type": "int"}}},
+  "privateKindNewValue": "A new language",
+  "@privateKindNewValue": {"description": "Kind value on the review screen."},
+  "privateKindChangedValue": "Changes the built-in {course} course",
+  "@privateKindChangedValue": {"description": "Kind value on the review screen.", "placeholders": {"course": {"type": "String"}}},
+  "privateKindBasedOn": "{kind}, based on {base}",
+  "@privateKindBasedOn": {"description": "Kind value with the course revision it is based on.", "placeholders": {"kind": {"type": "String"}, "base": {"type": "String"}}},
+  "privateCountCards": "{count, plural, =1{card} other{cards}}",
+  "@privateCountCards": {"description": "Label under the number of cards on the review screen.", "placeholders": {"count": {"type": "int"}}},
+  "privateCountUnits": "{count, plural, =1{unit} other{units}}",
+  "@privateCountUnits": {"description": "Label under the number of units on the review screen.", "placeholders": {"count": {"type": "int"}}},
+  "privateCountDecks": "{count, plural, =1{deck} other{decks}}",
+  "@privateCountDecks": {"description": "Label under the number of decks on the review screen.", "placeholders": {"count": {"type": "int"}}},
+  "privateSevError": "Error",
+  "@privateSevError": {"description": "Severity word: the package cannot be added."},
+  "privateSevWarning": "Warning",
+  "@privateSevWarning": {"description": "Severity word: told, and the package can be added."},
+  "privateSevNote": "Note",
+  "@privateSevNote": {"description": "Severity word: information."},
+  "privateSumErrors": "{count, plural, =1{1 Error} other{{count} Errors}}",
+  "@privateSumErrors": {"description": "Count of errors in the summary of findings.", "placeholders": {"count": {"type": "int"}}},
+  "privateSumWarnings": "{count, plural, =1{1 Warning} other{{count} Warnings}}",
+  "@privateSumWarnings": {"description": "Count of warnings in the summary of findings.", "placeholders": {"count": {"type": "int"}}},
+  "privateSumNotes": "{count, plural, =1{1 Note} other{{count} Notes}}",
+  "@privateSumNotes": {"description": "Count of notes in the summary of findings.", "placeholders": {"count": {"type": "int"}}},
+  "privateGroupErrors": "Errors · {count}",
+  "@privateGroupErrors": {"description": "Heading above the errors of a package.", "placeholders": {"count": {"type": "int"}}},
+  "privateGroupWarnings": "Warnings · {count}",
+  "@privateGroupWarnings": {"description": "Heading above the warnings of a package.", "placeholders": {"count": {"type": "int"}}},
+  "privateGroupNotes": "Notes · {count}",
+  "@privateGroupNotes": {"description": "Heading above the notes of a package.", "placeholders": {"count": {"type": "int"}}},
+  "privateFindingAt": "{file} · line {line}",
+  "@privateFindingAt": {"description": "Where a finding is: file and line.", "placeholders": {"file": {"type": "String"}, "line": {"type": "int"}}},
+  "privateFindingCard": "Card {card}",
+  "@privateFindingCard": {"description": "Which card a finding is about.", "placeholders": {"card": {"type": "String"}}},
+  "privateFileLabel": "File",
+  "@privateFileLabel": {"description": "Label in the detail of a finding."},
+  "privateLineLabel": "Line",
+  "@privateLineLabel": {"description": "Label in the detail of a finding."},
+  "privateCardLabel": "Card",
+  "@privateCardLabel": {"description": "Label in the detail of a finding."},
+  "privateHowToFix": "Change the file, then choose it again. The app never edits it.",
+  "@privateHowToFix": {"description": "How to fix a finding, in its detail."},
+  "privateNoteVoice": "This phone has no voice for {name}. Speaking and sound drills will be hidden.",
+  "@privateNoteVoice": {"description": "Note on the review screen when the phone has no voice for the language.", "placeholders": {"name": {"type": "String"}}},
+  "privateNoteVoiceOk": "This phone has a voice for {name}. All drills stay on.",
+  "@privateNoteVoiceOk": {"description": "Note on the review screen when the phone has a voice for the language.", "placeholders": {"name": {"type": "String"}}},
+  "privateNoteNothing": "Nothing to fix. If you install a voice later, turn the language off and on to check again.",
+  "@privateNoteNothing": {"description": "Hint under the no-voice note."},
+  "privateNoteFont": "The script of {name} showed as boxes on your phone before. The phone’s own font is used.",
+  "@privateNoteFont": {"description": "Note on the review screen when the learner said the script shows boxes.", "placeholders": {"name": {"type": "String"}}},
+  "privateAddButton": "Add to my decks",
+  "@privateAddButton": {"description": "Button on the review screen: installs the package."},
+  "privateContinueUpdate": "See what changes",
+  "@privateContinueUpdate": {"description": "Button on the review screen of a newer file of an installed package."},
+  "privateChooseAnother": "Choose another file",
+  "@privateChooseAnother": {"description": "Button on the review and refusal screens."},
+  "privateClose": "Close",
+  "@privateClose": {"description": "Button on the refusal screens."},
+  "privateBlockedReason": "Fix {count, plural, =1{1 error} other{{count} errors}} in the file and choose it again.",
+  "@privateBlockedReason": {"description": "Line above the disabled Add button.", "placeholders": {"count": {"type": "int"}}},
+  "privateRefused": "Refused",
+  "@privateRefused": {"description": "Tag on a refusal screen."},
+  "privateOlderTitle": "This is an older revision",
+  "@privateOlderTitle": {"description": "Title of the refusal of an older revision."},
+  "privateOlderBody": "{language} is already on this phone at revision {installed}. This file is revision {found}.",
+  "@privateOlderBody": {"description": "Body of the refusal of an older revision.", "placeholders": {"language": {"type": "String"}, "installed": {"type": "int"}, "found": {"type": "int"}}},
+  "privateInstalledLabel": "Installed",
+  "@privateInstalledLabel": {"description": "Label on the older-revision refusal."},
+  "privateThisFileLabel": "This file",
+  "@privateThisFileLabel": {"description": "Label on the older-revision refusal."},
+  "privateRevisionValue": "revision {revision}",
+  "@privateRevisionValue": {"description": "A revision number.", "placeholders": {"revision": {"type": "int"}}},
+  "privateOlderAdvice": "Choose a file with revision {revision} or higher to update, or export the installed one.",
+  "@privateOlderAdvice": {"description": "Advice on the older-revision refusal.", "placeholders": {"revision": {"type": "int"}}},
+  "privateBigTitle": "This file is too big",
+  "@privateBigTitle": {"description": "Title of the refusal of a file over the size limit."},
+  "privateBigBody": "{size}. The limit is 10 MB for each language, measured on the file itself.",
+  "@privateBigBody": {"description": "Body of the too-big refusal.", "placeholders": {"size": {"type": "String"}}},
+  "privateBigAdvice": "Split a very large language into a smaller package, or remove files you do not need, then zip it again. The unpacked files may not pass 30 MB either.",
+  "@privateBigAdvice": {"description": "Advice on the too-big refusal."},
+  "privateBigNothing": "Nothing was added. Fonts, audio and images are not allowed in a package yet.",
+  "@privateBigNothing": {"description": "Line on the too-big refusal."},
+  "privateUnsafeTitle": "This file cannot be opened safely",
+  "@privateUnsafeTitle": {"description": "Title of the refusal of an unsafe archive."},
+  "privateUnsafeBody": "The file could not be opened safely, so nothing was unpacked.",
+  "@privateUnsafeBody": {"description": "Body of the unsafe-archive refusal."},
+  "privateUnsafeOther": "Reasons: a name the app will not accept, a locked or damaged zip, two files with one name, more than 1,000 files, a file over 2 MB, or a ratio that looks like a zip bomb. The message names the one found.",
+  "@privateUnsafeOther": {"description": "Hint on the unsafe-archive refusal."},
+  "privateAddedToast": "{name} added",
+  "@privateAddedToast": {"description": "Toast after a private package is added.", "placeholders": {"name": {"type": "String"}}},
+  "privateUpdatedToast": "{name} updated to revision {revision}",
+  "@privateUpdatedToast": {"description": "Toast after a private package is updated.", "placeholders": {"name": {"type": "String"}, "revision": {"type": "int"}}},
+  "privateInstallFailed": "The package could not be saved on this phone.",
+  "@privateInstallFailed": {"description": "Toast when installing a private package failed."},
+  "privateUpdateTitle": "Update {course}",
+  "@privateUpdateTitle": {"description": "Title of the update summary.", "placeholders": {"course": {"type": "String"}}},
+  "privateUpdateRevisions": "Revision {from} to revision {to} · {file}",
+  "@privateUpdateRevisions": {"description": "Under the package name on the update summary.", "placeholders": {"from": {"type": "int"}, "to": {"type": "int"}, "file": {"type": "String"}}},
+  "privateUnitsChange": "Path: {before} units before, {after} now",
+  "@privateUnitsChange": {"description": "Line on the update summary about the path.", "placeholders": {"before": {"type": "int"}, "after": {"type": "int"}}},
+  "privateTileNew": "New",
+  "@privateTileNew": {"description": "Count tile on the update summary: new cards."},
+  "privateTileChanged": "Changed",
+  "@privateTileChanged": {"description": "Count tile on the update summary: changed cards."},
+  "privateTileRemoved": "Removed",
+  "@privateTileRemoved": {"description": "Count tile on the update summary: removed cards."},
+  "privateTileRetired": "Retired ids",
+  "@privateTileRetired": {"description": "Count tile on the update summary: retired ids."},
+  "privateProgressTitle": "Your progress",
+  "@privateProgressTitle": {"description": "Heading of the progress block on the update summary."},
+  "privateProgressEdited": "{count, plural, =1{1 card you edited gets a new id, so it starts new.} other{{count} cards you edited get new ids, so they start new.}} Everything else keeps its progress.",
+  "@privateProgressEdited": {"description": "Progress block of the update summary for a course with edited cards.", "placeholders": {"count": {"type": "int"}}},
+  "privateProgressPlain": "Cards that changed keep their progress. New cards start new.",
+  "@privateProgressPlain": {"description": "Progress block of the update summary."},
+  "privateHowItWorks": "How it works",
+  "@privateHowItWorks": {"description": "Button on the progress block: opens the explanation."},
+  "privateRetiredTitle": "Retired ids · {count}",
+  "@privateRetiredTitle": {"description": "Heading of the retired ids block.", "placeholders": {"count": {"type": "int"}}},
+  "privateRetiredBody": "When an update drops a card, its id is retired: {now} now{earlier, plural, =0{} other{, {earlier} from earlier revisions}}. Your history on it stays. No later revision may give a retired id to a different card; the app refuses that file, so old progress never lands on the wrong card.",
+  "@privateRetiredBody": {"description": "Explanation of retired ids.", "placeholders": {"now": {"type": "int"}, "earlier": {"type": "int"}}},
+  "privateListNew": "New · {count}",
+  "@privateListNew": {"description": "Heading of the new cards on the update summary.", "placeholders": {"count": {"type": "int"}}},
+  "privateListChanged": "Changed · {count}",
+  "@privateListChanged": {"description": "Heading of the changed cards on the update summary.", "placeholders": {"count": {"type": "int"}}},
+  "privateListRemoved": "Removed · {count}",
+  "@privateListRemoved": {"description": "Heading of the removed cards on the update summary.", "placeholders": {"count": {"type": "int"}}},
+  "privateShowAll": "Show all {count}",
+  "@privateShowAll": {"description": "Button that shows every card of a list.", "placeholders": {"count": {"type": "int"}}},
+  "privateShowFewer": "Show fewer",
+  "@privateShowFewer": {"description": "Button that folds a list again."},
+  "privateChangedFields": "changed: {fields}",
+  "@privateChangedFields": {"description": "What changed on a card of the update summary; the fields are field names.", "placeholders": {"fields": {"type": "String"}}},
+  "privateReplacesCard": "replaces {id}",
+  "@privateReplacesCard": {"description": "A card of the update summary that replaces a built-in card.", "placeholders": {"id": {"type": "String"}}},
+  "privateUpdateTo": "Update to revision {revision}",
+  "@privateUpdateTo": {"description": "Button of the update summary.", "placeholders": {"revision": {"type": "int"}}},
+  "privateNothingChanges": "This file changes nothing in the cards or the path.",
+  "@privateNothingChanges": {"description": "Line on the update summary when the new file is the same."},
+  "privateHowTitle": "Your progress",
+  "@privateHowTitle": {"description": "Title of the page that explains how progress is kept."},
+  "privateHowIntro": "Your progress belongs to a card’s id. It never changes during an update. What matters is whether the id stays.",
+  "@privateHowIntro": {"description": "Intro on the how-progress-is-kept page."},
+  "privateHowUnchanged": "Cards that did not change",
+  "@privateHowUnchanged": {"description": "Row on the how-progress page."},
+  "privateHowUnchangedBody": "Same id and the same text, so progress is untouched.",
+  "@privateHowUnchangedBody": {"description": "Row body on the how-progress page."},
+  "privateHowChanged": "Your own cards that changed",
+  "@privateHowChanged": {"description": "Row on the how-progress page."},
+  "privateHowChangedBody": "Same id, so progress is kept.",
+  "@privateHowChangedBody": {"description": "Row body on the how-progress page."},
+  "privateHowEdited": "Course cards you edited",
+  "@privateHowEdited": {"description": "Row on the how-progress page."},
+  "privateHowEditedBody": "Each gets a new id with replaces. The course card keeps its progress and is hidden in your path; the new card starts new.",
+  "@privateHowEditedBody": {"description": "Row body on the how-progress page."},
+  "privateHowNew": "New cards",
+  "@privateHowNew": {"description": "Row on the how-progress page."},
+  "privateHowNewBody": "Start new.",
+  "@privateHowNewBody": {"description": "Row body on the how-progress page."},
+  "privateHowRemoved": "Removed cards",
+  "@privateHowRemoved": {"description": "Row on the how-progress page."},
+  "privateHowRemovedBody": "Out of your path. History kept; id retired.",
+  "@privateHowRemovedBody": {"description": "Row body on the how-progress page."},
+  "privateGotIt": "Got it",
+  "@privateGotIt": {"description": "Button that closes the how-progress page."},
+  "privateYours": "Yours",
+  "@privateYours": {"description": "Tag on a private language of the learner's own in the language lists."},
+  "privateNoteReplaces": "{replacing, plural, =1{1 card replaces a built-in card} other{{replacing} cards replace built-in cards}}. {byRef, plural, =1{1 stays as it is, by reference} other{{byRef} stay as they are, by reference}}.",
+  "@privateNoteReplaces": {"description": "Note on the review screen of a package that changes a course: cards that replace built-in cards, and cards that are only a reference to one.", "placeholders": {"replacing": {"type": "int"}, "byRef": {"type": "int"}}},
+  "privateNoteReplacesHint": "A card you changed gets a new id of its own and starts new. A card you left alone keeps its progress.",
+  "@privateNoteReplacesHint": {"description": "Hint under the note about cards that replace built-in ones."},
+  "privateDownloadIntro": "Pick a course on this phone. You get a package with a copy of its decks that you can change in any text editor, then add it back with Add a private language. The course’s own path stays as it is until you change it.",
+  "@privateDownloadIntro": {"description": "Intro line of the page where the learner picks a course to download and change."},
+  "privateDownloadNone": "No course is on this phone yet. Add a language in Settings, then come back.",
+  "@privateDownloadNone": {"description": "Shown on the download-a-course page when no course of the app is on the phone."},
+  "privateDownloadDecks": "{count, plural, =1{1 deck} other{{count} decks}}",
+  "@privateDownloadDecks": {"description": "How many decks a course has, under its name on the download-a-course page.", "placeholders": {"count": {"type": "int"}}},
+  "privateDownloadSaved": "Saved {file}. Change it, then add it with Add a private language.",
+  "@privateDownloadSaved": {"description": "Toast after a course was saved as a package.", "placeholders": {"file": {"type": "String"}}},
+  "privateDownloadSkipped": "Saved {file}. {count, plural, =1{1 file} other{{count} files}} of the course were left out because the app owns them (facts, sounds, scripts) or they could not be copied safely.",
+  "@privateDownloadSkipped": {"description": "Toast after a course was saved as a package and some of its files were left out.", "placeholders": {"file": {"type": "String"}, "count": {"type": "int"}}},
+  "privateDownloadTooBig": "This course is bigger than the 10 MB a package may be, so it cannot be downloaded to change.",
+  "@privateDownloadTooBig": {"description": "Toast when a course as a package would be over the size limit."},
+  "privateDownloadFailed": "The course could not be saved. Try again.",
+  "@privateDownloadFailed": {"description": "Toast when a course could not be made into a package."},
+  "privateExportSaved": "Saved {file}.",
+  "@privateExportSaved": {"description": "Toast after a private package was saved as a .fnzip.", "placeholders": {"file": {"type": "String"}}},
+  "privateExportFailed": "The package could not be saved. Try again.",
+  "@privateExportFailed": {"description": "Toast when exporting a private package failed."},
+  "privateStarterSaved": "Saved {file}. Add it with Add a private language to see how it works.",
+  "@privateStarterSaved": {"description": "Toast after the starter package was saved.", "placeholders": {"file": {"type": "String"}}},
+  "privateStarterFailed": "The starter package could not be saved. Try again.",
+  "@privateStarterFailed": {"description": "Toast when saving the starter package failed."},
+  "privateRestoreHolds": "Your private languages",
+  "@privateRestoreHolds": {"description": "Label on the restore sheet: the private languages the backup holds."},
+  "privateRestoreHoldsValue": "{names}. They come back as they were; the ones on this phone stay.",
+  "@privateRestoreHoldsValue": {"description": "Value on the restore sheet: the names of the private languages in the backup.", "placeholders": {"names": {"type": "String"}}},
+  "privateDeleteTypeTitle": "Delete your progress on {name}?",
+  "@privateDeleteTypeTitle": {"description": "Title of the second step of Remove and delete my progress for a private package.", "placeholders": {"name": {"type": "String"}}},
+  "privateDeleteTypeBody": "This deletes your reviews of the cards of {name}, after a backup of everything is kept. It cannot be undone from the app. To confirm, type the name exactly as it is written here.",
+  "@privateDeleteTypeBody": {"description": "Explains the typed confirmation before a private package's progress is deleted.", "placeholders": {"name": {"type": "String"}}},
+  "privateDeleteTypeLabel": "Type the name",
+  "@privateDeleteTypeLabel": {"description": "Label of the field where the learner types the package's name to confirm deleting its progress."},
+  "settingsDataRestoredSkipped": "Restored, but these private languages could not be added and were left out: {names}. Your decks download again.",
+  "@settingsDataRestoredSkipped": {"description": "Toast after a restore when some private language packages in the backup no longer pass the checks.", "placeholders": {"names": {"type": "String"}}},
+  "speechOnlineLine": "Your phone can’t recognise {language} offline, so speaking questions are skipped.",
+  "@speechOnlineLine": {"description": "On Today, in a line under the day’s cards: speaking questions in the shown language are left out because the phone recognises it only online and the learner has not allowed that. A button opens the Voices page.", "placeholders": {"language": {"type": "String"}}},
+  "speechOnlineOpenSettings": "Open settings",
+  "@speechOnlineOpenSettings": {"description": "Button on Today’s speech line and in its alert: opens the Voices page at the language’s card."},
+  "speechOnlineNotNow": "Not now",
+  "@speechOnlineNotNow": {"description": "Button of the speech alert that closes it without opening settings."},
+  "speechOnlineAlertTitle": "Speaking {language} needs the internet",
+  "@speechOnlineAlertTitle": {"description": "Title of the alert shown once per language: the phone recognises it only online.", "placeholders": {"language": {"type": "String"}}},
+  "speechOnlineAlertBody": "Your phone can’t recognise {language} offline, so speaking questions are skipped. On the Voices page you can allow online recognition, which sends what you say to your phone’s speech service.",
+  "@speechOnlineAlertBody": {"description": "Body of the alert shown once per language: what is skipped and where to change it.", "placeholders": {"language": {"type": "String"}}}
 }

@@ -140,16 +140,9 @@ genders: ["m", "f"]
 units:
   # A1, "Signs and offering formulae".
   #
-  # 1. The phrasebook: the offering formula and the phrases of stelae,
-  # taught whole: ḥtp-dj-nswt (an offering that the king gives), prt-ḫrw
-  # (a voice offering), t ḥnqt (bread and beer), ḫꜣ m (a thousand of), n kꜣ n
-  # (for the ka of), jmꜣḫw (the honoured one), mꜣꜥ-ḫrw (true of voice), ꜥnḫ
-  # wḏꜣ snb (life, prosperity, health), nb ꜣbḏw (lord of Abydos).
-  - planned: { id: "egy-phrasebook", theme: "first-words", words: 20 }
-    listening_passages:
-      - { id: "offering-formula-aloud", text: { "en": "The offering formula of a Middle Kingdom stela read aloud: an offering that the king gives to Osiris, lord of Abydos (TLA)" } }
-    reading_passages:
-      - { id: "offering-formula-line", text: { "en": "The first line of a Middle Kingdom offering stela, in transliteration with its translation (TLA)" } }
+  # 1. The first words: thirty-four words of Middle Egyptian, each with its source in its notes.
+  - decks: ["egy-first-words", "*"]
+    words: 34
   # 2. Transliteration and the Egyptological vocalisation: the 25
   # consonants, ꜣ (aleph), j, ꜥ (ayin), ḥ, ḫ, ẖ, š, q (also written ḳ), ṯ
   # and ḏ; the dots of suffixes (sḏm.f), the hyphens of compounds; and

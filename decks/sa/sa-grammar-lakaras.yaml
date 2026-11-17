@@ -1,0 +1,85 @@
+# The ten lakaras with the third person singular and plural of two model verbs, bhu and gam. The periphrastic future (lut) and the precative (asirlin) have a third person singular only: Wiktionary has no table for them.
+# The third person singular of the root pages' lut and precative forms is listed on the root entries of bhu and gam, so the third plural is empty (null) for them.
+schema: 1
+id: "sa-grammar-lakaras"
+part: "core"
+kind: "grammar"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+source: "en.wiktionary.org: the Present table (with its imperative and optative blocks) and the Imperfect table on the page of bhavati and of gacchati, the Future and Conditional tables on bhavisyati and gamisyati, the Perfect table on babhuva and jagama, the Aorist table on abhut and agamat, and the root pages of bhu and gam, whose Primary verbal forms list bhavitā and gantā (the periphrastic future) and bhūyāt and gamyāt (the precative), which have no page or table of their own, read 2026-11-16; Panini, Astadhyayi 3.2.110, 3.2.111, 3.2.115, 3.2.123, 3.3.13, 3.3.15, 3.3.139, 3.3.161, 3.3.162, 3.4.77 and 3.4.116 as typed on sa.wikisource.org/wiki/अष्टाध्यायी (the third chapter page), read 2026-11-16; Whitney, Sanskrit Grammar 586 on en.wikisource, read 2026-11-16."
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["bhū-3sg", "bhū-3pl", "gam-3sg", "gam-3pl"]
+  entries:
+    - lemma: "लट्"
+      key: "lat"
+      reading: "laṭ"
+      ipa: "ləʈ"
+      forms: { "bhū-3sg": "भवति", "bhū-3pl": "भवन्ति", "gam-3sg": "गच्छति", "gam-3pl": "गच्छन्ति" }
+      readings: { "bhū-3sg": "bhavati", "bhū-3pl": "bhavanti", "gam-3sg": "gacchati", "gam-3pl": "gacchanti" }
+      ipas: { "bhū-3sg": "bʱəʋət̪i", "bhū-3pl": "bʱəʋənt̪i", "gam-3sg": "ɡətʃtʃʰət̪i", "gam-3pl": "ɡətʃtʃʰənt̪i" }
+    - lemma: "लङ्"
+      key: "lan"
+      reading: "laṅ"
+      ipa: "ləŋ"
+      forms: { "bhū-3sg": "अभवत्", "bhū-3pl": "अभवन्", "gam-3sg": "अगच्छत्", "gam-3pl": "अगच्छन्" }
+      readings: { "bhū-3sg": "abhavat", "bhū-3pl": "abhavan", "gam-3sg": "agacchat", "gam-3pl": "agacchan" }
+      ipas: { "bhū-3sg": "əbʱəʋət̪", "bhū-3pl": "əbʱəʋən", "gam-3sg": "əɡətʃtʃʰət̪", "gam-3pl": "əɡətʃtʃʰən" }
+    - lemma: "लोट्"
+      key: "lot"
+      reading: "loṭ"
+      ipa: "loːʈ"
+      forms: { "bhū-3sg": "भवतु", "bhū-3pl": "भवन्तु", "gam-3sg": "गच्छतु", "gam-3pl": "गच्छन्तु" }
+      readings: { "bhū-3sg": "bhavatu", "bhū-3pl": "bhavantu", "gam-3sg": "gacchatu", "gam-3pl": "gacchantu" }
+      ipas: { "bhū-3sg": "bʱəʋət̪u", "bhū-3pl": "bʱəʋənt̪u", "gam-3sg": "ɡətʃtʃʰət̪u", "gam-3pl": "ɡətʃtʃʰənt̪u" }
+    - lemma: "विधिलिङ्"
+      key: "vidhilin"
+      reading: "vidhiliṅ"
+      ipa: "ʋid̪ʱiliŋ"
+      forms: { "bhū-3sg": "भवेत्", "bhū-3pl": "भवेयुः", "gam-3sg": "गच्छेत्", "gam-3pl": "गच्छेयुः" }
+      readings: { "bhū-3sg": "bhavet", "bhū-3pl": "bhaveyuḥ", "gam-3sg": "gacchet", "gam-3pl": "gaccheyuḥ" }
+      ipas: { "bhū-3sg": "bʱəʋeːt̪", "bhū-3pl": "bʱəʋeːjuh", "gam-3sg": "ɡətʃtʃʰeːt̪", "gam-3pl": "ɡətʃtʃʰeːjuh" }
+    - lemma: "लिट्"
+      key: "lit"
+      reading: "liṭ"
+      ipa: "liʈ"
+      forms: { "bhū-3sg": "बभूव", "bhū-3pl": "बभूवुः", "gam-3sg": "जगाम", "gam-3pl": "जग्मुः" }
+      readings: { "bhū-3sg": "babhūva", "bhū-3pl": "babhūvuḥ", "gam-3sg": "jagāma", "gam-3pl": "jagmuḥ" }
+      ipas: { "bhū-3sg": "bəbʱuːʋə", "bhū-3pl": "bəbʱuːʋuh", "gam-3sg": "dʒəɡaːmə", "gam-3pl": "dʒəɡmuh" }
+    - lemma: "लुङ्"
+      key: "lun"
+      reading: "luṅ"
+      ipa: "luŋ"
+      forms: { "bhū-3sg": "अभूत्", "bhū-3pl": "अभूवन्", "gam-3sg": "अगमत्", "gam-3pl": "अगमन्" }
+      readings: { "bhū-3sg": "abhūt", "bhū-3pl": "abhūvan", "gam-3sg": "agamat", "gam-3pl": "agaman" }
+      ipas: { "bhū-3sg": "əbʱuːt̪", "bhū-3pl": "əbʱuːʋən", "gam-3sg": "əɡəmət̪", "gam-3pl": "əɡəmən" }
+    - lemma: "लृट्"
+      key: "lrt"
+      reading: "lṛṭ"
+      ipa: "lr̩ʈ"
+      forms: { "bhū-3sg": "भविष्यति", "bhū-3pl": "भविष्यन्ति", "gam-3sg": "गमिष्यति", "gam-3pl": "गमिष्यन्ति" }
+      readings: { "bhū-3sg": "bhaviṣyati", "bhū-3pl": "bhaviṣyanti", "gam-3sg": "gamiṣyati", "gam-3pl": "gamiṣyanti" }
+      ipas: { "bhū-3sg": "bʱəʋiʂjət̪i", "bhū-3pl": "bʱəʋiʂjənt̪i", "gam-3sg": "ɡəmiʂjət̪i", "gam-3pl": "ɡəmiʂjənt̪i" }
+    - lemma: "लृङ्"
+      key: "lrn"
+      reading: "lṛṅ"
+      ipa: "lr̩ŋ"
+      forms: { "bhū-3sg": "अभविष्यत्", "bhū-3pl": "अभविष्यन्", "gam-3sg": "अगमिष्यत्", "gam-3pl": "अगमिष्यन्" }
+      readings: { "bhū-3sg": "abhaviṣyat", "bhū-3pl": "abhaviṣyan", "gam-3sg": "agamiṣyat", "gam-3pl": "agamiṣyan" }
+      ipas: { "bhū-3sg": "əbʱəʋiʂjət̪", "bhū-3pl": "əbʱəʋiʂjən", "gam-3sg": "əɡəmiʂjət̪", "gam-3pl": "əɡəmiʂjən" }
+    - lemma: "लुट्"
+      key: "lut"
+      reading: "luṭ"
+      ipa: "luʈ"
+      forms: { "bhū-3sg": "भविता", "bhū-3pl": null, "gam-3sg": "गन्ता", "gam-3pl": null }
+      readings: { "bhū-3sg": "bhavitā", "gam-3sg": "gantā" }
+      ipas: { "bhū-3sg": "bʱəʋit̪aː", "gam-3sg": "ɡənt̪aː" }
+    - lemma: "आशीर्लिङ्"
+      key: "ashirlin"
+      reading: "āśīrliṅ"
+      ipa: "aːʃiːrliŋ"
+      forms: { "bhū-3sg": "भूयात्", "bhū-3pl": null, "gam-3sg": "गम्यात्", "gam-3pl": null }
+      readings: { "bhū-3sg": "bhūyāt", "gam-3sg": "gamyāt" }
+      ipas: { "bhū-3sg": "bʱuːjaːt̪", "gam-3sg": "ɡəmjaːt̪" }

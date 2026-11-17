@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-en-reading-money"
+name: "Reading: bill and receipt"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-bill-and-receipt"
+    title: "Bill and receipt"
+    sentences:
+      - text: "ಇಲ್ಲಿ ಬಿಲ್ ಇದೆ."
+        reading: "illi bil ide."
+        ipa: "illi bil id̪e"
+      - text: "ಬಿಲ್ ನೂರು ರೂಪಾಯಿ."
+        reading: "bil nūru rūpāyi."
+        ipa: "bil nuːru ruːpaːji"
+      - text: "ನಗದು ಕೊಟ್ಟೆ, ಚಿಲ್ಲರೆ ಬಾಕಿ ಇದೆ."
+        reading: "nagadu koṭṭe, cillare bāki ide."
+        ipa: "naɡad̪u koʈʈe tʃillare baːki id̪e"
+      - text: "ರಸೀದಿ ತೆಗೆದುಕೊಳ್ಳಿ."
+        reading: "rasīdi tegedukoḷḷi."
+        ipa: "rasiːd̪i t̪eɡed̪ukoɭɭi"
+    questions:
+      - id: "kn-9730"
+        prompt: { en: "How much is the bill?" }
+        options:
+          - { en: "100 rupees" }
+          - { en: "10 rupees" }
+          - { en: "1,000 rupees" }
+        answer: 1
+      - id: "kn-9731"
+        prompt: { en: "The customer paid in cash." }
+        answer: true
+      - id: "kn-9732"
+        prompt: { en: "The bill is free." }
+        answer: false

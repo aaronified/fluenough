@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-journey"
+name: "Reading: journey"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-journey-text-1"
+    title: "The road and the chariot"
+    theme: "journey"
+    sentences:
+      - { text: "यात्री वर्त्म शनैर् गच्छति.", reading: "yātrī vartma śanair gacchati.", ipa: "jaːt̪riː ʋərt̪mə ʃənəir ɡətʃtʃʰət̪i" }
+      - { text: "क्लान्तः पथिको वृक्षस्य छायां लभते.", reading: "klāntaḥ pathiko vṛkṣasya chāyāṃ labhate.", ipa: "klaːnt̪əh pət̪ʰikoː ʋr̩kʂəsjə tʃʰaːjaːm ləbʱət̪eː" }
+      - { text: "शीघ्रं रथम् अश्वा वहन्ति.", reading: "śīghraṃ ratham aśvā vahanti.", ipa: "ʃiːɡʱrəm rət̪ʰəm əʃʋaː ʋəɦənt̪i" }
+      - { text: "रथस्य चक्रम् अक्षे वर्तते.", reading: "rathasya cakram akṣe vartate.", ipa: "rət̪ʰəsjə tʃəkrəm əkʂeː ʋərt̪ət̪eː" }
+      - { text: "योजनं क्रोशाद् दीर्घं भवति.", reading: "yojanaṃ krośād dīrghaṃ bhavati.", ipa: "joːdʒənəm kroːʃaːd̪ d̪iːrɡʱəm bʱəʋət̪i" }
+    questions:
+      - id: "sa-6600"
+        prompt: { en: "How does the traveller go along the road?" }
+        options: [{ en: "Quickly" }, { en: "Slowly" }, { en: "Barefoot" }]
+        answer: 2
+      - id: "sa-6601"
+        prompt: { en: "What does the tired traveller find?" }
+        options: [{ en: "A cool drink" }, { en: "A place on a boat" }, { en: "The shade of a tree" }]
+        answer: 3
+      - id: "sa-6602"
+        prompt: { en: "Which word means 'quickly'?" }
+        options: [{ en: "शीघ्रं (śīghraṃ)" }, { en: "शनैर् (śanair)" }, { en: "दीर्घं (dīrghaṃ)" }]
+        answer: 1
+      - id: "sa-6603"
+        prompt: { en: "Horses draw the chariot slowly." }
+        answer: false
+  - id: "sa-journey-text-2"
+    title: "Ship, guest and shed"
+    theme: "journey"
+    sentences:
+      - { text: "अतिथिर् गृहे सत्कारं लभते.", reading: "atithir gṛhe satkāraṃ labhate.", ipa: "ət̪it̪ʰir ɡr̩ɦeː sət̪kaːrəm ləbʱət̪eː" }
+      - { text: "कर्णधारः पोतं सागरे नयति.", reading: "karṇadhāraḥ potaṃ sāgare nayati.", ipa: "kərɳəd̪ʱaːrəh poːt̪əm saːɡəreː nəjət̪i" }
+      - { text: "ऋजुः पन्था गमने सुगमो भवति.", reading: "ṛjuḥ panthā gamane sugamo bhavati.", ipa: "r̩dʒuh pənt̪ʰaː ɡəməneː suɡəmoː bʱəʋət̪i" }
+      - { text: "प्रपायां पथिकाय पानीयं भवति.", reading: "prapāyāṃ pathikāya pānīyaṃ bhavati.", ipa: "prəpaːjaːm pət̪ʰikaːjə paːniːjəm bʱəʋət̪i" }
+      - { text: "सहायः पथिकस्य यात्रां सुगमां करोति.", reading: "sahāyaḥ pathikasya yātrāṃ sugamāṃ karoti.", ipa: "səɦaːjəh pət̪ʰikəsjə jaːt̪raːm suɡəmaːm kəroːt̪i" }
+    questions:
+      - id: "sa-6604"
+        prompt: { en: "What does the helmsman steer on the sea?" }
+        options: [{ en: "A raft" }, { en: "A barge" }, { en: "A ship" }]
+        answer: 3
+      - id: "sa-6605"
+        prompt: { en: "Who is the drinking water at the roadside shed for?" }
+        options: [{ en: "The guest" }, { en: "The traveller" }, { en: "The companion" }]
+        answer: 2
+      - id: "sa-6606"
+        prompt: { en: "Which word means 'ship'?" }
+        options: [{ en: "पोतं (potaṃ)" }, { en: "सागरे (sāgare)" }, { en: "गृहे (gṛhe)" }]
+        answer: 1
+      - id: "sa-6607"
+        prompt: { en: "A companion makes a traveller's journey easy." }
+        answer: true

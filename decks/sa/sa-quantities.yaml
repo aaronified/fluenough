@@ -1,0 +1,351 @@
+schema: 1
+id: "sa-quantities"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "quantities"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-1500"
+    target: "अल्पः"
+    reading: "alpaḥ"
+    ipa: "əlpəh"
+    pos: "adj"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "अल्पः", base: "अल्प", reading: "alpa" }
+    examples:
+      - target: "अल्पं जलम्"
+        reading: "alpaṃ jalam"
+        ipa: "əlpəm dʒələm"
+        bases:
+          - { word: "अल्पं", base: "अल्प", reading: "alpa" }
+          - { word: "जलम्", base: "जल", reading: "jala" }
+      - target: "अग्निर् अल्पः"
+        reading: "agnir alpaḥ"
+        ipa: "əɡnir əlpəh"
+        bases:
+          - { word: "अग्निर्", base: "अग्नि", reading: "agni" }
+          - { word: "अल्पः", base: "अल्प", reading: "alpa" }
+  - id: "sa-1501"
+    target: "बहुः"
+    reading: "bahuḥ"
+    ipa: "bəɦuh"
+    pos: "adj"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "बहुः", base: "बहु", reading: "bahu" }
+    examples:
+      - target: "बहवो देवाः"
+        reading: "bahavo devāḥ"
+        ipa: "bəɦəʋoː d̪eːʋaːh"
+        bases:
+          - { word: "बहवो", base: "बहु", reading: "bahu" }
+          - { word: "देवाः", base: "देव", reading: "deva" }
+      - target: "बहु जलम्"
+        reading: "bahu jalam"
+        ipa: "bəɦu dʒələm"
+        bases:
+          - { word: "बहु", base: "बहु", reading: "bahu" }
+          - { word: "जलम्", base: "जल", reading: "jala" }
+  - id: "sa-1502"
+    target: "अनेकः"
+    reading: "anekaḥ"
+    ipa: "əneːkəh"
+    pos: "adj"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "अनेकः", base: "अनेक", reading: "aneka" }
+    examples:
+      - target: "अनेका देवाः"
+        reading: "anekā devāḥ"
+        ipa: "əneːkaː d̪eːʋaːh"
+        bases:
+          - { word: "अनेका", base: "अनेक", reading: "aneka" }
+          - { word: "देवाः", base: "देव", reading: "deva" }
+      - target: "अनेकानि पुस्तकानि"
+        reading: "anekāni pustakāni"
+        ipa: "əneːkaːni pust̪əkaːni"
+        bases:
+          - { word: "अनेकानि", base: "अनेक", reading: "aneka" }
+          - { word: "पुस्तकानि", base: "पुस्तक", reading: "pustaka" }
+  - id: "sa-1503"
+    target: "सर्वः"
+    reading: "sarvaḥ"
+    ipa: "sərʋəh"
+    pos: "adj"
+    tags: ["quantity", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "सर्वः", base: "सर्व", reading: "sarva" }
+    examples:
+      - target: "सर्वे देवाः"
+        reading: "sarve devāḥ"
+        ipa: "sərʋeː d̪eːʋaːh"
+        bases:
+          - { word: "सर्वे", base: "सर्व", reading: "sarva" }
+          - { word: "देवाः", base: "देव", reading: "deva" }
+      - target: "सर्वं जलम्"
+        reading: "sarvaṃ jalam"
+        ipa: "sərʋəm dʒələm"
+        bases:
+          - { word: "सर्वं", base: "सर्व", reading: "sarva" }
+          - { word: "जलम्", base: "जल", reading: "jala" }
+  - id: "sa-1504"
+    target: "अधिकः"
+    reading: "adhikaḥ"
+    ipa: "əd̪ʱikəh"
+    pos: "adj"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "अधिकः", base: "अधिक", reading: "adhika" }
+    examples:
+      - target: "अधिका देवाः"
+        reading: "adhikā devāḥ"
+        ipa: "əd̪ʱikaː d̪eːʋaːh"
+        bases:
+          - { word: "अधिका", base: "अधिक", reading: "adhika" }
+          - { word: "देवाः", base: "देव", reading: "deva" }
+      - target: "अधिकम् अन्नम्"
+        reading: "adhikam annam"
+        ipa: "əd̪ʱikəm ənnəm"
+        bases:
+          - { word: "अधिकम्", base: "अधिक", reading: "adhika" }
+          - { word: "अन्नम्", base: "अन्न", reading: "anna" }
+  - id: "sa-1505"
+    target: "न्यूनः"
+    reading: "nyūnaḥ"
+    ipa: "njuːnəh"
+    pos: "adj"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "न्यूनः", base: "न्यून", reading: "nyūna" }
+    examples:
+      - target: "न्यूनं जलम्"
+        reading: "nyūnaṃ jalam"
+        ipa: "njuːnəm dʒələm"
+        bases:
+          - { word: "न्यूनं", base: "न्यून", reading: "nyūna" }
+          - { word: "जलम्", base: "जल", reading: "jala" }
+      - target: "कुम्भो न्यूनः"
+        reading: "kumbho nyūnaḥ"
+        ipa: "kumbʱoː njuːnəh"
+        bases:
+          - { word: "कुम्भो", base: "कुम्भ", reading: "kumbha" }
+          - { word: "न्यूनः", base: "न्यून", reading: "nyūna" }
+  - id: "sa-1506"
+    target: "पूर्णः"
+    reading: "pūrṇaḥ"
+    ipa: "puːrɳəh"
+    pos: "adj"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "पूर्णः", base: "पूर्ण", reading: "pūrṇa" }
+    examples:
+      - target: "पूर्णः कुम्भः"
+        reading: "pūrṇaḥ kumbhaḥ"
+        ipa: "puːrɳəh kumbʱəh"
+        bases:
+          - { word: "पूर्णः", base: "पूर्ण", reading: "pūrṇa" }
+          - { word: "कुम्भः", base: "कुम्भ", reading: "kumbha" }
+      - target: "जलं पूर्णम्"
+        reading: "jalaṃ pūrṇam"
+        ipa: "dʒələm puːrɳəm"
+        bases:
+          - { word: "जलं", base: "जल", reading: "jala" }
+          - { word: "पूर्णम्", base: "पूर्ण", reading: "pūrṇa" }
+  - id: "sa-1507"
+    target: "रिक्तः"
+    reading: "riktaḥ"
+    ipa: "rikt̪əh"
+    pos: "adj"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "रिक्तः", base: "रिक्त", reading: "rikta" }
+    examples:
+      - target: "रिक्तः कुम्भः"
+        reading: "riktaḥ kumbhaḥ"
+        ipa: "rikt̪əh kumbʱəh"
+        bases:
+          - { word: "रिक्तः", base: "रिक्त", reading: "rikta" }
+          - { word: "कुम्भः", base: "कुम्भ", reading: "kumbha" }
+      - target: "पात्रं रिक्तम्"
+        reading: "pātraṃ riktam"
+        ipa: "paːt̪rəm rikt̪əm"
+        bases:
+          - { word: "पात्रं", base: "पात्र", reading: "pātra" }
+          - { word: "रिक्तम्", base: "रिक्त", reading: "rikta" }
+  - id: "sa-1508"
+    target: "शून्यः"
+    reading: "śūnyaḥ"
+    ipa: "ʃuːnjəh"
+    pos: "adj"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "शून्यः", base: "शून्य", reading: "śūnya" }
+    examples:
+      - target: "शून्यं गृहम्"
+        reading: "śūnyaṃ gṛham"
+        ipa: "ʃuːnjəm ɡr̩ɦəm"
+        bases:
+          - { word: "शून्यं", base: "शून्य", reading: "śūnya" }
+          - { word: "गृहम्", base: "गृह", reading: "gṛha" }
+      - target: "पात्रं शून्यम्"
+        reading: "pātraṃ śūnyam"
+        ipa: "paːt̪rəm ʃuːnjəm"
+        bases:
+          - { word: "पात्रं", base: "पात्र", reading: "pātra" }
+          - { word: "शून्यम्", base: "शून्य", reading: "śūnya" }
+  - id: "sa-1509"
+    target: "कतिपयः"
+    reading: "katipayaḥ"
+    ipa: "kət̪ipəjəh"
+    pos: "adj"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "कतिपयः", base: "कतिपय", reading: "katipaya" }
+    examples:
+      - target: "कतिपया देवाः"
+        reading: "katipayā devāḥ"
+        ipa: "kət̪ipəjaː d̪eːʋaːh"
+        bases:
+          - { word: "कतिपया", base: "कतिपय", reading: "katipaya" }
+          - { word: "देवाः", base: "देव", reading: "deva" }
+      - target: "कतिपयानि पुस्तकानि"
+        reading: "katipayāni pustakāni"
+        ipa: "kət̪ipəjaːni pust̪əkaːni"
+        bases:
+          - { word: "कतिपयानि", base: "कतिपय", reading: "katipaya" }
+          - { word: "पुस्तकानि", base: "पुस्तक", reading: "pustaka" }
+  - id: "sa-1511"
+    target: "भूयः"
+    reading: "bhūyaḥ"
+    ipa: "bʱuːjəh"
+    pos: "adv"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "भूयः", base: "भूयस्", reading: "bhūyas" }
+    examples:
+      - target: "भूयो जलम्"
+        reading: "bhūyo jalam"
+        ipa: "bʱuːjoː dʒələm"
+        bases:
+          - { word: "भूयो", base: "भूयस्", reading: "bhūyas" }
+          - { word: "जलम्", base: "जल", reading: "jala" }
+      - target: "भूयो देवाः"
+        reading: "bhūyo devāḥ"
+        ipa: "bʱuːjoː d̪eːʋaːh"
+        bases:
+          - { word: "भूयो", base: "भूयस्", reading: "bhūyas" }
+          - { word: "देवाः", base: "देव", reading: "deva" }
+  - id: "sa-1513"
+    target: "सकलः"
+    reading: "sakalaḥ"
+    ipa: "səkələh"
+    pos: "adj"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "सकलः", base: "सकल", reading: "sakala" }
+    examples:
+      - target: "सकलं जलम्"
+        reading: "sakalaṃ jalam"
+        ipa: "səkələm dʒələm"
+        bases:
+          - { word: "सकलं", base: "सकल", reading: "sakala" }
+          - { word: "जलम्", base: "जल", reading: "jala" }
+      - target: "सकलो देशः"
+        reading: "sakalo deśaḥ"
+        ipa: "səkəloː d̪eːʃəh"
+        bases:
+          - { word: "सकलो", base: "सकल", reading: "sakala" }
+          - { word: "देशः", base: "देश", reading: "deśa" }
+  - id: "sa-1620"
+    target: "पर्याप्तः"
+    reading: "paryāptaḥ"
+    ipa: "pərjaːpt̪əh"
+    pos: "adj"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "पर्याप्तः", base: "पर्याप्त", reading: "paryāpta" }
+    examples:
+      - target: "पर्याप्तं जलम्"
+        reading: "paryāptaṃ jalam"
+        ipa: "pərjaːpt̪əm dʒələm"
+        bases:
+          - { word: "पर्याप्तं", base: "पर्याप्त", reading: "paryāpta" }
+          - { word: "जलम्", base: "जल", reading: "jala" }
+      - target: "पर्याप्तः कुम्भः"
+        reading: "paryāptaḥ kumbhaḥ"
+        ipa: "pərjaːpt̪əh kumbʱəh"
+        bases:
+          - { word: "पर्याप्तः", base: "पर्याप्त", reading: "paryāpta" }
+          - { word: "कुम्भः", base: "कुम्भ", reading: "kumbha" }
+  - id: "sa-1621"
+    target: "भूरि"
+    reading: "bhūri"
+    ipa: "bʱuːri"
+    pos: "adj"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "भूरि जलम्"
+        reading: "bhūri jalam"
+        ipa: "bʱuːri dʒələm"
+        bases:
+          - { word: "भूरि", base: "भूरि", reading: "bhūri" }
+          - { word: "जलम्", base: "जल", reading: "jala" }
+      - target: "भूरि पुस्तकम्"
+        reading: "bhūri pustakam"
+        ipa: "bʱuːri pust̪əkəm"
+        bases:
+          - { word: "भूरि", base: "भूरि", reading: "bhūri" }
+          - { word: "पुस्तकम्", base: "पुस्तक", reading: "pustaka" }

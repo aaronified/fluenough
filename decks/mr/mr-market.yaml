@@ -11,6 +11,8 @@ cards:
     target: "किती झाले?"
     reading: "kiti jhāle?"
     ipa: "kit̪i dzʱale"
+    phonetic: "[kit̪i dzʱale]"
+    phonetic_source: "rules"
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
@@ -20,6 +22,8 @@ cards:
     target: "किंमत"
     reading: "kimmat"
     ipa: "kimmət̪"
+    phonetic: "[kimmət̪]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "f"
     notes:
@@ -32,6 +36,8 @@ cards:
     target: "रुपया"
     reading: "rupayā"
     ipa: "rupəja"
+    phonetic: "[ɾupəja]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "m"
     notes:
@@ -41,6 +47,8 @@ cards:
     picture: "💰"
     reading: "paise"
     ipa: "pəise"
+    phonetic: "[pəise]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "m"
     notes:
@@ -52,6 +60,8 @@ cards:
     target: "सुटे पैसे"
     reading: "suṭe paise"
     ipa: "suʈe pəise"
+    phonetic: "[suʈe pəise]"
+    phonetic_source: "rules"
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
@@ -61,6 +71,8 @@ cards:
     target: "खूप महाग आहे!"
     reading: "khup mahāg āhe!"
     ipa: "kʰup məɦaɡ aɦe"
+    phonetic: "[kʰup məɦaɡ aɦe]"
+    phonetic_source: "rules"
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
@@ -71,6 +83,8 @@ cards:
     target: "थोडे कमी करा."
     reading: "thoḍe kami karā."
     ipa: "t̪ʰoɖe kəmi kəra"
+    phonetic: "[t̪ʰoɖe kəmi kəɾa]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["polite"]
     notes:
@@ -83,8 +97,11 @@ cards:
     target: "दुकान"
     reading: "dukān"
     ipa: "d̪ukan"
+    phonetic: "[d̪ukan]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "n"
+    notes: [{ id: "n1", kind: "behaviour" }]
     "examples": [
       {"target": "ग्राहक दुकानात आले.", "reading": "grāhak dukānāt āle.", "ipa": "ɡraɦək d̪ukanat̪ ale", "bases": [{"word": "दुकानात", "base": "दुकान", "reading": "dukān"}, {"word": "आले", "ref": "mr-0711"}]},
       {"target": "दुकान सकाळी उघडते.", "reading": "dukān sakāḷi ughḍte.", "ipa": "d̪ukan səkaɭi uɡʱɖt̪e", "bases": [{"word": "सकाळी", "base": "सकाळ", "reading": "sakāḷ"}, {"word": "उघडते", "base": "उघडणे", "reading": "ughḍṇe"}]}
@@ -93,6 +110,8 @@ cards:
     target: "द्या"
     reading: "dyā"
     ipa: "d̪ja"
+    phonetic: "[d̪ja]"
+    phonetic_source: "rules"
     pos: "verb"
     tags: ["polite"]
     notes:
@@ -104,6 +123,8 @@ cards:
     target: "किलो"
     reading: "kilo"
     ipa: "kilo"
+    phonetic: "[kilo]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "m"
     notes:
@@ -116,6 +137,8 @@ cards:
     target: "आणखी काही नको."
     reading: "āṇkhi kāhi nako."
     ipa: "aɳkʰi kaɦi nəko"
+    phonetic: "[aɳkʰi kaɦi nəko]"
+    phonetic_source: "rules"
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
@@ -126,7 +149,10 @@ cards:
     target: "स्वस्त"
     reading: "svasta"
     ipa: "sʋəst̪ə"
+    phonetic: "[sʋəst̪ə]"
+    phonetic_source: "rules"
     pos: "adj"
+    notes: [{ id: "n1", kind: "behaviour" }]
     "examples": [
       {"target": "इंटरनेट स्वस्त आहे.", "reading": "iṇṭarneṭ svast āhe.", "ipa": "iɳʈərneʈ sʋəst̪ aɦe", "bases": [{"word": "आहे", "base": "असणे", "reading": "asṇe"}]},
       {"target": "वांगी स्वस्त आहेत.", "reading": "vāṅgi svast āhet.", "ipa": "ʋaŋɡi sʋəst̪ aɦet̪", "bases": [{"word": "स्वस्त", "base": "स्वस्त", "reading": "svasta"}, {"word": "आहेत", "base": "असणे", "reading": "asṇe"}]}
@@ -135,7 +161,10 @@ cards:
     target: "महाग"
     reading: "mahāg"
     ipa: "məɦaɡ"
+    phonetic: "[məɦaɡ]"
+    phonetic_source: "rules"
     pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
     "examples": [
       {"target": "खूप महाग आहे!", "reading": "khup mahāg āhe!", "ipa": "kʰup məɦaɡ aɦe", "bases": [{"word": "खूप", "base": "खूप", "reading": "khup"}, {"word": "आहे", "base": "असणे", "reading": "asṇe"}]},
       {"target": "हा ड्रेस महाग आहे.", "reading": "hā ḍres mahāg āhe.", "ipa": "ɦa ɖres məɦaɡ aɦe", "bases": [{"word": "महाग", "base": "महाग", "reading": "mahāg"}, {"word": "आहे", "base": "असणे", "reading": "asṇe"}]}
@@ -145,6 +174,8 @@ cards:
     picture: "🛍"
     reading: "piśvi"
     ipa: "piʃʋi"
+    phonetic: "[piʃʋi]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "f"
     notes:
@@ -157,6 +188,8 @@ cards:
     target: "बाजार"
     reading: "bājār"
     ipa: "badzar"
+    phonetic: "[badzaɾ]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "m"
     notes:

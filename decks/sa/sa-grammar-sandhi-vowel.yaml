@@ -1,0 +1,171 @@
+# Vowel (ac) sandhi: the junctions of two vowels across a boundary. Every example was read on
+# sa.wikipedia.org/wiki/सन्धिप्रकरणम् (the pairs and the sutra names) and, for himalaya, vidyalaya,
+# mahesvara, mahotsava, svagata and the compounds with the same parts, on the en.wiktionary entry of
+# the joined word (its etymology line names the two parts); the sutra numbers and words were read on
+# sa.wikisource.org/wiki/अष्टाध्यायी/षष्टः_अध्यायः, 2026-11-16. Readings and IPA from tools/transcribe.py (sa).
+schema: 1
+id: "sa-grammar-sandhi-vowel"
+part: "core"
+kind: "grammar"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["joined"]
+  entries:
+    - lemma: "अल्प + अपराधः"
+      key: "alpa-aparadhah"
+      reading: "alpa aparādhaḥ"
+      forms: { "joined": "अल्पापराधः" }
+      readings: { "joined": "alpāparādhaḥ" }
+      ipas: { "joined": "əlpaːpəraːd̪ʱəh" }
+    - lemma: "हिम + आलय"
+      key: "hima-alaya"
+      reading: "hima ālaya"
+      forms: { "joined": "हिमालय" }
+      readings: { "joined": "himālaya" }
+      ipas: { "joined": "ɦimaːləjə" }
+    - lemma: "मुनि + इन्द्रः"
+      key: "muni-indrah"
+      reading: "muni indraḥ"
+      forms: { "joined": "मुनीन्द्रः" }
+      readings: { "joined": "munīndraḥ" }
+      ipas: { "joined": "muniːnd̪rəh" }
+    - lemma: "गुरु + उपदेशः"
+      key: "guru-upadesah"
+      reading: "guru upadeśaḥ"
+      forms: { "joined": "गुरूपदेशः" }
+      readings: { "joined": "gurūpadeśaḥ" }
+      ipas: { "joined": "ɡuruːpəd̪eːʃəh" }
+    - lemma: "पितृ + ऋणम्"
+      key: "pitr-rnam"
+      reading: "pitṛ ṛṇam"
+      forms: { "joined": "पितॄणम्" }
+      readings: { "joined": "pitṝṇam" }
+      ipas: { "joined": "pit̪r̩ːɳəm" }
+    - lemma: "विद्या + आलय"
+      key: "vidya-alaya"
+      reading: "vidyā ālaya"
+      forms: { "joined": "विद्यालय" }
+      readings: { "joined": "vidyālaya" }
+      ipas: { "joined": "ʋid̪jaːləjə" }
+    - lemma: "राम + इति"
+      key: "rama-iti"
+      reading: "rāma iti"
+      forms: { "joined": "रामेति" }
+      readings: { "joined": "rāmeti" }
+      ipas: { "joined": "raːmeːt̪i" }
+    - lemma: "सूर्य + उदयः"
+      key: "surya-udayah"
+      reading: "sūrya udayaḥ"
+      forms: { "joined": "सूर्योदयः" }
+      readings: { "joined": "sūryodayaḥ" }
+      ipas: { "joined": "suːrjoːd̪əjəh" }
+    - lemma: "महा + ऋषिः"
+      key: "maha-rsih"
+      reading: "mahā ṛṣiḥ"
+      forms: { "joined": "महर्षिः" }
+      readings: { "joined": "maharṣiḥ" }
+      ipas: { "joined": "məɦərʂih" }
+    - lemma: "महा + ईश्वर"
+      key: "maha-isvara"
+      reading: "mahā īśvara"
+      forms: { "joined": "महेश्वर" }
+      readings: { "joined": "maheśvara" }
+      ipas: { "joined": "məɦeːʃʋərə" }
+    - lemma: "ब्रह्म + ऋषिः"
+      key: "brahma-rsih"
+      reading: "brahma ṛṣiḥ"
+      forms: { "joined": "ब्रह्मर्षिः" }
+      readings: { "joined": "brahmarṣiḥ" }
+      ipas: { "joined": "brəɦmərʂih" }
+    - lemma: "महा + उत्सव"
+      key: "maha-utsava"
+      reading: "mahā utsava"
+      forms: { "joined": "महोत्सव" }
+      readings: { "joined": "mahotsava" }
+      ipas: { "joined": "məɦoːt̪səʋə" }
+    - lemma: "एक + एकम्"
+      key: "eka-ekam"
+      reading: "eka ekam"
+      forms: { "joined": "एकैकम्" }
+      readings: { "joined": "ekaikam" }
+      ipas: { "joined": "eːkəikəm" }
+    - lemma: "देव + ऐश्वर्यम्"
+      key: "deva-aisvaryam"
+      reading: "deva aiśvaryam"
+      forms: { "joined": "देवैश्वर्यम्" }
+      readings: { "joined": "devaiśvaryam" }
+      ipas: { "joined": "d̪eːʋəiʃʋərjəm" }
+    - lemma: "जलस्य + ओघः"
+      key: "jalasya-oghah"
+      reading: "jalasya oghaḥ"
+      forms: { "joined": "जलस्यौघः" }
+      readings: { "joined": "jalasyaughaḥ" }
+      ipas: { "joined": "dʒələsjəuɡʱəh" }
+    - lemma: "वन + औषधिः"
+      key: "vana-ausadhih"
+      reading: "vana auṣadhiḥ"
+      forms: { "joined": "वनौषधिः" }
+      readings: { "joined": "vanauṣadhiḥ" }
+      ipas: { "joined": "ʋənəuʂəd̪ʱih" }
+    - lemma: "इति + आदि"
+      key: "iti-adi"
+      reading: "iti ādi"
+      forms: { "joined": "इत्यादि" }
+      readings: { "joined": "ityādi" }
+      ipas: { "joined": "it̪jaːd̪i" }
+    - lemma: "मधु + अरिः"
+      key: "madhu-arih"
+      reading: "madhu ariḥ"
+      forms: { "joined": "मध्वरिः" }
+      readings: { "joined": "madhvariḥ" }
+      ipas: { "joined": "məd̪ʱʋərih" }
+    - lemma: "पितृ + अंशः"
+      key: "pitr-amsah"
+      reading: "pitṛ aṃśaḥ"
+      forms: { "joined": "पित्रंशः" }
+      readings: { "joined": "pitraṃśaḥ" }
+      ipas: { "joined": "pit̪rə̃ʃəh" }
+    - lemma: "सु + आगत"
+      key: "su-agata"
+      reading: "su āgata"
+      forms: { "joined": "स्वागत" }
+      readings: { "joined": "svāgata" }
+      ipas: { "joined": "sʋaːɡət̪ə" }
+    - lemma: "हरे + ए"
+      key: "hare-e"
+      reading: "hare e"
+      forms: { "joined": "हरये" }
+      readings: { "joined": "haraye" }
+      ipas: { "joined": "ɦərəjeː" }
+    - lemma: "नै + अकः"
+      key: "nai-akah"
+      reading: "nai akaḥ"
+      forms: { "joined": "नायकः" }
+      readings: { "joined": "nāyakaḥ" }
+      ipas: { "joined": "naːjəkəh" }
+    - lemma: "विष्णो + ए"
+      key: "visno-e"
+      reading: "viṣṇo e"
+      forms: { "joined": "विष्णवे" }
+      readings: { "joined": "viṣṇave" }
+      ipas: { "joined": "ʋiʂɳəʋeː" }
+    - lemma: "उभौ + अपि"
+      key: "ubhau-api"
+      reading: "ubhau api"
+      forms: { "joined": "उभावपि" }
+      readings: { "joined": "ubhāvapi" }
+      ipas: { "joined": "ubʱaːʋəpi" }
+    - lemma: "को + अपि"
+      key: "ko-api"
+      reading: "ko api"
+      forms: { "joined": "कोऽपि" }
+      readings: { "joined": "ko'pi" }
+      ipas: { "joined": "koːpi" }
+    - lemma: "रामो + अवदत्"
+      key: "ramo-avadat"
+      reading: "rāmo avadat"
+      forms: { "joined": "रामोऽवदत्" }
+      readings: { "joined": "rāmo'vadat" }
+      ipas: { "joined": "raːmoːʋəd̪ət̪" }
