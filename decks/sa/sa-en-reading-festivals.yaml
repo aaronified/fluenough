@@ -1,0 +1,62 @@
+schema: 1
+id: "sa-en-reading-festivals"
+name: "Reading: festivals"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-festivals-text-1"
+    title: "The temple festival"
+    theme: "festivals"
+    sentences:
+      - { text: "उत्सवे मन्दिरे दीपा भवन्ति.", reading: "utsave mandire dīpā bhavanti.", ipa: "ut̪səʋeː mənd̪ireː d̪iːpaː bʱəʋənt̪i" }
+      - { text: "पुरोहितो मन्त्रैर् देवं पूजयति.", reading: "purohito mantrair devaṃ pūjayati.", ipa: "puroːɦit̪oː mənt̪rəir d̪eːʋəm puːdʒəjət̪i" }
+      - { text: "वादकस्य हस्ते वंशी भवति.", reading: "vādakasya haste vaṃśī bhavati.", ipa: "ʋaːd̪əkəsjə ɦəst̪eː ʋə̃ʃiː bʱəʋət̪i" }
+      - { text: "शङ्खस्य शब्दो मङ्गलो ऽस्ति.", reading: "śaṅkhasya śabdo maṅgalo 'sti.", ipa: "ʃəŋkʰəsjə ʃəbd̪oː məŋɡəloː st̪i" }
+      - { text: "भक्तः पूजायां देवाय पुष्पं ददाति.", reading: "bhaktaḥ pūjāyāṃ devāya puṣpaṃ dadāti.", ipa: "bʱəkt̪əh puːdʒaːjaːm d̪eːʋaːjə puʂpəm d̪əd̪aːt̪i" }
+    questions:
+      - id: "sa-6640"
+        prompt: { en: "What does the priest worship the god with?" }
+        options: [{ en: "Flowers" }, { en: "Mantras" }, { en: "Lamps" }]
+        answer: 2
+      - id: "sa-6641"
+        prompt: { en: "What does the musician have in his hand?" }
+        options: [{ en: "A drum" }, { en: "A conch" }, { en: "A flute" }]
+        answer: 3
+      - id: "sa-6642"
+        prompt: { en: "Which word means 'auspicious'?" }
+        options: [{ en: "मङ्गलो (maṅgalo)" }, { en: "पुष्पं (puṣpaṃ)" }, { en: "शब्दो (śabdo)" }]
+        answer: 1
+      - id: "sa-6643"
+        prompt: { en: "A devotee gives a lamp to the god in worship." }
+        answer: false
+  - id: "sa-festivals-text-2"
+    title: "Wedding, flag and morning"
+    theme: "festivals"
+    sentences:
+      - { text: "देव्या मूर्तिर् मन्दिरे तिष्ठति.", reading: "devyā mūrtir mandire tiṣṭhati.", ipa: "d̪eːʋjaː muːrt̪ir mənd̪ireː t̪iʂʈʰət̪i" }
+      - { text: "विवाहे वरो मालां धरति.", reading: "vivāhe varo mālāṃ dharati.", ipa: "ʋiʋaːɦeː ʋəroː maːlaːm d̪ʱərət̪i" }
+      - { text: "अगरुर् धूपे सुगन्धं ददाति.", reading: "agarur dhūpe sugandhaṃ dadāti.", ipa: "əɡərur d̪ʱuːpeː suɡənd̪ʱəm d̪əd̪aːt̪i" }
+      - { text: "विवाहे संस्कारं पुरोहितः करोति.", reading: "vivāhe saṃskāraṃ purohitaḥ karoti.", ipa: "ʋiʋaːɦeː sə̃skaːrəm puroːɦit̪əh kəroːt̪i" }
+      - { text: "उत्सवे वायुना पताका चलति.", reading: "utsave vāyunā patākā calati.", ipa: "ut̪səʋeː ʋaːjunaː pət̪aːkaː tʃələt̪i" }
+      - { text: "प्रभाते भक्ता मन्दिरं गच्छन्ति.", reading: "prabhāte bhaktā mandiraṃ gacchanti.", ipa: "prəbʱaːt̪eː bʱəkt̪aː mənd̪irəm ɡətʃtʃʰənt̪i" }
+    questions:
+      - id: "sa-6644"
+        prompt: { en: "What does the bridegroom hold at the wedding?" }
+        options: [{ en: "A garland" }, { en: "A flag" }, { en: "A flower" }]
+        answer: 1
+      - id: "sa-6645"
+        prompt: { en: "Who performs the rite at the wedding?" }
+        options: [{ en: "The musician" }, { en: "The priest" }, { en: "The bridegroom" }]
+        answer: 2
+      - id: "sa-6646"
+        prompt: { en: "Which word means 'in the morning'?" }
+        options: [{ en: "उत्सवे (utsave)" }, { en: "विवाहे (vivāhe)" }, { en: "प्रभाते (prabhāte)" }]
+        answer: 3
+      - id: "sa-6647"
+        prompt: { en: "Devotees go to the temple in the morning." }
+        answer: true
