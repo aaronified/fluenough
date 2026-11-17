@@ -2975,10 +2975,17 @@ def _ur_parse(word: str) -> tuple[list[_UrTok], bool, list[str]]:
             elif prev is not None and prev.kind in ("V", "Q") and glide:
                 add_c("y", L)
             elif after_c and nxt is not None and nxt.ch in "اآ":
+                if prev.mark is None:
+                    # دیا, پیار: the vowel before the glide is not written.
+                    toks.append(_UrTok("V", UR_UNKNOWN))
                 add_c("y", L)
             elif after_c and prev.mark in ("i", "a"):
                 toks.append(_UrTok("V", {"i": "ī", "a": "ai"}[prev.mark]))
                 prev.mark = "0"
+            elif any(l.ch != UR_NASAL for l in letters[i + 1:]):
+                # Not word-final and unmarked: ī, i, ē, ai or iy (ایسا, دیکھیں,
+                # بیٹھے, بیتاب): not derivable, so a person reviews it.
+                toks.append(_UrTok("V", UR_UNKNOWN))
             else:
                 toks.append(_UrTok("V", "ī"))
                 notes.append("ی: ī or ē")
