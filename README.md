@@ -167,64 +167,96 @@ B1, in teaching order, those not yet written shown as "Coming". The list
 below is written from `decks/index.json` each time the decks change.
 
 <!-- languages:start -->
-**57 languages**
+**89 languages**
 
 | Language | Family | Subfamily | Scripts | Level reached |
 |---|---|---|---|---|
+| Afrikaans | Indo-European | Germanic | Latin | in progress |
 | Arabic | Afro-Asiatic | Semitic | Arabic | in progress |
+| Aramaic (Imperial) | Afro-Asiatic | Semitic | Hebrew | in progress |
 | Archaic Greek | Indo-European | Hellenic | Greek | in progress |
 | Ashokan Prakrit | Indo-European | Indo-Aryan | Devanagari, Brahmi | in progress |
 | Assamese | Indo-European | Indo-Aryan | Eastern Nagari | B1 |
+| Awadhi | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Basque | Isolate | — | Latin | in progress |
 | Bengali | Indo-European | Indo-Aryan | Eastern Nagari | B1 |
+| Bhojpuri | Indo-European | Indo-Aryan | Devanagari | in progress |
+| Bodo | Sino-Tibetan | Tibeto-Burman | Devanagari | in progress |
 | Cantonese | Sino-Tibetan | Sinitic | Traditional Hanzi | in progress |
 | Catalan | Indo-European | Romance | Latin | in progress |
+| Chhattisgarhi | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Classical Greek | Indo-European | Hellenic | Greek | in progress |
+| Classical Sanskrit | Indo-European | Indo-Aryan | Devanagari | A1 |
+| Dogri | Indo-European | Indo-Aryan | Devanagari | in progress |
+| Dutch | Indo-European | Germanic | Latin | in progress |
+| Egyptian | Afro-Asiatic | Egyptian | Egyptian hieroglyphs | in progress |
 | Esperanto | Constructed | Romance | Latin | in progress |
 | Filipino | Austronesian | Malayo-Polynesian | Latin | in progress |
 | Finnish | Uralic | Finnic | Latin | in progress |
 | French | Indo-European | Romance | Latin | B1 |
+| Garhwali | Indo-European | Indo-Aryan | Devanagari | in progress |
 | German | Indo-European | Germanic | Latin | in progress |
+| Goan Konkani | Indo-European | Indo-Aryan | Latin | in progress |
 | Greek (Modern) | Indo-European | Hellenic | Greek | in progress |
 | Gujarati | Indo-European | Indo-Aryan | Gujarati | A2 |
+| Haryanvi | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Hausa | Afro-Asiatic | Chadic | Latin | in progress |
 | Hebrew | Afro-Asiatic | Semitic | Hebrew | in progress |
 | Hindustani | Indo-European | Indo-Aryan | Devanagari, Perso-Arabic | B1 |
 | Hungarian | Uralic | Ugric | Latin | in progress |
+| Indonesian | Austronesian | Malayo-Polynesian | Latin | in progress |
 | Interslavic | Constructed | Slavic | Latin, Cyrillic | in progress |
 | Irish | Indo-European | Celtic | Latin | in progress |
 | Italian | Indo-European | Romance | Latin | in progress |
 | Japanese | Japonic | — | Kana, Kanji | B1 |
 | Kannada | Dravidian | South | Kannada | B1 |
+| Kashmiri | Indo-European | Indo-Aryan | Perso-Arabic, Devanagari | in progress |
+| Khasi | Austroasiatic | Khasian | Latin | in progress |
 | Koine Greek | Indo-European | Hellenic | Greek | in progress |
+| Konkani | Indo-European | Indo-Aryan | Devanagari, Kannada, Malayalam | in progress |
 | Korean | Koreanic | — | Hangul | in progress |
+| Kumaoni | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Latin | Indo-European | Italic | Latin | in progress |
 | Lojban | Constructed | None | Latin | in progress |
+| Magahi | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Maithili | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Malay | Austronesian | Malayo-Polynesian | Latin | in progress |
 | Malayalam | Dravidian | South | Malayalam | in progress |
 | Mandarin Chinese | Sino-Tibetan | Sinitic | Simplified Hanzi, Traditional Hanzi | B1 |
+| Manipuri | Sino-Tibetan | Tibeto-Burman | Eastern Nagari, Meitei Mayek | in progress |
 | Marathi | Indo-European | Indo-Aryan | Devanagari | B1 |
 | Middle English | Indo-European | Germanic | Latin | in progress |
+| Mizo | Sino-Tibetan | Tibeto-Burman | Latin | in progress |
+| Mycenaean Greek | Indo-European | Hellenic | Linear B | in progress |
+| Nepali | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Norwegian (Bokmål) | Indo-European | Germanic | Latin | in progress |
 | Odia | Indo-European | Indo-Aryan | Odia | in progress |
 | Old English | Indo-European | Germanic | Latin | in progress |
 | Pali | Indo-European | Indo-Aryan | Devanagari | in progress |
+| Pashto | Indo-European | Iranian | Perso-Arabic | in progress |
+| Persian | Indo-European | Iranian | Perso-Arabic | in progress |
 | Polish | Indo-European | Slavic | Latin | in progress |
 | Portuguese | Indo-European | Romance | Latin | in progress |
+| Proto-Indo-European | Indo-European | — | Latin | in progress |
 | Punjabi | Indo-European | Indo-Aryan | Gurmukhi, Shahmukhi | in progress |
 | Quechua | Quechuan | — | Latin | in progress |
+| Rajasthani | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Russian | Indo-European | Slavic | Cyrillic | in progress |
+| Santali | Austroasiatic | Munda | Ol Chiki, Latin, Devanagari, Eastern Nagari | in progress |
 | Serbo-Croatian | Indo-European | Slavic | Latin, Cyrillic | in progress |
+| Sindhi | Indo-European | Indo-Aryan | Perso-Arabic, Devanagari | in progress |
 | Somali | Afro-Asiatic | Cushitic | Latin | in progress |
 | Spanish | Indo-European | Romance | Latin | B1 |
+| Sumerian | Isolate | — | Cuneiform | in progress |
 | Swahili | Niger-Congo | Bantu | Latin | in progress |
 | Swedish | Indo-European | Germanic | Latin | in progress |
 | Tamil | Dravidian | South | Tamil | in progress |
 | Telugu | Dravidian | South-Central | Telugu | B1 |
 | Thai | Kra-Dai | Tai | Thai | in progress |
-| Toki Pona | Constructed | None | Latin | B1 |
+| Toki Pona | Constructed | None | Latin, Sitelen pona | B1 |
+| Tulu | Dravidian | South | Kannada | in progress |
 | Turkish | Turkic | Oghuz | Latin | in progress |
+| Ukrainian | Indo-European | Slavic | Cyrillic | in progress |
 | Vedic Sanskrit | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Vietnamese | Austroasiatic | Vietic | Latin | in progress |
 | Yiddish | Indo-European | Germanic | Hebrew | in progress |
