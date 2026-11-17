@@ -1,0 +1,37 @@
+schema: 1
+id: "sa-en-grammar-optative"
+kind: "layer"
+core: "sa-grammar-optative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The optative: may, should, would"
+description: "The optative (vidhiliṅ) of the verbs of the course in the active and the middle voice: the sign yā or ī, the e that blends with the stem a, the endings and the uses (wish, request, what ought to be, what may be). Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "tense, voice, person and number"
+  slots:
+    "opt-p3-sg": "optative (vidhiliṅ), active (parasmaipada), third person singular (he, she, it)"
+    "opt-p3-du": "optative (vidhiliṅ), active (parasmaipada), third person dual (the two of them)"
+    "opt-p3-pl": "optative (vidhiliṅ), active (parasmaipada), third person plural (they)"
+    "opt-p2-sg": "optative (vidhiliṅ), active (parasmaipada), second person singular (you)"
+    "opt-p2-du": "optative (vidhiliṅ), active (parasmaipada), second person dual (the two of you)"
+    "opt-p2-pl": "optative (vidhiliṅ), active (parasmaipada), second person plural (you all)"
+    "opt-p1-sg": "optative (vidhiliṅ), active (parasmaipada), first person singular (I)"
+    "opt-p1-du": "optative (vidhiliṅ), active (parasmaipada), first person dual (the two of us)"
+    "opt-p1-pl": "optative (vidhiliṅ), active (parasmaipada), first person plural (we)"
+    "opt-m3-sg": "optative (vidhiliṅ), middle (ātmanepada), third person singular (he, she, it)"
+    "opt-m3-du": "optative (vidhiliṅ), middle (ātmanepada), third person dual (the two of them)"
+    "opt-m3-pl": "optative (vidhiliṅ), middle (ātmanepada), third person plural (they)"
+    "opt-m2-sg": "optative (vidhiliṅ), middle (ātmanepada), second person singular (you)"
+    "opt-m2-du": "optative (vidhiliṅ), middle (ātmanepada), second person dual (the two of you)"
+    "opt-m2-pl": "optative (vidhiliṅ), middle (ātmanepada), second person plural (you all)"
+    "opt-m1-sg": "optative (vidhiliṅ), middle (ātmanepada), first person singular (I)"
+    "opt-m1-du": "optative (vidhiliṅ), middle (ātmanepada), first person dual (the two of us)"
+    "opt-m1-pl": "optative (vidhiliṅ), middle (ātmanepada), first person plural (we)"
+rules:
+  "sa-rule-optative-active":
+    name: "Optative, active: yā after an athematic stem, e after a"
+    explanation: "The optative is the mode that Pāṇini calls liṅ; 3.3.161 begins {1}, as typed on the page, which types the rest of the sūtra with defects, so only its first words are quoted (a command, an invitation, an offer), 3.3.157 reads {2}, liṅ and loṭ with the words for wishing, and 3.3.168 reads {3}, liṅ with yadi, if. Whitney 573 says its first sense is wish, and that it passes into request, into what ought to be and into what may be: {4} (may he go, he should go; the word for he loses its visarga before g by 6.1.132, as in the earlier units), and Whitney 575 a has {5} (may we live). Whitney 565 and 566 give the formation: after a stem that does not end in a the sign is yā, added to the weak stem, with -us for the third person plural: {6} gives {7}, {8} gives {9}, {10} gives {11} and {12} gives {13}; after a stem in a the sign is ī, which blends with the a to e, and a y is put between that e and a vowel ending: {14} gives {15}, {16} and {17}. Pāṇini 7.2.79, {18}, 7.2.80, {19}, and 3.4.108, {20}, are the sūtras on the page for the loss of the s, the change of yā to iya after a, and the ending -yuḥ for the third plural, in the words typed there."
+  "sa-rule-optative-middle":
+    name: "Optative, middle: ī and the secondary endings"
+    explanation: "In the middle voice the sign is ī throughout, taking the secondary endings, with -a for the first singular and -ran for the third plural (Whitney 565 b, 566): {1}, a verb of the middle, gives {2}, {3} and {4}, the ī blending with the a of the stem into e; after a stem that does not end in a the weaker stem is taken and the ī stays long: {5} gives {6}, {7} gives {8} and {9} gives {10}. Pāṇini 3.4.102, {11}, gives the augment sīyuṭ to liṅ, whose s drops by 7.2.79, 3.4.105, {12}, gives -ran for the third plural and 3.4.106, {13}, gives -a for the first singular. A verb takes the middle forms of the optative where it takes the middle voice at all: the verbs of the unit on the ātmanepada have them, and the other verbs have empty middle cells."

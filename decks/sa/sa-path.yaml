@@ -315,7 +315,8 @@ units:
       - { id: "grammar-causatives-heard", text: { "en": "A short passage in Classical Sanskrit showing causatives, read aloud" } }
     reading_passages:
       - { id: "grammar-causatives-text", text: { "en": "A short written text in Classical Sanskrit showing causatives" } }
-  - planned: { id: "sa-grammar-optative", grammar: ["optative"] }
+  - decks: ["sa-grammar-optative"]
+    grammar: ["optative-active", "optative-middle"]
     listening_passages:
       - { id: "grammar-optative-heard", text: { "en": "A short passage in Classical Sanskrit showing optative, read aloud" } }
     reading_passages:
