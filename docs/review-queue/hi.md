@@ -189,3 +189,20 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | hi-4058 to hi-4063 | hi-culture-2 | These dohas are attributed to Amir Khusrau on the Hindi Wikipedia page; no early source is known, and the Hindi wording is modern. Confirm the attribution or drop them. | Haiku builder | 2026-11-17 |
 | hi-4110 | hi-culture-3 | The date c. 1913-1914 is from the Hindi Wikipedia pages on the poem (1913); the second year is approximate. Confirm. | Haiku builder | 2026-11-17 |
 | hi-4111 | hi-culture-3 | The work the verse belongs to is unconfirmed; it is quoted on the Hindi Wikipedia page about Aansu. Confirm the work or drop the card. | Haiku builder | 2026-11-17 |
+| hi-4064 | hi-culture-2 | The Iqbal couplet's work is not named on the Hindi Wikiquote page about him; confirm the work or drop the card. The Perso-Arabic spelling was not read, so the card has no target_scripts. | Haiku builder | 2026-11-17 |
+| hi-4114 | hi-culture-3 | The 1936 date for the speech is from one page (Hindi Wikiquote); confirm. The Perso-Arabic spelling was not read, so the card has no target_scripts. | Haiku builder | 2026-11-17 |
+| hi-4115 | hi-culture-3 | The 1926 date and the pen name Kavikinkar are from one page (Hindi Wikiquote); confirm. The Perso-Arabic spelling was not read, so the card has no target_scripts. | Haiku builder | 2026-11-17 |
+| hi-4116 | hi-culture-3 | The Hindi Wikipedia page gives no year for the essay Manoyog; the date given is the span of the author's life. Confirm the essay's year. | Haiku builder | 2026-11-17 |
+| hi-4117 | hi-culture-3 | The work is not named on the Hindi Wikiquote page about the author; confirm the work or drop the card. The Perso-Arabic spelling was not read. | Haiku builder | 2026-11-17 |
+| none (dropped) | hi-culture-2 | Dropped candidate Mir Taqi Mir: the Hindi Wikiquote page could not be read (rate limited), and the Hindi Wikipedia page has no couplet. | Haiku builder | 2026-11-17 |
+| none (dropped) | hi-culture-2 | Dropped candidate Mirza Ghalib: the only couplet on the Hindi Wikipedia page is already in hi-4051. | Haiku builder | 2026-11-17 |
+| none (dropped) | hi-culture-2 | Dropped candidate Zauq: the Hindi Wikiquote page could not be read (rate limited). | Haiku builder | 2026-11-17 |
+| none (dropped) | hi-culture-2 | Dropped candidate Bahadur Shah Zafar: the couplets on the page other than the one in hi-culture-2 contain hyphenated izafat words, and no clean one was found. | Haiku builder | 2026-11-17 |
+| none (dropped) | hi-culture-2 | Dropped candidate Dagh: no couplet on the Hindi Wikipedia page, and the Hindi Wikiquote page could not be read (rate limited). | Haiku builder | 2026-11-17 |
+| none (dropped) | hi-culture-2 | Dropped candidate Nazeer Akbarabadi: the pages read have no couplet. | Haiku builder | 2026-11-17 |
+| none (dropped) | hi-culture-2 | Dropped candidate Insha: no Hindi Wikiquote page; the Hindi Wikipedia page could not be read (rate limited). | Haiku builder | 2026-11-17 |
+| none (dropped) | hi-culture-2 | Dropped candidate Wali Dakkani: the Hindi Wikipedia page could not be read (rate limited). | Haiku builder | 2026-11-17 |
+| none (dropped) | hi-culture-2 | Dropped candidate Momin: the Hindi Wikipedia page is a disambiguation page with no couplet; the Hindi Wikiquote page could not be read. | Haiku builder | 2026-11-17 |
+| none (dropped) | hi-culture-3 | Dropped candidate Balmukund Gupt: the one quotation read is 26 words (over the 25-word limit), and the creator has no entry yet. | Haiku builder | 2026-11-17 |
+| none (dropped) | hi-culture-3 | Dropped candidate Bharatendu Harishchandra: the Hindi Wikiquote page could not be read (rate limited). | Haiku builder | 2026-11-17 |
+| none (dropped) | hi-culture-3 | Dropped candidate Ramchandra Shukla: the page could not be read (rate limited). | Haiku builder | 2026-11-17 |
