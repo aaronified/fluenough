@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-stories"
+name: "Reading: stories"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-stories-text-1"
+    title: "City and forest"
+    theme: "stories"
+    sentences:
+      - { text: "वणिग् नगरे हिरण्यं क्रीणाति.", reading: "vaṇig nagare hiraṇyaṃ krīṇāti.", ipa: "ʋəɳiɡ nəɡəreː ɦirəɳjəm kriːɳaːt̪i" }
+      - { text: "सर्पस्य शत्रुर् नकुलो ऽस्ति.", reading: "sarpasya śatrur nakulo 'sti.", ipa: "sərpəsjə ʃət̪rur nəkuloː st̪i" }
+      - { text: "सिंहः पशूनां राजा भवति.", reading: "siṃhaḥ paśūnāṃ rājā bhavati.", ipa: "sĩɦəh pəʃuːnaːm raːdʒaː bʱəʋət̪i" }
+      - { text: "उलूको रात्रौ वने चरति.", reading: "ulūko rātrau vane carati.", ipa: "uluːkoː raːt̪rəu ʋəneː tʃərət̪i" }
+      - { text: "वने श्येनो मूषकं हरति.", reading: "vane śyeno mūṣakaṃ harati.", ipa: "ʋəneː ʃjeːnoː muːʂəkəm ɦərət̪i" }
+    questions:
+      - id: "sa-6632"
+        prompt: { en: "What does the merchant buy in the city?" }
+        options: [{ en: "Cloth" }, { en: "Grain" }, { en: "Gold" }]
+        answer: 3
+      - id: "sa-6633"
+        prompt: { en: "What does the passage call the lion?" }
+        options: [{ en: "The king of the forest" }, { en: "The king of the animals" }, { en: "The lord of the mountain" }]
+        answer: 2
+      - id: "sa-6634"
+        prompt: { en: "Which word means 'mongoose'?" }
+        options: [{ en: "नकुलो (nakulo)" }, { en: "सर्पस्य (sarpasya)" }, { en: "शत्रुर् (śatrur)" }]
+        answer: 1
+      - id: "sa-6635"
+        prompt: { en: "The hawk carries off a hare." }
+        answer: false
+  - id: "sa-stories-text-2"
+    title: "Physician, boy and fisherman"
+    theme: "stories"
+    sentences:
+      - { text: "औषधं वैद्यो रोगाय ददाति.", reading: "auṣadhaṃ vaidyo rogāya dadāti.", ipa: "əuʂəd̪ʱəm ʋəid̪joː roːɡaːjə d̪əd̪aːt̪i" }
+      - { text: "भीरुर् मूषको बिले वसति.", reading: "bhīrur mūṣako bile vasati.", ipa: "bʱiːrur muːʂəkoː bileː ʋəsət̪i" }
+      - { text: "सायं बालकः कथां शृणोति.", reading: "sāyaṃ bālakaḥ kathāṃ śṛṇoti.", ipa: "saːjəm baːləkəh kət̪ʰaːm ʃr̩ɳoːt̪i" }
+      - { text: "धीवरो नद्यां मत्स्यं लभते.", reading: "dhīvaro nadyāṃ matsyaṃ labhate.", ipa: "d̪ʱiːʋəroː nəd̪jaːm mət̪sjəm ləbʱət̪eː" }
+      - { text: "शूरो योद्धा खड्गं धरति.", reading: "śūro yoddhā khaḍgaṃ dharati.", ipa: "ʃuːroː joːd̪d̪ʱaː kʰəɖɡəm d̪ʱərət̪i" }
+    questions:
+      - id: "sa-6636"
+        prompt: { en: "What does the physician give for the disease?" }
+        options: [{ en: "Herbs" }, { en: "Water" }, { en: "Medicine" }]
+        answer: 3
+      - id: "sa-6637"
+        prompt: { en: "When does the boy listen to a story?" }
+        options: [{ en: "In the evening" }, { en: "In the morning" }, { en: "At night" }]
+        answer: 1
+      - id: "sa-6638"
+        prompt: { en: "Which word means 'fish'?" }
+        options: [{ en: "नद्यां (nadyāṃ)" }, { en: "मत्स्यं (matsyaṃ)" }, { en: "धीवरो (dhīvaro)" }]
+        answer: 2
+      - id: "sa-6639"
+        prompt: { en: "The fisherman catches a fish in the river." }
+        answer: true
