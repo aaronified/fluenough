@@ -26,7 +26,7 @@ Open a unit to see its phrasebook, words, rules and sentences in teaching order,
 
 A word counts as known once your last review in each skill was right and you were at least 85% likely to remember it then, as on Progress; a rule, over all the cells of its table. Known words are marked on their cards.
 
-At the end of a path is a part for songs, films and books, picked by interest. It is shown as "Feature incoming" for now ([#215](https://github.com/aaronified/fluenough/issues/215)).
+The Culture button on the Decks screen switches the path to a list of culture decks and the books, films, songs and other works the course recommends. The part at the end of the path for songs, films and books you bring yourself is still shown as "Feature incoming" ([#215](https://github.com/aaronified/fluenough/issues/215)).
 
 ## Decks
 

@@ -35,10 +35,11 @@ offline on your phone once a language's decks are downloaded.
 
 </div>
 
-> **Status: early development.** The architecture, deck format, example
-> decks, deck parser and validator are in, and the app's screens are built
-> from the design. Progress is saved on the phone, one database per profile,
-> and features not built yet are shown disabled, marked "Feature incoming". See
+> **Status: in active development (v0.11.0).** The app runs on Android phones,
+> with the drills, spaced repetition, placement, stats, culture and private
+> decks built, and progress is saved on the phone. Many courses are still
+> being written, and a feature not built yet is shown disabled, marked "Feature
+> incoming". See
 > [wiki Roadmap](https://github.com/aaronified/fluenough/wiki/Roadmap).
 
 ## Screenshots
@@ -61,7 +62,7 @@ A Bengali learner from English, three and a half weeks in.
 A learning session: a new word is shown, then asked in different ways, and
 it counts as learned only when both answers are right.
 
-<p align="center"><img src="docs/screenshots/learning-session.gif" width="240" alt="A learning session on a phone: a Bengali word is shown, then asked in several types of question (choose the meaning, choose the word, put the words in order), and Learned appears when both answers were right"></p>
+<p align="center"><img src="docs/screenshots/learning-session.gif" width="210" alt="A learning session on a phone: a Bengali word is shown, then asked in several types of question (choose the meaning, choose the word, put the words in order), and Learned appears when both answers were right"></p>
 
 <details>
 <summary>More: scrolling through the screens, and reviewing</summary>
@@ -72,16 +73,16 @@ it counts as learned only when both answers are right.
     <td align="center"><strong>Today</strong></td>
   </tr>
   <tr>
-    <td align="center"><img src="docs/screenshots/deck-path.gif" width="220" alt="The Bengali course path: done units, the unit up next, milestones, and the units still being written, shown as Coming"></td>
-    <td align="center"><img src="docs/screenshots/today.gif" width="220" alt="Today: the day's lesson, the words due by skill, the streak, quick revision and the day's fact"></td>
+    <td align="center"><img src="docs/screenshots/deck-path.gif" width="210" alt="The Bengali course path: done units, the unit up next, milestones, and the units still being written, shown as Coming"></td>
+    <td align="center"><img src="docs/screenshots/today.gif" width="210" alt="Today: the day's lesson, the words due by skill, the streak, quick revision and the day's fact"></td>
   </tr>
   <tr>
     <td align="center"><strong>Progress</strong></td>
     <td align="center"><strong>Reviewing</strong></td>
   </tr>
   <tr>
-    <td align="center"><img src="docs/screenshots/progress.gif" width="220" alt="Progress: reviews, what is remembered, the streak, twelve weeks of reviews, and how well each skill and tag is going"></td>
-    <td align="center"><img src="docs/screenshots/review.gif" width="220" alt="Reviewing the Bengali Family unit: the rater code, cards marked right, and cards still to check"></td>
+    <td align="center"><img src="docs/screenshots/progress.gif" width="210" alt="Progress: reviews, what is remembered, the streak, twelve weeks of reviews, and how well each skill and tag is going"></td>
+    <td align="center"><img src="docs/screenshots/review.gif" width="210" alt="Reviewing the Bengali Family unit: the rater code, cards marked right, and cards still to check"></td>
   </tr>
 </table>
 
@@ -110,11 +111,26 @@ it counts as learned only when both answers are right.
   ([Progress and stats](https://github.com/aaronified/fluenough/wiki/Progress-and-Stats))
 - **Several scripts.** Hindustani is one course in Devanagari or Perso-Arabic
   (Urdu), and Chinese in simplified or traditional characters; you choose, or
-  learn both. Punjabi is set up for Gurmukhi or Shahmukhi, its decks still to
-  come. Each Indic course teaches its script first, or lets you learn in Latin
-  letters and come back to the script later. A font is downloaded only where
-  a phone needs one: the app shows a sample line, asks whether you can read
-  it, and fetches the script's font only if it shows boxes.
+  learn both. Punjabi is set up for Gurmukhi or Shahmukhi, with a phrasebook and a
+  first-words deck so far. Each Indic course teaches its script first, or lets you learn in Latin
+  letters and come back to the script later. Toki Pona can be read in Latin
+  letters, in sitelen pona or both. Text in Latin, Cyrillic and Greek is drawn
+  in one downloaded font per script, and for the other scripts the app shows a
+  sample line, asks whether you can read it, and fetches the script's font
+  only if it shows boxes.
+- **Culture and recommendations.** The Culture button on the Decks screen
+  switches the course path to a list of culture decks, then the books, films,
+  songs and other works the course recommends. Each language has its own
+  Culture options, and everything is open whatever your level.
+- **A word is learned when you answer it twice.** A new word is shown, asked
+  at once, and asked again in a different way two questions later; only when
+  both answers are right does it join your reviews.
+- **Your own decks.** Settings, Your decks adds a private language, or your
+  own version of a course, from a `.fnzip` file; it is checked before it is
+  added, and nothing you add leaves your phone.
+- **Speaking, including on the device.** Say listens through your phone's
+  recogniser. For Telugu, an on-device listener can be installed from the
+  Voices page, so it works offline.
 - **Hear, Say, Read, Write.** The app's own skill model: each word has a
   separate schedule for each of the four, because you can recognise a word
   long before you can write it, and grammar is scheduled on its own. It is
@@ -127,6 +143,14 @@ it counts as learned only when both answers are right.
   other reviewers accept them.
   ([Reviewing guide](https://github.com/aaronified/fluenough/wiki/Reviewing-Guide),
   [ADR-0038](https://github.com/aaronified/fluenough/wiki/ADR-0038-Review-Proposals))
+- **Report a mistake.** The bug icon on a card, deck, unit, topic or culture
+  item opens a short list of what is wrong with that one thing; a general
+  problem report is in the Settings menu.
+  ([Reporting a problem](https://github.com/aaronified/fluenough/wiki/Reporting-a-Problem))
+- **Add a language.** The picker shows eight big tiles (Spanish, French,
+  Telugu, Hindustani, Bengali, Marathi, Kannada and Japanese) with how far each
+  course is written, keeps the full list one tap away, and folds languages with
+  no course yet under Coming soon.
 
 ## Why Fluenough is different
 
@@ -214,8 +238,9 @@ CEFR and to national tests is in
 
 **Why the courses stop at B1.** The aim is "a strong base, then real use": a
 course gives you the base, and past B1 you move on to native media, books and
-people. Upcoming: learners who reach B1 are pointed to movies, songs and books
-as resources
+people. The Culture button on the Decks screen already lists the books, films
+and songs each course recommends. Not built yet: books, films and songs you
+bring yourself, with questions on them
 ([#215](https://github.com/aaronified/fluenough/issues/215)).
 
 A course is tagged Alpha until its A1 units are written and Beta until its B1
