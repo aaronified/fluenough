@@ -306,7 +306,7 @@ void main() {
           code: 'en',
           name: 'English',
           progress: B1Progress.of(<B1Unit>[
-            B1Unit(words: 10, milestone: Milestone.a1, has: 10),
+            const B1Unit(words: 10, milestone: Milestone.a1, has: 10),
           ]),
         ),
       ],
