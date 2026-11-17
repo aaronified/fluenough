@@ -143,3 +143,7 @@ Core `notes: [{ id: "n1", kind }]` plus the matching text in the English layer `
 ### 5.6 Branches left for the owner or the next session
 
 `decks/as-notes-wave1` (partial notes, no PR), plus any branch whose PR merged and was not auto-deleted.
+
+## 6. App lines at 100% (2026-11-17)
+
+Re-measured from the regenerated `decks-live` index: words 1391 of 1391 (PR #1603: the nine missing `as-chores` words `as-8000..8008`), culture 72 of 72 (PR #1604: `as-culture-1..4` at 18 cards each, 42 new cards `as-4110..4120`, `as-4160..4169`, `as-4210..4217`, `as-4260..4272`, sourced in [Plan-Culture-Assamese](Plan-Culture-Assamese.md) "Second sourcing pass (2026-11-17)"), grammar 43 of 43 (already). Open decisions recorded: the 9th chores word is কুটা (chopping counts as a chore; the course already has বিচনা as `as-0338`); culture dates that conflict between the Wikisource index and en.wikipedia use the year of the edition actually read and say the other year in `edition`; `as-4261` has a numeral (`1498`) in its reading that its ipa does not spell (no numeral-in-sentence convention exists). The extras of section 5.3 (notes, data fixes, narrow IPA, rules tables, professional, genre decks) follow as small PRs.
