@@ -157,5 +157,24 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | hi-4166, hi-4167 | hi-culture-4 | Mir Dard's dates (1720 to 1785) agree on English and Hindi Wikipedia. Both couplets are read from the lexicon and rules with no hints; please check the words. | Haiku builder | 2026-11-17 |
 | hi-4163 | hi-culture-4 | سویدا is read by its lexicon form with no source for its vowels beyond the lexicon. Please check its reading and the gloss (the dark spot of the heart). | Haiku builder | 2026-11-17 |
 | hi-4164 | hi-culture-4 | خودئ (base خودی) and ناصِیہ (base ناصیہ) carry the lexicon's several-reading notes (و and ی); the readings k͟hōdī and nāsīh follow the lexicon. Please check. | Haiku builder | 2026-11-17 |
-| hi-4158 | hi-culture-4 | عیش is read aiś from the lexicon (the second vowel is not checked). Please check. | Haiku builder | 2026-11-17 |
 | hi-4162 to hi-4165 (Ghalib) | hi-culture-4 | Four more Ghalib couplets from the same diwan page are written with the lexicon's readings only; their meanings are the builder's English gloss and should be checked. | Haiku builder | 2026-11-17 |
+| hi-4150 | hi-culture-4 | reading hint supplied by the Sonnet review, for a native speaker to check | Haiku builder | 2026-11-17 |
+| hi-4151 | hi-culture-4 | reading hint supplied by the Sonnet review, for a native speaker to check | Haiku builder | 2026-11-17 |
+| hi-4152 | hi-culture-4 | reading hint supplied by the Sonnet review, for a native speaker to check | Haiku builder | 2026-11-17 |
+| hi-4154 | hi-culture-4 | reading hint supplied by the Sonnet review, for a native speaker to check | Haiku builder | 2026-11-17 |
+| hi-4155 | hi-culture-4 | reading hint supplied by the Sonnet review, for a native speaker to check | Haiku builder | 2026-11-17 |
+| hi-4156 | hi-culture-4 | reading hint supplied by the Sonnet review, for a native speaker to check | Haiku builder | 2026-11-17 |
+| hi-4157 | hi-culture-4 | reading hint supplied by the Sonnet review, for a native speaker to check | Haiku builder | 2026-11-17 |
+| hi-4159 | hi-culture-4 | reading hint supplied by the Sonnet review, for a native speaker to check | Haiku builder | 2026-11-17 |
+| hi-4162 | hi-culture-4 | reading hint supplied by the Sonnet review, for a native speaker to check | Haiku builder | 2026-11-17 |
+| hi-4163 | hi-culture-4 | reading hint supplied by the Sonnet review, for a native speaker to check | Haiku builder | 2026-11-17 |
+| hi-4164 | hi-culture-4 | reading hint supplied by the Sonnet review, for a native speaker to check | Haiku builder | 2026-11-17 |
+| hi-4165 | hi-culture-4 | reading hint supplied by the Sonnet review, for a native speaker to check | Haiku builder | 2026-11-17 |
+| hi-4166 | hi-culture-4 | reading hint supplied by the Sonnet review, for a native speaker to check | Haiku builder | 2026-11-17 |
+| hi-4167 | hi-culture-4 | reading hint supplied by the Sonnet review, for a native speaker to check | Haiku builder | 2026-11-17 |
+| hi-4152 | hi-culture-4 | The reviewer's ezafe ālam-e nāpāēdār is not in the Urdu text on Urdu Wikisource (no kasra). The text is left as it is; the reading uses the tool's form with the reviewer's hints where they fit. Please check the ezafe and nāpāēdār, which did not fit the letters (the tool's reading nāpāyīdār is written). | Haiku builder | 2026-11-17 |
+| hi-4156, hi-4163, hi-4164 | hi-culture-4 | Reviewer hints that did not fit the letters, so the tool's own reading is written: saudā-e (4156), siyah and suvaidā (4163), nāsiya (4164). Please check. | Haiku builder | 2026-11-17 |
+| hi-4162 | hi-culture-4 | The reviewer's bē-kasī is a two-word phrase; the hint is given as two words, bē and kasī, since the tool reads one word per hint. Please check. | Haiku builder | 2026-11-17 |
+| all cards with چھ (hi-4159, hi-4166, hi-4167) | hi-culture-4 | چھ is read ch to agree with the Devanagari cards (छ = ch), so pūchō, pūchā and chīn are written as the tool prints them; the reviewer's chh is not used. | Haiku builder | 2026-11-17 |
+| hi-4165 | hi-culture-4 | The reviewer's pūchhō correction was for hi-4159 only: hi-4165 has no پوچھو, so its reading is unchanged. | Haiku builder | 2026-11-17 |
+| hi-4161 (Mushafi) and creator Mushafi | hi-culture-4 | Death year: English Wikipedia gives 1844, Wikidata gives 1824; birth year: English gives 1751, Wikidata 1748. The years disagree, so both are written circa (1751 and 1844). Please confirm. | Haiku builder | 2026-11-17 |
