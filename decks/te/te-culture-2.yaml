@@ -174,7 +174,7 @@ cards:
       - { word: "వీరే", base: "వీరు", reading: "vīru" }
       - { word: "యింటింటి", base: "ఇల్లు", reading: "illu" }
       - { word: "ముంగిటను", base: "ముంగిలి", reading: "muṅgili" }
-      - { word: "పెక్కుచేఁతలు", base: "చేష్ట", reading: "cēṣṭa" }
+      - { word: "పెక్కుచేఁతలు", base: "చేత", reading: "cēta" }
       - { word: "సేసేరు", base: "చేయు", reading: "cēyu" }
       - { word: "పిలువరే", base: "పిలువు", reading: "piluvu" }
       - { word: "బాలుల", base: "బాలుడు", reading: "bāluḍu" }
@@ -273,12 +273,12 @@ cards:
       - { word: "ఎట్టు", base: "ఎట్లు", reading: "eṭlu" }
       - { word: "మోసపోతి", base: "మోసపోవు", reading: "mōsapōvu" }
       - { word: "నేను", base: "నేను", reading: "nēnu" }
-      - { word: "యివియెల్ల", base: "ఇవన్నీ", reading: "ivannī" }
+      - { word: "యివియెల్ల", base: "ఇవి", reading: "ivi" }
       - { word: "నిజమని", base: "నిజము", reading: "nijamu" }
       - { word: "నెట్టన", base: "నెట్టన", reading: "neṭṭana" }
       - { word: "హరినే", base: "హరి", reading: "hari" }
       - { word: "నమ్మ", base: "నమ్ము", reading: "nammu" }
-      - { word: "నేరనయితిఁగా", base: "నేర్చు", reading: "nērcu" }
+      - { word: "నేరనయితిఁగా", base: "నేరు", reading: "nēru" }
     source:
       author: "Tallapaka Annamacharya"
       work: "Tallapaka Padasahityam vol. 3, rekku 207, song 0207-05 (Sankarabharanam, dispassion), pallavi"
@@ -348,7 +348,7 @@ cards:
       author: "Tyagaraja"
       work: "Tyagaraja song Nidhi chala sukhama (Kalyani), charanam, as printed on te.wikisource"
       date: "1767-1847"
-      edition: "Tyagaraja kriti as printed on te.wikisource, with the raga and tala the page gives; the page names no printed edition. The date is the author's lifetime."
+      edition: "Tyagaraja kriti as printed on te.wikisource, with the raga and tala the page gives; the page names no printed edition. The date is the author's lifetime. The page's romanisation line reads surapati where the Telugu prints సుమతి; the Telugu is kept here."
       url: "https://te.wikisource.org/wiki/%E0%B0%A8%E0%B0%BF%E0%B0%A7%E0%B0%BF_%E0%B0%9A%E0%B0%BE%E0%B0%B2_%E0%B0%B8%E0%B1%81%E0%B0%96%E0%B0%AE%E0%B0%BE"
       basis: "public-domain"
       author_died: 1847
@@ -385,29 +385,32 @@ cards:
       jurisdiction: "IN"
       rights_checked: "2026-11-17"
   - id: "te-8812"
-    target: "దినదినమును మనసున చదువున నిన్ను"
-    words: ["దినదినమును", "మనసున", "చదువున", "నిన్ను"]
-    reading: "dinadinamunu manasuna caduvuna ninnu"
-    ipa: "d̪inad̪inamunu manasuna tʃad̪uʋuna ninnu"
-    phonetic: "[d̪inad̪inamunu manasuna tʃad̪uʋuna ninnu]"
+    target: "జగదానందకారక జయ జానకీ ప్రాణనాయక గగనాధిప సత్కులజ రాజరాజేశ్వర"
+    words: ["జగదానందకారక", "జయ", "జానకీ", "ప్రాణనాయక", "గగనాధిప", "సత్కులజ", "రాజరాజేశ్వర"]
+    reading: "jagadānandakāraka jaya jānakī prāṇanāyaka gaganādhipa satkulaja rājarājēśvara"
+    ipa: "dʒaɡad̪aːnand̪akaːraka dʒaja dʒaːnakiː praːɳanaːjaka ɡaɡanaːd̪ʱipa sat̪kuladʒa raːdʒaraːdʒeːʃʋara"
+    phonetic: "[dʒaɡad̪aːnan̪d̪akaːraka dʒaja dʒaːnakiː praːɳanaːjaka ɡaɡanaːd̪ʱipa sat̪kuladʒa raːdʒaraːdʒeːʃʋara]"
     phonetic_source: "rules"
     pos: "phrase"
-    level: "A2"
+    level: "B1"
     modes: ["recognition", "listening"]
     creator: "te-tyagaraja"
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "దినదినమును", base: "దినదినము", reading: "dinadinamu" }
-      - { word: "మనసున", base: "మనసు", reading: "manasu" }
-      - { word: "చదువున", base: "చదువు", reading: "caduvu" }
-      - { word: "నిన్ను", base: "నీవు", reading: "nīvu" }
+      - { word: "జగదానందకారక", base: "జగదానందకారక", reading: "jagadānandakāraka" }
+      - { word: "జయ", base: "జయము", reading: "jayamu" }
+      - { word: "జానకీ", base: "జానకి", reading: "jānaki" }
+      - { word: "ప్రాణనాయక", base: "ప్రాణనాయకుడు", reading: "prāṇanāyakuḍu" }
+      - { word: "గగనాధిప", base: "గగనాధిపుడు", reading: "gaganādhipuḍu" }
+      - { word: "సత్కులజ", base: "సత్కులజుడు", reading: "satkulajuḍu" }
+      - { word: "రాజరాజేశ్వర", base: "రాజరాజేశ్వరుడు", reading: "rājarājēśvaruḍu" }
     source:
       author: "Tyagaraja"
-      work: "Tyagaraja song Kanakana ruchira (Varali, Adi), charanam, as printed on te.wikisource"
+      work: "Tyagaraja song Jagadananda karaka (Nata, Adi), opening couplet, as printed on te.wikisource"
       date: "1767-1847"
       edition: "Tyagaraja kriti as printed on te.wikisource, with the raga and tala the page gives; the page names no printed edition. The date is the author's lifetime."
-      url: "https://te.wikisource.org/wiki/%E0%B0%95%E0%B0%A8%E0%B0%95%E0%B0%A8_%E0%B0%B0%E0%B1%81%E0%B0%9A%E0%B0%BF%E0%B0%B0%E0%B0%BE"
+      url: "https://te.wikisource.org/wiki/%E0%B0%9C%E0%B0%97%E0%B0%A6%E0%B0%BE%E0%B0%A8%E0%B0%82%E0%B0%A6_%E0%B0%95%E0%B0%BE%E0%B0%B0%E0%B0%95%E0%B0%BE"
       basis: "public-domain"
       author_died: 1847
       jurisdiction: "IN"
@@ -431,7 +434,7 @@ cards:
       - { word: "గొప్ప", base: "గొప్ప", reading: "goppa" }
       - { word: "వశిష్టుడు", base: "వశిష్టుడు", reading: "vaśiṣṭuḍu" }
       - { word: "హితుఁడు", base: "హితుడు", reading: "hituḍu" }
-      - { word: "గాలేదా", base: "కావు", reading: "kāvu" }
+      - { word: "గాలేదా", base: "అగు", reading: "agu" }
     source:
       author: "Tyagaraja"
       work: "Tyagaraja song Entarani (Harikambhoji, Desadi), charanam, as printed on te.wikisource"
@@ -475,11 +478,11 @@ cards:
       jurisdiction: "IN"
       rights_checked: "2026-11-17"
   - id: "te-8815"
-    target: "ఇక్ష్వాకు కుల తిలక యికనైన పలుకవె రామచంద్రా నన్ను"
-    words: ["ఇక్ష్వాకు", "కుల", "తిలక", "యికనైన", "పలుకవె", "రామచంద్రా", "నన్ను"]
-    reading: "ikṣvāku kula tilaka yikanaina palukave rāmacandrā nannu"
-    ipa: "ikʂʋaːku kula t̪ilaka jikanaina palukaʋe raːmatʃand̪raː nannu"
-    phonetic: "[ikʂʋaːku kula t̪ilaka jikanaina palukaʋe raːmatʃan̪d̪raː nannu]"
+    target: "ఇక్ష్వాకు కుల తిలక యికనైన పలుకవె రామచంద్రా"
+    words: ["ఇక్ష్వాకు", "కుల", "తిలక", "యికనైన", "పలుకవె", "రామచంద్రా"]
+    reading: "ikṣvāku kula tilaka yikanaina palukave rāmacandrā"
+    ipa: "ikʂʋaːku kula t̪ilaka jikanaina palukaʋe raːmatʃand̪raː"
+    phonetic: "[ikʂʋaːku kula t̪ilaka jikanaina palukaʋe raːmatʃan̪d̪raː]"
     phonetic_source: "rules"
     pos: "phrase"
     level: "A2"
@@ -494,7 +497,6 @@ cards:
       - { word: "యికనైన", base: "ఇకనైనా", reading: "ikanainā" }
       - { word: "పలుకవె", base: "పలుకు", reading: "paluku" }
       - { word: "రామచంద్రా", base: "రామచంద్రుడు", reading: "rāmacandruḍu" }
-      - { word: "నన్ను", base: "నేను", reading: "nēnu" }
     source:
       author: "Bhadrachala Ramadasu"
       work: "Ramadasu song Ikshvaku kula tilaka (Kambhoji, Triputa), pallavi, as printed on te.wikisource"
@@ -520,7 +522,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "ఇంత", base: "ఇంత", reading: "inta" }
-      - { word: "తెలిసియుండి", base: "తెలుసు", reading: "telusu" }
+      - { word: "తెలిసియుండి", base: "తెలియు", reading: "teliyu" }
       - { word: "యీ", base: "ఈ", reading: "ī" }
       - { word: "గుణమేలరా", base: "గుణము", reading: "guṇamu" }
       - { word: "పంతమా", base: "పంతము", reading: "pantamu" }

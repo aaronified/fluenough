@@ -61,11 +61,10 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | te-0329 | see card | ఫిబ్రవరి (February) has reading fibravari and ipa fibraʋari on the card, but tools/transcribe.py gives phibravari (the en note also writes phibravari): which reading should the card carry? | Telugu architect | 2026-11-16 |
 | te-0516 | see card | చెప్పేశాను is tagged pos noun though it is a verb form, and its English "I've gone and told them" adds a going that the Telugu does not say; the note says the completive -ేశాను makes the action done completely and at once: should pos and the English meaning change? | Telugu architect | 2026-11-16 |
 | te-0490 | see card | కష్టపడడం is a verb form built from the noun కష్టం and పడడం (to fall), but its pos is noun: should pos be changed? | Telugu architect | 2026-11-16 |
-| te-8805 | see card | The last line's gloss 'call them in, won't you' (పిలువరే) and the base lemma చేష్ట for పెక్కుచేఁతలు (glossed 'many pranks') are tentative: which gloss and lemma should the card give? | Telugu architect | 2026-11-17 |
-| te-8806 | see card | The couplet's grammar (కట్టునా, 'would bind', and గాలిఁ బోవుఁ, 'be blown away') is archaic and the gloss is tentative: is the English rendering right? | Telugu architect | 2026-11-17 |
-| te-8808 | see card | The base lemma నేర్చు for నేరనయితిఁగా and the gloss 'did not learn to' are tentative: is the lemma and the meaning right? | Telugu architect | 2026-11-17 |
-| te-8809 | see card | యీసులకే is glossed 'for petty things' with the base ఈసు (tentative): which meaning and lemma are right? | Telugu architect | 2026-11-17 |
-| te-8812 | see card | చదువున is glossed 'I recite' in this line (tentative): is the sense right for a line about reciting a name in the mind? | Telugu architect | 2026-11-17 |
-| te-8813 | see card | గాలేదా is given the base కావు (tentative), and the word వశిష్టుడు is joined from two printed lines (వ / శిష్టుడు): are the lemma and the join right? | Telugu architect | 2026-11-17 |
-| te-8816 | see card | గుణమేలరా is glossed 'this behaviour' and the address Muvva Gopala is glossed as Krishna from the creator's entry, not from the padam's own page: are both right? | Telugu architect | 2026-11-17 |
-| te-8817 | see card | ఇంతి is glossed 'such a' (tentative) in the line: is the sense right? | Telugu architect | 2026-11-17 |
+| te-8805 | see card | The last line's gloss 'call them in, won't you' (పిలువరే) is tentative, and the base for పెక్కుచేఁతలు is చేత (cēta): are both right? | Telugu architect | 2026-11-17 |
+| te-8806 | see card | The couplet's archaic grammar (కట్టునా, 'would bind'; గాలిఁ బోవుఁ, 'will be blown away') is tentative, and the assertive గాక is glossed 'will surely, indeed' (tentative): is the English right? | Telugu architect | 2026-11-17 |
+| te-8807 | see card | The assertive particle గాక is glossed 'will surely, indeed' (tentative), as in te-8806, and the verbs బెనఁగేను and పొరలేను are read as first-person future: is the rendering right? | Telugu architect | 2026-11-17 |
+| te-8808 | see card | The base lemma నేరు for నేరనయితిఁగా and the gloss 'could not, was not able to' are tentative: are both right? | Telugu architect | 2026-11-17 |
+| te-8812 | see card | గగనాధిప is glossed 'lord of the sky' (tentative): is the gloss right? | Telugu architect | 2026-11-17 |
+| te-8813 | see card | The word వశిష్టుడు is joined from two printed lines (వ / శిష్టుడు); the edition field says so: is the join right? | Telugu architect | 2026-11-17 |
+| te-8816 | see card | గుణమేలరా is glossed 'this behaviour' (tentative): is the gloss right? | Telugu architect | 2026-11-17 |
