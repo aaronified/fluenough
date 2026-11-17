@@ -140,6 +140,10 @@ app." Other languages' paths and decks follow."
 
 The first correction of 2026-11-06 made the second list a B1 target: "Complete the placement fix, then carry on with the decks. On the 1st list of languages, get the situations cards before the all A1. Both will come after the 2nd list gets B1." The owner then replaced it the same day: "Ok, sorry. 2nd list A1 and all languages first deck only. Only classical sanskrit to B1." The second list therefore stays at A1 as set on 2026-11-02 ("the second list to A1"), and only Classical Sanskrit goes to B1. See "Deck order after the placement fix" in `CLAUDE.md`. Nothing about A1 was superseded.
 
+### The second list A1-only rule (owner, 2026-11-06, replaced 2026-11-17)
+
+A1-only for the second list (2026-11-06) is superseded by 2026-11-17: second list to Complete, one language at a time, after the first list. See "Order: first list, then second list, each to Complete" in `CLAUDE.md`.
+
 ### Push straight to main (owner, 2026-10-11)
 
 `CLAUDE.md` still says, in "Pull requests for everything else": "(owner,
