@@ -465,7 +465,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ja-hospitality-restaurant | Do the restaurant phrases (なんめいさまですか, ごちゅうもんは おきまりですか, いじょうで よろしいでしょうか) sound natural to Japanese restaurant staff and guests? A worker in hospitality should check it. | Sonnet builder | 2026-11-17 |
 | ja-7540 | ja-hospitality-restaurant | Is おかいけいは あちらです complete as spoken, or does staff add でお願いします (あちらでおねがいします)? | Sonnet builder | 2026-11-17 |
 | unit-level | ja-business-email | Do the email phrases (いつも おせわに なっております, ごかくにんを おねがいいたします, おいそがしい ところ もうしわけありません) match a Japanese business email? A worker in business should check it. | Sonnet builder | 2026-11-17 |
-| ja-7548 | ja-business-email | Is おいそがしい ところ もうしわけありません right as written, or is おいそがしいところ おそれいりますが or おいそがしいところ もうしわけございません the standard line? | Sonnet builder | 2026-11-17 |
+| ja-7548 | ja-business-email | Is おいそがしい ところ もうしわけございません right as written, or is おいそがしいところ おそれいりますが the standard line? | Sonnet builder | 2026-11-17 |
 | unit-level | ja-business-meeting | Do the meeting phrases (はじめさせて いただきます, もういちど おっしゃって いただけますか, しつれいいたします) sound natural in a Japanese office? A worker in business should check it. | Sonnet builder | 2026-11-17 |
 | ja-7554 | ja-business-meeting | Is はじめさせていただきます acceptable to a reviewer, given that some writers say the させていただく pattern is overused? | Sonnet builder | 2026-11-17 |
 | ja-4668 | ja-culture-3 | The page prints 咳をしても一人 and dates it only to the Shodoshima years (1925 and 1926), and the note calls it free verse. Is the reading せき を して も ひとり right, and is the rendering right? Gon-gitsune (ja-4656) was not added: ja.wikisource has no page of it and the Aozora text was not reachable. | Sonnet builder | 2026-11-17 |

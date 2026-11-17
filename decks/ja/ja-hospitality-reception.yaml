@@ -19,7 +19,7 @@ cards:
     modes: ["recognition", "production", "listening"]
     notes: [{ id: "n1", kind: "note" }]
     bases:
-      - { word: "いらっしゃいませ", ref: "ja-0349" }
+      - { word: "いらっしゃいませ", base: "いらっしゃる", reading: "irassharu" }
   - id: "ja-7522"
     target: "ごよやくのおなまえをおねがいします"
     words: ["ごよやく", "の", "おなまえ", "を", "おねがいします"]
@@ -33,7 +33,7 @@ cards:
       - { word: "の", base: "の", reading: "no" }
       - { word: "おなまえ", ref: "ja-0145" }
       - { word: "を", base: "を", reading: "o" }
-      - { word: "おねがいします", ref: "ja-0062" }
+      - { word: "おねがいします", base: "おねがいする", reading: "onegaisuru" }
   - id: "ja-7523"
     target: "パスポートをおみせください"
     words: ["パスポート", "を", "おみせ", "ください"]
