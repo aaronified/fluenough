@@ -1,0 +1,48 @@
+schema: 1
+id: "ja-en-business-email"
+kind: "layer"
+core: "ja-business-email"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Business: writing an email"
+license: "CC-BY-SA-4.0"
+description: "Fixed phrases of a Japanese business email: the opener, requests, apologies and closings."
+cards:
+  "ja-7542":
+    native: "Thank you for your continued support."
+    notes: { n1: "いつもおせわになっております (itsumo osewa ni natte orimasu) opens almost every business email in Japan. It literally means I am always receiving your help." }
+    bases: { "おせわ": { meaning: "help, care" }, "に": { meaning: "(marks a time, a place or a target)" }, "おります": { meaning: "to be, to stay (humble)" } }
+  "ja-7543":
+    native: "I am contacting you for the first time."
+    notes: { n1: "ごれんらくいたします (gorenraku itashimasu) is humble: ご (go) plus a noun plus いたします (itashimasu) lowers the writer's action." }
+  "ja-7544":
+    native: "I am attaching the document."
+    notes: { n1: "てんぷ (tenpu) means attaching a file to an email. いたします (itashimasu) is the humble form of します (shimasu)." }
+    bases: { "を": { meaning: "(marks the object)" }, "てんぷ": { meaning: "attaching (a file)" } }
+  "ja-7545":
+    native: "Please check it."
+    notes: { n1: "ご (go) plus a noun plus をおねがいいたします (o onegai itashimasu) is the standard polite request in business writing." }
+    bases: { "ごかくにん": { meaning: "checking, confirmation" }, "を": { meaning: "(marks the object)" }, "おねがい": { meaning: "a request, a favour" } }
+  "ja-7546":
+    native: "I look forward to your reply."
+    notes: { n1: "おまちしております (omachishite orimasu) is the humble form of waiting. ごへんしん (gohenshin) is the polite word for a reply to a message." }
+    bases: { "を": { meaning: "(marks the object)" }, "おります": { meaning: "to be, to stay (humble)" } }
+  "ja-7547":
+    native: "I am sorry for the late reply."
+    notes: { n1: "おそくなり (osoku nari) is the stem of おそくなる (osoku naru) (to become late). もうしわけございません (moushiwake gozaimasen) is a very polite apology." }
+    bases: { "おへんじ": { meaning: "reply, answer" }, "が": { meaning: "(marks the subject)" }, "もうしわけ": { meaning: "an apology, an excuse" }, "ございません": { meaning: "to be, to have (for things; very polite)" } }
+  "ja-7548":
+    native: "I am sorry to trouble you when you are busy."
+    notes: { n1: "おいそがしいところ (oisogashii tokoro) means at a busy time and is used before a request. It is a common way to soften asking for a favour." }
+    bases: { "もうしわけ": { meaning: "an apology, an excuse" }, "ありません": { meaning: "to be, to have (for things)" } }
+  "ja-7549":
+    native: "Thank you in advance. (a closing line)"
+    notes: { n1: "どうぞよろしくおねがいいたします (douzo yoroshiku onegai itashimasu) closes a business email. It asks the reader to look kindly on the matter." }
+    bases: { "どうぞ": { meaning: "please, go ahead" }, "よろしく": { meaning: "kindly, well" }, "おねがい": { meaning: "a request, a favour" } }
+  "ja-7550":
+    native: "I am sorry to have caused you trouble."
+    notes: { n1: "おかけして (okakeshite) is humble: the writer takes the blame on themselves. かける (kakeru) here means to put a burden on someone." }
+    bases: { "を": { meaning: "(marks the object)" }, "おかけして": { meaning: "to put on, to cause (trouble)" }, "もうしわけ": { meaning: "an apology, an excuse" }, "ございません": { meaning: "to be, to have (for things; very polite)" } }
+  "ja-7551":
+    native: "Thank you for contacting me."
+    notes: { n1: "ごれんらくありがとうございます (gorenraku arigatou gozaimasu) is a typical first line of a reply. ごれんらく (gorenraku) is the polite word for a message or a call from someone." }
+    bases: { "ありがとう": { meaning: "thank you" }, "ございます": { meaning: "to be, to have (for things; very polite)" } }

@@ -1,0 +1,144 @@
+schema: 1
+id: "ja-business-meeting"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+genre: "professional"
+professional: "business"
+hidden: true
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "ja-7552"
+    target: "はじめましてたなかともうします"
+    words: ["はじめまして", "たなか", "と", "もうします"]
+    reading: "hajimemashite tanaka to moushimasu"
+    ipa: "hadʑimemaɕite tanaka to moːɕimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "はじめまして", base: "はじめまして", reading: "hajimemashite" }
+      - { word: "たなか", base: "たなか", reading: "tanaka" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "もうします", base: "もうす", reading: "mousu" }
+  - id: "ja-7553"
+    target: "ほんじつはおじかんをいただきありがとうございます"
+    words: ["ほんじつ", "は", "おじかん", "を", "いただき", "ありがとう", "ございます"]
+    reading: "honjitsu wa ojikan o itadaki arigatou gozaimasu"
+    ipa: "hoɴdʑitsɯ wa odʑikaɴ o itadaki aɾiɡatoː ɡodzaimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "ほんじつ", base: "ほんじつ", reading: "honjitsu" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おじかん", ref: "ja-0507" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "いただき", ref: "ja-0599" }
+      - { word: "ありがとう", base: "ありがとう", reading: "arigatou" }
+      - { word: "ございます", base: "ある", reading: "aru" }
+  - id: "ja-7554"
+    target: "それでははじめさせていただきます"
+    words: ["それでは", "はじめ", "させて", "いただきます"]
+    reading: "soredeha hajime sasete itadakimasu"
+    ipa: "soɾedeha hadʑime sasete itadakimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "それでは", base: "それでは", reading: "soredeha" }
+      - { word: "はじめ", ref: "ja-0596" }
+      - { word: "させて", base: "させる", reading: "saseru" }
+      - { word: "いただきます", ref: "ja-0599" }
+  - id: "ja-7555"
+    target: "しりょうをごらんください"
+    words: ["しりょう", "を", "ごらん", "ください"]
+    reading: "shiryou o goran kudasai"
+    ipa: "ɕiɾjoː o ɡoɾaɴ kɯdasai"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "しりょう", ref: "ja-2572" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "ごらん", ref: "ja-0343" }
+      - { word: "ください", base: "くださる", reading: "kudasaru" }
+  - id: "ja-7556"
+    target: "ごしつもんはございますか"
+    words: ["ごしつもん", "は", "ございます", "か"]
+    reading: "goshitsumon wa gozaimasu ka"
+    ipa: "ɡoɕitsɯmoɴ wa ɡodzaimasɯ ka"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "ごしつもん", base: "しつもん", reading: "shitsumon" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ございます", base: "ある", reading: "aru" }
+      - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-7557"
+    target: "もういちどおっしゃっていただけますか"
+    words: ["もういちど", "おっしゃって", "いただけます", "か"]
+    reading: "mouichido osshatte itadakemasu ka"
+    ipa: "moːitɕido oɕɕatte itadakemasɯ ka"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "もういちど", base: "もういちど", reading: "mouichido" }
+      - { word: "おっしゃって", base: "おっしゃる", reading: "ossharu" }
+      - { word: "いただけます", ref: "ja-0599" }
+      - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-7558"
+    target: "かくにんしてごれんらくいたします"
+    words: ["かくにんして", "ごれんらく", "いたします"]
+    reading: "kakuninshite gorenraku itashimasu"
+    ipa: "kakɯniɴɕite ɡoɾeɴɾakɯ itaɕimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "かくにんして", base: "かくにんする", reading: "kakuninsuru" }
+      - { word: "ごれんらく", ref: "ja-1366" }
+      - { word: "いたします", ref: "ja-0375" }
+  - id: "ja-7559"
+    target: "わたしもさんせいです"
+    words: ["わたし", "も", "さんせい", "です"]
+    reading: "watashi mo sansei desu"
+    ipa: "wataɕi mo saɴseː desɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "も", base: "も", reading: "mo" }
+      - { word: "さんせい", ref: "ja-4170" }
+      - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-7560"
+    target: "それではしつれいいたします"
+    words: ["それでは", "しつれい", "いたします"]
+    reading: "soredeha shitsurei itashimasu"
+    ipa: "soɾedeha ɕitsɯɾeː itaɕimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "それでは", base: "それでは", reading: "soredeha" }
+      - { word: "しつれい", ref: "ja-3291" }
+      - { word: "いたします", ref: "ja-0375" }
+  - id: "ja-7561"
+    target: "らいしゅうまでにごへんじいたします"
+    words: ["らいしゅう", "まで", "に", "ごへんじ", "いたします"]
+    reading: "raishuu made ni gohenji itashimasu"
+    ipa: "ɾaiɕɯː made ni ɡoheɴdʑi itaɕimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "らいしゅう", ref: "ja-1415" }
+      - { word: "まで", base: "まで", reading: "made" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "ごへんじ", base: "へんじ", reading: "henji" }
+      - { word: "いたします", ref: "ja-0375" }

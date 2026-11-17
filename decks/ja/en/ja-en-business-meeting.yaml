@@ -1,0 +1,49 @@
+schema: 1
+id: "ja-en-business-meeting"
+kind: "layer"
+core: "ja-business-meeting"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Business: in a meeting"
+license: "CC-BY-SA-4.0"
+description: "Phrases of a Japanese business meeting: introductions, opening, asking questions, agreeing and closing."
+cards:
+  "ja-7552":
+    native: "How do you do? My name is Tanaka."
+    notes: { n1: "ともうします (to moushimasu) is the humble form of introducing yourself; it is said to clients and superiors. Among friends, です (desu) is enough." }
+    bases: { "はじめまして": { meaning: "how do you do (said when first meeting)" }, "たなか": { meaning: "Tanaka (a family name)" }, "と": { meaning: "(marks a quotation or a name)" }, "もうします": { meaning: "to say, to be called (humble)" } }
+  "ja-7553":
+    native: "Thank you for your time today."
+    notes: { n1: "おじかんをいただき (ojikan o itadaki) means having been given your time. いただく (itadaku) is the humble word for receive." }
+    bases: { "ほんじつ": { meaning: "today (formal)" }, "は": { meaning: "(marks the topic)" }, "を": { meaning: "(marks the object)" }, "ありがとう": { meaning: "thank you" }, "ございます": { meaning: "to be, to have (for things; very polite)" } }
+  "ja-7554":
+    native: "Then, let us begin."
+    notes: { n1: "はじめさせていただきます (hajime sasete itadakimasu) means I will humbly begin. It is a very common way to open a meeting." }
+    bases: { "それでは": { meaning: "well then" }, "させて": { meaning: "to let someone do; with ていただく, to humbly do" } }
+  "ja-7555":
+    native: "Please look at the document."
+    notes: { n1: "ごらんください (goran kudasai) is the polite request form of みる (miru) (to look). ごらん (goran) is the honorific of みる (miru)." }
+    bases: { "を": { meaning: "(marks the object)" }, "ください": { meaning: "to give (honorific); with a verb, please do" } }
+  "ja-7556":
+    native: "Do you have any questions?"
+    notes: { n1: "ございます (gozaimasu) is the very polite form of あります (arimasu). The leader of a meeting asks this at the end." }
+    bases: { "ごしつもん": { meaning: "a question" }, "は": { meaning: "(marks the topic)" }, "ございます": { meaning: "to be, to have (for things; very polite)" }, "か": { meaning: "(makes a question)" } }
+  "ja-7557":
+    native: "Could you say that once more, please?"
+    notes: { n1: "おっしゃって (osshatte) is the honorific of いう (iu) (to say). いただけますか (itadakemasu ka) asks politely whether the listener could do it." }
+    bases: { "もういちど": { meaning: "once more" }, "おっしゃって": { meaning: "to say (honorific)" }, "か": { meaning: "(makes a question)" } }
+  "ja-7558":
+    native: "I will check and get back to you."
+    notes: { n1: "ごれんらくいたします (gorenraku itashimasu) is the humble way to say I will contact you." }
+    bases: { "かくにんして": { meaning: "to check, to confirm" } }
+  "ja-7559":
+    native: "I agree too."
+    notes: { n1: "さんせい (sansei) means agreement. も (mo) after わたし (watashi) means also." }
+    bases: { "も": { meaning: "(also)" }, "です": { meaning: "to be (polite)" } }
+  "ja-7560":
+    native: "Well then, excuse me. (said when leaving)"
+    notes: { n1: "しつれいいたします (shitsurei itashimasu) is said when leaving a meeting or ending a phone call. It means I will take my leave." }
+    bases: { "それでは": { meaning: "well then" } }
+  "ja-7561":
+    native: "I will reply by next week."
+    notes: { n1: "までに (made ni) means by (a deadline), unlike まで (made) alone, which means until. ごへんじいたします (gohenji itashimasu) is the humble way to say I will answer." }
+    bases: { "まで": { meaning: "(until; up to)" }, "に": { meaning: "(marks a time, a place or a target)" }, "ごへんじ": { meaning: "reply, answer" } }

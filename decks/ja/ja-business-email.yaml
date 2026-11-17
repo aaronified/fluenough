@@ -1,0 +1,144 @@
+schema: 1
+id: "ja-business-email"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+genre: "professional"
+professional: "business"
+hidden: true
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "ja-7542"
+    target: "いつもおせわになっております"
+    words: ["いつも", "おせわ", "に", "なって", "おります"]
+    reading: "itsumo osewa ni natte orimasu"
+    ipa: "itsɯmo osewa ni natte oɾimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "いつも", ref: "ja-0388" }
+      - { word: "おせわ", base: "せわ", reading: "sewa" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "なって", ref: "ja-2220" }
+      - { word: "おります", base: "おる", reading: "oru" }
+  - id: "ja-7543"
+    target: "はじめてごれんらくいたします"
+    words: ["はじめて", "ごれんらく", "いたします"]
+    reading: "hajimete gorenraku itashimasu"
+    ipa: "hadʑimete ɡoɾeɴɾakɯ itaɕimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "はじめて", ref: "ja-0416" }
+      - { word: "ごれんらく", ref: "ja-1366" }
+      - { word: "いたします", ref: "ja-0375" }
+  - id: "ja-7544"
+    target: "しりょうをてんぷいたします"
+    words: ["しりょう", "を", "てんぷ", "いたします"]
+    reading: "shiryou o tenpu itashimasu"
+    ipa: "ɕiɾjoː o teɴpɯ itaɕimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "しりょう", ref: "ja-2572" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "てんぷ", base: "てんぷ", reading: "tenpu" }
+      - { word: "いたします", ref: "ja-0375" }
+  - id: "ja-7545"
+    target: "ごかくにんをおねがいいたします"
+    words: ["ごかくにん", "を", "おねがい", "いたします"]
+    reading: "gokakunin o onegai itashimasu"
+    ipa: "ɡokakɯniɴ o oneɡai itaɕimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "ごかくにん", base: "かくにん", reading: "kakunin" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "おねがい", base: "おねがい", reading: "onegai" }
+      - { word: "いたします", ref: "ja-0375" }
+  - id: "ja-7546"
+    target: "ごへんしんをおまちしております"
+    words: ["ごへんしん", "を", "おまちして", "おります"]
+    reading: "gohenshin o omachishite orimasu"
+    ipa: "ɡoheɴɕiɴ o omatɕiɕite oɾimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "ごへんしん", ref: "ja-2324" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "おまちして", ref: "ja-0358" }
+      - { word: "おります", base: "おる", reading: "oru" }
+  - id: "ja-7547"
+    target: "おへんじがおそくなりもうしわけございません"
+    words: ["おへんじ", "が", "おそく", "なり", "もうしわけ", "ございません"]
+    reading: "ohenji ga osoku nari moushiwake gozaimasen"
+    ipa: "oheɴdʑi ɡa osokɯ naɾi moːɕiwake ɡodzaimaseɴ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "おへんじ", base: "へんじ", reading: "henji" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "おそく", ref: "ja-0486" }
+      - { word: "なり", ref: "ja-2220" }
+      - { word: "もうしわけ", base: "もうしわけ", reading: "moushiwake" }
+      - { word: "ございません", base: "ある", reading: "aru" }
+  - id: "ja-7548"
+    target: "おいそがしいところもうしわけありません"
+    words: ["おいそがしい", "ところ", "もうしわけ", "ありません"]
+    reading: "oisogashii tokoro moushiwake arimasen"
+    ipa: "oisoɡaɕiː tokoɾo moːɕiwake aɾimaseɴ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "おいそがしい", ref: "ja-0476" }
+      - { word: "ところ", ref: "ja-8906" }
+      - { word: "もうしわけ", base: "もうしわけ", reading: "moushiwake" }
+      - { word: "ありません", base: "ある", reading: "aru" }
+  - id: "ja-7549"
+    target: "どうぞよろしくおねがいいたします"
+    words: ["どうぞ", "よろしく", "おねがい", "いたします"]
+    reading: "douzo yoroshiku onegai itashimasu"
+    ipa: "doːdzo joɾoɕikɯ oneɡai itaɕimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases:
+      - { word: "どうぞ", base: "どうぞ", reading: "douzo" }
+      - { word: "よろしく", base: "よろしく", reading: "yoroshiku" }
+      - { word: "おねがい", base: "おねがい", reading: "onegai" }
+      - { word: "いたします", ref: "ja-0375" }
+  - id: "ja-7550"
+    target: "ごめいわくをおかけしてもうしわけございません"
+    words: ["ごめいわく", "を", "おかけして", "もうしわけ", "ございません"]
+    reading: "gomeiwaku o okakeshite moushiwake gozaimasen"
+    ipa: "ɡomeːwakɯ o okakeɕite moːɕiwake ɡodzaimaseɴ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "ごめいわく", ref: "ja-3293" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "おかけして", base: "かける", reading: "kakeru" }
+      - { word: "もうしわけ", base: "もうしわけ", reading: "moushiwake" }
+      - { word: "ございません", base: "ある", reading: "aru" }
+  - id: "ja-7551"
+    target: "ごれんらくありがとうございます"
+    words: ["ごれんらく", "ありがとう", "ございます"]
+    reading: "gorenraku arigatou gozaimasu"
+    ipa: "ɡoɾeɴɾakɯ aɾiɡatoː ɡodzaimasɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "ごれんらく", ref: "ja-1366" }
+      - { word: "ありがとう", base: "ありがとう", reading: "arigatou" }
+      - { word: "ございます", base: "ある", reading: "aru" }
