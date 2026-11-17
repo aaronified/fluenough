@@ -159,4 +159,3 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | hi-4164 | hi-culture-4 | خودئ (base خودی) and ناصِیہ (base ناصیہ) carry the lexicon's several-reading notes (و and ی); the readings k͟hōdī and nāsīh follow the lexicon. Please check. | Haiku builder | 2026-11-17 |
 | hi-4158 | hi-culture-4 | عیش is read aiś from the lexicon (the second vowel is not checked). Please check. | Haiku builder | 2026-11-17 |
 | hi-4162 to hi-4165 (Ghalib) | hi-culture-4 | Four more Ghalib couplets from the same diwan page are written with the lexicon's readings only; their meanings are the builder's English gloss and should be checked. | Haiku builder | 2026-11-17 |
-| dropped: Dard candidates | hi-culture-4 | Two other Dard couplets on the same wikisource search were not written: the reading contained several unresolved words. | Haiku builder | 2026-11-17 |
