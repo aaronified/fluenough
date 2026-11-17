@@ -67,6 +67,33 @@ class UrduTest(unittest.TestCase):
         t = read("لڑکا")
         self.assertEqual(t.reading, "l?ṛ?kā")
 
+    def test_a_medial_ye_with_no_marks_is_a_question_mark(self) -> None:
+        # ی before a consonant or a glide is ī, i, ē, ai or iy: not derivable.
+        for word in ["بیکتپ", "دیکھپ", "بیتپ", "کتیا"]:
+            t = read(word)
+            self.assertIn("?", t.reading, word)
+            self.assertTrue(any("unvowelled" in n for n in t.notes), word)
+
+    def test_a_final_ye_and_a_marked_ye_are_still_read(self) -> None:
+        self.assertEqual(read("کتی").reading, "k?tī")
+        self.assertEqual(read("کِیا").reading, "kiyā")
+        self.assertEqual(read("بَیٹ").reading, "baiṭ")
+        self.assertEqual(read("بِیت").reading, "bīt")
+
+    def test_the_hand_list_reads_the_words_a_review_found(self) -> None:
+        for word, reading in [
+                ("ایسی", "aisī"), ("ایسا", "aisā"), ("نہ", "na"),
+                ("بوٹا", "būṭā"), ("دیا", "diyā"), ("دیکھیں", "dēkhēm̐"),
+                ("بیٹھے", "baiṭhē"), ("بیتاب", "bētāb"), ("دیار", "diyār"),
+                ("پوچھا", "pūchā"), ("پوچھو", "pūchō"), ("چھین", "chīn")]:
+            self.assertEqual(read(word).reading, reading, word)
+            self.assertNotIn("?", read(word).reading)
+
+    def test_the_aspirated_affricate_is_ch_as_in_the_decks(self) -> None:
+        self.assertEqual(read("چ").reading, "c")
+        self.assertEqual(read("چھ").reading, "ch")
+        self.assertEqual(read("چھ").ipa, "tʃʰ")
+
     def test_a_lexicon_word_supplies_its_vowels(self) -> None:
         self.assertIn("نقش", urdu_lexicon())
         t = read("نقش")
