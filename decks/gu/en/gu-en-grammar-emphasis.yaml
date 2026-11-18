@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "id": "gu-en-grammar-emphasis",
+  "kind": "layer",
+  "core": "gu-grammar-emphasis",
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "name": "Emphasis: only, also and even",
+  "license": "CC-BY-SA-4.0",
+  "description": "The particle જ (ja) means only or just, and the particle પણ (paṇ) means also or even; both follow the word they stress. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "unreviewed"
+  ],
+  "pattern": {
+    "name": "Emphasis particle",
+    "slot_name": "form",
+    "prompt": "{lemma} ({gloss}), {slot}",
+    "slots": {
+      "plain": "no emphasis",
+      "only": "only, just (the particle જ (ja) after the word)",
+      "also or even": "also, even, or any (the particle પણ (paṇ) after the word)"
+    },
+    "entries": {
+      "te": "he; she; it; that",
+      "a": "this",
+      "ek": "one",
+      "hu": "I",
+      "koi": "someone; anyone"
+    },
+    "notes": "The particle comes straight after the word it stresses: the word, then the particle. Only uses ja and also or even uses pan. With na (not), pan means not even: ek pan nahi means not even one."
+  }
+}
