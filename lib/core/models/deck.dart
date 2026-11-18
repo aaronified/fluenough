@@ -134,9 +134,9 @@ class LanguageInfo {
 
   /// Whether this script needs a romanisation shown alongside the target.
   /// Not the notations: an IPA symbol or a braille cell is read as written,
-  /// and its print equivalent is its meaning (ADR-0043).
-  bool get needsReading =>
-      !const {'latin', 'cyrillic', 'greek', 'ipa', 'braille'}.contains(script);
+  /// and its print equivalent is its meaning (ADR-0043); so is a SignWriting
+  /// symbol, whose description is its meaning (ADR-0056).
+  bool get needsReading => !_noReadingScripts.contains(script);
 
   /// Whether typed answers are compared as Lojban is written (#616):
   /// pauses, syllable breaks and spaces ignored, `h` for the apostrophe.
@@ -157,6 +157,18 @@ class LanguageInfo {
     _ => const <String>[],
   };
 }
+
+/// The scripts whose cards need no reading beside the target (ADR-0056 added
+/// SignWriting): Latin, Cyrillic and Greek are read as written, as are the
+/// notations and a SignWriting symbol.
+const Set<String> _noReadingScripts = <String>{
+  'latin',
+  'cyrillic',
+  'greek',
+  'ipa',
+  'braille',
+  'signwriting',
+};
 
 /// A keyboard the app draws for a script the phone has none for
 /// ([LanguageInfo.keyboard], ADR-0043).
