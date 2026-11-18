@@ -679,6 +679,22 @@ G = {
                ("absolutives-infinitives", ["absolutives", "infinitives"]),
                ("optative", ["optative"])],
     },
+    # The sign languages (ADR-0056): topics of the typology of signed
+    # languages, taken from the scheme's own steps; no sign, form or rule of
+    # either language is stated.
+    "sign": {
+        "a1": [("space-and-pointing", ["use-of-space", "pointing-and-pronouns"]),
+               ("sign-order", ["sign-order", "topic-comment"]),
+               ("negation-questions", ["negation", "question-signs", "facial-grammar"])],
+        "a2": [("verb-agreement", ["directional-verbs", "agreement"]),
+               ("classifiers", ["classifiers"]),
+               ("time-aspect", ["time-lines", "aspect"]),
+               ("fingerspelling", ["fingerspelling", "initialised-signs"])],
+        "b1": [("role-shift", ["role-shift"]),
+               ("clauses", ["conditionals", "relative-clauses"]),
+               ("constructed-action", ["constructed-action", "depicting-signs"]),
+               ("register", ["register", "regional-variation"])],
+    },
 }
 
 # --------------------------------------------------------------------------
@@ -886,6 +902,25 @@ LANGS = {
              note="A reading course in Imperial Aramaic."),
 }
 
+# The sign languages (ADR-0056, owner, 2026-11-18): written in SignWriting,
+# with no sounds and no phrasebook of spoken phrases. Their path opens with
+# the SignWriting explainer, an alphabet unit (`alphabet_decks`), and then
+# the scheme's A1 themes; the first signs, the phrasebook of signs, are
+# written by the language's own session. They are not in LANGS: the tests of
+# LANGS assume a spoken language's first unit.
+SIGNED = {
+    "ase": dict(L("American Sign Language", "sign", genders=[],
+                  note="Signs, not words: the SignWriting guide first; handshape, location, movement and the face; fingerspelling; classifiers; role shift."),
+                signed=True,
+                alphabet_decks=["ase-script-hands", "ase-script-orientation",
+                                "ase-script-contact-movement", "ase-script-face-body"]),
+    "ins": dict(L("Indian Sign Language", "sign", genders=[],
+                  note="Signs, not words: the SignWriting guide first; handshape, location, movement and the face; fingerspelling; classifiers; role shift."),
+                signed=True,
+                alphabet_decks=["ins-script-hands", "ins-script-orientation",
+                                "ins-script-contact-movement", "ins-script-face-body"]),
+}
+
 # Courses that already have a full all-planned path: only unit 1 changes.
 WIRED = ["de", "eo", "mai", "ml", "or", "pa", "ta", "jbo", "isv"]
 
@@ -946,23 +981,29 @@ def build_units(code: str) -> list[dict]:
     """The language's units, in order. A unit is a dict with `kind` (written,
     theme, grammar), `id`, and for a theme `theme`, `words`; for a grammar
     unit `topics`; the last unit of a level has `milestone`."""
-    lang = LANGS[code]
+    lang = LANGS.get(code) or SIGNED[code]
     ancient = lang.get("ancient", False)
     sizes = levels_of(lang)
 
     def themes_of(table: list) -> list:
         return [(t, w) for t, w in table if not (ancient and t in ANCIENT_EXCLUDE)]
 
-    units: list[dict] = [{"kind": "written", "id": f"{code}-phrasebook", "words": FIRST_WORDS}]
-    sound = ["sound-differences"] + lang.get("sound", [])
-    units.append({"kind": "grammar", "id": f"{code}-sound-differences", "topics": sound})
-    if lang.get("tones"):
-        units.append({"kind": "grammar", "id": f"{code}-tones", "topics": ["tones"]})
+    units: list[dict] = []
+    if lang.get("signed"):
+        # No sounds, no phrasebook: the SignWriting explainer, then the themes.
+        units.append({"kind": "alphabet", "id": f"{code}-script",
+                      "decks": list(lang["alphabet_decks"])})
+    else:
+        units.append({"kind": "written", "id": f"{code}-phrasebook", "words": FIRST_WORDS})
+        sound = ["sound-differences"] + lang.get("sound", [])
+        units.append({"kind": "grammar", "id": f"{code}-sound-differences", "topics": sound})
+        if lang.get("tones"):
+            units.append({"kind": "grammar", "id": f"{code}-tones", "topics": ["tones"]})
 
     result_levels = []
     for level, table in (("A1", A1_THEMES), ("A2", A2_THEMES), ("B1", B1_THEMES)):
         themes = themes_of(table)
-        words = allocate(sizes[level] - (FIRST_WORDS if level == "A1" else 0),
+        words = allocate(sizes[level] - (FIRST_WORDS if level == "A1" and not lang.get("signed") else 0),
                          [w for _, w in themes])
         tunits = [{"kind": "theme", "id": f"{code}-{t}", "theme": t, "words": n}
                   for (t, _), n in zip(themes, words)]
@@ -997,9 +1038,12 @@ def passages(code: str, unit: dict, lang: dict) -> list[str]:
         about = f"on the theme {label(unit['theme'])}"
     else:
         about = "showing " + ", ".join(t.replace("-", " ") for t in unit["topics"])
-    heard = (f"A short passage in {name} {about}, read aloud" if aloud
+    heard = (f"A short signed passage in {name} {about}, shown as pictures of its signs"
+             if lang.get("signed")
+             else f"A short passage in {name} {about}, read aloud" if aloud
              else f"A short spoken passage in {name} {about}")
-    read = f"A short written text in {name} {about}"
+    read = (f"A short text in {name} {about}, written in SignWriting" if lang.get("signed")
+            else f"A short written text in {name} {about}")
     return [
         "    listening_passages:",
         f'      - {{ id: {q(uid + "-heard")}, text: {{ "en": {q(heard)} }} }}',
@@ -1009,6 +1053,8 @@ def passages(code: str, unit: dict, lang: dict) -> list[str]:
 
 
 def unit_lines(code: str, unit: dict, lang: dict) -> list[str]:
+    if unit["kind"] == "alphabet":
+        return ["  - [" + ", ".join(q(d) for d in unit["decks"]) + "]"]
     if unit["kind"] == "written":
         return [f'  - decks: [{q(code + "-phrasebook")}, {q(code + "-first-words")}, "*"]',
                 f'    words: {unit["words"]}']
@@ -1042,10 +1088,16 @@ def header(code: str, lang: dict, units: list[dict]) -> list[str]:
         "# family; edit the generator's data, or take a unit over by hand once its",
         "# deck is written (#959).",
         "#",
-        "# Unit 1 is written: the phrasebook and the first words (10 words). Every",
-        "# other unit is planned, so the course teaches each as \"Coming\" until its",
-        "# deck is written. The passages are placeholders: each describes its unit's",
-        "# theme or grammar and is reworded when the passage is written.",
+        *(["# Unit 1 is written: the SignWriting explainer (ADR-0056), which teaches the",
+           "# symbols a sign is drawn with before the first sign. Every other unit is",
+           "# planned, so the course teaches each as \"Coming\" until its deck is written;",
+           "# the first signs are the first planned theme. The passages are placeholders:",
+           "# each describes its unit's theme or grammar and is reworded when it is written."]
+          if lang.get("signed") else
+          ["# Unit 1 is written: the phrasebook and the first words (10 words). Every",
+           "# other unit is planned, so the course teaches each as \"Coming\" until its",
+           "# deck is written. The passages are placeholders: each describes its unit's",
+           "# theme or grammar and is reworded when the passage is written."]),
     ]
     if lang.get("note"):
         out += ["#", "# From the scheme, for this language: " + lang["note"]]
@@ -1055,8 +1107,12 @@ def header(code: str, lang: dict, units: list[dict]) -> list[str]:
                 f"# are `levels` ({sizes['A1']}, {sizes['A2']} and {sizes['B1']} words, a judgement,",
                 "# low confidence) in place of the plan's 700, 900 and 1,200. Themes of",
                 "# modern life are left out."]
-    out += ["#", "# `alphabet` is empty: the validator takes only written decks there. When",
-            "# the script decks are written, they are listed in it."]
+    if lang.get("signed"):
+        out += ["#", "# `alphabet` lists the SignWriting explainer's decks: a learner who does not",
+                "# read SignWriting skips them (ADR-0056)."]
+    else:
+        out += ["#", "# `alphabet` is empty: the validator takes only written decks there. When",
+                "# the script decks are written, they are listed in it."]
     if lang.get("script"):
         out += ["# The script is taught in the units named `script`, after the first six",
                 "# themes, as the scheme has it."]
@@ -1064,17 +1120,20 @@ def header(code: str, lang: dict, units: list[dict]) -> list[str]:
 
 
 def render(code: str) -> str:
-    lang = LANGS[code]
+    lang = LANGS.get(code) or SIGNED[code]
     units = build_units(code)
     lines = header(code, lang, units)
     lines += ["schema: 1", 'kind: "path"', f"id: {q(code + '-path')}", f"language: {q(code)}",
-              f'description: {q(lang.get("desc", lang["name"]) + ": the planned path to B1. Only the phrasebook and the first words are written.")}']
+              f'description: {q(lang.get("desc", lang["name"]) + (": the planned path to B1. Only the SignWriting explainer is written." if lang.get("signed") else ": the planned path to B1. Only the phrasebook and the first words are written."))}']
     if lang.get("genders") is not None:
         lines.append("genders: [" + ", ".join(q(g) for g in lang["genders"]) + "]")
     if lang.get("levels"):
         lv = lang["levels"]
         lines.append(f'levels: {{ A1: {lv["A1"]}, A2: {lv["A2"]}, B1: {lv["B1"]} }}')
-    lines += ["alphabet: []", "units:"]
+    if lang.get("signed"):
+        lines += ["alphabet: [" + ", ".join(q(d) for d in lang["alphabet_decks"]) + "]", "units:"]
+    else:
+        lines += ["alphabet: []", "units:"]
     for unit in units:
         lines += unit_lines(code, unit, lang)
     lines.append('  - ["*"]')
@@ -1115,12 +1174,12 @@ def main(argv: list[str] | None = None) -> int:
         if not only:
             print("--only needs at least one language code", file=sys.stderr)
             return 2
-        unknown = [c for c in only if c not in LANGS and c not in WIRED]
+        unknown = [c for c in only if c not in LANGS and c not in WIRED and c not in SIGNED]
         if unknown:
             print("unknown language code(s): " + ", ".join(unknown), file=sys.stderr)
             return 2
     stale = 0
-    for code in sorted(LANGS):
+    for code in sorted([*LANGS, *SIGNED]):
         if only is not None and code not in only:
             continue
         path = args.root / "decks" / code / f"{code}-path.yaml"
@@ -1146,7 +1205,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.check and stale:
         print(f"{stale} path file(s) differ from the generator", file=sys.stderr)
         return 1
-    print(f"{len(LANGS)} paths generated, {len(WIRED)} unit 1s wired, {stale} changed")
+    print(f"{len(LANGS) + len(SIGNED)} paths generated, {len(WIRED)} unit 1s wired, {stale} changed")
     return 0
 
 

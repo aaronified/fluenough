@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **SignWriting for sign languages.** The font check now knows SignWriting, the script American and Indian Sign Language are written in here, and offers its font to download.
+
 ## [0.11.1] - 2026-11-17
 
 - **Sitelen pona no longer shows boxes, and its font is offered.** Opening a sitelen pona deck or card now asks to download the font, shows the Latin word instead of boxes until it arrives, and a failed sound test on Languages no longer stops the font check.

@@ -206,5 +206,34 @@ class OnlyTheNamedLanguages(unittest.TestCase):
         self.assertEqual(gp.LANGS["sat"]["script"], "ol_chiki")
 
 
+class SignLanguages(unittest.TestCase):
+    """The sign languages (ADR-0056): no sounds, and a path that opens with the
+    SignWriting explainer."""
+
+    def test_the_path_opens_with_the_explainer_and_has_no_sounds(self) -> None:
+        for code, lang in gp.SIGNED.items():
+            with self.subTest(code=code):
+                units = gp.build_units(code)
+                self.assertEqual(units[0]["kind"], "alphabet")
+                self.assertEqual(units[0]["decks"], lang["alphabet_decks"])
+                for deck in units[0]["decks"]:
+                    self.assertTrue(deck.startswith(f"{code}-script-"))
+                ids = [u["id"] for u in units]
+                self.assertEqual(len(ids), len(set(ids)))
+                self.assertFalse([i for i in ids
+                                  if "sound" in i or "tones" in i or "phrasebook" in i])
+                marks = [u["milestone"] for u in units if "milestone" in u]
+                self.assertEqual(marks, ["A1", "A2", "B1"])
+
+    @unittest.skipIf(yaml is None, "PyYAML is missing")
+    def test_the_yaml_lists_the_explainer_as_the_alphabet(self) -> None:
+        for code, lang in gp.SIGNED.items():
+            with self.subTest(code=code):
+                doc = yaml.safe_load(gp.render(code))
+                self.assertEqual(doc["alphabet"], lang["alphabet_decks"])
+                self.assertEqual(doc["units"][0], lang["alphabet_decks"])
+                self.assertEqual(doc["units"][-1], ["*"])
+
+
 if __name__ == "__main__":
     unittest.main()
