@@ -1,0 +1,70 @@
+# Popular works of Gujarati, recommended for the learner to find (some are in the public domain): the learner finds them (a library, a shop, a service) and the app asks
+# the questions after the learner has marked the work as seen, read or heard. Nothing of a work is quoted (wiki/Plan-Language-Completeness.md,
+# "Source-it-yourself works"). No links are given: no link has been checked.
+# Years and creators were read on each work's en.wikipedia page (2026-11-18). Dropped works, with reasons, are in the builder's report.
+schema: 1
+kind: "recommendations"
+id: "recommendations-gu"
+language: "gu"
+license: "CC-BY-SA-4.0"
+recommendations:
+  - id: "gu-rec-kanku"
+    medium: "film"
+    title: { text: "કંકુ", reading: "kaṅku" }
+    creator: ["gu-kantilal-rathod"]
+    year: 1969
+    level: "A2"
+    briefing: { en: "A social drama about a widow who raises her son alone on a farm in rural Gujarat, borrows money from a merchant, and in the end must decide whether to marry again." }
+    questions:
+      - { id: "q1", prompt: { en: "Who is Kanku's first husband?" }, options: { en: ["Khumo", "Malakchand", "Hiriyo"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who does Kanku borrow money from?" }, options: { en: ["Hiriyo", "Malakchand", "Khumo"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What does Kanku do after the village gossips about her?" }, options: { en: ["She leaves the village", "She declares she will remarry and marries Malakchand", "She gives the farm to her son"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "gu-rec-bhavni-bhavai"
+    medium: "film"
+    title: { text: "ભવની ભવાઈ", reading: "bhavni bhavāi" }
+    creator: ["gu-ketan-mehta"]
+    year: 1980
+    level: "B1"
+    briefing: { en: "A film told through folklore and the Bhavai tradition, in which an old storyteller recounts a king whose stepwell has run dry, and a young man whose life is the price of water. It is a story about untouchability." }
+    questions:
+      - { id: "q1", prompt: { en: "Why must a man be sacrificed for the stepwell to fill with water?" }, options: { en: ["The king has lost a war", "The royal astrologer says a man with 32 qualities must be sacrificed", "The queen has asked for it"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Who is the gypsy girl that Jeevo falls in love with?" }, options: { en: ["Ujam", "The elder queen", "Ranglo"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What does Jeevo demand before he will surrender?" }, options: { en: ["A larger share of the harvest", "An end to untouchability for his caste", "The release of his father"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "gu-rec-chhello-divas"
+    medium: "film"
+    title: { text: "છેલ્લો દિવસ", reading: "chello divas" }
+    creator: ["gu-krishnadev-yagnik"]
+    year: 2015
+    level: "A2"
+    briefing: { en: "A comedy about eight friends in their final year of college. The film opens after one of them is hurt in a car accident, and then goes back to the group's last months together." }
+    questions:
+      - { id: "q1", prompt: { en: "What happens to Vicky at the start of the film?" }, options: { en: ["He fails his final exams", "He is hurt in a car accident and taken to hospital", "He is arrested"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "How many friends are in the group?" }, options: { en: ["Five", "Eight", "Ten"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Where was the film shot?" }, options: { en: ["Mumbai and Pune", "Surat and Rajkot", "Ahmedabad and Vadodara"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "gu-rec-hellaro"
+    medium: "film"
+    title: { text: "હેલારો", reading: "helāro" }
+    creator: ["gu-abhishek-shah"]
+    year: 2019
+    level: "A2"
+    briefing: { en: "A drama set in a village in the Rann of Kutch in 1975, where there has been no rain for years, women are not allowed to dance garba, and a drummer changes their daily life." }
+    questions:
+      - { id: "q1", prompt: { en: "In which year does the story begin?" }, options: { en: ["1970", "1975", "1985"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What is the village missing?" }, options: { en: ["A school", "Rain", "A road"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What do the women do for the first time after the drummer plays?" }, options: { en: ["They go to the lake", "They play garba", "They leave the village"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "gu-rec-kevi-rite-jaish"
+    medium: "film"
+    title: { text: "કેવી રીતે જઈશ", reading: "kevi rite jaiś" }
+    creator: ["gu-abhishek-jain"]
+    year: 2012
+    level: "A2"
+    briefing: { en: "A satire about two friends in Gujarat who dream of emigrating to the United States, and about the son who is expected to make that dream come true." }
+    questions:
+      - { id: "q1", prompt: { en: "What do Bachu and Ishwar dream of?" }, options: { en: ["Opening a shop in Ahmedabad", "Going to the USA together illegally", "Winning a lottery"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Who does Bachu hope will realise his dream?" }, options: { en: ["Jignesh", "Harish", "Ishwar"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "How does Bachu feel when Ishwar phones him from the USA?" }, options: { en: ["Bachu gets a visa and leaves", "Bachu follows Ishwar to the USA", "Bachu feels betrayed and resents his friend"] }, answer: 3 }
+    tags: ["unreviewed"]
