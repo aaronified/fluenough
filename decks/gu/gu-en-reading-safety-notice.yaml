@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "gu-en-reading-safety-notice",
+  "name": "Reading: A safety notice in a building",
+  "kind": "reading",
+  "language": {
+    "code": "gu",
+    "iso639_3": "guj",
+    "name": "Gujarati",
+    "script": "gujarati",
+    "tts": "gu-IN",
+    "icon": "ગુ"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this deck, and released under CC BY-SA 4.0",
+  "description": "A safety notice written for this deck and released under CC BY-SA 4.0. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "reading",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "gu-safety-notice",
+      "title": "A safety notice in a building",
+      "theme": "emergencies",
+      "sentences": [
+        {
+          "text": "આ ઘરમાં આગ લાગે તો લિફ્ટ ન વાપરો.",
+          "reading": "ā gharmām̐ āg lāge to liphṭ na vāpro.",
+          "ipa": "a ɡʱərmã aɡ laɡe t̪o lipʰʈ nə ʋapro"
+        },
+        {
+          "text": "બહાર જવા માટે સીડી વાપરો.",
+          "reading": "bahār javā māṭe siḍi vāpro.",
+          "ipa": "bəɦar dʒəʋa maʈe siɖi ʋapro"
+        },
+        {
+          "text": "મદદ માટે ડૉક્ટર કે પોલીસને બોલાવો.",
+          "reading": "madad māṭe ḍôkṭar ke polisne bolāvo.",
+          "ipa": "məd̪əd̪ maʈe ɖɔkʈər ke polisne bolaʋo"
+        },
+        {
+          "text": "બચાવ ટીમ આવે ત્યાં સુધી શાંત રહો.",
+          "reading": "bacāv ṭim āve tyām̐ sudhi śānt raho.",
+          "ipa": "bətʃaʋ ʈim aʋe t̪jã sud̪ʱi ʃant̪ rəɦo"
+        }
+      ],
+      "questions": [
+        {
+          "id": "gu-4698",
+          "prompt": {
+            "en": "What should you not use if there is a fire?"
+          },
+          "options": [
+            {
+              "en": "The stairs"
+            },
+            {
+              "en": "The lift"
+            },
+            {
+              "en": "The window"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "id": "gu-4699",
+          "prompt": {
+            "en": "You should call a doctor or the police for help."
+          },
+          "answer": true
+        },
+        {
+          "id": "gu-4700",
+          "prompt": {
+            "en": "What should you do until the rescue team comes?"
+          },
+          "options": [
+            {
+              "en": "Run outside"
+            },
+            {
+              "en": "Stay calm"
+            },
+            {
+              "en": "Use the lift"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  ]
+}
