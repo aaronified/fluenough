@@ -1,0 +1,129 @@
+# Topics a learner of Gujarati would search for: what each one is, and the decks that teach it (wiki/Plan-Deck-Kinds-And-Topics.md, D6).
+# A script topic lists its decks; a topic holds no card text of its own.
+schema: 1
+kind: "topics"
+id: "gu-topics"
+language: "gu"
+license: "CC-BY-SA-4.0"
+topics:
+  - id: "gu-script-letters"
+    name: { en: "The Gujarati script" }
+    term: { text: "ગુજરાતી લિપિ", reading: "gujrāti lipi" }
+    summary: { en: "The Gujarati alphabet: the vowel letters, the consonant letters, the vowel signs that attach to them, the conjunct consonants, the digits, and how to read words written in the script." }
+    kind: "script"
+    level: "A1"
+    decks: ["gu-script-vowels", "gu-script-consonants", "gu-script-vowel-signs", "gu-script-conjuncts", "gu-script-digits", "gu-script-reading"]
+  - id: "gu-postpositions"
+    name: { en: "Postpositions" }
+    term: { text: "નામયોગી", reading: "nāmayogi" }
+    summary: { en: "Gujarati puts its equivalents of 'in', 'to', 'from', 'with' and 'of' after the noun rather than before it, so the noun takes a changed form before each postposition." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["gu-grammar-postpositions"]
+  - id: "gu-gender-number"
+    name: { en: "Gender and number" }
+    term: { text: "લિંગ અને વચન", reading: "liṅg ane vacan" }
+    summary: { en: "Whether Gujarati nouns are masculine or feminine, how they form the plural, and how adjectives and verbs agree with the noun in gender and number." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["gu-grammar-gender-number", "gu-grammar-nouns"]
+  - id: "gu-verb-to-be"
+    name: { en: "The verb to be" }
+    term: { text: "હોવું", reading: "hovum" }
+    summary: { en: "The verb 'to be', used to say who someone is, where they are and how they are, with its forms for each person and gender." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["gu-grammar-be"]
+  - id: "gu-present-tense"
+    name: { en: "The present tense" }
+    term: { text: "વર્તમાનકાળ", reading: "vartamānakāḷ" }
+    summary: { en: "How Gujarati verbs express what is happening now or what happens as a habit, with the present forms that change for each subject." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["gu-grammar-present"]
+  - id: "gu-past-tense"
+    name: { en: "The past tense" }
+    term: { text: "ભૂતકાળ", reading: "bhutakāḷ" }
+    summary: { en: "The past tenses of Gujarati verbs: the simple past for finished actions, the habitual past for things that used to happen, the past continuous for what was going on, and the past perfect for what had already happened." }
+    kind: "verbs"
+    level: "A2"
+    decks: ["gu-grammar-past", "gu-grammar-habitual-past", "gu-grammar-past-continuous", "gu-grammar-past-more"]
+  - id: "gu-future-tense"
+    name: { en: "The future tense" }
+    term: { text: "ભવિષ્યકાળ", reading: "bhaviśyakāḷ" }
+    summary: { en: "How Gujarati verbs talk about what will happen, with the future forms that change for each subject and gender." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["gu-grammar-future"]
+  - id: "gu-imperatives"
+    name: { en: "Imperatives" }
+    term: { text: "આજ્ઞાર્થ", reading: "āgnārth" }
+    summary: { en: "How to tell someone to do something, with the imperative forms used for a friend, for an elder or a stranger, and for a polite request." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["gu-grammar-imperatives"]
+  - id: "gu-subjunctive-conditional"
+    name: { en: "The subjunctive and the conditional" }
+    summary: { en: "The subjunctive, the verb form used after wishes, doubts and purposes, and the conditional, used for 'if' clauses and what would happen." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["gu-grammar-subjunctive", "gu-grammar-conditional"]
+  - id: "gu-causative-passive"
+    name: { en: "Causative and passive verbs" }
+    summary: { en: "Verb forms where the subject makes someone else do an action, the causative, or where the action is done to the subject, the passive." }
+    kind: "verbs"
+    level: "B1"
+    decks: ["gu-grammar-causative", "gu-grammar-passive"]
+  - id: "gu-compound-conjunct-verbs"
+    name: { en: "Compound and conjunct verbs" }
+    term: { text: "સંયુક્ત ક્રિયાપદ", reading: "saṁyukt kriyāpad" }
+    summary: { en: "Verbs made from two parts: a compound verb joins two verbs into one, and a conjunct verb joins a noun or adjective with a light verb such as do or become, and the two together act as one verb." }
+    kind: "verbs"
+    level: "A2"
+    decks: ["gu-grammar-compound-verbs", "gu-grammar-conjunct-verbs"]
+  - id: "gu-honorifics-registers"
+    name: { en: "Honorifics and registers" }
+    summary: { en: "How Gujarati speakers show respect and choose between a polite, a familiar and a formal way of speaking, through pronouns, verb forms and address words." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["gu-grammar-honorifics", "gu-honorifics", "gu-registers"]
+  - id: "gu-numbers-time"
+    name: { en: "Numbers and time" }
+    summary: { en: "Counting from one to twenty and on to bigger numbers, and telling the time and the days, with the words for the parts of the day." }
+    kind: "words"
+    level: "A1"
+    decks: ["gu-numbers-1-20", "gu-numbers-big", "gu-time"]
+  - id: "gu-family-people"
+    name: { en: "Family and people" }
+    term: { text: "કુટુંબ", reading: "kuṭumb" }
+    summary: { en: "The Gujarati words for family members and close relations, and for the people a learner meets in everyday life." }
+    kind: "words"
+    level: "A1"
+    decks: ["gu-family", "gu-relationships"]
+  - id: "gu-food-shopping"
+    name: { en: "Food and shopping" }
+    term: { text: "ખોરાક", reading: "khorāk" }
+    summary: { en: "Common Gujarati words for food, groceries and shops, and the words used when buying and paying for things." }
+    kind: "words"
+    level: "A1"
+    decks: ["gu-food", "gu-groceries", "gu-shopping"]
+  - id: "gu-travel-places"
+    name: { en: "Travel and places" }
+    term: { text: "મુસાફરી", reading: "musāfari" }
+    summary: { en: "Words for getting around, for journeys and for the places a traveller visits, from the station and the road to the town and the countryside." }
+    kind: "words"
+    level: "A1"
+    decks: ["gu-travel", "gu-places", "gu-journey"]
+  - id: "gu-work-money"
+    name: { en: "Work and money" }
+    summary: { en: "Common words for work, workplaces, earning, spending and saving money, as used in everyday talk about jobs and bills." }
+    kind: "words"
+    level: "A1"
+    decks: ["gu-work", "gu-money"]
+  - id: "gu-health-body"
+    name: { en: "Health and the body" }
+    term: { text: "આરોગ્ય", reading: "ārogya" }
+    summary: { en: "The parts of the body, and the everyday words for feeling unwell, visiting a doctor and buying medicine." }
+    kind: "words"
+    level: "A1"
+    decks: ["gu-health", "gu-body"]
