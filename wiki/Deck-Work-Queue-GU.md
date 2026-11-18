@@ -126,3 +126,37 @@ Sentences decks (core and layer) have no `theme`; layer `bases` gloss only inlin
 ### 6.4 Sourcing blockers
 
 The WebFetch page reader refuses verse; curl on raw wikitext works (see 6.2 item 4). Most Wikisource poem pages are scans without transcribed text. Mirabai's poems are Rajasthani on en.wikipedia, so Gujarati attribution is unsupported.
+
+
+## 7. Status after the B1 and culture waves, and the resume list (2026-11-18)
+
+**Gujarati is Complete on every app line** (re-measured from the regenerated decks-live index at 136a7d6d with a port of `B1Progress.of`): words A1 709 of 709, A2 825 of 825, B1 1,222 of 1,222 (2,756 of 2,756), grammar 53 of 53 topics, culture 72 of 72 cards, all 117 path units written. The parent confirmed it and retires this session once PR #1627 is merged.
+
+### 7.1 Merged pull requests
+
+| PR | Content |
+|---|---|
+| #1453 | 14 A1 units |
+| #1485 | 22 A2 units |
+| #1620 | 38 B1 units (25 word units, 13 grammar units as full rule tables over every verb card, small word decks for the grammar units that needed words, 51 comparison rows) |
+| #1622 | culture 1 to 4 (72 cards), 9 creators, proverbs 1 to 3 (60), situations (10 sheets), 10 multi-word cards |
+| #1623 | `gu-topics.yaml` (26 topics) and 41 nouns to bring short units to plan |
+| #1624 | recommendations (20 works) and 14 creators (23 in all) |
+| #1625 | 153 notes on cards with a teachable point |
+| #1626 | the last 7 words of the planned B1 counts |
+
+### 7.2 Open
+
+- **PR #1627**, narrow IPA: `phonetic` on 3,098 cards (23 from Wiktionary 'Gujarati, Standard', 248 changed by the 3 rules of `decks/gu/gu-phonetics.yaml`, 2,827 bracketed unchanged). Reviewed, CI green. Two review blockers on imported forms, both a Wiktionary form that contradicts the broad `ipa`: gu-0486 સવાર (colloquial s>ɦ) and gu-0264 આવજો. Plus a style mismatch on the 23 imports (s for ʃ, ɾ for r, murmur marks, stress marks, ɛ/ɑ). **Resume:** after the parent's gu normalise and skip-guard tool PR is merged, merge decks-live into `decks/gu-ipa-wave1`, run `python3 tools/import_phonetic.py gu --renormalise` (never edit `phonetic` by hand), push, wait for CI, merge. Rule-file nits: the comment on `gu-retroflex-flap` should say "after a vowel, unless doubled"; the flap also fires on English loans (રેડિયો, સ્ટેડિયમ, વીડિયો, ગાઇડ): decide with a speaker.
+
+### 7.3 Extras still to do (resume in this order)
+
+1. **Review-queue rows** in `docs/review-queue/gu.md` (docs on decks-live, via a PR to decks-live): genders unsure (પનીર, ચટણી, છાશ, શાક, શર્ટ, સ્વેટર, ચંપલ, ધોતી, મોજાં, ગાદલું, પ્રોજેક્ટ, ઇનામ, ઓળખપત્ર, ચર્ચા, સપ્તાહાંત, ગૃહકાર્ય, નોંધ, પડોશી, ટેલિફોન, સ્પીકર, ધ્વનિ, સંકેત, ફૂલકોબી, લોભ, ઇરાદો, હેતુ, સ્વપ્ન, મૂલ્ય, સાહસ, ઘમંડ, મર્યાદા, સંયમ, ડેબિટ, ટકા, ટ્રાન્સફર, અંક, ઉક્તિ, કવિ, કેનવાસ, નૃત્યકાર, સર્જક, ફેરા, ટુર્નામેન્ટ, ઉમંગ); rule-generated verb forms not verified by a speaker (subjunctive, conditional, while, before-after (after = conjunctive), purpose, passive, honorific tables; verbs ધોવું, જોવું, ખોવું, રોવું, સૂવું, જવું, લેવું, ગમવું, ચાલ્યા જવું, લઈ આવવું, શોધી કાઢવું, આપી દેવું; the 44 causatives left out because they could not be confirmed); readings from the transcriber (short i/u convention; some without a Latin hint); creator date conflicts (Narsinh Mehta: en.wikipedia c. 1414 to 1488 vs Wikidata 1814 to 1881; Mirabai birth 1498 or 1504, death 1546, 1547 or 1552; Akho 1591 to 1656 vs the Wikisource page 1600 to 1655; Premanand 1649 or 1636 to 1714 or 1734; Dayaram 1852 variant; Kalapi death 9 June 1900 (Wikidata) vs uncertain (en.wikipedia); Kantilal Rathod born 1924 vs 1925; Abhishek Shah no Wikidata birth date); Mirabai's Gujarati attribution (en.wikipedia says her poems are Rajasthani); translations in the culture and proverbs decks are the builders' own; gu-6064 dash spacing normalised; Meghani and Kalapi edition years not on the pages; proverbs gu-6317, gu-6326, gu-6355, gu-6359 flagged unconfirmed; six recommendation title scripts (Mulu Manek still unconfirmed); the situations sheets' wording; the habitual-past layer claim about હતાં; ડબ્બો and ગૂંથવું same-word pairs; sentence ids outside the plan's ranges; પડોશણ.
+2. **Multi-word verbs**: 10 of the 80 planned cards are verified (conjunct 2, compound 1, idiomatic 4, dative-subject 3). The sourcing page `Plan-Culture-Gujarati` named about 18 seeds; the rest need sources. Sources tried: gu.wikipedia, gu.wiktionary pages by seed, the allowed Wikisource pages. Resume with: Wiktionary entries of Gujarati conjunct and compound verbs (`gu.wiktionary.org` and `en.wiktionary.org` category pages read as raw wikitext with a User-Agent header, 3 s pacing), dictionary pages on archive.org via `/stream/` URLs (not `/download/`), and examples checked on a second page. Each card needs a family label, a usage note, and parts already taught by `ref`.
+3. **Professional decks** (`genre: professional`, hidden): none built; wait for the shared professions list in `decks/sections.yaml` (the parent's list: medicine, hospitality, business); build in the shape of the other languages' professional decks once the list is set.
+4. **Completeness grid row** of [Plan-Language-Completeness](Plan-Language-Completeness.md): updated 2026-11-18 (docs).
+5. **Known table gaps** (cosmetic, not counted by the app): the perfect table lacks જમવું, બોલવું, રમવું, સૂવું; sentences decks carry no confusables on some units (precedent `gu-grammar-sentences`); `gu-adverbs`-style leftover forms were fixed in #1620.
+
+### 7.4 Lessons recorded for the next language
+
+Layer text and notes need a reading beside every non-Latin word (about 900 errors in B1 before it was enforced); a ref base is glossed by its card, never in the layer; a rules table needs a row for every word of its kind taught anywhere, so new adjectives need comparison rows and new verbs rows in every verb table; parallel workers duplicate cards unless each greps both decks-live and the shared branch; a grammar unit that teaches words no earlier deck teaches adds its own small word deck; verbatim culture quotes are read from gu.wikisource `Page:` namespace proofread pages (quality 3 or 4) through raw wikitext with curl, since the page reader refuses verse and the API answers 429; archive.org `/download/` is refused by the proxy, `/stream/` works.
