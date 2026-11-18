@@ -541,26 +541,26 @@ class GujaratiNormalising(unittest.TestCase):
         return pp.normalise(self.gu.normalised(form, broad))
 
     def test_wiktionarys_s_for_sh_becomes_sh_where_the_broad_ipa_has_it(self) -> None:
-        self.assertEqual(self.norm("[ˈsũ]", "ʃũ"), "[ˈʃũ]")
-        self.assertEqual(self.norm("[ˈkʰuɾsi]", "kʰurʃi"), "[ˈkʰurʃi]")
-        self.assertEqual(self.norm("[ˈsukɾəʋɑɾ]", "ʃukrəʋar"), "[ˈʃukrəʋɑr]")
+        self.assertEqual(self.norm("[ˈsũ]", "ʃũ"), "[ʃũ]")
+        self.assertEqual(self.norm("[ˈkʰuɾsi]", "kʰurʃi"), "[kʰurʃi]")
+        self.assertEqual(self.norm("[ˈsukɾəʋɑɾ]", "ʃukrəʋar"), "[ʃukrəʋar]")
 
     def test_a_genuine_s_or_f_is_never_rewritten(self) -> None:
-        self.assertEqual(self.norm("[ˈsɑɽɑ]", "saɖa"), "[ˈsɑɽɑ]")
-        self.assertEqual(self.norm("[ˈsɑːɾu]", "saːru"), "[ˈsɑːru]")
-        self.assertEqual(self.norm("[ˈfɑ]", "fa"), "[ˈfɑ]")
+        self.assertEqual(self.norm("[ˈsɑɽɑ]", "saɖa"), "[saɽa]")
+        self.assertEqual(self.norm("[ˈsɑːɾu]", "saːru"), "[saru]")
+        self.assertEqual(self.norm("[ˈfɑ]", "fa"), "[fa]")
         # Only the position the broad ipa writes ʃ at changes.
-        self.assertEqual(self.norm("[ˈsɑrsu]", "sarʃu"), "[ˈsɑrʃu]")
-        self.assertEqual(self.norm("[ˈsɑrsu]", "ʃarsu"), "[ˈʃɑrsu]")
+        self.assertEqual(self.norm("[ˈsɑrsu]", "sarʃu"), "[sarʃu]")
+        self.assertEqual(self.norm("[ˈsɑrsu]", "ʃarsu"), "[ʃarsu]")
 
     def test_f_becomes_aspirated_p_only_where_the_broad_ipa_has_it(self) -> None:
-        self.assertEqual(self.norm("[ˈfoi]", "pʰoi"), "[ˈpʰoi]")
+        self.assertEqual(self.norm("[ˈfoi]", "pʰoi"), "[pʰoi]")
 
     def test_a_form_that_does_not_line_up_with_the_broad_ipa_is_left_alone(self) -> None:
         # Wiktionary's ɦ for s, or another unit count: no guess.
-        self.assertEqual(self.norm("[ˈɦəʋɑr]", "səʋar"), "[ˈɦəʋɑr]")
-        self.assertEqual(self.norm("[ˈsũ]", "ʃũʃ"), "[ˈsũ]")
-        self.assertEqual(self.norm("[ˈsũ]", None), "[ˈsũ]")
+        self.assertEqual(self.norm("[ˈɦəʋɑr]", "səʋar"), "[ɦəʋar]")
+        self.assertEqual(self.norm("[ˈsũ]", "ʃũʃ"), "[sũ]")
+        self.assertEqual(self.norm("[ˈsũ]", None), "[sũ]")
 
     def test_the_murmur_mark_goes_and_the_broad_ipas_h_comes_back(self) -> None:
         self.assertEqual(self.norm("[ˈmə̤ino]", "məɦino"), "[məɦino]")
