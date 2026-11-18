@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "id": "gu-en-grammar-reported-speech",
+  "kind": "layer",
+  "core": "gu-grammar-reported-speech",
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "name": "Reported speech: he said that",
+  "license": "CC-BY-SA-4.0",
+  "description": "Passing on what a third person said, with કે and the verb of saying. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "grammar",
+    "unreviewed"
+  ],
+  "pattern": {
+    "name": "Reported speech: he said that",
+    "slot_name": "form",
+    "prompt": "{lemma} ({gloss}), {slot}",
+    "slots": {
+      "present (he says)": "present: he says",
+      "past (he said)": "past: he said"
+    },
+    "entries": {
+      "kahevum": "to say; to tell",
+      "puchhvum": "to ask",
+      "manvum": "to believe; to think",
+      "bolvum": "to speak",
+      "likhvum": "to write",
+      "vicharvum": "to think",
+      "samjavavum": "to explain",
+      "janvum": "to know; to learn"
+    },
+    "notes": "To say what a third person said, put the words of the report after કે (ke) (ke), that, and then the verb of saying: તે કહે છે કે હું આવીશ (te kahe che ke hum̐ āviś), he says that I will come. The verb of saying takes its own form: present કહે છે (kahe che), past કહ્યું (kahyum̐), with the subject તેણે (teṇe) in the past. The verb after કે (ke) keeps its own tense, as in the example. Questions are reported the same way with પૂછ્યું (puchyum̐), as in તેણે પૂછ્યું કે (teṇe puchyum̐ ke) ... (he asked whether ...)."
+  }
+}
