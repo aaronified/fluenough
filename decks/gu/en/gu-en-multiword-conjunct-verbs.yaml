@@ -1,0 +1,78 @@
+schema: 1
+id: "gu-en-multiword-conjunct-verbs"
+kind: "layer"
+core: "gu-multiword-conjunct-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: conjunct verbs"
+license: "CC-BY-SA-4.0"
+description: "Four verb phrases of a noun and a light verb: to admit into hospital, to shave, to lie and to skip school or work. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "gu-6400":
+    native: "to admit (into a hospital)"
+    notes:
+      "u1": "Literal parts: દાખલ (dākhal), an entry, and કરવું (karvum), to do. The person admitted takes -ને (ne), as in the first example."
+    bases:
+      "દાખલ": "entry; admission"
+    examples:
+      "ડૉક્ટરે તેને દાખલ કર્યો.":
+        native: "The doctor admitted him."
+        bases:
+          "દાખલ": "entry; admission"
+      "તેને દાખલ કરવો પડશે.":
+        native: "He will have to be admitted."
+        bases:
+          "દાખલ": "entry; admission"
+          "પડશે": "to fall; here, to have to"
+  "gu-6401":
+    native: "to shave"
+    notes:
+      "u1": "Literal parts: દાઢી (dāḍhi), beard, and કરવી (karvi), to do. The light verb is feminine, as in the second example, because દાઢી (dāḍhi) is feminine."
+    bases:
+      "દાઢી": "beard"
+    examples:
+      "તે રોજ દાઢી કરે છે.":
+        native: "He shaves every day."
+        bases:
+          "દાઢી": "beard"
+          "છે": "to be"
+      "મારે દાઢી કરવી છે.":
+        native: "I want to shave."
+        bases:
+          "દાઢી": "beard"
+          "છે": "to be"
+  "gu-6402":
+    native: "to lie"
+    notes:
+      "u1": "The verb is બોલવું (bolvum̐), to speak; the noun જુઠ્ઠું (juṭṭhum̐), a lie, is what is spoken, so the phrase is said of telling a lie."
+    bases:
+      "જુઠ્ઠું": "a lie"
+    examples:
+      "તે જુઠ્ઠું બોલ્યો.":
+        native: "He lied."
+        bases:
+          "જુઠ્ઠું": "a lie"
+      "જુઠ્ઠું બોલવું ખોટું છે.":
+        native: "Lying is wrong."
+        bases:
+          "જુઠ્ઠું": "a lie"
+          "છે": "to be"
+  "gu-6403":
+    native: "to skip school or work; to play truant"
+    notes:
+      "u1": "An informal phrase for skipping school or work without leave. The light verb is feminine, as in the examples, because ગુલ્લી (gulli) is feminine."
+    bases:
+      "ગુલ્લી": "a skipped class (slang)"
+      "મારવી": "to hit; here, to skip (the phrase)"
+    examples:
+      "તે રોજ ગુલ્લી મારે છે.":
+        native: "He skips school every day."
+        bases:
+          "ગુલ્લી": "a skipped class (slang)"
+          "મારે": "to hit; here, to skip (the phrase)"
+          "છે": "to be"
+      "તેણે આજે ગુલ્લી મારી?":
+        native: "Did he skip school today?"
+        bases:
+          "ગુલ્લી": "a skipped class (slang)"
+          "મારી": "to hit; here, to skip (the phrase)"
