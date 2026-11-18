@@ -1,0 +1,302 @@
+schema: 1
+id: "sa-en-weddings"
+kind: "layer"
+core: "sa-weddings"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Weddings"
+description: "Marriage and the household rites in classical Sanskrit: the wife, the wedding, the fire and the family."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-10300":
+    native: "A wife, the woman joined to a man in marriage."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "जाया": "wife"
+    examples:
+      "जाया भवति":
+        native: "A wife is present."
+        bases:
+          "जाया": "wife"
+          "भवति": "to be, become"
+      "जायां पश्यति बालः":
+        native: "The child sees the wife."
+        bases:
+          "जायां": "wife"
+          "पश्यति": "to see"
+          "बालः": "child"
+  "sa-10301":
+    native: "A woman or wife, also birth, the act of being born."
+    notes:
+      "n1": "Its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "जनिः": "wife"
+    examples:
+      "जनिः पश्यति बालः":
+        native: "The child sees the woman."
+        bases:
+          "जनिः": "wife"
+          "पश्यति": "to see"
+          "बालः": "child"
+      "जनिं करोति जनः":
+        native: "A person makes a birth."
+        bases:
+          "जनिं": "wife"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-10302":
+    native: "The mistress of a house, the wife of the householder."
+    notes:
+      "n1": "Its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "गृहपत्नी": "householder's wife"
+    examples:
+      "गृहपत्नी भवति":
+        native: "The mistress of the house is present."
+        bases:
+          "गृहपत्नी": "householder's wife"
+          "भवति": "to be, become"
+      "गृहपत्नीं पश्यति जनः":
+        native: "A person sees the mistress of the house."
+        bases:
+          "गृहपत्नीं": "householder's wife"
+          "पश्यति": "to see"
+          "जनः": "person"
+  "sa-10303":
+    native: "The daily sacrifice offered into the household fire."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "अग्निहोत्रम्": "fire sacrifice"
+    examples:
+      "अग्निहोत्रं भवति":
+        native: "The fire sacrifice takes place."
+        bases:
+          "अग्निहोत्रं": "fire sacrifice"
+          "भवति": "to be, become"
+      "अग्निहोत्रं करोति जनः":
+        native: "A person performs the fire sacrifice."
+        bases:
+          "अग्निहोत्रं": "fire sacrifice"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-10304":
+    native: "The rite of placing the sacred fire on the altar."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "अग्न्याधानम्": "fire-placing rite"
+    examples:
+      "अग्न्याधानं भवति":
+        native: "The fire-placing rite takes place."
+        bases:
+          "अग्न्याधानं": "fire-placing rite"
+          "भवति": "to be, become"
+      "अग्न्याधानं करोति जनः":
+        native: "A person performs the fire-placing rite."
+        bases:
+          "अग्न्याधानं": "fire-placing rite"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-10305":
+    native: "The naming rite, the ceremony in which a child is given a name."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "नामकरणः": "naming rite"
+    examples:
+      "नामकरणो भवति":
+        native: "The naming rite takes place."
+        bases:
+          "नामकरणो": "naming rite"
+          "भवति": "to be, become"
+      "नामकरणं करोति जनः":
+        native: "A person performs the naming rite."
+        bases:
+          "नामकरणं": "naming rite"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-10306":
+    native: "The gift of a cow, a rite of giving a cow in a ceremony."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "गोदानम्": "gift of a cow"
+    examples:
+      "गोदानं भवति":
+        native: "The gift of a cow takes place."
+        bases:
+          "गोदानं": "gift of a cow"
+          "भवति": "to be, become"
+      "गोदानं करोति जनः":
+        native: "A person gives a cow."
+        bases:
+          "गोदानं": "gift of a cow"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-10307":
+    native: "Marriage, the leading of the bride around the fire."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "परिणयम्": "marriage"
+    examples:
+      "परिणयं भवति":
+        native: "A marriage takes place."
+        bases:
+          "परिणयं": "marriage"
+          "भवति": "to be, become"
+      "परिणयं करोति जनः":
+        native: "A person marries."
+        bases:
+          "परिणयं": "marriage"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-10308":
+    native: "A widow, a woman whose husband has died."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "विधवा": "widow"
+    examples:
+      "विधवा भवति":
+        native: "A widow is present."
+        bases:
+          "विधवा": "widow"
+          "भवति": "to be, become"
+      "विधवां पश्यति बालः":
+        native: "The child sees the widow."
+        bases:
+          "विधवां": "widow"
+          "पश्यति": "to see"
+          "बालः": "child"
+  "sa-10309":
+    native: "A bracelet or armlet worn on the arm, a ring of ornament."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "वलयः": "bracelet"
+    examples:
+      "वलयो भवति":
+        native: "A bracelet is present."
+        bases:
+          "वलयो": "bracelet"
+          "भवति": "to be, become"
+      "वलयं पश्यति बालः":
+        native: "The child sees the bracelet."
+        bases:
+          "वलयं": "bracelet"
+          "पश्यति": "to see"
+          "बालः": "child"
+  "sa-10310":
+    native: "A wife, a woman joined to her husband."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "ग्ना": "wife"
+    examples:
+      "ग्ना भवति":
+        native: "A wife is present."
+        bases:
+          "ग्ना": "wife"
+          "भवति": "to be, become"
+      "ग्नां पश्यति जनः":
+        native: "A person sees the wife."
+        bases:
+          "ग्नां": "wife"
+          "पश्यति": "to see"
+          "जनः": "person"
+  "sa-10311":
+    native: "The brother-in-law, the husband's younger brother."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "देवरः": "husband's younger brother"
+    examples:
+      "देवरो भवति":
+        native: "A brother-in-law is present."
+        bases:
+          "देवरो": "husband's younger brother"
+          "भवति": "to be, become"
+      "देवरं पश्यति बालः":
+        native: "The child sees the brother-in-law."
+        bases:
+          "देवरं": "husband's younger brother"
+          "पश्यति": "to see"
+          "बालः": "child"
+  "sa-10312":
+    native: "The father-in-law, the father of one's spouse."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "श्वशुरः": "father-in-law"
+    examples:
+      "श्वशुरो भवति":
+        native: "A father-in-law is present."
+        bases:
+          "श्वशुरो": "father-in-law"
+          "भवति": "to be, become"
+      "श्वशुरं पश्यति बालः":
+        native: "The child sees the father-in-law."
+        bases:
+          "श्वशुरं": "father-in-law"
+          "पश्यति": "to see"
+          "बालः": "child"
+  "sa-10313":
+    native: "A son, a male child of a parent."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "पुत्रः": "son"
+    examples:
+      "पुत्रो भवति":
+        native: "A son is born."
+        bases:
+          "पुत्रो": "son"
+          "भवति": "to be, become"
+      "पुत्रं पश्यति जनः":
+        native: "A person sees the son."
+        bases:
+          "पुत्रं": "son"
+          "पश्यति": "to see"
+          "जनः": "person"
+  "sa-10314":
+    native: "A student who has completed his studies and the ceremony that ends them."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "स्नातकः": "graduate of studies"
+    examples:
+      "स्नातको भवति":
+        native: "A graduate is present."
+        bases:
+          "स्नातको": "graduate of studies"
+          "भवति": "to be, become"
+      "स्नातकं पश्यति बालः":
+        native: "The child sees the graduate."
+        bases:
+          "स्नातकं": "graduate of studies"
+          "पश्यति": "to see"
+          "बालः": "child"
