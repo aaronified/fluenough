@@ -66,7 +66,7 @@ SCRIPTS = {
     "devanagari", "bengali", "gujarati", "gurmukhi", "odia",
     "telugu", "tamil", "kannada", "malayalam", "sinhala",
     "kana", "han", "han_simplified", "han_traditional", "hangul", "thai",
-    "ipa", "braille", "sitelen_pona", "other",
+    "ipa", "braille", "sitelen_pona", "signwriting", "other",
 }
 # The notations taught like languages: the IPA (ADR-0041) and braille
 # (ADR-0043). Neither is spoken, so neither has a tts tag, and neither is
@@ -75,7 +75,7 @@ NOTATION_SCRIPTS = {"ipa", "braille"}
 # Scripts whose cards need no reading: they are read as written. The
 # notations are read as written, and their courses are no languages with a
 # romanisation: a braille cell's print equivalent is its meaning.
-NO_READING = {"latin", "cyrillic", "greek"} | NOTATION_SCRIPTS
+NO_READING = {"latin", "cyrillic", "greek", "signwriting"} | NOTATION_SCRIPTS
 # A script id is lowercase words joined by a hyphen or, as the app's own
 # list has it (`ol_chiki`, `meitei_mayek`, `perso_arabic`), an underscore (#623).
 SCRIPT_RE = re.compile(r"[a-z]+(?:[-_][a-z]+)*")
@@ -108,7 +108,16 @@ SCRIPT_BLOCKS = {
     # private-use, not letters, so what this refuses is a Latin letter left
     # in the spelling.
     "sitelen_pona": ((0xF1900, 0xF19FF),),
+    # SignWriting's Unicode block (ADR-0056): base symbols, fill and rotation
+    # modifiers. A sign's own text is FSW, checked by `_check_signwriting`.
+    "signwriting": ((0x1D800, 0x1DAAF),),
 }
+# One unstyled sign in Formal SignWriting in ASCII (FSW): a sign box (B, L, M
+# or R, with its width and height) and one or more symbols, each a key, `S` +
+# a three digit base symbol of the ISWA 2010 (100 to 38b), a fill 0 to 5 and a
+# rotation 0 to f, and its x and y. The grammar of the draft-slevinski-formal-
+# signwriting specification; the same as `SIGN` in tools/signwriting_image.py.
+FSW_RE = re.compile(r"[BLMR]\d{3}x\d{3}(?:S[123][0-9a-f]{2}[0-5][0-9a-f]\d{3}x\d{3})+")
 KINDS = {"vocab", "grammar", "facts", "situations", "themes", "numbers", "path", "sounds", "script",
          "reading", "rules", "layer", "resources", "phonetics", "gating",
          "creators", "topics", "sections", "recommendations"}
@@ -1022,6 +1031,29 @@ def _check_target_scripts(r: Report, where: str, value: object, target: object,
                            f"{key}: {text!r}")
 
 
+def _check_signwriting(r: Report, where: str, card: dict, target: object,
+                       script: str, core: bool) -> None:
+    """A card of a SignWriting deck (ADR-0056) is one of two things. A symbol
+    card's target is Unicode SignWriting, one symbol with its fill and
+    rotation modifiers, which a font draws. A sign card's target is one sign
+    in FSW, which no font can draw (it is two-dimensional), so the card gives
+    the picture drawn from it, `image` with its `image_credit`."""
+    if script != "signwriting" or not _is_str(target):
+        return
+    lo, hi = SCRIPT_BLOCKS["signwriting"][0]
+    if all(lo <= ord(ch) <= hi for ch in target):
+        return
+    if not FSW_RE.fullmatch(target):
+        r.error(where, f"a SignWriting target is Unicode SignWriting (U+1D800 to "
+                       f"U+1DAAF) or one sign in FSW such as "
+                       f"'M507x507S1f720487x492', got {target!r}")
+        return
+    if not _is_str(card.get("image")):
+        r.error(where, "a sign written in FSW needs its picture: `image`, drawn by "
+                       "tools/signwriting_image.py, with `image_credit` "
+                       "(DECK-FORMAT.md, Sign languages)")
+
+
 def _has_kanji(text: str) -> bool:
     return any(lo <= ord(ch) <= hi for ch in text for lo, hi in _HAN_BLOCKS)
 
@@ -1313,6 +1345,7 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
 
     if script not in NO_READING and not _is_str(card.get("reading")):
         r.warn(where, f"no reading, but script is {script!r}; learners will need one")
+    _check_signwriting(r, where, card, target, script, core)
 
     for key in ("alt_target", "alt_native", "tags"):
         if key in card:

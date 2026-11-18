@@ -760,7 +760,7 @@ class ScriptFonts(unittest.TestCase):
     # decks-live only (decks/fonts/<script>/, checked by its own CI), so
     # main's frozen folder does not hold them.
     ON_DECKS_LIVE_ONLY = {"thai", "meitei_mayek", "brahmi", "latin", "cyrillic",
-                          "greek", "sitelen_pona"}
+                          "greek", "sitelen_pona", "signwriting"}
 
     def test_each_font_is_in_its_scripts_folder_with_its_licence(self) -> None:
         for script, (_family, name) in self.fonts.items():
@@ -819,6 +819,7 @@ class HiddenLanguages(unittest.TestCase):
     ipa qbe
     ang ar arc ca egy el enm eu fi fil ga gmy grc ha hbs he hu ine it la ms nb
     af fa id nl ps uk
+    ase ins
     pl pli pt qap qgh qgk qu ru so sux sv sw th tr vi vsn yi yue
     """.split())
 

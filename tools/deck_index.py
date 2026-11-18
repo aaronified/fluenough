@@ -300,6 +300,11 @@ FONTS = {
     # Toki Pona's second script (owner, 2026-11-16; ADR-0055): sitelen seli
     # kiwen asuki, SIL OFL-1.1, subset to the UCSUR block U+F1900-F19FF.
     "sitelen_pona": ("sitelen seli kiwen asuki", "SitelenSeliKiwen.ttf"),
+    # SignWriting's symbols, for the sign languages' explainer decks (owner,
+    # 2026-11-18; ADR-0056): Noto Sans SignWriting, SIL OFL-1.1, subset to the
+    # symbols those decks use and the fill and rotation modifiers. A whole sign
+    # is a picture, not text, so no font draws signs.
+    "signwriting": ("Noto Sans SignWriting", "NotoSansSignWriting.ttf"),
     # The content fonts (owner, 2026-11-16: "Latin languages can share one
     # font. Same for Cyrillic. I don't want to depend on system fonts for
     # content."): one Noto Sans subset per script, shared by every language

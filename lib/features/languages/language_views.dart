@@ -121,6 +121,7 @@ String scriptGlyph(String script, String name) {
 /// letter of the script's name.
 const Set<String> fontOnlyGlyphScripts = <String>{
   'sitelen_pona',
+  'signwriting',
   'brahmi',
   'meitei_mayek',
   'cuneiform',
