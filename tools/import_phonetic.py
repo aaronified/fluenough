@@ -50,6 +50,7 @@ import json
 import re
 import shutil
 import sys
+import unicodedata
 import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
@@ -59,6 +60,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import derive_phonetic as dp  # noqa: E402
 import import_wiktionary as iw  # noqa: E402
 import phonetic_patch as pp  # noqa: E402
 
@@ -95,6 +97,37 @@ class Variety:
     # the n-th broad unit when the map lists exactly that pair. Any other
     # count, or any other pair, leaves the form alone.
     align: tuple[tuple[str, tuple[tuple[str, str], ...]], ...] = ()
+    # Opt-in guard (registry `agree:`): (characters to ignore, (char, char)
+    # pairs to map). When set and the card's broad ipa is known, an imported
+    # form is accepted only if its phoneme skeleton (see `skeleton`) equals
+    # the broad ipa's, after normalisation; otherwise the card keeps its
+    # rule-derived form and the report lists it.
+    agree: tuple[str, tuple[tuple[str, str], ...]] | None = None
+    # With `agree`, also whether the ignored characters are put back into the
+    # form where the broad ipa has them (`agree.restore`), so a sound the
+    # source writes another way (Wiktionary's murmur for ɦ, dropped by the
+    # `normalise` list) is the deck's again.
+    restore: bool = False
+
+    def skeleton(self, ipa: str) -> str:
+        """[ipa] reduced to the sounds both a broad and a narrow form write:
+        no brackets, spaces, syllable dots, stress, length or combining marks
+        (nasalisation, dental, tie bars, ...), without the `agree` ignored
+        characters, and with its `agree` map applied."""
+        ignore, mapping = self.agree or ("", ())
+        table = dict(mapping)
+        out = []
+        for ch in unicodedata.normalize("NFD", ipa):
+            if (unicodedata.category(ch) == "Mn" or ch in "[]/ .\u02c8\u02cc\u02d0"
+                    or ch in ignore):
+                continue
+            out.append(table.get(ch, ch))
+        return "".join(out)
+
+    def agrees(self, form: str, broad: str | None) -> bool:
+        """Whether [form] may stand for the card whose broad ipa is [broad]."""
+        return (self.agree is None or broad is None
+                or self.skeleton(form) == self.skeleton(broad))
 
     def normalised(self, form: str, broad: str | None = None) -> str:
         """[form] with this language's `normalise` pairs applied, then its
@@ -104,7 +137,27 @@ class Variety:
         if broad is not None:
             for units, mapping in self.align:
                 form = self._aligned(form, broad, units, dict(mapping))
+            if self.restore and self.agree and self.agrees(form, broad):
+                form = self._restored(form, broad)
         return form
+
+    def _restored(self, form: str, broad: str) -> str:
+        """[form] with the `agree` ignored characters of [broad] put in at the
+        same place in its sounds (the two already agree without them)."""
+        ignore = self.agree[0] if self.agree else ""
+        keep = Variety(self.name, agree=("", self.agree[1] if self.agree else ()))
+        wanted = [c for c in keep.skeleton(broad)]
+        out, bi = [], 0
+        for ch in unicodedata.normalize("NFD", form):
+            sk = keep.skeleton(ch)
+            if sk:
+                while bi < len(wanted) and wanted[bi] in ignore and sk != wanted[bi]:
+                    out.append(wanted[bi])
+                    bi += 1
+                bi += 1
+            out.append(ch)
+        out.extend(c for c in wanted[bi:] if c in ignore)
+        return unicodedata.normalize("NFC", "".join(out))
 
     @staticmethod
     def _aligned(form: str, broad: str, units: str, mapping: dict[str, str]) -> str:
@@ -162,7 +215,12 @@ def load_registry(path: Path = REGISTRY) -> tuple[dict[str, str], dict[str, Vari
                     for n in entry.get("normalise") or [] if "pattern" in n),
                 align=tuple(
                     (str(n["align"]), tuple((str(k), str(w)) for k, w in n["map"].items()))
-                    for n in entry.get("normalise") or [] if "align" in n))
+                    for n in entry.get("normalise") or [] if "align" in n),
+                agree=((str(entry["agree"].get("ignore") or ""),
+                        tuple((str(k), str(w)) for k, w in
+                              (entry["agree"].get("map") or {}).items()))
+                       if entry.get("agree") is not None else None),
+                restore=bool((entry.get("agree") or {}).get("restore", False)))
             for pattern, _ in varieties[str(lang)].normalise:
                 re.compile(pattern)
             for units, _ in varieties[str(lang)].align:
@@ -180,7 +238,7 @@ def load_registry(path: Path = REGISTRY) -> tuple[dict[str, str], dict[str, Vari
 DUMP_NAMES, VARIETIES = load_registry()
 
 OUTCOMES = ["filled", "has phonetic", "no ipa line", "no entry", "no narrow form",
-            "other variety", "ambiguous", "invalid", pp.UNWRITABLE]
+            "other variety", "ambiguous", "disagrees", "invalid", pp.UNWRITABLE]
 
 
 # --- The data ---------------------------------------------------------------
@@ -233,12 +291,13 @@ def read_entries(lines: Iterable[str], wanted: set[str]) -> dict[str, list[dict]
 # --- Choosing a form --------------------------------------------------------
 
 def narrow_forms(entry: dict, variety: Variety,
-                 broad: str | None = None) -> tuple[list[str], bool, bool]:
+                 broad: str | None = None) -> tuple[list[str], bool, bool, bool]:
     """The entry's narrow forms for [variety], best first, whether any form
-    was of another variety, and whether any form of this one was not valid
-    IPA."""
+    was of another variety, whether any form of this one was not valid IPA,
+    and whether any was dropped because it disagrees with [broad] (the
+    variety's `agree` guard)."""
     found: list[tuple[int, str]] = []
-    other = invalid = False
+    other = invalid = disagree = False
     for sound in entry.get("sounds") or []:
         ipa = sound.get("ipa")
         if not isinstance(ipa, str) or not (ipa.startswith("[") and ipa.endswith("]")):
@@ -252,10 +311,12 @@ def narrow_forms(entry: dict, variety: Variety,
             form = pp.normalise(variety.normalised(form, broad))
         if form is None:
             invalid = True
+        elif not variety.agrees(form, broad):
+            disagree = True
         else:
             found.append((rank, form))
     found.sort(key=lambda p: p[0])  # stable: Wiktionary's order within a rank
-    return [f for _, f in found], other, invalid
+    return [f for _, f in found], other, invalid, disagree
 
 
 def choose_form(target: iw.Target, entries: list[dict], variety: Variety,
@@ -265,16 +326,18 @@ def choose_form(target: iw.Target, entries: list[dict], variety: Variety,
     if not fits:
         return None, "no entry"
     forms: set[str] = set()
-    other = invalid = False
+    other = invalid = disagree = False
     for entry in fits:
-        found, o, i = narrow_forms(entry, variety, broad)
-        other, invalid = other or o, invalid or i
+        found, o, i, d = narrow_forms(entry, variety, broad)
+        other, invalid, disagree = other or o, invalid or i, disagree or d
         if found:
             forms.add(found[0])
     if len(forms) > 1:
         return None, "ambiguous"
     if forms:
         return forms.pop(), "filled"
+    if disagree:
+        return None, "disagrees"
     if invalid:
         return None, "invalid"
     return None, "other variety" if other else "no narrow form"
@@ -282,9 +345,12 @@ def choose_form(target: iw.Target, entries: list[dict], variety: Variety,
 
 # --- A run ------------------------------------------------------------------
 
-def run(lang: str, dump: Path, decks: Path, write: bool) -> tuple[pp.Coverage, dict]:
+def run(lang: str, dump: Path, decks: Path, write: bool,
+        skipped: list[str] | None = None) -> tuple[pp.Coverage, dict]:
     """Fill [lang]'s decks from [dump]; returns the coverage and, per file,
-    the forms found (written only when [write])."""
+    the forms found (written only when [write]). A card whose imported form
+    disagrees with its broad ipa is not filled; its id and the two forms are
+    appended to [skipped] when given."""
     variety = VARIETIES[lang]
     language = iw.read_language(decks, lang)
     targets = {t.cid: t for t in language.targets}
@@ -307,6 +373,9 @@ def run(lang: str, dump: Path, decks: Path, write: bool) -> tuple[pp.Coverage, d
                 continue
             form, outcome = choose_form(t, entries.get(card.target, []), variety, card.ipa)
             coverage.add(deck, outcome)
+            if outcome == "disagrees" and skipped is not None:
+                skipped.append(f"{card.cid} {card.target}: broad /{card.ipa}/, "
+                               "Wiktionary's form disagrees")
             if form is not None:
                 fills.setdefault(card.file, {})[card.cid] = (form, "wiktionary")
                 outcomes[(card.file, card.cid)] = (deck, outcome)
@@ -314,13 +383,22 @@ def run(lang: str, dump: Path, decks: Path, write: bool) -> tuple[pp.Coverage, d
     return coverage, fills
 
 
-def renormalise(lang: str, decks: Path, write: bool) -> tuple[pp.Coverage, dict]:
+def renormalise(lang: str, decks: Path, write: bool,
+                skipped: list[str] | None = None) -> tuple[pp.Coverage, dict]:
     """Apply [lang]'s `normalise` pairs to the `phonetic` of every card
     whose `phonetic_source` is `wiktionary`, in place. Needs no dump. A card
     already in the course's conventions is `unchanged`; the others are
-    `renormalised`. Cards from the rules, or with no source, are never
-    touched."""
+    `renormalised`. A card whose form, after normalising, disagrees with its
+    broad ipa (the variety's `agree` guard) is `disagrees`: it is given the
+    form the language's rules file derives, with source `rules`, when there
+    is one (else it is left as it is), and its id is appended to [skipped].
+    Cards from the rules, or with no source, are never touched."""
     variety = VARIETIES[lang]
+    rules_file = decks / lang / f"{lang}-phonetics.yaml"
+    try:
+        rules = dp.load_rules(rules_file).rules if rules_file.is_file() else None
+    except dp.RulesError:
+        rules = None
     coverage = pp.Coverage()
     fills: dict[Path, dict[str, tuple[str, str]]] = {}
     outcomes: dict[tuple[Path, str], tuple[str, str]] = {}
@@ -332,6 +410,16 @@ def renormalise(lang: str, decks: Path, write: bool) -> tuple[pp.Coverage, dict]
         form = pp.normalise(variety.normalised(card.phonetic, card.ipa))
         if form is None:
             coverage.add(deck, "invalid")
+        elif not variety.agrees(form, card.ipa):
+            coverage.add(deck, "disagrees")
+            if skipped is not None:
+                skipped.append(f"{card.cid} {card.target}: broad /{card.ipa}/, "
+                               f"Wiktionary {card.phonetic}")
+            if rules is not None and card.ipa is not None:
+                derived, _ = dp.derive(card.ipa, rules)
+                if derived is not None:
+                    fills.setdefault(card.file, {})[card.cid] = (derived, "rules")
+                    outcomes[(card.file, card.cid)] = (deck, "disagrees")
         elif form == card.phonetic:
             coverage.add(deck, "unchanged")
         else:
@@ -343,8 +431,16 @@ def renormalise(lang: str, decks: Path, write: bool) -> tuple[pp.Coverage, dict]
     return coverage, fills
 
 
-RENORMALISE_OUTCOMES = ["renormalised", "unchanged", "not wiktionary", "invalid",
+RENORMALISE_OUTCOMES = ["renormalised", "unchanged", "not wiktionary", "disagrees", "invalid",
                         pp.UNWRITABLE]
+
+
+def _skipped_section(skipped: list[str], what: str) -> str:
+    """The report's list of cards the `agree` guard stopped, or nothing."""
+    if not skipped:
+        return ""
+    return (f"\n\n## Wiktionary forms that disagree with the broad ipa ({what})\n\n"
+            + "\n".join(f"- {line}" for line in skipped) + "\n")
 
 
 def main(argv: list[str]) -> int:
@@ -375,10 +471,12 @@ def main(argv: list[str]) -> int:
         print(f"error: no decks for {args.lang!r} in {args.decks}", file=sys.stderr)
         return 2
     if args.renormalise:
-        coverage, _ = renormalise(args.lang, args.decks, args.write)
+        skipped: list[str] = []
+        coverage, _ = renormalise(args.lang, args.decks, args.write, skipped)
         report = (f"# Narrow IPA from Wiktionary, renormalised: {args.lang}\n\n"
                   f"{'Written.' if args.write else 'Report only; nothing was written.'}\n\n"
-                  + coverage.render(args.lang, RENORMALISE_OUTCOMES, title="Coverage"))
+                  + coverage.render(args.lang, RENORMALISE_OUTCOMES, title="Coverage")
+                  + _skipped_section(skipped, "given the rules' form instead"))
         if args.report:
             args.report.write_text(report, encoding="utf-8")
         print(report)
@@ -393,11 +491,13 @@ def main(argv: list[str]) -> int:
     elif not dump.is_file():
         print(f"error: {dump} does not exist", file=sys.stderr)
         return 2
-    coverage, _ = run(args.lang, dump, args.decks, args.write)
+    skipped = []
+    coverage, _ = run(args.lang, dump, args.decks, args.write, skipped)
     report = (f"# Narrow IPA from Wiktionary: {args.lang}\n\n"
               f"Variety: {VARIETIES[args.lang].name}. Dump: {dump.name}. "
               f"{'Written.' if args.write else 'Report only; nothing was written.'}\n\n"
-              + coverage.render(args.lang, OUTCOMES, title="Coverage"))
+              + coverage.render(args.lang, OUTCOMES, title="Coverage")
+              + _skipped_section(skipped, "kept their rule-derived form"))
     if args.report:
         args.report.write_text(report, encoding="utf-8")
     print(report)

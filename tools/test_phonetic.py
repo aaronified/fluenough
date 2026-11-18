@@ -562,17 +562,125 @@ class GujaratiNormalising(unittest.TestCase):
         self.assertEqual(self.norm("[ˈsũ]", "ʃũʃ"), "[ˈsũ]")
         self.assertEqual(self.norm("[ˈsũ]", None), "[ˈsũ]")
 
-    def test_the_murmur_mark_is_dropped_and_the_tap_and_w_follow_the_deck(self) -> None:
-        self.assertEqual(self.norm("[ˈmə̤ino]", "məɦino"), "[ˈməino]")
-        self.assertEqual(self.norm("[ˈə̤ɭd̪əɾ]", None), "[ˈɦəɭd̪ər]")  # initial murmur is ɦ
-        self.assertEqual(self.norm("[ˈṳ̃]", "ɦũ"), "[ˈɦũ]")
-        self.assertEqual(self.norm("[ˈkɑ̤ɾ ˈa̤ɾ]", None), "[ˈkɑr ˈɦar]")  # medial is dropped
-        self.assertEqual(self.norm("[ˈud͡ʒo]", None), "[ˈudʒo]")
-        self.assertEqual(self.norm("[ˈpəɽwũ]", "pəɖəʋũ"), "[ˈpəɽʋũ]")
+    def test_the_murmur_mark_goes_and_the_broad_ipas_h_comes_back(self) -> None:
+        self.assertEqual(self.norm("[ˈmə̤ino]", "məɦino"), "[məɦino]")
+        self.assertEqual(self.norm("[ˈṳ̃]", "ɦũ"), "[ɦũ]")
+        self.assertEqual(self.norm("[ˈə̤ĩ]", "əɦĩ"), "[əɦĩ]")  # not ɦəĩ
+        self.assertEqual(self.norm("[ˈd̪ə̤ĩ]", "d̪əɦĩ"), "[d̪əɦĩ]")
+        self.assertEqual(self.norm("[ˈə̤ɭd̪əɾ]", "ɦəɭd̪ər"), "[ɦəɭd̪ər]")
+        # With no broad ipa the mark is only dropped.
+        self.assertEqual(self.norm("[ˈmə̤ino]", None), "[məino]")
+
+    def test_tap_w_vowel_stress_length_and_ties_follow_the_deck(self) -> None:
+        self.assertEqual(self.norm("[ˈpəɽwũ]", None), "[pəɽʋũ]")
+        self.assertEqual(self.norm("[ˈsɑɽɑ]", "saɖa"), "[saɽa]")
+        self.assertEqual(self.norm("[ˈseːɾi]", "ʃeri"), "[ʃeri]")
+        self.assertEqual(self.norm("[ˈud͡ʒo]", None), "[udʒo]")
+
+    def test_wiktionarys_open_e_is_the_decks_e_unless_the_broad_ipa_has_it(self) -> None:
+        self.assertEqual(self.norm("[bɛn]", "ben"), "[ben]")
+        self.assertEqual(self.norm("[bɛɡ]", "bɛɡ"), "[bɛɡ]")
 
     def test_real_allophony_stays(self) -> None:
-        for kept in ("[ˈtəɽko]", "[ˈãɡ]", "[ˈəʈʰʋɑɽijũ]"):
+        for kept in ("[təɽko]", "[ãɡ]", "[əʈʰʋaɽijũ]"):
             self.assertEqual(self.norm(kept, None), kept)
+
+    def test_the_guard_accepts_the_forms_that_agree_with_the_broad_ipa(self) -> None:
+        for form, broad in (("[ˈsũ]", "ʃũ"), ("[ˈkʰuɾsi]", "kʰurʃi"),
+                            ("[ˈmə̤ino]", "məɦino"), ("[ˈt̪əɽko]", "t̪əɖko"),
+                            ("[ˈfoi]", "pʰoi"), ("[ˈsɑɽɑ]", "saɖa")):
+            out = self.norm(form, broad)
+            self.assertTrue(self.gu.agrees(out, broad), (form, out))
+
+    def test_the_two_imports_that_contradict_the_broad_ipa_are_refused(self) -> None:
+        # gu-0486 સવાર: Wiktionary's colloquial s > ɦ. gu-0264 આવજો: ɑu for aʋ.
+        for form, broad in (("[ˈɦəʋɑɾ]", "səʋar"), ("[ˈɑud͡ʒo]", "aʋdʒo")):
+            out = self.norm(form, broad)
+            self.assertFalse(self.gu.agrees(out, broad), (form, out))
+
+    def test_a_language_without_the_guard_accepts_everything(self) -> None:
+        self.assertTrue(ip.VARIETIES["es"].agrees("[xyz]", "abc"))
+        self.assertTrue(self.gu.agrees("[xyz]", None))
+
+
+class AgreeGuard(Tree):
+    """The `agree` guard: an imported form is accepted only if its sounds
+    agree with the card's broad ipa; the card keeps its rules form otherwise
+    and the run lists it (#1627)."""
+
+    AGREE = ("", (("z", "t"),))
+
+    def zz(self):
+        return {"zz": ip.Variety("Zed", agree=self.AGREE)}
+
+    def test_a_disagreeing_form_is_not_filled_and_is_listed(self) -> None:
+        # CORE: zz-0001 has ipa "kat". [kaz] agrees (z maps to t); [kab] does not.
+        for form, outcome in (("[kaz]", "filled"), ("[kab]", "disagrees")):
+            skipped: list[str] = []
+            with mock.patch.dict(ip.VARIETIES, self.zz()):
+                cov, fills = ip.run("zz", self.dump(entry("kat", sound(form))),
+                                    self.decks, False, skipped)
+            self.assertEqual(cov.decks["zz-home"][outcome], 1, form)
+            if outcome == "disagrees":
+                self.assertNotIn("zz-0001", fills.get(self.core, {}))
+                self.assertEqual(len(skipped), 1)
+                self.assertTrue(skipped[0].startswith("zz-0001 "))
+            else:
+                self.assertEqual(skipped, [])
+
+    def test_another_agreeing_form_of_the_word_is_still_taken(self) -> None:
+        with mock.patch.dict(ip.VARIETIES, self.zz()):
+            _, fills = ip.run("zz", self.dump(entry("kat", sound("[kab]"), sound("[kaz]"))),
+                              self.decks, False)
+        self.assertEqual(fills[self.core]["zz-0001"][0], "[kaz]")
+
+    def test_the_registry_loads_agree_and_restore(self) -> None:
+        reg = self.tmp / "r.yaml"
+        reg.write_text('zz:\n  dump: Zed\n  variety:\n    name: "Zed"\n  agree:\n'
+                       '    ignore: "h"\n    restore: true\n    map: { "z": "t" }\n',
+                       encoding="utf-8")
+        _, v = ip.load_registry(reg)
+        self.assertEqual(v["zz"].skeleton("[ˈkaːh z]"), "kat")
+        self.assertEqual(v["zz"].normalised("[kat]", "kaht"), "[kaht]")
+        self.assertIsNone(ip.VARIETIES["es"].agree)
+
+    def test_renormalise_gives_a_disagreeing_card_its_rules_form(self) -> None:
+        text = CORE.replace('"[dɔɡ̊]"', '"[dɔb]"')
+        self.core.write_text(text, encoding="utf-8")
+        (self.decks / "zz" / "zz-phonetics.yaml").write_text(
+            'schema: 1\nkind: "phonetics"\nid: "zz-phonetics"\nlanguage: "zz"\n'
+            'variety: "v"\nrules:\n  - id: "zz-x"\n    pattern: \'o\'\n'
+            '    replace: \'ɔ\'\n    source: \'s\'\n', encoding="utf-8")
+        with mock.patch.dict(ip.VARIETIES, self.zz()):
+            skipped: list[str] = []
+            cov, _ = ip.renormalise("zz", self.decks, write=True, skipped=skipped)
+        out = self.core.read_text(encoding="utf-8")
+        self.assertEqual(cov.decks["zz-home"]["disagrees"], 1)
+        self.assertEqual(len(skipped), 1)
+        self.assertNotIn("[dɔb]", out)
+        self.assertIn('phonetic_source: "rules"', out)
+
+
+class ReplacingTheSource(unittest.TestCase):
+    """A fill under `replace_rules` may also change the card's source, as
+    when a Wiktionary card is given the rules' form instead."""
+
+    def test_block_and_flow_cards_get_the_form_and_the_new_source(self) -> None:
+        text = ('cards:\n'
+                '  - {"id": "zz-1", "ipa": "kat", "phonetic": "[kab]", '
+                '"phonetic_source": "wiktionary", "pos": "n"}\n'
+                '  - id: "zz-2"\n    ipa: "kat"\n    phonetic: "[kab]"\n'
+                '    phonetic_source: "wiktionary"\n')
+        new, left = pp.patch(text, {"zz-1": ("[kat]", "rules"), "zz-2": ("[kat]", "rules")},
+                             replace_rules=True, replace_source="wiktionary")
+        self.assertEqual(left, {})
+        self.assertEqual(new, text.replace("[kab]", "[kat]").replace('"wiktionary"', '"rules"'))
+
+    def test_the_same_source_leaves_the_source_line_alone(self) -> None:
+        text = 'cards:\n  - id: "zz-2"\n    ipa: "kat"\n    phonetic: "[kab]"\n    phonetic_source: "wiktionary"\n'
+        new, _ = pp.patch(text, {"zz-2": ("[kat]", "wiktionary")},
+                          replace_rules=True, replace_source="wiktionary")
+        self.assertEqual(new, text.replace("[kab]", "[kat]"))
 
 
 class Aligning(Tree):

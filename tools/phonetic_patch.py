@@ -251,7 +251,17 @@ def _patch_flow(lines: list[str], at: int, form: str, source: str,
         src = _flow_scalar(line, keys["phonetic_source"]) if "phonetic_source" in keys else None
         if replace_rules and "phonetic" in keys and src == replace_source:
             ks, vs, ve = keys["phonetic"]
-            lines[at] = line[:vs] + quote(form) + line[ve:] + cr
+            new = line[:vs] + quote(form) + line[ve:]
+            if source != replace_source and "phonetic_source" in keys:
+                # The fill also changes the source: rewrite its value, working
+                # from the later one so the indexes stay valid.
+                _, svs, sve = _flow_keys(line)["phonetic_source"]
+                spans = sorted([(vs, ve, quote(form)), (svs, sve, quote(source))],
+                               reverse=True)
+                new = line
+                for a, b, t in spans:
+                    new = new[:a] + t + new[b:]
+            lines[at] = new + cr
             return None
         return "has phonetic"
     if "ipa" not in keys:
@@ -281,8 +291,9 @@ def patch(text: str, fills: dict[str, tuple[str, str]],
     adding a comma to the `ipa` line, and the file is only ever inserted into.
 
     With [replace_rules], a card whose `phonetic_source` is [replace_source]
-    (`rules` unless given) has its `phonetic` value replaced in place; any
-    other card that has a `phonetic` is still left alone.
+    (`rules` unless given) has its `phonetic` value replaced in place, and its
+    `phonetic_source` too when the fill's source is another one; any other
+    card that has a `phonetic` is still left alone.
     """
     eol = "\r\n" if "\r\n" in text else "\n"
     rs = re.escape(replace_source)
@@ -320,6 +331,14 @@ def patch(text: str, fills: dict[str, tuple[str, str]],
                 cr = "\r" if lines[at_p].endswith("\r") else ""
                 qp = '"' if lines[at_p].lstrip().startswith('"') else ""
                 lines[at_p] = f"{pad}{qp}phonetic{qp}: {quote(form)}{comma}{cr}"
+                if source != replace_source:
+                    at_s = next((k for k in range(start, end) if re.match(
+                        rf'^{pad}"?phonetic_source"?:', lines[k])), None)
+                    if at_s is not None:
+                        crs = "\r" if lines[at_s].endswith("\r") else ""
+                        qs = '"' if lines[at_s].lstrip().startswith('"') else ""
+                        lines[at_s] = (f"{pad}{qs}phonetic_source{qs}: "
+                                       f'"{source}"{comma}{crs}')
             else:
                 left[cid] = "has phonetic"
             continue
