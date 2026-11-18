@@ -2,12 +2,14 @@ schema: 1
 id: "tok-phrasebook"
 part: "core"
 kind: "vocab"
-language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", scripts: ["latin", "sitelen_pona"], icon: "Tp" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "tok-0008"
     target: "toki!"
+    target_scripts:
+      sitelen_pona: "󱥬!"
     ipa: "ˈtoki"
     pos: "phrase"
     tags: ["greeting"]
@@ -16,6 +18,8 @@ cards:
       - { word: "toki", ref: "tok-0001" }
   - id: "tok-0009"
     target: "mi pona."
+    target_scripts:
+      sitelen_pona: "󱤴 󱥔."
     ipa: "mi ˈpona"
     pos: "phrase"
     tags: ["greeting"]
@@ -25,6 +29,8 @@ cards:
       - { word: "pona", ref: "tok-0002" }
   - id: "tok-0010"
     target: "sina pona ala pona?"
+    target_scripts:
+      sitelen_pona: "󱥞 󱥔 󱤂 󱥔?"
     ipa: "ˈsina ˈpona ˈala ˈpona"
     pos: "phrase"
     tags: ["greeting"]
@@ -35,6 +41,8 @@ cards:
       - { word: "ala", ref: "tok-0005" }
   - id: "tok-0011"
     target: "nimi mi li Ana."
+    target_scripts:
+      sitelen_pona: "󱥂 󱤴 󱤧 󱦐󱤁󱤾󱤁󱦑."
     ipa: "ˈnimi mi li ˈana"
     pos: "phrase"
     tags: ["introduce"]
@@ -46,6 +54,8 @@ cards:
       - { word: "Ana", base: "Ana" }
   - id: "tok-0012"
     target: "nimi sina li seme?"
+    target_scripts:
+      sitelen_pona: "󱥂 󱥞 󱤧 󱥙?"
     ipa: "ˈnimi ˈsina li ˈseme"
     pos: "phrase"
     tags: ["introduce"]
@@ -57,6 +67,8 @@ cards:
       - { word: "seme", ref: "tok-0044" }
   - id: "tok-0013"
     target: "mi toki pona."
+    target_scripts:
+      sitelen_pona: "󱤴 󱥬 󱥔."
     ipa: "mi ˈtoki ˈpona"
     pos: "phrase"
     tags: ["language"]
@@ -67,6 +79,8 @@ cards:
       - { word: "pona", ref: "tok-0002" }
   - id: "tok-0014"
     target: "toki pona li pona."
+    target_scripts:
+      sitelen_pona: "󱥬 󱥔 󱤧 󱥔."
     ipa: "ˈtoki ˈpona li ˈpona"
     pos: "phrase"
     tags: ["language"]
@@ -77,6 +91,8 @@ cards:
       - { word: "li", ref: "tok-0101" }
   - id: "tok-0015"
     target: "mi sona."
+    target_scripts:
+      sitelen_pona: "󱤴 󱥡."
     ipa: "mi ˈsona"
     pos: "phrase"
     tags: ["understanding"]
@@ -86,6 +102,8 @@ cards:
       - { word: "sona", ref: "tok-0007" }
   - id: "tok-0016"
     target: "mi sona ala."
+    target_scripts:
+      sitelen_pona: "󱤴 󱥡 󱤂."
     ipa: "mi ˈsona ˈala"
     pos: "phrase"
     tags: ["understanding"]
@@ -96,6 +114,8 @@ cards:
       - { word: "ala", ref: "tok-0005" }
   - id: "tok-0017"
     target: "mi sona ala e ni."
+    target_scripts:
+      sitelen_pona: "󱤴 󱥡 󱤂 󱤉 󱥁."
     ipa: "mi ˈsona ˈala e ni"
     pos: "phrase"
     tags: ["understanding"]
@@ -108,6 +128,8 @@ cards:
       - { word: "ni", ref: "tok-0063" }
   - id: "tok-0018"
     target: "ni li seme?"
+    target_scripts:
+      sitelen_pona: "󱥁 󱤧 󱥙?"
     ipa: "ni li ˈseme"
     pos: "phrase"
     tags: ["understanding"]
@@ -118,6 +140,8 @@ cards:
       - { word: "seme", ref: "tok-0044" }
   - id: "tok-0019"
     target: "mi wile e telo."
+    target_scripts:
+      sitelen_pona: "󱤴 󱥷 󱤉 󱥪."
     ipa: "mi ˈwile e ˈtelo"
     pos: "phrase"
     tags: ["needs"]
@@ -129,6 +153,8 @@ cards:
       - { word: "telo", ref: "tok-0192" }
   - id: "tok-0020"
     target: "mi wile moku."
+    target_scripts:
+      sitelen_pona: "󱤴 󱥷 󱤶."
     ipa: "mi ˈwile ˈmoku"
     pos: "phrase"
     tags: ["needs"]
@@ -139,6 +165,8 @@ cards:
       - { word: "moku", ref: "tok-0080" }
   - id: "tok-0021"
     target: "awen pona!"
+    target_scripts:
+      sitelen_pona: "󱤈 󱥔!"
     ipa: "ˈawen ˈpona"
     pos: "phrase"
     tags: ["leaving"]
@@ -148,6 +176,8 @@ cards:
       - { word: "pona", ref: "tok-0002" }
   - id: "tok-0022"
     target: "tawa pona!"
+    target_scripts:
+      sitelen_pona: "󱥩 󱥔!"
     ipa: "ˈtawa ˈpona"
     pos: "phrase"
     tags: ["leaving"]

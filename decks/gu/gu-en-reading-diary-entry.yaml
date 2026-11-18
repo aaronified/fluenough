@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "gu-en-reading-diary-entry",
+  "name": "A short diary entry",
+  "kind": "reading",
+  "language": {
+    "code": "gu",
+    "iso639_3": "guj",
+    "name": "Gujarati",
+    "script": "gujarati",
+    "tts": "gu-IN",
+    "icon": "ગુ"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this deck, and released under CC BY-SA 4.0",
+  "description": "A short diary entry that lists what the writer did in one day. Written for this deck and released under CC BY-SA 4.0. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "reading",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "gu-diary-entry",
+      "title": "A short diary entry",
+      "theme": "verbs-3",
+      "sentences": [
+        {
+          "text": "આજે સવારે વહેલો ઊઠ્યો.",
+          "reading": "āje savāre vahelo uṭhyo.",
+          "ipa": "adʒe səʋare ʋəɦelo uʈʰjo"
+        },
+        {
+          "text": "મેં નાસ્તો બનાવ્યો અને વાંચ્યું.",
+          "reading": "mem̐ nāsto banāvyo ane vāñcyum̐.",
+          "ipa": "mẽ nast̪o bənaʋjo əne ʋaɲtʃjũ"
+        },
+        {
+          "text": "બપોરે મિત્ર સાથે રમ્યો.",
+          "reading": "bapore mitr sāthe ramyo.",
+          "ipa": "bəpore mit̪r sat̪ʰe rəmjo"
+        },
+        {
+          "text": "રાત્રે વહેલો સૂઈ ગયો.",
+          "reading": "rātre vahelo sui gayo.",
+          "ipa": "rat̪re ʋəɦelo sui ɡəjo"
+        }
+      ],
+      "questions": [
+        {
+          "id": "gu-3100",
+          "prompt": {
+            "en": "What did the writer do in the morning?"
+          },
+          "answer": 1,
+          "options": [
+            {
+              "en": "Got up early"
+            },
+            {
+              "en": "Went to sleep"
+            },
+            {
+              "en": "Went to school"
+            }
+          ]
+        },
+        {
+          "id": "gu-3101",
+          "prompt": {
+            "en": "The writer played with a friend in the afternoon."
+          },
+          "answer": true
+        },
+        {
+          "id": "gu-3102",
+          "prompt": {
+            "en": "When did the writer go to sleep?"
+          },
+          "answer": 2,
+          "options": [
+            {
+              "en": "In the morning"
+            },
+            {
+              "en": "At night"
+            },
+            {
+              "en": "At noon"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

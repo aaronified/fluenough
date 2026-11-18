@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-services"
+name: "Reading: a bank form"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (a simple bank form). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-bank-form"
+    title: "Bank form"
+    sentences:
+      - text: "ನಿಮ್ಮ ಹೆಸರು ಬರೆಯಿರಿ."
+        reading: "nimma hesaru bareyiri."
+        ipa: "nimma hesaru barejiri"
+      - text: "ಇಲ್ಲಿ ಸಹಿ ಮಾಡಿ."
+        reading: "illi sahi māḍi."
+        ipa: "illi sahi maːɖi"
+      - text: "ಖಾತೆ ಸಂಖ್ಯೆ ಬರೆಯಿರಿ."
+        reading: "khāte saṅkhye bareyiri."
+        ipa: "kʰaːt̪e saŋkʰje barejiri"
+      - text: "ಅರ್ಜಿಗೆ ಶುಲ್ಕ ಇಲ್ಲ."
+        reading: "arjige śulka illa."
+        ipa: "ardʒiɡe ʃulka illa"
+      - text: "ಬ್ಯಾಂಕಿನಲ್ಲಿ ಕ್ಯೂ ಇದೆ."
+        reading: "byāṅkinalli kyū ide."
+        ipa: "bjaːŋkinalli kjuː id̪e"
+    questions:
+      - id: "kn-9361"
+        prompt: { en: "What does the form ask you to do?" }
+        options:
+          - { en: "Sign here" }
+          - { en: "Pay a fee" }
+          - { en: "Stand in a queue" }
+        answer: 1
+      - id: "kn-9362"
+        prompt: { en: "For the application, there is no fee." }
+        answer: true
+      - id: "kn-9363"
+        prompt: { en: "Where is the queue?" }
+        options:
+          - { en: "At the bank" }
+          - { en: "At the post office" }
+          - { en: "At school" }
+        answer: 1

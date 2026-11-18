@@ -1,0 +1,101 @@
+schema: 1
+id: "gu-en-weather-sentences"
+kind: "layer"
+core: "gu-weather-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+
+name: "Weather: sentences"
+license: "CC-BY-SA-4.0"
+description: "Whole sentences that use the words of the weather unit. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "gu-2041":
+    native: "It is raining today."
+    bases:
+      "છે": "is"
+    confusables:
+      "w1": { why: "તડકો (taḍko) is sunshine, the opposite of rain." }
+      "w2": { why: "ઠંડી (ṭhaṇḍi) is cold, a feeling of the weather rather than rain." }
+  "gu-2042":
+    native: "There is a lot of sun outside."
+    bases:
+      "બહાર": "outside"
+      "ખૂબ": "a lot"
+      "છે": "is"
+    confusables:
+      "w1": { why: "સૂરજ (suraj) is the sun itself; here the sunshine is meant." }
+      "w2": { why: "ઠંડી (ṭhaṇḍi) is cold, the opposite of this warm day." }
+  "gu-2043":
+    native: "The sun rose in the morning."
+    confusables:
+      "w1": { why: "આથમવું (āthmvum̐) is to set, the opposite of rising." }
+      "w2": { why: "તડકો (taḍko) is sunshine, which comes once the sun has risen." }
+  "gu-2044":
+    native: "There is a dark cloud in the sky."
+    bases:
+      "કાળું": "dark"
+      "છે": "is"
+    confusables:
+      "w1": { why: "ગર્જના (garjanā) is the thunder you hear, not the cloud you see." }
+      "w2": { why: "ભેજ (bhej) is humidity, which you feel rather than see." }
+  "gu-2045":
+    native: "It gets cold at night."
+    bases:
+      "છે": "is"
+    confusables:
+      "w1": { why: "ગરમી (garmi) is heat, the opposite of cold." }
+      "w2": { why: "ગરમ (garam) is hot; it describes a thing, not the air." }
+  "gu-2046":
+    native: "In summer the heat is strong."
+    bases:
+      "છે": "is"
+    confusables:
+      "w1": { why: "ચોમાસું (comāsum̐) is the rainy season, not the hot one." }
+      "w2": { why: "શિયાળો (śiyāḷo) is winter, the cold season." }
+  "gu-2047":
+    native: "It rains here."
+    bases:
+      "છે": "is"
+    confusables:
+      "w1": { why: "ફૂંકાવું (phuṅkāvum̐) is said of the wind blowing, not of rain." }
+      "w2": { why: "ભીંજાવું (bhiñjāvum̐) is getting wet, which follows the rain." }
+  "gu-2048":
+    native: "Take an umbrella; rain will come."
+    bases:
+      "લઈ": "take"
+    confusables:
+      "w1": { why: "છાંટો (chāṇṭo) is one drop, not an umbrella." }
+      "w2": { why: "છાંયડો (chāṁyaḍo) is shade, a place to sit out of the sun." }
+  "gu-2049":
+    native: "The humidity was high, but the air was good."
+    bases:
+      "વધારે": "high"
+      "હતો": "was"
+      "સારી": "good"
+      "હતી": "was"
+    confusables:
+      "w1": { why: "મોસમ (mosam) is the season, or the weather of a time." }
+      "w2": { why: "આબોહવા (ābohvā) is the climate of a place over the years." }
+  "gu-2050":
+    native: "There was lightning and thunder."
+    bases:
+      "થઈ": "happened"
+    confusables:
+      "w1": { why: "ચમકવું (camkvum̐) is to flash, which lightning does." }
+      "w2": { why: "ગરજવું (garjvum̐) is to thunder, which the clouds do." }
+  "gu-2051":
+    native: "When lightning flashed, we went into the house."
+    bases:
+      "ત્યારે": "when"
+    confusables:
+      "w1": { why: "ગર્જના (garjanā) is the thunder, which is heard rather than seen." }
+      "w2": { why: "ધુમ્મસ (dhummas) is fog, which hides the view." }
+  "gu-2052":
+    native: "There was fog in the morning; then the sun came out."
+    bases:
+      "હતું": "was"
+      "પછી": "then"
+      "નીકળ્યો": "came out"
+    confusables:
+      "w1": { why: "બરફ (baraph) is ice or snow, not fog." }
+      "w2": { why: "વાવાઝોડું (vāvājhoḍum̐) is a storm, which would not clear in the morning." }

@@ -1,0 +1,57 @@
+schema: 1
+id: "sa-en-reading-more-verbs"
+name: "Reading: more verbs"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-more-verbs-text-1"
+    title: "Getting, being, giving"
+    theme: "more-verbs"
+    sentences:
+      - { text: "सा पुस्तकं लभते भ्राता च पुस्तकं पठति.", reading: "sā pustakaṃ labhate bhrātā ca pustakaṃ paṭhati.", ipa: "saː pust̪əkəm ləbʱət̪eː bʱraːt̪aː tʃə pust̪əkəm pəʈʰət̪i" }
+      - { text: "पिता तत्र वर्तते माता च तत्र न वर्तते.", reading: "pitā tatra vartate mātā ca tatra na vartate.", ipa: "pit̪aː t̪ət̪rə ʋərt̪ət̪eː maːt̪aː tʃə t̪ət̪rə nə ʋərt̪ət̪eː" }
+      - { text: "को जलं ददाति कः पुस्तकं च लभते?", reading: "ko jalaṃ dadāti kaḥ pustakaṃ ca labhate?", ipa: "koː dʒələm d̪əd̪aːt̪i kəh pust̪əkəm tʃə ləbʱət̪eː" }
+      - { text: "अस्ति जलं तत्र पिता च जलं नयति.", reading: "asti jalaṃ tatra pitā ca jalaṃ nayati.", ipa: "əst̪i dʒələm t̪ət̪rə pit̪aː tʃə dʒələm nəjət̪i" }
+    questions:
+      - id: "sa-3475"
+        prompt: { en: "Who gets a book in the first sentence?" }
+        options: [{ en: "The brother" }, { en: "Mother" }, { en: "She" }]
+        answer: 3
+      - id: "sa-3476"
+        prompt: { en: "Mother is there in the second sentence." }
+        answer: false
+      - id: "sa-3477"
+        prompt: { en: "What does father bring in the last sentence?" }
+        options: [{ en: "Water" }, { en: "A book" }, { en: "Wood" }]
+        answer: 1
+      - id: "sa-3478"
+        prompt: { en: "The third sentence asks who gives water." }
+        answer: true
+  - id: "sa-more-verbs-text-2"
+    title: "Seeing, hearing, knowing"
+    theme: "more-verbs"
+    sentences:
+      - { text: "पिता सर्वं पश्यति माता च सर्वं शृणोति.", reading: "pitā sarvaṃ paśyati mātā ca sarvaṃ śṛṇoti.", ipa: "pit̪aː sərʋəm pəʃjət̪i maːt̪aː tʃə sərʋəm ʃr̩ɳoːt̪i" }
+      - { text: "अहं संस्कृतं पठामि सखा च संस्कृतं जानाति.", reading: "ahaṃ saṃskṛtaṃ paṭhāmi sakhā ca saṃskṛtaṃ jānāti.", ipa: "əɦəm sə̃skr̩t̪əm pəʈʰaːmi səkʰaː tʃə sə̃skr̩t̪əm dʒaːnaːt̪i" }
+      - { text: "माता किं करोति पिता च किं करोति?", reading: "mātā kiṃ karoti pitā ca kiṃ karoti?", ipa: "maːt̪aː kim kəroːt̪i pit̪aː tʃə kim kəroːt̪i" }
+      - { text: "पिता संस्कृतं शृणोति पुत्री च पुस्तकं पश्यति.", reading: "pitā saṃskṛtaṃ śṛṇoti putrī ca pustakaṃ paśyati.", ipa: "pit̪aː sə̃skr̩t̪əm ʃr̩ɳoːt̪i put̪riː tʃə pust̪əkəm pəʃjət̪i" }
+    questions:
+      - id: "sa-3479"
+        prompt: { en: "Who hears everything?" }
+        options: [{ en: "Father" }, { en: "Mother" }, { en: "The friend" }]
+        answer: 2
+      - id: "sa-3480"
+        prompt: { en: "Who knows Sanskrit in the second sentence?" }
+        options: [{ en: "I" }, { en: "The daughter" }, { en: "The friend" }]
+        answer: 3
+      - id: "sa-3481"
+        prompt: { en: "The daughter sees a book." }
+        answer: true
+      - id: "sa-3482"
+        prompt: { en: "Father sees a book in the last sentence." }
+        answer: false

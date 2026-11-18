@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-en-reading-hobbies"
+name: "Reading: club poster"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-club-poster"
+    title: "Club poster"
+    sentences:
+      - text: "ನಮ್ಮ ಕ್ಲಬ್‌ನಲ್ಲಿ ಸಂಗೀತ ಇದೆ."
+        reading: "namma klabnalli saṅgīta ide."
+        ipa: "namma klabnalli saŋɡiːt̪a id̪e"
+      - text: "ಕೊಳಲು ಮತ್ತು ತಬಲ ನುಡಿಸಲು ಕಲಿಯಿರಿ."
+        reading: "koḷalu mattu tabala nuḍisalu kaliyiri."
+        ipa: "koɭalu mat̪t̪u t̪abala nuɖisalu kalijiri"
+      - text: "ಚಿತ್ರಕಲೆ ಮತ್ತು ಫೋಟೋ ಆಸಕ್ತಿ ಇರುವವರು ಬನ್ನಿ."
+        reading: "citrakale mattu phōṭō āsakti iruvavaru banni."
+        ipa: "tʃit̪rakale mat̪t̪u pʰoːʈoː aːsakt̪i iruʋaʋaru banni"
+      - text: "ಭಾನುವಾರ ಬೆಳಿಗ್ಗೆ ಓಟ ಮತ್ತು ನಡಿಗೆ ಇದೆ."
+        reading: "bhānuvāra beḷigge ōṭa mattu naḍige ide."
+        ipa: "bʱaːnuʋaːra beɭiɡɡe oːʈa mat̪t̪u naɖiɡe id̪e"
+    questions:
+      - id: "kn-9688"
+        prompt: { en: "What can members learn to play?" }
+        options:
+          - { en: "Flute and tabla" }
+          - { en: "Cricket and chess" }
+          - { en: "Veena and violin" }
+        answer: 1
+      - id: "kn-9689"
+        prompt: { en: "Anyone interested in art is welcome." }
+        answer: true
+      - id: "kn-9690"
+        prompt: { en: "Running and walking are on Sunday morning." }
+        answer: true

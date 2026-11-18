@@ -1,0 +1,265 @@
+schema: 1
+id: "sa-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-0001"
+    target: "नमस्ते"
+    reading: "namaste"
+    ipa: "nəməst̪eː"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "नमस्ते", base: "नमस्", reading: "namas" }
+  - id: "sa-0002"
+    target: "धन्यवादः"
+    reading: "dhanyavādaḥ"
+    ipa: "d̪ʱənjəʋaːd̪əh"
+    pos: "phrase"
+    tags: ["thanks"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "धन्यवादः", base: "धन्यवाद", reading: "dhanyavāda" }
+  - id: "sa-0003"
+    target: "स्वागतम्"
+    reading: "svāgatam"
+    ipa: "sʋaːɡət̪əm"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "स्वागतम्", base: "स्वागत", reading: "svāgata" }
+  - id: "sa-0004"
+    target: "स्वस्त्य् अस्तु"
+    reading: "svasty astu"
+    ipa: "sʋəst̪j əst̪u"
+    pos: "phrase"
+    tags: ["blessing"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "स्वस्त्य्", base: "स्वस्ति", reading: "svasti" }
+      - { word: "अस्तु", base: "अस्", reading: "as" }
+  - id: "sa-0005"
+    target: "आम्"
+    reading: "ām"
+    ipa: "aːm"
+    pos: "phrase"
+    tags: ["answer"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "आम्", base: "आम्", reading: "ām" }
+  - id: "sa-0006"
+    target: "अहं न जानामि"
+    reading: "ahaṃ na jānāmi"
+    ipa: "əɦəm nə dʒaːnaːmi"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "अहं", ref: "sa-0021" }
+      - { word: "न", ref: "sa-0026" }
+      - { word: "जानामि", base: "ज्ञा", reading: "jñā" }
+  - id: "sa-0007"
+    target: "पुनर् वद"
+    reading: "punar vada"
+    ipa: "punər ʋəd̪ə"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "पुनर्", base: "पुनः", reading: "punaḥ" }
+      - { word: "वद", base: "वद्", reading: "vad" }
+  - id: "sa-0008"
+    target: "कृपया"
+    reading: "kṛpayā"
+    ipa: "kr̩pəjaː"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "कृपया", base: "कृपया", reading: "kṛpayā" }
+  - id: "sa-0009"
+    target: "किम् इदम्?"
+    reading: "kim idam?"
+    ipa: "kim id̪əm"
+    pos: "phrase"
+    tags: ["question"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "किम्", base: "किम्", reading: "kim" }
+      - { word: "इदम्", base: "इदम्", reading: "idam" }
+  - id: "sa-0010"
+    target: "को ऽसि त्वम्?"
+    reading: "ko 'si tvam?"
+    ipa: "koː si t̪ʋəm"
+    pos: "phrase"
+    tags: ["question"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "को", base: "किम्", reading: "kim" }
+      - { word: "ऽसि", base: "अस्", reading: "as" }
+      - { word: "त्वम्", ref: "sa-0022" }
+  - id: "sa-0011"
+    target: "अस्ति कुत्र?"
+    reading: "asti kutra?"
+    ipa: "əst̪i kut̪rə"
+    pos: "phrase"
+    tags: ["question"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "अस्ति", base: "अस्", reading: "as" }
+      - { word: "कुत्र", base: "कुत्र", reading: "kutra" }
+  - id: "sa-0012"
+    target: "भवतो नाम किम्?"
+    reading: "bhavato nāma kim?"
+    ipa: "bʱəʋət̪oː naːmə kim"
+    pos: "phrase"
+    tags: ["question"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "भवतो", base: "भवत्", reading: "bhavat" }
+      - { word: "नाम", base: "नाम", reading: "nāma" }
+      - { word: "किम्", base: "किम्", reading: "kim" }
+  - id: "sa-0013"
+    target: "जलम् इच्छामि"
+    reading: "jalam icchāmi"
+    ipa: "dʒələm itʃtʃʰaːmi"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "जलम्", ref: "sa-0023" }
+      - { word: "इच्छामि", base: "इष्", reading: "iṣ" }
+  - id: "sa-0014"
+    target: "जलं पिबामि"
+    reading: "jalaṃ pibāmi"
+    ipa: "dʒələm pibaːmi"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "जलं", ref: "sa-0023" }
+      - { word: "पिबामि", base: "पा", reading: "pā" }
+  - id: "sa-0015"
+    target: "अहं संस्कृतं वदामि"
+    reading: "ahaṃ saṃskṛtaṃ vadāmi"
+    ipa: "əɦəm sə̃skr̩t̪əm ʋəd̪aːmi"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "अहं", ref: "sa-0021" }
+      - { word: "संस्कृतं", ref: "sa-0030" }
+      - { word: "वदामि", base: "वद्", reading: "vad" }
+  - id: "sa-0016"
+    target: "अहं कुशलो ऽस्मि"
+    reading: "ahaṃ kuśalo 'smi"
+    ipa: "əɦəm kuʃəloː smi"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "अहं", ref: "sa-0021" }
+      - { word: "कुशलो", base: "कुशल", reading: "kuśala" }
+      - { word: "ऽस्मि", base: "अस्", reading: "as" }
+  - id: "sa-0017"
+    target: "शुभं भवतु"
+    reading: "śubhaṃ bhavatu"
+    ipa: "ʃubʱəm bʱəʋət̪u"
+    pos: "phrase"
+    tags: ["blessing"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "शुभं", base: "शुभ", reading: "śubha" }
+      - { word: "भवतु", base: "भू", reading: "bhū" }
+  - id: "sa-0018"
+    target: "त्वं जानासि किम्?"
+    reading: "tvaṃ jānāsi kim?"
+    ipa: "t̪ʋəm dʒaːnaːsi kim"
+    pos: "phrase"
+    tags: ["question"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "त्वं", ref: "sa-0022" }
+      - { word: "जानासि", base: "ज्ञा", reading: "jñā" }
+      - { word: "किम्", base: "किम्", reading: "kim" }
+  - id: "sa-0019"
+    target: "त्वं कुशलो ऽसि?"
+    reading: "tvaṃ kuśalo 'si?"
+    ipa: "t̪ʋəm kuʃəloː si"
+    pos: "phrase"
+    tags: ["question"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "त्वं", ref: "sa-0022" }
+      - { word: "कुशलो", base: "कुशल", reading: "kuśala" }
+      - { word: "ऽसि", base: "अस्", reading: "as" }
+  - id: "sa-0020"
+    target: "अहं गच्छामि"
+    reading: "ahaṃ gacchāmi"
+    ipa: "əɦəm ɡətʃtʃʰaːmi"
+    pos: "phrase"
+    tags: ["survival"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "अहं", ref: "sa-0021" }
+      - { word: "गच्छामि", base: "गम्", reading: "gam" }

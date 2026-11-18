@@ -1,0 +1,89 @@
+schema: 1
+id: "sa-seasons-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3611"
+    target: "वसन्ते कोकिलो मधुरं गायति."
+    reading: "vasante kokilo madhuraṃ gāyati."
+    ipa: "ʋəsənt̪eː koːkiloː məd̪ʱurəm ɡaːjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वसन्ते", base: "वसन्तः", reading: "vasantaḥ" }, { word: "कोकिलो", base: "कोकिलः", reading: "kokilaḥ" }, { word: "मधुरं", base: "मधुरः", reading: "madhuraḥ" }, { word: "गायति", base: "गै", reading: "gai" }]
+    confusables: [{ id: "w1", ref: "sa-5101", kind: "word" }, { id: "w2", ref: "sa-1731", kind: "word" }, { id: "w3", ref: "sa-2106", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3612"
+    target: "आतपो ग्रीष्मे बहु भवति."
+    reading: "ātapo grīṣme bahu bhavati."
+    ipa: "aːt̪əpoː ɡriːʂmeː bəɦu bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "आतपो", base: "आतपः", reading: "ātapaḥ" }, { word: "ग्रीष्मे", base: "ग्रीष्मः", reading: "grīṣmaḥ" }, { word: "बहु", ref: "sa-1096" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5105", kind: "word" }, { id: "w2", ref: "sa-5102", kind: "word" }, { id: "w3", ref: "sa-5103", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3613"
+    target: "छाया ग्रीष्मे शीतला भवति."
+    reading: "chāyā grīṣme śītalā bhavati."
+    ipa: "tʃʰaːjaː ɡriːʂmeː ʃiːt̪əlaː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "छाया", ref: "sa-5105" }, { word: "ग्रीष्मे", base: "ग्रीष्मः", reading: "grīṣmaḥ" }, { word: "शीतला", base: "शीतलः", reading: "śītalaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5104", kind: "word" }, { id: "w2", ref: "sa-5116", kind: "word" }, { id: "w3", ref: "sa-5100", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "sa-3614"
+    target: "हेमन्ते पर्वते हिमं पतति."
+    reading: "hemante parvate himaṃ patati."
+    ipa: "ɦeːmənt̪eː pərʋət̪eː ɦiməm pət̪ət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "हेमन्ते", base: "हेमन्तः", reading: "hemantaḥ" }, { word: "पर्वते", base: "पर्वतः", reading: "parvataḥ" }, { word: "हिमं", base: "हिमम्", reading: "himam" }, { word: "पतति", base: "पत्", reading: "pat" }]
+    confusables: [{ id: "w1", ref: "sa-5106", kind: "word" }, { id: "w2", ref: "sa-5107", kind: "word" }, { id: "w3", ref: "sa-5101", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3615"
+    target: "ग्रीष्मे तापो भवति शिशिरे तुषारः."
+    reading: "grīṣme tāpo bhavati śiśire tuṣāraḥ."
+    ipa: "ɡriːʂmeː t̪aːpoː bʱəʋət̪i ʃiʃireː t̪uʂaːrəh"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "ग्रीष्मे", base: "ग्रीष्मः", reading: "grīṣmaḥ" }, { word: "तापो", base: "तापः", reading: "tāpaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "शिशिरे", base: "शिशिरः", reading: "śiśiraḥ" }, { word: "तुषारः", ref: "sa-5107" }]
+    confusables: [{ id: "w1", ref: "sa-5114", kind: "word" }, { id: "w2", ref: "sa-5106", kind: "word" }, { id: "w3", ref: "sa-5100", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3616"
+    target: "शिशिरे शीतलः पवनो भवति."
+    reading: "śiśire śītalaḥ pavano bhavati."
+    ipa: "ʃiʃireː ʃiːt̪ələh pəʋənoː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "शिशिरे", base: "शिशिरः", reading: "śiśiraḥ" }, { word: "शीतलः", ref: "sa-5058" }, { word: "पवनो", base: "पवनः", reading: "pavanaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-1531", kind: "word" }, { id: "w2", ref: "sa-5063", kind: "word" }, { id: "w3", ref: "sa-5102", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3617"
+    target: "वसन्ते कानने पुष्पाणि भवन्ति."
+    reading: "vasante kānane puṣpāṇi bhavanti."
+    ipa: "ʋəsənt̪eː kaːnəneː puʂpaːɳi bʱəʋənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वसन्ते", base: "वसन्तः", reading: "vasantaḥ" }, { word: "कानने", base: "काननम्", reading: "kānanam" }, { word: "पुष्पाणि", base: "पुष्पम्", reading: "puṣpam" }, { word: "भवन्ति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5119", kind: "word" }, { id: "w2", ref: "sa-5101", kind: "word" }, { id: "w3", ref: "sa-5030", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "sa-3618"
+    target: "पुष्पस्य सुगन्धो मधुरो भवति."
+    reading: "puṣpasya sugandho madhuro bhavati."
+    ipa: "puʂpəsjə suɡənd̪ʱoː məd̪ʱuroː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पुष्पस्य", base: "पुष्पम्", reading: "puṣpam" }, { word: "सुगन्धो", base: "सुगन्धः", reading: "sugandhaḥ" }, { word: "मधुरो", base: "मधुरः", reading: "madhuraḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5042", kind: "word" }, { id: "w2", ref: "sa-1535", kind: "word" }, { id: "w3", ref: "sa-1520", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3619"
+    target: "मेघे तडिद् भवति गर्जनं च."
+    reading: "meghe taḍid bhavati garjanaṃ ca."
+    ipa: "meːɡʱeː t̪əɖid̪ bʱəʋət̪i ɡərdʒənəm tʃə"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "मेघे", base: "मेघः", reading: "meghaḥ" }, { word: "तडिद्", base: "तडित्", reading: "taḍit" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "गर्जनं", base: "गर्जनम्", reading: "garjanam" }, { word: "च", ref: "sa-1104" }]
+    confusables: [{ id: "w1", ref: "sa-5121", kind: "word" }, { id: "w2", ref: "sa-5064", kind: "word" }, { id: "w3", ref: "sa-5085", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]

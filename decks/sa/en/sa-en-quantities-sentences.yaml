@@ -1,0 +1,50 @@
+schema: 1
+id: "sa-en-quantities-sentences"
+kind: "layer"
+core: "sa-quantities-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with quantities"
+description: "Short sentences with the quantity words of Quantities, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3070":
+    native: "I do not drink water and the water is enough."
+    bases: { "अहं": "I", "जलं": "water", "पिबामि": "to drink (I drink)", "पर्याप्तं": "enough", "भवति": "to be (is)" }
+    confusables: { "w1": { why: "You, not I: त्वम् (tvam) means you." }, "w2": { why: "Fire, not water: अग्निः (agniḥ) means fire." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. अहम् (aham) is written अहं (ahaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of जलम् (jalam) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). जलम् (jalam) is written जलं (jalaṃ), for the same reason, before न (na). जलम् (jalam) is written जलं (jalaṃ), for the same reason, before च (ca). पर्याप्तम् (paryāptam) is written पर्याप्तं (paryāptaṃ), for the same reason, before भवति (bhavati). The labial keeps म् (m) in Whitney 213 a, but the anusvāra sign is the usual writing (Whitney 213 i).", "n2": "पर्याप्तम् (paryāptam) is the neuter form of पर्याप्तः (paryāptaḥ), to agree with जलम् (jalam).", "n3": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3071":
+    native: "Father drinks more water and mother reads more."
+    bases: { "भूयो": "more", "जलं": "water", "पिबति": "to drink (drinks)", "पठति": "to read (reads)" }
+    confusables: { "w1": { why: "Brother, not father: भ्राता (bhrātā) means brother." }, "w2": { why: "Fire, not water: अग्निः (agniḥ) means fire." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. भूयः (bhūyaḥ) is written भूयो (bhūyo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of जलम् (jalam) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतो रोरप्लुतादप्लुते (ato roraplutādaplute), and 6.1.114, हशि च (haśi ca)). जलम् (jalam) is written जलं (jalaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of पिबति (pibati) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i).", "n2": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3072":
+    native: "I do not read everything and you read everything."
+    bases: { "अहं": "I", "सर्वं": "all", "पठामि": "to read (I read)", "त्वं": "you", "पठसि": "to read (you read)" }
+    confusables: { "w1": { why: "He, not I: सः (saḥ) means he." }, "w2": { why: "To speak, not to read: वद् (vad) means to speak." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. अहम् (aham) is written अहं (ahaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of सर्वम् (sarvam) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). सर्वम् (sarvam) is written सर्वं (sarvaṃ), for the same reason, before न (na). त्वम् (tvam) is written त्वं (tvaṃ), for the same reason, before च (ca). सर्वम् (sarvam) is written सर्वं (sarvaṃ), for the same reason, before पठसि (paṭhasi). The labial keeps म् (m) in Whitney 213 a, but the anusvāra sign is the usual writing (Whitney 213 i).", "n2": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3073":
+    native: "Some gods go and mother reads."
+    bases: { "कतिपया": "some", "देवा": "gods", "गच्छन्ति": "to go (they go)", "पठति": "to read (reads)" }
+    confusables: { "w1": { why: "Cow, not god: गौः (gauḥ) means cow." }, "w2": { why: "To speak, not to go: वद् (vad) means to speak." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. कतिपयाः (katipayāḥ) is written कतिपया (katipayā) because a final आः (āḥ) loses its visarga before a voiced consonant, here the start of देवाः (devāḥ) (Whitney 177). देवाः (devāḥ) is written देवा (devā), for the same reason, before गच्छन्ति (gacchanti).", "n2": "कतिपयाः (katipayāḥ) is plural, to agree with देवाः (devāḥ).", "n3": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3074":
+    native: "I drink a little water and I do not drink much water."
+    bases: { "अल्पं": "little", "जलं": "water", "पिबामि": "to drink (I drink)" }
+    confusables: { "w1": { why: "Much, not little: बहुः (bahuḥ) means much." }, "w2": { why: "Fire, not water: अग्निः (agniḥ) means fire." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. अल्पम् (alpam) is written अल्पं (alpaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of जलम् (jalam) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). जलम् (jalam) is written जलं (jalaṃ), for the same reason, before पिबामि (pibāmi). The labial keeps म् (m) in Whitney 213 a, but the anusvāra sign is the usual writing (Whitney 213 i). जलम् (jalam) is written जलं (jalaṃ), for the same reason, before न (na).", "n2": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3075":
+    native: "I read again and the book is not complete."
+    bases: { "अहं": "I", "पठामि": "to read (I read)", "पुस्तकं": "book", "पूर्णं": "full; complete", "भवति": "to be (is)" }
+    confusables: { "w1": { why: "You, not I: त्वम् (tvam) means you." }, "w2": { why: "Quickly, not again: शीघ्रम् (śīghram) means quickly." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. अहम् (aham) is written अहं (ahaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of पुनः (punaḥ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i). पुस्तकम् (pustakam) is written पुस्तकं (pustakaṃ), for the same reason, before च (ca). पूर्णम् (pūrṇam) is written पूर्णं (pūrṇaṃ), for the same reason, before न (na).", "n2": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3076":
+    native: "Where does all the water go?"
+    bases: { "सर्वं": "all", "जलं": "water", "गच्छति": "to go (goes)" }
+    confusables: { "w1": { why: "Fire, not water: अग्निः (agniḥ) means fire." }, "w2": { why: "When, not where: कदा (kadā) means when." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. सर्वम् (sarvam) is written सर्वं (sarvaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of जलम् (jalam) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). जलम् (jalam) is written जलं (jalaṃ), for the same reason, before कुत्र (kutra)." }
+  "sa-3077":
+    native: "I drink more water and you drink less water."
+    bases: { "अधिकं": "more", "जलं": "water", "पिबामि": "to drink (I drink)", "त्वं": "you", "न्यूनं": "less", "पिबसि": "to drink (you drink)" }
+    confusables: { "w1": { why: "Full, not more: पूर्णः (pūrṇaḥ) means full." }, "w2": { why: "Fire, not water: अग्निः (agniḥ) means fire." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. अधिकम् (adhikam) is written अधिकं (adhikaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of जलम् (jalam) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). जलम् (jalam) is written जलं (jalaṃ), for the same reason, before पिबामि (pibāmi). The labial keeps म् (m) in Whitney 213 a, but the anusvāra sign is the usual writing (Whitney 213 i). त्वम् (tvam) is written त्वं (tvaṃ), for the same reason, before च (ca). न्यूनम् (nyūnam) is written न्यूनं (nyūnaṃ), for the same reason, before जलम् (jalam). जलम् (jalam) is written जलं (jalaṃ), for the same reason, before पिबसि (pibasi). The labial keeps म् (m) in Whitney 213 a, but the anusvāra sign is the usual writing (Whitney 213 i).", "n2": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }

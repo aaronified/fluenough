@@ -1,0 +1,49 @@
+schema: 1
+id: "sa-en-grammar-atmanepada"
+kind: "layer"
+core: "sa-grammar-atmanepada"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Active and middle endings of the present"
+description: "The present tense with the active (parasmaipada) endings and with the middle (ātmanepada) endings, for the verbs of the course that take the middle voice. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "voice, person and number"
+  slots:
+    "p3-sg": "active (parasmaipada), third person singular"
+    "p3-du": "active (parasmaipada), third person dual"
+    "p3-pl": "active (parasmaipada), third person plural"
+    "p2-sg": "active (parasmaipada), second person singular"
+    "p2-du": "active (parasmaipada), second person dual"
+    "p2-pl": "active (parasmaipada), second person plural"
+    "p1-sg": "active (parasmaipada), first person singular"
+    "p1-du": "active (parasmaipada), first person dual"
+    "p1-pl": "active (parasmaipada), first person plural"
+    "m3-sg": "middle (ātmanepada), third person singular"
+    "m3-du": "middle (ātmanepada), third person dual"
+    "m3-pl": "middle (ātmanepada), third person plural"
+    "m2-sg": "middle (ātmanepada), second person singular"
+    "m2-du": "middle (ātmanepada), second person dual"
+    "m2-pl": "middle (ātmanepada), second person plural"
+    "m1-sg": "middle (ātmanepada), first person singular"
+    "m1-du": "middle (ātmanepada), first person dual"
+    "m1-pl": "middle (ātmanepada), first person plural"
+rules:
+  "sa-rule-atm-third":
+    name: "Middle voice, third person: -te, -ete, -ante"
+    explanation: "The middle (ātmanepada) endings of the present in the third person, he, the two of them and they, are -te, -ete and -ante: {1}, {2}, {3}, from the root {4}. The active (parasmaipada) endings are -ti, -taḥ and -anti: {5}, {6}, {7}. Pāṇini 1.4.99 says {8}, which names the parasmaipada, and 1.3.78 says {9}, the rest take the active endings in the active sense. The list of all eighteen endings is Pāṇini 3.4.78, and the ātmanepada is named in 1.3.12 and 1.4.100; the sa.wikisource page types those lines with word-splitting marks or errors, so only their numbers are given. Which voice a verb takes is learned with the verb: the Wiktionary entry of each present form marks it P for the active or A for the middle. In this course the verbs {4}, वृत् (vṛt) and ईक्ष् (īkṣ) are marked A; ज्ञा (jñā), ब्रू (brū), धा (dhā), श्रु (śru) and क्री (krī) have both voices, ज्ञा (jñā) because its entry shows both and the other four because the entry of the root lists a middle present beside the active one; every other verb is marked P."
+  "sa-rule-atm-second":
+    name: "Middle voice, second person: -se, -ethe, -dhve"
+    explanation: "The middle endings of the present in the second person, you, the two of you and you all, are -se, -ethe and -dhve: {1}, {2}, {3}. The active endings are -si, -thaḥ and -tha: {4}, {5}, {6}."
+  "sa-rule-atm-first":
+    name: "Middle voice, first person: -e, -āvahe, -āmahe"
+    explanation: "The middle endings of the present in the first person, I, the two of us and we, are -e, -āvahe and -āmahe: {1}, {2}, {3}. The active endings are -mi, -vaḥ and -maḥ: {4}, {5}, {6}."
+  "sa-rule-par-third":
+    name: "Active voice, third person: -ti, -taḥ, -anti"
+    explanation: "The verb {5} (to know) takes both voices, so its active forms stand beside its middle forms. The active third person is {1}, {2} and {3}, with the endings -ti, -taḥ and -anti on the stems jānā-, jānī- and jān-; the middle third person singular is {4}."
+  "sa-rule-par-second":
+    name: "Active voice, second person: -si, -thaḥ, -tha"
+    explanation: "The active second person of the verb to know is {1}, {2} and {3}, with the endings -si, -thaḥ and -tha; the middle second person singular is {4}."
+  "sa-rule-par-first":
+    name: "Active voice, first person: -mi, -vaḥ, -maḥ"
+    explanation: "The active first person of the verb to know is {1}, {2} and {3}, with the endings -mi, -vaḥ and -maḥ; the middle first person singular is {4}."

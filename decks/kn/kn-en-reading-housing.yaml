@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-housing"
+name: "Reading: rental terms"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (the terms of a rental). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-rental-terms"
+    title: "Rental terms"
+    sentences:
+      - text: "ಈ ಫ್ಲ್ಯಾಟ್ ಬಾಡಿಗೆ ತಿಂಗಳಿಗೆ ಹತ್ತು ಸಾವಿರ ರೂಪಾಯಿ."
+        reading: "ī phlyāṭ bāḍige tiṅgaḷige hattu sāvira rūpāyi."
+        ipa: "iː pʰljaːʈ baːɖiɡe t̪iŋɡaɭiɡe hat̪t̪u saːʋira ruːpaːji"
+      - text: "ಮುಂಗಡ ಎರಡು ತಿಂಗಳ ಬಾಡಿಗೆ."
+        reading: "muṅgaḍa eraḍu tiṅgaḷa bāḍige."
+        ipa: "muŋɡaɖa eraɖu t̪iŋɡaɭa baːɖiɡe"
+      - text: "ಪಾರ್ಕಿಂಗ್ ಇದೆ."
+        reading: "pārkiṅg ide."
+        ipa: "paːrkiŋɡ id̪e"
+      - text: "ಲಿಫ್ಟ್ ಕೂಡ ಇದೆ."
+        reading: "liphṭ kūḍa ide."
+        ipa: "lipʰʈ kuːɖa id̪e"
+      - text: "ಬಾಡಿಗೆದಾರರು ಒಪ್ಪಂದಕ್ಕೆ ಸಹಿ ಮಾಡಬೇಕು."
+        reading: "bāḍigedāraru oppandakke sahi māḍabēku."
+        ipa: "baːɖiɡed̪aːraru oppand̪akke sahi maːɖabeːku"
+    questions:
+      - id: "kn-9379"
+        prompt: { en: "How much is the advance?" }
+        options:
+          - { en: "Two months' rent" }
+          - { en: "One year's rent" }
+          - { en: "No advance" }
+        answer: 1
+      - id: "kn-9380"
+        prompt: { en: "There is parking." }
+        answer: true
+      - id: "kn-9381"
+        prompt: { en: "Who signs the agreement?" }
+        options:
+          - { en: "The tenant" }
+          - { en: "The judge" }
+          - { en: "The teacher" }
+        answer: 1

@@ -1,0 +1,57 @@
+schema: 1
+id: "sa-en-reading-home"
+name: "Reading: the home"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-home-text-1"
+    title: "Door, lamp, bed"
+    theme: "home"
+    sentences:
+      - { text: "द्वारं नीलं भवति गृहं च पुराणं भवति.", reading: "dvāraṃ nīlaṃ bhavati gṛhaṃ ca purāṇaṃ bhavati.", ipa: "d̪ʋaːrəm niːləm bʱəʋət̪i ɡr̩ɦəm tʃə puraːɳəm bʱəʋət̪i" }
+      - { text: "दीपः कुत्र भवति शय्या च कुत्र भवति?", reading: "dīpaḥ kutra bhavati śayyā ca kutra bhavati?", ipa: "d̪iːpəh kut̪rə bʱəʋət̪i ʃəjjaː tʃə kut̪rə bʱəʋət̪i" }
+      - { text: "आसने को भवति शय्यायां च का भवति?", reading: "āsane ko bhavati śayyāyāṃ ca kā bhavati?", ipa: "aːsəneː koː bʱəʋət̪i ʃəjjaːjaːm tʃə kaː bʱəʋət̪i" }
+      - { text: "अग्रे दीपो भवति पश्चात् पात्रं भवति.", reading: "agre dīpo bhavati paścāt pātraṃ bhavati.", ipa: "əɡreː d̪iːpoː bʱəʋət̪i pəʃtʃaːt̪ paːt̪rəm bʱəʋət̪i" }
+    questions:
+      - id: "sa-3531"
+        prompt: { en: "What is blue?" }
+        options: [{ en: "The house" }, { en: "The door" }, { en: "The bed" }]
+        answer: 2
+      - id: "sa-3532"
+        prompt: { en: "What is behind in the last sentence?" }
+        options: [{ en: "A lamp" }, { en: "A bed" }, { en: "A vessel" }]
+        answer: 3
+      - id: "sa-3533"
+        prompt: { en: "The house is old." }
+        answer: true
+      - id: "sa-3534"
+        prompt: { en: "The second sentence asks where the door is." }
+        answer: false
+  - id: "sa-home-text-2"
+    title: "Well, palace, pillar"
+    theme: "home"
+    sentences:
+      - { text: "कूपे जलं भवति पात्रे च क्षीरं भवति.", reading: "kūpe jalaṃ bhavati pātre ca kṣīraṃ bhavati.", ipa: "kuːpeː dʒələm bʱəʋət̪i paːt̪reː tʃə kʂiːrəm bʱəʋət̪i" }
+      - { text: "प्रासादो महान् भवति कुटी च सुन्दरा भवति.", reading: "prāsādo mahān bhavati kuṭī ca sundarā bhavati.", ipa: "praːsaːd̪oː məɦaːn bʱəʋət̪i kuʈiː tʃə sund̪əraː bʱəʋət̪i" }
+      - { text: "गृहे स्तम्भो न भवति प्रासादे स्तम्भो भवति.", reading: "gṛhe stambho na bhavati prāsāde stambho bhavati.", ipa: "ɡr̩ɦeː st̪əmbʱoː nə bʱəʋət̪i praːsaːd̪eː st̪əmbʱoː bʱəʋət̪i" }
+      - { text: "कुक्कुरो गृहं रक्षति मार्जारो मूषकं पश्यति.", reading: "kukkuro gṛhaṃ rakṣati mārjāro mūṣakaṃ paśyati.", ipa: "kukkuroː ɡr̩ɦəm rəkʂət̪i maːrdʒaːroː muːʂəkəm pəʃjət̪i" }
+    questions:
+      - id: "sa-3535"
+        prompt: { en: "What is in the vessel?" }
+        options: [{ en: "Milk" }, { en: "Water" }, { en: "Honey" }]
+        answer: 1
+      - id: "sa-3536"
+        prompt: { en: "What is said to be beautiful?" }
+        options: [{ en: "The palace" }, { en: "The hut" }, { en: "The house" }]
+        answer: 2
+      - id: "sa-3537"
+        prompt: { en: "There is a pillar in the house." }
+        answer: false
+      - id: "sa-3538"
+        prompt: { en: "The dog sees the mouse." }
+        answer: false

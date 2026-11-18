@@ -1,0 +1,43 @@
+schema: 1
+id: "kn-en-reading-literature"
+name: "Reading: a novel's blurb"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (the back-cover blurb of a novel). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-book-blurb"
+    title: "Book blurb"
+    sentences:
+      - text: "ಇದು ಒಂದು ಹೊಸ ಕಾದಂಬರಿ."
+        reading: "idu ondu hosa kādambari."
+        ipa: "id̪u ond̪u hosa kaːd̪ambari"
+      - text: "ಈ ಕಥೆಯಲ್ಲಿ ಹಳ್ಳಿ ಪಾತ್ರಗಳು ಇವೆ."
+        reading: "ī katheyalli haḷḷi pātragaḷu ive."
+        ipa: "iː kat̪ʰejalli haɭɭi paːt̪raɡaɭu iʋe"
+      - text: "ಲೇಖಕರ ಶೈಲಿ ಹಾಸ್ಯಮಯ ಮತ್ತು ವ್ಯಂಗ್ಯವಾಗಿದೆ."
+        reading: "lēkhakara śaili hāsyamaya mattu vyaṅgyavāgide."
+        ipa: "leːkʰakara ʃaili haːsjamaja mat̪t̪u ʋjaŋɡjaʋaːɡid̪e"
+      - text: "ಇದರಲ್ಲಿ ಇಪ್ಪತ್ತು ಅಧ್ಯಾಯಗಳು ಇವೆ."
+        reading: "idaralli ippattu adhyāyagaḷu ive."
+        ipa: "id̪aralli ippat̪t̪u ad̪ʱjaːjaɡaɭu iʋe"
+      - text: "ಓದುಗರು ಇದನ್ನು ಬಹಳ ಇಷ್ಟಪಡುತ್ತಾರೆ."
+        reading: "ōdugaru idannu bahaḷa iṣṭapaḍuttāre."
+        ipa: "oːd̪uɡaru id̪annu bahaɭa iʂʈapaɖut̪t̪aːre"
+    questions:
+      - id: "kn-9388"
+        prompt: { en: "What kind of book is it?" }
+        options:
+          - { en: "A novel" }
+          - { en: "A map" }
+          - { en: "A timetable" }
+        answer: 1
+      - id: "kn-9389"
+        prompt: { en: "The style is funny and satirical." }
+        answer: true
+      - id: "kn-9390"
+        prompt: { en: "The novel has ten chapters." }
+        answer: false

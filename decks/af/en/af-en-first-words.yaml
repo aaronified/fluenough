@@ -1,0 +1,522 @@
+schema: 1
+id: "af-en-first-words"
+kind: "layer"
+core: "af-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes and no, the pronouns, the numbers one to ten, the family and a few everyday words (water, food, house, good, big, small, here, there, what). Greetings and thank you are in the phrasebook. Not yet checked by an Afrikaans speaker: please report any mistake."
+cards:
+  "af-0101":
+    native: "yes"
+    notes:
+      "n1": "Ja is 'yes'. Nee is 'no'. Both are the answer to a question, as in English."
+    examples:
+      "Ja, dankie.":
+        native: "Yes, thank you."
+        bases:
+          "Ja": "yes"
+          "dankie": "thank you"
+      "Ja, ek verstaan.":
+        native: "Yes, I understand."
+        bases:
+          "Ja": "yes"
+          "ek": "I"
+          "verstaan": "understand"
+  "af-0102":
+    native: "no"
+    notes:
+      "n1": "Nee is 'no'. Nie is 'not', and goes after the verb: ek weet nie (I don't know)."
+    examples:
+      "Nee, dankie.":
+        native: "No, thank you."
+        bases:
+          "Nee": "no"
+          "dankie": "thank you"
+      "Nee, ek weet nie.":
+        native: "No, I don't know."
+        bases:
+          "Nee": "no"
+          "ek": "I"
+          "weet": "know"
+          "nie": "not"
+  "af-0103":
+    native: "I"
+    notes:
+      "n1": "Ek is 'I'. The 'n before a noun is 'a' or 'an': 'n student is 'a student'."
+    examples:
+      "Ek is 'n student.":
+        native: "I am a student."
+        bases:
+          "Ek": "I"
+          "is": "am"
+          "n": "a"
+          "student": "student"
+      "Ek verstaan nie.":
+        native: "I don't understand."
+        bases:
+          "Ek": "I"
+          "verstaan": "understand"
+          "nie": "not"
+  "af-0104":
+    native: "you"
+    notes:
+      "n1": "Jy is 'you', used with friends and people your own age. U is the polite 'you' for strangers and elders, and is learned later."
+    examples:
+      "Jy praat Engels.":
+        native: "You speak English."
+        bases:
+          "Jy": "you"
+          "praat": "speak"
+          "Engels": "English"
+      "Jy is hier.":
+        native: "You are here."
+        bases:
+          "Jy": "you"
+          "is": "are"
+          "hier": "here"
+  "af-0105":
+    native: "he"
+    notes:
+      "n1": "Hy is 'he'. Afrikaans has no grammatical gender, so the same word serves for a man or a boy."
+    examples:
+      "Hy is my vader.":
+        native: "He is my father."
+        bases:
+          "Hy": "he"
+          "is": "is"
+          "my": "my"
+          "vader": "father"
+      "Hy is groot.":
+        native: "He is big."
+        bases:
+          "Hy": "he"
+          "is": "is"
+          "groot": "big"
+  "af-0106":
+    native: "she"
+    notes:
+      "n1": "Sy is 'she'. Afrikaans has no grammatical gender, so sy is for a woman or a girl."
+    examples:
+      "Sy is my moeder.":
+        native: "She is my mother."
+        bases:
+          "Sy": "she"
+          "is": "is"
+          "my": "my"
+          "moeder": "mother"
+      "Sy is klein.":
+        native: "She is small."
+        bases:
+          "Sy": "she"
+          "is": "is"
+          "klein": "small"
+  "af-0107":
+    native: "we"
+    notes:
+      "n1": "Ons is 'we' and 'us'. The same word is used after a verb or a preposition, as Ons praat (we speak)."
+    examples:
+      "Ons is hier.":
+        native: "We are here."
+        bases:
+          "Ons": "we"
+          "is": "are"
+          "hier": "here"
+      "Ons praat Afrikaans.":
+        native: "We speak Afrikaans."
+        bases:
+          "Ons": "we"
+          "praat": "speak"
+          "Afrikaans": "Afrikaans"
+  "af-0108":
+    native: "they"
+    notes:
+      "n1": "Hulle is 'they' and 'them'. The same form is used for both, after a verb as well as before one."
+    examples:
+      "Hulle is hier.":
+        native: "They are here."
+        bases:
+          "Hulle": "they"
+          "is": "are"
+          "hier": "here"
+      "Hulle is groot.":
+        native: "They are big."
+        bases:
+          "Hulle": "they"
+          "is": "are"
+          "groot": "big"
+  "af-0109":
+    native: "one"
+    notes:
+      "n1": "Een is 'one'."
+    examples:
+      "Een, twee, drie.":
+        native: "One, two, three."
+        bases:
+          "Een": "one"
+          "twee": "two"
+          "drie": "three"
+      "Een water, asseblief.":
+        native: "One water, please."
+        bases:
+          "Een": "one"
+          "water": "water"
+          "asseblief": "please"
+  "af-0110":
+    native: "two"
+    notes:
+      "n1": "Twee is 'two'. Rand is the South African currency, so Dit kos twee rand is 'It costs two rand'."
+    examples:
+      "Dit kos twee rand.":
+        native: "It costs two rand."
+        bases:
+          "Dit": "it"
+          "kos": "costs"
+          "twee": "two"
+          "rand": "rand"
+      "Ek het twee honde.":
+        native: "I have two dogs."
+        bases:
+          "Ek": "I"
+          "het": "have"
+          "twee": "two"
+          "honde": "dogs"
+  "af-0111":
+    native: "three"
+    notes:
+      "n1": "Drie is 'three'."
+    examples:
+      "Een, twee, drie.":
+        native: "One, two, three."
+        bases:
+          "Een": "one"
+          "twee": "two"
+          "drie": "three"
+      "Dit kos drie rand.":
+        native: "It costs three rand."
+        bases:
+          "Dit": "it"
+          "kos": "costs"
+          "drie": "three"
+          "rand": "rand"
+  "af-0112":
+    native: "four"
+    notes:
+      "n1": "Vier is 'four'."
+    examples:
+      "Vier, vyf, ses.":
+        native: "Four, five, six."
+        bases:
+          "Vier": "four"
+          "vyf": "five"
+          "ses": "six"
+      "Dit kos vier rand.":
+        native: "It costs four rand."
+        bases:
+          "Dit": "it"
+          "kos": "costs"
+          "vier": "four"
+          "rand": "rand"
+  "af-0113":
+    native: "five"
+    notes:
+      "n1": "Vyf is 'five'."
+    examples:
+      "Vyf, ses, sewe.":
+        native: "Five, six, seven."
+        bases:
+          "Vyf": "five"
+          "ses": "six"
+          "sewe": "seven"
+      "Dit kos vyf rand.":
+        native: "It costs five rand."
+        bases:
+          "Dit": "it"
+          "kos": "costs"
+          "vyf": "five"
+          "rand": "rand"
+  "af-0114":
+    native: "six"
+    notes:
+      "n1": "Ses is 'six'."
+    examples:
+      "Ses, sewe, agt.":
+        native: "Six, seven, eight."
+        bases:
+          "Ses": "six"
+          "sewe": "seven"
+          "agt": "eight"
+      "Dit kos ses rand.":
+        native: "It costs six rand."
+        bases:
+          "Dit": "it"
+          "kos": "costs"
+          "ses": "six"
+          "rand": "rand"
+  "af-0115":
+    native: "seven"
+    notes:
+      "n1": "Sewe is 'seven'."
+    examples:
+      "Sewe, agt, nege.":
+        native: "Seven, eight, nine."
+        bases:
+          "Sewe": "seven"
+          "agt": "eight"
+          "nege": "nine"
+      "Dit kos sewe rand.":
+        native: "It costs seven rand."
+        bases:
+          "Dit": "it"
+          "kos": "costs"
+          "sewe": "seven"
+          "rand": "rand"
+  "af-0116":
+    native: "eight"
+    notes:
+      "n1": "Agt is 'eight'."
+    examples:
+      "Agt, nege, tien.":
+        native: "Eight, nine, ten."
+        bases:
+          "Agt": "eight"
+          "nege": "nine"
+          "tien": "ten"
+      "Dit kos agt rand.":
+        native: "It costs eight rand."
+        bases:
+          "Dit": "it"
+          "kos": "costs"
+          "agt": "eight"
+          "rand": "rand"
+  "af-0117":
+    native: "nine"
+    notes:
+      "n1": "Nege is 'nine'."
+    examples:
+      "Nege, tien, elf.":
+        native: "Nine, ten, eleven."
+        bases:
+          "Nege": "nine"
+          "tien": "ten"
+          "elf": "eleven"
+      "Dit kos nege rand.":
+        native: "It costs nine rand."
+        bases:
+          "Dit": "it"
+          "kos": "costs"
+          "nege": "nine"
+          "rand": "rand"
+  "af-0118":
+    native: "ten"
+    notes:
+      "n1": "Tien is 'ten'."
+    examples:
+      "Een tot tien.":
+        native: "One to ten."
+        bases:
+          "Een": "one"
+          "tot": "to"
+          "tien": "ten"
+      "Dit kos tien rand.":
+        native: "It costs ten rand."
+        bases:
+          "Dit": "it"
+          "kos": "costs"
+          "tien": "ten"
+          "rand": "rand"
+  "af-0119":
+    native: "mother"
+    notes:
+      "n1": "Moeder is 'mother'."
+    examples:
+      "Sy is my moeder.":
+        native: "She is my mother."
+        bases:
+          "Sy": "she"
+          "is": "is"
+          "my": "my"
+          "moeder": "mother"
+      "Hallo, Moeder.":
+        native: "Hello, Mother."
+        bases:
+          "Hallo": "hello"
+          "Moeder": "mother"
+  "af-0120":
+    native: "father"
+    notes:
+      "n1": "Vader is 'father'."
+    examples:
+      "Hy is my vader.":
+        native: "He is my father."
+        bases:
+          "Hy": "he"
+          "is": "is"
+          "my": "my"
+          "vader": "father"
+      "Ek praat met my vader.":
+        native: "I speak with my father."
+        bases:
+          "Ek": "I"
+          "praat": "speak"
+          "met": "with"
+          "my": "my"
+          "vader": "father"
+  "af-0121":
+    native: "water"
+    notes:
+      "n1": "Water is 'water', the same word as in English."
+    examples:
+      "Water, asseblief.":
+        native: "Water, please."
+        bases:
+          "Water": "water"
+          "asseblief": "please"
+      "Dit is water.":
+        native: "This is water."
+        bases:
+          "Dit": "this"
+          "is": "is"
+          "water": "water"
+  "af-0122":
+    native: "food"
+    notes:
+      "n1": "Kos is 'food' in general. A single meal is a maaltyd."
+    examples:
+      "Die kos is goed.":
+        native: "The food is good."
+        bases:
+          "Die": "the"
+          "kos": "food"
+          "is": "is"
+          "goed": "good"
+      "Ek eet kos.":
+        native: "I eat food."
+        bases:
+          "Ek": "I"
+          "eet": "eat"
+          "kos": "food"
+  "af-0123":
+    native: "house"
+    notes:
+      "n1": "Huis is 'house' or 'home'."
+    examples:
+      "Dit is my huis.":
+        native: "This is my house."
+        bases:
+          "Dit": "this"
+          "is": "is"
+          "my": "my"
+          "huis": "house"
+      "Ons huis is groot.":
+        native: "Our house is big."
+        bases:
+          "Ons": "our"
+          "huis": "house"
+          "is": "is"
+          "groot": "big"
+  "af-0124":
+    native: "good"
+    notes:
+      "n1": "Goed is 'good', and also 'well' and 'fine'. Goeie, with an e, comes before a noun or a greeting."
+    examples:
+      "Dit is goed.":
+        native: "This is good."
+        bases:
+          "Dit": "this"
+          "is": "is"
+          "goed": "good"
+      "Goeie môre!":
+        native: "Good morning!"
+        bases:
+          "Goeie": "good"
+          "môre": "morning"
+  "af-0125":
+    native: "big"
+    notes:
+      "n1": "Groot is 'big' and 'great'. It is the same word for a person or a thing."
+    examples:
+      "Die huis is groot.":
+        native: "The house is big."
+        bases:
+          "Die": "the"
+          "huis": "house"
+          "is": "is"
+          "groot": "big"
+      "'n Groot huis.":
+        native: "A big house."
+        bases:
+          "n": "a"
+          "Groot": "big"
+          "huis": "house"
+  "af-0126":
+    native: "small"
+    notes:
+      "n1": "Klein is 'small' and 'little'."
+    examples:
+      "Die kind is klein.":
+        native: "The child is small."
+        bases:
+          "Die": "the"
+          "kind": "child"
+          "is": "is"
+          "klein": "small"
+      "Ek is klein.":
+        native: "I am small."
+        bases:
+          "Ek": "I"
+          "is": "am"
+          "klein": "small"
+  "af-0127":
+    native: "here"
+    notes:
+      "n1": "Hier is 'here'. Daar is 'there'."
+    examples:
+      "Ons is hier.":
+        native: "We are here."
+        bases:
+          "Ons": "we"
+          "is": "are"
+          "hier": "here"
+      "Kom hier.":
+        native: "Come here."
+        bases:
+          "Kom": "come"
+          "hier": "here"
+  "af-0128":
+    native: "there"
+    notes:
+      "n1": "Daar is 'there'. It is the opposite of hier, here."
+    examples:
+      "Die toilet is daar.":
+        native: "The toilet is there."
+        bases:
+          "Die": "the"
+          "toilet": "toilet"
+          "is": "is"
+          "daar": "there"
+      "Die huis is daar.":
+        native: "The house is there."
+        bases:
+          "Die": "the"
+          "huis": "house"
+          "is": "is"
+          "daar": "there"
+  "af-0129":
+    native: "what"
+    notes:
+      "n1": "Wat is 'what'. It starts most questions about a thing, as Wat is dit? (What is this?)."
+    examples:
+      "Wat is dit?":
+        native: "What is this?"
+        bases:
+          "Wat": "what"
+          "is": "is"
+          "dit": "this"
+      "Wat is jou naam?":
+        native: "What is your name?"
+        bases:
+          "Wat": "what"
+          "is": "is"
+          "jou": "your"
+          "naam": "name"

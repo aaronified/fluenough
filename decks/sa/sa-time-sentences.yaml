@@ -1,0 +1,79 @@
+schema: 1
+id: "sa-time-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3090"
+    target: "प्रातः पिता पठति सायं च माता गायति."
+    reading: "prātaḥ pitā paṭhati sāyaṃ ca mātā gāyati."
+    ipa: "praːt̪əh pit̪aː pəʈʰət̪i saːjəm tʃə maːt̪aː ɡaːjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "प्रातः", ref: "sa-1548" }, { word: "पिता", ref: "sa-1031" }, { word: "पठति", base: "पठ्", reading: "paṭh" }, { word: "सायं", base: "सायम्", reading: "sāyam" }, { word: "च", ref: "sa-1104" }, { word: "माता", ref: "sa-1030" }, { word: "गायति", base: "गै", reading: "gai" }]
+    confusables: [{ id: "w1", ref: "sa-1549", kind: "word" }, { id: "w2", ref: "sa-1032", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3091"
+    target: "रात्रौ पिता कुत्र तिष्ठति?"
+    reading: "rātrau pitā kutra tiṣṭhati?"
+    ipa: "raːt̪rəu pit̪aː kut̪rə t̪iʂʈʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "रात्रौ", ref: "sa-1549" }, { word: "पिता", ref: "sa-1031" }, { word: "कुत्र", ref: "sa-1002" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+    confusables: [{ id: "w1", ref: "sa-1630", kind: "word" }, { id: "w2", ref: "sa-1032", kind: "word" }]
+  - id: "sa-3092"
+    target: "अधुना वयं पठामो रात्रौ च न पठामः."
+    reading: "adhunā vayaṃ paṭhāmo rātrau ca na paṭhāmaḥ."
+    ipa: "əd̪ʱunaː ʋəjəm pəʈʰaːmoː raːt̪rəu tʃə nə pəʈʰaːməh"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अधुना", ref: "sa-1631" }, { word: "वयं", base: "वयम्", reading: "vayam" }, { word: "पठामो", base: "पठ्", reading: "paṭh" }, { word: "रात्रौ", ref: "sa-1549" }, { word: "च", ref: "sa-1104" }, { word: "न", ref: "sa-0026" }, { word: "पठामः", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1632", kind: "word" }, { id: "w2", ref: "sa-1023", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3093"
+    target: "अधुना सा गायति चिरं च सखा हसति."
+    reading: "adhunā sā gāyati ciraṃ ca sakhā hasati."
+    ipa: "əd̪ʱunaː saː ɡaːjət̪i tʃirəm tʃə səkʰaː ɦəsət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अधुना", ref: "sa-1631" }, { word: "सा", ref: "sa-1011" }, { word: "गायति", base: "गै", reading: "gai" }, { word: "चिरं", base: "चिरम्", reading: "ciram" }, { word: "च", ref: "sa-1104" }, { word: "सखा", ref: "sa-1038" }, { word: "हसति", base: "हस्", reading: "has" }]
+    confusables: [{ id: "w1", ref: "sa-1632", kind: "word" }, { id: "w2", ref: "sa-1012", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3094"
+    target: "वर्षा जलं नयति निशा च शीता भवति."
+    reading: "varṣā jalaṃ nayati niśā ca śītā bhavati."
+    ipa: "ʋərʂaː dʒələm nəjət̪i niʃaː tʃə ʃiːt̪aː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वर्षा", ref: "sa-1637" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "नयति", base: "नी", reading: "nī" }, { word: "निशा", ref: "sa-1634" }, { word: "च", ref: "sa-1104" }, { word: "शीता", base: "शीतः", reading: "śītaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-0024", kind: "word" }, { id: "w2", ref: "sa-2000", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3095"
+    target: "का वेला भवति पिता च कदा पठति?"
+    reading: "kā velā bhavati pitā ca kadā paṭhati?"
+    ipa: "kaː ʋeːlaː bʱəʋət̪i pit̪aː tʃə kəd̪aː pəʈʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "का", ref: "sa-1026" }, { word: "वेला", ref: "sa-1636" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "पिता", ref: "sa-1031" }, { word: "च", ref: "sa-1104" }, { word: "कदा", ref: "sa-1003" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-0431", kind: "word" }, { id: "w2", ref: "sa-1032", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "sa-3096"
+    target: "रात्रौ वर्षा शीता भवति प्रातः पिता च पठति."
+    reading: "rātrau varṣā śītā bhavati prātaḥ pitā ca paṭhati."
+    ipa: "raːt̪rəu ʋərʂaː ʃiːt̪aː bʱəʋət̪i praːt̪əh pit̪aː tʃə pəʈʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "रात्रौ", ref: "sa-1549" }, { word: "वर्षा", ref: "sa-1637" }, { word: "शीता", base: "शीतः", reading: "śītaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "प्रातः", ref: "sa-1548" }, { word: "पिता", ref: "sa-1031" }, { word: "च", ref: "sa-1104" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1630", kind: "word" }, { id: "w2", ref: "sa-1531", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3097"
+    target: "चिरं सखा पठति सायं च भ्राता खादति."
+    reading: "ciraṃ sakhā paṭhati sāyaṃ ca bhrātā khādati."
+    ipa: "tʃirəm səkʰaː pəʈʰət̪i saːjəm tʃə bʱraːt̪aː kʰaːd̪ət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "चिरं", base: "चिरम्", reading: "ciram" }, { word: "सखा", ref: "sa-1038" }, { word: "पठति", base: "पठ्", reading: "paṭh" }, { word: "सायं", base: "सायम्", reading: "sāyam" }, { word: "च", ref: "sa-1104" }, { word: "भ्राता", ref: "sa-1032" }, { word: "खादति", base: "खाद्", reading: "khād" }]
+    confusables: [{ id: "w1", ref: "sa-1631", kind: "word" }, { id: "w2", ref: "sa-1041", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]

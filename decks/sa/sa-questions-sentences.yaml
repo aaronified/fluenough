@@ -1,0 +1,80 @@
+schema: 1
+id: "sa-questions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3000"
+    target: "त्वं कुत्र जलं नयसि?"
+    reading: "tvaṃ kutra jalaṃ nayasi?"
+    ipa: "t̪ʋəm kut̪rə dʒələm nəjəsi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "कुत्र", ref: "sa-1002" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "नयसि", base: "नी", reading: "nī" }]
+    confusables: [{ id: "w1", ref: "sa-1010", kind: "word" }, { id: "w2", ref: "sa-1003", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3001"
+    target: "स संस्कृतं कदा वदति?"
+    reading: "sa saṃskṛtaṃ kadā vadati?"
+    ipa: "sə sə̃skr̩t̪əm kəd̪aː ʋəd̪ət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "स", base: "सः", reading: "saḥ" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "कदा", ref: "sa-1003" }, { word: "वदति", base: "वद्", reading: "vad" }]
+    confusables: [{ id: "w1", ref: "sa-1011", kind: "word" }, { id: "w2", ref: "sa-1004", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3002"
+    target: "यूयं कथं संस्कृतं पठथ?"
+    reading: "yūyaṃ kathaṃ saṃskṛtaṃ paṭhatha?"
+    ipa: "juːjəm kət̪ʰəm sə̃skr̩t̪əm pəʈʰət̪ʰə"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "यूयं", base: "यूयम्", reading: "yūyam" }, { word: "कथं", base: "कथम्", reading: "katham" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "पठथ", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-0021", kind: "word" }, { id: "w2", ref: "sa-1005", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3003"
+    target: "वयं किमर्थं जलं न नयामः?"
+    reading: "vayaṃ kimarthaṃ jalaṃ na nayāmaḥ?"
+    ipa: "ʋəjəm kimərt̪ʰəm dʒələm nə nəjaːməh"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वयं", base: "वयम्", reading: "vayam" }, { word: "किमर्थं", base: "किमर्थम्", reading: "kimartham" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "न", ref: "sa-0026" }, { word: "नयामः", base: "नी", reading: "nī" }]
+    confusables: [{ id: "w1", ref: "sa-1023", kind: "word" }, { id: "w2", ref: "sa-1000", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3004"
+    target: "अश्वः कुत्र गच्छति देवः कुत्र च पठति?"
+    reading: "aśvaḥ kutra gacchati devaḥ kutra ca paṭhati?"
+    ipa: "əʃʋəh kut̪rə ɡətʃtʃʰət̪i d̪eːʋəh kut̪rə tʃə pəʈʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अश्वः", ref: "sa-0029" }, { word: "कुत्र", ref: "sa-1002" }, { word: "गच्छति", base: "गम्", reading: "gam" }, { word: "देवः", ref: "sa-0025" }, { word: "च", ref: "sa-1104" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-0023", kind: "word" }, { id: "w2", ref: "sa-1003", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "sa-3005"
+    target: "का संस्कृतं पठति का च जलं नयति?"
+    reading: "kā saṃskṛtaṃ paṭhati kā ca jalaṃ nayati?"
+    ipa: "kaː sə̃skr̩t̪əm pəʈʰət̪i kaː tʃə dʒələm nəjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "का", ref: "sa-1026" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "पठति", base: "पठ्", reading: "paṭh" }, { word: "च", ref: "sa-1104" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "नयति", base: "नी", reading: "nī" }]
+    confusables: [{ id: "w1", ref: "sa-0433", kind: "word" }, { id: "w2", ref: "sa-0024", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }, { id: "n4", kind: "usage" }]
+  - id: "sa-3006"
+    target: "कति जलं नयन्ति कति च संस्कृतं पठन्ति?"
+    reading: "kati jalaṃ nayanti kati ca saṃskṛtaṃ paṭhanti?"
+    ipa: "kət̪i dʒələm nəjənt̪i kət̪i tʃə sə̃skr̩t̪əm pəʈʰənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कति", ref: "sa-1005" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "नयन्ति", base: "नी", reading: "nī" }, { word: "च", ref: "sa-1104" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "पठन्ति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1006", kind: "word" }, { id: "w2", ref: "sa-0024", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }, { id: "n4", kind: "usage" }]
+  - id: "sa-3007"
+    target: "किमर्थं सा संस्कृतं न वदति?"
+    reading: "kimarthaṃ sā saṃskṛtaṃ na vadati?"
+    ipa: "kimərt̪ʰəm saː sə̃skr̩t̪əm nə ʋəd̪ət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "किमर्थं", base: "किमर्थम्", reading: "kimartham" }, { word: "सा", ref: "sa-1011" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "न", ref: "sa-0026" }, { word: "वदति", base: "वद्", reading: "vad" }]
+    confusables: [{ id: "w1", ref: "sa-1000", kind: "word" }, { id: "w2", ref: "sa-1012", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
