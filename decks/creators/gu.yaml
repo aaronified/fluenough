@@ -1,5 +1,6 @@
 # The people behind the Gujarati culture decks (wiki/Plan-Deck-Kinds-And-Topics.md, D5).
-# Dates are read on en.wikipedia (Narsinh Mehta) and gu.wikipedia (Premanand); circa where the page says "believed" or gives two sets of years. No pictures: none has a licence checked yet.
+# Dates: Narsinh Mehta (en.wikipedia: believed born c. 1414, died 1488); Mirabai (en.wikipedia infobox c. 1498 to c. 1546; gu.wikipedia 1498 to 1547); Akho (en.wikipedia c. 1591 to c. 1656; gu.wikisource author page gives 1600 to 1655, a conflict left to the reviewer); Dayaram (gu.wikipedia 1777 to 1853 and Wikidata Q2721616 birth 1777, death 1853, with a 1852 variant); Premanand (gu.wikipedia lead 1649 to 1714, infobox 1636 to 1734, circa).
+# No pictures: none has a licence checked yet.
 schema: 1
 kind: "creators"
 id: "creators-gu"
@@ -10,6 +11,10 @@ eras:
     name: { en: "Bhakti poetry" }
     from: 1400
     to: 1800
+  - id: "colonial"
+    name: { en: "Colonial period" }
+    from: 1800
+    to: 1947
 creators:
   - id: "gu-narsinh-mehta"
     name:
@@ -19,6 +24,30 @@ creators:
     era: "bhakti"
     bio:
       en: "Narsinh Mehta was a Gujarati devotional poet, known for his bhajans and songs about Krishna. His dates are approximate: his birth is believed to be about 1414, and his death is given as 1488."
+  - id: "gu-mirabai"
+    name:
+      en: { text: "Mirabai" }
+    born: { year: 1498, circa: true }
+    died: { year: 1546, circa: true }
+    era: "bhakti"
+    bio:
+      en: "Mirabai was a devotional poet who wrote songs to Krishna. Gujarati songs printed under her name are attributed to her, and her dates are approximate."
+  - id: "gu-akho"
+    name:
+      en: { text: "Akho" }
+    born: { year: 1591, circa: true }
+    died: { year: 1656, circa: true }
+    era: "bhakti"
+    bio:
+      en: "Akho, also called Akha Bhagat, was a Gujarati poet of the seventeenth century, known for his chhappas (six-line verses) and the Akhegita. The exact dates are not known."
+  - id: "gu-dayaram"
+    name:
+      en: { text: "Dayaram" }
+    born: 1777
+    died: 1853
+    era: "colonial"
+    bio:
+      en: "Dayaram was a Gujarati poet who wrote garbis and devotional songs, and is often called the first medieval Gujarati poet to write in the garbi style."
   - id: "gu-premanand"
     name:
       en: { text: "Premanand" }
