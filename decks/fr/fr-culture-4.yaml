@@ -3,7 +3,7 @@
 # Wikipedia and French Wikisource pages only, read there. Eighteen items (fr-4250 to fr-4267; fr-4268 to fr-4299 unused). Dropped, with the
 # reason read on the page: the traditional songs (Frère Jacques, Au clair de la lune, Sur le pont d'Avignon, Il était un petit navire, À la claire
 # fontaine: no first printing before 1900 read on a page; À la claire fontaine is from a 1922 book); Le Temps des cerises (no text on the page);
-# Anatole France, Le Crime de Sylvestre Bonnard (chapter I has no text on Wikisource; fr-4267 is Le Jardin d'Épicure instead, whose text is on Wikisource); Colette (no text found); Péguy and Apollinaire and Alain-Fournier
+# Anatole France, Le Crime de Sylvestre Bonnard (chapter I has no text on Wikisource); fr-4267 is the beginning of the first sentence of Le Jardin d'Épicure, excerpt cut with an ellipsis; Colette (no text found); Péguy and Apollinaire and Alain-Fournier
 # (died in the First World War; Péguy and Apollinaire are recorded as 'mort pour la France' on their French Wikipedia pages); Jules Renard (index only).
 schema: 1
 id: "fr-culture-4"
@@ -577,9 +577,11 @@ cards:
       jurisdiction: "FR"
       rights_checked: "2026-11-15"
   - id: "fr-4267"
-    target: "Nous avons peine à nous figurer l'état d'esprit d'un homme d'autrefois qui croyait fermement que la terre était le centre du monde."
+    target: "Nous avons peine à nous figurer l'état d'esprit d'un homme d'autrefois qui croyait fermement que la terre était le centre du monde…"
     words: ["Nous", "avons", "peine", "à", "nous", "figurer", "l'état", "d'esprit", "d'un", "homme", "d'autrefois", "qui", "croyait", "fermement", "que", "la", "terre", "était", "le", "centre", "du", "monde"]
     ipa: "nu avɔ̃ pɛn a nu fiɡyʁe leta dɛspʁi dœ̃ ɔm dotʁəfwa ki kʁwajɛ fɛʁməmɑ̃ kə la tɛʁ etɛ lə sɑ̃tʁ dy mɔ̃d"
+    phonetic: "[n̪u avɔ̃ pɛn̪ a n̪u fiɡyʁe let̪a d̪ɛs̪pχi d̪œ̃ ɔm d̪ot̪χəfwa ki kχwajɛ fɛʁməmɑ̃ kə la t̪ɛʁ et̪ɛ lə s̪ɑ̃t̪χ d̪y mɔ̃ːd̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     level: "A2"
     modes: ["recognition", "listening"]
@@ -611,9 +613,9 @@ cards:
       - { word: "monde", base: "monde" }
     source:
       author: "Anatole France"
-      work: "Le Jardin d'Épicure, opening sentence of the essay 'Le Jardin d'Épicure'"
+      work: "Le Jardin d'Épicure, beginning of the first sentence of the essay"
       date: 1895
-      edition: "Calmann-Lévy, 1895, as shown on French Wikisource (Le Jardin d'Épicure, djvu text, essay 'Le Jardin d'Épicure'); the French Wikipedia works list gives 1894 for the book, so the date is from two sources that differ: flagged for review"
+      edition: "Calmann-Lévy, Paris, 1895, scan on archive.org (lejardindpicur00fran), as shown on French Wikisource (Le Jardin d'Épicure)"
       url: "https://fr.wikisource.org/wiki/Le_Jardin_d%E2%80%99%C3%89picure"
       basis: "public-domain"
       author_died: 1924
