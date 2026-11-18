@@ -90,3 +90,168 @@ creators:
     era: "bhakti"
     bio:
       en: "Premanand was a Gujarati poet, known for narrative poems such as Sudama Charit, about Krishna and his friend Sudama. Sources give different years for his life, so both dates are approximate."
+
+# Added for GU-060 and GU-061 (recommendations, decks/recommendations/gu.yaml). Dates from en.wikipedia and Wikidata, read 2026-11-18.
+# Flags for review: Kantilal Rathod, en.wikipedia 12 Dec 1924 to 28 Sep 1988, Wikidata 1925 (year precision) and 1988 agree; birth year 1924 kept, 1925 disputed.
+# Chunilal Madia, en.wikipedia death 29 Dec 1968, Wikidata 9 Dec 1968: year agrees, day differs; plain year kept.
+# Abhishek Shah: en.wikipedia gives born 29 Nov 1982; Wikidata Q99337519 has no birth date, so the second page does not confirm it (flagged).
+# Ketan Mehta, Krishnadev Yagnik, Abhishek Jain (living) and Upendra Trivedi, Manhar Raskapur, Kanti Madia, Pannalal Patel, Govardhanram Tripathi, Rasiklal Parikh: en.wikipedia and Wikidata agree on the years.
+  - id: "gu-kantilal-rathod"
+    name:
+      en: { text: "Kantilal Rathod" }
+    born: 1924
+    died: 1988
+    bio:
+      en: "Kantilal Rathod was an Indian film director and producer. He directed the Gujarati film Kanku in 1969, adapted from a short story by Pannalal Patel."
+    legacy:
+      text: { en: "His film Kanku is remembered as a Gujarati film that won a National Film Award." }
+      items:
+        - { kind: "film", year: 1969, text: { en: "The English Wikipedia article says he directed the 1969 Gujarati film Kanku, which won the National Film Award for Best Feature Film in Gujarati." }, source: { url: "https://en.wikipedia.org/wiki/Kantilal_Rathod", accessed: "2026-11-18" } }
+  - id: "gu-ketan-mehta"
+    name:
+      en: { text: "Ketan Mehta" }
+    born: 1952
+    living: true
+    bio:
+      en: "Ketan Mehta is an Indian film director, producer and screenwriter. His first film, the Gujarati film Bhavni Bhavai, came out in 1980."
+    legacy:
+      text: { en: "His first film, Bhavni Bhavai, won him acclaim." }
+      items:
+        - { kind: "film", year: 1980, text: { en: "The English Wikipedia article says Bhavni Bhavai, his first film, won him acclaim and the Nargis Dutt Award for Best Feature Film on National Integration." }, source: { url: "https://en.wikipedia.org/wiki/Ketan_Mehta", accessed: "2026-11-18" } }
+  - id: "gu-krishnadev-yagnik"
+    name:
+      en: { text: "Krishnadev Yagnik" }
+    born: 1984
+    living: true
+    bio:
+      en: "Krishnadev Yagnik is an Indian film director and screenwriter known for Gujarati films. He directed Chhello Divas in 2015 and Vash in 2023."
+    legacy:
+      text: { en: "His Gujarati film Chhello Divas was remade in Hindi as Days of Tafree." }
+      items:
+        - { kind: "film", year: 2016, text: { en: "The English Wikipedia article says he directed the Hindi remake of his film Chhello Divas, titled Days of Tafree, in 2016." }, source: { url: "https://en.wikipedia.org/wiki/Krishnadev_Yagnik", accessed: "2026-11-18" } }
+  - id: "gu-abhishek-shah"
+    name:
+      en: { text: "Abhishek Shah" }
+    born: 1982
+    living: true
+    bio:
+      en: "Abhishek Shah is an Indian filmmaker, writer and producer known for Gujarati films and theatre. He directed Hellaro in 2019."
+    legacy:
+      text: { en: "His films and plays deal with significant social issues." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says his movies and plays revolve around significant social issues." }, source: { url: "https://en.wikipedia.org/wiki/Abhishek_Shah", accessed: "2026-11-18" } }
+  - id: "gu-abhishek-jain"
+    name:
+      en: { text: "Abhishek Jain" }
+    born: 1986
+    living: true
+    bio:
+      en: "Abhishek Jain is an Indian film director, writer and producer known for Gujarati films. He directed Kevi Rite Jaish in 2012 and Bey Yaar in 2014."
+    legacy:
+      text: { en: "He is credited with the revival of Gujarati cinema with Kevi Rite Jaish." }
+      items:
+        - { kind: "film", year: 2012, text: { en: "The English Wikipedia article says he is credited with the revival of Gujarati cinema with his debut film Kevi Rite Jaish." }, source: { url: "https://en.wikipedia.org/wiki/Abhishek_Jain", accessed: "2026-11-18" } }
+  - id: "gu-pannalal-patel"
+    name:
+      en: { text: "Pannalal Patel" }
+    born: 1912
+    died: 1989
+    bio:
+      en: "Pannalal Patel was a Gujarati novelist and short story writer. His novel Malela Jeev appeared in 1941, and his short story Kanku was adapted into a film."
+    legacy:
+      text: { en: "His novels are centred on village life in Gujarat, and several were adapted into films." }
+      items:
+        - { kind: "adaptation", year: 1969, text: { en: "The English Wikipedia article says his short story Kanku was adapted into the 1969 Gujarati film of the same name." }, source: { url: "https://en.wikipedia.org/wiki/Pannalal_Patel", accessed: "2026-11-18" } }
+  - id: "gu-govardhanram-tripathi"
+    name:
+      en: { text: "Govardhanram Tripathi" }
+    born: 1855
+    died: 1907
+    era: "colonial"
+    bio:
+      en: "Govardhanram Tripathi was a Gujarati novelist, lawyer and literary critic. He wrote the four-volume novel Saraswatichandra."
+    legacy:
+      text: { en: "His novel Saraswatichandra is acclaimed as one of the masterpieces of Gujarati literature." }
+      items:
+        - { kind: "other", year: 1901, text: { en: "The English Wikipedia article says his four-volume novel Saraswatichandra is acclaimed as one of the masterpieces of Gujarati literature." }, source: { url: "https://en.wikipedia.org/wiki/Govardhanram_Tripathi", accessed: "2026-11-18" } }
+  - id: "gu-rasiklal-parikh"
+    name:
+      en: { text: "Rasiklal Parikh" }
+    born: 1897
+    died: 1982
+    era: "colonial"
+    bio:
+      en: "Rasiklal Parikh was a Gujarati poet, playwright, literary critic and historian. He wrote the Bhavai musical play Mena Gurjari."
+    legacy:
+      text: { en: "He was a Gujarati poet, playwright, literary critic, Indologist and historian." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says his musical play Mena Gurjari is written in the Bhavai folk form." }, source: { url: "https://en.wikipedia.org/wiki/Rasiklal_Parikh", accessed: "2026-11-18" } }
+  - id: "gu-manhar-raskapur"
+    name:
+      en: { text: "Manhar Raskapur" }
+    born: 1922
+    died: 1980
+    bio:
+      en: "Manhar Raskapur was an Indian film director. He directed Gujarati films including Mulu Manek, Kalapi, Jogidas Khuman and Kadu Makrani."
+    legacy:
+      text: { en: "He directed Rajput war sagas and a biopic of the poet Kalapi." }
+      items:
+        - { kind: "film", year: 1955, text: { en: "The English Wikipedia article says he made the Rajput war saga Mulu Manek in 1955, and the biopic Kalapi in 1966." }, source: { url: "https://en.wikipedia.org/wiki/Manhar_Raskapur", accessed: "2026-11-18" } }
+  - id: "gu-upendra-trivedi"
+    name:
+      en: { text: "Upendra Trivedi" }
+    born: 1936
+    died: 2015
+    bio:
+      en: "Upendra Trivedi was a Gujarati film and stage actor, director and producer. He directed the film Manvini Bhavai in 1993."
+    legacy:
+      text: { en: "He was one of the most prolific actors of Gujarati cinema." }
+      items:
+        - { kind: "film", text: { en: "The English Wikipedia article says he was one of the most prolific actors of Gujarati cinema, and that he also directed and produced films." }, source: { url: "https://en.wikipedia.org/wiki/Upendra_Trivedi", accessed: "2026-11-18" } }
+  - id: "gu-chunilal-madia"
+    name:
+      en: { text: "Chunilal Madia" }
+    born: 1922
+    died: 1968
+    bio:
+      en: "Chunilal Madia was a Gujarati novelist and short story writer, known for novels and stories set in rural Saurashtra. His novel Liludi Dharati came out in 1957."
+    legacy:
+      text: { en: "He invented a realistic approach in his short stories, depicting the rural life of Saurashtra." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says he invented a realistic approach in his short stories, depicting the rural life of the Saurashtra region." }, source: { url: "https://en.wikipedia.org/wiki/Chunilal_Madia", accessed: "2026-11-18" } }
+  - id: "gu-kanti-madia"
+    name:
+      en: { text: "Kanti Madia" }
+    born: 1932
+    died: 2004
+    bio:
+      en: "Kanti Madia was a Gujarati actor, director, producer and playwright. He directed the Gujarati film Kashino Dikro in 1979."
+    legacy:
+      text: { en: "He was an actor, director, playwright and producer from Gujarat." }
+      items:
+        - { kind: "film", year: 1979, text: { en: "The English Wikipedia article lists the 1979 Gujarati film Kashino Dikro among his works." }, source: { url: "https://en.wikipedia.org/wiki/Kanti_Madia", accessed: "2026-11-18" } }
+# Added for the 19th and 20th works (GU-060/061). Dates read on en.wikipedia and Wikidata, 2026-11-18; both agree.
+  - id: "gu-nandshankar-mehta"
+    name:
+      en: { text: "Nandshankar Mehta" }
+    born: 1835
+    died: 1905
+    era: "colonial"
+    bio:
+      en: "Nandshankar Mehta was a Gujarati novelist. His historical novel Karan Ghelo, from 1866, is the first original novel in Gujarati."
+    legacy:
+      text: { en: "His novel Karan Ghelo is regarded as the first original novel in Gujarati." }
+      items:
+        - { kind: "other", year: 1866, text: { en: "The English Wikipedia article says his historical novel Karan Ghelo, published in 1866, was the first original novel in Gujarati." }, source: { url: "https://en.wikipedia.org/wiki/Nandshankar_Mehta", accessed: "2026-11-18" } }
+  - id: "gu-ramanbhai-neelkanth"
+    name:
+      en: { text: "Ramanbhai Neelkanth" }
+    born: 1868
+    died: 1928
+    era: "colonial"
+    bio:
+      en: "Ramanbhai Neelkanth was a Gujarati novelist, essayist and literary critic. His humorous novel Bhadrambhadra appeared in 1900."
+    legacy:
+      text: { en: "His humorous novel Bhadrambhadra is a satire on language and social puritans." }
+      items:
+        - { kind: "other", year: 1900, text: { en: "The English Wikipedia article says his humorous novel Bhadrambhadra (1900) was a satire on language and social puritans." }, source: { url: "https://en.wikipedia.org/wiki/Ramanbhai_Neelkanth", accessed: "2026-11-18" } }
