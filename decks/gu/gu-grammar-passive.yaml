@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "gu-grammar-passive",
   "part": "core",
-  "kind": "grammar",
+  "kind": "rules",
   "language": {
     "code": "gu",
     "iso639_3": "guj",
@@ -17,179 +17,183 @@
     "grammar",
     "unreviewed"
   ],
-  "pattern": {
+  "table": {
+    "applies_to": {
+      "pos": [
+        "verb"
+      ],
+      "except": [
+        "gu-0501",
+        "gu-0502",
+        "gu-0508",
+        "gu-0509",
+        "gu-0515",
+        "gu-0518",
+        "gu-1051",
+        "gu-1052",
+        "gu-1053",
+        "gu-1307",
+        "gu-1310",
+        "gu-1311",
+        "gu-1313",
+        "gu-1340",
+        "gu-1341",
+        "gu-1342",
+        "gu-1349",
+        "gu-1350",
+        "gu-2033",
+        "gu-2034",
+        "gu-2035",
+        "gu-2036",
+        "gu-2037",
+        "gu-2038",
+        "gu-2039",
+        "gu-2040",
+        "gu-2320",
+        "gu-2692",
+        "gu-2706",
+        "gu-2707",
+        "gu-2923",
+        "gu-2931",
+        "gu-2995",
+        "gu-3042",
+        "gu-3045",
+        "gu-3056",
+        "gu-3059",
+        "gu-3062",
+        "gu-3068",
+        "gu-3072",
+        "gu-3073",
+        "gu-3076",
+        "gu-3078",
+        "gu-3079",
+        "gu-3080",
+        "gu-3082",
+        "gu-3130",
+        "gu-3131",
+        "gu-3133",
+        "gu-3135",
+        "gu-3136",
+        "gu-3138",
+        "gu-3229",
+        "gu-3283",
+        "gu-3301",
+        "gu-3302",
+        "gu-3549",
+        "gu-3558",
+        "gu-3792",
+        "gu-3829",
+        "gu-3836",
+        "gu-3840",
+        "gu-3917",
+        "gu-3918",
+        "gu-4107",
+        "gu-4452",
+        "gu-4654",
+        "gu-4662",
+        "gu-4682",
+        "gu-4692",
+        "gu-4695",
+        "gu-4696",
+        "gu-4900",
+        "gu-4902",
+        "gu-4903",
+        "gu-4904",
+        "gu-4905",
+        "gu-4906",
+        "gu-4907",
+        "gu-4908",
+        "gu-4909",
+        "gu-4910",
+        "gu-4911",
+        "gu-4915",
+        "gu-4918",
+        "gu-4919",
+        "gu-4922",
+        "gu-4924",
+        "gu-4925",
+        "gu-4928",
+        "gu-4929",
+        "gu-4930",
+        "gu-4931",
+        "gu-4932",
+        "gu-4933",
+        "gu-4936",
+        "gu-4937",
+        "gu-4938",
+        "gu-4939",
+        "gu-4940",
+        "gu-4941",
+        "gu-4942",
+        "gu-4943",
+        "gu-4945",
+        "gu-4946",
+        "gu-4948",
+        "gu-4949",
+        "gu-4950",
+        "gu-4952",
+        "gu-4953",
+        "gu-4957",
+        "gu-4959",
+        "gu-4960",
+        "gu-4961",
+        "gu-4963",
+        "gu-4964",
+        "gu-5180",
+        "gu-5181",
+        "gu-5182",
+        "gu-5183",
+        "gu-5184",
+        "gu-5185",
+        "gu-5186",
+        "gu-5187",
+        "gu-5188",
+        "gu-5189",
+        "gu-5190",
+        "gu-5191",
+        "gu-5192",
+        "gu-5193",
+        "gu-5194",
+        "gu-5195",
+        "gu-5196",
+        "gu-5197",
+        "gu-5198",
+        "gu-5199",
+        "gu-5200",
+        "gu-5212",
+        "gu-5213",
+        "gu-5613"
+      ]
+    },
     "slots": [
       "present (is done)",
       "past (was done)"
     ],
-    "entries": [
+    "rows": [
       {
-        "lemma": "લખવું",
-        "key": "likhvum",
-        "reading": "lakhvum̐",
-        "ipa": "ləkʰʋũ",
+        "word": "gu-0504",
         "forms": {
-          "present (is done)": "લખાય છે",
-          "past (was done)": "લખાયું"
+          "present (is done)": "ખવાય છે",
+          "past (was done)": "ખવાયું"
         },
         "readings": {
-          "present (is done)": "lakhāy che",
-          "past (was done)": "lakhāyum̐"
-        },
-        "ipas": {
-          "present (is done)": "ləkʰaj tʃʰe",
-          "past (was done)": "ləkʰajũ"
+          "present (is done)": "khavāy che",
+          "past (was done)": "khavāyum̐"
         }
       },
       {
-        "lemma": "વેચવું",
-        "key": "vechvum",
-        "reading": "vecvum̐",
-        "ipa": "ʋetʃʋũ",
+        "word": "gu-0505",
         "forms": {
-          "present (is done)": "વેચાય છે",
-          "past (was done)": "વેચાયું"
+          "present (is done)": "જમાય છે",
+          "past (was done)": "જમાયું"
         },
         "readings": {
-          "present (is done)": "vecāy che",
-          "past (was done)": "vecāyum̐"
-        },
-        "ipas": {
-          "present (is done)": "ʋetʃaj tʃʰe",
-          "past (was done)": "ʋetʃajũ"
+          "present (is done)": "jamāy che",
+          "past (was done)": "jamāyum̐"
         }
       },
       {
-        "lemma": "વાંચવું",
-        "key": "vanchvum",
-        "reading": "vāñcavum̐",
-        "ipa": "ʋaɲtʃəʋũ",
-        "forms": {
-          "present (is done)": "વંચાય છે",
-          "past (was done)": "વંચાયું"
-        },
-        "readings": {
-          "present (is done)": "vañcāy che",
-          "past (was done)": "vañcāyum̐"
-        },
-        "ipas": {
-          "present (is done)": "ʋəɲtʃaj tʃʰe",
-          "past (was done)": "ʋəɲtʃajũ"
-        }
-      },
-      {
-        "lemma": "જોવું",
-        "key": "jovum",
-        "reading": "jovum̐",
-        "ipa": "dʒoʋũ",
-        "forms": {
-          "present (is done)": "જોવાય છે",
-          "past (was done)": "જોવાયું"
-        },
-        "readings": {
-          "present (is done)": "jovāy che",
-          "past (was done)": "jovāyum̐"
-        },
-        "ipas": {
-          "present (is done)": "dʒoʋaj tʃʰe",
-          "past (was done)": "dʒoʋajũ"
-        }
-      },
-      {
-        "lemma": "કરવું",
-        "key": "karvum",
-        "reading": "karvum̐",
-        "ipa": "kərʋũ",
-        "forms": {
-          "present (is done)": "કરાય છે",
-          "past (was done)": "કરાયું"
-        },
-        "readings": {
-          "present (is done)": "karāy che",
-          "past (was done)": "karāyum̐"
-        },
-        "ipas": {
-          "present (is done)": "kəraj tʃʰe",
-          "past (was done)": "kərajũ"
-        }
-      },
-      {
-        "lemma": "બોલવું",
-        "key": "bolvum",
-        "reading": "bolvum̐",
-        "ipa": "bolʋũ",
-        "forms": {
-          "present (is done)": "બોલાય છે",
-          "past (was done)": "બોલાયું"
-        },
-        "readings": {
-          "present (is done)": "bolāy che",
-          "past (was done)": "bolāyum̐"
-        },
-        "ipas": {
-          "present (is done)": "bolaj tʃʰe",
-          "past (was done)": "bolajũ"
-        }
-      },
-      {
-        "lemma": "ખરીદવું",
-        "key": "kharidvum",
-        "reading": "kharidvum̐",
-        "ipa": "kʰərid̪ʋũ",
-        "forms": {
-          "present (is done)": "ખરીદાય છે",
-          "past (was done)": "ખરીદાયું"
-        },
-        "readings": {
-          "present (is done)": "kharidāy che",
-          "past (was done)": "kharidāyum̐"
-        },
-        "ipas": {
-          "present (is done)": "kʰərid̪aj tʃʰe",
-          "past (was done)": "kʰərid̪ajũ"
-        }
-      },
-      {
-        "lemma": "લેવું",
-        "key": "levum",
-        "reading": "levum̐",
-        "ipa": "leʋũ",
-        "forms": {
-          "present (is done)": "લેવાય છે",
-          "past (was done)": "લેવાયું"
-        },
-        "readings": {
-          "present (is done)": "levāy che",
-          "past (was done)": "levāyum̐"
-        },
-        "ipas": {
-          "present (is done)": "leʋaj tʃʰe",
-          "past (was done)": "leʋajũ"
-        }
-      },
-      {
-        "lemma": "આપવું",
-        "key": "apvum",
-        "reading": "āpvum̐",
-        "ipa": "apʋũ",
-        "forms": {
-          "present (is done)": "અપાય છે",
-          "past (was done)": "અપાયું"
-        },
-        "readings": {
-          "present (is done)": "apāy che",
-          "past (was done)": "apāyum̐"
-        },
-        "ipas": {
-          "present (is done)": "əpaj tʃʰe",
-          "past (was done)": "əpajũ"
-        }
-      },
-      {
-        "lemma": "પીવું",
-        "key": "pivum",
-        "reading": "pivum̐",
-        "ipa": "piʋũ",
+        "word": "gu-0506",
         "forms": {
           "present (is done)": "પીવાય છે",
           "past (was done)": "પીવાયું"
@@ -197,17 +201,439 @@
         "readings": {
           "present (is done)": "pivāy che",
           "past (was done)": "pivāyum̐"
-        },
-        "ipas": {
-          "present (is done)": "piʋaj tʃʰe",
-          "past (was done)": "piʋajũ"
         }
       },
       {
-        "lemma": "ચૂકવવું",
-        "key": "chukvavum",
-        "reading": "cukvvum̐",
-        "ipa": "tʃukʋʋũ",
+        "word": "gu-0507",
+        "forms": {
+          "present (is done)": "રાંધાય છે",
+          "past (was done)": "રાંધાયું"
+        },
+        "readings": {
+          "present (is done)": "rāndhāy che",
+          "past (was done)": "rāndhāyum̐"
+        }
+      },
+      {
+        "word": "gu-0510",
+        "forms": {
+          "present (is done)": "વંચાય છે",
+          "past (was done)": "વંચાયું"
+        },
+        "readings": {
+          "present (is done)": "vañcāy che",
+          "past (was done)": "vañcāyum̐"
+        }
+      },
+      {
+        "word": "gu-0511",
+        "forms": {
+          "present (is done)": "લખાય છે",
+          "past (was done)": "લખાયું"
+        },
+        "readings": {
+          "present (is done)": "lakhāy che",
+          "past (was done)": "lakhāyum̐"
+        }
+      },
+      {
+        "word": "gu-0512",
+        "forms": {
+          "present (is done)": "બોલાય છે",
+          "past (was done)": "બોલાયું"
+        },
+        "readings": {
+          "present (is done)": "bolāy che",
+          "past (was done)": "bolāyum̐"
+        }
+      },
+      {
+        "word": "gu-0513",
+        "forms": {
+          "present (is done)": "સાંભળાય છે",
+          "past (was done)": "સાંભળાયું"
+        },
+        "readings": {
+          "present (is done)": "sāmbhaḷāy che",
+          "past (was done)": "sāmbhaḷāyum̐"
+        }
+      },
+      {
+        "word": "gu-0514",
+        "forms": {
+          "present (is done)": "જોવાય છે",
+          "past (was done)": "જોવાયું"
+        },
+        "readings": {
+          "present (is done)": "jovāy che",
+          "past (was done)": "jovāyum̐"
+        }
+      },
+      {
+        "word": "gu-0516",
+        "forms": {
+          "present (is done)": "ધોવાય છે",
+          "past (was done)": "ધોવાયું"
+        },
+        "readings": {
+          "present (is done)": "dhovāy che",
+          "past (was done)": "dhovāyum̐"
+        }
+      },
+      {
+        "word": "gu-0517",
+        "forms": {
+          "present (is done)": "ખરીદાય છે",
+          "past (was done)": "ખરીદાયું"
+        },
+        "readings": {
+          "present (is done)": "kharidāy che",
+          "past (was done)": "kharidāyum̐"
+        }
+      },
+      {
+        "word": "gu-1050",
+        "forms": {
+          "present (is done)": "કરાય છે",
+          "past (was done)": "કરાયું"
+        },
+        "readings": {
+          "present (is done)": "karāy che",
+          "past (was done)": "karāyum̐"
+        }
+      },
+      {
+        "word": "gu-1054",
+        "forms": {
+          "present (is done)": "ગવાય છે",
+          "past (was done)": "ગવાયું"
+        },
+        "readings": {
+          "present (is done)": "gavāy che",
+          "past (was done)": "gavāyum̐"
+        }
+      },
+      {
+        "word": "gu-1055",
+        "forms": {
+          "present (is done)": "લેવાય છે",
+          "past (was done)": "લેવાયું"
+        },
+        "readings": {
+          "present (is done)": "levāy che",
+          "past (was done)": "levāyum̐"
+        }
+      },
+      {
+        "word": "gu-1056",
+        "forms": {
+          "present (is done)": "અપાય છે",
+          "past (was done)": "અપાયું"
+        },
+        "readings": {
+          "present (is done)": "apāy che",
+          "past (was done)": "apāyum̐"
+        }
+      },
+      {
+        "word": "gu-1057",
+        "forms": {
+          "present (is done)": "શીખાય છે",
+          "past (was done)": "શીખાયું"
+        },
+        "readings": {
+          "present (is done)": "śikhāy che",
+          "past (was done)": "śikhāyum̐"
+        }
+      },
+      {
+        "word": "gu-1058",
+        "forms": {
+          "present (is done)": "ભણાય છે",
+          "past (was done)": "ભણાયું"
+        },
+        "readings": {
+          "present (is done)": "bhaṇāy che",
+          "past (was done)": "bhaṇāyum̐"
+        }
+      },
+      {
+        "word": "gu-1059",
+        "forms": {
+          "present (is done)": "વિચારાય છે",
+          "past (was done)": "વિચારાયું"
+        },
+        "readings": {
+          "present (is done)": "vicārāy che",
+          "past (was done)": "vicārāyum̐"
+        }
+      },
+      {
+        "word": "gu-1060",
+        "forms": {
+          "present (is done)": "સમજાય છે",
+          "past (was done)": "સમજાયું"
+        },
+        "readings": {
+          "present (is done)": "samjāy che",
+          "past (was done)": "samjāyum̐"
+        }
+      },
+      {
+        "word": "gu-1061",
+        "forms": {
+          "present (is done)": "પહેરાય છે",
+          "past (was done)": "પહેરાયું"
+        },
+        "readings": {
+          "present (is done)": "paherāy che",
+          "past (was done)": "paherāyum̐"
+        }
+      },
+      {
+        "word": "gu-1062",
+        "forms": {
+          "present (is done)": "કહેવાય છે",
+          "past (was done)": "કહેવાયું"
+        },
+        "readings": {
+          "present (is done)": "kahevāy che",
+          "past (was done)": "kahevāyum̐"
+        }
+      },
+      {
+        "word": "gu-1292",
+        "forms": {
+          "present (is done)": "મૂકાય છે",
+          "past (was done)": "મૂકાયું"
+        },
+        "readings": {
+          "present (is done)": "mukāy che",
+          "past (was done)": "mukāyum̐"
+        }
+      },
+      {
+        "word": "gu-1294",
+        "forms": {
+          "present (is done)": "ઢાંકાય છે",
+          "past (was done)": "ઢાંકાયું"
+        },
+        "readings": {
+          "present (is done)": "ḍhāṅkāy che",
+          "past (was done)": "ḍhāṅkāyum̐"
+        }
+      },
+      {
+        "word": "gu-1295",
+        "forms": {
+          "present (is done)": "કાપાય છે",
+          "past (was done)": "કાપાયું"
+        },
+        "readings": {
+          "present (is done)": "kāpāy che",
+          "past (was done)": "kāpāyum̐"
+        }
+      },
+      {
+        "word": "gu-1296",
+        "forms": {
+          "present (is done)": "તળાય છે",
+          "past (was done)": "તળાયું"
+        },
+        "readings": {
+          "present (is done)": "taḷāy che",
+          "past (was done)": "taḷāyum̐"
+        }
+      },
+      {
+        "word": "gu-1297",
+        "forms": {
+          "present (is done)": "ઉકાળાય છે",
+          "past (was done)": "ઉકાળાયું"
+        },
+        "readings": {
+          "present (is done)": "ukāḷāy che",
+          "past (was done)": "ukāḷāyum̐"
+        }
+      },
+      {
+        "word": "gu-1298",
+        "forms": {
+          "present (is done)": "હલાવાય છે",
+          "past (was done)": "હલાવાયું"
+        },
+        "readings": {
+          "present (is done)": "halāvāy che",
+          "past (was done)": "halāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-1299",
+        "forms": {
+          "present (is done)": "ભરાય છે",
+          "past (was done)": "ભરાયું"
+        },
+        "readings": {
+          "present (is done)": "bharāy che",
+          "past (was done)": "bharāyum̐"
+        }
+      },
+      {
+        "word": "gu-1304",
+        "forms": {
+          "present (is done)": "શીખવાય છે",
+          "past (was done)": "શીખવાયું"
+        },
+        "readings": {
+          "present (is done)": "śikhvāy che",
+          "past (was done)": "śikhvāyum̐"
+        }
+      },
+      {
+        "word": "gu-1305",
+        "forms": {
+          "present (is done)": "પૂછાય છે",
+          "past (was done)": "પૂછાયું"
+        },
+        "readings": {
+          "present (is done)": "puchāy che",
+          "past (was done)": "puchāyum̐"
+        }
+      },
+      {
+        "word": "gu-1312",
+        "forms": {
+          "present (is done)": "પકડાય છે",
+          "past (was done)": "પકડાયું"
+        },
+        "readings": {
+          "present (is done)": "pakḍāy che",
+          "past (was done)": "pakḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-1343",
+        "forms": {
+          "present (is done)": "શોધાય છે",
+          "past (was done)": "શોધાયું"
+        },
+        "readings": {
+          "present (is done)": "śodhāy che",
+          "past (was done)": "śodhāyum̐"
+        }
+      },
+      {
+        "word": "gu-1344",
+        "forms": {
+          "present (is done)": "બનાવાય છે",
+          "past (was done)": "બનાવાયું"
+        },
+        "readings": {
+          "present (is done)": "banāvāy che",
+          "past (was done)": "banāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-1345",
+        "forms": {
+          "present (is done)": "લાવાય છે",
+          "past (was done)": "લાવાયું"
+        },
+        "readings": {
+          "present (is done)": "lāvāy che",
+          "past (was done)": "lāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-1346",
+        "forms": {
+          "present (is done)": "ગણાય છે",
+          "past (was done)": "ગણાયું"
+        },
+        "readings": {
+          "present (is done)": "gaṇāy che",
+          "past (was done)": "gaṇāyum̐"
+        }
+      },
+      {
+        "word": "gu-1347",
+        "forms": {
+          "present (is done)": "માગાય છે",
+          "past (was done)": "માગાયું"
+        },
+        "readings": {
+          "present (is done)": "māgāy che",
+          "past (was done)": "māgāyum̐"
+        }
+      },
+      {
+        "word": "gu-1348",
+        "forms": {
+          "present (is done)": "તોડાય છે",
+          "past (was done)": "તોડાયું"
+        },
+        "readings": {
+          "present (is done)": "toḍāy che",
+          "past (was done)": "toḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-1370",
+        "forms": {
+          "present (is done)": "ખોલાય છે",
+          "past (was done)": "ખોલાયું"
+        },
+        "readings": {
+          "present (is done)": "kholāy che",
+          "past (was done)": "kholāyum̐"
+        }
+      },
+      {
+        "word": "gu-2313",
+        "forms": {
+          "present (is done)": "ઉજવાય છે",
+          "past (was done)": "ઉજવાયું"
+        },
+        "readings": {
+          "present (is done)": "ujvāy che",
+          "past (was done)": "ujvāyum̐"
+        }
+      },
+      {
+        "word": "gu-2323",
+        "forms": {
+          "present (is done)": "સજાવાય છે",
+          "past (was done)": "સજાવાયું"
+        },
+        "readings": {
+          "present (is done)": "sajāvāy che",
+          "past (was done)": "sajāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-2348",
+        "forms": {
+          "present (is done)": "વેચાય છે",
+          "past (was done)": "વેચાયું"
+        },
+        "readings": {
+          "present (is done)": "vecāy che",
+          "past (was done)": "vecāyum̐"
+        }
+      },
+      {
+        "word": "gu-2359",
+        "forms": {
+          "present (is done)": "બદલાય છે",
+          "past (was done)": "બદલાયું"
+        },
+        "readings": {
+          "present (is done)": "badlāy che",
+          "past (was done)": "badlāyum̐"
+        }
+      },
+      {
+        "word": "gu-2360",
         "forms": {
           "present (is done)": "ચૂકવાય છે",
           "past (was done)": "ચૂકવાયું"
@@ -215,17 +641,560 @@
         "readings": {
           "present (is done)": "cukvāy che",
           "past (was done)": "cukvāyum̐"
-        },
-        "ipas": {
-          "present (is done)": "tʃukʋaj tʃʰe",
-          "past (was done)": "tʃukʋajũ"
         }
       },
       {
-        "lemma": "વાપરવું",
-        "key": "vaparvum",
-        "reading": "vāprvum̐",
-        "ipa": "ʋaprʋũ",
+        "word": "gu-2368",
+        "forms": {
+          "present (is done)": "ખર્ચાય છે",
+          "past (was done)": "ખર્ચાયું"
+        },
+        "readings": {
+          "present (is done)": "kharcāy che",
+          "past (was done)": "kharcāyum̐"
+        }
+      },
+      {
+        "word": "gu-2417",
+        "forms": {
+          "present (is done)": "તપાસાય છે",
+          "past (was done)": "તપાસાયું"
+        },
+        "readings": {
+          "present (is done)": "tapāsāy che",
+          "past (was done)": "tapāsāyum̐"
+        }
+      },
+      {
+        "word": "gu-2444",
+        "forms": {
+          "present (is done)": "બાફાય છે",
+          "past (was done)": "બાફાયું"
+        },
+        "readings": {
+          "present (is done)": "bāphāy che",
+          "past (was done)": "bāphāyum̐"
+        }
+      },
+      {
+        "word": "gu-2445",
+        "forms": {
+          "present (is done)": "શેકાય છે",
+          "past (was done)": "શેકાયું"
+        },
+        "readings": {
+          "present (is done)": "śekāy che",
+          "past (was done)": "śekāyum̐"
+        }
+      },
+      {
+        "word": "gu-2446",
+        "forms": {
+          "present (is done)": "વાટાય છે",
+          "past (was done)": "વાટાયું"
+        },
+        "readings": {
+          "present (is done)": "vāṭāy che",
+          "past (was done)": "vāṭāyum̐"
+        }
+      },
+      {
+        "word": "gu-2447",
+        "forms": {
+          "present (is done)": "છોલાય છે",
+          "past (was done)": "છોલાયું"
+        },
+        "readings": {
+          "present (is done)": "cholāy che",
+          "past (was done)": "cholāyum̐"
+        }
+      },
+      {
+        "word": "gu-2474",
+        "forms": {
+          "present (is done)": "વઘારાય છે",
+          "past (was done)": "વઘારાયું"
+        },
+        "readings": {
+          "present (is done)": "vaghārāy che",
+          "past (was done)": "vaghārāyum̐"
+        }
+      },
+      {
+        "word": "gu-2475",
+        "forms": {
+          "present (is done)": "ગાળાય છે",
+          "past (was done)": "ગાળાયું"
+        },
+        "readings": {
+          "present (is done)": "gāḷāy che",
+          "past (was done)": "gāḷāyum̐"
+        }
+      },
+      {
+        "word": "gu-2476",
+        "forms": {
+          "present (is done)": "ભેળવાય છે",
+          "past (was done)": "ભેળવાયું"
+        },
+        "readings": {
+          "present (is done)": "bheḷvāy che",
+          "past (was done)": "bheḷvāyum̐"
+        }
+      },
+      {
+        "word": "gu-2477",
+        "forms": {
+          "present (is done)": "ગૂંથાય છે",
+          "past (was done)": "ગૂંથાયું"
+        },
+        "readings": {
+          "present (is done)": "gunthāy che",
+          "past (was done)": "gunthāyum̐"
+        }
+      },
+      {
+        "word": "gu-2478",
+        "forms": {
+          "present (is done)": "વણાય છે",
+          "past (was done)": "વણાયું"
+        },
+        "readings": {
+          "present (is done)": "vaṇāy che",
+          "past (was done)": "vaṇāyum̐"
+        }
+      },
+      {
+        "word": "gu-2632",
+        "forms": {
+          "present (is done)": "ભણાવાય છે",
+          "past (was done)": "ભણાવાયું"
+        },
+        "readings": {
+          "present (is done)": "bhaṇāvāy che",
+          "past (was done)": "bhaṇāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-2679",
+        "forms": {
+          "present (is done)": "દોરાય છે",
+          "past (was done)": "દોરાયું"
+        },
+        "readings": {
+          "present (is done)": "dorāy che",
+          "past (was done)": "dorāyum̐"
+        }
+      },
+      {
+        "word": "gu-2680",
+        "forms": {
+          "present (is done)": "રંગાય છે",
+          "past (was done)": "રંગાયું"
+        },
+        "readings": {
+          "present (is done)": "raṅgāy che",
+          "past (was done)": "raṅgāyum̐"
+        }
+      },
+      {
+        "word": "gu-2924",
+        "forms": {
+          "present (is done)": "ખંખેરાય છે",
+          "past (was done)": "ખંખેરાયું"
+        },
+        "readings": {
+          "present (is done)": "khaṅkherāy che",
+          "past (was done)": "khaṅkherāyum̐"
+        }
+      },
+      {
+        "word": "gu-2925",
+        "forms": {
+          "present (is done)": "લૂછાય છે",
+          "past (was done)": "લૂછાયું"
+        },
+        "readings": {
+          "present (is done)": "luchāy che",
+          "past (was done)": "luchāyum̐"
+        }
+      },
+      {
+        "word": "gu-2926",
+        "forms": {
+          "present (is done)": "સૂકવાય છે",
+          "past (was done)": "સૂકવાયું"
+        },
+        "readings": {
+          "present (is done)": "sukvāy che",
+          "past (was done)": "sukvāyum̐"
+        }
+      },
+      {
+        "word": "gu-2927",
+        "forms": {
+          "present (is done)": "પલાળાય છે",
+          "past (was done)": "પલાળાયું"
+        },
+        "readings": {
+          "present (is done)": "palāḷāy che",
+          "past (was done)": "palāḷāyum̐"
+        }
+      },
+      {
+        "word": "gu-2928",
+        "forms": {
+          "present (is done)": "ઉપાડાય છે",
+          "past (was done)": "ઉપાડાયું"
+        },
+        "readings": {
+          "present (is done)": "upāḍāy che",
+          "past (was done)": "upāḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-2929",
+        "forms": {
+          "present (is done)": "ગોઠવાય છે",
+          "past (was done)": "ગોઠવાયું"
+        },
+        "readings": {
+          "present (is done)": "goṭhvāy che",
+          "past (was done)": "goṭhvāyum̐"
+        }
+      },
+      {
+        "word": "gu-2930",
+        "forms": {
+          "present (is done)": "સમારાય છે",
+          "past (was done)": "સમારાયું"
+        },
+        "readings": {
+          "present (is done)": "samārāy che",
+          "past (was done)": "samārāyum̐"
+        }
+      },
+      {
+        "word": "gu-2932",
+        "forms": {
+          "present (is done)": "કાઢાય છે",
+          "past (was done)": "કાઢાયું"
+        },
+        "readings": {
+          "present (is done)": "kāḍhāy che",
+          "past (was done)": "kāḍhāyum̐"
+        }
+      },
+      {
+        "word": "gu-2933",
+        "forms": {
+          "present (is done)": "ઢોળાય છે",
+          "past (was done)": "ઢોળાયું"
+        },
+        "readings": {
+          "present (is done)": "ḍhoḷāy che",
+          "past (was done)": "ḍhoḷāyum̐"
+        }
+      },
+      {
+        "word": "gu-2934",
+        "forms": {
+          "present (is done)": "રાખાય છે",
+          "past (was done)": "રાખાયું"
+        },
+        "readings": {
+          "present (is done)": "rākhāy che",
+          "past (was done)": "rākhāyum̐"
+        }
+      },
+      {
+        "word": "gu-2936",
+        "forms": {
+          "present (is done)": "વહેંચાય છે",
+          "past (was done)": "વહેંચાયું"
+        },
+        "readings": {
+          "present (is done)": "vaheñcāy che",
+          "past (was done)": "vaheñcāyum̐"
+        }
+      },
+      {
+        "word": "gu-2996",
+        "forms": {
+          "present (is done)": "ઓળખાય છે",
+          "past (was done)": "ઓળખાયું"
+        },
+        "readings": {
+          "present (is done)": "oḷkhāy che",
+          "past (was done)": "oḷkhāyum̐"
+        }
+      },
+      {
+        "word": "gu-3030",
+        "forms": {
+          "present (is done)": "ચાટાય છે",
+          "past (was done)": "ચાટાયું"
+        },
+        "readings": {
+          "present (is done)": "cāṭāy che",
+          "past (was done)": "cāṭāyum̐"
+        }
+      },
+      {
+        "word": "gu-3031",
+        "forms": {
+          "present (is done)": "ઓગળાય છે",
+          "past (was done)": "ઓગળાયું"
+        },
+        "readings": {
+          "present (is done)": "ogḷāy che",
+          "past (was done)": "ogḷāyum̐"
+        }
+      },
+      {
+        "word": "gu-3032",
+        "forms": {
+          "present (is done)": "ઉઘાડાય છે",
+          "past (was done)": "ઉઘાડાયું"
+        },
+        "readings": {
+          "present (is done)": "ughāḍāy che",
+          "past (was done)": "ughāḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-3033",
+        "forms": {
+          "present (is done)": "પકવાય છે",
+          "past (was done)": "પકવાયું"
+        },
+        "readings": {
+          "present (is done)": "pakvāy che",
+          "past (was done)": "pakvāyum̐"
+        }
+      },
+      {
+        "word": "gu-3034",
+        "forms": {
+          "present (is done)": "ગૂંથાય છે",
+          "past (was done)": "ગૂંથાયું"
+        },
+        "readings": {
+          "present (is done)": "gunthāy che",
+          "past (was done)": "gunthāyum̐"
+        }
+      },
+      {
+        "word": "gu-3039",
+        "forms": {
+          "present (is done)": "ખેડાય છે",
+          "past (was done)": "ખેડાયું"
+        },
+        "readings": {
+          "present (is done)": "kheḍāy che",
+          "past (was done)": "kheḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-3040",
+        "forms": {
+          "present (is done)": "વાવાય છે",
+          "past (was done)": "વાવાયું"
+        },
+        "readings": {
+          "present (is done)": "vāvāy che",
+          "past (was done)": "vāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-3041",
+        "forms": {
+          "present (is done)": "લણાય છે",
+          "past (was done)": "લણાયું"
+        },
+        "readings": {
+          "present (is done)": "laṇāy che",
+          "past (was done)": "laṇāyum̐"
+        }
+      },
+      {
+        "word": "gu-3043",
+        "forms": {
+          "present (is done)": "ચૂંટાય છે",
+          "past (was done)": "ચૂંટાયું"
+        },
+        "readings": {
+          "present (is done)": "cuṇṭāy che",
+          "past (was done)": "cuṇṭāyum̐"
+        }
+      },
+      {
+        "word": "gu-3046",
+        "forms": {
+          "present (is done)": "ચલાવાય છે",
+          "past (was done)": "ચલાવાયું"
+        },
+        "readings": {
+          "present (is done)": "calāvāy che",
+          "past (was done)": "calāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-3047",
+        "forms": {
+          "present (is done)": "ઓઢાય છે",
+          "past (was done)": "ઓઢાયું"
+        },
+        "readings": {
+          "present (is done)": "oḍhāy che",
+          "past (was done)": "oḍhāyum̐"
+        }
+      },
+      {
+        "word": "gu-3048",
+        "forms": {
+          "present (is done)": "ઘૂંટાય છે",
+          "past (was done)": "ઘૂંટાયું"
+        },
+        "readings": {
+          "present (is done)": "ghuṇṭāy che",
+          "past (was done)": "ghuṇṭāyum̐"
+        }
+      },
+      {
+        "word": "gu-3049",
+        "forms": {
+          "present (is done)": "ભૂલાય છે",
+          "past (was done)": "ભૂલાયું"
+        },
+        "readings": {
+          "present (is done)": "bhulāy che",
+          "past (was done)": "bhulāyum̐"
+        }
+      },
+      {
+        "word": "gu-3050",
+        "forms": {
+          "present (is done)": "માનાય છે",
+          "past (was done)": "માનાયું"
+        },
+        "readings": {
+          "present (is done)": "mānāy che",
+          "past (was done)": "mānāyum̐"
+        }
+      },
+      {
+        "word": "gu-3051",
+        "forms": {
+          "present (is done)": "બોલાવાય છે",
+          "past (was done)": "બોલાવાયું"
+        },
+        "readings": {
+          "present (is done)": "bolāvāy che",
+          "past (was done)": "bolāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-3052",
+        "forms": {
+          "present (is done)": "ફેંકાય છે",
+          "past (was done)": "ફેંકાયું"
+        },
+        "readings": {
+          "present (is done)": "pheṅkāy che",
+          "past (was done)": "pheṅkāyum̐"
+        }
+      },
+      {
+        "word": "gu-3053",
+        "forms": {
+          "present (is done)": "છોડાય છે",
+          "past (was done)": "છોડાયું"
+        },
+        "readings": {
+          "present (is done)": "choḍāy che",
+          "past (was done)": "choḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-3054",
+        "forms": {
+          "present (is done)": "ચીરાય છે",
+          "past (was done)": "ચીરાયું"
+        },
+        "readings": {
+          "present (is done)": "cirāy che",
+          "past (was done)": "cirāyum̐"
+        }
+      },
+      {
+        "word": "gu-3055",
+        "forms": {
+          "present (is done)": "ચઢાય છે",
+          "past (was done)": "ચઢાયું"
+        },
+        "readings": {
+          "present (is done)": "caḍhāy che",
+          "past (was done)": "caḍhāyum̐"
+        }
+      },
+      {
+        "word": "gu-3057",
+        "forms": {
+          "present (is done)": "ગળાય છે",
+          "past (was done)": "ગળાયું"
+        },
+        "readings": {
+          "present (is done)": "gaḷāy che",
+          "past (was done)": "gaḷāyum̐"
+        }
+      },
+      {
+        "word": "gu-3058",
+        "forms": {
+          "present (is done)": "પાડાય છે",
+          "past (was done)": "પાડાયું"
+        },
+        "readings": {
+          "present (is done)": "pāḍāy che",
+          "past (was done)": "pāḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-3060",
+        "forms": {
+          "present (is done)": "મોકલાય છે",
+          "past (was done)": "મોકલાયું"
+        },
+        "readings": {
+          "present (is done)": "moklāy che",
+          "past (was done)": "moklāyum̐"
+        }
+      },
+      {
+        "word": "gu-3061",
+        "forms": {
+          "present (is done)": "દબાવાય છે",
+          "past (was done)": "દબાવાયું"
+        },
+        "readings": {
+          "present (is done)": "dabāvāy che",
+          "past (was done)": "dabāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-3063",
+        "forms": {
+          "present (is done)": "સંભાળાય છે",
+          "past (was done)": "સંભાળાયું"
+        },
+        "readings": {
+          "present (is done)": "sambhāḷāy che",
+          "past (was done)": "sambhāḷāyum̐"
+        }
+      },
+      {
+        "word": "gu-3064",
         "forms": {
           "present (is done)": "વાપરાય છે",
           "past (was done)": "વાપરાયું"
@@ -233,12 +1202,676 @@
         "readings": {
           "present (is done)": "vāprāy che",
           "past (was done)": "vāprāyum̐"
+        }
+      },
+      {
+        "word": "gu-3065",
+        "forms": {
+          "present (is done)": "ઉતારાય છે",
+          "past (was done)": "ઉતારાયું"
         },
-        "ipas": {
-          "present (is done)": "ʋapraj tʃʰe",
-          "past (was done)": "ʋaprajũ"
+        "readings": {
+          "present (is done)": "utārāy che",
+          "past (was done)": "utārāyum̐"
+        }
+      },
+      {
+        "word": "gu-3066",
+        "forms": {
+          "present (is done)": "ગોતાય છે",
+          "past (was done)": "ગોતાયું"
+        },
+        "readings": {
+          "present (is done)": "gotāy che",
+          "past (was done)": "gotāyum̐"
+        }
+      },
+      {
+        "word": "gu-3067",
+        "forms": {
+          "present (is done)": "સાચવાય છે",
+          "past (was done)": "સાચવાયું"
+        },
+        "readings": {
+          "present (is done)": "sācvāy che",
+          "past (was done)": "sācvāyum̐"
+        }
+      },
+      {
+        "word": "gu-3069",
+        "forms": {
+          "present (is done)": "ચાવાય છે",
+          "past (was done)": "ચાવાયું"
+        },
+        "readings": {
+          "present (is done)": "cāvāy che",
+          "past (was done)": "cāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-3070",
+        "forms": {
+          "present (is done)": "ઘસાય છે",
+          "past (was done)": "ઘસાયું"
+        },
+        "readings": {
+          "present (is done)": "ghasāy che",
+          "past (was done)": "ghasāyum̐"
+        }
+      },
+      {
+        "word": "gu-3071",
+        "forms": {
+          "present (is done)": "ઉંચકાય છે",
+          "past (was done)": "ઉંચકાયું"
+        },
+        "readings": {
+          "present (is done)": "uñcakāy che",
+          "past (was done)": "uñcakāyum̐"
+        }
+      },
+      {
+        "word": "gu-3074",
+        "forms": {
+          "present (is done)": "ખેંચાય છે",
+          "past (was done)": "ખેંચાયું"
+        },
+        "readings": {
+          "present (is done)": "kheñcāy che",
+          "past (was done)": "kheñcāyum̐"
+        }
+      },
+      {
+        "word": "gu-3075",
+        "forms": {
+          "present (is done)": "ગોંદાય છે",
+          "past (was done)": "ગોંદાયું"
+        },
+        "readings": {
+          "present (is done)": "gondāy che",
+          "past (was done)": "gondāyum̐"
+        }
+      },
+      {
+        "word": "gu-3077",
+        "forms": {
+          "present (is done)": "ભેટાય છે",
+          "past (was done)": "ભેટાયું"
+        },
+        "readings": {
+          "present (is done)": "bheṭāy che",
+          "past (was done)": "bheṭāyum̐"
+        }
+      },
+      {
+        "word": "gu-3081",
+        "forms": {
+          "present (is done)": "આવકારાય છે",
+          "past (was done)": "આવકારાયું"
+        },
+        "readings": {
+          "present (is done)": "āvkārāy che",
+          "past (was done)": "āvkārāyum̐"
+        }
+      },
+      {
+        "word": "gu-3083",
+        "forms": {
+          "present (is done)": "સ્વીકારાય છે",
+          "past (was done)": "સ્વીકારાયું"
+        },
+        "readings": {
+          "present (is done)": "svikārāy che",
+          "past (was done)": "svikārāyum̐"
+        }
+      },
+      {
+        "word": "gu-3084",
+        "forms": {
+          "present (is done)": "ઉમેરાય છે",
+          "past (was done)": "ઉમેરાયું"
+        },
+        "readings": {
+          "present (is done)": "umerāy che",
+          "past (was done)": "umerāyum̐"
+        }
+      },
+      {
+        "word": "gu-3085",
+        "forms": {
+          "present (is done)": "ચીતરાય છે",
+          "past (was done)": "ચીતરાયું"
+        },
+        "readings": {
+          "present (is done)": "citrāy che",
+          "past (was done)": "citrāyum̐"
+        }
+      },
+      {
+        "word": "gu-3086",
+        "forms": {
+          "present (is done)": "ઉઠાડાય છે",
+          "past (was done)": "ઉઠાડાયું"
+        },
+        "readings": {
+          "present (is done)": "uṭhāḍāy che",
+          "past (was done)": "uṭhāḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-3087",
+        "forms": {
+          "present (is done)": "સીવાય છે",
+          "past (was done)": "સીવાયું"
+        },
+        "readings": {
+          "present (is done)": "sivāy che",
+          "past (was done)": "sivāyum̐"
+        }
+      },
+      {
+        "word": "gu-3088",
+        "forms": {
+          "present (is done)": "ચાખાય છે",
+          "past (was done)": "ચાખાયું"
+        },
+        "readings": {
+          "present (is done)": "cākhāy che",
+          "past (was done)": "cākhāyum̐"
+        }
+      },
+      {
+        "word": "gu-3089",
+        "forms": {
+          "present (is done)": "સૂંઘાય છે",
+          "past (was done)": "સૂંઘાયું"
+        },
+        "readings": {
+          "present (is done)": "suṅghāy che",
+          "past (was done)": "suṅghāyum̐"
+        }
+      },
+      {
+        "word": "gu-3132",
+        "forms": {
+          "present (is done)": "જોડાય છે",
+          "past (was done)": "જોડાયું"
+        },
+        "readings": {
+          "present (is done)": "joḍāy che",
+          "past (was done)": "joḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-3134",
+        "forms": {
+          "present (is done)": "રોકાય છે",
+          "past (was done)": "રોકાયું"
+        },
+        "readings": {
+          "present (is done)": "rokāy che",
+          "past (was done)": "rokāyum̐"
+        }
+      },
+      {
+        "word": "gu-3137",
+        "forms": {
+          "present (is done)": "સમજાવાય છે",
+          "past (was done)": "સમજાવાયું"
+        },
+        "readings": {
+          "present (is done)": "samjāvāy che",
+          "past (was done)": "samjāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-3233",
+        "forms": {
+          "present (is done)": "ખોવાય છે",
+          "past (was done)": "ખોવાયું"
+        },
+        "readings": {
+          "present (is done)": "khovāy che",
+          "past (was done)": "khovāyum̐"
+        }
+      },
+      {
+        "word": "gu-3246",
+        "forms": {
+          "present (is done)": "પહોંચાડાય છે",
+          "past (was done)": "પહોંચાડાયું"
+        },
+        "readings": {
+          "present (is done)": "pahoñcāḍāy che",
+          "past (was done)": "pahoñcāḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-3289",
+        "forms": {
+          "present (is done)": "ઉગાડાય છે",
+          "past (was done)": "ઉગાડાયું"
+        },
+        "readings": {
+          "present (is done)": "ugāḍāy che",
+          "past (was done)": "ugāḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-3574",
+        "forms": {
+          "present (is done)": "અનુભવાય છે",
+          "past (was done)": "અનુભવાયું"
+        },
+        "readings": {
+          "present (is done)": "anubhvāy che",
+          "past (was done)": "anubhvāyum̐"
+        }
+      },
+      {
+        "word": "gu-3629",
+        "forms": {
+          "present (is done)": "નોંધાવાય છે",
+          "past (was done)": "નોંધાવાયું"
+        },
+        "readings": {
+          "present (is done)": "nondhāvāy che",
+          "past (was done)": "nondhāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-3659",
+        "forms": {
+          "present (is done)": "ધારાય છે",
+          "past (was done)": "ધારાયું"
+        },
+        "readings": {
+          "present (is done)": "dhārāy che",
+          "past (was done)": "dhārāyum̐"
+        }
+      },
+      {
+        "word": "gu-3678",
+        "forms": {
+          "present (is done)": "નકારાય છે",
+          "past (was done)": "નકારાયું"
+        },
+        "readings": {
+          "present (is done)": "nakārāy che",
+          "past (was done)": "nakārāyum̐"
+        }
+      },
+      {
+        "word": "gu-3693",
+        "forms": {
+          "present (is done)": "સૂચવાય છે",
+          "past (was done)": "સૂચવાયું"
+        },
+        "readings": {
+          "present (is done)": "sucvāy che",
+          "past (was done)": "sucvāyum̐"
+        }
+      },
+      {
+        "word": "gu-4076",
+        "forms": {
+          "present (is done)": "કમાવાય છે",
+          "past (was done)": "કમાવાયું"
+        },
+        "readings": {
+          "present (is done)": "kamāvāy che",
+          "past (was done)": "kamāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-4106",
+        "forms": {
+          "present (is done)": "બચાવાય છે",
+          "past (was done)": "બચાવાયું"
+        },
+        "readings": {
+          "present (is done)": "bacāvāy che",
+          "past (was done)": "bacāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-4117",
+        "forms": {
+          "present (is done)": "ફેલાવાય છે",
+          "past (was done)": "ફેલાવાયું"
+        },
+        "readings": {
+          "present (is done)": "phelāvāy che",
+          "past (was done)": "phelāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-4118",
+        "forms": {
+          "present (is done)": "ઘટાડાય છે",
+          "past (was done)": "ઘટાડાયું"
+        },
+        "readings": {
+          "present (is done)": "ghaṭāḍāy che",
+          "past (was done)": "ghaṭāḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-4153",
+        "forms": {
+          "present (is done)": "સિંચાય છે",
+          "past (was done)": "સિંચાયું"
+        },
+        "readings": {
+          "present (is done)": "siñcāy che",
+          "past (was done)": "siñcāyum̐"
+        }
+      },
+      {
+        "word": "gu-4156",
+        "forms": {
+          "present (is done)": "પાકાય છે",
+          "past (was done)": "પાકાયું"
+        },
+        "readings": {
+          "present (is done)": "pākāy che",
+          "past (was done)": "pākāyum̐"
+        }
+      },
+      {
+        "word": "gu-4362",
+        "forms": {
+          "present (is done)": "વગાડાય છે",
+          "past (was done)": "વગાડાયું"
+        },
+        "readings": {
+          "present (is done)": "vagāḍāy che",
+          "past (was done)": "vagāḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-4663",
+        "forms": {
+          "present (is done)": "માંગાય છે",
+          "past (was done)": "માંગાયું"
+        },
+        "readings": {
+          "present (is done)": "māṅgāy che",
+          "past (was done)": "māṅgāyum̐"
+        }
+      },
+      {
+        "word": "gu-4681",
+        "forms": {
+          "present (is done)": "ખસેડાય છે",
+          "past (was done)": "ખસેડાયું"
+        },
+        "readings": {
+          "present (is done)": "khaseḍāy che",
+          "past (was done)": "khaseḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-4711",
+        "forms": {
+          "present (is done)": "અટકાવાય છે",
+          "past (was done)": "અટકાવાયું"
+        },
+        "readings": {
+          "present (is done)": "aṭkāvāy che",
+          "past (was done)": "aṭkāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-4912",
+        "forms": {
+          "present (is done)": "ગુમાવાય છે",
+          "past (was done)": "ગુમાવાયું"
+        },
+        "readings": {
+          "present (is done)": "gumāvāy che",
+          "past (was done)": "gumāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-4913",
+        "forms": {
+          "present (is done)": "મેળવાય છે",
+          "past (was done)": "મેળવાયું"
+        },
+        "readings": {
+          "present (is done)": "meḷvāy che",
+          "past (was done)": "meḷvāyum̐"
+        }
+      },
+      {
+        "word": "gu-4914",
+        "forms": {
+          "present (is done)": "લડાય છે",
+          "past (was done)": "લડાયું"
+        },
+        "readings": {
+          "present (is done)": "laḍāy che",
+          "past (was done)": "laḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-4916",
+        "forms": {
+          "present (is done)": "ખખડાવાય છે",
+          "past (was done)": "ખખડાવાયું"
+        },
+        "readings": {
+          "present (is done)": "khakhḍāvāy che",
+          "past (was done)": "khakhḍāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-4917",
+        "forms": {
+          "present (is done)": "ચોરાય છે",
+          "past (was done)": "ચોરાયું"
+        },
+        "readings": {
+          "present (is done)": "corāy che",
+          "past (was done)": "corāyum̐"
+        }
+      },
+      {
+        "word": "gu-4920",
+        "forms": {
+          "present (is done)": "ધકેલાય છે",
+          "past (was done)": "ધકેલાયું"
+        },
+        "readings": {
+          "present (is done)": "dhakelāy che",
+          "past (was done)": "dhakelāyum̐"
+        }
+      },
+      {
+        "word": "gu-4923",
+        "forms": {
+          "present (is done)": "ખોદાય છે",
+          "past (was done)": "ખોદાયું"
+        },
+        "readings": {
+          "present (is done)": "khodāy che",
+          "past (was done)": "khodāyum̐"
+        }
+      },
+      {
+        "word": "gu-4926",
+        "forms": {
+          "present (is done)": "વીંધાય છે",
+          "past (was done)": "વીંધાયું"
+        },
+        "readings": {
+          "present (is done)": "vindhāy che",
+          "past (was done)": "vindhāyum̐"
+        }
+      },
+      {
+        "word": "gu-4927",
+        "forms": {
+          "present (is done)": "ફાડાય છે",
+          "past (was done)": "ફાડાયું"
+        },
+        "readings": {
+          "present (is done)": "phāḍāy che",
+          "past (was done)": "phāḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-4934",
+        "forms": {
+          "present (is done)": "છાપાય છે",
+          "past (was done)": "છાપાયું"
+        },
+        "readings": {
+          "present (is done)": "chāpāy che",
+          "past (was done)": "chāpāyum̐"
+        }
+      },
+      {
+        "word": "gu-4935",
+        "forms": {
+          "present (is done)": "છાંટાય છે",
+          "past (was done)": "છાંટાયું"
+        },
+        "readings": {
+          "present (is done)": "chāṇṭāy che",
+          "past (was done)": "chāṇṭāyum̐"
+        }
+      },
+      {
+        "word": "gu-4944",
+        "forms": {
+          "present (is done)": "ઝડપાય છે",
+          "past (was done)": "ઝડપાયું"
+        },
+        "readings": {
+          "present (is done)": "jhaḍpāy che",
+          "past (was done)": "jhaḍpāyum̐"
+        }
+      },
+      {
+        "word": "gu-4947",
+        "forms": {
+          "present (is done)": "તાકાય છે",
+          "past (was done)": "તાકાયું"
+        },
+        "readings": {
+          "present (is done)": "tākāy che",
+          "past (was done)": "tākāyum̐"
+        }
+      },
+      {
+        "word": "gu-4951",
+        "forms": {
+          "present (is done)": "ઢસડાય છે",
+          "past (was done)": "ઢસડાયું"
+        },
+        "readings": {
+          "present (is done)": "ḍhasḍāy che",
+          "past (was done)": "ḍhasḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-4954",
+        "forms": {
+          "present (is done)": "ગૂંચવાય છે",
+          "past (was done)": "ગૂંચવાયું"
+        },
+        "readings": {
+          "present (is done)": "guñcavāy che",
+          "past (was done)": "guñcavāyum̐"
+        }
+      },
+      {
+        "word": "gu-4956",
+        "forms": {
+          "present (is done)": "ઠોકાય છે",
+          "past (was done)": "ઠોકાયું"
+        },
+        "readings": {
+          "present (is done)": "ṭhokāy che",
+          "past (was done)": "ṭhokāyum̐"
+        }
+      },
+      {
+        "word": "gu-4958",
+        "forms": {
+          "present (is done)": "પછાડાય છે",
+          "past (was done)": "પછાડાયું"
+        },
+        "readings": {
+          "present (is done)": "pachāḍāy che",
+          "past (was done)": "pachāḍāyum̐"
+        }
+      },
+      {
+        "word": "gu-4962",
+        "forms": {
+          "present (is done)": "પોકારાય છે",
+          "past (was done)": "પોકારાયું"
+        },
+        "readings": {
+          "present (is done)": "pokārāy che",
+          "past (was done)": "pokārāyum̐"
+        }
+      },
+      {
+        "word": "gu-5214",
+        "forms": {
+          "present (is done)": "ફરમાવાય છે",
+          "past (was done)": "ફરમાવાયું"
+        },
+        "readings": {
+          "present (is done)": "pharmāvāy che",
+          "past (was done)": "pharmāvāyum̐"
+        }
+      },
+      {
+        "word": "gu-5215",
+        "forms": {
+          "present (is done)": "આરોગાય છે",
+          "past (was done)": "આરોગાયું"
+        },
+        "readings": {
+          "present (is done)": "ārogāy che",
+          "past (was done)": "ārogāyum̐"
+        }
+      },
+      {
+        "word": "gu-5611",
+        "forms": {
+          "present (is done)": "સોંપાય છે",
+          "past (was done)": "સોંપાયું"
+        },
+        "readings": {
+          "present (is done)": "sompāy che",
+          "past (was done)": "sompāyum̐"
         }
       }
     ]
-  }
+  },
+  "rules": [
+    {
+      "id": "gu-rule-passive",
+      "slots": [
+        "present (is done)",
+        "past (was done)"
+      ],
+      "words": [
+        {
+          "word": "લખાય",
+          "reading": "lakhāy"
+        },
+        {
+          "word": "જોવાય",
+          "reading": "jovāy"
+        }
+      ]
+    }
+  ]
 }
