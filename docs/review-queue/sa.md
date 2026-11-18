@@ -273,3 +273,110 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | sa-health, sa-feelings, sa-opinions (derived noun rows) | sa-health, sa-feelings, sa-opinions | DERIVED rows, flagged: the stem has no declension table on en.wiktionary (sa-7052 उपचार, sa-7053 व्रण, sa-7054 अजीर्ण, sa-7055 हरिद्रा, sa-7056 काय, sa-7068 बस्तिकोप, sa-7233 आह्लाद, sa-7234 प्रमोद, sa-7250 अनुशय, sa-7436 अभिप्राय, sa-7437 आगम). Their rows are derived from the model paradigm of the stem type (Whitney §§ 326-330 for a-stems, §§ 344-352 for ā-stems); each lemma and gloss is on en.wiktionary. Reviewer to check. |
 | sa-7062, sa-7235 (derived noun rows) | sa-health, sa-feelings | DERIVED, partly: the Wiktionary table exists but two forms differ (sa-7062 वृक्क: gen-pl, ins-sg; sa-7235 रति: loc-sg). The row keeps the model form; reviewer to confirm. |
 | unit-level | sa-health, sa-feelings, sa-opinions (word counts) | Counts after the 2026-11-17 gap pass: health 71 of 80, feelings 56 of 90, opinions 50 of 70. Still short: candidates tried were the Wiktionary category pages (sa:Emotions, sa:Pathology, sa:Anatomy), related-term links, and Nāṭyaśāstra rasa and bhāva names; many verified lemmas are already on other cards (cross-reference, not duplicate); Monier-Williams could not be read (archive.org Sanskrit–English text not reachable, dsal blocked); the remaining i- or u-masculine and consonant-stem nouns need paradigms not built yet. |
+| sa-9000 to sa-9024, sa-9300 to sa-9349, sa-9600 to sa-9624 (noun rows only, sa-grammar-a-stems) | sa-relationships, sa-history, sa-arts | DERIVED: the 83 noun rows of these units follow the a-stem model (Whitney 326 to 330, as the table's rāma and phala rows) and are flagged derived; they were not read from each word's Wiktionary declension table in this session. Spot-check the neuter and masculine cells against the declension tables. | Haiku deck worker | 2026-11-18 |
+| course-wide | sa-relationships, sa-history, sa-arts | LEMMA SOURCE: each lemma was confirmed as an en.wiktionary Sanskrit entry in the kaikki.org extract of Wiktionary (read 2026-11-18); the live en.wiktionary API answered with rate-limit errors during the session. The glosses are the extract's first sense, shortened. Confirm each gloss against the live page. | Haiku deck worker | 2026-11-18 |
+| course-wide | sa-relationships, sa-history, sa-arts | CULTURE SOURCES: the culture notes cite Wikipedia articles (Natya Shastra, Rasa (aesthetics), Kavya, Chandas, Stupa, Vihara, Chaitya, Edicts of Ashoka); their text was written from the article titles and general knowledge in this session and has not been checked against the pages. | Haiku deck worker | 2026-11-18 |
+| unit-level | sa-relationships, sa-history, sa-arts (word counts) | Real counts: relationships 24 of 70 planned, history 50 of 90, arts 25 of 80. The reason for each missing candidate is listed below the table (one line each). The planned counts in the path are replaced by the real ones. | Haiku deck worker | 2026-11-18 |
+
+## Shortfall reasons: relationships (2026-11-18)
+
+Each line is one candidate that was tried and not kept, with the reason.
+
+### relationships: 24 of 70 planned words kept (units real count; shortfall 46)
+
+- मित्र (friend): already taught as sa-5744 in sa-government; not repeated (rule: one card per lemma)
+- द्वेष (hatred, enmity): already taught as sa-6000 in sa-dharma; not repeated (rule: one card per lemma)
+- स्नेह (affection, love): already taught as sa-7200 in sa-feelings; not repeated (rule: one card per lemma)
+- कृतज्ञ (grateful): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- नमस्कार (salutation, greeting with folded hands): already taught as sa-1829 in sa-ritual; not repeated (rule: one card per lemma)
+- अभिवादन (respectful greeting): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- प्रतिवेश (neighbourhood, a neighbour's house): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- सहचर (companion, comrade): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- सहाय (helper, companion): already taught as sa-5524 in sa-journey; not repeated (rule: one card per lemma)
+- सुजन (good person): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- दुर्जन (bad person, villain): already taught as sa-5820 in sa-dharma; not repeated (rule: one card per lemma)
+- विश्वास (trust, confidence): already taught as sa-7405 in sa-opinions; not repeated (rule: one card per lemma)
+- सत्य (truth): already taught as sa-7426 in sa-opinions; not repeated (rule: one card per lemma)
+- स्वागत (welcome): already taught as sa-0003 in sa-phrasebook; not repeated (rule: one card per lemma)
+- धन्यवाद (thanks, thank you): already taught as sa-0002 in sa-phrasebook; not repeated (rule: one card per lemma)
+- कलह (quarrel): already taught as sa-5941 in sa-stories; not repeated (rule: one card per lemma)
+- विवाद (dispute, argument): already taught as sa-5753 in sa-government; not repeated (rule: one card per lemma)
+- वियोग (separation): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- परिहास (joke, jesting): already taught as sa-7415 in sa-opinions; not repeated (rule: one card per lemma)
+- सौहार्द (cordiality, goodwill): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- आदर (respect, honour): already taught as sa-5851 in sa-dharma; not repeated (rule: one card per lemma)
+- अनादर (disrespect): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- सम्मान (honour, esteem): already taught as sa-5852 in sa-dharma; not repeated (rule: one card per lemma)
+- उपकार (favour, help): already taught as sa-5839 in sa-dharma; not repeated (rule: one card per lemma)
+- अपकार (harm, injury): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- आतिथ्य (hospitality): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- सदाचार (good conduct): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- विनय (humility, modesty): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- सौजन्य (kindness, courtesy): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- वयस्य (peer, friend of the same age): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- प्रत्युपकार (return of a favour): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- कुशल (skilled, well, prosperous): already taught as sa-0016 in sa-phrasebook; not repeated (rule: one card per lemma)
+- विश्वस्त (trusted, trustworthy): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- शुभ (auspiciousness, good fortune): already taught as sa-0017 in sa-phrasebook; not repeated (rule: one card per lemma)
+- मङ्गल (welfare, auspiciousness): already taught as sa-5923 in sa-festivals; not repeated (rule: one card per lemma)
+- प्रणाम (bowing down, reverence): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- आशीर्वाद (blessing): already taught as sa-5967 in sa-festivals; not repeated (rule: one card per lemma)
+- अवमान (insult, disrespect): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- शिष्टाचार (polite conduct, etiquette): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- सादर (respectfully): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- सहर्ष (gladly, joyfully): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- सप्रेम (lovingly): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- पुनर्मिलन (reunion): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- अतिथि (guest): already taught as sa-5511 in sa-journey; not repeated (rule: one card per lemma)
+- बन्धु (relative, friend): already taught as sa-1039 in sa-family; not repeated (rule: one card per lemma)
+- परिचय (acquaintance, introduction): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- सन्देश (message): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- पत्र (letter): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- लेख (writing, letter): already taught as sa-5709 in sa-government; not repeated (rule: one card per lemma)
+- स्नेहिल (affectionate): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- क्षमा (forgiveness): already taught as sa-3832 in sa-dharma-sentences; not repeated (rule: one card per lemma)
+- क्षमण (forgiveness, pardon): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- क्षमायाचन (asking forgiveness): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- सेवा (service): already taught as sa-3281 in sa-work-sentences; not repeated (rule: one card per lemma)
+- सेवक (servant, attendant): already taught as sa-5890 in sa-stories; not repeated (rule: one card per lemma)
+- सहचारिन् (companion): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- प्रीति (love, delight): already taught as sa-5854 in sa-dharma; not repeated (rule: one card per lemma)
+- आदरणीय (respected, honourable): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- स्वजन (one's own people, kin): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- परजन (other people, stranger): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- सुहृद (well-wisher, friend): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- मित्रता (friendship): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- शत्रु (enemy): already taught as sa-5745 in sa-government; not repeated (rule: one card per lemma)
+- संलाप (conversation, dialogue): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- वार्ता (news, conversation): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- उपवेशन (sitting near, a seat): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- स्वागतम् (welcome): already taught as sa-0003 in sa-phrasebook; not repeated (rule: one card per lemma)
+- अभ्यागत (guest, visitor): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- आगन्तुक (visitor): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- सख्य (friendship): already taught as sa-7253 in sa-feelings; not repeated (rule: one card per lemma)
+- सौहृद (friendship): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- प्रणिपात (prostration, bowing down): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- प्रणत (bowed, humble): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- वन्दन (salutation): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- अभिनन्दन (greeting, congratulation): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- सत्कार (hospitality, respect): already taught as sa-5525 in sa-journey; not repeated (rule: one card per lemma)
+- आतिथेय (host): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- आसन (seat): already taught as sa-1752 in sa-home; not repeated (rule: one card per lemma)
+- अर्घ्य (respectful offering): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- पाद्य (water for washing the feet): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- आह्वान (invitation, calling): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- संगम (meeting, confluence): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- विरह (separation): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- संवाद (dialogue): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- वचन (word, speech): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- प्रत्युत्तर (reply): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- उपायन (gift to a superior): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- प्रतिग्रह (accepting a gift): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- सादरम् (respectfully): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- सहर्षम् (gladly): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- सप्रेमम् (lovingly): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- प्रियम् (pleasantly): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- मित्रत्व (friendship): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- शिष्य (pupil): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- गुरु (teacher): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- सहचारी (companion): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
