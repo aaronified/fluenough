@@ -4,6 +4,7 @@ import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
 import '../../core/models/card.dart';
+import '../../l10n/app_localizations.dart';
 import '../theme.dart';
 
 /// A sign card's sign (ADR-0056): the picture drawn from its Formal
@@ -12,9 +13,9 @@ import '../theme.dart';
 ///
 /// The picture is a WebP on a light background, so it sits on a white card
 /// with rounded corners and a thin edge, which reads in the dark theme too.
-/// Its label for a screen reader is the card's meaning, `native`, unless
-/// [semanticLabel] says another (a choice of signs says only "Sign 1 of 4",
-/// as [PictureTile] does for pictures). Without the file on the phone, or
+/// Its label for a screen reader is "Sign": the card's meaning would give
+/// the answer away in Recognition, so it is given as [semanticLabel] only
+/// where the meaning is on screen already. Without the file on the phone, or
 /// when it cannot be read, a hand mark stands in: never the text.
 class SignImage extends StatelessWidget {
   const SignImage(this.card, {super.key, this.size = 160, this.semanticLabel});
@@ -24,7 +25,7 @@ class SignImage extends StatelessWidget {
   /// The side of the square it is drawn in.
   final double size;
 
-  /// What a screen reader says; the card's meaning by default.
+  /// What a screen reader says; "Sign" by default.
   final String? semanticLabel;
 
   @override
@@ -37,11 +38,12 @@ class SignImage extends StatelessWidget {
     final mark = Icon(
       Icons.sign_language_outlined,
       size: size / 3,
-      color: scheme.outline,
+      // Dark grey on the white card, in both themes (6:1).
+      color: const Color(0xFF616161),
     );
     return Semantics(
       image: true,
-      label: semanticLabel ?? card.native,
+      label: semanticLabel ?? AppLocalizations.of(context)!.signImageLabel,
       excludeSemantics: true,
       child: Container(
         key: const ValueKey<String>('sign-image'),

@@ -149,6 +149,7 @@ class WordSheet extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     textAlign: TextAlign.start,
                     card: card,
+                    semanticLabel: card.native,
                   ),
                 ),
                 if (reading != null)

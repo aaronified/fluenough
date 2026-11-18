@@ -750,6 +750,10 @@ class Card {
     return <DrillMode>{
       for (final mode in allowed)
         if (!modes.contains(mode) &&
+            // A sign has no sound to hear or say (ADR-0056), whatever the
+            // phone's voices and whatever `modes` says.
+            !(isSign &&
+                (mode == DrillMode.listening || mode == DrillMode.speaking)) &&
             (ttsAvailable || mode != DrillMode.listening) &&
             (speechAvailable || mode != DrillMode.speaking) &&
             !(noGrammar && mode == DrillMode.grammarUnderstood))
@@ -897,9 +901,6 @@ List<String> wordsForBases(String text) => <String>[
         word,
 ];
 
-/// A punctuation mark, symbol or separator other than an apostrophe or a
-/// braille cell, which Unicode files as a symbol but is a letter of its
-/// script, so that ⠉⠁⠞ is one word (ADR-0043).
 /// One unstyled sign in Formal SignWriting in ASCII (FSW), as a sign card's
 /// target is written: a sign box and its positioned symbols
 /// (`M507x507S1f720487x492`, Deck Format, "Sign languages").
@@ -910,6 +911,9 @@ final RegExp _fsw = RegExp(
 /// Whether [text] is a sign written in FSW (never shown to a learner).
 bool isFswText(String text) => _fsw.hasMatch(text);
 
+/// A punctuation mark, symbol or separator other than an apostrophe or a
+/// braille cell, which Unicode files as a symbol but is a letter of its
+/// script, so that ⠉⠁⠞ is one word (ADR-0043).
 final RegExp _baseBreak = RegExp(
   r"(?!['’\u2800-\u28FF])[\p{P}\p{S}\p{Z}]",
   unicode: true,

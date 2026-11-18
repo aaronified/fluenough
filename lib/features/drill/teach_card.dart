@@ -164,7 +164,13 @@ class TeachCard extends StatelessWidget {
       word = Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          TargetText.hero(card.target, language: language, card: card),
+          TargetText.hero(
+            card.target,
+            language: language,
+            card: card,
+            // The meaning is on the card.
+            semanticLabel: card.native,
+          ),
           if (readingText != null)
             Text(
               readingText,

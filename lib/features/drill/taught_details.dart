@@ -222,6 +222,8 @@ class TaughtDetails extends StatelessWidget {
           language: language,
           color: wordColor,
           card: card,
+          // Answered: the meaning is shown.
+          semanticLabel: card.native,
         )
       else
         TargetText.card(
@@ -230,6 +232,7 @@ class TaughtDetails extends StatelessWidget {
           fontSize: size,
           color: wordColor,
           card: card,
+          semanticLabel: card.native,
         ),
       if (reading != null)
         ReadingWithInfo(

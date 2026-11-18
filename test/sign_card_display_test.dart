@@ -12,7 +12,10 @@ import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/skill.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/ask.dart';
+import 'package:fluenough/core/tts/fixed_tts_engine.dart';
+import 'package:fluenough/core/tts/tts_engine.dart';
 import 'package:fluenough/features/drill/choice_drill.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
@@ -46,14 +49,14 @@ class OneFile implements CardMedia {
   String? localPath(String path) => this.path;
 }
 
-String signDeck({String typed = 'typed: false'}) {
+String signDeck({String typed = 'typed: false', bool modes = true}) {
   final rows = StringBuffer();
   for (final MapEntry(:key, :value) in signs.entries) {
     rows.writeln(
       '  - { id: $key, target: "${value.$1}", native: "${value.$2}", '
       'image: "decks/ase/images/$key.webp", '
       'image_credit: { source: "https://example.org/s", license: "CC0-1.0", '
-      'credit: "Test" }, modes: [listening, speaking] }',
+      'credit: "Test" }${modes ? ', modes: [listening, speaking]' : ''} }',
     );
   }
   return '''
@@ -81,13 +84,16 @@ cards:
   - { id: ase-0104, target: "\u{1D866}", native: "claw hand", modes: [listening, speaking] }
 ''';
 
-AppState learner(String deckId, String yaml) {
+AppState learner(String deckId, String yaml, {bool voice = false}) {
   final file = File('${Directory.systemTemp.createTempSync().path}/sign.png')
     ..writeAsBytesSync(pixel);
   return AppState.test(
     decks: MemoryDeckSource(<String, String>{'decks/ase/$deckId.yaml': yaml}),
     progress: MemoryProgress(),
     media: OneFile(file.path),
+    tts: voice
+        ? FixedTtsEngine(const <String>{'ase', 'en'})
+        : const NullTtsEngine(),
     settings: SettingsNotifier(
       spokenLanguages: const <String>['en'],
       learningLanguages: const <String>['ase'],
@@ -142,8 +148,10 @@ void main() {
     expect(find.byType(Image), findsOneWidget);
     expect(find.textContaining('M507x507'), findsNothing);
     expect(find.textContaining('S10000'), findsNothing);
-    // A screen reader hears the meaning, as the picture is the word.
-    expect(find.bySemanticsLabel('ant'), findsWidgets);
+    // Recognition: a screen reader is told "Sign", not the meaning, which
+    // is the answer.
+    expect(find.bySemanticsLabel(l10nOf(tester).signImageLabel), findsOneWidget);
+    expect(find.bySemanticsLabel('ant'), findsNothing);
     semantics.dispose();
   });
 
@@ -232,6 +240,70 @@ void main() {
     );
     expect(find.byKey(const ValueKey<String>('sign-image')), findsNothing);
     expect(find.text('\u{1D85A}'), findsOneWidget);
+  });
+
+  testWidgets('a choice of signs offers only signs where the deck has enough', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final mixed = signDeck() + symbolDeck.split('cards:\n').last;
+    await open(
+      tester,
+      deckId: 'ase-en-signs',
+      yaml: mixed,
+      target: first,
+      skill: Skill.production,
+      ask: Ask.chooseWord,
+    );
+    final session = tester
+        .widget<ChoiceDrill>(find.byType(ChoiceDrill))
+        .session;
+    expect(session.options, hasLength(4));
+    expect(session.options.every((c) => c.isSign), isTrue);
+    expect(find.byKey(const ValueKey<String>('sign-image')), findsNWidgets(4));
+  });
+
+  testWidgets('a deck with too few signs still asks, with the meaning for the '
+      'other cards', (tester) async {
+    usePhone(tester);
+    final few = signDeck()
+        .split('\n')
+        .where((l) => !l.contains('ase-0004') && !l.contains('ase-0005'))
+        .where((l) => !l.contains('ase-0006'))
+        .join('\n');
+    await open(
+      tester,
+      deckId: 'ase-en-signs',
+      yaml: few + symbolDeck.split('cards:\n').last,
+      target: first,
+      skill: Skill.production,
+      ask: Ask.chooseWord,
+    );
+    expect(find.byType(PictureTile), findsNWidgets(4));
+    expect(find.textContaining('M507x507'), findsNothing);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('a sign is never heard or said, voices or no, modes or none', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final state = await pumpScreen(
+      tester,
+      const SizedBox(),
+      state: learner(
+        'ase-en-signs',
+        signDeck(modes: false, typed: 'tts: en'),
+        voice: true,
+      ),
+    );
+    final cards = state.decks.expand((d) => d.cards).toList();
+    expect(cards, isNotEmpty);
+    for (final card in cards) {
+      final modes = state.drillableModes(card);
+      expect(modes, isNot(contains(DrillMode.listening)), reason: card.id);
+      expect(modes, isNot(contains(DrillMode.speaking)), reason: card.id);
+    }
   });
 
   for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {

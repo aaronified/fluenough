@@ -52,6 +52,7 @@ class TargetText extends StatelessWidget {
     this.textAlign = TextAlign.center,
     this.card,
     this.scripts,
+    this.semanticLabel,
   }) : _sizing = _Sizing.fixed;
 
   /// The big text on a drill card, sized by its length and the card scale.
@@ -64,6 +65,7 @@ class TargetText extends StatelessWidget {
     this.textAlign = TextAlign.center,
     this.card,
     this.scripts,
+    this.semanticLabel,
   }) : fontSize = null,
        _sizing = _Sizing.hero;
 
@@ -78,6 +80,7 @@ class TargetText extends StatelessWidget {
     this.textAlign = TextAlign.center,
     this.card,
     this.scripts,
+    this.semanticLabel,
   }) : _sizing = _Sizing.card;
 
   /// [text] as it is, in [language]: a spelling of a card, shown beneath.
@@ -90,7 +93,8 @@ class TargetText extends StatelessWidget {
     this.textAlign,
     this._sizing,
   ) : card = null,
-      scripts = null;
+      scripts = null,
+      semanticLabel = null;
 
   final String text;
   final LanguageInfo language;
@@ -112,6 +116,10 @@ class TargetText extends StatelessWidget {
   /// The scripts to show [card] in where they are chosen but not saved yet,
   /// as placement's are (#650); null for those the learner learns.
   final Set<String>? scripts;
+
+  /// What a screen reader says of a sign card's picture ([Card.isSign]):
+  /// its meaning where that is on screen already, else "Sign".
+  final String? semanticLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -187,6 +195,7 @@ class TargetText extends StatelessWidget {
     padding: const EdgeInsetsDirectional.symmetric(vertical: 4),
     child: SignImage(
       card,
+      semanticLabel: semanticLabel,
       size: _sizing == _Sizing.hero
           ? signHeroSize(context)
           : ((fontSize ?? 28) * 3).clamp(56.0, 140.0).toDouble(),

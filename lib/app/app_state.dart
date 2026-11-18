@@ -3133,6 +3133,18 @@ class AppState extends ChangeNotifier {
   /// chosen among its own row's alone ([formChoices], DECK-FORMAT.md, Rules
   /// decks).
   List<Card> choicePool(Card card, Ask ask) {
+    final pool = _choicePool(card, ask);
+    if (!card.isSign || ask.choosesAmongForms) return pool;
+    // A sign is chosen among sign pictures (ADR-0056): where the course has
+    // three other signs to offer, nothing else is.
+    final signs = <Card>[
+      for (final other in pool)
+        if (other.isSign) other,
+    ];
+    return signs.map(ask.optionOf).toSet().length >= 3 ? signs : pool;
+  }
+
+  List<Card> _choicePool(Card card, Ask ask) {
     final entry = deckOf(card);
     if (entry == null) return const <Card>[];
     if (ask.choosesAmongForms) return formChoices(card, ask, entry.cards);

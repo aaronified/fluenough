@@ -107,8 +107,16 @@ class PictureTile extends StatelessWidget {
                         // than an emoji.
                         if (card.isSign)
                           SignImage(card, size: 112)
+                        else if (card.hasPicture)
+                          CardPicture(card, size: 72)
                         else
-                          CardPicture(card, size: 72),
+                          // A choice of signs in a deck with too few signs to
+                          // offer: another card is its meaning.
+                          Text(
+                            card.native,
+                            textAlign: TextAlign.center,
+                            style: theme.textTheme.titleMedium,
+                          ),
                         if (answered) ...<Widget>[
                           const SizedBox(height: 8),
                           Text(
