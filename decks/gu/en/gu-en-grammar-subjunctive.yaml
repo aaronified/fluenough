@@ -1,0 +1,35 @@
+"schema": 1
+"id": "gu-en-grammar-subjunctive"
+"kind": "layer"
+"core": "gu-grammar-subjunctive"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "The subjunctive: let me, let us, may it"
+"license": "CC-BY-SA-4.0"
+"description": "The subjunctive form of each verb: may or should, let us, and the polite and plural forms, from the verb's stem with no helper verb. ગમવું (gamvum̐), to like, is left out: it works with મને (mane) and has no person forms, as in મને ગમે (mane game). Not yet checked by a Gujarati speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"table":
+  "slot_name": "person"
+  "slots":
+    "hum": "I"
+    "tu": "you (informal)"
+    "te": "he; she; it"
+    "ame": "we"
+    "tame": "you (plural or polite)"
+    "teo": "they"
+"rules":
+  "gu-rule-subj-i":
+    "name": "I"
+    "explanation": "The stem with {1} (karum̐) for I: may I do."
+  "gu-rule-subj-tu-te":
+    "name": "You, he, she, they"
+    "explanation": "The stem with {1} (kare) for you, he, she and they; the same form for all three."
+  "gu-rule-subj-ame":
+    "name": "We"
+    "explanation": "The stem with {1} (karie) for we: let us do."
+  "gu-rule-subj-tame":
+    "name": "You plural"
+    "explanation": "The stem with {1} (karo) for you plural or polite."

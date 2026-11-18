@@ -1,0 +1,32 @@
+# How SignWriting works: the ideas behind its symbols, shown before the first
+# card and from a deck's Tips (ADR-0016, ADR-0056).
+schema: 1
+kind: "script"
+part: "core"
+id: "ins-script"
+language: "ins"
+features:
+  - id: "drawn"
+    example: "𝡚"
+    letters: ["𝠀", "𝡶"]
+  - id: "handshape"
+    example: "𝠀"
+    letters: ["𝡚", "𝡶", "𝡭", "𝠎"]
+  - id: "facing"
+    example: "𝡚𝪜"
+    letters: ["𝡚", "𝡚𝪛", "𝡚𝪜"]
+  - id: "turning"
+    example: "𝠀𝪢"
+    letters: ["𝠀", "𝠀𝪢", "𝠀𝪪"]
+  - id: "movement"
+    example: "𝤪"
+    letters: ["𝥥", "𝦈", "𝦥"]
+  - id: "contact"
+    example: "𝤅"
+    letters: ["𝤈", "𝤋", "𝤎", "𝤑"]
+  - id: "face"
+    example: "𝨊"
+    letters: ["𝨔", "𝨻", "𝨪"]
+  - id: "layout"
+    example: "𝩭"
+    letters: ["𝧿"]

@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "id": "gu-en-grammar-passive",
+  "kind": "layer",
+  "core": "gu-grammar-passive",
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "name": "The passive: what is done",
+  "license": "CC-BY-SA-4.0",
+  "description": "Saying what is done or was done, without saying by whom, for every transitive verb the course teaches. Intransitive, stative and compound verbs have no passive row: they are in the except list. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "grammar",
+    "unreviewed"
+  ],
+  "table": {
+    "slot_name": "form",
+    "slots": {
+      "present-done": "present: it is done",
+      "past-done": "past: it was done"
+    }
+  },
+  "rules": {
+    "gu-rule-passive": {
+      "name": "passive",
+      "explanation": "The passive says what is done, without saying by whom. After a consonant stem add -āy: {1} (lakhāy) is written, and the past is -āyum for a thing. After a vowel stem add -vāy: {2} (jovāy) is seen. Only a verb that takes an object has a passive. Verbs with no row here are intransitive, stative or compound and are in the except list."
+    }
+  }
+}

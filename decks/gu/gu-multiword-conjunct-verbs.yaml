@@ -1,0 +1,71 @@
+schema: 1
+id: "gu-multiword-conjunct-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+genre: "multiword"
+pattern_family: "conjunct-verb"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "gu-6400"
+    target: "દાખલ કરવું"
+    words: ["દાખલ", "કરવું"]
+    reading: "dākhal karvum"
+    ipa: "d̪akʰəl kərʋum"
+    phonetic: "[d̪akʰəl kərʋum]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "B1"
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "દાખલ", base: "દાખલ", reading: "dākhal" }
+      - { word: "કરવું", ref: "gu-1050" }
+    examples:
+      - target: "ડૉક્ટરે તેને દાખલ કર્યો."
+        reading: "ḍôkṭare tene dākhal karyo."
+        bases:
+          - { word: "ડૉક્ટરે", ref: "gu-0359" }
+          - { word: "તેને", ref: "gu-1010" }
+          - { word: "દાખલ", base: "દાખલ", reading: "dākhal" }
+          - { word: "કર્યો", ref: "gu-1050" }
+      - target: "તેને દાખલ કરવો પડશે."
+        reading: "tene dākhal karvo paḍśe."
+        bases:
+          - { word: "તેને", ref: "gu-1010" }
+          - { word: "દાખલ", base: "દાખલ", reading: "dākhal" }
+          - { word: "કરવો", ref: "gu-1050" }
+          - { word: "પડશે", base: "પડવું", reading: "paḍvum" }
+  - id: "gu-6401"
+    target: "દાઢી કરવી"
+    words: ["દાઢી", "કરવી"]
+    reading: "dāḍhi karvi"
+    ipa: "d̪aɖʱi kərʋi"
+    phonetic: "[d̪aɽʱi kərʋi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "દાઢી", base: "દાઢી", reading: "dāḍhi" }
+      - { word: "કરવી", ref: "gu-1050" }
+    examples:
+      - target: "તે રોજ દાઢી કરે છે."
+        reading: "te roj dāḍhi kare che."
+        bases:
+          - { word: "તે", ref: "gu-1000" }
+          - { word: "રોજ", ref: "gu-1105" }
+          - { word: "દાઢી", base: "દાઢી", reading: "dāḍhi" }
+          - { word: "કરે", ref: "gu-1050" }
+          - { word: "છે", base: "હોવું", reading: "hovum" }
+      - target: "મારે દાઢી કરવી છે."
+        reading: "māre dāḍhi karvi che."
+        bases:
+          - { word: "મારે", ref: "gu-0690" }
+          - { word: "દાઢી", base: "દાઢી", reading: "dāḍhi" }
+          - { word: "કરવી", ref: "gu-1050" }
+          - { word: "છે", base: "હોવું", reading: "hovum" }

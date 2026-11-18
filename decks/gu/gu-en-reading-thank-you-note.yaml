@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "gu-en-reading-thank-you-note",
+  "name": "Reading: A thank-you note",
+  "kind": "reading",
+  "language": {
+    "code": "gu",
+    "iso639_3": "guj",
+    "name": "Gujarati",
+    "script": "gujarati",
+    "tts": "gu-IN",
+    "icon": "ગુ"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this deck, and released under CC BY-SA 4.0",
+  "description": "A short thank-you note written for this deck and released under CC BY-SA 4.0. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "reading",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "gu-thank-you-note",
+      "title": "A thank-you note",
+      "theme": "relationships",
+      "sentences": [
+        {
+          "text": "પ્રિય પાડોશી,",
+          "reading": "priy pāḍośi,",
+          "ipa": "prij paɖoʃi"
+        },
+        {
+          "text": "તમારી મદદ માટે આભાર.",
+          "reading": "tamāri madad māṭe ābhār.",
+          "ipa": "t̪əmari məd̪əd̪ maʈe abʱar"
+        },
+        {
+          "text": "તમે અમને ખૂબ મદદ કરી.",
+          "reading": "tame amne khub madad kari.",
+          "ipa": "t̪əme əmne kʰub məd̪əd̪ kəri"
+        },
+        {
+          "text": "આવતા રવિવારે અમારા ઘરે આવજો.",
+          "reading": "āvtā ravivāre amārā ghare āvjo.",
+          "ipa": "aʋt̪a rəʋiʋare əmara ɡʱəre aʋdʒo"
+        }
+      ],
+      "questions": [
+        {
+          "id": "gu-4651",
+          "prompt": {
+            "en": "What is the note for?"
+          },
+          "options": [
+            {
+              "en": "A gift for a baby"
+            },
+            {
+              "en": "Help from the neighbour"
+            },
+            {
+              "en": "A wedding invitation"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "id": "gu-4652",
+          "prompt": {
+            "en": "The writer asks the neighbour to visit next Sunday."
+          },
+          "answer": true
+        },
+        {
+          "id": "gu-4653",
+          "prompt": {
+            "en": "What does the writer invite the neighbour to?"
+          },
+          "options": [
+            {
+              "en": "Visiting their home"
+            },
+            {
+              "en": "A wedding"
+            },
+            {
+              "en": "A film"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  ]
+}

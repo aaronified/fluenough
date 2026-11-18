@@ -1,0 +1,90 @@
+schema: 1
+id: "gu-multiword-dative-subject"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+genre: "multiword"
+pattern_family: "dative-subject"
+level: "A1"
+tags: ["unreviewed"]
+cards:
+  - id: "gu-6502"
+    target: "ખબર હોવી"
+    words: ["ખબર", "હોવી"]
+    reading: "khabar hovi"
+    ipa: "kʰəbər ɦoʋi"
+    phonetic: "[kʰəbər ɦoʋi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ખબર", ref: "gu-0059" }
+      - { word: "હોવી", base: "હોવું", reading: "hovum" }
+    examples:
+      - target: "મને ખબર છે."
+        reading: "mane khabar che."
+        bases:
+          - { word: "મને", ref: "gu-1008" }
+          - { word: "ખબર", ref: "gu-0059" }
+          - { word: "છે", base: "હોવું", reading: "hovum" }
+      - target: "તને ખબર છે?"
+        reading: "tane khabar che?"
+        bases:
+          - { word: "તને", ref: "gu-1009" }
+          - { word: "ખબર", ref: "gu-0059" }
+          - { word: "છે", base: "હોવું", reading: "hovum" }
+  - id: "gu-6551"
+    target: "જોઈએ"
+    reading: "joie"
+    ipa: "dʒoie"
+    phonetic: "[dʒoie]"
+    phonetic_source: "rules"
+    pos: "verb"
+    level: "A2"
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "મને જોઈએ છે."
+        reading: "mane joie che."
+        bases:
+          - { word: "મને", ref: "gu-1008" }
+          - { word: "જોઈએ", base: "જોઈએ", reading: "joie" }
+          - { word: "છે", base: "હોવું", reading: "hovum" }
+      - target: "મારે કરવું જોઈએ."
+        reading: "māre karvum̐ joie."
+        bases:
+          - { word: "મારે", ref: "gu-0690" }
+          - { word: "કરવું", ref: "gu-1050" }
+          - { word: "જોઈએ", base: "જોઈએ", reading: "joie" }
+  - id: "gu-6552"
+    target: "આવડવું"
+    reading: "āvaḍvum"
+    ipa: "aʋəɖʋum"
+    phonetic: "[aʋəɽʋum]"
+    phonetic_source: "rules"
+    pos: "verb"
+    level: "A2"
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "મને ગાડી ચલાવતાં આવડે છે."
+        reading: "mane gāḍi calāvtām̐ āvḍe che."
+        bases:
+          - { word: "મને", ref: "gu-1008" }
+          - { word: "ગાડી", ref: "gu-0423" }
+          - { word: "ચલાવતાં", base: "ચલાવવું", reading: "calāvvum" }
+          - { word: "આવડે", base: "આવડવું", reading: "āvaḍvum" }
+          - { word: "છે", base: "હોવું", reading: "hovum" }
+      - target: "મને તરવું આવડે છે."
+        reading: "mane tarvum̐ āvḍe che."
+        bases:
+          - { word: "મને", ref: "gu-1008" }
+          - { word: "તરવું", ref: "gu-1342" }
+          - { word: "આવડે", base: "આવડવું", reading: "āvaḍvum" }
+          - { word: "છે", base: "હોવું", reading: "hovum" }
