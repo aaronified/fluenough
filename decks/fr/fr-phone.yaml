@@ -441,3 +441,16 @@ cards:
     examples:
       - { target: "L'écran tactile est cassé.", ipa: "lekʁɑ̃ taktil ɛ kase", bases: [{ word: "L'écran", base: "écran" }, { word: "tactile", base: "tactile" }, { word: "est", base: "être" }, { word: "cassé", base: "casser" }] }
       - { target: "Mon écran tactile est grand.", ipa: "mɔ̃n ekʁɑ̃ taktil ɛ ɡʁɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "écran", ref: "fr-1393" }, { word: "tactile", base: "tactile" }, { word: "est", base: "être" }, { word: "grand", ref: "fr-0410" }] }
+  - id: "fr-4712"
+    target: "mode avion"
+    ipa: "mɔd avjɔ̃"
+    phonetic: "[mɔd̪ avjɔ̃]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "mode", base: "mode" }, { word: "avion", ref: "fr-0861" }]
+    examples:
+      - { target: "Mets le mode avion.", ipa: "mɛ lə mɔd avjɔ̃", bases: [{ word: "Mets", base: "mettre" }, { word: "le", ref: "fr-0543" }, { word: "mode", base: "mode" }, { word: "avion", ref: "fr-0861" }] }
+      - { target: "Je mets mon portable en mode avion.", ipa: "ʒə mɛ mɔ̃ pɔʁtabl ɑ̃ mɔd avjɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", base: "mettre" }, { word: "mon", ref: "fr-0037" }, { word: "portable", ref: "fr-3320" }, { word: "en", base: "en" }, { word: "mode", base: "mode" }, { word: "avion", ref: "fr-0861" }] }
