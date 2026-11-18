@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "gu-en-reading-opinion-column",
+  "name": "Reading: A short opinion column",
+  "kind": "reading",
+  "language": {
+    "code": "gu",
+    "iso639_3": "guj",
+    "name": "Gujarati",
+    "script": "gujarati",
+    "tts": "gu-IN",
+    "icon": "ગુ"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this deck, and released under CC BY-SA 4.0",
+  "description": "A short opinion column on happiness, justice, courage and mistakes. Written for this deck and released under CC BY-SA 4.0. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "reading",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "gu-opinion-column",
+      "title": "Reading: A short opinion column",
+      "theme": "abstract-words",
+      "sentences": [
+        {
+          "text": "મારા મતે સાચી ખુશી પૈસામાં નથી, પણ સંતોષમાં છે.",
+          "reading": "mārā mate sāci khuśi paisāmām̐ nathi, paṇ santośmām̐ che.",
+          "ipa": "mara mət̪e satʃi kʰuʃi pəisamã nət̪ʰi pəɳ sənt̪oʃmã tʃʰe"
+        },
+        {
+          "text": "ન્યાય વિના શાંતિ શક્ય નથી.",
+          "reading": "nyāy vinā śānti śakya nathi.",
+          "ipa": "njaj ʋina ʃant̪i ʃəkjə nət̪ʰi"
+        },
+        {
+          "text": "આપણે સત્ય બોલવાની હિંમત રાખવી જોઈએ.",
+          "reading": "āpṇe satya bolvāni himmat rākhvi joie.",
+          "ipa": "apɳe sət̪jə bolʋani ɦimmət̪ rakʰʋi dʒoie"
+        },
+        {
+          "text": "ભૂલ થાય તો માફી માગો અને ભવિષ્યમાં સુધારો.",
+          "reading": "bhul thāy to māphi māgo ane bhaviśyamām̐ sudhāro.",
+          "ipa": "bʱul t̪ʰaj t̪o mapʰi maɡo əne bʱəʋiʃjəmã sud̪ʱaro"
+        }
+      ],
+      "questions": [
+        {
+          "id": "gu-5038",
+          "prompt": {
+            "en": "According to the column, where is true happiness?"
+          },
+          "options": [
+            {
+              "en": "In money"
+            },
+            {
+              "en": "In contentment"
+            },
+            {
+              "en": "In fame"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "id": "gu-5039",
+          "prompt": {
+            "en": "The writer says peace is possible without justice."
+          },
+          "answer": false
+        },
+        {
+          "id": "gu-5040",
+          "prompt": {
+            "en": "What should you do when you make a mistake?"
+          },
+          "options": [
+            {
+              "en": "Hide it"
+            },
+            {
+              "en": "Ask for forgiveness and improve"
+            },
+            {
+              "en": "Blame someone else"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  ]
+}

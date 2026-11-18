@@ -1,0 +1,426 @@
+# The order Indian Sign Language is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner from
+# English is taught ins-en-<name> for ins-<name> (ADR-0013, ADR-0036).
+#
+# This is also Indian Sign Language's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
+# unit from the first words to B1, with its size in words, its grammar
+# topics, the three milestones, and for each planned unit its listening
+# and reading passages. The file is written by tools/gen_planned_paths.py
+# from the unit template of the language-paths scheme
+# (wiki/Plan-Language-Paths-Scheme.md) and the grammar of the language's
+# family; edit the generator's data, or take a unit over by hand once its
+# deck is written (#959).
+#
+# Unit 1 is written: the SignWriting explainer (ADR-0056), which teaches the
+# symbols a sign is drawn with before the first sign. Every other unit is
+# planned, so the course teaches each as "Coming" until its deck is written;
+# the first signs are the first planned theme. The passages are placeholders:
+# each describes its unit's theme or grammar and is reworded when it is written.
+#
+# From the scheme, for this language: Signs, not words: the SignWriting guide first; handshape, location, movement and the face; fingerspelling; classifiers; role shift.
+#
+# `alphabet` lists the SignWriting explainer's decks: a learner who does not
+# read SignWriting skips them (ADR-0056).
+schema: 1
+kind: "path"
+id: "ins-path"
+language: "ins"
+description: "Indian Sign Language: the planned path to B1. Only the SignWriting explainer is written."
+genders: []
+alphabet: ["ins-script-hands", "ins-script-orientation", "ins-script-contact-movement", "ins-script-face-body"]
+units:
+  - ["ins-script-hands", "ins-script-orientation", "ins-script-contact-movement", "ins-script-face-body"]
+  - planned: { id: "ins-questions", theme: "questions", words: 12 }
+    listening_passages:
+      - { id: "questions-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme yes, no and questions, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "questions-text", text: { "en": "A short text in Indian Sign Language on the theme yes, no and questions, written in SignWriting" } }
+  - planned: { id: "ins-pronouns", theme: "pronouns", words: 36 }
+    listening_passages:
+      - { id: "pronouns-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme pronouns and people words, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "pronouns-text", text: { "en": "A short text in Indian Sign Language on the theme pronouns and people words, written in SignWriting" } }
+  - planned: { id: "ins-family", theme: "family", words: 28 }
+    listening_passages:
+      - { id: "family-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme family, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "family-text", text: { "en": "A short text in Indian Sign Language on the theme family, written in SignWriting" } }
+  - planned: { id: "ins-numbers-1-20", theme: "numbers-1-20", words: 22 }
+    listening_passages:
+      - { id: "numbers-1-20-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme numbers 1 to 20, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "numbers-1-20-text", text: { "en": "A short text in Indian Sign Language on the theme numbers 1 to 20, written in SignWriting" } }
+  - planned: { id: "ins-about-me", theme: "about-me", words: 8 }
+    listening_passages:
+      - { id: "about-me-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme talking about yourself, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "about-me-text", text: { "en": "A short text in Indian Sign Language on the theme talking about yourself, written in SignWriting" } }
+  - planned: { id: "ins-everyday-verbs", theme: "everyday-verbs", words: 36 }
+    listening_passages:
+      - { id: "everyday-verbs-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme everyday verbs, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "everyday-verbs-text", text: { "en": "A short text in Indian Sign Language on the theme everyday verbs, written in SignWriting" } }
+  - planned: { id: "ins-adverbs", theme: "adverbs", words: 55 }
+    listening_passages:
+      - { id: "adverbs-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme adverbs, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "adverbs-text", text: { "en": "A short text in Indian Sign Language on the theme adverbs, written in SignWriting" } }
+  - planned: { id: "ins-quantities", theme: "quantities", words: 33 }
+    listening_passages:
+      - { id: "quantities-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme quantities, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "quantities-text", text: { "en": "A short text in Indian Sign Language on the theme quantities, written in SignWriting" } }
+  - planned: { id: "ins-describing", theme: "describing", words: 44 }
+    listening_passages:
+      - { id: "describing-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme describing things and feelings, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "describing-text", text: { "en": "A short text in Indian Sign Language on the theme describing things and feelings, written in SignWriting" } }
+  - planned: { id: "ins-time", theme: "time", words: 20 }
+    listening_passages:
+      - { id: "time-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme time, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "time-text", text: { "en": "A short text in Indian Sign Language on the theme time, written in SignWriting" } }
+  - planned: { id: "ins-grammar-space-and-pointing", grammar: ["use-of-space", "pointing-and-pronouns"] }
+    listening_passages:
+      - { id: "grammar-space-and-pointing-heard", text: { "en": "A short signed passage in Indian Sign Language showing use of space, pointing and pronouns, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "grammar-space-and-pointing-text", text: { "en": "A short text in Indian Sign Language showing use of space, pointing and pronouns, written in SignWriting" } }
+  - planned: { id: "ins-location", theme: "location", words: 15 }
+    listening_passages:
+      - { id: "location-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme location, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "location-text", text: { "en": "A short text in Indian Sign Language on the theme location, written in SignWriting" } }
+  - planned: { id: "ins-more-verbs", theme: "more-verbs", words: 35 }
+    listening_passages:
+      - { id: "more-verbs-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme more verbs, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "more-verbs-text", text: { "en": "A short text in Indian Sign Language on the theme more verbs, written in SignWriting" } }
+  - planned: { id: "ins-work", theme: "work", words: 21 }
+    listening_passages:
+      - { id: "work-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme work, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "work-text", text: { "en": "A short text in Indian Sign Language on the theme work, written in SignWriting" } }
+  - planned: { id: "ins-numbers-big", theme: "numbers-big", words: 14 }
+    listening_passages:
+      - { id: "numbers-big-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme tens and big numbers, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "numbers-big-text", text: { "en": "A short text in Indian Sign Language on the theme tens and big numbers, written in SignWriting" } }
+  - planned: { id: "ins-food", theme: "food", words: 70 }
+    listening_passages:
+      - { id: "food-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme food, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "food-text", text: { "en": "A short text in Indian Sign Language on the theme food, written in SignWriting" } }
+  - planned: { id: "ins-grammar-sign-order", grammar: ["sign-order", "topic-comment"] }
+    listening_passages:
+      - { id: "grammar-sign-order-heard", text: { "en": "A short signed passage in Indian Sign Language showing sign order, topic comment, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "grammar-sign-order-text", text: { "en": "A short text in Indian Sign Language showing sign order, topic comment, written in SignWriting" } }
+  - planned: { id: "ins-groceries", theme: "groceries", words: 18 }
+    listening_passages:
+      - { id: "groceries-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme groceries, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "groceries-text", text: { "en": "A short text in Indian Sign Language on the theme groceries, written in SignWriting" } }
+  - planned: { id: "ins-market", theme: "market", words: 8 }
+    listening_passages:
+      - { id: "market-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme market, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "market-text", text: { "en": "A short text in Indian Sign Language on the theme market, written in SignWriting" } }
+  - planned: { id: "ins-directions", theme: "directions", words: 13 }
+    listening_passages:
+      - { id: "directions-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme directions, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "directions-text", text: { "en": "A short text in Indian Sign Language on the theme directions, written in SignWriting" } }
+  - planned: { id: "ins-transport", theme: "transport", words: 9 }
+    listening_passages:
+      - { id: "transport-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme transport, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "transport-text", text: { "en": "A short text in Indian Sign Language on the theme transport, written in SignWriting" } }
+  - planned: { id: "ins-body", theme: "body", words: 31 }
+    listening_passages:
+      - { id: "body-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme body, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "body-text", text: { "en": "A short text in Indian Sign Language on the theme body, written in SignWriting" } }
+  - planned: { id: "ins-grammar-negation-questions", grammar: ["negation", "question-signs", "facial-grammar"] }
+    listening_passages:
+      - { id: "grammar-negation-questions-heard", text: { "en": "A short signed passage in Indian Sign Language showing negation, question signs, facial grammar, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "grammar-negation-questions-text", text: { "en": "A short text in Indian Sign Language showing negation, question signs, facial grammar, written in SignWriting" } }
+  - planned: { id: "ins-places", theme: "places", words: 46 }
+    listening_passages:
+      - { id: "places-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme places, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "places-text", text: { "en": "A short text in Indian Sign Language on the theme places, written in SignWriting" } }
+  - planned: { id: "ins-things", theme: "things", words: 43 }
+    listening_passages:
+      - { id: "things-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme things, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "things-text", text: { "en": "A short text in Indian Sign Language on the theme things, written in SignWriting" } }
+  - planned: { id: "ins-home", theme: "home", words: 21 }
+    listening_passages:
+      - { id: "home-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme home, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "home-text", text: { "en": "A short text in Indian Sign Language on the theme home, written in SignWriting" } }
+  - planned: { id: "ins-clothes", theme: "clothes", words: 29 }
+    listening_passages:
+      - { id: "clothes-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme clothes, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "clothes-text", text: { "en": "A short text in Indian Sign Language on the theme clothes, written in SignWriting" } }
+  - planned: { id: "ins-animals", theme: "animals", words: 33 }
+    listening_passages:
+      - { id: "animals-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme animals, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "animals-text", text: { "en": "A short text in Indian Sign Language on the theme animals, written in SignWriting" } }
+    milestone: "A1"
+  - planned: { id: "ins-daily-life", theme: "daily-life", words: 8 }
+    listening_passages:
+      - { id: "daily-life-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme a day, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "daily-life-text", text: { "en": "A short text in Indian Sign Language on the theme a day, written in SignWriting" } }
+  - planned: { id: "ins-weather", theme: "weather", words: 46 }
+    listening_passages:
+      - { id: "weather-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme weather, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "weather-text", text: { "en": "A short text in Indian Sign Language on the theme weather, written in SignWriting" } }
+  - planned: { id: "ins-calendar", theme: "calendar", words: 15 }
+    listening_passages:
+      - { id: "calendar-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme calendar, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "calendar-text", text: { "en": "A short text in Indian Sign Language on the theme calendar, written in SignWriting" } }
+  - planned: { id: "ins-festivals", theme: "festivals", words: 41 }
+    listening_passages:
+      - { id: "festivals-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme festivals, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "festivals-text", text: { "en": "A short text in Indian Sign Language on the theme festivals, written in SignWriting" } }
+  - planned: { id: "ins-grammar-verb-agreement", grammar: ["directional-verbs", "agreement"] }
+    listening_passages:
+      - { id: "grammar-verb-agreement-heard", text: { "en": "A short signed passage in Indian Sign Language showing directional verbs, agreement, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "grammar-verb-agreement-text", text: { "en": "A short text in Indian Sign Language showing directional verbs, agreement, written in SignWriting" } }
+  - planned: { id: "ins-shopping", theme: "shopping", words: 57 }
+    listening_passages:
+      - { id: "shopping-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme shopping, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "shopping-text", text: { "en": "A short text in Indian Sign Language on the theme shopping, written in SignWriting" } }
+  - planned: { id: "ins-illness", theme: "illness", words: 51 }
+    listening_passages:
+      - { id: "illness-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme illness, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "illness-text", text: { "en": "A short text in Indian Sign Language on the theme illness, written in SignWriting" } }
+  - planned: { id: "ins-eating-out", theme: "eating-out", words: 9 }
+    listening_passages:
+      - { id: "eating-out-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme eating out, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "eating-out-text", text: { "en": "A short text in Indian Sign Language on the theme eating out, written in SignWriting" } }
+  - planned: { id: "ins-cooking", theme: "cooking", words: 51 }
+    listening_passages:
+      - { id: "cooking-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme cooking, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "cooking-text", text: { "en": "A short text in Indian Sign Language on the theme cooking, written in SignWriting" } }
+  - planned: { id: "ins-grammar-classifiers", grammar: ["classifiers"] }
+    listening_passages:
+      - { id: "grammar-classifiers-heard", text: { "en": "A short signed passage in Indian Sign Language showing classifiers, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "grammar-classifiers-text", text: { "en": "A short text in Indian Sign Language showing classifiers, written in SignWriting" } }
+  - planned: { id: "ins-help", theme: "help", words: 6 }
+    listening_passages:
+      - { id: "help-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme help, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "help-text", text: { "en": "A short text in Indian Sign Language on the theme help, written in SignWriting" } }
+  - planned: { id: "ins-school", theme: "school", words: 57 }
+    listening_passages:
+      - { id: "school-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme school, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "school-text", text: { "en": "A short text in Indian Sign Language on the theme school, written in SignWriting" } }
+  - planned: { id: "ins-hobbies", theme: "hobbies", words: 57 }
+    listening_passages:
+      - { id: "hobbies-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme hobbies, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "hobbies-text", text: { "en": "A short text in Indian Sign Language on the theme hobbies, written in SignWriting" } }
+  - planned: { id: "ins-chores", theme: "chores", words: 46 }
+    listening_passages:
+      - { id: "chores-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme chores, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "chores-text", text: { "en": "A short text in Indian Sign Language on the theme chores, written in SignWriting" } }
+  - planned: { id: "ins-grammar-time-aspect", grammar: ["time-lines", "aspect"] }
+    listening_passages:
+      - { id: "grammar-time-aspect-heard", text: { "en": "A short signed passage in Indian Sign Language showing time lines, aspect, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "grammar-time-aspect-text", text: { "en": "A short text in Indian Sign Language showing time lines, aspect, written in SignWriting" } }
+  - planned: { id: "ins-appearance", theme: "appearance", words: 56 }
+    listening_passages:
+      - { id: "appearance-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme appearance, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "appearance-text", text: { "en": "A short text in Indian Sign Language on the theme appearance, written in SignWriting" } }
+  - planned: { id: "ins-verbs-3", theme: "verbs-3", words: 72 }
+    listening_passages:
+      - { id: "verbs-3-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme more daily actions, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "verbs-3-text", text: { "en": "A short text in Indian Sign Language on the theme more daily actions, written in SignWriting" } }
+  - planned: { id: "ins-phone", theme: "phone", words: 46 }
+    listening_passages:
+      - { id: "phone-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme phone, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "phone-text", text: { "en": "A short text in Indian Sign Language on the theme phone, written in SignWriting" } }
+  - planned: { id: "ins-journey", theme: "journey", words: 62 }
+    listening_passages:
+      - { id: "journey-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme journey, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "journey-text", text: { "en": "A short text in Indian Sign Language on the theme journey, written in SignWriting" } }
+  - planned: { id: "ins-grammar-fingerspelling", grammar: ["fingerspelling", "initialised-signs"] }
+    listening_passages:
+      - { id: "grammar-fingerspelling-heard", text: { "en": "A short signed passage in Indian Sign Language showing fingerspelling, initialised signs, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "grammar-fingerspelling-text", text: { "en": "A short text in Indian Sign Language showing fingerspelling, initialised signs, written in SignWriting" } }
+  - planned: { id: "ins-nature", theme: "nature", words: 56 }
+    listening_passages:
+      - { id: "nature-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme nature, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "nature-text", text: { "en": "A short text in Indian Sign Language on the theme nature, written in SignWriting" } }
+  - planned: { id: "ins-adjectives-2", theme: "adjectives-2", words: 62 }
+    listening_passages:
+      - { id: "adjectives-2-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme describing a room, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "adjectives-2-text", text: { "en": "A short text in Indian Sign Language on the theme describing a room, written in SignWriting" } }
+  - planned: { id: "ins-workplace", theme: "workplace", words: 51 }
+    listening_passages:
+      - { id: "workplace-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme workplace, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "workplace-text", text: { "en": "A short text in Indian Sign Language on the theme workplace, written in SignWriting" } }
+  - planned: { id: "ins-geography", theme: "geography", words: 51 }
+    listening_passages:
+      - { id: "geography-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme geography, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "geography-text", text: { "en": "A short text in Indian Sign Language on the theme geography, written in SignWriting" } }
+    milestone: "A2"
+  - planned: { id: "ins-health", theme: "health", words: 62 }
+    listening_passages:
+      - { id: "health-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme health, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "health-text", text: { "en": "A short text in Indian Sign Language on the theme health, written in SignWriting" } }
+  - planned: { id: "ins-feelings", theme: "feelings", words: 62 }
+    listening_passages:
+      - { id: "feelings-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme feelings, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "feelings-text", text: { "en": "A short text in Indian Sign Language on the theme feelings, written in SignWriting" } }
+  - planned: { id: "ins-news", theme: "news", words: 62 }
+    listening_passages:
+      - { id: "news-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme news, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "news-text", text: { "en": "A short text in Indian Sign Language on the theme news, written in SignWriting" } }
+  - planned: { id: "ins-opinions", theme: "opinions", words: 57 }
+    listening_passages:
+      - { id: "opinions-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme opinions, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "opinions-text", text: { "en": "A short text in Indian Sign Language on the theme opinions, written in SignWriting" } }
+  - planned: { id: "ins-travel", theme: "travel", words: 62 }
+    listening_passages:
+      - { id: "travel-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme travel, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "travel-text", text: { "en": "A short text in Indian Sign Language on the theme travel, written in SignWriting" } }
+  - planned: { id: "ins-grammar-role-shift", grammar: ["role-shift"] }
+    listening_passages:
+      - { id: "grammar-role-shift-heard", text: { "en": "A short signed passage in Indian Sign Language showing role shift, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "grammar-role-shift-text", text: { "en": "A short text in Indian Sign Language showing role shift, written in SignWriting" } }
+  - planned: { id: "ins-services", theme: "services", words: 51 }
+    listening_passages:
+      - { id: "services-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme services, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "services-text", text: { "en": "A short text in Indian Sign Language on the theme services, written in SignWriting" } }
+  - planned: { id: "ins-government", theme: "government", words: 46 }
+    listening_passages:
+      - { id: "government-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme government, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "government-text", text: { "en": "A short text in Indian Sign Language on the theme government, written in SignWriting" } }
+  - planned: { id: "ins-technology", theme: "technology", words: 56 }
+    listening_passages:
+      - { id: "technology-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme technology, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "technology-text", text: { "en": "A short text in Indian Sign Language on the theme technology, written in SignWriting" } }
+  - planned: { id: "ins-careers", theme: "careers", words: 56 }
+    listening_passages:
+      - { id: "careers-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme careers, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "careers-text", text: { "en": "A short text in Indian Sign Language on the theme careers, written in SignWriting" } }
+  - planned: { id: "ins-grammar-clauses", grammar: ["conditionals", "relative-clauses"] }
+    listening_passages:
+      - { id: "grammar-clauses-heard", text: { "en": "A short signed passage in Indian Sign Language showing conditionals, relative clauses, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "grammar-clauses-text", text: { "en": "A short text in Indian Sign Language showing conditionals, relative clauses, written in SignWriting" } }
+  - planned: { id: "ins-environment", theme: "environment", words: 56 }
+    listening_passages:
+      - { id: "environment-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme environment, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "environment-text", text: { "en": "A short text in Indian Sign Language on the theme environment, written in SignWriting" } }
+  - planned: { id: "ins-agriculture", theme: "agriculture", words: 56 }
+    listening_passages:
+      - { id: "agriculture-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme agriculture, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "agriculture-text", text: { "en": "A short text in Indian Sign Language on the theme agriculture, written in SignWriting" } }
+  - planned: { id: "ins-cinema", theme: "cinema", words: 62 }
+    listening_passages:
+      - { id: "cinema-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme cinema, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "cinema-text", text: { "en": "A short text in Indian Sign Language on the theme cinema, written in SignWriting" } }
+  - planned: { id: "ins-arts", theme: "arts", words: 51 }
+    listening_passages:
+      - { id: "arts-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme arts, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "arts-text", text: { "en": "A short text in Indian Sign Language on the theme arts, written in SignWriting" } }
+  - planned: { id: "ins-history", theme: "history", words: 51 }
+    listening_passages:
+      - { id: "history-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme history, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "history-text", text: { "en": "A short text in Indian Sign Language on the theme history, written in SignWriting" } }
+  - planned: { id: "ins-grammar-constructed-action", grammar: ["constructed-action", "depicting-signs"] }
+    listening_passages:
+      - { id: "grammar-constructed-action-heard", text: { "en": "A short signed passage in Indian Sign Language showing constructed action, depicting signs, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "grammar-constructed-action-text", text: { "en": "A short text in Indian Sign Language showing constructed action, depicting signs, written in SignWriting" } }
+  - planned: { id: "ins-weddings", theme: "weddings", words: 51 }
+    listening_passages:
+      - { id: "weddings-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme weddings, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "weddings-text", text: { "en": "A short text in Indian Sign Language on the theme weddings, written in SignWriting" } }
+  - planned: { id: "ins-sports", theme: "sports", words: 46 }
+    listening_passages:
+      - { id: "sports-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme sports, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "sports-text", text: { "en": "A short text in Indian Sign Language on the theme sports, written in SignWriting" } }
+  - planned: { id: "ins-relationships", theme: "relationships", words: 51 }
+    listening_passages:
+      - { id: "relationships-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme relationships, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "relationships-text", text: { "en": "A short text in Indian Sign Language on the theme relationships, written in SignWriting" } }
+  - planned: { id: "ins-housing", theme: "housing", words: 46 }
+    listening_passages:
+      - { id: "housing-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme housing, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "housing-text", text: { "en": "A short text in Indian Sign Language on the theme housing, written in SignWriting" } }
+  - planned: { id: "ins-grammar-register", grammar: ["register", "regional-variation"] }
+    listening_passages:
+      - { id: "grammar-register-heard", text: { "en": "A short signed passage in Indian Sign Language showing register, regional variation, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "grammar-register-text", text: { "en": "A short text in Indian Sign Language showing register, regional variation, written in SignWriting" } }
+  - planned: { id: "ins-emergencies", theme: "emergencies", words: 41 }
+    listening_passages:
+      - { id: "emergencies-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme emergencies, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "emergencies-text", text: { "en": "A short text in Indian Sign Language on the theme emergencies, written in SignWriting" } }
+  - planned: { id: "ins-law", theme: "law", words: 41 }
+    listening_passages:
+      - { id: "law-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme law, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "law-text", text: { "en": "A short text in Indian Sign Language on the theme law, written in SignWriting" } }
+  - planned: { id: "ins-verbs-4", theme: "verbs-4", words: 72 }
+    listening_passages:
+      - { id: "verbs-4-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme story actions, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "verbs-4-text", text: { "en": "A short text in Indian Sign Language on the theme story actions, written in SignWriting" } }
+  - planned: { id: "ins-abstract-words", theme: "abstract-words", words: 62 }
+    listening_passages:
+      - { id: "abstract-words-heard", text: { "en": "A short signed passage in Indian Sign Language on the theme ideas and values, shown as pictures of its signs" } }
+    reading_passages:
+      - { id: "abstract-words-text", text: { "en": "A short text in Indian Sign Language on the theme ideas and values, written in SignWriting" } }
+    milestone: "B1"
+  - ["*"]

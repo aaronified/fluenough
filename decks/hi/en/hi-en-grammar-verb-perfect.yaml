@@ -1,0 +1,33 @@
+schema: 1
+id: "hi-en-grammar-verb-perfect"
+kind: "layer"
+core: "hi-grammar-verb-perfect"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs: the perfect, for every person"
+description: "Every verb the course teaches, in the perfect (have done), for each person. An intransitive verb agrees with the subject, so a man and a woman have different forms. A transitive verb puts the doer in the ने (nē) form and agrees with the object; the cells show a masculine singular object, so a man and a woman have the same cell. A verb that can be both shows both. The forms are written in Devanagari for now. Not yet checked by a Hindustani speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "main-m": "I, a man, as having done (a transitive verb: the doer with ने (nē) and a masculine singular object)"
+    "main-f": "I, a woman, as having done (a transitive verb: the doer with ने (nē) and a masculine singular object)"
+    "tum-m": "you (familiar), a man, as having done (a transitive verb: the doer with ने (nē) and a masculine singular object)"
+    "tum-f": "you (familiar), a woman, as having done (a transitive verb: the doer with ने (nē) and a masculine singular object)"
+    "vah-m": "he, or you (intimate), a man, as having done (a transitive verb: the doer with ने (nē) and a masculine singular object)"
+    "vah-f": "she, or you (intimate), a woman, as having done (a transitive verb: the doer with ने (nē) and a masculine singular object)"
+    "ham-m": "we, they or you (respectful), men or a mixed group, as having done (a transitive verb: the doer with ने (nē) and a masculine singular object)"
+    "ham-f": "we, they or you (respectful), women, as having done (a transitive verb: the doer with ने (nē) and a masculine singular object)"
+rules:
+  "hi-rule-perfect-first":
+    name: "-ा (-ā)/-ी (-ī) हूँ (hūm̐), ने (nē): I have"
+    explanation: "For I have done, an intransitive verb takes the past form that agrees with the speaker, then the verb to be: {1}, to go, gives {2} for a man and {3} for a woman. A transitive verb puts the doer in the ने (nē) form and the past form agrees with the object, so the cell shows a masculine singular object and is the same for a man and a woman: {4}, to do, gives {5}. The doer here is {6}, I."
+  "hi-rule-perfect-second":
+    name: "-े (-ē)/-ी (-ī) हो (hō), ने (nē): you (tum) have"
+    explanation: "For you (familiar), an intransitive verb takes the past form that agrees with you, then the verb to be: {1}, to go, gives {2} for a man and {3} for a woman. A transitive verb puts the doer in the ने (nē) form with a masculine singular object, the same for a man and a woman: {4}, to do, gives {5}. The doer here is {6}, you."
+  "hi-rule-perfect-third":
+    name: "-ा (-ā)/-ी (-ī) है (hai), ने (nē): he, she has"
+    explanation: "For he or she, an intransitive verb takes the past form that agrees with the subject, then the verb to be: {1}, to go, gives {2} for a man and {3} for a woman. A transitive verb puts the doer in the ने (nē) form with a masculine singular object, the same for a man and a woman: {4}, to do, gives {5}. The doer here is {6}, he or she; the very close you, {7}, uses the same form."
+  "hi-rule-perfect-plural":
+    name: "-े (-ē)/-ी (-ī) हैं (haim̐), ने (nē): we, they have"
+    explanation: "For we, they and the respectful you, an intransitive verb takes the past form that agrees with the subject, then the verb to be: {1}, to go, gives {2} for men and {3} for women. A transitive verb puts the doer in the ने (nē) form with a masculine singular object, the same for men and women: {4}, to do, gives {5}. The doer here is {6}, we; the same cell serves {7}, you (respectful), and {8}, they."
