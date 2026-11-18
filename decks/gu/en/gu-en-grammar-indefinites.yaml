@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "id": "gu-en-grammar-indefinites",
+  "kind": "layer",
+  "core": "gu-grammar-indefinites",
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "name": "Indefinite words: some, any and no",
+  "license": "CC-BY-SA-4.0",
+  "description": "Someone, something, somewhere and sometimes: the statement form and the form used in questions and with na (not). Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "unreviewed"
+  ],
+  "pattern": {
+    "name": "Indefinite word",
+    "slot_name": "form",
+    "prompt": "{lemma} ({gloss}), {slot}",
+    "slots": {
+      "statement": "in a statement (some)",
+      "question or negative": "in a question, or with na (any, no)"
+    },
+    "entries": {
+      "koi": "someone; anyone",
+      "kani": "something; anything",
+      "kya": "somewhere; anywhere",
+      "kyare": "sometimes; ever"
+    },
+    "notes": "Use the statement form for some. In a question, or with the word na (not), use the other form: nobody came is the question form with na, and nowhere is the same form with na."
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "gu-en-reading-form-instructions",
+  "name": "Reading: Instructions on an application form",
+  "kind": "reading",
+  "language": {
+    "code": "gu",
+    "iso639_3": "guj",
+    "name": "Gujarati",
+    "script": "gujarati",
+    "tts": "gu-IN",
+    "icon": "ગુ"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this deck, and released under CC BY-SA 4.0",
+  "description": "Instructions on an application form: fill it in carefully, attach the papers, write your name and date of birth, and give it at the office. Written for this deck and released under CC BY-SA 4.0. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "reading",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "gu-form-instructions",
+      "title": "Reading: Instructions on an application form",
+      "theme": "government",
+      "sentences": [
+        {
+          "text": "અરજી ફોર્મ બરાબર ભરો.",
+          "reading": "arji form barābar bharo.",
+          "ipa": "ərdʒi form bərabər bʱəro"
+        },
+        {
+          "text": "બધા કાગળો સાથે જોડો.",
+          "reading": "badhā kāgaḷo sāthe joḍo.",
+          "ipa": "bəd̪ʱa kaɡəɭo sat̪ʰe dʒoɖo"
+        },
+        {
+          "text": "નામ અને જન્મ તારીખ લખો.",
+          "reading": "nām ane janm tārikh lakho.",
+          "ipa": "nam əne dʒənm t̪arikʰ ləkʰo"
+        },
+        {
+          "text": "ફોર્મ ઑફિસમાં આપો.",
+          "reading": "form ôfismām̐ āpo.",
+          "ipa": "form ɔfismã apo"
+        }
+      ],
+      "questions": [
+        {
+          "id": "gu-3888",
+          "prompt": {
+            "en": "What must you fill in carefully?"
+          },
+          "options": [
+            {
+              "en": "The application form"
+            },
+            {
+              "en": "The bank card"
+            },
+            {
+              "en": "The bus ticket"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "gu-3889",
+          "prompt": {
+            "en": "You should attach all the papers to the form."
+          },
+          "answer": true
+        },
+        {
+          "id": "gu-3890",
+          "prompt": {
+            "en": "Where do you give the form?"
+          },
+          "options": [
+            {
+              "en": "At the office"
+            },
+            {
+              "en": "On the phone"
+            },
+            {
+              "en": "To the driver"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  ]
+}

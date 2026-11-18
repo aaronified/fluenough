@@ -1,0 +1,59 @@
+"schema": 1
+"id": "gu-en-reading-clinic-notice"
+"name": "Reading: A notice at the clinic"
+"kind": "reading"
+"language":
+  "code": "gu"
+  "iso639_3": "guj"
+  "name": "Gujarati"
+  "script": "gujarati"
+  "tts": "gu-IN"
+  "icon": "ગુ"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck, and released under CC BY-SA 4.0"
+"description": "A notice at the clinic. Written for this deck and released under CC BY-SA 4.0. Not yet checked by a Gujarati speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "gu-clinic-notice"
+  "title": "A notice at the clinic"
+  "theme": "health"
+  "sentences":
+  - "text": "દવાખાનું સવારે નવથી બપોર સુધી ખુલ્લું છે."
+    "reading": "davākhānum̐ savāre navthi bapor sudhi khullum̐ che."
+    "ipa": "d̪əʋakʰanũ səʋare nəʋt̪ʰi bəpor sud̪ʱi kʰullũ tʃʰe"
+  - "text": "અપોઇન્ટમેન્ટ વગર તપાસ થતી નથી."
+    "reading": "apoinṭmenṭ vagar tapās thati nathi."
+    "ipa": "əpoinʈmenʈ ʋəɡər t̪əpas t̪ʰət̪i nət̪ʰi"
+  - "text": "તાવ કે ઊલટી હોય તો તરત ફોન કરો."
+    "reading": "tāv ke ulaṭi hoy to tarat phon karo."
+    "ipa": "t̪aʋ ke uləʈi ɦoj t̪o t̪ərət̪ pʰon kəro"
+  - "text": "દવા લેતાં પહેલાં ડૉક્ટરને પૂછો."
+    "reading": "davā letām̐ pahelām̐ ḍôkṭarne pucho."
+    "ipa": "d̪əʋa let̪ã pəɦelã ɖɔkʈərne putʃʰo"
+  "questions":
+  - "id": "gu-3542"
+    "prompt":
+      "en": "When is the clinic open?"
+    "options":
+    - "en": "From nine to noon"
+    - "en": "All night"
+    - "en": "Only on Sundays"
+    "answer": 1
+  - "id": "gu-3543"
+    "prompt":
+      "en": "The notice says a check-up needs an appointment."
+    "answer": true
+  - "id": "gu-3544"
+    "prompt":
+      "en": "What should you do if you have a fever or vomiting?"
+    "options":
+    - "en": "Phone at once"
+    - "en": "Wait for a week"
+    - "en": "Take two tablets"
+    "answer": 1
