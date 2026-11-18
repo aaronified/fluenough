@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "id": "gu-en-grammar-honorifics",
+  "kind": "layer",
+  "core": "gu-grammar-honorifics",
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "name": "Speaking politely: the honorific forms",
+  "license": "CC-BY-SA-4.0",
+  "description": "The polite form of a verb: with આપ, the formal you, the verb takes the plural stem; a polite request or order takes the same stem. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "unreviewed"
+  ],
+  "table": {
+    "slot_name": "form",
+    "slots": {
+      "આપ": "with આપ (āp), the formal you, in the present",
+      "આજ્ઞા": "a polite request or order, to આપ (āp) or તમે (tame)"
+    }
+  },
+  "rules": {
+    "gu-rule-hon-present": {
+      "name": "Formal you in the present",
+      "explanation": "With આપ (āp), the formal you, the verb takes its polite stem and છો (cho), as with તમે (tame): {1} (karo cho) means you do. The stem is the one for a polite command."
+    },
+    "gu-rule-hon-command": {
+      "name": "Polite command",
+      "explanation": "A request or an order to આપ (āp) or તમે (tame) takes the polite stem: {1} (karo), please do."
+    }
+  }
+}
