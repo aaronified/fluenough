@@ -2,6 +2,7 @@
 # the questions after the learner has marked the work as seen, read or heard. Nothing of a work is quoted (wiki/Plan-Language-Completeness.md,
 # "Source-it-yourself works"). No links are given: no link has been checked.
 # Years and creators were read on each work's en.wikipedia page (2026-11-18). Dropped works, with reasons, are in the builder's report.
+# Review: the Gujarati title script of Hellaro, Mena Gurjari, Mulu Manek, Manvini Bhavai, Kadu Makrani and Kalapi is not on the work's page (the title was not confirmed); check before a learner sees it.
 schema: 1
 kind: "recommendations"
 id: "recommendations-gu"
@@ -187,4 +188,40 @@ recommendations:
       - { id: "q1", prompt: { en: "Which mountain is the village near?" }, options: { en: ["Girnar", "Saputara", "Mount Abu"] }, answer: 1 }
       - { id: "q2", prompt: { en: "Who is Santu engaged to?" }, options: { en: ["Hada Patel", "Gobar", "The monk"] }, answer: 2 }
       - { id: "q3", prompt: { en: "What is Santu's situation as the story goes on?" }, options: { en: ["She becomes a monk", "She is pregnant and struggles to cope", "She leaves for the city"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "gu-rec-kalapi"
+    medium: "film"
+    title: { text: "કલાપી", reading: "kalāpi" }
+    creator: ["gu-manhar-raskapur"]
+    year: 1966
+    level: "A2"
+    briefing: { en: "A biopic of the Gujarati poet Kalapi, a prince of Lathi state who died young." }
+    questions:
+      - { id: "q1", prompt: { en: "Whose life is the film based on?" }, options: { en: ["Narmad", "Kalapi", "Zaverchand Meghani"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Which state does the poet's family rule?" }, options: { en: ["Bhavnagar", "Lathi", "Junagadh"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "How old was the poet when he died?" }, options: { en: ["26", "34", "50"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "gu-rec-mulu-manek"
+    medium: "film"
+    title: { text: "મૂળુ માણેક", reading: "muḷu māṇek" }
+    creator: ["gu-manhar-raskapur"]
+    year: 1955
+    level: "B1"
+    briefing: { en: "A historical film about a Wagher chief who becomes a bandit against the British and the Gaekwad rulers around the time of the 1857 rebellion, and the childhood friend who fights beside him." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the name of the Wagher chief?" }, options: { en: ["Mulu Manek", "Devobha", "Kadu Makrani"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Whose marriage proposal does Mulu's sister Devbai reject?" }, options: { en: ["Mulu's own", "Devobha's", "Chandaji's"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "How does the story end?" }, options: { en: ["They surrender to the British", "They all die fighting", "They escape to Kutch"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "gu-rec-kashino-dikro"
+    medium: "film"
+    title: { text: "કાશીનો દીકરો", reading: "kāśino dikro" }
+    creator: ["gu-kanti-madia"]
+    year: 1979
+    level: "B1"
+    briefing: { en: "A Gujarati family drama about a woman who takes on the care of her younger brother-in-law, and after a tragedy, of his widow." }
+    questions:
+      - { id: "q1", prompt: { en: "How does Keshav die?" }, options: { en: ["Of a fever", "Of a snakebite on his wedding night", "In an accident"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Who is entrusted to Kashi when her mother-in-law dies?" }, options: { en: ["Shambhu", "Keshav", "Rajiv"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What does Kashi do for the widow Rama?" }, options: { en: ["She sends her back to her family", "She raises her like her own daughter", "She marries her to Rajiv"] }, answer: 2 }
     tags: ["unreviewed"]
