@@ -40,6 +40,7 @@ and `FONTS` and `FONT_ALIASES` in `tools/deck_index.py` register them.
 | shahmukhi | pa | alias of perso_arabic (Noto Nastaliq Urdu) | existing, 690 KB | 0 missing across 182 characters |
 | braille | qbe | shadow-dot font that ships in the app (ADR-0043) | none | not applicable |
 | sitelen_pona | tok (second script) | sitelen seli kiwen asuki (Kreative Software, SIL OFL-1.1), subset to the UCSUR block U+F1900-F19FF | SitelenSeliKiwen.ttf, 582 KB | all 142 words and name glyphs of the decks are in its cmap; see below |
+| signwriting | ins, ase (the decks' script; the languages list none) | Noto Sans SignWriting (Google, SIL OFL-1.1), subset to the 31 symbols of the explainer decks plus the fill and rotation modifiers, layout features kept | NotoSansSignWriting.ttf, 224 KB | every symbol and modifier of the explainer decks drawn and looked at; see below |
 
 The scripts that had fonts before (bengali, cuneiform, devanagari, egyptian
 hieroglyphs, gujarati, gurmukhi, the Han family, hangul, hebrew, kana,
@@ -71,5 +72,38 @@ example `target_scripts: { sitelen_pona: ... }`, written by
 `tools/tok_sitelen.py`: [ADR-0055](ADR-0055-Sitelen-Pona-As-A-Second-Script).
 Grammar tables and reading passages stay Latin.
 
+## SignWriting (sign languages)
+
+Owner, 2026-11-18: "Yes. Use it. But explain it well in the cards first."
+The decision is [ADR-0056](ADR-0056-SignWriting-For-Sign-Languages): the
+symbols of the explainer decks are text, in Noto Sans SignWriting; whole
+signs are pictures drawn from Formal SignWriting (FSW).
+
+- **The font.** Noto Sans SignWriting v2.005 (The Noto Project Authors,
+  SIL OFL-1.1), from Google Fonts' `ofl/notosanssignwriting`, 7.9 MB whole
+  (all 37,000 symbol variants are glyphs reached by the font's `ccmp`
+  rules from a base symbol, a fill modifier and a rotation modifier). It is
+  subset with fontTools to the 31 symbols the explainer decks use and the
+  modifiers U+1DA9B to U+1DA9F and U+1DAA1 to U+1DAAF, with every layout
+  feature kept: 224 KB. A base symbol followed by its modifiers draws as
+  one glyph. A symbol a later deck needs is added by subsetting again, from
+  the whole font.
+- **Build-time only, not in the repository.** `tools/signwriting_image.py`
+  draws a sign from FSW with the two Sutton SignWriting fonts
+  (`SuttonSignWritingFill.ttf` and `...Line.ttf`, SIL OFL-1.1, Copyright
+  1974-2014 Center for Sutton Movement Writing, Inc., symbols by Valerie
+  Sutton, refined by Adam Frost, encoded by Stephen E Slevinski Jr),
+  distributed in the MIT package `@sutton-signwriting/font-ttf` (10 MB).
+  The pictures it makes are CC BY-SA 4.0 deck content; the credit is
+  Sutton SignWriting.
+- **Sign data.** The only open-licensed signs checked: the ASL alphabet and
+  digits in the MIT `signwriting` package by Sign Language Processing
+  (`signwriting/fingerspelling/data/ase.json`; its upstream source, likely
+  SignBank, was not verified). Not usable: SignBank Plus on Hugging Face
+  (CC-BY-NC-4.0, which CC BY-SA 4.0 cannot take); Signbank, SignPuddle,
+  signwriting.org and GitHub releases are not reachable from the build
+  sandbox, so their licences are not recorded. No Indian Sign Language
+  signs in SignWriting were found.
+
 See also: [ADR-0042](ADR-0042-Script-Fonts-Download-Per-Course) ·
-[ADR-0055](ADR-0055-Sitelen-Pona-As-A-Second-Script) · [Deck Format](Deck-Format) · [Plans Index](Plans-Index)
+[ADR-0055](ADR-0055-Sitelen-Pona-As-A-Second-Script) · [ADR-0056](ADR-0056-SignWriting-For-Sign-Languages) · [Deck Format](Deck-Format) · [Plans Index](Plans-Index)

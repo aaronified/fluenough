@@ -139,7 +139,7 @@ Common to every kind.
 | `code` | yes | BCP-47 primary subtag, e.g. `es`, `ja`, `pt`. This is the tag voices and the app key on. |
 | `iso639_3` | yes | Three-letter ISO 639-3 code, e.g. `spa`, `jpn`, `hin`, `eng`. It names the language unambiguously, including languages with no two-letter code, and sits beside `code` rather than replacing it. |
 | `name` | yes | English name of the language. |
-| `script` | yes | A lowercase script name. The validator knows `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `bengali`, `gujarati`, `gurmukhi`, `odia`, `telugu`, `tamil`, `kannada`, `malayalam`, `sinhala`, `kana`, `han`, `hangul`, `thai`, `ipa`, `braille` and `other`. Any other name is accepted with a warning ([ADR-0009](ADR-0009-Scripts-Are-Open)). Every script but `latin`, `cyrillic`, `greek`, `ipa` and `braille` expects a `reading` on each card. `ipa` is for [the IPA course](#the-ipa-course) alone, and `braille` for [the English Braille course](#the-english-braille-course), whose answers are typed on the app's own braille keyboard. |
+| `script` | yes | A lowercase script name. The validator knows `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `bengali`, `gujarati`, `gurmukhi`, `odia`, `telugu`, `tamil`, `kannada`, `malayalam`, `sinhala`, `kana`, `han`, `hangul`, `thai`, `ipa`, `braille`, `sitelen_pona`, `signwriting` and `other`. Any other name is accepted with a warning ([ADR-0009](ADR-0009-Scripts-Are-Open)). Every script but `latin`, `cyrillic`, `greek`, `ipa`, `braille` and `signwriting` expects a `reading` on each card. `ipa` is for [the IPA course](#the-ipa-course) alone, and `braille` for [the English Braille course](#the-english-braille-course), whose answers are typed on the app's own braille keyboard. |
 | `scripts` | no | For a language written in more than one script, every script it is taught in, `script` first: `["devanagari", "perso_arabic"]` for Hindustani, `["han", "han_traditional"]` for Chinese, `["han", "kana"]` for Japanese kanji decks ([below](#japanese-kanji)). Two or more names, none twice. A card's other spellings are written under [`target_scripts`](#a-cards-other-scripts-target_scripts). A script id is lowercase words joined by an underscore (`perso_arabic`, `ol_chiki`), as the app's own list of scripts has it; the validator accepts a hyphen too. |
 | `tts` | no | BCP-47 tag handed to the TTS engine, e.g. `es-ES`, `pt-BR`. Defaults to `code`. Omitting it on a language with major regional variation is a mistake. |
 | `rtl` | no | `true` for right-to-left scripts. Defaults to `false`. A deck's text is drawn in its own direction, not the interface's: a card's target, the tiles of the word-order drill (built from the right, the words in Latin letters excepted), and where the interface quotes it, as in "Answer: …", the quote is isolated from the words around it so that neither reorders the other. |
@@ -1476,6 +1476,92 @@ have its own image, a picture from Wikimedia Commons or an
   page's picture (the card, word, Commons file, licence, credit and pages),
   and `--approve <card id>` writes it once a reviewer has approved it (see
   `tools/README.md`).
+
+### Sign languages (SignWriting)
+
+Owner, 2026-11-18 ([ADR-0056](ADR-0056-SignWriting-For-Sign-Languages)): "Yes.
+Use it. But explain it well in the cards first." Sign languages, Indian
+(`ins`) and American (`ase`) first, are written in Sutton SignWriting, with
+the existing card model and no new field.
+
+**The language block** is `{ code: "ase", iso639_3: "ase", name: "American Sign
+Language", script: "signwriting", typed: false, icon: "ASL" }`: no `tts`, no
+`scripts`, and the language in `assets/languages.yaml` keeps no `scripts` (the
+app's sign-language handling, one Gestures skill, stays). The deck's cards
+carry `modes: ["listening", "speaking"]`, the opt-out: a sign has no sound.
+There is no `reading`: `signwriting` is read as drawn, as braille is, and the
+description of a card is its `native` and its note.
+
+**A symbol card** teaches one symbol of the International SignWriting
+Alphabet 2010. Its `target` is Unicode SignWriting, U+1D800 to U+1DAAF: one
+base symbol, then, if it has them, a fill modifier (U+1DA9B to U+1DA9F; none
+is white, U+1DA9B half, U+1DA9C black) and a rotation modifier (U+1DAA1 to
+U+1DAAF; none is the first rotation, each next is an eighth of a turn, the
+ninth to sixteenth mirror the first eight for the other hand). Noto Sans
+SignWriting draws it as text; the validator checks the block. Its `native`
+names the symbol (`index finger`, `flat hand, back of the hand toward you`)
+and its note says what it draws and why. The explainer decks are of these:
+
+| Deck | Teaches |
+|---|---|
+| `<lang>-script-hands` | the handshapes: a square for the fist, a line for each finger out |
+| `<lang>-script-orientation` | facing (white, half, black) and turning (rotations and their mirrors) |
+| `<lang>-script-contact-movement` | touch, grasp, strike, brush, rub; the arrows |
+| `<lang>-script-face-body` | the head and what the face does; the shoulders |
+
+with a script guide `<lang>-script` ("How SignWriting works"). They are a
+path's alphabet unit and come before any sign.
+
+**A sign card** teaches a whole sign, and a sign is two-dimensional: each
+symbol is at its own x and y in a sign box, which no font lays out. So:
+
+```yaml
+- id: "ase-0100"
+  target: "M507x507S1f720487x492"        # the sign in FSW, the source of truth
+  image: "decks/ase/images/ase-0100.webp" # drawn from it by tools/signwriting_image.py
+  image_credit: { source: "https://pypi.org/project/signwriting/", license: "MIT", credit: "signwriting (sign-language-processing), ase fingerspelling, letter A" }
+  modes: ["listening", "speaking"]
+  notes:
+    - { id: "n1", kind: "note" }
+```
+
+with, in the English layer, `native: "A (fingerspelled)"` and
+`notes: { "n1": "A fist, the back of the hand toward you, the thumb along the side." }`.
+
+- **`target` is one unstyled FSW sign**: a box (`B`, `L`, `M` or `R` and its
+  width and height) and its symbols, each `S`, a three digit base symbol
+  (100 to 38b), a fill 0 to 5 and a rotation 0 to f, and `x` `y`
+  (`FSW_RE`). A sequence of signs is not a card.
+- **`image` is required** with an FSW target, the file named by the card's
+  id, as for any image, and written by
+  `python3 tools/signwriting_image.py --fonts DIR 'FSW' out.webp`, which
+  needs Pillow and the Sutton SignWriting fonts (OFL-1.1, not in the
+  repository). A picture is never drawn by hand: redraw it from the FSW.
+- **`native` is the meaning**: for a sign, its gloss in capitals by sign
+  language convention (`HELLO`, `THANK-YOU`), or the plain word where the
+  sign is a letter; for a symbol, its name.
+- **The description is the note**: handshape, which way the palm faces,
+  where the hand is against the body, how it moves, what it touches and what
+  the face does, in plain English. A card whose sign the builder could not
+  check against an open-licensed source is not written: signs are never
+  invented. Every sign deck is `unreviewed` until a Deaf signer has checked
+  it.
+- **Licence of the source** goes in `image_credit`: the open dataset or
+  package the FSW came from, its licence, and whom to credit. CC-BY-NC data
+  (SignBank Plus on Hugging Face, for one) cannot be used, the decks being
+  CC BY-SA 4.0.
+- **What the app shows.** Symbol cards, being text, show in every existing
+  drill. A sign card's picture needs the app to draw `image` as the prompt
+  and as the options of a choice, not as the small cue beside the meaning;
+  that app work is stage two of the ADR, so a sign deck is gated in
+  `decks/min_app.json` until it ships.
+
+Three example sign cards for `ase`, proven through the pipeline (FSW from
+the MIT `signwriting` package's ASL alphabet): A `M507x507S1f720487x492`, B
+`M507x507S14720493x485`, and the ASL fingerspelling of "hello",
+`M515x563S11502477x437S14a20492x457S1dc20484x477S1dc20484x512S17620492x547`.
+There is no open-licensed Indian Sign Language SignWriting source reachable,
+so `ins` has no example signs yet.
 
 ### Sentences and their rules: `rules`
 
