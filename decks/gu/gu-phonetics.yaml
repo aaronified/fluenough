@@ -15,7 +15,7 @@ rules:
     pattern: 'n(?=ˈ?(?:tʃ|dʒ))'
     replace: 'ɲ'
     source: 'Wikipedia, Gujarati phonology, "Consonants" (CC BY-SA 4.0), citing Cardona and Suthar, "Gujarati", in The Indo-Aryan Languages (2003, Routledge), p. 665; Mistry, "Gujarati phonology" (1997), p. 659.'
-  # The voiced retroflex stops ɖ and ɖʱ are flapped between vowels and finally; they stay stops initially, when doubled and after a nasal vowel (a nasal vowel has a tilde, so it is not matched here).
+  # The voiced retroflex stops ɖ and ɖʱ are flapped after a vowel, unless doubled (so also between vowels and finally); they stay stops initially, when doubled and after a nasal vowel.
   # source: Wikipedia, Gujarati phonology, "Consonants" (CC BY-SA 4.0), citing Masica, The Indo-Aryan Languages (1991, CUP), p. 97; Mistry (1997), p. 659.
   - id: "gu-retroflex-flap"
     pattern: '([aəeɛioɔu]ˈ?)ɖ(?!ɖ)'
