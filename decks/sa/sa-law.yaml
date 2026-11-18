@@ -1,0 +1,459 @@
+schema: 1
+id: "sa-law"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "law"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-10000"
+    target: "अकृत्यम्"
+    reading: "akṛtyam"
+    ipa: "əkr̩t̪jəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "अकृत्यम्", base: "अकृत्य", reading: "akṛtya" }]
+    examples:
+      - target: "अकृत्यं भवति"
+        reading: "akṛtyaṃ bhavati"
+        ipa: "əkr̩t̪jəm bʱəʋət̪i"
+        bases: [{ word: "अकृत्यं", base: "अकृत्य", reading: "akṛtya" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "अकृत्यं पश्यति जनः"
+        reading: "akṛtyaṃ paśyati janaḥ"
+        ipa: "əkr̩t̪jəm pəʃjət̪i dʒənəh"
+        bases: [{ word: "अकृत्यं", base: "अकृत्य", reading: "akṛtya" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10001"
+    target: "सदस्यः"
+    reading: "sadasyaḥ"
+    ipa: "səd̪əsjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "सदस्यः", base: "सदस्य", reading: "sadasya" }]
+    examples:
+      - target: "सदस्यो भवति"
+        reading: "sadasyo bhavati"
+        ipa: "səd̪əsjoː bʱəʋət̪i"
+        bases: [{ word: "सदस्यो", base: "सदस्य", reading: "sadasya" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "सदस्यं पश्यति बालः"
+        reading: "sadasyaṃ paśyati bālaḥ"
+        ipa: "səd̪əsjəm pəʃjət̪i baːləh"
+        bases: [{ word: "सदस्यं", base: "सदस्य", reading: "sadasya" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+  - id: "sa-10002"
+    target: "शपथः"
+    reading: "śapathaḥ"
+    ipa: "ʃəpət̪ʰəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "शपथः", base: "शपथ", reading: "śapatha" }]
+    examples:
+      - target: "शपथो भवति"
+        reading: "śapatho bhavati"
+        ipa: "ʃəpət̪ʰoː bʱəʋət̪i"
+        bases: [{ word: "शपथो", base: "शपथ", reading: "śapatha" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "शपथं करोति जनः"
+        reading: "śapathaṃ karoti janaḥ"
+        ipa: "ʃəpət̪ʰəm kəroːt̪i dʒənəh"
+        bases: [{ word: "शपथं", base: "शपथ", reading: "śapatha" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10003"
+    target: "स्त्रीधनम्"
+    reading: "strīdhanam"
+    ipa: "st̪riːd̪ʱənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "स्त्रीधनम्", base: "स्त्रीधन", reading: "strīdhana" }]
+    examples:
+      - target: "स्त्रीधनं भवति"
+        reading: "strīdhanaṃ bhavati"
+        ipa: "st̪riːd̪ʱənəm bʱəʋət̪i"
+        bases: [{ word: "स्त्रीधनं", base: "स्त्रीधन", reading: "strīdhana" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "स्त्रीधनं पश्यति जनः"
+        reading: "strīdhanaṃ paśyati janaḥ"
+        ipa: "st̪riːd̪ʱənəm pəʃjət̪i dʒənəh"
+        bases: [{ word: "स्त्रीधनं", base: "स्त्रीधन", reading: "strīdhana" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10004"
+    target: "पातकम्"
+    reading: "pātakam"
+    ipa: "paːt̪əkəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "पातकम्", base: "पातक", reading: "pātaka" }]
+    examples:
+      - target: "पातकं भवति"
+        reading: "pātakaṃ bhavati"
+        ipa: "paːt̪əkəm bʱəʋət̪i"
+        bases: [{ word: "पातकं", base: "पातक", reading: "pātaka" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "पातकं करोति जनः"
+        reading: "pātakaṃ karoti janaḥ"
+        ipa: "paːt̪əkəm kəroːt̪i dʒənəh"
+        bases: [{ word: "पातकं", base: "पातक", reading: "pātaka" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10005"
+    target: "परीक्षकः"
+    reading: "parīkṣakaḥ"
+    ipa: "pəriːkʂəkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "परीक्षकः", base: "परीक्षक", reading: "parīkṣaka" }]
+    examples:
+      - target: "परीक्षको भवति"
+        reading: "parīkṣako bhavati"
+        ipa: "pəriːkʂəkoː bʱəʋət̪i"
+        bases: [{ word: "परीक्षको", base: "परीक्षक", reading: "parīkṣaka" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "परीक्षकं पश्यति बालः"
+        reading: "parīkṣakaṃ paśyati bālaḥ"
+        ipa: "pəriːkʂəkəm pəʃjət̪i baːləh"
+        bases: [{ word: "परीक्षकं", base: "परीक्षक", reading: "parīkṣaka" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+  - id: "sa-10006"
+    target: "दण्डनम्"
+    reading: "daṇḍanam"
+    ipa: "d̪əɳɖənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "दण्डनम्", base: "दण्डन", reading: "daṇḍana" }]
+    examples:
+      - target: "दण्डनं भवति"
+        reading: "daṇḍanaṃ bhavati"
+        ipa: "d̪əɳɖənəm bʱəʋət̪i"
+        bases: [{ word: "दण्डनं", base: "दण्डन", reading: "daṇḍana" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "दण्डनं करोति जनः"
+        reading: "daṇḍanaṃ karoti janaḥ"
+        ipa: "d̪əɳɖənəm kəroːt̪i dʒənəh"
+        bases: [{ word: "दण्डनं", base: "दण्डन", reading: "daṇḍana" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10007"
+    target: "न्यायालयः"
+    reading: "nyāyālayaḥ"
+    ipa: "njaːjaːləjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "न्यायालयः", base: "न्यायालय", reading: "nyāyālaya" }]
+    examples:
+      - target: "न्यायालयो भवति"
+        reading: "nyāyālayo bhavati"
+        ipa: "njaːjaːləjoː bʱəʋət̪i"
+        bases: [{ word: "न्यायालयो", base: "न्यायालय", reading: "nyāyālaya" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "न्यायालयं पश्यति जनः"
+        reading: "nyāyālayaṃ paśyati janaḥ"
+        ipa: "njaːjaːləjəm pəʃjət̪i dʒənəh"
+        bases: [{ word: "न्यायालयं", base: "न्यायालय", reading: "nyāyālaya" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10008"
+    target: "विधानम्"
+    reading: "vidhānam"
+    ipa: "ʋid̪ʱaːnəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "विधानम्", base: "विधान", reading: "vidhāna" }]
+    examples:
+      - target: "विधानं भवति"
+        reading: "vidhānaṃ bhavati"
+        ipa: "ʋid̪ʱaːnəm bʱəʋət̪i"
+        bases: [{ word: "विधानं", base: "विधान", reading: "vidhāna" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "विधानं पश्यति जनः"
+        reading: "vidhānaṃ paśyati janaḥ"
+        ipa: "ʋid̪ʱaːnəm pəʃjət̪i dʒənəh"
+        bases: [{ word: "विधानं", base: "विधान", reading: "vidhāna" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10009"
+    target: "हिंसा"
+    reading: "hiṃsā"
+    ipa: "ɦĩsaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "हिंसा", base: "हिंसा", reading: "hiṃsā" }]
+    examples:
+      - target: "हिंसा भवति"
+        reading: "hiṃsā bhavati"
+        ipa: "ɦĩsaː bʱəʋət̪i"
+        bases: [{ word: "हिंसा", base: "हिंसा", reading: "hiṃsā" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "हिंसां करोति जनः"
+        reading: "hiṃsāṃ karoti janaḥ"
+        ipa: "ɦĩsaːm kəroːt̪i dʒənəh"
+        bases: [{ word: "हिंसां", base: "हिंसा", reading: "hiṃsā" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10010"
+    target: "वधः"
+    reading: "vadhaḥ"
+    ipa: "ʋəd̪ʱəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "वधः", base: "वध", reading: "vadha" }]
+    examples:
+      - target: "वधो भवति"
+        reading: "vadho bhavati"
+        ipa: "ʋəd̪ʱoː bʱəʋət̪i"
+        bases: [{ word: "वधो", base: "वध", reading: "vadha" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "वधं करोति जनः"
+        reading: "vadhaṃ karoti janaḥ"
+        ipa: "ʋəd̪ʱəm kəroːt̪i dʒənəh"
+        bases: [{ word: "वधं", base: "वध", reading: "vadha" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10011"
+    target: "सम्पत्तिः"
+    reading: "sampattiḥ"
+    ipa: "səmpət̪t̪ih"
+    pos: "noun"
+    gender: "f"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "सम्पत्तिः", base: "सम्पत्ति", reading: "sampatti" }]
+    examples:
+      - target: "सम्पत्तिः पश्यति जनः"
+        reading: "sampattiḥ paśyati janaḥ"
+        ipa: "səmpət̪t̪ih pəʃjət̪i dʒənəh"
+        bases: [{ word: "सम्पत्तिः", base: "सम्पत्ति", reading: "sampatti" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "जनः", base: "जन", reading: "jana" }]
+      - target: "सम्पत्तिं करोति जनः"
+        reading: "sampattiṃ karoti janaḥ"
+        ipa: "səmpət̪t̪im kəroːt̪i dʒənəh"
+        bases: [{ word: "सम्पत्तिं", base: "सम्पत्ति", reading: "sampatti" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10012"
+    target: "विक्रयः"
+    reading: "vikrayaḥ"
+    ipa: "ʋikrəjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "विक्रयः", base: "विक्रय", reading: "vikraya" }]
+    examples:
+      - target: "विक्रयो भवति"
+        reading: "vikrayo bhavati"
+        ipa: "ʋikrəjoː bʱəʋət̪i"
+        bases: [{ word: "विक्रयो", base: "विक्रय", reading: "vikraya" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "विक्रयं करोति जनः"
+        reading: "vikrayaṃ karoti janaḥ"
+        ipa: "ʋikrəjəm kəroːt̪i dʒənəh"
+        bases: [{ word: "विक्रयं", base: "विक्रय", reading: "vikraya" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10013"
+    target: "क्रयः"
+    reading: "krayaḥ"
+    ipa: "krəjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "क्रयः", base: "क्रय", reading: "kraya" }]
+    examples:
+      - target: "क्रयो भवति"
+        reading: "krayo bhavati"
+        ipa: "krəjoː bʱəʋət̪i"
+        bases: [{ word: "क्रयो", base: "क्रय", reading: "kraya" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "क्रयं करोति बालः"
+        reading: "krayaṃ karoti bālaḥ"
+        ipa: "krəjəm kəroːt̪i baːləh"
+        bases: [{ word: "क्रयं", base: "क्रय", reading: "kraya" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+  - id: "sa-10014"
+    target: "व्यवहारः"
+    reading: "vyavahāraḥ"
+    ipa: "ʋjəʋəɦaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "व्यवहारः", base: "व्यवहार", reading: "vyavahāra" }]
+    examples:
+      - target: "व्यवहारो भवति"
+        reading: "vyavahāro bhavati"
+        ipa: "ʋjəʋəɦaːroː bʱəʋət̪i"
+        bases: [{ word: "व्यवहारो", base: "व्यवहार", reading: "vyavahāra" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "व्यवहारं करोति जनः"
+        reading: "vyavahāraṃ karoti janaḥ"
+        ipa: "ʋjəʋəɦaːrəm kəroːt̪i dʒənəh"
+        bases: [{ word: "व्यवहारं", base: "व्यवहार", reading: "vyavahāra" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10015"
+    target: "स्तेयम्"
+    reading: "steyam"
+    ipa: "st̪eːjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "स्तेयम्", base: "स्तेय", reading: "steya" }]
+    examples:
+      - target: "स्तेयं भवति"
+        reading: "steyaṃ bhavati"
+        ipa: "st̪eːjəm bʱəʋət̪i"
+        bases: [{ word: "स्तेयं", base: "स्तेय", reading: "steya" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "स्तेयं पश्यति जनः"
+        reading: "steyaṃ paśyati janaḥ"
+        ipa: "st̪eːjəm pəʃjət̪i dʒənəh"
+        bases: [{ word: "स्तेयं", base: "स्तेय", reading: "steya" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10016"
+    target: "गृहस्थः"
+    reading: "gṛhasthaḥ"
+    ipa: "ɡr̩ɦəst̪ʰəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "गृहस्थः", base: "गृहस्थ", reading: "gṛhastha" }]
+    examples:
+      - target: "गृहस्थो भवति"
+        reading: "gṛhastho bhavati"
+        ipa: "ɡr̩ɦəst̪ʰoː bʱəʋət̪i"
+        bases: [{ word: "गृहस्थो", base: "गृहस्थ", reading: "gṛhastha" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "गृहस्थं पश्यति जनः"
+        reading: "gṛhasthaṃ paśyati janaḥ"
+        ipa: "ɡr̩ɦəst̪ʰəm pəʃjət̪i dʒənəh"
+        bases: [{ word: "गृहस्थं", base: "गृहस्थ", reading: "gṛhastha" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10017"
+    target: "अंशः"
+    reading: "aṃśaḥ"
+    ipa: "ə̃ʃəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "अंशः", base: "अंश", reading: "aṃśa" }]
+    examples:
+      - target: "अंशो भवति"
+        reading: "aṃśo bhavati"
+        ipa: "ə̃ʃoː bʱəʋət̪i"
+        bases: [{ word: "अंशो", base: "अंश", reading: "aṃśa" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "अंशं पश्यति जनः"
+        reading: "aṃśaṃ paśyati janaḥ"
+        ipa: "ə̃ʃəm pəʃjət̪i dʒənəh"
+        bases: [{ word: "अंशं", base: "अंश", reading: "aṃśa" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10018"
+    target: "संहिता"
+    reading: "saṃhitā"
+    ipa: "sə̃ɦit̪aː"
+    pos: "noun"
+    gender: "f"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "संहिता", base: "संहिता", reading: "saṃhitā" }]
+    examples:
+      - target: "संहिता भवति"
+        reading: "saṃhitā bhavati"
+        ipa: "sə̃ɦit̪aː bʱəʋət̪i"
+        bases: [{ word: "संहिता", base: "संहिता", reading: "saṃhitā" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "संहितां पश्यति बालः"
+        reading: "saṃhitāṃ paśyati bālaḥ"
+        ipa: "sə̃ɦit̪aːm pəʃjət̪i baːləh"
+        bases: [{ word: "संहितां", base: "संहिता", reading: "saṃhitā" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+  - id: "sa-10019"
+    target: "व्यभिचारः"
+    reading: "vyabhicāraḥ"
+    ipa: "ʋjəbʱitʃaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "व्यभिचारः", base: "व्यभिचार", reading: "vyabhicāra" }]
+    examples:
+      - target: "व्यभिचारो भवति"
+        reading: "vyabhicāro bhavati"
+        ipa: "ʋjəbʱitʃaːroː bʱəʋət̪i"
+        bases: [{ word: "व्यभिचारो", base: "व्यभिचार", reading: "vyabhicāra" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "व्यभिचारं करोति जनः"
+        reading: "vyabhicāraṃ karoti janaḥ"
+        ipa: "ʋjəbʱitʃaːrəm kəroːt̪i dʒənəh"
+        bases: [{ word: "व्यभिचारं", base: "व्यभिचार", reading: "vyabhicāra" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10020"
+    target: "पालकः"
+    reading: "pālakaḥ"
+    ipa: "paːləkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "पालकः", base: "पालक", reading: "pālaka" }]
+    examples:
+      - target: "पालको भवति"
+        reading: "pālako bhavati"
+        ipa: "paːləkoː bʱəʋət̪i"
+        bases: [{ word: "पालको", base: "पालक", reading: "pālaka" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "पालकं पश्यति बालः"
+        reading: "pālakaṃ paśyati bālaḥ"
+        ipa: "paːləkəm pəʃjət̪i baːləh"
+        bases: [{ word: "पालकं", base: "पालक", reading: "pālaka" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+  - id: "sa-10021"
+    target: "प्रायश्चित्तम्"
+    reading: "prāyaścittam"
+    ipa: "praːjəʃtʃit̪t̪əm"
+    pos: "noun"
+    gender: "n"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "प्रायश्चित्तम्", base: "प्रायश्चित्त", reading: "prāyaścitta" }]
+    examples:
+      - target: "प्रायश्चित्तं भवति"
+        reading: "prāyaścittaṃ bhavati"
+        ipa: "praːjəʃtʃit̪t̪əm bʱəʋət̪i"
+        bases: [{ word: "प्रायश्चित्तं", base: "प्रायश्चित्त", reading: "prāyaścitta" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "प्रायश्चित्तं करोति जनः"
+        reading: "prāyaścittaṃ karoti janaḥ"
+        ipa: "praːjəʃtʃit̪t̪əm kəroːt̪i dʒənəh"
+        bases: [{ word: "प्रायश्चित्तं", base: "प्रायश्चित्त", reading: "prāyaścitta" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10022"
+    target: "विभागः"
+    reading: "vibhāgaḥ"
+    ipa: "ʋibʱaːɡəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "विभागः", base: "विभाग", reading: "vibhāga" }]
+    examples:
+      - target: "विभागो भवति"
+        reading: "vibhāgo bhavati"
+        ipa: "ʋibʱaːɡoː bʱəʋət̪i"
+        bases: [{ word: "विभागो", base: "विभाग", reading: "vibhāga" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "विभागं करोति जनः"
+        reading: "vibhāgaṃ karoti janaḥ"
+        ipa: "ʋibʱaːɡəm kəroːt̪i dʒənəh"
+        bases: [{ word: "विभागं", base: "विभाग", reading: "vibhāga" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-10023"
+    target: "तायुः"
+    reading: "tāyuḥ"
+    ipa: "t̪aːjuh"
+    pos: "noun"
+    gender: "m"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "तायुः", base: "तायु", reading: "tāyu" }]
+    examples:
+      - target: "तायुः पश्यति जनः"
+        reading: "tāyuḥ paśyati janaḥ"
+        ipa: "t̪aːjuh pəʃjət̪i dʒənəh"
+        bases: [{ word: "तायुः", base: "तायु", reading: "tāyu" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "जनः", base: "जन", reading: "jana" }]
+      - target: "तायुं करोति बालः"
+        reading: "tāyuṃ karoti bālaḥ"
+        ipa: "t̪aːjum kəroːt̪i baːləh"
+        bases: [{ word: "तायुं", base: "तायु", reading: "tāyu" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+  - id: "sa-10024"
+    target: "अधिपः"
+    reading: "adhipaḥ"
+    ipa: "əd̪ʱipəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["law"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "अधिपः", base: "अधिप", reading: "adhipa" }]
+    examples:
+      - target: "अधिपो भवति"
+        reading: "adhipo bhavati"
+        ipa: "əd̪ʱipoː bʱəʋət̪i"
+        bases: [{ word: "अधिपो", base: "अधिप", reading: "adhipa" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "अधिपं पश्यति जनः"
+        reading: "adhipaṃ paśyati janaḥ"
+        ipa: "əd̪ʱipəm pəʃjət̪i dʒənəh"
+        bases: [{ word: "अधिपं", base: "अधिप", reading: "adhipa" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "जनः", base: "जन", reading: "jana" }]
