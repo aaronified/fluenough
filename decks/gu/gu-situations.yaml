@@ -1,7 +1,8 @@
 # Gujarati's situation sheets (#724): lists of card ids, never card text. Every id
 # is a card of a Gujarati deck, so progress, audio and notes are the card's own.
-# Ten sheets. Six new cards (gu-6600 to gu-6602, gu-6604 to gu-6606) are added to
-# the decks for the hotel, post office, post, bank account, fever and fine words.
+# Ten sheets. The hotel, post office, post, bank account, fever and fine words
+# are the existing cards of the same sense (gu-3125, gu-3816, gu-3129, gu-2362,
+# gu-2393, gu-3866); no new card is needed.
 # Draft: the choice of cards and the Gujarati titles need a Gujarati reviewer.
 schema: 1
 id: "gu-situations"
@@ -31,12 +32,12 @@ situations:
     icon: "doctor"
     title: { en: "Doctor and pharmacy", gu: "ડૉક્ટર અને દવા (ḍôkṭar ane davā)" }
     phrases: ["gu-0606", "gu-0605", "gu-1634", "gu-1638", "gu-1640", "gu-0552", "gu-0655", "gu-0412"]
-    words: ["gu-0359", "gu-0474", "gu-0603", "gu-0604", "gu-6605", "gu-1601", "gu-1614", "gu-1632", "gu-1609", "gu-1620"]
+    words: ["gu-0359", "gu-0474", "gu-0603", "gu-0604", "gu-2393", "gu-1601", "gu-1614", "gu-1632", "gu-1609", "gu-1620"]
   - id: "traffic"
     icon: "traffic"
     title: { en: "Traffic stop", gu: "ટ્રાફિક પોલીસ (ṭrāphik polis)" }
     phrases: ["gu-0269", "gu-0270", "gu-0271", "gu-0272", "gu-0267", "gu-0374", "gu-0295", "gu-0607", "gu-0268", "gu-0431"]
-    words: ["gu-0602", "gu-6606", "gu-0423", "gu-0361", "gu-1771", "gu-0444", "gu-0449", "gu-0601"]
+    words: ["gu-0602", "gu-3866", "gu-0423", "gu-0361", "gu-1771", "gu-0444", "gu-0449", "gu-0601"]
   - id: "rail"
     icon: "rail"
     title: { en: "Rail station", gu: "રેલવે સ્ટેશન (relve sṭeśan)" }
@@ -46,12 +47,12 @@ situations:
     icon: "hotel"
     title: { en: "Hotel", gu: "હોટલ (hoṭal)" }
     phrases: ["gu-1226", "gu-1264", "gu-1268", "gu-0410", "gu-0655", "gu-0374", "gu-0272", "gu-0477"]
-    words: ["gu-6600", "gu-0457", "gu-0467", "gu-0459", "gu-0462", "gu-1770", "gu-1777", "gu-0465", "gu-0466", "gu-0460"]
+    words: ["gu-3125", "gu-0457", "gu-0467", "gu-0459", "gu-0462", "gu-1770", "gu-1777", "gu-0465", "gu-0466", "gu-0460"]
   - id: "post-bank"
     icon: "post"
     title: { en: "Post and bank", gu: "ટપાલ અને બેંક (ṭapāl ane beṅk)" }
     phrases: ["gu-0418", "gu-0419", "gu-0373", "gu-0374", "gu-0295", "gu-0272", "gu-0271", "gu-0296", "gu-0297"]
-    words: ["gu-0665", "gu-0376", "gu-0381", "gu-6601", "gu-6602", "gu-6604", "gu-0355", "gu-0375"]
+    words: ["gu-0665", "gu-0376", "gu-0381", "gu-3816", "gu-3129", "gu-2362", "gu-0355", "gu-0375"]
   - id: "greetings"
     icon: "greeting"
     title: { en: "Greetings and apologies", gu: "નમસ્તે અને માફી (namaste ane māphi)" }
