@@ -10,14 +10,12 @@
   },
   "name": "If ... then: the conditional",
   "license": "CC-BY-SA-4.0",
-  "description": "Saying if something happens, then something else follows: jo (if) with the future, then to (then). Not yet checked by a Gujarati speaker: please report any mistake.",
+  "description": "Saying if something happens, then something else follows: jo (if) with the future, then to (then). Each verb takes the future form for each person. Not yet checked by a Gujarati speaker: please report any mistake.",
   "tags": [
     "unreviewed"
   ],
-  "pattern": {
-    "name": "The conditional: if ... then",
+  "table": {
     "slot_name": "person",
-    "prompt": "{lemma} ({gloss}), {slot}",
     "slots": {
       "હું": "I (hu)",
       "તું": "you (informal)",
@@ -25,17 +23,24 @@
       "અમે": "we (ame)",
       "તમે": "you (polite or plural)",
       "તેઓ": "they (teo)"
+    }
+  },
+  "rules": {
+    "gu-rule-cond-i": {
+      "name": "I",
+      "explanation": "The future with {1} (kariś) for I: jo hu {1}, to ... (if I do, then ...)."
     },
-    "entries": {
-      "karvum": "to do",
-      "javum": "to go",
-      "aavvum": "to come",
-      "khaavum": "to eat",
-      "pivum": "to drink",
-      "lakhvum": "to write",
-      "vaanchvum": "to read",
-      "rahevum": "to stay; to live"
+    "gu-rule-cond-tu-te": {
+      "name": "You, he, she, they",
+      "explanation": "The future with {1} (karśe) for he, she and they, and with {2} (kariś) for you (informal), which may take either form."
     },
-    "notes": "The if-clause takes the future form of the verb: જો (jo) તમે (tame) આવશો (āvśo), તો (to) હું (hum̐) જઈશ (jaiś): if you come, I will go. The then-clause તો (to) comes after it and takes the future or a polite imperative: મને (mane) ફોન (phon) કરજો (karjo), please phone me. The future ending for each person is the same as in the future table; use the person of the if-clause."
+    "gu-rule-cond-ame": {
+      "name": "We",
+      "explanation": "The future with {1} (kariśum) for we: if we do, then ..."
+    },
+    "gu-rule-cond-tame": {
+      "name": "You plural or polite",
+      "explanation": "The future with {1} (karśo) for you plural or polite: if you do, then ..."
+    }
   }
 }
