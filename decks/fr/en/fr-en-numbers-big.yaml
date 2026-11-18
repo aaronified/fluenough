@@ -5,7 +5,7 @@ core: "fr-numbers-big"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Tens and big numbers"
 license: "CC-BY-SA-4.0"
-description: "Numbers from thirty to ninety-nine, with cent, mille and million: trente, soixante-dix, quatre-vingts and quatre-vingt-dix-neuf. Hyphenated numbers are split into their parts. Not yet checked by a French speaker: please report any mistake."
+description: "Numbers from thirty to ninety-nine, with cent, mille and million: trente, soixante-dix, quatre-vingts and quatre-vingt-dix-neuf. Also milliard, dizaine, centaine, ordinals, demi and the decimal comma. Hyphenated numbers are split into their parts. Not yet checked by a French speaker: please report any mistake."
 
 cards:
   "fr-0702":
@@ -304,16 +304,17 @@ cards:
         bases:
           "Écrivez": "write"
           "virgule": "decimal comma"
-      "Le prix est deux virgule cinq euros.":
+      "Le prix est de deux virgule cinq euros.":
         native: "The price is two point five euros."
         bases:
           "est": "is"
+          "de": "of"
           "virgule": "decimal comma"
           "euros": "euros"
   "fr-4705":
     native: "sum; amount of money"
     notes:
-      "n1": "La somme is 'the sum' or 'the amount of money', and it is a feminine noun. Quelle est la somme ? is the usual question at a till or a bank counter."
+      "n1": "La somme is 'the sum' or 'the amount of money', and it is a feminine noun. Quelle est la somme ? asks for the amount due."
     examples:
       "La somme est juste.":
         native: "The amount is correct."
@@ -375,7 +376,7 @@ cards:
         native: "You need half a kilo."
         bases:
           "faut": "you need"
-          "demi-kilo": "half a kilo"
+          "demi": "half"
   "fr-4709":
     native: "second"
     notes:
