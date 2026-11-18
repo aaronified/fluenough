@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- **SignWriting for sign languages.** The font check now knows SignWriting, the script American and Indian Sign Language are written in here, and offers its font to download.
+- **American and Indian Sign Language start with how SignWriting works.** A short guide teaches the symbols that write signs, and the app offers a font to download so they show properly.
 
 ## [0.11.1] - 2026-11-17
 
