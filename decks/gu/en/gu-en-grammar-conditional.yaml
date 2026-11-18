@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "gu-en-grammar-conditional",
+  "kind": "layer",
+  "core": "gu-grammar-conditional",
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "name": "If ... then: the conditional",
+  "license": "CC-BY-SA-4.0",
+  "description": "Saying if something happens, then something else follows: jo (if) with the future, then to (then). Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "unreviewed"
+  ],
+  "pattern": {
+    "name": "The conditional: if ... then",
+    "slot_name": "person",
+    "prompt": "{lemma} ({gloss}), {slot}",
+    "slots": {
+      "હું": "I (hu)",
+      "તું": "you (informal)",
+      "તે": "he, she or it (te)",
+      "અમે": "we (ame)",
+      "તમે": "you (polite or plural)",
+      "તેઓ": "they (teo)"
+    },
+    "entries": {
+      "karvum": "to do",
+      "javum": "to go",
+      "aavvum": "to come",
+      "khaavum": "to eat",
+      "pivum": "to drink",
+      "lakhvum": "to write",
+      "vaanchvum": "to read",
+      "rahevum": "to stay; to live"
+    },
+    "notes": "The if-clause takes the future form of the verb: જો (jo) તમે (tame) આવશો (āvśo), તો (to) હું (hum̐) જઈશ (jaiś): if you come, I will go. The then-clause તો (to) comes after it and takes the future or a polite imperative: મને (mane) ફોન (phon) કરજો (karjo), please phone me. The future ending for each person is the same as in the future table; use the person of the if-clause."
+  }
+}
