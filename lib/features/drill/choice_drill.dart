@@ -100,38 +100,38 @@ class ChoiceDrill extends StatelessWidget {
           child: !ask.choosesMeaning && card.isSign
               ? _signOptions(answered: answered, picked: picked)
               : Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              // Answered, only the right option and, when the learner chose
-              // wrong, the one they chose, marked wrong (owner, 2026-10-31,
-              // doubt 13); the others are not shown.
-              for (final (place, option) in <Card>[
-                for (final option in session.options)
-                  if (!answered ||
-                      session.isRight(option) ||
-                      picked.id == option.id)
-                    option,
-              ].indexed) ...[
-                if (place > 0) const SizedBox(height: 10),
-                ChoiceTile(
-                  right: answered && session.isRight(option),
-                  chosen: picked?.id == option.id,
-                  answered: answered,
-                  onTap: () => session.pick(option),
-                  label: (style) => ask == Ask.hearMeaning
-                      ? _OptionMeaning(card: option, style: style)
-                      : ask.choosesMeaning
-                      ? Text(option.native, style: style)
-                      : _OptionWord(
-                          card: option,
-                          language: language,
-                          readingFirst: !session.expectsScript,
-                          style: style,
-                        ),
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    // Answered, only the right option and, when the learner chose
+                    // wrong, the one they chose, marked wrong (owner, 2026-10-31,
+                    // doubt 13); the others are not shown.
+                    for (final (place, option) in <Card>[
+                      for (final option in session.options)
+                        if (!answered ||
+                            session.isRight(option) ||
+                            picked.id == option.id)
+                          option,
+                    ].indexed) ...[
+                      if (place > 0) const SizedBox(height: 10),
+                      ChoiceTile(
+                        right: answered && session.isRight(option),
+                        chosen: picked?.id == option.id,
+                        answered: answered,
+                        onTap: () => session.pick(option),
+                        label: (style) => ask == Ask.hearMeaning
+                            ? _OptionMeaning(card: option, style: style)
+                            : ask.choosesMeaning
+                            ? Text(option.native, style: style)
+                            : _OptionWord(
+                                card: option,
+                                language: language,
+                                readingFirst: !session.expectsScript,
+                                style: style,
+                              ),
+                      ),
+                    ],
+                  ],
                 ),
-              ],
-            ],
-          ),
         ),
       ],
       feedback: !answered

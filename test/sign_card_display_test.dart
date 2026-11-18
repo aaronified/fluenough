@@ -191,9 +191,7 @@ void main() {
       skill: Skill.production,
       ask: Ask.chooseWord,
     );
-    final again = tester
-        .widget<ChoiceDrill>(find.byType(ChoiceDrill))
-        .session;
+    final again = tester.widget<ChoiceDrill>(find.byType(ChoiceDrill)).session;
     final at = again.options.indexWhere((c) => c.id == again.item.card.id);
     expect(at >= 0 && right >= 0, isTrue);
     await tester.tap(find.byType(PictureTile).at(at));
@@ -212,9 +210,9 @@ void main() {
       skill: Skill.production,
     );
     for (final card in signs.keys) {
-      final found = state.decks.expand((d) => d.cards).firstWhere(
-        (c) => c.id == card,
-      );
+      final found = state.decks
+          .expand((d) => d.cards)
+          .firstWhere((c) => c.id == card);
       expect(state.isTyped(found), isFalse, reason: card);
       expect(found.isSign, isTrue, reason: card);
       expect(found.hasPicture, isFalse, reason: card);
@@ -250,7 +248,9 @@ void main() {
         themeMode: mode,
       );
       // About 45% of the width: 162 of 360.
-      final hero = tester.getSize(find.byKey(const ValueKey<String>('sign-image')));
+      final hero = tester.getSize(
+        find.byKey(const ValueKey<String>('sign-image')),
+      );
       expect(hero.width, closeTo(162, 1));
       expect(tester.takeException(), isNull);
 
@@ -265,7 +265,8 @@ void main() {
       );
       expect(find.byType(PictureTile), findsNWidgets(4));
       final screen = tester.getSize(find.byType(Scaffold).first);
-      for (final tile in tester.widgetList<PictureTile>(find.byType(PictureTile)).indexed) {
+      for (final tile
+          in tester.widgetList<PictureTile>(find.byType(PictureTile)).indexed) {
         final box = tester.getRect(find.byType(PictureTile).at(tile.$1));
         expect(box.right, lessThanOrEqualTo(screen.width));
         expect(box.left, greaterThanOrEqualTo(0));
