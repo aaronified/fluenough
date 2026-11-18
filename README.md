@@ -167,11 +167,12 @@ B1, in teaching order, those not yet written shown as "Coming". The list
 below is written from `decks/index.json` each time the decks change.
 
 <!-- languages:start -->
-**89 languages**
+**91 languages**
 
 | Language | Family | Subfamily | Scripts | Level reached |
 |---|---|---|---|---|
 | Afrikaans | Indo-European | Germanic | Latin | in progress |
+| American Sign Language | Sign language | French Sign Language | SignWriting | in progress |
 | Arabic | Afro-Asiatic | Semitic | Arabic | in progress |
 | Aramaic (Imperial) | Afro-Asiatic | Semitic | Hebrew | in progress |
 | Archaic Greek | Indo-European | Hellenic | Greek | in progress |
@@ -198,12 +199,13 @@ below is written from `decks/index.json` each time the decks change.
 | German | Indo-European | Germanic | Latin | in progress |
 | Goan Konkani | Indo-European | Indo-Aryan | Latin | in progress |
 | Greek (Modern) | Indo-European | Hellenic | Greek | in progress |
-| Gujarati | Indo-European | Indo-Aryan | Gujarati | A2 |
+| Gujarati | Indo-European | Indo-Aryan | Gujarati | B1 |
 | Haryanvi | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Hausa | Afro-Asiatic | Chadic | Latin | in progress |
 | Hebrew | Afro-Asiatic | Semitic | Hebrew | in progress |
 | Hindustani | Indo-European | Indo-Aryan | Devanagari, Perso-Arabic | B1 |
 | Hungarian | Uralic | Ugric | Latin | in progress |
+| Indian Sign Language | Sign language | — | SignWriting | in progress |
 | Indonesian | Austronesian | Malayo-Polynesian | Latin | in progress |
 | Interslavic | Constructed | Slavic | Latin, Cyrillic | in progress |
 | Irish | Indo-European | Celtic | Latin | in progress |
