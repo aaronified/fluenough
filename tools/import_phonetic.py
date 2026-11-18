@@ -86,12 +86,39 @@ class Variety:
     # so it reads in the conventions of the course's own rules file. Opt-in
     # per language in the registry's `normalise:` list; empty for the rest.
     normalise: tuple[tuple[str, str], ...] = ()
+    # (units regex, {form unit: broad unit}) pairs, applied after `normalise`
+    # and only when the card's broad `ipa` is known. Wiktionary and the deck
+    # sometimes write one sound two ways where either is right elsewhere (s
+    # for ʃ in Gujarati, but a genuine /s/ stays), so a context-free regex
+    # cannot decide. The units regex is read over the form and over the broad
+    # ipa; if both hold the same number of units, the n-th form unit becomes
+    # the n-th broad unit when the map lists exactly that pair. Any other
+    # count, or any other pair, leaves the form alone.
+    align: tuple[tuple[str, tuple[tuple[str, str], ...]], ...] = ()
 
-    def normalised(self, form: str) -> str:
-        """[form] with this language's `normalise` pairs applied."""
+    def normalised(self, form: str, broad: str | None = None) -> str:
+        """[form] with this language's `normalise` pairs applied, then its
+        `align` pairs against the card's [broad] ipa (skipped when None)."""
         for pattern, replace in self.normalise:
             form = re.sub(pattern, replace, form)
+        if broad is not None:
+            for units, mapping in self.align:
+                form = self._aligned(form, broad, units, dict(mapping))
         return form
+
+    @staticmethod
+    def _aligned(form: str, broad: str, units: str, mapping: dict[str, str]) -> str:
+        found = list(re.finditer(units, form))
+        want = re.findall(units, broad)
+        if len(found) != len(want):
+            return form
+        out, last = [], 0
+        for m, b in zip(found, want):
+            out.append(form[last:m.start()])
+            out.append(b if mapping.get(m.group()) == b else m.group())
+            last = m.end()
+        out.append(form[last:])
+        return "".join(out)
 
     def rank(self, sound: dict) -> int | None:
         """0 for a form marked as this variety, 1 for an untagged one, None
@@ -132,9 +159,14 @@ def load_registry(path: Path = REGISTRY) -> tuple[dict[str, str], dict[str, Vari
                 untagged=bool(v.get("untagged", True)),
                 normalise=tuple(
                     (str(n["pattern"]), str(n["replace"]))
-                    for n in entry.get("normalise") or []))
+                    for n in entry.get("normalise") or [] if "pattern" in n),
+                align=tuple(
+                    (str(n["align"]), tuple((str(k), str(w)) for k, w in n["map"].items()))
+                    for n in entry.get("normalise") or [] if "align" in n))
             for pattern, _ in varieties[str(lang)].normalise:
                 re.compile(pattern)
+            for units, _ in varieties[str(lang)].align:
+                re.compile(units)
         except (KeyError, TypeError, AttributeError, re.error) as e:
             raise ValueError(f"{path}: {lang}: needs `dump` and `variety`, and "
                              f"`normalise` pairs of `pattern` and `replace` ({e!r})") from e
@@ -200,7 +232,8 @@ def read_entries(lines: Iterable[str], wanted: set[str]) -> dict[str, list[dict]
 
 # --- Choosing a form --------------------------------------------------------
 
-def narrow_forms(entry: dict, variety: Variety) -> tuple[list[str], bool, bool]:
+def narrow_forms(entry: dict, variety: Variety,
+                 broad: str | None = None) -> tuple[list[str], bool, bool]:
     """The entry's narrow forms for [variety], best first, whether any form
     was of another variety, and whether any form of this one was not valid
     IPA."""
@@ -216,7 +249,7 @@ def narrow_forms(entry: dict, variety: Variety) -> tuple[list[str], bool, bool]:
             continue
         form = pp.normalise(ipa)
         if form is not None:
-            form = pp.normalise(variety.normalised(form))
+            form = pp.normalise(variety.normalised(form, broad))
         if form is None:
             invalid = True
         else:
@@ -225,7 +258,8 @@ def narrow_forms(entry: dict, variety: Variety) -> tuple[list[str], bool, bool]:
     return [f for _, f in found], other, invalid
 
 
-def choose_form(target: iw.Target, entries: list[dict], variety: Variety) -> tuple[str | None, str]:
+def choose_form(target: iw.Target, entries: list[dict], variety: Variety,
+                broad: str | None = None) -> tuple[str | None, str]:
     """The card's narrow form and the outcome: `filled`, or why not."""
     _, fits = iw.choose(target, entries)
     if not fits:
@@ -233,7 +267,7 @@ def choose_form(target: iw.Target, entries: list[dict], variety: Variety) -> tup
     forms: set[str] = set()
     other = invalid = False
     for entry in fits:
-        found, o, i = narrow_forms(entry, variety)
+        found, o, i = narrow_forms(entry, variety, broad)
         other, invalid = other or o, invalid or i
         if found:
             forms.add(found[0])
@@ -271,7 +305,7 @@ def run(lang: str, dump: Path, decks: Path, write: bool) -> tuple[pp.Coverage, d
             if t is None:
                 coverage.add(deck, "no entry")
                 continue
-            form, outcome = choose_form(t, entries.get(card.target, []), variety)
+            form, outcome = choose_form(t, entries.get(card.target, []), variety, card.ipa)
             coverage.add(deck, outcome)
             if form is not None:
                 fills.setdefault(card.file, {})[card.cid] = (form, "wiktionary")
@@ -295,7 +329,7 @@ def renormalise(lang: str, decks: Path, write: bool) -> tuple[pp.Coverage, dict]
         if card.phonetic is None or card.phonetic_source != "wiktionary":
             coverage.add(deck, "not wiktionary")
             continue
-        form = pp.normalise(variety.normalised(card.phonetic))
+        form = pp.normalise(variety.normalised(card.phonetic, card.ipa))
         if form is None:
             coverage.add(deck, "invalid")
         elif form == card.phonetic:

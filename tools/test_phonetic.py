@@ -408,7 +408,7 @@ class Registry(Tree):
         self.assertEqual((gu.notes, gu.tags, gu.untagged),
                          (frozenset(), frozenset({"Gujarati", "Standard"}),
                           False))
-        self.assertEqual(gu.normalise, ())
+        self.assertTrue(gu.normalise and gu.align)  # see Normalising
 
     def test_telugu_and_japanese_are_registered_with_their_dumps(self) -> None:
         self.assertEqual(ip.DUMP_NAMES["te"], "Telugu")
@@ -490,13 +490,13 @@ class Normalising(Tree):
     def test_a_language_without_pairs_keeps_the_form_as_wiktionary_wrote_it(self) -> None:
         self.assertEqual(self.form("[ˈkað̞]", normalise=()), "[ˈkað̞]")
 
-    def test_the_real_registry_normalises_spanish_only(self) -> None:
+    def test_the_real_registry_normalises_spanish_and_gujarati_only(self) -> None:
         es = ip.VARIETIES["es"]
         self.assertEqual(es.normalised("[t͡ʃan̟θβ̞]"),
                          "[tʃan̪θβ]")
         for lang, v in ip.VARIETIES.items():
-            if lang != "es":
-                self.assertEqual(v.normalise, (), lang)
+            if lang not in ("es", "gu"):
+                self.assertEqual((v.normalise, v.align), ((), ()), lang)
 
     def test_a_registry_entry_loads_its_pairs_and_a_bad_pattern_names_the_language(self) -> None:
         reg = self.tmp / "r.yaml"
@@ -527,6 +527,80 @@ class Normalising(Tree):
         self.assertEqual(out, text.replace("[ˈdɔð̞]", "[ˈdɔð]"))  # the rules card is untouched
         self.assertEqual(again.decks["zz-home"].get("renormalised", 0), 0)
         self.assertEqual(again.decks["zz-home"]["unchanged"], 1)
+
+
+class GujaratiNormalising(unittest.TestCase):
+    """Gujarati's registry rules put Wiktionary's forms in the deck's style:
+    ʃ, r, ʋ and pʰ as the broad `ipa` writes them, no murmur marks; a genuine
+    /s/ or /f/ is never rewritten (the rules align against the broad ipa)."""
+
+    gu = ip.VARIETIES["gu"]
+
+    def norm(self, form: str, broad: str | None) -> str:
+        return self.gu.normalised(form, broad)
+
+    def test_wiktionarys_s_for_sh_becomes_sh_where_the_broad_ipa_has_it(self) -> None:
+        self.assertEqual(self.norm("[ˈsũ]", "ʃũ"), "[ˈʃũ]")
+        self.assertEqual(self.norm("[ˈkʰuɾsi]", "kʰurʃi"), "[ˈkʰurʃi]")
+        self.assertEqual(self.norm("[ˈsukɾəʋɑɾ]", "ʃukrəʋar"), "[ˈʃukrəʋɑr]")
+
+    def test_a_genuine_s_or_f_is_never_rewritten(self) -> None:
+        self.assertEqual(self.norm("[ˈsɑɽɑ]", "saɖa"), "[ˈsɑɽɑ]")
+        self.assertEqual(self.norm("[ˈsɑːɾu]", "saːru"), "[ˈsɑːru]")
+        self.assertEqual(self.norm("[ˈfɑ]", "fa"), "[ˈfɑ]")
+        # Only the position the broad ipa writes ʃ at changes.
+        self.assertEqual(self.norm("[ˈsɑrsu]", "sarʃu"), "[ˈsɑrʃu]")
+        self.assertEqual(self.norm("[ˈsɑrsu]", "ʃarsu"), "[ˈʃɑrsu]")
+
+    def test_f_becomes_aspirated_p_only_where_the_broad_ipa_has_it(self) -> None:
+        self.assertEqual(self.norm("[ˈfoi]", "pʰoi"), "[ˈpʰoi]")
+
+    def test_a_form_that_does_not_line_up_with_the_broad_ipa_is_left_alone(self) -> None:
+        # Wiktionary's ɦ for s, or another unit count: no guess.
+        self.assertEqual(self.norm("[ˈɦəʋɑr]", "səʋar"), "[ˈɦəʋɑr]")
+        self.assertEqual(self.norm("[ˈsũ]", "ʃũʃ"), "[ˈsũ]")
+        self.assertEqual(self.norm("[ˈsũ]", None), "[ˈsũ]")
+
+    def test_the_murmur_mark_is_dropped_and_the_tap_and_w_follow_the_deck(self) -> None:
+        self.assertEqual(self.norm("[ˈmə̤ino]", "məɦino"), "[ˈməino]")
+        self.assertEqual(self.norm("[ˈə̤ɭd̪əɾ]", None), "[ˈɦəɭd̪ər]")  # initial murmur is ɦ
+        self.assertEqual(self.norm("[ˈṳ̃]", "ɦũ"), "[ˈɦũ]")
+        self.assertEqual(self.norm("[ˈkɑ̤ɾ ˈa̤ɾ]", None), "[ˈkɑr ˈɦar]")  # medial is dropped
+        self.assertEqual(self.norm("[ˈud͡ʒo]", None), "[ˈudʒo]")
+        self.assertEqual(self.norm("[ˈpəɽwũ]", "pəɖəʋũ"), "[ˈpəɽʋũ]")
+
+    def test_real_allophony_stays(self) -> None:
+        for kept in ("[ˈtəɽko]", "[ˈãɡ]", "[ˈəʈʰʋɑɽijũ]"):
+            self.assertEqual(self.norm(kept, None), kept)
+
+
+class Aligning(Tree):
+    """`align` pairs read the card's broad ipa in a run and in --renormalise."""
+
+    ALIGN = (("s|\u0283", (("s", "\u0283"),)),)
+
+    def zz(self):
+        return {"zz": ip.Variety("Zed", align=self.ALIGN)}
+
+    def test_a_run_aligns_the_imported_form_to_the_cards_broad_ipa(self) -> None:
+        # CORE's card zz-0001 has ipa "kat"; give it a broad ipa with ʃ.
+        text = self.core.read_text(encoding="utf-8").replace('ipa: "kat"', 'ipa: "kaʃ"')
+        self.core.write_text(text, encoding="utf-8")
+        with mock.patch.dict(ip.VARIETIES, self.zz()):
+            _, fills = ip.run("zz", self.dump(entry("kat", sound("[ˈkas]"))),
+                              self.decks, False)
+        self.assertEqual(fills[self.core]["zz-0001"][0], "[ˈkaʃ]")
+
+    def test_a_registry_align_entry_loads_and_a_bad_units_regex_names_the_language(self) -> None:
+        reg = self.tmp / "r.yaml"
+        reg.write_text('zz:\n  dump: Zed\n  variety:\n    name: "Zed"\n  normalise:\n'
+                       '    - align: "s|ʃ"\n      map: { "s": "ʃ" }\n', encoding="utf-8")
+        _, varieties = ip.load_registry(reg)
+        self.assertEqual(varieties["zz"].normalised("[as]", "aʃ"), "[aʃ]")
+        reg.write_text('zz:\n  dump: Zed\n  variety:\n    name: "Zed"\n  normalise:\n'
+                       '    - align: "("\n      map: { "s": "ʃ" }\n', encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "zz"):
+            ip.load_registry(reg)
 
 
 class Unwritable(Tree):
