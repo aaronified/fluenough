@@ -273,16 +273,16 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | sa-health, sa-feelings, sa-opinions (derived noun rows) | sa-health, sa-feelings, sa-opinions | DERIVED rows, flagged: the stem has no declension table on en.wiktionary (sa-7052 उपचार, sa-7053 व्रण, sa-7054 अजीर्ण, sa-7055 हरिद्रा, sa-7056 काय, sa-7068 बस्तिकोप, sa-7233 आह्लाद, sa-7234 प्रमोद, sa-7250 अनुशय, sa-7436 अभिप्राय, sa-7437 आगम). Their rows are derived from the model paradigm of the stem type (Whitney §§ 326-330 for a-stems, §§ 344-352 for ā-stems); each lemma and gloss is on en.wiktionary. Reviewer to check. |
 | sa-7062, sa-7235 (derived noun rows) | sa-health, sa-feelings | DERIVED, partly: the Wiktionary table exists but two forms differ (sa-7062 वृक्क: gen-pl, ins-sg; sa-7235 रति: loc-sg). The row keeps the model form; reviewer to confirm. |
 | unit-level | sa-health, sa-feelings, sa-opinions (word counts) | Counts after the 2026-11-17 gap pass: health 71 of 80, feelings 56 of 90, opinions 50 of 70. Still short: candidates tried were the Wiktionary category pages (sa:Emotions, sa:Pathology, sa:Anatomy), related-term links, and Nāṭyaśāstra rasa and bhāva names; many verified lemmas are already on other cards (cross-reference, not duplicate); Monier-Williams could not be read (archive.org Sanskrit–English text not reachable, dsal blocked); the remaining i- or u-masculine and consonant-stem nouns need paradigms not built yet. |
-| sa-9000 to sa-9024, sa-9300 to sa-9349, sa-9600 to sa-9624 (noun rows only, sa-grammar-a-stems) | sa-relationships, sa-history, sa-arts | DERIVED: the 83 noun rows of these units follow the a-stem model (Whitney 326 to 330, as the table's rāma and phala rows) and are flagged derived; they were not read from each word's Wiktionary declension table in this session. Spot-check the neuter and masculine cells against the declension tables. | Haiku deck worker | 2026-11-18 |
+| sa-9000 to sa-9024, sa-9300 to sa-9349, sa-9600 to sa-9624 (noun rows only, sa-grammar-a-stems) | sa-relationships, sa-history, sa-arts | DERIVED: the 78 noun rows of these units follow the a-stem model (Whitney 326 to 330, as the table's rāma and phala rows) and are flagged derived; they were not read from each word's Wiktionary declension table in this session. Spot-check the neuter and masculine cells against the declension tables. | Haiku deck worker | 2026-11-18 |
 | course-wide | sa-relationships, sa-history, sa-arts | LEMMA SOURCE: each lemma was confirmed as an en.wiktionary Sanskrit entry in the kaikki.org extract of Wiktionary (read 2026-11-18); the live en.wiktionary API answered with rate-limit errors during the session. The glosses are the extract's first sense, shortened. Confirm each gloss against the live page. | Haiku deck worker | 2026-11-18 |
 | course-wide | sa-relationships, sa-history, sa-arts | CULTURE SOURCES: the culture notes cite Wikipedia articles (Natya Shastra, Rasa (aesthetics), Kavya, Chandas, Stupa, Vihara, Chaitya, Edicts of Ashoka); their text was written from the article titles and general knowledge in this session and has not been checked against the pages. | Haiku deck worker | 2026-11-18 |
-| unit-level | sa-relationships, sa-history, sa-arts (word counts) | Real counts: relationships 24 of 70 planned, history 50 of 90, arts 25 of 80. The reason for each missing candidate is listed below the table (one line each). The planned counts in the path are replaced by the real ones. | Haiku deck worker | 2026-11-18 |
+| unit-level | sa-relationships, sa-history, sa-arts (word counts) | Real counts: relationships 21 of 70 planned, history 48 of 90, arts 25 of 80. The reason for each missing candidate is listed below the table (one line each). The planned counts in the path are replaced by the real ones. | Haiku deck worker | 2026-11-18 |
 
 ## Shortfall reasons: relationships (2026-11-18)
 
 Each line is one candidate that was tried and not kept, with the reason.
 
-### relationships: 24 of 70 planned words kept (units real count; shortfall 46)
+### relationships: 21 of 70 planned words kept (units real count; shortfall 49)
 
 - मित्र (friend): already taught as sa-5744 in sa-government; not repeated (rule: one card per lemma)
 - द्वेष (hatred, enmity): already taught as sa-6000 in sa-dharma; not repeated (rule: one card per lemma)
@@ -389,13 +389,13 @@ Each line is one candidate that was tried and not kept, with the reason.
 | sa-10021 (derived noun row) | sa-law | DERIVED row, flagged: en.wiktionary's declension table for प्रायश्चित्तम् (n a) differs in some forms. Row from the model a-stem paradigm (Whitney §§ 326-330). Reviewer to check. |
 | unit-level | sa-law, sa-weddings (word counts, 2026-11-18 late) | Counts now: law 25 of 80, weddings 21 of 60, feelings 90 of 90, opinions 70 of 70 (opinions and health not changed in this pass). The law and marriage vocabulary of the kaikki dump, Wiktionary translation sections and the dharma/family units taught elsewhere is exhausted for these themes: most words are already taught (cross-reference, not duplicate: e.g. पत्नी, भार्या, कन्या, वर, विवाह, मण्डप, माला, आशीर्वाद, मुद्रा, साक्ष्य, शुल्क, पुरोहित), and many others are names, verbs, or i-masculine and consonant-stem nouns whose paradigms are not built. Monier-Williams and Wikisource were not mined for these units in this pass. |
 | sa-1557 (homograph) | sa-history | अन्तः (anta, the end) was left out: the same form अन्तः is the adverb 'inside' on sa-1557, and a homograph needs a `ref` note that this unit did not write. | Haiku deck worker | 2026-11-18 |
-| unit-level | sa-relationships, sa-history, sa-arts (word counts) | Real counts: relationships 24 of 70 planned, history 50 of 90, arts 25 of 80. The reason for each missing candidate is listed below the table (one line each). The planned counts in the path are replaced by the real ones. | Haiku deck worker | 2026-11-18 |
+| unit-level | sa-relationships, sa-history, sa-arts (word counts) | Real counts: relationships 21 of 70 planned, history 48 of 90, arts 25 of 80. The reason for each missing candidate is listed below the table (one line each). The planned counts in the path are replaced by the real ones. | Haiku deck worker | 2026-11-18 |
 
 ## Shortfall reasons: history (2026-11-18)
 
 Each line is one candidate that was tried and not kept, with the reason.
 
-### history: 50 of 90 planned words kept (units real count; shortfall 40)
+### history: 48 of 90 planned words kept (units real count; shortfall 42)
 
 - राज्य (kingdom, rule): already taught as sa-5700 in sa-government; not repeated (rule: one card per lemma)
 - नगर (city, town): already taught as sa-1760 in sa-places; not repeated (rule: one card per lemma)
@@ -507,7 +507,7 @@ Each line is one candidate that was tried and not kept, with the reason.
 - प्रवेश (entrance): already taught as sa-5555 in sa-journey; not repeated (rule: one card per lemma)
 - निर्गम (exit): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
 - राजाज्ञा (royal order): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
-| unit-level | sa-relationships, sa-history, sa-arts (word counts) | Real counts: relationships 24 of 70 planned, history 50 of 90, arts 25 of 80. The reason for each missing candidate is listed below the table (one line each). The planned counts in the path are replaced by the real ones. | Haiku deck worker | 2026-11-18 |
+| unit-level | sa-relationships, sa-history, sa-arts (word counts) | Real counts: relationships 21 of 70 planned, history 48 of 90, arts 25 of 80. The reason for each missing candidate is listed below the table (one line each). The planned counts in the path are replaced by the real ones. | Haiku deck worker | 2026-11-18 |
 
 ## Shortfall reasons: arts (2026-11-18)
 
@@ -568,3 +568,12 @@ Each line is one candidate that was tried and not kept, with the reason.
 - पदम् (verse): already taught as sa-3274 in sa-learning-sentences; not repeated (rule: one card per lemma)
 - लय (rhythm, absorption): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
 - रूपक (play, drama): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+
+### Removed after the merge of the other B1 units (2026-11-18)
+
+Each of these lemmas was taught by another unit merged into the branch after this unit's check, so the card here was dropped (one card per lemma). Its id is retired and not reused.
+- sa-9005 बान्धव: already taught as sa-10315 in sa-weddings; not repeated
+- sa-9017 हार्द: already taught as sa-7277 in sa-feelings; not repeated
+- sa-9019 प्रत्यय: already taught as sa-7503 in sa-opinions; not repeated
+- sa-9308 रण: already taught as sa-7285 in sa-feelings; not repeated
+- sa-9325 वंश: already taught as sa-10316 in sa-weddings; not repeated
