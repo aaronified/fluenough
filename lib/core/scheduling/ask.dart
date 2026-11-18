@@ -275,6 +275,8 @@ List<SessionItem> reviewAsks(
 /// Whether [group] can be matched: no two of its cards share a meaning or
 /// a target, which would make two matches right.
 bool _matchable(List<SessionItem> group) {
+  // A sign has no text to match with its meaning (ADR-0056).
+  if (group.any((item) => item.card.isSign)) return false;
   final natives = <String>{for (final item in group) item.card.native};
   final targets = <String>{for (final item in group) item.card.target};
   return natives.length == group.length && targets.length == group.length;

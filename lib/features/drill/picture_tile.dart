@@ -5,8 +5,10 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/card_picture.dart';
 import '../../ui/widgets/hint.dart';
+import '../../ui/widgets/sign_image.dart';
 
-/// One picture of a picture choice (#91), half the width. It shows the
+/// One picture of a picture choice (#91), half the width, or one sign of a
+/// choice among signs (ADR-0056, [Card.isSign]), drawn larger. It shows the
 /// picture and nothing written until it is answered, so its label for a
 /// screen reader and its hint are "Picture 1 of 4": the card's meaning would
 /// give the answer away. Once answered, the label and the text under the
@@ -101,7 +103,12 @@ class PictureTile extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        CardPicture(card, size: 72),
+                        // A sign card's picture is the sign (ADR-0056), larger
+                        // than an emoji.
+                        if (card.isSign)
+                          SignImage(card, size: 112)
+                        else
+                          CardPicture(card, size: 72),
                         if (answered) ...<Widget>[
                           const SizedBox(height: 8),
                           Text(

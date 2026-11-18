@@ -3613,7 +3613,8 @@ class AppState extends ChangeNotifier {
   /// Whether an answer about [card] can be typed: false for the IPA
   /// (`typed: false` in its language block), whose production is chosen
   /// (ADR-0041).
-  bool isTyped(Card card) => deckOf(card)?.language.typed ?? true;
+  bool isTyped(Card card) =>
+      !card.isSign && (deckOf(card)?.language.typed ?? true);
 
   /// The ability layer (ADR-0034), rebuilt when the log grows.
   Abilities get abilities {

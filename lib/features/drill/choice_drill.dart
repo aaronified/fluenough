@@ -17,6 +17,7 @@ import 'cant_now.dart';
 import 'choice_tile.dart';
 import 'drill_session.dart';
 import 'going_on.dart';
+import 'picture_tile.dart';
 import 'rule_forms.dart';
 import 'set_drill.dart';
 import 'taught_details.dart';
@@ -94,7 +95,11 @@ class ChoiceDrill extends StatelessWidget {
         Semantics(
           container: true,
           label: l10n.drillOptionsGroup,
-          child: Column(
+          // The signs of a choice of signs are pictures, two by two, as a
+          // picture choice's are (ADR-0056).
+          child: !ask.choosesMeaning && card.isSign
+              ? _signOptions(answered: answered, picked: picked)
+              : Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               // Answered, only the right option and, when the learner chose
@@ -140,8 +145,14 @@ class ChoiceDrill extends StatelessWidget {
                     : FeedbackBanner(
                         kind: FeedbackKind.wrong,
                         title: l10n.feedbackWrong,
-                        detail: l10n.feedbackAnswer(ask.optionOf(card)),
-                        quotes: <String>[if (!ask.choosesMeaning) card.target],
+                        // A sign's FSW text is never shown: its meaning is
+                        // the answer, and its picture is on the card.
+                        detail: l10n.feedbackAnswer(
+                          card.isSign ? card.native : ask.optionOf(card),
+                        ),
+                        quotes: <String>[
+                          if (!ask.choosesMeaning && !card.isSign) card.target,
+                        ],
                         language: ask.choosesMeaning ? null : language,
                       )),
       // Nothing is left to do once answered: going on is the swipe and the
@@ -149,6 +160,49 @@ class ChoiceDrill extends StatelessWidget {
       actions: answered
           ? const <Widget>[]
           : <Widget>[if (_hears) CantNowButton(session: session)],
+    );
+  }
+
+  /// The options of a choice of signs: four sign pictures, two by two, with
+  /// nothing written until it is answered ([PictureTile]).
+  Widget _signOptions({required bool answered, required Card? picked}) {
+    final options = session.options;
+    final shown = <int>[
+      for (var i = 0; i < options.length; i++)
+        if (!answered ||
+            session.isRight(options[i]) ||
+            picked?.id == options[i].id)
+          i,
+    ];
+    Widget tile(int place) => Expanded(
+      child: place >= 0 && place < options.length
+          ? PictureTile(
+              card: options[place],
+              number: place + 1,
+              total: options.length,
+              right: answered && session.isRight(options[place]),
+              chosen: picked?.id == options[place].id,
+              answered: answered,
+              onTap: () => session.pick(options[place]),
+            )
+          : const SizedBox.shrink(),
+    );
+    return Column(
+      children: <Widget>[
+        for (var row = 0; row < shown.length; row += 2) ...<Widget>[
+          if (row > 0) const SizedBox(height: 12),
+          IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                tile(shown[row]),
+                const SizedBox(width: 12),
+                tile(row + 1 < shown.length ? shown[row + 1] : -1),
+              ],
+            ),
+          ),
+        ],
+      ],
     );
   }
 

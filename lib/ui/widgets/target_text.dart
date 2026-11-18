@@ -10,6 +10,7 @@ import '../../core/models/deck.dart';
 import '../card_text_scale.dart';
 import '../theme.dart';
 import 'drill_frame.dart';
+import 'sign_image.dart';
 
 /// Deck content in the deck's language: a card's target, a lemma, a leech.
 ///
@@ -115,6 +116,11 @@ class TargetText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final card = this.card;
+    // A sign (ADR-0056) is its picture, big as a drill's target and in
+    // proportion to the text elsewhere; its FSW text is never drawn, even
+    // where no card is given.
+    if (card != null && card.isSign) return _sign(context, card);
+    if (isFswText(text)) return const SizedBox.shrink();
     if (card == null) return _build(context);
     final state = AppScope.of(context);
     return ListenableBuilder(
@@ -176,6 +182,16 @@ class TargetText extends StatelessWidget {
       },
     );
   }
+
+  Widget _sign(BuildContext context, Card card) => Padding(
+    padding: const EdgeInsetsDirectional.symmetric(vertical: 4),
+    child: SignImage(
+      card,
+      size: _sizing == _Sizing.hero
+          ? signHeroSize(context)
+          : ((fontSize ?? 28) * 3).clamp(56.0, 140.0).toDouble(),
+    ),
+  );
 
   Widget _build(BuildContext context) {
     // Not AppScope.of: a plain TargetText never needed the scope, and the
