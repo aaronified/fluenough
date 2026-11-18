@@ -1,0 +1,902 @@
+schema: 1
+id: "sa-history"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "history"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-9300"
+    target: "प्राचीनः"
+    reading: "prācīnaḥ"
+    ipa: "praːtʃiːnəh"
+    pos: "adj"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "प्राचीनः", base: "प्राचीन", reading: "prācīna" }]
+    examples:
+      - target: "रामः प्राचीनं नगरं गच्छति"
+        reading: "rāmaḥ prācīnaṃ nagaraṃ gacchati"
+        ipa: "raːməh praːtʃiːnəm nəɡərəm ɡətʃtʃʰət̪i"
+        bases: [{ word: "रामः", base: "राम", reading: "rāma" }, { word: "प्राचीनं", base: "प्राचीन", reading: "prācīna" }, { word: "नगरं", base: "नगर", reading: "nagara" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+      - target: "प्राचीनं पुस्तकं पठति"
+        reading: "prācīnaṃ pustakaṃ paṭhati"
+        ipa: "praːtʃiːnəm pust̪əkəm pəʈʰət̪i"
+        bases: [{ word: "प्राचीनं", base: "प्राचीन", reading: "prācīna" }, { word: "पुस्तकं", base: "पुस्तक", reading: "pustaka" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+  - id: "sa-9301"
+    target: "प्रथमः"
+    reading: "prathamaḥ"
+    ipa: "prət̪ʰəməh"
+    pos: "adj"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "प्रथमः", base: "प्रथम", reading: "prathama" }]
+    examples:
+      - target: "प्रथमो नृपो गच्छति"
+        reading: "prathamo nṛpo gacchati"
+        ipa: "prət̪ʰəmoː nr̩poː ɡətʃtʃʰət̪i"
+        bases: [{ word: "प्रथमो", base: "प्रथम", reading: "prathama" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+      - target: "जनः प्रथमं युगं स्मरति"
+        reading: "janaḥ prathamaṃ yugaṃ smarati"
+        ipa: "dʒənəh prət̪ʰəməm juɡəm smərət̪i"
+        bases: [{ word: "जनः", base: "जन", reading: "jana" }, { word: "प्रथमं", base: "प्रथम", reading: "prathama" }, { word: "युगं", base: "युग", reading: "yuga" }, { word: "स्मरति", base: "स्मृ", reading: "smṛ" }]
+  - id: "sa-9302"
+    target: "भूपः"
+    reading: "bhūpaḥ"
+    ipa: "bʱuːpəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "भूपः", base: "भूप", reading: "bhūpa" }]
+    examples:
+      - target: "भूपो नगरं रक्षति"
+        reading: "bhūpo nagaraṃ rakṣati"
+        ipa: "bʱuːpoː nəɡərəm rəkʂət̪i"
+        bases: [{ word: "भूपो", base: "भूप", reading: "bhūpa" }, { word: "नगरं", base: "नगर", reading: "nagara" }, { word: "रक्षति", base: "रक्ष्", reading: "rakṣ" }]
+      - target: "भूपं जनो नमति"
+        reading: "bhūpaṃ jano namati"
+        ipa: "bʱuːpəm dʒənoː nəmət̪i"
+        bases: [{ word: "भूपं", base: "भूप", reading: "bhūpa" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "नमति", base: "नम्", reading: "nam" }]
+  - id: "sa-9303"
+    target: "मण्डलम्"
+    reading: "maṇḍalam"
+    ipa: "məɳɖələm"
+    pos: "noun"
+    gender: "n"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "मण्डलम्", base: "मण्डल", reading: "maṇḍala" }]
+    examples:
+      - target: "मण्डलं भूपो रक्षति"
+        reading: "maṇḍalaṃ bhūpo rakṣati"
+        ipa: "məɳɖələm bʱuːpoː rəkʂət̪i"
+        bases: [{ word: "मण्डलं", base: "मण्डल", reading: "maṇḍala" }, { word: "भूपो", base: "भूप", reading: "bhūpa" }, { word: "रक्षति", base: "रक्ष्", reading: "rakṣ" }]
+      - target: "मण्डलं जनो गच्छति"
+        reading: "maṇḍalaṃ jano gacchati"
+        ipa: "məɳɖələm dʒənoː ɡətʃtʃʰət̪i"
+        bases: [{ word: "मण्डलं", base: "मण्डल", reading: "maṇḍala" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+  - id: "sa-9304"
+    target: "सैनिकः"
+    reading: "sainikaḥ"
+    ipa: "səinikəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "सैनिकः", base: "सैनिक", reading: "sainika" }]
+    examples:
+      - target: "सैनिको नगरं रक्षति"
+        reading: "sainiko nagaraṃ rakṣati"
+        ipa: "səinikoː nəɡərəm rəkʂət̪i"
+        bases: [{ word: "सैनिको", base: "सैनिक", reading: "sainika" }, { word: "नगरं", base: "नगर", reading: "nagara" }, { word: "रक्षति", base: "रक्ष्", reading: "rakṣ" }]
+      - target: "सैनिकं भूपो नयति"
+        reading: "sainikaṃ bhūpo nayati"
+        ipa: "səinikəm bʱuːpoː nəjət̪i"
+        bases: [{ word: "सैनिकं", base: "सैनिक", reading: "sainika" }, { word: "भूपो", base: "भूप", reading: "bhūpa" }, { word: "नयति", base: "नी", reading: "nī" }]
+  - id: "sa-9305"
+    target: "आयुधम्"
+    reading: "āyudham"
+    ipa: "aːjud̪ʱəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "आयुधम्", base: "आयुध", reading: "āyudha" }]
+    examples:
+      - target: "आयुधं सैनिको हरति"
+        reading: "āyudhaṃ sainiko harati"
+        ipa: "aːjud̪ʱəm səinikoː ɦərət̪i"
+        bases: [{ word: "आयुधं", base: "आयुध", reading: "āyudha" }, { word: "सैनिको", base: "सैनिक", reading: "sainika" }, { word: "हरति", base: "हृ", reading: "hṛ" }]
+      - target: "आयुधं जनो रक्षति"
+        reading: "āyudhaṃ jano rakṣati"
+        ipa: "aːjud̪ʱəm dʒənoː rəkʂət̪i"
+        bases: [{ word: "आयुधं", base: "आयुध", reading: "āyudha" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "रक्षति", base: "रक्ष्", reading: "rakṣ" }]
+  - id: "sa-9306"
+    target: "संग्रामः"
+    reading: "saṃgrāmaḥ"
+    ipa: "səŋɡraːməh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "संग्रामः", base: "संग्राम", reading: "saṃgrāma" }]
+    examples:
+      - target: "संग्रामं नृपो जयति"
+        reading: "saṃgrāmaṃ nṛpo jayati"
+        ipa: "səŋɡraːməm nr̩poː dʒəjət̪i"
+        bases: [{ word: "संग्रामं", base: "संग्राम", reading: "saṃgrāma" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "जयति", base: "जि", reading: "ji" }]
+      - target: "संग्रामं वीरो गायति"
+        reading: "saṃgrāmaṃ vīro gāyati"
+        ipa: "səŋɡraːməm ʋiːroː ɡaːjət̪i"
+        bases: [{ word: "संग्रामं", base: "संग्राम", reading: "saṃgrāma" }, { word: "वीरो", base: "वीर", reading: "vīra" }, { word: "गायति", base: "गै", reading: "gai" }]
+  - id: "sa-9307"
+    target: "समरः"
+    reading: "samaraḥ"
+    ipa: "səmərəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "समरः", base: "समर", reading: "samara" }]
+    examples:
+      - target: "समरं सैनिकः पश्यति"
+        reading: "samaraṃ sainikaḥ paśyati"
+        ipa: "səmərəm səinikəh pəʃjət̪i"
+        bases: [{ word: "समरं", base: "समर", reading: "samara" }, { word: "सैनिकः", base: "सैनिक", reading: "sainika" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+      - target: "समरं बालः पठति"
+        reading: "samaraṃ bālaḥ paṭhati"
+        ipa: "səmərəm baːləh pəʈʰət̪i"
+        bases: [{ word: "समरं", base: "समर", reading: "samara" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+  - id: "sa-9308"
+    target: "रणः"
+    reading: "raṇaḥ"
+    ipa: "rəɳəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "रणः", base: "रण", reading: "raṇa" }]
+    examples:
+      - target: "रणं भूपः पतति"
+        reading: "raṇaṃ bhūpaḥ patati"
+        ipa: "rəɳəm bʱuːpəh pət̪ət̪i"
+        bases: [{ word: "रणं", base: "रण", reading: "raṇa" }, { word: "भूपः", base: "भूप", reading: "bhūpa" }, { word: "पतति", base: "पत्", reading: "pat" }]
+      - target: "रणं सैनिको गच्छति"
+        reading: "raṇaṃ sainiko gacchati"
+        ipa: "rəɳəm səinikoː ɡətʃtʃʰət̪i"
+        bases: [{ word: "रणं", base: "रण", reading: "raṇa" }, { word: "सैनिको", base: "सैनिक", reading: "sainika" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+  - id: "sa-9309"
+    target: "शौर्यम्"
+    reading: "śauryam"
+    ipa: "ʃəurjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "शौर्यम्", base: "शौर्य", reading: "śaurya" }]
+    examples:
+      - target: "शौर्यं वीरो जयति"
+        reading: "śauryaṃ vīro jayati"
+        ipa: "ʃəurjəm ʋiːroː dʒəjət̪i"
+        bases: [{ word: "शौर्यं", base: "शौर्य", reading: "śaurya" }, { word: "वीरो", base: "वीर", reading: "vīra" }, { word: "जयति", base: "जि", reading: "ji" }]
+      - target: "शौर्यं सैनिकः पठति"
+        reading: "śauryaṃ sainikaḥ paṭhati"
+        ipa: "ʃəurjəm səinikəh pəʈʰət̪i"
+        bases: [{ word: "शौर्यं", base: "शौर्य", reading: "śaurya" }, { word: "सैनिकः", base: "सैनिक", reading: "sainika" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+  - id: "sa-9310"
+    target: "साहसम्"
+    reading: "sāhasam"
+    ipa: "saːɦəsəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "साहसम्", base: "साहस", reading: "sāhasa" }]
+    examples:
+      - target: "साहसं बालो गच्छति"
+        reading: "sāhasaṃ bālo gacchati"
+        ipa: "saːɦəsəm baːloː ɡətʃtʃʰət̪i"
+        bases: [{ word: "साहसं", base: "साहस", reading: "sāhasa" }, { word: "बालो", base: "बाल", reading: "bāla" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+      - target: "साहसं सैनिको धावति"
+        reading: "sāhasaṃ sainiko dhāvati"
+        ipa: "saːɦəsəm səinikoː d̪ʱaːʋət̪i"
+        bases: [{ word: "साहसं", base: "साहस", reading: "sāhasa" }, { word: "सैनिको", base: "सैनिक", reading: "sainika" }, { word: "धावति", base: "धाव्", reading: "dhāv" }]
+  - id: "sa-9311"
+    target: "करः"
+    reading: "karaḥ"
+    ipa: "kərəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "करः", base: "कर", reading: "kara" }]
+    examples:
+      - target: "करं नृपो हरति"
+        reading: "karaṃ nṛpo harati"
+        ipa: "kərəm nr̩poː ɦərət̪i"
+        bases: [{ word: "करं", base: "कर", reading: "kara" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "हरति", base: "हृ", reading: "hṛ" }]
+      - target: "करं जनो ददाति"
+        reading: "karaṃ jano dadāti"
+        ipa: "kərəm dʒənoː d̪əd̪aːt̪i"
+        bases: [{ word: "करं", base: "कर", reading: "kara" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "ददाति", base: "दा", reading: "dā" }]
+  - id: "sa-9312"
+    target: "देशः"
+    reading: "deśaḥ"
+    ipa: "d̪eːʃəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "देशः", base: "देश", reading: "deśa" }]
+    examples:
+      - target: "देशं वैद्यो गच्छति"
+        reading: "deśaṃ vaidyo gacchati"
+        ipa: "d̪eːʃəm ʋəid̪joː ɡətʃtʃʰət̪i"
+        bases: [{ word: "देशं", base: "देश", reading: "deśa" }, { word: "वैद्यो", base: "वैद्य", reading: "vaidya" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+      - target: "देशं रामो रक्षति"
+        reading: "deśaṃ rāmo rakṣati"
+        ipa: "d̪eːʃəm raːmoː rəkʂət̪i"
+        bases: [{ word: "देशं", base: "देश", reading: "deśa" }, { word: "रामो", base: "राम", reading: "rāma" }, { word: "रक्षति", base: "रक्ष्", reading: "rakṣ" }]
+  - id: "sa-9313"
+    target: "शिलालेखः"
+    reading: "śilālekhaḥ"
+    ipa: "ʃilaːleːkʰəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Edicts_of_Ashoka" }]
+    bases: [{ word: "शिलालेखः", base: "शिलालेख", reading: "śilālekha" }]
+    examples:
+      - target: "शिलालेखं जनः पठति"
+        reading: "śilālekhaṃ janaḥ paṭhati"
+        ipa: "ʃilaːleːkʰəm dʒənəh pəʈʰət̪i"
+        bases: [{ word: "शिलालेखं", base: "शिलालेख", reading: "śilālekha" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+      - target: "शिलालेखं नृपो लिखति"
+        reading: "śilālekhaṃ nṛpo likhati"
+        ipa: "ʃilaːleːkʰəm nr̩poː likʰət̪i"
+        bases: [{ word: "शिलालेखं", base: "शिलालेख", reading: "śilālekha" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "लिखति", base: "लिख्", reading: "likh" }]
+  - id: "sa-9314"
+    target: "विहारः"
+    reading: "vihāraḥ"
+    ipa: "ʋiɦaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }, { id: "n4", kind: "culture", source: "https://en.wikipedia.org/wiki/Vihara" }]
+    bases: [{ word: "विहारः", base: "विहार", reading: "vihāra" }]
+    examples:
+      - target: "विहारं जनो गच्छति"
+        reading: "vihāraṃ jano gacchati"
+        ipa: "ʋiɦaːrəm dʒənoː ɡətʃtʃʰət̪i"
+        bases: [{ word: "विहारं", base: "विहार", reading: "vihāra" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+      - target: "विहारं नृपो रक्षति"
+        reading: "vihāraṃ nṛpo rakṣati"
+        ipa: "ʋiɦaːrəm nr̩poː rəkʂət̪i"
+        bases: [{ word: "विहारं", base: "विहार", reading: "vihāra" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "रक्षति", base: "रक्ष्", reading: "rakṣ" }]
+  - id: "sa-9315"
+    target: "स्तूपः"
+    reading: "stūpaḥ"
+    ipa: "st̪uːpəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Stupa" }]
+    bases: [{ word: "स्तूपः", base: "स्तूप", reading: "stūpa" }]
+    examples:
+      - target: "स्तूपं जनः पश्यति"
+        reading: "stūpaṃ janaḥ paśyati"
+        ipa: "st̪uːpəm dʒənəh pəʃjət̪i"
+        bases: [{ word: "स्तूपं", base: "स्तूप", reading: "stūpa" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+      - target: "स्तूपं नृपो वदति"
+        reading: "stūpaṃ nṛpo vadati"
+        ipa: "st̪uːpəm nr̩poː ʋəd̪ət̪i"
+        bases: [{ word: "स्तूपं", base: "स्तूप", reading: "stūpa" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "वदति", base: "वद्", reading: "vad" }]
+  - id: "sa-9316"
+    target: "छत्रम्"
+    reading: "chatram"
+    ipa: "tʃʰət̪rəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "छत्रम्", base: "छत्र", reading: "chatra" }]
+    examples:
+      - target: "छत्रं नृपो धरति"
+        reading: "chatraṃ nṛpo dharati"
+        ipa: "tʃʰət̪rəm nr̩poː d̪ʱərət̪i"
+        bases: [{ word: "छत्रं", base: "छत्र", reading: "chatra" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "धरति", base: "धृ", reading: "dhṛ" }]
+      - target: "छत्रं बालो हरति"
+        reading: "chatraṃ bālo harati"
+        ipa: "tʃʰət̪rəm baːloː ɦərət̪i"
+        bases: [{ word: "छत्रं", base: "छत्र", reading: "chatra" }, { word: "बालो", base: "बाल", reading: "bāla" }, { word: "हरति", base: "हृ", reading: "hṛ" }]
+  - id: "sa-9317"
+    target: "प्रतापः"
+    reading: "pratāpaḥ"
+    ipa: "prət̪aːpəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "प्रतापः", base: "प्रताप", reading: "pratāpa" }]
+    examples:
+      - target: "प्रतापं नृपः पश्यति"
+        reading: "pratāpaṃ nṛpaḥ paśyati"
+        ipa: "prət̪aːpəm nr̩pəh pəʃjət̪i"
+        bases: [{ word: "प्रतापं", base: "प्रताप", reading: "pratāpa" }, { word: "नृपः", base: "नृप", reading: "nṛpa" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+      - target: "प्रतापं जनः पठति"
+        reading: "pratāpaṃ janaḥ paṭhati"
+        ipa: "prət̪aːpəm dʒənəh pəʈʰət̪i"
+        bases: [{ word: "प्रतापं", base: "प्रताप", reading: "pratāpa" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+  - id: "sa-9318"
+    target: "उत्थानम्"
+    reading: "utthānam"
+    ipa: "ut̪t̪ʰaːnəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "उत्थानम्", base: "उत्थान", reading: "utthāna" }]
+    examples:
+      - target: "उत्थानं जनो वदति"
+        reading: "utthānaṃ jano vadati"
+        ipa: "ut̪t̪ʰaːnəm dʒənoː ʋəd̪ət̪i"
+        bases: [{ word: "उत्थानं", base: "उत्थान", reading: "utthāna" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "वदति", base: "वद्", reading: "vad" }]
+      - target: "उत्थानं नृपः पश्यति"
+        reading: "utthānaṃ nṛpaḥ paśyati"
+        ipa: "ut̪t̪ʰaːnəm nr̩pəh pəʃjət̪i"
+        bases: [{ word: "उत्थानं", base: "उत्थान", reading: "utthāna" }, { word: "नृपः", base: "नृप", reading: "nṛpa" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-9319"
+    target: "पतनम्"
+    reading: "patanam"
+    ipa: "pət̪ənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "पतनम्", base: "पतन", reading: "patana" }]
+    examples:
+      - target: "पतनं बालः पठति"
+        reading: "patanaṃ bālaḥ paṭhati"
+        ipa: "pət̪ənəm baːləh pəʈʰət̪i"
+        bases: [{ word: "पतनं", base: "पतन", reading: "patana" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+      - target: "पतनं जनः पठति"
+        reading: "patanaṃ janaḥ paṭhati"
+        ipa: "pət̪ənəm dʒənəh pəʈʰət̪i"
+        bases: [{ word: "पतनं", base: "पतन", reading: "patana" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+  - id: "sa-9320"
+    target: "आक्रमणम्"
+    reading: "ākramaṇam"
+    ipa: "aːkrəməɳəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "आक्रमणम्", base: "आक्रमण", reading: "ākramaṇa" }]
+    examples:
+      - target: "आक्रमणं सैनिकः करोति"
+        reading: "ākramaṇaṃ sainikaḥ karoti"
+        ipa: "aːkrəməɳəm səinikəh kəroːt̪i"
+        bases: [{ word: "आक्रमणं", base: "आक्रमण", reading: "ākramaṇa" }, { word: "सैनिकः", base: "सैनिक", reading: "sainika" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+      - target: "आक्रमणं नृपो गच्छति"
+        reading: "ākramaṇaṃ nṛpo gacchati"
+        ipa: "aːkrəməɳəm nr̩poː ɡətʃtʃʰət̪i"
+        bases: [{ word: "आक्रमणं", base: "आक्रमण", reading: "ākramaṇa" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+  - id: "sa-9321"
+    target: "पलायनम्"
+    reading: "palāyanam"
+    ipa: "pəlaːjənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "पलायनम्", base: "पलायन", reading: "palāyana" }]
+    examples:
+      - target: "पलायनं सैनिको गच्छति"
+        reading: "palāyanaṃ sainiko gacchati"
+        ipa: "pəlaːjənəm səinikoː ɡətʃtʃʰət̪i"
+        bases: [{ word: "पलायनं", base: "पलायन", reading: "palāyana" }, { word: "सैनिको", base: "सैनिक", reading: "sainika" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+      - target: "पलायनं बालः पठति"
+        reading: "palāyanaṃ bālaḥ paṭhati"
+        ipa: "pəlaːjənəm baːləh pəʈʰət̪i"
+        bases: [{ word: "पलायनं", base: "पलायन", reading: "palāyana" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+  - id: "sa-9322"
+    target: "रजतम्"
+    reading: "rajatam"
+    ipa: "rədʒət̪əm"
+    pos: "noun"
+    gender: "n"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "रजतम्", base: "रजत", reading: "rajata" }]
+    examples:
+      - target: "रजतं वैद्यो हरति"
+        reading: "rajataṃ vaidyo harati"
+        ipa: "rədʒət̪əm ʋəid̪joː ɦərət̪i"
+        bases: [{ word: "रजतं", base: "रजत", reading: "rajata" }, { word: "वैद्यो", base: "वैद्य", reading: "vaidya" }, { word: "हरति", base: "हृ", reading: "hṛ" }]
+      - target: "रजतं नृपो ददाति"
+        reading: "rajataṃ nṛpo dadāti"
+        ipa: "rədʒət̪əm nr̩poː d̪əd̪aːt̪i"
+        bases: [{ word: "रजतं", base: "रजत", reading: "rajata" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "ददाति", base: "दा", reading: "dā" }]
+  - id: "sa-9323"
+    target: "विजयः"
+    reading: "vijayaḥ"
+    ipa: "ʋidʒəjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "विजयः", base: "विजय", reading: "vijaya" }]
+    examples:
+      - target: "विजयं वीरः पश्यति"
+        reading: "vijayaṃ vīraḥ paśyati"
+        ipa: "ʋidʒəjəm ʋiːrəh pəʃjət̪i"
+        bases: [{ word: "विजयं", base: "विजय", reading: "vijaya" }, { word: "वीरः", base: "वीर", reading: "vīra" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+      - target: "विजयं जनो गायति"
+        reading: "vijayaṃ jano gāyati"
+        ipa: "ʋidʒəjəm dʒənoː ɡaːjət̪i"
+        bases: [{ word: "विजयं", base: "विजय", reading: "vijaya" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "गायति", base: "गै", reading: "gai" }]
+  - id: "sa-9324"
+    target: "युगम्"
+    reading: "yugam"
+    ipa: "juɡəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "युगम्", base: "युग", reading: "yuga" }]
+    examples:
+      - target: "युगं जनः पठति"
+        reading: "yugaṃ janaḥ paṭhati"
+        ipa: "juɡəm dʒənəh pəʈʰət̪i"
+        bases: [{ word: "युगं", base: "युग", reading: "yuga" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+      - target: "युगं नृपो नयति"
+        reading: "yugaṃ nṛpo nayati"
+        ipa: "juɡəm nr̩poː nəjət̪i"
+        bases: [{ word: "युगं", base: "युग", reading: "yuga" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "नयति", base: "नी", reading: "nī" }]
+  - id: "sa-9325"
+    target: "वंशः"
+    reading: "vaṃśaḥ"
+    ipa: "ʋə̃ʃəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "वंशः", base: "वंश", reading: "vaṃśa" }]
+    examples:
+      - target: "वंशं रामः पठति"
+        reading: "vaṃśaṃ rāmaḥ paṭhati"
+        ipa: "ʋə̃ʃəm raːməh pəʈʰət̪i"
+        bases: [{ word: "वंशं", base: "वंश", reading: "vaṃśa" }, { word: "रामः", base: "राम", reading: "rāma" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+      - target: "वंशं बालो वदति"
+        reading: "vaṃśaṃ bālo vadati"
+        ipa: "ʋə̃ʃəm baːloː ʋəd̪ət̪i"
+        bases: [{ word: "वंशं", base: "वंश", reading: "vaṃśa" }, { word: "बालो", base: "बाल", reading: "bāla" }, { word: "वदति", base: "वद्", reading: "vad" }]
+  - id: "sa-9326"
+    target: "इतिहासः"
+    reading: "itihāsaḥ"
+    ipa: "it̪iɦaːsəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "इतिहासः", base: "इतिहास", reading: "itihāsa" }]
+    examples:
+      - target: "इतिहासं जनः पठति"
+        reading: "itihāsaṃ janaḥ paṭhati"
+        ipa: "it̪iɦaːsəm dʒənəh pəʈʰət̪i"
+        bases: [{ word: "इतिहासं", base: "इतिहास", reading: "itihāsa" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+      - target: "इतिहासं नृपो लिखति"
+        reading: "itihāsaṃ nṛpo likhati"
+        ipa: "it̪iɦaːsəm nr̩poː likʰət̪i"
+        bases: [{ word: "इतिहासं", base: "इतिहास", reading: "itihāsa" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "लिखति", base: "लिख्", reading: "likh" }]
+  - id: "sa-9327"
+    target: "मठः"
+    reading: "maṭhaḥ"
+    ipa: "məʈʰəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "मठः", base: "मठ", reading: "maṭha" }]
+    examples:
+      - target: "मठं जनो वसति"
+        reading: "maṭhaṃ jano vasati"
+        ipa: "məʈʰəm dʒənoː ʋəsət̪i"
+        bases: [{ word: "मठं", base: "मठ", reading: "maṭha" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "वसति", base: "वस्", reading: "vas" }]
+      - target: "मठं बालः पठति"
+        reading: "maṭhaṃ bālaḥ paṭhati"
+        ipa: "məʈʰəm baːləh pəʈʰət̪i"
+        bases: [{ word: "मठं", base: "मठ", reading: "maṭha" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+  - id: "sa-9328"
+    target: "चैत्यः"
+    reading: "caityaḥ"
+    ipa: "tʃəit̪jəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Chaitya" }]
+    bases: [{ word: "चैत्यः", base: "चैत्य", reading: "caitya" }]
+    examples:
+      - target: "चैत्यं सैनिकः पश्यति"
+        reading: "caityaṃ sainikaḥ paśyati"
+        ipa: "tʃəit̪jəm səinikəh pəʃjət̪i"
+        bases: [{ word: "चैत्यं", base: "चैत्य", reading: "caitya" }, { word: "सैनिकः", base: "सैनिक", reading: "sainika" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+      - target: "चैत्यं जनो नमति"
+        reading: "caityaṃ jano namati"
+        ipa: "tʃəit̪jəm dʒənoː nəmət̪i"
+        bases: [{ word: "चैत्यं", base: "चैत्य", reading: "caitya" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "नमति", base: "नम्", reading: "nam" }]
+  - id: "sa-9329"
+    target: "ताम्रम्"
+    reading: "tāmram"
+    ipa: "t̪aːmrəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "ताम्रम्", base: "ताम्र", reading: "tāmra" }]
+    examples:
+      - target: "ताम्रं नृपो हरति"
+        reading: "tāmraṃ nṛpo harati"
+        ipa: "t̪aːmrəm nr̩poː ɦərət̪i"
+        bases: [{ word: "ताम्रं", base: "ताम्र", reading: "tāmra" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "हरति", base: "हृ", reading: "hṛ" }]
+      - target: "ताम्रं सैनिको धरति"
+        reading: "tāmraṃ sainiko dharati"
+        ipa: "t̪aːmrəm səinikoː d̪ʱərət̪i"
+        bases: [{ word: "ताम्रं", base: "ताम्र", reading: "tāmra" }, { word: "सैनिको", base: "सैनिक", reading: "sainika" }, { word: "धरति", base: "धृ", reading: "dhṛ" }]
+  - id: "sa-9330"
+    target: "समयः"
+    reading: "samayaḥ"
+    ipa: "səməjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "समयः", base: "समय", reading: "samaya" }]
+    examples:
+      - target: "समयं जनः पठति"
+        reading: "samayaṃ janaḥ paṭhati"
+        ipa: "səməjəm dʒənəh pəʈʰət̪i"
+        bases: [{ word: "समयं", base: "समय", reading: "samaya" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+      - target: "समयं नृपो वदति"
+        reading: "samayaṃ nṛpo vadati"
+        ipa: "səməjəm nr̩poː ʋəd̪ət̪i"
+        bases: [{ word: "समयं", base: "समय", reading: "samaya" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "वदति", base: "वद्", reading: "vad" }]
+  - id: "sa-9331"
+    target: "अतीतः"
+    reading: "atītaḥ"
+    ipa: "ət̪iːt̪əh"
+    pos: "adj"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "अतीतः", base: "अतीत", reading: "atīta" }]
+    examples:
+      - target: "अतीतं युगं जनः पठति"
+        reading: "atītaṃ yugaṃ janaḥ paṭhati"
+        ipa: "ət̪iːt̪əm juɡəm dʒənəh pəʈʰət̪i"
+        bases: [{ word: "अतीतं", base: "अतीत", reading: "atīta" }, { word: "युगं", base: "युग", reading: "yuga" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+      - target: "अतीतं जनः पठति"
+        reading: "atītaṃ janaḥ paṭhati"
+        ipa: "ət̪iːt̪əm dʒənəh pəʈʰət̪i"
+        bases: [{ word: "अतीतं", base: "अतीत", reading: "atīta" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+  - id: "sa-9332"
+    target: "आदिमः"
+    reading: "ādimaḥ"
+    ipa: "aːd̪iməh"
+    pos: "adj"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "आदिमः", base: "आदिम", reading: "ādima" }]
+    examples:
+      - target: "आदिमो जनो वसति"
+        reading: "ādimo jano vasati"
+        ipa: "aːd̪imoː dʒənoː ʋəsət̪i"
+        bases: [{ word: "आदिमो", base: "आदिम", reading: "ādima" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "वसति", base: "वस्", reading: "vas" }]
+      - target: "आदिमं गृहं पश्यति"
+        reading: "ādimaṃ gṛhaṃ paśyati"
+        ipa: "aːd̪iməm ɡr̩ɦəm pəʃjət̪i"
+        bases: [{ word: "आदिमं", base: "आदिम", reading: "ādima" }, { word: "गृहं", base: "गृह", reading: "gṛha" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-9333"
+    target: "ख्यातः"
+    reading: "khyātaḥ"
+    ipa: "kʰjaːt̪əh"
+    pos: "adj"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "ख्यातः", base: "ख्यात", reading: "khyāta" }]
+    examples:
+      - target: "ख्यातो नृपो गच्छति"
+        reading: "khyāto nṛpo gacchati"
+        ipa: "kʰjaːt̪oː nr̩poː ɡətʃtʃʰət̪i"
+        bases: [{ word: "ख्यातो", base: "ख्यात", reading: "khyāta" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+      - target: "जनः ख्यातं नगरं स्मरति"
+        reading: "janaḥ khyātaṃ nagaraṃ smarati"
+        ipa: "dʒənəh kʰjaːt̪əm nəɡərəm smərət̪i"
+        bases: [{ word: "जनः", base: "जन", reading: "jana" }, { word: "ख्यातं", base: "ख्यात", reading: "khyāta" }, { word: "नगरं", base: "नगर", reading: "nagara" }, { word: "स्मरति", base: "स्मृ", reading: "smṛ" }]
+  - id: "sa-9334"
+    target: "विक्रमः"
+    reading: "vikramaḥ"
+    ipa: "ʋikrəməh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "विक्रमः", base: "विक्रम", reading: "vikrama" }]
+    examples:
+      - target: "विक्रमं वीरः करोति"
+        reading: "vikramaṃ vīraḥ karoti"
+        ipa: "ʋikrəməm ʋiːrəh kəroːt̪i"
+        bases: [{ word: "विक्रमं", base: "विक्रम", reading: "vikrama" }, { word: "वीरः", base: "वीर", reading: "vīra" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+      - target: "विक्रमं सैनिकः पठति"
+        reading: "vikramaṃ sainikaḥ paṭhati"
+        ipa: "ʋikrəməm səinikəh pəʈʰət̪i"
+        bases: [{ word: "विक्रमं", base: "विक्रम", reading: "vikrama" }, { word: "सैनिकः", base: "सैनिक", reading: "sainika" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+  - id: "sa-9335"
+    target: "ईश्वरः"
+    reading: "īśvaraḥ"
+    ipa: "iːʃʋərəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "ईश्वरः", base: "ईश्वर", reading: "īśvara" }]
+    examples:
+      - target: "ईश्वरं जनो नमति"
+        reading: "īśvaraṃ jano namati"
+        ipa: "iːʃʋərəm dʒənoː nəmət̪i"
+        bases: [{ word: "ईश्वरं", base: "ईश्वर", reading: "īśvara" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "नमति", base: "नम्", reading: "nam" }]
+      - target: "ईश्वरो जनं रक्षति"
+        reading: "īśvaro janaṃ rakṣati"
+        ipa: "iːʃʋəroː dʒənəm rəkʂət̪i"
+        bases: [{ word: "ईश्वरो", base: "ईश्वर", reading: "īśvara" }, { word: "जनं", base: "जन", reading: "jana" }, { word: "रक्षति", base: "रक्ष्", reading: "rakṣ" }]
+  - id: "sa-9336"
+    target: "राजकुमारः"
+    reading: "rājakumāraḥ"
+    ipa: "raːdʒəkumaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "राजकुमारः", base: "राजकुमार", reading: "rājakumāra" }]
+    examples:
+      - target: "राजकुमारो गृहे वसति"
+        reading: "rājakumāro gṛhe vasati"
+        ipa: "raːdʒəkumaːroː ɡr̩ɦeː ʋəsət̪i"
+        bases: [{ word: "राजकुमारो", base: "राजकुमार", reading: "rājakumāra" }, { word: "गृहे", base: "गृह", reading: "gṛha" }, { word: "वसति", base: "वस्", reading: "vas" }]
+      - target: "राजकुमारं बालः पश्यति"
+        reading: "rājakumāraṃ bālaḥ paśyati"
+        ipa: "raːdʒəkumaːrəm baːləh pəʃjət̪i"
+        bases: [{ word: "राजकुमारं", base: "राजकुमार", reading: "rājakumāra" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-9337"
+    target: "राजपुत्रः"
+    reading: "rājaputraḥ"
+    ipa: "raːdʒəput̪rəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "राजपुत्रः", base: "राजपुत्र", reading: "rājaputra" }]
+    examples:
+      - target: "राजपुत्रो नगरं गच्छति"
+        reading: "rājaputro nagaraṃ gacchati"
+        ipa: "raːdʒəput̪roː nəɡərəm ɡətʃtʃʰət̪i"
+        bases: [{ word: "राजपुत्रो", base: "राजपुत्र", reading: "rājaputra" }, { word: "नगरं", base: "नगर", reading: "nagara" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+      - target: "राजपुत्रं रामो नमति"
+        reading: "rājaputraṃ rāmo namati"
+        ipa: "raːdʒəput̪rəm raːmoː nəmət̪i"
+        bases: [{ word: "राजपुत्रं", base: "राजपुत्र", reading: "rājaputra" }, { word: "रामो", base: "राम", reading: "rāma" }, { word: "नमति", base: "नम्", reading: "nam" }]
+  - id: "sa-9338"
+    target: "क्षयः"
+    reading: "kṣayaḥ"
+    ipa: "kʂəjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "क्षयः", base: "क्षय", reading: "kṣaya" }]
+    examples:
+      - target: "क्षयं कालः पश्यति"
+        reading: "kṣayaṃ kālaḥ paśyati"
+        ipa: "kʂəjəm kaːləh pəʃjət̪i"
+        bases: [{ word: "क्षयं", base: "क्षय", reading: "kṣaya" }, { word: "कालः", base: "काल", reading: "kāla" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+      - target: "क्षयं वैद्यः पश्यति"
+        reading: "kṣayaṃ vaidyaḥ paśyati"
+        ipa: "kʂəjəm ʋəid̪jəh pəʃjət̪i"
+        bases: [{ word: "क्षयं", base: "क्षय", reading: "kṣaya" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-9339"
+    target: "नाशः"
+    reading: "nāśaḥ"
+    ipa: "naːʃəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "नाशः", base: "नाश", reading: "nāśa" }]
+    examples:
+      - target: "नाशं सैनिकः करोति"
+        reading: "nāśaṃ sainikaḥ karoti"
+        ipa: "naːʃəm səinikəh kəroːt̪i"
+        bases: [{ word: "नाशं", base: "नाश", reading: "nāśa" }, { word: "सैनिकः", base: "सैनिक", reading: "sainika" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+      - target: "नाशं वीरो रक्षति"
+        reading: "nāśaṃ vīro rakṣati"
+        ipa: "naːʃəm ʋiːroː rəkʂət̪i"
+        bases: [{ word: "नाशं", base: "नाश", reading: "nāśa" }, { word: "वीरो", base: "वीर", reading: "vīra" }, { word: "रक्षति", base: "रक्ष्", reading: "rakṣ" }]
+  - id: "sa-9340"
+    target: "विनाशः"
+    reading: "vināśaḥ"
+    ipa: "ʋinaːʃəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "विनाशः", base: "विनाश", reading: "vināśa" }]
+    examples:
+      - target: "विनाशं जनः पश्यति"
+        reading: "vināśaṃ janaḥ paśyati"
+        ipa: "ʋinaːʃəm dʒənəh pəʃjət̪i"
+        bases: [{ word: "विनाशं", base: "विनाश", reading: "vināśa" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+      - target: "विनाशं कालो गच्छति"
+        reading: "vināśaṃ kālo gacchati"
+        ipa: "ʋinaːʃəm kaːloː ɡətʃtʃʰət̪i"
+        bases: [{ word: "विनाशं", base: "विनाश", reading: "vināśa" }, { word: "कालो", base: "काल", reading: "kāla" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+  - id: "sa-9341"
+    target: "भङ्गः"
+    reading: "bhaṅgaḥ"
+    ipa: "bʱəŋɡəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "भङ्गः", base: "भङ्ग", reading: "bhaṅga" }]
+    examples:
+      - target: "भङ्गं सैनिकः पतति"
+        reading: "bhaṅgaṃ sainikaḥ patati"
+        ipa: "bʱəŋɡəm səinikəh pət̪ət̪i"
+        bases: [{ word: "भङ्गं", base: "भङ्ग", reading: "bhaṅga" }, { word: "सैनिकः", base: "सैनिक", reading: "sainika" }, { word: "पतति", base: "पत्", reading: "pat" }]
+      - target: "भङ्गं नृपः पश्यति"
+        reading: "bhaṅgaṃ nṛpaḥ paśyati"
+        ipa: "bʱəŋɡəm nr̩pəh pəʃjət̪i"
+        bases: [{ word: "भङ्गं", base: "भङ्ग", reading: "bhaṅga" }, { word: "नृपः", base: "नृप", reading: "nṛpa" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-9342"
+    target: "भग्नः"
+    reading: "bhagnaḥ"
+    ipa: "bʱəɡnəh"
+    pos: "adj"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "भग्नः", base: "भग्न", reading: "bhagna" }]
+    examples:
+      - target: "भग्नो रथः पतति"
+        reading: "bhagno rathaḥ patati"
+        ipa: "bʱəɡnoː rət̪ʰəh pət̪ət̪i"
+        bases: [{ word: "भग्नो", base: "भग्न", reading: "bhagna" }, { word: "रथः", base: "रथ", reading: "ratha" }, { word: "पतति", base: "पत्", reading: "pat" }]
+      - target: "जनो भग्नं गृहं पश्यति"
+        reading: "jano bhagnaṃ gṛhaṃ paśyati"
+        ipa: "dʒənoː bʱəɡnəm ɡr̩ɦəm pəʃjət̪i"
+        bases: [{ word: "जनो", base: "जन", reading: "jana" }, { word: "भग्नं", base: "भग्न", reading: "bhagna" }, { word: "गृहं", base: "गृह", reading: "gṛha" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-9343"
+    target: "नष्टः"
+    reading: "naṣṭaḥ"
+    ipa: "nəʂʈəh"
+    pos: "adj"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "नष्टः", base: "नष्ट", reading: "naṣṭa" }]
+    examples:
+      - target: "जनो नष्टं नगरं पश्यति"
+        reading: "jano naṣṭaṃ nagaraṃ paśyati"
+        ipa: "dʒənoː nəʂʈəm nəɡərəm pəʃjət̪i"
+        bases: [{ word: "जनो", base: "जन", reading: "jana" }, { word: "नष्टं", base: "नष्ट", reading: "naṣṭa" }, { word: "नगरं", base: "नगर", reading: "nagara" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+      - target: "नष्टो बालः पठति"
+        reading: "naṣṭo bālaḥ paṭhati"
+        ipa: "nəʂʈoː baːləh pəʈʰət̪i"
+        bases: [{ word: "नष्टो", base: "नष्ट", reading: "naṣṭa" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+  - id: "sa-9344"
+    target: "निर्माणम्"
+    reading: "nirmāṇam"
+    ipa: "nirmaːɳəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "निर्माणम्", base: "निर्माण", reading: "nirmāṇa" }]
+    examples:
+      - target: "निर्माणं नृपः करोति"
+        reading: "nirmāṇaṃ nṛpaḥ karoti"
+        ipa: "nirmaːɳəm nr̩pəh kəroːt̪i"
+        bases: [{ word: "निर्माणं", base: "निर्माण", reading: "nirmāṇa" }, { word: "नृपः", base: "नृप", reading: "nṛpa" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+      - target: "निर्माणं सैनिकः पश्यति"
+        reading: "nirmāṇaṃ sainikaḥ paśyati"
+        ipa: "nirmaːɳəm səinikəh pəʃjət̪i"
+        bases: [{ word: "निर्माणं", base: "निर्माण", reading: "nirmāṇa" }, { word: "सैनिकः", base: "सैनिक", reading: "sainika" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-9345"
+    target: "प्रस्तरः"
+    reading: "prastaraḥ"
+    ipa: "prəst̪ərəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "प्रस्तरः", base: "प्रस्तर", reading: "prastara" }]
+    examples:
+      - target: "प्रस्तरं बालो हरति"
+        reading: "prastaraṃ bālo harati"
+        ipa: "prəst̪ərəm baːloː ɦərət̪i"
+        bases: [{ word: "प्रस्तरं", base: "प्रस्तर", reading: "prastara" }, { word: "बालो", base: "बाल", reading: "bāla" }, { word: "हरति", base: "हृ", reading: "hṛ" }]
+      - target: "प्रस्तरः पतति"
+        reading: "prastaraḥ patati"
+        ipa: "prəst̪ərəh pət̪ət̪i"
+        bases: [{ word: "प्रस्तरः", base: "प्रस्तर", reading: "prastara" }, { word: "पतति", base: "पत्", reading: "pat" }]
+  - id: "sa-9346"
+    target: "प्रारम्भः"
+    reading: "prārambhaḥ"
+    ipa: "praːrəmbʱəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "प्रारम्भः", base: "प्रारम्भ", reading: "prārambha" }]
+    examples:
+      - target: "प्रारम्भं नृपः करोति"
+        reading: "prārambhaṃ nṛpaḥ karoti"
+        ipa: "praːrəmbʱəm nr̩pəh kəroːt̪i"
+        bases: [{ word: "प्रारम्भं", base: "प्रारम्भ", reading: "prārambha" }, { word: "नृपः", base: "नृप", reading: "nṛpa" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+      - target: "प्रारम्भं बालो वदति"
+        reading: "prārambhaṃ bālo vadati"
+        ipa: "praːrəmbʱəm baːloː ʋəd̪ət̪i"
+        bases: [{ word: "प्रारम्भं", base: "प्रारम्भ", reading: "prārambha" }, { word: "बालो", base: "बाल", reading: "bāla" }, { word: "वदति", base: "वद्", reading: "vad" }]
+  - id: "sa-9347"
+    target: "अवसानम्"
+    reading: "avasānam"
+    ipa: "əʋəsaːnəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "अवसानम्", base: "अवसान", reading: "avasāna" }]
+    examples:
+      - target: "अवसानं नृपः पश्यति"
+        reading: "avasānaṃ nṛpaḥ paśyati"
+        ipa: "əʋəsaːnəm nr̩pəh pəʃjət̪i"
+        bases: [{ word: "अवसानं", base: "अवसान", reading: "avasāna" }, { word: "नृपः", base: "नृप", reading: "nṛpa" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+      - target: "अवसानं रामः पठति"
+        reading: "avasānaṃ rāmaḥ paṭhati"
+        ipa: "əʋəsaːnəm raːməh pəʈʰət̪i"
+        bases: [{ word: "अवसानं", base: "अवसान", reading: "avasāna" }, { word: "रामः", base: "राम", reading: "rāma" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+  - id: "sa-9348"
+    target: "पण्यम्"
+    reading: "paṇyam"
+    ipa: "pəɳjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "पण्यम्", base: "पण्य", reading: "paṇya" }]
+    examples:
+      - target: "पण्यं जनो हरति"
+        reading: "paṇyaṃ jano harati"
+        ipa: "pəɳjəm dʒənoː ɦərət̪i"
+        bases: [{ word: "पण्यं", base: "पण्य", reading: "paṇya" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "हरति", base: "हृ", reading: "hṛ" }]
+      - target: "पण्यं बालो नयति"
+        reading: "paṇyaṃ bālo nayati"
+        ipa: "pəɳjəm baːloː nəjət̪i"
+        bases: [{ word: "पण्यं", base: "पण्य", reading: "paṇya" }, { word: "बालो", base: "बाल", reading: "bāla" }, { word: "नयति", base: "नी", reading: "nī" }]
+  - id: "sa-9349"
+    target: "हट्टः"
+    reading: "haṭṭaḥ"
+    ipa: "ɦəʈʈəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["history"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "हट्टः", base: "हट्ट", reading: "haṭṭa" }]
+    examples:
+      - target: "हट्टं जनो गच्छति"
+        reading: "haṭṭaṃ jano gacchati"
+        ipa: "ɦəʈʈəm dʒənoː ɡətʃtʃʰət̪i"
+        bases: [{ word: "हट्टं", base: "हट्ट", reading: "haṭṭa" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+      - target: "हट्टं बालः पश्यति"
+        reading: "haṭṭaṃ bālaḥ paśyati"
+        ipa: "ɦəʈʈəm baːləh pəʃjət̪i"
+        bases: [{ word: "हट्टं", base: "हट्ट", reading: "haṭṭa" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पश्यति", base: "पश्", reading: "paś" }]

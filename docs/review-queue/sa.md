@@ -388,3 +388,122 @@ Each line is one candidate that was tried and not kept, with the reason.
 | unit-level | sa-feelings, sa-law, sa-weddings (word counts, 2026-11-18) | Counts now: feelings 89 of 90 (one short: the dump gave no further noun that is not already taught or a verb), law 17 of 80, weddings 15 of 60. Law and weddings are far short: the kaikki.org Sanskrit dump's law and marriage vocabulary is thin (most useful words are already taught on sa-dharma, sa-government or sa-family, or are names, verbs or u-stem nouns without a paradigm: तायु, तन्तु, हेतु, मन्यु). Monier-Williams and Wikisource were not searched for these two units. |
 | sa-10021 (derived noun row) | sa-law | DERIVED row, flagged: en.wiktionary's declension table for प्रायश्चित्तम् (n a) differs in some forms. Row from the model a-stem paradigm (Whitney §§ 326-330). Reviewer to check. |
 | unit-level | sa-law, sa-weddings (word counts, 2026-11-18 late) | Counts now: law 25 of 80, weddings 21 of 60, feelings 90 of 90, opinions 70 of 70 (opinions and health not changed in this pass). The law and marriage vocabulary of the kaikki dump, Wiktionary translation sections and the dharma/family units taught elsewhere is exhausted for these themes: most words are already taught (cross-reference, not duplicate: e.g. पत्नी, भार्या, कन्या, वर, विवाह, मण्डप, माला, आशीर्वाद, मुद्रा, साक्ष्य, शुल्क, पुरोहित), and many others are names, verbs, or i-masculine and consonant-stem nouns whose paradigms are not built. Monier-Williams and Wikisource were not mined for these units in this pass. |
+| sa-1557 (homograph) | sa-history | अन्तः (anta, the end) was left out: the same form अन्तः is the adverb 'inside' on sa-1557, and a homograph needs a `ref` note that this unit did not write. | Haiku deck worker | 2026-11-18 |
+| unit-level | sa-relationships, sa-history, sa-arts (word counts) | Real counts: relationships 24 of 70 planned, history 50 of 90, arts 25 of 80. The reason for each missing candidate is listed below the table (one line each). The planned counts in the path are replaced by the real ones. | Haiku deck worker | 2026-11-18 |
+
+## Shortfall reasons: history (2026-11-18)
+
+Each line is one candidate that was tried and not kept, with the reason.
+
+### history: 50 of 90 planned words kept (units real count; shortfall 40)
+
+- राज्य (kingdom, rule): already taught as sa-5700 in sa-government; not repeated (rule: one card per lemma)
+- नगर (city, town): already taught as sa-1760 in sa-places; not repeated (rule: one card per lemma)
+- दुर्ग (fort, fortress): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- युद्ध (war, battle): already taught as sa-5706 in sa-government; not repeated (rule: one card per lemma)
+- योध (warrior): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- अमात्य (minister): already taught as sa-5702 in sa-government; not repeated (rule: one card per lemma)
+- दूत (envoy, messenger): already taught as sa-5703 in sa-government; not repeated (rule: one card per lemma)
+- पराजय (defeat): already taught as sa-5762 in sa-government; not repeated (rule: one card per lemma)
+- काल (time, age): already taught as sa-5211 in sa-calendar; not repeated (rule: one card per lemma)
+- पुराण (ancient lore, old story): already taught as sa-1529 in sa-describing; not repeated (rule: one card per lemma)
+- पुरातन (ancient, old): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- पूर्व (former, earlier): already taught as sa-1590 in sa-directions; not repeated (rule: one card per lemma)
+- स्मारक (monument, memorial): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- आख्यान (narrative, story): already taught as sa-5887 in sa-stories; not repeated (rule: one card per lemma)
+- वृत्तान्त (account, report): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- शासन (rule, government, edict): already taught as sa-5720 in sa-government; not repeated (rule: one card per lemma)
+- नृप (king): already taught as sa-5718 in sa-government; not repeated (rule: one card per lemma)
+- सामन्त (vassal, feudal lord): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- ग्राम (village): already taught as sa-1759 in sa-places; not repeated (rule: one card per lemma)
+- प्राकार (rampart, wall): already taught as sa-5715 in sa-government; not repeated (rule: one card per lemma)
+- द्वार (gate, door): already taught as sa-1748 in sa-home; not repeated (rule: one card per lemma)
+- खड्ग (sword): already taught as sa-5897 in sa-stories; not repeated (rule: one card per lemma)
+- रथ (chariot): already taught as sa-5503 in sa-journey; not repeated (rule: one card per lemma)
+- गज (elephant): already taught as sa-1727 in sa-animals; not repeated (rule: one card per lemma)
+- बल (strength, army): already taught as sa-5759 in sa-government; not repeated (rule: one card per lemma)
+- वीर (hero, brave man): already taught as sa-7239 in sa-feelings; not repeated (rule: one card per lemma)
+- जय (victory): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- कोश (treasury, store): already taught as sa-5763 in sa-government; not repeated (rule: one card per lemma)
+- राष्ट्र (nation, country): already taught as sa-5760 in sa-government; not repeated (rule: one card per lemma)
+- जनपद (district, country): already taught as sa-5714 in sa-government; not repeated (rule: one card per lemma)
+- सचिव (secretary, minister): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- मन्त्र (counsel, advice): already taught as sa-1816 in sa-ritual; not repeated (rule: one card per lemma)
+- दण्ड (punishment, rod): already taught as sa-1798 in sa-things; not repeated (rule: one card per lemma)
+- न्याय (justice, rule): already taught as sa-5708 in sa-government; not repeated (rule: one card per lemma)
+- पूर्वज (ancestor): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- वंशज (descendant): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- अभिलेख (inscription, record): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- स्तम्भ (pillar, column): already taught as sa-1757 in sa-home; not repeated (rule: one card per lemma)
+- प्रासाद (palace, mansion): already taught as sa-1754 in sa-home; not repeated (rule: one card per lemma)
+- सिंहासन (throne): already taught as sa-5732 in sa-government; not repeated (rule: one card per lemma)
+- मुकुट (crown): already taught as sa-1788 in sa-clothes; not repeated (rule: one card per lemma)
+- पराक्रम (valour, prowess): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- नायक (leader, hero): already taught as sa-5726 in sa-government; not repeated (rule: one card per lemma)
+- नेता (leader): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- प्रशासक (administrator): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- दुर्गपाल (fort-keeper, commander of a fort): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- कोषाध्यक्ष (treasurer): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- विप्लव (revolt, upheaval): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- क्रान्ति (revolution): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- सन्धि (treaty): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- शान्ति (peace): already taught as sa-5707 in sa-government; not repeated (rule: one card per lemma)
+- विवाह (marriage): already taught as sa-5916 in sa-festivals; not repeated (rule: one card per lemma)
+- रक्षा (protection): already taught as sa-5761 in sa-government; not repeated (rule: one card per lemma)
+- सामर्थ्य (power, ability): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- प्रजा (subjects, people): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- नियम (rule, regulation): already taught as sa-5704 in sa-government; not repeated (rule: one card per lemma)
+- व्यवस्था (order, arrangement): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- आदेश (order, command): already taught as sa-5711 in sa-government; not repeated (rule: one card per lemma)
+- उपदेश (instruction, teaching): already taught as sa-5853 in sa-dharma; not repeated (rule: one card per lemma)
+- सम्राट् (emperor): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- चक्रवर्ती (universal emperor): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- सेनापति (commander): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- सुवर्ण (gold): already taught as sa-1803 in sa-things; not repeated (rule: one card per lemma)
+- धन (wealth): already taught as sa-5846 in sa-dharma; not repeated (rule: one card per lemma)
+- महान् (great): already taught as sa-1522 in sa-describing; not repeated (rule: one card per lemma)
+- प्राचीनता (antiquity): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- स्मृति (memory): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- परम्परा (tradition): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- कालक्रम (chronology): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- वर्ष (year): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- शताब्दी (century): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- अभियान (campaign, expedition): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- अश्वारोह (horseman, cavalry): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- रक्षक (guard, protector): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- शिविर (camp, encampment): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- आश्रम (hermitage): already taught as sa-1778 in sa-places; not repeated (rule: one card per lemma)
+- तोरण (gateway arch): already taught as sa-5518 in sa-journey; not repeated (rule: one card per lemma)
+- कूप (well): already taught as sa-1755 in sa-home; not repeated (rule: one card per lemma)
+- भवन (building, house): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- मन्दिर (temple): already taught as sa-1769 in sa-places; not repeated (rule: one card per lemma)
+- पाषाण (stone, rock): already taught as sa-5039 in sa-nature; not repeated (rule: one card per lemma)
+- भाण्डागार (treasury, storehouse): already taught as sa-5758 in sa-government; not repeated (rule: one card per lemma)
+- ग्रन्थ (book, text): already taught as sa-1794 in sa-things; not repeated (rule: one card per lemma)
+- वृत्त (event, account): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- प्रसिद्ध (famous): already taught as sa-7431 in sa-opinions; not repeated (rule: one card per lemma)
+- प्रतिहार (gatekeeper): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- पुरोहित (priest, royal chaplain): already taught as sa-5971 in sa-festivals; not repeated (rule: one card per lemma)
+- अधिकार (authority, right): already taught as sa-5713 in sa-government; not repeated (rule: one card per lemma)
+- नरेन्द्र (king, lord of men): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- जीर्ण (old, decayed): already taught as sa-5752 in sa-government; not repeated (rule: one card per lemma)
+- स्थापत्य (architecture): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- लिखित (written, inscribed): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- अभिलिखित (inscribed): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- राजवंश (royal dynasty): already taught as sa-5731 in sa-government; not repeated (rule: one card per lemma)
+- चन्द्र (moon): already taught as sa-5013 in sa-nature; not repeated (rule: one card per lemma)
+- सूर्य (sun): already taught as sa-5012 in sa-nature; not repeated (rule: one card per lemma)
+- आदि (beginning): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- अन्त (end): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- प्रशस्ति (eulogy): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- जनता (people): already taught as sa-5757 in sa-government; not repeated (rule: one card per lemma)
+- सार्थवाह (caravan leader, merchant): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- वणिज् (merchant): already taught as sa-5870 in sa-stories; not repeated (rule: one card per lemma)
+- व्यापार (trade): already taught as sa-1857 in sa-work; not repeated (rule: one card per lemma)
+- विपणि (market): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- नौका (boat): already taught as sa-5506 in sa-journey; not repeated (rule: one card per lemma)
+- समुद्र (sea): already taught as sa-1765 in sa-places; not repeated (rule: one card per lemma)
+- परिखा (moat): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- प्रवेश (entrance): already taught as sa-5555 in sa-journey; not repeated (rule: one card per lemma)
+- निर्गम (exit): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- राजाज्ञा (royal order): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
