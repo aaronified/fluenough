@@ -614,8 +614,17 @@ class Card {
   final MediaCredit? imageCredit;
 
   /// Whether the card shows a picture of what it means: [picture], or its
-  /// own [image].
-  bool get hasPicture => picture != null || image != null;
+  /// own [image]. Not a sign card's: its image is the sign itself, drawn as
+  /// its target and never beside the meaning, where it would give the answer
+  /// away (ADR-0056).
+  bool get hasPicture => !isSign && (picture != null || image != null);
+
+  /// Whether the card teaches a whole sign of a sign language (ADR-0056): its
+  /// [target] is one sign in Formal SignWriting, which is two-dimensional and
+  /// no text a learner reads, so the card is shown by its [image], drawn from
+  /// that text, and the text is never shown. A symbol card's target is
+  /// Unicode SignWriting, which a font draws, and is not one.
+  bool get isSign => isFswText(target);
 
   /// Whether the card is one of the course's phrasebook chunks: taught whole
   /// in the first lessons, never held back, its words not counted as taught
@@ -741,6 +750,10 @@ class Card {
     return <DrillMode>{
       for (final mode in allowed)
         if (!modes.contains(mode) &&
+            // A sign has no sound to hear or say (ADR-0056), whatever the
+            // phone's voices and whatever `modes` says.
+            !(isSign &&
+                (mode == DrillMode.listening || mode == DrillMode.speaking)) &&
             (ttsAvailable || mode != DrillMode.listening) &&
             (speechAvailable || mode != DrillMode.speaking) &&
             !(noGrammar && mode == DrillMode.grammarUnderstood))
@@ -887,6 +900,16 @@ List<String> wordsForBases(String text) => <String>[
           when word.isNotEmpty && !_allDigits.hasMatch(word))
         word,
 ];
+
+/// One unstyled sign in Formal SignWriting in ASCII (FSW), as a sign card's
+/// target is written: a sign box and its positioned symbols
+/// (`M507x507S1f720487x492`, Deck Format, "Sign languages").
+final RegExp _fsw = RegExp(
+  r'^[BLMR]\d{3}x\d{3}(?:S[123][0-9a-f]{2}[0-5][0-9a-f]\d{3}x\d{3})+$',
+);
+
+/// Whether [text] is a sign written in FSW (never shown to a learner).
+bool isFswText(String text) => _fsw.hasMatch(text);
 
 /// A punctuation mark, symbol or separator other than an apostrophe or a
 /// braille cell, which Unicode files as a symbol but is a letter of its

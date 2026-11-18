@@ -95,7 +95,13 @@ class LanguageInfo {
   /// are not on any keyboard. A card is shown in such a script, but an
   /// answer is never asked in it: a typed or rearranged answer is the card's
   /// first script, its Latin spelling (ADR-0055).
-  static const Set<String> noKeyboardScripts = <String>{'sitelen_pona'};
+  ///
+  /// SignWriting is another: a sign is drawn, not typed, and its answers are
+  /// chosen (ADR-0056).
+  static const Set<String> noKeyboardScripts = <String>{
+    'sitelen_pona',
+    'signwriting',
+  };
 
   /// Whether this is the IPA, a notation taught like a language
   /// (ADR-0041): its cards' examples are in other languages.
