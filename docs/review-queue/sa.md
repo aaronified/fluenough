@@ -507,3 +507,64 @@ Each line is one candidate that was tried and not kept, with the reason.
 - प्रवेश (entrance): already taught as sa-5555 in sa-journey; not repeated (rule: one card per lemma)
 - निर्गम (exit): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
 - राजाज्ञा (royal order): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+| unit-level | sa-relationships, sa-history, sa-arts (word counts) | Real counts: relationships 24 of 70 planned, history 50 of 90, arts 25 of 80. The reason for each missing candidate is listed below the table (one line each). The planned counts in the path are replaced by the real ones. | Haiku deck worker | 2026-11-18 |
+
+## Shortfall reasons: arts (2026-11-18)
+
+Each line is one candidate that was tried and not kept, with the reason.
+
+### arts: 25 of 80 planned words kept (units real count; shortfall 55)
+
+- गीत (song): already taught as sa-5919 in sa-festivals; not repeated (rule: one card per lemma)
+- नृत्य (dance): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- नाट्य (drama, dramatic art): already taught as sa-5917 in sa-festivals; not repeated (rule: one card per lemma)
+- चित्र (picture, painting): already taught as sa-5920 in sa-festivals; not repeated (rule: one card per lemma)
+- वादन (playing an instrument): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- मृदङ्ग (drum): already taught as sa-1810 in sa-things; not repeated (rule: one card per lemma)
+- ताल (rhythm, beat): already taught as sa-5974 in sa-festivals; not repeated (rule: one card per lemma)
+- राग (melody, musical mode): already taught as sa-5975 in sa-festivals; not repeated (rule: one card per lemma)
+- स्वर (tone, note): already taught as sa-1843 in sa-learning; not repeated (rule: one card per lemma)
+- गायक (singer): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- वादक (player, instrumentalist): already taught as sa-5977 in sa-festivals; not repeated (rule: one card per lemma)
+- नर्तक (dancer): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- श्लोक (verse): already taught as sa-5968 in sa-festivals; not repeated (rule: one card per lemma)
+- रङ्ग (stage, colour): already taught as sa-5913 in sa-festivals; not repeated (rule: one card per lemma)
+- रङ्गमञ्च (stage): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- शिल्प (craft, art): already taught as sa-1860 in sa-work; not repeated (rule: one card per lemma)
+- चित्रकार (painter): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- मूर्तिकार (sculptor): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- नूपुर (anklet): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- वर्ण (colour): already taught as sa-1842 in sa-learning; not repeated (rule: one card per lemma)
+- नील (blue): already taught as sa-1517 in sa-describing; not repeated (rule: one card per lemma)
+- रक्त (red): already taught as sa-1516 in sa-describing; not repeated (rule: one card per lemma)
+- हरित (green): already taught as sa-1518 in sa-describing; not repeated (rule: one card per lemma)
+- मधुर (sweet, pleasant): already taught as sa-1537 in sa-describing; not repeated (rule: one card per lemma)
+- वाद्य (musical instrument): already taught as sa-5909 in sa-festivals; not repeated (rule: one card per lemma)
+- शङ्ख (conch): already taught as sa-5911 in sa-festivals; not repeated (rule: one card per lemma)
+- दृश्य (scene, sight): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- प्रेक्षक (spectator): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- सौन्दर्य (beauty): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- वीणा (lute): already taught as sa-3257 in sa-things-sentences; not repeated (rule: one card per lemma)
+- मुरज (drum): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- पटह (drum): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- आलेख्य (painting, picture): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- चित्रपट (painted cloth, canvas): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- लेप्य (plaster figure): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- कलाकार (artist): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- वाद्यवृन्द (orchestra): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- नृत्यकला (dance art): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- संगीतज्ञ (musician): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- कवि (poet): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- प्रतिमा (image, statue): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- मुद्रा (gesture, seal): already taught as sa-1808 in sa-things; not repeated (rule: one card per lemma)
+- सज्जा (adornment): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- मणि (jewel, gem): already taught as sa-5896 in sa-stories; not repeated (rule: one card per lemma)
+- कुण्डल (earring): already taught as sa-1786 in sa-clothes; not repeated (rule: one card per lemma)
+- किरीट (crown): already taught as sa-5976 in sa-festivals; not repeated (rule: one card per lemma)
+- माला (garland): already taught as sa-1787 in sa-clothes; not repeated (rule: one card per lemma)
+- ध्वनि (sound): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
+- सूत्र (aphorism, thread): already taught as sa-1792 in sa-clothes; not repeated (rule: one card per lemma)
+- पद (word, verse, foot): already taught as sa-1844 in sa-learning; not repeated (rule: one card per lemma)
+- पदम् (verse): already taught as sa-3274 in sa-learning-sentences; not repeated (rule: one card per lemma)
+- लय (rhythm, absorption): not in the en.wiktionary Sanskrit extract (kaikki.org, read 2026-11-18); not added
+- रूपक (play, drama): in the extract, but its gender or stem class is not a-stem or the sense is not certain enough for a learner; not added
