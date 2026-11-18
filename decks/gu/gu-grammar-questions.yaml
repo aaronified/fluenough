@@ -24,6 +24,8 @@ cards:
     bases:
       - { word: "રહો", base: "રહેવું", reading: "rahevum̐" }
       - { word: "છો", base: "હોવું", reading: "hovum̐" }
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "gu-0298"
     target: "આ શું છે?"
     reading: "ā śum̐ che?"
@@ -38,6 +40,8 @@ cards:
     pos: "phrase"
     bases:
       - { word: "છે", base: "હોવું", reading: "hovum̐" }
+    notes:
+      - { id: "n1", kind: "pair", ref: "gu-0298" }
   - id: "gu-0300"
     target: "તમે ક્યારે આવશો?"
     reading: "tame kyāre āvśo?"
@@ -45,6 +49,8 @@ cards:
     pos: "phrase"
     bases:
       - { word: "આવશો", ref: "gu-0509" }
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "gu-0301"
     target: "કેટલા લોકો છે?"
     reading: "keṭlā loko che?"
