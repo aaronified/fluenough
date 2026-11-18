@@ -1,9 +1,9 @@
 # A culture deck of French-language texts from the eighteenth to the early twentieth century that are in the public domain:
 # one opening line each, with its source, its rights basis and its creator (wiki/Plan-Deck-Kinds-And-Topics.md). Built from French
-# Wikipedia and French Wikisource pages only, read there. Seventeen items (fr-4250 to fr-4266; fr-4267 to fr-4299 unused). Dropped, with the
+# Wikipedia and French Wikisource pages only, read there. Eighteen items (fr-4250 to fr-4267; fr-4268 to fr-4299 unused). Dropped, with the
 # reason read on the page: the traditional songs (Frère Jacques, Au clair de la lune, Sur le pont d'Avignon, Il était un petit navire, À la claire
 # fontaine: no first printing before 1900 read on a page; À la claire fontaine is from a 1922 book); Le Temps des cerises (no text on the page);
-# Anatole France, Le Crime de Sylvestre Bonnard (chapter I has no text on Wikisource); Colette (no text found); Péguy and Apollinaire and Alain-Fournier
+# Anatole France, Le Crime de Sylvestre Bonnard (chapter I has no text on Wikisource; fr-4267 is Le Jardin d'Épicure instead, whose text is on Wikisource); Colette (no text found); Péguy and Apollinaire and Alain-Fournier
 # (died in the First World War; Péguy and Apollinaire are recorded as 'mort pour la France' on their French Wikipedia pages); Jules Renard (index only).
 schema: 1
 id: "fr-culture-4"
@@ -576,3 +576,46 @@ cards:
       author_died: 1905
       jurisdiction: "FR"
       rights_checked: "2026-11-15"
+  - id: "fr-4267"
+    target: "Nous avons peine à nous figurer l'état d'esprit d'un homme d'autrefois qui croyait fermement que la terre était le centre du monde."
+    words: ["Nous", "avons", "peine", "à", "nous", "figurer", "l'état", "d'esprit", "d'un", "homme", "d'autrefois", "qui", "croyait", "fermement", "que", "la", "terre", "était", "le", "centre", "du", "monde"]
+    ipa: "nu avɔ̃ pɛn a nu fiɡyʁe leta dɛspʁi dœ̃ ɔm dotʁəfwa ki kʁwajɛ fɛʁməmɑ̃ kə la tɛʁ etɛ lə sɑ̃tʁ dy mɔ̃d"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-anatole-france"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Nous", base: "nous" }
+      - { word: "avons", base: "avoir" }
+      - { word: "peine", base: "peine" }
+      - { word: "à", base: "à" }
+      - { word: "nous", base: "nous" }
+      - { word: "figurer", base: "figurer" }
+      - { word: "l'état", base: "état" }
+      - { word: "d'esprit", base: "esprit" }
+      - { word: "d'un", base: "un" }
+      - { word: "homme", base: "homme" }
+      - { word: "d'autrefois", base: "autrefois" }
+      - { word: "qui", base: "qui" }
+      - { word: "croyait", base: "croire" }
+      - { word: "fermement", base: "fermement" }
+      - { word: "que", base: "que" }
+      - { word: "la", base: "le" }
+      - { word: "terre", base: "terre" }
+      - { word: "était", base: "être" }
+      - { word: "le", base: "le" }
+      - { word: "centre", base: "centre" }
+      - { word: "du", base: "de" }
+      - { word: "monde", base: "monde" }
+    source:
+      author: "Anatole France"
+      work: "Le Jardin d'Épicure, opening sentence of the essay 'Le Jardin d'Épicure'"
+      date: 1895
+      edition: "Calmann-Lévy, 1895, as shown on French Wikisource (Le Jardin d'Épicure, djvu text, essay 'Le Jardin d'Épicure'); the French Wikipedia works list gives 1894 for the book, so the date is from two sources that differ: flagged for review"
+      url: "https://fr.wikisource.org/wiki/Le_Jardin_d%E2%80%99%C3%89picure"
+      basis: "public-domain"
+      author_died: 1924
+      jurisdiction: "FR"
+      rights_checked: "2026-11-18"
