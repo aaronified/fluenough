@@ -150,7 +150,10 @@ void main() {
     expect(find.textContaining('S10000'), findsNothing);
     // Recognition: a screen reader is told "Sign", not the meaning, which
     // is the answer.
-    expect(find.bySemanticsLabel(l10nOf(tester).signImageLabel), findsOneWidget);
+    expect(
+      find.bySemanticsLabel(l10nOf(tester).signImageLabel),
+      findsOneWidget,
+    );
     expect(find.bySemanticsLabel('ant'), findsNothing);
     semantics.dispose();
   });
