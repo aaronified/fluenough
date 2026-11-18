@@ -31,6 +31,7 @@ final Map<String, RegExp> _scriptLetters = <String, RegExp>{
   'brahmi': RegExp(r'\p{Script=Brahmi}', unicode: true),
   'cuneiform': RegExp(r'\p{Script=Cuneiform}', unicode: true),
   'sitelen_pona': RegExp(r'[\u{F1900}-\u{F19FF}]', unicode: true),
+  'signwriting': RegExp(r'[\u{1D800}-\u{1DAAF}]', unicode: true),
   'egyptian_hieroglyphs': RegExp(
     r'\p{Script=Egyptian_Hieroglyphs}',
     unicode: true,
