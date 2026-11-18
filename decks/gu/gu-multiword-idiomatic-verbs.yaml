@@ -10,6 +10,60 @@ pattern_family: "idiomatic-verb"
 level: "A2"
 tags: ["unreviewed"]
 cards:
+  - id: "gu-6402"
+    target: "જુઠ્ઠું બોલવું"
+    words: ["જુઠ્ઠું", "બોલવું"]
+    reading: "juṭṭhum̐ bolvum"
+    ipa: "dʒuʈʈʰũ bolʋum"
+    pos: "phrase"
+    level: "A2"
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "જુઠ્ઠું", base: "જુઠ્ઠું", reading: "juṭṭhum̐" }
+      - { word: "બોલવું", ref: "gu-0512" }
+    examples:
+      - target: "તે જુઠ્ઠું બોલ્યો."
+        reading: "te juṭṭhum̐ bolyo."
+        bases:
+          - { word: "તે", ref: "gu-1000" }
+          - { word: "જુઠ્ઠું", base: "જુઠ્ઠું", reading: "juṭṭhum̐" }
+          - { word: "બોલ્યો", ref: "gu-0512" }
+      - target: "જુઠ્ઠું બોલવું ખોટું છે."
+        reading: "juṭṭhum̐ bolvum̐ khoṭum̐ che."
+        bases:
+          - { word: "જુઠ્ઠું", base: "જુઠ્ઠું", reading: "juṭṭhum̐" }
+          - { word: "બોલવું", ref: "gu-0512" }
+          - { word: "ખોટું", ref: "gu-1259" }
+          - { word: "છે", base: "હોવું", reading: "hovum" }
+  - id: "gu-6403"
+    target: "ગુલ્લી મારવી"
+    words: ["ગુલ્લી", "મારવી"]
+    reading: "gulli mārvi"
+    ipa: "ɡulli marʋi"
+    pos: "phrase"
+    level: "A2"
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ગુલ્લી", base: "ગુલ્લી", reading: "gulli" }
+      - { word: "મારવી", base: "મારવું", reading: "mārvum" }
+    examples:
+      - target: "તે રોજ ગુલ્લી મારે છે."
+        reading: "te roj gulli māre che."
+        bases:
+          - { word: "તે", ref: "gu-1000" }
+          - { word: "રોજ", ref: "gu-1105" }
+          - { word: "ગુલ્લી", base: "ગુલ્લી", reading: "gulli" }
+          - { word: "મારે", base: "મારવું", reading: "mārvum" }
+          - { word: "છે", base: "હોવું", reading: "hovum" }
+      - target: "તેણે આજે ગુલ્લી મારી?"
+        reading: "teṇe āje gulli māri?"
+        bases:
+          - { word: "તેણે", ref: "gu-1000" }
+          - { word: "આજે", ref: "gu-0482" }
+          - { word: "ગુલ્લી", base: "ગુલ્લી", reading: "gulli" }
+          - { word: "મારી", base: "મારવું", reading: "mārvum" }
   - id: "gu-6500"
     target: "આડું પડવું"
     words: ["આડું", "પડવું"]
@@ -65,28 +119,3 @@ cards:
           - { word: "તારું", ref: "gu-1005" }
           - { word: "આવી", base: "આવી", reading: "āvi" }
           - { word: "બનશે", base: "બનવું", reading: "banvum" }
-  - id: "gu-6502"
-    target: "ખબર હોવી"
-    words: ["ખબર", "હોવી"]
-    reading: "khabar hovi"
-    ipa: "kʰəbər ɦoʋi"
-    pos: "phrase"
-    level: "A2"
-    notes:
-      - { id: "u1", kind: "usage" }
-    bases:
-      - { word: "ખબર", ref: "gu-0059" }
-      - { word: "હોવી", base: "હોવું", reading: "hovum" }
-    examples:
-      - target: "મને ખબર છે."
-        reading: "mane khabar che."
-        bases:
-          - { word: "મને", ref: "gu-1008" }
-          - { word: "ખબર", ref: "gu-0059" }
-          - { word: "છે", base: "હોવું", reading: "hovum" }
-      - target: "તને ખબર છે?"
-        reading: "tane khabar che?"
-        bases:
-          - { word: "તને", ref: "gu-1009" }
-          - { word: "ખબર", ref: "gu-0059" }
-          - { word: "છે", base: "હોવું", reading: "hovum" }
