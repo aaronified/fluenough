@@ -537,7 +537,8 @@ class GujaratiNormalising(unittest.TestCase):
     gu = ip.VARIETIES["gu"]
 
     def norm(self, form: str, broad: str | None) -> str:
-        return self.gu.normalised(form, broad)
+        # As the import does: the rules, then NFC.
+        return pp.normalise(self.gu.normalised(form, broad))
 
     def test_wiktionarys_s_for_sh_becomes_sh_where_the_broad_ipa_has_it(self) -> None:
         self.assertEqual(self.norm("[ˈsũ]", "ʃũ"), "[ˈʃũ]")
