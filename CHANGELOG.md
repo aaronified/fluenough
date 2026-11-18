@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.2] - 2026-11-18
+
 - **American and Indian Sign Language start with how SignWriting works.** A short guide teaches the symbols that write signs, and the app offers a font to download so they show properly.
 
 ## [0.11.1] - 2026-11-17
