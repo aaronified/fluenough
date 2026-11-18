@@ -1,0 +1,23 @@
+schema: 1
+kind: "phonetics"
+id: "gu-phonetics"
+language: "gu"
+variety: "Standard Gujarati, as the course's broad ipa writes it"
+description: "Rules that turn a card's broad ipa into its narrow [ ] form, in order. Written for tools/derive_phonetic.py, never read by the app. Each rule applies the regular expression to the whole ipa string and replaces every match; the next rule works on the result. Only rules that are well attested are here: the course's broad ipa for Gujarati already writes the dental stops, the aspirates, the murmured stops, the retroflexes, the nasal vowels and the glottal h, and a rule left out is not a claim that it does not exist. Schwa deletion and the sibilants vary by dialect and register, so they are not written as rules."
+rules:
+  # A nasal takes the place of the stop after it. Wikipedia: before velar and palatal stops, [ŋ] and [ɲ] vary with a nasalised vowel.
+  # source: Wikipedia, Gujarati phonology, "Consonants" (CC BY-SA 4.0), citing Cardona and Suthar, "Gujarati", in The Indo-Aryan Languages (2003, Routledge), p. 665; Mistry, "Gujarati phonology" (1997), p. 659.
+  - id: "gu-n-velar"
+    pattern: 'n(?=ˈ?[kɡ])'
+    replace: 'ŋ'
+    source: 'Wikipedia, Gujarati phonology, "Consonants" (CC BY-SA 4.0), citing Cardona and Suthar, "Gujarati", in The Indo-Aryan Languages (2003, Routledge), p. 665; Mistry, "Gujarati phonology" (1997), p. 659.'
+  - id: "gu-n-palatal"
+    pattern: 'n(?=ˈ?(?:tʃ|dʒ))'
+    replace: 'ɲ'
+    source: 'Wikipedia, Gujarati phonology, "Consonants" (CC BY-SA 4.0), citing Cardona and Suthar, "Gujarati", in The Indo-Aryan Languages (2003, Routledge), p. 665; Mistry, "Gujarati phonology" (1997), p. 659.'
+  # The voiced retroflex stops ɖ and ɖʱ are flapped between vowels and finally; they stay stops initially, when doubled and after a nasal vowel (a nasal vowel has a tilde, so it is not matched here).
+  # source: Wikipedia, Gujarati phonology, "Consonants" (CC BY-SA 4.0), citing Masica, The Indo-Aryan Languages (1991, CUP), p. 97; Mistry (1997), p. 659.
+  - id: "gu-retroflex-flap"
+    pattern: '([aəeɛioɔu]ˈ?)ɖ(?!ɖ)'
+    replace: '\1ɽ'
+    source: 'Wikipedia, Gujarati phonology, "Consonants" (CC BY-SA 4.0), citing Masica, The Indo-Aryan Languages (1991, CUP), p. 97; Mistry (1997), p. 659.'
