@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "id": "gu-en-before-after-words",
+  "kind": "layer",
+  "core": "gu-before-after-words",
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "name": "Before and after: words for time order",
+  "license": "CC-BY-SA-4.0",
+  "description": "The words that place one action before or after another, beside the verb rule. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "unreviewed"
+  ],
+  "cards": {
+    "gu-4095": {
+      "native": "before; earlier (in time)",
+      "notes": {
+        "n1": "It means earlier than a time or event already named. It can stand alone or follow a noun. For a verb, see the rule for પહેલાં (pahelām).",
+        "n2": "The opposite is પછી (pachi), after."
+      },
+      "examples": {
+        "તે અગાઉ અહીં આવ્યો હતો.": {
+          "native": "He had come here before.",
+          "bases": {
+            "અગાઉ": "before; earlier (in time)",
+            "આવ્યો": "came (masculine)",
+            "હતો": "was (masculine)"
+          }
+        },
+        "ટ્રેન અગાઉ ઉપડી.": {
+          "native": "The train left earlier.",
+          "bases": {
+            "અગાઉ": "before; earlier (in time)",
+            "ઉપડી": "left (feminine)"
+          }
+        }
+      }
+    },
+    "gu-4096": {
+      "native": "after; following (a noun or event)",
+      "notes": {
+        "n1": "It is formal and is used after a noun, such as પરીક્ષા (parikśā) બાદ (bād), after the exam. In everyday speech people say પછી (pachi)."
+      },
+      "examples": {
+        "પરીક્ષા બાદ રજા છે.": {
+          "native": "After the exam there is a holiday.",
+          "bases": {
+            "પરીક્ષા": "exam",
+            "બાદ": "after; following (a noun or event)",
+            "છે": "is"
+          }
+        },
+        "ચૂકવણી બાદ રસીદ મળશે.": {
+          "native": "A receipt will be given after the payment.",
+          "bases": {
+            "બાદ": "after; following (a noun or event)",
+            "મળશે": "will be met; will get"
+          }
+        }
+      }
+    }
+  }
+}
