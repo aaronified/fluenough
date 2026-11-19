@@ -321,3 +321,738 @@ Candidates listed: 92
 Dropped (not usable): मूर्च्छा (no usable entry or taught)
 
 
+## sa-law (planned 80, 25 built, missing 55; list needs 83)
+
+Candidates listed: 84
+
+| # | Lemma | IAST | Head line (en.wiktionary) | Gloss | Stem | Table | Confirmed | Usage |
+|--|--|--|--|--|--|--|--|--|
+| 1 | चौर | caura | noun stem, m | a thief, robber | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 2 | ऋणिन् | ṛṇin | noun stem, m | debtor | in-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 3 | अनृणिन् | anṛṇin | adj stem | free from debt; unindebted | in-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 4 | शास्ति | śāsti | noun stem, f | correction, punishment; order, command; governing, ruling; sceptre | i-stem | yes | Wiktionary page + head line + table; Manu 7.18 | Manusmṛti |
+| 5 | आगस् | āgas | noun stem, n | transgression, offence, injury, sin, fault | as-stem | yes | Wiktionary page + head line + table; Manu 9.241 | Manusmṛti |
+| 6 | अकार्य | akārya | noun stem, n | criminal action | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 7 | अदत्तादान | adattādāna | noun stem, n | stealing, theft | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 8 | अपराधिन् | aparādhin | adj stem | criminal, offender, guilty | in-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 9 | अपराधिनी | aparādhinī | noun stem, f | criminal, one who commits crime (feminine) | ī-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 10 | रेक्णस् | rekṇas | noun stem, n | property left behind; legacy, inheritance; wealth, treasure | as-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 7.4.7 | Ṛgveda 7.4.7 |
+| 11 | अघ | agha | noun stem, n | evil; mishap; sin | a-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 2.41.11 | Ṛgveda 2.41.11 |
+| 12 | एनस् | enas | noun stem, n | sin, crime, offense; unhappiness, misfortune | as-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 10.63.8 | Ṛgveda 10.63.8 |
+| 13 | कपट | kapaṭa | noun stem, m or n | fraud, deceit, cheating, circumvention | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 14 | वञ्चन | vañcana | noun stem, n | cheating; fraud; illusion; delusion | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 15 | अनृत | anṛta | noun stem, n | falsehood, lying, cheating | a-stem | yes | Wiktionary page + head line + table; YS 2.34 | Yoga Sūtra |
+| 16 | शृङ्खल | śṛṅkhala | noun stem, m | chain, fetter, especially one made of iron; measuring chain; a belt | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 17 | पाश | pāśa | noun stem, m | a noose, cord, bond, chain or a fetter | a-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 7.88.7 | Ṛgveda 7.88.7 |
+| 18 | बन्ध | bandha | noun stem, m | a binding, fetter, tie, bond; a bundle | a-stem | yes | Wiktionary page + head line + table; YS 3.39 | Yoga Sūtra |
+| 19 | क्रेतृ | kretṛ | noun stem, m | buyer, purchaser | ṛ-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 20 | विक्रेतृ | vikretṛ | noun stem, m | seller, one who sells | ṛ-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 21 | साक्षिणी | sākṣiṇī | noun stem, f | spectator, witness (feminine) | ī-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 22 | धनिन् | dhanin | noun stem, m | a rich man, owner, creditor; a name of Kubera | in-stem | yes | Wiktionary page + head line + table; Manu 8.61 | Manusmṛti |
+| 23 | अधमर्ण | adhamarṇa | noun stem, m | one reduced to inferiority by incurring debt; a debtor | a-stem | yes | Wiktionary page + head line + table; Manu 8.47 (as compound member) | Manusmṛti |
+| 24 | आधमर्ण्य | ādhamarṇya | noun stem, n | the state of being a debtor; debtorship; indebtedness | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 25 | अनृणता | anṛṇatā | noun stem, f | unindebtedness, freedom from debt | ā-stem | yes | Wiktionary page + head line + table; c. 500 BCE – 100 BCE, Rāmāyaṇa 2.94.17 | Rāmāyaṇa 2.94.17 |
+| 26 | क्रय्य | krayya | adj stem | purchasable; exhibited for sale | a-stem | yes | Wiktionary page + head line + table; c. 700 BCE, Śatapatha Brāhmaṇa 3.3.3.1 | Śatapatha Brāhmaṇa 3.3.3.1 |
+| 27 | परिग्रह | parigraha | noun stem, m | getting, attaining, acquisition, possession, property | a-stem | yes | Wiktionary page + head line + table; YS 2.34 | Yoga Sūtra |
+| 28 | उपालम्भ | upālambha | noun stem, m | reproach, censure, abuse, finding fault with; prohibition, interdict | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 29 | सभापति | sabhā-pati | noun stem, m | the president or chairman of an assembly or council | i-stem | yes | Wiktionary page + head line + table; c. 1200 BCE – 800 BCE, Kṛṣṇa-Yajurveda ( | Kṛṣṇa-Yajurveda ( |
+| 30 | सभ्य | sabhya | noun stem, m | an assistant at an assembly or council, esp. an assessor, judge | a-stem | yes | Wiktionary page + head line + table; Manu 8.10 (as compound member) | Manusmṛti |
+| 31 | सभेय | sabheya | adj stem | fit for an assembly or council, civilized, clever, well-behaved, decen | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 32 | कुलिक | kulika | noun stem, m | judge, chief; kinsman; hunter; thorny plant; a type of poison | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 33 | धर्मिन् | dharmin | adj  | knowing or obeying the law, faithful to duty, virtuous, pious, just | in-stem | yes | Wiktionary page + head line + table; YS 4.34 | Yoga Sūtra |
+| 34 | वैध | vaidha | adj stem | enjoined by rule or precept, prescribed, legal | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 35 | दुष्कृत | duṣkṛta | noun stem, n | an evil action; a sin; guilt | a-stem | yes | Wiktionary page + head line + table; Manu 3.191 (as compound member) | Manusmṛti |
+| 36 | अभद्र | abhadra | noun stem, n | badness, wickedness, evilness; sin | a-stem | yes | Wiktionary page + head line + table; c. 700 CE – 900 CE, Bhāgavata Purāṇa 1.2 | Bhāgavata Purāṇa 1.2 |
+| 37 | परुष | paruṣa | noun stem, n | harsh and contumelious speech, abuse, etc. | a-stem | yes | Wiktionary page + head line + table; Meghadūta (as compound member) | Meghadūta |
+| 38 | खानक | khānaka | noun stem, m | a house-breaker, thief (VarBṛS.) | a-stem | yes | Wiktionary page + head line + table; Manu 8.260 (as compound member) | Manusmṛti |
+| 39 | लट | laṭa | noun stem, m | thief; one who speaks like a child or like a fool | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 40 | लुप्त | lupta | noun stem, n | plunder, loot, stolen property; disappearance | a-stem | yes | Wiktionary page + head line + table; Manu 8.226 (as compound member) | Manusmṛti |
+| 41 | लोप्त्र | loptra | noun stem, n | stolen property; loot; booty | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 42 | स्तेन | stena | noun stem, m | thief, robber; thieving, stealing | a-stem | yes | Wiktionary page + head line + table; Manu 7.83 | Manusmṛti |
+| 43 | स्तायु | stāyu | noun stem, m | thief, robber | u-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 44 | अर्घ | argha | noun stem, m | worth, value, price | a-stem | yes | Wiktionary page + head line + table; Manu 8.402 (as compound member) | Manusmṛti |
+| 45 | वस्न | vasna | noun stem, n | price, value | a-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 4.24.22 | Ṛgveda 4.24.22 |
+| 46 | धरिमन् | dhariman | noun stem, m | a balance, weight; form, figure | an-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 47 | ढौकन | ḍhaukana | noun stem, n | offering, present, bribe; bringing near | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 48 | वाणिज | vāṇija | noun stem, m | merchant; trader | a-stem | yes | Wiktionary page + head line + table; Manu 3.181 (as compound member) | Manusmṛti |
+| 49 | वणिज | vaṇija | noun stem, m | trader; name of Shiva; the zodiacal sign Libra | a-stem | yes | Wiktionary page + head line + table; Manu 7.127 (as compound member) | Manusmṛti |
+| 50 | वाणिज्यक | vāṇijyaka | noun stem, m | a merchant, trader (Hcat.) | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 51 | निश्चित | niścita | noun stem, n | certainty, decision, resolution, design | a-stem | yes | Wiktionary page + head line + table; Manu 7.59 (as compound member) | Manusmṛti |
+| 52 | अप्रमाण | apramāṇa | noun stem, n | a rule which is no standard of action | a-stem | yes | Wiktionary page + head line + table; YS 1.9 | Yoga Sūtra |
+| 53 | सीमन् | sīman | noun stem, f | boundary, border, limit, margin, frontier | an-stem | yes | Wiktionary page + head line + table; Manu 8.254 | Manusmṛti |
+| 54 | पार | pāra | noun stem, n | the further bank or shore or boundary, any bank or shore, the opposite | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 55 | योगक्षेम | yogakṣema | noun stem, m | the secure possession of what has been acquired | a-stem | yes | Wiktionary page + head line + table; Manu 7.127 (as compound member) | Manusmṛti |
+| 56 | भार | bhāra | noun stem, m | burden, load, weight; labor, toil; an onerous task | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 57 | ऋत | ṛta | noun stem, n | fixed or settled order, law, rule (especially in religion) | a-stem | yes | Wiktionary page + head line + table; RV 10.85.24 | Ṛgveda 10.85 |
+| 58 | ऋतावन् | ṛtāvan | adj stem | keeping within the fixed order or rule, regular, proper (as inanimated | an-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 59 | अप्नस् | apnas | noun stem, n | wealth; possession; property | as-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 1.113.20 | Ṛgveda 1.113.20 |
+| 60 | करस्थ | karastha | adj stem | lying in the hand; in possession | a-stem | yes | Wiktionary page + head line + table; Budhakauśika, Rāmarakṣāstotra 31 | Rāmarakṣāstotra 31 |
+| 61 | दस्यु | dasyu | noun stem, m | impious man; barbarian | u-stem | yes | Wiktionary page + head line + table; Manu 7.143 | Manusmṛti |
+| 62 | वादिन् | vādin | noun stem, m | speaker, asserter; disputant; plaintiff, accuser, prosecutor | in-stem | yes | Wiktionary page + head line + table; Manu 7.91 | Manusmṛti |
+| 63 | भृति | bhṛti or bhṛti | noun stem, f | support, maintenance, nourishment, food RV. &c. | i-stem | yes | Wiktionary page + head line + table; Manu 8.231 | Manusmṛti |
+| 64 | कूट | kūṭa | noun stem, m or n | illusion, fraud, trick, untruth, falsehood | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 65 | प्रग्रह | pragraha | noun stem, m | holding in front, stretching forth | a-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.15 | Śākuntalam |
+| 66 | घात | ghāta | noun stem, m | a blow, bruise; devastation, destruction | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 67 | घातक | ghātaka | noun stem, m | killer, murderer, slayer | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 68 | हत्या | hatyā | noun stem, f | killing, slaying, slaughter, murder (particularly of the criminal vari | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 69 | हन्तृ | hantṛ | noun stem, m | a killer, slayer, murderer | ṛ-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 10.87.22 | Ṛgveda 10.87.22 |
+| 70 | द्यूत | dyūta | noun stem, n | gambling, game of dice; play, gaming; contest; battle or fight for | a-stem | yes | Wiktionary page + head line + table; Manu 2.179 (as compound member) | Manusmṛti |
+| 71 | श्रेष्ठिन् | śreṣṭhin | noun stem, m | the head or president of a mercantile or other guild | in-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.23 (as compound member) | Śākuntalam |
+| 72 | निधि | nidhi | noun stem, m | a store, hoard, treasure; setting down or serving up (of food) | i-stem | yes | Wiktionary page + head line + table; Manu 8.37 | Manusmṛti |
+| 73 | पण | paṇa | noun stem, m | play for a stake; a compact stipulation, agreement, treaty | a-stem | yes | Wiktionary page + head line + table; Manu 8.224 | Manusmṛti |
+| 74 | अधिकारिन् | adhikārin | noun stem, m | official, one with authority; authoritative | in-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 75 | द्विगुण | dviguṇa | adj  | double; twofold (having two parts) | a-stem | yes | Wiktionary page + head line + table; YS 3.27 | Yoga Sūtra |
+| 76 | चण्डाल | caṇḍāla | noun stem, m | outcast, one born from a shudra father and a brahmin mother | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 77 | शुद्धि | śuddhi | noun stem, f | cleansing, purification, purity, holiness, freedom from defilement, pu | i-stem | yes | Wiktionary page + head line + table; YS 1.3 | Yoga Sūtra |
+| 78 | वचन | vacana | noun stem, n | speaking, utterance (Sāṃkhyak.); pronunciation | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.11 | Śākuntalam |
+| 79 | वक्तृ | vaktṛ | noun stem, m | speaker, orator; teacher | ṛ-stem | yes | Wiktionary page + head line + table; Manu 8.272 | Manusmṛti |
+| 80 | कृच्छ्र | kṛcchra | noun stem, n | trouble; pain; calamity; difficulty; hardship; affliction | a-stem | yes | Wiktionary page + head line + table; YS 2.33 (as compound member) | Yoga Sūtra |
+| 81 | उद्धार | uddhāra | noun stem, m | the act of raising, elevating, lifting up; drawing out, pulling out | a-stem | yes | Wiktionary page + head line + table; Manu 9.112 | Manusmṛti |
+| 82 | लब्ध | labdha | adj stem | taken, seized, caught, met with, found; got at, arrived (as a moment) | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 83 | दातृ | dātṛ or dātṛ | noun stem, m | giver, donor, liberal; one who gives a daughter (gen.) in marriage | ṛ-stem | yes | Wiktionary page + head line + table; Manu 3.242 | Manusmṛti |
+| 84 | आपद् | āpad | noun stem, f | fall, accident; fall, accident | root-stem | yes | Wiktionary page + head line + table; Manu 9.56 | Manusmṛti |
+
+## sa-weddings (planned 60, 21 built, missing 39; list needs 59)
+
+Candidates listed: 62
+
+| # | Lemma | IAST | Head line (en.wiktionary) | Gloss | Stem | Table | Confirmed | Usage |
+|--|--|--|--|--|--|--|--|--|
+| 1 | आर्ष | ārṣa | noun stem, m | an old form of marriage, in which one or two pairs of cattle are given | a-stem | yes | Wiktionary page + head line + table; Manu 3.53 | Manusmṛti |
+| 2 | राक्षस | rākṣasa | noun stem, m | a demon in general, an evil or malignant demon | a-stem | yes | Wiktionary page + head line + table; Manu 3.21 (as compound member) | Manusmṛti |
+| 3 | दैव | daiva | noun stem, n | divine power or will, destiny, fate, chance | a-stem | yes | Wiktionary page + head line + table; Manu 3.125 | Manusmṛti |
+| 4 | वेदि | vedi | noun stem, f | raised ground used for a sacrificial altar | i-stem | yes | Wiktionary page + head line + table; Manu 2.7 | Manusmṛti |
+| 5 | वरयात्रा | varayātrā | noun stem, f | A procession that brings the bridegroom to the wedding venue. | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 6 | वैवाहिक | vaivāhika | noun stem, n | wedding preparations, pre-wedding festivities; wedding | a-stem | yes | Wiktionary page + head line + table; Manu 2.67 (as compound member) | Manusmṛti |
+| 7 | पाणि | pāṇi | noun stem, m | the hand | i-stem | yes | Wiktionary page + head line + table; Manu 2.72 (as compound member) | Manusmṛti |
+| 8 | गन्धर्व | gandharva | noun stem, m | a gandharva (one of a class of male heavenly beings, famed singers and | a-stem | yes | Wiktionary page + head line + table; Manu 3.196 (as compound member) | Manusmṛti |
+| 9 | अर्यमन् | aryaman | noun stem, m | a friend who asks a woman in marriage for another | an-stem | yes | Wiktionary page + head line + table; RV 10.85.36 | Ṛgveda 10.85 |
+| 10 | भग | bhaga | noun stem, m | Bhaga, one of the Adityas, a god of wealth and marriage in Hinduism. I | a-stem | yes | Wiktionary page + head line + table; Manu 9.237 | Manusmṛti |
+| 11 | दम्पति | dampati | noun stem, m | husband and wife; the lord of the house | i-stem | yes | Wiktionary page + head line + table; Manu 3.116 | Manusmṛti |
+| 12 | ऊढ | ūḍha | adj stem | carried, conveyed; borne; stolen; washed away by water | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 13 | प्रवर | pravara | adj stem | best, finest; excellent, noble | a-stem | yes | Wiktionary page + head line + table; Manu 2.200 (as compound member) | Manusmṛti |
+| 14 | अनुलोम | anuloma | adj stem | regular; in order (following an appropriate sequence); successive | a-stem | yes | Wiktionary page + head line + table; c. 400 BCE, Mahābhārata 6.114.36 | Mahābhārata 6.114.36 |
+| 15 | प्रतिलोम | pratiloma | adj stem | contrary to the regular order; inverted; against the grain | a-stem | yes | Wiktionary page + head line + table; c. 500 BCE – 100 BCE, Rāmāyaṇa 5.20.35 | Rāmāyaṇa 5.20.35 |
+| 16 | ग्रन्थि | granthi | noun stem, m | knot | i-stem | yes | Wiktionary page + head line + table; Manu 2.43 (as compound member) | Manusmṛti |
+| 17 | पर्यङ्क | paryaṅka | noun stem, m | furniture for lying down: a bed, a couch | a-stem | yes | Wiktionary page + head line + table; YS 2.47 (as compound member) | Yoga Sūtra |
+| 18 | कन्यका | kanyakā | noun stem, f | girl, maiden, virgin; daughter; the sign of the zodiac Virgo | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.1 | Śākuntalam |
+| 19 | मिथुन | mithuna | noun stem, m | a pair (male and female; but also "any couple or pair") | a-stem | yes | Wiktionary page + head line + table; Manu 3.29 (as compound member) | Manusmṛti |
+| 20 | तरुण | taruṇa | noun stem, m | a youth | a-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.5 | Śākuntalam |
+| 21 | यौवन | yauvana | noun stem, n | youth, youthfulness; adolescence, puberty | a-stem | yes | Wiktionary page + head line + table; Manu 9.3 | Manusmṛti |
+| 22 | स्त्रीत्व | strītva | noun stem, n | womanhood, wifehood; feminineness | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 23 | अकन्या | akanyā | noun stem, f | not a virgin | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 24 | अक्षता | akṣatā | noun stem, f | virgin | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 25 | बाला | bālā | noun stem, f | female child, girl, young woman (especially one under 16 years) | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.2 | Śākuntalam |
+| 26 | वनिता | vanitā | noun stem, f | a loved wife, mistress, any woman (also applied to the female of an an | ā-stem | yes | Wiktionary page + head line + table; Meghadūta (as compound member) | Meghadūta |
+| 27 | कामुक | kāmuka | noun stem, m | a lover, gallant | a-stem | yes | Wiktionary page + head line + table; Meghadūta (as compound member) | Meghadūta |
+| 28 | रमण | ramaṇa | noun stem, n | pleasure, joy; dalliance, amorous sport, sexual union, copulation | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 29 | कलत्र | kalatra | noun stem, n | wife, consort; the female of an animal; the hip and loins | a-stem | yes | Wiktionary page + head line + table; Meghadūta (as compound member) | Meghadūta |
+| 30 | इष्ट | iṣṭa | noun stem, m | lover, husband; castor oil plant L. | a-stem | yes | Wiktionary page + head line + table; Manu 7.13 | Manusmṛti |
+| 31 | प्रेष्ठ | preṣṭha | noun stem, m | a lover, husband | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 32 | ललना | lalanā | noun stem, f | a wanton woman, any woman, wife; the tongue | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 33 | भर्तृ | bhartṛ | noun stem, m | husband | ṛ-stem | yes | Wiktionary page + head line + table; Manu 3.174 | Manusmṛti |
+| 34 | पतित्व | patitva | noun stem, n | matrimony, wedlock | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 35 | बालिका | bālikā | noun stem, f | girl | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 36 | कनीनिका | kanīnikā | noun stem, f | girl, maiden; pupil | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 37 | युग्म | yugma | noun stem, n | a pair, couple, brace; the sign of the zodiac Gemini | a-stem | yes | Wiktionary page + head line + table; Manu 3.48 (as compound member) | Manusmṛti |
+| 38 | योषित् | yoṣit | noun stem, f | girl, young woman | root-stem | yes | Wiktionary page + head line + table; Manu 9.24 | Manusmṛti |
+| 39 | युवति | yuvati | noun stem, f | a girl; a young woman | i-stem | yes | Wiktionary page + head line + table; Manu 2.212 (as compound member) | Manusmṛti |
+| 40 | माङ्गलिक | māṅgalika | noun stem, n | any auspicious object (like an amulet) | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 41 | परिणीत | pariṇīta | noun stem, n | the act of marrying; a marriage | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.21 (as compound member) | Śākuntalam |
+| 42 | परिणीति | pariṇīti | noun stem, f | the act of marrying; marriage | i-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 43 | अग्रू | agrū | noun stem, f | a maiden, virgin; an unmarried girl | ū-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 7.2.5 | Ṛgveda 7.2.5 |
+| 44 | सुभग | subhaga | adj stem | fortunate, lucky; blessed; happy; pleasant; beautiful; auspicious | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 45 | जान्य | jānya | noun stem, m | a friend of bridegroom | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.11 (as compound member) | Śākuntalam |
+| 46 | वशगा | vaśagā | noun stem, f | obedient wife | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 47 | सभार्य | sabhārya | adj stem | with a wife, having a wife | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 48 | जानि | jāni | noun stem, f | wife; birth, descent | i-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.10 | Śākuntalam |
+| 49 | जनी | janī̆ | noun stem, f | a woman, wife | ī-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 50 | द्वय | dvaya | noun stem, n | pair, couple (set of two); duality, falsehood | a-stem | yes | Wiktionary page + head line + table; YS 3.16 | Yoga Sūtra |
+| 51 | द्वंद्व | dvaṃdva | noun stem, n or m | pair, couple; male and female; pair, couple | a-stem | yes | Wiktionary page + head line + table; YS 2.33 (as compound member) | Yoga Sūtra |
+| 52 | सुभद्र | subhadra | adj stem | very auspicious or fortunate; very glorious or splendid | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 53 | यूनि | yūni | noun stem, f | connection; union | i-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 54 | यौन | yauna | noun stem, n | matrimonial connection, conjugal alliance, relationship by marriage | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 55 | संगम | saṃgama | noun  | a coming together, meeting, union; intercourse or association with | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 56 | युवक | yuvaka | noun stem, m | a youth, young man | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 57 | मर्य | marya | noun stem, m | young man, suitor, lover; stallion | a-stem | yes | Wiktionary page + head line + table; Manu 8.309 (as compound member) | Manusmṛti |
+| 58 | कनीन | kanīna | adj  | young, youthful | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 59 | तरुणिमन् | taruṇiman | noun stem, m | youth, youthfulness | an-stem | yes | Wiktionary page + head line + table; Prasannarāghava 2.11 | Prasannarāghava 2.11 |
+| 60 | युवता | yuvatā | noun stem, f | youth; youthfulness; the state of being young | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 61 | रामा | rāmā | noun stem, f | a beautiful woman, any young and charming woman, mistress, wife, any w | ā-stem | yes | Wiktionary page + head line + table; Manu 2.8 (as compound member) | Manusmṛti |
+| 62 | शकुन | śakuna | noun stem, m | bird (esp. large birds and such as give omens) | a-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.14 (as compound member) | Śākuntalam |
+
+Dropped (not usable): युवती (no usable entry or taught)
+
+
+## sa-literature (planned 90, none built; list needs 135). Rows 1 to 42 are literary terms and texts; the rest is Kālidāsa's descriptive vocabulary (Śākuntalam, Meghadūta) for reading-led cards
+
+Candidates listed: 141
+
+| # | Lemma | IAST | Head line (en.wiktionary) | Gloss | Stem | Table | Confirmed | Usage |
+|--|--|--|--|--|--|--|--|--|
+| 1 | अङ्क | aṅka | noun stem, m | hook; part of a chariot; curve | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.19 | Śākuntalam |
+| 2 | अतिशयोक्ति | atiśayokti | noun stem, m | overexaggeration | i-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 3 | अध्याय | adhyāya | noun stem, m | lesson, lecture; chapter, reading; the time for a lesson or reading | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 4 | अनुप्रास | anuprāsa | noun stem, m | alliteration | a-stem | yes | Wiktionary page + head line + table; c. 700 CE, Daṇḍin, Kāvyādarśa 1.55 | Kāvyādarśa 1.55 |
+| 5 | अनुवाक | anuvāka | noun stem, m | saying after, repeating; reading; section (especially of the Vedas) | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 6 | अनुवाद | anuvāda | noun stem, m | interpretation; translation; recitation; repetition | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 7 | अनुष्टुभ् | anuṣṭubh | noun stem, f | the Anuṣṭubh (a category of poetic measures characterised by 32-syllab | root-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 10.130.4 | Ṛgveda 10.130.4 |
+| 8 | उल्लास | ullāsa | noun stem, m | light, splendour; the coming forth, becoming visible, appearing | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 9 | ओजस् | ojas | noun stem, n | ability, strength; vigour | as-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 6.18.15 | Ṛgveda 6.18.15 |
+| 10 | कथानक | kathānaka | noun stem, n | a little tale | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 11 | कवि | kavi | noun stem, m | wise man, sage, seer, prophet; a singer, bard, poet | i-stem | yes | Wiktionary page + head line + table; Manu 2.151 | Manusmṛti |
+| 12 | काण्ड | kāṇḍa or kāṇḍa | noun stem, m or n | a joint of the stalk of a cane or bamboo; section, portion, chapter | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.12 (as compound member) | Śākuntalam |
+| 13 | गायत्री | gāyatrī | noun stem, f | an ancient metre of twenty-four syllables | ī-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 14 | चरण | caraṇa | noun stem, m or n | foot (Gobh., Mn., Bādar. MBh., etc.); pillar, support; tree root | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.12 | Śākuntalam |
+| 15 | जगती | jagatī | noun stem, f | the earth; people, mankind; a female animal, a cow | ī-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 16 | जातक | jātaka | noun stem, m | a newborn child (Kauś.); a mendicant | a-stem | yes | Wiktionary page + head line + table; Manu 2.27 (as compound member) | Manusmṛti |
+| 17 | टीका | ṭīkā | noun stem, f | a commentary (esp. on another commentary), gloss | ā-stem | yes | Wiktionary page + head line + table; YS 1.1 (as compound member) | Yoga Sūtra |
+| 18 | पठन | paṭhana | noun stem, n | study; reading; studying; reciting; recitation | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 19 | पर्वन् | parvan | noun stem, n | joint, limb; knot, particularly of reeds; division, section | an-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 20 | पिङ्गल | piṅgala | adj stem | reddish-brown, tawny; yellow, gold-colored | a-stem | yes | Wiktionary page + head line + table; Manu 3.8 | Manusmṛti |
+| 21 | प्रबन्ध | prabandha | noun stem, m | continuous application or action, continuance, uninterruptedness | a-stem | yes | Wiktionary page + head line + table; YS 3.39 | Yoga Sūtra |
+| 22 | प्रहसन | prahasana | noun stem, n | laughter, amusement, mockery (Uttara., Hit.); satire, sarcasm | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 23 | भास | bhāsa | noun stem, m | light; lustre; brightness | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 24 | महाभारत | mahābhārata | noun stem, n or m | Mahabharata | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 25 | मालिनी | mālinī | noun stem, f | the wife of a garland-maker or gardener; a female florist | ī-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.17 | Śākuntalam |
+| 26 | यति | yati | noun stem, m | an ascetic, devotee, one who has restrained his passions and abandoned | i-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 27 | रीति | rīti | noun stem, f | motion, course; stream, current; line, row, course of things | i-stem | yes | Wiktionary page + head line + table; Manu 2.246 (as compound member) | Manusmṛti |
+| 28 | रूपक | rūpaka | noun stem, m | a certain coin (Var., Pañcat., etc.); a kind of measure (Saṃgīt.) | a-stem | yes | Wiktionary page + head line + table; YS 2.31 (as compound member) | Yoga Sūtra |
+| 29 | वेताल | vetāla | noun stem, m | vetala, a kind of demon that takes possession of a dead body | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 30 | व्याख्या | vyākhyā | noun stem, f | explanation, exposition, gloss, comment, paraphrase | ā-stem | yes | Wiktionary page + head line + table; YS 1.44 (as compound member) | Yoga Sūtra |
+| 31 | व्यास | vyāsa | noun stem, m | severing, separation, division | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.8 (as compound member) | Śākuntalam |
+| 32 | श्रवण | śravaṇa | noun stem, m | ear; the hypotenuse of a triangle or the diagonal of a tetragon | a-stem | yes | Wiktionary page + head line + table; Manu 2.144 (as compound member) | Manusmṛti |
+| 33 | श्रोतृ | śrotṛ | noun stem, m or f | one who hears, hearing, a hearer | ṛ-stem | yes | Wiktionary page + head line + table; Manu 8.272 | Manusmṛti |
+| 34 | सरस्वती | sarasvatī | noun stem, f | any river; speech or the power of speech, eloquence, learning wisdom | ī-stem | yes | Wiktionary page + head line + table; Manu 8.105 | Manusmṛti |
+| 35 | सर्ग | sarga | noun stem, m | discharging, voiding, letting go or getting rid of (any excrement) | a-stem | yes | Wiktionary page + head line + table; Manu 8.143 (as compound member) | Manusmṛti |
+| 36 | सुभाषित | subhāṣita | noun stem, n | fine speech; witty saying, aphorism, maxim | a-stem | yes | Wiktionary page + head line + table; Manu 2.239 | Manusmṛti |
+| 37 | सूक्त | sūkta | noun stem, n | good speech; wise saying; song of praise; a Vedic hymn | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 38 | स्कन्ध | skandha | noun stem, m | shoulder, torso; tree trunk; large branch or bough | a-stem | yes | Wiktionary page + head line + table; YS 4.22 | Yoga Sūtra |
+| 39 | बिन्दु | bindu | noun stem, n | a detached particle, drop, globule, dot, spot; a pearl | u-stem | yes | Wiktionary page + head line + table; Manu 7.33 (as compound member) | Manusmṛti |
+| 40 | प्रस्ताव | prastāva | noun stem, m | mention, offer, proposal, topic; introduction, commencement | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.13 | Śākuntalam |
+| 41 | निदर्शन | nidarśana | noun stem, n | seeing, view, appearance, sight, vision | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.5 | Śākuntalam |
+| 42 | रमणीय | ramaṇīya | adj stem | delightful, pleasing, pleasant, agreeable | a-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.13 | Śākuntalam |
+| 43 | मुग्ध | mugdha | adj stem | perplexed, bewildered; gone astray, lost; foolish, ignorant, silly | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.3 | Śākuntalam |
+| 44 | कान्ति | kānti | noun stem, f | desire, wish | i-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.26 | Śākuntalam |
+| 45 | शोभा | śobhā | noun stem, f | splendour, brilliance, lustre, beauty, grace, loveliness | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.3 | Śākuntalam |
+| 46 | वपुस् | vapus | noun stem, n | form, figure (especially a beautiful form or figure) | us-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.14 | Śākuntalam |
+| 47 | कपोल | kapola | noun stem, m | cheek | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.13 | Śākuntalam |
+| 48 | अधर | adhara | noun stem, m | the lower lip, the lip | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.22 | Śākuntalam |
+| 49 | वदन | vadana | noun stem, n | mouth, face; speaking, saying | a-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.27 | Śākuntalam |
+| 50 | बाष्प | bāṣpa | noun stem, m | a tear, tears; steam, vapour | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.23 | Śākuntalam |
+| 51 | अश्रु | aśru | noun stem, n | tear | u-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.15 | Śākuntalam |
+| 52 | केका | kekā | noun stem, f | cry of a peacock | ā-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 53 | कोलाहल | kolāhala | noun stem, m or n | a loud and confused sound, uproar, great and indistinct noise (of men, | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.1 | Śākuntalam |
+| 54 | फेन | phena | noun stem, m or n | foam, froth, scum; moisture of the lips, saliva | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 55 | रश्मि | raśmi | noun stem, f | rope, string, cord; rein, bridle, leash; whip, goad; measuring cord | i-stem | yes | Wiktionary page + head line + table; Manu 9.305 | Manusmṛti |
+| 56 | क्षपा | kṣapā | noun stem, f | night | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.5 | Śākuntalam |
+| 57 | व्योमन् | vyoman | noun stem, m | heaven, sky, atmosphere, air; space | an-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 58 | नभस् | nabhas | noun stem, n | mist, fog, clouds, vapour | as-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 59 | सुकुमार | sukumāra | adj stem | very tender or delicate | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.12 | Śākuntalam |
+| 60 | सलज्ज | salajja | adj stem | having shame, modest | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.17 | Śākuntalam |
+| 61 | प्रमद | pramada | noun stem, m | pleasure, delight | a-stem | yes | Wiktionary page + head line + table; Manu 2.214 | Manusmṛti |
+| 62 | मुक्ता | muktā | noun stem, f | pearl; unchaste woman; species of plant | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.23 | Śākuntalam |
+| 63 | केतक | ketaka | noun stem, m | screw pine (Pandanus fascicularis or odoratissimus) | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 64 | कन्दर | kandara | noun stem, m | "great cliff", an artificial or natural cave, glen, defile, valley | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 65 | उटज | uṭaja | noun stem, m or n | a hut made of leaves (the residence of hermits or saints); a hut | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.17 | Śākuntalam |
+| 66 | सुरा | surā | noun stem, f | wine, spirituous liquor | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.15 | Śākuntalam |
+| 67 | स्वादु | svādu | noun stem, m | sweetness; pleasantness, charm, beauty; sugar, molasses | u-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 68 | पावन | pāvana | adj stem | purificatory, purifying, sanctifying, pure, holy | a-stem | yes | Wiktionary page + head line + table; Manu 2.26 | Manusmṛti |
+| 69 | सुमनस् | sumanas | adj stem | good-minded, well-disposed, benevolent, gracious, favourable, pleasant | as-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.2 | Śākuntalam |
+| 70 | श्लाघ्य | ślāghya | adj  | to be praised, praiseworthy; respectable, venerable | a-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.19 | Śākuntalam |
+| 71 | गम्भीर | gambhīra | adj  | deep; serious | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 72 | उदार | udāra | adj stem | noble; liberal; honest; eloquent; bountiful; high; lofty | a-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.22 | Śākuntalam |
+| 73 | सौम्य | saumya or saumya | adj stem | related or pertaining to Soma; cool and moist; northern | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 74 | तनु | tanu | noun stem, f or m | body, person, self; the body, person, self; form or manifestation | u-stem | yes | Wiktionary page + head line + table; Manu 2.28 | Manusmṛti |
+| 75 | तन्वी | tanvī | noun stem, f | slender or delicate woman | ī-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.18 | Śākuntalam |
+| 76 | श्याम | śyāma | noun stem, m | a black bull; a particular राग (rāga) (Saṃgīt.) | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 77 | मृदु | mṛdu | noun stem, m | the planet Saturn (VarBṛS.) | u-stem | yes | Wiktionary page + head line + table; Manu 8.327 | Manusmṛti |
+| 78 | पयस् | payas | noun stem, n | milk; milk; any fluid or juice; water or rain; milk | as-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 79 | पावक | pāvaka | noun stem, m | fire or the god of fire | a-stem | yes | Wiktionary page + head line + table; Manu 2.187 | Manusmṛti |
+| 80 | तेजस् | tejas | noun stem, n | the sharp edge of a knife; the point or top of a flame or a ray | as-stem | yes | Wiktionary page + head line + table; Manu 7.5 | Manusmṛti |
+| 81 | वीरुध् | vīrudh | noun stem, m | a plant, herb; especially a creeping plant | root-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.9 | Śākuntalam |
+| 82 | शार्दूल | śārdūla | noun stem, m | tiger; lion; panther; leopard; doctorbush (Plumbago zeylanica) | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.1 | Śākuntalam |
+| 83 | पन्नग | pannaga | noun stem, m | a serpent or serpent-demon (Suparṇ., MBh., etc.) | a-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.31 | Śākuntalam |
+| 84 | चाप | cāpa | noun stem, m or n | bow; arc | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.26 | Śākuntalam |
+| 85 | धनु | dhanu | noun stem, m or n | bow; the sign of Sagittarius | u-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.32 | Śākuntalam |
+| 86 | शरु | śaru | noun stem, m or f | arrow, dart, missile | u-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.3 | Śākuntalam |
+| 87 | महर्षि | maharṣi | noun stem, m | a Maharishi | i-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.2 | Śākuntalam |
+| 88 | छवि | chavi | noun stem, f | skin, cuticle; colour of the skin, colour; beauty, splendour | i-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.8 | Śākuntalam |
+| 89 | मणिबन्ध | maṇibandha | noun stem, m | the wrist; the fastening or putting on of jewel | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.21 | Śākuntalam |
+| 90 | याच्ञा | yācñā | noun stem, f | begging, asking alms, mendicancy; asking for | ā-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 91 | उन्मत्त | unmatta | adj stem | drunk, intoxicated; frantic; insane, mad | a-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.13 | Śākuntalam |
+| 92 | प्रमत्त | pramatta | adj stem | tipsy; drunk; intoxicated | a-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.1 | Śākuntalam |
+| 93 | वक्तव्य | vaktavya | noun stem, n | speaking, speech | a-stem | yes | Wiktionary page + head line + table; YS 3.1 | Yoga Sūtra |
+| 94 | परोक्ष | parokṣa | adj stem | beyond the range of sight, unknown, unintelligible, mysterious | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.26 | Śākuntalam |
+| 95 | धृष्ट | dhṛṣṭa | adj  | bold, daring, confident, audacious, impudent; secured, obtained | a-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.19 | Śākuntalam |
+| 96 | क्रूर | krūra | noun stem, n | wound, sore; blood-shedding, slaughter, cruelty, harshness | a-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.9 | Śākuntalam |
+| 97 | उग्र | ugra | adj  | mighty, formidable, powerful; furious, terrible, wrathful, savage | a-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.23 | Śākuntalam |
+| 98 | कटुक | kaṭuka | noun stem, m | name of several plants; name of a man | a-stem | yes | Wiktionary page + head line + table; RV 10.85.34 (as compound member) | Ṛgveda 10.85 |
+| 99 | पटु | paṭu | adj  | sharp, pungent, acrid, harsh, shrill, keen, strong, intense, violent | u-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 100 | पृथु | pṛthu | adj stem | broad, wide, expansive, extensive, spacious, large; great, important | u-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.9 | Śākuntalam |
+| 101 | रोहित | rohita | noun stem, m | red or a chestnut coloured horse; a kind of deer | a-stem | yes | Wiktionary page + head line + table; Manu 7.78 (as compound member) | Manusmṛti |
+| 102 | माधव | mādhava | noun stem, m | a descendant of the Madhu race | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.5 (as compound member) | Śākuntalam |
+| 103 | नयन | nayana | noun stem, n | conducting, guiding, directing; eye | a-stem | yes | Wiktionary page + head line + table; YS 3.40 | Yoga Sūtra |
+| 104 | भुवन | bhuvana | noun stem, n | a being, living thing; existence, being; the world | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.26 | Śākuntalam |
+| 105 | श्रेयस् | śreyas | noun stem, m or n | name of various things; n good, good state; happiness | as-stem | yes | Wiktionary page + head line + table; Manu 9.184 | Manusmṛti |
+| 106 | चक्षुस् | cakṣus | noun stem, n | light; clearness; the faculty of seeing; sight; vision | us-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.13 | Śākuntalam |
+| 107 | वचस् | vacas | noun stem, n | word, speech; voice | as-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.28 | Śākuntalam |
+| 108 | यत्न | yatna | noun stem, m | activity of will, volition, aspiring after; performance, work | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.2 | Śākuntalam |
+| 109 | स्मर | smara | noun stem, m | memory, remembrance, recollection | a-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.23 | Śākuntalam |
+| 110 | अद्रि | adri | noun stem, m | rock, stone; mountain | i-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 111 | कैलास | kailāsa | noun stem, m | Mount Kailasa (fabulous residence of Shiva | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 112 | गौरी | gaurī | noun stem, f | a female Gaur | ī-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 113 | निवास | nivāsa | noun stem, m | clothing, dress; living, dwelling, residing | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.20 | Śākuntalam |
+| 114 | भवन | bhavana | noun stem, m or n | building, edifice; house, dwelling, residence; mansion, palace | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.20 | Śākuntalam |
+| 115 | तरु | taru | noun stem, m | tree | u-stem | yes | Wiktionary page + head line + table; Manu 8.406 | Manusmṛti |
+| 116 | वज्र | vajra | noun stem, m | "the hard or mighty one", a thunderbolt | a-stem | yes | Wiktionary page + head line + table; Manu 7.191 | Manusmṛti |
+| 117 | शक्ति | śakti or śakti | noun stem, f | strength, power, might; ability | i-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.26 | Śākuntalam |
+| 118 | वेग | vega | noun stem, m | speed; velocity; rapidity; impetus; momentum; stream; current | a-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.8 | Śākuntalam |
+| 119 | चित्रा | citrā | noun stem, f | the 12th or 13th asterism | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.14 | Śākuntalam |
+| 120 | विशाखा | viśākhā | noun stem, f | the 14th (later 16th) lunar asterism (figured by a decorated arch and  | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.11 | Śākuntalam |
+| 121 | रोहिणी | rohiṇī | noun stem, f | a red cow or (later) any cow; lightning | ī-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.22 | Śākuntalam |
+| 122 | मालिन् | mālin | noun stem, m | gardener, florist | in-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.13 (as compound member) | Śākuntalam |
+| 123 | स्नात | snāta | noun stem, m | one whose religious study has finished; an initiated householder | a-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.11 | Śākuntalam |
+| 124 | निषण्ण | niṣaṇṇa | adj stem | sitting, seated; lying, resting, leaning upon | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 125 | सुप्त | supta | adj stem | asleep, fallen asleep; resting, inactive, dull, latent | a-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.11 | Śākuntalam |
+| 126 | गात्र | gātra | noun stem, n | "instrument for movement", a limb or a part of the body; the body | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.19 | Śākuntalam |
+| 127 | प्राणिन् | prāṇin | noun stem, m | a living or sentient being, living creature, animal or man | in-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.1 | Śākuntalam |
+| 128 | जन्तु | jantu | noun stem, m | child, offspring; person, creature, living being | u-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.2 | Śākuntalam |
+| 129 | तात | tāta | noun stem, m | daddy, papa | a-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.23 | Śākuntalam |
+| 130 | आयुष्मत् | āyuṣmat | adj stem | possessed of vital power, healthy, long-lived; alive, living | mat-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.31 | Śākuntalam |
+| 131 | भगवत् | bhagavat | adj  | fortunate; prosperous (possessing fortune); glorious; illustrious | vat-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.17 | Śākuntalam |
+| 132 | वत्स | vatsa | noun stem, m or n | m a calf, the young of any animal, offspring, child | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.23 | Śākuntalam |
+| 133 | दिष्टि | diṣṭi | noun stem, f | direction | i-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.4 | Śākuntalam |
+| 134 | रहस् | rahas | noun stem, n | a lonely or deserted place, loneliness, solitude, privacy, secrecy, re | as-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.5 | Śākuntalam |
+| 135 | श्रिया | śriyā | noun stem, f | happiness; glory; prosperity | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.12 | Śākuntalam |
+| 136 | स्रोतस् | srotas | noun stem, n | river, stream, torrent, current | as-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 137 | सम्पद् | sampad | noun stem, f | success, fulfilment; condition or requisite of success | root-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.30 | Śākuntalam |
+| 138 | प्रीत | prīta | adj stem | pleased, delighted, satisfied, joyful (also with locative or genitive  | a-stem | yes | Wiktionary page + head line + table; Manu 9.195 | Manusmṛti |
+| 139 | त्यक्त | tyakta | adj  | abandoned | a-stem | yes | Wiktionary page + head line + table; YS 2.34 | Yoga Sūtra |
+| 140 | तीर्ण | tīrṇa | adj  | one who has crossed, gone over, got through, escaped | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 141 | हारिण | hāriṇa | noun stem, n | venison; flesh of deer | a-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.5 | Śākuntalam |
+
+## sa-abstract-words (planned 90, none built; list needs 135). Rows are philosophical and psychological terms (Yoga Sūtra, Sāṅkhya, Nyāya-Vaiśeṣika, Upaniṣadic)
+
+Candidates listed: 136
+
+| # | Lemma | IAST | Head line (en.wiktionary) | Gloss | Stem | Table | Confirmed | Usage |
+|--|--|--|--|--|--|--|--|--|
+| 1 | अक्षर | akṣara | noun stem, n | syllable; the syllable om; letter; vowel; sound; word | a-stem | yes | Wiktionary page + head line + table; Manu 2.84 (as compound member) | Manusmṛti |
+| 2 | अद्वैत | advaita | noun stem, n | non-duality; Advaita, a non dualistic philosophy in Hinduism. | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 3 | अनन्त | ananta | noun stem, m | an epithet of Vishnu; an epithet of Shesha; an epithet of Shiva | a-stem | yes | Wiktionary page + head line + table; YS 1.37 | Yoga Sūtra |
+| 4 | अनुभूति | anubhūti | noun stem, f | perception, experience, feeling, realization | i-stem | yes | Wiktionary page + head line + table; c. 700 CE – 900 CE, Bhāgavata Purāṇa 7.1 | Bhāgavata Purāṇa 7.1 |
+| 5 | अपरिग्रह | aparigraha | noun stem, m | greedlessness | a-stem | yes | Wiktionary page + head line + table; YS 2.31 | Yoga Sūtra |
+| 6 | अभाव | abhāva | noun stem, m | death; not being, non-existence, absence; want; failure; destruction | a-stem | yes | Wiktionary page + head line + table; Manu 8.259 | Manusmṛti |
+| 7 | अविद्या | avidyā | noun stem, f | ignorance, particularly in spiritual or religious matters | ā-stem | yes | Wiktionary page + head line + table; YS 2.5 | Yoga Sūtra |
+| 8 | असत् | asat | noun stem, n | non-existence; falsehood; evil | at-stem | yes | Wiktionary page + head line + table; YS 4.12 | Yoga Sūtra |
+| 9 | इन्द्रिय | indriya | noun stem, n | power, force, the quality which belongs especially to the mighty इन्द् | a-stem | yes | Wiktionary page + head line + table; YS 3.48 | Yoga Sūtra |
+| 10 | ईश | īśa | noun stem, m | lord, master, ruler; one who is a master of anything; a husband | a-stem | yes | Wiktionary page + head line + table; Manu 9.245 | Manusmṛti |
+| 11 | उपेक्षा | upekṣā | noun stem, f | endurance, patience; neglect, negligence, indifference, disregard | ā-stem | yes | Wiktionary page + head line + table; YS 3.24 (as compound member) | Yoga Sūtra |
+| 12 | औदार्य | audārya | noun stem, n | nobility, generosity, magnanimity | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 13 | कर्मन् | karman | noun stem, n | an act, action, performance, business; work, labour, activity | an-stem | yes | Wiktionary page + head line + table; Manu 2.142 | Manusmṛti |
+| 14 | कारण | kāraṇa | noun stem, n | cause, reason, factor; instrument, means; motive, origin, principle | a-stem | yes | Wiktionary page + head line + table; YS 2.29 | Yoga Sūtra |
+| 15 | कार्य | kārya | noun stem, n | function, act, deed; work, business, enterprise | a-stem | yes | Wiktionary page + head line + table; Manu 2.42 | Manusmṛti |
+| 16 | कैवल्य | kaivalya | noun stem, n | absolute unity | a-stem | yes | Wiktionary page + head line + table; YS 1.17 | Yoga Sūtra |
+| 17 | क्षर | kṣara | adj stem | melting away, perishable | a-stem | yes | Wiktionary page + head line + table; Manu 2.78 (as compound member) | Manusmṛti |
+| 18 | चित् | cit | noun stem, f | thought, intellect, spirit, soul | root-stem | yes | Wiktionary page + head line + table; Manu 2.16 | Manusmṛti |
+| 19 | चित्त | citta | noun stem, n | thinking; reflecting; imagining; thought; intention, aim, wish | a-stem | yes | Wiktionary page + head line + table; YS 1.5 | Yoga Sūtra |
+| 20 | चैतन्य | caitanya | noun stem, n | consciousness, intellect | a-stem | yes | Wiktionary page + head line + table; YS 1.10 (as compound member) | Yoga Sūtra |
+| 21 | जीव | jīva | noun stem, m or n | life, existence; any living being, anything living | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.4 | Śākuntalam |
+| 22 | तमस् | tamas | noun stem, n | darkness, gloom (also in plural) | as-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.8 | Śākuntalam |
+| 23 | तुरीय | turīya | adj stem | fourth | a-stem | yes | Wiktionary page + head line + table; Manu 9.112 (as compound member) | Manusmṛti |
+| 24 | देह | deha | noun  | body; form, figure, shape; mass, bulk | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 25 | द्रव्य | dravya | noun stem, n | lac, gum, resin | a-stem | yes | Wiktionary page + head line + table; YS 3.14 | Yoga Sūtra |
+| 26 | द्वैत | dvaita | noun stem, n | duality; Dvaita, a dualistic philosophy in Hinduism. | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.2 (as compound member) | Śākuntalam |
+| 27 | धारणा | dhāraṇā | noun stem, f | holding, bearing; retaining, keeping, storing; dharana, concentration | ā-stem | yes | Wiktionary page + head line + table; Manu 8.184 | Manusmṛti |
+| 28 | निर्वाण | nirvāṇa | noun stem, n | blowing out, extinction, cessation, setting, vanishing, disappearance | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.7 (as compound member) | Śākuntalam |
+| 29 | पदार्थ | padārtha | noun stem, m | the meaning of a word | a-stem | yes | Wiktionary page + head line + table; YS 1.44 (as compound member) | Yoga Sūtra |
+| 30 | परिणाम | pariṇāma | noun stem, m | change, alteration, transformation into (instr.), development, evoluti | a-stem | yes | Wiktionary page + head line + table; YS 3.14 | Yoga Sūtra |
+| 31 | पुरुष | puruṣa | noun stem, m | man, male, human being | a-stem | yes | Wiktionary page + head line + table; Manu 9.2 | Manusmṛti |
+| 32 | प्रकृति | prakṛti | noun stem, f | the original or natural form or condition of anything, original or pri | i-stem | yes | Wiktionary page + head line + table; Manu 3.257 | Manusmṛti |
+| 33 | प्रत्याहार | pratyāhāra | noun stem, m | withdrawal (especially of the senses from external objects) | a-stem | yes | Wiktionary page + head line + table; YS 2.54 | Yoga Sūtra |
+| 34 | प्रवृत्ति | pravṛtti | noun stem, f | moving forwards, advance, progress | i-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.30 | Śākuntalam |
+| 35 | प्राणायाम | prāṇāyāma | noun stem, m | pranayama | a-stem | yes | Wiktionary page + head line + table; YS 2.53 | Yoga Sūtra |
+| 36 | बहुत्व | bahutva | noun stem, n | muchness, abundance, multitude; plurality, majority | a-stem | yes | Wiktionary page + head line + table; YS 1.5 | Yoga Sūtra |
+| 37 | ब्रह्मन् | brahman | noun stem, n | pious effusion or utterance, outpouring of the heart in worshipping th | an-stem | yes | Wiktionary page + head line + table; Manu 2.144 | Manusmṛti |
+| 38 | भ्रम | bhrama | noun stem, m | wandering or roaming about, roving over or through (comp.) Kathās. | a-stem | yes | Wiktionary page + head line + table; Manu 7.24 (as compound member) | Manusmṛti |
+| 39 | मनस् | manas | noun stem, n | mind (in its widest sense as applied to all the mental powers), intell | as-stem | yes | Wiktionary page + head line + table; Manu 7.6 | Manusmṛti |
+| 40 | ममता | mamatā | noun stem, f | The meaning of this term is uncertain. Possibilities include | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 41 | मुक्ति | mukti | noun stem, f | setting or becoming free, release, liberation, deliverance from (in co | i-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.23 | Śākuntalam |
+| 42 | यम | yama | noun stem, m | rein; driver, charioteer; suppression, restraint | a-stem | yes | Wiktionary page + head line + table; Manu 9.303 | Manusmṛti |
+| 43 | युक्ति | yukti | noun stem, f | union, junction, connection, combination | i-stem | yes | Wiktionary page + head line + table; Manu 7.197 | Manusmṛti |
+| 44 | रजस् | rajas | noun stem, n | atmosphere; space between heaven and earth | as-stem | yes | Wiktionary page + head line + table; YS 2.18 | Yoga Sūtra |
+| 45 | विकल्प | vikalpa | noun stem, m | an intermediate kalpa, the interval between two kalpas | a-stem | yes | Wiktionary page + head line + table; YS 1.9 | Yoga Sūtra |
+| 46 | विकृति | vikṛti | noun stem, f | transformation; alteration; change; modification; variation | i-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.5 (as compound member) | Śākuntalam |
+| 47 | संसार | saṃsāra | noun stem, m | going or wandering through, undergoing transmigration; samsara | a-stem | yes | Wiktionary page + head line + table; YS 4.34 | Yoga Sūtra |
+| 48 | सत् | sat | noun stem, m | a being; (in the plural) beings, creatures | at-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 49 | सत्त्व | sattva | noun stem, n | essence; goodness; spirit; existence; being, entity, creature; reality | a-stem | yes | Wiktionary page + head line + table; YS 2.6 | Yoga Sūtra |
+| 50 | समवाय | samavāya | noun stem, m | coming together, contact, congress, crowd (GṛS., Gaut., Mn.) | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.26 (as compound member) | Śākuntalam |
+| 51 | समाधि | samādhi | noun stem, m | putting together, joining or combining with (+ instrumental) | i-stem | yes | Wiktionary page + head line + table; YS 1.18 | Yoga Sūtra |
+| 52 | साधन | sādhana | noun stem, n | the act of mastering, overpowering, subduing | a-stem | yes | Wiktionary page + head line + table; YS 3.5 | Yoga Sūtra |
+| 53 | साध्य | sādhya | noun stem, m | "they that are to be propitiated", i.e. Sādhyas, a class of celestial  | a-stem | yes | Wiktionary page + head line + table; Manu 3.195 (as compound member) | Manusmṛti |
+| 54 | सिद्ध | siddha | adj stem | proven; accomplished; prepared (of food) | a-stem | yes | Wiktionary page + head line + table; Manu 3.84 | Manusmṛti |
+| 55 | सिद्धि | siddhi | noun stem, f | success, perfection, attainment, determination, substantiation | i-stem | yes | Wiktionary page + head line + table; YS 2.28 | Yoga Sūtra |
+| 56 | सुख | sukha | noun stem, m | name of a man; a kind of military array, compare दण्ड (daṇḍa) | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.7 | Śākuntalam |
+| 57 | सृष्टि | sṛṣṭi | noun stem, f | emission, distribution; creation (abstract and concrete) | i-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.1 | Śākuntalam |
+| 58 | स्थिति | sthiti | noun stem, f | standing upright or firmly, not falling | i-stem | yes | Wiktionary page + head line + table; Manu 2.224 | Manusmṛti |
+| 59 | स्मरण | smaraṇa | noun stem, n | remembrance, memory; tradition; recalling | a-stem | yes | Wiktionary page + head line + table; YS 3.15 | Yoga Sūtra |
+| 60 | स्मृति | smṛti | noun stem, f | remembrance, reminiscence, thinking of or upon (+locative or compound) | i-stem | yes | Wiktionary page + head line + table; Manu 2.90 | Manusmṛti |
+| 61 | स्वरूप | svarūpa | noun stem, n | own condition, peculiarity, character, nature | a-stem | yes | Wiktionary page + head line + table; YS 1.10 | Yoga Sūtra |
+| 62 | हेतु | hetu | noun stem, m | "impulse", motive, cause, cause of, reason for (+locative, rarely dati | u-stem | yes | Wiktionary page + head line + table; Manu 8.3 | Manusmṛti |
+| 63 | योगिन् | yogin | noun stem, m | Yogi, one who practises Yoga | in-stem | yes | Wiktionary page + head line + table; YS 1.28 | Yoga Sūtra |
+| 64 | प्रज्ञ | prajña | adj stem | synonym of प्रज्ञू (prajñū); wise, prudent (MāṇḍUp.) | a-stem | yes | Wiktionary page + head line + table; Manu 2.99 | Manusmṛti |
+| 65 | जन्मन् | janman | noun stem, n | birth, production, origin; existence, life; nativity (VarBṛS. 1, 10) | an-stem | yes | Wiktionary page + head line + table; Manu 2.150 | Manusmṛti |
+| 66 | क्रम | krama | noun stem, m | a step; going, progress, proceeding; route, path, way; the foot | a-stem | yes | Wiktionary page + head line + table; YS 3.16 | Yoga Sūtra |
+| 67 | सूक्ष्म | sūkṣma | adj  | acute, subtle, keen (understanding or mental operation) | a-stem | yes | Wiktionary page + head line + table; YS 2.10 | Yoga Sūtra |
+| 68 | निरोध | nirodha | noun stem, m | confinement; control | a-stem | yes | Wiktionary page + head line + table; YS 3.14 | Yoga Sūtra |
+| 69 | ध्रुव | dhruva | adj stem | fixed, immovable; firm, stable; certain, sure, wis | a-stem | yes | Wiktionary page + head line + table; Manu 3.60 | Manusmṛti |
+| 70 | परमाणु | paramāṇu | noun stem, m | atom; an infinitesimal particle | u-stem | yes | Wiktionary page + head line + table; YS 3.45 | Yoga Sūtra |
+| 71 | मरण | maraṇa | noun stem, n | the act of dying; death; dying by; passing away | a-stem | yes | Wiktionary page + head line + table; YS 2.14 | Yoga Sūtra |
+| 72 | शुद्ध | śuddha | adj stem | pure; clear; clean; true; blameless; acquitted; right | a-stem | yes | Wiktionary page + head line + table; YS 1.30 | Yoga Sūtra |
+| 73 | ऐश्वर्य | aiśvarya | noun stem, n | supremacy, power, sovereignty; the state of being a mighty lord | a-stem | yes | Wiktionary page + head line + table; YS 1.16 | Yoga Sūtra |
+| 74 | लिङ्ग | liṅga | noun stem, n | mark, spot, sign, token, badge, form, emblem, characteristic, represen | a-stem | yes | Wiktionary page + head line + table; YS 3.14 | Yoga Sūtra |
+| 75 | अवस्था | avasthā | noun stem, f | condition, state; female reproductive organs; an appearance in court | ā-stem | yes | Wiktionary page + head line + table; YS 3.14 | Yoga Sūtra |
+| 76 | व्यक्ति | vyakti | noun stem, f | visible appearance or manifestation, becoming evident or known or publ | i-stem | yes | Wiktionary page + head line + table; YS 3.16 | Yoga Sūtra |
+| 77 | अमल | amala | noun stem, m | crystal | a-stem | yes | Wiktionary page + head line + table; YS 2.28 | Yoga Sūtra |
+| 78 | द्वेषस् | dveṣas | noun stem, n | hatred, dislike, hostility | as-stem | yes | Wiktionary page + head line + table; YS 2.8 | Yoga Sūtra |
+| 79 | चेतना | cetanā | noun stem, f | consciousness, understanding, sense, intelligence | ā-stem | yes | Wiktionary page + head line + table; Meghadūta (as compound member) | Meghadūta |
+| 80 | विशेषण | viśeṣaṇa | noun stem, n | the act of distinguishing, distinction, discrimination, particularisat | a-stem | yes | Wiktionary page + head line + table; YS 2.21 (as compound member) | Yoga Sūtra |
+| 81 | बोधि | bodhi | noun stem, m | (Buddhism, Jainism) bodhi: perfect knowledge or wisdom (by which a man | i-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.5 (as compound member) | Śākuntalam |
+| 82 | रहस्य | rahasya | noun stem, n | a secret, any secret doctrine or mystery, any subtle or recondite poin | a-stem | yes | Wiktionary page + head line + table; Manu 2.140 (as compound member) | Manusmṛti |
+| 83 | ब्रह्मविद्या | brahmavidyā | noun stem, f | knowledge of Brahman, the all-spirit, sacred knowledge | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 84 | ज्ञानकाण्ड | jñānakāṇḍa | noun stem, n | department of Vedic knowledge which relates to understanding of the wo | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 85 | कर्मकाण्ड | karmakāṇḍa | noun stem, n | department of Vedic knowledge which relates to sacrifices and ceremoni | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 86 | अन्तर्यामिन् | antaryāmin | noun stem, m | inner guide, regulator; soul | in-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 87 | महात्मन् | mahātman | noun stem, m | the Supreme Spirit | an-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 88 | विद् | vid | noun stem, m | Mercury | root-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 89 | आस्तिक | āstika | adj stem | one who believes in the existence (of God, of another world, etc.) | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 90 | मनन | manana | noun stem, n | thinking , reflection , meditation , thought , intelligence | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 91 | अस्तित्व | astitva | noun stem, n | existence, reality | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 92 | ज्ञानिन् | jñānin | noun stem, m | a fortune-teller, astrologer; ‘possessing religious wisdom’, a sage | in-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 93 | साक्षात्कार | sākṣātkāra | noun stem, m | evident or intuitive perception; realization | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 94 | धर्मता | dharmatā | noun stem, f | essence, inherent nature; the being law or right | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 95 | संयमिन् | saṃyamin | adj stem | practicing self-control | in-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 96 | शुश्रूषा | śuśrūṣā | noun stem, f | desire or wish to hear; service, attendance; dutifulness, obedience | ā-stem | yes | Wiktionary page + head line + table; Manu 2.112 | Manusmṛti |
+| 97 | ऊह | ūha | noun stem, m | removing, derangement, transposition, change, modification | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 98 | विसर्ग | visarga | noun stem, m | liberation, freedom, letting go; sending forth, emission, discharge | a-stem | yes | Wiktionary page + head line + table; Manu 9.46 (as compound member) | Manusmṛti |
+| 99 | विमुक्ति | vimukti | noun stem, f | release, liberation | i-stem | yes | Wiktionary page + head line + table; YS 2.28 | Yoga Sūtra |
+| 100 | मोचन | mocana | noun stem, n | release, liberation, freeing or delivering from | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 101 | आस्तिक्य | āstikya | noun stem, n | piousness, religiousness, faith in God; devotion to God | a-stem | yes | Wiktionary page + head line + table; c. 400 BCE, Bhagavad Gītā 18.42 | Bhagavad Gītā 18.42 |
+| 102 | नैराश्य | nairāśya | noun stem, n | hopelessness, despair, sorrow | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 103 | तृषा | tṛṣā | noun stem, f | thirst, hunger, desire | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 104 | अनित्यता | anityatā | noun stem, f | transient or limited existence | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 105 | अकारण | akāraṇa | noun stem, n | absence of a cause | a-stem | yes | Wiktionary page + head line + table; Manu 3.157 | Manusmṛti |
+| 106 | आत्मवत् | ātmavat | adj stem | having a soul, soulful; “having/possessing the self” | vat-stem | yes | Wiktionary page + head line + table; Manu 7.52 | Manusmṛti |
+| 107 | अनुबन्ध | anubandha | noun stem, m | binding, connection, attachment | a-stem | yes | Wiktionary page + head line + table; Manu 8.126 (as compound member) | Manusmṛti |
+| 108 | प्रसङ्ग | prasaṅga | noun stem, m | adherence, attachment, inclination or devotion to, indulgence in, fond | a-stem | yes | Wiktionary page + head line + table; Manu 9.5 | Manusmṛti |
+| 109 | आकाङ्क्षा | ākāṅkṣā | noun stem, f | desire, wish | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 110 | विवक्षा | vivakṣā | noun stem, f | the desire to speak | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 111 | अवित्ति | avitti | noun stem, f | act of not finding; lack, poverty | i-stem | yes | Wiktionary page + head line + table; c. 1200 BCE – 1000 BCE, Atharvaveda 16.6 | Atharvaveda 16.6 |
+| 112 | कृत्स्न | kṛtsna | noun stem, n | total fixation of the mind, leading to contemplation | a-stem | yes | Wiktionary page + head line + table; Manu 2.165 (as compound member) | Manusmṛti |
+| 113 | वयुन | vayuna | noun stem, n | wisdom; knowledge | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 114 | सुनीत | sunīta | noun stem, n | good or wise conduct, wisdom, prudence | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 115 | मृड | mṛḍa | adj  | showing compassion or mercy, gracious | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 116 | ह्लाद | hlāda | noun stem, m | joy, gladness, pleasure | a-stem | yes | Wiktionary page + head line + table; YS 1.18 (as compound member) | Yoga Sūtra |
+| 117 | नन्दि | nandi | noun stem, m | joy, pleasure, delight; an epithet of Shiva and Vishnu | i-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.11 (as compound member) | Śākuntalam |
+| 118 | जिह्म | jihma | noun stem, n | falsehood, dishonesty | a-stem | yes | Wiktionary page + head line + table; Manu 3.246 (as compound member) | Manusmṛti |
+| 119 | भवक्षय | bhavakṣaya | noun stem, m | end of existence | a-stem | yes | Wiktionary page + head line + table; 900-1100 AD; copied later, Arlo Griffith | Arlo Griffith |
+| 120 | आत्मभाव | ātmabhāva | noun stem, m | existence of the soul; self-essence; the body | a-stem | yes | Wiktionary page + head line + table; YS 2.40 (as compound member) | Yoga Sūtra |
+| 121 | उद्देश | uddeśa | noun stem, m | the act of pointing to or at, direction; ascertainment | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 122 | निमित्त | nimitta | noun stem, n | aim, mark; sign, token; omen; cause, occasion; motive, instrument | a-stem | yes | Wiktionary page + head line + table; YS 4.13 | Yoga Sūtra |
+| 123 | अनिन्द्रिय | anindriya | noun stem, n | "that which is not a sense" the mind; the soul; reason | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 124 | मानस | mānasa | noun stem, n | the mental powers, mind, spirit; tacit or implied consent | a-stem | yes | Wiktionary page + head line + table; Manu 2.85 (as compound member) | Manusmṛti |
+| 125 | वैज्ञानिक | vaijñānika | adj stem | rich in knowledge, proficient | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 126 | शङ्क | śaṅka | noun stem, m | doubt; fear; name of a king(Buddh.) | a-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.4 | Śākuntalam |
+| 127 | सुमति | sumati | noun stem, f | good mind or disposition, benevolence, kindness, favour (acc. with √ क | i-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 128 | दुर्मनस् | durmanas | noun stem, n | bad disposition, perversity of mind | as-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 129 | चिच्छक्ति | cicchakti | noun stem, f | thinking capacity of the mind | i-stem | yes | Wiktionary page + head line + table; c. 700 CE – 900 CE, Bhāgavata Purāṇa 1.7 | Bhāgavata Purāṇa 1.7 |
+| 130 | कृति | kṛti | noun stem, f | the act of doing, making, performing, manufacturing, composing | i-stem | yes | Wiktionary page + head line + table; Manu 9.69 | Manusmṛti |
+| 131 | वर्तमान | vartamāna | adj stem | turning, moving, existing, living, abiding; present | a-stem | yes | Wiktionary page + head line + table; YS 3.53 | Yoga Sūtra |
+| 132 | आवेश | āveśa | noun stem, m | joining one's self; entering, entrance, taking possession of | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 133 | षड्रिपु | ṣaḍripu | noun stem, m | The "Six Enemies", six harmful states of mind that stop people from at | u-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 134 | कर्तृवाद | kartṛvāda | noun stem, m | doctrine or ideology of belief in a creator | a-stem | yes | Wiktionary page + head line + table; Dharmakīrti, Pramāṇavārttika | Pramāṇavārttika |
+| 135 | अक्षुण्णता | akṣuṇṇatā | noun stem, f | the state of being unbroken or continuous; continuity | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 136 | स्थिरता | sthiratā | noun stem, f | stability; firmness; tranquility; permanence; hardness | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.15 | Śākuntalam |
+
+## Verbs for sa-verbs-3 (60 planned; 90 candidates, highest-frequency first)
+Candidates listed: 90 (needs 60)
+
+| # | Root | IAST | Gaṇa | Pada | Meaning (en.wiktionary) | 3sg present | Conjugation table | Confirmed | Usage |
+|--|--|--|--|--|--|--|--|--|--|
+| 1 | अर्ह् | arh | 1 | parasmaipada | to be worth, to merit, to be worthy of, to deserve; to be entitled to, | अर्हति (arhati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.145 | Manu 8.145 |
+| 2 | उच् | uc | 4 | parasmaipada | to be accustomed; to be fond of, take pleasure in, delight in, enjoy | उच्यति (ucyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.18 | Manu 2.18 |
+| 3 | जन् | jan | 4 | ātmanepada | to be born (for), come into existence; to grow; to be changed, become | जायते (jāyate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.39 | Manu 3.39 |
+| 4 | मन् | man | 4 | ātmanepada | to think, believe, imagine, suppose, conjecture; to regard or consider | मन्यते (manyate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.91 | Manu 8.91 |
+| 5 | भुज् | bhuj | 7 | parasmaipada | to provide benefit; to provide benefit; to receive a benefit, be a ben | भुनक्ति (bhunakti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.146 | Manu 3.146 |
+| 6 | वृध् | vṛdh | 1 | parasmaipada | to grow, increase, augment, enlargen; to elevate, exalt, praise | वर्धति (vardhati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.121 | Manu 2.121 |
+| 7 | आप् | āp | 5 | parasmaipada | to reach; to overtake; to meet with; to fall upon; to obtain; to gain; | आप्नोति (āpnoti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.143 | Manu 8.143 |
+| 8 | मुच् | muc | 6 | parasmaipada | to free, set free, liberate; to loose, let go, slacken, release | मुञ्चति (muñcati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 3, v.22 | Śāk. act 3, v.22 |
+| 9 | दह् | dah | 1 | parasmaipada | to burn, consume by fire, scorch, roast; to cauterize; to consume, des | दहति (dahati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.9 | Manu 7.9 |
+| 10 | इ | i | 2 | parasmaipada | to go, walk; to flow; to blow; to advance, spread, get about; to go to | एति (eti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.159 | Manu 8.159 |
+| 11 | हन् | han | 2 | parasmaipada | to strike, beat (also a drum), pound, hammer (+ accusative) etc.; upon | हन्ति (hanti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 9.64 | Manu 9.64 |
+| 12 | भी | bhī | 3 | parasmaipada | to fear, dread, be afraid of | बिभेति (bibheti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 13 | शुभ् | śubh | 6 | parasmaipada | to shine, to be splendid or beautiful; to hurt or injure; to speak | शुम्भति (śumbhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 14 | भ्रम् | bhram | 1 | parasmaipada | to wander or roam about, rove, ramble; to fly about (as bees); to roll | भ्रमति (bhramati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 15 | क्रुध् | krudh | 4 | parasmaipada | to become angry | क्रुध्यति (krudhyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 16 | दिव् | div | 4 | parasmaipada | to cast, throw (especially dice); to play, gamble; to lay a wager, bet | दीव्यति (dīvyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 17 | लुभ् | lubh | 4 | parasmaipada | to desire greatly or eagerly, to long for, to covet; to be interested  | लुभ्यति (lubhyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 18 | मद् | mad | 4 | parasmaipada | to rejoice, be glad, exult, delight or revel in; to be drunk; to enjoy | माद्यति (mādyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 19 | सिध् | sidh | 1 | parasmaipada | to drive off, scare away; to punish | सेधति (sedhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 20 | ईड् | īḍ | 2 | ātmanepada | to praise; to implore | ईट्टे (īṭṭe) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 21 | मिल् | mil | 6 | parasmaipada | to meet, encounter | मिलति (milati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 22 | गुह् | guh | 1 | parasmaipada | to cover, conceal, to hide; to keep secret | गूहति (gūhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 23 | चुर् | cur | 10 | parasmaipada | to steal, rob, pilfer | चोरयति (corayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 24 | स्पृश् | spṛś | 10 | — | to make touch; to bring into immediate contact with; to fill or cover  | स्पर्शयति (sparśayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 25 | दंश् | daṃś | 1 | parasmaipada | to bite | दशति (daśati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 7, v.21 | Śāk. act 7, v.21 |
+| 26 | नह् | nah | 4 | parasmaipada | to bind, tie, fasten, bind on or round or together; to put on (as armo | नह्यति (nahyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 27 | नश् | naś | 4 | parasmaipada | to be lost; to perish; to disappear; to be gone; to run away | नश्यति (naśyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.97 | Manu 3.97 |
+| 28 | पद् | pad | 4 | ātmanepada | to fall, topple; to perish; to participate in, go to; to observe | पद्यते (padyate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 29 | प्रछ् | prach | 6 | parasmaipada | to ask, question, pray, interrogate (+ accusative); to ask after inqui | पृच्छति (pṛcchati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.110 | Manu 2.110 |
+| 30 | बुध् | budh | 1 | parasmaipada | to wake, wake up; to know, to understand; to enlighten | बोधति (bodhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 31 | भा | bhā | 2 | parasmaipada | to shine, be bright or luminous; to shine forth, appear, show oneself; | भाति (bhāti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 3.14 | YS 3.14 |
+| 32 | भिद् | bhid | 7 | parasmaipada | to split, divide, rupture, cleave; to pass through (a medium); to disp | भिनत्ति (bhinatti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 4.4 | YS 4.4 |
+| 33 | मा | mā | 3 | ātmanepada | to measure, mark off | मिमीते (mimīte) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 34 | यत् | yat | 10 | — | to put in place, arrange (RV.); to be in place, take one's place (RV.) | यातयति (yātayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 35 | यम् | yam | 1 | parasmaipada | it holds, holds up; it sustains, supports; it restrains; it wields, br | यच्छति (yacchati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.55 | Manu 2.55 |
+| 36 | रञ्ज् | rañj | 1 | parasmaipada | to be dyed or colored, to redden, grow red, glow; to be affected or mo | रञ्जति (rañjati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 37 | रम् | ram | 1 | ātmanepada | to delight, enjoy, be glad, please; to stop, stay; rest; to have sexua | रमते (ramate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Meghadūta | Meghadūta |
+| 38 | रिच् | ric | 7 | parasmaipada | to leave; leave behind, relinquish; to give up; to resign; to release, | रिणक्ति (riṇakti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 39 | रुच् | ruc | 1 | ātmanepada | to shine, be bright or radiant or resplendent; to make bright or respl | रोचते (rocate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.62 | Manu 3.62 |
+| 40 | रुह् | ruh | 1 | parasmaipada | to rise, ascend; to mount; to attain, reach | रोहति (rohati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: RV 10.85.20 | RV 10.85.20 |
+| 41 | लग् | lag | 4 | parasmaipada | adheres, sticks, clings or attaches one's self to; adheres, sticks, cl | लग्यति (lagyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 42 | लिप् | lip | 6 | parasmaipada | to smear, anoint; to soil, taint, pollute, defile | लिम्पति (limpati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 43 | वप् | vap | 1 | parasmaipada | to scatter, spread, strew, bestrew; to scatter, spread, strew, bestrew | वपति (vapati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.113 | Manu 2.113 |
+| 44 | वा | vā | 2 | parasmaipada | to blow (as the wind); to procure or bestow anything (acc.) by blowing | वाति (vāti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Meghadūta | Meghadūta |
+| 45 | वृ | vṛ | 5 | parasmaipada | to cover, screen, veil, conceal, hide, envelop, obstruct; to ward off, | वृणोति (vṛṇoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 46 | वृज् | vṛj | 2 | — | to twist off; to wring off or break (someone's neck); to divert; to pu | वृक्ते (vṛkte) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 47 | शक् | śak | 5 | parasmaipada | to be strong or powerful, be able; to help; to yield, give way; to be  | शक्नोति (śaknoti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.130 | Manu 8.130 |
+| 48 | शम् | śam | 4 | parasmaipada | to become tired, to finish, to stop, to come to an end, to rest, to be | शाम्यति (śāmyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.94 | Manu 2.94 |
+| 49 | शास् | śās | 2 | parasmaipada | to teach, instruct, inform, direct; to rule, govern, administer the la | शास्ति (śāsti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 1, v.22 | Śāk. act 1, v.22 |
+| 50 | शुष् | śuṣ | 4 | parasmaipada | to be dry; to dry up, to wither, fade | शुष्यति (śuṣyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 3.23 | YS 3.23 |
+| 51 | श्वस् | śvas | 2 | parasmaipada | to blow, hiss, pant, snort; to breathe, respire, draw breath, live; to | श्वसिति (śvasiti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 52 | सद् | sad | 1 | parasmaipada | to sit, sit down; to lie in wait, be at watch | सीदति (sīdati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.134 | Manu 7.134 |
+| 53 | सृज् | sṛj | 6 | parasmaipada | present of सृज् (sṛj) | सृजति (sṛjati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: RV 10.85.22 | RV 10.85.22 |
+| 54 | स्कन्द् | skand | 1 | parasmaipada | to leap, jump, hop, spring; to drop, fall down; to perish; to be split | स्कन्दति (skandati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.84 | Manu 7.84 |
+| 55 | स्तम्भ् | stambh | 1 | ātmanepada | to rest or lean on; to become stiff or immovable; to become solid | स्तम्भते (stambhate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 56 | स्तन् | stan | 10 | — | to resound, reverberate, roar, thunder; to crackle | स्तनयति (stanayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 57 | स्मि | smi | 1 | ātmanepada | to smile, laugh; to blush; to shine | स्मयते (smayate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 58 | स्वप् | svap | 1 | parasmaipada | to sleep, slumber; to lie down, recline; to die | स्वपति (svapati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 59 | हा | hā | 3 | parasmaipada | to renounce, abandon, relinquish; to emit; to shun, avoid, lay aside;  | जहाति (jahāti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 4, v.14 | Śāk. act 4, v.14 |
+| 60 | हि | hi | 5 | parasmaipada | to send forth, set in motion, impel, urge on, hasten on; to stimulate  | हिनोति (hinoti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 2.35 | YS 2.35 |
+| 61 | ह्री | hrī | 3 | parasmaipada | to blush, be modest; to be ashamed | जिह्रेति (jihreti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 62 | क्षि | kṣi | 2 | parasmaipada | to abide, stay, dwell, reside (used especially of an undisturbed or se | क्षेति (kṣeti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.275 | Manu 3.275 |
+| 63 | क्रम् | kram | 1 | — | to step, walk, go (towards), approach; to approach in order to ask for | क्रामति (krāmati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 64 | क्षिप् | kṣip | 6 | parasmaipada | to throw, to fling; to cast off; to move hastily; to pass over | क्षिपति (kṣipati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 6, v.4 | Śāk. act 6, v.4 |
+| 65 | गद् | gad | 1 | parasmaipada | to speak, say, tell, relate, articulate; to name | गदति (gadati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 66 | गा | gā | 3 | parasmaipada | to go, go towards, come, approach; to go after, pursue; to fall to one | जिगाति (jigāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 67 | ग्रन्थ् | granth | 10 | parasmaipada | to tie | ग्रन्थयति (granthayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 68 | घट् | ghaṭ | 1 | ātmanepada | is intently occupied about, busy with, strives or endeavours after, ex | घटते (ghaṭate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 69 | चक्ष् | cakṣ | 2 | ātmanepada | to see, look; to appear; to tell, inform | चष्टे (caṣṭe) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 70 | चि | ci | 3 | parasmaipada | to observe; to fix the gaze upon; to seek for | चिकेति (ciketi) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 71 | चिन्त् | cint | 10 | parasmaipada | to think, consider, ponder, meditate; to reflect | चिन्तयति (cintayati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.221 | Manu 7.221 |
+| 72 | छिद् | chid | 7 | parasmaipada | to cut | छिनत्ति (chinatti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 73 | ज्वल् | jval | 1 | parasmaipada | to burn, blaze; to glow, shine; to set fire to | ज्वलति (jvalati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 6, v.31 | Śāk. act 6, v.31 |
+| 74 | तन् | tan | 8 | parasmaipada | to extend, spread, be diffused (as light) over, shine, extend towards, | तनोति (tanoti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 1, v.18 | Śāk. act 1, v.18 |
+| 75 | तुल् | tul | 10 | parasmaipada | to lift up, raise; to determine the weight of anything by lifting it u | तोलयति (tolayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 76 | तुष् | tuṣ | 4 | parasmaipada | to be satisfied, pleased; to become calm | तुष्यति (tuṣyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.207 | Manu 3.207 |
+| 77 | त्रस् | tras | 1 | parasmaipada | to tremble, quiver; to be afraid of | त्रसति (trasati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 78 | त्वर् | tvar | 1 | ātmanepada | to hurry, make haste, move with speed | त्वरते (tvarate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 4, v.4 | Śāk. act 4, v.4 |
+| 79 | दम् | dam | 4 | parasmaipada | to be tamed or tranquilised; to tame | दाम्यति (dāmyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 80 | दिश् | diś | 6 | parasmaipada | to point out, show, exhibit; to produce, bring forward (as a witness i | दिशति (diśati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.53 | Manu 8.53 |
+| 81 | दुह् | duh | 6 | parasmaipada | synonym of दोग्धि (dogdhi) | दुहति (duhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 82 | द्रु | dru | 1 | parasmaipada | to run; to flee; to attack, assault; to melt, dissolve, liquefy | द्रवति (dravati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 83 | धृष् | dhṛṣ | 5 | parasmaipada | to be bold or courageous or confident or proud; to dare or venture; to | धृष्णोति (dhṛṣṇoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 84 | प्लु | plu | 10 | — | to cause to float, swim; to bath, wash; to wash away, remove guilt; to | प्लावयति (plāvayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 85 | प्री | prī | 4 | parasmaipada | synonym of प्रीणाति (prīṇāti) | प्रीयते (prīyate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 86 | बन्ध् | bandh | 1 | parasmaipada | to bind, tether; to hold captive; to cherish; to entertain; to unite;  | बन्धति (bandhati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 3.2 | YS 3.2 |
+| 87 | बाध् | bādh | 1 | parasmaipada | to press, move, force; to annoy, harass, trouble; to be annoyed, haras | बाधति (bādhati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 2.1 | YS 2.1 |
+| 88 | भक्ष् | bhakṣ | 1 | parasmaipada | to eat, devour; to consume, use up, waste, destroy; to drain the resou | भक्षति (bhakṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 89 | भञ्ज् | bhañj | 7 | parasmaipada | to break, split; to breach; to defeat, crush (an enemy); to break up,  | भनक्ति (bhanakti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 90 | भाष् | bhāṣ | 1 | parasmaipada | to speak, talk, say, tell | भाषति (bhāṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+
+## Verbs for sa-verbs-4 (100 planned; candidates continue after sa-verbs-3's list)
+Candidates listed: 171 (needs 100)
+
+| # | Root | IAST | Gaṇa | Pada | Meaning (en.wiktionary) | 3sg present | Conjugation table | Confirmed | Usage |
+|--|--|--|--|--|--|--|--|--|--|
+| 1 | भ्रंश् | bhraṃś | 1 | ātmanepada | to drop, fall, be thrown down; to decline, decay, deteriorate; to swer | भ्रंशते (bhraṃśate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 2 | मृश् | mṛś | 6 | — | to touch, stroke, handle; to touch (mentally); consider, reflect, deli | मृशति (mṛśati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 3 | मृष् | mṛṣ | 4 | parasmaipada | Classical Sanskrit form of मृष्य॑ते (mṛ́ṣyate): to forget | मृष्यति (mṛṣyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 4 | युज् | yuj | 7 | parasmaipada | to yoke, harness, join | युनक्ति (yunakti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 5 | रण् | raṇ | 1 | parasmaipada | to delight, take pleasure in, rejoice | रणति (raṇati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.90 | Manu 7.90 |
+| 6 | राज् | rāj | 1 | parasmaipada | to direct, to steer; to rule, to reign | राजति (rājati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.140 | Manu 7.140 |
+| 7 | लज्ज् | lajj | 6 | ātmanepada | is ashamed, blushes | लज्जते (lajjate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 1, v.31 | Śāk. act 1, v.31 |
+| 8 | लम्ब् | lamb | 1 | ātmanepada | to hang down, depend, dangle, hang from or on; to sink, go down, decli | लम्बते (lambate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 9 | वञ्च् | vañc | 1 | parasmaipada | to move or wander away; to go astray; to stagger, totter | वञ्चति (vañcati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 10 | वश् | vaś | 2 | parasmaipada | to will, command; to wish, desire, want; to long; to assert, affirm; t | वष्टि (vaṣṭi) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 11 | वृष् | vṛṣ | 1 | parasmaipada | rains, showers, pours | वर्षति (varṣati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 3.27 | YS 3.27 |
+| 12 | व्यथ् | vyath | 1 | ātmanepada | trembles, wavers, goes astray, comes to naught, fails; is deprived of; | व्यथते (vyathate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.84 | Manu 7.84 |
+| 13 | व्रज् | vraj | 1 | parasmaipada | to go, walk, move, proceed, come near | व्रजति (vrajati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.190 | Manu 3.190 |
+| 14 | शप् | śap | 1 | parasmaipada | to curse; to swear; to revile; to blame | शपति (śapati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 15 | शी | śī | 2 | ātmanepada | to lie, lie down, recline, rest, repose; to remain unused; to lie down | शेते (śete) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.180 | Manu 2.180 |
+| 16 | शुच् | śuc | 1 | parasmaipada | to shine, gleam, burn; to suffer, grieve; to regret | शोचति (śocati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.57 | Manu 3.57 |
+| 17 | श्लिष् | śliṣ | 4 | parasmaipada | to attach, to clasp; to embrace; to cling to | श्लिष्यति (śliṣyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 18 | सह् | sah | 1 | ātmanepada | to overcome, vanquish, conquer, prevail, be victorious; to be able to  | सहते (sahate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 3, v.11 | Śāk. act 3, v.11 |
+| 19 | सिच् | sic | 6 | parasmaipada | to pour out, discharge, emit, shed; to sprinkle, moisten with; to dip, | सिञ्चति (siñcati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 4, v.2 | Śāk. act 4, v.2 |
+| 20 | सु | su | 5 | parasmaipada | to press out or extract juice (especially Soma) | सुनोति (sunoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 21 | सू | sū | 6 | parasmaipada | to set in motion, urge, impel, vivify, create, produce; to hurl upon;  | सुवति (suvati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 22 | सृप् | sṛp | 1 | parasmaipada | to creep, crawl, glide, slink; to move gently, cautiously; to slip int | सर्पति (sarpati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 23 | स्तु | stu | 2 | parasmaipada | to praise, laud, extol; to chant | स्तौति (stauti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 24 | हिंस् | hiṃs | 7 | parasmaipada | to wound, injure, harm | हिनस्ति (hinasti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.180 | Manu 2.180 |
+| 25 | दुष् | duṣ | 4 | parasmaipada | to become bad or corrupted, to be defiled or impure, to be ruined, per | दुष्यति (duṣyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.349 | Manu 8.349 |
+| 26 | विद् | vid | 2 | parasmaipada | to know, understand, perceive, learn, become or be acquainted with, be | वेत्ति (vetti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 4, v.1 | Śāk. act 4, v.1 |
+| 27 | भज् | bhaj | 1 | parasmaipada | to distribute, divide, apportion, allot; to pursue, practice; to choos | भजति (bhajati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Meghadūta | Meghadūta |
+| 28 | वच् | vac | 2 | parasmaipada | present of वच् (vac, “to say”) | वक्ति (vakti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 2, v.4 | Śāk. act 2, v.4 |
+| 29 | ऋ | ṛ | 1 | parasmaipada | to go, move, rise | ऋच्छति (ṛcchati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.18 | Manu 8.18 |
+| 30 | गण् | gaṇ | 10 | parasmaipada | count, number, enumerate, sum up, add up, reckon, calculate, compute,  | गणयति (gaṇayati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 6, v.12 | Śāk. act 6, v.12 |
+| 31 | भृ | bhṛ | 3 | parasmaipada | to bear, convey; to support, maintain; to nourish; to fill | बिभर्ति (bibharti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 2, v.4 | Śāk. act 2, v.4 |
+| 32 | द्विष् | dviṣ | 2 | parasmaipada | to hate, show hatred against (+ accusative; rarely dative or genitive) | द्वेष्टि (dveṣṭi) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 2.8 | YS 2.8 |
+| 33 | मृ | mṛ | 6 | ātmanepada | to die, decease | म्रियते (mriyate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 1.17 | YS 1.17 |
+| 34 | पृ | pṛ | 6 | ātmanepada | to be busy or active; (mostly with prefix व्य- (vya-) + आ- (ā-) or onl | प्रियते (priyate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 6, v.14 | Śāk. act 6, v.14 |
+| 35 | तॄ | tṝ | 1 | parasmaipada | to pass across or over, cross over (a river), sail across; to float, s | तरति (tarati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.404 | Manu 8.404 |
+| 36 | कृष् | kṛṣ | 1 | parasmaipada | to draw, drag, pull, tear (RV., AV., ŚBr., etc.); to lead, conduct (MB | कर्षति (karṣati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.66 | Manu 3.66 |
+| 37 | आस् | ās | 2 | ātmanepada | to be; to stay; to sit | आस्ते (āste) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.204 | Manu 2.204 |
+| 38 | ग्रस् | gras | 1 | parasmaipada | to affect or control; to seize with the mouth, take into the mouth, sw | ग्रसति (grasati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.133 | Manu 3.133 |
+| 39 | हृष् | hṛṣ | 4 | parasmaipada | thrills with rapture, rejoices, exults, is glad or pleased; become sex | हृष्यति (hṛṣyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.98 | Manu 2.98 |
+| 40 | मुह् | muh | 4 | parasmaipada | to become unconscious, bewildered, unresponsive; to become confused | मुह्यति (muhyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 2.16 | YS 2.16 |
+| 41 | एध् | edh | 1 | ātmanepada | to prosper, increase, grow; to spread, extend; to swell | एधते (edhate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.113 | Manu 7.113 |
+| 42 | जागृ | jāgṛ | 2 | parasmaipada | present of जागृ (jāgṛ) | जागर्ति (jāgarti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: RV 10.85.27 | RV 10.85.27 |
+| 43 | युध् | yudh | 4 | ātmanepada | to fight, battle, to wage war; to overcome in battle | युध्यते (yudhyate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.197 | Manu 7.197 |
+| 44 | पुष् | puṣ | 4 | parasmaipada | to thrive, prosper; to augment, make prosper | पुष्यति (puṣyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 9.37 | Manu 9.37 |
+| 45 | त्यज् | tyaj | 1 | parasmaipada | to leave; to abandon; to shun | त्यजति (tyajati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Meghadūta | Meghadūta |
+| 46 | दु | du | 5 | parasmaipada | to be burnt; to be afflicted, distressed | दुनोति (dunoti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.66 | Manu 7.66 |
+| 47 | तृप् | tṛp | 4 | parasmaipada | to be satisfied, content, pleased; to enjoy | तृप्यति (tṛpyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.267 | Manu 3.267 |
+| 48 | लुप् | lup | 4 | ātmanepada | passive of लुप् (lup); is broken; is wasted or destroyed; is suppresse | लुप्यते (lupyate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.189 | Manu 2.189 |
+| 49 | मार्ग् | mārg | 1 | parasmaipada | to seek, look for; to request, ask for [with ablative ‘from someone’] | मार्गति (mārgati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 9.288 | Manu 9.288 |
+| 50 | विप् | vip | 1 | ātmanepada | to tremble, shake, quiver, vibrate | वेपते (vepate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 5, v.14 | Śāk. act 5, v.14 |
+| 51 | दिह् | dih | 2 | parasmaipada | to anoint, smear, plaster, besmear; to increase, accumulate | देग्धि (degdhi) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 9.133 | Manu 9.133 |
+| 52 | स्ना | snā | 2 | parasmaipada | to bathe, perform the ceremony of bathing or certain prescribed oblati | स्नाति (snāti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 5, v.11 | Śāk. act 5, v.11 |
+| 53 | यज् | yaj | 1 | parasmaipada | to worship, adore, honour; to sacrifice, offer, present | यजति (yajati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.79 | Manu 7.79 |
+| 54 | शङ्क् | śaṅk | 1 | ātmanepada | to doubt, to be unsure or uncertain; to suppose, assume, think probabl | शङ्कते (śaṅkate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 6, v.4 | Śāk. act 6, v.4 |
+| 55 | स्वन् | svan | 1 | parasmaipada | to sound, resound | स्वनति (svanati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 1, v.21 | Śāk. act 1, v.21 |
+| 56 | ग्रभ् | grabh | 9 | parasmaipada | to seize; to take by the hand | गृभ्णाति (gṛbhṇāti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: RV 10.85.36 | RV 10.85.36 |
+| 57 | जॄ | jṝ | 1 | — | to cause to grow old, make old or decrepit | जरति (jarati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 3.52 | YS 3.52 |
+| 58 | अर्च् | arc | 1 | parasmaipada | to shine; to praise, laud; sing praise | अर्चति (arcati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.93 | Manu 3.93 |
+| 59 | च्यु | cyu | 1 | ātmanepada | to turn off; to fall down | च्यवते (cyavate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.98 | Manu 7.98 |
+| 60 | कृत् | kṛt | 6 | parasmaipada | to cut; to tear; to shred; to sever; to divide | कृन्तति (kṛntati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.12 | Manu 8.12 |
+| 61 | पाल् | pāl | 10 | parasmaipada | to protect, guard, defend; to rule, govern; to maintain, hold | पालयति (pālayati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 7, v.28 | Śāk. act 7, v.28 |
+| 62 | स्फुर् | sphur | 6 | parasmaipada | to spurn; to dart, dash, spurt, spring; to pulsate, throb, tremble, qu | स्फुरति (sphurati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 1, v.15 | Śāk. act 1, v.15 |
+| 63 | पू | pū | 9 | parasmaipada | to purify, cleanse, purge | पुनाति (punāti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 1, v.14 | Śāk. act 1, v.14 |
+| 64 | क्षम् | kṣam | 1 | ātmanepada | to be patient, to suppress anger; to bear patiently, endure, to put up | क्षमते (kṣamate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.313 | Manu 8.313 |
+| 65 | भिषज् | bhiṣaj | 2 | parasmaipada | to heal, to cure | भिषक्ति (bhiṣakti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.180 | Manu 3.180 |
+| 66 | कम्प् | kamp | 1 | ātmanepada | to shiver, tremble; to move, shake | कम्पते (kampate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 67 | जृम्भ् | jṛmbh | 1 | ātmanepada | to open the mouth, yawn, ĀśvGṛ. iii, 6 ; Mn. &c.;; to gape open, open  | जृम्भते (jṛmbhate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 7, v.15 | Śāk. act 7, v.15 |
+| 68 | नुद् | nud | 6 | parasmaipada | present of नुद् (nud, “to push”) | नुदति (nudati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Meghadūta | Meghadūta |
+| 69 | नु | nu | 2 | parasmaipada | to praise, laud, commend; to sound, shout, exult | नौति (nauti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 1.51 | YS 1.51 |
+| 70 | मृज् | mṛj | 2 | parasmaipada | to wipe; to purify | मार्ष्टि (mārṣṭi) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.317 | Manu 8.317 |
+| 71 | ऋध् | ṛdh | 5 | parasmaipada | present of ऋध् (ṛdh) | ऋध्नोति (ṛdhnoti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 9.322 | Manu 9.322 |
+| 72 | निन्द् | nind | 1 | parasmaipada | to insult; to blame, accuse | निन्दति (nindati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 73 | क्षल् | kṣal | 10 | parasmaipada | to wash, cleanse | क्षालयति (kṣālayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 74 | स्रु | sru | 1 | parasmaipada | to flow, stream; to leak, drip; to perish, fail; to issue, arise; to a | स्रवति (sravati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 75 | द्रा | drā | 4 | parasmaipada | to sleep | द्रायति (drāyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 76 | उष् | uṣ | 1 | parasmaipada | to burn, burn down; to punish, chastise | ओषति (oṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 77 | द्रुह् | druh | 4 | parasmaipada | to hurt, injure, harm, seek to harm, be hostile to; to bear malice or  | द्रुह्यति (druhyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 78 | ह्वृ | hvṛ | 1 | parasmaipada | to deviate or diverge from the right line, be crooked, bend; to err; t | ह्वरति (hvarati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 79 | वम् | vam | 1 | parasmaipada | to vomit, spit out, eject (literally and figuratively); to emit, send  | वमति (vamati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 80 | अद् | ad | 2 | parasmaipada | to eat, consume, devour | अत्ति (atti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 81 | पॄ | pṝ | 3 | parasmaipada | to fill; to fill with air, blow into; to sate, cherish, nourish, bring | पिपर्ति (piparti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 82 | सच् | sac | 1 | ātmanepada | to be associated or united with, have to do with, be familiar with, as | सचते (sacate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 83 | प्रु | pru | 1 | ātmanepada | to spring up, jump | प्रवते (pravate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 84 | तृष् | tṛṣ | 4 | parasmaipada | to be thirsty, thirst, thirst for | तृष्यति (tṛṣyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 85 | तक्ष् | takṣ | 1 | parasmaipada | to form by cutting, plane, chisel, chop; to cut, split; to fashion, fo | तक्षति (takṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 86 | श्रा | śrā | 4 | parasmaipada | to cook, boil, seethe, mature, ripen; to sweat; to cause to cook or bo | श्रायति (śrāyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 87 | श्रि | śri | 1 | parasmaipada | to cause to lean or rest on, lay on or in, fix on, fasten to, direct o | श्रयति (śrayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 88 | स्विद् | svid | 1 | ātmanepada | to sweat, perspire; to be anointed; to be disturbed (?) | स्वेदते (svedate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 89 | गॄ | gṝ | 6 | parasmaipada | to swallow, devour, eat | गिरति (girati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 90 | भन् | bhan | 1 | parasmaipada | to sound, resound, call aloud, speak, declare | भनति (bhanati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 91 | जुष् | juṣ | 6 | parasmaipada | alternative form of जुषते (juṣate), with active endings. | जुषति (juṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 92 | प्लुष् | pluṣ | 1 | parasmaipada | to burn, scorch, singe, char (Suśr. only passive प्लुष्यते (pluṣyate)) | प्लोषति (ploṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 93 | हु | hu | 3 | parasmaipada | to sprinkle on; to worship or honor with; to sacrifice to; to offer or | जुहोति (juhoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 94 | रंह् | raṃh | 1 | parasmaipada | to hasten; to speed; to flow | रंहति (raṃhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 95 | ईश् | īś | 2 | ātmanepada | to own, possess; to belong to; to dispose of, be valid or powerful; to | ईष्टे (īṣṭe) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 96 | सिव् | siv | 4 | parasmaipada | to sew, darn, stitch, stitch together.; to join, unite | सीव्यति (sīvyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 97 | चम् | cam | 1 | parasmaipada | to sip, drink; to eat, swallow | चमति (camati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 98 | रन्ध् | randh | 10 | parasmaipada | to cook food; to make subject; torment | रन्धयति (randhayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 99 | काश् | kāś | 1 | ātmanepada | to shine brilliantly; to be visible, appear | काशते (kāśate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 100 | गल् | gal | 1 | parasmaipada | to drip; to ooze, trickle; to drop | गलति (galati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 101 | कास् | kās | 1 | ātmanepada | to cough | कासते (kāsate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 102 | रुज् | ruj | 6 | parasmaipada | to break, break open; to shatter, dash to pieces, destroy; to injure,  | रुजति (rujati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 103 | स्तॄ | stṝ | 9 | parasmaipada | to scatter, strew, bestrew; to spread, spread out, spread over | स्तृणाति (stṛṇāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 104 | रिह् | rih | 2 | parasmaipada | to lick; to kiss | रेळ्हि (reḷhi) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 105 | लिह् | lih | 6 | parasmaipada | to lick, lap, lick at | लिहति (lihati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 106 | स्पृध् | spṛdh | 1 | ātmanepada | to compete, rival, contend, emulate | स्पर्धते (spardhate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 107 | दॄ | dṝ | 9 | parasmaipada | to tear, rend, rip; to split open, divide, break; to burst | दृणाति (dṛṇāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 108 | तिज् | tij | 1 | ātmanepada | to be or become sharp; to energize, activate | तेजते (tejate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 109 | क्वथ् | kvath | 1 | ātmanepada | to boil, decoct, infuse, simmer; to heat; to digest; to ferment (?) | क्वथते (kvathate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 110 | घृष् | ghṛṣ | 1 | parasmaipada | to rub, brush, polish | घर्षति (gharṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 111 | शिक्ष् | śikṣ | 1 | parasmaipada | to learn, acquire knowledge; to study; to wish to be able | शिक्षति (śikṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 112 | श्लाघ् | ślāgh | 1 | ātmanepada | to confide in, trust; to commend, praise; to celebrate; to boast, brag | श्लाघते (ślāghate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 113 | घृ | ghṛ | 5 | parasmaipada | to burn, shine | घृणोति (ghṛṇoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 114 | ईर्ष् | īrṣ | 4 | parasmaipada | to envy | ईर्ष्यति (īrṣyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 115 | मृड् | mṛḍ | 6 | parasmaipada | to forgive, pardon, spare; to be favorable, gracious; to treat kindly, | मृडति (mṛḍati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 116 | मज्ज् | majj | 1 | parasmaipada | to sink; to dive, plunge, bathe in water; to go down, go to hell, to p | मज्जति (majjati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 117 | वक्ष् | vakṣ | 1 | parasmaipada | to increase, to grow; to be strong, powerful | वक्षति (vakṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 118 | अवगम् | avagam | 1 | parasmaipada | to understand, recognize, be convinced; to consider; to come, approach | अवगच्छति (avagacchati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 119 | रद् | rad | 1 | parasmaipada | to scratch, scrape; gnaw, bite; to cut a path, pave; to lead a river i | रदति (radati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 120 | स्निह् | snih | 4 | parasmaipada | to adhere, stick, cling; to be attached to, have affection for (+ loca | स्निह्यति (snihyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 121 | त्रप् | trap | 1 | ātmanepada | to be embarrassed, ashamed | त्रपते (trapate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 122 | शिष् | śiṣ | 1 | parasmaipada | to leave, spare | शेषति (śeṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 123 | कॄ | kṝ | 6 | parasmaipada | to strew, pour out; heap up | किरति (kirati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 124 | कुत्स् | kuts | 10 | parasmaipada | to abuse, blame, despise, revile, contemn | कुत्सयति (kutsayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 125 | काङ्क्ष् | kāṅkṣ | 1 | parasmaipada | to wish, desire, long for, hope for; to expect, wait for, await; to st | काङ्क्षति (kāṅkṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 126 | अङ्ख् | aṅkh | 10 | parasmaipada | to cling; to embrace | अङ्खयति (aṅkhayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 127 | जू | jū | 1 | parasmaipada | to press forwards, hurry on, be quick; to impel quickly, urge or drive | जवति (javati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 128 | सम्प्रदा | sampradā | 3 | parasmaipada | to present, offer, give, bestow, transmit; to hand down by tradition;  | सम्प्रददाति (sampradadāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 129 | उभ् | ubh | 9 | parasmaipada | to hurt, kill; to cover; fill | उभ्नाति (ubhnāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 130 | इङ्ग् | iṅg | 1 | parasmaipada | to go (towards); to move, agitate | इङ्गति (iṅgati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 131 | कुट्ट् | kuṭṭ | 10 | parasmaipada | to crush, grind; to hit, strike | कुट्टयति (kuṭṭayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 132 | चुद् | cud | 1 | parasmaipada | to impel, incite, animate; to hasten | चोदति (codati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 133 | इरस् | iras | 4 | parasmaipada | to behave insolently; to be angry; to be ill-affected towards (dative  | इरस्यति (irasyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 134 | गृध् | gṛdh | 4 | parasmaipada | to covet, desire, strive after greedily | गृध्यति (gṛdhyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 135 | घिण्ण् | ghiṇṇ | 1 | ātmanepada | to grasp, take, seize | घिण्णते (ghiṇṇate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 136 | निज् | nij | 3 | parasmaipada | to wash, cleanse, purify; to nourish | नेनेक्ति (nenekti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 137 | विष् | viṣ | 3 | parasmaipada | to surround, encircle; to spread through, extend, pervade; to embrace; | वेवेष्टि (veveṣṭi) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 138 | भस् | bhas | 3 | parasmaipada | to chew, eat, devour; to blame, condemn (Dhātup.) | बभस्ति (babhasti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 139 | साध् | sādh | 5 | parasmaipada | to obtain; to attain, accomplish | साध्नोति (sādhnoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 140 | खेल् | khel | 1 | parasmaipada | to play; to shake, swing | खेलति (khelati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 141 | बुक्क् | bukk | 1 | parasmaipada | to bark, woof, yelp | बुक्कति (bukkati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 142 | उल्लिख् | ullikh | 6 | parasmaipada | to make lines upon; to chip; to scratch, to make mark by scratching, t | उल्लिखति (ullikhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 143 | हूर्छ् | hūrch | 1 | parasmaipada | to go crookedly, stagger; to creep stealthily; to totter, fall; to fal | हूर्छति (hūrchati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 144 | स्वर् | svar | 1 | parasmaipada | to sing; to make or utter a sound; to resound; to praise | स्वरति (svarati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 145 | प्रवद् | pravad | 1 | parasmaipada | to name; to offer for sale; to speak out; to raise voice; to roar; to  | प्रवदति (pravadati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 146 | सभाज् | sabhāj | 10 | parasmaipada | to offer | सभाजयति (sabhājayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 147 | पृच् | pṛc | 7 | parasmaipada | to give generously, lavish, bestow, grant | पृणक्ति (pṛṇakti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 148 | विच् | vic | 7 | parasmaipada | to winnow, to separate (grain from chaff); to discern, discriminate, j | विनक्ति (vinakti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 149 | तञ्च् | tañc | 7 | parasmaipada | to contract | तनक्ति (tanakti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 150 | अञ्ज् | añj | 7 | parasmaipada | to anoint, apply an ointment or pigment | अनक्ति (anakti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 151 | उन्द् | und | 7 | parasmaipada | to bathe, flow, spring, wet | उनत्ति (unatti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 152 | तृह् | tṛh | 7 | parasmaipada | to bruise, crush | तृणेढि (tṛṇeḍhi) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 153 | पिष् | piṣ | 7 | parasmaipada | to grind, crush | पिनष्टि (pinaṣṭi) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 154 | सस् | sas | 2 | parasmaipada | to sleep | सस्ति (sasti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 155 | अधिष्ठा | adhiṣṭhā | 1 | parasmaipada | to stand above or over; to defeat, overcome; to control, superintend,  | अधितिष्ठति (adhitiṣṭhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 156 | प्सा | psā | 2 | parasmaipada | to chew; to eat; to devour | प्साति (psāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 157 | स्कु | sku | 9 | parasmaipada | to pick, pluck, tear; to poke; to cover | स्कुनाति (skunāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 158 | श्री | śrī | 9 | parasmaipada | to mix, mingle, cook; to burn, flame, diffuse light | श्रीणाति (śrīṇāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 159 | गर्ह् | garh | 1 | parasmaipada | to lodge a complaint before anyone; to accuse, charge with, blame | गर्हति (garhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 160 | सन् | san | 8 | parasmaipada | to gain, acquire; to procure, gain for another | सनोति (sanoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 161 | चुम्ब् | cumb | 1 | parasmaipada | to kiss; to touch softly and closely | चुम्बति (cumbati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 162 | स्फुट् | sphuṭ | 6 | parasmaipada | to burst, explode; to burst or split open (with a sound), to be rent a | स्फुटति (sphuṭati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 163 | अञ्च् | añc | 1 | parasmaipada | to bend, curve, incline, curl; to revere; to honour; to tend, move, go | अञ्चति (ancati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 164 | छिक्क् | chikk | 6 | parasmaipada | to sneeze | छिक्कति (chikkati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 165 | म्लेछ् | mlech | 1 | parasmaipada | to speak indistinctly (like a foreigner not speaking Sanskrit) | म्लेच्छति (mlecchati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 166 | कुर् | kur | 6 | parasmaipada | to utter a sound (Dhātup.) | कुरति (kurati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 167 | कर्ज् | karj | 1 | parasmaipada | to torment, to pain (Dhātup.) | कर्जति (karjati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 168 | जज् | jaj | 1 | parasmaipada | to fight; attack | जजति (jajati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 169 | पिञ्ज् | piñj | 2 | ātmanepada | to tinge, dye, paint | पिङ्क्ते (piṅkte) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 170 | प्रवह् | pravah | 1 | parasmaipada | to flow, rush; to flood, overflow; to bear; to carry forward, to bring | प्रवहति (pravahati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 171 | स्तिघ् | stigh | 5 | parasmaipada | to mount, step up, rise | स्तिघ्नोति (stighnoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+
+
+### Notes on the verb lists
+
+- Source: kaikki Wiktionary Sanskrit verb entries whose head line is a third-singular present with a root and gaṇa; each root appears once, in the gaṇa and pada of its best-attested entry (class 10 and causative entries are used only where class 10 is the root's own class, such as `चुर्`, `चिन्त्`, `गण्`). The "Conjugation table" column is yes for all rows because only entries with a full table were kept.
+- Taught set excluded: the 54 verb cards on decks-live and the B1 branches (`भू गम् पठ् वद् पच् नी`, `अस् ज्ञा कृ दा धा पश् श्रु` and the rest of the everyday and more-verbs decks).
+- Order is by attestation in the typed texts (Manu 2, 3, 7, 8, 9, Śākuntalam, Meghadūta, Yoga Sūtra), then my judgement of commonness; roots of gaṇas 1, 4, 6 and 10 and common irregulars (2nd, 3rd, 5th, 7th, 8th, 9th) are interleaved. The Gītā and the Hitopadeśa were not reachable as text in this run, and Monier-Williams was not read.
+- Prefixed verbs (`उत्पद्`, `आचर्`) and roots without a gaṇa on their Wiktionary entry (`भू`-type irregular entries with a blank class) were left out; a builder wanting those writes the root and the prefix as two bases.
+- Glosses that read "present of ..." or "synonym of ..." are Wiktionary's cross-references; take the meaning from the root's entry.
