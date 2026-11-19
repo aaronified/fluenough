@@ -43,6 +43,7 @@ class SpokenLanguage {
     this.typed = true,
     this.verification = NativeVerification.none,
     this.popular = false,
+    this.hasCulture = true,
     this.isPrivate = false,
   });
 
@@ -196,6 +197,11 @@ class SpokenLanguage {
   /// `assets/languages.yaml`, so a change reaches learners with the next app
   /// release). The tiles are the first eight such languages in file order.
   final bool popular;
+
+  /// Whether the language has culture at all: `culture: false` marks one with
+  /// none (Toki Pona, Proto-Indo-European), whose course line then shows no
+  /// culture bar (#1629). Absent means it has culture.
+  final bool hasCulture;
 
   /// Whether the entry comes from a private language package the learner
   /// installed (#1017) rather than from `assets/languages.yaml`: a language
@@ -390,6 +396,16 @@ NativeVerification _verification(Object? item, int i) {
       (throw FormatException('languages[$i]: verification is malformed'));
 }
 
+/// Whether an entry has culture: absent or `true` is yes, `culture: false` no.
+bool _hasCulture(Object? item, int i) {
+  final value = item is YamlMap ? item['culture'] : null;
+  if (value == null) return true;
+  if (value is! bool) {
+    throw FormatException('languages[$i]: culture is malformed');
+  }
+  return value;
+}
+
 /// Whether an entry says `popular: true`; absent or `false` is not popular.
 bool _popular(Object? item, int i) {
   final value = item is YamlMap ? item['popular'] : null;
@@ -464,6 +480,7 @@ List<SpokenLanguage> parseSpokenLanguages(String text) {
         typed: item['typed'] != false,
         verification: _verification(item, i),
         popular: _popular(item, i),
+        hasCulture: _hasCulture(item, i),
       ),
     );
   }

@@ -669,6 +669,7 @@ class _LanguagePickListState extends State<LanguagePickList> {
                     compact: true,
                     levels: levels,
                     culture: progress?.culture ?? 0,
+                    hasCulture: view.language.hasCulture,
                     // A course with nothing written but first words says so.
                     label: levels.every((x) => x == 0)
                         ? l10n.languagesFirstWordsLabel

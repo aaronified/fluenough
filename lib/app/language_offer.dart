@@ -17,8 +17,12 @@ extension LanguageOffer on AppState {
   /// each course's completeness from its units, else from the decks on the
   /// phone. Own names come from the index, else from [ownNames], the
   /// spoken languages' list (`assets/languages.yaml`).
+  ///
+  /// [noCulture] holds the codes of the languages with no culture at all
+  /// (`culture: false` in the list), whose course line has no culture bar.
   List<CatalogLanguage> catalogLanguages({
     Map<String, String> ownNames = const <String, String>{},
+    Set<String> noCulture = const <String>{},
   }) {
     final spoken = settings.spokenLanguages;
     final index = deckDownloads?.index;
@@ -31,11 +35,16 @@ extension LanguageOffer on AppState {
               entry,
               spoken: spoken,
               ownNames: ownNames,
+              hasCulture: !noCulture.contains(offered.code),
             ),
             onPhone.contains(offered.code),
           )
         else
-          catalogLanguageFromDecks(offered.code, ownNames: ownNames),
+          catalogLanguageFromDecks(
+            offered.code,
+            ownNames: ownNames,
+            hasCulture: !noCulture.contains(offered.code),
+          ),
     ];
   }
 
@@ -51,6 +60,7 @@ extension LanguageOffer on AppState {
           natives: language.natives,
           size: deckDownloads!.sizeOnPhone(language.code),
           needsApp: language.needsApp,
+          hasCulture: language.hasCulture,
         )
       : language;
 
@@ -61,6 +71,7 @@ extension LanguageOffer on AppState {
   CatalogLanguage catalogLanguageFromDecks(
     String code, {
     Map<String, String> ownNames = const <String, String>{},
+    bool hasCulture = true,
   }) {
     final teaching = <DeckEntry>[
       for (final entry in decks)
@@ -71,6 +82,7 @@ extension LanguageOffer on AppState {
       for (final entry in teaching) entry.deck.native.code: entry.deck.native,
     };
     return CatalogLanguage(
+      hasCulture: hasCulture,
       code: code,
       name: first?.language.name ?? code,
       ownName: ownNames[code],

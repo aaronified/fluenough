@@ -440,7 +440,13 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     final readers = scriptReaders(_spokenList, state.settings.scriptsRead);
     final names = <String, String>{for (final l in _spokenList) l.code: l.name};
     final learning = _scriptsFor(state, language);
-    final catalog = state.catalogLanguages(ownNames: _ownNames);
+    final catalog = state.catalogLanguages(
+      ownNames: _ownNames,
+      noCulture: <String>{
+        for (final l in _spokenList)
+          if (!l.hasCulture) l.code,
+      },
+    );
     return <SheetScript>[
       for (final script in codes)
         () {
@@ -1003,7 +1009,13 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final spoken = state.settings.spokenLanguages;
-    final all = state.catalogLanguages(ownNames: _ownNames);
+    final all = state.catalogLanguages(
+      ownNames: _ownNames,
+      noCulture: <String>{
+        for (final l in _spokenList)
+          if (!l.hasCulture) l.code,
+      },
+    );
     final query = _search.text;
     final searching = query.trim().isNotEmpty;
     final shown = <CatalogLanguage>[

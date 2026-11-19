@@ -35,6 +35,9 @@
 #                   recommendations check, D13). The Sanskrit courses list
 #                   `latin`: the public-domain editions are English-printed.
 #                   It changes nothing else: no script is asked about or taught.
+#   culture         optional: `false` for a language with no culture at all
+#                   (Toki Pona, Proto-Indo-European): its course line shows
+#                   no culture bar (#1629). Absent means it has culture.
 #   aliases         optional: other names a search finds it by, such as
 #                   "Urdu" for Hindustani, which has no entry of its own
 #                   (#623)
@@ -217,7 +220,7 @@ languages:
       script_question: "한글을 읽을 수 있나요?", script_can_read: "한글을 읽을 수 있습니다", script_text: "unchecked" }  # Claude-written, for a speaker to check
   - { code: "eo", dialect: "No dialects: one standard (Fundamento)", iso639_3: "epo", name: "Esperanto", own_name: "Esperanto", scripts: ["latin"], family: "constructed",
       script_question: "Ĉu vi povas legi la latinan skribon?", script_can_read: "Mi povas legi la latinan skribon", script_text: "unchecked" }  # Claude-written, for a speaker to check
-  - { code: "tok", dialect: "No dialects: one standard", iso639_3: "tok", name: "Toki Pona", own_name: "toki pona", scripts: ["latin", "sitelen_pona"], family: "constructed",
+  - { code: "tok", culture: false, dialect: "No dialects: one standard", iso639_3: "tok", name: "Toki Pona", own_name: "toki pona", scripts: ["latin", "sitelen_pona"], family: "constructed",
       scripts_question: "sina ken lukin e toki pona kepeken sitelen seme?",
       script_can_read: { latin: "mi ken lukin e sitelen Lasina", sitelen_pona: "mi ken lukin e sitelen pona" }, script_text: "unchecked" }  # sitelen pona with Latin (owner, 2026-11-16); Claude-written, for a speaker to check
   - { code: "jbo", iso639_3: "jbo", name: "Lojban", own_name: "la .lojban.", scripts: ["latin"], family: "constructed" }
@@ -280,7 +283,7 @@ languages:
   - { code: "sux", iso639_3: "sux", name: "Sumerian", own_name: "𒅴𒂠 (eme-ĝir)", scripts: ["cuneiform"], family: "isolate" }
   - { code: "egy", iso639_3: "egy", name: "Egyptian", own_name: "mdw nṯr", scripts: ["egyptian_hieroglyphs"], family: "afroasiatic",
       aliases: ["Ancient Egyptian", "Hieroglyphs"] }
-  - { code: "ine", iso639_3: "ine", name: "Proto-Indo-European", own_name: "Proto-Indo-European", scripts: ["latin"], family: "indo_european",
+  - { code: "ine", culture: false, iso639_3: "ine", name: "Proto-Indo-European", own_name: "Proto-Indo-European", scripts: ["latin"], family: "indo_european",
       aliases: ["PIE"] }
   - { code: "vsn", iso639_3: "vsn", name: "Vedic Sanskrit", own_name: "वैदिकसंस्कृतम्", scripts: ["devanagari"], book_scripts: ["latin"], family: "indo_aryan",
       aliases: ["Vedic"] }

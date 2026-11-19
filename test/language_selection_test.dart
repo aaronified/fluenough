@@ -31,6 +31,7 @@ SpokenLanguage lang(
   bool popular = false,
   NativeVerification verification = NativeVerification.none,
   List<String> aliases = const <String>[],
+  bool hasCulture = true,
 }) => SpokenLanguage(
   code: code,
   iso639_3: 'xxx',
@@ -40,6 +41,7 @@ SpokenLanguage lang(
   popular: popular,
   verification: verification,
   aliases: aliases,
+  hasCulture: hasCulture,
 );
 
 B1Unit written(Milestone m) => B1Unit(words: 10, milestone: m, has: 10);
@@ -502,6 +504,54 @@ languages:
         await tester.pumpAndSettle();
         expect(find.text(bubble), findsNothing);
         expect(tester.takeException(), isNull);
+      });
+
+      testWidgets('a language marked `culture: false` has no culture bar and '
+          'its other bars keep their width, while one without the flag keeps '
+          'it even with no culture deck (#1629)', (tester) async {
+        await pumpList(
+          tester,
+          mode: mode,
+          views: <LanguageView>[
+            LanguageView(
+              lang('aa', 'Alpha', popular: true, hasCulture: false),
+              course('aa', 'Alpha', <B1Unit>[
+                written(Milestone.a1),
+                written(Milestone.a2),
+                planned(Milestone.b1),
+              ]),
+            ),
+            LanguageView(
+              lang('bb', 'Bravo', popular: true),
+              course('bb', 'Bravo', <B1Unit>[
+                written(Milestone.a1),
+                planned(Milestone.a2),
+                planned(Milestone.b1),
+              ]),
+            ),
+          ],
+        );
+        await seeAll(tester);
+        Finder segments(String code) => find.descendant(
+          of: key('course-line-$code'),
+          matching: find.byWidgetPredicate(
+            (w) =>
+                w.key is ValueKey<String> &&
+                (w.key! as ValueKey<String>).value.startsWith(
+                  'course-segment-',
+                ),
+          ),
+        );
+        expect(segments('aa'), findsNWidgets(3));
+        expect(segments('bb'), findsNWidgets(4));
+        // Three bars share the row the four shared: wider, not stretched
+        // past the row.
+        final row = tester.getSize(key('course-line-aa')).width;
+        final sum = tester
+            .widgetList<Widget>(segments('aa'))
+            .map((w) => tester.getSize(find.byWidget(w)).width)
+            .fold<double>(0, (a, b) => a + b);
+        expect(sum, lessThanOrEqualTo(row));
       });
 
       testWidgets('a screen reader reads each bar as how much of the course '

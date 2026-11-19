@@ -292,9 +292,16 @@ class CatalogLanguage {
     this.natives = const <CatalogNative>[],
     this.size = 0,
     this.needsApp,
+    this.hasCulture = true,
   });
 
   final String code;
+
+  /// Whether the language has culture at all, so its course line draws a
+  /// culture bar (`culture: false` in `assets/languages.yaml`, set only for
+  /// Toki Pona and Proto-Indo-European, #1629). Culture is then not
+  /// applicable: it is no part of the stage, which never waited on it.
+  final bool hasCulture;
 
   /// Names the entry in the list: its [code].
   String get key => code;
@@ -376,7 +383,9 @@ class CatalogLanguage {
     IndexLanguage index, {
     List<String> spoken = const <String>['en'],
     Map<String, String> ownNames = const <String, String>{},
+    bool hasCulture = true,
   }) => CatalogLanguage(
+    hasCulture: hasCulture,
     code: index.code,
     name: index.name,
     ownName: index.ownName ?? ownNames[index.code],
