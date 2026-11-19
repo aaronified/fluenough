@@ -1760,7 +1760,7 @@ class _InfoDialog extends StatelessWidget {
               CourseLine(
                 levels: progress.levels,
                 culture: progress.culture,
-                hasCulture: _view.language.hasCulture,
+                hasCulture: view.language.hasCulture,
               ),
             ],
             const SizedBox(height: 8),
