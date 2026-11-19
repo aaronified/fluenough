@@ -1,0 +1,211 @@
+# More daily actions (A2). Each root, its class, voice and present forms were read in the Wiktionary conjugation table
+# of the verb's third person singular in the kaikki.org dump of en.wiktionary, 2026-11-19; the readings and IPA are from tools/transcribe.py (sa).
+schema: 1
+id: "sa-verbs-3"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "verbs-3"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-12000"
+    target: "अर्ह्"
+    reading: "arh"
+    ipa: "ərɦ"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "गुरुः सम्मानम् अर्हति"
+        reading: "guruḥ sammānam arhati"
+        ipa: "ɡuruh səmmaːnəm ərɦət̪i"
+        bases:
+          - { word: "अर्हति", base: "अर्ह्", reading: "arh" }
+      - target: "ऋषिर् आदरम् अर्हति"
+        reading: "ṛṣir ādaram arhati"
+        ipa: "r̩ʂir aːd̪ərəm ərɦət̪i"
+        bases:
+          - { word: "अर्हति", base: "अर्ह्", reading: "arh" }
+  - id: "sa-12001"
+    target: "वृध्"
+    reading: "vṛdh"
+    ipa: "ʋr̩d̪ʱ"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वृक्षो वर्धति"
+        reading: "vṛkṣo vardhati"
+        ipa: "ʋr̩kʂoː ʋərd̪ʱət̪i"
+        bases:
+          - { word: "वर्धति", base: "वृध्", reading: "vṛdh" }
+      - target: "शिशुर् वर्धति"
+        reading: "śiśur vardhati"
+        ipa: "ʃiʃur ʋərd̪ʱət̪i"
+        bases:
+          - { word: "वर्धति", base: "वृध्", reading: "vṛdh" }
+  - id: "sa-12002"
+    target: "दह्"
+    reading: "dah"
+    ipa: "d̪əɦ"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "अग्निर् दहति वनम्"
+        reading: "agnir dahati vanam"
+        ipa: "əɡnir d̪əɦət̪i ʋənəm"
+        bases:
+          - { word: "दहति", base: "दह्", reading: "dah" }
+      - target: "सूर्यो दहति भूमिम्"
+        reading: "sūryo dahati bhūmim"
+        ipa: "suːrjoː d̪əɦət̪i bʱuːmim"
+        bases:
+          - { word: "दहति", base: "दह्", reading: "dah" }
+  - id: "sa-12003"
+    target: "भ्रम्"
+    reading: "bhram"
+    ipa: "bʱrəm"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "मृगो भ्रमति वने"
+        reading: "mṛgo bhramati vane"
+        ipa: "mr̩ɡoː bʱrəmət̪i ʋəneː"
+        bases:
+          - { word: "भ्रमति", base: "भ्रम्", reading: "bhram" }
+      - target: "गजो भ्रमति वने"
+        reading: "gajo bhramati vane"
+        ipa: "ɡədʒoː bʱrəmət̪i ʋəneː"
+        bases:
+          - { word: "भ्रमति", base: "भ्रम्", reading: "bhram" }
+  - id: "sa-12004"
+    target: "गुह्"
+    reading: "guh"
+    ipa: "ɡuɦ"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "कन्या धनं गूहति"
+        reading: "kanyā dhanaṃ gūhati"
+        ipa: "kənjaː d̪ʱənəm ɡuːɦət̪i"
+        bases:
+          - { word: "गूहति", base: "गुह्", reading: "guh" }
+      - target: "शिशुर् गूहति पुष्पम्"
+        reading: "śiśur gūhati puṣpam"
+        ipa: "ʃiʃur ɡuːɦət̪i puʂpəm"
+        bases:
+          - { word: "गूहति", base: "गुह्", reading: "guh" }
+  - id: "sa-12005"
+    target: "दंश्"
+    reading: "daṃś"
+    ipa: "d̪ə̃ʃ"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "कुक्कुरो मूषकं दशति"
+        reading: "kukkuro mūṣakaṃ daśati"
+        ipa: "kukkuroː muːʂəkəm d̪əʃət̪i"
+        bases:
+          - { word: "दशति", base: "दंश्", reading: "daṃś" }
+      - target: "भुजंगो दशति पादम्"
+        reading: "bhujaṃgo daśati pādam"
+        ipa: "bʱudʒəŋɡoː d̪əʃət̪i paːd̪əm"
+        bases:
+          - { word: "दशति", base: "दंश्", reading: "daṃś" }
+  - id: "sa-12006"
+    target: "बुध्"
+    reading: "budh"
+    ipa: "bud̪ʱ"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "शिशुर् बोधति"
+        reading: "śiśur bodhati"
+        ipa: "ʃiʃur boːd̪ʱət̪i"
+        bases:
+          - { word: "बोधति", base: "बुध्", reading: "budh" }
+      - target: "माता बोधति"
+        reading: "mātā bodhati"
+        ipa: "maːt̪aː boːd̪ʱət̪i"
+        bases:
+          - { word: "बोधति", base: "बुध्", reading: "budh" }
+  - id: "sa-12007"
+    target: "यम्"
+    reading: "yam"
+    ipa: "jəm"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "सारथिर् अश्वान् यच्छति"
+        reading: "sārathir aśvān yacchati"
+        ipa: "saːrət̪ʰir əʃʋaːn jətʃtʃʰət̪i"
+        bases:
+          - { word: "यच्छति", base: "यम्", reading: "yam" }
+      - target: "कन्या दीपं यच्छति"
+        reading: "kanyā dīpaṃ yacchati"
+        ipa: "kənjaː d̪iːpəm jətʃtʃʰət̪i"
+        bases:
+          - { word: "यच्छति", base: "यम्", reading: "yam" }
+  - id: "sa-12008"
+    target: "रुह्"
+    reading: "ruh"
+    ipa: "ruɦ"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वानरो वृक्षं रोहति"
+        reading: "vānaro vṛkṣaṃ rohati"
+        ipa: "ʋaːnəroː ʋr̩kʂəm roːɦət̪i"
+        bases:
+          - { word: "रोहति", base: "रुह्", reading: "ruh" }
+      - target: "पथिकः पर्वतं रोहति"
+        reading: "pathikaḥ parvataṃ rohati"
+        ipa: "pət̪ʰikəh pərʋət̪əm roːɦət̪i"
+        bases:
+          - { word: "रोहति", base: "रुह्", reading: "ruh" }
+  - id: "sa-12009"
+    target: "वप्"
+    reading: "vap"
+    ipa: "ʋəp"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "कर्षको व्रीहिं वपति"
+        reading: "karṣako vrīhiṃ vapati"
+        ipa: "kərʂəkoː ʋriːɦim ʋəpət̪i"
+        bases:
+          - { word: "वपति", base: "वप्", reading: "vap" }
+      - target: "कर्षको यवं वपति"
+        reading: "karṣako yavaṃ vapati"
+        ipa: "kərʂəkoː jəʋəm ʋəpət̪i"
+        bases:
+          - { word: "वपति", base: "वप्", reading: "vap" }

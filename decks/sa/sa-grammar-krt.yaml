@@ -14,7 +14,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["verb"]
-    except: ["sa-2011", "sa-2105", "sa-2108", "sa-2111", "sa-2123"]
+    except: ["sa-2011", "sa-2105", "sa-2108", "sa-2111", "sa-2123", "sa-12000", "sa-12001", "sa-12002", "sa-12004", "sa-12005", "sa-12006", "sa-12008"]
   slots: ["ghan", "lyut", "trc", "ktin", "nvul"]
   rows:
     - word: "sa-0430"
@@ -164,6 +164,15 @@ table:
     - word: "sa-2122"
       forms: { "ghan": null, "lyut": "कथन", "trc": null, "ktin": null, "nvul": "कथक" }
       readings: { "lyut": "kathana", "nvul": "kathaka" }
+    - word: "sa-12003"
+      forms: { "ghan": null, "lyut": null, "trc": null, "ktin": "भ्रान्ति", "nvul": null }
+      readings: { "ktin": "bhrānti" }
+    - word: "sa-12007"
+      forms: { "ghan": null, "lyut": null, "trc": "यन्तृ", "ktin": "यति", "nvul": null }
+      readings: { "trc": "yantṛ", "ktin": "yati" }
+    - word: "sa-12009"
+      forms: { "ghan": null, "lyut": null, "trc": "वप्तृ", "ktin": null, "nvul": null }
+      readings: { "trc": "vaptṛ" }
 rules:
   - id: "sa-rule-krt-ghan"
     slots: ["ghan"]

@@ -14,7 +14,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["verb"]
-    except: ["sa-2105", "sa-2108", "sa-2111"]
+    except: ["sa-2105", "sa-2108", "sa-2111", "sa-12004", "sa-12005", "sa-12007", "sa-12009"]
   slots: ["tavya", "aniya", "ya"]
   rows:
     - word: "sa-0430"
@@ -170,6 +170,24 @@ table:
     - word: "sa-2123"
       forms: { "tavya": "पूजयितव्य", "aniya": "पूजनीय", "ya": "पूज्य" }
       readings: { "tavya": "pūjayitavya", "aniya": "pūjanīya", "ya": "pūjya" }
+    - word: "sa-12000"
+      forms: { "tavya": null, "aniya": "अर्हणीय", "ya": null }
+      readings: { "aniya": "arhaṇīya" }
+    - word: "sa-12001"
+      forms: { "tavya": null, "aniya": "वर्धनीय", "ya": null }
+      readings: { "aniya": "vardhanīya" }
+    - word: "sa-12002"
+      forms: { "tavya": null, "aniya": "दहनीय", "ya": null }
+      readings: { "aniya": "dahanīya" }
+    - word: "sa-12003"
+      forms: { "tavya": null, "aniya": "भ्रमणीय", "ya": null }
+      readings: { "aniya": "bhramaṇīya" }
+    - word: "sa-12006"
+      forms: { "tavya": null, "aniya": "बोधनीय", "ya": null }
+      readings: { "aniya": "bodhanīya" }
+    - word: "sa-12008"
+      forms: { "tavya": null, "aniya": "रोहणीय", "ya": null }
+      readings: { "aniya": "rohaṇīya" }
 rules:
   - id: "sa-rule-gerundive-tavya"
     slots: ["tavya"]
