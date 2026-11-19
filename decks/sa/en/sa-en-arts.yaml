@@ -32,11 +32,11 @@ cards:
   "sa-9601":
     native: "Play performed on a stage."
     notes:
-      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
       "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
       "n3": "The Nāṭyaśāstra is the old Sanskrit treatise on drama, staging and acting, attributed to Bharata."
     bases:
-      "नाटकः": "play"
+      "नाटकम्": "play"
     examples:
       "नाटकं जनः पठति":
         native: "A person reads a play."
@@ -95,24 +95,24 @@ cards:
   "sa-9604":
     native: "Metre of a verse; a fixed pattern of syllables."
     notes:
-      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
-      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n1": "A neuter as-stem noun: its full set of case forms is in the other-stems table of the grammar rules; the stem is छन्दस् (chandas) and the nominative is छन्दः (chandaḥ)."
+      "n2": "The final ः (ḥ) of छन्दः (chandaḥ) becomes ो (o) before a voiced sound, as in छन्दो (chando) जनो (jano) जानाति (jānāti)."
       "n3": "Metre (chandas) is the fixed pattern of long and short syllables that shapes a Sanskrit verse."
     bases:
       "छन्दः": "metre"
     examples:
-      "छन्दं जनो जानाति":
+      "छन्दः पठति बालः":
+        native: "The child reads the metre."
+        bases:
+          "छन्दः": "metre"
+          "पठति": "to read"
+          "बालः": "child"
+      "छन्दो जनो जानाति":
         native: "A person knows the metre."
         bases:
-          "छन्दं": "metre"
+          "छन्दो": "metre"
           "जनो": "person"
           "जानाति": "to know"
-      "छन्दं बालः पठति":
-        native: "The child reads in metre."
-        bases:
-          "छन्दं": "metre"
-          "बालः": "child"
-          "पठति": "to read"
   "sa-9605":
     native: "Act of writing or a piece of writing."
     notes:
@@ -127,31 +127,31 @@ cards:
           "लेखनं": "writing"
           "बालः": "child"
           "करोति": "to do, make"
-      "लेखनं वैद्यः पठति":
-        native: "The physician reads the written text."
+      "लेखनं बालः करोति":
+        native: "The child writes."
         bases:
           "लेखनं": "writing"
-          "वैद्यः": "physician"
-          "पठति": "to read"
+          "बालः": "child"
+          "करोति": "to do, make"
   "sa-9606":
     native: "Ornament; in poetics a figure of speech."
     notes:
-      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
       "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
-      "n3": "Compare आभरणम् (ābharaṇam) and भूषणम् (bhūṣaṇam), which mean an ornament worn on the body; अलङ्कारः (alaṅkāraḥ) also names a figure of speech."
+      "n3": "Compare आभरणः (ābharaṇaḥ) and भूषणम् (bhūṣaṇam), which mean an ornament worn on the body; अलंकारः (alaṃkāraḥ) also names a figure of speech."
     bases:
-      "अलङ्कारः": "ornament"
+      "अलंकारः": "ornament"
     examples:
-      "अलङ्कारं बालो धरति":
-        native: "The child holds the ornament."
+      "अलंकारं नटो धरति":
+        native: "The actor wears an ornament."
         bases:
-          "अलङ्कारं": "ornament"
-          "बालो": "child"
-          "धरति": "to hold"
-      "अलङ्कारं रामः पश्यति":
+          "अलंकारं": "ornament"
+          "नटो": "actor"
+          "धरति": "to hold, wear"
+      "अलंकारं रामः पश्यति":
         native: "Rāma sees the ornament."
         bases:
-          "अलङ्कारं": "ornament"
+          "अलंकारं": "ornament"
           "रामः": "Rāma"
           "पश्यति": "to see"
   "sa-9607":
@@ -159,7 +159,7 @@ cards:
     notes:
       "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
       "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
-      "n3": "Compare भूषणम् (bhūṣaṇam) and अलङ्कारः (alaṅkāraḥ), which also mean ornament; आभरणम् (ābharaṇam) is jewellery worn."
+      "n3": "Compare भूषणम् (bhūṣaṇam) and अलंकारः (alaṃkāraḥ), which also mean ornament; आभरणः (ābharaṇaḥ) is jewellery worn."
     bases:
       "आभरणः": "ornament"
     examples:
@@ -211,12 +211,12 @@ cards:
           "भावं": "mood"
           "बालो": "child"
           "वदति": "to speak"
-      "भावं रामो नमति":
-        native: "Rāma bows with feeling."
+      "भावं रामो जानाति":
+        native: "Rāma knows the mood."
         bases:
           "भावं": "mood"
           "रामो": "Rāma"
-          "नमति": "to bow"
+          "जानाति": "to know"
   "sa-9610":
     native: "Juice or flavour; in poetics the aesthetic sentiment a work evokes."
     notes:
@@ -259,25 +259,25 @@ cards:
           "बालः": "child"
           "पश्यति": "to see"
   "sa-9612":
-    native: "Recitation or reading of a text."
+    native: "Prose, composition that is not bound by metre."
     notes:
-      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
       "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
     bases:
-      "पाठः": "recitation"
+      "गद्यम्": "prose"
     examples:
-      "पाठं बालः पठति":
-        native: "The child recites a reading."
+      "गद्यं बालः पठति":
+        native: "The child reads prose."
         bases:
-          "पाठं": "recitation"
+          "गद्यं": "prose"
           "बालः": "child"
           "पठति": "to read"
-      "पाठं वैद्यो वदति":
-        native: "The physician speaks the recitation."
+      "गद्यं जनो जानाति":
+        native: "A person knows prose."
         bases:
-          "पाठं": "recitation"
-          "वैद्यो": "physician"
-          "वदति": "to speak"
+          "गद्यं": "prose"
+          "जनो": "person"
+          "जानाति": "to know"
   "sa-9613":
     native: "Grace and charm of appearance."
     notes:
@@ -407,7 +407,7 @@ cards:
     notes:
       "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
       "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
-      "n3": "Compare आभरणम् (ābharaṇam) and अलङ्कारः (alaṅkāraḥ), which also mean ornament; भूषणम् (bhūṣaṇam) is decoration."
+      "n3": "Compare आभरणः (ābharaṇaḥ) and अलंकारः (alaṃkāraḥ), which also mean ornament; भूषणम् (bhūṣaṇam) is decoration."
     bases:
       "भूषणम्": "ornament"
     examples:

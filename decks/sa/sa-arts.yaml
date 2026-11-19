@@ -26,14 +26,14 @@ cards:
         ipa: "laːsjəm dʒənoː dʒaːnaːt̪i"
         bases: [{ word: "लास्यं", base: "लास्य", reading: "lāsya" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
   - id: "sa-9601"
-    target: "नाटकः"
-    reading: "nāṭakaḥ"
-    ipa: "naːʈəkəh"
+    target: "नाटकम्"
+    reading: "nāṭakam"
+    ipa: "naːʈəkəm"
     pos: "noun"
-    gender: "m"
+    gender: "n"
     tags: ["arts"]
     notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Natya_Shastra" }]
-    bases: [{ word: "नाटकः", base: "नाटक", reading: "nāṭaka" }]
+    bases: [{ word: "नाटकम्", base: "नाटक", reading: "nāṭaka" }]
     examples:
       - target: "नाटकं जनः पठति"
         reading: "nāṭakaṃ janaḥ paṭhati"
@@ -84,19 +84,19 @@ cards:
     reading: "chandaḥ"
     ipa: "tʃʰənd̪əh"
     pos: "noun"
-    gender: "m"
+    gender: "n"
     tags: ["arts"]
     notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Chandas" }]
-    bases: [{ word: "छन्दः", base: "छन्द", reading: "chanda" }]
+    bases: [{ word: "छन्दः", base: "छन्दस्", reading: "chandas" }]
     examples:
-      - target: "छन्दं जनो जानाति"
-        reading: "chandaṃ jano jānāti"
-        ipa: "tʃʰənd̪əm dʒənoː dʒaːnaːt̪i"
-        bases: [{ word: "छन्दं", base: "छन्द", reading: "chanda" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
-      - target: "छन्दं बालः पठति"
-        reading: "chandaṃ bālaḥ paṭhati"
-        ipa: "tʃʰənd̪əm baːləh pəʈʰət̪i"
-        bases: [{ word: "छन्दं", base: "छन्द", reading: "chanda" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+      - target: "छन्दः पठति बालः"
+        reading: "chandaḥ paṭhati bālaḥ"
+        ipa: "tʃʰənd̪əh pəʈʰət̪i baːləh"
+        bases: [{ word: "छन्दः", base: "छन्दस्", reading: "chandas" }, { word: "पठति", base: "पठ्", reading: "paṭh" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+      - target: "छन्दो जनो जानाति"
+        reading: "chando jano jānāti"
+        ipa: "tʃʰənd̪oː dʒənoː dʒaːnaːt̪i"
+        bases: [{ word: "छन्दो", base: "छन्दस्", reading: "chandas" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
   - id: "sa-9605"
     target: "लेखनम्"
     reading: "lekhanam"
@@ -111,28 +111,28 @@ cards:
         reading: "lekhanaṃ bālaḥ karoti"
         ipa: "leːkʰənəm baːləh kəroːt̪i"
         bases: [{ word: "लेखनं", base: "लेखन", reading: "lekhana" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
-      - target: "लेखनं वैद्यः पठति"
-        reading: "lekhanaṃ vaidyaḥ paṭhati"
-        ipa: "leːkʰənəm ʋəid̪jəh pəʈʰət̪i"
-        bases: [{ word: "लेखनं", base: "लेखन", reading: "lekhana" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+      - target: "लेखनं बालः करोति"
+        reading: "lekhanaṃ bālaḥ karoti"
+        ipa: "leːkʰənəm baːləh kəroːt̪i"
+        bases: [{ word: "लेखनं", base: "लेखन", reading: "lekhana" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
   - id: "sa-9606"
-    target: "अलङ्कारः"
-    reading: "alaṅkāraḥ"
+    target: "अलंकारः"
+    reading: "alaṃkāraḥ"
     ipa: "ələŋkaːrəh"
     pos: "noun"
     gender: "m"
     tags: ["arts"]
     notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
-    bases: [{ word: "अलङ्कारः", base: "अलङ्कार", reading: "alaṅkāra" }]
+    bases: [{ word: "अलंकारः", base: "अलंकार", reading: "alaṃkāra" }]
     examples:
-      - target: "अलङ्कारं बालो धरति"
-        reading: "alaṅkāraṃ bālo dharati"
-        ipa: "ələŋkaːrəm baːloː d̪ʱərət̪i"
-        bases: [{ word: "अलङ्कारं", base: "अलङ्कार", reading: "alaṅkāra" }, { word: "बालो", base: "बाल", reading: "bāla" }, { word: "धरति", base: "धृ", reading: "dhṛ" }]
-      - target: "अलङ्कारं रामः पश्यति"
-        reading: "alaṅkāraṃ rāmaḥ paśyati"
+      - target: "अलंकारं नटो धरति"
+        reading: "alaṃkāraṃ naṭo dharati"
+        ipa: "ələŋkaːrəm nəʈoː d̪ʱərət̪i"
+        bases: [{ word: "अलंकारं", base: "अलंकार", reading: "alaṃkāra" }, { word: "नटो", base: "नट", reading: "naṭa" }, { word: "धरति", base: "धृ", reading: "dhṛ" }]
+      - target: "अलंकारं रामः पश्यति"
+        reading: "alaṃkāraṃ rāmaḥ paśyati"
         ipa: "ələŋkaːrəm raːməh pəʃjət̪i"
-        bases: [{ word: "अलङ्कारं", base: "अलङ्कार", reading: "alaṅkāra" }, { word: "रामः", base: "राम", reading: "rāma" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+        bases: [{ word: "अलंकारं", base: "अलंकार", reading: "alaṃkāra" }, { word: "रामः", base: "राम", reading: "rāma" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
   - id: "sa-9607"
     target: "आभरणः"
     reading: "ābharaṇaḥ"
@@ -182,10 +182,10 @@ cards:
         reading: "bhāvaṃ bālo vadati"
         ipa: "bʱaːʋəm baːloː ʋəd̪ət̪i"
         bases: [{ word: "भावं", base: "भाव", reading: "bhāva" }, { word: "बालो", base: "बाल", reading: "bāla" }, { word: "वदति", base: "वद्", reading: "vad" }]
-      - target: "भावं रामो नमति"
-        reading: "bhāvaṃ rāmo namati"
-        ipa: "bʱaːʋəm raːmoː nəmət̪i"
-        bases: [{ word: "भावं", base: "भाव", reading: "bhāva" }, { word: "रामो", base: "राम", reading: "rāma" }, { word: "नमति", base: "नम्", reading: "nam" }]
+      - target: "भावं रामो जानाति"
+        reading: "bhāvaṃ rāmo jānāti"
+        ipa: "bʱaːʋəm raːmoː dʒaːnaːt̪i"
+        bases: [{ word: "भावं", base: "भाव", reading: "bhāva" }, { word: "रामो", base: "राम", reading: "rāma" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
   - id: "sa-9610"
     target: "रसः"
     reading: "rasaḥ"
@@ -223,23 +223,23 @@ cards:
         ipa: "əbʱinəjəm baːləh pəʃjət̪i"
         bases: [{ word: "अभिनयं", base: "अभिनय", reading: "abhinaya" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
   - id: "sa-9612"
-    target: "पाठः"
-    reading: "pāṭhaḥ"
-    ipa: "paːʈʰəh"
+    target: "गद्यम्"
+    reading: "gadyam"
+    ipa: "ɡəd̪jəm"
     pos: "noun"
-    gender: "m"
+    gender: "n"
     tags: ["arts"]
     notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
-    bases: [{ word: "पाठः", base: "पाठ", reading: "pāṭha" }]
+    bases: [{ word: "गद्यम्", base: "गद्य", reading: "gadya" }]
     examples:
-      - target: "पाठं बालः पठति"
-        reading: "pāṭhaṃ bālaḥ paṭhati"
-        ipa: "paːʈʰəm baːləh pəʈʰət̪i"
-        bases: [{ word: "पाठं", base: "पाठ", reading: "pāṭha" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
-      - target: "पाठं वैद्यो वदति"
-        reading: "pāṭhaṃ vaidyo vadati"
-        ipa: "paːʈʰəm ʋəid̪joː ʋəd̪ət̪i"
-        bases: [{ word: "पाठं", base: "पाठ", reading: "pāṭha" }, { word: "वैद्यो", base: "वैद्य", reading: "vaidya" }, { word: "वदति", base: "वद्", reading: "vad" }]
+      - target: "गद्यं बालः पठति"
+        reading: "gadyaṃ bālaḥ paṭhati"
+        ipa: "ɡəd̪jəm baːləh pəʈʰət̪i"
+        bases: [{ word: "गद्यं", base: "गद्य", reading: "gadya" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+      - target: "गद्यं जनो जानाति"
+        reading: "gadyaṃ jano jānāti"
+        ipa: "ɡəd̪jəm dʒənoː dʒaːnaːt̪i"
+        bases: [{ word: "गद्यं", base: "गद्य", reading: "gadya" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
   - id: "sa-9613"
     target: "लावण्यम्"
     reading: "lāvaṇyam"
