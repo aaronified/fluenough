@@ -40,7 +40,7 @@ table:
   applies_to:
     pos: ["verb"]
     tags: ["gana-1"]
-    except: ["sa-2101", "sa-2102", "sa-2103", "sa-2104", "sa-2105", "sa-2106", "sa-2107", "sa-2108", "sa-2109", "sa-2110", "sa-2111", "sa-2112", "sa-2113", "sa-2114", "sa-2115", "sa-2116", "sa-2117", "sa-2118", "sa-2119", "sa-2120", "sa-2121", "sa-2122", "sa-2123"]
+    except: ["sa-2101", "sa-2102", "sa-2103", "sa-2104", "sa-2105", "sa-2106", "sa-2107", "sa-2108", "sa-2109", "sa-2110", "sa-2111", "sa-2112", "sa-2113", "sa-2114", "sa-2115", "sa-2116", "sa-2117", "sa-2118", "sa-2119", "sa-2120", "sa-2121", "sa-2122", "sa-2123", "sa-12021", "sa-12022", "sa-12023", "sa-12024", "sa-12025", "sa-12026"]
   slots: ["stem", "p3-sg", "p3-du", "p3-pl", "p2-sg", "p2-du", "p2-pl", "p1-sg", "p1-du", "p1-pl"]
   rows:
     - word: "sa-0430"
@@ -196,6 +196,9 @@ table:
     - word: "sa-12019"
       forms: { "stem": "गद", "p3-sg": "गदति", "p3-du": "गदतः", "p3-pl": "गदन्ति", "p2-sg": "गदसि", "p2-du": "गदथः", "p2-pl": "गदथ", "p1-sg": "गदामि", "p1-du": "गदावः", "p1-pl": "गदामः" }
       readings: { "stem": "gada", "p3-sg": "gadati", "p3-du": "gadataḥ", "p3-pl": "gadanti", "p2-sg": "gadasi", "p2-du": "gadathaḥ", "p2-pl": "gadatha", "p1-sg": "gadāmi", "p1-du": "gadāvaḥ", "p1-pl": "gadāmaḥ" }
+    - word: "sa-12020"
+      forms: { "stem": "स्वप", "p3-sg": "स्वपति", "p3-du": "स्वपतः", "p3-pl": "स्वपन्ति", "p2-sg": "स्वपसि", "p2-du": "स्वपथः", "p2-pl": "स्वपथ", "p1-sg": "स्वपामि", "p1-du": "स्वपावः", "p1-pl": "स्वपामः" }
+      readings: { "stem": "svapa", "p3-sg": "svapati", "p3-du": "svapataḥ", "p3-pl": "svapanti", "p2-sg": "svapasi", "p2-du": "svapathaḥ", "p2-pl": "svapatha", "p1-sg": "svapāmi", "p1-du": "svapāvaḥ", "p1-pl": "svapāmaḥ" }
 rules:
   - id: "sa-rule-present-stem"
     slots: ["stem"]
