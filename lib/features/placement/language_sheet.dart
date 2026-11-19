@@ -525,7 +525,7 @@ class _LanguageSheetState extends State<LanguageSheet> {
             child: CourseLine(
               levels: progress.levels,
               culture: progress.culture,
-              hasCulture: progress.hasCulture,
+              hasCulture: language.hasCulture,
             ),
           ),
         if (progress != null)

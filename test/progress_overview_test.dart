@@ -857,24 +857,6 @@ void main() {
     });
 
     group('completeness toward B1', () {
-      test('a language with no culture deck has no culture bar and can still '
-          'be Complete; one with a culture deck keeps the bar (#1629)', () {
-        final units = <B1Unit>[
-          written(10, words: 10, milestone: Milestone.a1),
-          written(10, words: 10, milestone: Milestone.b1),
-        ];
-        final none = B1Progress.of(units, hasCulture: false);
-        expect(none.hasCulture, isFalse);
-        expect(none.culture, 0);
-        expect(none.stage, CourseStage.complete);
-        final started = B1Progress.of(units, cultureCards: 10);
-        expect(started.hasCulture, isTrue);
-        expect(started.culture, closeTo(10 / cultureCardTarget, 1e-9));
-        expect(started.stage, CourseStage.complete);
-        // Nothing written yet still counts as a culture deck's language.
-        expect(B1Progress.of(units).hasCulture, isTrue);
-      });
-
       test(
         'completeness is the words written over the words planned, up to B1, '
         'and the stage is Alpha, Beta, then Complete',

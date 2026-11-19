@@ -31,6 +31,7 @@ SpokenLanguage lang(
   bool popular = false,
   NativeVerification verification = NativeVerification.none,
   List<String> aliases = const <String>[],
+  bool hasCulture = true,
 }) => SpokenLanguage(
   code: code,
   iso639_3: 'xxx',
@@ -40,6 +41,7 @@ SpokenLanguage lang(
   popular: popular,
   verification: verification,
   aliases: aliases,
+  hasCulture: hasCulture,
 );
 
 B1Unit written(Milestone m) => B1Unit(words: 10, milestone: m, has: 10);
@@ -47,22 +49,14 @@ B1Unit written(Milestone m) => B1Unit(words: 10, milestone: m, has: 10);
 B1Unit planned(Milestone m) => B1Unit(planned: true, words: 10, milestone: m);
 
 /// A course whose path is [units], taught from English.
-CatalogLanguage course(
-  String code,
-  String name,
-  List<B1Unit> units, {
-  bool hasCulture = true,
-}) => CatalogLanguage(
-  code: code,
-  name: name,
-  natives: <CatalogNative>[
-    (
-      code: 'en',
-      name: 'English',
-      progress: B1Progress.of(units, hasCulture: hasCulture),
-    ),
-  ],
-);
+CatalogLanguage course(String code, String name, List<B1Unit> units) =>
+    CatalogLanguage(
+      code: code,
+      name: name,
+      natives: <CatalogNative>[
+        (code: 'en', name: 'English', progress: B1Progress.of(units)),
+      ],
+    );
 
 /// File order, as `assets/languages.yaml` has it: the tiles are the first
 /// eight popular ones in this order, five here. Zulu has A1 to B1 written,
@@ -512,20 +506,20 @@ languages:
         expect(tester.takeException(), isNull);
       });
 
-      testWidgets('a language with no culture deck has no culture bar and its '
-          'other bars keep their width, while one with a culture deck still '
-          'being written keeps it (#1629)', (tester) async {
+      testWidgets('a language marked `culture: false` has no culture bar and '
+          'its other bars keep their width, while one without the flag keeps '
+          'it even with no culture deck (#1629)', (tester) async {
         await pumpList(
           tester,
           mode: mode,
           views: <LanguageView>[
             LanguageView(
-              lang('aa', 'Alpha', popular: true),
+              lang('aa', 'Alpha', popular: true, hasCulture: false),
               course('aa', 'Alpha', <B1Unit>[
                 written(Milestone.a1),
                 written(Milestone.a2),
                 planned(Milestone.b1),
-              ], hasCulture: false),
+              ]),
             ),
             LanguageView(
               lang('bb', 'Bravo', popular: true),

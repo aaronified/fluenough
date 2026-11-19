@@ -12,7 +12,17 @@
 #   normalise: optional list of {pattern, replace} regexes, applied in order
 #     to each Wiktionary form so it matches the conventions of the language's
 #     rules file (opt in per language; `tools/import_phonetic.py <lang>
-#     --renormalise` applies them to cards already imported)
+#     --renormalise` applies them to cards already imported). An item with
+#     `align` (a regex of sound units) and `map` ({form unit: broad unit})
+#     instead rewrites a unit only where the card's broad `ipa` has the mapped
+#     unit at the same position and both have the same number of units.
+#   agree: optional guard {ignore, map, restore}: an imported form is accepted
+#     only if, after `normalise`, its sounds (no stress, length, combining
+#     marks; `ignore` characters dropped; `map` applied) equal the card's broad
+#     `ipa`'s. A card whose form disagrees keeps its rule-derived form and the
+#     report lists it; `--renormalise` gives such a card the rules' form.
+#     `restore: true` writes the ignored characters back into the form where
+#     the broad `ipa` has them.
 #
 # A new language is added here and nowhere else: the tool needs no code
 # change (tools/test_phonetic.py checks that). The rationale of each variety
@@ -45,6 +55,60 @@
     name: "Standard Gujarati, Wiktionary's Gujarati Standard"
     tags: ["Gujarati", "Standard"]
     untagged: false
+  # Wiktionary and the deck's broad `ipa` write the same Gujarati sounds
+  # differently (measured 2026-11-18 on the 23 cards the dump fills). The
+  # deck's conventions win. Real allophony stays: the intervocalic flap ɽ for
+  # ɖ, the back vowel ɑ for a, nasalised vowels.
+  normalise:
+    # The tap ɾ becomes r, which the deck's broad `ipa` writes ([ˈkʰuɾsi]).
+    - pattern: 'ɾ'
+      replace: "r"
+    # The labial approximant w becomes ʋ ([ˈpəɽwũ] for pəɖəʋũ).
+    - pattern: 'w'
+      replace: "\u028b"
+    # The back vowel ɑ is the deck's a (it writes no ɑ).
+    - pattern: 'ɑ'
+      replace: "a"
+    # Stress marks and length marks are dropped: the deck's broad ipa and the
+    # rules' narrow forms write neither.
+    - pattern: '[\u02c8\u02cc\u02d0]'
+      replace: ""
+    # Tie-barred affricates t͡ʃ d͡ʒ (U+0361 or U+035C) become tʃ dʒ, as the
+    # deck writes them.
+    - pattern: '([td])[\u0361\u035c]([ʃʒ])'
+      replace: "\\1\\2"
+    # The precomposed ṳ (U+1E73) is read as u + U+0324, so the next rule
+    # sees every murmured vowel the same way.
+    - pattern: '\u1e73'
+      replace: "u\u0324"
+    # Breathy-voice marks (U+0324) are dropped: Wiktionary writes the deck's
+    # ɦ as a murmur on a neighbouring vowel ([ˈmə̤ino] for məɦino). The `agree`
+    # block below puts the ɦ back where the broad ipa has it.
+    - pattern: '\u0324'
+      replace: ""
+    # Wiktionary writes ʃ as s and pʰ as f. A form's sibilant or labial
+    # becomes the broad `ipa`'s only where the two have the same number of
+    # s, ʃ, f and pʰ and the broad has ʃ (or pʰ) at that position, so a
+    # genuine /s/ or /f/ is never rewritten ([ˈsũ] for ʃũ, [ˈfoi] for pʰoi).
+    - align: 's|ʃ|f|pʰ'
+      map: { "s": "ʃ", "f": "pʰ" }
+    # Wiktionary's ɛ is the deck's e unless the broad ipa writes ɛ there (a
+    # few English loanwords do: bɛɡ).
+    - align: 'ɛ|e'
+      map: { "ɛ": "e" }
+  # A form is imported only if, after the rules above, its sounds agree with
+  # the card's broad ipa. Ignored on both sides: ɦ (Wiktionary writes it as a
+  # murmur on a neighbouring vowel, dropped above, and `restore` writes it
+  # back where the broad ipa has it); mapped: the retroflex flap
+  # ɽ for ɖ and the assimilated nasals ŋ ɲ for n (the course's own narrow
+  # rules write all three). Anything else that differs (a colloquial s for ɦ,
+  # a vowel for another, a different consonant) is a different word form, so
+  # the card keeps its rule-derived form: [ˈɦəʋɑɾ] for səʋar, [ˈɑudʒo] for
+  # aʋdʒo.
+  agree:
+    ignore: "ɦ"
+    restore: true
+    map: { "ɽ": "ɖ", "ŋ": "n", "ɲ": "n" }
 
 "hi":
   dump: "Hindi"
