@@ -321,3 +321,166 @@ Candidates listed: 92
 Dropped (not usable): मूर्च्छा (no usable entry or taught)
 
 
+## sa-law (planned 80, 25 built, missing 55; list needs 83)
+
+Candidates listed: 84
+
+| # | Lemma | IAST | Head line (en.wiktionary) | Gloss | Stem | Table | Confirmed | Usage |
+|--|--|--|--|--|--|--|--|--|
+| 1 | चौर | caura | noun stem, m | a thief, robber | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 2 | ऋणिन् | ṛṇin | noun stem, m | debtor | in-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 3 | अनृणिन् | anṛṇin | adj stem | free from debt; unindebted | in-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 4 | शास्ति | śāsti | noun stem, f | correction, punishment; order, command; governing, ruling; sceptre | i-stem | yes | Wiktionary page + head line + table; Manu 7.18 | Manusmṛti |
+| 5 | आगस् | āgas | noun stem, n | transgression, offence, injury, sin, fault | as-stem | yes | Wiktionary page + head line + table; Manu 9.241 | Manusmṛti |
+| 6 | अकार्य | akārya | noun stem, n | criminal action | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 7 | अदत्तादान | adattādāna | noun stem, n | stealing, theft | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 8 | अपराधिन् | aparādhin | adj stem | criminal, offender, guilty | in-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 9 | अपराधिनी | aparādhinī | noun stem, f | criminal, one who commits crime (feminine) | ī-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 10 | रेक्णस् | rekṇas | noun stem, n | property left behind; legacy, inheritance; wealth, treasure | as-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 7.4.7 | Ṛgveda 7.4.7 |
+| 11 | अघ | agha | noun stem, n | evil; mishap; sin | a-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 2.41.11 | Ṛgveda 2.41.11 |
+| 12 | एनस् | enas | noun stem, n | sin, crime, offense; unhappiness, misfortune | as-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 10.63.8 | Ṛgveda 10.63.8 |
+| 13 | कपट | kapaṭa | noun stem, m or n | fraud, deceit, cheating, circumvention | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 14 | वञ्चन | vañcana | noun stem, n | cheating; fraud; illusion; delusion | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 15 | अनृत | anṛta | noun stem, n | falsehood, lying, cheating | a-stem | yes | Wiktionary page + head line + table; YS 2.34 | Yoga Sūtra |
+| 16 | शृङ्खल | śṛṅkhala | noun stem, m | chain, fetter, especially one made of iron; measuring chain; a belt | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 17 | पाश | pāśa | noun stem, m | a noose, cord, bond, chain or a fetter | a-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 7.88.7 | Ṛgveda 7.88.7 |
+| 18 | बन्ध | bandha | noun stem, m | a binding, fetter, tie, bond; a bundle | a-stem | yes | Wiktionary page + head line + table; YS 3.39 | Yoga Sūtra |
+| 19 | क्रेतृ | kretṛ | noun stem, m | buyer, purchaser | ṛ-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 20 | विक्रेतृ | vikretṛ | noun stem, m | seller, one who sells | ṛ-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 21 | साक्षिणी | sākṣiṇī | noun stem, f | spectator, witness (feminine) | ī-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 22 | धनिन् | dhanin | noun stem, m | a rich man, owner, creditor; a name of Kubera | in-stem | yes | Wiktionary page + head line + table; Manu 8.61 | Manusmṛti |
+| 23 | अधमर्ण | adhamarṇa | noun stem, m | one reduced to inferiority by incurring debt; a debtor | a-stem | yes | Wiktionary page + head line + table; Manu 8.47 (as compound member) | Manusmṛti |
+| 24 | आधमर्ण्य | ādhamarṇya | noun stem, n | the state of being a debtor; debtorship; indebtedness | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 25 | अनृणता | anṛṇatā | noun stem, f | unindebtedness, freedom from debt | ā-stem | yes | Wiktionary page + head line + table; c. 500 BCE – 100 BCE, Rāmāyaṇa 2.94.17 | Rāmāyaṇa 2.94.17 |
+| 26 | क्रय्य | krayya | adj stem | purchasable; exhibited for sale | a-stem | yes | Wiktionary page + head line + table; c. 700 BCE, Śatapatha Brāhmaṇa 3.3.3.1 | Śatapatha Brāhmaṇa 3.3.3.1 |
+| 27 | परिग्रह | parigraha | noun stem, m | getting, attaining, acquisition, possession, property | a-stem | yes | Wiktionary page + head line + table; YS 2.34 | Yoga Sūtra |
+| 28 | उपालम्भ | upālambha | noun stem, m | reproach, censure, abuse, finding fault with; prohibition, interdict | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 29 | सभापति | sabhā-pati | noun stem, m | the president or chairman of an assembly or council | i-stem | yes | Wiktionary page + head line + table; c. 1200 BCE – 800 BCE, Kṛṣṇa-Yajurveda ( | Kṛṣṇa-Yajurveda ( |
+| 30 | सभ्य | sabhya | noun stem, m | an assistant at an assembly or council, esp. an assessor, judge | a-stem | yes | Wiktionary page + head line + table; Manu 8.10 (as compound member) | Manusmṛti |
+| 31 | सभेय | sabheya | adj stem | fit for an assembly or council, civilized, clever, well-behaved, decen | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 32 | कुलिक | kulika | noun stem, m | judge, chief; kinsman; hunter; thorny plant; a type of poison | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 33 | धर्मिन् | dharmin | adj  | knowing or obeying the law, faithful to duty, virtuous, pious, just | in-stem | yes | Wiktionary page + head line + table; YS 4.34 | Yoga Sūtra |
+| 34 | वैध | vaidha | adj stem | enjoined by rule or precept, prescribed, legal | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 35 | दुष्कृत | duṣkṛta | noun stem, n | an evil action; a sin; guilt | a-stem | yes | Wiktionary page + head line + table; Manu 3.191 (as compound member) | Manusmṛti |
+| 36 | अभद्र | abhadra | noun stem, n | badness, wickedness, evilness; sin | a-stem | yes | Wiktionary page + head line + table; c. 700 CE – 900 CE, Bhāgavata Purāṇa 1.2 | Bhāgavata Purāṇa 1.2 |
+| 37 | परुष | paruṣa | noun stem, n | harsh and contumelious speech, abuse, etc. | a-stem | yes | Wiktionary page + head line + table; Meghadūta (as compound member) | Meghadūta |
+| 38 | खानक | khānaka | noun stem, m | a house-breaker, thief (VarBṛS.) | a-stem | yes | Wiktionary page + head line + table; Manu 8.260 (as compound member) | Manusmṛti |
+| 39 | लट | laṭa | noun stem, m | thief; one who speaks like a child or like a fool | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 40 | लुप्त | lupta | noun stem, n | plunder, loot, stolen property; disappearance | a-stem | yes | Wiktionary page + head line + table; Manu 8.226 (as compound member) | Manusmṛti |
+| 41 | लोप्त्र | loptra | noun stem, n | stolen property; loot; booty | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 42 | स्तेन | stena | noun stem, m | thief, robber; thieving, stealing | a-stem | yes | Wiktionary page + head line + table; Manu 7.83 | Manusmṛti |
+| 43 | स्तायु | stāyu | noun stem, m | thief, robber | u-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 44 | अर्घ | argha | noun stem, m | worth, value, price | a-stem | yes | Wiktionary page + head line + table; Manu 8.402 (as compound member) | Manusmṛti |
+| 45 | वस्न | vasna | noun stem, n | price, value | a-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 4.24.22 | Ṛgveda 4.24.22 |
+| 46 | धरिमन् | dhariman | noun stem, m | a balance, weight; form, figure | an-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 47 | ढौकन | ḍhaukana | noun stem, n | offering, present, bribe; bringing near | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 48 | वाणिज | vāṇija | noun stem, m | merchant; trader | a-stem | yes | Wiktionary page + head line + table; Manu 3.181 (as compound member) | Manusmṛti |
+| 49 | वणिज | vaṇija | noun stem, m | trader; name of Shiva; the zodiacal sign Libra | a-stem | yes | Wiktionary page + head line + table; Manu 7.127 (as compound member) | Manusmṛti |
+| 50 | वाणिज्यक | vāṇijyaka | noun stem, m | a merchant, trader (Hcat.) | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 51 | निश्चित | niścita | noun stem, n | certainty, decision, resolution, design | a-stem | yes | Wiktionary page + head line + table; Manu 7.59 (as compound member) | Manusmṛti |
+| 52 | अप्रमाण | apramāṇa | noun stem, n | a rule which is no standard of action | a-stem | yes | Wiktionary page + head line + table; YS 1.9 | Yoga Sūtra |
+| 53 | सीमन् | sīman | noun stem, f | boundary, border, limit, margin, frontier | an-stem | yes | Wiktionary page + head line + table; Manu 8.254 | Manusmṛti |
+| 54 | पार | pāra | noun stem, n | the further bank or shore or boundary, any bank or shore, the opposite | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 55 | योगक्षेम | yogakṣema | noun stem, m | the secure possession of what has been acquired | a-stem | yes | Wiktionary page + head line + table; Manu 7.127 (as compound member) | Manusmṛti |
+| 56 | भार | bhāra | noun stem, m | burden, load, weight; labor, toil; an onerous task | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 57 | ऋत | ṛta | noun stem, n | fixed or settled order, law, rule (especially in religion) | a-stem | yes | Wiktionary page + head line + table; RV 10.85.24 | Ṛgveda 10.85 |
+| 58 | ऋतावन् | ṛtāvan | adj stem | keeping within the fixed order or rule, regular, proper (as inanimated | an-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 59 | अप्नस् | apnas | noun stem, n | wealth; possession; property | as-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 1.113.20 | Ṛgveda 1.113.20 |
+| 60 | करस्थ | karastha | adj stem | lying in the hand; in possession | a-stem | yes | Wiktionary page + head line + table; Budhakauśika, Rāmarakṣāstotra 31 | Rāmarakṣāstotra 31 |
+| 61 | दस्यु | dasyu | noun stem, m | impious man; barbarian | u-stem | yes | Wiktionary page + head line + table; Manu 7.143 | Manusmṛti |
+| 62 | वादिन् | vādin | noun stem, m | speaker, asserter; disputant; plaintiff, accuser, prosecutor | in-stem | yes | Wiktionary page + head line + table; Manu 7.91 | Manusmṛti |
+| 63 | भृति | bhṛti or bhṛti | noun stem, f | support, maintenance, nourishment, food RV. &c. | i-stem | yes | Wiktionary page + head line + table; Manu 8.231 | Manusmṛti |
+| 64 | कूट | kūṭa | noun stem, m or n | illusion, fraud, trick, untruth, falsehood | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 65 | प्रग्रह | pragraha | noun stem, m | holding in front, stretching forth | a-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.15 | Śākuntalam |
+| 66 | घात | ghāta | noun stem, m | a blow, bruise; devastation, destruction | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 67 | घातक | ghātaka | noun stem, m | killer, murderer, slayer | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 68 | हत्या | hatyā | noun stem, f | killing, slaying, slaughter, murder (particularly of the criminal vari | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 69 | हन्तृ | hantṛ | noun stem, m | a killer, slayer, murderer | ṛ-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 10.87.22 | Ṛgveda 10.87.22 |
+| 70 | द्यूत | dyūta | noun stem, n | gambling, game of dice; play, gaming; contest; battle or fight for | a-stem | yes | Wiktionary page + head line + table; Manu 2.179 (as compound member) | Manusmṛti |
+| 71 | श्रेष्ठिन् | śreṣṭhin | noun stem, m | the head or president of a mercantile or other guild | in-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.23 (as compound member) | Śākuntalam |
+| 72 | निधि | nidhi | noun stem, m | a store, hoard, treasure; setting down or serving up (of food) | i-stem | yes | Wiktionary page + head line + table; Manu 8.37 | Manusmṛti |
+| 73 | पण | paṇa | noun stem, m | play for a stake; a compact stipulation, agreement, treaty | a-stem | yes | Wiktionary page + head line + table; Manu 8.224 | Manusmṛti |
+| 74 | अधिकारिन् | adhikārin | noun stem, m | official, one with authority; authoritative | in-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 75 | द्विगुण | dviguṇa | adj  | double; twofold (having two parts) | a-stem | yes | Wiktionary page + head line + table; YS 3.27 | Yoga Sūtra |
+| 76 | चण्डाल | caṇḍāla | noun stem, m | outcast, one born from a shudra father and a brahmin mother | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 77 | शुद्धि | śuddhi | noun stem, f | cleansing, purification, purity, holiness, freedom from defilement, pu | i-stem | yes | Wiktionary page + head line + table; YS 1.3 | Yoga Sūtra |
+| 78 | वचन | vacana | noun stem, n | speaking, utterance (Sāṃkhyak.); pronunciation | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.11 | Śākuntalam |
+| 79 | वक्तृ | vaktṛ | noun stem, m | speaker, orator; teacher | ṛ-stem | yes | Wiktionary page + head line + table; Manu 8.272 | Manusmṛti |
+| 80 | कृच्छ्र | kṛcchra | noun stem, n | trouble; pain; calamity; difficulty; hardship; affliction | a-stem | yes | Wiktionary page + head line + table; YS 2.33 (as compound member) | Yoga Sūtra |
+| 81 | उद्धार | uddhāra | noun stem, m | the act of raising, elevating, lifting up; drawing out, pulling out | a-stem | yes | Wiktionary page + head line + table; Manu 9.112 | Manusmṛti |
+| 82 | लब्ध | labdha | adj stem | taken, seized, caught, met with, found; got at, arrived (as a moment) | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 83 | दातृ | dātṛ or dātṛ | noun stem, m | giver, donor, liberal; one who gives a daughter (gen.) in marriage | ṛ-stem | yes | Wiktionary page + head line + table; Manu 3.242 | Manusmṛti |
+| 84 | आपद् | āpad | noun stem, f | fall, accident; fall, accident | root-stem | yes | Wiktionary page + head line + table; Manu 9.56 | Manusmṛti |
+
+## sa-weddings (planned 60, 21 built, missing 39; list needs 59)
+
+Candidates listed: 62
+
+| # | Lemma | IAST | Head line (en.wiktionary) | Gloss | Stem | Table | Confirmed | Usage |
+|--|--|--|--|--|--|--|--|--|
+| 1 | आर्ष | ārṣa | noun stem, m | an old form of marriage, in which one or two pairs of cattle are given | a-stem | yes | Wiktionary page + head line + table; Manu 3.53 | Manusmṛti |
+| 2 | राक्षस | rākṣasa | noun stem, m | a demon in general, an evil or malignant demon | a-stem | yes | Wiktionary page + head line + table; Manu 3.21 (as compound member) | Manusmṛti |
+| 3 | दैव | daiva | noun stem, n | divine power or will, destiny, fate, chance | a-stem | yes | Wiktionary page + head line + table; Manu 3.125 | Manusmṛti |
+| 4 | वेदि | vedi | noun stem, f | raised ground used for a sacrificial altar | i-stem | yes | Wiktionary page + head line + table; Manu 2.7 | Manusmṛti |
+| 5 | वरयात्रा | varayātrā | noun stem, f | A procession that brings the bridegroom to the wedding venue. | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 6 | वैवाहिक | vaivāhika | noun stem, n | wedding preparations, pre-wedding festivities; wedding | a-stem | yes | Wiktionary page + head line + table; Manu 2.67 (as compound member) | Manusmṛti |
+| 7 | पाणि | pāṇi | noun stem, m | the hand | i-stem | yes | Wiktionary page + head line + table; Manu 2.72 (as compound member) | Manusmṛti |
+| 8 | गन्धर्व | gandharva | noun stem, m | a gandharva (one of a class of male heavenly beings, famed singers and | a-stem | yes | Wiktionary page + head line + table; Manu 3.196 (as compound member) | Manusmṛti |
+| 9 | अर्यमन् | aryaman | noun stem, m | a friend who asks a woman in marriage for another | an-stem | yes | Wiktionary page + head line + table; RV 10.85.36 | Ṛgveda 10.85 |
+| 10 | भग | bhaga | noun stem, m | Bhaga, one of the Adityas, a god of wealth and marriage in Hinduism. I | a-stem | yes | Wiktionary page + head line + table; Manu 9.237 | Manusmṛti |
+| 11 | दम्पति | dampati | noun stem, m | husband and wife; the lord of the house | i-stem | yes | Wiktionary page + head line + table; Manu 3.116 | Manusmṛti |
+| 12 | ऊढ | ūḍha | adj stem | carried, conveyed; borne; stolen; washed away by water | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 13 | प्रवर | pravara | adj stem | best, finest; excellent, noble | a-stem | yes | Wiktionary page + head line + table; Manu 2.200 (as compound member) | Manusmṛti |
+| 14 | अनुलोम | anuloma | adj stem | regular; in order (following an appropriate sequence); successive | a-stem | yes | Wiktionary page + head line + table; c. 400 BCE, Mahābhārata 6.114.36 | Mahābhārata 6.114.36 |
+| 15 | प्रतिलोम | pratiloma | adj stem | contrary to the regular order; inverted; against the grain | a-stem | yes | Wiktionary page + head line + table; c. 500 BCE – 100 BCE, Rāmāyaṇa 5.20.35 | Rāmāyaṇa 5.20.35 |
+| 16 | ग्रन्थि | granthi | noun stem, m | knot | i-stem | yes | Wiktionary page + head line + table; Manu 2.43 (as compound member) | Manusmṛti |
+| 17 | पर्यङ्क | paryaṅka | noun stem, m | furniture for lying down: a bed, a couch | a-stem | yes | Wiktionary page + head line + table; YS 2.47 (as compound member) | Yoga Sūtra |
+| 18 | कन्यका | kanyakā | noun stem, f | girl, maiden, virgin; daughter; the sign of the zodiac Virgo | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.1 | Śākuntalam |
+| 19 | मिथुन | mithuna | noun stem, m | a pair (male and female; but also "any couple or pair") | a-stem | yes | Wiktionary page + head line + table; Manu 3.29 (as compound member) | Manusmṛti |
+| 20 | तरुण | taruṇa | noun stem, m | a youth | a-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.5 | Śākuntalam |
+| 21 | यौवन | yauvana | noun stem, n | youth, youthfulness; adolescence, puberty | a-stem | yes | Wiktionary page + head line + table; Manu 9.3 | Manusmṛti |
+| 22 | स्त्रीत्व | strītva | noun stem, n | womanhood, wifehood; feminineness | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 23 | अकन्या | akanyā | noun stem, f | not a virgin | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 24 | अक्षता | akṣatā | noun stem, f | virgin | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 25 | बाला | bālā | noun stem, f | female child, girl, young woman (especially one under 16 years) | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.2 | Śākuntalam |
+| 26 | वनिता | vanitā | noun stem, f | a loved wife, mistress, any woman (also applied to the female of an an | ā-stem | yes | Wiktionary page + head line + table; Meghadūta (as compound member) | Meghadūta |
+| 27 | कामुक | kāmuka | noun stem, m | a lover, gallant | a-stem | yes | Wiktionary page + head line + table; Meghadūta (as compound member) | Meghadūta |
+| 28 | रमण | ramaṇa | noun stem, n | pleasure, joy; dalliance, amorous sport, sexual union, copulation | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 29 | कलत्र | kalatra | noun stem, n | wife, consort; the female of an animal; the hip and loins | a-stem | yes | Wiktionary page + head line + table; Meghadūta (as compound member) | Meghadūta |
+| 30 | इष्ट | iṣṭa | noun stem, m | lover, husband; castor oil plant L. | a-stem | yes | Wiktionary page + head line + table; Manu 7.13 | Manusmṛti |
+| 31 | प्रेष्ठ | preṣṭha | noun stem, m | a lover, husband | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 32 | ललना | lalanā | noun stem, f | a wanton woman, any woman, wife; the tongue | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 33 | भर्तृ | bhartṛ | noun stem, m | husband | ṛ-stem | yes | Wiktionary page + head line + table; Manu 3.174 | Manusmṛti |
+| 34 | पतित्व | patitva | noun stem, n | matrimony, wedlock | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 35 | बालिका | bālikā | noun stem, f | girl | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 36 | कनीनिका | kanīnikā | noun stem, f | girl, maiden; pupil | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 37 | युग्म | yugma | noun stem, n | a pair, couple, brace; the sign of the zodiac Gemini | a-stem | yes | Wiktionary page + head line + table; Manu 3.48 (as compound member) | Manusmṛti |
+| 38 | योषित् | yoṣit | noun stem, f | girl, young woman | root-stem | yes | Wiktionary page + head line + table; Manu 9.24 | Manusmṛti |
+| 39 | युवति | yuvati | noun stem, f | a girl; a young woman | i-stem | yes | Wiktionary page + head line + table; Manu 2.212 (as compound member) | Manusmṛti |
+| 40 | माङ्गलिक | māṅgalika | noun stem, n | any auspicious object (like an amulet) | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 41 | परिणीत | pariṇīta | noun stem, n | the act of marrying; a marriage | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.21 (as compound member) | Śākuntalam |
+| 42 | परिणीति | pariṇīti | noun stem, f | the act of marrying; marriage | i-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 43 | अग्रू | agrū | noun stem, f | a maiden, virgin; an unmarried girl | ū-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 7.2.5 | Ṛgveda 7.2.5 |
+| 44 | सुभग | subhaga | adj stem | fortunate, lucky; blessed; happy; pleasant; beautiful; auspicious | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 45 | जान्य | jānya | noun stem, m | a friend of bridegroom | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.11 (as compound member) | Śākuntalam |
+| 46 | वशगा | vaśagā | noun stem, f | obedient wife | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 47 | सभार्य | sabhārya | adj stem | with a wife, having a wife | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 48 | जानि | jāni | noun stem, f | wife; birth, descent | i-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.10 | Śākuntalam |
+| 49 | जनी | janī̆ | noun stem, f | a woman, wife | ī-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 50 | द्वय | dvaya | noun stem, n | pair, couple (set of two); duality, falsehood | a-stem | yes | Wiktionary page + head line + table; YS 3.16 | Yoga Sūtra |
+| 51 | द्वंद्व | dvaṃdva | noun stem, n or m | pair, couple; male and female; pair, couple | a-stem | yes | Wiktionary page + head line + table; YS 2.33 (as compound member) | Yoga Sūtra |
+| 52 | सुभद्र | subhadra | adj stem | very auspicious or fortunate; very glorious or splendid | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 53 | यूनि | yūni | noun stem, f | connection; union | i-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 54 | यौन | yauna | noun stem, n | matrimonial connection, conjugal alliance, relationship by marriage | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 55 | संगम | saṃgama | noun  | a coming together, meeting, union; intercourse or association with | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 56 | युवक | yuvaka | noun stem, m | a youth, young man | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 57 | मर्य | marya | noun stem, m | young man, suitor, lover; stallion | a-stem | yes | Wiktionary page + head line + table; Manu 8.309 (as compound member) | Manusmṛti |
+| 58 | कनीन | kanīna | adj  | young, youthful | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 59 | तरुणिमन् | taruṇiman | noun stem, m | youth, youthfulness | an-stem | yes | Wiktionary page + head line + table; Prasannarāghava 2.11 | Prasannarāghava 2.11 |
+| 60 | युवता | yuvatā | noun stem, f | youth; youthfulness; the state of being young | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 61 | रामा | rāmā | noun stem, f | a beautiful woman, any young and charming woman, mistress, wife, any w | ā-stem | yes | Wiktionary page + head line + table; Manu 2.8 (as compound member) | Manusmṛti |
+| 62 | शकुन | śakuna | noun stem, m | bird (esp. large birds and such as give omens) | a-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.14 (as compound member) | Śākuntalam |
+
+Dropped (not usable): युवती (no usable entry or taught)
+
+
