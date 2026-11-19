@@ -1,0 +1,526 @@
+schema: 1
+id: "sa-en-arts"
+kind: "layer"
+core: "sa-arts"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Arts"
+description: "Arts: music, dance, painting and the stage."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-9600":
+    native: "Dance, graceful dancing with music and song."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the second example writes जनो (jano) जानाति (jānāti). A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Music, dance and drama are treated together in the Nāṭyaśāstra, a treatise attributed to Bharata."
+    bases:
+      "लास्यम्": "dance"
+    examples:
+      "लास्यं बालः पश्यति":
+        native: "The child sees the dance."
+        bases:
+          "लास्यं": "dance"
+          "बालः": "child"
+          "पश्यति": "to see"
+      "लास्यं जनो जानाति":
+        native: "A person knows the dance."
+        bases:
+          "लास्यं": "dance"
+          "जनो": "person"
+          "जानाति": "to know"
+  "sa-9601":
+    native: "Play performed on a stage."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "The Nāṭyaśāstra is the old Sanskrit treatise on drama, staging and acting, attributed to Bharata."
+    bases:
+      "नाटकम्": "play"
+    examples:
+      "नाटकं जनः पठति":
+        native: "A person reads a play."
+        bases:
+          "नाटकं": "play"
+          "जनः": "person"
+          "पठति": "to read"
+      "नाटकं रामः पश्यति":
+        native: "Rāma sees a play."
+        bases:
+          "नाटकं": "play"
+          "रामः": "Rāma"
+          "पश्यति": "to see"
+  "sa-9602":
+    native: "Actor or performer on the stage."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare नर्तकः (nartakaḥ), a dancer; नटः (naṭaḥ) is an actor who performs a play."
+    bases:
+      "नटः": "actor"
+    examples:
+      "नटो गृहे वसति":
+        native: "The actor dwells in the house."
+        bases:
+          "नटो": "actor"
+          "गृहे": "house"
+          "वसति": "to dwell"
+      "नटं बालः पश्यति":
+        native: "The child sees the actor."
+        bases:
+          "नटं": "actor"
+          "बालः": "child"
+          "पश्यति": "to see"
+  "sa-9603":
+    native: "Poem or work of literary art."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Kāvya is the literary art of Sanskrit poetry; the term also names a poem as a whole."
+    bases:
+      "काव्यम्": "poem"
+    examples:
+      "काव्यं बालः पठति":
+        native: "The child reads a poem."
+        bases:
+          "काव्यं": "poem"
+          "बालः": "child"
+          "पठति": "to read"
+      "काव्यं नृपो वदति":
+        native: "The king recites a poem."
+        bases:
+          "काव्यं": "poem"
+          "नृपो": "king"
+          "वदति": "to speak"
+  "sa-9604":
+    native: "Metre of a verse; a fixed pattern of syllables."
+    notes:
+      "n1": "A neuter as-stem noun: its full set of case forms is in the other-stems table of the grammar rules; the stem is छन्दस् (chandas) and the nominative is छन्दः (chandaḥ)."
+      "n2": "The final ः (ḥ) of छन्दः (chandaḥ) becomes ो (o) before a voiced sound, as in छन्दो (chando) जनो (jano) जानाति (jānāti)."
+      "n3": "Metre (chandas) is the fixed pattern of long and short syllables that shapes a Sanskrit verse."
+    bases:
+      "छन्दः": "metre"
+    examples:
+      "छन्दः पठति बालः":
+        native: "The child reads the metre."
+        bases:
+          "छन्दः": "metre"
+          "पठति": "to read"
+          "बालः": "child"
+      "छन्दो जनो जानाति":
+        native: "A person knows the metre."
+        bases:
+          "छन्दो": "metre"
+          "जनो": "person"
+          "जानाति": "to know"
+  "sa-9605":
+    native: "Act of writing or a piece of writing."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "लेखनम्": "writing"
+    examples:
+      "लेखनं बालः करोति":
+        native: "The child practises writing."
+        bases:
+          "लेखनं": "writing"
+          "बालः": "child"
+          "करोति": "to do, make"
+      "लेखनं जनो जानाति":
+        native: "A person knows writing."
+        bases:
+          "लेखनं": "writing"
+          "जनो": "person"
+          "जानाति": "to know"
+  "sa-9606":
+    native: "Ornament; in poetics a figure of speech."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare आभरणः (ābharaṇaḥ) and भूषणम् (bhūṣaṇam), which mean an ornament worn on the body; अलंकारः (alaṃkāraḥ) also names a figure of speech."
+    bases:
+      "अलंकारः": "ornament"
+    examples:
+      "अलंकारं नटो धरति":
+        native: "The actor wears an ornament."
+        bases:
+          "अलंकारं": "ornament"
+          "नटो": "actor"
+          "धरति": "to hold, wear"
+      "अलंकारं रामः पश्यति":
+        native: "Rāma sees the ornament."
+        bases:
+          "अलंकारं": "ornament"
+          "रामः": "Rāma"
+          "पश्यति": "to see"
+  "sa-9607":
+    native: "Ornament worn on the body."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare भूषणम् (bhūṣaṇam) and अलंकारः (alaṃkāraḥ), which also mean ornament; आभरणः (ābharaṇaḥ) is jewellery worn."
+    bases:
+      "आभरणः": "ornament"
+    examples:
+      "आभरणं नृपो ददाति":
+        native: "The king gives an ornament."
+        bases:
+          "आभरणं": "ornament"
+          "नृपो": "king"
+          "ददाति": "to give"
+      "आभरणं बालः पश्यति":
+        native: "The child sees the ornament."
+        bases:
+          "आभरणं": "ornament"
+          "बालः": "child"
+          "पश्यति": "to see"
+  "sa-9608":
+    native: "Graceful and charming in form or movement."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "ललितः": "graceful"
+    examples:
+      "ललितो नटो गच्छति":
+        native: "A graceful actor goes."
+        bases:
+          "ललितो": "graceful"
+          "नटो": "actor"
+          "गच्छति": "to go"
+      "जनो ललितं गानं गायति":
+        native: "A person sings a graceful song."
+        bases:
+          "जनो": "person"
+          "ललितं": "graceful"
+          "गानं": "singing"
+          "गायति": "to sing"
+  "sa-9609":
+    native: "Mood or emotional state shown in art."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare रसः (rasaḥ), the aesthetic sentiment built from moods; भावः (bhāvaḥ) is the mood or state shown by an actor."
+    bases:
+      "भावः": "mood"
+    examples:
+      "भावं बालो वदति":
+        native: "The child expresses the mood."
+        bases:
+          "भावं": "mood"
+          "बालो": "child"
+          "वदति": "to speak"
+      "भावं रामो जानाति":
+        native: "Rāma knows the mood."
+        bases:
+          "भावं": "mood"
+          "रामो": "Rāma"
+          "जानाति": "to know"
+  "sa-9610":
+    native: "Juice or flavour; in poetics the aesthetic sentiment a work evokes."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "In Sanskrit poetics rasa is the aesthetic sentiment a work evokes in its audience; the Nāṭyaśāstra lists eight of them."
+    bases:
+      "रसः": "aesthetic sentiment"
+    examples:
+      "रसं जनः पिबति":
+        native: "A person drinks the juice."
+        bases:
+          "रसं": "aesthetic sentiment"
+          "जनः": "person"
+          "पिबति": "to drink"
+      "रसं नृपः पिबति":
+        native: "The king drinks the juice."
+        bases:
+          "रसं": "aesthetic sentiment"
+          "नृपः": "king"
+          "पिबति": "to drink"
+  "sa-9611":
+    native: "Acting; the showing of feeling by gesture and speech on stage."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "अभिनयः": "acting"
+    examples:
+      "अभिनयं नटः करोति":
+        native: "The actor performs acting."
+        bases:
+          "अभिनयं": "acting"
+          "नटः": "actor"
+          "करोति": "to do, make"
+      "अभिनयं बालः पश्यति":
+        native: "The child watches the acting."
+        bases:
+          "अभिनयं": "acting"
+          "बालः": "child"
+          "पश्यति": "to see"
+  "sa-9612":
+    native: "Prose, composition that is not bound by metre."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "गद्यम्": "prose"
+    examples:
+      "गद्यं बालः पठति":
+        native: "The child reads prose."
+        bases:
+          "गद्यं": "prose"
+          "बालः": "child"
+          "पठति": "to read"
+      "गद्यं जनो जानाति":
+        native: "A person knows prose."
+        bases:
+          "गद्यं": "prose"
+          "जनो": "person"
+          "जानाति": "to know"
+  "sa-9613":
+    native: "Grace and charm of appearance."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare रूपम् (rūpam), form or beauty in general; लावण्यम् (lāvaṇyam) is grace and charm of a person."
+    bases:
+      "लावण्यम्": "grace"
+    examples:
+      "लावण्यं जनः पश्यति":
+        native: "A person sees the grace."
+        bases:
+          "लावण्यं": "grace"
+          "जनः": "person"
+          "पश्यति": "to see"
+      "लावण्यं नृपः पठति":
+        native: "The king reads of the grace."
+        bases:
+          "लावण्यं": "grace"
+          "नृपः": "king"
+          "पठति": "to read"
+  "sa-9614":
+    native: "Skill, cleverness in doing something."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "कौशलम्": "skill"
+    examples:
+      "कौशलं बालो जानाति":
+        native: "The child knows the skill."
+        bases:
+          "कौशलं": "skill"
+          "बालो": "child"
+          "जानाति": "to know"
+      "कौशलं वैद्यः पश्यति":
+        native: "The physician sees the skill."
+        bases:
+          "कौशलं": "skill"
+          "वैद्यः": "physician"
+          "पश्यति": "to see"
+  "sa-9615":
+    native: "Repeated practice in learning a skill."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "अभ्यासः": "practice"
+    examples:
+      "अभ्यासं बालः करोति":
+        native: "The child practises."
+        bases:
+          "अभ्यासं": "practice"
+          "बालः": "child"
+          "करोति": "to do, make"
+      "अभ्यासं जनः पठति":
+        native: "A person practises reading."
+        bases:
+          "अभ्यासं": "practice"
+          "जनः": "person"
+          "पठति": "to read"
+  "sa-9616":
+    native: "Systematic treatise on a field of knowledge."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "A śāstra is a systematic treatise; the Nāṭyaśāstra is one of them, on drama."
+    bases:
+      "शास्त्रम्": "treatise"
+    examples:
+      "शास्त्रं वैद्यः पठति":
+        native: "The physician reads the treatise."
+        bases:
+          "शास्त्रं": "treatise"
+          "वैद्यः": "physician"
+          "पठति": "to read"
+      "शास्त्रं रामो जानाति":
+        native: "Rāma knows the treatise."
+        bases:
+          "शास्त्रं": "treatise"
+          "रामो": "Rāma"
+          "जानाति": "to know"
+  "sa-9617":
+    native: "Song or the act of singing."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare गायनम् (gāyanam), the act of singing; गानम् (gānam) is more often the song itself."
+    bases:
+      "गानम्": "singing"
+    examples:
+      "जनो गानं गायति":
+        native: "A person sings a song."
+        bases:
+          "जनो": "person"
+          "गानं": "singing"
+          "गायति": "to sing"
+      "गानं रामो गायति":
+        native: "Rāma sings a song."
+        bases:
+          "गानं": "singing"
+          "रामो": "Rāma"
+          "गायति": "to sing"
+  "sa-9618":
+    native: "Act of singing or chanting."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare गानम् (gānam), which can mean a song itself; गायनम् (gāyanam) is the act of singing."
+    bases:
+      "गायनम्": "singing"
+    examples:
+      "गायनं नटः पश्यति":
+        native: "The actor watches the singing."
+        bases:
+          "गायनं": "singing"
+          "नटः": "actor"
+          "पश्यति": "to see"
+      "गायनं बालः पठति":
+        native: "The child reads about singing."
+        bases:
+          "गायनं": "singing"
+          "बालः": "child"
+          "पठति": "to read"
+  "sa-9619":
+    native: "Ornament or decoration of the body."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare आभरणः (ābharaṇaḥ) and अलंकारः (alaṃkāraḥ), which also mean ornament; भूषणम् (bhūṣaṇam) is decoration."
+    bases:
+      "भूषणम्": "ornament"
+    examples:
+      "भूषणं वीरो धरति":
+        native: "The hero wears an ornament."
+        bases:
+          "भूषणं": "ornament"
+          "वीरो": "hero"
+          "धरति": "to hold"
+      "भूषणं नृपो ददाति":
+        native: "The king gives an ornament."
+        bases:
+          "भूषणं": "ornament"
+          "नृपो": "king"
+          "ददाति": "to give"
+  "sa-9620":
+    native: "Necklace or garland worn on the neck."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "हारः": "necklace"
+    examples:
+      "हारं जनः पश्यति":
+        native: "A person sees the necklace."
+        bases:
+          "हारं": "necklace"
+          "जनः": "person"
+          "पश्यति": "to see"
+      "हारं रामो हरति":
+        native: "Rāma takes the necklace."
+        bases:
+          "हारं": "necklace"
+          "रामो": "Rāma"
+          "हरति": "to take away"
+  "sa-9621":
+    native: "Sound, a resonant note."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "नादः": "sound"
+    examples:
+      "नादं बालो जानाति":
+        native: "The child knows the sound."
+        bases:
+          "नादं": "sound"
+          "बालो": "child"
+          "जानाति": "to know"
+      "नादं जनः पठति":
+        native: "A person reads of the sound."
+        bases:
+          "नादं": "sound"
+          "जनः": "person"
+          "पठति": "to read"
+  "sa-9622":
+    native: "Musical note or a run of notes in singing."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "तानः": "musical note"
+    examples:
+      "तानं बालो गायति":
+        native: "The child sings a note."
+        bases:
+          "तानं": "musical note"
+          "बालो": "child"
+          "गायति": "to sing"
+      "तानं रामो गायति":
+        native: "Rāma sings a note."
+        bases:
+          "तानं": "musical note"
+          "रामो": "Rāma"
+          "गायति": "to sing"
+  "sa-9623":
+    native: "Dress or costume worn for a role."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "वेषः": "costume"
+    examples:
+      "वेषं नटो धरति":
+        native: "The actor wears a costume."
+        bases:
+          "वेषं": "costume"
+          "नटो": "actor"
+          "धरति": "to hold"
+      "वेषं बालः पश्यति":
+        native: "The child sees the costume."
+        bases:
+          "वेषं": "costume"
+          "बालः": "child"
+          "पश्यति": "to see"
+  "sa-9624":
+    native: "Form, appearance or beauty of a thing."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare लावण्यम् (lāvaṇyam), grace and charm; रूपम् (rūpam) is the visible form or appearance."
+    bases:
+      "रूपम्": "form"
+    examples:
+      "रूपं नृपः पश्यति":
+        native: "The king sees the form."
+        bases:
+          "रूपं": "form"
+          "नृपः": "king"
+          "पश्यति": "to see"
+      "रूपं बालः पठति":
+        native: "The child reads of the form."
+        bases:
+          "रूपं": "form"
+          "बालः": "child"
+          "पठति": "to read"

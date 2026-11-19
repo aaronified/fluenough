@@ -1,0 +1,510 @@
+schema: 1
+id: "sa-en-law"
+kind: "layer"
+core: "sa-law"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Law"
+description: "Law and the courts in classical Sanskrit: crime, punishment, property, sale, witnesses and oaths."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-10000":
+    native: "Crime, an act that must not be done."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "अकृत्यम्": "crime"
+    examples:
+      "अकृत्यं भवति":
+        native: "A crime occurs."
+        bases:
+          "अकृत्यं": "crime"
+          "भवति": "to be, become"
+      "अकृत्यं त्वं जानासि":
+        native: "You know a crime."
+        bases:
+          "अकृत्यं": "crime"
+          "त्वं": "you"
+          "जानासि": "to know"
+  "sa-10001":
+    native: "Member of an assembly or council, one who sits in a court or sacrifice."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "सदस्यः": "member of an assembly"
+    examples:
+      "सदस्यो गृहे वसति":
+        native: "A member of the assembly lives in the house."
+        bases:
+          "सदस्यो": "member of an assembly"
+          "गृहे": "in the house"
+          "वसति": "to live, dwell"
+      "सदस्यं पश्यति बालः":
+        native: "The child sees the member of the assembly."
+        bases:
+          "सदस्यं": "member of an assembly"
+          "पश्यति": "to see"
+          "बालः": "child"
+  "sa-10002":
+    native: "Oath, a solemn vow sworn before witnesses."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "शपथः": "oath"
+    examples:
+      "शपथो भवति":
+        native: "An oath is sworn."
+        bases:
+          "शपथो": "oath"
+          "भवति": "to be, become"
+      "शपथं ते जानन्ति":
+        native: "They know an oath."
+        bases:
+          "शपथं": "oath"
+          "ते": "they"
+          "जानन्ति": "to know"
+  "sa-10003":
+    native: "Wife's own property, the wealth given to a woman that is hers alone."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "स्त्रीधनम्": "wife's property"
+    examples:
+      "स्त्रीधनं भवति":
+        native: "A wife's property exists."
+        bases:
+          "स्त्रीधनं": "wife's property"
+          "भवति": "to be, become"
+      "स्त्रीधनं वयं जानीमः":
+        native: "We know a wife's property."
+        bases:
+          "स्त्रीधनं": "wife's property"
+          "वयं": "we"
+          "जानीमः": "to know"
+  "sa-10004":
+    native: "Sin or crime that causes a fall from right conduct."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "पातकम्": "sin"
+    examples:
+      "पातकं भवति":
+        native: "A sin occurs."
+        bases:
+          "पातकं": "sin"
+          "भवति": "to be, become"
+      "पातकं करोति जनः":
+        native: "A person commits a sin."
+        bases:
+          "पातकं": "sin"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-10005":
+    native: "Examiner or judge who looks into a matter closely."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "परीक्षकः": "examiner"
+    examples:
+      "परीक्षको गृहे वसति":
+        native: "An examiner lives in the house."
+        bases:
+          "परीक्षको": "examiner"
+          "गृहे": "in the house"
+          "वसति": "to live, dwell"
+      "परीक्षकं सा स्मरति":
+        native: "She remembers an examiner."
+        bases:
+          "परीक्षकं": "examiner"
+          "सा": "she"
+          "स्मरति": "to remember"
+  "sa-10006":
+    native: "Punishing and chastising of an offender."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "दण्डनः": "punishment"
+    examples:
+      "दण्डनो भवति":
+        native: "Punishment takes place."
+        bases:
+          "दण्डनो": "punishment"
+          "भवति": "to be, become"
+      "दण्डनं ते स्मरन्ति":
+        native: "They remember punishment."
+        bases:
+          "दण्डनं": "punishment"
+          "ते": "they"
+          "स्मरन्ति": "to remember"
+  "sa-10007":
+    native: "Court or tribunal where disputes are judged by law."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "न्यायालयः": "court"
+    examples:
+      "न्यायालयो नगरे भवति":
+        native: "A court takes place in the city."
+        bases:
+          "न्यायालयो": "court"
+          "नगरे": "in the city"
+          "भवति": "to be, become"
+      "न्यायालयं पश्यति जनः":
+        native: "A person sees the court."
+        bases:
+          "न्यायालयं": "court"
+          "पश्यति": "to see"
+          "जनः": "person"
+  "sa-10008":
+    native: "Rule, an ordinance or law laid down by authority."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "विधानम्": "rule"
+    examples:
+      "विधानं भवति":
+        native: "A rule exists."
+        bases:
+          "विधानं": "rule"
+          "भवति": "to be, become"
+      "विधानं त्वं वदसि":
+        native: "You speak of a rule."
+        bases:
+          "विधानं": "rule"
+          "त्वं": "you"
+          "वदसि": "to speak of"
+  "sa-10009":
+    native: "Injury and harm done to a living being."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "हिंसा": "injury"
+    examples:
+      "हिंसा भवति":
+        native: "Injury occurs."
+        bases:
+          "हिंसा": "injury"
+          "भवति": "to be, become"
+      "हिंसां सा वदति":
+        native: "She speaks of injury."
+        bases:
+          "हिंसां": "injury"
+          "सा": "she"
+          "वदति": "to speak of"
+  "sa-10010":
+    native: "Murder and slaughter, the killing of a being."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "वधः": "murder"
+    examples:
+      "वधो नगरे भवति":
+        native: "A murder takes place in the city."
+        bases:
+          "वधो": "murder"
+          "नगरे": "in the city"
+          "भवति": "to be, become"
+      "वधं करोति जनः":
+        native: "A person commits a murder."
+        bases:
+          "वधं": "murder"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-10011":
+    native: "Property and wealth, what a person owns."
+    notes:
+      "n1": "Its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "सम्पत्तिः": "property"
+    examples:
+      "सम्पत्तिं पश्यति जनः":
+        native: "A person sees property."
+        bases:
+          "सम्पत्तिं": "property"
+          "पश्यति": "to see"
+          "जनः": "person"
+      "सम्पत्तिं करोति जनः":
+        native: "A person acquires property."
+        bases:
+          "सम्पत्तिं": "property"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-10012":
+    native: "Sale, the selling of goods for a price."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "विक्रयः": "sale"
+    examples:
+      "विक्रयो भवति":
+        native: "A sale takes place."
+        bases:
+          "विक्रयो": "sale"
+          "भवति": "to be, become"
+      "विक्रयं त्वं जानासि":
+        native: "You know a sale."
+        bases:
+          "विक्रयं": "sale"
+          "त्वं": "you"
+          "जानासि": "to know"
+  "sa-10013":
+    native: "Purchase, the buying of goods for a price."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "क्रयः": "purchase"
+    examples:
+      "क्रयो नगरे भवति":
+        native: "A purchase takes place in the city."
+        bases:
+          "क्रयो": "purchase"
+          "नगरे": "in the city"
+          "भवति": "to be, become"
+      "क्रयं करोति बालः":
+        native: "The child makes a purchase."
+        bases:
+          "क्रयं": "purchase"
+          "करोति": "to do, make"
+          "बालः": "child"
+  "sa-10014":
+    native: "Conduct and legal dealing, the transactions that the law examines."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "व्यवहारः": "legal dealing"
+    examples:
+      "व्यवहारो नगरे भवति":
+        native: "A legal dealing takes place in the city."
+        bases:
+          "व्यवहारो": "legal dealing"
+          "नगरे": "in the city"
+          "भवति": "to be, become"
+      "व्यवहारं ते जानन्ति":
+        native: "They know a legal dealing."
+        bases:
+          "व्यवहारं": "legal dealing"
+          "ते": "they"
+          "जानन्ति": "to know"
+  "sa-10015":
+    native: "Theft, the taking of what belongs to another."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "स्तेयम्": "theft"
+    examples:
+      "स्तेयं भवति":
+        native: "Theft occurs."
+        bases:
+          "स्तेयं": "theft"
+          "भवति": "to be, become"
+      "स्तेयं वयं जानीमः":
+        native: "We know theft."
+        bases:
+          "स्तेयं": "theft"
+          "वयं": "we"
+          "जानीमः": "to know"
+  "sa-10016":
+    native: "Householder, a man living the married life in his own house."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "गृहस्थः": "householder"
+    examples:
+      "गृहस्थो नगरे वसति":
+        native: "A householder lives in the city."
+        bases:
+          "गृहस्थो": "householder"
+          "नगरे": "in the city"
+          "वसति": "to live, dwell"
+      "गृहस्थं पश्यति जनः":
+        native: "A person sees a householder."
+        bases:
+          "गृहस्थं": "householder"
+          "पश्यति": "to see"
+          "जनः": "person"
+  "sa-10017":
+    native: "Share of property, a portion allotted to an heir."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "अंशः": "share"
+    examples:
+      "अंशो भवति":
+        native: "A share is allotted."
+        bases:
+          "अंशो": "share"
+          "भवति": "to be, become"
+      "अंशं पश्यति जनः":
+        native: "A person sees a share."
+        bases:
+          "अंशं": "share"
+          "पश्यति": "to see"
+          "जनः": "person"
+  "sa-10018":
+    native: "Code or collection of rules and texts that together form a law book."
+    notes:
+      "n1": "An ā-stem noun: its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "संहिता": "code"
+    examples:
+      "संहिता भवति":
+        native: "A law code exists."
+        bases:
+          "संहिता": "code"
+          "भवति": "to be, become"
+      "संहितां ते स्मरन्ति":
+        native: "They remember a law code."
+        bases:
+          "संहितां": "code"
+          "ते": "they"
+          "स्मरन्ति": "to remember"
+  "sa-10019":
+    native: "Going astray from fidelity, the breach of a marriage by unlawful union."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "व्यभिचारः": "transgression of fidelity"
+    examples:
+      "व्यभिचारो नगरे भवति":
+        native: "A transgression takes place in the city."
+        bases:
+          "व्यभिचारो": "transgression of fidelity"
+          "नगरे": "in the city"
+          "भवति": "to be, become"
+      "व्यभिचारं करोति जनः":
+        native: "A person commits a transgression."
+        bases:
+          "व्यभिचारं": "transgression of fidelity"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-10020":
+    native: "Guardian or protector who looks after and keeps safe."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "पालकः": "guardian"
+    examples:
+      "पालको नगरे वसति":
+        native: "A guardian lives in the city."
+        bases:
+          "पालको": "guardian"
+          "नगरे": "in the city"
+          "वसति": "to live, dwell"
+      "पालकं त्वं वदसि":
+        native: "You speak of a guardian."
+        bases:
+          "पालकं": "guardian"
+          "त्वं": "you"
+          "वदसि": "to speak of"
+  "sa-10021":
+    native: "Atonement, the expiation that removes the consequence of a wrong."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "प्रायश्चित्तम्": "atonement"
+    examples:
+      "प्रायश्चित्तं भवति":
+        native: "Atonement is required."
+        bases:
+          "प्रायश्चित्तं": "atonement"
+          "भवति": "to be, become"
+      "प्रायश्चित्तं करोति जनः":
+        native: "A person performs atonement."
+        bases:
+          "प्रायश्चित्तं": "atonement"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-10022":
+    native: "Partition or division of property among heirs."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "विभागः": "partition"
+    examples:
+      "विभागो भवति":
+        native: "A partition takes place."
+        bases:
+          "विभागो": "partition"
+          "भवति": "to be, become"
+      "विभागं करोति जनः":
+        native: "A person makes a partition."
+        bases:
+          "विभागं": "partition"
+          "करोति": "to do, make"
+          "जनः": "person"
+  "sa-10023":
+    native: "Thief, one who takes what is not his."
+    notes:
+      "n1": "Its full set of case forms is in the other-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "तायुः": "thief"
+    examples:
+      "तायुं पश्यति जनः":
+        native: "A person sees a thief."
+        bases:
+          "तायुं": "thief"
+          "पश्यति": "to see"
+          "जनः": "person"
+      "तायुं करोति बालः":
+        native: "The child acts as a thief."
+        bases:
+          "तायुं": "thief"
+          "करोति": "to do, make"
+          "बालः": "child"
+  "sa-10024":
+    native: "Ruler or lord who holds authority over a realm."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "अधिपः": "ruler"
+    examples:
+      "अधिपो भवति":
+        native: "A ruler is present."
+        bases:
+          "अधिपो": "ruler"
+          "भवति": "to be, become"
+      "अधिपं त्वं जानासि":
+        native: "You know a ruler."
+        bases:
+          "अधिपं": "ruler"
+          "त्वं": "you"
+          "जानासि": "to know"
