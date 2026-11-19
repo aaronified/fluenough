@@ -14,7 +14,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["verb"]
-    except: ["sa-2011", "sa-2105", "sa-2108", "sa-2111", "sa-2123", "sa-12000", "sa-12001", "sa-12002", "sa-12004", "sa-12005", "sa-12006", "sa-12008", "sa-12010", "sa-12011", "sa-12012", "sa-12013", "sa-12014", "sa-12015", "sa-12016", "sa-12017", "sa-12018", "sa-12019", "sa-12020", "sa-12023", "sa-12024", "sa-12025", "sa-12027", "sa-12028", "sa-12029"]
+    except: ["sa-2011", "sa-2105", "sa-2108", "sa-2111", "sa-2123", "sa-12000", "sa-12001", "sa-12002", "sa-12004", "sa-12005", "sa-12006", "sa-12008", "sa-12010", "sa-12011", "sa-12012", "sa-12013", "sa-12014", "sa-12015", "sa-12016", "sa-12017", "sa-12018", "sa-12019", "sa-12020", "sa-12023", "sa-12024", "sa-12025", "sa-12027", "sa-12028", "sa-12029", "sa-12030", "sa-12031", "sa-12032", "sa-12034", "sa-12035", "sa-12036", "sa-12039"]
   slots: ["ghan", "lyut", "trc", "ktin", "nvul"]
   rows:
     - word: "sa-0430"
@@ -182,6 +182,15 @@ table:
     - word: "sa-12026"
       forms: { "ghan": null, "lyut": null, "trc": null, "ktin": null, "nvul": "घटक" }
       readings: { "nvul": "ghaṭaka" }
+    - word: "sa-12033"
+      forms: { "ghan": null, "lyut": null, "trc": null, "ktin": "शान्ति", "nvul": null }
+      readings: { "ktin": "śānti" }
+    - word: "sa-12037"
+      forms: { "ghan": null, "lyut": null, "trc": null, "ktin": "पद्धति", "nvul": null }
+      readings: { "ktin": "paddhati" }
+    - word: "sa-12038"
+      forms: { "ghan": null, "lyut": null, "trc": null, "ktin": "मुक्ति", "nvul": "मोचक" }
+      readings: { "ktin": "mukti", "nvul": "mocaka" }
 rules:
   - id: "sa-rule-krt-ghan"
     slots: ["ghan"]

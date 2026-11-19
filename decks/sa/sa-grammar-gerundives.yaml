@@ -14,7 +14,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["verb"]
-    except: ["sa-2105", "sa-2108", "sa-2111", "sa-12004", "sa-12005", "sa-12007", "sa-12009", "sa-12011", "sa-12015", "sa-12020", "sa-12023", "sa-12025"]
+    except: ["sa-2105", "sa-2108", "sa-2111", "sa-12004", "sa-12005", "sa-12007", "sa-12009", "sa-12011", "sa-12015", "sa-12020", "sa-12023", "sa-12025", "sa-12032"]
   slots: ["tavya", "aniya", "ya"]
   rows:
     - word: "sa-0430"
@@ -233,6 +233,33 @@ table:
     - word: "sa-12029"
       forms: { "tavya": null, "aniya": "लोभनीय", "ya": null }
       readings: { "aniya": "lobhanīya" }
+    - word: "sa-12030"
+      forms: { "tavya": null, "aniya": "मदनीय", "ya": null }
+      readings: { "aniya": "madanīya" }
+    - word: "sa-12031"
+      forms: { "tavya": null, "aniya": "नहनीय", "ya": null }
+      readings: { "aniya": "nahanīya" }
+    - word: "sa-12033"
+      forms: { "tavya": null, "aniya": "शमनीय", "ya": null }
+      readings: { "aniya": "śamanīya" }
+    - word: "sa-12034"
+      forms: { "tavya": null, "aniya": "शोषणीय", "ya": null }
+      readings: { "aniya": "śoṣaṇīya" }
+    - word: "sa-12035"
+      forms: { "tavya": null, "aniya": "तोषणीय", "ya": null }
+      readings: { "aniya": "toṣaṇīya" }
+    - word: "sa-12036"
+      forms: { "tavya": null, "aniya": "दमनीय", "ya": null }
+      readings: { "aniya": "damanīya" }
+    - word: "sa-12037"
+      forms: { "tavya": null, "aniya": "पदनीय", "ya": null }
+      readings: { "aniya": "padanīya" }
+    - word: "sa-12038"
+      forms: { "tavya": null, "aniya": "मोचनीय", "ya": null }
+      readings: { "aniya": "mocanīya" }
+    - word: "sa-12039"
+      forms: { "tavya": null, "aniya": "मेलनीय", "ya": null }
+      readings: { "aniya": "melanīya" }
 rules:
   - id: "sa-rule-gerundive-tavya"
     slots: ["tavya"]
