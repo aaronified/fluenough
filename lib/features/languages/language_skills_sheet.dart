@@ -726,6 +726,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                   CourseLine(
                     levels: progress.levels,
                     culture: progress.culture,
+                    hasCulture: progress.hasCulture,
                   ),
                 ],
                 if (download != null && !_isDraft) ...<Widget>[
@@ -1756,7 +1757,11 @@ class _InfoDialog extends StatelessWidget {
             ),
             if (progress != null) ...<Widget>[
               const SizedBox(height: 12),
-              CourseLine(levels: progress.levels, culture: progress.culture),
+              CourseLine(
+                levels: progress.levels,
+                culture: progress.culture,
+                hasCulture: progress.hasCulture,
+              ),
             ],
             const SizedBox(height: 8),
             if (!view.language.isNotation)

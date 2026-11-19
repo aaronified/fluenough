@@ -16,6 +16,7 @@ class CourseLine extends StatelessWidget {
     super.key,
     required this.levels,
     this.culture = 0,
+    this.hasCulture = true,
     this.label,
     this.compact = false,
   });
@@ -25,6 +26,10 @@ class CourseLine extends StatelessWidget {
 
   /// How much of the culture part is written, 0–1.
   final double culture;
+
+  /// Whether the culture bar is drawn; false for a language with no culture
+  /// deck (#1629). The other bars keep their width.
+  final bool hasCulture;
 
   /// What a screen reader reads instead of the figures, for an empty line
   /// (no decks yet, or first words only); null reads the figures.
@@ -55,9 +60,9 @@ class CourseLine extends StatelessWidget {
       Milestone.a1.name.toUpperCase(),
       Milestone.a2.name.toUpperCase(),
       Milestone.b1.name.toUpperCase(),
-      l10n.pickerLevelCulture,
+      if (hasCulture) l10n.pickerLevelCulture,
     ];
-    final fills = <double>[...levels, culture];
+    final fills = <double>[...levels, if (hasCulture) culture];
     String percent(double share) => l10n.commonPercent(share.clamp(0.0, 1.0));
     final figures = <String>[
       for (final (i, name) in names.indexed) '$name ${percent(fills[i])}',

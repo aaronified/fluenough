@@ -47,14 +47,22 @@ B1Unit written(Milestone m) => B1Unit(words: 10, milestone: m, has: 10);
 B1Unit planned(Milestone m) => B1Unit(planned: true, words: 10, milestone: m);
 
 /// A course whose path is [units], taught from English.
-CatalogLanguage course(String code, String name, List<B1Unit> units) =>
-    CatalogLanguage(
-      code: code,
-      name: name,
-      natives: <CatalogNative>[
-        (code: 'en', name: 'English', progress: B1Progress.of(units)),
-      ],
-    );
+CatalogLanguage course(
+  String code,
+  String name,
+  List<B1Unit> units, {
+  bool hasCulture = true,
+}) => CatalogLanguage(
+  code: code,
+  name: name,
+  natives: <CatalogNative>[
+    (
+      code: 'en',
+      name: 'English',
+      progress: B1Progress.of(units, hasCulture: hasCulture),
+    ),
+  ],
+);
 
 /// File order, as `assets/languages.yaml` has it: the tiles are the first
 /// eight popular ones in this order, five here. Zulu has A1 to B1 written,
@@ -502,6 +510,54 @@ languages:
         await tester.pumpAndSettle();
         expect(find.text(bubble), findsNothing);
         expect(tester.takeException(), isNull);
+      });
+
+      testWidgets('a language with no culture deck has no culture bar and its '
+          'other bars keep their width, while one with a culture deck still '
+          'being written keeps it (#1629)', (tester) async {
+        await pumpList(
+          tester,
+          mode: mode,
+          views: <LanguageView>[
+            LanguageView(
+              lang('aa', 'Alpha', popular: true),
+              course('aa', 'Alpha', <B1Unit>[
+                written(Milestone.a1),
+                written(Milestone.a2),
+                planned(Milestone.b1),
+              ], hasCulture: false),
+            ),
+            LanguageView(
+              lang('bb', 'Bravo', popular: true),
+              course('bb', 'Bravo', <B1Unit>[
+                written(Milestone.a1),
+                planned(Milestone.a2),
+                planned(Milestone.b1),
+              ]),
+            ),
+          ],
+        );
+        await seeAll(tester);
+        Finder segments(String code) => find.descendant(
+          of: key('course-line-$code'),
+          matching: find.byWidgetPredicate(
+            (w) =>
+                w.key is ValueKey<String> &&
+                (w.key! as ValueKey<String>).value.startsWith(
+                  'course-segment-',
+                ),
+          ),
+        );
+        expect(segments('aa'), findsNWidgets(3));
+        expect(segments('bb'), findsNWidgets(4));
+        // Three bars share the row the four shared: wider, not stretched
+        // past the row.
+        final row = tester.getSize(key('course-line-aa')).width;
+        final sum = tester
+            .widgetList<Widget>(segments('aa'))
+            .map((w) => tester.getSize(find.byWidget(w)).width)
+            .fold<double>(0, (a, b) => a + b);
+        expect(sum, lessThanOrEqualTo(row));
       });
 
       testWidgets('a screen reader reads each bar as how much of the course '

@@ -90,6 +90,7 @@ class B1Progress {
     required this.stage,
     required this.levels,
     required this.culture,
+    required this.hasCulture,
     required this.builtLevel,
     required this.unitsWritten,
     required this.unitCount,
@@ -107,10 +108,16 @@ class B1Progress {
   /// [cultureCards] is how many cards the language's culture decks have
   /// (genre `culture`); they fill the culture part, up to
   /// [cultureCardTarget].
+  ///
+  /// [hasCulture] is false for a language that has no culture deck at all
+  /// (Toki Pona, Proto-Indo-European): its culture part is not applicable, so
+  /// the culture bar is not drawn (#1629). The stage never waits on culture,
+  /// so such a language can still reach [CourseStage.complete].
   factory B1Progress.of(
     List<B1Unit> units, {
     bool isNotation = false,
     int cultureCards = 0,
+    bool hasCulture = true,
   }) {
     int? at(Milestone m) {
       for (final (i, unit) in units.indexed) {
@@ -163,7 +170,10 @@ class B1Progress {
         : CourseStage.complete;
     return B1Progress._(
       levels: _levels(units, <int?>[a1, a2, b1]),
-      culture: (cultureCards / cultureCardTarget).clamp(0.0, 1.0),
+      culture: hasCulture
+          ? (cultureCards / cultureCardTarget).clamp(0.0, 1.0)
+          : 0,
+      hasCulture: hasCulture,
       builtLevel: built,
       unitsWritten: units.where((u) => u.written).length,
       unitCount: units.length,
@@ -237,6 +247,10 @@ class B1Progress {
   /// How much of the culture part is written, 0–1: the cards of the
   /// language's culture decks over [cultureCardTarget].
   final double culture;
+
+  /// Whether the language has a culture deck, so a culture bar is shown. A
+  /// language with a culture deck still being written keeps the bar.
+  final bool hasCulture;
 
   /// The highest level written to its end: 0 below A1, 1 for A1, 2 for A2,
   /// 3 for B1 (complete). A level counts when the path marks it and no unit
@@ -398,6 +412,7 @@ class CatalogLanguage {
             cultureCards: index.shelves
                 .where((s) => s.isCore && s.genre == 'culture')
                 .fold(0, (sum, s) => sum + s.cards),
+            hasCulture: index.shelves.any((s) => s.genre == 'culture'),
           ),
         ),
     ],
