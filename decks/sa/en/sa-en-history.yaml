@@ -1,0 +1,995 @@
+schema: 1
+id: "sa-en-history"
+kind: "layer"
+core: "sa-history"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "History"
+description: "History: kings, forts, wars and heritage."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-9300":
+    native: "Ancient; belonging to former times."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "प्राचीनः": "ancient"
+    examples:
+      "रामः प्राचीनं नगरं गच्छति":
+        native: "Rāma goes to the ancient city."
+        bases:
+          "रामः": "Rāma"
+          "प्राचीनं": "ancient"
+          "नगरं": "city"
+          "गच्छति": "to go"
+      "प्राचीनं पुस्तकं पठति":
+        native: "A person reads an ancient book."
+        bases:
+          "प्राचीनं": "ancient"
+          "पुस्तकं": "book"
+          "पठति": "to read"
+  "sa-9301":
+    native: "First in order or time."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "प्रथमः": "first"
+    examples:
+      "प्रथमो नृपो गच्छति":
+        native: "The first king goes."
+        bases:
+          "प्रथमो": "first"
+          "नृपो": "king"
+          "गच्छति": "to go"
+      "जनः प्रथमं युगं स्मरति":
+        native: "A person remembers the first age."
+        bases:
+          "जनः": "person"
+          "प्रथमं": "first"
+          "युगं": "age"
+          "स्मरति": "to remember"
+  "sa-9302":
+    native: "King; a ruler of the land."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare नृपः (nṛpaḥ) and ईश्वरः (īśvaraḥ), which also mean king or lord; भूपः (bhūpaḥ) is the word of the land (bhū)."
+    bases:
+      "भूपः": "king"
+    examples:
+      "भूपो नगरं रक्षति":
+        native: "The king protects the city."
+        bases:
+          "भूपो": "king"
+          "नगरं": "city"
+          "रक्षति": "to protect"
+      "भूपं जनो नमति":
+        native: "A person bows to the king."
+        bases:
+          "भूपं": "king"
+          "जनो": "person"
+          "नमति": "to bow"
+  "sa-9303":
+    native: "Territory or region; a circle."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "मण्डलम्": "territory"
+    examples:
+      "मण्डलं भूपो रक्षति":
+        native: "The king protects the region."
+        bases:
+          "मण्डलं": "territory"
+          "भूपो": "king"
+          "रक्षति": "to protect"
+      "मण्डलं जनो गच्छति":
+        native: "A person goes into the region."
+        bases:
+          "मण्डलं": "territory"
+          "जनो": "person"
+          "गच्छति": "to go"
+  "sa-9304":
+    native: "Soldier in an army."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "सैनिकः": "soldier"
+    examples:
+      "सैनिको नगरं रक्षति":
+        native: "The soldier protects the city."
+        bases:
+          "सैनिको": "soldier"
+          "नगरं": "city"
+          "रक्षति": "to protect"
+      "सैनिकं भूपो नयति":
+        native: "The king leads the soldier."
+        bases:
+          "सैनिकं": "soldier"
+          "भूपो": "king"
+          "नयति": "to lead"
+  "sa-9305":
+    native: "Weapon of war or hunting."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "आयुधम्": "weapon"
+    examples:
+      "आयुधं सैनिको हरति":
+        native: "The soldier takes the weapon."
+        bases:
+          "आयुधं": "weapon"
+          "सैनिको": "soldier"
+          "हरति": "to take away"
+      "आयुधं जनो रक्षति":
+        native: "A person protects the weapon."
+        bases:
+          "आयुधं": "weapon"
+          "जनो": "person"
+          "रक्षति": "to protect"
+  "sa-9306":
+    native: "Battle or war between armies."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare समरः (samaraḥ) and रणः (raṇaḥ), which also mean battle; the three words overlap in use."
+    bases:
+      "संग्रामः": "battle"
+    examples:
+      "संग्रामं नृपो जयति":
+        native: "The king wins the battle."
+        bases:
+          "संग्रामं": "battle"
+          "नृपो": "king"
+          "जयति": "to conquer"
+      "संग्रामं वीरो गायति":
+        native: "The hero sings about the battle."
+        bases:
+          "संग्रामं": "battle"
+          "वीरो": "hero"
+          "गायति": "to sing"
+  "sa-9307":
+    native: "Battle, a fight between armies."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare संग्रामः (saṃgrāmaḥ) and रणः (raṇaḥ), which also mean battle; the three words overlap in use."
+    bases:
+      "समरः": "battle"
+    examples:
+      "समरं सैनिकः पश्यति":
+        native: "The soldier sees the battle."
+        bases:
+          "समरं": "battle"
+          "सैनिकः": "soldier"
+          "पश्यति": "to see"
+      "समरं बालः पठति":
+        native: "The child reads about the battle."
+        bases:
+          "समरं": "battle"
+          "बालः": "child"
+          "पठति": "to read"
+  "sa-9309":
+    native: "Bravery in battle and danger."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare विक्रमः (vikramaḥ) and साहसम् (sāhasam), which also mean courage; शौर्यम् (śauryam) is bravery shown in action."
+    bases:
+      "शौर्यम्": "valour"
+    examples:
+      "शौर्यं वीरः करोति":
+        native: "The hero shows valour."
+        bases:
+          "शौर्यं": "valour"
+          "वीरः": "hero"
+          "करोति": "to do, make"
+      "शौर्यं सैनिकः पठति":
+        native: "The soldier reads of valour."
+        bases:
+          "शौर्यं": "valour"
+          "सैनिकः": "soldier"
+          "पठति": "to read"
+  "sa-9310":
+    native: "Courage; readiness to take a risk."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "साहसम्": "courage"
+    examples:
+      "साहसं वीरः करोति":
+        native: "The hero shows courage."
+        bases:
+          "साहसं": "courage"
+          "वीरः": "hero"
+          "करोति": "to do, make"
+      "साहसं सैनिकः स्मरति":
+        native: "The soldier remembers courage."
+        bases:
+          "साहसं": "courage"
+          "सैनिकः": "soldier"
+          "स्मरति": "to remember"
+  "sa-9311":
+    native: "Empire, the realm of a supreme ruler."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "साम्राज्यम्": "empire"
+    examples:
+      "साम्राज्यं नृपो रक्षति":
+        native: "The king protects the empire."
+        bases:
+          "साम्राज्यं": "empire"
+          "नृपो": "king"
+          "रक्षति": "to protect"
+      "साम्राज्ये जनो वसति":
+        native: "A person lives in the empire."
+        bases:
+          "साम्राज्ये": "in the empire"
+          "जनो": "person"
+          "वसति": "to live, dwell"
+  "sa-9312":
+    native: "Country or region of the land."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "देशः": "country"
+    examples:
+      "देशं वैद्यो गच्छति":
+        native: "The physician goes to the country."
+        bases:
+          "देशं": "country"
+          "वैद्यो": "physician"
+          "गच्छति": "to go"
+      "देशं रामो रक्षति":
+        native: "Rāma protects the country."
+        bases:
+          "देशं": "country"
+          "रामो": "Rāma"
+          "रक्षति": "to protect"
+  "sa-9313":
+    native: "Inscription cut into rock."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Rock edicts of Aśoka are inscriptions cut into rock in the third century BCE; they are among the oldest surviving Indian inscriptions."
+    bases:
+      "शिलालेखः": "rock inscription"
+    examples:
+      "शिलालेखं जनः पठति":
+        native: "A person reads the rock inscription."
+        bases:
+          "शिलालेखं": "rock inscription"
+          "जनः": "person"
+          "पठति": "to read"
+      "शिलालेखं नृपो लिखति":
+        native: "The king writes the rock inscription."
+        bases:
+          "शिलालेखं": "rock inscription"
+          "नृपो": "king"
+          "लिखति": "to write"
+  "sa-9314":
+    native: "Monastery or residence for monks."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare मठः (maṭhaḥ) and चैत्यम् (caityam), which also name religious buildings; विहारः (vihāraḥ) is a residence for monks."
+      "n4": "A vihara was a monastery of Buddhist monks, a place where monks lived and studied."
+    bases:
+      "विहारः": "monastery"
+    examples:
+      "विहारं जनो गच्छति":
+        native: "A person goes to the monastery."
+        bases:
+          "विहारं": "monastery"
+          "जनो": "person"
+          "गच्छति": "to go"
+      "विहारं नृपो रक्षति":
+        native: "The king protects the monastery."
+        bases:
+          "विहारं": "monastery"
+          "नृपो": "king"
+          "रक्षति": "to protect"
+  "sa-9315":
+    native: "Mound-shaped monument holding relics."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "A stupa is a mound-shaped structure that holds relics; the best-known Indian stupa is at Sanchi."
+    bases:
+      "स्तूपः": "stupa"
+    examples:
+      "स्तूपं जनः पश्यति":
+        native: "A person sees the stupa."
+        bases:
+          "स्तूपं": "stupa"
+          "जनः": "person"
+          "पश्यति": "to see"
+      "स्तूपं नृपो वदति":
+        native: "The king speaks of the stupa."
+        bases:
+          "स्तूपं": "stupa"
+          "नृपो": "king"
+          "वदति": "to speak"
+  "sa-9316":
+    native: "Arrow, a shaft shot from a bow."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it."
+      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "बाणः": "arrow"
+    examples:
+      "बाणं वीरो धरति":
+        native: "The hero holds an arrow."
+        bases:
+          "बाणं": "arrow"
+          "वीरो": "hero"
+          "धरति": "to hold, wear"
+      "बाणेन वीरो जयति":
+        native: "The hero wins with an arrow."
+        bases:
+          "बाणेन": "with an arrow"
+          "वीरो": "hero"
+          "जयति": "to conquer, win"
+  "sa-9317":
+    native: "Glory, power and majesty of a ruler."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "प्रतापः": "glory"
+    examples:
+      "प्रतापं नृपः पश्यति":
+        native: "The king beholds his glory."
+        bases:
+          "प्रतापं": "glory"
+          "नृपः": "king"
+          "पश्यति": "to see"
+      "प्रतापं जनः पठति":
+        native: "A person reads of the glory."
+        bases:
+          "प्रतापं": "glory"
+          "जनः": "person"
+          "पठति": "to read"
+  "sa-9318":
+    native: "Rise to power or prosperity."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "उत्थानम्": "rise"
+    examples:
+      "उत्थानं जनो वदति":
+        native: "A person speaks of the rise."
+        bases:
+          "उत्थानं": "rise"
+          "जनो": "person"
+          "वदति": "to speak"
+      "उत्थानं नृपः पश्यति":
+        native: "The king sees the rise."
+        bases:
+          "उत्थानं": "rise"
+          "नृपः": "king"
+          "पश्यति": "to see"
+  "sa-9319":
+    native: "Fall from power or prosperity."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare उत्थानम् (utthānam), the rise that this word is the opposite of."
+    bases:
+      "पतनम्": "fall"
+    examples:
+      "पतनं बालः पठति":
+        native: "The child reads of the fall."
+        bases:
+          "पतनं": "fall"
+          "बालः": "child"
+          "पठति": "to read"
+      "पतनं जनः पठति":
+        native: "A person reads of the fall."
+        bases:
+          "पतनं": "fall"
+          "जनः": "person"
+          "पठति": "to read"
+  "sa-9320":
+    native: "Attack or invasion of a land."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "आक्रमणम्": "attack"
+    examples:
+      "आक्रमणं सैनिकः करोति":
+        native: "The soldier makes an attack."
+        bases:
+          "आक्रमणं": "attack"
+          "सैनिकः": "soldier"
+          "करोति": "to do, make"
+      "आक्रमणं नृपः पश्यति":
+        native: "The king sees the attack."
+        bases:
+          "आक्रमणं": "attack"
+          "नृपः": "king"
+          "पश्यति": "to see"
+  "sa-9321":
+    native: "Flight from danger or battle."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "पलायनम्": "flight"
+    examples:
+      "पलायनं सैनिकः करोति":
+        native: "The soldier takes to flight."
+        bases:
+          "पलायनं": "flight"
+          "सैनिकः": "soldier"
+          "करोति": "to do, make"
+      "पलायनं बालः पठति":
+        native: "The child reads of the flight."
+        bases:
+          "पलायनं": "flight"
+          "बालः": "child"
+          "पठति": "to read"
+  "sa-9322":
+    native: "Silver, a precious metal."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "रजतम्": "silver"
+    examples:
+      "रजतं बालः पश्यति":
+        native: "The child sees the silver."
+        bases:
+          "रजतं": "silver"
+          "बालः": "child"
+          "पश्यति": "to see"
+      "रजतं नृपो ददाति":
+        native: "The king gives silver."
+        bases:
+          "रजतं": "silver"
+          "नृपो": "king"
+          "ददाति": "to give"
+  "sa-9323":
+    native: "Victory in battle or contest."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "विजयः": "victory"
+    examples:
+      "विजयं वीरः पश्यति":
+        native: "The hero sees victory."
+        bases:
+          "विजयं": "victory"
+          "वीरः": "hero"
+          "पश्यति": "to see"
+      "विजयं जनो गायति":
+        native: "A person sings of victory."
+        bases:
+          "विजयं": "victory"
+          "जनो": "person"
+          "गायति": "to sing"
+  "sa-9324":
+    native: "Age or era of time."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare कालः (kālaḥ), time in general; युगम् (yugam) is a fixed age or era within it."
+    bases:
+      "युगम्": "age"
+    examples:
+      "युगं जनः पठति":
+        native: "A person reads of the age."
+        bases:
+          "युगं": "age"
+          "जनः": "person"
+          "पठति": "to read"
+      "युगं जनः स्मरति":
+        native: "A person remembers the age."
+        bases:
+          "युगं": "age"
+          "जनः": "person"
+          "स्मरति": "to remember"
+  "sa-9326":
+    native: "Account of past events."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "इतिहासः": "history"
+    examples:
+      "इतिहासं जनः पठति":
+        native: "A person reads history."
+        bases:
+          "इतिहासं": "history"
+          "जनः": "person"
+          "पठति": "to read"
+      "इतिहासं नृपो लिखति":
+        native: "The king writes history."
+        bases:
+          "इतिहासं": "history"
+          "नृपो": "king"
+          "लिखति": "to write"
+  "sa-9327":
+    native: "Monastery or a hermit's dwelling."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare विहारः (vihāraḥ), a monastery for monks, and आश्रमः (āśramaḥ), a hermitage; मठः (maṭhaḥ) is a dwelling of religious people."
+    bases:
+      "मठः": "monastery"
+    examples:
+      "मठं जनो वसति":
+        native: "A person dwells in the monastery."
+        bases:
+          "मठं": "monastery"
+          "जनो": "person"
+          "वसति": "to dwell"
+      "मठं बालः पठति":
+        native: "The child reads in the monastery."
+        bases:
+          "मठं": "monastery"
+          "बालः": "child"
+          "पठति": "to read"
+  "sa-9328":
+    native: "Shrine or sacred place of worship."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "A chaitya is a shrine or a hall for worship in Buddhist and Jain traditions."
+    bases:
+      "चैत्यः": "shrine"
+    examples:
+      "चैत्यं सैनिकः पश्यति":
+        native: "The soldier sees the shrine."
+        bases:
+          "चैत्यं": "shrine"
+          "सैनिकः": "soldier"
+          "पश्यति": "to see"
+      "चैत्यं जनो नमति":
+        native: "A person bows at the shrine."
+        bases:
+          "चैत्यं": "shrine"
+          "जनो": "person"
+          "नमति": "to bow"
+  "sa-9329":
+    native: "Copper, a metal; also a copper plate for inscriptions."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "ताम्रम्": "copper"
+    examples:
+      "ताम्रं नृपो हरति":
+        native: "The king takes the copper."
+        bases:
+          "ताम्रं": "copper"
+          "नृपो": "king"
+          "हरति": "to take away"
+      "ताम्रं सैनिको धरति":
+        native: "The soldier holds the copper plate."
+        bases:
+          "ताम्रं": "copper"
+          "सैनिको": "soldier"
+          "धरति": "to hold"
+  "sa-9330":
+    native: "Period or occasion of time."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare कालः (kālaḥ), time in general; समयः (samayaḥ) is a particular time or occasion."
+    bases:
+      "समयः": "time"
+    examples:
+      "समयं जनः पठति":
+        native: "A person reads of the time."
+        bases:
+          "समयं": "time"
+          "जनः": "person"
+          "पठति": "to read"
+      "समयं नृपो वदति":
+        native: "The king speaks of the time."
+        bases:
+          "समयं": "time"
+          "नृपो": "king"
+          "वदति": "to speak"
+  "sa-9331":
+    native: "Past; gone by in time."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "अतीतः": "past"
+    examples:
+      "अतीतं युगं जनः पठति":
+        native: "A person reads of the past age."
+        bases:
+          "अतीतं": "past"
+          "युगं": "age"
+          "जनः": "person"
+          "पठति": "to read"
+      "अतीतं जनः पठति":
+        native: "A person reads of the past."
+        bases:
+          "अतीतं": "past"
+          "जनः": "person"
+          "पठति": "to read"
+  "sa-9332":
+    native: "Primeval; belonging to the earliest time."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "आदिमः": "primeval"
+    examples:
+      "आदिमो जनो वसति":
+        native: "A primeval person dwells."
+        bases:
+          "आदिमो": "primeval"
+          "जनो": "person"
+          "वसति": "to dwell"
+      "आदिमं गृहं पश्यति":
+        native: "One sees a primitive house."
+        bases:
+          "आदिमं": "primeval"
+          "गृहं": "house"
+          "पश्यति": "to see"
+  "sa-9333":
+    native: "Renowned; known far and wide."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "ख्यातः": "renowned"
+    examples:
+      "ख्यातो नृपो गच्छति":
+        native: "The renowned king goes."
+        bases:
+          "ख्यातो": "renowned"
+          "नृपो": "king"
+          "गच्छति": "to go"
+      "जनः ख्यातं नगरं स्मरति":
+        native: "A person remembers the renowned city."
+        bases:
+          "जनः": "person"
+          "ख्यातं": "renowned"
+          "नगरं": "city"
+          "स्मरति": "to remember"
+  "sa-9334":
+    native: "Valour and skill in action."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare शौर्यम् (śauryam) and साहसम् (sāhasam), which also name bravery; विक्रमः (vikramaḥ) is valour shown by strength."
+    bases:
+      "विक्रमः": "valour"
+    examples:
+      "विक्रमं वीरः करोति":
+        native: "The hero shows valour."
+        bases:
+          "विक्रमं": "valour"
+          "वीरः": "hero"
+          "करोति": "to do, make"
+      "विक्रमं सैनिकः पठति":
+        native: "The soldier reads of valour."
+        bases:
+          "विक्रमं": "valour"
+          "सैनिकः": "soldier"
+          "पठति": "to read"
+  "sa-9335":
+    native: "Lord, a ruler or a supreme being."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare नृपः (nṛpaḥ) and भूपः (bhūpaḥ), which name a king; ईश्वरः (īśvaraḥ) is a lord in general."
+    bases:
+      "ईश्वरः": "lord"
+    examples:
+      "ईश्वरं जनो नमति":
+        native: "A person bows to the lord."
+        bases:
+          "ईश्वरं": "lord"
+          "जनो": "person"
+          "नमति": "to bow"
+      "ईश्वरो जनं रक्षति":
+        native: "The lord protects the person."
+        bases:
+          "ईश्वरो": "lord"
+          "जनं": "person"
+          "रक्षति": "to protect"
+  "sa-9336":
+    native: "Prince, a king's son."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare राजपुत्रः (rājaputraḥ), which also means a prince or royal son."
+    bases:
+      "राजकुमारः": "prince"
+    examples:
+      "राजकुमारो गृहे वसति":
+        native: "The prince dwells in the house."
+        bases:
+          "राजकुमारो": "prince"
+          "गृहे": "house"
+          "वसति": "to dwell"
+      "राजकुमारं बालः पश्यति":
+        native: "The child sees the prince."
+        bases:
+          "राजकुमारं": "prince"
+          "बालः": "child"
+          "पश्यति": "to see"
+  "sa-9337":
+    native: "Son of a king; a prince."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare राजकुमारः (rājakumāraḥ), which also means a prince."
+    bases:
+      "राजपुत्रः": "royal son"
+    examples:
+      "राजपुत्रो नगरं गच्छति":
+        native: "The royal son goes to the city."
+        bases:
+          "राजपुत्रो": "royal son"
+          "नगरं": "city"
+          "गच्छति": "to go"
+      "राजपुत्रं रामो नमति":
+        native: "Rāma bows to the royal son."
+        bases:
+          "राजपुत्रं": "royal son"
+          "रामो": "Rāma"
+          "नमति": "to bow"
+  "sa-9338":
+    native: "Decay, wasting away or destruction."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "क्षयः": "decay"
+    examples:
+      "क्षयं जनः पश्यति":
+        native: "A person sees the decay."
+        bases:
+          "क्षयं": "decay"
+          "जनः": "person"
+          "पश्यति": "to see"
+      "क्षयं वैद्यः पश्यति":
+        native: "The physician sees the decay."
+        bases:
+          "क्षयं": "decay"
+          "वैद्यः": "physician"
+          "पश्यति": "to see"
+  "sa-9339":
+    native: "Destruction or loss of something."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare विनाशः (vināśaḥ), which means ruin and is stronger than नाशः (nāśaḥ)."
+    bases:
+      "नाशः": "destruction"
+    examples:
+      "नाशं सैनिकः करोति":
+        native: "The soldier causes destruction."
+        bases:
+          "नाशं": "destruction"
+          "सैनिकः": "soldier"
+          "करोति": "to do, make"
+      "नाशं वीरो रक्षति":
+        native: "The hero prevents destruction."
+        bases:
+          "नाशं": "destruction"
+          "वीरो": "hero"
+          "रक्षति": "to protect"
+  "sa-9340":
+    native: "Ruin; complete destruction."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare नाशः (nāśaḥ), which means destruction or loss in a milder sense."
+    bases:
+      "विनाशः": "ruin"
+    examples:
+      "विनाशं जनः पश्यति":
+        native: "A person sees the ruin."
+        bases:
+          "विनाशं": "ruin"
+          "जनः": "person"
+          "पश्यति": "to see"
+      "विनाशो भवति":
+        native: "Ruin occurs."
+        bases:
+          "विनाशो": "ruin"
+          "भवति": "to be, become"
+  "sa-9341":
+    native: "Breaking; the defeat of an army."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "भङ्गः": "breaking"
+    examples:
+      "भङ्गं सैनिकः पश्यति":
+        native: "The soldier sees the defeat."
+        bases:
+          "भङ्गं": "defeat"
+          "सैनिकः": "soldier"
+          "पश्यति": "to see"
+      "भङ्गं नृपः पश्यति":
+        native: "The king sees the defeat."
+        bases:
+          "भङ्गं": "breaking"
+          "नृपः": "king"
+          "पश्यति": "to see"
+  "sa-9342":
+    native: "Broken; ruined."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "भग्नः": "broken"
+    examples:
+      "भग्नो रथः पतति":
+        native: "The broken chariot falls."
+        bases:
+          "भग्नो": "broken"
+          "रथः": "chariot"
+          "पतति": "to fall"
+      "जनो भग्नं गृहं पश्यति":
+        native: "A person sees the broken house."
+        bases:
+          "जनो": "person"
+          "भग्नं": "broken"
+          "गृहं": "house"
+          "पश्यति": "to see"
+  "sa-9343":
+    native: "Destroyed; lost or ruined."
+    notes:
+      "n1": "An a-stem adjective takes the gender, number and case of the noun it describes; the card gives its masculine nominative singular."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "नष्टः": "destroyed"
+    examples:
+      "जनो नष्टं नगरं पश्यति":
+        native: "A person sees the destroyed city."
+        bases:
+          "जनो": "person"
+          "नष्टं": "destroyed"
+          "नगरं": "city"
+          "पश्यति": "to see"
+      "नष्टो बालः पठति":
+        native: "The lost child reads."
+        bases:
+          "नष्टो": "destroyed"
+          "बालः": "child"
+          "पठति": "to read"
+  "sa-9344":
+    native: "Act of building or constructing."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "निर्माणम्": "construction"
+    examples:
+      "निर्माणं नृपः करोति":
+        native: "The king makes a construction."
+        bases:
+          "निर्माणं": "construction"
+          "नृपः": "king"
+          "करोति": "to do, make"
+      "निर्माणं सैनिकः पश्यति":
+        native: "The soldier sees the construction."
+        bases:
+          "निर्माणं": "construction"
+          "सैनिकः": "soldier"
+          "पश्यति": "to see"
+  "sa-9345":
+    native: "Stone or a block of rock."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "प्रस्तरः": "stone"
+    examples:
+      "प्रस्तरं बालो हरति":
+        native: "The child takes a stone."
+        bases:
+          "प्रस्तरं": "stone"
+          "बालो": "child"
+          "हरति": "to take away"
+      "प्रस्तरः पतति":
+        native: "A stone falls."
+        bases:
+          "प्रस्तरः": "stone"
+          "पतति": "to fall"
+  "sa-9346":
+    native: "Beginning of an action or undertaking."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "प्रारम्भः": "beginning"
+    examples:
+      "प्रारम्भं नृपः करोति":
+        native: "The king makes a beginning."
+        bases:
+          "प्रारम्भं": "beginning"
+          "नृपः": "king"
+          "करोति": "to do, make"
+      "प्रारम्भं बालः करोति":
+        native: "The child makes a start."
+        bases:
+          "प्रारम्भं": "beginning"
+          "बालः": "child"
+          "करोति": "to do, make"
+  "sa-9347":
+    native: "Close or end of an event or period."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+      "n3": "Compare अन्तः (antaḥ), the end in general; अवसानम् (avasānam) is the close of an event or period."
+    bases:
+      "अवसानम्": "end"
+    examples:
+      "अवसानं नृपः पश्यति":
+        native: "The king sees the end."
+        bases:
+          "अवसानं": "end"
+          "नृपः": "king"
+          "पश्यति": "to see"
+      "अवसानं रामः पठति":
+        native: "Rāma reads of the end."
+        bases:
+          "अवसानं": "end"
+          "रामः": "Rāma"
+          "पठति": "to read"
+  "sa-9348":
+    native: "Goods offered for sale; merchandise."
+    notes:
+      "n1": "A neuter a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "पण्यम्": "merchandise"
+    examples:
+      "पण्यं जनो हरति":
+        native: "A person takes the merchandise."
+        bases:
+          "पण्यं": "merchandise"
+          "जनो": "person"
+          "हरति": "to take away"
+      "पण्यं बालो नयति":
+        native: "The child brings the goods."
+        bases:
+          "पण्यं": "merchandise"
+          "बालो": "child"
+          "नयति": "to lead"
+  "sa-9349":
+    native: "Market or bazaar where goods are sold."
+    notes:
+      "n1": "A masculine a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as the example writes it. A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ))."
+    bases:
+      "हट्टः": "market"
+    examples:
+      "हट्टं जनो गच्छति":
+        native: "A person goes to the market."
+        bases:
+          "हट्टं": "market"
+          "जनो": "person"
+          "गच्छति": "to go"
+      "हट्टं बालः पश्यति":
+        native: "The child sees the market."
+        bases:
+          "हट्टं": "market"
+          "बालः": "child"
+          "पश्यति": "to see"
