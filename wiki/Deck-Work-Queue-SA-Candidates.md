@@ -484,3 +484,294 @@ Candidates listed: 62
 Dropped (not usable): युवती (no usable entry or taught)
 
 
+## sa-literature (planned 90, none built; list needs 135). Rows 1 to 43 are literary terms and texts; the rest is Kālidāsa's descriptive vocabulary (Śākuntalam, Meghadūta) for reading-led cards
+
+Candidates listed: 141
+
+| # | Lemma | IAST | Head line (en.wiktionary) | Gloss | Stem | Table | Confirmed | Usage |
+|--|--|--|--|--|--|--|--|--|
+| 1 | अङ्क | aṅka | noun stem, m | hook; part of a chariot; curve | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.19 | Śākuntalam |
+| 2 | अतिशयोक्ति | atiśayokti | noun stem, m | overexaggeration | i-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 3 | अध्याय | adhyāya | noun stem, m | lesson, lecture; chapter, reading; the time for a lesson or reading | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 4 | अनुप्रास | anuprāsa | noun stem, m | alliteration | a-stem | yes | Wiktionary page + head line + table; c. 700 CE, Daṇḍin, Kāvyādarśa 1.55 | Kāvyādarśa 1.55 |
+| 5 | अनुवाक | anuvāka | noun stem, m | saying after, repeating; reading; section (especially of the Vedas) | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 6 | अनुवाद | anuvāda | noun stem, m | interpretation; translation; recitation; repetition | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 7 | अनुष्टुभ् | anuṣṭubh | noun stem, f | the Anuṣṭubh (a category of poetic measures characterised by 32-syllab | root-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 10.130.4 | Ṛgveda 10.130.4 |
+| 8 | उल्लास | ullāsa | noun stem, m | light, splendour; the coming forth, becoming visible, appearing | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 9 | ओजस् | ojas | noun stem, n | ability, strength; vigour | as-stem | yes | Wiktionary page + head line + table; c. 1500 BCE – 1000 BCE, Ṛgveda 6.18.15 | Ṛgveda 6.18.15 |
+| 10 | कथानक | kathānaka | noun stem, n | a little tale | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 11 | कवि | kavi | noun stem, m | wise man, sage, seer, prophet; a singer, bard, poet | i-stem | yes | Wiktionary page + head line + table; Manu 2.151 | Manusmṛti |
+| 12 | काण्ड | kāṇḍa or kāṇḍa | noun stem, m or n | a joint of the stalk of a cane or bamboo; section, portion, chapter | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.12 (as compound member) | Śākuntalam |
+| 13 | गायत्री | gāyatrī | noun stem, f | an ancient metre of twenty-four syllables | ī-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 14 | चरण | caraṇa | noun stem, m or n | foot (Gobh., Mn., Bādar. MBh., etc.); pillar, support; tree root | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.12 | Śākuntalam |
+| 15 | जगती | jagatī | noun stem, f | the earth; people, mankind; a female animal, a cow | ī-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 16 | जातक | jātaka | noun stem, m | a newborn child (Kauś.); a mendicant | a-stem | yes | Wiktionary page + head line + table; Manu 2.27 (as compound member) | Manusmṛti |
+| 17 | टीका | ṭīkā | noun stem, f | a commentary (esp. on another commentary), gloss | ā-stem | yes | Wiktionary page + head line + table; YS 1.1 (as compound member) | Yoga Sūtra |
+| 18 | पठन | paṭhana | noun stem, n | study; reading; studying; reciting; recitation | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 19 | पर्वन् | parvan | noun stem, n | joint, limb; knot, particularly of reeds; division, section | an-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 20 | पिङ्गल | piṅgala | adj stem | reddish-brown, tawny; yellow, gold-colored | a-stem | yes | Wiktionary page + head line + table; Manu 3.8 | Manusmṛti |
+| 21 | प्रबन्ध | prabandha | noun stem, m | continuous application or action, continuance, uninterruptedness | a-stem | yes | Wiktionary page + head line + table; YS 3.39 | Yoga Sūtra |
+| 22 | प्रहसन | prahasana | noun stem, n | laughter, amusement, mockery (Uttara., Hit.); satire, sarcasm | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 23 | भास | bhāsa | noun stem, m | light; lustre; brightness | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 24 | महाभारत | mahābhārata | noun stem, n or m | Mahabharata | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 25 | मालिनी | mālinī | noun stem, f | the wife of a garland-maker or gardener; a female florist | ī-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.17 | Śākuntalam |
+| 26 | यति | yati | noun stem, m | an ascetic, devotee, one who has restrained his passions and abandoned | i-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 27 | रीति | rīti | noun stem, f | motion, course; stream, current; line, row, course of things | i-stem | yes | Wiktionary page + head line + table; Manu 2.246 (as compound member) | Manusmṛti |
+| 28 | रूपक | rūpaka | noun stem, m | a certain coin (Var., Pañcat., etc.); a kind of measure (Saṃgīt.) | a-stem | yes | Wiktionary page + head line + table; YS 2.31 (as compound member) | Yoga Sūtra |
+| 29 | वेताल | vetāla | noun stem, m | vetala, a kind of demon that takes possession of a dead body | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 30 | व्याख्या | vyākhyā | noun stem, f | explanation, exposition, gloss, comment, paraphrase | ā-stem | yes | Wiktionary page + head line + table; YS 1.44 (as compound member) | Yoga Sūtra |
+| 31 | व्यास | vyāsa | noun stem, m | severing, separation, division | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.8 (as compound member) | Śākuntalam |
+| 32 | श्रवण | śravaṇa | noun stem, m | ear; the hypotenuse of a triangle or the diagonal of a tetragon | a-stem | yes | Wiktionary page + head line + table; Manu 2.144 (as compound member) | Manusmṛti |
+| 33 | श्रोतृ | śrotṛ | noun stem, m or f | one who hears, hearing, a hearer | ṛ-stem | yes | Wiktionary page + head line + table; Manu 8.272 | Manusmṛti |
+| 34 | सरस्वती | sarasvatī | noun stem, f | any river; speech or the power of speech, eloquence, learning wisdom | ī-stem | yes | Wiktionary page + head line + table; Manu 8.105 | Manusmṛti |
+| 35 | सर्ग | sarga | noun stem, m | discharging, voiding, letting go or getting rid of (any excrement) | a-stem | yes | Wiktionary page + head line + table; Manu 8.143 (as compound member) | Manusmṛti |
+| 36 | सुभाषित | subhāṣita | noun stem, n | fine speech; witty saying, aphorism, maxim | a-stem | yes | Wiktionary page + head line + table; Manu 2.239 | Manusmṛti |
+| 37 | सूक्त | sūkta | noun stem, n | good speech; wise saying; song of praise; a Vedic hymn | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 38 | स्कन्ध | skandha | noun stem, m | shoulder, torso; tree trunk; large branch or bough | a-stem | yes | Wiktionary page + head line + table; YS 4.22 | Yoga Sūtra |
+| 39 | बिन्दु | bindu | noun stem, n | a detached particle, drop, globule, dot, spot; a pearl | u-stem | yes | Wiktionary page + head line + table; Manu 7.33 (as compound member) | Manusmṛti |
+| 40 | प्रस्ताव | prastāva | noun stem, m | mention, offer, proposal, topic; introduction, commencement | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.13 | Śākuntalam |
+| 41 | निदर्शन | nidarśana | noun stem, n | seeing, view, appearance, sight, vision | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.5 | Śākuntalam |
+| 42 | रमणीय | ramaṇīya | adj stem | delightful, pleasing, pleasant, agreeable | a-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.13 | Śākuntalam |
+| 43 | मुग्ध | mugdha | adj stem | perplexed, bewildered; gone astray, lost; foolish, ignorant, silly | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.3 | Śākuntalam |
+| 44 | कान्ति | kānti | noun stem, f | desire, wish | i-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.26 | Śākuntalam |
+| 45 | शोभा | śobhā | noun stem, f | splendour, brilliance, lustre, beauty, grace, loveliness | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.3 | Śākuntalam |
+| 46 | वपुस् | vapus | noun stem, n | form, figure (especially a beautiful form or figure) | us-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.14 | Śākuntalam |
+| 47 | कपोल | kapola | noun stem, m | cheek | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.13 | Śākuntalam |
+| 48 | अधर | adhara | noun stem, m | the lower lip, the lip | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.22 | Śākuntalam |
+| 49 | वदन | vadana | noun stem, n | mouth, face; speaking, saying | a-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.27 | Śākuntalam |
+| 50 | बाष्प | bāṣpa | noun stem, m | a tear, tears; steam, vapour | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.23 | Śākuntalam |
+| 51 | अश्रु | aśru | noun stem, n | tear | u-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.15 | Śākuntalam |
+| 52 | केका | kekā | noun stem, f | cry of a peacock | ā-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 53 | कोलाहल | kolāhala | noun stem, m or n | a loud and confused sound, uproar, great and indistinct noise (of men, | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.1 | Śākuntalam |
+| 54 | फेन | phena | noun stem, m or n | foam, froth, scum; moisture of the lips, saliva | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 55 | रश्मि | raśmi | noun stem, f | rope, string, cord; rein, bridle, leash; whip, goad; measuring cord | i-stem | yes | Wiktionary page + head line + table; Manu 9.305 | Manusmṛti |
+| 56 | क्षपा | kṣapā | noun stem, f | night | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.5 | Śākuntalam |
+| 57 | व्योमन् | vyoman | noun stem, m | heaven, sky, atmosphere, air; space | an-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 58 | नभस् | nabhas | noun stem, n | mist, fog, clouds, vapour | as-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 59 | सुकुमार | sukumāra | adj stem | very tender or delicate | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.12 | Śākuntalam |
+| 60 | सलज्ज | salajja | adj stem | having shame, modest | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.17 | Śākuntalam |
+| 61 | प्रमद | pramada | noun stem, m | pleasure, delight | a-stem | yes | Wiktionary page + head line + table; Manu 2.214 | Manusmṛti |
+| 62 | मुक्ता | muktā | noun stem, f | pearl; unchaste woman; species of plant | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.23 | Śākuntalam |
+| 63 | केतक | ketaka | noun stem, m | screw pine (Pandanus fascicularis or odoratissimus) | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 64 | कन्दर | kandara | noun stem, m | "great cliff", an artificial or natural cave, glen, defile, valley | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 65 | उटज | uṭaja | noun stem, m or n | a hut made of leaves (the residence of hermits or saints); a hut | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.17 | Śākuntalam |
+| 66 | सुरा | surā | noun stem, f | wine, spirituous liquor | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.15 | Śākuntalam |
+| 67 | स्वादु | svādu | noun stem, m | sweetness; pleasantness, charm, beauty; sugar, molasses | u-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 68 | पावन | pāvana | adj stem | purificatory, purifying, sanctifying, pure, holy | a-stem | yes | Wiktionary page + head line + table; Manu 2.26 | Manusmṛti |
+| 69 | सुमनस् | sumanas | adj stem | good-minded, well-disposed, benevolent, gracious, favourable, pleasant | as-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.2 | Śākuntalam |
+| 70 | श्लाघ्य | ślāghya | adj  | to be praised, praiseworthy; respectable, venerable | a-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.19 | Śākuntalam |
+| 71 | गम्भीर | gambhīra | adj  | deep; serious | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 72 | उदार | udāra | adj stem | noble; liberal; honest; eloquent; bountiful; high; lofty | a-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.22 | Śākuntalam |
+| 73 | सौम्य | saumya or saumya | adj stem | related or pertaining to Soma; cool and moist; northern | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 74 | तनु | tanu | noun stem, f or m | body, person, self; the body, person, self; form or manifestation | u-stem | yes | Wiktionary page + head line + table; Manu 2.28 | Manusmṛti |
+| 75 | तन्वी | tanvī | noun stem, f | slender or delicate woman | ī-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.18 | Śākuntalam |
+| 76 | श्याम | śyāma | noun stem, m | a black bull; a particular राग (rāga) (Saṃgīt.) | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 77 | मृदु | mṛdu | noun stem, m | the planet Saturn (VarBṛS.) | u-stem | yes | Wiktionary page + head line + table; Manu 8.327 | Manusmṛti |
+| 78 | पयस् | payas | noun stem, n | milk; milk; any fluid or juice; water or rain; milk | as-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 79 | पावक | pāvaka | noun stem, m | fire or the god of fire | a-stem | yes | Wiktionary page + head line + table; Manu 2.187 | Manusmṛti |
+| 80 | तेजस् | tejas | noun stem, n | the sharp edge of a knife; the point or top of a flame or a ray | as-stem | yes | Wiktionary page + head line + table; Manu 7.5 | Manusmṛti |
+| 81 | वीरुध् | vīrudh | noun stem, m | a plant, herb; especially a creeping plant | root-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.9 | Śākuntalam |
+| 82 | शार्दूल | śārdūla | noun stem, m | tiger; lion; panther; leopard; doctorbush (Plumbago zeylanica) | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.1 | Śākuntalam |
+| 83 | पन्नग | pannaga | noun stem, m | a serpent or serpent-demon (Suparṇ., MBh., etc.) | a-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.31 | Śākuntalam |
+| 84 | चाप | cāpa | noun stem, m or n | bow; arc | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.26 | Śākuntalam |
+| 85 | धनु | dhanu | noun stem, m or n | bow; the sign of Sagittarius | u-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.32 | Śākuntalam |
+| 86 | शरु | śaru | noun stem, m or f | arrow, dart, missile | u-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.3 | Śākuntalam |
+| 87 | महर्षि | maharṣi | noun stem, m | a Maharishi | i-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.2 | Śākuntalam |
+| 88 | छवि | chavi | noun stem, f | skin, cuticle; colour of the skin, colour; beauty, splendour | i-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.8 | Śākuntalam |
+| 89 | मणिबन्ध | maṇibandha | noun stem, m | the wrist; the fastening or putting on of jewel | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.21 | Śākuntalam |
+| 90 | याच्ञा | yācñā | noun stem, f | begging, asking alms, mendicancy; asking for | ā-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 91 | उन्मत्त | unmatta | adj stem | drunk, intoxicated; frantic; insane, mad | a-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.13 | Śākuntalam |
+| 92 | प्रमत्त | pramatta | adj stem | tipsy; drunk; intoxicated | a-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.1 | Śākuntalam |
+| 93 | वक्तव्य | vaktavya | noun stem, n | speaking, speech | a-stem | yes | Wiktionary page + head line + table; YS 3.1 | Yoga Sūtra |
+| 94 | परोक्ष | parokṣa | adj stem | beyond the range of sight, unknown, unintelligible, mysterious | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.26 | Śākuntalam |
+| 95 | धृष्ट | dhṛṣṭa | adj  | bold, daring, confident, audacious, impudent; secured, obtained | a-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.19 | Śākuntalam |
+| 96 | क्रूर | krūra | noun stem, n | wound, sore; blood-shedding, slaughter, cruelty, harshness | a-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.9 | Śākuntalam |
+| 97 | उग्र | ugra | adj  | mighty, formidable, powerful; furious, terrible, wrathful, savage | a-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.23 | Śākuntalam |
+| 98 | कटुक | kaṭuka | noun stem, m | name of several plants; name of a man | a-stem | yes | Wiktionary page + head line + table; RV 10.85.34 (as compound member) | Ṛgveda 10.85 |
+| 99 | पटु | paṭu | adj  | sharp, pungent, acrid, harsh, shrill, keen, strong, intense, violent | u-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 100 | पृथु | pṛthu | adj stem | broad, wide, expansive, extensive, spacious, large; great, important | u-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.9 | Śākuntalam |
+| 101 | रोहित | rohita | noun stem, m | red or a chestnut coloured horse; a kind of deer | a-stem | yes | Wiktionary page + head line + table; Manu 7.78 (as compound member) | Manusmṛti |
+| 102 | माधव | mādhava | noun stem, m | a descendant of the Madhu race | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.5 (as compound member) | Śākuntalam |
+| 103 | नयन | nayana | noun stem, n | conducting, guiding, directing; eye | a-stem | yes | Wiktionary page + head line + table; YS 3.40 | Yoga Sūtra |
+| 104 | भुवन | bhuvana | noun stem, n | a being, living thing; existence, being; the world | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.26 | Śākuntalam |
+| 105 | श्रेयस् | śreyas | noun stem, m or n | name of various things; n good, good state; happiness | as-stem | yes | Wiktionary page + head line + table; Manu 9.184 | Manusmṛti |
+| 106 | चक्षुस् | cakṣus | noun stem, n | light; clearness; the faculty of seeing; sight; vision | us-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.13 | Śākuntalam |
+| 107 | वचस् | vacas | noun stem, n | word, speech; voice | as-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.28 | Śākuntalam |
+| 108 | यत्न | yatna | noun stem, m | activity of will, volition, aspiring after; performance, work | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.2 | Śākuntalam |
+| 109 | स्मर | smara | noun stem, m | memory, remembrance, recollection | a-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.23 | Śākuntalam |
+| 110 | अद्रि | adri | noun stem, m | rock, stone; mountain | i-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 111 | कैलास | kailāsa | noun stem, m | Mount Kailasa (fabulous residence of Shiva | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 112 | गौरी | gaurī | noun stem, f | a female Gaur | ī-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 113 | निवास | nivāsa | noun stem, m | clothing, dress; living, dwelling, residing | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.20 | Śākuntalam |
+| 114 | भवन | bhavana | noun stem, m or n | building, edifice; house, dwelling, residence; mansion, palace | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.20 | Śākuntalam |
+| 115 | तरु | taru | noun stem, m | tree | u-stem | yes | Wiktionary page + head line + table; Manu 8.406 | Manusmṛti |
+| 116 | वज्र | vajra | noun stem, m | "the hard or mighty one", a thunderbolt | a-stem | yes | Wiktionary page + head line + table; Manu 7.191 | Manusmṛti |
+| 117 | शक्ति | śakti or śakti | noun stem, f | strength, power, might; ability | i-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.26 | Śākuntalam |
+| 118 | वेग | vega | noun stem, m | speed; velocity; rapidity; impetus; momentum; stream; current | a-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.8 | Śākuntalam |
+| 119 | चित्रा | citrā | noun stem, f | the 12th or 13th asterism | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.14 | Śākuntalam |
+| 120 | विशाखा | viśākhā | noun stem, f | the 14th (later 16th) lunar asterism (figured by a decorated arch and  | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.11 | Śākuntalam |
+| 121 | रोहिणी | rohiṇī | noun stem, f | a red cow or (later) any cow; lightning | ī-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.22 | Śākuntalam |
+| 122 | मालिन् | mālin | noun stem, m | gardener, florist | in-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.13 (as compound member) | Śākuntalam |
+| 123 | स्नात | snāta | noun stem, m | one whose religious study has finished; an initiated householder | a-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.11 | Śākuntalam |
+| 124 | निषण्ण | niṣaṇṇa | adj stem | sitting, seated; lying, resting, leaning upon | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 125 | सुप्त | supta | adj stem | asleep, fallen asleep; resting, inactive, dull, latent | a-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.11 | Śākuntalam |
+| 126 | गात्र | gātra | noun stem, n | "instrument for movement", a limb or a part of the body; the body | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.19 | Śākuntalam |
+| 127 | प्राणिन् | prāṇin | noun stem, m | a living or sentient being, living creature, animal or man | in-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.1 | Śākuntalam |
+| 128 | जन्तु | jantu | noun stem, m | child, offspring; person, creature, living being | u-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.2 | Śākuntalam |
+| 129 | तात | tāta | noun stem, m | daddy, papa | a-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.23 | Śākuntalam |
+| 130 | आयुष्मत् | āyuṣmat | adj stem | possessed of vital power, healthy, long-lived; alive, living | mat-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.31 | Śākuntalam |
+| 131 | भगवत् | bhagavat | adj  | fortunate; prosperous (possessing fortune); glorious; illustrious | vat-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.17 | Śākuntalam |
+| 132 | वत्स | vatsa | noun stem, m or n | m a calf, the young of any animal, offspring, child | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.23 | Śākuntalam |
+| 133 | दिष्टि | diṣṭi | noun stem, f | direction | i-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.4 | Śākuntalam |
+| 134 | रहस् | rahas | noun stem, n | a lonely or deserted place, loneliness, solitude, privacy, secrecy, re | as-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.5 | Śākuntalam |
+| 135 | श्रिया | śriyā | noun stem, f | happiness; glory; prosperity | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.12 | Śākuntalam |
+| 136 | स्रोतस् | srotas | noun stem, n | river, stream, torrent, current | as-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 137 | सम्पद् | sampad | noun stem, f | success, fulfilment; condition or requisite of success | root-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.30 | Śākuntalam |
+| 138 | प्रीत | prīta | adj stem | pleased, delighted, satisfied, joyful (also with locative or genitive  | a-stem | yes | Wiktionary page + head line + table; Manu 9.195 | Manusmṛti |
+| 139 | त्यक्त | tyakta | adj  | abandoned | a-stem | yes | Wiktionary page + head line + table; YS 2.34 | Yoga Sūtra |
+| 140 | तीर्ण | tīrṇa | adj  | one who has crossed, gone over, got through, escaped | a-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 141 | हारिण | hāriṇa | noun stem, n | venison; flesh of deer | a-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.5 | Śākuntalam |
+
+## sa-abstract-words (planned 90, none built; list needs 135). Rows are philosophical and psychological terms (Yoga Sūtra, Sāṅkhya, Nyāya-Vaiśeṣika, Upaniṣadic)
+
+Candidates listed: 136
+
+| # | Lemma | IAST | Head line (en.wiktionary) | Gloss | Stem | Table | Confirmed | Usage |
+|--|--|--|--|--|--|--|--|--|
+| 1 | अक्षर | akṣara | noun stem, n | syllable; the syllable om; letter; vowel; sound; word | a-stem | yes | Wiktionary page + head line + table; Manu 2.84 (as compound member) | Manusmṛti |
+| 2 | अद्वैत | advaita | noun stem, n | non-duality; Advaita, a non dualistic philosophy in Hinduism. | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 3 | अनन्त | ananta | noun stem, m | an epithet of Vishnu; an epithet of Shesha; an epithet of Shiva | a-stem | yes | Wiktionary page + head line + table; YS 1.37 | Yoga Sūtra |
+| 4 | अनुभूति | anubhūti | noun stem, f | perception, experience, feeling, realization | i-stem | yes | Wiktionary page + head line + table; c. 700 CE – 900 CE, Bhāgavata Purāṇa 7.1 | Bhāgavata Purāṇa 7.1 |
+| 5 | अपरिग्रह | aparigraha | noun stem, m | greedlessness | a-stem | yes | Wiktionary page + head line + table; YS 2.31 | Yoga Sūtra |
+| 6 | अभाव | abhāva | noun stem, m | death; not being, non-existence, absence; want; failure; destruction | a-stem | yes | Wiktionary page + head line + table; Manu 8.259 | Manusmṛti |
+| 7 | अविद्या | avidyā | noun stem, f | ignorance, particularly in spiritual or religious matters | ā-stem | yes | Wiktionary page + head line + table; YS 2.5 | Yoga Sūtra |
+| 8 | असत् | asat | noun stem, n | non-existence; falsehood; evil | at-stem | yes | Wiktionary page + head line + table; YS 4.12 | Yoga Sūtra |
+| 9 | इन्द्रिय | indriya | noun stem, n | power, force, the quality which belongs especially to the mighty इन्द् | a-stem | yes | Wiktionary page + head line + table; YS 3.48 | Yoga Sūtra |
+| 10 | ईश | īśa | noun stem, m | lord, master, ruler; one who is a master of anything; a husband | a-stem | yes | Wiktionary page + head line + table; Manu 9.245 | Manusmṛti |
+| 11 | उपेक्षा | upekṣā | noun stem, f | endurance, patience; neglect, negligence, indifference, disregard | ā-stem | yes | Wiktionary page + head line + table; YS 3.24 (as compound member) | Yoga Sūtra |
+| 12 | औदार्य | audārya | noun stem, n | nobility, generosity, magnanimity | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 13 | कर्मन् | karman | noun stem, n | an act, action, performance, business; work, labour, activity | an-stem | yes | Wiktionary page + head line + table; Manu 2.142 | Manusmṛti |
+| 14 | कारण | kāraṇa | noun stem, n | cause, reason, factor; instrument, means; motive, origin, principle | a-stem | yes | Wiktionary page + head line + table; YS 2.29 | Yoga Sūtra |
+| 15 | कार्य | kārya | noun stem, n | function, act, deed; work, business, enterprise | a-stem | yes | Wiktionary page + head line + table; Manu 2.42 | Manusmṛti |
+| 16 | कैवल्य | kaivalya | noun stem, n | absolute unity | a-stem | yes | Wiktionary page + head line + table; YS 1.17 | Yoga Sūtra |
+| 17 | क्षर | kṣara | adj stem | melting away, perishable | a-stem | yes | Wiktionary page + head line + table; Manu 2.78 (as compound member) | Manusmṛti |
+| 18 | चित् | cit | noun stem, f | thought, intellect, spirit, soul | root-stem | yes | Wiktionary page + head line + table; Manu 2.16 | Manusmṛti |
+| 19 | चित्त | citta | noun stem, n | thinking; reflecting; imagining; thought; intention, aim, wish | a-stem | yes | Wiktionary page + head line + table; YS 1.5 | Yoga Sūtra |
+| 20 | चैतन्य | caitanya | noun stem, n | consciousness, intellect | a-stem | yes | Wiktionary page + head line + table; YS 1.10 (as compound member) | Yoga Sūtra |
+| 21 | जीव | jīva | noun stem, m or n | life, existence; any living being, anything living | a-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.4 | Śākuntalam |
+| 22 | तमस् | tamas | noun stem, n | darkness, gloom (also in plural) | as-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.8 | Śākuntalam |
+| 23 | तुरीय | turīya | adj stem | fourth | a-stem | yes | Wiktionary page + head line + table; Manu 9.112 (as compound member) | Manusmṛti |
+| 24 | देह | deha | noun  | body; form, figure, shape; mass, bulk | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 25 | द्रव्य | dravya | noun stem, n | lac, gum, resin | a-stem | yes | Wiktionary page + head line + table; YS 3.14 | Yoga Sūtra |
+| 26 | द्वैत | dvaita | noun stem, n | duality; Dvaita, a dualistic philosophy in Hinduism. | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.2 (as compound member) | Śākuntalam |
+| 27 | धारणा | dhāraṇā | noun stem, f | holding, bearing; retaining, keeping, storing; dharana, concentration | ā-stem | yes | Wiktionary page + head line + table; Manu 8.184 | Manusmṛti |
+| 28 | निर्वाण | nirvāṇa | noun stem, n | blowing out, extinction, cessation, setting, vanishing, disappearance | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.7 (as compound member) | Śākuntalam |
+| 29 | पदार्थ | padārtha | noun stem, m | the meaning of a word | a-stem | yes | Wiktionary page + head line + table; YS 1.44 (as compound member) | Yoga Sūtra |
+| 30 | परिणाम | pariṇāma | noun stem, m | change, alteration, transformation into (instr.), development, evoluti | a-stem | yes | Wiktionary page + head line + table; YS 3.14 | Yoga Sūtra |
+| 31 | पुरुष | puruṣa | noun stem, m | man, male, human being | a-stem | yes | Wiktionary page + head line + table; Manu 9.2 | Manusmṛti |
+| 32 | प्रकृति | prakṛti | noun stem, f | the original or natural form or condition of anything, original or pri | i-stem | yes | Wiktionary page + head line + table; Manu 3.257 | Manusmṛti |
+| 33 | प्रत्याहार | pratyāhāra | noun stem, m | withdrawal (especially of the senses from external objects) | a-stem | yes | Wiktionary page + head line + table; YS 2.54 | Yoga Sūtra |
+| 34 | प्रवृत्ति | pravṛtti | noun stem, f | moving forwards, advance, progress | i-stem | yes | Wiktionary page + head line + table; Śāk. act 5, v.30 | Śākuntalam |
+| 35 | प्राणायाम | prāṇāyāma | noun stem, m | pranayama | a-stem | yes | Wiktionary page + head line + table; YS 2.53 | Yoga Sūtra |
+| 36 | बहुत्व | bahutva | noun stem, n | muchness, abundance, multitude; plurality, majority | a-stem | yes | Wiktionary page + head line + table; YS 1.5 | Yoga Sūtra |
+| 37 | ब्रह्मन् | brahman | noun stem, n | pious effusion or utterance, outpouring of the heart in worshipping th | an-stem | yes | Wiktionary page + head line + table; Manu 2.144 | Manusmṛti |
+| 38 | भ्रम | bhrama | noun stem, m | wandering or roaming about, roving over or through (comp.) Kathās. | a-stem | yes | Wiktionary page + head line + table; Manu 7.24 (as compound member) | Manusmṛti |
+| 39 | मनस् | manas | noun stem, n | mind (in its widest sense as applied to all the mental powers), intell | as-stem | yes | Wiktionary page + head line + table; Manu 7.6 | Manusmṛti |
+| 40 | ममता | mamatā | noun stem, f | The meaning of this term is uncertain. Possibilities include | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 41 | मुक्ति | mukti | noun stem, f | setting or becoming free, release, liberation, deliverance from (in co | i-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.23 | Śākuntalam |
+| 42 | यम | yama | noun stem, m | rein; driver, charioteer; suppression, restraint | a-stem | yes | Wiktionary page + head line + table; Manu 9.303 | Manusmṛti |
+| 43 | युक्ति | yukti | noun stem, f | union, junction, connection, combination | i-stem | yes | Wiktionary page + head line + table; Manu 7.197 | Manusmṛti |
+| 44 | रजस् | rajas | noun stem, n | atmosphere; space between heaven and earth | as-stem | yes | Wiktionary page + head line + table; YS 2.18 | Yoga Sūtra |
+| 45 | विकल्प | vikalpa | noun stem, m | an intermediate kalpa, the interval between two kalpas | a-stem | yes | Wiktionary page + head line + table; YS 1.9 | Yoga Sūtra |
+| 46 | विकृति | vikṛti | noun stem, f | transformation; alteration; change; modification; variation | i-stem | yes | Wiktionary page + head line + table; Śāk. act 2, v.5 (as compound member) | Śākuntalam |
+| 47 | संसार | saṃsāra | noun stem, m | going or wandering through, undergoing transmigration; samsara | a-stem | yes | Wiktionary page + head line + table; YS 4.34 | Yoga Sūtra |
+| 48 | सत् | sat | noun stem, m | a being; (in the plural) beings, creatures | at-stem | yes | Wiktionary page + head line + table; Meghadūta | Meghadūta |
+| 49 | सत्त्व | sattva | noun stem, n | essence; goodness; spirit; existence; being, entity, creature; reality | a-stem | yes | Wiktionary page + head line + table; YS 2.6 | Yoga Sūtra |
+| 50 | समवाय | samavāya | noun stem, m | coming together, contact, congress, crowd (GṛS., Gaut., Mn.) | a-stem | yes | Wiktionary page + head line + table; Śāk. act 7, v.26 (as compound member) | Śākuntalam |
+| 51 | समाधि | samādhi | noun stem, m | putting together, joining or combining with (+ instrumental) | i-stem | yes | Wiktionary page + head line + table; YS 1.18 | Yoga Sūtra |
+| 52 | साधन | sādhana | noun stem, n | the act of mastering, overpowering, subduing | a-stem | yes | Wiktionary page + head line + table; YS 3.5 | Yoga Sūtra |
+| 53 | साध्य | sādhya | noun stem, m | "they that are to be propitiated", i.e. Sādhyas, a class of celestial  | a-stem | yes | Wiktionary page + head line + table; Manu 3.195 (as compound member) | Manusmṛti |
+| 54 | सिद्ध | siddha | adj stem | proven; accomplished; prepared (of food) | a-stem | yes | Wiktionary page + head line + table; Manu 3.84 | Manusmṛti |
+| 55 | सिद्धि | siddhi | noun stem, f | success, perfection, attainment, determination, substantiation | i-stem | yes | Wiktionary page + head line + table; YS 2.28 | Yoga Sūtra |
+| 56 | सुख | sukha | noun stem, m | name of a man; a kind of military array, compare दण्ड (daṇḍa) | a-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.7 | Śākuntalam |
+| 57 | सृष्टि | sṛṣṭi | noun stem, f | emission, distribution; creation (abstract and concrete) | i-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.1 | Śākuntalam |
+| 58 | स्थिति | sthiti | noun stem, f | standing upright or firmly, not falling | i-stem | yes | Wiktionary page + head line + table; Manu 2.224 | Manusmṛti |
+| 59 | स्मरण | smaraṇa | noun stem, n | remembrance, memory; tradition; recalling | a-stem | yes | Wiktionary page + head line + table; YS 3.15 | Yoga Sūtra |
+| 60 | स्मृति | smṛti | noun stem, f | remembrance, reminiscence, thinking of or upon (+locative or compound) | i-stem | yes | Wiktionary page + head line + table; Manu 2.90 | Manusmṛti |
+| 61 | स्वरूप | svarūpa | noun stem, n | own condition, peculiarity, character, nature | a-stem | yes | Wiktionary page + head line + table; YS 1.10 | Yoga Sūtra |
+| 62 | हेतु | hetu | noun stem, m | "impulse", motive, cause, cause of, reason for (+locative, rarely dati | u-stem | yes | Wiktionary page + head line + table; Manu 8.3 | Manusmṛti |
+| 63 | योगिन् | yogin | noun stem, m | Yogi, one who practises Yoga | in-stem | yes | Wiktionary page + head line + table; YS 1.28 | Yoga Sūtra |
+| 64 | प्रज्ञ | prajña | adj stem | synonym of प्रज्ञू (prajñū); wise, prudent (MāṇḍUp.) | a-stem | yes | Wiktionary page + head line + table; Manu 2.99 | Manusmṛti |
+| 65 | जन्मन् | janman | noun stem, n | birth, production, origin; existence, life; nativity (VarBṛS. 1, 10) | an-stem | yes | Wiktionary page + head line + table; Manu 2.150 | Manusmṛti |
+| 66 | क्रम | krama | noun stem, m | a step; going, progress, proceeding; route, path, way; the foot | a-stem | yes | Wiktionary page + head line + table; YS 3.16 | Yoga Sūtra |
+| 67 | सूक्ष्म | sūkṣma | adj  | acute, subtle, keen (understanding or mental operation) | a-stem | yes | Wiktionary page + head line + table; YS 2.10 | Yoga Sūtra |
+| 68 | निरोध | nirodha | noun stem, m | confinement; control | a-stem | yes | Wiktionary page + head line + table; YS 3.14 | Yoga Sūtra |
+| 69 | ध्रुव | dhruva | adj stem | fixed, immovable; firm, stable; certain, sure, wis | a-stem | yes | Wiktionary page + head line + table; Manu 3.60 | Manusmṛti |
+| 70 | परमाणु | paramāṇu | noun stem, m | atom; an infinitesimal particle | u-stem | yes | Wiktionary page + head line + table; YS 3.45 | Yoga Sūtra |
+| 71 | मरण | maraṇa | noun stem, n | the act of dying; death; dying by; passing away | a-stem | yes | Wiktionary page + head line + table; YS 2.14 | Yoga Sūtra |
+| 72 | शुद्ध | śuddha | adj stem | pure; clear; clean; true; blameless; acquitted; right | a-stem | yes | Wiktionary page + head line + table; YS 1.30 | Yoga Sūtra |
+| 73 | ऐश्वर्य | aiśvarya | noun stem, n | supremacy, power, sovereignty; the state of being a mighty lord | a-stem | yes | Wiktionary page + head line + table; YS 1.16 | Yoga Sūtra |
+| 74 | लिङ्ग | liṅga | noun stem, n | mark, spot, sign, token, badge, form, emblem, characteristic, represen | a-stem | yes | Wiktionary page + head line + table; YS 3.14 | Yoga Sūtra |
+| 75 | अवस्था | avasthā | noun stem, f | condition, state; female reproductive organs; an appearance in court | ā-stem | yes | Wiktionary page + head line + table; YS 3.14 | Yoga Sūtra |
+| 76 | व्यक्ति | vyakti | noun stem, f | visible appearance or manifestation, becoming evident or known or publ | i-stem | yes | Wiktionary page + head line + table; YS 3.16 | Yoga Sūtra |
+| 77 | अमल | amala | noun stem, m | crystal | a-stem | yes | Wiktionary page + head line + table; YS 2.28 | Yoga Sūtra |
+| 78 | द्वेषस् | dveṣas | noun stem, n | hatred, dislike, hostility | as-stem | yes | Wiktionary page + head line + table; YS 2.8 | Yoga Sūtra |
+| 79 | चेतना | cetanā | noun stem, f | consciousness, understanding, sense, intelligence | ā-stem | yes | Wiktionary page + head line + table; Meghadūta (as compound member) | Meghadūta |
+| 80 | विशेषण | viśeṣaṇa | noun stem, n | the act of distinguishing, distinction, discrimination, particularisat | a-stem | yes | Wiktionary page + head line + table; YS 2.21 (as compound member) | Yoga Sūtra |
+| 81 | बोधि | bodhi | noun stem, m | (Buddhism, Jainism) bodhi: perfect knowledge or wisdom (by which a man | i-stem | yes | Wiktionary page + head line + table; Śāk. act 1, v.5 (as compound member) | Śākuntalam |
+| 82 | रहस्य | rahasya | noun stem, n | a secret, any secret doctrine or mystery, any subtle or recondite poin | a-stem | yes | Wiktionary page + head line + table; Manu 2.140 (as compound member) | Manusmṛti |
+| 83 | ब्रह्मविद्या | brahmavidyā | noun stem, f | knowledge of Brahman, the all-spirit, sacred knowledge | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 84 | ज्ञानकाण्ड | jñānakāṇḍa | noun stem, n | department of Vedic knowledge which relates to understanding of the wo | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 85 | कर्मकाण्ड | karmakāṇḍa | noun stem, n | department of Vedic knowledge which relates to sacrifices and ceremoni | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 86 | अन्तर्यामिन् | antaryāmin | noun stem, m | inner guide, regulator; soul | in-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 87 | महात्मन् | mahātman | noun stem, m | the Supreme Spirit | an-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 88 | विद् | vid | noun stem, m | Mercury | root-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 89 | आस्तिक | āstika | adj stem | one who believes in the existence (of God, of another world, etc.) | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 90 | मनन | manana | noun stem, n | thinking , reflection , meditation , thought , intelligence | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 91 | अस्तित्व | astitva | noun stem, n | existence, reality | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 92 | ज्ञानिन् | jñānin | noun stem, m | a fortune-teller, astrologer; ‘possessing religious wisdom’, a sage | in-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 93 | साक्षात्कार | sākṣātkāra | noun stem, m | evident or intuitive perception; realization | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 94 | धर्मता | dharmatā | noun stem, f | essence, inherent nature; the being law or right | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 95 | संयमिन् | saṃyamin | adj stem | practicing self-control | in-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 96 | शुश्रूषा | śuśrūṣā | noun stem, f | desire or wish to hear; service, attendance; dutifulness, obedience | ā-stem | yes | Wiktionary page + head line + table; Manu 2.112 | Manusmṛti |
+| 97 | ऊह | ūha | noun stem, m | removing, derangement, transposition, change, modification | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 98 | विसर्ग | visarga | noun stem, m | liberation, freedom, letting go; sending forth, emission, discharge | a-stem | yes | Wiktionary page + head line + table; Manu 9.46 (as compound member) | Manusmṛti |
+| 99 | विमुक्ति | vimukti | noun stem, f | release, liberation | i-stem | yes | Wiktionary page + head line + table; YS 2.28 | Yoga Sūtra |
+| 100 | मोचन | mocana | noun stem, n | release, liberation, freeing or delivering from | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 101 | आस्तिक्य | āstikya | noun stem, n | piousness, religiousness, faith in God; devotion to God | a-stem | yes | Wiktionary page + head line + table; c. 400 BCE, Bhagavad Gītā 18.42 | Bhagavad Gītā 18.42 |
+| 102 | नैराश्य | nairāśya | noun stem, n | hopelessness, despair, sorrow | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 103 | तृषा | tṛṣā | noun stem, f | thirst, hunger, desire | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 104 | अनित्यता | anityatā | noun stem, f | transient or limited existence | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 105 | अकारण | akāraṇa | noun stem, n | absence of a cause | a-stem | yes | Wiktionary page + head line + table; Manu 3.157 | Manusmṛti |
+| 106 | आत्मवत् | ātmavat | adj stem | having a soul, soulful; “having/possessing the self” | vat-stem | yes | Wiktionary page + head line + table; Manu 7.52 | Manusmṛti |
+| 107 | अनुबन्ध | anubandha | noun stem, m | binding, connection, attachment | a-stem | yes | Wiktionary page + head line + table; Manu 8.126 (as compound member) | Manusmṛti |
+| 108 | प्रसङ्ग | prasaṅga | noun stem, m | adherence, attachment, inclination or devotion to, indulgence in, fond | a-stem | yes | Wiktionary page + head line + table; Manu 9.5 | Manusmṛti |
+| 109 | आकाङ्क्षा | ākāṅkṣā | noun stem, f | desire, wish | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 110 | विवक्षा | vivakṣā | noun stem, f | the desire to speak | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 111 | अवित्ति | avitti | noun stem, f | act of not finding; lack, poverty | i-stem | yes | Wiktionary page + head line + table; c. 1200 BCE – 1000 BCE, Atharvaveda 16.6 | Atharvaveda 16.6 |
+| 112 | कृत्स्न | kṛtsna | noun stem, n | total fixation of the mind, leading to contemplation | a-stem | yes | Wiktionary page + head line + table; Manu 2.165 (as compound member) | Manusmṛti |
+| 113 | वयुन | vayuna | noun stem, n | wisdom; knowledge | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 114 | सुनीत | sunīta | noun stem, n | good or wise conduct, wisdom, prudence | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 115 | मृड | mṛḍa | adj  | showing compassion or mercy, gracious | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 116 | ह्लाद | hlāda | noun stem, m | joy, gladness, pleasure | a-stem | yes | Wiktionary page + head line + table; YS 1.18 (as compound member) | Yoga Sūtra |
+| 117 | नन्दि | nandi | noun stem, m | joy, pleasure, delight; an epithet of Shiva and Vishnu | i-stem | yes | Wiktionary page + head line + table; Śāk. act 3, v.11 (as compound member) | Śākuntalam |
+| 118 | जिह्म | jihma | noun stem, n | falsehood, dishonesty | a-stem | yes | Wiktionary page + head line + table; Manu 3.246 (as compound member) | Manusmṛti |
+| 119 | भवक्षय | bhavakṣaya | noun stem, m | end of existence | a-stem | yes | Wiktionary page + head line + table; 900-1100 AD; copied later, Arlo Griffith | Arlo Griffith |
+| 120 | आत्मभाव | ātmabhāva | noun stem, m | existence of the soul; self-essence; the body | a-stem | yes | Wiktionary page + head line + table; YS 2.40 (as compound member) | Yoga Sūtra |
+| 121 | उद्देश | uddeśa | noun stem, m | the act of pointing to or at, direction; ascertainment | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 122 | निमित्त | nimitta | noun stem, n | aim, mark; sign, token; omen; cause, occasion; motive, instrument | a-stem | yes | Wiktionary page + head line + table; YS 4.13 | Yoga Sūtra |
+| 123 | अनिन्द्रिय | anindriya | noun stem, n | "that which is not a sense" the mind; the soul; reason | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 124 | मानस | mānasa | noun stem, n | the mental powers, mind, spirit; tacit or implied consent | a-stem | yes | Wiktionary page + head line + table; Manu 2.85 (as compound member) | Manusmṛti |
+| 125 | वैज्ञानिक | vaijñānika | adj stem | rich in knowledge, proficient | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 126 | शङ्क | śaṅka | noun stem, m | doubt; fear; name of a king(Buddh.) | a-stem | yes | Wiktionary page + head line + table; Śāk. act 6, v.4 | Śākuntalam |
+| 127 | सुमति | sumati | noun stem, f | good mind or disposition, benevolence, kindness, favour (acc. with √ क | i-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 128 | दुर्मनस् | durmanas | noun stem, n | bad disposition, perversity of mind | as-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 129 | चिच्छक्ति | cicchakti | noun stem, f | thinking capacity of the mind | i-stem | yes | Wiktionary page + head line + table; c. 700 CE – 900 CE, Bhāgavata Purāṇa 1.7 | Bhāgavata Purāṇa 1.7 |
+| 130 | कृति | kṛti | noun stem, f | the act of doing, making, performing, manufacturing, composing | i-stem | yes | Wiktionary page + head line + table; Manu 9.69 | Manusmṛti |
+| 131 | वर्तमान | vartamāna | adj stem | turning, moving, existing, living, abiding; present | a-stem | yes | Wiktionary page + head line + table; YS 3.53 | Yoga Sūtra |
+| 132 | आवेश | āveśa | noun stem, m | joining one's self; entering, entrance, taking possession of | a-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 133 | षड्रिपु | ṣaḍripu | noun stem, m | The "Six Enemies", six harmful states of mind that stop people from at | u-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 134 | कर्तृवाद | kartṛvāda | noun stem, m | doctrine or ideology of belief in a creator | a-stem | yes | Wiktionary page + head line + table; Dharmakīrti, Pramāṇavārttika | Pramāṇavārttika |
+| 135 | अक्षुण्णता | akṣuṇṇatā | noun stem, f | the state of being unbroken or continuous; continuity | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
+| 136 | स्थिरता | sthiratā | noun stem, f | stability; firmness; tranquility; permanence; hardness | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.15 | Śākuntalam |
+
