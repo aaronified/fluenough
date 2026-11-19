@@ -14,7 +14,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["verb"]
-    except: ["sa-2102", "sa-2105", "sa-2108", "sa-2111", "sa-2122", "sa-2123", "sa-12000", "sa-12004", "sa-12005", "sa-12017", "sa-12023", "sa-12024", "sa-12025", "sa-12026", "sa-12033", "sa-12040", "sa-12046", "sa-12047", "sa-12048", "sa-12049"]
+    except: ["sa-2102", "sa-2105", "sa-2108", "sa-2111", "sa-2122", "sa-2123", "sa-12000", "sa-12004", "sa-12005", "sa-12017", "sa-12023", "sa-12024", "sa-12025", "sa-12026", "sa-12033", "sa-12040", "sa-12046", "sa-12047", "sa-12048", "sa-12049", "sa-12051", "sa-12052", "sa-12053", "sa-12055", "sa-12057", "sa-12058", "sa-12059"]
   slots: ["stem", "p3-sg", "p3-du", "p3-pl", "p2-sg", "p2-du", "p2-pl", "p1-sg", "p1-du", "p1-pl"]
   rows:
     - word: "sa-0430"
@@ -269,6 +269,15 @@ table:
     - word: "sa-12045"
       forms: { "stem": "शोभय", "p3-sg": "शोभयति", "p3-du": "शोभयतः", "p3-pl": "शोभयन्ति", "p2-sg": "शोभयसि", "p2-du": "शोभयथः", "p2-pl": "शोभयथ", "p1-sg": "शोभयामि", "p1-du": "शोभयावः", "p1-pl": "शोभयामः" }
       readings: { "stem": "śobhaya", "p3-sg": "śobhayati", "p3-du": "śobhayataḥ", "p3-pl": "śobhayanti", "p2-sg": "śobhayasi", "p2-du": "śobhayathaḥ", "p2-pl": "śobhayatha", "p1-sg": "śobhayāmi", "p1-du": "śobhayāvaḥ", "p1-pl": "śobhayāmaḥ" }
+    - word: "sa-12050"
+      forms: { "stem": "आपय", "p3-sg": "आपयति", "p3-du": "आपयतः", "p3-pl": "आपयन्ति", "p2-sg": "आपयसि", "p2-du": "आपयथः", "p2-pl": "आपयथ", "p1-sg": "आपयामि", "p1-du": "आपयावः", "p1-pl": "आपयामः" }
+      readings: { "stem": "āpaya", "p3-sg": "āpayati", "p3-du": "āpayataḥ", "p3-pl": "āpayanti", "p2-sg": "āpayasi", "p2-du": "āpayathaḥ", "p2-pl": "āpayatha", "p1-sg": "āpayāmi", "p1-du": "āpayāvaḥ", "p1-pl": "āpayāmaḥ" }
+    - word: "sa-12054"
+      forms: { "stem": "श्वासय", "p3-sg": "श्वासयति", "p3-du": "श्वासयतः", "p3-pl": "श्वासयन्ति", "p2-sg": "श्वासयसि", "p2-du": "श्वासयथः", "p2-pl": "श्वासयथ", "p1-sg": "श्वासयामि", "p1-du": "श्वासयावः", "p1-pl": "श्वासयामः" }
+      readings: { "stem": "śvāsaya", "p3-sg": "śvāsayati", "p3-du": "śvāsayataḥ", "p3-pl": "śvāsayanti", "p2-sg": "śvāsayasi", "p2-du": "śvāsayathaḥ", "p2-pl": "śvāsayatha", "p1-sg": "śvāsayāmi", "p1-du": "śvāsayāvaḥ", "p1-pl": "śvāsayāmaḥ" }
+    - word: "sa-12056"
+      forms: { "stem": "भेदय", "p3-sg": "भेदयति", "p3-du": "भेदयतः", "p3-pl": "भेदयन्ति", "p2-sg": "भेदयसि", "p2-du": "भेदयथः", "p2-pl": "भेदयथ", "p1-sg": "भेदयामि", "p1-du": "भेदयावः", "p1-pl": "भेदयामः" }
+      readings: { "stem": "bhedaya", "p3-sg": "bhedayati", "p3-du": "bhedayataḥ", "p3-pl": "bhedayanti", "p2-sg": "bhedayasi", "p2-du": "bhedayathaḥ", "p2-pl": "bhedayatha", "p1-sg": "bhedayāmi", "p1-du": "bhedayāvaḥ", "p1-pl": "bhedayāmaḥ" }
 rules:
   - id: "sa-rule-causative-stem"
     slots: ["stem"]
