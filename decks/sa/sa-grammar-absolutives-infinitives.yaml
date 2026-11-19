@@ -14,7 +14,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["verb"]
-    except: ["sa-2105", "sa-2108", "sa-2111", "sa-12004", "sa-12005", "sa-12007", "sa-12009", "sa-12011", "sa-12015", "sa-12021", "sa-12023", "sa-12025", "sa-12031", "sa-12032", "sa-12033", "sa-12036"]
+    except: ["sa-2105", "sa-2108", "sa-2111", "sa-12004", "sa-12005", "sa-12007", "sa-12009", "sa-12011", "sa-12015", "sa-12021", "sa-12023", "sa-12025", "sa-12031", "sa-12032", "sa-12033", "sa-12036", "sa-12040", "sa-12046", "sa-12047", "sa-12048", "sa-12049"]
   slots: ["ktva", "lyap", "tum"]
   rows:
     - word: "sa-0430"
@@ -251,6 +251,21 @@ table:
     - word: "sa-12039"
       forms: { "ktva": null, "lyap": "प्रमिल्य", "tum": null }
       readings: { "lyap": "pramilya" }
+    - word: "sa-12041"
+      forms: { "ktva": null, "lyap": "प्रलिप्य", "tum": null }
+      readings: { "lyap": "pralipya" }
+    - word: "sa-12042"
+      forms: { "ktva": null, "lyap": "प्रसृज्य", "tum": null }
+      readings: { "lyap": "prasṛjya" }
+    - word: "sa-12043"
+      forms: { "ktva": null, "lyap": "प्रक्षिप्य", "tum": null }
+      readings: { "lyap": "prakṣipya" }
+    - word: "sa-12044"
+      forms: { "ktva": null, "lyap": "प्रदिश्य", "tum": null }
+      readings: { "lyap": "pradiśya" }
+    - word: "sa-12045"
+      forms: { "ktva": null, "lyap": "प्रशुभ्य", "tum": null }
+      readings: { "lyap": "praśubhya" }
 rules:
   - id: "sa-rule-absolutive-ktva"
     slots: ["ktva"]
