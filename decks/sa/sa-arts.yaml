@@ -1,0 +1,458 @@
+schema: 1
+id: "sa-arts"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "arts"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-9600"
+    target: "लास्यम्"
+    reading: "lāsyam"
+    ipa: "laːsjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Natya_Shastra" }]
+    bases: [{ word: "लास्यम्", base: "लास्य", reading: "lāsya" }]
+    examples:
+      - target: "लास्यं बालः पश्यति"
+        reading: "lāsyaṃ bālaḥ paśyati"
+        ipa: "laːsjəm baːləh pəʃjət̪i"
+        bases: [{ word: "लास्यं", base: "लास्य", reading: "lāsya" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+      - target: "लास्यं जनो जानाति"
+        reading: "lāsyaṃ jano jānāti"
+        ipa: "laːsjəm dʒənoː dʒaːnaːt̪i"
+        bases: [{ word: "लास्यं", base: "लास्य", reading: "lāsya" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-9601"
+    target: "नाटकम्"
+    reading: "nāṭakam"
+    ipa: "naːʈəkəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Natya_Shastra" }]
+    bases: [{ word: "नाटकम्", base: "नाटक", reading: "nāṭaka" }]
+    examples:
+      - target: "नाटकं जनः पठति"
+        reading: "nāṭakaṃ janaḥ paṭhati"
+        ipa: "naːʈəkəm dʒənəh pəʈʰət̪i"
+        bases: [{ word: "नाटकं", base: "नाटक", reading: "nāṭaka" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+      - target: "नाटकं रामः पश्यति"
+        reading: "nāṭakaṃ rāmaḥ paśyati"
+        ipa: "naːʈəkəm raːməh pəʃjət̪i"
+        bases: [{ word: "नाटकं", base: "नाटक", reading: "nāṭaka" }, { word: "रामः", base: "राम", reading: "rāma" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-9602"
+    target: "नटः"
+    reading: "naṭaḥ"
+    ipa: "nəʈəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "नटः", base: "नट", reading: "naṭa" }]
+    examples:
+      - target: "नटो गृहे वसति"
+        reading: "naṭo gṛhe vasati"
+        ipa: "nəʈoː ɡr̩ɦeː ʋəsət̪i"
+        bases: [{ word: "नटो", base: "नट", reading: "naṭa" }, { word: "गृहे", base: "गृह", reading: "gṛha" }, { word: "वसति", base: "वस्", reading: "vas" }]
+      - target: "नटं बालः पश्यति"
+        reading: "naṭaṃ bālaḥ paśyati"
+        ipa: "nəʈəm baːləh pəʃjət̪i"
+        bases: [{ word: "नटं", base: "नट", reading: "naṭa" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-9603"
+    target: "काव्यम्"
+    reading: "kāvyam"
+    ipa: "kaːʋjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Kavya" }]
+    bases: [{ word: "काव्यम्", base: "काव्य", reading: "kāvya" }]
+    examples:
+      - target: "काव्यं बालः पठति"
+        reading: "kāvyaṃ bālaḥ paṭhati"
+        ipa: "kaːʋjəm baːləh pəʈʰət̪i"
+        bases: [{ word: "काव्यं", base: "काव्य", reading: "kāvya" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+      - target: "काव्यं नृपो वदति"
+        reading: "kāvyaṃ nṛpo vadati"
+        ipa: "kaːʋjəm nr̩poː ʋəd̪ət̪i"
+        bases: [{ word: "काव्यं", base: "काव्य", reading: "kāvya" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "वदति", base: "वद्", reading: "vad" }]
+  - id: "sa-9604"
+    target: "छन्दः"
+    reading: "chandaḥ"
+    ipa: "tʃʰənd̪əh"
+    pos: "noun"
+    gender: "n"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Chandas" }]
+    bases: [{ word: "छन्दः", base: "छन्दस्", reading: "chandas" }]
+    examples:
+      - target: "छन्दः पठति बालः"
+        reading: "chandaḥ paṭhati bālaḥ"
+        ipa: "tʃʰənd̪əh pəʈʰət̪i baːləh"
+        bases: [{ word: "छन्दः", base: "छन्दस्", reading: "chandas" }, { word: "पठति", base: "पठ्", reading: "paṭh" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+      - target: "छन्दो जनो जानाति"
+        reading: "chando jano jānāti"
+        ipa: "tʃʰənd̪oː dʒənoː dʒaːnaːt̪i"
+        bases: [{ word: "छन्दो", base: "छन्दस्", reading: "chandas" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-9605"
+    target: "लेखनम्"
+    reading: "lekhanam"
+    ipa: "leːkʰənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "लेखनम्", base: "लेखन", reading: "lekhana" }]
+    examples:
+      - target: "लेखनं बालः करोति"
+        reading: "lekhanaṃ bālaḥ karoti"
+        ipa: "leːkʰənəm baːləh kəroːt̪i"
+        bases: [{ word: "लेखनं", base: "लेखन", reading: "lekhana" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+      - target: "लेखनं जनो जानाति"
+        reading: "lekhanaṃ jano jānāti"
+        ipa: "leːkʰənəm dʒənoː dʒaːnaːt̪i"
+        bases: [{ word: "लेखनं", base: "लेखन", reading: "lekhana" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-9606"
+    target: "अलंकारः"
+    reading: "alaṃkāraḥ"
+    ipa: "ələŋkaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "अलंकारः", base: "अलंकार", reading: "alaṃkāra" }]
+    examples:
+      - target: "अलंकारं नटो धरति"
+        reading: "alaṃkāraṃ naṭo dharati"
+        ipa: "ələŋkaːrəm nəʈoː d̪ʱərət̪i"
+        bases: [{ word: "अलंकारं", base: "अलंकार", reading: "alaṃkāra" }, { word: "नटो", base: "नट", reading: "naṭa" }, { word: "धरति", base: "धृ", reading: "dhṛ" }]
+      - target: "अलंकारं रामः पश्यति"
+        reading: "alaṃkāraṃ rāmaḥ paśyati"
+        ipa: "ələŋkaːrəm raːməh pəʃjət̪i"
+        bases: [{ word: "अलंकारं", base: "अलंकार", reading: "alaṃkāra" }, { word: "रामः", base: "राम", reading: "rāma" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-9607"
+    target: "आभरणः"
+    reading: "ābharaṇaḥ"
+    ipa: "aːbʱərəɳəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "आभरणः", base: "आभरण", reading: "ābharaṇa" }]
+    examples:
+      - target: "आभरणं नृपो ददाति"
+        reading: "ābharaṇaṃ nṛpo dadāti"
+        ipa: "aːbʱərəɳəm nr̩poː d̪əd̪aːt̪i"
+        bases: [{ word: "आभरणं", base: "आभरण", reading: "ābharaṇa" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "ददाति", base: "दा", reading: "dā" }]
+      - target: "आभरणं बालः पश्यति"
+        reading: "ābharaṇaṃ bālaḥ paśyati"
+        ipa: "aːbʱərəɳəm baːləh pəʃjət̪i"
+        bases: [{ word: "आभरणं", base: "आभरण", reading: "ābharaṇa" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-9608"
+    target: "ललितः"
+    reading: "lalitaḥ"
+    ipa: "ləlit̪əh"
+    pos: "adj"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "ललितः", base: "ललित", reading: "lalita" }]
+    examples:
+      - target: "ललितो नटो गच्छति"
+        reading: "lalito naṭo gacchati"
+        ipa: "ləlit̪oː nəʈoː ɡətʃtʃʰət̪i"
+        bases: [{ word: "ललितो", base: "ललित", reading: "lalita" }, { word: "नटो", base: "नट", reading: "naṭa" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+      - target: "जनो ललितं गानं गायति"
+        reading: "jano lalitaṃ gānaṃ gāyati"
+        ipa: "dʒənoː ləlit̪əm ɡaːnəm ɡaːjət̪i"
+        bases: [{ word: "जनो", base: "जन", reading: "jana" }, { word: "ललितं", base: "ललित", reading: "lalita" }, { word: "गानं", base: "गान", reading: "gāna" }, { word: "गायति", base: "गै", reading: "gai" }]
+  - id: "sa-9609"
+    target: "भावः"
+    reading: "bhāvaḥ"
+    ipa: "bʱaːʋəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "भावः", base: "भाव", reading: "bhāva" }]
+    examples:
+      - target: "भावं बालो वदति"
+        reading: "bhāvaṃ bālo vadati"
+        ipa: "bʱaːʋəm baːloː ʋəd̪ət̪i"
+        bases: [{ word: "भावं", base: "भाव", reading: "bhāva" }, { word: "बालो", base: "बाल", reading: "bāla" }, { word: "वदति", base: "वद्", reading: "vad" }]
+      - target: "भावं रामो जानाति"
+        reading: "bhāvaṃ rāmo jānāti"
+        ipa: "bʱaːʋəm raːmoː dʒaːnaːt̪i"
+        bases: [{ word: "भावं", base: "भाव", reading: "bhāva" }, { word: "रामो", base: "राम", reading: "rāma" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-9610"
+    target: "रसः"
+    reading: "rasaḥ"
+    ipa: "rəsəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Rasa_(aesthetics)" }]
+    bases: [{ word: "रसः", base: "रस", reading: "rasa" }]
+    examples:
+      - target: "रसं जनः पिबति"
+        reading: "rasaṃ janaḥ pibati"
+        ipa: "rəsəm dʒənəh pibət̪i"
+        bases: [{ word: "रसं", base: "रस", reading: "rasa" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पिबति", base: "पा", reading: "pā" }]
+      - target: "रसं नृपः पिबति"
+        reading: "rasaṃ nṛpaḥ pibati"
+        ipa: "rəsəm nr̩pəh pibət̪i"
+        bases: [{ word: "रसं", base: "रस", reading: "rasa" }, { word: "नृपः", base: "नृप", reading: "nṛpa" }, { word: "पिबति", base: "पा", reading: "pā" }]
+  - id: "sa-9611"
+    target: "अभिनयः"
+    reading: "abhinayaḥ"
+    ipa: "əbʱinəjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "अभिनयः", base: "अभिनय", reading: "abhinaya" }]
+    examples:
+      - target: "अभिनयं नटः करोति"
+        reading: "abhinayaṃ naṭaḥ karoti"
+        ipa: "əbʱinəjəm nəʈəh kəroːt̪i"
+        bases: [{ word: "अभिनयं", base: "अभिनय", reading: "abhinaya" }, { word: "नटः", base: "नट", reading: "naṭa" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+      - target: "अभिनयं बालः पश्यति"
+        reading: "abhinayaṃ bālaḥ paśyati"
+        ipa: "əbʱinəjəm baːləh pəʃjət̪i"
+        bases: [{ word: "अभिनयं", base: "अभिनय", reading: "abhinaya" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-9612"
+    target: "गद्यम्"
+    reading: "gadyam"
+    ipa: "ɡəd̪jəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "गद्यम्", base: "गद्य", reading: "gadya" }]
+    examples:
+      - target: "गद्यं बालः पठति"
+        reading: "gadyaṃ bālaḥ paṭhati"
+        ipa: "ɡəd̪jəm baːləh pəʈʰət̪i"
+        bases: [{ word: "गद्यं", base: "गद्य", reading: "gadya" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+      - target: "गद्यं जनो जानाति"
+        reading: "gadyaṃ jano jānāti"
+        ipa: "ɡəd̪jəm dʒənoː dʒaːnaːt̪i"
+        bases: [{ word: "गद्यं", base: "गद्य", reading: "gadya" }, { word: "जनो", base: "जन", reading: "jana" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-9613"
+    target: "लावण्यम्"
+    reading: "lāvaṇyam"
+    ipa: "laːʋəɳjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "लावण्यम्", base: "लावण्य", reading: "lāvaṇya" }]
+    examples:
+      - target: "लावण्यं जनः पश्यति"
+        reading: "lāvaṇyaṃ janaḥ paśyati"
+        ipa: "laːʋəɳjəm dʒənəh pəʃjət̪i"
+        bases: [{ word: "लावण्यं", base: "लावण्य", reading: "lāvaṇya" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+      - target: "लावण्यं नृपः पठति"
+        reading: "lāvaṇyaṃ nṛpaḥ paṭhati"
+        ipa: "laːʋəɳjəm nr̩pəh pəʈʰət̪i"
+        bases: [{ word: "लावण्यं", base: "लावण्य", reading: "lāvaṇya" }, { word: "नृपः", base: "नृप", reading: "nṛpa" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+  - id: "sa-9614"
+    target: "कौशलम्"
+    reading: "kauśalam"
+    ipa: "kəuʃələm"
+    pos: "noun"
+    gender: "n"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "कौशलम्", base: "कौशल", reading: "kauśala" }]
+    examples:
+      - target: "कौशलं बालो जानाति"
+        reading: "kauśalaṃ bālo jānāti"
+        ipa: "kəuʃələm baːloː dʒaːnaːt̪i"
+        bases: [{ word: "कौशलं", base: "कौशल", reading: "kauśala" }, { word: "बालो", base: "बाल", reading: "bāla" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+      - target: "कौशलं वैद्यः पश्यति"
+        reading: "kauśalaṃ vaidyaḥ paśyati"
+        ipa: "kəuʃələm ʋəid̪jəh pəʃjət̪i"
+        bases: [{ word: "कौशलं", base: "कौशल", reading: "kauśala" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-9615"
+    target: "अभ्यासः"
+    reading: "abhyāsaḥ"
+    ipa: "əbʱjaːsəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "अभ्यासः", base: "अभ्यास", reading: "abhyāsa" }]
+    examples:
+      - target: "अभ्यासं बालः करोति"
+        reading: "abhyāsaṃ bālaḥ karoti"
+        ipa: "əbʱjaːsəm baːləh kəroːt̪i"
+        bases: [{ word: "अभ्यासं", base: "अभ्यास", reading: "abhyāsa" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+      - target: "अभ्यासं जनः पठति"
+        reading: "abhyāsaṃ janaḥ paṭhati"
+        ipa: "əbʱjaːsəm dʒənəh pəʈʰət̪i"
+        bases: [{ word: "अभ्यासं", base: "अभ्यास", reading: "abhyāsa" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+  - id: "sa-9616"
+    target: "शास्त्रम्"
+    reading: "śāstram"
+    ipa: "ʃaːst̪rəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Natya_Shastra" }]
+    bases: [{ word: "शास्त्रम्", base: "शास्त्र", reading: "śāstra" }]
+    examples:
+      - target: "शास्त्रं वैद्यः पठति"
+        reading: "śāstraṃ vaidyaḥ paṭhati"
+        ipa: "ʃaːst̪rəm ʋəid̪jəh pəʈʰət̪i"
+        bases: [{ word: "शास्त्रं", base: "शास्त्र", reading: "śāstra" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+      - target: "शास्त्रं रामो जानाति"
+        reading: "śāstraṃ rāmo jānāti"
+        ipa: "ʃaːst̪rəm raːmoː dʒaːnaːt̪i"
+        bases: [{ word: "शास्त्रं", base: "शास्त्र", reading: "śāstra" }, { word: "रामो", base: "राम", reading: "rāma" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-9617"
+    target: "गानम्"
+    reading: "gānam"
+    ipa: "ɡaːnəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "गानम्", base: "गान", reading: "gāna" }]
+    examples:
+      - target: "जनो गानं गायति"
+        reading: "jano gānaṃ gāyati"
+        ipa: "dʒənoː ɡaːnəm ɡaːjət̪i"
+        bases: [{ word: "जनो", base: "जन", reading: "jana" }, { word: "गानं", base: "गान", reading: "gāna" }, { word: "गायति", base: "गै", reading: "gai" }]
+      - target: "गानं रामो गायति"
+        reading: "gānaṃ rāmo gāyati"
+        ipa: "ɡaːnəm raːmoː ɡaːjət̪i"
+        bases: [{ word: "गानं", base: "गान", reading: "gāna" }, { word: "रामो", base: "राम", reading: "rāma" }, { word: "गायति", base: "गै", reading: "gai" }]
+  - id: "sa-9618"
+    target: "गायनम्"
+    reading: "gāyanam"
+    ipa: "ɡaːjənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "गायनम्", base: "गायन", reading: "gāyana" }]
+    examples:
+      - target: "गायनं नटः पश्यति"
+        reading: "gāyanaṃ naṭaḥ paśyati"
+        ipa: "ɡaːjənəm nəʈəh pəʃjət̪i"
+        bases: [{ word: "गायनं", base: "गायन", reading: "gāyana" }, { word: "नटः", base: "नट", reading: "naṭa" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+      - target: "गायनं बालः पठति"
+        reading: "gāyanaṃ bālaḥ paṭhati"
+        ipa: "ɡaːjənəm baːləh pəʈʰət̪i"
+        bases: [{ word: "गायनं", base: "गायन", reading: "gāyana" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+  - id: "sa-9619"
+    target: "भूषणम्"
+    reading: "bhūṣaṇam"
+    ipa: "bʱuːʂəɳəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "भूषणम्", base: "भूषण", reading: "bhūṣaṇa" }]
+    examples:
+      - target: "भूषणं वीरो धरति"
+        reading: "bhūṣaṇaṃ vīro dharati"
+        ipa: "bʱuːʂəɳəm ʋiːroː d̪ʱərət̪i"
+        bases: [{ word: "भूषणं", base: "भूषण", reading: "bhūṣaṇa" }, { word: "वीरो", base: "वीर", reading: "vīra" }, { word: "धरति", base: "धृ", reading: "dhṛ" }]
+      - target: "भूषणं नृपो ददाति"
+        reading: "bhūṣaṇaṃ nṛpo dadāti"
+        ipa: "bʱuːʂəɳəm nr̩poː d̪əd̪aːt̪i"
+        bases: [{ word: "भूषणं", base: "भूषण", reading: "bhūṣaṇa" }, { word: "नृपो", base: "नृप", reading: "nṛpa" }, { word: "ददाति", base: "दा", reading: "dā" }]
+  - id: "sa-9620"
+    target: "हारः"
+    reading: "hāraḥ"
+    ipa: "ɦaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "हारः", base: "हार", reading: "hāra" }]
+    examples:
+      - target: "हारं जनः पश्यति"
+        reading: "hāraṃ janaḥ paśyati"
+        ipa: "ɦaːrəm dʒənəh pəʃjət̪i"
+        bases: [{ word: "हारं", base: "हार", reading: "hāra" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+      - target: "हारं रामो हरति"
+        reading: "hāraṃ rāmo harati"
+        ipa: "ɦaːrəm raːmoː ɦərət̪i"
+        bases: [{ word: "हारं", base: "हार", reading: "hāra" }, { word: "रामो", base: "राम", reading: "rāma" }, { word: "हरति", base: "हृ", reading: "hṛ" }]
+  - id: "sa-9621"
+    target: "नादः"
+    reading: "nādaḥ"
+    ipa: "naːd̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "नादः", base: "नाद", reading: "nāda" }]
+    examples:
+      - target: "नादं बालो जानाति"
+        reading: "nādaṃ bālo jānāti"
+        ipa: "naːd̪əm baːloː dʒaːnaːt̪i"
+        bases: [{ word: "नादं", base: "नाद", reading: "nāda" }, { word: "बालो", base: "बाल", reading: "bāla" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+      - target: "नादं जनः पठति"
+        reading: "nādaṃ janaḥ paṭhati"
+        ipa: "naːd̪əm dʒənəh pəʈʰət̪i"
+        bases: [{ word: "नादं", base: "नाद", reading: "nāda" }, { word: "जनः", base: "जन", reading: "jana" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+  - id: "sa-9622"
+    target: "तानः"
+    reading: "tānaḥ"
+    ipa: "t̪aːnəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "तानः", base: "तान", reading: "tāna" }]
+    examples:
+      - target: "तानं बालो गायति"
+        reading: "tānaṃ bālo gāyati"
+        ipa: "t̪aːnəm baːloː ɡaːjət̪i"
+        bases: [{ word: "तानं", base: "तान", reading: "tāna" }, { word: "बालो", base: "बाल", reading: "bāla" }, { word: "गायति", base: "गै", reading: "gai" }]
+      - target: "तानं रामो गायति"
+        reading: "tānaṃ rāmo gāyati"
+        ipa: "t̪aːnəm raːmoː ɡaːjət̪i"
+        bases: [{ word: "तानं", base: "तान", reading: "tāna" }, { word: "रामो", base: "राम", reading: "rāma" }, { word: "गायति", base: "गै", reading: "gai" }]
+  - id: "sa-9623"
+    target: "वेषः"
+    reading: "veṣaḥ"
+    ipa: "ʋeːʂəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "वेषः", base: "वेष", reading: "veṣa" }]
+    examples:
+      - target: "वेषं नटो धरति"
+        reading: "veṣaṃ naṭo dharati"
+        ipa: "ʋeːʂəm nəʈoː d̪ʱərət̪i"
+        bases: [{ word: "वेषं", base: "वेष", reading: "veṣa" }, { word: "नटो", base: "नट", reading: "naṭa" }, { word: "धरति", base: "धृ", reading: "dhṛ" }]
+      - target: "वेषं बालः पश्यति"
+        reading: "veṣaṃ bālaḥ paśyati"
+        ipa: "ʋeːʂəm baːləh pəʃjət̪i"
+        bases: [{ word: "वेषं", base: "वेष", reading: "veṣa" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-9624"
+    target: "रूपम्"
+    reading: "rūpam"
+    ipa: "ruːpəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["arts"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "रूपम्", base: "रूप", reading: "rūpa" }]
+    examples:
+      - target: "रूपं नृपः पश्यति"
+        reading: "rūpaṃ nṛpaḥ paśyati"
+        ipa: "ruːpəm nr̩pəh pəʃjət̪i"
+        bases: [{ word: "रूपं", base: "रूप", reading: "rūpa" }, { word: "नृपः", base: "नृप", reading: "nṛpa" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+      - target: "रूपं बालः पठति"
+        reading: "rūpaṃ bālaḥ paṭhati"
+        ipa: "ruːpəm baːləh pəʈʰət̪i"
+        bases: [{ word: "रूपं", base: "रूप", reading: "rūpa" }, { word: "बालः", base: "बाल", reading: "bāla" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
