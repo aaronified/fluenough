@@ -484,7 +484,7 @@ Candidates listed: 62
 Dropped (not usable): युवती (no usable entry or taught)
 
 
-## sa-literature (planned 90, none built; list needs 135). Rows 1 to 43 are literary terms and texts; the rest is Kālidāsa's descriptive vocabulary (Śākuntalam, Meghadūta) for reading-led cards
+## sa-literature (planned 90, none built; list needs 135). Rows 1 to 42 are literary terms and texts; the rest is Kālidāsa's descriptive vocabulary (Śākuntalam, Meghadūta) for reading-led cards
 
 Candidates listed: 141
 
@@ -775,3 +775,284 @@ Candidates listed: 136
 | 135 | अक्षुण्णता | akṣuṇṇatā | noun stem, f | the state of being unbroken or continuous; continuity | ā-stem | yes | Wiktionary page + head line + table | (Wiktionary entry only; no corpus hit) |
 | 136 | स्थिरता | sthiratā | noun stem, f | stability; firmness; tranquility; permanence; hardness | ā-stem | yes | Wiktionary page + head line + table; Śāk. act 4, v.15 | Śākuntalam |
 
+## Verbs for sa-verbs-3 (60 planned; 90 candidates, highest-frequency first)
+Candidates listed: 90 (needs 60)
+
+| # | Root | IAST | Gaṇa | Pada | Meaning (en.wiktionary) | 3sg present | Conjugation table | Confirmed | Usage |
+|--|--|--|--|--|--|--|--|--|--|
+| 1 | अर्ह् | arh | 1 | parasmaipada | to be worth, to merit, to be worthy of, to deserve; to be entitled to, | अर्हति (arhati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.145 | Manu 8.145 |
+| 2 | उच् | uc | 4 | parasmaipada | to be accustomed; to be fond of, take pleasure in, delight in, enjoy | उच्यति (ucyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.18 | Manu 2.18 |
+| 3 | जन् | jan | 4 | ātmanepada | to be born (for), come into existence; to grow; to be changed, become | जायते (jāyate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.39 | Manu 3.39 |
+| 4 | मन् | man | 4 | ātmanepada | to think, believe, imagine, suppose, conjecture; to regard or consider | मन्यते (manyate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.91 | Manu 8.91 |
+| 5 | भुज् | bhuj | 7 | parasmaipada | to provide benefit; to provide benefit; to receive a benefit, be a ben | भुनक्ति (bhunakti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.146 | Manu 3.146 |
+| 6 | वृध् | vṛdh | 1 | parasmaipada | to grow, increase, augment, enlargen; to elevate, exalt, praise | वर्धति (vardhati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.121 | Manu 2.121 |
+| 7 | आप् | āp | 5 | parasmaipada | to reach; to overtake; to meet with; to fall upon; to obtain; to gain; | आप्नोति (āpnoti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.143 | Manu 8.143 |
+| 8 | मुच् | muc | 6 | parasmaipada | to free, set free, liberate; to loose, let go, slacken, release | मुञ्चति (muñcati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 3, v.22 | Śāk. act 3, v.22 |
+| 9 | दह् | dah | 1 | parasmaipada | to burn, consume by fire, scorch, roast; to cauterize; to consume, des | दहति (dahati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.9 | Manu 7.9 |
+| 10 | इ | i | 2 | parasmaipada | to go, walk; to flow; to blow; to advance, spread, get about; to go to | एति (eti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.159 | Manu 8.159 |
+| 11 | हन् | han | 2 | parasmaipada | to strike, beat (also a drum), pound, hammer (+ accusative) etc.; upon | हन्ति (hanti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 9.64 | Manu 9.64 |
+| 12 | भी | bhī | 3 | parasmaipada | to fear, dread, be afraid of | बिभेति (bibheti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 13 | शुभ् | śubh | 6 | parasmaipada | to shine, to be splendid or beautiful; to hurt or injure; to speak | शुम्भति (śumbhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 14 | भ्रम् | bhram | 1 | parasmaipada | to wander or roam about, rove, ramble; to fly about (as bees); to roll | भ्रमति (bhramati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 15 | क्रुध् | krudh | 4 | parasmaipada | to become angry | क्रुध्यति (krudhyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 16 | दिव् | div | 4 | parasmaipada | to cast, throw (especially dice); to play, gamble; to lay a wager, bet | दीव्यति (dīvyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 17 | लुभ् | lubh | 4 | parasmaipada | to desire greatly or eagerly, to long for, to covet; to be interested  | लुभ्यति (lubhyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 18 | मद् | mad | 4 | parasmaipada | to rejoice, be glad, exult, delight or revel in; to be drunk; to enjoy | माद्यति (mādyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 19 | सिध् | sidh | 1 | parasmaipada | to drive off, scare away; to punish | सेधति (sedhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 20 | ईड् | īḍ | 2 | ātmanepada | to praise; to implore | ईट्टे (īṭṭe) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 21 | मिल् | mil | 6 | parasmaipada | to meet, encounter | मिलति (milati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 22 | गुह् | guh | 1 | parasmaipada | to cover, conceal, to hide; to keep secret | गूहति (gūhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 23 | चुर् | cur | 10 | parasmaipada | to steal, rob, pilfer | चोरयति (corayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 24 | स्पृश् | spṛś | 10 | — | to make touch; to bring into immediate contact with; to fill or cover  | स्पर्शयति (sparśayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 25 | दंश् | daṃś | 1 | parasmaipada | to bite | दशति (daśati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 7, v.21 | Śāk. act 7, v.21 |
+| 26 | नह् | nah | 4 | parasmaipada | to bind, tie, fasten, bind on or round or together; to put on (as armo | नह्यति (nahyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 27 | नश् | naś | 4 | parasmaipada | to be lost; to perish; to disappear; to be gone; to run away | नश्यति (naśyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.97 | Manu 3.97 |
+| 28 | पद् | pad | 4 | ātmanepada | to fall, topple; to perish; to participate in, go to; to observe | पद्यते (padyate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 29 | प्रछ् | prach | 6 | parasmaipada | to ask, question, pray, interrogate (+ accusative); to ask after inqui | पृच्छति (pṛcchati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.110 | Manu 2.110 |
+| 30 | बुध् | budh | 1 | parasmaipada | to wake, wake up; to know, to understand; to enlighten | बोधति (bodhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 31 | भा | bhā | 2 | parasmaipada | to shine, be bright or luminous; to shine forth, appear, show oneself; | भाति (bhāti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 3.14 | YS 3.14 |
+| 32 | भिद् | bhid | 7 | parasmaipada | to split, divide, rupture, cleave; to pass through (a medium); to disp | भिनत्ति (bhinatti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 4.4 | YS 4.4 |
+| 33 | मा | mā | 3 | ātmanepada | to measure, mark off | मिमीते (mimīte) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 34 | यत् | yat | 10 | — | to put in place, arrange (RV.); to be in place, take one's place (RV.) | यातयति (yātayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 35 | यम् | yam | 1 | parasmaipada | it holds, holds up; it sustains, supports; it restrains; it wields, br | यच्छति (yacchati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.55 | Manu 2.55 |
+| 36 | रञ्ज् | rañj | 1 | parasmaipada | to be dyed or colored, to redden, grow red, glow; to be affected or mo | रञ्जति (rañjati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 37 | रम् | ram | 1 | ātmanepada | to delight, enjoy, be glad, please; to stop, stay; rest; to have sexua | रमते (ramate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Meghadūta | Meghadūta |
+| 38 | रिच् | ric | 7 | parasmaipada | to leave; leave behind, relinquish; to give up; to resign; to release, | रिणक्ति (riṇakti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 39 | रुच् | ruc | 1 | ātmanepada | to shine, be bright or radiant or resplendent; to make bright or respl | रोचते (rocate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.62 | Manu 3.62 |
+| 40 | रुह् | ruh | 1 | parasmaipada | to rise, ascend; to mount; to attain, reach | रोहति (rohati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: RV 10.85.20 | RV 10.85.20 |
+| 41 | लग् | lag | 4 | parasmaipada | adheres, sticks, clings or attaches one's self to; adheres, sticks, cl | लग्यति (lagyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 42 | लिप् | lip | 6 | parasmaipada | to smear, anoint; to soil, taint, pollute, defile | लिम्पति (limpati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 43 | वप् | vap | 1 | parasmaipada | to scatter, spread, strew, bestrew; to scatter, spread, strew, bestrew | वपति (vapati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.113 | Manu 2.113 |
+| 44 | वा | vā | 2 | parasmaipada | to blow (as the wind); to procure or bestow anything (acc.) by blowing | वाति (vāti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Meghadūta | Meghadūta |
+| 45 | वृ | vṛ | 5 | parasmaipada | to cover, screen, veil, conceal, hide, envelop, obstruct; to ward off, | वृणोति (vṛṇoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 46 | वृज् | vṛj | 2 | — | to twist off; to wring off or break (someone's neck); to divert; to pu | वृक्ते (vṛkte) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 47 | शक् | śak | 5 | parasmaipada | to be strong or powerful, be able; to help; to yield, give way; to be  | शक्नोति (śaknoti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.130 | Manu 8.130 |
+| 48 | शम् | śam | 4 | parasmaipada | to become tired, to finish, to stop, to come to an end, to rest, to be | शाम्यति (śāmyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.94 | Manu 2.94 |
+| 49 | शास् | śās | 2 | parasmaipada | to teach, instruct, inform, direct; to rule, govern, administer the la | शास्ति (śāsti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 1, v.22 | Śāk. act 1, v.22 |
+| 50 | शुष् | śuṣ | 4 | parasmaipada | to be dry; to dry up, to wither, fade | शुष्यति (śuṣyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 3.23 | YS 3.23 |
+| 51 | श्वस् | śvas | 2 | parasmaipada | to blow, hiss, pant, snort; to breathe, respire, draw breath, live; to | श्वसिति (śvasiti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 52 | सद् | sad | 1 | parasmaipada | to sit, sit down; to lie in wait, be at watch | सीदति (sīdati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.134 | Manu 7.134 |
+| 53 | सृज् | sṛj | 6 | parasmaipada | present of सृज् (sṛj) | सृजति (sṛjati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: RV 10.85.22 | RV 10.85.22 |
+| 54 | स्कन्द् | skand | 1 | parasmaipada | to leap, jump, hop, spring; to drop, fall down; to perish; to be split | स्कन्दति (skandati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.84 | Manu 7.84 |
+| 55 | स्तम्भ् | stambh | 1 | ātmanepada | to rest or lean on; to become stiff or immovable; to become solid | स्तम्भते (stambhate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 56 | स्तन् | stan | 10 | — | to resound, reverberate, roar, thunder; to crackle | स्तनयति (stanayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 57 | स्मि | smi | 1 | ātmanepada | to smile, laugh; to blush; to shine | स्मयते (smayate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 58 | स्वप् | svap | 1 | parasmaipada | to sleep, slumber; to lie down, recline; to die | स्वपति (svapati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 59 | हा | hā | 3 | parasmaipada | to renounce, abandon, relinquish; to emit; to shun, avoid, lay aside;  | जहाति (jahāti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 4, v.14 | Śāk. act 4, v.14 |
+| 60 | हि | hi | 5 | parasmaipada | to send forth, set in motion, impel, urge on, hasten on; to stimulate  | हिनोति (hinoti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 2.35 | YS 2.35 |
+| 61 | ह्री | hrī | 3 | parasmaipada | to blush, be modest; to be ashamed | जिह्रेति (jihreti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 62 | क्षि | kṣi | 2 | parasmaipada | to abide, stay, dwell, reside (used especially of an undisturbed or se | क्षेति (kṣeti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.275 | Manu 3.275 |
+| 63 | क्रम् | kram | 1 | — | to step, walk, go (towards), approach; to approach in order to ask for | क्रामति (krāmati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 64 | क्षिप् | kṣip | 6 | parasmaipada | to throw, to fling; to cast off; to move hastily; to pass over | क्षिपति (kṣipati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 6, v.4 | Śāk. act 6, v.4 |
+| 65 | गद् | gad | 1 | parasmaipada | to speak, say, tell, relate, articulate; to name | गदति (gadati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 66 | गा | gā | 3 | parasmaipada | to go, go towards, come, approach; to go after, pursue; to fall to one | जिगाति (jigāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 67 | ग्रन्थ् | granth | 10 | parasmaipada | to tie | ग्रन्थयति (granthayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 68 | घट् | ghaṭ | 1 | ātmanepada | is intently occupied about, busy with, strives or endeavours after, ex | घटते (ghaṭate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 69 | चक्ष् | cakṣ | 2 | ātmanepada | to see, look; to appear; to tell, inform | चष्टे (caṣṭe) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 70 | चि | ci | 3 | parasmaipada | to observe; to fix the gaze upon; to seek for | चिकेति (ciketi) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 71 | चिन्त् | cint | 10 | parasmaipada | to think, consider, ponder, meditate; to reflect | चिन्तयति (cintayati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.221 | Manu 7.221 |
+| 72 | छिद् | chid | 7 | parasmaipada | to cut | छिनत्ति (chinatti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 73 | ज्वल् | jval | 1 | parasmaipada | to burn, blaze; to glow, shine; to set fire to | ज्वलति (jvalati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 6, v.31 | Śāk. act 6, v.31 |
+| 74 | तन् | tan | 8 | parasmaipada | to extend, spread, be diffused (as light) over, shine, extend towards, | तनोति (tanoti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 1, v.18 | Śāk. act 1, v.18 |
+| 75 | तुल् | tul | 10 | parasmaipada | to lift up, raise; to determine the weight of anything by lifting it u | तोलयति (tolayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 76 | तुष् | tuṣ | 4 | parasmaipada | to be satisfied, pleased; to become calm | तुष्यति (tuṣyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.207 | Manu 3.207 |
+| 77 | त्रस् | tras | 1 | parasmaipada | to tremble, quiver; to be afraid of | त्रसति (trasati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 78 | त्वर् | tvar | 1 | ātmanepada | to hurry, make haste, move with speed | त्वरते (tvarate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 4, v.4 | Śāk. act 4, v.4 |
+| 79 | दम् | dam | 4 | parasmaipada | to be tamed or tranquilised; to tame | दाम्यति (dāmyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 80 | दिश् | diś | 6 | parasmaipada | to point out, show, exhibit; to produce, bring forward (as a witness i | दिशति (diśati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.53 | Manu 8.53 |
+| 81 | दुह् | duh | 6 | parasmaipada | synonym of दोग्धि (dogdhi) | दुहति (duhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 82 | द्रु | dru | 1 | parasmaipada | to run; to flee; to attack, assault; to melt, dissolve, liquefy | द्रवति (dravati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 83 | धृष् | dhṛṣ | 5 | parasmaipada | to be bold or courageous or confident or proud; to dare or venture; to | धृष्णोति (dhṛṣṇoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 84 | प्लु | plu | 10 | — | to cause to float, swim; to bath, wash; to wash away, remove guilt; to | प्लावयति (plāvayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 85 | प्री | prī | 4 | parasmaipada | synonym of प्रीणाति (prīṇāti) | प्रीयते (prīyate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 86 | बन्ध् | bandh | 1 | parasmaipada | to bind, tether; to hold captive; to cherish; to entertain; to unite;  | बन्धति (bandhati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 3.2 | YS 3.2 |
+| 87 | बाध् | bādh | 1 | parasmaipada | to press, move, force; to annoy, harass, trouble; to be annoyed, haras | बाधति (bādhati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 2.1 | YS 2.1 |
+| 88 | भक्ष् | bhakṣ | 1 | parasmaipada | to eat, devour; to consume, use up, waste, destroy; to drain the resou | भक्षति (bhakṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 89 | भञ्ज् | bhañj | 7 | parasmaipada | to break, split; to breach; to defeat, crush (an enemy); to break up,  | भनक्ति (bhanakti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 90 | भाष् | bhāṣ | 1 | parasmaipada | to speak, talk, say, tell | भाषति (bhāṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+
+## Verbs for sa-verbs-4 (100 planned; candidates continue after sa-verbs-3's list)
+Candidates listed: 171 (needs 100)
+
+| # | Root | IAST | Gaṇa | Pada | Meaning (en.wiktionary) | 3sg present | Conjugation table | Confirmed | Usage |
+|--|--|--|--|--|--|--|--|--|--|
+| 1 | भ्रंश् | bhraṃś | 1 | ātmanepada | to drop, fall, be thrown down; to decline, decay, deteriorate; to swer | भ्रंशते (bhraṃśate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 2 | मृश् | mṛś | 6 | — | to touch, stroke, handle; to touch (mentally); consider, reflect, deli | मृशति (mṛśati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 3 | मृष् | mṛṣ | 4 | parasmaipada | Classical Sanskrit form of मृष्य॑ते (mṛ́ṣyate): to forget | मृष्यति (mṛṣyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 4 | युज् | yuj | 7 | parasmaipada | to yoke, harness, join | युनक्ति (yunakti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 5 | रण् | raṇ | 1 | parasmaipada | to delight, take pleasure in, rejoice | रणति (raṇati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.90 | Manu 7.90 |
+| 6 | राज् | rāj | 1 | parasmaipada | to direct, to steer; to rule, to reign | राजति (rājati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.140 | Manu 7.140 |
+| 7 | लज्ज् | lajj | 6 | ātmanepada | is ashamed, blushes | लज्जते (lajjate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 1, v.31 | Śāk. act 1, v.31 |
+| 8 | लम्ब् | lamb | 1 | ātmanepada | to hang down, depend, dangle, hang from or on; to sink, go down, decli | लम्बते (lambate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 9 | वञ्च् | vañc | 1 | parasmaipada | to move or wander away; to go astray; to stagger, totter | वञ्चति (vañcati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 10 | वश् | vaś | 2 | parasmaipada | to will, command; to wish, desire, want; to long; to assert, affirm; t | वष्टि (vaṣṭi) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 11 | वृष् | vṛṣ | 1 | parasmaipada | rains, showers, pours | वर्षति (varṣati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 3.27 | YS 3.27 |
+| 12 | व्यथ् | vyath | 1 | ātmanepada | trembles, wavers, goes astray, comes to naught, fails; is deprived of; | व्यथते (vyathate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.84 | Manu 7.84 |
+| 13 | व्रज् | vraj | 1 | parasmaipada | to go, walk, move, proceed, come near | व्रजति (vrajati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.190 | Manu 3.190 |
+| 14 | शप् | śap | 1 | parasmaipada | to curse; to swear; to revile; to blame | शपति (śapati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 15 | शी | śī | 2 | ātmanepada | to lie, lie down, recline, rest, repose; to remain unused; to lie down | शेते (śete) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.180 | Manu 2.180 |
+| 16 | शुच् | śuc | 1 | parasmaipada | to shine, gleam, burn; to suffer, grieve; to regret | शोचति (śocati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.57 | Manu 3.57 |
+| 17 | श्लिष् | śliṣ | 4 | parasmaipada | to attach, to clasp; to embrace; to cling to | श्लिष्यति (śliṣyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 18 | सह् | sah | 1 | ātmanepada | to overcome, vanquish, conquer, prevail, be victorious; to be able to  | सहते (sahate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 3, v.11 | Śāk. act 3, v.11 |
+| 19 | सिच् | sic | 6 | parasmaipada | to pour out, discharge, emit, shed; to sprinkle, moisten with; to dip, | सिञ्चति (siñcati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 4, v.2 | Śāk. act 4, v.2 |
+| 20 | सु | su | 5 | parasmaipada | to press out or extract juice (especially Soma) | सुनोति (sunoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 21 | सू | sū | 6 | parasmaipada | to set in motion, urge, impel, vivify, create, produce; to hurl upon;  | सुवति (suvati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 22 | सृप् | sṛp | 1 | parasmaipada | to creep, crawl, glide, slink; to move gently, cautiously; to slip int | सर्पति (sarpati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 23 | स्तु | stu | 2 | parasmaipada | to praise, laud, extol; to chant | स्तौति (stauti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 24 | हिंस् | hiṃs | 7 | parasmaipada | to wound, injure, harm | हिनस्ति (hinasti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.180 | Manu 2.180 |
+| 25 | दुष् | duṣ | 4 | parasmaipada | to become bad or corrupted, to be defiled or impure, to be ruined, per | दुष्यति (duṣyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.349 | Manu 8.349 |
+| 26 | विद् | vid | 2 | parasmaipada | to know, understand, perceive, learn, become or be acquainted with, be | वेत्ति (vetti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 4, v.1 | Śāk. act 4, v.1 |
+| 27 | भज् | bhaj | 1 | parasmaipada | to distribute, divide, apportion, allot; to pursue, practice; to choos | भजति (bhajati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Meghadūta | Meghadūta |
+| 28 | वच् | vac | 2 | parasmaipada | present of वच् (vac, “to say”) | वक्ति (vakti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 2, v.4 | Śāk. act 2, v.4 |
+| 29 | ऋ | ṛ | 1 | parasmaipada | to go, move, rise | ऋच्छति (ṛcchati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.18 | Manu 8.18 |
+| 30 | गण् | gaṇ | 10 | parasmaipada | count, number, enumerate, sum up, add up, reckon, calculate, compute,  | गणयति (gaṇayati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 6, v.12 | Śāk. act 6, v.12 |
+| 31 | भृ | bhṛ | 3 | parasmaipada | to bear, convey; to support, maintain; to nourish; to fill | बिभर्ति (bibharti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 2, v.4 | Śāk. act 2, v.4 |
+| 32 | द्विष् | dviṣ | 2 | parasmaipada | to hate, show hatred against (+ accusative; rarely dative or genitive) | द्वेष्टि (dveṣṭi) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 2.8 | YS 2.8 |
+| 33 | मृ | mṛ | 6 | ātmanepada | to die, decease | म्रियते (mriyate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 1.17 | YS 1.17 |
+| 34 | पृ | pṛ | 6 | ātmanepada | to be busy or active; (mostly with prefix व्य- (vya-) + आ- (ā-) or onl | प्रियते (priyate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 6, v.14 | Śāk. act 6, v.14 |
+| 35 | तॄ | tṝ | 1 | parasmaipada | to pass across or over, cross over (a river), sail across; to float, s | तरति (tarati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.404 | Manu 8.404 |
+| 36 | कृष् | kṛṣ | 1 | parasmaipada | to draw, drag, pull, tear (RV., AV., ŚBr., etc.); to lead, conduct (MB | कर्षति (karṣati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.66 | Manu 3.66 |
+| 37 | आस् | ās | 2 | ātmanepada | to be; to stay; to sit | आस्ते (āste) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.204 | Manu 2.204 |
+| 38 | ग्रस् | gras | 1 | parasmaipada | to affect or control; to seize with the mouth, take into the mouth, sw | ग्रसति (grasati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.133 | Manu 3.133 |
+| 39 | हृष् | hṛṣ | 4 | parasmaipada | thrills with rapture, rejoices, exults, is glad or pleased; become sex | हृष्यति (hṛṣyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.98 | Manu 2.98 |
+| 40 | मुह् | muh | 4 | parasmaipada | to become unconscious, bewildered, unresponsive; to become confused | मुह्यति (muhyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 2.16 | YS 2.16 |
+| 41 | एध् | edh | 1 | ātmanepada | to prosper, increase, grow; to spread, extend; to swell | एधते (edhate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.113 | Manu 7.113 |
+| 42 | जागृ | jāgṛ | 2 | parasmaipada | present of जागृ (jāgṛ) | जागर्ति (jāgarti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: RV 10.85.27 | RV 10.85.27 |
+| 43 | युध् | yudh | 4 | ātmanepada | to fight, battle, to wage war; to overcome in battle | युध्यते (yudhyate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.197 | Manu 7.197 |
+| 44 | पुष् | puṣ | 4 | parasmaipada | to thrive, prosper; to augment, make prosper | पुष्यति (puṣyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 9.37 | Manu 9.37 |
+| 45 | त्यज् | tyaj | 1 | parasmaipada | to leave; to abandon; to shun | त्यजति (tyajati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Meghadūta | Meghadūta |
+| 46 | दु | du | 5 | parasmaipada | to be burnt; to be afflicted, distressed | दुनोति (dunoti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.66 | Manu 7.66 |
+| 47 | तृप् | tṛp | 4 | parasmaipada | to be satisfied, content, pleased; to enjoy | तृप्यति (tṛpyati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.267 | Manu 3.267 |
+| 48 | लुप् | lup | 4 | ātmanepada | passive of लुप् (lup); is broken; is wasted or destroyed; is suppresse | लुप्यते (lupyate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 2.189 | Manu 2.189 |
+| 49 | मार्ग् | mārg | 1 | parasmaipada | to seek, look for; to request, ask for [with ablative ‘from someone’] | मार्गति (mārgati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 9.288 | Manu 9.288 |
+| 50 | विप् | vip | 1 | ātmanepada | to tremble, shake, quiver, vibrate | वेपते (vepate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 5, v.14 | Śāk. act 5, v.14 |
+| 51 | दिह् | dih | 2 | parasmaipada | to anoint, smear, plaster, besmear; to increase, accumulate | देग्धि (degdhi) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 9.133 | Manu 9.133 |
+| 52 | स्ना | snā | 2 | parasmaipada | to bathe, perform the ceremony of bathing or certain prescribed oblati | स्नाति (snāti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 5, v.11 | Śāk. act 5, v.11 |
+| 53 | यज् | yaj | 1 | parasmaipada | to worship, adore, honour; to sacrifice, offer, present | यजति (yajati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.79 | Manu 7.79 |
+| 54 | शङ्क् | śaṅk | 1 | ātmanepada | to doubt, to be unsure or uncertain; to suppose, assume, think probabl | शङ्कते (śaṅkate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 6, v.4 | Śāk. act 6, v.4 |
+| 55 | स्वन् | svan | 1 | parasmaipada | to sound, resound | स्वनति (svanati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 1, v.21 | Śāk. act 1, v.21 |
+| 56 | ग्रभ् | grabh | 9 | parasmaipada | to seize; to take by the hand | गृभ्णाति (gṛbhṇāti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: RV 10.85.36 | RV 10.85.36 |
+| 57 | जॄ | jṝ | 1 | — | to cause to grow old, make old or decrepit | जरति (jarati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 3.52 | YS 3.52 |
+| 58 | अर्च् | arc | 1 | parasmaipada | to shine; to praise, laud; sing praise | अर्चति (arcati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.93 | Manu 3.93 |
+| 59 | च्यु | cyu | 1 | ātmanepada | to turn off; to fall down | च्यवते (cyavate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 7.98 | Manu 7.98 |
+| 60 | कृत् | kṛt | 6 | parasmaipada | to cut; to tear; to shred; to sever; to divide | कृन्तति (kṛntati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.12 | Manu 8.12 |
+| 61 | पाल् | pāl | 10 | parasmaipada | to protect, guard, defend; to rule, govern; to maintain, hold | पालयति (pālayati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 7, v.28 | Śāk. act 7, v.28 |
+| 62 | स्फुर् | sphur | 6 | parasmaipada | to spurn; to dart, dash, spurt, spring; to pulsate, throb, tremble, qu | स्फुरति (sphurati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 1, v.15 | Śāk. act 1, v.15 |
+| 63 | पू | pū | 9 | parasmaipada | to purify, cleanse, purge | पुनाति (punāti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 1, v.14 | Śāk. act 1, v.14 |
+| 64 | क्षम् | kṣam | 1 | ātmanepada | to be patient, to suppress anger; to bear patiently, endure, to put up | क्षमते (kṣamate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.313 | Manu 8.313 |
+| 65 | भिषज् | bhiṣaj | 2 | parasmaipada | to heal, to cure | भिषक्ति (bhiṣakti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 3.180 | Manu 3.180 |
+| 66 | कम्प् | kamp | 1 | ātmanepada | to shiver, tremble; to move, shake | कम्पते (kampate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 67 | जृम्भ् | jṛmbh | 1 | ātmanepada | to open the mouth, yawn, ĀśvGṛ. iii, 6 ; Mn. &c.;; to gape open, open  | जृम्भते (jṛmbhate) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Śāk. act 7, v.15 | Śāk. act 7, v.15 |
+| 68 | नुद् | nud | 6 | parasmaipada | present of नुद् (nud, “to push”) | नुदति (nudati) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Meghadūta | Meghadūta |
+| 69 | नु | nu | 2 | parasmaipada | to praise, laud, commend; to sound, shout, exult | नौति (nauti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: YS 1.51 | YS 1.51 |
+| 70 | मृज् | mṛj | 2 | parasmaipada | to wipe; to purify | मार्ष्टि (mārṣṭi) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 8.317 | Manu 8.317 |
+| 71 | ऋध् | ṛdh | 5 | parasmaipada | present of ऋध् (ṛdh) | ऋध्नोति (ṛdhnoti) | yes | Wiktionary page + {{sa-conj}} table; verse hit: Manu 9.322 | Manu 9.322 |
+| 72 | निन्द् | nind | 1 | parasmaipada | to insult; to blame, accuse | निन्दति (nindati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 73 | क्षल् | kṣal | 10 | parasmaipada | to wash, cleanse | क्षालयति (kṣālayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 74 | स्रु | sru | 1 | parasmaipada | to flow, stream; to leak, drip; to perish, fail; to issue, arise; to a | स्रवति (sravati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 75 | द्रा | drā | 4 | parasmaipada | to sleep | द्रायति (drāyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 76 | उष् | uṣ | 1 | parasmaipada | to burn, burn down; to punish, chastise | ओषति (oṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 77 | द्रुह् | druh | 4 | parasmaipada | to hurt, injure, harm, seek to harm, be hostile to; to bear malice or  | द्रुह्यति (druhyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 78 | ह्वृ | hvṛ | 1 | parasmaipada | to deviate or diverge from the right line, be crooked, bend; to err; t | ह्वरति (hvarati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 79 | वम् | vam | 1 | parasmaipada | to vomit, spit out, eject (literally and figuratively); to emit, send  | वमति (vamati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 80 | अद् | ad | 2 | parasmaipada | to eat, consume, devour | अत्ति (atti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 81 | पॄ | pṝ | 3 | parasmaipada | to fill; to fill with air, blow into; to sate, cherish, nourish, bring | पिपर्ति (piparti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 82 | सच् | sac | 1 | ātmanepada | to be associated or united with, have to do with, be familiar with, as | सचते (sacate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 83 | प्रु | pru | 1 | ātmanepada | to spring up, jump | प्रवते (pravate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 84 | तृष् | tṛṣ | 4 | parasmaipada | to be thirsty, thirst, thirst for | तृष्यति (tṛṣyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 85 | तक्ष् | takṣ | 1 | parasmaipada | to form by cutting, plane, chisel, chop; to cut, split; to fashion, fo | तक्षति (takṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 86 | श्रा | śrā | 4 | parasmaipada | to cook, boil, seethe, mature, ripen; to sweat; to cause to cook or bo | श्रायति (śrāyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 87 | श्रि | śri | 1 | parasmaipada | to cause to lean or rest on, lay on or in, fix on, fasten to, direct o | श्रयति (śrayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 88 | स्विद् | svid | 1 | ātmanepada | to sweat, perspire; to be anointed; to be disturbed (?) | स्वेदते (svedate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 89 | गॄ | gṝ | 6 | parasmaipada | to swallow, devour, eat | गिरति (girati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 90 | भन् | bhan | 1 | parasmaipada | to sound, resound, call aloud, speak, declare | भनति (bhanati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 91 | जुष् | juṣ | 6 | parasmaipada | alternative form of जुषते (juṣate), with active endings. | जुषति (juṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 92 | प्लुष् | pluṣ | 1 | parasmaipada | to burn, scorch, singe, char (Suśr. only passive प्लुष्यते (pluṣyate)) | प्लोषति (ploṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 93 | हु | hu | 3 | parasmaipada | to sprinkle on; to worship or honor with; to sacrifice to; to offer or | जुहोति (juhoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 94 | रंह् | raṃh | 1 | parasmaipada | to hasten; to speed; to flow | रंहति (raṃhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 95 | ईश् | īś | 2 | ātmanepada | to own, possess; to belong to; to dispose of, be valid or powerful; to | ईष्टे (īṣṭe) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 96 | सिव् | siv | 4 | parasmaipada | to sew, darn, stitch, stitch together.; to join, unite | सीव्यति (sīvyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 97 | चम् | cam | 1 | parasmaipada | to sip, drink; to eat, swallow | चमति (camati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 98 | रन्ध् | randh | 10 | parasmaipada | to cook food; to make subject; torment | रन्धयति (randhayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 99 | काश् | kāś | 1 | ātmanepada | to shine brilliantly; to be visible, appear | काशते (kāśate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 100 | गल् | gal | 1 | parasmaipada | to drip; to ooze, trickle; to drop | गलति (galati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 101 | कास् | kās | 1 | ātmanepada | to cough | कासते (kāsate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 102 | रुज् | ruj | 6 | parasmaipada | to break, break open; to shatter, dash to pieces, destroy; to injure,  | रुजति (rujati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 103 | स्तॄ | stṝ | 9 | parasmaipada | to scatter, strew, bestrew; to spread, spread out, spread over | स्तृणाति (stṛṇāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 104 | रिह् | rih | 2 | parasmaipada | to lick; to kiss | रेळ्हि (reḷhi) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 105 | लिह् | lih | 6 | parasmaipada | to lick, lap, lick at | लिहति (lihati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 106 | स्पृध् | spṛdh | 1 | ātmanepada | to compete, rival, contend, emulate | स्पर्धते (spardhate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 107 | दॄ | dṝ | 9 | parasmaipada | to tear, rend, rip; to split open, divide, break; to burst | दृणाति (dṛṇāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 108 | तिज् | tij | 1 | ātmanepada | to be or become sharp; to energize, activate | तेजते (tejate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 109 | क्वथ् | kvath | 1 | ātmanepada | to boil, decoct, infuse, simmer; to heat; to digest; to ferment (?) | क्वथते (kvathate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 110 | घृष् | ghṛṣ | 1 | parasmaipada | to rub, brush, polish | घर्षति (gharṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 111 | शिक्ष् | śikṣ | 1 | parasmaipada | to learn, acquire knowledge; to study; to wish to be able | शिक्षति (śikṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 112 | श्लाघ् | ślāgh | 1 | ātmanepada | to confide in, trust; to commend, praise; to celebrate; to boast, brag | श्लाघते (ślāghate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 113 | घृ | ghṛ | 5 | parasmaipada | to burn, shine | घृणोति (ghṛṇoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 114 | ईर्ष् | īrṣ | 4 | parasmaipada | to envy | ईर्ष्यति (īrṣyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 115 | मृड् | mṛḍ | 6 | parasmaipada | to forgive, pardon, spare; to be favorable, gracious; to treat kindly, | मृडति (mṛḍati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 116 | मज्ज् | majj | 1 | parasmaipada | to sink; to dive, plunge, bathe in water; to go down, go to hell, to p | मज्जति (majjati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 117 | वक्ष् | vakṣ | 1 | parasmaipada | to increase, to grow; to be strong, powerful | वक्षति (vakṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 118 | अवगम् | avagam | 1 | parasmaipada | to understand, recognize, be convinced; to consider; to come, approach | अवगच्छति (avagacchati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 119 | रद् | rad | 1 | parasmaipada | to scratch, scrape; gnaw, bite; to cut a path, pave; to lead a river i | रदति (radati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 120 | स्निह् | snih | 4 | parasmaipada | to adhere, stick, cling; to be attached to, have affection for (+ loca | स्निह्यति (snihyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 121 | त्रप् | trap | 1 | ātmanepada | to be embarrassed, ashamed | त्रपते (trapate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 122 | शिष् | śiṣ | 1 | parasmaipada | to leave, spare | शेषति (śeṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 123 | कॄ | kṝ | 6 | parasmaipada | to strew, pour out; heap up | किरति (kirati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 124 | कुत्स् | kuts | 10 | parasmaipada | to abuse, blame, despise, revile, contemn | कुत्सयति (kutsayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 125 | काङ्क्ष् | kāṅkṣ | 1 | parasmaipada | to wish, desire, long for, hope for; to expect, wait for, await; to st | काङ्क्षति (kāṅkṣati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 126 | अङ्ख् | aṅkh | 10 | parasmaipada | to cling; to embrace | अङ्खयति (aṅkhayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 127 | जू | jū | 1 | parasmaipada | to press forwards, hurry on, be quick; to impel quickly, urge or drive | जवति (javati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 128 | सम्प्रदा | sampradā | 3 | parasmaipada | to present, offer, give, bestow, transmit; to hand down by tradition;  | सम्प्रददाति (sampradadāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 129 | उभ् | ubh | 9 | parasmaipada | to hurt, kill; to cover; fill | उभ्नाति (ubhnāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 130 | इङ्ग् | iṅg | 1 | parasmaipada | to go (towards); to move, agitate | इङ्गति (iṅgati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 131 | कुट्ट् | kuṭṭ | 10 | parasmaipada | to crush, grind; to hit, strike | कुट्टयति (kuṭṭayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 132 | चुद् | cud | 1 | parasmaipada | to impel, incite, animate; to hasten | चोदति (codati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 133 | इरस् | iras | 4 | parasmaipada | to behave insolently; to be angry; to be ill-affected towards (dative  | इरस्यति (irasyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 134 | गृध् | gṛdh | 4 | parasmaipada | to covet, desire, strive after greedily | गृध्यति (gṛdhyati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 135 | घिण्ण् | ghiṇṇ | 1 | ātmanepada | to grasp, take, seize | घिण्णते (ghiṇṇate) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 136 | निज् | nij | 3 | parasmaipada | to wash, cleanse, purify; to nourish | नेनेक्ति (nenekti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 137 | विष् | viṣ | 3 | parasmaipada | to surround, encircle; to spread through, extend, pervade; to embrace; | वेवेष्टि (veveṣṭi) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 138 | भस् | bhas | 3 | parasmaipada | to chew, eat, devour; to blame, condemn (Dhātup.) | बभस्ति (babhasti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 139 | साध् | sādh | 5 | parasmaipada | to obtain; to attain, accomplish | साध्नोति (sādhnoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 140 | खेल् | khel | 1 | parasmaipada | to play; to shake, swing | खेलति (khelati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 141 | बुक्क् | bukk | 1 | parasmaipada | to bark, woof, yelp | बुक्कति (bukkati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 142 | उल्लिख् | ullikh | 6 | parasmaipada | to make lines upon; to chip; to scratch, to make mark by scratching, t | उल्लिखति (ullikhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 143 | हूर्छ् | hūrch | 1 | parasmaipada | to go crookedly, stagger; to creep stealthily; to totter, fall; to fal | हूर्छति (hūrchati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 144 | स्वर् | svar | 1 | parasmaipada | to sing; to make or utter a sound; to resound; to praise | स्वरति (svarati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 145 | प्रवद् | pravad | 1 | parasmaipada | to name; to offer for sale; to speak out; to raise voice; to roar; to  | प्रवदति (pravadati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 146 | सभाज् | sabhāj | 10 | parasmaipada | to offer | सभाजयति (sabhājayati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 147 | पृच् | pṛc | 7 | parasmaipada | to give generously, lavish, bestow, grant | पृणक्ति (pṛṇakti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 148 | विच् | vic | 7 | parasmaipada | to winnow, to separate (grain from chaff); to discern, discriminate, j | विनक्ति (vinakti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 149 | तञ्च् | tañc | 7 | parasmaipada | to contract | तनक्ति (tanakti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 150 | अञ्ज् | añj | 7 | parasmaipada | to anoint, apply an ointment or pigment | अनक्ति (anakti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 151 | उन्द् | und | 7 | parasmaipada | to bathe, flow, spring, wet | उनत्ति (unatti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 152 | तृह् | tṛh | 7 | parasmaipada | to bruise, crush | तृणेढि (tṛṇeḍhi) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 153 | पिष् | piṣ | 7 | parasmaipada | to grind, crush | पिनष्टि (pinaṣṭi) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 154 | सस् | sas | 2 | parasmaipada | to sleep | सस्ति (sasti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 155 | अधिष्ठा | adhiṣṭhā | 1 | parasmaipada | to stand above or over; to defeat, overcome; to control, superintend,  | अधितिष्ठति (adhitiṣṭhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 156 | प्सा | psā | 2 | parasmaipada | to chew; to eat; to devour | प्साति (psāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 157 | स्कु | sku | 9 | parasmaipada | to pick, pluck, tear; to poke; to cover | स्कुनाति (skunāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 158 | श्री | śrī | 9 | parasmaipada | to mix, mingle, cook; to burn, flame, diffuse light | श्रीणाति (śrīṇāti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 159 | गर्ह् | garh | 1 | parasmaipada | to lodge a complaint before anyone; to accuse, charge with, blame | गर्हति (garhati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 160 | सन् | san | 8 | parasmaipada | to gain, acquire; to procure, gain for another | सनोति (sanoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 161 | चुम्ब् | cumb | 1 | parasmaipada | to kiss; to touch softly and closely | चुम्बति (cumbati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 162 | स्फुट् | sphuṭ | 6 | parasmaipada | to burst, explode; to burst or split open (with a sound), to be rent a | स्फुटति (sphuṭati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 163 | अञ्च् | añc | 1 | parasmaipada | to bend, curve, incline, curl; to revere; to honour; to tend, move, go | अञ्चति (ancati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 164 | छिक्क् | chikk | 6 | parasmaipada | to sneeze | छिक्कति (chikkati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 165 | म्लेछ् | mlech | 1 | parasmaipada | to speak indistinctly (like a foreigner not speaking Sanskrit) | म्लेच्छति (mlecchati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 166 | कुर् | kur | 6 | parasmaipada | to utter a sound (Dhātup.) | कुरति (kurati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 167 | कर्ज् | karj | 1 | parasmaipada | to torment, to pain (Dhātup.) | कर्जति (karjati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 168 | जज् | jaj | 1 | parasmaipada | to fight; attack | जजति (jajati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 169 | पिञ्ज् | piñj | 2 | ātmanepada | to tinge, dye, paint | पिङ्क्ते (piṅkte) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 170 | प्रवह् | pravah | 1 | parasmaipada | to flow, rush; to flood, overflow; to bear; to carry forward, to bring | प्रवहति (pravahati) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+| 171 | स्तिघ् | stigh | 5 | parasmaipada | to mount, step up, rise | स्तिघ्नोति (stighnoti) | yes | Wiktionary page + {{sa-conj}} table | common root; Wiktionary conjugation page |
+
+
+### Notes on the verb lists
+
+- Source: kaikki Wiktionary Sanskrit verb entries whose head line is a third-singular present with a root and gaṇa; each root appears once, in the gaṇa and pada of its best-attested entry (class 10 and causative entries are used only where class 10 is the root's own class, such as `चुर्`, `चिन्त्`, `गण्`). The "Conjugation table" column is yes for all rows because only entries with a full table were kept.
+- Taught set excluded: the 54 verb cards on decks-live and the B1 branches (`भू गम् पठ् वद् पच् नी`, `अस् ज्ञा कृ दा धा पश् श्रु` and the rest of the everyday and more-verbs decks).
+- Order is by attestation in the typed texts (Manu 2, 3, 7, 8, 9, Śākuntalam, Meghadūta, Yoga Sūtra), then my judgement of commonness; roots of gaṇas 1, 4, 6 and 10 and common irregulars (2nd, 3rd, 5th, 7th, 8th, 9th) are interleaved. The Gītā and the Hitopadeśa were not reachable as text in this run, and Monier-Williams was not read.
+- Prefixed verbs (`उत्पद्`, `आचर्`) and roots without a gaṇa on their Wiktionary entry (`भू`-type irregular entries with a blank class) were left out; a builder wanting those writes the root and the prefix as two bases.
+- Glosses that read "present of ..." or "synonym of ..." are Wiktionary's cross-references; take the meaning from the root's entry.
