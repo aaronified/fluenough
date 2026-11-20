@@ -342,10 +342,10 @@
       "script": "hebrew",
       "script_decks": false,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 39521,
-      "path": ["arc-first-words"],
+      "size": 46734,
+      "path": ["arc-phrasebook", "arc-first-words"],
       "units": [
-        {"decks": ["arc-first-words"], "has": {"en": 30}, "words": 30},
+        {"decks": ["arc-phrasebook", "arc-first-words"], "has": {"en": 30}, "words": 30},
         {"decks": [], "grammar": ["sound-differences", "vowel-length"], "planned": true},
         {"decks": [], "planned": true, "words": 7},
         {"decks": [], "planned": true, "words": 21},
@@ -411,8 +411,10 @@
       ],
       "files": [
         {"content_sha256": "1194bd36efcf7b8ea6166223b6ca9bb37315dd32217ce913837f000e7ab54ea3", "deck": "arc-first-words", "kind": "vocab", "part": "core", "path": "decks/arc/arc-first-words.yaml", "schema": 1, "sha256": "1194bd36efcf7b8ea6166223b6ca9bb37315dd32217ce913837f000e7ab54ea3", "size": 5167},
-        {"content_sha256": "fec40f395378e25368d3f6907d65808eaa3cc88955ce1f2e227853d9e395864e", "kind": "path", "path": "decks/arc/arc-path.yaml", "schema": 1, "sha256": "fec40f395378e25368d3f6907d65808eaa3cc88955ce1f2e227853d9e395864e", "size": 24103},
-        {"content_sha256": "639ba27995666679b96e110ee9d6343a9da3929e290e438244e71f07bd5da5ee", "deck": "arc-first-words", "kind": "layer", "native": "en", "path": "decks/arc/en/arc-en-first-words.yaml", "schema": 1, "sha256": "639ba27995666679b96e110ee9d6343a9da3929e290e438244e71f07bd5da5ee", "size": 10251}
+        {"content_sha256": "ca2dc4a8a7e1c094711a59bf7e6f8e83607ee0279840c09116b23d0616f77fe0", "kind": "path", "path": "decks/arc/arc-path.yaml", "schema": 1, "sha256": "ca2dc4a8a7e1c094711a59bf7e6f8e83607ee0279840c09116b23d0616f77fe0", "size": 24121},
+        {"content_sha256": "f8550d21066d0ec53bd782355c762289bb81d5ba7923001fcea2c2cde0b21272", "deck": "arc-phrasebook", "kind": "vocab", "part": "core", "path": "decks/arc/arc-phrasebook.yaml", "schema": 1, "sha256": "f8550d21066d0ec53bd782355c762289bb81d5ba7923001fcea2c2cde0b21272", "size": 5137},
+        {"content_sha256": "639ba27995666679b96e110ee9d6343a9da3929e290e438244e71f07bd5da5ee", "deck": "arc-first-words", "kind": "layer", "native": "en", "path": "decks/arc/en/arc-en-first-words.yaml", "schema": 1, "sha256": "639ba27995666679b96e110ee9d6343a9da3929e290e438244e71f07bd5da5ee", "size": 10251},
+        {"content_sha256": "00b18d246f0066a3d34ea6e3bd0bb78b47cd721d7e012e896cc0abe9de64be32", "deck": "arc-phrasebook", "kind": "layer", "native": "en", "path": "decks/arc/en/arc-en-phrasebook.yaml", "schema": 1, "sha256": "00b18d246f0066a3d34ea6e3bd0bb78b47cd721d7e012e896cc0abe9de64be32", "size": 2058}
       ],
       "fonts": [
         {"family": "Noto Sans Hebrew", "path": "decks/fonts/hebrew/NotoSansHebrew.ttf", "script": "hebrew", "sha256": "7ef36a2c3593758cdb622e1bdef4f84523e92fbc3ccc667438dd80ff54c2de88", "size": 112640},
@@ -2401,10 +2403,10 @@
       "script": "devanagari",
       "script_decks": false,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 35542,
-      "path": ["brx-first-words"],
+      "size": 44440,
+      "path": ["brx-phrasebook", "brx-first-words"],
       "units": [
-        {"decks": ["brx-first-words"], "has": {"en": 13}, "words": 13},
+        {"decks": ["brx-phrasebook", "brx-first-words"], "has": {"en": 13}, "words": 13},
         {"decks": [], "grammar": ["sound-differences"], "planned": true},
         {"decks": [], "planned": true, "words": 12},
         {"decks": [], "planned": true, "words": 36},
@@ -2494,8 +2496,10 @@
       ],
       "files": [
         {"content_sha256": "299e8e3a73a90c2a6b7f9a3ad4f38fd19857228717dba4ce002c885d1d02a252", "deck": "brx-first-words", "kind": "vocab", "part": "core", "path": "decks/brx/brx-first-words.yaml", "schema": 1, "sha256": "299e8e3a73a90c2a6b7f9a3ad4f38fd19857228717dba4ce002c885d1d02a252", "size": 2458},
-        {"content_sha256": "30f7ce3d1382282589a68b67b0134dad059559549bd0d208b7396a4276069953", "kind": "path", "path": "decks/brx/brx-path.yaml", "schema": 1, "sha256": "30f7ce3d1382282589a68b67b0134dad059559549bd0d208b7396a4276069953", "size": 29393},
-        {"content_sha256": "5bade51d2622b9b08fd7fedff510e5633e00cc163d2cc2fef83468dffda399a7", "deck": "brx-first-words", "kind": "layer", "native": "en", "path": "decks/brx/en/brx-en-first-words.yaml", "schema": 1, "sha256": "5bade51d2622b9b08fd7fedff510e5633e00cc163d2cc2fef83468dffda399a7", "size": 3691}
+        {"content_sha256": "7dfbdb248d5ebe33c87b9a7377691b73706bc9492d0997c4dad06fe7d20a072f", "kind": "path", "path": "decks/brx/brx-path.yaml", "schema": 1, "sha256": "7dfbdb248d5ebe33c87b9a7377691b73706bc9492d0997c4dad06fe7d20a072f", "size": 29430},
+        {"content_sha256": "4a88ad5a2c18f6f578c093d441e8fd01c1df6ade21f68fdfe869b2659ed6ce87", "deck": "brx-phrasebook", "kind": "vocab", "part": "core", "path": "decks/brx/brx-phrasebook.yaml", "schema": 1, "sha256": "4a88ad5a2c18f6f578c093d441e8fd01c1df6ade21f68fdfe869b2659ed6ce87", "size": 6284},
+        {"content_sha256": "5bade51d2622b9b08fd7fedff510e5633e00cc163d2cc2fef83468dffda399a7", "deck": "brx-first-words", "kind": "layer", "native": "en", "path": "decks/brx/en/brx-en-first-words.yaml", "schema": 1, "sha256": "5bade51d2622b9b08fd7fedff510e5633e00cc163d2cc2fef83468dffda399a7", "size": 3691},
+        {"content_sha256": "fe655e7ab1b69fc2764422659da2c0a63f259b517a9c0eae7cf231848ce6286c", "deck": "brx-phrasebook", "kind": "layer", "native": "en", "path": "decks/brx/en/brx-en-phrasebook.yaml", "schema": 1, "sha256": "fe655e7ab1b69fc2764422659da2c0a63f259b517a9c0eae7cf231848ce6286c", "size": 2577}
       ],
       "fonts": [
         {"family": "Noto Sans Devanagari", "path": "decks/fonts/devanagari/NotoSansDevanagari.ttf", "script": "devanagari", "sha256": "14ec4af41f27482216d1c2229f417ff9b1425e1babb014e57d1d40d03229853e", "size": 641944},
@@ -5311,10 +5315,10 @@
       "script": "latin",
       "script_decks": false,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 38641,
-      "path": ["gom-first-words"],
+      "size": 45350,
+      "path": ["gom-phrasebook", "gom-first-words"],
       "units": [
-        {"decks": ["gom-first-words"], "has": {"en": 27}, "words": 27},
+        {"decks": ["gom-phrasebook", "gom-first-words"], "has": {"en": 27}, "words": 27},
         {"decks": [], "grammar": ["sound-differences"], "planned": true},
         {"decks": [], "planned": true, "words": 12},
         {"decks": [], "planned": true, "words": 36},
@@ -5402,8 +5406,10 @@
       ],
       "files": [
         {"content_sha256": "32d11636305e032d3feaff6df761d6e2873a56d474ca5d5e7c396760cbd7a700", "deck": "gom-first-words", "kind": "vocab", "part": "core", "path": "decks/gom/gom-first-words.yaml", "schema": 1, "sha256": "32d11636305e032d3feaff6df761d6e2873a56d474ca5d5e7c396760cbd7a700", "size": 3579},
-        {"content_sha256": "8538f232e205ab590ed8b279346d70f1115569946b7e029e309fbb50971224f7", "kind": "path", "path": "decks/gom/gom-path.yaml", "schema": 1, "sha256": "8538f232e205ab590ed8b279346d70f1115569946b7e029e309fbb50971224f7", "size": 29986},
-        {"content_sha256": "55d4c072efd2988f6e5927b5b1ced5a60d342370286de9db020aef9a74bc2b46", "deck": "gom-first-words", "kind": "layer", "native": "en", "path": "decks/gom/en/gom-en-first-words.yaml", "schema": 1, "sha256": "55d4c072efd2988f6e5927b5b1ced5a60d342370286de9db020aef9a74bc2b46", "size": 5076}
+        {"content_sha256": "c7d560422c80cac89b348ebb283abe28f000879d8a969f7e8036c824ce60f35e", "kind": "path", "path": "decks/gom/gom-path.yaml", "schema": 1, "sha256": "c7d560422c80cac89b348ebb283abe28f000879d8a969f7e8036c824ce60f35e", "size": 30023},
+        {"content_sha256": "a41e030b6412b8a0d4750b6a3a5df372a00d7524880f477ab42356c8615fae14", "deck": "gom-phrasebook", "kind": "vocab", "part": "core", "path": "decks/gom/gom-phrasebook.yaml", "schema": 1, "sha256": "a41e030b6412b8a0d4750b6a3a5df372a00d7524880f477ab42356c8615fae14", "size": 4430},
+        {"content_sha256": "55d4c072efd2988f6e5927b5b1ced5a60d342370286de9db020aef9a74bc2b46", "deck": "gom-first-words", "kind": "layer", "native": "en", "path": "decks/gom/en/gom-en-first-words.yaml", "schema": 1, "sha256": "55d4c072efd2988f6e5927b5b1ced5a60d342370286de9db020aef9a74bc2b46", "size": 5076},
+        {"content_sha256": "255e44346d9540f589796fd50cf4a15a0601d9af5f2ffb2a505cd7ecd3c30eb5", "deck": "gom-phrasebook", "kind": "layer", "native": "en", "path": "decks/gom/en/gom-en-phrasebook.yaml", "schema": 1, "sha256": "255e44346d9540f589796fd50cf4a15a0601d9af5f2ffb2a505cd7ecd3c30eb5", "size": 2242}
       ],
       "fonts": [
         {"family": "Noto Sans", "path": "decks/fonts/latin/NotoSansLatin.ttf", "script": "latin", "sha256": "1bb272ff8a667e720929240594359e4583d14a40b69e055fdc75f10c2c868796", "size": 358400}
@@ -9149,10 +9155,10 @@
       "script": "latin",
       "script_decks": false,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 36560,
-      "path": ["kha-first-words"],
+      "size": 43115,
+      "path": ["kha-phrasebook", "kha-first-words"],
       "units": [
-        {"decks": ["kha-first-words"], "has": {"en": 28}, "words": 29},
+        {"decks": ["kha-phrasebook", "kha-first-words"], "has": {"en": 28}, "words": 29},
         {"decks": [], "grammar": ["sound-differences"], "planned": true},
         {"decks": [], "planned": true, "words": 12},
         {"decks": [], "planned": true, "words": 36},
@@ -9239,8 +9245,10 @@
       ],
       "files": [
         {"content_sha256": "7a5de65d6c8b4df29030b30aa7affb386b02237617ae3d69ce9fa11a96ddd3b7", "deck": "kha-first-words", "kind": "vocab", "part": "core", "path": "decks/kha/kha-first-words.yaml", "schema": 1, "sha256": "7a5de65d6c8b4df29030b30aa7affb386b02237617ae3d69ce9fa11a96ddd3b7", "size": 3795},
-        {"content_sha256": "638aaa980ca9a8838cfb5c8d5b152b5b30182b80c8df9c8fe86d8ae383fda2aa", "kind": "path", "path": "decks/kha/kha-path.yaml", "schema": 1, "sha256": "638aaa980ca9a8838cfb5c8d5b152b5b30182b80c8df9c8fe86d8ae383fda2aa", "size": 28457},
-        {"content_sha256": "5ab782c3af98ce0765df943f3bcb253865db15f8a726c25eeb23cee5ba3d0bcb", "deck": "kha-first-words", "kind": "layer", "native": "en", "path": "decks/kha/en/kha-en-first-words.yaml", "schema": 1, "sha256": "5ab782c3af98ce0765df943f3bcb253865db15f8a726c25eeb23cee5ba3d0bcb", "size": 4308}
+        {"content_sha256": "fb2e440aee0f889f182f4710b89e641719bd874b321b557012f9d95eaf0a0acb", "kind": "path", "path": "decks/kha/kha-path.yaml", "schema": 1, "sha256": "fb2e440aee0f889f182f4710b89e641719bd874b321b557012f9d95eaf0a0acb", "size": 28494},
+        {"content_sha256": "2718629fd7ae3d7c3edff8a0d7f6b88d9d659850b35e3e182898280b2a8cce0c", "deck": "kha-phrasebook", "kind": "vocab", "part": "core", "path": "decks/kha/kha-phrasebook.yaml", "schema": 1, "sha256": "2718629fd7ae3d7c3edff8a0d7f6b88d9d659850b35e3e182898280b2a8cce0c", "size": 4341},
+        {"content_sha256": "5ab782c3af98ce0765df943f3bcb253865db15f8a726c25eeb23cee5ba3d0bcb", "deck": "kha-first-words", "kind": "layer", "native": "en", "path": "decks/kha/en/kha-en-first-words.yaml", "schema": 1, "sha256": "5ab782c3af98ce0765df943f3bcb253865db15f8a726c25eeb23cee5ba3d0bcb", "size": 4308},
+        {"content_sha256": "ba9a3b8318819f8e0ce24a393e8ee5d5c8a4228fdfcc45481cecf0742a54a1c2", "deck": "kha-phrasebook", "kind": "layer", "native": "en", "path": "decks/kha/en/kha-en-phrasebook.yaml", "schema": 1, "sha256": "ba9a3b8318819f8e0ce24a393e8ee5d5c8a4228fdfcc45481cecf0742a54a1c2", "size": 2177}
       ],
       "fonts": [
         {"family": "Noto Sans", "path": "decks/fonts/latin/NotoSansLatin.ttf", "script": "latin", "sha256": "1bb272ff8a667e720929240594359e4583d14a40b69e055fdc75f10c2c868796", "size": 358400}
@@ -10185,10 +10193,10 @@
       "script": "perso_arabic",
       "script_decks": false,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 37389,
-      "path": ["ks-first-words"],
+      "size": 46858,
+      "path": ["ks-phrasebook", "ks-first-words"],
       "units": [
-        {"decks": ["ks-first-words"], "has": {"en": 20}, "words": 20},
+        {"decks": ["ks-phrasebook", "ks-first-words"], "has": {"en": 20}, "words": 20},
         {"decks": [], "grammar": ["sound-differences"], "planned": true},
         {"decks": [], "planned": true, "words": 12},
         {"decks": [], "planned": true, "words": 36},
@@ -10279,8 +10287,10 @@
       ],
       "files": [
         {"content_sha256": "892b909de9ef7cceb2bdc9cb24604f5c9f1d9ef07829f769f4c04703b8fece34", "deck": "ks-first-words", "kind": "vocab", "part": "core", "path": "decks/ks/ks-first-words.yaml", "schema": 1, "sha256": "892b909de9ef7cceb2bdc9cb24604f5c9f1d9ef07829f769f4c04703b8fece34", "size": 3323},
-        {"content_sha256": "8cb5b36cb5c144d37cc022a9849eccbbeb568dec501b97893e13cd01fec4c4f5", "kind": "path", "path": "decks/ks/ks-path.yaml", "schema": 1, "sha256": "8cb5b36cb5c144d37cc022a9849eccbbeb568dec501b97893e13cd01fec4c4f5", "size": 30409},
-        {"content_sha256": "a2500bfc65cdbb0f5dfba11c59855cbe0c9f8ddea58d8cb934955e11ffd44271", "deck": "ks-first-words", "kind": "layer", "native": "en", "path": "decks/ks/en/ks-en-first-words.yaml", "schema": 1, "sha256": "a2500bfc65cdbb0f5dfba11c59855cbe0c9f8ddea58d8cb934955e11ffd44271", "size": 3657}
+        {"content_sha256": "65c3ba9d30a4b64244700b5200d649e1172780a7756b102e0485a78a5ee56da2", "kind": "path", "path": "decks/ks/ks-path.yaml", "schema": 1, "sha256": "65c3ba9d30a4b64244700b5200d649e1172780a7756b102e0485a78a5ee56da2", "size": 30445},
+        {"content_sha256": "dfbb30a76c6ec8e00e73d6af7264af3c778ef1a0a45fa21a115e8e821570c759", "deck": "ks-phrasebook", "kind": "vocab", "part": "core", "path": "decks/ks/ks-phrasebook.yaml", "schema": 1, "sha256": "dfbb30a76c6ec8e00e73d6af7264af3c778ef1a0a45fa21a115e8e821570c759", "size": 6710},
+        {"content_sha256": "a2500bfc65cdbb0f5dfba11c59855cbe0c9f8ddea58d8cb934955e11ffd44271", "deck": "ks-first-words", "kind": "layer", "native": "en", "path": "decks/ks/en/ks-en-first-words.yaml", "schema": 1, "sha256": "a2500bfc65cdbb0f5dfba11c59855cbe0c9f8ddea58d8cb934955e11ffd44271", "size": 3657},
+        {"content_sha256": "75a17c3e34508236e119686b8d442604430e7050d75c30edb0e28d6a2594e00c", "deck": "ks-phrasebook", "kind": "layer", "native": "en", "path": "decks/ks/en/ks-en-phrasebook.yaml", "schema": 1, "sha256": "75a17c3e34508236e119686b8d442604430e7050d75c30edb0e28d6a2594e00c", "size": 2723}
       ],
       "fonts": [
         {"family": "Noto Naskh Arabic", "path": "decks/fonts/perso_arabic_naskh/NotoNaskhArabic.ttf", "script": "perso_arabic_naskh", "sha256": "67b5a525a661b607971fbd3f96a81b89d3a768e74534fca84f18ac97e6fab72f", "size": 307592},
@@ -10379,10 +10389,10 @@
       "script": "latin",
       "script_decks": false,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 36779,
-      "path": ["lus-first-words"],
+      "size": 44141,
+      "path": ["lus-phrasebook", "lus-first-words"],
       "units": [
-        {"decks": ["lus-first-words"], "has": {"en": 29}, "words": 29},
+        {"decks": ["lus-phrasebook", "lus-first-words"], "has": {"en": 29}, "words": 29},
         {"decks": [], "grammar": ["sound-differences"], "planned": true},
         {"decks": [], "grammar": ["tones"], "planned": true},
         {"decks": [], "planned": true, "words": 12},
@@ -10470,8 +10480,10 @@
       ],
       "files": [
         {"content_sha256": "26959ac6b0b366cb09cde508e017b4dd3e3c04aeab40d788a54ca5c56ea32ffb", "deck": "lus-first-words", "kind": "vocab", "part": "core", "path": "decks/lus/lus-first-words.yaml", "schema": 1, "sha256": "26959ac6b0b366cb09cde508e017b4dd3e3c04aeab40d788a54ca5c56ea32ffb", "size": 4403},
-        {"content_sha256": "40fbd35ed75846424342dbb80b4271640805653ecf1a4877cad930d660dfdf21", "kind": "path", "path": "decks/lus/lus-path.yaml", "schema": 1, "sha256": "40fbd35ed75846424342dbb80b4271640805653ecf1a4877cad930d660dfdf21", "size": 28543},
-        {"content_sha256": "48eb8fcc4b7bae3a14c66873d4b7d3bf38dcc05433706e8bae0af81c72bb9dbe", "deck": "lus-first-words", "kind": "layer", "native": "en", "path": "decks/lus/en/lus-en-first-words.yaml", "schema": 1, "sha256": "48eb8fcc4b7bae3a14c66873d4b7d3bf38dcc05433706e8bae0af81c72bb9dbe", "size": 3833}
+        {"content_sha256": "97d9bc7f3ab64449fac94d8745906edbb3e5bdf0873832476e2a822dbe11f9b4", "kind": "path", "path": "decks/lus/lus-path.yaml", "schema": 1, "sha256": "97d9bc7f3ab64449fac94d8745906edbb3e5bdf0873832476e2a822dbe11f9b4", "size": 28580},
+        {"content_sha256": "fcef7ba26ba8d6914b7703445cc56accecbfa4de2400d4cdd4e6e4c3462c74cb", "deck": "lus-phrasebook", "kind": "vocab", "part": "core", "path": "decks/lus/lus-phrasebook.yaml", "schema": 1, "sha256": "fcef7ba26ba8d6914b7703445cc56accecbfa4de2400d4cdd4e6e4c3462c74cb", "size": 4724},
+        {"content_sha256": "48eb8fcc4b7bae3a14c66873d4b7d3bf38dcc05433706e8bae0af81c72bb9dbe", "deck": "lus-first-words", "kind": "layer", "native": "en", "path": "decks/lus/en/lus-en-first-words.yaml", "schema": 1, "sha256": "48eb8fcc4b7bae3a14c66873d4b7d3bf38dcc05433706e8bae0af81c72bb9dbe", "size": 3833},
+        {"content_sha256": "59fc35c0a68bff78f5e911ecf6c5e800470a7d3713344e4bf6b318d94ecfddae", "deck": "lus-phrasebook", "kind": "layer", "native": "en", "path": "decks/lus/en/lus-en-phrasebook.yaml", "schema": 1, "sha256": "59fc35c0a68bff78f5e911ecf6c5e800470a7d3713344e4bf6b318d94ecfddae", "size": 2601}
       ],
       "fonts": [
         {"family": "Noto Sans", "path": "decks/fonts/latin/NotoSansLatin.ttf", "script": "latin", "sha256": "1bb272ff8a667e720929240594359e4583d14a40b69e055fdc75f10c2c868796", "size": 358400}
@@ -10882,10 +10894,10 @@
       "script": "bengali",
       "script_decks": false,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 41452,
-      "path": ["mni-first-words"],
+      "size": 48716,
+      "path": ["mni-phrasebook", "mni-first-words"],
       "units": [
-        {"decks": ["mni-first-words"], "has": {"en": 30}, "words": 30},
+        {"decks": ["mni-phrasebook", "mni-first-words"], "has": {"en": 30}, "words": 30},
         {"decks": [], "grammar": ["sound-differences"], "planned": true},
         {"decks": [], "planned": true, "words": 12},
         {"decks": [], "planned": true, "words": 36},
@@ -10974,8 +10986,10 @@
       ],
       "files": [
         {"content_sha256": "bff41187a84c8c0ebeb0a9325137cbb51b013d812cf9bb92976582a7ee3de9c9", "deck": "mni-first-words", "kind": "vocab", "part": "core", "path": "decks/mni/mni-first-words.yaml", "schema": 1, "sha256": "bff41187a84c8c0ebeb0a9325137cbb51b013d812cf9bb92976582a7ee3de9c9", "size": 7447},
-        {"content_sha256": "3f77d49e191316ffb855b4c913d02de7acf3ee9b699a14bb3499b801ff77c41d", "kind": "path", "path": "decks/mni/mni-path.yaml", "schema": 1, "sha256": "3f77d49e191316ffb855b4c913d02de7acf3ee9b699a14bb3499b801ff77c41d", "size": 29781},
-        {"content_sha256": "7a66023eeb266e2da044d332f974a8004f77c7dd4ca17003fb1d90587164dfde", "deck": "mni-first-words", "kind": "layer", "native": "en", "path": "decks/mni/en/mni-en-first-words.yaml", "schema": 1, "sha256": "7a66023eeb266e2da044d332f974a8004f77c7dd4ca17003fb1d90587164dfde", "size": 4224}
+        {"content_sha256": "abcfa7fc5b7d78dab057d2458e88b594d23fe99d3981b1fca672a2c1c1e9d761", "kind": "path", "path": "decks/mni/mni-path.yaml", "schema": 1, "sha256": "abcfa7fc5b7d78dab057d2458e88b594d23fe99d3981b1fca672a2c1c1e9d761", "size": 29840},
+        {"content_sha256": "9776ae64f1ba484eeb8ffae85d090d48fac5e5974bca13a797c79ea03f9de119", "deck": "mni-phrasebook", "kind": "vocab", "part": "core", "path": "decks/mni/mni-phrasebook.yaml", "schema": 1, "sha256": "9776ae64f1ba484eeb8ffae85d090d48fac5e5974bca13a797c79ea03f9de119", "size": 5471},
+        {"content_sha256": "7a66023eeb266e2da044d332f974a8004f77c7dd4ca17003fb1d90587164dfde", "deck": "mni-first-words", "kind": "layer", "native": "en", "path": "decks/mni/en/mni-en-first-words.yaml", "schema": 1, "sha256": "7a66023eeb266e2da044d332f974a8004f77c7dd4ca17003fb1d90587164dfde", "size": 4224},
+        {"content_sha256": "664ca13f9c8365c894ad5bae7c8729e339703ba667bccf3ebb672bb6393646ba", "deck": "mni-phrasebook", "kind": "layer", "native": "en", "path": "decks/mni/en/mni-en-phrasebook.yaml", "schema": 1, "sha256": "664ca13f9c8365c894ad5bae7c8729e339703ba667bccf3ebb672bb6393646ba", "size": 1734}
       ],
       "fonts": [
         {"family": "Noto Sans Bengali", "path": "decks/fonts/bengali/NotoSansBengali.ttf", "script": "bengali", "sha256": "dcd42978094e584a849c84a51450eeac40c8826057d566ea6d4b9627a403a05a", "size": 463668},
@@ -13980,10 +13994,10 @@
       "script": "ol_chiki",
       "script_decks": false,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 44111,
-      "path": ["sat-first-words"],
+      "size": 50245,
+      "path": ["sat-phrasebook", "sat-first-words"],
       "units": [
-        {"decks": ["sat-first-words"], "has": {"en": 21}, "words": 36},
+        {"decks": ["sat-phrasebook", "sat-first-words"], "has": {"en": 35}, "words": 36},
         {"decks": [], "grammar": ["sound-differences"], "planned": true},
         {"decks": [], "planned": true, "words": 12},
         {"decks": [], "planned": true, "words": 36},
@@ -14072,9 +14086,11 @@
         {"decks": []}
       ],
       "files": [
-        {"content_sha256": "91d7c9adce4ee312b367ef5c3c9061662b697105fee1d7decf631aaf4996b6c8", "deck": "sat-first-words", "kind": "vocab", "part": "core", "path": "decks/sat/sat-first-words.yaml", "schema": 1, "sha256": "91d7c9adce4ee312b367ef5c3c9061662b697105fee1d7decf631aaf4996b6c8", "size": 8013},
-        {"content_sha256": "0b269a1a07f6c75f32f4693c4f62f949dca2dfaa57fd62724b437b5c2470af26", "kind": "path", "path": "decks/sat/sat-path.yaml", "schema": 1, "sha256": "0b269a1a07f6c75f32f4693c4f62f949dca2dfaa57fd62724b437b5c2470af26", "size": 30266},
-        {"content_sha256": "637d8269b6566b1f35be261038006babac28d892a752bc338a147f20f6cd20bc", "deck": "sat-first-words", "kind": "layer", "native": "en", "path": "decks/sat/en/sat-en-first-words.yaml", "schema": 1, "sha256": "637d8269b6566b1f35be261038006babac28d892a752bc338a147f20f6cd20bc", "size": 5832}
+        {"content_sha256": "994cae8ce7c26dec70090bd09ea4d0b0bcdb03ed2ca97d76ba93224ca47a652d", "deck": "sat-first-words", "kind": "vocab", "part": "core", "path": "decks/sat/sat-first-words.yaml", "schema": 1, "sha256": "994cae8ce7c26dec70090bd09ea4d0b0bcdb03ed2ca97d76ba93224ca47a652d", "size": 7719},
+        {"content_sha256": "67711bc72974d5060cbcc2c48315f017d5c8298bcc070200a932d420b998a32f", "kind": "path", "path": "decks/sat/sat-path.yaml", "schema": 1, "sha256": "67711bc72974d5060cbcc2c48315f017d5c8298bcc070200a932d420b998a32f", "size": 30284},
+        {"content_sha256": "3ce93d43bcd45fe45a9a6320eeceab9c1b41e5483c195232575e0762c5d37a22", "deck": "sat-phrasebook", "kind": "vocab", "part": "core", "path": "decks/sat/sat-phrasebook.yaml", "schema": 1, "sha256": "3ce93d43bcd45fe45a9a6320eeceab9c1b41e5483c195232575e0762c5d37a22", "size": 4743},
+        {"content_sha256": "637d8269b6566b1f35be261038006babac28d892a752bc338a147f20f6cd20bc", "deck": "sat-first-words", "kind": "layer", "native": "en", "path": "decks/sat/en/sat-en-first-words.yaml", "schema": 1, "sha256": "637d8269b6566b1f35be261038006babac28d892a752bc338a147f20f6cd20bc", "size": 5832},
+        {"content_sha256": "f4596c2b77053ed7c5270ee61b097afeabb59832d967d33d273f45ba609e5e07", "deck": "sat-phrasebook", "kind": "layer", "native": "en", "path": "decks/sat/en/sat-en-phrasebook.yaml", "schema": 1, "sha256": "f4596c2b77053ed7c5270ee61b097afeabb59832d967d33d273f45ba609e5e07", "size": 1667}
       ],
       "fonts": [
         {"family": "Noto Sans Ol Chiki", "path": "decks/fonts/ol_chiki/NotoSansOlChiki.ttf", "script": "ol_chiki", "sha256": "c9c31988656f49eccec9588825ab3b5045099c2f850ef98f356f976e8a596b4d", "size": 91152},
@@ -14091,10 +14107,10 @@
       "script": "perso_arabic",
       "script_decks": false,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 40904,
-      "path": ["sd-first-words"],
+      "size": 50141,
+      "path": ["sd-phrasebook", "sd-first-words"],
       "units": [
-        {"decks": ["sd-first-words"], "has": {"en": 36}, "words": 36},
+        {"decks": ["sd-phrasebook", "sd-first-words"], "has": {"en": 36}, "words": 36},
         {"decks": [], "grammar": ["sound-differences"], "planned": true},
         {"decks": [], "planned": true, "words": 12},
         {"decks": [], "planned": true, "words": 36},
@@ -14185,8 +14201,10 @@
       ],
       "files": [
         {"content_sha256": "bb0a9a1c4943c5fc12a38a11e4cc02efc44b59e64ca3f995ce3d7b7bc41e46ba", "deck": "sd-first-words", "kind": "vocab", "part": "core", "path": "decks/sd/sd-first-words.yaml", "schema": 1, "sha256": "bb0a9a1c4943c5fc12a38a11e4cc02efc44b59e64ca3f995ce3d7b7bc41e46ba", "size": 5548},
-        {"content_sha256": "a37846309bc69c3f06b77f89c9159ddff4cf4d702f30316cbb5bb235af1fbccd", "kind": "path", "path": "decks/sd/sd-path.yaml", "schema": 1, "sha256": "a37846309bc69c3f06b77f89c9159ddff4cf4d702f30316cbb5bb235af1fbccd", "size": 30058},
-        {"content_sha256": "93569c36d1cfac4fee98ccda6ba9fc340a71535ebf8694caa74f6b681fc1c271", "deck": "sd-first-words", "kind": "layer", "native": "en", "path": "decks/sd/en/sd-en-first-words.yaml", "schema": 1, "sha256": "93569c36d1cfac4fee98ccda6ba9fc340a71535ebf8694caa74f6b681fc1c271", "size": 5298}
+        {"content_sha256": "c668a4956082a9ad1feee058a62d2288670f5054479885f68aeafb841d1a29d0", "kind": "path", "path": "decks/sd/sd-path.yaml", "schema": 1, "sha256": "c668a4956082a9ad1feee058a62d2288670f5054479885f68aeafb841d1a29d0", "size": 30094},
+        {"content_sha256": "b81f92544e6d4ea9b1db2b1082b734517973c705256d42786b7d772ac8b3b05e", "deck": "sd-phrasebook", "kind": "vocab", "part": "core", "path": "decks/sd/sd-phrasebook.yaml", "schema": 1, "sha256": "b81f92544e6d4ea9b1db2b1082b734517973c705256d42786b7d772ac8b3b05e", "size": 6666},
+        {"content_sha256": "93569c36d1cfac4fee98ccda6ba9fc340a71535ebf8694caa74f6b681fc1c271", "deck": "sd-first-words", "kind": "layer", "native": "en", "path": "decks/sd/en/sd-en-first-words.yaml", "schema": 1, "sha256": "93569c36d1cfac4fee98ccda6ba9fc340a71535ebf8694caa74f6b681fc1c271", "size": 5298},
+        {"content_sha256": "58c6a0fc0f2ff53f7b42a891870d8787914d77150ac68cf274f55fd1e1a0b40d", "deck": "sd-phrasebook", "kind": "layer", "native": "en", "path": "decks/sd/en/sd-en-phrasebook.yaml", "schema": 1, "sha256": "58c6a0fc0f2ff53f7b42a891870d8787914d77150ac68cf274f55fd1e1a0b40d", "size": 2535}
       ],
       "fonts": [
         {"family": "Noto Naskh Arabic", "path": "decks/fonts/perso_arabic_naskh/NotoNaskhArabic.ttf", "script": "perso_arabic_naskh", "sha256": "67b5a525a661b607971fbd3f96a81b89d3a768e74534fca84f18ac97e6fab72f", "size": 307592},
@@ -14846,10 +14864,10 @@
       "script": "kannada",
       "script_decks": false,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 37202,
-      "path": ["tcy-first-words"],
+      "size": 46571,
+      "path": ["tcy-phrasebook", "tcy-first-words"],
       "units": [
-        {"decks": ["tcy-first-words"], "has": {"en": 24}, "words": 24},
+        {"decks": ["tcy-phrasebook", "tcy-first-words"], "has": {"en": 24}, "words": 24},
         {"decks": [], "grammar": ["sound-differences"], "planned": true},
         {"decks": [], "planned": true, "words": 12},
         {"decks": [], "planned": true, "words": 36},
@@ -14938,8 +14956,10 @@
       ],
       "files": [
         {"content_sha256": "9b93e1b55d7e0f7fa275c449f6a0ea047edda2955ffc3444fa40da7faf3aa18a", "deck": "tcy-first-words", "kind": "vocab", "part": "core", "path": "decks/tcy/tcy-first-words.yaml", "schema": 1, "sha256": "9b93e1b55d7e0f7fa275c449f6a0ea047edda2955ffc3444fa40da7faf3aa18a", "size": 3963},
-        {"content_sha256": "c1735d119bf881fe8dcbe6219ae3e3ba47b6b063c91d8617847c14200c345a06", "kind": "path", "path": "decks/tcy/tcy-path.yaml", "schema": 1, "sha256": "c1735d119bf881fe8dcbe6219ae3e3ba47b6b063c91d8617847c14200c345a06", "size": 28934},
-        {"content_sha256": "07e14271a6bf752a498d06c0614323c0de07d95b87e51b13178467bb43962604", "deck": "tcy-first-words", "kind": "layer", "native": "en", "path": "decks/tcy/en/tcy-en-first-words.yaml", "schema": 1, "sha256": "07e14271a6bf752a498d06c0614323c0de07d95b87e51b13178467bb43962604", "size": 4305}
+        {"content_sha256": "f998ea18174aa71d11ad156bbaf6b50c11b8634740921a839621cd24e5f0f379", "kind": "path", "path": "decks/tcy/tcy-path.yaml", "schema": 1, "sha256": "f998ea18174aa71d11ad156bbaf6b50c11b8634740921a839621cd24e5f0f379", "size": 28971},
+        {"content_sha256": "97ce8a7ccd89d374dd6562f1b3be34c62cafe76d8c108962629485a18746202f", "deck": "tcy-phrasebook", "kind": "vocab", "part": "core", "path": "decks/tcy/tcy-phrasebook.yaml", "schema": 1, "sha256": "97ce8a7ccd89d374dd6562f1b3be34c62cafe76d8c108962629485a18746202f", "size": 6734},
+        {"content_sha256": "07e14271a6bf752a498d06c0614323c0de07d95b87e51b13178467bb43962604", "deck": "tcy-first-words", "kind": "layer", "native": "en", "path": "decks/tcy/en/tcy-en-first-words.yaml", "schema": 1, "sha256": "07e14271a6bf752a498d06c0614323c0de07d95b87e51b13178467bb43962604", "size": 4305},
+        {"content_sha256": "3c9793a71ec012fbc2e35c0f8393f76c1ff93c60d187ed47702805eb0165c7c3", "deck": "tcy-phrasebook", "kind": "layer", "native": "en", "path": "decks/tcy/en/tcy-en-phrasebook.yaml", "schema": 1, "sha256": "3c9793a71ec012fbc2e35c0f8393f76c1ff93c60d187ed47702805eb0165c7c3", "size": 2598}
       ],
       "fonts": [
         {"family": "Noto Sans Kannada", "path": "decks/fonts/kannada/NotoSansKannada.ttf", "script": "kannada", "sha256": "cca4f3b3a8cb12fb261f1b43baf5d2f7f59d90fe123d41f0065ed3a183997ec9", "size": 641372},
