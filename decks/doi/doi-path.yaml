@@ -26,11 +26,11 @@ schema: 1
 kind: "path"
 id: "doi-path"
 language: "doi"
-description: "Dogri: the planned path to B1. Only the first words are written."
+description: "Dogri: the planned path to B1. Only the phrasebook and the first words are written."
 genders: ["m", "f"]
 alphabet: []
 units:
-  - decks: ["doi-first-words", "*"]
+  - decks: ["doi-phrasebook", "doi-first-words", "*"]
     words: 39
   - planned: { id: "doi-sound-differences", grammar: ["sound-differences"] }
     listening_passages:
