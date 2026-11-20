@@ -816,7 +816,7 @@ class HiddenLanguages(unittest.TestCase):
     as awa bgc bho bn brx de doi en eo es fr gbm gom gu hi hne isv ja
     jbo kfy kha kn ko kok ks lus mag mai ml mni mr ne or pa raj sa sat
     sd ta tcy te tok zh
-    ipa qbe
+    ipa qbe qmo
     ang ar arc ca egy el enm eu fi fil ga gmy grc ha hbs he hu ine it la ms nb
     af fa id nl ps uk
     ase ins
