@@ -26,11 +26,11 @@ schema: 1
 kind: "path"
 id: "raj-path"
 language: "raj"
-description: "Rajasthani: the planned path to B1. Only the first words are written."
+description: "Rajasthani: the planned path to B1. Only the phrasebook and the first words are written."
 genders: ["m", "f"]
 alphabet: []
 units:
-  - decks: ["raj-first-words", "*"]
+  - decks: ["raj-phrasebook", "raj-first-words", "*"]
     words: 39
   - planned: { id: "raj-sound-differences", grammar: ["sound-differences"] }
     listening_passages:
