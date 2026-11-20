@@ -1,0 +1,87 @@
+# The people behind the Classical Sanskrit culture decks (wiki/Plan-Deck-Kinds-And-Topics.md, D5). Only authors with a birth and a death year on two independent pages
+# (the English Wikipedia article and Wikidata, read on 2026-11-17) are creators; every other author of the culture decks is "anonymous" there, because the creators
+# format needs two years. Circa where Wikipedia writes "c.". No pictures: none has a licence checked yet. The eras are those of Plan-Culture-Sanskrit.md, with the years
+# of each English Wikipedia infobox; the Satavahana dynasty is left out because its infobox gives "late 2nd century BCE" and no year.
+schema: 1
+kind: "creators"
+id: "creators-sa"
+language: "sa"
+license: "CC-BY-SA-4.0"
+eras:
+  - id: "maurya"
+    name: { en: "Maurya Empire" }
+    from: -321
+    to: -185
+  - id: "shunga"
+    name: { en: "Shunga Empire" }
+    from: -185
+    to: -73
+  - id: "kushan"
+    name: { en: "Kushan Empire" }
+    from: 30
+    to: 375
+  - id: "gupta"
+    name: { en: "Gupta Empire" }
+    from: 240
+    to: 579
+  - id: "harsha"
+    name: { en: "Harsha of Kannauj" }
+    from: 606
+    to: 647
+  - id: "pala"
+    name: { en: "Pala Empire" }
+    from: 750
+    to: 1161
+creators:
+  - id: "sa-aryabhata"
+    name:
+      sa: { text: "आर्यभट", reading: "āryabhaṭa", ipa: "aːrjəbʱəʈə" }
+      en: { text: "Āryabhaṭa" }
+    born: 476
+    died: 550
+    era: "gupta"
+    bio:
+      en: "Āryabhaṭa was an Indian mathematician and astronomer of the Gupta era. He called himself a native of Kusumapura or Pāṭaliputra, near present-day Patna. His only known surviving work is the Āryabhaṭīya, a Sanskrit astronomical treatise."
+    legacy:
+      text: { en: "India's first satellite and a lunar crater are both named for him, as the English Wikipedia article says." }
+      items:
+        - { kind: "commemoration", text: { en: "The English Wikipedia article says the lunar crater Aryabhata is named in his honour, as is India's first satellite, which also appeared on the reverse of the Indian 2-rupee note." }, source: { url: "https://en.wikipedia.org/wiki/Aryabhata", accessed: "2026-11-17" } }
+  - id: "sa-varahamihira"
+    name:
+      sa: { text: "वराहमिहिर", reading: "varāhamihira", ipa: "ʋəraːɦəmiɦirə" }
+      en: { text: "Varāhamihira" }
+    born: { year: 505, circa: true }
+    died: { year: 587, circa: true }
+    era: "gupta"
+    bio:
+      en: "Varāhamihira was an ancient Indian mathematician and astronomer who lived in Ujjain, and is considered one of the foremost scholars of classical Indian astronomy. His notable works are the Pañcasiddhāntikā, the Bṛhatsaṃhitā and the Bṛhajjātaka. The English Wikipedia marks his dates, about 505 to about 587, as disputed."
+    legacy:
+      text: { en: "After his death he was held to be the most eminent writer on jyotiṣa, the Indian science of the stars." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says he gained a reputation as the most eminent writer on jyotiṣa after his death, and that his works superseded nearly all earlier Indian texts in that area." }, source: { url: "https://en.wikipedia.org/wiki/Var%C4%81hamihira", accessed: "2026-11-17" } }
+  - id: "sa-jayadeva"
+    name:
+      sa: { text: "जयदेव", reading: "jayadeva", ipa: "dʒəjəd̪eːʋə" }
+      en: { text: "Jayadeva" }
+    born: { year: 1170, circa: true }
+    died: { year: 1245, circa: true }
+    bio:
+      en: "Jayadeva was a Sanskrit poet of the 12th century, most known for the Gītagovinda, a poem on the love of Kṛṣṇa and the cowherd Rādhā. The English Wikipedia gives his years as about 1170 to about 1245 and notes a controversy over where he was born."
+    legacy:
+      text: { en: "The Gītagovinda is still sung in a temple at Puri, and hymns of his are in the Sikh scripture." }
+      items:
+        - { kind: "music", text: { en: "The English Wikipedia article says that in the Jagannatha temple of Puri the Gita Govinda is ritually sung every night during the Badasinghara ritual." }, source: { url: "https://en.wikipedia.org/wiki/Jayadeva", accessed: "2026-11-17" } }
+        - { kind: "other", text: { en: "The article says Jayadeva is the earliest dated author of hymns that are included in the Guru Granth Sahib, the primary scripture of Sikhism." }, source: { url: "https://en.wikipedia.org/wiki/Jayadeva", accessed: "2026-11-17" } }
+  - id: "sa-harsa"
+    name:
+      sa: { text: "हर्ष", reading: "harṣa", ipa: "ɦərʂə" }
+      en: { text: "Harṣa" }
+    born: 590
+    died: 647
+    era: "harsha"
+    bio:
+      en: "Harṣa, also called Harṣavardhana, was the emperor of Kannauj from 606 to 647. The English Wikipedia gives his birth as 4 June 590, and Wikidata agrees on 590 and 647."
+    legacy:
+      text: { en: "A silent film of 1926 about the emperor was made in India." }
+      items:
+        - { kind: "film", year: 1926, text: { en: "The English Wikipedia article says a 1926 Indian silent film about the emperor, Samrat Shiladitya, was directed by Mohan Dayaram Bhavnani." }, source: { url: "https://en.wikipedia.org/wiki/Harsha", accessed: "2026-11-17" } }
