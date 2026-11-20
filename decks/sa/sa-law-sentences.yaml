@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-law-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3970"
+    target: "न्यायालये परीक्षको न्यायं करोति."
+    reading: "nyāyālaye parīkṣako nyāyaṃ karoti."
+    ipa: "njaːjaːləjeː pəriːkʂəkoː njaːjəm kəroːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "न्यायालये", base: "न्यायालयः", reading: "nyāyālayaḥ" }, { word: "परीक्षको", base: "परीक्षकः", reading: "parīkṣakaḥ" }, { word: "न्यायं", base: "न्यायः", reading: "nyāyaḥ" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+    confusables: [{ id: "w1", ref: "sa-10001", kind: "word" }, { id: "w2", ref: "sa-5716", kind: "word" }, { id: "w3", ref: "sa-5742", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3971"
+    target: "साक्षिणी शपथेन सत्यं वदति."
+    reading: "sākṣiṇī śapathena satyaṃ vadati."
+    ipa: "saːkʂiɳiː ʃəpət̪ʰeːnə sət̪jəm ʋəd̪ət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "साक्षिणी", ref: "sa-10035" }, { word: "शपथेन", base: "शपथः", reading: "śapathaḥ" }, { word: "सत्यं", base: "सत्यः", reading: "satyaḥ" }, { word: "वदति", base: "वद्", reading: "vad" }]
+    confusables: [{ id: "w1", ref: "sa-10029", kind: "word" }, { id: "w2", ref: "sa-10032", kind: "word" }, { id: "w3", ref: "sa-7444", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3972"
+    target: "पाशेन चौरं सैनिका बध्नन्ति."
+    reading: "pāśena cauraṃ sainikā badhnanti."
+    ipa: "paːʃeːnə tʃəurəm səinikaː bəd̪ʱnənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पाशेन", base: "पाशः", reading: "pāśaḥ" }, { word: "चौरं", base: "चौरः", reading: "cauraḥ" }, { word: "सैनिका", base: "सैनिकः", reading: "sainikaḥ" }, { word: "बध्नन्ति", base: "बन्ध्", reading: "bandh" }]
+    confusables: [{ id: "w1", ref: "sa-10033", kind: "word" }, { id: "w2", ref: "sa-5745", kind: "word" }, { id: "w3", ref: "sa-12016", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3973"
+    target: "अधमर्णो धनिकाय धनं ददाति."
+    reading: "adhamarṇo dhanikāya dhanaṃ dadāti."
+    ipa: "əd̪ʱəmərɳoː d̪ʱənikaːjə d̪ʱənəm d̪əd̪aːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अधमर्णो", base: "अधमर्णः", reading: "adhamarṇaḥ" }, { word: "धनिकाय", base: "धनिकः", reading: "dhanikaḥ" }, { word: "धनं", base: "धनम्", reading: "dhanam" }, { word: "ददाति", base: "दा", reading: "dā" }]
+    confusables: [{ id: "w1", ref: "sa-10038", kind: "word" }, { id: "w2", ref: "sa-5908", kind: "word" }, { id: "w3", ref: "sa-2016", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3974"
+    target: "अनृतं चोरो न्यायालये वदति."
+    reading: "anṛtaṃ coro nyāyālaye vadati."
+    ipa: "ənr̩t̪əm tʃoːroː njaːjaːləjeː ʋəd̪ət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अनृतं", base: "अनृतम्", reading: "anṛtam" }, { word: "चोरो", base: "चोरः", reading: "coraḥ" }, { word: "न्यायालये", base: "न्यायालयः", reading: "nyāyālayaḥ" }, { word: "वदति", base: "वद्", reading: "vad" }]
+    confusables: [{ id: "w1", ref: "sa-10030", kind: "word" }, { id: "w2", ref: "sa-7426", kind: "word" }, { id: "w3", ref: "sa-10031", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3975"
+    target: "हिंसा सदा पातकं भवति."
+    reading: "hiṃsā sadā pātakaṃ bhavati."
+    ipa: "ɦĩsaː səd̪aː paːt̪əkəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "हिंसा", ref: "sa-10009" }, { word: "सदा", ref: "sa-1086" }, { word: "पातकं", base: "पातकम्", reading: "pātakam" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5800", kind: "word" }, { id: "w2", ref: "sa-10030", kind: "word" }, { id: "w3", ref: "sa-10000", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3976"
+    target: "सभापतिर् विधानेन निर्णयं करोति."
+    reading: "sabhāpatir vidhānena nirṇayaṃ karoti."
+    ipa: "səbʱaːpət̪ir ʋid̪ʱaːneːnə nirɳəjəm kəroːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सभापतिर्", base: "सभापतिः", reading: "sabhāpatiḥ" }, { word: "विधानेन", base: "विधानम्", reading: "vidhānam" }, { word: "निर्णयं", base: "निर्णयः", reading: "nirṇayaḥ" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+    confusables: [{ id: "w1", ref: "sa-5730", kind: "word" }, { id: "w2", ref: "sa-5720", kind: "word" }, { id: "w3", ref: "sa-7400", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3977"
+    target: "द्यूतेन बहु धनं नश्यति."
+    reading: "dyūtena bahu dhanaṃ naśyati."
+    ipa: "d̪juːt̪eːnə bəɦu d̪ʱənəm nəʃjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "द्यूतेन", base: "द्यूतम्", reading: "dyūtam" }, { word: "बहु", ref: "sa-1096" }, { word: "धनं", base: "धनम्", reading: "dhanam" }, { word: "नश्यति", base: "नश्", reading: "naś" }]
+    confusables: [{ id: "w1", ref: "sa-10070", kind: "word" }, { id: "w2", ref: "sa-10069", kind: "word" }, { id: "w3", ref: "sa-12037", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3978"
+    target: "वणिग् विक्रयेण धनं लभते."
+    reading: "vaṇig vikrayeṇa dhanaṃ labhate."
+    ipa: "ʋəɳiɡ ʋikrəjeːɳə d̪ʱənəm ləbʱət̪eː"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वणिग्", base: "वणिक्", reading: "vaṇik" }, { word: "विक्रयेण", base: "विक्रयः", reading: "vikrayaḥ" }, { word: "धनं", base: "धनम्", reading: "dhanam" }, { word: "लभते", base: "लभ्", reading: "labh" }]
+    confusables: [{ id: "w1", ref: "sa-10013", kind: "word" }, { id: "w2", ref: "sa-1857", kind: "word" }, { id: "w3", ref: "sa-2121", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3979"
+    target: "नृपस्य संहिता विधानं वदति."
+    reading: "nṛpasya saṃhitā vidhānaṃ vadati."
+    ipa: "nr̩pəsjə sə̃ɦit̪aː ʋid̪ʱaːnəm ʋəd̪ət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "नृपस्य", base: "नृपः", reading: "nṛpaḥ" }, { word: "संहिता", ref: "sa-10018" }, { word: "विधानं", base: "विधानम्", reading: "vidhānam" }, { word: "वदति", base: "वद्", reading: "vad" }]
+    confusables: [{ id: "w1", ref: "sa-5705", kind: "word" }, { id: "w2", ref: "sa-1794", kind: "word" }, { id: "w3", ref: "sa-2108", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
