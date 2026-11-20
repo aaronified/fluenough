@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-literature-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3990"
+    target: "कविर् गम्भीरं सुभाषितं वदति."
+    reading: "kavir gambhīraṃ subhāṣitaṃ vadati."
+    ipa: "kəʋir ɡəmbʱiːrəm subʱaːʂit̪əm ʋəd̪ət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कविर्", base: "कविः", reading: "kaviḥ" }, { word: "गम्भीरं", base: "गम्भीरः", reading: "gambhīraḥ" }, { word: "सुभाषितं", base: "सुभाषितम्", reading: "subhāṣitam" }, { word: "वदति", base: "वद्", reading: "vad" }]
+    confusables: [{ id: "w1", ref: "sa-11059", kind: "word" }, { id: "w2", ref: "sa-11027", kind: "word" }, { id: "w3", ref: "sa-11053", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3991"
+    target: "सरस्वती भक्ताय विद्यां ददाति."
+    reading: "sarasvatī bhaktāya vidyāṃ dadāti."
+    ipa: "sərəsʋət̪iː bʱəkt̪aːjə ʋid̪jaːm d̪əd̪aːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सरस्वती", ref: "sa-11025" }, { word: "भक्ताय", base: "भक्तः", reading: "bhaktaḥ" }, { word: "विद्यां", base: "विद्या", reading: "vidyā" }, { word: "ददाति", base: "दा", reading: "dā" }]
+    confusables: [{ id: "w1", ref: "sa-11079", kind: "word" }, { id: "w2", ref: "sa-5844", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3992"
+    target: "टीका ग्रन्थस्य व्याख्यां ददाति."
+    reading: "ṭīkā granthasya vyākhyāṃ dadāti."
+    ipa: "ʈiːkaː ɡrənt̪ʰəsjə ʋjaːkʰjaːm d̪əd̪aːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "टीका", ref: "sa-11012" }, { word: "ग्रन्थस्य", base: "ग्रन्थः", reading: "granthaḥ" }, { word: "व्याख्यां", base: "व्याख्या", reading: "vyākhyā" }, { word: "ददाति", base: "दा", reading: "dā" }]
+    confusables: [{ id: "w1", ref: "sa-11005", kind: "word" }, { id: "w2", ref: "sa-11030", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3993"
+    target: "यतिर् नित्यं गायत्रीं जपति."
+    reading: "yatir nityaṃ gāyatrīṃ japati."
+    ipa: "jət̪ir nit̪jəm ɡaːjət̪riːm dʒəpət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "यतिर्", base: "यतिः", reading: "yatiḥ" }, { word: "नित्यं", base: "नित्यम्", reading: "nityam" }, { word: "गायत्रीं", base: "गायत्री", reading: "gāyatrī" }, { word: "जपति", base: "जप्", reading: "jap" }]
+    confusables: [{ id: "w1", ref: "sa-5830", kind: "word" }, { id: "w2", ref: "sa-11010", kind: "word" }, { id: "w3", ref: "sa-2018", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3994"
+    target: "कन्याया वदनं हासेन शोभति."
+    reading: "kanyāyā vadanaṃ hāsena śobhati."
+    ipa: "kənjaːjaː ʋəd̪ənəm ɦaːseːnə ʃoːbʱət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कन्याया", base: "कन्या", reading: "kanyā" }, { word: "वदनं", base: "वदनम्", reading: "vadanam" }, { word: "हासेन", base: "हासः", reading: "hāsaḥ" }, { word: "शोभति", base: "शुभ्", reading: "śubh" }]
+    confusables: [{ id: "w1", ref: "sa-11035", kind: "word" }, { id: "w2", ref: "sa-11036", kind: "word" }, { id: "w3", ref: "sa-7234", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3995"
+    target: "वर्षायां मयूरो केकां करोति."
+    reading: "varṣāyāṃ mayūro kekāṃ karoti."
+    ipa: "ʋərʂaːjaːm məjuːroː keːkaːm kəroːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वर्षायां", base: "वर्षा", reading: "varṣā" }, { word: "मयूरो", base: "मयूरः", reading: "mayūraḥ" }, { word: "केकां", base: "केका", reading: "kekā" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+    confusables: [{ id: "w1", ref: "sa-1738", kind: "word" }, { id: "w2", ref: "sa-5109", kind: "word" }, { id: "w3", ref: "sa-5101", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3996"
+    target: "शार्दूलो वने गुहायां वसति."
+    reading: "śārdūlo vane guhāyāṃ vasati."
+    ipa: "ʃaːrd̪uːloː ʋəneː ɡuɦaːjaːm ʋəsət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "शार्दूलो", base: "शार्दूलः", reading: "śārdūlaḥ" }, { word: "वने", base: "वनम्", reading: "vanam" }, { word: "गुहायां", base: "गुहा", reading: "guhā" }, { word: "वसति", base: "वस्", reading: "vas" }]
+    confusables: [{ id: "w1", ref: "sa-1723", kind: "word" }, { id: "w2", ref: "sa-1773", kind: "word" }, { id: "w3", ref: "sa-2002", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3997"
+    target: "कैलासो गौर्या निवासो भवति."
+    reading: "kailāso gauryā nivāso bhavati."
+    ipa: "kəilaːsoː ɡəurjaː niʋaːsoː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कैलासो", base: "कैलासः", reading: "kailāsaḥ" }, { word: "गौर्या", base: "गौरी", reading: "gaurī" }, { word: "निवासो", base: "निवासः", reading: "nivāsaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-11077", kind: "word" }, { id: "w2", ref: "sa-11025", kind: "word" }, { id: "w3", ref: "sa-1747", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3998"
+    target: "शोकेन नयने बाष्पो भवति."
+    reading: "śokena nayane bāṣpo bhavati."
+    ipa: "ʃoːkeːnə nəjəneː baːʂpoː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "शोकेन", base: "शोकः", reading: "śokaḥ" }, { word: "नयने", base: "नयनम्", reading: "nayanam" }, { word: "बाष्पो", base: "बाष्पः", reading: "bāṣpaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-1569", kind: "word" }, { id: "w2", ref: "sa-11039", kind: "word" }, { id: "w3", ref: "sa-7201", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3999"
+    target: "मुक्ता शुक्ला सागरे भवति."
+    reading: "muktā śuklā sāgare bhavati."
+    ipa: "mukt̪aː ʃuklaː saːɡəreː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "मुक्ता", ref: "sa-11045" }, { word: "शुक्ला", base: "शुक्लः", reading: "śuklaḥ" }, { word: "सागरे", base: "सागरः", reading: "sāgaraḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-1802", kind: "word" }, { id: "w2", ref: "sa-1516", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
