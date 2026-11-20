@@ -327,6 +327,7 @@ FONT_ALIASES = {
     "arabic": "perso_arabic_naskh",
     "shahmukhi": "perso_arabic",
     "ipa": "latin",
+    "morse": "latin",
 }
 FONTS_DIR = DECKS / "fonts"
 

@@ -20,10 +20,10 @@ const Set<String> builtInPrivateUseCodes = <String>{
   'qap',
   'qbe',
   'qdo',
-  'qmo',
   'qgh',
   'qgk',
   'qhv',
+  'qmo',
   'qya',
 };
 

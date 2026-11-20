@@ -218,7 +218,6 @@ def main() -> int:
             "\n".join(layer) + "\n", encoding="utf-8")
         path_units.append(deck_id)
 
-    targets = dict(all_cards)
     letters = {"timing": [FIRST[0][0], FIRST[1][0]], "tree": [r[0] for r in FIRST],
                "digits": [r[0] for r in DIGITS]}
     (base / "qmo-script.yaml").write_text("\n".join([
