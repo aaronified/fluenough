@@ -1,5 +1,6 @@
 # Classical Sanskrit proverbs 3: twenty subhāṣita verses on effort, wealth, time and fate, from the Hitopadeśa, the Pañcatantra and the Nītiśataka, public domain (wiki/Plan-Culture-Sanskrit.md, SA-542).
 # Every verse was re-read on its Sanskrit Wikisource page on 2026-11-17 and checked against GRETIL; the text is the page's own typing and the English is the builder's own.
+# Verses already in the culture decks were replaced by others (ids sa-8160 to sa-8164 are the replacements); ids of removed cards are not reused.
 schema: 1
 id: "sa-proverbs-3"
 part: "core"
@@ -10,25 +11,6 @@ genre: "proverbs"
 level: "B1"
 tags: ["unreviewed"]
 cards:
-  - id: "sa-8140"
-    target: "उद्यमेन हि सिध्यंति कार्याणि न मनोरथैः। नहि सुप्तस्य सिंहस्य प्रविशंति मुखे मृगाः"
-    reading: "udyamena hi sidhyaṃti kāryāṇi na manorathaiḥ. nahi suptasya siṃhasya praviśaṃti mukhe mṛgāḥ"
-    ipa: "ud̪jəmeːnə ɦi sid̪ʱjənt̪i kaːrjaːɳi nə mənoːrət̪ʰəih nəɦi supt̪əsjə sĩɦəsjə prəʋiʃənt̪i mukʰeː mr̩ɡaːh"
-    pos: "phrase"
-    level: "B1"
-    modes: ["recognition", "listening"]
-    register: "neutral"
-    notes:
-      - { id: "literal", kind: "note" }
-    source:
-      author: "anonymous"
-      collection: "Hitopadeśa, attributed to Nārāyaṇa"
-      date: "800-950"
-      edition: "Sanskrit Wikisource, the page हितोपदेशम् 01, verse 0.36 as the page marks it, read on 2026-11-17; the text is as the page types it, with an anusvāra for a nasal before a stop and hyphens in compounds where the page has them; GRETIL's text of the Hitopadeśa has the same verse"
-      url: "https://sa.wikisource.org/wiki/%E0%A4%B9%E0%A4%BF%E0%A4%A4%E0%A5%8B%E0%A4%AA%E0%A4%A6%E0%A5%87%E0%A4%B6%E0%A4%AE%E0%A5%8D_01"
-      basis: "public-domain"
-      jurisdiction: "IN"
-      rights_checked: "2026-11-17"
   - id: "sa-8141"
     target: "आयुः कर्म च वित्तं च विद्या निधनम् एव च। पञ्चैतानि हि सृज्यंते गर्भस्थस्यैव देहिनः"
     reading: "āyuḥ karma ca vittaṃ ca vidyā nidhanam eva ca. pañcaitāni hi sṛjyaṃte garbhasthasyaiva dehinaḥ"
@@ -39,6 +21,19 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "आयुः", base: "आयुस्", reading: "āyus" }
+      - { word: "कर्म", base: "कर्मन्", reading: "karman" }
+      - { word: "च", base: "च", reading: "ca" }
+      - { word: "वित्तं", base: "वित्त", reading: "vitta" }
+      - { word: "विद्या", base: "विद्या", reading: "vidyā" }
+      - { word: "निधनम्", base: "निधन", reading: "nidhana" }
+      - { word: "एव", base: "एव", reading: "eva" }
+      - { word: "पञ्चैतानि", base: "पञ्च + एतद्", reading: "pañcaitāni" }
+      - { word: "हि", base: "हि", reading: "hi" }
+      - { word: "सृज्यंते", base: "सृज्", reading: "sṛj" }
+      - { word: "गर्भस्थस्यैव", base: "गर्भस्थ + एव", reading: "garbhasthasyaiva" }
+      - { word: "देहिनः", base: "देहिन्", reading: "dehin" }
     source:
       author: "anonymous"
       collection: "Hitopadeśa, attributed to Nārāyaṇa"
@@ -58,6 +53,15 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "नहि", base: "न + हि", reading: "nahi" }
+      - { word: "तद्विद्यते", base: "तद् + विद्", reading: "tadvidyate" }
+      - { word: "किञ्चिद्यदर्थेन", base: "किम् + चित् + यद् + अर्थ", reading: "kiñcidyadarthena" }
+      - { word: "न", base: "न", reading: "na" }
+      - { word: "सिध्यति", base: "सिध्", reading: "sidh" }
+      - { word: "यत्नेन", base: "यत्न", reading: "yatna" }
+      - { word: "मतिमांस्तस्मादर्थमेकं", base: "मतिमत् + तद् + अर्थ + एक", reading: "matimāṃstasmādarthamekaṃ" }
+      - { word: "प्रसाधयेत्", base: "प्र + साधय्", reading: "prasādhayet" }
     source:
       author: "anonymous"
       collection: "Pañcatantra, attributed to Viṣṇuśarman or Vasubhāga"
@@ -77,6 +81,15 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "यस्यार्थास्तस्य", base: "यद् + अर्थ + तद्", reading: "yasyārthāstasya" }
+      - { word: "मित्राणि", base: "मित्र", reading: "mitra" }
+      - { word: "बान्धवाः", base: "बान्धव", reading: "bāndhava" }
+      - { word: "यस्यार्थाः", base: "यद् + अर्थ", reading: "yasyārthāḥ" }
+      - { word: "स", base: "तद्", reading: "tad" }
+      - { word: "पुमान्लोके", base: "पुंस् + लोक", reading: "pumānloke" }
+      - { word: "च", base: "च", reading: "ca" }
+      - { word: "पण्डितः", base: "पण्डित", reading: "paṇḍita" }
     source:
       author: "anonymous"
       collection: "Pañcatantra, attributed to Viṣṇuśarman or Vasubhāga"
@@ -96,6 +109,19 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "न", base: "न", reading: "na" }
+      - { word: "सा", base: "तद्", reading: "tad" }
+      - { word: "विद्या", base: "विद्या", reading: "vidyā" }
+      - { word: "तद्दानं", base: "तद् + दान", reading: "taddānaṃ" }
+      - { word: "तच्छिल्पं", base: "तद् + शिल्प", reading: "tacchilpaṃ" }
+      - { word: "कला", base: "कला", reading: "kalā" }
+      - { word: "तत्", base: "तद्", reading: "tad" }
+      - { word: "स्थैर्यं", base: "स्थैर्य", reading: "sthairya" }
+      - { word: "हि", base: "हि", reading: "hi" }
+      - { word: "धनिनां", base: "धनिन्", reading: "dhanin" }
+      - { word: "याचकैर्यन्न", base: "याचक + यद् + न", reading: "yācakairyanna" }
+      - { word: "गीयते", base: "गै", reading: "gai" }
     source:
       author: "anonymous"
       collection: "Pañcatantra, attributed to Viṣṇuśarman or Vasubhāga"
@@ -115,6 +141,17 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "इह", base: "इह", reading: "iha" }
+      - { word: "लोके", base: "लोक", reading: "loka" }
+      - { word: "हि", base: "हि", reading: "hi" }
+      - { word: "धनिनां", base: "धनिन्", reading: "dhanin" }
+      - { word: "परोऽपि", base: "पर + अपि", reading: "paropi" }
+      - { word: "स्वजनायते", base: "स्वजनायते", reading: "svajanāyate" }
+      - { word: "स्वजनोऽपि", base: "स्वजन + अपि", reading: "svajanopi" }
+      - { word: "दरिद्राणां", base: "दरिद्र", reading: "daridra" }
+      - { word: "सर्वदा", base: "सर्वदा", reading: "sarvadā" }
+      - { word: "दुर्जनायते", base: "दुर्जनायते", reading: "durjanāyate" }
     source:
       author: "anonymous"
       collection: "Pañcatantra, attributed to Viṣṇuśarman or Vasubhāga"
@@ -134,6 +171,23 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "नहि", base: "न + हि", reading: "nahi" }
+      - { word: "भवति", base: "भू", reading: "bhū" }
+      - { word: "यन्", base: "यद्", reading: "yad" }
+      - { word: "न", base: "न", reading: "na" }
+      - { word: "भाव्यं", base: "भाव्य", reading: "bhāvya" }
+      - { word: "च", base: "च", reading: "ca" }
+      - { word: "विनापि", base: "विना + अपि", reading: "vināpi" }
+      - { word: "यत्नेन", base: "यत्न", reading: "yatna" }
+      - { word: "करतल", base: "करतल", reading: "karatala" }
+      - { word: "गतम्", base: "गत", reading: "gata" }
+      - { word: "अपि", base: "अपि", reading: "api" }
+      - { word: "नश्यति", base: "नश्", reading: "naś" }
+      - { word: "यस्य", base: "यद्", reading: "yad" }
+      - { word: "हि", base: "हि", reading: "hi" }
+      - { word: "भवितव्यता", base: "भवितव्यता", reading: "bhavitavyatā" }
+      - { word: "नास्ति", base: "न + अस्", reading: "nāsti" }
     source:
       author: "anonymous"
       collection: "Pañcatantra, attributed to Viṣṇuśarman or Vasubhāga"
@@ -153,6 +207,19 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "शनैः", base: "शनैस्", reading: "śanais" }
+      - { word: "शनैश्च", base: "शनैस् + च", reading: "śanaiśca" }
+      - { word: "भोक्तव्यं", base: "भोक्तव्य", reading: "bhoktavya" }
+      - { word: "स्वयं", base: "स्वयम्", reading: "svayam" }
+      - { word: "वित्तम्", base: "वित्त", reading: "vitta" }
+      - { word: "उपार्जितम्", base: "उपार्जित", reading: "upārjita" }
+      - { word: "रसायनम्", base: "रसायन", reading: "rasāyana" }
+      - { word: "इव", base: "इव", reading: "iva" }
+      - { word: "प्राज्ञैर्", base: "प्राज्ञ", reading: "prājña" }
+      - { word: "हेलया", base: "हेला", reading: "helā" }
+      - { word: "न", base: "न", reading: "na" }
+      - { word: "कदाचन", base: "कदाचन", reading: "kadācana" }
     source:
       author: "anonymous"
       collection: "Pañcatantra, attributed to Viṣṇuśarman or Vasubhāga"
@@ -172,6 +239,21 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "शीलं", base: "शील", reading: "śīla" }
+      - { word: "शौचं", base: "शौच", reading: "śauca" }
+      - { word: "क्षांतिर्", base: "क्षान्ति", reading: "kṣānti" }
+      - { word: "दाक्षिण्यं", base: "दाक्षिण्य", reading: "dākṣiṇya" }
+      - { word: "मधुरता", base: "मधुरता", reading: "madhuratā" }
+      - { word: "कुले", base: "कुल", reading: "kula" }
+      - { word: "जन्म", base: "जन्मन्", reading: "janman" }
+      - { word: "न", base: "न", reading: "na" }
+      - { word: "विराजंति", base: "वि + राज्", reading: "virājaṃti" }
+      - { word: "हि", base: "हि", reading: "hi" }
+      - { word: "सर्वे", base: "सर्व", reading: "sarva" }
+      - { word: "वित्त", base: "वित्त", reading: "vitta" }
+      - { word: "विहीनस्य", base: "विहीन", reading: "vihīna" }
+      - { word: "पुरुषस्य", base: "पुरुष", reading: "puruṣa" }
     source:
       author: "anonymous"
       collection: "Pañcatantra, attributed to Viṣṇuśarman or Vasubhāga"
@@ -191,6 +273,20 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "मानो", base: "मान", reading: "māna" }
+      - { word: "वा", base: "वा", reading: "vā" }
+      - { word: "दर्पो", base: "दर्प", reading: "darpa" }
+      - { word: "विज्ञानं", base: "विज्ञान", reading: "vijñāna" }
+      - { word: "विभ्रमः", base: "विभ्रम", reading: "vibhrama" }
+      - { word: "सुबुद्धिर्", base: "सुबुद्धि", reading: "subuddhi" }
+      - { word: "सर्वं", base: "सर्व", reading: "sarva" }
+      - { word: "प्रणश्यति", base: "प्र + नश्", reading: "praṇaśyati" }
+      - { word: "समं", base: "सम", reading: "sama" }
+      - { word: "वित्त", base: "वित्त", reading: "vitta" }
+      - { word: "विहीनो", base: "विहीन", reading: "vihīna" }
+      - { word: "यदा", base: "यदा", reading: "yadā" }
+      - { word: "पुरुषः", base: "पुरुष", reading: "puruṣa" }
     source:
       author: "anonymous"
       collection: "Pañcatantra, attributed to Viṣṇuśarman or Vasubhāga"
@@ -210,6 +306,18 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "धनं", base: "धन", reading: "dhana" }
+      - { word: "अर्जय", base: "अर्ज्", reading: "arj" }
+      - { word: "काकुत्स्थ", base: "काकुत्स्थ", reading: "kākutstha" }
+      - { word: "धनमूलं", base: "धन + मूल", reading: "dhanamūlaṃ" }
+      - { word: "इदं", base: "इदम्", reading: "idam" }
+      - { word: "जगत्", base: "जगत्", reading: "jagat" }
+      - { word: "अन्तरं", base: "अन्तर", reading: "antara" }
+      - { word: "नाभिजानामि", base: "न + अभिज्ञा", reading: "nābhijānāmi" }
+      - { word: "निर्धनस्य", base: "निर्धन", reading: "nirdhana" }
+      - { word: "मृतस्य", base: "मृत", reading: "mṛta" }
+      - { word: "च", base: "च", reading: "ca" }
     source:
       author: "anonymous"
       collection: "Nītiśataka of the Śatakatrayī, attributed to Bhartṛhari"
@@ -229,6 +337,20 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "दानं", base: "दान", reading: "dāna" }
+      - { word: "भोगो", base: "भोग", reading: "bhoga" }
+      - { word: "नाशस्तिस्रो", base: "नाश + त्रि", reading: "nāśastisro" }
+      - { word: "गतयो", base: "गति", reading: "gati" }
+      - { word: "भवन्ति", base: "भू", reading: "bhū" }
+      - { word: "वित्तस्य", base: "वित्त", reading: "vitta" }
+      - { word: "यो", base: "यद्", reading: "yad" }
+      - { word: "न", base: "न", reading: "na" }
+      - { word: "ददाति", base: "दा", reading: "dā" }
+      - { word: "भुङ्क्ते", base: "भुज्", reading: "bhuj" }
+      - { word: "तस्य", base: "तद्", reading: "tad" }
+      - { word: "तृतीया", base: "तृतीय", reading: "tṛtīya" }
+      - { word: "गतिर्भवति", base: "गति + भू", reading: "gatirbhavati" }
     source:
       author: "anonymous"
       collection: "Nītiśataka of the Śatakatrayī, attributed to Bhartṛhari"
@@ -248,6 +370,16 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "आलस्यं", base: "आलस्य", reading: "ālasya" }
+      - { word: "हि", base: "हि", reading: "hi" }
+      - { word: "मनुष्याणां", base: "मनुष्य", reading: "manuṣya" }
+      - { word: "शरीरस्थो", base: "शरीर + स्थ", reading: "śarīrastho" }
+      - { word: "महान्रिपुः", base: "महत् + रिपु", reading: "mahānripuḥ" }
+      - { word: "नास्त्युद्यमसमो", base: "न + अस् + उद्यम + सम", reading: "nāstyudyamasamo" }
+      - { word: "बन्धुः", base: "बन्धु", reading: "bandhu" }
+      - { word: "कुर्वाणो", base: "कृ", reading: "kṛ" }
+      - { word: "नावसीदति", base: "न + अवसद्", reading: "nāvasīdati" }
     source:
       author: "anonymous"
       collection: "Nītiśataka of the Śatakatrayī, attributed to Bhartṛhari"
@@ -258,20 +390,32 @@ cards:
       jurisdiction: "IN"
       rights_checked: "2026-11-17"
   - id: "sa-8153"
-    target: "छिन्नोऽपि रोहति तर्क्षीणोऽप्युपचीयते पुनश्चन्द्रः । इति विमृशन्तः सन्तः सन्तप्यन्ते न दुःखेषु"
-    reading: "chinno'pi rohati tarkṣīṇo'pyupacīyate punaścandraḥ. iti vimṛśantaḥ santaḥ santapyante na duḥkheṣu"
-    ipa: "tʃʰinnoːpi roːɦət̪i t̪ərkʂiːɳoːpjupətʃiːjət̪eː punəʃtʃənd̪rəh it̪i ʋimr̩ʃənt̪əh sənt̪əh sənt̪əpjənt̪eː nə d̪uhkʰeːʂu"
+    target: "छिन्नोऽपि रोहति तरुः क्षीणोऽप्युपचीयते पुनश्चन्द्रः । इति विमृशन्तः सन्तः सन्तप्यन्ते न दुःखेषु"
+    reading: "chinno'pi rohati taruḥ kṣīṇo'pyupacīyate punaścandraḥ. iti vimṛśantaḥ santaḥ santapyante na duḥkheṣu"
+    ipa: "tʃʰinnoːpi roːɦət̪i t̪əruh kʂiːɳoːpjupətʃiːjət̪eː punəʃtʃənd̪rəh it̪i ʋimr̩ʃənt̪əh sənt̪əh sənt̪əpjənt̪eː nə d̪uhkʰeːʂu"
     pos: "phrase"
     level: "B1"
     modes: ["recognition", "listening"]
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "छिन्नोऽपि", base: "छिन्न + अपि", reading: "chinnopi" }
+      - { word: "रोहति", base: "रुह्", reading: "ruh" }
+      - { word: "तरुः", base: "तरु", reading: "taru" }
+      - { word: "क्षीणोऽप्युपचीयते", base: "क्षीण + अपि + उपचि", reading: "kṣīṇopyupacīyate" }
+      - { word: "पुनश्चन्द्रः", base: "पुनर् + चन्द्र", reading: "punaścandraḥ" }
+      - { word: "इति", base: "इति", reading: "iti" }
+      - { word: "विमृशन्तः", base: "वि + मृश्", reading: "vimṛśantaḥ" }
+      - { word: "सन्तः", base: "सत्", reading: "sat" }
+      - { word: "सन्तप्यन्ते", base: "सम् + तप्", reading: "santapyante" }
+      - { word: "न", base: "न", reading: "na" }
+      - { word: "दुःखेषु", base: "दुःख", reading: "duḥkha" }
     source:
       author: "anonymous"
       collection: "Nītiśataka of the Śatakatrayī, attributed to Bhartṛhari"
       date: "401-600"
-      edition: "Sanskrit Wikisource, the page भर्तृहरिशतकत्रयी, verse number 87 as the page numbers it, not a printed edition's number, read on 2026-11-17; the text is as the page types it, with an anusvāra for a nasal before a stop and hyphens in compounds where the page has them; GRETIL's text of the Śatakatraya has the same verse"
+      edition: "Sanskrit Wikisource, the page भर्तृहरिशतकत्रयी, verse number 87 as the page numbers it, not a printed edition's number, read on 2026-11-17; the text is as the page types it, with an anusvāra for a nasal before a stop and hyphens in compounds where the page has them; the page and GRETIL both print तर्क्षीणो (tarkṣīṇo), a misprint, and the card gives the verse form तरुः क्षीणो (taruḥ kṣīṇo), with the sandhi क्षीणोऽपि (kṣīṇo 'pi)"
       url: "https://sa.wikisource.org/wiki/%E0%A4%AD%E0%A4%B0%E0%A5%8D%E0%A4%A4%E0%A5%83%E0%A4%B9%E0%A4%B0%E0%A4%BF%E0%A4%B6%E0%A4%A4%E0%A4%95%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A5%80"
       basis: "public-domain"
       jurisdiction: "IN"
@@ -286,6 +430,17 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "कर्मायत्तं", base: "कर्मन् + आयत्त", reading: "karmāyattaṃ" }
+      - { word: "फलं", base: "फल", reading: "phala" }
+      - { word: "पुंसां", base: "पुंस्", reading: "puṃs" }
+      - { word: "बुद्धिः", base: "बुद्धि", reading: "buddhi" }
+      - { word: "कर्मानुसारिणी", base: "कर्मन् + अनुसारिन्", reading: "karmānusāriṇī" }
+      - { word: "तथापि", base: "तथापि", reading: "tathāpi" }
+      - { word: "सुधिया", base: "सुधी", reading: "sudhī" }
+      - { word: "भाव्यं", base: "भाव्य", reading: "bhāvya" }
+      - { word: "सुविचार्यैव", base: "सुविचार्य + एव", reading: "suvicāryaiva" }
+      - { word: "कुर्वता", base: "कृ", reading: "kṛ" }
     source:
       author: "anonymous"
       collection: "Nītiśataka of the Śatakatrayī, attributed to Bhartṛhari"
@@ -305,6 +460,16 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "कुसुमस्तवकस्येव", base: "कुसुम + स्तवक + इव", reading: "kusumastavakasyeva" }
+      - { word: "द्वयी", base: "द्वयी", reading: "dvayī" }
+      - { word: "वृत्तिर्मनस्विनः", base: "वृत्ति + मनस्विन्", reading: "vṛttirmanasvinaḥ" }
+      - { word: "मूर्ध्नि", base: "मूर्धन्", reading: "mūrdhan" }
+      - { word: "वा", base: "वा", reading: "vā" }
+      - { word: "सर्वलोकस्य", base: "सर्व + लोक", reading: "sarvalokasya" }
+      - { word: "शीर्यते", base: "शॄ", reading: "śṝ" }
+      - { word: "वन", base: "वन", reading: "vana" }
+      - { word: "एव", base: "एव", reading: "eva" }
     source:
       author: "anonymous"
       collection: "Nītiśataka of the Śatakatrayī, attributed to Bhartṛhari"
@@ -324,6 +489,18 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "सिंहः", base: "सिंह", reading: "siṃha" }
+      - { word: "शिशुरपि", base: "शिशु + अपि", reading: "śiśurapi" }
+      - { word: "निपतति", base: "नि + पत्", reading: "nipatati" }
+      - { word: "मदमलिनकपोलभित्तिषु", base: "मद + मलिन + कपोल + भित्ति", reading: "madamalinakapolabhittiṣu" }
+      - { word: "गजेषु", base: "गज", reading: "gaja" }
+      - { word: "प्रकृतिरियं", base: "प्रकृति + इदम्", reading: "prakṛtiriyaṃ" }
+      - { word: "सत्त्ववतां", base: "सत्त्ववत्", reading: "sattvavat" }
+      - { word: "न", base: "न", reading: "na" }
+      - { word: "खलु", base: "खलु", reading: "khalu" }
+      - { word: "वयस्तेजसो", base: "वयस् + तेजस्", reading: "vayastejaso" }
+      - { word: "हेतुः", base: "हेतु", reading: "hetu" }
     source:
       author: "anonymous"
       collection: "Nītiśataka of the Śatakatrayī, attributed to Bhartṛhari"
@@ -343,6 +520,15 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "एकेनापि", base: "एक + अपि", reading: "ekenāpi" }
+      - { word: "हि", base: "हि", reading: "hi" }
+      - { word: "शूरेण", base: "शूर", reading: "śūra" }
+      - { word: "पादाक्रान्तं", base: "पाद + आक्रान्त", reading: "pādākrāntaṃ" }
+      - { word: "महीतलं", base: "महीतल", reading: "mahītala" }
+      - { word: "क्रियते", base: "कृ", reading: "kṛ" }
+      - { word: "भास्करेणैव", base: "भास्कर + एव", reading: "bhāskareṇaiva" }
+      - { word: "स्फारस्फुरिततेजसा", base: "स्फार + स्फुरित + तेजस्", reading: "sphārasphuritatejasā" }
     source:
       author: "anonymous"
       collection: "Nītiśataka of the Śatakatrayī, attributed to Bhartṛhari"
@@ -362,6 +548,20 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "इज्याध्ययन", base: "इज्या + अध्ययन", reading: "ijyādhyayana" }
+      - { word: "दानानि", base: "दान", reading: "dāna" }
+      - { word: "तपः", base: "तपस्", reading: "tapas" }
+      - { word: "सत्यं", base: "सत्य", reading: "satya" }
+      - { word: "धृतिः", base: "धृति", reading: "dhṛti" }
+      - { word: "क्षमा", base: "क्षमा", reading: "kṣamā" }
+      - { word: "अलोभ", base: "अलोभ", reading: "alobha" }
+      - { word: "इति", base: "इति", reading: "iti" }
+      - { word: "मार्गो", base: "मार्ग", reading: "mārga" }
+      - { word: "यं", base: "यद्", reading: "yad" }
+      - { word: "धर्मस्याष्ट", base: "धर्म + अष्टन्", reading: "dharmasyāṣṭa" }
+      - { word: "विधः", base: "विध", reading: "vidha" }
+      - { word: "स्मृतः", base: "स्मृत", reading: "smṛta" }
     source:
       author: "anonymous"
       collection: "Hitopadeśa, attributed to Nārāyaṇa"
@@ -381,12 +581,62 @@ cards:
     register: "neutral"
     notes:
       - { id: "literal", kind: "note" }
+    bases:
+      - { word: "प्रतिदिवसं", base: "प्रतिदिवसम्", reading: "pratidivasam" }
+      - { word: "याति", base: "या", reading: "yā" }
+      - { word: "लयं", base: "लय", reading: "laya" }
+      - { word: "वसंत", base: "वसन्त", reading: "vasanta" }
+      - { word: "वाताहतेव", base: "वात + आहत + इव", reading: "vātāhateva" }
+      - { word: "शिशिर", base: "शिशिर", reading: "śiśira" }
+      - { word: "श्रीः", base: "श्री", reading: "śrī" }
+      - { word: "बुद्धिर्", base: "बुद्धि", reading: "buddhi" }
+      - { word: "बुद्धिमताम्", base: "बुद्धिमत्", reading: "buddhimat" }
+      - { word: "अपि", base: "अपि", reading: "api" }
+      - { word: "कुटुंब", base: "कुटुम्ब", reading: "kuṭumba" }
+      - { word: "भर", base: "भर", reading: "bhara" }
+      - { word: "चिंतया", base: "चिन्ता", reading: "cintā" }
+      - { word: "सततम्", base: "सततम्", reading: "satatam" }
     source:
       author: "anonymous"
       collection: "Pañcatantra, attributed to Viṣṇuśarman or Vasubhāga"
       date: "300-550"
       edition: "Sanskrit Wikisource, the page पञ्चतन्त्रम् ०६, verse 5.4 as the page marks it, read on 2026-11-17; the text is as the page types it, with an anusvāra for a nasal before a stop and hyphens in compounds where the page has them; GRETIL's text of the Pañcatantra has the same verse"
       url: "https://sa.wikisource.org/wiki/%E0%A4%AA%E0%A4%9E%E0%A5%8D%E0%A4%9A%E0%A4%A4%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%AE%E0%A5%8D_%E0%A5%A6%E0%A5%AC"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8164"
+    target: "यस्यास्ति वित्तं स नरः कुलीनः स पण्डितः स श्रुतवान्गुणज्ञः । स एव वक्ता स च दर्शनीयः सर्वे गुणाः काञ्चनं आश्रयन्ति"
+    reading: "yasyāsti vittaṃ sa naraḥ kulīnaḥ sa paṇḍitaḥ sa śrutavānguṇajñaḥ. sa eva vaktā sa ca darśanīyaḥ sarve guṇāḥ kāñcanaṃ āśrayanti"
+    ipa: "jəsjaːst̪i ʋit̪t̪əm sə nərəh kuliːnəh sə pəɳɖit̪əh sə ʃrut̪əʋaːnɡuɳədʒɲəh sə eːʋə ʋəkt̪aː sə tʃə d̪ərʃəniːjəh sərʋeː ɡuɳaːh kaːɲtʃənəm aːʃrəjənt̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    register: "neutral"
+    notes:
+      - { id: "literal", kind: "note" }
+    bases:
+      - { word: "यस्यास्ति", base: "यद् + अस्", reading: "yasyāsti" }
+      - { word: "वित्तं", base: "वित्त", reading: "vitta" }
+      - { word: "स", base: "तद्", reading: "tad" }
+      - { word: "नरः", base: "नर", reading: "nara" }
+      - { word: "कुलीनः", base: "कुलीन", reading: "kulīna" }
+      - { word: "पण्डितः", base: "पण्डित", reading: "paṇḍita" }
+      - { word: "श्रुतवान्गुणज्ञः", base: "श्रुतवत् + गुणज्ञ", reading: "śrutavānguṇajñaḥ" }
+      - { word: "एव", base: "एव", reading: "eva" }
+      - { word: "वक्ता", base: "वक्तृ", reading: "vaktṛ" }
+      - { word: "च", base: "च", reading: "ca" }
+      - { word: "दर्शनीयः", base: "दर्शनीय", reading: "darśanīya" }
+      - { word: "सर्वे", base: "सर्व", reading: "sarva" }
+      - { word: "गुणाः", base: "गुण", reading: "guṇa" }
+      - { word: "काञ्चनं", base: "काञ्चन", reading: "kāñcana" }
+      - { word: "आश्रयन्ति", base: "आ + श्रि", reading: "āśrayanti" }
+    source:
+      author: "anonymous"
+      collection: "Nītiśataka of the Śatakatrayī, attributed to Bhartṛhari"
+      date: "401-600"
+      edition: "Sanskrit Wikisource, the page भर्तृहरिशतकत्रयी, verse number 41 as the page numbers it, not a printed edition's number, read on 2026-11-17; the text is as the page types it, with an anusvāra for a nasal before a stop and hyphens in compounds where the page has them; GRETIL's text of the Śatakatraya has the same verse"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%AD%E0%A4%B0%E0%A5%8D%E0%A4%A4%E0%A5%83%E0%A4%B9%E0%A4%B0%E0%A4%BF%E0%A4%B6%E0%A4%A4%E0%A4%95%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A5%80"
       basis: "public-domain"
       jurisdiction: "IN"
       rights_checked: "2026-11-17"

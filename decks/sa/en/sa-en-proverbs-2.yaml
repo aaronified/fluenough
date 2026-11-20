@@ -4,7 +4,7 @@ kind: "layer"
 core: "sa-proverbs-2"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Proverbs: subhāṣita 2"
-description: "Twenty Sanskrit verses of advice on friends, company and conduct, from texts in the public domain, each with its English meaning and what it is said of. Not yet checked by a Sanskrit speaker: please report any mistake."
+description: "Twenty Sanskrit verses of advice on friends, company and conduct, from texts in the public domain, each with its English meaning, what it is said of and the meaning of each word. Not yet checked by a Sanskrit speaker: please report any mistake."
 license: "CC-BY-SA-4.0"
 tags: ["unreviewed"]
 cards:
@@ -12,79 +12,352 @@ cards:
     native: "The gathering of even small things does the work; with blades of grass twisted into a rope even maddened elephants are tied."
     notes:
       "literal": "Said to teach that unity makes small things strong."
+    bases:
+      "अल्पानाम्": { meaning: "small (of small things)" }
+      "अपि": { meaning: "even" }
+      "वस्तूनां": { meaning: "thing (of things)" }
+      "संहतिः": { meaning: "union, gathering" }
+      "कार्य": { meaning: "work, task" }
+      "साधिका": { meaning: "accomplishing" }
+      "तृणैर्": { meaning: "grass (by blades of grass)" }
+      "गुणत्वम्": { meaning: "the state of being a rope" }
+      "आपन्नैर्": { meaning: "come to, reached (that have come to)" }
+      "बध्यंते": { meaning: "to bind (are bound)" }
+      "मत्त": { meaning: "maddened" }
+      "दंतिनः": { meaning: "elephant (the tusked one)" }
   "sa-8121":
     native: "Union is best for people, even with few of their own kin; rice grains stripped of their husk do not sprout."
     notes:
       "literal": "Said to show that people need their family and friends, since apart they cannot grow."
+    bases:
+      "संहतिः": { meaning: "union, gathering" }
+      "श्रेयसी": { meaning: "better" }
+      "पुंसां": { meaning: "man, person (of people)" }
+      "स्वकुलैर्": { meaning: "own + family (with their own kin)" }
+      "अल्पकैर्": { meaning: "few, small (with few)" }
+      "अपि": { meaning: "even" }
+      "तुषेणापि": { meaning: "husk + even (even by the husk)" }
+      "परित्यक्ता": { meaning: "stripped, left" }
+      "न": { meaning: "not" }
+      "प्ररोहंति": { meaning: "to sprout (they sprout)" }
+      "तंडुलाः": { meaning: "rice grain" }
   "sa-8122":
     native: "Make friends of whatever kind, even hundreds; see how the doves were freed from their bonds by their friend the mouse."
     notes:
       "literal": "Said to urge making many friends, since even a small one may help."
+    bases:
+      "यानि": { meaning: "whichever" }
+      "कानि": { meaning: "which" }
+      "च": { meaning: "and" }
+      "मित्राणि": { meaning: "friend" }
+      "कर्तव्यानि": { meaning: "to be made" }
+      "शतानि": { meaning: "hundred" }
+      "पश्य": { meaning: "to see (look!)" }
+      "मूषिक": { meaning: "mouse" }
+      "मित्रेण": { meaning: "friend (by the friend)" }
+      "कपोता": { meaning: "dove" }
+      "मुक्त": { meaning: "freed" }
+      "बंधनाः": { meaning: "bond" }
   "sa-8123":
     native: "\"This one is mine, that one is a stranger's\" is the counting of small minds; for those of generous character the whole earth is one family."
     notes:
       "literal": "Said to teach a wide, welcoming view of others; the last words are a well-known saying."
+    bases:
+      "अयं": { meaning: "this" }
+      "निजः": { meaning: "one's own" }
+      "परो": { meaning: "stranger" }
+      "वेति": { meaning: "or + thus" }
+      "गणना": { meaning: "counting" }
+      "लघु": { meaning: "little" }
+      "चेतसाम्": { meaning: "mind (of minds)" }
+      "उदार": { meaning: "generous" }
+      "चरितानां": { meaning: "conduct (of those whose conduct is)" }
+      "तु": { meaning: "but" }
+      "वसुधैव": { meaning: "earth + only" }
+      "कुटुंबकम्": { meaning: "family" }
   "sa-8124":
     native: "A friend is known in troubles, a hero in battle, an honest man in debt, a wife when wealth is gone, and relatives in misfortune."
     notes:
       "literal": "Said to teach that people are tested in hard times."
+    bases:
+      "आपत्सु": { meaning: "trouble (in troubles)" }
+      "मित्रं": { meaning: "friend" }
+      "जानीयाद्": { meaning: "to know (one should know)" }
+      "रणे": { meaning: "battle (in battle)" }
+      "शूरं": { meaning: "hero" }
+      "ऋणे": { meaning: "debt (in debt)" }
+      "शुचिम्": { meaning: "honest, pure (an honest man)" }
+      "भार्यां": { meaning: "wife" }
+      "क्षीणेषु": { meaning: "gone (when gone)" }
+      "वित्तेषु": { meaning: "wealth (when wealth is)" }
+      "व्यसनेषु": { meaning: "misfortune (in misfortunes)" }
+      "च": { meaning: "and" }
+      "बांधवान्": { meaning: "relative" }
   "sa-8125":
     native: "Avoid such a friend, who ruins your work behind your back and speaks sweetly to your face, like a pot of poison with milk on top."
     notes:
       "literal": "Said as a warning against a false friend."
+    bases:
+      "परोक्षे": { meaning: "out of sight (behind the back)" }
+      "कार्य": { meaning: "work, task" }
+      "हंतारं": { meaning: "destroyer (one who ruins)" }
+      "प्रत्यक्षे": { meaning: "in front (to the face)" }
+      "प्रिय": { meaning: "pleasant" }
+      "वादिनम्": { meaning: "speaking (one who speaks)" }
+      "वर्जयेत्": { meaning: "to avoid (one should avoid)" }
+      "तादृशं": { meaning: "such" }
+      "मित्रं": { meaning: "friend" }
+      "विष": { meaning: "poison" }
+      "कुंभं": { meaning: "pot" }
+      "पयोमुखम्": { meaning: "milk + mouth (milk at the mouth)" }
   "sa-8126":
     native: "Purity, generosity, courage, evenness in joy and sorrow, courtesy, loyalty and truthfulness are the qualities of a friend."
     notes:
       "literal": "Said to list what makes a true friend."
+    bases:
+      "शुचित्वम्": { meaning: "purity" }
+      "त्यागिता": { meaning: "generosity" }
+      "शौर्यं": { meaning: "courage" }
+      "सामांयं": { meaning: "evenness, sameness" }
+      "सुख": { meaning: "joy" }
+      "दुःखयोः": { meaning: "sorrow (in sorrow)" }
+      "दाक्षिण्यं": { meaning: "courtesy" }
+      "चानुरक्तिश्": { meaning: "and + loyalty" }
+      "च": { meaning: "and" }
+      "सत्यता": { meaning: "truthfulness" }
+      "सुहृद्": { meaning: "friend" }
+      "गुणाः": { meaning: "quality" }
   "sa-8127":
     native: "Betraying secrets, begging, harshness, a fickle mind, anger, untruth and gambling are the faults of a friend."
     notes:
       "literal": "Said to list the faults that spoil a friendship."
+    bases:
+      "रहस्य": { meaning: "secret" }
+      "भेदो": { meaning: "betrayal, breaking" }
+      "याच्ञा": { meaning: "begging" }
+      "च": { meaning: "and" }
+      "नैष्ठुर्यं": { meaning: "harshness" }
+      "चल": { meaning: "unsteady" }
+      "चित्तया": { meaning: "state of mind (fickleness of mind)" }
+      "क्रोधो": { meaning: "anger" }
+      "निःसत्यता": { meaning: "untruthfulness" }
+      "द्यूतम्": { meaning: "gambling" }
+      "एतन्": { meaning: "this" }
+      "मित्रस्य": { meaning: "friend (of a friend)" }
+      "दूषणम्": { meaning: "fault" }
   "sa-8128":
     native: "His life is fruitful on whose life brahmins, friends and kinsmen live; who does not live for himself?"
     notes:
       "literal": "Said that a life is worth living when others depend on it."
+    bases:
+      "जीविते": { meaning: "life (in the life)" }
+      "यस्य": { meaning: "whose" }
+      "जीवंति": { meaning: "to live (they live)" }
+      "विप्रा": { meaning: "brahmin" }
+      "मित्राणि": { meaning: "friend" }
+      "बांधवाः": { meaning: "relative" }
+      "सफलं": { meaning: "fruitful" }
+      "जीवितं": { meaning: "life" }
+      "तस्य": { meaning: "of that one" }
+      "आत्मार्थे": { meaning: "one's own sake (for oneself)" }
+      "को": { meaning: "who" }
+      "न": { meaning: "not" }
+      "जीवति": { meaning: "to live (he lives)" }
   "sa-8129":
     native: "He who wants to mend a friendship with someone once found false takes death into himself, like the she-mule that conceives."
     notes:
       "literal": "Said as a warning not to trust again a friend who has once betrayed you."
+    bases:
+      "सकृद्": { meaning: "once" }
+      "दुष्टं": { meaning: "found false, wicked" }
+      "तु": { meaning: "but" }
+      "यो": { meaning: "who" }
+      "मित्रं": { meaning: "friend" }
+      "पुनः": { meaning: "again" }
+      "संधातुम्": { meaning: "to join, to mend (to mend)" }
+      "इच्छति": { meaning: "to wish (he wishes)" }
+      "स": { meaning: "he" }
+      "मृत्युर्": { meaning: "death" }
+      "एव": { meaning: "indeed" }
+      "गृह्णाति": { meaning: "to take (he takes)" }
+      "गर्भम्": { meaning: "womb, embryo" }
+      "अश्वतरी": { meaning: "she-mule" }
+      "यथा": { meaning: "as" }
   "sa-8130":
     native: "When trouble comes to any mortal, no one but a friend gives help, even if only in words."
     notes:
       "literal": "Said that in trouble it is a friend who helps."
+    bases:
+      "सर्वेषाम्": { meaning: "all (of all)" }
+      "एव": { meaning: "indeed" }
+      "मर्त्यानां": { meaning: "mortal (of mortals)" }
+      "व्यसने": { meaning: "trouble (in trouble)" }
+      "समुपस्थिते": { meaning: "arrived (when it has come)" }
+      "वाङ्": { meaning: "speech" }
+      "मात्रेणापि": { meaning: "only + even (even by mere)" }
+      "साहाय्यं": { meaning: "help" }
+      "मित्राद्": { meaning: "friend (than a friend)" }
+      "अन्यो": { meaning: "other (anyone else)" }
+      "न": { meaning: "not" }
+      "संदधे": { meaning: "to give (he gives)" }
   "sa-8131":
     native: "He in whose house friends gather every day has in his heart a happiness with nothing to match it."
     notes:
       "literal": "Said of the joy of having friends come to one's house."
+    bases:
+      "सुहृदो": { meaning: "friend" }
+      "भवने": { meaning: "house (in a house)" }
+      "यस्य": { meaning: "whose" }
+      "समागच्छंति": { meaning: "to come together (they gather)" }
+      "नित्यशः": { meaning: "every day" }
+      "चित्ते": { meaning: "heart (in the heart)" }
+      "च": { meaning: "and" }
+      "तस्य": { meaning: "of that one" }
+      "सौख्यस्य": { meaning: "happiness (of happiness)" }
+      "न": { meaning: "not" }
+      "किञ्चित्": { meaning: "anything" }
+      "प्रतिमं": { meaning: "equal" }
+      "सुखम्": { meaning: "happiness" }
   "sa-8132":
     native: "A man with friends achieves even aims that are hard to reach; so one should make friends of one's own kind."
     notes:
       "literal": "Said to urge making friends of equal standing."
+    bases:
+      "मित्रवान्": { meaning: "having friends" }
+      "साधयत्य्": { meaning: "to accomplish (he accomplishes)" }
+      "अर्थान्": { meaning: "aim, matter" }
+      "दुःसाध्यान्": { meaning: "hard to achieve" }
+      "अपि": { meaning: "even" }
+      "वै": { meaning: "indeed" }
+      "यतः": { meaning: "from which" }
+      "तस्मान्": { meaning: "therefore" }
+      "मित्राणि": { meaning: "friend" }
+      "कुर्वीत": { meaning: "to make (one should make)" }
+      "समानान्य्": { meaning: "equal, like" }
+      "एव": { meaning: "indeed" }
+      "चात्मनः": { meaning: "and + self (and of oneself)" }
   "sa-8133":
     native: "Even those who have every fullness should make friends; the ocean, though full, waits for the rising of the moon."
     notes:
       "literal": "Said that even the self-sufficient need friends."
+    bases:
+      "अपि": { meaning: "even" }
+      "संपूर्णता": { meaning: "fullness" }
+      "युक्तैः": { meaning: "endowed (by those endowed)" }
+      "कर्तव्याः": { meaning: "to be made" }
+      "सुहृदो": { meaning: "friend" }
+      "बुधैः": { meaning: "wise (by the wise)" }
+      "नदीशः": { meaning: "ocean, lord of rivers" }
+      "परिपूर्णोऽपि": { meaning: "full + even" }
+      "चंद्रोदयम्": { meaning: "moon + rising" }
+      "अपेक्षते": { meaning: "to wait for (it waits for)" }
   "sa-8134":
     native: "One becomes a friend for a reason and an enemy for a reason; so a wise person should make friendship, not enmity."
     notes:
       "literal": "Said to teach that friendship and enmity both have causes, and the wise choose friendship."
+    bases:
+      "कारणान्": { meaning: "cause (for a reason)" }
+      "मित्रताम्": { meaning: "friendship" }
+      "एति": { meaning: "to go, to become (he becomes)" }
+      "कारणाद्": { meaning: "cause (for a reason)" }
+      "याति": { meaning: "to go, to reach (one reaches)" }
+      "शत्रुताम्": { meaning: "enmity" }
+      "तस्मान्": { meaning: "therefore" }
+      "मित्रत्वम्": { meaning: "friendship" }
+      "एवात्र": { meaning: "only + here" }
+      "योज्यं": { meaning: "to be made" }
+      "वैरं": { meaning: "enmity" }
+      "न": { meaning: "not" }
+      "धीमता": { meaning: "wise (by a wise person)" }
   "sa-8135":
     native: "Wise people say that friendship among the good comes with seven steps; so, since you have become my friend, hear my words."
     notes:
       "literal": "Said when a friendship is formed, because seven steps taken together make a bond."
+    bases:
+      "सतां": { meaning: "good person (of the good)" }
+      "साप्तपदं": { meaning: "with seven steps" }
+      "मैत्रम्": { meaning: "friendship" }
+      "इत्य्": { meaning: "thus" }
+      "आहुर्": { meaning: "to say (they say)" }
+      "विबुधा": { meaning: "wise" }
+      "जनाः": { meaning: "person" }
+      "तस्मात्": { meaning: "therefore" }
+      "त्वं": { meaning: "you" }
+      "मित्रतां": { meaning: "friendship" }
+      "प्राप्तो": { meaning: "reached (having become)" }
+      "वचनं": { meaning: "word, speech" }
+      "मम": { meaning: "my" }
+      "तच्": { meaning: "that" }
+      "छृणु": { meaning: "to hear (hear!)" }
   "sa-8136":
     native: "What use are sandalwood with camphor, or cool frost; none of them equals a sixteenth part of a friend's body."
     notes:
       "literal": "Said that a friend's company is better than all cooling things."
+    bases:
+      "किं": { meaning: "what" }
+      "चंदनैः": { meaning: "sandalwood" }
+      "स": { meaning: "he" }
+      "कर्पूरैस्": { meaning: "camphor" }
+      "तुहिनैः": { meaning: "frost" }
+      "च": { meaning: "and" }
+      "शीतलैः": { meaning: "cool" }
+      "सर्वे": { meaning: "all" }
+      "ते": { meaning: "your" }
+      "मित्र": { meaning: "friend" }
+      "गात्रस्य": { meaning: "body (of the body)" }
+      "कलां": { meaning: "part" }
+      "नार्हंति": { meaning: "not + to deserve (they do not equal)" }
+      "षोडशीम्": { meaning: "sixteenth part" }
   "sa-8137":
     native: "Who made this nectar, the two syllables \"friend\", which is a protector in troubles and a medicine for the burning of grief?"
     notes:
       "literal": "Said in praise of the word \"friend\" as the best remedy for sorrow."
+    bases:
+      "केनामृतम्": { meaning: "by whom + nectar" }
+      "इदं": { meaning: "this" }
+      "सृष्टं": { meaning: "made" }
+      "मित्रम्": { meaning: "friend" }
+      "इत्य्": { meaning: "thus" }
+      "अक्षर": { meaning: "syllable" }
+      "द्वयम्": { meaning: "pair" }
+      "आपदां": { meaning: "trouble (of troubles)" }
+      "च": { meaning: "and" }
+      "परित्राणं": { meaning: "protection" }
+      "शोक": { meaning: "grief" }
+      "संताप": { meaning: "burning" }
+      "भेषजम्": { meaning: "medicine" }
   "sa-8138":
     native: "He who makes a friend of an enemy stronger than himself does, without doubt, the same as eating poison."
     notes:
       "literal": "Said as a warning against trusting a stronger enemy."
+    bases:
+      "योऽमित्रं": { meaning: "who + enemy" }
+      "कुरुते": { meaning: "to make (he makes)" }
+      "मित्रं": { meaning: "friend" }
+      "वीर्याभ्यधिकम्": { meaning: "strength + greater (stronger than)" }
+      "आत्मनः": { meaning: "self (of oneself)" }
+      "स": { meaning: "he" }
+      "करोति": { meaning: "to do (it does)" }
+      "न": { meaning: "not" }
+      "संदेहः": { meaning: "doubt" }
+      "स्वयं": { meaning: "oneself" }
+      "हि": { meaning: "indeed, for" }
+      "विष": { meaning: "poison" }
+      "भक्षणम्": { meaning: "eating" }
   "sa-8139":
     native: "Forgiveness toward enemy and friend alike is the ornament of ascetics; toward offenders it is the fault of kings."
     notes:
       "literal": "Said that forgiveness suits ascetics, while a king must not let wrongdoing go."
+    bases:
+      "क्षमा": { meaning: "forgiveness" }
+      "शत्रौ": { meaning: "enemy (toward an enemy)" }
+      "च": { meaning: "and" }
+      "मित्रे": { meaning: "friend (to a friend)" }
+      "यतीनाम्": { meaning: "ascetic (of ascetics)" }
+      "एव": { meaning: "indeed" }
+      "भूषणम्": { meaning: "ornament" }
+      "अपराधिषु": { meaning: "offender (toward offenders)" }
+      "सत्त्वेषु": { meaning: "being (toward beings)" }
+      "नृपाणां": { meaning: "king (of kings)" }
+      "सैव": { meaning: "she + only (it alone)" }
+      "दूषणम्": { meaning: "fault" }
