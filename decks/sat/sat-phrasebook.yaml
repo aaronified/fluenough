@@ -1,4 +1,4 @@
-# Sources: Wiktionary translation tables (Santali): hello (ᱡᱚᱦᱟᱨ, first-words card), good morning (ᱥᱟ.ᱜᱩᱱ ᱥᱮᱛᱟᱜ), thank you (ᱥᱟᱨᱦᱟᱣ) and how are you (ᱚᱠᱟ ᱞᱮᱠᱟ ᱢᱮᱱᱟᱢᱟ?), untagged; the rest doubtful, built from first-words vocabulary and recalled usage. Dropped to stay at 15: goodbye, please, sorry, you're welcome, excuse me, please speak slowly (no form I could attest or build reliably). 11 of 15 cards doubtful.
+# Sources: Wiktionary translation tables (Santali): hello (ᱡᱚᱦᱟᱨ, first-words card), good morning (ᱥᱟ.ᱜᱩᱱ ᱥᱮᱛᱟᱜ), thank you (ᱥᱟᱨᱦᱟᱣ) and how are you (ᱚᱠᱟ ᱞᱮᱠᱟ ᱢᱮᱱᱟᱢᱟ?), untagged; the rest doubtful, built from first-words vocabulary and recalled usage. Dropped to stay at 15: goodbye, please, sorry, you're welcome, excuse me, please speak slowly (no form I could attest or build reliably). 12 of 14 cards doubtful.
 schema: 1
 id: "sat-phrasebook"
 part: "core"
@@ -7,27 +7,20 @@ language: { code: "sat", iso639_3: "sat", name: "Santali", script: "ol_chiki", i
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
-  - id: "sat-9001"
-    target: "ᱡᱚᱦᱟᱨ"
-    reading: "johar"
-    pos: "phrase"
-    tags: ["greeting"]
-    phrasebook: true
-    bases: [{ word: "ᱡᱚᱦᱟᱨ", ref: "sat-0136" }]
   - id: "sat-9002"
-    target: "ᱥᱟ.ᱜᱩᱱ ᱥᱮᱛᱟᱜ"
-    reading: "sa.gun setag"
+    target: "ᱥᱟᱜᱩᱱ ᱥᱮᱛᱟᱜ"
+    reading: "sagun setag"
     pos: "phrase"
-    tags: ["greeting"]
+    tags: ["greeting", "doubtful"]
     phrasebook: true
-    bases: [{ word: "ᱥᱟ.ᱜᱩᱱ", base: "ᱥᱟ.ᱜᱩᱱ", reading: "sa.gun" }, { word: "ᱥᱮᱛᱟᱜ", base: "ᱥᱮᱛᱟᱜ", reading: "setag" }]
+    bases: [{ word: "ᱥᱟᱜᱩᱱ", base: "ᱥᱟᱜᱩᱱ", reading: "sagun" }, { word: "ᱥᱮᱛᱟᱜ", base: "ᱥᱮᱛᱟᱜ", reading: "setag" }]
   - id: "sat-9003"
     target: "ᱡᱚᱦᱟᱨ ᱨᱟᱛ"
     reading: "johar rat"
     pos: "phrase"
     tags: ["greeting", "doubtful"]
     phrasebook: true
-    bases: [{ word: "ᱡᱚᱦᱟᱨ", ref: "sat-0136" }, { word: "ᱨᱟᱛ", base: "ᱨᱟᱛ", reading: "rat" }]
+    bases: [{ word: "ᱡᱚᱦᱟᱨ", base: "ᱡᱚᱦᱟᱨ", reading: "johar" }, { word: "ᱨᱟᱛ", base: "ᱨᱟᱛ", reading: "rat" }]
   - id: "sat-9004"
     target: "ᱥᱟᱨᱦᱟᱣ"
     reading: "sarhaw"
@@ -43,12 +36,12 @@ cards:
     phrasebook: true
     bases: [{ word: "ᱦᱮᱸ", ref: "sat-0101" }]
   - id: "sat-9006"
-    target: "ᱱᱟ"
-    reading: "na"
+    target: "ᱵᱟᱝ"
+    reading: "bang"
     pos: "phrase"
     tags: ["survival", "doubtful"]
     phrasebook: true
-    bases: [{ word: "ᱱᱟ", base: "ᱱᱟ", reading: "na" }]
+    bases: [{ word: "ᱵᱟᱝ", base: "ᱵᱟᱝ", reading: "bang" }]
   - id: "sat-9007"
     target: "ᱚᱠᱟ ᱞᱮᱠᱟ ᱢᱮᱱᱟᱢᱟ?"
     reading: "oka leka menama?"
@@ -99,12 +92,12 @@ cards:
     phrasebook: true
     bases: [{ word: "ᱟᱢ", ref: "sat-0103" }, { word: "ᱤᱝᱜᱨᱮᱡᱤ", base: "ᱤᱝᱜᱨᱮᱡᱤ", reading: "iṅgreji" }, { word: "ᱨᱮᱭᱟ", base: "ᱨᱮᱭᱟ", reading: "reya" }]
   - id: "sat-9014"
-    target: "ᱤᱧ ᱵᱩᱫᱟ ᱱᱟ"
-    reading: "iñ budā na"
+    target: "ᱤᱧ ᱵᱩᱫᱟ ᱵᱟᱝ"
+    reading: "iñ budā bang"
     pos: "phrase"
     tags: ["survival", "doubtful"]
     phrasebook: true
-    bases: [{ word: "ᱤᱧ", ref: "sat-0102" }, { word: "ᱵᱩᱫᱟ", base: "ᱵᱩᱫᱟ", reading: "budā" }, { word: "ᱱᱟ", base: "ᱱᱟ", reading: "na" }]
+    bases: [{ word: "ᱤᱧ", ref: "sat-0102" }, { word: "ᱵᱩᱫᱟ", base: "ᱵᱩᱫᱟ", reading: "budā" }, { word: "ᱵᱟᱝ", base: "ᱵᱟᱝ", reading: "bang" }]
   - id: "sat-9015"
     target: "ᱤᱧ ᱥᱟᱱᱛᱟᱞᱤ ᱱᱟ"
     reading: "iñ santali na"

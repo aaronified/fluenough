@@ -1,4 +1,4 @@
-# Sources: none reachable for Khasi (Wiktionary and Wikipedia carry no Khasi phrases); forms built from first-words vocabulary and recalled usage. 20 of 20 cards doubtful.
+# Sources: none reachable for Khasi (Wiktionary and Wikipedia carry no Khasi phrases); forms built from first-words vocabulary and recalled usage. 19 of 19 cards doubtful.
 schema: 1
 id: "kha-phrasebook"
 part: "core"
@@ -12,19 +12,19 @@ cards:
     pos: "phrase"
     tags: ["greeting", "doubtful"]
     phrasebook: true
-    bases: [{ word: "Khublei", base: "Khublei" }]
+    bases: [{ word: "Khublei", ref: "kha-0124" }]
   - id: "kha-9002"
     target: "Khublei sngi"
     pos: "phrase"
     tags: ["greeting", "doubtful"]
     phrasebook: true
-    bases: [{ word: "Khublei", base: "Khublei" }, { word: "sngi", base: "sngi" }]
+    bases: [{ word: "Khublei", ref: "kha-0124" }, { word: "sngi", base: "sngi" }]
   - id: "kha-9003"
     target: "Khublei shwa"
     pos: "phrase"
     tags: ["greeting", "doubtful"]
     phrasebook: true
-    bases: [{ word: "Khublei", base: "Khublei" }, { word: "shwa", base: "shwa" }]
+    bases: [{ word: "Khublei", ref: "kha-0124" }, { word: "shwa", base: "shwa" }]
   - id: "kha-9004"
     target: "Phi leit"
     pos: "phrase"
@@ -104,23 +104,17 @@ cards:
     phrasebook: true
     bases: [{ word: "nga", ref: "kha-0101" }, { word: "lah", base: "lah" }]
   - id: "kha-9017"
-    target: "Ing phi ia aiuh?"
+    target: "kyrteng phi ia aiuh?"
     pos: "phrase"
     tags: ["question", "doubtful"]
     phrasebook: true
-    bases: [{ word: "Ing", base: "Ing" }, { word: "phi", ref: "kha-0102" }, { word: "ia", base: "ia" }, { word: "aiuh", ref: "kha-0126" }]
+    bases: [{ word: "kyrteng", base: "kyrteng" }, { word: "phi", ref: "kha-0102" }, { word: "ia", base: "ia" }, { word: "aiuh", ref: "kha-0126" }]
   - id: "kha-9018"
-    target: "Ing nga"
+    target: "kyrteng nga"
     pos: "phrase"
     tags: ["greeting", "doubtful"]
     phrasebook: true
-    bases: [{ word: "Ing", base: "Ing" }, { word: "nga", ref: "kha-0101" }]
-  - id: "kha-9019"
-    target: "Shiphur ia kaei?"
-    pos: "phrase"
-    tags: ["survival", "question", "doubtful"]
-    phrasebook: true
-    bases: [{ word: "Shiphur", base: "Shiphur" }, { word: "ia", base: "ia" }, { word: "kaei", base: "kaei" }]
+    bases: [{ word: "kyrteng", base: "kyrteng" }, { word: "nga", ref: "kha-0101" }]
   - id: "kha-9020"
     target: "Pynhep!"
     pos: "phrase"
