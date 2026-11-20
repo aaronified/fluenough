@@ -24,11 +24,11 @@ schema: 1
 kind: "path"
 id: "kha-path"
 language: "kha"
-description: "Khasi: the planned path to B1. Only the first words are written."
+description: "Khasi: the planned path to B1. Only the phrasebook and the first words are written."
 genders: ["m", "f"]
 alphabet: []
 units:
-  - decks: ["kha-first-words", "*"]
+  - decks: ["kha-phrasebook", "kha-first-words", "*"]
     words: 29
   - planned: { id: "kha-sound-differences", grammar: ["sound-differences"] }
     listening_passages:

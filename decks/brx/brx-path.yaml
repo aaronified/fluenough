@@ -26,11 +26,11 @@ schema: 1
 kind: "path"
 id: "brx-path"
 language: "brx"
-description: "Bodo: the planned path to B1. Only the first words are written."
+description: "Bodo: the planned path to B1. Only the phrasebook and the first words are written."
 genders: []
 alphabet: []
 units:
-  - decks: ["brx-first-words", "*"]
+  - decks: ["brx-phrasebook", "brx-first-words", "*"]
     words: 13
   - planned: { id: "brx-sound-differences", grammar: ["sound-differences"] }
     listening_passages:

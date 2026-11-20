@@ -26,11 +26,11 @@ schema: 1
 kind: "path"
 id: "sd-path"
 language: "sd"
-description: "Sindhi: the planned path to B1. Only the first words are written."
+description: "Sindhi: the planned path to B1. Only the phrasebook and the first words are written."
 genders: ["m", "f"]
 alphabet: []
 units:
-  - decks: ["sd-first-words", "*"]
+  - decks: ["sd-phrasebook", "sd-first-words", "*"]
     words: 36
   - planned: { id: "sd-sound-differences", grammar: ["sound-differences"] }
     listening_passages:

@@ -24,11 +24,11 @@ schema: 1
 kind: "path"
 id: "lus-path"
 language: "lus"
-description: "Mizo: the planned path to B1. Only the first words are written."
+description: "Mizo: the planned path to B1. Only the phrasebook and the first words are written."
 genders: []
 alphabet: []
 units:
-  - decks: ["lus-first-words", "*"]
+  - decks: ["lus-phrasebook", "lus-first-words", "*"]
     words: 29
   - planned: { id: "lus-sound-differences", grammar: ["sound-differences"] }
     listening_passages:

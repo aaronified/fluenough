@@ -11,7 +11,7 @@
 # family; edit the generator's data, or take a unit over by hand once its
 # deck is written (#959).
 #
-# Unit 1 is written: the first words (30 words). Manipuri has no phrasebook yet. Every
+# Unit 1 is written: the first words (30 words). Manipuri has a phrasebook (15 phrases, all doubtful). Every
 # other unit is planned, so the course teaches each as "Coming" until its
 # deck is written. The passages are placeholders: each describes its unit's
 # theme or grammar and is reworded when the passage is written.
@@ -26,11 +26,11 @@ schema: 1
 kind: "path"
 id: "mni-path"
 language: "mni"
-description: "Manipuri: the planned path to B1. Only the first words are written."
+description: "Manipuri: the planned path to B1. Only the phrasebook and the first words are written."
 genders: []
 alphabet: []
 units:
-  - decks: ["mni-first-words", "*"]
+  - decks: ["mni-phrasebook", "mni-first-words", "*"]
     words: 30
   - planned: { id: "mni-sound-differences", grammar: ["sound-differences"] }
     listening_passages:
