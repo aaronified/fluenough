@@ -1,0 +1,36 @@
+# Classical Sanskrit situation sheets (#724): lists of card ids from the phrasebook, never card text. Every id is a card of sa-phrasebook, so progress, audio and notes are the card's own.
+# Draft: Sanskrit is read more than spoken, so the sheets list only cards of the phrasebook; the sheets for apology and for prayer and ceremony are not built (docs/review-queue/sa.md).
+# Not yet checked by a Sanskrit speaker: please report any mistake.
+schema: 1
+id: sa-situations
+name: "Classical Sanskrit situations"
+kind: situations
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+description: "Key phrases for a few everyday moments. Draft, not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["unreviewed"]
+situations:
+  - id: "greeting"
+    icon: "greeting"
+    title: { en: "Greetings and leave-taking" }
+    phrases: ["sa-0001", "sa-0003", "sa-0019", "sa-0016", "sa-0004", "sa-0017", "sa-0020"]
+  - id: "thanks"
+    icon: "shops"
+    title: { en: "Thanks and politeness" }
+    phrases: ["sa-0002", "sa-0008", "sa-0005"]
+  - id: "introductions"
+    icon: "work"
+    title: { en: "Introducing oneself" }
+    phrases: ["sa-0012", "sa-0010", "sa-0015", "sa-0016"]
+  - id: "classroom"
+    icon: "school"
+    title: { en: "In the classroom" }
+    phrases: ["sa-0007", "sa-0006", "sa-0018", "sa-0009", "sa-0005", "sa-0008", "sa-0015"]
+  - id: "travel"
+    icon: "travel"
+    title: { en: "Travel and questions" }
+    phrases: ["sa-0011", "sa-0009", "sa-0020"]
+  - id: "water"
+    icon: "eat"
+    title: { en: "Asking for water" }
+    phrases: ["sa-0013", "sa-0014", "sa-0008", "sa-0002"]
