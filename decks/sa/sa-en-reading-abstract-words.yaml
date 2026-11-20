@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-abstract-words"
+name: "Reading: abstract-words"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-abstract-words-text-1"
+    title: "Cause, ignorance and the mind"
+    theme: "abstract-words"
+    sentences:
+      - { text: "सदा कारणात् कार्यं भवति.", reading: "sadā kāraṇāt kāryaṃ bhavati.", ipa: "səd̪aː kaːrəɳaːt̪ kaːrjəm bʱəʋət̪i" }
+      - { text: "अविद्यया संसारे भ्रमो भवति.", reading: "avidyayā saṃsāre bhramo bhavati.", ipa: "əʋid̪jəjaː sə̃saːreː bʱrəmoː bʱəʋət̪i" }
+      - { text: "योगेन चित्तं शान्तं भवति.", reading: "yogena cittaṃ śāntaṃ bhavati.", ipa: "joːɡeːnə tʃit̪t̪əm ʃaːnt̪əm bʱəʋət̪i" }
+      - { text: "मननेन ज्ञानं स्थिरं भवति.", reading: "mananena jñānaṃ sthiraṃ bhavati.", ipa: "mənəneːnə dʒɲaːnəm st̪ʰirəm bʱəʋət̪i" }
+      - { text: "सृष्टेः पश्चाद् विनाशो भवति.", reading: "sṛṣṭeḥ paścād vināśo bhavati.", ipa: "sr̩ʂʈeːh pəʃtʃaːd̪ ʋinaːʃoː bʱəʋət̪i" }
+    questions:
+      - id: "sa-6780"
+        prompt: { en: "What does an effect come from?" }
+        options: [{ en: "From a motive" }, { en: "From a cause" }, { en: "From a sign" }]
+        answer: 2
+      - id: "sa-6781"
+        prompt: { en: "Where is there wandering through ignorance?" }
+        options: [{ en: "In nature" }, { en: "In the cycle of rebirth" }, { en: "In the mind" }]
+        answer: 2
+      - id: "sa-6782"
+        prompt: { en: "Which word means 'mind'?" }
+        options: [{ en: "चित्तं (cittaṃ)" }, { en: "शान्तं (śāntaṃ)" }, { en: "योगेन (yogena)" }]
+        answer: 1
+      - id: "sa-6783"
+        prompt: { en: "Knowledge becomes firm through reflection." }
+        answer: true
+  - id: "sa-abstract-words-text-2"
+    title: "Success, soul and secret"
+    theme: "abstract-words"
+    sentences:
+      - { text: "नित्यं साधनेन सिद्धिर् भवति.", reading: "nityaṃ sādhanena siddhir bhavati.", ipa: "nit̪jəm saːd̪ʱəneːnə sid̪d̪ʱir bʱəʋət̪i" }
+      - { text: "आत्मनो मुक्तिर् ज्ञानेन भवति.", reading: "ātmano muktir jñānena bhavati.", ipa: "aːt̪mənoː mukt̪ir dʒɲaːneːnə bʱəʋət̪i" }
+      - { text: "प्रकृतौ सत्त्वं गुणो भवति.", reading: "prakṛtau sattvaṃ guṇo bhavati.", ipa: "prəkr̩t̪əu sət̪t̪ʋəm ɡuɳoː bʱəʋət̪i" }
+      - { text: "आचार्यो रहस्यं बालकाय कथयति.", reading: "ācāryo rahasyaṃ bālakāya kathayati.", ipa: "aːtʃaːrjoː rəɦəsjəm baːləkaːjə kət̪ʰəjət̪i" }
+      - { text: "भक्त्या चित्तं प्रसन्नं भवति.", reading: "bhaktyā cittaṃ prasannaṃ bhavati.", ipa: "bʱəkt̪jaː tʃit̪t̪əm prəsənnəm bʱəʋət̪i" }
+    questions:
+      - id: "sa-6784"
+        prompt: { en: "What does success come through?" }
+        options: [{ en: "Through steady means" }, { en: "Through quick action" }, { en: "Through chance" }]
+        answer: 1
+      - id: "sa-6785"
+        prompt: { en: "Through what does the soul find liberation?" }
+        options: [{ en: "Through devotion" }, { en: "Through knowledge" }, { en: "Through offerings" }]
+        answer: 2
+      - id: "sa-6786"
+        prompt: { en: "Which word means 'secret'?" }
+        options: [{ en: "गुणो (guṇo)" }, { en: "आत्मनो (ātmano)" }, { en: "रहस्यं (rahasyaṃ)" }]
+        answer: 3
+      - id: "sa-6787"
+        prompt: { en: "The mind becomes angry through devotion." }
+        answer: false
