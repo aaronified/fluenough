@@ -20,11 +20,12 @@ const Map<String, String> languageFontScripts = <String, String>{
 /// The scripts that have no font file of their own and are drawn in
 /// another script's (`FONT_ALIASES` in tools/deck_index.py, which a test
 /// keeps equal): Arabic is set in Naskh, Punjabi's Shahmukhi in the Urdu
-/// Nastaliq, and the IPA in the Latin font.
+/// Nastaliq, the IPA and Morse code in the Latin font.
 const Map<String, String> scriptFontAliases = <String, String>{
   'arabic': 'perso_arabic_naskh',
   'shahmukhi': 'perso_arabic',
   'ipa': 'latin',
+  'morse': 'latin',
 };
 
 /// The scripts whose fonts are the content fonts (owner, 2026-11-16: "I

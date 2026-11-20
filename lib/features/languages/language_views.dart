@@ -52,6 +52,7 @@ class LanguageView {
 const Map<String, String> notationGlyphs = <String, String>{
   'ipa': 'ə',
   'braille': '⠃',
+  'morse': '•',
 };
 
 /// The families the app names, in the order the Add a language page lists
@@ -90,6 +91,10 @@ List<LanguageView> languageViews(AppState state, List<SpokenLanguage> all) {
   final courses = <String, CatalogLanguage>{
     for (final c in state.catalogLanguages(
       ownNames: <String, String>{for (final l in all) l.code: l.ownName},
+      noCulture: <String>{
+        for (final l in all)
+          if (!l.hasCulture) l.code,
+      },
     ))
       c.code: c,
   };
