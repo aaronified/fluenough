@@ -20,11 +20,12 @@ const Map<String, String> languageFontScripts = <String, String>{
 /// The scripts that have no font file of their own and are drawn in
 /// another script's (`FONT_ALIASES` in tools/deck_index.py, which a test
 /// keeps equal): Arabic is set in Naskh, Punjabi's Shahmukhi in the Urdu
-/// Nastaliq, and the IPA in the Latin font.
+/// Nastaliq, the IPA and Morse code in the Latin font.
 const Map<String, String> scriptFontAliases = <String, String>{
   'arabic': 'perso_arabic_naskh',
   'shahmukhi': 'perso_arabic',
   'ipa': 'latin',
+  'morse': 'latin',
 };
 
 /// The scripts whose fonts are the content fonts (owner, 2026-11-16: "I
@@ -35,6 +36,12 @@ const Map<String, String> scriptFontAliases = <String, String>{
 /// no deck character falls to the phone's font (`CONTENT_FONTS` in
 /// tools/deck_index.py).
 const List<String> contentFontScripts = <String>['latin', 'cyrillic', 'greek'];
+
+/// The scripts written in the Unicode private-use area, which no phone has a
+/// font for: sitelen pona's (U+F1900 to U+F19FF). Drawn before their font is
+/// on the phone they are boxes, so text in them shows its other spelling, or a
+/// mark, until the font is downloaded (ADR-0055).
+const Set<String> privateUseScripts = <String>{'sitelen_pona'};
 
 /// The font key to draw [language]'s text in [script] with: [script] itself
 /// unless [languageFontScripts] names another, or it shares another's font

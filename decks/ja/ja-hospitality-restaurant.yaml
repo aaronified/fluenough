@@ -1,0 +1,140 @@
+schema: 1
+id: "ja-hospitality-restaurant"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+genre: "professional"
+professional: "hospitality"
+hidden: true
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "ja-7532"
+    target: "なんめいさまですか"
+    words: ["なんめい", "さま", "です", "か"]
+    reading: "nanmei sama desu ka"
+    ipa: "naɴmeː sama desɯ ka"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "なんめい", base: "なんめい", reading: "nanmei" }
+      - { word: "さま", ref: "ja-0137" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-7533"
+    target: "こちらへどうぞ"
+    words: ["こちら", "へ", "どうぞ"]
+    reading: "kochira e douzo"
+    ipa: "kotɕiɾa e doːdzo"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "こちら", base: "こちら", reading: "kochira" }
+      - { word: "へ", base: "へ", reading: "e" }
+      - { word: "どうぞ", base: "どうぞ", reading: "douzo" }
+  - id: "ja-7534"
+    target: "ごちゅうもんはおきまりですか"
+    words: ["ごちゅうもん", "は", "おきまり", "です", "か"]
+    reading: "gochuumon wa okimari desu ka"
+    ipa: "ɡotɕɯːmoɴ wa okimaɾi desɯ ka"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "ごちゅうもん", ref: "ja-0999" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おきまり", base: "きまる", reading: "kimaru" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-7535"
+    target: "かしこまりました"
+    words: ["かしこまりました"]
+    reading: "kashikomarimashita"
+    ipa: "kaɕikomaɾimaɕita"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "かしこまりました", base: "かしこまる", reading: "kashikomaru" }
+  - id: "ja-7536"
+    target: "おのみものはいかがですか"
+    words: ["おのみもの", "は", "いかが", "です", "か"]
+    reading: "onomimono wa ikaga desu ka"
+    ipa: "onomimono wa ikaɡa desɯ ka"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "おのみもの", ref: "ja-0996" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "いかが", ref: "ja-0113" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-7537"
+    target: "おまたせいたしました"
+    words: ["おまたせ", "いたしました"]
+    reading: "omatase itashimashita"
+    ipa: "omatase itaɕimaɕita"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "おまたせ", base: "またせる", reading: "mataseru" }
+      - { word: "いたしました", ref: "ja-0375" }
+  - id: "ja-7538"
+    target: "いじょうでよろしいでしょうか"
+    words: ["いじょう", "で", "よろしい", "でしょう", "か"]
+    reading: "ijou de yoroshii deshou ka"
+    ipa: "idʑoː de joɾoɕiː deɕoː ka"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "いじょう", base: "いじょう", reading: "ijou" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "よろしい", base: "よろしい", reading: "yoroshii" }
+      - { word: "でしょう", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-7539"
+    target: "おさげしてもよろしいですか"
+    words: ["おさげして", "も", "よろしい", "です", "か"]
+    reading: "osageshite mo yoroshii desu ka"
+    ipa: "osaɡeɕite mo joɾoɕiː desɯ ka"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "おさげして", base: "さげる", reading: "sageru" }
+      - { word: "も", base: "も", reading: "mo" }
+      - { word: "よろしい", base: "よろしい", reading: "yoroshii" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-7540"
+    target: "おかいけいはあちらです"
+    words: ["おかいけい", "は", "あちら", "です"]
+    reading: "okaikei wa achira desu"
+    ipa: "okaikeː wa atɕiɾa desɯ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "おかいけい", base: "かいけい", reading: "kaikei" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "あちら", base: "あちら", reading: "achira" }
+      - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-7541"
+    target: "ほんじつはありがとうございました"
+    words: ["ほんじつ", "は", "ありがとう", "ございました"]
+    reading: "honjitsu wa arigatou gozaimashita"
+    ipa: "hoɴdʑitsɯ wa aɾiɡatoː ɡodzaimaɕita"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases:
+      - { word: "ほんじつ", base: "ほんじつ", reading: "honjitsu" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ありがとう", base: "ありがとう", reading: "arigatou" }
+      - { word: "ございました", base: "ある", reading: "aru" }

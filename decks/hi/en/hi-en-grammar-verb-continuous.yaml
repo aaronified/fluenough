@@ -1,0 +1,33 @@
+schema: 1
+id: "hi-en-grammar-verb-continuous"
+kind: "layer"
+core: "hi-grammar-verb-continuous"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs: the continuous, for every person"
+description: "Every verb the course teaches, in the continuous (is doing), for each person and for a man or a woman. The forms are written in Devanagari for now. Not yet checked by a Hindustani speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "main-m": "I, a man, as doing now"
+    "main-f": "I, a woman, as doing now"
+    "tum-m": "you (familiar), a man, as doing now"
+    "tum-f": "you (familiar), a woman, as doing now"
+    "vah-m": "he, or you (intimate), a man, as doing now"
+    "vah-f": "she, or you (intimate), a woman, as doing now"
+    "ham-m": "we, they or you (respectful), men or a mixed group, as doing now"
+    "ham-f": "we, they or you (respectful), women, as doing now"
+rules:
+  "hi-rule-continuous-first":
+    name: "रहा (rahā)/रही (rahī) हूँ (hūm̐): I am doing"
+    explanation: "For I am doing, the bare stem comes first, then {1} for a man or {2} for a woman: {3}, to do, gives {4} or {5}; {6}, to go, gives {7}."
+  "hi-rule-continuous-second":
+    name: "रहे (rahē)/रही (rahī) हो (hō): you (tum) are doing"
+    explanation: "For you (familiar) the stem is followed by {1} for a man or {2} for a woman: {3}, to do, gives {4} or {5}; {6}, to go, gives {7}."
+  "hi-rule-continuous-third":
+    name: "रहा (rahā)/रही (rahī) है (hai): he, she is doing"
+    explanation: "For he or she the stem is followed by {1} or {2}: {3}, to do, gives {4} or {5}; {6}, to go, gives {7}. The very close you, {8}, uses the same form."
+  "hi-rule-continuous-plural":
+    name: "रहे (rahē)/रही (rahī) हैं (haim̐): we, they are doing"
+    explanation: "For we, they and the respectful you the stem is followed by {1} or {2}: {3}, to do, gives {4} or {5}; {6}, to go, gives {7}. The same form serves {8}, you (respectful), and {9}, they."
