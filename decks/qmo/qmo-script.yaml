@@ -1,0 +1,20 @@
+# How Morse code works: the ideas behind its patterns, shown before the first
+# card and from a deck's Tips. See ADR-0016 and ADR-0057.
+schema: 1
+kind: "script"
+part: "core"
+id: "qmo-script"
+language: "qmo"
+features:
+  - id: "timing"
+    example: "•–"
+    letters: ["•", "–"]
+  - id: "tree"
+    example: "••"
+    letters: ["•", "–", "••", "•–", "–•", "––"]
+  - id: "digits"
+    example: "•••••"
+    letters: ["•––––", "••–––", "•••––", "••••–", "•••••", "–••••", "––•••", "–––••", "––––•", "–––––"]
+  - id: "run"
+    example: "•••–––•••"
+    letters: ["•••–––•••"]
