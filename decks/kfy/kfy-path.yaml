@@ -26,11 +26,11 @@ schema: 1
 kind: "path"
 id: "kfy-path"
 language: "kfy"
-description: "Kumaoni: the planned path to B1. Only the first words are written."
+description: "Kumaoni: the planned path to B1. Only the phrasebook and the first words are written."
 genders: ["m", "f"]
 alphabet: []
 units:
-  - decks: ["kfy-first-words", "*"]
+  - decks: ["kfy-phrasebook", "kfy-first-words", "*"]
     words: 39
   - planned: { id: "kfy-sound-differences", grammar: ["sound-differences"] }
     listening_passages:
