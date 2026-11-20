@@ -262,6 +262,8 @@ long-horizon ask (owner, 2026-10-23).
 
 **Order: first list, then second list, each to Complete** (owner, 2026-11-17: "Keep completing the languages. When the 1st list is complete, take up 2nd list languages one by one and complete them as well."). First list (Telugu, Bengali, Spanish, Marathi, Kannada, Assamese, Chinese, Hindustani, Japanese, French, Gujarati) to the app measure, closest first; then the second list (Classical Sanskrit, Tamil, Malayalam, Santali, Korean, Afrikaans, Italian, German, Russian, Greek, Polish, then Vedic Sanskrit) one at a time, each to Complete (B1 plan words, grammar, culture 72/72). This replaces the A1-only rule for the second list recorded on 2026-11-06.
 
+**Order after the first list** (owner, 2026-11-20: "After classical sanskrit, complete tamil. Then do A1 for all list 2 languages including vedic sanskrit."). The order is now: (1) Classical Sanskrit to Complete (running), (2) Tamil to Complete on the app measure, (3) then A1 only for every other second-list language, Vedic Sanskrit included (Malayalam, Santali, Korean, Afrikaans, Italian, German, Russian, Greek, Polish, Vedic Sanskrit), one session at a time. This replaces "each to Complete" for the second list except Classical Sanskrit and Tamil.
+
 **Hindustani** is one course (owner, 2026-10-18: "Hindi and Urdu should be
 combined as we should not care about socipolitics over linguistics"; chose
 "One course, two scripts"). The `hi` course and its card ids stay; it is

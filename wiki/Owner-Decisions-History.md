@@ -144,6 +144,12 @@ The first correction of 2026-11-06 made the second list a B1 target: "Complete t
 
 A1-only for the second list (2026-11-06) is superseded by 2026-11-17: second list to Complete, one language at a time, after the first list. See "Order: first list, then second list, each to Complete" in `CLAUDE.md`.
 
+### Order after the first list (owner, 2026-11-20)
+
+Owner, 2026-11-20: "After classical sanskrit, complete tamil. Then do A1 for all list 2 languages including vedic sanskrit."
+
+The order is now: (1) Classical Sanskrit to Complete (running), (2) Tamil to Complete on the app measure, (3) then A1 only for every other second-list language, Vedic Sanskrit included (Malayalam, Santali, Korean, Afrikaans, Italian, German, Russian, Greek, Polish, Vedic Sanskrit), one session at a time. This replaces "each to Complete" for the second list except Classical Sanskrit and Tamil. The 2026-11-17 rule "each second-list language to Complete" is superseded for every language except Classical Sanskrit and Tamil. See "Order after the first list" in `CLAUDE.md`.
+
 ### Push straight to main (owner, 2026-10-11)
 
 `CLAUDE.md` still says, in "Pull requests for everything else": "(owner,

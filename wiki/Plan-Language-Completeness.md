@@ -12,6 +12,8 @@ This page is a checklist and a plan. It builds nothing. The data model is
 its sections); the Japanese culture batch is
 [Plan-Culture-Japanese](Plan-Culture-Japanese.md).
 
+The second-list target (owner, 2026-11-20): Classical Sanskrit and Tamil to Complete, then A1 only for the other second-list languages, Vedic Sanskrit included. The "to A1" labels in the grid below predate this and are superseded; see "Order after the first list" in `CLAUDE.md`.
+
 ## (a) Deliverables per language
 
 State is for Japanese (`ja`). The Japanese rows are re-read from `origin/decks-live` and `origin/main` on 2026-11-15 (the other rows on 2026-11-13). "Done" means the files are on decks-live. Counts are of files, not of quality or coverage.
