@@ -1,6 +1,8 @@
 {
   "note": "The oldest app version that can read a language, or one file (ADR-0052, wiki). The index carries each as min_app; an app that knows it does not download what needs a newer app and says Needs app X, Update; older apps ignore it. Keys: languages {code: version}, files {decks/path.yaml: version}. Never set it for a language the latest release already ships, nor for a file it already reads: tools/deck_index.py refuses both (read from the latest v* tag; a warning without tags, an error in CI).",
-  "languages": {},
+  "languages": {
+    "qmo": "0.11.3"
+  },
   "files": {
     "decks/ja/ja-kanji-1.yaml": "0.8.1",
     "decks/ja/ja-kanji-2.yaml": "0.8.1",
@@ -93,6 +95,8 @@
     "decks/sa/en/sa-en-verbs-first-class.yaml": "0.10.7",
     "decks/sa/sa-verbs-3.yaml": "0.10.7",
     "decks/sa/en/sa-en-verbs-3.yaml": "0.10.7",
+    "decks/sa/sa-verbs-4.yaml": "0.10.7",
+    "decks/sa/en/sa-en-verbs-4.yaml": "0.10.7",
     "decks/sa/en/sa-en-grammar-present-system.yaml": "0.10.7",
     "decks/sa/sa-quantities.yaml": "0.10.7",
     "decks/sa/en/sa-en-quantities.yaml": "0.10.7",
