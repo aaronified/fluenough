@@ -86,7 +86,7 @@ cards:
     pos: "noun"
     gender: "n"
     tags: ["arts"]
-    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Chandas" }]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Chandas" }, { id: "n4", kind: "note" }]
     bases: [{ word: "छन्दः", base: "छन्दस्", reading: "chandas" }]
     examples:
       - target: "छन्दः पठति बालः"
@@ -104,7 +104,7 @@ cards:
     pos: "noun"
     gender: "n"
     tags: ["arts"]
-    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
     bases: [{ word: "लेखनम्", base: "लेखन", reading: "lekhana" }]
     examples:
       - target: "लेखनं बालः करोति"
@@ -466,6 +466,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "नृत्तम्", base: "नृत्त", reading: "nṛtta" }
     examples:
@@ -493,6 +494,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "नाटिका", base: "नाटिका", reading: "nāṭikā" }
     examples:
@@ -520,6 +522,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "वेणुः", base: "वेणु", reading: "veṇu" }
     examples:
@@ -548,6 +551,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "मुरली", base: "मुरली", reading: "muralī" }
     examples:
@@ -575,24 +579,19 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
     bases:
       - { word: "श्रुतिः", base: "श्रुति", reading: "śruti" }
     examples:
-      - target: "श्रुतिं गायकः पश्यति"
-        reading: "śrutiṃ gāyakaḥ paśyati"
-        ipa: "ʃrut̪im ɡaːjəkəh pəʃjət̪i"
-        bases:
-          - { word: "श्रुतिं", base: "श्रुति", reading: "śrutiṃ" }
-          - { word: "गायकः", base: "गायक", reading: "gāyakaḥ" }
-          - { word: "पश्यति", base: "दृश्", reading: "paśyati" }
-      - target: "राजा गीते श्रुतिं पश्यति"
-        reading: "rājā gīte śrutiṃ paśyati"
-        ipa: "raːdʒaː ɡiːt̪eː ʃrut̪im pəʃjət̪i"
-        bases:
-          - { word: "राजा", base: "राजन्", reading: "rājā" }
-          - { word: "गीते", base: "गीत", reading: "gīte" }
-          - { word: "श्रुतिं", base: "श्रुति", reading: "śrutiṃ" }
-          - { word: "पश्यति", base: "दृश्", reading: "paśyati" }
+      - target: "श्रुतिं गायको जानाति"
+        reading: "śrutiṃ gāyako jānāti"
+        ipa: "ʃrut̪im ɡaːjəkoː dʒaːnaːt̪i"
+        bases: [{ word: "श्रुतिं", base: "श्रुति", reading: "śruti" }, { word: "गायको", base: "गायक", reading: "gāyaka" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+      - target: "राजा गीते श्रुतिं शृणोति"
+        reading: "rājā gīte śrutiṃ śṛṇoti"
+        ipa: "raːdʒaː ɡiːt̪eː ʃrut̪im ʃr̩ɳoːt̪i"
+        bases: [{ word: "राजा", base: "राजन्", reading: "rājan" }, { word: "गीते", base: "गीत", reading: "gīta" }, { word: "श्रुतिं", base: "श्रुति", reading: "śruti" }, { word: "शृणोति", base: "श्रु", reading: "śru" }]
   - id: "sa-9630"
     target: "ऋषभः"
     reading: "ṛṣabhaḥ"
@@ -603,6 +602,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "ऋषभः", base: "ऋषभ", reading: "ṛṣabha" }
     examples:
@@ -631,6 +631,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "मध्यमः", base: "मध्यम", reading: "madhyama" }
     examples:
@@ -660,6 +661,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "रेखा", base: "रेखा", reading: "rekhā" }
     examples:
@@ -687,6 +689,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "वर्तिका", base: "वर्तिका", reading: "vartikā" }
     examples:
@@ -714,6 +717,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "यवनिका", base: "यवनिका", reading: "yavanikā" }
     examples:
@@ -741,6 +745,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "तन्त्री", base: "तन्त्री", reading: "tantrī" }
     examples:
@@ -767,6 +772,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "तारः", base: "तार", reading: "tāra" }
     examples:
@@ -797,6 +803,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "विदूषकः", base: "विदूषक", reading: "vidūṣaka" }
     examples:
@@ -825,6 +832,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "प्रवेशकः", base: "प्रवेशक", reading: "praveśaka" }
     examples:
@@ -852,6 +860,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "विष्कम्भः", base: "विष्कम्भ", reading: "viṣkambha" }
     examples:
@@ -880,6 +889,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "कुम्भकारः", base: "कुम्भकार", reading: "kumbhakāra" }
     examples:
@@ -908,6 +918,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "स्थपतिः", base: "स्थपति", reading: "sthapati" }
     examples:
@@ -936,6 +947,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "गाथा", base: "गाथा", reading: "gāthā" }
     examples:
@@ -963,6 +975,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "मञ्चः", base: "मञ्च", reading: "mañca" }
     examples:
@@ -991,6 +1004,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "तूलिः", base: "तूलि", reading: "tūli" }
     examples:
@@ -1018,6 +1032,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "कविता", base: "कविता", reading: "kavitā" }
     examples:
@@ -1028,13 +1043,10 @@ cards:
           - { word: "कवितां", base: "कविता", reading: "kavitāṃ" }
           - { word: "कविः", base: "कवि", reading: "kaviḥ" }
           - { word: "करोति", base: "कृ", reading: "karoti" }
-      - target: "कविता गीतं भवति"
-        reading: "kavitā gītaṃ bhavati"
-        ipa: "kəʋit̪aː ɡiːt̪əm bʱəʋət̪i"
-        bases:
-          - { word: "कविता", base: "कविता", reading: "kavitā" }
-          - { word: "गीतं", base: "गीत", reading: "gītaṃ" }
-          - { word: "भवति", base: "भू", reading: "bhavati" }
+      - target: "कविता सुन्दरा भवति"
+        reading: "kavitā sundarā bhavati"
+        ipa: "kəʋit̪aː sund̪əraː bʱəʋət̪i"
+        bases: [{ word: "कविता", base: "कविता", reading: "kavitā" }, { word: "सुन्दरा", base: "सुन्दर", reading: "sundara" }, { word: "भवति", base: "भू", reading: "bhū" }]
   - id: "sa-9646"
     target: "डमरुः"
     reading: "ḍamaruḥ"
@@ -1045,16 +1057,15 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
     bases:
       - { word: "डमरुः", base: "डमरु", reading: "ḍamaru" }
     examples:
-      - target: "डमरुं शिवं पश्यति"
-        reading: "ḍamaruṃ śivaṃ paśyati"
-        ipa: "ɖəmərum ʃiʋəm pəʃjət̪i"
-        bases:
-          - { word: "डमरुं", base: "डमरु", reading: "ḍamaruṃ" }
-          - { word: "शिवं", base: "शिव", reading: "śivaṃ" }
-          - { word: "पश्यति", base: "दृश्", reading: "paśyati" }
+      - target: "शिवो डमरुं पश्यति"
+        reading: "śivo ḍamaruṃ paśyati"
+        ipa: "ʃiʋoː ɖəmərum pəʃjət̪i"
+        bases: [{ word: "शिवो", base: "शिव", reading: "śiva" }, { word: "डमरुं", base: "डमरु", reading: "ḍamaru" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
       - target: "राजा वने डमरुं पश्यति"
         reading: "rājā vane ḍamaruṃ paśyati"
         ipa: "raːdʒaː ʋəneː ɖəmərum pəʃjət̪i"
@@ -1073,6 +1084,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "कुशीलवः", base: "कुशीलव", reading: "kuśīlava" }
     examples:
@@ -1101,6 +1113,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "आदिकाव्यम्", base: "आदिकाव्य", reading: "ādikāvya" }
     examples:
@@ -1128,6 +1141,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "महाकविः", base: "महाकवि", reading: "mahākavi" }
     examples:
@@ -1156,6 +1170,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "महाकाव्यम्", base: "महाकाव्य", reading: "mahākāvya" }
     examples:
@@ -1183,6 +1198,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "उपरूपकम्", base: "उपरूपक", reading: "uparūpaka" }
     examples:
@@ -1210,6 +1226,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "संगीतशाला", base: "संगीतशाला", reading: "saṃgītaśālā" }
     examples:
@@ -1237,6 +1254,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "ध्वनिः", base: "ध्वनि", reading: "dhvani" }
     examples:
@@ -1247,13 +1265,10 @@ cards:
           - { word: "ध्वनिं", base: "ध्वनि", reading: "dhvaniṃ" }
           - { word: "गायकः", base: "गायक", reading: "gāyakaḥ" }
           - { word: "करोति", base: "कृ", reading: "karoti" }
-      - target: "गृहे ध्वनिं पश्यति"
-        reading: "gṛhe dhvaniṃ paśyati"
-        ipa: "ɡr̩ɦeː d̪ʱʋənim pəʃjət̪i"
-        bases:
-          - { word: "गृहे", base: "गृह", reading: "gṛhe" }
-          - { word: "ध्वनिं", base: "ध्वनि", reading: "dhvaniṃ" }
-          - { word: "पश्यति", base: "दृश्", reading: "paśyati" }
+      - target: "गृहे ध्वनिं शृणोति"
+        reading: "gṛhe dhvaniṃ śṛṇoti"
+        ipa: "ɡr̩ɦeː d̪ʱʋənim ʃr̩ɳoːt̪i"
+        bases: [{ word: "गृहे", base: "गृह", reading: "gṛha" }, { word: "ध्वनिं", base: "ध्वनि", reading: "dhvani" }, { word: "शृणोति", base: "श्रु", reading: "śru" }]
   - id: "sa-9654"
     target: "वर्णनम्"
     reading: "varṇanam"
@@ -1264,6 +1279,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "वर्णनम्", base: "वर्णन", reading: "varṇana" }
     examples:
@@ -1294,13 +1310,10 @@ cards:
     bases:
       - { word: "वाणी", base: "वाणी", reading: "vāṇī" }
     examples:
-      - target: "वाणीं गायिका गायति"
-        reading: "vāṇīṃ gāyikā gāyati"
-        ipa: "ʋaːɳiːm ɡaːjikaː ɡaːjət̪i"
-        bases:
-          - { word: "वाणीं", base: "वाणी", reading: "vāṇīṃ" }
-          - { word: "गायिका", base: "गायिका", reading: "gāyikā" }
-          - { word: "गायति", base: "गै", reading: "gāyati" }
+      - target: "वाण्या गायिका गायति"
+        reading: "vāṇyā gāyikā gāyati"
+        ipa: "ʋaːɳjaː ɡaːjikaː ɡaːjət̪i"
+        bases: [{ word: "वाण्या", base: "वाणी", reading: "vāṇī" }, { word: "गायिका", base: "गायिका", reading: "gāyikā" }, { word: "गायति", base: "गै", reading: "gai" }]
       - target: "वाणी मधुरा भवति"
         reading: "vāṇī madhurā bhavati"
         ipa: "ʋaːɳiː məd̪ʱuraː bʱəʋət̪i"
@@ -1318,6 +1331,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "परिमलः", base: "परिमल", reading: "parimala" }
     examples:
@@ -1345,6 +1359,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "क्रीडा", base: "क्रीडा", reading: "krīḍā" }
     examples:
@@ -1372,6 +1387,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "लीला", base: "लीला", reading: "līlā" }
     examples:
@@ -1399,6 +1415,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "कुलालः", base: "कुलाल", reading: "kulāla" }
     examples:
@@ -1427,6 +1444,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "स्थूणा", base: "स्थूणा", reading: "sthūṇā" }
     examples:
@@ -1454,6 +1472,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "अलंकरणम्", base: "अलंकरण", reading: "alaṃkaraṇa" }
     examples:
@@ -1481,6 +1500,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "चित्रकरः", base: "चित्रकर", reading: "citrakara" }
     examples:
@@ -1509,6 +1529,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "ढक्का", base: "ढक्का", reading: "ḍhakkā" }
     examples:
@@ -1536,6 +1557,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "रङ्गकारः", base: "रङ्गकार", reading: "raṅgakāra" }
     examples:
@@ -1564,6 +1586,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "तूर्यम्", base: "तूर्य", reading: "tūrya" }
     examples:
@@ -1591,6 +1614,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "तूणवः", base: "तूणव", reading: "tūṇava" }
     examples:
@@ -1619,6 +1643,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "गाथः", base: "गाथ", reading: "gātha" }
     examples:
@@ -1647,6 +1672,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "शाला", base: "शाला", reading: "śālā" }
     examples:
@@ -1674,6 +1700,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "पट्टः", base: "पट्ट", reading: "paṭṭa" }
     examples:
@@ -1702,6 +1729,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "दाक्षिण्यम्", base: "दाक्षिण्य", reading: "dākṣiṇya" }
     examples:
@@ -1729,6 +1757,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "चक्रबन्धः", base: "चक्रबन्ध", reading: "cakrabandha" }
     examples:
@@ -1756,6 +1785,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "वाक्पटुत्वम्", base: "वाक्पटुत्व", reading: "vākpaṭutva" }
     examples:
@@ -1783,6 +1813,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "व्यञ्जनम्", base: "व्यञ्जन", reading: "vyañjana" }
     examples:
@@ -1810,6 +1841,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "सोपानम्", base: "सोपान", reading: "sopāna" }
     examples:
@@ -1837,6 +1869,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "जालकम्", base: "जालक", reading: "jālaka" }
     examples:
@@ -1864,6 +1897,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "आयतनम्", base: "आयतन", reading: "āyatana" }
     examples:
@@ -1891,6 +1925,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "हर्म्यम्", base: "हर्म्य", reading: "harmya" }
     examples:
@@ -1918,6 +1953,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "वातायनम्", base: "वातायन", reading: "vātāyana" }
     examples:
@@ -1945,6 +1981,7 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
     bases:
       - { word: "लेखकः", base: "लेखक", reading: "lekhaka" }
     examples:
