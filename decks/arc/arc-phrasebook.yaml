@@ -1,0 +1,153 @@
+# Sources: en.wiktionary.org (šlāmā, reached); 15 of 18 cards doubtful (not found in any reached source).
+schema: 1
+id: "arc-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "arc", iso639_3: "arc", name: "Aramaic (Imperial)", script: "hebrew", icon: "א" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "arc-9001"
+    target: "שלמא"
+    reading: "šlāmā"
+    ipa: "ʃlaːmaː"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases: [{ word: "שלמא", ref: "arc-0019" }]
+  - id: "arc-9002"
+    target: "צפרא טבא"
+    reading: "ṣəprā ṭābā"
+    ipa: "sɛfraː taːbaː"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "צפרא", base: "צפרא", reading: "ṣəprā" }, { word: "טבא", base: "טב", reading: "ṭāb" }]
+  - id: "arc-9003"
+    target: "לילא טבא"
+    reading: "lēlyā ṭābā"
+    ipa: "leːljaː taːbaː"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "לילא", base: "לילא", reading: "lēlyā" }, { word: "טבא", base: "טב", reading: "ṭāb" }]
+  - id: "arc-9004"
+    target: "זיל בשלם"
+    reading: "zēl bəšlām"
+    ipa: "zeːl bəʃlaːm"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "זיל", base: "זיל", reading: "zēl" }, { word: "בשלם", ref: "arc-0019" }]
+  - id: "arc-9005"
+    target: "הב"
+    reading: "hāb"
+    ipa: "haːb"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "הב", base: "יהב", reading: "yəhav" }]
+  - id: "arc-9006"
+    target: "טבא עליך"
+    reading: "ṭābā ʿalayk"
+    ipa: "taːbaː ʕalajk"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "טבא", base: "טב", reading: "ṭāb" }, { word: "עליך", base: "על", reading: "ʿal" }]
+  - id: "arc-9007"
+    target: "לא מדעם"
+    reading: "lā mindəʿam"
+    ipa: "laː mindaʕam"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "לא", ref: "arc-0029" }, { word: "מדעם", base: "מדעם", reading: "mindəʿam" }]
+  - id: "arc-9008"
+    target: "שבק לי"
+    reading: "šəbaq lî"
+    ipa: "ʃəbaq liː"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "שבק", base: "שבק", reading: "šəbaq" }, { word: "לי", base: "לי", reading: "lî" }]
+  - id: "arc-9009"
+    target: "כן"
+    reading: "kēn"
+    ipa: "kenn"
+    pos: "phrase"
+    tags: ["answer"]
+    phrasebook: true
+    bases: [{ word: "כן", ref: "arc-0030" }]
+  - id: "arc-9010"
+    target: "לא"
+    reading: "lāʾ"
+    ipa: "laːʔ"
+    pos: "phrase"
+    tags: ["answer"]
+    phrasebook: true
+    bases: [{ word: "לא", ref: "arc-0029" }]
+  - id: "arc-9011"
+    target: "לא ידענא"
+    reading: "lā yədaʿnā"
+    ipa: "laː jədaʕnaː"
+    pos: "phrase"
+    tags: ["survival", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "לא", ref: "arc-0029" }, { word: "ידענא", base: "ידע", reading: "yədaʿ" }]
+  - id: "arc-9012"
+    target: "לא ידענא ארמיא"
+    reading: "lā yədaʿnā ʾarmāyā"
+    ipa: "laː jədaʕnaː ʔarmaːjaː"
+    pos: "phrase"
+    tags: ["survival", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "לא", ref: "arc-0029" }, { word: "ידענא", base: "ידע", reading: "yədaʿ" }, { word: "ארמיא", base: "ארמיא", reading: "ʾarmāyā" }]
+  - id: "arc-9013"
+    target: "אל תעגל"
+    reading: "ʾal taʿgal"
+    ipa: "ʔal taʕgal"
+    pos: "phrase"
+    tags: ["survival", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "אל", base: "אל", reading: "ʾal" }, { word: "תעגל", base: "עגל", reading: "ʿgal" }]
+  - id: "arc-9014"
+    target: "מה שלמך"
+    reading: "mā šəlmāk"
+    ipa: "maː ʃəlmaːk"
+    pos: "phrase"
+    tags: ["question", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "מה", ref: "arc-0025" }, { word: "שלמך", ref: "arc-0019" }]
+  - id: "arc-9015"
+    target: "שלם אנא"
+    reading: "šəlam ʾanā"
+    ipa: "ʃəlam ʔanaː"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "שלם", base: "שלם", reading: "šəlam" }, { word: "אנא", ref: "arc-0001" }]
+  - id: "arc-9016"
+    target: "מה שמך"
+    reading: "mā šəmāk"
+    ipa: "maː ʃəmaːk"
+    pos: "phrase"
+    tags: ["question", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "מה", ref: "arc-0025" }, { word: "שמך", base: "שם", reading: "šəm" }]
+  - id: "arc-9017"
+    target: "שמי"
+    reading: "šəmî"
+    ipa: "ʃəmiː"
+    pos: "phrase"
+    tags: ["survival", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "שמי", base: "שם", reading: "šəm" }]
+  - id: "arc-9018"
+    target: "סעדני"
+    reading: "saʿdanî"
+    ipa: "saʕdaniː"
+    pos: "phrase"
+    tags: ["survival", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "סעדני", base: "סעד", reading: "saʿad" }]
