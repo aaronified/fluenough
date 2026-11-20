@@ -60,7 +60,7 @@ VERSION_RE = re.compile(r"^\d+\.\d+\.\d+$")
 # The private-use codes the app's own languages use (assets/languages.yaml):
 # a package may not take them. Kept equal to the Dart list
 # (lib/core/private/private_ids.dart); a test checks both against the file.
-BUILT_IN_PRIVATE_USE = {"qap", "qbe", "qdo", "qgh", "qgk", "qhv", "qya"}
+BUILT_IN_PRIVATE_USE = {"qap", "qbe", "qdo", "qmo", "qgh", "qgk", "qhv", "qya"}
 # Files that are data about a language, not a deck or a layer.
 DATA_KINDS = {
     "path", "facts", "situations", "numbers", "romanisation", "sounds", "script",

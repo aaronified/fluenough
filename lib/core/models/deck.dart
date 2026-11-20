@@ -111,11 +111,16 @@ class LanguageInfo {
   /// (ADR-0043): English Braille, Unified English Braille.
   bool get isBraille => script == 'braille';
 
+  /// Whether this is Morse code, a script taught as a course of its own: its
+  /// cards are patterns of dots and dashes, learned by sight and by the tones
+  /// each card plays.
+  bool get isMorse => script == 'morse';
+
   /// Whether this is a notation taught like a language: the IPA
   /// (ADR-0041) or braille (ADR-0043). It has no voice, is learned only
   /// when chosen, is placed by nothing, and is complete once its path is
   /// written.
-  bool get isNotation => isIpa || isBraille;
+  bool get isNotation => isIpa || isBraille || isMorse;
 
   /// The app's own keyboard that answers in this language are typed on,
   /// in place of the phone's, or null for the phone's: braille's six dots
@@ -167,6 +172,7 @@ const Set<String> _noReadingScripts = <String>{
   'greek',
   'ipa',
   'braille',
+  'morse',
   'signwriting',
 };
 

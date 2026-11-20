@@ -81,8 +81,8 @@ README = ROOT / "README.md"
 MIN_APP = DECKS / "min_app.json"
 
 # Notation courses, not languages: the badge does not count them.
-NOTATION_SCRIPTS = {"ipa", "braille"}
-NOTATION_CODES = {"ipa", "qbe"}
+NOTATION_SCRIPTS = {"ipa", "braille", "morse"}
+NOTATION_CODES = {"ipa", "qbe", "qmo"}
 _BADGE = re.compile(r'(badge/languages-)\d+(-[^"\s]*"\s+alt=")\d+( languages")')
 
 # The index format. The app refuses an index of a newer version and asks

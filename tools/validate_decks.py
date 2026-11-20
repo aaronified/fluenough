@@ -66,12 +66,12 @@ SCRIPTS = {
     "devanagari", "bengali", "gujarati", "gurmukhi", "odia",
     "telugu", "tamil", "kannada", "malayalam", "sinhala",
     "kana", "han", "han_simplified", "han_traditional", "hangul", "thai",
-    "ipa", "braille", "sitelen_pona", "signwriting", "other",
+    "ipa", "braille", "morse", "sitelen_pona", "signwriting", "other",
 }
 # The notations taught like languages: the IPA (ADR-0041) and braille
 # (ADR-0043). Neither is spoken, so neither has a tts tag, and neither is
 # taught towards a level, so neither path has a B1 plan.
-NOTATION_SCRIPTS = {"ipa", "braille"}
+NOTATION_SCRIPTS = {"ipa", "braille", "morse"}
 # Scripts whose cards need no reading: they are read as written. The
 # notations are read as written, and their courses are no languages with a
 # romanisation: a braille cell's print equivalent is its meaning.
