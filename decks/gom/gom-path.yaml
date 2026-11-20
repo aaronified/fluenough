@@ -24,11 +24,11 @@ schema: 1
 kind: "path"
 id: "gom-path"
 language: "gom"
-description: "Goan Konkani: the planned path to B1. Only the first words are written."
+description: "Goan Konkani: the planned path to B1. Only the phrasebook and the first words are written."
 genders: ["m", "f", "n"]
 alphabet: []
 units:
-  - decks: ["gom-first-words", "*"]
+  - decks: ["gom-phrasebook", "gom-first-words", "*"]
     words: 27
   - planned: { id: "gom-sound-differences", grammar: ["sound-differences"] }
     listening_passages:
