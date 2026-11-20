@@ -187,7 +187,7 @@ below is written from `decks/index.json` each time the decks change.
 | Catalan | Indo-European | Romance | Latin | in progress |
 | Chhattisgarhi | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Classical Greek | Indo-European | Hellenic | Greek | in progress |
-| Classical Sanskrit | Indo-European | Indo-Aryan | Devanagari | A1 |
+| Classical Sanskrit | Indo-European | Indo-Aryan | Devanagari | B1 |
 | Dogri | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Dutch | Indo-European | Germanic | Latin | in progress |
 | Egyptian | Afro-Asiatic | Egyptian | Egyptian hieroglyphs | in progress |
