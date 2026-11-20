@@ -14,7 +14,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["verb"]
-    except: ["sa-2105", "sa-2108", "sa-2111", "sa-12004", "sa-12005", "sa-12007", "sa-12009", "sa-12011", "sa-12015", "sa-12020", "sa-12023", "sa-12025", "sa-12032", "sa-12040", "sa-12046", "sa-12047", "sa-12048", "sa-12049", "sa-12052", "sa-12057", "sa-12058", "sa-12059"]
+    except: ["sa-2105", "sa-2108", "sa-2111", "sa-12057", "sa-12058"]
   slots: ["tavya", "aniya", "ya"]
   rows:
     - word: "sa-0430"
@@ -182,117 +182,168 @@ table:
     - word: "sa-12003"
       forms: { "tavya": null, "aniya": "भ्रमणीय", "ya": null }
       readings: { "aniya": "bhramaṇīya" }
+    - word: "sa-12004"
+      forms: { "tavya": "गूहितव्य", "aniya": null, "ya": "गुह्य" }
+      readings: { "tavya": "gūhitavya", "ya": "guhya" }
+    - word: "sa-12005"
+      forms: { "tavya": null, "aniya": "दंशनीय", "ya": null }
+      readings: { "aniya": "daṃśanīya" }
     - word: "sa-12006"
-      forms: { "tavya": null, "aniya": "बोधनीय", "ya": null }
-      readings: { "aniya": "bodhanīya" }
+      forms: { "tavya": "बोधितव्य", "aniya": "बोधनीय", "ya": "बोध्य" }
+      readings: { "tavya": "bodhitavya", "aniya": "bodhanīya", "ya": "bodhya" }
+    - word: "sa-12007"
+      forms: { "tavya": null, "aniya": "यमनीय", "ya": null }
+      readings: { "aniya": "yamanīya" }
     - word: "sa-12008"
-      forms: { "tavya": null, "aniya": "रोहणीय", "ya": null }
-      readings: { "aniya": "rohaṇīya" }
+      forms: { "tavya": null, "aniya": "रोहणीय", "ya": "रोह्य" }
+      readings: { "aniya": "rohaṇīya", "ya": "rohya" }
+    - word: "sa-12009"
+      forms: { "tavya": "वप्तव्य", "aniya": "वपनीय", "ya": "उप्य" }
+      readings: { "tavya": "vaptavya", "aniya": "vapanīya", "ya": "upya" }
     - word: "sa-12010"
-      forms: { "tavya": null, "aniya": "सदनीय", "ya": null }
-      readings: { "aniya": "sadanīya" }
+      forms: { "tavya": null, "aniya": "सदनीय", "ya": "सद्य" }
+      readings: { "aniya": "sadanīya", "ya": "sadya" }
+    - word: "sa-12011"
+      forms: { "tavya": null, "aniya": "स्कन्दनीय", "ya": null }
+      readings: { "aniya": "skandanīya" }
     - word: "sa-12012"
-      forms: { "tavya": null, "aniya": "ज्वलनीय", "ya": null }
-      readings: { "aniya": "jvalanīya" }
+      forms: { "tavya": null, "aniya": "ज्वालनीय", "ya": null }
+      readings: { "aniya": "jvālanīya" }
     - word: "sa-12013"
       forms: { "tavya": null, "aniya": "त्रसनीय", "ya": null }
       readings: { "aniya": "trasanīya" }
     - word: "sa-12014"
-      forms: { "tavya": null, "aniya": "द्रवणीय", "ya": null }
-      readings: { "aniya": "dravaṇīya" }
+      forms: { "tavya": "द्रोतव्य", "aniya": "द्रवणीय", "ya": "द्रव्य" }
+      readings: { "tavya": "drotavya", "aniya": "dravaṇīya", "ya": "dravya" }
+    - word: "sa-12015"
+      forms: { "tavya": null, "aniya": "बन्धनीय", "ya": null }
+      readings: { "aniya": "bandhanīya" }
     - word: "sa-12016"
-      forms: { "tavya": null, "aniya": "बाधनीय", "ya": null }
-      readings: { "aniya": "bādhanīya" }
+      forms: { "tavya": "बाधितव्य", "aniya": "बाधनीय", "ya": "बाध्य" }
+      readings: { "tavya": "bādhitavya", "aniya": "bādhanīya", "ya": "bādhya" }
     - word: "sa-12017"
-      forms: { "tavya": null, "aniya": "भक्षणीय", "ya": null }
-      readings: { "aniya": "bhakṣaṇīya" }
+      forms: { "tavya": null, "aniya": "भक्षणीय", "ya": "भक्ष्य" }
+      readings: { "aniya": "bhakṣaṇīya", "ya": "bhakṣya" }
     - word: "sa-12018"
       forms: { "tavya": null, "aniya": "भाषणीय", "ya": null }
       readings: { "aniya": "bhāṣaṇīya" }
     - word: "sa-12019"
-      forms: { "tavya": null, "aniya": "गदनीय", "ya": null }
-      readings: { "aniya": "gadanīya" }
+      forms: { "tavya": null, "aniya": "गदनीय", "ya": "गद्य" }
+      readings: { "aniya": "gadanīya", "ya": "gadya" }
+    - word: "sa-12020"
+      forms: { "tavya": "स्वप्तव्य", "aniya": "स्वपनीय", "ya": null }
+      readings: { "tavya": "svaptavya", "aniya": "svapanīya" }
     - word: "sa-12021"
-      forms: { "tavya": null, "aniya": "रमणीय", "ya": null }
-      readings: { "aniya": "ramaṇīya" }
+      forms: { "tavya": "रन्तव्य", "aniya": "रमणीय", "ya": "रम्य" }
+      readings: { "tavya": "rantavya", "aniya": "ramaṇīya", "ya": "ramya" }
     - word: "sa-12022"
       forms: { "tavya": null, "aniya": "रोचनीय", "ya": null }
       readings: { "aniya": "rocanīya" }
+    - word: "sa-12023"
+      forms: { "tavya": null, "aniya": "स्तम्भनीय", "ya": null }
+      readings: { "aniya": "stambhanīya" }
     - word: "sa-12024"
       forms: { "tavya": null, "aniya": "त्वरणीय", "ya": null }
       readings: { "aniya": "tvaraṇīya" }
+    - word: "sa-12025"
+      forms: { "tavya": "स्मेतव्य", "aniya": "स्मयनीय", "ya": null }
+      readings: { "tavya": "smetavya", "aniya": "smayanīya" }
     - word: "sa-12026"
-      forms: { "tavya": null, "aniya": "घटनीय", "ya": null }
-      readings: { "aniya": "ghaṭanīya" }
+      forms: { "tavya": null, "aniya": "घाटनीय", "ya": null }
+      readings: { "aniya": "ghāṭanīya" }
     - word: "sa-12027"
       forms: { "tavya": null, "aniya": "क्रोधनीय", "ya": null }
       readings: { "aniya": "krodhanīya" }
     - word: "sa-12028"
-      forms: { "tavya": null, "aniya": "देवनीय", "ya": null }
-      readings: { "aniya": "devanīya" }
+      forms: { "tavya": "देवितव्य", "aniya": "देवनीय", "ya": null }
+      readings: { "tavya": "devitavya", "aniya": "devanīya" }
     - word: "sa-12029"
-      forms: { "tavya": null, "aniya": "लोभनीय", "ya": null }
-      readings: { "aniya": "lobhanīya" }
+      forms: { "tavya": null, "aniya": "लोभनीय", "ya": "लोभ्य" }
+      readings: { "aniya": "lobhanīya", "ya": "lobhya" }
     - word: "sa-12030"
       forms: { "tavya": null, "aniya": "मदनीय", "ya": null }
       readings: { "aniya": "madanīya" }
     - word: "sa-12031"
-      forms: { "tavya": null, "aniya": "नहनीय", "ya": null }
-      readings: { "aniya": "nahanīya" }
+      forms: { "tavya": null, "aniya": "नहनीय", "ya": "नद्धव्य" }
+      readings: { "aniya": "nahanīya", "ya": "naddhavya" }
+    - word: "sa-12032"
+      forms: { "tavya": null, "aniya": "नशनीय", "ya": null }
+      readings: { "aniya": "naśanīya" }
     - word: "sa-12033"
-      forms: { "tavya": null, "aniya": "शमनीय", "ya": null }
-      readings: { "aniya": "śamanīya" }
+      forms: { "tavya": null, "aniya": "शमनीय", "ya": "शम्य" }
+      readings: { "aniya": "śamanīya", "ya": "śamya" }
     - word: "sa-12034"
       forms: { "tavya": null, "aniya": "शोषणीय", "ya": null }
       readings: { "aniya": "śoṣaṇīya" }
     - word: "sa-12035"
-      forms: { "tavya": null, "aniya": "तोषणीय", "ya": null }
-      readings: { "aniya": "toṣaṇīya" }
+      forms: { "tavya": null, "aniya": "तोषणीय", "ya": "तोष्य" }
+      readings: { "aniya": "toṣaṇīya", "ya": "toṣya" }
     - word: "sa-12036"
-      forms: { "tavya": null, "aniya": "दमनीय", "ya": null }
-      readings: { "aniya": "damanīya" }
+      forms: { "tavya": null, "aniya": "दमनीय", "ya": "दम्य" }
+      readings: { "aniya": "damanīya", "ya": "damya" }
     - word: "sa-12037"
-      forms: { "tavya": null, "aniya": "पदनीय", "ya": null }
-      readings: { "aniya": "padanīya" }
+      forms: { "tavya": "पत्तव्य", "aniya": "पदनीय", "ya": "पाद्य" }
+      readings: { "tavya": "pattavya", "aniya": "padanīya", "ya": "pādya" }
     - word: "sa-12038"
-      forms: { "tavya": null, "aniya": "मोचनीय", "ya": null }
-      readings: { "aniya": "mocanīya" }
+      forms: { "tavya": "मोक्तव्य", "aniya": "मोचनीय", "ya": "मोच्य" }
+      readings: { "tavya": "moktavya", "aniya": "mocanīya", "ya": "mocya" }
     - word: "sa-12039"
       forms: { "tavya": null, "aniya": "मेलनीय", "ya": null }
       readings: { "aniya": "melanīya" }
+    - word: "sa-12040"
+      forms: { "tavya": null, "aniya": null, "ya": "प्रष्टव्य" }
+      readings: { "ya": "praṣṭavya" }
     - word: "sa-12041"
-      forms: { "tavya": null, "aniya": "लेपनीय", "ya": null }
-      readings: { "aniya": "lepanīya" }
+      forms: { "tavya": null, "aniya": "लेपनीय", "ya": "लेप्य" }
+      readings: { "aniya": "lepanīya", "ya": "lepya" }
     - word: "sa-12042"
-      forms: { "tavya": null, "aniya": "सर्जनीय", "ya": null }
-      readings: { "aniya": "sarjanīya" }
+      forms: { "tavya": null, "aniya": "सर्जनीय", "ya": "सृज्य" }
+      readings: { "aniya": "sarjanīya", "ya": "sṛjya" }
     - word: "sa-12043"
-      forms: { "tavya": null, "aniya": "क्षेपणीय", "ya": null }
-      readings: { "aniya": "kṣepaṇīya" }
+      forms: { "tavya": "क्षेप्तव्य", "aniya": "क्षेपणीय", "ya": "क्षिप्य" }
+      readings: { "tavya": "kṣeptavya", "aniya": "kṣepaṇīya", "ya": "kṣipya" }
     - word: "sa-12044"
-      forms: { "tavya": null, "aniya": "देशनीय", "ya": null }
-      readings: { "aniya": "deśanīya" }
+      forms: { "tavya": null, "aniya": "देशनीय", "ya": "देश्य" }
+      readings: { "aniya": "deśanīya", "ya": "deśya" }
     - word: "sa-12045"
       forms: { "tavya": null, "aniya": "शोभनीय", "ya": null }
       readings: { "aniya": "śobhanīya" }
+    - word: "sa-12046"
+      forms: { "tavya": null, "aniya": "चोरणीय", "ya": null }
+      readings: { "aniya": "coraṇīya" }
+    - word: "sa-12047"
+      forms: { "tavya": null, "aniya": "चेन्तनीय", "ya": null }
+      readings: { "aniya": "centanīya" }
+    - word: "sa-12048"
+      forms: { "tavya": null, "aniya": "तोलनीय", "ya": null }
+      readings: { "aniya": "tolanīya" }
+    - word: "sa-12049"
+      forms: { "tavya": null, "aniya": "ग्रण्थनीय", "ya": null }
+      readings: { "aniya": "graṇthanīya" }
     - word: "sa-12050"
-      forms: { "tavya": null, "aniya": "आपनीय", "ya": null }
-      readings: { "aniya": "āpanīya" }
+      forms: { "tavya": "आप्तव्य", "aniya": "आपनीय", "ya": null }
+      readings: { "tavya": "āptavya", "aniya": "āpanīya" }
     - word: "sa-12051"
-      forms: { "tavya": null, "aniya": "शकनीय", "ya": null }
-      readings: { "aniya": "śakanīya" }
+      forms: { "tavya": null, "aniya": "शकनीय", "ya": "शक्य" }
+      readings: { "aniya": "śakanīya", "ya": "śakya" }
+    - word: "sa-12052"
+      forms: { "tavya": "भेतव्य", "aniya": null, "ya": "भय्य" }
+      readings: { "tavya": "bhetavya", "ya": "bhayya" }
     - word: "sa-12053"
-      forms: { "tavya": "हन्तव्य", "aniya": "हननीय", "ya": null }
-      readings: { "tavya": "hantavya", "aniya": "hananīya" }
+      forms: { "tavya": "हन्तव्य", "aniya": "हननीय", "ya": "हन्य" }
+      readings: { "tavya": "hantavya", "aniya": "hananīya", "ya": "hanya" }
     - word: "sa-12054"
-      forms: { "tavya": null, "aniya": "श्वसनीय", "ya": null }
-      readings: { "aniya": "śvasanīya" }
+      forms: { "tavya": null, "aniya": "श्वसनीय", "ya": "श्वास्य" }
+      readings: { "aniya": "śvasanīya", "ya": "śvāsya" }
     - word: "sa-12055"
-      forms: { "tavya": null, "aniya": "शासनीय", "ya": null }
-      readings: { "aniya": "śāsanīya" }
+      forms: { "tavya": "शासितव्य", "aniya": "शासनीय", "ya": "शास्य" }
+      readings: { "tavya": "śāsitavya", "aniya": "śāsanīya", "ya": "śāsya" }
     - word: "sa-12056"
-      forms: { "tavya": null, "aniya": "भेदनीय", "ya": null }
-      readings: { "aniya": "bhedanīya" }
+      forms: { "tavya": "भेत्तव्य", "aniya": "भेदनीय", "ya": "भिद्य" }
+      readings: { "tavya": "bhettavya", "aniya": "bhedanīya", "ya": "bhidya" }
+    - word: "sa-12059"
+      forms: { "tavya": null, "aniya": "रञ्जनीय", "ya": null }
+      readings: { "aniya": "rañjanīya" }
 rules:
   - id: "sa-rule-gerundive-tavya"
     slots: ["tavya"]

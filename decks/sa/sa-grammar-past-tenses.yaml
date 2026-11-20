@@ -12,7 +12,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["verb"]
-    except: ["sa-2103", "sa-12032", "sa-12049"]
+    except: ["sa-2103"]
   slots: ["impf-p3-sg", "impf-p3-du", "impf-p3-pl", "impf-p2-sg", "impf-p2-du", "impf-p2-pl", "impf-p1-sg", "impf-p1-du", "impf-p1-pl", "impf-m3-sg", "impf-m3-du", "impf-m3-pl", "impf-m2-sg", "impf-m2-du", "impf-m2-pl", "impf-m1-sg", "impf-m1-du", "impf-m1-pl"]
   rows:
     - word: "sa-0430"
@@ -220,8 +220,8 @@ table:
       forms: { "impf-p3-sg": "अद्रवत्", "impf-p3-du": "अद्रवताम्", "impf-p3-pl": "अद्रवन्", "impf-p2-sg": "अद्रवः", "impf-p2-du": "अद्रवतम्", "impf-p2-pl": "अद्रवत", "impf-p1-sg": "अद्रवम्", "impf-p1-du": "अद्रवाव", "impf-p1-pl": "अद्रवाम", "impf-m3-sg": null, "impf-m3-du": null, "impf-m3-pl": null, "impf-m2-sg": null, "impf-m2-du": null, "impf-m2-pl": null, "impf-m1-sg": null, "impf-m1-du": null, "impf-m1-pl": null }
       readings: { "impf-p3-sg": "adravat", "impf-p3-du": "adravatām", "impf-p3-pl": "adravan", "impf-p2-sg": "adravaḥ", "impf-p2-du": "adravatam", "impf-p2-pl": "adravata", "impf-p1-sg": "adravam", "impf-p1-du": "adravāva", "impf-p1-pl": "adravāma" }
     - word: "sa-12015"
-      forms: { "impf-p3-sg": "अबन्धत्", "impf-p3-du": "अबन्धताम्", "impf-p3-pl": "अबन्धन्", "impf-p2-sg": "अबन्धः", "impf-p2-du": "अबन्धतम्", "impf-p2-pl": "अबन्धत", "impf-p1-sg": "अबन्धम्", "impf-p1-du": "अबन्धाव", "impf-p1-pl": "अबन्धाम", "impf-m3-sg": null, "impf-m3-du": null, "impf-m3-pl": null, "impf-m2-sg": null, "impf-m2-du": null, "impf-m2-pl": null, "impf-m1-sg": null, "impf-m1-du": null, "impf-m1-pl": null }
-      readings: { "impf-p3-sg": "abandhat", "impf-p3-du": "abandhatām", "impf-p3-pl": "abandhan", "impf-p2-sg": "abandhaḥ", "impf-p2-du": "abandhatam", "impf-p2-pl": "abandhata", "impf-p1-sg": "abandham", "impf-p1-du": "abandhāva", "impf-p1-pl": "abandhāma" }
+      forms: { "impf-p3-sg": "अबध्नात्", "impf-p3-du": "अबध्नीताम्", "impf-p3-pl": "अबध्नन्", "impf-p2-sg": "अबध्नाः", "impf-p2-du": "अबध्नीतम्", "impf-p2-pl": "अबध्नीत", "impf-p1-sg": "अबध्नाम्", "impf-p1-du": "अबध्नीव", "impf-p1-pl": "अबध्नीम", "impf-m3-sg": null, "impf-m3-du": null, "impf-m3-pl": null, "impf-m2-sg": null, "impf-m2-du": null, "impf-m2-pl": null, "impf-m1-sg": null, "impf-m1-du": null, "impf-m1-pl": null }
+      readings: { "impf-p3-sg": "abadhnāt", "impf-p3-du": "abadhnītām", "impf-p3-pl": "abadhnan", "impf-p2-sg": "abadhnāḥ", "impf-p2-du": "abadhnītam", "impf-p2-pl": "abadhnīta", "impf-p1-sg": "abadhnām", "impf-p1-du": "abadhnīva", "impf-p1-pl": "abadhnīma" }
     - word: "sa-12016"
       forms: { "impf-p3-sg": "अबाधत्", "impf-p3-du": "अबाधताम्", "impf-p3-pl": "अबाधन्", "impf-p2-sg": "अबाधः", "impf-p2-du": "अबाधतम्", "impf-p2-pl": "अबाधत", "impf-p1-sg": "अबाधम्", "impf-p1-du": "अबाधाव", "impf-p1-pl": "अबाधाम", "impf-m3-sg": null, "impf-m3-du": null, "impf-m3-pl": null, "impf-m2-sg": null, "impf-m2-du": null, "impf-m2-pl": null, "impf-m1-sg": null, "impf-m1-du": null, "impf-m1-pl": null }
       readings: { "impf-p3-sg": "abādhat", "impf-p3-du": "abādhatām", "impf-p3-pl": "abādhan", "impf-p2-sg": "abādhaḥ", "impf-p2-du": "abādhatam", "impf-p2-pl": "abādhata", "impf-p1-sg": "abādham", "impf-p1-du": "abādhāva", "impf-p1-pl": "abādhāma" }
@@ -270,6 +270,9 @@ table:
     - word: "sa-12031"
       forms: { "impf-p3-sg": "अनह्यत्", "impf-p3-du": "अनह्यताम्", "impf-p3-pl": "अनह्यन्", "impf-p2-sg": "अनह्यः", "impf-p2-du": "अनह्यतम्", "impf-p2-pl": "अनह्यत", "impf-p1-sg": "अनह्यम्", "impf-p1-du": "अनह्याव", "impf-p1-pl": "अनह्याम", "impf-m3-sg": null, "impf-m3-du": null, "impf-m3-pl": null, "impf-m2-sg": null, "impf-m2-du": null, "impf-m2-pl": null, "impf-m1-sg": null, "impf-m1-du": null, "impf-m1-pl": null }
       readings: { "impf-p3-sg": "anahyat", "impf-p3-du": "anahyatām", "impf-p3-pl": "anahyan", "impf-p2-sg": "anahyaḥ", "impf-p2-du": "anahyatam", "impf-p2-pl": "anahyata", "impf-p1-sg": "anahyam", "impf-p1-du": "anahyāva", "impf-p1-pl": "anahyāma" }
+    - word: "sa-12032"
+      forms: { "impf-p3-sg": "अनश्यत्", "impf-p3-du": "अनश्यताम्", "impf-p3-pl": "अनश्यन्", "impf-p2-sg": "अनश्यः", "impf-p2-du": "अनश्यतम्", "impf-p2-pl": "अनश्यत", "impf-p1-sg": "अनश्यम्", "impf-p1-du": "अनश्याव", "impf-p1-pl": "अनश्याम", "impf-m3-sg": null, "impf-m3-du": null, "impf-m3-pl": null, "impf-m2-sg": null, "impf-m2-du": null, "impf-m2-pl": null, "impf-m1-sg": null, "impf-m1-du": null, "impf-m1-pl": null }
+      readings: { "impf-p3-sg": "anaśyat", "impf-p3-du": "anaśyatām", "impf-p3-pl": "anaśyan", "impf-p2-sg": "anaśyaḥ", "impf-p2-du": "anaśyatam", "impf-p2-pl": "anaśyata", "impf-p1-sg": "anaśyam", "impf-p1-du": "anaśyāva", "impf-p1-pl": "anaśyāma" }
     - word: "sa-12033"
       forms: { "impf-p3-sg": "अशाम्यत्", "impf-p3-du": "अशाम्यताम्", "impf-p3-pl": "अशाम्यन्", "impf-p2-sg": "अशाम्यः", "impf-p2-du": "अशाम्यतम्", "impf-p2-pl": "अशाम्यत", "impf-p1-sg": "अशाम्यम्", "impf-p1-du": "अशाम्याव", "impf-p1-pl": "अशाम्याम", "impf-m3-sg": null, "impf-m3-du": null, "impf-m3-pl": null, "impf-m2-sg": null, "impf-m2-du": null, "impf-m2-pl": null, "impf-m1-sg": null, "impf-m1-du": null, "impf-m1-pl": null }
       readings: { "impf-p3-sg": "aśāmyat", "impf-p3-du": "aśāmyatām", "impf-p3-pl": "aśāmyan", "impf-p2-sg": "aśāmyaḥ", "impf-p2-du": "aśāmyatam", "impf-p2-pl": "aśāmyata", "impf-p1-sg": "aśāmyam", "impf-p1-du": "aśāmyāva", "impf-p1-pl": "aśāmyāma" }
@@ -318,6 +321,9 @@ table:
     - word: "sa-12048"
       forms: { "impf-p3-sg": "अतोलयत्", "impf-p3-du": "अतोलयताम्", "impf-p3-pl": "अतोलयन्", "impf-p2-sg": "अतोलयः", "impf-p2-du": "अतोलयतम्", "impf-p2-pl": "अतोलयत", "impf-p1-sg": "अतोलयम्", "impf-p1-du": "अतोलयाव", "impf-p1-pl": "अतोलयाम", "impf-m3-sg": null, "impf-m3-du": null, "impf-m3-pl": null, "impf-m2-sg": null, "impf-m2-du": null, "impf-m2-pl": null, "impf-m1-sg": null, "impf-m1-du": null, "impf-m1-pl": null }
       readings: { "impf-p3-sg": "atolayat", "impf-p3-du": "atolayatām", "impf-p3-pl": "atolayan", "impf-p2-sg": "atolayaḥ", "impf-p2-du": "atolayatam", "impf-p2-pl": "atolayata", "impf-p1-sg": "atolayam", "impf-p1-du": "atolayāva", "impf-p1-pl": "atolayāma" }
+    - word: "sa-12049"
+      forms: { "impf-p3-sg": "अग्रन्थयत्", "impf-p3-du": "अग्रन्थयताम्", "impf-p3-pl": "अग्रन्थयन्", "impf-p2-sg": "अग्रन्थयः", "impf-p2-du": "अग्रन्थयतम्", "impf-p2-pl": "अग्रन्थयत", "impf-p1-sg": "अग्रन्थयम्", "impf-p1-du": "अग्रन्थयाव", "impf-p1-pl": "अग्रन्थयाम", "impf-m3-sg": null, "impf-m3-du": null, "impf-m3-pl": null, "impf-m2-sg": null, "impf-m2-du": null, "impf-m2-pl": null, "impf-m1-sg": null, "impf-m1-du": null, "impf-m1-pl": null }
+      readings: { "impf-p3-sg": "agranthayat", "impf-p3-du": "agranthayatām", "impf-p3-pl": "agranthayan", "impf-p2-sg": "agranthayaḥ", "impf-p2-du": "agranthayatam", "impf-p2-pl": "agranthayata", "impf-p1-sg": "agranthayam", "impf-p1-du": "agranthayāva", "impf-p1-pl": "agranthayāma" }
     - word: "sa-12050"
       forms: { "impf-p3-sg": "आप्नोत्", "impf-p3-du": "आप्नुताम्", "impf-p3-pl": "आप्नुवन्", "impf-p2-sg": "आप्नोः", "impf-p2-du": "आप्नुतम्", "impf-p2-pl": "आप्नुत", "impf-p1-sg": "आप्नवम्", "impf-p1-du": "आप्नुव", "impf-p1-pl": "आप्नुम", "impf-m3-sg": null, "impf-m3-du": null, "impf-m3-pl": null, "impf-m2-sg": null, "impf-m2-du": null, "impf-m2-pl": null, "impf-m1-sg": null, "impf-m1-du": null, "impf-m1-pl": null }
       readings: { "impf-p3-sg": "āpnot", "impf-p3-du": "āpnutām", "impf-p3-pl": "āpnuvan", "impf-p2-sg": "āpnoḥ", "impf-p2-du": "āpnutam", "impf-p2-pl": "āpnuta", "impf-p1-sg": "āpnavam", "impf-p1-du": "āpnuva", "impf-p1-pl": "āpnuma" }
