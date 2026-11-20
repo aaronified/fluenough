@@ -42,6 +42,17 @@ Tool PRs on main: #1530 (path generator plans and SHIPPED list), #1545 (`PHRASEB
 | American Sign Language | No deck built. No SignWriting data with ASL glosses under a CC-BY-SA-compatible licence was reachable: SignBank is CC-BY-NC; Commons has hello and good only as images; the sutton-signwriting repos (MIT, CC BY 4.0) hold unglossed samples; signwriting.org, signpuddle.net and the Commons PDF 'American Sign Language Hand Symbols' (Frost and Sutton, CC BY 3.0) are blocked from build sessions. Owner options: allow those hosts, get written permission from Sutton, or have a Deaf ASL reviewer write original signs. Indian Sign Language was not built: the source decision is the owner's. |
 | B1Progress check | Every first-words deck has its path (unit 1 lists it), English layer and language entry; the older languages' 10-word first decks are by design. Script fonts for Ol Chiki, Meitei Mayek, cuneiform, Linear B and hieroglyphs are handled by the app's script checks; runtime rendering was not verified from a build session. |
 
+## Stopped by the owner (2026-11-20)
+
+Owner order, relayed by the orchestrator: stop the deck work, start nothing new, open and merge no new PRs.
+
+| Item | State |
+|---|---|
+| 2, source gaps | Built and reviewed, **not merged**: PR #1650, branch `decks/fw-source-gaps` (Santali +6 cards, Manipuri 3 stems fixed and +5 cards, Bodo 2 forms fixed and +11 cards, path word counts, Manipuri phrasebook refs, notes). The review's blocking findings are fixed in commit `8fb7750cc`; CI on that head was not read. It still needs a CI check and the owner's go-ahead to merge. Pashto unchanged. |
+| 4, B1Progress check | Done, read-only: no gaps found in the first-words decks' paths, English layers or language entries (the 10-word first decks of the older languages are by design). Nothing to merge. |
+| 1, phrasebooks and `PHRASEBOOK_PENDING` | Merged (#1646, #1647, #1648, #1649). |
+| 3, sign languages | Not built: no ASL source with a compatible licence was reachable; the owner decides (see the 2026-11-20 table). |
+
 ## Open points
 
 - Phrasebooks for gmy, sux, egy, ine: need a specialist and attested formulae (see above).
