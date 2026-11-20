@@ -1,0 +1,142 @@
+# Sources: en.wiktionary.org checked (the khamā entry cites the Rajasthani-Hindi-English Dictionary and gives pardon as the meaning; the full phrases are not there). Wikivoyage unreachable from this session. The yes and no cards are from the first-words deck (Grierson, Linguistic Survey of India). Every other card is doubtful. 17 of 19 cards are doubtful.
+schema: 1
+id: "raj-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "raj", iso639_3: "raj", name: "Rajasthani", script: "devanagari", tts: "hi-IN", icon: "रा" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "raj-9001"
+    target: "खमा घणी"
+    reading: "khamā ghaṇī"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "खमा", base: "खमा", reading: "khamā" }, { word: "घणी", base: "घणी", reading: "ghaṇī" }]
+  - id: "raj-9002"
+    target: "फेर मिलांगा"
+    reading: "fer milāṅgā"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "फेर", base: "फेर", reading: "fer" }, { word: "मिलांगा", base: "मिलणो", reading: "milāṅgā" }]
+  - id: "raj-9003"
+    target: "कृपा करके"
+    reading: "kṛpā karke"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "कृपा", base: "कृपा", reading: "kṛpā" }, { word: "करके", base: "करणो", reading: "karke" }]
+  - id: "raj-9004"
+    target: "घणो उपकार"
+    reading: "ghaṇo upkār"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "घणो", base: "घणो", reading: "ghaṇo" }, { word: "उपकार", base: "उपकार", reading: "upkār" }]
+  - id: "raj-9005"
+    target: "कोई बात कोनी"
+    reading: "koī bāt konī"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "कोई", base: "कोई", reading: "koī" }, { word: "बात", base: "बात", reading: "bāt" }, { word: "कोनी", ref: "raj-0102" }]
+  - id: "raj-9006"
+    target: "माफ करज्यो"
+    reading: "māf karajyo"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "माफ", base: "माफ", reading: "māf" }, { word: "करज्यो", base: "करणो", reading: "karajyo" }]
+  - id: "raj-9007"
+    target: "सुणो सा"
+    reading: "suṇo sā"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "सुणो", base: "सुणणो", reading: "suṇo" }, { word: "सा", base: "सा", reading: "sā" }]
+  - id: "raj-9008"
+    target: "हाँ"
+    reading: "hām̐"
+    pos: "phrase"
+    tags: ["answer"]
+    phrasebook: true
+    bases: [{ word: "हाँ", ref: "raj-0101" }]
+  - id: "raj-9009"
+    target: "कोनी"
+    reading: "konī"
+    pos: "phrase"
+    tags: ["answer"]
+    phrasebook: true
+    bases: [{ word: "कोनी", ref: "raj-0102" }]
+  - id: "raj-9010"
+    target: "समझ कोनी आई"
+    reading: "samajh konī āī"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "समझ", base: "समझ", reading: "samajh" }, { word: "कोनी", ref: "raj-0102" }, { word: "आई", base: "आवणो", reading: "āī" }]
+  - id: "raj-9011"
+    target: "म्हनै राजस्थानी कोनी आवै"
+    reading: "mhanai rājasthānī konī āvai"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "म्हनै", base: "म्हैं", reading: "mhanai" }, { word: "राजस्थानी", base: "राजस्थानी", reading: "rājasthānī" }, { word: "कोनी", ref: "raj-0102" }, { word: "आवै", base: "आवणो", reading: "āvai" }]
+  - id: "raj-9012"
+    target: "धीमै बोलो"
+    reading: "dhīmai bolo"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "धीमै", base: "धीमो", reading: "dhīmai" }, { word: "बोलो", base: "बोलणो", reading: "bolo" }]
+  - id: "raj-9013"
+    target: "थे अंग्रेजी बोलो हो?"
+    reading: "the aṅgrejī bolo ho?"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "थे", ref: "raj-0104" }, { word: "अंग्रेजी", base: "अंग्रेजी", reading: "aṅgrejī" }, { word: "बोलो", base: "बोलणो", reading: "bolo" }, { word: "हो", base: "होणो", reading: "ho" }]
+  - id: "raj-9014"
+    target: "थां रो कांई हाल है?"
+    reading: "thāṁ ro kāṁī hāl hai?"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "थां", base: "थे", reading: "thāṁ" }, { word: "रो", base: "रो", reading: "ro" }, { word: "कांई", ref: "raj-0135" }, { word: "हाल", base: "हाल", reading: "hāl" }, { word: "है", base: "होणो", reading: "hai" }]
+  - id: "raj-9015"
+    target: "म्हैं भलो हूँ"
+    reading: "mhaiṁ bhalo hūṁ"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "म्हैं", ref: "raj-0103" }, { word: "भलो", ref: "raj-0130" }, { word: "हूँ", base: "होणो", reading: "hūṁ" }]
+  - id: "raj-9016"
+    target: "थारो नाम कांई है?"
+    reading: "thāro nām kāṁī hai?"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "थारो", base: "थारो", reading: "thāro" }, { word: "नाम", ref: "raj-0129" }, { word: "कांई", ref: "raj-0135" }, { word: "है", base: "होणो", reading: "hai" }]
+  - id: "raj-9017"
+    target: "म्हारो नाम … है"
+    reading: "mhāro nām … hai"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "म्हारो", base: "म्हारो", reading: "mhāro" }, { word: "नाम", ref: "raj-0129" }, { word: "है", base: "होणो", reading: "hai" }]
+  - id: "raj-9018"
+    target: "पाखाना कठै है?"
+    reading: "pākhānā kaṭhai hai?"
+    pos: "phrase"
+    tags: ["survival", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "पाखाना", base: "पाखाना", reading: "pākhānā" }, { word: "कठै", ref: "raj-0137" }, { word: "है", base: "होणो", reading: "hai" }]
+  - id: "raj-9019"
+    target: "बचाओ!"
+    reading: "bachāo!"
+    pos: "phrase"
+    tags: ["survival", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "बचाओ", base: "बचाणो", reading: "bachāo" }]
