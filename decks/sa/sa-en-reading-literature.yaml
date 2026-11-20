@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-literature"
+name: "Reading: literature"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-literature-text-1"
+    title: "Poet, goddess and commentary"
+    theme: "literature"
+    sentences:
+      - { text: "कविर् गम्भीरं सुभाषितं वदति.", reading: "kavir gambhīraṃ subhāṣitaṃ vadati.", ipa: "kəʋir ɡəmbʱiːrəm subʱaːʂit̪əm ʋəd̪ət̪i" }
+      - { text: "सरस्वती भक्ताय विद्यां ददाति.", reading: "sarasvatī bhaktāya vidyāṃ dadāti.", ipa: "sərəsʋət̪iː bʱəkt̪aːjə ʋid̪jaːm d̪əd̪aːt̪i" }
+      - { text: "टीका ग्रन्थस्य व्याख्यां ददाति.", reading: "ṭīkā granthasya vyākhyāṃ dadāti.", ipa: "ʈiːkaː ɡrənt̪ʰəsjə ʋjaːkʰjaːm d̪əd̪aːt̪i" }
+      - { text: "यतिर् नित्यं गायत्रीं जपति.", reading: "yatir nityaṃ gāyatrīṃ japati.", ipa: "jət̪ir nit̪jəm ɡaːjət̪riːm dʒəpət̪i" }
+      - { text: "कन्याया वदनं हासेन शोभति.", reading: "kanyāyā vadanaṃ hāsena śobhati.", ipa: "kənjaːjaː ʋəd̪ənəm ɦaːseːnə ʃoːbʱət̪i" }
+    questions:
+      - id: "sa-6772"
+        prompt: { en: "To whom does Sarasvati give knowledge?" }
+        options: [{ en: "To the poet" }, { en: "To the devotee" }, { en: "To the king" }]
+        answer: 2
+      - id: "sa-6773"
+        prompt: { en: "What does the ascetic always murmur?" }
+        options: [{ en: "The Gayatri" }, { en: "A story" }, { en: "A name" }]
+        answer: 1
+      - id: "sa-6774"
+        prompt: { en: "Which word means 'face'?" }
+        options: [{ en: "शोभति (śobhati)" }, { en: "हासेन (hāsena)" }, { en: "वदनं (vadanaṃ)" }]
+        answer: 3
+      - id: "sa-6775"
+        prompt: { en: "A commentary gives an explanation of the text." }
+        answer: true
+  - id: "sa-literature-text-2"
+    title: "Peacock, tiger and pearl"
+    theme: "literature"
+    sentences:
+      - { text: "वर्षासु मयूरो केकां करोति.", reading: "varṣāsu mayūro kekāṃ karoti.", ipa: "ʋərʂaːsu məjuːroː keːkaːm kəroːt̪i" }
+      - { text: "शार्दूलो वने गुहायां वसति.", reading: "śārdūlo vane guhāyāṃ vasati.", ipa: "ʃaːrd̪uːloː ʋəneː ɡuɦaːjaːm ʋəsət̪i" }
+      - { text: "कैलासो गौर्या निवासो भवति.", reading: "kailāso gauryā nivāso bhavati.", ipa: "kəilaːsoː ɡəurjaː niʋaːsoː bʱəʋət̪i" }
+      - { text: "शोकेन नयने बाष्पो भवति.", reading: "śokena nayane bāṣpo bhavati.", ipa: "ʃoːkeːnə nəjəneː baːʂpoː bʱəʋət̪i" }
+      - { text: "मुक्ता शुक्ला सागरे भवति.", reading: "muktā śuklā sāgare bhavati.", ipa: "mukt̪aː ʃuklaː saːɡəreː bʱəʋət̪i" }
+    questions:
+      - id: "sa-6776"
+        prompt: { en: "When does the peacock cry out?" }
+        options: [{ en: "In spring" }, { en: "In the rainy season" }, { en: "In autumn" }]
+        answer: 2
+      - id: "sa-6777"
+        prompt: { en: "Where does the tiger live?" }
+        options: [{ en: "In a cave in the forest" }, { en: "On a mountain top" }, { en: "In a thicket" }]
+        answer: 1
+      - id: "sa-6778"
+        prompt: { en: "Which word means 'tears'?" }
+        options: [{ en: "बाष्पो (bāṣpo)" }, { en: "नयने (nayane)" }, { en: "शोकेन (śokena)" }]
+        answer: 1
+      - id: "sa-6779"
+        prompt: { en: "A red pearl is found in the sea." }
+        answer: false

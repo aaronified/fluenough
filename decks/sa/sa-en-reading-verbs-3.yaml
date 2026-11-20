@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-verbs-3"
+name: "Reading: verbs-3"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-verbs-3-text-1"
+    title: "Night, forest and field"
+    theme: "verbs-3"
+    sentences:
+      - { text: "कन्या रात्रौ शय्यायां स्वपिति.", reading: "kanyā rātrau śayyāyāṃ svapiti.", ipa: "kənjaː raːt̪rəu ʃəjjaːjaːm sʋəpit̪i" }
+      - { text: "अग्निर् वने शुष्कं तृणं दहति.", reading: "agnir vane śuṣkaṃ tṛṇaṃ dahati.", ipa: "əɡnir ʋəneː ʃuʂkəm t̪r̩ɳəm d̪əɦət̪i" }
+      - { text: "कपिर् वृक्षं शीघ्रं रोहति.", reading: "kapir vṛkṣaṃ śīghraṃ rohati.", ipa: "kəpir ʋr̩kʂəm ʃiːɡʱrəm roːɦət̪i" }
+      - { text: "कृषकः क्षेत्रे बीजं वपति.", reading: "kṛṣakaḥ kṣetre bījaṃ vapati.", ipa: "kr̩ʂəkəh kʂeːt̪reː biːdʒəm ʋəpət̪i" }
+      - { text: "काको वृक्षस्य शाखायां सीदति.", reading: "kāko vṛkṣasya śākhāyāṃ sīdati.", ipa: "kaːkoː ʋr̩kʂəsjə ʃaːkʰaːjaːm siːd̪ət̪i" }
+    questions:
+      - id: "sa-6700"
+        prompt: { en: "Where does the girl sleep?" }
+        options: [{ en: "On a mat" }, { en: "In the bed" }, { en: "In the courtyard" }]
+        answer: 2
+      - id: "sa-6701"
+        prompt: { en: "What does the fire burn in the forest?" }
+        options: [{ en: "A hut" }, { en: "A tree" }, { en: "Dry grass" }]
+        answer: 3
+      - id: "sa-6702"
+        prompt: { en: "Which word means 'quickly'?" }
+        options: [{ en: "शीघ्रं (śīghraṃ)" }, { en: "वृक्षं (vṛkṣaṃ)" }, { en: "रोहति (rohati)" }]
+        answer: 1
+      - id: "sa-6703"
+        prompt: { en: "The crow sits on the branch of the tree." }
+        answer: true
+  - id: "sa-verbs-3-text-2"
+    title: "Lamp, moon and thief"
+    theme: "verbs-3"
+    sentences:
+      - { text: "रात्रौ दीपो मन्दिरे ज्वलति.", reading: "rātrau dīpo mandire jvalati.", ipa: "raːt̪rəu d̪iːpoː mənd̪ireː dʒʋələt̪i" }
+      - { text: "मूषको नित्यं मार्जाराद् बिभेति.", reading: "mūṣako nityaṃ mārjārād bibheti.", ipa: "muːʂəkoː nit̪jəm maːrdʒaːraːd̪ bibʱeːt̪i" }
+      - { text: "सिंहो वने मृगं हन्ति.", reading: "siṃho vane mṛgaṃ hanti.", ipa: "sĩɦoː ʋəneː mr̩ɡəm ɦənt̪i" }
+      - { text: "चन्द्रो रात्रौ गगने भाति.", reading: "candro rātrau gagane bhāti.", ipa: "tʃənd̪roː raːt̪rəu ɡəɡəneː bʱaːt̪i" }
+      - { text: "चोरो रात्रौ धनं चोरयति.", reading: "coro rātrau dhanaṃ corayati.", ipa: "tʃoːroː raːt̪rəu d̪ʱənəm tʃoːrəjət̪i" }
+    questions:
+      - id: "sa-6704"
+        prompt: { en: "When does the lamp burn in the temple?" }
+        options: [{ en: "In the evening" }, { en: "At night" }, { en: "At dawn" }]
+        answer: 2
+      - id: "sa-6705"
+        prompt: { en: "Of what is the mouse always afraid?" }
+        options: [{ en: "Of the cat" }, { en: "Of the snake" }, { en: "Of the hawk" }]
+        answer: 1
+      - id: "sa-6706"
+        prompt: { en: "Which word means 'wealth'?" }
+        options: [{ en: "चन्द्रो (candro)" }, { en: "मृगं (mṛgaṃ)" }, { en: "धनं (dhanaṃ)" }]
+        answer: 3
+      - id: "sa-6707"
+        prompt: { en: "The lion kills a hare in the forest." }
+        answer: false

@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-relationships"
+name: "Reading: relationships"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-relationships-text-1"
+    title: "Grandfather, friend and teacher"
+    theme: "relationships"
+    sentences:
+      - { text: "पितामहो बालकाय कथां कथयति.", reading: "pitāmaho bālakāya kathāṃ kathayati.", ipa: "pit̪aːməɦoː baːləkaːjə kət̪ʰaːm kət̪ʰəjət̪i" }
+      - { text: "सखी सखीं गृहे मिलति.", reading: "sakhī sakhīṃ gṛhe milati.", ipa: "səkʰiː səkʰiːm ɡr̩ɦeː milət̪i" }
+      - { text: "अनुजो नित्यं ज्येष्ठं नमति.", reading: "anujo nityaṃ jyeṣṭhaṃ namati.", ipa: "ənudʒoː nit̪jəm dʒjeːʂʈʰəm nəmət̪i" }
+      - { text: "प्रतिवेश्यः पथिकाय पानीयं ददाति.", reading: "prativeśyaḥ pathikāya pānīyaṃ dadāti.", ipa: "prət̪iʋeːʃjəh pət̪ʰikaːjə paːniːjəm d̪əd̪aːt̪i" }
+      - { text: "उपाध्यायं नम्रा शिष्या नमति.", reading: "upādhyāyaṃ namrā śiṣyā namati.", ipa: "upaːd̪ʱjaːjəm nəmraː ʃiʂjaː nəmət̪i" }
+    questions:
+      - id: "sa-6732"
+        prompt: { en: "Who tells the boy a story?" }
+        options: [{ en: "The father" }, { en: "The grandfather" }, { en: "The teacher" }]
+        answer: 2
+      - id: "sa-6733"
+        prompt: { en: "To whom does the younger brother always bow?" }
+        options: [{ en: "The eldest brother" }, { en: "The teacher" }, { en: "The neighbour" }]
+        answer: 1
+      - id: "sa-6734"
+        prompt: { en: "Which word means 'neighbour'?" }
+        options: [{ en: "सखी (sakhī)" }, { en: "अनुजो (anujo)" }, { en: "प्रतिवेश्यः (prativeśyaḥ)" }]
+        answer: 3
+      - id: "sa-6735"
+        prompt: { en: "The neighbour gives the traveller drinking water." }
+        answer: true
+  - id: "sa-relationships-text-2"
+    title: "Servant, sister and household"
+    theme: "relationships"
+    sentences:
+      - { text: "भृत्यो नृपस्य सेवां करोति.", reading: "bhṛtyo nṛpasya sevāṃ karoti.", ipa: "bʱr̩t̪joː nr̩pəsjə seːʋaːm kəroːt̪i" }
+      - { text: "कृतघ्नो मित्रं न रक्षति.", reading: "kṛtaghno mitraṃ na rakṣati.", ipa: "kr̩t̪əɡʱnoː mit̪rəm nə rəkʂət̪i" }
+      - { text: "भगिनी भ्रातरं स्नेहेन पश्यति.", reading: "bhaginī bhrātaraṃ snehena paśyati.", ipa: "bʱəɡiniː bʱraːt̪ərəm sneːɦeːnə pəʃjət̪i" }
+      - { text: "राजा शरणागताय शरणं ददाति.", reading: "rājā śaraṇāgatāya śaraṇaṃ dadāti.", ipa: "raːdʒaː ʃərəɳaːɡət̪aːjə ʃərəɳəm d̪əd̪aːt̪i" }
+      - { text: "कुटुम्बे पिता माता च वसतः.", reading: "kuṭumbe pitā mātā ca vasataḥ.", ipa: "kuʈumbeː pit̪aː maːt̪aː tʃə ʋəsət̪əh" }
+    questions:
+      - id: "sa-6736"
+        prompt: { en: "How does the sister look at her brother?" }
+        options: [{ en: "With wonder" }, { en: "With anger" }, { en: "With affection" }]
+        answer: 3
+      - id: "sa-6737"
+        prompt: { en: "Whom does the king give shelter?" }
+        options: [{ en: "The refugee" }, { en: "The servant" }, { en: "The friend" }]
+        answer: 1
+      - id: "sa-6738"
+        prompt: { en: "Which word means 'ungrateful person'?" }
+        options: [{ en: "भृत्यो (bhṛtyo)" }, { en: "कृतघ्नो (kṛtaghno)" }, { en: "भगिनी (bhaginī)" }]
+        answer: 2
+      - id: "sa-6739"
+        prompt: { en: "A servant protects the king." }
+        answer: false
