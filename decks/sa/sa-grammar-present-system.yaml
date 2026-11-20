@@ -40,7 +40,7 @@ table:
   applies_to:
     pos: ["verb"]
     tags: ["gana-1"]
-    except: ["sa-2101", "sa-2102", "sa-2103", "sa-2104", "sa-2105", "sa-2106", "sa-2107", "sa-2108", "sa-2109", "sa-2110", "sa-2111", "sa-2112", "sa-2113", "sa-2114", "sa-2115", "sa-2116", "sa-2117", "sa-2118", "sa-2119", "sa-2120", "sa-2121", "sa-2122", "sa-2123", "sa-12021", "sa-12022", "sa-12023", "sa-12024", "sa-12025", "sa-12026", "sa-13000", "sa-13004", "sa-13006", "sa-13026"]
+    except: ["sa-2101", "sa-2102", "sa-2103", "sa-2104", "sa-2105", "sa-2106", "sa-2107", "sa-2108", "sa-2109", "sa-2110", "sa-2111", "sa-2112", "sa-2113", "sa-2114", "sa-2115", "sa-2116", "sa-2117", "sa-2118", "sa-2119", "sa-2120", "sa-2121", "sa-2122", "sa-2123", "sa-12021", "sa-12022", "sa-12023", "sa-12024", "sa-12025", "sa-12026", "sa-13000", "sa-13004", "sa-13006", "sa-13026", "sa-13030", "sa-13034", "sa-13036", "sa-13039"]
   slots: ["stem", "p3-sg", "p3-du", "p3-pl", "p2-sg", "p2-du", "p2-pl", "p1-sg", "p1-du", "p1-pl"]
   rows:
     - word: "sa-0430"
@@ -229,6 +229,12 @@ table:
     - word: "sa-13029"
       forms: { "stem": "त्यज", "p3-sg": "त्यजति", "p3-du": "त्यजतः", "p3-pl": "त्यजन्ति", "p2-sg": "त्यजसि", "p2-du": "त्यजथः", "p2-pl": "त्यजथ", "p1-sg": "त्यजामि", "p1-du": "त्यजावः", "p1-pl": "त्यजामः" }
       readings: { "stem": "tyaja", "p3-sg": "tyajati", "p3-du": "tyajataḥ", "p3-pl": "tyajanti", "p2-sg": "tyajasi", "p2-du": "tyajathaḥ", "p2-pl": "tyajatha", "p1-sg": "tyajāmi", "p1-du": "tyajāvaḥ", "p1-pl": "tyajāmaḥ" }
+    - word: "sa-13033"
+      forms: { "stem": "यज", "p3-sg": "यजति", "p3-du": "यजतः", "p3-pl": "यजन्ति", "p2-sg": "यजसि", "p2-du": "यजथः", "p2-pl": "यजथ", "p1-sg": "यजामि", "p1-du": "यजावः", "p1-pl": "यजामः" }
+      readings: { "stem": "yaja", "p3-sg": "yajati", "p3-du": "yajataḥ", "p3-pl": "yajanti", "p2-sg": "yajasi", "p2-du": "yajathaḥ", "p2-pl": "yajatha", "p1-sg": "yajāmi", "p1-du": "yajāvaḥ", "p1-pl": "yajāmaḥ" }
+    - word: "sa-13035"
+      forms: { "stem": "अर्च", "p3-sg": "अर्चति", "p3-du": "अर्चतः", "p3-pl": "अर्चन्ति", "p2-sg": "अर्चसि", "p2-du": "अर्चथः", "p2-pl": "अर्चथ", "p1-sg": "अर्चामि", "p1-du": "अर्चावः", "p1-pl": "अर्चामः" }
+      readings: { "stem": "arca", "p3-sg": "arcati", "p3-du": "arcataḥ", "p3-pl": "arcanti", "p2-sg": "arcasi", "p2-du": "arcathaḥ", "p2-pl": "arcatha", "p1-sg": "arcāmi", "p1-du": "arcāvaḥ", "p1-pl": "arcāmaḥ" }
 rules:
   - id: "sa-rule-present-stem"
     slots: ["stem"]
