@@ -191,4 +191,20 @@ replace "Push straight to main" above:
 - **Skills.** Use the repo's skills in `.claude/skills/`.
 - **Decisions.** Ask whenever in doubt. Never decide alone.
 
+## CC BY-NC sources (2026-11-20)
+
+Owner asked: "Why can we not use cc by nc?" Then: "Record this and move on for now".
+
+**Answer recorded.** The code is GPL-3.0 and deck content is CC BY-SA 4.0. CC BY-NC adds a NonCommercial restriction that neither BY-SA nor GPL allows, so NC data (SignBank, SignBank Plus) cannot be redistributed under the project's licence. NC would also bar commercial use of the decks (a paid app, ads, sold forks). [ADR-0003](ADR-0003-Licence) weighed non-commercial licences and chose not to use one.
+
+**Options laid out:**
+
+1. Keep the ban and ask SignBank's owners for a permissive licence on a subset. This is the orchestrator's recommendation. Main downside: it depends on a reply, and a one-off grant is not a licence change.
+2. Ship sign decks as a separate NC-licensed pack outside the CC BY-SA decks. Main downside: decks are no longer uniformly BY-SA, and the app and forks need a licence carve-out. It needs an ADR-0003 amendment first.
+3. The ASL options already listed: allow the hosts the build proxy blocks, get written permission from Sutton, or have a Deaf ASL reviewer write original signs.
+
+**Status:** no decision. The owner said to move on for now. ASL and ISL stay unbuilt until the owner decides.
+
+See also: [ADR-0003](ADR-0003-Licence) · [Deck-Work-Queue-FirstWords](Deck-Work-Queue-FirstWords)
+
 See also: [Agentic-Coding](Agentic-Coding) · [ADR-0044](ADR-0044-Documentation-Lives-In-The-Wiki) · [Home](Home)
