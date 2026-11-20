@@ -30,14 +30,14 @@ void main() {
     expect(codes, containsAll(planned));
   });
 
-  test('only Toki Pona and Proto-Indo-European are marked `culture: false`, '
+  test('only Toki Pona, Proto-Indo-European and Morse code are marked `culture: false`, '
       'so every other language keeps its culture bar (#1629)', () {
     expect(
       <String>[
         for (final l in all)
           if (!l.hasCulture) l.code,
       ],
-      <String>['tok', 'ine'],
+      <String>['tok', 'ine', 'qmo'],
     );
   });
 

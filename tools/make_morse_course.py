@@ -184,7 +184,7 @@ def main() -> int:
     base = out / CODE
     (base / "en").mkdir(parents=True, exist_ok=True)
     lang = (f'{{ code: "{CODE}", iso639_3: "zxx", name: "Morse Code", '
-            f'script: "morse", icon: {q(DOT + DASH)} }}')
+            f'script: "morse", icon: {q(DOT)} }}')
     cid = 0
     path_units = []
     all_cards = []

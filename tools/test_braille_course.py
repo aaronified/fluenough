@@ -125,7 +125,7 @@ class BrailleValidator(unittest.TestCase):
     def _braille_is_a_notation(self):
         self.assertIn("braille", validate_decks.SCRIPTS)
         self.assertIn("braille", validate_decks.NO_READING)
-        self.assertEqual(validate_decks.NOTATION_SCRIPTS, {"ipa", "braille"})
+        self.assertEqual(validate_decks.NOTATION_SCRIPTS, {"ipa", "braille", "morse"})
 
     def test_braille_is_a_notation_with_no_reading_or_voice(self) -> None:
         cases = (
