@@ -1,0 +1,252 @@
+# Story actions (B1). Each root, its class, voice and present forms were read in the Wiktionary conjugation table
+# of the verb's third person singular in the kaikki.org dump of en.wiktionary, 2026-11-20; the readings and IPA are from tools/transcribe.py (sa).
+schema: 1
+id: "sa-verbs-4"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "verbs-4"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-13000"
+    target: "भ्रंश्"
+    reading: "bhraṃś"
+    ipa: "bʱrə̃ʃ"
+    pos: "verb"
+    tags: ["gana-1-atmanepada", "atmanepada"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "पुष्पं वृक्षाद् भ्रंशते"
+        reading: "puṣpaṃ vṛkṣād bhraṃśate"
+        ipa: "puʂpəm ʋr̩kʂaːd̪ bʱrə̃ʃət̪eː"
+        bases:
+          - { word: "पुष्पं", base: "पुष्पम्", reading: "puṣpam" }
+          - { word: "वृक्षाद्", base: "वृक्षः", reading: "vṛkṣaḥ" }
+          - { word: "भ्रंशते", base: "भ्रंश्", reading: "bhraṃś" }
+      - target: "कीर्तिर् भ्रंशते"
+        reading: "kīrtir bhraṃśate"
+        ipa: "kiːrt̪ir bʱrə̃ʃət̪eː"
+        bases:
+          - { word: "कीर्तिर्", base: "कीर्तिः", reading: "kīrtiḥ" }
+          - { word: "भ्रंशते", base: "भ्रंश्", reading: "bhraṃś" }
+  - id: "sa-13001"
+    target: "युज्"
+    reading: "yuj"
+    ipa: "judʒ"
+    pos: "verb"
+    tags: ["gana-7"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "सारथिर् अश्वं रथे युनक्ति"
+        reading: "sārathir aśvaṃ rathe yunakti"
+        ipa: "saːrət̪ʰir əʃʋəm rət̪ʰeː junəkt̪i"
+        bases:
+          - { word: "सारथिर्", base: "सारथिः", reading: "sārathiḥ" }
+          - { word: "अश्वं", base: "अश्वः", reading: "aśvaḥ" }
+          - { word: "रथे", base: "रथः", reading: "rathaḥ" }
+          - { word: "युनक्ति", base: "युज्", reading: "yuj" }
+      - target: "कर्षको बलीवर्दं लाङ्गले युनक्ति"
+        reading: "karṣako balīvardaṃ lāṅgale yunakti"
+        ipa: "kərʂəkoː bəliːʋərd̪əm laːŋɡəleː junəkt̪i"
+        bases:
+          - { word: "कर्षको", base: "कर्षकः", reading: "karṣakaḥ" }
+          - { word: "बलीवर्दं", base: "बलीवर्दः", reading: "balīvardaḥ" }
+          - { word: "लाङ्गले", base: "लाङ्गलम्", reading: "lāṅgalam" }
+          - { word: "युनक्ति", base: "युज्", reading: "yuj" }
+  - id: "sa-13002"
+    target: "राज्"
+    reading: "rāj"
+    ipa: "raːdʒ"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "सूर्यो राजति"
+        reading: "sūryo rājati"
+        ipa: "suːrjoː raːdʒət̪i"
+        bases:
+          - { word: "सूर्यो", base: "सूर्यः", reading: "sūryaḥ" }
+          - { word: "राजति", base: "राज्", reading: "rāj" }
+      - target: "नृपो राजति"
+        reading: "nṛpo rājati"
+        ipa: "nr̩poː raːdʒət̪i"
+        bases:
+          - { word: "नृपो", base: "नृपः", reading: "nṛpaḥ" }
+          - { word: "राजति", base: "राज्", reading: "rāj" }
+  - id: "sa-13003"
+    target: "लज्ज्"
+    reading: "lajj"
+    ipa: "lədʒdʒ"
+    pos: "verb"
+    tags: ["gana-6-atmanepada", "atmanepada"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "कन्या लज्जते"
+        reading: "kanyā lajjate"
+        ipa: "kənjaː lədʒdʒət̪eː"
+        bases:
+          - { word: "लज्जते", base: "लज्ज्", reading: "lajj" }
+      - target: "शिशुर् लज्जते"
+        reading: "śiśur lajjate"
+        ipa: "ʃiʃur lədʒdʒət̪eː"
+        bases:
+          - { word: "शिशुर्", base: "शिशुः", reading: "śiśuḥ" }
+          - { word: "लज्जते", base: "लज्ज्", reading: "lajj" }
+  - id: "sa-13004"
+    target: "लम्ब्"
+    reading: "lamb"
+    ipa: "ləmb"
+    pos: "verb"
+    tags: ["gana-1-atmanepada", "atmanepada"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "दीपो गृहे लम्बते"
+        reading: "dīpo gṛhe lambate"
+        ipa: "d̪iːpoː ɡr̩ɦeː ləmbət̪eː"
+        bases:
+          - { word: "दीपो", base: "दीपः", reading: "dīpaḥ" }
+          - { word: "गृहे", base: "गृहम्", reading: "gṛham" }
+          - { word: "लम्बते", base: "लम्ब्", reading: "lamb" }
+      - target: "वस्त्रं द्वारे लम्बते"
+        reading: "vastraṃ dvāre lambate"
+        ipa: "ʋəst̪rəm d̪ʋaːreː ləmbət̪eː"
+        bases:
+          - { word: "वस्त्रं", base: "वस्त्रम्", reading: "vastram" }
+          - { word: "द्वारे", base: "द्वारम्", reading: "dvāram" }
+          - { word: "लम्बते", base: "लम्ब्", reading: "lamb" }
+  - id: "sa-13005"
+    target: "वृष्"
+    reading: "vṛṣ"
+    ipa: "ʋr̩ʂ"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "मेघो वर्षति"
+        reading: "megho varṣati"
+        ipa: "meːɡʱoː ʋərʂət̪i"
+        bases:
+          - { word: "मेघो", base: "मेघः", reading: "meghaḥ" }
+          - { word: "वर्षति", base: "वृष्", reading: "vṛṣ" }
+      - target: "पर्वते मेघो वर्षति"
+        reading: "parvate megho varṣati"
+        ipa: "pərʋət̪eː meːɡʱoː ʋərʂət̪i"
+        bases:
+          - { word: "पर्वते", base: "पर्वतः", reading: "parvataḥ" }
+          - { word: "मेघो", base: "मेघः", reading: "meghaḥ" }
+          - { word: "वर्षति", base: "वृष्", reading: "vṛṣ" }
+  - id: "sa-13006"
+    target: "व्यथ्"
+    reading: "vyath"
+    ipa: "ʋjət̪ʰ"
+    pos: "verb"
+    tags: ["gana-1-atmanepada", "atmanepada"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता व्यथते"
+        reading: "mātā vyathate"
+        ipa: "maːt̪aː ʋjət̪ʰət̪eː"
+        bases:
+          - { word: "व्यथते", base: "व्यथ्", reading: "vyath" }
+      - target: "नृपो व्यथते"
+        reading: "nṛpo vyathate"
+        ipa: "nr̩poː ʋjət̪ʰət̪eː"
+        bases:
+          - { word: "नृपो", base: "नृपः", reading: "nṛpaḥ" }
+          - { word: "व्यथते", base: "व्यथ्", reading: "vyath" }
+  - id: "sa-13007"
+    target: "व्रज्"
+    reading: "vraj"
+    ipa: "ʋrədʒ"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "पथिको ग्रामं व्रजति"
+        reading: "pathiko grāmaṃ vrajati"
+        ipa: "pət̪ʰikoː ɡraːməm ʋrədʒət̪i"
+        bases:
+          - { word: "पथिको", base: "पथिकः", reading: "pathikaḥ" }
+          - { word: "ग्रामं", base: "ग्रामः", reading: "grāmaḥ" }
+          - { word: "व्रजति", base: "व्रज्", reading: "vraj" }
+      - target: "दूतो नगरं व्रजति"
+        reading: "dūto nagaraṃ vrajati"
+        ipa: "d̪uːt̪oː nəɡərəm ʋrədʒət̪i"
+        bases:
+          - { word: "दूतो", base: "दूतः", reading: "dūtaḥ" }
+          - { word: "नगरं", base: "नगरम्", reading: "nagaram" }
+          - { word: "व्रजति", base: "व्रज्", reading: "vraj" }
+  - id: "sa-13008"
+    target: "शप्"
+    reading: "śap"
+    ipa: "ʃəp"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ऋषिर् दुर्जनं शपति"
+        reading: "ṛṣir durjanaṃ śapati"
+        ipa: "r̩ʂir d̪urdʒənəm ʃəpət̪i"
+        bases:
+          - { word: "ऋषिर्", base: "ऋषिः", reading: "ṛṣiḥ" }
+          - { word: "दुर्जनं", base: "दुर्जनः", reading: "durjanaḥ" }
+          - { word: "शपति", base: "शप्", reading: "śap" }
+      - target: "ऋषिश् चोरं शपति"
+        reading: "ṛṣiś coraṃ śapati"
+        ipa: "r̩ʂiʃ tʃoːrəm ʃəpət̪i"
+        bases:
+          - { word: "ऋषिश्", base: "ऋषिः", reading: "ṛṣiḥ" }
+          - { word: "चोरं", base: "चोरः", reading: "coraḥ" }
+          - { word: "शपति", base: "शप्", reading: "śap" }
+  - id: "sa-13009"
+    target: "शी"
+    reading: "śī"
+    ipa: "ʃiː"
+    pos: "verb"
+    tags: ["gana-2-atmanepada", "atmanepada"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता शय्यायां शेते"
+        reading: "mātā śayyāyāṃ śete"
+        ipa: "maːt̪aː ʃəjjaːjaːm ʃeːt̪eː"
+        bases:
+          - { word: "शय्यायां", base: "शय्या", reading: "śayyā" }
+          - { word: "शेते", base: "शी", reading: "śī" }
+      - target: "कुक्कुरो गृहे शेते"
+        reading: "kukkuro gṛhe śete"
+        ipa: "kukkuroː ɡr̩ɦeː ʃeːt̪eː"
+        bases:
+          - { word: "कुक्कुरो", base: "कुक्कुरः", reading: "kukkuraḥ" }
+          - { word: "गृहे", base: "गृहम्", reading: "gṛham" }
+          - { word: "शेते", base: "शी", reading: "śī" }
