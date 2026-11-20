@@ -26,11 +26,11 @@ schema: 1
 kind: "path"
 id: "ks-path"
 language: "ks"
-description: "Kashmiri: the planned path to B1. Only the first words are written."
+description: "Kashmiri: the planned path to B1. Only the phrasebook and the first words are written."
 genders: ["m", "f"]
 alphabet: []
 units:
-  - decks: ["ks-first-words", "*"]
+  - decks: ["ks-phrasebook", "ks-first-words", "*"]
     words: 20
   - planned: { id: "ks-sound-differences", grammar: ["sound-differences"] }
     listening_passages:
