@@ -32,11 +32,20 @@ Every language in scope has a merged first deck on `decks-live`, except the sign
 
 Tool PRs on main: #1530 (path generator plans and SHIPPED list), #1545 (`PHRASEBOOK_PENDING`).
 
+## Update 2026-11-20 (completion session)
+
+| Item | Result |
+|---|---|
+| Phrasebooks | Merged on decks-live: #1646 (lus kha gom brx sd ks tcy mni sat), #1647 (arc), #1648 (raj hne bgc mag kfy doi), 15 to 20 phrases each. Almost every phrase is `doubtful`: only Wiktionary and Wikipedia were reachable (Wikivoyage, omniglot, bible.com, ebible.org, archive.org downloads, glottolog, elar, brx.wikipedia and sat.wikisource are blocked from build sessions). `PHRASEBOOK_PENDING` now holds only gmy, sux, egy, ine (main PR #1649). |
+| gmy, sux, egy, ine | Phrasebooks were built, reviewed and dropped: no attested phrases exist, and the constructed ones were ungrammatical (wrong case, word order, number), so they would teach errors. They need an Assyriologist, Egyptologist, Mycenologist or Indo-Europeanist and attested formulae. |
+| Source gaps | PR #1650 (decks/fw-source-gaps): Santali gains no, tea, today, and (attested) and elder brother and sister (`doubtful`, community wiki only); Manipuri gains I, we, where, yes, no (Meitei Mayek attested in DSAL Sharma and Wiktionary, Bengali spellings derived) and its three adjective stems follow Sharma; Bodo fixes father and water and gains 11 Wiktionary-attested words. Unresolved: Santali examples (only 6 sentences have a source translation; the rest are researcher glosses), Santali `ᱮᱸᱜᱟ` (sat-0117, 'mother') is 'female animal' per sat.wiktionary and the attested 'mother' is `ᱟᱭᱳ`; `ᱟᱠᱳ` has no headword; Bodo 'there' and 'where' and the numerals 2, 4 to 9 are not found on a reachable source; Pashto phrases (ps-0002, 0003, 0004, 0008, 0014) are attested only by their parts, so their `doubtful` tags stay. |
+| American Sign Language | No deck built. No SignWriting data with ASL glosses under a CC-BY-SA-compatible licence was reachable: SignBank is CC-BY-NC; Commons has hello and good only as images; the sutton-signwriting repos (MIT, CC BY 4.0) hold unglossed samples; signwriting.org, signpuddle.net and the Commons PDF 'American Sign Language Hand Symbols' (Frost and Sutton, CC BY 3.0) are blocked from build sessions. Owner options: allow those hosts, get written permission from Sutton, or have a Deaf ASL reviewer write original signs. Indian Sign Language was not built: the source decision is the owner's. |
+| B1Progress check | Every first-words deck has its path (unit 1 lists it), English layer and language entry; the older languages' 10-word first decks are by design. Script fonts for Ol Chiki, Meitei Mayek, cuneiform, Linear B and hieroglyphs are handled by the app's script checks; runtime rendering was not verified from a build session. |
+
 ## Open points
 
-- Phrasebooks: none for lus kha gom brx sd ks tcy mni sat arc gmy sux egy ine raj hne bgc mag kfy doi (`PHRASEBOOK_PENDING` in `tools/validate_decks.py`). Remove a code when its phrasebook exists. They need a native speaker or a sourced phrase book.
-- Santali: missing no, tea, today, brother, sister, and, all phrases; examples for 35 of 36 words.
-- Bodo: need a source for Devanagari spellings (brx.wikipedia, omniglot and dsal are not reachable from the build sessions).
-- Manipuri: I, we, where, yes, no; Bengali spellings are derived, not attested.
-- Signed languages ins and ase: no signed-deck format in Deck-Format; the parent asks the owner.
+- Phrasebooks for gmy, sux, egy, ine: need a specialist and attested formulae (see above).
+- Every phrasebook and most first-words examples are `doubtful`: a native-speaker check is the real gate.
+- Santali, Manipuri, Bodo and Pashto unresolved items are listed in the 2026-11-20 table.
+- Signed languages ase and ins: the owner's decisions are pending (see above).
 - Every deck is `unreviewed`: a speaker check is the real gate.
