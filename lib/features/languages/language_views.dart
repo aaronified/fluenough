@@ -52,6 +52,7 @@ class LanguageView {
 const Map<String, String> notationGlyphs = <String, String>{
   'ipa': 'ə',
   'braille': '⠃',
+  'morse': '•',
 };
 
 /// The families the app names, in the order the Add a language page lists

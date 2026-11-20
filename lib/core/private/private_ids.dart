@@ -23,6 +23,7 @@ const Set<String> builtInPrivateUseCodes = <String>{
   'qgh',
   'qgk',
   'qhv',
+  'qmo',
   'qya',
 };
 

@@ -46,7 +46,7 @@ START = "<!-- languages:start -->"
 END = "<!-- languages:end -->"
 
 # Courses that teach a notation, not a language (as tools/deck_index.py).
-NOTATION_CODES = {"ipa", "qbe"}
+NOTATION_CODES = {"ipa", "qbe", "qmo"}
 
 LEVELS = ("A1", "A2", "B1")
 IN_PROGRESS = "in progress"

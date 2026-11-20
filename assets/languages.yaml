@@ -317,8 +317,14 @@ languages:
   # The notations (ADR-0041, ADR-0043): courses on a script, with no speech of
   # their own. The IPA is heard, spoken and read, never typed; English Braille
   # is read and written, on the app's own keyboard, and never spoken. Each
-  # carries the script name the app gives its decks (`ipa`, `braille`).
+  # carries the script name the app gives its decks (`ipa`, `braille`, `morse`).
+  # Morse code is read by sight and by ear (each card plays its tones) and its
+  # answers are chosen, never typed: no phone keyboard has a dot and a dash
+  # that read well. It writes letters of any language, so its ISO 639-3 code is
+  # `zxx`, as the IPA's is, and its own code `qmo` is in the local-use range.
   - { code: "ipa", iso639_3: "zxx", name: "IPA", own_name: "International Phonetic Alphabet", scripts: ["ipa"], family: "constructed", typed: false,
       aliases: ["phonetic alphabet", "phonetics", "transcription"] }
   - { code: "qbe", iso639_3: "eng", name: "English Braille", own_name: "English Braille", scripts: ["braille"], family: "constructed", script_only: true,
       aliases: ["Braille", "UEB"] }
+  - { code: "qmo", iso639_3: "zxx", name: "Morse Code", own_name: "International Morse code", scripts: ["morse"], family: "constructed", script_only: true, typed: false, culture: false,
+      aliases: ["Morse", "International Morse code", "ITU Morse", "CW"] }
