@@ -26,11 +26,11 @@ schema: 1
 kind: "path"
 id: "hne-path"
 language: "hne"
-description: "Chhattisgarhi: the planned path to B1. Only the first words are written."
+description: "Chhattisgarhi: the planned path to B1. Only the phrasebook and the first words are written."
 genders: ["m", "f"]
 alphabet: []
 units:
-  - decks: ["hne-first-words", "*"]
+  - decks: ["hne-phrasebook", "hne-first-words", "*"]
     words: 39
   - planned: { id: "hne-sound-differences", grammar: ["sound-differences"] }
     listening_passages:
