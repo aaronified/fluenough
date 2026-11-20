@@ -26,11 +26,11 @@ schema: 1
 kind: "path"
 id: "mag-path"
 language: "mag"
-description: "Magahi: the planned path to B1. Only the first words are written."
+description: "Magahi: the planned path to B1. Only the phrasebook and the first words are written."
 genders: ["m", "f"]
 alphabet: []
 units:
-  - decks: ["mag-first-words", "*"]
+  - decks: ["mag-phrasebook", "mag-first-words", "*"]
     words: 39
   - planned: { id: "mag-sound-differences", grammar: ["sound-differences"] }
     listening_passages:
