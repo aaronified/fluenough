@@ -77,11 +77,12 @@ cards:
         bases:
           - { word: "सूर्यो", base: "सूर्यः", reading: "sūryaḥ" }
           - { word: "राजति", base: "राज्", reading: "rāj" }
-      - target: "नृपो राजति"
-        reading: "nṛpo rājati"
-        ipa: "nr̩poː raːdʒət̪i"
+      - target: "नृपो राज्ये राजति"
+        reading: "nṛpo rājye rājati"
+        ipa: "nr̩poː raːdʒjeː raːdʒət̪i"
         bases:
           - { word: "नृपो", base: "नृपः", reading: "nṛpaḥ" }
+          - { word: "राज्ये", base: "राज्यम्", reading: "rājyam" }
           - { word: "राजति", base: "राज्", reading: "rāj" }
   - id: "sa-13003"
     target: "लज्ज्"
@@ -99,11 +100,12 @@ cards:
         ipa: "kənjaː lədʒdʒət̪eː"
         bases:
           - { word: "लज्जते", base: "लज्ज्", reading: "lajj" }
-      - target: "शिशुर् लज्जते"
-        reading: "śiśur lajjate"
-        ipa: "ʃiʃur lədʒdʒət̪eː"
+      - target: "शिशुर् गुरौ लज्जते"
+        reading: "śiśur gurau lajjate"
+        ipa: "ʃiʃur ɡurəu lədʒdʒət̪eː"
         bases:
           - { word: "शिशुर्", base: "शिशुः", reading: "śiśuḥ" }
+          - { word: "गुरौ", base: "गुरुः", reading: "guruḥ" }
           - { word: "लज्जते", base: "लज्ज्", reading: "lajj" }
   - id: "sa-13004"
     target: "लम्ब्"
@@ -258,6 +260,7 @@ cards:
     tags: ["gana-1"]
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
     bases: "self"
     examples:
       - target: "माता शोचति"
@@ -265,10 +268,11 @@ cards:
         ipa: "maːt̪aː ʃoːtʃət̪i"
         bases:
           - { word: "शोचति", base: "शुच्", reading: "śuc" }
-      - target: "पिता शोचति"
-        reading: "pitā śocati"
-        ipa: "pit̪aː ʃoːtʃət̪i"
+      - target: "पिता कन्यां शोचति"
+        reading: "pitā kanyāṃ śocati"
+        ipa: "pit̪aː kənjaːm ʃoːtʃət̪i"
         bases:
+          - { word: "कन्यां", base: "कन्या", reading: "kanyā" }
           - { word: "शोचति", base: "शुच्", reading: "śuc" }
   - id: "sa-13011"
     target: "सिच्"
@@ -456,11 +460,13 @@ cards:
         bases:
           - { word: "गुरुर्", base: "गुरुः", reading: "guruḥ" }
           - { word: "वक्ति", base: "वच्", reading: "vac" }
-      - target: "ऋषिर् वक्ति"
-        reading: "ṛṣir vakti"
-        ipa: "r̩ʂir ʋəkt̪i"
+      - target: "ऋषिर् नृपाय नीतिं वक्ति"
+        reading: "ṛṣir nṛpāya nītiṃ vakti"
+        ipa: "r̩ʂir nr̩paːjə niːt̪im ʋəkt̪i"
         bases:
           - { word: "ऋषिर्", base: "ऋषिः", reading: "ṛṣiḥ" }
+          - { word: "नृपाय", base: "नृपः", reading: "nṛpaḥ" }
+          - { word: "नीतिं", base: "नीतिः", reading: "nītiḥ" }
           - { word: "वक्ति", base: "वच्", reading: "vac" }
   - id: "sa-13019"
     target: "भृ"
@@ -600,10 +606,11 @@ cards:
         bases:
           - { word: "शिशुर्", base: "शिशुः", reading: "śiśuḥ" }
           - { word: "हृष्यति", base: "हृष्", reading: "hṛṣ" }
-      - target: "माता हृष्यति"
-        reading: "mātā hṛṣyati"
-        ipa: "maːt̪aː ɦr̩ʂjət̪i"
+      - target: "कन्या पुष्पेण हृष्यति"
+        reading: "kanyā puṣpeṇa hṛṣyati"
+        ipa: "kənjaː puʂpeːɳə ɦr̩ʂjət̪i"
         bases:
+          - { word: "पुष्पेण", base: "पुष्पम्", reading: "puṣpam" }
           - { word: "हृष्यति", base: "हृष्", reading: "hṛṣ" }
   - id: "sa-13025"
     target: "मुह्"
@@ -737,11 +744,12 @@ cards:
         bases:
           - { word: "शिशुर्", base: "शिशुः", reading: "śiśuḥ" }
           - { word: "वेपते", base: "विप्", reading: "vip" }
-      - target: "पुष्पं वेपते"
-        reading: "puṣpaṃ vepate"
-        ipa: "puʂpəm ʋeːpət̪eː"
+      - target: "वायुना वृक्षो वेपते"
+        reading: "vāyunā vṛkṣo vepate"
+        ipa: "ʋaːjunaː ʋr̩kʂoː ʋeːpət̪eː"
         bases:
-          - { word: "पुष्पं", base: "पुष्पम्", reading: "puṣpam" }
+          - { word: "वायुना", base: "वायुः", reading: "vāyuḥ" }
+          - { word: "वृक्षो", base: "वृक्षः", reading: "vṛkṣaḥ" }
           - { word: "वेपते", base: "विप्", reading: "vip" }
   - id: "sa-13031"
     target: "दिह्"
@@ -761,12 +769,12 @@ cards:
           - { word: "मुखं", base: "मुखम्", reading: "mukham" }
           - { word: "कुङ्कुमेन", base: "कुङ्कुमम्", reading: "kuṅkumam" }
           - { word: "देग्धि", base: "दिह्", reading: "dih" }
-      - target: "पिता कुङ्कुमेन मुखं देग्धि"
-        reading: "pitā kuṅkumena mukhaṃ degdhi"
-        ipa: "pit̪aː kuŋkumeːnə mukʰəm d̪eːɡd̪ʱi"
+      - target: "माता शिशुं कुङ्कुमेन देग्धि"
+        reading: "mātā śiśuṃ kuṅkumena degdhi"
+        ipa: "maːt̪aː ʃiʃum kuŋkumeːnə d̪eːɡd̪ʱi"
         bases:
+          - { word: "शिशुं", base: "शिशुः", reading: "śiśuḥ" }
           - { word: "कुङ्कुमेन", base: "कुङ्कुमम्", reading: "kuṅkumam" }
-          - { word: "मुखं", base: "मुखम्", reading: "mukham" }
           - { word: "देग्धि", base: "दिह्", reading: "dih" }
   - id: "sa-13032"
     target: "स्ना"
@@ -1054,11 +1062,12 @@ cards:
         ipa: "nəd̪iː srəʋət̪i"
         bases:
           - { word: "स्रवति", base: "स्रु", reading: "sru" }
-      - target: "क्षीरं स्रवति"
-        reading: "kṣīraṃ sravati"
-        ipa: "kʂiːrəm srəʋət̪i"
+      - target: "मेघाज् जलं स्रवति"
+        reading: "meghāj jalaṃ sravati"
+        ipa: "meːɡʱaːdʒ dʒələm srəʋət̪i"
         bases:
-          - { word: "क्षीरं", base: "क्षीरम्", reading: "kṣīram" }
+          - { word: "मेघाज्", base: "मेघः", reading: "meghaḥ" }
+          - { word: "जलं", base: "जलम्", reading: "jalam" }
           - { word: "स्रवति", base: "स्रु", reading: "sru" }
   - id: "sa-13044"
     target: "द्रुह्"
@@ -1432,18 +1441,18 @@ cards:
       - { id: "n2", kind: "note" }
     bases: "self"
     examples:
-      - target: "पिता कन्यां श्लाघते"
-        reading: "pitā kanyāṃ ślāghate"
-        ipa: "pit̪aː kənjaːm ʃlaːɡʱət̪eː"
+      - target: "पिता कन्यायै श्लाघते"
+        reading: "pitā kanyāyai ślāghate"
+        ipa: "pit̪aː kənjaːjəi ʃlaːɡʱət̪eː"
         bases:
-          - { word: "कन्यां", base: "कन्या", reading: "kanyā" }
+          - { word: "कन्यायै", base: "कन्या", reading: "kanyā" }
           - { word: "श्लाघते", base: "श्लाघ्", reading: "ślāgh" }
-      - target: "नृपो दूतं श्लाघते"
-        reading: "nṛpo dūtaṃ ślāghate"
-        ipa: "nr̩poː d̪uːt̪əm ʃlaːɡʱət̪eː"
+      - target: "नृपो दूताय श्लाघते"
+        reading: "nṛpo dūtāya ślāghate"
+        ipa: "nr̩poː d̪uːt̪aːjə ʃlaːɡʱət̪eː"
         bases:
           - { word: "नृपो", base: "नृपः", reading: "nṛpaḥ" }
-          - { word: "दूतं", base: "दूतः", reading: "dūtaḥ" }
+          - { word: "दूताय", base: "दूतः", reading: "dūtaḥ" }
           - { word: "श्लाघते", base: "श्लाघ्", reading: "ślāgh" }
   - id: "sa-13060"
     target: "स्निह्"
