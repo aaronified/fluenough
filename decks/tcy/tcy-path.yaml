@@ -26,11 +26,11 @@ schema: 1
 kind: "path"
 id: "tcy-path"
 language: "tcy"
-description: "Tulu: the planned path to B1. Only the first words are written."
+description: "Tulu: the planned path to B1. Only the phrasebook and the first words are written."
 genders: ["m", "f", "n"]
 alphabet: []
 units:
-  - decks: ["tcy-first-words", "*"]
+  - decks: ["tcy-phrasebook", "tcy-first-words", "*"]
     words: 24
   - planned: { id: "tcy-sound-differences", grammar: ["sound-differences"] }
     listening_passages:
