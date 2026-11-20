@@ -389,8 +389,9 @@ PHRASEBOOK_SIZE = (15, 25)
 # phrasebook card at all; one that has some is still held to the size. Remove
 # a code as soon as its phrasebook is written.
 PHRASEBOOK_PENDING = {
-    "lus", "kha", "gom", "brx", "sd", "ks", "tcy", "mni", "sat",
-    "arc", "gmy", "sux", "egy", "ine", "raj", "hne", "bgc", "mag", "kfy", "doi",
+    # No attested phrases exist for these, and constructed ones were
+    # ungrammatical on review: no phrasebook until a sourced one can be written.
+    "gmy", "sux", "egy", "ine",
 }
 # Parts of speech whose several-word cards still count as one word.
 LEXICAL_POS = {"noun", "verb", "adj", "adv", "pronoun"}
