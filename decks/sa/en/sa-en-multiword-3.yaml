@@ -1,0 +1,315 @@
+schema: 1
+id: "sa-en-multiword-3"
+kind: "layer"
+core: "sa-multiword-3"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word terms: compounds and fixed phrases"
+license: "CC-BY-SA-4.0"
+description: "Twenty compounds, a verb with ई (ī) and a conjunct verb, and nine fixed phrases: day and night, heaven and earth, so be it, how are you. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "sa-8360":
+    native: "day and night; continually"
+    notes:
+      "u1": "A dvandva (joined pair) compound: अहर् (ahar), day, and निशा (niśā), night. It is a neuter noun and is often used as an adverb in the accusative."
+      "n1": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in अहर्निशं (aharniśaṃ) गुरुः (guruḥ)."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in जनो (jano) जपति (japati)."
+    bases:
+      "अहर्निशम्": "day and night"
+    examples:
+      "अहर्निशं गुरुः पठति":
+        native: "The teacher reads day and night."
+      "अहर्निशं जनो जपति":
+        native: "A person prays day and night."
+        bases:
+          "जनो": "person"
+  "sa-8361":
+    native: "Indra and Brihaspati"
+    notes:
+      "u1": "A dvandva (joined pair) of two gods, used in the dual: इन्द्रा (indrā), Indra, and बृहस्पति (bṛhaspati), Brihaspati. The verb is in the dual too."
+      "n1": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in सभां (sabhāṃ) गच्छतः (gacchataḥ)."
+    bases:
+      "इन्द्राबृहस्पती": "Indra and Brihaspati"
+    examples:
+      "इन्द्राबृहस्पती सभां गच्छतः":
+        native: "Indra and Brihaspati go to the assembly."
+        bases:
+          "इन्द्राबृहस्पती": "Indra and Brihaspati"
+      "इन्द्राबृहस्पती जनान् रक्षतः":
+        native: "Indra and Brihaspati protect the people."
+        bases:
+          "इन्द्राबृहस्पती": "Indra and Brihaspati"
+          "जनान्": "person"
+  "sa-8362":
+    native: "seen for an instant and at once lost from sight"
+    notes:
+      "u1": "A compound adjective of three parts: क्षण (kṣaṇa), instant, दृष्ट (dṛṣṭa), seen, and नष्ट (naṣṭa), lost."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in क्षणदृष्टनष्टो (kṣaṇadṛṣṭanaṣṭo) मेघो (megho)."
+    bases:
+      "क्षणदृष्टनष्टः": "seen for an instant and lost"
+    examples:
+      "क्षणदृष्टनष्टो मेघो भवति":
+        native: "The cloud is seen for an instant and then lost."
+      "क्षणदृष्टनष्टः स्वप्नो भवति":
+        native: "A dream is seen for an instant and then lost."
+  "sa-8363":
+    native: "cattle and horses"
+    notes:
+      "u1": "A dvandva (joined pair) compound: गो (go), cow, and अश्व (aśva), horse. It is a neuter singular noun for the two together. The avagraha ऽ (') marks the lost अ (a) of अश्व (aśva)."
+      "n1": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in गोऽश्वं (go'śvaṃ) कृषको (kṛṣako)."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in कृषको (kṛṣako) रक्षति (rakṣati)."
+    bases:
+      "गोऽश्वम्": "cattle and horses"
+    examples:
+      "गोऽश्वं कृषको रक्षति":
+        native: "The farmer protects cattle and horses."
+      "गोऽश्वं राजा ददाति":
+        native: "The king gives cattle and horses."
+  "sa-8364":
+    native: "the moon and the stars"
+    notes:
+      "u1": "A dvandva (joined pair) compound: चन्द्र (candra), moon, and तारका (tārakā), star. It is a neuter singular noun for the two together."
+      "n1": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in चन्द्रतारकं (candratārakaṃ) जनो (jano)."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in जनो (jano) रात्रौ (rātrau)."
+    bases:
+      "चन्द्रतारकम्": "the moon and the stars"
+    examples:
+      "चन्द्रतारकं जनो रात्रौ पश्यति":
+        native: "A person sees the moon and the stars at night."
+        bases:
+          "जनो": "person"
+          "रात्रौ": "night"
+      "चन्द्रतारकं नभसि भवति":
+        native: "The moon and the stars are in the sky."
+        bases:
+          "नभसि": "sky"
+  "sa-8365":
+    native: "the visible and the invisible"
+    notes:
+      "u1": "A dvandva (joined pair) compound: दृश्य (dṛśya), visible, and अदृश्य (adṛśya), invisible. The two अ (a) run together as आ (ā)."
+      "n1": "A final त् (t) before a voiced consonant becomes द् (d), as in जगद् (jagad) दृश्यादृश्यं (dṛśyādṛśyaṃ) (Aṣṭādhyāyī 8.2.39; Whitney 159)."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in दृश्यादृश्यं (dṛśyādṛśyaṃ) भवति (bhavati)."
+    bases:
+      "दृश्यादृश्यम्": "visible and invisible"
+    examples:
+      "जगद् दृश्यादृश्यं भवति":
+        native: "The world is visible and invisible."
+      "गुरुर् दृश्यादृश्यं जानाति":
+        native: "The teacher knows the visible and the invisible."
+  "sa-8366":
+    native: "heaven and earth"
+    notes:
+      "u1": "A dvandva (joined pair) compound in the dual: द्यावा (dyāvā), heaven, and पृथिवी (pṛthivī), earth. The verb is in the dual too."
+      "n1": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in जनं (janaṃ) रक्षतः (rakṣataḥ)."
+    bases:
+      "द्यावापृथिव्यौ": "heaven and earth"
+    examples:
+      "द्यावापृथिव्यौ जनं रक्षतः":
+        native: "Heaven and earth protect a person."
+        bases:
+          "द्यावापृथिव्यौ": "heaven and earth"
+          "जनं": "person"
+      "द्यावापृथिव्यौ जलं धरतः":
+        native: "Heaven and earth bear the water."
+        bases:
+          "द्यावापृथिव्यौ": "heaven and earth"
+  "sa-8367":
+    native: "from without and within"
+    notes:
+      "u1": "A dvandva (joined pair) used as an adverb: बाह्य (bāhya), outer, and अन्तर् (antar), within. It does not change."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in वैद्यो (vaidyo) बाह्यान्तर् (bāhyāntar)."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in जनं (janaṃ) पश्यति (paśyati)."
+    bases:
+      "बाह्यान्तर्": "inside and out"
+    examples:
+      "वैद्यो बाह्यान्तर् जनं पश्यति":
+        native: "The physician looks at the person inside and out."
+        bases:
+          "जनं": "person"
+      "माता बाह्यान्तर् गृहं पश्यति":
+        native: "The mother looks at the house inside and out."
+  "sa-8368":
+    native: "a dish of rice boiled with meat"
+    notes:
+      "u1": "A dvandva (joined pair) compound: मांस (māṃsa), meat, and ओदन (odana), boiled rice. The अ (a) and ओ (o) run together as औ (au)."
+      "n1": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in मांसौदनं (māṃsaudanaṃ) बालः (bālaḥ)."
+    bases:
+      "मांसौदनः": "rice with meat"
+    examples:
+      "मांसौदनं बालः खादति":
+        native: "The child eats a dish of rice and meat."
+        bases:
+          "बालः": "child"
+      "मांसौदनं माता पचति":
+        native: "The mother cooks a dish of rice and meat."
+  "sa-8369":
+    native: "mother and father"
+    notes:
+      "u1": "A dvandva (joined pair) compound used mostly in the dual: माता (mātā), mother, and पितृ (pitṛ), father. The verb is in the dual too."
+      "n1": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in बालं (bālaṃ) रक्षतः (rakṣataḥ)."
+    bases:
+      "मातापितरौ": "mother and father"
+    examples:
+      "मातापितरौ गृहे वसतः":
+        native: "Mother and father live in the house."
+        bases:
+          "मातापितरौ": "mother and father"
+      "मातापितरौ बालं रक्षतः":
+        native: "Mother and father protect the child."
+        bases:
+          "मातापितरौ": "mother and father"
+          "बालं": "child"
+  "sa-8370":
+    native: "the meaning of a word"
+    notes:
+      "u1": "A tatpuruṣa compound (the first part qualifies the second): शब्द (śabda), word, and अर्थ (artha), meaning. The अ (a) and अ (a) run together as आ (ā)."
+      "n1": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in शब्दार्थं (śabdārthaṃ) शिष्यो (śiṣyo)."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in शिष्यो (śiṣyo) जानाति (jānāti)."
+    bases:
+      "शब्दार्थः": "meaning of a word"
+    examples:
+      "शब्दार्थं शिष्यो जानाति":
+        native: "The pupil knows the meaning of the word."
+      "शब्दार्थं गुरुः कथयति":
+        native: "The teacher tells the meaning of the word."
+  "sa-8371":
+    native: "to become one, to blend"
+    notes:
+      "u1": "A verb made with the sign ई (ī): एक (eka), one, becomes एकी (ekī) before भवति (bhavati), becomes. The thing that becomes one stands in the nominative."
+      "n1": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in जलं (jalaṃ) दुग्धेन (dugdhena)."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in जनो (jano) देवेन (devena)."
+    bases:
+      "एकीभवति": "to become one"
+    examples:
+      "एकीभवति जलं दुग्धेन":
+        native: "Water blends with milk."
+        bases:
+          "दुग्धेन": "milk"
+      "एकीभवति जनो देवेन":
+        native: "A person becomes one with a god."
+        bases:
+          "जनो": "person"
+  "sa-8372":
+    native: "to telephone"
+    notes:
+      "u1": "A conjunct verb of recent coinage: दूरवाणीम् (dūravāṇīm), telephone, with करोति (karoti), does. The person called is in the dative."
+      "n1": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in दूरवाणीं (dūravāṇīṃ) करोति (karoti)."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in शिष्यो (śiṣyo) गुरवे (gurave)."
+    bases:
+      "दूरवाणीं": "telephone"
+    examples:
+      "दूरवाणीं करोति माता पुत्राय":
+        native: "The mother telephones her son."
+        bases:
+          "दूरवाणीं": "telephone"
+      "दूरवाणीं करोति शिष्यो गुरवे":
+        native: "The pupil telephones the teacher."
+        bases:
+          "दूरवाणीं": "telephone"
+  "sa-8373":
+    native: "the world is a family"
+    notes:
+      "u1": "A fixed saying: वसुधा (vasudhā), the earth, with इव (iva), alone, and कुटुम्बकम् (kuṭumbakam), family; वसुधा (vasudhā) and एव (eva) run together as वसुधैव (vasudhaiva) (अ (a) and ए (e) become ऐ (ai))."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in जनो (jano) वदति (vadati)."
+    bases:
+      "वसुधैव": "the earth itself"
+      "कुटुम्बकम्": "family"
+    examples:
+      "जनो वदति वसुधैव कुटुम्बकम्":
+        native: "A person says: the world is a family."
+        bases:
+          "जनो": "person"
+          "वसुधैव": "the earth itself"
+          "कुटुम्बकम्": "family"
+      "गुरुर् वदति वसुधैव कुटुम्बकम्":
+        native: "The teacher says: the world is a family."
+        bases:
+          "वसुधैव": "the earth itself"
+          "कुटुम्बकम्": "family"
+  "sa-8374":
+    native: "truth alone triumphs"
+    notes:
+      "u1": "A fixed saying: सत्यम् (satyam), truth, with एव (eva), alone, and जयते (jayate), triumphs; सत्यम् (satyam) and एव (eva) run together as सत्यमेव (satyameva)."
+    bases:
+      "सत्यमेव": "truth alone"
+    examples:
+      "वदति नृपः सत्यमेव जयते":
+        native: "The king says: truth alone triumphs."
+        bases:
+          "सत्यमेव": "truth alone"
+      "शिष्यः पठति सत्यमेव जयते":
+        native: "The pupil reads: truth alone triumphs."
+        bases:
+          "सत्यमेव": "truth alone"
+  "sa-8375":
+    native: "you are that"
+    notes:
+      "u1": "A fixed saying in one written word: तत् (tat), that, त्वम् (tvam), you, and असि (asi), are, run together as तत्त्वमसि (tattvamasi)."
+    bases:
+      "तत्त्वमसि": "you are that"
+    examples:
+      "गुरुर् वदति तत्त्वमसि":
+        native: "The teacher says: you are that."
+      "शिष्यः पठति तत्त्वमसि":
+        native: "The pupil reads: you are that."
+  "sa-8376":
+    native: "so be it, let it be done"
+    notes:
+      "u1": "A fixed phrase: तथा (tathā), so, and अस्तु (astu), let it be, run together as तथास्तु (tathāstu) (आ (ā) and अ (a) become आ (ā))."
+      "n1": "A final ः (ḥ) before त (ta) becomes स् (s), as in देवस् (devas) तथास्तु (tathāstu) (Aṣṭādhyāyī 8.3.34; Whitney 170 b)."
+    bases:
+      "तथास्तु": "so be it"
+    examples:
+      "वदति देवस् तथास्तु":
+        native: "The god says: so be it."
+      "वदति गुरुस् तथास्तु":
+        native: "The teacher says: so be it."
+  "sa-8377":
+    native: "I bow to the mother"
+    notes:
+      "u1": "A fixed phrase: वन्दे (vande), I praise or bow, and मातरम् (mātaram), the mother in the accusative."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in जनो (jano) वन्दे (vande)."
+    bases:
+      "वन्दे": "to praise, to bow"
+      "मातरम्": "mother"
+    examples:
+      "वदति जनो वन्दे मातरम्":
+        native: "A person says: I bow to the mother."
+        bases:
+          "जनो": "person"
+          "वन्दे": "to praise, to bow"
+          "मातरम्": "mother"
+      "बालो वदति वन्दे मातरम्":
+        native: "The child says: I bow to the mother."
+        bases:
+          "बालो": "child"
+          "वन्दे": "to praise, to bow"
+          "मातरम्": "mother"
+  "sa-8378":
+    native: "happy birthday"
+    notes:
+      "u1": "A fixed greeting: शुभम् (śubham), auspicious, and जन्मदिनम् (janmadinam), birthday; शुभम् (śubham) is written शुभं (śubhaṃ) before ज (ja)."
+      "n1": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in शुभं (śubhaṃ) जन्मदिनम् (janmadinam)."
+    bases:
+      "शुभं": "auspicious"
+      "जन्मदिनम्": "birthday"
+    examples:
+      "माता वदति शुभं जन्मदिनम्":
+        native: "The mother says: happy birthday."
+        bases:
+          "शुभं": "auspicious"
+          "जन्मदिनम्": "birthday"
+      "मित्रं वदति शुभं जन्मदिनम्":
+        native: "A friend says: happy birthday."
+        bases:
+          "शुभं": "auspicious"
+          "जन्मदिनम्": "birthday"
+  "sa-8379":
+    native: "how are you (to a man)"
+    notes:
+      "u1": "A fixed question to a man: भवान् (bhavān), you, कथम् (katham), how, and अस्ति (asti), is."
+    examples:
+      "वदति गुरुर् भवान् कथम् अस्ति":
+        native: "The teacher says: how are you?"
+      "माता पृच्छति भवान् कथम् अस्ति":
+        native: "The mother asks: how are you?"
