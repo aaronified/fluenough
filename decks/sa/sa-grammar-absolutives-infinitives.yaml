@@ -14,7 +14,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["verb"]
-    except: ["sa-2105", "sa-2108", "sa-2111", "sa-12023", "sa-12046", "sa-12047", "sa-12048", "sa-12049", "sa-12059"]
+    except: ["sa-2105", "sa-2108", "sa-2111", "sa-12023", "sa-12046", "sa-12047", "sa-12048", "sa-12049", "sa-12059", "sa-13084", "sa-13088"]
   slots: ["ktva", "lyap", "tum"]
   rows:
     - word: "sa-0430"
@@ -572,6 +572,30 @@ table:
     - word: "sa-13079"
       forms: { "ktva": "जागरित्वा", "lyap": "प्रजागृत्य", "tum": null }
       readings: { "ktva": "jāgaritvā", "lyap": "prajāgṛtya" }
+    - word: "sa-13080"
+      forms: { "ktva": null, "lyap": null, "tum": "परीतुम्" }
+      readings: { "tum": "parītum" }
+    - word: "sa-13081"
+      forms: { "ktva": null, "lyap": null, "tum": "गरितुम्" }
+      readings: { "tum": "garitum" }
+    - word: "sa-13082"
+      forms: { "ktva": "दूत्वा", "lyap": "प्रदुत्य", "tum": "दोतुम्" }
+      readings: { "ktva": "dūtvā", "lyap": "pradutya", "tum": "dotum" }
+    - word: "sa-13083"
+      forms: { "ktva": null, "lyap": "प्रकाश्य", "tum": null }
+      readings: { "lyap": "prakāśya" }
+    - word: "sa-13085"
+      forms: { "ktva": null, "lyap": "प्ररण्य", "tum": "रणितुम्" }
+      readings: { "lyap": "praraṇya", "tum": "raṇitum" }
+    - word: "sa-13086"
+      forms: { "ktva": null, "lyap": "प्रक्वथ्य", "tum": "क्वथितुम्" }
+      readings: { "lyap": "prakvathya", "tum": "kvathitum" }
+    - word: "sa-13087"
+      forms: { "ktva": null, "lyap": "प्रत्रप्य", "tum": "त्रप्तुम्" }
+      readings: { "lyap": "pratrapya", "tum": "traptum" }
+    - word: "sa-13089"
+      forms: { "ktva": null, "lyap": "प्रमज्ज्य", "tum": null }
+      readings: { "lyap": "pramajjya" }
 rules:
   - id: "sa-rule-absolutive-ktva"
     slots: ["ktva"]

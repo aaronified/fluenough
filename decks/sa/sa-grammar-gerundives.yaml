@@ -14,7 +14,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["verb"]
-    except: ["sa-2105", "sa-2108", "sa-2111", "sa-12057", "sa-12058", "sa-13022", "sa-13038"]
+    except: ["sa-2105", "sa-2108", "sa-2111", "sa-12057", "sa-12058", "sa-13022", "sa-13038", "sa-13081"]
   slots: ["tavya", "aniya", "ya"]
   rows:
     - word: "sa-0430"
@@ -578,6 +578,33 @@ table:
     - word: "sa-13079"
       forms: { "tavya": "जागरितव्य", "aniya": "जागरणीय", "ya": null }
       readings: { "tavya": "jāgaritavya", "aniya": "jāgaraṇīya" }
+    - word: "sa-13080"
+      forms: { "tavya": null, "aniya": "पूरणीय", "ya": "पूर्य" }
+      readings: { "aniya": "pūraṇīya", "ya": "pūrya" }
+    - word: "sa-13082"
+      forms: { "tavya": "दोतव्य", "aniya": "दवनीय", "ya": "दोय" }
+      readings: { "tavya": "dotavya", "aniya": "davanīya", "ya": "doya" }
+    - word: "sa-13083"
+      forms: { "tavya": null, "aniya": "काशनीय", "ya": null }
+      readings: { "aniya": "kāśanīya" }
+    - word: "sa-13084"
+      forms: { "tavya": null, "aniya": "कम्पनीय", "ya": "कम्प्य" }
+      readings: { "aniya": "kampanīya", "ya": "kampya" }
+    - word: "sa-13085"
+      forms: { "tavya": null, "aniya": "रणनीय", "ya": null }
+      readings: { "aniya": "raṇanīya" }
+    - word: "sa-13086"
+      forms: { "tavya": null, "aniya": "क्वथनीय", "ya": null }
+      readings: { "aniya": "kvathanīya" }
+    - word: "sa-13087"
+      forms: { "tavya": null, "aniya": "त्रपणीय", "ya": null }
+      readings: { "aniya": "trapaṇīya" }
+    - word: "sa-13088"
+      forms: { "tavya": "गणितव्य", "aniya": "गणनीय", "ya": "गणेय" }
+      readings: { "tavya": "gaṇitavya", "aniya": "gaṇanīya", "ya": "gaṇeya" }
+    - word: "sa-13089"
+      forms: { "tavya": null, "aniya": "मज्जनीय", "ya": null }
+      readings: { "aniya": "majjanīya" }
 rules:
   - id: "sa-rule-gerundive-tavya"
     slots: ["tavya"]
