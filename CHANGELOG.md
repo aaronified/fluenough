@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.3] - 2026-11-20
+
 - **A Morse code course.** Learn the letters, digits and signs of International Morse code by sight and by ear: every sign shows its dots and dashes and plays its tones when you tap the speaker.
 - **No empty culture bar.** A language with no culture deck, such as Toki Pona, no longer shows a culture bar on Languages, and its other bars are unchanged.
 
