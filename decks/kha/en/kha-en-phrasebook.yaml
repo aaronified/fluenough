@@ -1,0 +1,105 @@
+schema: 1
+id: "kha-en-phrasebook"
+kind: "layer"
+core: "kha-phrasebook"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phrasebook: first phrases"
+license: "CC-BY-SA-4.0"
+description: "The first phrases to say in Khasi, before their words are taught: greetings, thanks, yes and no, asking for help and for slower speech, and saying your name. Not yet checked by a Khasi speaker: please report any mistake."
+cards:
+  "kha-9001":
+    native: "hello"
+    bases:
+      "Khublei": "hello"
+  "kha-9002":
+    native: "good morning; good day"
+    bases:
+      "Khublei": "hello"
+      "sngi": "day"
+  "kha-9003":
+    native: "good night"
+    bases:
+      "Khublei": "hello"
+      "shwa": "night"
+  "kha-9004":
+    native: "goodbye"
+    bases:
+      "leit": "go"
+  "kha-9005":
+    native: "please"
+    bases:
+      "Lah": "well, fine"
+      "ban": "polite particle"
+  "kha-9006":
+    native: "thank you"
+    bases:
+      "shibun": "very much"
+  "kha-9007":
+    native: "you're welcome"
+    bases:
+      "Ym": "not"
+      "dei": "matter"
+  "kha-9008":
+    native: "sorry"
+    bases:
+      "Khmat": "sorry, forgive"
+      "ban": "polite particle"
+  "kha-9009":
+    native: "yes"
+    bases:
+      "Ee": "yes"
+  "kha-9010":
+    native: "no"
+  "kha-9011":
+    native: "I don't understand"
+    bases:
+      "kren": "to understand"
+      "ba": "particle"
+      "em": "not"
+  "kha-9012":
+    native: "I don't know Khasi"
+    bases:
+      "ai": "to know"
+      "ba": "particle"
+      "Khasi": "Khasi (the language)"
+      "em": "not"
+  "kha-9013":
+    native: "please speak slowly"
+    bases:
+      "Lah": "well, fine"
+      "ban": "polite particle"
+      "pyrshah": "to speak slowly"
+      "ia": "particle"
+  "kha-9014":
+    native: "do you speak English?"
+    bases:
+      "pyrshah": "to speak"
+      "English": "English (the language)"
+      "em": "question particle"
+  "kha-9015":
+    native: "how are you?"
+    bases:
+      "Kumno": "how"
+  "kha-9016":
+    native: "I'm fine"
+    bases:
+      "lah": "fine, well"
+  "kha-9017":
+    native: "what is your name?"
+    bases:
+      "Ing": "name"
+      "ia": "particle"
+  "kha-9018":
+    native: "my name is"
+    bases:
+      "Ing": "name"
+  "kha-9019":
+    native: "where is the toilet?"
+    bases:
+      "Shiphur": "toilet"
+      "ia": "particle"
+      "kaei": "where"
+  "kha-9020":
+    native: "help!"
+    bases:
+      "Pynhep": "help"
