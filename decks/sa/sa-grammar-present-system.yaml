@@ -40,7 +40,7 @@ table:
   applies_to:
     pos: ["verb"]
     tags: ["gana-1"]
-    except: ["sa-2101", "sa-2102", "sa-2103", "sa-2104", "sa-2105", "sa-2106", "sa-2107", "sa-2108", "sa-2109", "sa-2110", "sa-2111", "sa-2112", "sa-2113", "sa-2114", "sa-2115", "sa-2116", "sa-2117", "sa-2118", "sa-2119", "sa-2120", "sa-2121", "sa-2122", "sa-2123", "sa-12021", "sa-12022", "sa-12023", "sa-12024", "sa-12025", "sa-12026", "sa-13000", "sa-13004", "sa-13006", "sa-13026", "sa-13030", "sa-13034", "sa-13036", "sa-13039"]
+    except: ["sa-2101", "sa-2102", "sa-2103", "sa-2104", "sa-2105", "sa-2106", "sa-2107", "sa-2108", "sa-2109", "sa-2110", "sa-2111", "sa-2112", "sa-2113", "sa-2114", "sa-2115", "sa-2116", "sa-2117", "sa-2118", "sa-2119", "sa-2120", "sa-2121", "sa-2122", "sa-2123", "sa-12021", "sa-12022", "sa-12023", "sa-12024", "sa-12025", "sa-12026", "sa-13000", "sa-13004", "sa-13006", "sa-13026", "sa-13030", "sa-13034", "sa-13036", "sa-13039", "sa-13049"]
   slots: ["stem", "p3-sg", "p3-du", "p3-pl", "p2-sg", "p2-du", "p2-pl", "p1-sg", "p1-du", "p1-pl"]
   rows:
     - word: "sa-0430"
@@ -235,6 +235,18 @@ table:
     - word: "sa-13035"
       forms: { "stem": "अर्च", "p3-sg": "अर्चति", "p3-du": "अर्चतः", "p3-pl": "अर्चन्ति", "p2-sg": "अर्चसि", "p2-du": "अर्चथः", "p2-pl": "अर्चथ", "p1-sg": "अर्चामि", "p1-du": "अर्चावः", "p1-pl": "अर्चामः" }
       readings: { "stem": "arca", "p3-sg": "arcati", "p3-du": "arcataḥ", "p3-pl": "arcanti", "p2-sg": "arcasi", "p2-du": "arcathaḥ", "p2-pl": "arcatha", "p1-sg": "arcāmi", "p1-du": "arcāvaḥ", "p1-pl": "arcāmaḥ" }
+    - word: "sa-13043"
+      forms: { "stem": "स्रव", "p3-sg": "स्रवति", "p3-du": "स्रवतः", "p3-pl": "स्रवन्ति", "p2-sg": "स्रवसि", "p2-du": "स्रवथः", "p2-pl": "स्रवथ", "p1-sg": "स्रवामि", "p1-du": "स्रवावः", "p1-pl": "स्रवामः" }
+      readings: { "stem": "srava", "p3-sg": "sravati", "p3-du": "sravataḥ", "p3-pl": "sravanti", "p2-sg": "sravasi", "p2-du": "sravathaḥ", "p2-pl": "sravatha", "p1-sg": "sravāmi", "p1-du": "sravāvaḥ", "p1-pl": "sravāmaḥ" }
+    - word: "sa-13045"
+      forms: { "stem": "वम", "p3-sg": "वमति", "p3-du": "वमतः", "p3-pl": "वमन्ति", "p2-sg": "वमसि", "p2-du": "वमथः", "p2-pl": "वमथ", "p1-sg": "वमामि", "p1-du": "वमावः", "p1-pl": "वमामः" }
+      readings: { "stem": "vama", "p3-sg": "vamati", "p3-du": "vamataḥ", "p3-pl": "vamanti", "p2-sg": "vamasi", "p2-du": "vamathaḥ", "p2-pl": "vamatha", "p1-sg": "vamāmi", "p1-du": "vamāvaḥ", "p1-pl": "vamāmaḥ" }
+    - word: "sa-13047"
+      forms: { "stem": "तक्ष", "p3-sg": "तक्षति", "p3-du": "तक्षतः", "p3-pl": "तक्षन्ति", "p2-sg": "तक्षसि", "p2-du": "तक्षथः", "p2-pl": "तक्षथ", "p1-sg": "तक्षामि", "p1-du": "तक्षावः", "p1-pl": "तक्षामः" }
+      readings: { "stem": "takṣa", "p3-sg": "takṣati", "p3-du": "takṣataḥ", "p3-pl": "takṣanti", "p2-sg": "takṣasi", "p2-du": "takṣathaḥ", "p2-pl": "takṣatha", "p1-sg": "takṣāmi", "p1-du": "takṣāvaḥ", "p1-pl": "takṣāmaḥ" }
+    - word: "sa-13048"
+      forms: { "stem": "श्रय", "p3-sg": "श्रयति", "p3-du": "श्रयतः", "p3-pl": "श्रयन्ति", "p2-sg": "श्रयसि", "p2-du": "श्रयथः", "p2-pl": "श्रयथ", "p1-sg": "श्रयामि", "p1-du": "श्रयावः", "p1-pl": "श्रयामः" }
+      readings: { "stem": "śraya", "p3-sg": "śrayati", "p3-du": "śrayataḥ", "p3-pl": "śrayanti", "p2-sg": "śrayasi", "p2-du": "śrayathaḥ", "p2-pl": "śrayatha", "p1-sg": "śrayāmi", "p1-du": "śrayāvaḥ", "p1-pl": "śrayāmaḥ" }
 rules:
   - id: "sa-rule-present-stem"
     slots: ["stem"]
