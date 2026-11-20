@@ -14,7 +14,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["verb"]
-    except: ["sa-2011", "sa-2105", "sa-2108", "sa-2111", "sa-2123", "sa-12000", "sa-12015", "sa-12023", "sa-12030", "sa-12034", "sa-12040", "sa-12046", "sa-12047", "sa-12048", "sa-12049", "sa-13012", "sa-13022", "sa-13023", "sa-13035", "sa-13044", "sa-13053", "sa-13057", "sa-13082", "sa-13088", "sa-13089"]
+    except: ["sa-2011", "sa-2105", "sa-2108", "sa-2111", "sa-2123", "sa-12000", "sa-12015", "sa-12023", "sa-12030", "sa-12034", "sa-12040", "sa-12046", "sa-12047", "sa-12048", "sa-12049", "sa-13012", "sa-13022", "sa-13023", "sa-13035", "sa-13044", "sa-13053", "sa-13057", "sa-13082", "sa-13088", "sa-13089", "sa-13090", "sa-13091", "sa-13092", "sa-13093", "sa-13094", "sa-13095", "sa-13097", "sa-13098", "sa-13099"]
   slots: ["ghan", "lyut", "trc", "ktin", "nvul"]
   rows:
     - word: "sa-0430"
@@ -554,6 +554,9 @@ table:
     - word: "sa-13087"
       forms: { "ghan": null, "lyut": null, "trc": "त्रप्तृ", "ktin": null, "nvul": null }
       readings: { "trc": "traptṛ" }
+    - word: "sa-13096"
+      forms: { "ghan": null, "lyut": null, "trc": "तर्षितृ", "ktin": null, "nvul": null }
+      readings: { "trc": "tarṣitṛ" }
 rules:
   - id: "sa-rule-krt-ghan"
     slots: ["ghan"]
