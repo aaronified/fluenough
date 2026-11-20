@@ -150,6 +150,12 @@ Owner, 2026-11-20: "After classical sanskrit, complete tamil. Then do A1 for all
 
 The order is now: (1) Classical Sanskrit to Complete (running), (2) Tamil to Complete on the app measure, (3) then A1 only for every other second-list language, Vedic Sanskrit included (Malayalam, Santali, Korean, Afrikaans, Italian, German, Russian, Greek, Polish, Vedic Sanskrit), one session at a time. This replaces "each to Complete" for the second list except Classical Sanskrit and Tamil. The 2026-11-17 rule "each second-list language to Complete" is superseded for every language except Classical Sanskrit and Tamil. See "Order after the first list" in `CLAUDE.md`.
 
+### Swahili replaces Afrikaans on the second list (owner, 2026-11-20)
+
+Owner, 2026-11-20: "Remove africaans in list 2 and replace it with the most spoken african language."
+
+Decision made by the orchestrator: Swahili (Kiswahili, `sw`), the most spoken African language by total speakers (about 200 million, mostly as a second language), takes Afrikaans's place on the second list, in the same position. Afrikaans moves to the third list (first words only). Swahili already has a language entry and a path (84 units, 1 built), so only its phonology plan is checked before its A1 build. See "Swahili replaces Afrikaans on the second list" in `CLAUDE.md`.
+
 ### Push straight to main (owner, 2026-10-11)
 
 `CLAUDE.md` still says, in "Pull requests for everything else": "(owner,

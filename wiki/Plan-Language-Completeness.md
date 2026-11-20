@@ -205,13 +205,13 @@ Owner (2026-11-13): "Deck work issues to be updated with the full deck format as
 | Vietnamese | vi | #380 | third list and others (first words only) | no ranked priority | path of 83 units, 1 built; 3 core files |
 | Filipino | fil | #382 | third list and others (first words only) | no ranked priority | path of 81 units, 1 built; 3 core files |
 | Malay | ms | #383 | third list and others (first words only) | no ranked priority | path of 82 units, 1 built; 3 core files |
-| Afrikaans | af | #1196 | second list (to A1; Classical Sanskrit to B1) | second-list position 5 | no path or decks yet (language entry only) |
+| Afrikaans | af | #1196 | third list (first words only) | third-list position 6 | no path or decks yet (language entry only) |
 | Dutch | nl | #1197 | third list (first words only) | third-list position 4 | no path or decks yet (language entry only) |
 | Ukrainian | uk | #1198 | third list (first words only) | third-list position 5 | no path or decks yet (language entry only) |
 | Indonesian | id | #1199 | third list (first words only) | third-list position 1 | no path or decks yet (language entry only) |
 | Persian | fa | #1200 | third list (first words only) | third-list position 2 | no path or decks yet (language entry only) |
 | Pashto | ps | #1201 | third list (first words only) | third-list position 3 | no path or decks yet (language entry only) |
-| Swahili | sw | #384 | third list and others (first words only) | no ranked priority | path of 84 units, 1 built; 3 core files |
+| Swahili | sw | #384 | second list (to A1; Classical Sanskrit to B1) | second-list position 5 | path of 84 units, 1 built; 3 core files |
 | Hausa | ha | #385 | third list and others (first words only) | no ranked priority | path of 83 units, 1 built; 3 core files |
 | Somali | so | #386 | third list and others (first words only) | no ranked priority | path of 82 units, 1 built; 3 core files |
 | Quechua | qu | #387 | third list and others (first words only) | no ranked priority | path of 82 units, 1 built; 3 core files |
