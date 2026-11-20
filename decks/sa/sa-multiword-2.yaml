@@ -1,0 +1,923 @@
+# Sanskrit prefixed verbs: other prefix and root pairs, each read on en.wiktionary.
+schema: 1
+id: "sa-multiword-2"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course; every headword read on en.wiktionary.org on 2026-11-20 (page, gloss and etymology line)"
+genre: "multiword"
+pattern_family: "prefix-root-verb"
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-8320"
+    target: "अत्येति"
+    reading: "atyeti"
+    ipa: "ət̪jeːt̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "अत्येति", base: "एति", reading: "eti" }
+    examples:
+      - target: "अत्येति पथिको नगरम्"
+        reading: "atyeti pathiko nagaram"
+        ipa: "ət̪jeːt̪i pət̪ʰikoː nəɡərəm"
+        bases:
+          - { word: "अत्येति", base: "एति", reading: "eti" }
+          - { word: "पथिको", ref: "sa-5501" }
+          - { word: "नगरम्", ref: "sa-1760" }
+      - target: "अत्येति सैनिको ग्रामम्"
+        reading: "atyeti sainiko grāmam"
+        ipa: "ət̪jeːt̪i səinikoː ɡraːməm"
+        bases:
+          - { word: "अत्येति", base: "एति", reading: "eti" }
+          - { word: "सैनिको", ref: "sa-9304" }
+          - { word: "ग्रामम्", ref: "sa-1759" }
+  - id: "sa-8321"
+    target: "अधितिष्ठति"
+    reading: "adhitiṣṭhati"
+    ipa: "əd̪ʱit̪iʂʈʰət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "अधितिष्ठति", ref: "sa-2002" }
+    examples:
+      - target: "अधितिष्ठति राजा सिंहासनम्"
+        reading: "adhitiṣṭhati rājā siṃhāsanam"
+        ipa: "əd̪ʱit̪iʂʈʰət̪i raːdʒaː sĩɦaːsənəm"
+        bases:
+          - { word: "अधितिष्ठति", ref: "sa-2002" }
+          - { word: "राजा", ref: "sa-2300" }
+          - { word: "सिंहासनम्", ref: "sa-5732" }
+      - target: "अधितिष्ठति नृपो राज्यम्"
+        reading: "adhitiṣṭhati nṛpo rājyam"
+        ipa: "əd̪ʱit̪iʂʈʰət̪i nr̩poː raːdʒjəm"
+        bases:
+          - { word: "अधितिष्ठति", ref: "sa-2002" }
+          - { word: "नृपो", ref: "sa-5718" }
+          - { word: "राज्यम्", ref: "sa-5700" }
+  - id: "sa-8322"
+    target: "अपनह्यति"
+    reading: "apanahyati"
+    ipa: "əpənəɦjət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "अपनह्यति", ref: "sa-12031" }
+    examples:
+      - target: "अपनह्यति बालो वस्त्रम्"
+        reading: "apanahyati bālo vastram"
+        ipa: "əpənəɦjət̪i baːloː ʋəst̪rəm"
+        bases:
+          - { word: "अपनह्यति", ref: "sa-12031" }
+          - { word: "बालो", base: "बाल", reading: "bāla" }
+          - { word: "वस्त्रम्", ref: "sa-1779" }
+      - target: "अपनह्यति पिता पादत्राणम्"
+        reading: "apanahyati pitā pādatrāṇam"
+        ipa: "əpənəɦjət̪i pit̪aː paːd̪ət̪raːɳəm"
+        bases:
+          - { word: "अपनह्यति", ref: "sa-12031" }
+          - { word: "पिता", ref: "sa-1031" }
+          - { word: "पादत्राणम्", ref: "sa-1784" }
+  - id: "sa-8323"
+    target: "अपोहति"
+    reading: "apohati"
+    ipa: "əpoːɦət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "अपोहति", base: "ऊहति", reading: "ūhati" }
+    examples:
+      - target: "अपोहति वैद्यो रोगम्"
+        reading: "apohati vaidyo rogam"
+        ipa: "əpoːɦət̪i ʋəid̪joː roːɡəm"
+        bases:
+          - { word: "अपोहति", base: "ऊहति", reading: "ūhati" }
+          - { word: "वैद्यो", ref: "sa-5936" }
+          - { word: "रोगम्", ref: "sa-5938" }
+      - target: "अपोहति जनो भयम्"
+        reading: "apohati jano bhayam"
+        ipa: "əpoːɦət̪i dʒənoː bʱəjəm"
+        bases:
+          - { word: "अपोहति", base: "ऊहति", reading: "ūhati" }
+          - { word: "जनो", base: "जन", reading: "jana" }
+          - { word: "भयम्", ref: "sa-5841" }
+  - id: "sa-8324"
+    target: "अवकर्षति"
+    reading: "avakarṣati"
+    ipa: "əʋəkərʂət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "अवकर्षति", ref: "sa-13023" }
+    examples:
+      - target: "अवकर्षति कृषको बलीवर्दं मार्गात्"
+        reading: "avakarṣati kṛṣako balīvardaṃ mārgāt"
+        ipa: "əʋəkərʂət̪i kr̩ʂəkoː bəliːʋərd̪əm maːrɡaːt̪"
+        bases:
+          - { word: "अवकर्षति", ref: "sa-13023" }
+          - { word: "कृषको", ref: "sa-1863" }
+          - { word: "बलीवर्दं", ref: "sa-5612" }
+          - { word: "मार्गात्", base: "मार्ग", reading: "mārga" }
+      - target: "अवकर्षति गोपालो वृषभं मार्गात्"
+        reading: "avakarṣati gopālo vṛṣabhaṃ mārgāt"
+        ipa: "əʋəkərʂət̪i ɡoːpaːloː ʋr̩ʂəbʱəm maːrɡaːt̪"
+        bases:
+          - { word: "अवकर्षति", ref: "sa-13023" }
+          - { word: "गोपालो", ref: "sa-5645" }
+          - { word: "वृषभं", ref: "sa-1740" }
+          - { word: "मार्गात्", base: "मार्ग", reading: "mārga" }
+  - id: "sa-8325"
+    target: "आकाङ्क्षते"
+    reading: "ākāṅkṣate"
+    ipa: "aːkaːŋkʂət̪eː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "आकाङ्क्षते", ref: "sa-13061" }
+    examples:
+      - target: "आकाङ्क्षते जनः सुखम्"
+        reading: "ākāṅkṣate janaḥ sukham"
+        ipa: "aːkaːŋkʂət̪eː dʒənəh sukʰəm"
+        bases:
+          - { word: "आकाङ्क्षते", ref: "sa-13061" }
+          - { word: "जनः", base: "जन", reading: "jana" }
+          - { word: "सुखम्", base: "सुख", reading: "sukha" }
+      - target: "आकाङ्क्षते शिष्यो ज्ञानम्"
+        reading: "ākāṅkṣate śiṣyo jñānam"
+        ipa: "aːkaːŋkʂət̪eː ʃiʂjoː dʒɲaːnəm"
+        bases:
+          - { word: "आकाङ्क्षते", ref: "sa-13061" }
+          - { word: "शिष्यो", ref: "sa-4101" }
+          - { word: "ज्ञानम्", ref: "sa-1849" }
+  - id: "sa-8326"
+    target: "आक्रोशति"
+    reading: "ākrośati"
+    ipa: "aːkroːʃət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "आक्रोशति", base: "क्रोशति", reading: "krośati" }
+    examples:
+      - target: "आक्रोशति गुरुः शिष्यम्"
+        reading: "ākrośati guruḥ śiṣyam"
+        ipa: "aːkroːʃət̪i ɡuruh ʃiʂjəm"
+        bases:
+          - { word: "आक्रोशति", base: "क्रोशति", reading: "krośati" }
+          - { word: "गुरुः", ref: "sa-4097" }
+          - { word: "शिष्यम्", ref: "sa-4101" }
+      - target: "आक्रोशति माता बालम्"
+        reading: "ākrośati mātā bālam"
+        ipa: "aːkroːʃət̪i maːt̪aː baːləm"
+        bases:
+          - { word: "आक्रोशति", base: "क्रोशति", reading: "krośati" }
+          - { word: "माता", ref: "sa-1030" }
+          - { word: "बालम्", base: "बाल", reading: "bāla" }
+  - id: "sa-8327"
+    target: "आक्षिपति"
+    reading: "ākṣipati"
+    ipa: "aːkʂipət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "आक्षिपति", ref: "sa-12043" }
+    examples:
+      - target: "आक्षिपति सैनिकः शत्रुम्"
+        reading: "ākṣipati sainikaḥ śatrum"
+        ipa: "aːkʂipət̪i səinikəh ʃət̪rum"
+        bases:
+          - { word: "आक्षिपति", ref: "sa-12043" }
+          - { word: "सैनिकः", ref: "sa-9304" }
+          - { word: "शत्रुम्", ref: "sa-5745" }
+      - target: "आक्षिपति वैद्यो दोषम्"
+        reading: "ākṣipati vaidyo doṣam"
+        ipa: "aːkʂipət̪i ʋəid̪joː d̪oːʂəm"
+        bases:
+          - { word: "आक्षिपति", ref: "sa-12043" }
+          - { word: "वैद्यो", ref: "sa-5936" }
+          - { word: "दोषम्", ref: "sa-5824" }
+  - id: "sa-8328"
+    target: "आचरति"
+    reading: "ācarati"
+    ipa: "aːtʃərət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "आचरति", ref: "sa-2014" }
+    examples:
+      - target: "आचरति पथिको ग्रामम्"
+        reading: "ācarati pathiko grāmam"
+        ipa: "aːtʃərət̪i pət̪ʰikoː ɡraːməm"
+        bases:
+          - { word: "आचरति", ref: "sa-2014" }
+          - { word: "पथिको", ref: "sa-5501" }
+          - { word: "ग्रामम्", ref: "sa-1759" }
+      - target: "आचरति सिंहो वनम्"
+        reading: "ācarati siṃho vanam"
+        ipa: "aːtʃərət̪i sĩɦoː ʋənəm"
+        bases:
+          - { word: "आचरति", ref: "sa-2014" }
+          - { word: "सिंहो", ref: "sa-1723" }
+          - { word: "वनम्", ref: "sa-1761" }
+  - id: "sa-8329"
+    target: "आयाति"
+    reading: "āyāti"
+    ipa: "aːjaːt̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "आयाति", ref: "sa-2107" }
+    examples:
+      - target: "आयाति पिता गृहम्"
+        reading: "āyāti pitā gṛham"
+        ipa: "aːjaːt̪i pit̪aː ɡr̩ɦəm"
+        bases:
+          - { word: "आयाति", ref: "sa-2107" }
+          - { word: "पिता", ref: "sa-1031" }
+          - { word: "गृहम्", ref: "sa-1747" }
+      - target: "आयाति गुरुर् नगरम्"
+        reading: "āyāti gurur nagaram"
+        ipa: "aːjaːt̪i ɡurur nəɡərəm"
+        bases:
+          - { word: "आयाति", ref: "sa-2107" }
+          - { word: "गुरुर्", ref: "sa-4097" }
+          - { word: "नगरम्", ref: "sa-1760" }
+  - id: "sa-8330"
+    target: "आह्वयति"
+    reading: "āhvayati"
+    ipa: "aːɦʋəjət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "आह्वयति", ref: "sa-2023" }
+    examples:
+      - target: "आह्वयति माता बालम्"
+        reading: "āhvayati mātā bālam"
+        ipa: "aːɦʋəjət̪i maːt̪aː baːləm"
+        bases:
+          - { word: "आह्वयति", ref: "sa-2023" }
+          - { word: "माता", ref: "sa-1030" }
+          - { word: "बालम्", base: "बाल", reading: "bāla" }
+      - target: "आह्वयति राजा वैद्यम्"
+        reading: "āhvayati rājā vaidyam"
+        ipa: "aːɦʋəjət̪i raːdʒaː ʋəid̪jəm"
+        bases:
+          - { word: "आह्वयति", ref: "sa-2023" }
+          - { word: "राजा", ref: "sa-2300" }
+          - { word: "वैद्यम्", ref: "sa-5936" }
+  - id: "sa-8331"
+    target: "उद्विजते"
+    reading: "udvijate"
+    ipa: "ud̪ʋidʒət̪eː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "उद्विजते", base: "विजते", reading: "vijate" }
+    examples:
+      - target: "उद्विजते बालः सर्पात्"
+        reading: "udvijate bālaḥ sarpāt"
+        ipa: "ud̪ʋidʒət̪eː baːləh sərpaːt̪"
+        bases:
+          - { word: "उद्विजते", base: "विजते", reading: "vijate" }
+          - { word: "बालः", base: "बाल", reading: "bāla" }
+          - { word: "सर्पात्", ref: "sa-5893" }
+      - target: "उद्विजते जनो रोगात्"
+        reading: "udvijate jano rogāt"
+        ipa: "ud̪ʋidʒət̪eː dʒənoː roːɡaːt̪"
+        bases:
+          - { word: "उद्विजते", base: "विजते", reading: "vijate" }
+          - { word: "जनो", base: "जन", reading: "jana" }
+          - { word: "रोगात्", ref: "sa-5938" }
+  - id: "sa-8332"
+    target: "उपनह्यति"
+    reading: "upanahyati"
+    ipa: "upənəɦjət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "उपनह्यति", ref: "sa-12031" }
+    examples:
+      - target: "उपनह्यति कृषको बलीवर्दं स्तम्भे"
+        reading: "upanahyati kṛṣako balīvardaṃ stambhe"
+        ipa: "upənəɦjət̪i kr̩ʂəkoː bəliːʋərd̪əm st̪əmbʱeː"
+        bases:
+          - { word: "उपनह्यति", ref: "sa-12031" }
+          - { word: "कृषको", ref: "sa-1863" }
+          - { word: "बलीवर्दं", ref: "sa-5612" }
+          - { word: "स्तम्भे", ref: "sa-1757" }
+      - target: "उपनह्यति गोपालो धेनुं वृक्षे"
+        reading: "upanahyati gopālo dhenuṃ vṛkṣe"
+        ipa: "upənəɦjət̪i ɡoːpaːloː d̪ʱeːnum ʋr̩kʂeː"
+        bases:
+          - { word: "उपनह्यति", ref: "sa-12031" }
+          - { word: "गोपालो", ref: "sa-5645" }
+          - { word: "धेनुं", ref: "sa-5613" }
+          - { word: "वृक्षे", ref: "sa-5000" }
+  - id: "sa-8333"
+    target: "उपन्यस्यति"
+    reading: "upanyasyati"
+    ipa: "upənjəsjət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "उपन्यस्यति", base: "अस्यति", reading: "asyati" }
+    examples:
+      - target: "उपन्यस्यति मन्त्री कार्यम्"
+        reading: "upanyasyati mantrī kāryam"
+        ipa: "upənjəsjət̪i mənt̪riː kaːrjəm"
+        bases:
+          - { word: "उपन्यस्यति", base: "अस्यति", reading: "asyati" }
+          - { word: "मन्त्री", ref: "sa-5717" }
+          - { word: "कार्यम्", ref: "sa-11511" }
+      - target: "उपन्यस्यति नृपः प्रश्नम्"
+        reading: "upanyasyati nṛpaḥ praśnam"
+        ipa: "upənjəsjət̪i nr̩pəh prəʃnəm"
+        bases:
+          - { word: "उपन्यस्यति", base: "अस्यति", reading: "asyati" }
+          - { word: "नृपः", ref: "sa-5718" }
+          - { word: "प्रश्नम्", ref: "sa-1848" }
+  - id: "sa-8334"
+    target: "उपविशति"
+    reading: "upaviśati"
+    ipa: "upəʋiʃət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "उपविशति", ref: "sa-2115" }
+    examples:
+      - target: "उपविशति नृपः सभायाम्"
+        reading: "upaviśati nṛpaḥ sabhāyām"
+        ipa: "upəʋiʃət̪i nr̩pəh səbʱaːjaːm"
+        bases:
+          - { word: "उपविशति", ref: "sa-2115" }
+          - { word: "नृपः", ref: "sa-5718" }
+          - { word: "सभायाम्", ref: "sa-5701" }
+      - target: "उपविशति शिष्यो गृहे"
+        reading: "upaviśati śiṣyo gṛhe"
+        ipa: "upəʋiʃət̪i ʃiʂjoː ɡr̩ɦeː"
+        bases:
+          - { word: "उपविशति", ref: "sa-2115" }
+          - { word: "शिष्यो", ref: "sa-4101" }
+          - { word: "गृहे", ref: "sa-1747" }
+  - id: "sa-8335"
+    target: "उल्लसति"
+    reading: "ullasati"
+    ipa: "ulləsət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "उल्लसति", base: "लसति", reading: "lasati" }
+    examples:
+      - target: "उल्लसति दीपो गृहे"
+        reading: "ullasati dīpo gṛhe"
+        ipa: "ulləsət̪i d̪iːpoː ɡr̩ɦeː"
+        bases:
+          - { word: "उल्लसति", base: "लसति", reading: "lasati" }
+          - { word: "दीपो", ref: "sa-1753" }
+          - { word: "गृहे", ref: "sa-1747" }
+      - target: "उल्लसति सूर्यो गगने"
+        reading: "ullasati sūryo gagane"
+        ipa: "ulləsət̪i suːrjoː ɡəɡəneː"
+        bases:
+          - { word: "उल्लसति", base: "लसति", reading: "lasati" }
+          - { word: "सूर्यो", ref: "sa-5012" }
+          - { word: "गगने", ref: "sa-5034" }
+  - id: "sa-8336"
+    target: "उल्लिखति"
+    reading: "ullikhati"
+    ipa: "ullikʰət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "उल्लिखति", ref: "sa-2114" }
+    examples:
+      - target: "उल्लिखति बालो भूमौ"
+        reading: "ullikhati bālo bhūmau"
+        ipa: "ullikʰət̪i baːloː bʱuːməu"
+        bases:
+          - { word: "उल्लिखति", ref: "sa-2114" }
+          - { word: "बालो", base: "बाल", reading: "bāla" }
+          - { word: "भूमौ", ref: "sa-5616" }
+      - target: "उल्लिखति कविः पत्रे"
+        reading: "ullikhati kaviḥ patre"
+        ipa: "ullikʰət̪i kəʋih pət̪reː"
+        bases:
+          - { word: "उल्लिखति", ref: "sa-2114" }
+          - { word: "कविः", ref: "sa-11008" }
+          - { word: "पत्रे", base: "पत्र", reading: "patra" }
+  - id: "sa-8337"
+    target: "निर्वाहयति"
+    reading: "nirvāhayati"
+    ipa: "nirʋaːɦəjət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "निर्वाहयति", base: "वाहयति", reading: "vāhayati" }
+    examples:
+      - target: "निर्वाहयति गुरुः कार्यम्"
+        reading: "nirvāhayati guruḥ kāryam"
+        ipa: "nirʋaːɦəjət̪i ɡuruh kaːrjəm"
+        bases:
+          - { word: "निर्वाहयति", base: "वाहयति", reading: "vāhayati" }
+          - { word: "गुरुः", ref: "sa-4097" }
+          - { word: "कार्यम्", ref: "sa-11511" }
+      - target: "निर्वाहयति राजा यज्ञम्"
+        reading: "nirvāhayati rājā yajñam"
+        ipa: "nirʋaːɦəjət̪i raːdʒaː jədʒɲəm"
+        bases:
+          - { word: "निर्वाहयति", base: "वाहयति", reading: "vāhayati" }
+          - { word: "राजा", ref: "sa-2300" }
+          - { word: "यज्ञम्", ref: "sa-1815" }
+  - id: "sa-8338"
+    target: "निष्कालयति"
+    reading: "niṣkālayati"
+    ipa: "niʂkaːləjət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "निष्कालयति", base: "कालयति", reading: "kālayati" }
+    examples:
+      - target: "निष्कालयति राजा चोरं नगरात्"
+        reading: "niṣkālayati rājā coraṃ nagarāt"
+        ipa: "niʂkaːləjət̪i raːdʒaː tʃoːrəm nəɡəraːt̪"
+        bases:
+          - { word: "निष्कालयति", base: "कालयति", reading: "kālayati" }
+          - { word: "राजा", ref: "sa-2300" }
+          - { word: "चोरं", ref: "sa-5746" }
+          - { word: "नगरात्", ref: "sa-1760" }
+      - target: "निष्कालयति गोपालो मृगं वनात्"
+        reading: "niṣkālayati gopālo mṛgaṃ vanāt"
+        ipa: "niʂkaːləjət̪i ɡoːpaːloː mr̩ɡəm ʋənaːt̪"
+        bases:
+          - { word: "निष्कालयति", base: "कालयति", reading: "kālayati" }
+          - { word: "गोपालो", ref: "sa-5645" }
+          - { word: "मृगं", ref: "sa-1729" }
+          - { word: "वनात्", ref: "sa-1761" }
+  - id: "sa-8339"
+    target: "परिहरति"
+    reading: "pariharati"
+    ipa: "pəriɦərət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "परिहरति", ref: "sa-2016" }
+    examples:
+      - target: "परिहरति जनो दोषम्"
+        reading: "pariharati jano doṣam"
+        ipa: "pəriɦərət̪i dʒənoː d̪oːʂəm"
+        bases:
+          - { word: "परिहरति", ref: "sa-2016" }
+          - { word: "जनो", base: "जन", reading: "jana" }
+          - { word: "दोषम्", ref: "sa-5824" }
+      - target: "परिहरति गुरुः क्रोधम्"
+        reading: "pariharati guruḥ krodham"
+        ipa: "pəriɦərət̪i ɡuruh kroːd̪ʱəm"
+        bases:
+          - { word: "परिहरति", ref: "sa-2016" }
+          - { word: "गुरुः", ref: "sa-4097" }
+          - { word: "क्रोधम्", ref: "sa-5808" }
+  - id: "sa-8340"
+    target: "प्रवदति"
+    reading: "pravadati"
+    ipa: "prəʋəd̪ət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "प्रवदति", ref: "sa-0433" }
+    examples:
+      - target: "प्रवदति गुरुर् वचनम्"
+        reading: "pravadati gurur vacanam"
+        ipa: "prəʋəd̪ət̪i ɡurur ʋətʃənəm"
+        bases:
+          - { word: "प्रवदति", ref: "sa-0433" }
+          - { word: "गुरुर्", ref: "sa-4097" }
+          - { word: "वचनम्", ref: "sa-10074" }
+      - target: "प्रवदति कविः काव्यम्"
+        reading: "pravadati kaviḥ kāvyam"
+        ipa: "prəʋəd̪ət̪i kəʋih kaːʋjəm"
+        bases:
+          - { word: "प्रवदति", ref: "sa-0433" }
+          - { word: "कविः", ref: "sa-11008" }
+          - { word: "काव्यम्", ref: "sa-9603" }
+  - id: "sa-8341"
+    target: "प्रवहति"
+    reading: "pravahati"
+    ipa: "prəʋəɦət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "प्रवहति", ref: "sa-2015" }
+    examples:
+      - target: "प्रवहति नदी वने"
+        reading: "pravahati nadī vane"
+        ipa: "prəʋəɦət̪i nəd̪iː ʋəneː"
+        bases:
+          - { word: "प्रवहति", ref: "sa-2015" }
+          - { word: "नदी", ref: "sa-1762" }
+          - { word: "वने", ref: "sa-1761" }
+      - target: "प्रवहति जलं पर्वते"
+        reading: "pravahati jalaṃ parvate"
+        ipa: "prəʋəɦət̪i dʒələm pərʋət̪eː"
+        bases:
+          - { word: "प्रवहति", ref: "sa-2015" }
+          - { word: "जलं", ref: "sa-0023" }
+          - { word: "पर्वते", ref: "sa-1763" }
+  - id: "sa-8342"
+    target: "प्रपद्यते"
+    reading: "prapadyate"
+    ipa: "prəpəd̪jət̪eː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "प्रपद्यते", ref: "sa-12037" }
+    examples:
+      - target: "प्रपद्यते कार्यं शुभम्"
+        reading: "prapadyate kāryaṃ śubham"
+        ipa: "prəpəd̪jət̪eː kaːrjəm ʃubʱəm"
+        bases:
+          - { word: "प्रपद्यते", ref: "sa-12037" }
+          - { word: "कार्यं", ref: "sa-11511" }
+          - { word: "शुभम्", base: "शुभ", reading: "śubha" }
+      - target: "प्रपद्यते फलं मधुरम्"
+        reading: "prapadyate phalaṃ madhuram"
+        ipa: "prəpəd̪jət̪eː pʰələm məd̪ʱurəm"
+        bases:
+          - { word: "प्रपद्यते", ref: "sa-12037" }
+          - { word: "फलं", base: "फल", reading: "phala" }
+          - { word: "मधुरम्", base: "मधुर", reading: "madhura" }
+  - id: "sa-8343"
+    target: "प्रापयति"
+    reading: "prāpayati"
+    ipa: "praːpəjət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "प्रापयति", base: "आपयति", reading: "āpayati" }
+    examples:
+      - target: "प्रापयति राजा विप्रं धनम्"
+        reading: "prāpayati rājā vipraṃ dhanam"
+        ipa: "praːpəjət̪i raːdʒaː ʋiprəm d̪ʱənəm"
+        bases:
+          - { word: "प्रापयति", base: "आपयति", reading: "āpayati" }
+          - { word: "राजा", ref: "sa-2300" }
+          - { word: "विप्रं", base: "विप्र", reading: "vipra" }
+          - { word: "धनम्", ref: "sa-5846" }
+      - target: "प्रापयति गुरुः शिष्यं ज्ञानम्"
+        reading: "prāpayati guruḥ śiṣyaṃ jñānam"
+        ipa: "praːpəjət̪i ɡuruh ʃiʂjəm dʒɲaːnəm"
+        bases:
+          - { word: "प्रापयति", base: "आपयति", reading: "āpayati" }
+          - { word: "गुरुः", ref: "sa-4097" }
+          - { word: "शिष्यं", ref: "sa-4101" }
+          - { word: "ज्ञानम्", ref: "sa-1849" }
+  - id: "sa-8344"
+    target: "विघटते"
+    reading: "vighaṭate"
+    ipa: "ʋiɡʱəʈət̪eː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "विघटते", ref: "sa-12026" }
+    examples:
+      - target: "विघटते मेघो वायुना"
+        reading: "vighaṭate megho vāyunā"
+        ipa: "ʋiɡʱəʈət̪eː meːɡʱoː ʋaːjunaː"
+        bases:
+          - { word: "विघटते", ref: "sa-12026" }
+          - { word: "मेघो", ref: "sa-5009" }
+          - { word: "वायुना", ref: "sa-5084" }
+      - target: "विघटते सभा रात्रौ"
+        reading: "vighaṭate sabhā rātrau"
+        ipa: "ʋiɡʱəʈət̪eː səbʱaː raːt̪rəu"
+        bases:
+          - { word: "विघटते", ref: "sa-12026" }
+          - { word: "सभा", ref: "sa-5701" }
+          - { word: "रात्रौ", base: "रात्रि", reading: "rātri" }
+  - id: "sa-8345"
+    target: "विराजति"
+    reading: "virājati"
+    ipa: "ʋiraːdʒət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "विराजति", ref: "sa-13002" }
+    examples:
+      - target: "विराजति राजा राज्ये"
+        reading: "virājati rājā rājye"
+        ipa: "ʋiraːdʒət̪i raːdʒaː raːdʒjeː"
+        bases:
+          - { word: "विराजति", ref: "sa-13002" }
+          - { word: "राजा", ref: "sa-2300" }
+          - { word: "राज्ये", ref: "sa-5700" }
+      - target: "विराजति सिंहो वने"
+        reading: "virājati siṃho vane"
+        ipa: "ʋiraːdʒət̪i sĩɦoː ʋəneː"
+        bases:
+          - { word: "विराजति", ref: "sa-13002" }
+          - { word: "सिंहो", ref: "sa-1723" }
+          - { word: "वने", ref: "sa-1761" }
+  - id: "sa-8346"
+    target: "विवर्धते"
+    reading: "vivardhate"
+    ipa: "ʋiʋərd̪ʱət̪eː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "विवर्धते", ref: "sa-12001" }
+    examples:
+      - target: "विवर्धते वृक्षो वने"
+        reading: "vivardhate vṛkṣo vane"
+        ipa: "ʋiʋərd̪ʱət̪eː ʋr̩kʂoː ʋəneː"
+        bases:
+          - { word: "विवर्धते", ref: "sa-12001" }
+          - { word: "वृक्षो", ref: "sa-5000" }
+          - { word: "वने", ref: "sa-1761" }
+      - target: "विवर्धते धनं गृहे"
+        reading: "vivardhate dhanaṃ gṛhe"
+        ipa: "ʋiʋərd̪ʱət̪eː d̪ʱənəm ɡr̩ɦeː"
+        bases:
+          - { word: "विवर्धते", ref: "sa-12001" }
+          - { word: "धनं", ref: "sa-5846" }
+          - { word: "गृहे", ref: "sa-1747" }
+  - id: "sa-8347"
+    target: "विश्रमते"
+    reading: "viśramate"
+    ipa: "ʋiʃrəmət̪eː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "विश्रमते", base: "श्रमते", reading: "śramate" }
+    examples:
+      - target: "विश्रमते पथिको गृहे"
+        reading: "viśramate pathiko gṛhe"
+        ipa: "ʋiʃrəmət̪eː pət̪ʰikoː ɡr̩ɦeː"
+        bases:
+          - { word: "विश्रमते", base: "श्रमते", reading: "śramate" }
+          - { word: "पथिको", ref: "sa-5501" }
+          - { word: "गृहे", ref: "sa-1747" }
+      - target: "विश्रमते कृषको रात्रौ"
+        reading: "viśramate kṛṣako rātrau"
+        ipa: "ʋiʃrəmət̪eː kr̩ʂəkoː raːt̪rəu"
+        bases:
+          - { word: "विश्रमते", base: "श्रमते", reading: "śramate" }
+          - { word: "कृषको", ref: "sa-1863" }
+          - { word: "रात्रौ", base: "रात्रि", reading: "rātri" }
+  - id: "sa-8348"
+    target: "विस्मरति"
+    reading: "vismarati"
+    ipa: "ʋismərət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "विस्मरति", ref: "sa-2008" }
+    examples:
+      - target: "विस्मरति शिष्यः पाठम्"
+        reading: "vismarati śiṣyaḥ pāṭham"
+        ipa: "ʋismərət̪i ʃiʂjəh paːʈʰəm"
+        bases:
+          - { word: "विस्मरति", ref: "sa-2008" }
+          - { word: "शिष्यः", ref: "sa-4101" }
+          - { word: "पाठम्", base: "पाठ", reading: "pāṭha" }
+      - target: "विस्मरति जनो मित्रम्"
+        reading: "vismarati jano mitram"
+        ipa: "ʋismərət̪i dʒənoː mit̪rəm"
+        bases:
+          - { word: "विस्मरति", ref: "sa-2008" }
+          - { word: "जनो", base: "जन", reading: "jana" }
+          - { word: "मित्रम्", ref: "sa-5744" }
+  - id: "sa-8349"
+    target: "समर्पयति"
+    reading: "samarpayati"
+    ipa: "səmərpəjət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "समर्पयति", base: "अर्पयति", reading: "arpayati" }
+    examples:
+      - target: "समर्पयति सैनिको बाणं शत्रवे"
+        reading: "samarpayati sainiko bāṇaṃ śatrave"
+        ipa: "səmərpəjət̪i səinikoː baːɳəm ʃət̪rəʋeː"
+        bases:
+          - { word: "समर्पयति", base: "अर्पयति", reading: "arpayati" }
+          - { word: "सैनिको", ref: "sa-9304" }
+          - { word: "बाणं", ref: "sa-9316" }
+          - { word: "शत्रवे", ref: "sa-5745" }
+      - target: "समर्पयति वीरो बाणं सिंहाय"
+        reading: "samarpayati vīro bāṇaṃ siṃhāya"
+        ipa: "səmərpəjət̪i ʋiːroː baːɳəm sĩɦaːjə"
+        bases:
+          - { word: "समर्पयति", base: "अर्पयति", reading: "arpayati" }
+          - { word: "वीरो", ref: "sa-7239" }
+          - { word: "बाणं", ref: "sa-9316" }
+          - { word: "सिंहाय", ref: "sa-1723" }
+  - id: "sa-8350"
+    target: "समाकुरुते"
+    reading: "samākurute"
+    ipa: "səmaːkurut̪eː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "समाकुरुते", ref: "sa-4053" }
+    examples:
+      - target: "समाकुरुते कृषको धान्यम्"
+        reading: "samākurute kṛṣako dhānyam"
+        ipa: "səmaːkurut̪eː kr̩ʂəkoː d̪ʱaːnjəm"
+        bases:
+          - { word: "समाकुरुते", ref: "sa-4053" }
+          - { word: "कृषको", ref: "sa-1863" }
+          - { word: "धान्यम्", ref: "sa-1862" }
+      - target: "समाकुरुते माता भोजनम्"
+        reading: "samākurute mātā bhojanam"
+        ipa: "səmaːkurut̪eː maːt̪aː bʱoːdʒənəm"
+        bases:
+          - { word: "समाकुरुते", ref: "sa-4053" }
+          - { word: "माता", ref: "sa-1030" }
+          - { word: "भोजनम्", ref: "sa-5894" }
+  - id: "sa-8351"
+    target: "सम्बुध्यते"
+    reading: "sambudhyate"
+    ipa: "səmbud̪ʱjət̪eː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "सम्बुध्यते", ref: "sa-12006" }
+    examples:
+      - target: "सम्बुध्यते बालः प्रभाते"
+        reading: "sambudhyate bālaḥ prabhāte"
+        ipa: "səmbud̪ʱjət̪eː baːləh prəbʱaːt̪eː"
+        bases:
+          - { word: "सम्बुध्यते", ref: "sa-12006" }
+          - { word: "बालः", base: "बाल", reading: "bāla" }
+          - { word: "प्रभाते", ref: "sa-5921" }
+      - target: "सम्बुध्यते शिष्यः सत्यम्"
+        reading: "sambudhyate śiṣyaḥ satyam"
+        ipa: "səmbud̪ʱjət̪eː ʃiʂjəh sət̪jəm"
+        bases:
+          - { word: "सम्बुध्यते", ref: "sa-12006" }
+          - { word: "शिष्यः", ref: "sa-4101" }
+          - { word: "सत्यम्", base: "सत्य", reading: "satya" }
+  - id: "sa-8352"
+    target: "सम्मीलति"
+    reading: "sammīlati"
+    ipa: "səmmiːlət̪i"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "सम्मीलति", base: "मीलति", reading: "mīlati" }
+    examples:
+      - target: "सम्मीलति बालो नेत्रे"
+        reading: "sammīlati bālo netre"
+        ipa: "səmmiːlət̪i baːloː neːt̪reː"
+        bases:
+          - { word: "सम्मीलति", base: "मीलति", reading: "mīlati" }
+          - { word: "बालो", base: "बाल", reading: "bāla" }
+          - { word: "नेत्रे", ref: "sa-1570" }
+      - target: "सम्मीलति पुष्पं रात्रौ"
+        reading: "sammīlati puṣpaṃ rātrau"
+        ipa: "səmmiːlət̪i puʂpəm raːt̪rəu"
+        bases:
+          - { word: "सम्मीलति", base: "मीलति", reading: "mīlati" }
+          - { word: "पुष्पं", ref: "sa-1801" }
+          - { word: "रात्रौ", base: "रात्रि", reading: "rātri" }
