@@ -14,7 +14,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["verb"]
-    except: ["sa-2011", "sa-2105", "sa-2108", "sa-2111", "sa-2123", "sa-12000", "sa-12015", "sa-12023", "sa-12030", "sa-12034", "sa-12040", "sa-12046", "sa-12047", "sa-12048", "sa-12049"]
+    except: ["sa-2011", "sa-2105", "sa-2108", "sa-2111", "sa-2123", "sa-12000", "sa-12015", "sa-12023", "sa-12030", "sa-12034", "sa-12040", "sa-12046", "sa-12047", "sa-12048", "sa-12049", "sa-13012"]
   slots: ["ghan", "lyut", "trc", "ktin", "nvul"]
   rows:
     - word: "sa-0430"
@@ -344,6 +344,33 @@ table:
     - word: "sa-13009"
       forms: { "ghan": null, "lyut": "शयन", "trc": "शयितृ", "ktin": null, "nvul": null }
       readings: { "lyut": "śayana", "trc": "śayitṛ" }
+    - word: "sa-13010"
+      forms: { "ghan": "शोच", "lyut": "शोचन", "trc": "शोचितृ", "ktin": "शुक्ति", "nvul": null }
+      readings: { "ghan": "śoca", "lyut": "śocana", "trc": "śocitṛ", "ktin": "śukti" }
+    - word: "sa-13011"
+      forms: { "ghan": null, "lyut": "सेचन", "trc": null, "ktin": "सिक्ति", "nvul": null }
+      readings: { "lyut": "secana", "ktin": "sikti" }
+    - word: "sa-13013"
+      forms: { "ghan": null, "lyut": "स्तवन", "trc": "स्तोतृ", "ktin": "स्तुति", "nvul": null }
+      readings: { "lyut": "stavana", "trc": "stotṛ", "ktin": "stuti" }
+    - word: "sa-13014"
+      forms: { "ghan": null, "lyut": null, "trc": "हिंसितृ", "ktin": null, "nvul": null }
+      readings: { "trc": "hiṃsitṛ" }
+    - word: "sa-13015"
+      forms: { "ghan": "दोष", "lyut": null, "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "doṣa" }
+    - word: "sa-13016"
+      forms: { "ghan": "वेद", "lyut": "वेदन", "trc": "वेदितृ", "ktin": "वित्ति", "nvul": "वेदक" }
+      readings: { "ghan": "veda", "lyut": "vedana", "trc": "veditṛ", "ktin": "vitti", "nvul": "vedaka" }
+    - word: "sa-13017"
+      forms: { "ghan": null, "lyut": "भजन", "trc": "भक्तृ", "ktin": "भक्ति", "nvul": "भाजक" }
+      readings: { "lyut": "bhajana", "trc": "bhaktṛ", "ktin": "bhakti", "nvul": "bhājaka" }
+    - word: "sa-13018"
+      forms: { "ghan": null, "lyut": "वचन", "trc": "वक्तृ", "ktin": null, "nvul": "वाचक" }
+      readings: { "lyut": "vacana", "trc": "vaktṛ", "nvul": "vācaka" }
+    - word: "sa-13019"
+      forms: { "ghan": "भर", "lyut": "भरण", "trc": "भर्तृ", "ktin": "भृति", "nvul": null }
+      readings: { "ghan": "bhara", "lyut": "bharaṇa", "trc": "bhartṛ", "ktin": "bhṛti" }
 rules:
   - id: "sa-rule-krt-ghan"
     slots: ["ghan"]
