@@ -475,9 +475,13 @@ class MailJobTest(unittest.TestCase):
 
     def test_the_proposals_never_see_the_key(self) -> None:
         seen: list = []
+        seen_revoked: list = []
 
         class Bot:
             threshold = 1
+
+            def set_revoked(self, codes) -> None:
+                seen_revoked.append(codes)
 
             def review(self, key_: str, code: str, review) -> str:
                 seen.append(repr(review))
@@ -498,6 +502,8 @@ class MailJobTest(unittest.TestCase):
                 redirect_stdout(io.StringIO()) as out:
             mail_to_issues.run(ENV, imap, filed.append, bot=Bot())
         self.assertEqual(len(seen), 1)
+        # The bot is told which codes are revoked (none here): never unknown.
+        self.assertEqual(seen_revoked, [frozenset()])
         for secret in (key(), "FLK1", KEY_ID):
             self.assertNotIn(secret, seen[0] + out.getvalue())
         # One use only: counted at filing, not again for the proposals.
