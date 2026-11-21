@@ -66,7 +66,7 @@ void main() {
 
     test('the first 100 words with basic suffix and form rules (the V3 '
         'adversary) pass with at most 1%, measured and 0.10 stronger', () {
-      // The fixture's first deck holds 6 words: 100 words are the first 17
+      // The fixture's first deck holds 8 words: 100 words are the first 13
       // decks, all below the top band.
       final known = (100 / fixture.perDeck).ceil() - 1;
       for (final bump in <double>[0, 0.05, 0.10]) {

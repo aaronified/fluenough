@@ -11,7 +11,7 @@ import 'package:fluenough/core/placement/reviewer_check_bank.dart';
 /// The fixture's size: [decks] decks of [perDeck] cards, level marks at a
 /// third, two thirds and the end.
 class ReviewerFixture {
-  ReviewerFixture({this.decks = 60, this.perDeck = 6}) {
+  ReviewerFixture({this.decks = 60, this.perDeck = 8}) {
     final all = <PlacementDeck>[];
     for (var d = 0; d < decks; d++) {
       all.add(
