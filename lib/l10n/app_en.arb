@@ -7882,9 +7882,9 @@
       }
     }
   },
-  "reviewSentWaitingCount": "{count} waiting for a second review",
+  "reviewSentWaitingCount": "{count} waiting for another speaker’s check",
   "@reviewSentWaitingCount": {
-    "description": "Under Reviewed and sent, after the decks sent: how many suggestions wait for a second review.",
+    "description": "Under Reviewed and sent, after the decks sent: how many suggestions wait for another speaker’s check.",
     "placeholders": {
       "count": {
         "type": "int",
@@ -7960,19 +7960,17 @@
   "@reviewSentRejectedLine": {
     "description": "Under Rejected."
   },
-  "reviewSentWaiting": "Waiting for a second review",
+  "reviewSentWaiting": "Waiting for another speaker’s check",
   "@reviewSentWaiting": {
     "description": "State of a sent suggestion that still needs acceptances."
   },
-  "reviewSentWaitingLine": "{count, plural, =0{Enough reviewers have accepted it; the deck update comes next} =1{1 more acceptance needed} other{{count} more acceptances needed}}",
+  "reviewSentWaitingLine": "Another speaker has to check it",
   "@reviewSentWaitingLine": {
-    "description": "Under Waiting for a second review. Never names a reviewer.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "3"
-      }
-    }
+    "description": "Under Waiting for another speaker's check. Never names a reviewer and never says how many checks are needed."
+  },
+  "reviewSentWaitingDone": "Checked; the deck update comes next",
+  "@reviewSentWaitingDone": {
+    "description": "Under Waiting for another speaker's check, once enough speakers have checked the suggestion. Never says how many that is."
   },
   "reviewSentUnknown": "Not known on this phone",
   "@reviewSentUnknown": {
@@ -8178,15 +8176,9 @@
   "@reviewGuideAgreeBody": {
     "description": "First paragraph of step 9 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
   },
-  "reviewGuideAgreeCount": "{count, plural, =1{When one other reviewer accepts a change exactly as written, it goes to learners} other{When {count} other reviewers accept a change exactly as written, it goes to learners}}, usually within an hour or two, after the automatic checks pass. The Fluenough team sets this number, and may raise it later.",
+  "reviewGuideAgreeCount": "When another speaker has checked a change and accepts it exactly as written, it goes to learners, usually within an hour or two, after the automatic checks pass.",
   "@reviewGuideAgreeCount": {
-    "description": "Second paragraph of step 9 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). count is how many reviewers other than the proposer must accept a change.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "1"
-      }
-    }
+    "description": "Second paragraph of step 9 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). Never says how many speakers must check."
   },
   "reviewGuideAgreeMore": "If several proposals concern the same part of a card, the first to be agreed wins and the others are closed. The team can undo any change. Until the team has set up the review bot, your reviews are filed for the team to read.",
   "@reviewGuideAgreeMore": {
@@ -14018,7 +14010,7 @@
   "@reviewGuideQuestionsBody": {
     "description": "First paragraph of the daily questions step of How reviewing works (docs/REVIEWING.md says the same)."
   },
-  "reviewGuideQuestionsSend": "Answers wait on your phone until you send them. They go in the same mail as your reviews that wait: tap Send answers here, or send from Settings under Reviewing, and one mail carries everything, a file for each deck and for each language. A data point is settled when two reviewers agree. When one says a point is wrong, that opens a proposal, and the next reviewer decides it: the same answer merges it, a Yes closes it for good. A recording can only be flagged when it is bad, and the card then uses text-to-speech.",
+  "reviewGuideQuestionsSend": "Answers wait on your phone until you send them. They go in the same mail as your reviews that wait: tap Send answers here, or send from Settings under Reviewing, and one mail carries everything, a file for each deck and for each language. A data point is settled when another speaker agrees. When one says a point is wrong, that opens a proposal, and the next reviewer decides it: the same answer merges it, a Yes closes it for good. A recording can only be flagged when it is bad, and the card then uses text-to-speech.",
   "@reviewGuideQuestionsSend": {
     "description": "Second paragraph of the daily questions step of How reviewing works (docs/REVIEWING.md says the same). “Send answers” must match reviewQuestionsSend."
   },
@@ -17064,5 +17056,75 @@
   "reviewFlaggedAll": "Review all {count}",
   "@reviewFlaggedAll": {"description": "Button that opens the flagged and contested cards one after the other.", "placeholders": {"count": {"type": "int"}}},
   "reviewFlaggedEmpty": "Nothing flagged",
-  "@reviewFlaggedEmpty": {"description": "Shown in place of the flagged list when no card is flagged or contested."}
+  "@reviewFlaggedEmpty": {"description": "Shown in place of the flagged list when no card is flagged or contested."},
+  "reviewQueueRow": "Review cards",
+  "@reviewQueueRow": {"description": "Settings row, in Reviewing, that opens the review queue: the unit to go on with and the flagged cards."},
+  "reviewQueueTabSession": "Session",
+  "@reviewQueueTabSession": {"description": "Tab of the Reviewing page: the unit the reviewer is going through."},
+  "reviewQueueResume": "Resume",
+  "@reviewQueueResume": {"description": "Button of the Session tab when a session is in progress: goes on with it."},
+  "reviewQueueStart": "Start",
+  "@reviewQueueStart": {"description": "Button of the Session tab when no session is in progress: starts one."},
+  "reviewQueueEmpty": "No cards to review",
+  "@reviewQueueEmpty": {"description": "Shown on the Reviewing page when the reviewer has no course with cards to review."},
+  "reviewQueueCourse": "{target} from {native}",
+  "@reviewQueueCourse": {"description": "Name of a course on the Reviewing page when the reviewer reviews more than one.", "placeholders": {"target": {"type": "String"}, "native": {"type": "String"}}},
+  "reviewQueueTabFlagged": "Flagged and contested {count}",
+  "@reviewQueueTabFlagged": {"description": "Screen-reader label of the second tab of the Reviewing page: the title and how many cards are listed.", "placeholders": {"count": {"type": "int"}}},
+  "reviewCardOf": "Card {n} of {total}",
+  "@reviewCardOf": {"description": "Compact line over a card in review: the card, and how many the group has.", "placeholders": {"n": {"type": "int"}, "total": {"type": "int"}}},
+  "reviewCardNumber": "Card {n}",
+  "@reviewCardNumber": {"description": "Compact line over a card reviewed from the deck view: its place in its unit.", "placeholders": {"n": {"type": "int"}}},
+  "reviewUnitPlace": "Unit {unit} · card {n} of {total}",
+  "@reviewUnitPlace": {"description": "Where a card sits: the unit and its place in it. Shown in the Unit row of a card in review.", "placeholders": {"unit": {"type": "int"}, "n": {"type": "int"}, "total": {"type": "int"}}},
+  "reviewOffenceMarked": "Marked as offensive",
+  "@reviewOffenceMarked": {"description": "The Offence row of a card in review: the card is marked as an offensive word."},
+  "reviewNeedsAnother": "Needs another speaker’s check",
+  "@reviewNeedsAnother": {"description": "Line over a card in review that another speaker has checked and that still needs a check. Never says how many checks are needed."},
+  "reviewAllGood": "All good",
+  "@reviewAllGood": {"description": "The one button at the end of a card in review when nothing is flagged: marks what was not flagged right and goes to the next card."},
+  "hintFlag": "Flag",
+  "@hintFlag": {"description": "Tooltip of the flag button of a facet of a card in review."},
+  "hintRight": "Right",
+  "@hintRight": {"description": "Tooltip of the tick button of a facet of a card in review."},
+  "reviewFlagFacet": "Flag {facet}",
+  "@reviewFlagFacet": {"description": "Screen-reader label of the flag button of a facet of a card in review.", "placeholders": {"facet": {"type": "String"}}},
+  "reviewFlagFacetOn": "{facet} flagged",
+  "@reviewFlagFacetOn": {"description": "Screen-reader label of the flag button of a facet that is flagged.", "placeholders": {"facet": {"type": "String"}}},
+  "reviewRightFacet": "Mark {facet} right",
+  "@reviewRightFacet": {"description": "Screen-reader label of the tick button of a facet of a card in review.", "placeholders": {"facet": {"type": "String"}}},
+  "reviewRightFacetOn": "{facet} marked right",
+  "@reviewRightFacetOn": {"description": "Screen-reader label of the tick button of a facet marked right.", "placeholders": {"facet": {"type": "String"}}},
+  "reviewFacetValue": "{facet}: {value}",
+  "@reviewFacetValue": {"description": "Screen-reader label of a facet row of a card in review: its name and what the card says.", "placeholders": {"facet": {"type": "String"}, "value": {"type": "String"}}},
+  "reviewEndCount": "{count, plural, =1{1 card checked} other{{count} cards checked}}",
+  "@reviewEndCount": {"description": "Screen-reader label of the number shown at the end of a session.", "placeholders": {"count": {"type": "int"}}},
+  "reviewEndContinue": "Continue with all cards",
+  "@reviewEndContinue": {"description": "Button at the end of a session of cards: goes on through every card of the course, least checked first."},
+  "reviewSecondNow": "Now",
+  "@reviewSecondNow": {"description": "Label over what a card says now, beside a proposed change."},
+  "reviewSecondProposed": "Proposed",
+  "@reviewSecondProposed": {"description": "Label over another speaker’s proposed change, beside what the card says now."},
+  "reviewSecondAccept": "Accept",
+  "@reviewSecondAccept": {"description": "Button: agree with another speaker’s proposed change."},
+  "reviewSecondReject": "Reject",
+  "@reviewSecondReject": {"description": "Button: the proposed change is wrong; the card is right as it is."},
+  "reviewSecondOffer": "Offer another",
+  "@reviewSecondOffer": {"description": "Button: offer a different fix in place of the proposed one."},
+  "reviewSecondRight": "Looks right",
+  "@reviewSecondRight": {"description": "Button on a flagged facet with no proposed change: the card is right as it is."},
+  "reviewSecondFix": "Offer a fix",
+  "@reviewSecondFix": {"description": "Button on a flagged facet with no proposed change: offer a fix."},
+  "reviewRivalChoose": "Choose",
+  "@reviewRivalChoose": {"description": "Button: take the selected one of several rival fixes."},
+  "reviewRivalNone": "None of these",
+  "@reviewRivalNone": {"description": "Option among rival fixes: none of them is right."},
+  "reviewDigestChanged": "Changed",
+  "@reviewDigestChanged": {"description": "Pill on a row of a unit’s digest: a fix is proposed."},
+  "reviewDigestChange": "{before} → {after}",
+  "@reviewDigestChange": {"description": "A digest row’s change: what the card says now, and what is proposed.", "placeholders": {"before": {"type": "String"}, "after": {"type": "String"}}},
+  "reviewThisUnit": "Review this unit",
+  "@reviewThisUnit": {"description": "Button on a unit in the deck view, for a reviewer: opens its cards one after the other with every detail."},
+  "reviewThisCard": "Review this card",
+  "@reviewThisCard": {"description": "Button on a card in the deck view, for a reviewer: opens it with every detail."}
 }

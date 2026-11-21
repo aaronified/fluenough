@@ -170,6 +170,7 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, String> _voices = const <String, String>{};
   String? _raterCode;
   bool _reviewIntroShown = false;
+  String? _reviewRun;
   Reviews _reviews = const Reviews();
   int _questionsPerDay = defaultQuestionsPerDay;
   QuestionLog _questions = const QuestionLog();
@@ -273,6 +274,14 @@ class SettingsNotifier extends ChangeNotifier {
   bool get reviewIntroShown => _reviewIntroShown;
   set reviewIntroShown(bool value) =>
       _set(_reviewIntroShown, value, (v) => _reviewIntroShown = v);
+
+  /// The review queue's runs, a JSON object of `ReviewRun.toJson` by course
+  /// (ADR-0058, W3): the session or pool group the reviewer is in in each, so that a closed review
+  /// resumes where it stopped. Null when there is none. Answers are not in
+  /// it: they are kept in [reviews] as they are given.
+  String? get reviewRun => _reviewRun;
+  set reviewRun(String? value) =>
+      _set(_reviewRun, value, (v) => _reviewRun = v);
 
   /// Every deck's review on this phone, sent or not. Not something the
   /// learner sets here: the review screens change it.
@@ -1566,6 +1575,7 @@ class SettingsNotifier extends ChangeNotifier {
     'tts_voices': jsonEncode(_voices),
     'rater_code': _raterCode ?? '',
     'review_intro_shown': '$_reviewIntroShown',
+    'review_run': _reviewRun ?? '',
     'reviews': _reviews.toJson(),
     'review_questions_per_day': '$_questionsPerDay',
     'review_questions': _questions.toJson(),
@@ -2011,6 +2021,9 @@ class SettingsNotifier extends ChangeNotifier {
       raterCode = '$v';
     }
     if (pick('review_intro_shown', flag) case final v?) reviewIntroShown = v;
+    if (pick('review_run', (t) => t) case final v?) {
+      reviewRun = v.isEmpty ? null : v;
+    }
     if (pick('reviews', Reviews.fromJson) case final v?) reviews = v;
     if (pick('review_questions_per_day', int.tryParse) case final v?) {
       reviewQuestionsPerDay = v;

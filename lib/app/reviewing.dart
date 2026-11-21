@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:math';
 
 import '../core/feedback/report.dart';
@@ -12,6 +13,7 @@ import '../core/review/review_question.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_file.dart';
 import '../core/review/review_quorum.dart';
+import '../core/review/review_session.dart';
 import '../core/review/review_receipt.dart';
 import 'app_info.dart';
 import 'app_log.dart';
@@ -54,10 +56,12 @@ class Reviewing {
   });
 
   /// How many reviewers other than the proposer must accept a change before
-  /// learners get it: the review quorum less the proposer's own review
-  /// ([kReviewQuorum], ADR-0058; it replaced the review bot's
-  /// `REVIEW_AGREEMENTS_NEEDED` setting, tools/review_bot.py). "How reviewing
-  /// works" and docs/REVIEWING.md both state it.
+  /// learners get it: the review quorum less the proposer's own review. It
+  /// derives from the one constant [kReviewQuorum] (ADR-0058; the review bot
+  /// reads the same number as `REVIEW_QUORUM` in tools/review_quorum.py, and
+  /// it replaced the bot's `REVIEW_AGREEMENTS_NEEDED` setting). Only the
+  /// rules read this number: no screen, string or guide shows it, they say
+  /// "another speaker checks it".
   static const int agreementsNeeded = kReviewQuorum - 1;
 
   final SettingsNotifier settings;
@@ -233,6 +237,45 @@ class Reviewing {
       receipts: List<ReviewReceipt>.unmodifiable(receipts),
     );
   });
+
+  Map<String, Object?> _runs() {
+    try {
+      final json = jsonDecode(settings.reviewRun ?? '');
+      if (json is Map) {
+        return <String, Object?>{
+          for (final e in json.entries)
+            if (e.key is String) e.key as String: e.value,
+        };
+      }
+    } on Object {
+      // Anything else is no run.
+    }
+    return <String, Object?>{};
+  }
+
+  /// The queue's run in [course] (a [ReviewPair.key]), the group of cards
+  /// the reviewer is going through there, or null when there is none
+  /// (ADR-0058, W3). Each course keeps its own.
+  ReviewRun? runOf(String course) {
+    final run = _runs()[course];
+    return run is Map ? ReviewRun.decode(jsonEncode(run)) : null;
+  }
+
+  /// The courses that have a run.
+  Set<String> get runCourses => _runs().keys.toSet();
+
+  /// Keeps [run] as [course]'s so that a closed review resumes, or with null
+  /// forgets it; other courses' runs stay. The answers are not in it:
+  /// [answerFacet] keeps them as they are given.
+  void keepRun(String course, ReviewRun? run) {
+    final runs = _runs();
+    if (run == null) {
+      runs.remove(course);
+    } else {
+      runs[course] = run.toJson();
+    }
+    settings.reviewRun = runs.isEmpty ? null : jsonEncode(runs);
+  }
 
   /// The answer to [proposal] on [card], or with [verdict] null, the answer
   /// taken back (ADR-0038). Sent with the review, like any mark.

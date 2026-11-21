@@ -14,8 +14,8 @@ branch of its own under `review-bot/`, each started afresh from `decks-live`
   a deck file whose every card is then checked is tagged `reviewed` in
   place of `unreviewed`. Merged as soon as the required checks pass.
 - **An agreement** (`review-bot/apply/<proposal>-<date>`): once
-  REVIEW_AGREEMENTS_NEEDED rater codes other than the proposer's have
-  accepted a proposal, its text is written into the field, and it and the
+  enough rater codes other than the proposer's (REVIEW_QUORUM less the
+  proposer's own) have accepted a proposal, its text is written into the field, and it and the
   other proposals on that field are removed. Merged the same way.
 - **Outdated proposals** (`review-bot/outdated/<language>-<ids>`):
   proposals whose field has changed since are removed.
@@ -75,10 +75,10 @@ Environment, through `mail_to_issues.py`:
         workflow from FLUENOUGH_BOT_APP_ID and FLUENOUGH_BOT_PRIVATE_KEY.
         Without it the bot does nothing and says so.
     REVIEW_AGREEMENTS_NEEDED  superseded (ADR-0058): ignored, and the
-        number comes from REVIEW_QUORUM in tools/review_quorum.py. It was how
-        many other reviewers must accept a proposal; 1 when unset or not a
-        whole number of at least 1. Kept as a name so a workflow that still
-        passes it does no harm.
+        number comes from the one constant REVIEW_QUORUM in
+        tools/review_quorum.py, less the proposer's own review (the app's
+        `Reviewing.agreementsNeeded`). Kept as a name so a workflow that
+        still passes it does no harm.
     GITHUB_TOKEN  the workflow's own token, to read check runs.
 """
 

@@ -20,8 +20,11 @@ Set<String> checkedByOf(
       if (d.cards.any((c) => c.id == card.id)) ...?d.deck.checkedBy[card.id],
 };
 
-/// "Checked by 2 speakers": how many reviewers signed a card off, under it
-/// on a word's card and in review. Nothing when no one has.
+/// "Checked by 3 speakers" (ADR-0058, decision 4; docs/mockups/reviewer-ux.html,
+/// frame 6): how many distinct reviewers checked a card, in small muted text
+/// under its example on a word's card, and in review. Nothing when no one
+/// has. Never the quorum, never "N of N" and never "needs N": only how many
+/// speakers did.
 class CheckedByLine extends StatelessWidget {
   const CheckedByLine({
     super.key,
@@ -42,8 +45,6 @@ class CheckedByLine extends StatelessWidget {
       child: Row(
         mainAxisAlignment: alignment,
         children: <Widget>[
-          Icon(Icons.verified_outlined, size: 16, color: color),
-          const SizedBox(width: 6),
           Flexible(
             child: Text(
               l10n.cardCheckedBy(count),

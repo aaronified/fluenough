@@ -3,14 +3,23 @@ import 'package:flutter/material.dart' hide Card;
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
-import '../../app/routes.dart';
 import '../../core/review/flagged_queue.dart';
+import '../../core/review/review_session.dart' show QueueCardRef;
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/system_bar.dart';
 import 'facet_labels.dart';
+import 'review_flow_page.dart';
 import 'review_waiting.dart';
+
+/// The decks the flagged queue reads for [state]'s reviewer, each with the
+/// other speakers' checks of its cards ([FlaggedSourceDeck.others], empty
+/// until the review bot publishes them, W9).
+List<FlaggedSourceDeck> flaggedSourcesOf(AppState state) => <FlaggedSourceDeck>[
+  for (final deck in state.reviewDecks)
+    FlaggedSourceDeck(deckId: deck.id, pair: pairOf(deck), cards: deck.cards),
+];
 
 /// The flagged queue of [state]'s reviewer: the cards of the courses they
 /// review with a facet flagged or contested ([FlaggedQueue]). Empty while
@@ -20,14 +29,7 @@ FlaggedQueue flaggedQueueOf(AppState state) {
   final code = reviewing.code;
   if (!reviewing.on || code == null) return FlaggedQueue.empty;
   return FlaggedQueue.build(
-    decks: <FlaggedSourceDeck>[
-      for (final deck in state.reviewDecks)
-        FlaggedSourceDeck(
-          deckId: deck.id,
-          pair: pairOf(deck),
-          cards: deck.cards,
-        ),
-    ],
+    decks: flaggedSourcesOf(state),
     allowed: reviewPairsOf(state),
     reviews: reviewing.reviews,
     ownCode: '$code',
@@ -51,15 +53,32 @@ Future<void> showFlagged(BuildContext context) => Navigator.of(context).push(
 );
 
 /// Flagged and contested (ADR-0058, decisions 5 and 10; docs/mockups/
-/// reviewer-ux.html, frame 1b): a row for each card, its word, a pill and the
-/// reason, and one button, "Review all N".
-///
-/// TODO(W3): a row and the button open the existing unit review of the
-/// card's deck ([AppRoutes.review]). The queue screens that show one card at
-/// a time, with its facets, and the flagged-only mode are W3: wire both to
-/// them with [FlaggedQueue.cards].
+/// reviewer-ux.html, frame 1b) on a page of its own: [FlaggedList] under a
+/// title. The Reviewing page shows the same list as its second tab.
 class FlaggedPage extends StatelessWidget {
   const FlaggedPage({super.key});
+
+  static const Key reviewAllKey = FlaggedList.reviewAllKey;
+
+  /// The row of the card [cardId] in [deckId].
+  static Key rowKey(String deckId, String cardId) =>
+      FlaggedList.rowKey(deckId, cardId);
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return Scaffold(
+      appBar: AppBar(title: Text(l10n.reviewFlaggedTitle)),
+      body: const FlaggedList(),
+    );
+  }
+}
+
+/// The flagged and contested cards: a row for each, its word, a pill and
+/// the reason, and one button, "Review all N". A row and the button open the
+/// flagged-only mode ([ReviewFlowPage.flagged]), the row from its own card.
+class FlaggedList extends StatelessWidget {
+  const FlaggedList({super.key});
 
   static const Key reviewAllKey = ValueKey<String>('flagged-review-all');
 
@@ -69,14 +88,10 @@ class FlaggedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
-    return Scaffold(
-      appBar: AppBar(title: Text(l10n.reviewFlaggedTitle)),
-      body: ListenableBuilder(
-        listenable: state.settings,
-        builder: (context, _) => _body(context, state),
-      ),
+    return ListenableBuilder(
+      listenable: state.settings,
+      builder: (context, _) => _body(context, state),
     );
   }
 
@@ -98,9 +113,10 @@ class FlaggedPage extends StatelessWidget {
             .firstOrNull
             ?.target ??
         card.cardId;
-    void open(FlaggedCard card) =>
-        Navigator.of(context)
-            .pushNamed(AppRoutes.review, arguments: card.deckId);
+    void open(FlaggedCard card) => showReviewFlagged(
+      context,
+      start: QueueCardRef(deckId: card.deckId, cardId: card.cardId),
+    );
     return ListView(
       padding: const EdgeInsetsDirectional.fromSTEB(
         16,
@@ -111,15 +127,15 @@ class FlaggedPage extends StatelessWidget {
       children: <Widget>[
         for (final card in queue.cards)
           _Row(
-            key: FlaggedPage.rowKey(card.deckId, card.cardId),
+            key: FlaggedList.rowKey(card.deckId, card.cardId),
             word: wordOf(card),
             card: card,
             onTap: () => open(card),
           ),
         const SizedBox(height: 14),
         FilledButton(
-          key: FlaggedPage.reviewAllKey,
-          onPressed: () => open(queue.cards.first),
+          key: FlaggedList.reviewAllKey,
+          onPressed: () => showReviewFlagged(context),
           child: Text(l10n.reviewFlaggedAll(queue.count)),
         ),
       ],
