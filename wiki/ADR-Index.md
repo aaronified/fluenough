@@ -61,5 +61,6 @@ Every architecture decision record in the wiki. Each one has its own page.
 - [ADR-0056](ADR-0056-SignWriting-For-Sign-Languages): Sign languages are written in SignWriting: symbols as text in a font, whole signs as pictures drawn from FSW
 - [ADR-0057](ADR-0057-Morse-Code-Course): Morse code is a notation course, taught by sight and by ear with generated tones
 - [ADR-0058](ADR-0058-Reviewer-UX): Reviewer UX: speaker-gated, facet-level reviews with a second-speaker check (proposed)
+- [ADR-0059](ADR-0059-Sounds-Decks-With-Compressed-Audio): Sounds decks: one card per sound, with Ogg Opus recordings fetched from Wikimedia, never synthesised (proposed)
 
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)
