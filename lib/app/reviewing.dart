@@ -1,5 +1,9 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
+
+import 'package:flutter/foundation.dart' show ValueNotifier;
+import 'package:flutter/services.dart' show AssetBundle, rootBundle;
 
 import '../core/feedback/report.dart';
 import '../core/models/card.dart';
@@ -14,6 +18,7 @@ import '../core/review/rater_code.dart';
 import '../core/review/review_file.dart';
 import '../core/review/review_quorum.dart';
 import '../core/review/review_session.dart';
+import '../core/review/reviewer_key.dart';
 import '../core/review/review_receipt.dart';
 import 'app_info.dart';
 import 'app_log.dart';
@@ -53,7 +58,15 @@ class Reviewing {
     required this.address,
     required this._deckById,
     required this._log,
-  });
+    ReviewerKeyring? keyring,
+    AssetBundle? keyringBundle,
+  }) : keyringNotifier = ValueNotifier<ReviewerKeyring>(
+         keyring ?? ReviewerKeyring(),
+       ) {
+    // Unless a test hands one over, the shipped public keys and the denylist
+    // are read from the app's assets. Until they are, no key is accepted.
+    if (keyring == null) unawaited(_loadKeyring(keyringBundle ?? rootBundle));
+  }
 
   /// How many reviewers other than the proposer must accept a change before
   /// learners get it: the review quorum less the proposer's own review. It
@@ -76,6 +89,81 @@ class Reviewing {
 
   /// Whether "Review decks" is on.
   bool get on => settings.reviewDecks;
+
+  // --- The signed reviewer key (ADR-0058, decision 8; W7) ---
+
+  /// The public keys and the denylist reviewer keys are checked against
+  /// (`assets/reviewer/`). Empty until the assets are read, and while the
+  /// owner has committed only the placeholder: then no key is accepted and
+  /// [keysEnabled] is false. Notifies when it is read.
+  final ValueNotifier<ReviewerKeyring> keyringNotifier;
+
+  Future<void> _loadKeyring(AssetBundle bundle) async {
+    try {
+      keyringNotifier.value = ReviewerKeyring.fromAssets(
+        publicKeysJson: await bundle.loadString(
+          'assets/reviewer/public_keys.json',
+        ),
+        denylistText: await bundle.loadString('assets/reviewer/denylist.txt'),
+      );
+    } catch (error) {
+      // No keyring: no key is accepted, and the row is not shown.
+      _log.warning('Reviewer keyring not read: ${error.runtimeType}');
+    }
+  }
+
+  /// Whether signed reviewer keys can be used at all: false until the owner
+  /// commits a real public key. The settings row is hidden while it is.
+  bool get keysEnabled => keyringNotifier.value.enabled;
+
+  String? _checkedText;
+  ReviewerKeyring? _checkedRing;
+  ReviewerKeyCheck? _checked;
+
+  /// What the keyring says of the key the reviewer pasted, or null when
+  /// none was. Checked again for the denylist whenever the keyring changes;
+  /// remembered otherwise, since the check is not free.
+  ReviewerKeyCheck? get keyCheck {
+    final text = settings.reviewerKey;
+    if (text == null || text.isEmpty) return null;
+    final ring = keyringNotifier.value;
+    if (_checked == null || _checkedText != text || _checkedRing != ring) {
+      _checked = ring.check(text);
+      _checkedText = text;
+      _checkedRing = ring;
+    }
+    return _checked;
+  }
+
+  /// The reviewer's key while it is good: signed by the owner and not
+  /// revoked. Null otherwise, and then nothing is unlocked and no proof is
+  /// sent.
+  ReviewerKey? get key {
+    final check = keyCheck;
+    return check != null && check.ok ? check.key : null;
+  }
+
+  /// What the reviewer's checks are worth: [ReviewerTier.provisional]
+  /// without a good key. The bot decides it again from the key and its
+  /// binding; this is for the screens.
+  ReviewerTier get tier => key?.tier ?? ReviewerTier.provisional;
+
+  /// Takes the key [text] pasted by the reviewer. A good key is kept, and
+  /// reviewing is turned on, making the rater code if there is none, so that
+  /// someone new needs one paste only. Anything else is kept nowhere. The
+  /// key is never written to the log.
+  ReviewerKeyCheck unlock(String text) {
+    final plain = text.replaceAll(RegExp(r'\s+'), '');
+    final result = keyringNotifier.value.check(plain);
+    if (!result.ok) return result;
+    settings.reviewerKey = plain;
+    if (!on || code == null) turnOn();
+    _log.event('Reviewer key accepted');
+    return result;
+  }
+
+  /// The proof the review mail carries: the key's text, only while it is good.
+  String? get keyProof => key == null ? null : settings.reviewerKey;
 
   /// The rater code, once one has been made.
   RaterCode? get code => RaterCode.tryParse(settings.raterCode ?? '');
@@ -354,6 +442,7 @@ class Reviewing {
             code: code,
             appVersion: AppInfo.version,
             made: made,
+            reviewerKey: keyProof,
             order: <String>[
               for (final card
                   in _deckById(deck.deckId)?.cards ?? const <Card>[])

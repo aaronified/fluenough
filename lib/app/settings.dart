@@ -169,6 +169,7 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, CultureOptions> _culture = const <String, CultureOptions>{};
   Map<String, String> _voices = const <String, String>{};
   String? _raterCode;
+  String? _reviewerKey;
   bool _reviewIntroShown = false;
   String? _reviewRun;
   Reviews _reviews = const Reviews();
@@ -268,6 +269,14 @@ class SettingsNotifier extends ChangeNotifier {
   String? get raterCode => _raterCode;
   set raterCode(String? value) =>
       _set(_raterCode, value, (v) => _raterCode = v);
+
+  /// The signed reviewer key the owner gave the reviewer (ADR-0058, W7),
+  /// pasted in Settings > Reviewing, or null. **A secret**: it goes only into
+  /// the review files of the reviewer's own mail, as proof, and never into a
+  /// log, a report or a screen. Kept as pasted, with no whitespace.
+  String? get reviewerKey => _reviewerKey;
+  set reviewerKey(String? value) =>
+      _set(_reviewerKey, value, (v) => _reviewerKey = v);
 
   /// Whether "How reviewing works" has opened by itself, which it does
   /// once, the first time reviewing is turned on.
@@ -1574,6 +1583,7 @@ class SettingsNotifier extends ChangeNotifier {
     }),
     'tts_voices': jsonEncode(_voices),
     'rater_code': _raterCode ?? '',
+    'reviewer_key': _reviewerKey ?? '',
     'review_intro_shown': '$_reviewIntroShown',
     'review_run': _reviewRun ?? '',
     'reviews': _reviews.toJson(),
@@ -2019,6 +2029,9 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('rater_code', RaterCode.tryParse) case final v?) {
       raterCode = '$v';
+    }
+    if (pick('reviewer_key', (t) => t) case final v?) {
+      reviewerKey = v.isEmpty ? null : v;
     }
     if (pick('review_intro_shown', flag) case final v?) reviewIntroShown = v;
     if (pick('review_run', (t) => t) case final v?) {

@@ -64,7 +64,7 @@ CODE_OF_TIER = {tier: code for code, tier in TIER_CODES.items()}
 
 KEY_ID = re.compile(r"[0-9a-f]{16}")
 COURSE = re.compile(r"[a-z]{2,3}(/[a-z]{2,3})?")
-DATE = re.compile(r"\d{4}-\d{2}-\d{2}")
+DATE = re.compile(r"\d{4}-\d{2}-\d{2}", re.ASCII)
 TOKEN = re.compile(r"FLK1\.[A-Za-z0-9_.\-]+")
 
 ROOT = Path(__file__).resolve().parent.parent

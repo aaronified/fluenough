@@ -27,11 +27,18 @@ abstract final class ReviewFile {
   /// [deck]'s unsent reviews as the file's text, made at [made] by [code]
   /// with app [appVersion]. Cards come in [order], their deck's order,
   /// then any the deck no longer has.
+  ///
+  /// With [reviewerKey], the reviewer's signed key (ADR-0058, W7) goes in the
+  /// file as `reviewer_key`, the secret proof that this code is a Verified
+  /// reviewer's. It is the only place the key leaves the phone, and the mail
+  /// bot strips it before anything is published. Additive: a file without it
+  /// is read exactly as before, and `version` stays.
   static String encode(
     DeckReview deck, {
     required RaterCode code,
     required String appVersion,
     required DateTime made,
+    String? reviewerKey,
     List<String> order = const <String>[],
   }) {
     final unsent = deck.unsentCards;
@@ -45,6 +52,8 @@ abstract final class ReviewFile {
       'format': format,
       'version': version,
       'rater_code': '$code',
+      if (reviewerKey != null && reviewerKey.isNotEmpty)
+        'reviewer_key': reviewerKey,
       'language': deck.language,
       'deck': deck.deckId,
       'app_version': appVersion,

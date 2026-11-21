@@ -5,6 +5,7 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/routes.dart';
 import '../../core/review/review_pairs.dart';
+import '../../core/review/reviewer_key.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/snack.dart';
@@ -14,6 +15,7 @@ import 'flagged_page.dart' show flaggedQueueOf;
 import 'how_reviewing_works.dart';
 import 'questions_per_day.dart';
 import 'review_queue_page.dart';
+import 'reviewer_key_sheet.dart';
 import 'review_waiting.dart';
 import 'review_words.dart' show hasOrdinaryCards;
 import 'send_reviews_sheet.dart';
@@ -40,7 +42,10 @@ class ReviewSection extends StatelessWidget {
     final state = AppScope.of(context);
     // What it shows is kept in the settings, which notify on their own.
     return ListenableBuilder(
-      listenable: state.settings,
+      listenable: Listenable.merge(<Listenable>[
+        state.settings,
+        state.reviewing.keyringNotifier,
+      ]),
       builder: (context, _) => _build(context, state),
     );
   }
@@ -82,6 +87,27 @@ class ReviewSection extends StatelessWidget {
           onChanged: (value) =>
               value ? _turnOn(context, state) : reviewing.turnOff(),
         ),
+        // Signed reviewer keys (ADR-0058, W7): the row is there only once the
+        // owner has shipped a public key, and a new reviewer needs no other
+        // step than pasting it.
+        if (reviewing.keysEnabled)
+          GroupedTile(
+            leading: const Icon(Icons.vpn_key_outlined),
+            title: reviewing.key == null
+                ? l10n.reviewKeyRow
+                : l10n.reviewKeyTitle,
+            subtitle: switch (reviewing.keyCheck) {
+              final check? when check.ok => reviewerTierLabel(
+                l10n,
+                check.key!.tier,
+              ),
+              final check? when check.status == ReviewerKeyStatus.revoked =>
+                l10n.reviewKeyRevoked,
+              _ => null,
+            },
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => showReviewerKey(context),
+          ),
         if (on)
           GroupedTile(
             leading: const Icon(Icons.key_outlined),
