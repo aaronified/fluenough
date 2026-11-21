@@ -103,3 +103,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | te-9299 | sound-inventory | వ (va): the card says a soft sound between English v and w (ʋ). Is that the right description for a beginner? | Telugu speaker | 2026-11-21 |
 | te-9270 | sound-inventory | ఋ (ru) is taught as said ru (the course's reading). Is that how it is said today, or r̥ or rɯ in some speech? | Telugu speaker | 2026-11-21 |
 | te-9307 | sound-inventory | The six double-consonant cards (te-9307 to te-9312) say a double consonant is held longer: is there a better plain description, and are the example words the clearest? | Telugu speaker | 2026-11-21 |
+| unit-level | sound-inventory | ఱ (ṟa) and the other te-sounds contrast pairs with no card yet (the double consonants beyond the six, 14 pairs in all) are deferred: the course has no modern word or tool support for ఱ. Should a later pass add them? | Telugu speaker | 2026-11-21 |
