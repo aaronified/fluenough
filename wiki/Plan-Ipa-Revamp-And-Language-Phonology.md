@@ -467,6 +467,30 @@ Counted there: 2,960 `phonetic` fields, each with a `phonetic_source` line,
 of which 2,879 are `rules` and 81 `wiktionary`. This is the split after two
 cards were re-derived by the rules.
 
+**Spanish rules, gaps 3 and 4 of #1369 (tools side, 2026-11-21).** The
+engine needs no code change for them: `derive_phonetic.py` applies each rule's
+regular expression in order, so a lookahead that crosses a word boundary, a rule
+placed after one that rewrote its context, and a rule that adds a diacritic are
+all plain rules; `--rederive` (PR #1372) re-derives the `rules` cards. The
+tests use fixture rules (`SpanishRuleKinds` in `tools/test_phonetic.py`). The
+rule entries, decided by the architect on #1369 and for
+`decks/es/es-phonetics.yaml` on decks-live (a separate pull request there; the
+file there already holds them when this was written, so check before adding):
+
+```yaml
+  # after es-n-palatal, before es-n-dental
+  - id: "es-y-palatal-stop"
+    pattern: '(^ˈ?|[nlɲ][ ˈ]*)ʝ'
+    replace: '\1ɟ͡ʝ'
+  # anywhere after es-n-dental
+  - id: "es-l-dental"
+    pattern: 'l(?=ˈ?[tdθ])'
+    replace: 'l̪'
+```
+
+Each carries a `source` (Navarro Tomas 1918; Hualde 2005; Wikipedia, Spanish
+phonology). Then `python3 tools/derive_phonetic.py es --rederive --write`.
+
 ## Steps (Proposed, each one pull request)
 
 | # | Step | Done when |

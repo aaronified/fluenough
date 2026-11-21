@@ -288,6 +288,28 @@ class NewLanguagesTest(unittest.TestCase):
                 t = transcribe(kana, "ja")
                 self.assertEqual((t.reading, t.ipa), (reading, ipa))
 
+    def test_the_voiced_velar_before_a_small_ya_yu_yo_is_the_ipa_letter(self) -> None:
+        # #1428: the stem was Hepburn's ASCII g (U+0067); the house IPA
+        # writes the script ɡ (U+0261).
+        for kana, reading, ipa in (
+            ("ぎゃ", "gya", "\u0261ja"),
+            ("ぎゅ", "gyu", "\u0261j\u026f"),
+            ("ぎょ", "gyo", "\u0261jo"),
+            ("ギョーザ", "gyooza", "\u0261joːdza"),
+            ("いっぎょう", "iggyou", "i\u0261\u0261joː"),
+        ):
+            with self.subTest(kana):
+                t = transcribe(kana, "ja")
+                self.assertEqual((t.reading, t.ipa), (reading, ipa))
+
+    def test_no_japanese_kana_reading_has_an_ascii_g_in_its_ipa(self) -> None:
+        from transcribe import _KANA, _SMALL_VOWELS, _YOON
+        for c in _KANA:
+            for small in ("", *_YOON, *_SMALL_VOWELS):
+                with self.subTest(c + small):
+                    ipa = transcribe(c + small, "ja").ipa
+                    self.assertNotIn("g", ipa)
+
     def test_han_cannot_be_read_from_their_shape(self) -> None:
         with self.assertRaises(CannotRead):
             transcribe("日本語", "ja")

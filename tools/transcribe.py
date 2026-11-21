@@ -1920,7 +1920,8 @@ _YOON = {"ゃ": "a", "ゅ": "u", "ょ": "o"}
 _YOON_IPA = {"a": "a", "u": "ɯ", "o": "o"}
 # The three letters Hepburn writes whole before a small ya, yu or yo.
 _YOON_WHOLE = {"shi": ("sh", "ɕ"), "chi": ("ch", "tɕ"), "ji": ("j", "dʑ")}
-_YOON_IPA_STEM = {"hi": "ç", "ni": "ɲ", "ri": "ɾj"}
+# gi is here because Hepburn's ASCII g must not leak into the IPA (#1428).
+_YOON_IPA_STEM = {"hi": "ç", "ni": "ɲ", "ri": "ɾj", "gi": "ɡj"}
 _KANA_PUNCT = {"。": ".", "、": ",", "？": "?", "！": "!", "，": ",",
                "．": ".", "・": " ", "　": " ", "「": "'", "」": "'"}
 _LONG = {("a", "a"), ("i", "i"), ("u", "u"), ("e", "e"), ("e", "i"),
