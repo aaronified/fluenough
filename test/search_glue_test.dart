@@ -10,6 +10,7 @@ import 'dart:typed_data';
 import 'package:fluenough/app/deck_downloads.dart';
 import 'package:fluenough/app/downloaded_decks.dart';
 import 'package:fluenough/app/item_search.dart';
+import 'package:fluenough/app/media_image_cache.dart';
 import 'package:fluenough/app/recommendation_feed.dart';
 import 'package:fluenough/app/topics.dart';
 import 'package:fluenough/core/decks/deck_fetch.dart';
@@ -18,6 +19,7 @@ import 'package:fluenough/core/search/search_items.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/kinds_fixture.dart';
+import 'support/memory_blob_store.dart';
 import 'support/kinds_world.dart';
 
 /// Serves bytes by path and records what was asked.
@@ -60,12 +62,16 @@ Uint8List _indexOf(Uint8List image, {String? sha}) => Uint8List.fromList(
   ),
 );
 
-DeckDownloads _downloads(_Bytes fetcher, MemoryDownloadedDecks phone) =>
-    DeckDownloads(
-      fetcher: fetcher,
-      files: phone,
-      clock: () => DateTime(2026, 11, 12),
-    );
+DeckDownloads _downloads(
+  _Bytes fetcher,
+  MemoryDownloadedDecks phone, [
+  MemoryBlobStore? pictures,
+]) => DeckDownloads(
+  fetcher: fetcher,
+  files: phone,
+  clock: () => DateTime(2026, 11, 12),
+  images: MediaImageCache(store: pictures),
+);
 
 void main() {
   group('the typed search, fed from the catalog', () {
@@ -154,7 +160,8 @@ void main() {
           _image: image,
         });
         final phone = MemoryDownloadedDecks();
-        final first = _downloads(fetcher, phone);
+        final pictures = MemoryBlobStore();
+        final first = _downloads(fetcher, phone, pictures);
         expect(await first.creatorImage(_image), image);
         expect(await first.creatorImage(_image), image);
         expect(fetcher.asked.where((p) => p == _image), hasLength(1));
@@ -162,7 +169,10 @@ void main() {
         final again = _Bytes(<String, Uint8List>{
           'decks/index.json': _indexOf(image),
         });
-        expect(await _downloads(again, phone).creatorImage(_image), image);
+        expect(
+          await _downloads(again, phone, pictures).creatorImage(_image),
+          image,
+        );
         expect(again.asked, isNot(contains(_image)));
       },
     );
@@ -192,15 +202,67 @@ void main() {
           'decks/index.json': _indexOf(image),
           _image: other,
         });
-        final phone = MemoryDownloadedDecks();
-        final d = _downloads(fetcher, phone);
+        final pictures = MemoryBlobStore();
+        final d = _downloads(fetcher, MemoryDownloadedDecks(), pictures);
         expect(await d.creatorImage(_image), isNull);
-        expect(
-          await phone.readNote('creator-image-${sha256Hex(image)}.b64'),
-          isNull,
-        );
+        expect(pictures.data, isEmpty);
       },
     );
+
+    test(
+      'an old base64 note is ignored, never crashes, and is replaced',
+      () async {
+        final image = _bytes(64);
+        final fetcher = _Bytes(<String, Uint8List>{
+          'decks/index.json': _indexOf(image),
+          _image: image,
+        });
+        final phone = MemoryDownloadedDecks();
+        final name = 'creator-image-${sha256Hex(image)}.b64';
+        for (final old in <String>[base64Encode(image), '%%% not base64 %%%']) {
+          phone.notes[name] = old;
+          final pictures = MemoryBlobStore();
+          final d = _downloads(fetcher, phone, pictures);
+          expect(await d.creatorImage(_image), image);
+          expect(pictures.data[MediaImageCache.keyOf(sha256Hex(image))], image);
+          // The note is left as it was: unused.
+          expect(phone.notes[name], old);
+        }
+      },
+    );
+
+    test('is shown offline from the phone', () async {
+      final image = _bytes(64);
+      final fetcher = _Bytes(<String, Uint8List>{
+        'decks/index.json': _indexOf(image),
+        _image: image,
+      });
+      final phone = MemoryDownloadedDecks();
+      final pictures = MemoryBlobStore();
+      await _downloads(fetcher, phone, pictures).creatorImage(_image);
+      // The picture is not reachable now, only the index.
+      final offline = _Bytes(<String, Uint8List>{
+        'decks/index.json': _indexOf(image),
+      });
+      final d = _downloads(offline, phone, pictures);
+      expect(await d.creatorImage(_image), image);
+      expect(offline.asked, isNot(contains(_image)));
+    });
+
+    test('is forgotten when its course is removed', () async {
+      final image = _bytes(64);
+      final fetcher = _Bytes(<String, Uint8List>{
+        'decks/index.json': _indexOf(image),
+        _image: image,
+      });
+      final pictures = MemoryBlobStore();
+      final d = _downloads(fetcher, MemoryDownloadedDecks(), pictures);
+      expect(await d.creatorImage(_image), image);
+      expect(pictures.data, isNotEmpty);
+      await d.remove('zz');
+      expect(pictures.data, isEmpty);
+      expect(d.images.entries, 0);
+    });
 
     test('is nothing offline, and tried again next time', () async {
       final image = _bytes(64);

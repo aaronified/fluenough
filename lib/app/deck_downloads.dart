@@ -15,6 +15,7 @@ import 'app_log.dart';
 import 'deck_catalog.dart';
 import 'downloaded_decks.dart';
 import 'fair_slots.dart';
+import 'media_image_cache.dart';
 import 'script_fonts.dart';
 
 /// Why a language's decks could not be downloaded (ADR-0037).
@@ -131,13 +132,15 @@ class DeckDownloads extends ChangeNotifier {
     this._log,
     this.check = DeckCatalog.checkFile,
     ScriptFonts? scriptFonts,
+    MediaImageCache? images,
     this.appVersion = AppInfo.version,
     this.reviewQueueTimeout = const Duration(seconds: 5),
     this.mismatchRetryDelays = const <Duration>[
       Duration(seconds: 1),
       Duration(seconds: 3),
     ],
-  }) : fonts = scriptFonts ?? ScriptFonts();
+  }) : fonts = scriptFonts ?? ScriptFonts(),
+       images = images ?? MediaImageCache();
 
   /// How long after the last check an automatic one is due.
   static const Duration interval = Duration(days: 1);
@@ -1315,29 +1318,25 @@ class DeckDownloads extends ChangeNotifier {
   // ---------------------------------------------------------------------------
   // Creators' images (deck-kinds plan, D5, T15 glue)
 
-  static const String _creatorImagePrefix = 'creator-image-';
-  final Map<String, Uint8List> _creatorImages = <String, Uint8List>{};
-  final Map<String, Future<Uint8List?>> _creatorImageJobs =
-      <String, Future<Uint8List?>>{};
+  /// The pictures kept for the culture screens, in the store beside the
+  /// decks and bounded in memory (`MediaImageCache`).
+  ///
+  /// Before this cache a picture was kept as a base64 note
+  /// (`creator-image-<sha>.b64`) and in an unbounded map. Those notes are no
+  /// longer read: they are left unused (the notes store has no delete), and a
+  /// picture in one is fetched again into the binary store. They take at
+  /// most the pictures of one release (1024 px, a few hundred KB each).
+  final MediaImageCache images;
 
   /// The creator image at [path] (`decks/creators/images/te-x.jpg`, as a
   /// creator's `image.file` names it), downloaded when it is first shown and
   /// kept on the phone: only when the index lists it in `shared_media`, and
   /// only when its size and hash match, as for any file. A second call while
-  /// one runs waits for it. Returns null when it is not listed, cannot be
-  /// reached or does not match; the screen then draws its placeholder. Never
-  /// throws, and logs what it could not do.
-  Future<Uint8List?> creatorImage(String path) {
-    final kept = _creatorImages[path];
-    if (kept != null) return Future<Uint8List?>.value(kept);
-    return _creatorImageJobs[path] ??= _loadCreatorImage(path).whenComplete(() {
-      // A block body: returning the removed job would make this wait on
-      // itself for ever.
-      _creatorImageJobs.remove(path);
-    });
-  }
-
-  Future<Uint8List?> _loadCreatorImage(String path) async {
+  /// one runs waits for it, and a kept one is read from the phone, so it is
+  /// shown offline. Returns null when it is not listed, cannot be reached or
+  /// does not match; the screen then draws its placeholder. Never throws,
+  /// and logs what it could not do.
+  Future<Uint8List?> creatorImage(String path) async {
     try {
       if (_index == null && !await ensureIndex()) return null;
       SharedMediaFile? listed;
@@ -1348,37 +1347,33 @@ class DeckDownloads extends ChangeNotifier {
         _log?.warning('Creator image is not in the index: $path');
         return null;
       }
-      final note = '$_creatorImagePrefix${listed.sha256}.b64';
-      try {
-        final text = await files.readNote(note);
-        if (text != null) {
-          final bytes = base64Decode(text);
-          if (bytes.length == listed.size &&
-              sha256Hex(bytes) == listed.sha256) {
-            return _creatorImages[path] = Uint8List.fromList(bytes);
-          }
-        }
-      } on Object catch (e) {
-        _log?.warning('Kept creator image could not be read ($path): $e');
-      }
-      final fetched = await _fetchChecked(
-        IndexFile(path: path, size: listed.size, sha256: listed.sha256),
-      );
-      final bytes = fetched.bytes;
-      if (bytes == null) return null;
-      final image = Uint8List.fromList(bytes);
-      _creatorImages[path] = image;
-      try {
-        await files.writeNote(note, base64Encode(image));
-      } on Object catch (e) {
-        // Shown this session, fetched again the next.
-        _log?.warning('Creator image could not be kept ($path): $e');
-      }
-      return image;
+      final media = listed;
+      return await images.load(media.sha256, media.size, () async {
+        final fetched = await _fetchChecked(
+          IndexFile(path: path, size: media.size, sha256: media.sha256),
+        );
+        final bytes = fetched.bytes;
+        return bytes == null ? null : Uint8List.fromList(bytes);
+      });
     } on Object catch (e, stack) {
       _log?.error('Creator image $path could not be loaded: $e\n$stack');
       return null;
     }
+  }
+
+  /// Forgets the kept pictures of [language]'s creators, as its removal
+  /// does. A picture the index lists for no language, or for another, stays.
+  Future<void> _removeImagesOf(String language) async {
+    final listed = _index?.sharedMedia ?? const <SharedMediaFile>[];
+    final others = <String>{
+      for (final media in listed)
+        if (media.language != language) media.sha256,
+    };
+    await images.remove(<String>[
+      for (final media in listed)
+        if (media.language == language && !others.contains(media.sha256))
+          media.sha256,
+    ]);
   }
 
   /// [file], downloaded and checked against its size and hash.
@@ -1765,6 +1760,7 @@ class DeckDownloads extends ChangeNotifier {
       _updates = Map<String, LanguageChanges>.of(_updates)..remove(language);
       await _saveState();
       await _removeUnusedFonts();
+      await _removeImagesOf(language);
       _log?.event('Language removed from the phone: $language');
       return null;
     });
