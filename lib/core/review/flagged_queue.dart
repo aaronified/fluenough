@@ -11,6 +11,7 @@ library;
 
 import '../models/card.dart';
 import 'deck_review.dart';
+import 'facet_compare.dart';
 import 'facets.dart';
 import 'fix_text.dart';
 import 'review_pairs.dart';
@@ -175,7 +176,10 @@ class FlaggedQueue {
           ReviewCheck(rater: ownCode, answer: own![facet]),
       ];
       if (checks.isEmpty) continue;
-      final status = facetStatus(checks);
+      final status = facetStatus(
+        checks,
+        language: languageOfFacet(facet, deck.pair),
+      );
       if (status != FacetStatus.flagged && status != FacetStatus.contested) {
         continue;
       }

@@ -309,5 +309,119 @@ class Status(unittest.TestCase):
         self.assertEqual(rf.facet_status(verified, needs_verified=True), "settled")
 
 
+CASES = Path(__file__).resolve().parent.parent / "test" / "support" / "comparison_fold_cases.json"
+
+
+class ComparisonFolds(unittest.TestCase):
+    """The same vectors as `test/script_folds_test.dart`."""
+
+    def load(self) -> dict:
+        import json
+        return json.loads(CASES.read_text(encoding="utf-8"))
+
+    def test_the_shared_pairs(self) -> None:
+        pairs = self.load()["pairs"]
+        self.assertGreater(len(pairs), 40)
+        for case in pairs:
+            with self.subTest(case["name"]):
+                self.assertEqual(
+                    rf.same_fix_in(case["a"], case["b"], case["language"],
+                                   case.get("case_insensitive", False)),
+                    case["same"])
+
+    def test_the_shared_keys(self) -> None:
+        for case in self.load()["keys"]:
+            with self.subTest(case["name"]):
+                self.assertEqual(
+                    rf.comparison_key(case["text"], case["language"],
+                                      case.get("case_insensitive", False)),
+                    case["key"])
+
+    def test_the_registry_is_the_one_the_app_has(self) -> None:
+        mine = [{"id": i, "languages": sorted(langs)} for i, langs, _ in rf.COMPARISON_FOLDS]
+        self.assertEqual(mine, self.load()["folds"])
+
+    def test_a_fold_never_maps_to_a_letter_of_another_word(self) -> None:
+        # Every mapped code point is a variant form: the targets are the
+        # Persian/Urdu yeh and kaf and the extended digits, or dropped.
+        allowed = {0x06CC, 0x06A9, *range(0x06F0, 0x06FA), None}
+        for _id, _langs, mapping in rf.COMPARISON_FOLDS:
+            self.assertLessEqual(set(mapping.values()), allowed)
+
+    def test_the_text_itself_is_never_changed(self) -> None:
+        typed = "\u0643\u0640\u064A \u0661"
+        rf.comparison_key(typed, "ur")
+        self.assertEqual(typed, "\u0643\u0640\u064A \u0661")
+        self.assertEqual(rf.normalize_fix_text(typed), typed)
+
+    def test_the_status_uses_the_folds_of_the_language(self) -> None:
+        one = "\u06A9\u064A"
+        two = "\u06A9\u06CC"
+        checks = [rf.Check(A, False, one), rf.Check(B, False, two)]
+        self.assertEqual(rf.facet_status(checks), "contested")
+        self.assertEqual(rf.facet_status(checks, language="ur"), "agreed_fix")
+        self.assertEqual(rf.facet_status(checks, language="ps"), "contested")
+
+
+class Comparison(unittest.TestCase):
+    """The blind-pass comparison: `compareFacet`, `compareAnswers`."""
+
+    def test_agreed_right(self) -> None:
+        got = rf.compare_facet([rf.Check(A), rf.Check(B)])
+        self.assertEqual((got.status, got.fixes, got.needs_human), ("settled", (), False))
+
+    def test_agreed_fix_after_the_folds_keeps_the_first_text(self) -> None:
+        yeh, farsi = "\u06A9\u064A", "\u06A9\u06CC"
+        got = rf.compare_facet([rf.Check(A, False, yeh), rf.Check(B, False, farsi)], "ur")
+        self.assertEqual(got.status, "agreed_fix")
+        self.assertEqual(got.agreed_fix, yeh)
+        self.assertEqual(got.fixes, (yeh,))
+        self.assertFalse(got.needs_human)
+
+    def test_rival_fixes_keep_the_order_proposed(self) -> None:
+        got = rf.compare_facet([rf.Check(A, False, "kala"), rf.Check(B, False, "kaala"),
+                                rf.Check(C, False, " kala ")])
+        self.assertEqual(got.status, "contested")
+        self.assertEqual(got.fixes, ("kala", "kaala"))
+        self.assertTrue(got.needs_pick)
+        self.assertIsNone(got.agreed_fix)
+
+    def test_right_against_a_flag_is_contested(self) -> None:
+        got = rf.compare_facet([rf.Check(A), rf.Check(B, False, "x")])
+        self.assertEqual((got.status, got.fixes), ("contested", ("x",)))
+        self.assertFalse(got.needs_pick)
+
+    def test_a_flag_with_no_fix(self) -> None:
+        got = rf.compare_facet([rf.Check(A, False)])
+        self.assertTrue(got.flagged_no_fix)
+        self.assertTrue(got.needs_human)
+
+    def test_a_later_answer_of_a_rater_replaces_the_earlier(self) -> None:
+        got = rf.compare_facet([rf.Check(A, False, "x"), rf.Check(A, False, "y")])
+        self.assertEqual(got.fixes, ("y",))
+
+    def test_per_facet_over_several_reviewers(self) -> None:
+        flag = rf.Answer(A, ("spelling_wrong",), "\u06A9\u064A")
+        flag2 = rf.Answer(B, ("spelling_wrong",), "\u06A9\u06CC")
+        right = rf.Answer(A)
+        got = rf.compare_answers(
+            {A: {"word": flag, "meaning": right}, B: {"word": flag2, "meaning": rf.Answer(B)}},
+            "ur", "en")
+        self.assertEqual(sorted(got), ["meaning", "word"])
+        self.assertEqual(got["word"].status, "agreed_fix")
+        self.assertEqual(got["meaning"].status, "settled")
+        # Without the course, the word is compared by NFC alone.
+        self.assertEqual(rf.compare_answers({A: {"word": flag}, B: {"word": flag2}})["word"].status,
+                         "contested")
+
+    def test_the_language_of_a_facet(self) -> None:
+        self.assertEqual(rf.language_of_facet("word", "ur", "en"), "ur")
+        self.assertEqual(rf.language_of_facet("example", "ur", "en"), "ur")
+        self.assertEqual(rf.language_of_facet("meaning", "ur", "en"), "en")
+        self.assertEqual(rf.language_of_facet("note", "ur", "en"), "en")
+        self.assertIsNone(rf.language_of_facet("reading", "ur", "en"))
+        self.assertIsNone(rf.language_of_facet("ipa", "ur", "en"))
+
+
 if __name__ == "__main__":
     unittest.main()

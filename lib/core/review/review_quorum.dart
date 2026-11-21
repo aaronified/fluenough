@@ -137,10 +137,16 @@ enum FacetStatus {
 /// The [FacetStatus] of [checks]. One answer per rater code counts (the
 /// latest in the list wins), so a reviewer who changes their mind does not
 /// contest themselves.
+///
+/// Two fixes are the same when [comparisonKey] says so for [language] (the
+/// language the facet's text is in; null means NFC and white space only) and
+/// [caseInsensitive]. The comparison never changes the stored text.
 FacetStatus facetStatus(
   Iterable<ReviewCheck> checks, {
   int quorum = kReviewQuorum,
   bool needsVerified = kQuorumNeedsVerified,
+  String? language,
+  bool caseInsensitive = false,
 }) {
   final latest = <String, ReviewCheck>{};
   for (final check in checks) {
@@ -159,7 +165,13 @@ FacetStatus facetStatus(
   if (withFix.length < quorum) return FacetStatus.flagged;
   // Enough flags with a fix: they agree when each proposes the same text.
   final first = withFix.first.answer!;
-  final same = withFix.every((c) => c.answer!.sameReplacement(first));
+  final same = withFix.every(
+    (c) => c.answer!.sameReplacement(
+      first,
+      language: language,
+      caseInsensitive: caseInsensitive,
+    ),
+  );
   if (!same) return FacetStatus.contested;
   return FacetStatus.agreedFix;
 }

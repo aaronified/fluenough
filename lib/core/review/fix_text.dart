@@ -11,8 +11,11 @@
 /// Nothing else: letter case, punctuation, digits and the zero-width joiner
 /// and non-joiner are left as typed, because dropping one can change a word.
 ///
-/// TODO(per-script rules, not invented yet; each needs a speaker's or the
-/// owner's decision before it is written here):
+/// The per-script comparison folds that are safe are in `script_folds.dart`
+/// (they decide only whether two fixes are the same, never change a text).
+/// What is still open, each needing a speaker's or the owner's decision:
+///
+/// TODO(per-script rules, not invented yet):
 /// - Devanagari, Bengali, Gujarati, Telugu, Kannada, Malayalam, Tamil: when a
 ///   zero-width joiner or non-joiner is only a stray typing artefact (after
 ///   a vowel sign, at the end of a word) and when it picks a conjunct's

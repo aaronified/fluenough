@@ -11,6 +11,12 @@ The app writes a review as one answer per facet (`facets` in a review file,
   then any run of white space becomes one space and the ends are trimmed
   (`unicodedata` is the source `tools/gen_nfc_tables.py` writes the app's
   tables from, so the two agree);
+- [comparison_key] and [same_fix_in]: the per-script comparison folds of
+  `lib/core/review/script_folds.dart` (the registry is `COMPARISON_FOLDS`;
+  each fold is documented with its source there). They decide only whether
+  two typed fixes are the same, and never change a stored or shown text;
+- [compare_facet] and [compare_answers], the blind-pass comparison of
+  `lib/core/review/facet_compare.dart`;
 - [hash_of_seen], a receipt's hash of the text a reviewer saw;
 - [facet_status], the Dart `facetStatus`: where a facet stands, from its
   checks, by the one quorum rule of `tools/review_quorum.py`.
@@ -94,6 +100,72 @@ def normalize_fix_text(text: str) -> str:
 
 def same_fix_text(a: str, b: str) -> bool:
     return normalize_fix_text(a) == normalize_fix_text(b)
+
+
+# --- Comparison folds (see lib/core/review/script_folds.dart for the sources,
+# --- the rule for a fold, and every fold left out, with its reason) -------------
+
+_ARABIC_SCRIPT = frozenset({"ur", "fa", "ps", "sd", "ks", "hi"})
+
+# (id, languages, code point -> replacement code point, None drops it), in
+# the order they are applied. Kept equal to `comparisonFolds` in Dart by
+# test/support/comparison_fold_cases.json.
+COMPARISON_FOLDS: tuple[tuple[str, frozenset[str], dict[int, int | None]], ...] = (
+    ("arabic-script-tatweel", _ARABIC_SCRIPT, {0x0640: None}),
+    ("persian-urdu-yeh", frozenset({"fa", "ur", "hi"}), {0x064A: 0x06CC, 0x0649: 0x06CC}),
+    ("persian-urdu-pashto-kaf", frozenset({"fa", "ur", "ps", "hi"}), {0x0643: 0x06A9}),
+    ("arabic-script-digits", _ARABIC_SCRIPT, {0x0660 + i: 0x06F0 + i for i in range(10)}),
+)
+
+
+def primary_language(language: str | None) -> str | None:
+    """`ur-PK` is `ur`, lower case; None when there is none."""
+    if language is None:
+        return None
+    head = re.split("[-_]", language.strip().lower())[0]
+    return head or None
+
+
+def _apply_fold(mapping: dict[int, int | None], text: str) -> str:
+    out = []
+    for ch in text:
+        cp = ord(ch)
+        if cp not in mapping:
+            out.append(ch)
+        elif mapping[cp] is not None:
+            out.append(chr(mapping[cp]))
+    return "".join(out)
+
+
+def _lower_latin(text: str) -> str:
+    # A fixed table, not str.lower(), so that Dart and Python agree: A to Z
+    # and the Latin-1 capitals U+00C0..U+00DE except U+00D7.
+    return "".join(
+        chr(ord(ch) + 0x20)
+        if "A" <= ch <= "Z" or ("\u00C0" <= ch <= "\u00DE" and ch != "\u00D7") else ch
+        for ch in text)
+
+
+def comparison_key(text: str, language: str | None = None,
+                   case_insensitive: bool = False) -> str:
+    """The key [text] is compared by, for a fix in [language] (None: no
+    script rules). Never use it as text. NFC and white space, then the folds
+    of the language, then NFC and white space again."""
+    out = normalize_fix_text(text)
+    code = primary_language(language)
+    if code is not None:
+        for _id, languages, mapping in COMPARISON_FOLDS:
+            if code in languages:
+                out = _apply_fold(mapping, out)
+    if case_insensitive:
+        out = _lower_latin(out)
+    return normalize_fix_text(out)
+
+
+def same_fix_in(a: str, b: str, language: str | None = None,
+                case_insensitive: bool = False) -> bool:
+    return (comparison_key(a, language, case_insensitive)
+            == comparison_key(b, language, case_insensitive))
 
 
 def hash_of_seen(text: str | None) -> str:
@@ -186,13 +258,15 @@ class Check:
 
 
 def facet_status(checks: Iterable[Check], quorum: int = REVIEW_QUORUM,
-                 needs_verified: bool = QUORUM_NEEDS_VERIFIED) -> str:
+                 needs_verified: bool = QUORUM_NEEDS_VERIFIED,
+                 language: str | None = None,
+                 case_insensitive: bool = False) -> str:
     """Where a facet stands: "unchecked", "checking" (right, fewer than the
     quorum), "settled", "flagged" (a tag and no fix two agree on, nobody
     disagreeing), "agreed_fix" (the quorum of flags proposing one text after
-    normalisation) or "contested" (one says right and another flags, or two
-    propose different texts). One answer counts for each rater, the latest
-    (`facetStatus`)."""
+    normalisation, and the comparison folds of [language]) or "contested" (one
+    says right and another flags, or two propose different texts). One answer
+    counts for each rater, the latest (`facetStatus`)."""
     latest: dict[str, Check] = {}
     for c in checks:
         if c.key:
@@ -210,7 +284,95 @@ def facet_status(checks: Iterable[Check], quorum: int = REVIEW_QUORUM,
     if len(with_fix) < quorum:
         return "flagged"
     first = with_fix[0].fix
-    return "agreed_fix" if all(same_fix_text(c.fix, first) for c in with_fix) else "contested"
+    return "agreed_fix" if all(same_fix_in(c.fix, first, language, case_insensitive) for c in with_fix) else "contested"
+
+
+def language_of_facet(facet: str, target: str, native: str) -> str | None:
+    """The language a facet's text is in (`languageOfFacet`): the word and
+    the example in the language learned, the meaning and the note in the
+    learner's; no script rules for the others."""
+    if facet in ("word", "example"):
+        return target
+    if facet in ("meaning", "note"):
+        return native
+    return None
+
+
+def distinct_fixes(checks: Iterable[Check], except_rater: str | None = None,
+                   language: str | None = None,
+                   case_insensitive: bool = False) -> list[str]:
+    """One fix per rater's latest flag, each once after [comparison_key], in
+    the order proposed (`distinctFixesOf`). [except_rater] is left out."""
+    latest: dict[str, Check] = {}
+    for c in checks:
+        if c.key:
+            latest.pop(c.key, None)
+            latest[c.key] = c
+    skip = except_rater.strip().upper() if except_rater else None
+    out: list[str] = []
+    keys: set[str] = set()
+    for c in latest.values():
+        if c.key == skip or c.endorses or not c.fix:
+            continue
+        key = comparison_key(c.fix, language, case_insensitive)
+        if key not in keys:
+            keys.add(key)
+            out.append(c.fix)
+    return out
+
+
+@dataclass(frozen=True)
+class FacetComparison:
+    """What the blind passes add up to for one facet (`FacetComparison`):
+    the [facet_status], the distinct fixes in the order proposed, and the
+    fix the flags agree on when the status is "agreed_fix"."""
+    status: str
+    fixes: tuple[str, ...] = ()
+    agreed_fix: str | None = None
+
+    @property
+    def needs_pick(self) -> bool:
+        return len(self.fixes) >= 2
+
+    @property
+    def flagged_no_fix(self) -> bool:
+        return self.status == "flagged" and not self.fixes
+
+    @property
+    def needs_human(self) -> bool:
+        return self.status in ("flagged", "contested")
+
+
+def compare_facet(checks: Iterable[Check], language: str | None = None,
+                  case_insensitive: bool = False, quorum: int = REVIEW_QUORUM,
+                  needs_verified: bool = QUORUM_NEEDS_VERIFIED) -> FacetComparison:
+    items = list(checks)
+    status = facet_status(items, quorum, needs_verified, language, case_insensitive)
+    fixes = distinct_fixes(items, None, language, case_insensitive)
+    return FacetComparison(status, tuple(fixes),
+                           fixes[0] if status == "agreed_fix" and fixes else None)
+
+
+def compare_answers(by_rater: dict[str, dict[str, Answer]], target: str | None = None,
+                    native: str | None = None, quorum: int = REVIEW_QUORUM,
+                    needs_verified: bool = QUORUM_NEEDS_VERIFIED,
+                    ) -> dict[str, FacetComparison]:
+    """The comparison of every facet any reviewer answered (`compareAnswers`).
+    [by_rater] maps a rater code to that reviewer's answers; a facet nobody
+    answered is not in the result. [target] and [native] are the course's
+    language codes, which give each facet its text's language."""
+    out: dict[str, FacetComparison] = {}
+    for facet in FACETS:
+        checks = []
+        for rater, answers in by_rater.items():
+            a = answers.get(facet)
+            if a is not None:
+                checks.append(Check(rater, a.right, "" if a.right else a.fix))
+        if checks:
+            language = (language_of_facet(facet, target, native)
+                        if target is not None and native is not None else None)
+            out[facet] = compare_facet(checks, language, False, quorum, needs_verified)
+    return out
 
 
 def settled(checks: Iterable[Check], quorum: int = REVIEW_QUORUM,
