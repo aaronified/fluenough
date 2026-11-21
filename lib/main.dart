@@ -15,7 +15,9 @@ import 'app/backup_store.dart';
 import 'app/deck_catalog.dart';
 import 'app/deck_downloads.dart';
 import 'app/downloaded_decks.dart';
+import 'app/file_blob_store.dart';
 import 'app/file_snapshot_store.dart';
+import 'app/media_image_cache.dart';
 import 'app/junk_cleanup.dart';
 import 'app/links.dart';
 import 'app/mail_share.dart';
@@ -45,7 +47,6 @@ import 'core/speech/system_speech_engine.dart';
 import 'core/tts/system_clip_player.dart';
 import 'core/tts/system_tts_engine.dart';
 import 'core/tts/volume_monitor.dart';
-import 'app/file_blob_store.dart';
 import 'app/asr_pack_downloader.dart';
 import 'app/channel_asr_runtime.dart';
 import 'app/file_asr_pack_store.dart';
@@ -89,6 +90,12 @@ Future<void> main() async {
     files: downloaded,
     clock: DateTime.now,
     log: log,
+    // The culture pictures, as binary files (not in the deck files: they
+    // are fetched on demand and pruned with their course).
+    images: MediaImageCache(
+      store: FileBlobStore(Directory('${files.path}/culture-images')),
+      onProblem: (problem) => log.warning('Culture images: $problem'),
+    ),
   );
   // The daily reminder's notifications (#90). Without them the reminder's
   // switch stays off.

@@ -11,6 +11,7 @@ import '../../core/models/deck.dart' show LanguageInfo;
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/target_text.dart';
+import 'culture_image_size.dart';
 
 /// The languages the learner reads the interface and deck prose in, best known
 /// first: the app's own language, then those they speak.
@@ -211,6 +212,8 @@ class _CreatorThumbState extends State<CreatorThumb> {
                   bytes,
                   width: size,
                   height: size,
+                  // Decoded at the size shown, never at the file's (4a).
+                  cacheWidth: cultureDecodeWidthIn(context, size),
                   fit: BoxFit.cover,
                   semanticLabel: l10n.cultureImageOf(name),
                   errorBuilder: (context, error, stack) => placeholder(),
