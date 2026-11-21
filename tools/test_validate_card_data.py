@@ -30,6 +30,7 @@ import contextlib
 import io
 from test_validate_b1 import CORE, EXTRA, LANGUAGE, LAYER, B1Case, card, single  # noqa: E402
 import validate_decks as vd  # noqa: E402
+from ogg_opus_testlib import make_opus  # noqa: E402
 
 FILLED = "validate_decks.FILLED_LANGUAGES"
 HOUSE = "zz-9001"      # ఇల్లు (illu), a noun
@@ -1249,7 +1250,7 @@ class CaseMedia(B1Case):
     def file(self, rel: str) -> None:
         path = self.dir / rel
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(b"OggS")
+        path.write_bytes(make_opus(0.5, 24))
 
 
 class Audio(CaseMedia):
@@ -1311,10 +1312,13 @@ class Audio(CaseMedia):
             with self.subTest(licence=licence):
                 self.core(HOUSE_MEDIA, audio=f"decks/zz/audio/{HOUSE_MEDIA}.opus",
                           audio_credit=dict(CREDIT, license=licence))
+                said = ("; NonCommercial (NC) and NoDerivatives (ND) licences are never "
+                        "allowed" if "NC" in licence else "")
                 self.assertEqual([e for e in self.errors(CORE) if "cannot ship" in e],
                                  [f"card {HOUSE_MEDIA}: audio_credit.license {licence!r} cannot "
                                   f"ship in a CC BY-SA 4.0 deck: CC0-1.0, public-domain, "
-                                  f"or CC-BY or CC-BY-SA 2.0 to 4.0, such as CC-BY-SA-4.0"])
+                                  f"or CC-BY or CC-BY-SA 2.0 to 4.0, such as CC-BY-SA-4.0"
+                                  f"{said}"])
 
     def _a_credit_only_with_a_shipped_file(self) -> None:
         self.core(HOUSE_MEDIA, audio="https://example.org/house.ogg", audio_credit=CREDIT)

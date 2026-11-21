@@ -289,6 +289,28 @@ python3 tools/validate_decks.py decks/
 `test_import_wiktionary.py` tests it on `fixtures/wiktionary`, with the
 network and ffmpeg replaced.
 
+### Recordings: what the validator checks and `--audio-report`
+
+`tools/validate_decks.py` checks every shipped `audio` file from its own
+bytes (no ffmpeg; [ADR-0059](ADR-0059-Sounds-Decks-With-Compressed-Audio)): Ogg
+Opus (`OggS` and `OpusHead`), mono, at most 128 kbps (size over the length
+from the last page's granule position), at most 16 kB, and a credit with a
+link, an author and a licence from the allow-list (never NC or ND). The
+constants are `AUDIO_MAX_KBPS`, `AUDIO_MAX_BYTES` and `AUDIO_TOTAL_MAX_BYTES`
+(50 MB for all the decks' recordings together; over it the run fails).
+
+```sh
+python3 tools/validate_decks.py --audio-report decks/
+```
+
+`--audio-report` also prints the files and bytes per language and the share of
+the 50 MB used. It only reports: the exit code is the validator's own. A deck
+with no `audio` is valid, and the existing Morse course's recordings pass the
+caps (the largest is 7 kB, the highest bitrate about 29 kbps).
+
+`ogg_opus_testlib.py` builds tiny Ogg Opus streams by hand for
+`test_validate_audio.py`, so the tests need neither ffmpeg nor the network.
+
 ## `mark_wiktionary.py`
 
 Marks the cards whose word has a Wiktionary entry (#422), so that the app
