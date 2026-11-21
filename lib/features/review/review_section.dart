@@ -10,6 +10,7 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/snack.dart';
 import '../decks/path_parts.dart' show joinParts;
 import 'daily_questions_page.dart';
+import 'flagged_page.dart';
 import 'how_reviewing_works.dart';
 import 'questions_per_day.dart';
 import 'review_waiting.dart';
@@ -51,6 +52,7 @@ class ReviewSection extends StatelessWidget {
     final waiting = reviewing.unsent.length;
     final answersWaiting = reviewing.unsentAnswers.length;
     final lastSent = reviewing.lastSent.length;
+    final flagged = on ? flaggedQueueOf(state).count : 0;
     final reviewed = on ? reviewPairsOf(state) : const <ReviewPair>{};
     final names = languageNamesOf(state);
     final toReview = <String>{
@@ -119,6 +121,14 @@ class ReviewSection extends StatelessWidget {
             trailing: const Icon(Icons.chevron_right),
             onTap: () => AppNavigator.openWaitingForReview(context),
           ),
+          if (flagged > 0)
+            GroupedTile(
+              leading: const Icon(Icons.flag_outlined),
+              title: l10n.reviewFlaggedTitle,
+              subtitle: '$flagged',
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => showFlagged(context),
+            ),
           GroupedTile(
             leading: const Icon(Icons.quiz_outlined),
             title: l10n.reviewQuestionsSettings,
