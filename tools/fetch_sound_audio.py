@@ -30,7 +30,8 @@ gets no `audio`: the phone's text-to-speech says it, as today.
     python3 tools/fetch_sound_audio.py --lang te --report te.md --json te.json
 
 Exit codes: 0 done, 1 an error in the decks or files, 2 bad arguments, 3 the
-run stopped at the rate limit or the request cap (rerun: it resumes from the
+run stopped at the rate limit or the request cap, 4 another Wikimedia error
+(the report is still written) (rerun: it resumes from the
 cache and from the cards already written).
 
 Idempotent and resumable: a card with valid audio is skipped (`--refresh`
@@ -68,6 +69,11 @@ ROOT = Path(__file__).resolve().parent.parent
 TARGET_KBPS = 32
 KBPS_LADDER = (32, 24, 16, 12)      # tried in turn until the clip fits
 MAX_SECONDS = 10                    # a longer source is cut
+MAX_SOURCE_BYTES = 5 * 1024 * 1024  # a larger file is skipped, not downloaded
+MAX_SOURCE_SECONDS = 30             # so is a longer one
+AUDIO_MIMES = frozenset({"audio/ogg", "application/ogg", "audio/x-wav", "audio/wav",
+                         "audio/mpeg", "audio/flac", "audio/x-flac", "audio/webm",
+                         "audio/opus", "video/ogg", "video/webm"})
 PEAK_DB = -3.0
 ESTIMATE_BYTES = 7000               # a clip of unknown length, in a survey
 SURVEY_KBPS = 32
@@ -228,7 +234,8 @@ def audio_valid(decks: Path, card: SoundCard) -> bool:
 
 @dataclass
 class Verdict:
-    status: str                     # "ok", "missing", "no-author", "licence"
+    # "ok", "missing", "no-author", "licence", "over-size", "bad-type"
+    status: str
     title: str
     info: dict | None = None
     licence: str | None = None      # the deck's id, `CC-BY-SA-4.0`
@@ -255,12 +262,19 @@ def judge(title: str, info: dict | None) -> Verdict:
                 f"https://commons.wikimedia.org/wiki/{title.replace(' ', '_')}",
                 duration=info.get("duration") if isinstance(info.get("duration"),
                                                               (int, float)) else None)
+    mime = info.get("mime")
+    if isinstance(mime, str) and mime.lower() not in AUDIO_MIMES:
+        return Verdict("bad-type", **base)
     licence = iw.licence_id(name)
     if licence is None:
         return Verdict("licence", **base)
     credit = _meta(info, "Artist")
     if not credit or NO_AUTHOR.fullmatch(credit):
         return Verdict("no-author", licence=licence, **base)
+    size = info.get("size")
+    if (isinstance(size, (int, float)) and size > MAX_SOURCE_BYTES) or \
+            (base["duration"] is not None and base["duration"] > MAX_SOURCE_SECONDS):
+        return Verdict("over-size", licence=licence, **base)
     return Verdict("ok", licence=licence, credit=credit, **base)
 
 
@@ -278,21 +292,25 @@ def encode_clip(data: bytes, suffix: str, kbps: int) -> bytes:
     [kbps] kbps, variable bitrate: decoded to 16-bit mono PCM at 24 kHz,
     leading and trailing silence cut, the peak set to PEAK_DB dBFS. Needs
     ffmpeg with libopus; the tests replace this function."""
-    trim = ("silenceremove=start_periods=1:start_silence=0.04:start_threshold=-50dB,"
-            "areverse,"
-            "silenceremove=start_periods=1:start_silence=0.04:start_threshold=-50dB,"
-            "areverse")
+    # Streaming filters only: nothing buffers the whole source (no areverse).
+    # Leading silence is cut, and the clip ends at the first long silence after
+    # the sound. `-t` before `-i` bounds the input; `-protocol_whitelist file`
+    # keeps ffmpeg to a local file.
+    trim = ("silenceremove=start_periods=1:start_silence=0.04:start_threshold=-50dB:"
+            "stop_periods=1:stop_duration=0.4:stop_threshold=-50dB")
+    guard = ["-protocol_whitelist", "file"]
     with tempfile.TemporaryDirectory() as tmp:
         src = Path(tmp) / ("in" + (suffix if suffix.startswith(".") else "." + suffix))
         pcm = Path(tmp) / "pcm.wav"
         out = Path(tmp) / "out.opus"
         src.write_bytes(data)
-        iw.convert(["-i", str(src), "-vn", "-t", str(MAX_SECONDS), "-ac", "1",
-                    "-ar", "24000", "-af", trim, "-c:a", "pcm_s16le", str(pcm)])
-        report = _ffmpeg_text(["-i", str(pcm), "-af", "volumedetect", "-f", "null", "-"])
+        iw.convert([*guard, "-t", str(MAX_SOURCE_SECONDS), "-i", str(src), "-vn",
+                    "-ac", "1", "-ar", "24000", "-af", trim, "-t", str(MAX_SECONDS),
+                    "-c:a", "pcm_s16le", str(pcm)])
+        report = _ffmpeg_text([*guard, "-i", str(pcm), "-af", "volumedetect", "-f", "null", "-"])
         peak = re.search(r"max_volume:\s*(-?[\d.]+) dB", report)
         gain = PEAK_DB - float(peak.group(1)) if peak else 0.0
-        iw.convert(["-i", str(pcm), "-af", f"volume={gain:.2f}dB", "-ac", "1",
+        iw.convert([*guard, "-i", str(pcm), "-af", f"volume={gain:.2f}dB", "-ac", "1",
                     "-ar", "24000", "-c:a", "libopus", "-b:a", f"{kbps}k", "-vbr", "on",
                     "-application", "audio", "-map_metadata", "-1", str(out)])
         return out.read_bytes()
@@ -398,6 +416,9 @@ class LangReport:
     licences: Counter = field(default_factory=Counter)
     ids: dict[str, list[str]] = field(default_factory=dict)
     skipped_files: list[dict] = field(default_factory=list)
+    # IPA symbols whose Commons titles were all tried and not found: the
+    # first survey's list of `--symbols` fixes.
+    symbols_not_found: dict[str, list[str]] = field(default_factory=dict)
 
     def note(self, kind: str, cid: str) -> None:
         self.ids.setdefault(kind, []).append(cid)
@@ -410,6 +431,7 @@ class Report:
     existing_bytes: int = 0         # audio in the decks before the run
     requests: dict[str, int] = field(default_factory=dict)
     stopped: str = ""
+    error: str = ""
 
     def lang(self, code: str) -> LangReport:
         return self.langs.setdefault(code, LangReport(code))
@@ -433,8 +455,9 @@ class Report:
                     "sources": dict(sorted(r.sources.items())),
                     "licences": dict(sorted(r.licences.items())),
                     "ids": {k: v for k, v in sorted(r.ids.items())},
-                    "skipped_files": r.skipped_files}
-        return {"mode": self.mode, "stopped": self.stopped, "requests": self.requests,
+                    "skipped_files": r.skipped_files,
+                    "symbols_not_found": r.symbols_not_found}
+        return {"mode": self.mode, "stopped": self.stopped, "error": self.error, "requests": self.requests,
                 "total": {k: self.total(k) for k in (
                     "cards", "already", "asked", "available", "fetched", "missing",
                     "skipped_no_author", "skipped_licence", "over_size", "errors",
@@ -449,6 +472,8 @@ class Report:
         lines = [f"# Sound audio fetch report ({self.mode})", ""]
         if self.stopped:
             lines += [f"**Stopped early:** {self.stopped}", ""]
+        if self.error:
+            lines += [f"**Error:** {self.error}", ""]
         gotcol = "available" if self.mode in ("survey",) else "fetched"
         lines += [f"| Language | Cards | Already | Asked | {gotcol.capitalize()} | Missing | "
                   f"No author | Licence | Over size | Errors | Bytes |",
@@ -481,6 +506,11 @@ class Report:
                                                            sorted(r.licences.items())) + ".")
             for kind, ids in sorted(r.ids.items()):
                 lines.append(f"- {kind}: {', '.join(ids)}")
+            if r.symbols_not_found:
+                lines.append("IPA symbol clips not found on Commons (titles tried; fix with "
+                             "`--symbols FILE`):")
+                lines += [f"  - {sym}: {', '.join(t)}"
+                          for sym, t in sorted(r.symbols_not_found.items())]
             for s in r.skipped_files:
                 lines.append(f"- skipped {s['card']} {s['file']}: {s['reason']}")
             lines.append("")
@@ -587,6 +617,8 @@ def run(client: wc.Client, opts: Options) -> Report:
         _fetch(client, opts, report, todo, clips, entries)
     except (wc.RateLimited, wc.RequestCapReached) as e:
         report.stopped = str(e)
+    except wc.WikimediaError as e:
+        report.error = str(e)
     report.requests = {"api": client.stats.api_requests,
                        "downloads": client.stats.download_requests,
                        "cache_hits": client.stats.cache_hits,
@@ -622,20 +654,24 @@ def _fetch(client: wc.Client, opts: Options, report: Report, todo: list[SoundCar
         chosen: Verdict | None = None
         source = ""
         worst = "missing"
+        symbol_hit = False
         for src, title in plan[f"{card.lang}/{card.cid}"]:
             v = judge(title, infos.get(title))
             if v.status != "missing":
                 lr.licences[v.licence or v.licence_name or "?"] += 1
+                if src == "ipa-symbol":
+                    symbol_hit = True
             if v.status == "ok":
                 chosen, source = v, src
                 break
             if v.status != "missing":
                 lr.skipped_files.append({"card": card.cid, "file": title,
-                                         "reason": (f"licence {v.licence_name!r} cannot ship"
-                                                    if v.status == "licence"
-                                                    else "no machine-readable author")})
-                if v.status == "no-author" or worst == "missing":
+                                         "reason": REASONS[v.status].format(v.licence_name)})
+                if RANK[v.status] > RANK[worst]:
                     worst = v.status
+        tried = symbol_titles(card.ipa, clips)
+        if tried and not symbol_hit:
+            lr.symbols_not_found[nfc(card.ipa.strip().strip("/[]"))] = tried
         if chosen is None:
             if worst == "no-author":
                 lr.skipped_no_author += 1
@@ -643,9 +679,13 @@ def _fetch(client: wc.Client, opts: Options, report: Report, todo: list[SoundCar
             elif worst == "licence":
                 lr.skipped_licence += 1
                 lr.note("skipped-licence", card.cid)
+            elif worst == "over-size":
+                lr.over_size += 1
+                lr.note("over-size", card.cid)
             else:
                 lr.missing += 1
-                lr.note("missing", card.cid)
+                lr.note("missing" if worst == "missing" else "missing (wrong file type)",
+                        card.cid)
             continue
         if opts.survey:
             lr.available += 1
@@ -654,6 +694,13 @@ def _fetch(client: wc.Client, opts: Options, report: Report, todo: list[SoundCar
             lr.note("available", card.cid)
             continue
         _write_card(client, opts, lr, card, chosen, source)
+
+
+REASONS = {"licence": "licence {!r} cannot ship",
+           "no-author": "no machine-readable author",
+           "over-size": "source file too large (over 5 MB or 30 s)",
+           "bad-type": "not an audio file type"}
+RANK = {"missing": 0, "bad-type": 1, "over-size": 2, "licence": 3, "no-author": 4}
 
 
 def _language_name(decks: Path, code: str) -> str:
@@ -779,7 +826,7 @@ def main(argv: list[str], client: wc.Client | None = None) -> int:
         args.json.write_text(json.dumps(report.to_json(), indent=2, ensure_ascii=False) + "\n",
                              encoding="utf-8")
     print(text)
-    return 3 if report.stopped else 0
+    return 3 if report.stopped else 4 if report.error else 0
 
 
 if __name__ == "__main__":

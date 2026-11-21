@@ -142,12 +142,14 @@ class FakeWiki:
             if t not in self.files:
                 pages.append({"title": t, "missing": True})
                 continue
-            licence, artist, seconds = self.files[t]
+            licence, artist, seconds, *rest = self.files[t]
             name = t.split(":", 1)[1].replace(" ", "_")
             pages.append({"title": t, "imageinfo": [{
                 "url": f"https://upload.wikimedia.org/x/{urllib.parse.quote(name)}",
                 "descriptionurl": f"https://commons.wikimedia.org/wiki/{urllib.parse.quote(t.replace(' ', '_'), safe=':')}",
                 "duration": seconds,
+                **({"size": rest[0]} if rest else {}),
+                **({"mime": rest[1]} if len(rest) > 1 else {}),
                 "extmetadata": {"LicenseShortName": {"value": licence},
                                 "Artist": {"value": artist}}}]})
         return self.json({"query": {"pages": pages}})
@@ -469,13 +471,13 @@ class Reports(Case):
         report = self.run_tool(langs=["zz"])
         data = report.to_json()
         self.assertEqual(data["mode"], "write")
-        self.assertEqual({"mode", "stopped", "requests", "total", "existing_bytes",
+        self.assertEqual({"mode", "stopped", "error", "requests", "total", "existing_bytes",
                           "ceiling_bytes", "ceiling_share_percent", "languages"}, set(data))
         lang = data["languages"][0]
         self.assertEqual({"lang", "cards", "already", "asked", "available", "fetched",
                           "missing", "skipped_no_author", "skipped_licence", "over_size",
                           "errors", "bytes", "estimated_bytes", "sources", "licences",
-                          "ids", "skipped_files"}, set(lang))
+                          "ids", "skipped_files", "symbols_not_found"}, set(lang))
         self.assertEqual(lang["cards"], 10)
         self.assertEqual(lang["fetched"], 3)
         self.assertEqual(data["total"]["fetched"], 3)
@@ -522,6 +524,88 @@ class Reports(Case):
             code = fsa.main(["--decks", str(self.decks), "--lang", "qq"], client=self.client())
         self.assertEqual(code, 1)
         self.assertIn("sound-inventory", err.getvalue())
+
+
+class Bounds(Case):
+    """A source file or an answer too big to read is stopped, not buffered."""
+
+    @staticmethod
+    def info(**kw: object) -> dict:
+        return {"mime": "audio/ogg", "size": 20000, "duration": 1.0,
+                "extmetadata": {"LicenseShortName": {"value": "CC BY-SA 4.0"},
+                                "Artist": {"value": "A. Speaker"}}, **kw}
+
+    def test_judge_skips_a_file_over_the_size_or_the_duration_limit(self) -> None:
+        self.assertEqual(fsa.judge("File:a.ogg", self.info()).status, "ok")
+        self.assertEqual(fsa.judge("File:a.ogg", self.info(size=6 * 1024 * 1024)).status,
+                         "over-size")
+        self.assertEqual(fsa.judge("File:a.ogg", self.info(duration=45)).status, "over-size")
+
+    def test_judge_skips_a_file_that_is_not_audio(self) -> None:
+        for mime in ("text/html", "image/png", "application/pdf"):
+            self.assertEqual(fsa.judge("File:a.ogg", self.info(mime=mime)).status, "bad-type")
+        for mime in ("audio/ogg", "application/ogg", "audio/x-wav", "audio/mpeg"):
+            self.assertEqual(fsa.judge("File:a.ogg", self.info(mime=mime)).status, "ok")
+
+    def test_an_oversize_file_is_reported_and_never_downloaded(self) -> None:
+        files = dict(FILES)
+        files[title("Voiced bilabial plosive")] = ("CC BY 3.0", "J. Voice", 1.0, 9_000_000)
+        wiki = FakeWiki(files)
+        report = self.run_tool(self.client(wiki), langs=["zz"])
+        lr = report.langs["zz"]
+        self.assertEqual(lr.ids["over-size"], ["zz-0002"])
+        self.assertEqual(lr.over_size, 1)
+        self.assertNotIn("audio", self.cards()["zz-0002"])
+        self.assertFalse([u for u in wiki.downloads if "Voiced_bilabial_plosive" in u])
+
+    def test_ffmpeg_gets_a_bounded_input_and_no_stream_buffering_filter(self) -> None:
+        calls: list[list[str]] = []
+
+        def convert(args: list[str]) -> None:
+            calls.append(list(args))
+            Path(args[-1]).write_bytes(b"x")
+
+        def volume(args: list[str]) -> str:
+            calls.append(list(args))
+            return "max_volume: -6.0 dB"
+        with mock.patch.object(fsa.iw, "convert", side_effect=convert), \
+                mock.patch.object(fsa, "_ffmpeg_text", side_effect=volume):
+            self.encode.stop()
+            try:
+                fsa.encode_clip(b"data", ".ogg", 32)
+            finally:
+                self.encode.start()
+        self.assertEqual(len(calls), 3)
+        for args in calls:
+            self.assertEqual(args[:2], ["-protocol_whitelist", "file"])
+            self.assertLess(args.index("-protocol_whitelist"), args.index("-i"))
+        first = calls[0]
+        self.assertLess(first.index("-t"), first.index("-i"))        # input option
+        self.assertEqual(first[first.index("-t") + 1], str(fsa.MAX_SOURCE_SECONDS))
+        self.assertGreater(len(first) - 1 - first[::-1].index("-t"), first.index("-i"))  # and on the output
+        for args in calls:
+            self.assertNotIn("areverse", " ".join(args))
+
+    def test_the_report_lists_the_symbol_titles_tried_and_not_found(self) -> None:
+        report = self.run_tool(langs=["zz"], survey=True)
+        missing = report.langs["zz"].symbols_not_found
+        self.assertEqual(missing["q"], ["File:Voiceless uvular plosive.ogg",
+                                        "File:Voiceless uvular plosive.oga"])
+        self.assertNotIn("p", missing)
+        self.assertIn("IPA symbol clips not found", report.to_markdown())
+        self.assertIn("symbols_not_found", report.to_json()["languages"][0])
+
+
+class Failures(Case):
+    def test_another_wikimedia_error_still_writes_the_report_and_exits_4(self) -> None:
+        def broken(url: str, headers: dict[str, str]) -> wc.Response:
+            return wc.Response(404, {}, b"")
+        md = self.tmp / "r.md"
+        with contextlib.redirect_stdout(io.StringIO()):
+            code = fsa.main(["--decks", str(self.decks), "--lang", "zz", "--report", str(md)],
+                            client=self.client(broken))
+        self.assertEqual(code, 4)
+        self.assertIn("**Error:**", md.read_text(encoding="utf-8"))
 
 
 class Safety(Case):

@@ -7,12 +7,16 @@ Stdlib `unittest`, like the tool.
 
 from __future__ import annotations
 
+import email.utils
+import http.client
+import io
 import json
 import os
 import sys
 import tempfile
 import unittest
 import urllib.parse
+import urllib.request
 from pathlib import Path
 from unittest import mock
 
@@ -148,6 +152,89 @@ class Retrying(Case):
         t = Scripted(ok({}))
         self.client(t).get_json(wc.COMMONS_API, {"a": "1"})
         self.assertEqual(query(t.urls[0])["maxlag"], wc.MAXLAG)
+
+
+class Bounds(Case):
+    class Body(io.BytesIO):
+        headers: dict[str, str] = {}
+
+    def body(self, data: bytes, **headers: str) -> "Bounds.Body":
+        b = self.Body(data)
+        b.headers = headers
+        return b
+
+    def test_a_body_is_read_in_chunks_and_stops_at_the_limit(self) -> None:
+        big = self.body(b"x" * (wc.CHUNK * 4))
+        with self.assertRaises(wc.ResponseTooLarge):
+            wc.read_limited(big, wc.CHUNK * 2, "https://upload.wikimedia.org/a")
+        self.assertLess(big.tell(), wc.CHUNK * 4)           # it did not read it all
+        self.assertEqual(wc.read_limited(self.body(b"abc"), 10, "u"), b"abc")
+
+    def test_a_declared_length_over_the_limit_is_refused_before_reading(self) -> None:
+        r = self.body(b"x" * 10, **{"Content-Length": "999999"})
+        with self.assertRaises(wc.ResponseTooLarge):
+            wc.read_limited(r, 100, "u")
+        self.assertEqual(r.tell(), 0)
+
+    def test_the_limits_are_a_few_megabytes(self) -> None:
+        self.assertLessEqual(wc.MAX_DOWNLOAD_BYTES, 5 * 1024 * 1024)
+        self.assertLessEqual(wc.MAX_API_BYTES, 16 * 1024 * 1024)
+        self.assertGreater(wc.REQUEST_TIMEOUT, 0)
+
+    def test_a_redirect_to_another_host_is_refused(self) -> None:
+        down = "https://upload.wikimedia.org/a/x.ogg"
+        api = wc.COMMONS_API + "?a=1"
+        for url, target in ((down, "https://evil.example/x.ogg"),
+                            (down, "http://upload.wikimedia.org/x.ogg"),
+                            (down, "https://commons.wikimedia.org/x"),
+                            (api, "https://upload.wikimedia.org/x"),
+                            (api, "https://evil.example/w/api.php")):
+            handler = wc._SafeRedirects(wc.allowed_hosts(url))
+            with self.subTest(url=url, target=target), self.assertRaises(wc.RedirectRefused):
+                handler.redirect_request(urllib.request.Request(url), None, 302, "", {}, target)
+
+    def test_a_redirect_within_the_allowed_hosts_is_followed(self) -> None:
+        down = "https://upload.wikimedia.org/a/x.ogg"
+        handler = wc._SafeRedirects(wc.allowed_hosts(down))
+        again = handler.redirect_request(urllib.request.Request(down), None, 302, "", {},
+                                         "https://upload.wikimedia.org/b/x.ogg")
+        self.assertEqual(again.full_url, "https://upload.wikimedia.org/b/x.ogg")
+        api = wc.COMMONS_API
+        handler = wc._SafeRedirects(wc.allowed_hosts(api))
+        self.assertIsNotNone(handler.redirect_request(
+            urllib.request.Request(api), None, 301, "", {}, "https://en.wikipedia.org/w/api.php"))
+
+    def test_an_incomplete_read_is_retried_like_a_network_error(self) -> None:
+        t = Scripted(http.client.IncompleteRead(b"par"), ok({"x": 1}))
+        self.assertEqual(self.client(t).get_json(wc.COMMONS_API, {"a": "1"}), {"x": 1})
+        self.assertEqual(len(t.urls), 2)
+
+    def test_an_oversize_answer_from_the_transport_is_not_retried(self) -> None:
+        t = Scripted(wc.ResponseTooLarge("too big"))
+        with self.assertRaises(wc.ResponseTooLarge):
+            self.client(t).get_json(wc.COMMONS_API, {"a": "1"})
+        self.assertEqual(len(t.urls), 1)
+
+
+class HttpDate(Case):
+    def date(self, ahead: float) -> str:
+        return email.utils.formatdate(self.clock() + ahead, usegmt=True)
+
+    def test_a_retry_after_date_is_read_as_seconds_from_now(self) -> None:
+        self.assertEqual(wc.retry_after({"retry-after": self.date(7)}, self.clock()), 7.0)
+        self.assertEqual(wc.retry_after({"retry-after": self.date(-50)}, self.clock()), 0.0)
+        self.assertIsNone(wc.retry_after({"retry-after": "soon"}, self.clock()))
+
+    def test_a_near_date_is_waited_for(self) -> None:
+        t = Scripted(wc.Response(429, {"retry-after": self.date(7)}, b""), ok({"x": 1}))
+        self.assertEqual(self.client(t).get_json(wc.COMMONS_API, {"a": "1"}), {"x": 1})
+        self.assertEqual(self.clock.sleeps, [7.0])
+
+    def test_a_date_more_than_300_seconds_away_stops_the_run(self) -> None:
+        t = Scripted(wc.Response(429, {"retry-after": self.date(900)}, b""), ok({}))
+        with self.assertRaises(wc.RateLimited):
+            self.client(t).get_json(wc.COMMONS_API, {"a": "1"})
+        self.assertEqual(len(t.urls), 1)
 
 
 class Budgets(Case):
@@ -289,6 +376,26 @@ class Titles(Case):
         self.assertEqual(asked, [["File:A.ogg", "File:Nope.ogg"], ["File:B.ogg"]])
         self.assertIsNone(got["File:Nope.ogg"])
         self.assertIsNotNone(got["File:A.ogg"])
+
+    def test_imageinfo_follows_continue_to_the_whole_batch(self) -> None:
+        def page(t: str) -> dict:
+            return {"title": t, "imageinfo": [{"url": f"https://upload.wikimedia.org/{t}"}]}
+        first = {"query": {"pages": [page("File:A.ogg"), {"title": "File:B.ogg"}]},
+                 "continue": {"iicontinue": "tok", "continue": "||"}}
+        second = {"query": {"pages": [page("File:B.ogg")]}}
+        t = Scripted(ok(first), ok(second))
+        got = self.client(t).imageinfo(["File:A.ogg", "File:B.ogg"])
+        self.assertIsNotNone(got["File:A.ogg"])
+        self.assertIsNotNone(got["File:B.ogg"])
+        self.assertEqual(query(t.urls[1])["iicontinue"], "tok")
+
+    def test_a_title_the_api_never_listed_is_not_cached_as_missing(self) -> None:
+        answers = [ok({"query": {"pages": [{"title": "File:A.ogg", "missing": True}]}})]
+        t = Scripted(*answers)
+        c = self.client(t)
+        self.assertIsNone(c.imageinfo(["File:A.ogg", "File:B.ogg"])["File:B.ogg"])
+        self.client(t).imageinfo(["File:A.ogg", "File:B.ogg"])
+        self.assertEqual(query(t.urls[-1])["titles"], "File:B.ogg")   # B asked again, A cached
 
     def test_a_category_is_followed_to_its_end(self) -> None:
         pages = [{"query": {"categorymembers": [{"title": "File:B.ogg"}]},

@@ -346,7 +346,7 @@ default; no personal data); separate pauses for API calls (1 s) and file downloa
 5 minutes; 50 titles or ids per request; an on-disk cache (`--cache`, default
 `.cache/wikimedia`; API answers and "missing" for 30 days, downloads for good;
 `--refresh-cache` ignores it); a hard cap per run (`--max-requests`, default 400);
-downloads only from `https://upload.wikimedia.org/`. The transport is injected, so
+downloads only from `https://upload.wikimedia.org/`, redirects followed only to the allowed hosts over https, bodies read in chunks with a hard limit (5 MB a file, 8 MB an API answer), a 30 s timeout on every request, and a `Retry-After` given as an HTTP date understood. Source files over 5 MB or 30 s, or not audio by MIME type, are skipped as `over-size` or missing; ffmpeg reads only a local file (`-protocol_whitelist file`), with `-t` before `-i` and streaming filters only. The report lists the IPA symbol clip titles tried and not found, for `--symbols`. Exit 4 means another Wikimedia error; the report is still written. The transport is injected, so
 the tests use none. `test_wikimedia_client.py` and `test_fetch_sound_audio.py`
 test them with a fake Wikimedia and a stubbed encode step; one test, skipped
 without ffmpeg and libopus, checks real output against the validator's audio

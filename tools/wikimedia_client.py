@@ -30,7 +30,9 @@ Needs only Python 3.11+ and the standard library.
 
 from __future__ import annotations
 
+import email.utils
 import hashlib
+import http.client
 import json
 import os
 import time
@@ -54,6 +56,12 @@ DEFAULT_CACHE = ROOT / ".cache" / "wikimedia"
 DEFAULT_TTL = 30 * 24 * 3600     # an API answer, and a "missing", is good for 30 days
 DEFAULT_CONTACT = "https://github.com/aaronified/fluenough"
 CONTACT_ENV = "WIKIMEDIA_CONTACT_URL"
+API_HOSTS = frozenset({"commons.wikimedia.org", "en.wikipedia.org", "en.wiktionary.org",
+                       "www.wikidata.org"})
+MAX_API_BYTES = 8 * 1024 * 1024         # an API answer is read up to this
+MAX_DOWNLOAD_BYTES = 5 * 1024 * 1024    # and a file download up to this
+REQUEST_TIMEOUT = 30                    # seconds, for every request
+CHUNK = 64 * 1024
 RETRYABLE = frozenset({429, 500, 502, 503, 504})
 MAXLAG = "5"
 
@@ -75,6 +83,14 @@ class HttpError(WikimediaError):
         super().__init__(f"HTTP {status} for {url}")
         self.status = status
         self.url = url
+
+
+class ResponseTooLarge(WikimediaError):
+    """An answer bigger than the limit for its kind; the read stops there."""
+
+
+class RedirectRefused(WikimediaError):
+    """A redirect to a host the request may not go to."""
 
 
 class RateLimited(WikimediaError):
@@ -99,15 +115,54 @@ class Response:
 Transport = Callable[[str, dict[str, str]], Response]
 
 
+def allowed_hosts(url: str) -> frozenset[str]:
+    """The hosts a request for [url] may be redirected to: downloads stay on
+    upload.wikimedia.org, API calls on the API hosts."""
+    host = urllib.parse.urlsplit(url).hostname
+    return frozenset({DOWNLOAD_HOST}) if host == DOWNLOAD_HOST else API_HOSTS
+
+
+class _SafeRedirects(urllib.request.HTTPRedirectHandler):
+    def __init__(self, hosts: frozenset[str]) -> None:
+        self.hosts = hosts
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):  # type: ignore[no-untyped-def]
+        parts = urllib.parse.urlsplit(newurl)
+        if parts.scheme != "https" or parts.hostname not in self.hosts:
+            raise RedirectRefused(f"{req.full_url} redirects to {newurl}: only https "
+                                  f"on {', '.join(sorted(self.hosts))} is followed")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+def read_limited(response: object, limit: int, url: str) -> bytes:
+    """[response]'s body, read in chunks; raises ResponseTooLarge as soon as
+    it passes [limit] bytes (or says it will in Content-Length)."""
+    declared = response.headers.get("Content-Length")  # type: ignore[attr-defined]
+    if declared and declared.isdigit() and int(declared) > limit:
+        raise ResponseTooLarge(f"{url} is {declared} bytes; the limit is {limit}")
+    body = bytearray()
+    while chunk := response.read(CHUNK):  # type: ignore[attr-defined]
+        body += chunk
+        if len(body) > limit:
+            raise ResponseTooLarge(f"{url} is over {limit} bytes; read stopped")
+    return bytes(body)
+
+
 def urllib_transport(url: str, headers: dict[str, str]) -> Response:
-    """The real network: urllib, with HTTP errors returned as responses."""
+    """The real network: urllib, with HTTP errors returned as responses, a
+    timeout, redirects only to the allowed hosts and a byte limit on the
+    body."""
+    limit = MAX_DOWNLOAD_BYTES if urllib.parse.urlsplit(url).hostname == DOWNLOAD_HOST \
+        else MAX_API_BYTES
+    opener = urllib.request.build_opener(_SafeRedirects(allowed_hosts(url)))
     request = urllib.request.Request(url, headers=headers)
     try:
-        with urllib.request.urlopen(request, timeout=60) as r:
-            return Response(r.status, {k.lower(): v for k, v in r.headers.items()}, r.read())
+        with opener.open(request, timeout=REQUEST_TIMEOUT) as r:
+            return Response(r.status, {k.lower(): v for k, v in r.headers.items()},
+                            read_limited(r, limit, url))
     except urllib.error.HTTPError as e:
         return Response(e.code, {k.lower(): v for k, v in (e.headers or {}).items()},
-                        e.read() if e.fp else b"")
+                        read_limited(e, 65536, url) if e.fp else b"")
 
 
 def batched(items: Iterable[str], size: int = BATCH) -> Iterator[list[str]]:
@@ -165,15 +220,20 @@ def _atomic_write(path: Path, data: bytes) -> None:
     os.replace(tmp, path)
 
 
-def retry_after(headers: dict[str, str]) -> float | None:
-    """The seconds a `Retry-After` header asks for, or None (a date is not
-    read: the backoff covers it)."""
+def retry_after(headers: dict[str, str], now: float | None = None) -> float | None:
+    """The seconds a `Retry-After` header asks for: a number of seconds, or
+    an HTTP date (seconds from [now], the wall clock); None if it is neither."""
     value = headers.get("retry-after")
     if value is None:
         return None
     try:
         return max(0.0, float(value.strip()))
     except ValueError:
+        pass
+    try:
+        when = email.utils.parsedate_to_datetime(value.strip())
+        return max(0.0, when.timestamp() - (time.time() if now is None else now))
+    except (TypeError, ValueError, IndexError):
         return None
 
 
@@ -226,17 +286,17 @@ class Client:
             ask: float | None = None
             try:
                 response = self.transport(url, self.headers)
-            except OSError as e:
+            except (OSError, http.client.HTTPException) as e:
                 last = f"network error: {e}"
             else:
                 if 200 <= response.status < 300:
                     body_error = self._maxlag(response) if kind == "api" else None
                     if body_error is None:
                         return response.body
-                    last, ask = body_error, retry_after(response.headers)
+                    last, ask = body_error, retry_after(response.headers, self._now())
                 elif response.status in RETRYABLE:
                     last = f"HTTP {response.status}"
-                    ask = retry_after(response.headers)
+                    ask = retry_after(response.headers, self._now())
                 else:
                     raise HttpError(response.status, url)
             if ask is not None and ask > self.retry_after_cap:
@@ -335,14 +395,28 @@ class Client:
             else:
                 todo.append(title)
         for batch in batched(todo):
-            data = self.get_json(COMMONS_API, {
-                "action": "query", "prop": "imageinfo", "iiprop": props,
-                "formatversion": "2", "redirects": "1", "titles": "|".join(batch)})
-            query = data.get("query") or {}
-            moved = {}
-            for entry in (query.get("normalized") or []) + (query.get("redirects") or []):
-                moved[entry["from"]] = entry["to"]
-            by_title = {p.get("title"): p for p in query.get("pages") or []}
+            base = {"action": "query", "prop": "imageinfo", "iiprop": props,
+                    "formatversion": "2", "redirects": "1", "titles": "|".join(batch)}
+            moved: dict[str, str] = {}
+            by_title: dict[str, dict] = {}
+            extra: dict[str, str] = {}
+            for _ in range(20):           # follow `continue` until the batch is whole
+                data = self.get_json(COMMONS_API, {**base, **extra})
+                query = data.get("query") or {}
+                for entry in (query.get("normalized") or []) + (query.get("redirects") or []):
+                    moved[entry["from"]] = entry["to"]
+                for page in query.get("pages") or []:
+                    have = by_title.setdefault(page.get("title"), {})
+                    if page.get("imageinfo"):
+                        have["imageinfo"] = page["imageinfo"]
+                    if page.get("missing"):
+                        have["missing"] = True
+                more = data.get("continue")
+                if not isinstance(more, dict) or not more:
+                    break
+                extra = {k: str(v) for k, v in more.items()}
+            else:
+                raise WikimediaError("imageinfo kept asking to continue; batch dropped")
             for title in batch:
                 final = title
                 for _ in range(5):          # a short chain, never a loop
@@ -351,10 +425,11 @@ class Client:
                     final = moved[final]
                 page = by_title.get(final)
                 infos = (page or {}).get("imageinfo") or []
-                info = {**infos[0], "title": final} if infos and not page.get("missing") else None
+                info = {**infos[0], "title": final} if infos else None
                 out[title] = info
-                self._cache_write("imageinfo", _key(title, props),
-                                  {"found": info is not None, "info": info})
+                if page is not None:       # a title the API never listed is not cached
+                    self._cache_write("imageinfo", _key(title, props),
+                                      {"found": info is not None, "info": info})
         return {title: out[title] for title in wanted}
 
     def category_files(self, category: str) -> list[str]:
