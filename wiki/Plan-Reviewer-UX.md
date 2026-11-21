@@ -6,7 +6,7 @@ Status: brainstorm settled with the owner on 2026-11-20/21, not built; an ADR an
 
 Goal (owner): ease of use, gated to actual speakers as much as possible, and comprehensive reviews that a second speaker can check easily.
 
-Each decision below has its main downside. Decisions marked "assumed, confirm" were not decided by the owner; they are defaults for the owner to confirm or change. Nothing here changes the app-facing [Reviewing Guide](Reviewing-Guide) until it is built.
+Each decision below has its main downside. Decisions marked "assumed, confirm" or "reading, confirm if wrong" were not decided by the owner; they are defaults or readings for the owner to confirm or change. Nothing here changes the app-facing [Reviewing Guide](Reviewing-Guide) until it is built.
 
 ## Decisions
 
@@ -122,7 +122,7 @@ Amended by the owner, 2026-11-21, then reversed the same day: "on second thought
 - **No exchange of FL codes:** reviewers keep their self-created `FL-XXXX-XXXX-C` rater codes (`lib/core/review/rater_code.dart`) and never send them to the owner. No mapping file exists, so there is no question of where a mapping lives.
 - **Binding:** the first review mail carrying the key binds the key id to that reviewer's FL code. Each review mail carries the key as a secret proof. The bot (`tools/mail_to_issues.py`) verifies the signature, the denylist and that the bound code matches. It strips the key before anything is published and never echoes it into issues, PRs or decks. A copied public FL code alone proves nothing, which fixes the spoofing problem of FL-only. A mail with the key but a different FL code, or from an unexpected address, is held for the owner. The bot also rate-limits per key.
 - **Already reviewing or not** (owner, 2026-11-21: "That way no matter whether they are already reviewing or not, they can easily become verified."): a reviewer who already reviews keeps their FL code, and the first review carrying the key binds the key to it. A new reviewer pastes the key, and the app turns reviewing on and makes their code.
-- **Earlier reviews (proposed by the orchestrator, assumed, confirm):** on binding, that code's earlier reviews are upgraded to Verified weight. Downside: it trusts the earlier work as much as the later. Alternative: the upgrade applies only from the bind onwards.
+- **Earlier reviews** (owner, 2026-11-21, on the orchestrator's proposal: "3. Yes."): when a signed key binds to an existing FL code, that code's earlier reviews are upgraded to Verified weight. Downside: it trusts the earlier work as much as the later.
 - **Without a key:** self-created FL codes stay Provisional (held until a Verified reviewer agrees). The reviewer check (decision 1) also yields Provisional only.
 
 Tiers:
@@ -160,28 +160,58 @@ Owner (2026-11-21): "least-checked first, grouped by unit within a session. So a
 - The flagged queue is a separate tab.
 - A second mode lets a reviewer check only the flagged and contested queue.
 - Progress is saved and resumable.
-- Session size of 20 cards, with a continue option: **assumed, confirm** (not discussed).
+- **Session size** (owner, 2026-11-21: "Ok. But reviewers get to continue beyond that (this continue pool will have all cards and they can stop when they want by closing the review)."): a session is 20 cards, one unit's least-checked (as above). After 20 the reviewer may continue through a pool of all the course's cards, least-checked first and still grouped by unit, and stops whenever they close the review. Nothing is lost on closing: answers are saved as they go.
 
 Main downside: jumping between units loses context.
+
+### 9a. Same shell as today's review
+
+Owner (2026-11-21): "Also, the review questions should be similar to the existing shell."
+
+Orchestrator's reading (**reading, confirm if wrong**): the new facet questions and pointer tags are built on the existing review screens and the daily-questions flow in `lib/features/review/` (`review_page.dart`, `daily_questions_page.dart`, `review_sheets.dart`: weakest data first, "put off today", the sent and not sent pages), not a new separate screen family. The queue logic is `lib/core/review/review_queue.dart`.
+
+### 9b. Review from the deck view
+
+Owner (2026-11-21): "Also, reviewers can go into the deck view and review specific units or cards from there manually too. That will use something like the current existing review screen with all the card details."
+
+From the deck view (`lib/features/decks/`: `deck_detail_page.dart`, `unit_page.dart`, `word_sheet.dart`) a reviewer can review a chosen unit or a single card, on a review screen showing every card detail (all facets). It uses the same facet answers, tags and receipts as the queue.
+
+### 9c. Quorum: each card detail is reviewed twice
+
+Owner (2026-11-21): "Each card detail will need to be reviewed twice (save the number somewhere as a constant) for the card to be considered reviewed."
+
+- Each facet (card detail) needs 2 reviews by two distinct reviewers. A card is reviewed only when all its applicable facets have 2.
+- Combined with the tier rule of decision 8, at least one of the two must be Verified; a Provisional review counts only alongside a Verified reviewer. This combination is the **orchestrator's reading, confirm**.
+- The number lives in ONE constant: a new Dart constant in `lib/core/review/` (for example `kReviewQuorum = 2`) and a matching constant on the tools side (the bot and validator code, `tools/mail_to_issues.py` and the deck tools). A test keeps the two equal.
+- This supersedes the GitHub secret of [ADR-0038](ADR-0038-Review-Proposals) ("This number can be a github secret so that I can update it easily"): changing the number is now a code change.
+- The number is never shown in the app (decision 4).
+
+Consequence: the file-level reviewed tag logic of ADR-0038 (a file is tagged `reviewed` when every card entry lists a code) must change to the facet-level two-check rule above, in the bot and in the validator and index tools that read the tag.
 
 ### 10. Not decided: defaults assumed, confirm
 
 | # | Default | Status |
 |---|---|---|
 | A3 | One-tap agree with another reviewer's proposal. | covered by decision 7 (open pass for proposals: accept, reject or offer another); no separate decision needed |
-| A4 | Typing in the learner's script, with an IME hint and the card's existing reading shown. | open, confirm |
+| A4 | Typing in the learner's script, with an IME hint and the card's existing reading shown. | open; owner asked for elaboration (below), not decided |
 | Submit | In-app submit instead of mail is **not** planned; mail stays. | assumed, confirm |
 
-**A4 note.** The IME hint question was not discussed with the owner and is still open. The orchestrator's recommendation: no custom keyboard. Use the phone's keyboard, show the card's current reading, and offer candidate chips (engine candidates, lexicon variants) so typing is rare. This follows the owner's preference for YAGNI.
+**A4 note.** Still open: the owner asked for elaboration, not a decision. Three levels:
+
+- **(a) Phone keyboard only.** Cheapest; typing in an unfamiliar script is hard for some reviewers.
+- **(b) Phone keyboard plus helpers.** The field is prefilled with the current text, so most fixes are 1 to 2 character edits. Candidate chips (engine candidates, lexicon variants), the card's reading beside the field, paste allowed, and a one-line hint to enable the script's keyboard in system settings.
+- **(c) A custom in-app transliteration keyboard.** Type in Latin, get the script. A big per-script build.
+
+Orchestrator's recommendation: (b), in line with the owner's preference for YAGNI.
 
 ## Open and next, in dependency order
 
-1. An ADR recording decisions 1 to 8 (Sonnet).
+1. An ADR recording decisions 1 to 9 (including 9a to 9c) (Sonnet).
 2. Mockups (Sonnet), following the [mockups README](https://github.com/aaronified/fluenough/blob/main/docs/mockups/README.md): 1.4x text, light and dark.
 3. Issues, with dependencies marked as "blocked by" and the `blocked` label, never assumed.
 4. Code, only after the owner approves the mockups.
 
-Still open: (a) typing in the learner's script (A4; the orchestrator recommends no custom keyboard) and (b) the 20-card session size (decision 9, assumed).
+Still open: typing in the learner's script (A4; the orchestrator recommends level (b), the phone keyboard with helpers). The session size is decided (decision 9). The readings marked "confirm" (9a, the Provisional-plus-Verified quorum in 9c, and the hidden file-level notice in decision 4) wait for the owner.
 
 Also open: the persona replay and adversarial retest of the stricter placement mode (decision 1) must pass before the reviewer check ships.
 
