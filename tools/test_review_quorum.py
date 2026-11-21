@@ -43,6 +43,19 @@ class QuorumTest(unittest.TestCase):
         self.assertFalse(rq.facet_reached_quorum(
             [("A", "bogus"), ("B", p)], needs_verified=True))
 
+    def test_right_flag_right_is_not_settled(self) -> None:
+        p = rq.PROVISIONAL
+        self.assertFalse(rq.facet_reached_quorum(
+            [("A", p, True), ("B", p, False), ("C", p, True)]))
+
+    def test_a_rater_changing_right_to_flag_stops_counting(self) -> None:
+        p = rq.PROVISIONAL
+        two = [("A", p), ("B", p)]
+        self.assertTrue(rq.facet_reached_quorum(two))
+        self.assertFalse(rq.facet_reached_quorum(two + [("b", p, False)]))
+        self.assertTrue(rq.facet_reached_quorum(
+            two + [("B", p, False), ("B", p, True)]))
+
 
 if __name__ == "__main__":
     unittest.main()

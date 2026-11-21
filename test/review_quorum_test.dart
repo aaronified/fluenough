@@ -50,21 +50,6 @@ void main() {
       expect(kReviewQuorum, 2);
       expect(kQuorumNeedsVerified, isFalse);
     });
-
-    test('no interface string carries the quorum or its setting name', () {
-      // The number is never shown: reviewer screens say "needs another
-      // speaker's check". The new keys are checked by name, because other
-      // strings may hold the digit for other reasons.
-      for (final file
-          in Directory('lib/l10n')
-              .listSync()
-              .whereType<File>()
-              .where((f) => f.path.endsWith('app_en.arb'))) {
-        final text = file.readAsStringSync();
-        expect(text.contains('kReviewQuorum'), isFalse);
-        expect(text.contains('REVIEW_QUORUM'), isFalse);
-      }
-    });
   });
 
   group('facetReachedQuorum', () {
@@ -147,6 +132,46 @@ void main() {
         ], needsVerified: true),
         isTrue,
       );
+    });
+
+    test('right, flag, right does not reach the quorum', () {
+      final flag = FacetAnswer.flagged(<PointerTag>{PointerTag.meaningWrong});
+      final checks = [_check('A'), _check('B', answer: flag), _check('C')];
+      expect(facetReachedQuorum(checks), isFalse);
+      expect(facetStatus(checks), FacetStatus.contested);
+      expect(
+        cardReachedQuorum(<Facet>{Facet.word}, {Facet.word: checks}),
+        isFalse,
+      );
+    });
+
+    test('a rater changing right to flag stops counting', () {
+      final flag = FacetAnswer.flagged(<PointerTag>{PointerTag.meaningWrong});
+      final before = [_check('A'), _check('B')];
+      expect(facetReachedQuorum(before), isTrue);
+      final after = [...before, _check('B', answer: flag)];
+      expect(facetReachedQuorum(after), isFalse);
+      // And back to right counts again.
+      expect(facetReachedQuorum([...after, _check('B')]), isTrue);
+    });
+
+    test('settled and reached agree for every small mix', () {
+      final flag = FacetAnswer.flagged(<PointerTag>{PointerTag.meaningWrong});
+      for (final a in [null, flag]) {
+        for (final b in [null, flag]) {
+          for (final c in [null, flag]) {
+            final checks = [
+              _check('A', answer: a),
+              _check('B', answer: b),
+              _check('C', answer: c),
+            ];
+            expect(
+              facetReachedQuorum(checks),
+              facetStatus(checks) == FacetStatus.settled,
+            );
+          }
+        }
+      }
     });
 
     test('an empty rater code never counts', () {

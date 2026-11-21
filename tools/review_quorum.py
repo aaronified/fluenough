@@ -29,20 +29,31 @@ TIERS = (PROVISIONAL, VERIFIED, TRUSTED)
 
 
 def facet_reached_quorum(
-        checks: Iterable[tuple[str, str]],
+        checks: Iterable[tuple],
         quorum: int = REVIEW_QUORUM,
         needs_verified: bool = QUORUM_NEEDS_VERIFIED) -> bool:
-    """Whether [checks], (rater code, tier) pairs of the checks that endorse
-    one facet, give it the quorum: [quorum] distinct rater codes, and with
-    [needs_verified] at least one Verified or Trusted. A code counts once, at
-    the best tier it appears at; an unknown tier counts as Provisional."""
+    """Whether [checks] give a facet the quorum; the same rule as
+    `facetReachedQuorum` in the Dart file.
+
+    [checks] are tuples (rater code, tier) or (rater code, tier, endorses),
+    in the order they were made, for ONE facet. With no third item a check
+    is a bare endorsement (a code in `checked_by`); pass False for a flag.
+    The caller must not drop flags: a flag is how a rater's later answer
+    replaces an earlier "right". Each code counts once, by its latest
+    answer. If any code's latest answer is a flag the facet is not settled.
+    Otherwise it needs [quorum] distinct codes, and with [needs_verified] at
+    least one Verified or Trusted; a code counts at the best tier it appears
+    at, and an unknown tier is Provisional."""
+    endorsing: dict[str, bool] = {}
     best: dict[str, int] = {}
-    for rater, tier in checks:
+    for check in checks:
+        rater, tier = check[0], check[1]
         key = (rater or "").strip().upper()
         if not key:
             continue
+        endorsing[key] = check[2] if len(check) > 2 else True
         rank = TIERS.index(tier) if tier in TIERS else 0
         best[key] = max(best.get(key, 0), rank)
-    if len(best) < quorum:
+    if not all(endorsing.values()) or len(endorsing) < quorum:
         return False
     return not needs_verified or any(rank > 0 for rank in best.values())

@@ -61,28 +61,34 @@ class ReviewCheck {
   bool get endorses => answer == null || answer!.isRight;
 }
 
-/// Whether [checks] give a facet the quorum.
+/// Whether [checks] give a facet the quorum. The one rule, here only:
+/// [facetStatus] settles a facet exactly when this is true.
 ///
-/// Counted: the distinct raters among the checks that endorse the facet
-/// (a flag does not count; two checks by one code are one). Needs
-/// [quorum] of them. With [needsVerified] (the W7 switch, [kQuorumNeedsVerified]
-/// today) at least one of them must be Verified or Trusted.
+/// [checks] are in the order they were made. Each rater code counts once,
+/// by its latest answer (a reviewer who changes right to flag stops
+/// counting). If any rater's latest answer is a flag the facet is not
+/// settled, whatever the others say: that is a contested or flagged facet.
+/// Otherwise it needs [quorum] distinct raters, and with [needsVerified]
+/// (the W7 switch, [kQuorumNeedsVerified] today) at least one of them
+/// Verified or Trusted, a rater counting at the best tier it was seen at.
 bool facetReachedQuorum(
   Iterable<ReviewCheck> checks, {
   int quorum = kReviewQuorum,
   bool needsVerified = kQuorumNeedsVerified,
 }) {
-  final byRater = <String, ReviewerTier>{};
+  final endorsing = <String, bool>{};
+  final tiers = <String, ReviewerTier>{};
   for (final check in checks) {
-    if (check.key.isEmpty || !check.endorses) continue;
-    final seen = byRater[check.key];
-    // One code counts once, at the best tier it has been seen at.
+    if (check.key.isEmpty) continue;
+    endorsing[check.key] = check.endorses;
+    final seen = tiers[check.key];
     if (seen == null || check.tier.index > seen.index) {
-      byRater[check.key] = check.tier;
+      tiers[check.key] = check.tier;
     }
   }
-  if (byRater.length < quorum) return false;
-  return !needsVerified || byRater.values.any((tier) => tier.isVerified);
+  if (endorsing.values.any((ok) => !ok)) return false;
+  if (endorsing.length < quorum) return false;
+  return !needsVerified || tiers.values.any((tier) => tier.isVerified);
 }
 
 /// Whether a card's facets all have the quorum: [applicable] facets are each
