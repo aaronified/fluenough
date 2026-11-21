@@ -109,7 +109,11 @@ class V3ResultPage extends StatefulWidget {
     this.recheck,
     this.failed = false,
     this.onKeepGoing,
+    this.extra,
   });
+
+  /// Something quiet under the result, such as the reviewer check's offer.
+  final Widget? extra;
 
   /// "Keep going" for a sharper answer: given while the run is at its soft
   /// stop.
@@ -396,6 +400,11 @@ class _V3ResultPageState extends State<V3ResultPage> {
                     ),
                     const SizedBox(height: 8),
                   ],
+                  if (widget.extra case final extra?)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 16),
+                      child: extra,
+                    ),
                   if (widget.failed)
                     Padding(
                       padding: const EdgeInsets.only(top: 16),

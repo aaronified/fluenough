@@ -4,10 +4,12 @@ import '../../core/feedback/content_report.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/placement/placement_questions.dart' show PlacementSkill;
+import '../../core/placement/reviewer_check_rules.dart';
 import '../../core/placement/v3_result.dart';
 import '../../core/placement/v3_session.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/snack.dart';
+import '../review/reviewer_check_page.dart';
 import 'find_level_labels.dart' show FindLevelRecheck;
 import 'placement_questions.dart' show PlacementShell;
 import 'v3_question_view.dart';
@@ -158,6 +160,16 @@ class _V3RunPageState extends State<V3RunPage> {
                   _run.keepGoing();
                   _changed();
                 }
+              : null,
+          // The quiet offer to help check cards, after a placement that
+          // reached the top band (ADR-0058, W6): off until launch.
+          extra: kReviewerCheckEnabled && _run.finished
+              ? ReviewerCheckOffer(
+                  result: result,
+                  data: _run.data,
+                  code: _run.data.language,
+                  name: widget.languageName,
+                )
               : null,
           onDone: _done,
           onRestart: _restart,

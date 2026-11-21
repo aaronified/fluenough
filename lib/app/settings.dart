@@ -172,6 +172,7 @@ class SettingsNotifier extends ChangeNotifier {
   String? _reviewerKey;
   bool _reviewIntroShown = false;
   String? _reviewRun;
+  String? _reviewerChecks;
   Reviews _reviews = const Reviews();
   int _questionsPerDay = defaultQuestionsPerDay;
   QuestionLog _questions = const QuestionLog();
@@ -291,6 +292,14 @@ class SettingsNotifier extends ChangeNotifier {
   String? get reviewRun => _reviewRun;
   set reviewRun(String? value) =>
       _set(_reviewRun, value, (v) => _reviewRun = v);
+
+  /// What the reviewer check left on this phone, a JSON object of
+  /// `ReviewerCheckRecord.toJson` by language code (ADR-0058, W6): the facets
+  /// passed, when the check was last taken, whether it was offered. Never a
+  /// score. Read and written through `reviewerCheckOf`.
+  String? get reviewerChecks => _reviewerChecks;
+  set reviewerChecks(String? value) =>
+      _set(_reviewerChecks, value, (v) => _reviewerChecks = v);
 
   /// Every deck's review on this phone, sent or not. Not something the
   /// learner sets here: the review screens change it.
@@ -1586,6 +1595,7 @@ class SettingsNotifier extends ChangeNotifier {
     'reviewer_key': _reviewerKey ?? '',
     'review_intro_shown': '$_reviewIntroShown',
     'review_run': _reviewRun ?? '',
+    'reviewer_checks': _reviewerChecks ?? '',
     'reviews': _reviews.toJson(),
     'review_questions_per_day': '$_questionsPerDay',
     'review_questions': _questions.toJson(),
@@ -2036,6 +2046,9 @@ class SettingsNotifier extends ChangeNotifier {
     if (pick('review_intro_shown', flag) case final v?) reviewIntroShown = v;
     if (pick('review_run', (t) => t) case final v?) {
       reviewRun = v.isEmpty ? null : v;
+    }
+    if (pick('reviewer_checks', (t) => t) case final v?) {
+      reviewerChecks = v.isEmpty ? null : v;
     }
     if (pick('reviews', Reviews.fromJson) case final v?) reviews = v;
     if (pick('review_questions_per_day', int.tryParse) case final v?) {

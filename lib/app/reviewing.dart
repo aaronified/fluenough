@@ -24,6 +24,7 @@ import 'app_info.dart';
 import 'app_log.dart';
 import 'deck_catalog.dart';
 import 'mail_share.dart';
+import 'reviewer_check_records.dart';
 import 'settings.dart';
 
 /// What came of sending reviews.
@@ -431,6 +432,14 @@ class Reviewing {
     }
     final made = _clock();
     final answered = QuestionsFile.languagesOf(answers);
+    // The coarse "passed facets" flag of a reviewer check goes in the first
+    // mail of its course, and nothing else of the check ever leaves.
+    final flagged = <String, List<String>>{
+      for (final deck in chosen)
+        if (settings.reviewerCheckOf(deck.language) case final record
+            when record.passed && !record.mailed)
+          deck.language: record.eligibility.passedFacetsWire,
+    };
     final files = <AttachedFile>[
       for (final deck in chosen)
         AttachedFile(
@@ -442,6 +451,7 @@ class Reviewing {
             appVersion: AppInfo.version,
             made: made,
             reviewerKey: keyProof,
+            passedFacets: flagged[deck.language] ?? const <String>[],
             order: <String>[
               for (final card
                   in _deckById(deck.deckId)?.cards ?? const <Card>[])
@@ -475,6 +485,7 @@ class Reviewing {
       return ReviewSendOutcome.failed;
     }
     if (!shared) return ReviewSendOutcome.noMailApp;
+    flagged.keys.forEach(settings.markReviewerCheckMailed);
     if (chosen.isNotEmpty) {
       settings.reviews = reviews.sentAt(<String>[
         for (final deck in chosen) deck.deckId,
