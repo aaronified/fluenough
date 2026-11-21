@@ -35,6 +35,11 @@ dependencies:
   # Text to speech. Wraps android.speech.tts and AVSpeechSynthesizer.
   flutter_tts: ^4.2.5
 
+  # Grapheme clusters for the answer grader's typo allowance (lib/core has no
+  # Flutter imports). Dart-only; Flutter itself depends on it, so the version
+  # is the one Flutter already resolves.
+  characters: ^1.4.0
+
   # Deck parsing. Decks are authored as YAML, see docs/DECK-FORMAT.md.
   yaml: ^3.1.4
 

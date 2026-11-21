@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:flutter/widgets.dart' show StringCharacters;
+import 'package:characters/characters.dart' show StringCharacters;
 
 import 'canonical.dart';
 import 'diacritics.dart';
