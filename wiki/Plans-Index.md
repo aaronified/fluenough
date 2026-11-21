@@ -38,6 +38,7 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [Research And Standards](Plan-Research-And-Standards): a Research and standards page, with the sources
 - [Review Staging](Plan-Review-Staging): a decks-staging branch where review mails land, confirmed, then applied to decks-live (brainstorm)
 - [Reviewing Scope](Plan-Reviewing-Scope): what reviewing covers, and how reviewers change cards
+- [Reviewer UX](Plan-Reviewer-UX): the reviewer check in placement, signed codes and tiers, pointer tags, blind pass (brainstorm)
 - [Sentence Building](Plan-Sentence-Building): building sentences by reasoning
 - [Settings Wording](Plan-Settings-Wording): settings that say what they do, on and off
 - [Speech Offline Alert](Plan-Speech-Offline-Alert): say when speech can't be recognised offline (Priority 2 after the placement release (owner 2026-11-07): on-device voice recognition, #1004; not built in the placement-release session)
