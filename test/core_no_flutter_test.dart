@@ -37,7 +37,7 @@ void main() {
   test('every platform wrapper still imports Flutter', () {
     for (final path in _platformWrappers) {
       expect(
-        File(path).readAsStringSync().contains("package:flutter"),
+        File(path).readAsStringSync().contains('package:flutter'),
         isTrue,
         reason: '$path no longer needs its exemption: remove it from the list.',
       );
