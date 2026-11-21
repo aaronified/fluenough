@@ -31,6 +31,15 @@ const _items = <String>[
   'people',
 ];
 
+/// A phone as wide as the design's but tall enough to draw the whole page, so
+/// that no row is left unbuilt below the fold.
+void _useTallPhone(WidgetTester tester) {
+  tester.view
+    ..physicalSize = const Size(390 * 3, 6000 * 3)
+    ..devicePixelRatio = 3;
+  addTearDown(tester.view.reset);
+}
+
 Finder _thanks(String id) => find.byKey(ValueKey<String>('thanks-$id'));
 
 Future<AppState> _withSignWritingFont() async {
@@ -58,7 +67,7 @@ void main() {
   group('the Sources page credits Wiktionary for pronunciations', () {
     testWidgets('it says the IPA in [ ] is adapted from Wiktionary, '
         'CC BY-SA 4.0, and the links open', (tester) async {
-      usePhone(tester);
+      _useTallPhone(tester);
       final links = FixedLinks();
       await pumpScreen(
         tester,
@@ -102,7 +111,7 @@ void main() {
   group('the Sources page thanks everyone the app stands on', () {
     testWidgets('Thank you comes first, above Deck content, and shows the '
         'nine acknowledgements without a SignWriting font', (tester) async {
-      usePhone(tester);
+      _useTallPhone(tester);
       await pumpScreen(tester, const SourcesPage());
       final l10n = l10nOf(tester);
       final heading = find.text(l10n.sourcesThanks);
@@ -122,7 +131,7 @@ void main() {
 
     testWidgets('a SignWriting font on the phone adds its thanks, licence '
         'and copyright, making ten', (tester) async {
-      usePhone(tester);
+      _useTallPhone(tester);
       await pumpScreen(
         tester,
         const SourcesPage(),
@@ -151,7 +160,7 @@ void main() {
     testWidgets('Open-source licences opens Flutter\'s licence page', (
       tester,
     ) async {
-      usePhone(tester);
+      _useTallPhone(tester);
       await pumpScreen(tester, const SourcesPage());
       final row = find.byKey(const ValueKey<String>('thanks-licences'));
       await tester.ensureVisible(row);
@@ -165,7 +174,7 @@ void main() {
       testWidgets('at 1.4x text on a 360 dp phone nothing overflows, in '
           '${mode.name}, and each row reads as one node', (tester) async {
         tester.view
-          ..physicalSize = const Size(360 * 3, 800 * 3)
+          ..physicalSize = const Size(360 * 3, 8000 * 3)
           ..devicePixelRatio = 3;
         tester.platformDispatcher.textScaleFactorTestValue = 1.4;
         addTearDown(tester.view.reset);
