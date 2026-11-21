@@ -83,7 +83,6 @@ void main() {
         findsOneWidget,
       );
 
-      await tester.ensureVisible(find.text(l10n.sourcesPhonetic));
       await tester.tap(
         find.ancestor(
           of: find.text(l10n.sourcesPhonetic),
@@ -91,7 +90,6 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      await tester.ensureVisible(find.text(l10n.sourcesLicence));
       await tester.tap(
         find.ancestor(
           of: find.text(l10n.sourcesLicence),
@@ -122,7 +120,6 @@ void main() {
       );
       expect(find.text(l10n.sourcesThanksIntro), findsOneWidget);
       for (final id in _items.where((id) => id != 'signwriting')) {
-        await tester.ensureVisible(_thanks(id));
         expect(_thanks(id), findsOneWidget, reason: id);
       }
       expect(_thanks('signwriting'), findsNothing);
@@ -139,7 +136,6 @@ void main() {
       );
       final l10n = l10nOf(tester);
       for (final id in _items) {
-        await tester.ensureVisible(_thanks(id));
         expect(_thanks(id), findsOneWidget, reason: id);
       }
       expect(
@@ -163,7 +159,6 @@ void main() {
       _useTallPhone(tester);
       await pumpScreen(tester, const SourcesPage());
       final row = find.byKey(const ValueKey<String>('thanks-licences'));
-      await tester.ensureVisible(row);
       await tester.tap(row);
       await tester.pump();
       await tester.pump(const Duration(seconds: 1));
@@ -189,16 +184,18 @@ void main() {
         );
         final l10n = l10nOf(tester);
         for (final id in _items) {
-          await tester.ensureVisible(_thanks(id));
-          await tester.pumpAndSettle();
+          expect(_thanks(id), findsOneWidget, reason: id);
         }
         expect(tester.takeException(), isNull);
         expect(
-          tester.getSemantics(_thanks('tatoeba')).label,
-          allOf(
-            contains(l10n.sourcesThanksTatoeba),
-            contains(l10n.sourcesThanksTatoebaLine),
+          find.bySemanticsLabel(
+            RegExp(
+              '${RegExp.escape(l10n.sourcesThanksTatoeba)}'
+              '.*${RegExp.escape(l10n.sourcesThanksTatoebaLine)}',
+              dotAll: true,
+            ),
           ),
+          findsOneWidget,
         );
       });
     }
