@@ -4,11 +4,14 @@ import '../core/feedback/report.dart';
 import '../core/models/card.dart';
 import '../core/models/proposal.dart';
 import '../core/review/deck_review.dart';
+import '../core/review/facets.dart';
 import '../core/review/question_log.dart';
 import '../core/review/questions_file.dart';
 import '../core/review/review_question.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_file.dart';
+import '../core/review/review_quorum.dart';
+import '../core/review/review_receipt.dart';
 import 'app_info.dart';
 import 'app_log.dart';
 import 'deck_catalog.dart';
@@ -50,11 +53,11 @@ class Reviewing {
   });
 
   /// How many reviewers other than the proposer must accept a change before
-  /// learners get it: the review bot's `REVIEW_AGREEMENTS_NEEDED` when the
-  /// owner has not set it (tools/review_bot.py). "How reviewing works" and
-  /// docs/REVIEWING.md both state it; the app cannot read the owner's
-  /// setting, so a raised number is changed here too.
-  static const int agreementsNeeded = 1;
+  /// learners get it: the review quorum less the proposer's own review
+  /// ([kReviewQuorum], ADR-0058; it replaced the review bot's
+  /// `REVIEW_AGREEMENTS_NEEDED` setting, tools/review_bot.py). "How reviewing
+  /// works" and docs/REVIEWING.md both state it.
+  static const int agreementsNeeded = kReviewQuorum - 1;
 
   final SettingsNotifier settings;
   final DateTime Function() _clock;
@@ -121,6 +124,8 @@ class Reviewing {
       alike: old?.alike,
       answers: old?.answers ?? const <String, ProposalAnswer>{},
       itemsRight: old?.itemsRight ?? const <String>{},
+      facets: old?.facets ?? const <Facet, FacetAnswer>{},
+      receipts: old?.receipts ?? const <ReviewReceipt>[],
     ),
   );
 
@@ -148,6 +153,8 @@ class Reviewing {
       alike: old?.alike,
       answers: old?.answers ?? const <String, ProposalAnswer>{},
       itemsRight: itemsRight ?? old?.itemsRight ?? const <String>{},
+      facets: old?.facets ?? const <Facet, FacetAnswer>{},
+      receipts: old?.receipts ?? const <ReviewReceipt>[],
     ),
   );
 
@@ -163,6 +170,8 @@ class Reviewing {
       alike: old?.alike,
       answers: old?.answers ?? const <String, ProposalAnswer>{},
       itemsRight: old?.itemsRight ?? const <String>{},
+      facets: old?.facets ?? const <Facet, FacetAnswer>{},
+      receipts: old?.receipts ?? const <ReviewReceipt>[],
     ),
   );
 
@@ -178,6 +187,8 @@ class Reviewing {
       alike: check,
       answers: old?.answers ?? const <String, ProposalAnswer>{},
       itemsRight: old?.itemsRight ?? const <String>{},
+      facets: old?.facets ?? const <Facet, FacetAnswer>{},
+      receipts: old?.receipts ?? const <ReviewReceipt>[],
     ),
   );
 
@@ -210,6 +221,8 @@ class Reviewing {
       alike: old?.alike,
       answers: Map<String, ProposalAnswer>.unmodifiable(answers),
       itemsRight: old?.itemsRight ?? const <String>{},
+      facets: old?.facets ?? const <Facet, FacetAnswer>{},
+      receipts: old?.receipts ?? const <ReviewReceipt>[],
     );
   });
 

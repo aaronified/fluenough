@@ -13,6 +13,7 @@ import 'app/features.dart';
 import 'app/links.dart';
 import 'app/report_mail.dart';
 import 'app/pacing.dart';
+import 'core/review/review_problems.dart';
 import 'features/stats/progress_numbers.dart';
 import 'app/profile.dart';
 import 'app/profile_storage.dart';
@@ -42,6 +43,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final log = AppLog(store: MemoryLogStore());
   logErrors(log);
+  ReviewProblems.sink = log.warning;
   await log.open();
   log.event('App started: ${AppInfo.version}');
   final storage = await openProfileStorage(Profile.defaultProfile);

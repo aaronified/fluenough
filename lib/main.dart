@@ -32,6 +32,7 @@ import 'app/startup_marks.dart';
 import 'app/system_settings.dart';
 import 'app/wallpaper_colours.dart';
 import 'core/haptics/system_haptic_engine.dart';
+import 'core/review/review_problems.dart';
 import 'core/decks/deck_fetch.dart';
 import 'core/network/network_probe.dart';
 import 'core/sound/system_sound_check.dart';
@@ -66,6 +67,7 @@ Future<void> main() async {
   final files = await getApplicationSupportDirectory();
   final log = AppLog(store: FileLogStore(File('${files.path}/logs/app.log')));
   logErrors(log);
+  ReviewProblems.sink = log.warning;
   await log.open();
   log.event('App started: ${AppInfo.version}');
   final marks = StartupMarks(log);
