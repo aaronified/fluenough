@@ -6,6 +6,7 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/routes.dart';
 import '../../core/review/review_pairs.dart';
+import '../../core/review/review_quorum.dart' show ReviewerTier;
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/widgets/grouped_list.dart';
@@ -15,6 +16,7 @@ import '../downloads/download_text.dart';
 import '../downloads/language_download_row.dart';
 import '../settings/settings_controls.dart';
 import 'review_waiting.dart';
+import 'reviewer_key_sheet.dart' show reviewerTierLabel;
 import '../../app/language_directory_loader.dart';
 
 /// Opens Languages you review.
@@ -84,6 +86,7 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
         listenable: Listenable.merge(<Listenable>[
           state.settings,
           ?state.deckDownloads,
+          state.reviewing.keyringNotifier,
         ]),
         builder: (context, _) => _body(context, state),
       ),
@@ -97,9 +100,15 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
     final offered = offeredPairs(state);
     final reviewed = reviewPairsOf(state);
     final stored = state.settings.reviewPairs ?? const <String>{};
+    // A good signed reviewer key (ADR-0058, W7) unlocks its courses, ticked
+    // and not to be unticked, whatever the reviewer said they know.
+    final keyed = keyPairsOf(state);
     final shown = <ReviewPair>[
       for (final pair in offered)
-        if (reviewer.canReview(pair) || stored.contains(pair.key)) pair,
+        if (reviewer.canReview(pair) ||
+            stored.contains(pair.key) ||
+            keyed.contains(pair))
+          pair,
     ];
     final names = <String, String>{...languageNamesOf(state), ..._knownNames};
     String name(String code) => names[code] ?? code;
@@ -184,7 +193,10 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
                   context,
                   state,
                   pair,
-                  block: reviewer.blockOf(pair),
+                  block: keyed.contains(pair) ? null : reviewer.blockOf(pair),
+                  keyTier: keyed.contains(pair)
+                      ? state.reviewing.key?.tier
+                      : null,
                   ticked: reviewed.contains(pair),
                   reviewed: reviewed,
                   name: name,
@@ -219,6 +231,7 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
     AppState state,
     ReviewPair pair, {
     required PairBlock? block,
+    required ReviewerTier? keyTier,
     required bool ticked,
     required Set<ReviewPair> reviewed,
     required String Function(String) name,
@@ -235,6 +248,7 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
         block != null &&
         (state.settings.reviewPairs ?? const <String>{}).contains(pair.key);
     final line = switch (block) {
+      _ when keyTier != null => reviewerTierLabel(l10n, keyTier),
       PairBlock.scriptsUnanswered => null,
       PairBlock.unknownTarget => l10n.reviewPairUnknown(target),
       PairBlock.unknownNative => l10n.reviewPairUnknown(name(pair.native)),
@@ -254,8 +268,8 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
           controlAffinity: ListTileControlAffinity.leading,
           // A ticked course that no longer qualifies stays, ticked, so that
           // it can be unticked.
-          enabled: block == null || stale,
-          value: ticked || stale,
+          enabled: keyTier == null && (block == null || stale),
+          value: ticked || stale || keyTier != null,
           title: Text(l10n.reviewPairName(target, name(pair.native))),
           subtitle: line == null ? null : Text(line),
           onChanged: (on) => _tick(context, state, pair, on ?? false, reviewed),

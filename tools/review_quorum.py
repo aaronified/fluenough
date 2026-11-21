@@ -17,15 +17,47 @@ from typing import Iterable
 # Reviews by distinct reviewers a facet needs.
 REVIEW_QUORUM = 2
 
-# Whether the quorum also needs a Verified reviewer among the checks. Off
-# until W7 (signed reviewer keys) turns it on: every reviewer is Provisional
-# today. Matches `kQuorumNeedsVerified` in the Dart file.
+# Whether the quorum also needs a Verified reviewer among the checks. OFF by
+# default: W7 (signed reviewer keys) built what turning it on needs (the keys,
+# the binding of a key to a rater code, `set_tiers` below), but turning it on
+# also leaves every card with no Verified reviewer unable to settle, so it is
+# the owner's switch, in both files, once Verified reviewers exist. Matches
+# `kQuorumNeedsVerified` in the Dart file.
 QUORUM_NEEDS_VERIFIED = False
 
 PROVISIONAL = "provisional"
 VERIFIED = "verified"
 TRUSTED = "trusted"
 TIERS = (PROVISIONAL, VERIFIED, TRUSTED)
+
+
+# What the bot knows of its reviewers: rater code -> tier, from the private
+# bindings of signed reviewer keys (tools/reviewer_binding.py). Private on
+# purpose: the decks name rater codes, so a public tier would make Verified
+# codes easy to pick out. A code not here is Provisional.
+# A tier is scoped to the courses the key names: a key for `te/en` gives no
+# Verified weight on Spanish.
+_TIERS: dict[str, tuple[str, tuple[str, ...]]] = {}
+
+
+def set_tiers(tiers: dict[str, tuple[str, tuple[str, ...]]]) -> None:
+    """Sets what the bot reads, keyed by rater code (any case): (tier, the
+    courses of the key, `te/en` or `te`)."""
+    _TIERS.clear()
+    _TIERS.update({(code or "").strip().upper(): (tier, tuple(courses))
+                   for code, (tier, courses) in tiers.items() if tier in TIERS})
+
+
+def tier_of(code: str, language: str | None = None) -> str:
+    """The tier of the rater [code] for a card of [language]: Provisional
+    unless a binding says more AND its key names that language. With no
+    language it is Provisional: fail closed."""
+    found = _TIERS.get((code or "").strip().upper())
+    if found is None or not language:
+        return PROVISIONAL
+    tier, courses = found
+    named = any(c == language or c.startswith(language + "/") for c in courses)
+    return tier if named else PROVISIONAL
 
 
 def facet_reached_quorum(

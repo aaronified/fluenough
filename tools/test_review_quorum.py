@@ -15,6 +15,24 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import review_quorum as rq  # noqa: E402
 
 
+class TiersTest(unittest.TestCase):
+    def tearDown(self) -> None:
+        rq.set_tiers({})
+
+    def test_a_code_is_provisional_unless_the_bot_knows_better(self) -> None:
+        self.assertEqual(rq.tier_of("FL-AAAA-AAAA-0"), rq.PROVISIONAL)
+        rq.set_tiers({"fl-aaaa-aaaa-0": (rq.VERIFIED, ("te/en", "bn")),
+                      "FL-BBBB-BBBB-0": ("nonsense", ("te",))})
+        self.assertEqual(rq.tier_of(" FL-AAAA-AAAA-0 ", "te"), rq.VERIFIED)
+        self.assertEqual(rq.tier_of("FL-AAAA-AAAA-0", "bn"), rq.VERIFIED)
+        # Only the courses the key names, and never with no language.
+        self.assertEqual(rq.tier_of("FL-AAAA-AAAA-0", "es"), rq.PROVISIONAL)
+        self.assertEqual(rq.tier_of("FL-AAAA-AAAA-0"), rq.PROVISIONAL)
+        self.assertEqual(rq.tier_of("FL-BBBB-BBBB-0", "te"), rq.PROVISIONAL)
+        rq.set_tiers({})
+        self.assertEqual(rq.tier_of("FL-AAAA-AAAA-0"), rq.PROVISIONAL)
+
+
 class QuorumTest(unittest.TestCase):
     def test_two_and_the_verified_switch_is_off(self) -> None:
         self.assertEqual(rq.REVIEW_QUORUM, 2)

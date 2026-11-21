@@ -32,7 +32,7 @@ from typing import Iterable
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from review_quorum import (  # noqa: E402
-    PROVISIONAL, QUORUM_NEEDS_VERIFIED, REVIEW_QUORUM, facet_reached_quorum)
+    PROVISIONAL, QUORUM_NEEDS_VERIFIED, REVIEW_QUORUM, facet_reached_quorum, tier_of)
 
 # The facets, by the name a review file and a deck use (`Facet.wire`), in
 # the order of the Dart enum.
@@ -278,33 +278,39 @@ def read_facet_data(raw: object) -> dict[str, dict]:
     return out
 
 
-def checks_of(codes: list[str], held: dict[str, dict], facet: str) -> list[Check]:
+def checks_of(codes: list[str], held: dict[str, dict], facet: str,
+              language: str | None = None) -> list[Check]:
     """The checks of [facet] an entry lists, oldest first. ONE source of truth:
     an entry that carries `facet_checks` ([held] not empty) is read from it
     alone, and its `checked_by` is a mirror the bot keeps (the codes right on
     every facet the entry owns), ignored here; an entry with none is a legacy
     one, and each code of its `checked_by` is a bare "right" on every facet it
     owns."""
+    # A rater's tier is the bot's private knowledge (signed reviewer keys,
+    # tools/reviewer_binding.py): Provisional unless a binding says more, and
+    # it matters only while QUORUM_NEEDS_VERIFIED is on.
+    # [language] is the card's: a key's tier counts only for its courses.
     if not held:
-        return [Check(code) for code in codes]
+        return [Check(code, tier=tier_of(code, language)) for code in codes]
     item = held.get(facet, {"by": [], "flags": []})
-    return [*(Check(code) for code in item["by"]),
-            *(Check(f["by"], False, f["fix"]) for f in item["flags"])]
+    return [*(Check(code, tier=tier_of(code, language)) for code in item["by"]),
+            *(Check(f["by"], False, f["fix"], tier_of(f["by"], language))
+              for f in item["flags"])]
 
 
 def entry_settled(codes: list[str], held: dict[str, dict], data: dict,
-                  holds_card: bool) -> bool | None:
+                  holds_card: bool, language: str | None = None) -> bool | None:
     """Whether every facet the entry owns has the quorum; None when it owns
     none, so that it asks nothing of a reviewer."""
     owned = owned_facets_of(data, holds_card)
     if not owned:
         return None
-    return all(settled(checks_of(codes, held, f)) for f in owned)
+    return all(settled(checks_of(codes, held, f, language)) for f in owned)
 
 
 def entry_open(codes: list[str], held: dict[str, dict], data: dict,
-               holds_card: bool) -> bool:
+               holds_card: bool, language: str | None = None) -> bool:
     """Whether some facet the entry owns is flagged, contested or has an
     agreed fix waiting: a card with one is not reviewed, whatever else."""
-    return any(facet_status(checks_of(codes, held, f)) in ("flagged", "contested", "agreed_fix")
+    return any(facet_status(checks_of(codes, held, f, language)) in ("flagged", "contested", "agreed_fix")
                for f in owned_facets_of(data, holds_card))

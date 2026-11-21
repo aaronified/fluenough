@@ -95,6 +95,9 @@ flutter:
     - assets/placement_profiles.json
     - assets/voice_apps.yaml
     - assets/pictures/
+    # Signed reviewer keys (ADR-0058, W7): the owner's public key(s) and the
+    # denylist of revoked key ids; tools/reviewer_keys.py reads the same files.
+    - assets/reviewer/
     - assets/synonyms/en.yaml
     - decks/themes.yaml
     - decks/sections.yaml

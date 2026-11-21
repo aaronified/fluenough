@@ -52,12 +52,33 @@ List<ReviewPair> offeredPairs(AppState state) => <ReviewPair>{
 /// you review, or the languages they chose before courses (#462). With none
 /// ticked, none (owner, 2026-11-05). Only those they can review: both
 /// languages known, both scripts read.
-Set<ReviewPair> reviewPairsOf(AppState state) => reviewedPairs(
-  chosenPairs: state.settings.reviewPairs,
-  chosenLanguages: state.settings.reviewLanguages,
-  offered: <ReviewPair>{for (final deck in state.decks) pairOf(deck)},
-  reviewer: reviewerOf(state),
-);
+///
+/// A good signed reviewer key (ADR-0058, W7) adds the courses it names, with
+/// no tick and whatever languages or scripts the reviewer said they know: the
+/// key replaces the self-declared ticks for those courses.
+Set<ReviewPair> reviewPairsOf(AppState state) => <ReviewPair>{
+  ...reviewedPairs(
+    chosenPairs: state.settings.reviewPairs,
+    chosenLanguages: state.settings.reviewLanguages,
+    offered: <ReviewPair>{for (final deck in state.decks) pairOf(deck)},
+    reviewer: reviewerOf(state),
+  ),
+  ...keyPairsOf(state),
+};
+
+/// The courses [state]'s reviewer key unlocks: the offered and downloaded
+/// courses it names, or whose language it names. None without a good key.
+Set<ReviewPair> keyPairsOf(AppState state) {
+  final key = state.reviewing.key;
+  if (key == null) return <ReviewPair>{};
+  return <ReviewPair>{
+    for (final pair in <ReviewPair>[
+      ...offeredPairs(state),
+      for (final deck in state.decks) pairOf(deck),
+    ])
+      if (key.unlocks(pair)) pair,
+  };
+}
 
 /// The languages [state]'s reviewer reviews in one course or more, in the
 /// catalog's order.

@@ -151,6 +151,7 @@ class AppBackup {
   static const Set<String> reviewerKeys = <String>{
     'review_decks',
     'rater_code',
+    'reviewer_key',
     'review_intro_shown',
     'reviews',
   };

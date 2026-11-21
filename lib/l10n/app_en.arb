@@ -7524,6 +7524,42 @@
   "@reviewSettingsCopied": {
     "description": "Shown once the reviewer code is copied."
   },
+  "reviewKeyRow": "I have a reviewer key",
+  "@reviewKeyRow": {
+    "description": "Settings > Reviewing row that opens the sheet to paste a signed reviewer key the owner gave the reviewer. Shown only when keys are in use."
+  },
+  "reviewKeyTitle": "Reviewer key",
+  "@reviewKeyTitle": {
+    "description": "Title of the sheet where a reviewer key is pasted, of the page that shows the accepted key, and the row's title once a key is accepted."
+  },
+  "reviewKeyHint": "Paste the key",
+  "@reviewKeyHint": {
+    "description": "Hint of the field where the reviewer key is pasted."
+  },
+  "reviewKeyPaste": "Paste",
+  "@reviewKeyPaste": {
+    "description": "Tooltip of the button that pastes the clipboard into the reviewer key field."
+  },
+  "reviewKeyUnlock": "Unlock",
+  "@reviewKeyUnlock": {
+    "description": "Button under the reviewer key field that checks the key and, if it is good, unlocks the courses it names."
+  },
+  "reviewKeyInvalid": "That key does not work",
+  "@reviewKeyInvalid": {
+    "description": "Error under the reviewer key field when the pasted text is not a valid key: it is cut short, altered, or not signed by the owner."
+  },
+  "reviewKeyRevoked": "This key was revoked",
+  "@reviewKeyRevoked": {
+    "description": "Error under the reviewer key field, and the row's line, when the owner has revoked the key."
+  },
+  "reviewKeyVerified": "Verified",
+  "@reviewKeyVerified": {
+    "description": "The tier of an accepted reviewer key, shown on the accepted-key page and under the key row. Also the line under a course the key unlocks in Languages you review."
+  },
+  "reviewKeyTrusted": "Trusted",
+  "@reviewKeyTrusted": {
+    "description": "The higher tier of an accepted reviewer key, shown where the Verified tier is."
+  },
   "reviewSettingsToSend": "Reviews to send",
   "@reviewSettingsToSend": {
     "description": "Settings row that opens the send sheet listing every deck with reviews not sent yet."

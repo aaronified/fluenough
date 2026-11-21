@@ -65,6 +65,18 @@ which stays in the inbox for the next run: filing it unchecked would leave
 it unlabelled, and filed again on the next run. No address and no
 record's body is ever printed: the job's log is public, so it says counts only.
 
+Signed reviewer keys (ADR-0058, W7; `tools/reviewer_binding.py`): a keyed
+reviewer's review files carry the key as `reviewer_key`, a secret proof.
+Once the sender check has passed, the first mail with a good key binds the
+key id to its rater code, in a private record in the Gmail label
+`fluenough/keys` (never in an issue, a PR or a deck: a public tier would
+make Verified codes easy to pick out). A mail with a key that is forged,
+revoked (`assets/reviewer/denylist.txt`), bound to another code, or used too
+often is marked "held for the owner" and never proposed; the issue says only
+that, never why. The key is taken out of the files whatever comes of it and
+is never logged. While no real public key is committed
+(`assets/reviewer/public_keys.json`), keys are ignored.
+
 A review's issue also counts the changes it suggests, those to base words
 by kind (added, changed, removed; #476), and the proposals it accepts and
 rejects, and names each rejected proposal by id and card,
@@ -121,6 +133,9 @@ from typing import Callable
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from rater_codes import CROCKFORD, check_symbol, rater_code  # noqa: E402,F401
+import reviewer_binding  # noqa: E402
+import reviewer_keys  # noqa: E402
+import review_quorum  # noqa: E402
 
 PREFIX = "[Fluenough]"
 FILED = "fluenough-filed"
@@ -163,6 +178,10 @@ LANGUAGE = re.compile(r"^[a-z]{2,3}$")
 RATERS = "fluenough/raters"
 SENDER_DIFFERS = "sender does not match"
 SENDER_UNCHECKED = "sender not checked"
+# A review whose reviewer key (ADR-0058, W7) or its binding needs the owner:
+# the mark says only that. Why is never public: a public reason would show
+# which rater codes carry a key.
+HELD = "held for the owner"
 # Gmail ignores dots in an address's local part and anything from `+`.
 GMAIL = ("gmail.com", "googlemail.com")
 # The review bot (ADR-0038): the label a review mail gets once its
@@ -209,8 +228,10 @@ def scrub(text: str) -> str:
             break
     while lines and (not lines[-1].strip() or ADVERT_LINE.match(lines[-1])):
         lines.pop()
-    return "\n".join(
-        ADDRESS.sub(ADDRESS_REMOVED, line) for line in lines).strip()
+    # A reviewer key is a secret (ADR-0058, W7): one that strays into a text
+    # that will be public is cut out like an address.
+    return reviewer_keys.strip_keys("\n".join(
+        ADDRESS.sub(ADDRESS_REMOVED, line) for line in lines).strip())
 
 
 def subject_of(message: email.message.Message) -> str:
@@ -449,6 +470,9 @@ def review_issue_from(
     if SENDER_DIFFERS in marks:
         body.append("**Sender does not match:** this code's first review "
                     "came from another mail address. The owner decides.")
+    if HELD in marks:
+        body.append("**Held for the owner:** nothing is proposed from this "
+                    "review until the owner has looked at the mail.")
     if SENDER_UNCHECKED in marks:
         body.append("**Sender not checked:** the rater records in the "
                     "Fluenough Gmail could not be read or written, or the "
@@ -708,6 +732,27 @@ def mail_key(message: email.message.Message) -> str:
     return hashlib.sha256(raw).hexdigest()[:12]
 
 
+def make_gate(imap: imaplib.IMAP4) -> "reviewer_binding.KeyGate | None":
+    """The gate for signed reviewer keys (ADR-0058, W7), or None while the
+    owner has committed no real public key (`assets/reviewer/`): then keys
+    are ignored and stripped. The private bindings are records in the Gmail
+    label `fluenough/keys`; when that cannot be read, keys are ignored too,
+    never half honoured. The log says counts only."""
+    keyring = reviewer_keys.load_keyring()
+    if not keyring.enabled:
+        print("::notice::No reviewer public key is committed "
+              "(assets/reviewer/public_keys.json): reviewer keys are off.")
+        return None
+    bindings = reviewer_binding.GmailBindings(imap)
+    bindings.load()
+    if not bindings.ready:
+        print(f"::warning::The key bindings ({reviewer_binding.KEYS}) could "
+              f"not be read: reviewer keys are ignored this run.")
+    else:
+        print(f"Read {len(bindings.bound)} key binding(s).")
+    return reviewer_binding.KeyGate(keyring, bindings)
+
+
 def make_bot(env: dict[str, str]):
     """The review bot, or None when its App is not set up."""
     token = env.get("FLUENOUGH_BOT_TOKEN", "")
@@ -727,14 +772,31 @@ def make_bot(env: dict[str, str]):
         review_bot.agreements_needed(env))
 
 
-def propose_mails(imap: imaplib.IMAP4, raters: Raters, bot) -> dict[str, int]:
+def key_held(gate: "reviewer_binding.KeyGate | None", files: list[dict],
+             code: str, mail: str, count: bool = True) -> bool:
+    """Whether the reviewer key in [files] holds the mail for the owner. The
+    key is taken out of [files] in every case, with no [gate] too."""
+    if gate is None:
+        reviewer_binding.KeyGate.proof_of(files)
+        return False
+    return gate.check(files, code, mail, count).status == reviewer_binding.HELD
+
+
+def propose_mails(imap: imaplib.IMAP4, raters: Raters, bot,
+                  gate: "reviewer_binding.KeyGate | None" = None
+                  ) -> dict[str, int]:
     """Makes the proposals of every review mail filed and not yet proposed,
     each through a PR of its own (ADR-0038). A mail is labelled
     [PROPOSED] once its PR is merged, or closed, or there was nothing to
     propose; until then it is tried again each run. A mail whose files
     carry no single good code, or whose sender does not match, is left to
     the owner: labelled, and not proposed. One whose sender could not be
-    checked waits for the next run."""
+    checked waits for the next run.
+
+    The reviewer key a mail carries (ADR-0058, W7) is checked by [gate], and
+    taken out of the files whatever comes of it; a mail held for its key is
+    left to the owner. It is not counted again here: its use was counted when
+    it was filed."""
     import review_bot
     counts: dict[str, int] = {}
     _, found = imap.search(
@@ -757,6 +819,8 @@ def propose_mails(imap: imaplib.IMAP4, raters: Raters, bot) -> dict[str, int]:
             if mark == SENDER_UNCHECKED:
                 outcome = "waiting for the sender check"
             elif mark == SENDER_DIFFERS:
+                outcome = "left to the owner"
+            elif key_held(gate, files, codes[0], mail_key(message), False):
                 outcome = "left to the owner"
             else:
                 review = review_bot.read_review(files, codes[0])
@@ -873,6 +937,7 @@ def file_mails(env: dict[str, str],
         # inbox's message numbers.
         raters = Raters(imap)
         raters.load()
+        gate = make_gate(imap)
         if raters.known is None:
             print(f"::warning::The rater records ({RATERS}) could not be "
                   f"read; review mails are filed as {SENDER_UNCHECKED!r}.")
@@ -893,8 +958,16 @@ def file_mails(env: dict[str, str],
             raw = next(part[1] for part in data if isinstance(part, tuple))
             message = email.message_from_bytes(raw, policy=email.policy.default)
             sender = sender_of(message)
-            def check(code: str, sender: str = sender) -> str | None:
-                return raters.check(code, sender)
+            def check(code: str, sender: str = sender,
+                      message: email.message.Message = message) -> str | None:
+                mark = raters.check(code, sender)
+                if mark:
+                    return mark
+                # The sender passed: only now may a key bind to the code.
+                if key_held(gate, review_files(message), code,
+                            mail_key(message)):
+                    return HELD
+                return None
             issue = (review_issue_from(message, check)
                      or questions_issue_from(message, check)
                      or issue_from(message))
@@ -902,13 +975,21 @@ def file_mails(env: dict[str, str],
                 continue
             file_issue(issue)
             imap.store(number, "+X-GM-LABELS", FILED)
+            if gate is not None and gate.held(mail_key(message)):
+                # Left to the owner: the proposals never take it up.
+                imap.store(number, "+X-GM-LABELS", PROPOSED)
             filed += 1
         print(f"Filed {filed} report(s).")
         print(f"Review senders: {raters.tied} tied, {raters.matched} "
               f"matched, {raters.differed} did not match, "
               f"{raters.unchecked} not checked.")
+        if gate is not None:
+            print("Reviewer keys: " + (", ".join(
+                f"{n} {what}" for what, n in sorted(gate.counts.items()))
+                or "none seen") + ".")
+            review_quorum.set_tiers(gate.tiers())
         if bot is not None:
-            counts = propose_mails(imap, raters, bot)
+            counts = propose_mails(imap, raters, bot, gate)
             print("Review mails proposed: " + (", ".join(
                 f"{n} {outcome}" for outcome, n in sorted(counts.items()))
                 or "none waiting") + ".")

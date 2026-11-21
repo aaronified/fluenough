@@ -1559,14 +1559,23 @@ def entry_checks(entry: Entry, facet: str) -> list[rf.Check]:
     truth. An entry that carries `facet_checks` is read from it alone, its
     `checked_by` being a mirror; a legacy entry without it, from `checked_by`,
     each code a "right" on every facet it owns."""
-    return rf.checks_of(checked_by(entry), facet_data(entry), facet)
+    return rf.checks_of(checked_by(entry), facet_data(entry), facet,
+                        entry_language(entry))
+
+
+def entry_language(entry: Entry) -> str | None:
+    """The language folder under `decks/` that [entry]'s file is in: what a
+    reviewer's tier is scoped by (tools/review_quorum.py `tier_of`)."""
+    parts = entry.path.parts
+    at = max((i for i, p in enumerate(parts) if p == "decks"), default=None)
+    return parts[at + 1] if at is not None and at + 1 < len(parts) - 1 else None
 
 
 def facets_settled(entry: Entry) -> bool | None:
     """Whether every facet [entry] owns has the quorum; None when it owns
     none, so that it asks nothing of a reviewer."""
     return rf.entry_settled(checked_by(entry), facet_data(entry), entry.data,
-                            _holds_card(entry))
+                            _holds_card(entry), entry_language(entry))
 
 
 def _materialised(entry: Entry) -> dict[str, dict]:
