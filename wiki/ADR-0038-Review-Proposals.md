@@ -31,6 +31,21 @@ Source of truth: this wiki page.
   `text` the item; applying one appends it rather than replacing a field,
   and only a proposal of the same item is a rival. See DECK-FORMAT,
   "An answer or a refused synonym".
+- **Amended:** 2026-11-21 (ADR-0058, work package W9): reviews are answered
+  facet by facet, and a card entry may carry `facet_checks`, what other
+  reviewers said about each facet (rater codes, pointer tags and the fix a
+  flag proposed; never an address). It is written by the bot as `checked_by`
+  is and left out of `content_sha256` the same way. `checked_by` keeps its
+  meaning (the codes that signed the whole card off). A fix sent with a flag
+  is a proposal on the facet's field, and the same fix after Unicode NFC and
+  white-space normalisation from another reviewer is its acceptance, where
+  before the text had to be the same byte for byte; a proposal is not applied
+  while its facet is contested, and when one is applied the facet's answers
+  are taken out. The file-level `reviewed` tag rule changes from "every card
+  entry lists a code" to "every applicable facet of every card has the review
+  quorum" (`tools/review_quorum.py`, which also replaces the variable or secret
+  `REVIEW_AGREEMENTS_NEEDED`). The format is the builder's proposal, for the
+  owner to confirm; see DECK-FORMAT, "Facet checks".
 
 ## Context
 

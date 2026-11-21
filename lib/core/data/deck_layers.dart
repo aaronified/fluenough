@@ -27,6 +27,7 @@ class DeckCore {
     this.proposals = const <String, List<Proposal>>{},
     this.checkedBy = const <String, List<String>>{},
     this.verified = const <String, List<String>>{},
+    this.facetChecks = const <String, Map<Facet, PublishedFacet>>{},
     this.genre,
     this.level,
     this.hidden = false,
@@ -70,6 +71,10 @@ class DeckCore {
 
   /// Which data points of each card are settled, by card id (#519).
   final Map<String, List<String>> verified;
+
+  /// What reviewers said about each facet of each card, by card id
+  /// (ADR-0058, W9): its `facet_checks`.
+  final PublishedFacets facetChecks;
 
   /// The deck's kind fields (deck_kinds.dart): what the merged [Deck] has of
   /// them. A layer has none of its own.
@@ -358,6 +363,7 @@ class DeckLayer {
     this.proposals = const <String, List<Proposal>>{},
     this.checkedBy = const <String, List<String>>{},
     this.verified = const <String, List<String>>{},
+    this.facetChecks = const <String, Map<Facet, PublishedFacet>>{},
   });
 
   /// `<lang>-<native>-<name>`: the merged deck's id.
@@ -389,6 +395,10 @@ class DeckLayer {
 
   /// Which data points of each card are settled, by card id (#519).
   final Map<String, List<String>> verified;
+
+  /// What reviewers said about each facet of each card, by card id
+  /// (ADR-0058, W9): its `facet_checks`.
+  final PublishedFacets facetChecks;
 
   /// Where the layer and its id and core are, for messages.
   final YamlMap node;
@@ -714,6 +724,7 @@ Deck mergeLayer(DeckCore core, DeckLayer layer, {required String source}) {
     ),
     checkedBy: mergedCheckedBy(core, layer),
     verified: mergedVerified(core, layer),
+    facetChecks: mergedFacetChecks(core, layer),
     sets: sets,
     genre: core.genre,
     level: core.level,
@@ -1307,3 +1318,24 @@ class _Merge {
     );
   }
 }
+
+/// What reviewers said about each facet of each card of the merged deck
+/// (ADR-0058, W9): the core's card's and the layer's entry's together, each
+/// facet as [mergePublishedFacets] has it. The review bot writes a facet's
+/// answers on the entry that holds its text: the word, reading and IPA on the
+/// core's card, the meaning on the layer's entry.
+PublishedFacets mergedFacetChecks(DeckCore core, DeckLayer layer) =>
+    Map<String, Map<Facet, PublishedFacet>>.unmodifiable(
+      <String, Map<Facet, PublishedFacet>>{
+        for (final card in <String>{
+          ...core.facetChecks.keys,
+          ...layer.facetChecks.keys,
+        })
+          card: Map<Facet, PublishedFacet>.unmodifiable(
+            mergePublishedFacets(
+              core.facetChecks[card] ?? const <Facet, PublishedFacet>{},
+              layer.facetChecks[card] ?? const <Facet, PublishedFacet>{},
+            ),
+          ),
+      },
+    );

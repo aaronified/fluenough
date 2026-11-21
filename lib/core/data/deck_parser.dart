@@ -13,6 +13,8 @@ import '../models/proposal.dart';
 import '../models/reading.dart';
 import '../models/rule.dart';
 import '../private/private_ids.dart';
+import '../review/facets.dart' show Facet;
+import '../review/published_facets.dart';
 import 'yaml_tree.dart';
 
 part 'deck_character.dart';
@@ -186,6 +188,9 @@ const _cardFields = {
   'checked_by',
   // Which data points of the card are settled (#519), read by [verifiedIn].
   'verified',
+  // What reviewers said about each facet of the card (ADR-0058, W9), read by
+  // [facetChecksIn].
+  'facet_checks',
   // The deck kinds (deck_kinds.dart): a card's source block, level, creator
   // and legacy.
   ..._kindCardKeys,
@@ -216,6 +221,9 @@ const _refFields = {
   'checked_by',
   // Which data points of the card are settled (#519), read by [verifiedIn].
   'verified',
+  // What reviewers said about each facet of the card (ADR-0058, W9), read by
+  // [facetChecksIn].
+  'facet_checks',
 };
 
 // The B1 format (docs/DECK-FORMAT.md).
@@ -303,6 +311,9 @@ const _coreCardFields = {
   'checked_by',
   // Which data points of the card are settled (#519), read by [verifiedIn].
   'verified',
+  // What reviewers said about each facet of the card (ADR-0058, W9), read by
+  // [facetChecksIn].
+  'facet_checks',
   // The deck kinds (deck_kinds.dart).
   ..._kindCardKeys,
   // A script deck's character data (deck_character.dart, #1226).
@@ -334,6 +345,9 @@ const _coreRefFields = {
   'checked_by',
   // Which data points of the card are settled (#519), read by [verifiedIn].
   'verified',
+  // What reviewers said about each facet of the card (ADR-0058, W9), read by
+  // [facetChecksIn].
+  'facet_checks',
 };
 const _coreExampleFields = {
   'target',
@@ -371,6 +385,9 @@ const _layerEntryFields = {
   'checked_by',
   // Which data points of the card are settled (#519), read by [verifiedIn].
   'verified',
+  // What reviewers said about each facet of the card (ADR-0058, W9), read by
+  // [facetChecksIn].
+  'facet_checks',
 };
 const _noteFields = {'kind', 'text', 'id', 'ref', 'source', 'words', 'region'};
 const _noteWordFields = {'word', 'reading', 'ipa'};
@@ -703,6 +720,9 @@ class _Reader {
       verified: fields.has('cards')
           ? verifiedIn(fields.require('cards'))
           : const <String, List<String>>{},
+      facetChecks: fields.has('cards')
+          ? facetChecksIn(fields.require('cards'))
+          : const <String, Map<Facet, PublishedFacet>>{},
       genre: kinds.genre,
       level: kinds.level,
       hidden: kinds.hidden,
@@ -1685,6 +1705,9 @@ class _Reader {
       verified: fields.has('cards')
           ? verifiedIn(fields.require('cards'))
           : const <String, List<String>>{},
+      facetChecks: fields.has('cards')
+          ? facetChecksIn(fields.require('cards'))
+          : const <String, Map<Facet, PublishedFacet>>{},
       genre: kinds.genre,
       level: kinds.level,
       hidden: kinds.hidden,
@@ -2340,6 +2363,9 @@ class _Reader {
       verified: fields.has('cards')
           ? verifiedIn(fields.require('cards'))
           : const <String, List<String>>{},
+      facetChecks: fields.has('cards')
+          ? facetChecksIn(fields.require('cards'))
+          : const <String, Map<Facet, PublishedFacet>>{},
     );
   }
 
@@ -3393,6 +3419,39 @@ Map<String, List<String>> checkedByIn(YamlNode cards) =>
 /// entry's `verified`, read as `checked_by` is.
 Map<String, List<String>> verifiedIn(YamlNode cards) =>
     _stringListsIn(cards, 'verified');
+
+/// What reviewers said about each facet of each card of [cards], by card id
+/// (ADR-0058, W9): each entry's `facet_checks`, read leniently as
+/// `checked_by` is: what is not of the shape is reported and left out, and
+/// the validator checks the rest. A deck without the key gives an empty map.
+PublishedFacets facetChecksIn(YamlNode cards) {
+  final out = <String, Map<Facet, PublishedFacet>>{};
+  void read(String? card, Object? entry) {
+    if (card == null || entry is! YamlMap) return;
+    final node = entry.nodes['facet_checks'];
+    if (node == null) return;
+    final found = publishedFacetsFrom(node);
+    if (found.isNotEmpty) {
+      out[card] = Map<Facet, PublishedFacet>.unmodifiable(found);
+    }
+  }
+
+  if (cards is YamlList) {
+    for (final entry in cards.nodes) {
+      if (entry is! YamlMap) continue;
+      final id = _value(
+        entry.nodes['id'] ?? entry.nodes['ref'] ?? YamlScalar.wrap(null),
+      );
+      read(id is String ? id : null, entry);
+    }
+  } else if (cards is YamlMap) {
+    for (final MapEntry(:key, :value) in cards.nodes.entries) {
+      final id = key is YamlNode ? _value(key) : key;
+      read(id is String ? id : null, value);
+    }
+  }
+  return Map<String, Map<Facet, PublishedFacet>>.unmodifiable(out);
+}
 
 Map<String, List<String>> _stringListsIn(YamlNode cards, String key) {
   final out = <String, List<String>>{};

@@ -6,6 +6,8 @@ Source of truth: this wiki page. The owner's decisions, quoted and dated, stay o
 - **Date:** 2026-11-21
 - **Amends:** [ADR-0038](ADR-0038-Review-Proposals). The agreement quorum becomes a facet-level two-review constant in code, and the GitHub variable or secret for the number is superseded. The file-level `reviewed` tag rule (a file is tagged once every card entry lists a code) changes to the facet-level rule below.
 
+- **Amended (W9):** 2026-11-21. The data shape of other reviewers' facet answers is a `facet_checks` key on the card entry, written by the review bot, left out of `content_sha256` and read by the app into the flagged queue and the second-speaker views; `checked_by` keeps its meaning and, on an entry that carries the key, is only a mirror of the full sign-offs (one source of truth: `facet_checks`). The file-level `reviewed` tag follows the facet rule in the bot, the validator and the index tools, an entry with only `checked_by` counting each code once as right on every facet it owns. The bot writes the key only once a released app reads it (`WRITE_FACET_CHECKS`, off). The shape is a proposal for the owner to confirm; see [Deck-Format](Deck-Format), "Facet checks".
+
 ## Context
 
 Reviews reach the decks through ADR-0038: a reviewer marks "Looks right" or proposes a fix, the mail bot writes it onto the card, and `REVIEW_AGREEMENTS_NEEDED` rater codes settle a change. Rater codes are self-made, so nothing says a reviewer speaks the language, and a copied public code proves nothing. A card counts as checked on one tap, whatever its facets (word, reading, IPA, meaning, example, note, unit placement, offence rating, audio).

@@ -11,14 +11,20 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/system_bar.dart';
 import 'facet_labels.dart';
 import 'review_flow_page.dart';
+import 'review_source.dart' show otherChecksOf;
 import 'review_waiting.dart';
 
 /// The decks the flagged queue reads for [state]'s reviewer, each with the
-/// other speakers' checks of its cards ([FlaggedSourceDeck.others], empty
-/// until the review bot publishes them, W9).
+/// other speakers' checks of its cards ([FlaggedSourceDeck.others]): the
+/// sign-offs and facet answers the decks publish ([otherChecksOf]).
 List<FlaggedSourceDeck> flaggedSourcesOf(AppState state) => <FlaggedSourceDeck>[
   for (final deck in state.reviewDecks)
-    FlaggedSourceDeck(deckId: deck.id, pair: pairOf(deck), cards: deck.cards),
+    FlaggedSourceDeck(
+      deckId: deck.id,
+      pair: pairOf(deck),
+      cards: deck.cards,
+      others: otherChecksOf(deck, deck.cards),
+    ),
 ];
 
 /// The flagged queue of [state]'s reviewer: the cards of the courses they

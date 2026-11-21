@@ -5,6 +5,7 @@ import '../../core/models/deck.dart';
 import '../../core/models/reading.dart' show QuestionCard;
 import '../../core/review/facets.dart';
 import '../../core/review/flagged_queue.dart';
+import '../../core/review/published_facets.dart';
 import '../../core/review/review_pairs.dart';
 import '../../core/review/review_quorum.dart' show ReviewCheck;
 import '../../core/review/review_session.dart';
@@ -29,13 +30,32 @@ List<Card> queueCardsOf(DeckEntry deck) {
   ];
 }
 
-/// The other reviewers' checks of [deck]'s cards that exist today: the rater
-/// codes in each card's `checked_by`, which the review bot writes when a
-/// reviewer marked the card "Looks right" (#449). That is a card-level
-/// check, so it counts for every facet the card has: a code in `checked_by`
-/// is one distinct reviewer on each of them. Their facet-level answers, and
-/// so flags and fixes, arrive with W9; until then this is all "least-checked"
-/// can read.
+/// The other reviewers' checks of [deck]'s cards that the decks publish: the
+/// rater codes in each card's `checked_by`, which the review bot writes when
+/// a reviewer marked the card "Looks right" (#449), and the facet answers in
+/// its `facet_checks` (ADR-0058, W9).
+///
+/// A code in `checked_by` is a card-level check, so it counts for every facet
+/// the card has: one distinct reviewer on each of them. A facet's own
+/// published answers, `right` or flagged with tags and perhaps a fix, are one
+/// reviewer's answer to that facet, and replace that reviewer's card-level
+/// check of it. Old decks, with no `facet_checks`, give what they always did.
+OtherChecks otherChecksOf(DeckEntry deck, List<Card> cards) {
+  final out = <String, Map<Facet, List<ReviewCheck>>>{};
+  for (final card in cards) {
+    final found = otherChecksOfCard(
+      applicable: facetsOf(card),
+      bareCodes: deck.deck.checkedBy[card.id] ?? const <String>[],
+      published:
+          deck.deck.facetChecks[card.id] ?? const <Facet, PublishedFacet>{},
+    );
+    if (found.isNotEmpty) out[card.id] = found;
+  }
+  return out;
+}
+
+/// The other reviewers' card-level checks only, as before facet answers were
+/// published: [otherChecksOf] without `facet_checks`.
 OtherChecks checkedByChecks(DeckEntry deck, List<Card> cards) {
   final out = <String, Map<Facet, List<ReviewCheck>>>{};
   for (final card in cards) {
@@ -70,7 +90,7 @@ ReviewSource reviewSourceOf(AppState state, ReviewPair pair) {
                     deckId: deck.id,
                     pair: pairOf(deck),
                     cards: cards,
-                    others: checkedByChecks(deck, cards),
+                    others: otherChecksOf(deck, cards),
                   ),
             ],
           ),

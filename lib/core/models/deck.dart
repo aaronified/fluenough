@@ -1,3 +1,5 @@
+import '../review/facets.dart' show Facet;
+import '../review/published_facets.dart';
 import 'level.dart';
 import 'author.dart';
 import 'card.dart';
@@ -213,6 +215,7 @@ class Deck {
     this.proposals = const <String, List<Proposal>>{},
     this.checkedBy = const <String, List<String>>{},
     this.verified = const <String, List<String>>{},
+    this.facetChecks = const <String, Map<Facet, PublishedFacet>>{},
     this.sets = const <CardSet>[],
     this.genre,
     this.level,
@@ -281,6 +284,11 @@ class Deck {
   /// writes. Each is `meaning`, `example:<8 hex>`, `confusable:<id>` or
   /// `sound`. The daily questions do not ask about them again.
   final Map<String, List<String>> verified;
+
+  /// What other reviewers said about each facet of each card, by card id
+  /// (ADR-0058, W9): its `facet_checks`, which the review bot writes. A card
+  /// no one has answered facet by facet is not in it.
+  final PublishedFacets facetChecks;
 
   /// Its set cards (DECK-FORMAT.md, Set cards), in order: taught only,
   /// never in [cards], so never scheduled, asked or logged.
@@ -353,6 +361,7 @@ class Deck {
     proposals: proposals,
     checkedBy: checkedBy,
     verified: verified,
+    facetChecks: facetChecks,
     sets: sets,
     genre: genre,
     level: level,

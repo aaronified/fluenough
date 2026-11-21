@@ -11,8 +11,11 @@ branch of its own under `review-bot/`, each started afresh from `decks-live`
   of one review mail becomes a proposal on its card, each acceptance
   is recorded on the proposal it accepts, and each card the reviewer
   marked "Looks right" gets their rater code in its `checked_by` (#449);
-  a deck file whose every card is then checked is tagged `reviewed` in
-  place of `unreviewed`. Merged as soon as the required checks pass.
+  a deck file whose every facet of every card then has the review quorum
+  is tagged `reviewed` in place of `unreviewed` (ADR-0058, W9). A review
+  mail may also answer a card facet by facet (`facets`, with `receipts` of
+  the text seen): see `_facet_card`. Merged as soon as the required checks
+  pass.
 - **An agreement** (`review-bot/apply/<proposal>-<date>`): once
   enough rater codes other than the proposer's (REVIEW_QUORUM less the
   proposer's own) have accepted a proposal, its text is written into the field, and it and the
@@ -104,6 +107,7 @@ from typing import Callable, Protocol
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import proposals as pr  # noqa: E402
+import review_facets as rf  # noqa: E402
 import question_answers as qa  # noqa: E402
 import transcribe as tr  # noqa: E402
 from rater_codes import rater_code  # noqa: E402
@@ -121,6 +125,12 @@ KIND_LABELS = {
 }
 FAILED_LABEL = "review-bot: checks failed"
 THRESHOLD = "REVIEW_AGREEMENTS_NEEDED"
+# Whether the bot writes reviewers' facet answers into the cards' `facet_checks` is
+# `pr.WRITE_FACET_CHECKS` (tools/proposals.py), off until an app that reads the key
+# is released. While off the bot still reads facet answers: a stale one is dropped,
+# a fix becomes a proposal (or the acceptance of one), and a reviewer who said
+# right to every facet of a card signs it off in `checked_by`; the rest is only
+# counted, and lost.
 # The branch the decks live on, and so the one the bot reads, branches from,
 # opens its PRs against and compares with (owner, 2026-11-06). Main's own
 # `decks/` is frozen.
@@ -163,11 +173,28 @@ class Review:
     rejects: list[tuple[str, str, str]] = field(default_factory=list)
     # The cards signed off, marked "Looks right": (language, deck, card).
     checks: list[tuple[str, str, str]] = field(default_factory=list)
+    # The cards a reviewer answered facet by facet (ADR-0058, W9).
+    facet_cards: list["FacetCard"] = field(default_factory=list)
     edits: int = 0
     # Suggestions on a part the bot does not write: an example, a picture.
     left: int = 0
     # Review files dropped for a language that is not a language code.
     dropped: int = 0
+
+
+@dataclass
+class FacetCard:
+    """One card's facet answers in a review file (ADR-0058, W9): the answers
+    by facet, the hash of the text seen for each (the receipts), the day the
+    review was made, and whether the card was also marked "Looks right"
+    (right on every facet the answers do not name)."""
+    lang: str
+    deck: str
+    card: str
+    answers: dict[str, rf.Answer]
+    receipts: dict[str, str]
+    date: str
+    right_all: bool = False
 
 
 def _date(made: object) -> str:
@@ -296,8 +323,16 @@ def read_review(files: list[dict], code: str) -> Review:
             if not isinstance(c, dict) or not isinstance(c.get("card"), str):
                 continue
             card = c["card"]
-            if c.get("looks_right") is True and "suggestion" not in c \
-                    and not c.get("suggestions"):
+            looks_right = c.get("looks_right") is True and "suggestion" not in c \
+                and not c.get("suggestions")
+            # Facet answers (ADR-0058, W9) are additive: a card without them,
+            # or whose are all unreadable, is read exactly as before.
+            answers = rf.read_answers(code, c.get("facets"))
+            if answers:
+                out.facet_cards.append(FacetCard(
+                    lang, deck, card, answers,
+                    rf.read_receipts(c.get("receipts"), card), date, looks_right))
+            elif looks_right:
                 out.checks.append((lang, deck, card))
             found = [(s, suggestion_facts(s)) for s in card_suggestions(c)]
             # A change to the word goes first, and what it brings is tied to
@@ -879,12 +914,15 @@ class Bot:
                 pr.accept(root, lang, pid, code, text, result)
             for lang, deck, card in review.checks:
                 pr.check(root, lang, deck, card, code, checks)
+            for facet_card in review.facet_cards:
+                self._facet_card(root, code, facet_card, result, checks)
             pr.review_done(checks)
             if not result.changed and not checks.changed:
                 return None
             langs = sorted({s.lang for s in review.suggestions}
                            | {lang for lang, _, _ in review.accepts}
-                           | {lang for lang, _, _ in review.checks})
+                           | {lang for lang, _, _ in review.checks}
+                           | {f.lang for f in review.facet_cards})
             lines = [f"Review by **{code}**, from the review mail (ADR-0038).", ""]
             if result.added:
                 lines.append(f"- New proposals: {len(result.added)}, on "
@@ -901,11 +939,18 @@ class Bot:
                 cards = sorted({card for card, _ in checks.checked})
                 lines.append(f"- Checked by {code}: {len(cards)} card(s), "
                              + ", ".join(f"`{c}`" for c in cards))
+            if checks.facets:
+                lines.append(f"- Facet answers by {code}: {len(checks.facets)} "
+                             f"on {len({c for c, _ in checks.facets})} card(s)")
+            if checks.stale:
+                lines.append(f"- Facet answers left out as stale, the text "
+                             f"changed since: {len(checks.stale)}")
             if checks.unsupported:
                 lines.append(f"- Sign-offs left for the owner: "
                              f"{len(checks.unsupported)}")
             if checks.reviewed:
-                lines.append("- Every card checked, now tagged reviewed: "
+                lines.append("- Every facet of every card has its checks, now "
+                             "tagged reviewed: "
                              + ", ".join(f"`{d}`" for d in checks.reviewed))
             lines += ["", "Learners do not see proposals. Reviewers of the "
                           "language see them once this merges.", "", FOOTER]
@@ -922,11 +967,77 @@ class Bot:
             self.log(f"Review by {code}: {left} suggestion(s) left for the "
                      f"owner, {outdated} outdated, {review.dropped} file(s) "
                      f"with no good language; the PR: {outcome}.")
+        if checked and (checked[-1].facets_left or checked[-1].stale):
+            self.log(f"Review by {code}: {len(checked[-1].facets_left)} facet "
+                     f"answer(s) not written (the facet_checks key is "
+                     f"{'on' if pr.WRITE_FACET_CHECKS else 'off'}), "
+                     f"{len(checked[-1].stale)} stale.")
         if checked and (checked[-1].missing or checked[-1].unsupported):
             self.log(f"Review by {code}: sign-offs of "
                      f"{len(checked[-1].missing)} card(s) not in their deck, "
                      f"{len(checked[-1].unsupported)} left for the owner.")
         return outcome
+
+    def _facet_card(self, root: Path, code: str, fc: FacetCard,
+                    result: pr.Proposed, checks: pr.Checks) -> None:
+        """One card's facet answers (ADR-0058, W9). An answer to text the
+        card no longer says is dropped (the receipt's hash is not the hash of
+        the text now). A fix sent with a flag is a proposal on the facet's
+        field, or, when the same fix (after normalisation) is proposed
+        already by another reviewer, that reviewer's proposal accepted:
+        ADR-0038's rule, and so nothing is applied until the agreement. The
+        answers themselves go to the card's `facet_checks` (pr.WRITE_FACET_CHECKS)
+        and give the facet its status: a flagged or contested facet is not
+        settled, whatever the rest say."""
+        answers = dict(fc.answers)
+        dropped = False
+        # Every facet with a receipt is compared with the text now, those a
+        # card-level "Looks right" covers without naming them too: it cannot
+        # sign off text that has changed since it was seen.
+        for facet in rf.FACETS:
+            if facet not in answers and not (fc.right_all and facet in fc.receipts):
+                continue
+            texts = pr.facet_texts(root, fc.lang, fc.deck, fc.card, facet)
+            if pr.facet_stale(texts, fc.receipts.get(facet)):
+                answers.pop(facet, None)
+                checks.stale.append((fc.card, facet))
+                dropped = True
+        word: pr.Proposal | None = None
+        for facet in rf.FACETS:
+            answer = answers.get(facet)
+            field_name = rf.FIELD_OF_FACET.get(facet)
+            if answer is None or answer.right or not answer.fix.strip() \
+                    or field_name is None:
+                continue
+            made = self._facet_fix(root, fc, code, facet, field_name,
+                                   answer.fix.strip(), word, result)
+            if field_name == "target" and made is not None:
+                word = made
+        pr.check_facets(root, fc.lang, fc.deck, fc.card, code, answers, checks,
+                        right_all=fc.right_all and not dropped)
+
+    def _facet_fix(self, root: Path, fc: FacetCard, code: str, facet: str,
+                   field_name: str, fix: str, word: pr.Proposal | None,
+                   result: pr.Proposed) -> pr.Proposal | None:
+        """[code]'s [fix] to a facet as a proposal, or as the acceptance of
+        the proposal another reviewer made of it. The proposal made when it
+        is the card's word, so that what comes with it can be tied to it
+        (#476)."""
+        texts = pr.facet_texts(root, fc.lang, fc.deck, fc.card, facet)
+        seen = fc.receipts.get(facet)
+        now = next((t for t in texts if seen and rf.hash_of_seen(t) == seen),
+                   texts[0] if texts else None)
+        if now is None:
+            return None
+        for p in pr.proposals_on(root, fc.lang, fc.card, field_name):
+            if p.now == now and rf.same_fix_text(p.text, fix):
+                if p.by != code:
+                    pr.accept(root, fc.lang, p.id, code, fix, result)
+                return None
+        tied = word.id if word is not None and field_name in ("reading", "ipa", "notes") else ""
+        proposal = pr.Proposal(fc.card, field_name, now, fix, code, fc.date, tied=tied)
+        pr.propose(root, pr.Suggestion(fc.lang, fc.deck, proposal), result)
+        return proposal if field_name == "target" else None
 
     def questions(self, key: str, code: str, batch: qa.Batch) -> str:
         """The PR of one mail's daily-question answers, by [code] (#519):
@@ -1076,6 +1187,10 @@ class Bot:
             # Still there, the same attempt, and still agreed enough.
             if found is None or found[1].date != proposal.date \
                     or len(found[1].accepted) < self.threshold:
+                return None
+            # A contested facet is not settled by a fix: reviewers disagree
+            # (ADR-0058, W9), and it waits for the next answer.
+            if pr.facet_contested(root, lang, found[1].card, found[1].field):
                 return None
             if found[1].field == "target":
                 broken = self._tied_broken(root, lang, found[1])
@@ -1233,7 +1348,8 @@ class Bot:
                 # One tied to a change to the word goes in with that word.
                 if p.tied:
                     continue
-                if p.id not in stale and len(p.accepted) >= self.threshold:
+                if p.id not in stale and len(p.accepted) >= self.threshold \
+                        and not pr.facet_contested(root, lang, p.card, p.field):
                     groups.setdefault((str(e.path), p.card, p.field), []).append(p)
             # Words first: an agreed reading or IPA goes in with an agreed
             # word on its card, unless the owner closed every word's PR.

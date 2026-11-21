@@ -32,6 +32,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import review_facets as rf  # noqa: E402
 import validate_decks as vd  # noqa: E402
 import yaml  # noqa: E402
 
@@ -932,13 +933,14 @@ def propose(root: Path, suggestion: Suggestion, result: Proposed) -> None:
 def accept(root: Path, lang: str, pid: str, code: str, text: str,
            result: Proposed) -> None:
     """Records [code]'s acceptance of [pid], if it is another reviewer's
-    and of the same text, verbatim."""
+    and of the same text: the same once both are normalised (Unicode NFC, white
+    space; ADR-0058, W9), the form [pid] has when it is applied."""
     found = find(root, lang, pid)
     if found is None:
         result.not_accepted += 1
         return
     entry, p = found
-    if code == p.by or code in p.accepted or text != p.text:
+    if code == p.by or code in p.accepted or not rf.same_fix_text(text, p.text):
         result.not_accepted += 1
         return
     agreed = replace(p, accepted=(*p.accepted, code))
@@ -997,6 +999,7 @@ def apply(root: Path, lang: str, pid: str) -> Applied:
                       and not any(o.id in gone for o in e.proposals()))
     except (Unsupported, ValueError):
         return Applied("unsupported", p)
+    reset_facet(root, lang, p.card, p.field)
     return Applied("applied", p, rivals, entry)
 
 
@@ -1316,14 +1319,22 @@ def languages(root: Path) -> list[str]:
 # proposals: on its own line in a card written as a block, or at the end of
 # a card written on one line in flow style. `tools/deck_index.py` leaves
 # both out of the content hash, so learners are not offered an update for
-# it. Once every card entry of a deck file lists a code, the file's tag
-# `unreviewed` becomes `reviewed`, which learners do see.
+# it. Once every facet of every card entry of a deck file has the review
+# quorum (all_checked; ADR-0058, W9), the file's tag `unreviewed` becomes
+# `reviewed`, which learners do see.
 
-# A list the bot writes at the end of a flow card, with the other one (a
-# card's `checked_by` and its `verified`, #519) possibly after it.
-_AFTER_IN_FLOW = r"(?=(?:, (?:checked_by|verified): \[[^\]\n]*\])* ?\}\s*$)"
-_CHECKED_IN_FLOW = re.compile(r", checked_by: \[[^\]\n]*\]" + _AFTER_IN_FLOW)
-_VERIFIED_IN_FLOW = re.compile(r", verified: \[[^\]\n]*\]" + _AFTER_IN_FLOW)
+# What the bot writes at the end of a flow card, in any order: a card's
+# `checked_by` and its `verified` (#519), lists, and its `facet_checks`
+# (ADR-0058, W9), a one-line flow mapping whose quoted text may hold any
+# character, braces and brackets included.
+_LIST_VALUE = r"\[[^\]\n]*\]"
+_MAP_VALUE = r'\{(?:"(?:[^"\\\n]|\\.)*"|[^"\n])*?\}'
+_TAIL_ITEM = (rf"(?:, (?:checked_by|verified): {_LIST_VALUE}"
+              rf"|, facet_checks: {_MAP_VALUE})")
+_AFTER_IN_FLOW = rf"(?={_TAIL_ITEM}* ?\}}\s*$)"
+_CHECKED_IN_FLOW = re.compile(rf", checked_by: {_LIST_VALUE}" + _AFTER_IN_FLOW)
+_VERIFIED_IN_FLOW = re.compile(rf", verified: {_LIST_VALUE}" + _AFTER_IN_FLOW)
+_FACETS_IN_FLOW = re.compile(rf", facet_checks: {_MAP_VALUE}" + _AFTER_IN_FLOW)
 
 
 def checked_line(codes: list[str] | tuple[str, ...]) -> str:
@@ -1388,12 +1399,15 @@ def _write_checked(entry: Entry, codes: list[str]) -> None:
                   lambda e: checked_by(e) == codes)
 
 
-def _write_listed(entry: Entry, key: str, items: list[str], check) -> None:
-    """Writes [items] as [entry]'s list [key] (`checked_by` or `verified`),
-    one line: its own line in a card written as a block, last before the
-    closing brace of a card written on one line in flow style."""
-    line_of = (lambda xs: checked_line(xs)) if key == "checked_by" else verified_line
-    flow = _CHECKED_IN_FLOW if key == "checked_by" else _VERIFIED_IN_FLOW
+def _write_listed(entry: Entry, key: str, items: object, check) -> None:
+    """Writes [items] as [entry]'s [key] (`checked_by`, `verified`, a list,
+    or `facet_checks`, a mapping), one line: its own line in a card written
+    as a block, last before the closing brace of a card written on one line
+    in flow style."""
+    line_of = {"checked_by": checked_line, "verified": verified_line,
+               FACET_CHECKS: facet_checks_line}[key]
+    flow = {"checked_by": _CHECKED_IN_FLOW, "verified": _VERIFIED_IN_FLOW,
+            FACET_CHECKS: _FACETS_IN_FLOW}[key]
     try:
         edit = _Text(entry)
     except Unsupported:
@@ -1417,7 +1431,8 @@ def _write_listed(entry: Entry, key: str, items: list[str], check) -> None:
     end = lines[i][len(body):]
     added = f", {line_of(items)}"
     if flow.search(body):
-        body = flow.sub(added, body)
+        # A function, so that a backslash in the text is not read as an escape.
+        body = flow.sub(lambda _: added, body)
     elif key in body:
         raise Unsupported(f"{key} is not written as the bot writes it")
     else:
@@ -1472,6 +1487,203 @@ def settle_points(root: Path, lang: str, card: str, points: list[str]) -> str:
     return outcome
 
 
+# --- Facet checks (ADR-0058, W9) ------------------------------------------------
+# What other reviewers said about each facet of a card, published on the card's
+# entry as one line the bot writes, as it writes `checked_by`:
+#
+#     facet_checks: {"reading": {"by": ["FL-A", "FL-B"]}, "meaning": {"flags": [{"by": "FL-C", "tags": ["meaning_wrong"], "fix": "dog"}]}}
+#
+# Per facet, `by` lists the rater codes whose latest answer is "right", and
+# `flags` the others' latest answers: the code, the pointer tags and the
+# replacement text if one was given. One answer a rater and facet, so a
+# reviewer who changes their mind moves from one list to the other. A card's
+# `checked_by` stays what it was (a code that signed the card off, right on
+# every facet) and is read as "right" on every facet the entry has, unless
+# `facet_checks` holds that rater's answer to the facet, which then wins.
+# Rater codes only, never an address (wiki/Plan-Review-Staging). Left out of
+# `content_sha256` with `checked_by` (tools/deck_index.py).
+
+FACET_CHECKS = "facet_checks"
+
+# Whether the bot writes reviewers' facet answers into the cards' `facet_checks`
+# (ADR-0058, W9). A released app rejects a card key it does not know, and a
+# phone keeps the decks it has rather than take a file that fails, so, as for
+# `verified` (tools/question_answers.py WRITE_VERIFIED), the key is written only
+# once an app that reads it is released. The owner sets it to True in the
+# release after the one that reads the key, gated with `min_app` (W10). An
+# entry that already carries the key is kept up to date whatever this says.
+WRITE_FACET_CHECKS = False
+
+
+def facet_checks_line(data: dict[str, dict]) -> str:
+    """`facet_checks: {...}` for [data], as facet_data reads it, as the bot
+    writes it: one line of JSON, which is YAML, with the characters YAML 1.1
+    takes for line breaks written as escapes."""
+    out: dict[str, dict] = {}
+    for facet in rf.FACETS:
+        item = data.get(facet)
+        if not item or not (item.get("by") or item.get("flags")):
+            continue
+        entry: dict = {}
+        if item.get("by"):
+            entry["by"] = list(item["by"])
+        if item.get("flags"):
+            entry["flags"] = [
+                {"by": f["by"], "tags": list(f["tags"]),
+                 **({"fix": f["fix"]} if f.get("fix") else {})}
+                for f in item["flags"]]
+        out[facet] = entry
+    text = json.dumps(out, ensure_ascii=False, separators=(", ", ": "))
+    for ch in ("\u0085", "\u2028", "\u2029"):
+        text = text.replace(ch, f"\\u{ord(ch):04x}")
+    return f"{FACET_CHECKS}: {text}"
+
+
+def facet_data(entry: Entry) -> dict[str, dict]:
+    """[entry]'s `facet_checks`, in the form facet_checks_line takes (see
+    rf.read_facet_data)."""
+    return rf.read_facet_data(entry.data.get(FACET_CHECKS))
+
+
+def _holds_card(entry: Entry) -> bool:
+    return entry.form in ("single", "core", "layer-own")
+
+
+def owned_facets(entry: Entry) -> list[str]:
+    """The facets [entry] holds the text of (rf.owned_facets_of)."""
+    return rf.owned_facets_of(entry.data, _holds_card(entry))
+
+
+def entry_checks(entry: Entry, facet: str) -> list[rf.Check]:
+    """The checks of [facet] [entry] lists (rf.checks_of): one source of
+    truth. An entry that carries `facet_checks` is read from it alone, its
+    `checked_by` being a mirror; a legacy entry without it, from `checked_by`,
+    each code a "right" on every facet it owns."""
+    return rf.checks_of(checked_by(entry), facet_data(entry), facet)
+
+
+def facets_settled(entry: Entry) -> bool | None:
+    """Whether every facet [entry] owns has the quorum; None when it owns
+    none, so that it asks nothing of a reviewer."""
+    return rf.entry_settled(checked_by(entry), facet_data(entry), entry.data,
+                            _holds_card(entry))
+
+
+def _materialised(entry: Entry) -> dict[str, dict]:
+    """[entry]'s `facet_checks` as they are, or for a legacy entry with only
+    `checked_by`, what those codes say, written out: each code right on every
+    facet the entry owns. The first write of `facet_checks` on an entry takes
+    this over, and from then on `checked_by` is only a mirror."""
+    held = facet_data(entry)
+    if held:
+        return {f: {"by": list(v["by"]), "flags": [dict(x) for x in v["flags"]]}
+                for f, v in held.items()}
+    return {f: {"by": list(checked_by(entry)), "flags": []}
+            for f in owned_facets(entry)} if checked_by(entry) else {}
+
+
+def _write_entry(entry: Entry, data: dict[str, dict]) -> None:
+    """Writes [data] as [entry]'s `facet_checks` (taken out when empty) and
+    brings its `checked_by` into line: the mirror is the codes right on every
+    facet the entry owns, the ones already listed first, in their order. An
+    entry left with no `facet_checks` keeps its `checked_by` as it is."""
+    _write_facets(entry, data)
+    if not data:
+        return
+    owned = owned_facets(entry)
+    raters = dict.fromkeys([*checked_by(entry),
+                            *(c for v in data.values() for c in v["by"]),
+                            *(f["by"] for v in data.values() for f in v["flags"])])
+    mirror = [c for c in raters
+              if owned and all(c in data.get(f, {"by": []})["by"] for f in owned)]
+    if mirror == checked_by(entry):
+        return
+    if mirror:
+        _write_checked(entry, mirror)
+    else:
+        _remove_listed(entry, "checked_by", lambda e: not checked_by(e))
+
+
+def _remove_listed(entry: Entry, key: str, check) -> None:
+    """Takes [entry]'s [key] line out, as _write_listed puts it in."""
+    flow = {"checked_by": _CHECKED_IN_FLOW, "verified": _VERIFIED_IN_FLOW,
+            FACET_CHECKS: _FACETS_IN_FLOW}[key]
+    try:
+        edit = _Text(entry)
+    except Unsupported:
+        edit = None
+    if edit is not None:
+        i = edit._key_line(key)
+        if i is None:
+            return
+        if edit._block_end(i) != i + 1:
+            raise Unsupported(f"{key} is written over several lines")
+        del edit.lines[i]
+        _save_lines(entry, edit.lines, check)
+        return
+    lines = entry.path.read_text(encoding="utf-8").splitlines(keepends=True)
+    i = _flow_line(entry, lines)
+    body = lines[i].rstrip("\r\n")
+    if not flow.search(body):
+        if key in body:
+            raise Unsupported(f"{key} is not written as the bot writes it")
+        return
+    lines[i] = flow.sub("", body) + lines[i][len(body):]
+    _save_lines(entry, lines, check)
+
+
+def _write_facets(entry: Entry, data: dict[str, dict]) -> None:
+    """Writes [data] as [entry]'s `facet_checks`, or takes the line out when
+    it holds nothing."""
+    if data:
+        _write_listed(entry, FACET_CHECKS, data,
+                      lambda e: facet_data(e) == data)
+    else:
+        _remove_listed(entry, FACET_CHECKS, lambda e: not facet_data(e))
+
+
+def _found_for(root: Path, lang: str, deck: str, card: str) -> list[Entry]:
+    """The entries a review of [card] as deck [deck] has it speaks for: the
+    deck's own and, for a layer, its core's."""
+    core = _core_of(root, lang, deck)
+    return [e for e in entries(root, lang, card)
+            if e.deck == deck or (core is not None and e.deck == core)]
+
+
+def _text_of_facet(entry: Entry, facet: str) -> str | None:
+    """What [entry] says for a text [facet], as `facetTextOf` has it in the
+    app (an example or a note is its first); None when it has none or the
+    facet is not text."""
+    d = entry.data
+    if facet in ("word", "reading", "ipa", "meaning"):
+        value = d.get({"word": "target", "reading": "reading", "ipa": "ipa",
+                       "meaning": "native"}[facet])
+        return value if rf.filled(value) else None
+    value = d.get("notes" if facet == "note" else "examples")
+    if isinstance(value, list):
+        value = value[0] if value else None
+        if isinstance(value, dict):
+            value = value.get("text" if facet == "note" else "target")
+    return value if facet in ("note", "example") and rf.filled(value) \
+        and isinstance(value, str) else None
+
+
+def facet_texts(root: Path, lang: str, deck: str, card: str, facet: str) -> list[str]:
+    """What the entries a review of [card] speaks for say for [facet],
+    those nearest [deck] first."""
+    found = sorted(_found_for(root, lang, deck, card),
+                   key=lambda e: _rank(e, deck, lang))
+    return [t for e in found if (t := _text_of_facet(e, facet)) is not None]
+
+
+def facet_stale(texts: list[str], seen: str | None) -> bool:
+    """Whether a receipt's hash [seen] says the reviewer saw other text than
+    [texts], what the deck says now: none of them hashes to it. Not stale
+    when there is no receipt or no text to compare with (a facet that is not
+    text, or an entry shaped in a way the tools do not read)."""
+    return bool(seen) and bool(texts) and all(rf.hash_of_seen(t) != seen for t in texts)
+
+
 @dataclass
 class Checks:
     """What came of a review's sign-offs: each (card, deck file) a code was
@@ -1484,10 +1696,18 @@ class Checks:
     unsupported: list[str] = field(default_factory=list)
     reviewed: list[str] = field(default_factory=list)
     touched: set[Path] = field(default_factory=set)
+    # Facet answers written to `facet_checks` (ADR-0058, W9): (card, facet).
+    facets: list[tuple[str, str]] = field(default_factory=list)
+    # Facet answers not written: the bot is not yet writing `facet_checks`
+    # (WRITE_FACET_CHECKS), or the entry cannot be edited one line at a time.
+    facets_left: list[tuple[str, str]] = field(default_factory=list)
+    # Facet answers dropped because the reviewer saw other text than the
+    # card says now (the stale-review rule of wiki/Plan-Review-Staging).
+    stale: list[tuple[str, str]] = field(default_factory=list)
 
     @property
     def changed(self) -> bool:
-        return bool(self.checked or self.reviewed)
+        return bool(self.checked or self.reviewed or self.facets)
 
 
 def _core_of(root: Path, lang: str, deck: str) -> str | None:
@@ -1519,6 +1739,17 @@ def check(root: Path, lang: str, deck: str, card: str, code: str,
         # Looked at for its tag even when the code is on it already: the
         # file may be fully checked with its tag not yet changed.
         result.touched.add(e.path)
+        if facet_data(e):
+            # An entry that carries `facet_checks` is read from it alone: the
+            # sign-off is [code]'s latest answer, right on every facet the
+            # entry owns, in place of any flag of theirs (one source of truth).
+            try:
+                if _all_right(e, code):
+                    result.checked.append((card, e.deck))
+                    added = True
+            except Unsupported:
+                result.unsupported.append(card)
+            continue
         have = checked_by(e)
         if code in have:
             continue
@@ -1533,11 +1764,157 @@ def check(root: Path, lang: str, deck: str, card: str, code: str,
         result.already.append(card)
 
 
+def _all_right(entry: Entry, code: str) -> bool:
+    """[code] right on every facet [entry] owns, their flags taken back and
+    their other answers kept. False when that changes nothing."""
+    data = _materialised(entry)
+    before = {f: {"by": list(v["by"]), "flags": [dict(x) for x in v["flags"]]}
+              for f, v in data.items()}
+    for facet in owned_facets(entry):
+        held = data.setdefault(facet, {"by": [], "flags": []})
+        held["flags"] = [x for x in held["flags"] if x["by"] != code]
+        if code not in held["by"]:
+            held["by"].append(code)
+    data = {f: v for f, v in data.items() if v["by"] or v["flags"]}
+    if data == before:
+        return False
+    _write_entry(entry, data)
+    return True
+
+
+def facet_contested(root: Path, lang: str, card: str, field_name: str) -> bool:
+    """Whether the facet whose text is [card]'s [field_name] is contested
+    (ADR-0058, W9): reviewers' answers to it disagree, one saying it is right
+    and another flagging it, or two proposing different texts. A proposal on
+    it is not applied while it is. False for a field that is not a facet's
+    text, and for a facet no `facet_checks` speaks of: a proposal made
+    before facet answers existed goes by ADR-0038's rule alone."""
+    facet = rf.FACET_OF_FIELD.get(field_name)
+    if facet is None:
+        return False
+    held = [e for e in entries(root, lang, card)
+            if facet in owned_facets(e) or facet in facet_data(e)]
+    if not any(facet in facet_data(e) for e in held):
+        return False
+    status = rf.facet_status([c for e in held for c in entry_checks(e, facet)])
+    return status == "contested"
+
+
+def reset_facet(root: Path, lang: str, card: str, field_name: str) -> None:
+    """Takes the answers to the facet whose text [field_name] is off [card]'s
+    entries that own it, after an agreed fix changed that text: they were to
+    the old text (the stale-review rule of wiki/Plan-Review-Staging), so the
+    new text is checked afresh. Sign-offs in `checked_by` count as right on
+    every facet, so they would bring the old rights back: an entry with
+    `facet_checks` loses the facet from it (its `checked_by` mirror follows); a
+    legacy entry with only `checked_by` has its codes written out first, so
+    that the other facets keep them, when the bot writes `facet_checks`
+    (WRITE_FACET_CHECKS), and otherwise loses its `checked_by` altogether. Left
+    alone where a line cannot be edited one line at a time."""
+    facet = rf.FACET_OF_FIELD.get(field_name)
+    if facet is None:
+        return
+    for e in entries(root, lang, card):
+        if facet not in owned_facets(e):
+            continue
+        try:
+            if not facet_data(e) and checked_by(e) and not WRITE_FACET_CHECKS:
+                _remove_listed(e, "checked_by", lambda x: not checked_by(x))
+                continue
+            data = _materialised(e)
+            if facet not in data:
+                continue
+            del data[facet]
+            _write_entry(e, data)
+            if not data and checked_by(e):
+                _remove_listed(e, "checked_by", lambda x: not checked_by(x))
+        except Unsupported:
+            continue
+
+
+def proposals_on(root: Path, lang: str, card: str, field_name: str) -> list[Proposal]:
+    """The proposals on [card]'s [field_name] that stand, in file order."""
+    return [p for e in entries(root, lang, card) for p in e.proposals()
+            if p.field == field_name]
+
+
+def check_facets(root: Path, lang: str, deck: str, card: str, code: str,
+                 answers: dict[str, rf.Answer], result: Checks, *,
+                 write: bool | None = None, right_all: bool = False) -> None:
+    """Records [code]'s facet [answers] to [card] as deck [deck] has it
+    (ADR-0058, W9): each answer goes in the `facet_checks` of the entry that
+    owns the facet (owned_facets), in place of [code]'s earlier answer to it.
+    The first write on an entry takes over its `checked_by` (_materialised),
+    and the entry's `checked_by` is then the mirror of the codes right on every
+    facet it owns: a reviewer who signed the card off and now flags a facet
+    leaves it. [write] defaults to WRITE_FACET_CHECKS; while false nothing is
+    written to an entry that carries no `facet_checks` (the bot is not yet
+    writing the key) and its answers are counted in result.facets_left.
+
+    [right_all] is a card-level "Looks right" sent with them: right on every
+    facet [answers] does not name. When [code] is right on every facet the card
+    has and an entry cannot take `facet_checks`, it is signed off in that
+    entry's `checked_by` as a sign-off is (check)."""
+    write = WRITE_FACET_CHECKS if write is None else write
+    found = _found_for(root, lang, deck, card)
+    if not found:
+        result.missing.append(card)
+        return
+    applicable: set[str] = set()
+    for e in found:
+        result.touched.add(e.path)
+        applicable.update(owned_facets(e))
+    flagged = {f for f, a in answers.items() if not a.right}
+    for e in found:
+        owned = owned_facets(e)
+        mine = {f: a for f, a in answers.items() if f in owned}
+        if right_all:
+            mine.update({f: rf.Answer(code) for f in owned if f not in answers})
+        if not mine or not (write or facet_data(e)):
+            continue
+        data = _materialised(e)
+        for facet, answer in mine.items():
+            held = data.setdefault(facet, {"by": [], "flags": []})
+            held["by"] = [c for c in held["by"] if c != code]
+            held["flags"] = [x for x in held["flags"] if x["by"] != code]
+            if answer.right:
+                held["by"].append(code)
+            else:
+                held["flags"].append({"by": code, "tags": list(answer.tags),
+                                      "fix": answer.fix.strip()})
+        data = {f: v for f, v in data.items() if v["by"] or v["flags"]}
+        if data == facet_data(e):
+            continue
+        try:
+            _write_entry(e, data)
+        except Unsupported:
+            result.unsupported.append(card)
+            continue
+        result.facets.extend((card, f) for f in mine)
+    covered = (applicable - flagged) if right_all else \
+        {f for f, a in answers.items() if a.right}
+    signed = bool(applicable) and applicable <= covered
+    if not write:
+        # What a sign-off does not carry is lost until the key is written.
+        result.facets_left.extend(
+            (card, f) for f in answers
+            if f in applicable and (f in flagged or not signed)
+            and not any(facet_data(e) for e in found))
+    if signed:
+        check(root, lang, deck, card, code, result)
+
+
 def all_checked(path: Path) -> bool:
-    """Whether every card entry of [path] lists a code in `checked_by`; a
-    file with no card entries never is."""
+    """Whether every facet of every card entry of [path] has the review
+    quorum (ADR-0058, decision 12, replacing ADR-0038's "every card entry
+    lists a code"): each facet the entry owns (owned_facets) is settled by
+    the distinct rater codes that checked it, `facet_checks` and `checked_by`
+    together (entry_checks). An entry that owns no facet asks nothing and
+    counts as settled; a file with no card entry, or none that owns a
+    facet, never is."""
     found = _entries_in(path, _load(path))
-    return bool(found) and all(checked_by(e) for e in found)
+    verdicts = [facets_settled(e) for e in found]
+    return any(v is True for v in verdicts) and all(v is not False for v in verdicts)
 
 
 _TAGS = re.compile(r"^tags[ \t]*:[ \t]*(\[.*\])[ \t]*(#.*)?$")
