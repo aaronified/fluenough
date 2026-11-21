@@ -133,6 +133,8 @@ Likely outcomes (the first job of the loop is `--survey`, to replace these guess
 
 ### Quality and licence risks, plainly
 
+NC sources stay out until the decks repository split; after it, NC decks may live in the new repository as whole decks, never mixed into a BY-SA language ([Plan-Decks-Repo-Split](Plan-Decks-Repo-Split)).
+
 - **The IPA symbol clip is not the language's sound.** It is a phonetician's recording of the symbol. Telugu retroflex ɖ, Spanish approximant ð and Hindustani breathy ɡʱ are near it, not equal to it. A learner imitating it learns the IPA's sound. Mitigations: `Close to` notes name this; reviewers judge every recording, as the audio rule already says ("Reviewers judge every recording"); a bad one is removed with its file.
 - **Old Commons files have thin metadata**: no author, GFDL-only, or a licence line in the description rather than the template. The tool skips what it cannot credit; coverage will be lower than the file count suggests.
 - **Recording quality varies** (noise, clipped, a spoken word before the sound). The tool trims and normalises; it cannot judge. Reviewers do.

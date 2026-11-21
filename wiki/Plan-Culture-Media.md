@@ -69,6 +69,8 @@ A culture card is a line of a poem, not a work: 18 cards of the same poem would 
 
 ## 2. Licence reality (essential)
 
+NC sources stay out until the decks repository split; after it, NC decks may live in the new repository as whole decks, never mixed into a BY-SA language ([Plan-Decks-Repo-Split](Plan-Decks-Repo-Split)).
+
 **The loop never decides what is legal.** It reads what Commons says. Commons hosts only free files: a file is on Commons only if its uploader and the Commons community have judged it public domain or freely licensed in its country of origin and in the United States. Fair-use images (most film posters and modern book covers on English Wikipedia) are **not** on Commons; they live on `en.wikipedia.org` under `/wikipedia/en/`. The loop therefore:
 
 1. takes files **only from `commons.wikimedia.org`**, reached by their Commons title (from Wikidata P18 and P3383, which Wikidata allows to name Commons files only), and refuses any URL under `upload.wikimedia.org/wikipedia/en/` or any other wiki's local upload;

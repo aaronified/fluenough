@@ -203,9 +203,24 @@ Owner asked: "Why can we not use cc by nc?" Then: "Record this and move on for n
 2. Ship sign decks as a separate NC-licensed pack outside the CC BY-SA decks. Main downside: decks are no longer uniformly BY-SA, and the app and forks need a licence carve-out. It needs an ADR-0003 amendment first.
 3. The ASL options already listed: allow the hosts the build proxy blocks, get written permission from Sutton, or have a Deaf ASL reviewer write original signs.
 
-**Status:** no decision. The owner said to move on for now. ASL and ISL stay unbuilt until the owner decides.
+**Status:** no decision (resolved for now on 2026-11-21: out; see [NC content is out for now](#nc-content-is-out-for-now-and-decks-live-moves-to-its-own-repository-2026-11-21) below). The owner said to move on for now. ASL and ISL stay unbuilt until the owner decides.
 
 See also: [ADR-0003](ADR-0003-Licence) · [Deck-Work-Queue-FirstWords](Deck-Work-Queue-FirstWords)
+
+## NC content is out for now, and decks-live moves to its own repository (2026-11-21)
+
+Earlier the same day the owner argued that decks and fonts are never behind a payment ("Only payments will be about cosmetics and donations") and that NC content would sit in downloads, not in the app. Then decided: "Ok. Leave out nc for now. We will move decks-live to a separate public repo, fluenough decks, soon. The NC decks will be there as complete NC decks. Like this language is SA, this is NC."
+
+**Decision 1: NC content is out for now.** No CC BY-NC data (SignBank, SignBank Plus, NC recordings) enters any deck today. ASL and ISL stay unbuilt. This resolves the 2026-11-20 entry above.
+
+**Decision 2 (plan, "soon", not scheduled):** `decks-live` moves to a separate public repository named "fluenough decks" (exact name and owner still to confirm). NC decks go there only as COMPLETE decks: the licence is per language or deck set, never mixed inside one deck. A language is either CC BY-SA 4.0 or CC BY-NC as a whole.
+
+**Reasons discussed.**
+- F-Droid and forks are weaker objections when NC content is downloaded data kept apart from the app (the app stays GPL-3.0, the decks are separate works, as the decks already are under CC BY-SA).
+- The real constraints that remain: no mixed licences inside a deck file; the Play build with paid cosmetics (#1103) is a grey area; the validator must allow NC only on whole NC decks; forks of the code repository no longer inherit deck data.
+- The F-Droid policy pages could not be read (f-droid.org was not reachable from the agent session), so nothing is claimed here about F-Droid anti-features.
+
+**Status:** the plan is [Plan-Decks-Repo-Split](Plan-Decks-Repo-Split) (planned, not scheduled), tracked in the issue linked from it. ADR-0003 is amended only after the owner approves that plan.
 
 ## Marathi final anusvara and schwa (2026-11-21, #1476)
 
