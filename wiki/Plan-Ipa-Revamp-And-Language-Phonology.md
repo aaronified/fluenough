@@ -492,6 +492,42 @@ record:
 Each carries a `source` (Navarro Tomas 1918; Hualde 2005; Wikipedia, Spanish
 phonology). Then `python3 tools/derive_phonetic.py es --rederive --write`.
 
+## Marathi readings: final anusvara and schwa (decided 2026-11-21, #1476)
+
+Two questions found while building the Marathi phonetic entry, answered by the
+owner on 2026-11-21.
+
+1. **Word-final anusvara.** Asked whether Marathi follows `ṁ` as Telugu does or
+   stays `m̐`, the owner answered "1. Standardize". Marathi readings write a
+   word-final anusvara (ं) as `ṁ`, the same convention as Telugu (owner,
+   2026-10-19: a word-final anusvara is `ṁ`, course-wide). "Word-final" is
+   the Telugu rule's own definition: a space, punctuation or the end of the
+   text follows. The IPA is unchanged (the nasal vowel, `ə̃`). A medial
+   anusvara is unchanged (the homorganic nasal before a stop or nasal, `ṁ`
+   before y, r, l, v, a sibilant or h), and so is a chandrabindu (`m̐`). Built in
+   `tools/transcribe.py` (`_word_final_nasal`).
+2. **Schwa over-deletion.** Asked about स्वजनजनधनाचा and गजवदन, the owner
+   answered "2. Fix". The fix is narrow and driven by the course's 1,572
+   hand-typed single-word readings on decks-live: Hindi's VC_CV rule stays,
+   because those readings follow it, side-by-side drops included (निवडणे
+   `nivḍṇe`, नवरदेव `navrdev`, सहनशीलता `sahnśiltā`). Only two things are
+   cut back (`_marathi_medial_drops`), to every other schwa counted from the
+   right: a chain of three or more side-by-side drops (`svajnjndhnācā` becomes
+   `svajnajnadhnācā`, `saklmti` becomes `saklamti`), and a pair that would
+   leave an obstruent, v or y, and an obstruent in a row (`gajvdan` becomes
+   `gajavdan`; no card of the course has such a run). A chain ending before ṇ
+   (-णे, -णूक) is kept whole. Hindi, Gujarati and Bengali keep their rule.
+
+**Not settled by any source in the repository, owner to confirm:** the exact
+reading of the two words, and the other schwa cases the Marathi queue lists
+(लवकरच, आदरणीय, कृपया, काहीतरी, शेतकरी), which keep the engine's old values
+here although the course types `krupayā`, `kāhitari`, `śetkari` (a reviewer
+puts लवकरच at `lavkarac`). Medial anusvara is unchanged: the decision covered
+word-final only.
+
+After merge, `derive_phonetic.py mr --write` is rerun on decks-live to refresh
+the `phonetic` field.
+
 ## Steps (Proposed, each one pull request)
 
 | # | Step | Done when |

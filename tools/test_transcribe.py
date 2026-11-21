@@ -1,6 +1,7 @@
 """Tests for transcribe.py: readings in ISO 15919 letters as said, and IPA
 (ADR-0025)."""
 
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -169,6 +170,111 @@ class ReadingTest(unittest.TestCase):
                     getattr(fresh, case.__name__)()
                 finally:
                     fresh.doCleanups()
+
+
+class MarathiAnusvaraAndSchwaTest(unittest.TestCase):
+    """Marathi's final anusvara and its medial schwa (#1476, owner
+    2026-11-21)."""
+
+    def read(self, word, hint=None):
+        return transcribe(word, "mr", hint)
+
+    def test_a_word_final_anusvara_is_m_dot_above_as_in_telugu(self) -> None:
+        # The owner's "1. Standardize": the same ṁ Telugu writes.
+        self.assertEqual(self.read("सागरां").reading, "sāgrāṁ")
+        self.assertEqual(self.read("अंधळं").reading, "andhaḷaṁ")
+        self.assertEqual(transcribe("అన్నం", "te").reading, "annaṁ")
+
+    def test_the_final_anusvara_is_the_same_with_a_typed_hint(self) -> None:
+        self.assertEqual(self.read("अंधळं", "andhalan").reading, "andhaḷaṁ")
+
+    def test_a_final_anusvara_before_punctuation_or_a_space_is_still_final(
+            self) -> None:
+        self.assertEqual(self.read("सागरां, आणि").reading, "sāgrāṁ, āṇi")
+        self.assertEqual(self.read("आम्ही सागरां आहोत").reading.split()[1],
+                         "sāgrāṁ")
+
+    def test_the_final_anusvara_ipa_is_unchanged(self) -> None:
+        self.assertEqual(self.read("अंधळं").ipa, "ənd̪ʱəɭə̃")
+
+    def test_a_medial_anusvara_is_not_changed(self) -> None:
+        self.assertEqual(self.read("मुलांपासून").reading, "mulāmpāsun")
+        self.assertEqual(self.read("सांगा").reading, "sāṅgā")
+        # Before y, r, l, v, a sibilant or h it was ṁ already.
+        self.assertEqual(self.read("आम्हांला").reading, "āmhāṁlā")
+
+    def test_a_chandrabindu_is_not_changed(self) -> None:
+        self.assertEqual(self.read("आँ").reading, "ām̐")
+
+    # Hand-typed readings of the course (decks-live, decks/mr), word to the
+    # card's reading and id. The engine's rule must keep reproducing them:
+    # the regression corpus for #1476 (1,483 of the 1,572 single-word cards
+    # matched before this change, and still do, bar the m̐ cards).
+    TYPED = {
+        "निवडणे": ("nivḍṇe", "mr-1480"), "हरवणे": ("harvṇe", "mr-1174"),
+        "समजणे": ("samjṇe", "mr-0719"), "आठवणे": ("āṭhvṇe", "mr-1176"),
+        "उगवणे": ("ugvṇe", "mr-1241"), "निवडणूक": ("nivḍṇuk", "mr-1428"),
+        "नवरदेव": ("navrdev", "mr-1588"),
+        "साखरपुडा": ("sākhrpuḍā", "mr-1590"),
+        "सहनशीलता": ("sahnśiltā", "mr-1729"),
+        "असहमत": ("ashmat", "mr-1364"), "पुरणपोळी": ("purṇpoḷi", "mr-0925"),
+        "सुपरमार्केट": ("suprmārkeṭ", "mr-0982"),
+        "चित्रपटगृह": ("citrapṭgruh", "mr-1000"),
+        "गैरसमज": ("gairsmaj", "mr-1637"), "खोडरबर": ("khoḍrbar", "mr-1119"),
+        "धबधबा": ("dhabdhbā", "mr-0991"), "मेहनती": ("mehnti", "mr-1258"),
+        "गणपती": ("gaṇpti", "mr-1041"),
+        # Unchanged by the fix.
+        "कमळ": ("kamaḷ", "mr-0050"), "सरकार": ("sarkār", "mr-1423"),
+        "मित्र": ("mitra", "mr-0213"), "घर": ("ghar", "mr-0048"),
+        "सकाळ": ("sakāḷ", "mr-0477"), "माणूस": ("māṇus", "mr-0686"),
+        "पुस्तक": ("pustak", "mr-0384"), "चहा": ("cahā", "mr-0559"),
+    }
+
+    def test_the_courses_typed_readings_are_still_reproduced(self) -> None:
+        for word, (typed, card) in self.TYPED.items():
+            self.assertEqual(self.read(word).reading, typed,
+                             f"{word} ({card})")
+
+    def test_a_long_chain_of_dropped_schwas_is_cut_back(self) -> None:
+        # The cause of #1476: Hindi's rule dropped every schwa side by side
+        # in a long word. A chain of three or more is cut to every other
+        # schwa, from the right. The check counts an aspirate (dh) as one
+        # consonant: no run of three consonants remains.
+        for word in ("स्वजनजनधनाचा", "सकलमति", "सकलजनमन"):
+            reading = self.read(word).reading
+            flat = re.sub("([kgcjṭḍtdpb])h", "\\1", reading)
+            self.assertNotRegex(flat, "[^aāiīuūeoêôṛ ]{3}",
+                                f"{word} read {reading}")
+
+    def test_the_two_words_of_the_issue(self) -> None:
+        # OWNER TO CONFIRM: no source in the repository says how a speaker
+        # says either word; the readings follow the rule's alternation from
+        # the right. गजवदन is cut because j, v, d (obstruent, glide,
+        # obstruent) occurs in no card of the course.
+        self.assertEqual(self.read("गजवदन").reading, "gajavdan")
+        self.assertEqual(self.read("स्वजनजनधनाचा").reading,
+                         "svajnajnadhnācā")
+        self.assertEqual(self.read("सकलमति").reading, "saklamti")
+
+    def test_other_schwa_cases_keep_their_old_reading(self) -> None:
+        # OWNER TO CONFIRM: the engine's old values, kept so that this fix
+        # does not move them. The course types śetkari (शेतकरी mr-0239),
+        # krupayā (कृपया), kāhitari (काहीतरी); a reviewer puts लवकरच at
+        # lavkarac (about 75 percent).
+        self.assertEqual(self.read("शेतकरी").reading, "śetkri")
+        self.assertEqual(self.read("कृपया").reading, "krupyā")
+        self.assertEqual(self.read("काहीतरी").reading, "kāhitri")
+        self.assertEqual(self.read("लवकरच").reading, "lavkrac")
+        self.assertEqual(self.read("आदरणीय").reading, "ādrṇiy")
+
+    def test_a_chain_ending_before_ne_is_kept_whole(self) -> None:
+        # The course's -णे and -णूक convention: nivḍṇe, ugvṇe, mirvṇuk.
+        self.assertEqual(self.read("मिरवणूक").reading, "mirvṇuk")
+        self.assertEqual(self.read("वाचवणे").reading, "vācvṇe")
+
+    def test_hindi_keeps_its_own_rule(self) -> None:
+        self.assertEqual(transcribe("जनता", "hi").reading, "jantā")
+        self.assertEqual(transcribe("कमल", "hi").reading, "kamal")
 
 
 class NoHintTest(unittest.TestCase):

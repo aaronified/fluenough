@@ -637,6 +637,7 @@ def default_choices(units: list[Unit], lang: str) -> list[Choice]:
     """Without a hint that fits: the first way of each unit, with the
     inherent vowel dropped where the language's rules drop it."""
     picked = [choices(units, k, lang)[0] for k in range(len(units))]
+    marathi_medial = _marathi_medial_drops(units) if lang == "mr" else set()
     for k, u in enumerate(units):
         if u.kind != "I":
             continue
@@ -665,8 +666,9 @@ def default_choices(units: list[Unit], lang: str) -> list[Choice]:
             first = k == 1 or (k >= 2 and units[k - 2].kind == "SP")
             if end and not first:
                 drop = not _said_after_cluster(units, k, lang)
-            elif lang in ("hi", "mr", "gu", "bn") and \
-                    _schwa_drops(units, k):
+            elif lang == "mr":
+                drop = k in marathi_medial
+            elif lang in ("hi", "gu", "bn") and _schwa_drops(units, k):
                 drop = True
         if drop:
             picked[k] = Choice("", "", [""], 0, "drop")
@@ -718,6 +720,44 @@ def _schwa_drops(units: list[Unit], k: int) -> bool:
         and units[k + 3].kind not in ("SP", "P"))
     return (before.kind in ("V", "S", "I") and after_c.kind == "C"
             and said_after)
+
+
+_OBSTRUENT = {"k", "kh", "g", "gh", "c", "ch", "j", "jh", "ṭ", "ṭh", "ḍ",
+              "ḍh", "t", "th", "d", "dh", "p", "ph", "b", "bh", "s", "ś", "ṣ"}
+
+
+def _marathi_medial_drops(units: list[Unit]) -> set[int]:
+    """The inherent vowels Marathi does not say inside a word (#1476, owner
+    2026-11-21: "2. Fix"). Hindi's VC_CV rule (`_schwa_drops`) stays, because
+    the course's hand-typed readings follow it, side-by-side drops included
+    (निवडणे nivḍṇe, नवरदेव navrdev, साखरपुडा sākhrpuḍā, सहनशीलता sahnśiltā).
+    It over-deleted in two cases the course has no word for, so only these are
+    cut back, to every other schwa counted from the right:
+    a chain of three or more side-by-side drops (स्वजनजनधनाचा
+    svajnjndhnācā, सकलमति saklmti), and a pair that would leave an
+    obstruent, v or y, and an obstruent in a row (गजवदन gajvdan: no card of
+    the course has such a run). A chain that ends before ṇ (the -णे and -णूक
+    endings) is kept whole, as the course types it. A word's last vowel is
+    not said and is never a drop here: `_schwa_drops` counts it as not said,
+    so it is not a neighbour either."""
+    drops = {k for k, u in enumerate(units)
+             if u.kind == "I" and _schwa_drops(units, k)}
+    for k in sorted(drops):
+        if k not in drops or k - 2 in drops:
+            continue
+        chain = [k]
+        while chain[-1] + 2 in drops:
+            chain.append(chain[-1] + 2)
+        if len(chain) < 2 or units[chain[-1] + 1].letter == "ṇ":
+            continue
+        a, b = units[chain[0] - 1], units[chain[0] + 1]
+        c = units[chain[1] + 1]
+        glide_run = (len(chain) == 2 and a.letter in _OBSTRUENT
+                     and b.letter in ("v", "y") and c.letter in _OBSTRUENT)
+        if len(chain) >= 3 or glide_run:
+            for j in range(len(chain) - 2, -1, -2):
+                drops.discard(chain[j])
+    return drops
 
 
 # --- Writing -----------------------------------------------------------------
@@ -883,7 +923,12 @@ def _transcribe(text: str, lang: str, hint: str | None) -> Transcription:
                     not _already_held(units, k):
                 i_iso, i_ipa = _held(i_iso, i_ipa)
         elif u.kind == "N":
-            if ch.tag == "silent" or typed == "":
+            if lang == "mr" and _word_final_nasal(units, k):
+                # Marathi writes a word-final anusvara ṁ, as Telugu does
+                # (#1476, owner 2026-11-21: "1. Standardize"); the IPA is
+                # the nasal vowel, as before.
+                i_iso, i_ipa = "ṁ", "̃"
+            elif ch.tag == "silent" or typed == "":
                 i_iso, i_ipa = _nasal_vowel(lang)
             elif lang in ("bn", "as"):
                 # Bengali and Assamese say ং as ng whatever follows.
@@ -960,6 +1005,13 @@ def _held(iso: str, ipa: str) -> tuple[str, str]:
     if len(iso) > 1 and iso.endswith("h"):
         return iso[:-1] + iso, ipa.rstrip("ʰʱ") + ipa
     return iso + iso, ipa + ipa
+
+
+def _word_final_nasal(units: list[Unit], k: int) -> bool:
+    """Whether the anusvara at [k] ends its word: a space, punctuation or
+    the end of the text comes next (the same place Telugu's rule calls
+    word-final, so a clitic written apart or a mark after it still counts)."""
+    return k + 1 >= len(units) or units[k + 1].kind in ("SP", "P")
 
 
 def _nasal_vowel(lang: str) -> tuple[str, str]:

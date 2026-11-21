@@ -207,4 +207,15 @@ Owner asked: "Why can we not use cc by nc?" Then: "Record this and move on for n
 
 See also: [ADR-0003](ADR-0003-Licence) · [Deck-Work-Queue-FirstWords](Deck-Work-Queue-FirstWords)
 
+## Marathi final anusvara and schwa (2026-11-21, #1476)
+
+Asked "whether Marathi's word-final anusvara follows `ṁ` (as Telugu does) or
+stays `m̐`", the owner answered "1. Standardize": Marathi readings write a
+word-final anusvara as `ṁ`, the same as Telugu (2026-10-19 rule, course-wide).
+Asked about the Marathi schwa rule over-deleting in long words, for example
+स्वजनजनधनाचा and गजवदन, the owner answered "2. Fix". Both are built in
+`tools/transcribe.py`; the reasoning and what is still the owner's to confirm
+are in [Plan-Ipa-Revamp-And-Language-Phonology](Plan-Ipa-Revamp-And-Language-Phonology)
+("Marathi readings: final anusvara and schwa").
+
 See also: [Agentic-Coding](Agentic-Coding) · [ADR-0044](ADR-0044-Documentation-Lives-In-The-Wiki) · [Home](Home)
