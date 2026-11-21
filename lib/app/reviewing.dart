@@ -54,10 +54,12 @@ class Reviewing {
   });
 
   /// How many reviewers other than the proposer must accept a change before
-  /// learners get it: the review quorum less the proposer's own review
-  /// ([kReviewQuorum], ADR-0058; it replaced the review bot's
-  /// `REVIEW_AGREEMENTS_NEEDED` setting, tools/review_bot.py). "How reviewing
-  /// works" and docs/REVIEWING.md both state it.
+  /// learners get it: the review quorum less the proposer's own review. It
+  /// derives from the one constant [kReviewQuorum] (ADR-0058; the review bot
+  /// reads the same number as `REVIEW_QUORUM` in tools/review_quorum.py, and
+  /// it replaced the bot's `REVIEW_AGREEMENTS_NEEDED` setting). Only the
+  /// rules read this number: no screen, string or guide shows it, they say
+  /// "another speaker checks it".
   static const int agreementsNeeded = kReviewQuorum - 1;
 
   final SettingsNotifier settings;

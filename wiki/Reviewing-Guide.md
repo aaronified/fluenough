@@ -71,8 +71,8 @@ You can turn reviewing off whenever you like. Your code is kept.
   yet signed off by a native speaker, in your languages.
 - **Waiting for review** in Settings has three parts. **Reviewed, not sent**
   opens your cards and suggestions, by deck. **Reviewed and sent** opens each
-  suggestion's state: Accepted, Rejected or Waiting for a second review, with
-  a count such as "1 more acceptance needed" and never a reviewer code. Then each
+  suggestion's state: Accepted, Rejected or Waiting for another speaker's check, with
+  words such as "Waiting for another speaker's check" and never a reviewer code or a number. Then each
   language you review, folded until you tap it, with the decks and cards left
   to check in its header; unfolded, it lists the units and decks still
   waiting, the offensive words not yet rated and the sound-alike pairs not yet
@@ -222,9 +222,8 @@ offer.
   mail app with Fluenough's address, a file for each deck and a file for each
   language of answers. The subject is the review mail's,
   `[Fluenough review] CODE (languages)`. Do not change the files.
-- **Settled by two.** A data point is settled right when two reviewers
-  answer Yes: the other reviewers needed plus the first
-  (`REVIEW_AGREEMENTS_NEEDED`, 1 by default, so two). The point is then
+- **Settled by another speaker.** A data point is settled right when
+  another speaker also answers Yes. The point is then
   recorded on the card as `verified` and the app stops asking about it (the
   bot writes that only once a released app reads the field; until then it
   only tallies the answers in `review-answers/` in the repository, as reviewer
@@ -238,8 +237,8 @@ offer.
   flagged recording that is merged is taken off the card, which then uses
   text-to-speech. For any other point the answer carries no replacement text,
   and the proposals of a review change a field only to a new text, so the
-  pull request is a flag note: merging it only records that two reviewers
-  agree the point is wrong, and the owner changes the card.
+  pull request is a flag note: merging it only records that another speaker
+  agrees the point is wrong, and the owner changes the card.
 - **Open questions** that ask you for something new, such as a regional
   variation, come in a later version.
 
@@ -273,11 +272,9 @@ Private: your **mail address**. It is never written to the public issues.
 - Your suggestions are put into the decks as proposed changes soon after your
   mail arrives, for other reviewers of the language to see. Learners never see
   a proposal.
-- When enough **other** reviewers accept a change exactly as written, it goes
-  to learners, usually within an hour or two of the agreeing mail (after the
-  automatic checks pass). The number is
-  `REVIEW_AGREEMENTS_NEEDED`, set by the owner, and is 1 by default: one other
-  reviewer is enough. It may be raised later.
+- When another speaker has checked a change and accepts it exactly as written,
+  it goes to learners, usually within an hour or two of the agreeing mail
+  (after the automatic checks pass).
 - If several proposals concern the same part of a card, the first to be agreed
   wins and the others are closed.
 - The owner can undo any change.

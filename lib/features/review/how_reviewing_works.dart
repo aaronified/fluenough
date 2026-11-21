@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../app/links.dart';
-import '../../app/reviewing.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/segmented.dart';
@@ -164,7 +163,7 @@ final List<ReviewGuideStep> reviewGuideSteps = <ReviewGuideStep>[
     title: (l10n) => l10n.reviewGuideAgreeTitle,
     paragraphs: (l10n) => <String>[
       l10n.reviewGuideAgreeBody,
-      l10n.reviewGuideAgreeCount(Reviewing.agreementsNeeded),
+      l10n.reviewGuideAgreeCount,
       l10n.reviewGuideAgreeMore,
     ],
   ),

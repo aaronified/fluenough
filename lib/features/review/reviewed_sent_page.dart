@@ -16,8 +16,9 @@ import 'suggestion_lines.dart';
 /// line at the top. The state is read from the decks on the phone
 /// ([sentSuggestionsOf]); where the phone cannot tell, the row says so.
 ///
-/// Shows no rater code, the reviewer's own or anyone's: only counts, such as
-/// "1 more acceptance needed". Rejected is drawn neutral, not in the error
+/// Shows no rater code, the reviewer's own or anyone's, and no number of
+/// checks still needed, only words, such as
+/// "Waiting for another speaker's check". Rejected is drawn neutral, not in the error
 /// colour: another reviewer's choice is not the reviewer's mistake.
 class ReviewedSentPage extends StatelessWidget {
   const ReviewedSentPage({super.key});
@@ -151,7 +152,9 @@ class _StateLine extends StatelessWidget {
       SentOutcome.waiting => (
         Icons.hourglass_empty,
         l10n.reviewSentWaiting,
-        l10n.reviewSentWaitingLine(state.moreNeeded),
+        state.moreNeeded == 0
+            ? l10n.reviewSentWaitingDone
+            : l10n.reviewSentWaitingLine,
         scheme.onSurfaceVariant,
       ),
       SentOutcome.unknown => (

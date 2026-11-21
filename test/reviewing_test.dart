@@ -1713,24 +1713,32 @@ void main() {
 
   group('How reviewing works', () {
     group('docs/REVIEWING.md and the app say the same', () {
-      test(
-        'the guide\'s agreement count, and the app\'s, are the review bot\'s',
-        () {
-          final guide = File('docs/REVIEWING.md').readAsStringSync();
-          expect(guide, contains('`REVIEW_AGREEMENTS_NEEDED`'));
-          expect(
-            guide.replaceAll(RegExp(r'\s+'), ' '),
-            contains('is ${Reviewing.agreementsNeeded} by default'),
-          );
-          expect(guide, contains(AppLinks.feedbackEmail));
-
-          final bot = File('tools/review_bot.py').readAsStringSync();
-          expect(
-            bot.replaceAll(RegExp(r'\s+'), ' '),
-            contains('${Reviewing.agreementsNeeded} when unset'),
-          );
-        },
-      );
+      test('no screen, string or guide says how many speakers must check', () {
+        final number = RegExp(
+          r'\b(two|2) (other )?reviewers\b|more acceptance|'
+          r'REVIEW_AGREEMENTS_NEEDED|by default, so two',
+          caseSensitive: false,
+        );
+        for (final doc in <String>[
+          'docs/REVIEWING.md',
+          'wiki/Reviewing-Guide.md',
+          'lib/l10n/app_en.arb',
+        ]) {
+          final text = File(doc).readAsStringSync();
+          expect(number.hasMatch(text), isFalse, reason: doc);
+        }
+        expect(
+          File('docs/REVIEWING.md').readAsStringSync(),
+          contains(AppLinks.feedbackEmail),
+        );
+        final arb = jsonDecode(File('lib/l10n/app_en.arb').readAsStringSync())
+            as Map<String, dynamic>;
+        expect(arb['reviewGuideAgreeCount'], isNot(contains('{')));
+        // The bot's own words name the one constant, never a literal number.
+        final bot = File('tools/review_bot.py').readAsStringSync();
+        expect(bot, contains('REVIEW_QUORUM'));
+        expect(bot, isNot(contains('when unset')));
+      });
     });
   });
 }
