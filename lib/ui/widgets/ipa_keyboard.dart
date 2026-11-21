@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../core/models/ipa_chart.dart';
+import '../../core/models/ipa_clusters.dart';
 import '../../l10n/app_localizations.dart';
 import '../theme.dart';
 import 'hint.dart';
+import 'ipa_symbol_names.dart';
 
 /// The app's own keyboard of IPA symbols, under a typed answer in the IPA
 /// course (#836, owner, 2026-10-24: "Braille may need a keyboard and also a
@@ -86,8 +88,9 @@ class _IpaKeyboardState extends State<IpaKeyboard> {
     widget.onChanged?.call(next);
   }
 
-  /// Deletes the selection, or the symbol before the cursor: one code
-  /// point, so a mark goes before the letter it was on.
+  /// Deletes the selection, or the symbol before the cursor: the whole
+  /// user-perceived symbol, a letter with its marks (`ipaClusterStart`), so
+  /// that one press takes `ã` or `t͡ʃ` and never leaves a mark on nothing.
   void _backspace() {
     final value = widget.controller.value;
     final selection = value.selection;
@@ -96,16 +99,7 @@ class _IpaKeyboardState extends State<IpaKeyboard> {
     final end = selection.isValid ? selection.end : value.text.length;
     if (start == end) {
       if (start == 0) return;
-      start--;
-      // A character past U+FFFF is two code units.
-      final unit = value.text.codeUnitAt(start);
-      if (start > 0 &&
-          unit >= 0xDC00 &&
-          unit <= 0xDFFF &&
-          value.text.codeUnitAt(start - 1) >= 0xD800 &&
-          value.text.codeUnitAt(start - 1) <= 0xDBFF) {
-        start--;
-      }
+      start = ipaClusterStart(value.text, start);
     }
     final next = value.text.replaceRange(start, end, '');
     widget.controller.value = TextEditingValue(
@@ -221,7 +215,7 @@ class _IpaKey extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final enabled = onTap != null;
-    final name = symbol.name ?? symbol.symbol;
+    final name = ipaSymbolName(AppLocalizations.of(context)!, symbol);
     final shown = symbol.combining ? '◌${symbol.symbol}' : symbol.symbol;
     return Hint(
       message: name,

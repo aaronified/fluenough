@@ -11,6 +11,7 @@ import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/typed_drill.dart';
 import 'package:fluenough/ui/widgets/ipa_keyboard.dart';
+import 'package:fluenough/ui/widgets/ipa_symbol_names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -147,6 +148,16 @@ void main() {
       }
     });
 
+    testWidgets('every symbol\'s ARB name is the chart\'s name', (
+      tester,
+    ) async {
+      await pumpScreen(tester, const SizedBox());
+      final l10n = l10nOf(tester);
+      for (final s in ipaChart) {
+        expect(ipaChartName(l10n, s.symbol), s.name, reason: s.symbol);
+      }
+    });
+
     test('the IPA names its own keyboard, other languages the phone\'s', () {
       const ipa = LanguageInfo(
         code: 'ipa',
@@ -196,10 +207,13 @@ void main() {
         await tester.tap(_key('ʰ'));
         await tester.pump();
         expect(controller.text, 'ɒp ʈʰ');
-        await tester.tap(find.byTooltip(l10n.ipaBackspace));
+        // One press takes the letter and its mark together.
         await tester.tap(find.byTooltip(l10n.ipaBackspace));
         await tester.pump();
         expect(controller.text, 'ɒp ');
+        await tester.tap(find.byTooltip(l10n.ipaBackspace));
+        await tester.pump();
+        expect(controller.text, 'ɒp');
         for (var i = 0; i < 5; i++) {
           await tester.tap(find.byTooltip(l10n.ipaBackspace));
         }
@@ -210,6 +224,68 @@ void main() {
           reason: 'backspace stops at the start',
         );
         expect(tester.takeException(), isNull, reason: 'nothing overflows');
+      });
+
+      testWidgets('backspace with the cursor in the middle takes the symbol '
+          'before it and keeps the cursor there (#1221)', (tester) async {
+        usePhone(tester, textScale: 1.4);
+        await pumpScreen(
+          tester,
+          _Host(controller: controller, symbols: ipaKeysFor(<String>['ɒ'])),
+          themeMode: dark ? ThemeMode.dark : ThemeMode.light,
+        );
+        final l10n = l10nOf(tester);
+        // p, ã (a and a tilde), t͡ʃ, i: the cursor after the ã.
+        controller.value = const TextEditingValue(
+          text: 'pa\u0303t\u0361\u0283i',
+          selection: TextSelection.collapsed(offset: 3),
+        );
+        await tester.pump();
+        await tester.tap(find.byTooltip(l10n.ipaBackspace));
+        await tester.pump();
+        expect(controller.text, 'pt\u0361\u0283i');
+        expect(controller.selection.baseOffset, 1);
+        expect(controller.selection.isCollapsed, isTrue);
+        // The cursor after the t͡ʃ now, at offset 4.
+        controller.selection = const TextSelection.collapsed(offset: 4);
+        await tester.tap(find.byTooltip(l10n.ipaBackspace));
+        await tester.pump();
+        expect(controller.text, 'pi');
+        expect(controller.selection.baseOffset, 1);
+      });
+
+      testWidgets('a key is named for a screen reader, never by its bare '
+          'glyph', (tester) async {
+        final handle = tester.ensureSemantics();
+        usePhone(tester, textScale: 1.4);
+        await pumpScreen(
+          tester,
+          _Host(
+            controller: controller,
+            symbols: ipaKeysFor(<String>['\u0261\u0252\u00E3']),
+          ),
+          themeMode: dark ? ThemeMode.dark : ThemeMode.light,
+        );
+        final l10n = l10nOf(tester);
+        await tester.tap(_tab(IpaKind.consonants));
+        await tester.pump();
+        expect(find.bySemanticsLabel('voiced velar plosive'), findsOneWidget);
+        expect(find.bySemanticsLabel('\u0261'), findsNothing);
+        await tester.tap(_tab(IpaKind.vowels));
+        await tester.pump();
+        expect(
+          find.bySemanticsLabel('open back rounded vowel'),
+          findsOneWidget,
+        );
+        // A symbol only a deck uses has a name that is not the glyph alone.
+        await tester.tap(_tab(IpaKind.other));
+        await tester.pump();
+        expect(
+          find.bySemanticsLabel(l10n.ipaSymbolOther('\u00E3')),
+          findsOneWidget,
+        );
+        expect(tester.takeException(), isNull);
+        handle.dispose();
       });
 
       testWidgets('keys are at least 44 dp and tabs show only the kinds '
