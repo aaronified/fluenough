@@ -408,6 +408,89 @@ builds tiny WebP and PNG headers by hand, so the tests need neither ffmpeg nor
 the network. `tools/deck_index.py` lists work images under `shared_media` beside
 the creator images, with a `min_app` on the work entries.
 
+## `fetch_culture_media.py`
+
+Fetches a portrait for each creator and a poster, cover or title page for each
+work of the culture decks, from Wikimedia Commons
+([ADR-0060](ADR-0060-Culture-Media-From-Wikimedia-Commons),
+[Plan-Culture-Media](Plan-Culture-Media), work package 2). The owner's design: a
+loop of fetch requests; whatever is fetched ships with its entry, whatever is not
+stays as it is (the app's placeholder). It reuses the shared client
+(`wikimedia_client.py`) and the validator's own rules; it runs on a checkout that
+has `decks/creators/` and `decks/recommendations/` (`decks-live`).
+
+```sh
+python3 tools/fetch_culture_media.py --survey                       # read-only: coverage, bytes, licences, skips
+python3 tools/fetch_culture_media.py --lang te --facts              # Wikidata dates and places next to the deck's
+python3 tools/fetch_culture_media.py --lang te --dry-run            # download and encode, write nothing
+python3 tools/fetch_culture_media.py --lang te --kind creators --limit 10
+python3 tools/fetch_culture_media.py --lang te --report te.md --json te.json
+python3 tools/fetch_culture_media.py --lang te --refresh te-rec-foo # redo one entry
+```
+
+For each entry with no valid `image` (its file exists):
+
+1. **Wikidata item.** The entry's `wikidata` key, else a `wbsearchentities` search
+   by name or title, accepted only if the item fits: a creator is a human (Q5)
+   whose label or alias matches and whose birth and death years agree with the
+   deck's within a year (five if `circa`), with at least one date confirmed; a
+   work has a type that fits its `medium` (`WORK_TYPES`, written from memory and
+   meant to grow), a matching label, a publication year within a year of the
+   deck's and one of the deck's resolved creators (P50, P57, P58, P86, P170,
+   P175). One fit is taken; none, or more than one, is reported as `ambiguous`
+   with the candidates for a human, who can settle it by adding `wikidata:` to the
+   entry. A QID found by search is written back as `wikidata`.
+2. **Candidate files** are named by the item's statements only: a creator P18; a
+   work P3383 (poster), P18, P996 (scan or cover), in that order, preferred rank
+   first, deprecated never. Never Wikipedia's REST `originalimage`; a file whose
+   URL is not `https://upload.wikimedia.org/wikipedia/commons/...` (the fair-use
+   files are under `/wikipedia/en/`) is refused, and the source page must be on
+   `commons.wikimedia.org`. A creator's file in a Commons category named Fictional,
+   Alleged, Disputed or Unidentified goes to the `ambiguous` list.
+3. **The licence gate** reads Commons's `extmetadata`: the licence goes through
+   `validate_decks.check_licence_and_source` (CC0, public domain, CC BY and CC BY-SA
+   2.0 to 4.0; never NC, ND, GFDL alone or fair use); a file with a `Restrictions`
+   note, a type that is not a picture, no licence URL (except public domain) or a
+   source over 15 MB is skipped; a file with no machine-readable author is skipped,
+   except a public-domain one, credited `Unknown author` (ADR-0060 decision 7). The
+   author is plain text, at most 300 characters. Each skip is reported with its
+   reason.
+4. **Download and encode.** The original when it is within the target and small
+   enough for the client's body limit (5 MB), else the Commons thumbnail at the
+   width that makes the longest side the target (the thumbnail parameter is a
+   width, so a tall picture gets a smaller width). ffmpeg decodes and writes WebP
+   with `scale='min(N,iw)':'min(N,ih)':force_original_aspect_ratio=decrease`: the
+   longest side is at most N, **never upscaled**; N is 1024 for a portrait and 2048
+   for a work (`--portrait-px`, `--work-px`, at most 2048). Quality 80, then 75, 70,
+   65 and 60 until the file is at most 500 KB; still over is skipped as `over-size`.
+   The file is `decks/creators/images/<creator id>.webp` or
+   `decks/recommendations/images/<work id>.webp`, and the entry gets an `image:`
+   block (`file`, `credit`, `author`, `licence`, `licence_url`, `source_url`,
+   `retrieved`, and `kind`: `poster` for P3383, `title-page` for P996; a portrait's
+   `kind` is left for a reviewer) by a text patch, checked by a parse that nothing
+   else changed, and by the validator's `check_image` on the written file, before
+   the YAML is saved.
+5. **Living creators** get no portrait (decision 9): the deck must not say
+   `living`, and Wikidata must give a date of death at least `--min-years-dead`
+   years ago (5); `--include-living` lifts it.
+
+It is idempotent and resumable: an entry with a valid image is skipped (an entry
+whose image file is missing is listed, not redone; `--refresh ID` redoes one),
+every API answer and download is cached, and each entry is written when it is
+done. `--survey` and `--facts` write nothing and download no image (the survey
+estimates bytes from the pixel size); `--dry-run` encodes in memory and writes
+nothing to the decks. The report (Markdown on screen, `--report`, `--json`) lists
+per language the entries, those already done, asked, fetched or available,
+missing, skipped for author, licence and size, other skips, ambiguous, living,
+errors and bytes, the licences seen, the skipped files with the reason, the
+ambiguous matches for review, and the share of the 100 MB ceiling. Exit 3 means the
+run stopped at the rate limit or the request cap; exit 4 another Wikimedia error;
+the report is always written; run again to resume. Needs `ffmpeg` with libwebp. The
+tests (`test_fetch_culture_media.py`) use a fake Wikidata, Commons and file server
+and a stubbed encode step; one test, skipped without ffmpeg and libwebp, checks the
+real resize. The fetching needs `www.wikidata.org`, `commons.wikimedia.org` and
+`upload.wikimedia.org`.
+
 ## `mark_wiktionary.py`
 
 Marks the cards whose word has a Wiktionary entry (#422), so that the app
