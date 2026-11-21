@@ -3535,7 +3535,7 @@
   "@sourcesFontsLine": {
     "description": "The line under the fonts credit on the Sources screen. Noto and the licence name stay as they are."
   },
-  "sourcesCreditName": "{project, select, wiktionary{Wiktionary} commons{Wikimedia Commons} openmoji{OpenMoji} wikipedia{Wikipedia} tatoeba{Tatoeba} other{{project}}}",
+  "sourcesCreditName": "{project, select, wiktionary{Wiktionary} commons{Wikimedia Commons} openmoji{OpenMoji} wikipedia{Wikipedia} tatoeba{Tatoeba} signwriting{SignWriting} other{{project}}}",
   "@sourcesCreditName": {
     "description": "A project whose data the decks use, credited on the Sources screen. Project names stay as they are.",
     "placeholders": {
@@ -3545,7 +3545,7 @@
       }
     }
   },
-  "sourcesCreditLine": "{project, select, wiktionary{Word data, under CC BY-SA 4.0} commons{Recordings and pictures of words, each under its own licence and with its credit} openmoji{Drawings of what words mean, under CC BY-SA 4.0} wikipedia{How often words are used, counted from each language's Wikipedia, under CC BY-SA} tatoeba{Example sentences, under CC BY 2.0 FR} other{{project}}}",
+  "sourcesCreditLine": "{project, select, wiktionary{Word data, under CC BY-SA 4.0} commons{Recordings and pictures of words, each under its own licence and with its credit} openmoji{Drawings of what words mean, under CC BY-SA 4.0} wikipedia{How often words are used, counted from each language's Wikipedia, under CC BY-SA} tatoeba{Example sentences, under CC BY 2.0 FR} signwriting{Signs written in SignWriting, pictures drawn with the Sutton SignWriting fonts under SIL OFL 1.1} other{{project}}}",
   "@sourcesCreditLine": {
     "description": "The line under a credited project on the Sources screen: what the decks take from it, and its licence. Licence names stay as they are.",
     "placeholders": {
@@ -3554,6 +3554,110 @@
         "example": "wiktionary"
       }
     }
+  },
+  "sourcesThanks": "Thank you",
+  "@sourcesThanks": {
+    "description": "Heading of the first group on the Sources screen, thanking everyone whose work the app stands on."
+  },
+  "sourcesThanksIntro": "Fluenough stands on the work of many people who shared theirs freely. Thank you.",
+  "@sourcesThanksIntro": {
+    "description": "The sentence under the Thank you heading on the Sources screen, before the list of who is thanked."
+  },
+  "sourcesThanksWikimedia": "Wikimedia volunteers",
+  "@sourcesThanksWikimedia": {
+    "description": "Title of a thank-you row on the Sources screen: the volunteers behind Wiktionary, Wikipedia and their sister projects."
+  },
+  "sourcesThanksWikimediaLine": "To the volunteers who write and keep Wiktionary, Wikipedia, Wikisource, Wikiquote and Wikimedia Commons: much of what the decks know about words, sounds, books and places is theirs.",
+  "@sourcesThanksWikimediaLine": {
+    "description": "The thanks under the Wikimedia volunteers row. Project names stay as they are."
+  },
+  "sourcesThanksTatoeba": "Tatoeba contributors",
+  "@sourcesThanksTatoeba": {
+    "description": "Title of a thank-you row on the Sources screen. Tatoeba is a project name and stays as it is."
+  },
+  "sourcesThanksTatoebaLine": "To the contributors of Tatoeba, who wrote and translated sentences for anyone to learn from.",
+  "@sourcesThanksTatoebaLine": {
+    "description": "The thanks under the Tatoeba contributors row."
+  },
+  "sourcesThanksWordnet": "Open English WordNet",
+  "@sourcesThanksWordnet": {
+    "description": "Title of a thank-you row on the Sources screen. The project name stays as it is."
+  },
+  "sourcesThanksWordnetLine": "To the team behind Open English WordNet, for the sets of English words that mean the same.",
+  "@sourcesThanksWordnetLine": {
+    "description": "The thanks under the Open English WordNet row."
+  },
+  "sourcesThanksFonts": "Google, Noto and Roboto",
+  "@sourcesThanksFonts": {
+    "description": "Title of a thank-you row on the Sources screen for the makers of the fonts. Names stay as they are."
+  },
+  "sourcesThanksFontsLine": "To Google and the Noto Project, and to the Roboto authors, whose fonts let every script on the app be drawn properly.",
+  "@sourcesThanksFontsLine": {
+    "description": "The thanks under the fonts row. Names stay as they are."
+  },
+  "sourcesThanksSignWriting": "SignWriting",
+  "@sourcesThanksSignWriting": {
+    "description": "Title of a thank-you row on the Sources screen, shown once a SignWriting font or a sign language deck is on the phone. The name stays as it is."
+  },
+  "sourcesThanksSignWritingLine": "To Valerie Sutton, Adam Frost, Stephen E Slevinski Jr and the Center for Sutton Movement Writing, for SignWriting and its fonts.",
+  "@sourcesThanksSignWritingLine": {
+    "description": "The thanks under the SignWriting row. Personal and organisation names stay as they are."
+  },
+  "sourcesThanksSignWritingLicence": "Sign pictures drawn with the Sutton SignWriting fonts, SIL OFL 1.1",
+  "@sourcesThanksSignWritingLicence": {
+    "description": "The licence line of the SignWriting thank-you row. The licence name stays as it is."
+  },
+  "sourcesThanksSignWritingCopyright": "Copyright 1974-2014 Center for Sutton Movement Writing, Inc.",
+  "@sourcesThanksSignWritingCopyright": {
+    "description": "The copyright line of the SignWriting thank-you row. Stays as it is."
+  },
+  "sourcesThanksPictures": "OpenMoji and Noto Emoji",
+  "@sourcesThanksPictures": {
+    "description": "Title of a thank-you row on the Sources screen for the drawings on cards. Names stay as they are."
+  },
+  "sourcesThanksPicturesLine": "To the creators of the OpenMoji drawings and the Noto Emoji pictures that show what words mean.",
+  "@sourcesThanksPicturesLine": {
+    "description": "The thanks under the OpenMoji and Noto Emoji row."
+  },
+  "sourcesThanksListener": "AI4Bharat and ONNX Runtime",
+  "@sourcesThanksListener": {
+    "description": "Title of a thank-you row on the Sources screen for the makers of the AI listener. Names stay as they are."
+  },
+  "sourcesThanksListenerLine": "To AI4Bharat, for the IndicConformer model and the IndicVoices recordings behind the AI listener, and to the people who recorded them; and to the makers of ONNX Runtime.",
+  "@sourcesThanksListenerLine": {
+    "description": "The thanks under the AI listener row. Names stay as they are."
+  },
+  "sourcesThanksPackages": "Flutter and Dart packages",
+  "@sourcesThanksPackages": {
+    "description": "Title of a thank-you row on the Sources screen for the open-source code the app is built from."
+  },
+  "sourcesThanksPackagesLine": "To the authors of the open-source Flutter and Dart packages the app is built from.",
+  "@sourcesThanksPackagesLine": {
+    "description": "The thanks under the packages row."
+  },
+  "sourcesOpenLicences": "Open-source licences",
+  "@sourcesOpenLicences": {
+    "description": "Row on the Sources screen that opens the screen listing the licences of the open-source packages the app is built from."
+  },
+  "sourcesOpenLicencesLine": "The licences of the packages the app is built from.",
+  "@sourcesOpenLicencesLine": {
+    "description": "The line under the Open-source licences row."
+  },
+  "sourcesThanksWriters": "Writers of public-domain works",
+  "@sourcesThanksWriters": {
+    "description": "Title of a thank-you row on the Sources screen for the authors whose texts are quoted in the decks."
+  },
+  "sourcesThanksWritersLine": "To the writers whose works are in the public domain and are quoted in the decks: Tagore, Sukumar Ray, Premchand, Gurajada Apparao and the many classical authors.",
+  "@sourcesThanksWritersLine": {
+    "description": "The thanks under the writers row. Authors' names stay as they are."
+  },
+  "sourcesThanksPeople": "Reviewers, contributors and learners",
+  "@sourcesThanksPeople": {
+    "description": "Title of the last thank-you row on the Sources screen, for the people who check the decks and help the app grow."
+  },
+  "sourcesThanksPeopleLine": "To the reviewers, who check the decks as a community. They are anonymous by design, so they are thanked here as a group: every card is better for them. And to the contributors and learners who report problems, send fixes and ask for languages.",
+  "@sourcesThanksPeopleLine": {
+    "description": "The thanks under the last row."
   },
   "settingsSourceLine": "{source}: {kind, select, reading{passages for reading} grammar{grammar} other{words}}",
   "@settingsSourceLine": {

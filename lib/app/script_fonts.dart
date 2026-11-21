@@ -57,6 +57,9 @@ class ScriptFonts extends ChangeNotifier {
   /// Whether any font is loaded.
   bool get hasFonts => _loaded.isNotEmpty;
 
+  /// Whether a font for [script] is loaded.
+  bool hasScript(String script) => _loaded.containsKey(script);
+
   /// Whether [font], this very file, is loaded.
   bool isLoaded(IndexFont font) => _loaded[font.script] == font.sha256;
 
