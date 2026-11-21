@@ -31,7 +31,7 @@ offered an update when only a proposal or a reviewer's answer changed
 
 The decks with a `genre` (hidden ones too) are listed apart under `shelves`,
 a language's topics file under `topics`, the shared files (themes, sections,
-creators, recommendations) under `shared` and creator images under the
+creators, recommendations) under `shared` and creator and work images under the
 top-level `shared_media`; each new entry carries `min_app` from MIN_APP_KINDS
 (wiki/Plan-Deck-Kinds-And-Topics.md, D9).
 
@@ -249,6 +249,14 @@ SHARED_FOLDERS = {"creators", "recommendations"}
 # Creator images, listed under the top-level `shared_media`: downloaded on
 # demand when a creator is shown, checked by hash alone.
 SHARED_MEDIA = "decks/creators/images"
+# Work posters and covers (ADR-0060): a second shared folder, listed the same
+# way. An app that does not know the prefix passes the entry by (today's
+# `SharedMediaFile.tryParse` accepts only decks/creators/images/ and never reads
+# `min_app`). Package 4 must read `min_app` and accept the new prefix, and
+# this number must become the real release number before the first work image
+# lands on decks-live.
+SHARED_MEDIA_WORKS = "decks/recommendations/images"
+MIN_APP_WORK_IMAGES = "0.9.6"
 
 # The oldest app that can read each new key, written to every entry under it
 # as `min_app` (D9), so no deck needs a line in decks/min_app.json. The
@@ -674,18 +682,24 @@ def _shelf_entry(entry: dict, rep: vd.Report, path: Path, genres: dict) -> dict:
 
 
 def _shared_media() -> list[dict]:
-    """The creator images (`decks/creators/images/`), one entry each."""
-    folder = ROOT / SHARED_MEDIA
-    if not folder.is_dir():
-        return []
+    """The creator images (`decks/creators/images/`) and the work images
+    (`decks/recommendations/images/`), one entry each; a work image carries
+    `min_app` (MIN_APP_WORK_IMAGES)."""
     entries = []
-    for p in sorted(folder.iterdir()):
-        if p.suffix not in (".jpg", ".png", ".webp") or not p.is_file():
+    for media, work in ((SHARED_MEDIA, False), (SHARED_MEDIA_WORKS, True)):
+        folder = ROOT / media
+        if not folder.is_dir():
             continue
-        data = p.read_bytes()
-        entries.append({"path": _rel(p), "size": len(data),
-                        "sha256": hashlib.sha256(data).hexdigest(), "kind": "image",
-                        "language": p.stem.split("-")[0]})
+        for p in sorted(folder.iterdir()):
+            if p.suffix not in (".jpg", ".png", ".webp") or not p.is_file():
+                continue
+            data = p.read_bytes()
+            entry = {"path": _rel(p), "size": len(data),
+                     "sha256": hashlib.sha256(data).hexdigest(), "kind": "image",
+                     "language": p.stem.split("-")[0]}
+            if work:
+                entry["min_app"] = MIN_APP_WORK_IMAGES
+            entries.append(entry)
     return entries
 
 

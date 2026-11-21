@@ -141,12 +141,21 @@ class Creators(KindsCase):
         self.assertEqual(self.errors(CREATORS), [])
 
     def test_a_licence_is_on_the_allow_list(self) -> None:
+        # The one rule shared with audio and card images (ADR-0060).
         self.check(lambda d: creator(d)["image"].__setitem__("licence", "CC-BY-NC-4.0"),
-                   "licence must be one of public-domain, CC0-1.0, CC-BY-4.0, CC-BY-SA-4.0")
+                   "NonCommercial (NC) and NoDerivatives (ND) licences are never allowed")
+
+    def test_the_older_and_ported_licences_of_commons_pass(self) -> None:
+        for licence in ("CC0-1.0", "CC-BY-2.0", "CC-BY-3.0", "CC-BY-SA-2.5",
+                        "CC-BY-SA-3.0-DE", "CC-BY-SA-4.0"):
+            with self.subTest(licence):
+                self.edit(CREATORS, lambda d, licence=licence:
+                          creator(d)["image"].__setitem__("licence", licence))
+                self.assertEqual(self.errors(CREATORS), [])
 
     def test_fair_use_is_no_licence(self) -> None:
         self.check(lambda d: creator(d)["image"].__setitem__("licence", "fair-use"),
-                   "no fair use")
+                   "cannot ship in a CC BY-SA 4.0 deck")
 
     def test_a_living_creators_image_is_never_public_domain(self) -> None:
         def change(d: dict) -> None:
@@ -172,24 +181,29 @@ class Creators(KindsCase):
         self.check(lambda d: creator(d)["image"].__setitem__("file", "elsewhere/x.gif"),
                    "file must be decks/creators/images/")
 
-    def test_an_image_is_at_most_300_kb(self) -> None:
-        # 1024 x 1024 random-looking rows do not compress below 300 KB.
+    def test_an_image_is_at_most_500_kb(self) -> None:
+        # 400 x 450 random rows do not compress below 500 KB (ADR-0060).
         import os
-        raw = b"".join(b"\x00" + os.urandom(3 * 400) for _ in range(400))
+        raw = b"".join(b"\x00" + os.urandom(3 * 400) for _ in range(450))
 
         def chunk(kind: bytes, body: bytes) -> bytes:
             return (struct.pack(">I", len(body)) + kind + body
                     + struct.pack(">I", zlib.crc32(kind + body) & 0xFFFFFFFF))
         big = (b"\x89PNG\r\n\x1a\n"
-               + chunk(b"IHDR", struct.pack(">IIBBBBB", 400, 400, 8, 2, 0, 0, 0))
+               + chunk(b"IHDR", struct.pack(">IIBBBBB", 400, 450, 8, 2, 0, 0, 0))
                + chunk(b"IDAT", zlib.compress(raw, 0)) + chunk(b"IEND", b""))
-        self.assertGreater(len(big), 300 * 1024)
+        self.assertGreater(len(big), 500 * 1024)
         (self.root / "creators" / "images" / "zz-ejemplo-autora.png").write_bytes(big)
-        self.assertIn("at most 300", "\n".join(self.errors(CREATORS)))
+        self.assertIn("at most 500", "\n".join(self.errors(CREATORS)))
 
-    def test_an_image_is_at_most_1024_pixels_on_a_side(self) -> None:
-        (self.root / "creators" / "images" / "zz-ejemplo-autora.png").write_bytes(png(1100, 4))
-        self.assertIn("1100 x 4 px; at most 1024 on a side", "\n".join(self.errors(CREATORS)))
+    def test_an_image_is_at_most_2048_pixels_on_a_side(self) -> None:
+        image = self.root / "creators" / "images" / "zz-ejemplo-autora.png"
+        image.write_bytes(png(2100, 4))
+        self.assertIn("2100 x 4 px; at most 2048 on a side", "\n".join(self.errors(CREATORS)))
+        for side in (1100, 2048):  # 1024 was the cap before ADR-0060
+            with self.subTest(side):
+                image.write_bytes(png(side, 4))
+                self.assertEqual(self.errors(CREATORS), [])
 
     def test_an_image_is_a_real_image(self) -> None:
         (self.root / "creators" / "images" / "zz-ejemplo-autora.png").write_bytes(b"not a png")
