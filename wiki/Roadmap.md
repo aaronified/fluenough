@@ -424,6 +424,7 @@ A plan with no tracking issue is flagged.
 - [what reviewing covers, and how reviewers change cards](https://github.com/aaronified/fluenough/wiki/Plan-Reviewing-Scope) (Written 2026-10-11, for 0), tracks #476, #477
 - [building sentences by reasoning](https://github.com/aaronified/fluenough/wiki/Plan-Sentence-Building) (Written 2026-10-05), tracks #222
 - [settings that say what they do, on and off](https://github.com/aaronified/fluenough/wiki/Plan-Settings-Wording) (Written 2026-10-06), **no tracking issue**
+- [a sounds deck for every language, with fetched, compressed audio](https://github.com/aaronified/fluenough/wiki/Plan-Sounds-Decks) (Written 2026-11-21 for #734 (a sounds deck for every language), with #31 (phonemic contrasts), #736 (the Telugu sounds deck, the model) and #1221 (the IPA keyboard follow-ups; its `typed` flag stays off, so sound cards are chosen, never typed)), **no tracking issue**
 - [say when speech can't be recognised offline](https://github.com/aaronified/fluenough/wiki/Plan-Speech-Offline-Alert) (Written 2026-10-05), **no tracking issue**
 - [synonym sets for typed English meanings](https://github.com/aaronified/fluenough/wiki/Plan-Synonym-Dictionary), **no tracking issue**
 - [cut the tests down to behaviour](https://github.com/aaronified/fluenough/wiki/Plan-Test-Cut) (Written 2026-10-20), **no tracking issue**
