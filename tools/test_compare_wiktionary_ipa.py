@@ -143,10 +143,10 @@ class Compare(unittest.TestCase):
             ("zz-0003", "broad"), ("zz-0004", "broad"),   # consonant, smaller first
             ("zz-0005", "broad"),                          # vowel quality
             ("zz-0014", "broad"),                          # vowel and consonant
+            ("zz-0009", "broad"),                          # contrastive mark (nasalisation)
             ("zz-0011", "broad"),                          # several forms, none match
             ("zz-0006", "broad"),                          # length mark
             ("zz-0008", "narrow"),                         # stress
-            ("zz-0009", "broad"),                          # contrastive mark (nasalisation)
             ("zz-0012", "broad"), ("zz-0013", "broad")])   # missing
 
     def test_limit_and_rules_only_narrow_what_is_compared(self) -> None:
