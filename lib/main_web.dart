@@ -11,6 +11,7 @@ import 'app/deck_catalog.dart';
 import 'app/deck_downloads.dart';
 import 'app/features.dart';
 import 'app/links.dart';
+import 'app/media_image_cache.dart';
 import 'app/report_mail.dart';
 import 'app/pacing.dart';
 import 'core/review/review_problems.dart';
@@ -66,6 +67,10 @@ Future<void> main() async {
           files: downloaded,
           clock: DateTime.now,
           log: log,
+          images: MediaImageCache(
+            store: await openBrowserBlobStore(name: 'fluenough_culture_images'),
+            onProblem: (problem) => log.warning('Culture images: $problem'),
+          ),
         ),
         progress: storage.progress,
         synonymLoader: loadSynonymSets,
