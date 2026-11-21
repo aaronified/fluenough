@@ -732,6 +732,9 @@ class InherentA(Case):
         self.wiki.files[title("Open front unrounded vowel")] = ("CC0", "Vera Vowel", 1.0)
         self.wiki.files[title("Voiceless velar plosive")] = ("CC BY-SA 4.0", "Kay Kay", 1.0)
         self.wiki.files[title("Close front unrounded vowel")] = ("CC0", "Ida Ee", 1.0)
+        # The default FILES hold a bilabial plosive clip; this deck's `pa` card must
+        # find none, so that `p` is a symbol in the table with no clip on Commons.
+        del self.wiki.files[title("Voiceless bilabial plosive")]
 
     def test_exact_first_then_the_form_without_the_trailing_a(self) -> None:
         clips = {"ta": ("Exact ta",), "t": ("Bare t",)}
@@ -815,6 +818,8 @@ class WhyMissing(Case):
     def test_each_missing_card_has_one_reason(self) -> None:
         self.deck.write_text(SYLLABLE_DECK, encoding="utf-8")
         self.wiki.files[title("Voiceless bilabial plosive")] = ("GFDL", "G", 1.0)
+        # The default FILES hold a GFDL velar clip; `ka` must find none for "nothing found".
+        del self.wiki.files[title("Voiceless velar plosive")]
         lr = self.run_tool(langs=["zz"], survey=True, inherent_a_langs=ZZ).langs["zz"]
         self.assertEqual(lr.why["zz-0003"], "no symbol mapping")       # aː
         self.assertEqual(lr.why["zz-0004"], "no symbol mapping")       # kʰa
