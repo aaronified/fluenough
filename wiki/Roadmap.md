@@ -434,6 +434,7 @@ A plan with no tracking issue is flagged.
 - [sign and publish the first release](https://github.com/aaronified/fluenough/wiki/Plan-Release-Signing), tracks #232
 - [a Research and standards page, with the sources](https://github.com/aaronified/fluenough/wiki/Plan-Research-And-Standards) (Written 2026-10-06), tracks #214
 - [a staging branch for review mails](https://github.com/aaronified/fluenough/wiki/Plan-Review-Staging), **no tracking issue**
+- [reviewer UX, gating and checking](https://github.com/aaronified/fluenough/wiki/Plan-Reviewer-UX), **no tracking issue**
 - [what reviewing covers, and how reviewers change cards](https://github.com/aaronified/fluenough/wiki/Plan-Reviewing-Scope) (Written 2026-10-11, for 0), tracks #476, #477
 - [building sentences by reasoning](https://github.com/aaronified/fluenough/wiki/Plan-Sentence-Building) (Written 2026-10-05), tracks #222
 - [settings that say what they do, on and off](https://github.com/aaronified/fluenough/wiki/Plan-Settings-Wording) (Written 2026-10-06), **no tracking issue**
