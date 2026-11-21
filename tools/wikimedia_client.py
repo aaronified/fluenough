@@ -50,6 +50,8 @@ WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php"
 WIKTIONARY_API = "https://en.wiktionary.org/w/api.php"
 WIKIDATA_API = "https://www.wikidata.org/w/api.php"
 DOWNLOAD_HOST = "upload.wikimedia.org"
+# Commons thumbnails (the `thumburl` of the API) are served from thumb.wikimedia.org.
+DOWNLOAD_HOSTS = frozenset({DOWNLOAD_HOST, "thumb.wikimedia.org"})
 
 BATCH = 50                       # titles or ids per API request (Wikimedia's limit)
 DEFAULT_CACHE = ROOT / ".cache" / "wikimedia"
@@ -119,7 +121,7 @@ def allowed_hosts(url: str) -> frozenset[str]:
     """The hosts a request for [url] may be redirected to: downloads stay on
     upload.wikimedia.org, API calls on the API hosts."""
     host = urllib.parse.urlsplit(url).hostname
-    return frozenset({DOWNLOAD_HOST}) if host == DOWNLOAD_HOST else API_HOSTS
+    return DOWNLOAD_HOSTS if host in DOWNLOAD_HOSTS else API_HOSTS
 
 
 class _SafeRedirects(urllib.request.HTTPRedirectHandler):
@@ -152,7 +154,7 @@ def urllib_transport(url: str, headers: dict[str, str]) -> Response:
     """The real network: urllib, with HTTP errors returned as responses, a
     timeout, redirects only to the allowed hosts and a byte limit on the
     body."""
-    limit = MAX_DOWNLOAD_BYTES if urllib.parse.urlsplit(url).hostname == DOWNLOAD_HOST \
+    limit = MAX_DOWNLOAD_BYTES if urllib.parse.urlsplit(url).hostname in DOWNLOAD_HOSTS \
         else MAX_API_BYTES
     opener = urllib.request.build_opener(_SafeRedirects(allowed_hosts(url)))
     request = urllib.request.Request(url, headers=headers)
@@ -366,10 +368,11 @@ class Client:
 
     def get_bytes(self, url: str) -> bytes:
         """A file's bytes, from the cache if it was downloaded before. Only
-        https URLs on upload.wikimedia.org are fetched."""
+        https URLs on upload.wikimedia.org and thumb.wikimedia.org are fetched."""
         parts = urllib.parse.urlsplit(url)
-        if parts.scheme != "https" or parts.hostname != DOWNLOAD_HOST:
-            raise WikimediaError(f"{url}: only https://{DOWNLOAD_HOST}/ files are downloaded")
+        if parts.scheme != "https" or parts.hostname not in DOWNLOAD_HOSTS:
+            raise WikimediaError(f"{url}: only https://{DOWNLOAD_HOST}/ and "
+                                 f"https://thumb.wikimedia.org/ files are downloaded")
         path = self.cache_dir / "files" / _key(url)
         if not self.refresh and path.is_file():
             self.stats.cache_hits += 1
