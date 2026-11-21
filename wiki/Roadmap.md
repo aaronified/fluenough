@@ -211,7 +211,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#224](https://github.com/aaronified/fluenough/issues/224) Plan: hands-free audio drills
 - [#225](https://github.com/aaronified/fluenough/issues/225) Plan: explain a grammar mistake
 - [#226](https://github.com/aaronified/fluenough/issues/226) Plan: writing the script by hand
-- [#229](https://github.com/aaronified/fluenough/issues/229) Plan: an ISO 15919 letters deck
 - [#230](https://github.com/aaronified/fluenough/issues/230) Plan: a listening tier in context
 - [#232](https://github.com/aaronified/fluenough/issues/232) Plan: Play Protect and developer verification
 - [#234](https://github.com/aaronified/fluenough/issues/234) Plan: word-order tiles without giveaways, and with extra tiles
@@ -253,7 +252,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#332](https://github.com/aaronified/fluenough/issues/332) Handwriting: stroke data
 - [#333](https://github.com/aaronified/fluenough/issues/333) Handwriting: the stroke animation
 - [#334](https://github.com/aaronified/fluenough/issues/334) Handwriting: tracing and drawing blind, recorded as Write
-- [#340](https://github.com/aaronified/fluenough/issues/340) ISO 15919 decks: one per Indian language, on the path
 - [#341](https://github.com/aaronified/fluenough/issues/341) Listening in context: owner decisions before building
 - [#342](https://github.com/aaronified/fluenough/issues/342) Listening in context: a context field and the validator
 - [#343](https://github.com/aaronified/fluenough/issues/343) Listening in context: scheduling and the drill
@@ -405,7 +403,7 @@ A plan with no tracking issue is flagged.
 - [readings made in the app, for sentences the learner adds](https://github.com/aaronified/fluenough/wiki/Plan-In-App-Readings) (Written 2026-10-05), tracks #221
 - [the IPA, taught like a language](https://github.com/aaronified/fluenough/wiki/Plan-Ipa-Course), **no tracking issue**
 - [the IPA course revamp, and a phonology deck for every language](https://github.com/aaronified/fluenough/wiki/Plan-Ipa-Revamp-And-Language-Phonology) (Written 2026-10-26), **no tracking issue**
-- [a deck that teaches ISO 15919, in each language](https://github.com/aaronified/fluenough/wiki/Plan-Iso-15919-Deck), tracks #229
+- [a deck that teaches ISO 15919, in each language](https://github.com/aaronified/fluenough/wiki/Plan-Iso-15919-Deck), **no tracking issue**
 - [Japanese B1 word lists](https://github.com/aaronified/fluenough/wiki/Plan-Japanese-B1-Wordlists) (Written 2026-11-06 (Sonnet, for the owner)), **no tracking issue**
 - [language completeness, everything the app plans for a language, in full](https://github.com/aaronified/fluenough/wiki/Plan-Language-Completeness), **no tracking issue**
 - [language paths, pacing by difficulty, and every language in the scheme](https://github.com/aaronified/fluenough/wiki/Plan-Language-Paths) (Written 2026-10-05), tracks #216
