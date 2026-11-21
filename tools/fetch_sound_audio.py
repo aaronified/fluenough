@@ -6,7 +6,9 @@ card with no audio this tool looks for a recording it may ship, in this order
 and stopping at the first usable one:
 
 1. Wikimedia Commons's recording of the IPA symbol the card's `ipa` is (one
-   clip per symbol, `File:Voiceless bilabial plosive.ogg`);
+   clip per symbol, `File:Voiceless bilabial plosive.ogg`), first as written,
+   then without a trailing inherent `a` (the syllable form `ʈa` is the
+   consonant ʈ; the vowels `a` and `aː` are never stripped);
 2. a Commons recording of the letter itself, from the language's
    `Category:<Language> pronunciation`;
 3. with `--example-words --dump <kaikki.jsonl>`, the Wiktionary recording of
@@ -16,7 +18,10 @@ and stopping at the first usable one:
 It reads each file's author, licence and page from the Commons API
 (`imageinfo`, `extmetadata`) and skips a file with no named author (also
 `Unknown author`, public domain included: ADR-0059 decision 8) and any
-licence that cannot ship in a CC BY-SA 4.0 deck (GFDL alone, NC, ND). It
+licence that cannot ship in a CC BY-SA 4.0 deck (GFDL alone, NC, ND). Commons's
+placeholder `No machine-readable author provided. X assumed (based on copyright
+claims).` counts as no author too, unless `--accept-assumed-author` (the
+credit is then `X (uploader; author assumed by Commons)`). It
 downloads the file, decodes it to 16-bit mono, trims the silence, normalises
 the peak to -3 dBFS and encodes Ogg Opus mono at about 32 kbps, variable
 bitrate, lower if the clip passes 16 kB (never above 128 kbps), writes
@@ -81,6 +86,14 @@ AUDIO_EXTENSIONS = (".ogg", ".oga", ".wav", ".mp3", ".flac", ".opus", ".webm")
 
 # What counts as no author: Commons's own placeholders.
 NO_AUTHOR = re.compile(r"(?i)(?:unknown(?: author)?|anonymous|n/?a|none|\?+)\.?")
+# Commons's automatic placeholder when the file page names no author:
+# `No machine-readable author provided. Denelson83 assumed (based on copyright
+# claims).` It names the uploader, not a known author: ADR-0059 decision 8 does
+# not count it, unless `--accept-assumed-author` (the owner's decision).
+ASSUMED_AUTHOR = re.compile(
+    r"(?is)no machine-readable author provided\.?\s*(?P<name>.*?)\s*assumed"
+    r"(?:\s*\(based on copyright claims\))?\.?")
+ASSUMED_PREFIX = re.compile(r"(?i)no machine-readable author")
 
 # --- The IPA symbols' Commons recordings ----------------------------------------
 # Commons names these by the sound's description (the Wikipedia IPA charts
@@ -150,6 +163,30 @@ CLIP_EXTENSIONS = (".ogg", ".oga")
 
 def nfc(text: str) -> str:
     return unicodedata.normalize("NFC", text)
+
+
+VOWEL_SYMBOLS = frozenset(sym for sym, names in IPA_CLIPS.items() if "vowel" in names[0])
+
+
+def symbol_groups(ipa: str | None, clips: dict[str, tuple[str, ...]] | None = None
+                  ) -> list[tuple[str, str, list[str]]]:
+    """The candidate rules for a card's [ipa], in order, as (rule, symbol,
+    Commons titles): `ipa-symbol` is the `ipa` as written; `ipa-symbol-stripped`
+    is the `ipa` without a trailing inherent `a` (the Telugu syllable form:
+    `ʈa` is the consonant ʈ, `kʰa` is kʰ). The vowel `a` and the long `aː`
+    are never stripped, nor is a form whose rest holds a vowel (`ia`). The
+    titles may be empty: the symbol has no entry in the table."""
+    clips = IPA_CLIPS if clips is None else clips
+    if not ipa:
+        return []
+    symbol = nfc(ipa.strip().strip("/[]").strip())
+    if not symbol:
+        return []
+    groups = [("ipa-symbol", symbol, symbol_titles(symbol, clips))]
+    if len(symbol) > 1 and symbol.endswith("a") and \
+            not any(ch in VOWEL_SYMBOLS for ch in symbol[:-1]):
+        groups.append(("ipa-symbol-stripped", symbol[:-1], symbol_titles(symbol[:-1], clips)))
+    return groups
 
 
 def symbol_titles(ipa: str | None, clips: dict[str, tuple[str, ...]] | None = None
@@ -244,6 +281,7 @@ class Verdict:
     page: str = ""
     url: str = ""
     duration: float | None = None
+    assumed: bool = False           # no-author: Commons's "author assumed" placeholder
 
 
 def _meta(info: dict, key: str) -> str:
@@ -252,8 +290,21 @@ def _meta(info: dict, key: str) -> str:
     return iw.strip_html(value) if isinstance(value, str) else ""
 
 
-def judge(title: str, info: dict | None) -> Verdict:
-    """Whether the Commons file [info] may ship, and its credit."""
+def assumed_author(credit: str) -> str | None:
+    """The name in Commons's `No machine-readable author provided. X assumed
+    (based on copyright claims).` placeholder; "" when it names nobody; None
+    if [credit] is not that placeholder."""
+    if not ASSUMED_PREFIX.match(credit):
+        return None
+    m = ASSUMED_AUTHOR.fullmatch(credit.strip())
+    return m.group("name").strip() if m else ""
+
+
+def judge(title: str, info: dict | None, accept_assumed: bool = False) -> Verdict:
+    """Whether the Commons file [info] may ship, and its credit. Commons's
+    "author assumed" placeholder is no author unless [accept_assumed], and
+    then the credit is `Name (uploader; author assumed by Commons)`, never the
+    placeholder."""
     if info is None:
         return Verdict("missing", title)
     name = _meta(info, "LicenseShortName")
@@ -269,8 +320,12 @@ def judge(title: str, info: dict | None) -> Verdict:
     if licence is None:
         return Verdict("licence", **base)
     credit = _meta(info, "Artist")
-    if not credit or NO_AUTHOR.fullmatch(credit):
-        return Verdict("no-author", licence=licence, **base)
+    assumed = assumed_author(credit) if credit else None
+    if not credit or NO_AUTHOR.fullmatch(credit) or \
+            (assumed is not None and (not accept_assumed or not assumed)):
+        return Verdict("no-author", licence=licence, assumed=assumed is not None, **base)
+    if assumed:
+        credit = f"{assumed} (uploader; author assumed by Commons)"
     size = info.get("size")
     if (isinstance(size, (int, float)) and size > MAX_SOURCE_BYTES) or \
             (base["duration"] is not None and base["duration"] > MAX_SOURCE_SECONDS):
@@ -419,6 +474,14 @@ class LangReport:
     # IPA symbols whose Commons titles were all tried and not found: the
     # first survey's list of `--symbols` fixes.
     symbols_not_found: dict[str, list[str]] = field(default_factory=dict)
+    # Why a card has no recording (one reason a card) and which candidate rule
+    # and file gave the ones that have.
+    why: dict[str, str] = field(default_factory=dict)
+    matches: dict[str, str] = field(default_factory=dict)
+    files_seen: set = field(default_factory=set)      # a file's licence counts once
+
+    def why_counts(self) -> dict[str, int]:
+        return dict(sorted(Counter(self.why.values()).items()))
 
     def note(self, kind: str, cid: str) -> None:
         self.ids.setdefault(kind, []).append(cid)
@@ -456,7 +519,8 @@ class Report:
                     "licences": dict(sorted(r.licences.items())),
                     "ids": {k: v for k, v in sorted(r.ids.items())},
                     "skipped_files": r.skipped_files,
-                    "symbols_not_found": r.symbols_not_found}
+                    "symbols_not_found": r.symbols_not_found,
+                    "why": r.why, "why_counts": r.why_counts(), "matches": r.matches}
         return {"mode": self.mode, "stopped": self.stopped, "error": self.error, "requests": self.requests,
                 "total": {k: self.total(k) for k in (
                     "cards", "already", "asked", "available", "fetched", "missing",
@@ -506,10 +570,15 @@ class Report:
                                                            sorted(r.licences.items())) + ".")
             for kind, ids in sorted(r.ids.items()):
                 lines.append(f"- {kind}: {', '.join(ids)}")
+            if r.why:
+                lines.append("Why cards have no recording: " + ", ".join(
+                    f"{k} {v}" for k, v in r.why_counts().items()) + ".")
+                lines += [f"- no recording, {cid}: {why}" for cid, why in r.why.items()]
+            lines += [f"- matched {cid} by {how}" for cid, how in r.matches.items()]
             if r.symbols_not_found:
                 lines.append("IPA symbol clips not found on Commons (titles tried; fix with "
                              "`--symbols FILE`):")
-                lines += [f"  - {sym}: {', '.join(t)}"
+                lines += [f"  - {sym}: {', '.join(t) or '(no entry in the symbol table)'}"
                           for sym, t in sorted(r.symbols_not_found.items())]
             for s in r.skipped_files:
                 lines.append(f"- skipped {s['card']} {s['file']}: {s['reason']}")
@@ -576,6 +645,7 @@ class Options:
     dump: Path | None = None
     symbols: Path | None = None
     kbps: int = TARGET_KBPS
+    accept_assumed_author: bool = False
 
 
 def run(client: wc.Client, opts: Options) -> Report:
@@ -636,7 +706,8 @@ def _fetch(client: wc.Client, opts: Options, report: Report, todo: list[SoundCar
     category: dict[str, list[str]] = {}
     plan: dict[str, list[tuple[str, str]]] = {}      # card id -> [(source, title)]
     for card in todo:
-        cands = [("ipa-symbol", t) for t in symbol_titles(card.ipa, clips)]
+        groups = symbol_groups(card.ipa, clips)
+        cands = [(rule, t) for rule, _, titles in groups for t in titles]
         if opts.letters and names.get(card.lang):
             if card.lang not in category:
                 category[card.lang] = client.category_files(
@@ -654,25 +725,31 @@ def _fetch(client: wc.Client, opts: Options, report: Report, todo: list[SoundCar
         chosen: Verdict | None = None
         source = ""
         worst = "missing"
+        worst_assumed = False
         symbol_hit = False
         for src, title in plan[f"{card.lang}/{card.cid}"]:
-            v = judge(title, infos.get(title))
+            v = judge(title, infos.get(title), opts.accept_assumed_author)
             if v.status != "missing":
-                lr.licences[v.licence or v.licence_name or "?"] += 1
-                if src == "ipa-symbol":
+                if title not in lr.files_seen:      # a file counts once, not once a card
+                    lr.files_seen.add(title)
+                    lr.licences[v.licence or v.licence_name or "?"] += 1
+                if src.startswith("ipa-symbol"):
                     symbol_hit = True
             if v.status == "ok":
                 chosen, source = v, src
                 break
             if v.status != "missing":
-                lr.skipped_files.append({"card": card.cid, "file": title,
-                                         "reason": REASONS[v.status].format(v.licence_name)})
+                reason = REASONS[v.status].format(v.licence_name)
+                if v.assumed:
+                    reason += " (Commons only assumed one; see --accept-assumed-author)"
+                lr.skipped_files.append({"card": card.cid, "file": title, "reason": reason})
                 if RANK[v.status] > RANK[worst]:
-                    worst = v.status
-        tried = symbol_titles(card.ipa, clips)
-        if tried and not symbol_hit:
-            lr.symbols_not_found[nfc(card.ipa.strip().strip("/[]"))] = tried
+                    worst, worst_assumed = v.status, v.assumed
+        if groups and not symbol_hit:
+            for _, symbol, titles in groups:
+                lr.symbols_not_found[symbol] = titles
         if chosen is None:
+            lr.why[card.cid] = _why(worst, worst_assumed, any(t for _, _, t in groups))
             if worst == "no-author":
                 lr.skipped_no_author += 1
                 lr.note("skipped-no-author", card.cid)
@@ -689,6 +766,7 @@ def _fetch(client: wc.Client, opts: Options, report: Report, todo: list[SoundCar
             continue
         if opts.survey:
             lr.available += 1
+            lr.matches[card.cid] = f"{source} ({chosen.title})"
             lr.sources[source] += 1
             lr.estimated_bytes += estimate_bytes(chosen)
             lr.note("available", card.cid)
@@ -701,6 +779,19 @@ REASONS = {"licence": "licence {!r} cannot ship",
            "over-size": "source file too large (over 5 MB or 30 s)",
            "bad-type": "not an audio file type"}
 RANK = {"missing": 0, "bad-type": 1, "over-size": 2, "licence": 3, "no-author": 4}
+
+
+def _why(worst: str, assumed: bool, mapped: bool) -> str:
+    """The one reason a card got no recording."""
+    if worst == "no-author":
+        return "no author (only Commons's assumed-author placeholder)" if assumed else "no author"
+    if worst == "licence":
+        return "licence cannot ship"
+    if worst == "over-size":
+        return "size (source or clip too large)"
+    if worst == "bad-type":
+        return "wrong file type"
+    return "nothing found on Commons" if mapped else "no symbol mapping"
 
 
 def _language_name(decks: Path, code: str) -> str:
@@ -727,6 +818,7 @@ def _write_card(client: wc.Client, opts: Options, lr: LangReport, card: SoundCar
     if opus is None:
         if why.startswith("over"):
             lr.over_size += 1
+            lr.why[card.cid] = "size (source or clip too large)"
             lr.note("over-size", card.cid)
             lr.skipped_files.append({"card": card.cid, "file": v.title, "reason": why})
         else:
@@ -738,6 +830,7 @@ def _write_card(client: wc.Client, opts: Options, lr: LangReport, card: SoundCar
         lr.fetched += 1
         lr.bytes += len(opus)
         lr.sources[source] += 1
+        lr.matches[card.cid] = f"{source} ({v.title})"
         lr.note("would-fetch", card.cid)
         return
     out = (opts.decks / card.lang / "audio" / f"{card.cid}.opus").resolve()
@@ -762,6 +855,7 @@ def _write_card(client: wc.Client, opts: Options, lr: LangReport, card: SoundCar
     lr.fetched += 1
     lr.bytes += len(opus)
     lr.sources[source] += 1
+    lr.matches[card.cid] = f"{source} ({v.title})"
     lr.note("fetched", card.cid)
 
 
@@ -783,7 +877,18 @@ def main(argv: list[str], client: wc.Client | None = None) -> int:
                    help="ignore the cache: ask Wikimedia again")
     p.add_argument("--cache", type=Path, default=wc.DEFAULT_CACHE)
     p.add_argument("--max-requests", type=int, default=400, help="hard cap of requests per run")
-    p.add_argument("--api-interval", type=float, default=1.0)
+    p.add_argument("--api-interval", type=float, default=1.0,
+                   help="seconds between API requests (default 1)")
+    p.add_argument("--download-interval", type=float, default=wc.DEFAULT_DOWNLOAD_INTERVAL,
+                   help="seconds between file downloads (default 5: upload.wikimedia.org "
+                   "answers 429 to a faster loop)")
+    p.add_argument("--wait-rate-limit", action="store_true",
+                   help="sleep out a Retry-After of up to 900 s instead of stopping with "
+                   "exit 3 (off by default: a long wait needs this opt-in)")
+    p.add_argument("--accept-assumed-author", action="store_true",
+                   help="accept Commons's `No machine-readable author provided. X assumed` "
+                   "as a credit (`X (uploader; author assumed by Commons)`); OFF by default "
+                   "and needs the owner's decision: ADR-0059 decision 8 skips such files")
     p.add_argument("--no-letters", action="store_true",
                    help="skip the language's pronunciation category")
     p.add_argument("--example-words", action="store_true", help="also try the Wiktionary "
@@ -800,6 +905,9 @@ def main(argv: list[str], client: wc.Client | None = None) -> int:
     if args.survey and args.dry_run:
         print("--survey and --dry-run do not go together", file=sys.stderr)
         return 2
+    if args.api_interval < 0 or args.download_interval < 0:
+        print("--api-interval and --download-interval are not negative", file=sys.stderr)
+        return 2
     if not 6 <= args.kbps <= vd.AUDIO_MAX_KBPS or (args.limit is not None and args.limit < 0):
         print("--kbps is 6 to 128; --limit is not negative", file=sys.stderr)
         return 2
@@ -809,11 +917,13 @@ def main(argv: list[str], client: wc.Client | None = None) -> int:
     langs = [c for item in args.lang or [] for c in item.split(",") if c] or None
     client = client or wc.Client(cache_dir=args.cache, refresh=args.refresh_cache,
                                  max_requests=args.max_requests,
-                                 api_interval=args.api_interval)
+                                 api_interval=args.api_interval,
+                                 download_interval=args.download_interval,
+                                 wait_rate_limit=args.wait_rate_limit)
     opts = Options(decks=args.decks, langs=langs, limit=args.limit, survey=args.survey,
                    dry_run=args.dry_run, refresh=args.refresh, letters=not args.no_letters,
                    example_words=args.example_words, dump=args.dump, symbols=args.symbols,
-                   kbps=args.kbps)
+                   kbps=args.kbps, accept_assumed_author=args.accept_assumed_author)
     try:
         report = run(client, opts)
     except (iw.ImportError_, OSError, yaml.YAMLError, ValueError) as e:

@@ -14,6 +14,8 @@ import json
 import os
 import sys
 import tempfile
+import threading
+import http.server
 import unittest
 import urllib.parse
 import urllib.request
@@ -100,6 +102,80 @@ class Identity(Case):
         t = Scripted(ok({"a": 1}))
         self.client(t).get_json(wc.COMMONS_API, {"action": "query"})
         self.assertIn("fluenough", t.headers[0]["User-Agent"])
+
+
+class RealTransport(unittest.TestCase):
+    """The real urllib transport against a local server: no external network."""
+
+    def serve(self, handler_cls: type) -> str:
+        server = http.server.HTTPServer(("127.0.0.1", 0), handler_cls)
+        threading.Thread(target=server.serve_forever, daemon=True).start()
+        self.addCleanup(server.server_close)
+        self.addCleanup(server.shutdown)
+        return f"http://127.0.0.1:{server.server_address[1]}/f.ogg"
+
+    def fetch(self, headers: dict[str, str]) -> list[str]:
+        seen: list[str] = []
+
+        class Handler(http.server.BaseHTTPRequestHandler):
+            def do_GET(self) -> None:          # noqa: N802
+                seen.extend(self.headers.get_all("User-Agent") or [])
+                self.send_response(200)
+                self.send_header("Content-Length", "2")
+                self.end_headers()
+                self.wfile.write(b"ok")
+
+            def log_message(self, *a: object) -> None:
+                pass
+
+        url = self.serve(Handler)
+        env = {"no_proxy": "*", "NO_PROXY": "*"}
+        with mock.patch.dict(os.environ, env):
+            r = wc.urllib_transport(url, headers)
+        self.assertEqual(r.status, 200)
+        return seen
+
+    def test_the_exact_descriptive_user_agent_is_sent_and_urllibs_own_is_not(self) -> None:
+        with mock.patch.dict(os.environ, {wc.CONTACT_ENV: "https://example.org/c"}):
+            agent = wc.user_agent()
+        self.assertEqual(agent, "fluenough-tools/1.0 (https://example.org/c; polite serial client)")
+        self.assertEqual(self.fetch({"User-Agent": agent}), [agent])
+
+    def test_a_client_sends_nothing_but_its_user_agent(self) -> None:
+        c = wc.Client(cache_dir=Path(tempfile.mkdtemp()), api_interval=0, download_interval=0)
+        self.assertNotIn("python-urllib", c.headers["User-Agent"].lower())
+        self.assertEqual(self.fetch(c.headers), [c.headers["User-Agent"]])
+
+    def test_the_user_agent_has_no_python_urllib_suffix(self) -> None:
+        self.assertNotIn("urllib", wc.user_agent().lower())
+
+
+class Pacing(Case):
+    def test_the_default_download_interval_is_5_seconds(self) -> None:
+        self.assertEqual(wc.DEFAULT_DOWNLOAD_INTERVAL, 5.0)
+        t = Scripted(ok(body=b"x"))
+        c = wc.Client(t, cache_dir=self.cache, sleep=self.clock.sleep, clock=self.clock,
+                      now=self.clock)
+        c.get_bytes("https://upload.wikimedia.org/a.ogg")
+        c.get_bytes("https://upload.wikimedia.org/b.ogg")
+        self.assertEqual(self.clock.sleeps, [5.0])
+
+    def test_a_long_retry_after_is_waited_only_with_wait_rate_limit(self) -> None:
+        t = Scripted(status(429, Retry_After="600"), ok(body=b"x"))
+        with self.assertRaises(wc.RateLimited) as e:
+            self.client(t).get_bytes("https://upload.wikimedia.org/a.ogg")
+        self.assertIn("--wait-rate-limit", str(e.exception))
+        self.assertEqual(self.clock.sleeps, [])
+        t = Scripted(status(429, Retry_After="600"), ok(body=b"x"))
+        c = self.client(t, wait_rate_limit=True)
+        self.assertEqual(c.get_bytes("https://upload.wikimedia.org/a.ogg"), b"x")
+        self.assertIn(600.0, self.clock.sleeps)
+
+    def test_wait_rate_limit_still_stops_beyond_900_seconds(self) -> None:
+        t = Scripted(status(429, Retry_After="901"), ok(body=b"x"))
+        with self.assertRaises(wc.RateLimited):
+            self.client(t, wait_rate_limit=True).get_bytes("https://upload.wikimedia.org/a.ogg")
+        self.assertEqual(self.clock.sleeps, [])
 
 
 class Retrying(Case):

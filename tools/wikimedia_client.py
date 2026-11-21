@@ -15,7 +15,9 @@ minute, while `upload.wikimedia.org` kept answering 200. So the client:
   its own pause between requests;
 - obeys `Retry-After` on a 429 or 503 and backs off exponentially, up to a
   cap, on a 429, a 5xx or a network error; a `Retry-After` longer than
-  `retry_after_cap` stops the run (RateLimited) instead of waiting for it;
+  `retry_after_cap` stops the run (RateLimited) instead of waiting for it,
+  unless `wait_rate_limit` is set (the tools' `--wait-rate-limit`), which
+  sleeps up to 900 s;
 - batches title and id queries, 50 at a time (`BATCH`);
 - caches every answer on disk (default `.cache/wikimedia`, git-ignored by
   `/.cache/`), API answers for `ttl` seconds, downloads for good, so a rerun
@@ -54,6 +56,8 @@ DOWNLOAD_HOST = "upload.wikimedia.org"
 BATCH = 50                       # titles or ids per API request (Wikimedia's limit)
 DEFAULT_CACHE = ROOT / ".cache" / "wikimedia"
 DEFAULT_TTL = 30 * 24 * 3600     # an API answer, and a "missing", is good for 30 days
+DEFAULT_DOWNLOAD_INTERVAL = 5.0  # seconds between file downloads (0.25 s drew 429s)
+MAX_WAIT_RATE_LIMIT = 900.0      # the longest Retry-After a --wait-rate-limit run sleeps for
 DEFAULT_CONTACT = "https://github.com/aaronified/fluenough"
 CONTACT_ENV = "WIKIMEDIA_CONTACT_URL"
 API_HOSTS = frozenset({"commons.wikimedia.org", "en.wikipedia.org", "en.wiktionary.org",
@@ -69,7 +73,9 @@ MAXLAG = "5"
 def user_agent(contact: str | None = None) -> str:
     """A descriptive User-Agent: the project, and where to reach it."""
     contact = contact or os.environ.get(CONTACT_ENV) or DEFAULT_CONTACT
-    return f"fluenough-tools/1.0 ({contact}; polite serial client) python-urllib"
+    # Only this. upload.wikimedia.org answered 429 to the same string with
+    # ` python-urllib` appended and 200 without it (first real run, #1686).
+    return f"fluenough-tools/1.0 ({contact}; polite serial client)"
 
 
 class WikimediaError(Exception):
@@ -155,6 +161,9 @@ def urllib_transport(url: str, headers: dict[str, str]) -> Response:
     limit = MAX_DOWNLOAD_BYTES if urllib.parse.urlsplit(url).hostname == DOWNLOAD_HOST \
         else MAX_API_BYTES
     opener = urllib.request.build_opener(_SafeRedirects(allowed_hosts(url)))
+    # urllib's opener adds `Python-urllib/x.y` unless a User-Agent is already
+    # set: replace its default, and set the header on the request as well.
+    opener.addheaders = [(k, v) for k, v in headers.items()]
     request = urllib.request.Request(url, headers=headers)
     try:
         with opener.open(request, timeout=REQUEST_TIMEOUT) as r:
@@ -241,10 +250,11 @@ class Client:
     def __init__(self, transport: Transport | None = None, *,
                  cache_dir: Path | str = DEFAULT_CACHE, ttl: float = DEFAULT_TTL,
                  refresh: bool = False, contact: str | None = None,
-                 api_interval: float = 1.0, download_interval: float = 0.25,
+                 api_interval: float = 1.0,
+                 download_interval: float = DEFAULT_DOWNLOAD_INTERVAL,
                  max_requests: int = 500, max_tries: int = 5,
                  backoff_base: float = 2.0, backoff_cap: float = 120.0,
-                 retry_after_cap: float = 300.0,
+                 retry_after_cap: float = 300.0, wait_rate_limit: bool = False,
                  sleep: Callable[[float], None] = time.sleep,
                  clock: Callable[[], float] = time.monotonic,
                  now: Callable[[], float] = time.time) -> None:
@@ -257,7 +267,11 @@ class Client:
         self.max_tries = max_tries
         self.backoff_base = backoff_base
         self.backoff_cap = backoff_cap
-        self.retry_after_cap = retry_after_cap
+        # By default a Retry-After over `retry_after_cap` stops the run; with
+        # `wait_rate_limit` the client sleeps it out, up to MAX_WAIT_RATE_LIMIT.
+        self.wait_rate_limit = wait_rate_limit
+        self.retry_after_cap = max(retry_after_cap, MAX_WAIT_RATE_LIMIT) \
+            if wait_rate_limit else retry_after_cap
         self._sleep = sleep
         self._now = now
         self._pacers = {"api": Pacer(api_interval, sleep, clock),
@@ -302,7 +316,9 @@ class Client:
             if ask is not None and ask > self.retry_after_cap:
                 raise RateLimited(f"{last} for {url}: the server asks for {ask:.0f} s, "
                                   f"more than the {self.retry_after_cap:.0f} s the client "
-                                  f"waits; rerun later, the cache keeps what was fetched")
+                                  f"waits (a run started with --wait-rate-limit waits up to "
+                                  f"{MAX_WAIT_RATE_LIMIT:.0f} s); rerun later, the cache "
+                                  f"keeps what was fetched")
             if attempt == self.max_tries:
                 break
             backoff = min(self.backoff_cap, self.backoff_base ** (attempt - 1))
