@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/routes.dart';
+import '../../core/placement/reviewer_check_rules.dart';
 import '../../core/review/review_pairs.dart';
 import '../../core/review/reviewer_key.dart';
 import '../../l10n/app_localizations.dart';
@@ -15,6 +16,7 @@ import 'flagged_page.dart' show flaggedQueueOf;
 import 'how_reviewing_works.dart';
 import 'questions_per_day.dart';
 import 'review_queue_page.dart';
+import 'reviewer_check_page.dart';
 import 'reviewer_key_sheet.dart';
 import 'review_waiting.dart';
 import 'review_words.dart' show hasOrdinaryCards;
@@ -107,6 +109,20 @@ class ReviewSection extends StatelessWidget {
             },
             trailing: const Icon(Icons.chevron_right),
             onTap: () => showReviewerKey(context),
+          ),
+        // The reviewer check (ADR-0058, W6): off until the launch gate has
+        // passed, then a row for every reviewer.
+        if (kReviewerCheckEnabled)
+          GroupedTile(
+            leading: const Icon(Icons.verified_outlined),
+            title: l10n.reviewerCheckRow,
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                settings: const RouteSettings(name: '/reviewer-check-courses'),
+                builder: (_) => const ReviewerCheckCoursesPage(),
+              ),
+            ),
           ),
         if (on)
           GroupedTile(

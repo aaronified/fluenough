@@ -33,12 +33,18 @@ abstract final class ReviewFile {
   /// reviewer's. It is the only place the key leaves the phone, and the mail
   /// bot strips it before anything is published. Additive: a file without it
   /// is read exactly as before, and `version` stays.
+  ///
+  /// With [passedFacets] (the reviewer check, ADR-0058 decision 1, W6) the
+  /// file also carries `passed_facets`: the facet names the reviewer passed
+  /// the check for, nothing else (no score, no count), for triage in the first
+  /// mail of a course. Additive in the same way.
   static String encode(
     DeckReview deck, {
     required RaterCode code,
     required String appVersion,
     required DateTime made,
     String? reviewerKey,
+    List<String> passedFacets = const <String>[],
     List<String> order = const <String>[],
   }) {
     final unsent = deck.unsentCards;
@@ -54,6 +60,7 @@ abstract final class ReviewFile {
       'rater_code': '$code',
       if (reviewerKey != null && reviewerKey.isNotEmpty)
         'reviewer_key': reviewerKey,
+      if (passedFacets.isNotEmpty) 'passed_facets': passedFacets,
       'language': deck.language,
       'deck': deck.deckId,
       'app_version': appVersion,
