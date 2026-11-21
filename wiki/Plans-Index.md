@@ -19,7 +19,7 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [Import Text](Plan-Import-Text): import any text, and make cards from its words
 - [In App Readings](Plan-In-App-Readings): readings made in the app, for sentences the learner adds
 - [Ipa Revamp And Language Phonology](Plan-Ipa-Revamp-And-Language-Phonology): the IPA course revamp, and a phonology deck for every language
-- [Sounds Decks](Plan-Sounds-Decks): a sounds deck for every language, with fetched Ogg Opus audio (#734)
+- [Sounds Decks](Plan-Sounds-Decks): a sounds deck for every language, with fetched Ogg Opus audio (#734; proposed, nothing built)
 - [Iso 15919 Deck](Plan-Iso-15919-Deck): a deck that teaches ISO 15919, in each language
 - [Japanese B1 Wordlists](Plan-Japanese-B1-Wordlists): fresh candidate words for every planned Japanese unit, and top-ups for the short ones
 - [Japanese Resume List](Japanese-Resume-List): what is merged, what is left for Japanese, in what order, and the owner-only items
@@ -39,7 +39,7 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [Research And Standards](Plan-Research-And-Standards): a Research and standards page, with the sources
 - [Review Staging](Plan-Review-Staging): a decks-staging branch where review mails land, confirmed, then applied to decks-live (brainstorm)
 - [Reviewing Scope](Plan-Reviewing-Scope): what reviewing covers, and how reviewers change cards
-- [Reviewer UX](Plan-Reviewer-UX): the reviewer check in placement, signed codes and tiers, pointer tags, blind pass (brainstorm)
+- [Reviewer UX](Plan-Reviewer-UX): the reviewer check in placement, signed codes and tiers, pointer tags, blind pass (built, not yet released: W1 to W9, #1662 to #1670)
 - [Sentence Building](Plan-Sentence-Building): building sentences by reasoning
 - [Settings Wording](Plan-Settings-Wording): settings that say what they do, on and off
 - [Speech Offline Alert](Plan-Speech-Offline-Alert): say when speech can't be recognised offline (Priority 2 after the placement release (owner 2026-11-07): on-device voice recognition, #1004; not built in the placement-release session)
@@ -48,6 +48,36 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [Web Pwa](Plan-Web-Pwa): Fluenough on the web, as a PWA on GitHub Pages
 - [Word Order Tiles](Plan-Word-Order-Tiles): word-order tiles without giveaways, and with extra tiles
 - [Words Rules Sentences](Plan-Words-Rules-Sentences): a phrasebook, then words, then rules, then sentences
+
+## Deck and language plans
+
+Sourcing lists and design pages for the deck work. Each is a dated plan or audit: its own status line says what was built. The queues that carry them out are the Deck-Work-Queue pages ([Deck-Work-Queue](Deck-Work-Queue)).
+
+- [Language Completeness](Plan-Language-Completeness): everything the app plans for a language, in full, and the status grid
+- [Deck Kinds And Topics](Plan-Deck-Kinds-And-Topics): deck kinds, levels, hidden decks, sources, creators, recommendations, topics and search kinds as data
+- [Deck Owned Data](Plan-Deck-Owned-Data): deck-owned data on decks-live
+- [Hindustani Grammar Tables](Plan-Hindustani-Grammar-Tables): Hindustani grammar tables as rules decks
+- [Culture Assamese](Plan-Culture-Assamese): Assamese genre decks, sourcing list
+- [Culture Bengali](Plan-Culture-Bengali): Bengali genre decks, sourcing list
+- [Culture Chinese](Plan-Culture-Chinese): Mandarin Chinese genre decks, sourcing list
+- [Culture French](Plan-Culture-French): French genre decks, sourcing list
+- [Culture Gujarati](Plan-Culture-Gujarati): Gujarati genre decks, sourcing list
+- [Culture Hindustani](Plan-Culture-Hindustani): Hindustani genre decks, sourcing list
+- [Culture Japanese](Plan-Culture-Japanese): Japanese genre decks, sourcing list
+- [Culture Kannada](Plan-Culture-Kannada): Kannada genre decks, sourcing list
+- [Culture Marathi](Plan-Culture-Marathi): Marathi genre decks, sourcing list
+- [Culture Sanskrit](Plan-Culture-Sanskrit): Classical Sanskrit genre decks, sourcing list
+- [Culture Spanish](Plan-Culture-Spanish): Spanish genre decks, sourcing list
+- [Culture Tamil](Plan-Culture-Tamil): Tamil genre decks, sourcing list
+- [Culture Telugu](Plan-Culture-Telugu): Telugu genre decks, sourcing list
+- [Culture Vedic](Plan-Culture-Vedic): Vedic Sanskrit genre decks, sourcing list
+- [Culture Marathi Addendum 1](Plan-Culture-Marathi-Addendum-1): Marathi sourcing, addendum 1
+- [Culture Marathi Addendum 2](Plan-Culture-Marathi-Addendum-2): Marathi sourcing, addendum 2
+- [Culture Marathi Addendum 3](Plan-Culture-Marathi-Addendum-3): Marathi sourcing, addendum 3
+- [Culture Marathi Addendum 4](Plan-Culture-Marathi-Addendum-4): Marathi sourcing, addendum 4
+- [Vedic Engine](Plan-Vedic-Engine): Vedic accent marks, and one Devanagari engine for Vedic and Classical Sanskrit
+- [Vedic Path](Plan-Vedic-Path): the Vedic Sanskrit reading path
+- [Vedic Words](Plan-Vedic-Words): Vedic Sanskrit A1 word lists, sourced
 
 ## Retired
 

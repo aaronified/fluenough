@@ -1,5 +1,7 @@
 # Deck work queue: Marathi completion plan
 
+**Status 2026-11-21:** Marathi is Complete on the app's completeness measure (every planned word unit through B1 written, grammar topics and culture shelves full). What follows is the plan and audit of 2026-11-14 to 2026-11-17, kept as written: where it says something is missing or not built, the measure is the newer reading. Review status is not part of the measure.
+
 Status: audit and plan of 2026-11-15. Nothing here is built yet; the audit is the only work done. Owner instruction (2026-11-15): one session per language; this session owns Marathi (`mr`) and takes it to full completeness "as fast as possible, by delegating to agents". It **overrides rule 16 of the [Deck-Work-Queue](Deck-Work-Queue.md)** for Marathi. The shape is that of [Deck-Work-Queue-HI](Deck-Work-Queue-HI.md), [Deck-Work-Queue-ES-TE](Deck-Work-Queue-ES-TE.md) and [Deck-Work-Queue-FR](Deck-Work-Queue-FR.md). Rules 1 to 15 and rule 17 of the Deck-Work-Queue apply to every task (read Marathi for "Japanese"; Devanagari readings are ISO 15919-based, written by `tools/transcribe.py mr`, never by hand).
 
 State was read from `origin/decks-live` on 2026-11-15 with PyYAML over every `decks/mr/**` file, `mr-path.yaml`, `decks/sections.yaml`, `decks/creators/`, `decks/recommendations/`, `docs/review-queue/mr.md`, and from `origin/main`'s `tools/phonetic_languages.yaml`.

@@ -2,7 +2,7 @@
 
 Source of truth: this wiki page. The owner's decisions, quoted and dated, stay on [Plan-Reviewer-UX](Plan-Reviewer-UX); this page turns them into a record and adds nothing to them.
 
-- **Status:** Proposed (owner's brainstorm of 2026-11-20/21; the readings in "Open points" await the owner).
+- **Status:** Proposed (owner's brainstorm of 2026-11-20/21; the readings in "Open points" await the owner). The plan, [Plan-Reviewer-UX](Plan-Reviewer-UX), is built (W1 to W9, #1662 to #1670) and not yet released.
 - **Date:** 2026-11-21
 - **Amends:** [ADR-0038](ADR-0038-Review-Proposals). The agreement quorum becomes a facet-level two-review constant in code, and the GitHub variable or secret for the number is superseded. The file-level `reviewed` tag rule (a file is tagged once every card entry lists a code) changes to the facet-level rule below.
 

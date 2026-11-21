@@ -1,5 +1,7 @@
 # Deck work queue: Assamese completion plan
 
+**Status 2026-11-21:** Assamese is Complete on the app's completeness measure (every planned word unit through B1 written, grammar topics and culture shelves full). What follows is the plan and audit of 2026-11-14 to 2026-11-17, kept as written: where it says something is missing or not built, the measure is the newer reading. Review status is not part of the measure.
+
 Status: audit and plan of 2026-11-15. Nothing here is built yet; the audit is the only work done. Owner instruction (2026-11-15): one session per language; this session owns Assamese (`as`) and takes it to full completeness "as fast as possible, by delegating to agents". It **overrides rule 16 of the [Deck-Work-Queue](Deck-Work-Queue.md)** for Assamese. The shape is that of [Deck-Work-Queue-HI](Deck-Work-Queue-HI.md), [Deck-Work-Queue-BN](Deck-Work-Queue-BN.md) and [Deck-Work-Queue-ES-TE](Deck-Work-Queue-ES-TE.md). Rules 1 to 15 and rule 17 of the Deck-Work-Queue apply to every task (read Assamese for "Japanese").
 
 Assamese uses the Assamese-Bengali script (`script: "bengali"` as in the existing `as` decks; it has ৰ and ৱ that Bengali lacks). The tools share the Bengali engine (`tools/transcribe.py bn` or `as`, known gaps in issue #1402); readings follow the course's hand convention, new cards are written with the tool using hints that match it (as BN Q6).

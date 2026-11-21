@@ -14,6 +14,8 @@ its sections); the Japanese culture batch is
 
 The second-list target (owner, 2026-11-20): Classical Sanskrit and Tamil to Complete, then A1 only for the other second-list languages, Vedic Sanskrit included. The "to A1" labels in the grid below predate this and are superseded; see "Order after the first list" in `CLAUDE.md`.
 
+**Status 2026-11-21 (the app's completeness measure on `decks/index.json` of decks-live).** Complete (every planned word unit through B1 written, grammar topics and culture shelves full): Telugu, Bengali, Spanish, Marathi, Kannada, Assamese, Mandarin Chinese, Hindustani, Japanese, French, Gujarati and Classical Sanskrit. Alpha: Tamil (260 of 2,380 planned words, 27 of 114 units up to B1), Malayalam, Santali, Korean, Afrikaans, Italian, German, Russian, Greek (Modern) and Polish (each with a few first units only). The "state" cells below and the per-language paragraphs are dated audits of 2026-11-13 to 2026-11-17 and are kept as written; where they say a deliverable is missing or partial for a language now Complete (Mandarin Chinese, for one: its culture, creators, proverbs and recommendations), the measure above is the newer reading. The measure counts words, units, grammar topics and culture shelves only; it does not count review status, which is separate.
+
 ## (a) Deliverables per language
 
 State is for Japanese (`ja`). The Japanese rows are re-read from `origin/decks-live` and `origin/main` on 2026-11-15 (the other rows on 2026-11-13). "Done" means the files are on decks-live. Counts are of files, not of quality or coverage.

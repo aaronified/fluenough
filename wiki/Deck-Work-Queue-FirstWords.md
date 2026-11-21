@@ -53,6 +53,10 @@ Owner order, relayed by the orchestrator: stop the deck work, start nothing new,
 | 1, phrasebooks and `PHRASEBOOK_PENDING` | Merged (#1646, #1647, #1648, #1649). |
 | 3, sign languages | Not built: no ASL source with a compatible licence was reachable; the owner decides (see the 2026-11-20 table). |
 
+## Update 2026-11-21
+
+American and Indian Sign Language (`ase`, `ins`) now have SignWriting explainer decks on decks-live (`decks/ase/`, `decks/ins/`: how the symbols write signs; [ADR-0056](ADR-0056-SignWriting-For-Sign-Languages), shipped in 0.11.2). They hold no sign vocabulary: the "No deck built" cells above mean no first-words or phrasebook deck. PR #1650 (source gaps) was still open when read on 2026-11-21. The CC BY-NC question and its open options are recorded without a decision ([Owner-Decisions-History](Owner-Decisions-History#cc-by-nc-sources-2026-11-20)).
+
 ## Open points
 
 - Phrasebooks for gmy, sux, egy, ine: need a specialist and attested formulae (see above).

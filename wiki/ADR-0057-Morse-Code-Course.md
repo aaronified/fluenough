@@ -2,7 +2,7 @@
 
 Source of truth: this wiki page.
 
-- **Status:** Proposed (owner request, 2026-11-20: "add a morse code course, similar to braille, script only. Use sound and the dot -- symbols."). The choices below are defaults for the owner to confirm.
+- **Status:** Proposed (owner request, 2026-11-20: "add a morse code course, similar to braille, script only. Use sound and the dot -- symbols."). The choices below are defaults for the owner to confirm. Built and shipped in 0.11.3 (#1634 and the CHANGELOG line of 0.11.3); no owner confirmation of the defaults is recorded.
 - **Date:** 2026-11-20
 
 ## Context

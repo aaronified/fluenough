@@ -1,5 +1,7 @@
 # Deck work queue: Mandarin Chinese completion plan
 
+**Status 2026-11-21:** Mandarin Chinese is Complete on the app's completeness measure (every planned word unit through B1 written, grammar topics and culture shelves full). What follows is the plan and audit of 2026-11-14 to 2026-11-17, kept as written: where it says something is missing or not built, the measure is the newer reading. Review status is not part of the measure.
+
 Status: audit and plan of 2026-11-15. Owner instruction (2026-11-15): one session per language; this session owns Mandarin Chinese (`zh`) and takes it to full completeness "as fast as possible, by delegating to agents". It **overrides rule 16 of the [Deck-Work-Queue](Deck-Work-Queue.md)** for Chinese. The shape is that of [Deck-Work-Queue-KN](Deck-Work-Queue-KN.md), [Deck-Work-Queue-HI](Deck-Work-Queue-HI.md) and [Deck-Work-Queue-ES-TE](Deck-Work-Queue-ES-TE.md). Rules 1 to 15 and rule 17 of the Deck-Work-Queue apply to every task (read Chinese for "Japanese"). Readings are pinyin with tone marks, based on Hanyu Pinyin and written as said (not strictly following it). Hanzi are basic only, nothing ambitious (as for Japanese kanji): an example word uses only taught words, and every character written is taught.
 
 State was read from `origin/decks-live` (`09e2a6d6`) on 2026-11-15 with PyYAML over every `decks/zh/**` file and `zh-path.yaml`, plus `decks/sections.yaml`, `decks/creators/`, `decks/recommendations/`, `docs/review-queue/` and `tools/phonetic_languages.yaml` on main.

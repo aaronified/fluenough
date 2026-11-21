@@ -59,8 +59,8 @@ Every architecture decision record in the wiki. Each one has its own page.
 - [ADR-0054](ADR-0054-Say-Audio-Replay): Replaying the learner's own last answer in Say drills (proposed)
 - [ADR-0055](ADR-0055-Sitelen-Pona-As-A-Second-Script): Toki Pona's sitelen pona is a second script of its cards, written by a tool
 - [ADR-0056](ADR-0056-SignWriting-For-Sign-Languages): Sign languages are written in SignWriting: symbols as text in a font, whole signs as pictures drawn from FSW
-- [ADR-0057](ADR-0057-Morse-Code-Course): Morse code is a notation course, taught by sight and by ear with generated tones
-- [ADR-0058](ADR-0058-Reviewer-UX): Reviewer UX: speaker-gated, facet-level reviews with a second-speaker check (proposed)
+- [ADR-0057](ADR-0057-Morse-Code-Course): Morse code is a notation course, taught by sight and by ear with generated tones (built, shipped in 0.11.3)
+- [ADR-0058](ADR-0058-Reviewer-UX): Reviewer UX: speaker-gated, facet-level reviews with a second-speaker check (proposed; its plan is built and not yet released)
 - [ADR-0059](ADR-0059-Sounds-Decks-With-Compressed-Audio): Sounds decks: one card per sound, with Ogg Opus recordings fetched from Wikimedia, never synthesised (proposed)
 
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)

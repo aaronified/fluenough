@@ -35,7 +35,7 @@ offline on your phone once a language's decks are downloaded.
 
 </div>
 
-> **Status: in active development (v0.11.0).** The app runs on Android phones,
+> **Status: in active development (v0.11.3).** The app runs on Android phones,
 > with the drills, spaced repetition, placement, stats, culture and private
 > decks built, and progress is saved on the phone. Many courses are still
 > being written, and a feature not built yet is shown disabled, marked "Feature

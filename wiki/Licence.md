@@ -17,6 +17,6 @@ the source. See [LICENSE](https://github.com/aaronified/fluenough/blob/main/LICE
 Deck content is **CC BY-SA 4.0**, with attribution, declared in each deck's
 `license` ([ADR-0040](ADR-0040-Decks-Are-Cc-By-Sa)). Data taken
 from Wiktionary, Wikimedia Commons, Wikipedia or Tatoeba names its source,
-and the app credits them under Settings > Sources. CC BY-NC data cannot be used, because it is not compatible with CC BY-SA or the GPL (answer recorded 2026-11-20 in [Owner-Decisions-History](Owner-Decisions-History#cc-by-nc-sources-2026-11-20)).
+and the app credits them under Settings > Sources. No CC BY-NC data is used, because NonCommercial is not compatible with CC BY-SA or the GPL (the question and the open options are recorded 2026-11-20 in [Owner-Decisions-History](Owner-Decisions-History#cc-by-nc-sources-2026-11-20)).
 
 See also: [Sources-and-Attributions](Sources-and-Attributions) · [Home](Home)

@@ -1,5 +1,7 @@
 # Deck work queue: Spanish and Telugu completion plan
 
+**Status 2026-11-21:** Spanish and Telugu are Complete on the app's completeness measure (every planned word unit through B1 written, grammar topics and culture shelves full). What follows is the plan and audit of 2026-11-14 to 2026-11-17, kept as written: where it says something is missing or not built, the measure is the newer reading. Review status is not part of the measure.
+
 Status: planning output of 2026-11-14, with progress recorded on 2026-11-15 (merged to `decks-live`, PR numbers given). Produced under owner rule 16 of [Deck-Work-Queue](Deck-Work-Queue.md): "complete Japanese, Spanish and Telugu first". Task ids: `ES-012` to `ES-045` and `TE-001` to `TE-062`. Reserved id ranges: `es-4000` to `es-4649` (Spanish) and `te-7000` to `te-9299` (Telugu). Blockers: BL-1 (a data-driven phonetic registry for `tools/import_phonetic.py`) and BL-2 (situation icons, issue #1269). Both are closed as of 2026-11-15 (section 4).
 
 The plan below is copied as written. Docs-only tasks ES-012 ([Plan-Culture-Spanish](Plan-Culture-Spanish.md)) and TE-001 ([Plan-Culture-Telugu](Plan-Culture-Telugu.md)) are done.
