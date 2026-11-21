@@ -191,20 +191,20 @@ class _ReviewFlowPageState extends State<ReviewFlowPage> {
         }
         if (run != null) _setRun(run, resume: true);
       case ReviewMode.unit:
-        final source = reviewSourceOf(_state, widget.pair!);
-        _source = source;
-        _cards = source.cardsOf(widget.unit!);
-        _title = source.unit(widget.unit!)?.title ?? '';
+        final unitSource = reviewSourceOf(_state, widget.pair!);
+        _source = unitSource;
+        _cards = unitSource.cardsOf(widget.unit!);
+        _title = unitSource.unit(widget.unit!)?.title ?? '';
         final open = ReviewQueueBuilder.firstOpen(
-          source,
+          unitSource,
           _cards,
           reviewing.reviews,
         );
         _index = open >= _cards.length ? 0 : open;
       case ReviewMode.card:
-        final source = reviewSourceOf(_state, widget.pair!);
-        _source = source;
-        final unit = source.unitOf(widget.ref!);
+        final cardSource = reviewSourceOf(_state, widget.pair!);
+        _source = cardSource;
+        final unit = cardSource.unitOf(widget.ref!);
         _cards = <QueueCardRef>[widget.ref!];
         _title = unit?.title ?? '';
       case ReviewMode.flagged:
