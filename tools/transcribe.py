@@ -722,31 +722,41 @@ def _schwa_drops(units: list[Unit], k: int) -> bool:
             and said_after)
 
 
+_OBSTRUENT = {"k", "kh", "g", "gh", "c", "ch", "j", "jh", "ṭ", "ṭh", "ḍ",
+              "ḍh", "t", "th", "d", "dh", "p", "ph", "b", "bh", "s", "ś", "ṣ"}
+
+
 def _marathi_medial_drops(units: list[Unit]) -> set[int]:
     """The inherent vowels Marathi does not say inside a word (#1476, owner
-    2026-11-21: "2. Fix"). Hindi's VC_CV rule, applied from the right and one
-    schwa at a time: a schwa that has just been dropped does not count as a
-    vowel before the next one, and a schwa that is dropped does not count as
-    the vowel after it. So two schwas side by side are never both dropped, and
-    a run of three consonants is never made out of single letters:
-    गजवदन gajavdan (not gajvdan), स्वजनजनधनाचा svajnajnadhnācā (not
-    svajnjndhnācā). The word's last schwa is handled by the caller."""
-    drops: set[int] = set()
-    for k in range(len(units) - 1, 1, -1):
-        if units[k].kind != "I" or k + 2 >= len(units):
+    2026-11-21: "2. Fix"). Hindi's VC_CV rule (`_schwa_drops`) stays, because
+    the course's hand-typed readings follow it, side-by-side drops included
+    (निवडणे nivḍṇe, नवरदेव navrdev, साखरपुडा sākhrpuḍā, सहनशीलता sahnśiltā).
+    It over-deleted in two cases the course has no word for, so only these are
+    cut back, to every other schwa counted from the right:
+    a chain of three or more side-by-side drops (स्वजनजनधनाचा
+    svajnjndhnācā, सकलमति saklmti), and a pair that would leave an
+    obstruent, v or y, and an obstruent in a row (गजवदन gajvdan: no card of
+    the course has such a run). A chain that ends before ṇ (the -णे and -णूक
+    endings) is kept whole, as the course types it. A word's last vowel is
+    not said and is never a drop here: `_schwa_drops` counts it as not said,
+    so it is not a neighbour either."""
+    drops = {k for k, u in enumerate(units)
+             if u.kind == "I" and _schwa_drops(units, k)}
+    for k in sorted(drops):
+        if k not in drops or k - 2 in drops:
             continue
-        before = units[k - 2]
-        after_c, after_v = units[k + 1], units[k + 2]
-        if units[k - 1].kind != "C" or after_c.kind != "C" or \
-                before.kind not in ("V", "S", "I") or \
-                (before.kind == "I" and k - 2 in drops):
+        chain = [k]
+        while chain[-1] + 2 in drops:
+            chain.append(chain[-1] + 2)
+        if len(chain) < 2 or units[chain[-1] + 1].letter == "ṇ":
             continue
-        said_after = after_v.kind == "S" or (
-            after_v.kind == "I" and k + 2 not in drops
-            and k + 3 < len(units)
-            and units[k + 3].kind not in ("SP", "P"))
-        if said_after:
-            drops.add(k)
+        a, b = units[chain[0] - 1], units[chain[0] + 1]
+        c = units[chain[1] + 1]
+        glide_run = (len(chain) == 2 and a.letter in _OBSTRUENT
+                     and b.letter in ("v", "y") and c.letter in _OBSTRUENT)
+        if len(chain) >= 3 or glide_run:
+            for j in range(len(chain) - 2, -1, -2):
+                drops.discard(chain[j])
     return drops
 
 
