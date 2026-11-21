@@ -551,6 +551,44 @@ counted in the report's `could not write (layout)` row (in a dry run too, so
 the counts match a `--write` run), each is named on stderr, and a `--write`
 run then exits 1.
 
+## `compare_wiktionary_ipa.py`
+
+Lists where the decks' IPA and Wiktionary's disagree, for a person to review
+(#305, part of #217). It reads the decks and writes only a report: never a
+deck.
+
+```sh
+python3 tools/compare_wiktionary_ipa.py bn                      # Markdown to the screen
+python3 tools/compare_wiktionary_ipa.py bn hi --markdown review.md --json review.json
+python3 tools/compare_wiktionary_ipa.py bn --dump Bengali.jsonl --limit 200
+python3 tools/compare_wiktionary_ipa.py bn --rules-only         # leave out cards taken from Wiktionary
+```
+
+It takes Wiktionary's data from the same place as `import_phonetic.py`: the
+language's kaikki.org dump, downloaded once into `.cache/phonetic/` and read
+from there afterwards (`--dump FILE`, `--cache DIR`, `--refresh`). It makes one
+download per language and never a request per word; `--limit N` compares only
+the first N core cards. Cards are matched to entries, and the variety's forms
+chosen and normalised, with the importer's own code and the same
+`tools/phonetic_languages.yaml` (its `agree` guard is not applied: the cards it
+rejects are what this list is for). Two levels are compared: the card's `ipa`
+with Wiktionary's `/ /` forms, and the card's `phonetic` with its `[ ]` forms.
+
+Each row of the review list names the kind of difference, likeliest real
+error first: `consonant`, `vowel quality`, `vowel and consonant` (the base
+letters differ), `multiple Wiktionary variants` (several forms, none the
+card's; one matching is agreement), then `length mark`, `stress` (compared
+only when the card's form has a stress mark: the broad `ipa` seldom does),
+`diacritic only`, and last `missing in Wiktionary` (no entry or no form; not
+counted in the agreement rate). Within a kind the smaller difference comes
+first. The summary gives the agreement rate per language, per level, per kind
+and, for narrow forms, per `phonetic_source` (a `wiktionary` card agrees by
+construction; `rules` is the real check). The JSON has the same rows and
+summary, with the Wiktionary page of each word. Both carry the CC BY-SA 4.0
+credit; reviewers are not named. `test_compare_wiktionary_ipa.py` tests it on
+a small language and a fixture extract in `tools/fixtures/phonetic_compare`,
+with no network.
+
 ## `wikipedia_frequency.py`
 
 Counts how often each word is used in a language's Wikipedia, and gives
