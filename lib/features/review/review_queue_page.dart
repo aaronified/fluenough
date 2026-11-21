@@ -73,7 +73,7 @@ class ReviewQueuePage extends StatelessWidget {
                             DecoratedBox(
                               decoration: BoxDecoration(
                                 color: scheme.secondaryContainer,
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(AppRadii.control),
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(

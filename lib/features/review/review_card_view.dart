@@ -317,7 +317,7 @@ class _FacetRow extends StatelessWidget {
       decoration: needs
           ? BoxDecoration(
               border: Border.all(color: scheme.primary, width: 2),
-              borderRadius: BorderRadius.circular(14),
+              borderRadius: BorderRadius.circular(AppRadii.chip),
             )
           : BoxDecoration(
               border: Border(top: BorderSide(color: scheme.outlineVariant)),

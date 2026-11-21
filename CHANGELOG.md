@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Review a card one detail at a time.** Reviewers check each part of a card on its own screen, work through a session of 20 cards and then the whole course, review a unit or a card from its page in the deck view, and go through only the flagged cards.
+
 ## [0.11.3] - 2026-11-20
 
 - **A Morse code course.** Learn the letters, digits and signs of International Morse code by sight and by ear: every sign shows its dots and dashes and plays its tones when you tap the speaker.

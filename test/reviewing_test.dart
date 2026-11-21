@@ -1731,8 +1731,9 @@ void main() {
           File('docs/REVIEWING.md').readAsStringSync(),
           contains(AppLinks.feedbackEmail),
         );
-        final arb = jsonDecode(File('lib/l10n/app_en.arb').readAsStringSync())
-            as Map<String, dynamic>;
+        final arb = jsonDecode(
+          File('lib/l10n/app_en.arb').readAsStringSync(),
+        ) as Map<String, dynamic>;
         expect(arb['reviewGuideAgreeCount'], isNot(contains('{')));
         // The bot's own words name the one constant, never a literal number.
         final bot = File('tools/review_bot.py').readAsStringSync();
