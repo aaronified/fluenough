@@ -69,6 +69,10 @@ FIELD_OF_FACET = {
 # The facet a proposal field is the text of: the other way round.
 FACET_OF_FIELD = {field: facet for facet, field in FIELD_OF_FACET.items()}
 
+# The facets whose flag may carry a fix (`isTextFacet` in the app). A fix sent
+# on any other facet (unit, offence, audio) is dropped when the answer is read.
+TEXT_FACETS = ("word", "reading", "ipa", "meaning", "example", "note")
+
 # The same white space as `_whitespaceRun` in lib/core/review/fix_text.dart,
 # without U+FEFF and the zero-width characters.
 _WHITESPACE_RUN = re.compile(
@@ -131,7 +135,9 @@ def read_answer(facet: str, rater: str, raw: object) -> Answer | None:
     if not kept:
         return None
     fix = raw.get("fix")
-    return Answer(rater, kept, fix if isinstance(fix, str) else "")
+    if facet not in TEXT_FACETS or not isinstance(fix, str):
+        fix = ""
+    return Answer(rater, kept, fix)
 
 
 def read_answers(rater: str, raw: object) -> dict[str, Answer]:
@@ -212,3 +218,93 @@ def settled(checks: Iterable[Check], quorum: int = REVIEW_QUORUM,
     """Whether [checks] give a facet the quorum, by the one rule
     (`facet_reached_quorum`): the same as [facet_status] saying "settled"."""
     return facet_status(checks, quorum, needs_verified) == "settled"
+
+
+# --- What an entry publishes (the shape of `facet_checks`) -------------------------
+# Shared by tools/proposals.py (the bot's edits) and tools/validate_decks.py.
+
+def filled(value: object) -> bool:
+    if isinstance(value, str):
+        return bool(value.strip())
+    return bool(value)
+
+
+def owned_facets_of(data: dict, holds_card: bool) -> list[str]:
+    """The facets a card entry [data] holds the text of, in the order of
+    FACETS: the word, reading, IPA and audio where they are written, the
+    meaning where `native` is, an example or a note where the entry has one;
+    and, for the entry that holds the card itself ([holds_card]: a single
+    file's, a core's, a layer's own), its place in a unit and, for a rude word,
+    its offence rating. A core and its layer each own their part, so the merged
+    card's facets are the two entries' together, as `facetsOf` has them in
+    the app."""
+    return [f for f, owned in (
+        ("word", filled(data.get("target"))),
+        ("reading", filled(data.get("reading"))),
+        ("ipa", filled(data.get("ipa"))),
+        ("meaning", filled(data.get("native"))),
+        ("example", filled(data.get("examples"))),
+        ("note", filled(data.get("notes"))),
+        ("unit", holds_card),
+        ("offence", holds_card and data.get("register") == "offensive"),
+        ("audio", filled(data.get("audio"))),
+    ) if owned]
+
+
+def read_facet_data(raw: object) -> dict[str, dict]:
+    """A card entry's `facet_checks` [raw], in the form the bot edits: for
+    each facet that has any, `{"by": [codes], "flags": [{"by", "tags",
+    "fix"}]}`. Read leniently: what is not of that shape is left out."""
+    out: dict[str, dict] = {}
+    if not isinstance(raw, dict):
+        return out
+    for facet in FACETS:
+        item = raw.get(facet)
+        if not isinstance(item, dict):
+            continue
+        by = item.get("by") if isinstance(item.get("by"), list) else []
+        flags = item.get("flags") if isinstance(item.get("flags"), list) else []
+        found = {
+            "by": [c for c in by if isinstance(c, str)],
+            "flags": [
+                {"by": f["by"],
+                 "tags": [t for t in f.get("tags", []) if isinstance(t, str)]
+                 if isinstance(f.get("tags"), list) else [],
+                 "fix": f["fix"] if isinstance(f.get("fix"), str) else ""}
+                for f in flags if isinstance(f, dict) and isinstance(f.get("by"), str)],
+        }
+        if found["by"] or found["flags"]:
+            out[facet] = found
+    return out
+
+
+def checks_of(codes: list[str], held: dict[str, dict], facet: str) -> list[Check]:
+    """The checks of [facet] an entry lists, oldest first. ONE source of truth:
+    an entry that carries `facet_checks` ([held] not empty) is read from it
+    alone, and its `checked_by` is a mirror the bot keeps (the codes right on
+    every facet the entry owns), ignored here; an entry with none is a legacy
+    one, and each code of its `checked_by` is a bare "right" on every facet it
+    owns."""
+    if not held:
+        return [Check(code) for code in codes]
+    item = held.get(facet, {"by": [], "flags": []})
+    return [*(Check(code) for code in item["by"]),
+            *(Check(f["by"], False, f["fix"]) for f in item["flags"])]
+
+
+def entry_settled(codes: list[str], held: dict[str, dict], data: dict,
+                  holds_card: bool) -> bool | None:
+    """Whether every facet the entry owns has the quorum; None when it owns
+    none, so that it asks nothing of a reviewer."""
+    owned = owned_facets_of(data, holds_card)
+    if not owned:
+        return None
+    return all(settled(checks_of(codes, held, f)) for f in owned)
+
+
+def entry_open(codes: list[str], held: dict[str, dict], data: dict,
+               holds_card: bool) -> bool:
+    """Whether some facet the entry owns is flagged, contested or has an
+    agreed fix waiting: a card with one is not reviewed, whatever else."""
+    return any(facet_status(checks_of(codes, held, f)) in ("flagged", "contested", "agreed_fix")
+               for f in owned_facets_of(data, holds_card))

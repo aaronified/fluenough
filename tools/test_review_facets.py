@@ -218,6 +218,15 @@ class Answers(unittest.TestCase):
                          ("reading_wrong",))
         self.assertIsNone(rf.read_answer("colour", A, {"ok": True}))
 
+    def test_a_fix_on_a_facet_that_is_not_text_is_dropped(self) -> None:
+        for facet, tag in (("unit", "wrong_unit"), ("audio", "audio_wrong"),
+                           ("offence", "offensive")):
+            with self.subTest(facet):
+                got = rf.read_answer(facet, A, {"tags": [tag], "fix": "something"})
+                self.assertEqual(got, rf.Answer(A, (tag,), ""))
+        got = rf.read_answer("example", A, {"tags": ["example_wrong"], "fix": "x"})
+        self.assertEqual(got.fix, "x")
+
     def test_a_card_keeps_the_good_answers(self) -> None:
         got = rf.read_answers(A, {"word": {"ok": True}, "reading": {"tags": ["zzz"]},
                                   "colour": {"ok": True}, "meaning": 3})
@@ -234,6 +243,26 @@ class Answers(unittest.TestCase):
             "junk"], "zz-1")
         self.assertEqual(got, {"word": "abc", "reading": "def"})
         self.assertEqual(rf.read_receipts(None, "zz-1"), {})
+
+
+class Vectors(unittest.TestCase):
+    def test_the_shared_cases(self) -> None:
+        import json
+        path = Path(__file__).resolve().parent.parent / "test" / "support" / "facet_status_cases.json"
+        cases = json.loads(path.read_text(encoding="utf-8"))["cases"]
+        self.assertGreater(len(cases), 10)
+        for case in cases:
+            with self.subTest(case["name"]):
+                checks = []
+                for c in case["checks"]:
+                    answer = c["answer"]
+                    right = answer == "right"
+                    checks.append(rf.Check(c["rater"], right,
+                                           "" if right else answer.get("fix", ""),
+                                           c.get("tier", rq.PROVISIONAL)))
+                nv = case.get("needs_verified", False)
+                self.assertEqual(rf.facet_status(checks, needs_verified=nv), case["status"])
+                self.assertEqual(rf.settled(checks, needs_verified=nv), case["settled"])
 
 
 class Status(unittest.TestCase):

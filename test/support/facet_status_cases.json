@@ -1,0 +1,307 @@
+{
+ "about": "Facet status cases read by both tools/test_review_facets.py and test/facet_status_vectors_test.dart, so the Python (tools/review_facets.py) and the Dart (lib/core/review/review_quorum.dart) rules stay equal. quorum is the one constant. status is facetStatus; settled is whether the facet reached the quorum.",
+ "cases": [
+  {
+   "name": "nothing checked",
+   "checks": [],
+   "status": "unchecked",
+   "settled": false
+  },
+  {
+   "name": "one right",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": "right"
+    }
+   ],
+   "status": "checking",
+   "settled": false
+  },
+  {
+   "name": "two distinct right",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": "right"
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": "right"
+    }
+   ],
+   "status": "settled",
+   "settled": true
+  },
+  {
+   "name": "one rater twice, any case",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": "right"
+    },
+    {
+     "rater": "fl-aaaa-aaaa-a",
+     "answer": "right"
+    }
+   ],
+   "status": "checking",
+   "settled": false
+  },
+  {
+   "name": "right then a flag by the same rater",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": "right"
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": "right"
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": {
+      "tags": [
+       "meaning_wrong"
+      ]
+     }
+    }
+   ],
+   "status": "contested",
+   "settled": false
+  },
+  {
+   "name": "flag then right by the same rater",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": "right"
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": {
+      "tags": [
+       "meaning_wrong"
+      ]
+     }
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": "right"
+    }
+   ],
+   "status": "settled",
+   "settled": true
+  },
+  {
+   "name": "a flag beside two rights",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": "right"
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": "right"
+    },
+    {
+     "rater": "FL-CCCC-CCCC-C",
+     "answer": {
+      "tags": [
+       "meaning_wrong"
+      ]
+     }
+    }
+   ],
+   "status": "contested",
+   "settled": false
+  },
+  {
+   "name": "one flag, no fix",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": {
+      "tags": [
+       "meaning_wrong"
+      ]
+     }
+    }
+   ],
+   "status": "flagged",
+   "settled": false
+  },
+  {
+   "name": "one flag with a fix",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": {
+      "tags": [
+       "meaning_wrong"
+      ],
+      "fix": "x"
+     }
+    }
+   ],
+   "status": "flagged",
+   "settled": false
+  },
+  {
+   "name": "two flags with the same fix",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": {
+      "tags": [
+       "meaning_wrong"
+      ],
+      "fix": "kaala"
+     }
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": {
+      "tags": [
+       "meaning_wrong"
+      ],
+      "fix": "kaala"
+     }
+    }
+   ],
+   "status": "agreed_fix",
+   "settled": false
+  },
+  {
+   "name": "same fix, other spelling and spacing",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": {
+      "tags": [
+       "meaning_wrong"
+      ],
+      "fix": "café milk"
+     }
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": {
+      "tags": [
+       "meaning_wrong"
+      ],
+      "fix": " café  milk "
+     }
+    }
+   ],
+   "status": "agreed_fix",
+   "settled": false
+  },
+  {
+   "name": "two flags, different fixes",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": {
+      "tags": [
+       "meaning_wrong"
+      ],
+      "fix": "kaala"
+     }
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": {
+      "tags": [
+       "meaning_wrong"
+      ],
+      "fix": "kala"
+     }
+    }
+   ],
+   "status": "contested",
+   "settled": false
+  },
+  {
+   "name": "a fix and a flag with none",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": {
+      "tags": [
+       "meaning_wrong"
+      ],
+      "fix": "kaala"
+     }
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": {
+      "tags": [
+       "meaning_wrong"
+      ]
+     }
+    }
+   ],
+   "status": "flagged",
+   "settled": false
+  },
+  {
+   "name": "two flags, no fix",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": {
+      "tags": [
+       "meaning_wrong"
+      ]
+     }
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": {
+      "tags": [
+       "meaning_wrong"
+      ]
+     }
+    }
+   ],
+   "status": "flagged",
+   "settled": false
+  },
+  {
+   "name": "two rights, verified wanted, none verified",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": "right"
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": "right"
+    }
+   ],
+   "status": "checking",
+   "settled": false,
+   "needs_verified": true
+  },
+  {
+   "name": "two rights, verified wanted, one verified",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": "right",
+     "tier": "verified"
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": "right"
+    }
+   ],
+   "status": "settled",
+   "settled": true,
+   "needs_verified": true
+  }
+ ]
+}

@@ -5,6 +5,7 @@
 
 import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/core/models/card.dart';
+import 'package:fluenough/core/models/deck.dart' show Deck;
 import 'package:fluenough/core/review/deck_review.dart';
 import 'package:fluenough/core/review/facets.dart';
 import 'package:fluenough/core/review/flagged_queue.dart';
@@ -135,7 +136,7 @@ cards:
           Facet.word: const PublishedFacet(by: <String>['FL-AAAA-AAAA-A']),
         },
         <Facet, PublishedFacet>{
-          Facet.word: PublishedFacet(
+          Facet.word: const PublishedFacet(
             flags: <PublishedFlag>[
               PublishedFlag(
                 rater: 'FL-AAAA-AAAA-A',
@@ -182,7 +183,7 @@ cards:
     test('a rater own answer replaces their card-level check', () {
       final checks = checksOf(
         <Facet, PublishedFacet>{
-          Facet.reading: PublishedFacet(
+          Facet.reading: const PublishedFacet(
             flags: <PublishedFlag>[
               PublishedFlag(
                 rater: 'FL-0000-0000-0',
@@ -213,7 +214,7 @@ cards:
           Facet.word: PublishedFacet(
             by: both.by,
             flags: <PublishedFlag>[
-              PublishedFlag(
+              const PublishedFlag(
                 rater: 'FL-CCCC-CCCC-C',
                 tags: <PointerTag>{PointerTag.spellingWrong},
                 fix: 'kalaa',

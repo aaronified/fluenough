@@ -122,28 +122,17 @@ class PublishedFacet {
     );
   }
 
-  /// This facet's checks, as [ReviewCheck]s, given the [bare] checks of the
-  /// card's `checked_by` (a sign-off of the whole card, right on every
-  /// facet). A rater this names, in `by` or a flag, is that rater's own
-  /// answer to the facet and replaces the bare one, as the bot's tag rule
-  /// has it; the explicit answers come last, so the latest-answer rule of
-  /// [facetStatus] keeps them.
-  List<ReviewCheck> checks({List<ReviewCheck> bare = const <ReviewCheck>[]}) {
-    final named = <String>{
-      for (final code in by) code.trim().toUpperCase(),
-      for (final flag in flags) flag.rater.trim().toUpperCase(),
-    };
-    return <ReviewCheck>[
-      for (final check in bare)
-        if (!named.contains(check.key)) check,
-      for (final code in by) ReviewCheck(rater: code),
-      for (final flag in flags)
-        ReviewCheck(
-          rater: flag.rater,
-          answer: FacetAnswer.flagged(flag.tags, replacement: flag.fix),
-        ),
-    ];
-  }
+  /// This facet's checks, as [ReviewCheck]s: each code of [by] right, each
+  /// flag a flag. One source of truth: where a facet is published, nothing
+  /// else counts for it (see [otherChecksOfCard]).
+  List<ReviewCheck> get checks => <ReviewCheck>[
+    for (final code in by) ReviewCheck(rater: code),
+    for (final flag in flags)
+      ReviewCheck(
+        rater: flag.rater,
+        answer: FacetAnswer.flagged(flag.tags, replacement: flag.fix),
+      ),
+  ];
 
   @override
   bool operator ==(Object other) =>
@@ -217,9 +206,15 @@ Map<Facet, PublishedFacet> mergePublishedFacets(
 }
 
 /// The other speakers' checks of one card, from its `checked_by` codes
-/// ([bareCodes], a check of every facet the card has: [applicable]) and its
-/// published facets ([published]): per facet, [PublishedFacet.checks] over
-/// the bare checks. Facets the card does not have are left out.
+/// ([bareCodes], each a check of every facet the card has: [applicable]) and
+/// its published facets ([published]).
+///
+/// One source of truth, as the tools read it (`checks_of` in
+/// `tools/review_facets.py`): a facet that is published is read from
+/// `facet_checks` alone, and `checked_by`, which the bot then keeps as a mirror
+/// of the full sign-offs, does not count for it again; a facet that is not
+/// published (an old deck, or an entry with no `facet_checks`) is read from
+/// `checked_by`. Facets the card does not have are left out.
 Map<Facet, List<ReviewCheck>> otherChecksOfCard({
   required Set<Facet> applicable,
   required List<String> bareCodes,
@@ -227,10 +222,9 @@ Map<Facet, List<ReviewCheck>> otherChecksOfCard({
 }) {
   final out = <Facet, List<ReviewCheck>>{};
   for (final facet in applicable) {
-    final bare = <ReviewCheck>[
-      for (final code in bareCodes) ReviewCheck(rater: code),
-    ];
-    final checks = published[facet]?.checks(bare: bare) ?? bare;
+    final checks =
+        published[facet]?.checks ??
+        <ReviewCheck>[for (final code in bareCodes) ReviewCheck(rater: code)];
     if (checks.isNotEmpty) out[facet] = checks;
   }
   return out;

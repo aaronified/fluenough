@@ -3431,8 +3431,9 @@ PublishedFacets facetChecksIn(YamlNode cards) {
     final node = entry.nodes['facet_checks'];
     if (node == null) return;
     final found = publishedFacetsFrom(node);
-    if (found.isNotEmpty)
+    if (found.isNotEmpty) {
       out[card] = Map<Facet, PublishedFacet>.unmodifiable(found);
+    }
   }
 
   if (cards is YamlList) {

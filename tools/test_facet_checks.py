@@ -115,15 +115,77 @@ class Writing(Base):
         self.assertEqual(line.count("checked_by"), 1)
         self.assertEqual(errors(self.single), [])
 
-    def test_a_sign_off_takes_back_the_flags_of_that_rater(self) -> None:
+    def test_a_sign_off_replaces_the_flags_of_that_rater(self) -> None:
         self.facets("zz-9201", {"reading": rf.Answer(ALICE, ("reading_wrong",))})
         self.facets("zz-9210", {"reading": rf.Answer(ALICE, ("reading_wrong",))})
         for card in ("zz-9201", "zz-9210"):
             self.check(card)
-            self.assertEqual(pr.facet_data(self.entry(card)), {}, card)
-            self.assertEqual(pr.checked_by(self.entry(card)), [ALICE], card)
-        self.assertNotIn("facet_checks", self.single.read_text(encoding="utf-8"))
+            entry = self.entry(card)
+            held = pr.facet_data(entry)
+            # Right on every facet the entry owns, no flag left, and the
+            # mirror in checked_by says the card is signed off.
+            self.assertEqual(sorted(held), sorted(pr.owned_facets(entry)), card)
+            for facet in held.values():
+                self.assertEqual((facet["by"], facet["flags"]), ([ALICE], []), card)
+            self.assertEqual(pr.checked_by(entry), [ALICE], card)
         self.assertEqual(errors(self.single), [])
+
+    def test_a_flag_after_a_sign_off_takes_the_code_out_of_checked_by(self) -> None:
+        # One source of truth: once an entry carries facet_checks they say
+        # who is right on what; checked_by only mirrors the full sign-offs.
+        self.check("zz-9201")
+        self.check("zz-9201", code=BOB)
+        self.assertEqual(pr.checked_by(self.entry("zz-9201")), [ALICE, BOB])
+        self.facets("zz-9201", {"reading": rf.Answer(BOB, ("reading_wrong",))}, BOB)
+        entry = self.entry("zz-9201")
+        self.assertEqual(pr.checked_by(entry), [ALICE])
+        # The legacy sign-off of BOB was written out first: right on the
+        # other facets, flagged on the reading.
+        held = pr.facet_data(entry)
+        self.assertEqual(held["word"]["by"], [ALICE, BOB])
+        self.assertEqual(held["reading"]["by"], [ALICE])
+        self.assertEqual([f["by"] for f in held["reading"]["flags"]], [BOB])
+        # The status reads facet_checks alone, not checked_by on top.
+        self.assertEqual(rf.facet_status(pr.entry_checks(entry, "reading")), "contested")
+        self.assertEqual(rf.facet_status(pr.entry_checks(entry, "word")), "settled")
+        # Nobody left in checked_by: the line goes.
+        self.facets("zz-9201", {"reading": rf.Answer(ALICE, ("reading_wrong",))})
+        self.assertEqual(pr.checked_by(self.entry("zz-9201")), [])
+        self.assertNotIn("checked_by", self.single.read_text(encoding="utf-8"))
+        self.assertEqual(errors(self.single), [])
+
+    def test_a_fix_on_a_facet_that_is_not_text_is_not_kept(self) -> None:
+        pointed = rf.read_answer("unit", ALICE, {"tags": ["wrong_unit"], "fix": "zz-home"})
+        self.assertEqual(pointed, rf.Answer(ALICE, ("wrong_unit",), ""))
+        self.facets("zz-9201", {"unit": pointed})
+        held = pr.facet_data(self.entry("zz-9201"))["unit"]
+        self.assertNotIn('"fix"', self.single.read_text(encoding="utf-8").split("facet_checks")[1])
+        self.assertEqual(held["flags"][0]["fix"], "")
+        self.assertEqual(errors(self.single), [])
+
+    def test_a_fix_applied_clears_the_facet_for_sign_offs_too(self) -> None:
+        # Two legacy sign-offs, then the meaning is changed by an agreed fix:
+        # the sign-offs do not bring back rights to the old text.
+        self.check("zz-9201")
+        self.check("zz-9201", code=BOB)
+        original = pr.WRITE_FACET_CHECKS
+        self.addCleanup(setattr, pr, "WRITE_FACET_CHECKS", original)
+        pr.WRITE_FACET_CHECKS = True
+        pr.reset_facet(self.root, "zz", "zz-9201", "native")
+        entry = self.entry("zz-9201")
+        held = pr.facet_data(entry)
+        self.assertNotIn("meaning", held)
+        self.assertEqual(held["word"]["by"], [ALICE, BOB])
+        self.assertEqual(rf.facet_status(pr.entry_checks(entry, "meaning")), "unchecked")
+        self.assertEqual(pr.checked_by(entry), [])
+        self.assertEqual(errors(self.single), [])
+
+    def test_a_fix_applied_with_the_key_off_drops_legacy_sign_offs(self) -> None:
+        self.check("zz-9201")
+        self.assertFalse(pr.WRITE_FACET_CHECKS)
+        pr.reset_facet(self.root, "zz", "zz-9201", "native")
+        self.assertEqual(pr.checked_by(self.entry("zz-9201")), [])
+        self.assertEqual(pr.facet_data(self.entry("zz-9201")), {})
 
     def test_right_on_every_facet_signs_the_card_off(self) -> None:
         owned = pr.owned_facets(self.entry("zz-9201"))
@@ -280,9 +342,9 @@ class Tagging(Base):
 
 class BotFacets(BotBase):
     def write(self, on: bool = True) -> None:
-        original = rb.WRITE_FACET_CHECKS
-        rb.WRITE_FACET_CHECKS = on
-        self.addCleanup(setattr, rb, "WRITE_FACET_CHECKS", original)
+        original = pr.WRITE_FACET_CHECKS
+        pr.WRITE_FACET_CHECKS = on
+        self.addCleanup(setattr, pr, "WRITE_FACET_CHECKS", original)
 
     def text(self, card: str, facet: str) -> str:
         return pr.facet_texts(self.git.main, "zz", "zz-en-extra", card, facet)[0]
@@ -337,7 +399,7 @@ class BotFacets(BotBase):
         self.assertTrue(face.right_all)
 
     def test_right_on_every_facet_signs_off_while_the_key_is_off(self) -> None:
-        self.assertFalse(rb.WRITE_FACET_CHECKS)
+        self.assertFalse(pr.WRITE_FACET_CHECKS)
         every = {f: {"ok": True} for f in ("word", "reading", "meaning", "note", "unit")}
         self.assertEqual(self.mail("m1", ALICE, self.card(every)), "merged")
         self.assertEqual(pr.checked_by(self.main_entry()), [ALICE])
@@ -441,8 +503,22 @@ class BotFacets(BotBase):
         old = {"card": "zz-9201", "at": "2026-10-09T09:41:00.000Z", "looks_right": True}
         self.assertEqual(self.bot.review("m2", ALICE, rb.read_review(
             [review_file([old])], ALICE)), "merged")
-        self.assertNotIn("facet_checks", self.main_text())
+        held = pr.facet_data(self.main_entry())
+        self.assertEqual(held["reading"]["flags"], [])
+        self.assertEqual(held["reading"]["by"], [ALICE])
         self.assertEqual(pr.checked_by(self.main_entry()), [ALICE])
+
+    def test_looks_right_does_not_sign_off_text_that_changed(self) -> None:
+        # The receipt of a facet the card-level answer does not name is
+        # compared too.
+        self.write()
+        card = self.card({"word": {"ok": True}},
+                         {"reading": "what it said before"}, looks_right=True)
+        self.assertEqual(self.mail("m1", ALICE, card), "merged")
+        held = pr.facet_data(self.main_entry())
+        self.assertEqual(list(held), ["word"])
+        self.assertNotIn("checked_by", self.main_text())
+        self.assertTrue(any("1 stale" in line for line in self.logged), self.logged)
 
     def test_a_word_fix_ties_what_comes_with_it(self) -> None:
         self.write()
@@ -461,7 +537,7 @@ class Quorum(unittest.TestCase):
     def test_the_bot_and_the_facet_rule_read_the_one_constant(self) -> None:
         import review_quorum as rq
         self.assertEqual(rb.agreements_needed({}), max(rq.REVIEW_QUORUM - 1, 1))
-        self.assertFalse(rb.WRITE_FACET_CHECKS)
+        self.assertFalse(pr.WRITE_FACET_CHECKS)
 
 
 if __name__ == "__main__":

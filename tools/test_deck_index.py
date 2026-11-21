@@ -41,7 +41,8 @@ class DeckIndex(unittest.TestCase):
         self.addCleanup(shutil.rmtree, self.tmp, True)
         (self.tmp / "tools").mkdir()
         for name in ("validate_decks.py", "deck_index.py", "rater_codes.py",
-                     "offensive_alikes.py", "pick_warning.py"):
+                     "offensive_alikes.py", "pick_warning.py", "review_facets.py",
+                     "review_quorum.py"):
             shutil.copy(TOOLS / name, self.tmp / "tools" / name)
         shutil.copytree(REPO / "assets" / "pictures", self.tmp / "assets" / "pictures")
         (self.tmp / "assets" / "languages.yaml").write_text(
@@ -851,7 +852,8 @@ class DeckKindsIndex(unittest.TestCase):
         self.addCleanup(shutil.rmtree, self.tmp, True)
         (self.tmp / "tools").mkdir()
         for name in ("validate_decks.py", "deck_index.py", "rater_codes.py",
-                     "offensive_alikes.py", "pick_warning.py"):
+                     "offensive_alikes.py", "pick_warning.py", "review_facets.py",
+                     "review_quorum.py"):
             shutil.copy(TOOLS / name, self.tmp / "tools" / name)
         (self.tmp / "assets").mkdir()
         (self.tmp / "assets" / "languages.yaml").write_text(

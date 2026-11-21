@@ -3383,11 +3383,10 @@ whose code a deck lists.
   word and the reading, its layer's entry the meaning. A facet has the
   quorum when the distinct rater codes that checked it reach the number in
   `tools/review_quorum.py` (`REVIEW_QUORUM`), each code counting by its
-  latest answer, and none of them a flag. A code in `checked_by` counts
+  latest answer, and none of them a flag. A code in the `checked_by` of a legacy entry counts
   once as "right" on every facet the entry owns, so a deck whose cards
   were all signed off by that many codes is tagged as before, and a card
-  with no facet data stays valid. A rater's own answer in `facet_checks`
-  wins over their `checked_by`. The number is never shown to anyone. A core
+  with no facet data stays valid. An entry that owns no facet asks nothing (a looser rule than "every entry lists a code"). The number is never shown to anyone. A core
   and its layer are tagged each on its own, and the merged deck reads as
   reviewed only once both are ([What the merged deck is](#what-the-merged-deck-is)):
   a core shared by several layers is reviewed once all its cards are
@@ -3472,7 +3471,8 @@ minimal additive shape: one key on the card's entry, nothing changed in
   `offensive`, `example_wrong`, `note_wrong`, `wrong_unit`, `audio_wrong`),
   each on a facet it may be put on, and the replacement text when the
   reviewer gave one, only on a text facet (word, reading, IPA, meaning,
-  example, note). A rater appears once on a facet, in `by` or in `flags`: a
+  example, note; a fix sent on another facet is dropped when the answer is
+  read). A rater appears once on a facet, in `by` or in `flags`: a
   reviewer who changes their answer moves from one to the other. Rater codes
   only, never an address (Plan-Review-Staging). No count and no tier.
 - **One line.** As `checked_by`: a line of its own among a block card's
@@ -3485,25 +3485,43 @@ minimal additive shape: one key on the card's entry, nothing changed in
   an offence rating; a layer's entry the meaning; an example or a note on
   every entry that has one. A card the merged deck gets from a core and a
   layer has the answers of both, per facet.
-- **`checked_by` is unchanged.** It still lists the codes that signed the
-  whole card off, and every app reads it as before. The bot adds a code to it as before for a card-level
-  "Looks right", and also when a reviewer has answered "right" to every facet
-  the card has.
+- **One source of truth.** An entry that carries `facet_checks` is read from
+  it alone. Its `checked_by` is then only a mirror the bot keeps: the codes
+  right on every facet the entry owns, for the apps and tools that only know
+  `checked_by` (the "Checked by" line, `tools/review_queue.py`). The facet
+  status never counts it a second time. An entry with no `facet_checks` is
+  legacy: each code of its `checked_by` is right on every facet it owns, as
+  before, and the old data stays valid. The first time the bot writes
+  `facet_checks` on an entry it writes the entry's `checked_by` codes out as
+  `by` on every facet it owns, so nobody's sign-off is lost. A card-level
+  "Looks right" on an entry that carries it is that rater's latest answer,
+  right on every facet it owns, in place of any flag of theirs. When a rater who
+  signed a card off flags a facet, their code leaves `checked_by` (and the line
+  goes when it is empty). Because `checked_by` is a mirror, a card has either
+  both or `facet_checks` alone, never a code in `checked_by` that is not right
+  everywhere.
 - **What it means for the status of a facet.** The app and the tools read a
-  facet's checks as: each `checked_by` code once as "right" (unless the same
-  rater has their own answer to the facet), each code of `by` as "right", each
-  flag as a flag; one answer a rater, the latest. Any flag makes the facet
-  unsettled (a flag with no fix is *flagged*, a flag beside a "right" is
-  *contested*, flags that agree on one fix after Unicode NFC and white space
-  are *agreed fix*, flags on different fixes are *contested*); otherwise it
-  is settled at the quorum. A flagged or contested facet is not reviewed.
+  facet's checks from `facet_checks` where the entry carries it, else (a
+  legacy entry) from `checked_by`: each code of `by` is "right", each flag a
+  flag, one answer a rater, the latest. In the app, a facet that is published
+  is read from `facet_checks` alone and one that is not from `checked_by`.
+  Any flag makes the facet unsettled (a flag with no fix is *flagged*, a flag
+  beside a "right" is *contested*, flags that agree on one fix after Unicode
+  NFC and white space are *agreed fix*, flags on different fixes are
+  *contested*); otherwise it is settled at the quorum. A flagged or contested
+  facet is not reviewed. The cases both implementations must agree on are in
+  `test/support/facet_status_cases.json`, read by the Dart and the Python tests.
 - **Fixes are proposals.** A fix sent with a flag becomes a [proposal](#proposals-proposed)
   on the facet's field (word is `target`, meaning `native`, note `notes`,
   reading and IPA as named), and a later flag with the same fix after
   normalisation is that proposal's acceptance, so it is applied by the rules
   of ADR-0038, and not while the facet is contested. When a fix is applied the
   facet's answers (they were to the old text) are taken out and the new text is
-  checked afresh. An answer whose receipt hash is not the hash of the text the
+  checked afresh: on an entry with `facet_checks` the facet is removed from it
+  (and its `checked_by` mirror follows, nobody being right everywhere any
+  more); a legacy entry has its `checked_by` codes written out first, so the
+  other facets keep them (while the bot writes the key), and while it does not,
+  loses its `checked_by` altogether. An answer whose receipt hash is not the hash of the text the
   card says now is left out as stale.
 - **The validator** allows it where `checked_by` is allowed, and checks the
   shape above: known facets, rater codes written as the app writes them,
@@ -3515,10 +3533,13 @@ minimal additive shape: one key on the card's entry, nothing changed in
 - **A release after the app.** As `verified`: a released app rejects a card
   key it does not know. The bot writes `facet_checks` only once an app that
   reads it is released: the constant `WRITE_FACET_CHECKS` in
-  `tools/review_bot.py` is `False` until then, and the bot still reads
+  `tools/proposals.py` is `False` until then, and the bot still reads
   facet answers (stale ones dropped, fixes become proposals, a card right on
   every facet is signed off in `checked_by`). The owner sets it to `True` in
-  the release after the one that reads the key (W10).
+  the release after the one that reads the key, gated with `min_app` (W10),
+  and never before the app that reads the key has shipped. **Risk while it is
+  off:** a flag with no fix and a partial set of right answers are only
+  logged and lost, so a flag cannot yet make a facet unsettled.
 
 ## Adding your own deck
 

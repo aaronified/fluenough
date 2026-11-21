@@ -125,16 +125,12 @@ KIND_LABELS = {
 }
 FAILED_LABEL = "review-bot: checks failed"
 THRESHOLD = "REVIEW_AGREEMENTS_NEEDED"
-# Whether the bot writes reviewers' facet answers into the cards' `facet_checks`
-# (ADR-0058, W9). A released app rejects a card key it does not know, and a
-# phone keeps the decks it has rather than take a file that fails, so, as for
-# `verified` (tools/question_answers.py WRITE_VERIFIED), the key is written
-# only once an app that reads it is released. The owner sets it to True in
-# the release after the one that reads the key (W10). While False the bot
-# still reads facet answers: a stale one is dropped, a fix becomes a proposal
-# (or the acceptance of one), and a reviewer who said right to every facet of a
-# card signs it off in `checked_by`; the rest is only counted.
-WRITE_FACET_CHECKS = False
+# Whether the bot writes reviewers' facet answers into the cards' `facet_checks` is
+# `pr.WRITE_FACET_CHECKS` (tools/proposals.py), off until an app that reads the key
+# is released. While off the bot still reads facet answers: a stale one is dropped,
+# a fix becomes a proposal (or the acceptance of one), and a reviewer who said
+# right to every facet of a card signs it off in `checked_by`; the rest is only
+# counted, and lost.
 # The branch the decks live on, and so the one the bot reads, branches from,
 # opens its PRs against and compares with (owner, 2026-11-06). Main's own
 # `decks/` is frozen.
@@ -974,7 +970,7 @@ class Bot:
         if checked and (checked[-1].facets_left or checked[-1].stale):
             self.log(f"Review by {code}: {len(checked[-1].facets_left)} facet "
                      f"answer(s) not written (the facet_checks key is "
-                     f"{'on' if WRITE_FACET_CHECKS else 'off'}), "
+                     f"{'on' if pr.WRITE_FACET_CHECKS else 'off'}), "
                      f"{len(checked[-1].stale)} stale.")
         if checked and (checked[-1].missing or checked[-1].unsupported):
             self.log(f"Review by {code}: sign-offs of "
@@ -990,15 +986,20 @@ class Bot:
         field, or, when the same fix (after normalisation) is proposed
         already by another reviewer, that reviewer's proposal accepted:
         ADR-0038's rule, and so nothing is applied until the agreement. The
-        answers themselves go to the card's `facet_checks` (WRITE_FACET_CHECKS)
+        answers themselves go to the card's `facet_checks` (pr.WRITE_FACET_CHECKS)
         and give the facet its status: a flagged or contested facet is not
         settled, whatever the rest say."""
         answers = dict(fc.answers)
         dropped = False
-        for facet in list(answers):
+        # Every facet with a receipt is compared with the text now, those a
+        # card-level "Looks right" covers without naming them too: it cannot
+        # sign off text that has changed since it was seen.
+        for facet in rf.FACETS:
+            if facet not in answers and not (fc.right_all and facet in fc.receipts):
+                continue
             texts = pr.facet_texts(root, fc.lang, fc.deck, fc.card, facet)
             if pr.facet_stale(texts, fc.receipts.get(facet)):
-                del answers[facet]
+                answers.pop(facet, None)
                 checks.stale.append((fc.card, facet))
                 dropped = True
         word: pr.Proposal | None = None
@@ -1013,7 +1014,6 @@ class Bot:
             if field_name == "target" and made is not None:
                 word = made
         pr.check_facets(root, fc.lang, fc.deck, fc.card, code, answers, checks,
-                        write=WRITE_FACET_CHECKS,
                         right_all=fc.right_all and not dropped)
 
     def _facet_fix(self, root: Path, fc: FacetCard, code: str, facet: str,

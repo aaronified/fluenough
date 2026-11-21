@@ -3641,7 +3641,7 @@ VERIFIED_POINT = re.compile(
 
 
 # The facets whose flag may carry a fix (`isTextFacet` in the app).
-FACET_FIX_FACETS = ("word", "reading", "ipa", "meaning", "example", "note")
+FACET_FIX_FACETS = review_facets.TEXT_FACETS
 
 
 def check_facet_checks(r: Report, where: str, value: object) -> None:
@@ -8088,13 +8088,35 @@ def check_reviewed_cards(r: Report, raw: object, checks: list) -> None:
     if not isinstance(raw, dict) or raw.get("kind") == "layer" \
             or r.genre not in ("culture", "proverbs") or not r.reviewed:
         return
-    # A card two reviewers settled facet by facet may list no sign-off of the
-    # whole card (ADR-0058, W9): its facet answers are the check.
-    signed = {c.where for c in checks if c.key in ("checked_by", "facet_checks")}
+    # ADR-0058, W9: a card is reviewed when no facet of it is flagged or
+    # contested and someone checked it, by `checked_by` or by facet. The quorum
+    # itself is the bot's to count: decks tagged under the earlier one-code rule
+    # stay valid, so the validator does not demand it.
+    entries = {where: (codes, fc) for where, codes, fc in _facet_sources(checks)}
     for where, cid, entry in _card_entries(raw):
-        if "ref" not in entry and entry.get("kind") != "set" and where not in signed:
+        if "ref" in entry or entry.get("kind") == "set":
+            continue
+        codes, fc = entries.get(where, ([], None))
+        held = review_facets.read_facet_data(fc)
+        if not codes and not held:
             r.error(where, f"card {cid}: the deck is tagged reviewed, so every card "
-                           f"needs checked_by")
+                           f"needs checked_by or facet_checks")
+        elif review_facets.entry_open(codes if isinstance(codes, list) else [], held,
+                                      entry, True):
+            r.error(where, f"card {cid}: the deck is tagged reviewed, but a facet of "
+                           f"the card is flagged or contested in facet_checks")
+
+
+def _facet_sources(checks: list) -> list[tuple[str, list, object]]:
+    """Each card entry's `checked_by` codes and `facet_checks`, by where."""
+    by_where: dict[str, list] = {}
+    for c in checks:
+        slot = by_where.setdefault(c.where, [[], None])
+        if c.key == "checked_by" and isinstance(c.codes, list):
+            slot[0] = [x for x in c.codes if isinstance(x, str)]
+        elif c.key == "facet_checks":
+            slot[1] = c.codes
+    return [(w, v[0], v[1]) for w, v in by_where.items()]
 
 
 # --- decks/sections.yaml (D8) ------------------------------------------------
