@@ -47,7 +47,6 @@ import 'core/speech/system_speech_engine.dart';
 import 'core/tts/system_clip_player.dart';
 import 'core/tts/system_tts_engine.dart';
 import 'core/tts/volume_monitor.dart';
-import 'app/file_blob_store.dart';
 import 'app/asr_pack_downloader.dart';
 import 'app/channel_asr_runtime.dart';
 import 'app/file_asr_pack_store.dart';

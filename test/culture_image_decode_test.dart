@@ -6,6 +6,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/culture.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/deck_downloads.dart';
 import 'package:fluenough/app/downloaded_decks.dart';
@@ -115,6 +116,35 @@ void main() {
     });
   });
 
+  group('the viewer decode size', () {
+    testWidgets('is the screen in physical pixels, never above 2048', (
+      tester,
+    ) async {
+      late int width;
+      Future<void> at(Size logical, double ratio) async {
+        tester.view
+          ..physicalSize = logical * ratio
+          ..devicePixelRatio = ratio;
+        await tester.pumpWidget(
+          Builder(
+            builder: (context) {
+              width = cultureViewerDecodeWidth(context);
+              return const SizedBox();
+            },
+          ),
+        );
+      }
+
+      addTearDown(tester.view.reset);
+      await at(const Size(360, 800), 2);
+      expect(width, 1600);
+      await at(const Size(390, 844), 3);
+      expect(width, cultureViewerCap);
+      await at(const Size(100, 100), 1);
+      expect(width, 100);
+    });
+  });
+
   group('a 2048 px picture', () {
     testWidgets('is decoded at the size shown in a list of thirty', (
       tester,
@@ -130,6 +160,7 @@ void main() {
         expect(image.width, cultureDecodeWidth(56, 3));
         expect(image.width, lessThan(cultureDecodeCap));
         expect(image.height, isNull);
+        expect(image.allowUpscaling, isFalse);
       }
       // One kept picture serves every row.
       expect(cache.entries, 1);

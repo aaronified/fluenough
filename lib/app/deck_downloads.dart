@@ -468,6 +468,7 @@ class DeckDownloads extends ChangeNotifier {
         final index = DeckIndex.parse(text, appVersion: appVersion);
         _index = index;
         _indexStatus = IndexStatus.ready;
+        unawaited(_pruneImages(index));
         for (final problem in index.problems) {
           _log?.warning('Deck index kept on the phone: $problem');
         }
@@ -557,6 +558,7 @@ class DeckDownloads extends ChangeNotifier {
     }
     _index = index;
     _indexStatus = IndexStatus.ready;
+    unawaited(_pruneImages(index));
     _checkedAt = _clock();
     try {
       await files.writeNote(_indexNote, text);
@@ -1360,6 +1362,12 @@ class DeckDownloads extends ChangeNotifier {
       return null;
     }
   }
+
+  /// Deletes the kept pictures [index] does not list: orphans of a removal
+  /// that ran before the index was known.
+  Future<void> _pruneImages(DeckIndex index) => images.prune(<String>{
+    for (final media in index.sharedMedia) media.sha256,
+  });
 
   /// Forgets the kept pictures of [language]'s creators, as its removal
   /// does. A picture the index lists for no language, or for another, stays.

@@ -172,6 +172,34 @@ void main() {
       expect(asked, 0);
     });
 
+    test(
+      'that fails to read once is read again, and given up after three',
+      () async {
+        final store = MemoryBlobStore();
+        final pics = <_Pic>[for (var i = 0; i < 5; i++) _Pic(10, i)];
+        final cache = MediaImageCache(store: store, maxEntries: 1);
+        await pics[0].load(cache);
+        await pics[1].load(cache); // pics[0] now only in the store
+        store.failReads = true;
+        expect(await pics[0].load(cache), pics[0].bytes); // fetched, 1 failure
+        store.failReads = false;
+        // One failure did not stop reading: pics[1] is read from the store.
+        await pics[2].load(cache);
+        expect(await pics[1].load(cache), pics[1].bytes);
+        expect(pics[1].fetches, 1);
+        // Three in a row do.
+        store.failReads = true;
+        for (final pic in pics.skip(2)) {
+          await pic.load(cache);
+        }
+        store.failReads = false;
+        final before = pics[3].fetches;
+        await pics[4].load(cache);
+        await pics[3].load(cache);
+        expect(pics[3].fetches, before + 1);
+      },
+    );
+
     test('that is full still shows the picture, and stops writing', () async {
       final store = MemoryBlobStore()..failWrites = true;
       final problems = <String>[];
@@ -188,6 +216,40 @@ void main() {
       final cache = MediaImageCache(store: store);
       final pic = _Pic(10);
       expect(await pic.load(cache), pic.bytes);
+    });
+
+    test(
+      'does not keep a picture whose course is removed while it loads',
+      () async {
+        final store = MemoryBlobStore();
+        final cache = MediaImageCache(store: store);
+        final pic = _Pic(10);
+        final gate = Completer<void>();
+        final loading = cache.load(pic.sha, 10, () async {
+          await gate.future;
+          return pic.bytes;
+        });
+        await Future<void>.delayed(Duration.zero);
+        await cache.remove(<String>[pic.sha]);
+        gate.complete();
+        expect(await loading, pic.bytes); // shown
+        expect(cache.holds(pic.sha), isFalse);
+        expect(store.data, isEmpty);
+      },
+    );
+
+    test('prunes kept pictures the index does not list', () async {
+      final store = MemoryBlobStore();
+      final cache = MediaImageCache(store: store);
+      final a = _Pic(10, 1), b = _Pic(10, 2);
+      await a.load(cache);
+      await b.load(cache);
+      store.data['other-thing'] = _bytes(3);
+      await cache.prune(<String>{a.sha});
+      expect(store.data.keys.toSet(), <String>{
+        MediaImageCache.keyOf(a.sha),
+        'other-thing',
+      });
     });
 
     test('loses a picture when its course is removed', () async {

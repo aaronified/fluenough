@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:collection';
 import 'dart:typed_data';
 
@@ -23,7 +24,9 @@ import 'blob_store.dart';
 /// (what [load]'s fetch returns), and when it is read back from the store
 /// the first time this session. An entry that does not match is deleted and
 /// fetched again. Requests for one picture that overlap share one read and
-/// one fetch. Nothing here throws: a failure is reported to [onProblem] and
+/// one fetch. A picture whose course is removed while it loads is shown but
+/// not kept. Three failed reads in a row stop reading the store for the
+/// session; one does not. Nothing here throws: a failure is reported to [onProblem] and
 /// reads as "no picture".
 class MediaImageCache {
   MediaImageCache({
@@ -54,6 +57,15 @@ class MediaImageCache {
   final Map<String, Future<Uint8List?>> _jobs = <String, Future<Uint8List?>>{};
   int _memoryBytes = 0;
   bool _persisting = true;
+
+  /// How many reads in a row failed; reading from the store stops for the
+  /// session at [maxReadFailures], so that one transient error does not.
+  int _readFailures = 0;
+  static const int maxReadFailures = 3;
+
+  /// Bumped for a hash by [remove]: a job that began before it must not
+  /// keep its picture once it ends.
+  final Map<String, int> _epochs = <String, int>{};
 
   /// How many pictures are held in memory.
   int get entries => _memory.length;
@@ -90,18 +102,24 @@ class MediaImageCache {
     Future<Uint8List?> Function() fetch,
   ) async {
     final kept = store;
-    if (kept != null && _persisting) {
+    final epoch = _epochs[sha256] ?? 0;
+    bool removed() => (_epochs[sha256] ?? 0) != epoch;
+    if (kept != null && _persisting && _readFailures < maxReadFailures) {
       try {
         final bytes = await kept.read(keyOf(sha256));
+        _readFailures = 0;
         if (bytes != null) {
-          if (_matches(bytes, sha256, size)) return _hold(sha256, bytes);
+          if (_matches(bytes, sha256, size)) {
+            return removed() ? bytes : _hold(sha256, bytes);
+          }
           onProblem?.call(
             'Kept picture does not match, fetched again: $sha256',
           );
           await _delete(<String>[keyOf(sha256)]);
         }
       } on Object catch (e) {
-        _giveUp('a kept picture could not be read: $e');
+        _readFailures++;
+        onProblem?.call('a kept picture could not be read: $e');
       }
     }
     Uint8List? fetched;
@@ -116,6 +134,8 @@ class MediaImageCache {
       onProblem?.call('A fetched picture does not match its hash: $sha256');
       return null;
     }
+    // Its course was removed while it was fetched: shown, not kept.
+    if (removed()) return fetched;
     if (kept != null && _persisting) {
       try {
         await kept.write(<String, Uint8List>{keyOf(sha256): fetched});
@@ -124,7 +144,7 @@ class MediaImageCache {
         _giveUp('a picture could not be kept: $e');
       }
     }
-    return _hold(sha256, fetched);
+    return removed() ? fetched : _hold(sha256, fetched);
   }
 
   bool _matches(Uint8List bytes, String sha256, int size) =>
@@ -150,10 +170,32 @@ class MediaImageCache {
   Future<void> remove(Iterable<String> hashes) async {
     final list = hashes.toList();
     for (final sha in list) {
+      _epochs[sha] = (_epochs[sha] ?? 0) + 1;
+      _jobs.remove(sha);
       final old = _memory.remove(sha);
       if (old != null) _memoryBytes -= old.length;
     }
     await _delete(<String>[for (final sha in list) keyOf(sha)]);
+  }
+
+  /// Deletes every kept picture whose hash is not in [live]: what a removal
+  /// left because the index had not loaded to name it, or a changed picture
+  /// replaced.
+  Future<void> prune(Set<String> live) async {
+    final kept = store;
+    if (kept == null || !_persisting) return;
+    try {
+      final orphans = <String>[
+        for (final key in await kept.keys())
+          if (key.startsWith('media-') &&
+              key.endsWith('.bin') &&
+              !live.contains(key.substring(6, key.length - 4)))
+            key,
+      ];
+      await _delete(orphans);
+    } on Object catch (e) {
+      onProblem?.call('kept pictures could not be listed: $e');
+    }
   }
 
   Future<void> _delete(List<String> keys) async {

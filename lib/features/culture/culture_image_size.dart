@@ -3,8 +3,11 @@ import 'dart:math';
 import 'package:flutter/widgets.dart';
 
 /// The widest a culture picture is decoded in a list, a thumbnail or a card:
-/// 1024 px, so one decoded picture takes about 4 MB at most whatever the
-/// file's size (wiki/Plan-Culture-Media.md, work package 4a, ADR-0060).
+/// 1024 px, so one decoded picture takes about 4 MB for a 4:3 picture whatever
+/// the file's size; a tall one decodes more rows (a 1024 x 2048 picture, 8 MB
+/// at the cap) and is still bounded. The size passed is the width only, and
+/// `Image` never upscales it (wiki/Plan-Culture-Media.md, work package 4a,
+/// ADR-0060).
 const int cultureDecodeCap = 1024;
 
 /// The widest any culture picture is ever decoded, in a full-screen viewer:
