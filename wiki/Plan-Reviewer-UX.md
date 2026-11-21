@@ -2,7 +2,7 @@
 
 Source of truth: this wiki page.
 
-Status: W7 (signed reviewer keys, #1658) is built on its branch and awaits the owner's `keygen` and public key before it switches on (see the note in the ADR); the rest was settled with the owner on 2026-11-20/21 and is built package by package; an ADR and approved mockups ([mockups README](https://github.com/aaronified/fluenough/blob/main/docs/mockups/README.md)) come before any code.
+Status: built, not yet released; see the [Release checklist](#release-checklist). Work packages W1 to W9 are merged to main (#1662 to #1670); the reviewer UX is not live until the owner has done the checklist. The decisions below were settled with the owner on 2026-11-20/21; an ADR and approved mockups ([mockups README](https://github.com/aaronified/fluenough/blob/main/docs/mockups/README.md)) came before the code.
 
 Goal (owner): ease of use, gated to actual speakers as much as possible, and comprehensive reviews that a second speaker can check easily.
 
@@ -206,13 +206,101 @@ Level (c) was not chosen.
 
 ## Open and next, in dependency order
 
-1. An ADR recording decisions 1 to 9 (including 9a to 9c): written, [ADR-0058](ADR-0058-Reviewer-UX), Proposed (Sonnet).
-2. Mockups (Sonnet), following the [mockups README](https://github.com/aaronified/fluenough/blob/main/docs/mockups/README.md): 1.4x text, light and dark.
-3. Issues, with dependencies marked as "blocked by" and the `blocked` label, never assumed.
-4. Code, only after the owner approves the mockups.
+1. An ADR recording decisions 1 to 9 (including 9a to 9c): written, [ADR-0058](ADR-0058-Reviewer-UX), Proposed (Sonnet). Done.
+2. Mockups (Sonnet): approved (`docs/mockups/reviewer-ux.html`). Done.
+3. Issues W1 to W10: made, with dependencies marked.
+4. Code W1 to W9: built and merged to main (#1662 to #1670), with W6 and the facet writing shipped off.
+5. The [Release checklist](#release-checklist) below: the owner's steps, in order.
 
-Still open: only the three readings marked "confirm" (9a, the Provisional-plus-Verified quorum in 9c, and the hidden file-level notice in decision 4), which wait for the owner. A4 and the session size are decided.
+Still open (the owner's, none built until answered):
 
-Also open: the persona replay and adversarial retest of the stricter placement mode (decision 1) must pass before the reviewer check ships.
+- The three readings marked "confirm": 9a (the existing shell), the Provisional-plus-Verified quorum in 9c, and the hidden file-level notice in decision 4.
+- The persona replay and adversarial retest of the stricter placement mode must pass on real banks before the reviewer check ships (checklist step 5).
+- The open questions listed in checklist step 9.
+A4 and the session size are decided.
+
+## Release checklist
+
+Built, not yet released. Everything below is for the owner, in order. The order matters: some steps must be in a release before the next step is safe. "Owner's machine" means a machine only the owner controls; code changes still go through a pull request to main (never docs, which go straight to main).
+
+### 1. Make the owner's signing key (owner, own machine; why: nothing else works without it)
+
+1. Run `python3 tools/reviewer_keys.py keygen --private <path>` on your own machine. Keep the private key offline; never put it in the repo, a workflow or an agent's hands. A leaked private key lets anyone mint reviewer keys.
+2. It prints a public key entry. Commit it into `assets/reviewer/public_keys.json`, replacing the placeholder row (`PLACEHOLDER-NOT-A-REAL-KEY-RUN-KEYGEN`). This is a code change: a pull request to main with a green CI.
+3. Release an app that carries it (Actions > Release, from main). Until the real public key ships, the "I have a reviewer key" row is hidden in the app and the bot ignores keys.
+4. The CHANGELOG line "Unlock courses with a reviewer key" must not ship before this release carries the public key (see step 8).
+
+### 2. Mint a key per Verified reviewer (owner, own machine; why: Verified status and course unlock)
+
+Run `python3 tools/reviewer_keys.py mint ...` for each Verified reviewer, naming their courses. Send the key to the reviewer (the reviewer pastes it in Settings > Reviewing). Keep every key id in a private list: you need the id to revoke. No FL code is exchanged: the first review mail carrying the key binds its id to the reviewer's FL code, in the private `fluenough/keys` Gmail label (nothing to set up, nothing public). `verify` reads a key from `--file` or standard input, not from an argument.
+
+### 3. Revoking (owner, on main; why: the only way to remove a reviewer)
+
+1. Add the key id (id only) to `assets/reviewer/denylist.txt` on main (a pull request, not a docs push: the app bundles this file).
+2. The app refuses the key from its next release; the bot from its next run.
+3. The workflow `.github/workflows/reviewer-revocation.yml` (on a denylist change, every six hours, or by hand from Actions, main only) then opens PRs to `decks-live`, never merged by the bot: one removal PR and one revert PR per revoked key. The owner reviews and merges them.
+4. The workflow needs what [Review-Bot-Setup](Review-Bot-Setup) lists: the GitHub App (`fluenough-review-bot`, Repository permissions Contents and Pull requests, Read and write), the two secrets `FLUENOUGH_BOT_APP_ID` and `FLUENOUGH_BOT_PRIVATE_KEY`, and the Gmail secrets the bot already uses (to read `fluenough/keys`). Check the "Revocation removes past work (W8)" section of that page before the first revocation. If the key store is unreadable, the bot applies nothing.
+
+### 4. Writing `facet_checks` to the decks: `WRITE_FACET_CHECKS` (owner decides, a coder builds; why: an app that does not know a card key rejects the file)
+
+`WRITE_FACET_CHECKS` in `tools/proposals.py` is `False`. While it is off the bot still reads facet answers (stale ones are dropped, fixes become proposals, a reviewer right on every facet signs the card off in `checked_by`), but it does not write the `facet_checks` key, so a flag cannot make a facet unsettled in the published decks. Do NOT flip it before an app that reads the key has been released: a phone keeps the decks it has rather than take a file that fails, and CI's "Released app reads the decks" would fail.
+
+How `min_app` works here (read from `decks/min_app.json`, `tools/deck_index.py` and `tools/validate_decks.py`):
+
+- `decks/min_app.json` has `languages {code: version}` and `files {path: version}`. The index copies each as `min_app`. An app that knows the key does not download what needs a newer app and says "Needs app X, Update"; an older app ignores `min_app` and so would still try the file.
+- It is only for NEW languages and NEW files. `check_released` in `tools/deck_index.py` reads the latest `v*` tag and refuses a `min_app.json` line for a language in that release's `assets/languages.yaml` or a file already in its `decks/` (an error in CI, a warning without tags). So `min_app.json` cannot gate the existing deck files that will gain `facet_checks`.
+- For a new card FIELD, the gate is automatic and per file: `CARD_FIELD_MIN_APP` in `tools/validate_decks.py` (today `character` 0.10.2 and `situation_icons` 0.10.3) and `Report.new_fields`; `_gate_fields` in `tools/deck_index.py` then raises that file's `min_app` to the release that reads the field, with no line in `min_app.json`. `facet_checks` is NOT in `CARD_FIELD_MIN_APP` today (the validator only checks its shape and the index strips it from the content hash), so nothing gates it yet.
+- The "Released app reads the decks" check (`.github/workflows/ci.yml`, job `release-reader`; decks-live's CI does the same for the real decks) reads the sample deck with the latest release's own code. A key the latest release rejects fails it: that is the backstop.
+
+Exact steps:
+
+1. Cut a release that includes W9's reader (`lib/core/review/published_facets.dart` and the deck parser change, merged in #1665). Confirm it is the latest `v*` tag.
+2. In a pull request to main (code, with one review and green CI): add `"facet_checks": "<that release>"` to `CARD_FIELD_MIN_APP` in `tools/validate_decks.py`, add `r.new_fields.add("facet_checks")` where the validator accepts a card's `facet_checks`, and add a sample card carrying `facet_checks` to the sample deck so the "Released app reads the decks" check proves the release reads it. Then a deck file that carries the key is indexed with `min_app` of that release, and an app older than it keeps its old copy ("Needs app X"). Tell the owner this also stops those older apps getting other changes to the same file until they update.
+3. In the same or the next pull request, set `WRITE_FACET_CHECKS = True` in `tools/proposals.py` (and read the comment in `tools/review_bot.py` that mentions it). Tools reach decks-live by the CI overlay; the lib files they read need the sync of step 7.
+4. Merge, then watch the first bot run on decks-live: "Released app reads the decks" and "Validate decks" must stay green. If a file fails, set the flag back to `False` (an entry that already carries the key is kept up to date whatever the flag says).
+
+Not verified here: step 2's code change has not been built or run; check that `facet_checks` is parsed in a card path the validator's `new_fields` hook reaches.
+
+### 5. The reviewer check: `kReviewerCheckEnabled` (owner decides; why: it grants eligibility on an unverifiable self-test)
+
+`kReviewerCheckEnabled` in `lib/core/placement/reviewer_check_rules.dart` stays `false`. No row, offer or screen exists while it is. The launch gate (W6, #1657, PR #1670):
+
+1. Re-run the persona replay (`test/reviewer_check_replay_test.dart`) and the adversarial retest on the REAL banks that will ship, not the made-up fixture. Read the "reviewer check replay: ..." CI log lines (the PR's author had not read the final head's). The bars: a true speaker at the top band at least 95%; a guesser, an always-first-option answerer, A1 and A2 learners and the V3 adversary at most 1%. 600 seeded runs cannot certify a 1% bar; the exact tail argument in the ADR note does.
+2. Check each course that will offer it has about 95 distinct top-band cards that are twice-checked (the item rule needs a key card checked twice on the facets it depends on). Thin courses fall back to signed keys.
+3. Flip the constant in one commit with a release and a CHANGELOG line (the W6 PR deliberately has none). Placement V3's own launch gate (adversarial retest) applies too.
+
+### 6. `QUORUM_NEEDS_VERIFIED` / `kQuorumNeedsVerified` stay off (owner decides; why: open design points)
+
+`kQuorumNeedsVerified` (`lib/core/review/review_quorum.dart`) and `QUORUM_NEEDS_VERIFIED` (`tools/review_quorum.py`) stay `false` until the W7 PR body's points are answered:
+
+- The decks-live validator cannot know tiers (they are private), so only the bot's own decisions use them; the published reviewed tag cannot be checked against tiers.
+- The public "held for the owner" label shows that a code sent a key.
+- A second key for the same code is held, not added (a reviewer with a lost key has no path).
+- The `fluenough/keys` label grows without bound (one `use` record per mail); it may need pruning.
+Turning it on is also the owner's reading in 9c (Provisional counts only alongside a Verified reviewer), which is unconfirmed.
+
+### 7. Syncing lib files to decks-live (a coder; why: tools tests read Dart files by path)
+
+CI lays main's tools over decks-live but not `lib/`. `tools/test_review_facets.py` reads Dart files from the repo, so decks-live needs byte-identical copies from main (done in PR #1666): `lib/core/review/fix_text.dart` (white-space rule), `nfc_data.dart` (NFC tables), `facets.dart` (facet and pointer-tag enums), `review_receipt.dart` (`receiptHashLength`), and `review_problems.dart` (only because `facets.dart` imports it). Not copied: `lib/l10n/app_en.arb` (decks-live holds strings main no longer has, so copying main's file would drop them; no tools test needs main's new strings), `review_quorum.dart` (no tools test reads it) and `crypto` in decks-live's `pubspec.yaml` (decks-live's CI does not build the app). Repeat the sync whenever a tools test starts reading another lib file or one of these changes (the comparison folds are checked against `test/support/comparison_fold_cases.json`, so check that file too).
+
+### 8. CHANGELOG lines now in [Unreleased] that mention hidden features (owner/coder, before the next release)
+
+Two lines, both under `## [Unreleased]` in `CHANGELOG.md`:
+
+- "**Unlock courses with a reviewer key.**" The key row is hidden until step 1's public key ships. Drop it from a release that does not carry the real public key; keep it for the release that does.
+- "**Review a card one detail at a time.**" Built from W3 and live as soon as the release ships (reviewers see the screens, the deck-view entries and the flagged-only mode); it does not depend on the key or the facet flag. Keep it, but note that other reviewers' facet answers only arrive after step 4, so until then the second-speaker views run on checked-by data only.
+
+W6 added no line (add one when step 5 flips). The facet-level bot work (W5, W8, W9) added none by design.
+
+### 9. Open owner questions (none built until answered)
+
+- **Pashto kaf.** The fold treating Arabic kaf (U+0643) as Persian kaf (U+06A9) for Pashto (`ps`) is applied on the strength of orthography guides; a Pashto speaker should confirm it. If wrong, change `tools/review_facets.py` (`COMPARISON_FOLDS`) and `lib/core/review/script_folds.dart` together (the shared vectors in `test/support/comparison_fold_cases.json` keep them equal).
+- **Culture and proverbs decks.** The strict-quorum rule for these decks (reviewed by facet) is a guess in W9; confirm it.
+- **A durable ledger for applied changes.** Applying a proposal removes it with its `accepted` list, so who agreed is only in the merged agreement PR's body (editable, deletable, and missing for old PRs and for who accepted a reading or IPA applied with a word). A durable record in the repo would make reverts reliable.
+- **Widened `PointerTag.facets`.** The mockup showed all eleven tags for every facet; the sheet shows only the tags valid for the facet, because the model drops a tag outside its facets when read back. Widening is the owner's call and a separate pull request (W4, #1663).
+- **Revocation and other files.** The revocation job reports a persistent failure when a creators, recommendations or topics file carries a revoked code (it cannot clean them), and does not clean `review-answers/` or `verified:` points. Decide how those files are cleaned.
+- **The older unit review.** Keep or retire the older unit review (the app bar button on a unit) beside "Review this unit" (W3 kept it).
+- **The facet-flag un-flag follow-up.** How a reviewer withdraws a flag they made.
+- Also still open from the PR bodies: W3's guesses (a "Done" button on the unit digest, "All good" also answers note, unit placement and offence rating right) and W9's data-format proposal for `facet_checks`, both owner-confirm.
 
 See also: [Reviewing Guide](Reviewing-Guide) · [ADR-0058](ADR-0058-Reviewer-UX) · [ADR-0038](ADR-0038-Review-Proposals) · [Review Staging](Plan-Review-Staging) · [Reviewing Scope](Plan-Reviewing-Scope) · [Placement V3](Plan-Placement-V3) · [Plans Index](Plans-Index)
