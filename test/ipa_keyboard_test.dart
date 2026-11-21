@@ -10,6 +10,7 @@ import 'package:fluenough/core/tts/tts_engine.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/typed_drill.dart';
+import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/widgets/ipa_keyboard.dart';
 import 'package:fluenough/ui/widgets/ipa_symbol_names.dart';
 import 'package:flutter/material.dart';
@@ -148,11 +149,8 @@ void main() {
       }
     });
 
-    testWidgets('every symbol\'s ARB name is the chart\'s name', (
-      tester,
-    ) async {
-      await pumpScreen(tester, const SizedBox());
-      final l10n = l10nOf(tester);
+    test('every symbol\'s ARB name is the chart\'s name', () async {
+      final l10n = await AppLocalizations.delegate.load(const Locale('en'));
       for (final s in ipaChart) {
         expect(ipaChartName(l10n, s.symbol), s.name, reason: s.symbol);
       }
