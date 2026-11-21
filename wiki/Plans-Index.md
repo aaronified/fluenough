@@ -42,7 +42,7 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [Reviewer UX](Plan-Reviewer-UX): the reviewer check in placement, signed codes and tiers, pointer tags, blind pass (built, not yet released: W1 to W9, #1662 to #1670)
 - [Sentence Building](Plan-Sentence-Building): building sentences by reasoning
 - [Settings Wording](Plan-Settings-Wording): settings that say what they do, on and off
-- [Speech Offline Alert](Plan-Speech-Offline-Alert): say when speech can't be recognised offline (Priority 2 after the placement release (owner 2026-11-07): on-device voice recognition, #1004; not built in the placement-release session)
+- [Speech Offline Alert](Plan-Speech-Offline-Alert): say when speech can't be recognised offline (part 1, the on-device Telugu AI listener, #1004, shipped in 0.10.0; whether the offline alert of part 2 is built was not checked)
 - [Synonym Dictionary](Plan-Synonym-Dictionary): synonym sets for typed English meanings
 - [Test Cut](Plan-Test-Cut): cut the tests down to behaviour
 - [Web Pwa](Plan-Web-Pwa): Fluenough on the web, as a PWA on GitHub Pages
