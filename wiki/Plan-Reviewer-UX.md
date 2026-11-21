@@ -135,14 +135,16 @@ A Provisional review is held in the queue and applied only when a Verified revie
 
 **Rater codes are public** (issues and decks name them), so a code alone does not prove who sent a review. The mapping should bind each code to the sender mail address its first review came from (already planned in `rater_code.dart`, **not built yet**). A review from another address is held for the owner.
 
-**Where the mapping lives (open, for the owner):**
+**Where the mapping lives (open, owner to decide):**
+
+The owner asked: "Then anyone can see it?" about a public mapping file on `decks-live`. Answer: yes. It would be public, including the tiers, so Verified codes would be easy to pick out. Rater codes are already public, so a copied code only fails if the sender-address binding (not built) exists.
 
 | Option | Effect |
 |---|---|
-| Private (a secret or private repo, read by the bot only) | The app cannot grey out courses offline, and the reviewer is told nothing until the owner replies. |
-| Public shared file on `decks-live`, keyed by code | The app can unlock the assigned courses; it reveals which languages a pseudonymous code reviews. |
+| Private (bot-only, read by `tools/mail_to_issues.py` only) | The app cannot grey out unassigned courses. A reviewer learns their status when the owner tells them. |
+| Public shared file on `decks-live`, keyed by code | The app can unlock the assigned courses; it reveals which languages and tiers a pseudonymous code holds, and makes Verified codes easy to pick out. |
 
-Recommendation: a public shared file keyed by code, bound to a hashed sender address that is kept private.
+The orchestrator's lean is now **private** (bot-only), for the reasons above. The owner decides.
 
 **Revocation** (owner: "I revoke. And it does revoke past work."): only the owner revokes, by removing the code from the mapping. That removes the reviewer's past contributions:
 
@@ -152,14 +154,27 @@ Recommendation: a public shared file keyed by code, bound to a hashed sender add
 
 Main downsides: the owner's manual mapping work; spoofing of a public code until the address binding is built; revocation causes churn on `decks-live`, and file-level reviewed tags may flip back.
 
-### 9. Not decided: defaults assumed, confirm
+### 9. Review queue
+
+Owner (2026-11-21): "least-checked first, grouped by unit within a session. So a session takes one unit's least-checked cards, and the flagged queue is a separate tab. Yes. But give them 1 more option to check the flagged and contested queue only."
+
+- A session takes one unit's least-checked cards, in path order within the unit.
+- The flagged queue is a separate tab.
+- A second mode lets a reviewer check only the flagged and contested queue.
+- Progress is saved and resumable.
+- Session size of 20 cards, with a continue option: **assumed, confirm** (not discussed).
+
+Main downside: jumping between units loses context.
+
+### 10. Not decided: defaults assumed, confirm
 
 | # | Default | Status |
 |---|---|---|
-| A1 | Review is a queue per unit with resumable progress. | assumed, confirm |
-| A3 | One-tap agree with another reviewer's proposal. | assumed, confirm |
-| A4 | Typing in the learner's script, with an IME hint and the card's existing reading shown. | assumed, confirm |
+| A3 | One-tap agree with another reviewer's proposal. | covered by decision 7 (open pass for proposals: accept, reject or offer another); no separate decision needed |
+| A4 | Typing in the learner's script, with an IME hint and the card's existing reading shown. | open, confirm |
 | Submit | In-app submit instead of mail is **not** planned; mail stays. | assumed, confirm |
+
+**A4 note.** The IME hint question was not discussed with the owner and is still open. The orchestrator's recommendation: no custom keyboard. Use the phone's keyboard, show the card's current reading, and offer candidate chips (engine candidates, lexicon variants) so typing is rare. This follows the owner's preference for YAGNI.
 
 ## Open and next, in dependency order
 
