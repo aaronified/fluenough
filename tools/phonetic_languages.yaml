@@ -211,6 +211,18 @@
     name: "Standard Mandarin; no Wiktionary form is taken (rules only)"
     untagged: false
 
+"mr":
+  dump: "Marathi"
+  variety:
+    # Measured on the kaikki.org dump (#1476): 1,626 narrow forms, 1,592
+    # untagged; they cover only 251 of the course's 2,719 targets (about 9%)
+    # and use another convention (t͡ɕ, ɕ, iː/uː on final syllables, and some
+    # wrong forms such as सहा [sa]). So the untagged form is NOT taken
+    # (untagged: false, no notes, no tags): nothing is imported, and every
+    # Marathi card gets its narrow form from decks/mr/mr-phonetics.yaml.
+    name: "Standard Marathi; no Wiktionary form is taken (rules only)"
+    untagged: false
+
 "kn":
   dump: "Kannada"
   variety:

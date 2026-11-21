@@ -408,12 +408,14 @@ class Card:
 
 
 def core_cards(decks: Path, lang: str) -> list[Card]:
-    """Every card of the language's core decks (`part: core`, a vocab deck),
-    in file order."""
+    """Every card of the language's core decks, in file order: a vocab deck
+    marked `part: core`, or a single-file vocab deck with no `part` at all
+    (such as `ja-en-hiragana`, whose cards carry their own English and a
+    broad `ipa`; #1428). A layer has `kind: "layer"` and is never taken."""
     cards: list[Card] = []
     for path in sorted((decks / lang).glob("*.yaml")):
         raw = vd._load_raw(path)
-        if not isinstance(raw, dict) or raw.get("part") != "core" \
+        if not isinstance(raw, dict) or raw.get("part") not in ("core", None) \
                 or raw.get("kind") not in (None, "vocab"):
             continue
         text = path.read_text(encoding="utf-8")
