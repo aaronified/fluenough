@@ -505,6 +505,8 @@ phonology). Then `python3 tools/derive_phonetic.py es --rederive --write`.
 | 6 | The rest of the languages in the owner's order | each one as in step 4 |
 | 7 | Pronouncing-words decks | after step 5, and after B1 for the path position |
 
+**Built 2026-11-21 (#305, part of #217):** `tools/compare_wiktionary_ipa.py` compares each core card's broad `ipa` and narrow `phonetic` with Wiktionary's forms and writes a review list of the disagreements (Markdown and JSON) with the agreement rate per language and per kind of difference; it writes nothing into the decks. Usage: [Deck-Tools](Deck-Tools#compare_wiktionary_ipapy).
+
 Estimate (mine): steps 1 to 3 about 30 to 50 hours of content and 6 to 10 of
 code if cards need no new field; one language's phonology deck 8 to 14 hours;
 the `phonetic` field and import tool 10 to 16 hours. Confidence: low.

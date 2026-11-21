@@ -270,13 +270,15 @@ def ensure_dump(lang: str, *, cache: Path = CACHE, refresh: bool = False,
     return dest
 
 
-def read_entries(lines: Iterable[str], wanted: set[str]) -> dict[str, list[dict]]:
+def read_entries(lines: Iterable[str], wanted: set[str],
+                 markers: tuple[str, ...] = ('"[',)) -> dict[str, list[dict]]:
     """The entries whose title is in [wanted], from a dump's lines. Lines
-    with no string that starts with `[` hold no narrow form, and are passed
-    by without being parsed: that is most of a big dump."""
+    with none of the [markers] (by default a string that starts with `[`,
+    a narrow form) are passed by without being parsed: that is most of a
+    big dump. `compare_wiktionary_ipa.py` adds `"/` for the broad forms."""
     entries: dict[str, list[dict]] = {}
     for line in lines:
-        if '"[' not in line:
+        if not any(m in line for m in markers):
             continue
         try:
             e = json.loads(line)
