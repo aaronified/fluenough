@@ -430,14 +430,17 @@ python3 tools/fetch_culture_media.py --lang te --refresh te-rec-foo # redo one e
 
 For each entry with no valid `image` (its file exists):
 
-1. **Wikidata item.** The entry's `wikidata` key, else a `wbsearchentities` search
+1. **Wikidata item.** The entry's `wikidata` key (trusted only after the same
+   identity check, else `ambiguous`), else a `wbsearchentities` search
    by name or title, accepted only if the item fits: a creator is a human (Q5)
    whose label or alias matches and whose birth and death years agree with the
    deck's within a year (five if `circa`), with at least one date confirmed; a
    work has a type that fits its `medium` (`WORK_TYPES`, written from memory and
-   meant to grow), a matching label, a publication year within a year of the
-   deck's and one of the deck's resolved creators (P50, P57, P58, P86, P170,
-   P175). One fit is taken; none, or more than one, is reported as `ambiguous`
+   meant to grow; an item whose type is only a subclass of a listed one is
+   `ambiguous`, not matched), a matching label, a publication year within a year of the
+   deck's and, when the deck work has creators, one of the deck's verified
+   creators named by the item (P50, P57, P58, P86, P170, P175): an item that names
+   none does not match a work that has creators. One fit is taken; none, or more than one, is reported as `ambiguous`
    with the candidates for a human, who can settle it by adding `wikidata:` to the
    entry. A QID found by search is written back as `wikidata`.
 2. **Candidate files** are named by the item's statements only: a creator P18; a
@@ -456,9 +459,15 @@ For each entry with no valid `image` (its file exists):
    author is plain text, at most 300 characters. Each skip is reported with its
    reason.
 4. **Download and encode.** The original when it is within the target and small
-   enough for the client's body limit (5 MB), else the Commons thumbnail at the
-   width that makes the longest side the target (the thumbnail parameter is a
-   width, so a tall picture gets a smaller width). ffmpeg decodes and writes WebP
+   enough for the client's body limit (5 MB), else the Commons thumbnail
+   (`thumburl` from the API, on `thumb.wikimedia.org`, used as given). Commons serves
+   only the standard widths (20, 40, 60, 120, 250, 330, 500, 960, 1280, 1920, 3840), so
+   the tool asks for the smallest standard width that is at least the width the
+   target needs (a tall picture needs a smaller width) and not above the
+   original's width, and ffmpeg makes the exact resize; if no standard width fits,
+   it takes the original. A thumbnail Commons refuses (HTTP 400 or 404) is a
+   per-file skip, `bad-thumb`, after a fallback to the original when that is under
+   5 MB. ffmpeg decodes and writes WebP
    with `scale='min(N,iw)':'min(N,ih)':force_original_aspect_ratio=decrease`: the
    longest side is at most N, **never upscaled**; N is 1024 for a portrait and 2048
    for a work (`--portrait-px`, `--work-px`, at most 2048). Quality 80, then 75, 70,
@@ -469,15 +478,20 @@ For each entry with no valid `image` (its file exists):
    `retrieved`, and `kind`: `poster` for P3383, `title-page` for P996; a portrait's
    `kind` is left for a reviewer) by a text patch, checked by a parse that nothing
    else changed, and by the validator's `check_image` on the written file, before
-   the YAML is saved.
+   the YAML is saved (`--refresh` checks the new file in a scratch folder and
+   replaces the old one atomically, so a failure leaves the old image and YAML
+   untouched). ffmpeg has a 120 s timeout and applies the picture's EXIF
+   orientation.
 5. **Living creators** get no portrait (decision 9): the deck must not say
    `living`, and Wikidata must give a date of death at least `--min-years-dead`
    years ago (5); `--include-living` lifts it.
 
 It is idempotent and resumable: an entry with a valid image is skipped (an entry
 whose image file is missing is listed, not redone; `--refresh ID` redoes one),
-every API answer and download is cached, and each entry is written when it is
-done. `--survey` and `--facts` write nothing and download no image (the survey
+every API answer and download is cached (`--cache`, default `.cache/wikimedia`,
+shared with the sound tool; `--refresh-cache` ignores it), and each entry is
+written when it is done. The plan's `--search` and `--max-bytes` are not built
+(`--limit` and `--max-requests` bound a run). `--survey` and `--facts` write nothing and download no image (the survey
 estimates bytes from the pixel size); `--dry-run` encodes in memory and writes
 nothing to the decks. The report (Markdown on screen, `--report`, `--json`) lists
 per language the entries, those already done, asked, fetched or available,
@@ -485,11 +499,12 @@ missing, skipped for author, licence and size, other skips, ambiguous, living,
 errors and bytes, the licences seen, the skipped files with the reason, the
 ambiguous matches for review, and the share of the 100 MB ceiling. Exit 3 means the
 run stopped at the rate limit or the request cap; exit 4 another Wikimedia error;
-the report is always written; run again to resume. Needs `ffmpeg` with libwebp. The
+exit 1 an error in the decks or files, reported mid-run; the report is always
+written; run again to resume. Needs `ffmpeg` with libwebp. The
 tests (`test_fetch_culture_media.py`) use a fake Wikidata, Commons and file server
 and a stubbed encode step; one test, skipped without ffmpeg and libwebp, checks the
-real resize. The fetching needs `www.wikidata.org`, `commons.wikimedia.org` and
-`upload.wikimedia.org`.
+real resize. The fetching needs `www.wikidata.org`, `commons.wikimedia.org`,
+`upload.wikimedia.org` and `thumb.wikimedia.org`.
 
 ## `mark_wiktionary.py`
 
