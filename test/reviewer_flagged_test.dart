@@ -47,7 +47,7 @@ Reviews _reviews(Map<String, Map<Facet, FacetAnswer>> byCard) =>
 
 FlaggedQueue _queue(
   Reviews reviews, {
-  Set<ReviewPair> allowed = const <ReviewPair>{_hi},
+  Set<ReviewPair>? allowed,
   OtherChecks others = const <String, Map<Facet, List<ReviewCheck>>>{},
   ReviewPair pair = _hi,
 }) => FlaggedQueue.build(
@@ -59,7 +59,7 @@ FlaggedQueue _queue(
       others: others,
     ),
   ],
-  allowed: allowed,
+  allowed: allowed ?? <ReviewPair>{_hi},
   reviews: reviews,
   ownCode: 'FL-AAAA',
 );
@@ -132,7 +132,7 @@ void main() {
           Facet.reading: _flag(PointerTag.readingWrong),
         },
       });
-      expect(_queue(reviews, allowed: const <ReviewPair>{_bn}).isEmpty, isTrue);
+      expect(_queue(reviews, allowed: <ReviewPair>{_bn}).isEmpty, isTrue);
     });
 
     test('a flag on a facet the card does not have is not listed', () {

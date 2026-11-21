@@ -153,6 +153,7 @@ class _Row extends StatelessWidget {
       label: '$word, ${l10n.reviewFlaggedRow(pill, reason)}',
       excludeSemantics: true,
       onTap: onTap,
+      // hint-ok: shows text
       child: InkWell(
         onTap: onTap,
         child: ConstrainedBox(
