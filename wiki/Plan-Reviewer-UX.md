@@ -193,26 +193,26 @@ Consequence: the file-level reviewed tag logic of ADR-0038 (a file is tagged `re
 | # | Default | Status |
 |---|---|---|
 | A3 | One-tap agree with another reviewer's proposal. | covered by decision 7 (open pass for proposals: accept, reject or offer another); no separate decision needed |
-| A4 | Typing in the learner's script, with an IME hint and the card's existing reading shown. | open; owner asked for elaboration (below), not decided |
+| A4 | Typing in the learner's script, with an IME hint and the card's existing reading shown. | decided (owner, 2026-11-21: "Script writing: b, fallback on a"; see the A4 note) |
 | Submit | In-app submit instead of mail is **not** planned; mail stays. | assumed, confirm |
 
-**A4 note.** Still open: the owner asked for elaboration, not a decision. Three levels:
+**A4 note.** Decided (owner, 2026-11-21: "Script writing: b, fallback on a"): level (b), falling back to (a) where a script or device gives no help. That is a prefilled field plus candidate chips, the card's reading beside it, paste allowed and a keyboard hint, falling back to a plain phone-keyboard field. The three levels were:
 
 - **(a) Phone keyboard only.** Cheapest; typing in an unfamiliar script is hard for some reviewers.
 - **(b) Phone keyboard plus helpers.** The field is prefilled with the current text, so most fixes are 1 to 2 character edits. Candidate chips (engine candidates, lexicon variants), the card's reading beside the field, paste allowed, and a one-line hint to enable the script's keyboard in system settings.
 - **(c) A custom in-app transliteration keyboard.** Type in Latin, get the script. A big per-script build.
 
-Orchestrator's recommendation: (b), in line with the owner's preference for YAGNI.
+Level (c) was not chosen.
 
 ## Open and next, in dependency order
 
-1. An ADR recording decisions 1 to 9 (including 9a to 9c) (Sonnet).
+1. An ADR recording decisions 1 to 9 (including 9a to 9c): written, [ADR-0058](ADR-0058-Reviewer-UX), Proposed (Sonnet).
 2. Mockups (Sonnet), following the [mockups README](https://github.com/aaronified/fluenough/blob/main/docs/mockups/README.md): 1.4x text, light and dark.
 3. Issues, with dependencies marked as "blocked by" and the `blocked` label, never assumed.
 4. Code, only after the owner approves the mockups.
 
-Still open: typing in the learner's script (A4; the orchestrator recommends level (b), the phone keyboard with helpers). The session size is decided (decision 9). The readings marked "confirm" (9a, the Provisional-plus-Verified quorum in 9c, and the hidden file-level notice in decision 4) wait for the owner.
+Still open: only the three readings marked "confirm" (9a, the Provisional-plus-Verified quorum in 9c, and the hidden file-level notice in decision 4), which wait for the owner. A4 and the session size are decided.
 
 Also open: the persona replay and adversarial retest of the stricter placement mode (decision 1) must pass before the reviewer check ships.
 
-See also: [Reviewing Guide](Reviewing-Guide) · [ADR-0038](ADR-0038-Review-Proposals) · [Review Staging](Plan-Review-Staging) · [Reviewing Scope](Plan-Reviewing-Scope) · [Placement V3](Plan-Placement-V3) · [Plans Index](Plans-Index)
+See also: [Reviewing Guide](Reviewing-Guide) · [ADR-0058](ADR-0058-Reviewer-UX) · [ADR-0038](ADR-0038-Review-Proposals) · [Review Staging](Plan-Review-Staging) · [Reviewing Scope](Plan-Reviewing-Scope) · [Placement V3](Plan-Placement-V3) · [Plans Index](Plans-Index)
