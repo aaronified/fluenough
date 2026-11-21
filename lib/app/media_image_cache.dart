@@ -171,7 +171,7 @@ class MediaImageCache {
     final list = hashes.toList();
     for (final sha in list) {
       _epochs[sha] = (_epochs[sha] ?? 0) + 1;
-      _jobs.remove(sha);
+      _jobs.remove(sha)?.ignore(); // the job ends on its own; it never throws
       final old = _memory.remove(sha);
       if (old != null) _memoryBytes -= old.length;
     }
