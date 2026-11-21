@@ -349,6 +349,18 @@ class _ReviewerCheckPageState extends State<ReviewerCheckPage> {
       shown: shown.isEmpty
           ? null
           : Column(mainAxisSize: MainAxisSize.min, children: shown),
+      actions: <Widget>[
+        TextButton(
+          key: const ValueKey<String>('reviewer-check-also-right'),
+          onPressed: () => _step((r) => r.alsoRight()),
+          child: Text(l10n.reviewerCheckAlsoRight),
+        ),
+        TextButton(
+          key: const ValueKey<String>('reviewer-check-dont-know'),
+          onPressed: () => _step((r) => r.dontKnow()),
+          child: Text(l10n.reviewerCheckDontKnow),
+        ),
+      ],
       children: <Widget>[
         Semantics(
           container: true,
@@ -375,18 +387,6 @@ class _ReviewerCheckPageState extends State<ReviewerCheckPage> {
               ],
             ],
           ),
-        ),
-      ],
-      actions: <Widget>[
-        TextButton(
-          key: const ValueKey<String>('reviewer-check-also-right'),
-          onPressed: () => _step((r) => r.alsoRight()),
-          child: Text(l10n.reviewerCheckAlsoRight),
-        ),
-        TextButton(
-          key: const ValueKey<String>('reviewer-check-dont-know'),
-          onPressed: () => _step((r) => r.dontKnow()),
-          child: Text(l10n.reviewerCheckDontKnow),
         ),
       ],
     );
@@ -448,7 +448,7 @@ class _ReviewerCheckPageState extends State<ReviewerCheckPage> {
 }
 
 /// The quiet offer under a placement result that reached the top band
-/// (frame 5e): "Help check <language> cards?", made once per course. It
+/// (frame 5e): "Help check `language` cards?", made once per course. It
 /// counts as made as soon as it is shown, so "No thanks", Done or leaving
 /// ends it for good.
 class ReviewerCheckOffer extends StatefulWidget {

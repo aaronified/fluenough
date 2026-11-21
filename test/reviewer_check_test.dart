@@ -157,7 +157,7 @@ void main() {
     test('a fix two reviewers agreed on makes a gold item, old form wrong', () {
       final bank = fixture.bank(
         history: <FixHistoryEntry>[
-          FixHistoryEntry(
+          const FixHistoryEntry(
             cardId: 'fx-50-0',
             facet: Facet.meaning,
             oldForm: 'a wrong meaning',

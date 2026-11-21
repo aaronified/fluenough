@@ -6,7 +6,6 @@
 //
 // Runs are seeded, so the numbers are the same every time. They are printed,
 // so that the CI log carries what the pull request reports.
-import 'package:fluenough/core/placement/reviewer_check_rules.dart';
 import 'package:fluenough/core/placement/reviewer_check_run.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -53,8 +52,8 @@ void main() {
     });
 
     test('a guesser passes with at most 1%', () {
-      final guesser = CheckPersona('guesser', knownDeck: -1);
-      final first = CheckPersona(
+      const guesser = CheckPersona('guesser', knownDeck: -1);
+      const first = CheckPersona(
         'always the first option',
         knownDeck: -1,
         firstOption: true,
