@@ -420,6 +420,51 @@ whose nasal differs from the rule. About 192 of the 3,287 readings differ
 (ph for f, r̥ for ṛ, word-initial vowels) are separate and are not part of
 this rule.
 
+### Telugu clitics, ఋ and ఫ (defaults chosen 2026-11-21, #1295)
+
+**Defaults chosen by the tools session, not an owner decision; the owner can
+reverse any of the three.** They settle the three items the 2026-11-14 comments
+on #1295 left open. Evidence: the Telugu cores on decks-live at 57bcdb6
+(2026-11-21), 10,692 distinct target and reading pairs, read without writing.
+`tools/transcribe_decks.py --check` reports 0 anusvara differences and 146
+others (109 on symbol, phonology and digit cards, 34 ṛ or r̥ against ru, and
+3 of spacing: `...` twice, a hyphen once), plus 4 suffix entries the tool lists
+apart as skipped.
+
+1. **Clitic anusvara.** An anusvara before a postposition joined to the word
+   follows the ordinary rule by the postposition's first letter: the nasal of
+   a stop (annantō, kāraṅgā, carmampai, byāṅku), `ṁ` before l, s and v
+   (annaṁlō). The comments name no postposition list and no other rule, so the
+   behaviour is the one that reproduces the most readings: the corpus holds
+   `ntō` 36, `ṅgā` 191, `mpai` 3, `ṅku` 11, `ṅki` 3 and `ṁlō` 141, against no
+   `ṁtō`, `ṁgā`, `ṁki` or `ṁku`, and `mlō` once (te-5411, a hint that did not
+   take). The tool already writes this, so there is no code change; a hint
+   that types ṁ before a stop (annaṁtō) does not win. The cards that wrote
+   `ṁ` before a clitic were already rewritten on decks-live.
+2. **ఋ and ృ are `ru`.** Kept as the tool writes it. Counted on the corpus:
+   `ru` 16 cards (krutajñata te-3313, vruthā te-4613, abhivruddhi te-6309,
+   druśyaṁ te-3606, brundaṁ te-2935, ru te-0007), `ṛ` 8 and `r̥` 7. The count
+   is a plurality, not the overwhelming majority that would override ISO 15919's
+   r̥, but the course rule in [Readings-ISO-15919](Readings-ISO-15919.md)
+   ("ऋ ... Telugu *ru*", with te-0007) is stated as a deliberate departure, and
+   `ru` is the same in Marathi, Gujarati and Kannada. This replaces item 1 of
+   "Telugu reading decisions (2026-11-15)", which kept the stored ṛ. The 15
+   cards with ṛ or r̥ (34 reading lines) would move to `ru`; if the owner
+   prefers ISO's `r̥`, the change is the Telugu `r` and `rr` entries of
+   `_VOWELS_TE` in `tools/transcribe.py` (and the corpus test).
+3. **ఫ is `ph`.** The tool writes `ph` (pʰ); a hint typing `f` is kept (a
+   loanword said with f). There is no general rule from the letters, so no
+   tool change: the corpus has `ph` on 138 cards and `f` on 8 (counted in cards; the test comment counts
+   readings, 250 against 11) (te-0329,
+   te-0529, te-0895 (its base word only), te-2415, te-2416, te-2439 and the
+   phonology rows te-6599 and te-6621, which may keep `f` to show the sound).
+   te-0872, te-0771 and te-grammar-when are already `ph` on decks-live (read
+   2026-11-21), so the three named cards need nothing. Per-card overrides to
+   `ph`, if wanted, are a decks-live change to the six others.
+
+The test `TeluguReadingRulesTest` in `tools/test_transcribe.py` keeps a small
+corpus of typed readings (card ids named) that the engine must reproduce.
+
 ### Other differences follow the tool (decided 2026-11-15)
 
 **Decision** (owner-delegated, approved by the parent orchestrator session on
@@ -437,7 +482,7 @@ the narrow forms derive from the broad `ipa`.
 2026-11-15; the owner can overturn it). The state below is what decks-live
 shows on 2026-11-15, not what is planned.
 
-1. **ṛ and ru.** The readings stay on ISO 15919 (ṛ, and r̥ in the narrow form),
+1. **ṛ and ru** (superseded 2026-11-21, see "Telugu clitics, ఋ and ఫ" below). The readings stay on ISO 15919 (ṛ, and r̥ in the narrow form),
    consistent with "based on ISO 15919". The tool's `ru` stays only in
    tool-derived IPA. The stored ISO readings are kept. Counted on decks-live
    (2026-11-15, the `reading` lines containing ṛ or r̥): 29 lines.
