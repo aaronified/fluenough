@@ -359,7 +359,7 @@ void main() {
       existingFix: existingFix,
     );
 
-    final card = Card(
+    const card = Card(
       id: 'hi-0001',
       deckId: 'hi-core',
       target: 'नमस्ते',
@@ -508,6 +508,17 @@ void main() {
         ]),
         isTrue,
       );
+      // What they said does not matter: a flag needs another speaker too.
+      expect(
+        needsAnotherSpeaker(<ReviewCheck>[
+          ReviewCheck(
+            rater: 'FL-BBBB-BBBB-0',
+            answer: FacetAnswer.flagged(<PointerTag>{PointerTag.ipaWrong}),
+          ),
+        ]),
+        isTrue,
+      );
+      expect(needsAnotherSpeaker(const <ReviewCheck>[]), isFalse);
       final two = <ReviewCheck>[
         for (var i = 0; i < kReviewQuorum; i++)
           ReviewCheck(rater: 'FL-BBBB-BBBB-$i'),

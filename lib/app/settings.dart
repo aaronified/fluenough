@@ -275,8 +275,8 @@ class SettingsNotifier extends ChangeNotifier {
   set reviewIntroShown(bool value) =>
       _set(_reviewIntroShown, value, (v) => _reviewIntroShown = v);
 
-  /// The review queue's run, as `ReviewRun.encode` writes it (ADR-0058, W3):
-  /// the session or pool group the reviewer is in, so that a closed review
+  /// The review queue's runs, a JSON object of `ReviewRun.toJson` by course
+  /// (ADR-0058, W3): the session or pool group the reviewer is in in each, so that a closed review
   /// resumes where it stopped. Null when there is none. Answers are not in
   /// it: they are kept in [reviews] as they are given.
   String? get reviewRun => _reviewRun;

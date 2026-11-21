@@ -531,20 +531,30 @@ class ReviewDigestView extends StatelessWidget {
                 ),
               ),
               if (own == null) ...<Widget>[
-                _VerdictButton(
-                  key: ReviewDigestView.tickKey(item),
-                  icon: Icons.check,
-                  hint: l10n.hintRight,
-                  label: l10n.reviewRightFacet(title),
-                  onPressed: () => item.after != null
-                      ? give(
-                          FacetAnswer.flagged(<PointerTag>{
-                            ownTagOf(item.facet),
-                          }, replacement: item.after),
-                          ReceiptDecision.accepted,
-                        )
-                      : give(const FacetAnswer.right(), ReceiptDecision.right),
-                ),
+                // Rival fixes are not settled by a tick: the pick-one view
+                // of the flagged-only mode decides them.
+                if (!(item.kind == DigestKind.contested &&
+                    item.fixes.length >= 2))
+                  _VerdictButton(
+                    key: ReviewDigestView.tickKey(item),
+                    icon: Icons.check,
+                    hint: l10n.hintRight,
+                    label: item.kind == DigestKind.changed
+                        ? l10n.reviewSecondAccept
+                        : l10n.reviewRightFacet(title),
+                    onPressed: () =>
+                        item.kind == DigestKind.changed && item.after != null
+                        ? give(
+                            FacetAnswer.flagged(<PointerTag>{
+                              ownTagOf(item.facet),
+                            }, replacement: item.after),
+                            ReceiptDecision.accepted,
+                          )
+                        : give(
+                            const FacetAnswer.right(),
+                            ReceiptDecision.right,
+                          ),
+                  ),
                 _VerdictButton(
                   key: ReviewDigestView.flagKey(item),
                   icon: Icons.flag_outlined,

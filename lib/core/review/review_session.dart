@@ -479,8 +479,15 @@ List<QueueCardRef> flaggedRefs(FlaggedQueue queue) => <QueueCardRef>[
     QueueCardRef(deckId: card.deckId, cardId: card.cardId),
 ];
 
-/// Whether [checks] show a facet that still needs another speaker: the
-/// checks agree and are fewer than the quorum. The card screen then says
-/// so, in words and without a number.
-bool needsAnotherSpeaker(Iterable<ReviewCheck> checks) =>
-    facetStatus(checks) == FacetStatus.checking;
+/// Whether a facet that other speakers have checked still needs another
+/// speaker: some check exists and fewer distinct speakers than the quorum
+/// made one. It depends only on how many speakers checked, never on what
+/// they said, so that it does not reveal a first verdict to a blind second
+/// speaker. The card screen then says so, in words and without a number.
+bool needsAnotherSpeaker(Iterable<ReviewCheck> checks) {
+  final raters = <String>{
+    for (final check in checks)
+      if (check.key.isNotEmpty) check.key,
+  };
+  return raters.isNotEmpty && raters.length < kReviewQuorum;
+}

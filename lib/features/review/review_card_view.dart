@@ -190,8 +190,10 @@ class _FacetRow extends StatelessWidget {
     Facet.reading => card.reading ?? '',
     Facet.ipa => card.ipa ?? '',
     Facet.meaning => card.native,
-    Facet.example => card.examples.firstOrNull?.target ?? '',
-    Facet.note => card.notes.firstOrNull?.text ?? '',
+    Facet.example => <String>[
+      for (final e in card.examples) e.target,
+    ].join('; '),
+    Facet.note => <String>[for (final n in card.notes) n.text].join('; '),
     Facet.unitPlacement => placeText,
     Facet.offenceRating => l10n.reviewOffenceMarked,
     Facet.audio => card.target,
@@ -218,26 +220,33 @@ class _FacetRow extends StatelessWidget {
       case Facet.meaning:
         return Text(card.native, style: theme.textTheme.titleMedium);
       case Facet.example:
-        final example = card.examples.first;
+        // Every example, so that "right" covers all that is shown.
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 8,
           children: <Widget>[
-            TargetText(
-              example.target,
-              language: deck.language,
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-              textAlign: TextAlign.start,
-              card: card,
-            ),
-            if (example.reading != null)
-              Text(
-                example.reading!,
-                style: theme.textTheme.bodySmall!.copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
+            for (final example in card.examples)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  TargetText(
+                    example.target,
+                    language: deck.language,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    textAlign: TextAlign.start,
+                    card: card,
+                  ),
+                  if (example.reading != null)
+                    Text(
+                      example.reading!,
+                      style: theme.textTheme.bodySmall!.copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  Text(example.native, style: theme.textTheme.bodyMedium),
+                ],
               ),
-            Text(example.native, style: theme.textTheme.bodyMedium),
           ],
         );
       case Facet.audio:
@@ -261,8 +270,17 @@ class _FacetRow extends StatelessWidget {
             ),
           ],
         );
-      case Facet.reading:
       case Facet.note:
+        // Every note, so that "right" covers all that is shown.
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 6,
+          children: <Widget>[
+            for (final note in card.notes)
+              Text(note.text, style: theme.textTheme.bodyMedium),
+          ],
+        );
+      case Facet.reading:
       case Facet.unitPlacement:
       case Facet.offenceRating:
         return Text(_text(l10n), style: theme.textTheme.bodyMedium);

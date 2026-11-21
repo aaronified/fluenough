@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:math';
 
 import '../core/feedback/report.dart';
@@ -237,13 +238,44 @@ class Reviewing {
     );
   });
 
-  /// The queue's run, the group of cards the reviewer is going through, or
-  /// null when there is none (ADR-0058, W3).
-  ReviewRun? get run => ReviewRun.decode(settings.reviewRun);
+  Map<String, Object?> _runs() {
+    try {
+      final json = jsonDecode(settings.reviewRun ?? '');
+      if (json is Map) {
+        return <String, Object?>{
+          for (final e in json.entries)
+            if (e.key is String) e.key as String: e.value,
+        };
+      }
+    } on Object {
+      // Anything else is no run.
+    }
+    return <String, Object?>{};
+  }
 
-  /// Keeps [run] so that a closed review resumes, or with null forgets it.
-  /// The answers are not in it: [answerFacet] keeps them as they are given.
-  void keepRun(ReviewRun? run) => settings.reviewRun = run?.encode();
+  /// The queue's run in [course] (a [ReviewPair.key]), the group of cards
+  /// the reviewer is going through there, or null when there is none
+  /// (ADR-0058, W3). Each course keeps its own.
+  ReviewRun? runOf(String course) {
+    final run = _runs()[course];
+    return run is Map ? ReviewRun.decode(jsonEncode(run)) : null;
+  }
+
+  /// The courses that have a run.
+  Set<String> get runCourses => _runs().keys.toSet();
+
+  /// Keeps [run] as [course]'s so that a closed review resumes, or with null
+  /// forgets it; other courses' runs stay. The answers are not in it:
+  /// [answerFacet] keeps them as they are given.
+  void keepRun(String course, ReviewRun? run) {
+    final runs = _runs();
+    if (run == null) {
+      runs.remove(course);
+    } else {
+      runs[course] = run.toJson();
+    }
+    settings.reviewRun = runs.isEmpty ? null : jsonEncode(runs);
+  }
 
   /// The answer to [proposal] on [card], or with [verdict] null, the answer
   /// taken back (ADR-0038). Sent with the review, like any mark.

@@ -164,6 +164,7 @@ class DigestItem {
     required this.before,
     this.after,
     this.reason,
+    this.fixes = const <String>[],
   });
 
   final QueueCardRef ref;
@@ -175,6 +176,10 @@ class DigestItem {
 
   /// The proposed text, when there is one.
   final String? after;
+
+  /// Every different fix the speakers proposed, each once. Two or more on a
+  /// contested row are rival fixes: the row is not answered with one tap.
+  final List<String> fixes;
 
   /// What a first speaker said as the reason: advisory, shown only after
   /// the second speaker's own verdict.
@@ -228,6 +233,7 @@ List<DigestItem> digestOf(
           kind: kind,
           before: seenTextOf(card, facet),
           after: fixes.firstOrNull,
+          fixes: fixes,
           reason: reasons[card.id]?[facet],
         ),
       );

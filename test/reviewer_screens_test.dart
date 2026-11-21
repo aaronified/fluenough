@@ -23,6 +23,7 @@ import 'package:fluenough/features/review/flagged_page.dart';
 import 'package:fluenough/features/review/review_card_view.dart';
 import 'package:fluenough/features/review/review_flow_page.dart';
 import 'package:fluenough/features/review/review_queue_page.dart';
+import 'package:fluenough/features/review/review_source.dart';
 import 'package:fluenough/features/review/second_speaker_views.dart';
 import 'package:flutter/material.dart' hide Card;
 import 'package:flutter_test/flutter_test.dart';
@@ -234,7 +235,11 @@ void main() {
       final l10n = l10nOf(tester);
       expect(find.text('Family words'), findsOneWidget);
       expect(find.text(l10n.reviewCardOf(1, 2)), findsOneWidget);
-      expect(state.reviewing.run, isNotNull, reason: 'kept from the start');
+      expect(
+        state.reviewing.runOf('te/en'),
+        isNotNull,
+        reason: 'kept from the start',
+      );
 
       await _tap(tester, ReviewCardView.tickKey(Facet.reading));
       await _tap(tester, ReviewCardView.tickKey(Facet.ipa));
@@ -248,7 +253,7 @@ void main() {
       expect(find.byKey(ReviewFlowPage.endKey), findsOneWidget);
       expect(find.text(l10n.reviewEndContinue), findsOneWidget);
       expect(
-        state.reviewing.run,
+        state.reviewing.runOf('te/en'),
         isNull,
         reason: 'a finished session is not resumed',
       );
@@ -257,7 +262,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text('More family words'), findsOneWidget);
       expect(find.text(l10n.reviewCardOf(1, 1)), findsOneWidget);
-      expect(state.reviewing.run!.phase, ReviewPhase.pool);
+      expect(state.reviewing.runOf('te/en')!.phase, ReviewPhase.pool);
 
       await _tap(tester, ReviewCardView.tickKey(Facet.reading));
       await _tap(tester, ReviewCardView.doneKey);
@@ -607,6 +612,52 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
+    testWidgets('a contested row with rival fixes has no tick', (tester) async {
+      final (state, deck, card) = await words(tester);
+      FacetAnswer fix(String t) => FacetAnswer.flagged(<PointerTag>{
+        PointerTag.meaningWrong,
+      }, replacement: t);
+      final source = ReviewSource(
+        pair: _te,
+        units: <QueueUnit>[
+          QueueUnit(
+            number: 1,
+            title: 'Family words',
+            decks: <FlaggedSourceDeck>[
+              FlaggedSourceDeck(
+                deckId: wordsDeck,
+                pair: _te,
+                cards: deck.cards,
+                others: <String, Map<Facet, List<ReviewCheck>>>{
+                  card.id: <Facet, List<ReviewCheck>>{
+                    Facet.meaning: <ReviewCheck>[
+                      ReviewCheck(rater: otherCode, answer: fix('mum')),
+                      ReviewCheck(rater: 'FL-1111-1111-1', answer: fix('mama')),
+                    ],
+                  },
+                },
+              ),
+            ],
+          ),
+        ],
+      );
+      final items = digestOf(source, 1);
+      expect(items.single.kind, DigestKind.contested);
+      expect(items.single.fixes, <String>['mum', 'mama']);
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: ReviewDigestView(items: items, source: source, onDone: () {}),
+        ),
+        state: state,
+      );
+      expect(find.byKey(ReviewDigestView.tickKey(items.single)), findsNothing);
+      expect(
+        find.byKey(ReviewDigestView.flagKey(items.single)),
+        findsOneWidget,
+      );
+    });
+
     testWidgets('the card screen says another speaker has to check it, and '
         'shows nothing another speaker said', (tester) async {
       _narrow(tester);
@@ -636,6 +687,49 @@ void main() {
       for (final tag in PointerTag.values) {
         expect(find.text(pointerTagLabel(l10n, tag)), findsNothing);
       }
+    });
+  });
+
+  group('what the queue reads', () {
+    test('a card in checked_by counts as checked on every facet', () async {
+      final state = await _reviewer(checkedBy: <String>[otherCode]);
+      final source = reviewSourceOf(state, _te);
+      CheckScore score(String id) {
+        final found = source.find(QueueCardRef(deckId: wordsDeck, cardId: id))!;
+        return scoreOf(found.card, found.deck, const Reviews(), null);
+      }
+
+      expect(score(alikeCard).least, 0);
+      expect(score(plainCard).least, 1);
+      // So the unchecked card is asked first.
+      final run = ReviewQueueBuilder.startSession(
+        source,
+        reviews: const Reviews(),
+        ownCode: null,
+      )!;
+      expect(run.cards.first.cardId, alikeCard);
+    });
+
+    test('each course keeps its own run', () async {
+      final state = await _reviewer();
+      ReviewRun run(String course) => ReviewRun(
+        course: course,
+        phase: ReviewPhase.session,
+        unit: 1,
+        title: course,
+        cards: const <QueueCardRef>[
+          QueueCardRef(deckId: wordsDeck, cardId: plainCard),
+        ],
+        visited: const <int>[1],
+      );
+      final reviewing = state.reviewing;
+      reviewing.keepRun('te/en', run('te/en'));
+      reviewing.keepRun('hi/en', run('hi/en'));
+      expect(reviewing.runOf('te/en')!.title, 'te/en');
+      expect(reviewing.runOf('hi/en')!.title, 'hi/en');
+      reviewing.keepRun('te/en', null);
+      expect(reviewing.runOf('te/en'), isNull);
+      expect(reviewing.runOf('hi/en'), isNotNull);
     });
   });
 

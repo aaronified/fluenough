@@ -179,7 +179,7 @@ class _ReviewFlowPageState extends State<ReviewFlowPage> {
       case ReviewMode.queue:
         final source = reviewSourceOf(_state, widget.pair!);
         _source = source;
-        var run = reviewing.run;
+        var run = reviewing.runOf(source.pair.key);
         if (run == null ||
             run.course != source.pair.key ||
             run.cards.every((c) => source.find(c) == null)) {
@@ -239,7 +239,7 @@ class _ReviewFlowPageState extends State<ReviewFlowPage> {
     _title = run.title;
     _stage = _Stage.cards;
     _digestShown = false;
-    _state.reviewing.keepRun(run);
+    _state.reviewing.keepRun(run.course, run);
     final open = resume
         ? ReviewQueueBuilder.firstOpen(
             _source!,
@@ -342,7 +342,7 @@ class _ReviewFlowPageState extends State<ReviewFlowPage> {
             ownCode: _ownCode,
           ) !=
           null;
-      reviewing.keepRun(null);
+      reviewing.keepRun(run.course, null);
       _stage = _Stage.end;
       _rebuild();
       return;
@@ -354,7 +354,7 @@ class _ReviewFlowPageState extends State<ReviewFlowPage> {
       ownCode: _ownCode,
     );
     if (next == null) {
-      reviewing.keepRun(null);
+      reviewing.keepRun(run.course, null);
       _canContinue = false;
       _stage = _Stage.end;
       _rebuild();

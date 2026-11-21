@@ -224,8 +224,7 @@ offer.
   only tallies the answers in `review-answers/` in the repository, as reviewer
   codes and answers only).
 - **A No opens a pull request; the next answer decides it** (owner,
-  2026-10-30: "1st review opens PR. Second review either merges or closes
-  it."). The first reviewer to answer No, or to flag a recording, makes the
+  2026-10-30). The first reviewer to answer No, or to flag a recording, makes the
   review bot open a pull request for that data point, and it stays open. The
   next reviewer's answer decides: the same No (or flag) merges it, and a Yes
   closes it for good; a disagreement is not sent to a third reviewer. A

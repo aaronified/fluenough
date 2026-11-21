@@ -119,6 +119,15 @@ class _SessionTab extends StatefulWidget {
 class _SessionTabState extends State<_SessionTab> {
   String? _course;
 
+  Object? _memoReviews;
+  Object? _memoDecks;
+  String? _memoRuns;
+  String? _memoCourse;
+  List<ReviewSource> _sources = const <ReviewSource>[];
+  ReviewSource? _source;
+  ReviewRun? _run;
+  ReviewRun? _shown;
+
   @override
   Widget build(BuildContext context) {
     final state = AppScope.of(context);
@@ -132,33 +141,48 @@ class _SessionTabState extends State<_SessionTab> {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final sources = reviewSourcesOf(state);
+    final reviewing = state.reviewing;
+    // The sources and the session line are worked out again only when what
+    // they read changes, not on every settings change.
+    if (!identical(_memoReviews, reviewing.reviews) ||
+        !identical(_memoDecks, state.decks) ||
+        _memoRuns != state.settings.reviewRun ||
+        _memoCourse != _course) {
+      _memoReviews = reviewing.reviews;
+      _memoDecks = state.decks;
+      _memoRuns = state.settings.reviewRun;
+      _memoCourse = _course;
+      _sources = reviewSourcesOf(state);
+      if (_sources.isNotEmpty) {
+        // The course picked, else the first with a run, else the first.
+        final withRun = _sources.where(
+          (s) => reviewing.runOf(s.pair.key) != null,
+        );
+        final key = _course ?? (withRun.firstOrNull ?? _sources.first).pair.key;
+        _source = _sources.firstWhere(
+          (s) => s.pair.key == key,
+          orElse: () => _sources.first,
+        );
+        _run = reviewing.runOf(_source!.pair.key);
+        _shown =
+            _run ??
+            ReviewQueueBuilder.startSession(
+              _source!,
+              reviews: reviewing.reviews,
+              ownCode: reviewing.code?.toString(),
+            );
+      }
+    }
+    final sources = _sources;
     if (sources.isEmpty) {
       return EmptyState(
         icon: Icons.style_outlined,
         title: l10n.reviewQueueEmpty,
       );
     }
-    final reviewing = state.reviewing;
-    final run = reviewing.run;
-    // The course the run is in, else the one picked, else the first.
-    final key =
-        _course ??
-        (run != null && sources.any((s) => s.pair.key == run.course)
-            ? run.course
-            : sources.first.pair.key);
-    final source = sources.firstWhere(
-      (s) => s.pair.key == key,
-      orElse: () => sources.first,
-    );
-    final resuming = run != null && run.course == source.pair.key;
-    final shown = resuming
-        ? run
-        : ReviewQueueBuilder.startSession(
-            source,
-            reviews: reviewing.reviews,
-            ownCode: reviewing.code?.toString(),
-          );
+    final source = _source!;
+    final resuming = _run != null;
+    final shown = _shown;
     final names = languageNamesOf(state);
     final open = shown == null
         ? 0
