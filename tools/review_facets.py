@@ -126,8 +126,8 @@ def read_answer(facet: str, rater: str, raw: object) -> Answer | None:
         return Answer(rater) if raw.get("ok") is True else None
     if not isinstance(tags, list):
         return None
-    kept = tuple(t for t in dict.fromkeys(tags)
-                 if isinstance(t, str) and facet in TAG_FACETS.get(t, ()))
+    kept = tuple(dict.fromkeys(t for t in tags if isinstance(t, str)
+                               and facet in TAG_FACETS.get(t, ())))
     if not kept:
         return None
     fix = raw.get("fix")

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Who checked a card (#449, ADR-0038 amended): the validator's checks of
 `checked_by`, the bot's edits that add a reviewer's sign-off to it and tag
-a fully checked deck `reviewed`, and the content hash that leaves
+a deck `reviewed` once every facet of every card has the quorum, and the content hash that leaves
 `checked_by` out so learners are not offered an update for it.
 
 Stdlib `unittest` plus PyYAML, like the validator itself. Every test works
@@ -109,13 +109,26 @@ class Writing(Base):
 
 
 class Tagging(Base):
+    """The file-level tag follows the facet rule (ADR-0058, W9): every facet of
+    every card has the review quorum, here two distinct codes. A code in
+    `checked_by` is a check of every facet the card has, so two codes signing
+    every card off settle every facet. The facet-level cases are in
+    tools/test_facet_checks.py."""
+
     def _partly_checked_stays_unreviewed(self) -> None:
-        result = self.check_all("zz-en-home", self.core_cards()[:-1])
+        self.check_all("zz-en-home", self.core_cards()[:-1])
+        result = self.check_all("zz-en-home", self.core_cards()[:-1], code=BOB)
         self.assertEqual(result.reviewed, [])
         self.assertIn('tags: ["unreviewed"]', self.core.read_text(encoding="utf-8"))
 
-    def _every_card_checked_is_reviewed(self) -> None:
+    def _one_code_is_not_the_quorum(self) -> None:
         result = self.check_all("zz-en-home", self.core_cards())
+        self.assertEqual(result.reviewed, [])
+        self.assertIn('tags: ["unreviewed"]', self.core.read_text(encoding="utf-8"))
+
+    def _every_card_checked_twice_is_reviewed(self) -> None:
+        self.check_all("zz-en-home", self.core_cards())
+        result = self.check_all("zz-en-home", self.core_cards(), code=BOB)
         self.assertEqual(sorted(result.reviewed), ["zz-en-home", "zz-home"])
         self.assertIn('tags: ["reviewed"]\n', self.core.read_text(encoding="utf-8"))
         self.assertNotIn("unreviewed", self.core.read_text(encoding="utf-8"))
@@ -125,7 +138,8 @@ class Tagging(Base):
 
     def test_every_card_checked_tags_the_deck_reviewed(self) -> None:
         cases = (
-            self._every_card_checked_is_reviewed,
+            self._every_card_checked_twice_is_reviewed,
+            self._one_code_is_not_the_quorum,
             self._partly_checked_stays_unreviewed,
         )
         for case in cases:
