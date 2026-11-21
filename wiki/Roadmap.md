@@ -76,7 +76,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-12 approved open issues.
+11 approved open issues.
 
 **Enhancements**
 
@@ -90,7 +90,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 - [#474](https://github.com/aaronified/fluenough/issues/474) Onboarding journey: where the major functions live and what they do, replayable from Settings
 - [#97](https://github.com/aaronified/fluenough/issues/97) Parental supervision: child profiles with no abuse-related content, and admin controls
-- [#403](https://github.com/aaronified/fluenough/issues/403) Plan: reviewing decks in the app, sent by mail
 - [#509](https://github.com/aaronified/fluenough/issues/509) Milestone exams: reading passages and questions at each B1 milestone, required to continue
 - [#523](https://github.com/aaronified/fluenough/issues/523) Card images: Wikimedia Commons and OpenMoji, shipped with decks
 - [#723](https://github.com/aaronified/fluenough/issues/723) Focused tracks: learn only one part of a course (a script, a grammar primer, verb forms, a theme)
@@ -138,12 +137,11 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 2 · B1 plans
 
-5 approved open issues.
+4 approved open issues.
 
 **Other**
 
 - [#39](https://github.com/aaronified/fluenough/issues/39) Telugu and Kannada: refit to the Dravidian order
-- [#209](https://github.com/aaronified/fluenough/issues/209) Plan: a B1 plan in every path
 - [#413](https://github.com/aaronified/fluenough/issues/413) Plan: a phrasebook, then words, then rules, then sentences
 - [#419](https://github.com/aaronified/fluenough/issues/419) Words, rules, sentences: Telugu content
 - [#420](https://github.com/aaronified/fluenough/issues/420) Words, rules, sentences: content for the other courses
@@ -182,7 +180,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1136](https://github.com/aaronified/fluenough/issues/1136) Phrasal and multi-word verb decks, levelled, in the languages that have them
 - [#1139](https://github.com/aaronified/fluenough/issues/1139) Professional decks: targeted situations for academia, engineering, computer science, medicine, archaeology and other travelling professions (hidden from the main screen, found by search)
 - [#1143](https://github.com/aaronified/fluenough/issues/1143) English Braille as a script of English, not a separate course (the IPA stays separate)
-- [#1145](https://github.com/aaronified/fluenough/issues/1145) Situations screen: the learner chooses which situations to show; new situations teach only widely used words and phrases
 - [#1146](https://github.com/aaronified/fluenough/issues/1146) Japanese: about 1000 kanji by B1 (deferred)
 - [#1158](https://github.com/aaronified/fluenough/issues/1158) Offline speech recognisers for every priority language (Indic, European, East Asian)
 - [#1221](https://github.com/aaronified/fluenough/issues/1221) IPA keyboard: follow-ups before it is switched on
@@ -308,7 +305,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#665](https://github.com/aaronified/fluenough/issues/665) English Braille: a facts file (qbe-facts.yaml)
 - [#722](https://github.com/aaronified/fluenough/issues/722) Conversation mode: transcribe two people talking, in real time
 - [#734](https://github.com/aaronified/fluenough/issues/734) Sounds deck for every language: its sounds, and how they differ from the learner's native sounds
-- [#836](https://github.com/aaronified/fluenough/issues/836) An IPA keyboard for typed answers in the IPA course
 - [#952](https://github.com/aaronified/fluenough/issues/952) Skill switches: matching and choosing switches (remainder of #243)
 - [#959](https://github.com/aaronified/fluenough/issues/959) Paths and starter decks (first words and phrases) for every planned language
 - [#1103](https://github.com/aaronified/fluenough/issues/1103) Play Store release: paid colour themes, pure black and wallpaper colours (free on GitHub)
@@ -365,13 +361,11 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1215](https://github.com/aaronified/fluenough/issues/1215) Language: Ashokan Prakrit: full deck format
 - [#1244](https://github.com/aaronified/fluenough/issues/1244) Spanish: more clean sentences so Find my level can ask sentence picks again
 - [#1245](https://github.com/aaronified/fluenough/issues/1245) Hindustani: more clean sentences so Find my level can ask sentence picks
-- [#1269](https://github.com/aaronified/fluenough/issues/1269) Situations: more icon keys, so a language can have more than six situations
 - [#1295](https://github.com/aaronified/fluenough/issues/1295) Telugu cards disagree on the medial anusvara reading (ṁ, ṅ, n, m)
 - [#1361](https://github.com/aaronified/fluenough/issues/1361) Telugu transcription: no reading for rare letters (ఌ ౡ ఁ ౘ ౙ), wrong for ఱ
 - [#1369](https://github.com/aaronified/fluenough/issues/1369) Spanish narrow IPA rules: five gaps found reviewing the first whole-course run
 - [#1428](https://github.com/aaronified/fluenough/issues/1428) Japanese tools: transcribe.py ja emits ASCII g for ぎゃ/ぎょ/ぎゅ; derive/import skip decks/ja/ja-en-hiragana.yaml
 - [#1476](https://github.com/aaronified/fluenough/issues/1476) Marathi: add "mr" to tools/phonetic_languages.yaml (narrow IPA, MR-110)
-- [#1480](https://github.com/aaronified/fluenough/issues/1480) Chinese: Mandarin broad IPA tooling (shared tools change, branch tools/zh-phonetics)
 - [#1483](https://github.com/aaronified/fluenough/issues/1483) Tamil transcription engine in tools/transcribe.py (TA-110)
 - [#1657](https://github.com/aaronified/fluenough/issues/1657) Reviewer UX W6: Reviewer-check mode in placement
 
@@ -382,7 +376,7 @@ A plan with no tracking issue is flagged.
 - [achievements, quietly](https://github.com/aaronified/fluenough/wiki/Plan-Achievements) (Written 2026-10-05), tracks #223
 - [an AI conversation partner, within what the learner knows](https://github.com/aaronified/fluenough/wiki/Plan-Ai-Conversation) (Written 2026-10-05), tracks #219
 - [hands-free audio drills](https://github.com/aaronified/fluenough/wiki/Plan-Audio-Drills) (Written 2026-10-05), tracks #224
-- [a B1 plan in every path](https://github.com/aaronified/fluenough/wiki/Plan-B1-Plans) (Written 2026-10-06), tracks #209
+- [a B1 plan in every path](https://github.com/aaronified/fluenough/wiki/Plan-B1-Plans) (Written 2026-10-06), **no tracking issue**
 - [books, films and songs you bring, with questions on them](https://github.com/aaronified/fluenough/wiki/Plan-Books-Films-Songs) (Written 2026-10-06), tracks #215
 - [Assamese genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Assamese), **no tracking issue**
 - [Bengali genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Bengali), **no tracking issue**
@@ -403,7 +397,7 @@ A plan with no tracking issue is flagged.
 - [Tamil genre decks, verified sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Tamil), **no tracking issue**
 - [Telugu genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Telugu), **no tracking issue**
 - [Vedic Sanskrit genre decks, verified sourcing list (culture, creators, sayings, multi-word verbs, recommendations, facts)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Vedic), **no tracking issue**
-- [reviewing decks in the app, sent by mail](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Browser) (Written 2026-10-06), tracks #403
+- [reviewing decks in the app, sent by mail](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Browser) (Written 2026-10-06), **no tracking issue**
 - [deck kinds, levels, hidden decks, sources, creators, recommendations, topics and search kinds as data](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Kinds-And-Topics), **no tracking issue**
 - [deck-owned data on decks-live](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Owned-Data), **no tracking issue**
 - [decks in a branch of their own](https://github.com/aaronified/fluenough/wiki/Plan-Decks-Branch), **no tracking issue**
