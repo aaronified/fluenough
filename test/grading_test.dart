@@ -292,7 +292,7 @@ void main() {
       test('a letter with its mark typed apart is the precomposed one', () {
         same('a\u0303', '\u00E3', because: 'ã');
         same('e\u0301', '\u00E9', because: 'é');
-        same('\u0251\u0303\u02D0', '\u0251\u0303\u02D0', because: 'ɑ̃ː');
+        same('o\u0302\u0323', 'o\u0323\u0302', because: 'ộ, either order');
         // Marks on one letter, typed in either order, are one spelling.
         same('a\u0323\u0301', 'a\u0301\u0323', because: 'mark order');
       });
