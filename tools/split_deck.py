@@ -58,9 +58,9 @@ from validate_decks import DeckLoader  # noqa: E402
 CORE_CARD = ("id", "target", "reading", "ipa", "alt_target", "pos", "hears", "gender",
              "tags", "audio", "audio_credit", "examples", "modes", "picture",
              "image", "image_credit", "notes", "phrasebook", "bases", "rules",
-             "proposed", "checked_by")
+             "proposed", "checked_by", "facet_checks")
 CORE_REF = ("ref", "reading", "ipa", "tags", "modes", "examples", "notes",
-            "proposed", "checked_by")
+            "proposed", "checked_by", "facet_checks")
 LAYER_ENTRY = ("native", "alt_native", "wiktionary")
 CORE_ENTRY = ("lemma", "key", "reading", "ipa", "forms", "readings", "ipas")
 

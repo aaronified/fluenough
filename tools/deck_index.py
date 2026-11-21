@@ -406,21 +406,25 @@ def _top(text: str, key: str) -> str | None:
 
 
 _PROPOSED_KEY = re.compile(r"^( *)proposed:[ \t]*$")
-# A card's `checked_by`, the rater codes that signed it off (#449), and its
-# `verified`, the data points reviewers settled (#519): one
+# A card's `checked_by`, the rater codes that signed it off (#449), its
+# `verified`, the data points reviewers settled (#519), and its `facet_checks`,
+# what reviewers said about each facet (ADR-0058, W9): one
 # line as the bot writes it, `checked_by: ["FL-…"]`, or a bare key with
 # its items under it.
-_CHECKED_KEY = re.compile(r"^( *)(?:checked_by|verified):[ \t]*(\S.*)?$")
+_CHECKED_KEY = re.compile(r"^( *)(?:checked_by|verified|facet_checks):[ \t]*(\S.*)?$")
 # The same, at the end of a card written on one line in flow style, as the
-# bot writes it there: `- { id: "te-0001", …, checked_by: ["FL-…"] }`.
+# bot writes it there: `- { id: "te-0001", …, checked_by: ["FL-…"] }`. A
+# `facet_checks` mapping is a flow mapping of quoted text (any character in
+# it, braces and brackets too), matched as one.
 _CHECKED_IN_FLOW = re.compile(
-    rb"(?:, (?:checked_by|verified): \[[^\]\n]*\])+(?= ?\}[ \t]*\r?\n?$)")
+    rb"(?:, (?:checked_by|verified): \[[^\]\n]*\]"
+    rb"|, facet_checks: \{(?:\"(?:[^\"\\\n]|\\.)*\"|[^\"\n])*?\})+(?= ?\}[ \t]*\r?\n?$)")
 
 
 def content_bytes(data: bytes) -> bytes:
-    """[data], a deck file, with its proposals and its cards' `checked_by`
-    and `verified` taken out: what a learner is offered an update for (ADR-0038, #444,
-    #449).
+    """[data], a deck file, with its proposals and its cards' `checked_by`,
+    `verified` and `facet_checks` taken out: what a learner is offered an
+    update for (ADR-0038, #444, #449; ADR-0058, W9).
 
     The review bot writes a card's proposals as a `proposed:` line and its
     items, one line each, indented under it; this drops those lines and
@@ -459,6 +463,7 @@ def content_bytes(data: bytes) -> bytes:
         if m is None:
             out.append(_CHECKED_IN_FLOW.sub(b"", raw[i])
                        if b"checked_by" in raw[i] or b"verified" in raw[i]
+                       or b"facet_checks" in raw[i]
                        else raw[i])
             i += 1
             continue
@@ -491,8 +496,8 @@ def _file_entry(path: Path, rep: vd.Report | None) -> dict:
         "path": _rel(path),
         "size": len(data),
         "sha256": hashlib.sha256(data).hexdigest(),
-        # The hash a learner's phone compares: proposals, checked_by and
-        # verified left out (#444, #449, #519).
+        # The hash a learner's phone compares: proposals, checked_by,
+        # verified and facet_checks left out (#444, #449, #519, ADR-0058).
         "content_sha256": hashlib.sha256(content_bytes(data)).hexdigest(),
         "schema": int(schema) if schema is not None and schema.isdigit() else 0,
         "kind": _top(text, "kind") or "vocab",

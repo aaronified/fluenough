@@ -35,6 +35,7 @@ from urllib.parse import urlparse
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from rater_codes import rater_code  # noqa: E402
+import review_facets  # noqa: E402
 
 try:
     import yaml
@@ -3622,13 +3623,14 @@ def _card_entries(raw: object) -> list[tuple[str, object, dict]]:
 
 
 def strip_checks(raw: object) -> list[Checked]:
-    """Takes every card entry's `checked_by` and `verified` out of [raw], a
+    """Takes every card entry's `checked_by`, `verified` and `facet_checks`
+    (ADR-0058, W9) out of [raw], a
     deck file as loaded, and returns them, as strip_proposals does
     proposals: they are records of review, allowed on any card entry (a
     single file's, a core's, a layer's), and checked on their own."""
     return [Checked(where, card, entry.pop(key), key)
             for where, card, entry in _card_entries(raw)
-            for key in ("checked_by", "verified") if key in entry]
+            for key in ("checked_by", "verified", "facet_checks") if key in entry]
 
 
 # A settled data point of `verified` (#519), as the daily questions name it:
@@ -3638,12 +3640,85 @@ VERIFIED_POINT = re.compile(
     r"^(?:meaning|sound|example:[0-9a-f]{8}|confusable:[A-Za-z0-9_.-]{1,64})$")
 
 
+# The facets whose flag may carry a fix (`isTextFacet` in the app).
+FACET_FIX_FACETS = ("word", "reading", "ipa", "meaning", "example", "note")
+
+
+def check_facet_checks(r: Report, where: str, value: object) -> None:
+    """A card entry's `facet_checks` (ADR-0058, W9): a non-empty mapping from
+    facet to `{"by": [rater codes], "flags": [{"by", "tags", "fix"}]}`, with
+    at least one of the two, tags that belong on the facet, a fix only on a
+    text facet, and each rater at most once on a facet (one answer a rater:
+    right or flagged)."""
+    form = ('must be a mapping from facet to {"by": [codes], "flags": '
+            '[{"by": code, "tags": [tags], "fix": text}]}')
+    if not isinstance(value, dict) or not value:
+        r.error(where, form)
+        return
+    for facet, item in value.items():
+        at = f"{where}.{facet}"
+        if facet not in review_facets.FACETS:
+            r.error(at, f"is not a facet: {', '.join(review_facets.FACETS)}")
+            continue
+        if not isinstance(item, dict) or not item or set(item) - {"by", "flags"}:
+            r.error(at, 'must be {"by": [...]} and/or {"flags": [...]}, nothing else')
+            continue
+        raters: list[str] = []
+        by = item.get("by")
+        if "by" in item:
+            if not isinstance(by, list) or not by:
+                r.error(f"{at}.by", "must be a non-empty list of rater codes")
+            else:
+                for code in by:
+                    if rater_code(code) is None or rater_code(code) != code:
+                        r.error(f"{at}.by", f"must list rater codes, "
+                                            f"FL-XXXX-XXXX-C, got {code!r}")
+                    else:
+                        raters.append(code)
+        if "flags" in item:
+            flags = item["flags"]
+            if not isinstance(flags, list) or not flags:
+                r.error(f"{at}.flags", "must be a non-empty list of flags")
+                flags = []
+            for i, flag in enumerate(flags):
+                fat = f"{at}.flags[{i}]"
+                if not isinstance(flag, dict) or set(flag) - {"by", "tags", "fix"}:
+                    r.error(fat, 'must be {"by": code, "tags": [tags], "fix": text}')
+                    continue
+                code = flag.get("by")
+                if not isinstance(code, str) or rater_code(code) != code:
+                    r.error(fat, f"by must be a rater code, FL-XXXX-XXXX-C, got {code!r}")
+                else:
+                    raters.append(code)
+                tags = flag.get("tags")
+                if not isinstance(tags, list) or not tags:
+                    r.error(fat, "tags must be a non-empty list of pointer tags")
+                else:
+                    for tag in tags:
+                        if facet not in review_facets.TAG_FACETS.get(tag, ()):
+                            r.error(fat, f"tag {tag!r} may not be put on the "
+                                         f"{facet} facet")
+                if "fix" in flag:
+                    if not isinstance(flag["fix"], str) or not flag["fix"].strip():
+                        r.error(fat, "fix must be non-empty text, or left out")
+                    elif facet not in FACET_FIX_FACETS:
+                        r.error(fat, f"the {facet} facet is only pointed at; "
+                                     f"it takes no fix")
+        if len(set(raters)) != len(raters):
+            r.error(at, "names a rater code twice; a rater's latest answer is "
+                        "the only one kept")
+
+
 def check_checks(r: Report, found: list[Checked]) -> None:
     """Each `checked_by`: a non-empty list of rater codes, each written as
     the app writes it, none twice; each `verified` (#519): a non-empty list
-    of settled data points, none twice."""
+    of settled data points, none twice; each `facet_checks` (ADR-0058, W9):
+    see check_facet_checks."""
     for c in found:
         where = f"{c.where}.{c.key}"
+        if c.key == "facet_checks":
+            check_facet_checks(r, where, c.codes)
+            continue
         if c.key == "verified":
             if not isinstance(c.codes, list) or not c.codes:
                 r.error(where, "must be a non-empty list of settled data "
@@ -8008,11 +8083,14 @@ def _check_kind_cards(r: Report, raw: dict, spec: dict | None, genre: str | None
 
 def check_reviewed_cards(r: Report, raw: object, checks: list) -> None:
     """D4, rule 9: a culture or proverbs deck tagged `reviewed` has every
-    written card signed off with `checked_by`."""
+    written card signed off with `checked_by`, or checked by facet with
+    `facet_checks`."""
     if not isinstance(raw, dict) or raw.get("kind") == "layer" \
             or r.genre not in ("culture", "proverbs") or not r.reviewed:
         return
-    signed = {c.where for c in checks if c.key == "checked_by"}
+    # A card two reviewers settled facet by facet may list no sign-off of the
+    # whole card (ADR-0058, W9): its facet answers are the check.
+    signed = {c.where for c in checks if c.key in ("checked_by", "facet_checks")}
     for where, cid, entry in _card_entries(raw):
         if "ref" not in entry and entry.get("kind") != "set" and where not in signed:
             r.error(where, f"card {cid}: the deck is tagged reviewed, so every card "
