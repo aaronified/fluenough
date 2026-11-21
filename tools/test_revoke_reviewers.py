@@ -30,6 +30,8 @@ import reviewer_binding as rbind  # noqa: E402
 import reviewer_keys as rk  # noqa: E402
 import revoke_reviewers as rv  # noqa: E402
 from test_proposals import ALICE, BOB  # noqa: E402
+from test_review_bot import Base as BotBase, FakeGitHub as BotGitHub  # noqa: E402
+import review_bot  # noqa: E402
 
 CAROL = "FL-1111-1111-1"
 DAVE = "FL-2222-2222-2"
@@ -105,6 +107,7 @@ class FakeGit:
         self.commits: dict[str, list[str]] = {}
         self.pushes: list[str] = []
         self.patches: dict[str, bytes] = {}
+        self.valid_ok = True
         self.msgs: dict[Path, list[str]] = {}
         self.last: dict[Path, dict[str, str]] = {}
         self.start: dict[Path, dict[str, str]] = {}
@@ -142,7 +145,7 @@ class FakeGit:
         pass
 
     def valid(self, root: Path, langs: list[str]) -> bool:
-        return True
+        return self.valid_ok
 
     def publish(self, root: Path, branch: str) -> str:
         if not self.msgs[root]:
@@ -223,7 +226,8 @@ class Base(unittest.TestCase):
         self.ledger = FakeLedger()
 
     def job(self) -> rv.Revocation:
-        return rv.Revocation(self.git, self.github, self.ledger, self.logged.append)
+        return rv.Revocation(self.git, self.github, self.ledger, self.logged.append,
+                             branch_key=b"test key")
 
     def text(self, name: str = "zz-test.yaml") -> str:
         return (self.git.main / "decks" / "zz" / name).read_text(encoding="utf-8")
@@ -429,6 +433,259 @@ class RemovalPr(Base):
             self.assertNotIn(secret, said)
 
 
+class Failures(Base):
+    """What cannot be done is never a quiet success."""
+
+    def test_an_entry_that_cannot_be_edited_is_a_problem_not_a_clean_run(self) -> None:
+        self.git.write("zz-odd.yaml", deck(
+            "zz-odd", "unreviewed",
+            card("zz-9501", extra=("    checked_by:", f'      - "{ALICE}"',
+                                   f'      - "{BOB}"'))))
+        counts = self.job().run(frozenset({ALICE}))
+        self.assertEqual(counts["problems"], 1)
+        self.assertEqual(self.github.prs, [])
+        self.assertEqual(rv.leftovers(self.git.main, frozenset({ALICE})), ["zz-9501"])
+
+    def test_a_branch_that_does_not_validate_is_a_problem(self) -> None:
+        self.git.write("zz-test.yaml", main_deck())
+        self.git.valid_ok = False
+        counts = self.job().run(frozenset({ALICE}))
+        self.assertEqual(counts["problems"], 1)
+        self.assertEqual((self.github.prs, self.git.pushes), ([], []))
+
+    def test_a_reviewed_tag_that_cannot_be_edited_is_reported(self) -> None:
+        text = deck("zz-tagsblock", "reviewed",
+                    card("zz-9601", extra=(checked(ALICE, BOB),))).replace(
+            'tags: ["reviewed"]', 'tags:\n  - "reviewed"')
+        self.git.write("zz-tagsblock.yaml", text)
+        result = rv.strip_codes(self.git.main, frozenset({ALICE}))
+        self.assertEqual(result.retag_failed, ["zz-tagsblock"])
+        self.assertEqual(result.retagged, [])
+        counts = self.job().run(frozenset({ALICE}))
+        self.assertEqual(counts["problems"], 0)  # already stripped on main above
+        # Fresh, through the job: the PR names the deck and the run fails.
+        self.git.write("zz-tagsblock.yaml", text)
+        counts = self.job().run(frozenset({ALICE}))
+        self.assertEqual(counts["problems"], 1)
+        self.assertIn("`zz-tagsblock`", self.github.prs[0]["body"])
+
+    def test_a_proposal_that_cannot_be_edited_does_not_keep_a_signoff_in(self) -> None:
+        p = proposal(card="zz-9701")
+        block = ("    proposed:", f'      - id: "{p.id}"', f'        field: "{p.field}"',
+                 f'        now: "{p.now}"', f'        text: "{p.text}"',
+                 f'        by: "{p.by}"', f'        date: "{p.date}"')
+        self.git.write("zz-mixed.yaml", deck(
+            "zz-mixed", "unreviewed",
+            card("zz-9701", extra=(checked(ALICE, BOB), *block))))
+        result = rv.strip_codes(self.git.main, frozenset({ALICE}))
+        self.assertEqual(pr.checked_by(self.entry(self.git.main, "zz-9701")), [BOB])
+        self.assertEqual(result.unsupported, ["zz-9701"])
+        self.assertEqual(rv.leftovers(self.git.main, frozenset({ALICE})), ["zz-9701"])
+
+
+class FlowForm(Base):
+    def test_a_card_written_on_one_line_is_cleaned(self) -> None:
+        data = {"word": {"by": [ALICE, BOB], "flags": []},
+                "meaning": {"by": [ALICE, BOB], "flags": []}}
+        line = ('  - { id: "zz-9250", target: "పాలు", reading: "pālu", '
+                f'native: "milk", checked_by: ["{ALICE}", "{BOB}"], '
+                + pr.facet_checks_line(data) + " }\n")
+        self.git.write("zz-flow.yaml", deck("zz-flow", "unreviewed") + line)
+        result = rv.strip_codes(self.git.main, frozenset({ALICE}))
+        entry = self.entry(self.git.main, "zz-9250")
+        self.assertEqual(pr.checked_by(entry), [BOB])
+        self.assertEqual(pr.facet_data(entry)["word"], {"by": [BOB], "flags": []})
+        self.assertEqual(result.unsupported, [])
+        self.assertNotIn(ALICE, self.text("zz-flow.yaml"))
+
+
+class BotIgnoresRevoked(BotBase):
+    """Until the removal PR merges, the review bot must not let a revoked code
+    count, nor merge their work back (W8)."""
+
+    def setUp(self) -> None:
+        super().setUp()
+        self.addCleanup(rq.set_revoked, ())
+
+    def test_a_revoked_proposer_or_acceptor_does_not_reach_the_agreement(self) -> None:
+        self.put_on_main(self.p(accepted=(BOB,)))
+        for revoked in ({ALICE}, {BOB}, {ALICE, BOB}):
+            self.bot.set_revoked(frozenset(revoked))
+            self.assertEqual(self.bot.sweep()["applied"], 0)
+            self.assertEqual(self.github.prs, [])
+        self.bot.set_revoked(frozenset())
+        self.assertEqual(self.bot.sweep()["applied"], 1)
+
+    def test_an_open_agreement_pr_carrying_a_revoked_code_is_closed(self) -> None:
+        self.put_on_main(self.p(accepted=(BOB,)))
+        self.github.check = "pending"
+        self.bot.sweep()
+        self.assertEqual(self.github.prs[0]["state"], "open")
+        self.bot.set_revoked(frozenset({BOB}))
+        self.bot.sweep()
+        self.assertEqual(self.github.prs[0]["state"], "closed")
+        self.assertEqual(self.github.merged_at, [])
+
+    def test_revocation_that_cannot_be_checked_applies_nothing(self) -> None:
+        self.put_on_main(self.p(accepted=(BOB,)))
+        self.bot.set_revoked(None)
+        self.assertEqual(self.bot.sweep()["applied"], 0)
+        self.assertEqual(self.bot.review("m", CAROL, rb.Review()), "held")
+        self.assertEqual(self.github.prs, [])
+
+    def test_a_revoked_reviewers_mail_makes_no_pr_and_closes_an_open_one(self) -> None:
+        review = rb.Review(suggestions=[pr.Suggestion("zz", "zz-en-extra", self.p())])
+        self.github.check = "pending"
+        self.assertEqual(self.bot.review("m1", ALICE, review), "pending")
+        self.bot.set_revoked(frozenset({ALICE}))
+        self.assertEqual(self.bot.review("m1", ALICE, review), "held")
+        self.assertEqual(self.github.prs[0]["state"], "closed")
+        self.assertEqual(self.bot.review("m2", ALICE, review), "held")
+        self.assertEqual(len(self.github.prs), 1)
+
+    def test_a_revoked_check_does_not_settle_a_facet(self) -> None:
+        checks = [(ALICE, "provisional"), (BOB, "provisional")]
+        self.assertTrue(rq.facet_reached_quorum(checks))
+        rq.set_revoked([ALICE.lower()])
+        self.assertFalse(rq.facet_reached_quorum(checks))
+        self.assertTrue(rq.facet_reached_quorum([*checks, (CAROL, "provisional")]))
+
+
+class RealCommits(unittest.TestCase):
+    """The revert, from a REAL apply commit made by `proposals.apply` in a real
+    git repository, through `LocalRevokeGit`, then the bot's sweep."""
+
+    def setUp(self) -> None:
+        rq.set_tiers({})
+        self.addCleanup(rq.set_revoked, ())
+
+    def sh(self, *args: str, cwd: Path) -> str:
+        done = subprocess.run(["git", "-c", "user.name=t", "-c", "user.email=t@t",
+                               "-c", "commit.gpgsign=false", *args], cwd=cwd,
+                              capture_output=True, text=True, check=True)
+        return done.stdout.strip()
+
+    def build(self, winner: pr.Proposal, rival: pr.Proposal) -> tuple[Path, str]:
+        self.tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        seed = self.tmp / "seed"
+        (seed / "tools").mkdir(parents=True)
+        (seed / "assets").mkdir()
+        (seed / "tools" / "x.txt").write_text("x", encoding="utf-8")
+        (seed / "assets" / "y.txt").write_text("y", encoding="utf-8")
+        self.sh("init", "-q", "-b", "main", cwd=seed)
+        self.sh("add", "--all", cwd=seed)
+        self.sh("commit", "-q", "-m", "main", cwd=seed)
+        self.sh("checkout", "-q", "-b", "decks-live", cwd=seed)
+        path = seed / "decks" / "zz" / "zz-real.yaml"
+        path.parent.mkdir(parents=True)
+        path.write_text(deck("zz-real", "unreviewed", card(
+            "zz-9201", extra=("    proposed:", "      " + winner.line(),
+                              "      " + rival.line()))), encoding="utf-8")
+        self.sh("add", "--all", cwd=seed)
+        self.sh("commit", "-q", "-m", "deck", cwd=seed)
+        applied = pr.apply(seed, "zz", winner.id)
+        self.assertEqual(applied.outcome, "applied")
+        self.assertIn('native: "cow\'s milk"', path.read_text(encoding="utf-8"))
+        self.sh("add", "--all", cwd=seed)
+        self.sh("commit", "-q", "-m", "apply", cwd=seed)
+        sha = self.sh("rev-parse", "HEAD", cwd=seed)
+        self.bare = self.tmp / "origin.git"
+        self.sh("init", "-q", "--bare", "-b", "main", str(self.bare), cwd=self.tmp)
+        self.sh("remote", "add", "origin", str(self.bare), cwd=seed)
+        self.sh("push", "-q", "origin", "main", "decks-live", cwd=seed)
+        self.sh("clone", "-q", str(self.bare), str(self.tmp / "clone"), cwd=self.tmp)
+        return self.tmp / "clone", sha
+
+    def git(self, clone: Path) -> "JobGit":
+        work = self.tmp / "work"
+        work.mkdir()
+        return JobGit(clone, "token", work)
+
+    def revert(self, winner: pr.Proposal, rival: pr.Proposal,
+               codes: frozenset[str]) -> tuple[str, FakeGitHub, "JobGit"]:
+        clone, sha = self.build(winner, rival)
+        git = self.git(clone)
+        github = FakeGitHub()
+        change = rv.Change(7, sha, "zz-9201", "native",
+                           (rv.Group(winner.by, tuple(winner.accepted)),))
+        rv.Revocation(git, github, FakeLedger([change]), branch_key=b"k").run(codes)
+        reverts = [p for p in github.prs if "/revert-" in p["head"]["ref"]]
+        self.assertEqual(len(reverts), 1)
+        branch = reverts[0]["head"]["ref"]
+        text = self.sh("show", f"{branch}:decks/zz/zz-real.yaml", cwd=self.bare)
+        # A commit for the revert and one for taking the codes out again.
+        self.assertEqual(self.sh("rev-list", "--count", f"decks-live..{branch}",
+                                 cwd=self.bare), "2")
+        return text, github, git
+
+    def test_a_proposer_revoked_the_winner_does_not_come_back(self) -> None:
+        winner = proposal(accepted=(BOB,))
+        rival = proposal(text="milk (cow's)", by=CAROL)
+        text, github, git = self.revert(winner, rival, frozenset({ALICE}))
+        self.assertIn('native: "milk"', text)
+        self.assertNotIn(ALICE, text)
+        self.assertNotIn(winner.id, text)
+        # Their rival is restored: not the revoked reviewer's work.
+        self.assertIn(rival.id, text)
+        self.assertNotIn(ALICE, self.everything(github))
+
+    def test_an_acceptor_revoked_the_winner_returns_without_their_code(self) -> None:
+        winner = proposal(by=BOB, accepted=(ALICE,))
+        rival = proposal(text="milk (cow's)", by=CAROL)
+        text, github, git = self.revert(winner, rival, frozenset({ALICE}))
+        self.assertIn('native: "milk"', text)
+        self.assertNotIn(ALICE, text)
+        # It waits for another speaker, with no acceptance left.
+        self.assertIn(winner.id, text)
+        self.assertNotIn("accepted", text)
+
+    def test_a_rerun_pushes_nothing_when_the_tree_is_the_same(self) -> None:
+        winner = proposal(accepted=(BOB,))
+        rival = proposal(text="milk (cow's)", by=CAROL)
+        clone, sha = self.build(winner, rival)
+        git = self.git(clone)
+        change = rv.Change(7, sha, "zz-9201", "native", (rv.Group(ALICE, (BOB,)),))
+        github = FakeGitHub()
+        job = rv.Revocation(git, github, FakeLedger([change]), branch_key=b"k")
+        job.run(frozenset({ALICE}))
+        branch = github.prs[0]["head"]["ref"]
+        first = self.sh("rev-parse", branch, cwd=self.bare)
+        job.run(frozenset({ALICE}))
+        self.assertEqual(self.sh("rev-parse", branch, cwd=self.bare), first)
+        self.assertEqual(len(github.prs), 1)
+        self.assertEqual(git.patch_of("0" * 40), None)
+        self.assertTrue(rv.patch_files(git.patch_of(sha)))
+        self.assertEqual(rv.lang_of_patch(git.patch_of(sha)), "zz")
+
+    def everything(self, github: "FakeGitHub") -> str:
+        return "\n".join(f"{p['title']}\n{p['body']}" for p in github.prs)
+
+    def test_after_the_revert_the_sweep_does_not_apply_it_again(self) -> None:
+        winner = proposal(by=BOB, accepted=(ALICE,))
+        rival = proposal(text="milk (cow's)", by=CAROL)
+        _, github, git = self.revert(winner, rival, frozenset({ALICE}))
+        branch = github.prs[0]["head"]["ref"]
+        self.sh("update-ref", "refs/heads/decks-live", f"refs/heads/{branch}",
+                cwd=self.bare)
+        bot_github = BotGitHub(git)
+        bot = review_bot.Bot(git, bot_github, 1, lambda _: None)
+        bot.set_revoked(frozenset({ALICE}))
+        self.assertEqual(bot.sweep()["applied"], 0)
+        self.assertEqual(bot_github.prs, [])
+
+
+class JobGit(rv.LocalRevokeGit):
+    """The real git of the job, with the index tool and validator left out."""
+    ok = True
+
+    def reindex(self, root: Path) -> None:
+        pass
+
+    def valid(self, root: Path, langs: list[str]) -> bool:
+        return self.ok
+
+
 def diff_of(name: str, old: str, new: str) -> bytes:
     """What a commit that changed [name] from [old] to [new] is, as a patch."""
     return "".join(difflib.unified_diff(
@@ -513,10 +770,15 @@ class Reverts(Base):
         public = self.everything_public()
         for secret in (ALICE, DAVE, BOB, CAROL, KEY_ID):
             self.assertNotIn(secret, public)
-        # Branches are named by a hash of the code, which is not the code.
+        # Branches are named by a keyed hash of the code: not the code, and not
+        # a plain hash anyone can compute from the public codes.
         refs = " ".join(p["head"]["ref"] for p in self.reverts())
         for code in (ALICE, DAVE):
-            self.assertIn(hashlib.sha256(code.encode()).hexdigest()[:10], refs)
+            self.assertNotIn(hashlib.sha256(code.encode()).hexdigest()[:10], refs)
+            self.assertIn(self.job().branch_of(code), refs)
+        self.assertNotEqual(rv.Revocation(self.git, self.github, self.ledger,
+                                          branch_key=b"other").branch_of(ALICE),
+                            self.job().branch_of(ALICE))
 
     def test_a_rerun_changes_nothing_and_a_merged_revert_is_not_made_again(self) -> None:
         self.job().run(self.codes)

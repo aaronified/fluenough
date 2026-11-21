@@ -114,14 +114,17 @@ class GateTest(unittest.TestCase):
         # A code no key is bound to is just Provisional.
         self.assertEqual(g.check(files_with(None, OTHER), OTHER).status, rb.NONE)
 
-    def test_a_keyless_mail_from_a_code_whose_key_was_revoked_is_provisional(
+    def test_a_keyless_mail_from_a_code_whose_key_was_revoked_is_held(
             self) -> None:
         store = rb.MemoryBindings()
         gate(store, rk.Keyring(RING.public_keys, frozenset())).check(
             files_with(key()), CODE)
         revoking = rk.Keyring(RING.public_keys, frozenset({KEY_ID}))
         self.assertEqual(
-            gate(store, revoking).check(files_with(None), CODE).status, rb.NONE)
+            gate(store, revoking).check(files_with(None), CODE).status, rb.HELD)
+        # Another code, never bound, is still just Provisional.
+        self.assertEqual(
+            gate(store, revoking).check(files_with(None, OTHER), OTHER).status, rb.NONE)
 
     def test_the_tier_is_scoped_to_the_keys_courses(self) -> None:
         g = gate()

@@ -938,6 +938,10 @@ def file_mails(env: dict[str, str],
         raters = Raters(imap)
         raters.load()
         gate = make_gate(imap)
+        if bot is not None:
+            # Revoked codes count for nothing, and with the bindings unreadable
+            # nothing is applied (ADR-0058, W8).
+            bot.set_revoked(gate.revoked() if gate is not None else frozenset())
         if raters.known is None:
             print(f"::warning::The rater records ({RATERS}) could not be "
                   f"read; review mails are filed as {SENDER_UNCHECKED!r}.")

@@ -206,6 +206,20 @@ class GmailBindings(MemoryBindings):
         return super().record_use(key_id, now)
 
 
+def revoked_codes(keyring: rk.Keyring, bindings: MemoryBindings) -> frozenset[str] | None:
+    """The rater codes (upper case) bound to a key id on the denylist, from
+    the private store. Nothing when the denylist is empty; None when it is not
+    and the store could not be read: the caller must then fail safe. Never
+    printed."""
+    if not keyring.denylist:
+        return frozenset()
+    if not bindings.ready:
+        return None
+    return frozenset(code.strip().upper() for key_id, code, _t, _c
+                     in bindings.entries()
+                     if key_id in keyring.denylist and code.strip())
+
+
 # --- The gate -----------------------------------------------------------------------------
 
 def _clock() -> datetime.datetime:
@@ -269,8 +283,13 @@ class KeyGate:
         live = self.keyring.enabled and self.bindings.ready
         if proof is None:
             bound_id = self.bindings.key_id_of(code) if live else None
-            if bound_id is not None and bound_id not in self.keyring.denylist:
-                self._count("held: bound code without its key")
+            if bound_id is not None:
+                # A live key's code must come with it; a revoked key's code is
+                # held too (W8), so a revoked reviewer does not come back as
+                # Provisional under the same code.
+                self._count("held: bound code without its key"
+                            if bound_id not in self.keyring.denylist
+                            else "held: code of a revoked key")
                 return Gate(HELD, reason="keyless mail from a keyed code")
             return Gate(NONE)
         if not live:
@@ -309,6 +328,11 @@ class KeyGate:
                 return Gate(HELD, reason="use not written")
         self._count("accepted")
         return Gate(OK, tier=key.tier)
+
+    def revoked(self) -> frozenset[str] | None:
+        """The rater codes of revoked keys, or None when unknown (see
+        [revoked_codes])."""
+        return revoked_codes(self.keyring, self.bindings)
 
     def held(self, mail: str) -> bool:
         """Whether the mail named [mail] was held for the owner."""

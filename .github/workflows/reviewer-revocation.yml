@@ -15,16 +15,13 @@ name: Reviewer revocation
 # same GitHub App (FLUENOUGH_BOT_APP_ID, FLUENOUGH_BOT_PRIVATE_KEY). Until
 # they are set, it does nothing and says so. See wiki/Review-Bot-Setup.md.
 #
-# Runs when the denylist changes on main, every six hours (to rebuild an open
-# PR when decks-live has moved, and to catch a binding written since), and by
-# hand from the Actions tab. A rerun that has nothing to change changes
+# Runs every six hours (to pick up a new denylist entry, to rebuild an open PR
+# when decks-live has moved, and to catch a binding written since), and by hand
+# from the Actions tab. Not on a push to the denylist: a run at the minute an id
+# is added would show which code it belongs to. Run it by hand to hurry it. A rerun that has nothing to change changes
 # nothing.
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - assets/reviewer/denylist.txt
   schedule:
     - cron: "41 */6 * * *"
   workflow_dispatch:
@@ -41,6 +38,9 @@ jobs:
   revoke:
     name: Take revoked reviewers' work out of the decks
     runs-on: ubuntu-latest
+    # Only from main: a run dispatched from another branch must not get the
+    # App token and the Gmail secrets.
+    if: github.ref == 'refs/heads/main'
     env:
       HAS_BOT_APP: ${{ secrets.FLUENOUGH_BOT_APP_ID != '' && secrets.FLUENOUGH_BOT_PRIVATE_KEY != '' }}
     steps:
@@ -74,3 +74,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           FLUENOUGH_BOT_TOKEN: ${{ steps.bot.outputs.token }}
+          # Keys the names of the revert branches; never printed.
+          FLUENOUGH_BOT_PRIVATE_KEY: ${{ secrets.FLUENOUGH_BOT_PRIVATE_KEY }}

@@ -52,6 +52,7 @@ Without them it does nothing and says so.
 from __future__ import annotations
 
 import hashlib
+import hmac
 import imaplib
 import os
 import re
@@ -77,6 +78,9 @@ LABELS = {"clean": "revocation", "revert": "revocation revert"}
 # next number.
 SLOTS = 60
 
+KNOWN_FIELDS = frozenset({*pr.FIELD_OF_PART.values(), pr.BASES, pr.ALT, pr.PLACE,
+                          *pr.CHECKED_FIELDS})
+
 REVERTED_MARK = "<!-- fluenough-reverted "
 _REVERTED = re.compile(re.escape(REVERTED_MARK) + r"([0-9, ]*) -->")
 
@@ -88,15 +92,10 @@ def norm(code: str) -> str:
 
 # --- Who is revoked --------------------------------------------------------------------
 
-def revoked_codes(keyring: rk.Keyring, bindings) -> frozenset[str] | None:
-    """The rater codes bound to a key id on the denylist, from the private
-    store, or None when the store could not be read (then nothing is done:
-    never a half answer). Nothing here is printed."""
-    if not bindings.ready:
-        return None
-    return frozenset(norm(code) for key_id, code, _tier, _courses
-                     in bindings.entries()
-                     if key_id in keyring.denylist and norm(code))
+revoked_codes = reviewer_binding.revoked_codes
+"""The rater codes bound to a revoked key id, from the private store, or None
+when the store could not be read (then nothing is done: never a half answer).
+Nothing here is printed."""
 
 
 # --- Part 1: taking the codes out of the decks -----------------------------------------
@@ -111,6 +110,7 @@ class Removal:
     below: int = 0          # entries that were settled and no longer are
     retagged: list[str] = field(default_factory=list)   # deck ids, set unreviewed
     unsupported: list[str] = field(default_factory=list)  # card ids, not written
+    retag_failed: list[str] = field(default_factory=list)  # deck ids still `reviewed`
     files: set[Path] = field(default_factory=set)
 
     @property
@@ -144,46 +144,62 @@ def _reload(entry: pr.Entry) -> pr.Entry:
 
 
 def _clean_entry(entry: pr.Entry, codes: frozenset[str], out: Removal) -> None:
-    """Takes [codes] off [entry], one edit and one line at a time; raises
-    Unsupported when the entry cannot be written that way (what was written
-    before stays)."""
+    """Takes [codes] off [entry], one edit and one line at a time. The three
+    parts (proposals, facet answers, sign-offs) are each tried whatever the
+    others came to, so a proposal that cannot be edited does not keep a
+    sign-off in; Unsupported is raised at the end if any part could not be
+    written."""
+    failed = False
     # Proposals not applied: the revoked proposer's are withdrawn, and the
     # revoked acceptances of the others dropped.
     for p in entry.proposals():
-        if _bad(p.by, codes):
-            edit = pr._Text(entry)
-            edit.remove(p.id)
-            edit.save(lambda e, pid=p.id: all(x.id != pid for x in e.proposals()))
-            out.removed += 1
-        elif any(_bad(a, codes) for a in p.accepted):
-            kept = replace(p, accepted=tuple(a for a in p.accepted
-                                             if not _bad(a, codes)))
-            edit = pr._Text(entry)
-            edit.replace(kept)
-            edit.save(lambda e, k=kept: k in e.proposals())
-            out.trimmed += 1
-        entry = _reload(entry)
-    # The facets' answers: the revoked code's "right" and its flags.
-    held = pr.facet_data(entry)
-    if held:
-        cleaned: dict[str, dict] = {}
-        for facet, v in held.items():
-            by = [c for c in v["by"] if not _bad(c, codes)]
-            flags = [f for f in v["flags"] if not _bad(f["by"], codes)]
-            if by or flags:
-                cleaned[facet] = {"by": by, "flags": flags}
-        if cleaned != held:
-            pr._write_facets(entry, cleaned)
+        try:
+            if _bad(p.by, codes):
+                edit = pr._Text(entry)
+                edit.remove(p.id)
+                edit.save(lambda e, pid=p.id: all(x.id != pid for x in e.proposals()))
+                out.removed += 1
+            elif any(_bad(a, codes) for a in p.accepted):
+                kept = replace(p, accepted=tuple(a for a in p.accepted
+                                                 if not _bad(a, codes)))
+                edit = pr._Text(entry)
+                edit.replace(kept)
+                edit.save(lambda e, k=kept: k in e.proposals())
+                out.trimmed += 1
+            else:
+                continue
             entry = _reload(entry)
+        except pr.Unsupported:
+            failed = True
+    # The facets' answers: the revoked code's "right" and its flags.
+    try:
+        held = pr.facet_data(entry)
+        if held:
+            cleaned: dict[str, dict] = {}
+            for facet, v in held.items():
+                by = [c for c in v["by"] if not _bad(c, codes)]
+                flags = [f for f in v["flags"] if not _bad(f["by"], codes)]
+                if by or flags:
+                    cleaned[facet] = {"by": by, "flags": flags}
+            if cleaned != held:
+                pr._write_facets(entry, cleaned)
+                entry = _reload(entry)
+    except pr.Unsupported:
+        failed = True
     # The sign-offs: `checked_by` lists the codes right on every facet, so what
     # is left of the mirror is the old list without the revoked codes.
-    have = pr.checked_by(entry)
-    if any(_bad(c, codes) for c in have):
-        kept_codes = [c for c in have if not _bad(c, codes)]
-        if kept_codes:
-            pr._write_checked(entry, kept_codes)
-        else:
-            pr._remove_listed(entry, "checked_by", lambda e: not pr.checked_by(e))
+    try:
+        have = pr.checked_by(entry)
+        if any(_bad(c, codes) for c in have):
+            kept_codes = [c for c in have if not _bad(c, codes)]
+            if kept_codes:
+                pr._write_checked(entry, kept_codes)
+            else:
+                pr._remove_listed(entry, "checked_by", lambda e: not pr.checked_by(e))
+    except pr.Unsupported:
+        failed = True
+    if failed:
+        raise pr.Unsupported("part of the entry could not be written")
 
 
 def _clean_file(path: Path, codes: frozenset[str], out: Removal) -> None:
@@ -213,25 +229,55 @@ def _clean_file(path: Path, codes: frozenset[str], out: Removal) -> None:
             out.below += 1
     # A file tagged `reviewed` whose facets are no longer all at the quorum
     # goes back to `unreviewed`: the reverse of `review_done`.
-    if not pr.all_checked(path) and pr.mark_unreviewed(path):
+    if not pr.all_checked(path):
         raw = pr._load(path)
-        out.retagged.append(raw.get("id") if isinstance(raw, dict)
-                            and isinstance(raw.get("id"), str) else path.stem)
+        name = (raw.get("id") if isinstance(raw, dict)
+                and isinstance(raw.get("id"), str) else path.stem)
+        tags = raw.get("tags") if isinstance(raw, dict) else None
+        if isinstance(tags, list) and "reviewed" in tags:
+            if pr.mark_unreviewed(path):
+                out.retagged.append(name)
+            else:
+                # Still tagged reviewed without the quorum: Deck CI would fail.
+                out.retag_failed.append(name)
 
 
-def strip_codes(root: Path, codes: frozenset[str]) -> Removal:
-    """Takes every code of [codes] (upper case) out of the decks under
-    [root]. Only the files that name one are read."""
-    out = Removal()
+def _files_naming(root: Path, codes: frozenset[str],
+                  only: set[Path] | None = None):
     needles = [c.lower() for c in codes]
     for lang in pr.languages(root):
         for path in pr.language_files(root, lang):
+            if only is not None and path not in only:
+                continue
             try:
                 low = path.read_text(encoding="utf-8").lower()
             except (OSError, UnicodeDecodeError):
                 continue
             if any(n in low for n in needles):
-                _clean_file(path, codes, out)
+                yield path
+
+
+def strip_codes(root: Path, codes: frozenset[str],
+                only: set[Path] | None = None) -> Removal:
+    """Takes every code of [codes] (upper case) out of the decks under
+    [root], or only out of the files [only]. Only the files that name one are
+    read."""
+    out = Removal()
+    for path in _files_naming(root, codes, only):
+        _clean_file(path, codes, out)
+    return out
+
+
+def leftovers(root: Path, codes: frozenset[str]) -> list[str]:
+    """The cards of [root] that still carry the work of a revoked code in
+    any place the job cleans, or whose file still names one in some other way
+    (an entry that could not be read as a card). The tree is read again, not
+    trusted to the edits."""
+    out: list[str] = []
+    for path in _files_naming(root, codes):
+        entries = pr._entries_in(path, pr._load(path))
+        found = [e.card for e in entries if dirty(e, codes)]
+        out += found or ([] if entries else [path.stem])
     return out
 
 
@@ -275,6 +321,10 @@ def change_of(number: int, sha: str, body: str) -> Change | None:
     found = rb.parse_applied(body)
     if found is None or not sha:
         return None
+    # The record is text from a PR body: only what a card id and a field are.
+    if not re.fullmatch(r"[A-Za-z0-9._-]{1,64}", found["card"]) \
+            or found["field"] not in KNOWN_FIELDS:
+        return None
     groups = [Group(found["by"], tuple(found["accepted"]))]
     for g in found["with"]:
         groups.append(Group(g["by"], None if g["accepted"] is None
@@ -311,11 +361,18 @@ def reverted_numbers(body: str | None) -> set[int]:
     return {int(n) for n in re.findall(r"\d+", found.group(1))} if found else set()
 
 
-def lang_of_card(card: str, langs: list[str]) -> str | None:
-    """The language folder a card id belongs to (`te-0001`), when it is one
-    of [langs]: what a key's courses scope a reviewer's tier by."""
-    head = card.split("-", 1)[0]
-    return head if head in langs else None
+def patch_files(patch: bytes | None) -> list[str]:
+    """The files a patch changes, from its `+++ b/` lines."""
+    return [m.group(1) for m in re.finditer(
+        r"^\+\+\+ b/(\S+)", (patch or b"").decode("utf-8", "replace"), re.M)]
+
+
+def lang_of_patch(patch: bytes | None) -> str | None:
+    """The language folder a patch is in (`decks/te/...`): what a key's
+    courses scope a reviewer's tier by. None when it is in more than one."""
+    found = {m.group(1) for f in patch_files(patch)
+             for m in [re.match(r"decks/([^/]+)/", f)] if m}
+    return next(iter(found)) if len(found) == 1 else None
 
 
 # --- Git and GitHub for this job --------------------------------------------------------
@@ -416,8 +473,13 @@ class RevokeGitHub(rb.RestGitHub):
                 if not any(w in body.lower() for w in wanted):
                     continue
                 status, detail = self._call("GET", f"/pulls/{item['number']}")
+                # Only the bot's own agreement PRs, onto decks-live: anyone can
+                # open a PR and label it, and its body is only text.
                 if status == 200 and isinstance(detail, dict) \
                         and detail.get("merged_at") \
+                        and (detail.get("user") or {}).get("type") == "Bot" \
+                        and str((detail.get("head") or {}).get("ref", "")
+                                ).startswith(rb.PREFIX + "apply/") \
                         and (detail.get("base") or {}).get("ref") == rb.DECKS_BRANCH:
                     out.append({"number": item["number"], "body": body,
                                 "sha": detail.get("merge_commit_sha") or ""})
@@ -440,13 +502,26 @@ class GithubLedger:
 
 class Revocation:
     def __init__(self, git: RevokeGit, github, ledger: Ledger,
-                 log: Callable[[str], None] = print) -> None:
+                 log: Callable[[str], None] = print,
+                 branch_key: bytes = b"") -> None:
         self.git, self.github, self.ledger, self.log = git, github, ledger, log
+        # Names the revert branches with a keyed hash of the code: not a hash
+        # anyone can compute from the public codes. The bot App's private key
+        # in the workflow (never printed); a test passes its own.
+        self.branch_key = branch_key
+        # What a run could not do, without a code in it. Any is a failure.
+        self.problems: list[str] = []
+
+    def branch_of(self, code: str) -> str:
+        digest = hmac.new(self.branch_key or b"unkeyed", code.encode("utf-8"),
+                          hashlib.sha256).hexdigest()[:12]
+        return f"{PREFIX}revert-{digest}"
 
     def run(self, codes: frozenset[str]) -> dict[str, int]:
         """One run, for [codes] (upper case). Counts only."""
+        self.problems = []
         counts = {"revoked codes": len(codes), "removal prs": 0, "revert prs": 0,
-                  "changes to revert": 0, "changes unknown": 0}
+                  "changes to revert": 0, "changes unknown": 0, "problems": 0}
         if not codes:
             self.log("No rater code is bound to a revoked key: nothing to do.")
             return counts
@@ -457,18 +532,18 @@ class Revocation:
         reverts, counts["changes unknown"] = self._reverts(codes)
         counts["changes to revert"] = sum(len(v) for v in reverts.values())
         for code, changes in sorted(reverts.items()):
-            stem = PREFIX + "revert-" + hashlib.sha256(code.encode()).hexdigest()[:10]
-            branch, found, decided = self._free(stem)
+            branch, found, decided = self._free(self.branch_of(code))
             todo = [c for c in changes if c.number not in decided]
             if branch is None or (not todo and found is None):
                 continue
-            outcome = self._job(branch, found, lambda root, t=todo: self._revert(root, t))
+            outcome = self._job(branch, found, lambda root, t=todo: self._revert(root, t, codes))
             counts["revert prs"] += int(outcome in ("opened", "updated", "pending"))
+        counts["problems"] = len(self.problems)
         self.log(f"Revocation: {counts['revoked codes']} revoked code(s); "
                  f"{counts['removal prs']} removal PR(s) open; "
                  f"{counts['changes to revert']} applied change(s) to revert in "
                  f"{counts['revert prs']} PR(s); {counts['changes unknown']} with "
-                 f"no record of who accepted.")
+                 f"no record of who accepted; {counts['problems']} problem(s).")
         return counts
 
     # Builds. Each makes its commits in the worktree [root] and answers with
@@ -476,6 +551,18 @@ class Revocation:
 
     def _clean(self, root: Path, codes: frozenset[str]) -> rb.Built | None:
         result = strip_codes(root, codes)
+        # The tree is read again: a code that is still there after the strip
+        # (an entry the job cannot write, a file it cannot read) is a failure
+        # the owner must hear of, never a quiet success.
+        left = leftovers(root, codes)
+        if left:
+            self.problems.append(f"{len(left)} entries still hold a revoked code")
+            self.log(f"::warning::{len(left)} card entries still hold the work of "
+                     f"a revoked key and cannot be edited one line at a time.")
+        if result.retag_failed:
+            self.problems.append("a reviewed deck could not be set unreviewed")
+            self.log(f"::warning::{len(result.retag_failed)} deck file(s) are tagged "
+                     f"reviewed without the quorum and their tags cannot be edited.")
         if not result.changed:
             return None
         self.git.commit(root, "Remove the work of revoked reviewer keys from the decks")
@@ -484,18 +571,26 @@ class Revocation:
                  "here.", "",
                  f"- Card entries taken off sign-offs, facet answers or "
                  f"proposals: {result.entries}",
-                 f"- Proposals withdrawn (made by a revoked reviewer): {result.removed}",
+                 f"- Proposals withdrawn (made by a revoked reviewer; other "
+                 f"reviewers' acceptances of them go with them): {result.removed}",
                  f"- Proposals that lose an acceptance: {result.trimmed}",
                  f"- Entries that no longer have the review quorum: {result.below}"]
         if result.retagged:
             lines.append("- Deck files tagged `unreviewed` again: "
                          + ", ".join(f"`{d}`" for d in sorted(result.retagged)))
-        if result.unsupported:
-            lines.append("- Entries that cannot be edited one line at a time, "
-                         "left for the owner: "
-                         + ", ".join(f"`{c}`" for c in sorted(set(result.unsupported))))
-        lines += ["", "Not merged by the bot: the owner reviews and merges it. "
-                      "A rerun rebuilds this from `decks-live`.", "", rb.FOOTER]
+        if result.retag_failed:
+            lines.append("- **Still tagged `reviewed` without the quorum, whose tags "
+                         "line cannot be edited by the bot (Deck CI will fail until "
+                         "the owner sets them):** "
+                         + ", ".join(f"`{d}`" for d in sorted(result.retag_failed)))
+        if left:
+            lines.append("- **Still holding the work of a revoked key, to edit by "
+                         "hand:** " + ", ".join(f"`{c}`" for c in sorted(set(left))))
+        lines += ["", "Not covered: other files that list reviewers (creators, "
+                      "recommendations, topics), `review-answers/` and `verified` "
+                      "points.", "",
+                  "Not merged by the bot: the owner reviews and merges it. "
+                  "A rerun rebuilds this from `decks-live`.", "", rb.FOOTER]
         return rb.Built(title="Remove the work of revoked reviewer keys",
                         body="\n".join(lines),
                         labels=[rb.LABEL, LABELS["clean"]],
@@ -505,21 +600,22 @@ class Revocation:
         """The applied changes that no longer have the quorum, by the revoked
         code to queue each under (the first when two are in one change), and
         how many have no record of who accepted."""
-        root = self.git.fresh(PREFIX + "read-decks")
-        langs = pr.languages(root)
         out: dict[str, list[Change]] = {}
         unknown = 0
         for change in self.ledger.applied(codes):
-            kind, code = verdict(change, codes, lang_of_card(change.card, langs))
+            kind, code = verdict(change, codes,
+                                 lang_of_patch(self.git.patch_of(change.sha)))
             if kind == "revert":
                 out.setdefault(code, []).append(change)
             elif kind == "unknown":
                 unknown += 1
         return out, unknown
 
-    def _revert(self, root: Path, changes: list[Change]) -> rb.Built | None:
+    def _revert(self, root: Path, changes: list[Change],
+                codes: frozenset[str]) -> rb.Built | None:
         done: list[Change] = []
         not_reverted = 0
+        langs: set[str] = set()
         # Latest first, so that the older change is reverted on top of the newer.
         for change in sorted(changes, key=lambda c: -c.number):
             patch = self.git.patch_of(change.sha)
@@ -530,28 +626,42 @@ class Revocation:
                 root, f"Revert the agreed change to {change.card} ({change.field}), "
                       f"PR #{change.number}\n\nRestores the text that PR replaced. "
                       f"Its agreement no longer holds.")
+            # The apply took the winning proposal, with its acceptances, and
+            # its rivals out; the revert puts them back as they were, revoked
+            # codes included. They are taken out again, in a commit of their
+            # own, so the revert never restores a revoked code.
+            files = {root / f for f in patch_files(patch)}
+            strip_codes(root, codes, only=files)
+            self.git.commit(
+                root, f"Take the revoked codes out of what PR #{change.number}'s "
+                      f"revert restored")
             done.append(change)
+            langs |= {m.group(1) for f in patch_files(patch)
+                      for m in [re.match(r"decks/([^/]+)/", f)] if m}
         if not done:
             return None
         lines = ["The owner revoked a reviewer key (ADR-0058, decision 9). "
                  "These agreed changes only had the review quorum because of "
                  "that reviewer, so each is reverted, one commit each: drop a "
-                 "commit to keep that change. No reviewer is named here.", ""]
+                 "commit to keep that change. The proposal that won comes back "
+                 "as a proposal without the revoked reviewer's code, waiting for "
+                 "another speaker. No reviewer is named here.", ""]
         lines += [f"- `{c.card}` {c.field}, applied in #{c.number}"
                   for c in sorted(done, key=lambda c: c.number)]
         if not_reverted:
             lines.append(f"- Not reverted: {not_reverted} (already reverted, or "
                          f"the field has been edited since).")
-        lines += ["", "Not merged by the bot: the owner reviews and merges it. "
+        lines += ["", "A change with two revoked codes is queued under one of "
+                      "their revert PRs only, and may move if another key is "
+                      "revoked later.",
+                  "", "Not merged by the bot: the owner reviews and merges it. "
                       "Closing it keeps these changes; it is not proposed again.",
                   "", REVERTED_MARK + ", ".join(str(c.number) for c in sorted(
                       done, key=lambda c: c.number)) + " -->", rb.FOOTER]
-        langs = sorted({m for c in done for m in
-                        [lang_of_card(c.card, pr.languages(root))] if m})
         return rb.Built(title=f"Revert {len(done)} change(s) agreed with a revoked "
                               f"reviewer's help",
                         body="\n".join(lines),
-                        labels=[rb.LABEL, LABELS["revert"]], langs=langs)
+                        labels=[rb.LABEL, LABELS["revert"]], langs=sorted(langs))
 
     # PRs. Never merged here.
 
@@ -567,8 +677,9 @@ class Revocation:
                 decided |= reverted_numbers(found.get("body"))
                 continue
             return branch, found, decided
-        self.log(f"::warning::{stem}: {SLOTS} pull requests used; the owner "
-                 f"should merge them.")
+        self.log(f"::warning::{SLOTS} pull requests used; the owner should merge "
+                 f"them.")
+        self.problems.append("slots used")
         return None, None, decided
 
     def _job(self, branch: str, found: dict | None,
@@ -585,14 +696,16 @@ class Revocation:
         self.git.reindex(root)
         self.git.commit(root, "Regenerate the deck index")
         if not self.git.valid(root, built.langs):
-            self.log(f"::warning::{branch} does not validate; left for the owner.")
+            self.log("::warning::A revocation branch does not validate; left for "
+                     "the owner.")
+            self.problems.append("a branch does not validate")
             return "invalid"
         pushed = self.git.publish(root, branch)
         if pushed == "empty":
             return "nothing"
         if found is None:
             made = self.github.open_pr(branch, built.title, built.body, built.labels)
-            self.log(f"Opened PR #{made['number']} ({branch}).")
+            self.log(f"Opened PR #{made['number']}.")
             return "opened"
         if found.get("title") != built.title or found.get("body") != built.body:
             self.github.update_pr(found["number"], built.title, built.body)
@@ -643,11 +756,22 @@ def main(env: dict[str, str] | None = None,
     work = Path(env.get("RUNNER_TEMP") or tempfile.gettempdir()) / "revoke"
     work.mkdir(parents=True, exist_ok=True)
     github = RevokeGitHub(repo, token, env.get("GITHUB_TOKEN", ""))
-    job = Revocation(LocalRevokeGit(root, token, work), github, GithubLedger(github))
+    branch_key = env.get("FLUENOUGH_BOT_PRIVATE_KEY", "").encode("utf-8")
+    if not branch_key:
+        print("::error::FLUENOUGH_BOT_PRIVATE_KEY is not passed to the job.")
+        return 1
+    job = Revocation(LocalRevokeGit(root, token, work), github, GithubLedger(github),
+                     branch_key=branch_key)
     try:
-        job.run(codes)
+        counts = job.run(codes)
     except Exception as error:  # noqa: BLE001 - the type only: a message may hold a token
         print(f"::error::The revocation job failed: {type(error).__name__}")
+        return 1
+    if counts["problems"]:
+        # Not a quiet success: a revoked code may still be in the decks with no
+        # valid PR to take it out. Counts only; the PRs say which cards.
+        print(f"::error::{counts['problems']} problem(s): the work of a revoked "
+              f"key may still be in the decks. See the warnings above.")
         return 1
     return 0
 
