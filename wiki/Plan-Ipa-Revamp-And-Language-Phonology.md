@@ -482,22 +482,23 @@ owner on 2026-11-21.
    before y, r, l, v, a sibilant or h), and so is a chandrabindu (`m̐`). Built in
    `tools/transcribe.py` (`_word_final_nasal`).
 2. **Schwa over-deletion.** Asked about स्वजनजनधनाचा and गजवदन, the owner
-   answered "2. Fix". The Marathi engine applied the Hindi VC_CV rule to every
-   schwa at once, so a dropped schwa still counted as the vowel before and after
-   its neighbour and two side-by-side schwas both went: `svajnjndhnācā`,
-   `gajvdan`, `saklmti`. Now (`_marathi_medial_drops`) the rule runs from the
-   right, one schwa at a time, and a dropped schwa neither counts as the vowel
-   before the next one nor as the vowel after it; so two schwas side by side are
-   never both dropped and single letters never make a run of three consonants:
-   `gajavdan`, `svajnajnadhnācā`, `saklamti`. Verbs in -णे now drop the schwa
-   next to the ending (उगवणे `ugavṇe`, आवडणे `āvaḍṇe`, which is also the
-   course's own typed reading). Hindi, Gujarati and Bengali keep their rule.
+   answered "2. Fix". The fix is narrow and driven by the course's 1,572
+   hand-typed single-word readings on decks-live: Hindi's VC_CV rule stays,
+   because those readings follow it, side-by-side drops included (निवडणे
+   `nivḍṇe`, नवरदेव `navrdev`, सहनशीलता `sahnśiltā`). Only two things are
+   cut back (`_marathi_medial_drops`), to every other schwa counted from the
+   right: a chain of three or more side-by-side drops (`svajnjndhnācā` becomes
+   `svajnajnadhnācā`, `saklmti` becomes `saklamti`), and a pair that would
+   leave an obstruent, v or y, and an obstruent in a row (`gajvdan` becomes
+   `gajavdan`; no card of the course has such a run). A chain ending before ṇ
+   (-णे, -णूक) is kept whole. Hindi, Gujarati and Bengali keep their rule.
 
 **Not settled by any source in the repository, owner to confirm:** the exact
-reading of the two words (the rule's alternation gives the values above; no
-cited literature says how a speaker says them), and the other schwa cases the
-Marathi queue lists (लवकरच, आदरणीय, कृपया, काहीतरी), which this change does not
-touch.
+reading of the two words, and the other schwa cases the Marathi queue lists
+(लवकरच, आदरणीय, कृपया, काहीतरी, शेतकरी), which keep the engine's old values
+here although the course types `krupayā`, `kāhitari`, `śetkari` (a reviewer
+puts लवकरच at `lavkarac`). Medial anusvara is unchanged: the decision covered
+word-final only.
 
 After merge, `derive_phonetic.py mr --write` is rerun on decks-live to refresh
 the `phonetic` field.
