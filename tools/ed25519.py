@@ -5,7 +5,7 @@ package (AGENTS.md rule 6). It follows the RFC's reference code and is not
 constant time, which is fine here: [sign] runs only on the owner's own
 machine (`tools/reviewer_keys.py mint`), and [verify] handles public data.
 `lib/core/review/ed25519.dart` is the same verification in Dart, and
-`test/fixtures/ed25519_vectors.json` is read by the tests of both.
+`test/fixtures/reviewer_key_vectors.json` is read by the tests of both.
 """
 
 from __future__ import annotations
@@ -117,15 +117,20 @@ def sign(seed: bytes, message: bytes) -> bytes:
     return big_r + int(s).to_bytes(32, "little")
 
 
+def _small_order(point: tuple) -> bool:
+    return _equal(_mul(8, point), _ZERO)
+
+
 def verify(public: bytes, message: bytes, signature: bytes) -> bool:
     """Whether [signature] is [public]'s valid signature of [message]. Never
-    raises on bad input: a wrong length, a point off the curve or a scalar
-    that is not reduced is False."""
+    raises on bad input: a wrong length, a point off the curve, a non-canonical
+    encoding, a small-order public key or R, or a scalar that is not reduced is
+    False (stricter than RFC 8032, which allows small-order points)."""
     if len(public) != PUBLIC_LENGTH or len(signature) != SIGNATURE_LENGTH:
         return False
     a = _decompress(public)
     r = _decompress(signature[:32])
-    if a is None or r is None:
+    if a is None or r is None or _small_order(a) or _small_order(r):
         return False
     s = int.from_bytes(signature[32:], "little")
     if s >= _Q:

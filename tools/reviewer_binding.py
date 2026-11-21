@@ -4,7 +4,10 @@ A review mail from a keyed reviewer carries the key as a secret proof, as
 `reviewer_key` in its review files. [KeyGate.check] decides what the mail is
 worth, once the sender check has passed:
 
-* no key: the code stays Provisional;
+* no key, from a code no key is bound to: the code stays Provisional;
+* no key, from a code a live key IS bound to: HELD. Each mail of a keyed
+  reviewer carries the key as its proof, so a keyless one is either a mistake
+  or someone using a copied public code, and its tier is never assumed;
 * a key that is not signed by the owner's public key, or is on the denylist
   (`assets/reviewer/denylist.txt`), or whose id is bound to another rater
   code, or whose code is bound to another key, or that is used too often:
@@ -58,7 +61,8 @@ DISABLED = "disabled"  # keys, or the private store, are not set up: ignored
 HELD = "held"          # left to the owner
 OK = "ok"              # a good key, bound to this code
 
-# Mails per key in a day. Owner-set; a real reviewer sends a few a day.
+# Mails per key in a day: a default in this file, changed by a code change; a
+# real reviewer sends a few a day.
 DAILY_LIMIT = 30
 WINDOW = datetime.timedelta(hours=24)
 
@@ -81,7 +85,8 @@ class MemoryBindings:
 
     def __init__(self, ready: bool = True) -> None:
         self.ready = ready
-        self.bound: dict[str, tuple[str, str]] = {}   # key id -> (code, tier)
+        # key id -> (code, tier, the key's courses)
+        self.bound: dict[str, tuple[str, str, tuple[str, ...]]] = {}
         self.used: dict[str, list[datetime.datetime]] = {}
         self.fail_writes = False
 
@@ -90,12 +95,13 @@ class MemoryBindings:
         return found[0] if found else None
 
     def key_id_of(self, code: str) -> str | None:
-        return next((k for k, (c, _) in self.bound.items() if c == code), None)
+        return next((k for k, (c, _, _) in self.bound.items() if c == code), None)
 
-    def bind(self, key_id: str, code: str, tier: str) -> bool:
+    def bind(self, key_id: str, code: str, tier: str,
+             courses: tuple[str, ...] = ()) -> bool:
         if self.fail_writes:
             return False
-        self.bound[key_id] = (code, tier)
+        self.bound[key_id] = (code, tier, tuple(courses))
         return True
 
     def uses(self, key_id: str, now: datetime.datetime) -> int:
@@ -107,10 +113,10 @@ class MemoryBindings:
         self.used.setdefault(key_id, []).append(now)
         return True
 
-    def tiers(self) -> dict[str, tuple[str, str]]:
-        """code -> (tier, key id) of every binding."""
-        return {code: (tier, key_id)
-                for key_id, (code, tier) in self.bound.items()}
+    def entries(self) -> list[tuple[str, str, str, tuple[str, ...]]]:
+        """(key id, code, tier, courses) of every binding."""
+        return [(key_id, code, tier, courses)
+                for key_id, (code, tier, courses) in self.bound.items()]
 
 
 class GmailBindings(MemoryBindings):
@@ -155,8 +161,11 @@ class GmailBindings(MemoryBindings):
             body = record.get_body(preferencelist=("plain",))
             lines = (body.get_content() if body else "").split("\n")
             code, tier = lines[0].strip(), (lines[1].strip() if len(lines) > 1 else "")
+            courses = tuple(c for c in
+                            (lines[2].strip().split(",") if len(lines) > 2 else [])
+                            if rk.COURSE.fullmatch(c))
             if code and tier in (rk.VERIFIED, rk.TRUSTED):
-                self.bound[key_id] = (code, tier)
+                self.bound[key_id] = (code, tier, courses)
         else:
             try:
                 at = email.utils.parsedate_to_datetime(str(record.get("Date", "")))
@@ -178,13 +187,14 @@ class GmailBindings(MemoryBindings):
             return False
         return status == "OK"
 
-    def bind(self, key_id: str, code: str, tier: str) -> bool:
+    def bind(self, key_id: str, code: str, tier: str,
+             courses: tuple[str, ...] = ()) -> bool:
         record = email.message.EmailMessage()
         record["Subject"] = f"bind {key_id}"
-        record.set_content(f"{code}\n{tier}\n")
+        record.set_content(f"{code}\n{tier}\n{','.join(courses)}\n")
         if not self._append(record):
             return False
-        return super().bind(key_id, code, tier)
+        return super().bind(key_id, code, tier, courses)
 
     def record_use(self, key_id: str, now: datetime.datetime) -> bool:
         record = email.message.EmailMessage()
@@ -256,9 +266,14 @@ class KeyGate:
         if wrong:
             self._count("held: files disagree about the key")
             return Gate(HELD, reason="key files disagree")
+        live = self.keyring.enabled and self.bindings.ready
         if proof is None:
+            bound_id = self.bindings.key_id_of(code) if live else None
+            if bound_id is not None and bound_id not in self.keyring.denylist:
+                self._count("held: bound code without its key")
+                return Gate(HELD, reason="keyless mail from a keyed code")
             return Gate(NONE)
-        if not self.keyring.enabled or not self.bindings.ready:
+        if not live:
             self._count("ignored: keys or private store not set up")
             return Gate(DISABLED, reason="not set up")
         checked = rk.check(proof, self.keyring)
@@ -275,15 +290,20 @@ class KeyGate:
             if other is not None and other != key.key_id:
                 self._count("held: code bound to another key")
                 return Gate(HELD, reason="code has another key")
-            if not self.bindings.bind(key.key_id, code, key.tier):
+            if not self.bindings.bind(key.key_id, code, key.tier,
+                                      tuple(key.courses)):
                 self._count("held: could not write the binding")
                 return Gate(HELD, reason="binding not written")
             self._count("bound")
         now = self.now()
+        # A mail already counted at filing is asked about again for its
+        # proposals: its own use is in the count, so only more than the limit
+        # holds it.
+        used = self.bindings.uses(key.key_id, now)
+        if used >= self.limit if count else used > self.limit:
+            self._count("held: rate limit")
+            return Gate(HELD, reason="rate limit")
         if count:
-            if self.bindings.uses(key.key_id, now) >= self.limit:
-                self._count("held: rate limit")
-                return Gate(HELD, reason="rate limit")
             if not self.bindings.record_use(key.key_id, now):
                 self._count("held: could not write the use")
                 return Gate(HELD, reason="use not written")
@@ -295,11 +315,12 @@ class KeyGate:
         found = self._decided.get(mail)
         return found is not None and found.status == HELD
 
-    def tiers(self) -> dict[str, str]:
-        """rater code -> tier, for every binding whose key is not revoked:
-        what `review_quorum.set_tiers` takes."""
+    def tiers(self) -> dict[str, tuple[str, tuple[str, ...]]]:
+        """rater code -> (tier, the key's courses), for every binding whose
+        key is not revoked: what `review_quorum.set_tiers` takes. The courses
+        scope the tier: a key for te/en is Verified on Telugu only."""
         if not self.keyring.enabled or not self.bindings.ready:
             return {}
-        return {code: tier
-                for code, (tier, key_id) in self.bindings.tiers().items()
+        return {code: (tier, courses)
+                for key_id, code, tier, courses in self.bindings.entries()
                 if key_id not in self.keyring.denylist}

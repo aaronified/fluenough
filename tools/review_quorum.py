@@ -35,19 +35,29 @@ TIERS = (PROVISIONAL, VERIFIED, TRUSTED)
 # bindings of signed reviewer keys (tools/reviewer_binding.py). Private on
 # purpose: the decks name rater codes, so a public tier would make Verified
 # codes easy to pick out. A code not here is Provisional.
-_TIERS: dict[str, str] = {}
+# A tier is scoped to the courses the key names: a key for `te/en` gives no
+# Verified weight on Spanish.
+_TIERS: dict[str, tuple[str, tuple[str, ...]]] = {}
 
 
-def set_tiers(tiers: dict[str, str]) -> None:
-    """Sets the tiers the bot reads, keyed by rater code (any case)."""
+def set_tiers(tiers: dict[str, tuple[str, tuple[str, ...]]]) -> None:
+    """Sets what the bot reads, keyed by rater code (any case): (tier, the
+    courses of the key, `te/en` or `te`)."""
     _TIERS.clear()
-    _TIERS.update({(code or "").strip().upper(): tier
-                   for code, tier in tiers.items() if tier in TIERS})
+    _TIERS.update({(code or "").strip().upper(): (tier, tuple(courses))
+                   for code, (tier, courses) in tiers.items() if tier in TIERS})
 
 
-def tier_of(code: str) -> str:
-    """The tier of the rater [code]: Provisional unless a binding says more."""
-    return _TIERS.get((code or "").strip().upper(), PROVISIONAL)
+def tier_of(code: str, language: str | None = None) -> str:
+    """The tier of the rater [code] for a card of [language]: Provisional
+    unless a binding says more AND its key names that language. With no
+    language it is Provisional: fail closed."""
+    found = _TIERS.get((code or "").strip().upper())
+    if found is None or not language:
+        return PROVISIONAL
+    tier, courses = found
+    named = any(c == language or c.startswith(language + "/") for c in courses)
+    return tier if named else PROVISIONAL
 
 
 def facet_reached_quorum(

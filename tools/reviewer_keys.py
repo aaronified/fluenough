@@ -65,7 +65,18 @@ CODE_OF_TIER = {tier: code for code, tier in TIER_CODES.items()}
 KEY_ID = re.compile(r"[0-9a-f]{16}")
 COURSE = re.compile(r"[a-z]{2,3}(/[a-z]{2,3})?")
 DATE = re.compile(r"\d{4}-\d{2}-\d{2}", re.ASCII)
-TOKEN = re.compile(r"FLK1\.[A-Za-z0-9_.\-]+")
+# What [strip_keys] cuts, from the parser's grammar: [parse] ignores whitespace
+# anywhere, so a key wrapped by a mail is `FLK1.`, a payload, a dot and exactly
+# 86 signature characters (64 bytes), with whitespace allowed between any two
+# characters, the prefix's too.
+_B64 = r"[A-Za-z0-9_\-]"
+WHOLE_KEY = re.compile(
+    r"F\s*L\s*K\s*1\s*\.\s*(?:" + _B64 + r"\s*)+\.\s*(?:" + _B64 + r"\s*){85}"
+    + _B64)
+# A key cut short or damaged does not match the grammar. It is cut anyway,
+# failing closed: from `FLK1.` through every character a key may hold, so the
+# words that follow it with only spaces between are eaten too.
+PARTIAL_KEY = re.compile(r"F\s*L\s*K\s*1\s*\.[A-Za-z0-9_.\-\s]*")
 
 ROOT = Path(__file__).resolve().parent.parent
 KEYRING_DIR = ROOT / "assets" / "reviewer"
@@ -208,9 +219,12 @@ def sign_key(seed: bytes, key_id: str, courses: list[str], tier: str,
 
 
 def strip_keys(text: str) -> str:
-    """[text] with every key in it removed: for anything that might be
-    published."""
-    return TOKEN.sub("[key removed]", text)
+    """[text] with every key in it removed, wrapped or not: for anything that
+    might be published. A whole key goes and the text after it stays; a key
+    cut short or damaged takes with it the run of words that follows, since
+    where it ends cannot be told."""
+    text = WHOLE_KEY.sub("[key removed]", text)
+    return PARTIAL_KEY.sub("[key removed] ", text)
 
 
 # --- The public keys and the denylist ----------------------------------------------
@@ -342,7 +356,11 @@ def main(argv: list[str]) -> int:
     m.add_argument("--version", type=int, default=1)
     m.add_argument("--note", default="", help="for you only; not in the key")
     v = sub.add_parser("verify", help="check a key")
-    v.add_argument("key", nargs="?", help="the key (default: standard input)")
+    v.add_argument("key", nargs="?",
+                   help="the key, or - for standard input (the default). An "
+                        "argument shows in your shell history: prefer --file "
+                        "or standard input")
+    v.add_argument("--file", type=Path, help="read the key from this file")
     v.add_argument("--keyring", type=Path, default=KEYRING_DIR)
     args = parser.parse_args(argv)
     if args.command == "keygen":
@@ -369,7 +387,12 @@ def main(argv: list[str]) -> int:
               file=sys.stderr)
         print(text)
         return 0
-    text = args.key if args.key else sys.stdin.read()
+    if args.file:
+        text = args.file.read_text(encoding="utf-8")
+    elif args.key and args.key != "-":
+        text = args.key
+    else:
+        text = sys.stdin.read()
     result = check(text, load_keyring(args.keyring))
     if result.key:
         print(f"{result.status}: id {result.key.key_id}, {result.key.tier}, "

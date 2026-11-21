@@ -103,11 +103,15 @@ class _ReviewerKeySheetState extends State<ReviewerKeySheet> {
             TextField(
               controller: _controller,
               autofocus: true,
-              minLines: 2,
-              maxLines: 5,
+              // The key is a secret: hidden on screen and from a screen
+              // reader (the field reads bullets), and kept out of the
+              // keyboard's suggestions and learning.
+              obscureText: true,
+              maxLines: 1,
               autocorrect: false,
               enableSuggestions: false,
-              keyboardType: TextInputType.multiline,
+              enableIMEPersonalizedLearning: false,
+              keyboardType: TextInputType.visiblePassword,
               style: theme.textTheme.bodyMedium?.copyWith(
                 fontFamily: 'monospace',
               ),

@@ -48,7 +48,10 @@ abstract final class Ed25519 {
     }
     final a = _decompress(publicKey);
     final r = _decompress(Uint8List.sublistView(signature, 0, 32));
-    if (a == null || r == null) return false;
+    // Small-order points are refused too, which RFC 8032 would allow.
+    if (a == null || r == null || _smallOrder(a) || _smallOrder(r)) {
+      return false;
+    }
     final s = _fromLittleEndian(Uint8List.sublistView(signature, 32));
     if (s >= _q) return false;
     final hashed = sha512.convert(<int>[
@@ -119,6 +122,9 @@ abstract final class Ed25519 {
     }
     return result;
   }
+
+  static bool _smallOrder(_Point point) =>
+      _equal(_multiply(BigInt.from(8), point), _zero);
 
   static bool _equal(_Point a, _Point b) =>
       (a.x * b.z - b.x * a.z) % _p == BigInt.zero &&

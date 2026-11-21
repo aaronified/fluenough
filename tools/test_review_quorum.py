@@ -21,9 +21,14 @@ class TiersTest(unittest.TestCase):
 
     def test_a_code_is_provisional_unless_the_bot_knows_better(self) -> None:
         self.assertEqual(rq.tier_of("FL-AAAA-AAAA-0"), rq.PROVISIONAL)
-        rq.set_tiers({"fl-aaaa-aaaa-0": rq.VERIFIED, "FL-BBBB-BBBB-0": "nonsense"})
-        self.assertEqual(rq.tier_of(" FL-AAAA-AAAA-0 "), rq.VERIFIED)
-        self.assertEqual(rq.tier_of("FL-BBBB-BBBB-0"), rq.PROVISIONAL)
+        rq.set_tiers({"fl-aaaa-aaaa-0": (rq.VERIFIED, ("te/en", "bn")),
+                      "FL-BBBB-BBBB-0": ("nonsense", ("te",))})
+        self.assertEqual(rq.tier_of(" FL-AAAA-AAAA-0 ", "te"), rq.VERIFIED)
+        self.assertEqual(rq.tier_of("FL-AAAA-AAAA-0", "bn"), rq.VERIFIED)
+        # Only the courses the key names, and never with no language.
+        self.assertEqual(rq.tier_of("FL-AAAA-AAAA-0", "es"), rq.PROVISIONAL)
+        self.assertEqual(rq.tier_of("FL-AAAA-AAAA-0"), rq.PROVISIONAL)
+        self.assertEqual(rq.tier_of("FL-BBBB-BBBB-0", "te"), rq.PROVISIONAL)
         rq.set_tiers({})
         self.assertEqual(rq.tier_of("FL-AAAA-AAAA-0"), rq.PROVISIONAL)
 

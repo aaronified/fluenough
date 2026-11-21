@@ -100,11 +100,52 @@ class GateTest(unittest.TestCase):
         store = rb.MemoryBindings()
         open_ring = rk.Keyring(RING.public_keys, frozenset())
         gate(store, open_ring).check(files_with(key()), CODE)
-        self.assertEqual(gate(store, open_ring).tiers(), {CODE: "verified"})
+        self.assertEqual(gate(store, open_ring).tiers(),
+                         {CODE: ("verified", ("te/en",))})
         revoking = rk.Keyring(RING.public_keys, frozenset({KEY_ID}))
         later = gate(store, revoking)
         self.assertEqual(later.check(files_with(key()), CODE).status, rb.HELD)
         self.assertEqual(later.tiers(), {})
+
+    def test_a_keyless_mail_from_a_bound_code_is_held(self) -> None:
+        g = gate()
+        g.check(files_with(key()), CODE)
+        self.assertEqual(g.check(files_with(None), CODE).status, rb.HELD)
+        # A code no key is bound to is just Provisional.
+        self.assertEqual(g.check(files_with(None, OTHER), OTHER).status, rb.NONE)
+
+    def test_a_keyless_mail_from_a_code_whose_key_was_revoked_is_provisional(
+            self) -> None:
+        store = rb.MemoryBindings()
+        gate(store, rk.Keyring(RING.public_keys, frozenset())).check(
+            files_with(key()), CODE)
+        revoking = rk.Keyring(RING.public_keys, frozenset({KEY_ID}))
+        self.assertEqual(
+            gate(store, revoking).check(files_with(None), CODE).status, rb.NONE)
+
+    def test_the_tier_is_scoped_to_the_keys_courses(self) -> None:
+        g = gate()
+        g.check(files_with(key(courses=("te/en", "bn"))), CODE)
+        rq.set_tiers(g.tiers())
+        self.assertEqual(rq.tier_of(CODE, "te"), "verified")
+        self.assertEqual(rq.tier_of(CODE, "bn"), "verified")
+        self.assertEqual(rq.tier_of(CODE, "es"), "provisional")
+        self.assertEqual(rq.tier_of(CODE), "provisional")
+
+    def test_the_proposals_pass_applies_the_limit_without_counting(self) -> None:
+        store = rb.MemoryBindings()
+        g = gate(store, limit=2)
+        for i in range(2):
+            g.check(files_with(key()), CODE, f"m{i}")
+        # Two counted, at the limit: a later pass over them is not held...
+        again = gate(store, limit=2)
+        self.assertEqual(
+            again.check(files_with(key()), CODE, "m0", count=False).status, rb.OK)
+        # ...and past the limit it is.
+        store.record_use(KEY_ID, NOW)
+        self.assertEqual(
+            gate(store, limit=2).check(files_with(key()), CODE, "m9",
+                                       count=False).status, rb.HELD)
 
     def test_files_that_disagree_about_the_key_are_held(self) -> None:
         files = files_with(key()) + files_with(key("fedcba9876543210"))
@@ -172,17 +213,24 @@ class GateTest(unittest.TestCase):
 
     def test_binding_upgrades_the_codes_earlier_reviews(self) -> None:
         by = [CODE, OTHER]
-        before = rf.settled(rf.checks_of(by, {}, "meaning"), needs_verified=True)
+        before = rf.settled(rf.checks_of(by, {}, "meaning", "te"),
+                            needs_verified=True)
         self.assertFalse(before)
         g = gate()
         g.check(files_with(key()), CODE)
         rq.set_tiers(g.tiers())
-        # The same two reviews, one now by a Verified code: they count.
-        self.assertTrue(rf.settled(rf.checks_of(by, {}, "meaning"),
+        # The same two reviews, one now by a Verified code: they count on the
+        # course the key names...
+        self.assertTrue(rf.settled(rf.checks_of(by, {}, "meaning", "te"),
                                    needs_verified=True))
+        # ...and not on another language, or where no language is known.
+        self.assertFalse(rf.settled(rf.checks_of(by, {}, "meaning", "es"),
+                                    needs_verified=True))
+        self.assertFalse(rf.settled(rf.checks_of(by, {}, "meaning"),
+                                    needs_verified=True))
         # Without the switch nothing changed for anyone.
         rq.set_tiers({})
-        self.assertTrue(rf.settled(rf.checks_of(by, {}, "meaning")))
+        self.assertTrue(rf.settled(rf.checks_of(by, {}, "meaning", "te")))
         self.assertFalse(rq.QUORUM_NEEDS_VERIFIED)
 
 
@@ -240,14 +288,15 @@ class GmailBindingsTest(unittest.TestCase):
         store = rb.GmailBindings(imap)
         store.load()
         self.assertTrue(store.ready)
-        self.assertTrue(store.bind(KEY_ID, CODE, "trusted"))
+        self.assertTrue(store.bind(KEY_ID, CODE, "trusted", ("te/en",)))
         self.assertTrue(store.record_use(KEY_ID, NOW))
         self.assertEqual(len(imap.keys), 2)
         fresh = rb.GmailBindings(imap)
         fresh.load()
         self.assertTrue(fresh.ready)
         self.assertEqual(fresh.code_of(KEY_ID), CODE)
-        self.assertEqual(fresh.tiers(), {CODE: ("trusted", KEY_ID)})
+        self.assertEqual(fresh.entries(),
+                         [(KEY_ID, CODE, "trusted", ("te/en",))])
         self.assertEqual(fresh.uses(KEY_ID, NOW), 1)
         self.assertEqual(
             fresh.uses(KEY_ID, NOW + datetime.timedelta(hours=25)), 0)
@@ -322,7 +371,9 @@ class MailJobTest(unittest.TestCase):
             r, policy=email.policy.default)["Subject"] for r in imap.keys]
         self.assertEqual(subjects, [f"bind {KEY_ID}", f"use {KEY_ID}"])
         # The bound code's tier is known to the quorum rule, privately.
-        self.assertEqual(rq.tier_of(CODE), "verified")
+        self.assertEqual(rq.tier_of(CODE, "te"), "verified")
+        # A key for te/en gives no Verified weight on Spanish.
+        self.assertEqual(rq.tier_of(CODE, "es"), "provisional")
         self.assertNotIn("verified", json.dumps(filed).lower())
 
     def test_the_key_on_another_code_is_held_and_never_proposed(self) -> None:
@@ -339,6 +390,49 @@ class MailJobTest(unittest.TestCase):
             self.assertNotIn(secret, json.dumps(filed) + log)
         # Nothing was bound to the other code.
         self.assertEqual(len(imap.keys), 1)
+
+    def test_a_keyless_mail_from_a_bound_code_is_held(self) -> None:
+        bound = email.message.EmailMessage()
+        bound["Subject"] = f"bind {KEY_ID}"
+        bound.set_content(f"{CODE}\nverified\nte/en\n")
+        tied = email.message.EmailMessage()
+        tied["Subject"] = CODE
+        tied.set_content("reviewer@example.com")
+        imap = Keys([keyed(None)], keys=[bound.as_bytes()],
+                    raters=[tied.as_bytes()])
+        filed, _ = run(imap)
+        self.assertIn(mail_to_issues.HELD, filed[0]["labels"])
+        self.assertEqual(imap.stored, [(b"1", "fluenough-filed"),
+                                       (b"1", "fluenough-proposed")])
+
+    def test_a_copied_code_with_a_spoofed_from_gets_no_tier(self) -> None:
+        # The real reviewer's code is tied to their address and bound to the
+        # key; another sender uses the public code, with and without a key.
+        bound = email.message.EmailMessage()
+        bound["Subject"] = f"bind {KEY_ID}"
+        bound.set_content(f"{CODE}\nverified\nte/en\n")
+        tied = email.message.EmailMessage()
+        tied["Subject"] = CODE
+        tied.set_content("reviewer@example.com")
+        for proof in (None, key()):
+            with self.subTest(proof=bool(proof)):
+                imap = Keys([keyed(proof, sender="mallory@example.com")],
+                            keys=[bound.as_bytes()], raters=[tied.as_bytes()])
+                filed, log = run(imap)
+                self.assertIn("sender does not match", filed[0]["labels"])
+                self.assertEqual(len(imap.keys), 1)  # nothing bound or used
+                self.assertNotIn("FLK1", json.dumps(filed) + log)
+
+    def test_a_wrapped_key_in_a_bug_report_is_cut(self) -> None:
+        k = key()
+        wrapped = k[:9] + "\n  " + k[9:70] + "\r\n" + k[70:]
+        issue = mail_to_issues.issue_from(mail(
+            "[Fluenough] Bug: crash",
+            f"hi {wrapped} tail\n\n---\nKind: Bug\nScreen: /x"))
+        text = json.dumps(issue)
+        self.assertNotIn("FLK1", text)
+        self.assertNotIn(k[20:40], text)
+        self.assertIn("tail", issue["body"])
 
     def test_a_keyless_review_is_filed_as_before(self) -> None:
         imap = Keys([keyed(None)])

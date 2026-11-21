@@ -83,6 +83,24 @@ class FormatTest(unittest.TestCase):
         self.assertNotIn("FLK1", rk.strip_keys(text))
         self.assertIn("FL-7K3M-Q9TD-6", rk.strip_keys(text))
 
+    def test_strip_keys_removes_a_wrapped_key_and_keeps_the_text_after(self) -> None:
+        k = minted()
+        for wrapped in (k[:7] + "\n " + k[7:50] + "\r\n" + k[50:],
+                        " ".join(k[i:i + 10] for i in range(0, len(k), 10)),
+                        "F L K1." + k[5:]):
+            with self.subTest(wrapped[:12]):
+                got = rk.strip_keys(f"hi {wrapped} tail")
+                self.assertEqual(got, "hi [key removed] tail")
+                # What the parser accepts, the scrub removes.
+                self.assertTrue(rk.check(wrapped, KEYRING).ok)
+
+    def test_strip_keys_fails_closed_on_a_damaged_key(self) -> None:
+        got = rk.strip_keys("hi FLK1.abc-_1.\nxyz987 tail, ok")
+        self.assertNotIn("abc", got)
+        self.assertNotIn("xyz987", got)
+        # Where a damaged key ends cannot be told: the words after it go too.
+        self.assertEqual(got, "hi [key removed] , ok")
+
     def test_disabled_until_a_real_public_key(self) -> None:
         committed = rk.read_public_keys(
             (ROOT / "assets" / "reviewer" / "public_keys.json").read_text())
@@ -139,6 +157,15 @@ class OwnerCommandsTest(unittest.TestCase):
 
     def test_the_private_seed_is_not_in_a_key(self) -> None:
         self.assertNotIn(SEED.hex(), minted())
+
+    def test_verify_reads_a_file_or_standard_input(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            ring = Path(tmp) / "ring"
+            ring.mkdir()
+            path = Path(tmp) / "key.txt"
+            path.write_text("junk", encoding="utf-8")
+            self.assertEqual(rk.main(
+                ["verify", "--file", str(path), "--keyring", str(ring)]), 1)
 
     def test_main_refuses_to_overwrite_and_bad_courses(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
