@@ -4,6 +4,7 @@ import '../core/feedback/report.dart';
 import '../core/models/card.dart';
 import '../core/models/proposal.dart';
 import '../core/review/deck_review.dart';
+import '../core/review/facet_text.dart';
 import '../core/review/facets.dart';
 import '../core/review/question_log.dart';
 import '../core/review/questions_file.dart';
@@ -191,6 +192,47 @@ class Reviewing {
       receipts: old?.receipts ?? const <ReviewReceipt>[],
     ),
   );
+
+  /// [answer] to [facet] of [card] (ADR-0058, W4): right, or flagged with
+  /// pointer tags and perhaps a fix, replacing this reviewer's earlier
+  /// answer to the facet. A receipt of the text seen ([seenTextOf], hashed)
+  /// and the [decision] goes with it, in place of the facet's earlier one.
+  /// Both are sent in the review file (`facets`, `receipts`), beside
+  /// whatever the card's review already holds.
+  void answerFacet(
+    DeckEntry deck,
+    Card card,
+    Facet facet,
+    FacetAnswer answer, {
+    ReceiptDecision? decision,
+  }) => _change(deck, card, (old, at) {
+    final facets = Map<Facet, FacetAnswer>.of(
+      old?.facets ?? const <Facet, FacetAnswer>{},
+    )..[facet] = answer;
+    final receipts = <ReviewReceipt>[
+      for (final r in old?.receipts ?? const <ReviewReceipt>[])
+        if (!(r.cardId == card.id && r.facet == facet)) r,
+      ReviewReceipt.of(
+        cardId: card.id,
+        facet: facet,
+        seen: seenTextOf(card, facet),
+        decision:
+            decision ??
+            (answer.isRight ? ReceiptDecision.right : ReceiptDecision.flagged),
+      ),
+    ];
+    return CardReview(
+      at: at,
+      right: old?.right ?? false,
+      suggestions: old?.suggestions ?? const <Suggestion>[],
+      rating: old?.rating,
+      alike: old?.alike,
+      answers: old?.answers ?? const <String, ProposalAnswer>{},
+      itemsRight: old?.itemsRight ?? const <String>{},
+      facets: Map<Facet, FacetAnswer>.unmodifiable(facets),
+      receipts: List<ReviewReceipt>.unmodifiable(receipts),
+    );
+  });
 
   /// The answer to [proposal] on [card], or with [verdict] null, the answer
   /// taken back (ADR-0038). Sent with the review, like any mark.
