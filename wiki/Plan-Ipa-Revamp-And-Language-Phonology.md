@@ -427,8 +427,9 @@ reverse any of the three.** They settle the three items the 2026-11-14 comments
 on #1295 left open. Evidence: the Telugu cores on decks-live at 57bcdb6
 (2026-11-21), 10,692 distinct target and reading pairs, read without writing.
 `tools/transcribe_decks.py --check` reports 0 anusvara differences and 146
-others (109 on symbol, phonology and digit cards, 34 ṛ or r̥ against ru, 3
-spacing of `...` or a hyphen, 4 suffix cards).
+others (109 on symbol, phonology and digit cards, 34 ṛ or r̥ against ru, and
+3 of spacing: `...` twice, a hyphen once), plus 4 suffix entries the tool lists
+apart as skipped.
 
 1. **Clitic anusvara.** An anusvara before a postposition joined to the word
    follows the ordinary rule by the postposition's first letter: the nasal of
@@ -453,7 +454,8 @@ spacing of `...` or a hyphen, 4 suffix cards).
    `_VOWELS_TE` in `tools/transcribe.py` (and the corpus test).
 3. **ఫ is `ph`.** The tool writes `ph` (pʰ); a hint typing `f` is kept (a
    loanword said with f). There is no general rule from the letters, so no
-   tool change: the corpus has `ph` on 138 cards and `f` on 8 (te-0329,
+   tool change: the corpus has `ph` on 138 cards and `f` on 8 (counted in cards; the test comment counts
+   readings, 250 against 11) (te-0329,
    te-0529, te-0895 (its base word only), te-2415, te-2416, te-2439 and the
    phonology rows te-6599 and te-6621, which may keep `f` to show the sound).
    te-0872, te-0771 and te-grammar-when are already `ph` on decks-live (read
@@ -480,7 +482,7 @@ the narrow forms derive from the broad `ipa`.
 2026-11-15; the owner can overturn it). The state below is what decks-live
 shows on 2026-11-15, not what is planned.
 
-1. **ṛ and ru.** The readings stay on ISO 15919 (ṛ, and r̥ in the narrow form),
+1. **ṛ and ru** (superseded 2026-11-21, see "Telugu clitics, ఋ and ఫ" below). The readings stay on ISO 15919 (ṛ, and r̥ in the narrow form),
    consistent with "based on ISO 15919". The tool's `ru` stays only in
    tool-derived IPA. The stored ISO readings are kept. Counted on decks-live
    (2026-11-15, the `reading` lines containing ṛ or r̥): 29 lines.

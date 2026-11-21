@@ -311,7 +311,8 @@ class TeluguReadingRulesTest(unittest.TestCase):
         "ఋ": ("ru", "te-0007"), "కృ": ("kru", "te-0068"),
         "ప్రకృతి సౌందర్యాన్ని ఆస్వాదించాం.":
             ("prakruti saundaryānni āsvādiñcāṁ.", "te-6311"),
-        # ఫ is ph by default (250 stored readings against 11), f where the
+        # ఫ is ph by default (250 stored readings against 11, which
+        # is 138 cards against 8), f where the
         # card types f.
         "ఫోన్": ("phōn", "te-0872"),
         "పోస్టాఫీసు": ("pōsṭāphīsu", "te-0771"),
@@ -336,6 +337,12 @@ class TeluguReadingRulesTest(unittest.TestCase):
                          "annaṅki")
         self.assertEqual(transcribe("అన్నంలో", "te", "annamlō").reading,
                          "annaṁlō")
+
+    def test_a_clitic_ṁ_stays_before_s_and_v(self) -> None:
+        # The default: ṁ, not m, before s and v, as before l.
+        self.assertEqual(transcribe("అన్నంసు", "te").reading, "annaṁsu")
+        self.assertEqual(transcribe("అన్నంవి", "te").reading, "annaṁvi")
+        self.assertEqual(transcribe("సంవత్సరం", "te").reading, "saṁvatsaraṁ")
 
     def test_a_vocalic_r_is_ru_whatever_the_hint_spells(self) -> None:
         for hint in ("krṛtajñata", "kr̥tajñata", "krutajñata"):
