@@ -15,15 +15,16 @@ import 'facets.dart';
 const int kReviewQuorum = 2;
 
 /// Whether the quorum also needs a Verified reviewer among the checks.
-/// Off until W7 (signed reviewer keys) turns it on: every reviewer is
-/// [ReviewerTier.provisional] today, and turning it on now would leave no
-/// card reviewable. `tools/review_quorum.py` has the matching switch.
+/// OFF by default. W7 (signed reviewer keys, `reviewer_key.dart`) built what
+/// turning it on needs, but turning it on also leaves every card with no
+/// Verified reviewer unable to settle, so it is the owner's switch, in both
+/// files, once Verified reviewers exist. `tools/review_quorum.py` has the
+/// matching switch; the bot knows each code's tier privately.
 const bool kQuorumNeedsVerified = false;
 
 /// What a reviewer's checks are worth (decision 8).
 enum ReviewerTier {
-  /// Passed the reviewer check, or an FL code with no key. Everyone is this
-  /// until W7.
+  /// Passed the reviewer check, or an FL code with no signed key.
   provisional,
 
   /// A signed key for the course, or calibration cards. Counts fully.

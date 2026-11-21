@@ -32,7 +32,7 @@ from typing import Iterable
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from review_quorum import (  # noqa: E402
-    PROVISIONAL, QUORUM_NEEDS_VERIFIED, REVIEW_QUORUM, facet_reached_quorum)
+    PROVISIONAL, QUORUM_NEEDS_VERIFIED, REVIEW_QUORUM, facet_reached_quorum, tier_of)
 
 # The facets, by the name a review file and a deck use (`Facet.wire`), in
 # the order of the Dart enum.
@@ -285,11 +285,14 @@ def checks_of(codes: list[str], held: dict[str, dict], facet: str) -> list[Check
     every facet the entry owns), ignored here; an entry with none is a legacy
     one, and each code of its `checked_by` is a bare "right" on every facet it
     owns."""
+    # A rater's tier is the bot's private knowledge (signed reviewer keys,
+    # tools/reviewer_binding.py): Provisional unless a binding says more, and
+    # it matters only while QUORUM_NEEDS_VERIFIED is on.
     if not held:
-        return [Check(code) for code in codes]
+        return [Check(code, tier=tier_of(code)) for code in codes]
     item = held.get(facet, {"by": [], "flags": []})
-    return [*(Check(code) for code in item["by"]),
-            *(Check(f["by"], False, f["fix"]) for f in item["flags"])]
+    return [*(Check(code, tier=tier_of(code)) for code in item["by"]),
+            *(Check(f["by"], False, f["fix"], tier_of(f["by"])) for f in item["flags"])]
 
 
 def entry_settled(codes: list[str], held: dict[str, dict], data: dict,
