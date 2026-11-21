@@ -467,6 +467,41 @@ Counted there: 2,960 `phonetic` fields, each with a `phonetic_source` line,
 of which 2,879 are `rules` and 81 `wiktionary`. This is the split after two
 cards were re-derived by the rules.
 
+## Marathi readings: final anusvara and schwa (decided 2026-11-21, #1476)
+
+Two questions found while building the Marathi phonetic entry, answered by the
+owner on 2026-11-21.
+
+1. **Word-final anusvara.** Asked whether Marathi follows `ṁ` as Telugu does or
+   stays `m̐`, the owner answered "1. Standardize". Marathi readings write a
+   word-final anusvara (ं) as `ṁ`, the same convention as Telugu (owner,
+   2026-10-19: a word-final anusvara is `ṁ`, course-wide). "Word-final" is
+   the Telugu rule's own definition: a space, punctuation or the end of the
+   text follows. The IPA is unchanged (the nasal vowel, `ə̃`). A medial
+   anusvara is unchanged (the homorganic nasal before a stop or nasal, `ṁ`
+   before y, r, l, v, a sibilant or h), and so is a chandrabindu (`m̐`). Built in
+   `tools/transcribe.py` (`_word_final_nasal`).
+2. **Schwa over-deletion.** Asked about स्वजनजनधनाचा and गजवदन, the owner
+   answered "2. Fix". The Marathi engine applied the Hindi VC_CV rule to every
+   schwa at once, so a dropped schwa still counted as the vowel before and after
+   its neighbour and two side-by-side schwas both went: `svajnjndhnācā`,
+   `gajvdan`, `saklmti`. Now (`_marathi_medial_drops`) the rule runs from the
+   right, one schwa at a time, and a dropped schwa neither counts as the vowel
+   before the next one nor as the vowel after it; so two schwas side by side are
+   never both dropped and single letters never make a run of three consonants:
+   `gajavdan`, `svajnajnadhnācā`, `saklamti`. Verbs in -णे now drop the schwa
+   next to the ending (उगवणे `ugavṇe`, आवडणे `āvaḍṇe`, which is also the
+   course's own typed reading). Hindi, Gujarati and Bengali keep their rule.
+
+**Not settled by any source in the repository, owner to confirm:** the exact
+reading of the two words (the rule's alternation gives the values above; no
+cited literature says how a speaker says them), and the other schwa cases the
+Marathi queue lists (लवकरच, आदरणीय, कृपया, काहीतरी), which this change does not
+touch.
+
+After merge, `derive_phonetic.py mr --write` is rerun on decks-live to refresh
+the `phonetic` field.
+
 ## Steps (Proposed, each one pull request)
 
 | # | Step | Done when |

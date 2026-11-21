@@ -637,6 +637,7 @@ def default_choices(units: list[Unit], lang: str) -> list[Choice]:
     """Without a hint that fits: the first way of each unit, with the
     inherent vowel dropped where the language's rules drop it."""
     picked = [choices(units, k, lang)[0] for k in range(len(units))]
+    marathi_medial = _marathi_medial_drops(units) if lang == "mr" else set()
     for k, u in enumerate(units):
         if u.kind != "I":
             continue
@@ -665,8 +666,9 @@ def default_choices(units: list[Unit], lang: str) -> list[Choice]:
             first = k == 1 or (k >= 2 and units[k - 2].kind == "SP")
             if end and not first:
                 drop = not _said_after_cluster(units, k, lang)
-            elif lang in ("hi", "mr", "gu", "bn") and \
-                    _schwa_drops(units, k):
+            elif lang == "mr":
+                drop = k in marathi_medial
+            elif lang in ("hi", "gu", "bn") and _schwa_drops(units, k):
                 drop = True
         if drop:
             picked[k] = Choice("", "", [""], 0, "drop")
@@ -718,6 +720,34 @@ def _schwa_drops(units: list[Unit], k: int) -> bool:
         and units[k + 3].kind not in ("SP", "P"))
     return (before.kind in ("V", "S", "I") and after_c.kind == "C"
             and said_after)
+
+
+def _marathi_medial_drops(units: list[Unit]) -> set[int]:
+    """The inherent vowels Marathi does not say inside a word (#1476, owner
+    2026-11-21: "2. Fix"). Hindi's VC_CV rule, applied from the right and one
+    schwa at a time: a schwa that has just been dropped does not count as a
+    vowel before the next one, and a schwa that is dropped does not count as
+    the vowel after it. So two schwas side by side are never both dropped, and
+    a run of three consonants is never made out of single letters:
+    गजवदन gajavdan (not gajvdan), स्वजनजनधनाचा svajnajnadhnācā (not
+    svajnjndhnācā). The word's last schwa is handled by the caller."""
+    drops: set[int] = set()
+    for k in range(len(units) - 1, 1, -1):
+        if units[k].kind != "I" or k + 2 >= len(units):
+            continue
+        before = units[k - 2]
+        after_c, after_v = units[k + 1], units[k + 2]
+        if units[k - 1].kind != "C" or after_c.kind != "C" or \
+                before.kind not in ("V", "S", "I") or \
+                (before.kind == "I" and k - 2 in drops):
+            continue
+        said_after = after_v.kind == "S" or (
+            after_v.kind == "I" and k + 2 not in drops
+            and k + 3 < len(units)
+            and units[k + 3].kind not in ("SP", "P"))
+        if said_after:
+            drops.add(k)
+    return drops
 
 
 # --- Writing -----------------------------------------------------------------
@@ -883,7 +913,12 @@ def _transcribe(text: str, lang: str, hint: str | None) -> Transcription:
                     not _already_held(units, k):
                 i_iso, i_ipa = _held(i_iso, i_ipa)
         elif u.kind == "N":
-            if ch.tag == "silent" or typed == "":
+            if lang == "mr" and _word_final_nasal(units, k):
+                # Marathi writes a word-final anusvara ṁ, as Telugu does
+                # (#1476, owner 2026-11-21: "1. Standardize"); the IPA is
+                # the nasal vowel, as before.
+                i_iso, i_ipa = "ṁ", "̃"
+            elif ch.tag == "silent" or typed == "":
                 i_iso, i_ipa = _nasal_vowel(lang)
             elif lang in ("bn", "as"):
                 # Bengali and Assamese say ং as ng whatever follows.
@@ -960,6 +995,13 @@ def _held(iso: str, ipa: str) -> tuple[str, str]:
     if len(iso) > 1 and iso.endswith("h"):
         return iso[:-1] + iso, ipa.rstrip("ʰʱ") + ipa
     return iso + iso, ipa + ipa
+
+
+def _word_final_nasal(units: list[Unit], k: int) -> bool:
+    """Whether the anusvara at [k] ends its word: a space, punctuation or
+    the end of the text comes next (the same place Telugu's rule calls
+    word-final, so a clitic written apart or a mark after it still counts)."""
+    return k + 1 >= len(units) or units[k + 1].kind in ("SP", "P")
 
 
 def _nasal_vowel(lang: str) -> tuple[str, str]:

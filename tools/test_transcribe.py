@@ -171,6 +171,77 @@ class ReadingTest(unittest.TestCase):
                     fresh.doCleanups()
 
 
+class MarathiAnusvaraAndSchwaTest(unittest.TestCase):
+    """Marathi's final anusvara and its medial schwa (#1476, owner
+    2026-11-21)."""
+
+    def read(self, word, hint=None):
+        return transcribe(word, "mr", hint)
+
+    def test_a_word_final_anusvara_is_m_dot_above_as_in_telugu(self) -> None:
+        # The owner's "1. Standardize": the same ṁ Telugu writes.
+        self.assertEqual(self.read("सागरां").reading, "sāgrāṁ")
+        self.assertEqual(self.read("अंधळं").reading, "andhaḷaṁ")
+        self.assertEqual(transcribe("అన్నం", "te").reading, "annaṁ")
+
+    def test_the_final_anusvara_is_the_same_with_a_typed_hint(self) -> None:
+        self.assertEqual(self.read("अंधळं", "andhalan").reading, "andhaḷaṁ")
+
+    def test_a_final_anusvara_before_punctuation_or_a_space_is_still_final(
+            self) -> None:
+        self.assertEqual(self.read("सागरां, आणि").reading, "sāgrāṁ, āṇi")
+        self.assertEqual(self.read("आम्ही सागरां आहोत").reading.split()[1],
+                         "sāgrāṁ")
+
+    def test_the_final_anusvara_ipa_is_unchanged(self) -> None:
+        self.assertEqual(self.read("अंधळं").ipa, "ənd̪ʱəɭə̃")
+
+    def test_a_medial_anusvara_is_not_changed(self) -> None:
+        self.assertEqual(self.read("मुलांपासून").reading, "mulāmpāsun")
+        self.assertEqual(self.read("सांगा").reading, "sāṅgā")
+        # Before y, r, l, v, a sibilant or h it was ṁ already.
+        self.assertEqual(self.read("आम्हांला").reading, "āmhāṁlā")
+
+    def test_a_chandrabindu_is_not_changed(self) -> None:
+        self.assertEqual(self.read("आँ").reading, "ām̐")
+
+    def test_two_schwas_side_by_side_are_never_both_dropped(self) -> None:
+        # The cause of #1476: Hindi's VC_CV rule was applied to every schwa
+        # at once, so a dropped schwa still counted as the vowel before and
+        # after its neighbour. Property, for words of open syllables with no
+        # aspirate: no reading holds three consonant letters in a row.
+        for word in ("गजवदन", "सकलमति", "जनजन", "कमलनयन", "सकलजनमन"):
+            reading = self.read(word).reading
+            self.assertNotRegex(reading, "[^aāiīuūeoêôṛ ]{3}",
+                                f"{word} read {reading}")
+
+    def test_the_two_words_of_the_issue(self) -> None:
+        # OWNER TO CONFIRM: the expected readings follow the rule's
+        # alternation (right to left, one schwa at a time); no source in the
+        # repository says how a speaker says either word.
+        self.assertEqual(self.read("गजवदन").reading, "gajavdan")
+        self.assertEqual(self.read("स्वजनजनधनाचा").reading,
+                         "svajnajnadhnācā")
+
+    def test_a_verb_ending_in_ne_drops_the_schwa_next_to_the_ending(
+            self) -> None:
+        # The course's own reading of आवडणे (a typed hint) is āvaḍṇe; the
+        # engine now agrees, and उगवणे follows the same pattern.
+        self.assertEqual(self.read("आवडणे").reading, "āvaḍṇe")
+        self.assertEqual(self.read("उगवणे").reading, "ugavṇe")
+
+    def test_words_the_rule_did_not_over_delete_are_unchanged(self) -> None:
+        self.assertEqual(self.read("कमळ").reading, "kamaḷ")
+        self.assertEqual(self.read("मराठी").reading, "marāṭhi")
+        self.assertEqual(self.read("सरकार").reading, "sarkār")
+        self.assertEqual(self.read("जनता").reading, "jantā")
+        self.assertEqual(self.read("मित्र").reading, "mitra")
+
+    def test_hindi_keeps_its_own_rule(self) -> None:
+        self.assertEqual(transcribe("जनता", "hi").reading, "jantā")
+        self.assertEqual(transcribe("कमल", "hi").reading, "kamal")
+
+
 class NoHintTest(unittest.TestCase):
     """The three fixes that apply only with no hint (#315)."""
 
