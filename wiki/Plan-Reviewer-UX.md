@@ -2,7 +2,7 @@
 
 Source of truth: this wiki page.
 
-Status: brainstorm settled with the owner on 2026-11-20/21, not built; an ADR and approved mockups ([mockups README](https://github.com/aaronified/fluenough/blob/main/docs/mockups/README.md)) come before any code.
+Status: W7 (signed reviewer keys, #1658) is built on its branch and awaits the owner's `keygen` and public key before it switches on (see the note in the ADR); the rest was settled with the owner on 2026-11-20/21 and is built package by package; an ADR and approved mockups ([mockups README](https://github.com/aaronified/fluenough/blob/main/docs/mockups/README.md)) come before any code.
 
 Goal (owner): ease of use, gated to actual speakers as much as possible, and comprehensive reviews that a second speaker can check easily.
 

@@ -64,6 +64,28 @@ thing anyone can give these decks.
 
 You can turn reviewing off whenever you like. Your code is kept.
 
+## A reviewer key
+
+If the owner gave you a **reviewer key** (a line of text starting `FLK1.`), you
+are a Verified reviewer for the courses it names.
+
+1. Open **Settings > Reviewing > I have a reviewer key**, paste the key and tap
+   **Unlock**. The app checks it on your phone, with no network. If you were not
+   reviewing yet, it turns reviewing on and makes your reviewer code for you.
+2. The page then says **Verified** and ticks the courses the key unlocks. Those
+   courses are in **Languages you review** with no tick of yours and nothing to
+   say about the languages you know; the other courses stay as they were.
+3. Keep your reviewer code. The first review mail you send after pasting the
+   key ties the key to that code, and from then on the key works only with
+   that code. If you were already reviewing, your earlier reviews count as
+   Verified too. A mail with the key but another code is held for the owner.
+
+The key is a **secret**. Do not share it or post it. Your review mails carry it
+as proof, and the mail bot takes it out before anything is published, never
+repeats it and never writes it to an issue, a PR or a deck. If a key is lost or
+leaked, tell the owner: they revoke it, and the app and the bot stop accepting
+it. Without a key your reviewer code is still welcome.
+
 ## What "To review" shows
 
 - Units on the learning path are marked **To review** when their deck is not
@@ -259,7 +281,7 @@ Public:
 - the languages you reviewed (the public issue list shows code and languages);
 - your suggestions in the decks, which are public, with your code.
 
-Private: your **mail address**. It is never written to the public issues.
+Private: your **mail address**, and your **reviewer key** if you have one. Neither is ever written to the public issues, and the tier your code has is not public either.
 
 ## How changes reach learners
 

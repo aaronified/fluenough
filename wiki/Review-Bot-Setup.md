@@ -115,6 +115,32 @@ say `Review bot: 1 other reviewer(s) must accept a proposal.` and, at the
 end, `Agreed proposals: …`. The bot's PRs are labelled `review-bot`, with
 `proposals`, `agreement` or `proposal outdated`.
 
+## Signed reviewer keys (ADR-0058, W7)
+
+Nothing to set up in GitHub: the bot keeps the private bindings of key ids to
+rater codes in a Gmail label of the Fluenough inbox, `fluenough/keys`, which it
+creates, the same way it keeps `fluenough/raters`. Never in a repo file, a
+variable or an issue.
+
+The owner, once, on their own machine (never in a session or a workflow):
+
+1. `python3 tools/reviewer_keys.py keygen --private ~/fluenough-owner.key`
+   writes the private key (keep it offline, never commit it) and prints the
+   public key entry.
+2. Put that entry in `assets/reviewer/public_keys.json` (replace the
+   placeholder) and merge it. Until then keys are off: no row in the app, keys
+   ignored by the bot. A new app release carries the public key.
+3. `python3 tools/reviewer_keys.py mint --private ~/fluenough-owner.key
+   --courses te/en,bn --tier verified --note "Asha"` prints a key to send to a
+   reviewer, and the key id to keep.
+4. To revoke, add the key id on a line of `assets/reviewer/denylist.txt`. The
+   bot reads it on its next run; the app on its next release. Removing the
+   work already done is W8, not built.
+
+A mail the bot holds for a key (forged, revoked, bound to another code, used
+more than 30 times a day) is labelled `fluenough-proposed` and filed with the
+mark "held for the owner"; the owner reads the mail.
+
 ## Overriding it, and turning it off
 
 - **Any later commit wins:** revert a bot PR, edit the card, or delete a
