@@ -23,7 +23,7 @@ Option P3 was chosen:
 - **Top band** means the credible range's lower bound is at B1 on Read and Write, plus Hear for the reading, IPA and audio facets. Self-rated Say never counts, because only Telugu has a scoring recogniser.
 - **Retake:** a 7-day cooldown, with fresh items. No expiry.
 - **Privacy:** nothing leaves the phone except a coarse "passed facets" flag in the first review mail. It is used for triage only, because the bot cannot verify it.
-- **Fallback:** thin courses (too few items) and languages without placement fall back to codes the owner maps to Verified (decision 8).
+- **Fallback:** thin courses (too few items) and languages without placement fall back to signed reviewer keys (decision 8).
 - **Launch gate:** a persona replay and an adversarial retest of the stricter mode, as Plan-Placement-V3 required, and a release with a `min_app` gate if data changes.
 
 Facet eligibility from the check:
@@ -50,11 +50,11 @@ Owner: "Do not use any question type where a right answer can be marked wrong, e
   - failing only means "not yet eligible".
 - **Pilot slot:** a new item runs unscored. It is promoted after about 8 Verified responses with 90% or more agreeing with the key. A split (about 60/40) retires it as dialect-sensitive.
 - Fix history (the old form against the agreed fix) becomes gold items.
-- **Bootstrapping:** the first Verified reviewers of a language come from codes the owner maps to Verified.
+- **Bootstrapping:** the first Verified reviewers of a language come from owner-minted signed reviewer keys.
 - Pilot misses also reveal deck errors.
 - **Strict-zero alternative:** only wrong-by-construction items. It is a narrower, easier test; it was offered and not chosen.
 
-Main downside: a narrower item set than placement, and pilot slots need Verified reviewers who do not exist until the owner issues codes.
+Main downside: a narrower item set than placement, and pilot slots need Verified reviewers who do not exist until the owner issues keys.
 
 ### 3. Taught-from language
 
@@ -115,44 +115,40 @@ Main downsides: per-facet taps add work, and the normalisation rules per script 
 
 Owner: "I like the trust based reviewer and distributed reviewer codes. I will assign the languages associated with the reviewer codes".
 
-Amended by the owner, 2026-11-21: no signed codes and no signing key. "In 1, i was thinking of using the FL codes only. Just that I will create a mapping myself".
+Amended by the owner, 2026-11-21, then reversed the same day: "on second thought on the verified reviewer, it is weird to ask them to change their codes or map those codes in. Rather, we should do the signed keys..." This replaces the "FL codes only, owner mapping" amendment. Signed reviewer keys are the design.
 
-- Reviewers keep the self-created `FL-XXXX-XXXX-C` rater codes only (`lib/core/review/rater_code.dart`).
-- The owner creates the mapping himself: code to assigned languages or courses, and tier.
-- The mail bot (`tools/mail_to_issues.py`) enforces the mapping, and rate-limits per code. A code with no mapping for a course stays Provisional: its review is held until a Verified reviewer agrees.
-- Where the mapping lives is **open for the owner** (see below).
-- Where the mapping is public, the app can offer a reviewer only the assigned courses.
+- **Minting:** the owner mints a signed reviewer key per Verified reviewer with a small script. The payload is the key id, the assigned courses or languages, the tier and the issue date, signed with the owner's private key (Ed25519 suggested). The public key is versioned and ships in the app and the mail bot.
+- **Entry:** the reviewer pastes the key in Settings > Reviewing > "I have a reviewer key". The app verifies the signature offline and unlocks only the assigned courses.
+- **No exchange of FL codes:** reviewers keep their self-created `FL-XXXX-XXXX-C` rater codes (`lib/core/review/rater_code.dart`) and never send them to the owner. No mapping file exists, so there is no question of where a mapping lives.
+- **Binding:** the first review mail carrying the key binds the key id to that reviewer's FL code. Each review mail carries the key as a secret proof. The bot (`tools/mail_to_issues.py`) verifies the signature, the denylist and that the bound code matches. It strips the key before anything is published and never echoes it into issues, PRs or decks. A copied public FL code alone proves nothing, which fixes the spoofing problem of FL-only. A mail with the key but a different FL code, or from an unexpected address, is held for the owner. The bot also rate-limits per key.
+- **Without a key:** self-created FL codes stay Provisional (held until a Verified reviewer agrees). The reviewer check (decision 1) also yields Provisional only.
 
 Tiers:
 
 | Tier | How earned | Effect |
 |---|---|---|
-| Provisional | Reviewer-check pass, or an unmapped `FL-...` code | Counted only alongside a Verified reviewer. |
-| Verified | Mapped by the owner for the course, or calibration cards | Counts fully. |
+| Provisional | Reviewer-check pass, or an `FL-...` code with no key | Counted only alongside a Verified reviewer. |
+| Verified | A signed reviewer key for the course, or calibration cards | Counts fully. |
 | Trusted | Sustained agreement with Verified reviewers | Breaks ties on contested cards. |
 
 A Provisional review is held in the queue and applied only when a Verified reviewer agrees (owner: "1. Ok.").
 
-**Rater codes are public** (issues and decks name them), so a code alone does not prove who sent a review. The mapping should bind each code to the sender mail address its first review came from (already planned in `rater_code.dart`, **not built yet**). A review from another address is held for the owner.
+Signed keys also serve as the fallback for thin courses and languages without placement, and for the first Verified reviewers of a new language.
 
-**Where the mapping lives (open, owner to decide):**
-
-The owner asked: "Then anyone can see it?" about a public mapping file on `decks-live`. Answer: yes. It would be public, including the tiers, so Verified codes would be easy to pick out. Rater codes are already public, so a copied code only fails if the sender-address binding (not built) exists.
-
-| Option | Effect |
-|---|---|
-| Private (bot-only, read by `tools/mail_to_issues.py` only) | The app cannot grey out unassigned courses. A reviewer learns their status when the owner tells them. |
-| Public shared file on `decks-live`, keyed by code | The app can unlock the assigned courses; it reveals which languages and tiers a pseudonymous code holds, and makes Verified codes easy to pick out. |
-
-The orchestrator's lean is now **private** (bot-only), for the reasons above. The owner decides.
-
-**Revocation** (owner: "I revoke. And it does revoke past work."): only the owner revokes, by removing the code from the mapping. That removes the reviewer's past contributions:
+**Revocation** (owner: "I revoke. And it does revoke past work."): only the owner revokes, by adding the key id to a denylist in the repo (ids only). The app also checks the denylist. All work bound to that key id is removed:
 
 - their code is removed from `checked_by`;
 - cards that fall below the quorum return to unchecked or flagged;
 - changes that applied only because of that reviewer are queued for a revert PR on `decks-live`.
 
-Main downsides: the owner's manual mapping work; spoofing of a public code until the address binding is built; revocation causes churn on `decks-live`, and file-level reviewed tags may flip back.
+Main downsides:
+
+- The owner's private signing key must stay secret. Keep it offline and rotate with versioned public keys; a leaked key lets anyone mint keys.
+- Minting is manual (a one-command script).
+- A shared key cannot be used with a second FL code (the mail is held).
+- The mail carries a secret, so the bot must never log or echo it, and mail archives keep it (revocation covers that).
+- A new app release is needed to ship the public key and the key entry screen.
+- Revocation causes churn on `decks-live`, and file-level reviewed tags may flip back.
 
 ### 9. Review queue
 
@@ -182,6 +178,8 @@ Main downside: jumping between units loses context.
 2. Mockups (Sonnet), following the [mockups README](https://github.com/aaronified/fluenough/blob/main/docs/mockups/README.md): 1.4x text, light and dark.
 3. Issues, with dependencies marked as "blocked by" and the `blocked` label, never assumed.
 4. Code, only after the owner approves the mockups.
+
+Still open: (a) typing in the learner's script (A4; the orchestrator recommends no custom keyboard) and (b) the 20-card session size (decision 9, assumed).
 
 Also open: the persona replay and adversarial retest of the stricter placement mode (decision 1) must pass before the reviewer check ships.
 
