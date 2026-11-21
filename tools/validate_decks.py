@@ -5,6 +5,7 @@ Usage:
     python3 tools/validate_decks.py decks/
     python3 tools/validate_decks.py decks/es/es-en-core-100.yaml
 
+    python3 tools/validate_decks.py --audio-report decks/   # also: recordings per language
     python3 tools/validate_decks.py --next-id bn
     python3 tools/validate_decks.py --private my-package/   # a private language
                                                             # package, folder or .fnzip
@@ -331,6 +332,85 @@ MEDIA_CREDIT_KEYS = {"source", "license", "credit"}
 # ported versions too (`CC-BY-SA-3.0-DE`). GFDL alone, NC and ND cannot.
 MEDIA_LICENSE_RE = re.compile(r"CC0-1\.0|public-domain|CC-BY(?:-SA)?-(?:2\.0|2\.5|3\.0|4\.0)"
                               r"(?:-[A-Z]{2,3})?")
+# A recording ships compressed (ADR-0059, #734; owner, 2026-11-21: "Use a sound
+# format that can compress the sounds to save space (16bit, max 128kbps ogg
+# format)"): Ogg Opus, mono, at most 128 kbps and 16 kB a clip, and 50 MB of
+# recordings in all of decks/. The checks read the file's own bytes: no ffmpeg.
+AUDIO_MAX_KBPS = 128
+AUDIO_MAX_BYTES = 16 * 1024
+AUDIO_TOTAL_MAX_BYTES = 50 * 1024 * 1024
+# Opus counts granule positions at 48 kHz whatever the input rate was.
+OPUS_GRANULE_RATE = 48000
+# `NC` or `ND` as a word of the licence id: never allowed, and said so.
+MEDIA_LICENSE_NC_ND_RE = re.compile(r"(?:^|[-_ ])(?:NC|ND)(?:$|[-_ ])", re.IGNORECASE)
+
+
+def ogg_opus_facts(data: bytes) -> tuple[int, float]:
+    """(channels, seconds) of an Ogg Opus stream, read from its bytes: the
+    channel count in `OpusHead`, the length from the last page's granule
+    position less the head's pre-skip. Raises ValueError, with the reason,
+    for anything else: another container, Ogg Vorbis or Speex, a truncated
+    stream."""
+    if data[:4] != b"OggS":
+        raise ValueError("it is not an Ogg file (no OggS at the start); recordings must "
+                         "be Ogg Opus")
+    pos = 0
+    granule = -1
+    channels = pre_skip = None
+    pages = 0
+    while pos < len(data):
+        if data[pos:pos + 4] != b"OggS" or pos + 27 > len(data):
+            raise ValueError("the Ogg stream is damaged or cut short")
+        segments = data[pos + 26]
+        table_end = pos + 27 + segments
+        if table_end > len(data):
+            raise ValueError("the Ogg stream is damaged or cut short")
+        body = sum(data[pos + 27:table_end])
+        if table_end + body > len(data):
+            raise ValueError("the Ogg stream is damaged or cut short")
+        if pages == 0:
+            head = data[table_end:table_end + body]
+            if head[:8] != b"OpusHead":
+                kind = "Ogg Vorbis" if head[1:7] == b"vorbis" else "not Opus"
+                raise ValueError(f"it is an Ogg file that is {kind} (no OpusHead header); "
+                                 f"recordings must be Ogg Opus")
+            if len(head) < 19:
+                raise ValueError("the OpusHead header is cut short")
+            channels = head[9]
+            pre_skip = int.from_bytes(head[10:12], "little")
+        value = int.from_bytes(data[pos + 6:pos + 14], "little", signed=True)
+        if value >= 0:
+            granule = value
+        pages += 1
+        pos = table_end + body
+    if pages < 2 or granule < 0 or pre_skip is None or channels is None:
+        raise ValueError("the Ogg Opus stream has no audio in it")
+    seconds = (granule - pre_skip) / OPUS_GRANULE_RATE
+    if seconds <= 0:
+        raise ValueError("the Ogg Opus stream has no audio in it")
+    return channels, seconds
+
+
+def check_audio_file(r: Report, where: str, value: str, data: bytes) -> None:
+    """A shipped recording is compressed (ADR-0059): Ogg Opus, mono, at most
+    AUDIO_MAX_KBPS and AUDIO_MAX_BYTES."""
+    try:
+        channels, seconds = ogg_opus_facts(data)
+    except ValueError as e:
+        r.error(where, f"audio {value}: {e}")
+        return
+    if channels != 1:
+        r.error(where, f"audio {value} has {channels} channels; recordings are mono")
+    kbps = len(data) * 8 / seconds / 1000
+    if kbps > AUDIO_MAX_KBPS:
+        r.error(where, f"audio {value} is {kbps:.0f} kbps over {seconds:.2f} s; at most "
+                       f"{AUDIO_MAX_KBPS} kbps (re-encode it smaller: mono Opus, about "
+                       f"32 kbps)")
+    if len(data) > AUDIO_MAX_BYTES:
+        r.error(where, f"audio {value} is {len(data)} bytes; at most {AUDIO_MAX_BYTES} "
+                       f"bytes ({AUDIO_MAX_BYTES // 1024} kB) a recording")
+
+
 # What a native language gives a card: never written in a core.
 NATIVE_SIDE = ("native", "alt_native", "not_synonyms", "wiktionary")
 LAYER_ENTRY_KEYS = {"native", "alt_native", "not_synonyms", "notes", "examples", "bases",
@@ -868,6 +948,8 @@ class Report:
     # The recordings and images its cards name (#518, #523), as paths in the
     # repository: `decks/hi/audio/hi-0001.opus`.
     media: list[str] = field(default_factory=list)
+    # The size of each shipped recording by its path, for the totals.
+    audio_bytes: dict[str, int] = field(default_factory=dict)
     # Each noun card's gender, or None without one: (gender, where) (#512).
     noun_genders: list[tuple[str | None, str]] = field(default_factory=list)
     # A layer: the ids of its core's cards and refs whose entry gives native.
@@ -1864,6 +1946,10 @@ def check_media(r: Report, where: str, card: dict, field: str, cid: str | None,
             r.error(where, f"{field} {value} has no file")
         else:
             r.media.append(value)
+            if field == "audio":
+                data = (_lang_dir(r.path, lang) / folder / f"{cid}{ending}").read_bytes()
+                r.audio_bytes[value] = len(data)
+                check_audio_file(r, where, value, data)
         if credit_key not in card:
             r.error(where, f"{credit_key} is required with {field}: the file's "
                            f"{{ source, license, credit }}")
@@ -1884,11 +1970,17 @@ def check_media(r: Report, where: str, card: dict, field: str, cid: str | None,
         if not _is_str(credit.get(key)):
             r.error(where, f"{credit_key}.{key} is required and must be a non-empty "
                            f"string")
+    source = credit.get("source")
+    if field == "audio" and _is_str(source) and not re.match(r"https?://\S+$", source.strip()):
+        r.error(where, f"{credit_key}.source must be the link of the recording's page "
+                       f"(http or https), got {source!r}")
     licence = credit.get("license")
     if _is_str(licence) and not MEDIA_LICENSE_RE.fullmatch(licence):
+        extra = ("; NonCommercial (NC) and NoDerivatives (ND) licences are never "
+                 "allowed" if MEDIA_LICENSE_NC_ND_RE.search(licence) else "")
         r.error(where, f"{credit_key}.license {licence!r} cannot ship in a CC BY-SA "
                        f"4.0 deck: CC0-1.0, public-domain, or CC-BY or CC-BY-SA 2.0 "
-                       f"to 4.0, such as CC-BY-SA-4.0")
+                       f"to 4.0, such as CC-BY-SA-4.0{extra}")
 
 
 def check_media_across(reports: list[Report]) -> list[str]:
@@ -1915,6 +2007,48 @@ def check_media_across(reports: list[Report]) -> list[str]:
                     problems.append(f"{rel}: no card names it as its {field}; remove "
                                     f"it, or name it on the card {f.stem}")
     return problems
+
+
+def audio_totals(reports: list[Report]) -> dict[str, int]:
+    """Bytes of recordings by language, each file once."""
+    seen: dict[str, int] = {}
+    for rep in reports:
+        seen.update(rep.audio_bytes)
+    totals: dict[str, int] = {}
+    for rel, size in seen.items():
+        lang = rel.split("/")[1]
+        totals[lang] = totals.get(lang, 0) + size
+    return totals
+
+
+def check_audio_total(reports: list[Report]) -> list[str]:
+    """All the recordings in the decks together stay under
+    AUDIO_TOTAL_MAX_BYTES (ADR-0059): git history never shrinks."""
+    total = sum(audio_totals(reports).values())
+    if total > AUDIO_TOTAL_MAX_BYTES:
+        return [f"the recordings together are {total} bytes; at most "
+                f"{AUDIO_TOTAL_MAX_BYTES} bytes ({AUDIO_TOTAL_MAX_BYTES // 1048576} MB) "
+                f"for all the decks' audio"]
+    return []
+
+
+def audio_report(reports: list[Report]) -> list[str]:
+    """Lines for `--audio-report`: recordings and bytes per language, and in
+    all against the ceiling. Reports only; never fails."""
+    seen: dict[str, int] = {}
+    for rep in reports:
+        seen.update(rep.audio_bytes)
+    counts: dict[str, int] = {}
+    for rel in seen:
+        counts[rel.split("/")[1]] = counts.get(rel.split("/")[1], 0) + 1
+    totals = audio_totals(reports)
+    lines = ["Audio report (recordings, bytes):"]
+    for lang in sorted(totals):
+        lines.append(f"  {lang}: {counts[lang]} files, {totals[lang]} bytes")
+    total = sum(totals.values())
+    lines.append(f"  all: {sum(counts.values())} files, {total} bytes of "
+                 f"{AUDIO_TOTAL_MAX_BYTES} ({100 * total / AUDIO_TOTAL_MAX_BYTES:.1f}%)")
+    return lines
 
 
 def _check_frequency(r: Report, where: str, value: object) -> None:
@@ -9446,6 +9580,8 @@ def main(argv: list[str]) -> int:
                 return 2
             del args[i:i + (1 if "=" in a else 2)]
             break
+    show_audio = "--audio-report" in args
+    args = [a for a in args if a != "--audio-report"]
     targets = [Path(a) for a in args] or [Path("decks")]
     paths: list[Path] = []
     for t in targets:
@@ -9480,7 +9616,8 @@ def main(argv: list[str]) -> int:
               + check_bases_across(reports) + check_phrasebook_across(reports)
               + check_plans_across(reports) + check_regions_across(reports)
               + check_genders_across(reports) + check_media_across(reports)
-              + check_sets_across(reports) + check_kinds_across(reports))
+              + check_sets_across(reports) + check_kinds_across(reports)
+              + check_audio_total(reports))
     for problem in across:
         print(f"error: {problem}")
     warn_base_stems_across(reports)
@@ -9505,6 +9642,11 @@ def main(argv: list[str]) -> int:
         # Infos never change the exit code or the count of valid decks.
         for i in rep.infos:
             print(f"  info    {i}")
+
+    if show_audio:
+        print()
+        for line in audio_report(reports):
+            print(line)
 
     ok = len(reports) - failed
     print(f"\n{ok}/{len(reports)} decks valid"
