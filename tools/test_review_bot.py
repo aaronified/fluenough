@@ -516,6 +516,10 @@ class Agreement(Base):
         body = self.github.prs[0]["body"]
         self.assertIn(f"Proposed by {ALICE}", body)
         self.assertIn(f"Accepted by {BOB}", body)
+        # The hidden record revocation reads (ADR-0058, W8).
+        record = rb.parse_applied(body)
+        self.assertEqual((record["id"], record["by"], record["accepted"], record["exact"]),
+                         (win.id, ALICE, [BOB], True))
         self.assertIn(f"`{rival.id}` by {BOB}", body)
         self.assertEqual(self.github.prs[0]["head"]["ref"], rb.apply_branch(win))
         self.assertEqual(rb.apply_branch(win), f"review-bot/apply/{win.id}-2026-10-09")

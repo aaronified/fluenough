@@ -133,9 +133,66 @@ The owner, once, on their own machine (never in a session or a workflow):
 3. `python3 tools/reviewer_keys.py mint --private ~/fluenough-owner.key
    --courses te/en,bn --tier verified --note "Asha"` prints a key to send to a
    reviewer, and the key id to keep.
-4. To revoke, add the key id on a line of `assets/reviewer/denylist.txt`. The
-   bot reads it on its next run; the app on its next release. Removing the
-   work already done is W8, not built.
+4. To revoke, add the key id on a line of `assets/reviewer/denylist.txt` and
+   merge it to main. The mail bot reads it on its next run; the app on its next
+   release; and the **Reviewer revocation** workflow (below) takes the work
+   already done out of the decks.
+
+### Revocation removes past work (W8)
+
+Nothing new to set up: the workflow `.github/workflows/reviewer-revocation.yml`
+uses the secrets above (the Gmail ones to read `fluenough/keys`, and the
+GitHub App, which needs to read and write pull requests and contents as it does
+for the review bot, and to read issues and pull requests to find its own
+agreement PRs; labelling its PRs also needs issues write, as for the review bot). It runs every six hours, and from **Actions > Reviewer
+revocation > Run workflow** (only from main; there is no run on a push to the
+denylist, so the minute an id is added does not show which code it belongs to,
+and you can run it by hand to hurry it). Until the removal PR merges, the review
+bot itself ignores revoked codes: nothing reaches an agreement or the quorum
+through them, their review mails make no PR (an open one is closed), and with
+the key store unreadable the bot applies nothing. A keyless mail from a code
+whose key was revoked is held for you, so a revoked reviewer cannot come back
+as Provisional under the same code. For the rater codes
+bound to revoked key ids it opens **pull requests to `decks-live`, never
+merged by the bot**:
+
+- one **removal** PR (`review-bot/revoke/clean-<n>`): their code leaves every
+  `checked_by`, every facet's `by` and `flags`, the `accepted` list of every
+  proposal not yet applied, and the proposals they made are withdrawn. A card or
+  facet that is then below the quorum is unchecked again, and a deck file tagged
+  `reviewed` whose facets are no longer all at the quorum is tagged
+  `unreviewed` again, in the same PR;
+- one **revert** PR for each revoked key (`review-bot/revoke/revert-<hash>-<n>`)
+  for applied changes that only had the quorum because of them: one commit per
+  change, restoring the text it replaced. Drop a commit to keep a change; closing
+  the PR keeps all of them and they are not proposed again.
+
+You merge them like any bot PR (Deck CI must pass). A rerun rebuilds an open PR
+from `decks-live` and changes nothing when it is already clean. The PRs, the
+branch names, the commits and the log never hold a key id, and no PR names a
+reviewer; the log says counts only. A code leaving the decks on the day an id
+joins the denylist can still be seen from outside, so revoke several keys in one
+commit when you can. If the key store cannot be read the run fails and
+revokes nothing, and the run also **fails** (an error in its log, not a quiet
+success) when a revoked code is still in the decks that it cannot take out: an
+entry the bot cannot edit one line at a time, a reviewed deck whose `tags` line
+it cannot rewrite (Deck CI would fail the PR), or a branch that does not
+validate.
+
+**Not covered:** other files that list reviewers (creators, recommendations,
+topics), the daily-question answers (`review-answers/`) and `verified` points.
+Withdrawing a revoked proposer's unapplied proposals also discards other
+reviewers' acceptances of them. A change with two revoked codes is queued under
+only one of their revert PRs, and may move if another key is revoked later.
+
+**What the revert PR can know.** An applied change drops the proposal from the
+deck, so the decks keep no record of who agreed. The job reads the merged
+agreement PR's body ("Proposed by", "Accepted by"), and, from now on, a hidden
+line the bot adds to it with the same codes and those who accepted a reading or
+IPA applied with a word. An agreement PR from before that line names only the
+proposer of such a reading or IPA, so a revoked code there is counted in the log
+as "no record of who accepted" and left for you. Edited or deleted agreement PRs
+are not recoverable; the ADR's W8 note says what would make the record durable.
 
 A mail the bot holds for a key (forged, revoked, bound to another code, used
 more than 30 times a day) is labelled `fluenough-proposed` and filed with the

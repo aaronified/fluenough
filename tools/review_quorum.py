@@ -48,6 +48,18 @@ def set_tiers(tiers: dict[str, tuple[str, tuple[str, ...]]]) -> None:
                    for code, (tier, courses) in tiers.items() if tier in TIERS})
 
 
+# Rater codes whose key was revoked (ADR-0058, W8): their checks count for
+# nothing while they are still in the decks, until the removal PR merges. Set by
+# the review bot from the private bindings; empty by default.
+_REVOKED: frozenset[str] = frozenset()
+
+
+def set_revoked(codes: Iterable[str]) -> None:
+    """Sets the codes [facet_reached_quorum] leaves out (any case)."""
+    global _REVOKED
+    _REVOKED = frozenset((c or "").strip().upper() for c in codes)
+
+
 def tier_of(code: str, language: str | None = None) -> str:
     """The tier of the rater [code] for a card of [language]: Provisional
     unless a binding says more AND its key names that language. With no
@@ -81,7 +93,7 @@ def facet_reached_quorum(
     for check in checks:
         rater, tier = check[0], check[1]
         key = (rater or "").strip().upper()
-        if not key:
+        if not key or key in _REVOKED:
             continue
         endorsing[key] = check[2] if len(check) > 2 else True
         rank = TIERS.index(tier) if tier in TIERS else 0

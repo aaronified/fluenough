@@ -1974,6 +1974,42 @@ def mark_reviewed(path: Path) -> bool:
     return True
 
 
+def mark_unreviewed(path: Path) -> bool:
+    """Tags [path] `unreviewed` in place of `reviewed`: the other way round
+    of [mark_reviewed], for a file whose facets are no longer all at the
+    quorum (a reviewer's key was revoked; ADR-0058, W8). Its `tags` line is
+    written again and no other. False when it is not tagged `reviewed` or
+    cannot be edited one line at a time."""
+    raw = _load(path)
+    if not isinstance(raw, dict):
+        return False
+    tags = raw.get("tags")
+    if not isinstance(tags, list) or not all(isinstance(t, str) for t in tags) \
+            or "reviewed" not in tags:
+        return False
+    new: list[str] = []
+    for t in tags:
+        t = "unreviewed" if t == "reviewed" else t
+        if t not in new:
+            new.append(t)
+    line = f"tags: [{', '.join(_quoted(t) for t in new)}]"
+    lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
+    at = [i for i, l in enumerate(lines) if _TAGS.match(l.rstrip("\r\n"))]
+    if len(at) != 1:
+        return False
+    comment = _TAGS.match(lines[at[0]].rstrip("\r\n")).group(2)
+    lines[at[0]] = line + (f"  {comment}" if comment else "") + "\n"
+    text = "".join(lines)
+    after = yaml.load(text, Loader=vd.DeckLoader)
+    if not isinstance(after, dict) or after.get("tags") != new:
+        return False
+    if {k: v for k, v in after.items() if k != "tags"} \
+            != {k: v for k, v in raw.items() if k != "tags"}:
+        return False
+    path.write_text(text, encoding="utf-8")
+    return True
+
+
 def review_done(result: Checks) -> None:
     """Tags `reviewed` each file [result] touched whose every card is now
     checked. A core and its layer are tagged each on its own, and the

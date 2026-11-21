@@ -108,6 +108,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import proposals as pr  # noqa: E402
 import review_facets as rf  # noqa: E402
+import review_quorum as rq  # noqa: E402
 import question_answers as qa  # noqa: E402
 import transcribe as tr  # noqa: E402
 from rater_codes import rater_code  # noqa: E402
@@ -145,6 +146,68 @@ CHECKS_LATE = datetime.timedelta(hours=1)
 FOOTER = ("<sub>Opened by the review bot (ADR-0038). The owner overrides it "
           "with any later commit: a revert, an edit, or a deleted proposal."
           "</sub>")
+
+
+# The record an agreement PR carries of who agreed (ADR-0058, W8): a hidden
+# comment at the end of its body, as JSON, so that revoking a reviewer's key
+# can tell which applied changes only met the quorum because of them. Rater
+# codes, ids and a field name only: no text, no address. The visible lines of
+# the same body ("Proposed by", "Accepted by") say the same for the main
+# proposal, and are what `parse_applied` falls back to for a PR made before
+# the record existed.
+APPLIED_MARK = "<!-- fluenough-applied "
+_APPLIED = re.compile(re.escape(APPLIED_MARK) + r"(\{.*?\}) -->", re.S)
+
+
+def applied_trailer(p: "pr.Proposal", groups: list[dict]) -> str:
+    """The hidden record of an agreement PR for [p]; [groups] are the other
+    agreed proposals applied with it (`id`, `field`, `by`, `accepted`)."""
+    record = {"id": p.id, "card": p.card, "field": p.field, "by": p.by,
+              "accepted": list(p.accepted), "with": groups}
+    return APPLIED_MARK + json.dumps(record, ensure_ascii=False, sort_keys=True) + " -->"
+
+
+def parse_applied(body: str) -> dict | None:
+    """What an agreement PR's [body] says of who agreed: `{id, card, field,
+    by, accepted, with: [{id, field, by, accepted}], exact}`. `exact` is
+    False for a PR without the hidden record, read from its visible lines:
+    then an agreed reading or IPA applied with the word names only its
+    proposer (`accepted` is None). None when the body is not an agreement's."""
+    found = _APPLIED.search(body or "")
+    if found:
+        try:
+            record = json.loads(found.group(1))
+        except ValueError:
+            record = None
+        if isinstance(record, dict) and all(
+                isinstance(record.get(k), str) for k in ("id", "card", "field", "by")) \
+                and isinstance(record.get("accepted"), list):
+            groups = [g for g in record.get("with", []) if isinstance(g, dict)
+                      and isinstance(g.get("by"), str)]
+            return {"id": record["id"], "card": record["card"],
+                    "field": record["field"], "by": record["by"],
+                    "accepted": [a for a in record["accepted"] if isinstance(a, str)],
+                    "with": [{"id": str(g.get("id", "")), "field": str(g.get("field", "")),
+                              "by": g["by"],
+                              "accepted": [a for a in g.get("accepted", [])
+                                           if isinstance(a, str)]} for g in groups],
+                    "exact": True}
+    head = re.match(r"Proposal `([^`]+)` on `([^`]+)` reached", body or "")
+    by = re.search(r"^- Proposed by (\S+)\s*$", body or "", re.M)
+    field_ = re.search(r"^- Field: (\S+)\s*$", body or "", re.M)
+    accepted = re.search(r"^- Accepted by (.+?)\s*$", body or "", re.M)
+    if not (head and by and field_):
+        return None
+    return {"id": head.group(1), "card": head.group(2), "field": field_.group(1),
+            "by": by.group(1),
+            "accepted": [a.strip() for a in accepted.group(1).split(",")
+                         if a.strip()] if accepted else [],
+            "with": [{"id": m.group(1), "field": m.group(2), "by": m.group(3),
+                      "accepted": None}
+                     for m in re.finditer(
+                         r"^- Applied with it, agreed: `([^`]+)` on (\S+), by (\S+)\s*$",
+                         body, re.M)],
+            "exact": False}
 
 
 def agreements_needed(env: dict[str, str]) -> int:
@@ -487,9 +550,10 @@ class RestGitHub:
     def find_pr(self, branch: str) -> dict | None:
         status, found = self._call(
             "GET", f"/pulls?head={self.owner}:{branch}&state=all&per_page=10")
-        if status != 200 or not isinstance(found, list) or not found:
-            return None
-        return found[0]
+        if status != 200 or not isinstance(found, list):
+            # Never "no PR": a PR that exists would be opened a second time.
+            raise RuntimeError(f"looking for the PR of {branch} failed: {status}")
+        return found[0] if found else None
 
     def open_prs(self, prefix: str) -> list[dict]:
         """The open PRs from this repository's branches under [prefix]."""
@@ -821,6 +885,31 @@ class Bot:
                  lookup: Lookup = wiktionary_ipa) -> None:
         self.git, self.github, self.threshold, self.log = git, github, threshold, log
         self.lookup = lookup
+        # Rater codes of revoked keys (ADR-0058, W8), from the private
+        # bindings: nothing counts toward an agreement or the quorum through
+        # them, and their review mails are not made into PRs, while their
+        # work is still in the decks. `revocation_unknown` is True when the
+        # denylist is not empty and the bindings could not be read: then
+        # nothing is applied or tagged, rather than guessing.
+        self.revoked: frozenset[str] = frozenset()
+        self.revocation_unknown = False
+
+    def set_revoked(self, codes: frozenset[str] | None) -> None:
+        """Sets the revoked codes (None: unknown, fail safe)."""
+        self.revocation_unknown = codes is None
+        self.revoked = frozenset(codes or ())
+        rq.set_revoked(self.revoked)
+
+    def is_revoked(self, code: str) -> bool:
+        return (code or "").strip().upper() in self.revoked
+
+    def agreed(self, p: pr.Proposal) -> bool:
+        """Whether [p] has the agreement needed from codes that are not
+        revoked: its proposer must not be, and enough of those who accepted it
+        must not be."""
+        if self.revocation_unknown or self.is_revoked(p.by):
+            return False
+        return sum(1 for a in p.accepted if not self.is_revoked(a)) >= self.threshold
 
     def job(self, branch: str, build: Build) -> str:
         """Brings [branch]'s PR one step on, opening it first if need be.
@@ -900,6 +989,8 @@ class Bot:
     def review(self, key: str, code: str, review: Review) -> str:
         """The PR of one review mail, by [code]: its proposals and
         acceptances. What is left out is logged, as counts."""
+        if self.revocation_unknown or self.is_revoked(code):
+            return self._hold_revoked(f"{PREFIX}review/{key}")
         made: list[pr.Proposed] = []
         checked: list[pr.Checks] = []
 
@@ -978,6 +1069,19 @@ class Bot:
                      f"{len(checked[-1].unsupported)} left for the owner.")
         return outcome
 
+    def _hold_revoked(self, branch: str) -> str:
+        """A mail from a revoked code (or, with the bindings unreadable, from
+        any): no PR is made, and one already open is closed so it cannot merge
+        their work. Counts only in the log."""
+        found = self.github.find_pr(branch)
+        if found is not None and not found.get("merged_at") \
+                and found.get("state") != "closed":
+            self.github.close(found["number"], "Closed: the reviewer's key was "
+                              "revoked, or revocation could not be checked.")
+        self.log("A review mail was held: its reviewer is revoked or "
+                 "revocation is unknown.")
+        return "held"
+
     def _facet_card(self, root: Path, code: str, fc: FacetCard,
                     result: pr.Proposed, checks: pr.Checks) -> None:
         """One card's facet answers (ADR-0058, W9). An answer to text the
@@ -1045,6 +1149,8 @@ class Bot:
         settle a point, and (once WRITE_VERIFIED) it is listed in the card's
         `verified`. A first "no" is only marked here: its own PR is opened
         by [sweep_flags]. Counts only in the log: no text, no mail address."""
+        if self.revocation_unknown or self.is_revoked(code):
+            return self._hold_revoked(f"{PREFIX}questions/{key}")
         made: list[qa.Counted] = []
 
         def build(root: Path) -> Built | None:
@@ -1108,6 +1214,10 @@ class Bot:
                 continue
             wanted.add(branch)
             build = self._flag_build(lang, key, point)
+            # A flag a revoked code took part in is never merged (W8).
+            if state == "merge" and (self.revocation_unknown or any(
+                    self.is_revoked(c) for c in (point.get("answers") or {}))):
+                state = "open"
             if state == "merge":
                 outcome = self.job(branch, build)
                 counts["merged" if outcome == "merged" else "open"] += 1
@@ -1186,7 +1296,7 @@ class Bot:
             found = pr.find(root, lang, pid)
             # Still there, the same attempt, and still agreed enough.
             if found is None or found[1].date != proposal.date \
-                    or len(found[1].accepted) < self.threshold:
+                    or not self.agreed(found[1]):
                 return None
             # A contested facet is not settled by a fix: reviewers disagree
             # (ADR-0058, W9), and it waits for the next answer.
@@ -1212,15 +1322,17 @@ class Bot:
             if applied.closed:
                 lines.append("- Closed as outdated with it: " + ", ".join(
                     f"`{o.id}` by {o.by}" for o in applied.closed))
+            agreed_with: list[dict] = []
             if p.field == "target" and applied.entry is not None:
                 try:
-                    lines += self._with_word(root, lang, applied.entry, p)
+                    lines += self._with_word(root, lang, applied.entry, p,
+                                             agreed_with)
                 except _NotWhole as failed:
                     # The checkout is thrown away: no PR, and the word waits.
                     self.log(f"{p.card}: the agreed word `{pid}` waits: "
                              f"{failed}; left for the owner (#476).")
                     return None
-            lines += ["", FOOTER]
+            lines += ["", applied_trailer(p, agreed_with), FOOTER]
             return Built(
                 title=f"Apply the agreed change to {p.card} ({p.field})",
                 body="\n".join(lines),
@@ -1240,12 +1352,12 @@ class Bot:
         """The agreed proposal on [entry]'s field [name] that goes first,
         if any: it goes in with an agreed change to the word."""
         agreed = [o for o in entry.proposals() if o.field == name
-                  and len(o.accepted) >= self.threshold
+                  and self.agreed(o)
                   and entry.value(name) == o.now]
         return min(agreed, key=lambda o: (o.date, o.id)) if agreed else None
 
     def _with_word(self, root: Path, lang: str, entry: pr.Entry,
-                   p: pr.Proposal) -> list[str]:
+                   p: pr.Proposal, agreed_with: list[dict] | None = None) -> list[str]:
         """After [p] changed [entry]'s word: applies the agreed proposals on
         its reading and IPA with it, and works out the fields none of them
         changes (owner, #468). The PR body's lines saying what was done."""
@@ -1277,6 +1389,10 @@ class Bot:
                 if done.outcome == "applied":
                     lines.append(f"- Applied with it, agreed: `{agreed.id}` on "
                                  f"{name}, by {agreed.by}")
+                    if agreed_with is not None:
+                        agreed_with.append({"id": agreed.id, "field": name,
+                                            "by": agreed.by,
+                                            "accepted": list(agreed.accepted)})
                     fresh = done.entry or fresh
                     continue
             wanted.append(name)
@@ -1348,7 +1464,7 @@ class Bot:
                 # One tied to a change to the word goes in with that word.
                 if p.tied:
                     continue
-                if p.id not in stale and len(p.accepted) >= self.threshold \
+                if p.id not in stale and self.agreed(p) \
                         and not pr.facet_contested(root, lang, p.card, p.field):
                     groups.setdefault((str(e.path), p.card, p.field), []).append(p)
             # Words first: an agreed reading or IPA goes in with an agreed

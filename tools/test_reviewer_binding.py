@@ -114,14 +114,17 @@ class GateTest(unittest.TestCase):
         # A code no key is bound to is just Provisional.
         self.assertEqual(g.check(files_with(None, OTHER), OTHER).status, rb.NONE)
 
-    def test_a_keyless_mail_from_a_code_whose_key_was_revoked_is_provisional(
+    def test_a_keyless_mail_from_a_code_whose_key_was_revoked_is_held(
             self) -> None:
         store = rb.MemoryBindings()
         gate(store, rk.Keyring(RING.public_keys, frozenset())).check(
             files_with(key()), CODE)
         revoking = rk.Keyring(RING.public_keys, frozenset({KEY_ID}))
         self.assertEqual(
-            gate(store, revoking).check(files_with(None), CODE).status, rb.NONE)
+            gate(store, revoking).check(files_with(None), CODE).status, rb.HELD)
+        # Another code, never bound, is still just Provisional.
+        self.assertEqual(
+            gate(store, revoking).check(files_with(None, OTHER), OTHER).status, rb.NONE)
 
     def test_the_tier_is_scoped_to_the_keys_courses(self) -> None:
         g = gate()
@@ -472,9 +475,13 @@ class MailJobTest(unittest.TestCase):
 
     def test_the_proposals_never_see_the_key(self) -> None:
         seen: list = []
+        seen_revoked: list = []
 
         class Bot:
             threshold = 1
+
+            def set_revoked(self, codes) -> None:
+                seen_revoked.append(codes)
 
             def review(self, key_: str, code: str, review) -> str:
                 seen.append(repr(review))
@@ -495,6 +502,8 @@ class MailJobTest(unittest.TestCase):
                 redirect_stdout(io.StringIO()) as out:
             mail_to_issues.run(ENV, imap, filed.append, bot=Bot())
         self.assertEqual(len(seen), 1)
+        # The bot is told which codes are revoked (none here): never unknown.
+        self.assertEqual(seen_revoked, [frozenset()])
         for secret in (key(), "FLK1", KEY_ID):
             self.assertNotIn(secret, seen[0] + out.getvalue())
         # One use only: counted at filing, not again for the proposals.
