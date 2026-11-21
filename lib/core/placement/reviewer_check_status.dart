@@ -1,4 +1,5 @@
 import 'placement_data.dart';
+import 'reviewer_check_bank.dart';
 import 'placement_questions.dart' show PlacementSkill;
 import 'reviewer_check_rules.dart';
 import 'reviewer_check_run.dart';
@@ -103,6 +104,22 @@ class ReviewerCheckRecord {
     used: used,
     mailed: true,
   );
+
+  /// The record when a run starts at [now] with [cards] to ask about. The
+  /// cooldown and the used cards begin here, so an abandoned run is an
+  /// attempt and quitting gives neither a fresh set nor an early retake.
+  ReviewerCheckRecord afterStart(Iterable<String> cards, DateTime now) {
+    final all = <String>[...used, ...cards];
+    return ReviewerCheckRecord(
+      eligibility: eligibility,
+      lastAttempt: now,
+      offered: true,
+      used: all.length > kReviewerUsedMemory
+          ? all.sublist(all.length - kReviewerUsedMemory)
+          : all,
+      mailed: mailed,
+    );
+  }
 
   /// The record after an attempt that ended at [now] with [result]. A retake
   /// only adds eligibility, never takes it (no expiry); the cooldown starts.

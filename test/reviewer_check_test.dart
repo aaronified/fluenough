@@ -2,7 +2,11 @@
 // be asked, what a run reveals, and what the phone remembers.
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/placement/item_registry.dart';
+import 'package:fluenough/core/placement/assurance_model.dart';
 import 'package:fluenough/core/placement/placement_data.dart';
+import 'package:fluenough/core/placement/placement_questions.dart'
+    show PlacementSkill;
+import 'package:fluenough/core/placement/v3_result.dart';
 import 'package:fluenough/core/placement/reviewer_check_bank.dart';
 import 'package:fluenough/core/placement/reviewer_check_rules.dart';
 import 'package:fluenough/core/placement/reviewer_check_run.dart';
@@ -237,21 +241,18 @@ void main() {
       }
     });
 
-    test('an also right tap leaves the score and another item takes its '
-        'place; more than a few taps leave the group not enough', () {
+    test('an also right tap leaves the score and a spare takes its place; '
+        'a tap beyond the cap counts as a miss', () {
       final plain = _scripted(bank);
-      final two = _scripted(bank, alsoRightAt: <int>{0, 4});
-      // The two suspended items are answered by tapping, and two spare items
-      // are asked in their place.
-      expect(two.answered, plain.answered + 2);
-      final taps = two.result.suspended;
-      expect(taps, hasLength(2));
+      final one = _scripted(bank, alsoRightAt: <int>{0});
+      // The suspended item is tapped, and a spare is asked in its place.
+      expect(one.answered, plain.answered + 1);
+      expect(one.result.suspended, hasLength(1));
       for (final g in ReviewerGroup.values) {
-        // Suspended items are not in anyone's score.
-        final scored = two.result.groups[g]!.scored;
-        expect(scored, lessThanOrEqualTo(kReviewerItems[g]!));
+        expect(one.result.groups[g]!.scored, kReviewerItems[g]!);
       }
-      // Tapping three of one group is too many for it to be judged.
+      // Three taps in one group: the first is replaced, the other two are
+      // misses against the group.
       final run = ReviewerCheckRun(bank: bank, seed: 1, audio: true);
       var tapped = 0;
       while (!run.finished) {
@@ -263,11 +264,8 @@ void main() {
           run.answer(q.options.indexOf(q.item.options[q.item.correct]));
         }
       }
-      expect(
-        run.result.groups[ReviewerGroup.read]!.status,
-        ReviewerGroupStatus.notEnough,
-      );
-      expect(run.result.eligibility.passed, isFalse);
+      final read = run.result.groups[ReviewerGroup.read]!;
+      expect(read.scored - read.correct, 2);
     });
 
     test('the questions carry no key, and the options are in a seeded '
@@ -309,7 +307,7 @@ void main() {
     });
 
     test('a retake asks fresh cards while the course has them', () {
-      final big = ReviewerFixture(perDeck: 12).bank();
+      final big = ReviewerFixture(perDeck: 16).bank();
       final first = _scripted(big).result.asked.toSet();
       final second = _scripted(big, seed: 2, seen: first).result.asked.toSet();
       expect(second.intersection(first), isEmpty);
@@ -362,10 +360,156 @@ void main() {
       expect(ReviewerCheckRecord.fromJson('junk').passed, isFalse);
     });
 
+    test('quitting a run is an attempt: the cooldown and the cards asked '
+        'begin at the start', () {
+      final run = ReviewerCheckRun(bank: fixture.bank(), seed: 4, audio: true);
+      final started = const ReviewerCheckRecord().afterStart(
+        run.plannedCards,
+        now,
+      );
+      expect(started.canTake(now), isFalse);
+      expect(started.passed, isFalse);
+      expect(started.used, containsAll(run.plannedCards));
+      // The next run starts on other cards while the course has them.
+      final big = ReviewerFixture(perDeck: 16).bank();
+      final first = ReviewerCheckRun(bank: big, seed: 4, audio: true);
+      final seen = const ReviewerCheckRecord()
+          .afterStart(first.plannedCards, now)
+          .used
+          .toSet();
+      final next = ReviewerCheckRun(
+        bank: big,
+        seed: 5,
+        audio: true,
+        seen: seen,
+      );
+      expect(next.question!.item.cardId, isNot(isIn(seen)));
+    });
+
+    test('the quiet offer is not made, nor counted, where the check '
+        'cannot run', () {
+      final data = fixture.data;
+      final top = V3Result(
+        skills: <V3SkillResult>[
+          for (final skill in <PlacementSkill>[
+            PlacementSkill.read,
+            PlacementSkill.write,
+          ])
+            V3SkillResult(
+              skill: skill,
+              status: V3Status.placed,
+              lowUnit: data.deckCount,
+              highUnit: data.deckCount,
+              rangeShown: true,
+            ),
+        ],
+        levels: PlacementLevels(data.deckCount, maxParts: 20),
+        readout: null,
+        script: null,
+        items: 0,
+        seconds: 0,
+        endReason: null,
+      );
+      bool offer(CheckedTwice twice) => shouldMakeOffer(
+        record: const ReviewerCheckRecord(),
+        result: top,
+        data: data,
+        checkedTwice: twice,
+      );
+      expect(offer((_, _) => true), isTrue);
+      expect(offer((_, _) => false), isFalse);
+    });
+
     test('the quiet offer is made once per course', () {
       const fresh = ReviewerCheckRecord();
       expect(fresh.shouldOffer, isTrue);
       expect(fresh.withOffered().shouldOffer, isFalse);
+    });
+  });
+
+  group('homophones and other sound-alikes', () {
+    Card spoken(String id, String target, String native, {String? reading}) =>
+        Card(
+          id: id,
+          deckId: 'd',
+          target: target,
+          native: native,
+          reading: reading,
+          pos: 'noun',
+        );
+
+    int admitted(List<Card> cards, List<String> options, String format) {
+      final data = PlacementLanguageData(
+        language: 'zh',
+        decks: <PlacementDeck>[PlacementDeck(id: 'd', cards: cards)],
+      );
+      final bank = ReviewerBank.build(
+        data: data,
+        items: <RegItem>[
+          RegItem(
+            id: '${cards.first.id}:$format',
+            format: format,
+            cardId: cards.first.id,
+            deck: 0,
+            prompt: cards.first.target,
+            options: options,
+            correct: 0,
+          ),
+        ],
+        checkedTwice: (_, _) => true,
+      );
+      return bank.scored.values.fold(0, (n, list) => n + list.length);
+    }
+
+    final cards = <Card>[
+      spoken('a', '师', 'teacher', reading: 'shī'),
+      spoken('b', '诗', 'poem', reading: 'shi1'),
+      spoken('c', '十', 'ten', reading: 'shí'),
+      spoken('d', '马', 'horse', reading: 'mǎ'),
+      spoken('e', '书', 'book', reading: 'shū'),
+    ];
+
+    test('a heard item is refused when a distractor shares the key\'s '
+        'reading, even in another spelling or with another tone mark', () {
+      // poem (shi1) and ten (shí) sound like teacher (shī) once tones go.
+      expect(
+        admitted(cards, <String>['teacher', 'poem', 'horse', 'book'], 'F13'),
+        0,
+      );
+      expect(
+        admitted(cards, <String>['teacher', 'horse', 'ten', 'book'], 'F13'),
+        0,
+      );
+      expect(
+        admitted(cards, <String>['teacher', 'horse', 'book', 'poem'], 'F2'),
+        0,
+      );
+    });
+
+    test('a different card with a different sound is admitted', () {
+      final distinct = <Card>[
+        spoken('a', '师', 'teacher', reading: 'shī'),
+        spoken('d', '马', 'horse', reading: 'mǎ'),
+        spoken('e', '书', 'book', reading: 'tā'),
+        spoken('f', '他', 'he', reading: 'gǒu'),
+      ];
+      expect(
+        admitted(distinct, <String>['teacher', 'horse', 'book', 'he'], 'F13'),
+        1,
+      );
+    });
+
+    test('a distractor with no word class is refused', () {
+      final cards = <Card>[
+        spoken('a', 'wa', 'big'),
+        spoken('b', 'wb', 'house'),
+        spoken('c', 'wc', 'tree'),
+        const Card(id: 'd', deckId: 'd', target: 'wd', native: 'river'),
+      ];
+      expect(
+        admitted(cards, <String>['big', 'house', 'tree', 'river'], 'F2'),
+        0,
+      );
     });
   });
 }

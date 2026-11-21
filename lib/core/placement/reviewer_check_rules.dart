@@ -67,32 +67,32 @@ const Map<String, ReviewerGroup> kReviewerFormats = <String, ReviewerGroup>{
 
 /// How many scored items each group asks in a run.
 const Map<ReviewerGroup, int> kReviewerItems = <ReviewerGroup, int>{
-  ReviewerGroup.read: 16,
-  ReviewerGroup.write: 16,
-  ReviewerGroup.hear: 12,
+  ReviewerGroup.read: 28,
+  ReviewerGroup.write: 28,
+  ReviewerGroup.hear: 20,
   ReviewerGroup.grammar: 10,
 };
 
 /// Spare items each group may draw on when one is suspended or cannot be
 /// played.
-const int kReviewerReserve = 4;
+const int kReviewerReserve = 2;
 
 /// The fewest scored items a group needs to be judged at all (suspended
 /// items leave the score; a group left with fewer is "not enough").
 const Map<ReviewerGroup, int> kReviewerMinScored = <ReviewerGroup, int>{
-  ReviewerGroup.read: 12,
-  ReviewerGroup.write: 12,
-  ReviewerGroup.hear: 9,
-  ReviewerGroup.grammar: 7,
+  ReviewerGroup.read: 24,
+  ReviewerGroup.write: 24,
+  ReviewerGroup.hear: 17,
+  ReviewerGroup.grammar: 8,
 };
 
 /// The fewest distinct eligible cards a group needs in the top band for the
 /// course to be offered the check at all. A course with fewer is "thin".
 const Map<ReviewerGroup, int> kReviewerMinPool = <ReviewerGroup, int>{
-  ReviewerGroup.read: 24,
-  ReviewerGroup.write: 24,
-  ReviewerGroup.hear: 18,
-  ReviewerGroup.grammar: 12,
+  ReviewerGroup.read: 36,
+  ReviewerGroup.write: 36,
+  ReviewerGroup.hear: 26,
+  ReviewerGroup.grammar: 14,
 };
 
 /// The chance a guesser may pass a group, the check's confidence target (it
@@ -109,7 +109,7 @@ const Map<ReviewerGroup, double> kReviewerAlpha = <ReviewerGroup, double>{
 /// The share of a group's scored items a reviewer must also get right, on
 /// top of beating guessing: someone who knows half of the top band's words
 /// beats a guesser but is not in the top band.
-const double kReviewerMinAccuracy = 0.75;
+const double kReviewerMinAccuracy = 0.85;
 
 /// How many items of a group "also right" may suspend and replace. More than
 /// this and the group is "not enough": the tap is a safety valve for a flawed

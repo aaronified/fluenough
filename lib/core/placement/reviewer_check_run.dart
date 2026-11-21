@@ -188,6 +188,14 @@ class ReviewerCheckRun {
   /// The groups the run asks, in the order of the interleave.
   Set<ReviewerGroup> get groups => Set<ReviewerGroup>.unmodifiable(_planned);
 
+  /// The cards the run may ask about, spares included: what a started run
+  /// counts as asked, so quitting does not give a fresh set.
+  List<String> get plannedCards => <String>[
+    for (final s in _queue) s.item.item.cardId,
+    for (final list in _reserve.values)
+      for (final i in list) i.item.cardId,
+  ];
+
   /// The current question, or null at the end.
   ReviewerQuestion? get question => _question;
 
@@ -445,23 +453,36 @@ class ReviewerCheckRun {
                 !d.slot.pilot,
           )
           .length;
+      final skipped = _done
+          .where(
+            (d) =>
+                d.outcome == ReviewerOutcome.skipped &&
+                d.slot.item.group == g &&
+                !d.slot.pilot,
+          )
+          .length;
+      // A suspension beyond the cap is a miss: the tap cannot be used to
+      // shape the scored set.
+      final extra = math.max(0, suspended - kReviewerMaxSuspended);
+      final total = counted.length + extra;
       final ReviewerGroupStatus status;
-      if (counted.length < (kReviewerMinScored[g] ?? 1) ||
-          suspended > kReviewerMaxSuspended) {
+      if (total < (kReviewerMinScored[g] ?? 1) ||
+          skipped > kReviewerMaxSkipped) {
         status = ReviewerGroupStatus.notEnough;
       } else {
         final p = reviewerTail(<double>[
           for (final d in counted) d.slot.item.nullGuess,
+          for (var i = 0; i < extra; i++) reviewerNullGuess('F2'),
         ], right);
         final beatsGuessing = p <= (kReviewerAlpha[g] ?? 0.01);
-        final accurate = right >= kReviewerMinAccuracy * counted.length;
+        final accurate = right >= kReviewerMinAccuracy * total;
         status = beatsGuessing && accurate
             ? ReviewerGroupStatus.passed
             : ReviewerGroupStatus.notYet;
       }
       out[g] = ReviewerGroupOutcome(
         status: status,
-        scored: counted.length,
+        scored: total,
         correct: right,
       );
     }

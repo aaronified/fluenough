@@ -25,6 +25,7 @@ class CheckPersona {
     this.suspendUnknown = false,
     this.suspendAll = false,
     this.firstOption = false,
+    this.knownFraction = 0,
   });
 
   final String name;
@@ -50,6 +51,10 @@ class CheckPersona {
   /// Always picks the first option shown.
   final bool firstOption;
 
+  /// A share of the items, drawn at random per card, that the person knows
+  /// whatever its deck: partial knowledge of the top band.
+  final double knownFraction;
+
   static double _guess(String format, int options) => 1 / options;
 }
 
@@ -59,6 +64,15 @@ double Function(String, int) leakBeyond(double bump) {
   final es = leakLanguages()['es']!;
   return (String format, int options) =>
       math.min(1.0, es.rate(format, false, BankProfile.fixed, true) + bump);
+}
+
+/// A fixed number in [0, 1) for [key]: the same on every platform.
+double _share(String key) {
+  var h = 2166136261;
+  for (final c in key.codeUnits) {
+    h = ((h ^ c) * 16777619) & 0x7fffffff;
+  }
+  return math.Random(h).nextDouble();
 }
 
 /// What a run came to.
@@ -89,7 +103,11 @@ ReplayRun playRun(
     final q = run.question!;
     final item = q.item;
     items++;
-    final known = item.deck <= person.knownDeck;
+    final known =
+        item.deck <= person.knownDeck ||
+        (person.knownFraction > 0 &&
+            _share('${person.name}/$seed/${item.cardId}') <
+                person.knownFraction);
     if (person.suspendAll || (person.suspendUnknown && !known)) {
       run.alsoRight();
       continue;

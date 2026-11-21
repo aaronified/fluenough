@@ -190,6 +190,12 @@ class _ReviewerCheckPageState extends State<ReviewerCheckPage> {
         audio: audio,
         seen: record.used.toSet(),
       );
+      // The attempt counts from the start: quitting is not a way to retake
+      // at once or to see other cards.
+      state.settings.setReviewerCheck(
+        widget.code,
+        record.afterStart(run.plannedCards, state.now()),
+      );
       setState(() => _run = run);
       _afterStep();
     } on Object catch (error) {
@@ -480,7 +486,17 @@ class _ReviewerCheckOfferState extends State<ReviewerCheckOffer> {
       if (!mounted) return;
       final state = AppScope.read(context);
       final record = state.settings.reviewerCheckOf(widget.code);
-      if (!record.shouldOffer || !topBandReached(widget.result, widget.data)) {
+      final plan = state.placementRunPlan(
+        widget.code,
+        native: state.courseNative(widget.code),
+      );
+      if (plan == null ||
+          !shouldMakeOffer(
+            record: record,
+            result: widget.result,
+            data: widget.data,
+            checkedTwice: _checkedTwiceOf(plan),
+          )) {
         return;
       }
       state.settings.setReviewerCheck(widget.code, record.withOffered());

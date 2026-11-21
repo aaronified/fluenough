@@ -1,5 +1,6 @@
 import '../models/card.dart';
 import '../review/facets.dart';
+import '../review/fix_text.dart' show nfc;
 import '../review/review_quorum.dart';
 import 'item_registry.dart';
 import 'placement_data.dart';
@@ -169,7 +170,43 @@ class FixHistoryEntry {
 // -------------------------------------------------------------------- text
 
 String _norm(String s) =>
-    s.toLowerCase().replaceAll(RegExp(r'\s+'), ' ').trim();
+    nfc(s).toLowerCase().replaceAll(RegExp(r'\s+'), ' ').trim();
+
+const String _accented = 'āáǎàăâäēéěèêëīíǐìîïōóǒòôöūúǔùûǖǘǚǜüñç';
+const String _plain = 'aaaaaaaeeeeeeiiiiiioooooouuuuuuuuuunc';
+
+/// A reading or IPA as the ear takes it: lower case, tone marks and tone
+/// numbers, hyphens, apostrophes, dots and spaces gone. Two words with the
+/// same folded sound may be heard as each other.
+String _sound(String s) {
+  final b = StringBuffer();
+  for (final r in _norm(s).runes) {
+    final ch = String.fromCharCode(r);
+    final at = _accented.indexOf(ch);
+    if (at >= 0) {
+      b.write(_plain[at]);
+    } else if (RegExp(r"[0-9\-'’·.ˈˌ ]").hasMatch(ch)) {
+      continue;
+    } else {
+      b.write(ch);
+    }
+  }
+  return b.toString();
+}
+
+/// The sounds a card is read or heard as: its reading, alternates and IPA,
+/// as written and folded.
+Set<String> _sounds(Card c) {
+  final out = <String>{};
+  for (final t in <String?>[c.reading, c.ipa, ...c.altReading]) {
+    if (t == null || t.trim().isEmpty) continue;
+    out
+      ..add(_norm(t))
+      ..add(_sound(t));
+  }
+  out.remove('');
+  return out;
+}
 
 final RegExp _lead = RegExp(r'^(to|the|a|an)\s+');
 
@@ -411,6 +448,7 @@ class _Index {
     final keyTargets = <String>{for (final c in keyCards) ..._targetForms(c)};
     final keyIds = <String>{for (final c in keyCards) c.id};
     final keyForms = reviewerForms(keyText);
+    final keySounds = <String>{for (final c in keyCards) ..._sounds(c)};
     final keyPos = <String>{
       for (final c in keyCards)
         if (c.pos != null && c.pos!.isNotEmpty) c.pos!,
@@ -426,10 +464,14 @@ class _Index {
         if (keyIds.contains(c.id)) return false;
         if (_meet(_meaningForms(c), keyMeanings)) return false;
         if (_meet(_targetForms(c), keyTargets)) return false;
-        // Near misses share the key's word class.
-        if (keyPos.isNotEmpty &&
-            c.pos != null &&
-            c.pos!.isNotEmpty &&
+        // A distractor that sounds like the key could be what was heard or
+        // meant: same reading or IPA (even spelled differently) is refused.
+        if (_meet(_sounds(c), keySounds)) return false;
+        // Near misses share the key's word class; an unknown class cannot
+        // be proved to.
+        if (keyPos.isEmpty ||
+            c.pos == null ||
+            c.pos!.isEmpty ||
             !keyPos.contains(c.pos)) {
           return false;
         }

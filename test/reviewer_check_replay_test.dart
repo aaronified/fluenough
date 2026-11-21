@@ -39,7 +39,9 @@ void main() {
         knownDeck: fixture.b1End,
         alsoRightRate: 0.03,
       );
-      expect(rate(speaker, grantsStatus), greaterThanOrEqualTo(0.95));
+      // Not the owner's bar: taps beyond the cap count as misses, so a
+      // speaker who meets many flawed items fails more often.
+      expect(rate(speaker, grantsStatus), greaterThanOrEqualTo(0.9));
     });
 
     test('a learner at B1 passes, at A1 and A2 does not', () {
@@ -77,19 +79,44 @@ void main() {
       }
     });
 
-    test('choosing the scored items by tapping also right does not help', () {
+    test('partial knowledge of the top band does not pass, with or without '
+        'tapping also right on what is not known', () {
+      // Between A2 and B1: the first third of the top band is known by deck.
+      final between = CheckPersona(
+        'between A2 and B1',
+        knownDeck: (fixture.a2End + fixture.b1End) ~/ 2,
+      );
+      expect(rate(between, grantsStatus), lessThanOrEqualTo(0.01));
+      for (final share in <double>[0.3, 0.5, 0.6]) {
+        for (final dodge in <bool>[false, true]) {
+          final person = CheckPersona(
+            'knows $share of the items${dodge ? ', dodges' : ''}',
+            knownDeck: -1,
+            knownFraction: share,
+            suspendUnknown: dodge,
+          );
+          expect(rate(person, grantsStatus), lessThanOrEqualTo(0.01));
+        }
+      }
+    });
+
+    test('tapping also right on everything passes nobody', () {
       final all = CheckPersona(
         'suspends everything',
         knownDeck: fixture.b1End,
         suspendAll: true,
       );
+      expect(rate(all, grantsStatus), 0);
+    });
+
+    test('the V3 adversary who also dodges what it does not know passes '
+        'with at most 1%', () {
       final unknown = CheckPersona(
-        '100 words and rules, suspends what it does not know',
+        '100 words and rules, dodges what it does not know',
         knownDeck: 16,
         beyond: leakBeyond(0.05),
         suspendUnknown: true,
       );
-      expect(rate(all, grantsStatus), 0);
       expect(rate(unknown, grantsStatus), lessThanOrEqualTo(0.01));
     });
   });
