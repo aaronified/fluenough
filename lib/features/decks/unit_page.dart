@@ -24,6 +24,8 @@ import '../../ui/widgets/stat_tile.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import '../culture/culture_cards.dart';
+import '../review/review_flow_page.dart' show showReviewUnit;
+import '../review/review_source.dart' show queueCardsOf;
 import '../review/review_waiting.dart' show pairOf, reviewPairsOf;
 import '../topics/unit_topics.dart';
 import 'deck_content.dart';
@@ -76,6 +78,9 @@ class UnitPage extends StatefulWidget {
 
   /// Whether every rule's table starts open, for the debug gallery.
   final bool openTables;
+
+  /// "Review this unit", for a reviewer of the unit's course.
+  static const Key reviewUnitKey = ValueKey<String>('unit-review-unit');
 
   @override
   State<UnitPage> createState() => _UnitPageState();
@@ -252,6 +257,23 @@ class _UnitPageState extends State<UnitPage> {
                 title: unitTitle(state, decks),
                 decks: decks,
               ),
+              // For a reviewer of this course (frame 4a of the reviewer
+              // mockup): every card of the unit, one after the other, with
+              // all its details.
+              if (reviews && decks.any((d) => queueCardsOf(d).isNotEmpty))
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: FilledButton.tonalIcon(
+                    key: UnitPage.reviewUnitKey,
+                    style: FilledButton.styleFrom(
+                      minimumSize: const Size.fromHeight(48),
+                    ),
+                    onPressed: () =>
+                        showReviewUnit(context, pairOf(first), unit.number),
+                    icon: const Icon(Icons.flag_outlined, size: 20),
+                    label: Text(l10n.reviewThisUnit),
+                  ),
+                ),
               UnitTopicChips(language: language.code, decks: decks),
               UnitCultureCard(language: language.code, decks: decks),
               const SizedBox(height: 20),

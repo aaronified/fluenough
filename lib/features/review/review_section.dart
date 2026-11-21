@@ -10,9 +10,10 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/snack.dart';
 import '../decks/path_parts.dart' show joinParts;
 import 'daily_questions_page.dart';
-import 'flagged_page.dart';
+import 'flagged_page.dart' show flaggedQueueOf;
 import 'how_reviewing_works.dart';
 import 'questions_per_day.dart';
+import 'review_queue_page.dart';
 import 'review_waiting.dart';
 import 'review_words.dart' show hasOrdinaryCards;
 import 'send_reviews_sheet.dart';
@@ -121,14 +122,13 @@ class ReviewSection extends StatelessWidget {
             trailing: const Icon(Icons.chevron_right),
             onTap: () => AppNavigator.openWaitingForReview(context),
           ),
-          if (flagged > 0)
-            GroupedTile(
-              leading: const Icon(Icons.flag_outlined),
-              title: l10n.reviewFlaggedTitle,
-              subtitle: '$flagged',
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () => showFlagged(context),
-            ),
+          GroupedTile(
+            leading: const Icon(Icons.fact_check_outlined),
+            title: l10n.reviewQueueRow,
+            subtitle: flagged > 0 ? '$flagged' : null,
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => showReviewQueuePage(context),
+          ),
           GroupedTile(
             leading: const Icon(Icons.quiz_outlined),
             title: l10n.reviewQuestionsSettings,

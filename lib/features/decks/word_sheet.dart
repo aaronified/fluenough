@@ -17,7 +17,11 @@ import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import '../drill/ipa_examples.dart';
 import '../review/alike_warning.dart';
+import '../review/review_flow_page.dart' show showReviewCard;
+import '../review/review_source.dart' show mayReviewCard;
+import '../review/review_waiting.dart' show pairOf;
 import '../review/review_words.dart';
+import '../../core/review/review_session.dart' show QueueCardRef;
 import 'card_bases.dart';
 import 'card_blocks.dart';
 import 'card_facts.dart';
@@ -89,6 +93,21 @@ class WordSheet extends StatelessWidget {
   /// Whether a rude partner is named; by default, whether adult content is
   /// on. For tests and the gallery.
   final bool? showRude;
+
+  /// "Review this card", for a reviewer of the card's course.
+  static const Key reviewCardKey = ValueKey<String>('word-review-card');
+
+  /// Opens the review screen at this card, over the sheet: closing it
+  /// returns to the card.
+  void _reviewCard(BuildContext context, AppState state) {
+    final deck = state.deckOf(card);
+    if (deck == null) return;
+    showReviewCard(
+      context,
+      pairOf(deck),
+      QueueCardRef(deckId: deck.id, cardId: card.id),
+    );
+  }
 
   @override
   Widget build(BuildContext context) => ListenableBuilder(
@@ -215,10 +234,6 @@ class WordSheet extends StatelessWidget {
                       color: scheme.onSurfaceVariant,
                     ),
                   ),
-                if (checked > 0) ...<Widget>[
-                  const SizedBox(height: 8),
-                  CheckedByLine(count: checked),
-                ],
               ],
             ),
             if (card.hasPicture) Center(child: CardPicture(card, size: 120)),
@@ -263,6 +278,22 @@ class WordSheet extends StatelessWidget {
                     for (final example in card.examples)
                       ExampleBlock(example: example, language: language),
                 ],
+              ),
+            // Under the example, small and muted: how many speakers checked
+            // the card (frame 6 of the reviewer mockup).
+            if (checked > 0)
+              CheckedByLine(count: checked, alignment: MainAxisAlignment.start),
+            // For a reviewer of this course (frame 4b), every detail of the
+            // card on the review screen.
+            if (mayReviewCard(state, state.deckOf(card), card))
+              FilledButton.tonalIcon(
+                key: WordSheet.reviewCardKey,
+                style: FilledButton.styleFrom(
+                  minimumSize: const Size.fromHeight(48),
+                ),
+                onPressed: () => _reviewCard(context, state),
+                icon: const Icon(Icons.flag_outlined, size: 20),
+                label: Text(l10n.reviewThisCard),
               ),
             // After the examples and notes (#546), and only when a fact names
             // the card.

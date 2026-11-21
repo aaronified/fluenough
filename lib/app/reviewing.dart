@@ -12,6 +12,7 @@ import '../core/review/review_question.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_file.dart';
 import '../core/review/review_quorum.dart';
+import '../core/review/review_session.dart';
 import '../core/review/review_receipt.dart';
 import 'app_info.dart';
 import 'app_log.dart';
@@ -235,6 +236,14 @@ class Reviewing {
       receipts: List<ReviewReceipt>.unmodifiable(receipts),
     );
   });
+
+  /// The queue's run, the group of cards the reviewer is going through, or
+  /// null when there is none (ADR-0058, W3).
+  ReviewRun? get run => ReviewRun.decode(settings.reviewRun);
+
+  /// Keeps [run] so that a closed review resumes, or with null forgets it.
+  /// The answers are not in it: [answerFacet] keeps them as they are given.
+  void keepRun(ReviewRun? run) => settings.reviewRun = run?.encode();
 
   /// The answer to [proposal] on [card], or with [verdict] null, the answer
   /// taken back (ADR-0038). Sent with the review, like any mark.
