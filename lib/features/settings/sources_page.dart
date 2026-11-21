@@ -62,8 +62,9 @@ enum ContentCredit {
   /// Sentences, CC BY 2.0 FR.
   tatoeba(<String>['tatoeba']),
 
-  /// Signs written in SignWriting, drawn in fonts under SIL OFL 1.1.
-  signwriting(<String>['signwriting', 'sutton']);
+  /// Signs written in SignWriting, pictures drawn with the Sutton fonts under
+  /// SIL OFL 1.1.
+  signwriting(<String>['signwriting']);
 
   const ContentCredit(this.marks);
 

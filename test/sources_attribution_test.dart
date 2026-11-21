@@ -94,6 +94,11 @@ void main() {
     });
   });
 
+  test('a source naming a Sutton book is not a SignWriting credit', () {
+    expect(ContentCredit.signwriting.namedIn('Sutton, A Book'), isFalse);
+    expect(ContentCredit.signwriting.namedIn('SignWriting 2010'), isTrue);
+  });
+
   group('the Sources page thanks everyone the app stands on', () {
     testWidgets('Thank you comes first, above Deck content, and shows the '
         'nine acknowledgements without a SignWriting font', (tester) async {
@@ -128,7 +133,12 @@ void main() {
         await tester.ensureVisible(_thanks(id));
         expect(_thanks(id), findsOneWidget, reason: id);
       }
-      expect(find.text('SignWriting fonts: SIL OFL 1.1'), findsOneWidget);
+      expect(
+        find.text(
+          'Sign pictures drawn with the Sutton SignWriting fonts, SIL OFL 1.1',
+        ),
+        findsOneWidget,
+      );
       expect(
         find.text(
           'Copyright 1974-2014 Center for Sutton Movement Writing, Inc.',

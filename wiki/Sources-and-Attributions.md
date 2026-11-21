@@ -11,7 +11,7 @@ Fluenough stands on the work of many people who shared theirs freely. Thank you:
 - To the volunteers who write and keep **Wiktionary**, **Wikipedia**, **Wikisource**, **Wikiquote** and **Wikimedia Commons**: much of what the decks know about words, sounds, books and places is theirs.
 - To the contributors of **Tatoeba**, who wrote and translated sentences for anyone to learn from.
 - To the team behind **Open English WordNet**, for the sets of English words that mean the same.
-- To **Google and the Noto Project**, and to the **Roboto** authors, whose fonts let every script on the app be drawn properly; and to **Valerie Sutton**, **Adam Frost**, **Stephen E Slevinski Jr** and the **Center for Sutton Movement Writing**, for SignWriting and its fonts.
+- To **Google and the Noto Project**, and to the **Roboto** authors, whose fonts let every script on the app be drawn properly; and to **Valerie Sutton**, **Adam Frost**, **Stephen E Slevinski Jr** and the **Center for Sutton Movement Writing**, for SignWriting and its fonts. (The app shows the SignWriting thanks only when a SignWriting font or a sign language deck is on the phone.)
 - To the creators of the **OpenMoji** drawings and the **Noto Emoji** pictures that show what words mean.
 - To **AI4Bharat**, for the IndicConformer model and the IndicVoices recordings behind the AI listener, and to the people who recorded them; and to the makers of **ONNX Runtime**.
 - To the authors of the open-source **Flutter and Dart packages** the app is built from.
