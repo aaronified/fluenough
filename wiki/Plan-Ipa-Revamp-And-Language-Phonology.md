@@ -474,8 +474,9 @@ placed after one that rewrote its context, and a rule that adds a diacritic are
 all plain rules; `--rederive` (PR #1372) re-derives the `rules` cards. The
 tests use fixture rules (`SpanishRuleKinds` in `tools/test_phonetic.py`). The
 rule entries, decided by the architect on #1369 and for
-`decks/es/es-phonetics.yaml` on decks-live (a separate pull request there; the
-file there already holds them when this was written, so check before adding):
+`decks/es/es-phonetics.yaml` on decks-live. That file already holds both rules
+(read 2026-11-21), so no pull request there is needed; they are kept here as the
+record:
 
 ```yaml
   # after es-n-palatal, before es-n-dental

@@ -1920,8 +1920,7 @@ _YOON = {"ゃ": "a", "ゅ": "u", "ょ": "o"}
 _YOON_IPA = {"a": "a", "u": "ɯ", "o": "o"}
 # The three letters Hepburn writes whole before a small ya, yu or yo.
 _YOON_WHOLE = {"shi": ("sh", "ɕ"), "chi": ("ch", "tɕ"), "ji": ("j", "dʑ")}
-# gi is here because Hepburn's ASCII g must not leak into the IPA (#1428).
-_YOON_IPA_STEM = {"hi": "ç", "ni": "ɲ", "ri": "ɾj", "gi": "ɡj"}
+_YOON_IPA_STEM = {"hi": "ç", "ni": "ɲ", "ri": "ɾj"}
 _KANA_PUNCT = {"。": ".", "、": ",", "？": "?", "！": "!", "，": ",",
                "．": ".", "・": " ", "　": " ", "「": "'", "」": "'"}
 _LONG = {("a", "a"), ("i", "i"), ("u", "u"), ("e", "e"), ("e", "i"),
@@ -1956,7 +1955,9 @@ def japanese(text: str) -> Transcription:
             if nxt in _YOON:
                 v = _YOON[nxt]
                 stem, ipa_stem = _YOON_WHOLE.get(
-                    rom, (rom[:-1] + "y", _YOON_IPA_STEM.get(rom, rom[:-1] + "j")))
+                    rom, (rom[:-1] + "y", _YOON_IPA_STEM.get(
+                        # Hepburn's ASCII g must not leak into the IPA (#1428).
+                        rom, rom[:-1].replace("g", "\u0261") + "j")))
                 rom, ipa = stem + v, ipa_stem + _YOON_IPA[v]
                 i += 1
             elif nxt in _SMALL_VOWELS:

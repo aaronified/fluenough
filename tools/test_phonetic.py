@@ -968,7 +968,7 @@ class SpanishRuleKinds(unittest.TestCase):
         ("es-y-palatal-stop", r"(^ˈ?|[nlɲ][ ˈ]*)ʝ", r"\1ɟ͡ʝ"),
         ("es-n-dental", r"n(?=[ ˈ]*[tdθ])", "n̪"),
         ("es-l-dental", r"l(?=ˈ?[tdθ])", "l̪"),
-        ("es-s-voiced", r"s(?=[ ˈ]*[bdɡβðɣmnɲlʝɾ])", "z"),
+        ("es-s-voiced", r"s(?=[ ˈ]*[bdɡβðɣmnɲlʝɾr])", "z"),
     ]
 
     def derive(self, ipa: str) -> str:
