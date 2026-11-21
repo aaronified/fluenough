@@ -373,9 +373,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1476](https://github.com/aaronified/fluenough/issues/1476) Marathi: add "mr" to tools/phonetic_languages.yaml (narrow IPA, MR-110)
 - [#1480](https://github.com/aaronified/fluenough/issues/1480) Chinese: Mandarin broad IPA tooling (shared tools change, branch tools/zh-phonetics)
 - [#1483](https://github.com/aaronified/fluenough/issues/1483) Tamil transcription engine in tools/transcribe.py (TA-110)
-- [#1652](https://github.com/aaronified/fluenough/issues/1652) Reviewer UX W1: Schema, receipts and facet checks in lib/core/review
-- [#1653](https://github.com/aaronified/fluenough/issues/1653) Reviewer UX W2: The single quorum constant (Dart and tools) plus the equality test
-- [#1654](https://github.com/aaronified/fluenough/issues/1654) Reviewer UX W3: Queue and deck-view review screens (session of 20, continue pool, flagged tab, flagged-only mode)
 - [#1655](https://github.com/aaronified/fluenough/issues/1655) Reviewer UX W4: Pointer tags and the flagged queue
 - [#1656](https://github.com/aaronified/fluenough/issues/1656) Reviewer UX W5: Blind-pass comparison and per-script normalisation
 - [#1657](https://github.com/aaronified/fluenough/issues/1657) Reviewer UX W6: Reviewer-check mode in placement
