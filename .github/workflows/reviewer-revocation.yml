@@ -1,0 +1,76 @@
+name: Reviewer revocation
+
+# Revoking a reviewer key (ADR-0058, decision 9; W8, #1659). The owner adds
+# the key id to assets/reviewer/denylist.txt on main. This job then finds the
+# rater codes bound to the revoked key ids in the private store (the Gmail
+# label fluenough/keys) and opens pull requests to decks-live that take their
+# work out of the decks: one removal PR (sign-offs, facet answers, unapplied
+# proposals, a reviewed tag set back to unreviewed where the quorum is gone),
+# and one revert PR per revoked key for applied changes that only had the
+# quorum through them. Nothing is merged here: the owner reviews and merges.
+#
+# No key id and no rater code ever meet in a branch name, a PR, a commit or
+# this log: it says counts only. The private store is read with the same
+# Gmail secrets as the feedback mail workflow, the PRs are opened with the
+# same GitHub App (FLUENOUGH_BOT_APP_ID, FLUENOUGH_BOT_PRIVATE_KEY). Until
+# they are set, it does nothing and says so. See wiki/Review-Bot-Setup.md.
+#
+# Runs when the denylist changes on main, every six hours (to rebuild an open
+# PR when decks-live has moved, and to catch a binding written since), and by
+# hand from the Actions tab. A rerun that has nothing to change changes
+# nothing.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - assets/reviewer/denylist.txt
+  schedule:
+    - cron: "41 */6 * * *"
+  workflow_dispatch:
+
+# One run at a time: two would open the same PR twice.
+concurrency:
+  group: reviewer-revocation
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  revoke:
+    name: Take revoked reviewers' work out of the decks
+    runs-on: ubuntu-latest
+    env:
+      HAS_BOT_APP: ${{ secrets.FLUENOUGH_BOT_APP_ID != '' && secrets.FLUENOUGH_BOT_PRIVATE_KEY != '' }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Main: its tools and the denylist. The job fetches decks-live and
+          # pushes with the App's token, never with this workflow's.
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Make the review bot's token
+        id: bot
+        if: env.HAS_BOT_APP == 'true'
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.FLUENOUGH_BOT_APP_ID }}
+          private-key: ${{ secrets.FLUENOUGH_BOT_PRIVATE_KEY }}
+      - name: Say the review bot is not set up
+        if: env.HAS_BOT_APP != 'true'
+        run: >-
+          echo "::notice::FLUENOUGH_BOT_APP_ID and FLUENOUGH_BOT_PRIVATE_KEY
+          are not set: revocation cannot open its pull requests. See
+          wiki/Review-Bot-Setup.md."
+      - run: python3 tools/revoke_reviewers.py
+        if: env.HAS_BOT_APP == 'true'
+        env:
+          FEEDBACK_GMAIL_ADDRESS: ${{ secrets.FEEDBACK_GMAIL_ADDRESS }}
+          FEEDBACK_GMAIL_APP_PASSWORD: ${{ secrets.FEEDBACK_GMAIL_APP_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          FLUENOUGH_BOT_TOKEN: ${{ steps.bot.outputs.token }}

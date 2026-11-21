@@ -147,6 +147,68 @@ FOOTER = ("<sub>Opened by the review bot (ADR-0038). The owner overrides it "
           "</sub>")
 
 
+# The record an agreement PR carries of who agreed (ADR-0058, W8): a hidden
+# comment at the end of its body, as JSON, so that revoking a reviewer's key
+# can tell which applied changes only met the quorum because of them. Rater
+# codes, ids and a field name only: no text, no address. The visible lines of
+# the same body ("Proposed by", "Accepted by") say the same for the main
+# proposal, and are what `parse_applied` falls back to for a PR made before
+# the record existed.
+APPLIED_MARK = "<!-- fluenough-applied "
+_APPLIED = re.compile(re.escape(APPLIED_MARK) + r"(\{.*?\}) -->", re.S)
+
+
+def applied_trailer(p: "pr.Proposal", groups: list[dict]) -> str:
+    """The hidden record of an agreement PR for [p]; [groups] are the other
+    agreed proposals applied with it (`id`, `field`, `by`, `accepted`)."""
+    record = {"id": p.id, "card": p.card, "field": p.field, "by": p.by,
+              "accepted": list(p.accepted), "with": groups}
+    return APPLIED_MARK + json.dumps(record, ensure_ascii=False, sort_keys=True) + " -->"
+
+
+def parse_applied(body: str) -> dict | None:
+    """What an agreement PR's [body] says of who agreed: `{id, card, field,
+    by, accepted, with: [{id, field, by, accepted}], exact}`. `exact` is
+    False for a PR without the hidden record, read from its visible lines:
+    then an agreed reading or IPA applied with the word names only its
+    proposer (`accepted` is None). None when the body is not an agreement's."""
+    found = _APPLIED.search(body or "")
+    if found:
+        try:
+            record = json.loads(found.group(1))
+        except ValueError:
+            record = None
+        if isinstance(record, dict) and all(
+                isinstance(record.get(k), str) for k in ("id", "card", "field", "by")) \
+                and isinstance(record.get("accepted"), list):
+            groups = [g for g in record.get("with", []) if isinstance(g, dict)
+                      and isinstance(g.get("by"), str)]
+            return {"id": record["id"], "card": record["card"],
+                    "field": record["field"], "by": record["by"],
+                    "accepted": [a for a in record["accepted"] if isinstance(a, str)],
+                    "with": [{"id": str(g.get("id", "")), "field": str(g.get("field", "")),
+                              "by": g["by"],
+                              "accepted": [a for a in g.get("accepted", [])
+                                           if isinstance(a, str)]} for g in groups],
+                    "exact": True}
+    head = re.match(r"Proposal `([^`]+)` on `([^`]+)` reached", body or "")
+    by = re.search(r"^- Proposed by (\S+)\s*$", body or "", re.M)
+    field_ = re.search(r"^- Field: (\S+)\s*$", body or "", re.M)
+    accepted = re.search(r"^- Accepted by (.+?)\s*$", body or "", re.M)
+    if not (head and by and field_):
+        return None
+    return {"id": head.group(1), "card": head.group(2), "field": field_.group(1),
+            "by": by.group(1),
+            "accepted": [a.strip() for a in accepted.group(1).split(",")
+                         if a.strip()] if accepted else [],
+            "with": [{"id": m.group(1), "field": m.group(2), "by": m.group(3),
+                      "accepted": None}
+                     for m in re.finditer(
+                         r"^- Applied with it, agreed: `([^`]+)` on (\S+), by (\S+)\s*$",
+                         body, re.M)],
+            "exact": False}
+
+
 def agreements_needed(env: dict[str, str]) -> int:
     """How many other reviewers must accept a proposal: the review quorum
     less the proposer's own review (ADR-0058), 1 with a quorum of 2. The
@@ -1212,15 +1274,17 @@ class Bot:
             if applied.closed:
                 lines.append("- Closed as outdated with it: " + ", ".join(
                     f"`{o.id}` by {o.by}" for o in applied.closed))
+            agreed_with: list[dict] = []
             if p.field == "target" and applied.entry is not None:
                 try:
-                    lines += self._with_word(root, lang, applied.entry, p)
+                    lines += self._with_word(root, lang, applied.entry, p,
+                                             agreed_with)
                 except _NotWhole as failed:
                     # The checkout is thrown away: no PR, and the word waits.
                     self.log(f"{p.card}: the agreed word `{pid}` waits: "
                              f"{failed}; left for the owner (#476).")
                     return None
-            lines += ["", FOOTER]
+            lines += ["", applied_trailer(p, agreed_with), FOOTER]
             return Built(
                 title=f"Apply the agreed change to {p.card} ({p.field})",
                 body="\n".join(lines),
@@ -1245,7 +1309,7 @@ class Bot:
         return min(agreed, key=lambda o: (o.date, o.id)) if agreed else None
 
     def _with_word(self, root: Path, lang: str, entry: pr.Entry,
-                   p: pr.Proposal) -> list[str]:
+                   p: pr.Proposal, agreed_with: list[dict] | None = None) -> list[str]:
         """After [p] changed [entry]'s word: applies the agreed proposals on
         its reading and IPA with it, and works out the fields none of them
         changes (owner, #468). The PR body's lines saying what was done."""
@@ -1277,6 +1341,10 @@ class Bot:
                 if done.outcome == "applied":
                     lines.append(f"- Applied with it, agreed: `{agreed.id}` on "
                                  f"{name}, by {agreed.by}")
+                    if agreed_with is not None:
+                        agreed_with.append({"id": agreed.id, "field": name,
+                                            "by": agreed.by,
+                                            "accepted": list(agreed.accepted)})
                     fresh = done.entry or fresh
                     continue
             wanted.append(name)

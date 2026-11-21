@@ -85,7 +85,10 @@ The key is a **secret**. Do not share it or post it. Your review mails carry it
 as proof, and the mail bot takes it out before anything is published, never
 repeats it and never writes it to an issue, a PR or a deck. If a key is lost or
 leaked, tell the owner: they revoke it, and the app and the bot stop accepting
-it. Without a key your reviewer code is still welcome.
+it. Revoking also removes the work done with that key: the checks and answers
+you sent under it are taken out of the decks, and a card they helped to settle
+goes back to waiting for another speaker's check. Without a key your reviewer
+code is still welcome.
 
 ## What "To review" shows
 
