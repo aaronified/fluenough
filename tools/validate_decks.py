@@ -8102,7 +8102,7 @@ def check_reviewed_cards(r: Report, raw: object, checks: list) -> None:
             r.error(where, f"card {cid}: the deck is tagged reviewed, so every card "
                            f"needs checked_by or facet_checks")
         elif review_facets.entry_open(codes if isinstance(codes, list) else [], held,
-                                      entry, True):
+                                      entry, True, r.lang_code, r.native_code):
             r.error(where, f"card {cid}: the deck is tagged reviewed, but a facet of "
                            f"the card is flagged or contested in facet_checks")
 

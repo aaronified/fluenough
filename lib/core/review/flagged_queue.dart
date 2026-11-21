@@ -13,11 +13,11 @@ import '../models/card.dart';
 import 'deck_review.dart';
 import 'facet_compare.dart';
 import 'facets.dart';
-import 'fix_text.dart';
 import 'review_pairs.dart';
 import 'review_problems.dart';
 import 'review_quorum.dart';
 import 'review_receipt.dart';
+import 'script_folds.dart';
 
 /// The other reviewers' checks of a deck's cards, by card id and then
 /// facet: what the downloaded decks and the sent reviews say. The review
@@ -54,6 +54,7 @@ class FlaggedFacet {
     required this.status,
     required this.tags,
     this.existingFix,
+    this.language,
   });
 
   final Facet facet;
@@ -67,6 +68,10 @@ class FlaggedFacet {
   /// The replacement text a flagging reviewer proposed (the latest one),
   /// which another reviewer may agree with; null when none gave one.
   final String? existingFix;
+
+  /// The language the facet's text is in ([languageOfFacet]), which the
+  /// comparison folds of [comparisonKey] are chosen by; null for none.
+  final String? language;
 
   bool get isContested => status == FacetStatus.contested;
 }
@@ -183,7 +188,9 @@ class FlaggedQueue {
       if (status != FacetStatus.flagged && status != FacetStatus.contested) {
         continue;
       }
-      result.add(_describe(facet, status, checks));
+      result.add(
+        _describe(facet, status, checks, languageOfFacet(facet, deck.pair)),
+      );
     }
     return result;
   }
@@ -192,6 +199,7 @@ class FlaggedQueue {
     Facet facet,
     FacetStatus status,
     List<ReviewCheck> checks,
+    String? language,
   ) {
     final latest = <String, ReviewCheck>{};
     for (final check in checks) {
@@ -211,6 +219,7 @@ class FlaggedQueue {
           if (tags.contains(tag)) tag,
       ],
       existingFix: fix,
+      language: language,
     );
   }
 }
@@ -256,7 +265,8 @@ FlaggedAnswer? resolveFlagged(
       final text = fix?.trim();
       if (text == null || text.isEmpty || flagged.tags.isEmpty) return null;
       final same = flagged.existingFix;
-      final isOther = same == null || !sameFixText(same, text);
+      final isOther =
+          same == null || !sameFixIn(same, text, language: flagged.language);
       return FlaggedAnswer(
         FacetAnswer.flagged(flagged.tags.toSet(), replacement: text),
         isOther ? ReceiptDecision.offeredOther : ReceiptDecision.accepted,

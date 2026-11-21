@@ -376,10 +376,11 @@ def compare_answers(by_rater: dict[str, dict[str, Answer]], target: str | None =
 
 
 def settled(checks: Iterable[Check], quorum: int = REVIEW_QUORUM,
-            needs_verified: bool = QUORUM_NEEDS_VERIFIED) -> bool:
+            needs_verified: bool = QUORUM_NEEDS_VERIFIED,
+            language: str | None = None) -> bool:
     """Whether [checks] give a facet the quorum, by the one rule
     (`facet_reached_quorum`): the same as [facet_status] saying "settled"."""
-    return facet_status(checks, quorum, needs_verified) == "settled"
+    return facet_status(checks, quorum, needs_verified, language) == "settled"
 
 
 # --- What an entry publishes (the shape of `facet_checks`) -------------------------
@@ -460,19 +461,33 @@ def checks_of(codes: list[str], held: dict[str, dict], facet: str,
               for f in item["flags"])]
 
 
+def fold_language(facet: str, language: str | None, native: str | None) -> str | None:
+    """The language the text of [facet] is in, for an entry of course
+    [language] taught from [native]: what `facet_status` compares fixes by.
+    None when the course is not known."""
+    if language is None:
+        return None
+    return language_of_facet(facet, language, native or "") or None
+
+
 def entry_settled(codes: list[str], held: dict[str, dict], data: dict,
-                  holds_card: bool, language: str | None = None) -> bool | None:
+                  holds_card: bool, language: str | None = None,
+                  native: str | None = None) -> bool | None:
     """Whether every facet the entry owns has the quorum; None when it owns
     none, so that it asks nothing of a reviewer."""
     owned = owned_facets_of(data, holds_card)
     if not owned:
         return None
-    return all(settled(checks_of(codes, held, f, language)) for f in owned)
+    return all(settled(checks_of(codes, held, f, language),
+                       language=fold_language(f, language, native)) for f in owned)
 
 
 def entry_open(codes: list[str], held: dict[str, dict], data: dict,
-               holds_card: bool, language: str | None = None) -> bool:
+               holds_card: bool, language: str | None = None,
+               native: str | None = None) -> bool:
     """Whether some facet the entry owns is flagged, contested or has an
     agreed fix waiting: a card with one is not reviewed, whatever else."""
-    return any(facet_status(checks_of(codes, held, f, language)) in ("flagged", "contested", "agreed_fix")
+    return any(facet_status(checks_of(codes, held, f, language),
+                            language=fold_language(f, language, native))
+               in ("flagged", "contested", "agreed_fix")
                for f in owned_facets_of(data, holds_card))

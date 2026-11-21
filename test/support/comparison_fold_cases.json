@@ -1,5 +1,5 @@
 {
- "about": "Comparison fold cases read by both tools/test_review_facets.py and test/script_folds_test.dart, so lib/core/review/script_folds.dart and tools/review_facets.py (COMPARISON_FOLDS) stay equal. `pairs`: sameFixIn(a, b, language) must equal `same`. `keys`: comparisonKey(text, language) must equal `key`. `folds`: the registry, by id, with the languages each applies to, sorted.",
+ "about": "Comparison fold cases read by both tools/test_review_facets.py and test/script_folds_test.dart, so lib/core/review/script_folds.dart and tools/review_facets.py (COMPARISON_FOLDS) stay equal. `pairs`: sameFixIn(a, b, language) must equal `same`. `keys`: comparisonKey(text, language) must equal `key`. `folds`: the registry, by id, with the languages each applies to, sorted. `folds[].map` pins each fold's code points (hex, null drops).",
  "folds": [
   {
    "id": "arabic-script-tatweel",
@@ -10,7 +10,10 @@
     "ps",
     "sd",
     "ur"
-   ]
+   ],
+   "map": {
+    "0640": null
+   }
   },
   {
    "id": "persian-urdu-yeh",
@@ -18,7 +21,11 @@
     "fa",
     "hi",
     "ur"
-   ]
+   ],
+   "map": {
+    "064A": "06CC",
+    "0649": "06CC"
+   }
   },
   {
    "id": "persian-urdu-pashto-kaf",
@@ -27,7 +34,10 @@
     "hi",
     "ps",
     "ur"
-   ]
+   ],
+   "map": {
+    "0643": "06A9"
+   }
   },
   {
    "id": "arabic-script-digits",
@@ -38,7 +48,19 @@
     "ps",
     "sd",
     "ur"
-   ]
+   ],
+   "map": {
+    "0660": "06F0",
+    "0661": "06F1",
+    "0662": "06F2",
+    "0663": "06F3",
+    "0664": "06F4",
+    "0665": "06F5",
+    "0666": "06F6",
+    "0667": "06F7",
+    "0668": "06F8",
+    "0669": "06F9"
+   }
   }
  ],
  "pairs": [

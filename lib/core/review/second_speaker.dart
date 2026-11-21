@@ -28,6 +28,7 @@ sealed class SecondSpeakerStep {
     required this.facet,
     required this.original,
     required this.tags,
+    this.language,
   });
 
   final QueueCardRef ref;
@@ -38,6 +39,10 @@ sealed class SecondSpeakerStep {
 
   /// The tags put on the facet.
   final List<PointerTag> tags;
+
+  /// The language the facet's text is in ([languageOfFacet]), for comparing
+  /// fixes.
+  final String? language;
 }
 
 /// One speaker's proposed fix: "Accept", "Reject" or "Offer another".
@@ -47,6 +52,7 @@ final class ProposalStep extends SecondSpeakerStep {
     required super.facet,
     required super.original,
     required super.tags,
+    super.language,
     required this.proposed,
   });
 
@@ -60,6 +66,7 @@ final class RivalStep extends SecondSpeakerStep {
     required super.facet,
     required super.original,
     required super.tags,
+    super.language,
     required this.fixes,
   });
 
@@ -74,6 +81,7 @@ final class FlagStep extends SecondSpeakerStep {
     required super.facet,
     required super.original,
     required super.tags,
+    super.language,
   });
 }
 
@@ -114,6 +122,7 @@ List<SecondSpeakerStep> stepsOfFlagged(
           facet: f.facet,
           original: original,
           tags: f.tags,
+          language: languageOfFacet(f.facet, deck.pair),
           fixes: rivals,
         ),
       );
@@ -124,12 +133,19 @@ List<SecondSpeakerStep> stepsOfFlagged(
           facet: f.facet,
           original: original,
           tags: f.tags,
+          language: languageOfFacet(f.facet, deck.pair),
           proposed: f.existingFix!,
         ),
       );
     } else {
       out.add(
-        FlagStep(ref: ref, facet: f.facet, original: original, tags: f.tags),
+        FlagStep(
+          ref: ref,
+          facet: f.facet,
+          original: original,
+          tags: f.tags,
+          language: languageOfFacet(f.facet, deck.pair),
+        ),
       );
     }
   }

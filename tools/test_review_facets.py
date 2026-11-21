@@ -18,6 +18,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import proposals as pr  # noqa: E402
 import review_facets as rf  # noqa: E402
 import review_quorum as rq  # noqa: E402
 
@@ -261,8 +262,11 @@ class Vectors(unittest.TestCase):
                                            "" if right else answer.get("fix", ""),
                                            c.get("tier", rq.PROVISIONAL)))
                 nv = case.get("needs_verified", False)
-                self.assertEqual(rf.facet_status(checks, needs_verified=nv), case["status"])
-                self.assertEqual(rf.settled(checks, needs_verified=nv), case["settled"])
+                lang = case.get("language")
+                self.assertEqual(rf.facet_status(checks, needs_verified=nv, language=lang),
+                                 case["status"])
+                self.assertEqual(rf.settled(checks, needs_verified=nv, language=lang),
+                                 case["settled"])
 
 
 class Status(unittest.TestCase):
@@ -338,7 +342,10 @@ class ComparisonFolds(unittest.TestCase):
                     case["key"])
 
     def test_the_registry_is_the_one_the_app_has(self) -> None:
-        mine = [{"id": i, "languages": sorted(langs)} for i, langs, _ in rf.COMPARISON_FOLDS]
+        mine = [{"id": i, "languages": sorted(langs),
+                 "map": {f"{k:04X}": None if v is None else f"{v:04X}"
+                         for k, v in m.items()}}
+                for i, langs, m in rf.COMPARISON_FOLDS]
         self.assertEqual(mine, self.load()["folds"])
 
     def test_a_fold_never_maps_to_a_letter_of_another_word(self) -> None:
@@ -421,6 +428,39 @@ class Comparison(unittest.TestCase):
         self.assertEqual(rf.language_of_facet("note", "ur", "en"), "en")
         self.assertIsNone(rf.language_of_facet("reading", "ur", "en"))
         self.assertIsNone(rf.language_of_facet("ipa", "ur", "en"))
+
+
+class TheBotUsesTheSameComparison(unittest.TestCase):
+    """The bot's callers pass the facet's language, so that it and the app
+    (and the coverage table) call the same fixes the same."""
+
+    def test_the_language_of_a_facet_of_a_deck(self) -> None:
+        self.assertEqual(pr.fix_language("ur", "ur-en-home", "word"), "ur")
+        self.assertEqual(pr.fix_language("ur", "ur-en-home", "meaning"), "en")
+        self.assertEqual(pr.fix_language("ur", "ur-en-home", "note"), "en")
+        self.assertIsNone(pr.fix_language("ur", "ur-en-home", "reading"))
+        # A core deck names no native: its meaning has no script rules.
+        self.assertIsNone(pr.fix_language("ur", "ur-home", "meaning"))
+        self.assertEqual(pr.fix_language("ur", "ur-home", "word"), "ur")
+        self.assertIsNone(rf.fold_language("word", None, "en"))
+
+    def test_settled_and_entry_checks_take_the_language(self) -> None:
+        held = {"word": {"by": [], "flags": [
+            {"by": A, "tags": ["spelling_wrong"], "fix": "\u0643\u062A\u0627\u0628"},
+            {"by": B, "tags": ["spelling_wrong"], "fix": "\u06A9\u062A\u0627\u0628"}]}}
+        data = {"target": "x"}
+        urdu = rf.checks_of([], held, "word", "ur")
+        self.assertEqual(rf.facet_status(urdu, language="ur"), "agreed_fix")
+        self.assertEqual(rf.facet_status(urdu), "contested")
+        # Agreement is not "settled" (nobody says it is right), either way.
+        self.assertFalse(rf.settled(urdu, language="ur"))
+        self.assertFalse(rf.entry_settled([], held, data, False, "ur", "en"))
+        self.assertTrue(rf.entry_open([], held, data, False, "ur", "en"))
+
+    def test_exact_text_agreement_is_unchanged(self) -> None:
+        for language in (None, "ur", "te"):
+            self.assertTrue(rf.same_fix_in("\u06A9\u062A\u0627\u0628", "\u06A9\u062A\u0627\u0628", language))
+            self.assertEqual(rf.same_fix_in(" kala ", "kala", language), rf.same_fix_text(" kala ", "kala"))
 
 
 if __name__ == "__main__":

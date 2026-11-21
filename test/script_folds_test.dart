@@ -53,6 +53,13 @@ void main() {
         <String, Object?>{
           'id': f.id,
           'languages': f.languages.toList()..sort(),
+          'map': <String, Object?>{
+            for (final e in f.map.entries)
+              e.key.toRadixString(16).toUpperCase().padLeft(4, '0'): e.value
+                  ?.toRadixString(16)
+                  .toUpperCase()
+                  .padLeft(4, '0'),
+          },
         },
     ];
     expect(mine, folds);
