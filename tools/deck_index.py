@@ -250,10 +250,11 @@ SHARED_FOLDERS = {"creators", "recommendations"}
 # demand when a creator is shown, checked by hash alone.
 SHARED_MEDIA = "decks/creators/images"
 # Work posters and covers (ADR-0060): a second shared folder, listed the same
-# way. An app that does not know the prefix passes the entry by; the entry
-# carries the release that shows work images, so an app that knows
-# `shared_media` but not the prefix does not fetch it for nothing. Raise it to
-# the real number when the release that holds package 4 is cut.
+# way. An app that does not know the prefix passes the entry by (today's
+# `SharedMediaFile.tryParse` accepts only decks/creators/images/ and never reads
+# `min_app`). Package 4 must read `min_app` and accept the new prefix, and
+# this number must become the real release number before the first work image
+# lands on decks-live.
 SHARED_MEDIA_WORKS = "decks/recommendations/images"
 MIN_APP_WORK_IMAGES = "0.9.6"
 
