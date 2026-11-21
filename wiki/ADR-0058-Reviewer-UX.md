@@ -1,0 +1,88 @@
+# ADR-0058: Reviewer UX: speaker-gated, facet-level reviews with a second-speaker check
+
+Source of truth: this wiki page. The owner's decisions, quoted and dated, stay on [Plan-Reviewer-UX](Plan-Reviewer-UX); this page turns them into a record and adds nothing to them.
+
+- **Status:** Proposed (owner's brainstorm of 2026-11-20/21; the readings in "Open points" await the owner).
+- **Date:** 2026-11-21
+- **Amends:** [ADR-0038](ADR-0038-Review-Proposals). The agreement quorum becomes a facet-level two-review constant in code, and the GitHub variable or secret for the number is superseded. The file-level `reviewed` tag rule (a file is tagged once every card entry lists a code) changes to the facet-level rule below.
+
+## Context
+
+Reviews reach the decks through ADR-0038: a reviewer marks "Looks right" or proposes a fix, the mail bot writes it onto the card, and `REVIEW_AGREEMENTS_NEEDED` rater codes settle a change. Rater codes are self-made, so nothing says a reviewer speaks the language, and a copied public code proves nothing. A card counts as checked on one tap, whatever its facets (word, reading, IPA, meaning, example, note, unit placement, offence rating, audio).
+
+The owner's goal for this work (2026-11-20/21): ease of use, gated to actual speakers as much as possible, and comprehensive reviews that a second speaker can check easily. Further constraints from the owner: reviewers are scarce ("We are now happy at 2 because we may not have abundant reviewers"); no question type may mark a right answer wrong ("even a 1% chance is too bad"); English is assumed review ready for everyone, so no deck today needs a double check of its taught-from language; the review questions should be "similar to the existing shell".
+
+## Decision
+
+1. **Gating moves into placement: the reviewer check.** After a normal placement reaches the top band, a quiet nudge appears once per course and never again after "No thanks". It leads to Settings > Reviewing > Take the check, the placement engine ([Plan-Placement-V3](Plan-Placement-V3)) in a stricter mode: a tighter confidence target, no guessable formats, per-facet results. The outcome is Provisional status only. Anyone who reaches the top band qualifies. Top band means the credible range's lower bound is at B1 on Read and Write, plus Hear for the reading, IPA and audio facets; self-rated Say never counts. Retake after a 7-day cooldown with fresh items, no expiry. Only a coarse "passed facets" flag leaves the phone, in the first review mail, for triage. Thin courses and languages without placement fall back to signed reviewer keys. Eligible facets: Read and Write give word, meaning, example, notes; Hear gives reading, IPA, audio; Read plus grammar items gives unit placement and grammar notes. Launch gate: a persona replay and an adversarial retest of the stricter mode, and a release with a `min_app` gate if data changes.
+2. **Reviewer-check item rule.** Only pick, match and yes/no items; no typed answers, no tile sentences. Keys come only from cards with at least two checks. Distractors are provably wrong (checked against `alt_native` and `not_synonyms`, near misses from the same unit or word class, never a synonym of the key). Residual risk is made harmless: no per-item feedback, an "this is also right" tap that suspends the item and removes it from the score, no single miss decides, failing only means "not yet eligible". A new item runs unscored in a pilot slot and is promoted after about 8 Verified responses with 90% or more agreeing with the key; a split (about 60/40) retires it as dialect-sensitive. Fix history (the old form against the agreed fix) becomes gold items. The first Verified reviewers of a language come from owner-minted signed keys.
+3. **Taught-from language.** English is assumed review ready for everyone. Both languages must be review gated, as separate work, and later decks may need individual takes.
+4. **Counts are hidden.** The number of reviewers is a card-level number only, small, in card detail; there is no course-level tag. The quorum is never shown, not even hinted at. Reviewer screens say "needs another speaker's check", with no number.
+5. **Pointer tags.** One-tap, per-facet, combinable tags with an optional replacement: meaning wrong, reading wrong, IPA wrong, spelling wrong, unnatural/rare, wrong register, offensive, example wrong, note wrong, wrong unit, audio wrong. A tag without a fix puts the card in a flagged queue that any speaker can resolve.
+6. **Facets and the shortcut.** Facets are word, reading, IPA, meaning, example, note, unit placement, offence rating, audio. A card counts as reviewed only when every applicable facet has an answer. A one-tap "everything looks right" covers the plain facets only (word, meaning, example); reading, IPA and audio are confirmed separately.
+7. **Blind pass and free text.** Verdicts are blind: the second reviewer does not see the first verdict. Proposed fixes are open: original and proposal are shown, and the second speaker accepts, rejects or offers another. Rival fixes go to a third speaker as a pick-one list. A fix identical after normalisation (Unicode NFC, whitespace, stray joiners, per-script variants) is agreement with no human step. Per facet: reading and IPA fixes are picked from engine-generated candidates (free entry only as an override); spelling uses lexicon variant chips; for meaning, "both fine" adds the second meaning to the accepted alternatives; a note or example rewrite is accepted or rejected whole; "why" text is advisory and shown after the second reviewer's own verdict. A second speaker checks through a per-unit digest of only what changed or is contested, with receipts (card, facet, hash of the text seen, decision). The owner gets a coverage dashboard (facets with at least two independent checks).
+8. **Signed reviewer keys and tiers.** The owner mints a signed key per Verified reviewer with a small script: key id, assigned courses or languages, tier and issue date, signed with the owner's private key (Ed25519 suggested), with a versioned public key shipped in the app and the mail bot. The reviewer pastes it in Settings > Reviewing > "I have a reviewer key"; the app verifies offline and unlocks only the assigned courses. Reviewers keep their self-made `FL-XXXX-XXXX-C` codes (`lib/core/review/rater_code.dart`) and send nothing to the owner; no mapping file exists. The first review mail carrying the key binds the key id to that FL code; each mail carries the key as secret proof. The bot (`tools/mail_to_issues.py`) verifies the signature, the denylist and the binding, strips the key before anything is published, never echoes it, rate-limits per key, and holds a mail with a different FL code or an unexpected address for the owner. Whether or not a reviewer already reviews, they can become Verified this way; on binding, the code's earlier reviews are upgraded to Verified weight (owner, 2026-11-21: "3. Yes."). Without a key, FL codes stay Provisional. Tiers: Provisional (check pass, or an FL code with no key; counted only alongside a Verified reviewer), Verified (signed key for the course, or calibration cards; counts fully), Trusted (sustained agreement with Verified reviewers; breaks ties on contested cards). A Provisional review is held in the queue and applied only when a Verified reviewer agrees.
+9. **Revocation.** Only the owner revokes ("I revoke. And it does revoke past work."), by adding the key id to a denylist in the repo (ids only); the app also checks it. All work bound to that key id is removed: the code leaves `checked_by`, cards below the quorum return to unchecked or flagged, and changes that applied only because of that reviewer are queued for a revert PR on `decks-live`.
+10. **Review queue.** A session is 20 cards, one unit's least-checked, in path order within the unit. The flagged queue is a separate tab, and a second mode checks only the flagged and contested queue. After 20 the reviewer may continue through a pool of all the course's cards, least-checked first, still grouped by unit, and stops by closing the review. Progress is saved as answers are given and is resumable.
+11. **Where review happens.** The facet questions and tags are built on the existing review screens and the daily-questions flow in `lib/features/review/` (see Open points). From the deck view (`lib/features/decks/`) a reviewer can also review a chosen unit or one card on a screen showing every card detail, with the same facet answers, tags and receipts as the queue.
+12. **Quorum.** Each facet (card detail) needs 2 reviews by two distinct reviewers, and a card is reviewed only when all its applicable facets have 2. The number lives in one constant: a Dart constant in `lib/core/review/` (for example `kReviewQuorum = 2`) and a matching constant in the tools (`tools/mail_to_issues.py` and the deck tools), with a test keeping them equal. This supersedes ADR-0038's GitHub variable or secret: changing the number is a code change. The file-level `reviewed` tag of ADR-0038 changes to this facet-level two-check rule, in the bot and in the validator and index tools that read the tag. The combination with the tiers is a reading (see Open points).
+13. **Script writing for a fix (A4; owner, 2026-11-21: "Script writing: b, fallback on a").** The fix field is prefilled with the current text, so most fixes are 1 to 2 character edits. Candidate chips (engine candidates, lexicon variants) sit with it, with the card's reading beside the field, paste allowed and a one-line hint to enable the script's keyboard in system settings. If the device or script gives no help, it falls back to a plain phone-keyboard field.
+14. **Submit.** Mail stays the way reviews are sent; an in-app submit is not planned.
+
+## Consequences
+
+- Reviewing is gated by something checkable: a signed key verified offline in the app and again by the bot, so a copied public FL code alone proves nothing. A reviewer who is already reviewing, or a new one, can become Verified with one paste.
+- The reviewer check is an unverifiable self-test run on the phone, so it can only grant Provisional status, and a strong second-language speaker passes the same as a native one.
+- The reviewer-check item set is narrower than placement's, and its pilot slots need Verified reviewers who do not exist until the owner issues keys.
+- Every deck taught from a language other than English will need its own review gate, which is separate work not planned here.
+- Learners lose the at-a-glance signal of how well a course is checked, and reviewers cannot see how close a card is to done, because counts and the file-level notice are hidden.
+- Pointer tags without fixes can pile up in the flagged queue faster than speakers clear it.
+- More taps per card than today's single "Looks right", and per-facet taps add work.
+- The normalisation rules per script can show a false "different".
+- Jumping between units in the continue pool loses context.
+- The owner's private signing key must stay secret. It is kept offline and rotated through versioned public keys; a leaked key lets anyone mint keys.
+- Minting is manual (a one-command script). A shared key cannot be used with a second FL code (the mail is held).
+- The mail carries a secret, so the bot must never log or echo it; mail archives keep it, which revocation covers.
+- A new app release is needed to ship the public key and the key entry screen.
+- Upgrading earlier reviews to Verified weight trusts the earlier work as much as the later.
+- Revocation causes churn on `decks-live`, and file-level reviewed tags may flip back.
+- Changing the quorum is now a code change, not a repository setting.
+- A mail's "passed facets" flag cannot be verified by the bot, so it is used for triage only.
+
+## Alternatives considered
+
+- **Placement of the gate (P1/P2).** Two other options for where gating sits were offered and not chosen; P3, the reviewer check inside placement after the top band, was chosen on the owner's "The B group should mostly go into placements. Right, when the user seems to be aceing the tests." The plan page does not record P1 and P2 in more detail.
+- **Typed-answer and tile items** in the reviewer check: rejected, since a right answer could be marked wrong. A strict-zero set (only wrong-by-construction items) was offered as a narrower, easier test and not chosen.
+- **A public mapping file of FL codes to reviewers, or an FL-codes-only scheme with the owner mapping them:** rejected in favour of signed keys, because asking Verified reviewers to change or map their codes is weird (owner, 2026-11-21: "it is weird to ask them to change their codes or map those codes in. Rather, we should do the signed keys..."). FL-only also lets a copied public code be spoofed, and a mapping file raises the question of where it lives.
+- **In-app submit instead of mail:** not planned; mail stays.
+- **A custom in-app transliteration keyboard (A4 level c):** a big per-script build, not chosen. Level (a), the phone keyboard only, is kept as the fallback of level (b).
+- **The quorum as a GitHub secret or variable (ADR-0038):** superseded by one code constant with a test.
+
+## Open points
+
+Three readings are not the owner's words and wait for the owner:
+
+1. **The existing shell** (decision 11): "similar to the existing shell" is read as the current review screens and the daily-questions flow (`review_page.dart`, `daily_questions_page.dart`, `review_sheets.dart`), not a new screen family.
+2. **Quorum of 2 needs at least one Verified among the two** (decision 12 with decision 8): the combination of "reviewed twice" with the tier rule.
+3. **The file-level reviewed notice is hidden** (decision 4): read from the owner's "Ok".
+
+Also: the persona replay and adversarial retest of the stricter placement mode must pass before the reviewer check ships.
+
+## Work packages
+
+For later issues, each with its dependencies marked "blocked by" and the `blocked` label. No issues are created by this ADR, and no code starts before the owner approves the mockups ([mockups README](https://github.com/aaronified/fluenough/blob/main/docs/mockups/README.md)).
+
+| # | Package | Blocked by |
+|---|---|---|
+| W1 | Schema, receipts and facet checks in `lib/core/review` | this ADR accepted |
+| W2 | The single quorum constant (Dart and tools) plus the equality test | W1 |
+| W3 | Queue and deck-view review screens (session of 20, continue pool, flagged tab, flagged-only mode) | W1, approved mockups |
+| W4 | Pointer tags and the flagged queue | W1 |
+| W5 | Blind-pass comparison and per-script normalisation | W1 |
+| W6 | Reviewer-check mode in placement | persona replay and adversarial retest of the stricter mode; W1 |
+| W7 | Signed reviewer keys: mint script, offline verify in the app, bot verification, binding, denylist | W1 |
+| W8 | Revocation job (remove from `checked_by`, flag cards under quorum, queue revert PRs on `decks-live`) | W7 |
+| W9 | Index and tag changes (facet-level reviewed rule in the bot, validator and index tools) | W1, W2 |
+| W10 | Release and `min_app` notes | W6, W7, W9 |
+
+See also: [Plan-Reviewer-UX](Plan-Reviewer-UX) · [ADR-0038](ADR-0038-Review-Proposals) · [ADR-Index](ADR-Index) · [Home](Home)
