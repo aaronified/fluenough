@@ -29,6 +29,20 @@ bool topBandReached(V3Result result, PlacementLanguageData data) {
   return top(PlacementSkill.read) && top(PlacementSkill.write);
 }
 
+/// Whether the quiet offer is made after a placement: the course has not been
+/// offered or passed, the result reached the top band, and the check can run
+/// on this course ([ReviewerBank.mayOffer]). An offer that cannot be taken is
+/// never made, and so never counts as made.
+bool shouldMakeOffer({
+  required ReviewerCheckRecord record,
+  required V3Result result,
+  required PlacementLanguageData data,
+  required CheckedTwice checkedTwice,
+}) =>
+    record.shouldOffer &&
+    topBandReached(result, data) &&
+    ReviewerBank.mayOffer(data, checkedTwice);
+
 /// What a course's row on "Take the check" shows.
 enum ReviewerCheckRow {
   /// Tap to start.

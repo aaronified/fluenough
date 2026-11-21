@@ -111,10 +111,14 @@ const Map<ReviewerGroup, double> kReviewerAlpha = <ReviewerGroup, double>{
 /// beats a guesser but is not in the top band.
 const double kReviewerMinAccuracy = 0.85;
 
-/// How many items of a group "also right" may suspend and replace. More than
-/// this and the group is "not enough": the tap is a safety valve for a flawed
-/// item, not a way to choose the items that are scored.
-const int kReviewerMaxSuspended = 2;
+/// How many items of a group "also right" may suspend and replace. Each
+/// suspension beyond this counts as a miss against the group: the tap is a
+/// safety valve for a flawed item, not a way to choose the scored items.
+const int kReviewerMaxSuspended = 1;
+
+/// How many items of a group may be left out because they could not be
+/// played. More and the group is "not enough".
+const int kReviewerMaxSkipped = 3;
 
 /// The share of the path, up to the B1 milestone, that is the top band.
 const double kReviewerTopBandShare = 0.25;

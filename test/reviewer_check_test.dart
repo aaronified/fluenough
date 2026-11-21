@@ -1,16 +1,16 @@
 // The reviewer check's rules (ADR-0058, decisions 1 and 2): which items may
 // be asked, what a run reveals, and what the phone remembers.
 import 'package:fluenough/core/models/card.dart';
-import 'package:fluenough/core/placement/item_registry.dart';
 import 'package:fluenough/core/placement/assurance_model.dart';
+import 'package:fluenough/core/placement/item_registry.dart';
 import 'package:fluenough/core/placement/placement_data.dart';
 import 'package:fluenough/core/placement/placement_questions.dart'
     show PlacementSkill;
-import 'package:fluenough/core/placement/v3_result.dart';
 import 'package:fluenough/core/placement/reviewer_check_bank.dart';
 import 'package:fluenough/core/placement/reviewer_check_rules.dart';
 import 'package:fluenough/core/placement/reviewer_check_run.dart';
 import 'package:fluenough/core/placement/reviewer_check_status.dart';
+import 'package:fluenough/core/placement/v3_result.dart';
 import 'package:fluenough/core/review/facets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
