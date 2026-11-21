@@ -1,11 +1,11 @@
 // The tags sheet, the flagged list and the facet answer a reviewer saves
 // (ADR-0058, W4), at the app's 1.4x text on a narrow phone.
 
+import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/review/facets.dart';
 import 'package:fluenough/core/review/review_receipt.dart';
-import 'package:fluenough/app/app_state.dart';
-import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/features/review/facet_tags_sheet.dart';
 import 'package:fluenough/features/review/flagged_page.dart';
 import 'package:flutter/material.dart' hide Card;
