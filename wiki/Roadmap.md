@@ -373,6 +373,16 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1476](https://github.com/aaronified/fluenough/issues/1476) Marathi: add "mr" to tools/phonetic_languages.yaml (narrow IPA, MR-110)
 - [#1480](https://github.com/aaronified/fluenough/issues/1480) Chinese: Mandarin broad IPA tooling (shared tools change, branch tools/zh-phonetics)
 - [#1483](https://github.com/aaronified/fluenough/issues/1483) Tamil transcription engine in tools/transcribe.py (TA-110)
+- [#1652](https://github.com/aaronified/fluenough/issues/1652) Reviewer UX W1: Schema, receipts and facet checks in lib/core/review
+- [#1653](https://github.com/aaronified/fluenough/issues/1653) Reviewer UX W2: The single quorum constant (Dart and tools) plus the equality test
+- [#1654](https://github.com/aaronified/fluenough/issues/1654) Reviewer UX W3: Queue and deck-view review screens (session of 20, continue pool, flagged tab, flagged-only mode)
+- [#1655](https://github.com/aaronified/fluenough/issues/1655) Reviewer UX W4: Pointer tags and the flagged queue
+- [#1656](https://github.com/aaronified/fluenough/issues/1656) Reviewer UX W5: Blind-pass comparison and per-script normalisation
+- [#1657](https://github.com/aaronified/fluenough/issues/1657) Reviewer UX W6: Reviewer-check mode in placement
+- [#1658](https://github.com/aaronified/fluenough/issues/1658) Reviewer UX W7: Signed reviewer keys: mint script, offline verify in the app, bot verification, binding, denylist
+- [#1659](https://github.com/aaronified/fluenough/issues/1659) Reviewer UX W8: Revocation job (remove from checked_by, flag cards under quorum, queue revert PRs on decks-live)
+- [#1660](https://github.com/aaronified/fluenough/issues/1660) Reviewer UX W9: Index and tag changes (facet-level reviewed rule in the bot, validator and index tools)
+- [#1661](https://github.com/aaronified/fluenough/issues/1661) Reviewer UX W10: Release and min_app notes
 
 ## Plans
 
