@@ -570,16 +570,25 @@ from there afterwards (`--dump FILE`, `--cache DIR`, `--refresh`). It makes one
 download per language and never a request per word; `--limit N` compares only
 the first N core cards. Cards are matched to entries, and the variety's forms
 chosen and normalised, with the importer's own code and the same
-`tools/phonetic_languages.yaml` (its `agree` guard is not applied: the cards it
-rejects are what this list is for). Two levels are compared: the card's `ipa`
+`tools/phonetic_languages.yaml`: narrow forms get the variety's `normalise` and
+`align` rules; broad forms only the importer's basic clean-up (`align` would
+rewrite a form to the card's own unit and hide the disagreement, and the
+`normalise` pairs are written for narrow conventions). Its `agree` guard is not
+applied: the cards it rejects are what this list is for. `--markdown` and
+`--json` refuse a path inside `decks/` or ending `.yaml` or `.yml`, so a deck
+is never overwritten. Two levels are compared: the card's `ipa`
 with Wiktionary's `/ /` forms, and the card's `phonetic` with its `[ ]` forms.
 
 Each row of the review list names the kind of difference, likeliest real
 error first: `consonant`, `vowel quality`, `vowel and consonant` (the base
-letters differ), `multiple Wiktionary variants` (several forms, none the
-card's; one matching is agreement), then `length mark`, `stress` (compared
-only when the card's form has a stress mark: the broad `ipa` seldom does),
-`diacritic only`, and last `missing in Wiktionary` (no entry or no form; not
+letters differ), `tone` (tone letters ˥ ˦ ˧ ˨ ˩ differ), `contrastive mark`
+(aspiration, breathy or creaky voice, voicelessness, nasalisation, dental,
+secondary articulations, ejective, prenasalisation, rhoticity ˞: marks that
+make a different sound in some language), `multiple Wiktionary variants`
+(several forms, none the card's; one matching is agreement), then
+`length mark`, `stress` (compared only when the card's form has a stress mark:
+the broad `ipa` seldom does), `cosmetic mark` (any other mark: tie bar,
+syllabic, unreleased, ...), and last `missing in Wiktionary` (no entry or no form; not
 counted in the agreement rate). Within a kind the smaller difference comes
 first. The summary gives the agreement rate per language, per level, per kind
 and, for narrow forms, per `phonetic_source` (a `wiktionary` card agrees by

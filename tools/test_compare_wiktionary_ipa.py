@@ -47,7 +47,7 @@ CARDS = [
     ("zz-0006", "tin", "tin", None, None),  # length mark
     ("zz-0007", "sun", "sun", None, None),                  # Wiktionary's stress is ignored
     ("zz-0008", "pan", "pan", "[ˈpan]", "rules"),           # narrow: stress
-    ("zz-0009", "cup", "kup", None, None),                  # diacritic only
+    ("zz-0009", "cup", "kup", None, None),                  # contrastive mark (nasalisation)
     ("zz-0010", "map", "map", None, None),                  # matches one of two variants
     ("zz-0011", "mud", "mud", None, None),                  # matches neither of two
     ("zz-0012", "nobody", "nobodi", None, None),            # not on Wiktionary
@@ -102,7 +102,7 @@ class Compare(unittest.TestCase):
             "zz-0003": "consonant", "zz-0004": "consonant",
             "zz-0005": "vowel quality", "zz-0006": "length mark",
             "zz-0007": None,  # the card writes no stress, so Wiktionary's is no difference
-            "zz-0008": None, "zz-0009": "diacritic only", "zz-0010": None,
+            "zz-0008": None, "zz-0009": "contrastive mark", "zz-0010": None,
             "zz-0011": "multiple Wiktionary variants",
             "zz-0012": "missing in Wiktionary", "zz-0013": "missing in Wiktionary",
             "zz-0014": "vowel and consonant"})
@@ -146,7 +146,7 @@ class Compare(unittest.TestCase):
             ("zz-0011", "broad"),                          # several forms, none match
             ("zz-0006", "broad"),                          # length mark
             ("zz-0008", "narrow"),                         # stress
-            ("zz-0009", "broad"),                          # diacritic only
+            ("zz-0009", "broad"),                          # contrastive mark (nasalisation)
             ("zz-0012", "broad"), ("zz-0013", "broad")])   # missing
 
     def test_limit_and_rules_only_narrow_what_is_compared(self) -> None:
@@ -192,6 +192,41 @@ class Compare(unittest.TestCase):
         self.assertEqual(len(json.loads(js.read_text(encoding="utf-8"))
                              ["languages"]["zz"]["review"]), 10)
         self.assertEqual(digest(self.decks), before)
+
+    def test_every_vowel_letter_counts_as_a_vowel(self) -> None:
+        self.assertEqual(cw.difference("bʌt", "bst")[0], "vowel and consonant")
+        self.assertEqual(cw.difference("bʌt", "bɐt")[0], "vowel quality")
+        self.assertEqual(cw.difference("sɿ", "sʅ")[0], "vowel quality")
+        self.assertEqual(cw.difference("tʌ", "tʰʌ")[0], "contrastive mark")
+
+    def test_marks_are_contrastive_or_cosmetic(self) -> None:
+        for ours, theirs in [("kat", "kʰat"), ("kat", "kãt"), ("tat", "t̪at"),
+                             ("ɑ", "ɑ˞"), ("pa", "pa̤")]:
+            self.assertEqual(cw.difference(ours, theirs)[0], "contrastive mark", theirs)
+        for ours, theirs in [("tʃ", "t͡ʃ"), ("n", "n̩"), ("kat", "kat̚")]:
+            self.assertEqual(cw.difference(ours, theirs)[0], "cosmetic mark", theirs)
+        self.assertLess(cw.KINDS.index("contrastive mark"), cw.KINDS.index("multiple Wiktionary variants"))
+        self.assertGreater(cw.KINDS.index("cosmetic mark"), cw.KINDS.index("stress"))
+
+    def test_tone_letters_are_their_own_kind(self) -> None:
+        self.assertEqual(cw.difference("ma˥", "ma˩")[0], "tone")
+        self.assertEqual(cw.difference("ma", "ma˥")[0], "tone")
+        self.assertIsNone(cw.difference("ma˥˩", "ma˥˩")[0])
+        self.assertEqual(cw.difference("ma˥", "na˥")[0], "consonant")
+        self.assertLess(cw.KINDS.index("tone"), cw.KINDS.index("multiple Wiktionary variants"))
+
+    def test_the_report_is_never_written_over_a_deck(self) -> None:
+        before = digest(self.decks)
+        deck = self.decks / "zz" / "zz-home.yaml"
+        for flag, target in [("--markdown", deck), ("--json", deck),
+                             ("--markdown", self.decks / "zz" / "report.md"),
+                             ("--json", self.tmp / "other.yml")]:
+            code, _, err = self.run_main("zz", "--decks", str(self.decks), "--dump",
+                                         str(DUMP), flag, str(target))
+            self.assertEqual(code, 2, target)
+            self.assertIn("error", err)
+        self.assertEqual(digest(self.decks), before)
+        self.assertFalse((self.tmp / "other.yml").exists())
 
     def test_bad_arguments_are_refused_before_anything_is_fetched(self) -> None:
         with mock.patch.object(ip, "ensure_dump") as fetch:

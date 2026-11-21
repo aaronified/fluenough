@@ -28,22 +28,31 @@ What it compares, per card of the language's core decks, at two levels:
 Wiktionary's entries are found, and its forms of the language's variety
 chosen, with the importer's own code (`import_wiktionary.choose`,
 `import_phonetic.Variety.rank`, `Variety.normalised`, `phonetic_patch.normalise`):
-the same title, part of speech, meaning, variety and `normalise` / `align`
-rules from `tools/phonetic_languages.yaml`. The importer's `agree` guard is
-not applied, because the cards it drops are exactly the disagreements this
-list is for.
+the same title, part of speech, meaning and variety, and, for narrow forms,
+the `normalise` / `align` rules from `tools/phonetic_languages.yaml`. Broad
+forms get only `phonetic_patch.normalise`: `align` rewrites a form's unit to
+the card's own broad unit, so applying it to a broad form would hide the very
+disagreement being looked for, and the `normalise` pairs are written for the
+narrow conventions of the rules files. The importer's `agree` guard is not
+applied, because the cards it drops are exactly the disagreements this list
+is for.
 
 How a difference is named (KINDS, likeliest real error first):
 
 1. `consonant` or `vowel quality` or `vowel and consonant`: the base letters
-   differ, once stress, length and diacritics are taken away.
-2. `multiple Wiktionary variants`: Wiktionary gives several forms and the
+   differ, once stress, length, tone and marks are taken away.
+2. `tone`: the base letters agree and the tone letters (˥ ˦ ˧ ˨ ˩) differ.
+3. `contrastive mark`: a mark that makes a different sound in some language
+   differs (CONTRASTIVE_MARKS).
+4. `multiple Wiktionary variants`: Wiktionary gives several forms and the
    card's matches none (when it matches one, that is agreement).
-3. `length mark`, `stress`, `diacritic only`: the base letters agree. If more
-   than one of these differs, the first in this list names it. Stress is
+5. `length mark`, `stress`, `cosmetic mark`: the base letters agree. If more
+   than one of these differs, the first in this list names it. A cosmetic
+   mark is any other mark (tie bar, syllabic, unreleased, ...): how a source
+   chooses to write a sound more than which sound it is. Stress is
    compared only when the card's form has a stress mark at all (the decks'
    broad `ipa` seldom does, and Wiktionary's nearly always does).
-4. `missing in Wiktionary`: no entry, or no form of that level for the
+6. `missing in Wiktionary`: no entry, or no form of that level for the
    variety. Not a disagreement, so it is listed last and left out of the
    agreement rate.
 
@@ -63,6 +72,7 @@ import difflib
 import json
 import sys
 import unicodedata
+from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -78,8 +88,11 @@ LEVELS = ("broad", "narrow")
 
 MISSING = "missing in Wiktionary"
 MULTIPLE = "multiple Wiktionary variants"
-KINDS = ["consonant", "vowel quality", "vowel and consonant", MULTIPLE,
-         "length mark", "stress", "diacritic only", MISSING]
+TONE = "tone"
+CONTRASTIVE = "contrastive mark"
+COSMETIC = "cosmetic mark"
+KINDS = ["consonant", "vowel quality", "vowel and consonant", TONE, CONTRASTIVE,
+         MULTIPLE, "length mark", "stress", COSMETIC, MISSING]
 _KIND_RANK = {k: i for i, k in enumerate(KINDS)}
 
 CREDIT = ("Pronunciations from [Wiktionary](https://en.wiktionary.org), "
@@ -89,7 +102,19 @@ CREDIT = ("Pronunciations from [Wiktionary](https://en.wiktionary.org), "
 
 STRESS = "\u02c8\u02cc"
 LENGTH = "\u02d0\u02d1"
-VOWELS = frozenset("aeiouyɪʏʊɛœɔæɐəɘɵɤɜɞɨʉɯɑɒɶɚɝɷ")
+# Every letter of the IPA vowel chart, the near-close and open-mid ones
+# (ɪ ʏ ʊ ɛ œ ɔ ʌ æ ɐ ɶ ɑ ɒ), the central and back-unrounded ones (ɨ ʉ ɯ ɘ ɵ ɤ ə ɜ ɞ),
+# the rhotacised ones (ɚ ɝ) and the apical vowels (ɿ ʅ ʮ ʯ), with the
+# archaic ɩ.
+VOWELS = frozenset("aeiouyøɪɩʏʊɛœɔʌæɐəɘɵɤɜɞɨʉɯɑɒɶɚɝɿʅʮʯ")
+TONE_LETTERS = frozenset("˥˦˧˨˩")
+# Marks that make a different sound in some language, so a difference in them
+# is a likelier real error than a cosmetic one: aspiration ʰ, breathy voice
+# ʱ and ̤, creaky voice ̰, voicelessness ̥ and ̊, nasalisation ̃, dental ̪,
+# the secondary articulations ʷ ʲ ˠ ˤ, ejective ʼ, prenasalisation ⁿ and
+# rhoticity ˞. Everything else (tie bar, syllabic, unreleased, raised or
+# lowered, centralised, ...) is cosmetic.
+CONTRASTIVE_MARKS = frozenset("ʰʱʷʲˠˤʼⁿ˞\u0324\u0330\u0325\u030a\u0303\u032a")
 _DROPPED = frozenset(" .[]/")
 
 
@@ -101,12 +126,12 @@ def tidy(form: str) -> str:
 
 
 def _is_diacritic(ch: str) -> bool:
-    return unicodedata.category(ch) == "Mn" or (
+    return ch == "\u02de" or unicodedata.category(ch) == "Mn" or (
         unicodedata.category(ch) == "Lm" and ch not in STRESS + LENGTH)
 
 
 def strip(form: str, *, stress: bool = False, length: bool = False,
-          diacritics: bool = False) -> str:
+          diacritics: bool = False, tones: bool = False) -> str:
     """[form] (NFD) without syllable dots, spaces, brackets and, as asked,
     stress marks, length marks and diacritics (combining marks and modifier
     letters such as the aspiration mark)."""
@@ -115,6 +140,7 @@ def strip(form: str, *, stress: bool = False, length: bool = False,
         if ch in _DROPPED:
             continue
         if (stress and ch in STRESS) or (length and ch in LENGTH) \
+                or (tones and ch in TONE_LETTERS) \
                 or (diacritics and (_is_diacritic(ch))):
             continue
         out.append(ch)
@@ -161,15 +187,21 @@ def difference(ours: str, theirs: str) -> tuple[str | None, int]:
     if unicodedata.normalize("NFC", a) == unicodedata.normalize("NFC", b):
         return None, 0
     dist = distance(a, b)
-    core_a = strip(a, stress=True, length=True, diacritics=True)
-    core_b = strip(b, stress=True, length=True, diacritics=True)
+    every = dict(stress=True, length=True, diacritics=True, tones=True)
+    core_a, core_b = strip(a, **every), strip(b, **every)
     if core_a != core_b:
         return _sound_kind(core_a, core_b), dist
-    if strip(a, diacritics=True, stress=True) != strip(b, diacritics=True, stress=True):
+    if [c for c in a if c in TONE_LETTERS] != [c for c in b if c in TONE_LETTERS]:
+        return TONE, dist
+    plain = dict(tones=True)
+    if strip(a, diacritics=True, stress=True, **plain) != strip(b, diacritics=True, stress=True, **plain):
         return "length mark", dist
-    if strip(a, diacritics=True, length=True) != strip(b, diacritics=True, length=True):
+    if strip(a, diacritics=True, length=True, **plain) != strip(b, diacritics=True, length=True, **plain):
         return "stress", dist
-    return "diacritic only", dist
+    marks = Counter(c for c in strip(a, stress=True, length=True, **plain) if _is_diacritic(c))
+    other = Counter(c for c in strip(b, stress=True, length=True, **plain) if _is_diacritic(c))
+    changed = set((marks - other) + (other - marks))
+    return (CONTRASTIVE if changed & CONTRASTIVE_MARKS else COSMETIC), dist
 
 
 def judge(ours: str, theirs: list[str]) -> tuple[str, str | None, int]:
@@ -417,6 +449,17 @@ def as_json(results: list[Comparison]) -> dict:
                           for r in results}}
 
 
+def safe_output(path: Path, decks: Path) -> bool:
+    """Whether the report may be written to [path]: not inside a decks folder
+    (the one given, or the repository's) and not a YAML file, so a deck can
+    never be overwritten by a mistyped `--markdown` or `--json`."""
+    target = path.resolve()
+    if target.suffix.lower() in (".yaml", ".yml"):
+        return False
+    return not any(target.is_relative_to(d.resolve())
+                   for d in (decks, ROOT / "decks"))
+
+
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(
         description="List where the decks' IPA and Wiktionary's disagree.")
@@ -444,6 +487,11 @@ def main(argv: list[str]) -> int:
     if args.dump is not None and len(args.langs) > 1:
         print("error: --dump names one language's file; give one language", file=sys.stderr)
         return 2
+    for out in (args.markdown, args.json):
+        if out is not None and not safe_output(out, args.decks):
+            print(f"error: {out} is a deck or inside the decks folder; the review list "
+                  "is never written there", file=sys.stderr)
+            return 2
     results = []
     for lang in args.langs:
         if lang not in ip.VARIETIES:
