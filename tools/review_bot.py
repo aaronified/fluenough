@@ -11,8 +11,11 @@ branch of its own under `review-bot/`, each started afresh from `decks-live`
   of one review mail becomes a proposal on its card, each acceptance
   is recorded on the proposal it accepts, and each card the reviewer
   marked "Looks right" gets their rater code in its `checked_by` (#449);
-  a deck file whose every card is then checked is tagged `reviewed` in
-  place of `unreviewed`. Merged as soon as the required checks pass.
+  a deck file whose every facet of every card then has the review quorum
+  is tagged `reviewed` in place of `unreviewed` (ADR-0058, W9). A review
+  mail may also answer a card facet by facet (`facets`, with `receipts` of
+  the text seen): see `_facet_card`. Merged as soon as the required checks
+  pass.
 - **An agreement** (`review-bot/apply/<proposal>-<date>`): once
   enough rater codes other than the proposer's (REVIEW_QUORUM less the
   proposer's own) have accepted a proposal, its text is written into the field, and it and the

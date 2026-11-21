@@ -24,9 +24,10 @@ for its kind and would show it as a broken deck. Under
 for scripts that phones often draw wrongly or lack (ADR-0042): path, size,
 SHA-256, `script` and `family`, kept apart from `files` and left out of the
 language's size, for the same reason. Each file's `content_sha256` is the
-SHA-256 of the file with its proposals and its cards' `checked_by` taken
-out, so that a learner's phone is not offered an update when only a
-proposal or a reviewer's sign-off changed (#444, #449).
+SHA-256 of the file with its proposals and its cards' `checked_by`,
+`verified` and `facet_checks` taken out, so that a learner's phone is not
+offered an update when only a proposal or a reviewer's answer changed
+(#444, #449, ADR-0058).
 
 The decks with a `genre` (hidden ones too) are listed apart under `shelves`,
 a language's topics file under `topics`, the shared files (themes, sections,

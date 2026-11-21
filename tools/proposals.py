@@ -1319,8 +1319,9 @@ def languages(root: Path) -> list[str]:
 # proposals: on its own line in a card written as a block, or at the end of
 # a card written on one line in flow style. `tools/deck_index.py` leaves
 # both out of the content hash, so learners are not offered an update for
-# it. Once every card entry of a deck file lists a code, the file's tag
-# `unreviewed` becomes `reviewed`, which learners do see.
+# it. Once every facet of every card entry of a deck file has the review
+# quorum (all_checked; ADR-0058, W9), the file's tag `unreviewed` becomes
+# `reviewed`, which learners do see.
 
 # What the bot writes at the end of a flow card, in any order: a card's
 # `checked_by` and its `verified` (#519), lists, and its `facet_checks`
