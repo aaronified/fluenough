@@ -277,6 +277,77 @@ class MarathiAnusvaraAndSchwaTest(unittest.TestCase):
         self.assertEqual(transcribe("कमल", "hi").reading, "kamal")
 
 
+class TeluguReadingRulesTest(unittest.TestCase):
+    """Telugu's anusvara before a postposition, ఋ and ఫ (#1295; defaults the
+    owner can reverse, wiki/Plan-Ipa-Revamp-And-Language-Phonology.md,
+    "Telugu clitics, ఋ and ఫ")."""
+
+    # Hand-typed readings of the course (decks-live, decks/te, 2026-11-21),
+    # target to the card's reading and id. The engine, given the stored
+    # reading as its hint (as tools/transcribe_decks.py does), must keep
+    # reproducing them: the regression corpus for #1295.
+    CORPUS = {
+        # An anusvara before a postposition joined to the word is the nasal
+        # of the postposition's first letter, ṁ before l: never annaṁtō.
+        "ఉలవచారు అన్నంలో కలుపుకోండి.":
+            ("ulavacāru annaṁlō kalupukōṇḍi.", "te-6447"),
+        "పులుసు అన్నంతో బాగుంటుంది.":
+            ("pulusu annantō bāguṇṭundi.", "te-6444"),
+        "కోడి పులుసు కారంగా ఉంది.": ("kōḍi pulusu kāraṅgā undi.", "te-6442"),
+        "లేపనం చర్మంపై మాత్రమే రాయాలి.":
+            ("lēpanaṁ carmampai mātramē rāyāli.", "te-3216"),
+        "తాత ముఖంలో ముడతలు ఎక్కువ.":
+            ("tāta mukhaṁlō muḍatalu ekkuva.", "te-0731"),
+        "ఆ సినిమా ముగింపు చూసి విచారంతో బయటకు వచ్చాం.":
+            ("ā sinimā mugimpu cūsi vicārantō bayaṭaku vaccāṁ.", "te-3303"),
+        "భూగోళం గుండ్రంగా ఉంటుంది.":
+            ("bhūgōḷaṁ guṇḍraṅgā uṇṭundi.", "te-3002"),
+        "బ్యాంకు నుంచి అప్పు తీసుకున్నాడు.":
+            ("byāṅku nuñci appu tīsukunnāḍu.", "te-3912"),
+        # ఋ and ృ are ru (the course rule, Readings-ISO-15919).
+        "కృతజ్ఞత": ("krutajñata", "te-3313"), "వృథా": ("vruthā", "te-4613"),
+        "అభివృద్ధి": ("abhivruddhi", "te-6309"),
+        "దృశ్యం": ("druśyaṁ", "te-3606"), "బృందం": ("brundaṁ", "te-2935"),
+        "ఋ": ("ru", "te-0007"), "కృ": ("kru", "te-0068"),
+        "ప్రకృతి సౌందర్యాన్ని ఆస్వాదించాం.":
+            ("prakruti saundaryānni āsvādiñcāṁ.", "te-6311"),
+        # ఫ is ph by default (250 stored readings against 11), f where the
+        # card types f.
+        "ఫోన్": ("phōn", "te-0872"),
+        "పోస్టాఫీసు": ("pōsṭāphīsu", "te-0771"),
+        "వచ్చినప్పుడు నాకు ఫోన్ చేయండి.":
+            ("vaccinappuḍu nāku phōn cēyaṇḍi.", "te-grammar-when"),
+        "ఫోటోలు డిలీట్ చేయకండి.": ("phōṭōlu ḍilīṭ cēyakaṇḍi.", "te-0895"),
+    }
+
+    def test_the_courses_typed_readings_are_still_reproduced(self) -> None:
+        for word, (typed, card) in self.CORPUS.items():
+            self.assertEqual(transcribe(word, "te", typed).reading, typed,
+                             f"{word} ({card}), with its reading as the hint")
+            self.assertEqual(transcribe(word, "te").reading, typed,
+                             f"{word} ({card}), with no hint")
+
+    def test_a_clitic_is_written_as_the_nasal_not_as_m_dot(self) -> None:
+        # The hint that types ṁ before a postposition does not win: the
+        # stored annaṁtō became annantō, annaṁki annaṅki.
+        self.assertEqual(transcribe("అన్నంతో", "te", "annaṁtō").reading,
+                         "annantō")
+        self.assertEqual(transcribe("అన్నంకి", "te", "annaṁki").reading,
+                         "annaṅki")
+        self.assertEqual(transcribe("అన్నంలో", "te", "annamlō").reading,
+                         "annaṁlō")
+
+    def test_a_vocalic_r_is_ru_whatever_the_hint_spells(self) -> None:
+        for hint in ("krṛtajñata", "kr̥tajñata", "krutajñata"):
+            self.assertEqual(
+                transcribe("కృతజ్ఞత", "te", hint).reading, "krutajñata")
+
+    def test_a_loanword_f_is_kept_only_when_typed(self) -> None:
+        self.assertEqual(transcribe("ఫోన్", "te").reading, "phōn")
+        self.assertEqual(transcribe("ఫోన్", "te", "fōn").reading, "fōn")
+        self.assertEqual(transcribe("ఫోన్", "te", "fōn").ipa, "foːn")
+
+
 class NoHintTest(unittest.TestCase):
     """The three fixes that apply only with no hint (#315)."""
 
