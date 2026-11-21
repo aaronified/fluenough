@@ -201,7 +201,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#214](https://github.com/aaronified/fluenough/issues/214) Plan: a Research and standards page, with the sources
 - [#215](https://github.com/aaronified/fluenough/issues/215) Plan: books, films and songs you bring, with questions on them
 - [#216](https://github.com/aaronified/fluenough/issues/216) Plan: a path for every language, by family
-- [#217](https://github.com/aaronified/fluenough/issues/217) Plan: IPA from Wiktionary
 - [#218](https://github.com/aaronified/fluenough/issues/218) Plan: Fluenough on the web, installable
 - [#219](https://github.com/aaronified/fluenough/issues/219) Plan: conversation practice with an AI, within what you know
 - [#220](https://github.com/aaronified/fluenough/issues/220) Plan: read your own text, and make cards from it
@@ -227,7 +226,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#295](https://github.com/aaronified/fluenough/issues/295) Shelf: first items per course, and the B1 finale
 - [#296](https://github.com/aaronified/fluenough/issues/296) Language paths: owner decisions
 - [#299](https://github.com/aaronified/fluenough/issues/299) Language paths: variants and the common start
-- [#305](https://github.com/aaronified/fluenough/issues/305) Wiktionary IPA: compare and list disagreements
 - [#310](https://github.com/aaronified/fluenough/issues/310) AI conversation: the learner's limits, and keeping the model within them
 - [#311](https://github.com/aaronified/fluenough/issues/311) AI conversation: scenarios, feedback and optional speech
 - [#312](https://github.com/aaronified/fluenough/issues/312) AI conversation: privacy, and tests with a fake model
