@@ -25,7 +25,7 @@ import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import '../culture/culture_cards.dart';
 import '../review/review_flow_page.dart' show showReviewUnit;
-import '../review/review_source.dart' show queueCardsOf;
+import '../review/review_source.dart' show mayReviewDeck, queueCardsOf;
 import '../review/review_waiting.dart' show pairOf, reviewPairsOf;
 import '../topics/unit_topics.dart';
 import 'deck_content.dart';
@@ -260,7 +260,8 @@ class _UnitPageState extends State<UnitPage> {
               // For a reviewer of this course (frame 4a of the reviewer
               // mockup): every card of the unit, one after the other, with
               // all its details.
-              if (reviews && decks.any((d) => queueCardsOf(d).isNotEmpty))
+              if (mayReviewDeck(state, first) &&
+                  decks.any((d) => queueCardsOf(d).isNotEmpty))
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
                   child: FilledButton.tonalIcon(
