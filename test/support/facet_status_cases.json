@@ -1,5 +1,5 @@
 {
- "about": "Facet status cases read by both tools/test_review_facets.py and test/facet_status_vectors_test.dart, so the Python (tools/review_facets.py) and the Dart (lib/core/review/review_quorum.dart) rules stay equal. quorum is the one constant. status is facetStatus; settled is whether the facet reached the quorum.",
+ "about": "Facet status cases read by both tools/test_review_facets.py and test/facet_status_vectors_test.dart, so the Python (tools/review_facets.py) and the Dart (lib/core/review/review_quorum.dart) rules stay equal. quorum is the one constant. status is facetStatus; settled is whether the facet reached the quorum. A case may name a language: the language the facet's text is in, which the comparison folds (script_folds.dart, COMPARISON_FOLDS) are chosen by.",
  "cases": [
   {
    "name": "nothing checked",
@@ -302,6 +302,187 @@
    "status": "settled",
    "settled": true,
    "needs_verified": true
+  },
+  {
+   "name": "kaf variants agree in Urdu",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": {
+      "tags": [
+       "spelling_wrong"
+      ],
+      "fix": "كتاب"
+     }
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": {
+      "tags": [
+       "spelling_wrong"
+      ],
+      "fix": "کتاب"
+     }
+    }
+   ],
+   "status": "agreed_fix",
+   "settled": false,
+   "language": "ur"
+  },
+  {
+   "name": "kaf variants agree in Pashto",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": {
+      "tags": [
+       "spelling_wrong"
+      ],
+      "fix": "كتاب"
+     }
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": {
+      "tags": [
+       "spelling_wrong"
+      ],
+      "fix": "کتاب"
+     }
+    }
+   ],
+   "status": "agreed_fix",
+   "settled": false,
+   "language": "ps"
+  },
+  {
+   "name": "kaf variants contest with no language",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": {
+      "tags": [
+       "spelling_wrong"
+      ],
+      "fix": "كتاب"
+     }
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": {
+      "tags": [
+       "spelling_wrong"
+      ],
+      "fix": "کتاب"
+     }
+    }
+   ],
+   "status": "contested",
+   "settled": false
+  },
+  {
+   "name": "kaf variants contest in Sindhi",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": {
+      "tags": [
+       "spelling_wrong"
+      ],
+      "fix": "كتاب"
+     }
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": {
+      "tags": [
+       "spelling_wrong"
+      ],
+      "fix": "کتاب"
+     }
+    }
+   ],
+   "status": "contested",
+   "settled": false,
+   "language": "sd"
+  },
+  {
+   "name": "yeh variants agree in Persian",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": {
+      "tags": [
+       "spelling_wrong"
+      ],
+      "fix": "کي"
+     }
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": {
+      "tags": [
+       "spelling_wrong"
+      ],
+      "fix": "کی"
+     }
+    }
+   ],
+   "status": "agreed_fix",
+   "settled": false,
+   "language": "fa"
+  },
+  {
+   "name": "yeh variants contest in Pashto",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": {
+      "tags": [
+       "spelling_wrong"
+      ],
+      "fix": "کي"
+     }
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": {
+      "tags": [
+       "spelling_wrong"
+      ],
+      "fix": "کی"
+     }
+    }
+   ],
+   "status": "contested",
+   "settled": false,
+   "language": "ps"
+  },
+  {
+   "name": "different words contest in Urdu",
+   "checks": [
+    {
+     "rater": "FL-AAAA-AAAA-A",
+     "answer": {
+      "tags": [
+       "spelling_wrong"
+      ],
+      "fix": "كتاب"
+     }
+    },
+    {
+     "rater": "FL-BBBB-BBBB-B",
+     "answer": {
+      "tags": [
+       "spelling_wrong"
+      ],
+      "fix": "کتابی"
+     }
+    }
+   ],
+   "status": "contested",
+   "settled": false,
+   "language": "ur"
   }
  ]
 }

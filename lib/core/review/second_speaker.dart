@@ -14,9 +14,9 @@
 library;
 
 import '../models/card.dart';
+import 'facet_compare.dart';
 import 'facet_text.dart';
 import 'facets.dart';
-import 'fix_text.dart';
 import 'flagged_queue.dart';
 import 'review_quorum.dart';
 import 'review_session.dart';
@@ -28,6 +28,7 @@ sealed class SecondSpeakerStep {
     required this.facet,
     required this.original,
     required this.tags,
+    this.language,
   });
 
   final QueueCardRef ref;
@@ -38,6 +39,10 @@ sealed class SecondSpeakerStep {
 
   /// The tags put on the facet.
   final List<PointerTag> tags;
+
+  /// The language the facet's text is in ([languageOfFacet]), for comparing
+  /// fixes.
+  final String? language;
 }
 
 /// One speaker's proposed fix: "Accept", "Reject" or "Offer another".
@@ -47,6 +52,7 @@ final class ProposalStep extends SecondSpeakerStep {
     required super.facet,
     required super.original,
     required super.tags,
+    super.language,
     required this.proposed,
   });
 
@@ -60,6 +66,7 @@ final class RivalStep extends SecondSpeakerStep {
     required super.facet,
     required super.original,
     required super.tags,
+    super.language,
     required this.fixes,
   });
 
@@ -74,32 +81,19 @@ final class FlagStep extends SecondSpeakerStep {
     required super.facet,
     required super.original,
     required super.tags,
+    super.language,
   });
 }
 
 /// The fixes in [checks] that differ, one per speaker's latest flag, each
-/// once after normalisation ([sameFixText]), in the order proposed.
-/// [exceptRater] (a rater code, as given) is the reviewer asking: their own
-/// fix is not a rival to themselves.
-List<String> rivalFixesOf(Iterable<ReviewCheck> checks, {String? exceptRater}) {
-  final latest = <String, ReviewCheck>{};
-  for (final check in checks) {
-    if (check.key.isNotEmpty) {
-      latest.remove(check.key);
-      latest[check.key] = check;
-    }
-  }
-  final skip = exceptRater?.trim().toUpperCase();
-  final out = <String>[];
-  for (final check in latest.values) {
-    if (check.key == skip || check.endorses) continue;
-    final fix = check.answer!.replacement;
-    if (fix == null || fix.isEmpty) continue;
-    if (out.any((seen) => sameFixText(seen, fix))) continue;
-    out.add(fix);
-  }
-  return out;
-}
+/// once after comparison ([distinctFixesOf]: NFC, white space and the folds
+/// of [language]), in the order proposed. [exceptRater] (a rater code, as
+/// given) is the reviewer asking: their own fix is not a rival to themselves.
+List<String> rivalFixesOf(
+  Iterable<ReviewCheck> checks, {
+  String? exceptRater,
+  String? language,
+}) => distinctFixesOf(checks, exceptRater: exceptRater, language: language);
 
 /// The steps of the flagged-only mode for [flagged], in facet order: for
 /// each flagged or contested facet, a [RivalStep] when two or more other
@@ -116,7 +110,11 @@ List<SecondSpeakerStep> stepsOfFlagged(
   for (final f in flagged.facets) {
     final original = seenTextOf(card, f.facet);
     final checks = deck.others[card.id]?[f.facet] ?? const <ReviewCheck>[];
-    final rivals = rivalFixesOf(checks, exceptRater: ownCode);
+    final rivals = rivalFixesOf(
+      checks,
+      exceptRater: ownCode,
+      language: languageOfFacet(f.facet, deck.pair),
+    );
     if (rivals.length >= 2) {
       out.add(
         RivalStep(
@@ -124,6 +122,7 @@ List<SecondSpeakerStep> stepsOfFlagged(
           facet: f.facet,
           original: original,
           tags: f.tags,
+          language: languageOfFacet(f.facet, deck.pair),
           fixes: rivals,
         ),
       );
@@ -134,12 +133,19 @@ List<SecondSpeakerStep> stepsOfFlagged(
           facet: f.facet,
           original: original,
           tags: f.tags,
+          language: languageOfFacet(f.facet, deck.pair),
           proposed: f.existingFix!,
         ),
       );
     } else {
       out.add(
-        FlagStep(ref: ref, facet: f.facet, original: original, tags: f.tags),
+        FlagStep(
+          ref: ref,
+          facet: f.facet,
+          original: original,
+          tags: f.tags,
+          language: languageOfFacet(f.facet, deck.pair),
+        ),
       );
     }
   }
@@ -214,8 +220,13 @@ List<DigestItem> digestOf(
       if (!applicable.contains(facet)) continue;
       final checks = byFacet[facet];
       if (checks == null || checks.isEmpty) continue;
-      final status = facetStatus(checks);
-      final fixes = rivalFixesOf(checks);
+      // The same comparison the queue and the second speaker use.
+      final compared = compareFacet(
+        checks,
+        language: languageOfFacet(facet, deck.pair),
+      );
+      final status = compared.status;
+      final fixes = compared.fixes;
       final DigestKind kind;
       if (status == FacetStatus.contested) {
         kind = DigestKind.contested;

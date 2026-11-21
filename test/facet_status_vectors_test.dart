@@ -45,7 +45,11 @@ void main() {
       ];
       final needsVerified = json['needs_verified'] == true;
       expect(
-        facetStatus(checks, needsVerified: needsVerified).name,
+        facetStatus(
+          checks,
+          needsVerified: needsVerified,
+          language: json['language'] as String?,
+        ).name,
         (json['status']! as String).replaceAll('_f', 'F'),
       );
       expect(

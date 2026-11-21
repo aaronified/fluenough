@@ -9,7 +9,7 @@
 library;
 
 import '../models/card.dart';
-import 'fix_text.dart';
+import 'script_folds.dart';
 import 'review_problems.dart';
 
 /// One detail of a card that is checked on its own.
@@ -113,11 +113,21 @@ class FacetAnswer {
   bool get hasReplacement => replacement != null && replacement!.isNotEmpty;
 
   /// Whether this and [other] propose the same text once both are
-  /// normalised ([normalizeFixText]); false if either has none.
-  bool sameReplacement(FacetAnswer other) =>
+  /// compared by [comparisonKey] (NFC, white space, and the comparison folds
+  /// of [language] when given); false if either has none.
+  bool sameReplacement(
+    FacetAnswer other, {
+    String? language,
+    bool caseInsensitive = false,
+  }) =>
       hasReplacement &&
       other.hasReplacement &&
-      sameFixText(replacement!, other.replacement!);
+      sameFixIn(
+        replacement!,
+        other.replacement!,
+        language: language,
+        caseInsensitive: caseInsensitive,
+      );
 
   /// `{"ok": true}`, or `{"tags": [...], "fix": "..."}`.
   Map<String, Object?> toJson() => isRight

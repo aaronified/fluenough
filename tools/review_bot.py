@@ -1134,7 +1134,7 @@ class Bot:
         if now is None:
             return None
         for p in pr.proposals_on(root, fc.lang, fc.card, field_name):
-            if p.now == now and rf.same_fix_text(p.text, fix):
+            if p.now == now and rf.same_fix_in(p.text, fix, pr.fix_language(fc.lang, fc.deck, facet)):
                 if p.by != code:
                     pr.accept(root, fc.lang, p.id, code, fix, result)
                 return None

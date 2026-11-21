@@ -183,6 +183,50 @@ void main() {
       expect(same.decision, ReceiptDecision.accepted);
     });
 
+    test('the receipt and the status agree on a fold of the language', () {
+      const kafArabic = '\u0643\u062A\u0627\u0628';
+      const kafUrdu = '\u06A9\u062A\u0627\u0628';
+      const urdu = FlaggedFacet(
+        facet: Facet.word,
+        status: FacetStatus.flagged,
+        tags: <PointerTag>[PointerTag.spellingWrong],
+        existingFix: kafArabic,
+        language: 'ur',
+      );
+      final offered = resolveFlagged(
+        urdu,
+        FlaggedResolution.offerFix,
+        fix: kafUrdu,
+      )!;
+      expect(offered.decision, ReceiptDecision.accepted);
+      final status = facetStatus(<ReviewCheck>[
+        ReviewCheck(
+          rater: 'FL-AAAA-AAAA-A',
+          answer: FacetAnswer.flagged(
+            urdu.tags.toSet(),
+            replacement: kafArabic,
+          ),
+        ),
+        ReviewCheck(rater: 'FL-BBBB-BBBB-B', answer: offered.answer),
+      ], language: urdu.language);
+      expect(status, FacetStatus.agreedFix);
+      // With no language the two are different fixes, in both.
+      const plain = FlaggedFacet(
+        facet: Facet.word,
+        status: FacetStatus.flagged,
+        tags: <PointerTag>[PointerTag.spellingWrong],
+        existingFix: kafArabic,
+      );
+      expect(
+        resolveFlagged(
+          plain,
+          FlaggedResolution.offerFix,
+          fix: kafUrdu,
+        )!.decision,
+        ReceiptDecision.offeredOther,
+      );
+    });
+
     test('what cannot be made is null', () {
       const noFix = FlaggedFacet(
         facet: Facet.reading,

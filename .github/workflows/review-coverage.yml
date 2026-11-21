@@ -1,0 +1,36 @@
+name: Review coverage
+
+# The owner's view of how far the review of the decks has got (ADR-0058, W5;
+# issue #1656): per course, the share of facets that reached the review
+# quorum, and the share flagged or contested. Run by hand from the Actions
+# tab; the table is written to the job summary. Shares of facets only: no
+# reviewer is named or counted, and nothing here reaches the app or a deck.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  coverage:
+    name: Review coverage of decks-live
+    runs-on: ubuntu-latest
+    # Only from main: tools run from this branch's checkout, and a run
+    # dispatched from another branch must not run its own copy of them.
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v7
+        with:
+          ref: decks-live
+          path: decks-live
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml==6.0.2
+      - name: Write the coverage table to the job summary
+        run: python3 tools/review_coverage.py decks-live --out coverage.md >> "$GITHUB_STEP_SUMMARY"

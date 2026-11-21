@@ -402,8 +402,19 @@ def list_of(name: str) -> str:
 def native_code_of(lang: str, entry: Entry) -> str | None:
     """The language the card's native side is in: a deck's id is
     `<language>-<native>-<name>` (the validator checks it)."""
-    m = re.match(rf"{re.escape(lang)}-([a-z]{{2,3}})-", entry.deck)
+    return deck_native(lang, entry.deck)
+
+
+def deck_native(lang: str, deck: str) -> str | None:
+    """The native language in the id of [deck] of course [lang]."""
+    m = re.match(rf"{re.escape(lang)}-([a-z]{{2,3}})-", deck)
     return m.group(1) if m else None
+
+
+def fix_language(lang: str, deck: str, facet: str) -> str | None:
+    """The language the text of [facet] on a card of [deck] is in, which the
+    comparison folds of tools/review_facets.py are chosen by."""
+    return rf.fold_language(facet, lang, deck_native(lang, deck))
 
 
 def _item_keys(items: object) -> set[str]:
@@ -940,7 +951,9 @@ def accept(root: Path, lang: str, pid: str, code: str, text: str,
         result.not_accepted += 1
         return
     entry, p = found
-    if code == p.by or code in p.accepted or not rf.same_fix_text(text, p.text):
+    facet = rf.FACET_OF_FIELD.get(p.field)
+    language = fix_language(lang, entry.deck, facet) if facet else None
+    if code == p.by or code in p.accepted or not rf.same_fix_in(text, p.text, language):
         result.not_accepted += 1
         return
     agreed = replace(p, accepted=(*p.accepted, code))
@@ -1574,8 +1587,10 @@ def entry_language(entry: Entry) -> str | None:
 def facets_settled(entry: Entry) -> bool | None:
     """Whether every facet [entry] owns has the quorum; None when it owns
     none, so that it asks nothing of a reviewer."""
+    lang = entry_language(entry)
+    native = deck_native(lang, entry.deck) if lang else None
     return rf.entry_settled(checked_by(entry), facet_data(entry), entry.data,
-                            _holds_card(entry), entry_language(entry))
+                            _holds_card(entry), lang, native)
 
 
 def _materialised(entry: Entry) -> dict[str, dict]:
@@ -1805,7 +1820,10 @@ def facet_contested(root: Path, lang: str, card: str, field_name: str) -> bool:
             if facet in owned_facets(e) or facet in facet_data(e)]
     if not any(facet in facet_data(e) for e in held):
         return False
-    status = rf.facet_status([c for e in held for c in entry_checks(e, facet)])
+    language = next((fix_language(lang, e.deck, facet) for e in held
+                     if fix_language(lang, e.deck, facet)), None)
+    status = rf.facet_status([c for e in held for c in entry_checks(e, facet)],
+                             language=language)
     return status == "contested"
 
 

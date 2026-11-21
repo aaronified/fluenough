@@ -54,6 +54,7 @@ class SecondSpeakerStepView extends StatelessWidget {
     facet: step.facet,
     status: FacetStatus.flagged,
     tags: step.tags,
+    language: step.language,
     existingFix: switch (step) {
       ProposalStep(:final proposed) => proposed,
       _ => null,
@@ -190,6 +191,7 @@ class SecondSpeakerStepView extends StatelessWidget {
                     facet: step.facet,
                     status: FacetStatus.contested,
                     tags: step.tags,
+                    language: step.language,
                     existingFix: fix,
                   ),
                   FlaggedResolution.agreeWithFix,

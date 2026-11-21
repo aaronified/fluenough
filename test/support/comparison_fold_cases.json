@@ -1,0 +1,598 @@
+{
+ "about": "Comparison fold cases read by both tools/test_review_facets.py and test/script_folds_test.dart, so lib/core/review/script_folds.dart and tools/review_facets.py (COMPARISON_FOLDS) stay equal. `pairs`: sameFixIn(a, b, language) must equal `same`. `keys`: comparisonKey(text, language) must equal `key`. `folds`: the registry, by id, with the languages each applies to, sorted. `folds[].map` pins each fold's code points (hex, null drops).",
+ "folds": [
+  {
+   "id": "arabic-script-tatweel",
+   "languages": [
+    "fa",
+    "hi",
+    "ks",
+    "ps",
+    "sd",
+    "ur"
+   ],
+   "map": {
+    "0640": null
+   }
+  },
+  {
+   "id": "persian-urdu-yeh",
+   "languages": [
+    "fa",
+    "hi",
+    "ur"
+   ],
+   "map": {
+    "064A": "06CC",
+    "0649": "06CC"
+   }
+  },
+  {
+   "id": "persian-urdu-pashto-kaf",
+   "languages": [
+    "fa",
+    "hi",
+    "ps",
+    "ur"
+   ],
+   "map": {
+    "0643": "06A9"
+   }
+  },
+  {
+   "id": "arabic-script-digits",
+   "languages": [
+    "fa",
+    "hi",
+    "ks",
+    "ps",
+    "sd",
+    "ur"
+   ],
+   "map": {
+    "0660": "06F0",
+    "0661": "06F1",
+    "0662": "06F2",
+    "0663": "06F3",
+    "0664": "06F4",
+    "0665": "06F5",
+    "0666": "06F6",
+    "0667": "06F7",
+    "0668": "06F8",
+    "0669": "06F9"
+   }
+  }
+ ],
+ "pairs": [
+  {
+   "name": "yeh Arabic vs Farsi, ur",
+   "language": "ur",
+   "a": "\u06a9\u064a",
+   "b": "\u06a9\u06cc",
+   "same": true
+  },
+  {
+   "name": "yeh Arabic vs Farsi, fa",
+   "language": "fa",
+   "a": "\u06a9\u064a",
+   "b": "\u06a9\u06cc",
+   "same": true
+  },
+  {
+   "name": "yeh Arabic vs Farsi, hi",
+   "language": "hi",
+   "a": "\u06a9\u064a",
+   "b": "\u06a9\u06cc",
+   "same": true
+  },
+  {
+   "name": "yeh Arabic vs Farsi, ur-PK",
+   "language": "ur-PK",
+   "a": "\u06a9\u064a",
+   "b": "\u06a9\u06cc",
+   "same": true
+  },
+  {
+   "name": "yeh Arabic vs Farsi, UR",
+   "language": "UR",
+   "a": "\u06a9\u064a",
+   "b": "\u06a9\u06cc",
+   "same": true
+  },
+  {
+   "name": "yeh stays different, ps",
+   "language": "ps",
+   "a": "\u064a",
+   "b": "\u06cc",
+   "same": false
+  },
+  {
+   "name": "yeh stays different, sd",
+   "language": "sd",
+   "a": "\u064a",
+   "b": "\u06cc",
+   "same": false
+  },
+  {
+   "name": "yeh stays different, ks",
+   "language": "ks",
+   "a": "\u064a",
+   "b": "\u06cc",
+   "same": false
+  },
+  {
+   "name": "yeh stays different, ar",
+   "language": "ar",
+   "a": "\u064a",
+   "b": "\u06cc",
+   "same": false
+  },
+  {
+   "name": "yeh stays different, te",
+   "language": "te",
+   "a": "\u064a",
+   "b": "\u06cc",
+   "same": false
+  },
+  {
+   "name": "yeh stays different, None",
+   "language": null,
+   "a": "\u064a",
+   "b": "\u06cc",
+   "same": false
+  },
+  {
+   "name": "alef maksura vs Farsi yeh, fa",
+   "language": "fa",
+   "a": "\u0639\u06cc\u0633\u0649",
+   "b": "\u0639\u06cc\u0633\u06cc",
+   "same": true
+  },
+  {
+   "name": "alef maksura vs Arabic yeh, ur",
+   "language": "ur",
+   "a": "\u0649",
+   "b": "\u064a",
+   "same": true
+  },
+  {
+   "name": "alef maksura stays different in ps",
+   "language": "ps",
+   "a": "\u0649",
+   "b": "\u06cc",
+   "same": false
+  },
+  {
+   "name": "kaf Arabic vs Persian, fa",
+   "language": "fa",
+   "a": "\u0643\u0627\u0631",
+   "b": "\u06a9\u0627\u0631",
+   "same": true
+  },
+  {
+   "name": "kaf Arabic vs Persian, ur",
+   "language": "ur",
+   "a": "\u0643\u0627\u0631",
+   "b": "\u06a9\u0627\u0631",
+   "same": true
+  },
+  {
+   "name": "kaf Arabic vs Persian, ps",
+   "language": "ps",
+   "a": "\u0643\u0627\u0631",
+   "b": "\u06a9\u0627\u0631",
+   "same": true
+  },
+  {
+   "name": "kaf Arabic vs Persian, hi",
+   "language": "hi",
+   "a": "\u0643\u0627\u0631",
+   "b": "\u06a9\u0627\u0631",
+   "same": true
+  },
+  {
+   "name": "kaf stays different, sd",
+   "language": "sd",
+   "a": "\u0643",
+   "b": "\u06a9",
+   "same": false
+  },
+  {
+   "name": "kaf stays different, ks",
+   "language": "ks",
+   "a": "\u0643",
+   "b": "\u06a9",
+   "same": false
+  },
+  {
+   "name": "kaf stays different, ar",
+   "language": "ar",
+   "a": "\u0643",
+   "b": "\u06a9",
+   "same": false
+  },
+  {
+   "name": "kaf stays different, None",
+   "language": null,
+   "a": "\u0643",
+   "b": "\u06a9",
+   "same": false
+  },
+  {
+   "name": "sindhi kaf and khe stay different",
+   "language": "sd",
+   "a": "\u06aa",
+   "b": "\u06a9",
+   "same": false
+  },
+  {
+   "name": "tatweel dropped, ur",
+   "language": "ur",
+   "a": "\u0645\u0640\u0646",
+   "b": "\u0645\u0646",
+   "same": true
+  },
+  {
+   "name": "tatweel dropped, fa",
+   "language": "fa",
+   "a": "\u0645\u0640\u0646",
+   "b": "\u0645\u0646",
+   "same": true
+  },
+  {
+   "name": "tatweel dropped, ps",
+   "language": "ps",
+   "a": "\u0645\u0640\u0646",
+   "b": "\u0645\u0646",
+   "same": true
+  },
+  {
+   "name": "tatweel dropped, sd",
+   "language": "sd",
+   "a": "\u0645\u0640\u0646",
+   "b": "\u0645\u0646",
+   "same": true
+  },
+  {
+   "name": "tatweel dropped, ks",
+   "language": "ks",
+   "a": "\u0645\u0640\u0646",
+   "b": "\u0645\u0646",
+   "same": true
+  },
+  {
+   "name": "tatweel dropped, hi",
+   "language": "hi",
+   "a": "\u0645\u0640\u0646",
+   "b": "\u0645\u0646",
+   "same": true
+  },
+  {
+   "name": "tatweel kept for Arabic",
+   "language": "ar",
+   "a": "\u0645\u0640\u0646",
+   "b": "\u0645\u0646",
+   "same": false
+  },
+  {
+   "name": "tatweel kept with no language",
+   "language": null,
+   "a": "\u0645\u0640\u0646",
+   "b": "\u0645\u0646",
+   "same": false
+  },
+  {
+   "name": "tatweel before a mark recomposes",
+   "language": "ur",
+   "a": "\u0627\u0640\u0653",
+   "b": "\u0622",
+   "same": true
+  },
+  {
+   "name": "digits, ur",
+   "language": "ur",
+   "a": "\u0661\u0662\u0663",
+   "b": "\u06f1\u06f2\u06f3",
+   "same": true
+  },
+  {
+   "name": "digits, fa",
+   "language": "fa",
+   "a": "\u0661\u0662\u0663",
+   "b": "\u06f1\u06f2\u06f3",
+   "same": true
+  },
+  {
+   "name": "digits, ps",
+   "language": "ps",
+   "a": "\u0661\u0662\u0663",
+   "b": "\u06f1\u06f2\u06f3",
+   "same": true
+  },
+  {
+   "name": "digits, sd",
+   "language": "sd",
+   "a": "\u0661\u0662\u0663",
+   "b": "\u06f1\u06f2\u06f3",
+   "same": true
+  },
+  {
+   "name": "digits, ks",
+   "language": "ks",
+   "a": "\u0661\u0662\u0663",
+   "b": "\u06f1\u06f2\u06f3",
+   "same": true
+  },
+  {
+   "name": "digits, hi",
+   "language": "hi",
+   "a": "\u0661\u0662\u0663",
+   "b": "\u06f1\u06f2\u06f3",
+   "same": true
+  },
+  {
+   "name": "digit four and six, ur",
+   "language": "ur",
+   "a": "\u0664\u0666",
+   "b": "\u06f4\u06f6",
+   "same": true
+  },
+  {
+   "name": "digits stay different for Arabic",
+   "language": "ar",
+   "a": "\u0661",
+   "b": "\u06f1",
+   "same": false
+  },
+  {
+   "name": "digits stay different with no language",
+   "language": null,
+   "a": "\u0661",
+   "b": "\u06f1",
+   "same": false
+  },
+  {
+   "name": "different digits stay different",
+   "language": "ur",
+   "a": "\u0661",
+   "b": "\u06f2",
+   "same": false
+  },
+  {
+   "name": "western digit is not folded",
+   "language": "ur",
+   "a": "1",
+   "b": "\u06f1",
+   "same": false
+  },
+  {
+   "name": "urdu aspirate heh stays different from goal heh",
+   "language": "ur",
+   "a": "\u06a9\u06be",
+   "b": "\u06a9\u06c1",
+   "same": false
+  },
+  {
+   "name": "Arabic heh stays different from goal heh",
+   "language": "ur",
+   "a": "\u0647",
+   "b": "\u06c1",
+   "same": false
+  },
+  {
+   "name": "Arabic heh stays different from Persian heh with yeh above",
+   "language": "fa",
+   "a": "\u0647",
+   "b": "\u06c0",
+   "same": false
+  },
+  {
+   "name": "yeh barree stays different from yeh",
+   "language": "ur",
+   "a": "\u06d2",
+   "b": "\u06cc",
+   "same": false
+  },
+  {
+   "name": "gaf stays different from kaf",
+   "language": "ur",
+   "a": "\u06af",
+   "b": "\u06a9",
+   "same": false
+  },
+  {
+   "name": "Persian zero-width non-joiner is kept",
+   "language": "fa",
+   "a": "\u0645\u06cc\u200c\u0631\u0648\u0645",
+   "b": "\u0645\u06cc\u0631\u0648\u0645",
+   "same": false
+  },
+  {
+   "name": "Arabic vowel marks are kept",
+   "language": "ur",
+   "a": "\u06a9\u064e\u0644",
+   "b": "\u06a9\u0644",
+   "same": false
+  },
+  {
+   "name": "Devanagari nukta forms merge by NFC",
+   "language": "hi",
+   "a": "\u0958",
+   "b": "\u0915\u093c",
+   "same": true
+  },
+  {
+   "name": "Bengali ra with nukta merges by NFC",
+   "language": "bn",
+   "a": "\u09dc",
+   "b": "\u09a1\u09bc",
+   "same": true
+  },
+  {
+   "name": "Devanagari zero-width joiner is kept",
+   "language": "hi",
+   "a": "\u0915\u094d\u200d\u0937",
+   "b": "\u0915\u094d\u0937",
+   "same": false
+  },
+  {
+   "name": "Bengali zero-width non-joiner is kept",
+   "language": "bn",
+   "a": "\u09b0\u200c\u09cd\u09af",
+   "b": "\u09b0\u09cd\u09af",
+   "same": false
+  },
+  {
+   "name": "Telugu is NFC only",
+   "language": "te",
+   "a": "\u0c15\u0c4d\u0c37",
+   "b": "\u0c15\u0c4d\u200d\u0c37",
+   "same": false
+  },
+  {
+   "name": "Malayalam chillu sequence is not merged",
+   "language": "ml",
+   "a": "\u0d23\u0d4d\u200d",
+   "b": "\u0d7a",
+   "same": false
+  },
+  {
+   "name": "Hangul jamo merge by NFC",
+   "language": "ko",
+   "a": "\u1112\u1161\u11ab",
+   "b": "\ud55c",
+   "same": true
+  },
+  {
+   "name": "half-width katakana is not folded",
+   "language": "ja",
+   "a": "\uff76",
+   "b": "\u30ab",
+   "same": false
+  },
+  {
+   "name": "hiragana and katakana stay different",
+   "language": "ja",
+   "a": "\u3042",
+   "b": "\u30a2",
+   "same": false
+  },
+  {
+   "name": "full-width Latin is not folded",
+   "language": "ja",
+   "a": "\uff21",
+   "b": "A",
+   "same": false
+  },
+  {
+   "name": "Latin is case-sensitive by default",
+   "language": "en",
+   "a": "Kala",
+   "b": "kala",
+   "same": false
+  },
+  {
+   "name": "Latin case folds when the facet is case-insensitive",
+   "language": "en",
+   "a": "Kala",
+   "b": "kala",
+   "same": true,
+   "case_insensitive": true
+  },
+  {
+   "name": "Latin-1 capitals fold when case-insensitive",
+   "language": "fr",
+   "a": "\u00c9COLE",
+   "b": "\u00e9cole",
+   "same": true,
+   "case_insensitive": true
+  },
+  {
+   "name": "sharp s is not folded to ss",
+   "language": "de",
+   "a": "STRASSE",
+   "b": "Stra\u00dfe",
+   "same": false,
+   "case_insensitive": true
+  },
+  {
+   "name": "multiplication sign is not a letter",
+   "language": "en",
+   "a": "\u00d7",
+   "b": "\u00f7",
+   "same": false,
+   "case_insensitive": true
+  },
+  {
+   "name": "Turkish dotless i stays different",
+   "language": "tr",
+   "a": "I",
+   "b": "\u0131",
+   "same": false,
+   "case_insensitive": true
+  },
+  {
+   "name": "accents stay different",
+   "language": "fr",
+   "a": "e",
+   "b": "\u00e9",
+   "same": false,
+   "case_insensitive": true
+  },
+  {
+   "name": "NFC and a combining accent merge",
+   "language": "fr",
+   "a": "e\u0301",
+   "b": "\u00e9",
+   "same": true
+  },
+  {
+   "name": "curly apostrophe stays different from straight",
+   "language": "en",
+   "a": "don\u2019t",
+   "b": "don't",
+   "same": false
+  },
+  {
+   "name": "white space runs collapse",
+   "language": "en",
+   "a": " a \u00a0 b ",
+   "b": "a b",
+   "same": true
+  },
+  {
+   "name": "different words stay different",
+   "language": "ur",
+   "a": "\u06a9\u062a\u0627\u0628",
+   "b": "\u06a9\u062a\u0627\u0628\u06cc",
+   "same": false
+  }
+ ],
+ "keys": [
+  {
+   "name": "urdu folds to Farsi yeh, kaf, digits and no kashida",
+   "language": "ur",
+   "text": "\u0643\u0640\u064a \u0661",
+   "key": "\u06a9\u06cc \u06f1"
+  },
+  {
+   "name": "persian keeps heh",
+   "language": "fa",
+   "text": "\u0647",
+   "key": "\u0647"
+  },
+  {
+   "name": "no language, only white space",
+   "language": null,
+   "text": " \u0643  ",
+   "key": "\u0643"
+  },
+  {
+   "name": "case-insensitive Latin",
+   "language": "en",
+   "text": "\u00c9COLE Ab",
+   "key": "\u00e9cole ab",
+   "case_insensitive": true
+  }
+ ]
+}
