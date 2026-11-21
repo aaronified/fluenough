@@ -141,6 +141,24 @@ class _FacetTagsSheetState extends State<FacetTagsSheet> {
         (facet == Facet.word || facet == Facet.example) &&
         needsScriptKeyboard(_now ?? '');
     final multiline = facet == Facet.note || facet == Facet.example;
+    final field = TextField(
+      key: FacetTagsSheet.fieldKey,
+      controller: _fix,
+      minLines: multiline ? 3 : 1,
+      maxLines: multiline ? 6 : 1,
+      onChanged: (_) => setState(() {}),
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(AppRadii.chip),
+        ),
+        suffixIcon: IconButton(
+          key: FacetTagsSheet.pasteKey,
+          onPressed: _paste,
+          tooltip: l10n.reviewTagsPaste,
+          icon: const Icon(Icons.content_paste),
+        ),
+      ),
+    );
     return Padding(
       padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
       child: SingleChildScrollView(
@@ -192,38 +210,32 @@ class _FacetTagsSheetState extends State<FacetTagsSheet> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 spacing: 8,
                 children: <Widget>[
-                  Expanded(
-                    child: Semantics(
-                      label: l10n.reviewTagsFix,
-                      child: TextField(
-                        key: FacetTagsSheet.fieldKey,
-                        controller: _fix,
-                        minLines: multiline ? 3 : 1,
-                        maxLines: multiline ? 6 : 1,
-                        onChanged: (_) => setState(() {}),
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(AppRadii.chip),
-                          ),
-                          suffixIcon: IconButton(
-                            key: FacetTagsSheet.pasteKey,
-                            onPressed: _paste,
-                            tooltip: l10n.reviewTagsPaste,
-                            icon: const Icon(Icons.content_paste),
-                          ),
+                  Expanded(flex: 2, child: field),
+                  // A word's reading is short and sits beside the field; an
+                  // example's is a sentence and goes under it.
+                  if (reading != null && !multiline)
+                    Flexible(
+                      child: Text(
+                        reading,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: theme.textTheme.bodyMedium!.copyWith(
+                          color: scheme.onSurfaceVariant,
                         ),
-                      ),
-                    ),
-                  ),
-                  if (reading != null)
-                    Text(
-                      reading,
-                      style: theme.textTheme.bodyMedium!.copyWith(
-                        color: scheme.onSurfaceVariant,
                       ),
                     ),
                 ],
               ),
+              if (reading != null && multiline)
+                Padding(
+                  padding: const EdgeInsets.only(top: 4),
+                  child: Text(
+                    reading,
+                    style: theme.textTheme.bodyMedium!.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                ),
             ],
             if (showHint)
               Padding(

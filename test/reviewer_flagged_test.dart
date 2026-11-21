@@ -68,6 +68,7 @@ FacetAnswer _flag(PointerTag tag, [String? fix]) =>
     FacetAnswer.flagged(<PointerTag>{tag}, replacement: fix);
 
 void main() {
+  _more();
   group('the flagged queue', () {
     test('lists a card with a tag and no fix as flagged, with its tags', () {
       final queue = _queue(
@@ -228,5 +229,73 @@ void main() {
         expect(isTextFacet(Facet.audio), isFalse);
       },
     );
+  });
+}
+
+void _more() {
+  group('flagged answers through the quorum rules', () {
+    final otherFlag = ReviewCheck(
+      rater: 'FL-BBBB',
+      answer: FacetAnswer.flagged(<PointerTag>{
+        PointerTag.readingWrong,
+      }, replacement: 'zindagī'),
+    );
+    const flagged = FlaggedFacet(
+      facet: Facet.reading,
+      status: FacetStatus.flagged,
+      tags: <PointerTag>[PointerTag.readingWrong],
+      existingFix: 'zindagī',
+    );
+
+    FacetStatus after(FlaggedAnswer a) => facetStatus(<ReviewCheck>[
+      otherFlag,
+      ReviewCheck(rater: 'FL-AAAA', answer: a.answer),
+    ]);
+
+    test('agreeing makes the fix agreed', () {
+      final a = resolveFlagged(flagged, FlaggedResolution.agreeWithFix)!;
+      expect(after(a), FacetStatus.agreedFix);
+    });
+
+    test('the same text offered as their own is also agreed', () {
+      final a = resolveFlagged(
+        flagged,
+        FlaggedResolution.offerFix,
+        fix: 'zindagī ',
+      )!;
+      expect(after(a), FacetStatus.agreedFix);
+    });
+
+    test('a different fix makes the facet contested', () {
+      final a = resolveFlagged(
+        flagged,
+        FlaggedResolution.offerFix,
+        fix: 'zindgī',
+      )!;
+      expect(after(a), FacetStatus.contested);
+    });
+
+    test('right against a flag makes it contested', () {
+      final a = resolveFlagged(flagged, FlaggedResolution.right)!;
+      expect(after(a), FacetStatus.contested);
+    });
+  });
+
+  group('what a receipt hashes', () {
+    test('text facets hash their text, the others what was seen', () {
+      const card = Card(
+        id: 'hi-0003',
+        deckId: 'hi-core',
+        target: 'x',
+        native: 'y',
+        audio: 'hi-0003.ogg',
+        register: 'offensive',
+      );
+      expect(seenTextOf(card, Facet.word), 'x');
+      expect(seenTextOf(card, Facet.unitPlacement), 'hi-core');
+      expect(seenTextOf(card, Facet.offenceRating), 'offensive');
+      expect(seenTextOf(card, Facet.audio), 'hi-0003.ogg');
+      expect(seenTextOf(_other, Facet.audio), '');
+    });
   });
 }

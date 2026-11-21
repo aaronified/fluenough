@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
 import '../../core/review/flagged_queue.dart';
 import '../../l10n/app_localizations.dart';
@@ -88,10 +89,15 @@ class FlaggedPage extends StatelessWidget {
         title: l10n.reviewFlaggedEmpty,
       );
     }
-    final words = <String, String>{
-      for (final deck in state.reviewDecks)
-        for (final card in deck.cards) '${deck.id}/${card.id}': card.target,
+    final decks = <String, DeckEntry>{
+      for (final deck in state.reviewDecks) deck.id: deck,
     };
+    String wordOf(FlaggedCard card) =>
+        decks[card.deckId]?.cards
+            .where((c) => c.id == card.cardId)
+            .firstOrNull
+            ?.target ??
+        card.cardId;
     void open(FlaggedCard card) =>
         Navigator.of(context)
             .pushNamed(AppRoutes.review, arguments: card.deckId);
@@ -106,7 +112,7 @@ class FlaggedPage extends StatelessWidget {
         for (final card in queue.cards)
           _Row(
             key: FlaggedPage.rowKey(card.deckId, card.cardId),
-            word: words['${card.deckId}/${card.cardId}'] ?? card.cardId,
+            word: wordOf(card),
             card: card,
             onTap: () => open(card),
           ),

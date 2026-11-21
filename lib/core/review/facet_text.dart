@@ -57,6 +57,20 @@ String? facetTextOf(Card card, Facet facet) => switch (facet) {
   _ => null,
 };
 
+/// What a receipt hashes for [facet] of [card] (`ReviewReceipt`): the text of
+/// a text facet, and for the others what the reviewer saw: the deck the card
+/// sits in for its unit, the card's register for the offence rating, and the
+/// audio file's name for its audio. Empty when the card has none.
+String seenTextOf(Card card, Facet facet) =>
+    facetTextOf(card, facet) ??
+    switch (facet) {
+      Facet.unitPlacement => card.deckId,
+      Facet.offenceRating => card.register,
+      Facet.audio => card.audio,
+      _ => null,
+    } ??
+    '';
+
 /// The reading to show beside the field of [facet], for the facets whose
 /// text a reviewer may have to type in a script they read from a
 /// romanisation: the word's, or the first example's. Null otherwise.

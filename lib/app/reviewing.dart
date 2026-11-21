@@ -195,7 +195,7 @@ class Reviewing {
 
   /// [answer] to [facet] of [card] (ADR-0058, W4): right, or flagged with
   /// pointer tags and perhaps a fix, replacing this reviewer's earlier
-  /// answer to the facet. A receipt of the text seen ([facetTextOf], hashed)
+  /// answer to the facet. A receipt of the text seen ([seenTextOf], hashed)
   /// and the [decision] goes with it, in place of the facet's earlier one.
   /// Both are sent in the review file (`facets`, `receipts`), beside
   /// whatever the card's review already holds.
@@ -215,7 +215,7 @@ class Reviewing {
       ReviewReceipt.of(
         cardId: card.id,
         facet: facet,
-        seen: facetTextOf(card, facet),
+        seen: seenTextOf(card, facet),
         decision:
             decision ??
             (answer.isRight ? ReceiptDecision.right : ReceiptDecision.flagged),
