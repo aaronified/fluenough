@@ -4,6 +4,8 @@ Source of truth: this wiki page.
 
 Written 2026-11-21 for #734 (a sounds deck for every language), with #31 (phonemic contrasts), #736 (the Telugu sounds deck, the model) and #1221 (the IPA keyboard follow-ups; its `typed` flag stays off, so sound cards are chosen, never typed). Builds on [Plan-Ipa-Revamp-And-Language-Phonology](Plan-Ipa-Revamp-And-Language-Phonology), [ADR-0015](ADR-0015-Sound-Contrasts), [ADR-0057](ADR-0057-Morse-Code-Course) (the audio-per-card mechanism) and [ADR-0040](ADR-0040-Decks-Are-Cc-By-Sa). The decision record is [ADR-0059](ADR-0059-Sounds-Decks-With-Compressed-Audio) (Proposed). Nothing here is built. Everything marked **Proposed** is the author's, not a decision.
 
+**Status 2026-11-21.** Tools merged to `main`: the validator audio rules (#1675), and the shared Wikimedia client with `tools/fetch_sound_audio.py` (#1681). The Telugu pilot deck `te-sound-inventory` (55 cards, `te-9258` to `te-9312`) is merged to `decks-live` (#1685), without audio. The first fetch run is next; its result will be recorded here.
+
 ## What the owner asked
 
 > all languages need a better sounds deck, where all the prevalent sounds in the language will be explained and how they are different from the native language sounds. (2026-10-23, #734)
@@ -35,7 +37,7 @@ A sounds deck for a language is a **core and an English layer** (more native lay
 |---|---|---|
 | The sound's spelling | `target` | The letter, sign or letter pair that writes it (క, ఖ, ా). A sound written several ways gets one card, the others in `alt_target`. A tone is the tone mark or a syllable carrying it. |
 | Reading in the course's romanisation | `reading` | `ka`, `kha`. |
-| The sound's IPA | `ipa` (broad, no brackets) and `phonetic` (narrow, `[ ]`, written only by the tools) | The unit being taught: `kʰ`, `ɖ`, `aː`. The validator already checks IPA letters. |
+| The sound's IPA | `ipa` (broad, no brackets) and `phonetic` (narrow, `[ ]`, written only by the tools) | The unit being taught, in the tool's SYLLABLE form: a consonant carries the inherent a (`kʰa`, `ʈa`), and a vowel is the vowel (`aː`). The audio fetch tool strips a trailing inherent `a` when it matches a bare IPA-symbol recording (decided 2026-11-21 in the review of PR #1685, the Telugu pilot). The validator already checks IPA letters. |
 | Example word with reading and meaning | `examples`: `{ target, reading, ipa }`, its meaning in the layer | At least one, ideally the word already a card of the course, so the learner meets it again. A sentence example is spoken by TTS, as today. |
 | How the sound differs from the native sound | the **layer's `native`** (the sound's description, "the tongue curled back") and a layer **note** of kind `note` | The note starts with a fixed lead-in so a reviewer, the validator and a later UI can tell the verdict: `Same as English:`, `Close to English:` or `New to English:`, then what is the same or different, with an English word where one helps. |
 | The contrast it belongs to | `tags`: the contrast id of `<lang>-sounds` (`aspiration`, `dental-retroflex`) | Links the card to the minimal-pair drill and the sound-differences deck. |
