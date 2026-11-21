@@ -619,6 +619,7 @@ cards:
 | `proposed` | no | Written by the review bot: changes reviewers proposed, waiting for agreement. See [Proposals](#proposals-proposed). Allowed on any card entry: a single-file card or ref, a core's card or ref, a layer's entry. |
 | `checked_by` | no | Written by the review bot: the rater codes of the reviewers who signed the card off, `["FL-7K3M-Q9TD-6"]`. See [Who checked it](#who-checked-it-checked_by). Allowed on any card entry, as `proposed` is. |
 | `verified` | no | Written by the review bot, from the daily questions: the data points of the card two reviewers agreed are right, `["meaning", "example:1a2b3c4d", "confusable:stem", "sound"]`. See [Settled points](#settled-points-verified). Allowed on any card entry, as `checked_by` is. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#519). |
+| `facet_checks` | no | Written by the review bot: what other reviewers said about each facet of the card, `{"reading": {"by": ["FL-7K3M-Q9TD-6"]}}`, with flags and fixes. See [Facet checks](#facet-checks-facet_checks). Allowed on any card entry, as `checked_by` is. An app older than the release that reads it rejects the card, so the bot writes it only after that release (ADR-0058 W9; the format is a proposal for the owner to confirm). |
 
 In a [core and its layers](#core-and-layer-files), the core card gives
 every field above but `native`, `alt_native`, `wiktionary` and `pair`; the
@@ -3167,7 +3168,8 @@ downloads is listed in `decks/index.json`:
   lists it by. A core is marked `"part": "core"`, and a file holding
   [proposals](#proposals-proposed) says how many, `"proposed": 2`.
   `content_sha256` is the SHA-256 of the file with its proposals taken
-  out, and its cards' [`checked_by`](#who-checked-it-checked_by) too: a
+  out, and its cards' [`checked_by`](#who-checked-it-checked_by),
+  `verified` and [`facet_checks`](#facet-checks-facet_checks) too: a
   learner's phone is offered an update only when that changes, and a phone
   in reviewer mode when `sha256` does (#444, #449). A deck's `tags` are
   not taken out, so a deck becoming `reviewed` is an update. Every
@@ -3371,12 +3373,24 @@ whose code a deck lists.
   `content_sha256` could not leave it out.
 - **No update for it.** `content_sha256` in `index.json` leaves it out, so a
   learner is not offered a deck update when only a sign-off changed.
-- **The deck's tag.** Once every card entry of a deck file lists a code,
-  the bot tags the file `reviewed` in place of `unreviewed` (adding a
-  `tags` line before `cards:` where it had none). A core and its layer
-  are tagged each on its own, and the merged deck reads as reviewed only
-  once both are ([What the merged deck is](#what-the-merged-deck-is)): a
-  core shared by several layers is reviewed once all its cards are
+- **The deck's tag.** Once every facet of every card entry of a deck file
+  has the review quorum, the bot tags the file `reviewed` in place of
+  `unreviewed` (adding a `tags` line before `cards:` where it had none).
+  This replaces "every card entry lists a code" (ADR-0058, decision 12; W9).
+  A facet is a detail of the card checked on its own (word, reading, IPA,
+  meaning, example, note, unit placement, offence rating, audio); the
+  entry owns the facets whose text it holds, so a core's card owns the
+  word and the reading, its layer's entry the meaning. A facet has the
+  quorum when the distinct rater codes that checked it reach the number in
+  `tools/review_quorum.py` (`REVIEW_QUORUM`), each code counting by its
+  latest answer, and none of them a flag. A code in `checked_by` counts
+  once as "right" on every facet the entry owns, so a deck whose cards
+  were all signed off by that many codes is tagged as before, and a card
+  with no facet data stays valid. A rater's own answer in `facet_checks`
+  wins over their `checked_by`. The number is never shown to anyone. A core
+  and its layer are tagged each on its own, and the merged deck reads as
+  reviewed only once both are ([What the merged deck is](#what-the-merged-deck-is)):
+  a core shared by several layers is reviewed once all its cards are
   checked, from any of them. A grammar or rules deck, which has no card
   entries, is left to the owner. Learners see this change, so it is an
   update.
@@ -3429,6 +3443,82 @@ skips them (#519, owner, 2026-10-30: "a `verified` field on cards").
   `WRITE_VERIFIED` in `tools/question_answers.py` is `False` until then, and
   the answers are only tallied in `review-answers/<language>.json`. The
   owner sets it to `True` in the release after the one that reads the field.
+
+## Facet checks: `facet_checks`
+
+What other reviewers said about each facet of a card, so that the app's
+flagged queue and second-speaker views read real data (ADR-0058, work
+package W9). **The review bot writes it; nobody writes one by hand.** This
+format is the builder's proposal for the owner to confirm; it is the most
+minimal additive shape: one key on the card's entry, nothing changed in
+`checked_by`.
+
+```yaml
+  - id: "te-0986"
+    target: "కుక్క"
+    reading: "kukka"
+    checked_by: ["FL-7K3M-Q9TD-6"]
+    facet_checks: {"reading": {"by": ["FL-7K3M-Q9TD-6", "FL-0000-0000-0"]}, "word": {"flags": [{"by": "FL-0000-0000-0", "tags": ["spelling_wrong"], "fix": "కుక్క"}]}}
+  - { id: "te-0987", target: "పిల్లి", reading: "pilli", facet_checks: {"reading": {"by": ["FL-7K3M-Q9TD-6"]}} }
+```
+
+- **The shape.** A non-empty mapping from a facet name (`word`, `reading`,
+  `ipa`, `meaning`, `example`, `note`, `unit`, `offence`, `audio`) to
+  `{"by": [...], "flags": [...]}`, with at least one of the two. `by` lists
+  the rater codes whose latest answer to the facet is "right". `flags`
+  lists the others' latest answers, each `{"by": code, "tags": [...],
+  "fix": text}`: the pointer tags (`meaning_wrong`, `reading_wrong`,
+  `ipa_wrong`, `spelling_wrong`, `unnatural_or_rare`, `wrong_register`,
+  `offensive`, `example_wrong`, `note_wrong`, `wrong_unit`, `audio_wrong`),
+  each on a facet it may be put on, and the replacement text when the
+  reviewer gave one, only on a text facet (word, reading, IPA, meaning,
+  example, note). A rater appears once on a facet, in `by` or in `flags`: a
+  reviewer who changes their answer moves from one to the other. Rater codes
+  only, never an address (Plan-Review-Staging). No count and no tier.
+- **One line.** As `checked_by`: a line of its own among a block card's
+  fields, before any `proposed`; last before the closing brace of a card
+  written on one line in flow style (`, facet_checks: {...} }`), with
+  `checked_by` and `verified` before or after it in either order. It is
+  written as JSON, which is YAML, with every text in quotes.
+- **Where.** On the entry that holds the facet's text: a core's or single
+  file's card owns the word, reading, IPA, audio, its place in a unit and
+  an offence rating; a layer's entry the meaning; an example or a note on
+  every entry that has one. A card the merged deck gets from a core and a
+  layer has the answers of both, per facet.
+- **`checked_by` is unchanged.** It still lists the codes that signed the
+  whole card off, and every app reads it as before. The bot adds a code to it as before for a card-level
+  "Looks right", and also when a reviewer has answered "right" to every facet
+  the card has.
+- **What it means for the status of a facet.** The app and the tools read a
+  facet's checks as: each `checked_by` code once as "right" (unless the same
+  rater has their own answer to the facet), each code of `by` as "right", each
+  flag as a flag; one answer a rater, the latest. Any flag makes the facet
+  unsettled (a flag with no fix is *flagged*, a flag beside a "right" is
+  *contested*, flags that agree on one fix after Unicode NFC and white space
+  are *agreed fix*, flags on different fixes are *contested*); otherwise it
+  is settled at the quorum. A flagged or contested facet is not reviewed.
+- **Fixes are proposals.** A fix sent with a flag becomes a [proposal](#proposals-proposed)
+  on the facet's field (word is `target`, meaning `native`, note `notes`,
+  reading and IPA as named), and a later flag with the same fix after
+  normalisation is that proposal's acceptance, so it is applied by the rules
+  of ADR-0038, and not while the facet is contested. When a fix is applied the
+  facet's answers (they were to the old text) are taken out and the new text is
+  checked afresh. An answer whose receipt hash is not the hash of the text the
+  card says now is left out as stale.
+- **The validator** allows it where `checked_by` is allowed, and checks the
+  shape above: known facets, rater codes written as the app writes them,
+  tags that belong on the facet, a fix only on a text facet, no rater twice
+  on a facet, and where the bot writes it.
+- **No update for it.** `content_sha256` in `index.json` leaves it out, with
+  `checked_by`, so a learner is not offered a deck update when only an answer
+  changed.
+- **A release after the app.** As `verified`: a released app rejects a card
+  key it does not know. The bot writes `facet_checks` only once an app that
+  reads it is released: the constant `WRITE_FACET_CHECKS` in
+  `tools/review_bot.py` is `False` until then, and the bot still reads
+  facet answers (stale ones dropped, fixes become proposals, a card right on
+  every facet is signed off in `checked_by`). The owner sets it to `True` in
+  the release after the one that reads the key (W10).
 
 ## Adding your own deck
 
