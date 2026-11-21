@@ -15,6 +15,8 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
   Bengali, light and dark, 1.4x. Open choices are tweak controls and are
   listed in `today-chain.md`, with the self-check.
 
+- `reviewer-ux.html` (`reviewer-ux.md`): the reviewer screens of `wiki/Plan-Reviewer-UX.md`, by exception (a card is fine unless flagged). Open questions are listed in `reviewer-ux.md`.
+
 ## Current and approved
 
 Each is the spec for its screen. Don't rewrite one without the owner's
