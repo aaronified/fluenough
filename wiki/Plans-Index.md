@@ -20,6 +20,7 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [In App Readings](Plan-In-App-Readings): readings made in the app, for sentences the learner adds
 - [Ipa Revamp And Language Phonology](Plan-Ipa-Revamp-And-Language-Phonology): the IPA course revamp, and a phonology deck for every language
 - [Sounds Decks](Plan-Sounds-Decks): a sounds deck for every language, with fetched Ogg Opus audio (#734; proposed, nothing built)
+- [Culture Media](Plan-Culture-Media): posters, portraits and other information for the culture decks, fetched from Wikimedia Commons
 - [Iso 15919 Deck](Plan-Iso-15919-Deck): a deck that teaches ISO 15919, in each language
 - [Japanese B1 Wordlists](Plan-Japanese-B1-Wordlists): fresh candidate words for every planned Japanese unit, and top-ups for the short ones
 - [Japanese Resume List](Japanese-Resume-List): what is merged, what is left for Japanese, in what order, and the owner-only items
