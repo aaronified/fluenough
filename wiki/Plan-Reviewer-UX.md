@@ -23,7 +23,7 @@ Option P3 was chosen:
 - **Top band** means the credible range's lower bound is at B1 on Read and Write, plus Hear for the reading, IPA and audio facets. Self-rated Say never counts, because only Telugu has a scoring recogniser.
 - **Retake:** a 7-day cooldown, with fresh items. No expiry.
 - **Privacy:** nothing leaves the phone except a coarse "passed facets" flag in the first review mail. It is used for triage only, because the bot cannot verify it.
-- **Fallback:** thin courses (too few items) and languages without placement fall back to the owner's signed invite codes (decision 8).
+- **Fallback:** thin courses (too few items) and languages without placement fall back to codes the owner maps to Verified (decision 8).
 - **Launch gate:** a persona replay and an adversarial retest of the stricter mode, as Plan-Placement-V3 required, and a release with a `min_app` gate if data changes.
 
 Facet eligibility from the check:
@@ -50,7 +50,7 @@ Owner: "Do not use any question type where a right answer can be marked wrong, e
   - failing only means "not yet eligible".
 - **Pilot slot:** a new item runs unscored. It is promoted after about 8 Verified responses with 90% or more agreeing with the key. A split (about 60/40) retires it as dialect-sensitive.
 - Fix history (the old form against the agreed fix) becomes gold items.
-- **Bootstrapping:** the first Verified reviewers of a language come from owner invite codes.
+- **Bootstrapping:** the first Verified reviewers of a language come from codes the owner maps to Verified.
 - Pilot misses also reveal deck errors.
 - **Strict-zero alternative:** only wrong-by-construction items. It is a narrower, easier test; it was offered and not chosen.
 
@@ -115,28 +115,42 @@ Main downsides: per-facet taps add work, and the normalisation rules per script 
 
 Owner: "I like the trust based reviewer and distributed reviewer codes. I will assign the languages associated with the reviewer codes".
 
-- **Signed codes** carry languages and a tier. The app and the mail bot check them offline; the bot also rate-limits per code.
-- Revoked codes are listed in the repo.
-- A batch tool mints codes per language.
-- The app offers a signed-code reviewer only the assigned courses.
+Amended by the owner, 2026-11-21: no signed codes and no signing key. "In 1, i was thinking of using the FL codes only. Just that I will create a mapping myself".
+
+- Reviewers keep the self-created `FL-XXXX-XXXX-C` rater codes only (`lib/core/review/rater_code.dart`).
+- The owner creates the mapping himself: code to assigned languages or courses, and tier.
+- The mail bot (`tools/mail_to_issues.py`) enforces the mapping, and rate-limits per code. A code with no mapping for a course stays Provisional: its review is held until a Verified reviewer agrees.
+- Where the mapping lives is **open for the owner** (see below).
+- Where the mapping is public, the app can offer a reviewer only the assigned courses.
 
 Tiers:
 
 | Tier | How earned | Effect |
 |---|---|---|
-| Provisional | Reviewer-check pass, or a self-created `FL-...` code | Counted only alongside a Verified reviewer. |
-| Verified | Signed code, or calibration cards | Counts fully. |
+| Provisional | Reviewer-check pass, or an unmapped `FL-...` code | Counted only alongside a Verified reviewer. |
+| Verified | Mapped by the owner for the course, or calibration cards | Counts fully. |
 | Trusted | Sustained agreement with Verified reviewers | Breaks ties on contested cards. |
 
-Self-created codes stay Provisional. A Provisional review is held in the queue and applied only when a Verified reviewer agrees (owner: "1. Ok.").
+A Provisional review is held in the queue and applied only when a Verified reviewer agrees (owner: "1. Ok.").
 
-**Revocation** (owner: "I revoke. And it does revoke past work."): only the owner revokes. Revoking removes the reviewer's past contributions:
+**Rater codes are public** (issues and decks name them), so a code alone does not prove who sent a review. The mapping should bind each code to the sender mail address its first review came from (already planned in `rater_code.dart`, **not built yet**). A review from another address is held for the owner.
+
+**Where the mapping lives (open, for the owner):**
+
+| Option | Effect |
+|---|---|
+| Private (a secret or private repo, read by the bot only) | The app cannot grey out courses offline, and the reviewer is told nothing until the owner replies. |
+| Public shared file on `decks-live`, keyed by code | The app can unlock the assigned courses; it reveals which languages a pseudonymous code reviews. |
+
+Recommendation: a public shared file keyed by code, bound to a hashed sender address that is kept private.
+
+**Revocation** (owner: "I revoke. And it does revoke past work."): only the owner revokes, by removing the code from the mapping. That removes the reviewer's past contributions:
 
 - their code is removed from `checked_by`;
 - cards that fall below the quorum return to unchecked or flagged;
 - changes that applied only because of that reviewer are queued for a revert PR on `decks-live`.
 
-Main downsides: the signing key must stay secret; revocation causes churn on `decks-live`, and file-level reviewed tags may flip back.
+Main downsides: the owner's manual mapping work; spoofing of a public code until the address binding is built; revocation causes churn on `decks-live`, and file-level reviewed tags may flip back.
 
 ### 9. Not decided: defaults assumed, confirm
 
