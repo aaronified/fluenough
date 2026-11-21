@@ -69,7 +69,9 @@ from __future__ import annotations
 import argparse
 import datetime
 import json
+import os
 import re
+import subprocess
 import sys
 import tempfile
 import unicodedata
@@ -103,6 +105,9 @@ WORK_PROPS = ("P3383", "P18", "P996")
 COMMONS_FILE_PATH = "/wikipedia/commons/"
 COMMONS_PAGE = "https://commons.wikimedia.org/wiki/"
 UNSURE_CATEGORY = re.compile(r"(?i)\b(?:fictional|alleged|disputed|unidentified)\b")
+# Commons serves thumbnails only at these widths (anything else is HTTP 400).
+STANDARD_WIDTHS = (20, 40, 60, 120, 250, 330, 500, 960, 1280, 1920, 3840)
+FFMPEG_TIMEOUT = 120            # seconds, for one encode
 SEARCH_LIMIT = 8
 MAX_QUERIES = 3
 ENTITY_CHUNK = 20               # items per wbgetentities call (claims are big)
@@ -113,7 +118,7 @@ WORK_TYPES: dict[str, frozenset[str]] = {
     "film": frozenset({"Q11424", "Q24862", "Q202866", "Q226730", "Q93204", "Q506240",
                        "Q2431196"}),
     "book": frozenset({"Q571", "Q7725634", "Q8261", "Q49084", "Q35760", "Q25379",
-                       "Q5185279", "Q37484", "Q3331189"}),
+                       "Q5185279", "Q37484"}),
     "play": frozenset({"Q25379", "Q7725634"}),
     "song": frozenset({"Q7366", "Q134556", "Q482994", "Q105543609"}),
     "comic": frozenset({"Q1004", "Q1760610", "Q8274", "Q21198342"}),
@@ -326,7 +331,9 @@ def work_fits(entry: Entry, entity: dict, creator_qids: set[str]) -> bool:
     if entry.year is None or _agree((entry.year, False), wd_years) is not True:
         return False
     named = {q for p in CREATOR_CLAIMS for q in item_ids(entity, p)}
-    return not (named and creator_qids) or bool(named & creator_qids)
+    if entry.creators:          # the item must name one of the deck's verified creators
+        return bool(named & creator_qids)
+    return True                 # no creator on either side: label, year and type decide
 
 
 @dataclass
@@ -354,11 +361,17 @@ def entities(client: wc.Client, ids: list[str]) -> dict[str, dict]:
 
 
 def resolve(client: wc.Client, entry: Entry, creator_qids: set[str]) -> Resolution:
-    if entry.wikidata:
+    if entry.wikidata:                  # trusted only after the same identity check
         got = entities(client, [entry.wikidata]).get(entry.wikidata)
         if not got or "missing" in got:
             return Resolution("ambiguous", note=f"the deck's wikidata {entry.wikidata} "
                                                 f"is not a Wikidata item")
+        fits = creator_fits(entry, got) if entry.kind == "creators" \
+            else work_fits(entry, got, creator_qids)
+        if not fits:
+            return Resolution("ambiguous", candidates=[describe(entry.wikidata, got)],
+                              note="the deck's wikidata does not match the entry's "
+                                   "label, dates, type or creator")
         return Resolution("ok", entry.wikidata, got, "deck")
     if entry.kind == "works" and entry.creators and not creator_qids:
         return Resolution("ambiguous", note="none of the work's creators has a verified "
@@ -412,11 +425,11 @@ def candidates(entry: Entry, entity: dict) -> list[Candidate]:
 
 def file_url_refusal(url: str) -> str | None:
     """Why [url] may not be downloaded, or None: only Commons files on
-    upload.wikimedia.org (never a local wiki's upload, such as the fair-use
+    upload.wikimedia.org or thumb.wikimedia.org (never a local wiki's upload, such as the fair-use
     files under /wikipedia/en/)."""
     parts = urllib.parse.urlsplit(url)
-    if parts.scheme != "https" or parts.hostname != wc.DOWNLOAD_HOST:
-        return "not a Commons file on upload.wikimedia.org"
+    if parts.scheme != "https" or parts.hostname not in wc.DOWNLOAD_HOSTS:
+        return "not a Commons file on upload.wikimedia.org or thumb.wikimedia.org"
     if not parts.path.startswith(COMMONS_FILE_PATH):
         return "not under /wikipedia/commons/ (a local wiki's upload, maybe fair use)"
     return None
@@ -443,6 +456,7 @@ class Verdict:
     status: str
     title: str
     prop: str = ""
+    api_title: str = ""             # the title as the API returned it (normalised)
     info: dict | None = None
     licence: str = ""               # the deck's id, `CC-BY-SA-4.0`
     licence_name: str = ""          # Commons's, `CC BY-SA 4.0`
@@ -462,7 +476,8 @@ def judge(cand: Candidate, info: dict | None) -> Verdict:
     name = _meta(info, "LicenseShortName")
     url = info.get("url") or ""
     page = info.get("descriptionurl") or f"{COMMONS_PAGE}{cand.title.replace(' ', '_')}"
-    base = dict(title=cand.title, prop=cand.prop, info=info, licence_name=name, url=url,
+    base = dict(title=cand.title, prop=cand.prop, info=info,
+                api_title=info.get("title") or cand.title, licence_name=name, url=url,
                 page=page, width=int(info.get("width") or 0),
                 height=int(info.get("height") or 0))
     if why := file_url_refusal(url):
@@ -521,13 +536,17 @@ def ffmpeg_args(src: Path, out: Path, max_side: int, quality: int) -> list[str]:
 
 def encode_webp(data: bytes, suffix: str, max_side: int, quality: int) -> bytes:
     """[data], a picture ending in [suffix], as WebP at [quality] with the
-    longest side at most [max_side], never upscaled, metadata dropped. Needs
+    longest side at most [max_side], never upscaled, metadata dropped (the
+    input's EXIF orientation is applied: ffmpeg's `-autorotate` is on by default
+    and runs before the filter). Needs
     ffmpeg with libwebp; the tests replace this function."""
     with tempfile.TemporaryDirectory() as tmp:
         src = Path(tmp) / ("in" + suffix)
         out = Path(tmp) / "out.webp"
         src.write_bytes(data)
-        iw.convert(ffmpeg_args(src, out, max_side, quality))
+        subprocess.run([iw.ffmpeg(), "-nostdin", "-loglevel", "error", "-y",
+                        *ffmpeg_args(src, out, max_side, quality)],
+                       check=True, capture_output=True, timeout=FFMPEG_TIMEOUT)
         return out.read_bytes()
 
 
@@ -560,6 +579,13 @@ def thumb_width(width: int, height: int, max_side: int) -> int:
     longest = max(width, height)
     side = min(max_side, longest)
     return max(1, min(width, round(width * side / longest)))
+
+
+def standard_width(needed: int, original_width: int) -> int | None:
+    """The smallest standard thumbnail width that is at least [needed] and not
+    above the picture's own width (so never an upscale), or None: use the
+    original. ffmpeg then resizes the thumbnail to the exact target."""
+    return next((w for w in STANDARD_WIDTHS if needed <= w <= original_width), None)
 
 
 def estimate_bytes(v: Verdict, max_side: int) -> int:
@@ -682,6 +708,7 @@ class Report:
     requests: dict[str, int] = field(default_factory=dict)
     stopped: str = ""
     error: str = ""
+    fatal: bool = False             # an error in the decks or files: exit 1
 
     def lang(self, code: str) -> LangReport:
         return self.langs.setdefault(code, LangReport(code))
@@ -833,6 +860,8 @@ def run(client: wc.Client, opts: Options) -> Report:
         report.stopped = str(e)
     except wc.WikimediaError as e:
         report.error = str(e)
+    except (iw.ImportError_, OSError, yaml.YAMLError, ValueError) as e:
+        report.error, report.fatal = str(e), True
     report.requests = {"api": client.stats.api_requests,
                        "downloads": client.stats.download_requests,
                        "cache_hits": client.stats.cache_hits,
@@ -975,7 +1004,7 @@ def _check_categories(client: wc.Client, report: Report, todo: list[Entry],
     """A creator's chosen file whose Commons categories say Fictional, Alleged,
     Disputed or Unidentified is not taken by itself: it goes to the review
     list (Plan-Culture-Media, "Which creators can have a portrait")."""
-    by_title = {chosen[e.key].title: e for e in todo
+    by_title = {chosen[e.key].api_title: e for e in todo
                 if e.kind == "creators" and e.key in chosen}
     for batch in wc.batched(list(by_title)):
         cats: dict[str, list[str]] = {}
@@ -1037,33 +1066,67 @@ def entities_labels(client: wc.Client, ids: list[str]) -> dict[str, str]:
     return {q: label_en(e) or q for q, e in got.items()}
 
 
-def _download_url(client: wc.Client, v: Verdict, px: int) -> str:
-    """The URL to fetch: the original if it is already within [px] and small
-    enough for the client's body limit, else a Commons thumbnail whose width
-    makes the longest side at most [px] (never above the original)."""
+def _thumb_url(client: wc.Client, v: Verdict, px: int) -> str | None:
+    """The Commons thumbnail to fetch, or None to fetch the original: the
+    original is used when it is already within [px] and small enough for the
+    client's body limit, or when no standard thumbnail width fits under its own
+    width. Commons serves only STANDARD_WIDTHS; the thumbnail is at least the
+    target, and ffmpeg makes the final resize. The URL is kept as the API gave
+    it."""
     size = (v.info or {}).get("size") or 0
-    if max(v.width, v.height) <= px and size <= wc.MAX_DOWNLOAD_BYTES:
-        return v.url
     if not (v.width and v.height):
-        return v.url
+        return None
+    if max(v.width, v.height) <= px and size <= wc.MAX_DOWNLOAD_BYTES:
+        return None
+    width = standard_width(thumb_width(v.width, v.height, px), v.width)
+    if width is None:
+        return None
     data = client.get_json(wc.COMMONS_API, {
         "action": "query", "prop": "imageinfo", "iiprop": "url", "formatversion": "2",
-        "iiurlwidth": str(thumb_width(v.width, v.height, px)), "titles": v.title})
+        "iiurlwidth": str(width), "titles": v.api_title})
     pages = (data.get("query") or {}).get("pages") or [{}]
     info = (pages[0].get("imageinfo") or [{}])[0]
-    return info.get("thumburl") or v.url
+    url = info.get("thumburl")
+    return url if isinstance(url, str) and url else None
+
+
+def _get_picture(client: wc.Client, v: Verdict, px: int) -> tuple[bytes | None, str, str]:
+    """(bytes, url, "") for the picture, or (None, "", why). A thumbnail
+    that Commons refuses (HTTP 400 or 404) falls back to the original when that
+    fits the body limit; raises ResponseTooLarge when only a too-large original
+    is left, and the client's rate-limit errors."""
+    size = (v.info or {}).get("size") or 0
+    original_ok = size <= wc.MAX_DOWNLOAD_BYTES
+    thumb = _thumb_url(client, v, px)
+    if thumb is None and not original_ok:
+        raise wc.ResponseTooLarge(f"{v.url} is over the body limit and has no thumbnail")
+    tried = [("thumb", thumb)] if thumb else []
+    if original_ok:
+        tried.append(("original", v.url))
+    why = ""
+    for kind, url in tried:
+        if refusal := file_url_refusal(url):
+            why = refusal
+            continue
+        try:
+            return client.get_bytes(url), url, ""
+        except wc.HttpError as e:
+            if e.status not in (400, 404):
+                raise
+            why = f"bad-thumb: HTTP {e.status} for the {kind}"
+    return None, "", why or "bad-thumb: no usable download"
 
 
 def _write(client: wc.Client, opts: Options, lr: LangReport, entry: Entry, v: Verdict,
            res: Resolution, px: int) -> None:
     try:
-        url = _download_url(client, v, px)
-        if why := file_url_refusal(url):
+        raw, url, why = _get_picture(client, v, px)
+        if raw is None:
             lr.skipped_other += 1
-            lr.note("skipped-refused", entry.eid)
+            lr.note("skipped-bad-thumb" if why.startswith("bad-thumb") else "skipped-refused",
+                    entry.eid)
             lr.skipped_files.append({"id": entry.eid, "file": v.title, "reason": why})
             return
-        raw = client.get_bytes(url)
     except (wc.RateLimited, wc.RequestCapReached):
         raise
     except wc.ResponseTooLarge:
@@ -1117,20 +1180,35 @@ def _write(client: wc.Client, opts: Options, lr: LangReport, entry: Entry, v: Ve
         lr.errors += 1
         lr.note(f"error: {e}", entry.eid)
         return
-    folder.mkdir(parents=True, exist_ok=True)
-    out.write_bytes(webp)
-    check = vd.Report(entry.path)
-    vd.check_image(check, entry.eid, image, entry.eid, entry.living, entry.path,
-                   folder=entry.folder)
+    # The new file is checked in a scratch folder first, then replaced
+    # atomically; the old file and YAML survive any failure (--refresh).
+    with tempfile.TemporaryDirectory() as tmp:
+        mirror = Path(tmp) / entry.folder
+        (mirror / "images").mkdir(parents=True)
+        (mirror / "images" / out.name).write_bytes(webp)
+        check = vd.Report(mirror / entry.path.name)
+        vd.check_image(check, entry.eid, image, entry.eid, entry.living,
+                       mirror / entry.path.name, folder=entry.folder)
     if check.errors:
-        out.unlink(missing_ok=True)
         lr.errors += 1
         lr.note(f"error: the validator refuses it: {'; '.join(check.errors)}", entry.eid)
         return
+    folder.mkdir(parents=True, exist_ok=True)
+    old = out.read_bytes() if out.is_file() else None
+    part = out.with_name(out.name + ".part")
+    try:
+        part.write_bytes(webp)
+        os.replace(part, out)
+    except OSError:
+        part.unlink(missing_ok=True)
+        raise
     try:
         entry.path.write_text(after, encoding="utf-8")
     except OSError:
-        out.unlink(missing_ok=True)      # no file without its entry lines
+        if old is None:
+            out.unlink(missing_ok=True)      # no file without its entry lines
+        else:
+            out.write_bytes(old)
         raise
     lr.fetched += 1
     lr.bytes += len(webp)
@@ -1208,7 +1286,7 @@ def main(argv: list[str], client: wc.Client | None = None) -> int:
         args.json.write_text(json.dumps(report.to_json(), indent=2, ensure_ascii=False)
                              + "\n", encoding="utf-8")
     print(text)
-    return 3 if report.stopped else 4 if report.error else 0
+    return 1 if report.fatal else 3 if report.stopped else 4 if report.error else 0
 
 
 if __name__ == "__main__":

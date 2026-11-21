@@ -235,12 +235,23 @@ class FakeWiki:
         self.categories = dict(CATEGORIES)
         self.api: list[dict[str, str]] = []
         self.downloads: list[str] = []
+        self.reject_thumbs = False
 
     def __call__(self, url: str, headers: dict[str, str]) -> wc.Response:
         parts = urllib.parse.urlsplit(url)
         q = {k: v[0] for k, v in urllib.parse.parse_qs(parts.query).items()}
-        if parts.hostname == "upload.wikimedia.org":
+        if parts.hostname in ("upload.wikimedia.org", "thumb.wikimedia.org"):
             self.downloads.append(url)
+            if "/thumb/" in parts.path:
+                if parts.hostname != "thumb.wikimedia.org":
+                    return wc.Response(404, {}, b"")
+                width = parts.path.rsplit("/", 1)[1].split("px-", 1)[0]
+                if self.reject_thumbs or not width.isdigit() \
+                        or int(width) not in fcm.STANDARD_WIDTHS:
+                    return wc.Response(400, {}, b"Use thumbnail sizes listed on "
+                                                b"https://w.wiki/GHai")
+            elif parts.hostname != "upload.wikimedia.org":
+                return wc.Response(404, {}, b"")
             return wc.Response(200, {}, b"RAW:" + parts.path.encode())
         self.api.append(q)
         action = q.get("action")
@@ -258,8 +269,8 @@ class FakeWiki:
         if "iiurlwidth" in q:
             name = titles[0].split(":", 1)[1].replace(" ", "_")
             return self.json({"query": {"pages": [{"title": titles[0], "imageinfo": [{
-                "thumburl": f"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/"
-                            f"{name}/{q['iiurlwidth']}px-{name}"}]}]}})
+                "thumburl": f"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/"
+                            f"{name}/{q['iiurlwidth']}px-{name}?utm_source=x"}]}]}})
         pages = []
         for t in titles:
             if t in self.files:
@@ -458,6 +469,19 @@ class Identity(Case):
         film = work("Q9", "The Zed Song", "Q11424", 1850, "Q100")
         self.assertFalse(fcm.work_fits(song, film, {"Q100"}))
 
+    def test_an_item_with_no_creator_does_not_match_a_work_that_has_one(self) -> None:
+        song = fcm.read_entries(self.decks, "zz", "works")[0]
+        bare = work("Q9", "The Zed Song", "Q571", 1850, "Q100")
+        del bare["claims"]["P50"]
+        self.assertFalse(fcm.work_fits(song, bare, {"Q100"}))
+        song.creators = []                  # the deck names none either: label, year, type
+        self.assertTrue(fcm.work_fits(song, bare, set()))
+
+    def test_a_deck_wikidata_that_does_not_fit_is_ambiguous(self) -> None:
+        self.wiki.entities["Q160"] = person("Q160", "Fay Zed", 1700, 1760, ["Fay.jpg"])
+        report = self.run_tool(langs=["zz"], kinds=("creators",))
+        self.assertIn("zz-fay", {r["id"] for r in report.lang("zz").review})
+
     def test_a_creator_must_be_human(self) -> None:
         ada = fcm.read_entries(self.decks, "zz", "creators")[0]
         thing = person("Q1", "Ada Zed", 1815, 1852)
@@ -553,7 +577,40 @@ class Resizing(Case):
         tall = [u for u in self.wiki.downloads if "Joy_Tall" in u]
         self.assertEqual(len(tall), 1)
         self.assertIn("/thumb/", tall[0])
-        self.assertIn("/512px-", tall[0])                    # 3000 x 6000 to 1024 high
+        self.assertTrue(tall[0].startswith("https://thumb.wikimedia.org/"))
+        self.assertIn("/960px-", tall[0])        # 512 needed: the next standard width
+
+    def test_standard_widths_round_up_and_never_pass_the_original(self) -> None:
+        self.assertEqual(fcm.standard_width(512, 3000), 960)
+        self.assertEqual(fcm.standard_width(1024, 3000), 1280)
+        self.assertIsNone(fcm.standard_width(2048, 3000))       # 3840 is above the original
+        self.assertEqual(fcm.standard_width(1920, 3000), 1920)
+        self.assertIsNone(fcm.standard_width(500, 499))
+        self.assertTrue(set(fcm.STANDARD_WIDTHS) >= {960, 1280, 1920})
+
+    def test_a_refused_thumbnail_falls_back_to_a_small_original(self) -> None:
+        self.wiki.files["File:Ada.jpg"] = info("Ada.jpg", width=3000, height=2000,
+                                               size=100000)
+        self.wiki.reject_thumbs = True
+        report = self.run_tool(langs=["zz"], kinds=("creators",))
+        self.assertIn("image", self.creators()["zz-ada"])
+        self.assertTrue(any(u.endswith("/a/ab/Ada.jpg") for u in self.wiki.downloads))
+        lr = report.lang("zz")
+        self.assertIn("zz-joy", lr.ids.get("skipped-bad-thumb", []))     # 9 MB original
+        reason = next(s["reason"] for s in lr.skipped_files if s["id"] == "zz-joy")
+        self.assertTrue(reason.startswith("bad-thumb"))
+        self.assertNotIn("image", self.creators()["zz-joy"])
+
+    def test_thumb_host_is_allowed_but_fair_use_paths_and_other_hosts_are_not(self) -> None:
+        self.assertIsNone(fcm.file_url_refusal(
+            "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/X.jpg/960px-X.jpg?utm_a=b"))
+        self.assertIsNotNone(fcm.file_url_refusal(
+            "https://thumb.wikimedia.org/wikipedia/en/thumb/a/ab/X.jpg/960px-X.jpg"))
+        c = self.client()
+        self.assertTrue(c.get_bytes("https://thumb.wikimedia.org/wikipedia/commons/thumb/"
+                                    "a/ab/X.jpg/960px-X.jpg"))
+        with self.assertRaises(wc.WikimediaError):
+            c.get_bytes("https://example.org/wikipedia/commons/thumb/a/ab/X.jpg/960px-X.jpg")
 
     def test_quality_ladder_stops_at_the_first_fit(self) -> None:
         limit = vd.SHARED_IMAGE_MAX_BYTES
@@ -636,6 +693,17 @@ class WritingAndIdempotence(Case):
                                refresh=frozenset({"zz-ada"}))
         self.assertEqual(report.lang("zz").ids["fetched"], ["zz-ada"])
         self.assertEqual(self.creators()["zz-ada"]["wikidata"], "Q100")
+
+    def test_refresh_never_loses_a_valid_image(self) -> None:
+        self.run_tool(langs=["zz"], kinds=("creators",))
+        before = self.snapshot()
+        with mock.patch.object(vd, "check_image",
+                               lambda r, *a, **k: r.error("image", "refused")):
+            report = self.run_tool(langs=["zz"], kinds=("creators",),
+                                   refresh=frozenset({"zz-ada"}))
+        self.assertEqual(self.snapshot(), before)
+        self.assertEqual(report.lang("zz").errors, 1)
+        self.assertEqual(list((self.decks / "creators" / "images").glob("*.part")), [])
 
     def test_edit_entry_replaces_an_existing_block(self) -> None:
         image = {"file": "decks/creators/images/zz-ada.webp", "credit": "c", "author": "a",
@@ -726,7 +794,7 @@ class ReportAndExit(Case):
             self.assertIn(key, lang)
         self.assertEqual(data["total"]["fetched"], 4)
         self.assertEqual(data["ceiling_bytes"], vd.IMAGE_TOTAL_MAX_BYTES)
-        self.assertGreater(data["ceiling_share_percent"], 0)
+        self.assertGreater(data["total"]["bytes"], 0)
         text = report.to_markdown()
         self.assertIn("# Culture media fetch report (write)", text)
         self.assertIn("| zz |", text)
@@ -755,6 +823,13 @@ class ReportAndExit(Case):
         code, _ = self.run_main(lambda url, h: wc.Response(400, {}, b""), "--report", str(report))
         self.assertEqual(code, 4)
         self.assertIn("**Error:**", report.read_text("utf-8"))
+
+    def test_a_fatal_error_mid_run_still_writes_the_report(self) -> None:
+        report = self.root / "r.md"
+        with mock.patch.object(fcm, "_write", side_effect=iw.ImportError_("boom")):
+            code, _ = self.run_main(self.wiki, "--report", str(report))
+        self.assertEqual(code, 1)
+        self.assertIn("boom", report.read_text("utf-8"))
 
     def test_exit_0_and_exit_2(self) -> None:
         code, _ = self.run_main(self.wiki, "--survey")
