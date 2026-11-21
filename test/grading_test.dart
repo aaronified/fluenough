@@ -287,6 +287,35 @@ void main() {
       });
     });
 
+    group('typed IPA and Latin are compared after Unicode normalisation '
+        '(#1221)', () {
+      test('a letter with its mark typed apart is the precomposed one', () {
+        same('a\u0303', '\u00E3', because: 'ã');
+        same('e\u0301', '\u00E9', because: 'é');
+        same('o\u0302\u0323', 'o\u0323\u0302', because: 'ộ, either order');
+        // Marks on one letter, typed in either order, are one spelling.
+        same('a\u0323\u0301', 'a\u0301\u0323', because: 'mark order');
+      });
+
+      test('the IPA g and the ASCII g are one letter', () {
+        same('\u0261', 'g', because: 'ɡ and g');
+        same('\u0261\u0361b', 'g\u0361b', because: 'ɡ͡b');
+      });
+
+      test('different sounds stay different', () {
+        expect(
+          grader.grade('\u0251', 'a').outcome,
+          isNot(AnswerOutcome.exact),
+          reason: 'ɑ is not a',
+        );
+        expect(
+          grader.grade('t\u0361\u0283', 'tʃ').outcome,
+          isNot(AnswerOutcome.exact),
+          reason: 'the tie bar is a symbol',
+        );
+      });
+    });
+
     group('one letter, two spellings, compare equal', () {
       test('nukta letters and two-part vowel signs, precomposed or not, '
           'compare equal', () {

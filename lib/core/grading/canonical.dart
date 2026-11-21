@@ -1,3 +1,5 @@
+import '../review/fix_text.dart' show nfc;
+
 /// Text that looks the same, spelled the same way, before any comparison
 /// (#28).
 ///
@@ -8,13 +10,19 @@
 /// form below with its canonical decomposition, on both sides, so that the
 /// two spellings compare equal, as Unicode says they are.
 ///
-/// Dart's core library has no Unicode normalisation, and full NFC needs a
-/// package (AGENTS.md rule 6). This table covers the scripts the app ships
+/// Dart's core library has no Unicode normalisation: [nfc] (the app's own,
+/// in `review/fix_text.dart`) puts Latin, the IPA and Hangul in one form,
+/// and this table covers the scripts the app ships
 /// decks for: Devanagari, Bengali, Gujarati, Telugu and Kannada. It is data, and a new script
 /// adds its rows. It also reads the Indic digits as 0–9 and ignores the
 /// zero-width joiner and non-joiner, which change a conjunct's shape and
 /// never its letters.
 String canonical(String input) {
+  // Latin and the IPA too (#1221): é typed as e and a combining acute is the
+  // é of the deck, and a Korean syllable typed as jamo is the syllable. NFC
+  // first; the rows below then take apart what they need to, the same on
+  // both sides.
+  input = nfc(input);
   if (!_mayChange(input)) return input;
   final buffer = StringBuffer();
   for (final rune in input.runes) {
@@ -38,6 +46,11 @@ String canonical(String input) {
   }
   return buffer.toString();
 }
+
+/// The IPA's single-storey g, U+0261: the IPA says it and the ASCII g are
+/// the same letter, and the keyboard's key is one the learner cannot tell
+/// from the other.
+const int _ipaG = 0x0261;
 
 const int _zwnj = 0x200C;
 const int _zwj = 0x200D;
@@ -64,7 +77,9 @@ int? _digit(int rune) {
 /// common case, is returned as it is.
 bool _mayChange(String input) {
   for (final unit in input.codeUnits) {
-    if (unit >= 0x0600 || unit == _zwnj || unit == _zwj) return true;
+    if (unit >= 0x0600 || unit == _zwnj || unit == _zwj || unit == _ipaG) {
+      return true;
+    }
   }
   return false;
 }
@@ -76,6 +91,7 @@ const Map<int, int> _letterVariants = <int, int>{
   0x064A: 0x06CC, // ي to ی
   0x0643: 0x06A9, // ك to ک
   0x0647: 0x06C1, // ه to ہ
+  _ipaG: 0x0067, // ɡ to g (IPA)
 };
 
 /// Precomposed letters and their canonical decompositions, from the Unicode
