@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' hide Card;
 
+import '../../app/app_info.dart';
 import '../../app/app_scope.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/links.dart';
@@ -59,7 +60,10 @@ enum ContentCredit {
   wikipedia(<String>['wikipedia']),
 
   /// Sentences, CC BY 2.0 FR.
-  tatoeba(<String>['tatoeba']);
+  tatoeba(<String>['tatoeba']),
+
+  /// Signs written in SignWriting, drawn in fonts under SIL OFL 1.1.
+  signwriting(<String>['signwriting', 'sutton']);
 
   const ContentCredit(this.marks);
 
@@ -151,7 +155,8 @@ List<MediaCredit> mediaCredits(Card card) => <MediaCredit>[
   ?card.imageCredit,
 ];
 
-/// The decks' licence and credits, then where their texts come from, a row
+/// A thank you to everyone the app stands on, then the decks' licence and
+/// credits, then where their texts come from, a row
 /// per language and a line per source, such as the books the Bengali
 /// passages are taken from. Opened by Settings' Sources row (#98).
 ///
@@ -160,6 +165,20 @@ List<MediaCredit> mediaCredits(Card card) => <MediaCredit>[
 class SourcesPage extends StatelessWidget {
   const SourcesPage({super.key});
 
+  /// One thank-you row, found by its [id].
+  static Widget _thanks(
+    String id,
+    IconData icon,
+    String title,
+    String line, {
+    List<String> more = const <String>[],
+  }) => GroupedTile(
+    key: ValueKey<String>('thanks-$id'),
+    leading: Icon(icon),
+    title: title,
+    subtitleLines: <String>[line, ...more],
+  );
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -167,7 +186,14 @@ class SourcesPage extends StatelessWidget {
     final sources = sourcesOf(decks);
     final media = mediaCreditsOf(decks);
     // The script fonts are credited once one is on the phone (ADR-0042).
-    final fonts = AppScope.of(context).deckDownloads?.fonts.hasFonts ?? false;
+    final scriptFonts = AppScope.of(context).deckDownloads?.fonts;
+    final fonts = scriptFonts?.hasFonts ?? false;
+    final credits = creditsOf(decks);
+    // SignWriting is thanked once its font is on the phone or a deck names
+    // it, as the Noto line is shown once a font is (ADR-0042, ADR-0056).
+    final signWriting =
+        (scriptFonts?.hasScript('signwriting') ?? false) ||
+        credits.contains(ContentCredit.signwriting);
     return Scaffold(
       appBar: AppBar(title: Text(l10n.settingsSources)),
       body: ListView(
@@ -178,6 +204,96 @@ class SourcesPage extends StatelessWidget {
           24,
         ).clearingSystemBar(context),
         children: <Widget>[
+          GroupedList.settings(
+            header: l10n.sourcesThanks,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsetsDirectional.all(16),
+                child: Text(
+                  l10n.sourcesThanksIntro,
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+              ),
+              _thanks(
+                'wikimedia',
+                Icons.public,
+                l10n.sourcesThanksWikimedia,
+                l10n.sourcesThanksWikimediaLine,
+              ),
+              _thanks(
+                'tatoeba',
+                Icons.forum_outlined,
+                l10n.sourcesThanksTatoeba,
+                l10n.sourcesThanksTatoebaLine,
+              ),
+              _thanks(
+                'wordnet',
+                Icons.compare_arrows,
+                l10n.sourcesThanksWordnet,
+                l10n.sourcesThanksWordnetLine,
+              ),
+              _thanks(
+                'fonts',
+                Icons.font_download_outlined,
+                l10n.sourcesThanksFonts,
+                l10n.sourcesThanksFontsLine,
+              ),
+              if (signWriting)
+                _thanks(
+                  'signwriting',
+                  Icons.sign_language_outlined,
+                  l10n.sourcesThanksSignWriting,
+                  l10n.sourcesThanksSignWritingLine,
+                  more: <String>[
+                    l10n.sourcesThanksSignWritingLicence,
+                    l10n.sourcesThanksSignWritingCopyright,
+                  ],
+                ),
+              _thanks(
+                'pictures',
+                Icons.emoji_emotions_outlined,
+                l10n.sourcesThanksPictures,
+                l10n.sourcesThanksPicturesLine,
+              ),
+              _thanks(
+                'listener',
+                Icons.memory_outlined,
+                l10n.sourcesThanksListener,
+                l10n.sourcesThanksListenerLine,
+              ),
+              _thanks(
+                'packages',
+                Icons.code,
+                l10n.sourcesThanksPackages,
+                l10n.sourcesThanksPackagesLine,
+              ),
+              GroupedTile(
+                key: const ValueKey<String>('thanks-licences'),
+                leading: const Icon(Icons.description_outlined),
+                title: l10n.sourcesOpenLicences,
+                subtitle: l10n.sourcesOpenLicencesLine,
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => showLicensePage(
+                  context: context,
+                  applicationName: l10n.appTitle,
+                  applicationVersion: AppInfo.version,
+                ),
+              ),
+              _thanks(
+                'writers',
+                Icons.menu_book_outlined,
+                l10n.sourcesThanksWriters,
+                l10n.sourcesThanksWritersLine,
+              ),
+              _thanks(
+                'people',
+                Icons.favorite_outline,
+                l10n.sourcesThanksPeople,
+                l10n.sourcesThanksPeopleLine,
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
           GroupedList.settings(
             header: l10n.sourcesDeckContent,
             children: <Widget>[
@@ -217,7 +333,7 @@ class SourcesPage extends StatelessWidget {
                   title: l10n.sourcesFonts,
                   subtitle: l10n.sourcesFontsLine,
                 ),
-              for (final credit in creditsOf(decks))
+              for (final credit in credits)
                 GroupedTile(
                   leading: const Icon(Icons.public),
                   title: l10n.sourcesCreditName(credit.name),
