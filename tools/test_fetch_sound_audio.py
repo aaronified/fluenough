@@ -477,7 +477,8 @@ class Reports(Case):
         self.assertEqual({"lang", "cards", "already", "asked", "available", "fetched",
                           "missing", "skipped_no_author", "skipped_licence", "over_size",
                           "errors", "bytes", "estimated_bytes", "sources", "licences",
-                          "ids", "skipped_files", "symbols_not_found"}, set(lang))
+                          "ids", "skipped_files", "symbols_not_found", "why", "why_counts",
+                          "matches"}, set(lang))
         self.assertEqual(lang["cards"], 10)
         self.assertEqual(lang["fetched"], 3)
         self.assertEqual(data["total"]["fetched"], 3)
@@ -634,6 +635,205 @@ class Safety(Case):
         self.assertEqual(fsa.symbol_titles("kʰ"), [])
         self.assertEqual(fsa.symbol_titles("aː"), [])
         self.assertEqual(fsa.symbol_titles(None), [])
+
+
+PLACEHOLDER = "No machine-readable author provided. Denelson83 assumed (based on copyright claims)."
+
+SYLLABLE_DECK = '''\
+schema: 1
+id: "zz-sound-inventory"
+part: "core"
+kind: "vocab"
+language: { code: "zz", iso639_3: "zzz", name: "Zedish", script: "latin", icon: "Z" }
+license: "CC-BY-SA-4.0"
+cards:
+  - id: "zz-0001"
+    target: "k"
+    reading: "ka"
+    ipa: "ka"
+  - id: "zz-0002"
+    target: "a"
+    reading: "a"
+    ipa: "a"
+  - id: "zz-0003"
+    target: "aa"
+    reading: "aa"
+    ipa: "aː"
+  - id: "zz-0004"
+    target: "kh"
+    reading: "kha"
+    ipa: "kʰa"
+  - id: "zz-0005"
+    target: "ia"
+    reading: "ia"
+    ipa: "ia"
+  - id: "zz-0006"
+    target: "p"
+    reading: "pa"
+    ipa: "pa"
+'''
+
+
+class AssumedAuthor(Case):
+    def assumed_wiki(self) -> None:
+        self.wiki.files[title("Voiceless alveolar plosive")] = ("CC BY-SA 3.0", PLACEHOLDER, 1.0)
+
+    def test_the_commons_placeholder_is_no_author_by_default(self) -> None:
+        self.assumed_wiki()
+        lr = self.run_tool(langs=["zz"]).langs["zz"]
+        self.assertIn("zz-0003", lr.ids["skipped-no-author"])
+        self.assertNotIn("audio", self.cards()["zz-0003"])
+        self.assertIn("no author", lr.why["zz-0003"])
+        self.assertIn("accept-assumed-author", " ".join(
+            s["reason"] for s in lr.skipped_files if s["card"] == "zz-0003"))
+        self.assertNotIn("zz-0003.opus", self.files())
+
+    def test_judge_rejects_the_placeholder_and_variants_by_default(self) -> None:
+        for artist in (PLACEHOLDER, "No machine-readable author provided.",
+                       "No machine-readable author provided. Foo assumed"):
+            info = {"extmetadata": {"LicenseShortName": {"value": "CC BY-SA 3.0"},
+                                    "Artist": {"value": artist}}}
+            self.assertEqual(fsa.judge(title("x"), info).status, "no-author", artist)
+        info = {"extmetadata": {"LicenseShortName": {"value": "CC BY-SA 3.0"},
+                                "Artist": {"value": "No machine-readable author provided."}}}
+        self.assertEqual(fsa.judge(title("x"), info, accept_assumed=True).status, "no-author")
+
+    def test_with_the_flag_the_credit_is_the_tidied_name_never_the_placeholder(self) -> None:
+        self.assumed_wiki()
+        lr = self.run_tool(langs=["zz"], accept_assumed_author=True).langs["zz"]
+        self.assertIn("zz-0003", lr.ids["fetched"])
+        credit = self.cards()["zz-0003"]["audio_credit"]
+        self.assertEqual(credit["credit"], "Denelson83 (uploader; author assumed by Commons)")
+        self.assertNotIn("machine-readable", credit["credit"])
+        self.assertEqual(credit["license"], "CC-BY-SA-3.0")
+
+    def test_a_real_author_is_untouched_by_the_flag(self) -> None:
+        self.run_tool(langs=["zz"], accept_assumed_author=True)
+        self.assertEqual(self.cards()["zz-0001"]["audio_credit"]["credit"], "Jane Speaker")
+
+    def test_the_flag_is_off_by_default_on_the_command_line(self) -> None:
+        self.assumed_wiki()
+        with contextlib.redirect_stdout(io.StringIO()):
+            fsa.main(["--decks", str(self.decks), "--lang", "zz"], client=self.client())
+        self.assertNotIn("audio", self.cards()["zz-0003"])
+        with contextlib.redirect_stdout(io.StringIO()):
+            fsa.main(["--decks", str(self.decks), "--lang", "zz", "--accept-assumed-author"],
+                     client=self.client())
+        self.assertIn("audio", self.cards()["zz-0003"])
+
+
+ZZ = frozenset({"zz"})
+
+
+class InherentA(Case):
+    def setUp(self) -> None:
+        super().setUp()
+        self.deck.write_text(SYLLABLE_DECK, encoding="utf-8")
+        self.wiki.files[title("Open front unrounded vowel")] = ("CC0", "Vera Vowel", 1.0)
+        self.wiki.files[title("Voiceless velar plosive")] = ("CC BY-SA 4.0", "Kay Kay", 1.0)
+        self.wiki.files[title("Close front unrounded vowel")] = ("CC0", "Ida Ee", 1.0)
+        # The default FILES hold a bilabial plosive clip; this deck's `pa` card must
+        # find none, so that `p` is a symbol in the table with no clip on Commons.
+        del self.wiki.files[title("Voiceless bilabial plosive")]
+
+    def test_exact_first_then_the_form_without_the_trailing_a(self) -> None:
+        clips = {"ta": ("Exact ta",), "t": ("Bare t",)}
+        self.assertEqual([(r, s) for r, s, _ in fsa.symbol_groups("ta", clips, True)],
+                         [("ipa-symbol", "ta"), ("ipa-symbol-stripped", "t")])
+        plan = [t for _, _, ts in fsa.symbol_groups("ta", clips, True) for t in ts]
+        self.assertEqual(plan[0], "File:Exact ta.ogg")
+        self.assertEqual(plan[2], "File:Bare t.ogg")
+
+    def test_the_vowels_a_and_long_a_and_diphthongs_are_never_stripped(self) -> None:
+        for ipa in ("a", "aː", "ia"):
+            self.assertEqual([r for r, _, _ in fsa.symbol_groups(ipa, None, True)], ["ipa-symbol"], ipa)
+        self.assertEqual(fsa.symbol_groups("a")[0][2][0], title("Open front unrounded vowel"))
+
+    def test_a_consonant_card_matches_the_bare_symbol_and_the_report_says_by_which_rule(self) -> None:
+        report = self.run_tool(langs=["zz"], survey=True, inherent_a_langs=ZZ)
+        lr = report.langs["zz"]
+        self.assertIn("ipa-symbol-stripped (File:Voiceless velar plosive.ogg)", lr.matches["zz-0001"])
+        self.assertTrue(lr.matches["zz-0002"].startswith("ipa-symbol ("))
+        self.assertEqual(lr.sources["ipa-symbol-stripped"], 1)
+        self.assertIn("matched zz-0001 by ipa-symbol-stripped", report.to_markdown())
+
+    def test_the_stripped_symbols_with_no_title_are_reported_for_symbols_fix(self) -> None:
+        lr = self.run_tool(langs=["zz"], survey=True, inherent_a_langs=ZZ).langs["zz"]
+        self.assertIn("kʰ", lr.symbols_not_found)          # aspirated maps as written: no entry
+        self.assertEqual(lr.symbols_not_found["kʰ"], [])
+        self.assertIn("aː", lr.symbols_not_found)
+        self.assertIn("p", lr.symbols_not_found)           # in the table, not on Commons
+        self.assertTrue(lr.symbols_not_found["p"])
+        self.assertNotIn("k", lr.symbols_not_found)
+
+    def test_a_language_that_did_not_opt_in_gets_no_bare_consonant_clip(self) -> None:
+        # A kana style `ka` card must not get the bare k clip.
+        self.assertEqual([r for r, _, _ in fsa.symbol_groups("ka")], ["ipa-symbol"])
+        lr = self.run_tool(langs=["zz"], survey=True).langs["zz"]
+        self.assertNotIn("zz-0001", lr.matches)
+        self.assertEqual(lr.why["zz-0001"], "no symbol mapping")
+
+    def test_telugu_is_on_by_default_and_the_flag_adds_a_language(self) -> None:
+        self.assertIn("te", fsa.INHERENT_A_LANGS)
+        self.assertNotIn("zz", fsa.INHERENT_A_LANGS)
+        seen: list[frozenset] = []
+        with mock.patch.object(fsa, "run", side_effect=lambda c, o: seen.append(
+                o.inherent_a_langs) or fsa.Report("survey")):
+            with contextlib.redirect_stdout(io.StringIO()):
+                fsa.main(["--decks", str(self.decks), "--survey", "--inherent-a", "zz"],
+                         client=self.client())
+        self.assertEqual(seen[0], frozenset({"te", "zz"}))
+
+    def test_symbols_file_can_supply_the_aspirated_form(self) -> None:
+        self.wiki.files[title("Aspirated k")] = ("CC0", "Asa Pirate", 1.0)
+        syms = self.tmp / "s.json"
+        syms.write_text(json.dumps({"kʰ": ["Aspirated k"]}), encoding="utf-8")
+        lr = self.run_tool(langs=["zz"], survey=True, symbols=syms,
+                           inherent_a_langs=ZZ).langs["zz"]
+        self.assertIn("ipa-symbol-stripped", lr.matches["zz-0004"])
+
+
+class Flags(Case):
+    def test_the_pacing_and_wait_flags_reach_the_client(self) -> None:
+        with mock.patch.object(wc, "Client") as client_cls, \
+                mock.patch.object(fsa, "run", return_value=fsa.Report("survey")):
+            with contextlib.redirect_stdout(io.StringIO()):
+                fsa.main(["--decks", str(self.decks), "--survey", "--download-interval", "7",
+                          "--api-interval", "2", "--wait-rate-limit"])
+        kw = client_cls.call_args.kwargs
+        self.assertEqual((kw["download_interval"], kw["api_interval"], kw["wait_rate_limit"]),
+                         (7.0, 2.0, True))
+
+    def test_the_defaults_are_5_seconds_for_downloads_and_no_waiting(self) -> None:
+        with mock.patch.object(wc, "Client") as client_cls, \
+                mock.patch.object(fsa, "run", return_value=fsa.Report("survey")):
+            with contextlib.redirect_stdout(io.StringIO()):
+                fsa.main(["--decks", str(self.decks), "--survey"])
+        kw = client_cls.call_args.kwargs
+        self.assertEqual((kw["download_interval"], kw["api_interval"], kw["wait_rate_limit"]),
+                         (5.0, 1.0, False))
+
+
+class WhyMissing(Case):
+    def test_each_missing_card_has_one_reason(self) -> None:
+        self.deck.write_text(SYLLABLE_DECK, encoding="utf-8")
+        self.wiki.files[title("Voiceless bilabial plosive")] = ("GFDL", "G", 1.0)
+        # The default FILES hold a GFDL velar clip; `ka` must find none for "nothing found".
+        del self.wiki.files[title("Voiceless velar plosive")]
+        lr = self.run_tool(langs=["zz"], survey=True, inherent_a_langs=ZZ).langs["zz"]
+        self.assertEqual(lr.why["zz-0003"], "no symbol mapping")       # aː
+        self.assertEqual(lr.why["zz-0004"], "no symbol mapping")       # kʰa
+        self.assertEqual(lr.why["zz-0001"], "nothing found on Commons")
+        self.assertEqual(lr.why["zz-0006"], "licence cannot ship")
+        self.assertIn("no symbol mapping 3", self.run_tool(
+            langs=["zz"], survey=True, inherent_a_langs=ZZ).to_markdown())
+
+    def test_a_file_is_counted_once_not_once_per_card(self) -> None:
+        # Two cards (g and ɡ) judge the same CC BY-SA 3.0 file: it is counted once.
+        self.deck.write_text(DECK.replace('ipa: "k"', 'ipa: "g"'), encoding="utf-8")
+        lr = self.run_tool(langs=["zz"], survey=True).langs["zz"]
+        self.assertEqual(lr.licences["CC-BY-SA-3.0"], 1)
+        self.assertEqual(sum(lr.licences.values()), len(lr.files_seen))
 
 
 @unittest.skipUnless(shutil.which("ffmpeg"), "needs ffmpeg")
