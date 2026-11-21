@@ -74,8 +74,11 @@ Environment, through `mail_to_issues.py`:
     FLUENOUGH_BOT_TOKEN  the App's installation token, made by the
         workflow from FLUENOUGH_BOT_APP_ID and FLUENOUGH_BOT_PRIVATE_KEY.
         Without it the bot does nothing and says so.
-    REVIEW_AGREEMENTS_NEEDED  how many other reviewers must accept a
-        proposal; 1 when unset or not a whole number of at least 1.
+    REVIEW_AGREEMENTS_NEEDED  superseded (ADR-0058): ignored, and the
+        number comes from REVIEW_QUORUM in tools/review_quorum.py. It was how
+        many other reviewers must accept a proposal; 1 when unset or not a
+        whole number of at least 1. Kept as a name so a workflow that still
+        passes it does no harm.
     GITHUB_TOKEN  the workflow's own token, to read check runs.
 """
 
@@ -104,6 +107,7 @@ import proposals as pr  # noqa: E402
 import question_answers as qa  # noqa: E402
 import transcribe as tr  # noqa: E402
 from rater_codes import rater_code  # noqa: E402
+from review_quorum import REVIEW_QUORUM  # noqa: E402
 from validate_synonyms import meaning_key  # noqa: E402
 
 PREFIX = "review-bot/"
@@ -134,14 +138,17 @@ FOOTER = ("<sub>Opened by the review bot (ADR-0038). The owner overrides it "
 
 
 def agreements_needed(env: dict[str, str]) -> int:
-    """How many other reviewers must accept a proposal: the variable, or 1
-    when it is unset or not a whole number of at least 1."""
+    """How many other reviewers must accept a proposal: the review quorum
+    less the proposer's own review (ADR-0058), 1 with a quorum of 2. The
+    variable of ADR-0038 is ignored; when it is set to something else, one
+    line on stderr says so, so a stale setting is not mistaken for a live
+    one."""
+    needed = max(REVIEW_QUORUM - 1, 1)
     raw = (env.get(THRESHOLD) or "").strip()
-    try:
-        value = int(raw)
-    except ValueError:
-        return 1
-    return value if value >= 1 else 1
+    if raw and raw != str(needed):
+        print(f"{THRESHOLD}={raw!r} is ignored: the quorum is a constant "
+              f"now (ADR-0058); using {needed}.", file=sys.stderr)
+    return needed
 
 
 # --- What review files say -----------------------------------------------------

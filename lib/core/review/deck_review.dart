@@ -9,6 +9,10 @@ library;
 
 import 'dart:convert';
 
+import 'facets.dart';
+import 'review_problems.dart';
+import 'review_receipt.dart';
+
 /// The part of a card a suggestion is about, as "Suggest a change" offers
 /// them. The names are written to the review file, so they are permanent.
 ///
@@ -478,6 +482,8 @@ class CardReview {
     this.alike,
     this.answers = const <String, ProposalAnswer>{},
     this.itemsRight = const <String>{},
+    this.facets = const <Facet, FacetAnswer>{},
+    this.receipts = const <ReviewReceipt>[],
   });
 
   /// The key [itemsRight] holds for the item [key] of the list [part]
@@ -493,6 +499,17 @@ class CardReview {
 
   /// "Looks right". Never with [suggestions].
   final bool right;
+
+  /// The answers to the card's facets, one a facet at most (ADR-0058, W1):
+  /// right, or flagged with pointer tags. Independent of [right] and of the
+  /// suggestions, which older reviews and the screens built on them still
+  /// use. In a file as `facets`, which a reader that does not know it
+  /// ignores.
+  final Map<Facet, FacetAnswer> facets;
+
+  /// What the reviewer saw when they answered, for the stale-review rule;
+  /// in a file as `receipts`.
+  final List<ReviewReceipt> receipts;
 
   /// The changes suggested to the card, one a part at most (#468), in the
   /// order the parts are shown.
@@ -513,7 +530,9 @@ class CardReview {
       rating == null &&
       alike == null &&
       answers.isEmpty &&
-      itemsRight.isEmpty;
+      itemsRight.isEmpty &&
+      facets.isEmpty &&
+      receipts.isEmpty;
 
   Map<String, Object?> toJson() => <String, Object?>{
     'at': at.toUtc().toIso8601String(),
@@ -529,9 +548,18 @@ class CardReview {
     if (answers.isNotEmpty)
       'proposals': <Object?>[for (final a in answers.values) a.toJson()],
     if (itemsRight.isNotEmpty) 'items_right': itemsRight.toList(),
+    if (facets.isNotEmpty)
+      'facets': <String, Object?>{
+        for (final MapEntry(:key, :value) in facets.entries)
+          key.wire: value.toJson(),
+      },
+    if (receipts.isNotEmpty)
+      'receipts': <Object?>[for (final r in receipts) r.toJson()],
   };
 
-  static CardReview? fromJson(Object? json) {
+  /// The review [json] holds, or null. [cardId] is the card it is the
+  /// review of, for a receipt that does not name it.
+  static CardReview? fromJson(Object? json, {String? cardId}) {
     if (json is! Map) return null;
     final at = DateTime.tryParse('${json['at']}');
     if (at == null) return null;
@@ -563,7 +591,45 @@ class CardReview {
               a.id: a,
         },
       ),
+      facets: _facetsFromJson(json['facets']),
+      receipts: _receiptsFromJson(json['receipts'], cardId),
     );
+  }
+
+  /// The facet answers [json] holds. One bad entry is reported and left
+  /// out; the others stay.
+  static Map<Facet, FacetAnswer> _facetsFromJson(Object? json) {
+    if (json == null) return const <Facet, FacetAnswer>{};
+    if (json is! Map) {
+      ReviewProblems.report('facets is not an object');
+      return const <Facet, FacetAnswer>{};
+    }
+    final out = <Facet, FacetAnswer>{};
+    for (final MapEntry(:key, :value) in json.entries) {
+      try {
+        final facet = Facet.fromWire(key);
+        if (facet == null) {
+          ReviewProblems.report('facets: unknown facet $key');
+          continue;
+        }
+        final answer = FacetAnswer.fromJson(facet, value);
+        if (answer != null) out[facet] = answer;
+      } on Object catch (e) {
+        ReviewProblems.report('facets: entry unreadable: $e');
+      }
+    }
+    return Map<Facet, FacetAnswer>.unmodifiable(out);
+  }
+
+  static List<ReviewReceipt> _receiptsFromJson(Object? json, String? cardId) {
+    if (json == null) return const <ReviewReceipt>[];
+    if (json is! List) {
+      ReviewProblems.report('receipts is not a list');
+      return const <ReviewReceipt>[];
+    }
+    return List<ReviewReceipt>.unmodifiable(<ReviewReceipt>[
+      for (final entry in json) ?ReviewReceipt.fromJson(entry, cardId: cardId),
+    ]);
   }
 }
 
@@ -684,7 +750,7 @@ class DeckReview {
       cards: Map<String, CardReview>.unmodifiable(<String, CardReview>{
         if (cards is Map)
           for (final MapEntry(:key, :value) in cards.entries)
-            if (key is String) key: ?CardReview.fromJson(value),
+            if (key is String) key: ?CardReview.fromJson(value, cardId: key),
       }),
       signedOff: DateTime.tryParse('${json['signed_off']}'),
       sent: DateTime.tryParse('${json['sent']}'),

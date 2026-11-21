@@ -343,19 +343,31 @@ class Checks(unittest.TestCase):
         self.assertEqual(gh.merge({"number": 3}, "moved"), "merged")
         self.assertEqual(calls[-1][2]["sha"], "moved")
 
-    def _the_variable_or_one(self) -> None:
-        for raw, wanted in (("", 1), ("abc", 1), ("0", 1), ("-2", 1), ("1.5", 1),
-                            ("2", 2), (" 3 ", 3)):
+    def _the_quorum_less_the_proposer(self) -> None:
+        # The old variable no longer decides (ADR-0058): absent, empty,
+        # junk or a number, the answer is the quorum less one.
+        wanted = rb.REVIEW_QUORUM - 1
+        for raw in ("", "abc", "0", "-2", "1.5", "2", " 3 "):
             with self.subTest(raw=raw):
-                self.assertEqual(rb.agreements_needed({rb.THRESHOLD: raw}), wanted)
-        self.assertEqual(rb.agreements_needed({}), 1)
+                with contextlib.redirect_stderr(io.StringIO()):
+                    self.assertEqual(
+                        rb.agreements_needed({rb.THRESHOLD: raw}), wanted)
+        self.assertEqual(rb.agreements_needed({}), wanted)
+
+    def _a_stale_setting_is_said_so(self) -> None:
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err):
+            rb.agreements_needed({rb.THRESHOLD: "3"})
+            rb.agreements_needed({})
+        self.assertEqual(err.getvalue().count("is ignored"), 1)
 
     def test_the_required_checks_are_cis_jobs(self) -> None:
         cases = (
             self._the_required_checks_and_only_those,
             self._they_are_the_jobs_of_ci,
             self._rest_reads_the_latest_runs_and_merges_at_the_checked_head,
-            self._the_variable_or_one,
+            self._the_quorum_less_the_proposer,
+            self._a_stale_setting_is_said_so,
         )
         for case in cases:
             with self.subTest(case.__name__.lstrip("_")):

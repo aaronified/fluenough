@@ -14,8 +14,9 @@ name: Feedback mail to issues
 # The review bot (ADR-0038, docs/review-bot-setup.md): a review mail's
 # suggestions become proposals in the decks, through a PR merged once the
 # required checks pass, and a proposal enough other reviewers accept goes to
-# learners the same way. "Enough" is the repository variable
-# REVIEW_AGREEMENTS_NEEDED, 1 when unset. The PRs are opened and merged by a
+# learners the same way. "Enough" is the review quorum, a constant in
+# tools/review_quorum.py (ADR-0058); the repository variable
+# REVIEW_AGREEMENTS_NEEDED is superseded and ignored. The PRs are opened and merged by a
 # GitHub App; until the secrets FLUENOUGH_BOT_APP_ID and
 # FLUENOUGH_BOT_PRIVATE_KEY are set, the bot does nothing and says so.
 #
@@ -94,6 +95,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           FLUENOUGH_BOT_TOKEN: ${{ steps.bot.outputs.token }}
-          # A variable, so the owner can read it back; a secret of the same
-          # name is read if there is no variable (owner, 2026-10-09).
+          # Superseded by REVIEW_QUORUM in tools/review_quorum.py (ADR-0058):
+          # the bot ignores it and says so on stderr when it is set to
+          # something else. Kept so nothing breaks; the owner may delete the
+          # variable or secret and this line.
           REVIEW_AGREEMENTS_NEEDED: ${{ vars.REVIEW_AGREEMENTS_NEEDED || secrets.REVIEW_AGREEMENTS_NEEDED }}
