@@ -331,11 +331,7 @@ class ReviewerBank {
       if (promotion.isRetired(it.id)) continue;
       if (checkedTwice(it.cardId, group)) {
         scored[group]!.add(
-          ReviewerItem(
-            item: it,
-            group: group,
-            tier: ReviewerItemTier.checked,
-          ),
+          ReviewerItem(item: it, group: group, tier: ReviewerItemTier.checked),
         );
       } else if (promotion.isPromoted(it.id)) {
         scored[group]!.add(

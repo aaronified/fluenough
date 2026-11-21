@@ -57,10 +57,8 @@ class CheckPersona {
 /// plus [bump] (the stress of an adversary stronger than measured).
 double Function(String, int) leakBeyond(double bump) {
   final es = leakLanguages()['es']!;
-  return (String format, int options) => math.min(
-    1.0,
-    es.rate(format, false, BankProfile.fixed, true) + bump,
-  );
+  return (String format, int options) =>
+      math.min(1.0, es.rate(format, false, BankProfile.fixed, true) + bump);
 }
 
 /// What a run came to.

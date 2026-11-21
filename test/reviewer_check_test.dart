@@ -21,12 +21,7 @@ ReviewerCheckRun _scripted(
   int seed = 1,
   Set<String> seen = const <String>{},
 }) {
-  final run = ReviewerCheckRun(
-    bank: bank,
-    seed: seed,
-    audio: true,
-    seen: seen,
-  );
+  final run = ReviewerCheckRun(bank: bank, seed: seed, audio: true, seen: seen);
   var n = 0;
   while (!run.finished) {
     final q = run.question!;
@@ -90,9 +85,7 @@ void main() {
     });
 
     test('a key card must be checked twice, else the item is only a pilot', () {
-      final one = fixture.bank(
-        checkedTwice: (id, group) => id != 'fx-50-0',
-      );
+      final one = fixture.bank(checkedTwice: (id, group) => id != 'fx-50-0');
       bool scoredFor(ReviewerBank b, String card) => <bool>[
         for (final g in ReviewerGroup.values)
           for (final i in b.scored[g]!) i.item.cardId == card,
@@ -206,13 +199,10 @@ void main() {
           pilotId: const PilotTally(verified: 8, agreeing: 8),
         }),
       );
-      expect(
-        <String>[
-          for (final g in ReviewerGroup.values)
-            for (final i in promoted.scored[g]!) i.id,
-        ],
-        contains(pilotId),
-      );
+      expect(<String>[
+        for (final g in ReviewerGroup.values)
+          for (final i in promoted.scored[g]!) i.id,
+      ], contains(pilotId));
     });
 
     test('a thin course has no check to take', () {

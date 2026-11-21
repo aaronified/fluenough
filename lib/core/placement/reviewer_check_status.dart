@@ -74,10 +74,9 @@ class ReviewerCheckRecord {
   int cooldownDays(DateTime now) {
     final last = lastAttempt;
     if (last == null) return 0;
-    final left =
-        last.add(const Duration(days: kReviewerCheckCooldownDays)).difference(
-          now,
-        );
+    final left = last
+        .add(const Duration(days: kReviewerCheckCooldownDays))
+        .difference(now);
     if (left <= Duration.zero) return 0;
     return (left.inHours / 24).ceil().clamp(1, kReviewerCheckCooldownDays);
   }
