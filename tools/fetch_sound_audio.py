@@ -7,8 +7,9 @@ and stopping at the first usable one:
 
 1. Wikimedia Commons's recording of the IPA symbol the card's `ipa` is (one
    clip per symbol, `File:Voiceless bilabial plosive.ogg`), first as written,
-   then without a trailing inherent `a` (the syllable form `ʈa` is the
-   consonant ʈ; the vowels `a` and `aː` are never stripped);
+   then, for Telugu (and languages named with `--inherent-a`), without a
+   trailing inherent `a` (the syllable form `ʈa` is the consonant ʈ; the
+   vowels `a` and `aː` are never stripped);
 2. a Commons recording of the letter itself, from the language's
    `Category:<Language> pronunciation`;
 3. with `--example-words --dump <kaikki.jsonl>`, the Wiktionary recording of
@@ -168,14 +169,22 @@ def nfc(text: str) -> str:
 VOWEL_SYMBOLS = frozenset(sym for sym, names in IPA_CLIPS.items() if "vowel" in names[0])
 
 
-def symbol_groups(ipa: str | None, clips: dict[str, tuple[str, ...]] | None = None
-                  ) -> list[tuple[str, str, list[str]]]:
+# Languages whose sound cards carry the inherent a on a consonant (`ʈa`): only
+# there is a bare-symbol clip the right match for `consonant + a`. In a kana
+# style CV card (`ka` is one mora) the bare consonant is wrong. `--inherent-a`
+# adds a language.
+INHERENT_A_LANGS = frozenset({"te"})
+
+
+def symbol_groups(ipa: str | None, clips: dict[str, tuple[str, ...]] | None = None,
+                  inherent_a: bool = False) -> list[tuple[str, str, list[str]]]:
     """The candidate rules for a card's [ipa], in order, as (rule, symbol,
     Commons titles): `ipa-symbol` is the `ipa` as written; `ipa-symbol-stripped`
     is the `ipa` without a trailing inherent `a` (the Telugu syllable form:
     `ʈa` is the consonant ʈ, `kʰa` is kʰ). The vowel `a` and the long `aː`
     are never stripped, nor is a form whose rest holds a vowel (`ia`). The
-    titles may be empty: the symbol has no entry in the table."""
+    titles may be empty: the symbol has no entry in the table. The stripped
+    form is tried only when [inherent_a] (the language opted in)."""
     clips = IPA_CLIPS if clips is None else clips
     if not ipa:
         return []
@@ -183,7 +192,7 @@ def symbol_groups(ipa: str | None, clips: dict[str, tuple[str, ...]] | None = No
     if not symbol:
         return []
     groups = [("ipa-symbol", symbol, symbol_titles(symbol, clips))]
-    if len(symbol) > 1 and symbol.endswith("a") and \
+    if inherent_a and len(symbol) > 1 and symbol.endswith("a") and \
             not any(ch in VOWEL_SYMBOLS for ch in symbol[:-1]):
         groups.append(("ipa-symbol-stripped", symbol[:-1], symbol_titles(symbol[:-1], clips)))
     return groups
@@ -646,6 +655,7 @@ class Options:
     symbols: Path | None = None
     kbps: int = TARGET_KBPS
     accept_assumed_author: bool = False
+    inherent_a_langs: frozenset = INHERENT_A_LANGS
 
 
 def run(client: wc.Client, opts: Options) -> Report:
@@ -705,8 +715,10 @@ def _fetch(client: wc.Client, opts: Options, report: Report, todo: list[SoundCar
         names[code] = _language_name(opts.decks, code)
     category: dict[str, list[str]] = {}
     plan: dict[str, list[tuple[str, str]]] = {}      # card id -> [(source, title)]
+    groups_of: dict[str, list[tuple[str, str, list[str]]]] = {}   # card id -> symbol groups
     for card in todo:
-        groups = symbol_groups(card.ipa, clips)
+        groups = symbol_groups(card.ipa, clips, card.lang in opts.inherent_a_langs)
+        groups_of[f"{card.lang}/{card.cid}"] = groups
         cands = [(rule, t) for rule, _, titles in groups for t in titles]
         if opts.letters and names.get(card.lang):
             if card.lang not in category:
@@ -726,6 +738,7 @@ def _fetch(client: wc.Client, opts: Options, report: Report, todo: list[SoundCar
         source = ""
         worst = "missing"
         worst_assumed = False
+        groups = groups_of[f"{card.lang}/{card.cid}"]
         symbol_hit = False
         for src, title in plan[f"{card.lang}/{card.cid}"]:
             v = judge(title, infos.get(title), opts.accept_assumed_author)
@@ -749,7 +762,7 @@ def _fetch(client: wc.Client, opts: Options, report: Report, todo: list[SoundCar
             for _, symbol, titles in groups:
                 lr.symbols_not_found[symbol] = titles
         if chosen is None:
-            lr.why[card.cid] = _why(worst, worst_assumed, any(t for _, _, t in groups))
+            lr.why[card.cid] = _why(worst, worst_assumed, bool(plan[f"{card.lang}/{card.cid}"]))
             if worst == "no-author":
                 lr.skipped_no_author += 1
                 lr.note("skipped-no-author", card.cid)
@@ -781,8 +794,9 @@ REASONS = {"licence": "licence {!r} cannot ship",
 RANK = {"missing": 0, "bad-type": 1, "over-size": 2, "licence": 3, "no-author": 4}
 
 
-def _why(worst: str, assumed: bool, mapped: bool) -> str:
-    """The one reason a card got no recording."""
+def _why(worst: str, assumed: bool, searched: bool) -> str:
+    """The one reason a card got no recording. "No symbol mapping" means no
+    candidate of any source was searched (no symbol title, no letter file)."""
     if worst == "no-author":
         return "no author (only Commons's assumed-author placeholder)" if assumed else "no author"
     if worst == "licence":
@@ -791,7 +805,7 @@ def _why(worst: str, assumed: bool, mapped: bool) -> str:
         return "size (source or clip too large)"
     if worst == "bad-type":
         return "wrong file type"
-    return "nothing found on Commons" if mapped else "no symbol mapping"
+    return "nothing found on Commons" if searched else "no symbol mapping"
 
 
 def _language_name(decks: Path, code: str) -> str:
@@ -812,6 +826,7 @@ def _write_card(client: wc.Client, opts: Options, lr: LangReport, card: SoundCar
         raise
     except wc.WikimediaError as e:
         lr.errors += 1
+        lr.why[card.cid] = f"error: {e}"
         lr.note(f"error: {e}", card.cid)
         return
     opus, why = encode_fitting(raw, suffix, opts.kbps)
@@ -823,6 +838,7 @@ def _write_card(client: wc.Client, opts: Options, lr: LangReport, card: SoundCar
             lr.skipped_files.append({"card": card.cid, "file": v.title, "reason": why})
         else:
             lr.errors += 1
+            lr.why[card.cid] = f"error: {why}"
             lr.note(f"error: {why}", card.cid)
         return
     credit = {"source": v.page, "license": v.licence or "", "credit": v.credit}
@@ -843,6 +859,7 @@ def _write_card(client: wc.Client, opts: Options, lr: LangReport, card: SoundCar
         read_back(before, after, card.cid, card.audio_path, credit)
     except (iw.ImportError_, yaml.YAMLError) as e:
         lr.errors += 1
+        lr.why[card.cid] = f"error: {e}"
         lr.note(f"error: {e}", card.cid)
         return
     audio_dir.mkdir(parents=True, exist_ok=True)
@@ -884,7 +901,11 @@ def main(argv: list[str], client: wc.Client | None = None) -> int:
                    "answers 429 to a faster loop)")
     p.add_argument("--wait-rate-limit", action="store_true",
                    help="sleep out a Retry-After of up to 900 s instead of stopping with "
-                   "exit 3 (off by default: a long wait needs this opt-in)")
+                   "exit 3 (off by default: a long wait needs this opt-in). There is "
+                   "no total runtime bound: up to four 900 s sleeps a request")
+    p.add_argument("--inherent-a", action="append", metavar="LANG",
+                   help="a language (repeat or comma-separate) whose consonant cards carry "
+                   "the inherent a, so `ʈa` also tries the bare symbol ʈ (always on for te)")
     p.add_argument("--accept-assumed-author", action="store_true",
                    help="accept Commons's `No machine-readable author provided. X assumed` "
                    "as a credit (`X (uploader; author assumed by Commons)`); OFF by default "
@@ -923,7 +944,9 @@ def main(argv: list[str], client: wc.Client | None = None) -> int:
     opts = Options(decks=args.decks, langs=langs, limit=args.limit, survey=args.survey,
                    dry_run=args.dry_run, refresh=args.refresh, letters=not args.no_letters,
                    example_words=args.example_words, dump=args.dump, symbols=args.symbols,
-                   kbps=args.kbps, accept_assumed_author=args.accept_assumed_author)
+                   kbps=args.kbps, accept_assumed_author=args.accept_assumed_author,
+                   inherent_a_langs=INHERENT_A_LANGS | {
+                       c for item in args.inherent_a or [] for c in item.split(",") if c})
     try:
         report = run(client, opts)
     except (iw.ImportError_, OSError, yaml.YAMLError, ValueError) as e:

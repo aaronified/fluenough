@@ -722,6 +722,9 @@ class AssumedAuthor(Case):
         self.assertIn("audio", self.cards()["zz-0003"])
 
 
+ZZ = frozenset({"zz"})
+
+
 class InherentA(Case):
     def setUp(self) -> None:
         super().setUp()
@@ -732,19 +735,19 @@ class InherentA(Case):
 
     def test_exact_first_then_the_form_without_the_trailing_a(self) -> None:
         clips = {"ta": ("Exact ta",), "t": ("Bare t",)}
-        self.assertEqual([(r, s) for r, s, _ in fsa.symbol_groups("ta", clips)],
+        self.assertEqual([(r, s) for r, s, _ in fsa.symbol_groups("ta", clips, True)],
                          [("ipa-symbol", "ta"), ("ipa-symbol-stripped", "t")])
-        plan = [t for _, _, ts in fsa.symbol_groups("ta", clips) for t in ts]
+        plan = [t for _, _, ts in fsa.symbol_groups("ta", clips, True) for t in ts]
         self.assertEqual(plan[0], "File:Exact ta.ogg")
         self.assertEqual(plan[2], "File:Bare t.ogg")
 
     def test_the_vowels_a_and_long_a_and_diphthongs_are_never_stripped(self) -> None:
         for ipa in ("a", "aː", "ia"):
-            self.assertEqual([r for r, _, _ in fsa.symbol_groups(ipa)], ["ipa-symbol"], ipa)
+            self.assertEqual([r for r, _, _ in fsa.symbol_groups(ipa, None, True)], ["ipa-symbol"], ipa)
         self.assertEqual(fsa.symbol_groups("a")[0][2][0], title("Open front unrounded vowel"))
 
     def test_a_consonant_card_matches_the_bare_symbol_and_the_report_says_by_which_rule(self) -> None:
-        report = self.run_tool(langs=["zz"], survey=True)
+        report = self.run_tool(langs=["zz"], survey=True, inherent_a_langs=ZZ)
         lr = report.langs["zz"]
         self.assertIn("ipa-symbol-stripped (File:Voiceless velar plosive.ogg)", lr.matches["zz-0001"])
         self.assertTrue(lr.matches["zz-0002"].startswith("ipa-symbol ("))
@@ -752,7 +755,7 @@ class InherentA(Case):
         self.assertIn("matched zz-0001 by ipa-symbol-stripped", report.to_markdown())
 
     def test_the_stripped_symbols_with_no_title_are_reported_for_symbols_fix(self) -> None:
-        lr = self.run_tool(langs=["zz"], survey=True).langs["zz"]
+        lr = self.run_tool(langs=["zz"], survey=True, inherent_a_langs=ZZ).langs["zz"]
         self.assertIn("kʰ", lr.symbols_not_found)          # aspirated maps as written: no entry
         self.assertEqual(lr.symbols_not_found["kʰ"], [])
         self.assertIn("aː", lr.symbols_not_found)
@@ -760,11 +763,30 @@ class InherentA(Case):
         self.assertTrue(lr.symbols_not_found["p"])
         self.assertNotIn("k", lr.symbols_not_found)
 
+    def test_a_language_that_did_not_opt_in_gets_no_bare_consonant_clip(self) -> None:
+        # A kana style `ka` card must not get the bare k clip.
+        self.assertEqual([r for r, _, _ in fsa.symbol_groups("ka")], ["ipa-symbol"])
+        lr = self.run_tool(langs=["zz"], survey=True).langs["zz"]
+        self.assertNotIn("zz-0001", lr.matches)
+        self.assertEqual(lr.why["zz-0001"], "no symbol mapping")
+
+    def test_telugu_is_on_by_default_and_the_flag_adds_a_language(self) -> None:
+        self.assertIn("te", fsa.INHERENT_A_LANGS)
+        self.assertNotIn("zz", fsa.INHERENT_A_LANGS)
+        seen: list[frozenset] = []
+        with mock.patch.object(fsa, "run", side_effect=lambda c, o: seen.append(
+                o.inherent_a_langs) or fsa.Report("survey")):
+            with contextlib.redirect_stdout(io.StringIO()):
+                fsa.main(["--decks", str(self.decks), "--survey", "--inherent-a", "zz"],
+                         client=self.client())
+        self.assertEqual(seen[0], frozenset({"te", "zz"}))
+
     def test_symbols_file_can_supply_the_aspirated_form(self) -> None:
         self.wiki.files[title("Aspirated k")] = ("CC0", "Asa Pirate", 1.0)
         syms = self.tmp / "s.json"
         syms.write_text(json.dumps({"kʰ": ["Aspirated k"]}), encoding="utf-8")
-        lr = self.run_tool(langs=["zz"], survey=True, symbols=syms).langs["zz"]
+        lr = self.run_tool(langs=["zz"], survey=True, symbols=syms,
+                           inherent_a_langs=ZZ).langs["zz"]
         self.assertIn("ipa-symbol-stripped", lr.matches["zz-0004"])
 
 
@@ -793,12 +815,13 @@ class WhyMissing(Case):
     def test_each_missing_card_has_one_reason(self) -> None:
         self.deck.write_text(SYLLABLE_DECK, encoding="utf-8")
         self.wiki.files[title("Voiceless bilabial plosive")] = ("GFDL", "G", 1.0)
-        lr = self.run_tool(langs=["zz"], survey=True).langs["zz"]
+        lr = self.run_tool(langs=["zz"], survey=True, inherent_a_langs=ZZ).langs["zz"]
         self.assertEqual(lr.why["zz-0003"], "no symbol mapping")       # aː
         self.assertEqual(lr.why["zz-0004"], "no symbol mapping")       # kʰa
         self.assertEqual(lr.why["zz-0001"], "nothing found on Commons")
         self.assertEqual(lr.why["zz-0006"], "licence cannot ship")
-        self.assertIn("no symbol mapping 3", self.run_tool(langs=["zz"], survey=True).to_markdown())
+        self.assertIn("no symbol mapping 3", self.run_tool(
+            langs=["zz"], survey=True, inherent_a_langs=ZZ).to_markdown())
 
     def test_a_file_is_counted_once_not_once_per_card(self) -> None:
         # Two cards (g and ɡ) judge the same CC BY-SA 3.0 file: it is counted once.

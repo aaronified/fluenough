@@ -163,9 +163,7 @@ def urllib_transport(url: str, headers: dict[str, str]) -> Response:
     limit = MAX_DOWNLOAD_BYTES if urllib.parse.urlsplit(url).hostname in DOWNLOAD_HOSTS \
         else MAX_API_BYTES
     opener = urllib.request.build_opener(_SafeRedirects(allowed_hosts(url)))
-    # urllib's opener adds `Python-urllib/x.y` unless a User-Agent is already
-    # set: replace its default, and set the header on the request as well.
-    opener.addheaders = [(k, v) for k, v in headers.items()]
+    # A User-Agent set on the Request stops urllib adding `Python-urllib/x.y`.
     request = urllib.request.Request(url, headers=headers)
     try:
         with opener.open(request, timeout=REQUEST_TIMEOUT) as r:

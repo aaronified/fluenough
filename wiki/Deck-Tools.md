@@ -310,7 +310,8 @@ python3 tools/fetch_sound_audio.py --lang te --accept-assumed-author   # only af
 For each card with no valid audio, in order, stopping at the first usable file:
 Commons's recording of the IPA symbol the card's `ipa` is (a table of symbol to
 Commons title in the tool; `--symbols FILE` adds or replaces entries), tried as
-written first and then without a trailing inherent `a` (the Telugu syllable form:
+written first and then, for Telugu (`te`; other languages with `--inherent-a LANG`, never kana-style
+CV cards), without a trailing inherent `a` (the Telugu syllable form:
 `ʈa` is the consonant ʈ, `kʰa` is `kʰ`, which has no clip until `--symbols` gives
 it one; the vowel `a` and the long `aː` are never stripped, nor a form like `ia`
 that holds a vowel); a Commons
@@ -363,7 +364,7 @@ default; no personal data); separate pauses for API calls (1 s, `--api-interval`
 `Retry-After` honoured on 429 and 503, capped exponential backoff on 429,
 5xx and network errors, and a stop (exit 3, not a wait) when the server asks for more than
 5 minutes, unless the run was started with `--wait-rate-limit`, which sleeps
-out a `Retry-After` of up to 900 s (the cache keeps reruns cheap); 50 titles or ids per request; an on-disk cache (`--cache`, default
+out a `Retry-After` of up to 900 s (no total runtime bound: up to four such sleeps a request) (the cache keeps reruns cheap); 50 titles or ids per request; an on-disk cache (`--cache`, default
 `.cache/wikimedia`; API answers and "missing" for 30 days, downloads for good;
 `--refresh-cache` ignores it); a hard cap per run (`--max-requests`, default 400);
 downloads only from `https://upload.wikimedia.org/`, redirects followed only to the allowed hosts over https, bodies read in chunks with a hard limit (5 MB a file, 8 MB an API answer), a 30 s timeout on every request, and a `Retry-After` given as an HTTP date understood. Source files over 5 MB or 30 s, or not audio by MIME type, are skipped as `over-size` or missing; ffmpeg reads only a local file (`-protocol_whitelist file`), with `-t` before `-i` and streaming filters only. The report lists the IPA symbol clip titles tried and not found, for `--symbols`. Exit 4 means another Wikimedia error; the report is still written. The transport is injected, so
