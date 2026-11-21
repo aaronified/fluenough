@@ -175,7 +175,6 @@ void main() {
         addTearDown(tester.view.reset);
         addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
         final handle = tester.ensureSemantics();
-        addTearDown(handle.dispose);
         await pumpScreen(
           tester,
           const SourcesPage(),
@@ -197,6 +196,7 @@ void main() {
           ),
           findsOneWidget,
         );
+        handle.dispose();
       });
     }
   });
