@@ -503,6 +503,31 @@ word-final only.
 After merge, `derive_phonetic.py mr --write` is rerun on decks-live to refresh
 the `phonetic` field.
 
+**Spanish rules, gaps 3 and 4 of #1369 (tools side, 2026-11-21).** The
+engine needs no code change for them: `derive_phonetic.py` applies each rule's
+regular expression in order, so a lookahead that crosses a word boundary, a rule
+placed after one that rewrote its context, and a rule that adds a diacritic are
+all plain rules; `--rederive` (PR #1372) re-derives the `rules` cards. The
+tests use fixture rules (`SpanishRuleKinds` in `tools/test_phonetic.py`). The
+rule entries, decided by the architect on #1369 and for
+`decks/es/es-phonetics.yaml` on decks-live. That file already holds both rules
+(read 2026-11-21), so no pull request there is needed; they are kept here as the
+record:
+
+```yaml
+  # after es-n-palatal, before es-n-dental
+  - id: "es-y-palatal-stop"
+    pattern: '(^ˈ?|[nlɲ][ ˈ]*)ʝ'
+    replace: '\1ɟ͡ʝ'
+  # anywhere after es-n-dental
+  - id: "es-l-dental"
+    pattern: 'l(?=ˈ?[tdθ])'
+    replace: 'l̪'
+```
+
+Each carries a `source` (Navarro Tomas 1918; Hualde 2005; Wikipedia, Spanish
+phonology). Then `python3 tools/derive_phonetic.py es --rederive --write`.
+
 ## Steps (Proposed, each one pull request)
 
 | # | Step | Done when |

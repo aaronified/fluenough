@@ -289,6 +289,40 @@ class Patching(Tree):
         new, _ = pp.patch(QUOTED, {"zz-0001": ("[kʰat]", "rules")})
         self.assertIn('  "ipa": "kat"\n  "phonetic": "[kʰat]"\n  "phonetic_source": "rules"\n', new)
 
+    def test_a_single_file_deck_with_no_part_is_seen_but_a_layer_is_not(self) -> None:
+        # #1428: ja-en-hiragana is a vocab deck with no `part`; derive and
+        # import skipped its cards. A layer (`kind: "layer"`) and a deck of
+        # another kind stay out.
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(lambda: __import__("shutil").rmtree(tmp, True))
+        (tmp / "zz").mkdir()
+        single = QUOTED.replace('"part": "core"\n', "")
+        self.assertNotIn('"part"', single)
+        (tmp / "zz" / "zz-en-single.yaml").write_text(single, encoding="utf-8")
+        (tmp / "zz" / "zz-en-layer.yaml").write_text(
+            QUOTED.replace('"part": "core"', '"kind": "layer"').replace(
+                '"kind": "vocab"', '"core": "zz-x"'), encoding="utf-8")
+        (tmp / "zz" / "zz-en-sounds.yaml").write_text(
+            QUOTED.replace('"kind": "vocab"', '"kind": "sounds"').replace(
+                '"part": "core"\n', ""), encoding="utf-8")
+        cards = pp.core_cards(tmp, "zz")
+        self.assertEqual([(c.file.name, c.cid) for c in cards],
+                         [("zz-en-single.yaml", f"zz-000{i}") for i in (1, 2, 3)])
+
+    def test_derive_fills_the_cards_of_a_single_file_deck(self) -> None:
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(lambda: __import__("shutil").rmtree(tmp, True))
+        (tmp / "zz").mkdir()
+        single = CORE.replace('part: "core"\n', "")
+        (tmp / "zz" / "zz-en-home.yaml").write_text(single, encoding="utf-8")
+        (tmp / "zz" / "zz-phonetics.yaml").write_text(
+            'schema: 1\nkind: "phonetics"\nid: "zz-phonetics"\nlanguage: "zz"\n'
+            'variety: "Zed"\nrules:\n  - id: "zz-r0"\n    pattern: \'t$\'\n'
+            '    replace: \'t\u031a\'\n    source: "A source, 2000"\n', encoding="utf-8")
+        dp.run("zz", tmp, write=True)
+        self.assertIn('phonetic: "[kat\u031a]"',
+                      (tmp / "zz" / "zz-en-home.yaml").read_text(encoding="utf-8"))
+
     def test_a_card_in_every_layout_is_seen_by_core_cards(self) -> None:
         for name, text in (("zz-quoted", QUOTED), ("zz-json", JSONISH)):
             with self.subTest(name):
@@ -423,6 +457,25 @@ class Registry(Tree):
         zh = ip.VARIETIES["zh"]
         self.assertEqual((zh.notes, zh.tags, zh.untagged, zh.normalise),
                          (frozenset(), frozenset(), False, ()))
+
+    def test_marathi_is_registered_but_takes_no_wiktionary_form(self) -> None:
+        # #1476: the kaikki.org dump covers about 9% of the course and uses
+        # another convention, so the narrow form comes from the rules file.
+        self.assertEqual(ip.DUMP_NAMES["mr"], "Marathi")
+        mr = ip.VARIETIES["mr"]
+        self.assertEqual((mr.notes, mr.tags, mr.untagged, mr.normalise, mr.align),
+                         (frozenset(), frozenset(), False, (), ()))
+        self.assertIsNone(mr.agree)
+
+    def test_a_marathi_card_is_not_filled_from_an_untagged_wiktionary_form(self) -> None:
+        mr_dir = self.decks / "mr"
+        mr_dir.mkdir()
+        (mr_dir / "mr-home.yaml").write_text(
+            CORE.replace("zz", "mr").replace('"Zed"', '"Marathi"'), encoding="utf-8")
+        cov, fills = ip.run("mr", self.dump(entry("kat", sound("[kat\u02b0]"))),
+                            self.decks, True)
+        self.assertEqual(fills, {})
+        self.assertNotIn("kat\u02b0", (mr_dir / "mr-home.yaml").read_text(encoding="utf-8"))
 
     def test_a_new_language_in_a_registry_file_is_imported_with_no_code_change(self) -> None:
         reg = self.tmp / "registry.yaml"
@@ -902,6 +955,46 @@ class Deriving(Tree):
         cov, _ = dp.run("zz", self.decks, write=True, rederive=True)
         self.assertEqual(self.core.read_text(encoding="utf-8"), once)
         self.assertEqual(cov.decks["zz-home"].get("rederived", 0), 0)
+
+
+class SpanishRuleKinds(unittest.TestCase):
+    """The engine already supports the rule kinds of #1369, gaps 1 to 4,
+    with no code change: a lookahead that crosses a word boundary, a rule
+    placed after another that rewrote its context, and a rule that adds a
+    diacritic. Fixture rules, so the test needs no deck data."""
+
+    RULES = [
+        ("es-n-palatal", r"n(?=[ ˈ]*(?:tʃ|ʝ))", "ɲ"),
+        ("es-y-palatal-stop", r"(^ˈ?|[nlɲ][ ˈ]*)ʝ", r"\1ɟ͡ʝ"),
+        ("es-n-dental", r"n(?=[ ˈ]*[tdθ])", "n̪"),
+        ("es-l-dental", r"l(?=ˈ?[tdθ])", "l̪"),
+        ("es-s-voiced", r"s(?=[ ˈ]*[bdɡβðɣmnɲlʝɾr])", "z"),
+    ]
+
+    def derive(self, ipa: str) -> str:
+        import re
+        rules = [dp.Rule(i, re.compile(p), r, "A source, 2000") for i, p, r in self.RULES]
+        return dp.apply_rules(ipa, rules)
+
+    def test_n_assimilates_across_a_word_boundary(self) -> None:
+        self.assertEqual(self.derive("un ˈtʃiko"), "uɲ ˈtʃiko")
+        self.assertEqual(self.derive("son ˈtodos"), "son̪ ˈtodos")
+
+    def test_s_is_voiced_before_a_voiced_word(self) -> None:
+        self.assertEqual(self.derive("es la ˈbase"), "ez la ˈbase")
+        self.assertEqual(self.derive("es ˈkasa"), "es ˈkasa")
+
+    def test_initial_or_post_n_l_palatal_becomes_the_affricate(self) -> None:
+        self.assertEqual(self.derive("ˈʝo"), "ˈɟ͡ʝo")
+        self.assertEqual(self.derive("en ˈʝo"), "eɲ ˈɟ͡ʝo")
+        self.assertEqual(self.derive("ˈkonʝ"), "ˈkoɲɟ͡ʝ")
+        self.assertEqual(self.derive("ˈkaʝe"), "ˈkaʝe")  # between vowels: stays
+
+    def test_l_before_a_dental_is_dental_and_before_other_sounds_plain(self) -> None:
+        self.assertEqual(self.derive("ˈalto"), "ˈal̪to")
+        self.assertEqual(self.derive("ˈfalda"), "ˈfal̪da")
+        self.assertEqual(self.derive("ˈalma"), "ˈalma")
+        self.assertEqual(self.derive("el ˈtiempo"), "el ˈtiempo")  # across words: plain
 
 
 class TheRulesFiles(unittest.TestCase):

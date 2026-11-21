@@ -2007,7 +2007,9 @@ def japanese(text: str) -> Transcription:
             if nxt in _YOON:
                 v = _YOON[nxt]
                 stem, ipa_stem = _YOON_WHOLE.get(
-                    rom, (rom[:-1] + "y", _YOON_IPA_STEM.get(rom, rom[:-1] + "j")))
+                    rom, (rom[:-1] + "y", _YOON_IPA_STEM.get(
+                        # Hepburn's ASCII g must not leak into the IPA (#1428).
+                        rom, rom[:-1].replace("g", "\u0261") + "j")))
                 rom, ipa = stem + v, ipa_stem + _YOON_IPA[v]
                 i += 1
             elif nxt in _SMALL_VOWELS:
