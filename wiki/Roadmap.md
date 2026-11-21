@@ -383,6 +383,7 @@ A plan with no tracking issue is flagged.
 - [Marathi culture 4, sourcing addendum 2 (task MR-R2)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Marathi-Addendum-2), **no tracking issue**
 - [Marathi sourcing, addendum 3 (recommendations and multi-word verbs)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Marathi-Addendum-3), **no tracking issue**
 - [Marathi culture, multi-word verbs and situations: addendum 4 (gaps re-opened)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Marathi-Addendum-4), **no tracking issue**
+- [posters, portraits and other information for the culture decks, fetched from Wikimedia Commons](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Media) (Written 2026-11-21), **no tracking issue**
 - [Classical Sanskrit genre decks, verified sourcing list (culture, subhāṣita proverbs, multi-word families, recommendations, creators, Aṣṭādhyāyī sūtras)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Sanskrit), **no tracking issue**
 - [Spanish genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Spanish), **no tracking issue**
 - [Tamil genre decks, verified sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Tamil), **no tracking issue**
