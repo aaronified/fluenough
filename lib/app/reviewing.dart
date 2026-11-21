@@ -106,9 +106,8 @@ class Reviewing {
         ),
         denylistText: await bundle.loadString('assets/reviewer/denylist.txt'),
       );
-    } catch (error) {
+    } catch (_) {
       // No keyring: no key is accepted, and the row is not shown.
-      _log.warning('Reviewer keyring not read: ${error.runtimeType}');
     }
   }
 

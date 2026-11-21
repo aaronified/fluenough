@@ -6,7 +6,6 @@
 
 import 'dart:convert';
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:fluenough/core/review/review_pairs.dart';
 import 'package:fluenough/core/review/review_quorum.dart';
@@ -135,7 +134,7 @@ void main() {
         version: 1,
       );
       expect(
-        utf8.decode(payload! as Uint8List),
+        utf8.decode(payload!),
         '{"c":["bn","te/en"],"i":"2026-11-21","k":"0123456789abcdef",'
         '"p":1,"t":"v"}',
       );
