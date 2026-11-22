@@ -884,7 +884,10 @@ class Mails(Base):
             mail_to_issues.run(ENV, imap, lambda issue: None)
         self.assertIn("GitHub App is not set up", out.getvalue())
         self.assertEqual(imap.proposed, [])
-        self.assertEqual(len(imap.searches), 1)
+        # The filing's searches, and the count of mails left for the bot.
+        self.assertEqual(len(imap.searches),
+                         len(mail_to_issues.SEARCH_TERMS) + 1)
+        self.assertIn("No review bot: 1 review mail(s)", out.getvalue())
 
     def _a_failing_bot_does_not_stop_the_run(self) -> None:
         class Broken(rb.Bot):
