@@ -129,6 +129,9 @@ abstract final class DailyPlanner {
   ///   the rest of the time is filled with reviews of the cards [closest]
   ///   to being due (in [DailyRound.fillers]).
   ///
+  /// While [catchingUp] no new words are taught, except up to [catchUpNew]
+  /// of the script the learner has yet to read (wiki, Plan-Today-Backlog).
+  ///
   /// A new word costs [secondsPerTeach] and [teachPasses] reviews.
   static DailyRound whole({
     required Duration left,
@@ -139,6 +142,7 @@ abstract final class DailyPlanner {
     required double secondsPerTeach,
     int taughtSoFar = 0,
     bool catchingUp = false,
+    int catchUpNew = 0,
     int cap = newCap,
   }) => _outline(
     left: left,
@@ -149,6 +153,7 @@ abstract final class DailyPlanner {
     secondsPerTeach: secondsPerTeach,
     taughtSoFar: taughtSoFar,
     catchingUp: catchingUp,
+    catchUpNew: catchUpNew,
     cap: cap,
   ).total;
 
@@ -163,6 +168,7 @@ abstract final class DailyPlanner {
     required double secondsPerTeach,
     int taughtSoFar = 0,
     bool catchingUp = false,
+    int catchUpNew = 0,
     int cap = newCap,
   }) {
     final outline = _outline(
@@ -174,6 +180,7 @@ abstract final class DailyPlanner {
       secondsPerTeach: secondsPerTeach,
       taughtSoFar: taughtSoFar,
       catchingUp: catchingUp,
+      catchUpNew: catchUpNew,
       cap: cap,
     );
     final total = outline.total;
@@ -194,15 +201,19 @@ abstract final class DailyPlanner {
     required double secondsPerTeach,
     required int taughtSoFar,
     required bool catchingUp,
+    required int catchUpNew,
     required int cap,
   }) {
     final seconds = left.inMilliseconds / 1000;
     if (seconds <= 0) return (total: DailyRound.none, rounds: 1);
     final review = secondsPerReview <= 0 ? 1.0 : secondsPerReview;
     final cost = secondsPerTeach + teachPasses * review;
-    final room = catchingUp
-        ? 0
-        : math.max(0, math.min(newAvailable, cap - taughtSoFar));
+    // While catching up only [catchUpNew] may be taught: the script a
+    // learner has yet to read, which no review can wait for.
+    final room = math.max(
+      0,
+      math.min(catchingUp ? catchUpNew : newAvailable, cap - taughtSoFar),
+    );
 
     if (due <= 0) {
       final teach = room == 0

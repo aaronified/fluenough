@@ -25,7 +25,7 @@ The day's button runs on a clock, not on a count of cards. The time is your minu
 
 It builds one round at a time, only when the last is done:
 
-- **While reviews are due**, a round mixes reviews and new words, in a ratio set by the time left and what is due: many due reviews mean many reviews to each new word, and a few mean more new words. A backlog of more than three days of minutes means reviews only.
+- **While reviews are due**, a round mixes reviews and new words, in a ratio set by the time left and what is due: many due reviews mean many reviews to each new word, and a few mean more new words. A backlog of more than three days of minutes means reviews only. Only reviews that are really due make a backlog: the skills of a word you have not been asked yet (for example after Find my level) are introduced a few a day, never counted as waiting ([Plan-Today-Backlog](Plan-Today-Backlog)). While catching up, up to 5 cards a day of a script you are learning but cannot read yet are still taught.
 - **When nothing is due**, it teaches new words, as many as your path allows and the time holds, at most 15 in a session. Each is asked twice after it is taught, not straight away: older reviews are mixed in between. What time is left is filled with the cards closest to being due, never a card you have already answered today: an answer pushes a card at least a day away, and asking it again at once would teach nothing (#1008, merged 2026-11-04, in the next release).
 
 A teach card is timed like an answer (at most a minute), counts toward the day's minutes and is included in the hours spent.

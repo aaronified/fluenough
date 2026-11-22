@@ -29,6 +29,7 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [Language Paths Scheme](Plan-Language-Paths-Scheme): Language Learning Paths (English Base, 30 min/day)
 - [Language Themes](Plan-Language-Themes): a look for each language (colour, icon, background image)
 - [Lazy Language Loading](Plan-Lazy-Language-Loading): load only the selected language at startup, the others when selected, never on the UI thread (ADR-0062, proposed)
+- [Today's backlog after placement](Plan-Today-Backlog): only due pairs are a backlog; unasked skills of taught words are paced; script lessons are never blocked by catching up (ADR-0063)
 - [Learned Rule](Plan-Learned-Rule): an item is learned only after two different questions, both right, in one sitting (built in PR #1515)
 - [Listening In Context](Plan-Listening-In-Context): a listening tier in context
 - [Offensive Words](Plan-Offensive-Words): offensive words, their level, and warnings on words like them
