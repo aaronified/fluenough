@@ -105,7 +105,7 @@ class CultureImageView extends StatelessWidget {
   final Uint8List bytes;
   final double width;
   final double height;
-  final String label;
+  final String? label;
   final Widget placeholder;
 
   @override

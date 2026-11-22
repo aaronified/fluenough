@@ -213,35 +213,40 @@ void main() {
   });
 
   group('the creator card', () {
-    testWidgets('has no caption without an image, a bio at the level and the legacy', (
-      tester,
-    ) async {
-      usePhone(tester);
-      final state = await cultureApp(reach: 'b1');
-      await pumpScreen(tester, _item('zz-7201'), state: state);
-      await _tapShown(tester, _chipButton);
-      expect(find.byType(CreatorCard), findsOneWidget);
-      // No picture, no caption and no apology text.
-      expect(find.text(_l10n.cultureImageNone), findsNothing);
-      expect(find.byIcon(Icons.person_outline), findsWidgets);
-      expect(find.text(_l10n.cultureAbout('Antonio Machado')), findsOneWidget);
-      expect(find.text('Machado fue poeta y maestro.'), findsOneWidget);
-      expect(
-        find.text('A teacher and poet who wrote plain, thoughtful verse.'),
-        findsOneWidget,
-      );
-      expect(find.text(_l10n.cultureLegacyTitle), findsWidgets);
-      expect(
-        find.text(
-          _l10n.cultureLegacyYear(
-            1969,
-            'A singer recorded an album of his poems.',
+    testWidgets(
+      'has no caption without an image, a bio at the level and the '
+      'legacy',
+      (tester) async {
+        usePhone(tester);
+        final state = await cultureApp(reach: 'b1');
+        await pumpScreen(tester, _item('zz-7201'), state: state);
+        await _tapShown(tester, _chipButton);
+        expect(find.byType(CreatorCard), findsOneWidget);
+        // No picture, no caption and no apology text.
+        expect(find.text(_l10n.cultureImageNone), findsNothing);
+        expect(find.byIcon(Icons.person_outline), findsWidgets);
+        expect(
+          find.text(_l10n.cultureAbout('Antonio Machado')),
+          findsOneWidget,
+        );
+        expect(find.text('Machado fue poeta y maestro.'), findsOneWidget);
+        expect(
+          find.text('A teacher and poet who wrote plain, thoughtful verse.'),
+          findsOneWidget,
+        );
+        expect(find.text(_l10n.cultureLegacyTitle), findsWidgets);
+        expect(
+          find.text(
+            _l10n.cultureLegacyYear(
+              1969,
+              'A singer recorded an album of his poems.',
+            ),
           ),
-        ),
-        findsOneWidget,
-      );
-      expect(find.text(_l10n.cultureTimelineHeading), findsOneWidget);
-    });
+          findsOneWidget,
+        );
+        expect(find.text(_l10n.cultureTimelineHeading), findsOneWidget);
+      },
+    );
 
     testWidgets(
       'credits a licensed image, drawing the placeholder until it comes',

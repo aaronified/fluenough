@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/culture.dart';
 import '../../app/routes.dart';
 import '../../core/decks/recommendation_list.dart';
 import '../../core/models/completed_work.dart';
@@ -415,7 +416,6 @@ class WorkThumb extends StatelessWidget {
                   bytes: bytes,
                   width: workThumbWidth,
                   height: workThumbHeight,
-                  label: '',
                   placeholder: placeholder(),
                 ),
               ),

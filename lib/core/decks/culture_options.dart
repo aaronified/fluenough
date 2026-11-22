@@ -1,6 +1,6 @@
 /// A language's culture options (the approved mockups `culture-in-decks` and
-/// `culture-media`): the four choices the learner makes in the language's details, each language
-/// keeping its own. Pure Dart, free of Flutter, so that it is tested in
+/// `culture-media`): the four choices the learner makes in the language's
+/// details, each language keeping its own. Pure Dart, free of Flutter, so that it is tested in
 /// milliseconds; the settings store one per language.
 library;
 

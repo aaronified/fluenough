@@ -10,6 +10,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/culture.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/deck_downloads.dart';
 import 'package:fluenough/app/downloaded_decks.dart';
@@ -537,12 +538,14 @@ void main() {
       expect(parsed.problems, isEmpty);
     });
 
-    test('skips an entry above the app\'s version, without a problem', () {
+    test('skips an entry above the app\'s version, with a log line', () {
       final old = DeckIndex.parse(index(media), appVersion: '0.12.0');
       expect(old.sharedMedia.map((m) => m.path), <String>[
         'decks/creators/images/zz-a.webp',
       ]);
-      expect(old.problems, isEmpty);
+      // Logged, not downloaded.
+      expect(old.problems, hasLength(1));
+      expect(old.problems.single, contains('needs a newer app'));
       final same = DeckIndex.parse(index(media), appVersion: '0.12.1');
       expect(same.sharedMedia, hasLength(2));
       final newer = DeckIndex.parse(index(media), appVersion: '0.13.0');

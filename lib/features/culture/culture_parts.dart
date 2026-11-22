@@ -142,7 +142,7 @@ class CreatorThumb extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final name = creator.nameFor(const <String>['en']).text;
     Widget placeholder() => Semantics(
-      label: l10n.cultureImageNone,
+      label: l10n.cultureImageOf(name),
       child: Icon(
         Icons.person_outline,
         size: size * 0.55,

@@ -975,7 +975,12 @@ class DeckIndex {
       final file = SharedMediaFile.tryParse(item, appVersion: appVersion);
       if (file == null) {
         // One that needs a newer app is passed by quietly: nothing is wrong.
-        if (!_needsNewerApp(item, appVersion)) {
+        if (_needsNewerApp(item, appVersion)) {
+          mediaProblems.add(
+            'a shared_media entry needs a newer app, skipped: '
+            '${(item as Map)['path']}',
+          );
+        } else {
           mediaProblems.add('a shared_media entry was left out');
         }
       } else {
