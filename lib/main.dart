@@ -94,7 +94,10 @@ Future<void> main() async {
   final share = ChannelMailShare(folder: Directory('${cache.path}/shared'));
   // The decks, downloaded from GitHub into the app's own storage (#210,
   // ADR-0037); only the theme list is bundled.
-  final downloaded = FileDownloadedDecks(Directory('${files.path}/downloaded'));
+  final downloaded = FileDownloadedDecks(
+    Directory('${files.path}/downloaded'),
+    parseOffUi: true,
+  );
   final deckDownloads = DeckDownloads(
     fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),
     files: downloaded,
@@ -107,6 +110,8 @@ Future<void> main() async {
     hasher: sha256InIsolate,
     // The fonts load after the first frame, the learner's first (#1699).
     deferFonts: true,
+    // The index and the review queue parse on isolates (#1699).
+    parseOffUi: true,
     otherFontsDelay: const Duration(seconds: 20),
     // The culture pictures, as binary files (not in the deck files: they
     // are fetched on demand and pruned with their course).

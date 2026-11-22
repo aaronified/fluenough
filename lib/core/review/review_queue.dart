@@ -6,6 +6,7 @@
 library;
 
 import 'dart:convert';
+import 'dart:isolate';
 
 import 'facets.dart';
 
@@ -197,4 +198,14 @@ class ReviewQueue {
   bool has(String language, String card) => forCard(language, card).isNotEmpty;
 
   bool get isEmpty => _cards.isEmpty && _asks.isEmpty;
+}
+
+/// [ReviewQueue.parse] on an isolate of its own (#1699), in place where one
+/// cannot run. Never throws, as [ReviewQueue.parse] never does.
+Future<ReviewQueue> parseReviewQueueInIsolate(String text) async {
+  try {
+    return await Isolate.run(() => ReviewQueue.parse(text));
+  } catch (_) {
+    return ReviewQueue.parse(text);
+  }
 }

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:isolate';
 
 import 'app_version.dart';
 import '../models/level.dart';
@@ -1088,4 +1089,26 @@ LanguageChanges changesFor(
           path,
     ]..sort(),
   );
+}
+
+/// [DeckIndex.parse] on an isolate of its own (#1699): the index is a few
+/// megabytes of JSON, and reading it on the UI isolate holds the first
+/// frames. What it throws for a bad or too-new index is thrown here as it is;
+/// only an isolate that cannot run (the web) or fails parses in place, with
+/// the same result. The index is plain data and crosses without being lost.
+Future<DeckIndex> parseIndexInIsolate(
+  String text, {
+  String? appVersion,
+}) async {
+  try {
+    return await Isolate.run(
+      () => DeckIndex.parse(text, appVersion: appVersion),
+    );
+  } on FormatException {
+    rethrow;
+  } on IndexTooNewException {
+    rethrow;
+  } catch (_) {
+    return DeckIndex.parse(text, appVersion: appVersion);
+  }
 }

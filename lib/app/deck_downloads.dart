@@ -209,6 +209,7 @@ class DeckDownloads extends ChangeNotifier {
     this.hasher,
     this.deferFonts = false,
     this.otherFontsDelay,
+    this.parseOffUi = false,
   }) : fonts = scriptFonts ?? ScriptFonts(),
        images = images ?? MediaImageCache();
 
@@ -267,6 +268,21 @@ class DeckDownloads extends ChangeNotifier {
   /// takes seconds with the big ones, and nothing before the first frame
   /// needs them. False loads them in [open], as before (tests).
   final bool deferFonts;
+
+  /// Whether the deck index and the review queue, which are megabytes of
+  /// JSON, are parsed on an isolate (#1699). The app says so; tests parse in
+  /// place.
+  final bool parseOffUi;
+
+  Future<DeckIndex> _parseIndex(String text) => parseOffUi
+      ? parseIndexInIsolate(text, appVersion: appVersion)
+      : Future<DeckIndex>.sync(
+          () => DeckIndex.parse(text, appVersion: appVersion),
+        );
+
+  Future<ReviewQueue> _parseQueue(String text) => parseOffUi
+      ? parseReviewQueueInIsolate(text)
+      : Future<ReviewQueue>.sync(() => ReviewQueue.parse(text));
 
   /// With [deferFonts], how long after the first fonts the rest are loaded:
   /// the fonts of the languages the learner learns and the content fonts
@@ -607,7 +623,7 @@ class DeckDownloads extends ChangeNotifier {
         return false;
       }
       final text = utf8.decode(bytes);
-      _reviewQueue = ReviewQueue.parse(text);
+      _reviewQueue = await _parseQueue(text);
       _queueRead = now;
       _queueFailed = null;
       await files.writeNote(_queueNote, text);
@@ -636,7 +652,8 @@ class DeckDownloads extends ChangeNotifier {
       if (text != null) {
         final index = await _span(
           'downloads: index parse',
-          () => DeckIndex.parse(text, appVersion: appVersion),
+          () => _parseIndex(text),
+          isolate: parseOffUi ? 'worker' : 'main',
           extra: <String, Object?>{'bytes': text.length},
         );
         _index = index;
@@ -655,7 +672,8 @@ class DeckDownloads extends ChangeNotifier {
       if (queue != null) {
         _reviewQueue = await _span(
           'downloads: review queue',
-          () => ReviewQueue.parse(queue),
+          () => _parseQueue(queue),
+          isolate: parseOffUi ? 'worker' : 'main',
           extra: <String, Object?>{'bytes': queue.length},
         );
       }
@@ -801,7 +819,7 @@ class DeckDownloads extends ChangeNotifier {
     final DeckIndex index;
     try {
       text = utf8.decode(bytes);
-      index = DeckIndex.parse(text, appVersion: appVersion);
+      index = await _parseIndex(text);
     } on IndexTooNewException catch (e) {
       return _indexFailed(DeckDownloadFailure.appTooOld, '$e');
     } on FormatException catch (e) {
