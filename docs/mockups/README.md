@@ -15,6 +15,8 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
   Bengali, light and dark, 1.4x. Open choices are tweak controls and are
   listed in `today-chain.md`, with the self-check.
 
+- `culture-media.html` (`culture-media.md`): posters, covers and portraits with their credit, the viewer, Sources and the Show pictures switch (Plan-Culture-Media package 3, ADR-0060). Guessed choices are listed in `culture-media.md`.
+
 - `reviewer-ux.html` (`reviewer-ux.md`): the reviewer screens of `wiki/Plan-Reviewer-UX.md`, by exception (a card is fine unless flagged). Open questions are listed in `reviewer-ux.md`.
 
 ## Current and approved

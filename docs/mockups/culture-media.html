@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Culture Pictures</title>
+<meta name="description" content="Culture pictures: posters and covers on works, portraits on people, the credit caption with its licence link, the full-screen viewer, Sources, and the Show pictures switch (Plan-Culture-Media, ADR-0060).">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<style>
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px 0 8px;color:var(--onSv);gap:2px}
+.appbar .ttl{flex:1;min-width:0;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500;color:var(--onS);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.sp{flex:1}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.t-body{font-size:calc(14px*var(--t));line-height:1.4;margin:0}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.t-lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:14px 0 6px}
+.t-h{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500;margin:0}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali",Roboto,sans-serif}
+.nowrap{white-space:nowrap}
+/* language bar */
+.lbar{display:flex;gap:8px;padding:0 16px 10px;flex:none}
+.pill{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(14px*var(--t));font-weight:500;display:inline-flex;align-items:center;gap:6px;background:none;color:var(--onSv)}
+.pill.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+/* buttons */
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 16px}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.out{background:none;border:1px solid var(--ol);color:var(--p)}
+.btn.text{background:none;color:var(--p);padding:6px 12px}
+.btn.full{width:100%}
+.btn.sm{min-height:48px;border-radius:24px}
+/* cards */
+.card{background:var(--sLow);border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0}
+.card .tx{flex:1;min-width:0}
+.card .ic{flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+/* bottom nav */
+.nav{flex:none;display:flex;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);padding:8px 4px 10px}
+.nav div{flex:1;text-align:center;font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv);display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav div .pl{width:56px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.nav div.on{color:var(--onS);font-weight:600}
+.nav div.on .pl{background:var(--sc);color:var(--onSc)}
+/* settings rows */
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:3}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;display:flex;flex-direction:column;max-height:88%}
+.sheet .grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:10px auto 6px}
+.sheet .scroll{padding:6px 20px 20px}
+.sheet h3{margin:0 0 4px;font-size:calc(20px*var(--t));font-weight:500;line-height:1.2}
+.sep{border-top:1px solid var(--olv);margin:6px 0}
+/* word rows */
+.bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+/* key-value (inspect) */
+/* conversation */
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.ghost{opacity:.55;text-decoration:line-through;pointer-events:none}
+.hide{display:none!important}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:760px}
+.tabs{flex:none;display:flex;overflow-x:auto;scrollbar-width:none;box-shadow:0 -1px 0 var(--olv) inset;padding:0 4px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;min-height:48px;padding:0 12px;border:0;background:none;font-size:calc(14px*var(--t));font-weight:500;color:var(--onSv);display:flex;align-items:center;gap:6px;border-bottom:3px solid transparent;white-space:nowrap}
+.tab .n{font-size:calc(12px*var(--t));font-weight:600;background:var(--sc);color:var(--onSc);border-radius:10px;padding:1px 7px}
+.tab[aria-selected="true"]{color:var(--p);border-bottom-color:var(--p);font-weight:700}
+.tab .best{width:6px;height:6px;border-radius:3px;background:var(--p)}
+.tag{display:inline-flex;align-items:center;gap:4px;height:calc(18px*var(--t));padding:0 7px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+.tag.lv{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.tag.pro{background:var(--pl);color:var(--onPl)}
+.tag.up{background:none;box-shadow:inset 0 0 0 1px var(--pl);color:var(--pl)}
+.tag.kind{background:var(--sc);color:var(--onSc)}
+.tag.pr{background:var(--pr);color:var(--onPr)}
+.big{font-size:calc(20px*var(--t));line-height:1.3;font-weight:500}
+.empty{text-align:center;padding:28px 8px;color:var(--onSv)}
+.empty .big{color:var(--onS);margin:8px 0 4px}
+.empty svg.i{width:48px;height:48px;opacity:.7;margin:0 auto}
+.hint{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.35;margin:0 0 8px}
+.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.cred{font-size:calc(11px*var(--t));line-height:1.3;color:var(--onSv)}
+.src{font-size:calc(11px*var(--t));line-height:1.4;color:var(--onSv)}
+.sw2{width:52px;height:32px;border-radius:16px;background:var(--olv);position:relative;flex:none}
+.sw2::after{content:"";position:absolute;top:4px;left:4px;width:24px;height:24px;border-radius:12px;background:var(--onSv)}
+.sw2.on{background:var(--p)}.sw2.on::after{left:24px;background:var(--onP)}
+
+body,.ph,.script{font-family:Roboto,"Noto Sans Devanagari","Noto Sans JP",system-ui,sans-serif}
+.ph{--t:var(--tt,1.4)}
+.ph.tall{height:auto;min-height:740px}.ph.tall .scroll{overflow:visible;flex:none}.ph.h2{height:900px}
+body,.ph,.script{font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+h2.grp{margin:34px 0 4px;padding-top:18px;border-top:1px solid var(--page-line)}
+.stack{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.stack .btn{min-height:48px}
+.quiet{font-size:calc(12px*var(--t));color:var(--onSv);margin:10px 0 0;line-height:1.35}
+.srow{display:flex;align-items:center;gap:12px;min-height:56px;border-top:1px solid var(--olv);padding:8px 0;width:100%;background:none;border-left:0;border-right:0;border-bottom:0;text-align:left}
+.srow .tx{flex:1;min-width:0;font-size:calc(16px*var(--t));line-height:1.3}.srow .tx small{display:block;font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.35}
+.srow>svg:first-child{color:var(--onSv)}
+.dis{opacity:.6}
+.cap2{font-size:13px;color:var(--page-muted);max-width:760px;margin:0 0 10px}
+.sh{margin:0 0 8px;font-size:calc(20px*var(--t));font-weight:500;line-height:1.2}
+
+/* ===== This page ===== */
+.ph{--t:var(--tt,1.4)}
+.ph.tall{height:auto;min-height:740px}.ph.tall .scroll{overflow:visible;flex:none}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+h2.grp{margin:34px 0 4px;padding-top:18px;border-top:1px solid var(--page-line)}
+.cap2{font-size:13px;color:var(--page-muted);max-width:760px;margin:0 0 10px}
+/* thumbs: a picture, or the placeholder that exists today (medium or person icon on secondaryContainer) */
+.th{flex:none;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--sc);color:var(--onSc)}
+.th.work{width:48px;height:68px;border-radius:8px}
+.th.who{width:48px;height:48px;border-radius:12px}
+.th svg.art{width:100%;height:100%;display:block}
+.th.pic{box-shadow:inset 0 0 0 1px var(--olv)}
+.th.pic::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px var(--olv)}
+.th.big{width:200px;height:290px;border-radius:12px;margin:4px auto 0;display:flex}
+.th.big.who{width:96px;height:96px;margin:0}
+.th.big svg.i{width:48px;height:48px}
+.zoom{position:absolute;right:8px;bottom:8px;width:32px;height:32px;border-radius:16px;background:rgba(0,0,0,.62);color:#fff;display:flex;align-items:center;justify-content:center}
+.zoom svg.i{width:20px;height:20px}
+.row{display:flex;gap:12px;align-items:center;background:var(--sLow);border-radius:4px;padding:12px;margin:0 0 4px;width:100%;text-align:left;border:0;min-height:72px}
+.row:first-child{border-radius:16px 16px 4px 4px}.row:last-child{border-radius:4px 4px 16px 16px;margin-bottom:0}
+.row .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.row .nm{font-size:calc(18px*var(--t));line-height:1.25;font-weight:500}
+.row .sub{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv)}
+.row .tg2{display:flex;gap:6px;flex-wrap:wrap;margin-top:3px}
+.tag.lv2{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.cap{display:block;margin:8px 0 0;font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv)}
+.lnk{display:inline-flex;align-items:center;gap:6px;min-height:48px;background:none;border:0;color:var(--p);font-size:calc(14px*var(--t));font-weight:600;padding:0 4px}
+.lnk svg.i{width:18px;height:18px}
+.hdr{display:flex;gap:16px;align-items:flex-start}
+.pad{padding:0 4px}
+.grid{background:var(--sLow);border-radius:16px;overflow:hidden}
+.tile{display:flex;gap:16px;align-items:flex-start;padding:12px 16px;border-top:1px solid var(--olv)}
+.tile:first-child{border-top:0}
+.tile>svg:first-child{color:var(--onSv);margin-top:2px}
+.tile .tx{flex:1;min-width:0;font-size:calc(16px*var(--t));line-height:1.3}
+.tile .tx small{display:block;font-size:calc(13px*var(--t));line-height:1.35;color:var(--onSv);margin-top:2px}
+.tile.sw{align-items:center;min-height:56px}
+.tile .rt{flex:none;font-size:calc(13px*var(--t));color:var(--onSv);align-self:center}
+.glab{font-size:calc(14px*var(--t));font-weight:500;color:var(--onSv);margin:16px 4px 6px}
+.ring{width:24px;height:24px;flex:none;align-self:center}
+.sbody{padding:0 16px 16px}
+/* viewer: always black, whatever the theme */
+.ph.viewer{background:#000;color:#F2F2F2}
+.viewer .appbar{position:absolute;top:0;left:0;z-index:2;color:#fff}
+.viewer .stage{min-height:0;flex:1;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.viewer .vimg{width:100%;aspect-ratio:200/290;max-height:560px}
+.viewer .vimg svg{width:100%;height:100%;display:block}
+.viewer .vimg.zm{transform:scale(2.1) translate(-10%,-14%)}
+.viewer .foot{flex:none;padding:28px 16px 18px;background:linear-gradient(to top,rgba(0,0,0,.78) 70%,rgba(0,0,0,0));color:#F2F2F2;position:relative;z-index:2;margin-top:-90px}
+.viewer .foot .cap{color:#E6E6E6;margin:0}
+.viewer .foot .lnk{color:#A9E5BF}
+.hl-on .th.pic.chg::before,.hl-on .chg{outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+<h1>Culture pictures</h1>
+<p class="cap1">Posters and covers on works, portraits on people, with their credit (Plan-Culture-Media, package 3; ADR-0060). Self-checks, notes and guessed choices: culture-media.md. The pictures here are drawn stand-ins, not real files.</p>
+<div class="sticky tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Example course <span class="seg" data-k="c"><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
+ <div class="tg">Text size <span class="seg" data-k="tt"><button data-v="1">1.0x</button><button data-v="1.2">1.2x</button><button data-v="1.4">1.4x</button></span></div>
+ <div class="tg">Free pictures <span class="seg" data-k="img"><button data-v="1">Some</button><button data-v="0">None</button></span></div>
+ <div class="tg">Highlight what changed <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005","pl":"#E0A458","onPl":"#2b1a00","pr":"#9ecaff","onPr":"#00315a"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae2","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff","pl":"#8A5A00","onPl":"#ffffff","pr":"#1565C0","onPr":"#ffffff"}};
+const IC={
+back:"M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z",
+close:"M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z",
+chev:"M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z",
+check:"M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z",
+person:"M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 9c2.7 0 5.8 1.29 6 2v1H6v-1c.2-.71 3.3-2 6-2m0-11C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z",
+film:"M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4zm2 14H4V10h16v8z",
+book:"M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z",
+open:"M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z",
+zoom:"M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z",
+down:"M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z",
+globe:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z",
+perm:"M22 16V4c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2zm-11-4 2.03 2.71L16 11l4 5H8l3-4zM2 6v14c0 1.1.9 2 2 2h14v-2H4V6H2z",
+quote:"M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z",
+copy:"M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z",
+deck:"M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z",
+star:"M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z",
+tune:"M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z",
+today:"M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z",
+tl:"M23 8c0 1.1-.9 2-2 2-.18 0-.35-.02-.51-.07l-3.56 3.55c.05.16.07.34.07.52 0 1.1-.9 2-2 2s-2-.9-2-2c0-.18.02-.36.07-.52l-2.55-2.55c-.16.05-.34.07-.52.07s-.36-.02-.52-.07l-4.55 4.56c.05.16.07.33.07.51 0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2c.18 0 .35.02.51.07l4.56-4.55C8.02 9.36 8 9.18 8 9c0-1.1.9-2 2-2s2 .9 2 2c0 .18-.02.36-.07.52l2.55 2.55c.16-.05.34-.07.52-.07s.36.02.52.07l3.55-3.56C19.02 8.35 19 8.18 19 8c0-1.1.9-2 2-2s2 .9 2 2z"};
+const ic=(n,s)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[n]}"/></svg>`;
+const ph=(cap,bar,body,bottom,over,cls)=>`<div class="fcol"><div class="fcap">${cap}</div><div class="ph ${cls||""}">${bar}<div class="scroll">${body}</div>${bottom||""}${over||""}</div></div>`;
+const abar=(t,back,acts)=>`<div class="appbar">${back?`<button class="ib" aria-label="Back">${ic('back')}</button>`:'<span style="width:8px"></span>'}<span class="ttl">${t}</span>${acts||''}</div>`;
+const nav=on=>`<div class="nav">${['Today','Decks','Progress','Settings'].map(x=>`<div class="${x==on?'on':''}"><span class="pl">${ic(x=='Today'?'today':x=='Decks'?'deck':x=='Progress'?'star':'tune')}</span>${x}</div>`).join('')}</div>`;
+function wire(S,build){document.querySelectorAll('.seg').forEach(s=>{s.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S[s.dataset.k]=b.dataset.v;build()})});}
+function sync(S){document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));}
+function theme(S,root){const p=PAL[S.theme];root.style.cssText=Object.entries(p).map(([k,v])=>`--${k}:${v}`).join(';');root.className=S.hl=='1'?'hl-on':'';document.documentElement.dataset.theme=S.theme;}
+const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',c:'hi',tt:'1.4',img:'1',hl:'1'};
+
+/* Pictures are never themed or inverted; these stand-ins are drawn, sepia for old material. */
+const TONES=[['#7a5a3c','#c9a56e','#3d2a1a'],['#4f6b7a','#a9c4cf','#1f3340'],['#7a4a4a','#d7a3a0','#3a1f1f'],['#5c6b45','#bcc99a','#26311a']];
+const poster=i=>{const t=TONES[i%4];return `<svg class="art" viewBox="0 0 200 290" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Poster"><defs><linearGradient id="pg${i}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${t[1]}"/><stop offset="1" stop-color="${t[0]}"/></linearGradient></defs><rect width="200" height="290" fill="url(#pg${i})"/><circle cx="100" cy="104" r="46" fill="${t[2]}" opacity=".35"/><path d="M0 214 L58 150 L104 202 L146 138 L200 212 V290 H0Z" fill="${t[2]}" opacity=".8"/><rect x="14" y="14" width="172" height="262" fill="none" stroke="${t[2]}" stroke-width="3" opacity=".6"/></svg>`;};
+const portrait=i=>{const t=TONES[(i+1)%4];return `<svg class="art" viewBox="0 0 96 96" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Portrait"><rect width="96" height="96" fill="${t[1]}"/><circle cx="48" cy="38" r="17" fill="${t[2]}" opacity=".85"/><path d="M12 96 C14 68 32 60 48 60 S82 68 84 96Z" fill="${t[2]}" opacity=".85"/></svg>`;};
+const free=()=>S.img=='1';
+const workTh=(w,i)=>w.img&&free()?`<span class="th work pic">${poster(i)}</span>`:`<span class="th work" role="img" aria-label="${w.medium}">${ic(w.medium=='Book'?'book':'film',28)}</span>`;
+const whoTh=(p,i)=>p.img&&free()?`<span class="th who pic">${portrait(i)}</span>`:`<span class="th who" role="img" aria-label="No picture">${ic('person',26)}</span>`;
+
+const D={
+hi:{lang:'Hindustani',
+ films:[{t:'राजा हरिश्चंद्र',r:'rājā hariścandra',who:'दादासाहेब फाल्के · 1913',lv:'A2',img:true,medium:'Film',cred:'Unknown author, public domain'},
+  {t:'मदर इंडिया',r:'madar iṇḍiyā',who:'महबूब ख़ान · 1957',lv:'B1',medium:'Film'},
+  {t:'आवारा',r:'āvārā',who:'राज कपूर · 1951',lv:'B1',medium:'Film'},
+  {t:'शोले',r:'śole',who:'रमेश सिप्पी · 1975',lv:'B1',medium:'Film'}],
+ people:[{n:'कबीर',r:'kabīr',d:'c. 1440 to c. 1518',era:'Poet',img:true,cred:'Unknown author, public domain'},
+  {n:'प्रेमचंद',r:'premcand',d:'1880 to 1936',era:'Writer',img:true,cred:'Example Author, CC BY-SA 4.0'},
+  {n:'लता मंगेशकर',r:'latā maṅgeśkar',d:'1929 to 2022',era:'Singer'},
+  {n:'मिर्ज़ा ग़ालिब',r:'mirzā ġālib',d:'1797 to 1869',era:'Poet',img:true,cred:'Unknown author, public domain'}],
+ work:{t:'राजा हरिश्चंद्र',r:'rājā hariścandra',who:'दादासाहेब फाल्के · 1913',medium:'Film',lv:'A2',cred:'Unknown author, public domain',img:true,brief:'India’s first full-length feature film, silent, with intertitles in Hindi, English and Marathi.',legal:'Archive'},
+ nonePoster:{t:'मदर इंडिया',r:'madar iṇḍiyā',who:'महबूब ख़ान · 1957',medium:'Film',lv:'B1',brief:'A mother holds a village together through hardship; a landmark of the 1950s.',legal:'Stream'},
+ person:{n:'कबीर',r:'kabīr',en:'Kabir',d:'c. 1440 to c. 1518',era:'भक्ति काल · Bhakti period',cred:'Unknown author, public domain',bio:'A weaver-poet whose short couplets speak plainly about pride and kindness.'},
+ credits:['Unknown author, public domain','Example Author, CC BY-SA 4.0','Another Author, CC BY 3.0'],size:'12 MB'},
+bn:{lang:'Bengali',
+ films:[{t:'বিল্বমঙ্গল',r:'bilbomoṅgol',who:'রুস্তমজি ধোতিওয়ালা · 1919',lv:'A2',img:true,medium:'Film',cred:'Unknown author, public domain'},
+  {t:'পথের পাঁচালী',r:'pôther pãcali',who:'সত্যজিৎ রায় · 1955',lv:'B1',medium:'Film'},
+  {t:'মেঘে ঢাকা তারা',r:'meghe ḍhaka tara',who:'ঋত্বিক ঘটক · 1960',lv:'B1',medium:'Film'},
+  {t:'চারুলতা',r:'carulota',who:'সত্যজিৎ রায় · 1964',lv:'B1',medium:'Film'}],
+ people:[{n:'রবীন্দ্রনাথ ঠাকুর',r:'robindronath ṭhakur',d:'1861 to 1941',era:'Poet',img:true,cred:'Unknown author, public domain'},
+  {n:'কাজী নজরুল ইসলাম',r:'kajī nojrul islam',d:'1899 to 1976',era:'Poet',img:true,cred:'Example Author, CC BY-SA 4.0'},
+  {n:'সত্যজিৎ রায়',r:'sotyojit rae',d:'1921 to 1992',era:'Director'},
+  {n:'বঙ্কিমচন্দ্র চট্টোপাধ্যায়',r:'boṅkimcôndro coṭṭopadhyae',d:'1838 to 1894',era:'Writer',img:true,cred:'Unknown author, public domain'}],
+ work:{t:'বিল্বমঙ্গল',r:'bilbomoṅgol',who:'রুস্তমজি ধোতিওয়ালা · 1919',medium:'Film',lv:'A2',cred:'Unknown author, public domain',img:true,brief:'One of the first Bengali feature films, silent, made by Madan Theatres in Calcutta.',legal:'Archive'},
+ nonePoster:{t:'পথের পাঁচালী',r:'pôther pãcali',who:'সত্যজিৎ রায় · 1955',medium:'Film',lv:'B1',brief:'A village childhood, the first film of the Apu trilogy.',legal:'Stream'},
+ person:{n:'রবীন্দ্রনাথ ঠাকুর',r:'robindronath ṭhakur',en:'Rabindranath Tagore',d:'1861 to 1941',era:'বাংলা সন · Bengali year 1268 to 1348',cred:'Unknown author, public domain',bio:'A poet and songwriter whose songs are sung at every Bengali gathering.'},
+ credits:['Unknown author, public domain','Example Author, CC BY-SA 4.0','Another Author, CC BY 3.0'],size:'9 MB'}};
+const d=()=>D[S.c];
+
+/* 1 */
+function f1a(){const x=d();
+ const rows=x.films.map((w,i)=>`<button class="row ${w.img&&free()?'chg':''}" style="${w.img&&free()?'margin-bottom:8px':''}">${workTh(w,i)}<span class="tx"><span class="nm script">${w.t}</span><span class="sub">${w.r}</span><span class="sub">${w.who}</span><span class="tg2"><span class="tag kind">Film</span><span class="tag lv2">${w.lv}</span></span></span></button>`).join('');
+ const body=`<div class="tabs" style="margin:0 -16px 12px"><button class="tab" aria-selected="false">All</button><button class="tab" aria-selected="false">Books</button><button class="tab" aria-selected="true">Films</button><button class="tab" aria-selected="false">Songs</button></div><div>${rows}</div>`;
+ return ph('1a · Decks > culture list, Films (a work with no picture keeps its medium icon)',abar(x.lang+' culture'),body,nav('Decks'));}
+function f1b(){const x=d();
+ const rows=x.people.map((p,i)=>`<button class="row ${p.img&&free()?'chg':''}" style="${p.img&&free()?'margin-bottom:8px':''}">${whoTh(p,i)}<span class="tx"><span class="nm script">${p.n}</span><span class="sub">${p.r}</span><span class="sub">${p.d} · ${p.era}</span></span>${ic('chev')}</button>`).join('');
+ return ph('1b · People (portraits on creator rows)',abar(x.lang+' culture',true),`<p class="t-lab" style="margin-top:6px">People</p><div>${rows}</div>`);}
+/* 2 */
+function f2a(){const w=d().work;const has=w.img&&free();
+ const head=has?`<div class="chg" style="margin:4px 0 6px"><button class="th big pic" aria-label="Open the picture full screen">${poster(0)}<span class="zoom">${ic('zoom')}</span></button></div>
+ <span class="cap chg" style="margin-top:4px">Image: ${w.cred}</span><button class="lnk chg">${ic('open')} Licence and source</button>`:'';
+ const body=`${head}
+ <div class="hdr" style="margin-top:${has?4:8}px">${has?'':`<span class="th work" role="img" aria-label="${w.medium}">${ic(w.medium=='Book'?'book':'film',28)}</span>`}<div style="min-width:0"><p class="big script" style="font-size:calc(22px*var(--t))">${w.t}</p><p class="t-sm">${w.r}</p><p class="t-sm">${w.who}</p></div></div>
+ <div class="pillrow"><span class="tag kind">${w.medium}</span><span class="tag lv2">${w.lv}</span></div>
+ <p class="t-body" style="margin:6px 0 4px">${w.brief}</p>
+ <button class="lnk">${ic('open')} ${w.legal}</button>
+ <button class="btn fill full" style="margin-top:6px">I’ve completed this</button>`;
+ return ph(has?'2a · Work page: poster with its credit':'2a · Work page',abar('',true),body,'','','tall');}
+function f2b(){const w=d().nonePoster;
+ const body=`<div class="hdr" style="margin-top:8px"><span class="th work" role="img" aria-label="${w.medium}">${ic('film',28)}</span><div style="min-width:0"><p class="big script" style="font-size:calc(22px*var(--t))">${w.t}</p><p class="t-sm">${w.r}</p><p class="t-sm">${w.who}</p></div></div>
+ <div class="pillrow"><span class="tag kind">${w.medium}</span><span class="tag lv2">${w.lv}</span></div>
+ <p class="t-body" style="margin:6px 0 4px">${w.brief}</p>
+ <button class="lnk">${ic('open')} ${w.legal}</button>
+ <button class="btn fill full" style="margin-top:6px">I’ve completed this</button>`;
+ return ph('2b · Work page, no free picture',abar('',true),body,'','','tall');}
+/* 3 */
+function f3(zoomed){const w=d().work;
+ const stage=`<div class="stage"><div class="vimg ${zoomed?'zm':''}">${poster(0)}</div></div>`;
+ return `<div class="fcol"><div class="fcap">${zoomed?'3b · Viewer, pinched in':'3a · Viewer'}</div><div class="ph viewer"><div class="appbar"><button class="ib" aria-label="Close" style="background:rgba(0,0,0,.45);color:#fff;margin:4px">${ic('close')}</button></div>${stage}<div class="foot"><span class="cap">Image: ${w.cred}</span><button class="lnk" style="padding-left:0">${ic('open')} Licence and source</button></div></div></div>`;}
+/* 4 */
+function f4(has){const x=d();const p=x.person;const th=has?`<span class="th who big pic" style="margin:0;flex:none;display:flex"><span style="display:block;width:100%;height:100%">${portrait(0)}</span><span class="zoom" style="right:4px;bottom:4px;width:28px;height:28px">${ic('zoom')}</span></span>`:`<span class="th who big" style="margin:0;flex:none" role="img" aria-label="No picture">${ic('person',48)}</span>`;
+ const list=`<div class="scroll">${x.people.slice(0,2).map((q,i)=>`<div class="row" style="opacity:.55">${whoTh(q,i)}<span class="tx"><span class="nm script">${q.n}</span></span></div>`).join('')}</div>`;
+ const sheet=`<div class="scrim"></div><div class="sheet"><div class="grab"></div><div class="scroll"><div class="hdr ${has?'chg':''}" style="margin-top:4px">${th}<div style="min-width:0"><h3 class="script" style="margin:0;font-size:calc(22px*var(--t));font-weight:500">${p.n}</h3><p class="t-sm">${p.en}</p><p class="t-sm">${p.d}</p><p class="t-sm">${p.era}</p></div></div>
+ ${has?`<span class="cap chg" style="margin-top:16px">Image: ${p.cred}</span><button class="lnk chg" style="margin-left:-4px">${ic('open')} Licence and source</button>`:''}
+ <p class="t-lab">About ${p.en}</p><p class="t-body">${p.bio}</p></div></div>`;
+ return `<div class="fcol"><div class="fcap">${has?'4a · Creator card with portrait and credit':'4b · Creator card, no free picture'}</div><div class="ph">${abar(x.lang+' culture',true)}${list}${sheet}</div></div>`;}
+/* 5 */
+function f5(){const x=d();
+ const tile=(i,t,s,c)=>`<div class="tile ${c||''}">${ic(i)}<div class="tx">${t}<small>${s}</small></div></div>`;
+ const body=`<p class="glab" style="margin-top:4px">Deck content</p>
+ <div class="grid">${tile('globe','Wikimedia Commons','Recordings and pictures of words, people and works, each under its own licence and with its credit','chg upd')}${tile('globe','Wiktionary','Word data, under CC BY-SA 4.0')}</div>
+ <p class="glab">Recordings and pictures</p>
+ <div class="grid chg">${tile('perm',x.lang,x.credits.join('<br>'))}</div>`;
+ return ph('5 · Settings > Sources (scrolled to Deck content)',abar('Sources',true),body);}
+/* 6 */
+const ring=p=>`<svg class="ring" viewBox="0 0 24 24" role="img" aria-label="Downloading"><circle cx="12" cy="12" r="9" fill="none" stroke="var(--olv)" stroke-width="3"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--p)" stroke-width="3" stroke-dasharray="${56.5*p} 56.5" transform="rotate(-90 12 12)" stroke-linecap="round"/></svg>`;
+function f6(mode){const x=d();
+ const sw=on=>`<span class="sw2 ${on?'on':''}" role="switch" aria-checked="${on}"></span>`;
+ const row1=`<div class="tile sw"><div class="tx">Count toward path progress</div>${sw(true)}</div><div class="tile sw"><div class="tx">Show creator and legacy</div>${sw(true)}</div>`;
+ const pic=`<div class="tile sw chg"><div class="tx">Show pictures</div>${sw(mode!='off')}</div>`;
+ const dl=mode=='idle'?`<div class="tile sw chg">${ic('down')}<div class="tx">Download pictures</div><span class="rt">${x.size}</span></div>`:mode=='busy'?`<div class="tile sw chg">${ic('down')}<div class="tx">Download pictures</div>${ring(.6)}</div>`:'';
+ const sheet=`<div class="scrim"></div><div class="sheet"><div class="grab"></div><div class="scroll"><div style="display:flex;align-items:center;gap:12px;margin:0 0 8px"><h3 class="script" style="margin:0">${x.lang}</h3></div>
+ <div class="grid"><div class="tile sw"><span style="color:var(--onSv)">${ic('quote')}</span><div class="tx">Culture</div>${sw(true)}</div>${row1}${pic}${dl}</div></div></div>`;
+ return `<div class="fcol"><div class="fcap">${mode=='idle'?'6a · Language sheet > Culture: Show pictures, Download pictures':mode=='busy'?'6b · Downloading':'6c · Show pictures off (the download row goes)'}</div><div class="ph">${abar('Languages',true)}<div class="scroll"></div>${sheet}</div></div>`;}
+function build(){
+ const root=document.getElementById('root');theme(S,root);root.style.setProperty('--tt',S.tt);
+ const g=(h,fr)=>`<h2 class="grp">${h}</h2><div class="frames">${fr.join('')}</div>`;
+ root.innerHTML=g('1 · Lists',[f1a(),f1b()])+g('2 · Work page',[f2a(),f2b()])+g('3 · Full-screen viewer',[f3(false),f3(true)])+g('4 · Creator card',[f4(true),f4(false)])+g('5 · Sources',[f5()])+g('6 · Pictures switch and download',[f6('idle'),f6('busy'),f6('off')]);
+ sync(S);
+}
+wire(S,build);build();
+</script>
+</body>
+</html>
