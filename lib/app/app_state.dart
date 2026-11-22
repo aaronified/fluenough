@@ -2441,10 +2441,10 @@ class AppState extends ChangeNotifier {
         at.earlierPairs.add((e.cardId, e.mode));
       } else if (isSameDay(e.at, now)) {
         at.todays.add(e.cardId);
-        at.todaysPairs.putIfAbsent(
-          (e.cardId, e.mode),
-          () => e.at.millisecondsSinceEpoch ~/ 1000,
-        );
+        at.todaysPairs.putIfAbsent((
+          e.cardId,
+          e.mode,
+        ), () => e.at.millisecondsSinceEpoch ~/ 1000);
         if (progress.skills.scriptDecks.contains(e.deckId)) {
           at.todaysScript.putIfAbsent(
             e.cardId,

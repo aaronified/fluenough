@@ -76,12 +76,7 @@ ${cards.join('\n')}
 /// Hindustani in two scripts: Devanagari and Urdu letters (eight each), a
 /// deck of [big] words, and five words nobody has met.
 Map<String, String> _course(int big) => <String, String>{
-  'decks/hi/hi-en-letters.yaml': _letters(
-    'letters',
-    _dev,
-    'devanagari',
-    false,
-  ),
+  'decks/hi/hi-en-letters.yaml': _letters('letters', _dev, 'devanagari', false),
   'decks/hi/hi-en-urdu-letters.yaml': _letters(
     'urdu-letters',
     _urdu,

@@ -131,3 +131,25 @@ SentState sentStateOf({
   }
   return const SentState(SentOutcome.rejected);
 }
+
+/// Whether the deck shows the changes of a sent mail (owner, 2026-11-22:
+/// "It will show resend options till the deck is not acknowledging the
+/// changes", provisional changes shown to other reviewers included): true
+/// when [states], those of a deck's sent suggestions, show every one that
+/// the deck can show as a proposal in the data (waiting) or as decided
+/// (accepted, rejected), and at least one is such. A suggestion on a part the
+/// bot does not turn into proposals ([SentUnknown.notTracked]) cannot ever
+/// show, so it does not hold the answer back; one the deck does not carry yet
+/// ([SentUnknown.notInDeckYet]) does. With nothing the deck could show, the
+/// phone cannot tell, and the changes count as not acknowledged.
+bool changesAcknowledged(Iterable<SentState> states) {
+  var shown = 0;
+  for (final state in states) {
+    if (state.outcome != SentOutcome.unknown) {
+      shown++;
+    } else if (state.unknown != SentUnknown.notTracked) {
+      return false;
+    }
+  }
+  return shown > 0;
+}
