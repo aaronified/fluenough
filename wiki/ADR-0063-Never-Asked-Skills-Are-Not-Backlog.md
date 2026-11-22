@@ -13,7 +13,8 @@ After Find my level, Today counted the unasked skills of placed words as reviews
 
 - The backlog, "Catching up", the reviews-waiting number and the days to catch up count only pairs whose state is due now.
 - The new skills of taught words enter through the day's new share, paced (a fifth of the day's cards, at least three, a day), in path order; none while really catching up.
-- While catching up, up to five cards of the script decks of a script the learner is learning are still taught each day.
+- The new skills follow the course path, keep a guaranteed third of the day's share in each round when reviews are due (under a backlog), never split a reading passage, and count pairs placement credited today against the day's share.
+- While catching up, up to five cards of the script decks of a script the learner is learning are still taught each day in all (words already taught today are subtracted, placement credits excepted).
 
 ## Consequences
 

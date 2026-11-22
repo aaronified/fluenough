@@ -64,6 +64,12 @@ abstract final class DailyBudget {
   /// [newSlots] (wiki, Plan-Today-Backlog). Tunable.
   static int newPairsPerDay(int dayCards) => max(newSlots, dayCards ~/ 5);
 
+  /// The new skills kept a place in a round even when due reviews would fill
+  /// it: a third of [newPairsPerDay], rounded up, so that they never wait
+  /// for ever (wiki, Plan-Today-Backlog).
+  static int newPairsMinPerDay(int dayCards) =>
+      (newPairsPerDay(dayCards) + 2) ~/ 3;
+
   /// Whether [due] reviews are a backlog of more than [backlogDays] days of
   /// [dayCards]: catching up. Only reviews that are due count, never the
   /// skills of a taught word not yet asked (wiki, Plan-Today-Backlog).

@@ -4,6 +4,7 @@
 // still taught while catching up. All on a fixed clock.
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/daily_plan.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/session.dart';
@@ -123,7 +124,7 @@ MemoryProgress _history({required int big, int? daysAgo}) {
       DrillMode.recognition,
       DrillMode.production,
     ]) {
-      review('letters', n, mode, _now);
+      review('letters', n, mode, _now.subtract(const Duration(days: 1)));
     }
   }
   for (var n = 1; n <= big; n++) {
@@ -153,6 +154,64 @@ Future<AppState> _learner({
   addTearDown(state.dispose);
   await state.load();
   return state;
+}
+
+/// A one-script course of word decks in the path's own order, which is not
+/// the order of their names: [path] lists deck ids (`hi-zeta`, ...), one
+/// unit each, of [sizes] words.
+Future<AppState> _words2({
+  required Map<String, int> sizes,
+  required List<String> path,
+  required void Function(MemoryProgress progress) credit,
+}) async {
+  final progress = MemoryProgress();
+  credit(progress);
+  final state = AppState.test(
+    decks: MemoryDeckSource(<String, String>{
+      for (final MapEntry(:key, :value) in sizes.entries)
+        'decks/hi/hi-en-$key.yaml': _words(key, value),
+      'decks/hi/hi-path.yaml':
+          '''
+schema: 1
+kind: path
+id: hi-path
+language: hi
+units:
+${path.map((id) => '  - [$id]').join('\n')}
+''',
+    }),
+    progress: progress,
+    now: _now,
+    settings: SettingsNotifier(
+      spokenLanguages: const <String>['en'],
+      learningLanguages: const <String>['hi'],
+      learningChosen: true,
+    ),
+  );
+  addTearDown(state.dispose);
+  await state.load();
+  return state;
+}
+
+void _record(
+  MemoryProgress progress,
+  String deck,
+  int count,
+  DateTime at, {
+  List<DrillMode> modes = const <DrillMode>[DrillMode.recognition],
+  int grade = 5,
+}) {
+  for (var n = 1; n <= count; n++) {
+    for (final mode in modes) {
+      progress.record(
+        deckId: 'hi-en-$deck',
+        cardId: _id(deck, n),
+        mode: mode,
+        grade: grade,
+        now: at,
+      );
+    }
+  }
 }
 
 Iterable<SessionItem> _members(List<SessionItem> items) sync* {
@@ -258,12 +317,13 @@ void main() {
 
   group('script lessons while catching up', () {
     test('a script not read yet is still taught', () async {
-      final state = await _learner(big: 200, daysAgo: 60);
+      // 300 due words stay over three days of cards through every round.
+      final state = await _learner(big: 300, daysAgo: 60);
       final plan = state.dailyPlanFor(state.decks.first.language);
       expect(plan.split.catchingUp, isTrue);
       expect(plan.split.newWords, greaterThan(0));
 
-      final served = _stretch(state, state.startDaily('hi')!);
+      final served = _stretch(state, state.startDaily('hi')!, most: 4);
       final script = <String>{
         for (final item in served)
           if (item.card.id.startsWith('hi-en-urdu-letters-')) item.card.id,
@@ -278,7 +338,7 @@ void main() {
 
     test('a script already read changes nothing: no new words', () async {
       final state = await _learner(
-        big: 200,
+        big: 300,
         daysAgo: 60,
         scripts: const <String>{'devanagari'},
       );
@@ -286,11 +346,112 @@ void main() {
       expect(plan.split.catchingUp, isTrue);
       expect(plan.split.newWords, 0);
 
-      final served = _stretch(state, state.startDaily('hi')!);
+      final served = _stretch(state, state.startDaily('hi')!, most: 4);
       expect(
         served.where((i) => i.state == null),
         isEmpty,
         reason: 'only reviews while catching up',
+      );
+    });
+
+    test('two sessions in a day teach five script words in all', () async {
+      final state = await _learner(big: 300, daysAgo: 60);
+      final first = _stretch(state, state.startDaily('hi')!, most: 4);
+      final ids = <String>{
+        for (final item in first)
+          if (item.card.id.startsWith('hi-en-urdu-letters-')) item.card.id,
+      };
+      expect(ids, isNotEmpty);
+      // They are answered, so the log holds them for the next session.
+      for (final id in ids) {
+        state.progress.record(
+          deckId: 'hi-en-urdu-letters',
+          cardId: id,
+          mode: DrillMode.recognition,
+          grade: 4,
+          now: _now,
+        );
+      }
+      expect(state.scriptWordsToday(_now), ids.length);
+      final second = _stretch(state, state.startDaily('hi')!, most: 4);
+      for (final item in second) {
+        if (item.card.id.startsWith('hi-en-urdu-letters-')) {
+          ids.add(item.card.id);
+        }
+      }
+      expect(ids.length, lessThanOrEqualTo(DailyBudget.catchUpScriptWords));
+    });
+  });
+
+  group('pacing the new skills', () {
+    test('they follow the path, not the order of the decks', () async {
+      // `alpha` sorts first but its unit is second in the path.
+      final state = await _words2(
+        sizes: <String, int>{'alpha': 30, 'zeta': 30},
+        path: <String>['hi-zeta', 'hi-alpha'],
+        credit: (progress) {
+          _record(progress, 'alpha', 30, _now);
+          _record(progress, 'zeta', 30, _now);
+        },
+      );
+      final served = _stretch(state, state.startDaily('hi')!, most: 1);
+      final fresh = served.where((i) => i.state == null).toList();
+      expect(fresh, isNotEmpty);
+      expect(fresh.every((i) => i.card.id.startsWith('hi-en-zeta-')), isTrue);
+    });
+
+    test('they keep a place when due reviews would fill the round', () async {
+      // 120 words due (under three days of cards), 50 placed ones.
+      final state = await _words2(
+        sizes: <String, int>{'old': 120, 'placed': 50},
+        path: <String>['hi-old', 'hi-placed'],
+        credit: (progress) {
+          _record(
+            progress,
+            'old',
+            120,
+            _now.subtract(const Duration(days: 60)),
+            modes: const <DrillMode>[
+              DrillMode.recognition,
+              DrillMode.production,
+            ],
+            grade: 4,
+          );
+          _record(
+            progress,
+            'placed',
+            50,
+            _now.subtract(const Duration(days: 1)),
+          );
+        },
+      );
+      final queue = state.buildSession(
+        const DrillRequest.today(language: 'hi'),
+      );
+      expect(queue.due.length, 120);
+      final round = _members(state.nextDailyRound(state.startDaily('hi')!));
+      expect(
+        round.where((i) => i.card.id.startsWith('hi-en-placed-')),
+        isNotEmpty,
+        reason: 'new skills are not starved by the reviews',
+      );
+      expect(
+        round.where((i) => i.card.id.startsWith('hi-en-old-')),
+        isNotEmpty,
+      );
+    });
+
+    test('on the day of placement none is offered', () async {
+      final state = await _learner(big: 300);
+      expect(state.newPairsToday(_now, 'hi'), 0);
+      state.settings.addPlacedAt('hi', _now.millisecondsSinceEpoch ~/ 1000);
+      expect(state.newPairsToday(_now, 'hi'), greaterThanOrEqualTo(300));
+      final served = _stretch(state, state.startDaily('hi')!, most: 3);
+      expect(
+        served.where(
+          (i) => i.state == null && i.card.id.startsWith('hi-en-big-'),
+        ),
+        isEmpty,
       );
     });
   });
