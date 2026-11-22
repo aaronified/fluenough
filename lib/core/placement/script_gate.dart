@@ -183,6 +183,8 @@ class ScriptGate {
       maxItems = 0,
       decide = 3.5,
       declaredReads = null,
+      label = null,
+      undecidedIsPartly = false,
       skipped = true;
 
   final math.Random rng;
