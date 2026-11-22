@@ -51,10 +51,10 @@ void main() {
         here.languages.map((l) => l.code),
       );
       final queue = await parseReviewQueueInIsolate(_queue());
-      final here = ReviewQueue.parse(_queue());
+      final queueHere = ReviewQueue.parse(_queue());
       expect(
         queue.asksFor('te', 'te-0001').map((a) => a.facet),
-        here.asksFor('te', 'te-0001').map((a) => a.facet),
+        queueHere.asksFor('te', 'te-0001').map((a) => a.facet),
       );
       expect(queue.asksFor('te', 'te-0001'), isNotEmpty);
       expect(queue.isEmpty, isFalse);
