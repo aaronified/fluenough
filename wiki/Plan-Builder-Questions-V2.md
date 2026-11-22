@@ -2,7 +2,7 @@
 
 Source of truth: this wiki page.
 
-Written 2026-11-22. Decision record: [ADR-0061](ADR-0061-Builder-Questions-Are-Facets-Not-Prose). Builds on [Plan-Reviewer-UX](Plan-Reviewer-UX) and [ADR-0058](ADR-0058-Reviewer-UX) (the facets and the pointer tags), [Plan-Reviewing-Scope](Plan-Reviewing-Scope) ("Builder questions") and `docs/review-queue/README.md`. Package 1 of 2 (queue format, checker, feed, answer records, Dart parsing) is in this change; package 2 (the app's screens) is specified below and not built.
+Written 2026-11-22. Decision record: [ADR-0061](ADR-0061-Builder-Questions-Are-Facets-Not-Prose). Builds on [Plan-Reviewer-UX](Plan-Reviewer-UX) and [ADR-0058](ADR-0058-Reviewer-UX) (the facets and the pointer tags), [Plan-Reviewing-Scope](Plan-Reviewing-Scope) ("Builder questions") and `docs/review-queue/README.md`. Package 1 of 2 (queue format, checker, feed, answer records, Dart parsing) is in this change; package 2 (the app's screens) is built (2026-11-22).
 
 ## Owner decision
 
@@ -125,7 +125,7 @@ Every non-Yes answer has the free-text line. A non-Yes needs exactly one option;
 | Package | Content | Status |
 |---|---|---|
 | 1 (this change) | this page and ADR-0061; `docs/review-queue/README.md` and `build-deck` step 7a; `tools/review_queue.py` (v2 parse, feed, refuses a rejected row), `tools/check_review_queue.py`, `tools/question_answers.py`; their tests; the Dart parsing (`BuilderAsk`, `asksFor`) | built |
-| 2 | the screens, ARB strings, buttons, `ReviewQuestion` fields, the question generator reading `asksFor` and the mail's new points (the old per-card builder path can go once the old rows are deleted) | to do, from this page |
+| 2 | the screens, ARB strings, buttons, `ReviewQuestion` fields, the question generator reading `asksFor` and the mail's new points. The old per-card builder path is gone from the app: `ReviewQueue` reads `asks` only, the daily question comes from `asks` alone, and `BuilderNote` (the note on a card's review sheet, fed only by the old rows) is deleted; `unit_level` rows were never read by the app. The offence facet shows its `offensive` option as "The rating does not fit" (display only). Save is disabled until one option is picked; the sheet is the existing reason sheet, so its button reads Save answer | built |
 | Separate | delete the old per-card rows on decks-live (never convert); add the checker to decks-live's CI by hand; deck builders write v2 rows | owner / deck work (paused) |
 
 No CHANGELOG line: nothing here is visible to a learner or a reviewer yet (docs, tools and a parser nothing calls).

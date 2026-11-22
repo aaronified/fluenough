@@ -1,8 +1,11 @@
-/// The deck builders' questions for a reviewer (owner, 2026-11-06, "go B"):
-/// what a builder could not settle about a card, written in
+/// The deck builders' doubts for a reviewer (owner, 2026-11-06, "go B"; v2,
+/// 2026-11-22): the facets of a card a builder could not settle, written in
 /// `docs/review-queue/<lang>.md` and turned by `tools/review_queue.py` into
 /// `decks/review-queue.json`, a file beside the decks and not part of any.
 /// Pure Dart. A released app that does not know the file never asks for it.
+///
+/// The old free-text per-card rows (`cards`) and `unit_level` are no longer
+/// read: the app asks no question a builder wrote (ADR-0061).
 library;
 
 import 'dart:convert';
@@ -38,16 +41,13 @@ class BuilderAsk {
   final String date;
 }
 
-/// The builder questions of every language, by card.
+/// The builder doubts of every language, by card.
 class ReviewQueue {
-  const ReviewQueue._(this._cards, [this._asks = _noAsks]);
+  const ReviewQueue._(this._asks);
 
-  static const Map<String, Map<String, List<BuilderAsk>>> _noAsks =
-      <String, Map<String, List<BuilderAsk>>>{};
-
-  /// No questions.
+  /// No doubts.
   static const ReviewQueue empty = ReviewQueue._(
-    <String, Map<String, List<String>>>{},
+    <String, Map<String, List<BuilderAsk>>>{},
   );
 
   /// The file's `format`, under `format`.
@@ -65,68 +65,39 @@ class ReviewQueue {
   /// The most characters of an ask's concern.
   static const int maxConcern = 140;
 
-  /// The most characters of a question: longer is cut, with an ellipsis,
-  /// as `tools/review_queue.py` cuts it.
-  static const int maxLength = 400;
-
-  /// The most a card's questions may be, so that a long queue never fills a
-  /// screen.
-  static const int maxPerCard = 3;
-
-  final Map<String, Map<String, List<String>>> _cards;
   final Map<String, Map<String, List<BuilderAsk>>> _asks;
 
   /// Reads the file. Never throws: a file that is not this format, or a
   /// newer version, gives [empty], and an entry that is not a card with
-  /// questions is left out. Keys this app does not know are ignored.
+  /// asks is left out. Keys this app does not know are ignored, the old
+  /// `cards` and `unit_level` included.
   static ReviewQueue parse(String text) {
     try {
       final json = jsonDecode(text);
       if (json is! Map ||
           json['format'] != format ||
           json['version'] is! int ||
-          (json['version'] as int) > version) {
+          (json['version'] as int) > version ||
+          json['asks_version'] is! int ||
+          (json['asks_version'] as int) > asksVersion) {
         return empty;
       }
       final languages = json['languages'];
       if (languages is! Map) return empty;
-      final out = <String, Map<String, List<String>>>{};
       final asked = <String, Map<String, List<BuilderAsk>>>{};
-      final readAsks =
-          json['asks_version'] is int &&
-          (json['asks_version'] as int) <= asksVersion;
       languages.forEach((Object? code, Object? entry) {
         if (code is! String || entry is! Map) return;
-        if (readAsks) {
-          final found = _parseAsks(entry['asks']);
-          if (found.isNotEmpty) asked[code] = found;
-        }
-        final cards = entry['cards'];
-        if (cards is! Map) return;
-        final byCard = <String, List<String>>{};
-        cards.forEach((Object? id, Object? rows) {
-          if (id is! String || rows is! List) return;
-          final questions = <String>[
-            for (final row in rows)
-              if (row is Map &&
-                  row['question'] is String &&
-                  isAskable((row['question'] as String).trim()))
-                _cut((row['question'] as String).trim(), maxLength),
-          ];
-          if (questions.isNotEmpty) {
-            byCard[id] = questions.take(maxPerCard).toList(growable: false);
-          }
-        });
-        if (byCard.isNotEmpty) out[code] = byCard;
+        final found = _parseAsks(entry['asks']);
+        if (found.isNotEmpty) asked[code] = found;
       });
-      return out.isEmpty && asked.isEmpty ? empty : ReviewQueue._(out, asked);
+      return asked.isEmpty ? empty : ReviewQueue._(asked);
     } on FormatException {
       return empty;
     }
   }
 
   /// The asks of one language, by card id. Never throws: an ask with an
-  /// unknown facet or no text keys is left out, a concern that is empty is
+  /// unknown facet is left out, a concern that is empty is
   /// null, and one longer than [maxConcern] is cut.
   static Map<String, List<BuilderAsk>> _parseAsks(Object? asks) {
     final out = <String, List<BuilderAsk>>{};
@@ -161,17 +132,6 @@ class ReviewQueue {
     return out;
   }
 
-  /// Whether [question] can be put to a reader as a yes or no: it is a
-  /// question, ending in a question mark (`?` or `\uFF1F`). A note such as
-  /// "death year uncertain: 1890 or 1891" or "source unverified" is not
-  /// one, and is never offered to a reviewer. The feed has no other marker,
-  /// so this is the rule (wiki Plan-Reviewing-Scope, "Builder questions").
-  /// Each row is keyed by a card id, so it always names an item to look at.
-  static bool isAskable(String question) {
-    final text = question.trim();
-    return text.endsWith('?') || text.endsWith('\uFF1F');
-  }
-
   static String _cut(String question, int limit) {
     if (question.length <= limit) return question;
     var end = limit - 1;
@@ -183,18 +143,13 @@ class ReviewQueue {
     return '${question.substring(0, end).trimRight()}\u2026';
   }
 
-  /// What the builder asks about [card] of [language], in the order written.
-  List<String> forCard(String language, String card) =>
-      _cards[language]?[card] ?? const <String>[];
-
-  /// The facet doubts the builder raised about [card] of [language] (builder
-  /// questions v2), at most one a facet, in the order written. Not shown by
-  /// the app yet.
+  /// The facet doubts the builder raised about [card] of [language], at most
+  /// one a facet, in the order written.
   List<BuilderAsk> asksFor(String language, String card) =>
       _asks[language]?[card] ?? const <BuilderAsk>[];
 
-  /// Whether [card] has a builder question.
-  bool has(String language, String card) => forCard(language, card).isNotEmpty;
+  /// Whether [card] of [language] has a builder doubt.
+  bool has(String language, String card) => asksFor(language, card).isNotEmpty;
 
-  bool get isEmpty => _cards.isEmpty && _asks.isEmpty;
+  bool get isEmpty => _asks.isEmpty;
 }

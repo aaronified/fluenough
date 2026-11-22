@@ -264,7 +264,10 @@ void main() {
         // card shows each one's split and minutes spent (none yet today).
         final plans = numbers.daily;
         expect(plans, isNotEmpty);
-        expect(plans.map((p) => p.due).fold(0, (a, b) => a + b), queue.length);
+        expect(
+          plans.map((p) => p.due).fold(0, (a, b) => a + b),
+          queue.due.length,
+        );
         expect(find.byType(DailyCard), findsOneWidget);
         expect(
           find.text(l10n.todayDailyStart),

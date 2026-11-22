@@ -30,8 +30,8 @@ import 'package:fluenough/core/review/deck_review.dart' show DeckReview;
 import 'package:fluenough/core/review/rater_code.dart';
 import 'package:fluenough/core/review/review_question.dart';
 import 'package:fluenough/core/review/review_queue.dart';
-import 'package:fluenough/features/review/builder_note.dart';
-import 'package:fluenough/l10n/app_localizations.dart';
+import 'package:fluenough/core/review/facets.dart';
+import 'package:fluenough/features/review/facet_labels.dart';
 import 'package:fluenough/features/review/daily_questions_page.dart';
 import 'package:fluenough/features/review/reviews_to_send_page.dart';
 import 'package:flutter/material.dart' hide Card;
@@ -87,12 +87,18 @@ Card _card(
   String? audio,
   MediaCredit? audioCredit,
   bool practiceOnly = false,
+  String? ipa,
+  String? register,
+  List<CardNote> notes = const <CardNote>[],
 }) => Card(
   id: id,
   deckId: 'xx-en-deck',
   target: target,
   native: native,
   reading: reading,
+  ipa: ipa,
+  register: register,
+  notes: notes,
   examples: examples,
   confusables: confusables,
   audio: audio,
@@ -806,44 +812,46 @@ cards:
     });
   });
 
-  group('the deck builders\' questions (docs/review-queue, 2026-11-06)', () {
-    String file(Map<String, Object?> languages, {Object? version = 1}) =>
-        jsonEncode(<String, Object?>{
-          'format': 'fluenough-review-queue',
-          'version': version,
-          'languages': languages,
-          'a_key_from_the_future': true,
-        });
-    Map<String, Object?> rows(List<String> questions) => <String, Object?>{
-      'cards': <String, Object?>{
-        'xx-0002': <Object?>[
-          for (final q in questions)
-            <String, Object?>{'question': q, 'by': 'Haiku builder'},
-        ],
-      },
-      'unit_level': <Object?>[],
-    };
+  group('the deck builders\' doubts (builder questions v2, 2026-11-22)', () {
+    String file(
+      Map<String, Object?> languages, {
+      Object? version = 1,
+      Object? asksVersion = 2,
+    }) => jsonEncode(<String, Object?>{
+      'format': 'fluenough-review-queue',
+      'version': version,
+      'asks_version': ?asksVersion,
+      'languages': languages,
+      'a_key_from_the_future': true,
+    });
+    Map<String, Object?> ask(String facet, {String? ref, String? concern}) =>
+        <String, Object?>{
+          'facet': facet,
+          'ref': ?ref,
+          'concern': ?concern,
+          'by': 'Haiku builder',
+          'date': '2026-11-22',
+        };
+    Map<String, Object?> asks(Map<String, List<Map<String, Object?>>> byCard) =>
+        <String, Object?>{
+          'cards': <String, Object?>{},
+          'unit_level': <Object?>[],
+          'asks': byCard,
+        };
+    Map<String, Object?> one(String card, List<Map<String, Object?>> rows) =>
+        asks(<String, List<Map<String, Object?>>>{card: rows});
 
     test('the file is read, and what is not this format is nothing', () {
       final queue = ReviewQueue.parse(
         file(<String, Object?>{
-          'xx': rows(<String>[
-            '  Is it m?  ',
-            '',
-            'And the tone?',
-            'Death year uncertain: 1890 or 1891',
-            'Source unverified.',
-            'Is it \uFF1F',
+          'xx': one('xx-0002', <Map<String, Object?>>[
+            ask('ipa', concern: 'the vowel length is a guess'),
           ]),
         }),
       );
-      // Only what is a question ends up asked: notes for the maintainers
-      // are not offered to a reviewer.
-      expect(queue.forCard('xx', 'xx-0002'), <String>[
-        'Is it m?',
-        'And the tone?',
-        'Is it \uFF1F',
-      ]);
+      final got = queue.asksFor('xx', 'xx-0002').single;
+      expect(got.facet, Facet.ipa);
+      expect(got.concern, 'the vowel length is a guess');
       expect(queue.has('xx', 'xx-0001'), isFalse);
       expect(queue.has('yy', 'xx-0002'), isFalse);
       expect(ReviewQueue.parse('not json').isEmpty, isTrue);
@@ -851,7 +859,7 @@ cards:
       expect(
         ReviewQueue.parse(
           file(<String, Object?>{
-            'xx': rows(<String>['q?']),
+            'xx': one('xx-0002', <Map<String, Object?>>[ask('ipa')]),
           }, version: 2),
         ).isEmpty,
         isTrue,
@@ -863,31 +871,35 @@ cards:
       );
     });
 
-    test('a card carries at most three questions', () {
-      final queue = ReviewQueue.parse(
-        file(<String, Object?>{
-          'xx': rows(<String>['1?', '2?', '3?', '4?', '5?']),
-        }),
+    test('the old free-text rows are never read', () {
+      final old = <String, Object?>{
+        'cards': <String, Object?>{
+          'xx-0002': <Object?>[
+            <String, Object?>{'question': 'Is it m?', 'by': 'Haiku builder'},
+          ],
+        },
+        'unit_level': <Object?>[
+          <String, Object?>{'question': 'Is the unit too long?'},
+        ],
+      };
+      expect(
+        ReviewQueue.parse(file(<String, Object?>{'xx': old})).isEmpty,
+        isTrue,
       );
-      expect(queue.forCard('xx', 'xx-0002'), <String>['1?', '2?', '3?']);
-    });
-
-    test('a question longer than 400 characters is cut with an ellipsis', () {
-      final long = '${'x' * 900}?';
-      final queue = ReviewQueue.parse(
-        file(<String, Object?>{
-          'xx': rows(<String>[long, 'short?']),
-        }),
+      // Asks without an asks_version are not read either.
+      expect(
+        ReviewQueue.parse(
+          file(<String, Object?>{
+            'xx': one('xx-0002', <Map<String, Object?>>[ask('ipa')]),
+          }, asksVersion: null),
+        ).isEmpty,
+        isTrue,
       );
-      final got = queue.forCard('xx', 'xx-0002');
-      expect(got.first.length, ReviewQueue.maxLength);
-      expect(got.first.endsWith('…'), isTrue);
-      expect(got.last, 'short?');
     });
 
     group('reading the file from GitHub', () {
       final feed = file(<String, Object?>{
-        'xx': rows(<String>['Is it m?']),
+        'xx': one('xx-0002', <Map<String, Object?>>[ask('meaning')]),
       });
       var now = DateTime(2026, 11, 6, 9);
       late FakeDeckRemote remote;
@@ -918,14 +930,16 @@ cards:
       test('it is read, kept, and used again with no network', () async {
         final first = await open();
         expect(await first.refreshReviewQueue(), isTrue);
-        expect(first.reviewQueue.forCard('xx', 'xx-0002'), <String>[
-          'Is it m?',
-        ]);
+        expect(
+          first.reviewQueue.asksFor('xx', 'xx-0002').single.facet,
+          Facet.meaning,
+        );
         remote.failAll = FetchFailure.offline;
         final later = await open();
-        expect(later.reviewQueue.forCard('xx', 'xx-0002'), <String>[
-          'Is it m?',
-        ]);
+        expect(
+          later.reviewQueue.asksFor('xx', 'xx-0002').single.facet,
+          Facet.meaning,
+        );
       });
 
       test('with automatic checks off nothing is asked, until a manual '
@@ -990,13 +1004,7 @@ cards:
         usePhone(tester);
         remote.gate = Completer<void>();
         remote.files['decks/review-queue.json'] = file(<String, Object?>{
-          'te': <String, Object?>{
-            'cards': <String, Object?>{
-              plainCard: <Object?>[
-                <String, Object?>{'question': 'Is the gender right?'},
-              ],
-            },
-          },
+          'te': one(plainCard, <Map<String, Object?>>[ask('meaning')]),
         });
         final downloads = DeckDownloads(
           fetcher: remote,
@@ -1030,7 +1038,7 @@ cards:
 
         await tester.pumpWidget(const SizedBox());
         await pumpScreen(tester, const DailyQuestionsPage(), state: state);
-        expect(find.text('Is the gender right?'), findsOneWidget);
+        expect(find.text(l10n.builderAskMeaning), findsOneWidget);
         expect(find.text(l10n.reviewBuilderQuestion), findsOneWidget);
         expect(
           find.text(l10n.reviewQuestionMeaning('అమ్మ (amma)')),
@@ -1053,52 +1061,84 @@ cards:
       ]),
     ];
 
-    test('a builder question is a step of its own, listed cards first', () {
+    test('a doubt is one question about a facet, a step of its own, listed '
+        'cards first', () {
       final queue = ReviewQueue.parse(
         file(<String, Object?>{
-          'xx': rows(<String>['Is it m?']),
+          'xx': one('xx-0002', <Map<String, Object?>>[
+            ask('meaning', concern: 'the gloss is broad'),
+          ]),
         }),
       );
       final asked = generateQuestions(decks, queue: queue);
       expect(_ids(asked), <String>[
-        'xx-0002|builder:${pointHash('Is it m?')}',
+        'xx-0002|builder:meaning',
         'xx-0001|meaning',
         'xx-0002|meaning',
         'xx-0003|meaning',
         'xx-0003|example:${pointHash('zan zan')}',
       ]);
       expect(asked.first.kind, QuestionKind.builder);
-      expect(asked.first.asked, 'Is it m?');
-      // The other questions of the card carry no builder text: its question
-      // is never tacked on to a question about something else.
+      expect(asked.first.facet, Facet.meaning);
+      expect(asked.first.point, 'builder:meaning');
+      expect(asked.first.concern, 'the gloss is broad');
+      // The other questions of the card carry nothing of the builder's: its
+      // doubt is never tacked on to a question about something else.
       expect(
         asked
             .skip(1)
-            .every((q) => q.kind != QuestionKind.builder && q.asked == null),
+            .every(
+              (q) =>
+                  q.kind != QuestionKind.builder &&
+                  q.facet == null &&
+                  q.concern == null &&
+                  q.ipa == null &&
+                  q.notes.isEmpty &&
+                  q.examples.isEmpty,
+            ),
         isTrue,
       );
       // Without the queue the order is the weakest first, as before.
       expect(_ids(generateQuestions(decks)).first, 'xx-0001|meaning');
     });
 
-    test('a listed card keeps the weakest-first order among the listed', () {
+    test('a card with several doubts has one question each, in the order '
+        'written, and none for a facet it does not have', () {
       final queue = ReviewQueue.parse(
         file(<String, Object?>{
-          'xx': <String, Object?>{
-            'cards': <String, Object?>{
-              'xx-0003': <Object?>[
-                <String, Object?>{'question': 'Natural?'},
-              ],
-              'xx-0001': <Object?>[
-                <String, Object?>{'question': 'Gender?'},
-              ],
-            },
-          },
+          'xx': one('xx-0002', <Map<String, Object?>>[
+            ask('word'),
+            ask('meaning'),
+            ask('ipa'),
+            ask('audio'),
+            ask('offence'),
+            ask('note'),
+            ask('example'),
+            ask('unit'),
+          ]),
+        }),
+      );
+      final ids = _ids(generateQuestions(decks, queue: queue));
+      expect(ids.take(3), <String>[
+        'xx-0002|builder:word',
+        'xx-0002|builder:meaning',
+        'xx-0002|builder:unit',
+      ]);
+      expect(ids.where((id) => id.contains('builder:')), hasLength(3));
+    });
+
+    test('listed cards keep the card order among themselves', () {
+      final queue = ReviewQueue.parse(
+        file(<String, Object?>{
+          'xx': asks(<String, List<Map<String, Object?>>>{
+            'xx-0003': <Map<String, Object?>>[ask('word')],
+            'xx-0001': <Map<String, Object?>>[ask('meaning')],
+          }),
         }),
       );
       expect(_ids(generateQuestions(decks, queue: queue)), <String>[
-        'xx-0001|builder:${pointHash('Gender?')}',
-        'xx-0003|builder:${pointHash('Natural?')}',
+        'xx-0001|builder:meaning',
+        'xx-0003|builder:word',
         'xx-0001|meaning',
         'xx-0002|meaning',
         'xx-0003|meaning',
@@ -1106,18 +1146,7 @@ cards:
       ]);
     });
 
-    test('a builder question carries the whole card, every example', () {
-      final queue = ReviewQueue.parse(
-        file(<String, Object?>{
-          'xx': <String, Object?>{
-            'cards': <String, Object?>{
-              'xx-0003': <Object?>[
-                <String, Object?>{'question': 'Does the translation match?'},
-              ],
-            },
-          },
-        }),
-      );
+    test('a doubt carries the whole card, and the example it points at', () {
       final two = <Deck>[
         _deck('xx-en-deck', <Card>[
           _card(
@@ -1125,6 +1154,12 @@ cards:
             'zan',
             reading: 'zahn',
             native: 'respect',
+            ipa: 'zɑn',
+            register: 'offensive',
+            audio: 'zan.mp3',
+            notes: const <CardNote>[
+              CardNote(id: '1', kind: NoteKind.usage, text: 'Said to elders.'),
+            ],
             examples: const <CardExample>[
               CardExample(target: 'zan one', reading: 'r1', native: 'first'),
               CardExample(target: 'zan two', native: 'second'),
@@ -1132,28 +1167,229 @@ cards:
           ),
         ]),
       ];
+      final ref = pointHash('zan two');
+      final queue = ReviewQueue.parse(
+        file(<String, Object?>{
+          'xx': one('xx-0003', <Map<String, Object?>>[
+            ask('example', ref: ref),
+            ask('offence'),
+            ask('audio'),
+          ]),
+        }),
+      );
       final builder = generateQuestions(
         two,
         queue: queue,
-      ).firstWhere((q) => q.kind == QuestionKind.builder);
-      expect(builder.word, 'zan');
-      expect(builder.reading, 'zahn');
-      expect(builder.meaning, 'respect');
+      ).where((q) => q.kind == QuestionKind.builder).toList();
+      expect(builder.map((q) => q.facet), <Facet>[
+        Facet.example,
+        Facet.offenceRating,
+        Facet.audio,
+      ]);
+      final first = builder.first;
+      expect(first.word, 'zan');
+      expect(first.reading, 'zahn');
+      expect(first.meaning, 'respect');
+      expect(first.ipa, 'zɑn');
+      expect(first.notes, <String>['Said to elders.']);
+      expect(first.ref, ref);
       expect(
-        <String>[for (final e in builder.examples) e.target],
+        <String>[for (final e in first.examples) e.target],
         <String>['zan one', 'zan two'],
       );
-      expect(builder.examples.first.reading, 'r1');
-      expect(builder.examples.last.native, 'second');
+      expect(first.examples.first.reading, 'r1');
+      expect(first.examples.last.native, 'second');
+      expect(builder.every((q) => q.offensive && q.hasAudio), isTrue);
+      expect(builder.map((q) => q.ref), <String?>[ref, null, null]);
+      // A ref to an example the card no longer has points at nothing.
+      final stale = ReviewQueue.parse(
+        file(<String, Object?>{
+          'xx': one('xx-0003', <Map<String, Object?>>[
+            ask('example', ref: 'deadbeef'),
+          ]),
+        }),
+      );
+      final staleAsked = generateQuestions(two, queue: stale);
+      expect(
+        staleAsked.firstWhere((q) => q.kind == QuestionKind.builder).ref,
+        isNull,
+      );
     });
 
-    test('a builder answer is Yes or No, with no fixed reasons', () {
+    test('no question is made from any text of the card or the queue', () {
+      const prose = 'Should the note go? Is xx-0406 right?';
+      final prosy = <Deck>[
+        _deck('xx-en-deck', <Card>[
+          _card(
+            'xx-0002',
+            'quint',
+            native: prose,
+            reading: prose,
+            notes: const <CardNote>[
+              CardNote(id: '1', kind: NoteKind.usage, text: prose),
+            ],
+            examples: const <CardExample>[
+              CardExample(target: prose, native: prose),
+            ],
+          ),
+        ]),
+      ];
+      final queue = ReviewQueue.parse(
+        file(<String, Object?>{
+          'xx': one('xx-0002', <Map<String, Object?>>[
+            ask('note', concern: prose),
+            ask('example'),
+          ]),
+        }),
+      );
+      final builder = generateQuestions(
+        prosy,
+        queue: queue,
+      ).where((q) => q.kind == QuestionKind.builder).toList();
+      expect(_ids(builder), <String>[
+        'xx-0002|builder:note',
+        'xx-0002|builder:example',
+      ]);
+      // The id and the point are the card and the facet, nothing else.
+      for (final q in builder) {
+        expect(q.point, 'builder:${q.facet!.wire}');
+        expect(q.id, 'xx-0002|builder:${q.facet!.wire}');
+      }
+      // The old rows, which are prose, ask nothing.
+      final old = ReviewQueue.parse(
+        file(<String, Object?>{
+          'xx': <String, Object?>{
+            'cards': <String, Object?>{
+              'xx-0002': <Object?>[
+                <String, Object?>{'question': prose},
+              ],
+            },
+          },
+        }),
+      );
+      expect(
+        _ids(generateQuestions(prosy, queue: old)),
+        _ids(generateQuestions(prosy)),
+      );
+    });
+
+    test('the options of a builder question are its facet\'s pointer tags, '
+        'then something else', () {
+      const table = <String, List<String>>{
+        'word': <String>[
+          'spelling_wrong',
+          'unnatural_or_rare',
+          'wrong_register',
+          'offensive',
+          'something_else',
+        ],
+        'reading': <String>['reading_wrong', 'something_else'],
+        'ipa': <String>['ipa_wrong', 'something_else'],
+        'meaning': <String>[
+          'meaning_wrong',
+          'unnatural_or_rare',
+          'wrong_register',
+          'offensive',
+          'something_else',
+        ],
+        'example': <String>[
+          'spelling_wrong',
+          'unnatural_or_rare',
+          'wrong_register',
+          'offensive',
+          'example_wrong',
+          'something_else',
+        ],
+        'note': <String>['note_wrong', 'something_else'],
+        'unit': <String>['wrong_unit', 'something_else'],
+        'offence': <String>['offensive', 'something_else'],
+        'audio': <String>['audio_wrong', 'something_else'],
+      };
+      expect(table.keys.toSet(), <String>{
+        for (final f in Facet.values) f.wire,
+      });
+      for (final MapEntry(:key, :value) in table.entries) {
+        expect(builderOptions(Facet.fromWire(key)!), value, reason: key);
+        expect(
+          QuestionKind.builder.reasonsFor('builder:$key'),
+          value,
+          reason: key,
+        );
+      }
+      // An old point that names no facet has none; other kinds are as before.
+      expect(QuestionKind.builder.reasonsFor('builder:3f2a9c1d'), isEmpty);
+      expect(builderFacetOf('builder:ipa'), Facet.ipa);
+      expect(builderFacetOf('builder:3f2a9c1d'), isNull);
+      expect(builderFacetOf('meaning'), isNull);
+      expect(
+        QuestionKind.meaning.reasonsFor('meaning'),
+        QuestionKind.meaning.reasons,
+      );
       expect(QuestionKind.builder.answers, <QuestionAnswer>[
         QuestionAnswer.yes,
         QuestionAnswer.no,
       ]);
-      expect(QuestionKind.builder.reasons, isEmpty);
       expect(QuestionKind.parse('builder'), QuestionKind.builder);
+    });
+
+    test('an answer records yes, or no with an option of the facet only', () {
+      const q = ReviewQuestion(
+        language: 'xx',
+        card: 'xx-0002',
+        kind: QuestionKind.builder,
+        point: 'builder:ipa',
+        word: 'quint',
+        weakness: 0,
+        facet: Facet.ipa,
+      );
+      const day = '2026-11-22';
+      final no = const QuestionLog().answer(
+        q,
+        QuestionAnswer.no,
+        day,
+        reason: 'ipa_wrong',
+        why: '  the vowel is long ',
+      );
+      expect(no.answers[q.id]!.answer, QuestionAnswer.no);
+      expect(no.answers[q.id]!.reason, 'ipa_wrong');
+      expect(no.answers[q.id]!.why, 'the vowel is long');
+      // The mail's record: kind builder, point builder:<facet>.
+      final text = QuestionsFile.encode(
+        no.answers.values,
+        language: 'xx',
+        code: RaterCode.tryParse('FL-7K3M-Q9TD-6')!,
+        appVersion: '9.9.9',
+        made: DateTime.utc(2026, 11, 22, 8),
+      );
+      final sent =
+          (jsonDecode(text) as Map<String, Object?>)['answers']! as List;
+      expect(sent.single, <String, Object?>{
+        'card': 'xx-0002',
+        'point': 'builder:ipa',
+        'kind': 'builder',
+        'answer': 'no',
+        'reason': 'ipa_wrong',
+        'why': 'the vowel is long',
+      });
+      // An option of another facet is dropped, the answer kept.
+      final other = const QuestionLog().answer(
+        q,
+        QuestionAnswer.no,
+        day,
+        reason: 'note_wrong',
+      );
+      expect(other.answers[q.id]!.answer, QuestionAnswer.no);
+      expect(other.answers[q.id]!.reason, isNull);
+      final yes = const QuestionLog().answer(
+        q,
+        QuestionAnswer.yes,
+        day,
+        reason: 'ipa_wrong',
+        why: 'x',
+      );
+      expect(yes.answers[q.id]!.answer, QuestionAnswer.yes);
+      expect(yes.answers[q.id]!.reason, isNull);
+      expect(yes.answers[q.id]!.why, isEmpty);
     });
 
     test(
@@ -1161,7 +1397,7 @@ cards:
       () {
         final queue = ReviewQueue.parse(
           file(<String, Object?>{
-            'xx': rows(<String>['Is it m?']),
+            'xx': one('xx-0002', <Map<String, Object?>>[ask('meaning')]),
           }),
         );
         final signed = <Deck>[
@@ -1178,7 +1414,7 @@ cards:
               .where((id) => id.startsWith('xx-0002|')),
           isEmpty,
         );
-        final builderId = 'xx-0002|builder:${pointHash('Is it m?')}';
+        const builderId = 'xx-0002|builder:meaning';
         expect(
           _ids(
             generateQuestions(decks, queue: queue, skip: <String>{builderId}),
@@ -1192,55 +1428,96 @@ cards:
       const sentence = 'అమ్మ ఇక్కడ ఉంది';
       const reading = 'amma ikkaḍa undi';
       const translation = 'Meet your brother-in-law.';
+      const ipa = 'amːa';
+      const concern = 'the vowel length is a guess';
+
+      /// A one-card course for [code]: a word with its reading, IPA, a note
+      /// and two examples, in a unit of its own.
+      Map<String, String> course(
+        String code,
+        String iso,
+        String name,
+        String script, {
+        required String target,
+        required String reading,
+        required String native,
+        required String ipa,
+        required String note,
+        required List<(String, String, String)> examples,
+      }) {
+        final written = <String>[
+          for (final (t, r, n) in examples)
+            '{ target: "$t", reading: "$r", native: "$n" }',
+        ].join(', ');
+        return <String, String>{
+          'decks/$code/$code-en-review-words.yaml':
+              '''
+schema: 1
+id: $code-en-review-words
+name: "Family words"
+language: { code: $code, iso639_3: $iso, name: $name, script: $script }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+tags: [unreviewed]
+
+cards:
+  - { id: $code-9902, target: "$target", native: "$native", reading: "$reading", ipa: "$ipa", notes: "$note", examples: [$written] }
+''',
+          'decks/$code/$code-path.yaml':
+              '''
+schema: 1
+kind: path
+id: $code-path
+language: $code
+units:
+  - [$code-review-words]
+''',
+        };
+      }
 
       Future<AppState> openWith(
         WidgetTester tester, {
-        required List<String> questions,
+        required List<Map<String, Object?>> rows,
+        String code = 'te',
+        String card = plainCard,
+        Map<String, String>? files,
         ThemeMode themeMode = ThemeMode.light,
+        String? queueFile,
       }) async {
         usePhone(tester, textScale: 1.4);
-        final files = reviewCourse();
-        files['decks/te/$wordsDeck.yaml'] = files['decks/te/$wordsDeck.yaml']!
-            .replaceFirst(
-              'notes: "Also అమ్మా (ammā) when calling her."',
-              'notes: "Also అమ్మా (ammā) when calling her.", examples: '
-                  '[{ target: "$sentence", reading: "$reading", '
-                  'native: "$translation" }]',
-            );
+        final deckFiles = files ?? reviewCourse();
+        if (files == null) {
+          const words = 'decks/te/$wordsDeck.yaml';
+          deckFiles[words] = deckFiles[words]!.replaceFirst(
+            'notes: "Also అమ్మా (ammā) when calling her."',
+            'ipa: "$ipa", notes: "Also అమ్మా (ammā) when calling her.", '
+                'examples: [{ target: "$sentence", reading: "$reading", '
+                'native: "$translation" }]',
+          );
+        }
         final remote = FakeDeckRemote(<String, String>{
-          'decks/review-queue.json': jsonEncode(<String, Object?>{
-            'format': 'fluenough-review-queue',
-            'version': 1,
-            'languages': <String, Object?>{
-              'te': <String, Object?>{
-                'cards': <String, Object?>{
-                  plainCard: <Object?>[
-                    for (final q in questions) <String, Object?>{'question': q},
-                  ],
-                },
-              },
-            },
-          }),
+          'decks/review-queue.json':
+              queueFile ?? file(<String, Object?>{code: one(card, rows)}),
         });
         final downloads = DeckDownloads(
           fetcher: remote,
           files: MemoryDownloadedDecks(),
-          clock: () => DateTime(2026, 11, 14, 9),
+          clock: () => DateTime(2026, 11, 22, 9),
         );
         await downloads.open();
         addTearDown(downloads.dispose);
         await downloads.refreshReviewQueue();
         final state = AppState.test(
-          decks: MemoryDeckSource(files),
+          decks: MemoryDeckSource(deckFiles),
           deckDownloads: downloads,
           settings:
               SettingsNotifier(
-                  spokenLanguages: const <String>['en', 'te'],
-                  learningLanguages: const <String>['te'],
+                  spokenLanguages: <String>['en', code],
+                  learningLanguages: <String>[code],
                   learningChosen: true,
                 )
-                ..reviewLanguages = const <String>{'te'}
-                ..scriptsRead = const <String, bool>{'en': true, 'te': true},
+                ..reviewLanguages = <String>{code}
+                ..scriptsRead = <String, bool>{'en': true, code: true},
         );
         await state.load();
         state.reviewing.turnOn();
@@ -1262,41 +1539,69 @@ cards:
           scrollable: find.byType(Scrollable).first,
         );
         // Skip is the last control: bring it fully on screen, which brings
-        // Yes and No, above it, on screen too.
+        // the answers above it on screen too.
         await tester.ensureVisible(skip);
         await tester.pumpAndSettle();
       }
 
+      Future<void> tapVisible(WidgetTester tester, Finder target) async {
+        await tester.ensureVisible(target);
+        await tester.pumpAndSettle();
+        await tester.tap(target);
+        await tester.pumpAndSettle();
+      }
+
+      /// The bar that marks a part of the card as the one asked about.
+      Finder markOf(Finder text) => find.ancestor(
+        of: text,
+        matching: find.byWidgetPredicate(
+          (w) =>
+              w is DecoratedBox &&
+              w.decoration is BoxDecoration &&
+              (w.decoration as BoxDecoration).border is BorderDirectional,
+        ),
+      );
+
       for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
-        testWidgets('it shows the question as the heading and the whole '
-            'card, example sentence included, in $mode at 1.4x', (
+        testWidgets('it asks the fixed question, shows the whole card with '
+            'the IPA marked, and the concern as context, in $mode at 1.4x', (
           tester,
         ) async {
           await openWith(
             tester,
-            questions: <String>['Does the translation match the sentence?'],
+            rows: <Map<String, Object?>>[ask('ipa', concern: concern)],
             themeMode: mode,
           );
           final l10n = l10nOf(tester);
           expect(find.text(l10n.reviewBuilderQuestion), findsOneWidget);
-          expect(
-            find.text('Does the translation match the sentence?'),
-            findsOneWidget,
-          );
-          // The card, in full: word, reading, meaning, and the example's
-          // sentence, its reading and its translation.
+          expect(find.text(l10n.builderAskIpa), findsOneWidget);
+          expect(find.text('Is the IPA on this card correct?'), findsOneWidget);
+          // The card, in full: word, reading, IPA, meaning, note, and the
+          // example's sentence, its reading and its translation.
           expect(find.text('అమ్మ'), findsOneWidget);
           expect(find.text('amma'), findsOneWidget);
+          expect(find.text(ipa), findsOneWidget);
           expect(find.text('mother'), findsOneWidget);
+          expect(
+            find.text('Also అమ్మా (ammā) when calling her.'),
+            findsOneWidget,
+          );
           expect(find.text(l10n.reviewBuilderExamples), findsOneWidget);
           expect(find.text(sentence), findsOneWidget);
           expect(find.text(reading), findsOneWidget);
           expect(find.text(translation), findsOneWidget);
-          // One question, one pair of answers: no second question shares
-          // the Yes and No.
+          // Only the IPA is marked.
+          expect(markOf(find.text(ipa)), findsOneWidget);
+          expect(markOf(find.text('amma')), findsNothing);
+          expect(markOf(find.text('mother')), findsNothing);
+          expect(markOf(find.text(sentence)), findsNothing);
+          // The concern is one labelled line of context.
+          expect(find.text(l10n.builderAskConcern(concern)), findsOneWidget);
           await scrollToAnswers(tester);
-          expect(find.text(l10n.reviewQuestionYes), findsOneWidget);
-          expect(find.text(l10n.reviewQuestionNo), findsOneWidget);
+          expect(find.text(l10n.builderAskYes), findsOneWidget);
+          expect(find.text(l10n.builderAskNeedsChange), findsOneWidget);
+          expect(find.text(l10n.reviewQuestionYes), findsNothing);
+          expect(find.text(l10n.reviewQuestionNo), findsNothing);
           expect(
             find.text(l10n.reviewQuestionMeaning('అమ్మ (amma)')),
             findsNothing,
@@ -1305,22 +1610,277 @@ cards:
         });
       }
 
-      testWidgets('Yes answers the builder question alone: the card\'s own '
+      testWidgets('a concern is context only: shown as given under its '
+          'label, never as the question', (tester) async {
+        await openWith(
+          tester,
+          rows: <Map<String, Object?>>[
+            ask('meaning', concern: 'Is it m, or either?'),
+          ],
+        );
+        final l10n = l10nOf(tester);
+        expect(find.text('Is it m, or either?'), findsNothing);
+        expect(
+          find.text(l10n.builderAskConcern('Is it m, or either?')),
+          findsOneWidget,
+        );
+        expect(find.text(l10n.builderAskMeaning), findsOneWidget);
+        // The marked part is the meaning, whatever the concern says.
+        expect(markOf(find.text('mother')), findsOneWidget);
+      });
+
+      testWidgets('with no concern there is no context line', (tester) async {
+        await openWith(tester, rows: <Map<String, Object?>>[ask('meaning')]);
+        final l10n = l10nOf(tester);
+        expect(
+          find.textContaining('The deck builder was unsure'),
+          findsNothing,
+        );
+        expect(find.text(l10n.builderAskMeaning), findsOneWidget);
+      });
+
+      testWidgets('Yes records yes for the facet alone: the card\'s own '
           'questions come after it and are not answered by it', (tester) async {
         final state = await openWith(
           tester,
-          questions: <String>['Is the gender right?'],
+          rows: <Map<String, Object?>>[ask('meaning')],
         );
         final l10n = l10nOf(tester);
         await scrollToAnswers(tester);
-        await tester.tap(find.text(l10n.reviewQuestionYes));
+        await tester.tap(find.text(l10n.builderAskYes));
         await tester.pumpAndSettle();
         final answers = state.reviewing.questions.answers;
-        final builderId =
-            '$plainCard|builder:${pointHash('Is the gender right?')}';
-        expect(answers[builderId]!.answer, QuestionAnswer.yes);
-        expect(answers[builderId]!.kind, QuestionKind.builder);
+        final given = answers['$plainCard|builder:meaning']!;
+        expect(given.answer, QuestionAnswer.yes);
+        expect(given.kind, QuestionKind.builder);
+        expect(given.point, 'builder:meaning');
+        expect(given.reason, isNull);
         expect(answers.containsKey('$plainCard|meaning'), isFalse);
+        expect(find.text(l10n.builderAskMeaning), findsNothing);
+        expect(
+          find.text(l10n.reviewQuestionMeaning('విధవ (vidhava)')),
+          findsOneWidget,
+        );
+      });
+
+      testWidgets('Needs a change opens the facet\'s options, which must be '
+          'picked, and records no with that option', (tester) async {
+        final state = await openWith(
+          tester,
+          rows: <Map<String, Object?>>[ask('meaning')],
+        );
+        final l10n = l10nOf(tester);
+        await scrollToAnswers(tester);
+        await tester.tap(find.text(l10n.builderAskNeedsChange));
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.reviewQuestionWhyNo), findsOneWidget);
+        // The meaning facet's pointer tags, then Something else; no other.
+        for (final label in <String>[
+          l10n.reviewTagMeaningWrong,
+          l10n.reviewTagUnnaturalOrRare,
+          l10n.reviewTagWrongRegister,
+          l10n.reviewTagOffensive,
+          l10n.builderAskSomethingElse,
+        ]) {
+          expect(find.text(label), findsOneWidget, reason: label);
+        }
+        expect(find.text(l10n.reviewTagIpaWrong), findsNothing);
+        expect(find.text(l10n.reviewTagExampleWrong), findsNothing);
+        // Nothing is recorded, and Save waits for an option.
+        final save = find.widgetWithText(FilledButton, l10n.reviewQuestionSave);
+        await tester.ensureVisible(save);
+        await tester.pumpAndSettle();
+        expect(tester.widget<FilledButton>(save).onPressed, isNull);
+        expect(state.reviewing.questions.answers, isEmpty);
+        await tapVisible(tester, find.text(l10n.reviewTagMeaningWrong));
+        expect(tester.widget<FilledButton>(save).onPressed, isNotNull);
+        await tapVisible(tester, save);
+        final given =
+            state.reviewing.questions.answers['$plainCard|builder:meaning']!;
+        expect(given.answer, QuestionAnswer.no);
+        expect(given.reason, 'meaning_wrong');
+        expect(given.why, isEmpty);
+        expect(given.kind, QuestionKind.builder);
+        // The mail's record is the plan's.
+        final text = QuestionsFile.encode(
+          state.reviewing.unsentAnswers,
+          language: 'te',
+          code: RaterCode.tryParse(reviewerCode)!,
+          appVersion: '9.9.9',
+          made: DateTime.utc(2026, 11, 22, 8),
+        );
+        final sent =
+            (jsonDecode(text) as Map<String, Object?>)['answers']! as List;
+        expect(sent.single, <String, Object?>{
+          'card': plainCard,
+          'point': 'builder:meaning',
+          'kind': 'builder',
+          'answer': 'no',
+          'reason': 'meaning_wrong',
+        });
+        expect(find.text(l10n.builderAskMeaning), findsNothing);
+      });
+
+      testWidgets('Something else, with a line of why, records both', (
+        tester,
+      ) async {
+        final state = await openWith(
+          tester,
+          rows: <Map<String, Object?>>[ask('word')],
+        );
+        final l10n = l10nOf(tester);
+        await scrollToAnswers(tester);
+        await tester.tap(find.text(l10n.builderAskNeedsChange));
+        await tester.pumpAndSettle();
+        await tapVisible(tester, find.text(l10n.builderAskSomethingElse));
+        await tester.enterText(find.byType(TextField), 'It is the plural');
+        await tester.pumpAndSettle();
+        await tapVisible(tester, find.text(l10n.reviewQuestionSave));
+        final given =
+            state.reviewing.questions.answers['$plainCard|builder:word']!;
+        expect(given.answer, QuestionAnswer.no);
+        expect(given.reason, 'something_else');
+        expect(given.why, 'It is the plural');
+      });
+
+      testWidgets('closing the sheet records nothing, and Skip puts the '
+          'question off', (tester) async {
+        final state = await openWith(
+          tester,
+          rows: <Map<String, Object?>>[ask('meaning')],
+        );
+        final l10n = l10nOf(tester);
+        await scrollToAnswers(tester);
+        await tester.tap(find.text(l10n.builderAskNeedsChange));
+        await tester.pumpAndSettle();
+        Navigator.of(tester.element(find.text(l10n.reviewQuestionWhyNo))).pop();
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.reviewQuestionWhyNo), findsNothing);
+        expect(state.reviewing.questions.answers, isEmpty);
+        expect(find.text(l10n.builderAskMeaning), findsOneWidget);
+        await scrollToAnswers(tester);
+        await tester.tap(find.text(l10n.reviewQuestionSkip));
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.builderAskMeaning), findsNothing);
+        expect(state.reviewing.questions.answers, isEmpty);
+      });
+
+      testWidgets('the offence facet shows its option as the rating not '
+          'fitting, and the key stays offensive', (tester) async {
+        await openWith(tester, rows: <Map<String, Object?>>[ask('meaning')]);
+        final l10n = l10nOf(tester);
+        expect(
+          builderOptionLabel(l10n, Facet.offenceRating, 'offensive'),
+          l10n.builderAskOffenceOption,
+        );
+        expect(l10n.builderAskOffenceOption, 'The rating does not fit');
+        expect(
+          builderOptionLabel(l10n, Facet.word, 'offensive'),
+          l10n.reviewTagOffensive,
+        );
+        expect(
+          builderOptionLabel(l10n, Facet.offenceRating, 'something_else'),
+          l10n.builderAskSomethingElse,
+        );
+        expect(builderOptions(Facet.offenceRating), <String>[
+          'offensive',
+          'something_else',
+        ]);
+      });
+
+      for (final (code, iso, name, script, mode)
+          in <(String, String, String, String, ThemeMode)>[
+            ('hi', 'hin', 'Hindustani', 'devanagari', ThemeMode.light),
+            ('bn', 'ben', 'Bengali', 'bengali', ThemeMode.dark),
+          ]) {
+        testWidgets('a $name card: the reading, then one example alone, '
+            'are marked in $mode at 1.4x', (tester) async {
+          final hindi = code == 'hi';
+          final target = hindi ? 'माँ' : 'মা';
+          final cardReading = hindi ? 'mā̃' : 'mā';
+          final first = hindi ? 'माँ घर पर है' : 'মা বাড়িতে আছেন';
+          final second = hindi ? 'मेरी माँ डॉक्टर है' : 'আমার মা ডাক্তার';
+          final files = course(
+            code,
+            iso,
+            name,
+            script,
+            target: target,
+            reading: cardReading,
+            native: 'mother',
+            ipa: hindi ? 'mɑ̃ː' : 'ma',
+            note: 'Also used for a respected woman.',
+            examples: <(String, String, String)>[
+              (first, 'first reading', 'Mother is at home.'),
+              (second, 'second reading', 'My mother is a doctor.'),
+            ],
+          );
+          final state = await openWith(
+            tester,
+            code: code,
+            card: '$code-9902',
+            files: files,
+            themeMode: mode,
+            rows: <Map<String, Object?>>[
+              ask('reading', concern: 'the nasal mark is a guess'),
+              ask('example', ref: pointHash(second)),
+            ],
+          );
+          final l10n = l10nOf(tester);
+          expect(find.text(l10n.builderAskReading), findsOneWidget);
+          expect(find.text(target), findsOneWidget);
+          expect(find.text(cardReading), findsOneWidget);
+          expect(find.text('mother'), findsOneWidget);
+          expect(find.text(first), findsOneWidget);
+          expect(find.text(second), findsOneWidget);
+          expect(markOf(find.text(cardReading)), findsOneWidget);
+          expect(markOf(find.text(target)), findsNothing);
+          expect(markOf(find.text(first)), findsNothing);
+          expect(
+            find.text(l10n.builderAskConcern('the nasal mark is a guess')),
+            findsOneWidget,
+          );
+          await scrollToAnswers(tester);
+          await tester.tap(find.text(l10n.builderAskYes));
+          await tester.pumpAndSettle();
+          expect(
+            state
+                .reviewing
+                .questions
+                .answers['$code-9902|builder:reading']!
+                .answer,
+            QuestionAnswer.yes,
+          );
+          // The next doubt: the one example the ref names is marked, not
+          // the other.
+          expect(find.text(l10n.builderAskExample), findsOneWidget);
+          expect(markOf(find.text(second)), findsOneWidget);
+          expect(markOf(find.text(first)), findsNothing);
+          expect(markOf(find.text(cardReading)), findsNothing);
+          expect(
+            find.textContaining('The deck builder was unsure'),
+            findsNothing,
+          );
+          expect(tester.takeException(), isNull);
+        });
+      }
+
+      testWidgets('the old free-text rows ask nothing', (tester) async {
+        await openWith(
+          tester,
+          rows: const <Map<String, Object?>>[],
+          queueFile: file(<String, Object?>{
+            'te': <String, Object?>{
+              'cards': <String, Object?>{
+                plainCard: <Object?>[
+                  <String, Object?>{'question': 'Is the gender right?'},
+                ],
+              },
+            },
+          }),
+        );
+        final l10n = l10nOf(tester);
+        expect(find.text(l10n.reviewBuilderQuestion), findsNothing);
         expect(find.text('Is the gender right?'), findsNothing);
         expect(
           find.text(l10n.reviewQuestionMeaning('విధవ (vidhava)')),
@@ -1328,70 +1888,41 @@ cards:
         );
       });
 
-      testWidgets('a No on a builder question is recorded at once, with no '
-          'reason sheet', (tester) async {
-        final state = await openWith(
-          tester,
-          questions: <String>['Is the gender right?'],
-        );
-        final l10n = l10nOf(tester);
-        await scrollToAnswers(tester);
-        await tester.tap(find.text(l10n.reviewQuestionNo));
-        await tester.pumpAndSettle();
-        expect(find.text(l10n.reviewQuestionWhyNo), findsNothing);
-        expect(
-          state
-              .reviewing
-              .questions
-              .answers['$plainCard|builder:${pointHash('Is the gender right?')}']!
-              .answer,
-          QuestionAnswer.no,
-        );
-      });
-
-      testWidgets('a row that is not a question is not offered', (
-        tester,
-      ) async {
+      testWidgets('no count, quorum or other reviewers\' answers are shown '
+          'on a builder question or in its strings', (tester) async {
         await openWith(
           tester,
-          questions: <String>[
-            'Source unverified',
-            'Death year uncertain: 1 or 2',
-          ],
+          rows: <Map<String, Object?>>[ask('meaning', concern: 'a gloss')],
         );
         final l10n = l10nOf(tester);
-        expect(find.text(l10n.reviewBuilderQuestion), findsNothing);
-        expect(find.text('Source unverified'), findsNothing);
-        expect(
-          find.text(l10n.reviewQuestionMeaning('విధవ (vidhava)')),
-          findsOneWidget,
+        final hidden = RegExp(
+          r'quorum|agree|other reviewers|answered by|\bvotes?\b|'
+          r'\bchecked by\b',
+          caseSensitive: false,
         );
+        final shown = <String>[
+          for (final w in tester.widgetList<Text>(find.byType(Text)))
+            if (w.data != null) w.data!,
+        ];
+        expect(shown, isNotEmpty);
+        for (final text in shown) {
+          expect(hidden.hasMatch(text), isFalse, reason: text);
+        }
+        await scrollToAnswers(tester);
+        await tester.tap(find.text(l10n.builderAskNeedsChange));
+        await tester.pumpAndSettle();
+        for (final w in tester.widgetList<Text>(find.byType(Text))) {
+          expect(hidden.hasMatch(w.data ?? ''), isFalse, reason: w.data);
+        }
+        final arb = jsonDecode(
+          File('lib/l10n/app_en.arb').readAsStringSync(),
+        ) as Map<String, Object?>;
+        for (final MapEntry(:key, :value) in arb.entries) {
+          if (key.startsWith('builderAsk')) {
+            expect(hidden.hasMatch('$value'), isFalse, reason: key);
+          }
+        }
       });
     });
-
-    for (final brightness in Brightness.values) {
-      testWidgets('the note is labelled, in $brightness at 1.4x', (
-        tester,
-      ) async {
-        await tester.pumpWidget(
-          MaterialApp(
-            theme: ThemeData(brightness: brightness),
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
-            supportedLocales: AppLocalizations.supportedLocales,
-            builder: (context, child) => MediaQuery(
-              data: MediaQuery.of(context)
-                  .copyWith(textScaler: const TextScaler.linear(1.4)),
-              child: child!,
-            ),
-            home: const Scaffold(
-              body: BuilderNote(questions: <String>['Is it m, or either?']),
-            ),
-          ),
-        );
-        expect(find.text('Question from the deck builder'), findsOneWidget);
-        expect(find.text('Is it m, or either?'), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      });
-    }
   });
 }

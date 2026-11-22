@@ -53,6 +53,29 @@ abstract final class DailyBudget {
   /// New words kept in a day while the backlog is small enough.
   static const int newSlots = 3;
 
+  /// The most script words a day teaches while the learner is catching up
+  /// on reviews: a script they cannot read yet is never held back by a
+  /// backlog (wiki, Plan-Today-Backlog). Tunable.
+  static const int catchUpScriptWords = 5;
+
+  /// The new skills of words already taught that a day introduces, so that
+  /// a word placement credited in one skill gets its others a few a day,
+  /// never all at once: a fifth of the day's [dayCards], at least
+  /// [newSlots] (wiki, Plan-Today-Backlog). Tunable.
+  static int newPairsPerDay(int dayCards) => max(newSlots, dayCards ~/ 5);
+
+  /// The new skills kept a place in a round even when due reviews would fill
+  /// it: a third of [newPairsPerDay], rounded up, so that they never wait
+  /// for ever (wiki, Plan-Today-Backlog).
+  static int newPairsMinPerDay(int dayCards) =>
+      (newPairsPerDay(dayCards) + 2) ~/ 3;
+
+  /// Whether [due] reviews are a backlog of more than [backlogDays] days of
+  /// [dayCards]: catching up. Only reviews that are due count, never the
+  /// skills of a taught word not yet asked (wiki, Plan-Today-Backlog).
+  static bool isCatchingUp(int due, int dayCards) =>
+      due > backlogDays * dayCards;
+
   /// A backlog of more than this many days of budget is catching up: reviews
   /// only.
   static const int backlogDays = 3;
@@ -102,7 +125,7 @@ abstract final class DailyBudget {
   /// it, so Keep going cannot flood the learner with new words.
   static int keepGoingNewCap({required int due, required int dayCards}) {
     final int extra;
-    if (due > backlogDays * dayCards) {
+    if (isCatchingUp(due, dayCards)) {
       extra = 0;
     } else if (due > dayCards) {
       extra = keepGoingNewExtraBusy;
@@ -169,7 +192,7 @@ abstract final class DailyBudget {
   }) {
     final spend = budget < 0 ? 0 : budget;
     final day = dayBudget ?? spend;
-    final catching = due > backlogDays * day;
+    final catching = isCatchingUp(due, day);
     if (catching) {
       return DailySplit(
         reviews: due < spend ? due : spend,
