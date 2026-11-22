@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Every script you know or learn shows on a card.** A word shows in the script you are learning, with its spelling in each other script you can already read in smaller type beneath it.
 - **Builder questions ask about one detail of a card.** Reviewers now see the same plain question, such as "Is the IPA on this card correct?", with that detail marked on the card, and answer Yes or Needs a change and pick what is wrong from a short list.
 
 ## [0.12.0] - 2026-11-22
