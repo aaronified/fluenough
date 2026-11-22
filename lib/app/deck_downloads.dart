@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:isolate';
 import 'dart:math';
 
 import 'package:flutter/foundation.dart';
@@ -18,6 +19,68 @@ import 'fair_slots.dart';
 import 'media_image_cache.dart';
 import 'script_fonts.dart';
 import 'startup_marks.dart';
+
+/// A downloaded deck file to check: its path and bytes. Plain data, so that a
+/// batch crosses to an isolate.
+typedef DeckFileBytes = ({String path, Uint8List bytes});
+
+/// What is wrong with a downloaded file: its path, what is wrong with it, and
+/// whether it was not UTF-8 at all.
+typedef DeckFileProblem = ({String path, String message, bool notUtf8});
+
+/// Checks [files] in order, as [DeckCatalog.checkFile] reads a download
+/// (UTF-8, then the whole parse of its `kind`), and returns the first
+/// problem, or null when every file is good. Pure: it runs on any isolate.
+DeckFileProblem? checkDeckBatch(List<DeckFileBytes> files) {
+  for (final file in files) {
+    final String text;
+    try {
+      text = utf8.decode(file.bytes);
+    } on FormatException {
+      return (path: file.path, message: 'not UTF-8', notUtf8: true);
+    }
+    final problem = DeckCatalog.checkFile(file.path, text);
+    if (problem != null) {
+      return (path: file.path, message: problem, notUtf8: false);
+    }
+  }
+  return null;
+}
+
+/// Checks a batch of downloaded files somewhere ([checkDeckBatch]).
+typedef DeckBatchCheck =
+    Future<DeckFileProblem?> Function(List<DeckFileBytes> files);
+
+/// [checkDeckBatch] on the calling isolate: for tests.
+Future<DeckFileProblem?> checkBatchInPlace(List<DeckFileBytes> files) async =>
+    checkDeckBatch(files);
+
+/// [checkDeckBatch] on an isolate of its own, so that parsing every file of a
+/// download never holds the UI isolate (#1699). Where an isolate cannot run it
+/// checks in place, with the same result.
+Future<DeckFileProblem?> checkBatchInIsolate(List<DeckFileBytes> files) async {
+  try {
+    return await Isolate.run(() => checkDeckBatch(files));
+  } catch (_) {
+    return checkDeckBatch(files);
+  }
+}
+
+/// How large a file is, in bytes, before its hash is worked out on an
+/// isolate: under it the isolate costs more than the hash.
+const int isolateHashBytes = 32 * 1024;
+
+/// The SHA-256 of [bytes] on an isolate of its own when they are large, in
+/// place otherwise or where no isolate can run.
+Future<String> sha256InIsolate(List<int> bytes) async {
+  if (bytes.length < isolateHashBytes) return sha256Hex(bytes);
+  try {
+    final data = bytes is Uint8List ? bytes : Uint8List.fromList(bytes);
+    return await Isolate.run(() => sha256Hex(data));
+  } catch (_) {
+    return sha256Hex(bytes);
+  }
+}
 
 /// Why a language's decks could not be downloaded (ADR-0037).
 enum DeckDownloadFailure {
@@ -141,6 +204,8 @@ class DeckDownloads extends ChangeNotifier {
       Duration(seconds: 3),
     ],
     this.marks,
+    this.batchCheck,
+    this.hasher,
   }) : fonts = scriptFonts ?? ScriptFonts(),
        images = images ?? MediaImageCache();
 
@@ -184,6 +249,28 @@ class DeckDownloads extends ChangeNotifier {
 
   /// Start-up and update timing marks (#1699), or null (tests).
   final StartupMarks? marks;
+
+  /// Checks the files of a download as a batch, off the UI isolate (the app
+  /// gives [checkBatchInIsolate]). Null checks them one by one in place with
+  /// [check], as tests do.
+  final DeckBatchCheck? batchCheck;
+
+  /// Works out a download's SHA-256 off the UI isolate (the app gives
+  /// [sha256InIsolate]). Null hashes in place.
+  final Future<String> Function(List<int> bytes)? hasher;
+
+  // Progress notifications are kept to one per [progressNotifyMs], however
+  // many files arrive: the UI redraws the bar, not once per file.
+  static const int progressNotifyMs = 100;
+  final Stopwatch _progressClock = Stopwatch()..start();
+  int _lastProgressNotify = -progressNotifyMs;
+
+  void _notifyProgress() {
+    final now = _progressClock.elapsedMilliseconds;
+    if (now - _lastProgressNotify < progressNotifyMs) return;
+    _lastProgressNotify = now;
+    _notify();
+  }
 
   /// Why the files last changed, for the log of the reload that follows.
   String changeCause = 'files downloaded';
@@ -1238,7 +1325,7 @@ class DeckDownloads extends ChangeNotifier {
             bytes: bytes,
             totalBytes: totalBytes,
           );
-          _notify();
+          _notifyProgress();
         }, cancellable: true);
         if (result.failure case final failure?) {
           return _failed(language, failure);
@@ -1488,7 +1575,8 @@ class DeckDownloads extends ChangeNotifier {
         return (bytes: null, failure: _failureOf(fetched.failure!));
       }
       final shaWatch = Stopwatch()..start();
-      final hash = sha256Hex(bytes);
+      final hasher = this.hasher;
+      final hash = hasher == null ? sha256Hex(bytes) : await hasher(bytes);
       _shaMs += shaWatch.elapsedMilliseconds;
       if (bytes.length == file.size && hash == file.sha256) {
         return (bytes: bytes, failure: null);
@@ -1585,21 +1673,42 @@ class DeckDownloads extends ChangeNotifier {
     Map<IndexFile, List<int>> got,
     List<String> remove,
   ) async {
-    for (final MapEntry(key: file, value: bytes) in got.entries) {
-      // A recording or an image is checked by its hash alone: it is not
-      // a deck, and is never read as one.
-      if (file.isMedia) continue;
-      final String text;
-      try {
-        text = utf8.decode(bytes);
-      } on FormatException {
-        _log?.warning('Downloaded deck is not UTF-8: ${file.path}');
+    // A recording or an image is checked by its hash alone: it is not
+    // a deck, and is never read as one.
+    final batchCheck = this.batchCheck;
+    if (batchCheck != null) {
+      // The whole parse of every file, in one job on an isolate (#1699).
+      final found = await batchCheck(<DeckFileBytes>[
+        for (final MapEntry(key: file, value: bytes) in got.entries)
+          if (!file.isMedia)
+            (
+              path: file.path,
+              bytes: bytes is Uint8List ? bytes : Uint8List.fromList(bytes),
+            ),
+      ]);
+      if (found != null) {
+        if (found.notUtf8) {
+          _log?.warning('Downloaded deck is not UTF-8: ${found.path}');
+        } else {
+          _log?.warning('Downloaded deck failed its check: ${found.message}');
+        }
         return DeckDownloadFailure.invalid;
       }
-      final problem = check(file.path, text);
-      if (problem != null) {
-        _log?.warning('Downloaded deck failed its check: $problem');
-        return DeckDownloadFailure.invalid;
+    } else {
+      for (final MapEntry(key: file, value: bytes) in got.entries) {
+        if (file.isMedia) continue;
+        final String text;
+        try {
+          text = utf8.decode(bytes);
+        } on FormatException {
+          _log?.warning('Downloaded deck is not UTF-8: ${file.path}');
+          return DeckDownloadFailure.invalid;
+        }
+        final problem = check(file.path, text);
+        if (problem != null) {
+          _log?.warning('Downloaded deck failed its check: $problem');
+          return DeckDownloadFailure.invalid;
+        }
       }
     }
     try {
@@ -1835,7 +1944,7 @@ class DeckDownloads extends ChangeNotifier {
           bytes: bytes,
           totalBytes: totalBytes,
         );
-        _notify();
+        _notifyProgress();
       });
       if (result.failure case final failure?) {
         return _failed(language, failure);

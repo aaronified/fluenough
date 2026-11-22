@@ -101,6 +101,10 @@ Future<void> main() async {
     clock: DateTime.now,
     log: log,
     marks: marks,
+    // A download's hashes and checks run on isolates, not the UI one
+    // (#1699).
+    batchCheck: checkBatchInIsolate,
+    hasher: sha256InIsolate,
     // The culture pictures, as binary files (not in the deck files: they
     // are fetched on demand and pruned with their course).
     images: MediaImageCache(
