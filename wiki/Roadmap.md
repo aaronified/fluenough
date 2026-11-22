@@ -6,6 +6,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Released
 
+- **v0.12.0**
 - **v0.11.3**
 - **v0.11.2**
 - **v0.11.1**
@@ -369,6 +370,7 @@ A plan with no tracking issue is flagged.
 - [hands-free audio drills](https://github.com/aaronified/fluenough/wiki/Plan-Audio-Drills) (Written 2026-10-05), tracks #224
 - [a B1 plan in every path](https://github.com/aaronified/fluenough/wiki/Plan-B1-Plans) (Written 2026-10-06), **no tracking issue**
 - [books, films and songs you bring, with questions on them](https://github.com/aaronified/fluenough/wiki/Plan-Books-Films-Songs) (Written 2026-10-06), tracks #215
+- [builder questions v2 (one fixed question per facet)](https://github.com/aaronified/fluenough/wiki/Plan-Builder-Questions-V2) (Written 2026-11-22), **no tracking issue**
 - [Assamese genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Assamese), **no tracking issue**
 - [Bengali genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Bengali), **no tracking issue**
 - [Mandarin Chinese genre decks, verified sourcing list (culture, proverbs and chengyu, multi-word families, recommendations, creators)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Chinese), **no tracking issue**
