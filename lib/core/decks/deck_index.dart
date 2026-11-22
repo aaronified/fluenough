@@ -326,8 +326,17 @@ class IndexShelf {
   String toString() => 'IndexShelf(${file.path}, $genre)';
 }
 
-/// A creator's image in the index (`shared_media`): downloaded on demand when
-/// a creator is shown, checked by its hash alone, never as a deck.
+/// The folders a `shared_media` entry may be in: a creator's portrait and a
+/// work's poster or cover (wiki/Plan-Culture-Media.md, ADR-0060). Any other
+/// path is passed by.
+const List<String> sharedMediaFolders = <String>[
+  'decks/creators/images/',
+  'decks/recommendations/images/',
+];
+
+/// A culture picture in the index (`shared_media`): a creator's portrait or
+/// a work's poster, downloaded on demand when it is shown, checked by its
+/// hash alone, never as a deck.
 class SharedMediaFile {
   const SharedMediaFile({
     required this.path,
@@ -335,6 +344,7 @@ class SharedMediaFile {
     required this.sha256,
     required this.kind,
     this.language,
+    this.minApp,
   });
 
   final String path;
@@ -344,18 +354,24 @@ class SharedMediaFile {
   /// `image`.
   final String kind;
 
-  /// The language whose creator it shows.
+  /// The language whose creator or work it shows.
   final String? language;
 
+  /// The oldest app that shows it (a work's poster carries one), or null for
+  /// any app.
+  final String? minApp;
+
   /// [json] as a media entry, or null for one that is not (the caller logs
-  /// it).
-  static SharedMediaFile? tryParse(Object? json) {
+  /// it). With [appVersion], an entry whose `min_app` is newer than the app
+  /// is not an entry either: it is skipped, so that it is never downloaded
+  /// for an app that cannot show it.
+  static SharedMediaFile? tryParse(Object? json, {String? appVersion}) {
     if (json is! Map) return null;
     final path = json['path'];
     final size = json['size'];
     final sha = json['sha256'];
     if (path is! String ||
-        !path.startsWith('decks/creators/images/') ||
+        !sharedMediaFolders.any(path.startsWith) ||
         path.contains('..') ||
         size is! int ||
         size <= 0 ||
@@ -363,6 +379,8 @@ class SharedMediaFile {
         !_hex64.hasMatch(sha)) {
       return null;
     }
+    final minApp = cleanMinApp(json['min_app']);
+    if (appVersion != null && appIsOlderThan(appVersion, minApp)) return null;
     final kind = json['kind'];
     final language = json['language'];
     return SharedMediaFile(
@@ -371,6 +389,7 @@ class SharedMediaFile {
       sha256: sha,
       kind: kind is String ? kind : 'image',
       language: language is String ? language : null,
+      minApp: minApp,
     );
   }
 }
@@ -955,9 +974,17 @@ class DeckIndex {
       mediaProblems.add('the shared_media list of the index is not a list');
     }
     for (final item in _list(rawMedia)) {
-      final file = SharedMediaFile.tryParse(item);
+      final file = SharedMediaFile.tryParse(item, appVersion: appVersion);
       if (file == null) {
-        mediaProblems.add('a shared_media entry was left out');
+        // One that needs a newer app is passed by quietly: nothing is wrong.
+        if (_needsNewerApp(item, appVersion)) {
+          mediaProblems.add(
+            'a shared_media entry needs a newer app, skipped: '
+            '${(item as Map)['path']}',
+          );
+        } else {
+          mediaProblems.add('a shared_media entry was left out');
+        }
       } else {
         media.add(file);
       }
@@ -971,6 +998,13 @@ class DeckIndex {
     );
   }
 }
+
+/// Whether [item], a `shared_media` entry, asks for an app newer than
+/// [appVersion].
+bool _needsNewerApp(Object? item, String? appVersion) =>
+    appVersion != null &&
+    item is Map &&
+    appIsOlderThan(appVersion, cleanMinApp(item['min_app']));
 
 /// The index is of a format later than this app reads: the app needs an
 /// update before it can download decks.

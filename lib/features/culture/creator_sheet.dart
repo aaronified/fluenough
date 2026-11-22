@@ -8,6 +8,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/target_text.dart';
 import 'culture_parts.dart';
+import 'culture_picture.dart';
 import 'culture_timeline.dart';
 
 /// The creator card as a bottom sheet (approved mockup `culture-in-course`,
@@ -60,7 +61,12 @@ class CreatorCard extends StatelessWidget {
     final bioTarget = creator.bioTargetFull;
     final legacy = creator.legacyFor(spoken);
     final image = creator.image;
-    final licenceUrl = image?.licenceUrl ?? image?.sourceUrl;
+    // No picture, no caption: the person icon stands alone. A picture the
+    // "Show pictures" switch hides has no caption either.
+    final credit = state.settings.cultureFor(language).pictures
+        ? cultureImageCredit(l10n, image)
+        : null;
+    final licenceUrl = credit == null ? null : cultureImageLink(image);
     return SafeArea(
       top: false,
       child: SingleChildScrollView(
@@ -76,15 +82,18 @@ class CreatorCard extends StatelessWidget {
                 file: file,
                 size: 96,
                 large: true,
+                zoomable: true,
               ),
             ),
-            const SizedBox(height: 8),
-            Text(
-              cultureImageCredit(l10n, creator),
-              style: theme.textTheme.bodySmall!.copyWith(
-                color: scheme.onSurfaceVariant,
+            if (credit != null) ...<Widget>[
+              const SizedBox(height: 8),
+              Text(
+                credit,
+                style: theme.textTheme.bodySmall!.copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
-            ),
+            ],
             if (licenceUrl != null)
               Align(
                 alignment: AlignmentDirectional.centerStart,

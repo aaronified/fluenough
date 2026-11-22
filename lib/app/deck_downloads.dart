@@ -1676,6 +1676,43 @@ class DeckDownloads extends ChangeNotifier {
     }
   }
 
+  /// The culture pictures (portraits and posters) the index lists for
+  /// [language], empty until the index is known.
+  List<SharedMediaFile> picturesOf(String language) => <SharedMediaFile>[
+    for (final media in _index?.sharedMedia ?? const <SharedMediaFile>[])
+      if (media.language == language) media,
+  ];
+
+  /// Downloads every culture picture of [language] that is not on the phone
+  /// yet, one at a time, so that they show offline ("Download pictures",
+  /// wiki/Plan-Culture-Media.md). [onProgress] hears the pictures done and
+  /// the total after each. Returns how many could not be fetched; a failed
+  /// one is logged and costs only itself. Never throws.
+  Future<int> downloadPictures(
+    String language, {
+    void Function(int done, int total)? onProgress,
+  }) async {
+    var failed = 0;
+    try {
+      if (_index == null && !await ensureIndex()) return 0;
+      final listed = picturesOf(language);
+      onProgress?.call(0, listed.length);
+      for (final (i, media) in listed.indexed) {
+        try {
+          if (await creatorImage(media.path) == null) failed++;
+        } on Object catch (e, stack) {
+          failed++;
+          _log?.error('Picture ${media.path} could not be loaded: $e\n$stack');
+        }
+        onProgress?.call(i + 1, listed.length);
+      }
+    } on Object catch (e, stack) {
+      _log?.error('Pictures of $language could not be downloaded: $e\n$stack');
+      failed++;
+    }
+    return failed;
+  }
+
   /// Deletes the kept pictures [index] does not list: orphans of a removal
   /// that ran before the index was known.
   Future<void> _pruneImages(DeckIndex index) => images.prune(<String>{
