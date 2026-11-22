@@ -48,7 +48,7 @@ class IndexCheck(unittest.TestCase):
         (self.tmp / "tools").mkdir()
         shutil.copy(VALIDATOR, self.tmp / "tools" / "validate_decks.py")
         shutil.copy(INDEXER, self.tmp / "tools" / "deck_index.py")
-        for name in ("rater_codes.py", "offensive_alikes.py", "pick_warning.py",
+        for name in ("rater_codes.py", "script_coverage.py", "offensive_alikes.py", "pick_warning.py",
                      "pirate_hosts.txt", "review_facets.py", "review_quorum.py"):
             shutil.copy(REPO / "tools" / name, self.tmp / "tools" / name)
 

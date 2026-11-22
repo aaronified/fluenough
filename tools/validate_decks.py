@@ -38,6 +38,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from rater_codes import rater_code  # noqa: E402
 import review_facets  # noqa: E402
+import script_coverage  # noqa: E402
 
 try:
     import yaml
@@ -1008,6 +1009,10 @@ class Report:
     audio_bytes: dict[str, int] = field(default_factory=dict)
     # Each noun card's gender, or None without one: (gender, where) (#512).
     noun_genders: list[tuple[str | None, str]] = field(default_factory=list)
+    # A multi-script language's cards, for the informational script coverage
+    # report: (language code, its scripts, cards with a target, cards by the
+    # script of each `target_scripts` spelling). Never an error.
+    script_cards: tuple[str, list[str], int, dict[str, int]] | None = None
     # A layer: the ids of its core's cards and refs whose entry gives native.
     translated: set[str] | None = None
     # A core: the ids of its cards and refs, in order, each marked written.
@@ -3605,6 +3610,7 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
             for i, card in enumerate(cards):
                 check_card(r, i, card, seen, script, code if _is_str(code) else "xx",
                            scripts=_scripts_of(lang))
+            r.script_cards = script_coverage.count_cards(lang, cards)
             if r.number_taught is not None:
                 r.number_taught[1].update(
                     w for d in r.card_defs.values() for t in d.words for w in t.split())
@@ -4348,6 +4354,7 @@ def validate_core(r: Report, raw: dict, path: Path) -> None:
                 else:
                     check_card(r, i, card, seen, script, lc, form="core",
                                scripts=_scripts_of(lang))
+            r.script_cards = script_coverage.count_cards(lang, cards)
             r.core_cards = [(cid, c.written) for cid, c in _core_index(raw, lc).items()]
     elif kind == "grammar":
         if "pattern" not in raw:
@@ -9851,6 +9858,10 @@ def main(argv: list[str]) -> int:
         # Infos never change the exit code or the count of valid decks.
         for i in rep.infos:
             print(f"  info    {i}")
+
+    # Informational only: never changes the exit code.
+    for line in script_coverage.report_lines(reports):
+        print(line)
 
     if show_audio:
         print()
