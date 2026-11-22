@@ -97,6 +97,7 @@ Future<void> main() async {
   final downloaded = FileDownloadedDecks(
     Directory('${files.path}/downloaded'),
     parseOffUi: true,
+    onFallback: log.warning,
   );
   final deckDownloads = DeckDownloads(
     fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),

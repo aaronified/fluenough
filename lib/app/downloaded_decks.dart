@@ -78,7 +78,14 @@ abstract interface class DownloadedDecks implements DeckSource, CardMedia {
 class FileDownloadedDecks implements DownloadedDecks {
   /// With [parseOffUi], the manifest, a few megabytes of JSON, is parsed on an
   /// isolate (#1699); the app says so, tests parse in place.
-  FileDownloadedDecks(this.directory, {this.parseOffUi = false});
+  FileDownloadedDecks(
+    this.directory, {
+    this.parseOffUi = false,
+    this.onFallback,
+  });
+
+  /// Told when parsing on an isolate fell back to the UI isolate.
+  final void Function(String message)? onFallback;
 
   final Directory directory;
 
@@ -124,7 +131,7 @@ class FileDownloadedDecks implements DownloadedDecks {
     if (text != null) {
       try {
         final index = parseOffUi
-            ? await parseIndexInIsolate(text)
+            ? await parseIndexInIsolate(text, onFallback: onFallback)
             : DeckIndex.parse(text);
         files.addAll(index.filesByPath);
       } on Object {

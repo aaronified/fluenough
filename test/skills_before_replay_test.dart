@@ -4,6 +4,8 @@
 // isolate's runner and gives the setter's result, and a snapshot made under
 // another map is never used.
 
+import 'dart:async';
+
 import 'package:drift/native.dart';
 import 'package:fluenough/app/database_progress.dart';
 import 'package:fluenough/app/memory_progress.dart';
@@ -140,6 +142,22 @@ void main() {
       expect(MemoryProgress.replaces, before, reason: 'no _replace here');
       expect(_held(a), _held(b));
       expect(a.skills, _map());
+    });
+
+    test('finishing after dispose applies nothing and notifies nothing',
+        () async {
+      final a = MemoryProgress.opened(openLog(_job()), fitted: const {});
+      var notified = 0;
+      a.addListener(() => notified++);
+      await a.replaceSkills(
+        _map(),
+        run: (job) async {
+          a.dispose();
+          return replayWithSkills(job);
+        },
+      );
+      expect(notified, 0);
+      expect(a.skills, const SkillMap());
     });
 
     test('an answer recorded while it works is not lost: it replays '
@@ -404,6 +422,42 @@ void main() {
       three.skills = const SkillMap();
       await three.ready;
       expect(third, contains('review log replayed'));
+    });
+
+    test('map X replaying then the old map Y asked for ends on Y', () async {
+      final db = await loggedDb();
+      addTearDown(db.close);
+      final gate = Completer<void>();
+      final ran = <SkillMap>[];
+      final progress = DatabaseProgress.opening(
+        db,
+        replayer: replayInPlace,
+        snapshotter: snapshotInPlace,
+        awaitSkills: true,
+        app: 'x',
+        skillsRunner: (job) async {
+          ran.add(job.skills);
+          await gate.future;
+          return replayWithSkills(job);
+        },
+      );
+      addTearDown(progress.dispose);
+      progress.skills = _map();
+      await progress.ready;
+      final x = SkillMap(
+        formHeardCards: <String>{'es-0001', 'es-0002'},
+        scriptDecks: <String>{'es-en-script'},
+        primaryScripts: <String, String>{'es': 'latin'},
+      );
+      progress.skills = x;
+      await Future<void>.delayed(const Duration(milliseconds: 20));
+      progress.skills = _map(); // back to Y while X is replaying
+      gate.complete();
+      await progress.skillsSettled;
+      expect(progress.skills, _map());
+      final want = await reference(db);
+      addTearDown(want.dispose);
+      expect(_held(progress), _held(want));
     });
 
     test('an empty map is a map: the log is read and held', () async {

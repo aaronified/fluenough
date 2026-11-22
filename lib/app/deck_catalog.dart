@@ -494,7 +494,12 @@ Future<Catalog> parseInIsolate(
   try {
     return await _parseOnIsolate(files);
   } catch (e, stack) {
-    tellFallback(onFallback, 'Parsing the decks on an isolate failed', e, stack);
+    tellFallback(
+      onFallback,
+      'Parsing the decks on an isolate failed',
+      e,
+      stack,
+    );
     return DeckCatalog.parseAll(files);
   }
 }
@@ -666,7 +671,12 @@ Future<CatalogOutcome> runJobInIsolate(
   try {
     return await _runOnIsolate(job);
   } catch (e, stack) {
-    tellFallback(onFallback, 'Reading the decks on an isolate failed', e, stack);
+    tellFallback(
+      onFallback,
+      'Reading the decks on an isolate failed',
+      e,
+      stack,
+    );
     return runCatalogJob(job);
   }
 }

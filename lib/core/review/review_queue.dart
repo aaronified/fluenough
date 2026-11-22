@@ -8,6 +8,7 @@ library;
 import 'dart:convert';
 import 'dart:isolate';
 
+import '../logs/log_entry.dart' show describeError;
 import 'facets.dart';
 
 /// A deck builder's doubt about one facet of one card (builder questions v2,
@@ -202,10 +203,25 @@ class ReviewQueue {
 
 /// [ReviewQueue.parse] on an isolate of its own (#1699), in place where one
 /// cannot run. Never throws, as [ReviewQueue.parse] never does.
-Future<ReviewQueue> parseReviewQueueInIsolate(String text) async {
+Future<ReviewQueue> parseReviewQueueInIsolate(
+  String text, {
+  void Function(String message)? onFallback,
+}) async {
   try {
-    return await Isolate.run(() => ReviewQueue.parse(text));
-  } catch (_) {
+    return await _parseOnIsolate(text);
+  } catch (e, stack) {
+    onFallback?.call(
+      describeError(
+        'Parsing the review queue on an isolate failed; parsing on the UI '
+        'isolate',
+        e,
+        stack,
+      ),
+    );
     return ReviewQueue.parse(text);
   }
 }
+
+// Made in a function of its own so the closure carries only its text.
+Future<ReviewQueue> _parseOnIsolate(String text) =>
+    Isolate.run(() => ReviewQueue.parse(text));

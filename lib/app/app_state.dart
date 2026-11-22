@@ -270,7 +270,12 @@ class AppState extends ChangeNotifier {
     deckDownloads
       ?..wantsFont = fontCheck.wants
       ..usesFont = fontCheck.uses
-      ..learningLanguages = () => learningCodes;
+      ..learningLanguages = () => <String>{
+        ...learningCodes,
+        // The languages the learner speaks: the interface's scripts load
+        // with the learner's, so that no glyph is a box.
+        ...this.settings.spokenLanguages,
+      };
     this.settings.addListener(_reviewerToDownloads);
     _reviewerToDownloads();
     this.settings.addListener(_languageShownChanged);
@@ -1536,10 +1541,11 @@ class AppState extends ChangeNotifier {
       _loadError = error;
       _status = CatalogStatus.failed;
       log.error(describeError('Decks failed to load', error, stack));
-      // The review log waits for a skill map: none can come now, so it is
-      // given an empty one rather than left waiting.
+      // The review log may be waiting for a skill map: none can come now, so
+      // the wait is ended (an empty map, only before the log is read; a
+      // progress that is ready is left as it is).
       try {
-        progress.skills = const SkillMap();
+        if (progress case final DatabaseProgress p) p.releaseSkillsWait();
       } on Object catch (e, s) {
         log.error(describeError('Skill map release failed', e, s));
       }

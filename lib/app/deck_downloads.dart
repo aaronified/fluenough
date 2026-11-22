@@ -68,8 +68,12 @@ Future<DeckFileProblem?> checkBatchInIsolate(
     return await _checkOnIsolate(files);
   } catch (e, stack) {
     onFallback?.call(
-      describeError('Checking the download on an isolate failed; checking '
-          'on the UI isolate', e, stack),
+      describeError(
+        'Checking the download on an isolate failed; checking on the UI '
+        'isolate',
+        e,
+        stack,
+      ),
     );
     return checkDeckBatch(files);
   }
@@ -101,8 +105,12 @@ Future<String> sha256InIsolate(
     return await _hashOnIsolate(data);
   } catch (e, stack) {
     onFallback?.call(
-      describeError('Hashing the download on an isolate failed; hashing '
-          'on the UI isolate', e, stack),
+      describeError(
+        'Hashing the download on an isolate failed; hashing on the UI '
+        'isolate',
+        e,
+        stack,
+      ),
     );
     return sha256Hex(bytes);
   }
@@ -310,7 +318,7 @@ class DeckDownloads extends ChangeNotifier {
         );
 
   Future<ReviewQueue> _parseQueue(String text) => parseOffUi
-      ? parseReviewQueueInIsolate(text)
+      ? parseReviewQueueInIsolate(text, onFallback: _log?.warning)
       : Future<ReviewQueue>.sync(() => ReviewQueue.parse(text));
 
   /// With [deferFonts], how long after the first fonts the rest are loaded:
@@ -342,10 +350,13 @@ class DeckDownloads extends ChangeNotifier {
   Future<T> _span<T>(
     String what,
     FutureOr<T> Function() body, {
+    String isolate = 'main',
     Map<String, Object?> extra = const <String, Object?>{},
   }) {
     final m = marks;
-    return m == null ? Future<T>.sync(body) : m.span(what, body, extra: extra);
+    return m == null
+        ? Future<T>.sync(body)
+        : m.span(what, body, isolate: isolate, extra: extra);
   }
 
   // What an update spent on fetching and hashing, summed over its files, and

@@ -231,7 +231,21 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   final SkillsRunner _skillsRunner;
   bool _gateClosed = false;
   SkillMap? _pendingSkills;
+
+  /// The last map asked for after the log was read, which may still be
+  /// replaying; null until one is asked for.
+  SkillMap? _requestedSkills;
   Future<void>? _skillsApplying;
+
+  /// Ends the wait for the first skill map ([awaitSkills]) with an empty one,
+  /// when it is still waiting. Nothing once the log is read: a progress that
+  /// is ready is never replayed under an empty map by this.
+  void releaseSkillsWait() {
+    final gate = _skillsGate;
+    if (gate != null && !_gateClosed && !gate.isCompleted) {
+      gate.complete(const SkillMap());
+    }
+  }
 
   /// Completes once the last skill map given has been replayed into memory.
   Future<void> get skillsSettled => _skillsApplying ?? Future<void>.value();
@@ -311,15 +325,22 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       return;
     }
     final memory = _memory;
-    if (value == memory.skills) return;
+    // Against the last map asked for, not the one applied: while X replays,
+    // asking for the old map Y again is a change.
+    if (value == (_requestedSkills ?? memory.skills)) return;
     if (gate == null) {
       // Not opened to wait for the map (tests, the web): replayed in place,
       // as it always was.
       memory.skills = value;
       return;
     }
+    _requestedSkills = value;
     _skillsApplying = (_skillsApplying ?? Future<void>.value())
-        .then<void>((_) => memory.replaceSkills(value, run: _skillsRunner))
+        .then<void>((_) async {
+          // A map asked for since is the one to replay: this one is skipped.
+          if (_requestedSkills != value) return;
+          await memory.replaceSkills(value, run: _skillsRunner);
+        })
         .then<void>((_) => _scheduleSnapshot())
         .catchError((Object error, StackTrace stack) {
           FlutterError.reportError(

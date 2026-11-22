@@ -588,7 +588,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     SkillMap value, {
     SkillsRunner run = skillsInIsolate,
   }) async {
-    while (value != _skills) {
+    while (!_disposed && value != _skills) {
       final tick = _tick;
       final reviews = _log.map(logged).toList();
       final actions = _leechActions.toList();
@@ -601,6 +601,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
           skills: value,
         ),
       );
+      if (_disposed) return;
       if (tick != _tick) continue;
       _skills = value;
       _parameters = SkillParameters(
@@ -636,6 +637,14 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       parameters: _parameters,
     );
     _apply(replayed, actions);
+  }
+
+  bool _disposed = false;
+
+  @override
+  void dispose() {
+    _disposed = true;
+    super.dispose();
   }
 
   /// Makes [replayed] what memory holds, with [actions] as its leech
