@@ -1,6 +1,6 @@
-/// A language's culture options (the approved mockup `culture-in-decks`): the
-/// three choices the learner makes in the language's details, each language
-/// keeping its own. Pure Dart, free of Flutter, so that it is tested in
+/// A language's culture options (the approved mockups `culture-in-decks` and
+/// `culture-media`): the four choices the learner makes in the language's
+/// details, each language keeping its own. Pure Dart, free of Flutter, so that it is tested in
 /// milliseconds; the settings store one per language.
 library;
 
@@ -11,10 +11,11 @@ class CultureOptions {
     this.items = true,
     this.counts = false,
     this.creators = true,
+    this.pictures = true,
   });
 
   /// What a language that has not chosen yet has: items on, culture a bonus,
-  /// creators shown.
+  /// creators shown, pictures shown.
   static const CultureOptions defaults = CultureOptions();
 
   /// The language's own entry read from JSON; a missing or unreadable value
@@ -30,6 +31,7 @@ class CultureOptions {
       items: read('items', defaults.items),
       counts: read('counts', defaults.counts),
       creators: read('creators', defaults.creators),
+      pictures: read('pictures', defaults.pictures),
     );
   }
 
@@ -44,17 +46,28 @@ class CultureOptions {
   /// Whether an item shows its creator and what still lives today.
   final bool creators;
 
-  CultureOptions copyWith({bool? items, bool? counts, bool? creators}) =>
-      CultureOptions(
-        items: items ?? this.items,
-        counts: counts ?? this.counts,
-        creators: creators ?? this.creators,
-      );
+  /// Whether the posters of works and the portraits of people are fetched and
+  /// shown (wiki/Plan-Culture-Media.md, ADR-0060). Off, every picture is the
+  /// icon it replaces and nothing is downloaded for it.
+  final bool pictures;
+
+  CultureOptions copyWith({
+    bool? items,
+    bool? counts,
+    bool? creators,
+    bool? pictures,
+  }) => CultureOptions(
+    items: items ?? this.items,
+    counts: counts ?? this.counts,
+    creators: creators ?? this.creators,
+    pictures: pictures ?? this.pictures,
+  );
 
   Map<String, Object> toJson() => <String, Object>{
     'items': items,
     'counts': counts,
     'creators': creators,
+    'pictures': pictures,
   };
 
   @override
@@ -62,12 +75,14 @@ class CultureOptions {
       other is CultureOptions &&
       other.items == items &&
       other.counts == counts &&
-      other.creators == creators;
+      other.creators == creators &&
+      other.pictures == pictures;
 
   @override
-  int get hashCode => Object.hash(items, counts, creators);
+  int get hashCode => Object.hash(items, counts, creators, pictures);
 
   @override
   String toString() =>
-      'CultureOptions(items: $items, counts: $counts, creators: $creators)';
+      'CultureOptions(items: $items, counts: $counts, creators: $creators, '
+      'pictures: $pictures)';
 }

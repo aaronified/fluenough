@@ -5,15 +5,13 @@ import '../../app/app_state.dart';
 import '../../app/item_search.dart' show coreIdOfDeck;
 import '../../app/routes.dart';
 import '../../core/decks/recommendation_list.dart';
-import '../../core/models/completed_work.dart';
 import '../../core/models/creator.dart';
 import '../../core/models/recommendation.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/theme.dart';
-import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/result_marks.dart';
 import 'culture_parts.dart';
+import 'work_page.dart';
 
 /// The icon of a kind of work.
 IconData recommendationIcon(RecommendationMedium medium) => switch (medium) {
@@ -49,9 +47,10 @@ String briefingLine(String briefing) {
 
 /// One recommended work as a row of the culture list on the Decks screen
 /// (approved mockup `culture-in-decks`): its kind, level and, for a
-/// public-domain work, a badge, and a short briefing. [open] shows the whole
-/// briefing, that the work is not included in the app, where to get it legally
-/// and "I've completed this". Every work opens and can be marked completed
+/// public-domain work, a badge, and a short briefing. Its poster is the thumb
+/// when it has a free one and the language's "Show pictures" switch is on, else
+/// the icon of its medium (approved mockup `culture-media`). A tap opens the
+/// work's page ([WorkPage]). Every work opens and can be marked completed
 /// whatever the learner's level; nothing is locked.
 class CultureWorkRow extends StatelessWidget {
   const CultureWorkRow({
@@ -59,15 +58,11 @@ class CultureWorkRow extends StatelessWidget {
     required this.work,
     required this.language,
     required this.file,
-    required this.open,
-    required this.onTap,
   });
 
   final Recommendation work;
   final String language;
   final CreatorsFile? file;
-  final bool open;
-  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -86,8 +81,11 @@ class CultureWorkRow extends StatelessWidget {
     ].join(' · ');
     final briefing = work.briefingFor(spoken);
     final quoting = _quotingDeck(state);
+    final poster =
+        work.image != null && state.settings.cultureFor(language).pictures;
     return ResultRow(
       icon: recommendationIcon(work.medium),
+      leading: poster ? WorkThumb(work: work, language: language) : null,
       title: work.title,
       titleWidget: TargetText(
         work.title,
@@ -119,7 +117,7 @@ class CultureWorkRow extends StatelessWidget {
             style: ResultTagStyle.publicDomain,
           ),
       ],
-      onTap: onTap,
+      onTap: () => AppNavigator.openWork(context, language, work.id),
       actions: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -140,15 +138,13 @@ class CultureWorkRow extends StatelessWidget {
                 ),
               ),
             ),
-          if (!open && briefing.isNotEmpty)
+          if (briefing.isNotEmpty)
             Text(
               briefingLine(briefing),
               style: theme.textTheme.bodySmall!.copyWith(
                 color: scheme.onSurfaceVariant,
               ),
             ),
-          if (open)
-            _OpenWork(work: work, language: language, briefing: briefing),
         ],
       ),
     );
@@ -167,126 +163,4 @@ class CultureWorkRow extends StatelessWidget {
     }
     return null;
   }
-}
-
-/// The open row's body: the whole briefing, the year, that the work is not in
-/// the app, the legal routes, and the "I've completed this" action.
-class _OpenWork extends StatelessWidget {
-  const _OpenWork({
-    required this.work,
-    required this.language,
-    required this.briefing,
-  });
-
-  final Recommendation work;
-  final String language;
-  final String briefing;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-    final state = AppScope.of(context);
-    final progress = state.recommendationProgress;
-    final spoken = cultureSpoken(context, state);
-    final done = progress.isCompleted(work.id);
-    final routes = <LegalRoute>[
-      for (final route in work.legal)
-        if (Uri.tryParse(route.url)?.scheme == 'https') route,
-    ];
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        if (briefing.isNotEmpty)
-          Text(briefing, style: theme.textTheme.bodyMedium),
-        const SizedBox(height: 4),
-        Text(
-          l10n.recNotIncluded,
-          style: theme.textTheme.bodySmall!.copyWith(
-            color: scheme.onSurfaceVariant,
-          ),
-        ),
-        for (final route in routes)
-          Semantics(
-            button: true,
-            child: TextButton.icon(
-              style: AppButtonStyles.inline(context),
-              onPressed: () =>
-                  openLink(context, route.url, copied: l10n.cultureLinkCopied),
-              icon: const Icon(Icons.open_in_new, size: 18),
-              label: Text(
-                route.noteFor(spoken).isEmpty
-                    ? _legalKind(l10n, route.kind)
-                    : l10n.recLegalLine(
-                        _legalKind(l10n, route.kind),
-                        route.noteFor(spoken),
-                      ),
-              ),
-            ),
-          ),
-        const SizedBox(height: 6),
-        Wrap(
-          spacing: 8,
-          runSpacing: 4,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          children: <Widget>[
-            if (done)
-              FilledButton.tonalIcon(
-                onPressed: () => _unmark(context, state),
-                icon: const Icon(Icons.check, size: 18),
-                label: Text(l10n.recCompleted),
-              )
-            else
-              FilledButton(
-                onPressed: () {
-                  state.haptics.confirm();
-                  progress.complete(work, language, state.now());
-                },
-                child: Text(l10n.recIComplete),
-              ),
-            if (done && work.questions.isNotEmpty)
-              TextButton(
-                onPressed: () =>
-                    AppNavigator.openWorkQuestions(context, language, work.id),
-                child: Text(l10n.recQuestions),
-              ),
-          ],
-        ),
-      ],
-    );
-  }
-
-  /// Takes the mark away, with a way back in the toast.
-  void _unmark(BuildContext context, AppState state) {
-    final l10n = AppLocalizations.of(context)!;
-    final progress = state.recommendationProgress;
-    // Undo gives back the same completion date, not a new one.
-    final was = <CompletedWork>[
-      for (final w in progress.completed)
-        if (w.recommendationId == work.id) w,
-    ];
-    final completedAt = was.isEmpty ? state.now() : was.first.completedAt;
-    progress.unmark(work.id);
-    final messenger = ScaffoldMessenger.maybeOf(context);
-    messenger?.showSnackBar(
-      SnackBar(
-        content: Text(l10n.recNotCompleted),
-        action: SnackBarAction(
-          label: l10n.commonUndo,
-          onPressed: () => progress.complete(work, language, completedAt),
-        ),
-      ),
-    );
-  }
-
-  String _legalKind(AppLocalizations l10n, String kind) => switch (kind) {
-    'library' => l10n.recLegalLibrary,
-    'publisher' => l10n.recLegalPublisher,
-    'store' => l10n.recLegalStore,
-    'stream' => l10n.recLegalStream,
-    'archive' => l10n.recLegalArchive,
-    'public-domain' => l10n.recLegalPublicDomain,
-    _ => kind,
-  };
 }

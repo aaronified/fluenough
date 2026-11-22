@@ -526,6 +526,7 @@ class WorkImagesInTheIndex(unittest.TestCase):
         self.assertEqual(deck_index.SHARED_MEDIA, "decks/creators/images")
         self.assertEqual(deck_index.SHARED_MEDIA_WORKS, "decks/recommendations/images")
         self.assertRegex(deck_index.MIN_APP_WORK_IMAGES, r"^\d+\.\d+\.\d+$")
+        self.assertEqual(deck_index.MIN_APP_WORK_IMAGES, "0.12.1")
 
     def test_creator_and_work_images_are_listed(self) -> None:
         import hashlib
@@ -549,7 +550,20 @@ class WorkImagesInTheIndex(unittest.TestCase):
              "language": "zz"},
             {"path": "decks/recommendations/images/zz-rec-b.webp", "size": 400,
              "sha256": hashlib.sha256(work).hexdigest(), "kind": "image",
-             "language": "zz", "min_app": deck_index.MIN_APP_WORK_IMAGES}])
+             "language": "zz", "min_app": "0.12.1"}])
+
+    def test_only_work_images_carry_min_app(self) -> None:
+        import tempfile
+        import deck_index
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp).resolve()
+            (root / "decks" / "creators" / "images").mkdir(parents=True)
+            (root / "decks" / "creators" / "images"
+             / "zz-a.webp").write_bytes(webp(10, 10, 300))
+            with mock.patch.object(deck_index, "ROOT", root):
+                entries = deck_index._shared_media()
+        self.assertEqual(len(entries), 1)
+        self.assertNotIn("min_app", entries[0])
 
 
 if __name__ == "__main__":

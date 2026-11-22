@@ -250,13 +250,13 @@ SHARED_FOLDERS = {"creators", "recommendations"}
 # demand when a creator is shown, checked by hash alone.
 SHARED_MEDIA = "decks/creators/images"
 # Work posters and covers (ADR-0060): a second shared folder, listed the same
-# way. An app that does not know the prefix passes the entry by (today's
-# `SharedMediaFile.tryParse` accepts only decks/creators/images/ and never reads
-# `min_app`). Package 4 must read `min_app` and accept the new prefix, and
-# this number must become the real release number before the first work image
-# lands on decks-live.
+# way, each entry carrying `min_app` (MIN_APP_WORK_IMAGES). An app that knows
+# the prefix (`SharedMediaFile.tryParse`) skips an entry whose `min_app` is
+# above its version, so it never downloads a poster it cannot show; an older
+# app passes the entry by. 0.12.1 is the lowest release that can show them;
+# shipping a poster later than that release is harmless.
 SHARED_MEDIA_WORKS = "decks/recommendations/images"
-MIN_APP_WORK_IMAGES = "0.9.6"
+MIN_APP_WORK_IMAGES = "0.12.1"
 
 # The oldest app that can read each new key, written to every entry under it
 # as `min_app` (D9), so no deck needs a line in decks/min_app.json. The

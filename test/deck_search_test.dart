@@ -335,13 +335,20 @@ void main() {
           .widget<CustomScrollView>(find.byType(CustomScrollView))
           .controller!;
       if (scrolled) {
+        // Down the path, then back up until the bar is partly in view, as
+        // a learner does to reach it.
         scroll.jumpTo(600);
+        await tester.pumpAndSettle();
+        scroll.jumpTo(40);
         await tester.pumpAndSettle();
         expect(scroll.offset, greaterThan(0));
       }
       await type(tester, 'kind:words ');
       if (scroll.position.maxScrollExtent > 0) {
         scroll.jumpTo(scroll.position.maxScrollExtent);
+        await tester.pumpAndSettle();
+        // Back up to the bar, whose buttons are built only while in view.
+        scroll.jumpTo(40);
         await tester.pumpAndSettle();
       }
       final l10n = l10nOf(tester);
