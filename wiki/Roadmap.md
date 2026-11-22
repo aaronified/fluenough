@@ -433,6 +433,7 @@ A plan with no tracking issue is flagged.
 - [say when speech can't be recognised offline](https://github.com/aaronified/fluenough/wiki/Plan-Speech-Offline-Alert) (Written 2026-10-05), **no tracking issue**
 - [synonym sets for typed English meanings](https://github.com/aaronified/fluenough/wiki/Plan-Synonym-Dictionary), **no tracking issue**
 - [cut the tests down to behaviour](https://github.com/aaronified/fluenough/wiki/Plan-Test-Cut) (Written 2026-10-20), **no tracking issue**
+- [Today's backlog after placement](https://github.com/aaronified/fluenough/wiki/Plan-Today-Backlog), **no tracking issue**
 - [Vedic accent marks, and one Devanagari engine for Vedic and Classical Sanskrit](https://github.com/aaronified/fluenough/wiki/Plan-Vedic-Engine), **no tracking issue**
 - [the Vedic Sanskrit reading path](https://github.com/aaronified/fluenough/wiki/Plan-Vedic-Path), **no tracking issue**
 - [Vedic Sanskrit A1 word lists, sourced](https://github.com/aaronified/fluenough/wiki/Plan-Vedic-Words), **no tracking issue**
