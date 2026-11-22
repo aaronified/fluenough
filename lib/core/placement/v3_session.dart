@@ -900,9 +900,7 @@ class V3Run {
   /// The letters of the course's scripts together (the letters of one
   /// script for a course written in one).
   static List<ScriptLetter> scriptLettersOf(PlacementLanguageData data) {
-    return <ScriptLetter>[
-      for (final s in data.scripts) ..._lettersOfScript(s),
-    ];
+    return <ScriptLetter>[for (final s in data.scripts) ..._lettersOfScript(s)];
   }
 }
 
