@@ -447,6 +447,7 @@ python3 tools/fetch_culture_media.py --lang te --dry-run            # download a
 python3 tools/fetch_culture_media.py --lang te --kind creators --limit 10
 python3 tools/fetch_culture_media.py --lang te --report te.md --json te.json
 python3 tools/fetch_culture_media.py --lang te --refresh te-rec-foo # redo one entry
+python3 tools/fetch_culture_media.py --lang gu --download-interval 10 --wait-rate-limit   # slower, and sleeps out a Retry-After up to 900 s
 ```
 
 For each entry with no valid `image` (its file exists):
@@ -476,9 +477,15 @@ For each entry with no valid `image` (its file exists):
    2.0 to 4.0; never NC, ND, GFDL alone or fair use); a file with a `Restrictions`
    note, a type that is not a picture, no licence URL (except public domain) or a
    source over 15 MB is skipped; a file with no machine-readable author is skipped,
-   except a public-domain one, credited `Unknown author` (ADR-0060 decision 7). The
-   author is plain text, at most 300 characters. Each skip is reported with its
-   reason.
+   except a public-domain one, credited `Unknown author` (ADR-0060 decision 7; the
+   validator allows exactly that text for a `public-domain` image, so no
+   `(public domain)` suffix is added). A bare `Unknown`, `Unknown author`,
+   `Anonymous`, `?` or Commons's `No machine-readable author provided. X assumed`
+   line counts as no author (the sound tool's placeholder rule). The author is read
+   as plain text with a space between neighbouring elements, and a name Commons
+   writes twice is kept once (the first Gujarati run credited `Unknown
+   authorUnknown author`; rerun that entry with `--refresh ID`). It is at most 300
+   characters. Each skip is reported with its reason.
 4. **Download and encode.** The original when it is within the target and small
    enough for the client's body limit (5 MB), else the Commons thumbnail
    (`thumburl` from the API, on `thumb.wikimedia.org`, used as given). Commons serves
@@ -506,6 +513,14 @@ For each entry with no valid `image` (its file exists):
 5. **Living creators** get no portrait (decision 9): the deck must not say
    `living`, and Wikidata must give a date of death at least `--min-years-dead`
    years ago (5); `--include-living` lifts it.
+
+`--download-interval` (default 5 s) and `--wait-rate-limit` are the sound tool's: a
+`Retry-After` over 300 s stops the run with exit 3 unless `--wait-rate-limit` is set,
+which sleeps out up to 900 s a request (no total runtime bound). A run that stops at
+the rate limit lists the pictures it had chosen but not yet written as `deferred`
+in the report; a plain rerun resumes from the cache. One file that fails (an HTTP
+error, over size, a refused licence, an unexpected error) is counted and the others
+are still tried; only a rate limit stops the run.
 
 It is idempotent and resumable: an entry with a valid image is skipped (an entry
 whose image file is missing is listed, not redone; `--refresh ID` redoes one),
