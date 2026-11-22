@@ -106,6 +106,34 @@ class Reading(unittest.TestCase):
             [(a.point, a.answer) for a in batch.answers],
             [("builder:0123abcd", "yes"), ("builder:0123abcd", "no")])
 
+    def test_a_v2_builder_answer_names_a_facet_and_an_option_of_it(self) -> None:
+        batch = qa.read_questions([questions_file([
+            answer("zz-9201", "builder:ipa", "builder", "yes"),
+            answer("zz-9201", "builder:ipa", "builder", "no", "ipa_wrong", why=SECRET),
+            answer("zz-9201", "builder:example", "builder", "no", "spelling_wrong"),
+            answer("zz-9201", "builder:example", "builder", "no", "something_else"),
+            # An option of another facet is dropped, the answer kept.
+            answer("zz-9201", "builder:reading", "builder", "no", "wrong_unit"),
+            # Not a facet, and not a flag.
+            answer("zz-9201", "builder:colour", "builder", "yes"),
+            answer("zz-9201", "builder:ipa", "builder", "flag"),
+        ])], ALICE)
+        self.assertEqual(
+            [(a.point, a.answer, a.reason) for a in batch.answers],
+            [("builder:ipa", "yes", ""), ("builder:ipa", "no", "ipa_wrong"),
+             ("builder:example", "no", "spelling_wrong"),
+             ("builder:example", "no", "something_else"),
+             ("builder:reading", "no", "")])
+        self.assertEqual(batch.dropped, 2)
+        self.assertNotIn(SECRET, repr(batch))
+
+    def test_the_options_are_the_pointer_tags_of_each_facet_then_something_else(self) -> None:
+        import review_facets as rf
+        self.assertEqual(tuple(qa.BUILDER_OPTIONS), rf.FACETS)
+        for facet, options in qa.BUILDER_OPTIONS.items():
+            tags = tuple(t for t, facets in rf.TAG_FACETS.items() if facet in facets)
+            self.assertEqual(options, tags + ("something_else",), facet)
+
     def test_an_image_answer_pins_its_file(self) -> None:
         batch = qa.read_questions([questions_file([
             answer("zz-9201", "image:Blorp.jpg", "image", "yes"),
@@ -171,6 +199,30 @@ class Counting(Base):
         self.assertNotIn("settled", self.point())
         self.assertEqual(qa.flag_state(self.point(), 1), "merge")
         self.assertEqual(qa.flag_state(self.point(), 2), "open")
+
+    def test_a_v2_builder_no_merges_only_on_the_same_option(self) -> None:
+        key = "zz-9201|builder:ipa"
+        no = answer("zz-9201", "builder:ipa", "builder", "no", "ipa_wrong")
+        self.record(ALICE, no)
+        self.record(BOB, answer("zz-9201", "builder:ipa", "builder", "no", "something_else"))
+        self.assertEqual(qa.flag_state(self.point(key), 1), "open")
+        self.record(CAROL, no)
+        self.assertEqual(qa.flag_state(self.point(key), 1), "merge")
+        self.assertNotIn("settled", self.point(key))
+
+    def test_a_v2_builder_yes_from_a_second_reviewer_settles_correct(self) -> None:
+        key = "zz-9201|builder:note"
+        yes = answer("zz-9201", "builder:note", "builder", "yes")
+        self.record(ALICE, yes)
+        done = self.record(BOB, yes)
+        self.assertEqual(self.point(key)["settled"], "yes")
+        self.assertEqual(done.settled, [("zz", "zz-9201", "builder:note")])
+
+    def test_a_v2_builder_yes_after_a_no_closes_it(self) -> None:
+        key = "zz-9201|builder:note"
+        self.record(ALICE, answer("zz-9201", "builder:note", "builder", "no", "note_wrong"))
+        self.record(BOB, answer("zz-9201", "builder:note", "builder", "yes"))
+        self.assertEqual(qa.flag_state(self.point(key), 1), "close")
 
     def test_a_flag_only_the_flagger_gave_waits_open(self) -> None:
         self.record(ALICE, answer("zz-9201", "meaning", "meaning", "no"))

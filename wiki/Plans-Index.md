@@ -42,6 +42,7 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [Review Staging](Plan-Review-Staging): a decks-staging branch where review mails land, confirmed, then applied to decks-live (brainstorm)
 - [Reviewing Scope](Plan-Reviewing-Scope): what reviewing covers, and how reviewers change cards
 - [Reviewer UX](Plan-Reviewer-UX): the reviewer check in placement, signed codes and tiers, pointer tags, blind pass (built, not yet released: W1 to W9, #1662 to #1670)
+- [Builder Questions V2](Plan-Builder-Questions-V2): a builder's doubt is a facet of a card, asked as one fixed question (queue v2, checker, feed, answers built; app screens not)
 - [Sentence Building](Plan-Sentence-Building): building sentences by reasoning
 - [Settings Wording](Plan-Settings-Wording): settings that say what they do, on and off
 - [Speech Offline Alert](Plan-Speech-Offline-Alert): say when speech can't be recognised offline (part 1, the on-device Telugu AI listener, #1004, shipped in 0.10.0; whether the offline alert of part 2 is built was not checked)
