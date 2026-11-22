@@ -1092,6 +1092,12 @@ LanguageChanges changesFor(
   );
 }
 
+// The closure sent to the isolate is made in a function of its own, with only
+// its data in scope: a closure carries the whole context it is made in, and
+// one made beside a log callback could not be sent.
+Future<DeckIndex> _parseOnIsolate(String text, String? appVersion) =>
+    Isolate.run(() => DeckIndex.parse(text, appVersion: appVersion));
+
 /// [DeckIndex.parse] on an isolate of its own (#1699): the index is a few
 /// megabytes of JSON, and reading it on the UI isolate holds the first
 /// frames. What it throws for a bad or too-new index is thrown here as it is;
@@ -1103,9 +1109,7 @@ Future<DeckIndex> parseIndexInIsolate(
   void Function(String message)? onFallback,
 }) async {
   try {
-    return await Isolate.run(
-      () => DeckIndex.parse(text, appVersion: appVersion),
-    );
+    return await _parseOnIsolate(text, appVersion);
   } on FormatException {
     rethrow;
   } on IndexTooNewException {

@@ -295,8 +295,9 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
 
   /// Before the log is read, the map is kept for the read ([awaitSkills]) or
   /// for the moment it is done. After it, a map equal to the one in use does
-  /// nothing, and a different one is replayed on an isolate
-  /// ([MemoryProgress.replaceSkills]), never on the UI isolate (#1699).
+  /// nothing, and, with [awaitSkills], a different one is replayed on an
+  /// isolate ([MemoryProgress.replaceSkills]), never on the UI isolate
+  /// (#1699); without it, in place, as it always was.
   @override
   set skills(SkillMap value) {
     final gate = _skillsGate;
@@ -311,6 +312,12 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     }
     final memory = _memory;
     if (value == memory.skills) return;
+    if (gate == null) {
+      // Not opened to wait for the map (tests, the web): replayed in place,
+      // as it always was.
+      memory.skills = value;
+      return;
+    }
     _skillsApplying = (_skillsApplying ?? Future<void>.value())
         .then<void>((_) => memory.replaceSkills(value, run: _skillsRunner))
         .then<void>((_) => _scheduleSnapshot())

@@ -5,6 +5,7 @@
 // another map is never used.
 
 import 'package:drift/native.dart';
+import 'package:fluenough/app/database_progress.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/data/replay_isolate.dart';
@@ -46,7 +47,7 @@ SkillMap _map() => SkillMap(
 );
 
 /// What a store holds, as plain values to compare.
-List<Object?> _held(MemoryProgress p) => <Object?>[
+List<Object?> _held(ProgressStore p) => <Object?>[
   for (final e in p.log)
     (e.cardId, e.mode, e.grade, e.at, e.after.stability, e.share),
   for (final MapEntry(:key, :value)
@@ -285,6 +286,135 @@ void main() {
       );
       expect(other.fromSnapshot, isFalse, reason: 'a stale snapshot');
       expect(script(other.opened), isNot(equals(script(same.opened))));
+    });
+  });
+
+  group('DatabaseProgress that waits for the skill map', () {
+    Future<AppDatabase> loggedDb() async {
+      final db = AppDatabase(NativeDatabase.memory());
+      final log = ReviewLog(db);
+      for (final r in _reviews()) {
+        await log.record(
+          deckId: r.deckId,
+          cardId: r.key.cardId,
+          mode: r.key.mode,
+          grade: r.grade,
+          now: r.at,
+          elapsed: r.elapsed,
+          script: r.script,
+          asked: r.asked,
+        );
+      }
+      return db;
+    }
+
+    DatabaseProgress open(AppDatabase db, List<String> stages) =>
+        DatabaseProgress.opening(
+          db,
+          replayer: replayInPlace,
+          snapshotter: snapshotInPlace,
+          skillsRunner: skillsInPlace,
+          awaitSkills: true,
+          app: 'x',
+          onStage: stages.add,
+        );
+
+    /// What the old path gives for the same log and map.
+    Future<MemoryProgress> reference(AppDatabase db) async {
+      final log = ReviewLog(db);
+      final opened = await log.openReplay(
+        fitted: await log.fitted(),
+        run: replayInPlace,
+      );
+      return MemoryProgress.opened(opened, fitted: const {})..skills = _map();
+    }
+
+    test('is not ready until the map is given, then equals the old path with '
+        'no replay in place', () async {
+      final db = await loggedDb();
+      addTearDown(db.close);
+      final want = await reference(db);
+      addTearDown(want.dispose);
+      final before = MemoryProgress.replaces;
+      final progress = open(db, <String>[]);
+      addTearDown(progress.dispose);
+      var ready = false;
+      progress.ready.then((_) => ready = true).ignore();
+      await Future<void>.delayed(const Duration(milliseconds: 50));
+      expect(ready, isFalse, reason: 'it waits for the catalog\'s map');
+      progress.skills = _map();
+      await progress.ready;
+      expect(_held(progress), _held(want));
+      expect(progress.skills, _map());
+      expect(MemoryProgress.replaces, before, reason: 'nothing replayed here');
+    });
+
+    test('an equal map afterwards does nothing; a different one replays '
+        'through the runner and equals the setter\'s result', () async {
+      final db = await loggedDb();
+      addTearDown(db.close);
+      final progress = open(db, <String>[]);
+      addTearDown(progress.dispose);
+      progress.skills = _map();
+      await progress.ready;
+      final version = progress.version;
+      progress.skills = _map();
+      await progress.skillsSettled;
+      expect(progress.version, version);
+      final other = SkillMap(
+        formHeardCards: <String>{'es-0001', 'es-0002'},
+        scriptDecks: <String>{'es-en-script'},
+        primaryScripts: <String, String>{'es': 'latin'},
+      );
+      final before = MemoryProgress.replaces;
+      progress.skills = other;
+      await progress.skillsSettled;
+      expect(MemoryProgress.replaces, before, reason: 'replayed by the runner');
+      final want = await reference(db);
+      addTearDown(want.dispose);
+      want.skills = other;
+      expect(progress.skills, other);
+      expect(_held(progress), _held(want));
+    });
+
+    test('the next launch opens from the snapshot made under the '
+        'map', () async {
+      final db = await loggedDb();
+      addTearDown(db.close);
+      final first = <String>[];
+      final one = open(db, first);
+      one.skills = _map();
+      await one.ready;
+      expect(first, contains('review log replayed'));
+      await one.flush();
+      one.dispose();
+      final second = <String>[];
+      final two = open(db, second);
+      addTearDown(two.dispose);
+      two.skills = _map();
+      await two.ready;
+      expect(second, contains('snapshot loaded'));
+      final want = await reference(db);
+      addTearDown(want.dispose);
+      expect(_held(two), _held(want));
+      // Another map is not the snapshot's.
+      final third = <String>[];
+      final three = open(db, third);
+      addTearDown(three.dispose);
+      three.skills = const SkillMap();
+      await three.ready;
+      expect(third, contains('review log replayed'));
+    });
+
+    test('an empty map is a map: the log is read and held', () async {
+      final db = await loggedDb();
+      addTearDown(db.close);
+      final progress = open(db, <String>[]);
+      addTearDown(progress.dispose);
+      progress.skills = const SkillMap();
+      await progress.ready;
+      expect(progress.skills, const SkillMap());
+      expect(progress.log, isNotEmpty);
     });
   });
 }

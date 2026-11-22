@@ -65,7 +65,7 @@ Future<DeckFileProblem?> checkBatchInIsolate(
   void Function(String message)? onFallback,
 }) async {
   try {
-    return await Isolate.run(() => checkDeckBatch(files));
+    return await _checkOnIsolate(files);
   } catch (e, stack) {
     onFallback?.call(
       describeError('Checking the download on an isolate failed; checking '
@@ -74,6 +74,16 @@ Future<DeckFileProblem?> checkBatchInIsolate(
     return checkDeckBatch(files);
   }
 }
+
+// The closures sent to an isolate are made in functions of their own, with
+// only the data they need in scope: a closure carries the whole context it is
+// made in, and one made in a function that also holds a log callback could
+// not be sent.
+Future<DeckFileProblem?> _checkOnIsolate(List<DeckFileBytes> files) =>
+    Isolate.run(() => checkDeckBatch(files));
+
+Future<String> _hashOnIsolate(Uint8List data) =>
+    Isolate.run(() => sha256Hex(data));
 
 /// How large a file is, in bytes, before its hash is worked out on an
 /// isolate: under it the isolate costs more than the hash.
@@ -88,7 +98,7 @@ Future<String> sha256InIsolate(
   if (bytes.length < isolateHashBytes) return sha256Hex(bytes);
   try {
     final data = bytes is Uint8List ? bytes : Uint8List.fromList(bytes);
-    return await Isolate.run(() => sha256Hex(data));
+    return await _hashOnIsolate(data);
   } catch (e, stack) {
     onFallback?.call(
       describeError('Hashing the download on an isolate failed; hashing '

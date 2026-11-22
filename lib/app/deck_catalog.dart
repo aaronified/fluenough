@@ -492,12 +492,21 @@ Future<Catalog> parseInIsolate(
   void Function(String message)? onFallback,
 }) async {
   try {
-    return await Isolate.run(() => DeckCatalog.parseAll(files));
+    return await _parseOnIsolate(files);
   } catch (e, stack) {
     tellFallback(onFallback, 'Parsing the decks on an isolate failed', e, stack);
     return DeckCatalog.parseAll(files);
   }
 }
+
+// The closures sent to an isolate are made in functions of their own, with
+// only the data they need in scope: a closure carries the whole context it is
+// made in, and one made beside a log callback could not be sent (#1699).
+Future<Catalog> _parseOnIsolate(Map<String, String> files) =>
+    Isolate.run(() => DeckCatalog.parseAll(files));
+
+Future<CatalogOutcome> _runOnIsolate(CatalogJob job) =>
+    Isolate.run(() => runCatalogJob(job));
 
 /// Tells [onFallback], if given, that [what] failed and the work moved to the
 /// UI isolate. Never throws.
@@ -655,7 +664,7 @@ Future<CatalogOutcome> runJobInIsolate(
   void Function(String message)? onFallback,
 }) async {
   try {
-    return await Isolate.run(() => runCatalogJob(job));
+    return await _runOnIsolate(job);
   } catch (e, stack) {
     tellFallback(onFallback, 'Reading the decks on an isolate failed', e, stack);
     return runCatalogJob(job);
