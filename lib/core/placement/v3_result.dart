@@ -113,6 +113,7 @@ class V3Result {
     required this.items,
     required this.seconds,
     required this.endReason,
+    this.scriptChecks = const <V3ScriptCheck>[],
   });
 
   /// The skills the learner had in play, in the order Read, Hear, Say, Write.
@@ -122,8 +123,26 @@ class V3Result {
   /// The model's readout (null when no item was asked).
   final JointReadout? readout;
 
-  /// What the script gate found (null without one).
+  /// What the script gates found together (null without one): the best of
+  /// the scripts asked, which is what decides whether Read and Write can be
+  /// tested. [scriptChecks] has each script's own.
   final ScriptGateResult? script;
+
+  /// What each script's gate found, in the order of the course's scripts
+  /// (empty for a result made without them: [script] then speaks for every
+  /// script, as it did before there was a gate for each).
+  final List<V3ScriptCheck> scriptChecks;
+
+  /// Whether any script's gate ended in between (some letters known).
+  bool get scriptPartly {
+    if (scriptChecks.isEmpty) return script?.level == ScriptLevel.partly;
+    for (final c in scriptChecks) {
+      final r = c.result;
+      if (!r.skipped && r.level == ScriptLevel.partly) return true;
+    }
+    return false;
+  }
+
   final int items;
   final double seconds;
   final EndReason? endReason;
@@ -163,34 +182,41 @@ class V3Result {
         );
       }
     }
-    // The script: a learner who passed the letter check ("all") is credited
-    // as reading the course's scripts (their decks are placed); one who
-    // failed it is recorded as new to them. A check that was skipped, or
-    // that ended in between ("partly"), says nothing and writes nothing.
-    final gate = script;
-    if (gate != null && !gate.skipped && scripts > 0) {
-      final top = levels.topClass;
+    // The script: a learner who passed a script's letter check ("all") is
+    // credited as reading that script (its decks are placed); one who failed
+    // it is recorded as new to it. Each script has its own check and its own
+    // credit: a pass in one never credits another. A check that was skipped,
+    // or that ended in between ("partly"), says nothing and writes nothing.
+    final top = levels.topClass;
+    void credit(int index, ScriptGateResult gate) {
+      if (gate.skipped || index < 0 || index >= scripts) return;
+      if (index >= kScriptSkills.length) return;
       final cls = switch (gate.level) {
         ScriptLevel.all => top,
         ScriptLevel.none => 0,
         ScriptLevel.partly => null,
       };
-      if (cls != null) {
-        for (final (i, skill) in const <PlacementSkill>[
-          PlacementSkill.script,
-          PlacementSkill.secondScript,
-        ].indexed) {
-          if (i >= scripts) break;
-          out[skill] = SkillAssurance(
-            skill: skill,
-            label: AssuranceLabel.sure,
-            mass: 1,
-            leadingClass: cls,
-            placedClass: cls,
-            placedLevel: cls == 0 ? -1 : levels.levelOf(cls),
-            questions: gate.items,
-          );
-        }
+      if (cls == null) return;
+      final skill = kScriptSkills[index];
+      out[skill] = SkillAssurance(
+        skill: skill,
+        label: AssuranceLabel.sure,
+        mass: 1,
+        leadingClass: cls,
+        placedClass: cls,
+        placedLevel: cls == 0 ? -1 : levels.levelOf(cls),
+        questions: gate.items,
+      );
+    }
+
+    if (scriptChecks.isNotEmpty) {
+      for (final c in scriptChecks) {
+        credit(c.index, c.result);
+      }
+    } else if (script case final gate?) {
+      // A result made without per-script checks: one gate for every script.
+      for (var i = 0; i < kScriptSkills.length; i++) {
+        credit(i, gate);
       }
     }
     for (final e in overrides.entries) {
@@ -296,6 +322,7 @@ class V3Result {
       levels: levels,
       readout: readout,
       script: gate,
+      scriptChecks: run.scriptChecks,
       items: run.answered,
       seconds: run.seconds,
       endReason: run.picker?.endReason,

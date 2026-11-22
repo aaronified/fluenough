@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Placement checks each script on its own.** When you learn a language written in two scripts, such as Hindustani, Find my level asks about each script separately, so knowing one is never taken for knowing the other.
 - **Every script you know or learn shows on a card.** A word shows in the script you are learning, with its spelling in each other script you can already read in smaller type beneath it.
 
 ## [0.12.0] - 2026-11-22

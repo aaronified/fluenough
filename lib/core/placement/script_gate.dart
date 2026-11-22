@@ -137,6 +137,14 @@ const Map<ScriptLevel, double> kScriptRight = <ScriptLevel, double>{
 /// who says they do not.
 const double kScriptDeclared = 1.0;
 
+/// The most items one gate asks when a run holds a gate for each of several
+/// scripts: the gates share the budget of one (wiki/Plan-Placement-V3.md,
+/// "One gate for each script"). A gate usually stops after two items (a
+/// learner who cannot read it) or three (one who can), so two scripts cost
+/// about five or six items, and six at the most, one more than a single
+/// script's five.
+const int kScriptSharedMaxItems = 3;
+
 /// The log-likelihood ratio of a right answer (all against none), and of a
 /// wrong one.
 final double kScriptRightLlr = math.log(0.95 / 0.25);
@@ -152,6 +160,7 @@ class ScriptGate {
     this.maxItems = 5,
     this.decide = 3.5,
     this.declaredReads,
+    this.label,
   }) : _letters = letters,
        skipped = false {
     _llr = declaredReads == null
@@ -187,6 +196,11 @@ class ScriptGate {
   final bool? declaredReads;
   final bool skipped;
   final List<ScriptLetter> _letters;
+
+  /// The script's own code when a run holds one gate for each script of a
+  /// course written in several (it keeps the items' ids apart); null for the
+  /// one gate of a single script.
+  final String? label;
 
   final List<ScriptGateItem> asked = <ScriptGateItem>[];
   final List<ScriptGateItem> _plan_ = <ScriptGateItem>[];
@@ -374,7 +388,9 @@ class ScriptGate {
             : _letters[i].glyph,
     ];
     return ScriptGateItem(
-      id: 'script:${kind.name}:$index',
+      id: label == null
+          ? 'script:${kind.name}:$index'
+          : 'script:$label:${kind.name}:$index',
       kind: kind,
       prompt: kind == ScriptItemKind.letterToSound
           ? letter.glyph
