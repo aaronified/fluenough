@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Every script you know or learn shows on a card.** A word shows in the script you are learning, with its spelling in each other script you can already read in smaller type beneath it.
 - **The app starts and updates decks faster.** Opening the app and downloading deck updates no longer make it stutter for several seconds.
 
 ## [0.12.0] - 2026-11-22

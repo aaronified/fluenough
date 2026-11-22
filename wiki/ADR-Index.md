@@ -64,5 +64,6 @@ Every architecture decision record in the wiki. Each one has its own page.
 - [ADR-0059](ADR-0059-Sounds-Decks-With-Compressed-Audio): Sounds decks: one card per sound, with Ogg Opus recordings fetched from Wikimedia, never synthesised (proposed)
 - [ADR-0060](ADR-0060-Culture-Media-From-Wikimedia-Commons): Culture media: portraits and posters fetched from Wikimedia Commons, 2048 px at most, credited in the app, never invented (proposed)
 - [ADR-0061](ADR-0061-Builder-Questions-Are-Facets-Not-Prose): A deck builder's question is a facet of a card, never prose; the app asks one fixed question per facet and a checker enforces the rows (accepted; the app screens are not built)
+- [ADR-0062](ADR-0062-Per-Language-Catalog-Loaded-On-Demand): The catalog is one unit per language, loaded on demand off the UI isolate: startup loads only the selected language (proposed)
 
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)
