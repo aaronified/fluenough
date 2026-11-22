@@ -28,13 +28,12 @@ String _index(int languages) => jsonEncode(<String, Object?>{
 String _queue() => jsonEncode(<String, Object?>{
   'format': 'fluenough-review-queue',
   'version': 1,
+  'asks_version': 2,
   'languages': <String, Object?>{
     'te': <String, Object?>{
-      'cards': <String, Object?>{
+      'asks': <String, Object?>{
         'te-0001': <Object?>[
-          <String, Object?>{
-            'question': 'Is this the usual word for water in everyday speech?',
-          },
+          <String, Object?>{'facet': 'ipa', 'by': 'me', 'date': 'd'},
         ],
       },
     },
@@ -52,10 +51,12 @@ void main() {
         here.languages.map((l) => l.code),
       );
       final queue = await parseReviewQueueInIsolate(_queue());
+      final here = ReviewQueue.parse(_queue());
       expect(
-        queue.forCard('te', 'te-0001'),
-        ReviewQueue.parse(_queue()).forCard('te', 'te-0001'),
+        queue.asksFor('te', 'te-0001').map((a) => a.facet),
+        here.asksFor('te', 'te-0001').map((a) => a.facet),
       );
+      expect(queue.asksFor('te', 'te-0001'), isNotEmpty);
       expect(queue.isEmpty, isFalse);
       expect((await parseReviewQueueInIsolate('not json')).isEmpty, isTrue);
     });
@@ -85,7 +86,7 @@ void main() {
       await d.open();
       expect(d.indexStatus, IndexStatus.ready);
       expect(d.index!.languages.map((l) => l.code), <String>['te', 'hi']);
-      expect(d.reviewQueue.forCard('te', 'te-0001'), isNotEmpty);
+      expect(d.reviewQueue.has('te', 'te-0001'), isTrue);
     });
   });
 
