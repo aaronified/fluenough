@@ -10,6 +10,7 @@ import '../core/decks/deck_index.dart';
 import '../core/decks/language_resources.dart';
 import '../core/decks/sha256.dart';
 import '../core/decks/script_fonts.dart' show contentFontScripts;
+import '../core/logs/log_entry.dart' show describeError;
 import '../core/decks/shared_data.dart';
 import '../core/review/review_queue.dart';
 import 'app_info.dart';
@@ -59,10 +60,17 @@ Future<DeckFileProblem?> checkBatchInPlace(List<DeckFileBytes> files) async =>
 /// [checkDeckBatch] on an isolate of its own, so that parsing every file of a
 /// download never holds the UI isolate (#1699). Where an isolate cannot run it
 /// checks in place, with the same result.
-Future<DeckFileProblem?> checkBatchInIsolate(List<DeckFileBytes> files) async {
+Future<DeckFileProblem?> checkBatchInIsolate(
+  List<DeckFileBytes> files, {
+  void Function(String message)? onFallback,
+}) async {
   try {
     return await Isolate.run(() => checkDeckBatch(files));
-  } catch (_) {
+  } catch (e, stack) {
+    onFallback?.call(
+      describeError('Checking the download on an isolate failed; checking '
+          'on the UI isolate', e, stack),
+    );
     return checkDeckBatch(files);
   }
 }
@@ -73,12 +81,19 @@ const int isolateHashBytes = 32 * 1024;
 
 /// The SHA-256 of [bytes] on an isolate of its own when they are large, in
 /// place otherwise or where no isolate can run.
-Future<String> sha256InIsolate(List<int> bytes) async {
+Future<String> sha256InIsolate(
+  List<int> bytes, {
+  void Function(String message)? onFallback,
+}) async {
   if (bytes.length < isolateHashBytes) return sha256Hex(bytes);
   try {
     final data = bytes is Uint8List ? bytes : Uint8List.fromList(bytes);
     return await Isolate.run(() => sha256Hex(data));
-  } catch (_) {
+  } catch (e, stack) {
+    onFallback?.call(
+      describeError('Hashing the download on an isolate failed; hashing '
+          'on the UI isolate', e, stack),
+    );
     return sha256Hex(bytes);
   }
 }
@@ -275,7 +290,11 @@ class DeckDownloads extends ChangeNotifier {
   final bool parseOffUi;
 
   Future<DeckIndex> _parseIndex(String text) => parseOffUi
-      ? parseIndexInIsolate(text, appVersion: appVersion)
+      ? parseIndexInIsolate(
+          text,
+          appVersion: appVersion,
+          onFallback: _log?.warning,
+        )
       : Future<DeckIndex>.sync(
           () => DeckIndex.parse(text, appVersion: appVersion),
         );
@@ -730,8 +749,10 @@ class DeckDownloads extends ChangeNotifier {
         if (_disposed) return;
       }
       await _span('fonts: the others', _loadFonts);
-    } on Object catch (e) {
-      _log?.error('Deck downloads: loading fonts in the background: $e');
+    } on Object catch (e, st) {
+      _log?.error(
+        describeError('Deck downloads: loading fonts in background', e, st),
+      );
     }
   }
 

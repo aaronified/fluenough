@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:isolate';
 
+import '../logs/log_entry.dart' show describeError;
 import 'app_version.dart';
 import '../models/level.dart';
 import 'shared_data.dart';
@@ -1099,6 +1100,7 @@ LanguageChanges changesFor(
 Future<DeckIndex> parseIndexInIsolate(
   String text, {
   String? appVersion,
+  void Function(String message)? onFallback,
 }) async {
   try {
     return await Isolate.run(
@@ -1108,7 +1110,15 @@ Future<DeckIndex> parseIndexInIsolate(
     rethrow;
   } on IndexTooNewException {
     rethrow;
-  } catch (_) {
+  } catch (e, stack) {
+    onFallback?.call(
+      describeError(
+        'Parsing the deck index on an isolate failed; parsing on the UI '
+        'isolate',
+        e,
+        stack,
+      ),
+    );
     return DeckIndex.parse(text, appVersion: appVersion);
   }
 }

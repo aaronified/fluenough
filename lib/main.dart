@@ -106,8 +106,9 @@ Future<void> main() async {
     marks: marks,
     // A download's hashes and checks run on isolates, not the UI one
     // (#1699).
-    batchCheck: checkBatchInIsolate,
-    hasher: sha256InIsolate,
+    batchCheck: (batch) =>
+        checkBatchInIsolate(batch, onFallback: log.warning),
+    hasher: (bytes) => sha256InIsolate(bytes, onFallback: log.warning),
     // The fonts load after the first frame, the learner's first (#1699).
     deferFonts: true,
     // The index and the review queue parse on isolates (#1699).
@@ -171,7 +172,7 @@ Future<void> main() async {
       privateStore: privateStore,
       log: log,
       marks: marks,
-      parser: parseInIsolate,
+      parser: (texts) => parseInIsolate(texts, onFallback: log.warning),
       // The decks' YAML, kept as JSON between launches and read again
       // only for a file whose SHA-256 changed (#875, ADR-0048).
       snapshots: CatalogSnapshots(
@@ -181,7 +182,7 @@ Future<void> main() async {
           for (final e in (await downloaded.manifest()).entries)
             e.key: e.value.sha256,
         },
-        runner: runJobInIsolate,
+        runner: (job) => runJobInIsolate(job, onFallback: log.warning),
       ),
     ),
     // The Find my level question banks, made once per language and deck set.

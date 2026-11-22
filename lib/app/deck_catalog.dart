@@ -484,11 +484,35 @@ Future<Catalog> parseInPlace(Map<String, String> files) async =>
 /// data, so both cross without copying the catalog back. Where an isolate
 /// cannot run (the web) or the catalog cannot cross, it parses in place, so
 /// the result is the same either way.
-Future<Catalog> parseInIsolate(Map<String, String> files) async {
+///
+/// When it falls back, [onFallback] hears why, so that the log says the
+/// parsing moved to the UI isolate (#1699); the fallback itself is kept.
+Future<Catalog> parseInIsolate(
+  Map<String, String> files, {
+  void Function(String message)? onFallback,
+}) async {
   try {
     return await Isolate.run(() => DeckCatalog.parseAll(files));
-  } catch (_) {
+  } catch (e, stack) {
+    tellFallback(onFallback, 'Parsing the decks on an isolate failed', e, stack);
     return DeckCatalog.parseAll(files);
+  }
+}
+
+/// Tells [onFallback], if given, that [what] failed and the work moved to the
+/// UI isolate. Never throws.
+void tellFallback(
+  void Function(String message)? onFallback,
+  String what,
+  Object error,
+  StackTrace stack,
+) {
+  try {
+    onFallback?.call(
+      describeError('$what; it runs on the UI isolate', error, stack),
+    );
+  } on Object {
+    // Telling the log must not stop the fallback.
   }
 }
 
@@ -626,10 +650,14 @@ Future<CatalogOutcome> runJobInPlace(CatalogJob job) async =>
 /// [runCatalogJob] on an isolate of its own, as [parseInIsolate] parses:
 /// reading the snapshot's JSON is off the UI isolate too. In place where an
 /// isolate cannot run.
-Future<CatalogOutcome> runJobInIsolate(CatalogJob job) async {
+Future<CatalogOutcome> runJobInIsolate(
+  CatalogJob job, {
+  void Function(String message)? onFallback,
+}) async {
   try {
     return await Isolate.run(() => runCatalogJob(job));
-  } catch (_) {
+  } catch (e, stack) {
+    tellFallback(onFallback, 'Reading the decks on an isolate failed', e, stack);
     return runCatalogJob(job);
   }
 }
