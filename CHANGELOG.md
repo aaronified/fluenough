@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **No blank Decks list after search.** The Decks list no longer goes blank after closing search.
+
 ## [0.12.0] - 2026-11-22
 
 - **Thank you page.** Settings, Sources now starts by thanking everyone whose work Fluenough stands on, from the Wikimedia volunteers to the reviewers and learners.
