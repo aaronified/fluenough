@@ -18,6 +18,7 @@ import '../core/review/rater_code.dart';
 import '../core/review/review_file.dart';
 import '../core/review/review_quorum.dart';
 import '../core/review/review_session.dart';
+import '../core/review/sent_mail.dart';
 import '../core/review/reviewer_key.dart';
 import '../core/review/review_receipt.dart';
 import 'app_info.dart';
@@ -30,7 +31,7 @@ import 'settings.dart';
 /// What came of sending reviews.
 enum ReviewSendOutcome {
   /// The mail app opened with the files; they are marked sent. Only the
-  /// reviewer knows whether the mail went: [Reviewing.sendAgain] takes it
+  /// reviewer knows whether the mail went: [Reviewing.sendMailAgain] puts it
   /// back if it did not.
   inMailApp,
 
@@ -410,28 +411,32 @@ class Reviewing {
   /// The decks with reviews not sent yet.
   List<DeckReview> get unsent => reviews.unsent;
 
-  /// Sends [decks]' unsent reviews, and every daily-question answer waiting
-  /// (#519), in one mail, one file each (a file for each deck, and one for
-  /// each language of answers), through the reviewer's mail app, with
-  /// [body], which is for people only. Once the mail app has opened with
-  /// them they are marked sent; they stay on the phone. The phone cannot
-  /// tell whether the mail then went, so the reviews' send can be taken
-  /// back with [sendAgain].
+  /// Sends [decks]' unsent reviews, and the daily-question [answers] (every
+  /// one waiting when null; #519), in one mail, one file each (a file for
+  /// each deck, and one for each language of answers), through the
+  /// reviewer's mail app, with [body], which is for people only. [held]
+  /// names, by deck id, cards left out of the mail: they stay waiting. Once
+  /// the mail app has opened with them they are marked sent and the mail is
+  /// recorded; they stay on the phone. The phone cannot tell whether the
+  /// mail then went, so a mail can be put back with [sendMailAgain].
   Future<ReviewSendOutcome> send(
     Iterable<DeckReview> decks, {
     required String body,
+    Iterable<LoggedAnswer>? answers,
+    Map<String, Set<String>> held = const <String, Set<String>>{},
   }) async {
     final code = this.code;
     final chosen = <DeckReview>[
       for (final deck in decks)
-        if (deck.hasUnsent) deck,
+        if (deck.without(held[deck.deckId] ?? const <String>{}).hasUnsent)
+          deck.without(held[deck.deckId] ?? const <String>{}),
     ];
-    final answers = unsentAnswers;
-    if (code == null || (chosen.isEmpty && answers.isEmpty)) {
+    final given = (answers ?? unsentAnswers).toList();
+    if (code == null || (chosen.isEmpty && given.isEmpty)) {
       return ReviewSendOutcome.nothingToSend;
     }
     final made = _clock();
-    final answered = QuestionsFile.languagesOf(answers);
+    final answered = QuestionsFile.languagesOf(given);
     // The coarse "passed facets" flag of a reviewer check goes in the first
     // mail of its course, and nothing else of the check ever leaves.
     final flagged = <String, List<String>>{
@@ -464,7 +469,7 @@ class Reviewing {
           name: QuestionsFile.name(language),
           mimeType: QuestionsFile.mimeType,
           text: QuestionsFile.encode(
-            answers,
+            given,
             language: language,
             code: code,
             appVersion: AppInfo.version,
@@ -486,37 +491,45 @@ class Reviewing {
     }
     if (!shared) return ReviewSendOutcome.noMailApp;
     flagged.keys.forEach(settings.markReviewerCheckMailed);
-    if (chosen.isNotEmpty) {
-      settings.reviews = reviews.sentAt(<String>[
-        for (final deck in chosen) deck.deckId,
-      ], made);
-    }
-    if (answers.isNotEmpty) {
+    settings.reviews = reviews.sentAt(
+      <String>[for (final deck in chosen) deck.deckId],
+      made,
+      answerIds: <String>[for (final a in given) a.id],
+      held: held,
+    );
+    if (given.isNotEmpty) {
       settings.reviewQuestions = questions.sentAt(<String>[
-        for (final a in answers) a.id,
+        for (final a in given) a.id,
       ], made);
     }
     _log.event(
-      'Reviews of ${chosen.length} deck(s) and ${answers.length} question '
+      'Reviews of ${chosen.length} deck(s) and ${given.length} question '
       'answer(s) shared to the mail app',
     );
     return ReviewSendOutcome.inMailApp;
   }
 
-  /// The decks of the last send, while it can be taken back: what "Send
-  /// the last mail again" puts back. Empty when there is none.
-  List<DeckReview> get lastSent => reviews.lastSend;
+  /// The mails sent, newest first, each with what it carried.
+  List<SentMail> get sentMails => reviews.mails.reversed.toList();
 
-  /// Takes the last send back, for a mail the reviewer did not send or
-  /// lost: what it carried waits to send again, with anything reviewed
-  /// since. Once per send.
-  void sendAgain() {
-    final last = lastSent;
-    if (last.isEmpty) return;
-    settings.reviews = reviews.unsend(<String>[
-      for (final deck in last) deck.deckId,
-    ]);
-    _log.event('Last send of ${last.length} deck(s) taken back');
+  /// Puts [mail] back for a mail the reviewer did not send or lost: its
+  /// [deckIds] (those the deck data does not acknowledge) and its
+  /// daily-question answers wait to send again, with anything reviewed since.
+  /// Nothing is sent. The answers that went in the mail are those it
+  /// recorded, and any marked sent at its time (a mail recorded before the
+  /// answers were, which carried them without naming them).
+  void sendMailAgain(SentMail mail, Iterable<String> deckIds) {
+    final back = deckIds.toSet();
+    final ids = <String>{
+      ...mail.answers,
+      for (final a in questions.answers.values)
+        if (a.sentAt?.isAtSameMomentAs(mail.at) ?? false) a.id,
+    };
+    settings.reviews = reviews.unsendMail(mail, back);
+    if (ids.isNotEmpty) settings.reviewQuestions = questions.unsend(ids);
+    _log.event(
+      'Mail of ${back.length} deck(s) and ${ids.length} answer(s) put back',
+    );
   }
 
   // The daily questions (#519).

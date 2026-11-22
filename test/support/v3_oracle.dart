@@ -97,3 +97,42 @@ PlacementLanguageData hindustaniWithScript() {
     ],
   );
 }
+
+/// The Hindustani data with the letters of both its scripts, as the app gives
+/// them for a learner who reads one script and learns the other: Devanagari
+/// first, then Perso-Arabic ([PlacementScriptData] is read from the script
+/// decks by the app, each script with its own).
+PlacementLanguageData hindustaniWithTwoScripts() {
+  final one = hindustaniWithScript();
+  List<Card> read(String name) {
+    final doc = loadYaml(File('decks/hi/$name.yaml').readAsStringSync());
+    return <Card>[
+      for (final (i, c) in ((doc as YamlMap)['cards'] as YamlList).indexed)
+        Card(
+          id: '$name-$i',
+          deckId: name,
+          target: (c as YamlMap)['target'] as String,
+          native: '',
+          reading: c['reading'] as String?,
+        ),
+    ];
+  }
+
+  return PlacementLanguageData(
+    language: one.language,
+    decks: one.decks,
+    sounds: one.sounds,
+    levelMarkDecks: one.levelMarkDecks,
+    scripts: <PlacementScriptData>[
+      ...one.scripts,
+      PlacementScriptData(
+        script: 'perso_arabic',
+        letters: <Card>[
+          ...read('hi-script-perso-arabic-letters'),
+          ...read('hi-script-perso-arabic-vowels'),
+        ],
+        joined: read('hi-script-perso-arabic-shapes'),
+      ),
+    ],
+  );
+}

@@ -9,11 +9,14 @@ import 'package:fluenough/app/placement_credit.dart';
 import 'package:fluenough/app/placement_run_setup.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/language_offer.dart';
+import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/placement/assurance_model.dart';
 import 'package:fluenough/core/placement/assurance_readout.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
+import 'package:fluenough/core/placement/script_gate.dart';
 import 'package:fluenough/core/placement/v3_result.dart';
+import 'package:fluenough/core/placement/v3_session.dart' show V3ScriptCheck;
 import 'package:fluenough/features/placement/skill_labels_line.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -209,6 +212,95 @@ void main() {
         for (final entry in state.scriptLessons('hi', native: 'en')) entry.id,
       };
       expect(state.settings.placedDecks.intersection(lessons), isEmpty);
+    });
+
+    group('a course written in two scripts', () {
+      V3Result checked(ScriptLevel deva, ScriptLevel perso) {
+        ScriptGateResult found(ScriptLevel level) => ScriptGateResult(
+          level: level,
+          items: 3,
+          skipped: false,
+          posterior: const <ScriptLevel, double>{},
+        );
+        int at(String script) {
+          return plan.scripts.indexWhere((s) => s.script == script);
+        }
+
+        return V3Result(
+          skills: const <V3SkillResult>[],
+          levels: PlacementLevels(plan.data.deckCount, maxParts: 20),
+          readout: null,
+          script: found(ScriptLevel.all),
+          scriptChecks: <V3ScriptCheck>[
+            V3ScriptCheck(
+              script: 'devanagari',
+              index: at('devanagari'),
+              result: found(deva),
+            ),
+            V3ScriptCheck(
+              script: 'perso_arabic',
+              index: at('perso_arabic'),
+              result: found(perso),
+            ),
+          ],
+          items: 5,
+          seconds: 20,
+          endReason: null,
+        );
+      }
+
+      /// The reviews the script's decks got, as (recognition, production).
+      (bool, bool) reviewed(String script) {
+        final check = plan.scripts.firstWhere((s) => s.script == script);
+        final cards = <Card>[
+          for (final entry in check.decks)
+            if (entry.isScript) ...entry.cards,
+        ];
+        bool any(DrillMode mode) =>
+            cards.any((c) => state.progress.stateOf(c.id, mode) != null);
+        return (any(DrillMode.recognition), any(DrillMode.production));
+      }
+
+      test('a pass in Devanagari and a fail in Perso-Arabic credit only '
+          'Devanagari', () {
+        final both = plan.scripts.map((s) => s.script).toSet();
+        expect(both, containsAll(<String>['devanagari', 'perso_arabic']));
+        state.writePlacementV3(
+          'hi',
+          plan,
+          checked(ScriptLevel.all, ScriptLevel.none),
+        );
+        expect(reviewed('devanagari'), (true, true));
+        expect(reviewed('perso_arabic'), (false, false));
+      });
+
+      test('a fail in Devanagari and a pass in Perso-Arabic credit only '
+          'Perso-Arabic', () {
+        state.writePlacementV3(
+          'hi',
+          plan,
+          checked(ScriptLevel.none, ScriptLevel.all),
+        );
+        expect(reviewed('devanagari'), (false, false));
+        expect(reviewed('perso_arabic'), (true, true));
+      });
+
+      test('a pass in both credits both, and a fail in both neither', () {
+        state.writePlacementV3(
+          'hi',
+          plan,
+          checked(ScriptLevel.none, ScriptLevel.none),
+        );
+        expect(reviewed('devanagari'), (false, false));
+        expect(reviewed('perso_arabic'), (false, false));
+        state.writePlacementV3(
+          'hi',
+          plan,
+          checked(ScriptLevel.all, ScriptLevel.all),
+        );
+        expect(reviewed('devanagari'), (true, true));
+        expect(reviewed('perso_arabic'), (true, true));
+      });
     });
 
     test('never changes a skill\'s Leave, Know or Learn', () {

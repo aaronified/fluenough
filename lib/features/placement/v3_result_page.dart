@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../core/placement/joint_model.dart' show PlacementConfidence;
 import '../../core/placement/placement_questions.dart' show PlacementSkill;
-import '../../core/placement/script_gate.dart' show ScriptLevel;
 import '../../core/placement/v3_result.dart';
 import '../../core/placement/v3_session.dart' show V3ScriptStart, V3Why;
 import '../../l10n/app_localizations.dart';
@@ -365,7 +364,7 @@ class _V3ResultPageState extends State<V3ResultPage> {
                             style: theme.textTheme.bodyMedium,
                           ),
                         ),
-                  if (_r.script?.level == ScriptLevel.partly)
+                  if (_r.scriptPartly)
                     Padding(
                       padding: const EdgeInsets.only(bottom: 16),
                       child: Text(

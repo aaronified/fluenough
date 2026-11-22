@@ -12,6 +12,7 @@ import 'dart:convert';
 import 'facets.dart';
 import 'review_problems.dart';
 import 'review_receipt.dart';
+import 'sent_mail.dart';
 
 /// The part of a card a suggestion is about, as "Suggest a change" offers
 /// them. The names are written to the review file, so they are permanent.
@@ -524,6 +525,21 @@ class CardReview {
   /// Whether the card is marked: right, or with a suggestion.
   bool get marked => right || suggestions.isNotEmpty;
 
+  /// This review with its time set to [time]: what keeps a review held back
+  /// from a mail waiting to send, since a review is unsent when it is newer
+  /// than the deck's last send.
+  CardReview withAt(DateTime time) => CardReview(
+    at: time,
+    right: right,
+    suggestions: suggestions,
+    rating: rating,
+    alike: alike,
+    answers: answers,
+    itemsRight: itemsRight,
+    facets: facets,
+    receipts: receipts,
+  );
+
   /// Whether there is anything to send.
   bool get isEmpty =>
       !marked &&
@@ -642,8 +658,6 @@ class DeckReview {
     this.cards = const <String, CardReview>{},
     this.signedOff,
     this.sent,
-    this.canUnsend = false,
-    this.sentBefore,
   });
 
   final String deckId;
@@ -655,16 +669,9 @@ class DeckReview {
   /// When the reviewer signed off every card, or null.
   final DateTime? signedOff;
 
-  /// When the review was last sent, or null if never.
+  /// When the review was last sent, or null if never. A send only opens the
+  /// mail app: [Reviews.unsendMail] puts it back for a mail that did not go.
   final DateTime? sent;
-
-  /// Whether the last send can be taken back ([Reviews.unsend]): a send
-  /// only opens the mail app, and the reviewer may not send the mail.
-  final bool canUnsend;
-
-  /// What [sent] was before the last send, which [Reviews.unsend] puts
-  /// back: null when the deck had never been sent.
-  final DateTime? sentBefore;
 
   bool _unsent(DateTime at) => sent == null || at.isAfter(sent!);
 
@@ -702,30 +709,49 @@ class DeckReview {
     cards: Map<String, CardReview>.unmodifiable(cards ?? this.cards),
     signedOff: clearSignOff ? null : signedOff ?? this.signedOff,
     sent: sent,
-    canUnsend: canUnsend,
-    sentBefore: sentBefore,
   );
 
-  /// Sent at [at], which can be taken back.
-  DeckReview sentAt(DateTime at) => DeckReview(
+  /// Sent at [at]. The cards in [held] were left out of the mail: they stay
+  /// unsent, as they were reviewed, one millisecond after it.
+  DeckReview sentAt(DateTime at, {Set<String> held = const <String>{}}) =>
+      DeckReview(
+        deckId: deckId,
+        language: language,
+        cards: held.isEmpty
+            ? cards
+            : Map<String, CardReview>.unmodifiable(<String, CardReview>{
+                for (final MapEntry(:key, :value) in cards.entries)
+                  key: held.contains(key) && !value.isEmpty
+                      ? value.withAt(at.add(const Duration(milliseconds: 1)))
+                      : value,
+              }),
+        signedOff: signedOff,
+        sent: at,
+      );
+
+  /// This deck with [sent] as it was before a send that is put back
+  /// ([at] null: never sent).
+  DeckReview withSent(DateTime? at) => DeckReview(
     deckId: deckId,
     language: language,
     cards: cards,
     signedOff: signedOff,
     sent: at,
-    canUnsend: true,
-    sentBefore: sent,
   );
 
-  /// With the last send taken back: [sent] as it was before it. Once only.
-  DeckReview unsent() => !canUnsend
+  /// The unsent cards without [held]: what a mail carries when the reviewer
+  /// dropped some from it.
+  DeckReview without(Set<String> held) => held.isEmpty
       ? this
       : DeckReview(
           deckId: deckId,
           language: language,
-          cards: cards,
+          cards: Map<String, CardReview>.unmodifiable(<String, CardReview>{
+            for (final MapEntry(:key, :value) in cards.entries)
+              if (!held.contains(key)) key: value,
+          }),
           signedOff: signedOff,
-          sent: sentBefore,
+          sent: sent,
         );
 
   Map<String, Object?> toJson() => <String, Object?>{
@@ -735,8 +761,6 @@ class DeckReview {
     },
     'signed_off': ?signedOff?.toUtc().toIso8601String(),
     'sent': ?sent?.toUtc().toIso8601String(),
-    if (canUnsend) 'can_unsend': true,
-    'sent_before': ?sentBefore?.toUtc().toIso8601String(),
   };
 
   static DeckReview? fromJson(String deckId, Object? json) {
@@ -754,18 +778,27 @@ class DeckReview {
       }),
       signedOff: DateTime.tryParse('${json['signed_off']}'),
       sent: DateTime.tryParse('${json['sent']}'),
-      canUnsend: json['can_unsend'] == true,
-      sentBefore: DateTime.tryParse('${json['sent_before']}'),
     );
   }
 }
 
-/// Every deck's review on this phone, by deck id. Immutable: each change
-/// makes a new one.
+/// Every deck's review on this phone, by deck id, and the mails sent.
+/// Immutable: each change makes a new one.
 class Reviews {
-  const Reviews([this.decks = const <String, DeckReview>{}]);
+  const Reviews([
+    this.decks = const <String, DeckReview>{},
+    this.mails = const <SentMail>[],
+  ]);
 
   final Map<String, DeckReview> decks;
+
+  /// The mails sent, oldest first, each its own record ([SentMail]).
+  final List<SentMail> mails;
+
+  /// Where [mails] are kept in the stored JSON, among the decks. No deck id
+  /// starts with an underscore, and an app from before the mail records
+  /// reads this entry as a deck it cannot read and leaves it out.
+  static const String mailsKey = '_mails';
 
   DeckReview? of(String deckId) => decks[deckId];
 
@@ -810,41 +843,64 @@ class Reviews {
     return _with(deck.copyWith(signedOff: at));
   }
 
-  /// With [deckIds] marked sent at [at]: what they held stays on the phone,
-  /// to show what the reviewer has done, but is not sent again, unless the
-  /// send is taken back ([unsend]).
-  Reviews sentAt(Iterable<String> deckIds, DateTime at) {
+  /// With [deckIds] marked sent at [at], and the mail recorded: what they
+  /// held stays on the phone, to show what the reviewer has done, but is
+  /// not sent again, unless the mail is put back ([unsendMail]). The mail
+  /// also carries [answerIds], the daily-question answers sent with it.
+  /// [held] names, by deck id, the cards the reviewer left out of the mail:
+  /// they stay unsent.
+  Reviews sentAt(
+    Iterable<String> deckIds,
+    DateTime at, {
+    Iterable<String> answerIds = const <String>[],
+    Map<String, Set<String>> held = const <String, Set<String>>{},
+  }) {
     var next = this;
+    final before = <String, DateTime?>{};
     for (final id in deckIds) {
       final deck = decks[id];
-      if (deck != null) next = next._with(deck.sentAt(at));
+      if (deck == null) continue;
+      before[id] = deck.sent;
+      next = next._with(deck.sentAt(at, held: held[id] ?? const <String>{}));
     }
-    return next;
+    final answers = answerIds.toList();
+    if (before.isEmpty && answers.isEmpty) return next;
+    return next._withMails(<SentMail>[
+      ...mails,
+      SentMail(at: at, decks: before, answers: answers),
+    ]);
   }
 
-  /// The decks of the last send that can still be taken back: those last
-  /// sent at the latest time any such deck was. Empty when there is none.
-  List<DeckReview> get lastSend {
-    final undoable = decks.values.where((d) => d.canUnsend && d.sent != null);
-    if (undoable.isEmpty) return const <DeckReview>[];
-    final latest = undoable
-        .map((d) => d.sent!)
-        .reduce((a, b) => a.isAfter(b) ? a : b);
-    return <DeckReview>[
-      for (final deck in undoable)
-        if (deck.sent == latest) deck,
-    ];
-  }
+  /// The mail made at [at], or null.
+  SentMail? mailAt(DateTime at) =>
+      mails.where((m) => m.at.isAtSameMomentAs(at)).firstOrNull;
 
-  /// With [deckIds]' last send taken back, for a mail that never went: what
-  /// it carried is waiting to send again.
-  Reviews unsend(Iterable<String> deckIds) {
+  /// With [deckIds] of [mail] put back, for a mail that never went: what
+  /// they carried waits to send again, as the decks stood before the mail,
+  /// and the mail's answers are the caller's to put back. The mail's record
+  /// loses them, and is dropped when nothing is left of it. A later mail
+  /// that carried the same decks loses them too: waiting again covers
+  /// what it sent.
+  Reviews unsendMail(SentMail mail, Iterable<String> deckIds) {
+    final back = <String>{
+      for (final id in deckIds)
+        if (mail.decks.containsKey(id)) id,
+    };
     var next = this;
-    for (final id in deckIds) {
+    for (final id in back) {
       final deck = decks[id];
-      if (deck != null) next = next._with(deck.unsent());
+      if (deck != null) next = next._with(deck.withSent(mail.decks[id]));
     }
-    return next;
+    final kept = <SentMail>[];
+    for (final m in mails) {
+      if (m.at.isBefore(mail.at)) {
+        kept.add(m);
+        continue;
+      }
+      final rest = m.without(back, withAnswers: m.at.isAtSameMomentAs(mail.at));
+      if (!rest.isEmpty) kept.add(rest);
+    }
+    return next._withMails(kept);
   }
 
   Reviews _with(DeckReview deck) => Reviews(
@@ -852,14 +908,23 @@ class Reviews {
       ...decks,
       deck.deckId: deck,
     }),
+    mails,
   );
+
+  Reviews _withMails(List<SentMail> next) =>
+      Reviews(decks, List<SentMail>.unmodifiable(next));
 
   String toJson() => jsonEncode(<String, Object?>{
     for (final MapEntry(:key, :value) in decks.entries) key: value.toJson(),
+    if (mails.isNotEmpty)
+      mailsKey: <Object?>[for (final m in mails) m.toJson()],
   });
 
   /// [text] as [toJson] wrote it, or null if it is not that. A deck or card
-  /// that cannot be read is left out rather than losing the rest.
+  /// that cannot be read is left out rather than losing the rest. Stored
+  /// reviews from before the mail records are read too: a deck whose last
+  /// send could still be taken back (`can_unsend`) makes a mail of its own,
+  /// with the decks sent at the same time.
   static Reviews? fromJson(String text) {
     final Object? json;
     try {
@@ -868,11 +933,33 @@ class Reviews {
       return null;
     }
     if (json is! Map) return null;
+    final stored = json[mailsKey];
+    final mails = <SentMail>[
+      if (stored is List) ...stored.map(SentMail.fromJson).nonNulls,
+    ];
+    if (stored == null) {
+      final legacy = <DateTime, Map<String, DateTime?>>{};
+      for (final MapEntry(:key, :value) in json.entries) {
+        if (key is! String || value is! Map || value['can_unsend'] != true) {
+          continue;
+        }
+        final sent = DateTime.tryParse('${value['sent']}');
+        if (sent == null) continue;
+        legacy.putIfAbsent(sent, () => <String, DateTime?>{})[key] =
+            DateTime.tryParse('${value['sent_before']}');
+      }
+      for (final MapEntry(:key, :value) in legacy.entries) {
+        mails.add(SentMail(at: key, decks: value));
+      }
+      mails.sort((a, b) => a.at.compareTo(b.at));
+    }
     return Reviews(
       Map<String, DeckReview>.unmodifiable(<String, DeckReview>{
         for (final MapEntry(:key, :value) in json.entries)
-          if (key is String) key: ?DeckReview.fromJson(key, value),
+          if (key is String && key != mailsKey)
+            key: ?DeckReview.fromJson(key, value),
       }),
+      List<SentMail>.unmodifiable(mails),
     );
   }
 }
