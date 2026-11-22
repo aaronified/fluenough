@@ -66,7 +66,7 @@ def report_lines(reports: list) -> list[str]:
         for script in scripts[1:]:
             n = counts_of[code].get(script, 0)
             pct = f"{100 * n / targeted:.0f}%" if targeted else "n/a"
-            lines.append(f"  info    {code}: {n}/{targeted} cards with a target "
+            lines.append(f"  coverage {code}: {n}/{targeted} cards with a target "
                          f"have a {script} spelling ({pct}); "
                          f"{targeted - n} lack it (primary {scripts[0]})")
     return lines
