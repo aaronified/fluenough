@@ -5,6 +5,7 @@ import '../core/logs/log_entry.dart';
 import '../core/private/private_package.dart';
 import 'app_log.dart';
 import 'deck_catalog.dart';
+import 'deck_files.dart';
 
 /// Where a private package's path starts, so the catalog can tell it from a
 /// bundled deck and from a single added file (#1017). A file is
@@ -131,7 +132,7 @@ final RegExp _packageIdPattern = RegExp(r'^[a-z0-9]+(?:-[a-z0-9]+)*$');
 /// <root>/<package id>/...    a package's files
 /// <root>/staging/            an install in progress, deleted after it
 /// ```
-class FilePrivateStore implements PrivateStore {
+class FilePrivateStore implements PrivateStore, DiskLocated {
   FilePrivateStore(this.root, {this._log, DateTime Function()? clock})
     : _clock = clock ?? DateTime.now;
 
@@ -332,6 +333,17 @@ class FilePrivateStore implements PrivateStore {
       _fail('could not list the packages', e, stack);
       return const <String>[];
     }
+  }
+
+  @override
+  String? locate(String path) {
+    final parts = _split(path);
+    if (parts == null ||
+        !_isPackageId(parts.$1) ||
+        !isSafePackagePath(parts.$2)) {
+      return null;
+    }
+    return '${root.path}/${parts.$1}/${parts.$2}';
   }
 
   @override

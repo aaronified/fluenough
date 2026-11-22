@@ -28,6 +28,7 @@ import '../core/data/rule_expander.dart';
 import '../core/data/themes.dart';
 import '../core/data/yaml_tree.dart';
 import '../core/decks/sha256.dart';
+import '../core/decks/language_unit.dart';
 import '../core/decks/shared_data.dart';
 import '../core/logs/log_entry.dart';
 import '../core/decks/adult_gate.dart';
@@ -42,7 +43,12 @@ import '../core/models/number_rules.dart';
 import '../core/private/private_ids.dart';
 import 'added_decks.dart';
 import 'app_log.dart';
+import 'catalog_set.dart';
+import 'deck_files.dart';
+import 'disk_deck_files.dart';
+import 'language_unit_job.dart';
 import 'private_store.dart';
+import 'summary_store.dart';
 import 'startup_marks.dart';
 
 /// Where deck files come from: their paths, and each one's text.
@@ -92,7 +98,7 @@ class AssetDeckSource implements DeckSource {
 /// Several sources read as one: every path of each, and a path two list read
 /// from the first that lists it. The app reads its bundled theme list and
 /// its downloaded decks so.
-class DeckSources implements DeckSource {
+class DeckSources implements DeckSource, DiskLocated {
   DeckSources(this.sources);
 
   final List<DeckSource> sources;
@@ -114,6 +120,12 @@ class DeckSources implements DeckSource {
     final source = _owner[path];
     if (source == null) throw StateError('no deck file at $path');
     return source.read(path);
+  }
+
+  @override
+  String? locate(String path) {
+    final source = _owner[path];
+    return source is DiskLocated ? source.locate(path) : null;
   }
 }
 
@@ -406,6 +418,109 @@ class Catalog {
     scriptGuides: scriptGuides,
   );
 
+  /// This catalog without the decks at [paths], and with [extra] files told
+  /// as broken, all else the same.
+  Catalog _without(Set<String> paths, List<BrokenDeck> extra) => Catalog(
+    decks: <DeckEntry>[
+      for (final e in decks)
+        if (!paths.contains(e.path)) e,
+    ],
+    broken: <BrokenDeck>[...broken, ...extra],
+    hidden: <DeckEntry>[
+      for (final e in hidden)
+        if (!paths.contains(e.path)) e,
+    ],
+    themes: themes,
+    sections: sections,
+    facts: facts,
+    situations: situations,
+    topics: topics,
+    creators: creators,
+    recommendations: recommendations,
+    dataProblems: dataProblems,
+    scriptFeatures: scriptFeatures,
+    numberRules: numberRules,
+    paths: this.paths,
+    languagePaths: languagePaths,
+    sounds: sounds,
+    romanisations: romanisations,
+    scriptGuides: scriptGuides,
+  );
+
+  static int _rank(String path) => path.startsWith(addedDeckPrefix)
+      ? 2
+      : path.startsWith(privateDeckPrefix)
+      ? 1
+      : 0;
+
+  static int _byRankAndPath(String a, String b) {
+    final byRank = _rank(a).compareTo(_rank(b));
+    return byRank != 0 ? byRank : a.compareTo(b);
+  }
+
+  /// The catalog of several language units read apart (ADR-0062): what
+  /// [DeckCatalog.parseAll] gives for all their files together, except that
+  /// a file's broken entry listed by each unit (the shared theme list) is
+  /// told once, and that the order of the map entries is by unit. The decks
+  /// keep the order of the whole read: file order, with each course's decks
+  /// put in teaching order in the places its decks held.
+  static Catalog compose(List<Catalog> units) {
+    if (units.isEmpty) return Catalog.empty;
+    final told = <String>{};
+    final broken = <BrokenDeck>[];
+    final slots = <(String, DeckEntry)>[];
+    final hidden = <DeckEntry>[];
+    for (final unit in units) {
+      for (final b in unit.broken) {
+        if (isSharedUnitPath(b.path) && !told.add(b.path)) continue;
+        broken.add(b);
+      }
+      // Each deck in the place its unit's file order gave its course.
+      final places = <String>[for (final e in unit.decks) e.path]
+        ..sort(_byRankAndPath);
+      for (final (i, e) in unit.decks.indexed) {
+        slots.add((places[i], e));
+      }
+      hidden.addAll(unit.hidden);
+    }
+    slots.sort((a, b) => _byRankAndPath(a.$1, b.$1));
+    hidden.sort((a, b) => _byRankAndPath(a.path, b.path));
+    return Catalog(
+      decks: <DeckEntry>[for (final slot in slots) slot.$2],
+      hidden: hidden,
+      broken: broken,
+      themes: units.first.themes,
+      sections: units.first.sections,
+      facts: <String, FactsFile>{for (final u in units) ...u.facts},
+      situations: <String, SituationsFile>{
+        for (final u in units) ...u.situations,
+      },
+      topics: <String, TopicsFile>{for (final u in units) ...u.topics},
+      creators: <String, CreatorsFile>{for (final u in units) ...u.creators},
+      recommendations: <String, RecommendationsFile>{
+        for (final u in units) ...u.recommendations,
+      },
+      dataProblems: <String>[for (final u in units) ...u.dataProblems],
+      scriptFeatures: <String, Set<String>>{
+        for (final u in units) ...u.scriptFeatures,
+      },
+      numberRules: <String, NumberRules>{
+        for (final u in units) ...u.numberRules,
+      },
+      paths: <String, CoursePath>{for (final u in units) ...u.paths},
+      languagePaths: <String, LanguagePath>{
+        for (final u in units) ...u.languagePaths,
+      },
+      sounds: <String, SoundContrasts>{for (final u in units) ...u.sounds},
+      romanisations: <String, Romanisation>{
+        for (final u in units) ...u.romanisations,
+      },
+      scriptGuides: <String, ScriptGuide>{
+        for (final u in units) ...u.scriptGuides,
+      },
+    );
+  }
+
   /// In file order, which groups them by language directory, except that a
   /// course's decks come in teaching order, so that its new cards do too:
   /// its path's order, or without a path, its theme decks in the order of
@@ -562,12 +677,18 @@ class CatalogJob {
     required this.shas,
     required this.snapshot,
     required this.app,
+    this.disk,
   });
 
-  /// Every deck file's text, by path.
+  /// The deck files' text read already, by path.
   final Map<String, String> files;
 
-  /// The SHA-256 of each file in [files].
+  /// The files the job reads for itself, on its own isolate, so that their
+  /// text is never on the UI isolate (ADR-0062); null for none.
+  final DeckFiles? disk;
+
+  /// The SHA-256 of the files the phone already knows by path, such as the
+  /// downloads' manifest. A file it lacks is hashed by the job.
   final Map<String, String> shas;
 
   /// The stored snapshot's text, or null.
@@ -580,9 +701,25 @@ class CatalogJob {
 /// What [runCatalogJob] finds: the catalog, and the snapshot to store when
 /// it differs from the one the job was given.
 class CatalogOutcome {
-  const CatalogOutcome(this.catalog, this.snapshot);
+  const CatalogOutcome(
+    this.catalog,
+    this.snapshot, {
+    this.filesRead = 0,
+    this.bytesRead = 0,
+    this.hashed = 0,
+    this.unreadable = const <String>[],
+    this.reused = 0,
+  });
 
   final Catalog catalog;
+
+  /// How many files the job read itself, their bytes, how many it had to
+  /// hash, those it could not read, and how many kept trees it reused.
+  final int filesRead;
+  final int bytesRead;
+  final int hashed;
+  final List<String> unreadable;
+  final int reused;
 
   /// The text of a snapshot to write, or null when the stored one is still
   /// right (or none can be made).
@@ -596,12 +733,80 @@ class CatalogOutcome {
 /// used one then fails to parse, the whole job is parsed again from YAML, so
 /// that the error names the line it is on. Pure: no storage, no Flutter.
 CatalogOutcome runCatalogJob(CatalogJob job) {
-  final stored = CatalogSnapshot.tryDecode(job.snapshot, app: job.app);
-  final reusable = stored?.reusable(job.shas) ?? const <String, Object?>{};
+  final unreadable = <String>[];
+  final read = job.disk?.readAll(unreadable) ?? const <String, String>{};
+  final files = read.isEmpty
+      ? job.files
+      : <String, String>{...job.files, ...read};
+  var bytes = 0;
+  for (final text in read.values) {
+    bytes += text.length;
+  }
+  final outcome = parseWithSnapshot(
+    files: files,
+    knownShas: job.shas,
+    snapshot: job.snapshot,
+    app: job.app,
+    parse: DeckCatalog.parseAll,
+  );
+  return CatalogOutcome(
+    outcome.catalog,
+    outcome.snapshot,
+    filesRead: read.length,
+    bytesRead: bytes,
+    hashed: outcome.hashed,
+    unreadable: unreadable,
+    reused: outcome.reused,
+  );
+}
+
+/// What [parseWithSnapshot] found.
+class SnapshotParse {
+  const SnapshotParse(this.catalog, this.snapshot, this.hashed, this.reused);
+
+  final Catalog catalog;
+
+  /// The text of a snapshot to write, or null when the stored one is still
+  /// right (or none can be made).
+  final String? snapshot;
+
+  /// How many files had no known SHA-256 and were hashed.
+  final int hashed;
+
+  /// How many files' kept trees were used in place of reading their YAML.
+  final int reused;
+}
+
+/// Parses [files] with [parse], reading the YAML of only those the
+/// [snapshot] cannot vouch for, and says what the next snapshot is. A file
+/// whose SHA-256 [knownShas] lacks is hashed. With [forceWrite] a snapshot is
+/// returned even when the stored one lists the same files, as when it was
+/// only a seed taken from another file. Pure: no storage, no Flutter.
+SnapshotParse parseWithSnapshot({
+  required Map<String, String> files,
+  required Map<String, String> knownShas,
+  required String? snapshot,
+  required String app,
+  required Catalog Function(Map<String, String> files) parse,
+  bool forceWrite = false,
+}) {
+  var hashed = 0;
+  final shas = <String, String>{};
+  for (final e in files.entries) {
+    final known = knownShas[e.key];
+    if (known != null) {
+      shas[e.key] = known;
+      continue;
+    }
+    hashed++;
+    shas[e.key] = sha256Hex(utf8.encode(e.value));
+  }
+  final stored = CatalogSnapshot.tryDecode(snapshot, app: app);
+  final reusable = stored?.reusable(shas) ?? const <String, Object?>{};
   final kept = <String, Object?>{
     for (final path in reusable.keys) ...<String, Object?>{
-      withoutBom(job.files[path]!): reusable[path],
-      job.files[path]!: reusable[path],
+      withoutBom(files[path]!): reusable[path],
+      files[path]!: reusable[path],
     },
   };
   var scope = YamlTreeScope(kept);
@@ -609,7 +814,7 @@ CatalogOutcome runCatalogJob(CatalogJob job) {
   Catalog? fromKept;
   if (kept.isNotEmpty) {
     try {
-      final parsed = scope.run(() => DeckCatalog.parseAll(job.files));
+      final parsed = scope.run(() => parse(files));
       if (!parsed.broken.any((b) => reusable.containsKey(b.path))) {
         fromKept = parsed;
       }
@@ -623,16 +828,16 @@ CatalogOutcome runCatalogJob(CatalogJob job) {
   } else {
     scope = YamlTreeScope(const <String, Object?>{});
     used = const <String, Object?>{};
-    catalog = scope.run(() => DeckCatalog.parseAll(job.files));
+    catalog = scope.run(() => parse(files));
   }
   try {
     final brokenPaths = <String>{for (final b in catalog.broken) b.path};
-    final files = <String, SnapshotFile>{};
-    for (final path in job.files.keys) {
+    final next = <String, SnapshotFile>{};
+    for (final path in files.keys) {
       if (brokenPaths.contains(path)) continue;
-      final sha = job.shas[path];
+      final sha = shas[path];
       if (sha == null) continue;
-      final text = job.files[path]!;
+      final text = files[path]!;
       final node = scope.parsed[withoutBom(text)] ?? scope.parsed[text];
       final Object? tree;
       if (used.containsKey(path)) {
@@ -642,15 +847,15 @@ CatalogOutcome runCatalogJob(CatalogJob job) {
       } else {
         continue;
       }
-      files[path] = SnapshotFile(sha: sha, tree: tree);
+      next[path] = SnapshotFile(sha: sha, tree: tree);
     }
-    final next = CatalogSnapshot(app: job.app, files: files);
-    if (stored != null && stored.sameFilesAs(next)) {
-      return CatalogOutcome(catalog, null);
+    final snap = CatalogSnapshot(app: app, files: next);
+    if (!forceWrite && stored != null && stored.sameFilesAs(snap)) {
+      return SnapshotParse(catalog, null, hashed, used.length);
     }
-    return CatalogOutcome(catalog, next.encode());
+    return SnapshotParse(catalog, snap.encode(), hashed, used.length);
   } on Object {
-    return CatalogOutcome(catalog, null);
+    return SnapshotParse(catalog, null, hashed, used.length);
   }
 }
 
@@ -718,9 +923,47 @@ class DeckCatalog {
     this.privateStore,
     this.log,
     this.marks,
+    this.mode = kLazyCatalogDefault ? CatalogMode.lazy : CatalogMode.whole,
+    this.languageSnapshots,
+    this.summaries,
+    this.languageRunner = runLanguageJobInPlace,
+    this.languageVerifier = verifyInPlace,
   });
 
   final DeckSource source;
+
+  /// Whether the catalog is read as one unit of every language, as it always
+  /// was, or one language at a time (ADR-0062). Whole is the default.
+  final CatalogMode mode;
+
+  /// Where each language's snapshot is kept, in lazy mode.
+  final LanguageSnapshots? languageSnapshots;
+
+  /// Where the language summaries are kept, in lazy mode.
+  final SummaryBook? summaries;
+
+  /// How a language's job runs in lazy mode: in place by default, on an
+  /// isolate in the app.
+  final LanguageJobRunner languageRunner;
+
+  /// How the caches are checked in lazy mode: in place by default, on an
+  /// isolate in the app.
+  final CacheVerifier languageVerifier;
+
+  /// The catalog as one unit per language (ADR-0062), whatever [mode] is.
+  /// In lazy mode [load] is this set's composed catalog.
+  late final CatalogSet catalogSet = CatalogSet(
+    source: source,
+    added: added,
+    privateStore: privateStore,
+    log: log,
+    marks: marks,
+    snapshots: languageSnapshots,
+    summaries: summaries,
+    app: languageSnapshots?.app ?? '',
+    runner: languageRunner,
+    verifier: languageVerifier,
+  );
 
   /// Start-up timing marks (#1699), or null (tests).
   final StartupMarks? marks;
@@ -752,7 +995,22 @@ class DeckCatalog {
   Future<Catalog> load() => _loading ??= _load();
 
   /// Forgets the loaded catalog, so the next [load] reads the source again.
-  void invalidate() => _loading = null;
+  void invalidate() {
+    _loading = null;
+    if (mode == CatalogMode.lazy) catalogSet.invalidate();
+  }
+
+  /// Hears that the files of [language] changed (null: shared ones), so that
+  /// in lazy mode its unit and summary are made again. Whole mode reads
+  /// everything again through [invalidate] and has nothing to do here.
+  Future<void> languageChanged(String? language) async {
+    if (mode != CatalogMode.lazy) return;
+    try {
+      await catalogSet.languageChanged(language);
+    } on Object catch (e, stack) {
+      log?.warning(describeError('Reading a language again failed', e, stack));
+    }
+  }
 
   /// Whether the files of the last read included a private package's, whose
   /// creators and recommendations merge with the shared ones.
@@ -766,6 +1024,7 @@ class DeckCatalog {
 
   /// Makes [catalog] what [load] returns, without reading the source again.
   void replaceLoaded(Catalog catalog) {
+    if (mode == CatalogMode.lazy) return;
     _loading = Future<Catalog>.value(catalog);
   }
 
@@ -779,7 +1038,9 @@ class DeckCatalog {
   /// caller then loads in full.
   Catalog? patchShared(Catalog current, Map<String, String> changed) {
     try {
-      if (_readPrivate || changed.isEmpty) return null;
+      if (mode == CatalogMode.lazy || _readPrivate || changed.isEmpty) {
+        return null;
+      }
       for (final path in changed.keys) {
         final kind = sharedKindOf(path);
         if (!_patchable.contains(kind)) return null;
@@ -827,7 +1088,13 @@ class DeckCatalog {
   }
 
   Future<Catalog> _load() async {
+    if (mode == CatalogMode.lazy) return catalogSet.loadAll();
     final files = <String, String>{};
+    // With a snapshot the job reads the deck files on its own isolate, so
+    // that their text never passes through the UI isolate (ADR-0062).
+    final snapshots = this.snapshots;
+    final defer = snapshots != null;
+    final disk = <String, String>{};
     final readWatch = Stopwatch()..start();
     final paths = await source.list();
     marks?.record(
@@ -835,13 +1102,24 @@ class DeckCatalog {
       readWatch.elapsedMilliseconds,
       extra: <String, Object?>{'files': paths.length},
     );
+    final from = source;
     for (final path in paths) {
-      files[path] = await source.read(path);
+      final at = defer && from is DiskLocated ? from.locate(path) : null;
+      if (at != null) {
+        disk[path] = at;
+      } else {
+        files[path] = await source.read(path);
+      }
     }
     final added = this.added;
     if (added != null) {
       for (final path in await added.list()) {
-        files[path] = await added.read(path);
+        final at = defer && added is DiskLocated ? added.locate(path) : null;
+        if (at != null) {
+          disk[path] = at;
+        } else {
+          files[path] = await added.read(path);
+        }
       }
     }
     final privateStore = this.privateStore;
@@ -849,7 +1127,14 @@ class DeckCatalog {
       try {
         for (final path in await privateStore.list()) {
           try {
-            files[path] = await privateStore.read(path);
+            final at = defer && privateStore is DiskLocated
+                ? privateStore.locate(path)
+                : null;
+            if (at != null) {
+              disk[path] = at;
+            } else {
+              files[path] = await privateStore.read(path);
+            }
           } on Object catch (e, stack) {
             // A file that cannot be read is left out, and told: the rest of
             // the catalog still loads.
@@ -860,7 +1145,9 @@ class DeckCatalog {
         log?.error(describeError('The private decks', e, stack));
       }
     }
-    _readPrivate = files.keys.any((path) => path.startsWith(privateDeckPrefix));
+    _readPrivate =
+        files.keys.any((path) => path.startsWith(privateDeckPrefix)) ||
+        disk.keys.any((path) => path.startsWith(privateDeckPrefix));
     var bytes = 0;
     for (final text in files.values) {
       bytes += text.length;
@@ -868,12 +1155,15 @@ class DeckCatalog {
     marks?.record(
       'catalog: read files',
       readWatch.elapsedMilliseconds,
-      extra: <String, Object?>{'count': files.length, 'bytes': bytes},
+      extra: <String, Object?>{
+        'count': files.length + disk.length,
+        'bytes': bytes,
+        'disk': disk.length,
+      },
     );
-    final snapshots = this.snapshots;
     if (snapshots == null) return parser(files);
     try {
-      return await _fromSnapshot(snapshots, files);
+      return await _fromSnapshot(snapshots, files, disk);
     } on Object catch (e, stack) {
       // Whatever went wrong with the snapshot, the YAML is the truth.
       log?.warning(
@@ -883,13 +1173,39 @@ class DeckCatalog {
           stack,
         ),
       );
-      return parser(files);
+      final rest = await _readDisk(disk);
+      return parser(<String, String>{...files, ...rest});
     }
+  }
+
+  /// The files at [disk] (catalog path to place on disk) read on this
+  /// isolate: only for the fallback after the snapshot's job failed.
+  Future<Map<String, String>> _readDisk(Map<String, String> disk) async {
+    final texts = <String, String>{};
+    for (final path in disk.keys) {
+      try {
+        texts[path] = await _sourceOf(path).read(path);
+      } on Object catch (e, stack) {
+        log?.warning(describeError('Deck file $path', e, stack));
+      }
+    }
+    return texts;
+  }
+
+  DeckSource _sourceOf(String path) {
+    final addedStore = added;
+    if (path.startsWith(addedDeckPrefix) && addedStore != null) {
+      return addedStore;
+    }
+    final privates = privateStore;
+    if (path.startsWith(privateDeckPrefix) && privates != null) return privates;
+    return source;
   }
 
   Future<Catalog> _fromSnapshot(
     CatalogSnapshots snapshots,
     Map<String, String> files,
+    Map<String, String> disk,
   ) async {
     String? stored;
     final storeWatch = Stopwatch()..start();
@@ -909,28 +1225,12 @@ class DeckCatalog {
     } on Object {
       known = const <String, String>{};
     }
-    final shaWatch = Stopwatch()..start();
-    var hashed = 0;
-    final shas = <String, String>{};
-    for (final e in files.entries) {
-      final sha = known[e.key];
-      if (sha != null) {
-        shas[e.key] = sha;
-        continue;
-      }
-      hashed++;
-      shas[e.key] = sha256Hex(utf8.encode(e.value));
-    }
-    marks?.record(
-      'catalog: sha',
-      shaWatch.elapsedMilliseconds,
-      extra: <String, Object?>{'hashed': hashed, 'known': known.length},
-    );
     final jobWatch = Stopwatch()..start();
     final outcome = await snapshots.runner(
       CatalogJob(
         files: files,
-        shas: shas,
+        disk: disk.isEmpty ? null : DiskDeckFiles(disk),
+        shas: known,
         snapshot: stored,
         app: snapshots.app,
       ),
@@ -939,7 +1239,16 @@ class DeckCatalog {
       'catalog: isolate round trip',
       jobWatch.elapsedMilliseconds,
       isolate: 'worker',
+      extra: <String, Object?>{
+        'read': outcome.filesRead,
+        'bytes': outcome.bytesRead,
+        'hashed': outcome.hashed,
+        'reused': outcome.reused,
+      },
     );
+    for (final path in outcome.unreadable) {
+      log?.warning('Deck file $path could not be read');
+    }
     final text = outcome.snapshot;
     if (text != null) {
       // Not waited for: the first screens do not need it written.
@@ -958,6 +1267,31 @@ class DeckCatalog {
       );
     }
     return outcome.catalog;
+  }
+
+  /// Parses the files of one language unit (ADR-0062): [files] are that
+  /// language's together with the shared theme list and sections. As
+  /// [parseAll], and a deck in the folder of one language that teaches
+  /// another is told as broken, not shown. Pure: no source, no IO.
+  static Catalog parseLanguage(String code, Map<String, String> files) {
+    final parsed = parseAll(files);
+    final misfiled = <String>{};
+    final told = <BrokenDeck>[];
+    for (final entry in <DeckEntry>[...parsed.decks, ...parsed.hidden]) {
+      final folder = languageFolderOf(entry.path);
+      if (folder == null || folder == entry.language.code) continue;
+      misfiled.add(entry.path);
+      told.add(
+        BrokenDeck(
+          path: entry.path,
+          error: DeckParseException(
+            'filed under $folder but teaches ${entry.language.code}',
+            source: entry.fileName,
+          ),
+        ),
+      );
+    }
+    return misfiled.isEmpty ? parsed : parsed._without(misfiled, told);
   }
 
   /// Parses [files], keyed by path, into a catalog. Pure: no source, no IO.

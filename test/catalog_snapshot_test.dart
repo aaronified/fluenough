@@ -3,6 +3,8 @@
 import 'dart:convert';
 
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/deck_files.dart';
+import 'package:fluenough/app/language_unit_job.dart';
 import 'package:fluenough/app/repository_decks.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -201,7 +203,108 @@ DeckCatalog _catalog(
   ),
 );
 
+/// The files of language [code] and the theme list: what its unit is read from.
+Map<String, String> _unit(Map<String, String> files, String code) => {
+  for (final e in files.entries)
+    if (e.key.startsWith('decks/$code/') || e.key == 'decks/themes.yaml')
+      e.key: e.value,
+};
+
+Map<String, String> _spoiled(Map<String, String> files) => {
+  for (final p in files.keys) p: ': : not yaml [ $p',
+};
+
+LanguageOutcome _read(
+  String code,
+  Map<String, String> files, {
+  String app = '0.6.8',
+  String? snapshot,
+  String? seed,
+}) => runLanguageJob(
+  LanguageJob(
+    code: code,
+    files: files,
+    shas: _shas(files),
+    app: app,
+    snapshot: MemorySnapshotReader(snapshot),
+    seed: seed == null ? null : MemorySnapshotReader(seed),
+  ),
+);
+
+void _languageSnapshotTests() {
+  group('a snapshot of each language', () {
+    test('of another app version is ignored for that language only', () async {
+      final all = await _wholeLanguages();
+      final tok = _unit(all, 'tok');
+      final fr = _unit(all, 'fr');
+      final tokSnap = _read('tok', tok).snapshot!;
+      final frSnap = _read('fr', fr).snapshot!;
+
+      // Spoiled YAML can only be read through a kept tree.
+      final newTok = _read(
+        'tok',
+        _spoiled(tok),
+        app: '0.6.9',
+        snapshot: tokSnap,
+      );
+      expect(newTok.catalog.decks, isEmpty);
+      expect(newTok.catalog.broken, isNotEmpty);
+      final sameFr = _read('fr', _spoiled(fr), snapshot: frSnap);
+      expect(
+        _describeAll(sameFr.catalog),
+        _describeAll(DeckCatalog.parseLanguage('fr', fr)),
+      );
+    });
+
+    test('that is damaged falls back to YAML for that language only', () async {
+      final all = await _wholeLanguages();
+      final tok = _unit(all, 'tok');
+      final fr = _unit(all, 'fr');
+      final frSnap = _read('fr', fr).snapshot!;
+
+      final fixed = _read('tok', tok, snapshot: '{"format": 1, "app": "0.6.');
+      expect(
+        _describeAll(fixed.catalog),
+        _describeAll(DeckCatalog.parseLanguage('tok', tok)),
+      );
+      expect(fixed.snapshot, isNotNull, reason: 'it is written again');
+      final kept = _read('fr', _spoiled(fr), snapshot: frSnap);
+      expect(
+        _describeAll(kept.catalog),
+        _describeAll(DeckCatalog.parseLanguage('fr', fr)),
+      );
+    });
+
+    test('is seeded from the old single snapshot', () async {
+      final all = await _wholeLanguages();
+      final shas = _shas(all);
+      final legacy = runCatalogJob(
+        CatalogJob(files: all, shas: shas, snapshot: null, app: '0.6.8'),
+      ).snapshot!;
+      final tok = _unit(all, 'tok');
+
+      final seeded = _read('tok', _spoiled(tok), seed: legacy);
+      expect(
+        _describeAll(seeded.catalog),
+        _describeAll(DeckCatalog.parseLanguage('tok', tok)),
+      );
+      final written = jsonDecode(seeded.snapshot!) as Map<String, dynamic>;
+      expect(
+        (written['files'] as Map).keys,
+        everyElement(
+          predicate<Object?>(
+            (p) => '$p'.startsWith('decks/tok/') || p == 'decks/themes.yaml',
+          ),
+        ),
+        reason: 'only this language is kept in its own snapshot',
+      );
+    });
+  });
+}
+
 void main() {
+  _languageSnapshotTests();
+
   test('the snapshot gives the catalog the YAML gives', () async {
     final files = await _files();
     final fromYaml = DeckCatalog.parseAll(files);

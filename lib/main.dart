@@ -19,6 +19,7 @@ import 'app/file_blob_store.dart';
 import 'app/file_snapshot_store.dart';
 import 'app/media_image_cache.dart';
 import 'app/junk_cleanup.dart';
+import 'app/language_unit_job.dart';
 import 'app/links.dart';
 import 'app/mail_share.dart';
 import 'app/ota_installer.dart';
@@ -31,6 +32,7 @@ import 'app/reminder_scheduler.dart';
 import 'app/report_mail.dart';
 import 'app/shared_deck_source.dart';
 import 'app/startup_marks.dart';
+import 'app/summary_store.dart';
 import 'app/system_settings.dart';
 import 'app/wallpaper_colours.dart';
 import 'core/haptics/system_haptic_engine.dart';
@@ -158,33 +160,55 @@ Future<void> main() async {
     log: log.warning,
     supported: const <String>{'te'},
   );
-  final state = AppState(
-    catalog: DeckCatalog(
-      // Deck-owned data (the theme list) downloaded from decks-live comes
-      // first; the copy bundled in the app is the fallback (owner,
-      // 2026-11-11).
-      DeckSources(<DeckSource>[
-        SharedDeckSource(() => deckDownloads.sharedTexts),
-        AssetDeckSource(),
-        downloaded,
-      ]),
-      added: FileDeckStore(Directory('${files.path}/decks')),
-      privateStore: privateStore,
-      log: log,
-      marks: marks,
-      parser: (texts) => parseInIsolate(texts, onFallback: log.warning),
-      // The decks' YAML, kept as JSON between launches and read again
-      // only for a file whose SHA-256 changed (#875, ADR-0048).
-      snapshots: CatalogSnapshots(
-        store: FileSnapshotStore(File('${files.path}/catalog-snapshot.json')),
-        app: AppInfo.version,
-        knownShas: () async => <String, String>{
-          for (final e in (await downloaded.manifest()).entries)
-            e.key: e.value.sha256,
-        },
-        runner: (job) => runJobInIsolate(job, onFallback: log.warning),
-      ),
+  // The SHA-256 of each file the downloads hold, from their manifest, so
+  // that no file is hashed to be checked against a snapshot.
+  Future<Map<String, String>> knownShas() async => <String, String>{
+    for (final e in (await downloaded.manifest()).entries)
+      e.key: e.value.sha256,
+  };
+  final catalog = DeckCatalog(
+    // Deck-owned data (the theme list) downloaded from decks-live comes
+    // first; the copy bundled in the app is the fallback (owner,
+    // 2026-11-11).
+    DeckSources(<DeckSource>[
+      SharedDeckSource(() => deckDownloads.sharedTexts),
+      AssetDeckSource(),
+      downloaded,
+    ]),
+    added: FileDeckStore(Directory('${files.path}/decks')),
+    privateStore: privateStore,
+    log: log,
+    marks: marks,
+    parser: (texts) => parseInIsolate(texts, onFallback: log.warning),
+    // The decks' YAML, kept as JSON between launches and read again
+    // only for a file whose SHA-256 changed (#875, ADR-0048). The files
+    // are read on the same isolate, never on the UI one (ADR-0062).
+    snapshots: CatalogSnapshots(
+      store: FileSnapshotStore(File('${files.path}/catalog-snapshot.json')),
+      app: AppInfo.version,
+      knownShas: knownShas,
+      runner: (job) => runJobInIsolate(job, onFallback: log.warning),
     ),
+    // The per-language caches of the lazy mode (ADR-0062): one snapshot
+    // per language, and the language summaries. Unused while the catalog
+    // is read whole.
+    languageSnapshots: fileLanguageSnapshots(
+      directory: Directory('${files.path}/catalog-snapshots'),
+      legacy: File('${files.path}/catalog-snapshot.json'),
+      app: AppInfo.version,
+      knownShas: knownShas,
+    ),
+    summaries: SummaryBook(
+      FileSnapshotStore(File('${files.path}/language-summaries.json')),
+    ),
+    languageRunner: (job) =>
+        runLanguageJobInIsolate(job, onFallback: log.warning),
+    languageVerifier: (job) => verifyInIsolate(job, onFallback: log.warning),
+  );
+  // A language's files changed: its unit and summary are made again.
+  deckDownloads.onLanguageChanged = catalog.languageChanged;
+  final state = AppState(
+    catalog: catalog,
     // The Find my level question banks, made once per language and deck set.
     bankStore: FileBlobStore(Directory('${files.path}/placement-banks')),
     deckDownloads: deckDownloads,

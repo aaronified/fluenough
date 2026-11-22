@@ -6,6 +6,7 @@ import '../core/decks/deck_index.dart';
 import '../core/decks/sha256.dart';
 import 'card_media.dart';
 import 'deck_catalog.dart';
+import 'deck_files.dart';
 
 /// The deck files downloaded from GitHub (#210, ADR-0037), kept in the
 /// app's own storage under `downloaded/`, which an app update leaves alone.
@@ -75,7 +76,7 @@ abstract interface class DownloadedDecks implements DeckSource, CardMedia {
 }
 
 /// [DownloadedDecks] in a directory of the app's own storage.
-class FileDownloadedDecks implements DownloadedDecks {
+class FileDownloadedDecks implements DownloadedDecks, DiskLocated {
   /// With [parseOffUi], the manifest, a few megabytes of JSON, is parsed on an
   /// isolate (#1699); the app says so, tests parse in place.
   FileDownloadedDecks(
@@ -177,6 +178,9 @@ class FileDownloadedDecks implements DownloadedDecks {
   @override
   Future<List<String>> list() async =>
       (await manifest()).keys.where(isDeckFilePath).toList()..sort();
+
+  @override
+  String? locate(String path) => isDeckFilePath(path) ? _file(path).path : null;
 
   @override
   Future<String> read(String path) => _file(_checked(path)).readAsString();

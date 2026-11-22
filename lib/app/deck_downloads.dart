@@ -416,6 +416,12 @@ class DeckDownloads extends ChangeNotifier {
   /// read again. Set by `AppState`.
   Future<void> Function()? onFilesChanged;
 
+  /// Called after [onFilesChanged], once for each language whose files
+  /// changed (a download, an update, a removal), with its code, or with null
+  /// for a change that belongs to no one language (the shared files). The
+  /// catalog makes that language's unit and summary again (ADR-0062).
+  Future<void> Function(String? language)? onLanguageChanged;
+
   /// Called, instead of [onFilesChanged], when only deck-owned files (the
   /// shared ones: creators, recommendations, themes, sections) changed, with
   /// their paths, so that the catalog can patch them in place of a full read
@@ -1362,7 +1368,7 @@ class DeckDownloads extends ChangeNotifier {
       });
       _log?.event('Hidden deck removed from the phone: $deckKey');
       _notify();
-      await _filesChanged();
+      await _filesChanged('files downloaded', <String>[language]);
     } on Object catch (e, stack) {
       _log?.error('Hidden deck $deckKey could not be removed: $e\n$stack');
     }
@@ -1489,7 +1495,7 @@ class DeckDownloads extends ChangeNotifier {
     }
     _log?.event('Decks downloaded for $language: $total files');
     _notify();
-    await _filesChanged();
+    await _filesChanged('files downloaded', <String>[language]);
     return null;
   }
 
@@ -1519,7 +1525,7 @@ class DeckDownloads extends ChangeNotifier {
     final failure = await _keep(language, whole, const <String>[]);
     if (failure != null) return _failed(language, failure);
     _notify();
-    await _filesChanged();
+    await _filesChanged('files downloaded', <String>[language]);
     return null;
   }
 
@@ -2045,6 +2051,7 @@ class DeckDownloads extends ChangeNotifier {
     final updateWatch = Stopwatch()..start();
     DeckDownloadFailure? first;
     var changed = false;
+    final changedLanguages = <String>[];
     try {
       // Every language at once: they share the bound on files in flight.
       final failures = await Future.wait(<Future<DeckDownloadFailure?>>[
@@ -2060,6 +2067,7 @@ class DeckDownloads extends ChangeNotifier {
             ).then((failure) {
               if (failure == null) {
                 changed = true;
+                changedLanguages.add(language);
                 _updates = Map<String, LanguageChanges>.of(_updates)
                   ..remove(language);
               }
@@ -2077,7 +2085,7 @@ class DeckDownloads extends ChangeNotifier {
       extra: <String, Object?>{'changed': changed},
     );
     _recordUpdateTotals();
-    if (changed) await _filesChanged('update');
+    if (changed) await _filesChanged('update', changedLanguages);
     return first;
   }
 
@@ -2183,7 +2191,7 @@ class DeckDownloads extends ChangeNotifier {
       return null;
     });
     _notify();
-    await _filesChanged();
+    await _filesChanged('files downloaded', <String>[language]);
   }
 
   /// Deletes the fonts no language on the phone lists any more, after one
@@ -2231,11 +2239,23 @@ class DeckDownloads extends ChangeNotifier {
     }
   }
 
-  Future<void> _filesChanged([String cause = 'files downloaded']) async {
+  Future<void> _filesChanged([
+    String cause = 'files downloaded',
+    List<String>? languages,
+  ]) async {
     changeCause = cause;
     await _loadFonts();
     final changed = onFilesChanged;
     if (changed != null && !_disposed) await changed();
+    final told = onLanguageChanged;
+    if (told == null || _disposed) return;
+    try {
+      for (final language in languages ?? <String?>[null]) {
+        await told(language);
+      }
+    } on Object catch (e) {
+      _log?.warning('Deck downloads: a language could not be read again: $e');
+    }
   }
 
   void _notify() {

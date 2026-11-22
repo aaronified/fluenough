@@ -1,0 +1,59 @@
+import 'dart:async';
+
+import '../core/decks/language_summary.dart';
+import 'deck_catalog.dart';
+
+/// The language summaries (ADR-0062, 3.4) kept in one file between launches,
+/// and in memory while the app runs. A cache: it can be deleted at any time.
+class SummaryBook {
+  SummaryBook(this.store);
+
+  /// Where the file is kept; the same shape as the catalog snapshot's store.
+  final SnapshotStore store;
+
+  final Map<String, LanguageSummary> _byCode = <String, LanguageSummary>{};
+  Future<void> _tail = Future<void>.value();
+  bool _opened = false;
+
+  /// The summaries' file text as last read or written, for a verify job.
+  String? text;
+
+  /// Reads the file, once. A file that cannot be read is no summaries.
+  Future<void> open() async {
+    if (_opened) return;
+    _opened = true;
+    try {
+      text = await store.read();
+    } on Object {
+      text = null;
+    }
+    _byCode
+      ..clear()
+      ..addAll(decodeSummaries(text));
+  }
+
+  /// The summary of [code], or null.
+  LanguageSummary? operator [](String code) => _byCode[code];
+
+  Iterable<LanguageSummary> get all => _byCode.values;
+
+  /// Keeps [summary] and writes the file.
+  Future<void> put(LanguageSummary summary) {
+    _byCode[summary.code] = summary;
+    return _write();
+  }
+
+  /// Forgets the summary of [code] and writes the file.
+  Future<void> remove(String code) {
+    if (_byCode.remove(code) == null) return Future<void>.value();
+    return _write();
+  }
+
+  Future<void> _write() {
+    final next = encodeSummaries(_byCode.values);
+    text = next;
+    final done = _tail.then((_) => store.write(next));
+    _tail = done.then<void>((_) {}, onError: (Object _) {});
+    return done;
+  }
+}
