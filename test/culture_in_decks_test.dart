@@ -10,6 +10,7 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/culture_list.dart';
 import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/features/culture/completed_works_card.dart';
+import 'package:fluenough/features/culture/work_page.dart';
 import 'package:fluenough/features/culture/work_questions_page.dart';
 import 'package:fluenough/features/decks/culture_list.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
@@ -412,7 +413,7 @@ void main() {
   });
 
   group('I\'ve completed this', () {
-    testWidgets('a row opens with its briefing, legal routes and action', (
+    testWidgets('a row opens the work page, briefing and action', (
       tester,
     ) async {
       usePhone(tester);
@@ -521,7 +522,7 @@ void main() {
       expect(find.text(_l10n.recHomeTitle), findsNothing);
     });
 
-    testWidgets('a cover request opens the list with that work open', (
+    testWidgets('a cover request opens the list and that work\'s page', (
       tester,
     ) async {
       usePhone(tester);
@@ -532,7 +533,9 @@ void main() {
         openId: 'zz-rec-camino',
       );
       await tester.pumpAndSettle();
-      expect(find.byType(CultureList), findsOneWidget);
+      // The work's page is on top; the list is the page under it.
+      expect(find.byType(WorkPage), findsOneWidget);
+      expect(find.byType(CultureList, skipOffstage: false), findsOneWidget);
       expect(find.text(_briefing), findsOneWidget);
       expect(state.decksCultureRequest.value, isNull);
     });

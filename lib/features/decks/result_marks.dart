@@ -124,6 +124,7 @@ class ResultRow extends StatelessWidget {
     this.iconColor,
     this.iconBackground,
     this.leadingText,
+    this.leading,
     this.lines = const <Widget>[],
     this.tags = const <Widget>[],
     this.trailing,
@@ -143,6 +144,10 @@ class ResultRow extends StatelessWidget {
 
   /// Text in the icon square instead of an icon ("Aa").
   final String? leadingText;
+
+  /// Replaces the icon square with a widget of its own, such as a poster
+  /// thumb taller than the square.
+  final Widget? leading;
   final List<Widget> lines;
   final List<Widget> tags;
   final Widget? trailing;
@@ -154,7 +159,7 @@ class ResultRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final hasIcon = icon != null || leadingText != null;
+    final hasIcon = icon != null || leadingText != null || leading != null;
     final main = ConstrainedBox(
       constraints: const BoxConstraints(minHeight: 56),
       child: Padding(
@@ -163,28 +168,29 @@ class ResultRow extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             if (hasIcon) ...<Widget>[
-              Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: iconBackground ?? scheme.secondaryContainer,
-                  borderRadius: BorderRadius.circular(AppRadii.chip),
-                ),
-                alignment: Alignment.center,
-                child: icon != null
-                    ? Icon(
-                        icon,
-                        size: 22,
-                        color: iconColor ?? scheme.onSecondaryContainer,
-                      )
-                    : Text(
-                        leadingText!,
-                        style: theme.textTheme.labelLarge!.copyWith(
-                          color: iconColor ?? scheme.onSecondaryContainer,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-              ),
+              leading ??
+                  Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      color: iconBackground ?? scheme.secondaryContainer,
+                      borderRadius: BorderRadius.circular(AppRadii.chip),
+                    ),
+                    alignment: Alignment.center,
+                    child: icon != null
+                        ? Icon(
+                            icon,
+                            size: 22,
+                            color: iconColor ?? scheme.onSecondaryContainer,
+                          )
+                        : Text(
+                            leadingText!,
+                            style: theme.textTheme.labelLarge!.copyWith(
+                              color: iconColor ?? scheme.onSecondaryContainer,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                  ),
               const SizedBox(width: 12),
             ],
             Expanded(
@@ -233,7 +239,11 @@ class ResultRow extends StatelessWidget {
         tappable,
         Padding(
           padding: EdgeInsetsDirectional.only(
-            start: hasIcon ? 68 : 16,
+            start: leading != null
+                ? 76
+                : hasIcon
+                ? 68
+                : 16,
             end: 12,
             bottom: 12,
           ),

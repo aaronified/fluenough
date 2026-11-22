@@ -4,6 +4,7 @@
 /// its title, its creators, a briefing and a few comprehension questions.
 library;
 
+import 'creator.dart' show CreatorImage;
 import 'level.dart';
 import 'reading.dart' show ReadingQuestion;
 
@@ -63,6 +64,7 @@ class Recommendation {
     this.questions = const <ReadingQuestion>[],
     this.legal = const <LegalRoute>[],
     this.quotedIn,
+    this.image,
   });
 
   /// Permanent, `<language>-rec-<slug>`.
@@ -94,6 +96,11 @@ class Recommendation {
 
   /// The culture deck that quotes it, when it is a public-domain work.
   final String? quotedIn;
+
+  /// Its poster, cover or title page and where it comes from
+  /// (wiki/Plan-Culture-Media.md, ADR-0060), or null: the app draws the
+  /// icon of its medium.
+  final CreatorImage? image;
 
   bool get isBook => medium == RecommendationMedium.book;
 
