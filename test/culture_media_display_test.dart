@@ -155,8 +155,9 @@ List<ResizeImage> _decoded(WidgetTester tester, [Finder? within]) =>
 Creator _creator(AppState state, String id) =>
     state.creatorsOf('zz')!.creators.firstWhere((c) => c.id == id);
 
-Widget _page(String id) =>
-    WorkPage(request: WorkRequest(language: 'zz', recommendationId: id));
+Widget _page(String id) => WorkPage(
+  request: WorkRequest(language: 'zz', recommendationId: id),
+);
 
 void main() {
   group('the work page with a free poster', () {
@@ -516,13 +517,12 @@ void main() {
           'min_app': ?minApp,
         };
 
-    String index(List<Map<String, Object?>> media) => jsonEncode(
-      <String, Object?>{
-        'version': 1,
-        'languages': <Object?>[],
-        'shared_media': media,
-      },
-    );
+    String index(List<Map<String, Object?>> media) =>
+        jsonEncode(<String, Object?>{
+          'version': 1,
+          'languages': <Object?>[],
+          'shared_media': media,
+        });
 
     final media = <Map<String, Object?>>[
       entry('decks/creators/images/zz-a.webp'),

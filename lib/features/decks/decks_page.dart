@@ -850,10 +850,7 @@ class _DecksPageState extends State<DecksPage> {
                         sliver: SliverOpacity(
                           opacity: dim,
                           sliver: SliverToBoxAdapter(
-                            child: CultureList(
-                              language: code,
-                              query: '',
-                            ),
+                            child: CultureList(language: code, query: ''),
                           ),
                         ),
                       ),

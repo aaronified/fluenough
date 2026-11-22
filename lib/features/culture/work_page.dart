@@ -114,7 +114,9 @@ class WorkPage extends StatelessWidget {
         ).clearingSystemBar(context),
         children: <Widget>[
           if (poster) ...<Widget>[
-            Center(child: WorkPoster(work: work, language: language)),
+            Center(
+              child: WorkPoster(work: work, language: language),
+            ),
             if (credit != null) ...<Widget>[
               const SizedBox(height: 8),
               Text(

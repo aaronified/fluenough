@@ -235,9 +235,9 @@ class PictureViewer extends StatelessWidget {
     final theme = Theme.of(context);
     final credit = cultureImageCredit(l10n, image);
     final link = cultureImageLink(image);
-    final linkStyle = AppButtonStyles.inline(context).copyWith(
-      foregroundColor: const WidgetStatePropertyAll<Color>(linkColor),
-    );
+    final linkStyle = AppButtonStyles.inline(
+      context,
+    ).copyWith(foregroundColor: const WidgetStatePropertyAll<Color>(linkColor));
     return Scaffold(
       backgroundColor: Colors.black,
       body: Stack(
