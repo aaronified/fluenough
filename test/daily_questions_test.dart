@@ -34,6 +34,7 @@ import 'package:fluenough/core/review/facets.dart';
 import 'package:fluenough/features/review/facet_labels.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/features/review/daily_questions_page.dart';
+import 'package:fluenough/features/review/reviews_to_send_page.dart';
 import 'package:flutter/material.dart' hide Card;
 import 'package:flutter_test/flutter_test.dart';
 
@@ -782,6 +783,11 @@ cards:
       expect(given.why, 'too stiff');
 
       expect(find.text(l10n.reviewQuestionsDoneTitle), findsOneWidget);
+      // Send answers only opens Reviews to send, which sends them.
+      await tester.tap(find.text(l10n.reviewQuestionsSend(2)));
+      await tester.pumpAndSettle();
+      expect(find.byType(ReviewsToSendPage), findsOneWidget);
+      expect(share.shared, isEmpty);
       await tester.tap(find.text(l10n.reviewQuestionsSend(2)));
       await tester.pumpAndSettle();
       expect(share.shared, hasLength(1));

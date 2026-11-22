@@ -62,6 +62,18 @@ class LoggedAnswer {
     sentAt: at,
   );
 
+  /// This answer waiting to send again.
+  LoggedAnswer unsentCopy() => LoggedAnswer(
+    language: language,
+    card: card,
+    point: point,
+    kind: kind,
+    answer: answer,
+    on: on,
+    reason: reason,
+    why: why,
+  );
+
   Map<String, Object?> toJson() => <String, Object?>{
     'language': language,
     'card': card,
@@ -213,6 +225,21 @@ class QuestionLog {
         for (final MapEntry(:key, :value) in answers.entries)
           key: which.contains(key) && value.sentAt == null
               ? value.sent(at)
+              : value,
+      }),
+      skipped: skipped,
+    );
+  }
+
+  /// Every answer in [ids] waiting to send again: the mail they went in is
+  /// put back (an answer re-answered since is already waiting).
+  QuestionLog unsend(Iterable<String> ids) {
+    final which = ids.toSet();
+    return QuestionLog(
+      answers: Map<String, LoggedAnswer>.unmodifiable(<String, LoggedAnswer>{
+        for (final MapEntry(:key, :value) in answers.entries)
+          key: which.contains(key) && value.sentAt != null
+              ? value.unsentCopy()
               : value,
       }),
       skipped: skipped,

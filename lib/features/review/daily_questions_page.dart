@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
-import '../../app/reviewing.dart';
+import '../../app/routes.dart';
 import '../../core/models/deck.dart';
 import '../../core/review/card_fields.dart' show withReading;
 import '../../core/review/facets.dart';
@@ -10,12 +10,10 @@ import '../../core/review/review_question.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import 'daily_questions.dart';
 import 'facet_labels.dart';
-import 'send_reviews_sheet.dart' show reviewMailBody;
 
 /// Opens the daily questions (#519).
 Future<void> showDailyQuestions(BuildContext context) =>
@@ -65,8 +63,6 @@ class _DailyQuestionsPageState extends State<DailyQuestionsPage> {
 
   /// The questions answered or put off on this screen, for going on.
   final Set<String> _past = <String>{};
-
-  bool _sending = false;
 
   @override
   void didChangeDependencies() {
@@ -139,24 +135,9 @@ class _DailyQuestionsPageState extends State<DailyQuestionsPage> {
     await _answer(question, answer, reason: picked.$1, why: picked.$2);
   }
 
-  Future<void> _send() async {
-    final l10n = AppLocalizations.of(context)!;
-    final reviewing = AppScope.read(context).reviewing;
-    final state = AppScope.read(context);
-    setState(() => _sending = true);
-    // Everything waiting goes in the one mail, the reviews with the answers.
-    final outcome = await reviewing.sendQuestions(
-      body: reviewMailBody(l10n, state, reviewing.unsent),
-    );
-    if (!mounted) return;
-    setState(() => _sending = false);
-    showAppSnackBar(context, switch (outcome) {
-      ReviewSendOutcome.inMailApp => l10n.reviewQuestionsSendOpened,
-      ReviewSendOutcome.nothingToSend => l10n.reviewSendNothing,
-      ReviewSendOutcome.noMailApp => l10n.reviewSendNoApp,
-      ReviewSendOutcome.failed => l10n.reviewQuestionsSendFailed,
-    });
-  }
+  /// Sending is Reviews to send's: Send answers only opens it, where the
+  /// answers wait with the reviews in the one mail.
+  void _send() => AppNavigator.openReviewedNotSent(context).ignore();
 
   @override
   Widget build(BuildContext context) {
@@ -200,7 +181,7 @@ class _DailyQuestionsPageState extends State<DailyQuestionsPage> {
         none: answeredToday == 0 && left > 0,
         waiting: waiting,
         decksWaiting: reviewing.unsent.length,
-        sending: _sending,
+        sending: false,
         onSend: _send,
       );
     }
@@ -234,7 +215,7 @@ class _DailyQuestionsPageState extends State<DailyQuestionsPage> {
         ),
         if (waiting > 0) ...<Widget>[
           const SizedBox(height: 24),
-          _SendButton(waiting: waiting, sending: _sending, onSend: _send),
+          _SendButton(waiting: waiting, sending: false, onSend: _send),
         ],
       ],
     );
