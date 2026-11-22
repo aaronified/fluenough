@@ -11,7 +11,7 @@ name: Feedback mail to issues
 # only. Support mails stay private in the inbox. Until the repository has the two FEEDBACK_GMAIL_*
 # secrets it does nothing and says so.
 #
-# The review bot (ADR-0038, docs/review-bot-setup.md): a review mail's
+# The review bot (ADR-0038, wiki/Review-Bot-Setup.md): a review mail's
 # suggestions become proposals in the decks, through a PR merged once the
 # required checks pass, and a proposal enough other reviewers accept goes to
 # learners the same way. "Enough" is the review quorum, a constant in
@@ -87,7 +87,7 @@ jobs:
         run: >-
           echo "::notice::FLUENOUGH_BOT_APP_ID and FLUENOUGH_BOT_PRIVATE_KEY
           are not set: reviews are filed as issues, nothing is proposed or
-          merged. See docs/review-bot-setup.md."
+          merged. See wiki/Review-Bot-Setup.md."
       - run: python3 tools/mail_to_issues.py
         env:
           FEEDBACK_GMAIL_ADDRESS: ${{ secrets.FEEDBACK_GMAIL_ADDRESS }}

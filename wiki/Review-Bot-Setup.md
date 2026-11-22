@@ -10,6 +10,17 @@ mail workflow, `.github/workflows/feedback-mail.yml`, and does
 nothing until the steps below are done: until then reviews are filed as
 issues, as now, and the workflow's log says the bot is not set up.
 
+Until it is set up, a review mail is still read: the workflow files it as an
+issue (`Review: CODE (languages)`, no mail address, no suggestion text) and
+the log says `No review bot: N review mail(s) filed as issues are left for
+the bot`. Nothing is proposed or merged without the App. Once the App is set
+up, the mails already filed are proposed by the next run (step 6).
+
+If a review mail was sent and no issue appears, the bot is not the cause:
+read the run's log. `Inbox OK: N mail(s), M Fluenough mail(s) not filed yet`
+says what the search found, and a `::warning::` line names a mail that sits
+in All Mail or Spam instead of the inbox.
+
 You need: admin on `aaronified/fluenough`, and about ten minutes.
 
 ## 0. First, release an app that reads proposals
@@ -110,10 +121,32 @@ since. To skip the mails from before, give them the Gmail label
 
 ## 7. Check it
 
-Actions > **Feedback mail to issues** > **Run workflow**. Its log should
-say `Review bot: 1 other reviewer(s) must accept a proposal.` and, at the
-end, `Agreed proposals: …`. The bot's PRs are labelled `review-bot`, with
-`proposals`, `agreement` or `proposal outdated`.
+From a terminal with `gh` logged in as the owner:
+
+```
+gh workflow run feedback-mail.yml -R aaronified/fluenough
+gh run list -R aaronified/fluenough --workflow feedback-mail.yml --limit 1
+gh run view <run id> -R aaronified/fluenough --log
+```
+
+or on GitHub: Actions > **Feedback mail to issues** > **Run workflow** on
+`main`. In the log of the job "File report mails as issues", expect, in
+this order:
+
+- Not the line `FLUENOUGH_BOT_APP_ID and FLUENOUGH_BOT_PRIVATE_KEY are not
+  set`. If it is still there, a secret name is misspelled or the secret was
+  made under Environments or Dependabot instead of **Actions**.
+- The step **Make the review bot's token** is green. A red step says the
+  App ID or the key is wrong, or the App is not installed on the repository.
+- `Review bot: 1 other reviewer(s) must accept a proposal.`
+- `Inbox OK: N mail(s), M Fluenough mail(s) not filed yet.` and
+  `Filed M report(s); …`
+- `Review mails proposed: …` and `Question mails counted: …` (for example
+  `1 merged`, or `1 closed`; `none waiting` when there is nothing new).
+- `Agreed proposals: …` and `Flagged question points: …`
+
+The bot's PRs are labelled `review-bot`, with `proposals`, `agreement` or
+`proposal outdated`, and target `decks-live`.
 
 ## Signed reviewer keys (ADR-0058, W7)
 

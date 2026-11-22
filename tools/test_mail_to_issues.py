@@ -316,7 +316,10 @@ class FakeImap:
                  raters: list[bytes] | None = None, *,
                  label: bool = True, append_fails: bool = False,
                  append_raises: bool = False, drops_on_append: bool = False,
-                 drops_on_label: bool = False) -> None:
+                 drops_on_label: bool = False,
+                 outside: dict[str, list] | None = None) -> None:
+        # Mail outside the inbox, by Gmail folder, as a filter or Spam leaves it.
+        self.outside = outside or {}
         self.mails = {str(i + 1).encode(): m for i, m in enumerate(mails)}
         self.raters = list(raters or [])
         self.label = label
@@ -330,6 +333,7 @@ class FakeImap:
         self.appended: list[tuple] = []
         self.labelled: list[bytes] = []
         self.searched: tuple = ()
+        self.queries: list[str] = []
         self.logged_out = False
 
     def __call__(self, host: str) -> "FakeImap":
@@ -364,23 +368,30 @@ class FakeImap:
                 self._drop()
             if not self.label:
                 return "NO", [b"[NONEXISTENT] Unknown Mailbox"]
-        else:
-            assert box == "INBOX"
+        elif box.strip('"') in self.outside:
+            box = box.strip('"')
+        elif box != "INBOX":
+            return "NO", [b"[NONEXISTENT] Unknown Mailbox"]
         self.selected = box
-        return "OK", [b"1"]
+        return "OK", [str(len(self._box())).encode() if box != "fluenough/raters"
+                      else b"1"]
 
     def _box(self) -> dict:
         if self.selected == "fluenough/raters":
             return {str(i + 1).encode(): r for i, r in enumerate(self.raters)}
+        if self.selected in self.outside:
+            return {str(i + 1).encode(): m
+                    for i, m in enumerate(self.outside[self.selected])}
         assert self.selected == "INBOX"
         return self.mails
 
     def search(self, charset, *criteria):
         self._alive()
-        if self.selected == "INBOX":
-            self.searched = criteria
-        else:
+        if self.selected == "fluenough/raters":
             assert criteria == ("ALL",)
+        else:
+            self.searched = criteria
+            self.queries.append(criteria[-1])
         return "OK", [b" ".join(self._box())]
 
     def fetch(self, number: bytes, what: str):
@@ -426,7 +437,7 @@ class Run(unittest.TestCase):
         self.assertEqual(mail_to_issues.run(ENV, imap, filed.append), 2)
         self.assertEqual([i["title"] for i in filed], ["Bug: one", "Feature: two"])
         self.assertEqual(imap.labelled, [b"1", b"3"])
-        self.assertIn("-label:fluenough-filed", imap.searched[-1])
+        self.assertTrue(all("-label:fluenough-filed" in q for q in imap.queries[:3]))
         self.assertTrue(imap.logged_out)
 
 
@@ -484,6 +495,85 @@ def without_sender(from_: str | None) -> email.message.EmailMessage:
     if from_ is not None:
         message["From"] = from_
     return message
+
+
+def app_review_mail() -> email.message.EmailMessage:
+    """The mail app 0.12.0 sends: two review files and a questions file,
+    with the newer fields (lib/core/review/review_file.dart,
+    questions_file.dart), under `[Fluenough review] CODE (bn, hi)`."""
+    code = "FL-NDH5-ERWD-Q"
+
+    def review(language: str, deck: str, count: int) -> dict:
+        data = review_file(code, language, deck)
+        data["app_version"] = "0.12.0"
+        data["passed_facets"] = []
+        data["signed_off"] = language == "hi"
+        data["cards"] = [data["cards"][0] | {"card": f"{language}-{n:04d}"}
+                         for n in range(count)]
+        return data
+
+    message = review_mail(
+        f"[Fluenough review] {code} (bn, hi)",
+        [review("bn", "bn-en-phrasebook", 2), review("hi", "hi-en-slang", 9)],
+        sender="Owner.Name+fl@gmail.com",
+        text=f"Reviews from Fluenough 0.12.0, reviewer code {code}.")
+    questions = {"format": "fluenough-questions", "version": 1,
+                 "rater_code": code, "language": "hi",
+                 "app_version": "0.12.0", "made": "2026-11-22T03:55:00.000Z",
+                 "answers": [{"card": "hi-0001", "point": "gloss",
+                              "kind": "word", "answer": "yes"}]}
+    message.add_attachment(json.dumps(questions).encode("utf-8"),
+                           maintype="application", subtype="json",
+                           filename="fluenough-questions-hi.json")
+    return message
+
+
+class AppReviewMail(unittest.TestCase):
+    """The review mail of app 0.12.0, run through the tool with no bot."""
+
+    def _run(self, imap: FakeImap) -> tuple[list[dict], str]:
+        filed: list[dict] = []
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            mail_to_issues.run(ENV, imap, filed.append)
+        return filed, out.getvalue()
+
+    def test_with_no_bot_the_mail_is_filed_without_the_sender(self) -> None:
+        imap = FakeImap([app_review_mail()])
+        filed, log = self._run(imap)
+        self.assertEqual(len(filed), 1)
+        self.assertEqual(filed[0]["title"], "Review: FL-NDH5-ERWD-Q (bn, hi)")
+        self.assertEqual(imap.labelled, [b"1"])
+        self.assertNotIn("subject changed", filed[0]["labels"])
+        self.assertNotIn("check the files", filed[0]["labels"])
+        self.assertIn("Question answers: 1", filed[0]["body"])
+        for private in ("gmail.com", "Owner", "SECRET SUGGESTION"):
+            self.assertNotIn(private, str(filed[0]))
+        self.assertNotIn("gmail.com", log)
+
+    def test_the_log_says_why_review_mail_waits_with_no_bot(self) -> None:
+        _, log = self._run(FakeImap([app_review_mail()]))
+        self.assertIn("1 Fluenough mail(s) not filed yet", log)
+        self.assertIn("No review bot:", log)
+        self.assertIn("left for the bot", log)
+        self.assertIn("wiki/Review-Bot-Setup.md", log)
+
+    def test_each_search_term_is_asked_on_its_own(self) -> None:
+        imap = FakeImap([app_review_mail()])
+        self._run(imap)
+        for term in mail_to_issues.SEARCH_TERMS:
+            self.assertIn(f'"{term} -label:fluenough-filed"', imap.queries)
+        self.assertFalse(any("{" in q for q in imap.queries))
+
+    def test_mail_outside_the_inbox_is_counted_and_warned_about(self) -> None:
+        imap = FakeImap([], outside={"[Gmail]/All Mail": [app_review_mail()],
+                                     "[Gmail]/Spam": []})
+        filed, log = self._run(imap)
+        self.assertEqual(filed, [])
+        self.assertIn("0 Fluenough mail(s) not filed yet", log)
+        self.assertIn("1 in All Mail", log)
+        self.assertNotIn("in Spam", log)
+        self.assertEqual(imap.labelled, [])
 
 
 if __name__ == "__main__":
