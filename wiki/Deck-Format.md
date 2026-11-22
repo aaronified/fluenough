@@ -695,8 +695,12 @@ blocks; Chinese, traditional or simplified: the CJK ones; a script it has no
 blocks for is not checked), and that it differs from `target`. The value is
 not "script in prose": the card's `reading` serves it.
 
-The app parses and keeps it (`Card.targetScripts`); a screen that shows the
-spelling in the script a learner chose is not built yet. A card's
+The app parses and keeps it (`Card.targetScripts`). A card shows its main
+text in the script the learner learns, and beneath it, smaller, its spelling
+in every other script the learner learns or already reads, where it has one
+(owner, 2026-11-22); a script they neither learn nor read is not shown. The
+validator's summary prints, per multi-script language, how many cards have each
+other script (informational, never a failure). A card's
 [`words`](#base-words-bases) are its target's; another spelling takes them
 letter for letter where it has as many letters.
 
