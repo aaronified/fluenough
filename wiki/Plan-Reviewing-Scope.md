@@ -30,6 +30,8 @@ common; and a reviewer must be able to change, add and remove base words.
 
 ## Builder questions (2026-11-14)
 
+**Replaced 2026-11-22** by [Plan-Builder-Questions-V2](Plan-Builder-Questions-V2) ([ADR-0061](ADR-0061-Builder-Questions-Are-Facets-Not-Prose)): a builder names a facet of a card, the app asks one fixed question per facet, and the free-text rows below are deleted, not converted. What follows describes the app until package 2 of that plan is built.
+
 A deck builder's doubt (`docs/review-queue/<lang>.md`) is asked as its own daily
 question, never as a note on another question (the owner could not answer one
 Yes and No for two questions, with the example only half shown). The step
