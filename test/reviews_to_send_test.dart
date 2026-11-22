@@ -140,10 +140,7 @@ void _review(AppState state) {
     _question('bn', 'bn-9002', 'আপনি কেমন আছেন?'),
     QuestionAnswer.yes,
   );
-  r.answerQuestion(
-    _question('hi', 'hi-9001', 'यार'),
-    QuestionAnswer.yes,
-  );
+  r.answerQuestion(_question('hi', 'hi-9001', 'यार'), QuestionAnswer.yes);
 }
 
 /// A phone tall enough for every group to be built, at the app's 1.4x text.
@@ -227,10 +224,7 @@ void main() {
         await tester.tap(find.text(l10n.reviewQuestionsTitle).first);
         await tester.pumpAndSettle();
         expect(find.textContaining('The everyday word.'), findsOneWidget);
-        expect(
-          find.textContaining(l10n.reviewReasonAwkward),
-          findsOneWidget,
-        );
+        expect(find.textContaining(l10n.reviewReasonAwkward), findsOneWidget);
         expect(tester.takeException(), isNull);
       });
     }

@@ -897,10 +897,7 @@ class Reviews {
         kept.add(m);
         continue;
       }
-      final rest = m.without(
-        back,
-        withAnswers: m.at.isAtSameMomentAs(mail.at),
-      );
+      final rest = m.without(back, withAnswers: m.at.isAtSameMomentAs(mail.at));
       if (!rest.isEmpty) kept.add(rest);
     }
     return next._withMails(kept);

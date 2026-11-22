@@ -763,9 +763,10 @@ void main() {
       );
       // A mail of answers only has nothing the decks could show.
       expect(
-        SentMail(at: monday, answers: <String>['a|b']).canSendAgain(
-          const <String>{},
-        ),
+        SentMail(
+          at: monday,
+          answers: <String>['a|b'],
+        ).canSendAgain(const <String>{}),
         isTrue,
       );
     });
@@ -1621,10 +1622,7 @@ void main() {
         await pumpScreen(tester, const ReviewsToSendPage(), state: state);
         final l10n = l10nOf(tester);
         expect(find.text(l10n.reviewToSendNothing), findsNothing);
-        expect(
-          find.byWidgetPredicate((w) => w is FilledButton),
-          findsNothing,
-        );
+        expect(find.byWidgetPredicate((w) => w is FilledButton), findsNothing);
         expect(find.text(l10n.reviewToSendSent), findsOneWidget);
         // One of the suggestions is not in the deck yet: Send again stays.
         expect(find.text(l10n.reviewToSendAgain), findsOneWidget);

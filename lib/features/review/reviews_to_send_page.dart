@@ -653,14 +653,11 @@ class _CardItem extends StatelessWidget {
           lines: <(String?, String)>[
             (
               null,
-              l10n.reviewToSendProposalValue(
-                switch (answer.verdict) {
-                  ProposalVerdict.accept => l10n.reviewSentAccepted,
-                  ProposalVerdict.edit => l10n.reviewToSendEdited,
-                  ProposalVerdict.reject => l10n.reviewSentRejected,
-                },
-                answer.text,
-              ),
+              l10n.reviewToSendProposalValue(switch (answer.verdict) {
+                ProposalVerdict.accept => l10n.reviewSentAccepted,
+                ProposalVerdict.edit => l10n.reviewToSendEdited,
+                ProposalVerdict.reject => l10n.reviewSentRejected,
+              }, answer.text),
             ),
           ],
         ),
@@ -679,9 +676,7 @@ class _CardItem extends StatelessWidget {
           lines: <(String?, String)>[
             (
               null,
-              alike.real
-                  ? l10n.reviewAlikeConfirmed
-                  : l10n.reviewAlikeRejected,
+              alike.real ? l10n.reviewAlikeConfirmed : l10n.reviewAlikeRejected,
             ),
             if (partner != null) (null, partner.target),
             if (alike.care.isNotEmpty) (l10n.reviewAlikeCare, alike.care),
@@ -825,15 +820,11 @@ class _AnswerGroup extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   _answerWord(theme, deckOf(a.card), a),
-                  _line(
-                    theme,
-                    l10n.reviewToSendAnswer,
-                    switch (a.answer) {
-                      QuestionAnswer.yes => l10n.reviewQuestionYes,
-                      QuestionAnswer.no => l10n.reviewQuestionNo,
-                      QuestionAnswer.flag => l10n.hintFlag,
-                    },
-                  ),
+                  _line(theme, l10n.reviewToSendAnswer, switch (a.answer) {
+                    QuestionAnswer.yes => l10n.reviewQuestionYes,
+                    QuestionAnswer.no => l10n.reviewQuestionNo,
+                    QuestionAnswer.flag => l10n.hintFlag,
+                  }),
                   if (a.reason != null)
                     _line(
                       theme,
@@ -929,9 +920,8 @@ class _MailRow extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final state = AppScope.of(context);
-    final date = MaterialLocalizations.of(
-      context,
-    ).formatMediumDate(mail.at.toLocal());
+    final date = MaterialLocalizations.of(context)
+        .formatMediumDate(mail.at.toLocal());
     final what = <String>[
       for (final id in mail.decks.keys)
         state.reviewDeckById(id)?.deck.name ?? id,
