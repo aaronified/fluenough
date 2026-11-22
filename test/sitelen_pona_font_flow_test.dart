@@ -169,12 +169,15 @@ void main() {
       ),
       state: state,
     );
-    Text textOf(String key) => tester.widget<Text>(
-      find.descendant(
-        of: find.byKey(ValueKey<String>(key)),
-        matching: find.byType(Text),
-      ),
-    );
+    List<Text> textsOf(String key) => tester
+        .widgetList<Text>(
+          find.descendant(
+            of: find.byKey(ValueKey<String>(key)),
+            matching: find.byType(Text),
+          ),
+        )
+        .toList();
+    Text textOf(String key) => textsOf(key).single;
     // Not loaded: the card shows its Latin spelling, a bare text a mark; never
     // the private-use glyph.
     expect(textOf('with-card').data, 'toki');
@@ -191,11 +194,11 @@ void main() {
       Uint8List(4),
     );
     await tester.pump();
-    expect(textOf('with-card').data, _toki);
-    expect(
-      textOf('with-card').style!.fontFamily,
-      'FluenoughScript-sitelen_pona',
-    );
+    // The learner learns sitelen pona and reads Latin: the glyphs are the
+    // main text, the Latin spelling the smaller line beneath it.
+    final withCard = textsOf('with-card');
+    expect(withCard.map((t) => t.data), <String?>[_toki, 'toki']);
+    expect(withCard.first.style!.fontFamily, 'FluenoughScript-sitelen_pona');
     expect(textOf('raw').data, _toki);
     expect(textOf('raw').style!.fontFamily, 'FluenoughScript-sitelen_pona');
   });
@@ -216,10 +219,16 @@ void main() {
       ),
       state: state,
     );
-    final text = tester.widget<Text>(
-      find.descendant(of: find.byType(TargetText), matching: find.byType(Text)),
-    );
-    expect(text.data, _toki);
+    final texts = tester
+        .widgetList<Text>(
+          find.descendant(
+            of: find.byType(TargetText),
+            matching: find.byType(Text),
+          ),
+        )
+        .toList();
+    // The glyph as it is, then the Latin spelling the learner reads.
+    expect(texts.map((t) => t.data), <String?>[_toki, 'toki']);
   });
 
   test('the other font-only scripts have a sample, so the check can ask', () {

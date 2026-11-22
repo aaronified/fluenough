@@ -3023,9 +3023,10 @@ class AppState extends ChangeNotifier {
       _shownScripts(language, scripts: scripts).isEmpty;
 
   /// The other spellings of [card] to show beneath [targetShown]'s, smaller
-  /// (#623): when the learner learns its script and another too, the others
-  /// that it has. None for a card or a learner with one script. [scripts]
-  /// as for [learnedScripts].
+  /// (#623): each script the learner learns or reads already that the card
+  /// has a spelling in and that is not the main text's (owner, 2026-11-22).
+  /// None for a card or a course with one script. [scripts] as for
+  /// [learnedScripts].
   List<({String text, LanguageInfo language})> otherSpellings(
     Card card,
     LanguageInfo language, {
@@ -3046,16 +3047,37 @@ class AppState extends ChangeNotifier {
     Set<String>? scripts,
   }) {
     final first = language.script;
-    final shown = _shownScripts(language, scripts: scripts);
-    if (!shown.contains(first)) {
+    final all = _courseScripts(language);
+    if (all.length < 2) {
       return const <({String text, LanguageInfo language})>[];
     }
+    // Every script the learner learns or already reads (owner, 2026-11-22),
+    // in course order, whether or not the main text is in the primary one.
+    final learned = learnedScripts(language, scripts: scripts);
+    final read = scriptsReadKnown;
+    final main = _mainScript(spelling, language, scripts: scripts);
     return <({String text, LanguageInfo language})>[
-      for (final script in shown)
-        if (script != first)
+      for (final script in all)
+        if (script != main &&
+            (learned.contains(script) || read.contains(script)))
           if (spelling(script, firstScript: first) case final text?)
             (text: text, language: language.inScript(script)),
     ];
+  }
+
+  /// The script [_spellingShown] draws the main text in.
+  String _mainScript(
+    String? Function(String script, {required String firstScript}) spelling,
+    LanguageInfo language, {
+    Set<String>? scripts,
+  }) {
+    final first = language.script;
+    final shown = _shownScripts(language, scripts: scripts);
+    if (shown.isEmpty || shown.contains(first)) return first;
+    for (final script in shown) {
+      if (spelling(script, firstScript: first) != null) return script;
+    }
+    return first;
   }
 
   /// How [card] is shown as [language]'s text: the learner's script and

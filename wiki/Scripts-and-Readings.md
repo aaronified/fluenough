@@ -14,6 +14,8 @@ You may not want to learn the script yet. When you add a language that has one, 
 
 Some courses have two scripts. Hindustani offers Devanagari or Perso-Arabic (Urdu). Chinese offers simplified or traditional. You choose which to learn.
 
+A card shows its main text in the script you learn. Under it, smaller, it shows its spelling in every other script of the course that you know (read through a language you know) or also learn, when the card has one. A script you neither know nor learn is not shown.
+
 If you already read a script through another language, a short test of its letters lets you skip its script lessons. The test also asks the letters the new language adds.
 
 ## Readings
