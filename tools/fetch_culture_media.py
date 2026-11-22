@@ -26,8 +26,11 @@ is." For each entry of `decks/creators/<lang>.yaml` (a creator) and
    own rule (`validate_decks.check_licence_and_source`: CC0, public domain,
    CC BY and CC BY-SA 2.0 to 4.0; never NC, ND, GFDL alone or fair use). A
    file with no machine-readable author is skipped (a public-domain file is
-   credited "Unknown author": ADR-0060 decision 7). Every skip is reported
-   with its reason.
+   credited "Unknown author": ADR-0060 decision 7). A bare `Unknown`,
+   `Unknown author`, `Anonymous`, `?` or Commons's `No machine-readable author
+   provided. X assumed` counts as no author (the sound tool's placeholder
+   rule), and an author Commons writes twice (`Unknown authorUnknown author`)
+   is read once. Every skip is reported with its reason.
 4. The file is downloaded through the shared client (`wikimedia_client.py`:
    own download budget, body limit, cache), decoded and resized with ffmpeg so
    that the longest side is at most 1024 px (a portrait) or 2048 px (a work),
@@ -51,7 +54,12 @@ is." For each entry of `decks/creators/<lang>.yaml` (a creator) and
 Exit codes: 0 done, 1 an error in the decks or files, 2 bad arguments, 3 the
 run stopped at the rate limit or the request cap, 4 another Wikimedia error
 (the report is still written; rerun: it resumes from the cache and from the
-entries already written).
+entries already written). A stop at the rate limit lists the entries not yet
+written as `deferred` in the report. One file that fails (an error, over size,
+a refused licence) never keeps the others from being tried; only a rate limit
+stops the run. `--wait-rate-limit` sleeps out a `Retry-After` of up to 900 s
+instead of stopping, and `--download-interval` paces the file downloads, as in
+`fetch_sound_audio.py`.
 
 Idempotent and resumable: an entry with a valid image is skipped (`--refresh
 ID` redoes that entry), every API answer and download is cached, and each entry
@@ -68,6 +76,7 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import html
 import json
 import os
 import re
@@ -435,10 +444,44 @@ def file_url_refusal(url: str) -> str | None:
     return None
 
 
-def _meta(info: dict, key: str) -> str:
+def _raw_meta(info: dict, key: str) -> str:
     value = (info.get("extmetadata") or {}).get(key, {})
     value = value.get("value") if isinstance(value, dict) else None
-    return iw.strip_html(value) if isinstance(value, str) else ""
+    return value if isinstance(value, str) else ""
+
+
+def _meta(info: dict, key: str) -> str:
+    raw = _raw_meta(info, key)
+    return iw.strip_html(raw) if raw else ""
+
+
+_KEEP_TOGETHER = re.compile(r"(?i)</?(?:b|i|u|em|strong|sup|sub|small|big|font|abbr)\b[^>]*>")
+_ANY_TAG = re.compile(r"<[^>]+>")
+
+
+def clean_author(raw: str) -> str:
+    """Commons's `Artist` as plain text. Block and inline-container tags
+    (`<span>`, `<bdi>`, `<br>`, `<a>`...) become a space, so two neighbouring
+    elements never run together; a name Commons writes twice (a hidden copy
+    next to the shown one) is kept once."""
+    if not raw:
+        return ""
+    text = _ANY_TAG.sub(" ", _KEEP_TOGETHER.sub("", raw))
+    text = re.sub(r"\s+", " ", html.unescape(text)).strip()
+    for sep in ("", " "):
+        n = len(text) - len(sep)
+        if n >= 10 and n % 2 == 0 and text[:n // 2] == text[n // 2 + len(sep):] \
+                and text[n // 2:n // 2 + len(sep)] == sep:
+            text = text[:n // 2]
+            break
+    return text
+
+
+def no_author(text: str) -> bool:
+    """Whether [text] names nobody: empty, a placeholder of the sound tool's
+    rule, or Commons's `author assumed` line."""
+    return not text or bool(fsa.NO_AUTHOR.fullmatch(text)) \
+        or bool(fsa.ASSUMED_PREFIX.match(text))
 
 
 def gate_error(licence: str, page: str) -> str | None:
@@ -496,8 +539,8 @@ def judge(cand: Candidate, info: dict | None) -> Verdict:
         return Verdict("restricted", licence=licence,
                        reason=f"Commons notes restrictions: {_meta(info, 'Restrictions')}",
                        **base)
-    author = _meta(info, "Artist")
-    if not author or fsa.NO_AUTHOR.fullmatch(author):
+    author = clean_author(_raw_meta(info, "Artist"))
+    if no_author(author):
         if licence != "public-domain":
             return Verdict("no-author", licence=licence,
                            reason="no machine-readable author", **base)
@@ -679,6 +722,7 @@ class LangReport:
     ambiguous: int = 0
     living: int = 0
     errors: int = 0
+    deferred: int = 0               # picked, not written: the run stopped at the rate limit
     bytes: int = 0
     estimated_bytes: int = 0
     by_kind: dict[str, Counter] = field(default_factory=dict)
@@ -697,7 +741,7 @@ class LangReport:
 
 COUNTERS = ("entries", "already", "asked", "available", "fetched", "missing",
             "skipped_no_author", "skipped_licence", "skipped_other", "over_size",
-            "ambiguous", "living", "errors", "bytes", "estimated_bytes")
+            "ambiguous", "living", "errors", "deferred", "bytes", "estimated_bytes")
 
 
 @dataclass
@@ -748,8 +792,8 @@ class Report:
         gotcol = "available" if survey else "fetched"
         lines += [f"| Language | Entries | Already | Asked | {gotcol.capitalize()} | Missing | "
                   f"No author | Licence | Other skips | Over size | Ambiguous | Living | "
-                  f"Errors | Bytes |",
-                  "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
+                  f"Errors | Deferred | Bytes |",
+                  "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
         for c in sorted(self.langs):
             r = self.langs[c]
             got = r.available if survey else r.fetched
@@ -757,7 +801,7 @@ class Report:
             lines.append(f"| {c} | {r.entries} | {r.already} | {r.asked} | {got} | "
                          f"{r.missing} | {r.skipped_no_author} | {r.skipped_licence} | "
                          f"{r.skipped_other} | {r.over_size} | {r.ambiguous} | {r.living} | "
-                         f"{r.errors} | {size}{' (estimated)' if survey else ''} |")
+                         f"{r.errors} | {r.deferred} | {size}{' (estimated)' if survey else ''} |")
         got = self.total("available") if survey else self.total("fetched")
         size = self.total("estimated_bytes") if survey else self.total("bytes")
         lines += ["", f"Total: {got} {gotcol}, {size} bytes"
@@ -965,10 +1009,9 @@ def _fetch(client: wc.Client, opts: Options, report: Report, todo: list[Entry],
             _count_skip(lr, best.status, entry.eid)
     if chosen:
         _check_categories(client, report, todo, chosen)
-    for entry in todo:
-        v = chosen.get(entry.key)
-        if v is None:
-            continue
+    ready = [e for e in todo if e.key in chosen]
+    for i, entry in enumerate(ready):
+        v = chosen[entry.key]
         lr = report.lang(entry.lang)
         px = opts.portrait_px if entry.kind == "creators" else opts.work_px
         if opts.survey:
@@ -977,7 +1020,20 @@ def _fetch(client: wc.Client, opts: Options, report: Report, todo: list[Entry],
             lr.estimated_bytes += estimate_bytes(v, px)
             lr.note("available", entry.eid)
             continue
-        _write(client, opts, lr, entry, v, resolved[entry.key], px)
+        try:
+            _write(client, opts, lr, entry, v, resolved[entry.key], px)
+        except (wc.RateLimited, wc.RequestCapReached):
+            # Not willing to wait: this entry and the rest are deferred; a
+            # rerun resumes from the cache and from the entries written.
+            for left in ready[i:]:
+                report.lang(left.lang).deferred += 1
+                report.lang(left.lang).note("deferred", left.eid)
+            raise
+        except (iw.ImportError_, OSError):
+            raise                       # the decks or the disk: stop
+        except Exception as e:          # noqa: BLE001  one file never stops the others
+            lr.errors += 1
+            lr.note(f"error: {type(e).__name__}: {e}", entry.eid)
 
 
 RANK = {"missing": 0, "bad-type": 1, "refused": 1, "over-size": 2, "restricted": 3,
@@ -1242,7 +1298,15 @@ def main(argv: list[str], client: wc.Client | None = None) -> int:
                    help="ignore the cache: ask Wikimedia again")
     p.add_argument("--cache", type=Path, default=wc.DEFAULT_CACHE)
     p.add_argument("--max-requests", type=int, default=400, help="hard cap per run")
-    p.add_argument("--api-interval", type=float, default=1.0)
+    p.add_argument("--api-interval", type=float, default=1.0,
+                   help="seconds between API requests (default 1)")
+    p.add_argument("--download-interval", type=float, default=wc.DEFAULT_DOWNLOAD_INTERVAL,
+                   help="seconds between file downloads (default 5: upload.wikimedia.org "
+                   "answers 429 to a faster loop)")
+    p.add_argument("--wait-rate-limit", action="store_true",
+                   help="sleep out a Retry-After of up to 900 s instead of stopping with "
+                   "exit 3 (off by default: a long wait needs this opt-in). There is "
+                   "no total runtime bound: up to four 900 s sleeps a request")
     p.add_argument("--include-living", action="store_true",
                    help="also take portraits of creators with no date of death (off)")
     p.add_argument("--min-years-dead", type=int, default=5,
@@ -1258,6 +1322,9 @@ def main(argv: list[str], client: wc.Client | None = None) -> int:
     if sum([args.survey, args.dry_run, args.facts]) > 1:
         print("--survey, --dry-run and --facts do not go together", file=sys.stderr)
         return 2
+    if args.api_interval < 0 or args.download_interval < 0:
+        print("--api-interval and --download-interval are not negative", file=sys.stderr)
+        return 2
     if (args.limit is not None and args.limit < 0) or args.min_years_dead < 0 or \
             not 16 <= args.portrait_px <= vd.SHARED_IMAGE_MAX_SIDE or \
             not 16 <= args.work_px <= vd.SHARED_IMAGE_MAX_SIDE:
@@ -1267,7 +1334,9 @@ def main(argv: list[str], client: wc.Client | None = None) -> int:
     langs = [c for item in args.lang or [] for c in item.split(",") if c] or None
     client = client or wc.Client(cache_dir=args.cache, refresh=args.refresh_cache,
                                  max_requests=args.max_requests,
-                                 api_interval=args.api_interval)
+                                 api_interval=args.api_interval,
+                                 download_interval=args.download_interval,
+                                 wait_rate_limit=args.wait_rate_limit)
     opts = Options(decks=args.decks, langs=langs,
                    kinds=(args.kind,) if args.kind else KINDS, limit=args.limit,
                    survey=args.survey, dry_run=args.dry_run, facts=args.facts,
