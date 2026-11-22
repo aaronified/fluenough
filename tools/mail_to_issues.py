@@ -198,6 +198,17 @@ QUESTIONS = "questions"
 ANSWERED = "fluenough-answered"
 QUESTIONS_SUBJECT = re.compile(
     r"^\[Fluenough questions\]\s*([^\s(]+)?\s*(?:\(([^)]*)\))?", re.I)
+# The Gmail searches that find report mails, one term each and unioned by
+# [find_mail]: the subject the app writes, or the review or questions files'
+# names, in case the subject was deleted. Plain terms, not a `{a b c}` group,
+# so that one search Gmail reads oddly cannot hide every mail.
+SEARCH_TERMS = ("subject:Fluenough", "filename:fluenough-review",
+                "filename:fluenough-questions")
+# Where a report mail may be besides the inbox, for the log's counts only.
+OUTSIDE_INBOX = (("All Mail", "[Gmail]/All Mail",
+                  "-in:inbox -in:spam -in:trash -in:sent -in:drafts"),
+                 ("Spam", "[Gmail]/Spam", ""))
+SETUP_PAGE = "wiki/Review-Bot-Setup.md"
 REVIEW_FOOTER = ("<sub>Opened by the mail workflow. The reviews stay "
                  "in the mail: no suggestion text, no mail address.</sub>")
 
@@ -893,7 +904,8 @@ def run(env: dict[str, str],
     if bot is None:
         print("::notice::The review bot's GitHub App is not set up "
               "(FLUENOUGH_BOT_APP_ID, FLUENOUGH_BOT_PRIVATE_KEY): review "
-              "mails wait to become proposals, and nothing is merged.")
+              "mails are filed as issues and wait to become proposals, and "
+              f"nothing is merged. Owner steps: {SETUP_PAGE}.")
     else:
         print(f"Review bot: {bot.threshold} other reviewer(s) must accept a "
               f"proposal.")
@@ -915,6 +927,48 @@ def run(env: dict[str, str],
             print(f"::warning::The flag sweep failed: "
                   f"{type(error).__name__}: {error}")
     return filed
+
+
+def find_mail(imap: imaplib.IMAP4, filed: bool = False,
+              extra: str = "") -> list[bytes]:
+    """The numbers, in the selected mailbox, of the report mails not filed
+    yet (or, with [filed], those already filed), found by each of
+    [SEARCH_TERMS] and joined without repeats. [extra] narrows the Gmail
+    search further."""
+    numbers: dict[bytes, None] = {}
+    label = f"label:{FILED}" if filed else f"-label:{FILED}"
+    for term in SEARCH_TERMS:
+        query = " ".join(part for part in (term, label, extra) if part)
+        _, found = imap.search(None, "X-GM-RAW", f'"{query}"')
+        for number in (found[0] or b"").split():
+            numbers[number] = None
+    return sorted(numbers, key=int)
+
+
+def waiting_reviews(imap: imaplib.IMAP4) -> int:
+    """How many review mails in the selected mailbox are filed and not yet
+    proposed: those a review bot, once set up, will take up."""
+    _, found = imap.search(
+        None, "X-GM-RAW",
+        f'"filename:fluenough-review label:{FILED} -label:{PROPOSED}"')
+    return len((found[0] or b"").split())
+
+
+def count_outside_inbox(imap: imaplib.IMAP4) -> dict[str, int]:
+    """How many report mails not filed yet sit outside the inbox, by place:
+    in All Mail (archived by a Gmail filter) or in Spam. A name that cannot
+    be selected is left out. Counts only, and the tool files nothing from
+    there. Run last: it changes the selected mailbox."""
+    counts: dict[str, int] = {}
+    for name, box, extra in OUTSIDE_INBOX:
+        try:
+            status, _ = imap.select(f'"{box}"', readonly=True)
+            if status != "OK":
+                continue
+            counts[name] = len(find_mail(imap, extra=extra))
+        except (imaplib.IMAP4.error, OSError):
+            continue
+    return counts
 
 
 def file_mails(env: dict[str, str],
@@ -948,16 +1002,19 @@ def file_mails(env: dict[str, str],
         else:
             print(f"Read {raters.records} rater record(s), "
                   f"{raters.passed_over} passed over.")
-        imap.select("INBOX")
+        status, selected = imap.select("INBOX")
         # Gmail's own search, so that filed mail is left out by its label.
         # A review mail is found by its files too, in case its subject was
         # deleted.
-        _, found = imap.search(
-            None, "X-GM-RAW",
-            f'"{{subject:Fluenough filename:fluenough-review '
-            f'filename:fluenough-questions}} -label:{FILED}"')
-        filed = 0
-        for number in (found[0] or b"").split():
+        numbers = find_mail(imap)
+        try:
+            in_inbox = int((selected[0] or b"0").split()[0])
+        except (ValueError, IndexError, AttributeError):
+            in_inbox = 0
+        print(f"Inbox {status}: {in_inbox} mail(s), {len(numbers)} Fluenough "
+              f"mail(s) not filed yet.")
+        filed = skipped = 0
+        for number in numbers:
             _, data = imap.fetch(number, "(BODY.PEEK[])")
             raw = next(part[1] for part in data if isinstance(part, tuple))
             message = email.message_from_bytes(raw, policy=email.policy.default)
@@ -976,6 +1033,7 @@ def file_mails(env: dict[str, str],
                      or questions_issue_from(message, check)
                      or issue_from(message))
             if issue is None:
+                skipped += 1
                 continue
             file_issue(issue)
             imap.store(number, "+X-GM-LABELS", FILED)
@@ -983,7 +1041,8 @@ def file_mails(env: dict[str, str],
                 # Left to the owner: the proposals never take it up.
                 imap.store(number, "+X-GM-LABELS", PROPOSED)
             filed += 1
-        print(f"Filed {filed} report(s).")
+        print(f"Filed {filed} report(s); {skipped} left alone (support mail, "
+              f"or a subject that is not a report's).")
         print(f"Review senders: {raters.tied} tied, {raters.matched} "
               f"matched, {raters.differed} did not match, "
               f"{raters.unchecked} not checked.")
@@ -992,6 +1051,11 @@ def file_mails(env: dict[str, str],
                 f"{n} {what}" for what, n in sorted(gate.counts.items()))
                 or "none seen") + ".")
             review_quorum.set_tiers(gate.tiers())
+        if bot is None:
+            waiting = waiting_reviews(imap)
+            print(f"::notice::No review bot: {waiting} review mail(s) filed "
+                  f"as issues are left for the bot, nothing is proposed. "
+                  f"Owner steps: {SETUP_PAGE}.")
         if bot is not None:
             counts = propose_mails(imap, raters, bot, gate)
             print("Review mails proposed: " + (", ".join(
@@ -1001,6 +1065,13 @@ def file_mails(env: dict[str, str],
             print("Question mails counted: " + (", ".join(
                 f"{n} {outcome}" for outcome, n in sorted(counts.items()))
                 or "none waiting") + ".")
+        outside = count_outside_inbox(imap)
+        if any(outside.values()):
+            print("::warning::Report mails not filed yet are outside the "
+                  "inbox: " + ", ".join(
+                      f"{n} in {where}" for where, n in outside.items() if n)
+                  + ". A Gmail filter may skip the inbox, or Spam took them; "
+                  "the tool files only from the inbox.")
         return filed
     finally:
         imap.logout()

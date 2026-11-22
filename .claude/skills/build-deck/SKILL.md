@@ -196,18 +196,26 @@ Before you start:
    merge (owner, 2026-10-23). A deck branch starts from `decks-live`, and its
    pull request opens against `decks-live`, not main (owner, 2026-11-06).
    Tools details: `tools/README.md`.
-7a. **Flag what you are unsure of.** Before finishing a unit, append a row to
-   `docs/review-queue/<lang>.md` for each card you are unsure of (gender,
-   part of speech, reading or tone, a doubtful note, a traditional form,
-   naturalness, a missing phrase), in the same commit as the deck. Use the
-   card's real id and never invent one; a unit-level question uses
-   `unit-level` (the format is in [docs/review-queue/README.md](../../../docs/review-queue/README.md)).
-   The one-line question must be answerable by a bilingual reviewer. Never
-   put a flag in the deck YAML: released apps reject unknown card keys.
-   Owner decision (2026-11-06), quoted: "go B", answering "Questions for a
-   bilingual reviewer: will these be in the decks? and asked to the reviewer
-   when they review?": a sidecar list per language that the review bot reads;
-   no deck-format change; nothing ships to learners.
+7a. **Flag the facet you doubt.** Before finishing a unit, append a v2 row to
+   `docs/review-queue/<lang>.md` for each facet of a card you are unsure of,
+   in the same commit as the deck: `| card id | unit | facet | concern
+   (optional) | raised by | date |` under that header (full rules in
+   [docs/review-queue/README.md](../../../docs/review-queue/README.md)). The
+   facet is one of `word`, `reading`, `ipa`, `meaning`, `example`, `note`,
+   `unit`, `offence`, `audio`, and the card must have it. Add a row only for a
+   facet you doubt, one row per card and facet. **Write no question:** the app
+   asks "Is the <facet> on this card correct?" itself. The optional concern is
+   one plain statement of at most 140 characters, no `?`, no other card id
+   ("the vowel length is a guess"); leave it empty when the facet says it. Use
+   the card's real id and never invent one. A doubt about a unit or the course
+   is not a row: put it in the unit's notes or an issue. Never put a flag in
+   the deck YAML: released apps reject unknown card keys. CI runs
+   `tools/check_review_queue.py` on the rows; read its result.
+   Owner decisions, quoted: "go B" (2026-11-06), a sidecar list per language
+   that the review bot reads, nothing ships to learners; and (2026-11-22)
+   "the questions should be more about is this facet on this card correct?
+   Yes / options + free text. Do not try to invent questions from the free
+   text fields. That is inviting disaster."
 8. **Ship.** Never create tags. For the owner's work, open a pull request
    (owner, 2026-10-16: "Do use PRs for everything"); a deck-only change
    needs only "Validate decks" and "Released app reads the decks" green

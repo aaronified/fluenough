@@ -8,7 +8,8 @@ one file per language, `fluenough-questions` (lib/core/review/
 questions_file.dart). A question is about one data point of one card, named
 `<card>|<point>`; the point is `meaning`, `example:<8 hex>`,
 `confusable:<item id>`, `sound`, `image:<File>` (the answer pins the file) or
-`builder:<8 hex>` (a deck builder's question).
+`builder:<8 hex>` (a deck builder's question, old) or `builder:<facet>` (a
+builder's facet question, v2: "Is the <facet> on this card correct?").
 
 The answers are kept in `review-answers/<language>.json`, one entry a data
 point:
@@ -23,6 +24,14 @@ point:
       }
      }
     }
+
+**Builder questions v2** (owner, 2026-11-22; wiki Plan-Builder-Questions-V2):
+the answer is `yes` ("it is correct") or `no` ("needs a change") with `reason`
+one of the facet's fixed option keys (BUILDER_OPTIONS, always ending in
+`something_else`). Two answers agree on a "no" only with the same option; a
+different option waits open. Nothing is ever written to a deck for a builder
+question: a settled "no" is a flag note for the owner, a settled "yes" is not
+written to `verified`.
 
 A rater code has one answer to a point; answering again before it is
 settled replaces it.
@@ -106,6 +115,41 @@ REASONS = {
     "image": ("not_the_word", "unclear", "not_fit"),
     "builder": (),
 }
+# The facets of a v2 builder question (`Facet.wire`) and the options of a
+# "needs a change" answer for each: the reviewer UX's pointer tags for the
+# facet (tools/review_facets.py TAG_FACETS, in its order), then
+# `something_else`. A test keeps this equal to TAG_FACETS.
+BUILDER_OPTIONS = {
+    "word": ("spelling_wrong", "unnatural_or_rare", "wrong_register", "offensive",
+             "something_else"),
+    "reading": ("reading_wrong", "something_else"),
+    "ipa": ("ipa_wrong", "something_else"),
+    "meaning": ("meaning_wrong", "unnatural_or_rare", "wrong_register", "offensive",
+                "something_else"),
+    "example": ("spelling_wrong", "unnatural_or_rare", "wrong_register", "offensive",
+                "example_wrong", "something_else"),
+    "note": ("note_wrong", "something_else"),
+    "unit": ("wrong_unit", "something_else"),
+    "offence": ("offensive", "something_else"),
+    "audio": ("audio_wrong", "something_else"),
+}
+BUILDER_V2_PREFIX = "builder:"
+
+
+def builder_facet(point: str) -> str:
+    """The facet of a v2 builder point (`builder:<facet>`), "" for any other
+    point, the old `builder:<8 hex>` included."""
+    facet = point[len(BUILDER_V2_PREFIX):] if point.startswith(BUILDER_V2_PREFIX) else ""
+    return facet if facet in BUILDER_OPTIONS else ""
+
+
+def reasons_for(kind: str, point: str) -> tuple[str, ...]:
+    """The reason keys an answer to [point] may carry."""
+    if kind == "builder":
+        return BUILDER_OPTIONS.get(builder_facet(point), ())
+    return REASONS[kind]
+
+
 POINTS = {
     "meaning": re.compile(r"^meaning$"),
     "example": re.compile(r"^example:[0-9a-f]{8}$"),
@@ -114,7 +158,8 @@ POINTS = {
     # A Commons file name: no spaces, slashes or pipes.
     "image": re.compile(r"^image:[^\s|/\\]{1,200}$"),
     # A deck builder's question: the hash of its text, as the app writes it.
-    "builder": re.compile(r"^builder:[0-9a-f]{8}$"),
+    # or, v2, the facet doubted: `builder:<facet>` (BUILDER_OPTIONS).
+    "builder": re.compile(r"^builder:([0-9a-f]{8}|word|reading|ipa|meaning|example|note|unit|offence|audio)$"),
 }
 CARD = re.compile(r"^[a-z]{2,3}-[0-9]{4,}$")
 
@@ -171,7 +216,8 @@ def read_questions(files: list[dict], code: str) -> Batch:
             reason = a.get("reason")
             out.answers.append(Answer(
                 lang, card, point, kind, answer,
-                reason if isinstance(reason, str) and reason in REASONS[kind] else ""))
+                reason if isinstance(reason, str) and reason in reasons_for(kind, point)
+                else ""))
     return out
 
 
@@ -217,10 +263,18 @@ def flag_state(point: dict, needed: int) -> str:
     said "yes", "merge" when [needed] other codes said the same "no" or
     "flag" (as many as the proposal flow's agreement), else "open"."""
     first = flagger(point)
-    others = [g.get("answer") for code, g in point.get("answers", {}).items()
+    given = point.get("answers", {})
+    others = [g.get("answer") for code, g in given.items()
               if code != first and isinstance(g, dict)]
     if "yes" in others:
         return "close"
+    if point.get("kind") == "builder" and first in given and isinstance(given[first], dict):
+        # A v2 builder question: agreement is the same option (the old
+        # builder questions have no reasons, so every no is the same).
+        want = given[first].get("reason", "")
+        others = [g.get("answer") for code, g in given.items()
+                  if code != first and isinstance(g, dict)
+                  and g.get("reason", "") == want]
     return "merge" if len(others) >= needed else "open"
 
 

@@ -63,5 +63,6 @@ Every architecture decision record in the wiki. Each one has its own page.
 - [ADR-0058](ADR-0058-Reviewer-UX): Reviewer UX: speaker-gated, facet-level reviews with a second-speaker check (proposed; its plan is built and not yet released)
 - [ADR-0059](ADR-0059-Sounds-Decks-With-Compressed-Audio): Sounds decks: one card per sound, with Ogg Opus recordings fetched from Wikimedia, never synthesised (proposed)
 - [ADR-0060](ADR-0060-Culture-Media-From-Wikimedia-Commons): Culture media: portraits and posters fetched from Wikimedia Commons, 2048 px at most, credited in the app, never invented (proposed)
+- [ADR-0061](ADR-0061-Builder-Questions-Are-Facets-Not-Prose): A deck builder's question is a facet of a card, never prose; the app asks one fixed question per facet and a checker enforces the rows (accepted; the app screens are not built)
 
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)

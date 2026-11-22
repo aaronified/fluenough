@@ -21,11 +21,24 @@ reviewer | raised by | date. This tool:
   about a field a sign-off does not cover, so a person takes the row out
   when the answer is in the deck.
 
-The feed is `{"format": "fluenough-review-queue", "version": 1, "languages":
-{"ta": {"cards": {"ta-0041": [{"question": ..., "by": ..., "date": ...}]},
-"unit_level": [{"scope": "unit-level", "unit": ..., "question": ...}]}}}`.
-Released apps never fetch it, so nothing changes for them; the app that does
-ignores keys it does not know.
+Builder questions v2 (owner, 2026-11-22; wiki Plan-Builder-Questions-V2): a
+row of the new table, `| card id | unit | facet | concern (optional) | raised by
+| date |`, names a card and a facet to doubt, never a question. A header whose
+third cell is `facet` starts v2 rows; any other header, or none, is the old
+table. The old per-card rows are deleted from the queue files by a separate
+change, never converted; they, and the unit-level rows, are still read.
+`tools/check_review_queue.py` checks the v2 rows, and this tool refuses to
+write the feed while it finds a violation.
+
+The feed is `{"format": "fluenough-review-queue", "version": 1,
+"asks_version": 2, "languages": {"ta": {"cards": {"ta-0041": [{"question":
+..., "by": ..., "date": ...}]}, "unit_level": [{"scope": "unit-level",
+"unit": ..., "question": ...}], "asks": {"ta-0042": [{"facet": "ipa", "ref":
+..., "concern": ..., "by": ..., "date": ...}]}}}}`. `version` stays 1 on
+purpose: a released app that reads the file stops at a `version` it does not
+know and would lose everything, while it ignores the new `asks_version` and
+`asks` keys. `cards` and `unit_level` keep their old shape (empty when no old
+rows are left).
 
     python3 tools/review_queue.py [--root .] [--out decks/review-queue.json]
         [--report FILE]
@@ -46,9 +59,15 @@ _Loader = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 
 FORMAT = "fluenough-review-queue"
 VERSION = 1
+# The per-card `asks` of builder questions v2; `version` stays VERSION.
+ASKS_VERSION = 2
 QUEUE_DIR = Path("docs") / "review-queue"
 FEED = Path("decks") / "review-queue.json"
 SCOPES = {"unit-level", "course-wide"}
+# The facets a v2 row may name: `Facet.wire` of lib/core/review/facets.dart
+# (kept equal by tools/test_check_review_queue.py).
+FACETS = ("word", "reading", "ipa", "meaning", "example", "note", "unit",
+          "offence", "audio")
 
 # The most characters of a question that reach a phone.
 MAX_QUESTION = 400
@@ -68,6 +87,12 @@ class Row:
     by: str
     date: str
     line: int
+    # Version 2 rows: a facet (with `ref`, the 8 hex of an example's text,
+    # when it names one example) and an optional concern; `question` is "".
+    v2: bool = False
+    facet: str = ""
+    ref: str = ""
+    concern: str = ""
 
     @property
     def scope(self) -> str | None:
@@ -79,6 +104,8 @@ class Queue:
     lang: str
     rows: list[Row] = field(default_factory=list)
     malformed: list[int] = field(default_factory=list)  # line numbers
+    # Lines of version 2 rows that are not six cells: the checker fails them.
+    malformed_v2: list[int] = field(default_factory=list)
 
 
 def _cells(line: str) -> list[str]:
@@ -90,12 +117,29 @@ def _cells(line: str) -> list[str]:
     return [c.replace("\\|", "|").strip() for c in _CELL_SPLIT.split(inner)]
 
 
+def _v2_row(queue: Queue, cells: list[str], number: int) -> None:
+    """A row of the v2 table. Six cells exactly; what the cells say is the
+    checker's to judge, so nothing is dropped here but a row with the wrong
+    number of cells or no card id."""
+    card = cells[0].strip("` ")
+    if card.lower() in SCOPES:
+        card = card.lower()
+    if len(cells) != 6 or not card:
+        queue.malformed_v2.append(number)
+        return
+    facet, _, ref = cells[2].strip("` ").partition(":")
+    concern = re.sub(r"\s+", " ", cells[3]).strip()
+    queue.rows.append(Row(card, cells[1], "", cells[4], cells[5], number, True,
+                          facet.strip().lower(), ref.strip().lower(), concern))
+
+
 def parse_queue(text: str, lang: str) -> Queue:
     """The rows of [text], a queue file of language [lang]. Tolerant: the
     header and the rule line are skipped wherever they are, a card id may
     be in backticks, and a row with fewer than three cells, or with no
     question, is counted as malformed and left out."""
     queue = Queue(lang)
+    v2 = False
     for number, line in enumerate(text.splitlines(), 1):
         if not line.lstrip().startswith("|"):
             continue
@@ -103,6 +147,11 @@ def parse_queue(text: str, lang: str) -> Queue:
         if all(_RULE_CELL.match(c) for c in cells if c) and any(cells):
             continue
         if cells[0].lower().strip("` ") == "card id":
+            # The header says which table follows.
+            v2 = len(cells) > 2 and cells[2].lower().strip("` ") == "facet"
+            continue
+        if v2:
+            _v2_row(queue, cells, number)
             continue
         if len(cells) < 3:
             queue.malformed.append(number)
@@ -174,8 +223,21 @@ def build(root: Path) -> Built:
         known = deck_cards(root, lang)
         cards: dict[str, list[dict]] = {}
         unit_level: list[dict] = []
+        asks: dict[str, list[dict]] = {}
         for row in queue.rows:
-            if row.scope:
+            if row.v2:
+                if row.scope:
+                    continue  # the checker refuses it; never published
+                if row.card not in known:
+                    unknown.setdefault(lang, []).append(row.card)
+                    continue
+                ask = {"facet": row.facet, "by": row.by, "date": row.date}
+                if row.ref:
+                    ask["ref"] = row.ref
+                if row.concern:
+                    ask["concern"] = row.concern
+                asks.setdefault(row.card, []).append(ask)
+            elif row.scope:
                 unit_level.append({"scope": row.scope, "unit": row.unit,
                                    "question": row.question})
             elif row.card not in known:
@@ -185,12 +247,16 @@ def build(root: Path) -> Built:
                     {"question": row.question, "by": row.by, "date": row.date})
                 if known[row.card] >= SIGNED_OFF_ENOUGH:
                     settled.setdefault(lang, []).append(row.card)
-        if cards or unit_level:
-            languages[lang] = {"cards": cards, "unit_level": unit_level}
+        if cards or unit_level or asks:
+            entry = {"cards": cards, "unit_level": unit_level}
+            if asks:
+                entry["asks"] = asks
+            languages[lang] = entry
     for table in (unknown, settled):
         for lang in table:
             table[lang] = sorted(set(table[lang]))
-    feed = {"format": FORMAT, "version": VERSION, "languages": languages}
+    feed = {"format": FORMAT, "version": VERSION, "asks_version": ASKS_VERSION,
+            "languages": languages}
     return Built(feed, unknown, settled, malformed)
 
 
@@ -200,9 +266,12 @@ def feed_text(feed: dict) -> str:
 
 def report(built: Built) -> str:
     out = ["# Review queue report", ""]
+    asks = sum(len(v) for e in built.feed["languages"].values()
+               for v in e.get("asks", {}).values())
     cards = sum(len(v["cards"]) for v in built.feed["languages"].values())
     units = sum(len(v["unit_level"]) for v in built.feed["languages"].values())
-    out.append(f"{cards} cards with a builder question, {units} unit-level or "
+    out.append(f"{asks} facet questions (v2).")
+    out.append(f"{cards} cards with an old builder question, {units} unit-level or "
                f"course-wide rows, in {len(built.feed['languages'])} languages.")
     sections = (
         ("Unknown card ids (not in the language's decks, left out of the feed)", built.unknown),
@@ -224,6 +293,13 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--out", type=Path, default=None)
     ap.add_argument("--report", type=Path, default=None)
     args = ap.parse_args(argv)
+    # Refuse to publish v2 rows the checker rejects: no partial feed.
+    import check_review_queue as crq
+
+    problems = crq.check(args.root).violations
+    if problems:
+        print(crq.format_violations(problems), end="", file=sys.stderr)
+        return 1
     built = build(args.root)
     out = args.out or args.root / FEED
     out.write_text(feed_text(built.feed), encoding="utf-8")
