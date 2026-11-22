@@ -412,7 +412,7 @@ void main() {
   });
 
   group('I\'ve completed this', () {
-    testWidgets('a row opens with its briefing, legal routes and action', (
+    testWidgets('a row opens the work page, briefing and action', (
       tester,
     ) async {
       usePhone(tester);
@@ -521,7 +521,7 @@ void main() {
       expect(find.text(_l10n.recHomeTitle), findsNothing);
     });
 
-    testWidgets('a cover request opens the list with that work open', (
+    testWidgets('a cover request opens the list and that work\'s page', (
       tester,
     ) async {
       usePhone(tester);

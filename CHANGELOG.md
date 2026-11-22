@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **A picture on works and people.** Books, films and other works show a poster or cover when a free one exists, people show their portrait, each with its credit and a link to its licence, and a tap opens it full screen; a Show pictures switch and a Download pictures row sit in each language's Culture settings.
+
 ## [0.12.0] - 2026-11-22
 
 - **Thank you page.** Settings, Sources now starts by thanking everyone whose work Fluenough stands on, from the Wikimedia volunteers to the reviewers and learners.

@@ -196,25 +196,7 @@ Creator? _readCreator(
   if (era != null && !eraIds.contains(era)) {
     problems.add('$path.era', '"$era" is not an era of the file');
   }
-  CreatorImage? image;
-  final rawImage = raw['image'];
-  if (rawImage != null) {
-    final file = rawImage is Map ? plainText(rawImage['file']) : null;
-    if (file == null) {
-      problems.add('$path.image', 'has no file, left out');
-    } else {
-      final map = rawImage as Map;
-      image = CreatorImage(
-        file: file,
-        credit: plainText(map['credit']),
-        author: plainText(map['author']),
-        licence: plainText(map['licence']),
-        licenceUrl: plainText(map['licence_url']),
-        sourceUrl: plainText(map['source_url']),
-        retrieved: plainText(map['retrieved']),
-      );
-    }
-  }
+  final image = readCultureImage(raw['image'], '$path.image', problems);
   final related = <CreatorRelation>[];
   final rawRelated = raw['related'];
   if (rawRelated is List) {
@@ -293,5 +275,31 @@ Legacy? _readLegacy(Object? raw, String path, KindsProblems problems) {
     text: text,
     textTarget: _readByLevel(raw['text_target'], '$path.text_target', problems),
     items: List<LegacyItem>.unmodifiable(items),
+  );
+}
+
+/// A picture block (`image:`) of a creator or a work: its file and credit.
+/// Null, with a line for the log, when the block has no file; a file the app
+/// does not show costs only itself.
+CreatorImage? readCultureImage(
+  Object? rawImage,
+  String path,
+  KindsProblems problems,
+) {
+  if (rawImage == null) return null;
+  final file = rawImage is Map ? plainText(rawImage['file']) : null;
+  if (file == null) {
+    problems.add(path, 'has no file, left out');
+    return null;
+  }
+  final map = rawImage as Map;
+  return CreatorImage(
+    file: file,
+    credit: plainText(map['credit']),
+    author: plainText(map['author']),
+    licence: plainText(map['licence']),
+    licenceUrl: plainText(map['licence_url']),
+    sourceUrl: plainText(map['source_url']),
+    retrieved: plainText(map['retrieved']),
   );
 }

@@ -4268,11 +4268,13 @@ under `shelves` (a `files` entry plus `genre`, `level`, `hidden`,
 `professional`, `section`, `weave`, `title` and `cards`) and never in `files`;
 the topics file under `topics`; creators and `sections.yaml` under `shared`,
 creator images and work images under `shared_media`. Each carries `min_app`,
-written by the tool; a work image's entry carries a `min_app` (a placeholder,
-0.9.6). Today's app never reads it: `SharedMediaFile.tryParse` accepts only
-`decks/creators/images/` and passes a work image's entry by, with a log line.
-Package 4 must read the field, and the number must become the real release
-before the first work image lands.
+written by the tool; a work image's entry carries `min_app` 0.12.1
+(`MIN_APP_WORK_IMAGES` in `tools/deck_index.py`, the lowest release that shows
+work images; shipping a poster later is harmless). `SharedMediaFile.tryParse`
+accepts both folders and skips an entry whose `min_app` is above the app's
+version, so it is never downloaded; an older app passes the entry by with a
+log line. A work's `image` block (the same keys as a creator's) is read into
+`Recommendation.image`.
 
 #### Shared culture images: a creator's portrait and a work's poster
 

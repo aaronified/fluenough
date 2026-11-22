@@ -5,6 +5,7 @@ import '../core/feedback/report.dart';
 import '../features/culture/culture_deck_page.dart';
 import '../features/culture/culture_item_page.dart';
 import '../features/culture/culture_timeline.dart';
+import '../features/culture/work_page.dart';
 import '../features/culture/work_questions_page.dart';
 import '../features/decks/deck_detail_page.dart';
 import '../features/decks/import_page.dart';
@@ -144,6 +145,9 @@ abstract final class AppRoutes {
   /// The culture timeline, to today. Argument: a [CultureTimelineRequest].
   static const String cultureTimeline = '/culture-timeline';
 
+  /// A recommended work's page. Argument: a [WorkRequest].
+  static const String work = '/work';
+
   /// The questions of a completed work. Argument: a [WorkQuestionsRequest].
   static const String workQuestions = '/work-questions';
 
@@ -228,6 +232,7 @@ abstract final class AppRoutes {
       ),
       cultureTimeline when args is CultureTimelineRequest =>
         CultureTimelinePage(request: args),
+      work when args is WorkRequest => WorkPage(request: args),
       workQuestions when args is WorkQuestionsRequest => WorkQuestionsPage(
         request: args,
       ),
@@ -313,6 +318,20 @@ abstract final class AppNavigator {
     );
     state.shellTab.value = ShellTab.decks;
   }
+
+  /// The page of the work [recommendationId]: its poster, briefing, legal
+  /// routes and "I've completed this".
+  static Future<void> openWork(
+    BuildContext context,
+    String language,
+    String recommendationId,
+  ) => Navigator.of(context).pushNamed(
+    AppRoutes.work,
+    arguments: WorkRequest(
+      language: language,
+      recommendationId: recommendationId,
+    ),
+  );
 
   /// The questions of the completed work [recommendationId] (T26).
   static Future<void> openWorkQuestions(

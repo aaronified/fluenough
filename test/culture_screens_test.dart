@@ -213,7 +213,7 @@ void main() {
   });
 
   group('the creator card', () {
-    testWidgets('has no licensed image, a bio at the level and the legacy', (
+    testWidgets('has no caption without an image, a bio at the level and the legacy', (
       tester,
     ) async {
       usePhone(tester);
@@ -221,7 +221,9 @@ void main() {
       await pumpScreen(tester, _item('zz-7201'), state: state);
       await _tapShown(tester, _chipButton);
       expect(find.byType(CreatorCard), findsOneWidget);
-      expect(find.text(_l10n.cultureImageNone), findsWidgets);
+      // No picture, no caption and no apology text.
+      expect(find.text(_l10n.cultureImageNone), findsNothing);
+      expect(find.byIcon(Icons.person_outline), findsWidgets);
       expect(find.text(_l10n.cultureAbout('Antonio Machado')), findsOneWidget);
       expect(find.text('Machado fue poeta y maestro.'), findsOneWidget);
       expect(
