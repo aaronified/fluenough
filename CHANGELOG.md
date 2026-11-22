@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Every script you know or learn shows on a card.** A word shows in the script you are learning, with its spelling in each other script you can already read in smaller type beneath it.
+
 ## [0.12.0] - 2026-11-22
 
 - **Thank you page.** Settings, Sources now starts by thanking everyone whose work Fluenough stands on, from the Wikimedia volunteers to the reviewers and learners.

@@ -168,7 +168,9 @@ class TargetText extends StatelessWidget {
             language,
             scripts: scripts,
           ))
-            if (!_boxed(state, other.language)) other,
+            if (other.language.script != shown.language.script &&
+                !_boxed(state, other.language))
+              other,
         ];
         if (others.isEmpty) return main;
         return Column(
