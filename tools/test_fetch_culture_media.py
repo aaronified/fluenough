@@ -363,6 +363,52 @@ class LicenceAndAuthor(Case):
         v = self.verdict(licence="Public domain", artist="Unknown")
         self.assertEqual((v.status, v.author), ("ok", "Unknown author"))
 
+    def test_a_doubled_author_is_read_once(self) -> None:
+        # Two neighbouring elements (a hidden copy next to the shown one) ran
+        # together as `Unknown authorUnknown author`.
+        for artist in ("<span>Unknown author</span><span>Unknown author</span>",
+                       "Unknown authorUnknown author",
+                       "<bdi>Unknown author</bdi> <bdi>Unknown author</bdi>"):
+            self.assertEqual(self.verdict(artist=artist).status, "no-author", artist)
+            v = self.verdict(licence="Public domain", artist=artist)
+            self.assertEqual((v.status, v.author), ("ok", "Unknown author"), artist)
+        v = self.verdict(artist="<bdi>Jo Doe</bdi><bdi>Jo Doe</bdi>")
+        self.assertEqual((v.status, v.author), ("ok", "Jo Doe"))
+
+    def test_neighbouring_elements_are_separated_inline_markup_is_not(self) -> None:
+        self.assertEqual(fcm.clean_author("<span>Ann</span><br>Lee"), "Ann Lee")
+        self.assertEqual(fcm.clean_author("Jo <b>Do</b>e"), "Jo Doe")
+        self.assertEqual(fcm.clean_author("Mama"), "Mama")      # not a doubled name
+        self.assertEqual(fcm.clean_author(""), "")
+
+    def test_commons_assumed_author_placeholder_is_no_author(self) -> None:
+        text = "No machine-readable author provided. Zed assumed (based on copyright claims)."
+        self.assertEqual(self.verdict(artist=text).status, "no-author")
+        v = self.verdict(licence="Public domain", artist=text)
+        self.assertEqual((v.status, v.author), ("ok", "Unknown author"))
+
+    def test_unknown_author_for_public_domain_passes_the_validator(self) -> None:
+        image = {"file": "decks/creators/images/zz-ada.webp", "credit": "x", "author":
+                 "Unknown author", "licence": "public-domain",
+                 "source_url": "https://commons.wikimedia.org/wiki/File:X.jpg",
+                 "retrieved": "2025-01-01"}
+        r = vd.Report(Path("x"))
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp) / "creators"
+            (folder / "images").mkdir(parents=True)
+            (folder / "images" / "zz-ada.webp").write_bytes(webp(600, 400))
+            vd.check_image(r, "zz-ada", image, "zz-ada", False, folder / "zz.yaml",
+                           folder="creators")
+        self.assertFalse([e for e in r.errors if "author" in e], r.errors)
+
+    def test_the_written_credit_reads_the_author_once(self) -> None:
+        self.wiki.files["File:Ada.jpg"] = info(
+            "Ada.jpg", artist="<span>Jo Doe</span><span>Jo Doe</span>")
+        self.run_tool(langs=["zz"], kinds=("creators",))
+        image = self.creators()["zz-ada"]["image"]
+        self.assertEqual(image["author"], "Jo Doe")
+        self.assertEqual(image["credit"], "Jo Doe, CC BY-SA 4.0, via Wikimedia Commons")
+
     def test_author_is_plain_text_and_credit_data_are_read(self) -> None:
         v = self.verdict()
         self.assertEqual((v.author, v.licence_url), ("Jo Doe",
@@ -842,6 +888,136 @@ class ReportAndExit(Case):
                            sleep=lambda s: None)
         with contextlib.redirect_stderr(io.StringIO()):
             self.assertEqual(fcm.main(["--decks", str(self.decks), "--lang", "qq"], client), 1)
+
+
+class Limited:
+    """The fake wiki, except that downloads whose URL holds [name] answer 429
+    with [retry] seconds, the first [times] times."""
+
+    def __init__(self, wiki: FakeWiki, name: str, retry: int, times: int = 10**6,
+                 status: int = 429) -> None:
+        self.wiki, self.name, self.retry, self.times, self.status = \
+            wiki, name, retry, times, status
+        self.hits = 0
+
+    def __call__(self, url: str, headers: dict[str, str]) -> wc.Response:
+        host = urllib.parse.urlsplit(url).hostname
+        if host in ("upload.wikimedia.org", "thumb.wikimedia.org") and self.name in url \
+                and self.hits < self.times:
+            self.hits += 1
+            headers = {"retry-after": str(self.retry)} if self.status == 429 else {}
+            return wc.Response(self.status, headers, b"")
+        return self.wiki(url, headers)
+
+
+class RateLimitAndFailures(Case):
+    def limited_client(self, transport: object, **kw: object) -> wc.Client:
+        return wc.Client(transport, cache_dir=self.root / "cache", api_interval=0,  # type: ignore[arg-type]
+                         download_interval=0, max_requests=1000, **kw)  # type: ignore[arg-type]
+
+    def run_with(self, client: wc.Client) -> fcm.Report:
+        return fcm.run(client, fcm.Options(decks=self.decks, langs=["zz"],
+                                           kinds=("creators",), today=TODAY))
+
+    def test_a_retry_after_over_the_limit_defers_the_rest_and_stops(self) -> None:
+        # Ada is the first picture to write, Joy the second: both are deferred.
+        client = self.limited_client(Limited(self.wiki, "Ada.jpg", 600),
+                                     sleep=lambda s: None)
+        report = self.run_with(client)
+        lr = report.lang("zz")
+        self.assertIn("600 s", report.stopped)
+        self.assertEqual((lr.fetched, lr.deferred), (0, 2))
+        self.assertEqual(lr.ids["deferred"], ["zz-ada", "zz-joy"])
+        self.assertEqual(report.to_json()["total"]["deferred"], 2)
+        self.assertIn("deferred", report.to_markdown())
+        self.assertNotIn("image", self.creators()["zz-ada"])
+
+    def test_a_plain_rerun_resumes_from_the_cache(self) -> None:
+        self.run_with(self.limited_client(Limited(self.wiki, "Ada.jpg", 600),
+                                          sleep=lambda s: None))
+        asked = len(self.wiki.api)
+        report = self.run_with(self.limited_client(self.wiki))
+        lr = report.lang("zz")
+        self.assertEqual((report.stopped, lr.fetched, lr.deferred), ("", 2, 0))
+        self.assertIn("image", self.creators()["zz-ada"])
+        self.assertIn("image", self.creators()["zz-joy"])
+        # the entity, search and file-info answers came from the cache
+        self.assertFalse([q for q in self.wiki.api[asked:]
+                          if q.get("action") in ("wbsearchentities", "wbgetentities")])
+
+    def test_wait_rate_limit_sleeps_it_out_and_goes_on(self) -> None:
+        slept: list[float] = []
+        limited = Limited(self.wiki, "Ada.jpg", 600, times=1)
+        report = self.run_with(self.limited_client(limited, sleep=slept.append,
+                                                   wait_rate_limit=True))
+        self.assertEqual(report.stopped, "")
+        self.assertIn(600.0, slept)
+        self.assertEqual((limited.hits, report.lang("zz").fetched), (1, 2))
+
+    def test_exit_3_with_the_deferred_in_the_report_file(self) -> None:
+        client = self.limited_client(Limited(self.wiki, "Ada.jpg", 600),
+                                     sleep=lambda s: None)
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            code = fcm.main(["--decks", str(self.decks), "--lang", "zz", "--kind",
+                             "creators", "--json", str(self.root / "r.json")], client)
+        self.assertEqual(code, 3)
+        data = json.loads((self.root / "r.json").read_text("utf-8"))
+        self.assertEqual(data["languages"][0]["ids"]["deferred"], ["zz-ada", "zz-joy"])
+
+    def test_the_new_flags_are_passed_to_the_client(self) -> None:
+        with mock.patch.object(wc, "Client") as made, \
+                contextlib.redirect_stderr(io.StringIO()):
+            code = fcm.main(["--decks", str(self.decks), "--lang", "qq",
+                             "--wait-rate-limit", "--download-interval", "7"])
+        self.assertEqual(code, 1)           # the unknown language, after the client was made
+        self.assertTrue(made.call_args.kwargs["wait_rate_limit"])
+        self.assertEqual(made.call_args.kwargs["download_interval"], 7.0)
+
+    def test_defaults_match_the_sound_tool(self) -> None:
+        with mock.patch.object(wc, "Client") as made, \
+                contextlib.redirect_stderr(io.StringIO()):
+            fcm.main(["--decks", str(self.decks), "--lang", "qq"])
+        self.assertFalse(made.call_args.kwargs["wait_rate_limit"])
+        self.assertEqual(made.call_args.kwargs["download_interval"],
+                         wc.DEFAULT_DOWNLOAD_INTERVAL)
+
+    def test_a_negative_interval_is_exit_2(self) -> None:
+        with contextlib.redirect_stderr(io.StringIO()):
+            code = fcm.main(["--decks", str(self.decks), "--download-interval", "-1"],
+                            self.limited_client(self.wiki))
+        self.assertEqual(code, 2)
+
+    def test_one_file_refused_by_the_server_does_not_stop_the_others(self) -> None:
+        limited = Limited(self.wiki, "Ada.jpg", 0, status=403)
+        report = self.run_with(self.limited_client(limited, sleep=lambda s: None))
+        lr = report.lang("zz")
+        self.assertEqual((report.stopped, report.error, report.fatal), ("", "", False))
+        self.assertEqual((lr.errors, lr.fetched, lr.deferred), (1, 1, 0))
+        self.assertNotIn("image", self.creators()["zz-ada"])
+        self.assertIn("image", self.creators()["zz-joy"])
+
+    def test_an_unexpected_failure_on_one_file_does_not_stop_the_others(self) -> None:
+        real = fcm._get_picture
+
+        def flaky(client: wc.Client, v: fcm.Verdict, px: int) -> tuple:
+            if v.title == "File:Ada.jpg":
+                raise ValueError("bad json")
+            return real(client, v, px)
+
+        with mock.patch.object(fcm, "_get_picture", flaky):
+            report = self.run_with(self.limited_client(self.wiki))
+        lr = report.lang("zz")
+        self.assertEqual((report.fatal, lr.errors, lr.fetched), (False, 1, 1))
+        self.assertTrue(any("bad json" in k for k in lr.ids if k.startswith("error")))
+        self.assertIn("image", self.creators()["zz-joy"])
+
+    def test_an_over_size_file_does_not_stop_the_others(self) -> None:
+        self.wiki.files["File:Ada.jpg"] = info("Ada.jpg", size=20 * 1024 * 1024)
+        report = self.run_with(self.limited_client(self.wiki))
+        lr = report.lang("zz")
+        self.assertEqual((lr.over_size, lr.fetched), (1, 1))
+        self.assertIn("image", self.creators()["zz-joy"])
 
 
 def have_libwebp() -> bool:
