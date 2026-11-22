@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Builder questions ask about one detail of a card.** Reviewers now see the same plain question, such as "Is the IPA on this card correct?", with that detail marked on the card, and answer Yes or Needs a change and pick what is wrong from a short list.
+
 ## [0.12.0] - 2026-11-22
 
 - **Thank you page.** Settings, Sources now starts by thanking everyone whose work Fluenough stands on, from the Wikimedia volunteers to the reviewers and learners.

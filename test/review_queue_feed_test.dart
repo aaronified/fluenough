@@ -1,6 +1,5 @@
-// The review queue feed (docs/review-queue/README.md): the old per-card
-// questions as before, and the facet asks of builder questions v2 read beside
-// them without changing what the app shows.
+// The review queue feed (docs/review-queue/README.md): the facet asks of
+// builder questions v2 are read, the old per-card free-text rows are not.
 
 import 'dart:convert';
 
@@ -21,7 +20,7 @@ String feed({
 
 void main() {
   group('the old rows', () {
-    test('are read as before, with the new keys beside them', () {
+    test('are no longer read: the app asks nothing a builder wrote', () {
       final queue = ReviewQueue.parse(
         feed(
           zz: <String, Object?>{
@@ -39,26 +38,24 @@ void main() {
           },
         ),
       );
-      expect(queue.forCard('zz', 'zz-0001'), <String>['Is it m?']);
-      expect(queue.has('zz', 'zz-0002'), isFalse);
+      expect(queue.has('zz', 'zz-0001'), isFalse);
+      expect(queue.asksFor('zz', 'zz-0001'), isEmpty);
       expect(queue.asksFor('zz', 'zz-0002').single.facet, Facet.ipa);
     });
 
-    test('an old file with no asks still reads', () {
-      final queue = ReviewQueue.parse(
-        feed(
-          asksVersion: null,
-          zz: <String, Object?>{
-            'cards': <String, Object?>{
-              'zz-0001': <Object?>[
-                <String, Object?>{'question': 'Is it m?'},
-              ],
-            },
-          },
-        ),
+    test('a file with only old rows, or no asks_version, is empty', () {
+      final old = <String, Object?>{
+        'cards': <String, Object?>{
+          'zz-0001': <Object?>[
+            <String, Object?>{'question': 'Is it m?'},
+          ],
+        },
+      };
+      expect(ReviewQueue.parse(feed(zz: old)).isEmpty, isTrue);
+      expect(
+        ReviewQueue.parse(feed(asksVersion: null, zz: old)).isEmpty,
+        isTrue,
       );
-      expect(queue.has('zz', 'zz-0001'), isTrue);
-      expect(queue.asksFor('zz', 'zz-0001'), isEmpty);
     });
 
     test('a file version this app does not know is still empty', () {

@@ -213,17 +213,17 @@ the right meaning of a word, is this example natural, is this a real
 confusable, is this recording correct and by a native speaker. Data written
 without a source comes before data taken from Wiktionary or Tatoeba.
 
-Some cards come with a question from the deck builder, a doubt they could
-not settle, such as a gender or a tone. Those cards are asked first. The
-builder's question is a daily question of its own, under **Question from the
-deck builder**: the question is the heading, the whole card is shown below it
-(its word, its meaning and every example, with readings and translations),
-and its Yes and No answer that question and nothing else. The card's own
-questions come after it. The question is also shown as a note on the card in a
-unit's review. Only questions that can be answered Yes or No are asked. If
-the builder's doubt turns out to be a mistake, open the card in a unit's
-review and use **Suggest a change** there, which the daily question does not
-offer.
+Some cards come with a doubt from the deck builder about one detail of the
+card, such as its IPA or its meaning. Those cards are asked first. The doubt is
+a daily question of its own, under **Question from the deck builder**: always
+the same plain question, such as "Is the IPA on this card correct?", with the
+whole card shown below it (its word, reading, IPA, meaning, notes and every
+example) and the detail asked about marked. **Yes, it is correct** means
+correct as it is. **Needs a change** opens a short list of what is wrong, which
+always ends in **Something else**, and a line to say more. Sometimes the
+builder says what it was unsure of; that is shown under the question as
+context only. If a card needs a different text, open it in a unit's review and
+use **Suggest a change** there, which the daily question does not offer.
 
 - **Yes or No.** A No asks why, with a few fixed reasons and an optional
   line. The line goes in the mail for people to read and nowhere else.
