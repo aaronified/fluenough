@@ -67,7 +67,7 @@ from the queue files by a separate change, never converted. Plan and formats:
   "Is the <facet> on this card correct?", with the card in full: Yes (it is
   correct as it is), or Needs a change with the facet's fixed options and a
   free-text line. The words of a question never come from a builder or from a
-  card's text. (The app screens are package 2 of the plan.)
+  card's text.
 - **The review bot reads these files** (`tools/review_queue.py`, run by
   `.github/workflows/review-queue.yml` on decks-live after a change to a queue
   file or a deck). It writes `decks/review-queue.json`, which the app downloads
