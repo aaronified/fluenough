@@ -1,6 +1,6 @@
 // Reviewing: a reviewer's code; Looks right and Suggest a change, never
 // both; sign off and Send review in one mail, marked sent only when it goes,
-// and taken back once; base changes; proposals accepted, rejected, edited;
+// and put back by its own record; base changes; proposals accepted, rejected, edited;
 // what waits per language; offensive words asked for every time, never in a
 // unit, regions from the path; the look-alike warning only after the
 // answer; the app's agreement count matches the review bot's.
@@ -22,6 +22,7 @@ import 'package:fluenough/core/review/deck_review.dart';
 import 'package:fluenough/core/review/rater_code.dart';
 import 'package:fluenough/core/review/review_file.dart';
 import 'package:fluenough/core/review/review_pairs.dart';
+import 'package:fluenough/core/review/sent_mail.dart';
 import 'package:fluenough/core/review/sent_state.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
@@ -33,8 +34,7 @@ import 'package:fluenough/features/review/proposal_card.dart';
 import 'package:fluenough/features/review/review_page.dart';
 import 'package:fluenough/features/review/review_sheets.dart';
 import 'package:fluenough/features/review/review_waiting.dart';
-import 'package:fluenough/features/review/reviewed_not_sent_page.dart';
-import 'package:fluenough/features/review/send_reviews_sheet.dart';
+import 'package:fluenough/features/review/reviews_to_send_page.dart';
 import 'package:fluenough/features/review/suggest_bases.dart';
 import 'package:fluenough/features/settings/reviewing_page.dart';
 import 'package:flutter/material.dart' hide Card;
@@ -604,13 +604,18 @@ void main() {
       }
     });
 
-    test('the last send can be taken back once, for a mail that never went: '
-        'its decks wait again, as they did before it', () {
+    test('each mail is its own record: putting one back never revives an '
+        'older send, and a deck put back waits as it did before that mail', () {
       final later = monday.add(const Duration(hours: 1));
       final latest = monday.add(const Duration(hours: 2));
-      expect(marked().lastSend, isEmpty);
-      // A first mail, then a second with the family deck again and another.
-      var reviews = marked().sentAt(<String>['te-family'], monday);
+      expect(marked().mails, isEmpty);
+      // A first mail with an answer, then a second with the family deck
+      // again and another.
+      var reviews = marked().sentAt(
+        <String>['te-family'],
+        monday,
+        answerIds: <String>['te-0001|meaning'],
+      );
       reviews = reviews
           .withCard(
             'te-family',
@@ -628,28 +633,141 @@ void main() {
           )
           .sentAt(<String>['te-family', 'te-rude'], latest);
       expect(reviews.unsent, isEmpty);
-      expect(reviews.lastSend.map((d) => d.deckId), <String>[
-        'te-family',
-        'te-rude',
-      ]);
-      // Stored and read back, it can still be taken back.
+      expect(reviews.mails.map((m) => m.at), <DateTime>[monday, latest]);
+      expect(reviews.mails.first.answers, <String>['te-0001|meaning']);
+      expect(reviews.mails.last.decks, <String, DateTime?>{
+        'te-family': monday,
+        'te-rude': null,
+      });
+      // Stored and read back, the records are the same.
       reviews = Reviews.fromJson(reviews.toJson())!;
-      expect(reviews.lastSend, hasLength(2));
+      expect(reviews.mails.map((m) => m.at), <DateTime>[monday, latest]);
 
-      reviews = reviews.unsend(reviews.lastSend.map((d) => d.deckId));
-      // What the second mail carried waits again; the first mail's stays sent.
-      expect(reviews.of('te-family')!.sent, monday);
-      expect(reviews.of('te-rude')!.sent, isNull);
-      expect(reviews.unsent.map((d) => d.deckId), <String>[
+      // The second mail put back: what it carried waits again, the first
+      // mail is untouched and no longer "the last".
+      final back = reviews.unsendMail(reviews.mails.last, <String>[
         'te-family',
         'te-rude',
       ]);
-      expect(reviews.of('te-family')!.unsentCards.keys, <String>['te-0002']);
-      // Once only: nothing more can be taken back, and taking the second
-      // mail back again changes nothing.
-      expect(reviews.lastSend, isEmpty);
-      final again = reviews.unsend(<String>['te-family', 'te-rude']);
-      expect(again.toJson(), reviews.toJson());
+      expect(back.of('te-family')!.sent, monday);
+      expect(back.of('te-rude')!.sent, isNull);
+      expect(back.unsent.map((d) => d.deckId), <String>[
+        'te-family',
+        'te-rude',
+      ]);
+      expect(back.of('te-family')!.unsentCards.keys, <String>['te-0002']);
+      expect(back.mails.map((m) => m.at), <DateTime>[monday]);
+
+      // The first mail put back: the deck waits as it did before it, the
+      // later mail loses the deck it overlaps, and the first is gone.
+      final first = reviews.unsendMail(reviews.mails.first, <String>[
+        'te-family',
+      ]);
+      expect(first.of('te-family')!.sent, isNull);
+      expect(first.mails.single.decks.keys, <String>['te-rude']);
+      // Only the decks asked for go back: the rest of a mail stays.
+      final partly = reviews.unsendMail(reviews.mails.last, <String>[
+        'te-rude',
+      ]);
+      expect(partly.mails.last.decks.keys, <String>['te-family']);
+      expect(partly.of('te-family')!.sent, latest);
+    });
+
+    test('a card left out of a mail stays waiting', () {
+      final later = monday.add(const Duration(hours: 1));
+      final reviews = marked().sentAt(
+        <String>['te-family'],
+        later,
+        held: <String, Set<String>>{
+          'te-family': <String>{'te-0001'},
+        },
+      );
+      expect(reviews.of('te-family')!.unsentCards.keys, <String>['te-0001']);
+      expect(reviews.of('te-family')!.sentCards.keys, <String>['te-0384']);
+    });
+
+    test('stored reviews from before the mail records still read: a send that '
+        'could be taken back becomes a mail of its own', () {
+      final before = monday.subtract(const Duration(days: 1));
+      final stored = jsonEncode(<String, Object?>{
+        'te-family': <String, Object?>{
+          'language': 'te',
+          'cards': <String, Object?>{},
+          'sent': monday.toIso8601String(),
+          'can_unsend': true,
+          'sent_before': before.toIso8601String(),
+        },
+        'te-rude': <String, Object?>{
+          'language': 'te',
+          'cards': <String, Object?>{},
+          'sent': before.toIso8601String(),
+        },
+      });
+      final reviews = Reviews.fromJson(stored)!;
+      expect(reviews.mails, hasLength(1));
+      expect(reviews.mails.single.at, monday);
+      expect(reviews.mails.single.decks, <String, DateTime?>{
+        'te-family': before,
+      });
+      expect(reviews.of('te-rude')!.sent, before);
+      // Written again, the decks keep their old keys and the mail its own.
+      final written = jsonDecode(reviews.toJson()) as Map<String, Object?>;
+      expect(written.keys, containsAll(<String>['te-family', 'te-rude']));
+      expect(Reviews.fromJson(reviews.toJson())!.mails, hasLength(1));
+    });
+
+    test('Send again is offered while the deck does not show the changes of '
+        'a mail, and the decks that do drop out of it', () {
+      const waiting = SentState(SentOutcome.waiting);
+      const notYet = SentState(
+        SentOutcome.unknown,
+        unknown: SentUnknown.notInDeckYet,
+      );
+      const untracked = SentState(
+        SentOutcome.unknown,
+        unknown: SentUnknown.notTracked,
+      );
+      // A proposal other reviewers see, or a decided change, is shown.
+      expect(changesAcknowledged(const <SentState>[waiting]), isTrue);
+      expect(
+        changesAcknowledged(const <SentState>[SentState(SentOutcome.accepted)]),
+        isTrue,
+      );
+      expect(
+        changesAcknowledged(const <SentState>[SentState(SentOutcome.rejected)]),
+        isTrue,
+      );
+      // One the deck does not carry yet holds it back; a part the bot never
+      // turns into a proposal cannot show, so it does not.
+      expect(changesAcknowledged(const <SentState>[waiting, notYet]), isFalse);
+      expect(
+        changesAcknowledged(const <SentState>[waiting, untracked]),
+        isTrue,
+      );
+      // With nothing the deck could show, the phone cannot tell.
+      expect(changesAcknowledged(const <SentState>[]), isFalse);
+      expect(changesAcknowledged(const <SentState>[untracked]), isFalse);
+
+      final mail = SentMail(
+        at: monday,
+        decks: <String, DateTime?>{'te-family': null, 'te-rude': null},
+      );
+      expect(mail.canSendAgain(const <String>{}), isTrue);
+      expect(mail.canSendAgain(const <String>{'te-family'}), isTrue);
+      expect(mail.unacknowledged(const <String>{'te-family'}), <String>{
+        'te-rude',
+      });
+      expect(
+        mail.canSendAgain(const <String>{'te-family', 'te-rude'}),
+        isFalse,
+      );
+      // A mail of answers only has nothing the decks could show.
+      expect(
+        SentMail(at: monday, answers: <String>['a|b']).canSendAgain(
+          const <String>{},
+        ),
+        isTrue,
+      );
     });
   });
 
@@ -815,22 +933,20 @@ void main() {
       expect(find.text(l10n.reviewSignedOff), findsOneWidget);
       expect(find.text(l10n.reviewDecksWaiting(2)), findsOneWidget);
 
+      // Send review only opens Reviews to send, where both decks are ticked.
       await tester.tap(find.text(l10n.reviewSend));
       await tester.pumpAndSettle();
-      expect(find.byType(SendReviewsSheet), findsOneWidget);
-      expect(find.text(l10n.reviewSendBody), findsOneWidget);
-      expect(
-        find.text(l10n.reviewSendDeck('Family words', 'Telugu')),
-        findsOneWidget,
-      );
-      expect(find.text(l10n.reviewSendDeckSigned(2)), findsOneWidget);
-      expect(
-        find.text(l10n.reviewSendDeck('Rude words', 'Telugu')),
-        findsOneWidget,
-      );
+      expect(find.byType(ReviewsToSendPage), findsOneWidget);
+      expect(find.text('Family words'), findsOneWidget);
+      expect(find.text('Rude words'), findsOneWidget);
       expect(find.text(l10n.reviewSendButton(2)), findsOneWidget);
       // Unticking one leaves it for later.
-      await tester.tap(find.text(l10n.reviewSendDeck('Rude words', 'Telugu')));
+      await tester.tap(
+        find.descendant(
+          of: find.byKey(const ValueKey<String>('deck-$rudeDeck')),
+          matching: find.byType(Checkbox),
+        ),
+      );
       await tester.pumpAndSettle();
       await tester.tap(find.text(l10n.reviewSendButton(1)));
       await tester.pumpAndSettle();
@@ -1272,22 +1388,35 @@ void main() {
   });
 
   group('review settings', () {
-    testWidgets('once a mail is sent, Send the last mail again puts its decks '
-        'back and opens the send sheet', (tester) async {
+    testWidgets('Reviews to send is one row: once a mail is sent it opens the '
+        'page, whose Send again puts the deck back', (tester) async {
       useTallPhoneReviewSettings(tester);
       final state = await reviewState(share: FixedMailShare(), reviewing: true);
       final words = state.deckById(wordsDeck)!;
-      state.reviewing.markRight(words, words.cards.first);
-      await state.reviewing.send(state.reviewing.unsent, body: '');
       await pumpScreen(tester, const ReviewingPage(), state: state);
       final l10n = l10nOf(tester);
+      // Nothing to send and no mail opened: no row.
       expect(find.text(l10n.reviewSettingsToSend), findsNothing);
-      expect(find.text(l10n.reviewSettingsSendAgainDesc(1)), findsOneWidget);
-      await tester.tap(find.text(l10n.reviewSettingsSendAgain));
+      state.reviewing.markRight(words, words.cards.first);
       await tester.pumpAndSettle();
-      expect(find.byType(SendReviewsSheet), findsOneWidget);
+      expect(find.text(l10n.reviewSettingsToSend), findsOneWidget);
+      expect(find.text(l10n.reviewToSendDecks(1)), findsOneWidget);
+      await state.reviewing.send(state.reviewing.unsent, body: '');
+      await tester.pumpAndSettle();
+      // The row stays, with the one page behind it; the old row is gone.
+      expect(find.text(l10n.reviewSettingsToSend), findsOneWidget);
+      expect(find.text(l10n.reviewSettingsSendAgain), findsNothing);
+      await tester.tap(find.text(l10n.reviewSettingsToSend));
+      await tester.pumpAndSettle();
+      expect(find.byType(ReviewsToSendPage), findsOneWidget);
+      expect(find.text(l10n.reviewToSendSent), findsOneWidget);
+      expect(find.text(l10n.reviewSendButton(1)), findsNothing);
+      await tester.tap(find.text(l10n.reviewToSendAgain));
+      await tester.pumpAndSettle();
       expect(state.reviewing.unsent.map((d) => d.deckId), <String>[wordsDeck]);
       expect(find.text(l10n.reviewSendButton(1)), findsOneWidget);
+      expect(find.text(l10n.reviewToSendSent), findsNothing);
+      await tester.pumpAndSettle(const Duration(seconds: 5));
     });
   });
 
@@ -1482,15 +1611,23 @@ void main() {
       );
     });
 
-    group('Reviewed, not sent', () {
-      testWidgets('once sent, nothing is left here', (tester) async {
+    group('Reviews to send, once sent', () {
+      testWidgets('nothing is left to send, and the mail is under Sent', (
+        tester,
+      ) async {
         usePhone(tester);
         final state = await reviewerState();
         await reviewAndSend(state);
-        await pumpScreen(tester, const ReviewedNotSentPage(), state: state);
+        await pumpScreen(tester, const ReviewsToSendPage(), state: state);
         final l10n = l10nOf(tester);
-        expect(find.text(l10n.reviewUnsentNone), findsOneWidget);
-        expect(find.text(l10n.reviewSend), findsNothing);
+        expect(find.text(l10n.reviewToSendNothing), findsNothing);
+        expect(
+          find.byWidgetPredicate((w) => w is FilledButton),
+          findsNothing,
+        );
+        expect(find.text(l10n.reviewToSendSent), findsOneWidget);
+        // One of the suggestions is not in the deck yet: Send again stays.
+        expect(find.text(l10n.reviewToSendAgain), findsOneWidget);
       });
     });
   });
@@ -1616,7 +1753,7 @@ void main() {
 
           await tester.tap(find.text(l10n.reviewSend));
           await tester.pumpAndSettle();
-          expect(find.byType(SendReviewsSheet), findsOneWidget);
+          expect(find.byType(ReviewsToSendPage), findsOneWidget);
           await tester.tap(find.text(l10n.reviewSendButton(1)));
           await tester.pumpAndSettle();
           final file = jsonDecode(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart' hide Card;
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
+import '../../app/routes.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/review/deck_review.dart';
@@ -20,7 +21,6 @@ import 'proposal_card.dart';
 import 'review_sheets.dart';
 import 'review_waiting.dart';
 import 'review_words.dart';
-import 'send_reviews_sheet.dart';
 import '../../ui/card_text_scale.dart';
 
 /// Reviewing a unit (the owner's design, "Review a unit"): the rater code
@@ -179,7 +179,7 @@ class ReviewPage extends StatelessWidget {
                 showAppSnackBar(context, l10n.reviewSignedOffDone);
               }
             : null,
-        onSend: () => showSendReviews(context),
+        onSend: () => AppNavigator.openReviewedNotSent(context),
       ),
     );
   }
