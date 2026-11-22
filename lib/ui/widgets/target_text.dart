@@ -169,6 +169,7 @@ class TargetText extends StatelessWidget {
             scripts: scripts,
           ))
             if (other.language.script != shown.language.script &&
+                other.text != shown.text &&
                 !_boxed(state, other.language))
               other,
         ];

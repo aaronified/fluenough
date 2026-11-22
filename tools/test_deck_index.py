@@ -40,7 +40,7 @@ class DeckIndex(unittest.TestCase):
         self.tmp = Path(tempfile.mkdtemp())
         self.addCleanup(shutil.rmtree, self.tmp, True)
         (self.tmp / "tools").mkdir()
-        for name in ("validate_decks.py", "deck_index.py", "rater_codes.py",
+        for name in ("validate_decks.py", "script_coverage.py", "deck_index.py", "rater_codes.py",
                      "offensive_alikes.py", "pick_warning.py", "review_facets.py",
                      "review_quorum.py"):
             shutil.copy(TOOLS / name, self.tmp / "tools" / name)
@@ -851,7 +851,7 @@ class DeckKindsIndex(unittest.TestCase):
         self.tmp = Path(tempfile.mkdtemp())
         self.addCleanup(shutil.rmtree, self.tmp, True)
         (self.tmp / "tools").mkdir()
-        for name in ("validate_decks.py", "deck_index.py", "rater_codes.py",
+        for name in ("validate_decks.py", "script_coverage.py", "deck_index.py", "rater_codes.py",
                      "offensive_alikes.py", "pick_warning.py", "review_facets.py",
                      "review_quorum.py"):
             shutil.copy(TOOLS / name, self.tmp / "tools" / name)
