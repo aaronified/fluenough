@@ -30,9 +30,7 @@ void main() {
     expect(
       line,
       matches(
-        RegExp(
-          r'took \d+ ms \(isolate=main, count=3, bytes=120\) at \d+ ms$',
-        ),
+        RegExp(r'took \d+ ms \(isolate=main, count=3, bytes=120\) at \d+ ms$'),
       ),
     );
   });
