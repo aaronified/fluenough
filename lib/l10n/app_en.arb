@@ -8388,7 +8388,7 @@
   },
   "reviewSettingsToSend": "Reviews to send",
   "@reviewSettingsToSend": {
-    "description": "Settings row that opens the send sheet listing every deck with reviews not sent yet."
+    "description": "Settings row and page title of Reviews to send: the one home for sending reviews, with what waits to send and the mails already sent."
   },
   "reviewSettingsSendAgain": "Send the last mail again",
   "@reviewSettingsSendAgain": {
@@ -9006,7 +9006,7 @@
   "@reviewGuideSendTitle": {
     "description": "Title of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
   },
-  "reviewGuideSendBody": "Reviews stay on your phone until you send them. Tap Send review, leave the decks you want ticked, and your mail app opens with Fluenough’s address and one file per deck ready. Read the mail and send it yourself.",
+  "reviewGuideSendBody": "Reviews stay on your phone until you send them. Tap Send review to open Reviews to send, leave the decks you want ticked, and your mail app opens with Fluenough’s address and one file per deck ready. Read the mail and send it yourself.",
   "@reviewGuideSendBody": {
     "description": "First paragraph of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Send review” must match reviewSend."
   },
@@ -9014,9 +9014,9 @@
   "@reviewGuideSendKeep": {
     "description": "Second paragraph of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
   },
-  "reviewGuideSendSame": "Send from the same mail address each time: your first mail ties your code to it, and a mail from another address is flagged for the team to check. If you change address, say so in the mail. If a mail did not go, use Send the last mail again in Settings.",
+  "reviewGuideSendSame": "Send from the same mail address each time: your first mail ties your code to it, and a mail from another address is flagged for the team to check. If you change address, say so in the mail. The app cannot tell whether the mail went. If it did not, open Reviews to send in Settings and tap Send again.",
   "@reviewGuideSendSame": {
-    "description": "Third paragraph of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Send the last mail again” must match reviewSettingsSendAgain."
+    "description": "Third paragraph of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Reviews to send” and “Send again” must match reviewSettingsToSend and reviewToSendAgain."
   },
   "reviewGuidePublicTitle": "What is public, what is private",
   "@reviewGuidePublicTitle": {
@@ -10588,7 +10588,7 @@
   "@reviewSendNothing": {
     "description": "When there is no review to send."
   },
-  "reviewSendOpened": "Your mail app is open. Send the mail from there. If it does not go, Settings can send it again.",
+  "reviewSendOpened": "Your mail app is open. Send the mail from there. Fluenough cannot tell if it went: Send again, in Reviews to send, puts it back.",
   "@reviewSendOpened": {
     "description": "Once the mail app has the review."
   },
@@ -18016,5 +18016,43 @@
   "reviewerCheckNotYetTitle": "Not yet eligible",
   "@reviewerCheckNotYetTitle": {"description": "Title of the reviewer check's result when it was not passed."},
   "reviewerCheckNotYetBody": "{days, plural, =1{You can take the check again in 1 day.} other{You can take the check again in {days} days.}}",
-  "@reviewerCheckNotYetBody": {"description": "Body of the reviewer check's result when it was not passed: the cooldown before a retake.", "placeholders": {"days": {"type": "int", "example": "7"}}}
+  "@reviewerCheckNotYetBody": {"description": "Body of the reviewer check's result when it was not passed: the cooldown before a retake.", "placeholders": {"days": {"type": "int", "example": "7"}}},
+  "reviewToSendNothing": "Nothing to send",
+  "@reviewToSendNothing": {"description": "The only text of Reviews to send when nothing waits and no mail was ever opened."},
+  "reviewToSendSent": "Sent",
+  "@reviewToSendSent": {"description": "Heading of the list of mails in Reviews to send: the mails the phone opened the mail app for, by date."},
+  "reviewToSendAgain": "Send again",
+  "@reviewToSendAgain": {"description": "Button on a sent mail in Reviews to send: puts its decks and answers back in the list to send, for a mail that did not go. It sends nothing itself."},
+  "reviewToSendAgainDone": "Back in the list to send.",
+  "@reviewToSendAgainDone": {"description": "Message after Send again: the mail's decks and answers wait in the list to send."},
+  "reviewToSendBoth": "Send {decks, plural, =1{1 deck} other{{decks} decks}} and {answers, plural, =1{1 answer} other{{answers} answers}}",
+  "@reviewToSendBoth": {"description": "The Send button of Reviews to send when decks and daily-question answers are ticked.", "placeholders": {"decks": {"type": "int", "example": "2"}, "answers": {"type": "int", "example": "2"}}},
+  "reviewToSendDecks": "{count, plural, =1{1 deck} other{{count} decks}}",
+  "@reviewToSendDecks": {"description": "How many decks wait to send, under the Reviews to send row of Settings.", "placeholders": {"count": {"type": "int", "example": "2"}}},
+  "reviewToSendAnswers": "{count, plural, =1{1 answer} other{{count} answers}}",
+  "@reviewToSendAnswers": {"description": "How many daily-question answers there are: under the Reviews to send row, on an answers group and on a sent mail.", "placeholders": {"count": {"type": "int", "example": "2"}}},
+  "reviewToSendChange": "Change",
+  "@reviewToSendChange": {"description": "In the sheet of a card in Reviews to send: opens the card's review to change it."},
+  "reviewToSendDrop": "Drop from this mail",
+  "@reviewToSendDrop": {"description": "In the sheet of a card in Reviews to send: leaves the card out of this mail. It stays on the phone."},
+  "reviewToSendDropped": "Left out of this mail. It stays on this phone.",
+  "@reviewToSendDropped": {"description": "Message after Drop from this mail."},
+  "reviewToSendProposal": "Answer to a proposal",
+  "@reviewToSendProposal": {"description": "Label of the reviewer's answer to another reviewer's proposed change, among a card's items in Reviews to send."},
+  "reviewToSendProposalValue": "{verdict}: {text}",
+  "@reviewToSendProposalValue": {"description": "The answer to a proposal: Accepted, Edited or Rejected, then the proposed text.", "placeholders": {"verdict": {"type": "String", "example": "Accepted"}, "text": {"type": "String", "example": "duḥkhito"}}},
+  "reviewToSendEdited": "Your own change",
+  "@reviewToSendEdited": {"description": "The answer to a proposal when the reviewer proposed a change of their own instead."},
+  "reviewToSendAlike": "Alike check",
+  "@reviewToSendAlike": {"description": "Label of the answer on a sound-alike or look-alike pair, among a card's items in Reviews to send."},
+  "reviewToSendAnswer": "Answer",
+  "@reviewToSendAnswer": {"description": "Label of the answer given to a daily question, in Reviews to send."},
+  "reviewToSendReason": "Reason",
+  "@reviewToSendReason": {"description": "Label of the reason given with a daily-question answer that is not Yes, in Reviews to send."},
+  "reviewToSendMailOpened": "Mail app opened",
+  "@reviewToSendMailOpened": {"description": "Screen-reader label of the mail icon of a sent mail: the app opened the mail app and cannot tell whether the mail went."},
+  "hintExpand": "Expand",
+  "@hintExpand": {"description": "Tooltip of the button that opens a group of Reviews to send."},
+  "hintCollapse": "Collapse",
+  "@hintCollapse": {"description": "Tooltip of the button that closes a group of Reviews to send."}
 }

@@ -121,7 +121,7 @@ class _YourReviews extends StatelessWidget {
       children: <Widget>[
         GroupedTile(
           leading: const Icon(Icons.outbox_outlined),
-          title: l10n.reviewUnsentTitle,
+          title: l10n.reviewSettingsToSend,
           subtitle: unsent.isEmpty
               ? l10n.reviewUnsentNone
               : l10n.reviewUnsentCount(

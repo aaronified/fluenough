@@ -90,8 +90,8 @@ it. Without a key your reviewer code is still welcome.
 
 - Units on the learning path are marked **To review** when their deck is not
   yet signed off by a native speaker, in your languages.
-- **Waiting for review** in Settings has three parts. **Reviewed, not sent**
-  opens your cards and suggestions, by deck. **Reviewed and sent** opens each
+- **Waiting for review** in Settings has three parts. **Reviews to send**
+  opens the one page where reviews are sent (see below). **Reviewed and sent** opens each
   suggestion's state: Accepted, Rejected or Waiting for another speaker's check, with
   words such as "Waiting for another speaker's check" and never a reviewer code or a number. Then each
   language you review, folded until you tap it, with the decks and cards left
@@ -261,17 +261,23 @@ offer.
 ## Send several decks in one mail
 
 Reviews stay on your phone until you send them. You can review several decks and
-send them **together in one mail**: tap **Send review**, leave the decks you want
-ticked, and your mail app opens with Fluenough's address and one file per deck
-ready. Read the mail and send it yourself.
+send them **together in one mail**: tap **Send review**, which opens **Reviews
+to send**. Every deck with reviews waiting is a group you can open to see every
+item it will send (tap a card to change it or drop it from this mail), and each
+language of daily-question answers is a group of its own. Leave the groups you
+want ticked and tap **Send**: your mail app opens with Fluenough's address and
+one file per deck ready. Read the mail and send it yourself.
 
 - **Do not change the mail's subject or the files.** The files carry your code,
   language and deck, and the team reads those. Please send without editing them.
 - **Send from the same mail address each time.** Your first mail ties your code
   to that address. A later mail from another address is flagged for the team to
   check. If you change address, say so in the mail.
-- The phone cannot tell whether you pressed send. If the mail did not go, use
-  **Send the last mail again** in Settings.
+- The phone cannot tell whether you pressed send: it only knows your mail app
+  opened. **Reviews to send** lists the mails under **Sent**, by date, and each
+  has **Send again** while the decks do not show its changes yet (a change shows
+  once it is a proposal other reviewers see, or has been decided). Send again
+  puts its decks and answers back in the list to send; it sends nothing itself.
 
 ## What is public, what is private
 

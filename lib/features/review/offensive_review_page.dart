@@ -3,6 +3,7 @@ import 'package:flutter/material.dart' hide Card;
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
+import '../../app/routes.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/review/deck_review.dart';
@@ -16,7 +17,6 @@ import '../../ui/widgets/target_text.dart';
 import 'review_page.dart' show ReviewFoot, ReviewInfo;
 import 'review_sheets.dart';
 import 'review_words.dart';
-import 'send_reviews_sheet.dart';
 
 /// A language's "Offensive words" review (docs/plans/deck-browser.md,
 /// "Offensive words are reviewed apart, and only on purpose"; #428).
@@ -193,7 +193,7 @@ class _OffensiveReviewPageState extends State<OffensiveReviewPage> {
                 showAppSnackBar(context, l10n.reviewSignedOffDone);
               }
             : null,
-        onSend: () => showSendReviews(context),
+        onSend: () => AppNavigator.openReviewedNotSent(context),
       ),
     );
   }
