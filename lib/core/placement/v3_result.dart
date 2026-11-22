@@ -123,9 +123,9 @@ class V3Result {
   /// The model's readout (null when no item was asked).
   final JointReadout? readout;
 
-  /// What the script gates found together (null without one): the best of
-  /// the scripts asked, which is what decides whether Read and Write can be
-  /// tested. [scriptChecks] has each script's own.
+  /// What the gate of the course's first script found (null without one): the
+  /// script the word items are written in, which decides whether Read and
+  /// Write can be tested. [scriptChecks] has each script's own.
   final ScriptGateResult? script;
 
   /// What each script's gate found, in the order of the course's scripts

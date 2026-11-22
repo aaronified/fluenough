@@ -15,6 +15,8 @@ import 'package:fluenough/core/placement/item_bank.dart';
 import 'package:fluenough/core/placement/placement_data.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:fluenough/core/placement/script_gate.dart';
+import 'package:fluenough/core/placement/v3_picker.dart'
+    show kRunMaxItems, kRunMaxSeconds;
 import 'package:fluenough/core/placement/v3_result.dart';
 import 'package:fluenough/core/placement/v3_session.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -120,7 +122,10 @@ void main() {
       expect(a[PlacementSkill.script]!.placedClass, 0);
       expect(a[PlacementSkill.script]!.placedLevel, -1);
       expect(a[PlacementSkill.secondScript]!.placedClass, topOf(run));
-      expect(run.scriptResult!.readable, isTrue);
+      // The word items are written in Devanagari (the first script), which
+      // this learner cannot read: Read and Write wait, as for a learner who
+      // fails both.
+      expect(run.scriptResult!.readable, isFalse);
     });
 
     test('a pass in both credits both, within the shared budget', () {
@@ -213,10 +218,154 @@ void main() {
           expect(n, lessThanOrEqualTo(2 * kScriptSharedMaxItems));
           expect(n, greaterThanOrEqualTo(4));
           // A single script's gate asks five at the most: two scripts ask
-          // one more than that at the most.
-          expect(n, lessThanOrEqualTo(6));
+          // eight at the most (four each).
+          expect(n, lessThanOrEqualTo(8));
           expect(run.answered, n);
         }
+      }
+    });
+
+    /// The result of the first script's gate for a learner whose answers
+    /// there are [answers] (then right), while the second script's gate is
+    /// answered right.
+    ScriptLevel firstGateWith(List<bool> answers) {
+      final run = begin(twoScripts);
+      var n = 0;
+      while (run.inGate) {
+        final g = run.question!.gateItem!;
+        final right = run.gateScript == _deva
+            ? (n < answers.length ? answers[n++] : true)
+            : true;
+        run.answerPick(right ? g.correct : (g.correct + 1) % 4);
+      }
+      return run.scriptChecks[0].result.level;
+    }
+
+    test('a reader who slips once is never read as unable, in any order', () {
+      for (final answers in <List<bool>>[
+        <bool>[false, true, true, true],
+        <bool>[true, false, true, true],
+        <bool>[true, true, false, true],
+      ]) {
+        final level = firstGateWith(answers);
+        expect(level, isNot(ScriptLevel.none), reason: '$answers');
+        expect(level, ScriptLevel.partly, reason: '$answers');
+      }
+      // Two right and one wrong, whatever came fourth, is not "none" either.
+      for (final answers in <List<bool>>[
+        <bool>[false, true, true, false],
+        <bool>[true, false, true, false],
+        <bool>[true, true, false, false],
+      ]) {
+        expect(firstGateWith(answers), isNot(ScriptLevel.none));
+      }
+    });
+
+    test('one right and two wrong is unable, all wrong is unable, all right '
+        'is able', () {
+      for (final answers in <List<bool>>[
+        <bool>[true, false, false],
+        <bool>[false, true, false],
+        <bool>[false, false],
+        <bool>[false, false, false, false],
+      ]) {
+        expect(firstGateWith(answers), ScriptLevel.none, reason: '$answers');
+      }
+      expect(firstGateWith(<bool>[true, true, true]), ScriptLevel.all);
+    });
+
+    test('a gate that ends undecided writes nothing about its script', () {
+      final run = begin(twoScripts);
+      const first = <bool>[true, false, true, true];
+      var n = 0;
+      while (run.inGate) {
+        final g = run.question!.gateItem!;
+        final right = run.gateScript == _deva ? first[n++] : true;
+        run.answerPick(right ? g.correct : (g.correct + 1) % 4);
+      }
+      expect(run.scriptChecks[0].result.level, ScriptLevel.partly);
+      final a = gatesResult(run).assurances(scripts: 2);
+      expect(a.containsKey(PlacementSkill.script), isFalse);
+      expect(run.scriptResult!.readable, isTrue);
+    });
+
+    test('a learner who reads Devanagari and learns Perso-Arabic is still '
+        'tested on Read and Write when the Perso-Arabic check fails', () {
+      // Devanagari is verified (not in the run); the words are written in it.
+      final run = begin(
+        twoScripts,
+        skills: const <PlacementSkill>{
+          PlacementSkill.read,
+          PlacementSkill.write,
+          PlacementSkill.hear,
+          PlacementSkill.secondScript,
+        },
+      );
+      final asked = answerGates(run, const <String>{});
+      expect(asked.toSet(), <String?>{_perso});
+      expect(run.scriptChecks[1].result.level, ScriptLevel.none);
+      expect(run.scriptResult!.readable, isTrue);
+      var guard = 0;
+      while (!run.finished && guard++ < 100) {
+        if (run.atCheckpoint) {
+          run.stop();
+          continue;
+        }
+        answerV3(run, 40);
+      }
+      final result = V3Result.of(run);
+      expect(result.needsScript, isFalse);
+      expect(result.of(PlacementSkill.read)!.placed, isTrue);
+      expect(
+        result.of(PlacementSkill.write)!.status,
+        isNot(V3Status.needsScript),
+      );
+      // The failed script is recorded as new to it.
+      final a = result.assurances(scripts: 2);
+      expect(a[PlacementSkill.secondScript]!.placedClass, 0);
+      expect(a.containsKey(PlacementSkill.script), isFalse);
+    });
+
+    test('a learner who passes Perso-Arabic but fails Devanagari, in which '
+        'the words are written, waits for the script; one who has Devanagari '
+        'out of the run is trusted', () {
+      final fails = begin(twoScripts);
+      answerGates(fails, <String>{_perso});
+      expect(fails.scriptResult!.readable, isFalse);
+      final out = begin(
+        twoScripts,
+        skills: const <PlacementSkill>{
+          PlacementSkill.read,
+          PlacementSkill.write,
+          PlacementSkill.secondScript,
+        },
+      );
+      answerGates(out, <String>{_perso});
+      expect(out.scriptResult!.readable, isTrue);
+    });
+
+    test('the run still ends within 40 items and 5 minutes with two gates', () {
+      for (final reads in <Set<String>>[
+        <String>{_deva, _perso},
+        const <String>{},
+      ]) {
+        final run = begin(twoScripts, seed: 5);
+        var guard = 0;
+        while (!run.finished && guard++ < 200) {
+          if (run.inGate) {
+            final g = run.question!.gateItem!;
+            final right = reads.contains(run.gateScript);
+            run.answerPick(right ? g.correct : (g.correct + 1) % 4);
+          } else if (run.atCheckpoint) {
+            run.keepGoing();
+          } else {
+            answerV3(run, 20);
+          }
+        }
+        expect(run.finished, isTrue);
+        expect(run.answered, lessThanOrEqualTo(kRunMaxItems));
+        // An item that starts under the limit may end a few seconds over it.
+        expect(run.seconds, lessThanOrEqualTo(kRunMaxSeconds + 15));
       }
     });
 

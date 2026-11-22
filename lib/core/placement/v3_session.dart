@@ -814,12 +814,15 @@ class V3Run {
   ///  - a script with fewer than six letters to ask, and every script after
   ///    "I do read it" ([V3ScriptStart.skip]), is not asked;
   ///  - the gates share one budget: when more than one is asked, each asks at
-  ///    most [kScriptSharedMaxItems].
+  ///    most [kScriptSharedMaxItems];
+  ///  - a gate of a course in several scripts that is undecided at its last
+  ///    item ends as `partly`, never `none`.
   List<_RunGate> _buildGates() {
     ScriptGate gateOver(
       List<ScriptLetter> letters, {
       String? label,
       int maxItems = 5,
+      bool several = false,
     }) {
       if (scriptStart == V3ScriptStart.skip || letters.length < 6) {
         return ScriptGate.latin();
@@ -831,6 +834,7 @@ class V3Run {
         maxItems: maxItems,
         declaredReads: scriptStart == V3ScriptStart.declaredReads ? true : null,
         label: label,
+        undecidedIsPartly: several,
       );
     }
 
@@ -857,7 +861,12 @@ class V3Run {
     final gates = <_RunGate>[];
     for (var i = 0; i < scripts.length; i++) {
       final gate = asked.contains(i)
-          ? gateOver(letters[i], label: scripts[i].script, maxItems: cap)
+          ? gateOver(
+              letters[i],
+              label: scripts[i].script,
+              maxItems: cap,
+              several: true,
+            )
           : ScriptGate.latin();
       gates.add(_RunGate(scripts[i].script, i, gate));
     }
@@ -865,27 +874,15 @@ class V3Run {
   }
 
   /// The one result the run's other readers (the skills in play, "needs the
-  /// script first", the "some letters" note) take from the gates: a script
-  /// that was not asked says nothing; of those asked, the best level wins
-  /// (Read and Write wait only when no script asked can be read). One gate
-  /// gives its own result.
+  /// script first") take from the gates: the result of the course's first
+  /// script, the one its word items are written in (`card.target`; the other
+  /// scripts are only accepted spellings). When that script was not asked (the
+  /// learner has verified it, or it is not in the run) the result is skipped
+  /// and Read and Write are tested; when it was asked and ended `none` they
+  /// wait for the script, whatever the other scripts found. One gate gives its
+  /// own result.
   static ScriptGateResult _combined(List<V3ScriptCheck> checks) {
-    if (checks.length == 1) return checks.first.result;
-    final asked = <ScriptGateResult>[
-      for (final c in checks)
-        if (!c.result.skipped) c.result,
-    ];
-    if (asked.isEmpty) return checks.first.result;
-    var best = asked.first;
-    for (final r in asked.skip(1)) {
-      if (r.level.index > best.level.index) best = r;
-    }
-    return ScriptGateResult(
-      level: best.level,
-      items: asked.fold<int>(0, (n, r) => n + r.items),
-      skipped: false,
-      posterior: best.posterior,
-    );
+    return checks.first.result;
   }
 
   /// The letters of one script, as the script gate reads them (plain letters,

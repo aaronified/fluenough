@@ -138,12 +138,15 @@ const Map<ScriptLevel, double> kScriptRight = <ScriptLevel, double>{
 const double kScriptDeclared = 1.0;
 
 /// The most items one gate asks when a run holds a gate for each of several
-/// scripts: the gates share the budget of one (wiki/Plan-Placement-V3.md,
-/// "One gate for each script"). A gate usually stops after two items (a
-/// learner who cannot read it) or three (one who can), so two scripts cost
-/// about five or six items, and six at the most, one more than a single
-/// script's five.
-const int kScriptSharedMaxItems = 3;
+/// scripts: the gates share a budget (wiki/Plan-Placement-V3.md, "One gate for
+/// each script"). A gate usually stops after two items (a learner who cannot
+/// read it) or three (one who can). Four, not three, is the cap: after three
+/// items a reader who slipped once (two right, one wrong, in any order) stands
+/// at a log-likelihood ratio of -0.04, below even odds, and would be read as
+/// unable; a fourth item lets such a reader end as `partly` at the least. Two
+/// scripts ask four to six items for a learner who reads or does not, and
+/// eight at the most, against a single script's five.
+const int kScriptSharedMaxItems = 4;
 
 /// The log-likelihood ratio of a right answer (all against none), and of a
 /// wrong one.
@@ -161,6 +164,7 @@ class ScriptGate {
     this.decide = 3.5,
     this.declaredReads,
     this.label,
+    this.undecidedIsPartly = false,
   }) : _letters = letters,
        skipped = false {
     _llr = declaredReads == null
@@ -201,6 +205,14 @@ class ScriptGate {
   /// course written in several (it keeps the items' ids apart); null for the
   /// one gate of a single script.
   final String? label;
+
+  /// Whether a gate that reaches its last item undecided (its log-likelihood
+  /// ratio still short of [decide]) ends as `partly` rather than by which side
+  /// of even odds it stands: a false `none` costs the learner a lesson, a
+  /// false `partly` only a few more items. Set for the gates of a course
+  /// written in several scripts; the one gate of a single script keeps its
+  /// rule.
+  final bool undecidedIsPartly;
 
   final List<ScriptGateItem> asked = <ScriptGateItem>[];
   final List<ScriptGateItem> _plan_ = <ScriptGateItem>[];
@@ -281,7 +293,10 @@ class ScriptGate {
     // None below even odds; all from nine in ten; in between (only when the
     // items ran out undecided) some letters.
     final pa = 1 / (1 + math.exp(-_llr));
-    final level = pa < 0.5
+    final undecided = undecidedIsPartly && _llr.abs() < decide;
+    final level = undecided
+        ? ScriptLevel.partly
+        : pa < 0.5
         ? ScriptLevel.none
         : pa >= 0.9
         ? ScriptLevel.all
