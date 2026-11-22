@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **No blank Decks list after search.** The Decks list no longer goes blank after closing search.
 - **Placement no longer queues thousands of reviews.** After Find my level, Today counts only reviews that are really due, adds the other skills of the words you know a few at a time, and keeps teaching a script you cannot read yet even while you catch up.
 - **A picture on works and people.** Books, films and other works show a poster or cover when a free one exists, people show their portrait, each with its credit and a link to its licence, and a tap opens it full screen; a Show pictures switch and a Download pictures row sit in each language's Culture settings.
 - **Placement checks each script on its own.** When you learn a language written in two scripts, such as Hindustani, Find my level asks about each script separately, so knowing one is never taken for knowing the other.

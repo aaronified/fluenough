@@ -2,6 +2,7 @@
 // the kind:, status: and theme: tokens, suggestions and the script offers.
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart' show RenderSliver;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/core/models/deck.dart' show DeckKind, LanguageInfo;
@@ -320,6 +321,63 @@ void main() {
       await tester.tap(close);
       await tester.pumpAndSettle();
       expect(close, findsNothing);
+    });
+
+    // The owner's sequence: type a search with many results, scroll them,
+    // Clear, then Close. The path must be back, with its rows in view.
+    Future<void> clearThenClose(
+      WidgetTester tester, {
+      required bool scrolled,
+    }) async {
+      usePhone(tester);
+      await pumpTelugu(tester);
+      final scroll = tester
+          .widget<CustomScrollView>(find.byType(CustomScrollView))
+          .controller!;
+      if (scrolled) {
+        // Down the path, then back up until the bar is partly in view, as
+        // a learner does to reach it.
+        scroll.jumpTo(600);
+        await tester.pumpAndSettle();
+        scroll.jumpTo(40);
+        await tester.pumpAndSettle();
+        expect(scroll.offset, greaterThan(0));
+      }
+      await type(tester, 'kind:words ');
+      if (scroll.position.maxScrollExtent > 0) {
+        scroll.jumpTo(scroll.position.maxScrollExtent);
+        await tester.pumpAndSettle();
+        // Back up to the bar, whose buttons are built only while in view.
+        scroll.jumpTo(40);
+        await tester.pumpAndSettle();
+      }
+      final l10n = l10nOf(tester);
+      await tester.tap(find.byTooltip(l10n.decksSearchClear));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byTooltip(l10n.decksSearchClose));
+      await tester.pumpAndSettle();
+      expect(find.byTooltip(l10n.decksSearchClose), findsNothing);
+      expect(find.byType(CourseCard), findsOneWidget);
+      expect(scroll.offset, 0);
+      final path = tester.renderObject<RenderSliver>(
+        find.byType(SliverList).first,
+      );
+      expect(path.geometry!.paintExtent, greaterThan(100));
+      final card = tester.getBottomLeft(find.byType(CourseCard)).dy;
+      final viewport = tester.getBottomLeft(find.byType(CustomScrollView)).dy;
+      expect(card, lessThan(viewport));
+    }
+
+    testWidgets('closing a search brings the path back, scrolled', (
+      tester,
+    ) async {
+      await clearThenClose(tester, scrolled: true);
+    });
+
+    testWidgets('closing a search brings the path back, unscrolled', (
+      tester,
+    ) async {
+      await clearThenClose(tester, scrolled: false);
     });
 
     testWidgets('plain text is searched by type, in tabs', (tester) async {

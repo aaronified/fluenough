@@ -175,6 +175,10 @@ class _DecksPageState extends State<DecksPage> {
   /// once as it opens.
   bool _wasOpen = false;
 
+  /// Whether the results showed at the last build, to put the scroll back at
+  /// the top once the path replaces them.
+  bool _wasSearching = false;
+
   @override
   void dispose() {
     _scopeState?.decksCultureRequest.removeListener(_onCultureRequest);
@@ -201,6 +205,8 @@ class _DecksPageState extends State<DecksPage> {
   /// Scrolls the path to the unit up next, unfolding its level first if the
   /// learner folded it (#465).
   void _toUpNext({bool animate = true}) {
+    // Never into a path that is not on screen, as the results are.
+    if (!mounted || _search.text.isNotEmpty || _chips.isNotEmpty) return;
     if (_currentLevel case (final language, final level)) {
       final settings = AppScope.read(context).settings;
       if (settings.isLevelCollapsed(language, level)) {
@@ -224,6 +230,9 @@ class _DecksPageState extends State<DecksPage> {
       // (#853): go to where it should be, and then to it.
       final row = _upNextRow;
       if (row < 0 || !_scroll.hasClients) return;
+      // Not before the list has been laid out once: there is no extent to
+      // estimate against.
+      if (!_scroll.position.hasContentDimensions) return;
       // The same place the unit is put at once built (alignment 0.3), so a
       // course that starts at its first unit stays at the top, its card in
       // view.
@@ -644,6 +653,17 @@ class _DecksPageState extends State<DecksPage> {
           });
         }
         _wasOpen = open;
+        // The results give way to the path: the offset the learner had in a
+        // long result list means nothing in the path, whose rows are built as
+        // they scroll into view. Start it at its top rather than at an offset
+        // laid out for other content.
+        if (_wasSearching && !searching) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (!mounted || !_scroll.hasClients) return;
+            if (_scroll.offset != 0) _scroll.jumpTo(0);
+          });
+        }
+        _wasSearching = searching;
         final language = languages.firstOrNull;
         if (_culture && _cultureFor != code) _culture = false;
         final cultureMode = _cultureShown(code);
@@ -791,6 +811,7 @@ class _DecksPageState extends State<DecksPage> {
                     if (outcome != null)
                       if (typed)
                         TypedSearchResults(
+                          key: const ValueKey<String>('decks-typed-results'),
                           outcome: outcome,
                           query: _search.text,
                           language: code,
@@ -804,6 +825,7 @@ class _DecksPageState extends State<DecksPage> {
                         )
                       else
                         SearchResultsSliver(
+                          key: const ValueKey<String>('decks-results'),
                           outcome: outcome,
                           query: _search.text,
                           onKind: _narrowTo,
@@ -856,6 +878,7 @@ class _DecksPageState extends State<DecksPage> {
                       ),
                     if (!searching && !cultureMode && view != null) ...<Widget>[
                       SliverIgnorePointer(
+                        key: const ValueKey<String>('decks-path'),
                         ignoring: scrim,
                         sliver: SliverOpacity(
                           opacity: dim,
