@@ -262,7 +262,9 @@ class AppState extends ChangeNotifier {
     _loggedTab = shellTab.value;
     shellTab.addListener(_logTab);
     shellTabMoving.addListener(_logTab);
-    deckDownloads?.onFilesChanged = _filesDownloaded;
+    deckDownloads
+      ?..onFilesChanged = _filesDownloaded
+      ..onSharedChanged = _sharedFilesChanged;
     _asrSub = _asrPacks.changes.listen((_) => asrChanges.value++);
     unawaited(_asrPacks.refresh());
     deckDownloads
@@ -1235,10 +1237,67 @@ class AppState extends ChangeNotifier {
     if (_disposed) return;
     await _loading;
     if (!_disposed) {
-      await _reloadDecks(
-        cause: deckDownloads?.changeCause ?? 'files downloaded',
-      );
+      await _reloadCoalesced(deckDownloads?.changeCause ?? 'files downloaded');
     }
+  }
+
+  Future<void>? _reloading;
+  bool _reloadAgain = false;
+  String _reloadCause = '';
+
+  /// [_reloadDecks], one at a time: a call while one runs does not start a
+  /// second beside it but asks for one more after it, whatever the number of
+  /// calls (#1699). Every reload logs its cause.
+  Future<void> _reloadCoalesced(String cause) {
+    final running = _reloading;
+    if (running != null) {
+      _reloadAgain = true;
+      _reloadCause = cause;
+      return running;
+    }
+    return _reloading = () async {
+      try {
+        var why = cause;
+        do {
+          _reloadAgain = false;
+          await _reloadDecks(cause: why);
+          why = _reloadCause;
+        } while (_reloadAgain && !_disposed);
+      } finally {
+        _reloading = null;
+      }
+    }();
+  }
+
+  /// Deck-owned files ([paths]: creators, recommendations, sections, themes)
+  /// changed after a check: those that are small and independent of the decks
+  /// are patched into the catalog, and the rest is a full reload. Either way
+  /// one change, one log line with its cause (#1699).
+  Future<void> _sharedFilesChanged(Set<String> paths) async {
+    if (_disposed) return;
+    await _loading;
+    final downloads = deckDownloads;
+    if (_disposed || downloads == null) return;
+    if (_reloading != null) {
+      await _reloadCoalesced('shared-file, after a reload');
+      return;
+    }
+    final texts = <String, String>{
+      for (final path in paths)
+        if (downloads.sharedTexts[path] case final text?) path: text,
+    };
+    final patched = texts.length == paths.length
+        ? deckCatalog.patchShared(_catalog, texts)
+        : null;
+    if (patched == null) {
+      await _reloadCoalesced('shared-file, full reload');
+      return;
+    }
+    log.event('Decks reload: shared-file patched, ${paths.length} files');
+    deckCatalog.replaceLoaded(patched);
+    _catalog = patched;
+    _logKindProblems();
+    notifyListeners();
   }
 
   /// At launch, once the catalog is read: finishes downloads cut short,
@@ -4448,7 +4507,9 @@ class AppState extends ChangeNotifier {
     updates.dispose();
     wallpaper.dispose();
     _fontCheck?.dispose();
-    deckDownloads?.onFilesChanged = null;
+    deckDownloads
+      ?..onFilesChanged = null
+      ..onSharedChanged = null;
     tuner.dispose();
     pacing.dispose();
     progressNumbers.dispose();

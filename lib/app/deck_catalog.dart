@@ -28,6 +28,7 @@ import '../core/data/rule_expander.dart';
 import '../core/data/themes.dart';
 import '../core/data/yaml_tree.dart';
 import '../core/decks/sha256.dart';
+import '../core/decks/shared_data.dart';
 import '../core/logs/log_entry.dart';
 import '../core/decks/adult_gate.dart';
 import '../core/models/fact.dart';
@@ -350,6 +351,35 @@ class Catalog {
     if (!changed) return this;
     return _with(decks: shown, hidden: shownHidden);
   }
+
+  /// This catalog with the deck-owned data of [creators], [recommendations],
+  /// [sections], [dataProblems] and [broken] replaced, all else the same.
+  Catalog _withShared({
+    required DeckSections sections,
+    required Map<String, CreatorsFile> creators,
+    required Map<String, RecommendationsFile> recommendations,
+    required List<String> dataProblems,
+    required List<BrokenDeck> broken,
+  }) => Catalog(
+    decks: decks,
+    broken: broken,
+    hidden: hidden,
+    themes: themes,
+    sections: sections,
+    facts: facts,
+    situations: situations,
+    topics: topics,
+    creators: creators,
+    recommendations: recommendations,
+    dataProblems: dataProblems,
+    scriptFeatures: scriptFeatures,
+    numberRules: numberRules,
+    paths: paths,
+    languagePaths: languagePaths,
+    sounds: sounds,
+    romanisations: romanisations,
+    scriptGuides: scriptGuides,
+  );
 
   /// This catalog with other [decks] and [hidden], all else the same.
   Catalog _with({
@@ -677,6 +707,78 @@ class DeckCatalog {
   /// Forgets the loaded catalog, so the next [load] reads the source again.
   void invalidate() => _loading = null;
 
+  /// Whether the files of the last read included a private package's, whose
+  /// creators and recommendations merge with the shared ones.
+  bool _readPrivate = false;
+
+  static const Set<String?> _patchable = <String?>{
+    'creators',
+    'recommendations',
+    'sections',
+  };
+
+  /// Makes [catalog] what [load] returns, without reading the source again.
+  void replaceLoaded(Catalog catalog) {
+    _loading = Future<Catalog>.value(catalog);
+  }
+
+  /// [current] with the deck-owned files [changed] (path to text: the
+  /// creators, the recommendations and the sections) read again, and nothing
+  /// else (#1699): the small files are parsed, the decks are not, so that a
+  /// bot's daily change to a creators file never costs a second full load.
+  /// Null when a patch cannot be made as the full load would make it: a
+  /// file of another kind (the themes order the decks), a private package
+  /// read (its data merges with these), or a file that does not parse. The
+  /// caller then loads in full.
+  Catalog? patchShared(Catalog current, Map<String, String> changed) {
+    try {
+      if (_readPrivate || changed.isEmpty) return null;
+      for (final path in changed.keys) {
+        final kind = sharedKindOf(path);
+        if (!_patchable.contains(kind)) return null;
+      }
+      final mini = parseAll(changed);
+      if (mini.broken.isNotEmpty) return null;
+      final creators = Map<String, CreatorsFile>.of(current.creators);
+      final recommendations = Map<String, RecommendationsFile>.of(
+        current.recommendations,
+      );
+      var sections = current.sections;
+      final sources = <String>{};
+      for (final path in changed.keys) {
+        final name = path.split('/').last;
+        sources.add('$name: ');
+        final code = name.endsWith('.yaml')
+            ? name.substring(0, name.length - '.yaml'.length)
+            : name;
+        switch (sharedKindOf(path)) {
+          case 'creators':
+            creators.remove(code);
+          case 'recommendations':
+            recommendations.remove(code);
+          case 'sections':
+            sections = mini.sections;
+        }
+      }
+      creators.addAll(mini.creators);
+      recommendations.addAll(mini.recommendations);
+      return current._withShared(
+        sections: sections,
+        creators: creators,
+        recommendations: recommendations,
+        dataProblems: <String>[
+          for (final problem in current.dataProblems)
+            if (!sources.any(problem.startsWith)) problem,
+          ...mini.dataProblems,
+        ],
+        broken: current.broken,
+      );
+    } on Object catch (e, stack) {
+      log?.warning(describeError('Patching the shared files failed', e, stack));
+      return null;
+    }
+  }
+
   Future<Catalog> _load() async {
     final files = <String, String>{};
     final readWatch = Stopwatch()..start();
@@ -711,6 +813,9 @@ class DeckCatalog {
         log?.error(describeError('The private decks', e, stack));
       }
     }
+    _readPrivate = files.keys.any(
+      (path) => path.startsWith(privateDeckPrefix),
+    );
     var bytes = 0;
     for (final text in files.values) {
       bytes += text.length;

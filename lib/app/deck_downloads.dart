@@ -252,6 +252,12 @@ class DeckDownloads extends ChangeNotifier {
   /// read again. Set by `AppState`.
   Future<void> Function()? onFilesChanged;
 
+  /// Called, instead of [onFilesChanged], when only deck-owned files (the
+  /// shared ones: creators, recommendations, themes, sections) changed, with
+  /// their paths, so that the catalog can patch them in place of a full read
+  /// (#1699). Set by `AppState`; without it [onFilesChanged] is called.
+  Future<void> Function(Set<String> paths)? onSharedChanged;
+
   DeckIndex? _index;
   IndexStatus _indexStatus = IndexStatus.none;
   DeckDownloadFailure? _indexFailure;
@@ -389,7 +395,7 @@ class DeckDownloads extends ChangeNotifier {
   Future<void> _refreshShared() async {
     final index = _index;
     if (index == null) return;
-    var changed = false;
+    final changedPaths = <String>{};
     try {
       for (final file in index.shared) {
         try {
@@ -417,7 +423,7 @@ class DeckDownloads extends ChangeNotifier {
           }
           await files.writeNote(sharedNoteName(file.path), text);
           _shared[file.path] = text;
-          changed = true;
+          changedPaths.add(file.path);
           _log?.event('Deck-owned file updated: ${file.path}');
         } on Object catch (e) {
           _log?.warning('Deck-owned file ${file.path} failed: $e');
@@ -426,9 +432,16 @@ class DeckDownloads extends ChangeNotifier {
     } on Object catch (e) {
       _log?.warning('Deck-owned files failed: $e');
     }
-    if (changed) {
+    if (changedPaths.isNotEmpty) {
+      // One call for every file the index changed, never one per file.
       try {
-        await _filesChanged();
+        final patch = onSharedChanged;
+        if (patch != null && !_disposed) {
+          changeCause = 'shared-file';
+          await patch(changedPaths);
+        } else {
+          await _filesChanged('shared-file');
+        }
       } on Object catch (e) {
         _log?.warning('Deck-owned files: the catalog could not be read: $e');
       }
