@@ -563,11 +563,11 @@ void main() {
     });
 
     test('a result made without checks still credits every script alike', () {
-      final gate = ScriptGateResult(
+      const gate = ScriptGateResult(
         level: ScriptLevel.all,
         items: 3,
         skipped: false,
-        posterior: const <ScriptLevel, double>{},
+        posterior: <ScriptLevel, double>{},
       );
       final a = V3Result(
         skills: const <V3SkillResult>[],
