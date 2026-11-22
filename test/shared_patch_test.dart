@@ -125,13 +125,15 @@ void main() {
         'paths, and no full-files call', () async {
       final creators = kindsFixtureFiles()[_creators]!;
       final sections = kindsFixtureFiles()[_sections]!;
-      final remote = FakeDeckRemote(<String, String>{
-        _creators: creators,
-        _sections: sections,
-      })..index = _index(<Object?>[
-        _entry(_creators, 'creators', creators),
-        _entry(_sections, 'sections', sections),
-      ]);
+      final remote =
+          FakeDeckRemote(<String, String>{
+              _creators: creators,
+              _sections: sections,
+            })
+            ..index = _index(<Object?>[
+              _entry(_creators, 'creators', creators),
+              _entry(_sections, 'sections', sections),
+            ]);
       final d = DeckDownloads(
         fetcher: remote,
         files: MemoryDownloadedDecks(),

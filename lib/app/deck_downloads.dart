@@ -50,8 +50,9 @@ DeckFileProblem? checkDeckBatch(List<DeckFileBytes> files) {
 }
 
 /// Checks a batch of downloaded files somewhere ([checkDeckBatch]).
-typedef DeckBatchCheck =
-    Future<DeckFileProblem?> Function(List<DeckFileBytes> files);
+typedef DeckBatchCheck = Future<DeckFileProblem?> Function(
+  List<DeckFileBytes> files,
+);
 
 /// [checkDeckBatch] on the calling isolate: for tests.
 Future<DeckFileProblem?> checkBatchInPlace(List<DeckFileBytes> files) async =>
@@ -388,6 +389,7 @@ class DeckDownloads extends ChangeNotifier {
     _fetchedFiles = 0;
     _fetchedBytes = 0;
   }
+
   final DeckFileCheck check;
 
   /// This app's version: a language or deck whose `min_app` is newer is not

@@ -107,8 +107,7 @@ Future<void> main() async {
     marks: marks,
     // A download's hashes and checks run on isolates, not the UI one
     // (#1699).
-    batchCheck: (batch) =>
-        checkBatchInIsolate(batch, onFallback: log.warning),
+    batchCheck: (batch) => checkBatchInIsolate(batch, onFallback: log.warning),
     hasher: (bytes) => sha256InIsolate(bytes, onFallback: log.warning),
     // The fonts load after the first frame, the learner's first (#1699).
     deferFonts: true,

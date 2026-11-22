@@ -73,10 +73,8 @@ OpenJob _job({SkillMap skills = const SkillMap()}) => OpenJob(
 void main() {
   group('opening under the skill map', () {
     test('equals the old path: replay without it, then set it', () {
-      final old = MemoryProgress.opened(
-        openLog(_job()),
-        fitted: const {},
-      )..skills = _map();
+      final old = MemoryProgress.opened(openLog(_job()), fitted: const {})
+        ..skills = _map();
       final opened = MemoryProgress.opened(
         openLog(_job(skills: _map())),
         fitted: const {},
@@ -144,21 +142,23 @@ void main() {
       expect(a.skills, _map());
     });
 
-    test('finishing after dispose applies nothing and notifies nothing',
-        () async {
-      final a = MemoryProgress.opened(openLog(_job()), fitted: const {});
-      var notified = 0;
-      a.addListener(() => notified++);
-      await a.replaceSkills(
-        _map(),
-        run: (job) async {
-          a.dispose();
-          return replayWithSkills(job);
-        },
-      );
-      expect(notified, 0);
-      expect(a.skills, const SkillMap());
-    });
+    test(
+      'finishing after dispose applies nothing and notifies nothing',
+      () async {
+        final a = MemoryProgress.opened(openLog(_job()), fitted: const {});
+        var notified = 0;
+        a.addListener(() => notified++);
+        await a.replaceSkills(
+          _map(),
+          run: (job) async {
+            a.dispose();
+            return replayWithSkills(job);
+          },
+        );
+        expect(notified, 0);
+        expect(a.skills, const SkillMap());
+      },
+    );
 
     test('an answer recorded while it works is not lost: it replays '
         'again', () async {
@@ -326,16 +326,32 @@ void main() {
       return db;
     }
 
-    DatabaseProgress open(AppDatabase db, List<String> stages) =>
-        DatabaseProgress.opening(
-          db,
-          replayer: replayInPlace,
-          snapshotter: snapshotInPlace,
-          skillsRunner: skillsInPlace,
-          awaitSkills: true,
-          app: 'x',
-          onStage: stages.add,
-        );
+    /// Waits, at the end of the test and before the database is closed, for
+    /// the snapshot write queued behind the read, so that none is left
+    /// writing to a closed database.
+    void settle(DatabaseProgress progress) {
+      addTearDown(() async {
+        try {
+          await progress.flush();
+        } on Object {
+          // A failed write is not what these tests are about.
+        }
+      });
+    }
+
+    DatabaseProgress open(AppDatabase db, List<String> stages) {
+      final progress = DatabaseProgress.opening(
+        db,
+        replayer: replayInPlace,
+        snapshotter: snapshotInPlace,
+        skillsRunner: skillsInPlace,
+        awaitSkills: true,
+        app: 'x',
+        onStage: stages.add,
+      );
+      settle(progress);
+      return progress;
+    }
 
     /// What the old path gives for the same log and map.
     Future<MemoryProgress> reference(AppDatabase db) async {

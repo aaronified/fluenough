@@ -96,10 +96,9 @@ void main() {
 
     const deck = 'decks/hi/hi-en-a.yaml';
 
-    File put(String path, String text) =>
-        File('${dir.path}/$path')
-          ..createSync(recursive: true)
-          ..writeAsStringSync(text);
+    File put(String path, String text) => File('${dir.path}/$path')
+      ..createSync(recursive: true)
+      ..writeAsStringSync(text);
 
     test('clean then manifest knows the files on disk, by hash, and '
         'removes what a download cut short left', () async {
@@ -139,10 +138,7 @@ void main() {
       put('decks/hi/hi-en-c.yaml', 'schema: 1\nid: c\n');
       await store.putAll(const {});
       final manifest = await store.manifest();
-      expect(
-        manifest.keys.toSet(),
-        <String>{deck, 'decks/hi/hi-en-c.yaml'},
-      );
+      expect(manifest.keys.toSet(), <String>{deck, 'decks/hi/hi-en-c.yaml'});
     });
   });
 }

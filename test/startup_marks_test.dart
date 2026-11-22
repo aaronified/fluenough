@@ -27,8 +27,14 @@ void main() {
     expect(result, 42);
     final line = lines().single;
     expect(line, startsWith('Startup: catalog: read files took '));
-    expect(line, contains('(isolate=main, count=3, bytes=120)'));
-    expect(line, contains(' ms at '));
+    expect(
+      line,
+      matches(
+        RegExp(
+          r'took \d+ ms \(isolate=main, count=3, bytes=120\) at \d+ ms$',
+        ),
+      ),
+    );
   });
 
   test('a span names the isolate it ran in', () async {

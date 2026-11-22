@@ -860,9 +860,7 @@ class DeckCatalog {
         log?.error(describeError('The private decks', e, stack));
       }
     }
-    _readPrivate = files.keys.any(
-      (path) => path.startsWith(privateDeckPrefix),
-    );
+    _readPrivate = files.keys.any((path) => path.startsWith(privateDeckPrefix));
     var bytes = 0;
     for (final text in files.values) {
       bytes += text.length;

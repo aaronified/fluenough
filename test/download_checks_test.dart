@@ -152,11 +152,8 @@ void main() {
 
     test('a batch with a problem keeps nothing and says which file', () async {
       final d = downloads(
-        batchCheck: (files) async => (
-          path: files.first.path,
-          why: 'broken on purpose',
-          notUtf8: false,
-        ),
+        batchCheck: (files) async =>
+            (path: files.first.path, why: 'broken on purpose', notUtf8: false),
       );
       await d.open();
       expect(await d.downloadFirst('es', english), DeckDownloadFailure.invalid);

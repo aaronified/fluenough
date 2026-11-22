@@ -1199,23 +1199,19 @@ class AppState extends ChangeNotifier {
   /// that added or removed a deck stays.
   Future<void> _reloadDecks({String cause = 'decks changed'}) async {
     log.event('Decks reload: $cause');
-    await _span(
-      'reloadDecks',
-      () async {
-        deckCatalog.invalidate();
-        _catalog = await deckCatalog.load();
-        _status = CatalogStatus.ready;
-        _loadError = null;
-        _mapSkills();
-        // A different skill map is replayed on an isolate: wait for it, so
-        // that the decks and the progress change together.
-        if (progress case final DatabaseProgress p) await p.skillsSettled;
-        _logKindProblems();
-        notifyListeners();
-        await refreshVoices();
-      },
-      extra: <String, Object?>{'cause': cause},
-    );
+    await _span('reloadDecks', () async {
+      deckCatalog.invalidate();
+      _catalog = await deckCatalog.load();
+      _status = CatalogStatus.ready;
+      _loadError = null;
+      _mapSkills();
+      // A different skill map is replayed on an isolate: wait for it, so
+      // that the decks and the progress change together.
+      if (progress case final DatabaseProgress p) await p.skillsSettled;
+      _logKindProblems();
+      notifyListeners();
+      await refreshVoices();
+    }, extra: <String, Object?>{'cause': cause});
   }
 
   /// Reports to the log what in the decks' kind fields, and in the sections
