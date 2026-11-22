@@ -8,6 +8,7 @@ import '../scheduling/ask.dart';
 import '../scheduling/fsrs.dart';
 import '../scheduling/placement_withdrawal.dart';
 import '../scheduling/replay.dart';
+import '../scheduling/skill_map.dart';
 import '../scheduling/skill_parameters.dart';
 
 /// The result of replaying the review log, kept as compact binary (#857,
@@ -549,6 +550,7 @@ class LogStamp {
     required Iterable<LeechAction> leechActions,
     required Map<SkillKey, FittedParameters> fitted,
     Iterable<PlacementWithdrawal> withdrawals = const <PlacementWithdrawal>[],
+    SkillMap skills = const SkillMap(),
   }) {
     final actions = leechActions.toList();
     // The withdrawals change what the replay gives without changing a row of
@@ -591,6 +593,9 @@ class LogStamp {
       'l${actions.length}:${_digest(buffer.toString())}',
       'f${fitted.length}:${_fittedDigest(fitted)}',
       'w${taken.length}:${_digest(takenText.toString())}',
+      // The skill map is what the memory replay credits skills with: a
+      // snapshot made under another map is not the replay under this one.
+      's${skillsDigest(skills)}',
     ];
     return LogStamp._(parts.join('|'), reviews);
   }
@@ -609,6 +614,33 @@ class LogStamp {
 
   @override
   String toString() => text;
+}
+
+/// A digest of [skills] that is equal for equal maps whatever order their
+/// sets are in, and cheap: one pass over every id, with sums and xors of
+/// per-id hashes, which do not depend on the order, and no sorting of what
+/// can be tens of thousands of card ids.
+String skillsDigest(SkillMap skills) {
+  String ofSet(Set<String> ids) {
+    var sum = 0;
+    var xor = 0;
+    for (final id in ids) {
+      var h = 0x811c9dc5;
+      for (var i = 0; i < id.length; i++) {
+        h = _fnv(h, id.codeUnitAt(i) & 0xff);
+        h = _fnv(h, id.codeUnitAt(i) >> 8);
+      }
+      sum = (sum + h) & 0xffffffff;
+      xor ^= h;
+    }
+    return '${ids.length}.${sum.toRadixString(16)}.${xor.toRadixString(16)}';
+  }
+
+  final scripts = skills.primaryScripts.entries.toList()
+    ..sort((a, b) => a.key.compareTo(b.key));
+  return '${ofSet(skills.formHeardIn)}/${ofSet(skills.formHeardCards)}/'
+      '${ofSet(skills.scriptDecks)}/'
+      '${_digest(scripts.map((e) => '${e.key}=${e.value}').join(';'))}';
 }
 
 /// What a replay depends on besides the log: FSRS's default parameters and

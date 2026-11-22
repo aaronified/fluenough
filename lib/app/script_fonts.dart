@@ -72,7 +72,15 @@ class ScriptFonts extends ChangeNotifier {
 
   /// Loads [font], whose file is [bytes]. Returns whether it is loaded: a
   /// font the engine cannot read leaves its script in the phone's font.
-  Future<bool> load(IndexFont font, Uint8List bytes) async {
+  ///
+  /// It notifies at once, unless [notify] is false: a caller that loads
+  /// several fonts then calls [notifyLoaded] once, so that the text waiting
+  /// for them is drawn again once, not once per font (#1699).
+  Future<bool> load(
+    IndexFont font,
+    Uint8List bytes, {
+    bool notify = true,
+  }) async {
     if (isLoaded(font)) return true;
     try {
       await _register(scriptFontFamily(font.script), bytes);
@@ -80,7 +88,21 @@ class ScriptFonts extends ChangeNotifier {
       return false;
     }
     _loaded[font.script] = font.sha256;
-    notifyListeners();
+    if (notify) {
+      notifyListeners();
+    } else {
+      _unannounced = true;
+    }
     return true;
+  }
+
+  bool _unannounced = false;
+
+  /// Notifies, once, for the fonts loaded with `notify: false` since the
+  /// last notification. Nothing if there are none.
+  void notifyLoaded() {
+    if (!_unannounced) return;
+    _unannounced = false;
+    notifyListeners();
   }
 }

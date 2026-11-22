@@ -76,9 +76,26 @@ abstract interface class DownloadedDecks implements DeckSource, CardMedia {
 
 /// [DownloadedDecks] in a directory of the app's own storage.
 class FileDownloadedDecks implements DownloadedDecks {
-  FileDownloadedDecks(this.directory);
+  /// With [parseOffUi], the manifest, a few megabytes of JSON, is parsed on an
+  /// isolate (#1699); the app says so, tests parse in place.
+  FileDownloadedDecks(
+    this.directory, {
+    this.parseOffUi = false,
+    this.onFallback,
+  });
+
+  /// Told when parsing on an isolate fell back to the UI isolate.
+  final void Function(String message)? onFallback;
 
   final Directory directory;
+
+  /// Whether the manifest is parsed on an isolate.
+  final bool parseOffUi;
+
+  /// The deck and media files [clean] saw on disk, relative to [directory]
+  /// and sorted, for the next [manifest] to use instead of walking the
+  /// folders again; cleared by any write.
+  List<String>? _walked;
 
   static const String _manifest = 'files.json';
   static const String _fontsNote = 'fonts.json';
@@ -113,7 +130,9 @@ class FileDownloadedDecks implements DownloadedDecks {
     final files = <String, IndexFile>{};
     if (text != null) {
       try {
-        final index = DeckIndex.parse(text);
+        final index = parseOffUi
+            ? await parseIndexInIsolate(text, onFallback: onFallback)
+            : DeckIndex.parse(text);
         files.addAll(index.filesByPath);
       } on Object {
         // A manifest that cannot be read is rebuilt from the files below.
@@ -121,7 +140,10 @@ class FileDownloadedDecks implements DownloadedDecks {
     }
     // A file on disk the manifest does not know, as after a crash between
     // moving a file in and writing the manifest, is known by its hash.
-    for (final path in await _onDisk()) {
+    // The folders are walked once: by [clean] just before, or here.
+    final onDisk = _walked ?? await _onDisk();
+    _walked = null;
+    for (final path in onDisk) {
       if (files.containsKey(path)) continue;
       final bytes = await _file(path).readAsBytes();
       files[path] = IndexFile(
@@ -131,7 +153,7 @@ class FileDownloadedDecks implements DownloadedDecks {
       );
     }
     // A file the manifest knows but the disk does not was deleted.
-    final disk = (await _onDisk()).toSet();
+    final disk = onDisk.toSet();
     files.removeWhere((path, _) => !disk.contains(path));
     _files = files;
     return Map<String, IndexFile>.of(files);
@@ -164,6 +186,7 @@ class FileDownloadedDecks implements DownloadedDecks {
     Map<IndexFile, List<int>> files, {
     Iterable<String> remove = const <String>[],
   }) async {
+    _walked = null;
     final known = await manifest();
     // Written beside their place first, flushed, then moved in: a rename in
     // one directory is atomic, so each file is the old or the new, whole.
@@ -191,6 +214,7 @@ class FileDownloadedDecks implements DownloadedDecks {
 
   @override
   Future<void> removeLanguage(String language) async {
+    _walked = null;
     final folder = Directory('${directory.path}/decks/$language');
     if (await folder.exists()) await folder.delete(recursive: true);
     final known = await manifest()
@@ -302,12 +326,25 @@ class FileDownloadedDecks implements DownloadedDecks {
 
   @override
   Future<void> clean() async {
+    _walked = null;
     if (!await directory.exists()) return;
+    // One walk of the folders deletes the half-written files and lists the
+    // deck and media files for [manifest], which would walk them again.
+    final prefix = '${directory.path}/';
+    final onDisk = <String>[];
     await for (final entity in directory.list(recursive: true)) {
-      if (entity is File && entity.path.endsWith(_partial)) {
+      if (entity is! File) continue;
+      if (entity.path.endsWith(_partial)) {
         await entity.delete();
+        continue;
+      }
+      final relative = entity.path.substring(prefix.length);
+      if (relative.startsWith('decks/') &&
+          (relative.endsWith('.yaml') || mediaPathPattern.hasMatch(relative))) {
+        onDisk.add(relative);
       }
     }
+    _walked = onDisk..sort();
   }
 }
 

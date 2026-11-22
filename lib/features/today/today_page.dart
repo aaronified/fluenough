@@ -71,7 +71,9 @@ class TodayPage extends StatelessWidget {
         builder: (context, _) {
           final onScreen =
               Visibility.of(context) && TickerMode.valuesOf(context).enabled;
+          final watch = Stopwatch()..start();
           final numbers = TodayNumbers.of(state, onScreen: onScreen);
+          state.noteTodayNumbers(watch.elapsedMilliseconds);
           // Kept for the next launch, which draws the tiles from it while
           // the catalog loads (#875).
           if (onScreen) state.rememberToday(numbers.summary);

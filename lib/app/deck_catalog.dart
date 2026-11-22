@@ -28,6 +28,7 @@ import '../core/data/rule_expander.dart';
 import '../core/data/themes.dart';
 import '../core/data/yaml_tree.dart';
 import '../core/decks/sha256.dart';
+import '../core/decks/shared_data.dart';
 import '../core/logs/log_entry.dart';
 import '../core/decks/adult_gate.dart';
 import '../core/models/fact.dart';
@@ -42,6 +43,7 @@ import '../core/private/private_ids.dart';
 import 'added_decks.dart';
 import 'app_log.dart';
 import 'private_store.dart';
+import 'startup_marks.dart';
 
 /// Where deck files come from: their paths, and each one's text.
 ///
@@ -350,6 +352,35 @@ class Catalog {
     return _with(decks: shown, hidden: shownHidden);
   }
 
+  /// This catalog with the deck-owned data of [creators], [recommendations],
+  /// [sections], [dataProblems] and [broken] replaced, all else the same.
+  Catalog _withShared({
+    required DeckSections sections,
+    required Map<String, CreatorsFile> creators,
+    required Map<String, RecommendationsFile> recommendations,
+    required List<String> dataProblems,
+    required List<BrokenDeck> broken,
+  }) => Catalog(
+    decks: decks,
+    broken: broken,
+    hidden: hidden,
+    themes: themes,
+    sections: sections,
+    facts: facts,
+    situations: situations,
+    topics: topics,
+    creators: creators,
+    recommendations: recommendations,
+    dataProblems: dataProblems,
+    scriptFeatures: scriptFeatures,
+    numberRules: numberRules,
+    paths: paths,
+    languagePaths: languagePaths,
+    sounds: sounds,
+    romanisations: romanisations,
+    scriptGuides: scriptGuides,
+  );
+
   /// This catalog with other [decks] and [hidden], all else the same.
   Catalog _with({
     required List<DeckEntry> decks,
@@ -453,11 +484,49 @@ Future<Catalog> parseInPlace(Map<String, String> files) async =>
 /// data, so both cross without copying the catalog back. Where an isolate
 /// cannot run (the web) or the catalog cannot cross, it parses in place, so
 /// the result is the same either way.
-Future<Catalog> parseInIsolate(Map<String, String> files) async {
+///
+/// When it falls back, [onFallback] hears why, so that the log says the
+/// parsing moved to the UI isolate (#1699); the fallback itself is kept.
+Future<Catalog> parseInIsolate(
+  Map<String, String> files, {
+  void Function(String message)? onFallback,
+}) async {
   try {
-    return await Isolate.run(() => DeckCatalog.parseAll(files));
-  } catch (_) {
+    return await _parseOnIsolate(files);
+  } catch (e, stack) {
+    tellFallback(
+      onFallback,
+      'Parsing the decks on an isolate failed',
+      e,
+      stack,
+    );
     return DeckCatalog.parseAll(files);
+  }
+}
+
+// The closures sent to an isolate are made in functions of their own, with
+// only the data they need in scope: a closure carries the whole context it is
+// made in, and one made beside a log callback could not be sent (#1699).
+Future<Catalog> _parseOnIsolate(Map<String, String> files) =>
+    Isolate.run(() => DeckCatalog.parseAll(files));
+
+Future<CatalogOutcome> _runOnIsolate(CatalogJob job) =>
+    Isolate.run(() => runCatalogJob(job));
+
+/// Tells [onFallback], if given, that [what] failed and the work moved to the
+/// UI isolate. Never throws.
+void tellFallback(
+  void Function(String message)? onFallback,
+  String what,
+  Object error,
+  StackTrace stack,
+) {
+  try {
+    onFallback?.call(
+      describeError('$what; it runs on the UI isolate', error, stack),
+    );
+  } on Object {
+    // Telling the log must not stop the fallback.
   }
 }
 
@@ -595,10 +664,19 @@ Future<CatalogOutcome> runJobInPlace(CatalogJob job) async =>
 /// [runCatalogJob] on an isolate of its own, as [parseInIsolate] parses:
 /// reading the snapshot's JSON is off the UI isolate too. In place where an
 /// isolate cannot run.
-Future<CatalogOutcome> runJobInIsolate(CatalogJob job) async {
+Future<CatalogOutcome> runJobInIsolate(
+  CatalogJob job, {
+  void Function(String message)? onFallback,
+}) async {
   try {
-    return await Isolate.run(() => runCatalogJob(job));
-  } catch (_) {
+    return await _runOnIsolate(job);
+  } catch (e, stack) {
+    tellFallback(
+      onFallback,
+      'Reading the decks on an isolate failed',
+      e,
+      stack,
+    );
     return runCatalogJob(job);
   }
 }
@@ -639,9 +717,13 @@ class DeckCatalog {
     this.snapshots,
     this.privateStore,
     this.log,
+    this.marks,
   });
 
   final DeckSource source;
+
+  /// Start-up timing marks (#1699), or null (tests).
+  final StartupMarks? marks;
 
   /// Where decks a learner adds are kept (#22), or null where none can be.
   final DeckStore? added;
@@ -672,9 +754,88 @@ class DeckCatalog {
   /// Forgets the loaded catalog, so the next [load] reads the source again.
   void invalidate() => _loading = null;
 
+  /// Whether the files of the last read included a private package's, whose
+  /// creators and recommendations merge with the shared ones.
+  bool _readPrivate = false;
+
+  static const Set<String?> _patchable = <String?>{
+    'creators',
+    'recommendations',
+    'sections',
+  };
+
+  /// Makes [catalog] what [load] returns, without reading the source again.
+  void replaceLoaded(Catalog catalog) {
+    _loading = Future<Catalog>.value(catalog);
+  }
+
+  /// [current] with the deck-owned files [changed] (path to text: the
+  /// creators, the recommendations and the sections) read again, and nothing
+  /// else (#1699): the small files are parsed, the decks are not, so that a
+  /// bot's daily change to a creators file never costs a second full load.
+  /// Null when a patch cannot be made as the full load would make it: a
+  /// file of another kind (the themes order the decks), a private package
+  /// read (its data merges with these), or a file that does not parse. The
+  /// caller then loads in full.
+  Catalog? patchShared(Catalog current, Map<String, String> changed) {
+    try {
+      if (_readPrivate || changed.isEmpty) return null;
+      for (final path in changed.keys) {
+        final kind = sharedKindOf(path);
+        if (!_patchable.contains(kind)) return null;
+      }
+      final mini = parseAll(changed);
+      if (mini.broken.isNotEmpty) return null;
+      final creators = Map<String, CreatorsFile>.of(current.creators);
+      final recommendations = Map<String, RecommendationsFile>.of(
+        current.recommendations,
+      );
+      var sections = current.sections;
+      final sources = <String>{};
+      for (final path in changed.keys) {
+        final name = path.split('/').last;
+        sources.add('$name: ');
+        final code = name.endsWith('.yaml')
+            ? name.substring(0, name.length - '.yaml'.length)
+            : name;
+        switch (sharedKindOf(path)) {
+          case 'creators':
+            creators.remove(code);
+          case 'recommendations':
+            recommendations.remove(code);
+          case 'sections':
+            sections = mini.sections;
+        }
+      }
+      creators.addAll(mini.creators);
+      recommendations.addAll(mini.recommendations);
+      return current._withShared(
+        sections: sections,
+        creators: creators,
+        recommendations: recommendations,
+        dataProblems: <String>[
+          for (final problem in current.dataProblems)
+            if (!sources.any(problem.startsWith)) problem,
+          ...mini.dataProblems,
+        ],
+        broken: current.broken,
+      );
+    } on Object catch (e, stack) {
+      log?.warning(describeError('Patching the shared files failed', e, stack));
+      return null;
+    }
+  }
+
   Future<Catalog> _load() async {
     final files = <String, String>{};
-    for (final path in await source.list()) {
+    final readWatch = Stopwatch()..start();
+    final paths = await source.list();
+    marks?.record(
+      'catalog: list',
+      readWatch.elapsedMilliseconds,
+      extra: <String, Object?>{'files': paths.length},
+    );
+    for (final path in paths) {
       files[path] = await source.read(path);
     }
     final added = this.added;
@@ -699,12 +860,29 @@ class DeckCatalog {
         log?.error(describeError('The private decks', e, stack));
       }
     }
+    _readPrivate = files.keys.any((path) => path.startsWith(privateDeckPrefix));
+    var bytes = 0;
+    for (final text in files.values) {
+      bytes += text.length;
+    }
+    marks?.record(
+      'catalog: read files',
+      readWatch.elapsedMilliseconds,
+      extra: <String, Object?>{'count': files.length, 'bytes': bytes},
+    );
     final snapshots = this.snapshots;
     if (snapshots == null) return parser(files);
     try {
       return await _fromSnapshot(snapshots, files);
-    } on Object {
+    } on Object catch (e, stack) {
       // Whatever went wrong with the snapshot, the YAML is the truth.
+      log?.warning(
+        describeError(
+          'The catalog snapshot failed; parsing the files in place',
+          e,
+          stack,
+        ),
+      );
       return parser(files);
     }
   }
@@ -714,21 +892,41 @@ class DeckCatalog {
     Map<String, String> files,
   ) async {
     String? stored;
+    final storeWatch = Stopwatch()..start();
     try {
       stored = await snapshots.store.read();
     } on Object {
       stored = null;
     }
+    marks?.record(
+      'catalog: snapshot read',
+      storeWatch.elapsedMilliseconds,
+      extra: <String, Object?>{'bytes': stored?.length ?? 0},
+    );
     var known = const <String, String>{};
     try {
       known = await snapshots.knownShas?.call() ?? known;
     } on Object {
       known = const <String, String>{};
     }
-    final shas = <String, String>{
-      for (final e in files.entries)
-        e.key: known[e.key] ?? sha256Hex(utf8.encode(e.value)),
-    };
+    final shaWatch = Stopwatch()..start();
+    var hashed = 0;
+    final shas = <String, String>{};
+    for (final e in files.entries) {
+      final sha = known[e.key];
+      if (sha != null) {
+        shas[e.key] = sha;
+        continue;
+      }
+      hashed++;
+      shas[e.key] = sha256Hex(utf8.encode(e.value));
+    }
+    marks?.record(
+      'catalog: sha',
+      shaWatch.elapsedMilliseconds,
+      extra: <String, Object?>{'hashed': hashed, 'known': known.length},
+    );
+    final jobWatch = Stopwatch()..start();
     final outcome = await snapshots.runner(
       CatalogJob(
         files: files,
@@ -737,11 +935,26 @@ class DeckCatalog {
         app: snapshots.app,
       ),
     );
+    marks?.record(
+      'catalog: isolate round trip',
+      jobWatch.elapsedMilliseconds,
+      isolate: 'worker',
+    );
     final text = outcome.snapshot;
     if (text != null) {
       // Not waited for: the first screens do not need it written.
+      final writeWatch = Stopwatch()..start();
       unawaited(
-        snapshots.store.write(text).then<void>((_) {}, onError: (Object _) {}),
+        snapshots.store
+            .write(text)
+            .then<void>(
+              (_) => marks?.record(
+                'catalog: snapshot write',
+                writeWatch.elapsedMilliseconds,
+                extra: <String, Object?>{'bytes': text.length},
+              ),
+              onError: (Object _) {},
+            ),
       );
     }
     return outcome.catalog;

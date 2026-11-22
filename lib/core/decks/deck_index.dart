@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'dart:isolate';
 
+import '../logs/log_entry.dart' show describeError;
 import 'app_version.dart';
 import '../models/level.dart';
 import 'shared_data.dart';
@@ -1122,4 +1124,39 @@ LanguageChanges changesFor(
           path,
     ]..sort(),
   );
+}
+
+// The closure sent to the isolate is made in a function of its own, with only
+// its data in scope: a closure carries the whole context it is made in, and
+// one made beside a log callback could not be sent.
+Future<DeckIndex> _parseOnIsolate(String text, String? appVersion) =>
+    Isolate.run(() => DeckIndex.parse(text, appVersion: appVersion));
+
+/// [DeckIndex.parse] on an isolate of its own (#1699): the index is a few
+/// megabytes of JSON, and reading it on the UI isolate holds the first
+/// frames. What it throws for a bad or too-new index is thrown here as it is;
+/// only an isolate that cannot run (the web) or fails parses in place, with
+/// the same result. The index is plain data and crosses without being lost.
+Future<DeckIndex> parseIndexInIsolate(
+  String text, {
+  String? appVersion,
+  void Function(String message)? onFallback,
+}) async {
+  try {
+    return await _parseOnIsolate(text, appVersion);
+  } on FormatException {
+    rethrow;
+  } on IndexTooNewException {
+    rethrow;
+  } catch (e, stack) {
+    onFallback?.call(
+      describeError(
+        'Parsing the deck index on an isolate failed; parsing on the UI '
+        'isolate',
+        e,
+        stack,
+      ),
+    );
+    return DeckIndex.parse(text, appVersion: appVersion);
+  }
 }

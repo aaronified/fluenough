@@ -61,35 +61,59 @@ export 'app.dart' show FluenoughApp;
 /// names a concrete service: everything below reads them through `AppScope`
 /// (docs/adr/0007).
 Future<void> main() async {
+  // The start-up clock runs from here, before anything is awaited (#1699).
+  final clock = Stopwatch()..start();
   WidgetsFlutterBinding.ensureInitialized();
   // Where ota_update downloads: files/ota_update in the app's own storage,
   // which getApplicationSupportDirectory is on Android. The app log is
   // there too, in logs/, so that it outlives a crash (#162).
   final files = await getApplicationSupportDirectory();
+  final appDirMs = clock.elapsedMilliseconds;
   final log = AppLog(store: FileLogStore(File('${files.path}/logs/app.log')));
   logErrors(log);
   ReviewProblems.sink = log.warning;
   await log.open();
   log.event('App started: ${AppInfo.version}');
-  final marks = StartupMarks(log);
+  final marks = StartupMarks(log, clock: clock)
+    ..record('app dir', appDirMs)
+    ..mark('log opened')
+    ..watchFrames('launch');
   // The profile database opens here; its review log is read after the first
   // frame, which the catalog's loading waits for (#857).
   final storage = await openProfileStorage(
     Profile.defaultProfile,
     onStage: marks.mark,
+    // The review log is replayed under the catalog's skill map, which
+    // `AppState` hands over once the catalog is read (#1699).
+    awaitSkills: true,
   );
+  marks.mark('db opened');
   // A report's app log is written to shared/ in the cache, the folder
   // MainActivity's FileProvider lends to the mail app (ADR-0021).
   final cache = await getTemporaryDirectory();
   final share = ChannelMailShare(folder: Directory('${cache.path}/shared'));
   // The decks, downloaded from GitHub into the app's own storage (#210,
   // ADR-0037); only the theme list is bundled.
-  final downloaded = FileDownloadedDecks(Directory('${files.path}/downloaded'));
+  final downloaded = FileDownloadedDecks(
+    Directory('${files.path}/downloaded'),
+    parseOffUi: true,
+    onFallback: log.warning,
+  );
   final deckDownloads = DeckDownloads(
     fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),
     files: downloaded,
     clock: DateTime.now,
     log: log,
+    marks: marks,
+    // A download's hashes and checks run on isolates, not the UI one
+    // (#1699).
+    batchCheck: (batch) => checkBatchInIsolate(batch, onFallback: log.warning),
+    hasher: (bytes) => sha256InIsolate(bytes, onFallback: log.warning),
+    // The fonts load after the first frame, the learner's first (#1699).
+    deferFonts: true,
+    // The index and the review queue parse on isolates (#1699).
+    parseOffUi: true,
+    otherFontsDelay: const Duration(seconds: 20),
     // The culture pictures, as binary files (not in the deck files: they
     // are fetched on demand and pruned with their course).
     images: MediaImageCache(
@@ -101,7 +125,10 @@ Future<void> main() async {
   // switch stays off.
   ReminderScheduler reminderScheduler = const NullReminderScheduler();
   try {
-    reminderScheduler = await PluginReminderScheduler.start();
+    reminderScheduler = await marks.span(
+      'reminder plugin',
+      PluginReminderScheduler.start,
+    );
   } catch (e) {
     log.warning('Reminder error: start failed: $e');
   }
@@ -144,7 +171,8 @@ Future<void> main() async {
       added: FileDeckStore(Directory('${files.path}/decks')),
       privateStore: privateStore,
       log: log,
-      parser: parseInIsolate,
+      marks: marks,
+      parser: (texts) => parseInIsolate(texts, onFallback: log.warning),
       // The decks' YAML, kept as JSON between launches and read again
       // only for a file whose SHA-256 changed (#875, ADR-0048).
       snapshots: CatalogSnapshots(
@@ -154,7 +182,7 @@ Future<void> main() async {
           for (final e in (await downloaded.manifest()).entries)
             e.key: e.value.sha256,
         },
-        runner: runJobInIsolate,
+        runner: (job) => runJobInIsolate(job, onFallback: log.warning),
       ),
     ),
     // The Find my level question banks, made once per language and deck set.
@@ -202,6 +230,7 @@ Future<void> main() async {
     // Review files go the same way (docs/plans/deck-browser.md).
     mailShare: share,
     log: log,
+    marks: marks,
     releases: GitHubReleaseCheck(userAgent: 'fluenough/${AppInfo.version}'),
     releaseNotes: GitHubReleaseNotes(userAgent: 'fluenough/${AppInfo.version}'),
     // Backups, kept in the app's own storage, which an update leaves
@@ -223,9 +252,12 @@ Future<void> main() async {
     if (state.status == CatalogStatus.loading) return;
     state.removeListener(catalogReady);
     marks.mark('catalog ready');
-    WidgetsBinding.instance.addPostFrameCallback(
-      (_) => marks.mark('first ready frame'),
-    );
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      marks
+        ..mark('first ready frame')
+        ..summary();
+      unawaited(deckDownloads.loadFontsInBackground());
+    });
   }
 
   state.addListener(catalogReady);
