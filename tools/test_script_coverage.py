@@ -37,6 +37,10 @@ def test_report_adds_decks_of_a_language():
                              FakeReport(None)])
     assert any("hi: 1/4 cards" in x and "3 lack it" in x for x in lines)
     assert all(not x.strip().startswith(("error", "FAIL")) for x in lines)
+    # Not read as a deck's warnings or infos (test_validate_b1, decks-live).
+    assert all(not x.startswith(("info ", "  info", "warn", "  warning"))
+               for x in lines)
+    assert any(x.startswith("  coverage hi:") for x in lines)
 
 
 def test_no_report_without_a_multi_script_language():
