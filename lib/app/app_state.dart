@@ -1289,8 +1289,7 @@ class AppState extends ChangeNotifier {
       return;
     }
     final texts = <String, String>{
-      for (final path in paths)
-        if (downloads.sharedTexts[path] case final text?) path: text,
+      for (final path in paths) path: ?downloads.sharedTexts[path],
     };
     final patched = texts.length == paths.length
         ? deckCatalog.patchShared(_catalog, texts)
@@ -1509,8 +1508,6 @@ class AppState extends ChangeNotifier {
     );
   }
 
-  static int _plus(int a, int b) => a + b;
-
   Future<void> _load() async {
     try {
       // Progress may still be reading its log (#857): the catalog reads
@@ -1531,7 +1528,7 @@ class AppState extends ChangeNotifier {
       log.event('Decks loaded: ${decks.length}');
       marks?.count('loaded', <String, Object?>{
         'decks': decks.length,
-        'cards': <int>[for (final d in decks) d.cards.length].fold(0, _plus),
+        'cards': decks.fold<int>(0, (sum, d) => sum + d.cards.length),
         'reviews': progress.log.length,
         'languages': <String>{for (final d in decks) d.language.code}.length,
       });

@@ -141,9 +141,12 @@ void main() {
       addTearDown(d.dispose);
       final shared = <Set<String>>[];
       var full = 0;
-      d
-        ..onFilesChanged = () async => full++
-        ..onSharedChanged = (paths) async => shared.add(paths);
+      d.onFilesChanged = () async {
+        full++;
+      };
+      d.onSharedChanged = (paths) async {
+        shared.add(paths);
+      };
       expect(await d.refreshIndex(), isTrue);
       expect(shared, hasLength(1));
       expect(shared.single, <String>{_creators, _sections});

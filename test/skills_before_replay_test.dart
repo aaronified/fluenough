@@ -42,7 +42,7 @@ List<LoggedReview> _reviews() => <LoggedReview>[
     ),
 ];
 
-SkillMap _map() => SkillMap(
+SkillMap _map() => const SkillMap(
   formHeardCards: <String>{'es-0001'},
   scriptDecks: <String>{'es-en-script'},
   primaryScripts: <String, String>{'es': 'latin'},
@@ -216,7 +216,7 @@ void main() {
         isNot(
           equals(
             stamp(
-              SkillMap(
+              const SkillMap(
                 formHeardCards: <String>{'es-0001', 'es-0002'},
                 scriptDecks: <String>{'es-en-script'},
                 primaryScripts: <String, String>{'es': 'latin'},
@@ -228,12 +228,12 @@ void main() {
     });
 
     test('does not depend on the order of the sets', () {
-      final one = SkillMap(
+      const one = SkillMap(
         formHeardCards: <String>{'a', 'b', 'c'},
         scriptDecks: <String>{'x', 'y'},
         primaryScripts: <String, String>{'es': 'latin', 'hi': 'deva'},
       );
-      final other = SkillMap(
+      const other = SkillMap(
         formHeardCards: <String>{'c', 'a', 'b'},
         scriptDecks: <String>{'y', 'x'},
         primaryScripts: <String, String>{'hi': 'deva', 'es': 'latin'},
@@ -379,7 +379,7 @@ void main() {
       progress.skills = _map();
       await progress.skillsSettled;
       expect(progress.version, version);
-      final other = SkillMap(
+      const other = SkillMap(
         formHeardCards: <String>{'es-0001', 'es-0002'},
         scriptDecks: <String>{'es-en-script'},
         primaryScripts: <String, String>{'es': 'latin'},
@@ -444,7 +444,7 @@ void main() {
       addTearDown(progress.dispose);
       progress.skills = _map();
       await progress.ready;
-      final x = SkillMap(
+      const x = SkillMap(
         formHeardCards: <String>{'es-0001', 'es-0002'},
         scriptDecks: <String>{'es-en-script'},
         primaryScripts: <String, String>{'es': 'latin'},
