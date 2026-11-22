@@ -30,7 +30,7 @@ enum QuestionKind {
   /// A doubt the deck's builder raised about one facet of a card, put to the
   /// reviewer as a step of its own (builder questions v2, owner, 2026-11-22;
   /// wiki Plan-Builder-Questions-V2): the question is the app's one fixed
-  /// "Is the <facet> on this card correct?", the card is shown in full, and
+  /// "Is the `<facet>` on this card correct?", the card is shown in full, and
   /// the answer is Yes, or No with one of the facet's options. The point is
   /// `builder:<facet>`; no text of the card or the queue is ever the
   /// question.

@@ -33,7 +33,7 @@ String pointerTagLabel(AppLocalizations l10n, PointerTag tag) => switch (tag) {
 };
 
 /// The one fixed question of a builder question about [facet]: "Is the
-/// <facet> on this card correct?" (wiki Plan-Builder-Questions-V2). Words of
+/// `<facet>` on this card correct?" (wiki Plan-Builder-Questions-V2). Words of
 /// the app only, never any text of a card or a queue; empty for no facet.
 String builderAskText(AppLocalizations l10n, Facet? facet) => switch (facet) {
   Facet.word => l10n.builderAskWord,
