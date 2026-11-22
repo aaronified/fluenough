@@ -99,10 +99,6 @@ class _DecksPageState extends State<DecksPage> {
   bool _culture = false;
   String? _cultureFor;
 
-  /// The recommended work whose row is open in the culture list, `''` for
-  /// none.
-  String? _openWork = '';
-
   /// The state whose culture-list requests this screen listens to.
   AppState? _scopeState;
 
@@ -117,7 +113,15 @@ class _DecksPageState extends State<DecksPage> {
     state.decksCultureRequest.value = null;
     _culture = true;
     _cultureFor = request.language;
-    _openWork = request.openId ?? '';
+    final open = request.openId;
+    if (open != null && open.isNotEmpty) {
+      // The cover's work opens on its own page, over the list.
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) {
+          AppNavigator.openWork(context, request.language, open).ignore();
+        }
+      });
+    }
     _search.clear();
     _chips.clear();
     _sync();
@@ -134,7 +138,6 @@ class _DecksPageState extends State<DecksPage> {
     final shown = _cultureShown(code);
     _culture = !shown;
     _cultureFor = code;
-    _openWork = '';
   });
 
   @override
@@ -678,8 +681,6 @@ class _DecksPageState extends State<DecksPage> {
             outcome.chips.isEmpty &&
             outcome.foreign == null &&
             outcome.parsed.text.isNotEmpty;
-        void toggleWork(String id) =>
-            setState(() => _openWork = _openWork == id ? '' : id);
         final menu = _menu(l10n, state, parsed, code);
         // The path stays under the search while nothing is typed, darkened.
         final dim = open && !searching ? 0.5 : 1.0;
@@ -799,8 +800,6 @@ class _DecksPageState extends State<DecksPage> {
                             language: code,
                             sections: cultureSecs,
                             kind: kind,
-                            openWork: _openWork,
-                            onToggleWork: toggleWork,
                           ),
                         )
                       else
@@ -824,8 +823,6 @@ class _DecksPageState extends State<DecksPage> {
                           language: code,
                           query: applied.text,
                           filter: filter,
-                          openWork: _openWork,
-                          onToggleWork: toggleWork,
                         ),
                       ),
                     // A deck chip and a culture chip together match nothing.
@@ -853,12 +850,7 @@ class _DecksPageState extends State<DecksPage> {
                         sliver: SliverOpacity(
                           opacity: dim,
                           sliver: SliverToBoxAdapter(
-                            child: CultureList(
-                              language: code,
-                              query: '',
-                              openWork: _openWork,
-                              onToggleWork: toggleWork,
-                            ),
+                            child: CultureList(language: code, query: ''),
                           ),
                         ),
                       ),

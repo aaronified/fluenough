@@ -2,7 +2,7 @@
 
 Source of truth: this wiki page.
 
-Written 2026-11-21. Builds on [Plan-Sounds-Decks](Plan-Sounds-Decks) and [ADR-0059](ADR-0059-Sounds-Decks-With-Compressed-Audio) (the sibling fetch loop, whose approach is reused), [Plan-Deck-Kinds-And-Topics](Plan-Deck-Kinds-And-Topics) (creators, recommendations, D5 and D13), [Plan-Language-Completeness](Plan-Language-Completeness) (the culture checklist), [Deck-Format](Deck-Format) ("A card's own image" and "Deck kinds") and [ADR-0040](ADR-0040-Decks-Are-Cc-By-Sa). The decision record is [ADR-0060](ADR-0060-Culture-Media-From-Wikimedia-Commons) (Proposed). Nothing here is built. Everything marked **Proposed** is the author's, not a decision.
+Written 2026-11-21. Builds on [Plan-Sounds-Decks](Plan-Sounds-Decks) and [ADR-0059](ADR-0059-Sounds-Decks-With-Compressed-Audio) (the sibling fetch loop, whose approach is reused), [Plan-Deck-Kinds-And-Topics](Plan-Deck-Kinds-And-Topics) (creators, recommendations, D5 and D13), [Plan-Language-Completeness](Plan-Language-Completeness) (the culture checklist), [Deck-Format](Deck-Format) ("A card's own image" and "Deck kinds") and [ADR-0040](ADR-0040-Decks-Are-Cc-By-Sa). The decision record is [ADR-0060](ADR-0060-Culture-Media-From-Wikimedia-Commons) (Proposed). Status 2026-11-22: packages 1 and 2 (validator, fetch tool) are built; package 4b (the app display of the approved mockup: work page, poster and list thumb, viewer, creator portrait, Sources credits, per-course Show pictures switch and Download pictures row, `min_app` on work-image entries, 0.12.1) is built in the app and awaits a release; the survey and fetch runs have not begun. Everything marked **Proposed** is the author's, not a decision.
 
 ## What the owner asked
 

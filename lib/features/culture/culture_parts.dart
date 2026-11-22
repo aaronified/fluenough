@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
@@ -11,7 +9,7 @@ import '../../core/models/deck.dart' show LanguageInfo;
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/target_text.dart';
-import 'culture_image_size.dart';
+import 'culture_picture.dart';
 
 /// The languages the learner reads the interface and deck prose in, best known
 /// first: the app's own language, then those they speak.
@@ -117,81 +115,40 @@ String? cultureSourceLine(AppLocalizations l10n, CardSource? source) {
   return parts.isEmpty ? null : parts.join(' · ');
 }
 
-/// The credit line under a creator's picture: who made it and on what licence,
-/// or that there is no licensed image yet.
-String cultureImageCredit(AppLocalizations l10n, Creator creator) {
-  final image = creator.image;
-  if (image == null) return l10n.cultureImageNone;
-  final licence = image.licence == 'public-domain'
-      ? l10n.cultureImagePublicDomain
-      : image.licence;
-  final parts = <String>[
-    ?image.credit,
-    if (image.author != null && image.author != image.credit) image.author!,
-    ?licence,
-  ];
-  return parts.isEmpty
-      ? l10n.cultureImageNone
-      : l10n.cultureImageCredit(parts.join(' · '));
-}
-
-/// A creator's picture, or the placeholder when the file has none or it cannot
-/// be fetched: a person on the secondary container. The picture is fetched
-/// when first shown and kept (`DeckDownloads.creatorImage`).
-class CreatorThumb extends StatefulWidget {
-  const CreatorThumb({super.key, required this.creator, this.size = 48});
+/// A creator's picture, or the placeholder when the file has none, the
+/// language's "Show pictures" switch is off, or it cannot be fetched: a person
+/// on the secondary container. The picture is fetched when first shown and
+/// kept (`DeckDownloads.creatorImage`). With [zoomable] it opens full screen
+/// when tapped and carries the zoom badge (the creator card).
+class CreatorThumb extends StatelessWidget {
+  const CreatorThumb({
+    super.key,
+    required this.creator,
+    required this.language,
+    this.size = 48,
+    this.zoomable = false,
+  });
 
   final Creator creator;
+
+  /// The language whose "Show pictures" switch decides.
+  final String language;
   final double size;
-
-  @override
-  State<CreatorThumb> createState() => _CreatorThumbState();
-}
-
-class _CreatorThumbState extends State<CreatorThumb> {
-  Future<Uint8List?>? _image;
-  String? _loaded;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _load();
-  }
-
-  @override
-  void didUpdateWidget(CreatorThumb old) {
-    super.didUpdateWidget(old);
-    _load();
-  }
-
-  void _load() {
-    final path = widget.creator.image?.file;
-    if (path == null) {
-      _image = null;
-      _loaded = null;
-      return;
-    }
-    if (path == _loaded) return;
-    _loaded = path;
-    final downloads = AppScope.read(context).deckDownloads;
-    _image = downloads?.creatorImage(path);
-  }
+  final bool zoomable;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
-    final size = widget.size;
-    final name = widget.creator.nameFor(const <String>['en']).text;
+    final name = creator.nameFor(const <String>['en']).text;
     Widget placeholder() => Semantics(
-      label: l10n.cultureImageNone,
+      label: l10n.cultureImageOf(name),
       child: Icon(
         Icons.person_outline,
         size: size * 0.55,
         color: scheme.onSecondaryContainer,
       ),
     );
-    final future = _image;
     return Container(
       width: size,
       height: size,
@@ -201,25 +158,30 @@ class _CreatorThumbState extends State<CreatorThumb> {
         borderRadius: BorderRadius.circular(AppRadii.field),
       ),
       alignment: Alignment.center,
-      child: future == null
-          ? placeholder()
-          : FutureBuilder<Uint8List?>(
-              future: future,
-              builder: (context, snapshot) {
-                final bytes = snapshot.data;
-                if (bytes == null) return placeholder();
-                return Image.memory(
-                  bytes,
-                  width: size,
-                  height: size,
-                  // Decoded at the size shown, never at the file's (4a).
-                  cacheWidth: cultureDecodeWidthIn(context, size),
-                  fit: BoxFit.cover,
-                  semanticLabel: l10n.cultureImageOf(name),
-                  errorBuilder: (context, error, stack) => placeholder(),
-                );
-              },
-            ),
+      child: CulturePictureLoader(
+        image: creator.image,
+        language: language,
+        builder: (context, bytes) {
+          if (bytes == null) return placeholder();
+          final label = l10n.cultureImageOf(name);
+          final picture = CultureImageView(
+            bytes: bytes,
+            width: size,
+            height: size,
+            label: label,
+            placeholder: placeholder(),
+          );
+          if (!zoomable) return picture;
+          return ZoomablePicture(
+            bytes: bytes,
+            image: creator.image,
+            label: label,
+            badge: 28,
+            badgeInset: 4,
+            child: picture,
+          );
+        },
+      ),
     );
   }
 }
@@ -234,6 +196,7 @@ class CreatorSummary extends StatelessWidget {
     required this.file,
     this.size = 56,
     this.large = false,
+    this.zoomable = false,
   });
 
   final Creator creator;
@@ -241,6 +204,9 @@ class CreatorSummary extends StatelessWidget {
   final CreatorsFile? file;
   final double size;
   final bool large;
+
+  /// Whether the picture opens full screen when tapped (the creator card).
+  final bool zoomable;
 
   @override
   Widget build(BuildContext context) {
@@ -258,7 +224,12 @@ class CreatorSummary extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        CreatorThumb(creator: creator, size: size),
+        CreatorThumb(
+          creator: creator,
+          language: language.code,
+          size: size,
+          zoomable: zoomable,
+        ),
         const SizedBox(width: 12),
         Expanded(
           child: Column(

@@ -10,6 +10,7 @@ import 'package:fluenough/core/decks/culture_options.dart';
 import 'package:fluenough/core/languages/language_skills.dart';
 import 'package:fluenough/features/languages/language_skills_sheet.dart';
 import 'package:fluenough/features/languages/language_views.dart';
+import 'package:fluenough/features/languages/pictures_download_tile.dart';
 import 'package:fluenough/features/languages/skill_widgets.dart';
 import 'package:fluenough/features/languages/languages_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
@@ -472,6 +473,26 @@ void main() {
       expect(find.text(text.languagesCultureOff), findsOneWidget);
       expect(find.text(text.cultureSettingCounts), findsNothing);
       expect(find.text(text.cultureSettingCreators), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('has a Show pictures switch, off hides the download row', (
+      tester,
+    ) async {
+      final state = await pumpLanguages(tester);
+      await tapKey(tester, 'language-es');
+      final text = l10n(tester);
+      final pictures = find.byKey(const ValueKey<String>('pictures-switch'));
+      await tester.ensureVisible(pictures);
+      await tester.pumpAndSettle();
+      expect(find.text(text.culturePicturesShow), findsOneWidget);
+      expect(find.byType(PicturesDownloadTile), findsOneWidget);
+      expect(state.settings.cultureFor('es').pictures, isTrue);
+      await tapShown(tester, pictures);
+      expect(state.settings.cultureFor('es').pictures, isFalse);
+      // The other options of the language are as they were.
+      expect(state.settings.cultureFor('es').items, isTrue);
+      expect(find.byType(PicturesDownloadTile), findsNothing);
       expect(tester.takeException(), isNull);
     });
 
