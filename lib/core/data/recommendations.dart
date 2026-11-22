@@ -13,6 +13,7 @@ library;
 import '../models/level.dart';
 import '../models/reading.dart' show ReadingQuestion;
 import '../models/recommendation.dart';
+import 'creators.dart' show readCultureImage;
 import 'deck_parser.dart';
 import 'kinds_read.dart';
 
@@ -158,6 +159,7 @@ Recommendation? _readRecommendation(
     questions: List<ReadingQuestion>.unmodifiable(questions),
     legal: List<LegalRoute>.unmodifiable(legal),
     quotedIn: plainText(raw['quoted_in']),
+    image: readCultureImage(raw['image'], '$path.image', problems),
   );
 }
 

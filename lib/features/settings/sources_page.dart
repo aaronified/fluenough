@@ -2,10 +2,14 @@ import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_info.dart';
 import '../../app/app_scope.dart';
+import '../../app/app_state.dart' show AppState;
+import '../../app/culture.dart' show CultureState;
 import '../../app/deck_catalog.dart';
 import '../../app/links.dart';
 import '../../core/models/card.dart';
+import '../../core/models/creator.dart';
 import '../../core/models/deck.dart';
+import '../../core/models/recommendation.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/snack.dart';
@@ -126,9 +130,15 @@ typedef MediaCreditLine = ({String credit, String license});
 /// #523), by
 /// language, each credit and licence once. Languages with none are left
 /// out.
+///
+/// [pictures] are the credits of the portraits and posters of the language's
+/// people and works (approved mockup `culture-media`, screen 5): they join the
+/// language's row, one line each.
 List<({LanguageInfo language, List<MediaCreditLine> lines})> mediaCreditsOf(
-  List<DeckEntry> decks,
-) {
+  List<DeckEntry> decks, {
+  Iterable<({LanguageInfo language, MediaCreditLine line})> pictures =
+      const <({LanguageInfo language, MediaCreditLine line})>[],
+}) {
   final byLanguage =
       <String, ({LanguageInfo language, Set<MediaCreditLine> lines})>{};
   for (final entry in decks) {
@@ -144,10 +154,49 @@ List<({LanguageInfo language, List<MediaCreditLine> lines})> mediaCreditsOf(
       }
     }
   }
+  for (final (:language, :line) in pictures) {
+    byLanguage
+        .putIfAbsent(
+          language.code,
+          () => (language: language, lines: <MediaCreditLine>{}),
+        )
+        .lines
+        .add(line);
+  }
   return <({LanguageInfo language, List<MediaCreditLine> lines})>[
     for (final (:language, :lines) in byLanguage.values)
       (language: language, lines: lines.toList()),
   ];
+}
+
+/// The credit lines of the pictures of every language's people and works that
+/// have one: the author (else the credit) and the licence, as the creator card
+/// writes them.
+List<({LanguageInfo language, MediaCreditLine line})> pictureCreditsOf(
+  AppState state,
+  AppLocalizations l10n,
+) {
+  final out = <({LanguageInfo language, MediaCreditLine line})>[];
+  for (final language in state.languages) {
+    final creators =
+        state.creatorsOf(language.code)?.creators ?? const <Creator>[];
+    final works =
+        state.catalogView.recommendations[language.code]?.recommendations ??
+        const <Recommendation>[];
+    final images = <CreatorImage>[
+      for (final creator in creators) ?creator.image,
+      for (final work in works) ?work.image,
+    ];
+    for (final image in images) {
+      final credit = image.author ?? image.credit;
+      final licence = image.licence == 'public-domain'
+          ? l10n.cultureImagePublicDomain
+          : image.licence;
+      if (credit == null || licence == null) continue;
+      out.add((language: language, line: (credit: credit, license: licence)));
+    }
+  }
+  return out;
 }
 
 /// The credits of [card]'s own files: its recording's and its image's.
@@ -183,9 +232,13 @@ class SourcesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final decks = AppScope.of(context).decks;
+    final state = AppScope.of(context);
+    final decks = state.decks;
     final sources = sourcesOf(decks);
-    final media = mediaCreditsOf(decks);
+    final media = mediaCreditsOf(
+      decks,
+      pictures: pictureCreditsOf(state, l10n),
+    );
     // The script fonts are credited once one is on the phone (ADR-0042).
     final scriptFonts = AppScope.of(context).deckDownloads?.fonts;
     final fonts = scriptFonts?.hasFonts ?? false;

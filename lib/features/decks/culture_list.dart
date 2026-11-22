@@ -83,15 +83,11 @@ class CultureRows extends StatelessWidget {
     required this.language,
     required this.sections,
     required this.kind,
-    required this.openWork,
-    required this.onToggleWork,
   });
 
   final String language;
   final List<CultureListSection> sections;
   final String kind;
-  final String? openWork;
-  final ValueChanged<String> onToggleWork;
 
   @override
   Widget build(BuildContext context) {
@@ -120,8 +116,6 @@ class CultureRows extends StatelessWidget {
                     work: work,
                     language: language,
                     file: state.creatorsOf(language),
-                    open: work.id == openWork,
-                    onTap: () => onToggleWork(work.id),
                   ),
               ],
             ),
@@ -138,26 +132,18 @@ class CultureRows extends StatelessWidget {
 /// proverbs decks, books, films ...) with its count, and under it the rows.
 /// Nothing is hidden or locked by level: every row opens. [query] and
 /// [filter] are the Decks screen's one search, applied here; a kind with no
-/// match has no tab. [openWork] is the work whose row shows its whole
-/// briefing.
+/// match has no tab. A work's row opens its page.
 class CultureList extends StatefulWidget {
   const CultureList({
     super.key,
     required this.language,
     required this.query,
-    required this.openWork,
-    required this.onToggleWork,
     this.filter = const CultureFilter(),
   });
 
   final String language;
   final String query;
   final CultureFilter filter;
-
-  /// The work shown open, `''` for none.
-  final String? openWork;
-
-  final ValueChanged<String> onToggleWork;
 
   @override
   State<CultureList> createState() => _CultureListState();
@@ -219,8 +205,6 @@ class _CultureListState extends State<CultureList> {
               language: widget.language,
               sections: sections,
               kind: kind,
-              openWork: widget.openWork,
-              onToggleWork: widget.onToggleWork,
             ),
           ],
         );

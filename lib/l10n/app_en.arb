@@ -4267,7 +4267,7 @@
       }
     }
   },
-  "sourcesCreditLine": "{project, select, wiktionary{Word data, under CC BY-SA 4.0} commons{Recordings and pictures of words, each under its own licence and with its credit} openmoji{Drawings of what words mean, under CC BY-SA 4.0} wikipedia{How often words are used, counted from each language's Wikipedia, under CC BY-SA} tatoeba{Example sentences, under CC BY 2.0 FR} signwriting{Signs written in SignWriting, pictures drawn with the Sutton SignWriting fonts under SIL OFL 1.1} other{{project}}}",
+  "sourcesCreditLine": "{project, select, wiktionary{Word data, under CC BY-SA 4.0} commons{Recordings and pictures of words, people and works, each under its own licence and with its credit} openmoji{Drawings of what words mean, under CC BY-SA 4.0} wikipedia{How often words are used, counted from each language's Wikipedia, under CC BY-SA} tatoeba{Example sentences, under CC BY 2.0 FR} signwriting{Signs written in SignWriting, pictures drawn with the Sutton SignWriting fonts under SIL OFL 1.1} other{{project}}}",
   "@sourcesCreditLine": {
     "description": "The line under a credited project on the Sources screen: what the decks take from it, and its licence. Licence names stay as they are.",
     "placeholders": {
@@ -14880,18 +14880,46 @@
   "@reviewGuideQuestionsCount": {
     "description": "Third paragraph of the daily questions step of How reviewing works, above the choice of how many a day (docs/REVIEWING.md says the same)."
   },
-  "reviewGuideQuestionsBuilder": "Some cards come with a question from the deck builder, a doubt they could not settle, such as a gender or a tone. Those cards are asked first. The builder\u2019s question is a daily question of its own, under Question from the deck builder, with the whole card in front of you, its word, its meaning and every example, and its own Yes and No. It is also shown as a note on the card in a unit\u2019s review. Only questions that can be answered Yes or No are asked. If the builder\u2019s doubt turns out to be a mistake, open the card in a unit\u2019s review and use Suggest a change there, which the daily question does not offer.",
+  "reviewGuideQuestionsBuilder": "Some cards come with a doubt from the deck builder about one detail of the card, such as its IPA or its meaning. Those cards are asked first. The doubt is a daily question of its own, under Question from the deck builder: always the same plain question, such as \u201cIs the IPA on this card correct?\u201d, with the whole card in front of you and that detail marked. Yes means it is correct as it is. Needs a change opens a short list of what is wrong, always ending in Something else, and a line to say more. Sometimes the builder says what it was unsure of, shown under the question as context only. If a card needs a different text, open it in a unit\u2019s review and use Suggest a change there, which the daily question does not offer.",
   "@reviewGuideQuestionsBuilder": {
     "description": "Fourth paragraph of the daily questions step of How reviewing works (docs/REVIEWING.md says the same). “Question from the deck builder” must match reviewBuilderQuestion, “Suggest a change” reviewSuggest."
   },
   "reviewBuilderQuestion": "Question from the deck builder",
   "@reviewBuilderQuestion": {
-    "description": "Label of a question the deck's builder could not settle and asks the reviewer (docs/review-queue/README.md): above the question on its own daily-question step, and on the note in a card's review sheet."
+    "description": "Label of a question the deck's builder could not settle and asks the reviewer (docs/review-queue/README.md): above the question on its own daily-question step."
   },
   "reviewBuilderExamples": "Examples on this card",
   "@reviewBuilderExamples": {
     "description": "Label above the card's example sentences, on a daily question from the deck builder, where the reviewer needs them to judge the builder's question."
   },
+  "builderAskWord": "Is the word on this card correct?",
+  "@builderAskWord": {"description": "Fixed question of a builder question, the deck builder doubts this part of a card (wiki Plan-Builder-Questions-V2). Never built from any text of the card; the heading above the card."},
+  "builderAskReading": "Is the reading on this card correct?",
+  "@builderAskReading": {"description": "Fixed question of a builder question, the deck builder doubts this part of a card (wiki Plan-Builder-Questions-V2). Never built from any text of the card; the heading above the card."},
+  "builderAskIpa": "Is the IPA on this card correct?",
+  "@builderAskIpa": {"description": "Fixed question of a builder question, the deck builder doubts this part of a card (wiki Plan-Builder-Questions-V2). Never built from any text of the card; the heading above the card."},
+  "builderAskMeaning": "Is the meaning on this card correct?",
+  "@builderAskMeaning": {"description": "Fixed question of a builder question, the deck builder doubts this part of a card (wiki Plan-Builder-Questions-V2). Never built from any text of the card; the heading above the card."},
+  "builderAskExample": "Is the example on this card correct?",
+  "@builderAskExample": {"description": "Fixed question of a builder question, the deck builder doubts this part of a card (wiki Plan-Builder-Questions-V2). Never built from any text of the card; the heading above the card."},
+  "builderAskNote": "Is the note on this card correct?",
+  "@builderAskNote": {"description": "Fixed question of a builder question, the deck builder doubts this part of a card (wiki Plan-Builder-Questions-V2). Never built from any text of the card; the heading above the card."},
+  "builderAskOffence": "Is the offence rating on this card correct?",
+  "@builderAskOffence": {"description": "Fixed question of a builder question, the deck builder doubts this part of a card (wiki Plan-Builder-Questions-V2). Never built from any text of the card; the heading above the card."},
+  "builderAskAudio": "Is the recording on this card correct?",
+  "@builderAskAudio": {"description": "Fixed question of a builder question, the deck builder doubts this part of a card (wiki Plan-Builder-Questions-V2). Never built from any text of the card; the heading above the card."},
+  "builderAskUnit": "Is this card in the right unit?",
+  "@builderAskUnit": {"description": "Fixed question of a builder question, the deck builder doubts this part of a card (wiki Plan-Builder-Questions-V2). Never built from any text of the card; the heading above the card."},
+  "builderAskConcern": "The deck builder was unsure: {concern}",
+  "@builderAskConcern": {"description": "Context line under a builder question: what the deck builder was unsure of, a short plain statement shown as written. It is never the question.", "placeholders": {"concern": {"type": "String"}}},
+  "builderAskYes": "Yes, it is correct",
+  "@builderAskYes": {"description": "Button of a builder question: the detail asked about is correct as it is (never remove)."},
+  "builderAskNeedsChange": "Needs a change",
+  "@builderAskNeedsChange": {"description": "Button of a builder question: opens the list of what needs a change."},
+  "builderAskSomethingElse": "Something else",
+  "@builderAskSomethingElse": {"description": "Last option of the list of what needs a change on a builder question."},
+  "builderAskOffenceOption": "The rating does not fit",
+  "@builderAskOffenceOption": {"description": "Option of a builder question about the offence rating, in place of the label Offensive: the rating, not the word, is in doubt. The answer key stays offensive."},
   "reviewQuestionsPerDayTitle": "Questions a day",
   "@reviewQuestionsPerDayTitle": {
     "description": "Title of the choice of how many daily questions a reviewer wants, in How reviewing works and in Settings under Reviewing."
@@ -16990,6 +17018,26 @@
   "cultureImageLicenceLink": "Licence and source",
   "@cultureImageLicenceLink": {
     "description": "Link under a creator’s picture to its licence page."
+  },
+  "cultureImageOpen": "Open the picture full screen",
+  "@cultureImageOpen": {
+    "description": "Spoken hint of a poster or portrait that opens the full-screen viewer when tapped."
+  },
+  "culturePicturesShow": "Show pictures",
+  "@culturePicturesShow": {
+    "description": "Switch in a language's Culture group: show the posters of works and the portraits of people, and fetch them when first shown."
+  },
+  "culturePicturesDownload": "Download pictures",
+  "@culturePicturesDownload": {
+    "description": "Row in a language's Culture group, under Show pictures: downloads the language's posters and portraits so that they show offline. The size of the download is at its end."
+  },
+  "culturePicturesDownloading": "Downloading pictures",
+  "@culturePicturesDownloading": {
+    "description": "Spoken label of the progress ring on the Download pictures row."
+  },
+  "culturePicturesDownloaded": "Pictures downloaded",
+  "@culturePicturesDownloaded": {
+    "description": "Spoken label of the tick on the Download pictures row when the download is done."
   },
   "cultureLinkCopied": "Link copied",
   "@cultureLinkCopied": {

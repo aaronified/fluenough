@@ -36,6 +36,7 @@ import '../placement/find_level_flow.dart';
 import '../placement/skill_labels_line.dart';
 import 'delete_language_data_dialog.dart';
 import 'language_views.dart';
+import 'pictures_download_tile.dart';
 import 'skill_widgets.dart';
 import 'verification_mark.dart';
 
@@ -1196,6 +1197,16 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                 padding: inset,
                 onChanged: (on) => choose(options.copyWith(creators: on)),
               ),
+              GroupedTile.toggle(
+                key: const ValueKey<String>('pictures-switch'),
+                title: l10n.culturePicturesShow,
+                subtitleOn: '',
+                subtitleOff: '',
+                value: options.pictures,
+                padding: inset,
+                onChanged: (on) => choose(options.copyWith(pictures: on)),
+              ),
+              if (options.pictures) PicturesDownloadTile(language: _code),
             ],
           ],
         ),

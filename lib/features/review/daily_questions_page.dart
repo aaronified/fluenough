@@ -5,6 +5,7 @@ import '../../app/app_state.dart';
 import '../../app/routes.dart';
 import '../../core/models/deck.dart';
 import '../../core/review/card_fields.dart' show withReading;
+import '../../core/review/facets.dart';
 import '../../core/review/review_question.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -12,6 +13,7 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import 'daily_questions.dart';
+import 'facet_labels.dart';
 
 /// Opens the daily questions (#519).
 Future<void> showDailyQuestions(BuildContext context) =>
@@ -102,11 +104,15 @@ class _DailyQuestionsPageState extends State<DailyQuestionsPage> {
 
   Future<void> _no(ReviewQuestion question, QuestionAnswer answer) async {
     final l10n = AppLocalizations.of(context)!;
-    // A builder question has no fixed reasons: a No is the answer itself.
-    if (question.kind.reasons.isEmpty) {
+    final reasons = question.reasons;
+    // A question with no reasons (an old builder point that names no facet)
+    // takes the No as the answer itself.
+    if (reasons.isEmpty) {
       await _answer(question, answer);
       return;
     }
+    final facet = question.facet;
+    final builder = question.kind == QuestionKind.builder;
     final picked = await showModalBottomSheet<(String?, String)>(
       context: context,
       showDragHandle: true,
@@ -116,7 +122,13 @@ class _DailyQuestionsPageState extends State<DailyQuestionsPage> {
         title: answer == QuestionAnswer.flag
             ? l10n.reviewQuestionWhyFlag
             : l10n.reviewQuestionWhyNo,
-        reasons: question.kind.reasons,
+        reasons: reasons,
+        labelOf: builder && facet != null
+            ? (key) => builderOptionLabel(l10n, facet, key)
+            : (key) => reasonLabel(l10n, key),
+        // A builder question needs exactly one option (the last is Something
+        // else); the other kinds take a No without one.
+        reasonRequired: builder,
       ),
     );
     if (picked == null || !mounted) return;
@@ -259,7 +271,7 @@ class _QuestionCard extends StatelessWidget {
       QuestionKind.confusable => l10n.reviewQuestionConfusable(word),
       QuestionKind.sound => l10n.reviewQuestionSound,
       QuestionKind.image => l10n.reviewQuestionImage(word),
-      QuestionKind.builder => question.asked ?? '',
+      QuestionKind.builder => builderAskText(l10n, question.facet),
     };
     final about = switch (question.kind) {
       QuestionKind.example => l10n.reviewQuestionExampleFor(word),
@@ -286,9 +298,17 @@ class _QuestionCard extends StatelessWidget {
               header: true,
               child: Text(prompt, style: theme.textTheme.titleLarge),
             ),
-            if (question.kind == QuestionKind.builder)
-              _BuilderCard(question: question, language: language)
-            else if (question.kind == QuestionKind.meaning) ...<Widget>[
+            if (question.kind == QuestionKind.builder) ...<Widget>[
+              _BuilderCard(question: question, language: language),
+              // Context only: shown as written, never the question.
+              if (question.concern != null)
+                Text(
+                  l10n.builderAskConcern(question.concern!),
+                  style: theme.textTheme.bodyMedium!.copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ),
+            ] else if (question.kind == QuestionKind.meaning) ...<Widget>[
               TargetText(
                 question.word,
                 language: language,
@@ -341,9 +361,10 @@ class _QuestionCard extends StatelessWidget {
   }
 }
 
-/// The card a builder question is about, in full: its word, reading and
-/// meaning, and every example with its reading and translation, so that
-/// the reviewer can judge whatever the builder asks.
+/// The card a builder question is about, in full: its word, reading, IPA and
+/// meaning, its notes, and every example with its reading and translation, so
+/// that the reviewer can judge whatever the builder doubts. The facet asked
+/// about is marked (for an example with a ref, that one example alone).
 class _BuilderCard extends StatelessWidget {
   const _BuilderCard({required this.question, required this.language});
 
@@ -355,25 +376,70 @@ class _BuilderCard extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
+    final facet = question.facet;
+    final ref = question.ref;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 8,
       children: <Widget>[
-        TargetText(
-          question.word,
-          language: language,
-          fontSize: 32,
-          textAlign: TextAlign.start,
+        // What has no part of its own on the card is named, marked.
+        if (facet == Facet.unitPlacement ||
+            facet == Facet.offenceRating ||
+            facet == Facet.audio)
+          _Marked(
+            child: Text(
+              facetTitle(l10n, facet!),
+              style: theme.textTheme.labelLarge!.copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
+            ),
+          ),
+        _Marked(
+          on: facet == Facet.word,
+          child: TargetText(
+            question.word,
+            language: language,
+            fontSize: 32,
+            textAlign: TextAlign.start,
+          ),
         ),
         if (question.reading != null)
-          Text(
-            question.reading!,
-            style: theme.textTheme.titleMedium!.copyWith(
-              color: scheme.onSurfaceVariant,
+          _Marked(
+            on: facet == Facet.reading,
+            child: Text(
+              question.reading!,
+              style: theme.textTheme.titleMedium!.copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
+            ),
+          ),
+        if (question.ipa != null && question.ipa!.trim().isNotEmpty)
+          _Marked(
+            on: facet == Facet.ipa,
+            child: Text(
+              question.ipa!,
+              style: theme.textTheme.bodyLarge!.copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
             ),
           ),
         if (question.meaning != null)
-          Text(question.meaning!, style: theme.textTheme.titleLarge),
+          _Marked(
+            on: facet == Facet.meaning,
+            child: Text(question.meaning!, style: theme.textTheme.titleLarge),
+          ),
+        if (question.notes.isNotEmpty)
+          _Marked(
+            on: facet == Facet.note,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 4,
+              children: <Widget>[
+                for (final note in question.notes)
+                  Text(note, style: theme.textTheme.bodyMedium),
+              ],
+            ),
+          ),
         if (question.examples.isNotEmpty) ...<Widget>[
           const SizedBox(height: 4),
           Text(
@@ -383,29 +449,63 @@ class _BuilderCard extends StatelessWidget {
             ),
           ),
           for (final example in question.examples)
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: 2,
-              children: <Widget>[
-                TargetText(
-                  example.target,
-                  language: language,
-                  fontSize: 22,
-                  textAlign: TextAlign.start,
-                ),
-                if (example.reading != null)
-                  Text(
-                    example.reading!,
-                    style: theme.textTheme.bodyMedium!.copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
+            _Marked(
+              on:
+                  facet == Facet.example &&
+                  (ref == null || pointHash(example.target) == ref),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 2,
+                children: <Widget>[
+                  TargetText(
+                    example.target,
+                    language: language,
+                    fontSize: 22,
+                    textAlign: TextAlign.start,
                   ),
-                if (example.native != null)
-                  Text(example.native!, style: theme.textTheme.bodyLarge),
-              ],
+                  if (example.reading != null)
+                    Text(
+                      example.reading!,
+                      style: theme.textTheme.bodyMedium!.copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  if (example.native != null)
+                    Text(example.native!, style: theme.textTheme.bodyLarge),
+                ],
+              ),
             ),
         ],
       ],
+    );
+  }
+}
+
+/// A part of the card the question is about: a bar on its start edge, so
+/// that the mark does not depend on colour contrast of the text, and the
+/// part's own semantics unchanged. Not on, the child as it is.
+class _Marked extends StatelessWidget {
+  const _Marked({required this.child, this.on = true});
+
+  final Widget child;
+  final bool on;
+
+  @override
+  Widget build(BuildContext context) {
+    if (!on) return child;
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        border: BorderDirectional(
+          start: BorderSide(
+            color: Theme.of(context).colorScheme.primary,
+            width: 4,
+          ),
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsetsDirectional.only(start: 12),
+        child: child,
+      ),
     );
   }
 }
@@ -434,18 +534,22 @@ class _Buttons extends StatelessWidget {
             minimumSize: const Size.fromHeight(AppSizes.primaryButton),
           ),
           onPressed: () => onAnswer(QuestionAnswer.yes),
-          child: Text(l10n.reviewQuestionYes),
+          child: Text(
+            question.kind == QuestionKind.builder
+                ? l10n.builderAskYes
+                : l10n.reviewQuestionYes,
+          ),
         ),
         OutlinedButton(
           style: OutlinedButton.styleFrom(
             minimumSize: const Size.fromHeight(AppSizes.primaryButton),
           ),
           onPressed: () => onAnswer(negative),
-          child: Text(
-            negative == QuestionAnswer.flag
-                ? l10n.reviewQuestionFlag
-                : l10n.reviewQuestionNo,
-          ),
+          child: Text(switch (question.kind) {
+            QuestionKind.builder => l10n.builderAskNeedsChange,
+            _ when negative == QuestionAnswer.flag => l10n.reviewQuestionFlag,
+            _ => l10n.reviewQuestionNo,
+          }),
         ),
         TextButton(onPressed: onSkip, child: Text(l10n.reviewQuestionSkip)),
       ],
@@ -455,10 +559,21 @@ class _Buttons extends StatelessWidget {
 
 /// Why it is not right: one fixed reason, and a line for people.
 class _ReasonSheet extends StatefulWidget {
-  const _ReasonSheet({required this.title, required this.reasons});
+  const _ReasonSheet({
+    required this.title,
+    required this.reasons,
+    required this.labelOf,
+    this.reasonRequired = false,
+  });
 
   final String title;
   final List<String> reasons;
+
+  /// The words of a reason key.
+  final String Function(String key) labelOf;
+
+  /// Whether Save waits for one reason to be picked.
+  final bool reasonRequired;
 
   @override
   State<_ReasonSheet> createState() => _ReasonSheetState();
@@ -474,10 +589,13 @@ class _ReasonSheetState extends State<_ReasonSheet> {
     super.dispose();
   }
 
+  void _save() => Navigator.of(context).pop((_reason, _why.text.trim()));
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
+    final canSave = !widget.reasonRequired || _reason != null;
     return Padding(
       padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
       child: SingleChildScrollView(
@@ -498,7 +616,7 @@ class _ReasonSheetState extends State<_ReasonSheet> {
                   for (final reason in widget.reasons)
                     RadioListTile<String>(
                       value: reason,
-                      title: Text(reasonLabel(l10n, reason)),
+                      title: Text(widget.labelOf(reason)),
                       contentPadding: EdgeInsets.zero,
                     ),
                 ],
@@ -516,8 +634,7 @@ class _ReasonSheetState extends State<_ReasonSheet> {
               style: FilledButton.styleFrom(
                 minimumSize: const Size.fromHeight(AppSizes.primaryButton),
               ),
-              onPressed: () =>
-                  Navigator.of(context).pop((_reason, _why.text.trim())),
+              onPressed: canSave ? _save : null,
               child: Text(l10n.reviewQuestionSave),
             ),
           ],

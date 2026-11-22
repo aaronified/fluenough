@@ -38,7 +38,7 @@ class LoggedAnswer {
   /// The day it was answered, `YYYY-MM-DD`: the day it counts for.
   final String on;
 
-  /// One of [QuestionKind.reasons] for an answer that is not Yes, or null.
+  /// One of [ReviewQuestion.reasons] for an answer that is not Yes, or null.
   final String? reason;
 
   /// What the reviewer wrote, for the owner reading the mail. Never read
@@ -181,7 +181,7 @@ class QuestionLog {
       reason:
           answer != QuestionAnswer.yes &&
               reason != null &&
-              question.kind.reasons.contains(reason)
+              question.reasons.contains(reason)
           ? reason
           : null,
       why: answer == QuestionAnswer.yes ? '' : why.trim(),
