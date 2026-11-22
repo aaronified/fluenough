@@ -23,10 +23,13 @@ String databaseFileName(Profile profile) => 'fluenough-${profile.id}';
 /// The progress is read from the review log in the background (#857): wait
 /// for its `ready` before showing or changing it. `AppState` does. The
 /// replay runs on an isolate; [onStage] hears its stages for the startup
-/// timing.
+/// timing. With [awaitSkills] the replay waits for the catalog's skill map
+/// (`DatabaseProgress.opening`), which `AppState` hands over once the
+/// catalog is read.
 Future<ProfileStorage> openProfileStorage(
   Profile profile, {
   void Function(String stage)? onStage,
+  bool awaitSkills = false,
 }) async {
   try {
     final db = AppDatabase(
@@ -47,6 +50,7 @@ Future<ProfileStorage> openProfileStorage(
         // kept for the next launch (#857, ADR-0051).
         snapshotAfter: const Duration(seconds: 45),
         onStage: onStage,
+        awaitSkills: awaitSkills,
       ),
       settings: (await StoredSettings.open(db)).settings,
     );

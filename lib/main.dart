@@ -83,6 +83,9 @@ Future<void> main() async {
   final storage = await openProfileStorage(
     Profile.defaultProfile,
     onStage: marks.mark,
+    // The review log is replayed under the catalog's skill map, which
+    // `AppState` hands over once the catalog is read (#1699).
+    awaitSkills: true,
   );
   marks.mark('db opened');
   // A report's app log is written to shared/ in the cache, the folder

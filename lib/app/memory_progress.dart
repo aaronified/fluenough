@@ -201,6 +201,11 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   @visibleForTesting
   static int replays = 0;
 
+  /// How many times the log was replayed in place by a change to what memory
+  /// holds ([_replace]), for tests: opening with the skill map the app will
+  /// use must leave it at zero (#1699).
+  static int replaces = 0;
+
   /// Progress rebuilt from [events], oldest first, [leechActions] and the
   /// [fitted] parameters, by replaying them as the database does
   /// (ADR-0005, [replayReviews]).
@@ -249,13 +254,14 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     OpenedLog opened, {
     required Map<SkillKey, FittedParameters> fitted,
     List<LoggedReview> withdrawn = const <LoggedReview>[],
+    SkillMap skills = const SkillMap(),
   }) {
     replays++;
     final replayed = opened.memory;
     return MemoryProgress._opened(opened.index)
       .._withdrawals.addAll(opened.withdrawals)
       .._withdrawn.addAll(withdrawn)
-      .._skills = const SkillMap()
+      .._skills = skills
       .._parameters = SkillParameters(
         fitted: fitted,
         lastStudied: opened.lastStudied,
@@ -571,9 +577,44 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     _replace(inTimeOrder(events.map(logged)), actionsInTimeOrder(leechActions));
   }
 
+  /// Makes [value] the skill map and replays the log under it on [run], an
+  /// isolate by default, so that a change of the decks never holds the UI
+  /// isolate (#1699). The result is what the setter's replay in place gives,
+  /// since it is the same replay. If a review, a fit or an import changes
+  /// memory while the isolate works, its result is out of date and the replay
+  /// is made again; nothing is applied from a stale replay. Returns once
+  /// [value] is in use.
+  Future<void> replaceSkills(
+    SkillMap value, {
+    SkillsRunner run = skillsInIsolate,
+  }) async {
+    while (value != _skills) {
+      final tick = _tick;
+      final reviews = _log.map(logged).toList();
+      final actions = _leechActions.toList();
+      final fitted = _parameters.fitted;
+      final result = await run(
+        SkillsJob(
+          reviews: reviews,
+          leechActions: actions,
+          fitted: fitted,
+          skills: value,
+        ),
+      );
+      if (tick != _tick) continue;
+      _skills = value;
+      _parameters = SkillParameters(
+        fitted: fitted,
+        lastStudied: result.lastStudied,
+      );
+      _apply(result.replayed, actions);
+    }
+  }
+
   /// [reviews] and [actions] are oldest first. The languages' last studies
   /// are taken from [reviews].
   void _replace(List<LoggedReview> input, List<LeechAction> actions) {
+    replaces++;
     // The credit the learner took back is left out, and kept aside for an
     // export: the log memory shows is the log the replay reads.
     final split = withoutWithdrawnCredit(input, _withdrawals);
@@ -594,6 +635,12 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       skills: _skills,
       parameters: _parameters,
     );
+    _apply(replayed, actions);
+  }
+
+  /// Makes [replayed] what memory holds, with [actions] as its leech
+  /// actions, and tells listeners.
+  void _apply(Replayed replayed, List<LeechAction> actions) {
     _log
       ..clear()
       ..addAll(replayed.events);

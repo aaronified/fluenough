@@ -22,10 +22,16 @@ class OpenJob {
     required this.fitted,
     this.encode = false,
     this.withdrawals = const <PlacementWithdrawal>[],
+    this.skills = const SkillMap(),
   });
 
   final List<LoggedReview> reviews;
   final List<LeechAction> leechActions;
+
+  /// The skill map the memory replay credits implied skills with (the
+  /// catalog's cards that ask for what is heard, the script decks). The
+  /// state cache's replay never uses it. Empty until the catalog is read.
+  final SkillMap skills;
 
   /// The placement credit the learner took back: the reviews they name are
   /// left out of the replay, and stay in [reviews] and the database.
@@ -110,7 +116,7 @@ OpenedLog openLog(OpenJob job) {
   final memory = replayReviews(
     fromEvents,
     effects: LeechEffects(job.leechActions),
-    skills: const SkillMap(),
+    skills: job.skills,
     parameters: SkillParameters(fitted: job.fitted, lastStudied: lastStudied),
   );
   Uint8List? snapshot;
@@ -220,5 +226,66 @@ Future<OpenedLog> replayInIsolate(OpenJob job) async {
     return await Isolate.run(() => openLog(job));
   } catch (_) {
     return openLog(job);
+  }
+}
+
+/// What changing the skill map replays (#1699): the reviews as memory holds
+/// them, oldest first, with the leech actions and the fitted parameters.
+/// Plain data, so that it crosses to an isolate.
+class SkillsJob {
+  const SkillsJob({
+    required this.reviews,
+    required this.leechActions,
+    required this.fitted,
+    required this.skills,
+  });
+
+  final List<LoggedReview> reviews;
+  final List<LeechAction> leechActions;
+  final Map<SkillKey, FittedParameters> fitted;
+  final SkillMap skills;
+}
+
+/// What [replayWithSkills] works out: the replay, and each language's last
+/// study, which the new parameters carry.
+class SkillsReplayed {
+  const SkillsReplayed({required this.replayed, required this.lastStudied});
+
+  final Replayed replayed;
+  final Map<String, DateTime> lastStudied;
+}
+
+/// Replays [job]'s log with its skill map, as `MemoryProgress` always has
+/// when the map changed: the same call, only where it runs differs. Pure.
+SkillsReplayed replayWithSkills(SkillsJob job) {
+  final lastStudied = SkillParameters.lastStudiedIn(
+    <({String cardId, DateTime at})>[
+      for (final r in job.reviews) (cardId: r.key.cardId, at: r.at),
+    ],
+  );
+  final replayed = replayReviews(
+    job.reviews,
+    effects: LeechEffects(job.leechActions),
+    skills: job.skills,
+    parameters: SkillParameters(fitted: job.fitted, lastStudied: lastStudied),
+  );
+  return SkillsReplayed(replayed: replayed, lastStudied: lastStudied);
+}
+
+/// Runs a [SkillsJob], somewhere.
+typedef SkillsRunner = Future<SkillsReplayed> Function(SkillsJob job);
+
+/// [replayWithSkills] on the calling isolate: for tests.
+Future<SkillsReplayed> skillsInPlace(SkillsJob job) async =>
+    replayWithSkills(job);
+
+/// [replayWithSkills] on an isolate of its own, so that a change of the skill
+/// map never holds the UI isolate. If the isolate cannot start it replays in
+/// place, with the same result.
+Future<SkillsReplayed> skillsInIsolate(SkillsJob job) async {
+  try {
+    return await Isolate.run(() => replayWithSkills(job));
+  } catch (_) {
+    return replayWithSkills(job);
   }
 }

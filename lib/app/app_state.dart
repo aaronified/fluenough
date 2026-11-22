@@ -78,6 +78,7 @@ import 'links.dart';
 import 'log_files.dart';
 import 'mail_share.dart';
 import 'fsrs_tuner.dart';
+import 'database_progress.dart';
 import 'memory_progress.dart';
 import 'startup_marks.dart';
 import 'pacing.dart';
@@ -1198,6 +1199,9 @@ class AppState extends ChangeNotifier {
         _status = CatalogStatus.ready;
         _loadError = null;
         _mapSkills();
+        // A different skill map is replayed on an isolate: wait for it, so
+        // that the decks and the progress change together.
+        if (progress case final DatabaseProgress p) await p.skillsSettled;
         _logKindProblems();
         notifyListeners();
         await refreshVoices();
@@ -1453,10 +1457,12 @@ class AppState extends ChangeNotifier {
       final downloads = deckDownloads;
       if (downloads != null) await _span('downloads.open', downloads.open);
       _catalog = await _span('catalog', deckCatalog.load);
+      // The skill map first: the review log is replayed under it, so that
+      // no replay is left to make on the UI isolate (#1699).
+      _mapSkills();
       await _span('progress ready (waited)', () => progressReady);
       await recommendationProgress.load();
       _status = CatalogStatus.ready;
-      _mapSkills();
       log.event('Decks loaded: ${decks.length}');
       marks?.count('loaded', <String, Object?>{
         'decks': decks.length,
@@ -1470,6 +1476,13 @@ class AppState extends ChangeNotifier {
       _loadError = error;
       _status = CatalogStatus.failed;
       log.error(describeError('Decks failed to load', error, stack));
+      // The review log waits for a skill map: none can come now, so it is
+      // given an empty one rather than left waiting.
+      try {
+        progress.skills = const SkillMap();
+      } on Object catch (e, s) {
+        log.error(describeError('Skill map release failed', e, s));
+      }
     }
     notifyListeners();
     // Never asks: only a permission granted before lets the phone be

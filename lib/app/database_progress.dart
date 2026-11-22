@@ -34,6 +34,8 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     this._app,
     this._snapshotAfter,
     this._stage,
+    this._skillsGate,
+    this._skillsRunner,
   ) {
     _memory.addListener(notifyListeners);
   }
@@ -47,6 +49,8 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     String app = AppInfo.version,
     Duration? snapshotAfter,
     void Function(String stage)? onStage,
+    bool awaitSkills = false,
+    SkillsRunner skillsRunner = skillsInIsolate,
   }) async {
     final progress = DatabaseProgress.opening(
       db,
@@ -55,6 +59,8 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       app: app,
       snapshotAfter: snapshotAfter,
       onStage: onStage,
+      awaitSkills: awaitSkills,
+      skillsRunner: skillsRunner,
     );
     await progress.ready;
     return progress;
@@ -81,6 +87,14 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   /// is made once the learner has paused for [snapshotAfter] (never, when it
   /// is null) and by [saveSnapshot].
   ///
+  /// With [awaitSkills] the replay of the log waits for the first skill map
+  /// ([skills]'s setter, which `AppState` calls once the catalog is read), so
+  /// that the replay, or the kept snapshot of it, is made under the map the
+  /// app will use and nothing replays on the UI isolate afterwards (#1699).
+  /// The wait ends after [skillsWait] without one, and the replay goes ahead
+  /// with an empty map. A later map that differs is replayed on an isolate by
+  /// [skillsRunner] ([replaceSkills]).
+  ///
   /// [onStage] hears when the replay is back ('review log replayed') or the
   /// snapshot is ('snapshot loaded'), and when the state cache is written
   /// ('state cache written'), for the startup timing.
@@ -91,6 +105,8 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     String app = AppInfo.version,
     Duration? snapshotAfter,
     void Function(String stage)? onStage,
+    bool awaitSkills = false,
+    SkillsRunner skillsRunner = skillsInIsolate,
   }) {
     final progress = DatabaseProgress._(
       db,
@@ -101,6 +117,8 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       app,
       snapshotAfter,
       onStage,
+      awaitSkills ? Completer<SkillMap>() : null,
+      skillsRunner,
     );
     final ready = progress._read();
     progress._ready = ready;
@@ -138,12 +156,27 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       );
     } finally {
       _isReady = true;
+      // A map given in the instant between the read and here is used now.
+      final pending = _pendingSkills;
+      if (pending != null && pending != _memory.skills) {
+        _memory.skills = pending;
+      }
     }
   }
 
   Future<void> _readLog() async {
     final log = _log;
     final fitted = await log.fitted();
+    // The skill map, when the replay is to be made under it (#1699).
+    final gate = _skillsGate;
+    var skills = const SkillMap();
+    if (gate != null) {
+      skills = await gate.future.timeout(
+        skillsWait,
+        onTimeout: () => const SkillMap(),
+      );
+      _gateClosed = true;
+    }
     // Reading the kept snapshot, or else sorting, replaying (twice) and
     // indexing the whole log, is one job on an isolate; its result is what
     // the state cache and memory both come from.
@@ -152,6 +185,7 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       app: _app,
       run: _replayer,
       fromSnapshot: _snapshotter,
+      skills: skills,
     );
     final opened = opening.opened;
     _stage?.call(
@@ -164,7 +198,9 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     if (stamp != null && bytes != null) {
       // Kept for the next launch, behind this read and before every write
       // after it; a failure costs only that launch's replay.
-      _snapshotTask(() => log.putSnapshot(stamp, bytes, app: _app));
+      _snapshotTask(
+        () => log.putSnapshot(stamp, bytes, app: _app, skills: skills),
+      );
     }
     // The reviews the withdrawals leave out of the replay are read apart, a
     // second at a time, for an export; nothing at all without a withdrawal.
@@ -175,13 +211,30 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       opened,
       fitted: fitted,
       withdrawn: withdrawn,
+      skills: skills,
     );
     final discarded = _memory;
     discarded.removeListener(notifyListeners);
     _memory = memory..addListener(notifyListeners);
     discarded.dispose();
+    // A map given while the log was being read that is not the one it was
+    // replayed under: as before, replayed now, in place.
+    final pending = _pendingSkills;
+    if (pending != null && pending != memory.skills) memory.skills = pending;
     notifyListeners();
   }
+
+  /// How long the replay waits for the first skill map ([awaitSkills]).
+  static const Duration skillsWait = Duration(seconds: 30);
+
+  final Completer<SkillMap>? _skillsGate;
+  final SkillsRunner _skillsRunner;
+  bool _gateClosed = false;
+  SkillMap? _pendingSkills;
+  Future<void>? _skillsApplying;
+
+  /// Completes once the last skill map given has been replayed into memory.
+  Future<void> get skillsSettled => _skillsApplying ?? Future<void>.value();
 
   final AppDatabase _db;
   final ReviewLog _log;
@@ -240,8 +293,38 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   @override
   SkillMap get skills => _memory.skills;
 
+  /// Before the log is read, the map is kept for the read ([awaitSkills]) or
+  /// for the moment it is done. After it, a map equal to the one in use does
+  /// nothing, and a different one is replayed on an isolate
+  /// ([MemoryProgress.replaceSkills]), never on the UI isolate (#1699).
   @override
-  set skills(SkillMap value) => _memory.skills = value;
+  set skills(SkillMap value) {
+    final gate = _skillsGate;
+    if (gate != null && !_gateClosed) {
+      _pendingSkills = value;
+      if (!gate.isCompleted) gate.complete(value);
+      return;
+    }
+    if (!_isReady) {
+      _pendingSkills = value;
+      return;
+    }
+    final memory = _memory;
+    if (value == memory.skills) return;
+    _skillsApplying = (_skillsApplying ?? Future<void>.value())
+        .then<void>((_) => memory.replaceSkills(value, run: _skillsRunner))
+        .then<void>((_) => _scheduleSnapshot())
+        .catchError((Object error, StackTrace stack) {
+          FlutterError.reportError(
+            FlutterErrorDetails(
+              exception: error,
+              stack: stack,
+              library: 'fluenough progress',
+              context: ErrorDescription('while replaying with new skills'),
+            ),
+          );
+        });
+  }
 
   @override
   SkillParameters get parameters => _memory.parameters;
@@ -520,7 +603,11 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
         _snapshotAgain = false;
         try {
           await _writes;
-          _snapshotKept = await _log.saveSnapshot(app: _app, run: _replayer);
+          _snapshotKept = await _log.saveSnapshot(
+            app: _app,
+            run: _replayer,
+            skills: _memory.skills,
+          );
         } on Object catch (error) {
           _snapshotKept = false;
           debugPrint('Could not make the review-log snapshot: $error');

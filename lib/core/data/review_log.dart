@@ -7,6 +7,7 @@ import '../scheduling/ask.dart';
 import '../scheduling/replay.dart';
 import '../scheduling/fsrs.dart';
 import '../scheduling/placement_withdrawal.dart';
+import '../scheduling/skill_map.dart';
 import '../scheduling/skill_parameters.dart';
 import 'card_state_repository.dart';
 import 'log_jsonl.dart';
@@ -112,12 +113,14 @@ class ReviewLog {
   Future<OpenedLog> openReplay({
     required Map<SkillKey, FittedParameters> fitted,
     ReplayRunner run = replayInIsolate,
+    SkillMap skills = const SkillMap(),
   }) async {
     final job = OpenJob(
       reviews: await loggedRows(),
       leechActions: await leechActions(),
       fitted: fitted,
       withdrawals: await withdrawals(),
+      skills: skills,
     );
     replays++;
     return run(job);
@@ -143,6 +146,7 @@ class ReviewLog {
     required String app,
     ReplayRunner run = replayInIsolate,
     SnapshotRunner fromSnapshot = snapshotInIsolate,
+    SkillMap skills = const SkillMap(),
   }) async {
     final actions = await leechActions();
     final taken = await withdrawals();
@@ -153,6 +157,7 @@ class ReviewLog {
         fitted: fitted,
         leechActions: actions,
         withdrawals: taken,
+        skills: skills,
       );
       if (await _db.replaySnapshotsDao.stamp() == stamp.text) {
         final bytes = await _db.replaySnapshotsDao.payload();
@@ -185,6 +190,7 @@ class ReviewLog {
       fitted: fitted,
       encode: stamp != null,
       withdrawals: taken,
+      skills: skills,
     );
     replays++;
     final opened = await run(job);
@@ -205,6 +211,7 @@ class ReviewLog {
     Map<SkillKey, FittedParameters>? fitted,
     List<LeechAction>? leechActions,
     List<PlacementWithdrawal>? withdrawals,
+    SkillMap skills = const SkillMap(),
   }) async {
     final row = await _db
         .customSelect(
@@ -229,6 +236,7 @@ class ReviewLog {
       leechActions: leechActions ?? await this.leechActions(),
       fitted: fitted ?? await this.fitted(),
       withdrawals: withdrawals ?? await this.withdrawals(),
+      skills: skills,
     );
   }
 
@@ -240,8 +248,9 @@ class ReviewLog {
     LogStamp stamp,
     Uint8List bytes, {
     required String app,
+    SkillMap skills = const SkillMap(),
   }) => _db.transaction(() async {
-    if (await currentStamp(app: app) != stamp) return false;
+    if (await currentStamp(app: app, skills: skills) != stamp) return false;
     await _db.replaySnapshotsDao.put(
       stamp: stamp.text,
       payload: bytes,
@@ -259,6 +268,7 @@ class ReviewLog {
     required String app,
     ReplayRunner run = replayInIsolate,
     int pageSize = 4000,
+    SkillMap skills = const SkillMap(),
   }) async {
     final fitted = await this.fitted();
     final actions = await leechActions();
@@ -268,6 +278,7 @@ class ReviewLog {
       fitted: fitted,
       leechActions: actions,
       withdrawals: taken,
+      skills: skills,
     );
     final rows = <LoggedReview>[];
     for (var after = 0; ;) {
@@ -286,10 +297,12 @@ class ReviewLog {
         fitted: fitted,
         encode: true,
         withdrawals: taken,
+        skills: skills,
       ),
     );
     final bytes = opened.snapshot;
-    return bytes != null && await putSnapshot(stamp, bytes, app: app);
+    return bytes != null &&
+        await putSnapshot(stamp, bytes, app: app, skills: skills);
   }
 
   /// How many snapshots have been made from the log after a change, for
