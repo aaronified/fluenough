@@ -20,8 +20,8 @@ import '../features/profiles/profiles_page.dart';
 import '../features/report/report_page.dart';
 import '../features/review/offensive_review_page.dart';
 import '../features/review/review_page.dart';
-import '../features/review/reviewed_not_sent_page.dart';
 import '../features/review/reviewed_sent_page.dart';
+import '../features/review/reviews_to_send_page.dart';
 import '../features/review/waiting_page.dart';
 import '../features/script/script_guide_page.dart';
 import '../features/situations/situation_inspect_page.dart';
@@ -174,7 +174,9 @@ abstract final class AppRoutes {
   /// What waits for review in the reviewer's languages.
   static const String waitingForReview = '/waiting-for-review';
 
-  /// The reviews kept on this phone, not sent yet, grouped by deck (#471).
+  /// Reviews to send: the one home for sending reviews, and the mails sent
+  /// (owner, 2026-11-22). It was "Reviewed, not sent" (#471); the route keeps
+  /// its name.
   static const String reviewedNotSent = '/reviewed-not-sent';
 
   /// What became of the suggestions the reviewer sent (#471).
@@ -244,7 +246,7 @@ abstract final class AppRoutes {
       report when args is ReportRequest => ReportPage(request: args),
       review when args is String => ReviewPage(deckId: args),
       waitingForReview => const WaitingForReviewPage(),
-      reviewedNotSent => const ReviewedNotSentPage(),
+      reviewedNotSent => const ReviewsToSendPage(),
       reviewedSent => const ReviewedSentPage(),
       offensiveReview when args is String => OffensiveReviewPage(
         language: args,
@@ -358,7 +360,7 @@ abstract final class AppNavigator {
   static Future<void> openWaitingForReview(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.waitingForReview);
 
-  /// The reviews not sent yet, by deck.
+  /// Reviews to send: what waits, by deck, and the mails sent.
   static Future<void> openReviewedNotSent(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.reviewedNotSent);
 

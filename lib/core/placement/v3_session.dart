@@ -162,17 +162,7 @@ class V3Run {
        levels = PlacementLevels(data.deckCount, maxParts: 20),
        rng = math.Random(seed * 100003 + 17) {
     _items = items;
-    final letters = scriptLettersOf(data);
-    _gate = scriptStart == V3ScriptStart.skip || letters.length < 6
-        ? ScriptGate.latin()
-        : ScriptGate(
-            letters,
-            rng: rng,
-            audio: audio,
-            declaredReads: scriptStart == V3ScriptStart.declaredReads
-                ? true
-                : null,
-          );
+    _gates = _buildGates();
     _advance();
   }
 
@@ -244,10 +234,12 @@ class V3Run {
   final math.Random rng;
 
   late List<RegItem> _items;
-  late final ScriptGate _gate;
+  late final List<_RunGate> _gates;
+  int _gateAt = 0;
   JointPlacement? _model;
   V3Picker? _picker;
   ScriptGateResult? _gateResult;
+  List<V3ScriptCheck> _scriptChecks = const <V3ScriptCheck>[];
 
   /// What the events were, in order: `r` right (or yes), `w` wrong (or no),
   /// `d` "I don't know", `u` the question could not be shown, `m` the
@@ -301,6 +293,17 @@ class V3Run {
 
   /// What the script gate found (null before it ends or without a gate).
   ScriptGateResult? get scriptResult => _gateResult;
+
+  /// What each script's gate found, in the order of the course's scripts
+  /// (empty before the gates end). A script that was not asked (a Latin one,
+  /// one the learner has not put in play, one with too few letters, or "I do
+  /// read it") is there with a skipped result.
+  List<V3ScriptCheck> get scriptChecks => _scriptChecks;
+
+  /// The script the gate question on screen asks about (null outside the
+  /// gate, and for a course with no script of its own).
+  String? get gateScript =>
+      _gating && _question?.gateItem != null ? _gates[_gateAt].script : null;
 
   JointPlacement? get model => _model;
   V3Picker? get picker => _picker;
@@ -410,7 +413,7 @@ class V3Run {
     _skipsInARow++;
     if (q.gateItem != null) {
       // A gate item that cannot be played counts for nothing.
-      _gate.skip();
+      _gates[_gateAt].gate.skip();
       _gateItems++;
       _answered++;
       _advance();
@@ -453,7 +456,7 @@ class V3Run {
       _answered++;
       _advance();
     } else if (q.gateItem != null) {
-      _gate.skip();
+      _gates[_gateAt].gate.skip();
       _gateItems++;
       _answered++;
       _advance();
@@ -515,7 +518,7 @@ class V3Run {
     _formatCounts[gateFormat] = (_formatCounts[gateFormat] ?? 0) + 1;
     final g = _question!.gateItem!;
     events.add(right ? 'r' : 'w');
-    _gate.record(right: right);
+    _gates[_gateAt].gate.record(right: right);
     _seconds += g.seconds;
     _gateItems++;
     _gateSeconds += g.seconds;
@@ -559,12 +562,17 @@ class V3Run {
   void _advance() {
     _checkpoint = false;
     if (_gating) {
-      final g = _gate.next();
-      if (g != null) {
-        _candidate = null;
-        _question = _gateQuestion(g);
-        return;
+      // The gates run one after the other, in the order of the scripts.
+      while (_gateAt < _gates.length) {
+        final g = _gates[_gateAt].gate.next();
+        if (g != null) {
+          _candidate = null;
+          _question = _gateQuestion(g);
+          return;
+        }
+        _gateAt++;
       }
+      _gateAt = _gates.length - 1;
       _startPicker();
     }
     final c = _picker!.next();
@@ -581,7 +589,11 @@ class V3Run {
 
   void _startPicker() {
     _gating = false;
-    final result = _gate.result;
+    _scriptChecks = <V3ScriptCheck>[
+      for (final g in _gates)
+        V3ScriptCheck(script: g.script, index: g.index, result: g.gate.result),
+    ];
+    final result = _combined(_scriptChecks);
     _gateResult = result;
     final base = <PlacementSkill>[
       for (final s in const <PlacementSkill>[
@@ -788,17 +800,140 @@ class V3Run {
     throw StateError('No screen for the format ${item.format}');
   }
 
-  /// The letters of the course's scripts, as the script gate reads them
-  /// (plain letters, then joined forms).
-  static List<ScriptLetter> scriptLettersOf(
-    PlacementLanguageData data,
-  ) => <ScriptLetter>[
-    for (final s in data.scripts) ...<ScriptLetter>[
+  /// The gates of a run (wiki/Plan-Placement-V3.md, "One gate for each
+  /// script"). A course written in one script (or none) has the one gate it
+  /// always had. A course written in several has one gate for each script
+  /// that is in play, each over its own letters:
+  ///  - a script the learner has put in play (its Script or Second script
+  ///    skill is among [wanted]: a script they learn, or know and have not
+  ///    verified yet) is asked;
+  ///  - a script left out of [wanted] is not asked and writes nothing: it is
+  ///    one the learner knows and has verified, or does not use;
+  ///  - when [wanted] names none of the scripts (a run made without the
+  ///    Languages page's skills) every script is asked;
+  ///  - a script with fewer than six letters to ask, and every script after
+  ///    "I do read it" ([V3ScriptStart.skip]), is not asked;
+  ///  - the gates share one budget: when more than one is asked, each asks at
+  ///    most [kScriptSharedMaxItems];
+  ///  - a gate of a course in several scripts that is undecided at its last
+  ///    item ends as `partly`, never `none`.
+  List<_RunGate> _buildGates() {
+    ScriptGate gateOver(
+      List<ScriptLetter> letters, {
+      String? label,
+      int maxItems = 5,
+      bool several = false,
+    }) {
+      if (scriptStart == V3ScriptStart.skip || letters.length < 6) {
+        return ScriptGate.latin();
+      }
+      return ScriptGate(
+        letters,
+        rng: rng,
+        audio: audio,
+        maxItems: maxItems,
+        declaredReads: scriptStart == V3ScriptStart.declaredReads ? true : null,
+        label: label,
+        undecidedIsPartly: several,
+      );
+    }
+
+    final scripts = data.scripts;
+    if (scripts.length < 2) {
+      final all = scriptLettersOf(data);
+      final only = scripts.isEmpty ? null : scripts.first.script;
+      return <_RunGate>[_RunGate(only, 0, gateOver(all))];
+    }
+    final named = wanted.any(kScriptSkills.contains);
+    bool inPlay(int i) {
+      if (!named) return true;
+      return i < kScriptSkills.length && wanted.contains(kScriptSkills[i]);
+    }
+
+    final letters = <List<ScriptLetter>>[
+      for (final s in scripts) _lettersOfScript(s),
+    ];
+    final asked = <int>[
+      for (var i = 0; i < scripts.length; i++)
+        if (letters[i].length >= 6 && inPlay(i)) i,
+    ];
+    final cap = asked.length > 1 ? kScriptSharedMaxItems : 5;
+    final gates = <_RunGate>[];
+    for (var i = 0; i < scripts.length; i++) {
+      final gate = asked.contains(i)
+          ? gateOver(
+              letters[i],
+              label: scripts[i].script,
+              maxItems: cap,
+              several: true,
+            )
+          : ScriptGate.latin();
+      gates.add(_RunGate(scripts[i].script, i, gate));
+    }
+    return gates;
+  }
+
+  /// The one result the run's other readers (the skills in play, "needs the
+  /// script first") take from the gates: the result of the course's first
+  /// script, the one its word items are written in (`card.target`; the other
+  /// scripts are only accepted spellings). When that script was not asked (the
+  /// learner has verified it, or it is not in the run) the result is skipped
+  /// and Read and Write are tested; when it was asked and ended `none` they
+  /// wait for the script, whatever the other scripts found. One gate gives its
+  /// own result.
+  static ScriptGateResult _combined(List<V3ScriptCheck> checks) {
+    return checks.first.result;
+  }
+
+  /// The letters of one script, as the script gate reads them (plain letters,
+  /// then joined forms).
+  static List<ScriptLetter> _lettersOfScript(PlacementScriptData s) {
+    return <ScriptLetter>[
       for (final c in s.letters)
         if ((c.reading ?? '').isNotEmpty) ScriptLetter(c.target, c.reading!),
       for (final c in s.joined)
         if ((c.reading ?? '').isNotEmpty)
           ScriptLetter(c.target, c.reading!, joined: true),
-    ],
-  ];
+    ];
+  }
+
+  /// The letters of the course's scripts together (the letters of one
+  /// script for a course written in one).
+  static List<ScriptLetter> scriptLettersOf(PlacementLanguageData data) {
+    return <ScriptLetter>[
+      for (final s in data.scripts) ..._lettersOfScript(s),
+    ];
+  }
+}
+
+/// The skills a course's scripts are placed under, in the order of its
+/// scripts: the first script is Script, the second is Second script.
+const List<PlacementSkill> kScriptSkills = <PlacementSkill>[
+  PlacementSkill.script,
+  PlacementSkill.secondScript,
+];
+
+/// What one script's gate found.
+class V3ScriptCheck {
+  const V3ScriptCheck({
+    required this.script,
+    required this.index,
+    required this.result,
+  });
+
+  /// The script's code, such as `devanagari` (null for a course with no
+  /// script of its own).
+  final String? script;
+
+  /// Its position among the course's scripts (the placement plan's order).
+  final int index;
+  final ScriptGateResult result;
+}
+
+class _RunGate {
+  _RunGate(this.script, this.index, this.gate);
+
+  final String? script;
+  final int index;
+  final ScriptGate gate;
 }
