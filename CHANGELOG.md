@@ -8,7 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - **Thank you page.** Settings, Sources now starts by thanking everyone whose work Fluenough stands on, from the Wikimedia volunteers to the reviewers and learners.
-- **Unlock courses with a reviewer key.** A reviewer who has a key from us can paste it under Settings, Reviewing, and the courses it names are unlocked and shown as Verified.
 - **Review a card one detail at a time.** Reviewers check each part of a card on its own screen, work through a session of 20 cards and then the whole course, review a unit or a card from its page in the deck view, and go through only the flagged cards.
 
 ## [0.11.3] - 2026-11-20
