@@ -49,5 +49,11 @@ and say there is nothing yet without the alphabet.
   `alphabet`, or a learner without the alphabet is taught them.
 - Switching the alphabet on later puts the script decks back at the start
   of the course: Today teaches them next.
+- Placement scores each script of a course written in several on its own
+  (Amended 22 November 2026): Find my level asks one letter check for each
+  script the learner has in play and credits each by its own result, so a
+  learner who reads Devanagari and learns Perso-Arabic is never credited,
+  or marked new, in one script because of the other
+  ([Plan-Placement-V3](Plan-Placement-V3), "One gate for each script").
 
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)
