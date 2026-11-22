@@ -79,6 +79,7 @@ import 'log_files.dart';
 import 'mail_share.dart';
 import 'fsrs_tuner.dart';
 import 'memory_progress.dart';
+import 'startup_marks.dart';
 import 'pacing.dart';
 import '../features/stats/progress_numbers.dart';
 import 'profile.dart';
@@ -225,6 +226,7 @@ class AppState extends ChangeNotifier {
     this._paceRunner = paceInIsolate,
     this._progressRunner = progressInIsolate,
     this.deckDownloads,
+    this.marks,
     BlobStore? bankStore,
     BankRunner? bankRunner,
     this._synonymLoader,
@@ -657,6 +659,33 @@ class AppState extends ChangeNotifier {
   /// in tests and the gallery: the catalog's decks are then all there is.
   final DeckDownloads? deckDownloads;
 
+  /// Start-up timing marks (#1699); null in tests.
+  final StartupMarks? marks;
+
+  /// Times [body] as the span [what] when marks are kept.
+  Future<T> _span<T>(
+    String what,
+    FutureOr<T> Function() body, {
+    Map<String, Object?> extra = const <String, Object?>{},
+  }) {
+    final m = marks;
+    return m == null ? Future<T>.sync(body) : m.span(what, body, extra: extra);
+  }
+
+  int _todayNumbersLogged = 0;
+
+  /// Logs how long Today's numbers took to work out, for the first few
+  /// builds only: the first ready frame's share of the start (#1699).
+  void noteTodayNumbers(int ms) {
+    if (_todayNumbersLogged >= 3) return;
+    _todayNumbersLogged++;
+    marks?.record(
+      'TodayNumbers.of',
+      ms,
+      extra: <String, Object?>{'build': _todayNumbersLogged},
+    );
+  }
+
   /// Reads the bundled synonym sets (ADR-0050); null for none, as in tests.
   final SynonymLoader? _synonymLoader;
   SynonymSets _synonyms = SynonymSets.empty;
@@ -850,7 +879,13 @@ class AppState extends ChangeNotifier {
     if (!identical(_adultOf, _catalog) || _adultOn != adult) {
       _adultOf = _catalog;
       _adultOn = adult;
+      final watch = Stopwatch()..start();
       _adultScoped = _catalog.forAdult(adult: adult);
+      marks?.record(
+        'forAdult',
+        watch.elapsedMilliseconds,
+        extra: <String, Object?>{'adult': adult},
+      );
     }
     return _adultScoped;
   }
@@ -1153,15 +1188,22 @@ class AppState extends ChangeNotifier {
 
   /// Reads the catalog again without going back to loading, so the screen
   /// that added or removed a deck stays.
-  Future<void> _reloadDecks() async {
-    deckCatalog.invalidate();
-    _catalog = await deckCatalog.load();
-    _status = CatalogStatus.ready;
-    _loadError = null;
-    _mapSkills();
-    _logKindProblems();
-    notifyListeners();
-    await refreshVoices();
+  Future<void> _reloadDecks({String cause = 'decks changed'}) async {
+    log.event('Decks reload: $cause');
+    await _span(
+      'reloadDecks',
+      () async {
+        deckCatalog.invalidate();
+        _catalog = await deckCatalog.load();
+        _status = CatalogStatus.ready;
+        _loadError = null;
+        _mapSkills();
+        _logKindProblems();
+        notifyListeners();
+        await refreshVoices();
+      },
+      extra: <String, Object?>{'cause': cause},
+    );
   }
 
   /// Reports to the log what in the decks' kind fields, and in the sections
@@ -1188,7 +1230,11 @@ class AppState extends ChangeNotifier {
   Future<void> _filesDownloaded() async {
     if (_disposed) return;
     await _loading;
-    if (!_disposed) await _reloadDecks();
+    if (!_disposed) {
+      await _reloadDecks(
+        cause: deckDownloads?.changeCause ?? 'files downloaded',
+      );
+    }
   }
 
   /// At launch, once the catalog is read: finishes downloads cut short,
@@ -1205,7 +1251,10 @@ class AppState extends ChangeNotifier {
     final spoken = settings.spokenLanguages;
     await downloads.resume(learningCodes, spoken);
     if (!_disposed && downloads.checksAutomatically) {
-      await downloads.checkForUpdates(spoken);
+      await _span(
+        'afterLaunch refreshIndex',
+        () => downloads.checkForUpdates(spoken),
+      );
     }
   }
 
@@ -1361,6 +1410,7 @@ class AppState extends ChangeNotifier {
   /// means ([hearsForm]), so that a right answer there implies Write, not
   /// Recognition (ADR-0034).
   void _mapSkills() {
+    final watch = Stopwatch()..start();
     final scriptDecks = <String>{
       for (final entry in decks)
         if (needsAlphabet(entry)) entry.id,
@@ -1370,7 +1420,7 @@ class AppState extends ChangeNotifier {
     // rebuilt from the log whenever the decks are read.
     // Script-deck answers from before the script was kept per answer
     // count for the course's primary script (#653).
-    progress.skills = SkillMap(
+    final skills = SkillMap(
       formHeardCards: <String>{
         for (final entry in decks)
           for (final card in entry.cards)
@@ -1382,7 +1432,15 @@ class AppState extends ChangeNotifier {
           code: primaryScript(code),
       },
     );
+    progress.skills = skills;
+    marks?.record(
+      'mapSkills',
+      watch.elapsedMilliseconds,
+      extra: <String, Object?>{'reviews': progress.log.length},
+    );
   }
+
+  static int _plus(int a, int b) => a + b;
 
   Future<void> _load() async {
     try {
@@ -1392,13 +1450,20 @@ class AppState extends ChangeNotifier {
       // unsaved in-memory progress), and it is awaited below in any case.
       final progressReady = progress.ready..ignore();
       // What is downloaded, before the catalog reads it. Never the network.
-      await deckDownloads?.open();
-      _catalog = await deckCatalog.load();
-      await progressReady;
+      final downloads = deckDownloads;
+      if (downloads != null) await _span('downloads.open', downloads.open);
+      _catalog = await _span('catalog', deckCatalog.load);
+      await _span('progress ready (waited)', () => progressReady);
       await recommendationProgress.load();
       _status = CatalogStatus.ready;
       _mapSkills();
       log.event('Decks loaded: ${decks.length}');
+      marks?.count('loaded', <String, Object?>{
+        'decks': decks.length,
+        'cards': <int>[for (final d in decks) d.cards.length].fold(0, _plus),
+        'reviews': progress.log.length,
+        'languages': <String>{for (final d in decks) d.language.code}.length,
+      });
       _logKindProblems();
       unawaited(_afterLaunch());
     } catch (error, stack) {
@@ -1789,9 +1854,13 @@ class AppState extends ChangeNotifier {
     // Every language is asked at once, and this notifies once, when the
     // last has answered (#857).
     final tags = <String>{for (final l in voiceLanguages) l.ttsTag};
-    final answers = await Future.wait(<Future<bool>>[
-      for (final tag in tags) _voiceAvailable(tag),
-    ]);
+    final answers = await _span(
+      'refreshVoices',
+      () => Future.wait(<Future<bool>>[
+        for (final tag in tags) _voiceAvailable(tag),
+      ]),
+      extra: <String, Object?>{'tags': tags.length},
+    );
     final before = _queueInputs();
     for (final (index, tag) in tags.indexed) {
       _voices[tag] = answers[index];

@@ -42,6 +42,7 @@ import '../core/private/private_ids.dart';
 import 'added_decks.dart';
 import 'app_log.dart';
 import 'private_store.dart';
+import 'startup_marks.dart';
 
 /// Where deck files come from: their paths, and each one's text.
 ///
@@ -639,9 +640,13 @@ class DeckCatalog {
     this.snapshots,
     this.privateStore,
     this.log,
+    this.marks,
   });
 
   final DeckSource source;
+
+  /// Start-up timing marks (#1699), or null (tests).
+  final StartupMarks? marks;
 
   /// Where decks a learner adds are kept (#22), or null where none can be.
   final DeckStore? added;
@@ -674,7 +679,14 @@ class DeckCatalog {
 
   Future<Catalog> _load() async {
     final files = <String, String>{};
-    for (final path in await source.list()) {
+    final readWatch = Stopwatch()..start();
+    final paths = await source.list();
+    marks?.record(
+      'catalog: list',
+      readWatch.elapsedMilliseconds,
+      extra: <String, Object?>{'files': paths.length},
+    );
+    for (final path in paths) {
       files[path] = await source.read(path);
     }
     final added = this.added;
@@ -699,12 +711,28 @@ class DeckCatalog {
         log?.error(describeError('The private decks', e, stack));
       }
     }
+    var bytes = 0;
+    for (final text in files.values) {
+      bytes += text.length;
+    }
+    marks?.record(
+      'catalog: read files',
+      readWatch.elapsedMilliseconds,
+      extra: <String, Object?>{'count': files.length, 'bytes': bytes},
+    );
     final snapshots = this.snapshots;
     if (snapshots == null) return parser(files);
     try {
       return await _fromSnapshot(snapshots, files);
-    } on Object {
+    } on Object catch (e, stack) {
       // Whatever went wrong with the snapshot, the YAML is the truth.
+      log?.warning(
+        describeError(
+          'The catalog snapshot failed; parsing the files in place',
+          e,
+          stack,
+        ),
+      );
       return parser(files);
     }
   }
@@ -714,21 +742,41 @@ class DeckCatalog {
     Map<String, String> files,
   ) async {
     String? stored;
+    final storeWatch = Stopwatch()..start();
     try {
       stored = await snapshots.store.read();
     } on Object {
       stored = null;
     }
+    marks?.record(
+      'catalog: snapshot read',
+      storeWatch.elapsedMilliseconds,
+      extra: <String, Object?>{'bytes': stored?.length ?? 0},
+    );
     var known = const <String, String>{};
     try {
       known = await snapshots.knownShas?.call() ?? known;
     } on Object {
       known = const <String, String>{};
     }
-    final shas = <String, String>{
-      for (final e in files.entries)
-        e.key: known[e.key] ?? sha256Hex(utf8.encode(e.value)),
-    };
+    final shaWatch = Stopwatch()..start();
+    var hashed = 0;
+    final shas = <String, String>{};
+    for (final e in files.entries) {
+      final sha = known[e.key];
+      if (sha != null) {
+        shas[e.key] = sha;
+        continue;
+      }
+      hashed++;
+      shas[e.key] = sha256Hex(utf8.encode(e.value));
+    }
+    marks?.record(
+      'catalog: sha',
+      shaWatch.elapsedMilliseconds,
+      extra: <String, Object?>{'hashed': hashed, 'known': known.length},
+    );
+    final jobWatch = Stopwatch()..start();
     final outcome = await snapshots.runner(
       CatalogJob(
         files: files,
@@ -737,11 +785,26 @@ class DeckCatalog {
         app: snapshots.app,
       ),
     );
+    marks?.record(
+      'catalog: isolate round trip',
+      jobWatch.elapsedMilliseconds,
+      isolate: 'worker',
+    );
     final text = outcome.snapshot;
     if (text != null) {
       // Not waited for: the first screens do not need it written.
+      final writeWatch = Stopwatch()..start();
       unawaited(
-        snapshots.store.write(text).then<void>((_) {}, onError: (Object _) {}),
+        snapshots.store
+            .write(text)
+            .then<void>(
+              (_) => marks?.record(
+                'catalog: snapshot write',
+                writeWatch.elapsedMilliseconds,
+                extra: <String, Object?>{'bytes': text.length},
+              ),
+              onError: (Object _) {},
+            ),
       );
     }
     return outcome.catalog;

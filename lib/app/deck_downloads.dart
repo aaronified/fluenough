@@ -17,6 +17,7 @@ import 'downloaded_decks.dart';
 import 'fair_slots.dart';
 import 'media_image_cache.dart';
 import 'script_fonts.dart';
+import 'startup_marks.dart';
 
 /// Why a language's decks could not be downloaded (ADR-0037).
 enum DeckDownloadFailure {
@@ -139,6 +140,7 @@ class DeckDownloads extends ChangeNotifier {
       Duration(seconds: 1),
       Duration(seconds: 3),
     ],
+    this.marks,
   }) : fonts = scriptFonts ?? ScriptFonts(),
        images = images ?? MediaImageCache();
 
@@ -179,6 +181,51 @@ class DeckDownloads extends ChangeNotifier {
 
   final DeckFetcher fetcher;
   final DownloadedDecks files;
+
+  /// Start-up and update timing marks (#1699), or null (tests).
+  final StartupMarks? marks;
+
+  /// Why the files last changed, for the log of the reload that follows.
+  String changeCause = 'files downloaded';
+
+  Future<T> _span<T>(
+    String what,
+    FutureOr<T> Function() body, {
+    Map<String, Object?> extra = const <String, Object?>{},
+  }) {
+    final m = marks;
+    return m == null ? Future<T>.sync(body) : m.span(what, body, extra: extra);
+  }
+
+  // What an update spent on fetching and hashing, summed over its files, and
+  // how many files and bytes it checked: one log line each when it ends.
+  int _fetchMs = 0;
+  int _shaMs = 0;
+  int _fetchedFiles = 0;
+  int _fetchedBytes = 0;
+
+  void _recordUpdateTotals() {
+    final m = marks;
+    if (m == null) return;
+    m
+      ..record(
+        'update: fetch',
+        _fetchMs,
+        extra: <String, Object?>{
+          'files': _fetchedFiles,
+          'bytes': _fetchedBytes,
+        },
+      )
+      ..record(
+        'update: sha',
+        _shaMs,
+        extra: <String, Object?>{'files': _fetchedFiles},
+      );
+    _fetchMs = 0;
+    _shaMs = 0;
+    _fetchedFiles = 0;
+    _fetchedBytes = 0;
+  }
   final DeckFileCheck check;
 
   /// This app's version: a language or deck whose `min_app` is newer is not
@@ -460,12 +507,19 @@ class DeckDownloads extends ChangeNotifier {
   /// touches the network.
   Future<void> open() async {
     try {
-      await files.clean();
-      _onPhone = await files.manifest();
-      _fontsOnPhone = await files.fontManifest();
+      await _span('downloads: clean', files.clean);
+      _onPhone = await _span('downloads: manifest', files.manifest);
+      _fontsOnPhone = await _span(
+        'downloads: font manifest',
+        files.fontManifest,
+      );
       final text = await files.readNote(_indexNote);
       if (text != null) {
-        final index = DeckIndex.parse(text, appVersion: appVersion);
+        final index = await _span(
+          'downloads: index parse',
+          () => DeckIndex.parse(text, appVersion: appVersion),
+          extra: <String, Object?>{'bytes': text.length},
+        );
         _index = index;
         _indexStatus = IndexStatus.ready;
         unawaited(_pruneImages(index));
@@ -476,10 +530,16 @@ class DeckDownloads extends ChangeNotifier {
     } on Object catch (e) {
       _log?.warning('Deck downloads: could not read what is kept: $e');
     }
-    await _openShared();
+    await _span('downloads: shared', _openShared);
     try {
       final queue = await files.readNote(_queueNote);
-      if (queue != null) _reviewQueue = ReviewQueue.parse(queue);
+      if (queue != null) {
+        _reviewQueue = await _span(
+          'downloads: review queue',
+          () => ReviewQueue.parse(queue),
+          extra: <String, Object?>{'bytes': queue.length},
+        );
+      }
       final at = await files.readNote(_queueAtNote);
       _queueRead = at == null ? null : DateTime.tryParse(at);
     } on Object catch (e) {
@@ -510,7 +570,7 @@ class DeckDownloads extends ChangeNotifier {
     } on Object catch (e) {
       _log?.warning('Deck downloads: could not read their state: $e');
     }
-    await _loadFonts();
+    await _span('downloads: fonts', _loadFonts);
     _notify();
   }
 
@@ -522,10 +582,20 @@ class DeckDownloads extends ChangeNotifier {
       if (fonts.isLoaded(font)) continue;
       if (usesFont != null && !usesFont!(font.script)) continue;
       try {
+        final watch = Stopwatch()..start();
         final bytes = await files.readFont(font.path);
+        final readMs = watch.elapsedMilliseconds;
         if (bytes != null && !await fonts.load(font, bytes)) {
           _log?.warning('Deck downloads: could not load ${font.path}');
         }
+        marks?.record(
+          'font ${font.path}',
+          watch.elapsedMilliseconds,
+          extra: <String, Object?>{
+            'bytes': bytes?.length,
+            'readMs': readMs,
+          },
+        );
       } on Object catch (e) {
         _log?.warning('Deck downloads: could not read ${font.path}: $e');
       }
@@ -571,7 +641,7 @@ class DeckDownloads extends ChangeNotifier {
       _log?.warning('Deck index: $problem');
     }
     _notify();
-    await _refreshShared();
+    await _span('refreshShared', _refreshShared);
     return true;
   }
 
@@ -1388,7 +1458,11 @@ class DeckDownloads extends ChangeNotifier {
   Future<({List<int>? bytes, DeckDownloadFailure? failure})> _fetchChecked(
     IndexFile file,
   ) async {
+    final fetchWatch = Stopwatch()..start();
     var fetched = await fetcher.fetch(file.path);
+    _fetchMs += fetchWatch.elapsedMilliseconds;
+    _fetchedFiles++;
+    _fetchedBytes += fetched.bytes?.length ?? 0;
     var retries = 0;
     while (true) {
       final bytes = fetched.bytes;
@@ -1400,7 +1474,9 @@ class DeckDownloads extends ChangeNotifier {
         );
         return (bytes: null, failure: _failureOf(fetched.failure!));
       }
+      final shaWatch = Stopwatch()..start();
       final hash = sha256Hex(bytes);
+      _shaMs += shaWatch.elapsedMilliseconds;
       if (bytes.length == file.size && hash == file.sha256) {
         return (bytes: bytes, failure: null);
       }
@@ -1476,6 +1552,26 @@ class DeckDownloads extends ChangeNotifier {
     Map<IndexFile, List<int>> got,
     List<String> remove,
   ) async {
+    final checkWatch = Stopwatch()..start();
+    var checkedBytes = 0;
+    try {
+      return await _keepChecked(got, remove);
+    } finally {
+      for (final MapEntry(key: file, value: bytes) in got.entries) {
+        if (!file.isMedia) checkedBytes += bytes.length;
+      }
+      marks?.record(
+        'update: check + keep',
+        checkWatch.elapsedMilliseconds,
+        extra: <String, Object?>{'files': got.length, 'bytes': checkedBytes},
+      );
+    }
+  }
+
+  Future<DeckDownloadFailure?> _keepChecked(
+    Map<IndexFile, List<int>> got,
+    List<String> remove,
+  ) async {
     for (final MapEntry(key: file, value: bytes) in got.entries) {
       // A recording or an image is checked by its hash alone: it is not
       // a deck, and is never read as one.
@@ -1495,8 +1591,12 @@ class DeckDownloads extends ChangeNotifier {
     }
     try {
       await _writing(() async {
-        await files.putAll(got, remove: remove);
-        _onPhone = await files.manifest();
+        await _span(
+          'update: putAll',
+          () => files.putAll(got, remove: remove),
+          extra: <String, Object?>{'files': got.length},
+        );
+        _onPhone = await _span('update: manifest save', files.manifest);
       });
     } on Object catch (e) {
       _log?.error('Downloaded decks could not be kept: $e');
@@ -1639,6 +1739,8 @@ class DeckDownloads extends ChangeNotifier {
     _asked = true;
     _updating = true;
     _notify();
+    marks?.watchFrames('update', window: const Duration(seconds: 30));
+    final updateWatch = Stopwatch()..start();
     DeckDownloadFailure? first;
     var changed = false;
     try {
@@ -1667,7 +1769,13 @@ class DeckDownloads extends ChangeNotifier {
       _updating = false;
       _notify();
     }
-    if (changed) await _filesChanged();
+    marks?.record(
+      'update: all languages',
+      updateWatch.elapsedMilliseconds,
+      extra: <String, Object?>{'changed': changed},
+    );
+    _recordUpdateTotals();
+    if (changed) await _filesChanged('update');
     return first;
   }
 
@@ -1821,7 +1929,8 @@ class DeckDownloads extends ChangeNotifier {
     }
   }
 
-  Future<void> _filesChanged() async {
+  Future<void> _filesChanged([String cause = 'files downloaded']) async {
+    changeCause = cause;
     await _loadFonts();
     final changed = onFilesChanged;
     if (changed != null && !_disposed) await changed();
