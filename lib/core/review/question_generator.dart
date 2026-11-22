@@ -7,6 +7,7 @@ library;
 import '../models/card.dart';
 import '../models/deck.dart';
 import 'card_fields.dart' show fromWiktionary;
+import 'facets.dart' show Facet, facetsOf;
 import 'review_question.dart';
 import 'review_queue.dart';
 
@@ -47,10 +48,12 @@ class ImageProposal {
 /// a card's `verified` lists (settled by agreeing answers), and every
 /// id in [skip] (what this reviewer answered, or put off today).
 ///
-/// The cards [queue] lists come first, each builder question a step of its
-/// own, with the card in full (2026-11-06, split out 2026-11-14): they keep
-/// the card order among themselves, then the rest follow weakest first. A
-/// listed card that is left out above is still left out.
+/// The cards [queue] has asks for come first, each ask one builder question
+/// of its own about one facet of the card, with the card in full (builder
+/// questions v2, owner, 2026-11-22): they keep the card order among
+/// themselves, then the rest follow weakest first. A listed card that is left
+/// out above is still left out. The question is the app's fixed one for the
+/// facet and never any text of the card or the queue.
 List<ReviewQuestion> generateQuestions(
   Iterable<Deck> decks, {
   Set<String> skip = const <String>{},
@@ -93,7 +96,9 @@ List<ReviewQuestion> generateQuestions(
         String? shown,
         String? shownReading,
         String? shownMeaning,
-        String? asked,
+        Facet? facet,
+        String? ref,
+        String? concern,
         List<QuestionExample> examples = const <QuestionExample>[],
       }) => ReviewQuestion(
         language: language,
@@ -108,19 +113,46 @@ List<ReviewQuestion> generateQuestions(
         shownMeaning: shownMeaning,
         weakness: weakness > floor ? weakness : floor,
         deckId: deck.id,
-        asked: asked,
+        facet: facet,
+        ref: ref,
+        concern: concern,
+        // What a builder question shows of the card beside the word: only
+        // for one, so that no other question carries it.
+        ipa: facet == null ? null : card.ipa,
+        notes: facet == null
+            ? const <String>[]
+            : <String>[
+                for (final note in card.notes)
+                  if (note.text.trim().isNotEmpty) note.text,
+              ],
+        hasAudio:
+            facet != null &&
+            card.audio != null &&
+            card.audio!.trim().isNotEmpty,
+        offensive: facet != null && card.register == 'offensive',
         examples: examples,
       );
 
-      // The builder's doubts about the card, each its own question with the
-      // whole card in front of the reviewer.
-      for (final doubt in queue.forCard(language, card.id)) {
+      // The builder's doubts about the card, each one facet and its own
+      // question with the whole card in front of the reviewer. An ask for a
+      // facet the card does not have is not asked.
+      final has = facetsOf(card);
+      final hashes = <String>{
+        for (final example in card.examples) pointHash(example.target),
+      };
+      for (final ask in queue.asksFor(language, card.id)) {
+        if (!has.contains(ask.facet)) continue;
         out.add(
           make(
             QuestionKind.builder,
-            'builder:${pointHash(doubt)}',
+            builderPoint(ask.facet),
             0,
-            asked: doubt,
+            facet: ask.facet,
+            // Only an example the card still has can be pointed at.
+            ref: ask.facet == Facet.example && hashes.contains(ask.ref)
+                ? ask.ref
+                : null,
+            concern: ask.concern,
             examples: <QuestionExample>[
               for (final example in card.examples)
                 if (example.target.trim().isNotEmpty)

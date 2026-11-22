@@ -2,7 +2,7 @@
 
 Source of truth: this wiki page.
 
-- **Status:** Accepted (owner, 2026-11-22). Package 1 of the plan is built; package 2 (the app's screens) is not. The reasoning, the formats and the work packages are in [Plan-Builder-Questions-V2](Plan-Builder-Questions-V2).
+- **Status:** Accepted (owner, 2026-11-22). Both packages of the plan are built. The reasoning, the formats and the work packages are in [Plan-Builder-Questions-V2](Plan-Builder-Questions-V2).
 - **Date:** 2026-11-22
 
 ## Context
@@ -24,6 +24,5 @@ Owner, 2026-11-22: "Yes, go with option A and add the checker. Also, the questio
 
 - Builders can no longer say anything a reviewer must interpret: the cost is that they cannot express a doubt that is not about a facet (such a doubt goes in the unit's notes or an issue).
 - A facet's option list is the pointer-tag list: a new pointer tag appears in builder questions with its facet, and `tools/question_answers.py` and its test keep the two equal.
-- Until package 2 ships, the app asks no builder question from v2 rows; the rows wait in the feed.
 
 See also: [Plan-Builder-Questions-V2](Plan-Builder-Questions-V2) · [ADR-0058](ADR-0058-Reviewer-UX) · [ADR-Index](ADR-Index)

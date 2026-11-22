@@ -4,6 +4,8 @@
 /// rules are tested without a device.
 library;
 
+import 'facets.dart';
+
 /// What a question is about.
 enum QuestionKind {
   /// "Is this the right meaning of तुम (tum)?"
@@ -25,10 +27,13 @@ enum QuestionKind {
   /// `image:<File>`), so two answers agree only on the same file.
   image,
 
-  /// A question the deck's builder could not settle, put to the reviewer
-  /// as a step of its own (docs/review-queue/README.md): the question is
-  /// the heading, the card is shown in full, and the answer is Yes or No to
-  /// that question only. The point is `builder:<8 hex of the question>`.
+  /// A doubt the deck's builder raised about one facet of a card, put to the
+  /// reviewer as a step of its own (builder questions v2, owner, 2026-11-22;
+  /// wiki Plan-Builder-Questions-V2): the question is the app's one fixed
+  /// "Is the `<facet>` on this card correct?", the card is shown in full, and
+  /// the answer is Yes, or No with one of the facet's options. The point is
+  /// `builder:<facet>`; no text of the card or the queue is ever the
+  /// question.
   builder;
 
   /// How it is written in the mail's files. Permanent.
@@ -55,10 +60,46 @@ enum QuestionKind {
     confusable => const <String>['not_real', 'wrong_word'],
     sound => const <String>['noisy', 'wrong_word', 'not_native'],
     image => const <String>['not_the_word', 'unclear', 'not_fit'],
-    // A free line in the mail says why; no fixed reason fits every doubt.
+    // The reasons of a builder question depend on its facet: see
+    // [reasonsFor].
     builder => const <String>[],
   };
+
+  /// The reasons an answer to the question with [point] may carry. The same
+  /// as [reasons], except for a builder question, whose options are those
+  /// of its facet (`builder:<facet>`); a point that names no facet, such as
+  /// the old `builder:<8 hex>`, has none.
+  List<String> reasonsFor(String point) {
+    if (this != builder) return reasons;
+    final facet = builderFacetOf(point);
+    return facet == null ? const <String>[] : builderOptions(facet);
+  }
 }
+
+/// The option that ends every facet's list of a builder question.
+const String builderSomethingElse = 'something_else';
+
+/// The start of a builder question's point: `builder:<facet wire>`.
+const String builderPointPrefix = 'builder:';
+
+/// The point of the builder question about [facet] of a card.
+String builderPoint(Facet facet) => '$builderPointPrefix${facet.wire}';
+
+/// The facet a builder question's [point] names, or null.
+Facet? builderFacetOf(String point) => point.startsWith(builderPointPrefix)
+    ? Facet.fromWire(point.substring(builderPointPrefix.length))
+    : null;
+
+/// The options of a builder question about [facet], as keys in the order they
+/// are offered: the pointer tags that may go on that facet, in
+/// [PointerTag]'s order, then [builderSomethingElse].
+/// `tools/question_answers.py` `BUILDER_OPTIONS` holds the same lists, and a
+/// test keeps them equal.
+List<String> builderOptions(Facet facet) => <String>[
+  for (final tag in PointerTag.values)
+    if (tag.facets.contains(facet)) tag.wire,
+  builderSomethingElse,
+];
 
 /// What a reviewer answers.
 enum QuestionAnswer {
@@ -107,7 +148,13 @@ class ReviewQuestion {
     this.shownMeaning,
     this.meaning,
     this.deckId,
-    this.asked,
+    this.facet,
+    this.ref,
+    this.concern,
+    this.ipa,
+    this.notes = const <String>[],
+    this.hasAudio = false,
+    this.offensive = false,
     this.examples = const <QuestionExample>[],
   });
 
@@ -120,7 +167,8 @@ class ReviewQuestion {
   final QuestionKind kind;
 
   /// Names the data point on the card, permanent: `meaning`,
-  /// `example:<8 hex>`, `confusable:<item id>`, `sound`, `image:<File>`.
+  /// `example:<8 hex>`, `confusable:<item id>`, `sound`, `image:<File>`,
+  /// `builder:<facet>`.
   final String point;
 
   /// The card's word, in the language's script, and its reading.
@@ -139,9 +187,25 @@ class ReviewQuestion {
   /// The deck the card was found in, for the screen's sake.
   final String? deckId;
 
-  /// What the deck's builder asks, for a [QuestionKind.builder] question:
-  /// the question's own words, from the review queue.
-  final String? asked;
+  /// The facet a [QuestionKind.builder] question asks about; the question
+  /// itself is the app's fixed one for it, never any text of the card.
+  final Facet? facet;
+
+  /// For an example facet, the 8 hex ([pointHash]) of the one example the
+  /// builder doubts, or null for the examples as a whole.
+  final String? ref;
+
+  /// What the builder was unsure of, shown only as context under the
+  /// question, plain: never the question and never parsed.
+  final String? concern;
+
+  /// The card's IPA and notes, whether it has a recording and whether its
+  /// register is offensive, for a [QuestionKind.builder] question, so that
+  /// the reviewer sees whatever facet is asked about.
+  final String? ipa;
+  final List<String> notes;
+  final bool hasAudio;
+  final bool offensive;
 
   /// Every example the card has, for a [QuestionKind.builder] question, so
   /// that the reviewer can look at whatever the builder asks about.
@@ -151,6 +215,9 @@ class ReviewQuestion {
   /// source), 1 semi-verified (taken from Wiktionary or Tatoeba, or signed
   /// off by one reviewer). The weakest comes first (owner, 2026-10-13).
   final int weakness;
+
+  /// The reasons an answer to this question may carry.
+  List<String> get reasons => kind.reasonsFor(point);
 
   /// `<card>|<point>`: the same data point always has the same id, so a
   /// reviewer is never asked twice and the bot counts answers by it.
