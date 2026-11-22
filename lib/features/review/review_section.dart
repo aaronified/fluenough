@@ -20,16 +20,15 @@ import 'reviewer_check_page.dart';
 import 'reviewer_key_sheet.dart';
 import 'review_waiting.dart';
 import 'review_words.dart' show hasOrdinaryCards;
-import 'send_reviews_sheet.dart';
 import 'review_languages_page.dart';
 
 /// Settings' Reviewing group (docs/plans/deck-browser.md): the "Review
 /// decks" switch, which asks once and then shows the rater code the phone
 /// made, with Copy; the languages the reviewer reviews, and what waits for
-/// review in them; the decks waiting to send; "Send the last mail again",
-/// for a mail that never went; the decks the reviewer helped build; and
-/// "How reviewing works", which opens by itself the first time reviewing is
-/// turned on.
+/// review in them; "Reviews to send", the one row for everything waiting to
+/// send and the mails already sent (owner, 2026-11-22); the decks the
+/// reviewer helped build; and "How reviewing works", which opens by itself
+/// the first time reviewing is turned on.
 ///
 /// Turning reviewing off keeps the code and the reviews.
 class ReviewSection extends StatelessWidget {
@@ -59,7 +58,7 @@ class ReviewSection extends StatelessWidget {
     final on = reviewing.on && code != null;
     final waiting = reviewing.unsent.length;
     final answersWaiting = reviewing.unsentAnswers.length;
-    final lastSent = reviewing.lastSent.length;
+    final mailed = reviewing.sentMails.isNotEmpty;
     final flagged = on ? flaggedQueueOf(state).count : 0;
     final reviewed = on ? reviewPairsOf(state) : const <ReviewPair>{};
     final names = languageNamesOf(state);
@@ -192,27 +191,19 @@ class ReviewSection extends StatelessWidget {
             onTap: () => showQuestionsPerDay(context),
           ),
         ],
-        if (waiting > 0 || answersWaiting > 0)
+        if (waiting > 0 || answersWaiting > 0 || mailed)
           GroupedTile(
-            leading: const Icon(Icons.outbox_outlined),
+            leading: const Icon(Icons.mail_outline),
             title: l10n.reviewSettingsToSend,
-            subtitle: <String>[
-              if (waiting > 0) l10n.reviewDecksWaiting(waiting),
-              if (answersWaiting > 0) l10n.reviewSendAnswers(answersWaiting),
-            ].join('\n'),
+            subtitle: waiting == 0 && answersWaiting == 0
+                ? null
+                : joinParts(l10n, <String>[
+                    if (waiting > 0) l10n.reviewToSendDecks(waiting),
+                    if (answersWaiting > 0)
+                      l10n.reviewToSendAnswers(answersWaiting),
+                  ]),
             trailing: const Icon(Icons.chevron_right),
-            onTap: () => showSendReviews(context),
-          ),
-        if (code != null && lastSent > 0)
-          GroupedTile(
-            leading: const Icon(Icons.replay_outlined),
-            title: l10n.reviewSettingsSendAgain,
-            subtitle: l10n.reviewSettingsSendAgainDesc(lastSent),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () {
-              reviewing.sendAgain();
-              showSendReviews(context);
-            },
+            onTap: () => AppNavigator.openReviewedNotSent(context),
           ),
         if (helped.isNotEmpty)
           GroupedTile(
