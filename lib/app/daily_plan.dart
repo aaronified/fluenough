@@ -132,6 +132,8 @@ class DailyRun {
     this.spentAtStart = Duration.zero,
     this.keepGoing = false,
     this.taughtBefore = 0,
+    this.pairsBefore = 0,
+    this.scriptBefore = 0,
   });
 
   final String language;
@@ -147,6 +149,16 @@ class DailyRun {
   /// log does not hold until they are answered.
   final int taughtBefore;
 
+  /// The new skills of taught words introduced today when the session
+  /// began ([AppState.newPairsToday]), counted with those this session
+  /// serves against [DailyBudget.newPairsPerDay].
+  final int pairsBefore;
+
+  /// The script words taught today when the session began
+  /// ([AppState.scriptWordsToday]), counted with those it teaches against
+  /// [DailyBudget.catchUpScriptWords].
+  final int scriptBefore;
+
   /// The time Today counted as spent when the session began.
   final Duration spentAtStart;
 
@@ -156,4 +168,10 @@ class DailyRun {
 
   /// How many new words the session has taught.
   int taught = 0;
+
+  /// How many new skills of taught words the session has served.
+  int pairs = 0;
+
+  /// How many script words the session has taught.
+  int scriptTaught = 0;
 }
