@@ -2438,12 +2438,30 @@ class AppState extends ChangeNotifier {
       final e = log[i];
       if (e.at.isBefore(today)) {
         at.earlier.add(e.cardId);
+        at.earlierPairs.add((e.cardId, e.mode));
       } else if (isSameDay(e.at, now)) {
         at.todays.add(e.cardId);
+        at.todaysPairs.add((e.cardId, e.mode));
       }
     }
     at.read = log.length;
     return at.todays.where((id) => !at!.earlier.contains(id)).length;
+  }
+
+  /// New skills of words taught before today, first answered today in
+  /// [language] (never the words taught today: their skills come with the
+  /// lesson). What the day's [DailyBudget.newPairsPerDay] is spent on.
+  int newPairsToday(DateTime now, String language) {
+    newWordsToday(now);
+    final at = _newWordsAt!;
+    return at.todaysPairs
+        .where(
+          (pair) =>
+              at.earlier.contains(pair.$1) &&
+              !at.earlierPairs.contains(pair) &&
+              Abilities.languageOf(pair.$1) == language,
+        )
+        .length;
   }
 
   _NewWords? _newWordsAt;
@@ -3340,6 +3358,8 @@ class AppState extends ChangeNotifier {
     required int closest,
     required int fresh,
     required DateTime at,
+    int paced = 0,
+    int scriptFresh = 0,
     int taught = 0,
     bool whole = false,
     int cap = DailyPlanner.newCap,
@@ -3351,15 +3371,19 @@ class AppState extends ChangeNotifier {
       secondsPerCard: times.secondsPerCard,
     );
     final plan = whole ? DailyPlanner.whole : DailyPlanner.next;
+    // [due] is the reviews really due, which alone make a backlog; [paced]
+    // are the new skills of taught words the day introduces (they are
+    // reviewed like the rest but never counted as waiting).
     return plan(
       left: left,
-      due: due,
+      due: due + paced,
       newAvailable: fresh,
       closest: closest,
       secondsPerReview: times.secondsPerCard,
       secondsPerTeach: DailyBudget.secondsPerTeach(teach.time, teach.cards),
       taughtSoFar: taught,
-      catchingUp: due > DailyBudget.backlogDays * dayCards,
+      catchingUp: DailyBudget.isCatchingUp(due, dayCards),
+      catchUpNew: min(scriptFresh, DailyBudget.catchUpScriptWords),
       cap: cap,
     );
   }
@@ -3367,6 +3391,10 @@ class AppState extends ChangeNotifier {
   /// The cards a daily round draws on in [language], none of them in
   /// [asked]: those due, the most forgotten first, and those not due, the
   /// closest to due first.
+  ///
+  /// [due] holds only the pairs really due (a state that is due): the new
+  /// skills of a taught word, never asked, are [fresh], and no backlog
+  /// (wiki, Plan-Today-Backlog).
   ///
   /// A card already reviewed today is never one of the closest: the session
   /// would not ask it again, so Today must not promise it either (#1007).
@@ -3377,17 +3405,19 @@ class AppState extends ChangeNotifier {
   /// forward ([DailyBudget.canPullForward]): due within a couple of days and
   /// not so fresh that the review is wasted. Today's own numbers never ask
   /// for it, so Keep going moves neither the tiles nor the chips.
-  ({List<SessionItem> due, List<SessionItem> closest}) _dailyPools(
+  _DailyPools _dailyPools(
     String language,
     DateTime at,
     Set<String> asked, {
     bool keepGoing = false,
   }) {
+    final queue = buildSession(DrillRequest.today(language: language));
     final due = <SessionItem>[
-      for (final item in DailyBudget.mostForgottenFirst(
-        buildSession(DrillRequest.today(language: language)).items,
-        at,
-      ))
+      for (final item in DailyBudget.mostForgottenFirst(queue.due, at))
+        if (!asked.contains(item.card.id)) item,
+    ];
+    final fresh = <SessionItem>[
+      for (final item in queue.fresh)
         if (!asked.contains(item.card.id)) item,
     ];
     final today = dateOnly(at);
@@ -3410,7 +3440,41 @@ class AppState extends ChangeNotifier {
             !asked.contains(item.card.id))
           item,
     ]..sort((a, b) => a.state!.dueAt.compareTo(b.state!.dueAt));
-    return (due: due, closest: closest);
+    return _DailyPools(due: due, closest: closest, fresh: fresh);
+  }
+
+  /// The new skills of taught words that [language]'s day introduces from
+  /// [fresh], in path order: the day's [DailyBudget.newPairsPerDay] less
+  /// those already introduced today, and none while the [due] reviews are a
+  /// backlog (wiki, Plan-Today-Backlog).
+  List<SessionItem> _pacedPairs(
+    String language,
+    DateTime at,
+    List<SessionItem> fresh, {
+    required int due,
+    required int spent,
+  }) {
+    if (fresh.isEmpty) return const <SessionItem>[];
+    final dayCards = DailyBudget.cardsFor(
+      settings.dailyMinutesFor(language),
+      secondsPerCard: _timesIn(language, at).secondsPerCard,
+    );
+    if (DailyBudget.isCatchingUp(due, dayCards)) return const <SessionItem>[];
+    final room = DailyBudget.newPairsPerDay(dayCards) - spent;
+    return room <= 0 ? const <SessionItem>[] : fresh.take(room).toList();
+  }
+
+  /// The cards of [language]'s script decks not taught yet: the script the
+  /// learner has yet to read, which a backlog of reviews never holds back
+  /// (wiki, Plan-Today-Backlog). A script deck of a script the learner does
+  /// not learn is not in the course, so only the script being learned is
+  /// here.
+  List<Card> scriptUntaughtCards(String language) {
+    final scripts = progress.skills.scriptDecks;
+    return <Card>[
+      for (final card in untaughtCards(language))
+        if (scripts.contains(card.deckId)) card,
+    ];
   }
 
   /// [language]'s day: its minutes, what is spent, what waits, and what
@@ -3439,6 +3503,13 @@ class AppState extends ChangeNotifier {
       goal,
       secondsPerCard: times.secondsPerCard,
     );
+    final paced = _pacedPairs(
+      code,
+      at,
+      pools.fresh,
+      due: pools.due.length,
+      spent: newPairsToday(at, code),
+    );
     final round = _planDaily(
       code,
       left: left > 0
@@ -3448,6 +3519,8 @@ class AppState extends ChangeNotifier {
       closest: pools.closest.length,
       fresh: fresh,
       at: at,
+      paced: paced.length,
+      scriptFresh: scriptUntaughtCards(code).length,
       whole: true,
       taught: going ? newWordsToday(at) : 0,
       cap: going
@@ -3470,7 +3543,7 @@ class AppState extends ChangeNotifier {
       split: DailySplit(
         reviews: round.reviews + round.fillers,
         newWords: round.newWords,
-        catchingUp: pools.due.length > DailyBudget.backlogDays * dayCards,
+        catchingUp: DailyBudget.isCatchingUp(pools.due.length, dayCards),
       ),
     );
   }
@@ -3517,6 +3590,7 @@ class AppState extends ChangeNotifier {
       spentAtStart: plan.spent,
       keepGoing: going,
       taughtBefore: newWordsToday(now()),
+      pairsBefore: newPairsToday(now(), language),
     );
   }
 
@@ -3535,6 +3609,7 @@ class AppState extends ChangeNotifier {
       ),
       keepGoing: true,
       taughtBefore: newWordsToday(now()),
+      pairsBefore: newPairsToday(now(), language),
     );
     return nextDailyRound(run).isNotEmpty;
   }
@@ -3556,16 +3631,22 @@ class AppState extends ChangeNotifier {
     final due = pools.due;
     final closest = pools.closest;
     var fresh = untaughtCards(language).length;
+    var scriptFresh = scriptUntaughtCards(language).length;
+    final paced = _pacedPairs(
+      language,
+      at,
+      pools.fresh,
+      due: due.length,
+      spent: max(newPairsToday(at, language), run.pairsBefore + run.pairs),
+    );
     // Keep going teaches against the whole day's taught total, not just this
     // stretch's, under a cap a little over the day's (#1010).
+    final dayCards = DailyBudget.cardsFor(
+      settings.dailyMinutesFor(language),
+      secondsPerCard: _timesIn(language, at).secondsPerCard,
+    );
     final cap = going
-        ? DailyBudget.keepGoingNewCap(
-            due: due.length,
-            dayCards: DailyBudget.cardsFor(
-              settings.dailyMinutesFor(language),
-              secondsPerCard: _timesIn(language, at).secondsPerCard,
-            ),
-          )
+        ? DailyBudget.keepGoingNewCap(due: due.length, dayCards: dayCards)
         : DailyPlanner.newCap;
     final taughtSoFar = going
         ? max(newWordsToday(at), run.taughtBefore + run.taught)
@@ -3578,14 +3659,18 @@ class AppState extends ChangeNotifier {
         closest: closest.length,
         fresh: fresh,
         at: at,
+        paced: paced.length,
+        scriptFresh: scriptFresh,
         taught: taughtSoFar,
         cap: cap,
       );
       if (round.isEmpty) return const <SessionItem>[];
       final pick = round.reviews > 0
-          ? due.take(round.reviews)
+          ? <SessionItem>[...due, ...paced].take(round.reviews)
           : closest.take(round.fillers);
-      final older = _asked(pick.toList());
+      final picked = pick.toList();
+      final servedPairs = picked.where(paced.contains).length;
+      final older = _asked(picked);
       var learning = const <SessionItem>[];
       if (round.newWords > 0) {
         learning = lessonFor(
@@ -3594,10 +3679,13 @@ class AppState extends ChangeNotifier {
           beyondRoom: true,
           fillers: older,
           exclude: run.asked,
+          // Catching up, only the script yet to be read is taught.
+          scriptOnly: DailyBudget.isCatchingUp(due.length, dayCards),
         );
         if (learning.isEmpty) {
           // Nothing to teach after all: plan again without new words.
           fresh = 0;
+          scriptFresh = 0;
           continue;
         }
       }
@@ -3623,6 +3711,7 @@ class AppState extends ChangeNotifier {
         taughtIds.addAll(members.map((member) => member.card.id));
       }
       run.taught += taughtIds.length;
+      run.pairs += servedPairs;
       for (final item in items) {
         run.asked.add(item.card.id);
         for (final member in item.group) {
@@ -3898,20 +3987,27 @@ class AppState extends ChangeNotifier {
   /// left to make a group ([learnSequence]); those used are in the lesson.
   /// Words in [exclude] are not taught: a day's session leaves out those it
   /// already tried, whose attempt failed.
+  ///
+  /// With [scriptOnly], only the cards of script decks are taught: what a
+  /// day teaches while the learner is catching up (wiki, Plan-Today-Backlog).
   List<SessionItem> lessonFor(
     DrillRequest request, {
     int? words,
     bool beyondRoom = false,
     List<SessionItem> fillers = const <SessionItem>[],
     Set<String> exclude = const <String>{},
+    bool scriptOnly = false,
   }) {
+    final scripts = progress.skills.scriptDecks;
     final cards = <Card>[
       for (final card in untaughtCards(
         request.language!,
         deckId: request.deckIds?.single,
         tags: request.tags,
       ))
-        if (!exclude.contains(card.id)) card,
+        if (!exclude.contains(card.id) &&
+            (!scriptOnly || scripts.contains(card.deckId)))
+          card,
     ];
     if (cards.isEmpty) return const <SessionItem>[];
     final first = cards.first;
@@ -4457,6 +4553,24 @@ class _SessionCache {
   final Map<Object, SessionQueue> queues = <Object, SessionQueue>{};
 }
 
+/// What a daily round draws on ([AppState._dailyPools]).
+class _DailyPools {
+  const _DailyPools({
+    required this.due,
+    required this.closest,
+    required this.fresh,
+  });
+
+  /// Pairs really due, the most forgotten first.
+  final List<SessionItem> due;
+
+  /// Pairs not due, the closest to due first.
+  final List<SessionItem> closest;
+
+  /// The new skills of taught words, never asked: no backlog.
+  final List<SessionItem> fresh;
+}
+
 /// The words first drilled today, counted as far as [read] answers of the
 /// log.
 class _NewWords {
@@ -4465,6 +4579,11 @@ class _NewWords {
   int read = 0;
   final Set<String> earlier = <String>{};
   final Set<String> todays = <String>{};
+
+  /// The `(card, skill)` pairs answered before today and those answered
+  /// today, for [AppState.newPairsToday].
+  final Set<(String, DrillMode)> earlierPairs = <(String, DrillMode)>{};
+  final Set<(String, DrillMode)> todaysPairs = <(String, DrillMode)>{};
 }
 
 /// Values kept for one language, with what they were worked out from.

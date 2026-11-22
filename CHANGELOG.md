@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Placement no longer queues thousands of reviews.** After Find my level, Today counts only reviews that are really due, adds the other skills of the words you know a few at a time, and keeps teaching a script you cannot read yet even while you catch up.
 - **Every script you know or learn shows on a card.** A word shows in the script you are learning, with its spelling in each other script you can already read in smaller type beneath it.
 
 ## [0.12.0] - 2026-11-22
