@@ -98,7 +98,7 @@ class CultureImageView extends StatelessWidget {
     required this.bytes,
     required this.width,
     required this.height,
-    required this.label,
+    this.label,
     required this.placeholder,
   });
 
