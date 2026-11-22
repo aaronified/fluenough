@@ -105,6 +105,9 @@ Future<void> main() async {
     // (#1699).
     batchCheck: checkBatchInIsolate,
     hasher: sha256InIsolate,
+    // The fonts load after the first frame, the learner's first (#1699).
+    deferFonts: true,
+    otherFontsDelay: const Duration(seconds: 20),
     // The culture pictures, as binary files (not in the deck files: they
     // are fetched on demand and pruned with their course).
     images: MediaImageCache(
@@ -247,6 +250,7 @@ Future<void> main() async {
       marks
         ..mark('first ready frame')
         ..summary();
+      unawaited(deckDownloads.loadFontsInBackground());
     });
   }
 

@@ -269,7 +269,8 @@ class AppState extends ChangeNotifier {
     unawaited(_asrPacks.refresh());
     deckDownloads
       ?..wantsFont = fontCheck.wants
-      ..usesFont = fontCheck.uses;
+      ..usesFont = fontCheck.uses
+      ..learningLanguages = () => learningCodes;
     this.settings.addListener(_reviewerToDownloads);
     _reviewerToDownloads();
     this.settings.addListener(_languageShownChanged);

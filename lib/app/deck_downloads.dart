@@ -9,6 +9,7 @@ import '../core/decks/deck_fetch.dart';
 import '../core/decks/deck_index.dart';
 import '../core/decks/language_resources.dart';
 import '../core/decks/sha256.dart';
+import '../core/decks/script_fonts.dart' show contentFontScripts;
 import '../core/decks/shared_data.dart';
 import '../core/review/review_queue.dart';
 import 'app_info.dart';
@@ -206,6 +207,8 @@ class DeckDownloads extends ChangeNotifier {
     this.marks,
     this.batchCheck,
     this.hasher,
+    this.deferFonts = false,
+    this.otherFontsDelay,
   }) : fonts = scriptFonts ?? ScriptFonts(),
        images = images ?? MediaImageCache();
 
@@ -258,6 +261,22 @@ class DeckDownloads extends ChangeNotifier {
   /// Works out a download's SHA-256 off the UI isolate (the app gives
   /// [sha256InIsolate]). Null hashes in place.
   final Future<String> Function(List<int> bytes)? hasher;
+
+  /// Whether [open] leaves the fonts for [loadFontsInBackground], which the
+  /// app calls after the first frame (#1699): reading and registering a font
+  /// takes seconds with the big ones, and nothing before the first frame
+  /// needs them. False loads them in [open], as before (tests).
+  final bool deferFonts;
+
+  /// With [deferFonts], how long after the first fonts the rest are loaded:
+  /// the fonts of the languages the learner learns and the content fonts
+  /// come first, the others (the language picker's scripts) after this
+  /// wait. Null loads the rest at once after the first.
+  final Duration? otherFontsDelay;
+
+  /// The codes of the languages the learner learns, to load their fonts
+  /// first. Set by `AppState`; null loads every font in one pass.
+  Iterable<String> Function()? learningLanguages;
 
   // Progress notifications are kept to one per [progressNotifyMs], however
   // many files arrive: the UI redraws the bar, not once per file.
@@ -670,22 +689,76 @@ class DeckDownloads extends ChangeNotifier {
     } on Object catch (e) {
       _log?.warning('Deck downloads: could not read their state: $e');
     }
-    await _span('downloads: fonts', _loadFonts);
+    if (!deferFonts) await _span('downloads: fonts', _loadFonts);
     _notify();
   }
 
+  /// Loads the fonts on the phone for the learner's languages and the
+  /// content fonts, then the others after [otherFontsDelay], off the first
+  /// frame's path (#1699). Called once, after the first frame, by the app.
+  /// Does nothing without [deferFonts], whose fonts [open] loaded. Never
+  /// throws: a font that fails is logged and its script keeps the phone's
+  /// font.
+  Future<void> loadFontsInBackground() async {
+    if (!deferFonts || _disposed) return;
+    try {
+      await _span(
+        'fonts: learner and content',
+        () => _loadFonts(onlyScripts: _firstFontScripts()),
+      );
+      final delay = otherFontsDelay;
+      if (delay != null) {
+        await Future<void>.delayed(delay);
+        if (_disposed) return;
+      }
+      await _span('fonts: the others', _loadFonts);
+    } on Object catch (e) {
+      _log?.error('Deck downloads: loading fonts in the background: $e');
+    }
+  }
+
+  /// The scripts of the fonts loaded first: the content fonts and those of
+  /// the languages the learner learns, as the index lists them; null (every
+  /// font) when that cannot be told yet.
+  Set<String>? _firstFontScripts() {
+    final index = _index;
+    final learning = learningLanguages;
+    if (index == null || learning == null) return null;
+    return <String>{
+      ...contentFontScripts,
+      for (final code in learning())
+        for (final font in index.language(code)?.fonts ?? const <IndexFont>[])
+          font.script,
+    };
+  }
+
   /// Loads the fonts on the phone that are not loaded yet, so that text in
-  /// their scripts is drawn in them (ADR-0042). A font that cannot be read
-  /// leaves its script in the phone's own font.
-  Future<void> _loadFonts() async {
+  /// their scripts is drawn in them (ADR-0042); with [onlyScripts], only those
+  /// scripts'. A font that cannot be read leaves its script in the phone's
+  /// own font. A file two scripts share (the Japanese font is kept for both
+  /// of its scripts) is read once. The font list notifies once per five
+  /// fonts and at the end, not once per font, so that the app is not
+  /// redrawn for each.
+  Future<void> _loadFonts({Set<String>? onlyScripts}) async {
+    final read = <String, Uint8List?>{};
+    var sinceNotified = 0;
     for (final font in _fontsOnPhone.values.toList()) {
+      if (_disposed) break;
       if (fonts.isLoaded(font)) continue;
+      if (onlyScripts != null && !onlyScripts.contains(font.script)) continue;
       if (usesFont != null && !usesFont!(font.script)) continue;
       try {
         final watch = Stopwatch()..start();
-        final bytes = await files.readFont(font.path);
+        final cached = read.containsKey(font.sha256);
+        final Uint8List? bytes;
+        if (cached) {
+          bytes = read[font.sha256];
+        } else {
+          bytes = await files.readFont(font.path);
+          read[font.sha256] = bytes;
+        }
         final readMs = watch.elapsedMilliseconds;
-        if (bytes != null && !await fonts.load(font, bytes)) {
+        if (bytes != null && !await fonts.load(font, bytes, notify: false)) {
           _log?.warning('Deck downloads: could not load ${font.path}');
         }
         marks?.record(
@@ -694,12 +767,20 @@ class DeckDownloads extends ChangeNotifier {
           extra: <String, Object?>{
             'bytes': bytes?.length,
             'readMs': readMs,
+            'fileShared': cached,
           },
         );
+        if (++sinceNotified >= 5) {
+          sinceNotified = 0;
+          fonts.notifyLoaded();
+        }
+        // Between fonts the UI isolate gets its frames back.
+        if (deferFonts) await Future<void>.delayed(Duration.zero);
       } on Object catch (e) {
         _log?.warning('Deck downloads: could not read ${font.path}: $e');
       }
     }
+    fonts.notifyLoaded();
   }
 
   /// Reads the index from GitHub again, and keeps it. Returns whether it
