@@ -2,6 +2,7 @@
 // the kind:, status: and theme: tokens, suggestions and the script offers.
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart' show RenderSliver;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/core/models/deck.dart' show DeckKind, LanguageInfo;
@@ -351,7 +352,9 @@ void main() {
       expect(find.byTooltip(l10n.decksSearchClose), findsNothing);
       expect(find.byType(CourseCard), findsOneWidget);
       expect(scroll.offset, 0);
-      final path = tester.renderObject<RenderSliver>(find.byType(SliverList));
+      final path = tester.renderObject<RenderSliver>(
+        find.byType(SliverList).first,
+      );
       expect(path.geometry!.paintExtent, greaterThan(100));
       final card = tester.getBottomLeft(find.byType(CourseCard)).dy;
       final viewport = tester.getBottomLeft(find.byType(CustomScrollView)).dy;
