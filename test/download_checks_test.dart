@@ -54,7 +54,7 @@ void main() {
       expect(problem!.path, 'decks/es/en/es-en-core-100.yaml');
       expect(problem.notUtf8, isFalse);
       expect(
-        problem.message,
+        problem.why,
         DeckCatalog.checkFile('decks/es/en/es-en-core-100.yaml', broken),
       );
     });
@@ -76,7 +76,7 @@ void main() {
       final there = await checkBatchInIsolate(batch);
       expect(there, isNotNull);
       expect(there!.path, here!.path);
-      expect(there.message, here.message);
+      expect(there.why, here.why);
       expect(there.notUtf8, here.notUtf8);
       expect(await checkBatchInIsolate(const <DeckFileBytes>[]), isNull);
     });
@@ -154,7 +154,7 @@ void main() {
       final d = downloads(
         batchCheck: (files) async => (
           path: files.first.path,
-          message: 'broken on purpose',
+          why: 'broken on purpose',
           notUtf8: false,
         ),
       );

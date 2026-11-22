@@ -26,9 +26,9 @@ import 'startup_marks.dart';
 /// batch crosses to an isolate.
 typedef DeckFileBytes = ({String path, Uint8List bytes});
 
-/// What is wrong with a downloaded file: its path, what is wrong with it, and
+/// What is wrong with a downloaded file: its path, why, and
 /// whether it was not UTF-8 at all.
-typedef DeckFileProblem = ({String path, String message, bool notUtf8});
+typedef DeckFileProblem = ({String path, String why, bool notUtf8});
 
 /// Checks [files] in order, as [DeckCatalog.checkFile] reads a download
 /// (UTF-8, then the whole parse of its `kind`), and returns the first
@@ -39,11 +39,11 @@ DeckFileProblem? checkDeckBatch(List<DeckFileBytes> files) {
     try {
       text = utf8.decode(file.bytes);
     } on FormatException {
-      return (path: file.path, message: 'not UTF-8', notUtf8: true);
+      return (path: file.path, why: 'not UTF-8', notUtf8: true);
     }
     final problem = DeckCatalog.checkFile(file.path, text);
     if (problem != null) {
-      return (path: file.path, message: problem, notUtf8: false);
+      return (path: file.path, why: problem, notUtf8: false);
     }
   }
   return null;
@@ -1810,7 +1810,7 @@ class DeckDownloads extends ChangeNotifier {
         if (found.notUtf8) {
           _log?.warning('Downloaded deck is not UTF-8: ${found.path}');
         } else {
-          _log?.warning('Downloaded deck failed its check: ${found.message}');
+          _log?.warning('Downloaded deck failed its check: ${found.why}');
         }
         return DeckDownloadFailure.invalid;
       }

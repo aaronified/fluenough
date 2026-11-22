@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **The app starts and updates decks faster.** Opening the app and downloading deck updates no longer make it stutter for several seconds.
+
 ## [0.12.0] - 2026-11-22
 
 - **Thank you page.** Settings, Sources now starts by thanking everyone whose work Fluenough stands on, from the Wikimedia volunteers to the reviewers and learners.
