@@ -106,13 +106,13 @@ Future<void> startFindLevel(
   final navigator = Navigator.of(context);
   if (built < builtA1) return;
   final native = state.courseNative(code);
-  final ready = state.placementRunPlan(code, native: native);
+  final planned = state.placementRunPlan(code, native: native);
   // One language at a time (ADR-0062): a language whose decks are not read
   // yet is read first, behind a spinner, and placement goes on from it.
-  final reading = ready == null && state.isLanguageReading(code);
+  final reading = planned == null && state.isLanguageReading(code);
   final plan = reading
       ? await _readThenPlan(context, state, code, native)
-      : ready;
+      : planned;
   if (!context.mounted) return;
   if (plan == null) {
     showAppSnackBar(context, l10n.findLevelNoCourse(name));
