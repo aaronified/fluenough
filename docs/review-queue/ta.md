@@ -146,3 +146,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-2192 | ta-nature | Is நதி or ஆறு the usual word for a river in speech? | Sonnet builder | 2026-11-23 |
 | ta-2197 | ta-nature | Is வனம் natural in speech, or only written beside காடு? | Sonnet builder | 2026-11-23 |
 | ta-2219 | ta-nature | Does ஆமை cover both tortoise and turtle? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-verb-present and the A2 rules decks | Forms of the 150 later verbs are generated from a pattern (stem, past marker, future marker, participle): check them, above all the compound verbs, wh stems (பற, மற, கட) and -ய் verbs. | Sonnet builder (ta-gram2) | 2026-11-23 |
