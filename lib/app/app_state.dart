@@ -7,6 +7,7 @@ import 'package:flutter/scheduler.dart';
 
 import '../core/data/course_path.dart';
 import '../core/placement/item_registry.dart' show RegItem;
+import '../core/private/private_ids.dart' show languageOfId;
 import 'blob_store.dart';
 import 'placement_bank.dart';
 import '../core/feedback/report.dart';
@@ -297,7 +298,7 @@ class AppState extends ChangeNotifier {
       words: () => reminderWordsFor(PlatformDispatcher.instance.locale),
       clock: now,
       // A tap on a reminder opens Today.
-      onOpened: () => shellTab.value = ShellTab.today,
+      onOpened: () => unawaited(reminderOpened()),
       log: (message) => this.log.event(message),
     );
   }
@@ -305,6 +306,15 @@ class AppState extends ChangeNotifier {
   /// The daily reminder (#90): its permission, its plan and the
   /// notifications. Switched on and off in Settings > Reminders.
   late final ReminderService reminders;
+
+  /// The learner tapped a reminder: Today opens, and the shown language is
+  /// read first when it is not loaded yet (one language at a time,
+  /// ADR-0062), so that Today plans from its cards. Never throws.
+  Future<void> reminderOpened() async {
+    shellTab.value = ShellTab.today;
+    final shown = shownLanguage;
+    if (shown != null) await ensureLoaded(shown);
+  }
 
   /// The language shown when this state last notified, so that a change
   /// in settings that shows another rebuilds every screen that reads this
@@ -936,6 +946,50 @@ class AppState extends ChangeNotifier {
   /// Every deck that parsed, in path order. Empty until loaded.
   List<DeckEntry> get decks => _view.decks;
 
+  /// The decks of [language] as the learner has them. Read one language at a
+  /// time, the loaded unit's own list, the same list until that unit is read
+  /// again, so that what is kept against it (a card lookup, the tags,
+  /// Progress's numbers) stays while another language loads (ADR-0062).
+  /// Empty while the unit is not loaded. Read whole, [language]'s part of
+  /// [decks], kept until the catalog or Adult content changes.
+  List<DeckEntry> decksOf(String language) {
+    if (_perLanguage) {
+      final unit = deckCatalog.catalogSet.unitOf(language);
+      if (unit == null) return const <DeckEntry>[];
+      return unit.scopedFor(adult: settings.adultContent).decks;
+    }
+    final view = _view;
+    if (!identical(_decksOfView, view)) {
+      _wholeDecksOf.clear();
+      _decksOfView = view;
+    }
+    final kept = _wholeDecksOf[language];
+    if (kept != null) return kept;
+    return _wholeDecksOf[language] = List<DeckEntry>.unmodifiable(<DeckEntry>[
+      for (final entry in view.decks)
+        if (entry.language.code == language) entry,
+    ]);
+  }
+
+  Catalog? _decksOfView;
+  final Map<String, List<DeckEntry>> _wholeDecksOf =
+      <String, List<DeckEntry>>{};
+
+  /// The decks a card or rule with [id] may be in: its language's (an id
+  /// starts with it, and is permanent) when the catalog is read one language
+  /// at a time, where only that unit may be loaded; else every deck.
+  List<DeckEntry> decksHolding(String id) =>
+      _perLanguage ? decksOf(languageOfId(id)) : decks;
+
+  /// Whether the catalog is read one language at a time (ADR-0062).
+  bool get readsPerLanguage => _perLanguage;
+
+  /// What a value kept about [language]'s decks is kept against: the list of
+  /// its decks, or with no language every loaded deck's. The same object for
+  /// as long as those decks are the same ones.
+  Object decksKeyOf(String? language) =>
+      language == null ? decks : decksOf(language);
+
   /// Every deck, adult decks and rude cards too, whatever "Adult content"
   /// says. Only what names a rude word to warn of it reads this: the sound-
   /// alike warning, which hides the word itself (#628).
@@ -1155,9 +1209,9 @@ class AppState extends ChangeNotifier {
     () => _learnedDecks(onlyShown: true),
   );
 
-  List<DeckEntry> _learnedDecks({required bool onlyShown}) {
+  List<DeckEntry> _learnedDecks({required bool onlyShown, String? language}) {
     final profile = currentProfile;
-    final shown = onlyShown ? shownLanguage : null;
+    final shown = language ?? (onlyShown ? shownLanguage : null);
     final mine = <DeckEntry>[
       // The hidden decks a learner added join Today's reviews (D3).
       for (final entry in drillDecks)
@@ -2536,6 +2590,13 @@ class AppState extends ChangeNotifier {
 
   /// Whether a pair counts as due, as Today counts it: in the decks the
   /// profile learns, in the skills switched on, and not set aside.
+  ///
+  /// A language the catalog has not read (one language at a time, ADR-0062)
+  /// counts by the log: a pair of a language the profile learns that is on
+  /// the phone is due without a look at the language's cards, which are not
+  /// loaded. It differs from the exact count only by a card a deck update
+  /// removed, and is exact once the language is loaded. Only a count across
+  /// languages ([onlyShown] false) reads this; the shown language is loaded.
   bool Function(ProgressKey key) _countsAsDue({bool onlyShown = true}) {
     final modes = _modes(ignorePauses: true);
     final learned = <String>{
@@ -2543,11 +2604,46 @@ class AppState extends ChangeNotifier {
           in onlyShown ? profileDecks : _learnedDecks(onlyShown: false))
         for (final card in entry.cards) card.id,
     };
+    final byLog = onlyShown ? const <String>{} : _learnedUnloadedLanguages();
     final leeches = progress.leechEffects;
     return (key) =>
-        learned.contains(key.cardId) &&
+        (learned.contains(key.cardId) ||
+            (byLog.isNotEmpty && byLog.contains(languageOfId(key.cardId)))) &&
         modes.contains(key.mode) &&
         !leeches.isSetAside(key);
+  }
+
+  /// The languages the profile learns that are on the phone and whose units
+  /// are not loaded: the ones a count of due pairs takes from the log alone.
+  /// None when the catalog is read whole.
+  Set<String> _learnedUnloadedLanguages() {
+    if (!_perLanguage) return const <String>{};
+    final profile = currentProfile;
+    final set = deckCatalog.catalogSet;
+    return <String>{
+      for (final language in languages)
+        if (profile.learns(language.code) &&
+            !set.loadOf(language.code).isLoaded)
+          language.code,
+    };
+  }
+
+  /// Whether [language] has a review due now, counted from the log alone:
+  /// for a language whose unit is not loaded, such as the dot on the language
+  /// bar or the next language a summary offers. The same pairs
+  /// [dueForecast] counts, so the two agree.
+  bool hasDueInLog(String language) {
+    final modes = _modes(ignorePauses: true);
+    final leeches = progress.leechEffects;
+    final due = progress.dueByDay(
+      now(),
+      days: 1,
+      counts: (key) =>
+          languageOfId(key.cardId) == language &&
+          modes.contains(key.mode) &&
+          !leeches.isSetAside(key),
+    );
+    return due.first > 0;
   }
 
   /// Cards due tomorrow, as Today will count them: in the decks the profile
@@ -2558,6 +2654,9 @@ class AppState extends ChangeNotifier {
   /// counts them and across every language the profile learns (the language
   /// bar's choice does not narrow it): index 0 is today. What the daily
   /// reminder is planned from (#90).
+  ///
+  /// A language not loaded (one language at a time, ADR-0062) counts from the
+  /// log alone, with no unit read: see [_countsAsDue].
   List<int> dueForecast({int days = 7}) => progress.dueByDay(
     now(),
     days: days,
@@ -2611,10 +2710,18 @@ class AppState extends ChangeNotifier {
   /// language bar to it.
   List<LanguageInfo> nextTodayLanguages(String finished) => <LanguageInfo>[
     for (final language in languageChoices)
-      if (language.code != finished &&
-          buildSession(DrillRequest.today(language: language.code)).isNotEmpty)
-        language,
+      if (language.code != finished && _hasTodayWork(language.code)) language,
   ];
+
+  /// Whether [code] has something left in its own session: its queue, or for
+  /// a language not read yet, a review due in the log (the cards are not
+  /// loaded to ask).
+  bool _hasTodayWork(String code) {
+    final request = DrillRequest.today(language: code);
+    return isSessionLoading(request)
+        ? hasDueInLog(code)
+        : buildSession(request).isNotEmpty;
+  }
 
   /// The queue for [request], built by [SessionQueue] from the catalog, the
   /// progress store, the settings, the feature registry and the voices.
@@ -2624,6 +2731,9 @@ class AppState extends ChangeNotifier {
   /// [ignorePauses] builds it as if no skill were paused: a pause lasts an
   /// hour and does not make a deck finished, so [notStudiedIn] ignores it.
   SessionQueue buildSession(DrillRequest request, {bool ignorePauses = false}) {
+    // One language at a time, a queue for a language not read yet is empty
+    // and not kept: the caller reads it first ([ensureRequestLoaded]).
+    if (isSessionLoading(request)) return SessionQueue.empty;
     // A queue is immutable, so one built for the same request is shared
     // until progress, settings or this state change (#852).
     List<String>? sorted(Iterable<String>? values) =>
@@ -2672,6 +2782,44 @@ class AppState extends ChangeNotifier {
       sessionBuilds[scope!] = (sessionBuilds[scope] ?? 0) + 1;
       return _buildSession(request, ignorePauses: ignorePauses);
     });
+  }
+
+  /// Whether the language [request] draws on is on the phone and not read
+  /// yet, so that [buildSession] has nothing to build from: the caller waits
+  /// on [ensureRequestLoaded] and builds again. Never true when the catalog
+  /// is read whole. A request that names no language takes the language the
+  /// bar shows.
+  bool isSessionLoading(DrillRequest request) {
+    if (!_perLanguage) return false;
+    final named = request.languages;
+    final codes = named.isNotEmpty ? named : <String>{?shownLanguage};
+    return codes.any((code) => !languageLoad(code).isLoaded && _onPhone(code));
+  }
+
+  /// Whether the language [code] is on the phone and its unit is not read
+  /// yet or being read, so that a screen of it draws a spinner and not an
+  /// empty state. Never true when the catalog is read whole, nor for a unit
+  /// that failed.
+  bool isLanguageReading(String code) {
+    if (!_perLanguage) return false;
+    final phase = languageLoad(code).phase;
+    return (phase == LoadPhase.notLoaded || phase == LoadPhase.loading) &&
+        _onPhone(code);
+  }
+
+  bool _onPhone(String code) => summaryOf(code) != null;
+
+  /// Reads the units [request] draws on that are not loaded, in a worker, so
+  /// that [buildSession] and the lesson and daily builders have the cards.
+  /// Does nothing when the catalog is read whole. Never throws: a language
+  /// that cannot be read stays failed and its session is empty.
+  Future<void> ensureRequestLoaded(DrillRequest request) async {
+    if (!_perLanguage) return;
+    final named = request.languages;
+    final codes = named.isNotEmpty ? named : <String>{?shownLanguage};
+    for (final code in codes) {
+      if (_onPhone(code)) await ensureLoaded(code);
+    }
   }
 
   /// What [skill]'s tile on Today counts and starts (#1009): every card
@@ -2736,7 +2884,12 @@ class AppState extends ChangeNotifier {
       kept.values.clear();
       kept.stamp = stamp;
     }
-    return kept.values.putIfAbsent(key, compute) as T;
+    if (kept.values.containsKey(key)) return kept.values[key] as T;
+    // [compute] may ask for other values kept about the language, so the map
+    // is not held open while it runs.
+    final value = compute();
+    kept.values[key] = value;
+    return value;
   }
 
   void _structureChanged() {
@@ -3061,18 +3214,17 @@ class AppState extends ChangeNotifier {
     final language = request.language;
     // A request that names a language takes its decks even while the bar
     // shows another, as the summary offers the next language (#528).
-    final decks = ids == null
-        ? <DeckEntry>[
-            for (final entry
-                in language == null
-                    ? profileDecks
-                    : _learnedDecks(onlyShown: false))
-              if (language == null || entry.language.code == language) entry,
-          ]
-        : <DeckEntry>[
-            for (final entry in drillDecks)
-              if (ids.contains(entry.id)) entry,
-          ];
+    final List<DeckEntry> decks;
+    if (ids != null) {
+      decks = <DeckEntry>[
+        for (final entry in drillDecks)
+          if (ids.contains(entry.id)) entry,
+      ];
+    } else if (language == null) {
+      decks = profileDecks;
+    } else {
+      decks = _learnedDecks(onlyShown: false, language: language);
+    }
     final scope = request.script;
     final tags = request.tags;
     List<Card> tagged(Iterable<Card> cards) => <Card>[
@@ -3786,7 +3938,7 @@ class AppState extends ChangeNotifier {
     if (own.map(ask.optionOf).toSet().length >= 3) return own;
     return <Card>[
       ...own,
-      for (final other in decks)
+      for (final other in decksOf(entry.language.code))
         if (other.id != entry.id &&
             other.language.code == entry.language.code &&
             other.deck.native.code == entry.deck.native.code)
@@ -3806,7 +3958,7 @@ class AppState extends ChangeNotifier {
   Card? cardInCourseOf(Card card, String id) {
     final entry = deckOf(card);
     if (entry == null) return null;
-    for (final other in decks) {
+    for (final other in decksOf(entry.language.code)) {
       if (other.language.code != entry.language.code ||
           other.deck.native.code != entry.deck.native.code) {
         continue;
@@ -4188,8 +4340,7 @@ class AppState extends ChangeNotifier {
   /// the rule of [nextDailyRound] for it.
   DailyRun? startDaily(String language, {bool keepGoing = false}) {
     final info = <LanguageInfo>[
-      for (final entry in decks)
-        if (entry.language.code == language) entry.language,
+      for (final entry in decksOf(language)) entry.language,
     ].firstOrNull;
     if (info == null) return null;
     final plan = dailyPlanFor(info);
@@ -4589,7 +4740,7 @@ class AppState extends ChangeNotifier {
             ...workQuestionCards(language),
           ];
     final seen = <String>{};
-    final gate = unlocks;
+    final gate = unlocksFor(language);
     return <Card>[
       for (final card in cards)
         if ((tags.isEmpty || card.tags.any(tags.contains)) &&
@@ -4669,6 +4820,7 @@ class AppState extends ChangeNotifier {
     final taught = cards.takeWhile((card) => card is! QuestionCard);
     // As many new items as the mastery bar allows (ADR-0046): fewer while
     // words and rules taught are not known yet.
+    final gate = unlocksFor(request.language!);
     final room = lessonRoom(inProgressIn(request.language!));
     final size = words == null ? room : (beyondRoom ? words : min(room, words));
     final modesOf = drillableModesNow();
@@ -4681,7 +4833,7 @@ class AppState extends ChangeNotifier {
         // (ADR-0046).
         isNew: (card) =>
             !isTaught(card) &&
-            unlocks.isOpen(card) &&
+            gate.isOpen(card) &&
             modesOf(card).isNotEmpty &&
             canLearn(card),
         isKnown: isTaught,
@@ -4909,7 +5061,7 @@ class AppState extends ChangeNotifier {
   /// from a unit when this is none, so that sentences waiting for their
   /// words do not hold the unit back.
   int notStudiedOpenIn(DeckEntry deck) {
-    final gate = unlocks;
+    final gate = unlocksFor(deck.language.code);
     return <String>{
       for (final item in buildSession(
         DrillRequest.untaught(deck.id),
@@ -4962,7 +5114,7 @@ class AppState extends ChangeNotifier {
   Card? cardSaying(LanguageInfo language, String text) {
     final wanted = normaliseForContrast(text);
     if (wanted.isEmpty) return null;
-    for (final entry in decks) {
+    for (final entry in decksOf(language.code)) {
       if (entry.language.code != language.code) continue;
       for (final card in entry.cards) {
         if (normaliseForContrast(card.target) == wanted) return card;

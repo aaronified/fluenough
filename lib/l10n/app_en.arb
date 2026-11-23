@@ -5496,6 +5496,24 @@
   "@leechesBringBack": {
     "description": "Undoes Set aside."
   },
+  "leechesUnread": "{language}: {count, plural, =1{1 card} other{{count} cards}} you keep missing",
+  "@leechesUnread": {
+    "description": "A row on the leeches list of every language, for a language whose cards are not read yet: how many cards it has.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Spanish"
+      },
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "leechesUnreadOpen": "Tap to open the language and see them.",
+  "@leechesUnreadOpen": {
+    "description": "Under leechesUnread: tapping the row reads the language and lists its cards."
+  },
   "leechesEmpty": "No leeches. Nothing you keep missing.",
   "@leechesEmpty": {
     "description": "Shown when there are no leeches."

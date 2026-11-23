@@ -11,7 +11,11 @@ extension LanguageWork on AppState {
   bool languageHasWork(String language) =>
       keptFor<bool>(language, 'languageHasWork', () {
         try {
-          final queue = buildSession(DrillRequest.today(language: language));
+          final request = DrillRequest.today(language: language);
+          // Not read yet: a review due in the log is the dot, and the cards
+          // are not loaded to ask.
+          if (isSessionLoading(request)) return hasDueInLog(language);
+          final queue = buildSession(request);
           if (queue.due.isNotEmpty || queue.fresh.isNotEmpty) return true;
           // New cards not taught yet, as Today's lesson counts them.
           return untaughtCards(language).isNotEmpty;

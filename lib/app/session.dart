@@ -1,3 +1,4 @@
+import '../core/private/private_ids.dart' show languageOfId;
 import '../core/scheduling/fsrs.dart';
 import '../core/scheduling/script_split.dart';
 import 'skill.dart';
@@ -227,6 +228,20 @@ class DrillRequest {
   /// At most this many words, picked at random: a tag's practice. Null for
   /// all of them, in order.
   final int? limit;
+
+  /// The languages whose decks the session draws on, by code: [language],
+  /// else the languages the ids of [deckIds] and [cardIds] name (ids start
+  /// with their language and are permanent). Empty when the request takes the
+  /// language the bar shows. What the catalog reads before the session is
+  /// built when it reads one language at a time.
+  Set<String> get languages {
+    final named = language;
+    if (named != null) return <String>{named};
+    return <String>{
+      for (final id in deckIds ?? const <String>{}) languageOfId(id),
+      for (final id in cardIds ?? const <String>{}) languageOfId(id),
+    };
+  }
 
   /// Whether answers are recorded although the session revises: every
   /// revision of cards, from Today, a finished deck's Revise or a tag

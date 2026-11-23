@@ -139,7 +139,7 @@ extension SituationState on AppState {
     final Set<DrillMode> Function(Card card) modesOf = asked == null
         ? drillable
         : (card) => drillable(card).intersection(asked);
-    final gate = unlocks;
+    final gate = unlocksFor(language);
     final lesson = request.revise
         ? const <SessionItem>[]
         : lessonPlan(
