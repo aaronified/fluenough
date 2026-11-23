@@ -1,0 +1,98 @@
+schema: 1
+id: "ta-relationships-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-9550"
+    target: "நான் என் நண்பனுக்கு நன்றிக்கடிதம் எழுதுகிறேன்."
+    reading: "nāṉ eṉ naṇpaṉukku naṉṟikkaṭitam eḻutukiṟēṉ."
+    ipa: "naːn en naɳpanukku nanrikkaʈit̪am eɻut̪ukireːn"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "நண்பனுக்கு", base: "நண்பன்", reading: "naṇpaṉ" }, { word: "நன்றிக்கடிதம்", ref: "ta-8282" }, { word: "எழுதுகிறேன்", base: "எழுது", reading: "eḻutu" }]
+    confusables:
+      - { id: "w1", ref: "ta-8283", kind: "word" }
+      - { id: "w2", ref: "ta-1184", kind: "word" }
+      - { id: "w3", ref: "ta-7103", kind: "word" }
+  - id: "ta-9551"
+    target: "என் பக்கத்துவீட்டுக்காரர் எப்போதும் உதவி செய்கிறார்."
+    reading: "eṉ pakkattuvīṭṭukkārar eppōtum utavi ceykiṟār."
+    ipa: "en pakkat̪t̪uʋiːʈʈukkaːɾaɾ eppoːt̪um ut̪aʋi sejkiraːɾ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "பக்கத்துவீட்டுக்காரர்", ref: "ta-8260" }, { word: "எப்போதும்", ref: "ta-0135" }, { word: "உதவி", ref: "ta-1800" }, { word: "செய்கிறார்", base: "செய்", reading: "cey" }]
+    confusables:
+      - { id: "w1", ref: "ta-8279", kind: "word" }
+      - { id: "w2", ref: "ta-8290", kind: "word" }
+      - { id: "w3", ref: "ta-8262", kind: "word" }
+  - id: "ta-9552"
+    target: "இது ரகசியம், யாரிடமும் சொல்லாதே."
+    reading: "itu rakaciyam, yāriṭamum collātē."
+    ipa: "it̪u ɾakasijam jaːɾiʈamum sollaːt̪eː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "ரகசியம்", ref: "ta-8265" }, { word: "யாரிடமும்", base: "யார்", reading: "yār" }, { word: "சொல்லாதே", base: "சொல்", reading: "col" }]
+    confusables:
+      - { id: "w1", ref: "ta-8266", kind: "word" }
+      - { id: "w2", ref: "ta-8269", kind: "word" }
+      - { id: "w3", ref: "ta-8267", kind: "word" }
+  - id: "ta-9553"
+    target: "நான் உன் கருத்தை ஏற்றுக்கொள்கிறேன்."
+    reading: "nāṉ uṉ karuttai ēṟṟukkoḷkiṟēṉ."
+    ipa: "naːn un kaɾut̪t̪ai eːrrukkoɭkireːn"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "உன்", base: "நீ", reading: "nī" }, { word: "கருத்தை", base: "கருத்து", reading: "karuttu" }, { word: "ஏற்றுக்கொள்கிறேன்", base: "ஏற்றுக்கொள்", reading: "ēṟṟukkoḷ" }]
+    confusables:
+      - { id: "w1", ref: "ta-8268", kind: "word" }
+      - { id: "w2", ref: "ta-8278", kind: "word" }
+      - { id: "w3", ref: "ta-8276", kind: "word" }
+  - id: "ta-9554"
+    target: "சண்டைக்குப் பிறகு அவர்கள் சமாதானம் ஆனார்கள்."
+    reading: "caṇṭaikkup piṟaku avarkaḷ camātāṉam āṉārkaḷ."
+    ipa: "saɳʈaikkup piraku aʋaɾkaɭ samaːt̪aːnam aːnaːɾkaɭ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "சண்டைக்குப்", base: "சண்டை", reading: "caṇṭai" }, { word: "பிறகு", base: "பிறகு", reading: "piṟaku" }, { word: "அவர்கள்", ref: "ta-0065" }, { word: "சமாதானம்", ref: "ta-8264" }, { word: "ஆனார்கள்", base: "ஆகு", reading: "āku" }]
+    confusables:
+      - { id: "w1", ref: "ta-8277", kind: "word" }
+      - { id: "w2", ref: "ta-8286", kind: "word" }
+      - { id: "w3", ref: "ta-8276", kind: "word" }
+  - id: "ta-9555"
+    target: "அவள் என் நெருக்கமான தோழி."
+    reading: "avaḷ eṉ nerukkamāṉa tōḻi."
+    ipa: "aʋaɭ en neɾukkamaːna t̪oːɻi"
+    pos: "phrase"
+    bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "நெருக்கமான", ref: "ta-8304" }, { word: "தோழி", ref: "ta-8261" }]
+    confusables:
+      - { id: "w1", ref: "ta-8291", kind: "word" }
+      - { id: "w2", ref: "ta-8281", kind: "word" }
+      - { id: "w3", ref: "ta-0074", kind: "word" }
+  - id: "ta-9556"
+    target: "உங்கள் விருந்தோம்பலுக்கு மிக்க நன்றி."
+    reading: "uṅkaḷ viruntōmpalukku mikka naṉṟi."
+    ipa: "uŋkaɭ ʋiɾunt̪oːmpalukku mikka nanri"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "உங்கள்", base: "நீங்கள்", reading: "nīṅkaḷ" }, { word: "விருந்தோம்பலுக்கு", base: "விருந்தோம்பல்", reading: "viruntōmpal" }, { word: "மிக்க", base: "மிக்க", reading: "mikka" }, { word: "நன்றி", ref: "ta-0013" }]
+    confusables:
+      - { id: "w1", ref: "ta-8285", kind: "word" }
+      - { id: "w2", ref: "ta-8283", kind: "word" }
+      - { id: "w3", ref: "ta-1800", kind: "word" }
+  - id: "ta-9557"
+    target: "நம்பிக்கையான நண்பன் எனக்கு வேண்டும்."
+    reading: "nampikkaiyāṉa naṇpaṉ eṉakku vēṇṭum."
+    ipa: "nampikkaijaːna naɳpan enakku ʋeːɳʈum"
+    pos: "phrase"
+    bases: [{ word: "நம்பிக்கையான", ref: "ta-8305" }, { word: "நண்பன்", ref: "ta-0113" }, { word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "வேண்டும்", ref: "ta-0409" }]
+    confusables:
+      - { id: "w1", ref: "ta-8273", kind: "word" }
+      - { id: "w2", ref: "ta-8262", kind: "word" }
+      - { id: "w3", ref: "ta-8289", kind: "word" }

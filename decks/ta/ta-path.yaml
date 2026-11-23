@@ -802,7 +802,8 @@ units:
       - { id: "cricket-talk", text: { "en": "Friends talk about a cricket match" } }
     reading_passages:
       - { id: "match-report", text: { "en": "A short match report" } }
-  - planned: { id: "ta-relationships", theme: "relationships", words: 50 }
+  - decks: ["ta-relationships", "ta-relationships-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }
     reading_passages:
