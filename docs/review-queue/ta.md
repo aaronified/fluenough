@@ -165,6 +165,12 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1320 | ta-eating-out | Is மீல்ஸ் the usual restaurant name for a full rice meal, and is the gloss right? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1319 | ta-eating-out | Is பார்சல் the usual word for takeaway food? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1321 | ta-eating-out | Is சர்வர் the everyday word for a waiter? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-2399 | ta-geography | Does அமெரிக்கா mean mostly the United States in speech? | Sonnet builder | 2026-11-23 |
+| ta-2404 | ta-geography | Does இங்கிலாந்து stand for Britain in speech, or is பிரிட்டன் used? | Sonnet builder | 2026-11-23 |
+| ta-2380 | ta-geography | Is பாண்டிச்சேரி the usual spoken name beside புதுச்சேரி? | Sonnet builder | 2026-11-23 |
+| ta-2375 | ta-geography | Is கோவை the usual spoken short form of Coimbatore? | Sonnet builder | 2026-11-23 |
+| ta-2386 | ta-geography | Is உதகமண்டலம் the correct formal name of Ooty? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-geography | The facts in the culture notes are taken from the cited English Wikipedia pages; a Tamil Nadu speaker may confirm them. | Sonnet builder | 2026-11-23 |
 | ta-1344 | ta-cooking | Is சட்டி the everyday word for a round cooking pot, next to பாத்திரம் and கடாய்? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1345 | ta-cooking | Is மிக்ஸி the usual word for the electric mixer-grinder? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1369 | ta-cooking | Is பதம் used in speech for the right state of a cooked dish? | ta-words1 (Sonnet builder) | 2026-11-23 |
