@@ -265,3 +265,24 @@
     # `normalise` list for dots, d̚, ties, ɕ and the acute exists.
     name: "Vedic Sanskrit; no Wiktionary form is taken (rules only)"
     untagged: false
+
+"ta":
+  dump: "Tamil"
+  variety:
+    # Measured on the kaikki.org dump (modified 2026-10-30, 89 MB, read
+    # 2026-11-23): 7,444 narrow `[ ]` forms, 7,398 of them with no note and no
+    # tag (a few dozen carry Tamil Nadu, formal, colloquial, rapid speech or
+    # dialectal). They are written in another convention than the course's
+    # rules file (decks/ta/ta-phonetics.yaml): ɐ for a, ä for a, ɪ ʊ for i u
+    # and e̞ o̞ for e o beside a, kː for kk, ss for the doubled ச, ɐɪ̯ for ai,
+    # alveolar n at the start of a word, voicing after r l j and ɻ, and the
+    # single [tr] for ற்ற. After the voicing the two agree: on the consonants
+    # (length, vowels and the five differences above ignored) Wiktionary and
+    # the rules say the same for 683 of the 837 distinct targets the decks
+    # share with the dump (82%). So the untagged form is NOT taken
+    # (untagged: false, no notes, no tags): nothing is imported, and every
+    # Tamil card gets its narrow form from decks/ta/ta-phonetics.yaml, in one
+    # convention (as Kannada, Assamese). Flip `untagged` to true only with a
+    # `normalise` list for ɐ ä ɪ ʊ e̞ o̞ kː ss ɐɪ̯ and an `agree` guard.
+    name: "Standard Tamil; no Wiktionary form is taken (rules only)"
+    untagged: false
