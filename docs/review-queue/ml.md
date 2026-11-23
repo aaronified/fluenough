@@ -18,3 +18,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ml-0759 | ml-grammar-postpositions | Is വരെ (vare) used after the plain noun, as in വീട് വരെ (vīṭ vare), with no case ending on the noun? | Sonnet builder | 2026-11-23 |
 | unit-level | ml-grammar-al | Are the -ആൽ (-āl) forms (പേനയാൽ, കൈയാൽ, കത്തിയാൽ) used at all in speech, or only in writing, and is കൊണ്ട് (koṇṭ) after the plain noun right? | Sonnet builder | 2026-11-23 |
 | unit-level | ml-grammar-questions | The question forms (വരുമോ, ആണോ, ഉണ്ടോ, വേണോ, വരുന്നില്ലേ) follow English Wiktionary's entry for -ഓ (-ō); is ചായ വേണോ (cāya vēṇō) the usual spoken form of ചായ വേണമോ? | Sonnet builder | 2026-11-23 |
+| unit-level | ml-grammar-sentences | Does a thing that is acted on, such as വാതിൽ (vātil), stay without an ending in speech, while a person takes -എ (-e), as in അമ്മയെ (ammaye)? | Sonnet builder | 2026-11-23 |
