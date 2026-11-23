@@ -1,0 +1,82 @@
+schema: 1
+id: "ta-eating-out-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4054"
+    target: "மெனு கொடு, எனக்கு பசி."
+    reading: "meṉu koṭu, eṉakku paci."
+    ipa: "menu koʈu enakku pasi"
+    pos: "phrase"
+    bases: [{ word: "மெனு", ref: "ta-1313" }, { word: "கொடு", ref: "ta-0125" }, { word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "பசி", ref: "ta-1314" }]
+    confusables:
+      - { id: "w1", ref: "ta-1318", kind: "word" }
+      - { id: "w2", ref: "ta-1213", kind: "word" }
+  - id: "ta-4055"
+    target: "இரண்டு தோசை, ஒரு காபி."
+    reading: "iraṇṭu tōcai, oru kāpi."
+    ipa: "iɾaɳʈu t̪oːsai oɾu kaːpi"
+    pos: "phrase"
+    bases: [{ word: "இரண்டு", ref: "ta-0089" }, { word: "தோசை", ref: "ta-0248" }, { word: "ஒரு", ref: "ta-0419" }, { word: "காபி", ref: "ta-0245" }]
+    confusables:
+      - { id: "w1", ref: "ta-0249", kind: "word" }
+      - { id: "w2", ref: "ta-0246", kind: "word" }
+  - id: "ta-4056"
+    target: "சாம்பார் கொஞ்சம் புளிப்பு."
+    reading: "cāmpār koñcam puḷippu."
+    ipa: "saːmpaːɾ koɲtʃam puɭippu"
+    pos: "phrase"
+    bases: [{ word: "சாம்பார்", ref: "ta-0250" }, { word: "கொஞ்சம்", ref: "ta-0158" }, { word: "புளிப்பு", ref: "ta-1316" }]
+    confusables:
+      - { id: "w1", ref: "ta-1315", kind: "word" }
+      - { id: "w2", ref: "ta-1178", kind: "word" }
+  - id: "ta-4057"
+    target: "காரம் வேண்டாம்."
+    reading: "kāram vēṇṭām."
+    ipa: "kaːɾam ʋeːɳʈaːm"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "காரம்", ref: "ta-1315" }, { word: "வேண்டாம்", ref: "ta-0410" }]
+    confusables:
+      - { id: "w1", ref: "ta-1316", kind: "word" }
+      - { id: "w2", ref: "ta-0219", kind: "word" }
+  - id: "ta-4058"
+    target: "சர்வர் சாதம் பரிமாறுகிறார்."
+    reading: "carvar cātam parimāṟukiṟār."
+    ipa: "saɾʋaɾ saːt̪am paɾimaːrukiraːɾ"
+    pos: "phrase"
+    bases: [{ word: "சர்வர்", ref: "ta-1321" }, { word: "சாதம்", ref: "ta-0247" }, { word: "பரிமாறுகிறார்", base: "பரிமாறு", reading: "parimāṟu" }]
+    confusables:
+      - { id: "w1", ref: "ta-1320", kind: "word" }
+      - { id: "w2", ref: "ta-1313", kind: "word" }
+  - id: "ta-4059"
+    target: "இரண்டு பார்சல் வேண்டும்."
+    reading: "iraṇṭu pārcal vēṇṭum."
+    ipa: "iɾaɳʈu paːɾsal ʋeːɳʈum"
+    pos: "phrase"
+    bases: [{ word: "இரண்டு", ref: "ta-0089" }, { word: "பார்சல்", ref: "ta-1319" }, { word: "வேண்டும்", ref: "ta-0409" }]
+    confusables:
+      - { id: "w1", ref: "ta-1320", kind: "word" }
+      - { id: "w2", ref: "ta-1318", kind: "word" }
+  - id: "ta-4060"
+    target: "மீல்ஸ் தயார், உட்கார்."
+    reading: "mīls tayār, uṭkār."
+    ipa: "miːls t̪ajaːɾ uʈkaːɾ"
+    pos: "phrase"
+    bases: [{ word: "மீல்ஸ்", ref: "ta-1320" }, { word: "தயார்", base: "தயார்", reading: "tayār" }, { word: "உட்கார்", ref: "ta-0188" }]
+    confusables:
+      - { id: "w1", ref: "ta-1105", kind: "word" }
+      - { id: "w2", ref: "ta-0244", kind: "word" }
+  - id: "ta-4061"
+    target: "தண்ணீர் கொடு, ரொம்ப காரம்."
+    reading: "taṇṇīr koṭu, rompa kāram."
+    ipa: "t̪aɳɳiːɾ koʈu ɾompa kaːɾam"
+    pos: "phrase"
+    bases: [{ word: "தண்ணீர்", ref: "ta-0005" }, { word: "கொடு", ref: "ta-0125" }, { word: "ரொம்ப", ref: "ta-0166" }, { word: "காரம்", ref: "ta-1315" }]
+    confusables:
+      - { id: "w1", ref: "ta-1316", kind: "word" }
+      - { id: "w2", ref: "ta-1314", kind: "word" }

@@ -161,3 +161,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-2317 | ta-workplace | Is gender m right for கணக்காளர், and is the word natural? | Sonnet builder | 2026-11-23 |
 | ta-2350 | ta-workplace | Is கையெழுத்திடு one word, and natural in speech for sign? | Sonnet builder | 2026-11-23 |
 | ta-2353 | ta-workplace | Is அச்சிடு natural in speech, or is a spoken word used for print? | Sonnet builder | 2026-11-23 |
+| ta-1320 | ta-eating-out | Is மீல்ஸ் the usual restaurant name for a full rice meal, and is the gloss right? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1319 | ta-eating-out | Is பார்சல் the usual word for takeaway food? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1321 | ta-eating-out | Is சர்வர் the everyday word for a waiter? | ta-words1 (Sonnet builder) | 2026-11-23 |
