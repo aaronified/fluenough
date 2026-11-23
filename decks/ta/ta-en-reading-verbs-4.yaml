@@ -1,0 +1,59 @@
+schema: 1
+id: "ta-en-reading-verbs-4"
+name: "Tamil reading: verbs 4"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short invented story, using the verbs of the unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-short-story"
+    title: "A short story"
+    theme: "verbs-4"
+    sentences:
+      - text: "காலையில் சேவல் கூவுகிறது."
+        reading: "kālaiyil cēval kūvukiṟatu."
+        ipa: "kaːlaijil seːʋal kuːʋukirat̪u"
+      - text: "பையன் தோட்டத்தில் மண்ணைத் தோண்டுகிறான்."
+        reading: "paiyaṉ tōṭṭattil maṇṇait tōṇṭukiṟāṉ."
+        ipa: "paijan t̪oːʈʈat̪t̪il maɳɳait̪ t̪oːɳʈukiraːn"
+      - text: "அவன் பந்தை அங்கே புதைக்கிறான்."
+        reading: "avaṉ pantai aṅkē putaikkiṟāṉ."
+        ipa: "aʋan pant̪ai aŋkeː put̪aikkiraːn"
+      - text: "பிறகு அவன் அதை மறந்துபோகிறான்."
+        reading: "piṟaku avaṉ atai maṟantupōkiṟāṉ."
+        ipa: "piraku aʋan at̪ai marant̪upoːkiraːn"
+      - text: "மாலையில் பந்தைத் தேடுகிறான்."
+        reading: "mālaiyil pantait tēṭukiṟāṉ."
+        ipa: "maːlaijil pant̪ait̪ t̪eːʈukiraːn"
+    questions:
+      - id: "ta-5273"
+        prompt: { "en": "What does the rooster do in the morning?" }
+        options:
+          - { "en": "It crows" }
+          - { "en": "It sleeps" }
+          - { "en": "It runs away" }
+        answer: 1
+      - id: "ta-5274"
+        prompt: { "en": "What does the boy dig?" }
+        options:
+          - { "en": "The soil in the garden" }
+          - { "en": "A well" }
+          - { "en": "A channel" }
+        answer: 1
+      - id: "ta-5275"
+        prompt: { "en": "What does the boy bury in the garden?" }
+        options:
+          - { "en": "A ball" }
+          - { "en": "A coin" }
+          - { "en": "A book" }
+        answer: 1
+      - id: "ta-5276"
+        prompt: { "en": "What does the boy do in the evening?" }
+        options:
+          - { "en": "He looks for the ball" }
+          - { "en": "He plays with the ball" }
+          - { "en": "He sells the ball" }
+        answer: 1
