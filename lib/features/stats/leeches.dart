@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 
 import '../../app/memory_progress.dart';
 import '../../core/models/card.dart';
+import '../../core/private/private_ids.dart' show languageOfId;
 import 'stats_numbers.dart';
 
 /// Lapses at which a pair counts as a leech: #19's default. The copy takes it
@@ -45,6 +46,25 @@ List<Leech> findLeeches(
     return byCard != 0 ? byCard : a.key.mode.index.compareTo(b.key.mode.index);
   });
   return leeches;
+}
+
+/// How many leech pairs [progress] holds in each language that [isUnread]
+/// names, by language code, which [cardOf] cannot show: the languages of the
+/// phone whose cards are not loaded yet (one language at a time, ADR-0062).
+/// Only languages with at least one are in the map.
+Map<String, int> unreadLeeches(
+  ProgressStore progress, {
+  required CardLookup cardOf,
+  required bool Function(String language) isUnread,
+  int threshold = kLeechThreshold,
+}) {
+  final counts = <String, int>{};
+  for (final found in progress.index.leeches(threshold: threshold)) {
+    if (cardOf(found.key.cardId, deckId: found.deckId) != null) continue;
+    final language = languageOfId(found.key.cardId);
+    if (isUnread(language)) counts[language] = (counts[language] ?? 0) + 1;
+  }
+  return counts;
 }
 
 /// What the learner has done about a leech, as its row shows it: its latest

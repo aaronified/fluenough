@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
@@ -10,6 +12,7 @@ import '../../app/skill.dart';
 import '../../core/feedback/content_report.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
+import '../../core/private/private_ids.dart' show languageOfId;
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
@@ -72,9 +75,18 @@ class DeckDetailPage extends StatefulWidget {
 class _DeckDetailPageState extends State<DeckDetailPage> {
   late Set<String> _tags = Set<String>.of(widget.initialTags);
 
+  /// Whether the deck's language is still being read: one language at a
+  /// time, a deck of a language not loaded is read when it is opened.
+  bool _reading(AppState state) =>
+      state.status == CatalogStatus.loading ||
+      state.isLanguageReading(languageOfId(widget.deckId));
+
   @override
   void initState() {
     super.initState();
+    unawaited(
+      AppScope.read(context).ensureLoaded(languageOfId(widget.deckId)),
+    );
     // A deck written in a script whose font is not on the phone offers the
     // font check, as a course does when it is downloaded.
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -143,7 +155,7 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
     if (entry == null) {
       return Scaffold(
         appBar: AppBar(),
-        body: state.status == CatalogStatus.loading
+        body: _reading(state)
             ? Center(
                 child: CircularProgressIndicator(
                   semanticsLabel: l10n.commonLoadingDecks,

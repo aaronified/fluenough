@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
@@ -10,6 +12,7 @@ import '../../app/unlocks.dart';
 import '../../core/feedback/content_report.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
+import '../../core/private/private_ids.dart' show languageOfId;
 import '../../core/progress/mastery.dart' show kKnownRecall;
 import '../../core/progress/unlocks.dart';
 import '../../l10n/app_localizations.dart';
@@ -95,13 +98,27 @@ class _UnitPageState extends State<UnitPage> {
   bool _tablesSeeded = false;
   bool _opened = false;
 
+  /// Whether the deck's language is still being read: one language at a
+  /// time, a deck of a language not loaded is read when it is opened.
+  bool _reading(AppState state) =>
+      state.status == CatalogStatus.loading ||
+      state.isLanguageReading(languageOfId(widget.deckId));
+
+  @override
+  void initState() {
+    super.initState();
+    unawaited(
+      AppScope.read(context).ensureLoaded(languageOfId(widget.deckId)),
+    );
+  }
+
   void _openWordOnce(AppState state, LanguageInfo language) {
     final id = widget.openWord;
     if (_opened || id == null) return;
     _opened = true;
-    final card = <Card>[for (final entry in state.decks) ...entry.cards]
-        .where((c) => c.id == id)
-        .firstOrNull;
+    final card = <Card>[
+      for (final entry in state.decksOf(language.code)) ...entry.cards,
+    ].where((c) => c.id == id).firstOrNull;
     if (card == null) return;
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) showWordSheet(context, card: card, language: language);
@@ -153,7 +170,7 @@ class _UnitPageState extends State<UnitPage> {
     if (unit == null) {
       return Scaffold(
         appBar: AppBar(),
-        body: state.status == CatalogStatus.loading
+        body: _reading(state)
             ? Center(
                 child: CircularProgressIndicator(
                   semanticsLabel: l10n.commonLoadingDecks,
@@ -181,7 +198,7 @@ class _UnitPageState extends State<UnitPage> {
       builder: (context, _) {
         final content = UnitContent(decks);
         final answers = state.recentAnswers;
-        final gate = state.unlocks;
+        final gate = state.unlocksFor(language.code);
         final words = <Card>[
           for (final card in content.words)
             if (!card.phrasebook) card,

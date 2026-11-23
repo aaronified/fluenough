@@ -62,8 +62,8 @@ class StatsPage extends StatelessWidget {
         state.progressNumbers,
       ]),
       builder: (context, _) {
-        final languageOf = languageLookupOf(state);
         final language = state.progressLanguage;
+        final languageOf = languageLookupOf(state, language: language);
         final numbers = state.progressNumbers.of(language);
         if (numbers == null) {
           // The first visit: the numbers are being worked out.
@@ -143,7 +143,7 @@ class _StatsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
-    final cardOf = cardLookupOf(state);
+    final cardOf = cardLookupOf(state, language: language);
     final mastery = numbers.mastery;
     final chosen = language;
     final counts = chosen == null

@@ -43,7 +43,7 @@ class WhyClosedSheet extends StatelessWidget {
     final state = AppScope.of(context);
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final needs = state.unlocks.needsOf(card);
+    final needs = state.unlocksFor(language.code).needsOf(card);
     final lines = readingLines(
       context,
       reading: card.reading,

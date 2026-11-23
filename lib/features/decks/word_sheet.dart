@@ -142,7 +142,7 @@ class WordSheet extends StatelessWidget {
       notOpen: isSentence(card) && !state.isTaught(card),
     );
     final line = joinParts(l10n, <String>[?card.pos, ?card.gender]);
-    final checked = checkedByOf(state.decks, card).length;
+    final checked = checkedByOf(state.decksOf(language.code), card).length;
     final facts = state.factsNaming(card, language);
     final dictionary = card.dictionary;
     final wiktionary = wiktionaryLinksFor(state, card, language);

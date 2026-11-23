@@ -15,9 +15,10 @@ import 'card_notes.dart';
 /// the teach card shows them without (owner, 2026-10-22: "No need for headers
 /// in the 'other meanings or sounds like another word' cards").
 
-/// The card with [id], from any deck: a partner a note names.
+/// The card with [id], from any deck: a partner a note names. One language at
+/// a time, from the decks of its language (ids start with it).
 Card? findCard(AppState state, String id) {
-  for (final entry in state.decks) {
+  for (final entry in state.decksHolding(id)) {
     for (final other in entry.cards) {
       if (other.id == id) {
         return other;

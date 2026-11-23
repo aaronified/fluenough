@@ -79,7 +79,7 @@ Card? Function(String id) baseFinder(
   String? native,
 }) => (id) {
   Card? other;
-  for (final entry in state.decks) {
+  for (final entry in state.decksOf(language)) {
     if (entry.language.code != language) continue;
     for (final c in entry.cards) {
       if (c.id != id) continue;
