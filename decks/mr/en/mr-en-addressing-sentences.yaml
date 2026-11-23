@@ -12,6 +12,7 @@ cards:
     native: "Excuse me, sir, come here."
     bases: { "अहो": "excuse me", "साहेब": "sir", "इथे": "here", "या": "come" }
     confusables: { "w1": { why: "There, not here: तिथे (tithe) means there." }, "w2": { why: "Go: जा (jā) means go, the opposite of come, या (yā)." } }
+    notes: { "n1": "या (yā), come, is the polite order of येणे (yeṇe): the friend form is ये (ye), and the stem changes to या (yā) for a polite you." }
   "mr-5023":
     native: "Hey brother, come here."
     bases: { "अरे": "hey", "दादा": "brother", "इथे": "here", "ये": "come" }
@@ -20,6 +21,7 @@ cards:
     native: "Hey sister, are you here?"
     bases: { "अगं": "hey", "ताई": "sister", "तू": "you", "इथे": "here", "आहेस": "are", "का": "a question marker" }
     confusables: { "w1": { why: "Said to a man or boy: अरे (are) is for a man, so अगं (agam̐) is used with a sister." }, "w2": { why: "Brother, not sister: दादा (dādā) means elder brother." } }
+    notes: { "n1": "तू (tū) takes आहेस (āhes), are, while तुम्ही (tumhī) takes आहात (āhāt): the verb follows the word for you." }
   "mr-5025":
     native: "Grandmother, how are you?"
     bases: { "आजी": "grandmother", "तुम्ही": "you (polite)", "कसे": "how", "आहात": "are" }
@@ -32,10 +34,12 @@ cards:
     native: "Uncle, where will you go?"
     bases: { "काका": "uncle", "तुम्ही": "you (polite)", "कुठे": "where", "जाणार": "will go" }
     confusables: { "w1": { why: "Aunt, not uncle: काकू (kāku) is an aunt, a father's brother's wife." }, "w2": { why: "When, not where: कधी (kadhi)? asks when." } }
+    notes: { "n1": "जाणार (jāṇār), will go, is the -णार (-ṇār) future, which does not show gender." }
   "mr-5028":
     native: "Aunt, will you have tea?"
     bases: { "काकू": "aunt", "चहा": "tea", "घेणार": "will take", "का": "a question marker" }
     confusables: { "w1": { why: "Uncle, not aunt: काका (kākā) is an uncle." }, "w2": { why: "Water, not tea: पाणी (pāṇi) means water." } }
+    notes: { "n1": "घेणार (gheṇār), will take, is the -णार (-ṇār) future; का (kā) at the end makes it a yes-or-no question." }
   "mr-5029":
     native: "Auntie, how much is this?"
     bases: { "मावशी": "aunt (mother's sister)", "हे": "this", "किती": "how much", "आहे": "is" }
@@ -44,10 +48,12 @@ cards:
     native: "Madam, sit here."
     bases: { "मॅडम": "madam", "इथे": "here", "बसा": "sit" }
     confusables: { "w1": { why: "Sir, not madam: साहेब (sāheb) is used for a man." }, "w2": { why: "Standing: उभे (ubhe) means standing, but this sentence asks for sitting, बसा (basā)." } }
+    notes: { "n1": "बसा (basā), sit, is the polite order: -ा (-ā) for a polite you, as with मॅडम (mêḍam), madam." }
   "mr-5031":
     native: "My grandmother lives in the village."
     bases: { "माझी": "my", "आजी": "grandmother", "गावात": "in the village", "राहते": "lives" }
     confusables: { "w1": { why: "Grandfather, not grandmother: आजोबा (ājobā) means grandfather." }, "f1": { why: "Masculine: राहतो (rāhto) goes with a man; आजी (āji) is a woman, so राहते (rāhte) is used." } }
+    notes: { "n1": "गावात (gāvāt), in the village: गाव (gāv) adds -ा- (-ā-) before -त (-t), 'in', as घरात (gharāt) does." }
   "mr-5032":
     native: "The elder brother and elder sister are at home."
     bases: { "दादा": "elder brother", "आणि": "and", "ताई": "elder sister", "घरी": "at home", "आहेत": "are" }

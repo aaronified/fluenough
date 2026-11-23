@@ -1,0 +1,49 @@
+schema: 1
+id: "es-en-business-meeting"
+kind: "layer"
+core: "es-business-meeting"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Business: a meeting"
+license: "CC-BY-SA-4.0"
+description: "Words and phrases for running and joining a work meeting: agreeing, disagreeing, asking for a repeat and closing."
+cards:
+  "es-4699":
+    native: "Good morning, everyone."
+  "es-4700":
+    native: "Let's start the meeting."
+    notes: { n1: "Empezar changes z to c before e, so empecemos, not empezemos." }
+  "es-4701":
+    native: "I agree with you."
+    notes: { n1: "Usted is the formal you; with a colleague you know well, tú is more usual." }
+  "es-4702":
+    native: "I am not sure about that."
+    notes: { n1: "Estar seguro means to be sure, while ser seguro means to be safe." }
+  "es-4703":
+    native: "Could you repeat the last part?"
+    notes: { n1: "Podría is the polite usted form; to a colleague you would say ¿Podrías repetir la última parte?" }
+  "es-4704":
+    native: "I will check it and let you know."
+    notes: { n1: "Lo can go before voy, or be attached to the infinitive as comprobarlo." }
+  "es-4705":
+    native: "We have to make a decision."
+    notes: { n1: "Tener que plus an infinitive means have to, with no preposition." }
+  "es-4706":
+    native: "Let's agree on that."
+    notes: { n1: "Quedar en plus a noun or eso means to agree on it." }
+  "es-4707":
+    native: "Thank you for your time."
+    notes: { n1: "Su is your when speaking formally (to usted); it can also mean his, her or their." }
+  "es-4708":
+    native: "proposal"
+    notes: { n1: "Propuesta is feminine, so it takes la." }
+    bases: { "la": "the", "propuesta": "proposal" }
+    examples:
+      "Tengo una propuesta para el proyecto.": { native: "I have a proposal for the project.", bases: { "Tengo": "I have", "una": "a", "propuesta": "proposal", "para": "for", "el": "the", "proyecto": "project" } }
+      "Esta propuesta es buena para nuestra empresa.": { native: "This proposal is good for our company.", bases: { "Esta": "this", "propuesta": "proposal", "es": "is", "buena": "good", "para": "for", "nuestra": "our", "empresa": "company" } }
+  "es-4709":
+    native: "presentation"
+    notes: { n1: "Nouns ending in -ción, like presentación, are feminine." }
+    bases: { "la": "the", "presentación": "presentation" }
+    examples:
+      "La presentación empieza a las diez.": { native: "The presentation starts at ten.", bases: { "La": "the", "presentación": "presentation", "empieza": "starts", "a": "at", "las": "the", "diez": "ten" } }
+      "Hago una presentación sobre el nuevo producto.": { native: "I am giving a presentation on the new product.", bases: { "Hago": "I give", "una": "a", "presentación": "presentation", "sobre": "on", "el": "the", "nuevo": "new", "producto": "product" } }

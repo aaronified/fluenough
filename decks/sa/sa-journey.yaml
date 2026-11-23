@@ -1,0 +1,1764 @@
+schema: 1
+id: "sa-journey"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "journey"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-5500"
+    target: "यात्रा"
+    reading: "yātrā"
+    ipa: "jaːt̪raː"
+    pos: "noun"
+    gender: "f"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    bases:
+      - { word: "यात्रा", base: "यात्रा", reading: "yātrā" }
+    examples:
+      - target: "अस्ति यात्रा दीर्घा"
+        reading: "asti yātrā dīrghā"
+        ipa: "əst̪i jaːt̪raː d̪iːrɡʱaː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "यात्रा", base: "यात्रा", reading: "yātrā" }
+          - { word: "दीर्घा", base: "दीर्घ", reading: "dīrgha" }
+      - target: "अस्ति मार्गे यात्रा"
+        reading: "asti mārge yātrā"
+        ipa: "əst̪i maːrɡeː jaːt̪raː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मार्गे", base: "मार्ग", reading: "mārga" }
+          - { word: "यात्रा", base: "यात्रा", reading: "yātrā" }
+  - id: "sa-5501"
+    target: "पथिकः"
+    reading: "pathikaḥ"
+    ipa: "pət̪ʰikəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5502" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "पथिकः", base: "पथिक", reading: "pathika" }
+    examples:
+      - target: "अस्ति पथिकस् तत्र"
+        reading: "asti pathikas tatra"
+        ipa: "əst̪i pət̪ʰikəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "पथिकस्", base: "पथिक", reading: "pathika" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति सुखी पथिकः"
+        reading: "asti sukhī pathikaḥ"
+        ipa: "əst̪i sukʰiː pət̪ʰikəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhin" }
+          - { word: "पथिकः", base: "पथिक", reading: "pathika" }
+  - id: "sa-5502"
+    target: "यात्री"
+    reading: "yātrī"
+    ipa: "jaːt̪riː"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5501" }
+    bases:
+      - { word: "यात्री", base: "यात्रिन्", reading: "yātrin" }
+    examples:
+      - target: "अस्ति यात्री तत्र"
+        reading: "asti yātrī tatra"
+        ipa: "əst̪i jaːt̪riː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "यात्री", base: "यात्रिन्", reading: "yātrin" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति यात्री क्लान्तः"
+        reading: "asti yātrī klāntaḥ"
+        ipa: "əst̪i jaːt̪riː klaːnt̪əh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "यात्री", base: "यात्रिन्", reading: "yātrin" }
+          - { word: "क्लान्तः", base: "क्लान्त", reading: "klānta" }
+  - id: "sa-5503"
+    target: "रथः"
+    reading: "rathaḥ"
+    ipa: "rət̪ʰəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5504" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "रथः", base: "रथ", reading: "ratha" }
+    examples:
+      - target: "अस्ति रथस् तत्र"
+        reading: "asti rathas tatra"
+        ipa: "əst̪i rət̪ʰəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "रथस्", base: "रथ", reading: "ratha" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति रथे चक्रम्"
+        reading: "asti rathe cakram"
+        ipa: "əst̪i rət̪ʰeː tʃəkrəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "रथे", base: "रथ", reading: "ratha" }
+          - { word: "चक्रम्", base: "चक्र", reading: "cakra" }
+  - id: "sa-5504"
+    target: "शकटम्"
+    reading: "śakaṭam"
+    ipa: "ʃəkəʈəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "pair", ref: "sa-5503" }
+    bases:
+      - { word: "शकटम्", base: "शकट", reading: "śakaṭa" }
+    examples:
+      - target: "अस्ति मार्गे शकटम्"
+        reading: "asti mārge śakaṭam"
+        ipa: "əst̪i maːrɡeː ʃəkəʈəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मार्गे", base: "मार्ग", reading: "mārga" }
+          - { word: "शकटम्", base: "शकट", reading: "śakaṭa" }
+      - target: "अस्ति शकटं तत्र"
+        reading: "asti śakaṭaṃ tatra"
+        ipa: "əst̪i ʃəkəʈəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "शकटं", base: "शकट", reading: "śakaṭa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+  - id: "sa-5505"
+    target: "पोतः"
+    reading: "potaḥ"
+    ipa: "poːt̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "पोतः", base: "पोत", reading: "pota" }
+    examples:
+      - target: "अस्ति पोतस् तत्र"
+        reading: "asti potas tatra"
+        ipa: "əst̪i poːt̪əs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "पोतस्", base: "पोत", reading: "pota" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति पोते यात्री"
+        reading: "asti pote yātrī"
+        ipa: "əst̪i poːt̪eː jaːt̪riː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "पोते", base: "पोत", reading: "pota" }
+          - { word: "यात्री", base: "यात्रिन्", reading: "yātrin" }
+  - id: "sa-5506"
+    target: "नौका"
+    reading: "naukā"
+    ipa: "nəukaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "नौका", base: "नौका", reading: "naukā" }
+    examples:
+      - target: "अस्ति नौका तत्र"
+        reading: "asti naukā tatra"
+        ipa: "əst̪i nəukaː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "नौका", base: "नौका", reading: "naukā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति नौकायां कर्णधारः"
+        reading: "asti naukāyāṃ karṇadhāraḥ"
+        ipa: "əst̪i nəukaːjaːm kərɳəd̪ʱaːrəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "नौकायां", base: "नौका", reading: "naukā" }
+          - { word: "कर्णधारः", base: "कर्णधार", reading: "karṇadhāra" }
+  - id: "sa-5507"
+    target: "तीरम्"
+    reading: "tīram"
+    ipa: "t̪iːrəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "तीरम्", base: "तीर", reading: "tīra" }
+    examples:
+      - target: "अस्ति तीरं तत्र"
+        reading: "asti tīraṃ tatra"
+        ipa: "əst̪i t̪iːrəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "तीरं", base: "तीर", reading: "tīra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति नौका तीरे"
+        reading: "asti naukā tīre"
+        ipa: "əst̪i nəukaː t̪iːreː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "नौका", base: "नौका", reading: "naukā" }
+          - { word: "तीरे", base: "तीर", reading: "tīra" }
+  - id: "sa-5508"
+    target: "सेतुः"
+    reading: "setuḥ"
+    ipa: "seːt̪uh"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "सेतुः", base: "सेतु", reading: "setu" }
+    examples:
+      - target: "अस्ति सेतुस् तत्र"
+        reading: "asti setus tatra"
+        ipa: "əst̪i seːt̪us t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सेतुस्", base: "सेतु", reading: "setu" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति सेतौ पथिकः"
+        reading: "asti setau pathikaḥ"
+        ipa: "əst̪i seːt̪əu pət̪ʰikəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सेतौ", base: "सेतु", reading: "setu" }
+          - { word: "पथिकः", base: "पथिक", reading: "pathika" }
+  - id: "sa-5509"
+    target: "प्रस्थानम्"
+    reading: "prasthānam"
+    ipa: "prəst̪ʰaːnəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "प्रस्थानम्", base: "प्रस्थान", reading: "prasthāna" }
+    examples:
+      - target: "अस्ति यात्रायाः प्रस्थानम्"
+        reading: "asti yātrāyāḥ prasthānam"
+        ipa: "əst̪i jaːt̪raːjaːh prəst̪ʰaːnəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "यात्रायाः", base: "यात्रा", reading: "yātrā" }
+          - { word: "प्रस्थानम्", base: "प्रस्थान", reading: "prasthāna" }
+      - target: "अस्ति तीरात् प्रस्थानम्"
+        reading: "asti tīrāt prasthānam"
+        ipa: "əst̪i t̪iːraːt̪ prəst̪ʰaːnəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "तीरात्", base: "तीर", reading: "tīra" }
+          - { word: "प्रस्थानम्", base: "प्रस्थान", reading: "prasthāna" }
+  - id: "sa-5510"
+    target: "गमनम्"
+    reading: "gamanam"
+    ipa: "ɡəmənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "pair", ref: "sa-5534" }
+    bases:
+      - { word: "गमनम्", base: "गमन", reading: "gamana" }
+    examples:
+      - target: "अस्ति गमनं यात्रायाः"
+        reading: "asti gamanaṃ yātrāyāḥ"
+        ipa: "əst̪i ɡəmənəm jaːt̪raːjaːh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गमनं", base: "गमन", reading: "gamana" }
+          - { word: "यात्रायाः", base: "यात्रा", reading: "yātrā" }
+      - target: "अस्ति गमनं दीर्घम्"
+        reading: "asti gamanaṃ dīrgham"
+        ipa: "əst̪i ɡəmənəm d̪iːrɡʱəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गमनं", base: "गमन", reading: "gamana" }
+          - { word: "दीर्घम्", base: "दीर्घ", reading: "dīrgha" }
+  - id: "sa-5511"
+    target: "अतिथिः"
+    reading: "atithiḥ"
+    ipa: "ət̪it̪ʰih"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "अतिथिः", base: "अतिथि", reading: "atithi" }
+    examples:
+      - target: "अतिथिस् तत्र"
+        reading: "atithis tatra"
+        ipa: "ət̪it̪ʰis t̪ət̪rə"
+        bases:
+          - { word: "अतिथिस्", base: "अतिथि", reading: "atithi" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अतिथिः सुखी"
+        reading: "atithiḥ sukhī"
+        ipa: "ət̪it̪ʰih sukʰiː"
+        bases:
+          - { word: "अतिथिः", base: "अतिथि", reading: "atithi" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhin" }
+  - id: "sa-5512"
+    target: "शुल्कम्"
+    reading: "śulkam"
+    ipa: "ʃulkəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "शुल्कम्", base: "शुल्क", reading: "śulka" }
+    examples:
+      - target: "अस्ति शुल्कं तत्र"
+        reading: "asti śulkaṃ tatra"
+        ipa: "əst̪i ʃulkəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "शुल्कं", base: "शुल्क", reading: "śulka" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति सेतौ शुल्कम्"
+        reading: "asti setau śulkam"
+        ipa: "əst̪i seːt̪əu ʃulkəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सेतौ", base: "सेतु", reading: "setu" }
+          - { word: "शुल्कम्", base: "शुल्क", reading: "śulka" }
+  - id: "sa-5513"
+    target: "यानम्"
+    reading: "yānam"
+    ipa: "jaːnəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "pair", ref: "sa-5514" }
+    bases:
+      - { word: "यानम्", base: "यान", reading: "yāna" }
+    examples:
+      - target: "अस्ति यानं तत्र"
+        reading: "asti yānaṃ tatra"
+        ipa: "əst̪i jaːnəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "यानं", base: "यान", reading: "yāna" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति यानं मार्गे"
+        reading: "asti yānaṃ mārge"
+        ipa: "əst̪i jaːnəm maːrɡeː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "यानं", base: "यान", reading: "yāna" }
+          - { word: "मार्गे", base: "मार्ग", reading: "mārga" }
+  - id: "sa-5514"
+    target: "वाहनम्"
+    reading: "vāhanam"
+    ipa: "ʋaːɦənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "pair", ref: "sa-5513" }
+    bases:
+      - { word: "वाहनम्", base: "वाहन", reading: "vāhana" }
+    examples:
+      - target: "अस्ति वाहनं तत्र"
+        reading: "asti vāhanaṃ tatra"
+        ipa: "əst̪i ʋaːɦənəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "वाहनं", base: "वाहन", reading: "vāhana" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति वाहनं पोते"
+        reading: "asti vāhanaṃ pote"
+        ipa: "əst̪i ʋaːɦənəm poːt̪eː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "वाहनं", base: "वाहन", reading: "vāhana" }
+          - { word: "पोते", base: "पोत", reading: "pota" }
+  - id: "sa-5515"
+    target: "क्रोशः"
+    reading: "krośaḥ"
+    ipa: "kroːʃəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5516" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "क्रोशः", base: "क्रोश", reading: "krośa" }
+    examples:
+      - target: "एकः क्रोशस् तत्र"
+        reading: "ekaḥ krośas tatra"
+        ipa: "eːkəh kroːʃəs t̪ət̪rə"
+        bases:
+          - { word: "एकः", base: "एक", reading: "eka" }
+          - { word: "क्रोशस्", base: "क्रोश", reading: "krośa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति मार्गे क्रोशः"
+        reading: "asti mārge krośaḥ"
+        ipa: "əst̪i maːrɡeː kroːʃəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मार्गे", base: "मार्ग", reading: "mārga" }
+          - { word: "क्रोशः", base: "क्रोश", reading: "krośa" }
+  - id: "sa-5516"
+    target: "योजनम्"
+    reading: "yojanam"
+    ipa: "joːdʒənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "pair", ref: "sa-5515" }
+    bases:
+      - { word: "योजनम्", base: "योजन", reading: "yojana" }
+    examples:
+      - target: "अस्ति योजनं तत्र"
+        reading: "asti yojanaṃ tatra"
+        ipa: "əst̪i joːdʒənəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "योजनं", base: "योजन", reading: "yojana" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति मार्गे योजनम्"
+        reading: "asti mārge yojanam"
+        ipa: "əst̪i maːrɡeː joːdʒənəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मार्गे", base: "मार्ग", reading: "mārga" }
+          - { word: "योजनम्", base: "योजन", reading: "yojana" }
+  - id: "sa-5517"
+    target: "पद्धतिः"
+    reading: "paddhatiḥ"
+    ipa: "pəd̪d̪ʱət̪ih"
+    pos: "noun"
+    gender: "f"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "पद्धतिः", base: "पद्धति", reading: "paddhati" }
+    examples:
+      - target: "अस्ति पद्धतिस् तत्र"
+        reading: "asti paddhatis tatra"
+        ipa: "əst̪i pəd̪d̪ʱət̪is t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "पद्धतिस्", base: "पद्धति", reading: "paddhati" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति पद्धतौ पथिकः"
+        reading: "asti paddhatau pathikaḥ"
+        ipa: "əst̪i pəd̪d̪ʱət̪əu pət̪ʰikəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "पद्धतौ", base: "पद्धति", reading: "paddhati" }
+          - { word: "पथिकः", base: "पथिक", reading: "pathika" }
+  - id: "sa-5518"
+    target: "तोरणम्"
+    reading: "toraṇam"
+    ipa: "t̪oːrəɳəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "तोरणम्", base: "तोरण", reading: "toraṇa" }
+    examples:
+      - target: "अस्ति तोरणं तत्र"
+        reading: "asti toraṇaṃ tatra"
+        ipa: "əst̪i t̪oːrəɳəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "तोरणं", base: "तोरण", reading: "toraṇa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति नगरे तोरणम्"
+        reading: "asti nagare toraṇam"
+        ipa: "əst̪i nəɡəreː t̪oːrəɳəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "नगरे", base: "नगर", reading: "nagara" }
+          - { word: "तोरणम्", base: "तोरण", reading: "toraṇa" }
+  - id: "sa-5519"
+    target: "प्रपा"
+    reading: "prapā"
+    ipa: "prəpaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    bases:
+      - { word: "प्रपा", base: "प्रपा", reading: "prapā" }
+    examples:
+      - target: "अस्ति प्रपा तत्र"
+        reading: "asti prapā tatra"
+        ipa: "əst̪i prəpaː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "प्रपा", base: "प्रपा", reading: "prapā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति मार्गे प्रपा"
+        reading: "asti mārge prapā"
+        ipa: "əst̪i maːrɡeː prəpaː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मार्गे", base: "मार्ग", reading: "mārga" }
+          - { word: "प्रपा", base: "प्रपा", reading: "prapā" }
+  - id: "sa-5520"
+    target: "यष्टिः"
+    reading: "yaṣṭiḥ"
+    ipa: "jəʂʈih"
+    pos: "noun"
+    gender: "f"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "यष्टिः", base: "यष्टि", reading: "yaṣṭi" }
+    examples:
+      - target: "अस्ति यष्टिस् तत्र"
+        reading: "asti yaṣṭis tatra"
+        ipa: "əst̪i jəʂʈis t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "यष्टिस्", base: "यष्टि", reading: "yaṣṭi" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति पथिकस्य यष्टिः"
+        reading: "asti pathikasya yaṣṭiḥ"
+        ipa: "əst̪i pət̪ʰikəsjə jəʂʈih"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "पथिकस्य", base: "पथिक", reading: "pathika" }
+          - { word: "यष्टिः", base: "यष्टि", reading: "yaṣṭi" }
+  - id: "sa-5521"
+    target: "आरोहः"
+    reading: "ārohaḥ"
+    ipa: "aːroːɦəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "आरोहः", base: "आरोह", reading: "āroha" }
+    examples:
+      - target: "आरोहस् तत्र"
+        reading: "ārohas tatra"
+        ipa: "aːroːɦəs t̪ət̪rə"
+        bases:
+          - { word: "आरोहस्", base: "आरोह", reading: "āroha" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "आरोहः पर्वते"
+        reading: "ārohaḥ parvate"
+        ipa: "aːroːɦəh pərʋət̪eː"
+        bases:
+          - { word: "आरोहः", base: "आरोह", reading: "āroha" }
+          - { word: "पर्वते", base: "पर्वत", reading: "parvata" }
+  - id: "sa-5522"
+    target: "मण्डपः"
+    reading: "maṇḍapaḥ"
+    ipa: "məɳɖəpəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "मण्डपः", base: "मण्डप", reading: "maṇḍapa" }
+    examples:
+      - target: "अस्ति मण्डपस् तत्र"
+        reading: "asti maṇḍapas tatra"
+        ipa: "əst̪i məɳɖəpəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मण्डपस्", base: "मण्डप", reading: "maṇḍapa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति मार्गे मण्डपः"
+        reading: "asti mārge maṇḍapaḥ"
+        ipa: "əst̪i maːrɡeː məɳɖəpəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मार्गे", base: "मार्ग", reading: "mārga" }
+          - { word: "मण्डपः", base: "मण्डप", reading: "maṇḍapa" }
+  - id: "sa-5523"
+    target: "कर्णधारः"
+    reading: "karṇadhāraḥ"
+    ipa: "kərɳəd̪ʱaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "कर्णधारः", base: "कर्णधार", reading: "karṇadhāra" }
+    examples:
+      - target: "अस्ति कर्णधारस् तत्र"
+        reading: "asti karṇadhāras tatra"
+        ipa: "əst̪i kərɳəd̪ʱaːrəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "कर्णधारस्", base: "कर्णधार", reading: "karṇadhāra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति नौकायां कर्णधारः"
+        reading: "asti naukāyāṃ karṇadhāraḥ"
+        ipa: "əst̪i nəukaːjaːm kərɳəd̪ʱaːrəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "नौकायां", base: "नौका", reading: "naukā" }
+          - { word: "कर्णधारः", base: "कर्णधार", reading: "karṇadhāra" }
+  - id: "sa-5524"
+    target: "सहायः"
+    reading: "sahāyaḥ"
+    ipa: "səɦaːjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "सहायः", base: "सहाय", reading: "sahāya" }
+    examples:
+      - target: "अस्ति सहायस् तत्र"
+        reading: "asti sahāyas tatra"
+        ipa: "əst̪i səɦaːjəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सहायस्", base: "सहाय", reading: "sahāya" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति यात्रायाः सहायः"
+        reading: "asti yātrāyāḥ sahāyaḥ"
+        ipa: "əst̪i jaːt̪raːjaːh səɦaːjəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "यात्रायाः", base: "यात्रा", reading: "yātrā" }
+          - { word: "सहायः", base: "सहाय", reading: "sahāya" }
+  - id: "sa-5525"
+    target: "सत्कारः"
+    reading: "satkāraḥ"
+    ipa: "sət̪kaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "सत्कारः", base: "सत्कार", reading: "satkāra" }
+    examples:
+      - target: "अस्ति सत्कारस् तत्र"
+        reading: "asti satkāras tatra"
+        ipa: "əst̪i sət̪kaːrəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सत्कारस्", base: "सत्कार", reading: "satkāra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अतिथेः सत्कारः"
+        reading: "atitheḥ satkāraḥ"
+        ipa: "ət̪it̪ʰeːh sət̪kaːrəh"
+        bases:
+          - { word: "अतिथेः", base: "अतिथि", reading: "atithi" }
+          - { word: "सत्कारः", base: "सत्कार", reading: "satkāra" }
+  - id: "sa-5526"
+    target: "पानीयम्"
+    reading: "pānīyam"
+    ipa: "paːniːjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "पानीयम्", base: "पानीय", reading: "pānīya" }
+    examples:
+      - target: "अस्ति पानीयं तत्र"
+        reading: "asti pānīyaṃ tatra"
+        ipa: "əst̪i paːniːjəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "पानीयं", base: "पानीय", reading: "pānīya" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति मार्गे पानीयम्"
+        reading: "asti mārge pānīyam"
+        ipa: "əst̪i maːrɡeː paːniːjəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मार्गे", base: "मार्ग", reading: "mārga" }
+          - { word: "पानीयम्", base: "पानीय", reading: "pānīya" }
+  - id: "sa-5527"
+    target: "आवासः"
+    reading: "āvāsaḥ"
+    ipa: "aːʋaːsəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "आवासः", base: "आवास", reading: "āvāsa" }
+    examples:
+      - target: "आवासस् तत्र"
+        reading: "āvāsas tatra"
+        ipa: "aːʋaːsəs t̪ət̪rə"
+        bases:
+          - { word: "आवासस्", base: "आवास", reading: "āvāsa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "आवासः पर्वते"
+        reading: "āvāsaḥ parvate"
+        ipa: "aːʋaːsəh pərʋət̪eː"
+        bases:
+          - { word: "आवासः", base: "आवास", reading: "āvāsa" }
+          - { word: "पर्वते", base: "पर्वत", reading: "parvata" }
+  - id: "sa-5528"
+    target: "वर्त्म"
+    reading: "vartma"
+    ipa: "ʋərt̪mə"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "वर्त्म", base: "वर्त्मन्", reading: "vartman" }
+    examples:
+      - target: "अस्ति तत्र वर्त्म"
+        reading: "asti tatra vartma"
+        ipa: "əst̪i t̪ət̪rə ʋərt̪mə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "वर्त्म", base: "वर्त्मन्", reading: "vartman" }
+      - target: "अस्ति मार्गे वर्त्म"
+        reading: "asti mārge vartma"
+        ipa: "əst̪i maːrɡeː ʋərt̪mə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मार्गे", base: "मार्ग", reading: "mārga" }
+          - { word: "वर्त्म", base: "वर्त्मन्", reading: "vartman" }
+  - id: "sa-5529"
+    target: "सुरङ्गा"
+    reading: "suraṅgā"
+    ipa: "surəŋɡaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    bases:
+      - { word: "सुरङ्गा", base: "सुरङ्गा", reading: "suraṅgā" }
+    examples:
+      - target: "अस्ति सुरङ्गा तत्र"
+        reading: "asti suraṅgā tatra"
+        ipa: "əst̪i surəŋɡaː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सुरङ्गा", base: "सुरङ्गा", reading: "suraṅgā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति पर्वते सुरङ्गा"
+        reading: "asti parvate suraṅgā"
+        ipa: "əst̪i pərʋət̪eː surəŋɡaː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "पर्वते", base: "पर्वत", reading: "parvata" }
+          - { word: "सुरङ्गा", base: "सुरङ्गा", reading: "suraṅgā" }
+  - id: "sa-5530"
+    target: "अध्वा"
+    reading: "adhvā"
+    ipa: "əd̪ʱʋaː"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "अध्वा", base: "अध्वन्", reading: "adhvan" }
+    examples:
+      - target: "अध्वा तत्र"
+        reading: "adhvā tatra"
+        ipa: "əd̪ʱʋaː t̪ət̪rə"
+        bases:
+          - { word: "अध्वा", base: "अध्वन्", reading: "adhvan" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अध्वनि सुरङ्गा"
+        reading: "adhvani suraṅgā"
+        ipa: "əd̪ʱʋəni surəŋɡaː"
+        bases:
+          - { word: "अध्वनि", base: "अध्वन्", reading: "adhvan" }
+          - { word: "सुरङ्गा", base: "सुरङ्गा", reading: "suraṅgā" }
+  - id: "sa-5531"
+    target: "अक्षः"
+    reading: "akṣaḥ"
+    ipa: "əkʂəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "अक्षः", base: "अक्ष", reading: "akṣa" }
+    examples:
+      - target: "अक्षस् तत्र"
+        reading: "akṣas tatra"
+        ipa: "əkʂəs t̪ət̪rə"
+        bases:
+          - { word: "अक्षस्", base: "अक्ष", reading: "akṣa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अक्षश् चक्रे"
+        reading: "akṣaś cakre"
+        ipa: "əkʂəʃ tʃəkreː"
+        bases:
+          - { word: "अक्षश्", base: "अक्ष", reading: "akṣa" }
+          - { word: "चक्रे", base: "चक्र", reading: "cakra" }
+  - id: "sa-5532"
+    target: "नेमिः"
+    reading: "nemiḥ"
+    ipa: "neːmih"
+    pos: "noun"
+    gender: "f"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "नेमिः", base: "नेमि", reading: "nemi" }
+    examples:
+      - target: "अस्ति नेमिस् तत्र"
+        reading: "asti nemis tatra"
+        ipa: "əst̪i neːmis t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "नेमिस्", base: "नेमि", reading: "nemi" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति चक्रे नेमिः"
+        reading: "asti cakre nemiḥ"
+        ipa: "əst̪i tʃəkreː neːmih"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "चक्रे", base: "चक्र", reading: "cakra" }
+          - { word: "नेमिः", base: "नेमि", reading: "nemi" }
+  - id: "sa-5533"
+    target: "अटविः"
+    reading: "aṭaviḥ"
+    ipa: "əʈəʋih"
+    pos: "noun"
+    gender: "f"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "अटविः", base: "अटवि", reading: "aṭavi" }
+    examples:
+      - target: "अटविस् तत्र"
+        reading: "aṭavis tatra"
+        ipa: "əʈəʋis t̪ət̪rə"
+        bases:
+          - { word: "अटविस्", base: "अटवि", reading: "aṭavi" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अटवौ पथिकः"
+        reading: "aṭavau pathikaḥ"
+        ipa: "əʈəʋəu pət̪ʰikəh"
+        bases:
+          - { word: "अटवौ", base: "अटवि", reading: "aṭavi" }
+          - { word: "पथिकः", base: "पथिक", reading: "pathika" }
+  - id: "sa-5534"
+    target: "गतिः"
+    reading: "gatiḥ"
+    ipa: "ɡət̪ih"
+    pos: "noun"
+    gender: "f"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5510" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "गतिः", base: "गति", reading: "gati" }
+    examples:
+      - target: "अस्ति गतिः पन्थाः"
+        reading: "asti gatiḥ panthāḥ"
+        ipa: "əst̪i ɡət̪ih pənt̪ʰaːh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गतिः", base: "गति", reading: "gati" }
+          - { word: "पन्थाः", base: "पथिन्", reading: "pathin" }
+      - target: "अस्ति गतिस् तत्र"
+        reading: "asti gatis tatra"
+        ipa: "əst̪i ɡət̪is t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गतिस्", base: "गति", reading: "gati" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+  - id: "sa-5535"
+    target: "मन्दः"
+    reading: "mandaḥ"
+    ipa: "mənd̪əh"
+    pos: "adj"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+    bases:
+      - { word: "मन्दः", base: "मन्द", reading: "manda" }
+    examples:
+      - target: "तत्र मन्दः पथिकः"
+        reading: "tatra mandaḥ pathikaḥ"
+        ipa: "t̪ət̪rə mənd̪əh pət̪ʰikəh"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "मन्दः", base: "मन्द", reading: "manda" }
+          - { word: "पथिकः", base: "पथिक", reading: "pathika" }
+      - target: "अस्ति यानं मन्दम्"
+        reading: "asti yānaṃ mandam"
+        ipa: "əst̪i jaːnəm mənd̪əm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "यानं", base: "यान", reading: "yāna" }
+          - { word: "मन्दम्", base: "मन्द", reading: "manda" }
+  - id: "sa-5536"
+    target: "क्लान्तः"
+    reading: "klāntaḥ"
+    ipa: "klaːnt̪əh"
+    pos: "adj"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "क्लान्तः", base: "क्लान्त", reading: "klānta" }
+    examples:
+      - target: "तत्र क्लान्तः पथिकः"
+        reading: "tatra klāntaḥ pathikaḥ"
+        ipa: "t̪ət̪rə klaːnt̪əh pət̪ʰikəh"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "क्लान्तः", base: "क्लान्त", reading: "klānta" }
+          - { word: "पथिकः", base: "पथिक", reading: "pathika" }
+      - target: "अस्ति यात्री क्लान्तः"
+        reading: "asti yātrī klāntaḥ"
+        ipa: "əst̪i jaːt̪riː klaːnt̪əh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "यात्री", base: "यात्रिन्", reading: "yātrin" }
+          - { word: "क्लान्तः", base: "क्लान्त", reading: "klānta" }
+  - id: "sa-5537"
+    target: "सुगमः"
+    reading: "sugamaḥ"
+    ipa: "suɡəməh"
+    pos: "adj"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "सुगमः", base: "सुगम", reading: "sugama" }
+    examples:
+      - target: "अस्ति मार्गः सुगमः"
+        reading: "asti mārgaḥ sugamaḥ"
+        ipa: "əst̪i maːrɡəh suɡəməh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मार्गः", base: "मार्ग", reading: "mārga" }
+          - { word: "सुगमः", base: "सुगम", reading: "sugama" }
+      - target: "अस्ति पद्धतिः सुगमा"
+        reading: "asti paddhatiḥ sugamā"
+        ipa: "əst̪i pəd̪d̪ʱət̪ih suɡəmaː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "पद्धतिः", base: "पद्धति", reading: "paddhati" }
+          - { word: "सुगमा", base: "सुगम", reading: "sugama" }
+  - id: "sa-5538"
+    target: "इतः"
+    reading: "itaḥ"
+    ipa: "it̪əh"
+    pos: "adv"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "इतः", base: "इतस्", reading: "itas" }
+    examples:
+      - target: "इतः पन्थाः"
+        reading: "itaḥ panthāḥ"
+        ipa: "it̪əh pənt̪ʰaːh"
+        bases:
+          - { word: "इतः", base: "इतस्", reading: "itas" }
+          - { word: "पन्थाः", base: "पथिन्", reading: "pathin" }
+      - target: "इतस् तत्र"
+        reading: "itas tatra"
+        ipa: "it̪əs t̪ət̪rə"
+        bases:
+          - { word: "इतस्", base: "इतस्", reading: "itas" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+  - id: "sa-5539"
+    target: "क्व"
+    reading: "kva"
+    ipa: "kʋə"
+    pos: "adv"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    bases:
+      - { word: "क्व", base: "क्व", reading: "kva" }
+    examples:
+      - target: "पथिकः क्व"
+        reading: "pathikaḥ kva"
+        ipa: "pət̪ʰikəh kʋə"
+        bases:
+          - { word: "पथिकः", base: "पथिक", reading: "pathika" }
+          - { word: "क्व", base: "क्व", reading: "kva" }
+      - target: "यात्रा क्व"
+        reading: "yātrā kva"
+        ipa: "jaːt̪raː kʋə"
+        bases:
+          - { word: "यात्रा", base: "यात्रा", reading: "yātrā" }
+          - { word: "क्व", base: "क्व", reading: "kva" }
+  - id: "sa-5540"
+    target: "पुरः"
+    reading: "puraḥ"
+    ipa: "purəh"
+    pos: "adv"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "pair", ref: "sa-5556" }
+    bases:
+      - { word: "पुरः", base: "पुरस्", reading: "puras" }
+    examples:
+      - target: "पुरः पथिकः"
+        reading: "puraḥ pathikaḥ"
+        ipa: "purəh pət̪ʰikəh"
+        bases:
+          - { word: "पुरः", base: "पुरस्", reading: "puras" }
+          - { word: "पथिकः", base: "पथिक", reading: "pathika" }
+      - target: "पुरः शकटम्"
+        reading: "puraḥ śakaṭam"
+        ipa: "purəh ʃəkəʈəm"
+        bases:
+          - { word: "पुरः", base: "पुरस्", reading: "puras" }
+          - { word: "शकटम्", base: "शकट", reading: "śakaṭa" }
+  - id: "sa-5541"
+    target: "घट्टः"
+    reading: "ghaṭṭaḥ"
+    ipa: "ɡʱəʈʈəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+      - { id: "n5", kind: "note" }
+    bases:
+      - { word: "घट्टः", base: "घट्ट", reading: "ghaṭṭa" }
+    examples:
+      - target: "अस्ति घट्टस् तत्र"
+        reading: "asti ghaṭṭas tatra"
+        ipa: "əst̪i ɡʱəʈʈəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "घट्टस्", base: "घट्ट", reading: "ghaṭṭa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "नद्यां घट्टः"
+        reading: "nadyāṃ ghaṭṭaḥ"
+        ipa: "nəd̪jaːm ɡʱəʈʈəh"
+        bases:
+          - { word: "नद्यां", base: "नदी", reading: "nadī" }
+          - { word: "घट्टः", base: "घट्ट", reading: "ghaṭṭa" }
+  - id: "sa-5542"
+    target: "तरणम्"
+    reading: "taraṇam"
+    ipa: "t̪ərəɳəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "तरणम्", base: "तरण", reading: "taraṇa" }
+    examples:
+      - target: "अस्ति तरणं तत्र"
+        reading: "asti taraṇaṃ tatra"
+        ipa: "əst̪i t̪ərəɳəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "तरणं", base: "तरण", reading: "taraṇa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "तरणं नद्याम्"
+        reading: "taraṇaṃ nadyām"
+        ipa: "t̪ərəɳəm nəd̪jaːm"
+        bases:
+          - { word: "तरणं", base: "तरण", reading: "taraṇa" }
+          - { word: "नद्याम्", base: "नदी", reading: "nadī" }
+  - id: "sa-5543"
+    target: "पन्थाः"
+    reading: "panthāḥ"
+    ipa: "pənt̪ʰaːh"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "पन्थाः", base: "पथिन्", reading: "pathin" }
+    examples:
+      - target: "अस्ति पन्थास् तत्र"
+        reading: "asti panthās tatra"
+        ipa: "əst̪i pənt̪ʰaːs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "पन्थास्", base: "पथिन्", reading: "pathin" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति वने पन्थाः"
+        reading: "asti vane panthāḥ"
+        ipa: "əst̪i ʋəneː pənt̪ʰaːh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "वने", base: "वन", reading: "vana" }
+          - { word: "पन्थाः", base: "पथिन्", reading: "pathin" }
+  - id: "sa-5544"
+    target: "पेटिका"
+    reading: "peṭikā"
+    ipa: "peːʈikaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    bases:
+      - { word: "पेटिका", base: "पेटिका", reading: "peṭikā" }
+    examples:
+      - target: "अस्ति पेटिका तत्र"
+        reading: "asti peṭikā tatra"
+        ipa: "əst̪i peːʈikaː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "पेटिका", base: "पेटिका", reading: "peṭikā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "पेटिका रथे"
+        reading: "peṭikā rathe"
+        ipa: "peːʈikaː rət̪ʰeː"
+        bases:
+          - { word: "पेटिका", base: "पेटिका", reading: "peṭikā" }
+          - { word: "रथे", base: "रथ", reading: "ratha" }
+  - id: "sa-5545"
+    target: "शयनम्"
+    reading: "śayanam"
+    ipa: "ʃəjənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "शयनम्", base: "शयन", reading: "śayana" }
+    examples:
+      - target: "अस्ति शयनं तत्र"
+        reading: "asti śayanaṃ tatra"
+        ipa: "əst̪i ʃəjənəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "शयनं", base: "शयन", reading: "śayana" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति नौकायां शयनम्"
+        reading: "asti naukāyāṃ śayanam"
+        ipa: "əst̪i nəukaːjaːm ʃəjənəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "नौकायां", base: "नौका", reading: "naukā" }
+          - { word: "शयनम्", base: "शयन", reading: "śayana" }
+  - id: "sa-5546"
+    target: "सारथिः"
+    reading: "sārathiḥ"
+    ipa: "saːrət̪ʰih"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "सारथिः", base: "सारथि", reading: "sārathi" }
+    examples:
+      - target: "अस्ति सारथिस् तत्र"
+        reading: "asti sārathis tatra"
+        ipa: "əst̪i saːrət̪ʰis t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सारथिस्", base: "सारथि", reading: "sārathi" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "रथे सारथिः"
+        reading: "rathe sārathiḥ"
+        ipa: "rət̪ʰeː saːrət̪ʰih"
+        bases:
+          - { word: "रथे", base: "रथ", reading: "ratha" }
+          - { word: "सारथिः", base: "सारथि", reading: "sārathi" }
+  - id: "sa-5547"
+    target: "स्थलम्"
+    reading: "sthalam"
+    ipa: "st̪ʰələm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "स्थलम्", base: "स्थल", reading: "sthala" }
+    examples:
+      - target: "अस्ति स्थलं तत्र"
+        reading: "asti sthalaṃ tatra"
+        ipa: "əst̪i st̪ʰələm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "स्थलं", base: "स्थल", reading: "sthala" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "स्थलं मार्गे"
+        reading: "sthalaṃ mārge"
+        ipa: "st̪ʰələm maːrɡeː"
+        bases:
+          - { word: "स्थलं", base: "स्थल", reading: "sthala" }
+          - { word: "मार्गे", base: "मार्ग", reading: "mārga" }
+  - id: "sa-5548"
+    target: "उडुपम्"
+    reading: "uḍupam"
+    ipa: "uɖupəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "pair", ref: "sa-5542" }
+    bases:
+      - { word: "उडुपम्", base: "उडुप", reading: "uḍupa" }
+    examples:
+      - target: "उडुपं तत्र"
+        reading: "uḍupaṃ tatra"
+        ipa: "uɖupəm t̪ət̪rə"
+        bases:
+          - { word: "उडुपं", base: "उडुप", reading: "uḍupa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "उडुपं नद्याम्"
+        reading: "uḍupaṃ nadyām"
+        ipa: "uɖupəm nəd̪jaːm"
+        bases:
+          - { word: "उडुपं", base: "उडुप", reading: "uḍupa" }
+          - { word: "नद्याम्", base: "नदी", reading: "nadī" }
+  - id: "sa-5549"
+    target: "गोपुरम्"
+    reading: "gopuram"
+    ipa: "ɡoːpurəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "pair", ref: "sa-5518" }
+    bases:
+      - { word: "गोपुरम्", base: "गोपुर", reading: "gopura" }
+    examples:
+      - target: "अस्ति गोपुरं तत्र"
+        reading: "asti gopuraṃ tatra"
+        ipa: "əst̪i ɡoːpurəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गोपुरं", base: "गोपुर", reading: "gopura" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "नगरे गोपुरम्"
+        reading: "nagare gopuram"
+        ipa: "nəɡəreː ɡoːpurəm"
+        bases:
+          - { word: "नगरे", base: "नगर", reading: "nagara" }
+          - { word: "गोपुरम्", base: "गोपुर", reading: "gopura" }
+  - id: "sa-5550"
+    target: "ऋजुः"
+    reading: "ṛjuḥ"
+    ipa: "r̩dʒuh"
+    pos: "adj"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "ऋजुः", base: "ऋजु", reading: "ṛju" }
+    examples:
+      - target: "ऋजुः पन्थाः"
+        reading: "ṛjuḥ panthāḥ"
+        ipa: "r̩dʒuh pənt̪ʰaːh"
+        bases:
+          - { word: "ऋजुः", base: "ऋजु", reading: "ṛju" }
+          - { word: "पन्थाः", base: "पथिन्", reading: "pathin" }
+      - target: "ऋजुः सेतुः"
+        reading: "ṛjuḥ setuḥ"
+        ipa: "r̩dʒuh seːt̪uh"
+        bases:
+          - { word: "ऋजुः", base: "ऋजु", reading: "ṛju" }
+          - { word: "सेतुः", base: "सेतु", reading: "setu" }
+  - id: "sa-5551"
+    target: "वक्रः"
+    reading: "vakraḥ"
+    ipa: "ʋəkrəh"
+    pos: "adj"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "वक्रः", base: "वक्र", reading: "vakra" }
+    examples:
+      - target: "अस्ति वक्रः पन्थाः"
+        reading: "asti vakraḥ panthāḥ"
+        ipa: "əst̪i ʋəkrəh pənt̪ʰaːh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "वक्रः", base: "वक्र", reading: "vakra" }
+          - { word: "पन्थाः", base: "पथिन्", reading: "pathin" }
+      - target: "वक्रं शकटम्"
+        reading: "vakraṃ śakaṭam"
+        ipa: "ʋəkrəm ʃəkəʈəm"
+        bases:
+          - { word: "वक्रं", base: "वक्र", reading: "vakra" }
+          - { word: "शकटम्", base: "शकट", reading: "śakaṭa" }
+  - id: "sa-5552"
+    target: "उन्नतः"
+    reading: "unnataḥ"
+    ipa: "unnət̪əh"
+    pos: "adj"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "उन्नतः", base: "उन्नत", reading: "unnata" }
+    examples:
+      - target: "उन्नतः पन्थाः"
+        reading: "unnataḥ panthāḥ"
+        ipa: "unnət̪əh pənt̪ʰaːh"
+        bases:
+          - { word: "उन्नतः", base: "उन्नत", reading: "unnata" }
+          - { word: "पन्थाः", base: "पथिन्", reading: "pathin" }
+      - target: "उन्नतः सेतुः"
+        reading: "unnataḥ setuḥ"
+        ipa: "unnət̪əh seːt̪uh"
+        bases:
+          - { word: "उन्नतः", base: "उन्नत", reading: "unnata" }
+          - { word: "सेतुः", base: "सेतु", reading: "setu" }
+  - id: "sa-5553"
+    target: "विशालः"
+    reading: "viśālaḥ"
+    ipa: "ʋiʃaːləh"
+    pos: "adj"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "विशालः", base: "विशाल", reading: "viśāla" }
+    examples:
+      - target: "विशालः पन्थाः"
+        reading: "viśālaḥ panthāḥ"
+        ipa: "ʋiʃaːləh pənt̪ʰaːh"
+        bases:
+          - { word: "विशालः", base: "विशाल", reading: "viśāla" }
+          - { word: "पन्थाः", base: "पथिन्", reading: "pathin" }
+      - target: "विशालं शकटम्"
+        reading: "viśālaṃ śakaṭam"
+        ipa: "ʋiʃaːləm ʃəkəʈəm"
+        bases:
+          - { word: "विशालं", base: "विशाल", reading: "viśāla" }
+          - { word: "शकटम्", base: "शकट", reading: "śakaṭa" }
+  - id: "sa-5554"
+    target: "त्वरितः"
+    reading: "tvaritaḥ"
+    ipa: "t̪ʋərit̪əh"
+    pos: "adj"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "त्वरितः", base: "त्वरित", reading: "tvarita" }
+    examples:
+      - target: "त्वरितः पोतः"
+        reading: "tvaritaḥ potaḥ"
+        ipa: "t̪ʋərit̪əh poːt̪əh"
+        bases:
+          - { word: "त्वरितः", base: "त्वरित", reading: "tvarita" }
+          - { word: "पोतः", base: "पोत", reading: "pota" }
+      - target: "त्वरितं गमनम्"
+        reading: "tvaritaṃ gamanam"
+        ipa: "t̪ʋərit̪əm ɡəmənəm"
+        bases:
+          - { word: "त्वरितं", base: "त्वरित", reading: "tvarita" }
+          - { word: "गमनम्", base: "गमन", reading: "gamana" }
+  - id: "sa-5555"
+    target: "प्रवेशः"
+    reading: "praveśaḥ"
+    ipa: "prəʋeːʃəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "प्रवेशः", base: "प्रवेश", reading: "praveśa" }
+    examples:
+      - target: "प्रवेशस् तोरणे"
+        reading: "praveśas toraṇe"
+        ipa: "prəʋeːʃəs t̪oːrəɳeː"
+        bases:
+          - { word: "प्रवेशस्", base: "प्रवेश", reading: "praveśa" }
+          - { word: "तोरणे", base: "तोरण", reading: "toraṇa" }
+      - target: "नगरे प्रवेशः"
+        reading: "nagare praveśaḥ"
+        ipa: "nəɡəreː prəʋeːʃəh"
+        bases:
+          - { word: "नगरे", base: "नगर", reading: "nagara" }
+          - { word: "प्रवेशः", base: "प्रवेश", reading: "praveśa" }
+  - id: "sa-5556"
+    target: "पुरतः"
+    reading: "purataḥ"
+    ipa: "purət̪əh"
+    pos: "adv"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "pair", ref: "sa-5540" }
+    bases:
+      - { word: "पुरतः", base: "पुरतस्", reading: "puratas" }
+    examples:
+      - target: "पुरतः शकटम्"
+        reading: "purataḥ śakaṭam"
+        ipa: "purət̪əh ʃəkəʈəm"
+        bases:
+          - { word: "पुरतः", base: "पुरतस्", reading: "puratas" }
+          - { word: "शकटम्", base: "शकट", reading: "śakaṭa" }
+      - target: "पुरतः पथिकः"
+        reading: "purataḥ pathikaḥ"
+        ipa: "purət̪əh pət̪ʰikəh"
+        bases:
+          - { word: "पुरतः", base: "पुरतस्", reading: "puratas" }
+          - { word: "पथिकः", base: "पथिक", reading: "pathika" }
+  - id: "sa-5557"
+    target: "अग्रतः"
+    reading: "agrataḥ"
+    ipa: "əɡrət̪əh"
+    pos: "adv"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "अग्रतः", base: "अग्रतस्", reading: "agratas" }
+    examples:
+      - target: "अग्रतः पथिकः"
+        reading: "agrataḥ pathikaḥ"
+        ipa: "əɡrət̪əh pət̪ʰikəh"
+        bases:
+          - { word: "अग्रतः", base: "अग्रतस्", reading: "agratas" }
+          - { word: "पथिकः", base: "पथिक", reading: "pathika" }
+      - target: "अग्रतः शकटम्"
+        reading: "agrataḥ śakaṭam"
+        ipa: "əɡrət̪əh ʃəkəʈəm"
+        bases:
+          - { word: "अग्रतः", base: "अग्रतस्", reading: "agratas" }
+          - { word: "शकटम्", base: "शकट", reading: "śakaṭa" }
+  - id: "sa-5558"
+    target: "निम्नम्"
+    reading: "nimnam"
+    ipa: "nimnəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "निम्नम्", base: "निम्न", reading: "nimna" }
+    examples:
+      - target: "अस्ति निम्नं मार्गे"
+        reading: "asti nimnaṃ mārge"
+        ipa: "əst̪i nimnəm maːrɡeː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "निम्नं", base: "निम्न", reading: "nimna" }
+          - { word: "मार्गे", base: "मार्ग", reading: "mārga" }
+      - target: "अस्ति निम्नं तत्र"
+        reading: "asti nimnaṃ tatra"
+        ipa: "əst̪i nimnəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "निम्नं", base: "निम्न", reading: "nimna" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+  - id: "sa-5559"
+    target: "शनैः"
+    reading: "śanaiḥ"
+    ipa: "ʃənəih"
+    pos: "adv"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "शनैः", base: "शनैस्", reading: "śanais" }
+    examples:
+      - target: "शनैः पथिकः"
+        reading: "śanaiḥ pathikaḥ"
+        ipa: "ʃənəih pət̪ʰikəh"
+        bases:
+          - { word: "शनैः", base: "शनैस्", reading: "śanais" }
+          - { word: "पथिकः", base: "पथिक", reading: "pathika" }
+      - target: "शनैः शकटम्"
+        reading: "śanaiḥ śakaṭam"
+        ipa: "ʃənəih ʃəkəʈəm"
+        bases:
+          - { word: "शनैः", base: "शनैस्", reading: "śanais" }
+          - { word: "शकटम्", base: "शकट", reading: "śakaṭa" }
+  - id: "sa-5560"
+    target: "प्रत्यागमनम्"
+    reading: "pratyāgamanam"
+    ipa: "prət̪jaːɡəmənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "प्रत्यागमनम्", base: "प्रत्यागमन", reading: "pratyāgamana" }
+    examples:
+      - target: "प्रत्यागमनं तत्र"
+        reading: "pratyāgamanaṃ tatra"
+        ipa: "prət̪jaːɡəmənəm t̪ət̪rə"
+        bases:
+          - { word: "प्रत्यागमनं", base: "प्रत्यागमन", reading: "pratyāgamana" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "प्रत्यागमनं नगरे"
+        reading: "pratyāgamanaṃ nagare"
+        ipa: "prət̪jaːɡəmənəm nəɡəreː"
+        bases:
+          - { word: "प्रत्यागमनं", base: "प्रत्यागमन", reading: "pratyāgamana" }
+          - { word: "नगरे", base: "नगर", reading: "nagara" }
+  - id: "sa-5561"
+    target: "पर्यटनम्"
+    reading: "paryaṭanam"
+    ipa: "pərjəʈənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "पर्यटनम्", base: "पर्यटन", reading: "paryaṭana" }
+    examples:
+      - target: "पर्यटनं तत्र"
+        reading: "paryaṭanaṃ tatra"
+        ipa: "pərjəʈənəm t̪ət̪rə"
+        bases:
+          - { word: "पर्यटनं", base: "पर्यटन", reading: "paryaṭana" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "पर्यटनं मार्गे"
+        reading: "paryaṭanaṃ mārge"
+        ipa: "pərjəʈənəm maːrɡeː"
+        bases:
+          - { word: "पर्यटनं", base: "पर्यटन", reading: "paryaṭana" }
+          - { word: "मार्गे", base: "मार्ग", reading: "mārga" }
+  - id: "sa-5562"
+    target: "भ्रमणम्"
+    reading: "bhramaṇam"
+    ipa: "bʱrəməɳəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "भ्रमणम्", base: "भ्रमण", reading: "bhramaṇa" }
+    examples:
+      - target: "भ्रमणं तत्र"
+        reading: "bhramaṇaṃ tatra"
+        ipa: "bʱrəməɳəm t̪ət̪rə"
+        bases:
+          - { word: "भ्रमणं", base: "भ्रमण", reading: "bhramaṇa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "भ्रमणं नगरे"
+        reading: "bhramaṇaṃ nagare"
+        ipa: "bʱrəməɳəm nəɡəreː"
+        bases:
+          - { word: "भ्रमणं", base: "भ्रमण", reading: "bhramaṇa" }
+          - { word: "नगरे", base: "नगर", reading: "nagara" }
+  - id: "sa-5563"
+    target: "दोला"
+    reading: "dolā"
+    ipa: "d̪oːlaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    bases:
+      - { word: "दोला", base: "दोला", reading: "dolā" }
+    examples:
+      - target: "अस्ति दोला तत्र"
+        reading: "asti dolā tatra"
+        ipa: "əst̪i d̪oːlaː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "दोला", base: "दोला", reading: "dolā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "दोला रथे"
+        reading: "dolā rathe"
+        ipa: "d̪oːlaː rət̪ʰeː"
+        bases:
+          - { word: "दोला", base: "दोला", reading: "dolā" }
+          - { word: "रथे", base: "रथ", reading: "ratha" }
+  - id: "sa-5564"
+    target: "पादोदकम्"
+    reading: "pādodakam"
+    ipa: "paːd̪oːd̪əkəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["journey"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "पादोदकम्", base: "पादोदक", reading: "pādodaka" }
+    examples:
+      - target: "पादोदकं तत्र"
+        reading: "pādodakaṃ tatra"
+        ipa: "paːd̪oːd̪əkəm t̪ət̪rə"
+        bases:
+          - { word: "पादोदकं", base: "पादोदक", reading: "pādodaka" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अतिथेः पादोदकम्"
+        reading: "atitheḥ pādodakam"
+        ipa: "ət̪it̪ʰeːh paːd̪oːd̪əkəm"
+        bases:
+          - { word: "अतिथेः", base: "अतिथि", reading: "atithi" }
+          - { word: "पादोदकम्", base: "पादोदक", reading: "pādodaka" }

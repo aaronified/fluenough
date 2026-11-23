@@ -1,0 +1,79 @@
+schema: 1
+id: "arc-en-phrasebook"
+kind: "layer"
+core: "arc-phrasebook"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phrasebook: first phrases"
+license: "CC-BY-SA-4.0"
+description: "Eighteen things to say from the first day, before their words are taught: greetings and goodbye, please and thank you, sorry, yes and no, asking for slower speech, how are you, and how to give your name and ask for help. Not yet checked by a scholar of Imperial Aramaic: please report any mistake."
+cards:
+  "arc-9001":
+    native: "hello"
+  "arc-9002":
+    native: "good morning"
+    bases:
+      "צפרא": "morning"
+      "טבא": "good"
+  "arc-9003":
+    native: "good night"
+    bases:
+      "לילא": "night"
+      "טבא": "good"
+  "arc-9004":
+    native: "goodbye; go in peace"
+    bases:
+      "זיל": "go"
+  "arc-9005":
+    native: "please"
+    bases:
+      "הב": "give (imperative); please"
+  "arc-9006":
+    native: "thank you (lit. good to you)"
+    bases:
+      "טבא": "good"
+      "עליך": "to you"
+  "arc-9007":
+    native: "you're welcome (lit. it is nothing)"
+    bases:
+      "מדעם": "anything; something"
+  "arc-9008":
+    native: "sorry; forgive me"
+    bases:
+      "שבק": "leave; forgive"
+      "לי": "to me"
+  "arc-9009":
+    native: "yes"
+  "arc-9010":
+    native: "no; not"
+  "arc-9011":
+    native: "I don't understand (lit. I do not know)"
+    bases:
+      "ידענא": "I know"
+  "arc-9012":
+    native: "I don't know Imperial Aramaic"
+    bases:
+      "ידענא": "I know"
+      "ארמיא": "Aramaic"
+  "arc-9013":
+    native: "please speak slowly (lit. do not hurry)"
+    bases:
+      "אל": "do not"
+      "תעגל": "hurry"
+  "arc-9014":
+    native: "how are you?"
+  "arc-9015":
+    native: "I'm fine"
+    bases:
+      "שלם": "well; whole; at peace"
+  "arc-9016":
+    native: "what is your name?"
+    bases:
+      "שמך": "your name"
+  "arc-9017":
+    native: "my name is …"
+    bases:
+      "שמי": "my name"
+  "arc-9018":
+    native: "help!"
+    bases:
+      "סעדני": "help me"

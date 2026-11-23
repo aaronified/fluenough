@@ -1,0 +1,55 @@
+schema: 1
+id: "sa-en-seasons-sentences"
+kind: "layer"
+core: "sa-seasons-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about the seasons"
+description: "Short sentences about the seasons, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3611":
+    native: "In spring the cuckoo sings sweetly."
+    bases: { "वसन्ते": "in spring", "कोकिलो": "cuckoo", "मधुरं": "sweetly", "गायति": "to sing (sings)" }
+    confusables: { "w1": { why: "Summer, not spring: ग्रीष्मः (grīṣmaḥ) means summer." }, "w2": { why: "Crow, not cuckoo: काकः (kākaḥ) means crow." }, "w3": { why: "To cry, not to sing: रुद् (rud) means to cry." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. कोकिलः (kokilaḥ) is written कोकिलो (kokilo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of मधुरं (madhuraṃ) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). मधुरम् (madhuram) is written मधुरं (madhuraṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of गायति (gāyati) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "वसन्ते (vasante) is the locative case of वसन्तः (vasantaḥ): in spring. मधुरम् (madhuram) is the neuter form of मधुरः (madhuraḥ), used as an adverb: sweetly." }
+  "sa-3612":
+    native: "There is much sunshine in summer."
+    bases: { "आतपो": "sunshine", "ग्रीष्मे": "in summer", "भवति": "to be (is)" }
+    confusables: { "w1": { why: "Shade, not sunshine: छाया (chāyā) means shade." }, "w2": { why: "Winter, not summer: हेमन्तः (hemantaḥ) means winter." }, "w3": { why: "Heat, not sunshine: तापः (tāpaḥ) means heat." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. आतपः (ātapaḥ) is written आतपो (ātapo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of ग्रीष्मे (grīṣme) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)).", "n2": "ग्रीष्मे (grīṣme) is the locative case of ग्रीष्मः (grīṣmaḥ): in summer. बहु (bahu) says there is much." }
+  "sa-3613":
+    native: "In summer shade is cool."
+    bases: { "ग्रीष्मे": "in summer", "शीतला": "cool", "भवति": "to be (is)" }
+    confusables: { "w1": { why: "Sunshine, not shade: आतपः (ātapaḥ) means sunshine." }, "w2": { why: "Heat, not coolness: उष्णता (uṣṇatā) means heat." }, "w3": { why: "Spring, not summer: वसन्तः (vasantaḥ) means spring." } }
+    notes: { "n1": "शीतला (śītalā) is the feminine form of शीतलः (śītalaḥ), to agree with छाया (chāyā), a feminine word." }
+  "sa-3614":
+    native: "In winter snow falls on the mountain."
+    bases: { "हेमन्ते": "in winter", "पर्वते": "on the mountain", "हिमं": "snow", "पतति": "to fall (falls)" }
+    confusables: { "w1": { why: "Mist, not snow: नीहारः (nīhāraḥ) means mist." }, "w2": { why: "Frost, not snow: तुषारः (tuṣāraḥ) means frost." }, "w3": { why: "Summer, not winter: ग्रीष्मः (grīṣmaḥ) means summer." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. हिमम् (himam) is written हिमं (himaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of पतति (patati) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i).", "n2": "पर्वते (parvate) is the locative case of पर्वतः (parvataḥ): on the mountain. पतति (patati) is the present of पत् (pat), which means to fall or to fly." }
+  "sa-3615":
+    native: "In summer there is heat and in the cool season there is frost."
+    bases: { "ग्रीष्मे": "in summer", "तापो": "heat", "भवति": "to be (is)", "शिशिरे": "in the cool season" }
+    confusables: { "w1": { why: "Snowfall, not frost: हिमपातः (himapātaḥ) means snowfall." }, "w2": { why: "Mist, not frost: नीहारः (nīhāraḥ) means mist." }, "w3": { why: "Spring, not summer: वसन्तः (vasantaḥ) means spring." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. तापः (tāpaḥ) is written तापो (tāpo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of भवति (bhavati) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)).", "n2": "The second half has no verb of its own: भवति (bhavati) is understood, so शिशिरे (śiśire) तुषारः (tuṣāraḥ) means in the cool season there is frost." }
+  "sa-3616":
+    native: "In the cool season there is a cold wind."
+    bases: { "शिशिरे": "in the cool season", "पवनो": "wind", "भवति": "to be (is)" }
+    confusables: { "w1": { why: "Hot, not cold: उष्णः (uṣṇaḥ) means hot." }, "w2": { why: "Breeze, not wind: समीरः (samīraḥ) means breeze." }, "w3": { why: "Winter, not the cool season: हेमन्तः (hemantaḥ) means winter." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. पवनः (pavanaḥ) is written पवनो (pavano) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of भवति (bhavati) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)).", "n2": "शीतलः (śītalaḥ) agrees with पवनः (pavanaḥ), a masculine word. शिशिरे (śiśire) is the locative case of शिशिरः (śiśiraḥ): in the cool season." }
+  "sa-3617":
+    native: "In spring there are flowers in the forest."
+    bases: { "वसन्ते": "in spring", "कानने": "in the forest", "पुष्पाणि": "flowers", "भवन्ति": "to be (they are)" }
+    confusables: { "w1": { why: "Fruit-bearing, not flowering: फलितः (phalitaḥ) means fruit-bearing." }, "w2": { why: "Summer, not spring: ग्रीष्मः (grīṣmaḥ) means summer." }, "w3": { why: "Leaf, not flower: पर्णम् (parṇam) means leaf." } }
+    notes: { "n1": "पुष्पाणि (puṣpāṇi) is the nominative plural of पुष्पम् (puṣpam): a neuter word takes आनि (āni) in the plural, and the न् (n) is written ण् (ṇ) after the ष् (ṣ) of the stem (Aṣṭādhyāyī 8.4.1, रषाभ्यां नो णः समानपदे (raṣābhyāṃ no ṇaḥ samānapade)). The verb भवन्ति (bhavanti) is plural too." }
+  "sa-3618":
+    native: "The fragrance of a flower is sweet."
+    bases: { "पुष्पस्य": "of a flower", "सुगन्धो": "fragrance", "मधुरो": "sweet", "भवति": "to be (is)" }
+    confusables: { "w1": { why: "Thorn, not fragrance: कण्टकः (kaṇṭakaḥ) means thorn." }, "w2": { why: "Hard, not sweet: कठिनः (kaṭhinaḥ) means hard." }, "w3": { why: "Beautiful, not sweet: सुन्दरः (sundaraḥ) means beautiful." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. सुगन्धः (sugandhaḥ) is written सुगन्धो (sugandho) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of मधुरो (madhuro) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). मधुरः (madhuraḥ) is written मधुरो (madhuro), for the same reason, before भवति (bhavati).", "n2": "पुष्पस्य (puṣpasya) is the genitive case of पुष्पम् (puṣpam): of a flower. मधुरः (madhuraḥ) agrees with सुगन्धः (sugandhaḥ), a masculine word." }
+  "sa-3619":
+    native: "In the cloud there is lightning and thunder."
+    bases: { "मेघे": "in the cloud", "तडिद्": "lightning", "भवति": "to be (is)", "गर्जनं": "thunder" }
+    confusables: { "w1": { why: "Thunderbolt, not lightning: अशनिः (aśaniḥ) means thunderbolt." }, "w2": { why: "Storm, not thunder: झञ्झा (jhañjhā) means storm." }, "w3": { why: "Rain, not thunder: वृष्टिः (vṛṣṭiḥ) means rain." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. तडित् (taḍit) is written तडिद् (taḍid) because a final त् (t) becomes द् (d) before a voiced consonant, here the start of भवति (bhavati) (Aṣṭādhyāyī 8.2.39, झलां जशः अन्ते (jhalāṃ jaśaḥ ante); Whitney 159). गर्जनम् (garjanam) is written गर्जनं (garjanaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of च (ca) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }

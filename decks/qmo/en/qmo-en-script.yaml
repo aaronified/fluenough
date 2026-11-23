@@ -1,0 +1,20 @@
+schema: 1
+id: "qmo-en-script"
+kind: "layer"
+core: "qmo-script"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How Morse code works"
+intro: "Morse code writes each letter, digit and sign as a short pattern of dots and dashes, sent as tones. It is learned by ear, as a rhythm, more than by counting dots: tap the speaker on every card and say the sound, di for a dot and dah for a dash."
+features:
+  "timing":
+    name: "Dot and dash: one beat and three"
+    text: "A dot is one beat of tone and a dash is three. Between the dots and dashes of one letter is a gap of one beat, between letters three, between words seven. Here a card plays one letter, at 15 words per minute and 600 Hz."
+  "tree":
+    name: "Start with six"
+    text: "E, T, I, A, N and M are one or two tones long, and every longer letter extends one of them: the fastest way to learn the code is to know these six cold, then add the letters of three tones, then four."
+  "digits":
+    name: "Digits count in tones"
+    text: "Every digit is five tones. 1 to 5 begin with 1 dot and 4 dashes and trade a dash for a dot each time, until 5 is five dots; 6 to 0 do the same from a dash first, until 0 is five dashes."
+  "run":
+    name: "Some signs run together"
+    text: "Procedural signs such as understood, wait, end of work and SOS are sent with no gap between their letters, as one long sign. So SOS, sent as a run, is not the three letters S, O and S."

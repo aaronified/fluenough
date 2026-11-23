@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-arts"
+name: "Reading: arts"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-arts-text-1"
+    title: "Stage, poem and flute"
+    theme: "arts"
+    sentences:
+      - { text: "नटो मञ्चे रात्रौ नृत्यति.", reading: "naṭo mañce rātrau nṛtyati.", ipa: "nəʈoː məɲtʃeː raːt̪rəu nr̩t̪jət̪i" }
+      - { text: "सायं महाकविर् महाकाव्यं लिखति.", reading: "sāyaṃ mahākavir mahākāvyaṃ likhati.", ipa: "saːjəm məɦaːkəʋir məɦaːkaːʋjəm likʰət̪i" }
+      - { text: "वेणुर् मधुरं नादं करोति.", reading: "veṇur madhuraṃ nādaṃ karoti.", ipa: "ʋeːɳur məd̪ʱurəm naːd̪əm kəroːt̪i" }
+      - { text: "नटस्य हस्ते डमरुर् अस्ति.", reading: "naṭasya haste ḍamarur asti.", ipa: "nəʈəsjə ɦəst̪eː ɖəmərur əst̪i" }
+      - { text: "चित्रकरो वर्तिकया चित्रं लिखति.", reading: "citrakaro vartikayā citraṃ likhati.", ipa: "tʃit̪rəkəroː ʋərt̪ikəjaː tʃit̪rəm likʰət̪i" }
+    questions:
+      - id: "sa-6748"
+        prompt: { en: "When does the great poet write?" }
+        options: [{ en: "In the morning" }, { en: "In the evening" }, { en: "At night" }]
+        answer: 2
+      - id: "sa-6749"
+        prompt: { en: "What does the actor have in his hand?" }
+        options: [{ en: "A small drum" }, { en: "A flute" }, { en: "A garland" }]
+        answer: 1
+      - id: "sa-6750"
+        prompt: { en: "Which word means 'sound'?" }
+        options: [{ en: "मधुरं (madhuraṃ)" }, { en: "नादं (nādaṃ)" }, { en: "महाकाव्यं (mahākāvyaṃ)" }]
+        answer: 2
+      - id: "sa-6751"
+        prompt: { en: "The actor dances on the stage at night." }
+        answer: true
+  - id: "sa-arts-text-2"
+    title: "Brush, tablet and play"
+    theme: "arts"
+    sentences:
+      - { text: "लेखकः पट्टे वर्णं लिखति.", reading: "lekhakaḥ paṭṭe varṇaṃ likhati.", ipa: "leːkʰəkəh pəʈʈeː ʋərɳəm likʰət̪i" }
+      - { text: "अलंकारेण काव्यं सुन्दरं शोभति.", reading: "alaṃkāreṇa kāvyaṃ sundaraṃ śobhati.", ipa: "ələŋkaːreːɳə kaːʋjəm sund̪ərəm ʃoːbʱət̪i" }
+      - { text: "विदूषको नाटके हासं करोति.", reading: "vidūṣako nāṭake hāsaṃ karoti.", ipa: "ʋid̪uːʂəkoː naːʈəkeː ɦaːsəm kəroːt̪i" }
+      - { text: "नित्यम् अभ्यासेन कौशलं वर्धते.", reading: "nityam abhyāsena kauśalaṃ vardhate.", ipa: "nit̪jəm əbʱjaːseːnə kəuʃələm ʋərd̪ʱət̪eː" }
+      - { text: "महाकवेर् वाणी रम्या भवति.", reading: "mahākaver vāṇī ramyā bhavati.", ipa: "məɦaːkəʋeːr ʋaːɳiː rəmjaː bʱəʋət̪i" }
+    questions:
+      - id: "sa-6752"
+        prompt: { en: "What does the painter use to paint?" }
+        options: [{ en: "A pen" }, { en: "A reed" }, { en: "A brush" }]
+        answer: 3
+      - id: "sa-6753"
+        prompt: { en: "Where does the scribe write a letter?" }
+        options: [{ en: "On a tablet" }, { en: "On a leaf" }, { en: "On a wall" }]
+        answer: 1
+      - id: "sa-6754"
+        prompt: { en: "Which word means 'skill'?" }
+        options: [{ en: "कौशलं (kauśalaṃ)" }, { en: "हासं (hāsaṃ)" }, { en: "काव्यं (kāvyaṃ)" }]
+        answer: 1
+      - id: "sa-6755"
+        prompt: { en: "The jester makes people weep in the play." }
+        answer: false

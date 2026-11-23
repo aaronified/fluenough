@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "gu-en-reading-exhibition-notice",
+  "name": "Reading: A notice for an art exhibition",
+  "kind": "reading",
+  "language": {
+    "code": "gu",
+    "iso639_3": "guj",
+    "name": "Gujarati",
+    "script": "gujarati",
+    "tts": "gu-IN",
+    "icon": "ગુ"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this deck, and released under CC BY-SA 4.0",
+  "description": "A notice for an art exhibition: when it starts, who you can talk to and what it costs. Written for this deck and released under CC BY-SA 4.0. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "reading",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "gu-exhibition-notice",
+      "title": "Reading: A notice for an art exhibition",
+      "theme": "arts",
+      "sentences": [
+        {
+          "text": "પ્રદર્શન શનિવારે શરૂ થશે.",
+          "reading": "pradarśan śanivāre śaru thaśe.",
+          "ipa": "prəd̪ərʃən ʃəniʋare ʃəru t̪ʰəʃe"
+        },
+        {
+          "text": "ચિત્રો, શિલ્પ અને ગેલેરીમાં ઘણી કલાકૃતિઓ છે.",
+          "reading": "citro, śilp ane gelerimām ghaṇi kalākrutio che.",
+          "ipa": "tʃit̪ro ʃilp əne ɡelerimam ɡʱəɳi kəlakrut̪io tʃʰe"
+        },
+        {
+          "text": "કલાકારો સાથે વાત કરવાની તક મળશે.",
+          "reading": "kalākāro sāthe vāt karvāni tak maḷaśe.",
+          "ipa": "kəlakaro sat̪ʰe ʋat̪ kərʋani t̪ək məɭəʃe"
+        },
+        {
+          "text": "પ્રવેશ મફત છે.",
+          "reading": "praveś maphat che.",
+          "ipa": "prəʋeʃ məpʰət̪ tʃʰe"
+        }
+      ],
+      "questions": [
+        {
+          "id": "gu-4385",
+          "prompt": {
+            "en": "When does the exhibition start?"
+          },
+          "options": [
+            {
+              "en": "On Saturday"
+            },
+            {
+              "en": "On Sunday"
+            },
+            {
+              "en": "On Monday"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "gu-4386",
+          "prompt": {
+            "en": "You can talk to the artists at the exhibition."
+          },
+          "answer": true
+        },
+        {
+          "id": "gu-4387",
+          "prompt": {
+            "en": "What does it cost to go in?"
+          },
+          "options": [
+            {
+              "en": "It is free"
+            },
+            {
+              "en": "It costs a lot"
+            },
+            {
+              "en": "You must pay later"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  ]
+}

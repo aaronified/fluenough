@@ -1,0 +1,697 @@
+schema: 1
+id: "bgc-en-first-words"
+kind: "layer"
+core: "bgc-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "The first words of Haryanvi: the pronouns, yes and no, the numbers 1 to 10, the family, and the everyday words for food, house, name and time. Not yet checked by a Haryanvi speaker: please report any mistake."
+cards:
+  "bgc-0101":
+    native: "yes"
+    notes:
+      "n1": "The usual 'yes'."
+    examples:
+      "हाँ, यो पाणी सै।":
+        native: "Yes, this is water."
+        bases:
+          "हाँ": "yes"
+          "यो": "this"
+          "पाणी": "water"
+          "सै": "is"
+  "bgc-0102":
+    native: "no; not"
+    notes:
+      "n1": "The Survey gives nahi as the usual negative, and ni with a verb in the first person ('mai ni janu', I do not know). Its text has 'is jogga nahi sai', I am not worthy of this. कोनी (konī) is not attested there. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "यो घर नहीं सै।":
+        native: "This is not a house."
+        bases:
+          "यो": "this"
+          "घर": "home"
+          "नहीं": "not"
+          "सै": "is"
+      "वो अरै नहीं सै।":
+        native: "He is not here."
+        bases:
+          "वो": "he"
+          "अरै": "here"
+          "नहीं": "not"
+          "सै": "is"
+  "bgc-0103":
+    native: "I"
+    notes:
+      "n1": "The Survey gives mai for 'I', merā for 'my', and 'sū' for 'I am' ('mai ... karu-su'). Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "मैं घर में सूं।":
+        native: "I am at home."
+        bases:
+          "मैं": "I"
+          "घर": "home"
+          "में": "in"
+          "सूं": "am"
+      "यो मेरा घर सै।":
+        native: "This is my house."
+        bases:
+          "यो": "this"
+          "मेरा": "my"
+          "घर": "home"
+          "सै": "is"
+  "bgc-0104":
+    native: "you (respectful)"
+    notes:
+      "n1": "The Survey gives tham (or tamhe) for 'you' (plural), and tu or tau for one person. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "थम अर मैं।":
+        native: "You and I."
+        bases:
+          "थम": "you"
+          "अर": "and"
+          "मैं": "I"
+      "थम कौण सै?":
+        native: "Who are you?"
+        bases:
+          "थम": "you"
+          "कौण": "who"
+          "सै": "is"
+  "bgc-0105":
+    native: "he; she"
+    notes:
+      "n1": "Not yet checked: the Survey gives oh or ou for 'that, he'. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "वो घर में सै।":
+        native: "He is at home."
+        bases:
+          "वो": "he"
+          "घर": "home"
+          "में": "at"
+          "सै": "is"
+      "वो डॉक्टर सै।":
+        native: "She is a doctor."
+        bases:
+          "वो": "she"
+          "डॉक्टर": "doctor"
+          "सै": "is"
+  "bgc-0106":
+    native: "we"
+    notes:
+      "n1": "The Survey gives ham (or hame) for 'we'; mhārā is 'our'. म्हे (mhe) is not attested there. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "हम अर थम।":
+        native: "We and you."
+        bases:
+          "हम": "we"
+          "अर": "and"
+          "थम": "you"
+      "हम अरै सै।":
+        native: "We are here."
+        bases:
+          "हम": "we"
+          "अरै": "here"
+          "सै": "is"
+  "bgc-0107":
+    native: "they"
+    notes:
+      "n1": "The Survey's specimen has 'wai' for 'they' ('wai rajji hon lagge', they began to rejoice). Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "वै अरै सै।":
+        native: "They are here."
+        bases:
+          "वै": "they"
+          "अरै": "here"
+          "सै": "is"
+      "वै कौण सै?":
+        native: "Who are they?"
+        bases:
+          "वै": "they"
+          "कौण": "who"
+          "सै": "is"
+  "bgc-0108":
+    native: "one"
+    notes:
+      "n1": "The number one. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "एक घर।":
+        native: "One house."
+        bases:
+          "एक": "one"
+          "घर": "home"
+      "एक भाई।":
+        native: "One brother."
+        bases:
+          "एक": "one"
+          "भाई": "brother"
+  "bgc-0109":
+    native: "two"
+    notes:
+      "n1": "The number 2."
+    examples:
+      "दो गिलास पाणी।":
+        native: "Two glases of water."
+        bases:
+          "दो": "two"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "दो कप चाह।":
+        native: "Two cups of tea."
+        bases:
+          "दो": "two"
+          "कप": "cup"
+          "चाह": "tea"
+  "bgc-0110":
+    native: "three"
+    notes:
+      "n1": "The Survey's comparative list gives tin for 'three'. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "तीन घर।":
+        native: "Three houses."
+        bases:
+          "तीन": "three"
+          "घर": "home"
+      "तीन भाई।":
+        native: "Three brothers."
+        bases:
+          "तीन": "three"
+          "भाई": "brother"
+  "bgc-0111":
+    native: "four"
+    notes:
+      "n1": "The number 4."
+    examples:
+      "चार गिलास पाणी।":
+        native: "Four glases of water."
+        bases:
+          "चार": "four"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "चार कप चाह।":
+        native: "Four cups of tea."
+        bases:
+          "चार": "four"
+          "कप": "cup"
+          "चाह": "tea"
+  "bgc-0112":
+    native: "five"
+    notes:
+      "n1": "The number 5."
+    examples:
+      "पाँच गिलास पाणी।":
+        native: "Five glases of water."
+        bases:
+          "पाँच": "five"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "पाँच कप चाह।":
+        native: "Five cups of tea."
+        bases:
+          "पाँच": "five"
+          "कप": "cup"
+          "चाह": "tea"
+  "bgc-0113":
+    native: "six"
+    notes:
+      "n1": "The number 6."
+    examples:
+      "छह गिलास पाणी।":
+        native: "Six glases of water."
+        bases:
+          "छह": "six"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "छह कप चाह।":
+        native: "Six cups of tea."
+        bases:
+          "छह": "six"
+          "कप": "cup"
+          "चाह": "tea"
+  "bgc-0114":
+    native: "seven"
+    notes:
+      "n1": "The number 7."
+    examples:
+      "सात गिलास पाणी।":
+        native: "Seven glases of water."
+        bases:
+          "सात": "seven"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "सात कप चाह।":
+        native: "Seven cups of tea."
+        bases:
+          "सात": "seven"
+          "कप": "cup"
+          "चाह": "tea"
+  "bgc-0115":
+    native: "eight"
+    notes:
+      "n1": "The number 8."
+    examples:
+      "आठ गिलास पाणी।":
+        native: "Eight glases of water."
+        bases:
+          "आठ": "eight"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "आठ कप चाह।":
+        native: "Eight cups of tea."
+        bases:
+          "आठ": "eight"
+          "कप": "cup"
+          "चाह": "tea"
+  "bgc-0116":
+    native: "nine"
+    notes:
+      "n1": "The number 9."
+    examples:
+      "नौ गिलास पाणी।":
+        native: "Nine glases of water."
+        bases:
+          "नौ": "nine"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "नौ कप चाह।":
+        native: "Nine cups of tea."
+        bases:
+          "नौ": "nine"
+          "कप": "cup"
+          "चाह": "tea"
+  "bgc-0117":
+    native: "ten"
+    notes:
+      "n1": "The number 10."
+    examples:
+      "दस गिलास पाणी।":
+        native: "Ten glases of water."
+        bases:
+          "दस": "ten"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "दस कप चाह।":
+        native: "Ten cups of tea."
+        bases:
+          "दस": "ten"
+          "कप": "cup"
+          "चाह": "tea"
+  "bgc-0118":
+    native: "mother"
+    notes:
+      "n1": "The everyday word for 'mother'."
+    examples:
+      "माँ, पाणी दे।":
+        native: "Mum, give water."
+        bases:
+          "माँ": "mother"
+          "पाणी": "water"
+          "दे": "give"
+      "मेरी माँ घर में सै।":
+        native: "My mother is at home."
+        bases:
+          "मेरी": "my"
+          "माँ": "mother"
+          "घर": "home"
+          "में": "at"
+          "सै": "is"
+  "bgc-0119":
+    native: "father"
+    notes:
+      "n1": "The Survey's vocabulary gives babbu or bappu for 'father'. बाप (bāp) is not attested there. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "मेरा बप्पू घर में सै।":
+        native: "My father is at home."
+        bases:
+          "मेरा": "my"
+          "बप्पू": "father"
+          "घर": "home"
+          "में": "in"
+          "सै": "is"
+      "तेरा बप्पू आ रेह्या सै।":
+        native: "Your father is coming."
+        bases:
+          "तेरा": "your"
+          "बप्पू": "father"
+          "आ": "come"
+          "रेह्या": "be (-ing)"
+          "सै": "is"
+  "bgc-0120":
+    native: "brother"
+    notes:
+      "n1": "The Survey's text has 'tera bhai a-rehya-sai', your brother is coming. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "मेरा भाई घर में सै।":
+        native: "My brother is at home."
+        bases:
+          "मेरा": "my"
+          "भाई": "brother"
+          "घर": "home"
+          "में": "in"
+          "सै": "is"
+      "तेरा भाई आ रेह्या सै।":
+        native: "Your brother is coming."
+        bases:
+          "तेरा": "your"
+          "भाई": "brother"
+          "आ": "come"
+          "रेह्या": "be (-ing)"
+          "सै": "is"
+  "bgc-0121":
+    native: "sister"
+    notes:
+      "n1": "The Survey's vocabulary gives bibi for 'a sister'. बहन (bahan) is not attested there. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "मेरी बीबी घर में सै।":
+        native: "My sister is at home."
+        bases:
+          "मेरी": "my"
+          "बीबी": "sister"
+          "घर": "home"
+          "में": "in"
+          "सै": "is"
+      "यो मेरी बीबी सै।":
+        native: "This is my sister."
+        bases:
+          "यो": "this"
+          "मेरी": "my"
+          "बीबी": "sister"
+          "सै": "is"
+  "bgc-0122":
+    native: "boy; son"
+    notes:
+      "n1": "The Survey's text has chhora for 'son' and 'boy'. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "मेरा छोरा घर में सै।":
+        native: "My son is at home."
+        bases:
+          "मेरा": "my"
+          "छोरा": "boy"
+          "घर": "home"
+          "में": "in"
+          "सै": "is"
+      "यो छोरा कौण सै?":
+        native: "Who is this boy?"
+        bases:
+          "यो": "this"
+          "छोरा": "boy"
+          "कौण": "who"
+          "सै": "is"
+  "bgc-0123":
+    native: "man; person"
+    notes:
+      "n1": "The Survey's text has manas for 'a man' ('ek manas-kai do chhore'). आदमी (ādmī) is not attested there. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "यो मनस घर में सै।":
+        native: "This man is at home."
+        bases:
+          "यो": "this"
+          "मनस": "man"
+          "घर": "home"
+          "में": "in"
+          "सै": "is"
+      "यो मनस कौण सै?":
+        native: "Who is this man?"
+        bases:
+          "यो": "this"
+          "मनस": "man"
+          "कौण": "who"
+          "सै": "is"
+  "bgc-0124":
+    native: "woman; wife"
+    notes:
+      "n1": "Wiktionary lists लुगाई (lugāī) for Haryanvi as 'women, lady'. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "मेरी लुगाई घर में सै।":
+        native: "My wife is at home."
+        bases:
+          "मेरी": "my"
+          "लुगाई": "woman"
+          "घर": "home"
+          "में": "in"
+          "सै": "is"
+      "लुगाई अर छोरा।":
+        native: "A woman and a boy."
+        bases:
+          "लुगाई": "woman"
+          "अर": "and"
+          "छोरा": "boy"
+  "bgc-0125":
+    native: "water"
+    notes:
+      "n1": "Water. The Survey has pani in its Rohtak specimen. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "यो पाणी सै।":
+        native: "This is water."
+        bases:
+          "यो": "this"
+          "पाणी": "water"
+          "सै": "is"
+      "पाणी अरै सै।":
+        native: "The water is here."
+        bases:
+          "पाणी": "water"
+          "अरै": "here"
+          "सै": "is"
+  "bgc-0126":
+    native: "food; meal"
+    notes:
+      "n1": "Food in general, or a meal."
+    examples:
+      "खाणा तैयार सै।":
+        native: "The food is ready."
+        bases:
+          "खाणा": "food"
+          "तैयार": "ready"
+          "सै": "is"
+      "मैं खाणा खाऊं सूं।":
+        native: "I will eat food."
+        bases:
+          "मैं": "I"
+          "खाणा": "food"
+          "खाऊं": "eat"
+          "सूं": "am"
+  "bgc-0127":
+    native: "tea"
+    notes:
+      "n1": "Milk tea is the everyday tea."
+    examples:
+      "चाह गरम सै।":
+        native: "The tea is hot."
+        bases:
+          "चाह": "tea"
+          "गरम": "hot"
+          "सै": "is"
+      "मन्नै चाह भली लागै सै।":
+        native: "I like tea."
+        bases:
+          "मन्नै": "to me"
+          "चाह": "tea"
+          "भली": "good"
+          "लागै": "like"
+          "सै": "is"
+  "bgc-0128":
+    native: "house; home"
+    notes:
+      "n1": "The Survey's text has ghar. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "यो मेरा घर सै।":
+        native: "This is my house."
+        bases:
+          "यो": "this"
+          "मेरा": "my"
+          "घर": "home"
+          "सै": "is"
+      "मैं घर में सूं।":
+        native: "I am at home."
+        bases:
+          "मैं": "I"
+          "घर": "home"
+          "में": "in"
+          "सूं": "am"
+  "bgc-0129":
+    native: "name"
+    notes:
+      "n1": "Your name is थारा (thārā) नाम (nām)."
+    examples:
+      "नाम भला सै।":
+        native: "The name is good."
+        bases:
+          "नाम": "name"
+          "भला": "good"
+          "सै": "is"
+      "तेरा नाम के सै?":
+        native: "What is your name?"
+        bases:
+          "तेरा": "your"
+          "नाम": "name"
+          "के": "what"
+          "सै": "is"
+  "bgc-0130":
+    native: "good; nice"
+    notes:
+      "n1": "The Survey's text has achchha ('achchha paya', found good). Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "यो अच्छा सै।":
+        native: "This is good."
+        bases:
+          "यो": "this"
+          "अच्छा": "good"
+          "सै": "is"
+      "तेरा भाई अच्छा सै।":
+        native: "Your brother is well."
+        bases:
+          "तेरा": "your"
+          "भाई": "brother"
+          "अच्छा": "good"
+          "सै": "is"
+  "bgc-0131":
+    native: "big; large"
+    notes:
+      "n1": "The Survey's text has 'bada chhora' for the elder son. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "यो बड़ा सै।":
+        native: "This is big."
+        bases:
+          "यो": "this"
+          "बड़ा": "big"
+          "सै": "is"
+      "बड़ा छोरा।":
+        native: "The elder boy."
+        bases:
+          "बड़ा": "big"
+          "छोरा": "boy"
+  "bgc-0132":
+    native: "small; little"
+    notes:
+      "n1": "The Survey's text has 'chhota chhora' for the younger son. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "यो छोटा सै।":
+        native: "This is small."
+        bases:
+          "यो": "this"
+          "छोटा": "small"
+          "सै": "is"
+      "छोटा छोरा।":
+        native: "The younger boy."
+        bases:
+          "छोटा": "small"
+          "छोरा": "boy"
+  "bgc-0133":
+    native: "here"
+    notes:
+      "n1": "The Survey's vocabulary gives arai or are for 'here'. यहाँ (yahām̐) is Hindi. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "मैं अरै सूं।":
+        native: "I am here."
+        bases:
+          "मैं": "I"
+          "अरै": "here"
+          "सूं": "am"
+      "पाणी अरै सै।":
+        native: "The water is here."
+        bases:
+          "पाणी": "water"
+          "अरै": "here"
+          "सै": "is"
+  "bgc-0134":
+    native: "there"
+    notes:
+      "n1": "The Survey's text has 'urai' for 'there' ('urai apna dhan khotte'). वहाँ (vahām̐) is Hindi. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "पाणी उरै सै।":
+        native: "The water is there."
+        bases:
+          "पाणी": "water"
+          "उरै": "there"
+          "सै": "is"
+      "मेरा घर उरै सै।":
+        native: "My house is there."
+        bases:
+          "मेरा": "my"
+          "घर": "home"
+          "उरै": "there"
+          "सै": "is"
+  "bgc-0135":
+    native: "what"
+    notes:
+      "n1": "The Survey has 'yauh ke sai?' for 'what is this?'. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "यो के सै?":
+        native: "What is this?"
+        bases:
+          "यो": "this"
+          "के": "what"
+          "सै": "is"
+      "यो घर के सै?":
+        native: "What is this house?"
+        bases:
+          "यो": "this"
+          "घर": "home"
+          "के": "what"
+          "सै": "is"
+  "bgc-0136":
+    native: "who"
+    notes:
+      "n1": "The Survey gives kauṇ for 'who'. कुण (kuṇ) is Rajasthani. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "यो कौण सै?":
+        native: "Who is this?"
+        bases:
+          "यो": "this"
+          "कौण": "who"
+          "सै": "is"
+      "तेरा भाई कौण सै?":
+        native: "Who is your brother?"
+        bases:
+          "तेरा": "your"
+          "भाई": "brother"
+          "कौण": "who"
+          "सै": "is"
+  "bgc-0137":
+    native: "where"
+    notes:
+      "n1": "The Survey's vocabulary has a form for 'where' (karai or kare, the reading is not clear). कित (kit) is not attested there. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "थम कित सो?":
+        native: "Where are you?"
+        bases:
+          "थम": "you"
+          "कित": "where"
+          "सो": "are"
+      "घर कित सै?":
+        native: "Where is the house?"
+        bases:
+          "घर": "house"
+          "कित": "where"
+          "सै": "is"
+  "bgc-0138":
+    native: "and"
+    notes:
+      "n1": "The Survey's text has ar for 'and'. Source: Grierson, Linguistic Survey of India, vol. IX part 1 (1916), the Bangaru section and its specimens (Karnal, Rohtak, Jind)."
+    examples:
+      "मैं अर थम।":
+        native: "You and I."
+        bases:
+          "मैं": "I"
+          "अर": "and"
+          "थम": "you"
+      "घर अर पाणी।":
+        native: "A house and water."
+        bases:
+          "घर": "home"
+          "अर": "and"
+          "पाणी": "water"
+  "bgc-0139":
+    native: "today"
+    notes:
+      "n1": "The day you are in now."
+    examples:
+      "आज घाम निकल्या।":
+        native: "The sun came out today."
+        bases:
+          "आज": "today"
+          "घाम": "sun"
+          "निकल्या": "come out"
+      "आज पाणी बरसेगा।":
+        native: "It will rain today."
+        bases:
+          "आज": "today"
+          "पाणी": "water"
+          "बरसेगा": "rain"

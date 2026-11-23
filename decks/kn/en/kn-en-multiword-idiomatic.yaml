@@ -1,0 +1,46 @@
+schema: 1
+id: "kn-en-multiword-idiomatic"
+kind: "layer"
+core: "kn-multiword-idiomatic"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: fixed senses"
+description: "Seven verb phrases whose sense is not the sum of their words: a climate, a house or a town's water that does not suit someone, taking up a job, what business someone has, catching the eye and catching fire. Each was checked against an English or Kannada Wiktionary entry or a Kannada Wikipedia page; the note says which. Not yet checked by a Kannada speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "kn-6480":
+    native: "This weather does not suit me"
+    notes:
+      "u1": "ಸೇರು (sēru), to join or reach, has a third sense: to suit or agree with, used of food, climate and situations, with the person in the dative. The English Wiktionary entry for ಸೇರು (sēru) gives exactly ನನಗೆ (nanage) ಈ (ī) ಹವಾಮಾನ (havāmāna) ಸೇರುವುದಿಲ್ಲ (sēruvudilla), This weather does not suit me."
+    bases:
+      "ಈ": "this"
+  "kn-6481":
+    native: "This house does not suit us"
+    notes:
+      "u1": "ಆಗಿಬರು (āgibaru) is ಆಗು (āgu), to become, with ಬರು (baru), to come: to turn out suitable for someone, who is in the dative. The Kannada Wiktionary entry for ಆಗು (āgu) gives ಈಗಿರುವ (īgiruva) ಮನೆ (mane) ನಮಗೆ (namage) ಆಗಿಬರುತ್ತಿಲ್ಲ (āgibaruttilla), The present house does not suit us, and glosses the sense as suitable."
+    bases:
+      "ಈ": "this"
+      "ಆಗಿಬರುತ್ತಿಲ್ಲ": "to happen; to become; to be finished"
+  "kn-6482":
+    native: "The water of that town does not agree with me"
+    notes:
+      "u1": "ಹಿಡಿ (hiḍi), to hold or catch, also means to agree with someone, so the water does not sit well with the person in the dative. The Kannada Wiktionary entry for ಹಿಡಿ (hiḍi) gives exactly ಆ (ā) ಊರಿನ (ūrina) ನೀರು (nīru) ನನಗೆ (nanage) ಹಿಡಿಯುವುದಿಲ್ಲ (hiḍiyuvudilla), and lists agree among its senses."
+    bases:
+      "ಆ": "that"
+  "kn-6483":
+    native: "to take up a job; to join work"
+    notes:
+      "u1": "ಸೇರು (sēru), to join, takes the place joined in the dative: ಕೆಲಸಕ್ಕೆ (kelasakke) ಸೇರು (sēru) is to join a job and start work. The Kannada Wiktionary entry for ಕೆಲಸ (kelasa) lists ಕೆಲಸಕ್ಕೆ (kelasakke) ಸೇರು (sēru) under the sense job."
+  "kn-6484":
+    native: "What business does he have here?"
+    notes:
+      "u1": "The Kannada Wiktionary entry for ಕೆಲಸ (kelasa) lists this under the sense business: literally, what work is there for him here? The person is in the dative, and there is no verb."
+  "kn-6485":
+    native: "to catch the eye; to come into view"
+    notes:
+      "u1": "Literally to fall to the eye. The Kannada Wikipedia page on idioms lists ಕಣ್ಣಿಗೆ (kaṇṇige) ಬೀಳು (bīḷu) as an idiom whose sense is not the sum of its words, and the Kannada Wiktionary lists it under ಕಣ್ಣು (kaṇṇu); neither page gives an English meaning, so the gloss here is built from ಬೀಳು (bīḷu), which the English Wiktionary gives as to reach, as a thing reaches its target."
+  "kn-6486":
+    native: "to catch fire"
+    notes:
+      "u1": "ಹಿಡಿ (hiḍi), to hold or catch, with ಬೆಂಕಿ (beṅki), fire, means that something catches fire. The Kannada Wiktionary entry for ಹಿಡಿ (hiḍi) lists ಬೆಂಕಿಹಿಡಿ (beṅkihiḍi) under the sense catch."

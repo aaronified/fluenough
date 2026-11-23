@@ -1,0 +1,34 @@
+schema: 1
+id: "qmo-en-signs"
+kind: "layer"
+core: "qmo-signs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Morse: procedural signs"
+description: "The procedural signs of Recommendation ITU-R M.1677-1 (understood, error, wait, end of work, starting signal) and SOS."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  "qmo-0048":
+    native: "understood"
+    notes:
+      "n1": "Sounds like di-di-di-dah-dit. ITU procedural sign: understood, the sender's message was received."
+  "qmo-0049":
+    native: "error"
+    notes:
+      "n1": "Sounds like di-di-di-di-di-di-di-dit. ITU procedural sign: eight dots, a correction. The sender starts the word again."
+  "qmo-0050":
+    native: "wait"
+    notes:
+      "n1": "Sounds like di-dah-di-di-dit. ITU procedural sign: wait. Sent as one run, with no gap between its letters."
+  "qmo-0051":
+    native: "end of work"
+    notes:
+      "n1": "Sounds like di-di-di-dah-di-dah. ITU procedural sign: end of work. Sent as one run, with no gap between its letters."
+  "qmo-0052":
+    native: "starting signal"
+    notes:
+      "n1": "Sounds like dah-di-dah-di-dah. ITU procedural sign: starting signal, the call that begins a transmission."
+  "qmo-0053":
+    native: "SOS: distress signal"
+    notes:
+      "n1": "Sounds like di-di-di-dah-dah-dah-di-di-dit. ITU Radio Regulations: the international distress signal. Nine signs sent as one run, with no gap between its letters, so it is not the three letters S, O, S."

@@ -1,0 +1,56 @@
+schema: 1
+id: "sa-en-reading-animals"
+name: "Reading: animals"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-animals-text-1"
+    title: "Lion, mouse, monkey"
+    theme: "animals"
+    sentences:
+      - { text: "सिंहो गजं पश्यति मृगो धावति.", reading: "siṃho gajaṃ paśyati mṛgo dhāvati.", ipa: "sĩɦoː ɡədʒəm pəʃjət̪i mr̩ɡoː d̪ʱaːʋət̪i" }
+      - { text: "मूषको जलं न पिबति मार्जारः क्षीरं पिबति.", reading: "mūṣako jalaṃ na pibati mārjāraḥ kṣīraṃ pibati.", ipa: "muːʂəkoː dʒələm nə pibət̪i maːrdʒaːrəh kʂiːrəm pibət̪i" }
+      - { text: "वानरो दाडिमं खादति मयूरो नृत्यति.", reading: "vānaro dāḍimaṃ khādati mayūro nṛtyati.", ipa: "ʋaːnəroː d̪aːɖiməm kʰaːd̪ət̪i məjuːroː nr̩t̪jət̪i" }
+      - { text: "सदा शुको वदति सदा काकः खादति.", reading: "sadā śuko vadati sadā kākaḥ khādati.", ipa: "səd̪aː ʃukoː ʋəd̪ət̪i səd̪aː kaːkəh kʰaːd̪ət̪i" }
+    questions:
+      - id: "sa-3523"
+        prompt: { en: "Which animal runs in the first sentence?" }
+        options: [{ en: "The lion" }, { en: "The deer" }, { en: "The elephant" }]
+        answer: 2
+      - id: "sa-3524"
+        prompt: { en: "Which animal does not drink water?" }
+        options: [{ en: "The cat" }, { en: "The monkey" }, { en: "The mouse" }]
+        answer: 3
+      - id: "sa-3525"
+        prompt: { en: "The monkey eats a pomegranate." }
+        answer: true
+      - id: "sa-3526"
+        prompt: { en: "The peacock eats a pomegranate." }
+        answer: false
+  - id: "sa-animals-text-2"
+    title: "Swan, goat, bee, hare"
+    theme: "animals"
+    sentences:
+      - { text: "हंसो जले चलति मकरो जले वसति.", reading: "haṃso jale calati makaro jale vasati.", ipa: "ɦə̃soː dʒəleː tʃələt̪i məkəroː dʒəleː ʋəsət̪i" }
+      - { text: "अजा क्षीरं ददाति मेषो न ददाति.", reading: "ajā kṣīraṃ dadāti meṣo na dadāti.", ipa: "ədʒaː kʂiːrəm d̪əd̪aːt̪i meːʂoː nə d̪əd̪aːt̪i" }
+      - { text: "भ्रमरो मधु लभते पिपीलिका च गुडं लभते.", reading: "bhramaro madhu labhate pipīlikā ca guḍaṃ labhate.", ipa: "bʱrəməroː məd̪ʱu ləbʱət̪eː pipiːlikaː tʃə ɡuɖəm ləbʱət̪eː" }
+      - { text: "कूर्मो न धावति शशको धावति.", reading: "kūrmo na dhāvati śaśako dhāvati.", ipa: "kuːrmoː nə d̪ʱaːʋət̪i ʃəʃəkoː d̪ʱaːʋət̪i" }
+    questions:
+      - id: "sa-3527"
+        prompt: { en: "The swan lives in the water." }
+        answer: false
+      - id: "sa-3528"
+        prompt: { en: "What does the ant get?" }
+        options: [{ en: "Molasses" }, { en: "Honey" }, { en: "Milk" }]
+        answer: 1
+      - id: "sa-3529"
+        prompt: { en: "The ram gives milk." }
+        answer: false
+      - id: "sa-3530"
+        prompt: { en: "The hare runs." }
+        answer: true

@@ -1,0 +1,554 @@
+# Culture deck 2 of Classical Sanskrit: epic and court poetry, public domain (wiki/Plan-Culture-Sanskrit.md, SA-521).
+# Every excerpt was re-read on its Sanskrit Wikisource page on 2026-11-17 and is at most 25 words; where the page types a form wrongly, a second page (GRETIL or Sanskrit Wikipedia) corrected it, and the edition says so.
+# Dropped: Gitagovinda 1.1 (the page types a letter ळ the reading engine cannot read and has odd words, and GRETIL's Gitagovinda does not hold the verse).
+# Only the author Bhavabhuti has a creator; the other authors are known by a century and are anonymous here (docs/review-queue/sa.md).
+schema: 1
+id: "sa-culture-2"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+genre: "culture"
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-8017"
+    target: "नारायणं नमस्कृत्य नरं चैव नरोत्तमम् । देवीं सरस्वतीं चैव ततो जयमुदीरयेत्"
+    reading: "nārāyaṇaṃ namaskṛtya naraṃ caiva narottamam. devīṃ sarasvatīṃ caiva tato jayamudīrayet"
+    ipa: "naːraːjəɳəm nəməskr̩t̪jə nərəm tʃəiʋə nəroːt̪t̪əməm d̪eːʋiːm sərəsʋət̪iːm tʃəiʋə t̪ət̪oː dʒəjəmud̪iːrəjeːt̪"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Mahabharata, read 2026-11-17; Sanskrit Wikipedia, article on the Mahābhārata; Sanskrit Wikisource, Mahābhārata Ādiparvan chapter 1" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "नारायणं", base: "नारायण", reading: "nārāyaṇa" }
+      - { word: "नमस्कृत्य", base: "नमस् + कृ", reading: "namaskṛtya" }
+      - { word: "नरं", base: "नर", reading: "nara" }
+      - { word: "चैव", base: "च + एव", reading: "caiva" }
+      - { word: "नरोत्तमम्", base: "नर + उत्तम", reading: "narottamam" }
+      - { word: "देवीं", base: "देवी", reading: "devī" }
+      - { word: "सरस्वतीं", base: "सरस्वती", reading: "sarasvatī" }
+      - { word: "ततो", base: "ततस्", reading: "tatas" }
+      - { word: "जयमुदीरयेत्", base: "जय + उदीरयति", reading: "jayamudīrayet" }
+    source:
+      author: "anonymous"
+      work: "Mahābhārata 1.1.1, the opening verse, traditionally attributed to Vyāsa"
+      date: "-300 to 300"
+      edition: "Sanskrit Wikisource, the page for Mahābhārata, Ādiparvan, chapter 1 (verse or line 1-1-1), read on 2026-11-17; the text is lightly corrected as noted below; the date is the English Wikipedia article's estimate (the bulk compiled between the 3rd century BCE and the 3rd century CE); the Wikisource page types a bracketed variant after चैव (caiva) and the line is given without it, as the Sanskrit Wikipedia article on the Mahābhārata quotes it"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%AE%E0%A4%B9%E0%A4%BE%E0%A4%AD%E0%A4%BE%E0%A4%B0%E0%A4%A4%E0%A4%AE%E0%A5%8D/%E0%A4%86%E0%A4%A6%E0%A4%BF%E0%A4%AA%E0%A4%B0%E0%A5%8D%E0%A4%B5/%E0%A5%A6%E0%A5%A6%E0%A5%A7"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8018"
+    target: "तपः स्वाध्यायनिरतं तपस्वी वाग्विदां वरम् । नारदं परिपप्रच्छ वाल्मीकिर्मुनिपुङ्गवम्"
+    reading: "tapaḥ svādhyāyanirataṃ tapasvī vāgvidāṃ varam. nāradaṃ paripapraccha vālmīkirmunipuṅgavam"
+    ipa: "t̪əpəh sʋaːd̪ʱjaːjənirət̪əm t̪əpəsʋiː ʋaːɡʋid̪aːm ʋərəm naːrəd̪əm pəripəprətʃtʃʰə ʋaːlmiːkirmunipuŋɡəʋəm"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Ramayana, read 2026-11-17; Sanskrit Wikisource, Rāmāyaṇa Bālakāṇḍa sarga 1" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "तपः", base: "तपस्", reading: "tapas" }
+      - { word: "स्वाध्यायनिरतं", base: "स्वाध्याय + निरत", reading: "svādhyāyanirataṃ" }
+      - { word: "तपस्वी", base: "तपस्विन्", reading: "tapasvin" }
+      - { word: "वाग्विदां", base: "वाग्विद्", reading: "vāgvid" }
+      - { word: "वरम्", base: "वर", reading: "vara" }
+      - { word: "नारदं", base: "नारद", reading: "nārada" }
+      - { word: "परिपप्रच्छ", base: "परि + प्रच्छ्", reading: "paripapraccha" }
+      - { word: "वाल्मीकिर्मुनिपुङ्गवम्", base: "वाल्मीकि + मुनिपुङ्गव", reading: "vālmīkirmunipuṅgavam" }
+    source:
+      author: "anonymous"
+      work: "Rāmāyaṇa, Bālakāṇḍa 1.1.1, traditionally attributed to Vālmīki"
+      date: "-750 to -500"
+      edition: "Sanskrit Wikisource, the page for Rāmāyaṇa, Bālakāṇḍa, sarga 1 (verse or line 1-1-1), read on 2026-11-17; the text is as the page types it; the date is the English Wikipedia range for the primary composition (estimates from 750 BCE to 500 BCE); the Wikisource index page of another edition shows a printing year that is not used"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%BE%E0%A4%AF%E0%A4%A3%E0%A4%AE%E0%A5%8D/%E0%A4%AC%E0%A4%BE%E0%A4%B2%E0%A4%95%E0%A4%BE%E0%A4%A3%E0%A5%8D%E0%A4%A1%E0%A4%AE%E0%A5%8D/%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%83_%E0%A5%A7"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8019"
+    target: "मा निषाद प्रतिष्ठां त्वमगमः शाश्वतीः समाः । यत् क्रौञ्चमिथुनादेकमवधीः काममोहितम्"
+    reading: "mā niṣāda pratiṣṭhāṃ tvamagamaḥ śāśvatīḥ samāḥ. yat krauñcamithunādekamavadhīḥ kāmamohitam"
+    ipa: "maː niʂaːd̪ə prət̪iʂʈʰaːm t̪ʋəməɡəməh ʃaːʃʋət̪iːh səmaːh jət̪ krəuɲtʃəmit̪ʰunaːd̪eːkəməʋəd̪ʱiːh kaːməmoːɦit̪əm"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Ramayana, read 2026-11-17; Sanskrit Wikisource, Rāmāyaṇa Bālakāṇḍa sarga 2" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "मा", base: "मा", reading: "mā" }
+      - { word: "निषाद", base: "निषाद", reading: "niṣāda" }
+      - { word: "प्रतिष्ठां", base: "प्रतिष्ठा", reading: "pratiṣṭhā" }
+      - { word: "त्वमगमः", base: "त्वम् + गम्", reading: "tvamagamaḥ" }
+      - { word: "शाश्वतीः", base: "शाश्वत", reading: "śāśvata" }
+      - { word: "समाः", base: "समा", reading: "samā" }
+      - { word: "यत्", base: "यद्", reading: "yad" }
+      - { word: "क्रौञ्चमिथुनादेकमवधीः", base: "क्रौञ्चमिथुन + एक + वध्", reading: "krauñcamithunādekamavadhīḥ" }
+      - { word: "काममोहितम्", base: "काममोहित", reading: "kāmamohita" }
+    source:
+      author: "anonymous"
+      work: "Rāmāyaṇa, Bālakāṇḍa 1.2.15, traditionally attributed to Vālmīki"
+      date: "-750 to -500"
+      edition: "Sanskrit Wikisource, the page for Rāmāyaṇa, Bālakāṇḍa, sarga 2 (verse or line 1-2-15), read on 2026-11-17; the text is as the page types it; the date is the English Wikipedia range for the primary composition (estimates from 750 BCE to 500 BCE)"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%BE%E0%A4%AF%E0%A4%A3%E0%A4%AE%E0%A5%8D/%E0%A4%AC%E0%A4%BE%E0%A4%B2%E0%A4%95%E0%A4%BE%E0%A4%A3%E0%A5%8D%E0%A4%A1%E0%A4%AE%E0%A5%8D/%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%83_%E0%A5%A8"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8020"
+    target: "कश्चित्कान्ताविरहगुरुणा स्वाधिकारात्प्रमत्तः शापेनास्तङ्गमितमहिमा वर्षभोग्येण भर्तुः । यक्षश्चक्रे जनकतनयास्नानपुण्योदकेषु स्निग्धच्छायातरुषु वसतिं रामगिर्याश्रमेषु"
+    reading: "kaścitkāntāvirahaguruṇā svādhikārātpramattaḥ śāpenāstaṅgamitamahimā varṣabhogyeṇa bhartuḥ. yakṣaścakre janakatanayāsnānapuṇyodakeṣu snigdhacchāyātaruṣu vasatiṃ rāmagiryāśrameṣu"
+    ipa: "kəʃtʃit̪kaːnt̪aːʋirəɦəɡuruɳaː sʋaːd̪ʱikaːraːt̪prəmət̪t̪əh ʃaːpeːnaːst̪əŋɡəmit̪əməɦimaː ʋərʂəbʱoːɡjeːɳə bʱərt̪uh jəkʂəʃtʃəkreː dʒənəkət̪ənəjaːsnaːnəpuɳjoːd̪əkeːʂu sniɡd̪ʱətʃtʃʰaːjaːt̪əruʂu ʋəsət̪im raːməɡirjaːʃrəmeːʂu"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Meghaduta, read 2026-11-17; Sanskrit Wikisource, Meghadūta Pūrvamegha" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "कश्चित्कान्ताविरहगुरुणा", base: "किम् + चित् + कान्ता + विरह + गुरु", reading: "kaścitkāntāvirahaguruṇā" }
+      - { word: "स्वाधिकारात्प्रमत्तः", base: "स्व + अधिकार + प्रमत्त", reading: "svādhikārātpramattaḥ" }
+      - { word: "शापेनास्तङ्गमितमहिमा", base: "शाप + अस्तम् + गमय + महिमन्", reading: "śāpenāstaṅgamitamahimā" }
+      - { word: "वर्षभोग्येण", base: "वर्ष + भोग्य", reading: "varṣabhogyeṇa" }
+      - { word: "भर्तुः", base: "भर्तृ", reading: "bhartṛ" }
+      - { word: "यक्षश्चक्रे", base: "यक्ष + कृ", reading: "yakṣaścakre" }
+      - { word: "जनकतनयास्नानपुण्योदकेषु", base: "जनकतनया + स्नान + पुण्य + उदक", reading: "janakatanayāsnānapuṇyodakeṣu" }
+      - { word: "स्निग्धच्छायातरुषु", base: "स्निग्ध + छाया + तरु", reading: "snigdhacchāyātaruṣu" }
+      - { word: "वसतिं", base: "वसति", reading: "vasati" }
+      - { word: "रामगिर्याश्रमेषु", base: "रामगिरि + आश्रम", reading: "rāmagiryāśrameṣu" }
+    source:
+      author: "anonymous"
+      work: "Meghadūta, Pūrvamegha 1, traditionally attributed to Kālidāsa"
+      date: "301-500"
+      edition: "Sanskrit Wikisource, the page for Meghadūta, Pūrvamegha (verse or line Pūrvamegha 1), read on 2026-11-17; the text is as the page types it; the date is the English Wikipedia article's (c. 4th to 5th century CE for Kālidāsa and his poem); only that article was read for the date"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%AE%E0%A5%87%E0%A4%98%E0%A4%A6%E0%A5%82%E0%A4%A4%E0%A4%AE%E0%A5%8D/%E0%A4%AE%E0%A5%87%E0%A4%98%E0%A4%A6%E0%A5%82%E0%A4%A4%E0%A4%AE%E0%A5%8D_-_%E0%A4%AA%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%AE%E0%A5%87%E0%A4%98:"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8021"
+    target: "तस्मिन्नद्रौ कतिचिदबलाविप्रयुक्तः स कामी नीत्वा मासान् कनकवलयभ्रंशरिक्तप्रकोष्ठः । आषाढस्य प्रथमदिवसे मेघमाश्लिष्टसानुं वप्रक्रीडापरिणतगजप्रेक्षणीयं ददर्श"
+    reading: "tasminnadrau katicidabalāviprayuktaḥ sa kāmī nītvā māsān kanakavalayabhraṃśariktaprakoṣṭhaḥ. āṣāḍhasya prathamadivase meghamāśliṣṭasānuṃ vaprakrīḍāpariṇatagajaprekṣaṇīyaṃ dadarśa"
+    ipa: "t̪əsminnəd̪rəu kət̪itʃid̪əbəlaːʋiprəjukt̪əh sə kaːmiː niːt̪ʋaː maːsaːn kənəkəʋələjəbʱrə̃ʃərikt̪əprəkoːʂʈʰəh aːʂaːɖʱəsjə prət̪ʰəməd̪iʋəseː meːɡʱəmaːʃliʂʈəsaːnum ʋəprəkriːɖaːpəriɳət̪əɡədʒəpreːkʂəɳiːjəm d̪əd̪ərʃə"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Meghaduta, read 2026-11-17; Sanskrit Wikisource, Meghadūta Pūrvamegha" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "तस्मिन्नद्रौ", base: "तद् + अद्रि", reading: "tasminnadrau" }
+      - { word: "कतिचिदबलाविप्रयुक्तः", base: "कतिचित् + अबला + विप्रयुक्त", reading: "katicidabalāviprayuktaḥ" }
+      - { word: "स", base: "तद्", reading: "tad" }
+      - { word: "कामी", base: "कामिन्", reading: "kāmin" }
+      - { word: "नीत्वा", base: "नी", reading: "nī" }
+      - { word: "मासान्", base: "मास", reading: "māsa" }
+      - { word: "कनकवलयभ्रंशरिक्तप्रकोष्ठः", base: "कनक + वलय + भ्रंश + रिक्त + प्रकोष्ठ", reading: "kanakavalayabhraṃśariktaprakoṣṭhaḥ" }
+      - { word: "आषाढस्य", base: "आषाढ", reading: "āṣāḍha" }
+      - { word: "प्रथमदिवसे", base: "प्रथम + दिवस", reading: "prathamadivase" }
+      - { word: "मेघमाश्लिष्टसानुं", base: "मेघ + आश्लिष्ट + सानु", reading: "meghamāśliṣṭasānuṃ" }
+      - { word: "वप्रक्रीडापरिणतगजप्रेक्षणीयं", base: "वप्र + क्रीडा + परिणत + गज + प्रेक्षणीय", reading: "vaprakrīḍāpariṇatagajaprekṣaṇīyaṃ" }
+      - { word: "ददर्श", base: "दृश्", reading: "dṛś" }
+    source:
+      author: "anonymous"
+      work: "Meghadūta, Pūrvamegha 2, traditionally attributed to Kālidāsa"
+      date: "301-500"
+      edition: "Sanskrit Wikisource, the page for Meghadūta, Pūrvamegha (verse or line Pūrvamegha 2), read on 2026-11-17; the text is as the page types it; the date is the English Wikipedia article's (c. 4th to 5th century CE); only that article was read for the date"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%AE%E0%A5%87%E0%A4%98%E0%A4%A6%E0%A5%82%E0%A4%A4%E0%A4%AE%E0%A5%8D/%E0%A4%AE%E0%A5%87%E0%A4%98%E0%A4%A6%E0%A5%82%E0%A4%A4%E0%A4%AE%E0%A5%8D_-_%E0%A4%AA%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%AE%E0%A5%87%E0%A4%98:"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8022"
+    target: "वेणीभूतप्रतनुसलिला तामतीतस्य सिन्धुः पाण्डुच्छायातटरुहतरुभ्रंशिभिर्जीर्णपर्णैः । सौभाग्यं ते सुभग विरहावस्थया व्यञ्जयन्ती कार्श्यं येन त्यजति विधिना स त्वयैवोपपाद्यः"
+    reading: "veṇībhūtapratanusalilā tāmatītasya sindhuḥ pāṇḍucchāyātaṭaruhatarubhraṃśibhirjīrṇaparṇaiḥ. saubhāgyaṃ te subhaga virahāvasthayā vyañjayantī kārśyaṃ yena tyajati vidhinā sa tvayaivopapādyaḥ"
+    ipa: "ʋeːɳiːbʱuːt̪əprət̪ənusəlilaː t̪aːmət̪iːt̪əsjə sind̪ʱuh paːɳɖutʃtʃʰaːjaːt̪əʈəruɦət̪ərubʱrə̃ʃibʱirdʒiːrɳəpərɳəih səubʱaːɡjəm t̪eː subʱəɡə ʋirəɦaːʋəst̪ʰəjaː ʋjəɲdʒəjənt̪iː kaːrʃjəm jeːnə t̪jədʒət̪i ʋid̪ʱinaː sə t̪ʋəjəiʋoːpəpaːd̪jəh"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Meghaduta, read 2026-11-17; Sanskrit Wikisource, Meghadūta Pūrvamegha" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "वेणीभूतप्रतनुसलिला", base: "वेणीभूत + प्रतनु + सलिल", reading: "veṇībhūtapratanusalilā" }
+      - { word: "तामतीतस्य", base: "तद् + अतीत", reading: "tāmatītasya" }
+      - { word: "सिन्धुः", base: "सिन्धु", reading: "sindhu" }
+      - { word: "पाण्डुच्छायातटरुहतरुभ्रंशिभिर्जीर्णपर्णैः", base: "पाण्डु + छाया + तट + रुह + तरु + भ्रंशिन् + जीर्ण + पर्ण", reading: "pāṇḍucchāyātaṭaruhatarubhraṃśibhirjīrṇaparṇaiḥ" }
+      - { word: "सौभाग्यं", base: "सौभाग्य", reading: "saubhāgya" }
+      - { word: "ते", base: "त्वम्", reading: "tvam" }
+      - { word: "सुभग", base: "सुभग", reading: "subhaga" }
+      - { word: "विरहावस्थया", base: "विरह + अवस्था", reading: "virahāvasthayā" }
+      - { word: "व्यञ्जयन्ती", base: "व्यञ्जय", reading: "vyañjaya" }
+      - { word: "कार्श्यं", base: "कार्श्य", reading: "kārśya" }
+      - { word: "येन", base: "यद्", reading: "yad" }
+      - { word: "त्यजति", base: "त्यज्", reading: "tyaj" }
+      - { word: "विधिना", base: "विधि", reading: "vidhi" }
+      - { word: "स", base: "तद्", reading: "tad" }
+      - { word: "त्वयैवोपपाद्यः", base: "त्वम् + एव + उपपादय", reading: "tvayaivopapādyaḥ" }
+    source:
+      author: "anonymous"
+      work: "Meghadūta, Pūrvamegha 30, traditionally attributed to Kālidāsa"
+      date: "301-500"
+      edition: "Sanskrit Wikisource, the page for Meghadūta, Pūrvamegha (verse or line Pūrvamegha 30), read on 2026-11-17; the text is as the page types it; the date is the English Wikipedia article's (c. 4th to 5th century CE); only that article was read for the date"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%AE%E0%A5%87%E0%A4%98%E0%A4%A6%E0%A5%82%E0%A4%A4%E0%A4%AE%E0%A5%8D/%E0%A4%AE%E0%A5%87%E0%A4%98%E0%A4%A6%E0%A5%82%E0%A4%A4%E0%A4%AE%E0%A5%8D_-_%E0%A4%AA%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%AE%E0%A5%87%E0%A4%98:"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8023"
+    target: "वागर्थाविव संपृक्तौ वागर्थप्रतिपत्तये । जगतः पितरौ वन्दे पार्वतीपरमेश्वरौ"
+    reading: "vāgarthāviva saṃpṛktau vāgarthapratipattaye. jagataḥ pitarau vande pārvatīparameśvarau"
+    ipa: "ʋaːɡərt̪ʰaːʋiʋə səmpr̩kt̪əu ʋaːɡərt̪ʰəprət̪ipət̪t̪əjeː dʒəɡət̪əh pit̪ərəu ʋənd̪eː paːrʋət̪iːpərəmeːʃʋərəu"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Raghuvamsha, read 2026-11-17; Sanskrit Wikisource, Raghuvaṃśa canto 1" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "वागर्थाविव", base: "वाच् + अर्थ + इव", reading: "vāgarthāviva" }
+      - { word: "संपृक्तौ", base: "संपृक्त", reading: "saṃpṛkta" }
+      - { word: "वागर्थप्रतिपत्तये", base: "वाच् + अर्थ + प्रतिपत्ति", reading: "vāgarthapratipattaye" }
+      - { word: "जगतः", base: "जगत्", reading: "jagat" }
+      - { word: "पितरौ", base: "पितृ", reading: "pitṛ" }
+      - { word: "वन्दे", base: "वन्द्", reading: "vand" }
+      - { word: "पार्वतीपरमेश्वरौ", base: "पार्वती + परमेश्वर", reading: "pārvatīparameśvarau" }
+    source:
+      author: "anonymous"
+      work: "Raghuvaṃśa 1.1, traditionally attributed to Kālidāsa"
+      date: "301-500"
+      edition: "Sanskrit Wikisource, the page for Raghuvaṃśa, canto 1 (verse or line 1.1), read on 2026-11-17; the text is as the page types it; the date is the English Wikipedia article's (the poet presumed to have flourished in the 5th century CE) and its article on Kālidāsa (4th to 5th century CE); the page header names no edition"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%B0%E0%A4%98%E0%A5%81%E0%A4%B5%E0%A4%82%E0%A4%B6%E0%A4%AE%E0%A5%8D/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A5%E0%A4%AE%E0%A4%83_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%83"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8024"
+    target: "प्रजानामेव भूत्यर्थं स ताभ्यो बलिमग्रहीत् । सहस्रगुणमुत्स्रष्टुमादत्ते हि रसं रविः"
+    reading: "prajānāmeva bhūtyarthaṃ sa tābhyo balimagrahīt. sahasraguṇamutsraṣṭumādatte hi rasaṃ raviḥ"
+    ipa: "prədʒaːnaːmeːʋə bʱuːt̪jərt̪ʰəm sə t̪aːbʱjoː bəliməɡrəɦiːt̪ səɦəsrəɡuɳəmut̪srəʂʈumaːd̪ət̪t̪eː ɦi rəsəm rəʋih"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Raghuvamsha, read 2026-11-17; Sanskrit Wikisource, Raghuvaṃśa canto 1; GRETIL, Raghuvaṃśa" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "प्रजानामेव", base: "प्रजा + एव", reading: "prajānāmeva" }
+      - { word: "भूत्यर्थं", base: "भूति + अर्थ", reading: "bhūtyarthaṃ" }
+      - { word: "स", base: "तद्", reading: "tad" }
+      - { word: "ताभ्यो", base: "तद्", reading: "tad" }
+      - { word: "बलिमग्रहीत्", base: "बलि + ग्रह्", reading: "balimagrahīt" }
+      - { word: "सहस्रगुणमुत्स्रष्टुमादत्ते", base: "सहस्र + गुण + उत्सृज् + आदा", reading: "sahasraguṇamutsraṣṭumādatte" }
+      - { word: "हि", base: "हि", reading: "hi" }
+      - { word: "रसं", base: "रस", reading: "rasa" }
+      - { word: "रविः", base: "रवि", reading: "ravi" }
+    source:
+      author: "anonymous"
+      work: "Raghuvaṃśa 1.18, traditionally attributed to Kālidāsa"
+      date: "301-500"
+      edition: "Sanskrit Wikisource, the page for Raghuvaṃśa, canto 1 (verse or line 1.18), read on 2026-11-17; the text is lightly corrected as noted below; the date is the English Wikipedia article's (the poet presumed to have flourished in the 5th century CE); the Wikisource page types उत्स्रष्टुंमादत्ते with an extra anusvāra and the line is given as उत्स्रष्टुमादत्ते (utsraṣṭumādatte), as GRETIL's text reads it"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%B0%E0%A4%98%E0%A5%81%E0%A4%B5%E0%A4%82%E0%A4%B6%E0%A4%AE%E0%A5%8D/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A5%E0%A4%AE%E0%A4%83_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%83"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8025"
+    target: "अस्त्युत्तरस्यां दिशि देवतात्मा हिमालयो नाम नगाधिराजः । पूर्वापरौ तोयनिधी वगाह्य स्थितः पृथिव्या इव मानदण्डः"
+    reading: "astyuttarasyāṃ diśi devatātmā himālayo nāma nagādhirājaḥ. pūrvāparau toyanidhī vagāhya sthitaḥ pṛthivyā iva mānadaṇḍaḥ"
+    ipa: "əst̪jut̪t̪ərəsjaːm d̪iʃi d̪eːʋət̪aːt̪maː ɦimaːləjoː naːmə nəɡaːd̪ʱiraːdʒəh puːrʋaːpərəu t̪oːjənid̪ʱiː ʋəɡaːɦjə st̪ʰit̪əh pr̩t̪ʰiʋjaː iʋə maːnəd̪əɳɖəh"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Kumarasambhava, read 2026-11-17; Sanskrit Wikisource, Kumārasambhava canto 1" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "अस्त्युत्तरस्यां", base: "अस् + उत्तर", reading: "astyuttarasyāṃ" }
+      - { word: "दिशि", base: "दिश्", reading: "diś" }
+      - { word: "देवतात्मा", base: "देवता + आत्मन्", reading: "devatātmā" }
+      - { word: "हिमालयो", base: "हिमालय", reading: "himālaya" }
+      - { word: "नाम", base: "नाम", reading: "nāma" }
+      - { word: "नगाधिराजः", base: "नग + अधिराज", reading: "nagādhirājaḥ" }
+      - { word: "पूर्वापरौ", base: "पूर्व + अपर", reading: "pūrvāparau" }
+      - { word: "तोयनिधी", base: "तोयनिधि", reading: "toyanidhi" }
+      - { word: "वगाह्य", base: "अवगाह्", reading: "avagāh" }
+      - { word: "स्थितः", base: "स्था", reading: "sthā" }
+      - { word: "पृथिव्या", base: "पृथिवी", reading: "pṛthivī" }
+      - { word: "इव", base: "इव", reading: "iva" }
+      - { word: "मानदण्डः", base: "मान + दण्ड", reading: "mānadaṇḍaḥ" }
+    source:
+      author: "anonymous"
+      work: "Kumārasambhava 1.1, traditionally attributed to Kālidāsa"
+      date: "301-500"
+      edition: "Sanskrit Wikisource, the page for Kumārasambhava, canto 1 (verse or line 1.1), read on 2026-11-17; the text is as the page types it; the date is the English Wikipedia article's (Kālidāsa thought to have lived in the 5th century); the page of an edition of 1955 that Wikisource also holds was not used; GRETIL's text reads विगाह्य (vigāhya) where the page has वगाह्य (vagāhya)"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%95%E0%A5%81%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%B8%E0%A4%AE%E0%A5%8D%E0%A4%AD%E0%A4%B5%E0%A4%AE%E0%A5%8D/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A5%E0%A4%AE%E0%A4%83_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%83"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8026"
+    target: "प्रचण्डसूर्यः स्पृहणीयचन्द्रमाः सदावगाहक्षतवारिसंचयः । दिनान्तरम्योऽभ्युपशान्तमन्मथो निदाघकालोऽयमुपागतः प्रिये"
+    reading: "pracaṇḍasūryaḥ spṛhaṇīyacandramāḥ sadāvagāhakṣatavārisaṃcayaḥ. dināntaramyo'bhyupaśāntamanmatho nidāghakālo'yamupāgataḥ priye"
+    ipa: "prətʃəɳɖəsuːrjəh spr̩ɦəɳiːjətʃənd̪rəmaːh səd̪aːʋəɡaːɦəkʂət̪əʋaːrisəɲtʃəjəh d̪inaːnt̪ərəmjoːbʱjupəʃaːnt̪əmənmət̪ʰoː nid̪aːɡʱəkaːloːjəmupaːɡət̪əh prijeː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Ritusamhara, read 2026-11-17; Sanskrit Wikisource, Ṛtusaṃhāra canto 1" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "प्रचण्डसूर्यः", base: "प्रचण्ड + सूर्य", reading: "pracaṇḍasūryaḥ" }
+      - { word: "स्पृहणीयचन्द्रमाः", base: "स्पृहणीय + चन्द्रमस्", reading: "spṛhaṇīyacandramāḥ" }
+      - { word: "सदावगाहक्षतवारिसंचयः", base: "सदा + अवगाह + क्षत + वारि + संचय", reading: "sadāvagāhakṣatavārisaṃcayaḥ" }
+      - { word: "दिनान्तरम्योऽभ्युपशान्तमन्मथो", base: "दिनान्त + रम्य + अभ्युपशान्त + मन्मथ", reading: "dināntaramyobhyupaśāntamanmatho" }
+      - { word: "निदाघकालोऽयमुपागतः", base: "निदाघ + काल + इदम् + उपागत", reading: "nidāghakāloyamupāgataḥ" }
+      - { word: "प्रिये", base: "प्रिया", reading: "priyā" }
+    source:
+      author: "anonymous"
+      work: "Ṛtusaṃhāra 1.1, traditionally attributed to Kālidāsa"
+      date: "301-500"
+      edition: "Sanskrit Wikisource, the page for Ṛtusaṃhāra, canto 1 (verse or line 1.1), read on 2026-11-17; the text is as the page types it; the English Wikipedia article on the Ṛtusaṃhāra gives no date; the date is the one the article on Kālidāsa gives (4th to 5th century CE) and is only as sure as that"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%8B%E0%A4%A4%E0%A5%81%E0%A4%B8%E0%A4%82%E0%A4%B9%E0%A4%BE%E0%A4%B0%E0%A4%AE%E0%A5%8D/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A5%E0%A4%AE%E0%A4%83_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%83"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8027"
+    target: "कृष्णसारे ददच्चक्षुस्त्वयि चाधिज्यकार्मुके । मृगानुसारिणं साक्षात्पश्यामीव पिनाकिनम्"
+    reading: "kṛṣṇasāre dadaccakṣustvayi cādhijyakārmuke. mṛgānusāriṇaṃ sākṣātpaśyāmīva pinākinam"
+    ipa: "kr̩ʂɳəsaːreː d̪əd̪ətʃtʃəkʂust̪ʋəji tʃaːd̪ʱidʒjəkaːrmukeː mr̩ɡaːnusaːriɳəm saːkʂaːt̪pəʃjaːmiːʋə pinaːkinəm"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Shakuntala (play), read 2026-11-17; Sanskrit Wikisource, Abhijñānaśākuntalam act 1; GRETIL, Abhijñānaśākuntala" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "कृष्णसारे", base: "कृष्णसार", reading: "kṛṣṇasāra" }
+      - { word: "ददच्चक्षुस्त्वयि", base: "ददत् + चक्षुस् + त्वम्", reading: "dadaccakṣustvayi" }
+      - { word: "चाधिज्यकार्मुके", base: "च + अधिज्य + कार्मुक", reading: "cādhijyakārmuke" }
+      - { word: "मृगानुसारिणं", base: "मृग + अनुसारिन्", reading: "mṛgānusāriṇaṃ" }
+      - { word: "साक्षात्पश्यामीव", base: "साक्षात् + दृश् + इव", reading: "sākṣātpaśyāmīva" }
+      - { word: "पिनाकिनम्", base: "पिनाकिन्", reading: "pinākin" }
+    source:
+      author: "anonymous"
+      work: "Abhijñānaśākuntalam 1.6, traditionally attributed to Kālidāsa"
+      date: "301-500"
+      edition: "Sanskrit Wikisource, the page for Abhijñānaśākuntalam, act 1 (verse or line 1.6), read on 2026-11-17; the text is lightly corrected as noted below; the date is the English Wikipedia article's (Kālidāsa often placed in the 4th century CE); the Wikisource page types ददश्चक्षुः (dadaścakṣuḥ) and the line is given as ददच्चक्षुः (dadaccakṣuḥ), as GRETIL's text reads it (dadac cakṣus); the page's :: indents are left out"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%85%E0%A4%AD%E0%A4%BF%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8%E0%A4%B6%E0%A4%BE%E0%A4%95%E0%A5%81%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%B2%E0%A4%AE%E0%A5%8D/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A5%E0%A4%AE%E0%A5%8B%E0%A4%BD%E0%A4%99%E0%A5%8D%E0%A4%95%E0%A4%83"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8028"
+    target: "असंशयं क्षत्रपरिग्रहक्षमा यदार्यमस्यामभिलाषि मे मनः । सतां हि सन्देहपदेषु वस्तुषु प्रमाणमन्तः करणप्रवृत्तयः"
+    reading: "asaṃśayaṃ kṣatraparigrahakṣamā yadāryamasyāmabhilāṣi me manaḥ. satāṃ hi sandehapadeṣu vastuṣu pramāṇamantaḥ karaṇapravṛttayaḥ"
+    ipa: "əsə̃ʃəjəm kʂət̪rəpəriɡrəɦəkʂəmaː jəd̪aːrjəməsjaːməbʱilaːʂi meː mənəh sət̪aːm ɦi sənd̪eːɦəpəd̪eːʂu ʋəst̪uʂu prəmaːɳəmənt̪əh kərəɳəprəʋr̩t̪t̪əjəh"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Shakuntala (play), read 2026-11-17; Sanskrit Wikisource, Abhijñānaśākuntalam act 1" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "असंशयं", base: "असंशय", reading: "asaṃśaya" }
+      - { word: "क्षत्रपरिग्रहक्षमा", base: "क्षत्र + परिग्रह + क्षमा", reading: "kṣatraparigrahakṣamā" }
+      - { word: "यदार्यमस्यामभिलाषि", base: "यद् + आर्य + इदम् + अभिलाषिन्", reading: "yadāryamasyāmabhilāṣi" }
+      - { word: "मे", base: "अहम्", reading: "aham" }
+      - { word: "मनः", base: "मनस्", reading: "manas" }
+      - { word: "सतां", base: "सत्", reading: "sat" }
+      - { word: "हि", base: "हि", reading: "hi" }
+      - { word: "सन्देहपदेषु", base: "सन्देह + पद", reading: "sandehapadeṣu" }
+      - { word: "वस्तुषु", base: "वस्तु", reading: "vastu" }
+      - { word: "प्रमाणमन्तः", base: "प्रमाण + अन्तर्", reading: "pramāṇamantaḥ" }
+      - { word: "करणप्रवृत्तयः", base: "करण + प्रवृत्ति", reading: "karaṇapravṛttayaḥ" }
+    source:
+      author: "anonymous"
+      work: "Abhijñānaśākuntalam 1.20, traditionally attributed to Kālidāsa"
+      date: "301-500"
+      edition: "Sanskrit Wikisource, the page for Abhijñānaśākuntalam, act 1 (verse or line 1.20), read on 2026-11-17; the text is as the page types it; the date is the English Wikipedia article's (Kālidāsa often placed in the 4th century CE); the page spaces अन्तः (antaḥ) from करणप्रवृत्तयः (karaṇapravṛttayaḥ) and this is kept"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%85%E0%A4%AD%E0%A4%BF%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8%E0%A4%B6%E0%A4%BE%E0%A4%95%E0%A5%81%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%B2%E0%A4%AE%E0%A5%8D/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A5%E0%A4%AE%E0%A5%8B%E0%A4%BD%E0%A4%99%E0%A5%8D%E0%A4%95%E0%A4%83"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8029"
+    target: "श्रियः कुरूणामधिपस्य पालनीं प्रजासु वृत्तिं यमयुङ्क्त वेदितुम् । स वर्णिलिङ्गी विदितः समाययौ युधिष्ठिरं द्वैतवने वनेचरः"
+    reading: "śriyaḥ kurūṇāmadhipasya pālanīṃ prajāsu vṛttiṃ yamayuṅkta veditum. sa varṇiliṅgī viditaḥ samāyayau yudhiṣṭhiraṃ dvaitavane vanecaraḥ"
+    ipa: "ʃrijəh kuruːɳaːməd̪ʱipəsjə paːləniːm prədʒaːsu ʋr̩t̪t̪im jəməjuŋkt̪ə ʋeːd̪it̪um sə ʋərɳiliŋɡiː ʋid̪it̪əh səmaːjəjəu jud̪ʱiʂʈʰirəm d̪ʋəit̪əʋəneː ʋəneːtʃərəh"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Bharavi, read 2026-11-17; Sanskrit Wikisource, Kirātārjunīya canto 1" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "श्रियः", base: "श्री", reading: "śrī" }
+      - { word: "कुरूणामधिपस्य", base: "कुरु + अधिप", reading: "kurūṇāmadhipasya" }
+      - { word: "पालनीं", base: "पालनी", reading: "pālanī" }
+      - { word: "प्रजासु", base: "प्रजा", reading: "prajā" }
+      - { word: "वृत्तिं", base: "वृत्ति", reading: "vṛtti" }
+      - { word: "यमयुङ्क्त", base: "यद् + युज्", reading: "yamayuṅkta" }
+      - { word: "वेदितुम्", base: "विद्", reading: "vid" }
+      - { word: "स", base: "तद्", reading: "tad" }
+      - { word: "वर्णिलिङ्गी", base: "वर्णिन् + लिङ्गिन्", reading: "varṇiliṅgī" }
+      - { word: "विदितः", base: "विदित", reading: "vidita" }
+      - { word: "समाययौ", base: "सम् + आ + या", reading: "samāyayau" }
+      - { word: "युधिष्ठिरं", base: "युधिष्ठिर", reading: "yudhiṣṭhira" }
+      - { word: "द्वैतवने", base: "द्वैतवन", reading: "dvaitavana" }
+      - { word: "वनेचरः", base: "वनेचर", reading: "vanecara" }
+    source:
+      author: "anonymous"
+      work: "Kirātārjunīya 1.1, traditionally attributed to Bhāravi"
+      date: "501-600"
+      edition: "Sanskrit Wikisource, the page for Kirātārjunīya, canto 1 (verse or line 1.1), read on 2026-11-17; the text is as the page types it; the date is the English Wikipedia article's (a poet of the 6th century, who lived around or before c. 580 CE)"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%95%E0%A4%BF%E0%A4%B0%E0%A4%BE%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%9C%E0%A5%81%E0%A4%A8%E0%A5%80%E0%A4%AF%E0%A4%AE%E0%A5%8D/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A5%E0%A4%AE%E0%A4%83_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%83"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8030"
+    target: "श्रियः पतिः श्रीमति शासितुं जगज्जगन्निवासो वसुदेवसद्मनि । वसन् ददर्शावतरन्तमम्बराद् हिरण्यगर्भाङ्गभुवं मुनिं हरिः"
+    reading: "śriyaḥ patiḥ śrīmati śāsituṃ jagajjagannivāso vasudevasadmani. vasan dadarśāvatarantamambarād hiraṇyagarbhāṅgabhuvaṃ muniṃ hariḥ"
+    ipa: "ʃrijəh pət̪ih ʃriːmət̪i ʃaːsit̪um dʒəɡədʒdʒəɡənniʋaːsoː ʋəsud̪eːʋəsəd̪məni ʋəsən d̪əd̪ərʃaːʋət̪ərənt̪əməmbəraːd̪ ɦirəɳjəɡərbʱaːŋɡəbʱuʋəm munim ɦərih"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Magha (poet), read 2026-11-17; Sanskrit Wikisource, Śiśupālavadha canto 1" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "श्रियः", base: "श्री", reading: "śrī" }
+      - { word: "पतिः", base: "पति", reading: "pati" }
+      - { word: "श्रीमति", base: "श्रीमत्", reading: "śrīmat" }
+      - { word: "शासितुं", base: "शास्", reading: "śās" }
+      - { word: "जगज्जगन्निवासो", base: "जगत् + जगत् + निवास", reading: "jagajjagannivāso" }
+      - { word: "वसुदेवसद्मनि", base: "वसुदेव + सद्मन्", reading: "vasudevasadmani" }
+      - { word: "वसन्", base: "वस्", reading: "vas" }
+      - { word: "ददर्शावतरन्तमम्बराद्", base: "दृश् + अवतृ + अम्बर", reading: "dadarśāvatarantamambarād" }
+      - { word: "हिरण्यगर्भाङ्गभुवं", base: "हिरण्यगर्भ + अङ्ग + भू", reading: "hiraṇyagarbhāṅgabhuvaṃ" }
+      - { word: "मुनिं", base: "मुनि", reading: "muni" }
+      - { word: "हरिः", base: "हरि", reading: "hari" }
+    source:
+      author: "anonymous"
+      work: "Śiśupālavadha 1.1, traditionally attributed to Māgha"
+      date: "601-700"
+      edition: "Sanskrit Wikisource, the page for Śiśupālavadha, canto 1 (verse or line 1), read on 2026-11-17; the text is as the page types it; the date is the English Wikipedia article's (Māgha, c. 7th century)"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%B6%E0%A4%BF%E0%A4%B6%E0%A5%81%E0%A4%AA%E0%A4%BE%E0%A4%B2%E0%A4%B5%E0%A4%A7%E0%A4%AE%E0%A5%8D/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A5%E0%A4%AE%E0%A4%83_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%83"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8031"
+    target: "आसीद्विशालोन्नतसानुलक्ष्म्या पयोदपङ्क्त्येव परीतपार्श्वं उदग्रधिष्ण्यां गगनेऽवगाढं पुरं महर्षेः कपिलस्य वस्तु"
+    reading: "āsīdviśālonnatasānulakṣmyā payodapaṅktyeva parītapārśvaṃ udagradhiṣṇyāṃ gagane'vagāḍhaṃ puraṃ maharṣeḥ kapilasya vastu"
+    ipa: "aːsiːd̪ʋiʃaːloːnnət̪əsaːnuləkʂmjaː pəjoːd̪əpəŋkt̪jeːʋə pəriːt̪əpaːrʃʋəm ud̪əɡrəd̪ʱiʂɳjaːm ɡəɡəneːʋəɡaːɖʱəm purəm məɦərʂeːh kəpiləsjə ʋəst̪u"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Buddhacharita, read 2026-11-17; Sanskrit Wikisource, Buddhacarita canto 1; GRETIL, Buddhacarita" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "आसीद्विशालोन्नतसानुलक्ष्म्या", base: "अस् + विशाल + उन्नत + सानु + लक्ष्मी", reading: "āsīdviśālonnatasānulakṣmyā" }
+      - { word: "पयोदपङ्क्त्येव", base: "पयोद + पङ्क्ति + इव", reading: "payodapaṅktyeva" }
+      - { word: "परीतपार्श्वं", base: "परीत + पार्श्व", reading: "parītapārśvaṃ" }
+      - { word: "उदग्रधिष्ण्यां", base: "उदग्र + धिष्ण्य", reading: "udagradhiṣṇyāṃ" }
+      - { word: "गगनेऽवगाढं", base: "गगन + अवगाढ", reading: "gaganevagāḍhaṃ" }
+      - { word: "पुरं", base: "पुर", reading: "pura" }
+      - { word: "महर्षेः", base: "महर्षि", reading: "maharṣi" }
+      - { word: "कपिलस्य", base: "कपिल", reading: "kapila" }
+      - { word: "वस्तु", base: "वस्तु", reading: "vastu" }
+    source:
+      author: "anonymous"
+      work: "Buddhacarita 1.2, traditionally attributed to Aśvaghoṣa"
+      date: "101-200"
+      edition: "Sanskrit Wikisource, the page for Buddhacarita, canto 1 (verse or line 1.2), read on 2026-11-17; the text is as the page types it; the date is the English Wikipedia article's (composed in the early second century CE); GRETIL's text of the Buddhacarita reads the same verse, which settles the form because verse 1 on the same page has odd conjuncts"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%AC%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%9A%E0%A4%B0%E0%A4%BF%E0%A4%A4%E0%A4%AE%E0%A5%8D/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A5%E0%A4%AE%E0%A4%83_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%83"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8032"
+    target: "इदं कविभ्यः पूर्वेभ्यो नमोवाकं प्रशास्महे । विन्देम देवतां वाचममृतामात्मनः कलाम्"
+    reading: "idaṃ kavibhyaḥ pūrvebhyo namovākaṃ praśāsmahe. vindema devatāṃ vācamamṛtāmātmanaḥ kalām"
+    ipa: "id̪əm kəʋibʱjəh puːrʋeːbʱjoː nəmoːʋaːkəm prəʃaːsməɦeː ʋind̪eːmə d̪eːʋət̪aːm ʋaːtʃəməmr̩t̪aːmaːt̪mənəh kəlaːm"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Bhavabhuti, read 2026-11-17; Sanskrit Wikisource, Uttararāmacarita act 1" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "इदं", base: "इदम्", reading: "idam" }
+      - { word: "कविभ्यः", base: "कवि", reading: "kavi" }
+      - { word: "पूर्वेभ्यो", base: "पूर्व", reading: "pūrva" }
+      - { word: "नमोवाकं", base: "नमस् + वाक", reading: "namovākaṃ" }
+      - { word: "प्रशास्महे", base: "प्र + शास्", reading: "praśāsmahe" }
+      - { word: "विन्देम", base: "विद्", reading: "vid" }
+      - { word: "देवतां", base: "देवता", reading: "devatā" }
+      - { word: "वाचममृतामात्मनः", base: "वाच् + अमृत + आत्मन्", reading: "vācamamṛtāmātmanaḥ" }
+      - { word: "कलाम्", base: "कला", reading: "kalā" }
+    source:
+      author: "anonymous"
+      work: "Uttararāmacarita, the benediction (nāndī), verse 1, by Bhavabhūti"
+      date: "c. 700-760"
+      edition: "Sanskrit Wikisource, the page for Uttararāmacarita, act 1 (verse or line nāndī 1), read on 2026-11-17; the text is as the page types it; the date is the period the English Wikipedia infobox gives for the poet Bhavabhūti (c. 700 to 760 CE); the poet has no creator entry because Wikidata gives him no birth or death year, so the author is written as anonymous"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%89%E0%A4%A4%E0%A5%8D%E0%A4%A4%E0%A4%B0%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%9A%E0%A4%B0%E0%A4%BF%E0%A4%A4%E0%A4%AE%E0%A5%8D_/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A5%E0%A4%AE%E0%A5%8B%E0%A4%BD%E0%A4%99%E0%A5%8D%E0%A4%95%E0%A4%83"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8033"
+    target: "द्विरदेन्द्रगतिश्चकोरनेत्रः परिपूर्णेन्दुमुखः सुविग्रहश्च । द्विजमुख्यतमः कविर्बभूव प्रथितः शूद्रक इत्यगाधसत्त्वः"
+    reading: "dviradendragatiścakoranetraḥ paripūrṇendumukhaḥ suvigrahaśca. dvijamukhyatamaḥ kavirbabhūva prathitaḥ śūdraka ityagādhasattvaḥ"
+    ipa: "d̪ʋirəd̪eːnd̪rəɡət̪iʃtʃəkoːrəneːt̪rəh pəripuːrɳeːnd̪umukʰəh suʋiɡrəɦəʃtʃə d̪ʋidʒəmukʰjət̪əməh kəʋirbəbʱuːʋə prət̪ʰit̪əh ʃuːd̪rəkə it̪jəɡaːd̪ʱəsət̪t̪ʋəh"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, articles Mrichchhakatika and Shudraka, read 2026-11-17; Sanskrit Wikisource, Mṛcchakaṭika scan page 11" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "द्विरदेन्द्रगतिश्चकोरनेत्रः", base: "द्विरद + इन्द्र + गति + चकोर + नेत्र", reading: "dviradendragatiścakoranetraḥ" }
+      - { word: "परिपूर्णेन्दुमुखः", base: "परिपूर्ण + इन्दु + मुख", reading: "paripūrṇendumukhaḥ" }
+      - { word: "सुविग्रहश्च", base: "सुविग्रह + च", reading: "suvigrahaśca" }
+      - { word: "द्विजमुख्यतमः", base: "द्विज + मुख्य", reading: "dvijamukhyatamaḥ" }
+      - { word: "कविर्बभूव", base: "कवि + भू", reading: "kavirbabhūva" }
+      - { word: "प्रथितः", base: "प्रथित", reading: "prathita" }
+      - { word: "शूद्रक", base: "शूद्रक", reading: "śūdraka" }
+      - { word: "इत्यगाधसत्त्वः", base: "इति + अगाध + सत्त्व", reading: "ityagādhasattvaḥ" }
+    source:
+      author: "anonymous"
+      work: "Mṛcchakaṭika, prologue verse 3, attributed to Śūdraka"
+      date: "401-500"
+      edition: "Sanskrit Wikisource, the page for Mṛcchakaṭika (a page of the scan of the play, in the Page namespace) (verse or line prologue verse 3), read on 2026-11-17; the text is as the page types it; the date is the English Wikipedia article's wording for the playwright (\"possibly from the 5th century CE\"), which its own infobox contradicts with \"Fifth century BC\"; the page is the scan of an edition with a commentary and only the verse is used"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%AA%E0%A5%83%E0%A4%B7%E0%A5%8D%E0%A4%A0%E0%A4%AE%E0%A5%8D:%E0%A4%AE%E0%A5%83%E0%A4%9A%E0%A5%8D%E0%A4%9B%E0%A4%95%E0%A4%9F%E0%A4%BF%E0%A4%95%E0%A4%AE%E0%A5%8D.pdf/%E0%A5%A7%E0%A5%A7"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"
+  - id: "sa-8060"
+    target: "धूमज्योतिःसलिलमरुतां संनिपातः क्व मेघः सन्देशार्थाः क्व पटुकरणैः प्राणिभिः प्रापणीयाः । इत्यौत्सुक्यादपरिगणयन् गुह्यकस्तं ययाचे कामार्ता हि प्रकृतिकृपणाश्चेतनाचेतनेषु"
+    reading: "dhūmajyotiḥsalilamarutāṃ saṃnipātaḥ kva meghaḥ sandeśārthāḥ kva paṭukaraṇaiḥ prāṇibhiḥ prāpaṇīyāḥ. ityautsukyādaparigaṇayan guhyakastaṃ yayāce kāmārtā hi prakṛtikṛpaṇāścetanācetaneṣu"
+    ipa: "d̪ʱuːmədʒjoːt̪ihsəliləmərut̪aːm sənnipaːt̪əh kʋə meːɡʱəh sənd̪eːʃaːrt̪ʰaːh kʋə pəʈukərəɳəih praːɳibʱih praːpəɳiːjaːh it̪jəut̪sukjaːd̪əpəriɡəɳəjən ɡuɦjəkəst̪əm jəjaːtʃeː kaːmaːrt̪aː ɦi prəkr̩t̪ikr̩pəɳaːʃtʃeːt̪ənaːtʃeːt̪əneːʂu"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "culture", source: "English Wikipedia, article Meghaduta, read 2026-11-17; Sanskrit Wikisource, Meghadūta Pūrvamegha; GRETIL, Meghadūta" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "धूमज्योतिःसलिलमरुतां", base: "धूम + ज्योतिस् + सलिल + मरुत्", reading: "dhūmajyotiḥsalilamarutāṃ" }
+      - { word: "संनिपातः", base: "संनिपात", reading: "saṃnipāta" }
+      - { word: "क्व", base: "क्व", reading: "kva" }
+      - { word: "मेघः", base: "मेघ", reading: "megha" }
+      - { word: "सन्देशार्थाः", base: "सन्देश + अर्थ", reading: "sandeśārthāḥ" }
+      - { word: "पटुकरणैः", base: "पटु + करण", reading: "paṭukaraṇaiḥ" }
+      - { word: "प्राणिभिः", base: "प्राणिन्", reading: "prāṇin" }
+      - { word: "प्रापणीयाः", base: "प्रापणीय", reading: "prāpaṇīya" }
+      - { word: "इत्यौत्सुक्यादपरिगणयन्", base: "इति + औत्सुक्य + अपरिगणयत्", reading: "ityautsukyādaparigaṇayan" }
+      - { word: "गुह्यकस्तं", base: "गुह्यक + तद्", reading: "guhyakastaṃ" }
+      - { word: "ययाचे", base: "याच्", reading: "yāc" }
+      - { word: "कामार्ता", base: "काम + आर्त", reading: "kāmārtā" }
+      - { word: "हि", base: "हि", reading: "hi" }
+      - { word: "प्रकृतिकृपणाश्चेतनाचेतनेषु", base: "प्रकृति + कृपण + चेतन + अचेतन", reading: "prakṛtikṛpaṇāścetanācetaneṣu" }
+    source:
+      author: "anonymous"
+      work: "Meghadūta, Pūrvamegha 5, traditionally attributed to Kālidāsa"
+      date: "301-500"
+      edition: "Sanskrit Wikisource, the page for Meghadūta, Pūrvamegha (verse or line Pūrvamegha 5), read on 2026-11-17; the text is as the page types it; the date is the English Wikipedia article's (c. 4th to 5th century CE for Kālidāsa and his poem); only that article was read for the date; GRETIL's text has the same verse with the word संदेशार्थाः (saṃdeśārthāḥ) spelled with an anusvāra"
+      url: "https://sa.wikisource.org/wiki/%E0%A4%AE%E0%A5%87%E0%A4%98%E0%A4%A6%E0%A5%82%E0%A4%A4%E0%A4%AE%E0%A5%8D/%E0%A4%AE%E0%A5%87%E0%A4%98%E0%A4%A6%E0%A5%82%E0%A4%A4%E0%A4%AE%E0%A5%8D_-_%E0%A4%AA%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%AE%E0%A5%87%E0%A4%98:"
+      basis: "public-domain"
+      jurisdiction: "IN"
+      rights_checked: "2026-11-17"

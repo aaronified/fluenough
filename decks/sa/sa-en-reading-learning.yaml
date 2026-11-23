@@ -1,0 +1,58 @@
+schema: 1
+id: "sa-en-reading-learning"
+name: "Reading: learning"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-learning-text-1"
+    title: "Teacher and daughter"
+    theme: "learning"
+    sentences:
+      - { text: "अध्यापकः कथां कथयति पुत्री च शृणोति.", reading: "adhyāpakaḥ kathāṃ kathayati putrī ca śṛṇoti.", ipa: "əd̪ʱjaːpəkəh kət̪ʰaːm kət̪ʰəjət̪i put̪riː tʃə ʃr̩ɳoːt̪i" }
+      - { text: "अध्यापको वाक्यं वदति पुत्री च लिखति.", reading: "adhyāpako vākyaṃ vadati putrī ca likhati.", ipa: "əd̪ʱjaːpəkoː ʋaːkjəm ʋəd̪ət̪i put̪riː tʃə likʰət̪i" }
+      - { text: "अर्थं शब्दस्य को जानाति?", reading: "arthaṃ śabdasya ko jānāti?", ipa: "ərt̪ʰəm ʃəbd̪əsjə koː dʒaːnaːt̪i" }
+      - { text: "वाचनेन पुत्री ज्ञानं लभते.", reading: "vācanena putrī jñānaṃ labhate.", ipa: "ʋaːtʃəneːnə put̪riː dʒɲaːnəm ləbʱət̪eː" }
+    questions:
+      - id: "sa-3571"
+        prompt: { en: "What does the teacher tell?" }
+        options: [{ en: "A sentence" }, { en: "A word" }, { en: "A story" }]
+        answer: 3
+      - id: "sa-3572"
+        prompt: { en: "What does the daughter do in the second sentence?" }
+        options: [{ en: "Writes" }, { en: "Listens" }, { en: "Reads" }]
+        answer: 1
+      - id: "sa-3573"
+        prompt: { en: "The third sentence asks who knows the meaning of the word." }
+        answer: true
+      - id: "sa-3574"
+        prompt: { en: "The daughter gains knowledge through writing." }
+        answer: false
+  - id: "sa-learning-text-2"
+    title: "Words, letters, exam"
+    theme: "learning"
+    sentences:
+      - { text: "वाक्ये पदानि भवन्ति पदे वर्णा भवन्ति.", reading: "vākye padāni bhavanti pade varṇā bhavanti.", ipa: "ʋaːkjeː pəd̪aːni bʱəʋənt̪i pəd̪eː ʋərɳaː bʱəʋənt̪i" }
+      - { text: "स्वरो वर्णो भवति पदं वाक्यं न भवति.", reading: "svaro varṇo bhavati padaṃ vākyaṃ na bhavati.", ipa: "sʋəroː ʋərɳoː bʱəʋət̪i pəd̪əm ʋaːkjəm nə bʱəʋət̪i" }
+      - { text: "परीक्षा कठिना न भवति शिक्षा च सरला भवति.", reading: "parīkṣā kaṭhinā na bhavati śikṣā ca saralā bhavati.", ipa: "pəriːkʂaː kəʈʰinaː nə bʱəʋət̪i ʃikʂaː tʃə sərəlaː bʱəʋət̪i" }
+      - { text: "को विषयः कठिनो भवति?", reading: "ko viṣayaḥ kaṭhino bhavati?", ipa: "koː ʋiʂəjəh kəʈʰinoː bʱəʋət̪i" }
+    questions:
+      - id: "sa-3575"
+        prompt: { en: "What does the last sentence ask about?" }
+        options: [{ en: "Who knows the subject" }, { en: "Which subject is hard" }, { en: "Why the subject is hard" }]
+        answer: 2
+      - id: "sa-3576"
+        prompt: { en: "The second sentence says a word is a sentence." }
+        answer: false
+      - id: "sa-3577"
+        prompt: { en: "What is easy?" }
+        options: [{ en: "The exam" }, { en: "The subject" }, { en: "The learning" }]
+        answer: 3
+      - id: "sa-3578"
+        prompt: { en: "What is not hard in the third sentence?" }
+        options: [{ en: "The exam" }, { en: "The subject" }, { en: "The letter" }]
+        answer: 1

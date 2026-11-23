@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "id": "gu-en-indefinite-words",
+  "kind": "layer",
+  "core": "gu-indefinite-words",
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "name": "Indefinite words: someone, somewhere, anywhere",
+  "license": "CC-BY-SA-4.0",
+  "description": "The indefinite words that go with the question words: someone, somewhere and anywhere, and their use in statements, questions and negatives. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "unreviewed"
+  ],
+  "cards": {
+    "gu-4664": {
+      "native": "someone; somebody (in a statement)",
+      "notes": {
+        "n1": "Add -k to koi for a statement: koik aavyu means someone came. In a question or with na use koi."
+      },
+      "examples": {
+        "કોઈક આવ્યું છે.": {
+          "native": "Someone has come.",
+          "bases": {
+            "કોઈક": "someone; somebody (in a statement)",
+            "આવ્યું": "came (neuter)",
+            "છે": "is"
+          }
+        },
+        "મારા દરવાજે કોઈક ઊભું છે.": {
+          "native": "Someone is standing at my door.",
+          "bases": {
+            "મારા": "my (plural)",
+            "દરવાજે": "at the door",
+            "કોઈક": "someone; somebody (in a statement)",
+            "ઊભું": "standing",
+            "છે": "is"
+          }
+        }
+      }
+    },
+    "gu-4665": {
+      "native": "somewhere (in a statement)",
+      "notes": {
+        "n1": "The statement form of kya; use kyanya in questions and with na."
+      },
+      "examples": {
+        "ચાવી ક્યાંક પડી ગઈ છે.": {
+          "native": "The key has fallen somewhere.",
+          "bases": {
+            "ચાવી": "key",
+            "ક્યાંક": "somewhere (in a statement)",
+            "પડી": "fallen (feminine)",
+            "ગઈ": "gone (feminine)",
+            "છે": "is"
+          }
+        },
+        "મને ક્યાંક જવું છે.": {
+          "native": "I want to go somewhere.",
+          "bases": {
+            "મને": "to me",
+            "ક્યાંક": "somewhere (in a statement)",
+            "જવું": "to go",
+            "છે": "is"
+          }
+        }
+      }
+    },
+    "gu-4666": {
+      "native": "anywhere; nowhere (in a question or with na)",
+      "notes": {
+        "n1": "The question and negative form of kya: with na it means nowhere."
+      },
+      "examples": {
+        "મારી ચાવી ક્યાંય નથી.": {
+          "native": "My key is nowhere.",
+          "bases": {
+            "મારી": "my (feminine)",
+            "ચાવી": "key",
+            "ક્યાંય": "anywhere; nowhere (in a question or with na)",
+            "નથી": "is not"
+          }
+        },
+        "તમે ક્યાંય જાઓ છો?": {
+          "native": "Are you going anywhere?",
+          "bases": {
+            "તમે": "you",
+            "ક્યાંય": "anywhere; nowhere (in a question or with na)",
+            "જાઓ": "go (polite)",
+            "છો": "are"
+          }
+        }
+      }
+    }
+  }
+}

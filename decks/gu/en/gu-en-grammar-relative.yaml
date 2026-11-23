@@ -1,0 +1,29 @@
+"schema": 1
+"id": "gu-en-grammar-relative"
+"kind": "layer"
+"core": "gu-grammar-relative"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Relative clauses: who, where, when, as"
+"license": "CC-BY-SA-4.0"
+"description": "A relative word opens the clause that describes a person or thing, and the main clause answers it with a matching word: je ... te, jyare ... tyare. Not yet checked by a Gujarati speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "Relative and matching word"
+  "slot_name": "clause"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "relative clause": "the describing clause"
+    "main clause": "the main clause that answers it"
+  "entries":
+    "je": "who; which; that"
+    "jenu": "whose"
+    "jene": "to whom"
+    "jyan": "where"
+    "jyare": "when"
+    "jem": "as; so"
+    "jetlu": "as much as; so much"
+  "notes": "The relative word goes first, in the describing clause, and the main clause repeats the matching word: je man aavyo te (the man who came). The verb keeps its normal form."

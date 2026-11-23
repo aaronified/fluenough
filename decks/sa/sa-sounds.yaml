@@ -1,0 +1,23 @@
+# Classical Sanskrit's sound contrasts: pairs of letters or signs that change a
+# word, for the speaking drill's feedback (#89) and the minimal-pair drill
+# (#31). Each id is the tag the language's sound-differences deck uses. See
+# ADR-0015 and wiki/Deck-Format.md. The five rows of stops and their order are
+# Wikipedia's (Sanskrit grammar, phonology); the pairs are letters of those
+# rows.
+schema: 1
+kind: "sounds"
+part: "core"
+id: "sa-sounds"
+language: "sa"
+contrasts:
+  - id: "vowel-length"
+    within_word: true
+    pairs: [["", "ा"], ["अ", "आ"], ["इ", "ई"], ["उ", "ऊ"]]
+  - id: "aspiration"
+    pairs: [["क", "ख"], ["ग", "घ"], ["च", "छ"], ["ज", "झ"], ["ट", "ठ"], ["ड", "ढ"], ["त", "थ"], ["द", "ध"], ["प", "फ"], ["ब", "भ"]]
+  - id: "dental-retroflex"
+    pairs: [["त", "ट"], ["थ", "ठ"], ["द", "ड"], ["ध", "ढ"], ["न", "ण"]]
+  - id: "voicing"
+    pairs: [["क", "ग"], ["च", "ज"], ["ट", "ड"], ["त", "द"], ["प", "ब"]]
+  - id: "sibilants"
+    pairs: [["श", "ष"], ["श", "स"], ["ष", "स"]]

@@ -58,8 +58,10 @@ class ScriptSample {
   final String meaning;
 }
 
-/// A sample for each script that has a font to download (`FONTS` in
-/// `tools/deck_index.py`). Each reading is the one the decks give, based on
+/// A sample for each script that has a font to download and is asked about
+/// (`FONTS` in `tools/deck_index.py`, but for the content fonts of Latin,
+/// Cyrillic and Greek, which always download and are never asked about).
+/// Each reading is the one the decks give, based on
 /// ISO 15919 where it is an Indic script.
 const Map<String, ScriptSample> scriptSamples = <String, ScriptSample>{
   'devanagari': ScriptSample('नमस्ते', 'namastē', 'hello'),
@@ -83,4 +85,9 @@ const Map<String, ScriptSample> scriptSamples = <String, ScriptSample>{
   'han': ScriptSample('今日は', 'konnichiwa', 'hello'),
   'kana': ScriptSample('ありがとう', 'arigatō', 'thanks'),
   'hangul': ScriptSample('감사합니다', 'gamsahamnida', 'thanks'),
+  'thai': ScriptSample('ขอบคุณ', 'khòp khun', 'thanks'),
+  'meitei_mayek': ScriptSample('ꯈꯨꯔꯨꯝꯖꯔꯤ', 'khurumjari', 'thanks'),
+  'brahmi': ScriptSample('𑀅𑀇𑀉', 'a i u', 'vowels'),
+  'sitelen_pona': ScriptSample('\u{F196C}', 'toki', 'hello'),
+  'signwriting': ScriptSample('\u{1D85A}\u{1DA9C}', 'SignWriting', 'hand'),
 };

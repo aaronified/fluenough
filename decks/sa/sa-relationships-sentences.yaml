@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-relationships-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3940"
+    target: "पितामहो बालकाय कथां कथयति."
+    reading: "pitāmaho bālakāya kathāṃ kathayati."
+    ipa: "pit̪aːməɦoː baːləkaːjə kət̪ʰaːm kət̪ʰəjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पितामहो", base: "पितामहः", reading: "pitāmahaḥ" }, { word: "बालकाय", base: "बालकः", reading: "bālakaḥ" }, { word: "कथां", base: "कथा", reading: "kathā" }, { word: "कथयति", base: "कथ्", reading: "kath" }]
+    confusables: [{ id: "w1", ref: "sa-9038", kind: "word" }, { id: "w2", ref: "sa-9037", kind: "word" }, { id: "w3", ref: "sa-2108", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3941"
+    target: "सखी सखीं गृहे मिलति."
+    reading: "sakhī sakhīṃ gṛhe milati."
+    ipa: "səkʰiː səkʰiːm ɡr̩ɦeː milət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सखी", ref: "sa-9025" }, { word: "सखीं", base: "सखी", reading: "sakhī" }, { word: "गृहे", base: "गृहम्", reading: "gṛham" }, { word: "मिलति", base: "मिल्", reading: "mil" }]
+    confusables: [{ id: "w1", ref: "sa-9024", kind: "word" }, { id: "w2", ref: "sa-1043", kind: "word" }, { id: "w3", ref: "sa-12040", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3942"
+    target: "अनुजो नित्यं ज्येष्ठं नमति."
+    reading: "anujo nityaṃ jyeṣṭhaṃ namati."
+    ipa: "ənudʒoː nit̪jəm dʒjeːʂʈʰəm nəmət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अनुजो", base: "अनुजः", reading: "anujaḥ" }, { word: "नित्यं", base: "नित्यम्", reading: "nityam" }, { word: "ज्येष्ठं", base: "ज्येष्ठः", reading: "jyeṣṭhaḥ" }, { word: "नमति", base: "नम्", reading: "nam" }]
+    confusables: [{ id: "w1", ref: "sa-9046", kind: "word" }, { id: "w2", ref: "sa-9021", kind: "word" }, { id: "w3", ref: "sa-2008", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3943"
+    target: "प्रतिवेश्यः पथिकाय पानीयं ददाति."
+    reading: "prativeśyaḥ pathikāya pānīyaṃ dadāti."
+    ipa: "prət̪iʋeːʃjəh pət̪ʰikaːjə paːniːjəm d̪əd̪aːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "प्रतिवेश्यः", ref: "sa-9016" }, { word: "पथिकाय", base: "पथिकः", reading: "pathikaḥ" }, { word: "पानीयं", base: "पानीयम्", reading: "pānīyam" }, { word: "ददाति", base: "दा", reading: "dā" }]
+    confusables: [{ id: "w1", ref: "sa-9015", kind: "word" }, { id: "w2", ref: "sa-5511", kind: "word" }, { id: "w3", ref: "sa-2016", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3944"
+    target: "उपाध्यायं नम्रा शिष्या नमति."
+    reading: "upādhyāyaṃ namrā śiṣyā namati."
+    ipa: "upaːd̪ʱjaːjəm nəmraː ʃiʂjaː nəmət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "उपाध्यायं", base: "उपाध्यायः", reading: "upādhyāyaḥ" }, { word: "नम्रा", base: "नम्रः", reading: "namraḥ" }, { word: "शिष्या", ref: "sa-9064" }, { word: "नमति", base: "नम्", reading: "nam" }]
+    confusables: [{ id: "w1", ref: "sa-9031", kind: "word" }, { id: "w2", ref: "sa-9023", kind: "word" }, { id: "w3", ref: "sa-2008", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3945"
+    target: "भृत्यो नृपस्य सेवां करोति."
+    reading: "bhṛtyo nṛpasya sevāṃ karoti."
+    ipa: "bʱr̩t̪joː nr̩pəsjə seːʋaːm kəroːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "भृत्यो", base: "भृत्यः", reading: "bhṛtyaḥ" }, { word: "नृपस्य", base: "नृपः", reading: "nṛpaḥ" }, { word: "सेवां", base: "सेवा", reading: "sevā" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+    confusables: [{ id: "w1", ref: "sa-5727", kind: "word" }, { id: "w2", ref: "sa-1865", kind: "word" }, { id: "w3", ref: "sa-2016", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3946"
+    target: "कृतघ्नो मित्रं न रक्षति."
+    reading: "kṛtaghno mitraṃ na rakṣati."
+    ipa: "kr̩t̪əɡʱnoː mit̪rəm nə rəkʂət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कृतघ्नो", base: "कृतघ्नः", reading: "kṛtaghnaḥ" }, { word: "मित्रं", base: "मित्रम्", reading: "mitram" }, { word: "न", ref: "sa-0026" }, { word: "रक्षति", base: "रक्ष्", reading: "rakṣ" }]
+    confusables: [{ id: "w1", ref: "sa-9050", kind: "word" }, { id: "w2", ref: "sa-9012", kind: "word" }, { id: "w3", ref: "sa-2007", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3947"
+    target: "भगिनी भ्रातरं स्नेहेन पश्यति."
+    reading: "bhaginī bhrātaraṃ snehena paśyati."
+    ipa: "bʱəɡiniː bʱraːt̪ərəm sneːɦeːnə pəʃjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "भगिनी", ref: "sa-9047" }, { word: "भ्रातरं", base: "भ्राता", reading: "bhrātā" }, { word: "स्नेहेन", base: "स्नेहः", reading: "snehaḥ" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+    confusables: [{ id: "w1", ref: "sa-1034", kind: "word" }, { id: "w2", ref: "sa-7252", kind: "word" }, { id: "w3", ref: "sa-2008", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3948"
+    target: "राजा शरणागताय शरणं ददाति."
+    reading: "rājā śaraṇāgatāya śaraṇaṃ dadāti."
+    ipa: "raːdʒaː ʃərəɳaːɡət̪aːjə ʃərəɳəm d̪əd̪aːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "राजा", base: "राजन्", reading: "rājan" }, { word: "शरणागताय", base: "शरणागतः", reading: "śaraṇāgataḥ" }, { word: "शरणं", base: "शरणम्", reading: "śaraṇam" }, { word: "ददाति", base: "दा", reading: "dā" }]
+    confusables: [{ id: "w1", ref: "sa-9057", kind: "word" }, { id: "w2", ref: "sa-9059", kind: "word" }, { id: "w3", ref: "sa-2016", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3949"
+    target: "कुटुम्बे पिता माता च वसतः."
+    reading: "kuṭumbe pitā mātā ca vasataḥ."
+    ipa: "kuʈumbeː pit̪aː maːt̪aː tʃə ʋəsət̪əh"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कुटुम्बे", base: "कुटुम्बम्", reading: "kuṭumbam" }, { word: "पिता", ref: "sa-1031" }, { word: "माता", ref: "sa-1030" }, { word: "च", ref: "sa-1104" }, { word: "वसतः", base: "वस्", reading: "vas" }]
+    confusables: [{ id: "w1", ref: "sa-9028", kind: "word" }, { id: "w2", ref: "sa-9033", kind: "word" }, { id: "w3", ref: "sa-2002", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]

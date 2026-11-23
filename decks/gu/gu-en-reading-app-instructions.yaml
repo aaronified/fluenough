@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "gu-en-reading-app-instructions",
+  "name": "Reading: Instructions inside a phone app",
+  "kind": "reading",
+  "language": {
+    "code": "gu",
+    "iso639_3": "guj",
+    "name": "Gujarati",
+    "script": "gujarati",
+    "tts": "gu-IN",
+    "icon": "ગુ"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this deck, and released under CC BY-SA 4.0",
+  "description": "Instructions inside a phone app: open it, find the update in the settings, restart the phone and ask for help if the problem stays. Written for this deck and released under CC BY-SA 4.0. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "reading",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "gu-app-instructions",
+      "title": "Reading: Instructions inside a phone app",
+      "theme": "technology",
+      "sentences": [
+        {
+          "text": "એપ ખોલો અને પાસવર્ડ લખો.",
+          "reading": "ep kholo ane pāsvarḍ lakho.",
+          "ipa": "ep kʰolo əne pasʋərɖ ləkʰo"
+        },
+        {
+          "text": "સેટિંગ્સમાં જાઓ અને અપડેટ શોધો.",
+          "reading": "seṭiṅgsmām̐ jāo ane apḍeṭ śodho.",
+          "ipa": "seʈiŋɡsmã dʒao əne əpɖeʈ ʃod̪ʱo"
+        },
+        {
+          "text": "અપડેટ થયું, હવે ફોન ફરીથી ચાલુ કરો.",
+          "reading": "apḍeṭ thayum, have fon pharithi cālu karo.",
+          "ipa": "əpɖeʈ t̪ʰəjum ɦəʋe fon pʰərit̪ʰi tʃalu kəro"
+        },
+        {
+          "text": "જો સમસ્યા રહે, તો મદદ લો.",
+          "reading": "jo samasyā rahe, to madad lo.",
+          "ipa": "dʒo səməsja rəɦe t̪o məd̪əd̪ lo"
+        }
+      ],
+      "questions": [
+        {
+          "id": "gu-3929",
+          "prompt": {
+            "en": "What should you do after the update?"
+          },
+          "options": [
+            {
+              "en": "Restart the phone"
+            },
+            {
+              "en": "Delete the app"
+            },
+            {
+              "en": "Sell the phone"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "gu-3930",
+          "prompt": {
+            "en": "You find the update in the settings."
+          },
+          "answer": true
+        },
+        {
+          "id": "gu-3931",
+          "prompt": {
+            "en": "What should you do if the problem stays?"
+          },
+          "options": [
+            {
+              "en": "Ask for help"
+            },
+            {
+              "en": "Stop the phone"
+            },
+            {
+              "en": "Forget the password"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  ]
+}

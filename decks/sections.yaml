@@ -14,7 +14,10 @@ genres:
   - { id: "proverbs", name: { en: "Proverbs" }, section: "beyond-basics", search_kind: "proverbs", weave: true }
   - { id: "multiword", name: { en: "Multi-word verbs" }, section: "beyond-basics", search_kind: "multiword", weave: true }
   - { id: "professional", name: { en: "Professional" }, section: "professional", search_kind: "situations", weave: false }
-professions: []
+professions:
+  - { id: "medicine", name: { en: "Medicine" } }
+  - { id: "hospitality", name: { en: "Hospitality" } }
+  - { id: "business", name: { en: "Business" } }
 search_kinds:
   - { id: "situations", name: { en: "Situations" }, row: "scene", order: 1 }
   - { id: "topics", name: { en: "Topics" }, row: "topic", order: 2 }

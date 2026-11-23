@@ -1,0 +1,54 @@
+schema: 1
+id: "sa-en-reading-pronouns"
+name: "Reading: pronouns"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-pronouns-text-1"
+    title: "This one and that one"
+    theme: "pronouns"
+    sentences:
+      - { text: "सा संस्कृतं वदति यूयं च पठथ.", reading: "sā saṃskṛtaṃ vadati yūyaṃ ca paṭhatha.", ipa: "saː sə̃skr̩t̪əm ʋəd̪ət̪i juːjəm tʃə pəʈʰət̪ʰə" }
+      - { text: "यूयं न पठथ वयं च न वदामः.", reading: "yūyaṃ na paṭhatha vayaṃ ca na vadāmaḥ.", ipa: "juːjəm nə pəʈʰət̪ʰə ʋəjəm tʃə nə ʋəd̪aːməh" }
+      - { text: "स देवो न वदति सा च संस्कृतं पठति.", reading: "sa devo na vadati sā ca saṃskṛtaṃ paṭhati.", ipa: "sə d̪eːʋoː nə ʋəd̪ət̪i saː tʃə sə̃skr̩t̪əm pəʈʰət̪i" }
+      - { text: "अयं देवो जलं नयति.", reading: "ayaṃ devo jalaṃ nayati.", ipa: "əjəm d̪eːʋoː dʒələm nəjət̪i" }
+    questions:
+      - id: "sa-3407"
+        prompt: { en: "Who speaks Sanskrit in the first sentence?" }
+        options: [{ en: "You all" }, { en: "She" }, { en: "We" }]
+        answer: 2
+      - id: "sa-3408"
+        prompt: { en: "In the second sentence, 'you all' read." }
+        answer: false
+      - id: "sa-3409"
+        prompt: { en: "What does this god do?" }
+        options: [{ en: "Reads Sanskrit" }, { en: "Does not speak" }, { en: "Brings water" }]
+        answer: 3
+  - id: "sa-pronouns-text-2"
+    title: "What I read"
+    theme: "pronouns"
+    sentences:
+      - { text: "यत् पठसि तत् पठामि.", reading: "yat paṭhasi tat paṭhāmi.", ipa: "jət̪ pəʈʰəsi t̪ət̪ pəʈʰaːmi" }
+      - { text: "यः पठति स संस्कृतं वदति.", reading: "yaḥ paṭhati sa saṃskṛtaṃ vadati.", ipa: "jəh pəʈʰət̪i sə sə̃skr̩t̪əm ʋəd̪ət̪i" }
+      - { text: "एष जलं नयति स च संस्कृतं पठति.", reading: "eṣa jalaṃ nayati sa ca saṃskṛtaṃ paṭhati.", ipa: "eːʂə dʒələm nəjət̪i sə tʃə sə̃skr̩t̪əm pəʈʰət̪i" }
+      - { text: "वयं सर्वं जलं नयामः.", reading: "vayaṃ sarvaṃ jalaṃ nayāmaḥ.", ipa: "ʋəjəm sərʋəm dʒələm nəjaːməh" }
+    questions:
+      - id: "sa-3410"
+        prompt: { en: "Who brings all the water?" }
+        options: [{ en: "We" }, { en: "I" }, { en: "You all" }]
+        answer: 1
+      - id: "sa-3411"
+        prompt: { en: "The one who reads speaks Sanskrit." }
+        answer: true
+      - id: "sa-3412"
+        prompt: { en: "In the third sentence, who reads Sanskrit?" }
+        options: [{ en: "This one" }, { en: "That one" }]
+        answer: 2
+      - id: "sa-3413"
+        prompt: { en: "The speaker reads what you do not read." }
+        answer: false

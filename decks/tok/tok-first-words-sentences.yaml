@@ -2,12 +2,14 @@ schema: 1
 id: "tok-first-words-sentences"
 part: "core"
 kind: "vocab"
-language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", scripts: ["latin", "sitelen_pona"], icon: "Tp" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "tok-0023"
     target: "sina toki ala."
+    target_scripts:
+      sitelen_pona: "󱥞 󱥬 󱤂."
     ipa: "ˈsina ˈtoki ˈala"
     pos: "phrase"
     bases:
@@ -19,6 +21,8 @@ cards:
       - { id: "w2", ref: "tok-0003", kind: "word" }
   - id: "tok-0024"
     target: "sina toki pona."
+    target_scripts:
+      sitelen_pona: "󱥞 󱥬 󱥔."
     ipa: "ˈsina ˈtoki ˈpona"
     pos: "phrase"
     confusables:
@@ -26,6 +30,8 @@ cards:
       - { id: "w2", ref: "tok-0007", kind: "word" }
   - id: "tok-0025"
     target: "sina sona ala."
+    target_scripts:
+      sitelen_pona: "󱥞 󱥡 󱤂."
     ipa: "ˈsina ˈsona ˈala"
     pos: "phrase"
     bases:
@@ -37,6 +43,8 @@ cards:
       - { id: "w2", ref: "tok-0001", kind: "word" }
   - id: "tok-0026"
     target: "sina pona ala."
+    target_scripts:
+      sitelen_pona: "󱥞 󱥔 󱤂."
     ipa: "ˈsina ˈpona ˈala"
     pos: "phrase"
     confusables:
@@ -44,6 +52,8 @@ cards:
       - { id: "w2", ref: "tok-0006", kind: "word" }
   - id: "tok-0027"
     target: "mi pona ala."
+    target_scripts:
+      sitelen_pona: "󱤴 󱥔 󱤂."
     ipa: "mi ˈpona ˈala"
     pos: "phrase"
     bases:
@@ -55,6 +65,8 @@ cards:
       - { id: "w2", ref: "tok-0006", kind: "word" }
   - id: "tok-0028"
     target: "mi toki ala."
+    target_scripts:
+      sitelen_pona: "󱤴 󱥬 󱤂."
     ipa: "mi ˈtoki ˈala"
     pos: "phrase"
     confusables:
@@ -62,6 +74,8 @@ cards:
       - { id: "w2", ref: "tok-0004", kind: "word" }
   - id: "tok-0029"
     target: "mi sona toki pona."
+    target_scripts:
+      sitelen_pona: "󱤴 󱥡 󱥬 󱥔."
     ipa: "mi ˈsona ˈtoki ˈpona"
     pos: "phrase"
     confusables:

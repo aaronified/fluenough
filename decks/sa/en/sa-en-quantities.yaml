@@ -1,0 +1,267 @@
+schema: 1
+id: "sa-en-quantities"
+kind: "layer"
+core: "sa-quantities"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How much and how many"
+description: "How much and how many in Classical Sanskrit: little and much, all and some, more and less, full and empty, enough and plentiful."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1500":
+    native: "Little; few."
+    notes:
+      "n1": "Its neuter is अल्पम् (alpam); the ending follows the noun it describes, as in अल्पं (alpaṃ) जलम् (jalam)."
+      "n2": "In these examples the words are written apart; in running text a final ḥ or m before a vowel takes sandhi."
+      "n3": "After इ (i), ई (ī), उ (u) or ऊ (ū) the final ः (ḥ) before a voiced sound becomes र् (r), as in अग्निर् (agnir) from अग्निः (agniḥ) (Whitney 174; Aṣṭādhyāyī 8.2.66)."
+    bases:
+      "अल्पः": "little"
+    examples:
+      "अल्पं जलम्":
+        native: "Little water."
+        bases:
+          "अल्पं": "little"
+          "जलम्": "water"
+      "अग्निर् अल्पः":
+        native: "The fire is small."
+        bases:
+          "अग्निर्": "fire"
+          "अल्पः": "small"
+  "sa-1501":
+    native: "Much; many."
+    notes:
+      "n1": "A u-stem: बहुः (bahuḥ) for the masculine, बहु (bahu) for the neuter, and बहवः (bahavaḥ) in the masculine plural."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o), as in बहवो (bahavo) from बहवः (bahavaḥ) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114)."
+    bases:
+      "बहुः": "much"
+    examples:
+      "बहवो देवाः":
+        native: "Many gods."
+        bases:
+          "बहवो": "many"
+          "देवाः": "gods"
+      "बहु जलम्":
+        native: "Much water."
+        bases:
+          "बहु": "much"
+          "जलम्": "water"
+  "sa-1502":
+    native: "Many; several."
+    notes:
+      "n1": "Use अनेक (aneka) for a count of things (many books) and बहु (bahu) for a quantity (much water)."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+    bases:
+      "अनेकः": "many"
+    examples:
+      "अनेका देवाः":
+        native: "Many gods."
+        bases:
+          "अनेका": "many"
+          "देवाः": "gods"
+      "अनेकानि पुस्तकानि":
+        native: "Many books."
+        bases:
+          "अनेकानि": "many"
+          "पुस्तकानि": "books"
+  "sa-1503":
+    native: "All; every; whole."
+    notes:
+      "n1": "Pronominal: its genitive and locative take the pronoun endings (सर्वस्य (sarvasya), sarvasya), not the plain a-stem ones."
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in सर्वं (sarvaṃ) from सर्वम् (sarvam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    bases:
+      "सर्वः": "all"
+    examples:
+      "सर्वे देवाः":
+        native: "All the gods."
+        bases:
+          "सर्वे": "all"
+          "देवाः": "gods"
+      "सर्वं जलम्":
+        native: "All the water."
+        bases:
+          "सर्वं": "all"
+          "जलम्": "water"
+  "sa-1504":
+    native: "More; extra; in excess."
+    notes:
+      "n1": "An adjective: it agrees with its noun in gender, number and case, so the form here is the masculine nominative singular."
+      "n2": "In these examples the words are written apart; in running text a final ḥ or m before a vowel takes sandhi."
+      "n3": "Before a vowel the final म् (m) does not change; the course writes the two words apart, म् (m) and a space, as in अधिकम् (adhikam) (Whitney 213 a). Where a word-final vowel sandhi is shown, the same lesson writes the joined sound with the semivowel or the long vowel and leaves the space."
+    bases:
+      "अधिकः": "more"
+    examples:
+      "अधिका देवाः":
+        native: "More gods."
+        bases:
+          "अधिका": "more"
+          "देवाः": "gods"
+      "अधिकम् अन्नम्":
+        native: "More food."
+        bases:
+          "अधिकम्": "more"
+          "अन्नम्": "food"
+  "sa-1505":
+    native: "Less; short of; lacking."
+    notes:
+      "n1": "An adjective: it agrees with its noun in gender, number and case, so the form here is the masculine nominative singular."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+      "n3": "Before a consonant the final म् (m) is written ं (ṃ), as in न्यूनं (nyūnaṃ) from न्यूनम् (nyūnam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+      "n4": "A final अः (aḥ) before a voiced consonant becomes ओ (o), as in कुम्भो (kumbho) from कुम्भः (kumbhaḥ) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114)."
+    bases:
+      "न्यूनः": "less"
+    examples:
+      "न्यूनं जलम्":
+        native: "Less water."
+        bases:
+          "न्यूनं": "less"
+          "जलम्": "water"
+      "कुम्भो न्यूनः":
+        native: "The pot is short."
+        bases:
+          "कुम्भो": "pot"
+          "न्यूनः": "short of"
+  "sa-1506":
+    native: "Full; complete."
+    notes:
+      "n1": "An adjective: it agrees with its noun in gender, number and case, so the form here is the masculine nominative singular."
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in जलं (jalaṃ) from जलम् (jalam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    bases:
+      "पूर्णः": "full"
+    examples:
+      "पूर्णः कुम्भः":
+        native: "A full pot."
+        bases:
+          "पूर्णः": "full"
+          "कुम्भः": "pot"
+      "जलं पूर्णम्":
+        native: "The water is full."
+        bases:
+          "जलं": "water"
+          "पूर्णम्": "full"
+  "sa-1507":
+    native: "Empty, of a container."
+    notes:
+      "n1": "An adjective: it agrees with its noun in gender, number and case, so the form here is the masculine nominative singular."
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in पात्रं (pātraṃ) from पात्रम् (pātram) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    bases:
+      "रिक्तः": "empty, of a container"
+    examples:
+      "रिक्तः कुम्भः":
+        native: "An empty pot."
+        bases:
+          "रिक्तः": "empty"
+          "कुम्भः": "pot"
+      "पात्रं रिक्तम्":
+        native: "The vessel is empty."
+        bases:
+          "पात्रं": "vessel"
+          "रिक्तम्": "empty"
+  "sa-1508":
+    native: "Empty; void; zero."
+    notes:
+      "n1": "As a neuter noun, शून्यम् (śūnyam) is the number zero."
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in पात्रं (pātraṃ) from पात्रम् (pātram) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    bases:
+      "शून्यः": "empty"
+    examples:
+      "शून्यं गृहम्":
+        native: "An empty house."
+        bases:
+          "शून्यं": "empty"
+          "गृहम्": "house"
+      "पात्रं शून्यम्":
+        native: "The vessel is empty."
+        bases:
+          "पात्रं": "vessel"
+          "शून्यम्": "empty"
+  "sa-1509":
+    native: "Some; a few; several."
+    notes:
+      "n1": "An adjective: it agrees with its noun in gender, number and case, so the form here is the masculine nominative singular."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+    bases:
+      "कतिपयः": "some"
+    examples:
+      "कतिपया देवाः":
+        native: "Some gods."
+        bases:
+          "कतिपया": "some"
+          "देवाः": "gods"
+      "कतिपयानि पुस्तकानि":
+        native: "Some books."
+        bases:
+          "कतिपयानि": "some"
+          "पुस्तकानि": "books"
+  "sa-1511":
+    native: "Again; more; further."
+    notes:
+      "n1": "Its final ḥ changes before a vowel (भूयोऽस्ति (bhūyo'sti), bhūyo'sti), so the examples put a consonant-initial word after it."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o) (Whitney 175 a; Aṣṭādhyāyī 6.1.113, अतो रोरप्लुतादप्लुते (ato roraplutādaplute), and 6.1.114, हशि च (haśi ca))."
+    bases:
+      "भूयः": "again"
+    examples:
+      "भूयो जलम्":
+        native: "More water."
+        bases:
+          "भूयो": "more"
+          "जलम्": "water"
+      "भूयो देवाः":
+        native: "The gods again."
+        bases:
+          "भूयो": "again"
+          "देवाः": "gods"
+  "sa-1513":
+    native: "Whole; entire."
+    notes:
+      "n1": "An adjective: it agrees with its noun in gender, number and case, so the form here is the masculine nominative singular."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o) (Whitney 175 a; Aṣṭādhyāyī 6.1.113, अतो रोरप्लुतादप्लुते (ato roraplutādaplute), and 6.1.114, हशि च (haśi ca))."
+      "n4": "Before a consonant the final म् (m) is written ं (ṃ), as in सकलं (sakalaṃ) from सकलम् (sakalam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    bases:
+      "सकलः": "whole"
+    examples:
+      "सकलं जलम्":
+        native: "All the water."
+        bases:
+          "सकलं": "whole"
+          "जलम्": "water"
+      "सकलो देशः":
+        native: "The whole country."
+        bases:
+          "सकलो": "whole"
+          "देशः": "country"
+  "sa-1620":
+    native: "Enough; sufficient."
+    notes:
+      "n1": "Enough; sufficient. Wiktionary lists the adjective पर्याप्त (paryāpta), which also means full or abundant; the ending follows the noun it describes."
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in पर्याप्तं (paryāptaṃ) from पर्याप्तम् (paryāptam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    bases:
+      "पर्याप्तः": "enough (stem paryāpta)"
+    examples:
+      "पर्याप्तं जलम्":
+        native: "Enough water."
+        bases:
+          "पर्याप्तं": "enough"
+          "जलम्": "water"
+      "पर्याप्तः कुम्भः":
+        native: "One jar is enough."
+        bases:
+          "पर्याप्तः": "enough"
+          "कुम्भः": "jar"
+  "sa-1621":
+    native: "Much; many; plentiful."
+    notes:
+      "n1": "Much, many or plentiful. Wiktionary lists the adjective भूरि (bhūri); in the neuter nominative it keeps this form, as in भूरि (bhūri) जलम् (jalam), much water."
+    examples:
+      "भूरि जलम्":
+        native: "Much water."
+        bases:
+          "भूरि": "much"
+          "जलम्": "water"
+      "भूरि पुस्तकम्":
+        native: "Many books."
+        bases:
+          "भूरि": "many"
+          "पुस्तकम्": "book"

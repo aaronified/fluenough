@@ -1,0 +1,721 @@
+schema: 1
+id: "hi-grammar-verb-future"
+part: "core"
+kind: "rules"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["hi-0240", "hi-0273", "hi-0290", "hi-0460"]
+  slots: ["main-m", "main-f", "tum-m", "tum-f", "vah-m", "vah-f", "ham-m", "ham-f"]
+  rows:
+    - word: "hi-0441"
+      forms: { "main-m": "उठूँगा", "main-f": "उठूँगी", "tum-m": "उठोगे", "tum-f": "उठोगी", "vah-m": "उठेगा", "vah-f": "उठेगी", "ham-m": "उठेंगे", "ham-f": "उठेंगी" }
+      readings: { "main-m": "uṭhūm̐gā", "main-f": "uṭhūm̐gī", "tum-m": "uṭhōgē", "tum-f": "uṭhōgī", "vah-m": "uṭhēgā", "vah-f": "uṭhēgī", "ham-m": "uṭhēṅgē", "ham-f": "uṭhēṅgī" }
+    - word: "hi-0442"
+      forms: { "main-m": "नहाऊँगा", "main-f": "नहाऊँगी", "tum-m": "नहाओगे", "tum-f": "नहाओगी", "vah-m": "नहाएगा", "vah-f": "नहाएगी", "ham-m": "नहाएँगे", "ham-f": "नहाएँगी" }
+      readings: { "main-m": "nahāūm̐gā", "main-f": "nahāūm̐gī", "tum-m": "nahāōgē", "tum-f": "nahāōgī", "vah-m": "nahāēgā", "vah-f": "nahāēgī", "ham-m": "nahāēm̐gē", "ham-f": "nahāēm̐gī" }
+    - word: "hi-0450"
+      forms: { "main-m": "सोऊँगा", "main-f": "सोऊँगी", "tum-m": "सोओगे", "tum-f": "सोओगी", "vah-m": "सोएगा", "vah-f": "सोएगी", "ham-m": "सोएँगे", "ham-f": "सोएँगी" }
+      readings: { "main-m": "sōūm̐gā", "main-f": "sōūm̐gī", "tum-m": "sōōgē", "tum-f": "sōōgī", "vah-m": "sōēgā", "vah-f": "sōēgī", "ham-m": "sōēm̐gē", "ham-f": "sōēm̐gī" }
+    - word: "hi-0513"
+      forms: { "main-m": "सकूँगा", "main-f": "सकूँगी", "tum-m": "सकोगे", "tum-f": "सकोगी", "vah-m": "सकेगा", "vah-f": "सकेगी", "ham-m": "सकेंगे", "ham-f": "सकेंगी" }
+      readings: { "main-m": "sakūm̐gā", "main-f": "sakūm̐gī", "tum-m": "sakōgē", "tum-f": "sakōgī", "vah-m": "sakēgā", "vah-f": "sakēgī", "ham-m": "sakēṅgē", "ham-f": "sakēṅgī" }
+    - word: "hi-0602"
+      forms: { "main-m": "पिऊँगा", "main-f": "पिऊँगी", "tum-m": "पियोगे", "tum-f": "पियोगी", "vah-m": "पिएगा", "vah-f": "पिएगी", "ham-m": "पिएँगे", "ham-f": "पिएँगी" }
+      readings: { "main-m": "piūm̐gā", "main-f": "piūm̐gī", "tum-m": "piyōgē", "tum-f": "piyōgī", "vah-m": "piēgā", "vah-f": "piēgī", "ham-m": "piēm̐gē", "ham-f": "piēm̐gī" }
+    - word: "hi-0623"
+      forms: { "main-m": "हंसूँगा", "main-f": "हंसूँगी", "tum-m": "हंसोगे", "tum-f": "हंसोगी", "vah-m": "हंसेगा", "vah-f": "हंसेगी", "ham-m": "हंसेंगे", "ham-f": "हंसेंगी" }
+      readings: { "main-m": "haṁsūm̐gā", "main-f": "haṁsūm̐gī", "tum-m": "haṁsōgē", "tum-f": "haṁsōgī", "vah-m": "haṁsēgā", "vah-f": "haṁsēgī", "ham-m": "haṁsēṅgē", "ham-f": "haṁsēṅgī" }
+    - word: "hi-0777"
+      forms: { "main-m": "जाऊँगा", "main-f": "जाऊँगी", "tum-m": "जाओगे", "tum-f": "जाओगी", "vah-m": "जाएगा", "vah-f": "जाएगी", "ham-m": "जाएँगे", "ham-f": "जाएँगी" }
+      readings: { "main-m": "jāūm̐gā", "main-f": "jāūm̐gī", "tum-m": "jāōgē", "tum-f": "jāōgī", "vah-m": "jāēgā", "vah-f": "jāēgī", "ham-m": "jāēm̐gē", "ham-f": "jāēm̐gī" }
+    - word: "hi-0778"
+      forms: { "main-m": "आऊँगा", "main-f": "आऊँगी", "tum-m": "आओगे", "tum-f": "आओगी", "vah-m": "आएगा", "vah-f": "आएगी", "ham-m": "आएँगे", "ham-f": "आएँगी" }
+      readings: { "main-m": "āūm̐gā", "main-f": "āūm̐gī", "tum-m": "āōgē", "tum-f": "āōgī", "vah-m": "āēgā", "vah-f": "āēgī", "ham-m": "āēm̐gē", "ham-f": "āēm̐gī" }
+    - word: "hi-0779"
+      forms: { "main-m": "करूँगा", "main-f": "करूँगी", "tum-m": "करोगे", "tum-f": "करोगी", "vah-m": "करेगा", "vah-f": "करेगी", "ham-m": "करेंगे", "ham-f": "करेंगी" }
+      readings: { "main-m": "karūm̐gā", "main-f": "karūm̐gī", "tum-m": "karōgē", "tum-f": "karōgī", "vah-m": "karēgā", "vah-f": "karēgī", "ham-m": "karēṅgē", "ham-f": "karēṅgī" }
+    - word: "hi-0780"
+      forms: { "main-m": "हूँगा", "main-f": "हूँगी", "tum-m": "होगे", "tum-f": "होगी", "vah-m": "होगा", "vah-f": "होगी", "ham-m": "होंगे", "ham-f": "होंगी" }
+      readings: { "main-m": "hūm̐gā", "main-f": "hūm̐gī", "tum-m": "hōgē", "tum-f": "hōgī", "vah-m": "hōgā", "vah-f": "hōgī", "ham-m": "hōṅgē", "ham-f": "hōṅgī" }
+    - word: "hi-0781"
+      forms: { "main-m": "लिखूँगा", "main-f": "लिखूँगी", "tum-m": "लिखोगे", "tum-f": "लिखोगी", "vah-m": "लिखेगा", "vah-f": "लिखेगी", "ham-m": "लिखेंगे", "ham-f": "लिखेंगी" }
+      readings: { "main-m": "likhūm̐gā", "main-f": "likhūm̐gī", "tum-m": "likhōgē", "tum-f": "likhōgī", "vah-m": "likhēgā", "vah-f": "likhēgī", "ham-m": "likhēṅgē", "ham-f": "likhēṅgī" }
+    - word: "hi-0782"
+      forms: { "main-m": "बोलूँगा", "main-f": "बोलूँगी", "tum-m": "बोलोगे", "tum-f": "बोलोगी", "vah-m": "बोलेगा", "vah-f": "बोलेगी", "ham-m": "बोलेंगे", "ham-f": "बोलेंगी" }
+      readings: { "main-m": "bōlūm̐gā", "main-f": "bōlūm̐gī", "tum-m": "bōlōgē", "tum-f": "bōlōgī", "vah-m": "bōlēgā", "vah-f": "bōlēgī", "ham-m": "bōlēṅgē", "ham-f": "bōlēṅgī" }
+    - word: "hi-0783"
+      forms: { "main-m": "सुनूँगा", "main-f": "सुनूँगी", "tum-m": "सुनोगे", "tum-f": "सुनोगी", "vah-m": "सुनेगा", "vah-f": "सुनेगी", "ham-m": "सुनेंगे", "ham-f": "सुनेंगी" }
+      readings: { "main-m": "sunūm̐gā", "main-f": "sunūm̐gī", "tum-m": "sunōgē", "tum-f": "sunōgī", "vah-m": "sunēgā", "vah-f": "sunēgī", "ham-m": "sunēṅgē", "ham-f": "sunēṅgī" }
+    - word: "hi-0784"
+      forms: { "main-m": "देखूँगा", "main-f": "देखूँगी", "tum-m": "देखोगे", "tum-f": "देखोगी", "vah-m": "देखेगा", "vah-f": "देखेगी", "ham-m": "देखेंगे", "ham-f": "देखेंगी" }
+      readings: { "main-m": "dēkhūm̐gā", "main-f": "dēkhūm̐gī", "tum-m": "dēkhōgē", "tum-f": "dēkhōgī", "vah-m": "dēkhēgā", "vah-f": "dēkhēgī", "ham-m": "dēkhēṅgē", "ham-f": "dēkhēṅgī" }
+    - word: "hi-0785"
+      forms: { "main-m": "दूँगा", "main-f": "दूँगी", "tum-m": "दोगे", "tum-f": "दोगी", "vah-m": "देगा", "vah-f": "देगी", "ham-m": "देंगे", "ham-f": "देंगी" }
+      readings: { "main-m": "dūm̐gā", "main-f": "dūm̐gī", "tum-m": "dōgē", "tum-f": "dōgī", "vah-m": "dēgā", "vah-f": "dēgī", "ham-m": "dēṅgē", "ham-f": "dēṅgī" }
+    - word: "hi-0786"
+      forms: { "main-m": "लूँगा", "main-f": "लूँगी", "tum-m": "लोगे", "tum-f": "लोगी", "vah-m": "लेगा", "vah-f": "लेगी", "ham-m": "लेंगे", "ham-f": "लेंगी" }
+      readings: { "main-m": "lūm̐gā", "main-f": "lūm̐gī", "tum-m": "lōgē", "tum-f": "lōgī", "vah-m": "lēgā", "vah-f": "lēgī", "ham-m": "lēṅgē", "ham-f": "lēṅgī" }
+    - word: "hi-0787"
+      forms: { "main-m": "खेलूँगा", "main-f": "खेलूँगी", "tum-m": "खेलोगे", "tum-f": "खेलोगी", "vah-m": "खेलेगा", "vah-f": "खेलेगी", "ham-m": "खेलेंगे", "ham-f": "खेलेंगी" }
+      readings: { "main-m": "khēlūm̐gā", "main-f": "khēlūm̐gī", "tum-m": "khēlōgē", "tum-f": "khēlōgī", "vah-m": "khēlēgā", "vah-f": "khēlēgī", "ham-m": "khēlēṅgē", "ham-f": "khēlēṅgī" }
+    - word: "hi-0788"
+      forms: { "main-m": "बैठूँगा", "main-f": "बैठूँगी", "tum-m": "बैठोगे", "tum-f": "बैठोगी", "vah-m": "बैठेगा", "vah-f": "बैठेगी", "ham-m": "बैठेंगे", "ham-f": "बैठेंगी" }
+      readings: { "main-m": "baiṭhūm̐gā", "main-f": "baiṭhūm̐gī", "tum-m": "baiṭhōgē", "tum-f": "baiṭhōgī", "vah-m": "baiṭhēgā", "vah-f": "baiṭhēgī", "ham-m": "baiṭhēṅgē", "ham-f": "baiṭhēṅgī" }
+    - word: "hi-0789"
+      forms: { "main-m": "समझूँगा", "main-f": "समझूँगी", "tum-m": "समझोगे", "tum-f": "समझोगी", "vah-m": "समझेगा", "vah-f": "समझेगी", "ham-m": "समझेंगे", "ham-f": "समझेंगी" }
+      readings: { "main-m": "samjhūm̐gā", "main-f": "samjhūm̐gī", "tum-m": "samjhōgē", "tum-f": "samjhōgī", "vah-m": "samjhēgā", "vah-f": "samjhēgī", "ham-m": "samjhēṅgē", "ham-f": "samjhēṅgī" }
+    - word: "hi-0790"
+      forms: { "main-m": "जानूँगा", "main-f": "जानूँगी", "tum-m": "जानोगे", "tum-f": "जानोगी", "vah-m": "जानेगा", "vah-f": "जानेगी", "ham-m": "जानेंगे", "ham-f": "जानेंगी" }
+      readings: { "main-m": "jānūm̐gā", "main-f": "jānūm̐gī", "tum-m": "jānōgē", "tum-f": "jānōgī", "vah-m": "jānēgā", "vah-f": "jānēgī", "ham-m": "jānēṅgē", "ham-f": "jānēṅgī" }
+    - word: "hi-0791"
+      forms: { "main-m": "रहूँगा", "main-f": "रहूँगी", "tum-m": "रहोगे", "tum-f": "रहोगी", "vah-m": "रहेगा", "vah-f": "रहेगी", "ham-m": "रहेंगे", "ham-f": "रहेंगी" }
+      readings: { "main-m": "rahūm̐gā", "main-f": "rahūm̐gī", "tum-m": "rahōgē", "tum-f": "rahōgī", "vah-m": "rahēgā", "vah-f": "rahēgī", "ham-m": "rahēṅgē", "ham-f": "rahēṅgī" }
+    - word: "hi-0792"
+      forms: { "main-m": "चाहूँगा", "main-f": "चाहूँगी", "tum-m": "चाहोगे", "tum-f": "चाहोगी", "vah-m": "चाहेगा", "vah-f": "चाहेगी", "ham-m": "चाहेंगे", "ham-f": "चाहेंगी" }
+      readings: { "main-m": "cāhūm̐gā", "main-f": "cāhūm̐gī", "tum-m": "cāhōgē", "tum-f": "cāhōgī", "vah-m": "cāhēgā", "vah-f": "cāhēgī", "ham-m": "cāhēṅgē", "ham-f": "cāhēṅgī" }
+    - word: "hi-0793"
+      forms: { "main-m": "मिलूँगा", "main-f": "मिलूँगी", "tum-m": "मिलोगे", "tum-f": "मिलोगी", "vah-m": "मिलेगा", "vah-f": "मिलेगी", "ham-m": "मिलेंगे", "ham-f": "मिलेंगी" }
+      readings: { "main-m": "milūm̐gā", "main-f": "milūm̐gī", "tum-m": "milōgē", "tum-f": "milōgī", "vah-m": "milēgā", "vah-f": "milēgī", "ham-m": "milēṅgē", "ham-f": "milēṅgī" }
+    - word: "hi-0794"
+      forms: { "main-m": "ख़रीदूँगा", "main-f": "ख़रीदूँगी", "tum-m": "ख़रीदोगे", "tum-f": "ख़रीदोगी", "vah-m": "ख़रीदेगा", "vah-f": "ख़रीदेगी", "ham-m": "ख़रीदेंगे", "ham-f": "ख़रीदेंगी" }
+      readings: { "main-m": "k͟harīdūm̐gā", "main-f": "k͟harīdūm̐gī", "tum-m": "k͟harīdōgē", "tum-f": "k͟harīdōgī", "vah-m": "k͟harīdēgā", "vah-f": "k͟harīdēgī", "ham-m": "k͟harīdēṅgē", "ham-f": "k͟harīdēṅgī" }
+    - word: "hi-0795"
+      forms: { "main-m": "बेचूँगा", "main-f": "बेचूँगी", "tum-m": "बेचोगे", "tum-f": "बेचोगी", "vah-m": "बेचेगा", "vah-f": "बेचेगी", "ham-m": "बेचेंगे", "ham-f": "बेचेंगी" }
+      readings: { "main-m": "bēcūm̐gā", "main-f": "bēcūm̐gī", "tum-m": "bēcōgē", "tum-f": "bēcōgī", "vah-m": "bēcēgā", "vah-f": "bēcēgī", "ham-m": "bēcēṅgē", "ham-f": "bēcēṅgī" }
+    - word: "hi-0796"
+      forms: { "main-m": "बताऊँगा", "main-f": "बताऊँगी", "tum-m": "बताओगे", "tum-f": "बताओगी", "vah-m": "बताएगा", "vah-f": "बताएगी", "ham-m": "बताएँगे", "ham-f": "बताएँगी" }
+      readings: { "main-m": "batāūm̐gā", "main-f": "batāūm̐gī", "tum-m": "batāōgē", "tum-f": "batāōgī", "vah-m": "batāēgā", "vah-f": "batāēgī", "ham-m": "batāēm̐gē", "ham-f": "batāēm̐gī" }
+    - word: "hi-0797"
+      forms: { "main-m": "भेजूँगा", "main-f": "भेजूँगी", "tum-m": "भेजोगे", "tum-f": "भेजोगी", "vah-m": "भेजेगा", "vah-f": "भेजेगी", "ham-m": "भेजेंगे", "ham-f": "भेजेंगी" }
+      readings: { "main-m": "bhējūm̐gā", "main-f": "bhējūm̐gī", "tum-m": "bhējōgē", "tum-f": "bhējōgī", "vah-m": "bhējēgā", "vah-f": "bhējēgī", "ham-m": "bhējēṅgē", "ham-f": "bhējēṅgī" }
+    - word: "hi-0798"
+      forms: { "main-m": "धोऊँगा", "main-f": "धोऊँगी", "tum-m": "धोओगे", "tum-f": "धोओगी", "vah-m": "धोएगा", "vah-f": "धोएगी", "ham-m": "धोएँगे", "ham-f": "धोएँगी" }
+      readings: { "main-m": "dhōūm̐gā", "main-f": "dhōūm̐gī", "tum-m": "dhōōgē", "tum-f": "dhōōgī", "vah-m": "dhōēgā", "vah-f": "dhōēgī", "ham-m": "dhōēm̐gē", "ham-f": "dhōēm̐gī" }
+    - word: "hi-0799"
+      forms: { "main-m": "पूछूँगा", "main-f": "पूछूँगी", "tum-m": "पूछोगे", "tum-f": "पूछोगी", "vah-m": "पूछेगा", "vah-f": "पूछेगी", "ham-m": "पूछेंगे", "ham-f": "पूछेंगी" }
+      readings: { "main-m": "pūchūm̐gā", "main-f": "pūchūm̐gī", "tum-m": "pūchōgē", "tum-f": "pūchōgī", "vah-m": "pūchēgā", "vah-f": "pūchēgī", "ham-m": "pūchēṅgē", "ham-f": "pūchēṅgī" }
+    - word: "hi-0800"
+      forms: { "main-m": "कहूँगा", "main-f": "कहूँगी", "tum-m": "कहोगे", "tum-f": "कहोगी", "vah-m": "कहेगा", "vah-f": "कहेगी", "ham-m": "कहेंगे", "ham-f": "कहेंगी" }
+      readings: { "main-m": "kahūm̐gā", "main-f": "kahūm̐gī", "tum-m": "kahōgē", "tum-f": "kahōgī", "vah-m": "kahēgā", "vah-f": "kahēgī", "ham-m": "kahēṅgē", "ham-f": "kahēṅgī" }
+    - word: "hi-0801"
+      forms: { "main-m": "चलूँगा", "main-f": "चलूँगी", "tum-m": "चलोगे", "tum-f": "चलोगी", "vah-m": "चलेगा", "vah-f": "चलेगी", "ham-m": "चलेंगे", "ham-f": "चलेंगी" }
+      readings: { "main-m": "calūm̐gā", "main-f": "calūm̐gī", "tum-m": "calōgē", "tum-f": "calōgī", "vah-m": "calēgā", "vah-f": "calēgī", "ham-m": "calēṅgē", "ham-f": "calēṅgī" }
+    - word: "hi-0937"
+      forms: { "main-m": "खोलूँगा", "main-f": "खोलूँगी", "tum-m": "खोलोगे", "tum-f": "खोलोगी", "vah-m": "खोलेगा", "vah-f": "खोलेगी", "ham-m": "खोलेंगे", "ham-f": "खोलेंगी" }
+      readings: { "main-m": "khōlūm̐gā", "main-f": "khōlūm̐gī", "tum-m": "khōlōgē", "tum-f": "khōlōgī", "vah-m": "khōlēgā", "vah-f": "khōlēgī", "ham-m": "khōlēṅgē", "ham-f": "khōlēṅgī" }
+    - word: "hi-0938"
+      forms: { "main-m": "पकाऊँगा", "main-f": "पकाऊँगी", "tum-m": "पकाओगे", "tum-f": "पकाओगी", "vah-m": "पकाएगा", "vah-f": "पकाएगी", "ham-m": "पकाएँगे", "ham-f": "पकाएँगी" }
+      readings: { "main-m": "pakāūm̐gā", "main-f": "pakāūm̐gī", "tum-m": "pakāōgē", "tum-f": "pakāōgī", "vah-m": "pakāēgā", "vah-f": "pakāēgī", "ham-m": "pakāēm̐gē", "ham-f": "pakāēm̐gī" }
+    - word: "hi-0939"
+      forms: { "main-m": "काटूँगा", "main-f": "काटूँगी", "tum-m": "काटोगे", "tum-f": "काटोगी", "vah-m": "काटेगा", "vah-f": "काटेगी", "ham-m": "काटेंगे", "ham-f": "काटेंगी" }
+      readings: { "main-m": "kāṭūm̐gā", "main-f": "kāṭūm̐gī", "tum-m": "kāṭōgē", "tum-f": "kāṭōgī", "vah-m": "kāṭēgā", "vah-f": "kāṭēgī", "ham-m": "kāṭēṅgē", "ham-f": "kāṭēṅgī" }
+    - word: "hi-0940"
+      forms: { "main-m": "उबालूँगा", "main-f": "उबालूँगी", "tum-m": "उबालोगे", "tum-f": "उबालोगी", "vah-m": "उबालेगा", "vah-f": "उबालेगी", "ham-m": "उबालेंगे", "ham-f": "उबालेंगी" }
+      readings: { "main-m": "ubālūm̐gā", "main-f": "ubālūm̐gī", "tum-m": "ubālōgē", "tum-f": "ubālōgī", "vah-m": "ubālēgā", "vah-f": "ubālēgī", "ham-m": "ubālēṅgē", "ham-f": "ubālēṅgī" }
+    - word: "hi-0941"
+      forms: { "main-m": "डालूँगा", "main-f": "डालूँगी", "tum-m": "डालोगे", "tum-f": "डालोगी", "vah-m": "डालेगा", "vah-f": "डालेगी", "ham-m": "डालेंगे", "ham-f": "डालेंगी" }
+      readings: { "main-m": "ḍālūm̐gā", "main-f": "ḍālūm̐gī", "tum-m": "ḍālōgē", "tum-f": "ḍālōgī", "vah-m": "ḍālēgā", "vah-f": "ḍālēgī", "ham-m": "ḍālēṅgē", "ham-f": "ḍālēṅgī" }
+    - word: "hi-0942"
+      forms: { "main-m": "छानूँगा", "main-f": "छानूँगी", "tum-m": "छानोगे", "tum-f": "छानोगी", "vah-m": "छानेगा", "vah-f": "छानेगी", "ham-m": "छानेंगे", "ham-f": "छानेंगी" }
+      readings: { "main-m": "chānūm̐gā", "main-f": "chānūm̐gī", "tum-m": "chānōgē", "tum-f": "chānōgī", "vah-m": "chānēgā", "vah-f": "chānēgī", "ham-m": "chānēṅgē", "ham-f": "chānēṅgī" }
+    - word: "hi-0943"
+      forms: { "main-m": "परोसूँगा", "main-f": "परोसूँगी", "tum-m": "परोसोगे", "tum-f": "परोसोगी", "vah-m": "परोसेगा", "vah-f": "परोसेगी", "ham-m": "परोसेंगे", "ham-f": "परोसेंगी" }
+      readings: { "main-m": "parōsūm̐gā", "main-f": "parōsūm̐gī", "tum-m": "parōsōgē", "tum-f": "parōsōgī", "vah-m": "parōsēgā", "vah-f": "parōsēgī", "ham-m": "parōsēṅgē", "ham-f": "parōsēṅgī" }
+    - word: "hi-0944"
+      forms: { "main-m": "जागूँगा", "main-f": "जागूँगी", "tum-m": "जागोगे", "tum-f": "जागोगी", "vah-m": "जागेगा", "vah-f": "जागेगी", "ham-m": "जागेंगे", "ham-f": "जागेंगी" }
+      readings: { "main-m": "jāgūm̐gā", "main-f": "jāgūm̐gī", "tum-m": "jāgōgē", "tum-f": "jāgōgī", "vah-m": "jāgēgā", "vah-f": "jāgēgī", "ham-m": "jāgēṅgē", "ham-f": "jāgēṅgī" }
+    - word: "hi-0945"
+      forms: { "main-m": "भूलूँगा", "main-f": "भूलूँगी", "tum-m": "भूलोगे", "tum-f": "भूलोगी", "vah-m": "भूलेगा", "vah-f": "भूलेगी", "ham-m": "भूलेंगे", "ham-f": "भूलेंगी" }
+      readings: { "main-m": "bhūlūm̐gā", "main-f": "bhūlūm̐gī", "tum-m": "bhūlōgē", "tum-f": "bhūlōgī", "vah-m": "bhūlēgā", "vah-f": "bhūlēgī", "ham-m": "bhūlēṅgē", "ham-f": "bhūlēṅgī" }
+    - word: "hi-0946"
+      forms: { "main-m": "दौड़ूँगा", "main-f": "दौड़ूँगी", "tum-m": "दौड़ोगे", "tum-f": "दौड़ोगी", "vah-m": "दौड़ेगा", "vah-f": "दौड़ेगी", "ham-m": "दौड़ेंगे", "ham-f": "दौड़ेंगी" }
+      readings: { "main-m": "dauṛūm̐gā", "main-f": "dauṛūm̐gī", "tum-m": "dauṛōgē", "tum-f": "dauṛōgī", "vah-m": "dauṛēgā", "vah-f": "dauṛēgī", "ham-m": "dauṛēṅgē", "ham-f": "dauṛēṅgī" }
+    - word: "hi-0947"
+      forms: { "main-m": "गिरूँगा", "main-f": "गिरूँगी", "tum-m": "गिरोगे", "tum-f": "गिरोगी", "vah-m": "गिरेगा", "vah-f": "गिरेगी", "ham-m": "गिरेंगे", "ham-f": "गिरेंगी" }
+      readings: { "main-m": "girūm̐gā", "main-f": "girūm̐gī", "tum-m": "girōgē", "tum-f": "girōgī", "vah-m": "girēgā", "vah-f": "girēgī", "ham-m": "girēṅgē", "ham-f": "girēṅgī" }
+    - word: "hi-0948"
+      forms: { "main-m": "लौटूँगा", "main-f": "लौटूँगी", "tum-m": "लौटोगे", "tum-f": "लौटोगी", "vah-m": "लौटेगा", "vah-f": "लौटेगी", "ham-m": "लौटेंगे", "ham-f": "लौटेंगी" }
+      readings: { "main-m": "lauṭūm̐gā", "main-f": "lauṭūm̐gī", "tum-m": "lauṭōgē", "tum-f": "lauṭōgī", "vah-m": "lauṭēgā", "vah-f": "lauṭēgī", "ham-m": "lauṭēṅgē", "ham-f": "lauṭēṅgī" }
+    - word: "hi-0949"
+      forms: { "main-m": "लाऊँगा", "main-f": "लाऊँगी", "tum-m": "लाओगे", "tum-f": "लाओगी", "vah-m": "लाएगा", "vah-f": "लाएगी", "ham-m": "लाएँगे", "ham-f": "लाएँगी" }
+      readings: { "main-m": "lāūm̐gā", "main-f": "lāūm̐gī", "tum-m": "lāōgē", "tum-f": "lāōgī", "vah-m": "lāēgā", "vah-f": "lāēgī", "ham-m": "lāēm̐gē", "ham-f": "lāēm̐gī" }
+    - word: "hi-0950"
+      forms: { "main-m": "रखूँगा", "main-f": "रखूँगी", "tum-m": "रखोगे", "tum-f": "रखोगी", "vah-m": "रखेगा", "vah-f": "रखेगी", "ham-m": "रखेंगे", "ham-f": "रखेंगी" }
+      readings: { "main-m": "rakhūm̐gā", "main-f": "rakhūm̐gī", "tum-m": "rakhōgē", "tum-f": "rakhōgī", "vah-m": "rakhēgā", "vah-f": "rakhēgī", "ham-m": "rakhēṅgē", "ham-f": "rakhēṅgī" }
+    - word: "hi-0951"
+      forms: { "main-m": "छोड़ूँगा", "main-f": "छोड़ूँगी", "tum-m": "छोड़ोगे", "tum-f": "छोड़ोगी", "vah-m": "छोड़ेगा", "vah-f": "छोड़ेगी", "ham-m": "छोड़ेंगे", "ham-f": "छोड़ेंगी" }
+      readings: { "main-m": "chōṛūm̐gā", "main-f": "chōṛūm̐gī", "tum-m": "chōṛōgē", "tum-f": "chōṛōgī", "vah-m": "chōṛēgā", "vah-f": "chōṛēgī", "ham-m": "chōṛēṅgē", "ham-f": "chōṛēṅgī" }
+    - word: "hi-0952"
+      forms: { "main-m": "सीखूँगा", "main-f": "सीखूँगी", "tum-m": "सीखोगे", "tum-f": "सीखोगी", "vah-m": "सीखेगा", "vah-f": "सीखेगी", "ham-m": "सीखेंगे", "ham-f": "सीखेंगी" }
+      readings: { "main-m": "sīkhūm̐gā", "main-f": "sīkhūm̐gī", "tum-m": "sīkhōgē", "tum-f": "sīkhōgī", "vah-m": "sīkhēgā", "vah-f": "sīkhēgī", "ham-m": "sīkhēṅgē", "ham-f": "sīkhēṅgī" }
+    - word: "hi-0953"
+      forms: { "main-m": "सोचूँगा", "main-f": "सोचूँगी", "tum-m": "सोचोगे", "tum-f": "सोचोगी", "vah-m": "सोचेगा", "vah-f": "सोचेगी", "ham-m": "सोचेंगे", "ham-f": "सोचेंगी" }
+      readings: { "main-m": "sōcūm̐gā", "main-f": "sōcūm̐gī", "tum-m": "sōcōgē", "tum-f": "sōcōgī", "vah-m": "sōcēgā", "vah-f": "sōcēgī", "ham-m": "sōcēṅgē", "ham-f": "sōcēṅgī" }
+    - word: "hi-0954"
+      forms: { "main-m": "सिखाऊँगा", "main-f": "सिखाऊँगी", "tum-m": "सिखाओगे", "tum-f": "सिखाओगी", "vah-m": "सिखाएगा", "vah-f": "सिखाएगी", "ham-m": "सिखाएँगे", "ham-f": "सिखाएँगी" }
+      readings: { "main-m": "sikhāūm̐gā", "main-f": "sikhāūm̐gī", "tum-m": "sikhāōgē", "tum-f": "sikhāōgī", "vah-m": "sikhāēgā", "vah-f": "sikhāēgī", "ham-m": "sikhāēm̐gē", "ham-f": "sikhāēm̐gī" }
+    - word: "hi-0955"
+      forms: { "main-m": "ढूँढूँगा", "main-f": "ढूँढूँगी", "tum-m": "ढूँढोगे", "tum-f": "ढूँढोगी", "vah-m": "ढूँढेगा", "vah-f": "ढूँढेगी", "ham-m": "ढूँढेंगे", "ham-f": "ढूँढेंगी" }
+      readings: { "main-m": "ḍhūm̐ḍhūm̐gā", "main-f": "ḍhūm̐ḍhūm̐gī", "tum-m": "ḍhūm̐ḍhōgē", "tum-f": "ḍhūm̐ḍhōgī", "vah-m": "ḍhūm̐ḍhēgā", "vah-f": "ḍhūm̐ḍhēgī", "ham-m": "ḍhūm̐ḍhēṅgē", "ham-f": "ḍhūm̐ḍhēṅgī" }
+    - word: "hi-0956"
+      forms: { "main-m": "जीतूँगा", "main-f": "जीतूँगी", "tum-m": "जीतोगे", "tum-f": "जीतोगी", "vah-m": "जीतेगा", "vah-f": "जीतेगी", "ham-m": "जीतेंगे", "ham-f": "जीतेंगी" }
+      readings: { "main-m": "jītūm̐gā", "main-f": "jītūm̐gī", "tum-m": "jītōgē", "tum-f": "jītōgī", "vah-m": "jītēgā", "vah-f": "jītēgī", "ham-m": "jītēṅgē", "ham-f": "jītēṅgī" }
+    - word: "hi-0957"
+      forms: { "main-m": "हारूँगा", "main-f": "हारूँगी", "tum-m": "हारोगे", "tum-f": "हारोगी", "vah-m": "हारेगा", "vah-f": "हारेगी", "ham-m": "हारेंगे", "ham-f": "हारेंगी" }
+      readings: { "main-m": "hārūm̐gā", "main-f": "hārūm̐gī", "tum-m": "hārōgē", "tum-f": "hārōgī", "vah-m": "hārēgā", "vah-f": "hārēgī", "ham-m": "hārēṅgē", "ham-f": "hārēṅgī" }
+    - word: "hi-0958"
+      forms: { "main-m": "कमाऊँगा", "main-f": "कमाऊँगी", "tum-m": "कमाओगे", "tum-f": "कमाओगी", "vah-m": "कमाएगा", "vah-f": "कमाएगी", "ham-m": "कमाएँगे", "ham-f": "कमाएँगी" }
+      readings: { "main-m": "kamāūm̐gā", "main-f": "kamāūm̐gī", "tum-m": "kamāōgē", "tum-f": "kamāōgī", "vah-m": "kamāēgā", "vah-f": "kamāēgī", "ham-m": "kamāēm̐gē", "ham-f": "kamāēm̐gī" }
+    - word: "hi-0959"
+      forms: { "main-m": "हँसूँगा", "main-f": "हँसूँगी", "tum-m": "हँसोगे", "tum-f": "हँसोगी", "vah-m": "हँसेगा", "vah-f": "हँसेगी", "ham-m": "हँसेंगे", "ham-f": "हँसेंगी" }
+      readings: { "main-m": "ham̐sūm̐gā", "main-f": "ham̐sūm̐gī", "tum-m": "ham̐sōgē", "tum-f": "ham̐sōgī", "vah-m": "ham̐sēgā", "vah-f": "ham̐sēgī", "ham-m": "ham̐sēṅgē", "ham-f": "ham̐sēṅgī" }
+    - word: "hi-0960"
+      forms: { "main-m": "रोऊँगा", "main-f": "रोऊँगी", "tum-m": "रोओगे", "tum-f": "रोओगी", "vah-m": "रोएगा", "vah-f": "रोएगी", "ham-m": "रोएँगे", "ham-f": "रोएँगी" }
+      readings: { "main-m": "rōūm̐gā", "main-f": "rōūm̐gī", "tum-m": "rōōgē", "tum-f": "rōōgī", "vah-m": "rōēgā", "vah-f": "rōēgī", "ham-m": "rōēm̐gē", "ham-f": "rōēm̐gī" }
+    - word: "hi-0961"
+      forms: { "main-m": "बुलाऊँगा", "main-f": "बुलाऊँगी", "tum-m": "बुलाओगे", "tum-f": "बुलाओगी", "vah-m": "बुलाएगा", "vah-f": "बुलाएगी", "ham-m": "बुलाएँगे", "ham-f": "बुलाएँगी" }
+      readings: { "main-m": "bulāūm̐gā", "main-f": "bulāūm̐gī", "tum-m": "bulāōgē", "tum-f": "bulāōgī", "vah-m": "bulāēgā", "vah-f": "bulāēgī", "ham-m": "bulāēm̐gē", "ham-f": "bulāēm̐gī" }
+    - word: "hi-1287"
+      forms: { "main-m": "गरजूँगा", "main-f": "गरजूँगी", "tum-m": "गरजोगे", "tum-f": "गरजोगी", "vah-m": "गरजेगा", "vah-f": "गरजेगी", "ham-m": "गरजेंगे", "ham-f": "गरजेंगी" }
+      readings: { "main-m": "garjūm̐gā", "main-f": "garjūm̐gī", "tum-m": "garjōgē", "tum-f": "garjōgī", "vah-m": "garjēgā", "vah-f": "garjēgī", "ham-m": "garjēṅgē", "ham-f": "garjēṅgī" }
+    - word: "hi-1292"
+      forms: { "main-m": "बरसूँगा", "main-f": "बरसूँगी", "tum-m": "बरसोगे", "tum-f": "बरसोगी", "vah-m": "बरसेगा", "vah-f": "बरसेगी", "ham-m": "बरसेंगे", "ham-f": "बरसेंगी" }
+      readings: { "main-m": "barsūm̐gā", "main-f": "barsūm̐gī", "tum-m": "barsōgē", "tum-f": "barsōgī", "vah-m": "barsēgā", "vah-f": "barsēgī", "ham-m": "barsēṅgē", "ham-f": "barsēṅgī" }
+    - word: "hi-1293"
+      forms: { "main-m": "कड़कूँगा", "main-f": "कड़कूँगी", "tum-m": "कड़कोगे", "tum-f": "कड़कोगी", "vah-m": "कड़केगा", "vah-f": "कड़केगी", "ham-m": "कड़केंगे", "ham-f": "कड़केंगी" }
+      readings: { "main-m": "kaṛkūm̐gā", "main-f": "kaṛkūm̐gī", "tum-m": "kaṛkōgē", "tum-f": "kaṛkōgī", "vah-m": "kaṛkēgā", "vah-f": "kaṛkēgī", "ham-m": "kaṛkēṅgē", "ham-f": "kaṛkēṅgī" }
+    - word: "hi-1294"
+      forms: { "main-m": "चमकूँगा", "main-f": "चमकूँगी", "tum-m": "चमकोगे", "tum-f": "चमकोगी", "vah-m": "चमकेगा", "vah-f": "चमकेगी", "ham-m": "चमकेंगे", "ham-f": "चमकेंगी" }
+      readings: { "main-m": "camkūm̐gā", "main-f": "camkūm̐gī", "tum-m": "camkōgē", "tum-f": "camkōgī", "vah-m": "camkēgā", "vah-f": "camkēgī", "ham-m": "camkēṅgē", "ham-f": "camkēṅgī" }
+    - word: "hi-1334"
+      forms: { "main-m": "मनाऊँगा", "main-f": "मनाऊँगी", "tum-m": "मनाओगे", "tum-f": "मनाओगी", "vah-m": "मनाएगा", "vah-f": "मनाएगी", "ham-m": "मनाएँगे", "ham-f": "मनाएँगी" }
+      readings: { "main-m": "manāūm̐gā", "main-f": "manāūm̐gī", "tum-m": "manāōgē", "tum-f": "manāōgī", "vah-m": "manāēgā", "vah-f": "manāēgī", "ham-m": "manāēm̐gē", "ham-f": "manāēm̐gī" }
+    - word: "hi-1335"
+      forms: { "main-m": "जलाऊँगा", "main-f": "जलाऊँगी", "tum-m": "जलाओगे", "tum-f": "जलाओगी", "vah-m": "जलाएगा", "vah-f": "जलाएगी", "ham-m": "जलाएँगे", "ham-f": "जलाएँगी" }
+      readings: { "main-m": "jalāūm̐gā", "main-f": "jalāūm̐gī", "tum-m": "jalāōgē", "tum-f": "jalāōgī", "vah-m": "jalāēgā", "vah-f": "jalāēgī", "ham-m": "jalāēm̐gē", "ham-f": "jalāēm̐gī" }
+    - word: "hi-1336"
+      forms: { "main-m": "बाँटूँगा", "main-f": "बाँटूँगी", "tum-m": "बाँटोगे", "tum-f": "बाँटोगी", "vah-m": "बाँटेगा", "vah-f": "बाँटेगी", "ham-m": "बाँटेंगे", "ham-f": "बाँटेंगी" }
+      readings: { "main-m": "bām̐ṭūm̐gā", "main-f": "bām̐ṭūm̐gī", "tum-m": "bām̐ṭōgē", "tum-f": "bām̐ṭōgī", "vah-m": "bām̐ṭēgā", "vah-f": "bām̐ṭēgī", "ham-m": "bām̐ṭēṅgē", "ham-f": "bām̐ṭēṅgī" }
+    - word: "hi-1337"
+      forms: { "main-m": "सजाऊँगा", "main-f": "सजाऊँगी", "tum-m": "सजाओगे", "tum-f": "सजाओगी", "vah-m": "सजाएगा", "vah-f": "सजाएगी", "ham-m": "सजाएँगे", "ham-f": "सजाएँगी" }
+      readings: { "main-m": "sajāūm̐gā", "main-f": "sajāūm̐gī", "tum-m": "sajāōgē", "tum-f": "sajāōgī", "vah-m": "sajāēgā", "vah-f": "sajāēgī", "ham-m": "sajāēm̐gē", "ham-f": "sajāēm̐gī" }
+    - word: "hi-1364"
+      forms: { "main-m": "बदलूँगा", "main-f": "बदलूँगी", "tum-m": "बदलोगे", "tum-f": "बदलोगी", "vah-m": "बदलेगा", "vah-f": "बदलेगी", "ham-m": "बदलेंगे", "ham-f": "बदलेंगी" }
+      readings: { "main-m": "badlūm̐gā", "main-f": "badlūm̐gī", "tum-m": "badlōgē", "tum-f": "badlōgī", "vah-m": "badlēgā", "vah-f": "badlēgī", "ham-m": "badlēṅgē", "ham-f": "badlēṅgī" }
+    - word: "hi-1385"
+      forms: { "main-m": "तौलूँगा", "main-f": "तौलूँगी", "tum-m": "तौलोगे", "tum-f": "तौलोगी", "vah-m": "तौलेगा", "vah-f": "तौलेगी", "ham-m": "तौलेंगे", "ham-f": "तौलेंगी" }
+      readings: { "main-m": "taulūm̐gā", "main-f": "taulūm̐gī", "tum-m": "taulōgē", "tum-f": "taulōgī", "vah-m": "taulēgā", "vah-f": "taulēgī", "ham-m": "taulēṅgē", "ham-f": "taulēṅgī" }
+    - word: "hi-1460"
+      forms: { "main-m": "खाँसूँगा", "main-f": "खाँसूँगी", "tum-m": "खाँसोगे", "tum-f": "खाँसोगी", "vah-m": "खाँसेगा", "vah-f": "खाँसेगी", "ham-m": "खाँसेंगे", "ham-f": "खाँसेंगी" }
+      readings: { "main-m": "khām̐sūm̐gā", "main-f": "khām̐sūm̐gī", "tum-m": "khām̐sōgē", "tum-f": "khām̐sōgī", "vah-m": "khām̐sēgā", "vah-f": "khām̐sēgī", "ham-m": "khām̐sēṅgē", "ham-f": "khām̐sēṅgī" }
+    - word: "hi-1461"
+      forms: { "main-m": "छींकूँगा", "main-f": "छींकूँगी", "tum-m": "छींकोगे", "tum-f": "छींकोगी", "vah-m": "छींकेगा", "vah-f": "छींकेगी", "ham-m": "छींकेंगे", "ham-f": "छींकेंगी" }
+      readings: { "main-m": "chīṅkūm̐gā", "main-f": "chīṅkūm̐gī", "tum-m": "chīṅkōgē", "tum-f": "chīṅkōgī", "vah-m": "chīṅkēgā", "vah-f": "chīṅkēgī", "ham-m": "chīṅkēṅgē", "ham-f": "chīṅkēṅgī" }
+    - word: "hi-1462"
+      forms: { "main-m": "लेटूँगा", "main-f": "लेटूँगी", "tum-m": "लेटोगे", "tum-f": "लेटोगी", "vah-m": "लेटेगा", "vah-f": "लेटेगी", "ham-m": "लेटेंगे", "ham-f": "लेटेंगी" }
+      readings: { "main-m": "lēṭūm̐gā", "main-f": "lēṭūm̐gī", "tum-m": "lēṭōgē", "tum-f": "lēṭōgī", "vah-m": "lēṭēgā", "vah-f": "lēṭēgī", "ham-m": "lēṭēṅgē", "ham-f": "lēṭēṅgī" }
+    - word: "hi-1463"
+      forms: { "main-m": "दुखूँगा", "main-f": "दुखूँगी", "tum-m": "दुखोगे", "tum-f": "दुखोगी", "vah-m": "दुखेगा", "vah-f": "दुखेगी", "ham-m": "दुखेंगे", "ham-f": "दुखेंगी" }
+      readings: { "main-m": "dukhūm̐gā", "main-f": "dukhūm̐gī", "tum-m": "dukhōgē", "tum-f": "dukhōgī", "vah-m": "dukhēgā", "vah-f": "dukhēgī", "ham-m": "dukhēṅgē", "ham-f": "dukhēṅgī" }
+    - word: "hi-1496"
+      forms: { "main-m": "तलूँगा", "main-f": "तलूँगी", "tum-m": "तलोगे", "tum-f": "तलोगी", "vah-m": "तलेगा", "vah-f": "तलेगी", "ham-m": "तलेंगे", "ham-f": "तलेंगी" }
+      readings: { "main-m": "talūm̐gā", "main-f": "talūm̐gī", "tum-m": "talōgē", "tum-f": "talōgī", "vah-m": "talēgā", "vah-f": "talēgī", "ham-m": "talēṅgē", "ham-f": "talēṅgī" }
+    - word: "hi-1497"
+      forms: { "main-m": "भूनूँगा", "main-f": "भूनूँगी", "tum-m": "भूनोगे", "tum-f": "भूनोगी", "vah-m": "भूनेगा", "vah-f": "भूनेगी", "ham-m": "भूनेंगे", "ham-f": "भूनेंगी" }
+      readings: { "main-m": "bhūnūm̐gā", "main-f": "bhūnūm̐gī", "tum-m": "bhūnōgē", "tum-f": "bhūnōgī", "vah-m": "bhūnēgā", "vah-f": "bhūnēgī", "ham-m": "bhūnēṅgē", "ham-f": "bhūnēṅgī" }
+    - word: "hi-1498"
+      forms: { "main-m": "छीलूँगा", "main-f": "छीलूँगी", "tum-m": "छीलोगे", "tum-f": "छीलोगी", "vah-m": "छीलेगा", "vah-f": "छीलेगी", "ham-m": "छीलेंगे", "ham-f": "छीलेंगी" }
+      readings: { "main-m": "chīlūm̐gā", "main-f": "chīlūm̐gī", "tum-m": "chīlōgē", "tum-f": "chīlōgī", "vah-m": "chīlēgā", "vah-f": "chīlēgī", "ham-m": "chīlēṅgē", "ham-f": "chīlēṅgī" }
+    - word: "hi-1499"
+      forms: { "main-m": "पीसूँगा", "main-f": "पीसूँगी", "tum-m": "पीसोगे", "tum-f": "पीसोगी", "vah-m": "पीसेगा", "vah-f": "पीसेगी", "ham-m": "पीसेंगे", "ham-f": "पीसेंगी" }
+      readings: { "main-m": "pīsūm̐gā", "main-f": "pīsūm̐gī", "tum-m": "pīsōgē", "tum-f": "pīsōgī", "vah-m": "pīsēgā", "vah-f": "pīsēgī", "ham-m": "pīsēṅgē", "ham-f": "pīsēṅgī" }
+    - word: "hi-1500"
+      forms: { "main-m": "गूँधूँगा", "main-f": "गूँधूँगी", "tum-m": "गूँधोगे", "tum-f": "गूँधोगी", "vah-m": "गूँधेगा", "vah-f": "गूँधेगी", "ham-m": "गूँधेंगे", "ham-f": "गूँधेंगी" }
+      readings: { "main-m": "gūm̐dhūm̐gā", "main-f": "gūm̐dhūm̐gī", "tum-m": "gūm̐dhōgē", "tum-f": "gūm̐dhōgī", "vah-m": "gūm̐dhēgā", "vah-f": "gūm̐dhēgī", "ham-m": "gūm̐dhēṅgē", "ham-f": "gūm̐dhēṅgī" }
+    - word: "hi-1501"
+      forms: { "main-m": "बेलूँगा", "main-f": "बेलूँगी", "tum-m": "बेलोगे", "tum-f": "बेलोगी", "vah-m": "बेलेगा", "vah-f": "बेलेगी", "ham-m": "बेलेंगे", "ham-f": "बेलेंगी" }
+      readings: { "main-m": "bēlūm̐gā", "main-f": "bēlūm̐gī", "tum-m": "bēlōgē", "tum-f": "bēlōgī", "vah-m": "bēlēgā", "vah-f": "bēlēgī", "ham-m": "bēlēṅgē", "ham-f": "bēlēṅgī" }
+    - word: "hi-1502"
+      forms: { "main-m": "बनाऊँगा", "main-f": "बनाऊँगी", "tum-m": "बनाओगे", "tum-f": "बनाओगी", "vah-m": "बनाएगा", "vah-f": "बनाएगी", "ham-m": "बनाएँगे", "ham-f": "बनाएँगी" }
+      readings: { "main-m": "banāūm̐gā", "main-f": "banāūm̐gī", "tum-m": "banāōgē", "tum-f": "banāōgī", "vah-m": "banāēgā", "vah-f": "banāēgī", "ham-m": "banāēm̐gē", "ham-f": "banāēm̐gī" }
+    - word: "hi-1503"
+      forms: { "main-m": "सेंकूँगा", "main-f": "सेंकूँगी", "tum-m": "सेंकोगे", "tum-f": "सेंकोगी", "vah-m": "सेंकेगा", "vah-f": "सेंकेगी", "ham-m": "सेंकेंगे", "ham-f": "सेंकेंगी" }
+      readings: { "main-m": "sēṅkūm̐gā", "main-f": "sēṅkūm̐gī", "tum-m": "sēṅkōgē", "tum-f": "sēṅkōgī", "vah-m": "sēṅkēgā", "vah-f": "sēṅkēgī", "ham-m": "sēṅkēṅgē", "ham-f": "sēṅkēṅgī" }
+    - word: "hi-1504"
+      forms: { "main-m": "मिलाऊँगा", "main-f": "मिलाऊँगी", "tum-m": "मिलाओगे", "tum-f": "मिलाओगी", "vah-m": "मिलाएगा", "vah-f": "मिलाएगी", "ham-m": "मिलाएँगे", "ham-f": "मिलाएँगी" }
+      readings: { "main-m": "milāūm̐gā", "main-f": "milāūm̐gī", "tum-m": "milāōgē", "tum-f": "milāōgī", "vah-m": "milāēgā", "vah-f": "milāēgī", "ham-m": "milāēm̐gē", "ham-f": "milāēm̐gī" }
+    - word: "hi-1601"
+      forms: { "main-m": "पढ़ाऊँगा", "main-f": "पढ़ाऊँगी", "tum-m": "पढ़ाओगे", "tum-f": "पढ़ाओगी", "vah-m": "पढ़ाएगा", "vah-f": "पढ़ाएगी", "ham-m": "पढ़ाएँगे", "ham-f": "पढ़ाएँगी" }
+      readings: { "main-m": "paṛhāūm̐gā", "main-f": "paṛhāūm̐gī", "tum-m": "paṛhāōgē", "tum-f": "paṛhāōgī", "vah-m": "paṛhāēgā", "vah-f": "paṛhāēgī", "ham-m": "paṛhāēm̐gē", "ham-f": "paṛhāēm̐gī" }
+    - word: "hi-1639"
+      forms: { "main-m": "गाऊँगा", "main-f": "गाऊँगी", "tum-m": "गाओगे", "tum-f": "गाओगी", "vah-m": "गाएगा", "vah-f": "गाएगी", "ham-m": "गाएँगे", "ham-f": "गाएँगी" }
+      readings: { "main-m": "gāūm̐gā", "main-f": "gāūm̐gī", "tum-m": "gāōgē", "tum-f": "gāōgī", "vah-m": "gāēgā", "vah-f": "gāēgī", "ham-m": "gāēm̐gē", "ham-f": "gāēm̐gī" }
+    - word: "hi-1642"
+      forms: { "main-m": "नाचूँगा", "main-f": "नाचूँगी", "tum-m": "नाचोगे", "tum-f": "नाचोगी", "vah-m": "नाचेगा", "vah-f": "नाचेगी", "ham-m": "नाचेंगे", "ham-f": "नाचेंगी" }
+      readings: { "main-m": "nācūm̐gā", "main-f": "nācūm̐gī", "tum-m": "nācōgē", "tum-f": "nācōgī", "vah-m": "nācēgā", "vah-f": "nācēgī", "ham-m": "nācēṅgē", "ham-f": "nācēṅgī" }
+    - word: "hi-1644"
+      forms: { "main-m": "तैरूँगा", "main-f": "तैरूँगी", "tum-m": "तैरोगे", "tum-f": "तैरोगी", "vah-m": "तैरेगा", "vah-f": "तैरेगी", "ham-m": "तैरेंगे", "ham-f": "तैरेंगी" }
+      readings: { "main-m": "tairūm̐gā", "main-f": "tairūm̐gī", "tum-m": "tairōgē", "tum-f": "tairōgī", "vah-m": "tairēgā", "vah-f": "tairēgī", "ham-m": "tairēṅgē", "ham-f": "tairēṅgī" }
+    - word: "hi-1661"
+      forms: { "main-m": "घूमूँगा", "main-f": "घूमूँगी", "tum-m": "घूमोगे", "tum-f": "घूमोगी", "vah-m": "घूमेगा", "vah-f": "घूमेगी", "ham-m": "घूमेंगे", "ham-f": "घूमेंगी" }
+      readings: { "main-m": "ghūmūm̐gā", "main-f": "ghūmūm̐gī", "tum-m": "ghūmōgē", "tum-f": "ghūmōgī", "vah-m": "ghūmēgā", "vah-f": "ghūmēgī", "ham-m": "ghūmēṅgē", "ham-f": "ghūmēṅgī" }
+    - word: "hi-1662"
+      forms: { "main-m": "टहलूँगा", "main-f": "टहलूँगी", "tum-m": "टहलोगे", "tum-f": "टहलोगी", "vah-m": "टहलेगा", "vah-f": "टहलेगी", "ham-m": "टहलेंगे", "ham-f": "टहलेंगी" }
+      readings: { "main-m": "ṭahlūm̐gā", "main-f": "ṭahlūm̐gī", "tum-m": "ṭahlōgē", "tum-f": "ṭahlōgī", "vah-m": "ṭahlēgā", "vah-f": "ṭahlēgī", "ham-m": "ṭahlēṅgē", "ham-f": "ṭahlēṅgī" }
+    - word: "hi-1725"
+      forms: { "main-m": "झाड़ूँगा", "main-f": "झाड़ूँगी", "tum-m": "झाड़ोगे", "tum-f": "झाड़ोगी", "vah-m": "झाड़ेगा", "vah-f": "झाड़ेगी", "ham-m": "झाड़ेंगे", "ham-f": "झाड़ेंगी" }
+      readings: { "main-m": "jhāṛūm̐gā", "main-f": "jhāṛūm̐gī", "tum-m": "jhāṛōgē", "tum-f": "jhāṛōgī", "vah-m": "jhāṛēgā", "vah-f": "jhāṛēgī", "ham-m": "jhāṛēṅgē", "ham-f": "jhāṛēṅgī" }
+    - word: "hi-1726"
+      forms: { "main-m": "पोंछूँगा", "main-f": "पोंछूँगी", "tum-m": "पोंछोगे", "tum-f": "पोंछोगी", "vah-m": "पोंछेगा", "vah-f": "पोंछेगी", "ham-m": "पोंछेंगे", "ham-f": "पोंछेंगी" }
+      readings: { "main-m": "pōñchūm̐gā", "main-f": "pōñchūm̐gī", "tum-m": "pōñchōgē", "tum-f": "pōñchōgī", "vah-m": "pōñchēgā", "vah-f": "pōñchēgī", "ham-m": "pōñchēṅgē", "ham-f": "pōñchēṅgī" }
+    - word: "hi-1727"
+      forms: { "main-m": "सुखाऊँगा", "main-f": "सुखाऊँगी", "tum-m": "सुखाओगे", "tum-f": "सुखाओगी", "vah-m": "सुखाएगा", "vah-f": "सुखाएगी", "ham-m": "सुखाएँगे", "ham-f": "सुखाएँगी" }
+      readings: { "main-m": "sukhāūm̐gā", "main-f": "sukhāūm̐gī", "tum-m": "sukhāōgē", "tum-f": "sukhāōgī", "vah-m": "sukhāēgā", "vah-f": "sukhāēgī", "ham-m": "sukhāēm̐gē", "ham-f": "sukhāēm̐gī" }
+    - word: "hi-1728"
+      forms: { "main-m": "सूखूँगा", "main-f": "सूखूँगी", "tum-m": "सूखोगे", "tum-f": "सूखोगी", "vah-m": "सूखेगा", "vah-f": "सूखेगी", "ham-m": "सूखेंगे", "ham-f": "सूखेंगी" }
+      readings: { "main-m": "sūkhūm̐gā", "main-f": "sūkhūm̐gī", "tum-m": "sūkhōgē", "tum-f": "sūkhōgī", "vah-m": "sūkhēgā", "vah-f": "sūkhēgī", "ham-m": "sūkhēṅgē", "ham-f": "sūkhēṅgī" }
+    - word: "hi-1729"
+      forms: { "main-m": "निकालूँगा", "main-f": "निकालूँगी", "tum-m": "निकालोगे", "tum-f": "निकालोगी", "vah-m": "निकालेगा", "vah-f": "निकालेगी", "ham-m": "निकालेंगे", "ham-f": "निकालेंगी" }
+      readings: { "main-m": "nikālūm̐gā", "main-f": "nikālūm̐gī", "tum-m": "nikālōgē", "tum-f": "nikālōgī", "vah-m": "nikālēgā", "vah-f": "nikālēgī", "ham-m": "nikālēṅgē", "ham-f": "nikālēṅgī" }
+    - word: "hi-1730"
+      forms: { "main-m": "फेंकूँगा", "main-f": "फेंकूँगी", "tum-m": "फेंकोगे", "tum-f": "फेंकोगी", "vah-m": "फेंकेगा", "vah-f": "फेंकेगी", "ham-m": "फेंकेंगे", "ham-f": "फेंकेंगी" }
+      readings: { "main-m": "phēṅkūm̐gā", "main-f": "phēṅkūm̐gī", "tum-m": "phēṅkōgē", "tum-f": "phēṅkōgī", "vah-m": "phēṅkēgā", "vah-f": "phēṅkēgī", "ham-m": "phēṅkēṅgē", "ham-f": "phēṅkēṅgī" }
+    - word: "hi-1731"
+      forms: { "main-m": "उठाऊँगा", "main-f": "उठाऊँगी", "tum-m": "उठाओगे", "tum-f": "उठाओगी", "vah-m": "उठाएगा", "vah-f": "उठाएगी", "ham-m": "उठाएँगे", "ham-f": "उठाएँगी" }
+      readings: { "main-m": "uṭhāūm̐gā", "main-f": "uṭhāūm̐gī", "tum-m": "uṭhāōgē", "tum-f": "uṭhāōgī", "vah-m": "uṭhāēgā", "vah-f": "uṭhāēgī", "ham-m": "uṭhāēm̐gē", "ham-f": "uṭhāēm̐gī" }
+    - word: "hi-1732"
+      forms: { "main-m": "भरूँगा", "main-f": "भरूँगी", "tum-m": "भरोगे", "tum-f": "भरोगी", "vah-m": "भरेगा", "vah-f": "भरेगी", "ham-m": "भरेंगे", "ham-f": "भरेंगी" }
+      readings: { "main-m": "bharūm̐gā", "main-f": "bharūm̐gī", "tum-m": "bharōgē", "tum-f": "bharōgī", "vah-m": "bharēgā", "vah-f": "bharēgī", "ham-m": "bharēṅgē", "ham-f": "bharēṅgī" }
+    - word: "hi-1733"
+      forms: { "main-m": "फैलाऊँगा", "main-f": "फैलाऊँगी", "tum-m": "फैलाओगे", "tum-f": "फैलाओगी", "vah-m": "फैलाएगा", "vah-f": "फैलाएगी", "ham-m": "फैलाएँगे", "ham-f": "फैलाएँगी" }
+      readings: { "main-m": "phailāūm̐gā", "main-f": "phailāūm̐gī", "tum-m": "phailāōgē", "tum-f": "phailāōgī", "vah-m": "phailāēgā", "vah-f": "phailāēgī", "ham-m": "phailāēm̐gē", "ham-f": "phailāēm̐gī" }
+    - word: "hi-1734"
+      forms: { "main-m": "समेटूँगा", "main-f": "समेटूँगी", "tum-m": "समेटोगे", "tum-f": "समेटोगी", "vah-m": "समेटेगा", "vah-f": "समेटेगी", "ham-m": "समेटेंगे", "ham-f": "समेटेंगी" }
+      readings: { "main-m": "samēṭūm̐gā", "main-f": "samēṭūm̐gī", "tum-m": "samēṭōgē", "tum-f": "samēṭōgī", "vah-m": "samēṭēgā", "vah-f": "samēṭēgī", "ham-m": "samēṭēṅgē", "ham-f": "samēṭēṅgī" }
+    - word: "hi-1735"
+      forms: { "main-m": "भीगूँगा", "main-f": "भीगूँगी", "tum-m": "भीगोगे", "tum-f": "भीगोगी", "vah-m": "भीगेगा", "vah-f": "भीगेगी", "ham-m": "भीगेंगे", "ham-f": "भीगेंगी" }
+      readings: { "main-m": "bhīgūm̐gā", "main-f": "bhīgūm̐gī", "tum-m": "bhīgōgē", "tum-f": "bhīgōgī", "vah-m": "bhīgēgā", "vah-f": "bhīgēgī", "ham-m": "bhīgēṅgē", "ham-f": "bhīgēṅgī" }
+    - word: "hi-1736"
+      forms: { "main-m": "उतारूँगा", "main-f": "उतारूँगी", "tum-m": "उतारोगे", "tum-f": "उतारोगी", "vah-m": "उतारेगा", "vah-f": "उतारेगी", "ham-m": "उतारेंगे", "ham-f": "उतारेंगी" }
+      readings: { "main-m": "utārūm̐gā", "main-f": "utārūm̐gī", "tum-m": "utārōgē", "tum-f": "utārōgī", "vah-m": "utārēgā", "vah-f": "utārēgī", "ham-m": "utārēṅgē", "ham-f": "utārēṅgī" }
+    - word: "hi-1737"
+      forms: { "main-m": "चढ़ाऊँगा", "main-f": "चढ़ाऊँगी", "tum-m": "चढ़ाओगे", "tum-f": "चढ़ाओगी", "vah-m": "चढ़ाएगा", "vah-f": "चढ़ाएगी", "ham-m": "चढ़ाएँगे", "ham-f": "चढ़ाएँगी" }
+      readings: { "main-m": "caṛhāūm̐gā", "main-f": "caṛhāūm̐gī", "tum-m": "caṛhāōgē", "tum-f": "caṛhāōgī", "vah-m": "caṛhāēgā", "vah-f": "caṛhāēgī", "ham-m": "caṛhāēm̐gē", "ham-f": "caṛhāēm̐gī" }
+    - word: "hi-1740"
+      forms: { "main-m": "टूटूँगा", "main-f": "टूटूँगी", "tum-m": "टूटोगे", "tum-f": "टूटोगी", "vah-m": "टूटेगा", "vah-f": "टूटेगी", "ham-m": "टूटेंगे", "ham-f": "टूटेंगी" }
+      readings: { "main-m": "ṭūṭūm̐gā", "main-f": "ṭūṭūm̐gī", "tum-m": "ṭūṭōgē", "tum-f": "ṭūṭōgī", "vah-m": "ṭūṭēgā", "vah-f": "ṭūṭēgī", "ham-m": "ṭūṭēṅgē", "ham-f": "ṭūṭēṅgī" }
+    - word: "hi-1779"
+      forms: { "main-m": "दिखूँगा", "main-f": "दिखूँगी", "tum-m": "दिखोगे", "tum-f": "दिखोगी", "vah-m": "दिखेगा", "vah-f": "दिखेगी", "ham-m": "दिखेंगे", "ham-f": "दिखेंगी" }
+      readings: { "main-m": "dikhūm̐gā", "main-f": "dikhūm̐gī", "tum-m": "dikhōgē", "tum-f": "dikhōgī", "vah-m": "dikhēgā", "vah-f": "dikhēgī", "ham-m": "dikhēṅgē", "ham-f": "dikhēṅgī" }
+    - word: "hi-1780"
+      forms: { "main-m": "लगूँगा", "main-f": "लगूँगी", "tum-m": "लगोगे", "tum-f": "लगोगी", "vah-m": "लगेगा", "vah-f": "लगेगी", "ham-m": "लगेंगे", "ham-f": "लगेंगी" }
+      readings: { "main-m": "lagūm̐gā", "main-f": "lagūm̐gī", "tum-m": "lagōgē", "tum-f": "lagōgī", "vah-m": "lagēgā", "vah-f": "lagēgī", "ham-m": "lagēṅgē", "ham-f": "lagēṅgī" }
+    - word: "hi-1781"
+      forms: { "main-m": "सजूँगा", "main-f": "सजूँगी", "tum-m": "सजोगे", "tum-f": "सजोगी", "vah-m": "सजेगा", "vah-f": "सजेगी", "ham-m": "सजेंगे", "ham-f": "सजेंगी" }
+      readings: { "main-m": "sajūm̐gā", "main-f": "sajūm̐gī", "tum-m": "sajōgē", "tum-f": "sajōgī", "vah-m": "sajēgā", "vah-f": "sajēgī", "ham-m": "sajēṅgē", "ham-f": "sajēṅgī" }
+    - word: "hi-1782"
+      forms: { "main-m": "पहनूँगा", "main-f": "पहनूँगी", "tum-m": "पहनोगे", "tum-f": "पहनोगी", "vah-m": "पहनेगा", "vah-f": "पहनेगी", "ham-m": "पहनेंगे", "ham-f": "पहनेंगी" }
+      readings: { "main-m": "pahnūm̐gā", "main-f": "pahnūm̐gī", "tum-m": "pahnōgē", "tum-f": "pahnōgī", "vah-m": "pahnēgā", "vah-f": "pahnēgī", "ham-m": "pahnēṅgē", "ham-f": "pahnēṅgī" }
+    - word: "hi-1783"
+      forms: { "main-m": "मुस्कुराऊँगा", "main-f": "मुस्कुराऊँगी", "tum-m": "मुस्कुराओगे", "tum-f": "मुस्कुराओगी", "vah-m": "मुस्कुराएगा", "vah-f": "मुस्कुराएगी", "ham-m": "मुस्कुराएँगे", "ham-f": "मुस्कुराएँगी" }
+      readings: { "main-m": "muskurāūm̐gā", "main-f": "muskurāūm̐gī", "tum-m": "muskurāōgē", "tum-f": "muskurāōgī", "vah-m": "muskurāēgā", "vah-f": "muskurāēgī", "ham-m": "muskurāēm̐gē", "ham-f": "muskurāēm̐gī" }
+    - word: "hi-1785"
+      forms: { "main-m": "निखरूँगा", "main-f": "निखरूँगी", "tum-m": "निखरोगे", "tum-f": "निखरोगी", "vah-m": "निखरेगा", "vah-f": "निखरेगी", "ham-m": "निखरेंगे", "ham-f": "निखरेंगी" }
+      readings: { "main-m": "nikhrūm̐gā", "main-f": "nikhrūm̐gī", "tum-m": "nikhrōgē", "tum-f": "nikhrōgī", "vah-m": "nikhrēgā", "vah-f": "nikhrēgī", "ham-m": "nikhrēṅgē", "ham-f": "nikhrēṅgī" }
+    - word: "hi-1795"
+      forms: { "main-m": "ओढ़ूँगा", "main-f": "ओढ़ूँगी", "tum-m": "ओढ़ोगे", "tum-f": "ओढ़ोगी", "vah-m": "ओढ़ेगा", "vah-f": "ओढ़ेगी", "ham-m": "ओढ़ेंगे", "ham-f": "ओढ़ेंगी" }
+      readings: { "main-m": "ōṛhūm̐gā", "main-f": "ōṛhūm̐gī", "tum-m": "ōṛhōgē", "tum-f": "ōṛhōgī", "vah-m": "ōṛhēgā", "vah-f": "ōṛhēgī", "ham-m": "ōṛhēṅgē", "ham-f": "ōṛhēṅgī" }
+    - word: "hi-1796"
+      forms: { "main-m": "बिछाऊँगा", "main-f": "बिछाऊँगी", "tum-m": "बिछाओगे", "tum-f": "बिछाओगी", "vah-m": "बिछाएगा", "vah-f": "बिछाएगी", "ham-m": "बिछाएँगे", "ham-f": "बिछाएँगी" }
+      readings: { "main-m": "bichāūm̐gā", "main-f": "bichāūm̐gī", "tum-m": "bichāōgē", "tum-f": "bichāōgī", "vah-m": "bichāēgā", "vah-f": "bichāēgī", "ham-m": "bichāēm̐gē", "ham-f": "bichāēm̐gī" }
+    - word: "hi-1797"
+      forms: { "main-m": "छुऊँगा", "main-f": "छुऊँगी", "tum-m": "छुओगे", "tum-f": "छुओगी", "vah-m": "छुएगा", "vah-f": "छुएगी", "ham-m": "छुएँगे", "ham-f": "छुएँगी" }
+      readings: { "main-m": "chuūm̐gā", "main-f": "chuūm̐gī", "tum-m": "chuōgē", "tum-f": "chuōgī", "vah-m": "chuēgā", "vah-f": "chuēgī", "ham-m": "chuēm̐gē", "ham-f": "chuēm̐gī" }
+    - word: "hi-1798"
+      forms: { "main-m": "पकड़ूँगा", "main-f": "पकड़ूँगी", "tum-m": "पकड़ोगे", "tum-f": "पकड़ोगी", "vah-m": "पकड़ेगा", "vah-f": "पकड़ेगी", "ham-m": "पकड़ेंगे", "ham-f": "पकड़ेंगी" }
+      readings: { "main-m": "pakṛūm̐gā", "main-f": "pakṛūm̐gī", "tum-m": "pakṛōgē", "tum-f": "pakṛōgī", "vah-m": "pakṛēgā", "vah-f": "pakṛēgī", "ham-m": "pakṛēṅgē", "ham-f": "pakṛēṅgī" }
+    - word: "hi-1799"
+      forms: { "main-m": "खींचूँगा", "main-f": "खींचूँगी", "tum-m": "खींचोगे", "tum-f": "खींचोगी", "vah-m": "खींचेगा", "vah-f": "खींचेगी", "ham-m": "खींचेंगे", "ham-f": "खींचेंगी" }
+      readings: { "main-m": "khīñcūm̐gā", "main-f": "khīñcūm̐gī", "tum-m": "khīñcōgē", "tum-f": "khīñcōgī", "vah-m": "khīñcēgā", "vah-f": "khīñcēgī", "ham-m": "khīñcēṅgē", "ham-f": "khīñcēṅgī" }
+    - word: "hi-1800"
+      forms: { "main-m": "धकेलूँगा", "main-f": "धकेलूँगी", "tum-m": "धकेलोगे", "tum-f": "धकेलोगी", "vah-m": "धकेलेगा", "vah-f": "धकेलेगी", "ham-m": "धकेलेंगे", "ham-f": "धकेलेंगी" }
+      readings: { "main-m": "dhakēlūm̐gā", "main-f": "dhakēlūm̐gī", "tum-m": "dhakēlōgē", "tum-f": "dhakēlōgī", "vah-m": "dhakēlēgā", "vah-f": "dhakēlēgī", "ham-m": "dhakēlēṅgē", "ham-f": "dhakēlēṅgī" }
+    - word: "hi-1801"
+      forms: { "main-m": "फँसूँगा", "main-f": "फँसूँगी", "tum-m": "फँसोगे", "tum-f": "फँसोगी", "vah-m": "फँसेगा", "vah-f": "फँसेगी", "ham-m": "फँसेंगे", "ham-f": "फँसेंगी" }
+      readings: { "main-m": "pham̐sūm̐gā", "main-f": "pham̐sūm̐gī", "tum-m": "pham̐sōgē", "tum-f": "pham̐sōgī", "vah-m": "pham̐sēgā", "vah-f": "pham̐sēgī", "ham-m": "pham̐sēṅgē", "ham-f": "pham̐sēṅgī" }
+    - word: "hi-1802"
+      forms: { "main-m": "मारूँगा", "main-f": "मारूँगी", "tum-m": "मारोगे", "tum-f": "मारोगी", "vah-m": "मारेगा", "vah-f": "मारेगी", "ham-m": "मारेंगे", "ham-f": "मारेंगी" }
+      readings: { "main-m": "mārūm̐gā", "main-f": "mārūm̐gī", "tum-m": "mārōgē", "tum-f": "mārōgī", "vah-m": "mārēgā", "vah-f": "mārēgī", "ham-m": "mārēṅgē", "ham-f": "mārēṅgī" }
+    - word: "hi-1803"
+      forms: { "main-m": "झुकूँगा", "main-f": "झुकूँगी", "tum-m": "झुकोगे", "tum-f": "झुकोगी", "vah-m": "झुकेगा", "vah-f": "झुकेगी", "ham-m": "झुकेंगे", "ham-f": "झुकेंगी" }
+      readings: { "main-m": "jhukūm̐gā", "main-f": "jhukūm̐gī", "tum-m": "jhukōgē", "tum-f": "jhukōgī", "vah-m": "jhukēgā", "vah-f": "jhukēgī", "ham-m": "jhukēṅgē", "ham-f": "jhukēṅgī" }
+    - word: "hi-1804"
+      forms: { "main-m": "चलाऊँगा", "main-f": "चलाऊँगी", "tum-m": "चलाओगे", "tum-f": "चलाओगी", "vah-m": "चलाएगा", "vah-f": "चलाएगी", "ham-m": "चलाएँगे", "ham-f": "चलाएँगी" }
+      readings: { "main-m": "calāūm̐gā", "main-f": "calāūm̐gī", "tum-m": "calāōgē", "tum-f": "calāōgī", "vah-m": "calāēgā", "vah-f": "calāēgī", "ham-m": "calāēm̐gē", "ham-f": "calāēm̐gī" }
+    - word: "hi-1805"
+      forms: { "main-m": "मिटाऊँगा", "main-f": "मिटाऊँगी", "tum-m": "मिटाओगे", "tum-f": "मिटाओगी", "vah-m": "मिटाएगा", "vah-f": "मिटाएगी", "ham-m": "मिटाएँगे", "ham-f": "मिटाएँगी" }
+      readings: { "main-m": "miṭāūm̐gā", "main-f": "miṭāūm̐gī", "tum-m": "miṭāōgē", "tum-f": "miṭāōgī", "vah-m": "miṭāēgā", "vah-f": "miṭāēgī", "ham-m": "miṭāēm̐gē", "ham-f": "miṭāēm̐gī" }
+    - word: "hi-1806"
+      forms: { "main-m": "खोजूँगा", "main-f": "खोजूँगी", "tum-m": "खोजोगे", "tum-f": "खोजोगी", "vah-m": "खोजेगा", "vah-f": "खोजेगी", "ham-m": "खोजेंगे", "ham-f": "खोजेंगी" }
+      readings: { "main-m": "khōjūm̐gā", "main-f": "khōjūm̐gī", "tum-m": "khōjōgē", "tum-f": "khōjōgī", "vah-m": "khōjēgā", "vah-f": "khōjēgī", "ham-m": "khōjēṅgē", "ham-f": "khōjēṅgī" }
+    - word: "hi-1807"
+      forms: { "main-m": "गिनूँगा", "main-f": "गिनूँगी", "tum-m": "गिनोगे", "tum-f": "गिनोगी", "vah-m": "गिनेगा", "vah-f": "गिनेगी", "ham-m": "गिनेंगे", "ham-f": "गिनेंगी" }
+      readings: { "main-m": "ginūm̐gā", "main-f": "ginūm̐gī", "tum-m": "ginōgē", "tum-f": "ginōgī", "vah-m": "ginēgā", "vah-f": "ginēgī", "ham-m": "ginēṅgē", "ham-f": "ginēṅgī" }
+    - word: "hi-1808"
+      forms: { "main-m": "नापूँगा", "main-f": "नापूँगी", "tum-m": "नापोगे", "tum-f": "नापोगी", "vah-m": "नापेगा", "vah-f": "नापेगी", "ham-m": "नापेंगे", "ham-f": "नापेंगी" }
+      readings: { "main-m": "nāpūm̐gā", "main-f": "nāpūm̐gī", "tum-m": "nāpōgē", "tum-f": "nāpōgī", "vah-m": "nāpēgā", "vah-f": "nāpēgī", "ham-m": "nāpēṅgē", "ham-f": "nāpēṅgī" }
+    - word: "hi-1809"
+      forms: { "main-m": "जोड़ूँगा", "main-f": "जोड़ूँगी", "tum-m": "जोड़ोगे", "tum-f": "जोड़ोगी", "vah-m": "जोड़ेगा", "vah-f": "जोड़ेगी", "ham-m": "जोड़ेंगे", "ham-f": "जोड़ेंगी" }
+      readings: { "main-m": "jōṛūm̐gā", "main-f": "jōṛūm̐gī", "tum-m": "jōṛōgē", "tum-f": "jōṛōgī", "vah-m": "jōṛēgā", "vah-f": "jōṛēgī", "ham-m": "jōṛēṅgē", "ham-f": "jōṛēṅgī" }
+    - word: "hi-1810"
+      forms: { "main-m": "घटाऊँगा", "main-f": "घटाऊँगी", "tum-m": "घटाओगे", "tum-f": "घटाओगी", "vah-m": "घटाएगा", "vah-f": "घटाएगी", "ham-m": "घटाएँगे", "ham-f": "घटाएँगी" }
+      readings: { "main-m": "ghaṭāūm̐gā", "main-f": "ghaṭāūm̐gī", "tum-m": "ghaṭāōgē", "tum-f": "ghaṭāōgī", "vah-m": "ghaṭāēgā", "vah-f": "ghaṭāēgī", "ham-m": "ghaṭāēm̐gē", "ham-f": "ghaṭāēm̐gī" }
+    - word: "hi-1811"
+      forms: { "main-m": "बाँधूँगा", "main-f": "बाँधूँगी", "tum-m": "बाँधोगे", "tum-f": "बाँधोगी", "vah-m": "बाँधेगा", "vah-f": "बाँधेगी", "ham-m": "बाँधेंगे", "ham-f": "बाँधेंगी" }
+      readings: { "main-m": "bām̐dhūm̐gā", "main-f": "bām̐dhūm̐gī", "tum-m": "bām̐dhōgē", "tum-f": "bām̐dhōgī", "vah-m": "bām̐dhēgā", "vah-f": "bām̐dhēgī", "ham-m": "bām̐dhēṅgē", "ham-f": "bām̐dhēṅgī" }
+    - word: "hi-1812"
+      forms: { "main-m": "गिराऊँगा", "main-f": "गिराऊँगी", "tum-m": "गिराओगे", "tum-f": "गिराओगी", "vah-m": "गिराएगा", "vah-f": "गिराएगी", "ham-m": "गिराएँगे", "ham-f": "गिराएँगी" }
+      readings: { "main-m": "girāūm̐gā", "main-f": "girāūm̐gī", "tum-m": "girāōgē", "tum-f": "girāōgī", "vah-m": "girāēgā", "vah-f": "girāēgī", "ham-m": "girāēm̐gē", "ham-f": "girāēm̐gī" }
+    - word: "hi-1813"
+      forms: { "main-m": "रोकूँगा", "main-f": "रोकूँगी", "tum-m": "रोकोगे", "tum-f": "रोकोगी", "vah-m": "रोकेगा", "vah-f": "रोकेगी", "ham-m": "रोकेंगे", "ham-f": "रोकेंगी" }
+      readings: { "main-m": "rōkūm̐gā", "main-f": "rōkūm̐gī", "tum-m": "rōkōgē", "tum-f": "rōkōgī", "vah-m": "rōkēgā", "vah-f": "rōkēgī", "ham-m": "rōkēṅgē", "ham-f": "rōkēṅgī" }
+    - word: "hi-1814"
+      forms: { "main-m": "छुपाऊँगा", "main-f": "छुपाऊँगी", "tum-m": "छुपाओगे", "tum-f": "छुपाओगी", "vah-m": "छुपाएगा", "vah-f": "छुपाएगी", "ham-m": "छुपाएँगे", "ham-f": "छुपाएँगी" }
+      readings: { "main-m": "chupāūm̐gā", "main-f": "chupāūm̐gī", "tum-m": "chupāōgē", "tum-f": "chupāōgī", "vah-m": "chupāēgā", "vah-f": "chupāēgī", "ham-m": "chupāēm̐gē", "ham-f": "chupāēm̐gī" }
+    - word: "hi-1815"
+      forms: { "main-m": "दिखाऊँगा", "main-f": "दिखाऊँगी", "tum-m": "दिखाओगे", "tum-f": "दिखाओगी", "vah-m": "दिखाएगा", "vah-f": "दिखाएगी", "ham-m": "दिखाएँगे", "ham-f": "दिखाएँगी" }
+      readings: { "main-m": "dikhāūm̐gā", "main-f": "dikhāūm̐gī", "tum-m": "dikhāōgē", "tum-f": "dikhāōgī", "vah-m": "dikhāēgā", "vah-f": "dikhāēgī", "ham-m": "dikhāēm̐gē", "ham-f": "dikhāēm̐gī" }
+    - word: "hi-1816"
+      forms: { "main-m": "चुनूँगा", "main-f": "चुनूँगी", "tum-m": "चुनोगे", "tum-f": "चुनोगी", "vah-m": "चुनेगा", "vah-f": "चुनेगी", "ham-m": "चुनेंगे", "ham-f": "चुनेंगी" }
+      readings: { "main-m": "cunūm̐gā", "main-f": "cunūm̐gī", "tum-m": "cunōgē", "tum-f": "cunōgī", "vah-m": "cunēgā", "vah-f": "cunēgī", "ham-m": "cunēṅgē", "ham-f": "cunēṅgī" }
+    - word: "hi-1817"
+      forms: { "main-m": "फोड़ूँगा", "main-f": "फोड़ूँगी", "tum-m": "फोड़ोगे", "tum-f": "फोड़ोगी", "vah-m": "फोड़ेगा", "vah-f": "फोड़ेगी", "ham-m": "फोड़ेंगे", "ham-f": "फोड़ेंगी" }
+      readings: { "main-m": "phōṛūm̐gā", "main-f": "phōṛūm̐gī", "tum-m": "phōṛōgē", "tum-f": "phōṛōgī", "vah-m": "phōṛēgā", "vah-f": "phōṛēgī", "ham-m": "phōṛēṅgē", "ham-f": "phōṛēṅgī" }
+    - word: "hi-1818"
+      forms: { "main-m": "टपकूँगा", "main-f": "टपकूँगी", "tum-m": "टपकोगे", "tum-f": "टपकोगी", "vah-m": "टपकेगा", "vah-f": "टपकेगी", "ham-m": "टपकेंगे", "ham-f": "टपकेंगी" }
+      readings: { "main-m": "ṭapkūm̐gā", "main-f": "ṭapkūm̐gī", "tum-m": "ṭapkōgē", "tum-f": "ṭapkōgī", "vah-m": "ṭapkēgā", "vah-f": "ṭapkēgī", "ham-m": "ṭapkēṅgē", "ham-f": "ṭapkēṅgī" }
+    - word: "hi-1819"
+      forms: { "main-m": "भागूँगा", "main-f": "भागूँगी", "tum-m": "भागोगे", "tum-f": "भागोगी", "vah-m": "भागेगा", "vah-f": "भागेगी", "ham-m": "भागेंगे", "ham-f": "भागेंगी" }
+      readings: { "main-m": "bhāgūm̐gā", "main-f": "bhāgūm̐gī", "tum-m": "bhāgōgē", "tum-f": "bhāgōgī", "vah-m": "bhāgēgā", "vah-f": "bhāgēgī", "ham-m": "bhāgēṅgē", "ham-f": "bhāgēṅgī" }
+    - word: "hi-1820"
+      forms: { "main-m": "चिल्लाऊँगा", "main-f": "चिल्लाऊँगी", "tum-m": "चिल्लाओगे", "tum-f": "चिल्लाओगी", "vah-m": "चिल्लाएगा", "vah-f": "चिल्लाएगी", "ham-m": "चिल्लाएँगे", "ham-f": "चिल्लाएँगी" }
+      readings: { "main-m": "cillāūm̐gā", "main-f": "cillāūm̐gī", "tum-m": "cillāōgē", "tum-f": "cillāōgī", "vah-m": "cillāēgā", "vah-f": "cillāēgī", "ham-m": "cillāēm̐gē", "ham-f": "cillāēm̐gī" }
+    - word: "hi-1821"
+      forms: { "main-m": "सहूँगा", "main-f": "सहूँगी", "tum-m": "सहोगे", "tum-f": "सहोगी", "vah-m": "सहेगा", "vah-f": "सहेगी", "ham-m": "सहेंगे", "ham-f": "सहेंगी" }
+      readings: { "main-m": "sahūm̐gā", "main-f": "sahūm̐gī", "tum-m": "sahōgē", "tum-f": "sahōgī", "vah-m": "sahēgā", "vah-f": "sahēgī", "ham-m": "sahēṅgē", "ham-f": "sahēṅgī" }
+    - word: "hi-1822"
+      forms: { "main-m": "समझाऊँगा", "main-f": "समझाऊँगी", "tum-m": "समझाओगे", "tum-f": "समझाओगी", "vah-m": "समझाएगा", "vah-f": "समझाएगी", "ham-m": "समझाएँगे", "ham-f": "समझाएँगी" }
+      readings: { "main-m": "samjhāūm̐gā", "main-f": "samjhāūm̐gī", "tum-m": "samjhāōgē", "tum-f": "samjhāōgī", "vah-m": "samjhāēgā", "vah-f": "samjhāēgī", "ham-m": "samjhāēm̐gē", "ham-f": "samjhāēm̐gī" }
+    - word: "hi-1823"
+      forms: { "main-m": "डरूँगा", "main-f": "डरूँगी", "tum-m": "डरोगे", "tum-f": "डरोगी", "vah-m": "डरेगा", "vah-f": "डरेगी", "ham-m": "डरेंगे", "ham-f": "डरेंगी" }
+      readings: { "main-m": "ḍarūm̐gā", "main-f": "ḍarūm̐gī", "tum-m": "ḍarōgē", "tum-f": "ḍarōgī", "vah-m": "ḍarēgā", "vah-f": "ḍarēgī", "ham-m": "ḍarēṅgē", "ham-f": "ḍarēṅgī" }
+    - word: "hi-1824"
+      forms: { "main-m": "सुलझाऊँगा", "main-f": "सुलझाऊँगी", "tum-m": "सुलझाओगे", "tum-f": "सुलझाओगी", "vah-m": "सुलझाएगा", "vah-f": "सुलझाएगी", "ham-m": "सुलझाएँगे", "ham-f": "सुलझाएँगी" }
+      readings: { "main-m": "suljhāūm̐gā", "main-f": "suljhāūm̐gī", "tum-m": "suljhāōgē", "tum-f": "suljhāōgī", "vah-m": "suljhāēgā", "vah-f": "suljhāēgī", "ham-m": "suljhāēm̐gē", "ham-f": "suljhāēm̐gī" }
+    - word: "hi-1825"
+      forms: { "main-m": "बचाऊँगा", "main-f": "बचाऊँगी", "tum-m": "बचाओगे", "tum-f": "बचाओगी", "vah-m": "बचाएगा", "vah-f": "बचाएगी", "ham-m": "बचाएँगे", "ham-f": "बचाएँगी" }
+      readings: { "main-m": "bacāūm̐gā", "main-f": "bacāūm̐gī", "tum-m": "bacāōgē", "tum-f": "bacāōgī", "vah-m": "bacāēgā", "vah-f": "bacāēgī", "ham-m": "bacāēm̐gē", "ham-f": "bacāēm̐gī" }
+    - word: "hi-1826"
+      forms: { "main-m": "बचूँगा", "main-f": "बचूँगी", "tum-m": "बचोगे", "tum-f": "बचोगी", "vah-m": "बचेगा", "vah-f": "बचेगी", "ham-m": "बचेंगे", "ham-f": "बचेंगी" }
+      readings: { "main-m": "bacūm̐gā", "main-f": "bacūm̐gī", "tum-m": "bacōgē", "tum-f": "bacōgī", "vah-m": "bacēgā", "vah-f": "bacēgī", "ham-m": "bacēṅgē", "ham-f": "bacēṅgī" }
+    - word: "hi-1827"
+      forms: { "main-m": "पाऊँगा", "main-f": "पाऊँगी", "tum-m": "पाओगे", "tum-f": "पाओगी", "vah-m": "पाएगा", "vah-f": "पाएगी", "ham-m": "पाएँगे", "ham-f": "पाएँगी" }
+      readings: { "main-m": "pāūm̐gā", "main-f": "pāūm̐gī", "tum-m": "pāōgē", "tum-f": "pāōgī", "vah-m": "pāēgā", "vah-f": "pāēgī", "ham-m": "pāēm̐gē", "ham-f": "pāēm̐gī" }
+    - word: "hi-1828"
+      forms: { "main-m": "दबाऊँगा", "main-f": "दबाऊँगी", "tum-m": "दबाओगे", "tum-f": "दबाओगी", "vah-m": "दबाएगा", "vah-f": "दबाएगी", "ham-m": "दबाएँगे", "ham-f": "दबाएँगी" }
+      readings: { "main-m": "dabāūm̐gā", "main-f": "dabāūm̐gī", "tum-m": "dabāōgē", "tum-f": "dabāōgī", "vah-m": "dabāēgā", "vah-f": "dabāēgī", "ham-m": "dabāēm̐gē", "ham-f": "dabāēm̐gī" }
+    - word: "hi-1829"
+      forms: { "main-m": "लपेटूँगा", "main-f": "लपेटूँगी", "tum-m": "लपेटोगे", "tum-f": "लपेटोगी", "vah-m": "लपेटेगा", "vah-f": "लपेटेगी", "ham-m": "लपेटेंगे", "ham-f": "लपेटेंगी" }
+      readings: { "main-m": "lapēṭūm̐gā", "main-f": "lapēṭūm̐gī", "tum-m": "lapēṭōgē", "tum-f": "lapēṭōgī", "vah-m": "lapēṭēgā", "vah-f": "lapēṭēgī", "ham-m": "lapēṭēṅgē", "ham-f": "lapēṭēṅgī" }
+    - word: "hi-1830"
+      forms: { "main-m": "टाँगूँगा", "main-f": "टाँगूँगी", "tum-m": "टाँगोगे", "tum-f": "टाँगोगी", "vah-m": "टाँगेगा", "vah-f": "टाँगेगी", "ham-m": "टाँगेंगे", "ham-f": "टाँगेंगी" }
+      readings: { "main-m": "ṭām̐gūm̐gā", "main-f": "ṭām̐gūm̐gī", "tum-m": "ṭām̐gōgē", "tum-f": "ṭām̐gōgī", "vah-m": "ṭām̐gēgā", "vah-f": "ṭām̐gēgī", "ham-m": "ṭām̐gēṅgē", "ham-f": "ṭām̐gēṅgī" }
+    - word: "hi-1831"
+      forms: { "main-m": "लटकाऊँगा", "main-f": "लटकाऊँगी", "tum-m": "लटकाओगे", "tum-f": "लटकाओगी", "vah-m": "लटकाएगा", "vah-f": "लटकाएगी", "ham-m": "लटकाएँगे", "ham-f": "लटकाएँगी" }
+      readings: { "main-m": "laṭkāūm̐gā", "main-f": "laṭkāūm̐gī", "tum-m": "laṭkāōgē", "tum-f": "laṭkāōgī", "vah-m": "laṭkāēgā", "vah-f": "laṭkāēgī", "ham-m": "laṭkāēm̐gē", "ham-f": "laṭkāēm̐gī" }
+    - word: "hi-1832"
+      forms: { "main-m": "चिपकाऊँगा", "main-f": "चिपकाऊँगी", "tum-m": "चिपकाओगे", "tum-f": "चिपकाओगी", "vah-m": "चिपकाएगा", "vah-f": "चिपकाएगी", "ham-m": "चिपकाएँगे", "ham-f": "चिपकाएँगी" }
+      readings: { "main-m": "cipkāūm̐gā", "main-f": "cipkāūm̐gī", "tum-m": "cipkāōgē", "tum-f": "cipkāōgī", "vah-m": "cipkāēgā", "vah-f": "cipkāēgī", "ham-m": "cipkāēm̐gē", "ham-f": "cipkāēm̐gī" }
+    - word: "hi-1833"
+      forms: { "main-m": "बनूँगा", "main-f": "बनूँगी", "tum-m": "बनोगे", "tum-f": "बनोगी", "vah-m": "बनेगा", "vah-f": "बनेगी", "ham-m": "बनेंगे", "ham-f": "बनेंगी" }
+      readings: { "main-m": "banūm̐gā", "main-f": "banūm̐gī", "tum-m": "banōgē", "tum-f": "banōgī", "vah-m": "banēgā", "vah-f": "banēgī", "ham-m": "banēṅgē", "ham-f": "banēṅgī" }
+    - word: "hi-1834"
+      forms: { "main-m": "ढकूँगा", "main-f": "ढकूँगी", "tum-m": "ढकोगे", "tum-f": "ढकोगी", "vah-m": "ढकेगा", "vah-f": "ढकेगी", "ham-m": "ढकेंगे", "ham-f": "ढकेंगी" }
+      readings: { "main-m": "ḍhakūm̐gā", "main-f": "ḍhakūm̐gī", "tum-m": "ḍhakōgē", "tum-f": "ḍhakōgī", "vah-m": "ḍhakēgā", "vah-f": "ḍhakēgī", "ham-m": "ḍhakēṅgē", "ham-f": "ḍhakēṅgī" }
+    - word: "hi-1835"
+      forms: { "main-m": "खिलाऊँगा", "main-f": "खिलाऊँगी", "tum-m": "खिलाओगे", "tum-f": "खिलाओगी", "vah-m": "खिलाएगा", "vah-f": "खिलाएगी", "ham-m": "खिलाएँगे", "ham-f": "खिलाएँगी" }
+      readings: { "main-m": "khilāūm̐gā", "main-f": "khilāūm̐gī", "tum-m": "khilāōgē", "tum-f": "khilāōgī", "vah-m": "khilāēgā", "vah-f": "khilāēgī", "ham-m": "khilāēm̐gē", "ham-f": "khilāēm̐gī" }
+    - word: "hi-1836"
+      forms: { "main-m": "पिलाऊँगा", "main-f": "पिलाऊँगी", "tum-m": "पिलाओगे", "tum-f": "पिलाओगी", "vah-m": "पिलाएगा", "vah-f": "पिलाएगी", "ham-m": "पिलाएँगे", "ham-f": "पिलाएँगी" }
+      readings: { "main-m": "pilāūm̐gā", "main-f": "pilāūm̐gī", "tum-m": "pilāōgē", "tum-f": "pilāōgī", "vah-m": "pilāēgā", "vah-f": "pilāēgī", "ham-m": "pilāēm̐gē", "ham-f": "pilāēm̐gī" }
+    - word: "hi-1837"
+      forms: { "main-m": "जगाऊँगा", "main-f": "जगाऊँगी", "tum-m": "जगाओगे", "tum-f": "जगाओगी", "vah-m": "जगाएगा", "vah-f": "जगाएगी", "ham-m": "जगाएँगे", "ham-f": "जगाएँगी" }
+      readings: { "main-m": "jagāūm̐gā", "main-f": "jagāūm̐gī", "tum-m": "jagāōgē", "tum-f": "jagāōgī", "vah-m": "jagāēgā", "vah-f": "jagāēgī", "ham-m": "jagāēm̐gē", "ham-f": "jagāēm̐gī" }
+    - word: "hi-1838"
+      forms: { "main-m": "उगाऊँगा", "main-f": "उगाऊँगी", "tum-m": "उगाओगे", "tum-f": "उगाओगी", "vah-m": "उगाएगा", "vah-f": "उगाएगी", "ham-m": "उगाएँगे", "ham-f": "उगाएँगी" }
+      readings: { "main-m": "ugāūm̐gā", "main-f": "ugāūm̐gī", "tum-m": "ugāōgē", "tum-f": "ugāōgī", "vah-m": "ugāēgā", "vah-f": "ugāēgī", "ham-m": "ugāēm̐gē", "ham-f": "ugāēm̐gī" }
+    - word: "hi-1878"
+      forms: { "main-m": "बजूँगा", "main-f": "बजूँगी", "tum-m": "बजोगे", "tum-f": "बजोगी", "vah-m": "बजेगा", "vah-f": "बजेगी", "ham-m": "बजेंगे", "ham-f": "बजेंगी" }
+      readings: { "main-m": "bajūm̐gā", "main-f": "bajūm̐gī", "tum-m": "bajōgē", "tum-f": "bajōgī", "vah-m": "bajēgā", "vah-f": "bajēgī", "ham-m": "bajēṅgē", "ham-f": "bajēṅgī" }
+    - word: "hi-1913"
+      forms: { "main-m": "पहुँचूँगा", "main-f": "पहुँचूँगी", "tum-m": "पहुँचोगे", "tum-f": "पहुँचोगी", "vah-m": "पहुँचेगा", "vah-f": "पहुँचेगी", "ham-m": "पहुँचेंगे", "ham-f": "पहुँचेंगी" }
+      readings: { "main-m": "pahum̐cūm̐gā", "main-f": "pahum̐cūm̐gī", "tum-m": "pahum̐cōgē", "tum-f": "pahum̐cōgī", "vah-m": "pahum̐cēgā", "vah-f": "pahum̐cēgī", "ham-m": "pahum̐cēṅgē", "ham-f": "pahum̐cēṅgī" }
+    - word: "hi-1914"
+      forms: { "main-m": "रुकूँगा", "main-f": "रुकूँगी", "tum-m": "रुकोगे", "tum-f": "रुकोगी", "vah-m": "रुकेगा", "vah-f": "रुकेगी", "ham-m": "रुकेंगे", "ham-f": "रुकेंगी" }
+      readings: { "main-m": "rukūm̐gā", "main-f": "rukūm̐gī", "tum-m": "rukōgē", "tum-f": "rukōgī", "vah-m": "rukēgā", "vah-f": "rukēgī", "ham-m": "rukēṅgē", "ham-f": "rukēṅgī" }
+    - word: "hi-1915"
+      forms: { "main-m": "ठहरूँगा", "main-f": "ठहरूँगी", "tum-m": "ठहरोगे", "tum-f": "ठहरोगी", "vah-m": "ठहरेगा", "vah-f": "ठहरेगी", "ham-m": "ठहरेंगे", "ham-f": "ठहरेंगी" }
+      readings: { "main-m": "ṭhahrūm̐gā", "main-f": "ṭhahrūm̐gī", "tum-m": "ṭhahrōgē", "tum-f": "ṭhahrōgī", "vah-m": "ṭhahrēgā", "vah-f": "ṭhahrēgī", "ham-m": "ṭhahrēṅgē", "ham-f": "ṭhahrēṅgī" }
+    - word: "hi-1916"
+      forms: { "main-m": "चढ़ूँगा", "main-f": "चढ़ूँगी", "tum-m": "चढ़ोगे", "tum-f": "चढ़ोगी", "vah-m": "चढ़ेगा", "vah-f": "चढ़ेगी", "ham-m": "चढ़ेंगे", "ham-f": "चढ़ेंगी" }
+      readings: { "main-m": "caṛhūm̐gā", "main-f": "caṛhūm̐gī", "tum-m": "caṛhōgē", "tum-f": "caṛhōgī", "vah-m": "caṛhēgā", "vah-f": "caṛhēgī", "ham-m": "caṛhēṅgē", "ham-f": "caṛhēṅgī" }
+    - word: "hi-1917"
+      forms: { "main-m": "उतरूँगा", "main-f": "उतरूँगी", "tum-m": "उतरोगे", "tum-f": "उतरोगी", "vah-m": "उतरेगा", "vah-f": "उतरेगी", "ham-m": "उतरेंगे", "ham-f": "उतरेंगी" }
+      readings: { "main-m": "utrūm̐gā", "main-f": "utrūm̐gī", "tum-m": "utrōgē", "tum-f": "utrōgī", "vah-m": "utrēgā", "vah-f": "utrēgī", "ham-m": "utrēṅgē", "ham-f": "utrēṅgī" }
+    - word: "hi-1918"
+      forms: { "main-m": "छूटूँगा", "main-f": "छूटूँगी", "tum-m": "छूटोगे", "tum-f": "छूटोगी", "vah-m": "छूटेगा", "vah-f": "छूटेगी", "ham-m": "छूटेंगे", "ham-f": "छूटेंगी" }
+      readings: { "main-m": "chūṭūm̐gā", "main-f": "chūṭūm̐gī", "tum-m": "chūṭōgē", "tum-f": "chūṭōgī", "vah-m": "chūṭēgā", "vah-f": "chūṭēgī", "ham-m": "chūṭēṅgē", "ham-f": "chūṭēṅgī" }
+    - word: "hi-1919"
+      forms: { "main-m": "खोऊँगा", "main-f": "खोऊँगी", "tum-m": "खोओगे", "tum-f": "खोओगी", "vah-m": "खोएगा", "vah-f": "खोएगी", "ham-m": "खोएँगे", "ham-f": "खोएँगी" }
+      readings: { "main-m": "khōūm̐gā", "main-f": "khōūm̐gī", "tum-m": "khōōgē", "tum-f": "khōōgī", "vah-m": "khōēgā", "vah-f": "khōēgī", "ham-m": "khōēm̐gē", "ham-f": "khōēm̐gī" }
+    - word: "hi-1950"
+      forms: { "main-m": "उगूँगा", "main-f": "उगूँगी", "tum-m": "उगोगे", "tum-f": "उगोगी", "vah-m": "उगेगा", "vah-f": "उगेगी", "ham-m": "उगेंगे", "ham-f": "उगेंगी" }
+      readings: { "main-m": "ugūm̐gā", "main-f": "ugūm̐gī", "tum-m": "ugōgē", "tum-f": "ugōgī", "vah-m": "ugēgā", "vah-f": "ugēgī", "ham-m": "ugēṅgē", "ham-f": "ugēṅgī" }
+    - word: "hi-1951"
+      forms: { "main-m": "बहूँगा", "main-f": "बहूँगी", "tum-m": "बहोगे", "tum-f": "बहोगी", "vah-m": "बहेगा", "vah-f": "बहेगी", "ham-m": "बहेंगे", "ham-f": "बहेंगी" }
+      readings: { "main-m": "bahūm̐gā", "main-f": "bahūm̐gī", "tum-m": "bahōgē", "tum-f": "bahōgī", "vah-m": "bahēgā", "vah-f": "bahēgī", "ham-m": "bahēṅgē", "ham-f": "bahēṅgī" }
+    - word: "hi-1952"
+      forms: { "main-m": "खिलूँगा", "main-f": "खिलूँगी", "tum-m": "खिलोगे", "tum-f": "खिलोगी", "vah-m": "खिलेगा", "vah-f": "खिलेगी", "ham-m": "खिलेंगे", "ham-f": "खिलेंगी" }
+      readings: { "main-m": "khilūm̐gā", "main-f": "khilūm̐gī", "tum-m": "khilōgē", "tum-f": "khilōgī", "vah-m": "khilēgā", "vah-f": "khilēgī", "ham-m": "khilēṅgē", "ham-f": "khilēṅgī" }
+    - word: "hi-1953"
+      forms: { "main-m": "झड़ूँगा", "main-f": "झड़ूँगी", "tum-m": "झड़ोगे", "tum-f": "झड़ोगी", "vah-m": "झड़ेगा", "vah-f": "झड़ेगी", "ham-m": "झड़ेंगे", "ham-f": "झड़ेंगी" }
+      readings: { "main-m": "jhaṛūm̐gā", "main-f": "jhaṛūm̐gī", "tum-m": "jhaṛōgē", "tum-f": "jhaṛōgī", "vah-m": "jhaṛēgā", "vah-f": "jhaṛēgī", "ham-m": "jhaṛēṅgē", "ham-f": "jhaṛēṅgī" }
+    - word: "hi-1954"
+      forms: { "main-m": "फैलूँगा", "main-f": "फैलूँगी", "tum-m": "फैलोगे", "tum-f": "फैलोगी", "vah-m": "फैलेगा", "vah-f": "फैलेगी", "ham-m": "फैलेंगे", "ham-f": "फैलेंगी" }
+      readings: { "main-m": "phailūm̐gā", "main-f": "phailūm̐gī", "tum-m": "phailōgē", "tum-f": "phailōgī", "vah-m": "phailēgā", "vah-f": "phailēgī", "ham-m": "phailēṅgē", "ham-f": "phailēṅgī" }
+    - word: "hi-1955"
+      forms: { "main-m": "डूबूँगा", "main-f": "डूबूँगी", "tum-m": "डूबोगे", "tum-f": "डूबोगी", "vah-m": "डूबेगा", "vah-f": "डूबेगी", "ham-m": "डूबेंगे", "ham-f": "डूबेंगी" }
+      readings: { "main-m": "ḍūbūm̐gā", "main-f": "ḍūbūm̐gī", "tum-m": "ḍūbōgē", "tum-f": "ḍūbōgī", "vah-m": "ḍūbēgā", "vah-f": "ḍūbēgī", "ham-m": "ḍūbēṅgē", "ham-f": "ḍūbēṅgī" }
+    - word: "hi-1956"
+      forms: { "main-m": "उड़ूँगा", "main-f": "उड़ूँगी", "tum-m": "उड़ोगे", "tum-f": "उड़ोगी", "vah-m": "उड़ेगा", "vah-f": "उड़ेगी", "ham-m": "उड़ेंगे", "ham-f": "उड़ेंगी" }
+      readings: { "main-m": "uṛūm̐gā", "main-f": "uṛūm̐gī", "tum-m": "uṛōgē", "tum-f": "uṛōgī", "vah-m": "uṛēgā", "vah-f": "uṛēgī", "ham-m": "uṛēṅgē", "ham-f": "uṛēṅgī" }
+    - word: "hi-1957"
+      forms: { "main-m": "चहचहाऊँगा", "main-f": "चहचहाऊँगी", "tum-m": "चहचहाओगे", "tum-f": "चहचहाओगी", "vah-m": "चहचहाएगा", "vah-f": "चहचहाएगी", "ham-m": "चहचहाएँगे", "ham-f": "चहचहाएँगी" }
+      readings: { "main-m": "cahchāūm̐gā", "main-f": "cahchāūm̐gī", "tum-m": "cahchāōgē", "tum-f": "cahchāōgī", "vah-m": "cahchāēgā", "vah-f": "cahchāēgī", "ham-m": "cahchāēm̐gē", "ham-f": "cahchāēm̐gī" }
+    - word: "hi-2029"
+      forms: { "main-m": "सौंपूँगा", "main-f": "सौंपूँगी", "tum-m": "सौंपोगे", "tum-f": "सौंपोगी", "vah-m": "सौंपेगा", "vah-f": "सौंपेगी", "ham-m": "सौंपेंगे", "ham-f": "सौंपेंगी" }
+      readings: { "main-m": "saumpūm̐gā", "main-f": "saumpūm̐gī", "tum-m": "saumpōgē", "tum-f": "saumpōgī", "vah-m": "saumpēgā", "vah-f": "saumpēgī", "ham-m": "saumpēṅgē", "ham-f": "saumpēṅgī" }
+    - word: "hi-2030"
+      forms: { "main-m": "निपटाऊँगा", "main-f": "निपटाऊँगी", "tum-m": "निपटाओगे", "tum-f": "निपटाओगी", "vah-m": "निपटाएगा", "vah-f": "निपटाएगी", "ham-m": "निपटाएँगे", "ham-f": "निपटाएँगी" }
+      readings: { "main-m": "nipṭāūm̐gā", "main-f": "nipṭāūm̐gī", "tum-m": "nipṭāōgē", "tum-f": "nipṭāōgī", "vah-m": "nipṭāēgā", "vah-f": "nipṭāēgī", "ham-m": "nipṭāēm̐gē", "ham-f": "nipṭāēm̐gī" }
+    - word: "hi-2031"
+      forms: { "main-m": "संभालूँगा", "main-f": "संभालूँगी", "tum-m": "संभालोगे", "tum-f": "संभालोगी", "vah-m": "संभालेगा", "vah-f": "संभालेगी", "ham-m": "संभालेंगे", "ham-f": "संभालेंगी" }
+      readings: { "main-m": "sambhālūm̐gā", "main-f": "sambhālūm̐gī", "tum-m": "sambhālōgē", "tum-f": "sambhālōgī", "vah-m": "sambhālēgā", "vah-f": "sambhālēgī", "ham-m": "sambhālēṅgē", "ham-f": "sambhālēṅgī" }
+    - word: "hi-2091"
+      forms: { "main-m": "सूजूँगा", "main-f": "सूजूँगी", "tum-m": "सूजोगे", "tum-f": "सूजोगी", "vah-m": "सूजेगा", "vah-f": "सूजेगी", "ham-m": "सूजेंगे", "ham-f": "सूजेंगी" }
+      readings: { "main-m": "sūjūm̐gā", "main-f": "sūjūm̐gī", "tum-m": "sūjōgē", "tum-f": "sūjōgī", "vah-m": "sūjēgā", "vah-f": "sūjēgī", "ham-m": "sūjēṅgē", "ham-f": "sūjēṅgī" }
+    - word: "hi-2137"
+      forms: { "main-m": "घबराऊँगा", "main-f": "घबराऊँगी", "tum-m": "घबराओगे", "tum-f": "घबराओगी", "vah-m": "घबराएगा", "vah-f": "घबराएगी", "ham-m": "घबराएँगे", "ham-f": "घबराएँगी" }
+      readings: { "main-m": "ghabrāūm̐gā", "main-f": "ghabrāūm̐gī", "tum-m": "ghabrāōgē", "tum-f": "ghabrāōgī", "vah-m": "ghabrāēgā", "vah-f": "ghabrāēgī", "ham-m": "ghabrāēm̐gē", "ham-f": "ghabrāēm̐gī" }
+    - word: "hi-2138"
+      forms: { "main-m": "झुंझलाऊँगा", "main-f": "झुंझलाऊँगी", "tum-m": "झुंझलाओगे", "tum-f": "झुंझलाओगी", "vah-m": "झुंझलाएगा", "vah-f": "झुंझलाएगी", "ham-m": "झुंझलाएँगे", "ham-f": "झुंझलाएँगी" }
+      readings: { "main-m": "jhuñjhalāūm̐gā", "main-f": "jhuñjhalāūm̐gī", "tum-m": "jhuñjhalāōgē", "tum-f": "jhuñjhalāōgī", "vah-m": "jhuñjhalāēgā", "vah-f": "jhuñjhalāēgī", "ham-m": "jhuñjhalāēm̐gē", "ham-f": "jhuñjhalāēm̐gī" }
+    - word: "hi-2139"
+      forms: { "main-m": "चिढ़ूँगा", "main-f": "चिढ़ूँगी", "tum-m": "चिढ़ोगे", "tum-f": "चिढ़ोगी", "vah-m": "चिढ़ेगा", "vah-f": "चिढ़ेगी", "ham-m": "चिढ़ेंगे", "ham-f": "चिढ़ेंगी" }
+      readings: { "main-m": "ciṛhūm̐gā", "main-f": "ciṛhūm̐gī", "tum-m": "ciṛhōgē", "tum-f": "ciṛhōgī", "vah-m": "ciṛhēgā", "vah-f": "ciṛhēgī", "ham-m": "ciṛhēṅgē", "ham-f": "ciṛhēṅgī" }
+    - word: "hi-2140"
+      forms: { "main-m": "शर्माऊँगा", "main-f": "शर्माऊँगी", "tum-m": "शर्माओगे", "tum-f": "शर्माओगी", "vah-m": "शर्माएगा", "vah-f": "शर्माएगी", "ham-m": "शर्माएँगे", "ham-f": "शर्माएँगी" }
+      readings: { "main-m": "śarmāūm̐gā", "main-f": "śarmāūm̐gī", "tum-m": "śarmāōgē", "tum-f": "śarmāōgī", "vah-m": "śarmāēgā", "vah-f": "śarmāēgī", "ham-m": "śarmāēm̐gē", "ham-f": "śarmāēm̐gī" }
+    - word: "hi-2172"
+      forms: { "main-m": "छपूँगा", "main-f": "छपूँगी", "tum-m": "छपोगे", "tum-f": "छपोगी", "vah-m": "छपेगा", "vah-f": "छपेगी", "ham-m": "छपेंगे", "ham-f": "छपेंगी" }
+      readings: { "main-m": "chapūm̐gā", "main-f": "chapūm̐gī", "tum-m": "chapōgē", "tum-f": "chapōgī", "vah-m": "chapēgā", "vah-f": "chapēgī", "ham-m": "chapēṅgē", "ham-f": "chapēṅgī" }
+    - word: "hi-2173"
+      forms: { "main-m": "सुनाऊँगा", "main-f": "सुनाऊँगी", "tum-m": "सुनाओगे", "tum-f": "सुनाओगी", "vah-m": "सुनाएगा", "vah-f": "सुनाएगी", "ham-m": "सुनाएँगे", "ham-f": "सुनाएँगी" }
+      readings: { "main-m": "sunāūm̐gā", "main-f": "sunāūm̐gī", "tum-m": "sunāōgē", "tum-f": "sunāōgī", "vah-m": "sunāēgā", "vah-f": "sunāēgī", "ham-m": "sunāēm̐gē", "ham-f": "sunāēm̐gī" }
+    - word: "hi-2184"
+      forms: { "main-m": "मानूँगा", "main-f": "मानूँगी", "tum-m": "मानोगे", "tum-f": "मानोगी", "vah-m": "मानेगा", "vah-f": "मानेगी", "ham-m": "मानेंगे", "ham-f": "मानेंगी" }
+      readings: { "main-m": "mānūm̐gā", "main-f": "mānūm̐gī", "tum-m": "mānōgē", "tum-f": "mānōgī", "vah-m": "mānēgā", "vah-f": "mānēgī", "ham-m": "mānēṅgē", "ham-f": "mānēṅgī" }
+    - word: "hi-2205"
+      forms: { "main-m": "सुझाऊँगा", "main-f": "सुझाऊँगी", "tum-m": "सुझाओगे", "tum-f": "सुझाओगी", "vah-m": "सुझाएगा", "vah-f": "सुझाएगी", "ham-m": "सुझाएँगे", "ham-f": "सुझाएँगी" }
+      readings: { "main-m": "sujhāūm̐gā", "main-f": "sujhāūm̐gī", "tum-m": "sujhāōgē", "tum-f": "sujhāōgī", "vah-m": "sujhāēgā", "vah-f": "sujhāēgī", "ham-m": "sujhāēm̐gē", "ham-f": "sujhāēm̐gī" }
+    - word: "hi-2207"
+      forms: { "main-m": "स्वीकारूँगा", "main-f": "स्वीकारूँगी", "tum-m": "स्वीकारोगे", "tum-f": "स्वीकारोगी", "vah-m": "स्वीकारेगा", "vah-f": "स्वीकारेगी", "ham-m": "स्वीकारेंगे", "ham-f": "स्वीकारेंगी" }
+      readings: { "main-m": "svīkārūm̐gā", "main-f": "svīkārūm̐gī", "tum-m": "svīkārōgē", "tum-f": "svīkārōgī", "vah-m": "svīkārēgā", "vah-f": "svīkārēgī", "ham-m": "svīkārēṅgē", "ham-f": "svīkārēṅgī" }
+    - word: "hi-2229"
+      forms: { "main-m": "घुमाऊँगा", "main-f": "घुमाऊँगी", "tum-m": "घुमाओगे", "tum-f": "घुमाओगी", "vah-m": "घुमाएगा", "vah-f": "घुमाएगी", "ham-m": "घुमाएँगे", "ham-f": "घुमाएँगी" }
+      readings: { "main-m": "ghumāūm̐gā", "main-f": "ghumāūm̐gī", "tum-m": "ghumāōgē", "tum-f": "ghumāōgī", "vah-m": "ghumāēgā", "vah-f": "ghumāēgī", "ham-m": "ghumāēm̐gē", "ham-f": "ghumāēm̐gī" }
+    - word: "hi-2581"
+      forms: { "main-m": "झगड़ूँगा", "main-f": "झगड़ूँगी", "tum-m": "झगड़ोगे", "tum-f": "झगड़ोगी", "vah-m": "झगड़ेगा", "vah-f": "झगड़ेगी", "ham-m": "झगड़ेंगे", "ham-f": "झगड़ेंगी" }
+      readings: { "main-m": "jhagṛūm̐gā", "main-f": "jhagṛūm̐gī", "tum-m": "jhagṛōgē", "tum-f": "jhagṛōgī", "vah-m": "jhagṛēgā", "vah-f": "jhagṛēgī", "ham-m": "jhagṛēṅgē", "ham-f": "jhagṛēṅgī" }
+    - word: "hi-2582"
+      forms: { "main-m": "रूठूँगा", "main-f": "रूठूँगी", "tum-m": "रूठोगे", "tum-f": "रूठोगी", "vah-m": "रूठेगा", "vah-f": "रूठेगी", "ham-m": "रूठेंगे", "ham-f": "रूठेंगी" }
+      readings: { "main-m": "rūṭhūm̐gā", "main-f": "rūṭhūm̐gī", "tum-m": "rūṭhōgē", "tum-f": "rūṭhōgī", "vah-m": "rūṭhēgā", "vah-f": "rūṭhēgī", "ham-m": "rūṭhēṅgē", "ham-f": "rūṭhēṅgī" }
+    - word: "hi-2583"
+      forms: { "main-m": "जुड़ूँगा", "main-f": "जुड़ूँगी", "tum-m": "जुड़ोगे", "tum-f": "जुड़ोगी", "vah-m": "जुड़ेगा", "vah-f": "जुड़ेगी", "ham-m": "जुड़ेंगे", "ham-f": "जुड़ेंगी" }
+      readings: { "main-m": "juṛūm̐gā", "main-f": "juṛūm̐gī", "tum-m": "juṛōgē", "tum-f": "juṛōgī", "vah-m": "juṛēgā", "vah-f": "juṛēgī", "ham-m": "juṛēṅgē", "ham-f": "juṛēṅgī" }
+    - word: "hi-2607"
+      forms: { "main-m": "बसूँगा", "main-f": "बसूँगी", "tum-m": "बसोगे", "tum-f": "बसोगी", "vah-m": "बसेगा", "vah-f": "बसेगी", "ham-m": "बसेंगे", "ham-f": "बसेंगी" }
+      readings: { "main-m": "basūm̐gā", "main-f": "basūm̐gī", "tum-m": "basōgē", "tum-f": "basōgī", "vah-m": "basēgā", "vah-f": "basēgī", "ham-m": "basēṅgē", "ham-f": "basēṅgī" }
+    - word: "hi-2614"
+      forms: { "main-m": "जमूँगा", "main-f": "जमूँगी", "tum-m": "जमोगे", "tum-f": "जमोगी", "vah-m": "जमेगा", "vah-f": "जमेगी", "ham-m": "जमेंगे", "ham-f": "जमेंगी" }
+      readings: { "main-m": "jamūm̐gā", "main-f": "jamūm̐gī", "tum-m": "jamōgē", "tum-f": "jamōgī", "vah-m": "jamēgā", "vah-f": "jamēgī", "ham-m": "jamēṅgē", "ham-f": "jamēṅgī" }
+    - word: "hi-2615"
+      forms: { "main-m": "पिघलूँगा", "main-f": "पिघलूँगी", "tum-m": "पिघलोगे", "tum-f": "पिघलोगी", "vah-m": "पिघलेगा", "vah-f": "पिघलेगी", "ham-m": "पिघलेंगे", "ham-f": "पिघलेंगी" }
+      readings: { "main-m": "pighlūm̐gā", "main-f": "pighlūm̐gī", "tum-m": "pighlōgē", "tum-f": "pighlōgī", "vah-m": "pighlēgā", "vah-f": "pighlēgī", "ham-m": "pighlēṅgē", "ham-f": "pighlēṅgī" }
+    - word: "hi-2616"
+      forms: { "main-m": "उबलूँगा", "main-f": "उबलूँगी", "tum-m": "उबलोगे", "tum-f": "उबलोगी", "vah-m": "उबलेगा", "vah-f": "उबलेगी", "ham-m": "उबलेंगे", "ham-f": "उबलेंगी" }
+      readings: { "main-m": "ublūm̐gā", "main-f": "ublūm̐gī", "tum-m": "ublōgē", "tum-f": "ublōgī", "vah-m": "ublēgā", "vah-f": "ublēgī", "ham-m": "ublēṅgē", "ham-f": "ublēṅgī" }
+    - word: "hi-2617"
+      forms: { "main-m": "जलूँगा", "main-f": "जलूँगी", "tum-m": "जलोगे", "tum-f": "जलोगी", "vah-m": "जलेगा", "vah-f": "जलेगी", "ham-m": "जलेंगे", "ham-f": "जलेंगी" }
+      readings: { "main-m": "jalūm̐gā", "main-f": "jalūm̐gī", "tum-m": "jalōgē", "tum-f": "jalōgī", "vah-m": "jalēgā", "vah-f": "jalēgī", "ham-m": "jalēṅgē", "ham-f": "jalēṅgī" }
+    - word: "hi-2618"
+      forms: { "main-m": "बुझूँगा", "main-f": "बुझूँगी", "tum-m": "बुझोगे", "tum-f": "बुझोगी", "vah-m": "बुझेगा", "vah-f": "बुझेगी", "ham-m": "बुझेंगे", "ham-f": "बुझेंगी" }
+      readings: { "main-m": "bujhūm̐gā", "main-f": "bujhūm̐gī", "tum-m": "bujhōgē", "tum-f": "bujhōgī", "vah-m": "bujhēgā", "vah-f": "bujhēgī", "ham-m": "bujhēṅgē", "ham-f": "bujhēṅgī" }
+    - word: "hi-2619"
+      forms: { "main-m": "भटकूँगा", "main-f": "भटकूँगी", "tum-m": "भटकोगे", "tum-f": "भटकोगी", "vah-m": "भटकेगा", "vah-f": "भटकेगी", "ham-m": "भटकेंगे", "ham-f": "भटकेंगी" }
+      readings: { "main-m": "bhaṭkūm̐gā", "main-f": "bhaṭkūm̐gī", "tum-m": "bhaṭkōgē", "tum-f": "bhaṭkōgī", "vah-m": "bhaṭkēgā", "vah-f": "bhaṭkēgī", "ham-m": "bhaṭkēṅgē", "ham-f": "bhaṭkēṅgī" }
+    - word: "hi-2620"
+      forms: { "main-m": "छिपूँगा", "main-f": "छिपूँगी", "tum-m": "छिपोगे", "tum-f": "छिपोगी", "vah-m": "छिपेगा", "vah-f": "छिपेगी", "ham-m": "छिपेंगे", "ham-f": "छिपेंगी" }
+      readings: { "main-m": "chipūm̐gā", "main-f": "chipūm̐gī", "tum-m": "chipōgē", "tum-f": "chipōgī", "vah-m": "chipēgā", "vah-f": "chipēgī", "ham-m": "chipēṅgē", "ham-f": "chipēṅgī" }
+    - word: "hi-2621"
+      forms: { "main-m": "कूदूँगा", "main-f": "कूदूँगी", "tum-m": "कूदोगे", "tum-f": "कूदोगी", "vah-m": "कूदेगा", "vah-f": "कूदेगी", "ham-m": "कूदेंगे", "ham-f": "कूदेंगी" }
+      readings: { "main-m": "kūdūm̐gā", "main-f": "kūdūm̐gī", "tum-m": "kūdōgē", "tum-f": "kūdōgī", "vah-m": "kūdēgā", "vah-f": "kūdēgī", "ham-m": "kūdēṅgē", "ham-f": "kūdēṅgī" }
+    - word: "hi-2622"
+      forms: { "main-m": "फिसलूँगा", "main-f": "फिसलूँगी", "tum-m": "फिसलोगे", "tum-f": "फिसलोगी", "vah-m": "फिसलेगा", "vah-f": "फिसलेगी", "ham-m": "फिसलेंगे", "ham-f": "फिसलेंगी" }
+      readings: { "main-m": "phislūm̐gā", "main-f": "phislūm̐gī", "tum-m": "phislōgē", "tum-f": "phislōgī", "vah-m": "phislēgā", "vah-f": "phislēgī", "ham-m": "phislēṅgē", "ham-f": "phislēṅgī" }
+    - word: "hi-2623"
+      forms: { "main-m": "थामूँगा", "main-f": "थामूँगी", "tum-m": "थामोगे", "tum-f": "थामोगी", "vah-m": "थामेगा", "vah-f": "थामेगी", "ham-m": "थामेंगे", "ham-f": "थामेंगी" }
+      readings: { "main-m": "thāmūm̐gā", "main-f": "thāmūm̐gī", "tum-m": "thāmōgē", "tum-f": "thāmōgī", "vah-m": "thāmēgā", "vah-f": "thāmēgī", "ham-m": "thāmēṅgē", "ham-f": "thāmēṅgī" }
+    - word: "hi-2624"
+      forms: { "main-m": "रगड़ूँगा", "main-f": "रगड़ूँगी", "tum-m": "रगड़ोगे", "tum-f": "रगड़ोगी", "vah-m": "रगड़ेगा", "vah-f": "रगड़ेगी", "ham-m": "रगड़ेंगे", "ham-f": "रगड़ेंगी" }
+      readings: { "main-m": "ragṛūm̐gā", "main-f": "ragṛūm̐gī", "tum-m": "ragṛōgē", "tum-f": "ragṛōgī", "vah-m": "ragṛēgā", "vah-f": "ragṛēgī", "ham-m": "ragṛēṅgē", "ham-f": "ragṛēṅgī" }
+    - word: "hi-2625"
+      forms: { "main-m": "तोड़ूँगा", "main-f": "तोड़ूँगी", "tum-m": "तोड़ोगे", "tum-f": "तोड़ोगी", "vah-m": "तोड़ेगा", "vah-f": "तोड़ेगी", "ham-m": "तोड़ेंगे", "ham-f": "तोड़ेंगी" }
+      readings: { "main-m": "tōṛūm̐gā", "main-f": "tōṛūm̐gī", "tum-m": "tōṛōgē", "tum-f": "tōṛōgī", "vah-m": "tōṛēgā", "vah-f": "tōṛēgī", "ham-m": "tōṛēṅgē", "ham-f": "tōṛēṅgī" }
+    - word: "hi-2626"
+      forms: { "main-m": "मोड़ूँगा", "main-f": "मोड़ूँगी", "tum-m": "मोड़ोगे", "tum-f": "मोड़ोगी", "vah-m": "मोड़ेगा", "vah-f": "मोड़ेगी", "ham-m": "मोड़ेंगे", "ham-f": "मोड़ेंगी" }
+      readings: { "main-m": "mōṛūm̐gā", "main-f": "mōṛūm̐gī", "tum-m": "mōṛōgē", "tum-f": "mōṛōgī", "vah-m": "mōṛēgā", "vah-f": "mōṛēgī", "ham-m": "mōṛēṅgē", "ham-f": "mōṛēṅgī" }
+    - word: "hi-2627"
+      forms: { "main-m": "लड़ूँगा", "main-f": "लड़ूँगी", "tum-m": "लड़ोगे", "tum-f": "लड़ोगी", "vah-m": "लड़ेगा", "vah-f": "लड़ेगी", "ham-m": "लड़ेंगे", "ham-f": "लड़ेंगी" }
+      readings: { "main-m": "laṛūm̐gā", "main-f": "laṛūm̐gī", "tum-m": "laṛōgē", "tum-f": "laṛōgī", "vah-m": "laṛēgā", "vah-f": "laṛēgī", "ham-m": "laṛēṅgē", "ham-f": "laṛēṅgī" }
+    - word: "hi-2628"
+      forms: { "main-m": "सुधारूँगा", "main-f": "सुधारूँगी", "tum-m": "सुधारोगे", "tum-f": "सुधारोगी", "vah-m": "सुधारेगा", "vah-f": "सुधारेगी", "ham-m": "सुधारेंगे", "ham-f": "सुधारेंगी" }
+      readings: { "main-m": "sudhārūm̐gā", "main-f": "sudhārūm̐gī", "tum-m": "sudhārōgē", "tum-f": "sudhārōgī", "vah-m": "sudhārēgā", "vah-f": "sudhārēgī", "ham-m": "sudhārēṅgē", "ham-f": "sudhārēṅgī" }
+    - word: "hi-2629"
+      forms: { "main-m": "लगाऊँगा", "main-f": "लगाऊँगी", "tum-m": "लगाओगे", "tum-f": "लगाओगी", "vah-m": "लगाएगा", "vah-f": "लगाएगी", "ham-m": "लगाएँगे", "ham-f": "लगाएँगी" }
+      readings: { "main-m": "lagāūm̐gā", "main-f": "lagāūm̐gī", "tum-m": "lagāōgē", "tum-f": "lagāōgī", "vah-m": "lagāēgā", "vah-f": "lagāēgī", "ham-m": "lagāēm̐gē", "ham-f": "lagāēm̐gī" }
+    - word: "hi-2630"
+      forms: { "main-m": "लगवाऊँगा", "main-f": "लगवाऊँगी", "tum-m": "लगवाओगे", "tum-f": "लगवाओगी", "vah-m": "लगवाएगा", "vah-f": "लगवाएगी", "ham-m": "लगवाएँगे", "ham-f": "लगवाएँगी" }
+      readings: { "main-m": "lagvāūm̐gā", "main-f": "lagvāūm̐gī", "tum-m": "lagvāōgē", "tum-f": "lagvāōgī", "vah-m": "lagvāēgā", "vah-f": "lagvāēgī", "ham-m": "lagvāēm̐gē", "ham-f": "lagvāēm̐gī" }
+    - word: "hi-2631"
+      forms: { "main-m": "पहचानूँगा", "main-f": "पहचानूँगी", "tum-m": "पहचानोगे", "tum-f": "पहचानोगी", "vah-m": "पहचानेगा", "vah-f": "पहचानेगी", "ham-m": "पहचानेंगे", "ham-f": "पहचानेंगी" }
+      readings: { "main-m": "pahcānūm̐gā", "main-f": "pahcānūm̐gī", "tum-m": "pahcānōgē", "tum-f": "pahcānōgī", "vah-m": "pahcānēgā", "vah-f": "pahcānēgī", "ham-m": "pahcānēṅgē", "ham-f": "pahcānēṅgī" }
+    - word: "hi-2632"
+      forms: { "main-m": "सींचूँगा", "main-f": "सींचूँगी", "tum-m": "सींचोगे", "tum-f": "सींचोगी", "vah-m": "सींचेगा", "vah-f": "सींचेगी", "ham-m": "सींचेंगे", "ham-f": "सींचेंगी" }
+      readings: { "main-m": "sīñcūm̐gā", "main-f": "sīñcūm̐gī", "tum-m": "sīñcōgē", "tum-f": "sīñcōgī", "vah-m": "sīñcēgā", "vah-f": "sīñcēgī", "ham-m": "sīñcēṅgē", "ham-f": "sīñcēṅgī" }
+    - word: "hi-2633"
+      forms: { "main-m": "बोऊँगा", "main-f": "बोऊँगी", "tum-m": "बोओगे", "tum-f": "बोओगी", "vah-m": "बोएगा", "vah-f": "बोएगी", "ham-m": "बोएँगे", "ham-f": "बोएँगी" }
+      readings: { "main-m": "bōūm̐gā", "main-f": "bōūm̐gī", "tum-m": "bōōgē", "tum-f": "bōōgī", "vah-m": "bōēgā", "vah-f": "bōēgī", "ham-m": "bōēm̐gē", "ham-f": "bōēm̐gī" }
+    - word: "hi-2634"
+      forms: { "main-m": "माँगूँगा", "main-f": "माँगूँगी", "tum-m": "माँगोगे", "tum-f": "माँगोगी", "vah-m": "माँगेगा", "vah-f": "माँगेगी", "ham-m": "माँगेंगे", "ham-f": "माँगेंगी" }
+      readings: { "main-m": "mām̐gūm̐gā", "main-f": "mām̐gūm̐gī", "tum-m": "mām̐gōgē", "tum-f": "mām̐gōgī", "vah-m": "mām̐gēgā", "vah-f": "mām̐gēgī", "ham-m": "mām̐gēṅgē", "ham-f": "mām̐gēṅgī" }
+    - word: "hi-2635"
+      forms: { "main-m": "निकलूँगा", "main-f": "निकलूँगी", "tum-m": "निकलोगे", "tum-f": "निकलोगी", "vah-m": "निकलेगा", "vah-f": "निकलेगी", "ham-m": "निकलेंगे", "ham-f": "निकलेंगी" }
+      readings: { "main-m": "niklūm̐gā", "main-f": "niklūm̐gī", "tum-m": "niklōgē", "tum-f": "niklōgī", "vah-m": "niklēgā", "vah-f": "niklēgī", "ham-m": "niklēṅgē", "ham-f": "niklēṅgī" }
+    - word: "hi-2636"
+      forms: { "main-m": "गाड़ूँगा", "main-f": "गाड़ूँगी", "tum-m": "गाड़ोगे", "tum-f": "गाड़ोगी", "vah-m": "गाड़ेगा", "vah-f": "गाड़ेगी", "ham-m": "गाड़ेंगे", "ham-f": "गाड़ेंगी" }
+      readings: { "main-m": "gāṛūm̐gā", "main-f": "gāṛūm̐gī", "tum-m": "gāṛōgē", "tum-f": "gāṛōgī", "vah-m": "gāṛēgā", "vah-f": "gāṛēgī", "ham-m": "gāṛēṅgē", "ham-f": "gāṛēṅgī" }
+    - word: "hi-2637"
+      forms: { "main-m": "उड़ाऊँगा", "main-f": "उड़ाऊँगी", "tum-m": "उड़ाओगे", "tum-f": "उड़ाओगी", "vah-m": "उड़ाएगा", "vah-f": "उड़ाएगी", "ham-m": "उड़ाएँगे", "ham-f": "उड़ाएँगी" }
+      readings: { "main-m": "uṛāūm̐gā", "main-f": "uṛāūm̐gī", "tum-m": "uṛāōgē", "tum-f": "uṛāōgī", "vah-m": "uṛāēgā", "vah-f": "uṛāēgī", "ham-m": "uṛāēm̐gē", "ham-f": "uṛāēm̐gī" }
+    - word: "hi-2638"
+      forms: { "main-m": "हटाऊँगा", "main-f": "हटाऊँगी", "tum-m": "हटाओगे", "tum-f": "हटाओगी", "vah-m": "हटाएगा", "vah-f": "हटाएगी", "ham-m": "हटाएँगे", "ham-f": "हटाएँगी" }
+      readings: { "main-m": "haṭāūm̐gā", "main-f": "haṭāūm̐gī", "tum-m": "haṭāōgē", "tum-f": "haṭāōgī", "vah-m": "haṭāēgā", "vah-f": "haṭāēgī", "ham-m": "haṭāēm̐gē", "ham-f": "haṭāēm̐gī" }
+    - word: "hi-2639"
+      forms: { "main-m": "निगलूँगा", "main-f": "निगलूँगी", "tum-m": "निगलोगे", "tum-f": "निगलोगी", "vah-m": "निगलेगा", "vah-f": "निगलेगी", "ham-m": "निगलेंगे", "ham-f": "निगलेंगी" }
+      readings: { "main-m": "niglūm̐gā", "main-f": "niglūm̐gī", "tum-m": "niglōgē", "tum-f": "niglōgī", "vah-m": "niglēgā", "vah-f": "niglēgī", "ham-m": "niglēṅgē", "ham-f": "niglēṅgī" }
+    - word: "hi-2640"
+      forms: { "main-m": "चबाऊँगा", "main-f": "चबाऊँगी", "tum-m": "चबाओगे", "tum-f": "चबाओगी", "vah-m": "चबाएगा", "vah-f": "चबाएगी", "ham-m": "चबाएँगे", "ham-f": "चबाएँगी" }
+      readings: { "main-m": "cabāūm̐gā", "main-f": "cabāūm̐gī", "tum-m": "cabāōgē", "tum-f": "cabāōgī", "vah-m": "cabāēgā", "vah-f": "cabāēgī", "ham-m": "cabāēm̐gē", "ham-f": "cabāēm̐gī" }
+    - word: "hi-2641"
+      forms: { "main-m": "निचोड़ूँगा", "main-f": "निचोड़ूँगी", "tum-m": "निचोड़ोगे", "tum-f": "निचोड़ोगी", "vah-m": "निचोड़ेगा", "vah-f": "निचोड़ेगी", "ham-m": "निचोड़ेंगे", "ham-f": "निचोड़ेंगी" }
+      readings: { "main-m": "nicōṛūm̐gā", "main-f": "nicōṛūm̐gī", "tum-m": "nicōṛōgē", "tum-f": "nicōṛōgī", "vah-m": "nicōṛēgā", "vah-f": "nicōṛēgī", "ham-m": "nicōṛēṅgē", "ham-f": "nicōṛēṅgī" }
+    - word: "hi-2642"
+      forms: { "main-m": "सूँघूँगा", "main-f": "सूँघूँगी", "tum-m": "सूँघोगे", "tum-f": "सूँघोगी", "vah-m": "सूँघेगा", "vah-f": "सूँघेगी", "ham-m": "सूँघेंगे", "ham-f": "सूँघेंगी" }
+      readings: { "main-m": "sūm̐ghūm̐gā", "main-f": "sūm̐ghūm̐gī", "tum-m": "sūm̐ghōgē", "tum-f": "sūm̐ghōgī", "vah-m": "sūm̐ghēgā", "vah-f": "sūm̐ghēgī", "ham-m": "sūm̐ghēṅgē", "ham-f": "sūm̐ghēṅgī" }
+    - word: "hi-2643"
+      forms: { "main-m": "चखूँगा", "main-f": "चखूँगी", "tum-m": "चखोगे", "tum-f": "चखोगी", "vah-m": "चखेगा", "vah-f": "चखेगी", "ham-m": "चखेंगे", "ham-f": "चखेंगी" }
+      readings: { "main-m": "cakhūm̐gā", "main-f": "cakhūm̐gī", "tum-m": "cakhōgē", "tum-f": "cakhōgī", "vah-m": "cakhēgā", "vah-f": "cakhēgī", "ham-m": "cakhēṅgē", "ham-f": "cakhēṅgī" }
+    - word: "hi-2790"
+      forms: { "main-m": "बढ़ूँगा", "main-f": "बढ़ूँगी", "tum-m": "बढ़ोगे", "tum-f": "बढ़ोगी", "vah-m": "बढ़ेगा", "vah-f": "बढ़ेगी", "ham-m": "बढ़ेंगे", "ham-f": "बढ़ेंगी" }
+      readings: { "main-m": "baṛhūm̐gā", "main-f": "baṛhūm̐gī", "tum-m": "baṛhōgē", "tum-f": "baṛhōgī", "vah-m": "baṛhēgā", "vah-f": "baṛhēgī", "ham-m": "baṛhēṅgē", "ham-f": "baṛhēṅgī" }
+    - word: "hi-2791"
+      forms: { "main-m": "बढ़ाऊँगा", "main-f": "बढ़ाऊँगी", "tum-m": "बढ़ाओगे", "tum-f": "बढ़ाओगी", "vah-m": "बढ़ाएगा", "vah-f": "बढ़ाएगी", "ham-m": "बढ़ाएँगे", "ham-f": "बढ़ाएँगी" }
+      readings: { "main-m": "baṛhāūm̐gā", "main-f": "baṛhāūm̐gī", "tum-m": "baṛhāōgē", "tum-f": "baṛhāōgī", "vah-m": "baṛhāēgā", "vah-f": "baṛhāēgī", "ham-m": "baṛhāēm̐gē", "ham-f": "baṛhāēm̐gī" }
+    - word: "hi-2792"
+      forms: { "main-m": "गुज़रूँगा", "main-f": "गुज़रूँगी", "tum-m": "गुज़रोगे", "tum-f": "गुज़रोगी", "vah-m": "गुज़रेगा", "vah-f": "गुज़रेगी", "ham-m": "गुज़रेंगे", "ham-f": "गुज़रेंगी" }
+      readings: { "main-m": "guzrūm̐gā", "main-f": "guzrūm̐gī", "tum-m": "guzrōgē", "tum-f": "guzrōgī", "vah-m": "guzrēgā", "vah-f": "guzrēgī", "ham-m": "guzrēṅgē", "ham-f": "guzrēṅgī" }
+    - word: "hi-2793"
+      forms: { "main-m": "झपटूँगा", "main-f": "झपटूँगी", "tum-m": "झपटोगे", "tum-f": "झपटोगी", "vah-m": "झपटेगा", "vah-f": "झपटेगी", "ham-m": "झपटेंगे", "ham-f": "झपटेंगी" }
+      readings: { "main-m": "jhapṭūm̐gā", "main-f": "jhapṭūm̐gī", "tum-m": "jhapṭōgē", "tum-f": "jhapṭōgī", "vah-m": "jhapṭēgā", "vah-f": "jhapṭēgī", "ham-m": "jhapṭēṅgē", "ham-f": "jhapṭēṅgī" }
+    - word: "hi-2794"
+      forms: { "main-m": "पलटूँगा", "main-f": "पलटूँगी", "tum-m": "पलटोगे", "tum-f": "पलटोगी", "vah-m": "पलटेगा", "vah-f": "पलटेगी", "ham-m": "पलटेंगे", "ham-f": "पलटेंगी" }
+      readings: { "main-m": "palṭūm̐gā", "main-f": "palṭūm̐gī", "tum-m": "palṭōgē", "tum-f": "palṭōgī", "vah-m": "palṭēgā", "vah-f": "palṭēgī", "ham-m": "palṭēṅgē", "ham-f": "palṭēṅgī" }
+    - word: "hi-2795"
+      forms: { "main-m": "सोखूँगा", "main-f": "सोखूँगी", "tum-m": "सोखोगे", "tum-f": "सोखोगी", "vah-m": "सोखेगा", "vah-f": "सोखेगी", "ham-m": "सोखेंगे", "ham-f": "सोखेंगी" }
+      readings: { "main-m": "sōkhūm̐gā", "main-f": "sōkhūm̐gī", "tum-m": "sōkhōgē", "tum-f": "sōkhōgī", "vah-m": "sōkhēgā", "vah-f": "sōkhēgī", "ham-m": "sōkhēṅgē", "ham-f": "sōkhēṅgī" }
+    - word: "hi-2796"
+      forms: { "main-m": "बहाऊँगा", "main-f": "बहाऊँगी", "tum-m": "बहाओगे", "tum-f": "बहाओगी", "vah-m": "बहाएगा", "vah-f": "बहाएगी", "ham-m": "बहाएँगे", "ham-f": "बहाएँगी" }
+      readings: { "main-m": "bahāūm̐gā", "main-f": "bahāūm̐gī", "tum-m": "bahāōgē", "tum-f": "bahāōgī", "vah-m": "bahāēgā", "vah-f": "bahāēgī", "ham-m": "bahāēm̐gē", "ham-f": "bahāēm̐gī" }
+    - word: "hi-2797"
+      forms: { "main-m": "मलूँगा", "main-f": "मलूँगी", "tum-m": "मलोगे", "tum-f": "मलोगी", "vah-m": "मलेगा", "vah-f": "मलेगी", "ham-m": "मलेंगे", "ham-f": "मलेंगी" }
+      readings: { "main-m": "malūm̐gā", "main-f": "malūm̐gī", "tum-m": "malōgē", "tum-f": "malōgī", "vah-m": "malēgā", "vah-f": "malēgī", "ham-m": "malēṅgē", "ham-f": "malēṅgī" }
+    - word: "hi-2798"
+      forms: { "main-m": "भिगोऊँगा", "main-f": "भिगोऊँगी", "tum-m": "भिगोओगे", "tum-f": "भिगोओगी", "vah-m": "भिगोएगा", "vah-f": "भिगोएगी", "ham-m": "भिगोएँगे", "ham-f": "भिगोएँगी" }
+      readings: { "main-m": "bhigōūm̐gā", "main-f": "bhigōūm̐gī", "tum-m": "bhigōōgē", "tum-f": "bhigōōgī", "vah-m": "bhigōēgā", "vah-f": "bhigōēgī", "ham-m": "bhigōēm̐gē", "ham-f": "bhigōēm̐gī" }
+    - word: "hi-2799"
+      forms: { "main-m": "पकड़ाऊँगा", "main-f": "पकड़ाऊँगी", "tum-m": "पकड़ाओगे", "tum-f": "पकड़ाओगी", "vah-m": "पकड़ाएगा", "vah-f": "पकड़ाएगी", "ham-m": "पकड़ाएँगे", "ham-f": "पकड़ाएँगी" }
+      readings: { "main-m": "pakṛāūm̐gā", "main-f": "pakṛāūm̐gī", "tum-m": "pakṛāōgē", "tum-f": "pakṛāōgī", "vah-m": "pakṛāēgā", "vah-f": "pakṛāēgī", "ham-m": "pakṛāēm̐gē", "ham-f": "pakṛāēm̐gī" }
+    - word: "hi-2800"
+      forms: { "main-m": "खुजलाऊँगा", "main-f": "खुजलाऊँगी", "tum-m": "खुजलाओगे", "tum-f": "खुजलाओगी", "vah-m": "खुजलाएगा", "vah-f": "खुजलाएगी", "ham-m": "खुजलाएँगे", "ham-f": "खुजलाएँगी" }
+      readings: { "main-m": "khujlāūm̐gā", "main-f": "khujlāūm̐gī", "tum-m": "khujlāōgē", "tum-f": "khujlāōgī", "vah-m": "khujlāēgā", "vah-f": "khujlāēgī", "ham-m": "khujlāēm̐gē", "ham-f": "khujlāēm̐gī" }
+    - word: "hi-2801"
+      forms: { "main-m": "दबोचूँगा", "main-f": "दबोचूँगी", "tum-m": "दबोचोगे", "tum-f": "दबोचोगी", "vah-m": "दबोचेगा", "vah-f": "दबोचेगी", "ham-m": "दबोचेंगे", "ham-f": "दबोचेंगी" }
+      readings: { "main-m": "dabōcūm̐gā", "main-f": "dabōcūm̐gī", "tum-m": "dabōcōgē", "tum-f": "dabōcōgī", "vah-m": "dabōcēgā", "vah-f": "dabōcēgī", "ham-m": "dabōcēṅgē", "ham-f": "dabōcēṅgī" }
+    - word: "hi-2803"
+      forms: { "main-m": "भुनूँगा", "main-f": "भुनूँगी", "tum-m": "भुनोगे", "tum-f": "भुनोगी", "vah-m": "भुनेगा", "vah-f": "भुनेगी", "ham-m": "भुनेंगे", "ham-f": "भुनेंगी" }
+      readings: { "main-m": "bhunūm̐gā", "main-f": "bhunūm̐gī", "tum-m": "bhunōgē", "tum-f": "bhunōgī", "vah-m": "bhunēgā", "vah-f": "bhunēgī", "ham-m": "bhunēṅgē", "ham-f": "bhunēṅgī" }
+    - word: "hi-2804"
+      forms: { "main-m": "चमकाऊँगा", "main-f": "चमकाऊँगी", "tum-m": "चमकाओगे", "tum-f": "चमकाओगी", "vah-m": "चमकाएगा", "vah-f": "चमकाएगी", "ham-m": "चमकाएँगे", "ham-f": "चमकाएँगी" }
+      readings: { "main-m": "camkāūm̐gā", "main-f": "camkāūm̐gī", "tum-m": "camkāōgē", "tum-f": "camkāōgī", "vah-m": "camkāēgā", "vah-f": "camkāēgī", "ham-m": "camkāēm̐gē", "ham-f": "camkāēm̐gī" }
+    - word: "hi-2805"
+      forms: { "main-m": "हिलाऊँगा", "main-f": "हिलाऊँगी", "tum-m": "हिलाओगे", "tum-f": "हिलाओगी", "vah-m": "हिलाएगा", "vah-f": "हिलाएगी", "ham-m": "हिलाएँगे", "ham-f": "हिलाएँगी" }
+      readings: { "main-m": "hilāūm̐gā", "main-f": "hilāūm̐gī", "tum-m": "hilāōgē", "tum-f": "hilāōgī", "vah-m": "hilāēgā", "vah-f": "hilāēgī", "ham-m": "hilāēm̐gē", "ham-f": "hilāēm̐gī" }
+    - word: "hi-2806"
+      forms: { "main-m": "हिलूँगा", "main-f": "हिलूँगी", "tum-m": "हिलोगे", "tum-f": "हिलोगी", "vah-m": "हिलेगा", "vah-f": "हिलेगी", "ham-m": "हिलेंगे", "ham-f": "हिलेंगी" }
+      readings: { "main-m": "hilūm̐gā", "main-f": "hilūm̐gī", "tum-m": "hilōgē", "tum-f": "hilōgī", "vah-m": "hilēgā", "vah-f": "hilēgī", "ham-m": "hilēṅgē", "ham-f": "hilēṅgī" }
+    - word: "hi-2807"
+      forms: { "main-m": "झूलूँगा", "main-f": "झूलूँगी", "tum-m": "झूलोगे", "tum-f": "झूलोगी", "vah-m": "झूलेगा", "vah-f": "झूलेगी", "ham-m": "झूलेंगे", "ham-f": "झूलेंगी" }
+      readings: { "main-m": "jhūlūm̐gā", "main-f": "jhūlūm̐gī", "tum-m": "jhūlōgē", "tum-f": "jhūlōgī", "vah-m": "jhūlēgā", "vah-f": "jhūlēgī", "ham-m": "jhūlēṅgē", "ham-f": "jhūlēṅgī" }
+    - word: "hi-2808"
+      forms: { "main-m": "झूलाऊँगा", "main-f": "झूलाऊँगी", "tum-m": "झूलाओगे", "tum-f": "झूलाओगी", "vah-m": "झूलाएगा", "vah-f": "झूलाएगी", "ham-m": "झूलाएँगे", "ham-f": "झूलाएँगी" }
+      readings: { "main-m": "jhūlāūm̐gā", "main-f": "jhūlāūm̐gī", "tum-m": "jhūlāōgē", "tum-f": "jhūlāōgī", "vah-m": "jhūlāēgā", "vah-f": "jhūlāēgī", "ham-m": "jhūlāēm̐gē", "ham-f": "jhūlāēm̐gī" }
+rules:
+  - id: "hi-rule-future-first"
+    slots: ["main-m", "main-f"]
+    words: [{ word: "-ूँगा", reading: "-ūm̐gā" }, { word: "-ूँगी", reading: "-ūm̐gī" }, { word: "करना", reading: "karnā" }, { word: "करूँगा", reading: "karūm̐gā" }, { word: "करूँगी", reading: "karūm̐gī" }, { word: "जाना", reading: "jānā" }, { word: "जाऊँगा", reading: "jāūm̐gā" }]
+  - id: "hi-rule-future-second"
+    slots: ["tum-m", "tum-f"]
+    words: [{ word: "-ोगे", reading: "-ōgē" }, { word: "-ोगी", reading: "-ōgī" }, { word: "करना", reading: "karnā" }, { word: "करोगे", reading: "karōgē" }, { word: "करोगी", reading: "karōgī" }, { word: "जाना", reading: "jānā" }, { word: "जाओगे", reading: "jāōgē" }]
+  - id: "hi-rule-future-third"
+    slots: ["vah-m", "vah-f"]
+    words: [{ word: "-ेगा", reading: "-ēgā" }, { word: "-ेगी", reading: "-ēgī" }, { word: "करना", reading: "karnā" }, { word: "करेगा", reading: "karēgā" }, { word: "करेगी", reading: "karēgī" }, { word: "जाना", reading: "jānā" }, { word: "जाएगा", reading: "jāēgā" }, { word: "तू", reading: "tū" }]
+  - id: "hi-rule-future-plural"
+    slots: ["ham-m", "ham-f"]
+    words: [{ word: "-ेंगे", reading: "-ēm̐gē" }, { word: "-ेंगी", reading: "-ēm̐gī" }, { word: "करना", reading: "karnā" }, { word: "करेंगे", reading: "karēṅgē" }, { word: "करेंगी", reading: "karēṅgī" }, { word: "जाना", reading: "jānā" }, { word: "जाएँगे", reading: "jāēm̐gē" }, { word: "आप", reading: "āp" }, { word: "वे", reading: "vē" }]
