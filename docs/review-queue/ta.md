@@ -122,3 +122,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-0461 | ta-grammar-conjunct-verbs | Is நேரம் ஆகிறது the usual way to say it is getting late? | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-imperatives | Check the polite spoken commands (-ங்க), the polite forms of திற and நட, and the negative commands. | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-when | Check போது after the infinitive plus -உம், and the spoken conditional in -ஆ, for every verb. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-1246 | ta-shopping | Is வசூலி the usual verb for collecting money that is owed, in a shop? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1225 | ta-shopping | Is சாமான் the usual spoken word for belongings or shopping, against பொருள்? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1214 | ta-shopping | Is the split between ரசீது (receipt) and பில் (bill) how shops say it? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1258 | ta-shopping | Is பாக்கி right for both the balance owed and the change due? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1215 | ta-shopping | Is கடன் the word a shop uses for buying on credit? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1210 | ta-shopping | Is வாடிக்கையாளர் the word used in speech, or mostly in writing? | ta-words1 (Sonnet builder) | 2026-11-23 |
