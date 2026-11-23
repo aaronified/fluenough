@@ -65,26 +65,30 @@ extension SituationState on AppState {
 
   /// The cards of [language]'s decks by id, as the learner's course teaches
   /// them: where two native languages write a card, the course's.
-  Map<String, Card> _courseCards(String language) =>
-      derived<Map<String, Card>>(('situationCards', language), () {
-        final native = courseNative(language);
-        final entries =
-            <DeckEntry>[
-              // A hidden deck the learner added is drilled like any (D3).
-              for (final entry in drillDecks)
-                if (entry.language.code == language) entry,
-            ]..sort((a, b) {
-              int rank(DeckEntry e) => e.deck.native.code == native ? 0 : 1;
-              return rank(a).compareTo(rank(b));
-            });
-        final cards = <String, Card>{};
-        for (final entry in entries) {
-          for (final card in entry.cards) {
-            cards.putIfAbsent(card.id, () => card);
-          }
+  Map<String, Card> _courseCards(String language) {
+    // Read one language at a time, kept against the decks that were read, so
+    // that a unit read after this was asked is not missed (ADR-0062).
+    final key = ('situationCards', language, decksKeyOf(language));
+    return derived<Map<String, Card>>(key, () {
+      final native = courseNative(language);
+      final entries =
+          <DeckEntry>[
+            // A hidden deck the learner added is drilled like any (D3).
+            for (final entry in drillDecks)
+              if (entry.language.code == language) entry,
+          ]..sort((a, b) {
+            int rank(DeckEntry e) => e.deck.native.code == native ? 0 : 1;
+            return rank(a).compareTo(rank(b));
+          });
+      final cards = <String, Card>{};
+      for (final entry in entries) {
+        for (final card in entry.cards) {
+          cards.putIfAbsent(card.id, () => card);
         }
-        return cards;
-      });
+      }
+      return cards;
+    });
+  }
 
   /// [ids] as cards of [language]'s decks, in order. An id no deck writes is
   /// left out, as a deck's removal must not break a sheet.

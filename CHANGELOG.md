@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Faster start.** The app opens straight to your language and loads the others when you pick them.
+
 ## [0.12.1] - 2026-11-22
 
 - **No blank Decks list after search.** The Decks list no longer goes blank after closing search.

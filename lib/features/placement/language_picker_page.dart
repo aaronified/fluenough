@@ -291,9 +291,16 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
 
   /// Opens [language]'s sheet and applies its answer.
   Future<void> _open(AppState state, CatalogLanguage language) async {
+    final code = language.code;
+    // Read one language at a time, the sheet's script test and Find my level
+    // read the language's script lessons, so its unit is read first when it
+    // is on the phone (ADR-0062); the list itself reads none.
+    if (state.readsPerLanguage && state.summaryOf(code) != null) {
+      await state.ensureLoaded(code);
+      if (!mounted) return;
+    }
     final l10n = AppLocalizations.of(context)!;
     final spoken = state.settings.spokenLanguages;
-    final code = language.code;
     final learns = _learnsNow(language);
     final chosen = _isTicked(language) && !learns;
     final native = _isLearned(language)

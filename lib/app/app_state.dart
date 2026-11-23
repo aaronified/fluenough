@@ -943,7 +943,10 @@ class AppState extends ChangeNotifier {
   /// A deck that fails to parse is not this: it is a [BrokenDeck].
   Object? get loadError => _loadError;
 
-  /// Every deck that parsed, in path order. Empty until loaded.
+  /// Every deck that parsed, in path order. Empty until loaded. Read one
+  /// language at a time, the decks of the languages whose units are read, so
+  /// only what is about the shown language, or about a language that was
+  /// read first ([ensureLoaded], [decksOf]), may use it (ADR-0062).
   List<DeckEntry> get decks => _view.decks;
 
   /// The decks of [language] as the learner has them. Read one language at a
@@ -1117,7 +1120,9 @@ class AppState extends ChangeNotifier {
       !settings.cultureFor(entry.language.code).items &&
       cultureGenres.contains(entry.deck.genre);
 
-  /// Every deck file that did not parse, for the "couldn't read" rows.
+  /// Every deck file that did not parse, for the "couldn't read" rows. Read
+  /// one language at a time, those of the languages whose units are read:
+  /// the rows show a language's broken files once it is read.
   List<BrokenDeck> get brokenDecks => _catalog.broken;
 
   /// The shared theme path (ADR-0010), and one theme on it.
@@ -2324,6 +2329,7 @@ class AppState extends ChangeNotifier {
     language.ttsTag,
     language.code,
     language.script,
+    _unitStamp(language.code),
   ), () => _backupVoice(language));
 
   LanguageInfo? _backupVoice(LanguageInfo language) {
@@ -2342,9 +2348,11 @@ class AppState extends ChangeNotifier {
   }
 
   /// Whether a deck voiced as [language] gives its cards in [script] too,
-  /// not only names the script among the language's.
+  /// not only names the script among the language's. Read one language at a
+  /// time, the loaded decks are asked and the answer is kept against the
+  /// language's unit, so that it is worked out again once the unit is read.
   bool _spelledIn(LanguageInfo language, String script) => derived<bool>(
-    ('spelledIn', language.ttsTag, script),
+    ('spelledIn', language.ttsTag, script, _unitStamp(language.code)),
     () => decks.any(
       (d) =>
           d.language.ttsTag == language.ttsTag &&
@@ -3722,6 +3730,12 @@ class AppState extends ChangeNotifier {
 
   /// The script [code]'s course starts with: the one most of its decks use.
   String primaryScript(String code) {
+    // Read one language at a time, a language whose unit is not read has no
+    // deck to count: its summary holds the answer (ADR-0062).
+    if (_perLanguage && !languageLoad(code).isLoaded) {
+      final summary = summaryOf(code);
+      if (summary != null) return summary.primaryScript;
+    }
     // The script most of the course's decks are written in: a deck in the
     // second script lists that script first, so the first deck found could
     // be one of those.
@@ -3833,7 +3847,10 @@ class AppState extends ChangeNotifier {
   /// The script [code] is written in first: its decks', or the deck
   /// index's for a language with none on the phone. Null if neither knows.
   String? _ownScriptOf(String code) {
-    if (decks.any((e) => e.language.code == code)) return primaryScript(code);
+    if (decks.any((e) => e.language.code == code) ||
+        (_perLanguage && summaryOf(code) != null)) {
+      return primaryScript(code);
+    }
     for (final language
         in deckDownloads?.index?.languages ?? const <IndexLanguage>[]) {
       if (language.code == code) return language.script;

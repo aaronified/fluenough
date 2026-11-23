@@ -180,8 +180,8 @@ Future<void> main() async {
     privateStore: privateStore,
     log: log,
     marks: marks,
-    // Whole by default; the hidden catalogMode setting reads it one language
-    // at a time, from the cache (ADR-0062).
+    // One language at a time, from the cache (ADR-0062), unless the hidden
+    // catalogMode setting says whole; see kLazyCatalogDefault to roll back.
     mode: catalogModeFor(storage.settings.catalogMode),
     parser: (texts) => parseInIsolate(texts, onFallback: log.warning),
     // The decks' YAML, kept as JSON between launches and read again
