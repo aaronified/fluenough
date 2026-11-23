@@ -134,3 +134,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1258 | ta-shopping | Is பாக்கி right for both the balance owed and the change due? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1215 | ta-shopping | Is கடன் the word a shop uses for buying on credit? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1210 | ta-shopping | Is வாடிக்கையாளர் the word used in speech, or mostly in writing? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| unit-level | ta-nature | The examples use பனி (from the weather unit) as frost; check that this gloss fits. | Sonnet builder | 2026-11-23 |
+| ta-2192 | ta-nature | Is நதி or ஆறு the usual word for a river in speech? | Sonnet builder | 2026-11-23 |
+| ta-2197 | ta-nature | Is வனம் natural in speech, or only written beside காடு? | Sonnet builder | 2026-11-23 |
+| ta-2219 | ta-nature | Does ஆமை cover both tortoise and turtle? | Sonnet builder | 2026-11-23 |

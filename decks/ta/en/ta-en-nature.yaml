@@ -1,0 +1,743 @@
+schema: 1
+id: "ta-en-nature"
+kind: "layer"
+core: "ta-nature"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nature"
+description: "Rivers, beaches and hills, plants and flowers, animals, birds and insects, and the verbs of growing, melting and flowing. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-2192":
+    native: "river"
+    notes:
+      n1: "The written word for a river. Spoken Tamil often says ஆறு (āṟu), which also means six."
+    examples:
+      "இது பெரிய நதி.":
+        native: "This is a big river."
+        bases:
+          "நதி": "river"
+      "நதி எங்கே?":
+        native: "Where is the river?"
+        bases:
+          "நதி": "river"
+  "ta-2193":
+    native: "pond; tank"
+    notes:
+      n1: "A village pond or temple tank. The last sound changes before an ending: குளத்தில் (kuḷattil) is in the pond."
+    examples:
+      "குளம் எங்கே?":
+        native: "Where is the pond?"
+        bases:
+          "குளம்": "pond; tank"
+      "குளத்தில் தண்ணீர்.":
+        native: "There is water in the pond."
+        bases:
+          "குளத்தில்": "in the pond; from குளம் (kuḷam), pond; tank"
+  "ta-2194":
+    native: "lake"
+    notes:
+      n1: "A lake or large reservoir."
+    examples:
+      "இது பெரிய ஏரி.":
+        native: "This is a big lake."
+        bases:
+          "ஏரி": "lake"
+      "ஏரி எங்கே?":
+        native: "Where is the lake?"
+        bases:
+          "ஏரி": "lake"
+  "ta-2195":
+    native: "beach; seashore"
+    notes:
+      n1: "Made of கடல் (kaṭal) (sea) and கரை (karai) (shore); the sea's last sound changes to -ற்."
+    examples:
+      "கடற்கரை எங்கே?":
+        native: "Where is the beach?"
+        bases:
+          "கடற்கரை": "beach; seashore"
+      "நாம் கடற்கரை போகலாம்.":
+        native: "Let's go to the beach."
+        bases:
+          "கடற்கரை": "beach; seashore"
+          "போகலாம்": "let's go; from போ (pō), to go"
+  "ta-2196":
+    native: "island"
+    notes:
+      n1: "An island."
+    examples:
+      "இது சின்ன தீவு.":
+        native: "This is a small island."
+        bases:
+          "தீவு": "island"
+      "தீவு எங்கே?":
+        native: "Where is the island?"
+        bases:
+          "தீவு": "island"
+  "ta-2197":
+    native: "forest"
+    notes:
+      n1: "The formal word for a forest; spoken Tamil says காடு (kāṭu) (kāṭu)."
+    examples:
+      "இது பெரிய வனம்.":
+        native: "This is a big forest."
+        bases:
+          "வனம்": "forest"
+      "வனம் எங்கே?":
+        native: "Where is the forest?"
+        bases:
+          "வனம்": "forest"
+  "ta-2198":
+    native: "desert"
+    notes:
+      n1: "A desert."
+    examples:
+      "இது பாலைவனம்.":
+        native: "This is a desert."
+        bases:
+          "பாலைவனம்": "desert"
+      "பாலைவனம் எங்கே?":
+        native: "Where is the desert?"
+        bases:
+          "பாலைவனம்": "desert"
+  "ta-2199":
+    native: "valley"
+    notes:
+      n1: "A valley between hills."
+    examples:
+      "இது அழகான பள்ளத்தாக்கு.":
+        native: "This is a beautiful valley."
+        bases:
+          "பள்ளத்தாக்கு": "valley"
+      "பள்ளத்தாக்கு எங்கே?":
+        native: "Where is the valley?"
+        bases:
+          "பள்ளத்தாக்கு": "valley"
+  "ta-2200":
+    native: "hill"
+    notes:
+      n1: "A small hill; a மலை (malai) (malai) is bigger."
+    examples:
+      "இது சின்ன குன்று.":
+        native: "This is a small hill."
+        bases:
+          "குன்று": "hill"
+      "குன்று எங்கே?":
+        native: "Where is the hill?"
+        bases:
+          "குன்று": "hill"
+  "ta-2201":
+    native: "waterfall"
+    notes:
+      n1: "A waterfall."
+    examples:
+      "இது அழகான அருவி.":
+        native: "This is a beautiful waterfall."
+        bases:
+          "அருவி": "waterfall"
+      "அருவி எங்கே?":
+        native: "Where is the waterfall?"
+        bases:
+          "அருவி": "waterfall"
+  "ta-2202":
+    native: "cave"
+    notes:
+      n1: "A cave."
+    examples:
+      "குகை எங்கே?":
+        native: "Where is the cave?"
+        bases:
+          "குகை": "cave"
+      "இது பெரிய குகை.":
+        native: "This is a big cave."
+        bases:
+          "குகை": "cave"
+  "ta-2203":
+    native: "sand"
+    notes:
+      n1: "Sand, as on a beach."
+    examples:
+      "கடற்கரையில் மணல்.":
+        native: "There is sand on the beach."
+        bases:
+          "கடற்கரையில்": "on the beach; from கடற்கரை (kaṭaṟkarai), beach; seashore"
+          "மணல்": "sand"
+      "மணல் வெள்ளை.":
+        native: "The sand is white."
+        bases:
+          "மணல்": "sand"
+  "ta-2204":
+    native: "soil; earth"
+    notes:
+      n1: "Soil or earth."
+    examples:
+      "மண் ஈரம்.":
+        native: "The soil is wet."
+        bases:
+          "மண்": "soil; earth"
+      "இது நல்ல மண்.":
+        native: "This is good soil."
+        bases:
+          "மண்": "soil; earth"
+  "ta-2205":
+    native: "grass"
+    notes:
+      n1: "Grass."
+    examples:
+      "புல் பச்சை.":
+        native: "The grass is green."
+        bases:
+          "புல்": "grass"
+      "புல்லில் உட்கார்.":
+        native: "Sit on the grass."
+        bases:
+          "புல்லில்": "on the grass; from புல் (pul), grass"
+  "ta-2206":
+    native: "seed"
+    notes:
+      n1: "A seed."
+    examples:
+      "விதை எங்கே?":
+        native: "Where is the seed?"
+        bases:
+          "விதை": "seed"
+      "இது பெரிய விதை.":
+        native: "This is a big seed."
+        bases:
+          "விதை": "seed"
+  "ta-2207":
+    native: "root"
+    notes:
+      n1: "The root of a plant or tree."
+    examples:
+      "வேர் கீழே.":
+        native: "The root is below."
+        bases:
+          "வேர்": "root"
+      "வேர் எங்கே?":
+        native: "Where is the root?"
+        bases:
+          "வேர்": "root"
+  "ta-2208":
+    native: "branch"
+    notes:
+      n1: "The branch of a tree."
+    examples:
+      "கிளை மேலே.":
+        native: "The branch is above."
+        bases:
+          "கிளை": "branch"
+      "இது பெரிய கிளை.":
+        native: "This is a big branch."
+        bases:
+          "கிளை": "branch"
+  "ta-2209":
+    native: "lotus"
+    notes:
+      n1: "The lotus flower, a symbol of purity."
+    examples:
+      "இது தாமரை.":
+        native: "This is a lotus."
+        bases:
+          "தாமரை": "lotus"
+      "தாமரை அழகு.":
+        native: "The lotus is beautiful."
+        bases:
+          "தாமரை": "lotus"
+  "ta-2210":
+    native: "rose"
+    notes:
+      n1: "A rose."
+    examples:
+      "இது ரோஜா.":
+        native: "This is a rose."
+        bases:
+          "ரோஜா": "rose"
+      "ரோஜா சிவப்பு.":
+        native: "The rose is red."
+        bases:
+          "ரோஜா": "rose"
+  "ta-2211":
+    native: "jasmine"
+    notes:
+      n1: "Jasmine, whose flowers women often wear in their hair."
+    examples:
+      "இது மல்லிகை.":
+        native: "This is jasmine."
+        bases:
+          "மல்லிகை": "jasmine"
+      "மல்லிகை வெள்ளை.":
+        native: "Jasmine is white."
+        bases:
+          "மல்லிகை": "jasmine"
+  "ta-2212":
+    native: "banana plant"
+    notes:
+      n1: "The banana plant; a meal is often served on a வாழை இலை (vāḻai ilai) (vāḻai ilai), banana leaf."
+    examples:
+      "இது வாழை.":
+        native: "This is a banana plant."
+        bases:
+          "வாழை": "banana plant"
+      "வாழை இலை.":
+        native: "A banana leaf."
+        bases:
+          "வாழை": "banana plant"
+  "ta-2213":
+    native: "coconut palm"
+    notes:
+      n1: "The coconut palm, common all over Tamil Nadu."
+    examples:
+      "இது தென்னை.":
+        native: "This is a coconut palm."
+        bases:
+          "தென்னை": "coconut palm"
+      "தென்னை மரம்.":
+        native: "A coconut tree."
+        bases:
+          "தென்னை": "coconut palm"
+  "ta-2214":
+    native: "tiger"
+    notes:
+      n1: "A tiger."
+    examples:
+      "இது புலி.":
+        native: "This is a tiger."
+        bases:
+          "புலி": "tiger"
+      "புலி வருகிறது.":
+        native: "A tiger is coming."
+        bases:
+          "புலி": "tiger"
+          "வருகிறது": "is coming; from வா (vā), come"
+  "ta-2215":
+    native: "lion"
+    notes:
+      n1: "A lion."
+    examples:
+      "இது சிங்கம்.":
+        native: "This is a lion."
+        bases:
+          "சிங்கம்": "lion"
+      "சிங்கம் ஓடுகிறது.":
+        native: "The lion is running."
+        bases:
+          "சிங்கம்": "lion"
+          "ஓடுகிறது": "is running; from ஓடு (ōṭu), to run"
+  "ta-2216":
+    native: "bear"
+    notes:
+      n1: "A bear."
+    examples:
+      "இது கரடி.":
+        native: "This is a bear."
+        bases:
+          "கரடி": "bear"
+      "கரடி வருகிறது.":
+        native: "A bear is coming."
+        bases:
+          "கரடி": "bear"
+          "வருகிறது": "is coming; from வா (vā), come"
+  "ta-2217":
+    native: "deer"
+    notes:
+      n1: "A deer."
+    examples:
+      "இது மான்.":
+        native: "This is a deer."
+        bases:
+          "மான்": "deer"
+      "மான் ஓடுகிறது.":
+        native: "The deer is running."
+        bases:
+          "மான்": "deer"
+          "ஓடுகிறது": "is running; from ஓடு (ōṭu), to run"
+  "ta-2218":
+    native: "fox; jackal"
+    notes:
+      n1: "A fox or jackal."
+    examples:
+      "இது நரி.":
+        native: "This is a fox."
+        bases:
+          "நரி": "fox; jackal"
+      "நரி வருகிறது.":
+        native: "A fox is coming."
+        bases:
+          "நரி": "fox; jackal"
+          "வருகிறது": "is coming; from வா (vā), come"
+  "ta-2219":
+    native: "tortoise; turtle"
+    notes:
+      n1: "A tortoise or a turtle."
+    examples:
+      "இது ஆமை.":
+        native: "This is a tortoise."
+        bases:
+          "ஆமை": "tortoise; turtle"
+      "ஆமை எங்கே?":
+        native: "Where is the tortoise?"
+        bases:
+          "ஆமை": "tortoise; turtle"
+  "ta-2220":
+    native: "frog"
+    notes:
+      n1: "A frog."
+    examples:
+      "இது தவளை.":
+        native: "This is a frog."
+        bases:
+          "தவளை": "frog"
+      "தவளை குதிக்கிறது.":
+        native: "The frog is jumping."
+        bases:
+          "தவளை": "frog"
+          "குதிக்கிறது": "is jumping; from குதி (kuti), to jump"
+  "ta-2221":
+    native: "lizard"
+    notes:
+      n1: "A house lizard, common on walls."
+    examples:
+      "பல்லி எங்கே?":
+        native: "Where is the lizard?"
+        bases:
+          "பல்லி": "lizard"
+      "சுவரில் பல்லி.":
+        native: "A lizard on the wall."
+        bases:
+          "சுவரில்": "on the wall; from சுவர் (cuvar), wall"
+          "பல்லி": "lizard"
+  "ta-2222":
+    native: "ant"
+    notes:
+      n1: "An ant."
+    examples:
+      "இது எறும்பு.":
+        native: "This is an ant."
+        bases:
+          "எறும்பு": "ant"
+      "எறும்பு எங்கே?":
+        native: "Where is the ant?"
+        bases:
+          "எறும்பு": "ant"
+  "ta-2223":
+    native: "mosquito"
+    notes:
+      n1: "A mosquito."
+    examples:
+      "இங்கே கொசு அதிகம்.":
+        native: "There are many mosquitoes here."
+        bases:
+          "கொசு": "mosquito"
+      "கொசு எங்கே?":
+        native: "Where is the mosquito?"
+        bases:
+          "கொசு": "mosquito"
+  "ta-2224":
+    native: "bee"
+    notes:
+      n1: "A honey bee; made of தேன் (tēṉ) (honey) and ஈ (ī) (fly)."
+    examples:
+      "இது தேனீ.":
+        native: "This is a bee."
+        bases:
+          "தேனீ": "bee"
+      "தேனீ பறக்கிறது.":
+        native: "The bee is flying."
+        bases:
+          "தேனீ": "bee"
+          "பறக்கிறது": "is flying; from பற (paṟa), to fly"
+  "ta-2225":
+    native: "butterfly"
+    notes:
+      n1: "A butterfly; literally a colourful insect."
+    examples:
+      "இது வண்ணத்துப்பூச்சி.":
+        native: "This is a butterfly."
+        bases:
+          "வண்ணத்துப்பூச்சி": "butterfly"
+      "வண்ணத்துப்பூச்சி பறக்கிறது.":
+        native: "The butterfly is flying."
+        bases:
+          "வண்ணத்துப்பூச்சி": "butterfly"
+          "பறக்கிறது": "is flying; from பற (paṟa), to fly"
+  "ta-2226":
+    native: "crow"
+    notes:
+      n1: "A crow."
+    examples:
+      "இது காகம்.":
+        native: "This is a crow."
+        bases:
+          "காகம்": "crow"
+      "காகம் கருப்பு.":
+        native: "The crow is black."
+        bases:
+          "காகம்": "crow"
+  "ta-2227":
+    native: "peacock"
+    notes:
+      n1: "A peacock, the national bird of India."
+    examples:
+      "இது மயில்.":
+        native: "This is a peacock."
+        bases:
+          "மயில்": "peacock"
+      "மயில் அழகு.":
+        native: "The peacock is beautiful."
+        bases:
+          "மயில்": "peacock"
+  "ta-2228":
+    native: "parrot"
+    notes:
+      n1: "A parrot."
+    examples:
+      "இது கிளி.":
+        native: "This is a parrot."
+        bases:
+          "கிளி": "parrot"
+      "கிளி பச்சை.":
+        native: "The parrot is green."
+        bases:
+          "கிளி": "parrot"
+  "ta-2229":
+    native: "sparrow"
+    notes:
+      n1: "A sparrow or small bird."
+    examples:
+      "இது குருவி.":
+        native: "This is a sparrow."
+        bases:
+          "குருவி": "sparrow"
+      "குருவி பறக்கிறது.":
+        native: "The sparrow is flying."
+        bases:
+          "குருவி": "sparrow"
+          "பறக்கிறது": "is flying; from பற (paṟa), to fly"
+  "ta-2230":
+    native: "pigeon"
+    notes:
+      n1: "A pigeon or dove."
+    examples:
+      "இது புறா.":
+        native: "This is a pigeon."
+        bases:
+          "புறா": "pigeon"
+      "புறா வெள்ளை.":
+        native: "The pigeon is white."
+        bases:
+          "புறா": "pigeon"
+  "ta-2231":
+    native: "shark"
+    notes:
+      n1: "A shark."
+    examples:
+      "இது சுறா.":
+        native: "This is a shark."
+        bases:
+          "சுறா": "shark"
+      "சுறா கடலில்.":
+        native: "The shark is in the sea."
+        bases:
+          "சுறா": "shark"
+          "கடலில்": "in the sea; from கடல் (kaṭal), sea"
+  "ta-2232":
+    native: "nature"
+    notes:
+      n1: "Nature, the natural world."
+    examples:
+      "இயற்கை அழகு.":
+        native: "Nature is beautiful."
+        bases:
+          "இயற்கை": "nature"
+      "எனக்கு இயற்கை பிடிக்கும்.":
+        native: "I like nature."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "இயற்கை": "nature"
+  "ta-2233":
+    native: "animal"
+    notes:
+      n1: "An animal, especially a wild one."
+    examples:
+      "இது என்ன விலங்கு?":
+        native: "What animal is this?"
+        bases:
+          "விலங்கு": "animal"
+      "இது பெரிய விலங்கு.":
+        native: "This is a big animal."
+        bases:
+          "விலங்கு": "animal"
+  "ta-2234":
+    native: "rainbow"
+    notes:
+      n1: "Made of வானம் (vāṉam) (sky) and வில் (vil) (bow)."
+    examples:
+      "வானவில் பார்.":
+        native: "Look at the rainbow."
+        bases:
+          "வானவில்": "rainbow"
+      "இது வானவில்.":
+        native: "This is a rainbow."
+        bases:
+          "வானவில்": "rainbow"
+  "ta-2235":
+    native: "wave"
+    notes:
+      n1: "A wave of the sea."
+    examples:
+      "கடலில் அலை.":
+        native: "A wave in the sea."
+        bases:
+          "கடலில்": "in the sea; from கடல் (kaṭal), sea"
+          "அலை": "wave"
+      "அலை அதிகம்.":
+        native: "The waves are high."
+        bases:
+          "அலை": "wave"
+  "ta-2236":
+    native: "rock"
+    notes:
+      n1: "A large rock."
+    examples:
+      "இது பெரிய பாறை.":
+        native: "This is a big rock."
+        bases:
+          "பாறை": "rock"
+      "பாறை எங்கே?":
+        native: "Where is the rock?"
+        bases:
+          "பாறை": "rock"
+  "ta-2237":
+    native: "land; ground"
+    notes:
+      n1: "Land or ground, as a plot. The last sound changes before an ending: நிலத்தில் (nilattil) is on the land."
+    examples:
+      "நிலம் ஈரம்.":
+        native: "The ground is wet."
+        bases:
+          "நிலம்": "land; ground"
+      "இது என் நிலம்.":
+        native: "This is my land."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "நிலம்": "land; ground"
+  "ta-2238":
+    native: "field (farm)"
+    notes:
+      n1: "A farm field. The ending -இல் (-il) gives வயலில் (vayalil), in the field."
+    examples:
+      "வயல் பச்சை.":
+        native: "The field is green."
+        bases:
+          "வயல்": "field (farm)"
+      "வயலில் வேலை.":
+        native: "Work in the field."
+        bases:
+          "வயலில்": "in the field; from வயல் (vayal), field (farm)"
+  "ta-2239":
+    native: "fire"
+    notes:
+      n1: "Fire."
+    examples:
+      "நெருப்பு சூடு.":
+        native: "Fire is hot."
+        bases:
+          "நெருப்பு": "fire"
+          "சூடு": "hot"
+      "நெருப்பு எரிகிறது.":
+        native: "The fire is burning."
+        bases:
+          "நெருப்பு": "fire"
+          "எரிகிறது": "is burning; from எரி (eri), to burn"
+  "ta-2240":
+    native: "smoke"
+    notes:
+      n1: "Smoke."
+    examples:
+      "புகை இல்லை.":
+        native: "There is no smoke."
+        bases:
+          "புகை": "smoke"
+      "இங்கே புகை அதிகம்.":
+        native: "There is a lot of smoke here."
+        bases:
+          "புகை": "smoke"
+  "ta-2241":
+    native: "to bloom"
+    notes:
+      n1: "To open as a flower does. The same spelling is also a formal noun for flower."
+    examples:
+      "தாமரை மலர்கிறது.":
+        native: "The lotus is blooming."
+        bases:
+          "மலர்கிறது": "is blooming; from மலர் (malar), to bloom"
+      "பூ மலர்கிறது.":
+        native: "The flower is blooming."
+        bases:
+          "மலர்கிறது": "is blooming; from மலர் (malar), to bloom"
+  "ta-2242":
+    native: "to fall off"
+    notes:
+      n1: "Leaves, flowers or hair fall off by themselves."
+    examples:
+      "இலை உதிர்கிறது.":
+        native: "The leaf is falling."
+        bases:
+          "உதிர்கிறது": "is falling off; from உதிர் (utir), to fall off"
+      "முடி உதிர்கிறது.":
+        native: "The hair is falling out."
+        bases:
+          "உதிர்கிறது": "is falling off; from உதிர் (utir), to fall off"
+  "ta-2243":
+    native: "to sprout"
+    notes:
+      n1: "A seed or plant sprouts."
+    examples:
+      "விதை முளைக்கிறது.":
+        native: "The seed is sprouting."
+        bases:
+          "முளைக்கிறது": "is sprouting; from முளை (muḷai), to sprout"
+      "செடி முளைக்கிறது.":
+        native: "The plant is sprouting."
+        bases:
+          "முளைக்கிறது": "is sprouting; from முளை (muḷai), to sprout"
+  "ta-2244":
+    native: "to melt"
+    notes:
+      n1: "To melt, as sugar or frost does."
+    examples:
+      "சர்க்கரை உருகுகிறது.":
+        native: "The sugar is melting."
+        bases:
+          "உருகுகிறது": "is melting; from உருகு (uruku), to melt"
+      "பனி உருகுகிறது.":
+        native: "The frost is melting."
+        bases:
+          "உருகுகிறது": "is melting; from உருகு (uruku), to melt"
+  "ta-2245":
+    native: "to freeze; to set"
+    notes:
+      n1: "To freeze or set solid."
+    examples:
+      "தண்ணீர் உறைகிறது.":
+        native: "The water is freezing."
+        bases:
+          "உறைகிறது": "is freezing; from உறை (uṟai), to freeze; to set"
+      "பனி உறைகிறது.":
+        native: "The frost is freezing."
+        bases:
+          "உறைகிறது": "is freezing; from உறை (uṟai), to freeze; to set"
+  "ta-2246":
+    native: "to flow; to leak"
+    notes:
+      n1: "To flow in a stream or to leak."
+    examples:
+      "குழாய் ஒழுகுகிறது.":
+        native: "The tap is leaking."
+        bases:
+          "ஒழுகுகிறது": "is flowing; from ஒழுகு (oḻuku), to flow; to leak"
+      "தண்ணீர் ஒழுகுகிறது.":
+        native: "The water is flowing."
+        bases:
+          "ஒழுகுகிறது": "is flowing; from ஒழுகு (oḻuku), to flow; to leak"
