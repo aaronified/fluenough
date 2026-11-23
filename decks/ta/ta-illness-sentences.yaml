@@ -1,0 +1,106 @@
+schema: 1
+id: "ta-illness-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4044"
+    target: "இரண்டு நாளாக காய்ச்சல்."
+    reading: "iraṇṭu nāḷāka kāyccal."
+    ipa: "iɾaɳʈu naːɭaːka kaːjtʃtʃal"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "இரண்டு", ref: "ta-0089" }, { word: "நாளாக", base: "நாள்", reading: "nāḷ" }, { word: "காய்ச்சல்", ref: "ta-1264" }]
+    confusables:
+      - { id: "w1", ref: "ta-1265", kind: "word" }
+      - { id: "w2", ref: "ta-1266", kind: "word" }
+  - id: "ta-4045"
+    target: "டாக்டரை பார்க்க வேண்டும்."
+    reading: "ṭākṭarai pārkka vēṇṭum."
+    ipa: "ʈaːkʈaɾai paːɾkka ʋeːɳʈum"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "டாக்டரை", base: "டாக்டர்", reading: "ṭākṭar" }, { word: "பார்க்க", base: "பார்", reading: "pār" }, { word: "வேண்டும்", ref: "ta-0409" }]
+    confusables:
+      - { id: "w1", ref: "ta-1275", kind: "word" }
+      - { id: "w2", ref: "ta-1271", kind: "word" }
+  - id: "ta-4046"
+    target: "தலைவலி, மாத்திரை சாப்பிடு."
+    reading: "talaivali, māttirai cāppiṭu."
+    ipa: "t̪alaiʋali maːt̪t̪iɾai saːppiʈu"
+    pos: "phrase"
+    bases: [{ word: "தலைவலி", ref: "ta-1267" }, { word: "மாத்திரை", ref: "ta-1272" }, { word: "சாப்பிடு", ref: "ta-0119" }]
+    confusables:
+      - { id: "w1", ref: "ta-1273", kind: "word" }
+      - { id: "w2", ref: "ta-1271", kind: "word" }
+  - id: "ta-4047"
+    target: "நாளை டாக்டர் இருக்கிறாரா?"
+    reading: "nāḷai ṭākṭar irukkiṟārā?"
+    ipa: "naːɭai ʈaːkʈaɾ iɾukkiraːɾaː"
+    pos: "phrase"
+    bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "டாக்டர்", ref: "ta-1274" }, { word: "இருக்கிறாரா", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-1276", kind: "word" }
+      - { id: "w2", ref: "ta-1275", kind: "word" }
+  - id: "ta-4048"
+    target: "மருந்து காலையிலும் இரவிலும் சாப்பிடு."
+    reading: "maruntu kālaiyilum iravilum cāppiṭu."
+    ipa: "maɾunt̪u kaːlaijilum iɾaʋilum saːppiʈu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "மருந்து", ref: "ta-1271" }, { word: "காலையிலும்", base: "காலை", reading: "kālai" }, { word: "இரவிலும்", base: "இரவு", reading: "iravu" }, { word: "சாப்பிடு", ref: "ta-0119" }]
+    confusables:
+      - { id: "w1", ref: "ta-1272", kind: "word" }
+      - { id: "w2", ref: "ta-1273", kind: "word" }
+  - id: "ta-4049"
+    target: "வயிறு வலிக்கிறது, வாந்தி வருகிறது."
+    reading: "vayiṟu valikkiṟatu, vānti varukiṟatu."
+    ipa: "ʋajiru ʋalikkirat̪u ʋaːnt̪i ʋaɾukirat̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "வயிறு", ref: "ta-0255" }, { word: "வலிக்கிறது", base: "வலி", reading: "vali" }, { word: "வாந்தி", ref: "ta-1285" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+    confusables:
+      - { id: "w1", ref: "ta-1268", kind: "word" }
+      - { id: "w2", ref: "ta-1294", kind: "word" }
+  - id: "ta-4050"
+    target: "உடம்பு சரியில்லை, ஓய்வு வேண்டும்."
+    reading: "uṭampu cariyillai, ōyvu vēṇṭum."
+    ipa: "uʈampu saɾijillai oːjʋu ʋeːɳʈum"
+    pos: "phrase"
+    bases: [{ word: "உடம்பு", ref: "ta-0258" }, { word: "சரியில்லை", base: "சரி", reading: "cari" }, { word: "ஓய்வு", ref: "ta-0200" }, { word: "வேண்டும்", ref: "ta-0409" }]
+    confusables:
+      - { id: "w1", ref: "ta-1293", kind: "word" }
+      - { id: "w2", ref: "ta-1263", kind: "word" }
+  - id: "ta-4051"
+    target: "தண்ணீர் குடி, மருந்து சாப்பிடு."
+    reading: "taṇṇīr kuṭi, maruntu cāppiṭu."
+    ipa: "t̪aɳɳiːɾ kuʈi maɾunt̪u saːppiʈu"
+    pos: "phrase"
+    bases: [{ word: "தண்ணீர்", ref: "ta-0005" }, { word: "குடி", ref: "ta-0120" }, { word: "மருந்து", ref: "ta-1271" }, { word: "சாப்பிடு", ref: "ta-0119" }]
+    confusables:
+      - { id: "w1", ref: "ta-1296", kind: "word" }
+      - { id: "w2", ref: "ta-1312", kind: "word" }
+  - id: "ta-4052"
+    target: "எனக்கு தொண்டை வலி, இருமல்."
+    reading: "eṉakku toṇṭai vali, irumal."
+    ipa: "enakku t̪oɳʈai ʋali iɾumal"
+    pos: "phrase"
+    bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "தொண்டை", ref: "ta-1281" }, { word: "வலி", ref: "ta-1269" }, { word: "இருமல்", ref: "ta-1266" }]
+    confusables:
+      - { id: "w1", ref: "ta-1267", kind: "word" }
+      - { id: "w2", ref: "ta-1264", kind: "word" }
+  - id: "ta-4053"
+    target: "அவசரம், ஆம்புலன்ஸ் கூப்பிடு."
+    reading: "avacaram, āmpulaṉs kūppiṭu."
+    ipa: "aʋasaɾam aːmpulans kuːppiʈu"
+    pos: "phrase"
+    bases: [{ word: "அவசரம்", ref: "ta-1802" }, { word: "ஆம்புலன்ஸ்", ref: "ta-1290" }, { word: "கூப்பிடு", base: "கூப்பிடு", reading: "kūppiṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-1274", kind: "word" }
+      - { id: "w2", ref: "ta-1275", kind: "word" }

@@ -507,17 +507,20 @@ units:
       - { id: "it-got-done", text: { "en": "Saying a thing is finished, or done for oneself" } }
     reading_passages:
       - { id: "finished-list", text: { "en": "A list of jobs, each ticked off" } }
-  - planned: { id: "ta-illness", theme: "illness", words: 50 }
+  - decks: ["ta-illness", "ta-illness-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "a-cold", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
-  - planned: { id: "ta-eating-out", theme: "eating-out", words: 9 }
+  - decks: ["ta-eating-out", "ta-eating-out-sentences", "*"]
+    words: 9
     listening_passages:
       - { id: "ordering-meals", text: { "en": "Ordering a meal on a banana leaf" } }
     reading_passages:
       - { id: "restaurant-bill", text: { "en": "A restaurant bill" } }
-  - planned: { id: "ta-cooking", theme: "cooking", words: 50 }
+  - decks: ["ta-cooking", "ta-cooking-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
     reading_passages:
@@ -619,12 +622,14 @@ units:
       - { id: "when-i-was-small", text: { "en": "Telling what you did when you were small" } }
     reading_passages:
       - { id: "rule-sheet", text: { "en": "A rule sheet: do this when the bell rings" } }
-  - planned: { id: "ta-adjectives-2", theme: "adjectives-2", words: 60 }
+  - decks: ["ta-adjectives-2", "ta-adjectives-2-sentences", "*"]
+    words: 60
     listening_passages:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - planned: { id: "ta-workplace", theme: "workplace", words: 50 }
+  - decks: ["ta-workplace", "ta-workplace-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
     reading_passages:

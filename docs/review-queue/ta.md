@@ -147,3 +147,28 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-2197 | ta-nature | Is வனம் natural in speech, or only written beside காடு? | Sonnet builder | 2026-11-23 |
 | ta-2219 | ta-nature | Does ஆமை cover both tortoise and turtle? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-verb-present and the A2 rules decks | Forms of the 150 later verbs are generated from a pattern (stem, past marker, future marker, participle): check them, above all the compound verbs, wh stems (பற, மற, கட) and -ய் verbs. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-2278 | ta-adjectives-2 | Is காலியான (from the English loan காலி) natural for empty? | Sonnet builder | 2026-11-23 |
+| ta-2279 | ta-adjectives-2 | Is நிரம்பிய the usual spoken form of full, or நிறைந்த? | Sonnet builder | 2026-11-23 |
+| ta-2300 | ta-adjectives-2 | Is பிரமாண்டமான natural in speech for huge? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-adjectives-2 | All adjectives are given in the -ஆன attributive form; check that each is spelled as spoken Tamil writes it. | Sonnet builder | 2026-11-23 |
+| ta-1275 | ta-illness | Is nurse best marked feminine (f) in a course that uses m, f and n? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1277 | ta-illness | Is ரத்தம் the everyday spoken form, with இரத்தம் written? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1312 | ta-illness | Is பத்தியம் the usual spoken word for the diet kept during treatment? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1311 | ta-illness | Is தடுப்பூசி the everyday word for a vaccination? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1305 | ta-illness | Is எனக்கு வியர்க்கிறது the natural way to say I am sweating? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1300 | ta-illness | Is மயங்கு the everyday verb for fainting, or is another more usual? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| unit-level | ta-workplace | The job words ஊழியர் to தலைவர் are given gender m, as people of either sex take them; check each. | Sonnet builder | 2026-11-23 |
+| ta-2314 | ta-workplace | Is சமையல்காரர் the right word for a cook, and do women use the same form? | Sonnet builder | 2026-11-23 |
+| ta-2317 | ta-workplace | Is gender m right for கணக்காளர், and is the word natural? | Sonnet builder | 2026-11-23 |
+| ta-2350 | ta-workplace | Is கையெழுத்திடு one word, and natural in speech for sign? | Sonnet builder | 2026-11-23 |
+| ta-2353 | ta-workplace | Is அச்சிடு natural in speech, or is a spoken word used for print? | Sonnet builder | 2026-11-23 |
+| ta-1320 | ta-eating-out | Is மீல்ஸ் the usual restaurant name for a full rice meal, and is the gloss right? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1319 | ta-eating-out | Is பார்சல் the usual word for takeaway food? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1321 | ta-eating-out | Is சர்வர் the everyday word for a waiter? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1344 | ta-cooking | Is சட்டி the everyday word for a round cooking pot, next to பாத்திரம் and கடாய்? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1345 | ta-cooking | Is மிக்ஸி the usual word for the electric mixer-grinder? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1369 | ta-cooking | Is பதம் used in speech for the right state of a cooked dish? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1360 | ta-cooking | Is the split between ருசி (spoken) and சுவை right? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1347 | ta-cooking | Is வதக்கு the everyday verb for sautéing in a little oil? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1354 | ta-cooking | Is தோசை சுடு the natural way to say make dosa? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1356 | ta-cooking | Is சாதம் பிசை natural for mashing rice, or is it more used for dough? | ta-words1 (Sonnet builder) | 2026-11-23 |
