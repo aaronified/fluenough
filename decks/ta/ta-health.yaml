@@ -1,0 +1,1061 @@
+schema: 1
+id: "ta-health"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "health"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-7000"
+    target: "நோயாளி"
+    reading: "nōyāḷi"
+    ipa: "noːjaːɭi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவர் ஒரு நோயாளி."
+        reading: "avar oru nōyāḷi."
+        ipa: "aʋaɾ oɾu noːjaːɭi"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "ஒரு", ref: "ta-0419" }, { word: "நோயாளி", base: "நோயாளி", reading: "nōyāḷi" }]
+      - target: "நோயாளி தூங்குகிறார்."
+        reading: "nōyāḷi tūṅkukiṟār."
+        ipa: "noːjaːɭi t̪uːŋkukiraːɾ"
+        bases: [{ word: "நோயாளி", base: "நோயாளி", reading: "nōyāḷi" }, { word: "தூங்குகிறார்", base: "தூங்கு", reading: "tūṅku" }]
+  - id: "ta-7001"
+    target: "அறிகுறி"
+    reading: "aṟikuṟi"
+    ipa: "arikuri"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "இது நோயின் அறிகுறி."
+        reading: "itu nōyiṉ aṟikuṟi."
+        ipa: "it̪u noːjin arikuri"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நோயின்", base: "நோய்", reading: "nōy" }, { word: "அறிகுறி", base: "அறிகுறி", reading: "aṟikuṟi" }]
+      - target: "என்ன அறிகுறி?"
+        reading: "eṉṉa aṟikuṟi?"
+        ipa: "enna arikuri"
+        bases: [{ word: "என்ன", ref: "ta-0042" }, { word: "அறிகுறி", base: "அறிகுறி", reading: "aṟikuṟi" }]
+  - id: "ta-7002"
+    target: "உடல்நலம்"
+    reading: "uṭalnalam"
+    ipa: "uʈalnalam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "உடல்நலம் முக்கியம்."
+        reading: "uṭalnalam mukkiyam."
+        ipa: "uʈalnalam mukkijam"
+        bases: [{ word: "உடல்நலம்", base: "உடல்நலம்", reading: "uṭalnalam" }, { word: "முக்கியம்", base: "முக்கியம்", reading: "mukkiyam" }]
+      - target: "உங்கள் உடல்நலம் எப்படி?"
+        reading: "uṅkaḷ uṭalnalam eppaṭi?"
+        ipa: "uŋkaɭ uʈalnalam eppaʈi"
+        bases: [{ word: "உங்கள்", base: "நீங்கள்", reading: "nīṅkaḷ" }, { word: "உடல்நலம்", base: "உடல்நலம்", reading: "uṭalnalam" }, { word: "எப்படி", ref: "ta-0045" }]
+  - id: "ta-7003"
+    target: "உடல்நிலை"
+    reading: "uṭalnilai"
+    ipa: "uʈalnilai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் உடல்நிலை நல்லது."
+        reading: "avar uṭalnilai nallatu."
+        ipa: "aʋaɾ uʈalnilai nallat̪u"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "உடல்நிலை", base: "உடல்நிலை", reading: "uṭalnilai" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "உடல்நிலை சரியில்லை."
+        reading: "uṭalnilai cariyillai."
+        ipa: "uʈalnilai saɾijillai"
+        bases: [{ word: "உடல்நிலை", base: "உடல்நிலை", reading: "uṭalnilai" }, { word: "சரியில்லை", base: "சரி", reading: "cari" }]
+  - id: "ta-7004"
+    target: "முதலுதவி"
+    reading: "mutalutavi"
+    ipa: "mut̪alut̪aʋi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "முதலுதவி முக்கியம்."
+        reading: "mutalutavi mukkiyam."
+        ipa: "mut̪alut̪aʋi mukkijam"
+        bases: [{ word: "முதலுதவி", base: "முதலுதவி", reading: "mutalutavi" }, { word: "முக்கியம்", base: "முக்கியம்", reading: "mukkiyam" }]
+      - target: "முதலுதவிப் பெட்டி எங்கே?"
+        reading: "mutalutavip peṭṭi eṅkē?"
+        ipa: "mut̪alut̪aʋip peʈʈi eŋkeː"
+        bases: [{ word: "முதலுதவிப்", base: "முதலுதவி", reading: "mutalutavi" }, { word: "பெட்டி", ref: "ta-1931" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-7005"
+    target: "மருந்துச்சீட்டு"
+    reading: "maruntuccīṭṭu"
+    ipa: "maɾunt̪utʃtʃiːʈʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "மருந்துச்சீட்டு இங்கே இருக்கிறது."
+        reading: "maruntuccīṭṭu iṅkē irukkiṟatu."
+        ipa: "maɾunt̪utʃtʃiːʈʈu iŋkeː iɾukkirat̪u"
+        bases: [{ word: "மருந்துச்சீட்டு", base: "மருந்துச்சீட்டு", reading: "maruntuccīṭṭu" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "மருந்துச்சீட்டு கொடுங்கள்."
+        reading: "maruntuccīṭṭu koṭuṅkaḷ."
+        ipa: "maɾunt̪utʃtʃiːʈʈu koʈuŋkaɭ"
+        bases: [{ word: "மருந்துச்சீட்டு", base: "மருந்துச்சீட்டு", reading: "maruntuccīṭṭu" }, { word: "கொடுங்கள்", base: "கொடு", reading: "koṭu" }]
+  - id: "ta-7006"
+    target: "தொற்று"
+    reading: "toṟṟu"
+    ipa: "t̪orru"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "இது தொற்று."
+        reading: "itu toṟṟu."
+        ipa: "it̪u t̪orru"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "தொற்று", base: "தொற்று", reading: "toṟṟu" }]
+      - target: "தொற்று பரவுகிறது."
+        reading: "toṟṟu paravukiṟatu."
+        ipa: "t̪orru paɾaʋukirat̪u"
+        bases: [{ word: "தொற்று", base: "தொற்று", reading: "toṟṟu" }, { word: "பரவுகிறது", base: "பரவு", reading: "paravu" }]
+  - id: "ta-7007"
+    target: "கிருமி"
+    reading: "kirumi"
+    ipa: "kiɾumi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "கிருமி கண்ணுக்குத் தெரியாது."
+        reading: "kirumi kaṇṇukkut teriyātu."
+        ipa: "kiɾumi kaɳɳukkut̪ t̪eɾijaːt̪u"
+        bases: [{ word: "கிருமி", base: "கிருமி", reading: "kirumi" }, { word: "கண்ணுக்குத்", base: "கண்", reading: "kaṇ" }, { word: "தெரியாது", base: "தெரி", reading: "teri" }]
+      - target: "கையில் கிருமி இருக்கிறது."
+        reading: "kaiyil kirumi irukkiṟatu."
+        ipa: "kaijil kiɾumi iɾukkirat̪u"
+        bases: [{ word: "கையில்", base: "கை", reading: "kai" }, { word: "கிருமி", base: "கிருமி", reading: "kirumi" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7008"
+    target: "வைரஸ்"
+    reading: "vairas"
+    ipa: "ʋaiɾas"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "இது வைரஸ் காய்ச்சல்."
+        reading: "itu vairas kāyccal."
+        ipa: "it̪u ʋaiɾas kaːjtʃtʃal"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "வைரஸ்", base: "வைரஸ்", reading: "vairas" }, { word: "காய்ச்சல்", ref: "ta-1264" }]
+      - target: "வைரஸ் பரவுகிறது."
+        reading: "vairas paravukiṟatu."
+        ipa: "ʋaiɾas paɾaʋukirat̪u"
+        bases: [{ word: "வைரஸ்", base: "வைரஸ்", reading: "vairas" }, { word: "பரவுகிறது", base: "பரவு", reading: "paravu" }]
+  - id: "ta-7009"
+    target: "புற்றுநோய்"
+    reading: "puṟṟunōy"
+    ipa: "purrunoːj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "புற்றுநோய் ஒரு பெரிய நோய்."
+        reading: "puṟṟunōy oru periya nōy."
+        ipa: "purrunoːj oɾu peɾija noːj"
+        bases: [{ word: "புற்றுநோய்", base: "புற்றுநோய்", reading: "puṟṟunōy" }, { word: "ஒரு", ref: "ta-0419" }, { word: "பெரிய", ref: "ta-0167" }, { word: "நோய்", ref: "ta-1263" }]
+      - target: "அவருக்குப் புற்றுநோய் இருக்கிறது."
+        reading: "avarukkup puṟṟunōy irukkiṟatu."
+        ipa: "aʋaɾukkup purrunoːj iɾukkirat̪u"
+        bases: [{ word: "அவருக்குப்", base: "அவர்", reading: "avar" }, { word: "புற்றுநோய்", base: "புற்றுநோய்", reading: "puṟṟunōy" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7010"
+    target: "நீரிழிவு"
+    reading: "nīriḻivu"
+    ipa: "niːɾiɻiʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவருக்கு நீரிழிவு இருக்கிறது."
+        reading: "avarukku nīriḻivu irukkiṟatu."
+        ipa: "aʋaɾukku niːɾiɻiʋu iɾukkirat̪u"
+        bases: [{ word: "அவருக்கு", base: "அவர்", reading: "avar" }, { word: "நீரிழிவு", base: "நீரிழிவு", reading: "nīriḻivu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "நீரிழிவுக்கு மருந்து சாப்பிடுகிறார்."
+        reading: "nīriḻivukku maruntu cāppiṭukiṟār."
+        ipa: "niːɾiɻiʋukku maɾunt̪u saːppiʈukiraːɾ"
+        bases: [{ word: "நீரிழிவுக்கு", base: "நீரிழிவு", reading: "nīriḻivu" }, { word: "மருந்து", ref: "ta-1271" }, { word: "சாப்பிடுகிறார்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+  - id: "ta-7011"
+    target: "வலிப்பு"
+    reading: "valippu"
+    ipa: "ʋalippu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவருக்கு வலிப்பு வந்தது."
+        reading: "avarukku valippu vantatu."
+        ipa: "aʋaɾukku ʋalippu ʋant̪at̪u"
+        bases: [{ word: "அவருக்கு", base: "அவர்", reading: "avar" }, { word: "வலிப்பு", base: "வலிப்பு", reading: "valippu" }, { word: "வந்தது", base: "வா", reading: "vā" }]
+      - target: "வலிப்பு ஆபத்தானது."
+        reading: "valippu āpattāṉatu."
+        ipa: "ʋalippu aːpat̪t̪aːnat̪u"
+        bases: [{ word: "வலிப்பு", base: "வலிப்பு", reading: "valippu" }, { word: "ஆபத்தானது", base: "ஆபத்து", reading: "āpattu" }]
+  - id: "ta-7012"
+    target: "குணப்படுத்து"
+    reading: "kuṇappaṭuttu"
+    ipa: "kuɳappaʈut̪t̪u"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "மருந்து நோயைக் குணப்படுத்துகிறது."
+        reading: "maruntu nōyaik kuṇappaṭuttukiṟatu."
+        ipa: "maɾunt̪u noːjaik kuɳappaʈut̪t̪ukirat̪u"
+        bases: [{ word: "மருந்து", ref: "ta-1271" }, { word: "நோயைக்", base: "நோய்", reading: "nōy" }, { word: "குணப்படுத்துகிறது", base: "குணப்படுத்து", reading: "kuṇappaṭuttu" }]
+      - target: "மருத்துவர் அவரைக் குணப்படுத்துகிறார்."
+        reading: "maruttuvar avaraik kuṇappaṭuttukiṟār."
+        ipa: "maɾut̪t̪uʋaɾ aʋaɾaik kuɳappaʈut̪t̪ukiraːɾ"
+        bases: [{ word: "மருத்துவர்", ref: "ta-0199" }, { word: "அவரைக்", base: "அவர்", reading: "avar" }, { word: "குணப்படுத்துகிறார்", base: "குணப்படுத்து", reading: "kuṇappaṭuttu" }]
+  - id: "ta-7013"
+    target: "பரவு"
+    reading: "paravu"
+    ipa: "paɾaʋu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காய்ச்சல் பரவுகிறது."
+        reading: "kāyccal paravukiṟatu."
+        ipa: "kaːjtʃtʃal paɾaʋukirat̪u"
+        bases: [{ word: "காய்ச்சல்", ref: "ta-1264" }, { word: "பரவுகிறது", base: "பரவு", reading: "paravu" }]
+      - target: "செய்தி பரவுகிறது."
+        reading: "ceyti paravukiṟatu."
+        ipa: "sejt̪i paɾaʋukirat̪u"
+        bases: [{ word: "செய்தி", ref: "ta-1873" }, { word: "பரவுகிறது", base: "பரவு", reading: "paravu" }]
+  - id: "ta-7014"
+    target: "தடு"
+    reading: "taṭu"
+    ipa: "t̪aʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "தடுப்பூசி நோயைத் தடுக்கிறது."
+        reading: "taṭuppūci nōyait taṭukkiṟatu."
+        ipa: "t̪aʈuppuːsi noːjait̪ t̪aʈukkirat̪u"
+        bases: [{ word: "தடுப்பூசி", ref: "ta-1311" }, { word: "நோயைத்", base: "நோய்", reading: "nōy" }, { word: "தடுக்கிறது", base: "தடு", reading: "taṭu" }]
+      - target: "ஓய்வு நோயைத் தடுக்கிறது."
+        reading: "ōyvu nōyait taṭukkiṟatu."
+        ipa: "oːjʋu noːjait̪ t̪aʈukkirat̪u"
+        bases: [{ word: "ஓய்வு", ref: "ta-0200" }, { word: "நோயைத்", base: "நோய்", reading: "nōy" }, { word: "தடுக்கிறது", base: "தடு", reading: "taṭu" }]
+  - id: "ta-7015"
+    target: "தவிர்"
+    reading: "tavir"
+    ipa: "t̪aʋiɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இனிப்பைத் தவிர்."
+        reading: "iṉippait tavir."
+        ipa: "inippait̪ t̪aʋiɾ"
+        bases: [{ word: "இனிப்பைத்", base: "இனிப்பு", reading: "iṉippu" }, { word: "தவிர்", base: "தவிர்", reading: "tavir" }]
+      - target: "நான் உப்பைத் தவிர்க்கிறேன்."
+        reading: "nāṉ uppait tavirkkiṟēṉ."
+        ipa: "naːn uppait̪ t̪aʋiɾkkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "உப்பைத்", base: "உப்பு", reading: "uppu" }, { word: "தவிர்க்கிறேன்", base: "தவிர்", reading: "tavir" }]
+  - id: "ta-7016"
+    target: "மெலி"
+    reading: "meli"
+    ipa: "meli"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "நான் மெலிகிறேன்."
+        reading: "nāṉ melikiṟēṉ."
+        ipa: "naːn melikireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "மெலிகிறேன்", base: "மெலி", reading: "meli" }]
+      - target: "அவன் மெலிகிறான்."
+        reading: "avaṉ melikiṟāṉ."
+        ipa: "aʋan melikiraːn"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "மெலிகிறான்", base: "மெலி", reading: "meli" }]
+  - id: "ta-7017"
+    target: "ஒல்லி"
+    reading: "olli"
+    ipa: "olli"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவன் ஒல்லி."
+        reading: "avaṉ olli."
+        ipa: "aʋan olli"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "ஒல்லி", base: "ஒல்லி", reading: "olli" }]
+      - target: "ஒல்லியான பையன்."
+        reading: "olliyāṉa paiyaṉ."
+        ipa: "ollijaːna paijan"
+        bases: [{ word: "ஒல்லியான", base: "ஒல்லி", reading: "olli" }, { word: "பையன்", ref: "ta-0442" }]
+  - id: "ta-7018"
+    target: "குண்டு"
+    reading: "kuṇṭu"
+    ipa: "kuɳʈu"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவன் குண்டு."
+        reading: "avaṉ kuṇṭu."
+        ipa: "aʋan kuɳʈu"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "குண்டு", base: "குண்டு", reading: "kuṇṭu" }]
+      - target: "குண்டான குழந்தை."
+        reading: "kuṇṭāṉa kuḻantai."
+        ipa: "kuɳʈaːna kuɻant̪ai"
+        bases: [{ word: "குண்டான", base: "குண்டு", reading: "kuṇṭu" }, { word: "குழந்தை", ref: "ta-0084" }]
+  - id: "ta-7019"
+    target: "பலம்"
+    reading: "palam"
+    ipa: "palam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "உடலுக்குப் பலம் வேண்டும்."
+        reading: "uṭalukkup palam vēṇṭum."
+        ipa: "uʈalukkup palam ʋeːɳʈum"
+        bases: [{ word: "உடலுக்குப்", base: "உடல்", reading: "uṭal" }, { word: "பலம்", base: "பலம்", reading: "palam" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "அவனுக்குப் பலம் இருக்கிறது."
+        reading: "avaṉukkup palam irukkiṟatu."
+        ipa: "aʋanukkup palam iɾukkirat̪u"
+        bases: [{ word: "அவனுக்குப்", base: "அவன்", reading: "avaṉ" }, { word: "பலம்", base: "பலம்", reading: "palam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7020"
+    target: "பலவீனம்"
+    reading: "palavīṉam"
+    ipa: "palaʋiːnam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குப் பலவீனம் இருக்கிறது."
+        reading: "eṉakkup palavīṉam irukkiṟatu."
+        ipa: "enakkup palaʋiːnam iɾukkirat̪u"
+        bases: [{ word: "எனக்குப்", base: "நான்", reading: "nāṉ" }, { word: "பலவீனம்", base: "பலவீனம்", reading: "palavīṉam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "பலவீனம் போகும்."
+        reading: "palavīṉam pōkum."
+        ipa: "palaʋiːnam poːkum"
+        bases: [{ word: "பலவீனம்", base: "பலவீனம்", reading: "palavīṉam" }, { word: "போகும்", base: "போ", reading: "pō" }]
+  - id: "ta-7021"
+    target: "தூக்கம்"
+    reading: "tūkkam"
+    ipa: "t̪uːkkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குத் தூக்கம் வருகிறது."
+        reading: "eṉakkut tūkkam varukiṟatu."
+        ipa: "enakkut̪ t̪uːkkam ʋaɾukirat̪u"
+        bases: [{ word: "எனக்குத்", base: "நான்", reading: "nāṉ" }, { word: "தூக்கம்", base: "தூக்கம்", reading: "tūkkam" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+      - target: "தூக்கம் முக்கியம்."
+        reading: "tūkkam mukkiyam."
+        ipa: "t̪uːkkam mukkijam"
+        bases: [{ word: "தூக்கம்", base: "தூக்கம்", reading: "tūkkam" }, { word: "முக்கியம்", base: "முக்கியம்", reading: "mukkiyam" }]
+  - id: "ta-7022"
+    target: "உடற்பயிற்சி"
+    reading: "uṭaṟpayiṟci"
+    ipa: "uʈarpajirsi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "தினமும் உடற்பயிற்சி செய்."
+        reading: "tiṉamum uṭaṟpayiṟci cey."
+        ipa: "t̪inamum uʈarpajirsi sej"
+        bases: [{ word: "தினமும்", ref: "ta-1106" }, { word: "உடற்பயிற்சி", base: "உடற்பயிற்சி", reading: "uṭaṟpayiṟci" }, { word: "செய்", ref: "ta-0127" }]
+      - target: "உடற்பயிற்சி நல்லது."
+        reading: "uṭaṟpayiṟci nallatu."
+        ipa: "uʈarpajirsi nallat̪u"
+        bases: [{ word: "உடற்பயிற்சி", base: "உடற்பயிற்சி", reading: "uṭaṟpayiṟci" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-7023"
+    target: "யோகா"
+    reading: "yōkā"
+    ipa: "joːkaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "நான் யோகா செய்கிறேன்."
+        reading: "nāṉ yōkā ceykiṟēṉ."
+        ipa: "naːn joːkaː sejkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "யோகா", base: "யோகா", reading: "yōkā" }, { word: "செய்கிறேன்", base: "செய்", reading: "cey" }]
+      - target: "காலையில் யோகா செய்."
+        reading: "kālaiyil yōkā cey."
+        ipa: "kaːlaijil joːkaː sej"
+        bases: [{ word: "காலையில்", base: "காலை", reading: "kālai" }, { word: "யோகா", base: "யோகா", reading: "yōkā" }, { word: "செய்", ref: "ta-0127" }]
+  - id: "ta-7024"
+    target: "உணவுமுறை"
+    reading: "uṇavumuṟai"
+    ipa: "uɳaʋumurai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "நல்ல உணவுமுறை வேண்டும்."
+        reading: "nalla uṇavumuṟai vēṇṭum."
+        ipa: "nalla uɳaʋumurai ʋeːɳʈum"
+        bases: [{ word: "நல்ல", ref: "ta-0169" }, { word: "உணவுமுறை", base: "உணவுமுறை", reading: "uṇavumuṟai" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "என் உணவுமுறை மாறுகிறது."
+        reading: "eṉ uṇavumuṟai māṟukiṟatu."
+        ipa: "en uɳaʋumurai maːrukirat̪u"
+        bases: [{ word: "என்", base: "நான்", reading: "nāṉ" }, { word: "உணவுமுறை", base: "உணவுமுறை", reading: "uṇavumuṟai" }, { word: "மாறுகிறது", base: "மாறு", reading: "māṟu" }]
+  - id: "ta-7025"
+    target: "ஊட்டச்சத்து"
+    reading: "ūṭṭaccattu"
+    ipa: "uːʈʈatʃtʃat̪t̪u"
+    pos: "noun"
+    gender: "n"
+    bases: "self"
+    examples:
+      - target: "இந்த உணவில் ஊட்டச்சத்து இருக்கிறது."
+        reading: "inta uṇavil ūṭṭaccattu irukkiṟatu."
+        ipa: "int̪a uɳaʋil uːʈʈatʃtʃat̪t̪u iɾukkirat̪u"
+        bases: [{ word: "இந்த", base: "இந்த", reading: "inta" }, { word: "உணவில்", base: "உணவு", reading: "uṇavu" }, { word: "ஊட்டச்சத்து", base: "ஊட்டச்சத்து", reading: "ūṭṭaccattu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "குழந்தைக்கு ஊட்டச்சத்து வேண்டும்."
+        reading: "kuḻantaikku ūṭṭaccattu vēṇṭum."
+        ipa: "kuɻant̪aikku uːʈʈatʃtʃat̪t̪u ʋeːɳʈum"
+        bases: [{ word: "குழந்தைக்கு", base: "குழந்தை", reading: "kuḻantai" }, { word: "ஊட்டச்சத்து", base: "ஊட்டச்சத்து", reading: "ūṭṭaccattu" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-7026"
+    target: "கொழுப்பு"
+    reading: "koḻuppu"
+    ipa: "koɻuppu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கொழுப்பு அதிகம்."
+        reading: "koḻuppu atikam."
+        ipa: "koɻuppu at̪ikam"
+        bases: [{ word: "கொழுப்பு", base: "கொழுப்பு", reading: "koḻuppu" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "எண்ணெயில் கொழுப்பு இருக்கிறது."
+        reading: "eṇṇeyil koḻuppu irukkiṟatu."
+        ipa: "eɳɳejil koɻuppu iɾukkirat̪u"
+        bases: [{ word: "எண்ணெயில்", base: "எண்ணெய்", reading: "eṇṇey" }, { word: "கொழுப்பு", base: "கொழுப்பு", reading: "koḻuppu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7027"
+    target: "புரதம்"
+    reading: "puratam"
+    ipa: "puɾat̪am"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "பருப்பில் புரதம் இருக்கிறது."
+        reading: "paruppil puratam irukkiṟatu."
+        ipa: "paɾuppil puɾat̪am iɾukkirat̪u"
+        bases: [{ word: "பருப்பில்", base: "பருப்பு", reading: "paruppu" }, { word: "புரதம்", base: "புரதம்", reading: "puratam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "முட்டையில் புரதம் இருக்கிறது."
+        reading: "muṭṭaiyil puratam irukkiṟatu."
+        ipa: "muʈʈaijil puɾat̪am iɾukkirat̪u"
+        bases: [{ word: "முட்டையில்", base: "முட்டை", reading: "muṭṭai" }, { word: "புரதம்", base: "புரதம்", reading: "puratam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7028"
+    target: "வைட்டமின்"
+    reading: "vaiṭṭamiṉ"
+    ipa: "ʋaiʈʈamin"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "பழத்தில் வைட்டமின் இருக்கிறது."
+        reading: "paḻattil vaiṭṭamiṉ irukkiṟatu."
+        ipa: "paɻat̪t̪il ʋaiʈʈamin iɾukkirat̪u"
+        bases: [{ word: "பழத்தில்", base: "பழம்", reading: "paḻam" }, { word: "வைட்டமின்", base: "வைட்டமின்", reading: "vaiṭṭamiṉ" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "எனக்கு வைட்டமின் மாத்திரை வேண்டும்."
+        reading: "eṉakku vaiṭṭamiṉ māttirai vēṇṭum."
+        ipa: "enakku ʋaiʈʈamin maːt̪t̪iɾai ʋeːɳʈum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "வைட்டமின்", base: "வைட்டமின்", reading: "vaiṭṭamiṉ" }, { word: "மாத்திரை", ref: "ta-1272" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-7029"
+    target: "மது"
+    reading: "matu"
+    ipa: "mat̪u"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மது உடலுக்குக் கெட்டது."
+        reading: "matu uṭalukkuk keṭṭatu."
+        ipa: "mat̪u uʈalukkuk keʈʈat̪u"
+        bases: [{ word: "மது", base: "மது", reading: "matu" }, { word: "உடலுக்குக்", base: "உடல்", reading: "uṭal" }, { word: "கெட்டது", base: "கெட்டது", reading: "keṭṭatu" }]
+      - target: "அவன் மது குடிக்கிறான்."
+        reading: "avaṉ matu kuṭikkiṟāṉ."
+        ipa: "aʋan mat̪u kuʈikkiraːn"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "மது", base: "மது", reading: "matu" }, { word: "குடிக்கிறான்", base: "குடி", reading: "kuṭi" }]
+  - id: "ta-7030"
+    target: "புகைபிடி"
+    reading: "pukaipiṭi"
+    ipa: "pukaipiʈi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் புகைபிடிக்கிறார்."
+        reading: "avar pukaipiṭikkiṟār."
+        ipa: "aʋaɾ pukaipiʈikkiraːɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "புகைபிடிக்கிறார்", base: "புகைபிடி", reading: "pukaipiṭi" }]
+      - target: "இங்கே புகைபிடிக்காதே."
+        reading: "iṅkē pukaipiṭikkātē."
+        ipa: "iŋkeː pukaipiʈikkaːt̪eː"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "புகைபிடிக்காதே", base: "புகைபிடி", reading: "pukaipiṭi" }]
+  - id: "ta-7031"
+    target: "முகக்கவசம்"
+    reading: "mukakkavacam"
+    ipa: "mukakkaʋasam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "முகக்கவசம் போடு."
+        reading: "mukakkavacam pōṭu."
+        ipa: "mukakkaʋasam poːʈu"
+        bases: [{ word: "முகக்கவசம்", base: "முகக்கவசம்", reading: "mukakkavacam" }, { word: "போடு", ref: "ta-0452" }]
+      - target: "என் முகக்கவசம் எங்கே?"
+        reading: "eṉ mukakkavacam eṅkē?"
+        ipa: "en mukakkaʋasam eŋkeː"
+        bases: [{ word: "என்", base: "நான்", reading: "nāṉ" }, { word: "முகக்கவசம்", base: "முகக்கவசம்", reading: "mukakkavacam" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-7032"
+    target: "காப்பீடு"
+    reading: "kāppīṭu"
+    ipa: "kaːppiːʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு மருத்துவக் காப்பீடு இருக்கிறது."
+        reading: "eṉakku maruttuvak kāppīṭu irukkiṟatu."
+        ipa: "enakku maɾut̪t̪uʋak kaːppiːʈu iɾukkirat̪u"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "மருத்துவக்", base: "மருத்துவம்", reading: "maruttuvam" }, { word: "காப்பீடு", base: "காப்பீடு", reading: "kāppīṭu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "காப்பீடு எடுக்க வேண்டும்."
+        reading: "kāppīṭu eṭukka vēṇṭum."
+        ipa: "kaːppiːʈu eʈukka ʋeːɳʈum"
+        bases: [{ word: "காப்பீடு", base: "காப்பீடு", reading: "kāppīṭu" }, { word: "எடுக்க", base: "எடு", reading: "eṭu" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-7033"
+    target: "அறுவைசிகிச்சை"
+    reading: "aṟuvaicikiccai"
+    ipa: "aruʋaisikitʃtʃai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "நாளை அறுவைசிகிச்சை இருக்கிறது."
+        reading: "nāḷai aṟuvaicikiccai irukkiṟatu."
+        ipa: "naːɭai aruʋaisikitʃtʃai iɾukkirat̪u"
+        bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "அறுவைசிகிச்சை", base: "அறுவைசிகிச்சை", reading: "aṟuvaicikiccai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "அறுவைசிகிச்சை பயமாக இருக்கிறது."
+        reading: "aṟuvaicikiccai payamāka irukkiṟatu."
+        ipa: "aruʋaisikitʃtʃai pajamaːka iɾukkirat̪u"
+        bases: [{ word: "அறுவைசிகிச்சை", base: "அறுவைசிகிச்சை", reading: "aṟuvaicikiccai" }, { word: "பயமாக", base: "பயம்", reading: "payam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7034"
+    target: "பக்கவிளைவு"
+    reading: "pakkaviḷaivu"
+    ipa: "pakkaʋiɭaiʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "இந்த மருந்தில் பக்கவிளைவு இல்லை."
+        reading: "inta maruntil pakkaviḷaivu illai."
+        ipa: "int̪a maɾunt̪il pakkaʋiɭaiʋu illai"
+        bases: [{ word: "இந்த", base: "இந்த", reading: "inta" }, { word: "மருந்தில்", base: "மருந்து", reading: "maruntu" }, { word: "பக்கவிளைவு", base: "பக்கவிளைவு", reading: "pakkaviḷaivu" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "பக்கவிளைவு இருக்கிறதா?"
+        reading: "pakkaviḷaivu irukkiṟatā?"
+        ipa: "pakkaʋiɭaiʋu iɾukkirat̪aː"
+        bases: [{ word: "பக்கவிளைவு", base: "பக்கவிளைவு", reading: "pakkaviḷaivu" }, { word: "இருக்கிறதா", base: "இரு", reading: "iru" }]
+  - id: "ta-7035"
+    target: "சுகாதாரம்"
+    reading: "cukātāram"
+    ipa: "sukaːt̪aːɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சுகாதாரம் முக்கியம்."
+        reading: "cukātāram mukkiyam."
+        ipa: "sukaːt̪aːɾam mukkijam"
+        bases: [{ word: "சுகாதாரம்", base: "சுகாதாரம்", reading: "cukātāram" }, { word: "முக்கியம்", base: "முக்கியம்", reading: "mukkiyam" }]
+      - target: "இங்கே சுகாதாரம் இல்லை."
+        reading: "iṅkē cukātāram illai."
+        ipa: "iŋkeː sukaːt̪aːɾam illai"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "சுகாதாரம்", base: "சுகாதாரம்", reading: "cukātāram" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-7036"
+    target: "மனநலம்"
+    reading: "maṉanalam"
+    ipa: "mananalam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "மனநலம் முக்கியம்."
+        reading: "maṉanalam mukkiyam."
+        ipa: "mananalam mukkijam"
+        bases: [{ word: "மனநலம்", base: "மனநலம்", reading: "maṉanalam" }, { word: "முக்கியம்", base: "முக்கியம்", reading: "mukkiyam" }]
+      - target: "உடல்நலம் மனநலம் இரண்டும் வேண்டும்."
+        reading: "uṭalnalam maṉanalam iraṇṭum vēṇṭum."
+        ipa: "uʈalnalam mananalam iɾaɳʈum ʋeːɳʈum"
+        bases: [{ word: "உடல்நலம்", ref: "ta-7002" }, { word: "மனநலம்", base: "மனநலம்", reading: "maṉanalam" }, { word: "இரண்டும்", base: "இரண்டு", reading: "iraṇṭu" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-7037"
+    target: "மருத்துவம்"
+    reading: "maruttuvam"
+    ipa: "maɾut̪t̪uʋam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மருத்துவம் படிக்கிறேன்."
+        reading: "maruttuvam paṭikkiṟēṉ."
+        ipa: "maɾut̪t̪uʋam paʈikkireːn"
+        bases: [{ word: "மருத்துவம்", base: "மருத்துவம்", reading: "maruttuvam" }, { word: "படிக்கிறேன்", base: "படி", reading: "paṭi" }]
+      - target: "மருத்துவம் இலவசம்."
+        reading: "maruttuvam ilavacam."
+        ipa: "maɾut̪t̪uʋam ilaʋasam"
+        bases: [{ word: "மருத்துவம்", base: "மருத்துவம்", reading: "maruttuvam" }, { word: "இலவசம்", ref: "ta-1251" }]
+  - id: "ta-7038"
+    target: "குணம்"
+    reading: "kuṇam"
+    ipa: "kuɳam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவருக்குக் குணம் ஆகிறது."
+        reading: "avarukkuk kuṇam ākiṟatu."
+        ipa: "aʋaɾukkuk kuɳam aːkirat̪u"
+        bases: [{ word: "அவருக்குக்", base: "அவர்", reading: "avar" }, { word: "குணம்", base: "குணம்", reading: "kuṇam" }, { word: "ஆகிறது", base: "ஆகு", reading: "āku" }]
+      - target: "அவன் குணம் நல்லது."
+        reading: "avaṉ kuṇam nallatu."
+        ipa: "aʋan kuɳam nallat̪u"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "குணம்", base: "குணம்", reading: "kuṇam" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-7039"
+    target: "தொந்தரவு"
+    reading: "tontaravu"
+    ipa: "t̪ont̪aɾaʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குத் தொந்தரவு இல்லை."
+        reading: "eṉakkut tontaravu illai."
+        ipa: "enakkut̪ t̪ont̪aɾaʋu illai"
+        bases: [{ word: "எனக்குத்", base: "நான்", reading: "nāṉ" }, { word: "தொந்தரவு", base: "தொந்தரவு", reading: "tontaravu" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "வயிற்றில் தொந்தரவு இருக்கிறது."
+        reading: "vayiṟṟil tontaravu irukkiṟatu."
+        ipa: "ʋajirril t̪ont̪aɾaʋu iɾukkirat̪u"
+        bases: [{ word: "வயிற்றில்", base: "வயிறு", reading: "vayiṟu" }, { word: "தொந்தரவு", base: "தொந்தரவு", reading: "tontaravu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7040"
+    target: "நிவாரணம்"
+    reading: "nivāraṇam"
+    ipa: "niʋaːɾaɳam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "வலிக்கு நிவாரணம் வேண்டும்."
+        reading: "valikku nivāraṇam vēṇṭum."
+        ipa: "ʋalikku niʋaːɾaɳam ʋeːɳʈum"
+        bases: [{ word: "வலிக்கு", base: "வலி", reading: "vali" }, { word: "நிவாரணம்", base: "நிவாரணம்", reading: "nivāraṇam" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "மருந்தில் நிவாரணம் இருக்கிறது."
+        reading: "maruntil nivāraṇam irukkiṟatu."
+        ipa: "maɾunt̪il niʋaːɾaɳam iɾukkirat̪u"
+        bases: [{ word: "மருந்தில்", base: "மருந்து", reading: "maruntu" }, { word: "நிவாரணம்", base: "நிவாரணம்", reading: "nivāraṇam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7041"
+    target: "நடைப்பயிற்சி"
+    reading: "naṭaippayiṟci"
+    ipa: "naʈaippajirsi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காலையில் நடைப்பயிற்சி செய்கிறேன்."
+        reading: "kālaiyil naṭaippayiṟci ceykiṟēṉ."
+        ipa: "kaːlaijil naʈaippajirsi sejkireːn"
+        bases: [{ word: "காலையில்", base: "காலை", reading: "kālai" }, { word: "நடைப்பயிற்சி", base: "நடைப்பயிற்சி", reading: "naṭaippayiṟci" }, { word: "செய்கிறேன்", base: "செய்", reading: "cey" }]
+      - target: "நடைப்பயிற்சி நல்லது."
+        reading: "naṭaippayiṟci nallatu."
+        ipa: "naʈaippajirsi nallat̪u"
+        bases: [{ word: "நடைப்பயிற்சி", base: "நடைப்பயிற்சி", reading: "naṭaippayiṟci" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-7042"
+    target: "தியானம்"
+    reading: "tiyāṉam"
+    ipa: "t̪ijaːnam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "தியானம் மனதுக்கு நல்லது."
+        reading: "tiyāṉam maṉatukku nallatu."
+        ipa: "t̪ijaːnam manat̪ukku nallat̪u"
+        bases: [{ word: "தியானம்", base: "தியானம்", reading: "tiyāṉam" }, { word: "மனதுக்கு", base: "மனம்", reading: "maṉam" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "நான் தியானம் செய்கிறேன்."
+        reading: "nāṉ tiyāṉam ceykiṟēṉ."
+        ipa: "naːn t̪ijaːnam sejkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "தியானம்", base: "தியானம்", reading: "tiyāṉam" }, { word: "செய்கிறேன்", base: "செய்", reading: "cey" }]
+  - id: "ta-7043"
+    target: "ஆலோசனை"
+    reading: "ālōcaṉai"
+    ipa: "aːloːsanai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மருத்துவரிடம் ஆலோசனை கேள்."
+        reading: "maruttuvariṭam ālōcaṉai kēḷ."
+        ipa: "maɾut̪t̪uʋaɾiʈam aːloːsanai keːɭ"
+        bases: [{ word: "மருத்துவரிடம்", base: "மருத்துவர்", reading: "maruttuvar" }, { word: "ஆலோசனை", base: "ஆலோசனை", reading: "ālōcaṉai" }, { word: "கேள்", ref: "ta-0122" }]
+      - target: "ஆலோசனை இலவசம்."
+        reading: "ālōcaṉai ilavacam."
+        ipa: "aːloːsanai ilaʋasam"
+        bases: [{ word: "ஆலோசனை", base: "ஆலோசனை", reading: "ālōcaṉai" }, { word: "இலவசம்", ref: "ta-1251" }]
+  - id: "ta-7044"
+    target: "முதியோர்"
+    reading: "mutiyōr"
+    ipa: "mut̪ijoːɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "முதியோர் இங்கே இருக்கிறார்கள்."
+        reading: "mutiyōr iṅkē irukkiṟārkaḷ."
+        ipa: "mut̪ijoːɾ iŋkeː iɾukkiraːɾkaɭ"
+        bases: [{ word: "முதியோர்", base: "முதியோர்", reading: "mutiyōr" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறார்கள்", base: "இரு", reading: "iru" }]
+      - target: "முதியோர் மருந்து சாப்பிடுகிறார்கள்."
+        reading: "mutiyōr maruntu cāppiṭukiṟārkaḷ."
+        ipa: "mut̪ijoːɾ maɾunt̪u saːppiʈukiraːɾkaɭ"
+        bases: [{ word: "முதியோர்", base: "முதியோர்", reading: "mutiyōr" }, { word: "மருந்து", ref: "ta-1271" }, { word: "சாப்பிடுகிறார்கள்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+  - id: "ta-7045"
+    target: "தீவிரம்"
+    reading: "tīviram"
+    ipa: "t̪iːʋiɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நோய் தீவிரம்."
+        reading: "nōy tīviram."
+        ipa: "noːj t̪iːʋiɾam"
+        bases: [{ word: "நோய்", ref: "ta-1263" }, { word: "தீவிரம்", base: "தீவிரம்", reading: "tīviram" }]
+      - target: "தீவிரம் இல்லை."
+        reading: "tīviram illai."
+        ipa: "t̪iːʋiɾam illai"
+        bases: [{ word: "தீவிரம்", base: "தீவிரம்", reading: "tīviram" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-7046"
+    target: "உடல்"
+    reading: "uṭal"
+    ipa: "uʈal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "உடல் நலமாக இருக்கிறது."
+        reading: "uṭal nalamāka irukkiṟatu."
+        ipa: "uʈal nalamaːka iɾukkirat̪u"
+        bases: [{ word: "உடல்", base: "உடல்", reading: "uṭal" }, { word: "நலமாக", base: "நலம்", reading: "nalam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "உடலுக்கு ஓய்வு வேண்டும்."
+        reading: "uṭalukku ōyvu vēṇṭum."
+        ipa: "uʈalukku oːjʋu ʋeːɳʈum"
+        bases: [{ word: "உடலுக்கு", base: "உடல்", reading: "uṭal" }, { word: "ஓய்வு", ref: "ta-0200" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-7047"
+    target: "மனம்"
+    reading: "maṉam"
+    ipa: "manam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "மனம் நன்றாக இல்லை."
+        reading: "maṉam naṉṟāka illai."
+        ipa: "manam nanraːka illai"
+        bases: [{ word: "மனம்", base: "மனம்", reading: "maṉam" }, { word: "நன்றாக", base: "நன்றாக", reading: "naṉṟāka" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "மனதுக்கு ஓய்வு வேண்டும்."
+        reading: "maṉatukku ōyvu vēṇṭum."
+        ipa: "manat̪ukku oːjʋu ʋeːɳʈum"
+        bases: [{ word: "மனதுக்கு", base: "மனம்", reading: "maṉam" }, { word: "ஓய்வு", ref: "ta-0200" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-7049"
+    target: "பழக்கம்"
+    reading: "paḻakkam"
+    ipa: "paɻakkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "இது நல்ல பழக்கம்."
+        reading: "itu nalla paḻakkam."
+        ipa: "it̪u nalla paɻakkam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நல்ல", ref: "ta-0169" }, { word: "பழக்கம்", base: "பழக்கம்", reading: "paḻakkam" }]
+      - target: "புகைபிடிக்கும் பழக்கம் கெட்டது."
+        reading: "pukaipiṭikkum paḻakkam keṭṭatu."
+        ipa: "pukaipiʈikkum paɻakkam keʈʈat̪u"
+        bases: [{ word: "புகைபிடிக்கும்", base: "புகைபிடி", reading: "pukaipiṭi" }, { word: "பழக்கம்", base: "பழக்கம்", reading: "paḻakkam" }, { word: "கெட்டது", base: "கெட்டது", reading: "keṭṭatu" }]
+  - id: "ta-7050"
+    target: "ஆஸ்பத்திரி"
+    reading: "āspattiri"
+    ipa: "aːspat̪t̪iɾi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஆஸ்பத்திரி எங்கே இருக்கிறது?"
+        reading: "āspattiri eṅkē irukkiṟatu?"
+        ipa: "aːspat̪t̪iɾi eŋkeː iɾukkirat̪u"
+        bases: [{ word: "ஆஸ்பத்திரி", base: "ஆஸ்பத்திரி", reading: "āspattiri" }, { word: "எங்கே", ref: "ta-0043" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "ஆஸ்பத்திரிக்குப் போகிறேன்."
+        reading: "āspattirikkup pōkiṟēṉ."
+        ipa: "aːspat̪t̪iɾikkup poːkireːn"
+        bases: [{ word: "ஆஸ்பத்திரிக்குப்", base: "ஆஸ்பத்திரி", reading: "āspattiri" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+  - id: "ta-7051"
+    target: "செவிலியர்"
+    reading: "ceviliyar"
+    ipa: "seʋilijaɾ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "செவிலியர் வருகிறார்."
+        reading: "ceviliyar varukiṟār."
+        ipa: "seʋilijaɾ ʋaɾukiraːɾ"
+        bases: [{ word: "செவிலியர்", base: "செவிலியர்", reading: "ceviliyar" }, { word: "வருகிறார்", base: "வா", reading: "vā" }]
+      - target: "செவிலியர் ஊசி போடுகிறார்."
+        reading: "ceviliyar ūci pōṭukiṟār."
+        ipa: "seʋilijaɾ uːsi poːʈukiraːɾ"
+        bases: [{ word: "செவிலியர்", base: "செவிலியர்", reading: "ceviliyar" }, { word: "ஊசி", ref: "ta-1273" }, { word: "போடுகிறார்", base: "போடு", reading: "pōṭu" }]
+  - id: "ta-7052"
+    target: "மருந்தகம்"
+    reading: "maruntakam"
+    ipa: "maɾunt̪akam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மருந்தகம் எங்கே?"
+        reading: "maruntakam eṅkē?"
+        ipa: "maɾunt̪akam eŋkeː"
+        bases: [{ word: "மருந்தகம்", base: "மருந்தகம்", reading: "maruntakam" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "மருந்தகம் திறந்திருக்கிறது."
+        reading: "maruntakam tiṟantirukkiṟatu."
+        ipa: "maɾunt̪akam t̪irant̪iɾukkirat̪u"
+        bases: [{ word: "மருந்தகம்", base: "மருந்தகம்", reading: "maruntakam" }, { word: "திறந்திருக்கிறது", base: "திற", reading: "tiṟa" }]
+  - id: "ta-7053"
+    target: "வீக்கம்"
+    reading: "vīkkam"
+    ipa: "ʋiːkkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "காலில் வீக்கம் இருக்கிறது."
+        reading: "kālil vīkkam irukkiṟatu."
+        ipa: "kaːlil ʋiːkkam iɾukkirat̪u"
+        bases: [{ word: "காலில்", base: "கால்", reading: "kāl" }, { word: "வீக்கம்", base: "வீக்கம்", reading: "vīkkam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "வீக்கம் குறைகிறது."
+        reading: "vīkkam kuṟaikiṟatu."
+        ipa: "ʋiːkkam kuraikirat̪u"
+        bases: [{ word: "வீக்கம்", base: "வீக்கம்", reading: "vīkkam" }, { word: "குறைகிறது", base: "குறை", reading: "kuṟai" }]
+  - id: "ta-7054"
+    target: "புண்"
+    reading: "puṇ"
+    ipa: "puɳ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காலில் புண் இருக்கிறது."
+        reading: "kālil puṇ irukkiṟatu."
+        ipa: "kaːlil puɳ iɾukkirat̪u"
+        bases: [{ word: "காலில்", base: "கால்", reading: "kāl" }, { word: "புண்", base: "புண்", reading: "puṇ" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "புண் ஆறுகிறது."
+        reading: "puṇ āṟukiṟatu."
+        ipa: "puɳ aːrukirat̪u"
+        bases: [{ word: "புண்", base: "புண்", reading: "puṇ" }, { word: "ஆறுகிறது", base: "ஆறு", reading: "āṟu" }]
+  - id: "ta-7055"
+    target: "சுளுக்கு"
+    reading: "cuḷukku"
+    ipa: "suɭukku"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காலில் சுளுக்கு."
+        reading: "kālil cuḷukku."
+        ipa: "kaːlil suɭukku"
+        bases: [{ word: "காலில்", base: "கால்", reading: "kāl" }, { word: "சுளுக்கு", base: "சுளுக்கு", reading: "cuḷukku" }]
+      - target: "எனக்குச் சுளுக்கு இருக்கிறது."
+        reading: "eṉakkuc cuḷukku irukkiṟatu."
+        ipa: "enakkus suɭukku iɾukkirat̪u"
+        bases: [{ word: "எனக்குச்", base: "நான்", reading: "nāṉ" }, { word: "சுளுக்கு", base: "சுளுக்கு", reading: "cuḷukku" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7056"
+    target: "முதுகுவலி"
+    reading: "mutukuvali"
+    ipa: "mut̪ukuʋali"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு முதுகுவலி இருக்கிறது."
+        reading: "eṉakku mutukuvali irukkiṟatu."
+        ipa: "enakku mut̪ukuʋali iɾukkirat̪u"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "முதுகுவலி", base: "முதுகுவலி", reading: "mutukuvali" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "முதுகுவலிக்கு மருந்து வேண்டும்."
+        reading: "mutukuvalikku maruntu vēṇṭum."
+        ipa: "mut̪ukuʋalikku maɾunt̪u ʋeːɳʈum"
+        bases: [{ word: "முதுகுவலிக்கு", base: "முதுகுவலி", reading: "mutukuvali" }, { word: "மருந்து", ref: "ta-1271" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-7057"
+    target: "அழுத்தம்"
+    reading: "aḻuttam"
+    ipa: "aɻut̪t̪am"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ரத்த அழுத்தம் அதிகம்."
+        reading: "ratta aḻuttam atikam."
+        ipa: "ɾat̪t̪a aɻut̪t̪am at̪ikam"
+        bases: [{ word: "ரத்த", base: "ரத்தம்", reading: "rattam" }, { word: "அழுத்தம்", base: "அழுத்தம்", reading: "aḻuttam" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "மன அழுத்தம் குறைகிறது."
+        reading: "maṉa aḻuttam kuṟaikiṟatu."
+        ipa: "mana aɻut̪t̪am kuraikirat̪u"
+        bases: [{ word: "மன", base: "மனம்", reading: "maṉam" }, { word: "அழுத்தம்", base: "அழுத்தம்", reading: "aḻuttam" }, { word: "குறைகிறது", base: "குறை", reading: "kuṟai" }]
+  - id: "ta-7058"
+    target: "ஸ்கேன்"
+    reading: "skēṉ"
+    ipa: "skeːn"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "நாளை ஸ்கேன் இருக்கிறது."
+        reading: "nāḷai skēṉ irukkiṟatu."
+        ipa: "naːɭai skeːn iɾukkirat̪u"
+        bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "ஸ்கேன்", base: "ஸ்கேன்", reading: "skēṉ" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "ஸ்கேன் செய்ய வேண்டும்."
+        reading: "skēṉ ceyya vēṇṭum."
+        ipa: "skeːn sejja ʋeːɳʈum"
+        bases: [{ word: "ஸ்கேன்", base: "ஸ்கேன்", reading: "skēṉ" }, { word: "செய்ய", base: "செய்", reading: "cey" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-7059"
+    target: "மயக்கம்"
+    reading: "mayakkam"
+    ipa: "majakkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு மயக்கம் வருகிறது."
+        reading: "eṉakku mayakkam varukiṟatu."
+        ipa: "enakku majakkam ʋaɾukirat̪u"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "மயக்கம்", base: "மயக்கம்", reading: "mayakkam" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+      - target: "மயக்கம் இல்லை."
+        reading: "mayakkam illai."
+        ipa: "majakkam illai"
+        bases: [{ word: "மயக்கம்", base: "மயக்கம்", reading: "mayakkam" }, { word: "இல்லை", ref: "ta-0002" }]

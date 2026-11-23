@@ -1,0 +1,666 @@
+schema: 1
+id: "ta-en-housing"
+kind: "layer"
+core: "ta-housing"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Housing and renting"
+description: "Finding and renting a home: rent, deposit, landlord and tenant, the rooms and parts of a building, repairs, and moving in and out. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-8310":
+    native: "water tank"
+    notes:
+      n1: "Built from நீர் (nīr), water and தொட்டி (toṭṭi), tank."
+    examples:
+      "நீர்த்தொட்டி மொட்டைமாடியில் இருக்கிறது.":
+        native: "The water tank is on the terrace."
+        bases:
+          "நீர்த்தொட்டி": "water tank"
+          "மொட்டைமாடியில்": "on the terrace; from மொட்டைமாடி (moṭṭaimāṭi), terrace"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "நீர்த்தொட்டி பெரியது.":
+        native: "The water tank is big."
+        bases:
+          "நீர்த்தொட்டி": "water tank"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8311":
+    native: "owner; landlord"
+    notes:
+      n1: "The person who owns a house or a shop; the plural is உரிமையாளர்கள் (urimaiyāḷarkaḷ), owners."
+    examples:
+      "அவர் வீட்டு உரிமையாளர்.":
+        native: "He is the house owner."
+        bases:
+          "வீட்டு": "house (before a noun); from வீடு (vīṭu), house"
+          "உரிமையாளர்": "owner; landlord"
+      "உரிமையாளர் இங்கே இல்லை.":
+        native: "The owner is not here."
+        bases:
+          "உரிமையாளர்": "owner; landlord"
+  "ta-8312":
+    native: "residence; apartment; colony"
+    notes:
+      n1: "A place where people live; also a housing colony."
+    examples:
+      "இது புதிய குடியிருப்பு.":
+        native: "This is a new apartment."
+        bases:
+          "குடியிருப்பு": "residence; apartment; colony"
+      "குடியிருப்பு எங்கே இருக்கிறது?":
+        native: "Where is the apartment?"
+        bases:
+          "குடியிருப்பு": "residence; apartment; colony"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8313":
+    native: "multi-storey building; apartment block"
+    notes:
+      n1: "Built from அடுக்கு (aṭukku), layer and மாடி (māṭi), floor."
+    examples:
+      "இது அடுக்குமாடி கட்டிடம்.":
+        native: "This is an apartment block."
+        bases:
+          "அடுக்குமாடி": "multi-storey building; apartment block"
+      "அடுக்குமாடியில் நாங்கள் இருக்கிறோம்.":
+        native: "We live in an apartment block."
+        bases:
+          "அடுக்குமாடியில்": "in the apartment block; from அடுக்குமாடி (aṭukkumāṭi), apartment block"
+          "இருக்கிறோம்": "we are; from இரு (iru), to be"
+  "ta-8314":
+    native: "tenant"
+    notes:
+      n1: "Built from வாடகை (vāṭakai), rent and -தாரர் (-tārar), the holder."
+    examples:
+      "அவர் வாடகைதாரர்.":
+        native: "He is a tenant."
+        bases:
+          "வாடகைதாரர்": "tenant"
+      "வாடகைதாரர் வீட்டில் இருக்கிறார்.":
+        native: "The tenant is at home."
+        bases:
+          "வாடகைதாரர்": "tenant"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-8315":
+    native: "veranda; raised porch"
+    notes:
+      n1: "The raised platform at the front of a traditional house where people sit."
+    examples:
+      "திண்ணையில் பெரியவர் இருக்கிறார்.":
+        native: "The elder is on the veranda."
+        bases:
+          "திண்ணையில்": "on the veranda; from திண்ணை (tiṇṇai), veranda"
+          "பெரியவர்": "an elder; a big person"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+      "வீட்டில் திண்ணை இருக்கிறது.":
+        native: "There is a veranda at the house."
+        bases:
+          "திண்ணை": "veranda; raised porch"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8316":
+    native: "bedroom"
+    notes:
+      n1: "Built from படுக்கை (paṭukkai), bed and அறை (aṟai), room, a word taught earlier."
+    examples:
+      "இந்த வீட்டில் இரண்டு படுக்கையறை இருக்கிறது.":
+        native: "This house has two bedrooms."
+        bases:
+          "இந்த": "this (before a noun)"
+          "படுக்கையறை": "bedroom"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "படுக்கையறை பெரியது.":
+        native: "The bedroom is big."
+        bases:
+          "படுக்கையறை": "bedroom"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8317":
+    native: "maintenance; upkeep"
+    notes:
+      n1: "Keeping a building in good order."
+    examples:
+      "வீட்டுப் பராமரிப்பு முக்கியம்.":
+        native: "House maintenance is important."
+        bases:
+          "வீட்டுப்": "house (before a word starting with p); from வீடு (vīṭu), house"
+          "பராமரிப்பு": "maintenance; upkeep"
+          "முக்கியம்": "important"
+      "பராமரிப்பு நடக்கிறது.":
+        native: "Maintenance is going on."
+        bases:
+          "பராமரிப்பு": "maintenance; upkeep"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+  "ta-8318":
+    native: "residents; occupants"
+    notes:
+      n1: "Built from குடியிருப்பு (kuṭiyiruppu), residence and -ஓர் (-ōr), people who."
+    examples:
+      "குடியிருப்போர் இங்கே இருக்கிறார்கள்.":
+        native: "The residents are here."
+        bases:
+          "குடியிருப்போர்": "residents; occupants"
+          "இருக்கிறார்கள்": "are; from இரு (iru), to be"
+      "குடியிருப்போர் கூட்டம் இன்று.":
+        native: "The residents' meeting is today."
+        bases:
+          "குடியிருப்போர்": "residents; occupants"
+  "ta-8319":
+    native: "upper floor; storey"
+    notes:
+      n1: "The floor above; மாடிக்குப் போ (māṭikkup pō), go upstairs."
+    examples:
+      "நாங்கள் மாடியில் இருக்கிறோம்.":
+        native: "We are on the upper floor."
+        bases:
+          "மாடியில்": "on the upper floor; from மாடி (māṭi), upper floor"
+          "இருக்கிறோம்": "we are; from இரு (iru), to be"
+      "மாடி வீடு பெரியது.":
+        native: "The upstairs house is big."
+        bases:
+          "மாடி": "upper floor; storey"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8320":
+    native: "terrace; flat roof"
+    notes:
+      n1: "Built from மொட்டை (moṭṭai), bare and மாடி (māṭi), floor: the flat roof."
+    examples:
+      "மொட்டைமாடி பெரியது.":
+        native: "The terrace is big."
+        bases:
+          "மொட்டைமாடி": "terrace; flat roof"
+          "பெரியது": "big; from பெரிய (periya), big"
+      "குழந்தை மொட்டைமாடியில் விளையாடுகிறது.":
+        native: "The child plays on the terrace."
+        bases:
+          "மொட்டைமாடியில்": "on the terrace; from மொட்டைமாடி (moṭṭaimāṭi), terrace"
+          "விளையாடுகிறது": "is playing; from விளையாடு (viḷaiyāṭu), to play"
+  "ta-8321":
+    native: "roof; ceiling"
+    notes:
+      n1: "The roof of a house; a thatch roof is also a கூரை (kūrai)."
+    examples:
+      "வீட்டுக் கூரை பழையது.":
+        native: "The house roof is old."
+        bases:
+          "வீட்டுக்": "house (before a word starting with k); from வீடு (vīṭu), house"
+          "கூரை": "roof; ceiling"
+          "பழையது": "is old; from பழைய (paḻaiya), old"
+      "கூரையில் ஓட்டை இருக்கிறது.":
+        native: "There is a hole in the roof."
+        bases:
+          "கூரையில்": "in the roof; from கூரை (kūrai), roof"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8322":
+    native: "staircase; steps"
+    notes:
+      n1: "Built from படி (paṭi), step and கட்டு (kaṭṭu), to build."
+    examples:
+      "படிக்கட்டு எங்கே?":
+        native: "Where is the staircase?"
+        bases:
+          "படிக்கட்டு": "staircase; steps"
+      "படிக்கட்டு அகலமானது.":
+        native: "The staircase is wide."
+        bases:
+          "படிக்கட்டு": "staircase; steps"
+          "அகலமானது": "is wide; from அகலமான (akalamāṉa), wide"
+  "ta-8323":
+    native: "house tax"
+    notes:
+      n1: "Built from வீடு (vīṭu), house and வரி (vari), tax, a word taught earlier."
+    examples:
+      "வீட்டுவரி எவ்வளவு?":
+        native: "How much is the house tax?"
+        bases:
+          "வீட்டுவரி": "house tax"
+      "நான் வீட்டுவரி கட்டுகிறேன்.":
+        native: "I pay the house tax."
+        bases:
+          "வீட்டுவரி": "house tax"
+          "கட்டுகிறேன்": "I pay; from கட்டு (kaṭṭu), to pay; to tie; to build"
+  "ta-8324":
+    native: "parking place"
+    notes:
+      n1: "Built from நிறுத்து (niṟuttu), to stop and இடம் (iṭam), place, a word taught earlier."
+    examples:
+      "நிறுத்துமிடம் எங்கே?":
+        native: "Where is the parking?"
+        bases:
+          "நிறுத்துமிடம்": "parking place"
+      "நிறுத்துமிடம் பெரியது.":
+        native: "The parking is big."
+        bases:
+          "நிறுத்துமிடம்": "parking place"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8325":
+    native: "area; part; section"
+    notes:
+      n1: "A part of a town or of a whole."
+    examples:
+      "இது நல்ல பகுதி.":
+        native: "This is a good area."
+        bases:
+          "பகுதி": "area; part; section"
+      "இந்தப் பகுதி அமைதியானது.":
+        native: "This area is quiet."
+        bases:
+          "இந்தப்": "this (before a word starting with p); from இந்த (inta), this"
+          "பகுதி": "area; part; section"
+          "அமைதியானது": "is quiet; from அமைதியான (amaitiyāṉa), quiet"
+  "ta-8326":
+    native: "furniture"
+    notes:
+      n1: "The word for furniture as a whole; the plural தளபாடங்கள் (taḷapāṭaṅkaḷ), furniture is also common."
+    examples:
+      "தளபாடம் புதியது.":
+        native: "The furniture is new."
+        bases:
+          "தளபாடம்": "furniture"
+          "புதியது": "is new; from புதிய (putiya), new"
+      "வீட்டில் தளபாடம் இருக்கிறது.":
+        native: "There is furniture in the house."
+        bases:
+          "தளபாடம்": "furniture"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8327":
+    native: "electricity bill"
+    notes:
+      n1: "Built from மின் (miṉ), electric and கட்டணம் (kaṭṭaṇam), fee."
+    examples:
+      "மின்கட்டணம் அதிகம்.":
+        native: "The electricity bill is high."
+        bases:
+          "மின்கட்டணம்": "electricity bill"
+      "மின்கட்டணம் எவ்வளவு?":
+        native: "How much is the electricity bill?"
+        bases:
+          "மின்கட்டணம்": "electricity bill"
+  "ta-8328":
+    native: "waste water; sewage"
+    notes:
+      n1: "Built from கழிவு (kaḻivu), waste and நீர் (nīr), water."
+    examples:
+      "கழிவுநீர் வெளியே போகிறது.":
+        native: "The waste water goes out."
+        bases:
+          "கழிவுநீர்": "waste water; sewage"
+          "போகிறது": "is going; from போ (pō), to go"
+      "கழிவுநீர் குழாய் உடைந்தது.":
+        native: "The waste water pipe is broken."
+        bases:
+          "கழிவுநீர்": "waste water; sewage"
+          "உடைந்தது": "broke; from உடை (uṭai), to break"
+  "ta-8329":
+    native: "balcony"
+    notes:
+      n1: "A loanword from English balcony."
+    examples:
+      "பால்கனி சிறியது.":
+        native: "The balcony is small."
+        bases:
+          "பால்கனி": "balcony"
+          "சிறியது": "is small; from சிறிய (ciṟiya), small"
+      "குழந்தை பால்கனியில் இருக்கிறது.":
+        native: "The child is on the balcony."
+        bases:
+          "பால்கனியில்": "on the balcony; from பால்கனி (pālkaṉi), balcony"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8330":
+    native: "foundation; basement"
+    notes:
+      n1: "The base of a building."
+    examples:
+      "கட்டிடத்துக்கு அடித்தளம் வேண்டும்.":
+        native: "A building needs a foundation."
+        bases:
+          "கட்டிடத்துக்கு": "for the building; from கட்டிடம் (kaṭṭiṭam), building"
+          "அடித்தளம்": "foundation; basement"
+      "அடித்தளம் பெரியது.":
+        native: "The basement is big."
+        bases:
+          "அடித்தளம்": "foundation; basement"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8331":
+    native: "safety; security; protection"
+    notes:
+      n1: "The noun of பாதுகா (pātukā), to protect, a verb taught earlier."
+    examples:
+      "இங்கே பாதுகாப்பு இருக்கிறது.":
+        native: "There is security here."
+        bases:
+          "பாதுகாப்பு": "safety; security; protection"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "பாதுகாப்பு முக்கியம்.":
+        native: "Safety is important."
+        bases:
+          "பாதுகாப்பு": "safety; security; protection"
+          "முக்கியம்": "important"
+  "ta-8332":
+    native: "watchman; security guard"
+    notes:
+      n1: "Built from காவல் (kāval), guard and -ஆளி (-āḷi), the doer."
+    examples:
+      "காவலாளி வாசலில் இருக்கிறார்.":
+        native: "The watchman is at the gate."
+        bases:
+          "காவலாளி": "watchman; security guard"
+          "வாசலில்": "at the door; from வாசல் (vācal), doorway"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+      "காவலாளி நல்லவர்.":
+        native: "The watchman is a good man."
+        bases:
+          "காவலாளி": "watchman; security guard"
+          "நல்லவர்": "good man (polite); from நல்ல (nalla), good"
+  "ta-8333":
+    native: "broker; agent"
+    notes:
+      n1: "A person who finds a house for you for a fee."
+    examples:
+      "தரகர் இங்கே இருக்கிறார்.":
+        native: "The broker is here."
+        bases:
+          "தரகர்": "broker; agent"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+      "தரகர் வீடு காட்டுகிறார்.":
+        native: "The broker shows a house."
+        bases:
+          "தரகர்": "broker; agent"
+          "காட்டுகிறார்": "he shows; from காட்டு (kāṭṭu), to show"
+  "ta-8334":
+    native: "doorway; entrance; front yard"
+    notes:
+      n1: "The entrance of a house; also the swept space in front of it."
+    examples:
+      "வாசலில் யார் இருக்கிறார்?":
+        native: "Who is at the door?"
+        bases:
+          "வாசலில்": "at the door; from வாசல் (vācal), doorway"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+      "வாசல் பெரியது.":
+        native: "The entrance is big."
+        bases:
+          "வாசல்": "doorway; entrance; front yard"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8335":
+    native: "courtyard"
+    notes:
+      n1: "An open space inside an old house."
+    examples:
+      "முற்றம் பெரியது.":
+        native: "The courtyard is big."
+        bases:
+          "முற்றம்": "courtyard"
+          "பெரியது": "big; from பெரிய (periya), big"
+      "முற்றத்தில் மழை பெய்கிறது.":
+        native: "It rains in the courtyard."
+        bases:
+          "முற்றத்தில்": "in the courtyard; from முற்றம் (muṟṟam), courtyard"
+          "பெய்கிறது": "falls, rains; from பெய் (pey), to rain"
+  "ta-8336":
+    native: "building"
+    notes:
+      n1: "Any built structure, big or small."
+    examples:
+      "இது பெரிய கட்டிடம்.":
+        native: "This is a big building."
+        bases:
+          "கட்டிடம்": "building"
+      "கட்டிடம் புதியது.":
+        native: "The building is new."
+        bases:
+          "கட்டிடம்": "building"
+          "புதியது": "is new; from புதிய (putiya), new"
+  "ta-8337":
+    native: "construction"
+    notes:
+      n1: "The work of building; the noun of கட்டு (kaṭṭu), to build."
+    examples:
+      "இங்கே கட்டுமானம் நடக்கிறது.":
+        native: "Construction is happening here."
+        bases:
+          "கட்டுமானம்": "construction"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+      "கட்டுமானம் பெரியது.":
+        native: "The construction is big."
+        bases:
+          "கட்டுமானம்": "construction"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8338":
+    native: "bed; cot"
+    notes:
+      n1: "A bed with a frame; a floor mat is பாய் (pāy), mat."
+    examples:
+      "கட்டில் அறையில் இருக்கிறது.":
+        native: "The bed is in the room."
+        bases:
+          "கட்டில்": "bed; cot"
+          "அறையில்": "in the room; from அறை (aṟai), room"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இது புதிய கட்டில்.":
+        native: "This is a new bed."
+        bases:
+          "கட்டில்": "bed; cot"
+  "ta-8339":
+    native: "refrigerator"
+    notes:
+      n1: "Built from குளிர் (kuḷir), cold, சாதனம் (cātaṉam), device and பெட்டி (peṭṭi), box."
+    examples:
+      "குளிர்சாதனப்பெட்டி சமையலறையில் இருக்கிறது.":
+        native: "The refrigerator is in the kitchen."
+        bases:
+          "குளிர்சாதனப்பெட்டி": "refrigerator"
+          "சமையலறையில்": "in the kitchen; from சமையலறை (camaiyalaṟai), kitchen"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "குளிர்சாதனப்பெட்டி வேலை செய்கிறது.":
+        native: "The refrigerator works."
+        bases:
+          "குளிர்சாதனப்பெட்டி": "refrigerator"
+          "செய்கிறது": "does; from செய் (cey), to do"
+  "ta-8340":
+    native: "cooking gas; fuel gas"
+    notes:
+      n1: "Built from எரி (eri), to burn and வாயு (vāyu), gas."
+    examples:
+      "எரிவாயு இல்லை.":
+        native: "There is no gas."
+        bases:
+          "எரிவாயு": "cooking gas; fuel gas"
+      "எரிவாயு விலை அதிகம்.":
+        native: "The price of gas is high."
+        bases:
+          "எரிவாயு": "cooking gas; fuel gas"
+  "ta-8341":
+    native: "width"
+    notes:
+      n1: "How wide a thing is."
+    examples:
+      "வாசலின் அகலம் என்ன?":
+        native: "What is the width of the door?"
+        bases:
+          "வாசலின்": "of the door; from வாசல் (vācal), doorway"
+          "அகலம்": "width"
+      "அகலம் அதிகம்.":
+        native: "The width is big."
+        bases:
+          "அகலம்": "width"
+  "ta-8342":
+    native: "space; room available"
+    notes:
+      n1: "Built from இடம் (iṭam), place and வசதி (vacati), convenience."
+    examples:
+      "இங்கே இடவசதி அதிகம்.":
+        native: "There is a lot of space here."
+        bases:
+          "இடவசதி": "space; room available"
+      "இடவசதி குறைவு.":
+        native: "There is little space."
+        bases:
+          "இடவசதி": "space; room available"
+  "ta-8343":
+    native: "document; deed; safe keeping"
+    notes:
+      n1: "A legal paper like a deed; பத்திரமாக (pattiramāka), safely means safely."
+    examples:
+      "இது வீட்டுப் பத்திரம்.":
+        native: "This is the house deed."
+        bases:
+          "வீட்டுப்": "house (before a word starting with p); from வீடு (vīṭu), house"
+          "பத்திரம்": "document; deed; safe keeping"
+      "பத்திரம் எங்கே?":
+        native: "Where is the deed?"
+        bases:
+          "பத்திரம்": "document; deed; safe keeping"
+  "ta-8344":
+    native: "electricity connection"
+    notes:
+      n1: "Built from மின் (miṉ), electric and இணைப்பு (iṇaippu), connection."
+    examples:
+      "வீட்டில் மின்இணைப்பு இல்லை.":
+        native: "The house has no electricity connection."
+        bases:
+          "மின்இணைப்பு": "electricity connection"
+      "மின்இணைப்பு எங்கே?":
+        native: "Where is the electricity connection?"
+        bases:
+          "மின்இணைப்பு": "electricity connection"
+  "ta-8345":
+    native: "house plot; building plot"
+    notes:
+      n1: "Built from வீடு (vīṭu), house and மனை (maṉai), plot."
+    examples:
+      "இது வீட்டுமனை.":
+        native: "This is a house plot."
+        bases:
+          "வீட்டுமனை": "house plot; building plot"
+      "வீட்டுமனை பெரியது.":
+        native: "The plot is big."
+        bases:
+          "வீட்டுமனை": "house plot; building plot"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8346":
+    native: "floor; level; platform"
+    notes:
+      n1: "A floor of a building; the ground floor is தரைத்தளம் (taraittaḷam), ground level."
+    examples:
+      "முதல் தளம் எங்கே?":
+        native: "Where is the first floor?"
+        bases:
+          "முதல்": "first"
+          "தளம்": "floor; level; platform"
+      "எங்கள் வீடு இரண்டாம் தளத்தில் இருக்கிறது.":
+        native: "Our house is on the second floor."
+        bases:
+          "எங்கள்": "our; from நாங்கள் (nāṅkaḷ), we"
+          "இரண்டாம்": "second"
+          "தளத்தில்": "on the floor; from தளம் (taḷam), floor"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8347":
+    native: "to whitewash; to paint a wall white"
+    notes:
+      n1: "Built from வெள்ளை (veḷḷai), white and அடி (aṭi), to hit; it also means to paint a house."
+    examples:
+      "சுவரை வெள்ளையடி.":
+        native: "Whitewash the wall."
+        bases:
+          "சுவரை": "the wall (object); from சுவர் (cuvar), wall"
+          "வெள்ளையடி": "to whitewash; to paint a wall white"
+      "அவர்கள் வீட்டை வெள்ளையடிக்கிறார்கள்.":
+        native: "They whitewash the house."
+        bases:
+          "வீட்டை": "the house; from வீடு (vīṭu), house; home"
+          "வெள்ளையடிக்கிறார்கள்": "present, they; from வெள்ளையடி (veḷḷaiyaṭi), to whitewash"
+  "ta-8348":
+    native: "to move in; to settle"
+    notes:
+      n1: "To start living in a new house or place."
+    examples:
+      "புதிய வீட்டில் குடியேறு.":
+        native: "Move into the new house."
+        bases:
+          "குடியேறு": "to move in; to settle"
+      "நாங்கள் புதிய வீட்டில் குடியேறுகிறோம்.":
+        native: "We move into the new house."
+        bases:
+          "குடியேறுகிறோம்": "present, we; from குடியேறு (kuṭiyēṟu), to move in"
+  "ta-8349":
+    native: "to vacate; to empty"
+    notes:
+      n1: "Built from காலி (kāli), empty and செய் (cey), to make: to leave a house empty."
+    examples:
+      "வீட்டைக் காலிசெய்.":
+        native: "Vacate the house."
+        bases:
+          "வீட்டைக்": "the house (object); from வீடு (vīṭu), house"
+          "காலிசெய்": "to vacate; to empty"
+      "நாங்கள் வீட்டைக் காலிசெய்கிறோம்.":
+        native: "We vacate the house."
+        bases:
+          "வீட்டைக்": "the house (object); from வீடு (vīṭu), house"
+          "காலிசெய்கிறோம்": "present, we; from காலிசெய் (kālicey), to vacate"
+  "ta-8350":
+    native: "to move house; to go and live"
+    notes:
+      n1: "The spoken verb for moving to a new house."
+    examples:
+      "புதிய வீட்டுக்குக் குடிபோ.":
+        native: "Move to a new house."
+        bases:
+          "வீட்டுக்குக்": "to the house; from வீடு (vīṭu), house"
+          "குடிபோ": "to move house; to go and live"
+      "நாங்கள் நாளை குடிபோகிறோம்.":
+        native: "We are moving house tomorrow."
+        bases:
+          "குடிபோகிறோம்": "present, we; from குடிபோ (kuṭipō), to move house"
+  "ta-8351":
+    native: "own; personal"
+    notes:
+      n1: "It stands before a noun and does not change: சொந்த வீடு (conta vīṭu), own house."
+    examples:
+      "இது என் சொந்த வீடு.":
+        native: "This is my own house."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "சொந்த": "own; personal"
+      "எனக்குச் சொந்த வீடு இல்லை.":
+        native: "I do not have my own house."
+        bases:
+          "எனக்குச்": "to me; from நான் (nāṉ), I"
+          "சொந்த": "own; personal"
+  "ta-8352":
+    native: "separate; single; private"
+    notes:
+      n1: "Said of a room or a house kept apart."
+    examples:
+      "இது தனி வீடு.":
+        native: "This is a separate house."
+        bases:
+          "தனி": "separate; single; private"
+      "எனக்குத் தனி அறை வேண்டும்.":
+        native: "I want a separate room."
+        bases:
+          "எனக்குத்": "to me; for me; from நான் (nāṉ), I; me"
+          "தனி": "separate; single; private"
+  "ta-8353":
+    native: "spacious; wide"
+    notes:
+      n1: "Said of a room or a house with a lot of space."
+    examples:
+      "இது விசாலமான வீடு.":
+        native: "This is a spacious house."
+        bases:
+          "விசாலமான": "spacious; wide"
+      "அறை விசாலமானது.":
+        native: "The room is spacious."
+        bases:
+          "விசாலமானது": "is spacious; from விசாலமான (vicālamāṉa), spacious"
+  "ta-8354":
+    native: "airy; well-ventilated"
+    notes:
+      n1: "Built from காற்று (kāṟṟu), wind and ஓட்டம் (ōṭṭam), flow."
+    examples:
+      "இது காற்றோட்டமான அறை.":
+        native: "This is an airy room."
+        bases:
+          "காற்றோட்டமான": "airy; well-ventilated"
+      "வீடு காற்றோட்டமானது.":
+        native: "The house is airy."
+        bases:
+          "காற்றோட்டமானது": "is airy; from காற்றோட்டமான (kāṟṟōṭṭamāṉa), airy"

@@ -1,0 +1,701 @@
+schema: 1
+id: "ta-en-government"
+kind: "layer"
+core: "ta-government"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Government: offices, forms and laws"
+description: "Government and civic life: offices and officials, laws and rights, licences and certificates, local bodies and elections, courts and fines, and the verbs of carrying out and appointing. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-7337":
+    native: "government"
+    notes:
+      n1: "The government as a body; அரசு (aracu) (state; government) is the shorter word and the two are often interchanged."
+    examples:
+      "அரசாங்கம் புதிய திட்டம் அறிவிக்கிறது.":
+        native: "The government announces a new scheme."
+        bases:
+          "அரசாங்கம்": "government"
+          "அறிவிக்கிறது": "is announcing; from அறிவி (aṟivi), to announce; to declare"
+      "இது அரசாங்கம் வேலை.":
+        native: "This is government work."
+        bases:
+          "அரசாங்கம்": "government"
+  "ta-7338":
+    native: "department; field"
+    notes:
+      n1: "A government department, and also a field of study or work."
+    examples:
+      "இது எந்தத் துறை?":
+        native: "Which department is this?"
+        bases:
+          "எந்தத்": "which; from எந்த (enta), which (before a noun)"
+          "துறை": "department; field"
+      "அவர் கல்வித் துறையில் வேலை செய்கிறார்.":
+        native: "He works in the education department."
+        bases:
+          "அவர்": "he or she (polite)"
+          "கல்வித்": "education (before a noun); from கல்வி (kalvi), education"
+          "துறையில்": "in the department; from துறை (tuṟai), department; field"
+          "செய்கிறார்": "he does; from செய் (cey), to do"
+  "ta-7339":
+    native: "law; rule"
+    notes:
+      n1: "Before an ending the last letter changes, as in சட்டத்தை (caṭṭattai) (the law)."
+    examples:
+      "இது சட்டம்.":
+        native: "This is the law."
+        bases:
+          "சட்டம்": "law; rule"
+      "சட்டம் எல்லோருக்கும் ஒன்று.":
+        native: "The law is the same for everyone."
+        bases:
+          "சட்டம்": "law; rule"
+          "எல்லோருக்கும்": "to everyone; from எல்லோர் (ellōr), everyone"
+  "ta-7340":
+    native: "right; ownership"
+    notes:
+      n1: "Used for a legal right and for a claim of ownership."
+    examples:
+      "எனக்கு உரிமை இருக்கிறது.":
+        native: "I have a right."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "உரிமை": "right; ownership"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இது உன் உரிமை.":
+        native: "This is your right."
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "உரிமை": "right; ownership"
+  "ta-7341":
+    native: "duty"
+    notes:
+      n1: "The word for duty; Tamil 'does' (செய் (cey)) a duty."
+    examples:
+      "இது என் கடமை.":
+        native: "This is my duty."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "கடமை": "duty"
+      "கடமை செய்.":
+        native: "Do your duty."
+        bases:
+          "கடமை": "duty"
+  "ta-7342":
+    native: "citizen"
+    notes:
+      n1: "Literally son of the town; குடி (kuṭi) (people) plus மகன் (makaṉ) (son)."
+    examples:
+      "அவன் இந்தியக் குடிமகன்.":
+        native: "He is a citizen of India."
+        bases:
+          "அவன்": "his"
+          "இந்தியக்": "Indian (before a noun); from இந்தியா (intiyā), India"
+          "குடிமகன்": "citizen"
+      "ஒவ்வொரு குடிமகனுக்கும் உரிமை உண்டு.":
+        native: "Every citizen has rights."
+        bases:
+          "குடிமகனுக்கும்": "to each citizen; for each citizen; from குடிமகன் (kuṭimakaṉ), citizen"
+          "உண்டு": "there is; has"
+  "ta-7343":
+    native: "citizenship"
+    notes:
+      n1: "குடி (kuṭi) (people) plus உரிமை (urimai) (right); the rights of being a citizen."
+    examples:
+      "எனக்குக் குடியுரிமை வேண்டும்.":
+        native: "I want citizenship."
+        bases:
+          "எனக்குக்": "to me; for me; from நான் (nāṉ), I; me"
+          "குடியுரிமை": "citizenship"
+      "குடியுரிமை சான்றிதழ் இருக்கிறது.":
+        native: "I have a citizenship certificate."
+        bases:
+          "குடியுரிமை": "citizenship"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7344":
+    native: "voter"
+    notes:
+      n1: "வாக்கு (vākku) (vote) plus -ஆளர் (-āḷar), 'the one who'; used for men and women alike."
+    examples:
+      "அவர் வாக்காளர்.":
+        native: "He is a voter."
+        bases:
+          "அவர்": "he or she (polite)"
+          "வாக்காளர்": "voter"
+      "வாக்காளர் பட்டியல் எங்கே?":
+        native: "Where is the voters' list?"
+        bases:
+          "வாக்காளர்": "voter"
+  "ta-7345":
+    native: "income tax"
+    notes:
+      n1: "வருமானம் (varumāṉam) (income) plus வரி (vari) (tax); written as one word."
+    examples:
+      "வருமானவரி கட்ட வேண்டும்.":
+        native: "Income tax must be paid."
+        bases:
+          "வருமானவரி": "income tax"
+          "கட்ட": "to pay; from கட்டு (kaṭṭu), to tie; to pay; to build"
+      "வருமானவரி படிவம் எங்கே?":
+        native: "Where is the income tax form?"
+        bases:
+          "வருமானவரி": "income tax"
+  "ta-7346":
+    native: "birth certificate"
+    notes:
+      n1: "பிறப்பு (piṟappu) (birth) plus சான்றிதழ் (cāṉṟitaḻ) (certificate); written as one word."
+    examples:
+      "பிறப்புச்சான்றிதழ் வேண்டும்.":
+        native: "A birth certificate is needed."
+        bases:
+          "பிறப்புச்சான்றிதழ்": "birth certificate"
+      "பிறப்புச்சான்றிதழ் இங்கே இருக்கிறது.":
+        native: "The birth certificate is here."
+        bases:
+          "பிறப்புச்சான்றிதழ்": "birth certificate"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7347":
+    native: "licence; permit"
+    notes:
+      n1: "Used for a licence to drive, to run a shop and so on."
+    examples:
+      "இதற்கு உரிமம் வேண்டும்.":
+        native: "This needs a licence."
+        bases:
+          "இதற்கு": "to this; for this; from இது (itu), this; it"
+          "உரிமம்": "licence; permit"
+      "உரிமம் எங்கே?":
+        native: "Where is the licence?"
+        bases:
+          "உரிமம்": "licence; permit"
+  "ta-7348":
+    native: "police station"
+    notes:
+      n1: "காவல் (kāval) (guard) plus நிலையம் (nilaiyam) (station); in speech people say போலீஸ் (pōlīs) ஸ்டேஷன் (sṭēṣaṉ) (police station)."
+    examples:
+      "காவல்நிலையம் எங்கே?":
+        native: "Where is the police station?"
+        bases:
+          "காவல்நிலையம்": "police station"
+      "நான் காவல்நிலையத்துக்குப் போகிறேன்.":
+        native: "I am going to the police station."
+        bases:
+          "காவல்நிலையத்துக்குப்": "to the police station; for the police station; from காவல்நிலையம் (kāvalnilaiyam), police station"
+          "போகிறேன்": "am going; from போ (pō), to go"
+  "ta-7349":
+    native: "judge"
+    notes:
+      n1: "நீதி (nīti) (justice) plus பதி (pati) (lord); used for men and women alike."
+    examples:
+      "நீதிபதி வருகிறார்.":
+        native: "The judge is coming."
+        bases:
+          "நீதிபதி": "judge"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+      "நீதிபதி தீர்ப்பு சொல்கிறார்.":
+        native: "The judge gives the verdict."
+        bases:
+          "நீதிபதி": "judge"
+          "சொல்கிறார்": "is saying (respectful); from சொல் (col), to say; to tell"
+  "ta-7350":
+    native: "district collector"
+    notes:
+      n1: "The chief official of a district in the state government, used for men and women alike."
+    examples:
+      "ஆட்சியர் அலுவலகம் எங்கே?":
+        native: "Where is the collector's office?"
+        bases:
+          "ஆட்சியர்": "district collector"
+      "ஆட்சியர் வருகிறார்.":
+        native: "The collector is coming."
+        bases:
+          "ஆட்சியர்": "district collector"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+  "ta-7351":
+    native: "parliament"
+    notes:
+      n1: "நாடு (nāṭu) (nation) plus மன்றம் (maṉṟam) (assembly); the national parliament."
+    examples:
+      "நாடாளுமன்றம் பெரியது.":
+        native: "Parliament is big."
+        bases:
+          "நாடாளுமன்றம்": "parliament"
+          "பெரியது": "big; from பெரிய (periya), big"
+      "நாடாளுமன்றம் கூடுகிறது.":
+        native: "Parliament is meeting."
+        bases:
+          "நாடாளுமன்றம்": "parliament"
+          "கூடுகிறது": "is meeting; is gathering; from கூடு (kūṭu), to gather; to meet"
+  "ta-7352":
+    native: "state assembly"
+    notes:
+      n1: "சட்டம் (caṭṭam) (law) plus மன்றம் (maṉṟam) (assembly); the body of a state."
+    examples:
+      "சட்டமன்றம் கூடுகிறது.":
+        native: "The state assembly is meeting."
+        bases:
+          "சட்டமன்றம்": "state assembly"
+          "கூடுகிறது": "is meeting; is gathering; from கூடு (kūṭu), to gather; to meet"
+      "சட்டமன்றம் எங்கே?":
+        native: "Where is the state assembly?"
+        bases:
+          "சட்டமன்றம்": "state assembly"
+  "ta-7353":
+    native: "member"
+    notes:
+      n1: "A member of a party, a club or a house; used for men and women alike."
+    examples:
+      "அவர் உறுப்பினர்.":
+        native: "He is a member."
+        bases:
+          "அவர்": "he or she (polite)"
+          "உறுப்பினர்": "member"
+      "உறுப்பினர் அட்டை வேண்டும்.":
+        native: "A membership card is needed."
+        bases:
+          "உறுப்பினர்": "member"
+  "ta-7354":
+    native: "chief minister; head; principal"
+    notes:
+      n1: "Used for the chief minister of a state and for the head of a college; the context tells which."
+    examples:
+      "முதல்வர் பேசுகிறார்.":
+        native: "The chief minister is speaking."
+        bases:
+          "முதல்வர்": "chief minister; head; principal"
+          "பேசுகிறார்": "is speaking; from பேசு (pēcu), to speak"
+      "முதல்வர் எங்கே?":
+        native: "Where is the principal?"
+        bases:
+          "முதல்வர்": "chief minister; head; principal"
+  "ta-7355":
+    native: "village council; panchayat"
+    notes:
+      n1: "The elected council of a village."
+    examples:
+      "ஊராட்சி அலுவலகம் எங்கே?":
+        native: "Where is the village council office?"
+        bases:
+          "ஊராட்சி": "village council; panchayat"
+      "ஊராட்சி தலைவர் வருகிறார்.":
+        native: "The council head is coming."
+        bases:
+          "ஊராட்சி": "village council; panchayat"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+  "ta-7356":
+    native: "municipality; town council"
+    notes:
+      n1: "The council of a town; a bigger city has a மாநகராட்சி (mānakarāṭci)."
+    examples:
+      "நகராட்சி அலுவலகம் அங்கே.":
+        native: "The municipality office is there."
+        bases:
+          "நகராட்சி": "municipality; town council"
+          "அங்கே": "there"
+      "நகராட்சி குப்பை எடுக்கிறது.":
+        native: "The municipality collects the rubbish."
+        bases:
+          "நகராட்சி": "municipality; town council"
+          "எடுக்கிறது": "is taking; from எடு (eṭu), to take; to pick up"
+  "ta-7357":
+    native: "city corporation"
+    notes:
+      n1: "The council of a large city, bigger than a நகராட்சி (nakarāṭci)."
+    examples:
+      "மாநகராட்சி அலுவலகம் எங்கே?":
+        native: "Where is the corporation office?"
+        bases:
+          "மாநகராட்சி": "city corporation"
+      "மாநகராட்சி வரி கேட்கிறது.":
+        native: "The corporation asks for tax."
+        bases:
+          "மாநகராட்சி": "city corporation"
+          "கேட்கிறது": "is heard; from கேள் (kēḷ), to hear; to ask"
+  "ta-7358":
+    native: "subsidy; grant"
+    notes:
+      n1: "Money the government gives to lower a price, as on fuel or seeds."
+    examples:
+      "அரசு மானியம் கொடுக்கிறது.":
+        native: "The government gives a subsidy."
+        bases:
+          "அரசு": "government; state; kingdom"
+          "மானியம்": "subsidy; grant"
+          "கொடுக்கிறது": "is giving; from கொடு (koṭu), to give"
+      "மானியம் கிடைக்கிறது.":
+        native: "The subsidy is received."
+        bases:
+          "மானியம்": "subsidy; grant"
+          "கிடைக்கிறது": "is received; is available; from கிடை (kiṭai), to be obtained"
+  "ta-7359":
+    native: "fund; finance"
+    notes:
+      n1: "Used for public funds and for the finance of a project."
+    examples:
+      "அரசு நிதி கொடுக்கிறது.":
+        native: "The government gives funds."
+        bases:
+          "அரசு": "government; state; kingdom"
+          "நிதி": "fund; finance"
+          "கொடுக்கிறது": "is giving; from கொடு (koṭu), to give"
+      "நிதி இல்லை.":
+        native: "There are no funds."
+        bases:
+          "நிதி": "fund; finance"
+  "ta-7360":
+    native: "pension"
+    notes:
+      n1: "ஓய்வு (ōyvu) (rest) plus ஊதியம் (ūtiyam) (pay), so literally retirement pay."
+    examples:
+      "அவருக்கு ஓய்வூதியம் கிடைக்கிறது.":
+        native: "He gets a pension."
+        bases:
+          "அவருக்கு": "to him or her (polite); for him or her (polite); from அவர் (avar), he or she (polite)"
+          "ஓய்வூதியம்": "pension"
+          "கிடைக்கிறது": "is received; is available; from கிடை (kiṭai), to be obtained"
+      "ஓய்வூதியம் மாதம் ஒருமுறை.":
+        native: "The pension comes once a month."
+        bases:
+          "ஓய்வூதியம்": "pension"
+          "ஒருமுறை": "once"
+  "ta-7361":
+    native: "polling booth"
+    notes:
+      n1: "வாக்கு (vākku) (vote) plus சாவடி (cāvaṭi) (booth); written as one word."
+    examples:
+      "வாக்குச்சாவடி எங்கே?":
+        native: "Where is the polling booth?"
+        bases:
+          "வாக்குச்சாவடி": "polling booth"
+      "வாக்குச்சாவடி பள்ளியில் இருக்கிறது.":
+        native: "The polling booth is in the school."
+        bases:
+          "வாக்குச்சாவடி": "polling booth"
+          "பள்ளியில்": "at the school; from பள்ளி (paḷḷi), school"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7362":
+    native: "polling; voting record"
+    notes:
+      n1: "வாக்கு (vākku) (vote) plus பதிவு (pativu) (record); the act of casting votes."
+    examples:
+      "இன்று வாக்குப்பதிவு.":
+        native: "Polling is today."
+        bases:
+          "வாக்குப்பதிவு": "polling; voting record"
+      "வாக்குப்பதிவு நடக்கிறது.":
+        native: "Polling is going on."
+        bases:
+          "வாக்குப்பதிவு": "polling; voting record"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+  "ta-7363":
+    native: "identity; mark; sign"
+    notes:
+      n1: "An identity or a mark that identifies; an ID card is அடையாள (aṭaiyāḷa) அட்டை (aṭṭai)."
+    examples:
+      "உன் அடையாளம் என்ன?":
+        native: "What is your identity?"
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "அடையாளம்": "identity; mark; sign"
+      "அடையாளம் வேண்டும்.":
+        native: "Identification is needed."
+        bases:
+          "அடையாளம்": "identity; mark; sign"
+  "ta-7364":
+    native: "secretary"
+    notes:
+      n1: "The secretary of an office or an association, used for men and women alike."
+    examples:
+      "செயலாளர் இங்கே இருக்கிறார்.":
+        native: "The secretary is here."
+        bases:
+          "செயலாளர்": "secretary"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+      "செயலாளர் கையொப்பம் போடுகிறார்.":
+        native: "The secretary signs."
+        bases:
+          "செயலாளர்": "secretary"
+          "போடுகிறார்": "puts, draws (respectful); from போடு (pōṭu), to put"
+  "ta-7365":
+    native: "clerk"
+    notes:
+      n1: "Literally writer; the clerk who writes and keeps records in an office."
+    examples:
+      "எழுத்தர் எங்கே?":
+        native: "Where is the clerk?"
+        bases:
+          "எழுத்தர்": "clerk"
+      "எழுத்தர் படிவம் கொடுக்கிறார்.":
+        native: "The clerk gives the form."
+        bases:
+          "எழுத்தர்": "clerk"
+          "கொடுக்கிறார்": "is giving; from கொடு (koṭu), to give"
+  "ta-7366":
+    native: "order; command; permission"
+    notes:
+      n1: "An official order and also a polite permission, as in 'with your permission'."
+    examples:
+      "அரசு உத்தரவு வந்தது.":
+        native: "A government order came."
+        bases:
+          "அரசு": "government; state; kingdom"
+          "உத்தரவு": "order; command; permission"
+          "வந்தது": "came; from வா (vā), to come"
+      "உத்தரவு வேண்டும்.":
+        native: "Permission is needed."
+        bases:
+          "உத்தரவு": "order; command; permission"
+  "ta-7367":
+    native: "oath; pledge"
+    notes:
+      n1: "உறுதி (uṟuti) (firmness) plus மொழி (moḻi) (word); you 'take' (எடு (eṭu)) an oath."
+    examples:
+      "அவர் உறுதிமொழி எடுக்கிறார்.":
+        native: "He takes the oath."
+        bases:
+          "அவர்": "he or she (polite)"
+          "உறுதிமொழி": "oath; pledge"
+          "எடுக்கிறார்": "he takes; he makes (a film); from எடு (eṭu), to take"
+      "உறுதிமொழி கொடு.":
+        native: "Give a pledge."
+        bases:
+          "உறுதிமொழி": "oath; pledge"
+  "ta-7368":
+    native: "procedure; practice"
+    notes:
+      n1: "The way something is done in practice, as at an office."
+    examples:
+      "இது நடைமுறை.":
+        native: "This is the procedure."
+        bases:
+          "நடைமுறை": "procedure; practice"
+      "நடைமுறை என்ன?":
+        native: "What is the procedure?"
+        bases:
+          "நடைமுறை": "procedure; practice"
+  "ta-7369":
+    native: "action; step; measure"
+    notes:
+      n1: "Tamil 'takes' (எடு (eṭu)) action against a problem."
+    examples:
+      "அரசு நடவடிக்கை எடுக்கிறது.":
+        native: "The government takes action."
+        bases:
+          "அரசு": "government; state; kingdom"
+          "நடவடிக்கை": "action; step; measure"
+          "எடுக்கிறது": "is taking; from எடு (eṭu), to take; to pick up"
+      "நடவடிக்கை வேண்டும்.":
+        native: "Action is needed."
+        bases:
+          "நடவடிக்கை": "action; step; measure"
+  "ta-7370":
+    native: "policy; principle"
+    notes:
+      n1: "Used for a government's policy and for a person's principles."
+    examples:
+      "இது அரசாங்கக் கொள்கை.":
+        native: "This is government policy."
+        bases:
+          "அரசாங்கக்": "government (before a noun); from அரசாங்கம் (aracāṅkam), government"
+          "கொள்கை": "policy; principle"
+      "என் கொள்கை வேறு.":
+        native: "My principle is different."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "கொள்கை": "policy; principle"
+          "வேறு": "different; other"
+  "ta-7371":
+    native: "responsibility; charge"
+    notes:
+      n1: "Tamil 'takes' (எடு (eṭu)) responsibility; the same word means being in charge."
+    examples:
+      "இது என் பொறுப்பு.":
+        native: "This is my responsibility."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "பொறுப்பு": "responsibility; charge"
+      "அவர் பொறுப்பு எடுக்கிறார்.":
+        native: "He takes charge."
+        bases:
+          "அவர்": "he or she (polite)"
+          "பொறுப்பு": "responsibility; charge"
+          "எடுக்கிறார்": "he takes; he makes (a film); from எடு (eṭu), to take"
+  "ta-7372":
+    native: "democracy"
+    notes:
+      n1: "A word of Sanskrit origin; the Tamil word is மக்களாட்சி (makkaḷāṭci)."
+    examples:
+      "ஜனநாயகம் முக்கியம்.":
+        native: "Democracy is important."
+        bases:
+          "ஜனநாயகம்": "democracy"
+          "முக்கியம்": "important"
+      "இது ஜனநாயகம் நாடு.":
+        native: "This is a democratic country."
+        bases:
+          "ஜனநாயகம்": "democracy"
+  "ta-7373":
+    native: "republic"
+    notes:
+      n1: "குடி (kuṭi) (people) plus அரசு (aracu) (state); the word for a republic."
+    examples:
+      "இது குடியரசு நாடு.":
+        native: "This is a republic."
+        bases:
+          "குடியரசு": "republic"
+      "குடியரசு தினம் முக்கியம்.":
+        native: "Republic Day is important."
+        bases:
+          "குடியரசு": "republic"
+          "தினம்": "day"
+          "முக்கியம்": "important"
+  "ta-7374":
+    native: "constitution"
+    notes:
+      n1: "அரசியல் (araciyal) (politics) plus அமைப்பு (amaippu) (structure); the founding law of a country."
+    examples:
+      "அரசியலமைப்பு முக்கியம்.":
+        native: "The constitution is important."
+        bases:
+          "அரசியலமைப்பு": "constitution"
+          "முக்கியம்": "important"
+      "அரசியலமைப்பு எல்லோருக்கும் உரிமை தருகிறது.":
+        native: "The constitution gives rights to everyone."
+        bases:
+          "அரசியலமைப்பு": "constitution"
+          "எல்லோருக்கும்": "to everyone; from எல்லோர் (ellōr), everyone"
+          "தருகிறது": "gives; from தா (tā), to give"
+  "ta-7375":
+    native: "punishment; sentence"
+    notes:
+      n1: "A court sentence and any punishment, in school too."
+    examples:
+      "இது பெரிய தண்டனை.":
+        native: "This is a heavy punishment."
+        bases:
+          "தண்டனை": "punishment; sentence"
+      "தண்டனை கிடைக்கிறது.":
+        native: "The punishment is received."
+        bases:
+          "தண்டனை": "punishment; sentence"
+          "கிடைக்கிறது": "is received; is available; from கிடை (kiṭai), to be obtained"
+  "ta-7376":
+    native: "fine; penalty"
+    notes:
+      n1: "A money fine, which you 'pay' (கட்டு (kaṭṭu))."
+    examples:
+      "அபராதம் கட்டு.":
+        native: "Pay the fine."
+        bases:
+          "அபராதம்": "fine; penalty"
+      "அபராதம் எவ்வளவு?":
+        native: "How much is the fine?"
+        bases:
+          "அபராதம்": "fine; penalty"
+  "ta-7377":
+    native: "prison; jail"
+    notes:
+      n1: "Used for a prison and for being confined."
+    examples:
+      "அவன் சிறையில் இருக்கிறான்.":
+        native: "He is in prison."
+        bases:
+          "அவன்": "his"
+          "சிறையில்": "in the prison; from சிறை (ciṟai), prison; jail"
+          "இருக்கிறான்": "is; from இரு (iru), to be"
+      "சிறை பெரியது.":
+        native: "The prison is big."
+        bases:
+          "சிறை": "prison; jail"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-7378":
+    native: "notice"
+    notes:
+      n1: "An official or legal notice; the written word அறிவிப்பு (aṟivippu) is also used for ordinary notices."
+    examples:
+      "நோட்டீஸ் வந்தது.":
+        native: "A notice came."
+        bases:
+          "நோட்டீஸ்": "notice"
+          "வந்தது": "came; from வா (vā), to come"
+      "நோட்டீஸ் படி.":
+        native: "Read the notice."
+        bases:
+          "நோட்டீஸ்": "notice"
+  "ta-7379":
+    native: "petition; application"
+    notes:
+      n1: "A written request made to an official; Tamil 'gives' (கொடு (koṭu)) a petition."
+    examples:
+      "நான் மனு கொடுக்கிறேன்.":
+        native: "I am giving a petition."
+        bases:
+          "மனு": "petition; application"
+          "கொடுக்கிறேன்": "I give; from கொடு (koṭu), to give"
+      "மனு எழுது.":
+        native: "Write a petition."
+        bases:
+          "மனு": "petition; application"
+  "ta-7380":
+    native: "to carry out; to fulfil"
+    notes:
+      n1: "The thing carried out takes the -ஐ (-ai) ending."
+    examples:
+      "அரசு திட்டத்தை நிறைவேற்றுகிறது.":
+        native: "The government carries out the plan."
+        bases:
+          "அரசு": "government; state; kingdom"
+          "திட்டத்தை": "the plan; from திட்டம் (tiṭṭam), plan; project"
+          "நிறைவேற்றுகிறது": "is carrying out; from நிறைவேற்று (niṟaivēṟṟu), to carry out; to fulfil"
+      "நான் கடமையை நிறைவேற்றுகிறேன்.":
+        native: "I fulfil my duty."
+        bases:
+          "கடமையை": "the duty; from கடமை (kaṭamai), duty"
+          "நிறைவேற்றுகிறேன்": "am carrying out; from நிறைவேற்று (niṟaivēṟṟu), to carry out; to fulfil"
+  "ta-7381":
+    native: "to enforce; to put into effect"
+    notes:
+      n1: "Built from அமல் (amal) (effect) and படுத்து (paṭuttu) (make); the law enforced takes the -ஐ (-ai) ending."
+    examples:
+      "அரசு சட்டத்தை அமல்படுத்துகிறது.":
+        native: "The government enforces the law."
+        bases:
+          "அரசு": "government; state; kingdom"
+          "சட்டத்தை": "the law; from சட்டம் (caṭṭam), law; rule"
+          "அமல்படுத்துகிறது": "is enforcing; from அமல்படுத்து (amalpaṭuttu), to enforce; to put into effect"
+      "விதியை அமல்படுத்துகிறார்கள்.":
+        native: "They enforce the rule."
+        bases:
+          "விதியை": "the rule; from விதி (viti), rule; fate"
+          "அமல்படுத்துகிறார்கள்": "are enforcing (they, respectful); from அமல்படுத்து (amalpaṭuttu), to enforce; to put into effect"
+  "ta-7382":
+    native: "to appoint"
+    notes:
+      n1: "Used for appointing a person to a post; the person takes the -ஐ (-ai) ending."
+    examples:
+      "அரசு அதிகாரியை நியமிக்கிறது.":
+        native: "The government appoints an officer."
+        bases:
+          "அரசு": "government; state; kingdom"
+          "அதிகாரியை": "the officer; from அதிகாரி (atikāri), officer"
+          "நியமிக்கிறது": "is appointing; from நியமி (niyami), to appoint"
+      "அவரை நியமிக்கிறார்கள்.":
+        native: "They appoint him."
+        bases:
+          "அவரை": "him or her (polite; object); from அவர் (avar), he or she (polite)"
+          "நியமிக்கிறார்கள்": "are appointing (they, respectful); from நியமி (niyami), to appoint"
+  "ta-7383":
+    native: "public; common"
+    notes:
+      n1: "A describing word used before a noun; it has no -ஆன (-āṉa) ending."
+    examples:
+      "இது பொது இடம்.":
+        native: "This is a public place."
+        bases:
+          "பொது": "public; common"
+      "பொது கழிப்பறை எங்கே?":
+        native: "Where is the public toilet?"
+        bases:
+          "பொது": "public; common"

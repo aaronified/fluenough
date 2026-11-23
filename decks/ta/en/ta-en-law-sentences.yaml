@@ -1,0 +1,88 @@
+schema: 1
+id: "ta-en-law-sentences"
+kind: "layer"
+core: "ta-law-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Law: police, courts, rights and the rules in sentences"
+description: "Sentences about the law, the court, a judge, a fine and following the rules. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-9580":
+    native: "The lawyer argues in the court."
+    bases:
+      "நீதிமன்றத்தில்": "in the court; from நீதிமன்றம் (nītimaṉṟam), court of law"
+      "வாதாடுகிறார்": "he argues; from வாதாடு (vātāṭu), to argue; to plead"
+    confusables:
+      w1: { why: "நீதிபதி (nītipati), judge, is a different word." }
+      w2: { why: "விசாரணை (vicāraṇai), inquiry; trial; hearing, is a different word." }
+      w3: { why: "சாட்சியம் (cāṭciyam), testimony; evidence given, is a different word." }
+  "ta-9581":
+    native: "He has a fine of a thousand rupees."
+    bases:
+      "அவனுக்கு": "to him; for him; from அவன் (avaṉ), he; him"
+    confusables:
+      w1: { why: "தண்டனை (taṇṭaṉai), punishment; sentence, is a different word." }
+      w2: { why: "பிணை (piṇai), bail; surety, is a different word." }
+      w3: { why: "சிறை (ciṟai), prison; jail, is a different word." }
+  "ta-9582":
+    native: "Everyone must follow the law."
+    bases:
+      "சட்டத்தைப்": "the law (object); from சட்டம் (caṭṭam), law"
+      "பின்பற்ற": "to follow; from பின்பற்று (piṉpaṟṟu), to follow"
+    notes:
+      n1: "வேண்டும் (vēṇṭum), is needed after a verb stem ending in -அ (-a) means must: பின்பற்ற வேண்டும் (piṉpaṟṟa vēṇṭum), must follow."
+    confusables:
+      w1: { why: "உரிமை (urimai), right; ownership, is a different word." }
+      w2: { why: "விதிமுறை (vitimuṟai), rule; regulation, is a different word." }
+      w3: { why: "ஆணை (āṇai), order; command, is a different word." }
+  "ta-9583":
+    native: "He did not get bail at once."
+    bases:
+      "அவனுக்கு": "to him; for him; from அவன் (avaṉ), he; him"
+      "உடனே": "at once; immediately"
+      "கிடைக்கவில்லை": "did not get; from கிடை (kiṭai), to be got"
+    confusables:
+      w1: { why: "விடுதலை (viṭutalai), release; freedom, is a different word." }
+      w2: { why: "மனு (maṉu), petition; application, is a different word." }
+      w3: { why: "மேல்முறையீடு (mēlmuṟaiyīṭu), appeal, is a different word." }
+  "ta-9584":
+    native: "He tells the truth in court."
+    bases:
+      "நீதிமன்றத்தில்": "in the court; from நீதிமன்றம் (nītimaṉṟam), court of law"
+      "உண்மையைச்": "the truth (object); from உண்மை (uṇmai), truth"
+      "சொல்கிறான்": "he says; from சொல் (col), to say; to tell"
+    notes:
+      n1: "A noun ending in -ஐ (-ai) takes -ய் (-y) before the object ending: உண்மை (uṇmai) becomes உண்மையை (uṇmaiyai)."
+    confusables:
+      w1: { why: "சாட்சியம் (cāṭciyam), testimony; evidence given, is a different word." }
+      w2: { why: "வாக்குமூலம் (vākkumūlam), statement; confession, is a different word." }
+      w3: { why: "உறுதிமொழி (uṟutimoḻi), oath; pledge, is a different word." }
+  "ta-9585":
+    native: "This is the right of every citizen."
+    bases:
+      "குடிமகனின்": "of the citizen; from குடிமகன் (kuṭimakaṉ), citizen"
+    notes:
+      n1: "-இன் (-iṉ) says of: குடிமகனின் (kuṭimakaṉiṉ), of the citizen."
+    confusables:
+      w1: { why: "குடியுரிமை (kuṭiyurimai), citizenship, is a different word." }
+      w2: { why: "அதிகாரம் (atikāram), authority; power, is a different word." }
+      w3: { why: "நீதி (nīti), justice; fairness, is a different word." }
+  "ta-9586":
+    native: "An innocent person must not get punishment."
+    bases:
+      "நிரபராதிக்குத்": "to the innocent person; from நிரபராதி (niraparāti), innocent person"
+    notes:
+      n1: "கூடாது (kūṭātu), must not closes a sentence about what is not allowed."
+    confusables:
+      w1: { why: "குற்றச்சாட்டு (kuṟṟaccāṭṭu), accusation; charge, is a different word." }
+      w2: { why: "அபராதம் (aparātam), fine; penalty, is a different word." }
+      w3: { why: "சிறை (ciṟai), prison; jail, is a different word." }
+  "ta-9587":
+    native: "Do not do illegal work."
+    bases:
+      "செய்யாதே": "do not do; from செய் (cey), to do"
+    confusables:
+      w1: { why: "விதிமுறை (vitimuṟai), rule; regulation, is a different word." }
+      w2: { why: "சம்மன் (cammaṉ), summons, is a different word." }
+      w3: { why: "உத்தரவு (uttaravu), order; command; permission, is a different word." }

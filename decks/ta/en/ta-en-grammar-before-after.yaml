@@ -1,0 +1,22 @@
+schema: 1
+id: "ta-en-grammar-before-after"
+kind: "layer"
+core: "ta-grammar-before-after"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Before and after"
+description: "Every verb the course teaches before and after another action, and as soon as it is done. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "before": "before doing"
+    "after": "after doing"
+    "assoon": "as soon as it is done"
+rules:
+  "ta-rule-before":
+    name: "Before: the verb as a noun and முன் (muṉ)"
+    explanation: "For before doing, put the purpose form, the verb as a noun in the dative, in front of முன் (muṉ), before, or முன்னாடி (muṉṉāṭi) in speech: {1}, to come, gives {2} in speech and {3} in writing, before coming. The verb that follows tells the tense."
+  "ta-rule-after":
+    name: "After: the past participle and பிறகு (piṟaku)"
+    explanation: "For after doing, put the relative past form, taught earlier, in front of பிறகு (piṟaku), after: {1}, to come, gives {2}, after coming. Add -தும் (-tum) to the same form for as soon as: {3}. English Wiktionary lists அப்புறம் (appuṟam) and பின் (piṉ) as other words for after. Source: English Wiktionary (the entry for piṟaku)."

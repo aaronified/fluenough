@@ -1,0 +1,106 @@
+schema: 1
+id: "ta-health-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-9000"
+    target: "எனக்குக் காய்ச்சல் இருக்கிறது."
+    reading: "eṉakkuk kāyccal irukkiṟatu."
+    ipa: "enakkuk kaːjtʃtʃal iɾukkirat̪u"
+    pos: "phrase"
+    bases: [{ word: "எனக்குக்", base: "நான்", reading: "nāṉ" }, { word: "காய்ச்சல்", ref: "ta-1264" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-1265", kind: "word" }
+      - { id: "w2", ref: "ta-1266", kind: "word" }
+  - id: "ta-9001"
+    target: "நாளை மருத்துவரைப் பார்க்கிறேன்."
+    reading: "nāḷai maruttuvaraip pārkkiṟēṉ."
+    ipa: "naːɭai maɾut̪t̪uʋaɾaip paːɾkkireːn"
+    pos: "phrase"
+    bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "மருத்துவரைப்", base: "மருத்துவர்", reading: "maruttuvar" }, { word: "பார்க்கிறேன்", base: "பார்", reading: "pār" }]
+    confusables:
+      - { id: "w1", ref: "ta-7000", kind: "word" }
+      - { id: "w2", ref: "ta-1274", kind: "word" }
+  - id: "ta-9002"
+    target: "இந்த மருந்தை இரண்டு முறை சாப்பிடுங்கள்."
+    reading: "inta maruntai iraṇṭu muṟai cāppiṭuṅkaḷ."
+    ipa: "int̪a maɾunt̪ai iɾaɳʈu murai saːppiʈuŋkaɭ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "இந்த", base: "இந்த", reading: "inta" }, { word: "மருந்தை", base: "மருந்து", reading: "maruntu" }, { word: "இரண்டு", ref: "ta-0089" }, { word: "முறை", base: "முறை", reading: "muṟai" }, { word: "சாப்பிடுங்கள்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-1272", kind: "word" }
+      - { id: "w2", ref: "ta-1273", kind: "word" }
+      - { id: "w3", ref: "ta-7005", kind: "word" }
+  - id: "ta-9003"
+    target: "தினமும் உடற்பயிற்சி செய்யுங்கள்."
+    reading: "tiṉamum uṭaṟpayiṟci ceyyuṅkaḷ."
+    ipa: "t̪inamum uʈarpajirsi sejjuŋkaɭ"
+    pos: "phrase"
+    bases: [{ word: "தினமும்", ref: "ta-1106" }, { word: "உடற்பயிற்சி", ref: "ta-7022" }, { word: "செய்யுங்கள்", base: "செய்", reading: "cey" }]
+    confusables:
+      - { id: "w1", ref: "ta-7023", kind: "word" }
+      - { id: "w2", ref: "ta-7041", kind: "word" }
+  - id: "ta-9004"
+    target: "எனக்கு உடம்பு சரியில்லை, ஓய்வு வேண்டும்."
+    reading: "eṉakku uṭampu cariyillai, ōyvu vēṇṭum."
+    ipa: "enakku uʈampu saɾijillai oːjʋu ʋeːɳʈum"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "உடம்பு", ref: "ta-0258" }, { word: "சரியில்லை", base: "சரி", reading: "cari" }, { word: "ஓய்வு", ref: "ta-0200" }, { word: "வேண்டும்", ref: "ta-0409" }]
+    confusables:
+      - { id: "w1", ref: "ta-7021", kind: "word" }
+      - { id: "w2", ref: "ta-7003", kind: "word" }
+  - id: "ta-9005"
+    target: "இனிப்பைத் தவிருங்கள்."
+    reading: "iṉippait taviruṅkaḷ."
+    ipa: "inippait̪ t̪aʋiɾuŋkaɭ"
+    pos: "phrase"
+    bases: [{ word: "இனிப்பைத்", base: "இனிப்பு", reading: "iṉippu" }, { word: "தவிருங்கள்", base: "தவிர்", reading: "tavir" }]
+    confusables:
+      - { id: "w1", ref: "ta-2080", kind: "word" }
+      - { id: "w2", ref: "ta-7014", kind: "word" }
+  - id: "ta-9006"
+    target: "இந்தத் தொற்று பரவுகிறது."
+    reading: "intat toṟṟu paravukiṟatu."
+    ipa: "int̪at̪ t̪orru paɾaʋukirat̪u"
+    pos: "phrase"
+    bases: [{ word: "இந்தத்", base: "இந்த", reading: "inta" }, { word: "தொற்று", ref: "ta-7006" }, { word: "பரவுகிறது", base: "பரவு", reading: "paravu" }]
+    confusables:
+      - { id: "w1", ref: "ta-7008", kind: "word" }
+      - { id: "w2", ref: "ta-7007", kind: "word" }
+  - id: "ta-9007"
+    target: "நாளை அறுவைசிகிச்சை இருக்கிறது."
+    reading: "nāḷai aṟuvaicikiccai irukkiṟatu."
+    ipa: "naːɭai aruʋaisikitʃtʃai iɾukkirat̪u"
+    pos: "phrase"
+    bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "அறுவைசிகிச்சை", ref: "ta-7033" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-1287", kind: "word" }
+      - { id: "w2", ref: "ta-0261", kind: "word" }
+  - id: "ta-9008"
+    target: "முகக்கவசம் போடுங்கள்."
+    reading: "mukakkavacam pōṭuṅkaḷ."
+    ipa: "mukakkaʋasam poːʈuŋkaɭ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "முகக்கவசம்", ref: "ta-7031" }, { word: "போடுங்கள்", base: "போடு", reading: "pōṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-1311", kind: "word" }
+      - { id: "w2", ref: "ta-7007", kind: "word" }
+  - id: "ta-9009"
+    target: "இந்த உணவில் புரதம் இருக்கிறது."
+    reading: "inta uṇavil puratam irukkiṟatu."
+    ipa: "int̪a uɳaʋil puɾat̪am iɾukkirat̪u"
+    pos: "phrase"
+    bases: [{ word: "இந்த", base: "இந்த", reading: "inta" }, { word: "உணவில்", base: "உணவு", reading: "uṇavu" }, { word: "புரதம்", ref: "ta-7027" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-7028", kind: "word" }
+      - { id: "w2", ref: "ta-7026", kind: "word" }
+      - { id: "w3", ref: "ta-7025", kind: "word" }

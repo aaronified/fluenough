@@ -1,0 +1,93 @@
+schema: 1
+id: "ta-en-news-sentences"
+kind: "layer"
+core: "ta-news-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "News in sentences"
+description: "Short news-style sentences about reporters, accidents, elections, courts and warnings. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-9020":
+    native: "The reporter asks the minister a question."
+    bases:
+      "அமைச்சரிடம்": "to the minister; from the minister; from அமைச்சர் (amaiccar), minister"
+      "கேட்கிறார்": "asks (respectful); from கேள் (kēḷ), to ask"
+    confusables:
+      w1: { why: "செய்தியாளர் (ceytiyāḷar), journalist; news reporter, is a different word." }
+      w2: { why: "பேட்டி (pēṭṭi), interview (in the media), is a different word." }
+      w3: { why: "ஊடகம் (ūṭakam), media, is a different word." }
+  "ta-9021":
+    native: "This case is held tomorrow."
+    bases:
+      "இந்த": "this"
+      "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+    confusables:
+      w1: { why: "தீர்ப்பு (tīrppu), verdict; judgement, is a different word." }
+      w2: { why: "நீதிமன்றம் (nītimaṉṟam), court of law, is a different word." }
+      w3: { why: "குற்றம் (kuṟṟam), crime; fault; blame, is a different word." }
+  "ta-9022":
+    native: "The election takes place next month."
+    bases:
+      "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+    confusables:
+      w1: { why: "வாக்கு (vākku), vote, is a different word." }
+      w2: { why: "வேட்பாளர் (vēṭpāḷar), candidate, is a different word." }
+      w3: { why: "பிரச்சாரம் (piraccāram), campaign; propaganda, is a different word." }
+  "ta-9023":
+    native: "Fire is spreading in the city."
+    bases:
+      "நகரத்தில்": "in the city; from நகரம் (nakaram), city; town"
+      "பரவுகிறது": "spreads; from பரவு (paravu), to spread"
+    confusables:
+      w1: { why: "நிலநடுக்கம் (nilanaṭukkam), earthquake, is a different word." }
+      w2: { why: "கலவரம் (kalavaram), riot; unrest, is a different word." }
+      w3: { why: "தாக்குதல் (tākkutal), attack, is a different word." }
+  "ta-9024":
+    native: "The government announces the date."
+    bases:
+      "அரசு": "government; state; kingdom"
+      "தேதியை": "the date; from தேதி (tēti), date"
+      "அறிவிக்கிறது": "is announcing; from அறிவி (aṟivi), to announce; to declare"
+    confusables:
+      w1: { why: "எச்சரி (eccari), to warn, is a different word." }
+      w2: { why: "வதந்தி (vatanti), rumour, is a different word." }
+  "ta-9025":
+    native: "They warn the people."
+    bases:
+      "மக்களை": "the people; from மக்கள் (makkaḷ), people"
+      "எச்சரிக்கிறார்கள்": "are warning (they, respectful); from எச்சரி (eccari), to warn"
+    confusables:
+      w1: { why: "அறிவி (aṟivi), to announce; to declare, is a different word." }
+      w2: { why: "காயமடை (kāyamaṭai), to get injured, is a different word." }
+      w3: { why: "தீப்பிடி (tīppiṭi), to catch fire, is a different word." }
+  "ta-9026":
+    native: "One person is injured in the accident."
+    bases:
+      "விபத்தில்": "in the accident; from விபத்து (vipattu), accident"
+      "ஒருவர்": "one person"
+      "காயமடைகிறார்": "is getting injured (respectful); from காயமடை (kāyamaṭai), to get injured"
+    confusables:
+      w1: { why: "உயிர் (uyir), life; breath, is a different word." }
+      w2: { why: "சம்பவம் (campavam), incident; event, is a different word." }
+      w3: { why: "பாதிப்பு (pātippu), impact; damage; effect, is a different word." }
+  "ta-9027":
+    native: "This is a rumour, not true."
+    confusables:
+      w1: { why: "பொய் (poy), lie; falsehood, is a different word." }
+      w2: { why: "கணிப்பு (kaṇippu), estimate; forecast, is a different word." }
+  "ta-9028":
+    native: "The police investigate the theft."
+    bases:
+      "விசாரிக்கிறது": "is enquiring; from விசாரி (vicāri), to enquire; to ask about"
+    confusables:
+      w1: { why: "கைது (kaitu), arrest, is a different word." }
+      w2: { why: "கொலை (kolai), murder, is a different word." }
+      w3: { why: "புகார் (pukār), complaint, is a different word." }
+  "ta-9029":
+    native: "A debate on the price rise is going on."
+    bases:
+      "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+    confusables:
+      w1: { why: "வளர்ச்சி (vaḷarcci), growth; development, is a different word." }
+      w2: { why: "பொருளாதாரம் (poruḷātāram), economy, is a different word." }

@@ -1,0 +1,94 @@
+schema: 1
+id: "ta-en-relationships-sentences"
+kind: "layer"
+core: "ta-relationships-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Relationships: neighbours, friends and thank-you notes in sentences"
+description: "Sentences about neighbours, friends, thanks, apologies and getting along. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-9550":
+    native: "I write a thank-you letter to my friend."
+    bases:
+      "என்": "my; from நான் (nāṉ), I"
+      "நண்பனுக்கு": "to the friend; from நண்பன் (naṇpaṉ), male friend"
+      "எழுதுகிறேன்": "I write; from எழுது (eḻutu), to write"
+    confusables:
+      w1: { why: "நன்றியுணர்வு (naṉṟiyuṇarvu), gratitude, is a different word." }
+      w2: { why: "வாழ்த்து (vāḻttu), greeting; good wish, is a different word." }
+      w3: { why: "ஆறுதல் (āṟutal), comfort; consolation, is a different word." }
+  "ta-9551":
+    native: "My neighbour always helps."
+    bases:
+      "என்": "my; from நான் (nāṉ), I"
+      "செய்கிறார்": "he does; from செய் (cey), to do"
+    notes:
+      n1: "Inside the compound, வீடு (vīṭu), house becomes வீட்டு (vīṭṭu): பக்கத்துவீட்டுக்காரர் (pakkattuvīṭṭukkārar), the person of the next house."
+    confusables:
+      w1: { why: "அயலார் (ayalār), neighbour; outsider, is a different word." }
+      w2: { why: "சிநேகிதர் (cinēkitar), friend, is a different word." }
+      w3: { why: "தோழன் (tōḻaṉ), male friend; comrade, is a different word." }
+  "ta-9552":
+    native: "This is a secret; do not tell anyone."
+    bases:
+      "யாரிடமும்": "to anyone; from யார் (yār), who"
+      "சொல்லாதே": "do not tell; from சொல் (col), to say; to tell"
+    notes:
+      n1: "The negative command adds -ஆதே (-ātē) to the stem: சொல்லாதே (collātē), do not tell."
+    confusables:
+      w1: { why: "வாக்குறுதி (vākkuṟuti), promise, is a different word." }
+      w2: { why: "கருத்து (karuttu), opinion; view; comment, is a different word." }
+      w3: { why: "பேச்சு (pēccu), talk; speech; way of speaking, is a different word." }
+  "ta-9553":
+    native: "I accept your opinion."
+    bases:
+      "உன்": "your; from நீ (nī), you (to a friend or child)"
+      "கருத்தை": "the opinion (object); from கருத்து (karuttu), opinion"
+      "ஏற்றுக்கொள்கிறேன்": "I accept; from ஏற்றுக்கொள் (ēṟṟukkoḷ), to accept"
+    notes:
+      n1: "A noun ending in -த்து (-ttu) loses its -உ (-u) before the object ending: கருத்து (karuttu) becomes கருத்தை (karuttai)."
+    confusables:
+      w1: { why: "உரையாடல் (uraiyāṭal), conversation; dialogue, is a different word." }
+      w2: { why: "புரிதல் (purital), understanding, is a different word." }
+      w3: { why: "முரண்பாடு (muraṇpāṭu), disagreement; contradiction, is a different word." }
+  "ta-9554":
+    native: "After the quarrel they made peace."
+    bases:
+      "சண்டைக்குப்": "after the quarrel; from சண்டை (caṇṭai), fight; quarrel"
+      "பிறகு": "after; later"
+      "ஆனார்கள்": "they became; from ஆகு (āku), to become"
+    notes:
+      n1: "சமாதானம் ஆகு (camātāṉam āku), to become peace means to make up."
+    confusables:
+      w1: { why: "தகராறு (takarāṟu), dispute; quarrel, is a different word." }
+      w2: { why: "பகை (pakai), enmity; hostility, is a different word." }
+      w3: { why: "முரண்பாடு (muraṇpāṭu), disagreement; contradiction, is a different word." }
+  "ta-9555":
+    native: "She is my close friend."
+    bases:
+      "என்": "my; from நான் (nāṉ), I"
+    confusables:
+      w1: { why: "சிநேகிதி (cinēkiti), female friend, is a different word." }
+      w2: { why: "சகோதரி (cakōtari), sister, is a different word." }
+      w3: { why: "அக்கா (akkā), elder sister, is a different word." }
+  "ta-9556":
+    native: "Many thanks for your hospitality."
+    bases:
+      "உங்கள்": "your (polite); from நீங்கள் (nīṅkaḷ), you (polite)"
+      "விருந்தோம்பலுக்கு": "for the hospitality; from விருந்தோம்பல் (viruntōmpal), hospitality"
+      "மிக்க": "much; great"
+    notes:
+      n1: "The thing you thank for takes -க்கு (-kku): விருந்தோம்பலுக்கு நன்றி (viruntōmpalukku naṉṟi)."
+    confusables:
+      w1: { why: "அக்கறை (akkaṟai), care; concern, is a different word." }
+      w2: { why: "நன்றியுணர்வு (naṉṟiyuṇarvu), gratitude, is a different word." }
+      w3: { why: "உதவி (utavi), help, is a different word." }
+  "ta-9557":
+    native: "I want a trusted friend."
+    bases:
+      "எனக்கு": "to me; from நான் (nāṉ), I"
+    confusables:
+      w1: { why: "துணை (tuṇai), companion; support; spouse, is a different word." }
+      w2: { why: "தோழன் (tōḻaṉ), male friend; comrade, is a different word." }
+      w3: { why: "நல்லுறவு (nalluṟavu), good relations, is a different word." }

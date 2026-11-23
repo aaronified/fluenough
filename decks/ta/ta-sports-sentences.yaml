@@ -1,0 +1,100 @@
+schema: 1
+id: "ta-sports-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-9540"
+    target: "இன்று மாலை ஆறு மணிக்கு இறுதிப்போட்டி."
+    reading: "iṉṟu mālai āṟu maṇikku iṟutippōṭṭi."
+    ipa: "inru maːlai aːru maɳikku irut̪ippoːʈʈi"
+    pos: "phrase"
+    bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "மாலை", ref: "ta-0153" }, { word: "ஆறு", ref: "ta-0093" }, { word: "மணிக்கு", base: "மணி", reading: "maṇi" }, { word: "இறுதிப்போட்டி", ref: "ta-8237" }]
+    confusables:
+      - { id: "w1", ref: "ta-8238", kind: "word" }
+      - { id: "w2", ref: "ta-8216", kind: "word" }
+      - { id: "w3", ref: "ta-8239", kind: "word" }
+  - id: "ta-9541"
+    target: "எங்கள் அணி முதலிடம் பெறுகிறது."
+    reading: "eṅkaḷ aṇi mutaliṭam peṟukiṟatu."
+    ipa: "eŋkaɭ aɳi mut̪aliʈam perukirat̪u"
+    pos: "phrase"
+    bases: [{ word: "எங்கள்", base: "நாங்கள்", reading: "nāṅkaḷ" }, { word: "அணி", ref: "ta-8205" }, { word: "முதலிடம்", ref: "ta-8236" }, { word: "பெறுகிறது", base: "பெறு", reading: "peṟu" }]
+    confusables:
+      - { id: "w1", ref: "ta-8226", kind: "word" }
+      - { id: "w2", ref: "ta-8228", kind: "word" }
+      - { id: "w3", ref: "ta-8230", kind: "word" }
+  - id: "ta-9542"
+    target: "எதிரணி இரண்டு கோல் அடிக்கிறது."
+    reading: "etiraṇi iraṇṭu kōl aṭikkiṟatu."
+    ipa: "et̪iɾaɳi iɾaɳʈu koːl aʈikkirat̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "எதிரணி", ref: "ta-8241" }, { word: "இரண்டு", ref: "ta-0089" }, { word: "கோல்", ref: "ta-8222" }, { word: "அடிக்கிறது", base: "அடி", reading: "aṭi" }]
+    confusables:
+      - { id: "w1", ref: "ta-8223", kind: "word" }
+      - { id: "w2", ref: "ta-8224", kind: "word" }
+      - { id: "w3", ref: "ta-8225", kind: "word" }
+  - id: "ta-9543"
+    target: "பயிற்சியாளர் வீரர்களுக்குப் பயிற்சி கொடுக்கிறார்."
+    reading: "payiṟciyāḷar vīrarkaḷukkup payiṟci koṭukkiṟār."
+    ipa: "pajirsijaːɭaɾ ʋiːɾaɾkaɭukkup pajirsi koʈukkiraːɾ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "பயிற்சியாளர்", ref: "ta-8218" }, { word: "வீரர்களுக்குப்", base: "வீரர்", reading: "vīrar" }, { word: "பயிற்சி", ref: "ta-1848" }, { word: "கொடுக்கிறார்", base: "கொடு", reading: "koṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-8219", kind: "word" }
+      - { id: "w2", ref: "ta-8235", kind: "word" }
+      - { id: "w3", ref: "ta-8232", kind: "word" }
+  - id: "ta-9544"
+    target: "அவன் மிக வேகமாக ஓடுகிறான்."
+    reading: "avaṉ mika vēkamāka ōṭukiṟāṉ."
+    ipa: "aʋan mika ʋeːkamaːka oːʈukiraːn"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "மிக", base: "மிக", reading: "mika" }, { word: "வேகமாக", base: "வேகம்", reading: "vēkam" }, { word: "ஓடுகிறான்", base: "ஓடு", reading: "ōṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-8240", kind: "word" }
+      - { id: "w2", ref: "ta-8233", kind: "word" }
+      - { id: "w3", ref: "ta-8244", kind: "word" }
+  - id: "ta-9545"
+    target: "போட்டி சமன் ஆகிறது."
+    reading: "pōṭṭi camaṉ ākiṟatu."
+    ipa: "poːʈʈi saman aːkirat̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "போட்டி", ref: "ta-1884" }, { word: "சமன்", ref: "ta-8231" }, { word: "ஆகிறது", base: "ஆகு", reading: "āku" }]
+    confusables:
+      - { id: "w1", ref: "ta-1845", kind: "word" }
+      - { id: "w2", ref: "ta-1846", kind: "word" }
+      - { id: "w3", ref: "ta-8223", kind: "word" }
+  - id: "ta-9546"
+    target: "மைதானத்தில் ரசிகர்கள் கூச்சல் போடுகிறார்கள்."
+    reading: "maitāṉattil racikarkaḷ kūccal pōṭukiṟārkaḷ."
+    ipa: "mait̪aːnat̪t̪il ɾasikaɾkaɭ kuːtʃtʃal poːʈukiraːɾkaɭ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "மைதானத்தில்", base: "மைதானம்", reading: "maitāṉam" }, { word: "ரசிகர்கள்", base: "ரசிகர்", reading: "racikar" }, { word: "கூச்சல்", ref: "ta-8243" }, { word: "போடுகிறார்கள்", base: "போடு", reading: "pōṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-8221", kind: "word" }
+      - { id: "w2", ref: "ta-8228", kind: "word" }
+      - { id: "w3", ref: "ta-8220", kind: "word" }
+  - id: "ta-9547"
+    target: "அவன் காயத்தால் விளையாடவில்லை."
+    reading: "avaṉ kāyattāl viḷaiyāṭavillai."
+    ipa: "aʋan kaːjat̪t̪aːl ʋiɭaijaːʈaʋillai"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "காயத்தால்", base: "காயம்", reading: "kāyam" }, { word: "விளையாடவில்லை", base: "விளையாடு", reading: "viḷaiyāṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-1293", kind: "word" }
+      - { id: "w2", ref: "ta-0200", kind: "word" }
+      - { id: "w3", ref: "ta-1848", kind: "word" }
