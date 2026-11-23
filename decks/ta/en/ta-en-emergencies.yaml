@@ -1,0 +1,585 @@
+schema: 1
+id: "ta-en-emergencies"
+kind: "layer"
+core: "ta-emergencies"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Emergencies: accidents, fire, help and safety"
+description: "Emergencies: fire, accidents, theft, floods and injuries, the people who rescue, and the verbs and warnings you need to ask for help and stay safe. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-8360":
+    native: "fire accident; fire"
+    notes:
+      n1: "Built from தீ (tī), fire and விபத்து (vipattu), accident, words taught earlier."
+    examples:
+      "கடையில் தீவிபத்து.":
+        native: "There is a fire in the shop."
+        bases:
+          "கடையில்": "at the shop; from கடை (kaṭai), shop"
+          "தீவிபத்து": "fire accident; fire"
+      "தீவிபத்து இன்று நடக்கிறது.":
+        native: "A fire accident is happening today."
+        bases:
+          "தீவிபத்து": "fire accident; fire"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+  "ta-8361":
+    native: "fire-fighting; fire service"
+    notes:
+      n1: "Built from தீ (tī), fire and அணை (aṇai), to put out; தீயணைப்பு நிலையம் (tīyaṇaippu nilaiyam) is the fire station."
+    examples:
+      "தீயணைப்பு நிலையம் எங்கே?":
+        native: "Where is the fire station?"
+        bases:
+          "தீயணைப்பு": "fire-fighting; fire service"
+      "தீயணைப்பு வருகிறது.":
+        native: "The fire service is coming."
+        bases:
+          "தீயணைப்பு": "fire-fighting; fire service"
+          "வருகிறது": "is coming; from வா (vā), to come"
+  "ta-8362":
+    native: "fire extinguisher"
+    notes:
+      n1: "Built from தீ (tī), fire and அணை (aṇai), to put out; a device that puts out fire."
+    examples:
+      "தீயணைப்பான் எங்கே?":
+        native: "Where is the fire extinguisher?"
+        bases:
+          "தீயணைப்பான்": "fire extinguisher"
+      "தீயணைப்பான் சமையலறையில் இருக்கிறது.":
+        native: "The fire extinguisher is in the kitchen."
+        bases:
+          "தீயணைப்பான்": "fire extinguisher"
+          "சமையலறையில்": "in the kitchen; from சமையலறை (camaiyalaṟai), kitchen"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8363":
+    native: "robbery; looting"
+    notes:
+      n1: "Taking things by force; திருட்டு (tiruṭṭu), theft, a word taught earlier, is by stealth."
+    examples:
+      "வங்கியில் கொள்ளை நடக்கிறது.":
+        native: "A robbery is happening in the bank."
+        bases:
+          "வங்கியில்": "in the bank; from வங்கி (vaṅki), bank"
+          "கொள்ளை": "robbery; looting"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+      "கொள்ளை பெரியது.":
+        native: "The robbery is big."
+        bases:
+          "கொள்ளை": "robbery; looting"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8364":
+    native: "thief"
+    notes:
+      n1: "A man who steals; the woman is திருடி (tiruṭi), woman thief."
+    examples:
+      "திருடன் இங்கே இருக்கிறான்.":
+        native: "The thief is here."
+        bases:
+          "திருடன்": "thief"
+          "இருக்கிறான்": "is; from இரு (iru), to be"
+      "திருடன் ஓடுகிறான்.":
+        native: "The thief runs."
+        bases:
+          "திருடன்": "thief"
+          "ஓடுகிறான்": "is running; from ஓடு (ōṭu), to run"
+  "ta-8365":
+    native: "explosion; blast; crack"
+    notes:
+      n1: "A sudden blast; it also means a crack in a wall or in skin."
+    examples:
+      "கடையில் வெடிப்பு.":
+        native: "There is an explosion in the shop."
+        bases:
+          "கடையில்": "at the shop; from கடை (kaṭai), shop"
+          "வெடிப்பு": "explosion; blast; crack"
+      "வெடிப்பு கேட்கிறது.":
+        native: "An explosion is heard."
+        bases:
+          "வெடிப்பு": "explosion; blast; crack"
+          "கேட்கிறது": "is heard; from கேள் (kēḷ), to hear; to ask"
+  "ta-8366":
+    native: "leak; leakage"
+    notes:
+      n1: "Something running out of a pipe or a tank."
+    examples:
+      "குழாயில் கசிவு இருக்கிறது.":
+        native: "There is a leak in the pipe."
+        bases:
+          "குழாயில்": "in the pipe; from குழாய் (kuḻāy), tap; pipe"
+          "கசிவு": "leak; leakage"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "கசிவு எங்கே?":
+        native: "Where is the leak?"
+        bases:
+          "கசிவு": "leak; leakage"
+  "ta-8367":
+    native: "rescue; recovery"
+    notes:
+      n1: "The noun of மீட்டு (mīṭṭu), to rescue."
+    examples:
+      "மீட்பு நடக்கிறது.":
+        native: "The rescue is happening."
+        bases:
+          "மீட்பு": "rescue; recovery"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+      "மீட்பு வேலை நடக்கிறது.":
+        native: "The rescue work is going on."
+        bases:
+          "மீட்பு": "rescue; recovery"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+  "ta-8368":
+    native: "fracture; broken bone"
+    notes:
+      n1: "Built from எலும்பு (elumpu), bone and முறிவு (muṟivu), break."
+    examples:
+      "அவனுக்கு எலும்புமுறிவு.":
+        native: "He has a fracture."
+        bases:
+          "அவனுக்கு": "to him; from அவன் (avaṉ), he"
+          "எலும்புமுறிவு": "fracture; broken bone"
+      "எலும்புமுறிவு ஆபத்தானது.":
+        native: "A fracture is serious."
+        bases:
+          "எலும்புமுறிவு": "fracture; broken bone"
+          "ஆபத்தானது": "is dangerous; from ஆபத்து (āpattu), danger"
+  "ta-8369":
+    native: "breathlessness; difficulty in breathing"
+    notes:
+      n1: "Built from மூச்சு (mūccu), breath and திணறல் (tiṇaṟal), choking."
+    examples:
+      "அவனுக்கு மூச்சுத்திணறல்.":
+        native: "He is short of breath."
+        bases:
+          "அவனுக்கு": "to him; from அவன் (avaṉ), he"
+          "மூச்சுத்திணறல்": "breathlessness; difficulty in breathing"
+      "மூச்சுத்திணறல் ஆபத்தானது.":
+        native: "Breathlessness is dangerous."
+        bases:
+          "மூச்சுத்திணறல்": "breathlessness; difficulty in breathing"
+          "ஆபத்தானது": "is dangerous; from ஆபத்து (āpattu), danger"
+  "ta-8370":
+    native: "burn injury"
+    notes:
+      n1: "Built from தீ (tī), fire and காயம் (kāyam), wound."
+    examples:
+      "அவளுக்குத் தீக்காயம்.":
+        native: "She has a burn."
+        bases:
+          "அவளுக்குத்": "to her; for her; from அவள் (avaḷ), she"
+          "தீக்காயம்": "burn injury"
+      "தீக்காயம் பெரியது.":
+        native: "The burn is big."
+        bases:
+          "தீக்காயம்": "burn injury"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8371":
+    native: "rescue team"
+    notes:
+      n1: "Built from மீட்பு (mīṭpu), rescue and குழு (kuḻu), team."
+    examples:
+      "மீட்புக்குழு வருகிறது.":
+        native: "The rescue team is coming."
+        bases:
+          "மீட்புக்குழு": "rescue team"
+          "வருகிறது": "is coming; from வா (vā), to come"
+      "மீட்புக்குழு இங்கே இருக்கிறது.":
+        native: "The rescue team is here."
+        bases:
+          "மீட்புக்குழு": "rescue team"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8372":
+    native: "siren"
+    notes:
+      n1: "A loanword from English siren."
+    examples:
+      "சைரன் கேட்கிறது.":
+        native: "The siren is heard."
+        bases:
+          "சைரன்": "siren"
+          "கேட்கிறது": "is heard; from கேள் (kēḷ), to hear; to ask"
+      "ஆம்புலன்ஸ் சைரன் அடிக்கிறது.":
+        native: "The ambulance siren sounds."
+        bases:
+          "சைரன்": "siren"
+          "அடிக்கிறது": "beats, strikes; from அடி (aṭi), to hit"
+  "ta-8373":
+    native: "collision; clash"
+    notes:
+      n1: "A crash of two vehicles, or a clash of two groups."
+    examples:
+      "சாலையில் மோதல்.":
+        native: "There is a collision on the road."
+        bases:
+          "சாலையில்": "on the road; from சாலை (cālai), road"
+          "மோதல்": "collision; clash"
+      "மோதல் பெரியது.":
+        native: "The collision is big."
+        bases:
+          "மோதல்": "collision; clash"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8374":
+    native: "danger; peril"
+    notes:
+      n1: "A stronger and more formal word than ஆபத்து (āpattu), danger, which was taught earlier."
+    examples:
+      "இங்கே அபாயம் இருக்கிறது.":
+        native: "There is danger here."
+        bases:
+          "அபாயம்": "danger; peril"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "அபாயம் இல்லை.":
+        native: "There is no danger."
+        bases:
+          "அபாயம்": "danger; peril"
+  "ta-8375":
+    native: "guard; custody; watch"
+    notes:
+      n1: "The act of guarding; காவல் நிலையம் (kāval nilaiyam) is the police station."
+    examples:
+      "வாசலில் காவல் இருக்கிறது.":
+        native: "There is a guard at the door."
+        bases:
+          "வாசலில்": "at the door; from வாசல் (vācal), doorway"
+          "காவல்": "guard; custody; watch"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "காவல் நிலையம் எங்கே?":
+        native: "Where is the police station?"
+        bases:
+          "காவல்": "guard; custody; watch"
+  "ta-8376":
+    native: "electrical leak; short circuit"
+    notes:
+      n1: "Built from மின் (miṉ), electric and கசிவு (kacivu), leak."
+    examples:
+      "மின்கசிவு ஆபத்தானது.":
+        native: "An electrical leak is dangerous."
+        bases:
+          "மின்கசிவு": "electrical leak; short circuit"
+          "ஆபத்தானது": "is dangerous; from ஆபத்து (āpattu), danger"
+      "வீட்டில் மின்கசிவு இருக்கிறது.":
+        native: "There is an electrical leak in the house."
+        bases:
+          "மின்கசிவு": "electrical leak; short circuit"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8377":
+    native: "disaster; calamity"
+    notes:
+      n1: "Built from பெரு (peru), big and இடர் (iṭar), trouble: a flood or an earthquake."
+    examples:
+      "இது பேரிடர்.":
+        native: "This is a disaster."
+        bases:
+          "பேரிடர்": "disaster; calamity"
+      "பேரிடர் பெரியது.":
+        native: "The disaster is big."
+        bases:
+          "பேரிடர்": "disaster; calamity"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8378":
+    native: "damage; loss"
+    notes:
+      n1: "Harm done to a thing."
+    examples:
+      "வீட்டில் சேதம் இருக்கிறது.":
+        native: "There is damage in the house."
+        bases:
+          "சேதம்": "damage; loss"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "சேதம் அதிகம்.":
+        native: "The damage is big."
+        bases:
+          "சேதம்": "damage; loss"
+  "ta-8379":
+    native: "loss"
+    notes:
+      n1: "The noun of இழ (iḻa), to lose; it covers loss of things, money or life."
+    examples:
+      "இது பெரிய இழப்பு.":
+        native: "This is a big loss."
+        bases:
+          "இழப்பு": "loss"
+      "இழப்பு அதிகம்.":
+        native: "The loss is big."
+        bases:
+          "இழப்பு": "loss"
+  "ta-8380":
+    native: "loss of life"
+    notes:
+      n1: "Built from உயிர் (uyir), life and இழப்பு (iḻappu), loss."
+    examples:
+      "உயிரிழப்பு இல்லை.":
+        native: "There is no loss of life."
+        bases:
+          "உயிரிழப்பு": "loss of life"
+      "உயிரிழப்பு அதிகம்.":
+        native: "The loss of life is big."
+        bases:
+          "உயிரிழப்பு": "loss of life"
+  "ta-8381":
+    native: "precaution; advance warning"
+    notes:
+      n1: "Built from முன் (muṉ), before and எச்சரிக்கை (eccarikkai), warning, a word taught earlier."
+    examples:
+      "முன்னெச்சரிக்கை முக்கியம்.":
+        native: "Precaution is important."
+        bases:
+          "முன்னெச்சரிக்கை": "precaution; advance warning"
+          "முக்கியம்": "important"
+      "இது முன்னெச்சரிக்கை.":
+        native: "This is a precaution."
+        bases:
+          "முன்னெச்சரிக்கை": "precaution; advance warning"
+  "ta-8382":
+    native: "prevention; barrier"
+    notes:
+      n1: "Stopping a thing before it happens; also a barrier on a road."
+    examples:
+      "விபத்துத் தடுப்பு முக்கியம்.":
+        native: "Accident prevention is important."
+        bases:
+          "விபத்துத்": "accident (before a word starting with t); from விபத்து (vipattu), accident"
+          "தடுப்பு": "prevention; barrier"
+          "முக்கியம்": "important"
+      "சாலையில் தடுப்பு இருக்கிறது.":
+        native: "There is a barrier on the road."
+        bases:
+          "சாலையில்": "on the road; from சாலை (cālai), road"
+          "தடுப்பு": "prevention; barrier"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8383":
+    native: "to escape; to get away"
+    notes:
+      n1: "To get away from danger; the noun தப்பு (tappu) also means a mistake."
+    examples:
+      "ஆபத்திலிருந்து தப்பு.":
+        native: "Escape from danger."
+        bases:
+          "ஆபத்திலிருந்து": "from danger; from ஆபத்து (āpattu), danger"
+          "தப்பு": "to escape; to get away"
+      "திருடன் தப்புகிறான்.":
+        native: "The thief escapes."
+        bases:
+          "தப்புகிறான்": "he escapes; from தப்பு (tappu), to escape"
+  "ta-8384":
+    native: "to save; to rescue"
+    notes:
+      n1: "To save a life; the one saved is the object."
+    examples:
+      "என்னைக் காப்பாற்று.":
+        native: "Save me."
+        bases:
+          "என்னைக்": "me (object); from நான் (nāṉ), I; me"
+          "காப்பாற்று": "to save; to rescue"
+      "அவர் குழந்தையைக் காப்பாற்றுகிறார்.":
+        native: "He saves the child."
+        bases:
+          "குழந்தையைக்": "the child (object); from குழந்தை (kuḻantai), child"
+          "காப்பாற்றுகிறார்": "he saves; from காப்பாற்று (kāppāṟṟu), to save"
+  "ta-8385":
+    native: "to scream; to cry out"
+    notes:
+      n1: "To cry out in fear or pain."
+    examples:
+      "அலறாதே.":
+        native: "Do not scream."
+        bases:
+          "அலறாதே": "do not scream; from அலறு (alaṟu), to scream"
+      "அவள் அலறுகிறாள்.":
+        native: "She screams."
+        bases:
+          "அலறுகிறாள்": "she screams; from அலறு (alaṟu), to scream"
+  "ta-8386":
+    native: "to collide; to crash"
+    notes:
+      n1: "To strike against; a bus hits a lorry."
+    examples:
+      "பேருந்து லாரியில் மோது.":
+        native: "Let the bus crash into the lorry."
+        bases:
+          "லாரியில்": "into the lorry; from லாரி (lāri), lorry"
+          "மோது": "to collide; to crash"
+      "கார் மரத்தில் மோதுகிறது.":
+        native: "The car crashes into the tree."
+        bases:
+          "மரத்தில்": "into the tree; from மரம் (maram), tree"
+          "மோதுகிறது": "crashes; from மோது (mōtu), to crash"
+  "ta-8387":
+    native: "to get caught; to be trapped"
+    notes:
+      n1: "To be stuck in a net, a jam or a trouble."
+    examples:
+      "வலையில் சிக்கு.":
+        native: "Get caught in a net."
+        bases:
+          "வலையில்": "in the net; from வலை (valai), net"
+          "சிக்கு": "to get caught; to be trapped"
+      "அவன் நெரிசலில் சிக்குகிறான்.":
+        native: "He gets stuck in a jam."
+        bases:
+          "நெரிசலில்": "in the jam; from நெரிசல் (nerical), crowding; traffic jam"
+          "சிக்குகிறான்": "he gets caught; from சிக்கு (cikku), to get caught"
+  "ta-8388":
+    native: "to panic; to be alarmed"
+    notes:
+      n1: "To shake in alarm."
+    examples:
+      "பதறாதே.":
+        native: "Do not panic."
+        bases:
+          "பதறாதே": "do not panic; from பதறு (pataṟu), to panic"
+      "அம்மா பதறுகிறாள்.":
+        native: "Mother panics."
+        bases:
+          "பதறுகிறாள்": "she panics; from பதறு (pataṟu), to panic"
+  "ta-8389":
+    native: "to lose; to be lost"
+    notes:
+      n1: "To lose a thing; the thing lost is the object."
+    examples:
+      "சாவியைத் தொலை.":
+        native: "Lose the key."
+        bases:
+          "சாவியைத்": "the key (object); from சாவி (cāvi), key"
+          "தொலை": "to lose; to be lost"
+      "நான் சாவியைத் தொலைக்கிறேன்.":
+        native: "I lose the key."
+        bases:
+          "சாவியைத்": "the key (object); from சாவி (cāvi), key"
+          "தொலைக்கிறேன்": "I lose; from தொலை (tolai), to lose"
+  "ta-8390":
+    native: "to break; to be broken"
+    notes:
+      n1: "A thing breaks by itself; the noun உடை (uṭai) also means a garment."
+    examples:
+      "கண்ணாடி உடை.":
+        native: "Let the glass break."
+        bases:
+          "உடை": "to break; to be broken"
+      "கண்ணாடி உடைகிறது.":
+        native: "The glass breaks."
+        bases:
+          "உடைகிறது": "breaks; from உடை (uṭai), to break"
+  "ta-8391":
+    native: "to leak; to ooze"
+    notes:
+      n1: "Said of water from a pipe or blood from a wound."
+    examples:
+      "குழாய் கசிகிறது.":
+        native: "The pipe leaks."
+        bases:
+          "கசிகிறது": "leaks; from கசி (kaci), to leak"
+      "தண்ணீர் கசிகிறது.":
+        native: "Water leaks."
+        bases:
+          "கசிகிறது": "leaks; from கசி (kaci), to leak"
+  "ta-8392":
+    native: "to overturn; to capsize"
+    notes:
+      n1: "To turn upside down, as a lorry or a boat does."
+    examples:
+      "படகு கவிழ்கிறது.":
+        native: "The boat capsizes."
+        bases:
+          "கவிழ்கிறது": "overturns; from கவிழ் (kaviḻ), to overturn"
+      "லாரி கவிழ்கிறது.":
+        native: "The lorry overturns."
+        bases:
+          "கவிழ்கிறது": "overturns; from கவிழ் (kaviḻ), to overturn"
+  "ta-8393":
+    native: "to snatch; to pluck"
+    notes:
+      n1: "To snatch a bag or pluck a flower."
+    examples:
+      "பையைப் பறி.":
+        native: "Snatch the bag."
+        bases:
+          "பையைப்": "the bag (object); from பை (pai), bag"
+          "பறி": "to snatch; to pluck"
+      "திருடன் பையைப் பறிக்கிறான்.":
+        native: "The thief snatches the bag."
+        bases:
+          "பையைப்": "the bag (object); from பை (pai), bag"
+          "பறிக்கிறான்": "he snatches; from பறி (paṟi), to snatch"
+  "ta-8394":
+    native: "to sink; to drown"
+    notes:
+      n1: "To go under water."
+    examples:
+      "படகு மூழ்கிறது.":
+        native: "The boat sinks."
+        bases:
+          "மூழ்கிறது": "sinks; from மூழ்கு (mūḻku), to sink"
+      "அவன் தண்ணீரில் மூழ்குகிறான்.":
+        native: "He drowns in the water."
+        bases:
+          "தண்ணீரில்": "in water; from தண்ணீர் (taṇṇīr), water"
+          "மூழ்குகிறான்": "he drowns; from மூழ்கு (mūḻku), to drown"
+  "ta-8395":
+    native: "urgent; pressing"
+    notes:
+      n1: "Said of a call, a matter or a need."
+    examples:
+      "இது அவசரமான அழைப்பு.":
+        native: "This is an urgent call."
+        bases:
+          "அவசரமான": "urgent; pressing"
+      "இது அவசரமான வேலை.":
+        native: "This is urgent work."
+        bases:
+          "அவசரமான": "urgent; pressing"
+  "ta-8396":
+    native: "injured; wounded"
+    notes:
+      n1: "It stands before a noun and does not change: காயமடைந்த மனிதன் (kāyamaṭainta maṉitaṉ), an injured person."
+    examples:
+      "காயமடைந்த மனிதன் இங்கே இருக்கிறான்.":
+        native: "The injured man is here."
+        bases:
+          "காயமடைந்த": "injured; wounded"
+          "இருக்கிறான்": "is; from இரு (iru), to be"
+      "காயமடைந்த குழந்தை அழுகிறது.":
+        native: "The injured child cries."
+        bases:
+          "காயமடைந்த": "injured; wounded"
+          "அழுகிறது": "is crying; from அழு (aḻu), to cry; to weep"
+  "ta-8397":
+    native: "safe; secure"
+    notes:
+      n1: "Said of a place or a thing kept safe."
+    examples:
+      "இது பத்திரமான இடம்.":
+        native: "This is a safe place."
+        bases:
+          "பத்திரமான": "safe; secure"
+      "பத்திரமான இடத்தில் வை.":
+        native: "Keep it in a safe place."
+        bases:
+          "பத்திரமான": "safe; secure"
+          "இடத்தில்": "in the place; from இடம் (iṭam), place"
+  "ta-8398":
+    native: "careful; attentive"
+    notes:
+      n1: "Said of a person who is careful."
+    examples:
+      "அவன் கவனமான மனிதன்.":
+        native: "He is a careful man."
+        bases:
+          "கவனமான": "careful; attentive"
+      "கவனமான ஓட்டுநர் வேண்டும்.":
+        native: "A careful driver is needed."
+        bases:
+          "கவனமான": "careful; attentive"
+  "ta-8399":
+    native: "immediate; instant"
+    notes:
+      n1: "It stands before a noun and does not change: உடனடி உதவி (uṭaṉaṭi utavi), immediate help."
+    examples:
+      "உடனடி உதவி வேண்டும்.":
+        native: "Immediate help is needed."
+        bases:
+          "உடனடி": "immediate; instant"
+      "இது உடனடி வேலை.":
+        native: "This is immediate work."
+        bases:
+          "உடனடி": "immediate; instant"
