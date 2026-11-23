@@ -643,5 +643,7 @@ units:
   # optional, for learners who know the IPA or want to learn it. The path has no
   # field for an optional deck yet, so they sit in a unit of their own after B1;
   # how they are offered is to be decided (wiki: Plan-Ipa-Revamp-And-Language-Phonology).
-  - ["te-phonology-consonants", "te-phonology-vowels", "te-phonology-prosody", "te-phonology-syllables", "te-phonology-allophones", "te-phonology-spelling"]
+  # te-sound-inventory (#734, Plan-Sounds-Decks) joins them: one card per sound, with
+  # how it differs from English.
+  - ["te-sound-inventory", "te-phonology-consonants", "te-phonology-vowels", "te-phonology-prosody", "te-phonology-syllables", "te-phonology-allophones", "te-phonology-spelling"]
   - ["*"]

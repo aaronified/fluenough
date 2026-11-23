@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-animals-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3210"
+    target: "सिंहो गजं पश्यति मृगो धावति."
+    reading: "siṃho gajaṃ paśyati mṛgo dhāvati."
+    ipa: "sĩɦoː ɡədʒəm pəʃjət̪i mr̩ɡoː d̪ʱaːʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सिंहो", base: "सिंहः", reading: "siṃhaḥ" }, { word: "गजं", base: "गजः", reading: "gajaḥ" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "मृगो", base: "मृगः", reading: "mṛgaḥ" }, { word: "धावति", base: "धाव्", reading: "dhāv" }]
+    confusables: [{ id: "w1", ref: "sa-1724", kind: "word" }, { id: "w2", ref: "sa-1728", kind: "word" }, { id: "w3", ref: "sa-2011", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3211"
+    target: "व्याघ्रः कुत्र तिष्ठति मार्जारः कुत्र चलति?"
+    reading: "vyāghraḥ kutra tiṣṭhati mārjāraḥ kutra calati?"
+    ipa: "ʋjaːɡʱrəh kut̪rə t̪iʂʈʰət̪i maːrdʒaːrəh kut̪rə tʃələt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "व्याघ्रः", ref: "sa-1724" }, { word: "कुत्र", ref: "sa-1002" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }, { word: "मार्जारः", ref: "sa-1726" }, { word: "चलति", base: "चल्", reading: "cal" }]
+    confusables: [{ id: "w1", ref: "sa-1723", kind: "word" }, { id: "w2", ref: "sa-1743", kind: "word" }, { id: "w3", ref: "sa-2005", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "sa-3212"
+    target: "मूषको जलं न पिबति मार्जारः क्षीरं पिबति."
+    reading: "mūṣako jalaṃ na pibati mārjāraḥ kṣīraṃ pibati."
+    ipa: "muːʂəkoː dʒələm nə pibət̪i maːrdʒaːrəh kʂiːrəm pibət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "मूषको", base: "मूषकः", reading: "mūṣakaḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "न", ref: "sa-0026" }, { word: "पिबति", base: "पा", reading: "pā" }, { word: "मार्जारः", ref: "sa-1726" }, { word: "क्षीरं", base: "क्षीरम्", reading: "kṣīram" }]
+    confusables: [{ id: "w1", ref: "sa-1736", kind: "word" }, { id: "w2", ref: "sa-1743", kind: "word" }, { id: "w3", ref: "sa-2000", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3213"
+    target: "वानरो दाडिमं खादति मयूरो नृत्यति."
+    reading: "vānaro dāḍimaṃ khādati mayūro nṛtyati."
+    ipa: "ʋaːnəroː d̪aːɖiməm kʰaːd̪ət̪i məjuːroː nr̩t̪jət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वानरो", base: "वानरः", reading: "vānaraḥ" }, { word: "दाडिमं", base: "दाडिमः", reading: "dāḍimaḥ" }, { word: "खादति", base: "खाद्", reading: "khād" }, { word: "मयूरो", base: "मयूरः", reading: "mayūraḥ" }, { word: "नृत्यति", base: "नृत्", reading: "nṛt" }]
+    confusables: [{ id: "w1", ref: "sa-1738", kind: "word" }, { id: "w2", ref: "sa-1746", kind: "word" }, { id: "w3", ref: "sa-2106", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3214"
+    target: "हंसो जले चलति मकरो जले वसति."
+    reading: "haṃso jale calati makaro jale vasati."
+    ipa: "ɦə̃soː dʒəleː tʃələt̪i məkəroː dʒəleː ʋəsət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "हंसो", base: "हंसः", reading: "haṃsaḥ" }, { word: "जले", base: "जलम्", reading: "jalam" }, { word: "चलति", base: "चल्", reading: "cal" }, { word: "मकरो", base: "मकरः", reading: "makaraḥ" }, { word: "वसति", base: "वस्", reading: "vas" }]
+    confusables: [{ id: "w1", ref: "sa-1734", kind: "word" }, { id: "w2", ref: "sa-1735", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3215"
+    target: "अजा क्षीरं ददाति मेषो न ददाति."
+    reading: "ajā kṣīraṃ dadāti meṣo na dadāti."
+    ipa: "ədʒaː kʂiːrəm d̪əd̪aːt̪i meːʂoː nə d̪əd̪aːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अजा", ref: "sa-1741" }, { word: "क्षीरं", base: "क्षीरम्", reading: "kṣīram" }, { word: "ददाति", base: "दा", reading: "dā" }, { word: "मेषो", base: "मेषः", reading: "meṣaḥ" }, { word: "न", ref: "sa-0026" }]
+    confusables: [{ id: "w1", ref: "sa-1740", kind: "word" }, { id: "w2", ref: "sa-1743", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3216"
+    target: "भ्रमरो मधु लभते पिपीलिका च गुडं लभते."
+    reading: "bhramaro madhu labhate pipīlikā ca guḍaṃ labhate."
+    ipa: "bʱrəməroː məd̪ʱu ləbʱət̪eː pipiːlikaː tʃə ɡuɖəm ləbʱət̪eː"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "भ्रमरो", base: "भ्रमरः", reading: "bhramaraḥ" }, { word: "मधु", ref: "sa-1703" }, { word: "लभते", base: "लभ्", reading: "labh" }, { word: "पिपीलिका", ref: "sa-1744" }, { word: "च", ref: "sa-1104" }, { word: "गुडं", base: "गुडः", reading: "guḍaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1032", kind: "word" }, { id: "w2", ref: "sa-1031", kind: "word" }, { id: "w3", ref: "sa-2121", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3217"
+    target: "सदा शुको वदति सदा काकः खादति."
+    reading: "sadā śuko vadati sadā kākaḥ khādati."
+    ipa: "səd̪aː ʃukoː ʋəd̪ət̪i səd̪aː kaːkəh kʰaːd̪ət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सदा", ref: "sa-1086" }, { word: "शुको", base: "शुकः", reading: "śukaḥ" }, { word: "वदति", base: "वद्", reading: "vad" }, { word: "काकः", ref: "sa-1731" }, { word: "खादति", base: "खाद्", reading: "khād" }]
+    confusables: [{ id: "w1", ref: "sa-1087", kind: "word" }, { id: "w2", ref: "sa-0434", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3218"
+    target: "ऋक्षः कुत्र वसति वानरः कुत्र वसति?"
+    reading: "ṛkṣaḥ kutra vasati vānaraḥ kutra vasati?"
+    ipa: "r̩kʂəh kut̪rə ʋəsət̪i ʋaːnərəh kut̪rə ʋəsət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "ऋक्षः", ref: "sa-1730" }, { word: "कुत्र", ref: "sa-1002" }, { word: "वसति", base: "वस्", reading: "vas" }, { word: "वानरः", ref: "sa-1732" }]
+    confusables: [{ id: "w1", ref: "sa-1729", kind: "word" }, { id: "w2", ref: "sa-1746", kind: "word" }, { id: "w3", ref: "sa-2002", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "sa-3219"
+    target: "कूर्मो न धावति शशको धावति."
+    reading: "kūrmo na dhāvati śaśako dhāvati."
+    ipa: "kuːrmoː nə d̪ʱaːʋət̪i ʃəʃəkoː d̪ʱaːʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कूर्मो", base: "कूर्मः", reading: "kūrmaḥ" }, { word: "न", ref: "sa-0026" }, { word: "धावति", base: "धाव्", reading: "dhāv" }, { word: "शशको", base: "शशकः", reading: "śaśakaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1734", kind: "word" }, { id: "w2", ref: "sa-1725", kind: "word" }, { id: "w3", ref: "sa-2011", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]

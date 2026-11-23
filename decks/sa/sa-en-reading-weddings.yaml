@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-weddings"
+name: "Reading: weddings"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-weddings-text-1"
+    title: "Altar, procession and gift"
+    theme: "weddings"
+    sentences:
+      - { text: "विवाहे वेद्याम् अग्निर् ज्वलति.", reading: "vivāhe vedyām agnir jvalati.", ipa: "ʋiʋaːɦeː ʋeːd̪jaːm əɡnir dʒʋələt̪i" }
+      - { text: "वरो वरयात्रया कन्याया गृहं गच्छति.", reading: "varo varayātrayā kanyāyā gṛhaṃ gacchati.", ipa: "ʋəroː ʋərəjaːt̪rəjaː kənjaːjaː ɡr̩ɦəm ɡətʃtʃʰət̪i" }
+      - { text: "कन्यादाने पिता कन्यां ददाति.", reading: "kanyādāne pitā kanyāṃ dadāti.", ipa: "kənjaːd̪aːneː pit̪aː kənjaːm d̪əd̪aːt̪i" }
+      - { text: "वधूर् वरस्य गृहे वसति.", reading: "vadhūr varasya gṛhe vasati.", ipa: "ʋəd̪ʱuːr ʋərəsjə ɡr̩ɦeː ʋəsət̪i" }
+      - { text: "पुरोहितो वेद्यां मन्त्रान् पठति.", reading: "purohito vedyāṃ mantrān paṭhati.", ipa: "puroːɦit̪oː ʋeːd̪jaːm mənt̪raːn pəʈʰət̪i" }
+    questions:
+      - id: "sa-6764"
+        prompt: { en: "Where does the fire burn at the wedding?" }
+        options: [{ en: "On the altar" }, { en: "In the courtyard" }, { en: "In the temple" }]
+        answer: 1
+      - id: "sa-6765"
+        prompt: { en: "Who gives away the daughter at the kanyadana?" }
+        options: [{ en: "The brother" }, { en: "The father" }, { en: "The uncle" }]
+        answer: 2
+      - id: "sa-6766"
+        prompt: { en: "Which word means 'bridegroom'?" }
+        options: [{ en: "वधूर् (vadhūr)" }, { en: "वरस्य (varasya)" }, { en: "वरो (varo)" }]
+        answer: 3
+      - id: "sa-6767"
+        prompt: { en: "The bride lives in the bridegroom's house." }
+        answer: true
+  - id: "sa-weddings-text-2"
+    title: "Bracelet, widow and teacher"
+    theme: "weddings"
+    sentences:
+      - { text: "माता बालिकायै वलयं ददाति.", reading: "mātā bālikāyai valayaṃ dadāti.", ipa: "maːt̪aː baːlikaːjəi ʋələjəm d̪əd̪aːt̪i" }
+      - { text: "विधवा नित्यं पतिं स्मरति.", reading: "vidhavā nityaṃ patiṃ smarati.", ipa: "ʋid̪ʱəʋaː nit̪jəm pət̪im smərət̪i" }
+      - { text: "तरुणो युवतिम् उद्याने पश्यति.", reading: "taruṇo yuvatim udyāne paśyati.", ipa: "t̪əruɳoː juʋət̪im ud̪jaːneː pəʃjət̪i" }
+      - { text: "स्नातको गुरवे दक्षिणां ददाति.", reading: "snātako gurave dakṣiṇāṃ dadāti.", ipa: "snaːt̪əkoː ɡurəʋeː d̪əkʂiɳaːm d̪əd̪aːt̪i" }
+      - { text: "गृहपत्नी गृहस्य रक्षां करोति.", reading: "gṛhapatnī gṛhasya rakṣāṃ karoti.", ipa: "ɡr̩ɦəpət̪niː ɡr̩ɦəsjə rəkʂaːm kəroːt̪i" }
+    questions:
+      - id: "sa-6768"
+        prompt: { en: "What does the mother give the girl?" }
+        options: [{ en: "A bracelet" }, { en: "A garland" }, { en: "A cloth" }]
+        answer: 1
+      - id: "sa-6769"
+        prompt: { en: "Where does the young man see the young woman?" }
+        options: [{ en: "In the market" }, { en: "In the park" }, { en: "In the temple" }]
+        answer: 2
+      - id: "sa-6770"
+        prompt: { en: "Which word means 'fee'?" }
+        options: [{ en: "पतिं (patiṃ)" }, { en: "गृहस्य (gṛhasya)" }, { en: "दक्षिणां (dakṣiṇāṃ)" }]
+        answer: 3
+      - id: "sa-6771"
+        prompt: { en: "The widow soon forgets her husband." }
+        answer: false

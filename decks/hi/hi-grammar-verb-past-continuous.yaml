@@ -1,0 +1,712 @@
+schema: 1
+id: "hi-grammar-verb-past-continuous"
+part: "core"
+kind: "rules"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["hi-0240", "hi-0273", "hi-0290", "hi-0460", "hi-0513"]
+  slots: ["m-sg", "f-sg", "m-pl", "f-pl"]
+  rows:
+    - word: "hi-0441"
+      forms: { "m-sg": "उठ रहा था", "f-sg": "उठ रही थी", "m-pl": "उठ रहे थे", "f-pl": "उठ रही थीं" }
+      readings: { "m-sg": "uṭh rahā thā", "f-sg": "uṭh rahī thī", "m-pl": "uṭh rahē thē", "f-pl": "uṭh rahī thīm̐" }
+    - word: "hi-0442"
+      forms: { "m-sg": "नहा रहा था", "f-sg": "नहा रही थी", "m-pl": "नहा रहे थे", "f-pl": "नहा रही थीं" }
+      readings: { "m-sg": "nahā rahā thā", "f-sg": "nahā rahī thī", "m-pl": "nahā rahē thē", "f-pl": "nahā rahī thīm̐" }
+    - word: "hi-0450"
+      forms: { "m-sg": "सो रहा था", "f-sg": "सो रही थी", "m-pl": "सो रहे थे", "f-pl": "सो रही थीं" }
+      readings: { "m-sg": "sō rahā thā", "f-sg": "sō rahī thī", "m-pl": "sō rahē thē", "f-pl": "sō rahī thīm̐" }
+    - word: "hi-0602"
+      forms: { "m-sg": "पी रहा था", "f-sg": "पी रही थी", "m-pl": "पी रहे थे", "f-pl": "पी रही थीं" }
+      readings: { "m-sg": "pī rahā thā", "f-sg": "pī rahī thī", "m-pl": "pī rahē thē", "f-pl": "pī rahī thīm̐" }
+    - word: "hi-0623"
+      forms: { "m-sg": "हंस रहा था", "f-sg": "हंस रही थी", "m-pl": "हंस रहे थे", "f-pl": "हंस रही थीं" }
+      readings: { "m-sg": "haṁs rahā thā", "f-sg": "haṁs rahī thī", "m-pl": "haṁs rahē thē", "f-pl": "haṁs rahī thīm̐" }
+    - word: "hi-0777"
+      forms: { "m-sg": "जा रहा था", "f-sg": "जा रही थी", "m-pl": "जा रहे थे", "f-pl": "जा रही थीं" }
+      readings: { "m-sg": "jā rahā thā", "f-sg": "jā rahī thī", "m-pl": "jā rahē thē", "f-pl": "jā rahī thīm̐" }
+    - word: "hi-0778"
+      forms: { "m-sg": "आ रहा था", "f-sg": "आ रही थी", "m-pl": "आ रहे थे", "f-pl": "आ रही थीं" }
+      readings: { "m-sg": "ā rahā thā", "f-sg": "ā rahī thī", "m-pl": "ā rahē thē", "f-pl": "ā rahī thīm̐" }
+    - word: "hi-0779"
+      forms: { "m-sg": "कर रहा था", "f-sg": "कर रही थी", "m-pl": "कर रहे थे", "f-pl": "कर रही थीं" }
+      readings: { "m-sg": "kar rahā thā", "f-sg": "kar rahī thī", "m-pl": "kar rahē thē", "f-pl": "kar rahī thīm̐" }
+    - word: "hi-0780"
+      forms: { "m-sg": "हो रहा था", "f-sg": "हो रही थी", "m-pl": "हो रहे थे", "f-pl": "हो रही थीं" }
+      readings: { "m-sg": "hō rahā thā", "f-sg": "hō rahī thī", "m-pl": "hō rahē thē", "f-pl": "hō rahī thīm̐" }
+    - word: "hi-0781"
+      forms: { "m-sg": "लिख रहा था", "f-sg": "लिख रही थी", "m-pl": "लिख रहे थे", "f-pl": "लिख रही थीं" }
+      readings: { "m-sg": "likh rahā thā", "f-sg": "likh rahī thī", "m-pl": "likh rahē thē", "f-pl": "likh rahī thīm̐" }
+    - word: "hi-0782"
+      forms: { "m-sg": "बोल रहा था", "f-sg": "बोल रही थी", "m-pl": "बोल रहे थे", "f-pl": "बोल रही थीं" }
+      readings: { "m-sg": "bōl rahā thā", "f-sg": "bōl rahī thī", "m-pl": "bōl rahē thē", "f-pl": "bōl rahī thīm̐" }
+    - word: "hi-0783"
+      forms: { "m-sg": "सुन रहा था", "f-sg": "सुन रही थी", "m-pl": "सुन रहे थे", "f-pl": "सुन रही थीं" }
+      readings: { "m-sg": "sun rahā thā", "f-sg": "sun rahī thī", "m-pl": "sun rahē thē", "f-pl": "sun rahī thīm̐" }
+    - word: "hi-0784"
+      forms: { "m-sg": "देख रहा था", "f-sg": "देख रही थी", "m-pl": "देख रहे थे", "f-pl": "देख रही थीं" }
+      readings: { "m-sg": "dēkh rahā thā", "f-sg": "dēkh rahī thī", "m-pl": "dēkh rahē thē", "f-pl": "dēkh rahī thīm̐" }
+    - word: "hi-0785"
+      forms: { "m-sg": "दे रहा था", "f-sg": "दे रही थी", "m-pl": "दे रहे थे", "f-pl": "दे रही थीं" }
+      readings: { "m-sg": "dē rahā thā", "f-sg": "dē rahī thī", "m-pl": "dē rahē thē", "f-pl": "dē rahī thīm̐" }
+    - word: "hi-0786"
+      forms: { "m-sg": "ले रहा था", "f-sg": "ले रही थी", "m-pl": "ले रहे थे", "f-pl": "ले रही थीं" }
+      readings: { "m-sg": "lē rahā thā", "f-sg": "lē rahī thī", "m-pl": "lē rahē thē", "f-pl": "lē rahī thīm̐" }
+    - word: "hi-0787"
+      forms: { "m-sg": "खेल रहा था", "f-sg": "खेल रही थी", "m-pl": "खेल रहे थे", "f-pl": "खेल रही थीं" }
+      readings: { "m-sg": "khēl rahā thā", "f-sg": "khēl rahī thī", "m-pl": "khēl rahē thē", "f-pl": "khēl rahī thīm̐" }
+    - word: "hi-0788"
+      forms: { "m-sg": "बैठ रहा था", "f-sg": "बैठ रही थी", "m-pl": "बैठ रहे थे", "f-pl": "बैठ रही थीं" }
+      readings: { "m-sg": "baiṭh rahā thā", "f-sg": "baiṭh rahī thī", "m-pl": "baiṭh rahē thē", "f-pl": "baiṭh rahī thīm̐" }
+    - word: "hi-0789"
+      forms: { "m-sg": "समझ रहा था", "f-sg": "समझ रही थी", "m-pl": "समझ रहे थे", "f-pl": "समझ रही थीं" }
+      readings: { "m-sg": "samjh rahā thā", "f-sg": "samjh rahī thī", "m-pl": "samjh rahē thē", "f-pl": "samjh rahī thīm̐" }
+    - word: "hi-0790"
+      forms: { "m-sg": "जान रहा था", "f-sg": "जान रही थी", "m-pl": "जान रहे थे", "f-pl": "जान रही थीं" }
+      readings: { "m-sg": "jān rahā thā", "f-sg": "jān rahī thī", "m-pl": "jān rahē thē", "f-pl": "jān rahī thīm̐" }
+    - word: "hi-0791"
+      forms: { "m-sg": "रह रहा था", "f-sg": "रह रही थी", "m-pl": "रह रहे थे", "f-pl": "रह रही थीं" }
+      readings: { "m-sg": "rah rahā thā", "f-sg": "rah rahī thī", "m-pl": "rah rahē thē", "f-pl": "rah rahī thīm̐" }
+    - word: "hi-0792"
+      forms: { "m-sg": "चाह रहा था", "f-sg": "चाह रही थी", "m-pl": "चाह रहे थे", "f-pl": "चाह रही थीं" }
+      readings: { "m-sg": "cāh rahā thā", "f-sg": "cāh rahī thī", "m-pl": "cāh rahē thē", "f-pl": "cāh rahī thīm̐" }
+    - word: "hi-0793"
+      forms: { "m-sg": "मिल रहा था", "f-sg": "मिल रही थी", "m-pl": "मिल रहे थे", "f-pl": "मिल रही थीं" }
+      readings: { "m-sg": "mil rahā thā", "f-sg": "mil rahī thī", "m-pl": "mil rahē thē", "f-pl": "mil rahī thīm̐" }
+    - word: "hi-0794"
+      forms: { "m-sg": "ख़रीद रहा था", "f-sg": "ख़रीद रही थी", "m-pl": "ख़रीद रहे थे", "f-pl": "ख़रीद रही थीं" }
+      readings: { "m-sg": "k͟harīd rahā thā", "f-sg": "k͟harīd rahī thī", "m-pl": "k͟harīd rahē thē", "f-pl": "k͟harīd rahī thīm̐" }
+    - word: "hi-0795"
+      forms: { "m-sg": "बेच रहा था", "f-sg": "बेच रही थी", "m-pl": "बेच रहे थे", "f-pl": "बेच रही थीं" }
+      readings: { "m-sg": "bēc rahā thā", "f-sg": "bēc rahī thī", "m-pl": "bēc rahē thē", "f-pl": "bēc rahī thīm̐" }
+    - word: "hi-0796"
+      forms: { "m-sg": "बता रहा था", "f-sg": "बता रही थी", "m-pl": "बता रहे थे", "f-pl": "बता रही थीं" }
+      readings: { "m-sg": "batā rahā thā", "f-sg": "batā rahī thī", "m-pl": "batā rahē thē", "f-pl": "batā rahī thīm̐" }
+    - word: "hi-0797"
+      forms: { "m-sg": "भेज रहा था", "f-sg": "भेज रही थी", "m-pl": "भेज रहे थे", "f-pl": "भेज रही थीं" }
+      readings: { "m-sg": "bhēj rahā thā", "f-sg": "bhēj rahī thī", "m-pl": "bhēj rahē thē", "f-pl": "bhēj rahī thīm̐" }
+    - word: "hi-0798"
+      forms: { "m-sg": "धो रहा था", "f-sg": "धो रही थी", "m-pl": "धो रहे थे", "f-pl": "धो रही थीं" }
+      readings: { "m-sg": "dhō rahā thā", "f-sg": "dhō rahī thī", "m-pl": "dhō rahē thē", "f-pl": "dhō rahī thīm̐" }
+    - word: "hi-0799"
+      forms: { "m-sg": "पूछ रहा था", "f-sg": "पूछ रही थी", "m-pl": "पूछ रहे थे", "f-pl": "पूछ रही थीं" }
+      readings: { "m-sg": "pūch rahā thā", "f-sg": "pūch rahī thī", "m-pl": "pūch rahē thē", "f-pl": "pūch rahī thīm̐" }
+    - word: "hi-0800"
+      forms: { "m-sg": "कह रहा था", "f-sg": "कह रही थी", "m-pl": "कह रहे थे", "f-pl": "कह रही थीं" }
+      readings: { "m-sg": "kah rahā thā", "f-sg": "kah rahī thī", "m-pl": "kah rahē thē", "f-pl": "kah rahī thīm̐" }
+    - word: "hi-0801"
+      forms: { "m-sg": "चल रहा था", "f-sg": "चल रही थी", "m-pl": "चल रहे थे", "f-pl": "चल रही थीं" }
+      readings: { "m-sg": "cal rahā thā", "f-sg": "cal rahī thī", "m-pl": "cal rahē thē", "f-pl": "cal rahī thīm̐" }
+    - word: "hi-0937"
+      forms: { "m-sg": "खोल रहा था", "f-sg": "खोल रही थी", "m-pl": "खोल रहे थे", "f-pl": "खोल रही थीं" }
+      readings: { "m-sg": "khōl rahā thā", "f-sg": "khōl rahī thī", "m-pl": "khōl rahē thē", "f-pl": "khōl rahī thīm̐" }
+    - word: "hi-0938"
+      forms: { "m-sg": "पका रहा था", "f-sg": "पका रही थी", "m-pl": "पका रहे थे", "f-pl": "पका रही थीं" }
+      readings: { "m-sg": "pakā rahā thā", "f-sg": "pakā rahī thī", "m-pl": "pakā rahē thē", "f-pl": "pakā rahī thīm̐" }
+    - word: "hi-0939"
+      forms: { "m-sg": "काट रहा था", "f-sg": "काट रही थी", "m-pl": "काट रहे थे", "f-pl": "काट रही थीं" }
+      readings: { "m-sg": "kāṭ rahā thā", "f-sg": "kāṭ rahī thī", "m-pl": "kāṭ rahē thē", "f-pl": "kāṭ rahī thīm̐" }
+    - word: "hi-0940"
+      forms: { "m-sg": "उबाल रहा था", "f-sg": "उबाल रही थी", "m-pl": "उबाल रहे थे", "f-pl": "उबाल रही थीं" }
+      readings: { "m-sg": "ubāl rahā thā", "f-sg": "ubāl rahī thī", "m-pl": "ubāl rahē thē", "f-pl": "ubāl rahī thīm̐" }
+    - word: "hi-0941"
+      forms: { "m-sg": "डाल रहा था", "f-sg": "डाल रही थी", "m-pl": "डाल रहे थे", "f-pl": "डाल रही थीं" }
+      readings: { "m-sg": "ḍāl rahā thā", "f-sg": "ḍāl rahī thī", "m-pl": "ḍāl rahē thē", "f-pl": "ḍāl rahī thīm̐" }
+    - word: "hi-0942"
+      forms: { "m-sg": "छान रहा था", "f-sg": "छान रही थी", "m-pl": "छान रहे थे", "f-pl": "छान रही थीं" }
+      readings: { "m-sg": "chān rahā thā", "f-sg": "chān rahī thī", "m-pl": "chān rahē thē", "f-pl": "chān rahī thīm̐" }
+    - word: "hi-0943"
+      forms: { "m-sg": "परोस रहा था", "f-sg": "परोस रही थी", "m-pl": "परोस रहे थे", "f-pl": "परोस रही थीं" }
+      readings: { "m-sg": "parōs rahā thā", "f-sg": "parōs rahī thī", "m-pl": "parōs rahē thē", "f-pl": "parōs rahī thīm̐" }
+    - word: "hi-0944"
+      forms: { "m-sg": "जाग रहा था", "f-sg": "जाग रही थी", "m-pl": "जाग रहे थे", "f-pl": "जाग रही थीं" }
+      readings: { "m-sg": "jāg rahā thā", "f-sg": "jāg rahī thī", "m-pl": "jāg rahē thē", "f-pl": "jāg rahī thīm̐" }
+    - word: "hi-0945"
+      forms: { "m-sg": "भूल रहा था", "f-sg": "भूल रही थी", "m-pl": "भूल रहे थे", "f-pl": "भूल रही थीं" }
+      readings: { "m-sg": "bhūl rahā thā", "f-sg": "bhūl rahī thī", "m-pl": "bhūl rahē thē", "f-pl": "bhūl rahī thīm̐" }
+    - word: "hi-0946"
+      forms: { "m-sg": "दौड़ रहा था", "f-sg": "दौड़ रही थी", "m-pl": "दौड़ रहे थे", "f-pl": "दौड़ रही थीं" }
+      readings: { "m-sg": "dauṛ rahā thā", "f-sg": "dauṛ rahī thī", "m-pl": "dauṛ rahē thē", "f-pl": "dauṛ rahī thīm̐" }
+    - word: "hi-0947"
+      forms: { "m-sg": "गिर रहा था", "f-sg": "गिर रही थी", "m-pl": "गिर रहे थे", "f-pl": "गिर रही थीं" }
+      readings: { "m-sg": "gir rahā thā", "f-sg": "gir rahī thī", "m-pl": "gir rahē thē", "f-pl": "gir rahī thīm̐" }
+    - word: "hi-0948"
+      forms: { "m-sg": "लौट रहा था", "f-sg": "लौट रही थी", "m-pl": "लौट रहे थे", "f-pl": "लौट रही थीं" }
+      readings: { "m-sg": "lauṭ rahā thā", "f-sg": "lauṭ rahī thī", "m-pl": "lauṭ rahē thē", "f-pl": "lauṭ rahī thīm̐" }
+    - word: "hi-0949"
+      forms: { "m-sg": "ला रहा था", "f-sg": "ला रही थी", "m-pl": "ला रहे थे", "f-pl": "ला रही थीं" }
+      readings: { "m-sg": "lā rahā thā", "f-sg": "lā rahī thī", "m-pl": "lā rahē thē", "f-pl": "lā rahī thīm̐" }
+    - word: "hi-0950"
+      forms: { "m-sg": "रख रहा था", "f-sg": "रख रही थी", "m-pl": "रख रहे थे", "f-pl": "रख रही थीं" }
+      readings: { "m-sg": "rakh rahā thā", "f-sg": "rakh rahī thī", "m-pl": "rakh rahē thē", "f-pl": "rakh rahī thīm̐" }
+    - word: "hi-0951"
+      forms: { "m-sg": "छोड़ रहा था", "f-sg": "छोड़ रही थी", "m-pl": "छोड़ रहे थे", "f-pl": "छोड़ रही थीं" }
+      readings: { "m-sg": "chōṛ rahā thā", "f-sg": "chōṛ rahī thī", "m-pl": "chōṛ rahē thē", "f-pl": "chōṛ rahī thīm̐" }
+    - word: "hi-0952"
+      forms: { "m-sg": "सीख रहा था", "f-sg": "सीख रही थी", "m-pl": "सीख रहे थे", "f-pl": "सीख रही थीं" }
+      readings: { "m-sg": "sīkh rahā thā", "f-sg": "sīkh rahī thī", "m-pl": "sīkh rahē thē", "f-pl": "sīkh rahī thīm̐" }
+    - word: "hi-0953"
+      forms: { "m-sg": "सोच रहा था", "f-sg": "सोच रही थी", "m-pl": "सोच रहे थे", "f-pl": "सोच रही थीं" }
+      readings: { "m-sg": "sōc rahā thā", "f-sg": "sōc rahī thī", "m-pl": "sōc rahē thē", "f-pl": "sōc rahī thīm̐" }
+    - word: "hi-0954"
+      forms: { "m-sg": "सिखा रहा था", "f-sg": "सिखा रही थी", "m-pl": "सिखा रहे थे", "f-pl": "सिखा रही थीं" }
+      readings: { "m-sg": "sikhā rahā thā", "f-sg": "sikhā rahī thī", "m-pl": "sikhā rahē thē", "f-pl": "sikhā rahī thīm̐" }
+    - word: "hi-0955"
+      forms: { "m-sg": "ढूँढ रहा था", "f-sg": "ढूँढ रही थी", "m-pl": "ढूँढ रहे थे", "f-pl": "ढूँढ रही थीं" }
+      readings: { "m-sg": "ḍhūm̐ḍh rahā thā", "f-sg": "ḍhūm̐ḍh rahī thī", "m-pl": "ḍhūm̐ḍh rahē thē", "f-pl": "ḍhūm̐ḍh rahī thīm̐" }
+    - word: "hi-0956"
+      forms: { "m-sg": "जीत रहा था", "f-sg": "जीत रही थी", "m-pl": "जीत रहे थे", "f-pl": "जीत रही थीं" }
+      readings: { "m-sg": "jīt rahā thā", "f-sg": "jīt rahī thī", "m-pl": "jīt rahē thē", "f-pl": "jīt rahī thīm̐" }
+    - word: "hi-0957"
+      forms: { "m-sg": "हार रहा था", "f-sg": "हार रही थी", "m-pl": "हार रहे थे", "f-pl": "हार रही थीं" }
+      readings: { "m-sg": "hār rahā thā", "f-sg": "hār rahī thī", "m-pl": "hār rahē thē", "f-pl": "hār rahī thīm̐" }
+    - word: "hi-0958"
+      forms: { "m-sg": "कमा रहा था", "f-sg": "कमा रही थी", "m-pl": "कमा रहे थे", "f-pl": "कमा रही थीं" }
+      readings: { "m-sg": "kamā rahā thā", "f-sg": "kamā rahī thī", "m-pl": "kamā rahē thē", "f-pl": "kamā rahī thīm̐" }
+    - word: "hi-0959"
+      forms: { "m-sg": "हँस रहा था", "f-sg": "हँस रही थी", "m-pl": "हँस रहे थे", "f-pl": "हँस रही थीं" }
+      readings: { "m-sg": "ham̐s rahā thā", "f-sg": "ham̐s rahī thī", "m-pl": "ham̐s rahē thē", "f-pl": "ham̐s rahī thīm̐" }
+    - word: "hi-0960"
+      forms: { "m-sg": "रो रहा था", "f-sg": "रो रही थी", "m-pl": "रो रहे थे", "f-pl": "रो रही थीं" }
+      readings: { "m-sg": "rō rahā thā", "f-sg": "rō rahī thī", "m-pl": "rō rahē thē", "f-pl": "rō rahī thīm̐" }
+    - word: "hi-0961"
+      forms: { "m-sg": "बुला रहा था", "f-sg": "बुला रही थी", "m-pl": "बुला रहे थे", "f-pl": "बुला रही थीं" }
+      readings: { "m-sg": "bulā rahā thā", "f-sg": "bulā rahī thī", "m-pl": "bulā rahē thē", "f-pl": "bulā rahī thīm̐" }
+    - word: "hi-1287"
+      forms: { "m-sg": "गरज रहा था", "f-sg": "गरज रही थी", "m-pl": "गरज रहे थे", "f-pl": "गरज रही थीं" }
+      readings: { "m-sg": "garj rahā thā", "f-sg": "garj rahī thī", "m-pl": "garj rahē thē", "f-pl": "garj rahī thīm̐" }
+    - word: "hi-1292"
+      forms: { "m-sg": "बरस रहा था", "f-sg": "बरस रही थी", "m-pl": "बरस रहे थे", "f-pl": "बरस रही थीं" }
+      readings: { "m-sg": "bars rahā thā", "f-sg": "bars rahī thī", "m-pl": "bars rahē thē", "f-pl": "bars rahī thīm̐" }
+    - word: "hi-1293"
+      forms: { "m-sg": "कड़क रहा था", "f-sg": "कड़क रही थी", "m-pl": "कड़क रहे थे", "f-pl": "कड़क रही थीं" }
+      readings: { "m-sg": "kaṛk rahā thā", "f-sg": "kaṛk rahī thī", "m-pl": "kaṛk rahē thē", "f-pl": "kaṛk rahī thīm̐" }
+    - word: "hi-1294"
+      forms: { "m-sg": "चमक रहा था", "f-sg": "चमक रही थी", "m-pl": "चमक रहे थे", "f-pl": "चमक रही थीं" }
+      readings: { "m-sg": "camk rahā thā", "f-sg": "camk rahī thī", "m-pl": "camk rahē thē", "f-pl": "camk rahī thīm̐" }
+    - word: "hi-1334"
+      forms: { "m-sg": "मना रहा था", "f-sg": "मना रही थी", "m-pl": "मना रहे थे", "f-pl": "मना रही थीं" }
+      readings: { "m-sg": "manā rahā thā", "f-sg": "manā rahī thī", "m-pl": "manā rahē thē", "f-pl": "manā rahī thīm̐" }
+    - word: "hi-1335"
+      forms: { "m-sg": "जला रहा था", "f-sg": "जला रही थी", "m-pl": "जला रहे थे", "f-pl": "जला रही थीं" }
+      readings: { "m-sg": "jalā rahā thā", "f-sg": "jalā rahī thī", "m-pl": "jalā rahē thē", "f-pl": "jalā rahī thīm̐" }
+    - word: "hi-1336"
+      forms: { "m-sg": "बाँट रहा था", "f-sg": "बाँट रही थी", "m-pl": "बाँट रहे थे", "f-pl": "बाँट रही थीं" }
+      readings: { "m-sg": "bām̐ṭa rahā thā", "f-sg": "bām̐ṭa rahī thī", "m-pl": "bām̐ṭa rahē thē", "f-pl": "bām̐ṭa rahī thīm̐" }
+    - word: "hi-1337"
+      forms: { "m-sg": "सजा रहा था", "f-sg": "सजा रही थी", "m-pl": "सजा रहे थे", "f-pl": "सजा रही थीं" }
+      readings: { "m-sg": "sajā rahā thā", "f-sg": "sajā rahī thī", "m-pl": "sajā rahē thē", "f-pl": "sajā rahī thīm̐" }
+    - word: "hi-1364"
+      forms: { "m-sg": "बदल रहा था", "f-sg": "बदल रही थी", "m-pl": "बदल रहे थे", "f-pl": "बदल रही थीं" }
+      readings: { "m-sg": "badl rahā thā", "f-sg": "badl rahī thī", "m-pl": "badl rahē thē", "f-pl": "badl rahī thīm̐" }
+    - word: "hi-1385"
+      forms: { "m-sg": "तौल रहा था", "f-sg": "तौल रही थी", "m-pl": "तौल रहे थे", "f-pl": "तौल रही थीं" }
+      readings: { "m-sg": "taul rahā thā", "f-sg": "taul rahī thī", "m-pl": "taul rahē thē", "f-pl": "taul rahī thīm̐" }
+    - word: "hi-1460"
+      forms: { "m-sg": "खाँस रहा था", "f-sg": "खाँस रही थी", "m-pl": "खाँस रहे थे", "f-pl": "खाँस रही थीं" }
+      readings: { "m-sg": "khām̐sa rahā thā", "f-sg": "khām̐sa rahī thī", "m-pl": "khām̐sa rahē thē", "f-pl": "khām̐sa rahī thīm̐" }
+    - word: "hi-1461"
+      forms: { "m-sg": "छींक रहा था", "f-sg": "छींक रही थी", "m-pl": "छींक रहे थे", "f-pl": "छींक रही थीं" }
+      readings: { "m-sg": "chīṅka rahā thā", "f-sg": "chīṅka rahī thī", "m-pl": "chīṅka rahē thē", "f-pl": "chīṅka rahī thīm̐" }
+    - word: "hi-1462"
+      forms: { "m-sg": "लेट रहा था", "f-sg": "लेट रही थी", "m-pl": "लेट रहे थे", "f-pl": "लेट रही थीं" }
+      readings: { "m-sg": "lēṭ rahā thā", "f-sg": "lēṭ rahī thī", "m-pl": "lēṭ rahē thē", "f-pl": "lēṭ rahī thīm̐" }
+    - word: "hi-1463"
+      forms: { "m-sg": "दुख रहा था", "f-sg": "दुख रही थी", "m-pl": "दुख रहे थे", "f-pl": "दुख रही थीं" }
+      readings: { "m-sg": "dukh rahā thā", "f-sg": "dukh rahī thī", "m-pl": "dukh rahē thē", "f-pl": "dukh rahī thīm̐" }
+    - word: "hi-1496"
+      forms: { "m-sg": "तल रहा था", "f-sg": "तल रही थी", "m-pl": "तल रहे थे", "f-pl": "तल रही थीं" }
+      readings: { "m-sg": "tal rahā thā", "f-sg": "tal rahī thī", "m-pl": "tal rahē thē", "f-pl": "tal rahī thīm̐" }
+    - word: "hi-1497"
+      forms: { "m-sg": "भून रहा था", "f-sg": "भून रही थी", "m-pl": "भून रहे थे", "f-pl": "भून रही थीं" }
+      readings: { "m-sg": "bhūn rahā thā", "f-sg": "bhūn rahī thī", "m-pl": "bhūn rahē thē", "f-pl": "bhūn rahī thīm̐" }
+    - word: "hi-1498"
+      forms: { "m-sg": "छील रहा था", "f-sg": "छील रही थी", "m-pl": "छील रहे थे", "f-pl": "छील रही थीं" }
+      readings: { "m-sg": "chīl rahā thā", "f-sg": "chīl rahī thī", "m-pl": "chīl rahē thē", "f-pl": "chīl rahī thīm̐" }
+    - word: "hi-1499"
+      forms: { "m-sg": "पीस रहा था", "f-sg": "पीस रही थी", "m-pl": "पीस रहे थे", "f-pl": "पीस रही थीं" }
+      readings: { "m-sg": "pīs rahā thā", "f-sg": "pīs rahī thī", "m-pl": "pīs rahē thē", "f-pl": "pīs rahī thīm̐" }
+    - word: "hi-1500"
+      forms: { "m-sg": "गूँध रहा था", "f-sg": "गूँध रही थी", "m-pl": "गूँध रहे थे", "f-pl": "गूँध रही थीं" }
+      readings: { "m-sg": "gūm̐dha rahā thā", "f-sg": "gūm̐dha rahī thī", "m-pl": "gūm̐dha rahē thē", "f-pl": "gūm̐dha rahī thīm̐" }
+    - word: "hi-1501"
+      forms: { "m-sg": "बेल रहा था", "f-sg": "बेल रही थी", "m-pl": "बेल रहे थे", "f-pl": "बेल रही थीं" }
+      readings: { "m-sg": "bēl rahā thā", "f-sg": "bēl rahī thī", "m-pl": "bēl rahē thē", "f-pl": "bēl rahī thīm̐" }
+    - word: "hi-1502"
+      forms: { "m-sg": "बना रहा था", "f-sg": "बना रही थी", "m-pl": "बना रहे थे", "f-pl": "बना रही थीं" }
+      readings: { "m-sg": "banā rahā thā", "f-sg": "banā rahī thī", "m-pl": "banā rahē thē", "f-pl": "banā rahī thīm̐" }
+    - word: "hi-1503"
+      forms: { "m-sg": "सेंक रहा था", "f-sg": "सेंक रही थी", "m-pl": "सेंक रहे थे", "f-pl": "सेंक रही थीं" }
+      readings: { "m-sg": "sēṅka rahā thā", "f-sg": "sēṅka rahī thī", "m-pl": "sēṅka rahē thē", "f-pl": "sēṅka rahī thīm̐" }
+    - word: "hi-1504"
+      forms: { "m-sg": "मिला रहा था", "f-sg": "मिला रही थी", "m-pl": "मिला रहे थे", "f-pl": "मिला रही थीं" }
+      readings: { "m-sg": "milā rahā thā", "f-sg": "milā rahī thī", "m-pl": "milā rahē thē", "f-pl": "milā rahī thīm̐" }
+    - word: "hi-1601"
+      forms: { "m-sg": "पढ़ा रहा था", "f-sg": "पढ़ा रही थी", "m-pl": "पढ़ा रहे थे", "f-pl": "पढ़ा रही थीं" }
+      readings: { "m-sg": "paṛhā rahā thā", "f-sg": "paṛhā rahī thī", "m-pl": "paṛhā rahē thē", "f-pl": "paṛhā rahī thīm̐" }
+    - word: "hi-1639"
+      forms: { "m-sg": "गा रहा था", "f-sg": "गा रही थी", "m-pl": "गा रहे थे", "f-pl": "गा रही थीं" }
+      readings: { "m-sg": "gā rahā thā", "f-sg": "gā rahī thī", "m-pl": "gā rahē thē", "f-pl": "gā rahī thīm̐" }
+    - word: "hi-1642"
+      forms: { "m-sg": "नाच रहा था", "f-sg": "नाच रही थी", "m-pl": "नाच रहे थे", "f-pl": "नाच रही थीं" }
+      readings: { "m-sg": "nāc rahā thā", "f-sg": "nāc rahī thī", "m-pl": "nāc rahē thē", "f-pl": "nāc rahī thīm̐" }
+    - word: "hi-1644"
+      forms: { "m-sg": "तैर रहा था", "f-sg": "तैर रही थी", "m-pl": "तैर रहे थे", "f-pl": "तैर रही थीं" }
+      readings: { "m-sg": "tair rahā thā", "f-sg": "tair rahī thī", "m-pl": "tair rahē thē", "f-pl": "tair rahī thīm̐" }
+    - word: "hi-1661"
+      forms: { "m-sg": "घूम रहा था", "f-sg": "घूम रही थी", "m-pl": "घूम रहे थे", "f-pl": "घूम रही थीं" }
+      readings: { "m-sg": "ghūm rahā thā", "f-sg": "ghūm rahī thī", "m-pl": "ghūm rahē thē", "f-pl": "ghūm rahī thīm̐" }
+    - word: "hi-1662"
+      forms: { "m-sg": "टहल रहा था", "f-sg": "टहल रही थी", "m-pl": "टहल रहे थे", "f-pl": "टहल रही थीं" }
+      readings: { "m-sg": "ṭahl rahā thā", "f-sg": "ṭahl rahī thī", "m-pl": "ṭahl rahē thē", "f-pl": "ṭahl rahī thīm̐" }
+    - word: "hi-1725"
+      forms: { "m-sg": "झाड़ रहा था", "f-sg": "झाड़ रही थी", "m-pl": "झाड़ रहे थे", "f-pl": "झाड़ रही थीं" }
+      readings: { "m-sg": "jhāṛ rahā thā", "f-sg": "jhāṛ rahī thī", "m-pl": "jhāṛ rahē thē", "f-pl": "jhāṛ rahī thīm̐" }
+    - word: "hi-1726"
+      forms: { "m-sg": "पोंछ रहा था", "f-sg": "पोंछ रही थी", "m-pl": "पोंछ रहे थे", "f-pl": "पोंछ रही थीं" }
+      readings: { "m-sg": "pōñcha rahā thā", "f-sg": "pōñcha rahī thī", "m-pl": "pōñcha rahē thē", "f-pl": "pōñcha rahī thīm̐" }
+    - word: "hi-1727"
+      forms: { "m-sg": "सुखा रहा था", "f-sg": "सुखा रही थी", "m-pl": "सुखा रहे थे", "f-pl": "सुखा रही थीं" }
+      readings: { "m-sg": "sukhā rahā thā", "f-sg": "sukhā rahī thī", "m-pl": "sukhā rahē thē", "f-pl": "sukhā rahī thīm̐" }
+    - word: "hi-1728"
+      forms: { "m-sg": "सूख रहा था", "f-sg": "सूख रही थी", "m-pl": "सूख रहे थे", "f-pl": "सूख रही थीं" }
+      readings: { "m-sg": "sūkh rahā thā", "f-sg": "sūkh rahī thī", "m-pl": "sūkh rahē thē", "f-pl": "sūkh rahī thīm̐" }
+    - word: "hi-1729"
+      forms: { "m-sg": "निकाल रहा था", "f-sg": "निकाल रही थी", "m-pl": "निकाल रहे थे", "f-pl": "निकाल रही थीं" }
+      readings: { "m-sg": "nikāl rahā thā", "f-sg": "nikāl rahī thī", "m-pl": "nikāl rahē thē", "f-pl": "nikāl rahī thīm̐" }
+    - word: "hi-1730"
+      forms: { "m-sg": "फेंक रहा था", "f-sg": "फेंक रही थी", "m-pl": "फेंक रहे थे", "f-pl": "फेंक रही थीं" }
+      readings: { "m-sg": "phēṅka rahā thā", "f-sg": "phēṅka rahī thī", "m-pl": "phēṅka rahē thē", "f-pl": "phēṅka rahī thīm̐" }
+    - word: "hi-1731"
+      forms: { "m-sg": "उठा रहा था", "f-sg": "उठा रही थी", "m-pl": "उठा रहे थे", "f-pl": "उठा रही थीं" }
+      readings: { "m-sg": "uṭhā rahā thā", "f-sg": "uṭhā rahī thī", "m-pl": "uṭhā rahē thē", "f-pl": "uṭhā rahī thīm̐" }
+    - word: "hi-1732"
+      forms: { "m-sg": "भर रहा था", "f-sg": "भर रही थी", "m-pl": "भर रहे थे", "f-pl": "भर रही थीं" }
+      readings: { "m-sg": "bhar rahā thā", "f-sg": "bhar rahī thī", "m-pl": "bhar rahē thē", "f-pl": "bhar rahī thīm̐" }
+    - word: "hi-1733"
+      forms: { "m-sg": "फैला रहा था", "f-sg": "फैला रही थी", "m-pl": "फैला रहे थे", "f-pl": "फैला रही थीं" }
+      readings: { "m-sg": "phailā rahā thā", "f-sg": "phailā rahī thī", "m-pl": "phailā rahē thē", "f-pl": "phailā rahī thīm̐" }
+    - word: "hi-1734"
+      forms: { "m-sg": "समेट रहा था", "f-sg": "समेट रही थी", "m-pl": "समेट रहे थे", "f-pl": "समेट रही थीं" }
+      readings: { "m-sg": "samēṭ rahā thā", "f-sg": "samēṭ rahī thī", "m-pl": "samēṭ rahē thē", "f-pl": "samēṭ rahī thīm̐" }
+    - word: "hi-1735"
+      forms: { "m-sg": "भीग रहा था", "f-sg": "भीग रही थी", "m-pl": "भीग रहे थे", "f-pl": "भीग रही थीं" }
+      readings: { "m-sg": "bhīg rahā thā", "f-sg": "bhīg rahī thī", "m-pl": "bhīg rahē thē", "f-pl": "bhīg rahī thīm̐" }
+    - word: "hi-1736"
+      forms: { "m-sg": "उतार रहा था", "f-sg": "उतार रही थी", "m-pl": "उतार रहे थे", "f-pl": "उतार रही थीं" }
+      readings: { "m-sg": "utār rahā thā", "f-sg": "utār rahī thī", "m-pl": "utār rahē thē", "f-pl": "utār rahī thīm̐" }
+    - word: "hi-1737"
+      forms: { "m-sg": "चढ़ा रहा था", "f-sg": "चढ़ा रही थी", "m-pl": "चढ़ा रहे थे", "f-pl": "चढ़ा रही थीं" }
+      readings: { "m-sg": "caṛhā rahā thā", "f-sg": "caṛhā rahī thī", "m-pl": "caṛhā rahē thē", "f-pl": "caṛhā rahī thīm̐" }
+    - word: "hi-1740"
+      forms: { "m-sg": "टूट रहा था", "f-sg": "टूट रही थी", "m-pl": "टूट रहे थे", "f-pl": "टूट रही थीं" }
+      readings: { "m-sg": "ṭūṭ rahā thā", "f-sg": "ṭūṭ rahī thī", "m-pl": "ṭūṭ rahē thē", "f-pl": "ṭūṭ rahī thīm̐" }
+    - word: "hi-1779"
+      forms: { "m-sg": "दिख रहा था", "f-sg": "दिख रही थी", "m-pl": "दिख रहे थे", "f-pl": "दिख रही थीं" }
+      readings: { "m-sg": "dikh rahā thā", "f-sg": "dikh rahī thī", "m-pl": "dikh rahē thē", "f-pl": "dikh rahī thīm̐" }
+    - word: "hi-1780"
+      forms: { "m-sg": "लग रहा था", "f-sg": "लग रही थी", "m-pl": "लग रहे थे", "f-pl": "लग रही थीं" }
+      readings: { "m-sg": "lag rahā thā", "f-sg": "lag rahī thī", "m-pl": "lag rahē thē", "f-pl": "lag rahī thīm̐" }
+    - word: "hi-1781"
+      forms: { "m-sg": "सज रहा था", "f-sg": "सज रही थी", "m-pl": "सज रहे थे", "f-pl": "सज रही थीं" }
+      readings: { "m-sg": "saj rahā thā", "f-sg": "saj rahī thī", "m-pl": "saj rahē thē", "f-pl": "saj rahī thīm̐" }
+    - word: "hi-1782"
+      forms: { "m-sg": "पहन रहा था", "f-sg": "पहन रही थी", "m-pl": "पहन रहे थे", "f-pl": "पहन रही थीं" }
+      readings: { "m-sg": "pahn rahā thā", "f-sg": "pahn rahī thī", "m-pl": "pahn rahē thē", "f-pl": "pahn rahī thīm̐" }
+    - word: "hi-1783"
+      forms: { "m-sg": "मुस्कुरा रहा था", "f-sg": "मुस्कुरा रही थी", "m-pl": "मुस्कुरा रहे थे", "f-pl": "मुस्कुरा रही थीं" }
+      readings: { "m-sg": "muskurā rahā thā", "f-sg": "muskurā rahī thī", "m-pl": "muskurā rahē thē", "f-pl": "muskurā rahī thīm̐" }
+    - word: "hi-1785"
+      forms: { "m-sg": "निखर रहा था", "f-sg": "निखर रही थी", "m-pl": "निखर रहे थे", "f-pl": "निखर रही थीं" }
+      readings: { "m-sg": "nikhr rahā thā", "f-sg": "nikhr rahī thī", "m-pl": "nikhr rahē thē", "f-pl": "nikhr rahī thīm̐" }
+    - word: "hi-1795"
+      forms: { "m-sg": "ओढ़ रहा था", "f-sg": "ओढ़ रही थी", "m-pl": "ओढ़ रहे थे", "f-pl": "ओढ़ रही थीं" }
+      readings: { "m-sg": "ōṛh rahā thā", "f-sg": "ōṛh rahī thī", "m-pl": "ōṛh rahē thē", "f-pl": "ōṛh rahī thīm̐" }
+    - word: "hi-1796"
+      forms: { "m-sg": "बिछा रहा था", "f-sg": "बिछा रही थी", "m-pl": "बिछा रहे थे", "f-pl": "बिछा रही थीं" }
+      readings: { "m-sg": "bichā rahā thā", "f-sg": "bichā rahī thī", "m-pl": "bichā rahē thē", "f-pl": "bichā rahī thīm̐" }
+    - word: "hi-1797"
+      forms: { "m-sg": "छू रहा था", "f-sg": "छू रही थी", "m-pl": "छू रहे थे", "f-pl": "छू रही थीं" }
+      readings: { "m-sg": "chū rahā thā", "f-sg": "chū rahī thī", "m-pl": "chū rahē thē", "f-pl": "chū rahī thīm̐" }
+    - word: "hi-1798"
+      forms: { "m-sg": "पकड़ रहा था", "f-sg": "पकड़ रही थी", "m-pl": "पकड़ रहे थे", "f-pl": "पकड़ रही थीं" }
+      readings: { "m-sg": "pakṛ rahā thā", "f-sg": "pakṛ rahī thī", "m-pl": "pakṛ rahē thē", "f-pl": "pakṛ rahī thīm̐" }
+    - word: "hi-1799"
+      forms: { "m-sg": "खींच रहा था", "f-sg": "खींच रही थी", "m-pl": "खींच रहे थे", "f-pl": "खींच रही थीं" }
+      readings: { "m-sg": "khīñca rahā thā", "f-sg": "khīñca rahī thī", "m-pl": "khīñca rahē thē", "f-pl": "khīñca rahī thīm̐" }
+    - word: "hi-1800"
+      forms: { "m-sg": "धकेल रहा था", "f-sg": "धकेल रही थी", "m-pl": "धकेल रहे थे", "f-pl": "धकेल रही थीं" }
+      readings: { "m-sg": "dhakēl rahā thā", "f-sg": "dhakēl rahī thī", "m-pl": "dhakēl rahē thē", "f-pl": "dhakēl rahī thīm̐" }
+    - word: "hi-1801"
+      forms: { "m-sg": "फँस रहा था", "f-sg": "फँस रही थी", "m-pl": "फँस रहे थे", "f-pl": "फँस रही थीं" }
+      readings: { "m-sg": "pham̐sa rahā thā", "f-sg": "pham̐sa rahī thī", "m-pl": "pham̐sa rahē thē", "f-pl": "pham̐sa rahī thīm̐" }
+    - word: "hi-1802"
+      forms: { "m-sg": "मार रहा था", "f-sg": "मार रही थी", "m-pl": "मार रहे थे", "f-pl": "मार रही थीं" }
+      readings: { "m-sg": "mār rahā thā", "f-sg": "mār rahī thī", "m-pl": "mār rahē thē", "f-pl": "mār rahī thīm̐" }
+    - word: "hi-1803"
+      forms: { "m-sg": "झुक रहा था", "f-sg": "झुक रही थी", "m-pl": "झुक रहे थे", "f-pl": "झुक रही थीं" }
+      readings: { "m-sg": "jhuk rahā thā", "f-sg": "jhuk rahī thī", "m-pl": "jhuk rahē thē", "f-pl": "jhuk rahī thīm̐" }
+    - word: "hi-1804"
+      forms: { "m-sg": "चला रहा था", "f-sg": "चला रही थी", "m-pl": "चला रहे थे", "f-pl": "चला रही थीं" }
+      readings: { "m-sg": "calā rahā thā", "f-sg": "calā rahī thī", "m-pl": "calā rahē thē", "f-pl": "calā rahī thīm̐" }
+    - word: "hi-1805"
+      forms: { "m-sg": "मिटा रहा था", "f-sg": "मिटा रही थी", "m-pl": "मिटा रहे थे", "f-pl": "मिटा रही थीं" }
+      readings: { "m-sg": "miṭā rahā thā", "f-sg": "miṭā rahī thī", "m-pl": "miṭā rahē thē", "f-pl": "miṭā rahī thīm̐" }
+    - word: "hi-1806"
+      forms: { "m-sg": "खोज रहा था", "f-sg": "खोज रही थी", "m-pl": "खोज रहे थे", "f-pl": "खोज रही थीं" }
+      readings: { "m-sg": "khōj rahā thā", "f-sg": "khōj rahī thī", "m-pl": "khōj rahē thē", "f-pl": "khōj rahī thīm̐" }
+    - word: "hi-1807"
+      forms: { "m-sg": "गिन रहा था", "f-sg": "गिन रही थी", "m-pl": "गिन रहे थे", "f-pl": "गिन रही थीं" }
+      readings: { "m-sg": "gin rahā thā", "f-sg": "gin rahī thī", "m-pl": "gin rahē thē", "f-pl": "gin rahī thīm̐" }
+    - word: "hi-1808"
+      forms: { "m-sg": "नाप रहा था", "f-sg": "नाप रही थी", "m-pl": "नाप रहे थे", "f-pl": "नाप रही थीं" }
+      readings: { "m-sg": "nāp rahā thā", "f-sg": "nāp rahī thī", "m-pl": "nāp rahē thē", "f-pl": "nāp rahī thīm̐" }
+    - word: "hi-1809"
+      forms: { "m-sg": "जोड़ रहा था", "f-sg": "जोड़ रही थी", "m-pl": "जोड़ रहे थे", "f-pl": "जोड़ रही थीं" }
+      readings: { "m-sg": "jōṛ rahā thā", "f-sg": "jōṛ rahī thī", "m-pl": "jōṛ rahē thē", "f-pl": "jōṛ rahī thīm̐" }
+    - word: "hi-1810"
+      forms: { "m-sg": "घटा रहा था", "f-sg": "घटा रही थी", "m-pl": "घटा रहे थे", "f-pl": "घटा रही थीं" }
+      readings: { "m-sg": "ghaṭā rahā thā", "f-sg": "ghaṭā rahī thī", "m-pl": "ghaṭā rahē thē", "f-pl": "ghaṭā rahī thīm̐" }
+    - word: "hi-1811"
+      forms: { "m-sg": "बाँध रहा था", "f-sg": "बाँध रही थी", "m-pl": "बाँध रहे थे", "f-pl": "बाँध रही थीं" }
+      readings: { "m-sg": "bām̐dha rahā thā", "f-sg": "bām̐dha rahī thī", "m-pl": "bām̐dha rahē thē", "f-pl": "bām̐dha rahī thīm̐" }
+    - word: "hi-1812"
+      forms: { "m-sg": "गिरा रहा था", "f-sg": "गिरा रही थी", "m-pl": "गिरा रहे थे", "f-pl": "गिरा रही थीं" }
+      readings: { "m-sg": "girā rahā thā", "f-sg": "girā rahī thī", "m-pl": "girā rahē thē", "f-pl": "girā rahī thīm̐" }
+    - word: "hi-1813"
+      forms: { "m-sg": "रोक रहा था", "f-sg": "रोक रही थी", "m-pl": "रोक रहे थे", "f-pl": "रोक रही थीं" }
+      readings: { "m-sg": "rōk rahā thā", "f-sg": "rōk rahī thī", "m-pl": "rōk rahē thē", "f-pl": "rōk rahī thīm̐" }
+    - word: "hi-1814"
+      forms: { "m-sg": "छुपा रहा था", "f-sg": "छुपा रही थी", "m-pl": "छुपा रहे थे", "f-pl": "छुपा रही थीं" }
+      readings: { "m-sg": "chupā rahā thā", "f-sg": "chupā rahī thī", "m-pl": "chupā rahē thē", "f-pl": "chupā rahī thīm̐" }
+    - word: "hi-1815"
+      forms: { "m-sg": "दिखा रहा था", "f-sg": "दिखा रही थी", "m-pl": "दिखा रहे थे", "f-pl": "दिखा रही थीं" }
+      readings: { "m-sg": "dikhā rahā thā", "f-sg": "dikhā rahī thī", "m-pl": "dikhā rahē thē", "f-pl": "dikhā rahī thīm̐" }
+    - word: "hi-1816"
+      forms: { "m-sg": "चुन रहा था", "f-sg": "चुन रही थी", "m-pl": "चुन रहे थे", "f-pl": "चुन रही थीं" }
+      readings: { "m-sg": "cun rahā thā", "f-sg": "cun rahī thī", "m-pl": "cun rahē thē", "f-pl": "cun rahī thīm̐" }
+    - word: "hi-1817"
+      forms: { "m-sg": "फोड़ रहा था", "f-sg": "फोड़ रही थी", "m-pl": "फोड़ रहे थे", "f-pl": "फोड़ रही थीं" }
+      readings: { "m-sg": "phōṛ rahā thā", "f-sg": "phōṛ rahī thī", "m-pl": "phōṛ rahē thē", "f-pl": "phōṛ rahī thīm̐" }
+    - word: "hi-1818"
+      forms: { "m-sg": "टपक रहा था", "f-sg": "टपक रही थी", "m-pl": "टपक रहे थे", "f-pl": "टपक रही थीं" }
+      readings: { "m-sg": "ṭapk rahā thā", "f-sg": "ṭapk rahī thī", "m-pl": "ṭapk rahē thē", "f-pl": "ṭapk rahī thīm̐" }
+    - word: "hi-1819"
+      forms: { "m-sg": "भाग रहा था", "f-sg": "भाग रही थी", "m-pl": "भाग रहे थे", "f-pl": "भाग रही थीं" }
+      readings: { "m-sg": "bhāg rahā thā", "f-sg": "bhāg rahī thī", "m-pl": "bhāg rahē thē", "f-pl": "bhāg rahī thīm̐" }
+    - word: "hi-1820"
+      forms: { "m-sg": "चिल्ला रहा था", "f-sg": "चिल्ला रही थी", "m-pl": "चिल्ला रहे थे", "f-pl": "चिल्ला रही थीं" }
+      readings: { "m-sg": "cillā rahā thā", "f-sg": "cillā rahī thī", "m-pl": "cillā rahē thē", "f-pl": "cillā rahī thīm̐" }
+    - word: "hi-1821"
+      forms: { "m-sg": "सह रहा था", "f-sg": "सह रही थी", "m-pl": "सह रहे थे", "f-pl": "सह रही थीं" }
+      readings: { "m-sg": "sah rahā thā", "f-sg": "sah rahī thī", "m-pl": "sah rahē thē", "f-pl": "sah rahī thīm̐" }
+    - word: "hi-1822"
+      forms: { "m-sg": "समझा रहा था", "f-sg": "समझा रही थी", "m-pl": "समझा रहे थे", "f-pl": "समझा रही थीं" }
+      readings: { "m-sg": "samjhā rahā thā", "f-sg": "samjhā rahī thī", "m-pl": "samjhā rahē thē", "f-pl": "samjhā rahī thīm̐" }
+    - word: "hi-1823"
+      forms: { "m-sg": "डर रहा था", "f-sg": "डर रही थी", "m-pl": "डर रहे थे", "f-pl": "डर रही थीं" }
+      readings: { "m-sg": "ḍar rahā thā", "f-sg": "ḍar rahī thī", "m-pl": "ḍar rahē thē", "f-pl": "ḍar rahī thīm̐" }
+    - word: "hi-1824"
+      forms: { "m-sg": "सुलझा रहा था", "f-sg": "सुलझा रही थी", "m-pl": "सुलझा रहे थे", "f-pl": "सुलझा रही थीं" }
+      readings: { "m-sg": "suljhā rahā thā", "f-sg": "suljhā rahī thī", "m-pl": "suljhā rahē thē", "f-pl": "suljhā rahī thīm̐" }
+    - word: "hi-1825"
+      forms: { "m-sg": "बचा रहा था", "f-sg": "बचा रही थी", "m-pl": "बचा रहे थे", "f-pl": "बचा रही थीं" }
+      readings: { "m-sg": "bacā rahā thā", "f-sg": "bacā rahī thī", "m-pl": "bacā rahē thē", "f-pl": "bacā rahī thīm̐" }
+    - word: "hi-1826"
+      forms: { "m-sg": "बच रहा था", "f-sg": "बच रही थी", "m-pl": "बच रहे थे", "f-pl": "बच रही थीं" }
+      readings: { "m-sg": "bac rahā thā", "f-sg": "bac rahī thī", "m-pl": "bac rahē thē", "f-pl": "bac rahī thīm̐" }
+    - word: "hi-1827"
+      forms: { "m-sg": "पा रहा था", "f-sg": "पा रही थी", "m-pl": "पा रहे थे", "f-pl": "पा रही थीं" }
+      readings: { "m-sg": "pā rahā thā", "f-sg": "pā rahī thī", "m-pl": "pā rahē thē", "f-pl": "pā rahī thīm̐" }
+    - word: "hi-1828"
+      forms: { "m-sg": "दबा रहा था", "f-sg": "दबा रही थी", "m-pl": "दबा रहे थे", "f-pl": "दबा रही थीं" }
+      readings: { "m-sg": "dabā rahā thā", "f-sg": "dabā rahī thī", "m-pl": "dabā rahē thē", "f-pl": "dabā rahī thīm̐" }
+    - word: "hi-1829"
+      forms: { "m-sg": "लपेट रहा था", "f-sg": "लपेट रही थी", "m-pl": "लपेट रहे थे", "f-pl": "लपेट रही थीं" }
+      readings: { "m-sg": "lapēṭ rahā thā", "f-sg": "lapēṭ rahī thī", "m-pl": "lapēṭ rahē thē", "f-pl": "lapēṭ rahī thīm̐" }
+    - word: "hi-1830"
+      forms: { "m-sg": "टाँग रहा था", "f-sg": "टाँग रही थी", "m-pl": "टाँग रहे थे", "f-pl": "टाँग रही थीं" }
+      readings: { "m-sg": "ṭām̐ga rahā thā", "f-sg": "ṭām̐ga rahī thī", "m-pl": "ṭām̐ga rahē thē", "f-pl": "ṭām̐ga rahī thīm̐" }
+    - word: "hi-1831"
+      forms: { "m-sg": "लटका रहा था", "f-sg": "लटका रही थी", "m-pl": "लटका रहे थे", "f-pl": "लटका रही थीं" }
+      readings: { "m-sg": "laṭkā rahā thā", "f-sg": "laṭkā rahī thī", "m-pl": "laṭkā rahē thē", "f-pl": "laṭkā rahī thīm̐" }
+    - word: "hi-1832"
+      forms: { "m-sg": "चिपका रहा था", "f-sg": "चिपका रही थी", "m-pl": "चिपका रहे थे", "f-pl": "चिपका रही थीं" }
+      readings: { "m-sg": "cipkā rahā thā", "f-sg": "cipkā rahī thī", "m-pl": "cipkā rahē thē", "f-pl": "cipkā rahī thīm̐" }
+    - word: "hi-1833"
+      forms: { "m-sg": "बन रहा था", "f-sg": "बन रही थी", "m-pl": "बन रहे थे", "f-pl": "बन रही थीं" }
+      readings: { "m-sg": "ban rahā thā", "f-sg": "ban rahī thī", "m-pl": "ban rahē thē", "f-pl": "ban rahī thīm̐" }
+    - word: "hi-1834"
+      forms: { "m-sg": "ढक रहा था", "f-sg": "ढक रही थी", "m-pl": "ढक रहे थे", "f-pl": "ढक रही थीं" }
+      readings: { "m-sg": "ḍhak rahā thā", "f-sg": "ḍhak rahī thī", "m-pl": "ḍhak rahē thē", "f-pl": "ḍhak rahī thīm̐" }
+    - word: "hi-1835"
+      forms: { "m-sg": "खिला रहा था", "f-sg": "खिला रही थी", "m-pl": "खिला रहे थे", "f-pl": "खिला रही थीं" }
+      readings: { "m-sg": "khilā rahā thā", "f-sg": "khilā rahī thī", "m-pl": "khilā rahē thē", "f-pl": "khilā rahī thīm̐" }
+    - word: "hi-1836"
+      forms: { "m-sg": "पिला रहा था", "f-sg": "पिला रही थी", "m-pl": "पिला रहे थे", "f-pl": "पिला रही थीं" }
+      readings: { "m-sg": "pilā rahā thā", "f-sg": "pilā rahī thī", "m-pl": "pilā rahē thē", "f-pl": "pilā rahī thīm̐" }
+    - word: "hi-1837"
+      forms: { "m-sg": "जगा रहा था", "f-sg": "जगा रही थी", "m-pl": "जगा रहे थे", "f-pl": "जगा रही थीं" }
+      readings: { "m-sg": "jagā rahā thā", "f-sg": "jagā rahī thī", "m-pl": "jagā rahē thē", "f-pl": "jagā rahī thīm̐" }
+    - word: "hi-1838"
+      forms: { "m-sg": "उगा रहा था", "f-sg": "उगा रही थी", "m-pl": "उगा रहे थे", "f-pl": "उगा रही थीं" }
+      readings: { "m-sg": "ugā rahā thā", "f-sg": "ugā rahī thī", "m-pl": "ugā rahē thē", "f-pl": "ugā rahī thīm̐" }
+    - word: "hi-1878"
+      forms: { "m-sg": "बज रहा था", "f-sg": "बज रही थी", "m-pl": "बज रहे थे", "f-pl": "बज रही थीं" }
+      readings: { "m-sg": "baj rahā thā", "f-sg": "baj rahī thī", "m-pl": "baj rahē thē", "f-pl": "baj rahī thīm̐" }
+    - word: "hi-1913"
+      forms: { "m-sg": "पहुँच रहा था", "f-sg": "पहुँच रही थी", "m-pl": "पहुँच रहे थे", "f-pl": "पहुँच रही थीं" }
+      readings: { "m-sg": "pahum̐ca rahā thā", "f-sg": "pahum̐ca rahī thī", "m-pl": "pahum̐ca rahē thē", "f-pl": "pahum̐ca rahī thīm̐" }
+    - word: "hi-1914"
+      forms: { "m-sg": "रुक रहा था", "f-sg": "रुक रही थी", "m-pl": "रुक रहे थे", "f-pl": "रुक रही थीं" }
+      readings: { "m-sg": "ruk rahā thā", "f-sg": "ruk rahī thī", "m-pl": "ruk rahē thē", "f-pl": "ruk rahī thīm̐" }
+    - word: "hi-1915"
+      forms: { "m-sg": "ठहर रहा था", "f-sg": "ठहर रही थी", "m-pl": "ठहर रहे थे", "f-pl": "ठहर रही थीं" }
+      readings: { "m-sg": "ṭhahr rahā thā", "f-sg": "ṭhahr rahī thī", "m-pl": "ṭhahr rahē thē", "f-pl": "ṭhahr rahī thīm̐" }
+    - word: "hi-1916"
+      forms: { "m-sg": "चढ़ रहा था", "f-sg": "चढ़ रही थी", "m-pl": "चढ़ रहे थे", "f-pl": "चढ़ रही थीं" }
+      readings: { "m-sg": "caṛh rahā thā", "f-sg": "caṛh rahī thī", "m-pl": "caṛh rahē thē", "f-pl": "caṛh rahī thīm̐" }
+    - word: "hi-1917"
+      forms: { "m-sg": "उतर रहा था", "f-sg": "उतर रही थी", "m-pl": "उतर रहे थे", "f-pl": "उतर रही थीं" }
+      readings: { "m-sg": "utr rahā thā", "f-sg": "utr rahī thī", "m-pl": "utr rahē thē", "f-pl": "utr rahī thīm̐" }
+    - word: "hi-1918"
+      forms: { "m-sg": "छूट रहा था", "f-sg": "छूट रही थी", "m-pl": "छूट रहे थे", "f-pl": "छूट रही थीं" }
+      readings: { "m-sg": "chūṭ rahā thā", "f-sg": "chūṭ rahī thī", "m-pl": "chūṭ rahē thē", "f-pl": "chūṭ rahī thīm̐" }
+    - word: "hi-1919"
+      forms: { "m-sg": "खो रहा था", "f-sg": "खो रही थी", "m-pl": "खो रहे थे", "f-pl": "खो रही थीं" }
+      readings: { "m-sg": "khō rahā thā", "f-sg": "khō rahī thī", "m-pl": "khō rahē thē", "f-pl": "khō rahī thīm̐" }
+    - word: "hi-1950"
+      forms: { "m-sg": "उग रहा था", "f-sg": "उग रही थी", "m-pl": "उग रहे थे", "f-pl": "उग रही थीं" }
+      readings: { "m-sg": "ug rahā thā", "f-sg": "ug rahī thī", "m-pl": "ug rahē thē", "f-pl": "ug rahī thīm̐" }
+    - word: "hi-1951"
+      forms: { "m-sg": "बह रहा था", "f-sg": "बह रही थी", "m-pl": "बह रहे थे", "f-pl": "बह रही थीं" }
+      readings: { "m-sg": "bah rahā thā", "f-sg": "bah rahī thī", "m-pl": "bah rahē thē", "f-pl": "bah rahī thīm̐" }
+    - word: "hi-1952"
+      forms: { "m-sg": "खिल रहा था", "f-sg": "खिल रही थी", "m-pl": "खिल रहे थे", "f-pl": "खिल रही थीं" }
+      readings: { "m-sg": "khil rahā thā", "f-sg": "khil rahī thī", "m-pl": "khil rahē thē", "f-pl": "khil rahī thīm̐" }
+    - word: "hi-1953"
+      forms: { "m-sg": "झड़ रहा था", "f-sg": "झड़ रही थी", "m-pl": "झड़ रहे थे", "f-pl": "झड़ रही थीं" }
+      readings: { "m-sg": "jhaṛ rahā thā", "f-sg": "jhaṛ rahī thī", "m-pl": "jhaṛ rahē thē", "f-pl": "jhaṛ rahī thīm̐" }
+    - word: "hi-1954"
+      forms: { "m-sg": "फैल रहा था", "f-sg": "फैल रही थी", "m-pl": "फैल रहे थे", "f-pl": "फैल रही थीं" }
+      readings: { "m-sg": "phail rahā thā", "f-sg": "phail rahī thī", "m-pl": "phail rahē thē", "f-pl": "phail rahī thīm̐" }
+    - word: "hi-1955"
+      forms: { "m-sg": "डूब रहा था", "f-sg": "डूब रही थी", "m-pl": "डूब रहे थे", "f-pl": "डूब रही थीं" }
+      readings: { "m-sg": "ḍūb rahā thā", "f-sg": "ḍūb rahī thī", "m-pl": "ḍūb rahē thē", "f-pl": "ḍūb rahī thīm̐" }
+    - word: "hi-1956"
+      forms: { "m-sg": "उड़ रहा था", "f-sg": "उड़ रही थी", "m-pl": "उड़ रहे थे", "f-pl": "उड़ रही थीं" }
+      readings: { "m-sg": "uṛ rahā thā", "f-sg": "uṛ rahī thī", "m-pl": "uṛ rahē thē", "f-pl": "uṛ rahī thīm̐" }
+    - word: "hi-1957"
+      forms: { "m-sg": "चहचहा रहा था", "f-sg": "चहचहा रही थी", "m-pl": "चहचहा रहे थे", "f-pl": "चहचहा रही थीं" }
+      readings: { "m-sg": "cahchā rahā thā", "f-sg": "cahchā rahī thī", "m-pl": "cahchā rahē thē", "f-pl": "cahchā rahī thīm̐" }
+    - word: "hi-2029"
+      forms: { "m-sg": "सौंप रहा था", "f-sg": "सौंप रही थी", "m-pl": "सौंप रहे थे", "f-pl": "सौंप रही थीं" }
+      readings: { "m-sg": "saumpa rahā thā", "f-sg": "saumpa rahī thī", "m-pl": "saumpa rahē thē", "f-pl": "saumpa rahī thīm̐" }
+    - word: "hi-2030"
+      forms: { "m-sg": "निपटा रहा था", "f-sg": "निपटा रही थी", "m-pl": "निपटा रहे थे", "f-pl": "निपटा रही थीं" }
+      readings: { "m-sg": "nipṭā rahā thā", "f-sg": "nipṭā rahī thī", "m-pl": "nipṭā rahē thē", "f-pl": "nipṭā rahī thīm̐" }
+    - word: "hi-2031"
+      forms: { "m-sg": "संभाल रहा था", "f-sg": "संभाल रही थी", "m-pl": "संभाल रहे थे", "f-pl": "संभाल रही थीं" }
+      readings: { "m-sg": "sambhāl rahā thā", "f-sg": "sambhāl rahī thī", "m-pl": "sambhāl rahē thē", "f-pl": "sambhāl rahī thīm̐" }
+    - word: "hi-2091"
+      forms: { "m-sg": "सूज रहा था", "f-sg": "सूज रही थी", "m-pl": "सूज रहे थे", "f-pl": "सूज रही थीं" }
+      readings: { "m-sg": "sūj rahā thā", "f-sg": "sūj rahī thī", "m-pl": "sūj rahē thē", "f-pl": "sūj rahī thīm̐" }
+    - word: "hi-2137"
+      forms: { "m-sg": "घबरा रहा था", "f-sg": "घबरा रही थी", "m-pl": "घबरा रहे थे", "f-pl": "घबरा रही थीं" }
+      readings: { "m-sg": "ghabrā rahā thā", "f-sg": "ghabrā rahī thī", "m-pl": "ghabrā rahē thē", "f-pl": "ghabrā rahī thīm̐" }
+    - word: "hi-2138"
+      forms: { "m-sg": "झुंझला रहा था", "f-sg": "झुंझला रही थी", "m-pl": "झुंझला रहे थे", "f-pl": "झुंझला रही थीं" }
+      readings: { "m-sg": "jhuñjhalā rahā thā", "f-sg": "jhuñjhalā rahī thī", "m-pl": "jhuñjhalā rahē thē", "f-pl": "jhuñjhalā rahī thīm̐" }
+    - word: "hi-2139"
+      forms: { "m-sg": "चिढ़ रहा था", "f-sg": "चिढ़ रही थी", "m-pl": "चिढ़ रहे थे", "f-pl": "चिढ़ रही थीं" }
+      readings: { "m-sg": "ciṛh rahā thā", "f-sg": "ciṛh rahī thī", "m-pl": "ciṛh rahē thē", "f-pl": "ciṛh rahī thīm̐" }
+    - word: "hi-2140"
+      forms: { "m-sg": "शर्मा रहा था", "f-sg": "शर्मा रही थी", "m-pl": "शर्मा रहे थे", "f-pl": "शर्मा रही थीं" }
+      readings: { "m-sg": "śarmā rahā thā", "f-sg": "śarmā rahī thī", "m-pl": "śarmā rahē thē", "f-pl": "śarmā rahī thīm̐" }
+    - word: "hi-2172"
+      forms: { "m-sg": "छप रहा था", "f-sg": "छप रही थी", "m-pl": "छप रहे थे", "f-pl": "छप रही थीं" }
+      readings: { "m-sg": "chap rahā thā", "f-sg": "chap rahī thī", "m-pl": "chap rahē thē", "f-pl": "chap rahī thīm̐" }
+    - word: "hi-2173"
+      forms: { "m-sg": "सुना रहा था", "f-sg": "सुना रही थी", "m-pl": "सुना रहे थे", "f-pl": "सुना रही थीं" }
+      readings: { "m-sg": "sunā rahā thā", "f-sg": "sunā rahī thī", "m-pl": "sunā rahē thē", "f-pl": "sunā rahī thīm̐" }
+    - word: "hi-2184"
+      forms: { "m-sg": "मान रहा था", "f-sg": "मान रही थी", "m-pl": "मान रहे थे", "f-pl": "मान रही थीं" }
+      readings: { "m-sg": "mān rahā thā", "f-sg": "mān rahī thī", "m-pl": "mān rahē thē", "f-pl": "mān rahī thīm̐" }
+    - word: "hi-2205"
+      forms: { "m-sg": "सुझा रहा था", "f-sg": "सुझा रही थी", "m-pl": "सुझा रहे थे", "f-pl": "सुझा रही थीं" }
+      readings: { "m-sg": "sujhā rahā thā", "f-sg": "sujhā rahī thī", "m-pl": "sujhā rahē thē", "f-pl": "sujhā rahī thīm̐" }
+    - word: "hi-2207"
+      forms: { "m-sg": "स्वीकार रहा था", "f-sg": "स्वीकार रही थी", "m-pl": "स्वीकार रहे थे", "f-pl": "स्वीकार रही थीं" }
+      readings: { "m-sg": "svīkār rahā thā", "f-sg": "svīkār rahī thī", "m-pl": "svīkār rahē thē", "f-pl": "svīkār rahī thīm̐" }
+    - word: "hi-2229"
+      forms: { "m-sg": "घुमा रहा था", "f-sg": "घुमा रही थी", "m-pl": "घुमा रहे थे", "f-pl": "घुमा रही थीं" }
+      readings: { "m-sg": "ghumā rahā thā", "f-sg": "ghumā rahī thī", "m-pl": "ghumā rahē thē", "f-pl": "ghumā rahī thīm̐" }
+    - word: "hi-2581"
+      forms: { "m-sg": "झगड़ रहा था", "f-sg": "झगड़ रही थी", "m-pl": "झगड़ रहे थे", "f-pl": "झगड़ रही थीं" }
+      readings: { "m-sg": "jhagṛ rahā thā", "f-sg": "jhagṛ rahī thī", "m-pl": "jhagṛ rahē thē", "f-pl": "jhagṛ rahī thīm̐" }
+    - word: "hi-2582"
+      forms: { "m-sg": "रूठ रहा था", "f-sg": "रूठ रही थी", "m-pl": "रूठ रहे थे", "f-pl": "रूठ रही थीं" }
+      readings: { "m-sg": "rūṭh rahā thā", "f-sg": "rūṭh rahī thī", "m-pl": "rūṭh rahē thē", "f-pl": "rūṭh rahī thīm̐" }
+    - word: "hi-2583"
+      forms: { "m-sg": "जुड़ रहा था", "f-sg": "जुड़ रही थी", "m-pl": "जुड़ रहे थे", "f-pl": "जुड़ रही थीं" }
+      readings: { "m-sg": "juṛ rahā thā", "f-sg": "juṛ rahī thī", "m-pl": "juṛ rahē thē", "f-pl": "juṛ rahī thīm̐" }
+    - word: "hi-2607"
+      forms: { "m-sg": "बस रहा था", "f-sg": "बस रही थी", "m-pl": "बस रहे थे", "f-pl": "बस रही थीं" }
+      readings: { "m-sg": "bas rahā thā", "f-sg": "bas rahī thī", "m-pl": "bas rahē thē", "f-pl": "bas rahī thīm̐" }
+    - word: "hi-2614"
+      forms: { "m-sg": "जम रहा था", "f-sg": "जम रही थी", "m-pl": "जम रहे थे", "f-pl": "जम रही थीं" }
+      readings: { "m-sg": "jam rahā thā", "f-sg": "jam rahī thī", "m-pl": "jam rahē thē", "f-pl": "jam rahī thīm̐" }
+    - word: "hi-2615"
+      forms: { "m-sg": "पिघल रहा था", "f-sg": "पिघल रही थी", "m-pl": "पिघल रहे थे", "f-pl": "पिघल रही थीं" }
+      readings: { "m-sg": "pighl rahā thā", "f-sg": "pighl rahī thī", "m-pl": "pighl rahē thē", "f-pl": "pighl rahī thīm̐" }
+    - word: "hi-2616"
+      forms: { "m-sg": "उबल रहा था", "f-sg": "उबल रही थी", "m-pl": "उबल रहे थे", "f-pl": "उबल रही थीं" }
+      readings: { "m-sg": "ubl rahā thā", "f-sg": "ubl rahī thī", "m-pl": "ubl rahē thē", "f-pl": "ubl rahī thīm̐" }
+    - word: "hi-2617"
+      forms: { "m-sg": "जल रहा था", "f-sg": "जल रही थी", "m-pl": "जल रहे थे", "f-pl": "जल रही थीं" }
+      readings: { "m-sg": "jal rahā thā", "f-sg": "jal rahī thī", "m-pl": "jal rahē thē", "f-pl": "jal rahī thīm̐" }
+    - word: "hi-2618"
+      forms: { "m-sg": "बुझ रहा था", "f-sg": "बुझ रही थी", "m-pl": "बुझ रहे थे", "f-pl": "बुझ रही थीं" }
+      readings: { "m-sg": "bujh rahā thā", "f-sg": "bujh rahī thī", "m-pl": "bujh rahē thē", "f-pl": "bujh rahī thīm̐" }
+    - word: "hi-2619"
+      forms: { "m-sg": "भटक रहा था", "f-sg": "भटक रही थी", "m-pl": "भटक रहे थे", "f-pl": "भटक रही थीं" }
+      readings: { "m-sg": "bhaṭk rahā thā", "f-sg": "bhaṭk rahī thī", "m-pl": "bhaṭk rahē thē", "f-pl": "bhaṭk rahī thīm̐" }
+    - word: "hi-2620"
+      forms: { "m-sg": "छिप रहा था", "f-sg": "छिप रही थी", "m-pl": "छिप रहे थे", "f-pl": "छिप रही थीं" }
+      readings: { "m-sg": "chip rahā thā", "f-sg": "chip rahī thī", "m-pl": "chip rahē thē", "f-pl": "chip rahī thīm̐" }
+    - word: "hi-2621"
+      forms: { "m-sg": "कूद रहा था", "f-sg": "कूद रही थी", "m-pl": "कूद रहे थे", "f-pl": "कूद रही थीं" }
+      readings: { "m-sg": "kūd rahā thā", "f-sg": "kūd rahī thī", "m-pl": "kūd rahē thē", "f-pl": "kūd rahī thīm̐" }
+    - word: "hi-2622"
+      forms: { "m-sg": "फिसल रहा था", "f-sg": "फिसल रही थी", "m-pl": "फिसल रहे थे", "f-pl": "फिसल रही थीं" }
+      readings: { "m-sg": "phisl rahā thā", "f-sg": "phisl rahī thī", "m-pl": "phisl rahē thē", "f-pl": "phisl rahī thīm̐" }
+    - word: "hi-2623"
+      forms: { "m-sg": "थाम रहा था", "f-sg": "थाम रही थी", "m-pl": "थाम रहे थे", "f-pl": "थाम रही थीं" }
+      readings: { "m-sg": "thām rahā thā", "f-sg": "thām rahī thī", "m-pl": "thām rahē thē", "f-pl": "thām rahī thīm̐" }
+    - word: "hi-2624"
+      forms: { "m-sg": "रगड़ रहा था", "f-sg": "रगड़ रही थी", "m-pl": "रगड़ रहे थे", "f-pl": "रगड़ रही थीं" }
+      readings: { "m-sg": "ragṛ rahā thā", "f-sg": "ragṛ rahī thī", "m-pl": "ragṛ rahē thē", "f-pl": "ragṛ rahī thīm̐" }
+    - word: "hi-2625"
+      forms: { "m-sg": "तोड़ रहा था", "f-sg": "तोड़ रही थी", "m-pl": "तोड़ रहे थे", "f-pl": "तोड़ रही थीं" }
+      readings: { "m-sg": "tōṛ rahā thā", "f-sg": "tōṛ rahī thī", "m-pl": "tōṛ rahē thē", "f-pl": "tōṛ rahī thīm̐" }
+    - word: "hi-2626"
+      forms: { "m-sg": "मोड़ रहा था", "f-sg": "मोड़ रही थी", "m-pl": "मोड़ रहे थे", "f-pl": "मोड़ रही थीं" }
+      readings: { "m-sg": "mōṛ rahā thā", "f-sg": "mōṛ rahī thī", "m-pl": "mōṛ rahē thē", "f-pl": "mōṛ rahī thīm̐" }
+    - word: "hi-2627"
+      forms: { "m-sg": "लड़ रहा था", "f-sg": "लड़ रही थी", "m-pl": "लड़ रहे थे", "f-pl": "लड़ रही थीं" }
+      readings: { "m-sg": "laṛ rahā thā", "f-sg": "laṛ rahī thī", "m-pl": "laṛ rahē thē", "f-pl": "laṛ rahī thīm̐" }
+    - word: "hi-2628"
+      forms: { "m-sg": "सुधार रहा था", "f-sg": "सुधार रही थी", "m-pl": "सुधार रहे थे", "f-pl": "सुधार रही थीं" }
+      readings: { "m-sg": "sudhār rahā thā", "f-sg": "sudhār rahī thī", "m-pl": "sudhār rahē thē", "f-pl": "sudhār rahī thīm̐" }
+    - word: "hi-2629"
+      forms: { "m-sg": "लगा रहा था", "f-sg": "लगा रही थी", "m-pl": "लगा रहे थे", "f-pl": "लगा रही थीं" }
+      readings: { "m-sg": "lagā rahā thā", "f-sg": "lagā rahī thī", "m-pl": "lagā rahē thē", "f-pl": "lagā rahī thīm̐" }
+    - word: "hi-2630"
+      forms: { "m-sg": "लगवा रहा था", "f-sg": "लगवा रही थी", "m-pl": "लगवा रहे थे", "f-pl": "लगवा रही थीं" }
+      readings: { "m-sg": "lagvā rahā thā", "f-sg": "lagvā rahī thī", "m-pl": "lagvā rahē thē", "f-pl": "lagvā rahī thīm̐" }
+    - word: "hi-2631"
+      forms: { "m-sg": "पहचान रहा था", "f-sg": "पहचान रही थी", "m-pl": "पहचान रहे थे", "f-pl": "पहचान रही थीं" }
+      readings: { "m-sg": "pahcān rahā thā", "f-sg": "pahcān rahī thī", "m-pl": "pahcān rahē thē", "f-pl": "pahcān rahī thīm̐" }
+    - word: "hi-2632"
+      forms: { "m-sg": "सींच रहा था", "f-sg": "सींच रही थी", "m-pl": "सींच रहे थे", "f-pl": "सींच रही थीं" }
+      readings: { "m-sg": "sīñca rahā thā", "f-sg": "sīñca rahī thī", "m-pl": "sīñca rahē thē", "f-pl": "sīñca rahī thīm̐" }
+    - word: "hi-2633"
+      forms: { "m-sg": "बो रहा था", "f-sg": "बो रही थी", "m-pl": "बो रहे थे", "f-pl": "बो रही थीं" }
+      readings: { "m-sg": "bō rahā thā", "f-sg": "bō rahī thī", "m-pl": "bō rahē thē", "f-pl": "bō rahī thīm̐" }
+    - word: "hi-2634"
+      forms: { "m-sg": "माँग रहा था", "f-sg": "माँग रही थी", "m-pl": "माँग रहे थे", "f-pl": "माँग रही थीं" }
+      readings: { "m-sg": "mām̐ga rahā thā", "f-sg": "mām̐ga rahī thī", "m-pl": "mām̐ga rahē thē", "f-pl": "mām̐ga rahī thīm̐" }
+    - word: "hi-2635"
+      forms: { "m-sg": "निकल रहा था", "f-sg": "निकल रही थी", "m-pl": "निकल रहे थे", "f-pl": "निकल रही थीं" }
+      readings: { "m-sg": "nikl rahā thā", "f-sg": "nikl rahī thī", "m-pl": "nikl rahē thē", "f-pl": "nikl rahī thīm̐" }
+    - word: "hi-2636"
+      forms: { "m-sg": "गाड़ रहा था", "f-sg": "गाड़ रही थी", "m-pl": "गाड़ रहे थे", "f-pl": "गाड़ रही थीं" }
+      readings: { "m-sg": "gāṛ rahā thā", "f-sg": "gāṛ rahī thī", "m-pl": "gāṛ rahē thē", "f-pl": "gāṛ rahī thīm̐" }
+    - word: "hi-2637"
+      forms: { "m-sg": "उड़ा रहा था", "f-sg": "उड़ा रही थी", "m-pl": "उड़ा रहे थे", "f-pl": "उड़ा रही थीं" }
+      readings: { "m-sg": "uṛā rahā thā", "f-sg": "uṛā rahī thī", "m-pl": "uṛā rahē thē", "f-pl": "uṛā rahī thīm̐" }
+    - word: "hi-2638"
+      forms: { "m-sg": "हटा रहा था", "f-sg": "हटा रही थी", "m-pl": "हटा रहे थे", "f-pl": "हटा रही थीं" }
+      readings: { "m-sg": "haṭā rahā thā", "f-sg": "haṭā rahī thī", "m-pl": "haṭā rahē thē", "f-pl": "haṭā rahī thīm̐" }
+    - word: "hi-2639"
+      forms: { "m-sg": "निगल रहा था", "f-sg": "निगल रही थी", "m-pl": "निगल रहे थे", "f-pl": "निगल रही थीं" }
+      readings: { "m-sg": "nigl rahā thā", "f-sg": "nigl rahī thī", "m-pl": "nigl rahē thē", "f-pl": "nigl rahī thīm̐" }
+    - word: "hi-2640"
+      forms: { "m-sg": "चबा रहा था", "f-sg": "चबा रही थी", "m-pl": "चबा रहे थे", "f-pl": "चबा रही थीं" }
+      readings: { "m-sg": "cabā rahā thā", "f-sg": "cabā rahī thī", "m-pl": "cabā rahē thē", "f-pl": "cabā rahī thīm̐" }
+    - word: "hi-2641"
+      forms: { "m-sg": "निचोड़ रहा था", "f-sg": "निचोड़ रही थी", "m-pl": "निचोड़ रहे थे", "f-pl": "निचोड़ रही थीं" }
+      readings: { "m-sg": "nicōṛ rahā thā", "f-sg": "nicōṛ rahī thī", "m-pl": "nicōṛ rahē thē", "f-pl": "nicōṛ rahī thīm̐" }
+    - word: "hi-2642"
+      forms: { "m-sg": "सूँघ रहा था", "f-sg": "सूँघ रही थी", "m-pl": "सूँघ रहे थे", "f-pl": "सूँघ रही थीं" }
+      readings: { "m-sg": "sūm̐gha rahā thā", "f-sg": "sūm̐gha rahī thī", "m-pl": "sūm̐gha rahē thē", "f-pl": "sūm̐gha rahī thīm̐" }
+    - word: "hi-2643"
+      forms: { "m-sg": "चख रहा था", "f-sg": "चख रही थी", "m-pl": "चख रहे थे", "f-pl": "चख रही थीं" }
+      readings: { "m-sg": "cakh rahā thā", "f-sg": "cakh rahī thī", "m-pl": "cakh rahē thē", "f-pl": "cakh rahī thīm̐" }
+    - word: "hi-2790"
+      forms: { "m-sg": "बढ़ रहा था", "f-sg": "बढ़ रही थी", "m-pl": "बढ़ रहे थे", "f-pl": "बढ़ रही थीं" }
+      readings: { "m-sg": "baṛh rahā thā", "f-sg": "baṛh rahī thī", "m-pl": "baṛh rahē thē", "f-pl": "baṛh rahī thīm̐" }
+    - word: "hi-2791"
+      forms: { "m-sg": "बढ़ा रहा था", "f-sg": "बढ़ा रही थी", "m-pl": "बढ़ा रहे थे", "f-pl": "बढ़ा रही थीं" }
+      readings: { "m-sg": "baṛhā rahā thā", "f-sg": "baṛhā rahī thī", "m-pl": "baṛhā rahē thē", "f-pl": "baṛhā rahī thīm̐" }
+    - word: "hi-2792"
+      forms: { "m-sg": "गुज़र रहा था", "f-sg": "गुज़र रही थी", "m-pl": "गुज़र रहे थे", "f-pl": "गुज़र रही थीं" }
+      readings: { "m-sg": "guzr rahā thā", "f-sg": "guzr rahī thī", "m-pl": "guzr rahē thē", "f-pl": "guzr rahī thīm̐" }
+    - word: "hi-2793"
+      forms: { "m-sg": "झपट रहा था", "f-sg": "झपट रही थी", "m-pl": "झपट रहे थे", "f-pl": "झपट रही थीं" }
+      readings: { "m-sg": "jhapṭ rahā thā", "f-sg": "jhapṭ rahī thī", "m-pl": "jhapṭ rahē thē", "f-pl": "jhapṭ rahī thīm̐" }
+    - word: "hi-2794"
+      forms: { "m-sg": "पलट रहा था", "f-sg": "पलट रही थी", "m-pl": "पलट रहे थे", "f-pl": "पलट रही थीं" }
+      readings: { "m-sg": "palṭ rahā thā", "f-sg": "palṭ rahī thī", "m-pl": "palṭ rahē thē", "f-pl": "palṭ rahī thīm̐" }
+    - word: "hi-2795"
+      forms: { "m-sg": "सोख रहा था", "f-sg": "सोख रही थी", "m-pl": "सोख रहे थे", "f-pl": "सोख रही थीं" }
+      readings: { "m-sg": "sōkh rahā thā", "f-sg": "sōkh rahī thī", "m-pl": "sōkh rahē thē", "f-pl": "sōkh rahī thīm̐" }
+    - word: "hi-2796"
+      forms: { "m-sg": "बहा रहा था", "f-sg": "बहा रही थी", "m-pl": "बहा रहे थे", "f-pl": "बहा रही थीं" }
+      readings: { "m-sg": "bahā rahā thā", "f-sg": "bahā rahī thī", "m-pl": "bahā rahē thē", "f-pl": "bahā rahī thīm̐" }
+    - word: "hi-2797"
+      forms: { "m-sg": "मल रहा था", "f-sg": "मल रही थी", "m-pl": "मल रहे थे", "f-pl": "मल रही थीं" }
+      readings: { "m-sg": "mal rahā thā", "f-sg": "mal rahī thī", "m-pl": "mal rahē thē", "f-pl": "mal rahī thīm̐" }
+    - word: "hi-2798"
+      forms: { "m-sg": "भिगो रहा था", "f-sg": "भिगो रही थी", "m-pl": "भिगो रहे थे", "f-pl": "भिगो रही थीं" }
+      readings: { "m-sg": "bhigō rahā thā", "f-sg": "bhigō rahī thī", "m-pl": "bhigō rahē thē", "f-pl": "bhigō rahī thīm̐" }
+    - word: "hi-2799"
+      forms: { "m-sg": "पकड़ा रहा था", "f-sg": "पकड़ा रही थी", "m-pl": "पकड़ा रहे थे", "f-pl": "पकड़ा रही थीं" }
+      readings: { "m-sg": "pakṛā rahā thā", "f-sg": "pakṛā rahī thī", "m-pl": "pakṛā rahē thē", "f-pl": "pakṛā rahī thīm̐" }
+    - word: "hi-2800"
+      forms: { "m-sg": "खुजला रहा था", "f-sg": "खुजला रही थी", "m-pl": "खुजला रहे थे", "f-pl": "खुजला रही थीं" }
+      readings: { "m-sg": "khujlā rahā thā", "f-sg": "khujlā rahī thī", "m-pl": "khujlā rahē thē", "f-pl": "khujlā rahī thīm̐" }
+    - word: "hi-2801"
+      forms: { "m-sg": "दबोच रहा था", "f-sg": "दबोच रही थी", "m-pl": "दबोच रहे थे", "f-pl": "दबोच रही थीं" }
+      readings: { "m-sg": "dabōc rahā thā", "f-sg": "dabōc rahī thī", "m-pl": "dabōc rahē thē", "f-pl": "dabōc rahī thīm̐" }
+    - word: "hi-2803"
+      forms: { "m-sg": "भुन रहा था", "f-sg": "भुन रही थी", "m-pl": "भुन रहे थे", "f-pl": "भुन रही थीं" }
+      readings: { "m-sg": "bhun rahā thā", "f-sg": "bhun rahī thī", "m-pl": "bhun rahē thē", "f-pl": "bhun rahī thīm̐" }
+    - word: "hi-2804"
+      forms: { "m-sg": "चमका रहा था", "f-sg": "चमका रही थी", "m-pl": "चमका रहे थे", "f-pl": "चमका रही थीं" }
+      readings: { "m-sg": "camkā rahā thā", "f-sg": "camkā rahī thī", "m-pl": "camkā rahē thē", "f-pl": "camkā rahī thīm̐" }
+    - word: "hi-2805"
+      forms: { "m-sg": "हिला रहा था", "f-sg": "हिला रही थी", "m-pl": "हिला रहे थे", "f-pl": "हिला रही थीं" }
+      readings: { "m-sg": "hilā rahā thā", "f-sg": "hilā rahī thī", "m-pl": "hilā rahē thē", "f-pl": "hilā rahī thīm̐" }
+    - word: "hi-2806"
+      forms: { "m-sg": "हिल रहा था", "f-sg": "हिल रही थी", "m-pl": "हिल रहे थे", "f-pl": "हिल रही थीं" }
+      readings: { "m-sg": "hil rahā thā", "f-sg": "hil rahī thī", "m-pl": "hil rahē thē", "f-pl": "hil rahī thīm̐" }
+    - word: "hi-2807"
+      forms: { "m-sg": "झूल रहा था", "f-sg": "झूल रही थी", "m-pl": "झूल रहे थे", "f-pl": "झूल रही थीं" }
+      readings: { "m-sg": "jhūl rahā thā", "f-sg": "jhūl rahī thī", "m-pl": "jhūl rahē thē", "f-pl": "jhūl rahī thīm̐" }
+    - word: "hi-2808"
+      forms: { "m-sg": "झूला रहा था", "f-sg": "झूला रही थी", "m-pl": "झूला रहे थे", "f-pl": "झूला रही थीं" }
+      readings: { "m-sg": "jhūlā rahā thā", "f-sg": "jhūlā rahī thī", "m-pl": "jhūlā rahē thē", "f-pl": "jhūlā rahī thīm̐" }
+rules:
+  - id: "hi-rule-past-continuous-masc"
+    slots: ["m-sg", "m-pl"]
+    words: [{ word: "रहा था", reading: "rahā thā" }, { word: "रहे थे", reading: "rahē thē" }, { word: "करना", reading: "karnā" }, { word: "कर रहा था", reading: "kar rahā thā" }, { word: "कर रहे थे", reading: "kar rahē thē" }, { word: "जाना", reading: "jānā" }, { word: "जा रहा था", reading: "jā rahā thā" }]
+  - id: "hi-rule-past-continuous-fem"
+    slots: ["f-sg", "f-pl"]
+    words: [{ word: "रही थी", reading: "rahī thī" }, { word: "रही थीं", reading: "rahī thīm̐" }, { word: "करना", reading: "karnā" }, { word: "कर रही थी", reading: "kar rahī thī" }, { word: "कर रही थीं", reading: "kar rahī thīm̐" }, { word: "जाना", reading: "jānā" }, { word: "जा रही थी", reading: "jā rahī thī" }]

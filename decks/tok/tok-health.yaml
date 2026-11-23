@@ -7,6 +7,7 @@
   "iso639_3": "tok"
   "name": "Toki Pona"
   "script": "latin"
+  "scripts": ["latin", "sitelen_pona"]
   "icon": "Tp"
 "license": "CC-BY-SA-4.0"
 "theme": "health"
@@ -16,6 +17,8 @@
 "cards":
 - "id": "tok-0574"
   "target": "misikeke"
+  "target_scripts":
+    "sitelen_pona": "󱦇"
   "ipa": "ˈmisikeke"
   "pos": "noun"
   "bases": "self"
@@ -26,6 +29,8 @@
     "kind": "behaviour"
   "examples":
   - "target": "misikeke ni li pona."
+    "target_scripts":
+      "sitelen_pona": "󱦇 󱥁 󱤧 󱥔."
     "ipa": "ˈmisikeke ni li ˈpona"
     "bases":
     - "word": "misikeke"
@@ -37,6 +42,8 @@
     - "word": "pona"
       "ref": "tok-0002"
   - "target": "mi moku e misikeke."
+    "target_scripts":
+      "sitelen_pona": "󱤴 󱤶 󱤉 󱦇."
     "ipa": "mi ˈmoku e ˈmisikeke"
     "bases":
     - "word": "mi"
@@ -49,6 +56,8 @@
       "base": "misikeke"
 - "id": "tok-0575"
   "target": "oko"
+  "target_scripts":
+    "sitelen_pona": "󱥺"
   "ipa": "ˈoko"
   "pos": "noun"
   "bases": "self"
@@ -59,6 +68,8 @@
     "kind": "note"
   "examples":
   - "target": "oko ona li pakala ala."
+    "target_scripts":
+      "sitelen_pona": "󱥺 󱥆 󱤧 󱥈 󱤂."
     "ipa": "ˈoko ˈona li ˈpakala ˈala"
     "bases":
     - "word": "oko"
@@ -72,6 +83,8 @@
     - "word": "ala"
       "ref": "tok-0005"
   - "target": "mi lukin kepeken oko."
+    "target_scripts":
+      "sitelen_pona": "󱤴 󱤮 󱤙 󱥺."
     "ipa": "mi ˈlukin ˈkepeken ˈoko"
     "bases":
     - "word": "mi"

@@ -1,0 +1,922 @@
+schema: 1
+id: "awa-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "awa", iso639_3: "awa", name: "Awadhi", script: "devanagari", tts: "hi-IN", icon: "अव" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "awa-0101"
+    target: "हाँ"
+    reading: "hām̐"
+    ipa: "ɦaːĩ"
+    pos: "other"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "हाँ, यह पानी आय।"
+        reading: "hām̐, yah pānī āy."
+        ipa: "ɦaːĩ jəɦ paːniː aːj"
+        bases:
+          - { word: "यह", base: "यह", reading: "yah" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+          - { word: "आय", base: "आय", reading: "āy" }
+  - id: "awa-0102"
+    target: "नाहीं"
+    reading: "nāhīṁ"
+    ipa: "naːɦĩ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "नाहीं, हम आवत नाहीं।"
+        reading: "nāhīṁ, ham āvat nāhīṁ."
+        ipa: "naːɦĩ ɦəm aːʋət naːɦĩ"
+        bases:
+          - { word: "हम", base: "हम", reading: "ham" }
+          - { word: "आवत", base: "आवब", reading: "āvat" }
+  - id: "awa-0103"
+    target: "हम"
+    reading: "ham"
+    ipa: "ɦəm"
+    pos: "pronoun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "हम डाक्टर आही।"
+        reading: "ham ḍākṭar āhī."
+        ipa: "ɦəm ɖaːkʈər aːɦiː"
+        bases:
+          - { word: "हम", base: "हम", reading: "ham" }
+          - { word: "डाक्टर", base: "डाक्टर", reading: "ḍākṭar" }
+          - { word: "आही", base: "आय", reading: "āhī" }
+      - target: "हम ठीक हन।"
+        reading: "ham ṭhīk han."
+        ipa: "ɦəm ʈʰiːk ɦən"
+        bases:
+          - { word: "हम", base: "हम", reading: "ham" }
+          - { word: "ठीक", base: "ठीक", reading: "ṭhīk" }
+          - { word: "हन", base: "आय", reading: "han" }
+  - id: "awa-0104"
+    target: "तुइ"
+    reading: "tui"
+    ipa: "tui"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "तुइ कहाँ आय?"
+        reading: "tui kahām̐ āy?"
+        ipa: "tui kəɦaːĩ aːj"
+        bases:
+          - { word: "तुइ", base: "तुइ", reading: "tui" }
+          - { word: "कहाँ", base: "कहाँ", reading: "kahām̐" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "तुइ बढ़िया आय।"
+        reading: "tui baṛhiyā āy."
+        ipa: "tui bəɽʱijaː aːj"
+        bases:
+          - { word: "तुइ", base: "तुइ", reading: "tui" }
+          - { word: "बढ़िया", base: "बढ़िया", reading: "baṛhiyā" }
+          - { word: "आय", base: "आय", reading: "āy" }
+  - id: "awa-0105"
+    target: "वह"
+    reading: "vah"
+    ipa: "ʋəɦ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वह घर मा आय।"
+        reading: "vah ghar mā āy."
+        ipa: "ʋəɦ ɡʱər maː aːj"
+        bases:
+          - { word: "वह", base: "वह", reading: "vah" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "मा", base: "मा", reading: "mā" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "वह डाक्टर आय।"
+        reading: "vah ḍākṭar āy."
+        ipa: "ʋəɦ ɖaːkʈər aːj"
+        bases:
+          - { word: "वह", base: "वह", reading: "vah" }
+          - { word: "डाक्टर", base: "डाक्टर", reading: "ḍākṭar" }
+          - { word: "आय", base: "आय", reading: "āy" }
+  - id: "awa-0106"
+    target: "हम लोग"
+    reading: "ham log"
+    ipa: "ɦəm loɡ"
+    pos: "pronoun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "लोग", base: "लोग", reading: "log" }
+    examples:
+      - target: "हम लोग घर जाइत हन।"
+        reading: "ham log ghar jāit han."
+        ipa: "ɦəm loɡ ɡʱər dʒaːit ɦən"
+        bases:
+          - { word: "हम", base: "हम", reading: "ham" }
+          - { word: "लोग", base: "लोग", reading: "log" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "जाइत", base: "जाब", reading: "jāit" }
+          - { word: "हन", base: "हन", reading: "han" }
+      - target: "हम लोग अवधी आही।"
+        reading: "ham log avadhī āhī."
+        ipa: "ɦəm loɡ əʋədʱiː aːɦiː"
+        bases:
+          - { word: "हम", base: "हम", reading: "ham" }
+          - { word: "लोग", base: "लोग", reading: "log" }
+          - { word: "अवधी", base: "अवधी", reading: "avadhī" }
+          - { word: "आही", base: "आय", reading: "āhī" }
+  - id: "awa-0107"
+    target: "उइ"
+    reading: "ui"
+    ipa: "uii"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "उइ पढ़त हैं।"
+        reading: "ui paṛhat hain."
+        ipa: "uii pəɽʱət ɦɛ̃"
+        bases:
+          - { word: "उइ", base: "उइ", reading: "ui" }
+          - { word: "पढ़त", base: "पढ़ब", reading: "paṛhat" }
+          - { word: "हैं", base: "आय", reading: "hain" }
+      - target: "उइ नेपाली आहैं।"
+        reading: "ui nepālī āhain."
+        ipa: "uii nepaːli aːɦɛ̃"
+        bases:
+          - { word: "उइ", base: "उइ", reading: "ui" }
+          - { word: "नेपाली", base: "नेपाली", reading: "nepālī" }
+          - { word: "आहैं", base: "आय", reading: "āhain" }
+  - id: "awa-0108"
+    target: "एक"
+    reading: "ek"
+    ipa: "ek"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "एक गिलास पानी।"
+        reading: "ek gilās pānī."
+        ipa: "ek ɡilaːs paːni"
+        bases:
+          - { word: "एक", base: "एक", reading: "ek" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+      - target: "एक कप चाय।"
+        reading: "ek kap chāy."
+        ipa: "ek kəp t͡ʃaːj"
+        bases:
+          - { word: "एक", base: "एक", reading: "ek" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+  - id: "awa-0109"
+    target: "दुइ"
+    reading: "dui"
+    ipa: "dui"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "दुइ गिलास पानी।"
+        reading: "dui gilās pānī."
+        ipa: "dui ɡilaːs paːni"
+        bases:
+          - { word: "दुइ", base: "दुइ", reading: "dui" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+      - target: "दुइ कप चाय।"
+        reading: "dui kap chāy."
+        ipa: "dui kəp t͡ʃaːj"
+        bases:
+          - { word: "दुइ", base: "दुइ", reading: "dui" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+  - id: "awa-0110"
+    target: "तीन"
+    reading: "tīni"
+    ipa: "tiːni"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "तीन गिलास पानी।"
+        reading: "tīni gilās pānī."
+        ipa: "tiːni ɡilaːs paːni"
+        bases:
+          - { word: "तीन", base: "तीन", reading: "tīni" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+      - target: "तीन कप चाय।"
+        reading: "tīni kap chāy."
+        ipa: "tiːni kəp t͡ʃaːj"
+        bases:
+          - { word: "तीन", base: "तीन", reading: "tīni" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+  - id: "awa-0111"
+    target: "चार"
+    reading: "cāri"
+    ipa: "t͡ʃaːri"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "चार गिलास पानी।"
+        reading: "cāri gilās pānī."
+        ipa: "t͡ʃaːri ɡilaːs paːni"
+        bases:
+          - { word: "चार", base: "चार", reading: "cāri" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+      - target: "चार कप चाय।"
+        reading: "cāri kap chāy."
+        ipa: "t͡ʃaːri kəp t͡ʃaːj"
+        bases:
+          - { word: "चार", base: "चार", reading: "cāri" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+  - id: "awa-0112"
+    target: "पाँच"
+    reading: "pā̃c"
+    ipa: "paːɲt͡ʃ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "पाँच गिलास पानी।"
+        reading: "pā̃c gilās pānī."
+        ipa: "paːɲt͡ʃ ɡilaːs paːni"
+        bases:
+          - { word: "पाँच", base: "पाँच", reading: "pā̃c" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+      - target: "पाँच कप चाय।"
+        reading: "pā̃c kap chāy."
+        ipa: "paːɲt͡ʃ kəp t͡ʃaːj"
+        bases:
+          - { word: "पाँच", base: "पाँच", reading: "pā̃c" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+  - id: "awa-0113"
+    target: "छह"
+    reading: "chhah"
+    ipa: "t͡ʃʰəɦ"
+    pos: "other"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "छह गिलास पानी।"
+        reading: "chhah gilās pānī."
+        ipa: "t͡ʃʰəɦ ɡilaːs paːni"
+        bases:
+          - { word: "छह", base: "छह", reading: "chhah" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+      - target: "छह कप चाय।"
+        reading: "chhah kap chāy."
+        ipa: "t͡ʃʰəɦ kəp t͡ʃaːj"
+        bases:
+          - { word: "छह", base: "छह", reading: "chhah" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+  - id: "awa-0114"
+    target: "सात"
+    reading: "sāt"
+    ipa: "saːt"
+    pos: "other"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "सात गिलास पानी।"
+        reading: "sāt gilās pānī."
+        ipa: "saːt ɡilaːs paːni"
+        bases:
+          - { word: "सात", base: "सात", reading: "sāt" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+      - target: "सात कप चाय।"
+        reading: "sāt kap chāy."
+        ipa: "saːt kəp t͡ʃaːj"
+        bases:
+          - { word: "सात", base: "सात", reading: "sāt" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+  - id: "awa-0115"
+    target: "आठ"
+    reading: "āṭh"
+    ipa: "aːʈʰ"
+    pos: "other"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "आठ गिलास पानी।"
+        reading: "āṭh gilās pānī."
+        ipa: "aːʈʰ ɡilaːs paːni"
+        bases:
+          - { word: "आठ", base: "आठ", reading: "āṭh" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+      - target: "आठ कप चाय।"
+        reading: "āṭh kap chāy."
+        ipa: "aːʈʰ kəp t͡ʃaːj"
+        bases:
+          - { word: "आठ", base: "आठ", reading: "āṭh" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+  - id: "awa-0116"
+    target: "नौ"
+    reading: "nau"
+    ipa: "nau"
+    pos: "other"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "नौ गिलास पानी।"
+        reading: "nau gilās pānī."
+        ipa: "nau ɡilaːs paːni"
+        bases:
+          - { word: "नौ", base: "नौ", reading: "nau" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+      - target: "नौ कप चाय।"
+        reading: "nau kap chāy."
+        ipa: "nau kəp t͡ʃaːj"
+        bases:
+          - { word: "नौ", base: "नौ", reading: "nau" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+  - id: "awa-0117"
+    target: "दस"
+    reading: "das"
+    ipa: "dəs"
+    pos: "other"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "दस गिलास पानी।"
+        reading: "das gilās pānī."
+        ipa: "dəs ɡilaːs paːni"
+        bases:
+          - { word: "दस", base: "दस", reading: "das" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+      - target: "दस कप चाय।"
+        reading: "das kap chāy."
+        ipa: "dəs kəp t͡ʃaːj"
+        bases:
+          - { word: "दस", base: "दस", reading: "das" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+  - id: "awa-0118"
+    target: "माई"
+    reading: "māī"
+    ipa: "maːiː"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "हमार माई घर मा आय।"
+        reading: "hamār māī ghar mā āy."
+        ipa: "ɦəmaːr maːiː ɡʱər maː aːj"
+        bases:
+          - { word: "हमार", base: "हमार", reading: "hamār" }
+          - { word: "माई", base: "माई", reading: "māī" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "मा", base: "मा", reading: "mā" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "माई, पानी देव।"
+        reading: "māī, pānī deo."
+        ipa: "maːiː paːniː dəu"
+        bases:
+          - { word: "माई", base: "माई", reading: "māī" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+          - { word: "देव", base: "देब", reading: "deo" }
+  - id: "awa-0119"
+    target: "बाबू"
+    reading: "bābū"
+    ipa: "baːbuː"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "हमार बाबू मास्टर आहैं।"
+        reading: "hamār bābū māsṭar āhain."
+        ipa: "ɦəmaːr baːbuː maːsʈər aːɦɛ̃"
+        bases:
+          - { word: "हमार", base: "हमार", reading: "hamār" }
+          - { word: "बाबू", base: "बाबू", reading: "bābū" }
+          - { word: "मास्टर", base: "मास्टर", reading: "māsṭar" }
+          - { word: "आहैं", base: "आय", reading: "āhain" }
+      - target: "बाबू, पानी?"
+        reading: "bābū, pānī?"
+        ipa: "baːbuː paːniː"
+        bases:
+          - { word: "बाबू", base: "बाबू", reading: "bābū" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+  - id: "awa-0120"
+    target: "भाई"
+    reading: "bhāī"
+    ipa: "bʰaːiː"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "हमार भाई घर मा आय।"
+        reading: "hamār bhāī ghar mā āy."
+        ipa: "ɦəmaːr bʰaːiː ɡʱər maː aːj"
+        bases:
+          - { word: "हमार", base: "हमार", reading: "hamār" }
+          - { word: "भाई", base: "भाई", reading: "bhāī" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "मा", base: "मा", reading: "mā" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "भाई, आवा!"
+        reading: "bhāī, āvā!"
+        ipa: "bʰaːiː aːʋaː"
+        bases:
+          - { word: "भाई", base: "भाई", reading: "bhāī" }
+          - { word: "आवा", base: "आवब", reading: "āvā" }
+  - id: "awa-0121"
+    target: "बहिन"
+    reading: "bahin"
+    ipa: "bəɦin"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "हमार बहिन विद्यार्थी आय।"
+        reading: "hamār bahin vidyārthī āy."
+        ipa: "ɦəmaːr bəɦin ʋidjaːrtʰiː aːj"
+        bases:
+          - { word: "हमार", base: "हमार", reading: "hamār" }
+          - { word: "बहिन", base: "बहिन", reading: "bahin" }
+          - { word: "विद्यार्थी", base: "विद्यार्थी", reading: "vidyārthī" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "बहिन, खाना तैयार आय।"
+        reading: "bahin, khānā taiyār āy."
+        ipa: "bəɦin kʰaːnaː təijaːr aːj"
+        bases:
+          - { word: "बहिन", base: "बहिन", reading: "bahin" }
+          - { word: "खाना", base: "खाना", reading: "khānā" }
+          - { word: "तैयार", base: "तैयार", reading: "taiyār" }
+          - { word: "आय", base: "आय", reading: "āy" }
+  - id: "awa-0122"
+    target: "लरिका"
+    reading: "larikā"
+    ipa: "ləriːkaː"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "लरिका खेलत आय।"
+        reading: "larikā khelat āy."
+        ipa: "ləriːkaː kʰeləbt̪ aːj"
+        bases:
+          - { word: "लरिका", base: "लरिका", reading: "larikā" }
+          - { word: "खेलत", base: "खेलब", reading: "khelat" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "लरिका छोट आय।"
+        reading: "larikā chhoṭ āy."
+        ipa: "ləriːkaː t͡ʃʰoʈ aːj"
+        bases:
+          - { word: "लरिका", base: "लरिका", reading: "larikā" }
+          - { word: "छोट", base: "छोट", reading: "chhoṭ" }
+          - { word: "आय", base: "आय", reading: "āy" }
+  - id: "awa-0123"
+    target: "आदमी"
+    reading: "ādmī"
+    ipa: "aːdmiː"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वह आदमी नीक आय।"
+        reading: "vah ādmī nīk āy."
+        ipa: "ʋəɦ aːdmiː niːk aːj"
+        bases:
+          - { word: "वह", base: "वह", reading: "vah" }
+          - { word: "आदमी", base: "आदमी", reading: "ādmī" }
+          - { word: "नीक", base: "नीक", reading: "nīk" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "आदमी घर मा आय।"
+        reading: "ādmī ghar mā āy."
+        ipa: "aːdmiː ɡʱər maː aːj"
+        bases:
+          - { word: "आदमी", base: "आदमी", reading: "ādmī" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "मा", base: "मा", reading: "mā" }
+          - { word: "आय", base: "आय", reading: "āy" }
+  - id: "awa-0124"
+    target: "औरत"
+    reading: "aurat"
+    ipa: "əurət"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वह औरत डाक्टर आय।"
+        reading: "vah aurat ḍākṭar āy."
+        ipa: "ʋəɦ əurət ɖaːkʈər aːj"
+        bases:
+          - { word: "वह", base: "वह", reading: "vah" }
+          - { word: "औरत", base: "औरत", reading: "aurat" }
+          - { word: "डाक्टर", base: "डाक्टर", reading: "ḍākṭar" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "औरत, पानी देव।"
+        reading: "aurat, pānī deo."
+        ipa: "əurət paːniː dəu"
+        bases:
+          - { word: "औरत", base: "औरत", reading: "aurat" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+          - { word: "देव", base: "देब", reading: "deo" }
+  - id: "awa-0125"
+    target: "पानी"
+    reading: "pānī"
+    ipa: "paːniː"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "हमका पानी चाही।"
+        reading: "hamkā pānī chāhī."
+        ipa: "ɦəmkaː paːniː t͡ʃaːɦiː"
+        bases:
+          - { word: "हमका", base: "हम", reading: "hamkā" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+          - { word: "चाही", base: "चाहब", reading: "chāhī" }
+      - target: "पानी ठंडा आय।"
+        reading: "pānī ṭhaṇḍā āy."
+        ipa: "paːniː ʈʰənɖaː aːj"
+        bases:
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+          - { word: "ठंडा", base: "ठंडा", reading: "ṭhaṇḍā" }
+          - { word: "आय", base: "आय", reading: "āy" }
+  - id: "awa-0126"
+    target: "खाना"
+    reading: "khānā"
+    ipa: "kʰaːnaː"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "खाना तैयार आय।"
+        reading: "khānā taiyār āy."
+        ipa: "kʰaːnaː təijaːr aːj"
+        bases:
+          - { word: "खाना", base: "खाना", reading: "khānā" }
+          - { word: "तैयार", base: "तैयार", reading: "taiyār" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "हम खाना खाब।"
+        reading: "ham khānā khāb."
+        ipa: "ɦəm kʰaːnaː kʰaːb"
+        bases:
+          - { word: "हम", base: "हम", reading: "ham" }
+          - { word: "खाना", base: "खाना", reading: "khānā" }
+          - { word: "खाब", base: "खाब", reading: "khāb" }
+  - id: "awa-0127"
+    target: "चाय"
+    reading: "chāy"
+    ipa: "t͡ʃaːj"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "चाय गरम आय।"
+        reading: "chāy garam āy."
+        ipa: "t͡ʃaːj ɡərəm aːj"
+        bases:
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+          - { word: "गरम", base: "गरम", reading: "garam" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "हमका चाय नीक लागत।"
+        reading: "hamkā chāy nīk lāgat."
+        ipa: "ɦəmkaː t͡ʃaːj niːk laːɡət"
+        bases:
+          - { word: "हमका", base: "हम", reading: "hamkā" }
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+          - { word: "नीक", base: "नीक", reading: "nīk" }
+          - { word: "लागत", base: "लागब", reading: "lāgat" }
+  - id: "awa-0128"
+    target: "घर"
+    reading: "ghar"
+    ipa: "ɡʱər"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "हमार घर बड़ आय।"
+        reading: "hamār ghar baṛ āy."
+        ipa: "ɦəmaːr ɡʱər bəɽ aːj"
+        bases:
+          - { word: "हमार", base: "हमार", reading: "hamār" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "बड़", base: "बड़", reading: "baṛ" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "घर कहाँ आय?"
+        reading: "ghar kahām̐ āy?"
+        ipa: "ɡʱər kəɦaːĩ aːj"
+        bases:
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "कहाँ", base: "कहाँ", reading: "kahām̐" }
+          - { word: "आय", base: "आय", reading: "āy" }
+  - id: "awa-0129"
+    target: "नाव"
+    reading: "nāv"
+    ipa: "naːʋ"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "आपके नाव का आय?"
+        reading: "āpke nāv kā āy?"
+        ipa: "aːpke naːʋ kaː aːj"
+        bases:
+          - { word: "आपके", base: "आप", reading: "āpke" }
+          - { word: "नाव", base: "नाव", reading: "nāv" }
+          - { word: "का", base: "का", reading: "kā" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "नाव नीक आय।"
+        reading: "nāv nīk āy."
+        ipa: "naːʋ niːk aːj"
+        bases:
+          - { word: "नाव", base: "नाव", reading: "nāv" }
+          - { word: "नीक", base: "नीक", reading: "nīk" }
+          - { word: "आय", base: "आय", reading: "āy" }
+  - id: "awa-0130"
+    target: "नीक"
+    reading: "nīk"
+    ipa: "niːk"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यह नीक आय।"
+        reading: "yah nīk āy."
+        ipa: "jəɦ niːk aːj"
+        bases:
+          - { word: "यह", base: "यह", reading: "yah" }
+          - { word: "नीक", base: "नीक", reading: "nīk" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "आज मौसम नीक आय।"
+        reading: "āj mausam nīk āy."
+        ipa: "aːdʒ məusəm niːk aːj"
+        bases:
+          - { word: "आज", base: "आज", reading: "āj" }
+          - { word: "मौसम", base: "मौसम", reading: "mausam" }
+          - { word: "नीक", base: "नीक", reading: "nīk" }
+          - { word: "आय", base: "आय", reading: "āy" }
+  - id: "awa-0131"
+    target: "बड़ा"
+    reading: "baṛā"
+    ipa: "bəɽaː"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "घर बड़ा आय।"
+        reading: "ghar baṛā āy."
+        ipa: "ɡʱər bəɽaː aːj"
+        bases:
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "बड़ा", base: "बड़ा", reading: "baṛā" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "बड़ा कुकुर।"
+        reading: "baṛā kukur."
+        ipa: "bəɽaː kukur"
+        bases:
+          - { word: "बड़ा", base: "बड़ा", reading: "baṛā" }
+          - { word: "कुकुर", base: "कुकुर", reading: "kukur" }
+  - id: "awa-0132"
+    target: "छोट"
+    reading: "chhoṭ"
+    ipa: "t͡ʃʰoʈ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "लरिका छोट आय।"
+        reading: "larikā chhoṭ āy."
+        ipa: "ləriːkaː t͡ʃʰoʈ aːj"
+        bases:
+          - { word: "लरिका", base: "लरिका", reading: "larikā" }
+          - { word: "छोट", base: "छोट", reading: "chhoṭ" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "छोट घर।"
+        reading: "chhoṭ ghar."
+        ipa: "t͡ʃʰoʈ ɡʱər"
+        bases:
+          - { word: "छोट", base: "छोट", reading: "chhoṭ" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+  - id: "awa-0133"
+    target: "हिआँ"
+    reading: "hiā̃"
+    ipa: "ɦiaː"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "हम हिआँ आही।"
+        reading: "ham hiā̃ āhī."
+        ipa: "ɦəm ɦiaː aːɦiː"
+        bases:
+          - { word: "हम", base: "हम", reading: "ham" }
+          - { word: "हिआँ", base: "हिआँ", reading: "hiā̃" }
+          - { word: "आही", base: "आय", reading: "āhī" }
+      - target: "हिआँ आवा।"
+        reading: "hiā̃ āvā."
+        ipa: "ɦiaː aːʋaː"
+        bases:
+          - { word: "हिआँ", base: "हिआँ", reading: "hiā̃" }
+          - { word: "आवा", base: "आवब", reading: "āvā" }
+  - id: "awa-0134"
+    target: "हुआँ"
+    reading: "huā̃"
+    ipa: "ɦuaː"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "हुआँ पानी आय।"
+        reading: "huā̃ pānī āy."
+        ipa: "ɦuaː paːniː aːj"
+        bases:
+          - { word: "हुआँ", base: "हुआँ", reading: "huā̃" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "हुआँ जावा।"
+        reading: "huā̃ jāvā."
+        ipa: "ɦuaː dʒaːʋaː"
+        bases:
+          - { word: "हुआँ", base: "हुआँ", reading: "huā̃" }
+          - { word: "जावा", base: "जावब", reading: "jāvā" }
+  - id: "awa-0135"
+    target: "का"
+    reading: "kā"
+    ipa: "kaː"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यह का आय?"
+        reading: "yah kā āy?"
+        ipa: "jəɦ kaː aːj"
+        bases:
+          - { word: "यह", base: "यह", reading: "yah" }
+          - { word: "का", base: "का", reading: "kā" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "तुइ का खाब?"
+        reading: "tui kā khāb?"
+        ipa: "tui kaː kʰaːb"
+        bases:
+          - { word: "तुइ", base: "तुइ", reading: "tui" }
+          - { word: "का", base: "का", reading: "kā" }
+          - { word: "खाब", base: "खाब", reading: "khāb" }
+  - id: "awa-0136"
+    target: "को"
+    reading: "ko"
+    ipa: "ko"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यह को आय?"
+        reading: "yah ko āy?"
+        ipa: "jəɦ ko aːj"
+        bases:
+          - { word: "यह", base: "यह", reading: "yah" }
+          - { word: "को", base: "को", reading: "ko" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "को आवत आय?"
+        reading: "ko āvat āy?"
+        ipa: "ko aːʋət aːj"
+        bases:
+          - { word: "को", base: "को", reading: "ko" }
+          - { word: "आवत", base: "आवब", reading: "āvat" }
+          - { word: "आय", base: "आय", reading: "āy" }
+  - id: "awa-0137"
+    target: "कहाँ"
+    reading: "kahām̐"
+    ipa: "kəɦaːĩ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "तुइ कहाँ आय?"
+        reading: "tui kahām̐ āy?"
+        ipa: "tui kəɦaːĩ aːj"
+        bases:
+          - { word: "तुइ", base: "तुइ", reading: "tui" }
+          - { word: "कहाँ", base: "कहाँ", reading: "kahām̐" }
+          - { word: "आय", base: "आय", reading: "āy" }
+      - target: "घर कहाँ आय?"
+        reading: "ghar kahām̐ āy?"
+        ipa: "ɡʱər kəɦaːĩ aːj"
+        bases:
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "कहाँ", base: "कहाँ", reading: "kahām̐" }
+          - { word: "आय", base: "आय", reading: "āy" }
+  - id: "awa-0138"
+    target: "अउ"
+    reading: "au"
+    ipa: "əu"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "चाय अउ पानी।"
+        reading: "chāy au pānī."
+        ipa: "t͡ʃaːj əu paːniː"
+        bases:
+          - { word: "चाय", base: "चाय", reading: "chāy" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+      - target: "हम अउ तुइ।"
+        reading: "ham au tui."
+        ipa: "ɦəm əu tui"
+        bases:
+          - { word: "हम", base: "हम", reading: "ham" }
+          - { word: "तुइ", base: "तुइ", reading: "tui" }
+  - id: "awa-0139"
+    target: "आज"
+    reading: "āj"
+    ipa: "aːdʒ"
+    pos: "adv"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "आज घाम निकरा।"
+        reading: "āj ghām nikarā."
+        ipa: "aːdʒ ɡʱaːm nikəraː"
+        bases:
+          - { word: "आज", base: "आज", reading: "āj" }
+          - { word: "घाम", base: "घाम", reading: "ghām" }
+          - { word: "निकरा", base: "निकरा", reading: "nikarā" }
+      - target: "आज पानी बरसी।"
+        reading: "āj pānī barasī."
+        ipa: "aːdʒ paːniː bərəsiː"
+
+        bases:
+          - { word: "आज", base: "आज", reading: "āj" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+          - { word: "बरसी", base: "बरसब", reading: "barasī" }

@@ -1,0 +1,190 @@
+schema: 1
+id: "sa-en-first-words"
+kind: "layer"
+core: "sa-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with, from the first pronouns and nouns of Classical Sanskrit: I and you, water, fire, god, not, one, cow, horse and the Sanskrit language. Readings are based on IAST, the scheme the Sanskrit texts use, and the pronunciation is broad. Not yet checked by a Sanskritist: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-0021":
+    native: "I."
+    notes:
+      "n1": "The final m becomes ṃ before a consonant, as in ahaṃ gacchāmi, I go, while the word stands alone as aham."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign."
+    examples:
+      "अहं गच्छामि":
+        native: "I go."
+        bases:
+          "अहं": "I"
+          "गच्छामि": "to go (I go)"
+      "अहं पश्यामि":
+        native: "I see."
+        bases:
+          "अहं": "I"
+          "पश्यामि": "to see (I see)"
+  "sa-0022":
+    native: "You (to one person)."
+    notes:
+      "n1": "Tvam is you to one person; the plural you is yūyam, which is not in this deck."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign."
+    examples:
+      "त्वं जानासि":
+        native: "You know."
+        bases:
+          "त्वं": "you"
+          "जानासि": "to know (you know)"
+      "त्वं देवो ऽसि":
+        native: "You are a god."
+        bases:
+          "देवो": "god"
+          "त्वं": "you"
+          "ऽसि": "to be (you are)"
+  "sa-0023":
+    native: "Water."
+    notes:
+      "n1": "A neuter noun from the stem jala; the object form jalaṃ is used in jalaṃ pibāmi, I drink water."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign. Before a vowel the final म् (m) stays and is not joined to the next word: written apart, sandhi not applied (Whitney 213 a)."
+    bases:
+      "जलम्": "water"
+    examples:
+      "जलं पिबामि":
+        native: "I drink water."
+        bases:
+          "जलं": "water"
+          "पिबामि": "to drink (I drink)"
+      "जलम् अस्ति":
+        native: "There is water."
+        bases:
+          "जलम्": "water"
+          "अस्ति": "to be (is)"
+  "sa-0024":
+    native: "Fire."
+    notes:
+      "n1": "The nominative ends in visarga (ḥ), and the accusative is agniṃ, as in agniṃ paśya, look at the fire."
+      "n2": "A final visarga after a vowel other than अ (a) or आ (ā) becomes र् (r) before a voiced consonant or a vowel (Whitney 174)."
+    bases:
+      "अग्निः": "fire"
+    examples:
+      "अग्निर् ज्वलति":
+        native: "Fire burns."
+        bases:
+          "अग्निर्": "fire"
+          "ज्वलति": "to burn (it burns)"
+      "अग्निं पश्य":
+        native: "Look at the fire."
+        bases:
+          "अग्निं": "fire"
+          "पश्य": "to see (look!)"
+  "sa-0025":
+    native: "God."
+    notes:
+      "n1": "The nominative is devaḥ, and the plural devāḥ means gods, as in devāḥ santi, there are gods."
+      "n2": "A final अः (aḥ) before अ (a) becomes ओ (o) and the अ (a) is shown by the sign ऽ (avagraha) (Whitney 175 a)."
+    bases:
+      "देवः": "god"
+    examples:
+      "देवो ऽस्ति":
+        native: "There is a god."
+        bases:
+          "देवो": "god"
+          "ऽस्ति": "to be (is)"
+      "देवाः सन्ति":
+        native: "There are gods."
+        bases:
+          "देवाः": "gods"
+          "सन्ति": "to be (they are)"
+  "sa-0026":
+    native: "Not."
+    notes:
+      "n1": "It negates the verb it stands before, as in ahaṃ na jānāmi, I do not know."
+    examples:
+      "अहं न जानामि":
+        native: "I do not know."
+        bases:
+          "अहं": "I"
+          "न": "not"
+          "जानामि": "to know (I know)"
+      "त्वं न गच्छसि":
+        native: "You do not go."
+        bases:
+          "त्वं": "you"
+          "न": "not"
+          "गच्छसि": "to go (you go)"
+  "sa-0027":
+    native: "One."
+    notes:
+      "n1": "It agrees with its noun in gender and case, as in ekaḥ aśvaḥ, one horse."
+      "n2": "A final अः (aḥ) before a voiced consonant becomes ओ (o) (Whitney 175 a; Aṣṭādhyāyī 6.1.113, अतो रोरप्लुतादप्लुते (ato roraplutādaplute), and 6.1.114, हशि च (haśi ca)). A final अः (aḥ) before अ (a) becomes ओ (o) and the अ (a) is shown by the sign ऽ (avagraha) (Whitney 175 a)."
+    bases:
+      "एकः": "one"
+    examples:
+      "एको ऽश्वः":
+        native: "One horse."
+        bases:
+          "ऽश्वः": "horse"
+          "एको": "one"
+      "एको देवः":
+        native: "One god."
+        bases:
+          "एको": "one"
+  "sa-0028":
+    native: "Cow."
+    notes:
+      "n1": "Its stem is go, and the accusative gām is used in ahaṃ gām paśyāmi, I see the cow."
+      "n2": "A final visarga after a vowel other than अ (a) or आ (ā) becomes र् (r) before a voiced consonant or a vowel (Whitney 174)."
+    bases:
+      "गौः": "cow"
+    examples:
+      "गौर् जलं पिबति":
+        native: "The cow drinks water."
+        bases:
+          "जलं": "water"
+          "गौर्": "cow"
+          "पिबति": "to drink (it drinks)"
+      "अहं गां पश्यामि":
+        native: "I see the cow."
+        bases:
+          "अहं": "I"
+          "गां": "cow"
+          "पश्यामि": "to see (I see)"
+  "sa-0029":
+    native: "Horse."
+    notes:
+      "n1": "Its accusative is aśvam, as in aham aśvam paśyāmi, I see the horse."
+      "n2": "A final अः (aḥ) before a voiced consonant becomes ओ (o) (Whitney 175 a; Aṣṭādhyāyī 6.1.113, अतो रोरप्लुतादप्लुते (ato roraplutādaplute), and 6.1.114, हशि च (haśi ca))."
+      "n3": "Before a consonant the final म् (m) is written ं (ṃ), as in अश्वं (aśvaṃ) from अश्वम् (aśvam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+      "n4": "Before a vowel the final म् (m) does not change; the course writes the two words apart, म् (m) and a space, as in अहम् (aham) (Whitney 213 a). Where a word-final vowel sandhi is shown, the same lesson writes the joined sound with the semivowel or the long vowel and leaves the space."
+    bases:
+      "अश्वः": "horse"
+    examples:
+      "अश्वो धावति":
+        native: "The horse runs."
+        bases:
+          "अश्वो": "horse"
+          "धावति": "to run (it runs)"
+      "अहम् अश्वं पश्यामि":
+        native: "I see the horse."
+        bases:
+          "अश्वं": "horse"
+          "पश्यामि": "to see (I see)"
+  "sa-0030":
+    native: "The Sanskrit language."
+    notes:
+      "n1": "The name of the language is saṃskṛta, refined or perfected, and the neuter saṃskṛtam is used in saṃskṛtaṃ jānāmi, I know Sanskrit."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign. Before a vowel the final म् (m) stays and is not joined to the next word: written apart, sandhi not applied (Whitney 213 a)."
+    bases:
+      "संस्कृतम्": "Sanskrit"
+    examples:
+      "अहं संस्कृतं जानामि":
+        native: "I know Sanskrit."
+        bases:
+          "अहं": "I"
+          "संस्कृतं": "Sanskrit"
+          "जानामि": "to know (I know)"
+      "संस्कृतम् अस्ति":
+        native: "Sanskrit exists."
+        bases:
+          "संस्कृतम्": "Sanskrit"
+          "अस्ति": "to be (is)"

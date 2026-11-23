@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-journey-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3800"
+    target: "यात्री वर्त्म शनैर् गच्छति."
+    reading: "yātrī vartma śanair gacchati."
+    ipa: "jaːt̪riː ʋərt̪mə ʃənəir ɡətʃtʃʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "यात्री", ref: "sa-5502" }, { word: "वर्त्म", ref: "sa-5528" }, { word: "शनैर्", base: "शनैः", reading: "śanaiḥ" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-5554", kind: "word" }, { id: "w2", ref: "sa-2011", kind: "word" }, { id: "w3", ref: "sa-5530", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3801"
+    target: "क्लान्तः पथिको वृक्षस्य छायां लभते."
+    reading: "klāntaḥ pathiko vṛkṣasya chāyāṃ labhate."
+    ipa: "klaːnt̪əh pət̪ʰikoː ʋr̩kʂəsjə tʃʰaːjaːm ləbʱət̪eː"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "क्लान्तः", ref: "sa-5536" }, { word: "पथिको", base: "पथिकः", reading: "pathikaḥ" }, { word: "वृक्षस्य", base: "वृक्षः", reading: "vṛkṣaḥ" }, { word: "छायां", base: "छाया", reading: "chāyā" }, { word: "लभते", base: "लभ्", reading: "labh" }]
+    confusables: [{ id: "w1", ref: "sa-5104", kind: "word" }, { id: "w2", ref: "sa-5511", kind: "word" }, { id: "w3", ref: "sa-5535", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3802"
+    target: "शीघ्रं रथम् अश्वा वहन्ति."
+    reading: "śīghraṃ ratham aśvā vahanti."
+    ipa: "ʃiːɡʱrəm rət̪ʰəm əʃʋaː ʋəɦənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "शीघ्रं", base: "शीघ्रम्", reading: "śīghram" }, { word: "रथम्", base: "रथः", reading: "rathaḥ" }, { word: "अश्वा", base: "अश्वः", reading: "aśvaḥ" }, { word: "वहन्ति", base: "वह्", reading: "vah" }]
+    confusables: [{ id: "w1", ref: "sa-5504", kind: "word" }, { id: "w2", ref: "sa-2016", kind: "word" }, { id: "w3", ref: "sa-1740", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3803"
+    target: "रथस्य चक्रम् अक्षे वर्तते."
+    reading: "rathasya cakram akṣe vartate."
+    ipa: "rət̪ʰəsjə tʃəkrəm əkʂeː ʋərt̪ət̪eː"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "रथस्य", base: "रथः", reading: "rathaḥ" }, { word: "चक्रम्", ref: "sa-1805" }, { word: "अक्षे", base: "अक्षः", reading: "akṣaḥ" }, { word: "वर्तते", base: "वृत्", reading: "vṛt" }]
+    confusables: [{ id: "w1", ref: "sa-5532", kind: "word" }, { id: "w2", ref: "sa-5513", kind: "word" }, { id: "w3", ref: "sa-2011", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "sa-3804"
+    target: "योजनं क्रोशाद् दीर्घं भवति."
+    reading: "yojanaṃ krośād dīrghaṃ bhavati."
+    ipa: "joːdʒənəm kroːʃaːd̪ d̪iːrɡʱəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "योजनं", base: "योजनम्", reading: "yojanam" }, { word: "क्रोशाद्", base: "क्रोशः", reading: "krośaḥ" }, { word: "दीर्घं", base: "दीर्घः", reading: "dīrghaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-1525", kind: "word" }, { id: "w2", ref: "sa-1523", kind: "word" }, { id: "w3", ref: "sa-1527", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3805"
+    target: "अतिथिर् गृहे सत्कारं लभते."
+    reading: "atithir gṛhe satkāraṃ labhate."
+    ipa: "ət̪it̪ʰir ɡr̩ɦeː sət̪kaːrəm ləbʱət̪eː"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अतिथिर्", base: "अतिथिः", reading: "atithiḥ" }, { word: "गृहे", base: "गृहम्", reading: "gṛham" }, { word: "सत्कारं", base: "सत्कारः", reading: "satkāraḥ" }, { word: "लभते", base: "लभ्", reading: "labh" }]
+    confusables: [{ id: "w1", ref: "sa-5501", kind: "word" }, { id: "w2", ref: "sa-1748", kind: "word" }, { id: "w3", ref: "sa-2121", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3806"
+    target: "कर्णधारः पोतं सागरे नयति."
+    reading: "karṇadhāraḥ potaṃ sāgare nayati."
+    ipa: "kərɳəd̪ʱaːrəh poːt̪əm saːɡəreː nəjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कर्णधारः", ref: "sa-5523" }, { word: "पोतं", base: "पोतः", reading: "potaḥ" }, { word: "सागरे", base: "सागरः", reading: "sāgaraḥ" }, { word: "नयति", base: "नी", reading: "nī" }]
+    confusables: [{ id: "w1", ref: "sa-5506", kind: "word" }, { id: "w2", ref: "sa-1765", kind: "word" }, { id: "w3", ref: "sa-5546", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3807"
+    target: "ऋजुः पन्था गमने सुगमो भवति."
+    reading: "ṛjuḥ panthā gamane sugamo bhavati."
+    ipa: "r̩dʒuh pənt̪ʰaː ɡəməneː suɡəmoː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "ऋजुः", ref: "sa-5550" }, { word: "पन्था", base: "पन्थाः", reading: "panthāḥ" }, { word: "गमने", base: "गमनम्", reading: "gamanam" }, { word: "सुगमो", base: "सुगमः", reading: "sugamaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5551", kind: "word" }, { id: "w2", ref: "sa-5517", kind: "word" }, { id: "w3", ref: "sa-1535", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3808"
+    target: "प्रपायां पथिकाय पानीयं भवति."
+    reading: "prapāyāṃ pathikāya pānīyaṃ bhavati."
+    ipa: "prəpaːjaːm pət̪ʰikaːjə paːniːjəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "प्रपायां", base: "प्रपा", reading: "prapā" }, { word: "पथिकाय", base: "पथिकः", reading: "pathikaḥ" }, { word: "पानीयं", base: "पानीयम्", reading: "pānīyam" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5522", kind: "word" }, { id: "w2", ref: "sa-5527", kind: "word" }, { id: "w3", ref: "sa-5512", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3809"
+    target: "सहायः पथिकस्य यात्रां सुगमां करोति."
+    reading: "sahāyaḥ pathikasya yātrāṃ sugamāṃ karoti."
+    ipa: "səɦaːjəh pət̪ʰikəsjə jaːt̪raːm suɡəmaːm kəroːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सहायः", ref: "sa-5524" }, { word: "पथिकस्य", base: "पथिकः", reading: "pathikaḥ" }, { word: "यात्रां", base: "यात्रा", reading: "yātrā" }, { word: "सुगमां", base: "सुगमः", reading: "sugamaḥ" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+    confusables: [{ id: "w1", ref: "sa-5502", kind: "word" }, { id: "w2", ref: "sa-5525", kind: "word" }, { id: "w3", ref: "sa-1535", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]

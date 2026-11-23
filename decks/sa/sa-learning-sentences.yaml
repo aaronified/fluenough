@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-learning-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3270"
+    target: "अध्यापकः कथां कथयति पुत्री च शृणोति."
+    reading: "adhyāpakaḥ kathāṃ kathayati putrī ca śṛṇoti."
+    ipa: "əd̪ʱjaːpəkəh kət̪ʰaːm kət̪ʰəjət̪i put̪riː tʃə ʃr̩ɳoːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अध्यापकः", ref: "sa-1840" }, { word: "कथां", base: "कथा", reading: "kathā" }, { word: "कथयति", base: "कथ्", reading: "kath" }, { word: "पुत्री", ref: "sa-1034" }, { word: "च", ref: "sa-1104" }, { word: "शृणोति", base: "श्रु", reading: "śru" }]
+    confusables: [{ id: "w1", ref: "sa-2108", kind: "word" }, { id: "w2", ref: "sa-1845", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3271"
+    target: "अध्यापको वाक्यं वदति पुत्री च लिखति."
+    reading: "adhyāpako vākyaṃ vadati putrī ca likhati."
+    ipa: "əd̪ʱjaːpəkoː ʋaːkjəm ʋəd̪ət̪i put̪riː tʃə likʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अध्यापको", base: "अध्यापकः", reading: "adhyāpakaḥ" }, { word: "वाक्यं", base: "वाक्यम्", reading: "vākyam" }, { word: "वदति", base: "वद्", reading: "vad" }, { word: "पुत्री", ref: "sa-1034" }, { word: "च", ref: "sa-1104" }, { word: "लिखति", base: "लिख्", reading: "likh" }]
+    confusables: [{ id: "w1", ref: "sa-1844", kind: "word" }, { id: "w2", ref: "sa-2122", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3272"
+    target: "कः प्रश्नं करोति का च जानाति?"
+    reading: "kaḥ praśnaṃ karoti kā ca jānāti?"
+    ipa: "kəh prəʃnəm kəroːt̪i kaː tʃə dʒaːnaːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कः", ref: "sa-1001" }, { word: "प्रश्नं", base: "प्रश्नः", reading: "praśnaḥ" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "का", ref: "sa-1026" }, { word: "च", ref: "sa-1104" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+    confusables: [{ id: "w1", ref: "sa-1000", kind: "word" }, { id: "w2", ref: "sa-1011", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }, { id: "n4", kind: "usage" }]
+  - id: "sa-3273"
+    target: "अर्थं शब्दस्य को जानाति?"
+    reading: "arthaṃ śabdasya ko jānāti?"
+    ipa: "ərt̪ʰəm ʃəbd̪əsjə koː dʒaːnaːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अर्थं", base: "अर्थः", reading: "arthaḥ" }, { word: "शब्दस्य", base: "शब्दः", reading: "śabdaḥ" }, { word: "को", base: "कः", reading: "kaḥ" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+    confusables: [{ id: "w1", ref: "sa-1849", kind: "word" }, { id: "w2", ref: "sa-1000", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3274"
+    target: "वाक्ये पदानि भवन्ति पदे वर्णा भवन्ति."
+    reading: "vākye padāni bhavanti pade varṇā bhavanti."
+    ipa: "ʋaːkjeː pəd̪aːni bʱəʋənt̪i pəd̪eː ʋərɳaː bʱəʋənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वाक्ये", base: "वाक्यम्", reading: "vākyam" }, { word: "पदानि", base: "पदम्", reading: "padam" }, { word: "भवन्ति", base: "भू", reading: "bhū" }, { word: "पदे", base: "पदम्", reading: "padam" }, { word: "वर्णा", base: "वर्णः", reading: "varṇaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1843", kind: "word" }, { id: "w2", ref: "sa-1841", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3275"
+    target: "स्वरो वर्णो भवति पदं वाक्यं न भवति."
+    reading: "svaro varṇo bhavati padaṃ vākyaṃ na bhavati."
+    ipa: "sʋəroː ʋərɳoː bʱəʋət̪i pəd̪əm ʋaːkjəm nə bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "स्वरो", base: "स्वरः", reading: "svaraḥ" }, { word: "वर्णो", base: "वर्णः", reading: "varṇaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "पदं", base: "पदम्", reading: "padam" }, { word: "वाक्यं", base: "वाक्यम्", reading: "vākyam" }, { word: "न", ref: "sa-0026" }]
+    confusables: [{ id: "w1", ref: "sa-1855", kind: "word" }, { id: "w2", ref: "sa-1853", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3276"
+    target: "माता लिपिं पठति पिता च पदं लिखति."
+    reading: "mātā lipiṃ paṭhati pitā ca padaṃ likhati."
+    ipa: "maːt̪aː lipim pəʈʰət̪i pit̪aː tʃə pəd̪əm likʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "माता", ref: "sa-1030" }, { word: "लिपिं", base: "लिपिः", reading: "lipiḥ" }, { word: "पठति", base: "पठ्", reading: "paṭh" }, { word: "पिता", ref: "sa-1031" }, { word: "च", ref: "sa-1104" }, { word: "पदं", base: "पदम्", reading: "padam" }, { word: "लिखति", base: "लिख्", reading: "likh" }]
+    confusables: [{ id: "w1", ref: "sa-1842", kind: "word" }, { id: "w2", ref: "sa-1856", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3277"
+    target: "परीक्षा कठिना न भवति शिक्षा च सरला भवति."
+    reading: "parīkṣā kaṭhinā na bhavati śikṣā ca saralā bhavati."
+    ipa: "pəriːkʂaː kəʈʰinaː nə bʱəʋət̪i ʃikʂaː tʃə sərəlaː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "परीक्षा", ref: "sa-1852" }, { word: "कठिना", base: "कठिनः", reading: "kaṭhinaḥ" }, { word: "न", ref: "sa-0026" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "शिक्षा", ref: "sa-1839" }, { word: "च", ref: "sa-1104" }, { word: "सरला", base: "सरलः", reading: "saralaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1851", kind: "word" }, { id: "w2", ref: "sa-1840", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3278"
+    target: "को विषयः कठिनो भवति?"
+    reading: "ko viṣayaḥ kaṭhino bhavati?"
+    ipa: "koː ʋiʂəjəh kəʈʰinoː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "को", base: "कः", reading: "kaḥ" }, { word: "विषयः", ref: "sa-1854" }, { word: "कठिनो", base: "कठिनः", reading: "kaṭhinaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-1000", kind: "word" }, { id: "w2", ref: "sa-1536", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3279"
+    target: "वाचनेन पुत्री ज्ञानं लभते."
+    reading: "vācanena putrī jñānaṃ labhate."
+    ipa: "ʋaːtʃəneːnə put̪riː dʒɲaːnəm ləbʱət̪eː"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वाचनेन", base: "वाचनम्", reading: "vācanam" }, { word: "पुत्री", ref: "sa-1034" }, { word: "ज्ञानं", base: "ज्ञानम्", reading: "jñānam" }, { word: "लभते", base: "लभ्", reading: "labh" }]
+    confusables: [{ id: "w1", ref: "sa-1850", kind: "word" }, { id: "w2", ref: "sa-1846", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]

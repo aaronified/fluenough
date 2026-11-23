@@ -1,0 +1,358 @@
+# Marathi conjunct verbs, part 2: a noun and a light verb (karṇe, do; hoṇe, become; and other verbs) that make one verb phrase.
+schema: 1
+id: "mr-multiword-2"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+source: "en.wiktionary pages for each phrase, as named in wiki/Plan-Culture-Marathi-Addendum-3.md section B1 (rows 4 to 26)"
+genre: "multiword"
+pattern_family: "conjunct-verb"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "mr-4360"
+    target: "आंघोळ करणे"
+    words: ["आंघोळ", "करणे"]
+    reading: "āṅghoḷ karṇe"
+    ipa: "aŋɡʱoɭ kərɳe"
+    phonetic: "[aŋɡʱoɭ̆ kəɾɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "आंघोळ", base: "आंघोळ", reading: "āṅghoḷ" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4361"
+    target: "उपवास करणे"
+    words: ["उपवास", "करणे"]
+    reading: "upvās karṇe"
+    ipa: "upʋas kərɳe"
+    phonetic: "[upʋas kəɾɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "उपवास", base: "उपवास", reading: "upvās" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4362"
+    target: "उपास करणे"
+    words: ["उपास", "करणे"]
+    reading: "upās karṇe"
+    ipa: "upas kərɳe"
+    phonetic: "[upas kəɾɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "उपास", base: "उपास", reading: "upās" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4363"
+    target: "कल्पना करणे"
+    words: ["कल्पना", "करणे"]
+    reading: "kalpanā karṇe"
+    ipa: "kəlpəna kərɳe"
+    phonetic: "[kəlpəna kəɾɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "कल्पना", ref: "mr-1722" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4364"
+    target: "काळजी करणे"
+    words: ["काळजी", "करणे"]
+    reading: "kāḷji karṇe"
+    ipa: "kaɭdʒi kərɳe"
+    phonetic: "[kaɭ̆dʒi kəɾɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "काळजी", ref: "mr-1313" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4365"
+    target: "काळजी घेणे"
+    words: ["काळजी", "घेणे"]
+    reading: "kāḷji gheṇe"
+    ipa: "kaɭdʒi ɡʱeɳe"
+    phonetic: "[kaɭ̆dʒi ɡʱeɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "काळजी", ref: "mr-1313" }
+      - { word: "घेणे", ref: "mr-0722" }
+  - id: "mr-4366"
+    target: "कृत्य करणे"
+    words: ["कृत्य", "करणे"]
+    reading: "krutya karṇe"
+    ipa: "krut̪jə kərɳe"
+    phonetic: "[kɾut̪jə kəɾɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "कृत्य", base: "कृत्य", reading: "krutya" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4367"
+    target: "खेळ करणे"
+    words: ["खेळ", "करणे"]
+    reading: "kheḷ karṇe"
+    ipa: "kʰeɭ kərɳe"
+    phonetic: "[kʰeɭ̆ kəɾɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "खेळ", base: "खेळ", reading: "kheḷ" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4368"
+    target: "गोळा करणे"
+    words: ["गोळा", "करणे"]
+    reading: "goḷā karṇe"
+    ipa: "ɡoɭa kərɳe"
+    phonetic: "[ɡoɭ̆a kəɾɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "गोळा", base: "गोळा", reading: "goḷā" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4369"
+    target: "गोळा होणे"
+    words: ["गोळा", "होणे"]
+    reading: "goḷā hoṇe"
+    ipa: "ɡoɭa ɦoɳe"
+    phonetic: "[ɡoɭ̆a ɦoɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "गोळा", base: "गोळा", reading: "goḷā" }
+      - { word: "होणे", base: "होणे", reading: "hoṇe" }
+  - id: "mr-4370"
+    target: "गैरसमज होणे"
+    words: ["गैरसमज", "होणे"]
+    reading: "gairsmaj hoṇe"
+    ipa: "ɡəirsmədz ɦoɳe"
+    phonetic: "[ɡəiɾsmədz ɦoɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "गैरसमज", ref: "mr-1637" }
+      - { word: "होणे", base: "होणे", reading: "hoṇe" }
+  - id: "mr-4371"
+    target: "बाऊ करणे"
+    words: ["बाऊ", "करणे"]
+    reading: "bāu karṇe"
+    ipa: "bau kərɳe"
+    phonetic: "[bau kəɾɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "बाऊ", base: "बाऊ", reading: "bāu" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4372"
+    target: "कडी करणे"
+    words: ["कडी", "करणे"]
+    reading: "kaḍi karṇe"
+    ipa: "kəɖi kərɳe"
+    phonetic: "[kəɖi kəɾɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "कडी", base: "कडी", reading: "kaḍi" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4373"
+    target: "उडी मारणे"
+    words: ["उडी", "मारणे"]
+    reading: "uḍi mārṇe"
+    ipa: "uɖi marɳe"
+    phonetic: "[uɖi maɾɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "उडी", base: "उडी", reading: "uḍi" }
+      - { word: "मारणे", base: "मारणे", reading: "mārṇe" }
+  - id: "mr-4374"
+    target: "गोळी मारणे"
+    words: ["गोळी", "मारणे"]
+    reading: "goḷi mārṇe"
+    ipa: "ɡoɭi marɳe"
+    phonetic: "[ɡoɭ̆i maɾɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "गोळी", base: "गोळी", reading: "goḷi" }
+      - { word: "मारणे", base: "मारणे", reading: "mārṇe" }
+  - id: "mr-4375"
+    target: "टोमणा मारणे"
+    words: ["टोमणा", "मारणे"]
+    reading: "ṭomṇā mārṇe"
+    ipa: "ʈomɳa marɳe"
+    phonetic: "[ʈomɳa maɾɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "टोमणा", base: "टोमणा", reading: "ṭomṇā" }
+      - { word: "मारणे", base: "मारणे", reading: "mārṇe" }
+  - id: "mr-4376"
+    target: "थारा घेणे"
+    words: ["थारा", "घेणे"]
+    reading: "thārā gheṇe"
+    ipa: "t̪ʰara ɡʱeɳe"
+    phonetic: "[t̪ʰaɾa ɡʱeɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "थारा", base: "थारा", reading: "thārā" }
+      - { word: "घेणे", ref: "mr-0722" }
+  - id: "mr-4377"
+    target: "थारा देणे"
+    words: ["थारा", "देणे"]
+    reading: "thārā deṇe"
+    ipa: "t̪ʰara d̪eɳe"
+    phonetic: "[t̪ʰaɾa d̪eɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "थारा", base: "थारा", reading: "thārā" }
+      - { word: "देणे", ref: "mr-0721" }
+  - id: "mr-4378"
+    target: "हमी घेणे"
+    words: ["हमी", "घेणे"]
+    reading: "hami gheṇe"
+    ipa: "ɦəmi ɡʱeɳe"
+    phonetic: "[ɦəmi ɡʱeɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "हमी", base: "हमी", reading: "hami" }
+      - { word: "घेणे", ref: "mr-0722" }
+  - id: "mr-4379"
+    target: "हमी देणे"
+    words: ["हमी", "देणे"]
+    reading: "hami deṇe"
+    ipa: "ɦəmi d̪eɳe"
+    phonetic: "[ɦəmi d̪eɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "हमी", base: "हमी", reading: "hami" }
+      - { word: "देणे", ref: "mr-0721" }
+  - id: "mr-4380"
+    target: "श्वास घेणे"
+    words: ["श्वास", "घेणे"]
+    reading: "śvās gheṇe"
+    ipa: "ʃʋas ɡʱeɳe"
+    phonetic: "[ʃʋas ɡʱeɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "श्वास", base: "श्वास", reading: "śvās" }
+      - { word: "घेणे", ref: "mr-0722" }
+  - id: "mr-4381"
+    target: "श्वास लागणे"
+    words: ["श्वास", "लागणे"]
+    reading: "śvās lāgṇe"
+    ipa: "ʃʋas laɡɳe"
+    phonetic: "[ʃʋas laɡɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "श्वास", base: "श्वास", reading: "śvās" }
+      - { word: "लागणे", base: "लागणे", reading: "lāgṇe" }
+  - id: "mr-4382"
+    target: "आभाळ येणे"
+    words: ["आभाळ", "येणे"]
+    reading: "ābhāḷ yeṇe"
+    ipa: "abʱaɭ jeɳe"
+    phonetic: "[abʱaɭ̆ jeɳe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "आभाळ", base: "आभाळ", reading: "ābhāḷ" }
+      - { word: "येणे", ref: "mr-0711" }

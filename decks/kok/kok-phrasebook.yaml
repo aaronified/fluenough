@@ -1,0 +1,247 @@
+schema: 1
+id: "kok-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "kok", iso639_3: "kok", name: "Konkani", script: "devanagari", tts: "kok-IN", icon: "को" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kok-0001"
+    target: "नमस्कार"
+    reading: "namaskār"
+    ipa: "nəməskaːr"
+    pos: "other"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "नमस्कार", base: "नमस्कार", reading: "namaskār" }
+  - id: "kok-0002"
+    target: "सुप्रभात"
+    reading: "suprabhāt"
+    ipa: "suprəbʰaːt"
+    pos: "other"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "सुप्रभात", base: "सुप्रभात", reading: "suprabhāt" }
+  - id: "kok-0003"
+    target: "शुभ संध्या"
+    reading: "śubha sandhyā"
+    ipa: "ʃubʰə səndʱjaː"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "शुभ", base: "शुभ", reading: "śubha" }
+      - { word: "संध्या", base: "संध्या", reading: "sandhyā" }
+  - id: "kok-0004"
+    target: "शुभ रात्र"
+    reading: "śubha rātra"
+    ipa: "ʃubʰə raːtrə"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "शुभ", base: "शुभ", reading: "śubha" }
+      - { word: "रात्र", base: "रात्र", reading: "rātra" }
+  - id: "kok-0005"
+    target: "येतां"
+    reading: "yetā̃"
+    ipa: "jetaː"
+    pos: "other"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "येतां", base: "येतां", reading: "yetā̃" }
+  - id: "kok-0006"
+    target: "कृपया"
+    reading: "kṛpayā"
+    ipa: "krɪpəjaː"
+    pos: "other"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "कृपया", base: "कृपया", reading: "kṛpayā" }
+  - id: "kok-0007"
+    target: "धन्यवाद"
+    reading: "dhanyavād"
+    ipa: "d̪ʱənjəʋaːd̪"
+    pos: "other"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "धन्यवाद", base: "धन्यवाद", reading: "dhanyavād" }
+  - id: "kok-0008"
+    target: "आपलें स्वागत"
+    reading: "āpalẽ svāgat"
+    ipa: "aːpəlẽ səʋaːɡət"
+    pos: "phrase"
+    tags: ["polite", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "आपलें", base: "आपलें", reading: "āpalẽ" }
+      - { word: "स्वागत", base: "स्वागत", reading: "svāgat" }
+  - id: "kok-0009"
+    target: "माफ कर"
+    reading: "māph kar"
+    ipa: "maːpʰ kər"
+    pos: "phrase"
+    tags: ["polite", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "माफ", base: "माफ", reading: "māph" }
+      - { word: "कर", base: "कर", reading: "kar" }
+  - id: "kok-0010"
+    target: "हांवाक माफ करात"
+    reading: "hāṁvāk māph karāt"
+    ipa: "ɦaːṁʋaːk maːpʰ kərat"
+    pos: "phrase"
+    tags: ["polite", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "हांवाक", base: "हांवाक", reading: "hāṁvāk" }
+      - { word: "माफ", base: "माफ", reading: "māph" }
+      - { word: "करात", base: "करात", reading: "karāt" }
+  - id: "kok-0011"
+    target: "म्हाका कळना"
+    reading: "mhākā kaḷnā"
+    ipa: "mʰaːkaː kəɭnaː"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "म्हाका", base: "म्हाका", reading: "mhākā" }
+      - { word: "कळना", base: "कळना", reading: "kaḷnā" }
+  - id: "kok-0012"
+    target: "म्हाका कोंकणी येना"
+    reading: "mhākā koṅkaṇī yenā"
+    ipa: "mʰaːkaː koŋkəɳi jenaː"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "म्हाका", base: "म्हाका", reading: "mhākā" }
+      - { word: "कोंकणी", base: "कोंकणी", reading: "koṅkaṇī" }
+      - { word: "येना", base: "येना", reading: "yenā" }
+  - id: "kok-0013"
+    target: "हळू उलोवचें"
+    reading: "haḷū ulovcẽ"
+    ipa: "ɦəɭuː uloʋtʃẽ"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "हळू", base: "हळू", reading: "haḷū" }
+      - { word: "उलोवचें", base: "उलोवचें", reading: "ulovcẽ" }
+  - id: "kok-0014"
+    target: "तुमकां इंग्लीश येता?"
+    reading: "tumkā iṅglīś yetā?"
+    ipa: "tumkaː iŋɡliːʃ jetaː"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "तुमकां", base: "तुमकां", reading: "tumkā" }
+      - { word: "इंग्लीश", base: "इंग्लीश", reading: "iṅglīś" }
+      - { word: "येता", base: "येता", reading: "yetā" }
+  - id: "kok-0015"
+    target: "तुमी कसे आसा?"
+    reading: "tumī kase āsā?"
+    ipa: "tumiː kəse aːsaː"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "तुमी", base: "तुमी", reading: "tumī" }
+      - { word: "कसे", base: "कसे", reading: "kase" }
+      - { word: "आसा", base: "आसा", reading: "āsā" }
+  - id: "kok-0016"
+    target: "हांव बरो आसा"
+    reading: "hāṁv baro āsā"
+    ipa: "ɦaːṁʋ bəro aːsaː"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "बरो", base: "बरो", reading: "baro" }
+      - { word: "आसा", base: "आसा", reading: "āsā" }
+  - id: "kok-0017"
+    target: "तुमचें नांव कितें?"
+    reading: "tumcẽ nāṁv kitẽ?"
+    ipa: "tumtʃẽ naːṁʋ kitẽ"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "तुमचें", base: "तुमचें", reading: "tumcẽ" }
+      - { word: "कितें", base: "कितें", reading: "kitẽ" }
+  - id: "kok-0018"
+    target: "म्हजें नांव ..."
+    reading: "mhajẽ nāṁv ..."
+    ipa: "mʰədʒẽ naːṁʋ"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "म्हजें", base: "म्हजें", reading: "mhajẽ" }
+  - id: "kok-0019"
+    target: "संडास खंय आसा?"
+    reading: "saṇḍās khaṁy āsā?"
+    ipa: "səɳɖaːs kʰəɲ aːsaː"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "संडास", base: "संडास", reading: "saṇḍās" }
+      - { word: "खंय", base: "खंय", reading: "khaṁy" }
+      - { word: "आसा", base: "आसा", reading: "āsā" }
+  - id: "kok-0020"
+    target: "वाचवा!"
+    reading: "vācavā!"
+    ipa: "ʋaːtʃəʋaː"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+
+    bases:
+      - { word: "वाचवा", base: "वाचवा!", reading: "vācavā!" }

@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-ritual-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3260"
+    target: "ऋषिः पूजां करोति मन्त्रं च जपति."
+    reading: "ṛṣiḥ pūjāṃ karoti mantraṃ ca japati."
+    ipa: "r̩ʂih puːdʒaːm kəroːt̪i mənt̪rəm tʃə dʒəpət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "ऋषिः", ref: "sa-1820" }, { word: "पूजां", base: "पूजा", reading: "pūjā" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "मन्त्रं", base: "मन्त्रः", reading: "mantraḥ" }, { word: "च", ref: "sa-1104" }, { word: "जपति", base: "जप्", reading: "jap" }]
+    confusables: [{ id: "w1", ref: "sa-1821", kind: "word" }, { id: "w2", ref: "sa-1817", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }, { id: "n4", kind: "usage" }]
+  - id: "sa-3261"
+    target: "माता देवतां पूजयति धूपं च ददाति."
+    reading: "mātā devatāṃ pūjayati dhūpaṃ ca dadāti."
+    ipa: "maːt̪aː d̪eːʋət̪aːm puːdʒəjət̪i d̪ʱuːpəm tʃə d̪əd̪aːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "माता", ref: "sa-1030" }, { word: "देवतां", base: "देवता", reading: "devatā" }, { word: "पूजयति", base: "पूज्", reading: "pūj" }, { word: "धूपं", base: "धूपः", reading: "dhūpaḥ" }, { word: "च", ref: "sa-1104" }, { word: "ददाति", base: "दा", reading: "dā" }]
+    confusables: [{ id: "w1", ref: "sa-1833", kind: "word" }, { id: "w2", ref: "sa-1818", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3262"
+    target: "पिता यज्ञे होमं करोति माता च स्तोत्रं गायति."
+    reading: "pitā yajñe homaṃ karoti mātā ca stotraṃ gāyati."
+    ipa: "pit̪aː jədʒɲeː ɦoːməm kəroːt̪i maːt̪aː tʃə st̪oːt̪rəm ɡaːjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पिता", ref: "sa-1031" }, { word: "यज्ञे", base: "यज्ञः", reading: "yajñaḥ" }, { word: "होमं", base: "होमः", reading: "homaḥ" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "माता", ref: "sa-1030" }, { word: "च", ref: "sa-1104" }, { word: "स्तोत्रं", base: "स्तोत्रम्", reading: "stotram" }, { word: "गायति", base: "गै", reading: "gai" }]
+    confusables: [{ id: "w1", ref: "sa-1816", kind: "word" }, { id: "w2", ref: "sa-1831", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3263"
+    target: "सखा सदा नद्यां स्नानं करोति."
+    reading: "sakhā sadā nadyāṃ snānaṃ karoti."
+    ipa: "səkʰaː səd̪aː nəd̪jaːm snaːnəm kəroːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सखा", ref: "sa-1038" }, { word: "सदा", ref: "sa-1086" }, { word: "नद्यां", base: "नदी", reading: "nadī" }, { word: "स्नानं", base: "स्नानम्", reading: "snānam" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+    confusables: [{ id: "w1", ref: "sa-1830", kind: "word" }, { id: "w2", ref: "sa-1776", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3264"
+    target: "मन्दिरे देवस्य पूजा भवति तत्र धूपो भवति."
+    reading: "mandire devasya pūjā bhavati tatra dhūpo bhavati."
+    ipa: "mənd̪ireː d̪eːʋəsjə puːdʒaː bʱəʋət̪i t̪ət̪rə d̪ʱuːpoː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "मन्दिरे", base: "मन्दिरम्", reading: "mandiram" }, { word: "देवस्य", base: "देवः", reading: "devaḥ" }, { word: "पूजा", ref: "sa-1818" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "तत्र", ref: "sa-1081" }, { word: "धूपो", base: "धूपः", reading: "dhūpaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1836", kind: "word" }, { id: "w2", ref: "sa-1826", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3265"
+    target: "अहं देवं स्मरामि त्वं च मन्त्रं जपसि."
+    reading: "ahaṃ devaṃ smarāmi tvaṃ ca mantraṃ japasi."
+    ipa: "əɦəm d̪eːʋəm sməraːmi t̪ʋəm tʃə mənt̪rəm dʒəpəsi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "देवं", base: "देवः", reading: "devaḥ" }, { word: "स्मरामि", base: "स्मृ", reading: "smṛ" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "च", ref: "sa-1104" }, { word: "मन्त्रं", base: "मन्त्रः", reading: "mantraḥ" }, { word: "जपसि", base: "जप्", reading: "jap" }]
+    confusables: [{ id: "w1", ref: "sa-1836", kind: "word" }, { id: "w2", ref: "sa-1821", kind: "word" }, { id: "w3", ref: "sa-2020", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3266"
+    target: "उपवासः पवित्रो भवति व्रतं च कठिनं भवति."
+    reading: "upavāsaḥ pavitro bhavati vrataṃ ca kaṭhinaṃ bhavati."
+    ipa: "upəʋaːsəh pəʋit̪roː bʱəʋət̪i ʋrət̪əm tʃə kəʈʰinəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "उपवासः", ref: "sa-1827" }, { word: "पवित्रो", base: "पवित्रः", reading: "pavitraḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "व्रतं", base: "व्रतम्", reading: "vratam" }, { word: "च", ref: "sa-1104" }, { word: "कठिनं", base: "कठिनः", reading: "kaṭhinaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1831", kind: "word" }, { id: "w2", ref: "sa-1536", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3267"
+    target: "स्वर्गः पवित्रो भवति नरको मलिनो भवति."
+    reading: "svargaḥ pavitro bhavati narako malino bhavati."
+    ipa: "sʋərɡəh pəʋit̪roː bʱəʋət̪i nərəkoː məlinoː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "स्वर्गः", ref: "sa-1822" }, { word: "पवित्रो", base: "पवित्रः", reading: "pavitraḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "नरको", base: "नरकः", reading: "narakaḥ" }, { word: "मलिनो", base: "मलिनः", reading: "malinaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1824", kind: "word" }, { id: "w2", ref: "sa-1520", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3268"
+    target: "सा नारी देवं पूजयति मोक्षं च लभते."
+    reading: "sā nārī devaṃ pūjayati mokṣaṃ ca labhate."
+    ipa: "saː naːriː d̪eːʋəm puːdʒəjət̪i moːkʂəm tʃə ləbʱət̪eː"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सा", ref: "sa-1011" }, { word: "नारी", ref: "sa-1042" }, { word: "देवं", base: "देवः", reading: "devaḥ" }, { word: "पूजयति", base: "पूज्", reading: "pūj" }, { word: "मोक्षं", base: "मोक्षः", reading: "mokṣaḥ" }, { word: "च", ref: "sa-1104" }, { word: "लभते", base: "लभ्", reading: "labh" }]
+    confusables: [{ id: "w1", ref: "sa-1836", kind: "word" }, { id: "w2", ref: "sa-1822", kind: "word" }, { id: "w3", ref: "sa-1818", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3269"
+    target: "उत्सवे दीपा भवन्ति सर्वत्र च माला भवन्ति."
+    reading: "utsave dīpā bhavanti sarvatra ca mālā bhavanti."
+    ipa: "ut̪səʋeː d̪iːpaː bʱəʋənt̪i sərʋət̪rə tʃə maːlaː bʱəʋənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "उत्सवे", base: "उत्सवः", reading: "utsavaḥ" }, { word: "दीपा", base: "दीपः", reading: "dīpaḥ" }, { word: "भवन्ति", base: "भू", reading: "bhū" }, { word: "सर्वत्र", ref: "sa-1554" }, { word: "च", ref: "sa-1104" }, { word: "माला", ref: "sa-1787" }]
+    confusables: [{ id: "w1", ref: "sa-1834", kind: "word" }, { id: "w2", ref: "sa-1792", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
