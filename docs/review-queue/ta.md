@@ -91,3 +91,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-grammar-ordinals | Check the shortened spoken ordinals (ரெண்டாவது, மூணாவது, நாலாவது, அஞ்சாவது, ஒம்பதாவது) and the date forms. | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-past-more | Check has done and had done (participle plus இரு) and their spoken forms, such as வந்திருக்கேன் and வந்திருந்துச்சு. | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-verbal-participle | Check the spoken verbal participles (படிச்சு, செஞ்சு, வச்சு, பாத்து) and the spoken without-doing ending -ஆமே. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0451 | ta-grammar-compound-verbs | Is எடுத்துக்கோங்க the usual spoken polite form of the helper கொள்? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0453 | ta-grammar-compound-verbs | Is தா (to me or us) versus கொடு (to others) stated correctly? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0452 | ta-grammar-compound-verbs | Are put, throw and put on the right senses of போடு to teach together? | Sonnet builder (ta-gram2) | 2026-11-23 |

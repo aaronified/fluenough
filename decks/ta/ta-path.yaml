@@ -498,7 +498,9 @@ units:
       - { id: "what-i-did-today", text: { "en": "Telling a day as one chain of actions" } }
     reading_passages:
       - { id: "travel-diary", text: { "en": "A travel diary that chains what happened" } }
-  - planned: { id: "ta-grammar-compound-verbs", grammar: "compound-verbs", words: 9 }
+  - decks: ["ta-grammar-compound-verbs", "ta-grammar-compound-verbs-forms"]
+    words: 9
+    grammar: ["compound-verbs", "compound-verbs-forms"]
     listening_passages:
       - { id: "it-got-done", text: { "en": "Saying a thing is finished, or done for oneself" } }
     reading_passages:
