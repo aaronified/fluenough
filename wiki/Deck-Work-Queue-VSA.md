@@ -77,3 +77,15 @@ Resume, in order:
 3. Sonnet writes the grammar units (case system, a-stems, present system, other stems, preverbs and tmesis) from Whitney pages read; Haiku builds their layers.
 4. Then `vsn-topics.yaml`, `vsn-situations.yaml`, sentences decks, reading decks, the sayings culture deck, recommendations once the gate allows Latin books.
 5. One PR per branch, one Sonnet review each, merge on green.
+
+## 6. State after the A1 merge (2026-11-23)
+
+Merged to `decks-live`: PR #1512 (genre wave 1, CI green 2026-11-23 03:20 UTC) and PR #1712 (A1, CI green on 905a8905 at 04:12 UTC, one Sonnet review): 23 word units (290 words), 4 script decks, 5 grammar units, the 30 old cards regenerated through the engine, `vsn-romanisation.yaml`, path units 1 to 33 (A1 mark on `vsn-animals`), themes, `min_app.json`.
+
+Known limits, all in `docs/review-queue/vsn.md`:
+- **Examples:** 271 attested Rigveda lines are notes ("Attested: ...") and not `examples`, because the validator needs a base or card for every word of an example and no per-word lemma or gloss is sourced; 39 examples are kept. A later task adds examples where a sourced gloss exists (VSA-EX).
+- 44 words are flagged weak glosses; 35 headwords are inflected attested forms; the three Vedic forms in the a-stems table were converted by the builder from Whitney's Latin letters.
+- Rules tables are scoped by tag (`case-model`, `present-model`) to one row each; B1 will need rows for every noun and verb.
+- The path's first unit counts 10 words but the phrasebook has 20 cards (pre-existing).
+
+Still open from this plan (not started, A1 scope per the owner's 2026-11-23 order): `vsn-topics.yaml` (VSA-040), `vsn-situations.yaml` (VSA-050), sentences decks (VSA-3xx), reading decks (VSA-4xx), the sayings culture deck (VSA-015), recommendations (VSA-060, held until the validator and the D13 gate allow Latin-script books), VSA-EX. A2 and B1 are not planned for this session.
