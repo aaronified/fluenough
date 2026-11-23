@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
@@ -37,7 +39,7 @@ List<Card> speechTestWords(AppState state, LanguageInfo language) {
       for (final deck in unit)
         if (words(deck)) deck,
   ];
-  if (decks.isEmpty) decks.addAll(state.decks.where(words));
+  if (decks.isEmpty) decks.addAll(state.decksOf(language.code).where(words));
   final seen = <String>{};
   return <Card>[
     for (final deck in decks)
@@ -80,10 +82,10 @@ class SpeechTestSheet extends StatefulWidget {
 }
 
 class _SpeechTestSheetState extends State<SpeechTestSheet> {
-  late final List<Card> _words = speechTestWords(
-    AppScope.read(context),
-    widget.language,
-  );
+  /// The words to say, once the language's unit is read: with the catalog
+  /// read one language at a time that is on the sheet opening (ADR-0062,
+  /// Plan-Lazy-Language-Loading, P-C5).
+  List<Card> _words = const <Card>[];
   int _index = 0;
   bool _listening = false;
 
@@ -98,6 +100,36 @@ class _SpeechTestSheetState extends State<SpeechTestSheet> {
   late Card? _for = widget.heardWord ? _word : null;
 
   Card? get _word => _words.isEmpty ? null : _words[_index % _words.length];
+
+  @override
+  void initState() {
+    super.initState();
+    _readWords();
+  }
+
+  @override
+  void didUpdateWidget(SpeechTestSheet oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.language.code != widget.language.code) {
+      _index = 0;
+      _readWords();
+    }
+  }
+
+  /// Finds the words of the language tested, reading its unit first when it
+  /// is on the phone and not read yet.
+  void _readWords() {
+    final state = AppScope.read(context);
+    final language = widget.language;
+    _words = speechTestWords(state, language);
+    if (!state.isLanguageReading(language.code)) return;
+    unawaited(
+      state.ensureLoaded(language.code).then((_) {
+        if (!mounted || widget.language.code != language.code) return;
+        setState(() => _words = speechTestWords(state, language));
+      }),
+    );
+  }
 
   Future<void> _listen(Card? word) async {
     if (_listening) return;

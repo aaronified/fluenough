@@ -80,15 +80,51 @@ void main() {
       'glyph',
       'scriptCount',
       'ipaSymbols',
+      'voiceSample',
+      'privatelyModified',
+      'credits',
       'stamp',
     ]);
-    expect(LanguageSummary.format, 3);
+    expect(LanguageSummary.format, 4);
     final text = jsonEncode(json);
     final back = LanguageSummary.tryFromJson(jsonDecode(text));
     expect(back, isNotNull);
     expect(jsonEncode(back!.toJson()), text);
     final all = decodeSummaries(encodeSummaries(<LanguageSummary>[back]));
     expect(all.keys, <String>['es']);
+  });
+
+  test('a summary names the voice sample, the credits and each deck', () {
+    const head = 'license: CC0-1.0\nsource: "Wiktionary"';
+    final deck = _deck('es-en-a', 100, 4);
+    final named = deck.replaceFirst('license: CC0-1.0', head);
+    final catalog = DeckCatalog.parseLanguage('es', <String, String>{
+      'decks/es/es-en-a.yaml': named,
+    });
+    expect(catalog.broken, isEmpty);
+    final summary = summariseLanguage(catalog, 'es', _stamp);
+    expect(summary.voiceSample, <String>['w0', 'w1', 'w2']);
+    expect(summary.decks.single.name, 'es-en-a');
+    expect(summary.privatelyModified, isFalse);
+    final source = summary.credits.sources.single;
+    expect(source.text, 'Wiktionary');
+    expect(source.extra, 'vocab');
+    expect(source.adult, isFalse);
+    expect(summary.credits.content.map((l) => l.text), <String>['wiktionary']);
+    expect(summary.credits.media, isEmpty);
+    // What was written reads back, and an older summary without these fields
+    // still reads, with none of them.
+    final json = jsonDecode(jsonEncode(summary.toJson()));
+    final back = LanguageSummary.tryFromJson(json)!;
+    expect(jsonEncode(back.toJson()), jsonEncode(summary.toJson()));
+    final old = json as Map<String, Object?>;
+    old
+      ..remove('voiceSample')
+      ..remove('privatelyModified')
+      ..remove('credits');
+    final plain = LanguageSummary.tryFromJson(old)!;
+    expect(plain.voiceSample, isEmpty);
+    expect(plain.credits.sources, isEmpty);
   });
 
   test('a damaged summaries file is no summaries, never a crash', () {

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../app/app_info.dart';
@@ -9,6 +11,7 @@ import '../../app/memory_progress.dart';
 import '../../app/skill.dart';
 import '../../core/data/log_jsonl.dart';
 import '../../core/models/card.dart' as model;
+import '../../core/private/private_ids.dart' show languageOfId;
 import '../../core/scheduling/fsrs.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -64,6 +67,36 @@ class _BodyState extends State<_Body> {
 
   AppState get state => widget.state;
 
+  /// The languages asked for already, so that each is asked once.
+  final Set<String> _asked = <String>{};
+
+  /// Reads the unit of each language the [shown] answers are in, when it is
+  /// not read yet (ADR-0062, Plan-Lazy-Language-Loading, P-C5): no more than
+  /// the languages of the rows the page shows, and a row of a language that
+  /// cannot be read shows its card's id, as one whose deck is gone does.
+  void _readLanguagesOf(List<ReviewEvent> shown) {
+    for (final event in shown) {
+      final code = languageOfId(event.deckId);
+      if (!state.isLanguageReading(code) || !_asked.add(code)) continue;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) unawaited(state.ensureLoaded(code));
+      });
+    }
+  }
+
+  /// The card [event] answered, or null once its deck is gone or while its
+  /// language is being read: found in its own deck, of its own language.
+  model.Card? _cardOf(ReviewEvent event) {
+    for (final entry in state.decksHolding(event.deckId)) {
+      if (entry.id != event.deckId) continue;
+      for (final card in entry.cards) {
+        if (card.id == event.cardId) return card;
+      }
+      return null;
+    }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -72,10 +105,7 @@ class _BodyState extends State<_Body> {
     final all = <ReviewEvent>[...log]..sort((a, b) => b.at.compareTo(a.at));
     final limit = _expanded ? _Body.manyRows : _Body.fewRows;
     final events = all.take(limit).toList();
-    final cards = <String, model.Card>{
-      for (final entry in state.decks)
-        for (final card in entry.cards) '${entry.id}\u0000${card.id}': card,
-    };
+    _readLanguagesOf(events);
     final today = state.now();
     final days = <DateTime, List<ReviewEvent>>{};
     for (final event in events) {
@@ -195,7 +225,7 @@ class _BodyState extends State<_Body> {
         if (item.event case final event?) {
           return _Answer(
             event: event,
-            card: cards['${event.deckId}\u0000${event.cardId}'],
+            card: _cardOf(event),
             first: item.first,
             last: item.last,
           );

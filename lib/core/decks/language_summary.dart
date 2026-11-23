@@ -15,6 +15,7 @@ import 'sha256.dart';
 class SummaryDeck {
   const SummaryDeck({
     required this.id,
+    this.name = '',
     required this.path,
     required this.native,
     required this.kind,
@@ -28,6 +29,9 @@ class SummaryDeck {
   });
 
   final String id;
+
+  /// The deck's name, which a list of the learner's own decks shows.
+  final String name;
   final String path;
   final String native;
   final String kind;
@@ -41,6 +45,7 @@ class SummaryDeck {
 
   Map<String, Object?> toJson() => <String, Object?>{
     'id': id,
+    'name': name,
     'path': path,
     'native': native,
     'kind': kind,
@@ -55,6 +60,7 @@ class SummaryDeck {
 
   static SummaryDeck fromJson(Map<Object?, Object?> json) => SummaryDeck(
     id: json['id']! as String,
+    name: (json['name'] as String?) ?? '',
     path: json['path']! as String,
     native: json['native']! as String,
     kind: json['kind']! as String,
@@ -240,6 +246,81 @@ String filesDigestOf(Map<String, String> shas) {
   return sha256Hex(utf8.encode(lines.join('\n')));
 }
 
+/// One line of what a language credits: a source, a recording's or picture's
+/// credit, or a project whose data its decks use.
+class SummaryCreditLine {
+  const SummaryCreditLine({
+    required this.text,
+    this.extra = '',
+    this.adult = false,
+  });
+
+  /// The source's name, the credit, or the project's name.
+  final String text;
+
+  /// The kind of deck that names a source, or the licence of a credit.
+  final String extra;
+
+  /// Whether only adult decks gave it: the Sources page leaves it out while
+  /// Adult content is off.
+  final bool adult;
+
+  Map<String, Object?> toJson() => <String, Object?>{
+    'text': text,
+    if (extra.isNotEmpty) 'extra': extra,
+    if (adult) 'adult': true,
+  };
+
+  static SummaryCreditLine fromJson(Map<Object?, Object?> json) =>
+      SummaryCreditLine(
+        text: json['text']! as String,
+        extra: (json['extra'] as String?) ?? '',
+        adult: json['adult'] == true,
+      );
+}
+
+/// What a language's decks credit, for Settings' Sources page, which lists
+/// every language's from the directory (Plan-Lazy-Language-Loading, P-C5):
+/// the books its decks name, the credits of its recordings and images, those
+/// of the portraits and posters of its people and works, and the projects
+/// whose data it uses.
+class SummaryCredits {
+  const SummaryCredits({
+    this.sources = const <SummaryCreditLine>[],
+    this.media = const <SummaryCreditLine>[],
+    this.pictures = const <SummaryCreditLine>[],
+    this.content = const <SummaryCreditLine>[],
+  });
+
+  /// Nothing credited.
+  static const SummaryCredits none = SummaryCredits();
+
+  final List<SummaryCreditLine> sources;
+  final List<SummaryCreditLine> media;
+  final List<SummaryCreditLine> pictures;
+  final List<SummaryCreditLine> content;
+
+  Map<String, Object?> toJson() => <String, Object?>{
+    'sources': <Object?>[for (final line in sources) line.toJson()],
+    'media': <Object?>[for (final line in media) line.toJson()],
+    'pictures': <Object?>[for (final line in pictures) line.toJson()],
+    'content': <Object?>[for (final line in content) line.toJson()],
+  };
+
+  static SummaryCredits fromJson(Map<Object?, Object?> json) {
+    List<SummaryCreditLine> lines(Object? value) => <SummaryCreditLine>[
+      for (final line in (value as List<Object?>?) ?? <Object?>[])
+        SummaryCreditLine.fromJson(line! as Map<Object?, Object?>),
+    ];
+    return SummaryCredits(
+      sources: lines(json['sources']),
+      media: lines(json['media']),
+      pictures: lines(json['pictures']),
+      content: lines(json['content']),
+    );
+  }
+}
+
 /// One language on the phone, as the screens that list languages read it.
 class LanguageSummary {
   const LanguageSummary({
@@ -265,6 +346,9 @@ class LanguageSummary {
     this.glyph = '',
     this.scriptCount = 0,
     this.ipaSymbols = const <String>[],
+    this.voiceSample = const <String>[],
+    this.privatelyModified = false,
+    this.credits = SummaryCredits.none,
   });
 
   /// The layout of the JSON, and of what a summary holds. Raised when a field
@@ -272,8 +356,11 @@ class LanguageSummary {
   /// trusted and is worked out again. 2 added the glyph, the script count and
   /// each course's native language, written units and script letters, for the
   /// screens that list languages (Plan-Lazy-Language-Loading, P-C1). 3 added
-  /// the IPA symbols, for the IPA keyboard (P-C4).
-  static const int format = 3;
+  /// the IPA symbols, for the IPA keyboard (P-C4). 4 added each deck's name,
+  /// the voice sample, whether a private package modifies the language and
+  /// what its decks credit, for Your decks, Voices, the "Privately modified"
+  /// tag and Sources (P-C5).
+  static const int format = 4;
 
   final String code;
   final LanguageInfo info;
@@ -315,6 +402,17 @@ class LanguageSummary {
   /// waits for the course's unit. Empty for every other language.
   final List<String> ipaSymbols;
 
+  /// Up to three target texts the Voices page's Play says for the language:
+  /// the first words of its first vocabulary deck that are not rude ones.
+  final List<String> voiceSample;
+
+  /// Whether the language's path is that of a private package that modifies
+  /// it (`LanguagePath.privatelyModified`).
+  final bool privatelyModified;
+
+  /// What the language's decks credit.
+  final SummaryCredits credits;
+
   Map<String, Object?> toJson() => <String, Object?>{
     'code': code,
     'info': _infoToJson(info),
@@ -337,6 +435,9 @@ class LanguageSummary {
     'glyph': glyph,
     'scriptCount': scriptCount,
     'ipaSymbols': ipaSymbols,
+    'voiceSample': voiceSample,
+    'privatelyModified': privatelyModified,
+    'credits': credits.toJson(),
     'stamp': stamp.toJson(),
   };
 
@@ -347,6 +448,7 @@ class LanguageSummary {
       List<String> strings(Object? value) => <String>[
         for (final item in value! as List<Object?>) item! as String,
       ];
+      final credits = json['credits'];
       return LanguageSummary(
         code: json['code']! as String,
         info: _infoFromJson(json['info']! as Map<Object?, Object?>),
@@ -380,6 +482,14 @@ class LanguageSummary {
         ipaSymbols: json['ipaSymbols'] == null
             ? const <String>[]
             : strings(json['ipaSymbols']),
+        // Kept since format 4, in the same way.
+        voiceSample: json['voiceSample'] == null
+            ? const <String>[]
+            : strings(json['voiceSample']),
+        privatelyModified: json['privatelyModified'] == true,
+        credits: credits is Map
+            ? SummaryCredits.fromJson(credits)
+            : SummaryCredits.none,
         stamp: SummaryStamp.fromJson(json['stamp']! as Map<Object?, Object?>),
       );
     } on Object {

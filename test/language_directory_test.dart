@@ -269,7 +269,7 @@ void main() {
     final digest = old.stamp.filesDigest;
     final freshness = freshnessOf(old, filesDigest: digest, app: '');
     expect(freshness, SummaryFreshness.untrusted);
-    expect(LanguageSummary.format, 3);
+    expect(LanguageSummary.format, 4);
   });
 
   test('learned figures are stamped and refreshed lazily', () async {

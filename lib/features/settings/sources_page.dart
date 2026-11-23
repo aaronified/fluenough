@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' hide Card;
+import 'package:flutter/material.dart';
 
 import '../../app/app_info.dart';
 import '../../app/app_scope.dart';
@@ -6,7 +6,9 @@ import '../../app/app_state.dart' show AppState;
 import '../../app/culture.dart' show CultureState;
 import '../../app/deck_catalog.dart';
 import '../../app/links.dart';
-import '../../core/models/card.dart';
+import '../../core/decks/credits.dart';
+import '../../core/decks/language_summary.dart'
+    show LanguageSummary, SummaryCreditLine;
 import '../../core/models/creator.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/recommendation.dart';
@@ -14,6 +16,11 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
+
+// The projects and credit lines the page lists are found in `lib/core`, so
+// that a language's summary holds them; they are named here as they always
+// were.
+export '../../core/decks/credits.dart';
 
 /// One source a deck names, and what kind of deck names it.
 typedef DeckSourceLine = ({String source, DeckKind kind});
@@ -47,66 +54,6 @@ List<({LanguageInfo language, List<DeckSourceLine> lines})> sourcesOf(
   return byLanguage.values.toList();
 }
 
-/// A project whose data the decks may use, credited on the Sources page
-/// when a deck names it (ADR-0040).
-enum ContentCredit {
-  /// Word data, CC BY-SA 4.0 (#518).
-  wiktionary(<String>['wiktionary']),
-
-  /// Recordings and images, each under its own licence and credit (#518,
-  /// #523).
-  commons(<String>['wikimedia commons', 'commons.wikimedia.org']),
-
-  /// Drawings of what words mean, CC BY-SA 4.0 (#523).
-  openmoji(<String>['openmoji']),
-
-  /// Frequency, counted from each language's Wikipedia, CC BY-SA (#516).
-  wikipedia(<String>['wikipedia']),
-
-  /// Sentences, CC BY 2.0 FR.
-  tatoeba(<String>['tatoeba']),
-
-  /// Signs written in SignWriting, pictures drawn with the Sutton fonts under
-  /// SIL OFL 1.1.
-  signwriting(<String>['signwriting']);
-
-  const ContentCredit(this.marks);
-
-  /// How a source names the project, in lower case: its name or its host.
-  final List<String> marks;
-
-  /// Whether [source] names this project.
-  bool namedIn(String source) {
-    final text = source.toLowerCase();
-    return marks.any(text.contains);
-  }
-}
-
-/// The sources [card]'s data names, item by item (#506, #518): its
-/// examples', its items' and senses', its frequency's, and its recording's.
-Iterable<String> cardSources(Card card) sync* {
-  for (final example in card.examples) {
-    if (example.source case final source?) yield source;
-  }
-  for (final items in <List<CardItem>>[
-    card.synonyms,
-    card.antonyms,
-    card.collocations,
-    card.confusables,
-    card.forms,
-  ]) {
-    for (final item in items) {
-      if (item.source case final source?) yield source;
-    }
-  }
-  for (final sense in card.senses) {
-    if (sense.source case final source?) yield source;
-  }
-  if (card.frequency case final frequency?) yield frequency.source;
-  if (card.audioCredit case final credit?) yield credit.source;
-  if (card.imageCredit case final credit?) yield credit.source;
-}
-
 /// The projects [decks] use, in [ContentCredit]'s order: those a deck's own
 /// `source` names, or any item of its cards' data names (#518).
 List<ContentCredit> creditsOf(List<DeckEntry> decks) {
@@ -121,10 +68,6 @@ List<ContentCredit> creditsOf(List<DeckEntry> decks) {
       if (sources.any(credit.namedIn)) credit,
   ];
 }
-
-/// One credit of a language's recordings and pictures: whom, and the
-/// licence.
-typedef MediaCreditLine = ({String credit, String license});
 
 /// The credits of the recordings and images that ship with [decks] (#518,
 /// #523), by
@@ -199,11 +142,120 @@ List<({LanguageInfo language, MediaCreditLine line})> pictureCreditsOf(
   return out;
 }
 
-/// The credits of [card]'s own files: its recording's and its image's.
-List<MediaCredit> mediaCredits(Card card) => <MediaCredit>[
-  ?card.audioCredit,
-  ?card.imageCredit,
-];
+/// One book a language's decks name, and the kind of deck that names it.
+typedef NamedSource = ({String source, String kind});
+
+/// A language's row of books its decks name.
+typedef SourceRow = ({LanguageInfo language, List<NamedSource> lines});
+
+/// A language's row of recording, image and picture credits.
+typedef MediaRow = ({LanguageInfo language, List<MediaCreditLine> lines});
+
+/// What the Sources page lists of the decks' own data: the books each
+/// language's decks name, the credits of each language's recordings, images
+/// and pictures, and the projects whose data the decks use.
+class DeckCredits {
+  const DeckCredits({
+    required this.sources,
+    required this.media,
+    required this.projects,
+  });
+
+  final List<SourceRow> sources;
+  final List<MediaRow> media;
+  final List<ContentCredit> projects;
+}
+
+/// What [state]'s decks credit. Read one language at a time, every language's
+/// credits are in the directory of summaries, so that no unit is read for
+/// the page; read whole, the decks are scanned as they always were. Both
+/// give the same lists (the parity test).
+DeckCredits deckCreditsOf(AppState state, AppLocalizations l10n) {
+  if (state.readsPerLanguage) {
+    final summaries = <LanguageSummary>[
+      for (final language in state.languages) ?state.summaryOf(language.code),
+    ];
+    return deckCreditsFromSummaries(
+      summaries,
+      adult: state.settings.adultContent,
+      publicDomain: l10n.cultureImagePublicDomain,
+    );
+  }
+  final decks = state.decks;
+  final sources = <SourceRow>[];
+  for (final (:language, :lines) in sourcesOf(decks)) {
+    final books = <NamedSource>[
+      for (final l in lines) (source: l.source, kind: l.kind.name),
+    ];
+    sources.add((language: language, lines: books));
+  }
+  return DeckCredits(
+    sources: sources,
+    media: mediaCreditsOf(decks, pictures: pictureCreditsOf(state, l10n)),
+    projects: creditsOf(decks),
+  );
+}
+
+/// What the languages of [summaries], in the directory's order, credit: the
+/// lists [sourcesOf], [mediaCreditsOf] and [creditsOf] make from the decks
+/// themselves. Lines only adult decks gave are left out unless [adult];
+/// [publicDomain] is how a picture's `public-domain` licence is written.
+DeckCredits deckCreditsFromSummaries(
+  List<LanguageSummary> summaries, {
+  required bool adult,
+  required String publicDomain,
+}) {
+  bool shown(SummaryCreditLine line) => adult || !line.adult;
+  final sources = <SourceRow>[];
+  final byLanguage =
+      <String, ({LanguageInfo language, Set<MediaCreditLine> lines})>{};
+  Set<MediaCreditLine> mediaOf(LanguageSummary summary) {
+    final row = byLanguage.putIfAbsent(
+      summary.code,
+      () => (language: summary.info, lines: <MediaCreditLine>{}),
+    );
+    return row.lines;
+  }
+
+  String licenceOf(String raw) => raw == 'public-domain' ? publicDomain : raw;
+  final named = <String>{};
+  for (final summary in summaries) {
+    final books = <NamedSource>[
+      for (final line in summary.credits.sources)
+        if (shown(line)) (source: line.text, kind: line.extra),
+    ];
+    if (books.isNotEmpty) {
+      sources.add((language: summary.info, lines: books));
+    }
+    for (final line in summary.credits.media) {
+      if (shown(line)) {
+        mediaOf(summary).add((credit: line.text, license: line.extra));
+      }
+    }
+    for (final line in summary.credits.content) {
+      if (shown(line)) named.add(line.text);
+    }
+  }
+  // The pictures of people and works join the rows after the recordings'.
+  for (final summary in summaries) {
+    for (final line in summary.credits.pictures) {
+      final license = licenceOf(line.extra);
+      mediaOf(summary).add((credit: line.text, license: license));
+    }
+  }
+  final media = <MediaRow>[];
+  for (final (:language, :lines) in byLanguage.values) {
+    media.add((language: language, lines: lines.toList()));
+  }
+  return DeckCredits(
+    sources: sources,
+    media: media,
+    projects: <ContentCredit>[
+      for (final project in ContentCredit.values)
+        if (named.contains(project.name)) project,
+    ],
+  );
+}
 
 /// A thank you to everyone the app stands on, then the decks' licence and
 /// credits, then where their texts come from, a row
@@ -233,16 +285,13 @@ class SourcesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
-    final decks = state.decks;
-    final sources = sourcesOf(decks);
-    final media = mediaCreditsOf(
-      decks,
-      pictures: pictureCreditsOf(state, l10n),
-    );
+    final deckCredits = deckCreditsOf(state, l10n);
+    final sources = deckCredits.sources;
+    final media = deckCredits.media;
     // The script fonts are credited once one is on the phone (ADR-0042).
     final scriptFonts = AppScope.of(context).deckDownloads?.fonts;
     final fonts = scriptFonts?.hasFonts ?? false;
-    final credits = creditsOf(decks);
+    final credits = deckCredits.projects;
     // SignWriting is thanked once its font is on the phone or a deck names
     // it, as the Noto line is shown once a font is (ADR-0042, ADR-0056).
     final signWriting =
@@ -444,7 +493,7 @@ class SourcesPage extends StatelessWidget {
                     title: language.name,
                     subtitleLines: <String>[
                       for (final line in lines)
-                        l10n.settingsSourceLine(line.source, line.kind.name),
+                        l10n.settingsSourceLine(line.source, line.kind),
                     ],
                   ),
               ],
