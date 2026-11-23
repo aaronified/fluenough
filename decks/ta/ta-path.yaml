@@ -126,26 +126,26 @@ units:
       - { id: "sound-pairs", text: { "en": "Pairs of words that differ in one sound, said slowly" } }
     reading_passages:
       - { id: "sound-pairs-list", text: { "en": "A list of word pairs with their readings" } }
-  - decks: ["ta-questions", "ta-questions-sentences", "*"]
+  - decks: ["ta-questions", "ta-questions-sentences", "ta-reading-questions", "*"]
     words: 11
     listening_passages:
       - { id: "yes-or-no", text: { "en": "Short questions answered with yes and no" } }
     reading_passages:
       - { id: "question-cards", text: { "en": "Cards with who, what, where and when" } }
   # ta-addressing joins this unit.
-  - decks: ["ta-pronouns", "ta-pronouns-sentences", "*"]
+  - decks: ["ta-pronouns", "ta-pronouns-sentences", "ta-reading-pronouns", "*"]
     words: 11
     listening_passages:
       - { id: "polite-or-not", text: { "en": "Speaking to a friend, an elder and a shopkeeper" } }
     reading_passages:
       - { id: "who-is-who", text: { "en": "A short list of people and how to address them" } }
-  - decks: ["ta-family", "ta-family-sentences", "*"]
+  - decks: ["ta-family", "ta-family-sentences", "ta-reading-family", "*"]
     words: 14
     listening_passages:
       - { id: "family-photo", text: { "en": "Someone names the people in a family photo" } }
     reading_passages:
       - { id: "family-tree", text: { "en": "A family tree with its labels" } }
-  - decks: ["ta-numbers-1-20", "ta-numbers-sentences", "*"]
+  - decks: ["ta-numbers-1-20", "ta-numbers-sentences", "ta-reading-numbers-1-20", "*"]
     words: 19
     listening_passages:
       - { id: "phone-number", text: { "en": "Someone reads out a phone number" } }
@@ -168,25 +168,25 @@ units:
       - { id: "name-boards", text: { "en": "Name boards with borrowed sounds and dead consonants" } }
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - decks: ["ta-about-me", "ta-about-me-sentences", "*"]
+  - decks: ["ta-about-me", "ta-about-me-sentences", "ta-reading-about-me", "*"]
     words: 6
     listening_passages:
       - { id: "introducing-myself", text: { "en": "Someone says their name, home town and work" } }
     reading_passages:
       - { id: "profile-card", text: { "en": "A short profile card" } }
-  - decks: ["ta-verbs", "ta-verbs-sentences", "*"]
+  - decks: ["ta-verbs", "ta-verbs-sentences", "ta-reading-verbs", "*"]
     words: 12
     listening_passages:
       - { id: "what-i-do", text: { "en": "Someone lists what they do each day" } }
     reading_passages:
       - { id: "to-do-list", text: { "en": "A short to-do list" } }
-  - decks: ["ta-adverbs", "ta-adverbs-sentences", "*"]
+  - decks: ["ta-adverbs", "ta-adverbs-sentences", "ta-reading-adverbs", "*"]
     words: 10
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - decks: ["ta-quantities", "ta-quantities-sentences", "*"]
+  - decks: ["ta-quantities", "ta-quantities-sentences", "ta-reading-quantities", "*"]
     words: 9
     listening_passages:
       - { id: "a-little-more", text: { "en": "Asking for a little more and a little less" } }
@@ -658,13 +658,13 @@ units:
       - { id: "the-man-who-came", text: { "en": "Describing people by what they did" } }
     reading_passages:
       - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
-  - decks: ["ta-health", "ta-health-sentences", "*"]
+  - decks: ["ta-health", "ta-health-sentences", "ta-reading-health", "*"]
     words: 60
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
       - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
-  - decks: ["ta-feelings", "ta-feelings-sentences", "*"]
+  - decks: ["ta-feelings", "ta-feelings-sentences", "ta-reading-feelings", "*"]
     words: 60
     listening_passages:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
@@ -677,13 +677,13 @@ units:
       - { id: "she-said", text: { "en": "Passing on what someone said on the phone" } }
     reading_passages:
       - { id: "message-relay", text: { "en": "A note passing on what a neighbour said" } }
-  - decks: ["ta-news", "ta-news-sentences", "*"]
+  - decks: ["ta-news", "ta-news-sentences", "ta-reading-news", "*"]
     words: 60
     listening_passages:
       - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
     reading_passages:
       - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
-  - decks: ["ta-opinions", "ta-opinions-sentences", "*"]
+  - decks: ["ta-opinions", "ta-opinions-sentences", "ta-reading-opinions", "*"]
     words: 55
     listening_passages:
       - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely" } }
@@ -703,19 +703,19 @@ units:
       - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
     reading_passages:
       - { id: "late-train", text: { "en": "A message: if the train is late" } }
-  - decks: ["ta-travel", "ta-travel-sentences", "*"]
+  - decks: ["ta-travel", "ta-travel-sentences", "ta-reading-travel", "*"]
     words: 60
     listening_passages:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
     reading_passages:
       - { id: "itinerary", text: { "en": "A two-day trip itinerary" } }
-  - decks: ["ta-services", "ta-services-sentences", "*"]
+  - decks: ["ta-services", "ta-services-sentences", "ta-reading-services", "*"]
     words: 50
     listening_passages:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
     reading_passages:
       - { id: "bank-form", text: { "en": "A simple bank form" } }
-  - decks: ["ta-government", "ta-government-sentences", "*"]
+  - decks: ["ta-government", "ta-government-sentences", "ta-reading-government", "*"]
     words: 47
     listening_passages:
       - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }
@@ -728,13 +728,13 @@ units:
       - { id: "why-are-you-going", text: { "en": "Saying what you are going somewhere to do" } }
     reading_passages:
       - { id: "course-advert", text: { "en": "An advert for a course: what it is for" } }
-  - decks: ["ta-technology", "ta-technology-sentences", "*"]
+  - decks: ["ta-technology", "ta-technology-sentences", "ta-reading-technology", "*"]
     words: 55
     listening_passages:
       - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
     reading_passages:
       - { id: "app-instructions", text: { "en": "Instructions inside a phone app" } }
-  - decks: ["ta-careers", "ta-careers-sentences", "*"]
+  - decks: ["ta-careers", "ta-careers-sentences", "ta-reading-careers", "*"]
     words: 61
     listening_passages:
       - { id: "job-interview", text: { "en": "A short job interview" } }
@@ -747,13 +747,13 @@ units:
       - { id: "order-of-events", text: { "en": "Saying what happens before and after what" } }
     reading_passages:
       - { id: "event-schedule", text: { "en": "A schedule of an event day" } }
-  - decks: ["ta-environment", "ta-environment-sentences", "*"]
+  - decks: ["ta-environment", "ta-environment-sentences", "ta-reading-environment", "*"]
     words: 55
     listening_passages:
       - { id: "rain-and-lakes", text: { "en": "Neighbours talk about the lake and the rain" } }
     reading_passages:
       - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
-  - decks: ["ta-agriculture", "ta-agriculture-sentences", "*"]
+  - decks: ["ta-agriculture", "ta-agriculture-sentences", "ta-reading-agriculture", "*"]
     words: 57
     listening_passages:
       - { id: "a-farmer-talks", text: { "en": "A farmer talks about the paddy season" } }
@@ -766,13 +766,13 @@ units:
       - { id: "doing-two-things", text: { "en": "Saying what people do while doing something else" } }
     reading_passages:
       - { id: "a-day-on-the-bus", text: { "en": "A short story of a bus ride" } }
-  - decks: ["ta-cinema", "ta-cinema-sentences", "*"]
+  - decks: ["ta-cinema", "ta-cinema-sentences", "ta-reading-cinema", "*"]
     words: 60
     listening_passages:
       - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
     reading_passages:
       - { id: "film-review", text: { "en": "A short film review" } }
-  - decks: ["ta-arts", "ta-arts-sentences", "*"]
+  - decks: ["ta-arts", "ta-arts-sentences", "ta-reading-arts", "*"]
     words: 50
     listening_passages:
       - { id: "a-music-class", text: { "en": "A teacher explains a Carnatic music class" } }
@@ -785,13 +785,13 @@ units:
       - { id: "having-things-done", text: { "en": "Asking someone to get things done" } }
     reading_passages:
       - { id: "service-request", text: { "en": "A written service request" } }
-  - decks: ["ta-history", "ta-history-sentences", "*"]
+  - decks: ["ta-history", "ta-history-sentences", "ta-reading-history", "*"]
     words: 50
     listening_passages:
       - { id: "a-temple-visit", text: { "en": "A guide tells the story of an old temple" } }
     reading_passages:
       - { id: "museum-card", text: { "en": "A museum card about a king" } }
-  - decks: ["ta-weddings", "ta-weddings-sentences", "*"]
+  - decks: ["ta-weddings", "ta-weddings-sentences", "ta-reading-weddings", "*"]
     words: 50
     listening_passages:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }

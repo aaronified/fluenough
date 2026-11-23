@@ -1,0 +1,55 @@
+schema: 1
+id: "ta-en-reading-opinions"
+name: "Tamil reading: opinions"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A reader's short letter about a new park, using the words of opinions. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-readers-letters"
+    title: "A reader's letter"
+    theme: "opinions"
+    sentences:
+      - text: "ஆசிரியருக்கு வணக்கம்."
+        reading: "āciriyarukku vaṇakkam."
+        ipa: "aːsiɾijaɾukku ʋaɳakkam"
+      - text: "ஊரில் ஒரு புதிய பூங்கா வருகிறது."
+        reading: "ūril oru putiya pūṅkā varukiṟatu."
+        ipa: "uːɾil oɾu put̪ija puːŋkaː ʋaɾukirat̪u"
+      - text: "குழந்தைகளுக்கு இது பயனுள்ளது."
+        reading: "kuḻantaikaḷukku itu payaṉuḷḷatu."
+        ipa: "kuɻant̪aikaɭukku it̪u pajanuɭɭat̪u"
+      - text: "நான் இதை ஆதரிக்கிறேன்."
+        reading: "nāṉ itai ātarikkiṟēṉ."
+        ipa: "naːn it̪ai aːt̪aɾikkireːn"
+      - text: "சிலர் எதிர்க்கிறார்கள்."
+        reading: "cilar etirkkiṟārkaḷ."
+        ipa: "silaɾ et̪iɾkkiraːɾkaɭ"
+      - text: "அவர்கள் கருத்தும் நியாயம்தான்."
+        reading: "avarkaḷ karuttum niyāyamtāṉ."
+        ipa: "aʋaɾkaɭ kaɾut̪t̪um nijaːjamt̪aːn"
+    questions:
+      - id: "ta-5211"
+        prompt: { "en": "What does the writer think of the new park?" }
+        options:
+          - { "en": "Supports it" }
+          - { "en": "Opposes it" }
+          - { "en": "Has no opinion" }
+        answer: 1
+      - id: "ta-5212"
+        prompt: { "en": "Who is the park useful for, according to the writer?" }
+        options:
+          - { "en": "Children" }
+          - { "en": "Old people only" }
+          - { "en": "Shopkeepers" }
+        answer: 1
+      - id: "ta-5213"
+        prompt: { "en": "Does everyone oppose the park?" }
+        options:
+          - { "en": "No, only some people do" }
+          - { "en": "Yes, everyone does" }
+          - { "en": "Nobody does" }
+        answer: 1

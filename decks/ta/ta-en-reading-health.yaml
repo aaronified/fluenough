@@ -1,0 +1,55 @@
+schema: 1
+id: "ta-en-reading-health"
+name: "Tamil reading: health"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short clinic notice, using the words of health and everyday requests. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-clinic-notice"
+    title: "Notice at the clinic"
+    theme: "health"
+    sentences:
+      - text: "மருத்துவர் காலையில் பத்து மணிக்கு வருகிறார்."
+        reading: "maruttuvar kālaiyil pattu maṇikku varukiṟār."
+        ipa: "maɾut̪t̪uʋaɾ kaːlaijil pat̪t̪u maɳikku ʋaɾukiraːɾ"
+      - text: "நோயாளிகள் இங்கே சீட்டு வாங்குங்கள்."
+        reading: "nōyāḷikaḷ iṅkē cīṭṭu vāṅkuṅkaḷ."
+        ipa: "noːjaːɭikaɭ iŋkeː siːʈʈu ʋaːŋkuŋkaɭ"
+      - text: "மருந்தை மருந்தகத்தில் வாங்கலாம்."
+        reading: "maruntai maruntakattil vāṅkalām."
+        ipa: "maɾunt̪ai maɾunt̪akat̪t̪il ʋaːŋkalaːm"
+      - text: "முகக்கவசம் போடுங்கள்."
+        reading: "mukakkavacam pōṭuṅkaḷ."
+        ipa: "mukakkaʋasam poːʈuŋkaɭ"
+      - text: "புகைபிடிக்க வேண்டாம்."
+        reading: "pukaipiṭikka vēṇṭām."
+        ipa: "pukaipiʈikka ʋeːɳʈaːm"
+    questions:
+      - id: "ta-5200"
+        prompt: { "en": "What time does the doctor come?" }
+        options:
+          - { "en": "Ten in the morning" }
+          - { "en": "Ten at night" }
+          - { "en": "Five in the morning" }
+        answer: 1
+      - id: "ta-5201"
+        prompt: { "en": "What do patients get here?" }
+        options:
+          - { "en": "A slip" }
+          - { "en": "A mask" }
+          - { "en": "A scan" }
+        answer: 1
+      - id: "ta-5202"
+        prompt: { "en": "Where can the medicine be bought?" }
+        options:
+          - { "en": "At the pharmacy" }
+          - { "en": "At the bus stop" }
+          - { "en": "From the nurse" }
+        answer: 1
+      - id: "ta-5203"
+        prompt: { "en": "Smoking is allowed in the clinic." }
+        answer: false

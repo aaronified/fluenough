@@ -1,0 +1,55 @@
+schema: 1
+id: "ta-en-reading-environment"
+name: "Tamil reading: environment"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short clean-up notice, using the words of the environment. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-clean-up-notice"
+    title: "A clean-up notice"
+    theme: "environment"
+    sentences:
+      - text: "இந்த ஞாயிறு காலை ஊரில் சுத்தம் செய்கிறோம்."
+        reading: "inta ñāyiṟu kālai ūril cuttam ceykiṟōm."
+        ipa: "int̪a ɲaːjiru kaːlai uːɾil sut̪t̪am sejkiroːm"
+      - text: "நெகிழிக் கழிவை ஒரு பையில் போடுங்கள்."
+        reading: "nekiḻik kaḻivai oru paiyil pōṭuṅkaḷ."
+        ipa: "nekiɻik kaɻiʋai oɾu paijil poːʈuŋkaɭ"
+      - text: "துணிப்பை கொண்டு வாருங்கள்."
+        reading: "tuṇippai koṇṭu vāruṅkaḷ."
+        ipa: "t̪uɳippai koɳʈu ʋaːɾuŋkaɭ"
+      - text: "எல்லோரும் வாருங்கள்."
+        reading: "ellōrum vāruṅkaḷ."
+        ipa: "elloːɾum ʋaːɾuŋkaɭ"
+      - text: "மறுசுழற்சி நம் பொறுப்பு."
+        reading: "maṟucuḻaṟci nam poṟuppu."
+        ipa: "marusuɻarsi nam poruppu"
+    questions:
+      - id: "ta-5233"
+        prompt: { "en": "When is the clean-up?" }
+        options:
+          - { "en": "Sunday morning" }
+          - { "en": "Saturday night" }
+          - { "en": "Friday evening" }
+        answer: 1
+      - id: "ta-5234"
+        prompt: { "en": "What should the plastic waste be put in?" }
+        options:
+          - { "en": "A bag" }
+          - { "en": "A well" }
+          - { "en": "A bucket of water" }
+        answer: 1
+      - id: "ta-5235"
+        prompt: { "en": "What should people bring?" }
+        options:
+          - { "en": "A cloth bag" }
+          - { "en": "A tractor" }
+          - { "en": "A bicycle" }
+        answer: 1
+      - id: "ta-5236"
+        prompt: { "en": "Only a few people are asked to come." }
+        answer: false
