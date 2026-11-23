@@ -60,9 +60,9 @@
 #   verb classes (weak and strong, by their past stem) come with the past.
 # - Reported speech is the quotative என்று (eṉṟu), spoken -னு (-ṉu).
 #
-# No Tamil deck is written yet, so the path lists no deck and `alphabet` is
-# empty: the validator takes only written decks there. When the script
-# decks are written, `alphabet` lists ta-script-vowels,
+# The script decks are being written: `alphabet` lists the written ones
+# (ta-script-vowels first), in Telugu's order. When they are all written,
+# `alphabet` lists ta-script-vowels,
 # ta-script-consonants, ta-script-reading, ta-script-vowel-signs,
 # ta-script-grantha, ta-spelling and the first reader, and the two script
 # units become lists of them, as Telugu's are. Until then each script unit
@@ -103,9 +103,14 @@ regions:
     name: { "en": "Malaysia" }
   - id: "singapore"
     name: { "en": "Singapore" }
-# The decks that need the alphabet: empty until the script decks are
-# written (see above).
-alphabet: []
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - "ta-script-vowels"
+  - "ta-script-consonants"
+  - "ta-script-vowel-signs"
+  - "ta-script-grantha"
+  - "ta-script-digits"
 units:
   # 1. The phrasebook, taught whole from the first lesson. ta-first-words
   # joins this unit.
@@ -148,12 +153,14 @@ units:
   # 3. The script, after the first six units (#554: skipped by a learner
   # who already reads it). ta-script-consonants and ta-script-reading join
   # the first; ta-script-grantha joins the second.
-  - planned: { id: "ta-script-vowels", grammar: "script-letters", words: 0 }
+  - decks: ["ta-script-vowels", "ta-script-consonants", "*"]
+    words: 0
     listening_passages:
       - { id: "letter-names", text: { "en": "The vowels and consonants said in order" } }
     reading_passages:
       - { id: "first-signs", text: { "en": "Short words on shop signs, letter by letter" } }
-  - planned: { id: "ta-script-vowel-signs", grammar: "script-vowel-signs", words: 0 }
+  - decks: ["ta-script-vowel-signs", "ta-script-grantha", "ta-script-digits", "*"]
+    words: 0
     listening_passages:
       - { id: "syllable-rows", text: { "en": "One consonant with each vowel sign, said in a row" } }
     reading_passages:
