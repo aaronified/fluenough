@@ -138,3 +138,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-2192 | ta-nature | Is நதி or ஆறு the usual word for a river in speech? | Sonnet builder | 2026-11-23 |
 | ta-2197 | ta-nature | Is வனம் natural in speech, or only written beside காடு? | Sonnet builder | 2026-11-23 |
 | ta-2219 | ta-nature | Does ஆமை cover both tortoise and turtle? | Sonnet builder | 2026-11-23 |
+| ta-1275 | ta-illness | Is nurse best marked feminine (f) in a course that uses m, f and n? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1277 | ta-illness | Is ரத்தம் the everyday spoken form, with இரத்தம் written? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1312 | ta-illness | Is பத்தியம் the usual spoken word for the diet kept during treatment? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1311 | ta-illness | Is தடுப்பூசி the everyday word for a vaccination? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1305 | ta-illness | Is எனக்கு வியர்க்கிறது the natural way to say I am sweating? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1300 | ta-illness | Is மயங்கு the everyday verb for fainting, or is another more usual? | ta-words1 (Sonnet builder) | 2026-11-23 |

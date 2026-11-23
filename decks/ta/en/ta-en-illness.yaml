@@ -1,0 +1,703 @@
+schema: 1
+id: "ta-en-illness"
+kind: "layer"
+core: "ta-illness"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Illness and the doctor"
+description: "Fever, cold, cough and pain, medicine and the doctor, parts of the body that hurt, and how to say you feel ill or well. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-1263":
+    native: "illness; disease"
+    notes:
+      n1: "நோய் (nōy) is a disease or illness; for feeling unwell people say உடம்பு சரியில்லை (uṭampu cariyillai), the body is not right."
+    examples:
+      "அவருக்கு நோய்.":
+        native: "He has an illness."
+        bases:
+          "அவருக்கு": "to him (respectful); from அவர் (avar), he, she (respectful)"
+          "நோய்": "illness; disease"
+      "நோய் இல்லை.":
+        native: "There is no illness."
+        bases:
+          "நோய்": "illness; disease"
+  "ta-1264":
+    native: "fever"
+    notes:
+      n1: "The ill person takes the form meaning to: எனக்கு காய்ச்சல் (eṉakku kāyccal), literally to me a fever."
+    examples:
+      "எனக்கு காய்ச்சல்.":
+        native: "I have a fever."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "காய்ச்சல்": "fever"
+      "குழந்தைக்கு காய்ச்சல்.":
+        native: "The child has a fever."
+        bases:
+          "குழந்தைக்கு": "to the child; from குழந்தை (kuḻantai), child"
+          "காய்ச்சல்": "fever"
+  "ta-1265":
+    native: "cold; mucus"
+    notes:
+      n1: "சளி (caḷi) is a cold in the nose and chest, and also the mucus itself."
+    examples:
+      "எனக்கு சளி.":
+        native: "I have a cold."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "சளி": "cold; mucus"
+      "குழந்தைக்கு சளி.":
+        native: "The child has a cold."
+        bases:
+          "குழந்தைக்கு": "to the child; from குழந்தை (kuḻantai), child"
+          "சளி": "cold; mucus"
+  "ta-1266":
+    native: "cough"
+    notes:
+      n1: "இருமல் (irumal) is the noun; the verb is இரும் (irum)."
+    examples:
+      "எனக்கு இருமல்.":
+        native: "I have a cough."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "இருமல்": "cough"
+      "இருமல் அதிகம்.":
+        native: "The cough is bad."
+        bases:
+          "இருமல்": "cough"
+  "ta-1267":
+    native: "headache"
+    notes:
+      n1: "தலைவலி (talaivali) is தலை (talai), head, and வலி (vali), pain, written as one word."
+    examples:
+      "எனக்கு தலைவலி.":
+        native: "I have a headache."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "தலைவலி": "headache"
+      "தலைவலி அதிகம்.":
+        native: "The headache is bad."
+        bases:
+          "தலைவலி": "headache"
+  "ta-1268":
+    native: "stomach ache"
+    notes:
+      n1: "வயிறு (vayiṟu), stomach, changes its stem before வலி (vali): வயிற்றுவலி (vayiṟṟuvali)."
+    examples:
+      "எனக்கு வயிற்றுவலி.":
+        native: "I have a stomach ache."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "வயிற்றுவலி": "stomach ache"
+      "வயிற்றுவலி இல்லை.":
+        native: "There is no stomach ache."
+        bases:
+          "வயிற்றுவலி": "stomach ache"
+  "ta-1269":
+    native: "pain"
+    notes:
+      n1: "வலி (vali) is pain, and also the verb to hurt: தலை வலிக்கிறது (talai valikkiṟatu), the head hurts."
+    examples:
+      "வலி அதிகம்.":
+        native: "The pain is bad."
+        bases:
+          "வலி": "pain"
+      "கால் வலி.":
+        native: "The leg hurts."
+        bases:
+          "வலி": "pain"
+  "ta-1270":
+    native: "wound; injury"
+    notes:
+      n1: "The place takes an ending: காலில் காயம் (kālil kāyam), a wound on the leg."
+    examples:
+      "கையில் காயம்.":
+        native: "There is a wound on the hand."
+        bases:
+          "கையில்": "on the hand; from கை (kai), hand"
+          "காயம்": "wound; injury"
+      "காலில் காயம்.":
+        native: "There is a wound on the leg."
+        bases:
+          "காலில்": "on the leg; from கால் (kāl), leg"
+          "காயம்": "wound; injury"
+  "ta-1271":
+    native: "medicine"
+    notes:
+      n1: "Medicine is eaten in Tamil: மருந்து சாப்பிடு (maruntu cāppiṭu), take medicine; a liquid medicine can be மருந்து குடி (maruntu kuṭi)."
+    examples:
+      "மருந்து சாப்பிடு.":
+        native: "Take the medicine."
+        bases:
+          "மருந்து": "medicine"
+      "மருந்து இல்லை.":
+        native: "There is no medicine."
+        bases:
+          "மருந்து": "medicine"
+  "ta-1272":
+    native: "tablet; pill"
+    notes:
+      n1: "A tablet is also taken with சாப்பிடு (cāppiṭu): மாத்திரை சாப்பிடு (māttirai cāppiṭu)."
+    examples:
+      "காலையில் மாத்திரை சாப்பிடு.":
+        native: "Take the tablet in the morning."
+        bases:
+          "காலையில்": "in the morning; from காலை (kālai), morning"
+          "மாத்திரை": "tablet; pill"
+      "இரண்டு மாத்திரை.":
+        native: "Two tablets."
+        bases:
+          "மாத்திரை": "tablet; pill"
+  "ta-1273":
+    native: "injection; needle"
+    notes:
+      n1: "ஊசி (ūci) is an injection and also a needle; you give it with போடு (pōṭu): ஊசி போடு (ūci pōṭu)."
+    examples:
+      "எனக்கு ஊசி வேண்டாம்.":
+        native: "I do not want an injection."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "ஊசி": "injection; needle"
+      "ஊசி போடு.":
+        native: "Give the injection."
+        bases:
+          "ஊசி": "injection; needle"
+  "ta-1274":
+    native: "doctor"
+    notes:
+      n1: "டாக்டர் (ṭākṭar) is the everyday word; மருத்துவர் (maruttuvar), taught earlier, is the formal word."
+    examples:
+      "டாக்டர் இங்கே இருக்கிறார்.":
+        native: "The doctor is here."
+        bases:
+          "டாக்டர்": "doctor"
+          "இருக்கிறார்": "is (respectful); from இரு (iru), to be"
+      "டாக்டரை பார்.":
+        native: "See the doctor."
+        bases:
+          "டாக்டரை": "the doctor (object); from டாக்டர் (ṭākṭar), doctor"
+  "ta-1275":
+    native: "nurse"
+    notes:
+      n1: "நர்ஸ் (nars) is borrowed from English nurse; the verb is respectful: நர்ஸ் வருகிறார் (nars varukiṟār)."
+    examples:
+      "நர்ஸ் வருகிறார்.":
+        native: "The nurse is coming."
+        bases:
+          "நர்ஸ்": "nurse"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+      "நர்ஸ் அங்கே இருக்கிறார்.":
+        native: "The nurse is there."
+        bases:
+          "நர்ஸ்": "nurse"
+          "அங்கே": "there"
+          "இருக்கிறார்": "is (respectful); from இரு (iru), to be"
+  "ta-1276":
+    native: "pharmacy"
+    notes:
+      n1: "It is made from மருந்து (maruntu), medicine, and கடை (kaṭai), shop."
+    examples:
+      "மருந்துக்கடை பக்கத்தில் இருக்கிறது.":
+        native: "The pharmacy is nearby."
+        bases:
+          "மருந்துக்கடை": "pharmacy"
+          "பக்கத்தில்": "nearby"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "மருந்துக்கடைக்கு போகிறேன்.":
+        native: "I am going to the pharmacy."
+        bases:
+          "மருந்துக்கடைக்கு": "to the pharmacy; from மருந்துக்கடை (maruntukkaṭai), pharmacy"
+          "போகிறேன்": "go; from போ (pō), to go"
+  "ta-1277":
+    native: "blood"
+    notes:
+      n1: "ரத்தம் (rattam) is the spoken form; the written form is இரத்தம் (irattam)."
+    examples:
+      "ரத்தம் வருகிறது.":
+        native: "Blood is coming out."
+        bases:
+          "ரத்தம்": "blood"
+          "வருகிறது": "comes; from வா (vā), to come"
+      "கையில் ரத்தம்.":
+        native: "There is blood on the hand."
+        bases:
+          "கையில்": "on the hand; from கை (kai), hand"
+          "ரத்தம்": "blood"
+  "ta-1278":
+    native: "heart"
+    notes:
+      n1: "இதயம் (itayam) is the heart as an organ, and also the heart as the seat of feeling."
+    examples:
+      "இதயம் நல்லது.":
+        native: "The heart is fine."
+        bases:
+          "இதயம்": "heart"
+      "டாக்டர் இதயம் பார்க்கிறார்.":
+        native: "The doctor checks the heart."
+        bases:
+          "இதயம்": "heart"
+          "பார்க்கிறார்": "looks at, checks (respectful); from பார் (pār), to see"
+  "ta-1279":
+    native: "chest"
+    notes:
+      n1: "நெஞ்சு (neñcu) is the chest; the place form is நெஞ்சில் (neñcil), in the chest."
+    examples:
+      "நெஞ்சு வலி.":
+        native: "Chest pain."
+        bases:
+          "நெஞ்சு": "chest"
+      "நெஞ்சில் வலி.":
+        native: "Pain in the chest."
+        bases:
+          "நெஞ்சில்": "in the chest; from நெஞ்சு (neñcu), chest"
+  "ta-1280":
+    native: "waist; hip"
+    notes:
+      n1: "இடுப்பு (iṭuppu) is the waist or hip; the place form is இடுப்பில் (iṭuppil), at the waist."
+    examples:
+      "இடுப்பு வலி.":
+        native: "Waist pain."
+        bases:
+          "இடுப்பு": "waist; hip"
+      "இடுப்பில் வலி.":
+        native: "Pain in the waist."
+        bases:
+          "இடுப்பில்": "at the waist; from இடுப்பு (iṭuppu), waist"
+  "ta-1281":
+    native: "throat"
+    notes:
+      n1: "தொண்டை வலி (toṇṭai vali) is the usual way to say a sore throat."
+    examples:
+      "தொண்டை வலி.":
+        native: "A sore throat."
+        bases:
+          "தொண்டை": "throat"
+      "தொண்டையில் வலி.":
+        native: "There is pain in the throat."
+        bases:
+          "தொண்டையில்": "in the throat; from தொண்டை (toṇṭai), throat"
+  "ta-1282":
+    native: "joint"
+    notes:
+      n1: "மூட்டு (mūṭṭu) is a joint such as the knee or the elbow; the place form is மூட்டில் (mūṭṭil)."
+    examples:
+      "மூட்டு வலி.":
+        native: "Joint pain."
+        bases:
+          "மூட்டு": "joint"
+      "மூட்டில் வலி.":
+        native: "Pain in the joint."
+        bases:
+          "மூட்டில்": "in the joint; from மூட்டு (mūṭṭu), joint"
+  "ta-1283":
+    native: "bone"
+    notes:
+      n1: "எலும்பு (elumpu) is a bone; the place form is எலும்பில் (elumpil)."
+    examples:
+      "எலும்பு வலி.":
+        native: "Bone pain."
+        bases:
+          "எலும்பு": "bone"
+      "எலும்பில் காயம்.":
+        native: "An injury to the bone."
+        bases:
+          "எலும்பில்": "in the bone; from எலும்பு (elumpu), bone"
+  "ta-1284":
+    native: "toothache"
+    notes:
+      n1: "பல்வலி (palvali) is பல் (pal), tooth, and வலி (vali), pain, written as one word."
+    examples:
+      "எனக்கு பல்வலி.":
+        native: "I have a toothache."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "பல்வலி": "toothache"
+      "பல்வலி அதிகம்.":
+        native: "The toothache is bad."
+        bases:
+          "பல்வலி": "toothache"
+  "ta-1285":
+    native: "vomiting"
+    notes:
+      n1: "வாந்தி வருகிறது (vānti varukiṟatu) is said when the feeling is coming: the vomit comes."
+    examples:
+      "வாந்தி வருகிறது.":
+        native: "I feel like vomiting."
+        bases:
+          "வாந்தி": "vomiting"
+          "வருகிறது": "comes; from வா (vā), to come"
+      "குழந்தைக்கு வாந்தி.":
+        native: "The child is vomiting."
+        bases:
+          "குழந்தைக்கு": "to the child; from குழந்தை (kuḻantai), child"
+          "வாந்தி": "vomiting"
+  "ta-1286":
+    native: "allergy"
+    notes:
+      n1: "ஒவ்வாமை (ovvāmai) is an allergy, a thing that does not agree with you."
+    examples:
+      "எனக்கு ஒவ்வாமை.":
+        native: "I have an allergy."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "ஒவ்வாமை": "allergy"
+      "ஒவ்வாமை இல்லை.":
+        native: "There is no allergy."
+        bases:
+          "ஒவ்வாமை": "allergy"
+  "ta-1287":
+    native: "test; check-up"
+    notes:
+      n1: "பரிசோதனை (paricōtaṉai) is a medical test or an examination."
+    examples:
+      "இன்று பரிசோதனை.":
+        native: "There is a test today."
+        bases:
+          "பரிசோதனை": "test; check-up"
+      "பரிசோதனை நாளை.":
+        native: "The check-up is tomorrow."
+        bases:
+          "பரிசோதனை": "test; check-up"
+  "ta-1288":
+    native: "treatment"
+    notes:
+      n1: "சிகிச்சை (cikiccai) is medical treatment; the place takes an ending: மருத்துவமனையில் சிகிச்சை (maruttuvamaṉaiyil cikiccai)."
+    examples:
+      "மருத்துவமனையில் சிகிச்சை.":
+        native: "Treatment at the hospital."
+        bases:
+          "மருத்துவமனையில்": "at the hospital; from மருத்துவமனை (maruttuvamaṉai), hospital"
+          "சிகிச்சை": "treatment"
+      "சிகிச்சை நல்லது.":
+        native: "The treatment is good."
+        bases:
+          "சிகிச்சை": "treatment"
+  "ta-1289":
+    native: "thermometer"
+    notes:
+      n1: "வெப்பமானி (veppamāṉi) is made from வெப்பம் (veppam), heat, and a word for measuring."
+    examples:
+      "வெப்பமானி எங்கே?":
+        native: "Where is the thermometer?"
+        bases:
+          "வெப்பமானி": "thermometer"
+      "வெப்பமானி வேண்டும்.":
+        native: "A thermometer is needed."
+        bases:
+          "வெப்பமானி": "thermometer"
+  "ta-1290":
+    native: "ambulance"
+    notes:
+      n1: "ஆம்புலன்ஸ் (āmpulaṉs) is borrowed from English ambulance."
+    examples:
+      "ஆம்புலன்ஸ் வருகிறது.":
+        native: "The ambulance is coming."
+        bases:
+          "ஆம்புலன்ஸ்": "ambulance"
+          "வருகிறது": "comes; from வா (vā), to come"
+      "ஆம்புலன்ஸ் வேண்டும்.":
+        native: "An ambulance is needed."
+        bases:
+          "ஆம்புலன்ஸ்": "ambulance"
+  "ta-1291":
+    native: "breath"
+    notes:
+      n1: "மூச்சு விடு (mūccu viṭu) means breathe; the verb விடு (viṭu) goes with மூச்சு (mūccu)."
+    examples:
+      "மூச்சு விடு.":
+        native: "Breathe."
+        bases:
+          "மூச்சு": "breath"
+          "விடு": "let go; breathe out"
+      "மூச்சு இல்லை.":
+        native: "There is no breath."
+        bases:
+          "மூச்சு": "breath"
+  "ta-1292":
+    native: "thirst"
+    notes:
+      n1: "Thirst is felt by someone, so the person takes the to form: எனக்கு தாகம் (eṉakku tākam)."
+    examples:
+      "எனக்கு தாகம்.":
+        native: "I am thirsty."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "தாகம்": "thirst"
+      "தாகம் அதிகம்.":
+        native: "The thirst is great."
+        bases:
+          "தாகம்": "thirst"
+  "ta-1293":
+    native: "tiredness"
+    notes:
+      n1: "சோர்வு (cōrvu) is tiredness; the person takes the to form: எனக்கு சோர்வு (eṉakku cōrvu)."
+    examples:
+      "எனக்கு சோர்வு.":
+        native: "I feel tired."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "சோர்வு": "tiredness"
+      "சோர்வு அதிகம்.":
+        native: "The tiredness is great."
+        bases:
+          "சோர்வு": "tiredness"
+  "ta-1294":
+    native: "dizziness"
+    notes:
+      n1: "தலைசுற்றல் (talaicuṟṟal) is தலை (talai), head, and சுற்றல் (cuṟṟal), turning."
+    examples:
+      "எனக்கு தலைசுற்றல்.":
+        native: "I feel dizzy."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "தலைசுற்றல்": "dizziness"
+      "தலைசுற்றல் இருக்கிறது.":
+        native: "There is dizziness."
+        bases:
+          "தலைசுற்றல்": "dizziness"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1295":
+    native: "well-being; fine"
+    notes:
+      n1: "நலமா (nalamā) is the polite how are you, and the answer is நலம் (nalam)."
+    examples:
+      "நலம்.":
+        native: "Fine."
+        bases:
+          "நலம்": "well-being; fine"
+      "நீங்கள் நலமா?":
+        native: "Are you well?"
+        bases:
+          "நலமா": "well?; from நலம் (nalam), well-being"
+  "ta-1296":
+    native: "health"
+    notes:
+      n1: "ஆரோக்கியம் (ārōkkiyam) is health in general; நலம் (nalam) is well-being and is used in greetings."
+    examples:
+      "ஆரோக்கியம் நல்லது.":
+        native: "Health is good."
+        bases:
+          "ஆரோக்கியம்": "health"
+      "குழந்தைக்கு நல்ல ஆரோக்கியம்.":
+        native: "The child has good health."
+        bases:
+          "குழந்தைக்கு": "to the child; from குழந்தை (kuḻantai), child"
+          "ஆரோக்கியம்": "health"
+  "ta-1297":
+    native: "to cough"
+    notes:
+      n1: "The noun is இருமல் (irumal); the verb stem is இரும் (irum)."
+    examples:
+      "குழந்தை இருமுகிறது.":
+        native: "The child is coughing."
+        bases:
+          "இருமுகிறது": "coughs; from இரும் (irum), to cough"
+      "நான் இருமுகிறேன்.":
+        native: "I am coughing."
+        bases:
+          "இருமுகிறேன்": "cough; from இரும் (irum), to cough"
+  "ta-1298":
+    native: "to sneeze"
+    notes:
+      n1: "தும்மு (tummu) is to sneeze; the child takes the plain verb ending தும்முகிறது (tummukiṟatu)."
+    examples:
+      "நான் தும்முகிறேன்.":
+        native: "I am sneezing."
+        bases:
+          "தும்முகிறேன்": "sneeze; from தும்மு (tummu), to sneeze"
+      "குழந்தை தும்முகிறது.":
+        native: "The child is sneezing."
+        bases:
+          "தும்முகிறது": "sneezes; from தும்மு (tummu), to sneeze"
+  "ta-1299":
+    native: "to get well; to be cured"
+    notes:
+      n1: "குணமாகும் (kuṇamākum) is the form for will get well; the ill person or the illness can be the subject."
+    examples:
+      "நாளை குணமாகும்.":
+        native: "You will get well tomorrow."
+        bases:
+          "குணமாகும்": "will get well; from குணமாகு (kuṇamāku), to get well"
+      "நோய் குணமாகும்.":
+        native: "The illness will be cured."
+        bases:
+          "குணமாகும்": "will get well; from குணமாகு (kuṇamāku), to get well"
+  "ta-1300":
+    native: "to faint"
+    notes:
+      n1: "மயங்கு (mayaṅku) is to faint or to lose consciousness."
+    examples:
+      "அவன் மயங்குகிறான்.":
+        native: "He is fainting."
+        bases:
+          "மயங்குகிறான்": "is fainting; from மயங்கு (mayaṅku), to faint"
+      "குழந்தை மயங்குகிறது.":
+        native: "The child is losing consciousness."
+        bases:
+          "மயங்குகிறது": "is losing consciousness; from மயங்கு (mayaṅku), to faint"
+  "ta-1301":
+    native: "pulse"
+    notes:
+      n1: "நாடி பார் (nāṭi pār) is to feel the pulse; the verb is பார் (pār), see."
+    examples:
+      "நாடி பார்.":
+        native: "Check the pulse."
+        bases:
+          "நாடி": "pulse"
+      "டாக்டர் நாடி பார்க்கிறார்.":
+        native: "The doctor checks the pulse."
+        bases:
+          "நாடி": "pulse"
+          "பார்க்கிறார்": "looks at, checks (respectful); from பார் (pār), to see"
+  "ta-1302":
+    native: "itching"
+    notes:
+      n1: "அரிப்பு (arippu) is itching; the place takes an ending: தோலில் அரிப்பு (tōlil arippu)."
+    examples:
+      "தோலில் அரிப்பு.":
+        native: "Itching on the skin."
+        bases:
+          "தோலில்": "on the skin; from தோல் (tōl), skin"
+          "அரிப்பு": "itching"
+      "அரிப்பு அதிகம்.":
+        native: "The itching is bad."
+        bases:
+          "அரிப்பு": "itching"
+  "ta-1303":
+    native: "to swell"
+    notes:
+      n1: "வீங்கு (vīṅku) is to swell; the swollen place is the subject: கால் வீங்குகிறது (kāl vīṅkukiṟatu)."
+    examples:
+      "கால் வீங்குகிறது.":
+        native: "The leg is swelling."
+        bases:
+          "வீங்குகிறது": "is swelling; from வீங்கு (vīṅku), to swell"
+      "முகம் வீங்குகிறது.":
+        native: "The face is swelling."
+        bases:
+          "வீங்குகிறது": "is swelling; from வீங்கு (vīṅku), to swell"
+  "ta-1304":
+    native: "to shiver; to tremble"
+    notes:
+      n1: "நடுங்கு (naṭuṅku) is to shiver, from cold or fear."
+    examples:
+      "குளிரில் நடுங்குகிறேன்.":
+        native: "I am shivering in the cold."
+        bases:
+          "குளிரில்": "in the cold; from குளிர் (kuḷir), cold"
+          "நடுங்குகிறேன்": "am shivering; from நடுங்கு (naṭuṅku), to shiver"
+      "குழந்தை நடுங்குகிறது.":
+        native: "The child is shivering."
+        bases:
+          "நடுங்குகிறது": "is shivering; from நடுங்கு (naṭuṅku), to shiver"
+  "ta-1305":
+    native: "to sweat"
+    notes:
+      n1: "வியர் (viyar) works like வலி (vali): the person takes the to form: எனக்கு வியர்க்கிறது (eṉakku viyarkkiṟatu)."
+    examples:
+      "எனக்கு வியர்க்கிறது.":
+        native: "I am sweating."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "வியர்க்கிறது": "sweats; from வியர் (viyar), to sweat"
+      "வெயிலில் வியர்க்கிறது.":
+        native: "One sweats in the sun."
+        bases:
+          "வெயிலில்": "in the sun; from வெயில் (veyil), sun"
+          "வியர்க்கிறது": "sweats; from வியர் (viyar), to sweat"
+  "ta-1306":
+    native: "mild; light"
+    notes:
+      n1: "லேசான (lēcāṉa) goes before a noun: லேசான காய்ச்சல் (lēcāṉa kāyccal), a mild fever."
+    examples:
+      "லேசான காய்ச்சல்.":
+        native: "A mild fever."
+        bases:
+          "லேசான": "mild; light"
+      "லேசான வலி.":
+        native: "A light pain."
+        bases:
+          "லேசான": "mild; light"
+  "ta-1307":
+    native: "severe; harsh"
+    notes:
+      n1: "கடுமையான (kaṭumaiyāṉa) goes before a noun and is the opposite of லேசான (lēcāṉa)."
+    examples:
+      "கடுமையான காய்ச்சல்.":
+        native: "A severe fever."
+        bases:
+          "கடுமையான": "severe; harsh"
+      "கடுமையான வலி.":
+        native: "A severe pain."
+        bases:
+          "கடுமையான": "severe; harsh"
+  "ta-1308":
+    native: "bitter"
+    notes:
+      n1: "கசப்பான (kacappāṉa) goes before a noun; after it say கசப்பாக இருக்கிறது (kacappāka irukkiṟatu), is bitter."
+    examples:
+      "இது கசப்பான மருந்து.":
+        native: "This is bitter medicine."
+        bases:
+          "கசப்பான": "bitter"
+      "மருந்து கசப்பாக இருக்கிறது.":
+        native: "The medicine is bitter."
+        bases:
+          "கசப்பாக": "bitter (adverb form); from கசப்பான (kacappāṉa), bitter"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1309":
+    native: "tired"
+    notes:
+      n1: "To say I am tired use சோர்வாக இருக்கிறேன் (cōrvāka irukkiṟēṉ); சோர்வான (cōrvāṉa) goes before a noun."
+    examples:
+      "நான் சோர்வாக இருக்கிறேன்.":
+        native: "I am tired."
+        bases:
+          "சோர்வாக": "tired (adverb form); from சோர்வான (cōrvāṉa), tired"
+          "இருக்கிறேன்": "am; from இரு (iru), to be"
+      "சோர்வான முகம்.":
+        native: "A tired face."
+        bases:
+          "சோர்வான": "tired"
+  "ta-1310":
+    native: "healthy"
+    notes:
+      n1: "ஆரோக்கியமான (ārōkkiyamāṉa) is made from ஆரோக்கியம் (ārōkkiyam), health, and goes before a noun."
+    examples:
+      "ஆரோக்கியமான சாப்பாடு.":
+        native: "Healthy food."
+        bases:
+          "ஆரோக்கியமான": "healthy"
+      "ஆரோக்கியமான குழந்தை.":
+        native: "A healthy child."
+        bases:
+          "ஆரோக்கியமான": "healthy"
+  "ta-1311":
+    native: "vaccine; vaccination"
+    notes:
+      n1: "தடுப்பூசி (taṭuppūci) is a word for prevention joined to ஊசி (ūci), injection; you give it with போடு (pōṭu)."
+    examples:
+      "குழந்தைக்கு தடுப்பூசி.":
+        native: "A vaccine for the child."
+        bases:
+          "குழந்தைக்கு": "to the child; from குழந்தை (kuḻantai), child"
+          "தடுப்பூசி": "vaccine; vaccination"
+      "தடுப்பூசி போடு.":
+        native: "Get the vaccination."
+        bases:
+          "தடுப்பூசி": "vaccine; vaccination"
+  "ta-1312":
+    native: "diet kept during treatment"
+    notes:
+      n1: "பத்தியம் (pattiyam) is the foods to avoid while taking a medicine."
+    examples:
+      "மருந்துக்கு பத்தியம் வேண்டும்.":
+        native: "The medicine needs a diet to be kept."
+        bases:
+          "மருந்துக்கு": "for the medicine; from மருந்து (maruntu), medicine"
+          "பத்தியம்": "diet kept during treatment"
+      "இன்று பத்தியம் சாப்பாடு.":
+        native: "Today it is diet food."
+        bases:
+          "பத்தியம்": "diet kept during treatment"
