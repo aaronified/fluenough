@@ -1,0 +1,51 @@
+schema: 1
+id: "ta-en-reading-animals"
+name: "Reading: a zoo board"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short board at a zoo: which animal is big, where one sits and what another is doing. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-zoo-board"
+    title: "A zoo board"
+    sentences:
+      - text: "யானை பெரியது."
+        reading: "yāṉai periyatu."
+        ipa: "jaːnai peɾijat̪u"
+      - text: "குரங்கு மேலே இருக்கிறது."
+        reading: "kuraṅku mēlē irukkiṟatu."
+        ipa: "kuɾaŋku meːleː iɾukkirat̪u"
+      - text: "பாம்பு கீழே போகிறது."
+        reading: "pāmpu kīḻē pōkiṟatu."
+        ipa: "paːmpu kiːɻeː poːkirat̪u"
+      - text: "நாய் இறைச்சி சாப்பிடுகிறது."
+        reading: "nāy iṟaicci cāppiṭukiṟatu."
+        ipa: "naːj iraitʃtʃi saːppiʈukirat̪u"
+    questions:
+      - id: "ta-9771"
+        prompt: { en: "Which animal is big?" }
+        options:
+          - { en: "The elephant" }
+          - { en: "The dog" }
+          - { en: "The snake" }
+        answer: 1
+      - id: "ta-9772"
+        prompt: { en: "Where is the monkey?" }
+        options:
+          - { en: "Above" }
+          - { en: "Below" }
+          - { en: "Outside" }
+        answer: 1
+      - id: "ta-9773"
+        prompt: { en: "The snake is going up." }
+        answer: false
+      - id: "ta-9774"
+        prompt: { en: "What does the dog eat?" }
+        options:
+          - { en: "Fruit" }
+          - { en: "Meat" }
+          - { en: "Rice" }
+        answer: 2

@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-location"
+name: "Reading: room labels"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "Four short labels saying where people and things are, using inside, outside, behind and above. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-room-labels"
+    title: "Room labels"
+    sentences:
+      - text: "அப்பா உள்ளே இருக்கிறார்."
+        reading: "appā uḷḷē irukkiṟār."
+        ipa: "appaː uɭɭeː iɾukkiraːɾ"
+      - text: "அம்மா வெளியே இருக்கிறார்."
+        reading: "ammā veḷiyē irukkiṟār."
+        ipa: "ammaː ʋeɭijeː iɾukkiraːɾ"
+      - text: "தங்கை பின்னால் இருக்கிறாள்."
+        reading: "taṅkai piṉṉāl irukkiṟāḷ."
+        ipa: "t̪aŋkai pinnaːl iɾukkiraːɭ"
+      - text: "தண்ணீர் மேலே இருக்கிறது."
+        reading: "taṇṇīr mēlē irukkiṟatu."
+        ipa: "t̪aɳɳiːɾ meːleː iɾukkirat̪u"
+    questions:
+      - id: "ta-9729"
+        prompt: { en: "Who is outside?" }
+        options:
+          - { en: "Father" }
+          - { en: "Mother" }
+          - { en: "The younger sister" }
+        answer: 2
+      - id: "ta-9730"
+        prompt: { en: "Where is the water?" }
+        options:
+          - { en: "Above" }
+          - { en: "Below" }
+          - { en: "Inside" }
+        answer: 1
+      - id: "ta-9731"
+        prompt: { en: "Father is behind." }
+        answer: false

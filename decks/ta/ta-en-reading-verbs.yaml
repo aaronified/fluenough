@@ -1,0 +1,47 @@
+schema: 1
+id: "ta-en-reading-verbs"
+name: "Reading: a to-do list"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short to-do list written as plain commands, the form used with a friend or a child. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-to-do-list"
+    title: "A to-do list"
+    sentences:
+      - text: "தண்ணீர் குடி."
+        reading: "taṇṇīr kuṭi."
+        ipa: "t̪aɳɳiːɾ kuʈi"
+      - text: "தமிழ் எழுது."
+        reading: "tamiḻ eḻutu."
+        ipa: "t̪amiɻ eɻut̪u"
+      - text: "சாப்பிடு."
+        reading: "cāppiṭu."
+        ipa: "saːppiʈu"
+      - text: "வீட்டுக்குப் போ."
+        reading: "vīṭṭukkup pō."
+        ipa: "ʋiːʈʈukkup poː"
+      - text: "தூங்கு."
+        reading: "tūṅku."
+        ipa: "t̪uːŋku"
+    questions:
+      - id: "ta-9715"
+        prompt: { en: "What is the last thing on the list?" }
+        options:
+          - { en: "To eat" }
+          - { en: "To sleep" }
+          - { en: "To go home" }
+        answer: 2
+      - id: "ta-9716"
+        prompt: { en: "What should be written?" }
+        options:
+          - { en: "Tamil" }
+          - { en: "A letter home" }
+          - { en: "A name" }
+        answer: 1
+      - id: "ta-9717"
+        prompt: { en: "The list tells you to cook." }
+        answer: false

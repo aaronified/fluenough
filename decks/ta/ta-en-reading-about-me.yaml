@@ -1,0 +1,47 @@
+schema: 1
+id: "ta-en-reading-about-me"
+name: "Reading: a profile card"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short profile card: a name, a home town, a friend and something being studied. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-profile-card"
+    title: "A profile card"
+    sentences:
+      - text: "என் பெயர் அருண்."
+        reading: "eṉ peyar aruṇ."
+        ipa: "en pejaɾ aɾuɳ"
+      - text: "என் ஊர் சென்னை."
+        reading: "eṉ ūr ceṉṉai."
+        ipa: "en uːɾ sennai"
+      - text: "நான் சென்னையில் இருக்கிறேன்."
+        reading: "nāṉ ceṉṉaiyil irukkiṟēṉ."
+        ipa: "naːn sennaijil iɾukkireːn"
+      - text: "என் நண்பன் இங்கே இருக்கிறான்."
+        reading: "eṉ naṇpaṉ iṅkē irukkiṟāṉ."
+        ipa: "en naɳpan iŋkeː iɾukkiraːn"
+      - text: "நான் தமிழ் படிக்கிறேன்."
+        reading: "nāṉ tamiḻ paṭikkiṟēṉ."
+        ipa: "naːn t̪amiɻ paʈikkireːn"
+    questions:
+      - id: "ta-9712"
+        prompt: { en: "Where does Arun live?" }
+        options:
+          - { en: "Madurai" }
+          - { en: "Chennai" }
+          - { en: "Coimbatore" }
+        answer: 2
+      - id: "ta-9713"
+        prompt: { en: "What is Arun studying?" }
+        options:
+          - { en: "Tamil" }
+          - { en: "Cooking" }
+          - { en: "Music" }
+        answer: 1
+      - id: "ta-9714"
+        prompt: { en: "Arun's friend is a woman." }
+        answer: false

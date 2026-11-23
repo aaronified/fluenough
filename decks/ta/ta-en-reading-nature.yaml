@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-nature"
+name: "Reading: park signs"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "Four signs in a park, using the nature words taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-park-signs"
+    title: "Signs in a park"
+    sentences:
+      - text: "பூவைத் தொடாதே."
+        reading: "pūvait toṭātē."
+        ipa: "puːʋait̪ t̪oʈaːt̪eː"
+      - text: "புல்லில் நடக்காதே."
+        reading: "pullil naṭakkātē."
+        ipa: "pullil naʈakkaːt̪eː"
+      - text: "குப்பை போடாதே."
+        reading: "kuppai pōṭātē."
+        ipa: "kuppai poːʈaːt̪eː"
+      - text: "குளத்தில் இறங்காதே."
+        reading: "kuḷattil iṟaṅkātē."
+        ipa: "kuɭat̪t̪il iraŋkaːt̪eː"
+    questions:
+      - id: "ta-9947"
+        prompt: { en: "What must you not touch?" }
+        options:
+          - { en: "The flowers" }
+          - { en: "The trees" }
+          - { en: "The bench" }
+        answer: 1
+      - id: "ta-9948"
+        prompt: { en: "Where must you not walk?" }
+        options:
+          - { en: "On the grass" }
+          - { en: "On the path" }
+          - { en: "By the gate" }
+        answer: 1
+      - id: "ta-9949"
+        prompt: { en: "You may get into the pond." }
+        answer: false

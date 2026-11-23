@@ -1,0 +1,41 @@
+schema: 1
+id: "ta-en-reading-quantities"
+name: "Reading: shopping amounts"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short note about how much of each thing is wanted, using the words for a lot, a little and enough. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-shopping-amounts"
+    title: "Shopping amounts"
+    sentences:
+      - text: "தண்ணீர் நிறைய வேண்டும்."
+        reading: "taṇṇīr niṟaiya vēṇṭum."
+        ipa: "t̪aɳɳiːɾ niraija ʋeːɳʈum"
+      - text: "தேநீர் கொஞ்சம் வேண்டும்."
+        reading: "tēnīr koñcam vēṇṭum."
+        ipa: "t̪eːniːɾ koɲtʃam ʋeːɳʈum"
+      - text: "இது எல்லாம் போதும்."
+        reading: "itu ellām pōtum."
+        ipa: "it̪u ellaːm poːt̪um"
+    questions:
+      - id: "ta-9721"
+        prompt: { en: "Which does the note ask for more of?" }
+        options:
+          - { en: "Water" }
+          - { en: "Tea" }
+          - { en: "Both the same" }
+        answer: 1
+      - id: "ta-9722"
+        prompt: { en: "How much tea is wanted?" }
+        options:
+          - { en: "A lot" }
+          - { en: "A little" }
+          - { en: "Half" }
+        answer: 2
+      - id: "ta-9776"
+        prompt: { en: "The note says all of this is enough." }
+        answer: true

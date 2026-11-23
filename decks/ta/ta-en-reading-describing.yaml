@@ -1,0 +1,47 @@
+schema: 1
+id: "ta-en-reading-describing"
+name: "Reading: a note describing something for sale"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short note describing a house for sale, using the words for big, new, old and beautiful. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-for-sale-note"
+    title: "A note for a sale"
+    sentences:
+      - text: "இது பெரிய வீடு."
+        reading: "itu periya vīṭu."
+        ipa: "it̪u peɾija ʋiːʈu"
+      - text: "புதிய வீடு."
+        reading: "putiya vīṭu."
+        ipa: "put̪ija ʋiːʈu"
+      - text: "பழைய வீடு இல்லை."
+        reading: "paḻaiya vīṭu illai."
+        ipa: "paɻaija ʋiːʈu illai"
+      - text: "அழகான வீடு."
+        reading: "aḻakāṉa vīṭu."
+        ipa: "aɻakaːna ʋiːʈu"
+      - text: "நல்ல ஊர்."
+        reading: "nalla ūr."
+        ipa: "nalla uːɾ"
+    questions:
+      - id: "ta-9723"
+        prompt: { en: "How is the house described?" }
+        options:
+          - { en: "Old and small" }
+          - { en: "New and big" }
+          - { en: "Cold and bad" }
+        answer: 2
+      - id: "ta-9724"
+        prompt: { en: "The note calls the house old." }
+        answer: false
+      - id: "ta-9725"
+        prompt: { en: "What does the note say about the town?" }
+        options:
+          - { en: "It is good" }
+          - { en: "It is bad" }
+          - { en: "It is small" }
+        answer: 1

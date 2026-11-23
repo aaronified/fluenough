@@ -1,0 +1,51 @@
+schema: 1
+id: "ta-en-reading-cinema"
+name: "Tamil reading: cinema"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short film review, using the words of cinema. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-film-review"
+    title: "A film review"
+    sentences:
+      - text: "இது ஒரு நல்ல திரைப்படம்."
+        reading: "itu oru nalla tiraippaṭam."
+        ipa: "it̪u oɾu nalla t̪iɾaippaʈam"
+      - text: "கதாநாயகன் நடிப்பு அருமை."
+        reading: "katānāyakaṉ naṭippu arumai."
+        ipa: "kat̪aːnaːjakan naʈippu aɾumai"
+      - text: "பாடல்கள் நன்றாக இருக்கின்றன."
+        reading: "pāṭalkaḷ naṉṟāka irukkiṉṟaṉa."
+        ipa: "paːʈalkaɭ nanraːka iɾukkinrana"
+      - text: "வேடிக்கையான காட்சிகள் உண்டு."
+        reading: "vēṭikkaiyāṉa kāṭcikaḷ uṇṭu."
+        ipa: "ʋeːʈikkaijaːna kaːʈtʃikaɭ uɳʈu"
+      - text: "ஆனால் முடிவு எனக்குப் பிடிக்கவில்லை."
+        reading: "āṉāl muṭivu eṉakkup piṭikkavillai."
+        ipa: "aːnaːl muʈiʋu enakkup piʈikkaʋillai"
+    questions:
+      - id: "ta-5240"
+        prompt: { "en": "What does the writer think of the film overall?" }
+        options:
+          - { "en": "It is good" }
+          - { "en": "It is boring" }
+          - { "en": "It is frightening" }
+        answer: 1
+      - id: "ta-5241"
+        prompt: { "en": "What does the writer praise about the hero?" }
+        options:
+          - { "en": "The acting" }
+          - { "en": "The singing" }
+          - { "en": "The dancing" }
+        answer: 1
+      - id: "ta-5242"
+        prompt: { "en": "What does the writer not like?" }
+        options:
+          - { "en": "The ending" }
+          - { "en": "The songs" }
+          - { "en": "The scenes" }
+        answer: 1

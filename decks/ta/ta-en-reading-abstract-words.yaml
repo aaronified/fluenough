@@ -1,0 +1,54 @@
+schema: 1
+id: "ta-en-reading-abstract-words"
+name: "Tamil reading: abstract words"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short opinion column, using the abstract words of the unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-opinion-column"
+    title: "An opinion column"
+    sentences:
+      - text: "முயற்சி செய்தால் வெற்றி கிடைக்கும்."
+        reading: "muyaṟci ceytāl veṟṟi kiṭaikkum."
+        ipa: "mujarsi sejt̪aːl ʋerri kiʈaikkum"
+      - text: "சோம்பல் நல்லது இல்லை."
+        reading: "cōmpal nallatu illai."
+        ipa: "soːmpal nallat̪u illai"
+      - text: "பணிவு ஒரு நல்ல பண்பு."
+        reading: "paṇivu oru nalla paṇpu."
+        ipa: "paɳiʋu oɾu nalla paɳpu"
+      - text: "பேராசை துன்பத்தில் முடிகிறது."
+        reading: "pērācai tuṉpattil muṭikiṟatu."
+        ipa: "peːɾaːsai t̪unpat̪t̪il muʈikirat̪u"
+      - text: "அறிவும் வேண்டும், நல்ல மனமும் வேண்டும்."
+        reading: "aṟivum vēṇṭum, nalla maṉamum vēṇṭum."
+        ipa: "ariʋum ʋeːɳʈum nalla manamum ʋeːɳʈum"
+    questions:
+      - id: "ta-5277"
+        prompt: { "en": "What does the writer say success needs?" }
+        options:
+          - { "en": "Effort" }
+          - { "en": "Luck" }
+          - { "en": "Money" }
+        answer: 1
+      - id: "ta-5278"
+        prompt: { "en": "Which quality does the writer call good?" }
+        options:
+          - { "en": "Humility" }
+          - { "en": "Greed" }
+          - { "en": "Laziness" }
+        answer: 1
+      - id: "ta-5279"
+        prompt: { "en": "What does greed bring?" }
+        options:
+          - { "en": "Suffering" }
+          - { "en": "Pleasure" }
+          - { "en": "Fame" }
+        answer: 1
+      - id: "ta-5280"
+        prompt: { "en": "The writer thinks knowledge alone is enough." }
+        answer: false

@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-adjectives-2"
+name: "Reading: a room to let"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short advertisement for a room, using the describing words taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-room-to-let"
+    title: "A room to let"
+    sentences:
+      - text: "ஒரு சுத்தமான அறை இருக்கிறது."
+        reading: "oru cuttamāṉa aṟai irukkiṟatu."
+        ipa: "oɾu sut̪t̪amaːna arai iɾukkirat̪u"
+      - text: "அறை பெரியது, வசதியானது."
+        reading: "aṟai periyatu, vacatiyāṉatu."
+        ipa: "arai peɾijat̪u ʋasat̪ijaːnat̪u"
+      - text: "இது ஒரு அமைதியான தெரு."
+        reading: "itu oru amaitiyāṉa teru."
+        ipa: "it̪u oɾu amait̪ijaːna t̪eɾu"
+      - text: "பக்கத்தில் ஒரு பூங்கா இருக்கிறது."
+        reading: "pakkattil oru pūṅkā irukkiṟatu."
+        ipa: "pakkat̪t̪il oɾu puːŋkaː iɾukkirat̪u"
+    questions:
+      - id: "ta-9950"
+        prompt: { en: "What kind of street is it?" }
+        options:
+          - { en: "A quiet street" }
+          - { en: "A noisy street" }
+          - { en: "A narrow street" }
+        answer: 1
+      - id: "ta-9951"
+        prompt: { en: "What is near the room?" }
+        options:
+          - { en: "A park" }
+          - { en: "A temple" }
+          - { en: "A market" }
+        answer: 1
+      - id: "ta-9952"
+        prompt: { en: "The room is small." }
+        answer: false

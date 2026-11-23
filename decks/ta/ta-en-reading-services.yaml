@@ -1,0 +1,54 @@
+schema: 1
+id: "ta-en-reading-services"
+name: "Tamil reading: services"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short bank form, using the words of services. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-bank-form"
+    title: "Opening a bank account"
+    sentences:
+      - text: "வங்கிக்கணக்குக்கு இந்தப் படிவம்."
+        reading: "vaṅkikkaṇakkukku intap paṭivam."
+        ipa: "ʋaŋkikkaɳakkukku int̪ap paʈiʋam"
+      - text: "இங்கே உங்கள் பெயரை எழுதுங்கள்."
+        reading: "iṅkē uṅkaḷ peyarai eḻutuṅkaḷ."
+        ipa: "iŋkeː uŋkaɭ pejaɾai eɻut̪uŋkaɭ"
+      - text: "பிறகு அசல் அட்டையைக் காட்டுங்கள்."
+        reading: "piṟaku acal aṭṭaiyaik kāṭṭuṅkaḷ."
+        ipa: "piraku asal aʈʈaijaik kaːʈʈuŋkaɭ"
+      - text: "முன்பணம் இல்லை."
+        reading: "muṉpaṇam illai."
+        ipa: "munpaɳam illai"
+      - text: "காசாளரிடம் படிவத்தை ஒப்படையுங்கள்."
+        reading: "kācāḷariṭam paṭivattai oppaṭaiyuṅkaḷ."
+        ipa: "kaːsaːɭaɾiʈam paʈiʋat̪t̪ai oppaʈaijuŋkaɭ"
+    questions:
+      - id: "ta-5218"
+        prompt: { "en": "What is this form for?" }
+        options:
+          - { "en": "A bank account" }
+          - { "en": "A postal parcel" }
+          - { "en": "A tailor's order" }
+        answer: 1
+      - id: "ta-5219"
+        prompt: { "en": "What must you show?" }
+        options:
+          - { "en": "The original card" }
+          - { "en": "A cheque" }
+          - { "en": "A stamp" }
+        answer: 1
+      - id: "ta-5220"
+        prompt: { "en": "Who gets the form at the end?" }
+        options:
+          - { "en": "The cashier" }
+          - { "en": "The mechanic" }
+          - { "en": "The plumber" }
+        answer: 1
+      - id: "ta-5221"
+        prompt: { "en": "An advance payment is needed." }
+        answer: false

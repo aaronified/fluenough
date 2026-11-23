@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-geography"
+name: "Reading: Tamil lands on the map"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A few facts about Tamil lands, read from a map, using the geography words taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-tamil-lands-map"
+    title: "Tamil lands on the map"
+    sentences:
+      - text: "தமிழ்நாடு இந்தியாவில் இருக்கிறது."
+        reading: "tamiḻnāṭu intiyāvil irukkiṟatu."
+        ipa: "t̪amiɻnaːʈu int̪ijaːʋil iɾukkirat̪u"
+      - text: "சென்னை தமிழ்நாட்டின் தலைநகரம்."
+        reading: "ceṉṉai tamiḻnāṭṭiṉ talainakaram."
+        ipa: "sennai t̪amiɻnaːʈʈin t̪alainakaɾam"
+      - text: "மதுரையில் வைகை நதி இருக்கிறது."
+        reading: "maturaiyil vaikai nati irukkiṟatu."
+        ipa: "mat̪uɾaijil ʋaikai nat̪i iɾukkirat̪u"
+      - text: "நீலகிரி மலை தமிழ்நாட்டில் இருக்கிறது."
+        reading: "nīlakiri malai tamiḻnāṭṭil irukkiṟatu."
+        ipa: "niːlakiɾi malai t̪amiɻnaːʈʈil iɾukkirat̪u"
+    questions:
+      - id: "ta-9956"
+        prompt: { en: "Which city is the capital of Tamil Nadu?" }
+        options:
+          - { en: "Chennai" }
+          - { en: "Madurai" }
+          - { en: "Salem" }
+        answer: 1
+      - id: "ta-9957"
+        prompt: { en: "Which river is in Madurai?" }
+        options:
+          - { en: "The Vaigai" }
+          - { en: "The Ganga" }
+          - { en: "The Kaveri" }
+        answer: 1
+      - id: "ta-9958"
+        prompt: { en: "Tamil Nadu is in Sri Lanka." }
+        answer: false

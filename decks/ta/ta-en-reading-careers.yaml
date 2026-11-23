@@ -1,0 +1,58 @@
+schema: 1
+id: "ta-en-reading-careers"
+name: "Tamil reading: careers"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short job advert, using the words of careers. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-job-advert"
+    title: "A job advert"
+    sentences:
+      - text: "கடையில் காசாளர் வேண்டும்."
+        reading: "kaṭaiyil kācāḷar vēṇṭum."
+        ipa: "kaʈaijil kaːsaːɭaɾ ʋeːɳʈum"
+      - text: "காலை ஒன்பது மணிக்கு வாருங்கள், மாலை ஐந்து மணி வரை வேலை."
+        reading: "kālai oṉpatu maṇikku vāruṅkaḷ, mālai aintu maṇi varai vēlai."
+        ipa: "kaːlai onpat̪u maɳikku ʋaːɾuŋkaɭ maːlai aint̪u maɳi ʋaɾai ʋeːlai"
+      - text: "இது பகுதிநேர வேலை."
+        reading: "itu pakutinēra vēlai."
+        ipa: "it̪u pakut̪ineːɾa ʋeːlai"
+      - text: "ஆர்வம் உள்ளவர்கள் பயோடேட்டா கொடுங்கள்."
+        reading: "ārvam uḷḷavarkaḷ payōṭēṭṭā koṭuṅkaḷ."
+        ipa: "aːɾʋam uɭɭaʋaɾkaɭ pajoːʈeːʈʈaː koʈuŋkaɭ"
+      - text: "திறன் இருந்தால் வாய்ப்பு உண்டு."
+        reading: "tiṟaṉ iruntāl vāyppu uṇṭu."
+        ipa: "t̪iran iɾunt̪aːl ʋaːjppu uɳʈu"
+    questions:
+      - id: "ta-5229"
+        prompt: { "en": "Who does the shop need?" }
+        options:
+          - { "en": "A cashier" }
+          - { "en": "A mechanic" }
+          - { "en": "A designer" }
+        answer: 1
+      - id: "ta-5230"
+        prompt: { "en": "When does the working day run?" }
+        options:
+          - { "en": "Nine in the morning to five in the evening" }
+          - { "en": "Five in the morning to nine at night" }
+          - { "en": "Only at night" }
+        answer: 1
+      - id: "ta-5231"
+        prompt: { "en": "What kind of job is it?" }
+        options:
+          - { "en": "Part-time" }
+          - { "en": "Full-time" }
+          - { "en": "Daily wage" }
+        answer: 1
+      - id: "ta-5232"
+        prompt: { "en": "What should interested people give?" }
+        options:
+          - { "en": "A biodata" }
+          - { "en": "A passport" }
+          - { "en": "A stamp" }
+        answer: 1

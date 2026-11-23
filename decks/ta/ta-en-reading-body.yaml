@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-body"
+name: "Reading: a health poster"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short poster of health tips, using the words for face and hair and the plain command form. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-exercise-poster"
+    title: "An exercise poster"
+    sentences:
+      - text: "தண்ணீர் நிறைய குடி."
+        reading: "taṇṇīr niṟaiya kuṭi."
+        ipa: "t̪aɳɳiːɾ niraija kuʈi"
+      - text: "முகம் கழுவு."
+        reading: "mukam kaḻuvu."
+        ipa: "mukam kaɻuʋu"
+      - text: "முடி கழுவு."
+        reading: "muṭi kaḻuvu."
+        ipa: "muʈi kaɻuʋu"
+      - text: "நிறைய தூங்கு."
+        reading: "niṟaiya tūṅku."
+        ipa: "niraija t̪uːŋku"
+    questions:
+      - id: "ta-9756"
+        prompt: { en: "What should you wash first?" }
+        options:
+          - { en: "The hands" }
+          - { en: "The face" }
+          - { en: "The neck" }
+        answer: 2
+      - id: "ta-9757"
+        prompt: { en: "Besides drinking water, what should you do a lot of?" }
+        options:
+          - { en: "Eat" }
+          - { en: "Sleep" }
+          - { en: "Play" }
+        answer: 2
+      - id: "ta-9758"
+        prompt: { en: "The poster tells you to wash your hair." }
+        answer: true

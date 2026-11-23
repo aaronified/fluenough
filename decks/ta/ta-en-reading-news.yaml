@@ -1,0 +1,54 @@
+schema: 1
+id: "ta-en-reading-news"
+name: "Tamil reading: news"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A list of short, invented news headlines, using the words of the news. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-headline-list"
+    title: "A list of headlines"
+    sentences:
+      - text: "நேற்று இரவு ஒரு கடையில் தீ."
+        reading: "nēṟṟu iravu oru kaṭaiyil tī."
+        ipa: "neːrru iɾaʋu oɾu kaʈaijil t̪iː"
+      - text: "காயம் இல்லை."
+        reading: "kāyam illai."
+        ipa: "kaːjam illai"
+      - text: "சந்தையில் காய்கறி விலை உயர்வு."
+        reading: "cantaiyil kāykaṟi vilai uyarvu."
+        ipa: "sant̪aijil kaːjkari ʋilai ujaɾʋu"
+      - text: "நாளை ஊரில் பெரிய மாநாடு."
+        reading: "nāḷai ūril periya mānāṭu."
+        ipa: "naːɭai uːɾil peɾija maːnaːʈu"
+      - text: "நிருபர் மக்களிடம் பேட்டி எடுக்கிறார்."
+        reading: "nirupar makkaḷiṭam pēṭṭi eṭukkiṟār."
+        ipa: "niɾupaɾ makkaɭiʈam peːʈʈi eʈukkiraːɾ"
+    questions:
+      - id: "ta-5207"
+        prompt: { "en": "What happened last night?" }
+        options:
+          - { "en": "A fire in a shop" }
+          - { "en": "An earthquake" }
+          - { "en": "A strike" }
+        answer: 1
+      - id: "ta-5208"
+        prompt: { "en": "Was anyone hurt?" }
+        options:
+          - { "en": "No, there was no injury" }
+          - { "en": "Yes, one person" }
+          - { "en": "Yes, many people" }
+        answer: 1
+      - id: "ta-5209"
+        prompt: { "en": "When is the conference?" }
+        options:
+          - { "en": "Tomorrow" }
+          - { "en": "Yesterday" }
+          - { "en": "Today" }
+        answer: 1
+      - id: "ta-5210"
+        prompt: { "en": "The price of vegetables has gone down." }
+        answer: false

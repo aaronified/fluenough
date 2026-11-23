@@ -1,0 +1,54 @@
+schema: 1
+id: "ta-en-reading-feelings"
+name: "Tamil reading: feelings"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short letter to a friend, using the words of feelings. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-a-letter-to-a-friend"
+    title: "A letter to a friend"
+    sentences:
+      - text: "நண்பா, வணக்கம்."
+        reading: "naṇpā, vaṇakkam."
+        ipa: "naɳpaː ʋaɳakkam"
+      - text: "இங்கே எனக்குத் தனிமை இருக்கிறது."
+        reading: "iṅkē eṉakkut taṉimai irukkiṟatu."
+        ipa: "iŋkeː enakkut̪ t̪animai iɾukkirat̪u"
+      - text: "உன் நினைவு வருகிறது."
+        reading: "uṉ niṉaivu varukiṟatu."
+        ipa: "un ninaiʋu ʋaɾukirat̪u"
+      - text: "நாளை நான் வருகிறேன், எனக்கு உற்சாகம்."
+        reading: "nāḷai nāṉ varukiṟēṉ, eṉakku uṟcākam."
+        ipa: "naːɭai naːn ʋaɾukireːn enakku ursaːkam"
+      - text: "உன்மேல் எனக்கு அன்பு இருக்கிறது."
+        reading: "uṉmēl eṉakku aṉpu irukkiṟatu."
+        ipa: "unmeːl enakku anpu iɾukkirat̪u"
+      - text: "கவலை வேண்டாம்."
+        reading: "kavalai vēṇṭām."
+        ipa: "kaʋalai ʋeːɳʈaːm"
+    questions:
+      - id: "ta-5204"
+        prompt: { "en": "How does the writer feel where he or she is now?" }
+        options:
+          - { "en": "Lonely" }
+          - { "en": "Angry" }
+          - { "en": "Bored" }
+        answer: 1
+      - id: "ta-5205"
+        prompt: { "en": "How does the writer feel about tomorrow?" }
+        options:
+          - { "en": "Excited" }
+          - { "en": "Afraid" }
+          - { "en": "Ashamed" }
+        answer: 1
+      - id: "ta-5206"
+        prompt: { "en": "What does the writer ask the friend?" }
+        options:
+          - { "en": "Not to worry" }
+          - { "en": "To send money" }
+          - { "en": "To write soon" }
+        answer: 1
