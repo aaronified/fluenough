@@ -95,3 +95,18 @@ Engine findings for the builders: bare digits (௦ to ௯) give an empty IPA, an
 
 Lessons carried into every brief: a word is one card once (grep the merged tree, other workers reserve ranges); a card's table row follows the card's dictionary lemma (en.wiktionary form); stem doubling and -வ- rules in the noun table are checked per row; no card refers to a later unit's card; path units without a theme deck do not end in `*`.
 Still to do after B1: topics, situations, facts, proverbs, multi-word verbs, recommendations, reading decks, the `ʧ` to `tʃ` fix on 14 old cards, narrow IPA, review-queue rows kept current.
+
+## 6. Status and exact resume plan, 2026-11-23 (rate limit, resets 07:40 UTC)
+
+Merged to decks-live, each with CI green (10 of 10 checks) and one Sonnet review: #1710 A1; #1714 A2 (units 46 to 79); #1716 B1 (units 80 to 114: the path is complete to the B1 mark, 114 units built, none planned); #1717 culture (62 cards of 72) with `decks/creators/ta.yaml`; #1720 proverbs (60) and multi-word verbs (54 of 60) and the `ʧ` to `tʃ` fix; #1719 situations (10 sheets), facts (37), recommendations (20); #1721 topics (65).
+
+| Open item | State | Resume |
+|---|---|---|
+| Culture 62 of 72 | `decks/ta-culture-wave2` exists, no commits (ta-culture2 hit the limit) | Re-run ta-culture2: add cards ta-6066..6069 (deck 2), ta-6112..6117 (deck 3), ta-6166..6169 (deck 4) from ta.wikisource (Kannan Pattu, Panchali Sabatham, the novels' own text), ta.wikiquote, archive.org; legacy items for Bharati and Vedanayagam Pillai from en.wikipedia. Wikimedia returned 429 twice: pace and back off |
+| Topics nits (PR #1721 review) | merged without them | `ta-first-novel`: say "an early Tamil novel"; `ta-proverbs`: "the builder's own English"; add `ta-pronouns` and `ta-daily-life` decks to a topic; optional: `ta-idiomatic-verbs` level B1 |
+| Narrow IPA | `tools/ta-phonetics` (0c6ac5654, one registry entry) waits for the parent to merge it; `decks/ta-phonetics-wave1` (d865ad290: 13 rules, `phonetic` on 3,236 cards, 0 invalid) waits for it | After the parent merges the registry entry and the last content PRs: merge `origin/decks-live` into the branch, run `derive_phonetic.py ta --bracket-unchanged --write` (only new cards fill), one PR, one review, CI |
+| Reading decks | none built (about 60 word units named by the path have no `ta-en-reading-*`) | A wave on `decks/ta-readings-wave1`, one Sonnet worker per 20 units, each after its sentences deck exists; a reading deck has no reading for grammar units |
+| Plan-word shortfall | six B1 units are a few words under their planned size (services 47 of 50, travel 57 of 60, health 59 of 60, opinions 54 of 55, technology 52 of 55, environment 52 of 55) | Optional top-up of unique words; `words:` in the path was raised for three units that exceeded theirs |
+| Multi-word 54 of 60 | aspectual-compound is 14 of 20; the six plan headwords with no readable page were dropped (reasons in the queue) | Optional |
+| Review queue | rows appended by every worker; `dropped:` rows are not card ids | Settled by a reviewer through the app |
+| Professional | held (needs the owner) | none |
