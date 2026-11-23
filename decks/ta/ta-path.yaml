@@ -742,12 +742,14 @@ units:
       - { id: "doing-two-things", text: { "en": "Saying what people do while doing something else" } }
     reading_passages:
       - { id: "a-day-on-the-bus", text: { "en": "A short story of a bus ride" } }
-  - planned: { id: "ta-cinema", theme: "cinema", words: 60 }
+  - decks: ["ta-cinema", "ta-cinema-sentences", "*"]
+    words: 60
     listening_passages:
       - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
     reading_passages:
       - { id: "film-review", text: { "en": "A short film review" } }
-  - planned: { id: "ta-arts", theme: "arts", words: 50 }
+  - decks: ["ta-arts", "ta-arts-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "a-music-class", text: { "en": "A teacher explains a Carnatic music class" } }
     reading_passages:

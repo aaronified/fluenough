@@ -1,0 +1,101 @@
+schema: 1
+id: "ta-en-arts-sentences"
+kind: "layer"
+core: "ta-arts-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Arts: music, dance, painting and the stage in sentences"
+description: "Sentences about music classes, instruments, dance, painting and exhibitions. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-9510":
+    native: "I like traditional music."
+    bases:
+      "எனக்குப்": "to me; from நான் (nāṉ), I"
+    confusables:
+      w1: { why: "தாளம் (tāḷam), rhythm; beat, is a different word." }
+      w2: { why: "ராகம் (rākam), raga; melody pattern, is a different word." }
+      w3: { why: "சுருதி (curuti), pitch; drone note, is a different word." }
+  "ta-9511":
+    native: "She dances Bharatanatyam on the stage today."
+    bases:
+      "மேடையில்": "on the stage; from மேடை (mēṭai), stage"
+      "ஆடுகிறாள்": "is dancing; from ஆடு (āṭu), to dance; to swing"
+    confusables:
+      w1: { why: "அரங்கேற்றம் (araṅkēṟṟam), debut performance; first stage show, is a different word." }
+      w2: { why: "ஒத்திகை (ottikai), rehearsal, is a different word." }
+      w3: { why: "நிகழ்ச்சி (nikaḻcci), programme; event; show, is a different word." }
+  "ta-9512":
+    native: "The teacher teaches music."
+    bases:
+      "கற்பிக்கிறார்": "she teaches; from கற்பி (kaṟpi), to teach"
+    confusables:
+      w1: { why: "குரு (kuru), guru; teacher, is a different word." }
+      w2: { why: "கலைஞர் (kalaiñar), artist, is a different word." }
+      w3: { why: "இசைக்குழு (icaikkuḻu), band; orchestra, is a different word." }
+  "ta-9513":
+    native: "There is a beautiful statue in the museum."
+    bases:
+      "அருங்காட்சியகத்தில்": "in the museum; from அருங்காட்சியகம் (aruṅkāṭciyakam), museum"
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    notes:
+      n1: "The place takes -இல் (-il); அருங்காட்சியகம் (aruṅkāṭciyakam), museum ends in -ம் (-m), which becomes -த் (-t) before it: அருங்காட்சியகத்தில் (aruṅkāṭciyakattil)."
+    confusables:
+      w1: { why: "சிற்பம் (ciṟpam), sculpture; carving, is a different word." }
+      w2: { why: "படைப்பு (paṭaippu), creation; artwork, is a different word." }
+      w3: { why: "ஓவியம் (ōviyam), painting; drawing, is a different word." }
+  "ta-9514":
+    native: "There is an exhibition tomorrow."
+    bases:
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "கச்சேரி (kaccēri), concert; music recital, is a different word." }
+      w2: { why: "நிகழ்ச்சி (nikaḻcci), programme; event; show, is a different word." }
+      w3: { why: "அரங்கேற்றம் (araṅkēṟṟam), debut performance; first stage show, is a different word." }
+  "ta-9515":
+    native: "My younger sister plays the veena."
+    bases:
+      "என்": "my; from நான் (nāṉ), I; me"
+      "வாசிக்கிறாள்": "she plays; from வாசி (vāci), to play an instrument"
+    notes:
+      n1: "வாசி (vāci), to play takes the instrument as a plain object, as in வீணை வாசிக்கிறாள் (vīṇai vācikkiṟāḷ)."
+    confusables:
+      w1: { why: "மிருதங்கம் (mirutaṅkam), mridangam; two-headed drum, is a different word." }
+      w2: { why: "வயலின் (vayaliṉ), violin, is a different word." }
+      w3: { why: "புல்லாங்குழல் (pullāṅkuḻal), flute, is a different word." }
+  "ta-9516":
+    native: "The painter draws a painting with a brush."
+    bases:
+      "தூரிகையால்": "with a brush; from தூரிகை (tūrikai), paintbrush"
+      "வரைகிறார்": "he draws; from வரை (varai), to draw"
+    notes:
+      n1: "The tool takes -ஆல் (-āl): தூரிகையால் (tūrikaiyāl), with a brush."
+    confusables:
+      w1: { why: "வண்ணம் (vaṇṇam), colour; paint, is a different word." }
+      w2: { why: "சித்திரம் (cittiram), picture; drawing, is a different word." }
+      w3: { why: "கலைஞர் (kalaiñar), artist, is a different word." }
+  "ta-9517":
+    native: "There are five artists in this band."
+    bases:
+      "இந்த": "this (before a noun)"
+      "இசைக்குழுவில்": "in the band; from இசைக்குழு (icaikkuḻu), band"
+      "கலைஞர்கள்": "artists; from கலைஞர் (kalaiñar), artist"
+      "இருக்கிறார்கள்": "are; from இரு (iru), to be"
+    notes:
+      n1: "A noun ending in -உ (-u) takes -வ- (-va-) before -இல் (-il): இசைக்குழு (icaikkuḻu) becomes இசைக்குழுவில் (icaikkuḻuvil)."
+    confusables:
+      w1: { why: "இசைக்கலைஞர் (icaikkalaiñar), musician, is a different word." }
+      w2: { why: "நடனக்கலைஞர் (naṭaṉakkalaiñar), dancer; dance artist, is a different word." }
+      w3: { why: "ஓவியர் (ōviyar), painter; artist, is a different word." }
+  "ta-9518":
+    native: "The rhythm of this dance is wonderful."
+    bases:
+      "இந்த": "this (before a noun)"
+      "நாட்டியத்தின்": "of the dance; from நாட்டியம் (nāṭṭiyam), dance"
+      "அருமை": "wonderful; excellent"
+    notes:
+      n1: "The -ம் (-m) of நாட்டியம் (nāṭṭiyam), dance becomes -த்தின் (-ttiṉ) to say of: நாட்டியத்தின் (nāṭṭiyattiṉ)."
+    confusables:
+      w1: { why: "ராகம் (rākam), raga; melody pattern, is a different word." }
+      w2: { why: "சுருதி (curuti), pitch; drone note, is a different word." }
+      w3: { why: "அபிநயம் (apinayam), gesture; expressive acting, is a different word." }
