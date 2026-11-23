@@ -1,0 +1,25 @@
+schema: 1
+id: "ml-en-grammar-sentences"
+kind: "layer"
+core: "ml-grammar-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Word order: doer, thing, verb"
+description: "Building a sentence in Malayalam: the doer first, the thing next and the verb last. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Word order"
+  slot_name: "part"
+  slots:
+    "doer": "the doer"
+    "thing": "the thing"
+    "verb": "the verb"
+    "whole": "the whole sentence"
+  entries:
+    "kudikkuka": "to drink"
+    "kazhikkuka": "to eat"
+    "vangunka": "to buy"
+    "vayikkuka": "to read"
+    "thurakkuka": "to open"
+    "vilikkuka": "to call"
+  notes: "The verb comes last: doer, thing, verb, so ഞാൻ ചായ കുടിക്കുന്നു (ñāṉ cāya kuṭikkunnu) is, word for word, I tea drink. The verb does not change for the doer: കുടിക്കുന്നു (kuṭikkunnu) serves I, you, he and she. A person or an animal that is acted on takes the ending -എ (-e), as അമ്മയെ (ammaye), mother, the one called, while a thing usually takes none, as ചായ (cāya). A word that describes comes before the word it describes. There is no word for the, and ആണ് (āṇ), is, joins the word before it when you say what something is. Source: English Wikipedia, Malayalam grammar (the order subject, object, verb; the accusative -എ (-e))."

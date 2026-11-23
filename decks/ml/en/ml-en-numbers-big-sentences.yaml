@@ -1,0 +1,81 @@
+schema: 1
+id: "ml-en-numbers-big-sentences"
+kind: "layer"
+core: "ml-numbers-big-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Big numbers in sentences"
+description: "Short sentences about hundreds, thousands, lakhs, crores and money, with the numbers from thirty to a crore. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-3024":
+    native: "Do you want a hundred rupees?"
+    bases:
+      "രൂപ": "rupees"
+      "വേണോ": "do you want"
+    notes:
+      n1: "നൂറ് (nūṟ) comes before the amount; രൂപ (rūpa) is the plain word for rupees."
+    confusables:
+      w1: { why: "ഇരുനൂറ് (irunūṟ) is two hundred, another amount." }
+      w2: { why: "ആയിരം (āyiraṁ) is one thousand, ten times more." }
+  "ml-3025":
+    native: "I need two hundred rupees."
+    bases:
+      "രൂപ": "rupees"
+      "വേണം": "need"
+    notes:
+      n1: "എനിക്ക് (enikk) is the form of ഞാൻ (ñāṉ) before the dative ending ക്ക് (kk); the stem changes to എന (ena)."
+    confusables:
+      w1: { why: "നൂറ് (nūṟ) is a hundred, half of this amount." }
+      w2: { why: "പതിനായിരം (patināyiraṁ) is ten thousand, far larger." }
+  "ml-3026":
+    native: "How many rupees?"
+    bases:
+      "രൂപ": "rupees"
+    notes:
+      n1: "എത്ര (etra) asks the number of rupees."
+    confusables:
+      w1: { why: "എന്ത് (ent) asks for a thing, not an amount." }
+      w2: { why: "ഏത് (ēt) chooses one, not an amount." }
+  "ml-3027":
+    native: "Thirty, forty, fifty."
+    notes:
+      n1: "A counting list has no verb: the numbers are said one after another."
+    confusables:
+      w1: { why: "അറുപത് (aṟupat) is sixty, between fifty and seventy." }
+      w2: { why: "എഴുപത് (eḻupat) is seventy, the next number." }
+  "ml-3028":
+    native: "Eighty, ninety, a hundred."
+    notes:
+      n1: "A count of tens runs up to the next hundred, നൂറ് (nūṟ)."
+    confusables:
+      w1: { why: "അറുപത് (aṟupat) is sixty, before eighty." }
+      w2: { why: "ലക്ഷം (lakṣaṁ) is a lakh, far bigger." }
+  "ml-3029":
+    native: "Do you want one lakh rupees?"
+    bases:
+      "ഒരു": "one"
+      "രൂപ": "rupees"
+      "വേണോ": "do you want"
+    notes:
+      n1: "ലക്ഷം (lakṣaṁ) is a lakh, a hundred thousand, the Indian count used for money."
+    confusables:
+      w1: { why: "ആയിരം (āyiraṁ) is one thousand, a hundredth of a lakh." }
+      w2: { why: "കോടി (kōṭi) is one crore, a hundred lakhs." }
+  "ml-3030":
+    native: "Grandmother is seventy years old."
+    notes:
+      n1: "A person's age is said with the dative: മുത്തശ്ശി (muttaśśi) takes ക്ക് (kk), giving മുത്തശ്ശിക്ക് (muttaśśikk), to grandmother."
+    confusables:
+      w1: { why: "അറുപത് (aṟupat) is sixty, a different age." }
+      w2: { why: "എൺപത് (eṇpat) is eighty, a different age." }
+  "ml-3031":
+    native: "There is a thousand rupees here."
+    bases:
+      "രൂപ": "rupees"
+      "ഉണ്ട്": "there is"
+    notes:
+      n1: "ഇവിടെ (iviṭe) comes after the amount and before the verb ഉണ്ട് (uṇṭ)."
+    confusables:
+      w1: { why: "പതിനായിരം (patināyiraṁ) is ten thousand, ten times more." }
+      w2: { why: "ഇരുനൂറ് (irunūṟ) is two hundred, a smaller amount." }

@@ -1,0 +1,88 @@
+schema: 1
+id: "ml-family-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-3072"
+    target: "അമ്മ ഉണ്ടോ?"
+    reading: "amma uṇṭō?"
+    ipa: "əmma uɳʈoː"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "അമ്മ", ref: "ml-0071" }, { word: "ഉണ്ടോ", ref: "ml-0040" }]
+    confusables:
+      - { id: "w1", ref: "ml-0070", kind: "word" }
+      - { id: "w2", ref: "ml-0082", kind: "word" }
+  - id: "ml-3073"
+    target: "അച്ഛൻ ഉണ്ട്."
+    reading: "acchaṉ uṇṭ."
+    ipa: "ətʃtʃan uɳʈ"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "അച്ഛൻ", ref: "ml-0070" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+    confusables:
+      - { id: "w1", ref: "ml-0071", kind: "word" }
+      - { id: "w2", ref: "ml-0074", kind: "word" }
+  - id: "ml-3074"
+    target: "അമ്മേ, വരൂ."
+    reading: "ammē, varū."
+    ipa: "əmmeː ʋəɾuː"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "അമ്മേ", ref: "ml-0071" }, { word: "വരൂ", ref: "ml-0010" }]
+    confusables:
+      - { id: "w1", ref: "ml-0070", kind: "word" }
+      - { id: "w2", ref: "ml-0075", kind: "word" }
+  - id: "ml-3075"
+    target: "നിനക്ക് ചേച്ചി ഉണ്ടോ?"
+    reading: "ninakk cēcci uṇṭō?"
+    ipa: "ninakk tʃeːtʃtʃi uɳʈoː"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "നിനക്ക്", ref: "ml-0108" }, { word: "ചേച്ചി", ref: "ml-0075" }, { word: "ഉണ്ടോ", ref: "ml-0040" }]
+    confusables:
+      - { id: "w1", ref: "ml-0076", kind: "word" }
+      - { id: "w2", ref: "ml-0072", kind: "word" }
+  - id: "ml-3076"
+    target: "എനിക്ക് അനിയത്തി ഉണ്ട്."
+    reading: "enikk aniyatti uṇṭ."
+    ipa: "enikk ənijət̪t̪i uɳʈ"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "അനിയത്തി", ref: "ml-0077" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+    confusables:
+      - { id: "w1", ref: "ml-0075", kind: "word" }
+      - { id: "w2", ref: "ml-0073", kind: "word" }
+  - id: "ml-3077"
+    target: "അവന്റെ അമ്മ വരുന്നു."
+    reading: "avanṟe amma varunnu."
+    ipa: "əʋənt̪ɾe əmma ʋəɾunnu"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "usage" }]
+    bases: [{ word: "അവന്റെ", ref: "ml-0102" }, { word: "അമ്മ", ref: "ml-0071" }, { word: "വരുന്നു", base: "വരുന്നു", reading: "varunnu" }]
+    confusables:
+      - { id: "w1", ref: "ml-0073", kind: "word" }
+      - { id: "w2", ref: "ml-0079", kind: "word" }
+  - id: "ml-3078"
+    target: "കുട്ടി, വരൂ."
+    reading: "kuṭṭi, varū."
+    ipa: "kuʈʈi ʋəɾuː"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "കുട്ടി", ref: "ml-0082" }, { word: "വരൂ", ref: "ml-0010" }]
+    confusables:
+      - { id: "w1", ref: "ml-0072", kind: "word" }
+      - { id: "w2", ref: "ml-0083", kind: "word" }
+  - id: "ml-3079"
+    target: "കുടുംബം എവിടെ?"
+    reading: "kuṭuṁbaṁ eviṭe?"
+    ipa: "kuʈumbam eʋiʈe"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "കുടുംബം", ref: "ml-0069" }, { word: "എവിടെ", ref: "ml-0033" }]
+    confusables:
+      - { id: "w1", ref: "ml-0032", kind: "word" }
+      - { id: "w2", ref: "ml-0034", kind: "word" }
