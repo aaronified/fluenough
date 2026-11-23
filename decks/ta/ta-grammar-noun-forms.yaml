@@ -10,6 +10,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["noun"]
+    except: ["ta-0444", "ta-0445", "ta-0446"]
   slots: ["pl", "obl", "ai", "ukku", "il", "itam", "iliruntu", "otu", "utaiya"]
   rows:
     - word: "ta-0005"
@@ -429,6 +430,21 @@ table:
     - word: "ta-0305"
       forms: { "pl": "கோழிகள்", "obl": null, "ai": "கோழியை", "ukku": "கோழிக்கு", "il": null, "itam": "கோழியிடம்", "iliruntu": "கோழியிடமிருந்து", "otu": "கோழியோடு", "utaiya": "கோழியுடைய" }
       readings: { "pl": "kōḻikaḷ", "ai": "kōḻiyai", "ukku": "kōḻikku", "itam": "kōḻiyiṭam", "iliruntu": "kōḻiyiṭamiruntu", "otu": "kōḻiyōṭu", "utaiya": "kōḻiyuṭaiya" }
+    - word: "ta-0411"
+      forms: { "pl": "தேவைகள்", "obl": null, "ai": "தேவையை", "ukku": "தேவைக்கு", "il": "தேவையில்", "itam": null, "iliruntu": "தேவையிலிருந்து", "otu": "தேவையோடு", "utaiya": "தேவையுடைய" }
+      readings: { "pl": "tēvaikaḷ", "ai": "tēvaiyai", "ukku": "tēvaikku", "il": "tēvaiyil", "iliruntu": "tēvaiyiliruntu", "otu": "tēvaiyōṭu", "utaiya": "tēvaiyuṭaiya" }
+    - word: "ta-0440"
+      forms: { "pl": "ஆண்கள்", "obl": null, "ai": "ஆணை", "ukku": "ஆணுக்கு", "il": null, "itam": "ஆணிடம்", "iliruntu": "ஆணிடமிருந்து", "otu": "ஆணோடு", "utaiya": "ஆணுடைய" }
+      readings: { "pl": "āṇkaḷ", "ai": "āṇai", "ukku": "āṇukku", "itam": "āṇiṭam", "iliruntu": "āṇiṭamiruntu", "otu": "āṇōṭu", "utaiya": "āṇuṭaiya" }
+    - word: "ta-0441"
+      forms: { "pl": "பெண்கள்", "obl": null, "ai": "பெண்ணை", "ukku": "பெண்ணுக்கு", "il": null, "itam": "பெண்ணிடம்", "iliruntu": "பெண்ணிடமிருந்து", "otu": "பெண்ணோடு", "utaiya": "பெண்ணுடைய" }
+      readings: { "pl": "peṇkaḷ", "ai": "peṇṇai", "ukku": "peṇṇukku", "itam": "peṇṇiṭam", "iliruntu": "peṇṇiṭamiruntu", "otu": "peṇṇōṭu", "utaiya": "peṇṇuṭaiya" }
+    - word: "ta-0442"
+      forms: { "pl": "பையன்கள்", "obl": null, "ai": "பையனை", "ukku": "பையனுக்கு", "il": null, "itam": "பையனிடம்", "iliruntu": "பையனிடமிருந்து", "otu": "பையனோடு", "utaiya": "பையனுடைய" }
+      readings: { "pl": "paiyaṉkaḷ", "ai": "paiyaṉai", "ukku": "paiyaṉukku", "itam": "paiyaṉiṭam", "iliruntu": "paiyaṉiṭamiruntu", "otu": "paiyaṉōṭu", "utaiya": "paiyaṉuṭaiya" }
+    - word: "ta-0443"
+      forms: { "pl": "மனிதன்கள்", "obl": null, "ai": "மனிதனை", "ukku": "மனிதனுக்கு", "il": null, "itam": "மனிதனிடம்", "iliruntu": "மனிதனிடமிருந்து", "otu": "மனிதனோடு", "utaiya": "மனிதனுடைய" }
+      readings: { "pl": "maṉitaṉkaḷ", "ai": "maṉitaṉai", "ukku": "maṉitaṉukku", "itam": "maṉitaṉiṭam", "iliruntu": "maṉitaṉiṭamiruntu", "otu": "maṉitaṉōṭu", "utaiya": "maṉitaṉuṭaiya" }
 rules:
   - id: "ta-rule-plural"
     slots: ["plural"]

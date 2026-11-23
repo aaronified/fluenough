@@ -54,3 +54,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-grammar-differences | Six fragments (வீட்டில், பள்ளிக்கு, அம்மாவோடு, தமிழில், வாருங்கள், ஒரு) and seven phrases were written from the standard patterns; are they the right six to show how Tamil differs? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-postpositions | வரை and பற்றி and their four examples were written without a source page; is the use of -ஐ before பற்றி right? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-al | -ஆல் forms were built by rule; is it right that a vehicle takes -இல் (பேருந்தில்) where a tool takes -ஆல்? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-gender-number | மக்கள் (people) is given gender m only because a noun needs one; it is a plural of people. Are the ten words and the neuter plural verb அவை இருக்கின்றன right for A1? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-adjectives | The -து and -வை forms (பெரியது, பெரியவை ...) were built by rule for all nine adjectives with no source page; are they all natural? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-articles | ஓர் before a vowel is from English Wiktionary; are the six pairs right? | Sonnet builder | 2026-11-23 |

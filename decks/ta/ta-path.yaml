@@ -396,7 +396,9 @@ units:
     reading_passages:
       - { id: "route-note", text: { "en": "A note on how to reach a house: past, behind and near" } }
   # ta-grammar-adjectives and ta-grammar-articles join this unit.
-  - planned: { id: "ta-grammar-gender-number", grammar: ["articles", "gender-number", "adjectives"], words: 10 }
+  - decks: ["ta-grammar-gender-number", "ta-grammar-adjectives", "ta-grammar-articles", "*"]
+    words: 10
+    grammar: ["articles", "gender-number", "adjectives"]
     listening_passages:
       - { id: "he-she-it", text: { "en": "Talking about a man, a woman and a thing: how the verb changes" } }
     reading_passages:

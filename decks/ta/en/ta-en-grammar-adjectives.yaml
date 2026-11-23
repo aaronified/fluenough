@@ -1,0 +1,23 @@
+schema: 1
+id: "ta-en-grammar-adjectives"
+kind: "layer"
+core: "ta-grammar-adjectives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adjectives: before a noun, and on their own"
+description: "The describing words of the course, before a noun and as the one or the ones that are so. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Adjective forms"
+  slot_name: "form"
+  entries:
+    "nalla": "good"
+    "periya": "big"
+    "cinna": "small"
+    "ketta": "bad"
+    "putiya": "new"
+    "palaiya": "old"
+    "alakana": "beautiful"
+    "cutana": "hot"
+    "kulirana": "cold"
+  notes: "A Tamil adjective comes before the noun and never changes for gender or number: பெரிய வீடு (periya vīṭu), a big house, and பெரிய வீடுகள் (periya vīṭukaḷ), big houses. To say a thing is that way, add -து (-tu): பெரியது (periyatu), the big one; for several things, -வை (-vai): பெரியவை (periyavai). For a person the endings are the person's own: நல்லவன் (nallavaṉ), a good man, நல்லவள் (nallavaḷ), a good woman, and நல்லவர் (nallavar), a good, respected person. Source: English Wikipedia, Tamil grammar (adjectives come before the noun); the -து and -வை forms follow the verb endings of things."
