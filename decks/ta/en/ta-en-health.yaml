@@ -1,0 +1,890 @@
+schema: 1
+id: "ta-en-health"
+kind: "layer"
+core: "ta-health"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Health and the clinic"
+description: "Health, doctors and clinics, symptoms and treatment, diet and exercise, and the verbs of checking, curing and avoiding. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-7000":
+    native: "patient"
+    notes:
+      n1: "Used for a man or a woman; the word has no separate feminine form."
+    examples:
+      "அவர் ஒரு நோயாளி.":
+        native: "He is a patient."
+        bases:
+          "நோயாளி": "patient"
+      "நோயாளி தூங்குகிறார்.":
+        native: "The patient is sleeping."
+        bases:
+          "நோயாளி": "patient"
+          "தூங்குகிறார்": "is sleeping (respectful); from தூங்கு (tūṅku), to sleep"
+  "ta-7001":
+    native: "symptom; sign"
+    notes:
+      n1: "The word also means any sign or indication; நோயின் (nōyiṉ) is the 'of' form of நோய் (nōy), so நோயின் (nōyiṉ) அறிகுறி (aṟikuṟi) is a sign of the illness."
+    examples:
+      "இது நோயின் அறிகுறி.":
+        native: "This is a sign of the illness."
+        bases:
+          "நோயின்": "of the illness; from நோய் (nōy), illness; disease"
+          "அறிகுறி": "symptom; sign"
+      "என்ன அறிகுறி?":
+        native: "What is the symptom?"
+        bases:
+          "அறிகுறி": "symptom; sign"
+  "ta-7002":
+    native: "health; wellbeing"
+    notes:
+      n1: "Used to ask politely after someone's health; உங்கள் (uṅkaḷ) is the respectful 'your'."
+    examples:
+      "உடல்நலம் முக்கியம்.":
+        native: "Health is important."
+        bases:
+          "உடல்நலம்": "health; wellbeing"
+          "முக்கியம்": "important"
+      "உங்கள் உடல்நலம் எப்படி?":
+        native: "How is your health?"
+        bases:
+          "உங்கள்": "your (polite)"
+          "உடல்நலம்": "health; wellbeing"
+  "ta-7003":
+    native: "state of health; condition"
+    notes:
+      n1: "Literally the state of the body; உடல்நிலை (uṭalnilai) சரியில்லை (cariyillai) is the polite way to say you are unwell."
+    examples:
+      "அவர் உடல்நிலை நல்லது.":
+        native: "His health is good."
+        bases:
+          "உடல்நிலை": "state of health; condition"
+      "உடல்நிலை சரியில்லை.":
+        native: "I am not well."
+        bases:
+          "உடல்நிலை": "state of health; condition"
+          "சரியில்லை": "not right; from சரி (cari), okay"
+  "ta-7004":
+    native: "first aid"
+    notes:
+      n1: "Literally first help; joined to பெட்டி (peṭṭi) it is the first-aid box."
+    examples:
+      "முதலுதவி முக்கியம்.":
+        native: "First aid is important."
+        bases:
+          "முதலுதவி": "first aid"
+          "முக்கியம்": "important"
+      "முதலுதவிப் பெட்டி எங்கே?":
+        native: "Where is the first-aid box?"
+        bases:
+          "முதலுதவிப்": "first-aid (before a noun); from முதலுதவி (mutalutavi), first aid"
+  "ta-7005":
+    native: "prescription"
+    notes:
+      n1: "A compound of மருந்து (maruntu) (medicine) and சீட்டு (cīṭṭu) (slip); the two parts join with a doubled consonant, as in the written word மருந்துச்சீட்டு (maruntuccīṭṭu)."
+    examples:
+      "மருந்துச்சீட்டு இங்கே இருக்கிறது.":
+        native: "The prescription is here."
+        bases:
+          "மருந்துச்சீட்டு": "prescription"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "மருந்துச்சீட்டு கொடுங்கள்.":
+        native: "Please give the prescription."
+        bases:
+          "மருந்துச்சீட்டு": "prescription"
+          "கொடுங்கள்": "please give; from கொடு (koṭu), to give"
+  "ta-7006":
+    native: "infection"
+    notes:
+      n1: "Also used for catching or spreading illnesses; it means contagion as well as infection."
+    examples:
+      "இது தொற்று.":
+        native: "This is an infection."
+        bases:
+          "தொற்று": "infection"
+      "தொற்று பரவுகிறது.":
+        native: "The infection is spreading."
+        bases:
+          "தொற்று": "infection"
+          "பரவுகிறது": "spreads; from பரவு (paravu), to spread"
+  "ta-7007":
+    native: "germ"
+    notes:
+      n1: "The word covers germs and microbes; தெரியாது (teriyātu) is the negative of 'to be visible'."
+    examples:
+      "கிருமி கண்ணுக்குத் தெரியாது.":
+        native: "Germs cannot be seen by the eye."
+        bases:
+          "கிருமி": "germ"
+          "கண்ணுக்குத்": "to the eye; for the eye; from கண் (kaṇ), eye"
+          "தெரியாது": "is not known; from தெரி (teri), to be known; to be seen"
+      "கையில் கிருமி இருக்கிறது.":
+        native: "There are germs on the hand."
+        bases:
+          "கையில்": "on the hand; from கை (kai), hand"
+          "கிருமி": "germ"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7008":
+    native: "virus"
+    notes:
+      n1: "A loanword from English, said as it is in speech."
+    examples:
+      "இது வைரஸ் காய்ச்சல்.":
+        native: "This is a virus fever."
+        bases:
+          "வைரஸ்": "virus"
+      "வைரஸ் பரவுகிறது.":
+        native: "The virus is spreading."
+        bases:
+          "வைரஸ்": "virus"
+          "பரவுகிறது": "spreads; from பரவு (paravu), to spread"
+  "ta-7009":
+    native: "cancer"
+    notes:
+      n1: "A compound ending in நோய் (nōy) (illness); the stem before it joins with a doubled consonant."
+    examples:
+      "புற்றுநோய் ஒரு பெரிய நோய்.":
+        native: "Cancer is a serious illness."
+        bases:
+          "புற்றுநோய்": "cancer"
+      "அவருக்குப் புற்றுநோய் இருக்கிறது.":
+        native: "He has cancer."
+        bases:
+          "அவருக்குப்": "to him or her (polite); for him or her (polite); from அவர் (avar), he or she (polite)"
+          "புற்றுநோய்": "cancer"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7010":
+    native: "diabetes"
+    notes:
+      n1: "The word for the illness; the everyday word is சர்க்கரை (carkkarai) (sugar), as in 'sugar illness'."
+    examples:
+      "அவருக்கு நீரிழிவு இருக்கிறது.":
+        native: "He has diabetes."
+        bases:
+          "அவருக்கு": "to him (respectful); from அவர் (avar), he, she (respectful)"
+          "நீரிழிவு": "diabetes"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "நீரிழிவுக்கு மருந்து சாப்பிடுகிறார்.":
+        native: "He takes medicine for diabetes."
+        bases:
+          "நீரிழிவுக்கு": "for diabetes; from நீரிழிவு (nīriḻivu), diabetes"
+          "சாப்பிடுகிறார்": "is eating; is taking (respectful); from சாப்பிடு (cāppiṭu), to eat"
+  "ta-7011":
+    native: "fit; seizure"
+    notes:
+      n1: "Tamil says that the fit 'comes' (வந்தது (vantatu), came), like fever and other sudden illnesses."
+    examples:
+      "அவருக்கு வலிப்பு வந்தது.":
+        native: "He had a fit."
+        bases:
+          "அவருக்கு": "to him (respectful); from அவர் (avar), he, she (respectful)"
+          "வலிப்பு": "fit; seizure"
+          "வந்தது": "came; from வா (vā), to come"
+      "வலிப்பு ஆபத்தானது.":
+        native: "A fit is dangerous."
+        bases:
+          "வலிப்பு": "fit; seizure"
+          "ஆபத்தானது": "is dangerous; from ஆபத்து (āpattu), danger"
+  "ta-7012":
+    native: "to cure; to heal"
+    notes:
+      n1: "A causative of குணமாகு (kuṇamāku) (to get well); the thing cured takes the -ஐ (-ai) ending."
+    examples:
+      "மருந்து நோயைக் குணப்படுத்துகிறது.":
+        native: "Medicine cures the illness."
+        bases:
+          "நோயைக்": "the illness; from நோய் (nōy), illness; disease"
+          "குணப்படுத்துகிறது": "cures; from குணப்படுத்து (kuṇappaṭuttu), to cure"
+      "மருத்துவர் அவரைக் குணப்படுத்துகிறார்.":
+        native: "The doctor cures him."
+        bases:
+          "அவரைக்": "him or her (polite; object); from அவர் (avar), he or she (polite)"
+          "குணப்படுத்துகிறார்": "cures (respectful); from குணப்படுத்து (kuṇappaṭuttu), to cure"
+  "ta-7013":
+    native: "to spread"
+    notes:
+      n1: "Used for illness, news and rumours alike; the subject spreads on its own."
+    examples:
+      "காய்ச்சல் பரவுகிறது.":
+        native: "Fever is spreading."
+        bases:
+          "பரவுகிறது": "spreads; from பரவு (paravu), to spread"
+      "செய்தி பரவுகிறது.":
+        native: "The news is spreading."
+        bases:
+          "பரவுகிறது": "spreads; from பரவு (paravu), to spread"
+  "ta-7014":
+    native: "to prevent; to stop"
+    notes:
+      n1: "Also the verb 'to block'; தடுப்பூசி (taṭuppūci) (vaccine) is built from it, as 'a prevention injection'."
+    examples:
+      "தடுப்பூசி நோயைத் தடுக்கிறது.":
+        native: "The vaccine prevents illness."
+        bases:
+          "நோயைத்": "the illness; from நோய் (nōy), illness; disease"
+          "தடுக்கிறது": "prevents; from தடு (taṭu), to prevent"
+      "ஓய்வு நோயைத் தடுக்கிறது.":
+        native: "Rest prevents illness."
+        bases:
+          "நோயைத்": "the illness; from நோய் (nōy), illness; disease"
+          "தடுக்கிறது": "prevents; from தடு (taṭu), to prevent"
+  "ta-7015":
+    native: "to avoid"
+    notes:
+      n1: "The command is bare தவிர் (tavir); the polite form adds -ங்கள் (-ṅkaḷ); the verb takes the thing avoided with -ஐ (-ai)."
+    examples:
+      "இனிப்பைத் தவிர்.":
+        native: "Avoid sweets."
+        bases:
+          "இனிப்பைத்": "the sweet; from இனிப்பு (iṉippu), sweet; sweet dish"
+          "தவிர்": "to avoid"
+      "நான் உப்பைத் தவிர்க்கிறேன்.":
+        native: "I avoid salt."
+        bases:
+          "உப்பைத்": "the salt; from உப்பு (uppu), salt"
+          "தவிர்க்கிறேன்": "avoid; from தவிர் (tavir), to avoid"
+  "ta-7016":
+    native: "to become thin"
+    notes:
+      n1: "Used when someone loses weight without wanting to; the neutral word is ஒல்லி (olli) (thin)."
+    examples:
+      "நான் மெலிகிறேன்.":
+        native: "I am getting thin."
+        bases:
+          "மெலிகிறேன்": "am getting thin; from மெலி (meli), to become thin"
+      "அவன் மெலிகிறான்.":
+        native: "He is getting thin."
+        bases:
+          "மெலிகிறான்": "is getting thin (he); from மெலி (meli), to become thin"
+  "ta-7017":
+    native: "thin; slim"
+    notes:
+      n1: "The describing form before a noun is ஒல்லியான (olliyāṉa); ஒல்லி (olli) alone is a plain statement."
+    examples:
+      "அவன் ஒல்லி.":
+        native: "He is thin."
+        bases:
+          "ஒல்லி": "thin; slim"
+      "ஒல்லியான பையன்.":
+        native: "A thin boy."
+        bases:
+          "ஒல்லியான": "thin (before a noun); from ஒல்லி (olli), thin; slim"
+  "ta-7018":
+    native: "fat; plump"
+    notes:
+      n1: "Said of babies and children it is affectionate; said of adults it can sound rude."
+    examples:
+      "அவன் குண்டு.":
+        native: "He is fat."
+        bases:
+          "குண்டு": "fat; plump"
+      "குண்டான குழந்தை.":
+        native: "A chubby child."
+        bases:
+          "குண்டான": "chubby (before a noun); from குண்டு (kuṇṭu), fat; plump"
+  "ta-7019":
+    native: "strength"
+    notes:
+      n1: "Strength of body or of mind; the adjective is பலமான (palamāṉa) (strong)."
+    examples:
+      "உடலுக்குப் பலம் வேண்டும்.":
+        native: "The body needs strength."
+        bases:
+          "உடலுக்குப்": "to the body; for the body; from உடல் (uṭal), body"
+          "பலம்": "strength"
+      "அவனுக்குப் பலம் இருக்கிறது.":
+        native: "He has strength."
+        bases:
+          "அவனுக்குப்": "to him; for him; from அவன் (avaṉ), he; him"
+          "பலம்": "strength"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7020":
+    native: "weakness"
+    notes:
+      n1: "Said as 'weakness is there' for feeling weak, as with other states of the body."
+    examples:
+      "எனக்குப் பலவீனம் இருக்கிறது.":
+        native: "I feel weak."
+        bases:
+          "எனக்குப்": "to me; from நான் (nāṉ), I"
+          "பலவீனம்": "weakness"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "பலவீனம் போகும்.":
+        native: "The weakness will go."
+        bases:
+          "பலவீனம்": "weakness"
+          "போகும்": "will go; from போ (pō), to go"
+  "ta-7021":
+    native: "sleep"
+    notes:
+      n1: "Tamil says that sleep 'comes' to you, as in 'sleep is coming', for being sleepy."
+    examples:
+      "எனக்குத் தூக்கம் வருகிறது.":
+        native: "I am sleepy."
+        bases:
+          "எனக்குத்": "to me; from நான் (nāṉ), I"
+          "தூக்கம்": "sleep"
+          "வருகிறது": "is coming; from வா (vā), come"
+      "தூக்கம் முக்கியம்.":
+        native: "Sleep is important."
+        bases:
+          "தூக்கம்": "sleep"
+          "முக்கியம்": "important"
+  "ta-7022":
+    native: "exercise"
+    notes:
+      n1: "Literally body practice; you do (செய் (cey)) exercise, you do not 'play' it."
+    examples:
+      "தினமும் உடற்பயிற்சி செய்.":
+        native: "Do exercise every day."
+        bases:
+          "உடற்பயிற்சி": "exercise"
+      "உடற்பயிற்சி நல்லது.":
+        native: "Exercise is good."
+        bases:
+          "உடற்பயிற்சி": "exercise"
+  "ta-7023":
+    native: "yoga"
+    notes:
+      n1: "A loanword; you do (செய் (cey)) yoga as you do exercise."
+    examples:
+      "நான் யோகா செய்கிறேன்.":
+        native: "I do yoga."
+        bases:
+          "யோகா": "yoga"
+          "செய்கிறேன்": "do; from செய் (cey), to do"
+      "காலையில் யோகா செய்.":
+        native: "Do yoga in the morning."
+        bases:
+          "காலையில்": "in the morning; from காலை (kālai), morning"
+          "யோகா": "yoga"
+  "ta-7024":
+    native: "diet; eating habits"
+    notes:
+      n1: "Literally the way of food; 'on a diet' is said with this word."
+    examples:
+      "நல்ல உணவுமுறை வேண்டும்.":
+        native: "A good diet is needed."
+        bases:
+          "உணவுமுறை": "diet; eating habits"
+      "என் உணவுமுறை மாறுகிறது.":
+        native: "My diet is changing."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "உணவுமுறை": "diet; eating habits"
+          "மாறுகிறது": "changes; from மாறு (māṟu), to change"
+  "ta-7025":
+    native: "nutrition; nutrient"
+    examples:
+      "இந்த உணவில் ஊட்டச்சத்து இருக்கிறது.":
+        native: "This food has nutrition."
+        bases:
+          "இந்த": "this"
+          "உணவில்": "in the food; from உணவு (uṇavu), food"
+          "ஊட்டச்சத்து": "nutrition; nutrient"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "குழந்தைக்கு ஊட்டச்சத்து வேண்டும்.":
+        native: "A child needs nutrition."
+        bases:
+          "குழந்தைக்கு": "to the child; from குழந்தை (kuḻantai), child"
+          "ஊட்டச்சத்து": "nutrition; nutrient"
+  "ta-7026":
+    native: "fat; cholesterol"
+    notes:
+      n1: "Also the word for cholesterol in everyday talk."
+    examples:
+      "கொழுப்பு அதிகம்.":
+        native: "The fat is high."
+        bases:
+          "கொழுப்பு": "fat; cholesterol"
+      "எண்ணெயில் கொழுப்பு இருக்கிறது.":
+        native: "There is fat in oil."
+        bases:
+          "எண்ணெயில்": "in the oil; from எண்ணெய் (eṇṇey), oil"
+          "கொழுப்பு": "fat; cholesterol"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7027":
+    native: "protein"
+    notes:
+      n1: "The -இல் (-il) ending after a noun means 'in'."
+    examples:
+      "பருப்பில் புரதம் இருக்கிறது.":
+        native: "Dal has protein."
+        bases:
+          "பருப்பில்": "in the lentils; on the lentils; from பருப்பு (paruppu), lentils; dal"
+          "புரதம்": "protein"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "முட்டையில் புரதம் இருக்கிறது.":
+        native: "An egg has protein."
+        bases:
+          "முட்டையில்": "in the egg; on the egg; from முட்டை (muṭṭai), egg"
+          "புரதம்": "protein"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7028":
+    native: "vitamin"
+    notes:
+      n1: "A loanword; spelled with the Tamil letters as it is said."
+    examples:
+      "பழத்தில் வைட்டமின் இருக்கிறது.":
+        native: "Fruit has vitamins."
+        bases:
+          "பழத்தில்": "in the fruit; on the fruit; from பழம் (paḻam), fruit"
+          "வைட்டமின்": "vitamin"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "எனக்கு வைட்டமின் மாத்திரை வேண்டும்.":
+        native: "I need a vitamin tablet."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "வைட்டமின்": "vitamin"
+  "ta-7029":
+    native: "alcohol; liquor"
+    notes:
+      n1: "The polite, written word for liquor; the verb is 'drink' (குடி (kuṭi))."
+    examples:
+      "மது உடலுக்குக் கெட்டது.":
+        native: "Liquor is bad for the body."
+        bases:
+          "மது": "alcohol; liquor"
+          "உடலுக்குக்": "to the body; for the body; from உடல் (uṭal), body"
+          "கெட்டது": "bad"
+      "அவன் மது குடிக்கிறான்.":
+        native: "He drinks liquor."
+        bases:
+          "மது": "alcohol; liquor"
+          "குடிக்கிறான்": "is drinking (he); from குடி (kuṭi), to drink"
+  "ta-7030":
+    native: "to smoke (tobacco)"
+    notes:
+      n1: "The negative command adds -காதே (-kātē); notices say புகைபிடிக்காதீர்கள் (pukaipiṭikkātīrkaḷ) (please do not smoke)."
+    examples:
+      "அவர் புகைபிடிக்கிறார்.":
+        native: "He smokes."
+        bases:
+          "புகைபிடிக்கிறார்": "smokes (respectful); from புகைபிடி (pukaipiṭi), to smoke"
+      "இங்கே புகைபிடிக்காதே.":
+        native: "Do not smoke here."
+        bases:
+          "புகைபிடிக்காதே": "do not smoke; from புகைபிடி (pukaipiṭi), to smoke"
+  "ta-7031":
+    native: "face mask"
+    notes:
+      n1: "Literally face cover; the two parts join as one word, முகக்கவசம் (mukakkavacam)."
+    examples:
+      "முகக்கவசம் போடு.":
+        native: "Put on a face mask."
+        bases:
+          "முகக்கவசம்": "face mask"
+      "என் முகக்கவசம் எங்கே?":
+        native: "Where is my face mask?"
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "முகக்கவசம்": "face mask"
+  "ta-7032":
+    native: "insurance"
+    notes:
+      n1: "You 'take' (எடு (eṭu)) insurance; the cover is called மருத்துவக் (maruttuvak) (medical) before it."
+    examples:
+      "எனக்கு மருத்துவக் காப்பீடு இருக்கிறது.":
+        native: "I have medical insurance."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "மருத்துவக்": "medical (before a noun); from மருத்துவம் (maruttuvam), medicine; medical treatment"
+          "காப்பீடு": "insurance"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "காப்பீடு எடுக்க வேண்டும்.":
+        native: "One must take out insurance."
+        bases:
+          "காப்பீடு": "insurance"
+          "எடுக்க": "to take; from எடு (eṭu), to take"
+  "ta-7033":
+    native: "surgery; operation"
+    notes:
+      n1: "Literally cutting treatment; written as one word."
+    examples:
+      "நாளை அறுவைசிகிச்சை இருக்கிறது.":
+        native: "There is an operation tomorrow."
+        bases:
+          "அறுவைசிகிச்சை": "surgery; operation"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "அறுவைசிகிச்சை பயமாக இருக்கிறது.":
+        native: "The surgery is frightening."
+        bases:
+          "அறுவைசிகிச்சை": "surgery; operation"
+          "பயமாக": "frightening; from பயம் (payam), fear"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7034":
+    native: "side effect"
+    notes:
+      n1: "Literally side result; the -ஆ (-ā) at the end of இருக்கிறதா (irukkiṟatā) turns it into a yes-or-no question."
+    examples:
+      "இந்த மருந்தில் பக்கவிளைவு இல்லை.":
+        native: "This medicine has no side effect."
+        bases:
+          "இந்த": "this"
+          "மருந்தில்": "in the medicine; on the medicine; from மருந்து (maruntu), medicine"
+          "பக்கவிளைவு": "side effect"
+      "பக்கவிளைவு இருக்கிறதா?":
+        native: "Is there a side effect?"
+        bases:
+          "பக்கவிளைவு": "side effect"
+          "இருக்கிறதா": "is; from இரு (iru), to be"
+  "ta-7035":
+    native: "hygiene; public health"
+    notes:
+      n1: "Used for cleanliness and for public health; not for a person's own health, which is உடல்நலம் (uṭalnalam)."
+    examples:
+      "சுகாதாரம் முக்கியம்.":
+        native: "Hygiene is important."
+        bases:
+          "சுகாதாரம்": "hygiene; public health"
+          "முக்கியம்": "important"
+      "இங்கே சுகாதாரம் இல்லை.":
+        native: "There is no hygiene here."
+        bases:
+          "சுகாதாரம்": "hygiene; public health"
+  "ta-7036":
+    native: "mental health"
+    notes:
+      n1: "Built like உடல்நலம் (uṭalnalam): the mind (மனம் (maṉam)) plus நலம் (nalam) (wellbeing)."
+    examples:
+      "மனநலம் முக்கியம்.":
+        native: "Mental health is important."
+        bases:
+          "மனநலம்": "mental health"
+          "முக்கியம்": "important"
+      "உடல்நலம் மனநலம் இரண்டும் வேண்டும்.":
+        native: "Both bodily and mental health are needed."
+        bases:
+          "மனநலம்": "mental health"
+          "இரண்டும்": "both; from இரண்டு (iraṇṭu), two"
+  "ta-7037":
+    native: "medicine (the field); medical treatment"
+    notes:
+      n1: "Studying medicine is மருத்துவம் (maruttuvam) படி (study medicine); a doctor is மருத்துவர் (maruttuvar)."
+    examples:
+      "மருத்துவம் படிக்கிறேன்.":
+        native: "I am studying medicine."
+        bases:
+          "மருத்துவம்": "medicine (the field); medical treatment"
+          "படிக்கிறேன்": "am studying; from படி (paṭi), to study"
+      "மருத்துவம் இலவசம்.":
+        native: "Treatment is free."
+        bases:
+          "மருத்துவம்": "medicine (the field); medical treatment"
+  "ta-7038":
+    native: "recovery; nature"
+    notes:
+      n1: "With ஆகு (āku, to become) it means recovery; on its own it also means a person's character."
+    examples:
+      "அவருக்குக் குணம் ஆகிறது.":
+        native: "He is getting better."
+        bases:
+          "அவருக்குக்": "to him or her (polite); for him or her (polite); from அவர் (avar), he or she (polite)"
+          "குணம்": "recovery; nature"
+          "ஆகிறது": "is becoming; from ஆகு (āku), to become"
+      "அவன் குணம் நல்லது.":
+        native: "His nature is good."
+        bases:
+          "குணம்": "recovery; nature"
+  "ta-7039":
+    native: "trouble; bother"
+    notes:
+      n1: "Used for health troubles and for being bothered by someone."
+    examples:
+      "எனக்குத் தொந்தரவு இல்லை.":
+        native: "I have no trouble."
+        bases:
+          "எனக்குத்": "to me; from நான் (nāṉ), I"
+          "தொந்தரவு": "trouble; bother"
+      "வயிற்றில் தொந்தரவு இருக்கிறது.":
+        native: "There is trouble in the stomach."
+        bases:
+          "வயிற்றில்": "in the stomach; on the stomach; from வயிறு (vayiṟu), stomach"
+          "தொந்தரவு": "trouble; bother"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7040":
+    native: "relief"
+    notes:
+      n1: "The word for relief from pain or from hardship."
+    examples:
+      "வலிக்கு நிவாரணம் வேண்டும்.":
+        native: "I need relief from the pain."
+        bases:
+          "வலிக்கு": "to the pain; for the pain; from வலி (vali), pain"
+          "நிவாரணம்": "relief"
+      "மருந்தில் நிவாரணம் இருக்கிறது.":
+        native: "There is relief in the medicine."
+        bases:
+          "மருந்தில்": "in the medicine; on the medicine; from மருந்து (maruntu), medicine"
+          "நிவாரணம்": "relief"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7041":
+    native: "walking exercise; a walk for health"
+    notes:
+      n1: "You do (செய் (cey)) a health walk; for walking from place to place Tamil uses the verb நட (naṭa)."
+    examples:
+      "காலையில் நடைப்பயிற்சி செய்கிறேன்.":
+        native: "I go for a walk in the morning."
+        bases:
+          "காலையில்": "in the morning; from காலை (kālai), morning"
+          "நடைப்பயிற்சி": "walking exercise; a walk for health"
+          "செய்கிறேன்": "do; from செய் (cey), to do"
+      "நடைப்பயிற்சி நல்லது.":
+        native: "Walking is good."
+        bases:
+          "நடைப்பயிற்சி": "walking exercise; a walk for health"
+  "ta-7042":
+    native: "meditation"
+    notes:
+      n1: "You do (செய் (cey)) meditation, as you do exercise."
+    examples:
+      "தியானம் மனதுக்கு நல்லது.":
+        native: "Meditation is good for the mind."
+        bases:
+          "தியானம்": "meditation"
+          "மனதுக்கு": "to the mind; for the mind; from மனம் (maṉam), mind"
+      "நான் தியானம் செய்கிறேன்.":
+        native: "I meditate."
+        bases:
+          "தியானம்": "meditation"
+          "செய்கிறேன்": "do; from செய் (cey), to do"
+  "ta-7043":
+    native: "advice; consultation"
+    notes:
+      n1: "Tamil asks (கேள் (kēḷ)) for advice from a person with the -இடம் (-iṭam) ending: மருத்துவரிடம் (maruttuvariṭam)."
+    examples:
+      "மருத்துவரிடம் ஆலோசனை கேள்.":
+        native: "Ask the doctor for advice."
+        bases:
+          "மருத்துவரிடம்": "to the doctor; from the doctor; with the doctor; from மருத்துவர் (maruttuvar), doctor"
+          "ஆலோசனை": "advice; consultation"
+      "ஆலோசனை இலவசம்.":
+        native: "The consultation is free."
+        bases:
+          "ஆலோசனை": "advice; consultation"
+  "ta-7044":
+    native: "elderly people"
+    notes:
+      n1: "A respectful plural word for old people; it is already plural, so it takes no -கள் (-kaḷ)."
+    examples:
+      "முதியோர் இங்கே இருக்கிறார்கள்.":
+        native: "The elderly are here."
+        bases:
+          "முதியோர்": "elderly people"
+          "இருக்கிறார்கள்": "are; from இரு (iru), to be"
+      "முதியோர் மருந்து சாப்பிடுகிறார்கள்.":
+        native: "The elderly take medicine."
+        bases:
+          "முதியோர்": "elderly people"
+          "சாப்பிடுகிறார்கள்": "are eating; from சாப்பிடு (cāppiṭu), to eat"
+  "ta-7045":
+    native: "severity; seriousness"
+    notes:
+      n1: "Used with illness for 'serious' and with opinions for 'strong'."
+    examples:
+      "நோய் தீவிரம்.":
+        native: "The illness is serious."
+        bases:
+          "தீவிரம்": "severity; seriousness"
+      "தீவிரம் இல்லை.":
+        native: "It is not serious."
+        bases:
+          "தீவிரம்": "severity; seriousness"
+  "ta-7046":
+    native: "body"
+    notes:
+      n1: "The formal word for the body; the everyday spoken word is உடம்பு (uṭampu)."
+    examples:
+      "உடல் நலமாக இருக்கிறது.":
+        native: "The body is well."
+        bases:
+          "உடல்": "body"
+          "நலமாக": "well; from நலம் (nalam), wellbeing"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "உடலுக்கு ஓய்வு வேண்டும்.":
+        native: "The body needs rest."
+        bases:
+          "உடலுக்கு": "to the body; for the body; from உடல் (uṭal), body"
+  "ta-7047":
+    native: "mind; heart"
+    notes:
+      n1: "Tamil uses one word for the mind and the heart; the stem changes before an ending, as in மனதுக்கு (maṉatukku) (to the mind)."
+    examples:
+      "மனம் நன்றாக இல்லை.":
+        native: "I do not feel well in mind."
+        bases:
+          "மனம்": "mind; heart"
+          "நன்றாக": "well; fine"
+      "மனதுக்கு ஓய்வு வேண்டும்.":
+        native: "The mind needs rest."
+        bases:
+          "மனதுக்கு": "to the mind; for the mind; from மனம் (maṉam), mind"
+  "ta-7049":
+    native: "habit"
+    notes:
+      n1: "The word covers both habits and being familiar with something."
+    examples:
+      "இது நல்ல பழக்கம்.":
+        native: "This is a good habit."
+        bases:
+          "பழக்கம்": "habit"
+      "புகைபிடிக்கும் பழக்கம் கெட்டது.":
+        native: "The habit of smoking is bad."
+        bases:
+          "புகைபிடிக்கும்": "smoking (before a noun); from புகைபிடி (pukaipiṭi), to smoke"
+          "பழக்கம்": "habit"
+          "கெட்டது": "bad"
+  "ta-7050":
+    native: "hospital (spoken)"
+    notes:
+      n1: "The everyday spoken word for a hospital, from English; the written word is மருத்துவமனை (maruttuvamaṉai)."
+    examples:
+      "ஆஸ்பத்திரி எங்கே இருக்கிறது?":
+        native: "Where is the hospital?"
+        bases:
+          "ஆஸ்பத்திரி": "hospital (spoken)"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "ஆஸ்பத்திரிக்குப் போகிறேன்.":
+        native: "I am going to the hospital."
+        bases:
+          "ஆஸ்பத்திரிக்குப்": "to the hospital (spoken); for the hospital (spoken); from ஆஸ்பத்திரி (āspattiri), hospital (spoken)"
+          "போகிறேன்": "am going; from போ (pō), to go"
+  "ta-7051":
+    native: "nurse (formal)"
+    notes:
+      n1: "The formal word for a nurse; in speech people say நர்ஸ் (nars) (the English word)."
+    examples:
+      "செவிலியர் வருகிறார்.":
+        native: "The nurse is coming."
+        bases:
+          "செவிலியர்": "nurse (formal)"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+      "செவிலியர் ஊசி போடுகிறார்.":
+        native: "The nurse gives an injection."
+        bases:
+          "செவிலியர்": "nurse (formal)"
+          "போடுகிறார்": "puts, draws (respectful); from போடு (pōṭu), to put"
+  "ta-7052":
+    native: "pharmacy"
+    notes:
+      n1: "The written word; in speech people say மருந்துக்கடை (maruntukkaṭai) (medicine shop)."
+    examples:
+      "மருந்தகம் எங்கே?":
+        native: "Where is the pharmacy?"
+        bases:
+          "மருந்தகம்": "pharmacy"
+      "மருந்தகம் திறந்திருக்கிறது.":
+        native: "The pharmacy is open."
+        bases:
+          "மருந்தகம்": "pharmacy"
+          "திறந்திருக்கிறது": "is open; from திற (tiṟa), to open"
+  "ta-7053":
+    native: "swelling"
+    notes:
+      n1: "The noun of வீங்கு (vīṅku) (to swell); you say that swelling 'is on' the part."
+    examples:
+      "காலில் வீக்கம் இருக்கிறது.":
+        native: "There is swelling on the leg."
+        bases:
+          "காலில்": "on the leg; from கால் (kāl), leg"
+          "வீக்கம்": "swelling"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "வீக்கம் குறைகிறது.":
+        native: "The swelling is going down."
+        bases:
+          "வீக்கம்": "swelling"
+          "குறைகிறது": "goes down; from குறை (kuṟai), to decrease; to lessen"
+  "ta-7054":
+    native: "sore; wound"
+    notes:
+      n1: "Used for sores and ulcers that heal slowly."
+    examples:
+      "காலில் புண் இருக்கிறது.":
+        native: "There is a sore on the leg."
+        bases:
+          "காலில்": "on the leg; from கால் (kāl), leg"
+          "புண்": "sore; wound"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "புண் ஆறுகிறது.":
+        native: "The wound is healing."
+        bases:
+          "புண்": "sore; wound"
+          "ஆறுகிறது": "is healing; from ஆறு (āṟu), to heal; to cool down"
+  "ta-7055":
+    native: "sprain"
+    notes:
+      n1: "Said for a sprained muscle or ankle; a strong everyday word."
+    examples:
+      "காலில் சுளுக்கு.":
+        native: "A sprain in the leg."
+        bases:
+          "காலில்": "on the leg; from கால் (kāl), leg"
+          "சுளுக்கு": "sprain"
+      "எனக்குச் சுளுக்கு இருக்கிறது.":
+        native: "I have a sprain."
+        bases:
+          "எனக்குச்": "to me; from நான் (nāṉ), I"
+          "சுளுக்கு": "sprain"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7056":
+    native: "back pain"
+    notes:
+      n1: "Built like தலைவலி (talaivali) (headache): a body part plus வலி (vali) (pain)."
+    examples:
+      "எனக்கு முதுகுவலி இருக்கிறது.":
+        native: "I have back pain."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "முதுகுவலி": "back pain"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "முதுகுவலிக்கு மருந்து வேண்டும்.":
+        native: "I need medicine for back pain."
+        bases:
+          "முதுகுவலிக்கு": "to the back pain; for the back pain; from முதுகுவலி (mutukuvali), back pain"
+  "ta-7057":
+    native: "pressure; stress"
+    notes:
+      n1: "Blood pressure is ரத்த (ratta) அழுத்தம் (aḻuttam) and stress is மன (maṉa) அழுத்தம் (aḻuttam); the first word shortens before another noun."
+    examples:
+      "ரத்த அழுத்தம் அதிகம்.":
+        native: "The blood pressure is high."
+        bases:
+          "ரத்த": "blood (before a noun); from ரத்தம் (rattam), blood"
+          "அழுத்தம்": "pressure; stress"
+      "மன அழுத்தம் குறைகிறது.":
+        native: "The stress is going down."
+        bases:
+          "மன": "mental (before a noun); from மனம் (maṉam), mind"
+          "அழுத்தம்": "pressure; stress"
+          "குறைகிறது": "goes down; from குறை (kuṟai), to decrease; to lessen"
+  "ta-7058":
+    native: "scan"
+    notes:
+      n1: "A loanword from English; you do (செய் (cey)) a scan."
+    examples:
+      "நாளை ஸ்கேன் இருக்கிறது.":
+        native: "There is a scan tomorrow."
+        bases:
+          "ஸ்கேன்": "scan"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "ஸ்கேன் செய்ய வேண்டும்.":
+        native: "A scan must be done."
+        bases:
+          "ஸ்கேன்": "scan"
+          "செய்ய": "to do; from செய் (cey), to do"
+  "ta-7059":
+    native: "dizziness; fainting"
+    notes:
+      n1: "Like sleep and fits, dizziness 'comes' to you (வருகிறது (varukiṟatu), is coming)."
+    examples:
+      "எனக்கு மயக்கம் வருகிறது.":
+        native: "I feel dizzy."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "மயக்கம்": "dizziness; fainting"
+          "வருகிறது": "is coming; from வா (vā), come"
+      "மயக்கம் இல்லை.":
+        native: "There is no dizziness."
+        bases:
+          "மயக்கம்": "dizziness; fainting"

@@ -1,0 +1,109 @@
+schema: 1
+id: "ta-en-cinema-sentences"
+kind: "layer"
+core: "ta-cinema-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Cinema in sentences"
+description: "Sentences about films, actors, the cinema hall and reviews. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-9500":
+    native: "She is the heroine of this film."
+    bases:
+      "இந்தப்": "this (before a word starting with p); from இந்த (inta), this"
+      "படத்தின்": "of the film; from படம் (paṭam), film"
+    confusables:
+      w1: { why: "கதாநாயகன் (katānāyakaṉ), hero; male lead, is a different word." }
+      w2: { why: "நடிகை (naṭikai), actress, is a different word." }
+      w3: { why: "இயக்குநர் (iyakkunar), director, is a different word." }
+  "ta-9501":
+    native: "I like the end of the film."
+    bases:
+      "படத்தின்": "of the film; from படம் (paṭam), film"
+      "எனக்குப்": "to me; from நான் (nāṉ), I"
+    notes:
+      n1: "The one who likes takes -க்கு (-kku): எனக்குப் பிடிக்கும் (eṉakkup piṭikkum), I like it, as in the earlier units."
+    confusables:
+      w1: { why: "தொடக்கம் (toṭakkam), beginning; start, is a different word." }
+      w2: { why: "திருப்பம் (tiruppam), twist; turn, is a different word." }
+      w3: { why: "சோகம் (cōkam), sadness; sorrow, is a different word." }
+  "ta-9502":
+    native: "Let us watch a film in the cinema hall today."
+    bases:
+      "திரையரங்கில்": "in the cinema hall; from திரையரங்கு (tiraiyaraṅku), cinema hall"
+      "பார்க்கலாம்": "can see; from பார் (pār), to see"
+    notes:
+      n1: "The place takes -இல் (-il): திரையரங்கில் (tiraiyaraṅkil), in the cinema hall."
+    confusables:
+      w1: { why: "விமர்சனம் (vimarcaṉam), review; criticism, is a different word." }
+      w2: { why: "முன்னோட்டம் (muṉṉōṭṭam), trailer; preview, is a different word." }
+      w3: { why: "டிக்கெட் (ṭikkeṭ), ticket, is a different word." }
+  "ta-9503":
+    native: "The director is making a new film."
+    bases:
+      "எடுக்கிறார்": "he takes; he makes (a film); from எடு (eṭu), to take"
+    notes:
+      n1: "படம் எடு (paṭam eṭu) means to make or shoot a film; எடு (eṭu) alone is to take."
+    confusables:
+      w1: { why: "தயாரிப்பாளர் (tayārippāḷar), producer, is a different word." }
+      w2: { why: "நடிகர் (naṭikar), actor, is a different word." }
+      w3: { why: "படப்பிடிப்பு (paṭappiṭippu), film shooting, is a different word." }
+  "ta-9504":
+    native: "There is a good song in the film."
+    bases:
+      "படத்தில்": "in the film; from படம் (paṭam), film"
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "வசனம் (vacaṉam), dialogue; spoken lines, is a different word." }
+      w2: { why: "இசையமைப்பாளர் (icaiyamaippāḷar), music director; composer, is a different word." }
+      w3: { why: "பின்னணி (piṉṉaṇi), background; backdrop, is a different word." }
+  "ta-9505":
+    native: "I like comedy films, but I do not like horror films."
+    bases:
+      "எனக்கு": "to me; from நான் (nāṉ), I"
+    notes:
+      n1: "The negative பிடிக்காது (piṭikkātu), does not please is the answer to பிடிக்கும் (piṭikkum), pleases."
+    confusables:
+      w1: { why: "காதல் (kātal), love; romance, is a different word." }
+      w2: { why: "சண்டை (caṇṭai), fight; quarrel, is a different word." }
+      w3: { why: "சோகம் (cōkam), sadness; sorrow, is a different word." }
+  "ta-9506":
+    native: "He has many fans."
+    bases:
+      "அவருக்கு": "to him (respectful); from அவர் (avar), he, she (respectful)"
+      "ரசிகர்கள்": "fans; from ரசிகர் (racikar), fan"
+      "இருக்கிறார்கள்": "are; from இரு (iru), to be"
+    notes:
+      n1: "ரசிகர் (racikar) already ends in -ர் (-r), but the plural still adds -கள் (-kaḷ): ரசிகர்கள் (racikarkaḷ)."
+    confusables:
+      w1: { why: "பார்வையாளர் (pārvaiyāḷar), viewer; audience member, is a different word." }
+      w2: { why: "விருது (virutu), award; prize, is a different word." }
+      w3: { why: "புகழ் (pukaḻ), fame; praise, is a different word." }
+  "ta-9507":
+    native: "The film is released today."
+    bases:
+      "வெளியாகிறது": "is released; from வெளியாகு (veḷiyāku), to be released"
+    confusables:
+      w1: { why: "விருது (virutu), award; prize, is a different word." }
+      w2: { why: "தலைப்பு (talaippu), title; heading, is a different word." }
+      w3: { why: "முன்னோட்டம் (muṉṉōṭṭam), trailer; preview, is a different word." }
+  "ta-9508":
+    native: "What is the title of this film?"
+    bases:
+      "இந்தப்": "this (before a word starting with p); from இந்த (inta), this"
+      "படத்தின்": "of the film; from படம் (paṭam), film"
+    confusables:
+      w1: { why: "கதை (katai), story, is a different word." }
+      w2: { why: "திரைக்கதை (tiraikkatai), screenplay, is a different word." }
+      w3: { why: "முடிவு (muṭivu), end; decision; result, is a different word." }
+  "ta-9509":
+    native: "Everyone claps in the last scene."
+    bases:
+      "கடைசிக்": "last (before a word starting with k); from கடைசி (kaṭaici), last"
+      "காட்சியில்": "in the scene; from காட்சி (kāṭci), scene"
+      "கைதட்டுகிறார்கள்": "they clap; from கைதட்டு (kaitaṭṭu), to clap"
+    confusables:
+      w1: { why: "உணர்ச்சி (uṇarcci), emotion; feeling, is a different word." }
+      w2: { why: "சிரிப்பு (cirippu), laughter; smile, is a different word." }
+      w3: { why: "அழுகை (aḻukai), crying; weeping, is a different word." }
