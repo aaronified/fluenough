@@ -48,7 +48,7 @@ void main() {
       'known', () async {
     final state = await _bengali();
     final card = state.cardById(_sentence)!;
-    expect(state.unlocks.isClosed(card), isTrue);
+    expect(state.unlocksFor('bn').isClosed(card), isTrue);
     expect(
       state.untaughtCards('bn', deckId: _deck).map((c) => c.id),
       isNot(contains(_sentence)),
@@ -56,14 +56,14 @@ void main() {
 
     // The last thing it waits for is known: a word, or a rule through one of
     // its cells.
-    for (final need in state.unlocks.needsOf(card)) {
+    for (final need in state.unlocksFor('bn').needsOf(card)) {
       final id = need.kind == NeedKind.word
           ? need.id
-          : state.unlocks.cellsOf(need.id).first;
+          : state.unlocksFor('bn').cellsOf(need.id).first;
       _know(state, id);
     }
-    expect(state.unlocks.waitingFor(card), isEmpty);
-    expect(state.unlocks.isClosed(card), isFalse);
+    expect(state.unlocksFor('bn').waitingFor(card), isEmpty);
+    expect(state.unlocksFor('bn').isClosed(card), isFalse);
     expect(
       state.untaughtCards('bn', deckId: _deck).map((c) => c.id),
       contains(_sentence),
