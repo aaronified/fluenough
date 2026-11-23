@@ -138,3 +138,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-2192 | ta-nature | Is நதி or ஆறு the usual word for a river in speech? | Sonnet builder | 2026-11-23 |
 | ta-2197 | ta-nature | Is வனம் natural in speech, or only written beside காடு? | Sonnet builder | 2026-11-23 |
 | ta-2219 | ta-nature | Does ஆமை cover both tortoise and turtle? | Sonnet builder | 2026-11-23 |
+| ta-2278 | ta-adjectives-2 | Is காலியான (from the English loan காலி) natural for empty? | Sonnet builder | 2026-11-23 |
+| ta-2279 | ta-adjectives-2 | Is நிரம்பிய the usual spoken form of full, or நிறைந்த? | Sonnet builder | 2026-11-23 |
+| ta-2300 | ta-adjectives-2 | Is பிரமாண்டமான natural in speech for huge? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-adjectives-2 | All adjectives are given in the -ஆன attributive form; check that each is spelled as spoken Tamil writes it. | Sonnet builder | 2026-11-23 |
