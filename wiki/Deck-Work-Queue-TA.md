@@ -110,3 +110,15 @@ Merged to decks-live, each with CI green (10 of 10 checks) and one Sonnet review
 | Multi-word 54 of 60 | aspectual-compound is 14 of 20; the six plan headwords with no readable page were dropped (reasons in the queue) | Optional |
 | Review queue | rows appended by every worker; `dropped:` rows are not card ids | Settled by a reviewer through the app |
 | Professional | held (needs the owner) | none |
+
+## 7. Progress, 2026-11-23 (after the resume)
+
+Merged to decks-live since section 6, each with CI green (10 of 10 checks) and one Sonnet review: #1724 topics nits; #1725 narrow IPA (`ta-phonetics.yaml` with 13 rules, `phonetic` on 3,236 cards; the registry entry is #1722 on main); #1726 reading decks (67 decks, one passage each, for every word unit; grammar units have none).
+
+| Open item | State |
+|---|---|
+| Culture top-up (10 cards) | `decks/ta-culture-wave2`, ta-culture2 resumed with the polite Wikimedia client |
+| `phonetic` on cards added after #1725 | run `derive_phonetic.py ta --bracket-unchanged --write` once more after the culture top-up merges (new reading and culture cards have a broad `ipa` but no `phonetic`); one PR |
+| Plan-word shortfall | six B1 units a few words under plan (services 47 of 50, travel 57 of 60, health 59 of 60, opinions 54 of 55, technology 52 of 55, environment 52 of 55); optional unique-word top-up |
+| Multi-word 54 of 60, topics deck-level `ta-multiword-idiomatic` header level A2 | optional |
+| Professional | held (needs the owner) |
