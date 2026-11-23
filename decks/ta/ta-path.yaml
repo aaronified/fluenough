@@ -427,7 +427,7 @@ units:
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences. ta-grammar-negative follows the first unit.
-  - decks: ["ta-daily-life", "ta-daily-life-sentences", "*"]
+  - decks: ["ta-daily-life", "ta-daily-life-sentences", "ta-reading-daily-life", "*"]
     words: 8
     listening_passages:
       - { id: "a-day", text: { "en": "Someone tells their day, and what they do not do" } }
@@ -440,14 +440,14 @@ units:
       - { id: "negative-heard", text: { "en": "A short exchange that uses negative, after the daily life unit" } }
     reading_passages:
       - { id: "negative-read", text: { "en": "A short text that uses negative, after the daily life unit" } }
-  - decks: ["ta-weather", "ta-weather-sentences", "*"]
+  - decks: ["ta-weather", "ta-weather-sentences", "ta-reading-weather", "*"]
     words: 45
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the monsoon" } }
   # ta-grammar-past follows this unit.
-  - decks: ["ta-calendar", "ta-calendar-sentences", "*"]
+  - decks: ["ta-calendar", "ta-calendar-sentences", "ta-reading-calendar", "*"]
     words: 15
     listening_passages:
       - { id: "what-i-did", text: { "en": "Saying what you did last week" } }
