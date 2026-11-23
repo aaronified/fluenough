@@ -132,12 +132,15 @@ void main() {
     expect(languageOfDeckPath('decks/themes.yaml'), isNull);
     expect(isSharedUnitPath('decks/themes.yaml'), isTrue);
     expect(isSharedUnitPath('decks/sections.yaml'), isTrue);
-    final parts = partitionPaths(<String>[
-      'decks/themes.yaml',
-      'decks/te/a.yaml',
-      'added/a.yaml',
-      'added/b.yaml',
-    ], addedLanguages: <String, String>{'added/a.yaml': 'fr'});
+    final parts = partitionPaths(
+      <String>[
+        'decks/themes.yaml',
+        'decks/te/a.yaml',
+        'added/a.yaml',
+        'added/b.yaml',
+      ],
+      addedLanguages: <String, String>{'added/a.yaml': 'fr'},
+    );
     expect(parts.shared, <String>['decks/themes.yaml']);
     expect(parts.byLanguage.keys.toList()..sort(), <String>['fr', 'te']);
     expect(parts.unrouted, <String>['added/b.yaml']);

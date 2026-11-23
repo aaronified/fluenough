@@ -188,15 +188,13 @@ class VerifyJob {
 
 /// Checks the caches of [job]'s languages against their files' hashes and
 /// parses nothing.
-Map<String, CacheVerdict> runVerifyJob(VerifyJob job) => verifyCaches(
-  summaries: job.summaries,
-  shas: job.shas,
-  app: job.app,
-);
+Map<String, CacheVerdict> runVerifyJob(VerifyJob job) =>
+    verifyCaches(summaries: job.summaries, shas: job.shas, app: job.app);
 
 /// Runs a [VerifyJob] somewhere.
-typedef CacheVerifier =
-    Future<Map<String, CacheVerdict>> Function(VerifyJob job);
+typedef CacheVerifier = Future<Map<String, CacheVerdict>> Function(
+  VerifyJob job,
+);
 
 /// [runVerifyJob] in place.
 Future<Map<String, CacheVerdict>> verifyInPlace(VerifyJob job) async =>
@@ -298,8 +296,7 @@ LanguageSummary summariseLanguage(
   ];
   final first = teaching.firstOrNull;
   final info =
-      first?.language ??
-      LanguageInfo(code: code, iso639_3: code, name: code);
+      first?.language ?? LanguageInfo(code: code, iso639_3: code, name: code);
   final natives = <String, LanguageInfo>{
     for (final entry in teaching) entry.deck.native.code: entry.deck.native,
   };

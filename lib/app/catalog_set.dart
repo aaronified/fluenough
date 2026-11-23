@@ -427,10 +427,7 @@ class CatalogSet {
       code: code,
       files: texts,
       disk: disk.isEmpty ? null : DiskDeckFiles(disk),
-      shas: <String, String>{
-        for (final path in paths)
-          path: ?known[path],
-      },
+      shas: <String, String>{for (final path in paths) path: ?known[path]},
       snapshot: snapshots?.readerFor(code),
       seed: snapshots?.seed,
       app: app,
