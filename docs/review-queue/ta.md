@@ -186,3 +186,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-hobbies | Gender m is given to வீரர் (ta-1886) and பாடகர் (ta-1887), -ர் nouns that can name women too; is m right? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-journey | Gender m is given to டிரைவர் (ta-2161), ஓட்டுநர் (ta-2162), நடத்துநர் (ta-2163) and வழிகாட்டி (ta-2173), who may be women; is m right? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-workplace | Gender m is given to the 16 person nouns ta-2307 to ta-2322 (ஊழியர், மேலாளர் and others), epicene -ர் or -ி nouns; is m right, as for ஆசிரியர் in ta-work? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-health | Words were written from the builder's knowledge and not all checked on a dictionary: is the spoken-versus-written split (ஆஸ்பத்திரி against மருத்துவமனை, செவிலியர் against நர்ஸ்) right? | Haiku deck worker (ta-words3) | 2026-11-23 |
+| ta-7000 | ta-health | Gender m is given to நோயாளி and to முதியோர் (ta-7044), which name women too; is m right? செவிலியர் (ta-7051) has f; is it epicene? | Haiku deck worker (ta-words3) | 2026-11-23 |
+| ta-7038 | ta-health | குணம் has the gloss 'recovery; nature' with the phrase குணம் ஆகிறது for getting better: is that the natural spoken form (or குணமாகிறது as one word)? | Haiku deck worker (ta-words3) | 2026-11-23 |
