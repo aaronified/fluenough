@@ -1,0 +1,52 @@
+schema: 1
+id: "ta-en-reading-arts"
+name: "Tamil reading: arts"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short exhibition notice, using the words of the arts. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-exhibition-notice"
+    title: "An exhibition notice"
+    theme: "arts"
+    sentences:
+      - text: "அருங்காட்சியகத்தில் ஓவியக் கண்காட்சி உண்டு."
+        reading: "aruṅkāṭciyakattil ōviyak kaṇkāṭci uṇṭu."
+        ipa: "aɾuŋkaːʈtʃijakat̪t̪il oːʋijak kaɳkaːʈtʃi uɳʈu"
+      - text: "ஓவியர்கள் படைப்புகளைக் காட்டுகிறார்கள்."
+        reading: "ōviyarkaḷ paṭaippukaḷaik kāṭṭukiṟārkaḷ."
+        ipa: "oːʋijaɾkaɭ paʈaippukaɭaik kaːʈʈukiraːɾkaɭ"
+      - text: "காலை பத்து மணிக்கு திறக்கிறார்கள்."
+        reading: "kālai pattu maṇikku tiṟakkiṟārkaḷ."
+        ipa: "kaːlai pat̪t̪u maɳikku t̪irakkiraːɾkaɭ"
+      - text: "மாலையில் இசைக் கச்சேரி இருக்கிறது."
+        reading: "mālaiyil icaik kaccēri irukkiṟatu."
+        ipa: "maːlaijil isaik katʃtʃeːɾi iɾukkirat̪u"
+      - text: "நுழைவுக்கட்டணம் இல்லை."
+        reading: "nuḻaivukkaṭṭaṇam illai."
+        ipa: "nuɻaiʋukkaʈʈaɳam illai"
+    questions:
+      - id: "ta-5243"
+        prompt: { "en": "Where is the exhibition?" }
+        options:
+          - { "en": "In the museum" }
+          - { "en": "In a school" }
+          - { "en": "In a temple" }
+        answer: 1
+      - id: "ta-5244"
+        prompt: { "en": "What happens in the evening?" }
+        options:
+          - { "en": "A music concert" }
+          - { "en": "A film show" }
+          - { "en": "A dance rehearsal" }
+        answer: 1
+      - id: "ta-5245"
+        prompt: { "en": "Is there an entry fee?" }
+        options:
+          - { "en": "No" }
+          - { "en": "Yes, ten rupees" }
+          - { "en": "Yes, only for children" }
+        answer: 1

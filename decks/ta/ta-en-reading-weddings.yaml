@@ -1,0 +1,59 @@
+schema: 1
+id: "ta-en-reading-weddings"
+name: "Tamil reading: weddings"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short wedding card, using the words of weddings. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-wedding-card"
+    title: "A wedding card"
+    theme: "weddings"
+    sentences:
+      - text: "மணமகன் ராஜா, மணமகள் ராணி."
+        reading: "maṇamakaṉ rājā, maṇamakaḷ rāṇi."
+        ipa: "maɳamakan ɾaːdʒaː maɳamakaɭ ɾaːɳi"
+      - text: "திருமணம் ஞாயிறு காலை ஒன்பது மணிக்கு."
+        reading: "tirumaṇam ñāyiṟu kālai oṉpatu maṇikku."
+        ipa: "t̪iɾumaɳam ɲaːjiru kaːlai onpat̪u maɳikku"
+      - text: "மண்டபம் ரயில்நிலையம் பக்கத்தில் இருக்கிறது."
+        reading: "maṇṭapam rayilnilaiyam pakkattil irukkiṟatu."
+        ipa: "maɳʈapam ɾajilnilaijam pakkat̪t̪il iɾukkirat̪u"
+      - text: "எல்லோரும் குடும்பத்துடன் வாருங்கள்."
+        reading: "ellōrum kuṭumpattuṭaṉ vāruṅkaḷ."
+        ipa: "elloːɾum kuʈumpat̪t̪uʈan ʋaːɾuŋkaɭ"
+      - text: "மதியம் விருந்து உண்டு."
+        reading: "matiyam viruntu uṇṭu."
+        ipa: "mat̪ijam ʋiɾunt̪u uɳʈu"
+    questions:
+      - id: "ta-5250"
+        prompt: { "en": "Who is the bride?" }
+        options:
+          - { "en": "Rani" }
+          - { "en": "Raja" }
+          - { "en": "The writer" }
+        answer: 1
+      - id: "ta-5251"
+        prompt: { "en": "When is the wedding?" }
+        options:
+          - { "en": "Sunday at nine in the morning" }
+          - { "en": "Saturday evening" }
+          - { "en": "Monday at noon" }
+        answer: 1
+      - id: "ta-5252"
+        prompt: { "en": "Where is the wedding hall?" }
+        options:
+          - { "en": "Next to the railway station" }
+          - { "en": "Next to the bus stand" }
+          - { "en": "Next to the post office" }
+        answer: 1
+      - id: "ta-5253"
+        prompt: { "en": "What happens at midday?" }
+        options:
+          - { "en": "A feast" }
+          - { "en": "A concert" }
+          - { "en": "A rehearsal" }
+        answer: 1
