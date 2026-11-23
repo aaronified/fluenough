@@ -239,7 +239,9 @@ units:
       - { id: "house-rules", text: { "en": "A short list of house rules" } }
   # 5. Rules as forms, practised on the words known: noun endings and
   # conjunctions first, then pronoun and verb forms.
-  - planned: { id: "ml-grammar-noun-forms", grammar: ["plural", "plural-mar", "oblique", "e", "kku", "nte", "il", "ninnu", "otu"], words: 0 }
+  - decks: ["ml-grammar-noun-forms"]
+    words: 0
+    grammar: ["plural", "plural-mar", "oblique", "e", "kku", "nte", "il", "ninnu", "otu"]
     listening_passages:
       - { id: "which-way-home", text: { "en": "Two people say where they go, with whom, and where from" } }
     reading_passages:

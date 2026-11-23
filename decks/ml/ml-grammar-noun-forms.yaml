@@ -1,0 +1,1175 @@
+schema: 1
+id: "ml-grammar-noun-forms"
+part: "core"
+kind: "rules"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["noun"]
+    except: ["ml-0467", "ml-1006"]
+  slots: ["plural", "plural-mar", "oblique", "e", "kku", "nte", "il", "ninnu", "otu"]
+  rows:
+    - word: "ml-0042"
+      forms: { "plural": "പേരുകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "പേരിന്", "nte": "പേരിന്റെ", "il": "പേരിൽ", "ninnu": "പേരിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pērukaḷ", "kku": "pērin", "nte": "pērinṟe", "il": "pēril", "ninnu": "pēril ninn" }
+    - word: "ml-0044"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "വയസ്സിന്", "nte": "വയസ്സിന്റെ", "il": "വയസ്സിൽ", "ninnu": "വയസ്സിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "vayassin", "nte": "vayassinṟe", "il": "vayassil", "ninnu": "vayassil ninn" }
+    - word: "ml-0045"
+      forms: { "plural": "നാടുകൾ", "plural-mar": null, "oblique": "നാട്ട്", "e": null, "kku": "നാടിന്", "nte": "നാടിന്റെ", "il": "നാട്ടിൽ", "ninnu": "നാട്ടിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "nāṭukaḷ", "oblique": "nāṭṭ", "kku": "nāṭin", "nte": "nāṭinṟe", "il": "nāṭṭil", "ninnu": "nāṭṭil ninn" }
+    - word: "ml-0046"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "ജോലിക്ക്", "nte": "ജോലിയുടെ", "il": "ജോലിയിൽ", "ninnu": "ജോലിയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "jōlikk", "nte": "jōliyuṭe", "il": "jōliyil", "ninnu": "jōliyil ninn" }
+    - word: "ml-0047"
+      forms: { "plural": "സ്ഥലങ്ങൾ", "plural-mar": null, "oblique": "സ്ഥലത്ത്", "e": null, "kku": "സ്ഥലത്തിന്", "nte": "സ്ഥലത്തിന്റെ", "il": "സ്ഥലത്തിൽ", "ninnu": "സ്ഥലത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "sthalaṅṅaḷ", "oblique": "sthalatt", "kku": "sthalattin", "nte": "sthalattinṟe", "il": "sthalattil", "ninnu": "sthalattil ninn" }
+    - word: "ml-0427"
+      forms: { "plural": "പശുക്കൾ", "plural-mar": null, "oblique": null, "e": "പശുവിനെ", "kku": "പശുവിന്", "nte": "പശുവിന്റെ", "il": null, "ninnu": null, "otu": "പശുവിനോട്" }
+      readings: { "plural": "paśukkaḷ", "e": "paśuvine", "kku": "paśuvin", "nte": "paśuvinṟe", "otu": "paśuvinōṭ" }
+    - word: "ml-0428"
+      forms: { "plural": ["നായ്ക്കൾ", "നായകൾ"], "plural-mar": null, "oblique": null, "e": "നായയെ", "kku": "നായയ്ക്ക്", "nte": "നായയുടെ", "il": null, "ninnu": null, "otu": "നായയോട്" }
+      readings: { "plural": ["nāykkaḷ", "nāyakaḷ"], "e": "nāyaye", "kku": "nāyaykk", "nte": "nāyayuṭe", "otu": "nāyayōṭ" }
+    - word: "ml-0429"
+      forms: { "plural": "പൂച്ചകൾ", "plural-mar": null, "oblique": null, "e": "പൂച്ചയെ", "kku": "പൂച്ചയ്ക്ക്", "nte": "പൂച്ചയുടെ", "il": null, "ninnu": null, "otu": "പൂച്ചയോട്" }
+      readings: { "plural": "pūccakaḷ", "e": "pūccaye", "kku": "pūccaykk", "nte": "pūccayuṭe", "otu": "pūccayōṭ" }
+    - word: "ml-0430"
+      forms: { "plural": "പക്ഷികൾ", "plural-mar": null, "oblique": null, "e": "പക്ഷിയെ", "kku": "പക്ഷിക്ക്", "nte": "പക്ഷിയുടെ", "il": null, "ninnu": null, "otu": "പക്ഷിയോട്" }
+      readings: { "plural": "pakṣikaḷ", "e": "pakṣiye", "kku": "pakṣikk", "nte": "pakṣiyuṭe", "otu": "pakṣiyōṭ" }
+    - word: "ml-0431"
+      forms: { "plural": "കുതിരകൾ", "plural-mar": null, "oblique": null, "e": "കുതിരയെ", "kku": "കുതിരയ്ക്ക്", "nte": "കുതിരയുടെ", "il": null, "ninnu": null, "otu": "കുതിരയോട്" }
+      readings: { "plural": "kutirakaḷ", "e": "kutiraye", "kku": "kutiraykk", "nte": "kutirayuṭe", "otu": "kutirayōṭ" }
+    - word: "ml-0432"
+      forms: { "plural": "ആടുകൾ", "plural-mar": null, "oblique": null, "e": "ആടിനെ", "kku": "ആടിന്", "nte": "ആടിന്റെ", "il": null, "ninnu": null, "otu": "ആടിനോട്" }
+      readings: { "plural": "āṭukaḷ", "e": "āṭine", "kku": "āṭin", "nte": "āṭinṟe", "otu": "āṭinōṭ" }
+    - word: "ml-0433"
+      forms: { "plural": "കോഴികൾ", "plural-mar": null, "oblique": null, "e": "കോഴിയെ", "kku": "കോഴിക്ക്", "nte": "കോഴിയുടെ", "il": null, "ninnu": null, "otu": "കോഴിയോട്" }
+      readings: { "plural": "kōḻikaḷ", "e": "kōḻiye", "kku": "kōḻikk", "nte": "kōḻiyuṭe", "otu": "kōḻiyōṭ" }
+    - word: "ml-0434"
+      forms: { "plural": "പാമ്പുകൾ", "plural-mar": null, "oblique": null, "e": "പാമ്പിനെ", "kku": "പാമ്പിന്", "nte": "പാമ്പിന്റെ", "il": null, "ninnu": null, "otu": "പാമ്പിനോട്" }
+      readings: { "plural": "pāmpukaḷ", "e": "pāmpine", "kku": "pāmpin", "nte": "pāmpinṟe", "otu": "pāmpinōṭ" }
+    - word: "ml-0435"
+      forms: { "plural": "കുരങ്ങുകൾ", "plural-mar": null, "oblique": null, "e": "കുരങ്ങിനെ", "kku": "കുരങ്ങിന്", "nte": "കുരങ്ങിന്റെ", "il": null, "ninnu": null, "otu": "കുരങ്ങിനോട്" }
+      readings: { "plural": "kuraṅṅukaḷ", "e": "kuraṅṅine", "kku": "kuraṅṅin", "nte": "kuraṅṅinṟe", "otu": "kuraṅṅinōṭ" }
+    - word: "ml-0436"
+      forms: { "plural": "ആനകൾ", "plural-mar": null, "oblique": null, "e": "ആനയെ", "kku": "ആനയ്ക്ക്", "nte": "ആനയുടെ", "il": null, "ninnu": null, "otu": "ആനയോട്" }
+      readings: { "plural": "ānakaḷ", "e": "ānaye", "kku": "ānaykk", "nte": "ānayuṭe", "otu": "ānayōṭ" }
+    - word: "ml-0437"
+      forms: { "plural": "കടുവകൾ", "plural-mar": null, "oblique": null, "e": "കടുവയെ", "kku": "കടുവയ്ക്ക്", "nte": "കടുവയുടെ", "il": null, "ninnu": null, "otu": "കടുവയോട്" }
+      readings: { "plural": "kaṭuvakaḷ", "e": "kaṭuvaye", "kku": "kaṭuvaykk", "nte": "kaṭuvayuṭe", "otu": "kaṭuvayōṭ" }
+    - word: "ml-0438"
+      forms: { "plural": "സിംഹങ്ങൾ", "plural-mar": null, "oblique": "സിംഹത്ത്", "e": "സിംഹത്തിനെ", "kku": "സിംഹത്തിന്", "nte": "സിംഹത്തിന്റെ", "il": null, "ninnu": null, "otu": ["സിംഹത്തോട്", "സിംഹത്തിനോട്"] }
+      readings: { "plural": "siṁhaṅṅaḷ", "oblique": "siṁhatt", "e": "siṁhattine", "kku": "siṁhattin", "nte": "siṁhattinṟe", "otu": ["siṁhattōṭ", "siṁhattinōṭ"] }
+    - word: "ml-0439"
+      forms: { "plural": "താറാവുകൾ", "plural-mar": null, "oblique": null, "e": "താറാവിനെ", "kku": "താറാവിന്", "nte": "താറാവിന്റെ", "il": null, "ninnu": null, "otu": "താറാവിനോട്" }
+      readings: { "plural": "tāṟāvukaḷ", "e": "tāṟāvine", "kku": "tāṟāvin", "nte": "tāṟāvinṟe", "otu": "tāṟāvinōṭ" }
+    - word: "ml-0440"
+      forms: { "plural": "ചിലന്തികൾ", "plural-mar": null, "oblique": null, "e": "ചിലന്തിയെ", "kku": "ചിലന്തിക്ക്", "nte": "ചിലന്തിയുടെ", "il": null, "ninnu": null, "otu": "ചിലന്തിയോട്" }
+      readings: { "plural": "cilantikaḷ", "e": "cilantiye", "kku": "cilantikk", "nte": "cilantiyuṭe", "otu": "cilantiyōṭ" }
+    - word: "ml-0441"
+      forms: { "plural": "ഈച്ചകൾ", "plural-mar": null, "oblique": null, "e": "ഈച്ചയെ", "kku": "ഈച്ചയ്ക്ക്", "nte": "ഈച്ചയുടെ", "il": null, "ninnu": null, "otu": "ഈച്ചയോട്" }
+      readings: { "plural": "īccakaḷ", "e": "īccaye", "kku": "īccaykk", "nte": "īccayuṭe", "otu": "īccayōṭ" }
+    - word: "ml-0442"
+      forms: { "plural": "കൊതുകുകൾ", "plural-mar": null, "oblique": null, "e": "കൊതുകിനെ", "kku": "കൊതുകിന്", "nte": "കൊതുകിന്റെ", "il": null, "ninnu": null, "otu": "കൊതുകിനോട്" }
+      readings: { "plural": "kotukukaḷ", "e": "kotukine", "kku": "kotukin", "nte": "kotukinṟe", "otu": "kotukinōṭ" }
+    - word: "ml-0443"
+      forms: { "plural": "തവളകൾ", "plural-mar": null, "oblique": null, "e": "തവളയെ", "kku": "തവളയ്ക്ക്", "nte": "തവളയുടെ", "il": null, "ninnu": null, "otu": "തവളയോട്" }
+      readings: { "plural": "tavaḷakaḷ", "e": "tavaḷaye", "kku": "tavaḷaykk", "nte": "tavaḷayuṭe", "otu": "tavaḷayōṭ" }
+    - word: "ml-0444"
+      forms: { "plural": "മുയലുകൾ", "plural-mar": null, "oblique": null, "e": "മുയലിനെ", "kku": "മുയലിന്", "nte": "മുയലിന്റെ", "il": null, "ninnu": null, "otu": "മുയലിനോട്" }
+      readings: { "plural": "muyalukaḷ", "e": "muyaline", "kku": "muyalin", "nte": "muyalinṟe", "otu": "muyalinōṭ" }
+    - word: "ml-0445"
+      forms: { "plural": "എലികൾ", "plural-mar": null, "oblique": null, "e": "എലിയെ", "kku": "എലിക്ക്", "nte": "എലിയുടെ", "il": null, "ninnu": null, "otu": "എലിയോട്" }
+      readings: { "plural": "elikaḷ", "e": "eliye", "kku": "elikk", "nte": "eliyuṭe", "otu": "eliyōṭ" }
+    - word: "ml-0446"
+      forms: { "plural": "പന്നികൾ", "plural-mar": null, "oblique": null, "e": "പന്നിയെ", "kku": "പന്നിക്ക്", "nte": "പന്നിയുടെ", "il": null, "ninnu": null, "otu": "പന്നിയോട്" }
+      readings: { "plural": "pannikaḷ", "e": "panniye", "kku": "pannikk", "nte": "panniyuṭe", "otu": "panniyōṭ" }
+    - word: "ml-0447"
+      forms: { "plural": "മാനുകൾ", "plural-mar": null, "oblique": null, "e": "മാനിനെ", "kku": "മാനിന്", "nte": ["മാനിന്റെ", "മാന്റെ"], "il": null, "ninnu": null, "otu": "മാനിനോട്" }
+      readings: { "plural": "mānukaḷ", "e": "mānine", "kku": "mānin", "nte": ["māninṟe", "mānṟe"], "otu": "māninōṭ" }
+    - word: "ml-0448"
+      forms: { "plural": "ഒട്ടകങ്ങൾ", "plural-mar": null, "oblique": "ഒട്ടകത്ത്", "e": "ഒട്ടകത്തിനെ", "kku": "ഒട്ടകത്തിന്", "nte": "ഒട്ടകത്തിന്റെ", "il": null, "ninnu": null, "otu": ["ഒട്ടകത്തോട്", "ഒട്ടകത്തിനോട്"] }
+      readings: { "plural": "oṭṭakaṅṅaḷ", "oblique": "oṭṭakatt", "e": "oṭṭakattine", "kku": "oṭṭakattin", "nte": "oṭṭakattinṟe", "otu": ["oṭṭakattōṭ", "oṭṭakattinōṭ"] }
+    - word: "ml-0449"
+      forms: { "plural": "തേനീച്ചകൾ", "plural-mar": null, "oblique": null, "e": "തേനീച്ചയെ", "kku": "തേനീച്ചയ്ക്ക്", "nte": "തേനീച്ചയുടെ", "il": null, "ninnu": null, "otu": "തേനീച്ചയോട്" }
+      readings: { "plural": "tēnīccakaḷ", "e": "tēnīccaye", "kku": "tēnīccaykk", "nte": "tēnīccayuṭe", "otu": "tēnīccayōṭ" }
+    - word: "ml-0450"
+      forms: { "plural": "ആമകൾ", "plural-mar": null, "oblique": null, "e": "ആമയെ", "kku": "ആമയ്ക്ക്", "nte": "ആമയുടെ", "il": null, "ninnu": null, "otu": "ആമയോട്" }
+      readings: { "plural": "āmakaḷ", "e": "āmaye", "kku": "āmaykk", "nte": "āmayuṭe", "otu": "āmayōṭ" }
+    - word: "ml-0451"
+      forms: { "plural": "കാക്കകൾ", "plural-mar": null, "oblique": null, "e": "കാക്കയെ", "kku": "കാക്കയ്ക്ക്", "nte": "കാക്കയുടെ", "il": null, "ninnu": null, "otu": "കാക്കയോട്" }
+      readings: { "plural": "kākkakaḷ", "e": "kākkaye", "kku": "kākkaykk", "nte": "kākkayuṭe", "otu": "kākkayōṭ" }
+    - word: "ml-0452"
+      forms: { "plural": "കഴുതകൾ", "plural-mar": null, "oblique": null, "e": "കഴുതയെ", "kku": "കഴുതയ്ക്ക്", "nte": "കഴുതയുടെ", "il": null, "ninnu": null, "otu": "കഴുതയോട്" }
+      readings: { "plural": "kaḻutakaḷ", "e": "kaḻutaye", "kku": "kaḻutaykk", "nte": "kaḻutayuṭe", "otu": "kaḻutayōṭ" }
+    - word: "ml-0453"
+      forms: { "plural": "കിളികൾ", "plural-mar": null, "oblique": null, "e": "കിളിയെ", "kku": "കിളിക്ക്", "nte": "കിളിയുടെ", "il": null, "ninnu": null, "otu": "കിളിയോട്" }
+      readings: { "plural": "kiḷikaḷ", "e": "kiḷiye", "kku": "kiḷikk", "nte": "kiḷiyuṭe", "otu": "kiḷiyōṭ" }
+    - word: "ml-1553"
+      forms: { "plural": "ഉറുമ്പുകൾ", "plural-mar": null, "oblique": null, "e": "ഉറുമ്പിനെ", "kku": "ഉറുമ്പിന്", "nte": "ഉറുമ്പിന്റെ", "il": "ഉറുമ്പിൽ", "ninnu": "ഉറുമ്പിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "uṟumpukaḷ", "e": "uṟumpine", "kku": "uṟumpin", "nte": "uṟumpinṟe", "il": "uṟumpil", "ninnu": "uṟumpil ninn" }
+    - word: "ml-1554"
+      forms: { "plural": "മയിലുകൾ", "plural-mar": null, "oblique": null, "e": "മയിലിനെ", "kku": "മയിലിന്", "nte": "മയിലിന്റെ", "il": "മയിലിൽ", "ninnu": "മയിലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "mayilukaḷ", "e": "mayiline", "kku": "mayilin", "nte": "mayilinṟe", "il": "mayilil", "ninnu": "mayilil ninn" }
+    - word: "ml-1555"
+      forms: { "plural": "പൂമ്പാറ്റകൾ", "plural-mar": null, "oblique": null, "e": "പൂമ്പാറ്റയെ", "kku": "പൂമ്പാറ്റയ്ക്ക്", "nte": "പൂമ്പാറ്റയുടെ", "il": "പൂമ്പാറ്റയിൽ", "ninnu": "പൂമ്പാറ്റയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pūmpāṟṟakaḷ", "e": "pūmpāṟṟaye", "kku": "pūmpāṟṟaykk", "nte": "pūmpāṟṟayuṭe", "il": "pūmpāṟṟayil", "ninnu": "pūmpāṟṟayil ninn" }
+    - word: "ml-0307"
+      forms: { "plural": "തലകൾ", "plural-mar": null, "oblique": null, "e": "തലയെ", "kku": "തലയ്ക്ക്", "nte": "തലയുടെ", "il": "തലയിൽ", "ninnu": "തലയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "talakaḷ", "e": "talaye", "kku": "talaykk", "nte": "talayuṭe", "il": "talayil", "ninnu": "talayil ninn" }
+    - word: "ml-0308"
+      forms: { "plural": "മുഖങ്ങൾ", "plural-mar": null, "oblique": "മുഖത്ത്", "e": "മുഖത്തിനെ", "kku": "മുഖത്തിന്", "nte": "മുഖത്തിന്റെ", "il": "മുഖത്തിൽ", "ninnu": "മുഖത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "mukhaṅṅaḷ", "oblique": "mukhatt", "e": "mukhattine", "kku": "mukhattin", "nte": "mukhattinṟe", "il": "mukhattil", "ninnu": "mukhattil ninn" }
+    - word: "ml-0309"
+      forms: { "plural": "കണ്ണുകൾ", "plural-mar": null, "oblique": null, "e": "കണ്ണിനെ", "kku": "കണ്ണിന്", "nte": "കണ്ണിന്റെ", "il": "കണ്ണിൽ", "ninnu": "കണ്ണിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kaṇṇukaḷ", "e": "kaṇṇine", "kku": "kaṇṇin", "nte": "kaṇṇinṟe", "il": "kaṇṇil", "ninnu": "kaṇṇil ninn" }
+    - word: "ml-0310"
+      forms: { "plural": "ചെവികൾ", "plural-mar": null, "oblique": null, "e": "ചെവിയെ", "kku": "ചെവിക്ക്", "nte": "ചെവിയുടെ", "il": "ചെവിയിൽ", "ninnu": "ചെവിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "cevikaḷ", "e": "ceviye", "kku": "cevikk", "nte": "ceviyuṭe", "il": "ceviyil", "ninnu": "ceviyil ninn" }
+    - word: "ml-0311"
+      forms: { "plural": "മൂക്കുകൾ", "plural-mar": null, "oblique": null, "e": "മൂക്കിനെ", "kku": "മൂക്കിന്", "nte": "മൂക്കിന്റെ", "il": "മൂക്കിൽ", "ninnu": "മൂക്കിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "mūkkukaḷ", "e": "mūkkine", "kku": "mūkkin", "nte": "mūkkinṟe", "il": "mūkkil", "ninnu": "mūkkil ninn" }
+    - word: "ml-0312"
+      forms: { "plural": "വായകൾ", "plural-mar": null, "oblique": null, "e": "വായയെ", "kku": "വായയ്ക്ക്", "nte": "വായയുടെ", "il": "വായയിൽ", "ninnu": "വായയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "vāyakaḷ", "e": "vāyaye", "kku": "vāyaykk", "nte": "vāyayuṭe", "il": "vāyayil", "ninnu": "vāyayil ninn" }
+    - word: "ml-0313"
+      forms: { "plural": "പല്ലുകൾ", "plural-mar": null, "oblique": null, "e": "പല്ലിനെ", "kku": "പല്ലിന്", "nte": "പല്ലിന്റെ", "il": "പല്ലിൽ", "ninnu": "പല്ലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pallukaḷ", "e": "palline", "kku": "pallin", "nte": "pallinṟe", "il": "pallil", "ninnu": "pallil ninn" }
+    - word: "ml-0314"
+      forms: { "plural": "നാവുകൾ", "plural-mar": null, "oblique": null, "e": "നാവിനെ", "kku": "നാവിന്", "nte": "നാവിന്റെ", "il": "നാവിൽ", "ninnu": "നാവിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "nāvukaḷ", "e": "nāvine", "kku": "nāvin", "nte": "nāvinṟe", "il": "nāvil", "ninnu": "nāvil ninn" }
+    - word: "ml-0315"
+      forms: { "plural": "കഴുത്തുകൾ", "plural-mar": null, "oblique": null, "e": "കഴുത്തിനെ", "kku": "കഴുത്തിന്", "nte": "കഴുത്തിന്റെ", "il": "കഴുത്തിൽ", "ninnu": "കഴുത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kaḻuttukaḷ", "e": "kaḻuttine", "kku": "kaḻuttin", "nte": "kaḻuttinṟe", "il": "kaḻuttil", "ninnu": "kaḻuttil ninn" }
+    - word: "ml-0316"
+      forms: { "plural": "തോളുകൾ", "plural-mar": null, "oblique": null, "e": "തോളിനെ", "kku": "തോളിന്", "nte": "തോളിന്റെ", "il": "തോളിൽ", "ninnu": "തോളിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "tōḷukaḷ", "e": "tōḷine", "kku": "tōḷin", "nte": "tōḷinṟe", "il": "tōḷil", "ninnu": "tōḷil ninn" }
+    - word: "ml-0317"
+      forms: { "plural": "കൈകൾ", "plural-mar": null, "oblique": null, "e": "കൈയെ", "kku": ["കൈക്ക്", "കൈയ്ക്ക്"], "nte": "കൈയുടെ", "il": "കൈയിൽ", "ninnu": "കൈയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kaikaḷ", "e": "kaiye", "kku": ["kaikk", "kaiykk"], "nte": "kaiyuṭe", "il": "kaiyil", "ninnu": "kaiyil ninn" }
+    - word: "ml-0318"
+      forms: { "plural": "വിരലുകൾ", "plural-mar": null, "oblique": null, "e": "വിരലിനെ", "kku": "വിരലിന്", "nte": "വിരലിന്റെ", "il": "വിരലിൽ", "ninnu": "വിരലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "viralukaḷ", "e": "viraline", "kku": "viralin", "nte": "viralinṟe", "il": "viralil", "ninnu": "viralil ninn" }
+    - word: "ml-0319"
+      forms: { "plural": "നഖങ്ങൾ", "plural-mar": null, "oblique": "നഖത്ത്", "e": "നഖത്തിനെ", "kku": "നഖത്തിന്", "nte": "നഖത്തിന്റെ", "il": "നഖത്തിൽ", "ninnu": "നഖത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "nakhaṅṅaḷ", "oblique": "nakhatt", "e": "nakhattine", "kku": "nakhattin", "nte": "nakhattinṟe", "il": "nakhattil", "ninnu": "nakhattil ninn" }
+    - word: "ml-0320"
+      forms: { "plural": "നെഞ്ചുകൾ", "plural-mar": null, "oblique": null, "e": "നെഞ്ചിനെ", "kku": "നെഞ്ചിന്", "nte": "നെഞ്ചിന്റെ", "il": "നെഞ്ചിൽ", "ninnu": "നെഞ്ചിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "neñcukaḷ", "e": "neñcine", "kku": "neñcin", "nte": "neñcinṟe", "il": "neñcil", "ninnu": "neñcil ninn" }
+    - word: "ml-0321"
+      forms: { "plural": "വയറുകൾ", "plural-mar": null, "oblique": "വയറ്റ്", "e": "വയറിനെ", "kku": "വയറിന്", "nte": "വയറിന്റെ", "il": "വയറ്റിൽ", "ninnu": "വയറ്റിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "vayaṟukaḷ", "oblique": "vayaṟṟ", "e": "vayaṟine", "kku": "vayaṟin", "nte": "vayaṟinṟe", "il": "vayaṟṟil", "ninnu": "vayaṟṟil ninn" }
+    - word: "ml-0322"
+      forms: { "plural": "പുറങ്ങൾ", "plural-mar": null, "oblique": "പുറത്ത്", "e": "പുറത്തിനെ", "kku": "പുറത്തിന്", "nte": "പുറത്തിന്റെ", "il": "പുറത്തിൽ", "ninnu": "പുറത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "puṟaṅṅaḷ", "oblique": "puṟatt", "e": "puṟattine", "kku": "puṟattin", "nte": "puṟattinṟe", "il": "puṟattil", "ninnu": "puṟattil ninn" }
+    - word: "ml-0323"
+      forms: { "plural": "കാലുകൾ", "plural-mar": null, "oblique": null, "e": "കാലിനെ", "kku": "കാലിന്", "nte": "കാലിന്റെ", "il": "കാലിൽ", "ninnu": "കാലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kālukaḷ", "e": "kāline", "kku": "kālin", "nte": "kālinṟe", "il": "kālil", "ninnu": "kālil ninn" }
+    - word: "ml-0324"
+      forms: { "plural": "കാൽമുട്ടുകൾ", "plural-mar": null, "oblique": null, "e": "കാൽമുട്ടിനെ", "kku": "കാൽമുട്ടിന്", "nte": "കാൽമുട്ടിന്റെ", "il": "കാൽമുട്ടിൽ", "ninnu": "കാൽമുട്ടിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kālmuṭṭukaḷ", "e": "kālmuṭṭine", "kku": "kālmuṭṭin", "nte": "kālmuṭṭinṟe", "il": "kālmuṭṭil", "ninnu": "kālmuṭṭil ninn" }
+    - word: "ml-0325"
+      forms: { "plural": "പാദങ്ങൾ", "plural-mar": null, "oblique": "പാദത്ത്", "e": "പാദത്തിനെ", "kku": "പാദത്തിന്", "nte": "പാദത്തിന്റെ", "il": "പാദത്തിൽ", "ninnu": "പാദത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pādaṅṅaḷ", "oblique": "pādatt", "e": "pādattine", "kku": "pādattin", "nte": "pādattinṟe", "il": "pādattil", "ninnu": "pādattil ninn" }
+    - word: "ml-0326"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "മുടിക്ക്", "nte": "മുടിയുടെ", "il": "മുടിയിൽ", "ninnu": "മുടിയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "muṭikk", "nte": "muṭiyuṭe", "il": "muṭiyil", "ninnu": "muṭiyil ninn" }
+    - word: "ml-0327"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "തൊലിക്ക്", "nte": "തൊലിയുടെ", "il": "തൊലിയിൽ", "ninnu": "തൊലിയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "tolikk", "nte": "toliyuṭe", "il": "toliyil", "ninnu": "toliyil ninn" }
+    - word: "ml-0328"
+      forms: { "plural": null, "plural-mar": null, "oblique": "രക്തത്ത്", "e": null, "kku": "രക്തത്തിന്", "nte": "രക്തത്തിന്റെ", "il": "രക്തത്തിൽ", "ninnu": "രക്തത്തിൽ നിന്ന്", "otu": null }
+      readings: { "oblique": "raktatt", "kku": "raktattin", "nte": "raktattinṟe", "il": "raktattil", "ninnu": "raktattil ninn" }
+    - word: "ml-0329"
+      forms: { "plural": "എല്ലുകൾ", "plural-mar": null, "oblique": null, "e": "എല്ലിനെ", "kku": "എല്ലിന്", "nte": "എല്ലിന്റെ", "il": "എല്ലിൽ", "ninnu": "എല്ലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "ellukaḷ", "e": "elline", "kku": "ellin", "nte": "ellinṟe", "il": "ellil", "ninnu": "ellil ninn" }
+    - word: "ml-0330"
+      forms: { "plural": "വേദനകൾ", "plural-mar": null, "oblique": null, "e": "വേദനയെ", "kku": "വേദനയ്ക്ക്", "nte": "വേദനയുടെ", "il": "വേദനയിൽ", "ninnu": "വേദനയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "vēdanakaḷ", "e": "vēdanaye", "kku": "vēdanaykk", "nte": "vēdanayuṭe", "il": "vēdanayil", "ninnu": "vēdanayil ninn" }
+    - word: "ml-0331"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "പനിക്ക്", "nte": "പനിയുടെ", "il": "പനിയിൽ", "ninnu": "പനിയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "panikk", "nte": "paniyuṭe", "il": "paniyil", "ninnu": "paniyil ninn" }
+    - word: "ml-0332"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "ചുമയ്ക്ക്", "nte": "ചുമയുടെ", "il": "ചുമയിൽ", "ninnu": "ചുമയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "cumaykk", "nte": "cumayuṭe", "il": "cumayil", "ninnu": "cumayil ninn" }
+    - word: "ml-0333"
+      forms: { "plural": null, "plural-mar": null, "oblique": "ജലദോഷത്ത്", "e": null, "kku": "ജലദോഷത്തിന്", "nte": "ജലദോഷത്തിന്റെ", "il": "ജലദോഷത്തിൽ", "ninnu": "ജലദോഷത്തിൽ നിന്ന്", "otu": null }
+      readings: { "oblique": "jaladōṣatt", "kku": "jaladōṣattin", "nte": "jaladōṣattinṟe", "il": "jaladōṣattil", "ninnu": "jaladōṣattil ninn" }
+    - word: "ml-0334"
+      forms: { "plural": "മരുന്നുകൾ", "plural-mar": null, "oblique": null, "e": "മരുന്നിനെ", "kku": "മരുന്നിന്", "nte": "മരുന്നിന്റെ", "il": "മരുന്നിൽ", "ninnu": "മരുന്നിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "marunnukaḷ", "e": "marunnine", "kku": "marunnin", "nte": "marunninṟe", "il": "marunnil", "ninnu": "marunnil ninn" }
+    - word: "ml-0335"
+      forms: { "plural": null, "plural-mar": null, "oblique": "ഉറക്കത്ത്", "e": null, "kku": "ഉറക്കത്തിന്", "nte": "ഉറക്കത്തിന്റെ", "il": "ഉറക്കത്തിൽ", "ninnu": "ഉറക്കത്തിൽ നിന്ന്", "otu": null }
+      readings: { "oblique": "uṟakkatt", "kku": "uṟakkattin", "nte": "uṟakkattinṟe", "il": "uṟakkattil", "ninnu": "uṟakkattil ninn" }
+    - word: "ml-0336"
+      forms: { "plural": null, "plural-mar": null, "oblique": "ശ്വാസത്ത്", "e": null, "kku": "ശ്വാസത്തിന്", "nte": "ശ്വാസത്തിന്റെ", "il": "ശ്വാസത്തിൽ", "ninnu": "ശ്വാസത്തിൽ നിന്ന്", "otu": null }
+      readings: { "oblique": "śvāsatt", "kku": "śvāsattin", "nte": "śvāsattinṟe", "il": "śvāsattil", "ninnu": "śvāsattil ninn" }
+    - word: "ml-0403"
+      forms: { "plural": "വസ്ത്രങ്ങൾ", "plural-mar": null, "oblique": "വസ്ത്രത്ത്", "e": "വസ്ത്രത്തിനെ", "kku": "വസ്ത്രത്തിന്", "nte": "വസ്ത്രത്തിന്റെ", "il": "വസ്ത്രത്തിൽ", "ninnu": "വസ്ത്രത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "vastraṅṅaḷ", "oblique": "vastratt", "e": "vastrattine", "kku": "vastrattin", "nte": "vastrattinṟe", "il": "vastrattil", "ninnu": "vastrattil ninn" }
+    - word: "ml-0404"
+      forms: { "plural": "ഉടുപ്പുകൾ", "plural-mar": null, "oblique": null, "e": "ഉടുപ്പിനെ", "kku": "ഉടുപ്പിന്", "nte": "ഉടുപ്പിന്റെ", "il": "ഉടുപ്പിൽ", "ninnu": "ഉടുപ്പിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "uṭuppukaḷ", "e": "uṭuppine", "kku": "uṭuppin", "nte": "uṭuppinṟe", "il": "uṭuppil", "ninnu": "uṭuppil ninn" }
+    - word: "ml-0405"
+      forms: { "plural": "ഷർട്ടുകൾ", "plural-mar": null, "oblique": null, "e": "ഷർട്ടിനെ", "kku": "ഷർട്ടിന്", "nte": "ഷർട്ടിന്റെ", "il": "ഷർട്ടിൽ", "ninnu": "ഷർട്ടിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "ṣarṭṭukaḷ", "e": "ṣarṭṭine", "kku": "ṣarṭṭin", "nte": "ṣarṭṭinṟe", "il": "ṣarṭṭil", "ninnu": "ṣarṭṭil ninn" }
+    - word: "ml-0406"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "പാന്റ്സിന്", "nte": "പാന്റ്സിന്റെ", "il": "പാന്റ്സിൽ", "ninnu": "പാന്റ്സിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "pānṟsin", "nte": "pānṟsinṟe", "il": "pānṟsil", "ninnu": "pānṟsil ninn" }
+    - word: "ml-0407"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "ഷൂസിന്", "nte": "ഷൂസിന്റെ", "il": "ഷൂസിൽ", "ninnu": "ഷൂസിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "ṣūsin", "nte": "ṣūsinṟe", "il": "ṣūsil", "ninnu": "ṣūsil ninn" }
+    - word: "ml-0408"
+      forms: { "plural": "ചെരിപ്പുകൾ", "plural-mar": null, "oblique": null, "e": "ചെരിപ്പിനെ", "kku": "ചെരിപ്പിന്", "nte": "ചെരിപ്പിന്റെ", "il": "ചെരിപ്പിൽ", "ninnu": "ചെരിപ്പിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "cerippukaḷ", "e": "cerippine", "kku": "cerippin", "nte": "cerippinṟe", "il": "cerippil", "ninnu": "cerippil ninn" }
+    - word: "ml-0409"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "സോക്സിന്", "nte": "സോക്സിന്റെ", "il": "സോക്സിൽ", "ninnu": "സോക്സിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "sōksin", "nte": "sōksinṟe", "il": "sōksil", "ninnu": "sōksil ninn" }
+    - word: "ml-0410"
+      forms: { "plural": "തൊപ്പികൾ", "plural-mar": null, "oblique": null, "e": "തൊപ്പിയെ", "kku": "തൊപ്പിക്ക്", "nte": "തൊപ്പിയുടെ", "il": "തൊപ്പിയിൽ", "ninnu": "തൊപ്പിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "toppikaḷ", "e": "toppiye", "kku": "toppikk", "nte": "toppiyuṭe", "il": "toppiyil", "ninnu": "toppiyil ninn" }
+    - word: "ml-0411"
+      forms: { "plural": "സാരികൾ", "plural-mar": null, "oblique": null, "e": "സാരിയെ", "kku": "സാരിക്ക്", "nte": "സാരിയുടെ", "il": "സാരിയിൽ", "ninnu": "സാരിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "sārikaḷ", "e": "sāriye", "kku": "sārikk", "nte": "sāriyuṭe", "il": "sāriyil", "ninnu": "sāriyil ninn" }
+    - word: "ml-0412"
+      forms: { "plural": "മുണ്ടുകൾ", "plural-mar": null, "oblique": null, "e": "മുണ്ടിനെ", "kku": "മുണ്ടിന്", "nte": "മുണ്ടിന്റെ", "il": "മുണ്ടിൽ", "ninnu": "മുണ്ടിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "muṇṭukaḷ", "e": "muṇṭine", "kku": "muṇṭin", "nte": "muṇṭinṟe", "il": "muṇṭil", "ninnu": "muṇṭil ninn" }
+    - word: "ml-0413"
+      forms: { "plural": "ബ്ലൗസുകൾ", "plural-mar": null, "oblique": null, "e": "ബ്ലൗസിനെ", "kku": "ബ്ലൗസിന്", "nte": "ബ്ലൗസിന്റെ", "il": "ബ്ലൗസിൽ", "ninnu": "ബ്ലൗസിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "blausukaḷ", "e": "blausine", "kku": "blausin", "nte": "blausinṟe", "il": "blausil", "ninnu": "blausil ninn" }
+    - word: "ml-0414"
+      forms: { "plural": "കുപ്പായങ്ങൾ", "plural-mar": null, "oblique": "കുപ്പായത്ത്", "e": "കുപ്പായത്തിനെ", "kku": "കുപ്പായത്തിന്", "nte": "കുപ്പായത്തിന്റെ", "il": "കുപ്പായത്തിൽ", "ninnu": "കുപ്പായത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kuppāyaṅṅaḷ", "oblique": "kuppāyatt", "e": "kuppāyattine", "kku": "kuppāyattin", "nte": "kuppāyattinṟe", "il": "kuppāyattil", "ninnu": "kuppāyattil ninn" }
+    - word: "ml-0415"
+      forms: { "plural": "പാവാടകൾ", "plural-mar": null, "oblique": null, "e": "പാവാടയെ", "kku": "പാവാടയ്ക്ക്", "nte": "പാവാടയുടെ", "il": "പാവാടയിൽ", "ninnu": "പാവാടയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pāvāṭakaḷ", "e": "pāvāṭaye", "kku": "pāvāṭaykk", "nte": "pāvāṭayuṭe", "il": "pāvāṭayil", "ninnu": "pāvāṭayil ninn" }
+    - word: "ml-0416"
+      forms: { "plural": "ജാക്കറ്റുകൾ", "plural-mar": null, "oblique": null, "e": "ജാക്കറ്റിനെ", "kku": "ജാക്കറ്റിന്", "nte": "ജാക്കറ്റിന്റെ", "il": "ജാക്കറ്റിൽ", "ninnu": "ജാക്കറ്റിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "jākkaṟṟukaḷ", "e": "jākkaṟṟine", "kku": "jākkaṟṟin", "nte": "jākkaṟṟinṟe", "il": "jākkaṟṟil", "ninnu": "jākkaṟṟil ninn" }
+    - word: "ml-0417"
+      forms: { "plural": "കോട്ടുകൾ", "plural-mar": null, "oblique": null, "e": "കോട്ടിനെ", "kku": "കോട്ടിന്", "nte": "കോട്ടിന്റെ", "il": "കോട്ടിൽ", "ninnu": "കോട്ടിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kōṭṭukaḷ", "e": "kōṭṭine", "kku": "kōṭṭin", "nte": "kōṭṭinṟe", "il": "kōṭṭil", "ninnu": "kōṭṭil ninn" }
+    - word: "ml-0418"
+      forms: { "plural": "സ്വെറ്ററുകൾ", "plural-mar": null, "oblique": null, "e": "സ്വെറ്ററിനെ", "kku": "സ്വെറ്ററിന്", "nte": "സ്വെറ്ററിന്റെ", "il": "സ്വെറ്ററിൽ", "ninnu": "സ്വെറ്ററിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "sveṟṟaṟukaḷ", "e": "sveṟṟaṟine", "kku": "sveṟṟaṟin", "nte": "sveṟṟaṟinṟe", "il": "sveṟṟaṟil", "ninnu": "sveṟṟaṟil ninn" }
+    - word: "ml-0419"
+      forms: { "plural": "നിറങ്ങൾ", "plural-mar": null, "oblique": "നിറത്ത്", "e": "നിറത്തിനെ", "kku": "നിറത്തിന്", "nte": "നിറത്തിന്റെ", "il": "നിറത്തിൽ", "ninnu": "നിറത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "niṟaṅṅaḷ", "oblique": "niṟatt", "e": "niṟattine", "kku": "niṟattin", "nte": "niṟattinṟe", "il": "niṟattil", "ninnu": "niṟattil ninn" }
+    - word: "ml-0426"
+      forms: { "plural": null, "plural-mar": null, "oblique": "വലുപ്പത്ത്", "e": null, "kku": "വലുപ്പത്തിന്", "nte": "വലുപ്പത്തിന്റെ", "il": "വലുപ്പത്തിൽ", "ninnu": "വലുപ്പത്തിൽ നിന്ന്", "otu": null }
+      readings: { "oblique": "valuppatt", "kku": "valuppattin", "nte": "valuppattinṟe", "il": "valuppattil", "ninnu": "valuppattil ninn" }
+    - word: "ml-0243"
+      forms: { "plural": "വഴികൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "വഴിക്ക്", "nte": "വഴിയുടെ", "il": "വഴിയിൽ", "ninnu": "വഴിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "vaḻikaḷ", "kku": "vaḻikk", "nte": "vaḻiyuṭe", "il": "vaḻiyil", "ninnu": "vaḻiyil ninn" }
+    - word: "ml-0244"
+      forms: { "plural": "റോഡുകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "റോഡിന്", "nte": "റോഡിന്റെ", "il": "റോഡിൽ", "ninnu": "റോഡിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "ṟōḍukaḷ", "kku": "ṟōḍin", "nte": "ṟōḍinṟe", "il": "ṟōḍil", "ninnu": "ṟōḍil ninn" }
+    - word: "ml-0245"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "കിഴക്കിന്", "nte": "കിഴക്കിന്റെ", "il": null, "ninnu": null, "otu": null }
+      readings: { "kku": "kiḻakkin", "nte": "kiḻakkinṟe" }
+    - word: "ml-0246"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "പടിഞ്ഞാറിന്", "nte": "പടിഞ്ഞാറിന്റെ", "il": null, "ninnu": null, "otu": null }
+      readings: { "kku": "paṭiññāṟin", "nte": "paṭiññāṟinṟe" }
+    - word: "ml-0247"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "വടക്കിന്", "nte": "വടക്കിന്റെ", "il": null, "ninnu": null, "otu": null }
+      readings: { "kku": "vaṭakkin", "nte": "vaṭakkinṟe" }
+    - word: "ml-0248"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "തെക്കിന്", "nte": "തെക്കിന്റെ", "il": null, "ninnu": null, "otu": null }
+      readings: { "kku": "tekkin", "nte": "tekkinṟe" }
+    - word: "ml-0249"
+      forms: { "plural": "മൂലകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "മൂലയ്ക്ക്", "nte": "മൂലയുടെ", "il": "മൂലയിൽ", "ninnu": "മൂലയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "mūlakaḷ", "kku": "mūlaykk", "nte": "mūlayuṭe", "il": "mūlayil", "ninnu": "mūlayil ninn" }
+    - word: "ml-0251"
+      forms: { "plural": "പാലങ്ങൾ", "plural-mar": null, "oblique": "പാലത്ത്", "e": null, "kku": "പാലത്തിന്", "nte": "പാലത്തിന്റെ", "il": "പാലത്തിൽ", "ninnu": "പാലത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pālaṅṅaḷ", "oblique": "pālatt", "kku": "pālattin", "nte": "pālattinṟe", "il": "pālattil", "ninnu": "pālattil ninn" }
+    - word: "ml-0069"
+      forms: { "plural": "കുടുംബങ്ങൾ", "plural-mar": null, "oblique": "കുടുംബത്ത്", "e": "കുടുംബത്തിനെ", "kku": "കുടുംബത്തിന്", "nte": "കുടുംബത്തിന്റെ", "il": "കുടുംബത്തിൽ", "ninnu": "കുടുംബത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kuṭuṁbaṅṅaḷ", "oblique": "kuṭuṁbatt", "e": "kuṭuṁbattine", "kku": "kuṭuṁbattin", "nte": "kuṭuṁbattinṟe", "il": "kuṭuṁbattil", "ninnu": "kuṭuṁbattil ninn" }
+    - word: "ml-0070"
+      forms: { "plural": null, "plural-mar": "അച്ഛന്മാർ", "oblique": null, "e": "അച്ഛനെ", "kku": "അച്ഛന്", "nte": "അച്ഛന്റെ", "il": null, "ninnu": null, "otu": "അച്ഛനോട്" }
+      readings: { "plural-mar": "acchanmār", "e": "acchane", "kku": "acchan", "nte": "acchanṟe", "otu": "acchanōṭ" }
+    - word: "ml-0071"
+      forms: { "plural": null, "plural-mar": "അമ്മമാർ", "oblique": null, "e": "അമ്മയെ", "kku": "അമ്മയ്ക്ക്", "nte": "അമ്മയുടെ", "il": null, "ninnu": null, "otu": "അമ്മയോട്" }
+      readings: { "plural-mar": "ammamār", "e": "ammaye", "kku": "ammaykk", "nte": "ammayuṭe", "otu": "ammayōṭ" }
+    - word: "ml-0072"
+      forms: { "plural": "മക്കൾ", "plural-mar": null, "oblique": null, "e": "മകനെ", "kku": "മകന്", "nte": "മകന്റെ", "il": null, "ninnu": null, "otu": "മകനോട്" }
+      readings: { "plural": "makkaḷ", "e": "makane", "kku": "makan", "nte": "makanṟe", "otu": "makanōṭ" }
+    - word: "ml-0073"
+      forms: { "plural": "മക്കൾ", "plural-mar": null, "oblique": null, "e": "മകളെ", "kku": "മകൾക്ക്", "nte": "മകളുടെ", "il": null, "ninnu": null, "otu": "മകളോട്" }
+      readings: { "plural": "makkaḷ", "e": "makaḷe", "kku": "makaḷkk", "nte": "makaḷuṭe", "otu": "makaḷōṭ" }
+    - word: "ml-0074"
+      forms: { "plural": null, "plural-mar": "ചേട്ടന്മാർ", "oblique": null, "e": "ചേട്ടനെ", "kku": "ചേട്ടന്", "nte": "ചേട്ടന്റെ", "il": null, "ninnu": null, "otu": "ചേട്ടനോട്" }
+      readings: { "plural-mar": "cēṭṭanmār", "e": "cēṭṭane", "kku": "cēṭṭan", "nte": "cēṭṭanṟe", "otu": "cēṭṭanōṭ" }
+    - word: "ml-0075"
+      forms: { "plural": null, "plural-mar": "ചേച്ചിമാർ", "oblique": null, "e": "ചേച്ചിയെ", "kku": "ചേച്ചിക്ക്", "nte": "ചേച്ചിയുടെ", "il": null, "ninnu": null, "otu": "ചേച്ചിയോട്" }
+      readings: { "plural-mar": "cēccimār", "e": "cēcciye", "kku": "cēccikk", "nte": "cēcciyuṭe", "otu": "cēcciyōṭ" }
+    - word: "ml-0076"
+      forms: { "plural": null, "plural-mar": "അനിയന്മാർ", "oblique": null, "e": "അനിയനെ", "kku": "അനിയന്", "nte": "അനിയന്റെ", "il": null, "ninnu": null, "otu": "അനിയനോട്" }
+      readings: { "plural-mar": "aniyanmār", "e": "aniyane", "kku": "aniyan", "nte": "aniyanṟe", "otu": "aniyanōṭ" }
+    - word: "ml-0077"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": "അനിയത്തിയെ", "kku": "അനിയത്തിക്ക്", "nte": "അനിയത്തിയുടെ", "il": null, "ninnu": null, "otu": "അനിയത്തിയോട്" }
+      readings: { "e": "aniyattiye", "kku": "aniyattikk", "nte": "aniyattiyuṭe", "otu": "aniyattiyōṭ" }
+    - word: "ml-0078"
+      forms: { "plural": null, "plural-mar": "മുത്തച്ഛന്മാർ", "oblique": null, "e": "മുത്തച്ഛനെ", "kku": "മുത്തച്ഛന്", "nte": "മുത്തച്ഛന്റെ", "il": null, "ninnu": null, "otu": "മുത്തച്ഛനോട്" }
+      readings: { "plural-mar": "muttacchanmār", "e": "muttacchane", "kku": "muttacchan", "nte": "muttacchanṟe", "otu": "muttacchanōṭ" }
+    - word: "ml-0079"
+      forms: { "plural": null, "plural-mar": "മുത്തശ്ശിമാർ", "oblique": null, "e": "മുത്തശ്ശിയെ", "kku": "മുത്തശ്ശിക്ക്", "nte": "മുത്തശ്ശിയുടെ", "il": null, "ninnu": null, "otu": "മുത്തശ്ശിയോട്" }
+      readings: { "plural-mar": "muttaśśimār", "e": "muttaśśiye", "kku": "muttaśśikk", "nte": "muttaśśiyuṭe", "otu": "muttaśśiyōṭ" }
+    - word: "ml-0080"
+      forms: { "plural": null, "plural-mar": "ഭർത്താക്കന്മാർ", "oblique": null, "e": "ഭർത്താവിനെ", "kku": "ഭർത്താവിന്", "nte": "ഭർത്താവിന്റെ", "il": null, "ninnu": null, "otu": "ഭർത്താവിനോട്" }
+      readings: { "plural-mar": "bharttākkanmār", "e": "bharttāvine", "kku": "bharttāvin", "nte": "bharttāvinṟe", "otu": "bharttāvinōṭ" }
+    - word: "ml-0081"
+      forms: { "plural": null, "plural-mar": "ഭാര്യമാർ", "oblique": null, "e": "ഭാര്യയെ", "kku": "ഭാര്യയ്ക്ക്", "nte": "ഭാര്യയുടെ", "il": null, "ninnu": null, "otu": "ഭാര്യയോട്" }
+      readings: { "plural-mar": "bhāryamār", "e": "bhāryaye", "kku": "bhāryaykk", "nte": "bhāryayuṭe", "otu": "bhāryayōṭ" }
+    - word: "ml-0082"
+      forms: { "plural": "കുട്ടികൾ", "plural-mar": null, "oblique": null, "e": "കുട്ടിയെ", "kku": "കുട്ടിക്ക്", "nte": "കുട്ടിയുടെ", "il": null, "ninnu": null, "otu": "കുട്ടിയോട്" }
+      readings: { "plural": "kuṭṭikaḷ", "e": "kuṭṭiye", "kku": "kuṭṭikk", "nte": "kuṭṭiyuṭe", "otu": "kuṭṭiyōṭ" }
+    - word: "ml-0083"
+      forms: { "plural": null, "plural-mar": "അമ്മാവന്മാർ", "oblique": null, "e": "അമ്മാവനെ", "kku": "അമ്മാവന്", "nte": "അമ്മാവന്റെ", "il": null, "ninnu": null, "otu": "അമ്മാവനോട്" }
+      readings: { "plural-mar": "ammāvanmār", "e": "ammāvane", "kku": "ammāvan", "nte": "ammāvanṟe", "otu": "ammāvanōṭ" }
+    - word: "ml-0084"
+      forms: { "plural": null, "plural-mar": "അമ്മായിമാർ", "oblique": null, "e": "അമ്മായിയെ", "kku": "അമ്മായിക്ക്", "nte": "അമ്മായിയുടെ", "il": null, "ninnu": null, "otu": "അമ്മായിയോട്" }
+      readings: { "plural-mar": "ammāyimār", "e": "ammāyiye", "kku": "ammāyikk", "nte": "ammāyiyuṭe", "otu": "ammāyiyōṭ" }
+    - word: "ml-0085"
+      forms: { "plural": null, "plural-mar": "സഹോദരന്മാർ", "oblique": null, "e": "സഹോദരനെ", "kku": "സഹോദരന്", "nte": "സഹോദരന്റെ", "il": null, "ninnu": null, "otu": "സഹോദരനോട്" }
+      readings: { "plural-mar": "sahōdaranmār", "e": "sahōdarane", "kku": "sahōdaran", "nte": "sahōdaranṟe", "otu": "sahōdaranōṭ" }
+    - word: "ml-0086"
+      forms: { "plural": null, "plural-mar": "സഹോദരിമാർ", "oblique": null, "e": "സഹോദരിയെ", "kku": "സഹോദരിക്ക്", "nte": "സഹോദരിയുടെ", "il": null, "ninnu": null, "otu": "സഹോദരിയോട്" }
+      readings: { "plural-mar": "sahōdarimār", "e": "sahōdariye", "kku": "sahōdarikk", "nte": "sahōdariyuṭe", "otu": "sahōdariyōṭ" }
+    - word: "ml-1010"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": "ചിറ്റപ്പനെ", "kku": "ചിറ്റപ്പന്", "nte": "ചിറ്റപ്പന്റെ", "il": null, "ninnu": null, "otu": "ചിറ്റപ്പനോട്" }
+      readings: { "e": "ciṟṟappane", "kku": "ciṟṟappan", "nte": "ciṟṟappanṟe", "otu": "ciṟṟappanōṭ" }
+    - word: "ml-1011"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": "ചിറ്റമ്മയെ", "kku": "ചിറ്റമ്മയ്ക്ക്", "nte": "ചിറ്റമ്മയുടെ", "il": null, "ninnu": null, "otu": "ചിറ്റമ്മയോട്" }
+      readings: { "e": "ciṟṟammaye", "kku": "ciṟṟammaykk", "nte": "ciṟṟammayuṭe", "otu": "ciṟṟammayōṭ" }
+    - word: "ml-1012"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": "വല്യച്ഛനെ", "kku": "വല്യച്ഛന്", "nte": "വല്യച്ഛന്റെ", "il": null, "ninnu": null, "otu": "വല്യച്ഛനോട്" }
+      readings: { "e": "valyacchane", "kku": "valyacchan", "nte": "valyacchanṟe", "otu": "valyacchanōṭ" }
+    - word: "ml-1013"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": "വല്യമ്മയെ", "kku": "വല്യമ്മയ്ക്ക്", "nte": "വല്യമ്മയുടെ", "il": null, "ninnu": null, "otu": "വല്യമ്മയോട്" }
+      readings: { "e": "valyammaye", "kku": "valyammaykk", "nte": "valyammayuṭe", "otu": "valyammayōṭ" }
+    - word: "ml-1014"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": "അളിയനെ", "kku": "അളിയന്", "nte": "അളിയന്റെ", "il": null, "ninnu": null, "otu": "അളിയനോട്" }
+      readings: { "e": "aḷiyane", "kku": "aḷiyan", "nte": "aḷiyanṟe", "otu": "aḷiyanōṭ" }
+    - word: "ml-1015"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": "മരുമകളെ", "kku": "മരുമകൾക്ക്", "nte": "മരുമകളുടെ", "il": null, "ninnu": null, "otu": "മരുമകളോട്" }
+      readings: { "e": "marumakaḷe", "kku": "marumakaḷkk", "nte": "marumakaḷuṭe", "otu": "marumakaḷōṭ" }
+    - word: "ml-1016"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": "മരുമകനെ", "kku": "മരുമകന്", "nte": "മരുമകന്റെ", "il": null, "ninnu": null, "otu": "മരുമകനോട്" }
+      readings: { "e": "marumakane", "kku": "marumakan", "nte": "marumakanṟe", "otu": "marumakanōṭ" }
+    - word: "ml-0005"
+      forms: { "plural": null, "plural-mar": null, "oblique": "വെള്ളത്ത്", "e": null, "kku": "വെള്ളത്തിന്", "nte": "വെള്ളത്തിന്റെ", "il": "വെള്ളത്തിൽ", "ninnu": "വെള്ളത്തിൽ നിന്ന്", "otu": null }
+      readings: { "oblique": "veḷḷatt", "kku": "veḷḷattin", "nte": "veḷḷattinṟe", "il": "veḷḷattil", "ninnu": "veḷḷattil ninn" }
+    - word: "ml-0009"
+      forms: { "plural": "വീടുകൾ", "plural-mar": null, "oblique": "വീട്ട്", "e": "വീടിനെ", "kku": "വീടിന്", "nte": "വീടിന്റെ", "il": "വീട്ടിൽ", "ninnu": "വീട്ടിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "vīṭukaḷ", "oblique": "vīṭṭ", "e": "vīṭine", "kku": "vīṭin", "nte": "vīṭinṟe", "il": "vīṭṭil", "ninnu": "vīṭṭil ninn" }
+    - word: "ml-0260"
+      forms: { "plural": null, "plural-mar": null, "oblique": "ഭക്ഷണത്ത്", "e": null, "kku": "ഭക്ഷണത്തിന്", "nte": "ഭക്ഷണത്തിന്റെ", "il": "ഭക്ഷണത്തിൽ", "ninnu": "ഭക്ഷണത്തിൽ നിന്ന്", "otu": null }
+      readings: { "oblique": "bhakṣaṇatt", "kku": "bhakṣaṇattin", "nte": "bhakṣaṇattinṟe", "il": "bhakṣaṇattil", "ninnu": "bhakṣaṇattil ninn" }
+    - word: "ml-0261"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "ചോറിന്", "nte": "ചോറിന്റെ", "il": "ചോറിൽ", "ninnu": "ചോറിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "cōṟin", "nte": "cōṟinṟe", "il": "cōṟil", "ninnu": "cōṟil ninn" }
+    - word: "ml-0262"
+      forms: { "plural": "കറികൾ", "plural-mar": null, "oblique": null, "e": "കറിയെ", "kku": "കറിക്ക്", "nte": "കറിയുടെ", "il": "കറിയിൽ", "ninnu": "കറിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kaṟikaḷ", "e": "kaṟiye", "kku": "kaṟikk", "nte": "kaṟiyuṭe", "il": "kaṟiyil", "ninnu": "kaṟiyil ninn" }
+    - word: "ml-0263"
+      forms: { "plural": "ദോശകൾ", "plural-mar": null, "oblique": null, "e": "ദോശയെ", "kku": "ദോശയ്ക്ക്", "nte": "ദോശയുടെ", "il": "ദോശയിൽ", "ninnu": "ദോശയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "dōśakaḷ", "e": "dōśaye", "kku": "dōśaykk", "nte": "dōśayuṭe", "il": "dōśayil", "ninnu": "dōśayil ninn" }
+    - word: "ml-0264"
+      forms: { "plural": "ഇഡ്ഡലികൾ", "plural-mar": null, "oblique": null, "e": "ഇഡ്ഡലിയെ", "kku": "ഇഡ്ഡലിക്ക്", "nte": "ഇഡ്ഡലിയുടെ", "il": "ഇഡ്ഡലിയിൽ", "ninnu": "ഇഡ്ഡലിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "iḍḍalikaḷ", "e": "iḍḍaliye", "kku": "iḍḍalikk", "nte": "iḍḍaliyuṭe", "il": "iḍḍaliyil", "ninnu": "iḍḍaliyil ninn" }
+    - word: "ml-0265"
+      forms: { "plural": "ചപ്പാത്തികൾ", "plural-mar": null, "oblique": null, "e": "ചപ്പാത്തിയെ", "kku": "ചപ്പാത്തിക്ക്", "nte": "ചപ്പാത്തിയുടെ", "il": "ചപ്പാത്തിയിൽ", "ninnu": "ചപ്പാത്തിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "cappāttikaḷ", "e": "cappāttiye", "kku": "cappāttikk", "nte": "cappāttiyuṭe", "il": "cappāttiyil", "ninnu": "cappāttiyil ninn" }
+    - word: "ml-0266"
+      forms: { "plural": "ബിരിയാണികൾ", "plural-mar": null, "oblique": null, "e": "ബിരിയാണിയെ", "kku": "ബിരിയാണിക്ക്", "nte": "ബിരിയാണിയുടെ", "il": "ബിരിയാണിയിൽ", "ninnu": "ബിരിയാണിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "biriyāṇikaḷ", "e": "biriyāṇiye", "kku": "biriyāṇikk", "nte": "biriyāṇiyuṭe", "il": "biriyāṇiyil", "ninnu": "biriyāṇiyil ninn" }
+    - word: "ml-0267"
+      forms: { "plural": "സാമ്പാറുകൾ", "plural-mar": null, "oblique": null, "e": "സാമ്പാറിനെ", "kku": "സാമ്പാറിന്", "nte": "സാമ്പാറിന്റെ", "il": "സാമ്പാറിൽ", "ninnu": "സാമ്പാറിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "sāmpāṟukaḷ", "e": "sāmpāṟine", "kku": "sāmpāṟin", "nte": "sāmpāṟinṟe", "il": "sāmpāṟil", "ninnu": "sāmpāṟil ninn" }
+    - word: "ml-0268"
+      forms: { "plural": "പരിപ്പുകൾ", "plural-mar": null, "oblique": null, "e": "പരിപ്പിനെ", "kku": "പരിപ്പിന്", "nte": "പരിപ്പിന്റെ", "il": "പരിപ്പിൽ", "ninnu": "പരിപ്പിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "parippukaḷ", "e": "parippine", "kku": "parippin", "nte": "parippinṟe", "il": "parippil", "ninnu": "parippil ninn" }
+    - word: "ml-0269"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "മോരിന്", "nte": "മോരിന്റെ", "il": "മോരിൽ", "ninnu": "മോരിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "mōrin", "nte": "mōrinṟe", "il": "mōril", "ninnu": "mōril ninn" }
+    - word: "ml-0270"
+      forms: { "plural": "ചായകൾ", "plural-mar": null, "oblique": null, "e": "ചായയെ", "kku": "ചായയ്ക്ക്", "nte": "ചായയുടെ", "il": "ചായയിൽ", "ninnu": "ചായയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "cāyakaḷ", "e": "cāyaye", "kku": "cāyaykk", "nte": "cāyayuṭe", "il": "cāyayil", "ninnu": "cāyayil ninn" }
+    - word: "ml-0271"
+      forms: { "plural": "കാപ്പികൾ", "plural-mar": null, "oblique": null, "e": "കാപ്പിയെ", "kku": "കാപ്പിക്ക്", "nte": "കാപ്പിയുടെ", "il": "കാപ്പിയിൽ", "ninnu": "കാപ്പിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kāppikaḷ", "e": "kāppiye", "kku": "kāppikk", "nte": "kāppiyuṭe", "il": "kāppiyil", "ninnu": "kāppiyil ninn" }
+    - word: "ml-0272"
+      forms: { "plural": "വടകൾ", "plural-mar": null, "oblique": null, "e": "വടയെ", "kku": "വടയ്ക്ക്", "nte": "വടയുടെ", "il": "വടയിൽ", "ninnu": "വടയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "vaṭakaḷ", "e": "vaṭaye", "kku": "vaṭaykk", "nte": "vaṭayuṭe", "il": "vaṭayil", "ninnu": "vaṭayil ninn" }
+    - word: "ml-0273"
+      forms: { "plural": "പലഹാരങ്ങൾ", "plural-mar": null, "oblique": "പലഹാരത്ത്", "e": "പലഹാരത്തിനെ", "kku": "പലഹാരത്തിന്", "nte": "പലഹാരത്തിന്റെ", "il": "പലഹാരത്തിൽ", "ninnu": "പലഹാരത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "palahāraṅṅaḷ", "oblique": "palahāratt", "e": "palahārattine", "kku": "palahārattin", "nte": "palahārattinṟe", "il": "palahārattil", "ninnu": "palahārattil ninn" }
+    - word: "ml-0274"
+      forms: { "plural": "ബിസ്കറ്റുകൾ", "plural-mar": null, "oblique": null, "e": "ബിസ്കറ്റിനെ", "kku": "ബിസ്കറ്റിന്", "nte": "ബിസ്കറ്റിന്റെ", "il": "ബിസ്കറ്റിൽ", "ninnu": "ബിസ്കറ്റിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "biskaṟṟukaḷ", "e": "biskaṟṟine", "kku": "biskaṟṟin", "nte": "biskaṟṟinṟe", "il": "biskaṟṟil", "ninnu": "biskaṟṟil ninn" }
+    - word: "ml-0275"
+      forms: { "plural": "കേക്കുകൾ", "plural-mar": null, "oblique": null, "e": "കേക്കിനെ", "kku": "കേക്കിന്", "nte": "കേക്കിന്റെ", "il": "കേക്കിൽ", "ninnu": "കേക്കിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kēkkukaḷ", "e": "kēkkine", "kku": "kēkkin", "nte": "kēkkinṟe", "il": "kēkkil", "ninnu": "kēkkil ninn" }
+    - word: "ml-0276"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "ഐസ്ക്രീമിന്", "nte": "ഐസ്ക്രീമിന്റെ", "il": "ഐസ്ക്രീമിൽ", "ninnu": "ഐസ്ക്രീമിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "aiskrīmin", "nte": "aiskrīminṟe", "il": "aiskrīmil", "ninnu": "aiskrīmil ninn" }
+    - word: "ml-0277"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "പഴച്ചാറിന്", "nte": "പഴച്ചാറിന്റെ", "il": "പഴച്ചാറിൽ", "ninnu": "പഴച്ചാറിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "paḻaccāṟin", "nte": "paḻaccāṟinṟe", "il": "paḻaccāṟil", "ninnu": "paḻaccāṟil ninn" }
+    - word: "ml-0278"
+      forms: { "plural": null, "plural-mar": null, "oblique": "മധുരത്ത്", "e": null, "kku": "മധുരത്തിന്", "nte": "മധുരത്തിന്റെ", "il": "മധുരത്തിൽ", "ninnu": "മധുരത്തിൽ നിന്ന്", "otu": null }
+      readings: { "oblique": "madhuratt", "kku": "madhurattin", "nte": "madhurattinṟe", "il": "madhurattil", "ninnu": "madhurattil ninn" }
+    - word: "ml-0279"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "ഉപ്പിന്", "nte": "ഉപ്പിന്റെ", "il": "ഉപ്പിൽ", "ninnu": "ഉപ്പിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "uppin", "nte": "uppinṟe", "il": "uppil", "ninnu": "uppil ninn" }
+    - word: "ml-0280"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "എരിവിന്", "nte": "എരിവിന്റെ", "il": "എരിവിൽ", "ninnu": "എരിവിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "erivin", "nte": "erivinṟe", "il": "erivil", "ninnu": "erivil ninn" }
+    - word: "ml-0281"
+      forms: { "plural": "ചീരകൾ", "plural-mar": null, "oblique": null, "e": "ചീരയെ", "kku": "ചീരയ്ക്ക്", "nte": "ചീരയുടെ", "il": "ചീരയിൽ", "ninnu": "ചീരയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "cīrakaḷ", "e": "cīraye", "kku": "cīraykk", "nte": "cīrayuṭe", "il": "cīrayil", "ninnu": "cīrayil ninn" }
+    - word: "ml-0282"
+      forms: { "plural": "ഇഞ്ചികൾ", "plural-mar": null, "oblique": null, "e": "ഇഞ്ചിയെ", "kku": "ഇഞ്ചിക്ക്", "nte": "ഇഞ്ചിയുടെ", "il": "ഇഞ്ചിയിൽ", "ninnu": "ഇഞ്ചിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "iñcikaḷ", "e": "iñciye", "kku": "iñcikk", "nte": "iñciyuṭe", "il": "iñciyil", "ninnu": "iñciyil ninn" }
+    - word: "ml-0283"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "വെളുത്തുള്ളിക്ക്", "nte": "വെളുത്തുള്ളിയുടെ", "il": "വെളുത്തുള്ളിയിൽ", "ninnu": "വെളുത്തുള്ളിയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "veḷuttuḷḷikk", "nte": "veḷuttuḷḷiyuṭe", "il": "veḷuttuḷḷiyil", "ninnu": "veḷuttuḷḷiyil ninn" }
+    - word: "ml-0284"
+      forms: { "plural": "കടുകുകൾ", "plural-mar": null, "oblique": null, "e": "കടുകിനെ", "kku": "കടുകിന്", "nte": "കടുകിന്റെ", "il": "കടുകിൽ", "ninnu": "കടുകിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kaṭukukaḷ", "e": "kaṭukine", "kku": "kaṭukin", "nte": "kaṭukinṟe", "il": "kaṭukil", "ninnu": "kaṭukil ninn" }
+    - word: "ml-0285"
+      forms: { "plural": null, "plural-mar": null, "oblique": "ജീരകത്ത്", "e": null, "kku": "ജീരകത്തിന്", "nte": "ജീരകത്തിന്റെ", "il": "ജീരകത്തിൽ", "ninnu": "ജീരകത്തിൽ നിന്ന്", "otu": null }
+      readings: { "oblique": "jīrakatt", "kku": "jīrakattin", "nte": "jīrakattinṟe", "il": "jīrakattil", "ninnu": "jīrakattil ninn" }
+    - word: "ml-0286"
+      forms: { "plural": "മാങ്ങകൾ", "plural-mar": null, "oblique": null, "e": "മാങ്ങയെ", "kku": "മാങ്ങയ്ക്ക്", "nte": "മാങ്ങയുടെ", "il": "മാങ്ങയിൽ", "ninnu": "മാങ്ങയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "māṅṅakaḷ", "e": "māṅṅaye", "kku": "māṅṅaykk", "nte": "māṅṅayuṭe", "il": "māṅṅayil", "ninnu": "māṅṅayil ninn" }
+    - word: "ml-0287"
+      forms: { "plural": "വാഴപ്പഴങ്ങൾ", "plural-mar": null, "oblique": "വാഴപ്പഴത്ത്", "e": "വാഴപ്പഴത്തിനെ", "kku": "വാഴപ്പഴത്തിന്", "nte": "വാഴപ്പഴത്തിന്റെ", "il": "വാഴപ്പഴത്തിൽ", "ninnu": "വാഴപ്പഴത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "vāḻappaḻaṅṅaḷ", "oblique": "vāḻappaḻatt", "e": "vāḻappaḻattine", "kku": "vāḻappaḻattin", "nte": "vāḻappaḻattinṟe", "il": "vāḻappaḻattil", "ninnu": "vāḻappaḻattil ninn" }
+    - word: "ml-0288"
+      forms: { "plural": "ആപ്പിളുകൾ", "plural-mar": null, "oblique": null, "e": "ആപ്പിളിനെ", "kku": "ആപ്പിളിന്", "nte": "ആപ്പിളിന്റെ", "il": "ആപ്പിളിൽ", "ninnu": "ആപ്പിളിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "āppiḷukaḷ", "e": "āppiḷine", "kku": "āppiḷin", "nte": "āppiḷinṟe", "il": "āppiḷil", "ninnu": "āppiḷil ninn" }
+    - word: "ml-0289"
+      forms: { "plural": "ഓറഞ്ചുകൾ", "plural-mar": null, "oblique": null, "e": "ഓറഞ്ചിനെ", "kku": "ഓറഞ്ചിന്", "nte": "ഓറഞ്ചിന്റെ", "il": "ഓറഞ്ചിൽ", "ninnu": "ഓറഞ്ചിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "ōṟañcukaḷ", "e": "ōṟañcine", "kku": "ōṟañcin", "nte": "ōṟañcinṟe", "il": "ōṟañcil", "ninnu": "ōṟañcil ninn" }
+    - word: "ml-0290"
+      forms: { "plural": "ചക്കകൾ", "plural-mar": null, "oblique": null, "e": "ചക്കയെ", "kku": "ചക്കയ്ക്ക്", "nte": "ചക്കയുടെ", "il": "ചക്കയിൽ", "ninnu": "ചക്കയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "cakkakaḷ", "e": "cakkaye", "kku": "cakkaykk", "nte": "cakkayuṭe", "il": "cakkayil", "ninnu": "cakkayil ninn" }
+    - word: "ml-0291"
+      forms: { "plural": "ഇടിയപ്പങ്ങൾ", "plural-mar": null, "oblique": "ഇടിയപ്പത്ത്", "e": "ഇടിയപ്പത്തിനെ", "kku": "ഇടിയപ്പത്തിന്", "nte": "ഇടിയപ്പത്തിന്റെ", "il": "ഇടിയപ്പത്തിൽ", "ninnu": "ഇടിയപ്പത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "iṭiyappaṅṅaḷ", "oblique": "iṭiyappatt", "e": "iṭiyappattine", "kku": "iṭiyappattin", "nte": "iṭiyappattinṟe", "il": "iṭiyappattil", "ninnu": "iṭiyappattil ninn" }
+    - word: "ml-0292"
+      forms: { "plural": "ഓംലറ്റുകൾ", "plural-mar": null, "oblique": null, "e": "ഓംലറ്റിനെ", "kku": "ഓംലറ്റിന്", "nte": "ഓംലറ്റിന്റെ", "il": "ഓംലറ്റിൽ", "ninnu": "ഓംലറ്റിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "ōṁlaṟṟukaḷ", "e": "ōṁlaṟṟine", "kku": "ōṁlaṟṟin", "nte": "ōṁlaṟṟinṟe", "il": "ōṁlaṟṟil", "ninnu": "ōṁlaṟṟil ninn" }
+    - word: "ml-0293"
+      forms: { "plural": "ഉണക്കമീനുകൾ", "plural-mar": null, "oblique": null, "e": "ഉണക്കമീനിനെ", "kku": "ഉണക്കമീനിന്", "nte": "ഉണക്കമീനിന്റെ", "il": "ഉണക്കമീനിൽ", "ninnu": "ഉണക്കമീനിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "uṇakkamīnukaḷ", "e": "uṇakkamīnine", "kku": "uṇakkamīnin", "nte": "uṇakkamīninṟe", "il": "uṇakkamīnil", "ninnu": "uṇakkamīnil ninn" }
+    - word: "ml-0294"
+      forms: { "plural": "ചിക്കനുകൾ", "plural-mar": null, "oblique": null, "e": "ചിക്കനെ", "kku": "ചിക്കന്", "nte": "ചിക്കന്റെ", "il": "ചിക്കനിൽ", "ninnu": "ചിക്കനിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "cikkanukaḷ", "e": "cikkane", "kku": "cikkan", "nte": "cikkanṟe", "il": "cikkanil", "ninnu": "cikkanil ninn" }
+    - word: "ml-0295"
+      forms: { "plural": "തക്കാളികൾ", "plural-mar": null, "oblique": null, "e": "തക്കാളിയെ", "kku": "തക്കാളിക്ക്", "nte": "തക്കാളിയുടെ", "il": "തക്കാളിയിൽ", "ninnu": "തക്കാളിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "takkāḷikaḷ", "e": "takkāḷiye", "kku": "takkāḷikk", "nte": "takkāḷiyuṭe", "il": "takkāḷiyil", "ninnu": "takkāḷiyil ninn" }
+    - word: "ml-0296"
+      forms: { "plural": "വഴുതനകൾ", "plural-mar": null, "oblique": null, "e": "വഴുതനയെ", "kku": "വഴുതനയ്ക്ക്", "nte": "വഴുതനയുടെ", "il": "വഴുതനയിൽ", "ninnu": "വഴുതനയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "vaḻutanakaḷ", "e": "vaḻutanaye", "kku": "vaḻutanaykk", "nte": "vaḻutanayuṭe", "il": "vaḻutanayil", "ninnu": "vaḻutanayil ninn" }
+    - word: "ml-0297"
+      forms: { "plural": "വെള്ളരിക്കകൾ", "plural-mar": null, "oblique": null, "e": "വെള്ളരിക്കയെ", "kku": "വെള്ളരിക്കയ്ക്ക്", "nte": "വെള്ളരിക്കയുടെ", "il": "വെള്ളരിക്കയിൽ", "ninnu": "വെള്ളരിക്കയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "veḷḷarikkakaḷ", "e": "veḷḷarikkaye", "kku": "veḷḷarikkaykk", "nte": "veḷḷarikkayuṭe", "il": "veḷḷarikkayil", "ninnu": "veḷḷarikkayil ninn" }
+    - word: "ml-0298"
+      forms: { "plural": "കാരറ്റുകൾ", "plural-mar": null, "oblique": null, "e": "കാരറ്റിനെ", "kku": "കാരറ്റിന്", "nte": "കാരറ്റിന്റെ", "il": "കാരറ്റിൽ", "ninnu": "കാരറ്റിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kāraṟṟukaḷ", "e": "kāraṟṟine", "kku": "kāraṟṟin", "nte": "kāraṟṟinṟe", "il": "kāraṟṟil", "ninnu": "kāraṟṟil ninn" }
+    - word: "ml-0299"
+      forms: { "plural": "കപ്പകൾ", "plural-mar": null, "oblique": null, "e": "കപ്പയെ", "kku": "കപ്പയ്ക്ക്", "nte": "കപ്പയുടെ", "il": "കപ്പയിൽ", "ninnu": "കപ്പയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kappakaḷ", "e": "kappaye", "kku": "kappaykk", "nte": "kappayuṭe", "il": "kappayil", "ninnu": "kappayil ninn" }
+    - word: "ml-0300"
+      forms: { "plural": "അച്ചാറുകൾ", "plural-mar": null, "oblique": null, "e": "അച്ചാറിനെ", "kku": "അച്ചാറിന്", "nte": "അച്ചാറിന്റെ", "il": "അച്ചാറിൽ", "ninnu": "അച്ചാറിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "accāṟukaḷ", "e": "accāṟine", "kku": "accāṟin", "nte": "accāṟinṟe", "il": "accāṟil", "ninnu": "accāṟil ninn" }
+    - word: "ml-0301"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "മസാലയ്ക്ക്", "nte": "മസാലയുടെ", "il": "മസാലയിൽ", "ninnu": "മസാലയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "masālaykk", "nte": "masālayuṭe", "il": "masālayil", "ninnu": "masālayil ninn" }
+    - word: "ml-0302"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "കുരുമുളകിന്", "nte": "കുരുമുളകിന്റെ", "il": "കുരുമുളകിൽ", "ninnu": "കുരുമുളകിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "kurumuḷakin", "nte": "kurumuḷakinṟe", "il": "kurumuḷakil", "ninnu": "kurumuḷakil ninn" }
+    - word: "ml-0303"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "വിശപ്പിന്", "nte": "വിശപ്പിന്റെ", "il": "വിശപ്പിൽ", "ninnu": "വിശപ്പിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "viśappin", "nte": "viśappinṟe", "il": "viśappil", "ninnu": "viśappil ninn" }
+    - word: "ml-0304"
+      forms: { "plural": null, "plural-mar": null, "oblique": "ദാഹത്ത്", "e": null, "kku": "ദാഹത്തിന്", "nte": "ദാഹത്തിന്റെ", "il": "ദാഹത്തിൽ", "ninnu": "ദാഹത്തിൽ നിന്ന്", "otu": null }
+      readings: { "oblique": "dāhatt", "kku": "dāhattin", "nte": "dāhattinṟe", "il": "dāhattil", "ninnu": "dāhattil ninn" }
+    - word: "ml-0305"
+      forms: { "plural": "മെനുകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": null, "nte": null, "il": "മെനുവിൽ", "ninnu": "മെനുവിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "menukaḷ", "il": "menuvil", "ninnu": "menuvil ninn" }
+    - word: "ml-0306"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "ഊണിന്", "nte": "ഊണിന്റെ", "il": "ഊണിൽ", "ninnu": "ഊണിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "ūṇin", "nte": "ūṇinṟe", "il": "ūṇil", "ninnu": "ūṇil ninn" }
+    - word: "ml-1523"
+      forms: { "plural": "പുട്ടുകൾ", "plural-mar": null, "oblique": null, "e": "പുട്ടിനെ", "kku": "പുട്ടിന്", "nte": "പുട്ടിന്റെ", "il": "പുട്ടിൽ", "ninnu": "പുട്ടിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "puṭṭukaḷ", "e": "puṭṭine", "kku": "puṭṭin", "nte": "puṭṭinṟe", "il": "puṭṭil", "ninnu": "puṭṭil ninn" }
+    - word: "ml-1524"
+      forms: { "plural": "അപ്പങ്ങൾ", "plural-mar": null, "oblique": "അപ്പത്ത്", "e": "അപ്പത്തിനെ", "kku": "അപ്പത്തിന്", "nte": "അപ്പത്തിന്റെ", "il": "അപ്പത്തിൽ", "ninnu": "അപ്പത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "appaṅṅaḷ", "oblique": "appatt", "e": "appattine", "kku": "appattin", "nte": "appattinṟe", "il": "appattil", "ninnu": "appattil ninn" }
+    - word: "ml-1525"
+      forms: { "plural": "പായസങ്ങൾ", "plural-mar": null, "oblique": "പായസത്ത്", "e": "പായസത്തിനെ", "kku": "പായസത്തിന്", "nte": "പായസത്തിന്റെ", "il": "പായസത്തിൽ", "ninnu": "പായസത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pāyasaṅṅaḷ", "oblique": "pāyasatt", "e": "pāyasattine", "kku": "pāyasattin", "nte": "pāyasattinṟe", "il": "pāyasattil", "ninnu": "pāyasattil ninn" }
+    - word: "ml-1526"
+      forms: { "plural": "കഞ്ഞികൾ", "plural-mar": null, "oblique": null, "e": "കഞ്ഞിയെ", "kku": "കഞ്ഞിക്ക്", "nte": "കഞ്ഞിയുടെ", "il": "കഞ്ഞിയിൽ", "ninnu": "കഞ്ഞിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kaññikaḷ", "e": "kaññiye", "kku": "kaññikk", "nte": "kaññiyuṭe", "il": "kaññiyil", "ninnu": "kaññiyil ninn" }
+    - word: "ml-1527"
+      forms: { "plural": "പപ്പടങ്ങൾ", "plural-mar": null, "oblique": "പപ്പടത്ത്", "e": "പപ്പടത്തിനെ", "kku": "പപ്പടത്തിന്", "nte": "പപ്പടത്തിന്റെ", "il": "പപ്പടത്തിൽ", "ninnu": "പപ്പടത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pappaṭaṅṅaḷ", "oblique": "pappaṭatt", "e": "pappaṭattine", "kku": "pappaṭattin", "nte": "pappaṭattinṟe", "il": "pappaṭattil", "ninnu": "pappaṭattil ninn" }
+    - word: "ml-1528"
+      forms: { "plural": "ചമ്മന്തികൾ", "plural-mar": null, "oblique": null, "e": "ചമ്മന്തിയെ", "kku": "ചമ്മന്തിക്ക്", "nte": "ചമ്മന്തിയുടെ", "il": "ചമ്മന്തിയിൽ", "ninnu": "ചമ്മന്തിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "cammantikaḷ", "e": "cammantiye", "kku": "cammantikk", "nte": "cammantiyuṭe", "il": "cammantiyil", "ninnu": "cammantiyil ninn" }
+    - word: "ml-1529"
+      forms: { "plural": "ഉപ്പുമാവുകൾ", "plural-mar": null, "oblique": null, "e": "ഉപ്പുമാവിനെ", "kku": "ഉപ്പുമാവിന്", "nte": "ഉപ്പുമാവിന്റെ", "il": "ഉപ്പുമാവിൽ", "ninnu": "ഉപ്പുമാവിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "uppumāvukaḷ", "e": "uppumāvine", "kku": "uppumāvin", "nte": "uppumāvinṟe", "il": "uppumāvil", "ninnu": "uppumāvil ninn" }
+    - word: "ml-1530"
+      forms: { "plural": "നെയ്യുകൾ", "plural-mar": null, "oblique": null, "e": "നെയ്യിനെ", "kku": "നെയ്യിന്", "nte": "നെയ്യിന്റെ", "il": "നെയ്യിൽ", "ninnu": "നെയ്യിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "neyyukaḷ", "e": "neyyine", "kku": "neyyin", "nte": "neyyinṟe", "il": "neyyil", "ninnu": "neyyil ninn" }
+    - word: "ml-1531"
+      forms: { "plural": "മുന്തിരികൾ", "plural-mar": null, "oblique": null, "e": "മുന്തിരിയെ", "kku": "മുന്തിരിക്ക്", "nte": "മുന്തിരിയുടെ", "il": "മുന്തിരിയിൽ", "ninnu": "മുന്തിരിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "muntirikaḷ", "e": "muntiriye", "kku": "muntirikk", "nte": "muntiriyuṭe", "il": "muntiriyil", "ninnu": "muntiriyil ninn" }
+    - word: "ml-1532"
+      forms: { "plural": "പപ്പായകൾ", "plural-mar": null, "oblique": null, "e": "പപ്പായയെ", "kku": "പപ്പായയ്ക്ക്", "nte": "പപ്പായയുടെ", "il": "പപ്പായയിൽ", "ninnu": "പപ്പായയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pappāyakaḷ", "e": "pappāyaye", "kku": "pappāyaykk", "nte": "pappāyayuṭe", "il": "pappāyayil", "ninnu": "pappāyayil ninn" }
+    - word: "ml-1533"
+      forms: { "plural": "നാരങ്ങകൾ", "plural-mar": null, "oblique": null, "e": "നാരങ്ങയെ", "kku": "നാരങ്ങയ്ക്ക്", "nte": "നാരങ്ങയുടെ", "il": "നാരങ്ങയിൽ", "ninnu": "നാരങ്ങയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "nāraṅṅakaḷ", "e": "nāraṅṅaye", "kku": "nāraṅṅaykk", "nte": "nāraṅṅayuṭe", "il": "nāraṅṅayil", "ninnu": "nāraṅṅayil ninn" }
+    - word: "ml-1534"
+      forms: { "plural": "പയറുകൾ", "plural-mar": null, "oblique": null, "e": "പയറിനെ", "kku": "പയറിന്", "nte": "പയറിന്റെ", "il": "പയറിൽ", "ninnu": "പയറിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "payaṟukaḷ", "e": "payaṟine", "kku": "payaṟin", "nte": "payaṟinṟe", "il": "payaṟil", "ninnu": "payaṟil ninn" }
+    - word: "ml-1535"
+      forms: { "plural": "തേനുകൾ", "plural-mar": null, "oblique": null, "e": "തേനിനെ", "kku": "തേനിന്", "nte": "തേനിന്റെ", "il": "തേനിൽ", "ninnu": "തേനിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "tēnukaḷ", "e": "tēnine", "kku": "tēnin", "nte": "tēninṟe", "il": "tēnil", "ninnu": "tēnil ninn" }
+    - word: "ml-1536"
+      forms: { "plural": "മത്തങ്ങകൾ", "plural-mar": null, "oblique": null, "e": "മത്തങ്ങയെ", "kku": "മത്തങ്ങയ്ക്ക്", "nte": "മത്തങ്ങയുടെ", "il": "മത്തങ്ങയിൽ", "ninnu": "മത്തങ്ങയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "mattaṅṅakaḷ", "e": "mattaṅṅaye", "kku": "mattaṅṅaykk", "nte": "mattaṅṅayuṭe", "il": "mattaṅṅayil", "ninnu": "mattaṅṅayil ninn" }
+    - word: "ml-1537"
+      forms: { "plural": "പാവയ്ക്കകൾ", "plural-mar": null, "oblique": null, "e": "പാവയ്ക്കയെ", "kku": "പാവയ്ക്കയ്ക്ക്", "nte": "പാവയ്ക്കയുടെ", "il": "പാവയ്ക്കയിൽ", "ninnu": "പാവയ്ക്കയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pāvaykkakaḷ", "e": "pāvaykkaye", "kku": "pāvaykkaykk", "nte": "pāvaykkayuṭe", "il": "pāvaykkayil", "ninnu": "pāvaykkayil ninn" }
+    - word: "ml-1538"
+      forms: { "plural": "കാബേജുകൾ", "plural-mar": null, "oblique": null, "e": "കാബേജിനെ", "kku": "കാബേജിന്", "nte": "കാബേജിന്റെ", "il": "കാബേജിൽ", "ninnu": "കാബേജിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kābējukaḷ", "e": "kābējine", "kku": "kābējin", "nte": "kābējinṟe", "il": "kābējil", "ninnu": "kābējil ninn" }
+    - word: "ml-1539"
+      forms: { "plural": "കൂണുകൾ", "plural-mar": null, "oblique": null, "e": "കൂണിനെ", "kku": "കൂണിന്", "nte": "കൂണിന്റെ", "il": "കൂണിൽ", "ninnu": "കൂണിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kūṇukaḷ", "e": "kūṇine", "kku": "kūṇin", "nte": "kūṇinṟe", "il": "kūṇil", "ninnu": "kūṇil ninn" }
+    - word: "ml-0761"
+      forms: { "plural": "ആൺകുട്ടികൾ", "plural-mar": null, "oblique": null, "e": "ആൺകുട്ടിയെ", "kku": "ആൺകുട്ടിക്ക്", "nte": "ആൺകുട്ടിയുടെ", "il": null, "ninnu": null, "otu": "ആൺകുട്ടിയോട്" }
+      readings: { "plural": "āṇkuṭṭikaḷ", "e": "āṇkuṭṭiye", "kku": "āṇkuṭṭikk", "nte": "āṇkuṭṭiyuṭe", "otu": "āṇkuṭṭiyōṭ" }
+    - word: "ml-0762"
+      forms: { "plural": "പെൺകുട്ടികൾ", "plural-mar": null, "oblique": null, "e": "പെൺകുട്ടിയെ", "kku": "പെൺകുട്ടിക്ക്", "nte": "പെൺകുട്ടിയുടെ", "il": null, "ninnu": null, "otu": "പെൺകുട്ടിയോട്" }
+      readings: { "plural": "peṇkuṭṭikaḷ", "e": "peṇkuṭṭiye", "kku": "peṇkuṭṭikk", "nte": "peṇkuṭṭiyuṭe", "otu": "peṇkuṭṭiyōṭ" }
+    - word: "ml-0763"
+      forms: { "plural": null, "plural-mar": "പുരുഷന്മാർ", "oblique": null, "e": "പുരുഷനെ", "kku": "പുരുഷന്", "nte": "പുരുഷന്റെ", "il": null, "ninnu": null, "otu": "പുരുഷനോട്" }
+      readings: { "plural-mar": "puruṣanmār", "e": "puruṣane", "kku": "puruṣan", "nte": "puruṣanṟe", "otu": "puruṣanōṭ" }
+    - word: "ml-0764"
+      forms: { "plural": "സ്ത്രീകൾ", "plural-mar": null, "oblique": null, "e": "സ്ത്രീയെ", "kku": "സ്ത്രീക്ക്", "nte": "സ്ത്രീയുടെ", "il": null, "ninnu": null, "otu": "സ്ത്രീയോട്" }
+      readings: { "plural": "strīkaḷ", "e": "strīye", "kku": "strīkk", "nte": "strīyuṭe", "otu": "strīyōṭ" }
+    - word: "ml-0765"
+      forms: { "plural": "മനുഷ്യർ", "plural-mar": null, "oblique": null, "e": "മനുഷ്യനെ", "kku": "മനുഷ്യന്", "nte": "മനുഷ്യന്റെ", "il": null, "ninnu": null, "otu": "മനുഷ്യനോട്" }
+      readings: { "plural": "manuṣyar", "e": "manuṣyane", "kku": "manuṣyan", "nte": "manuṣyanṟe", "otu": "manuṣyanōṭ" }
+    - word: "ml-0766"
+      forms: { "plural": "ആളുകൾ", "plural-mar": null, "oblique": null, "e": "ആളെ", "kku": "ആൾക്ക്", "nte": "ആളുടെ", "il": null, "ninnu": null, "otu": "ആളോട്" }
+      readings: { "plural": "āḷukaḷ", "e": "āḷe", "kku": "āḷkk", "nte": "āḷuṭe", "otu": "āḷōṭ" }
+    - word: "ml-0772"
+      forms: { "plural": "പെണ്ണുങ്ങൾ", "plural-mar": null, "oblique": null, "e": "പെണ്ണിനെ", "kku": "പെണ്ണിന്", "nte": "പെണ്ണിന്റെ", "il": null, "ninnu": null, "otu": "പെണ്ണിനോട്" }
+      readings: { "plural": "peṇṇuṅṅaḷ", "e": "peṇṇine", "kku": "peṇṇin", "nte": "peṇṇinṟe", "otu": "peṇṇinōṭ" }
+    - word: "ml-0773"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": "മക്കളെ", "kku": "മക്കൾക്ക്", "nte": "മക്കളുടെ", "il": null, "ninnu": null, "otu": "മക്കളോട്" }
+      readings: { "e": "makkaḷe", "kku": "makkaḷkk", "nte": "makkaḷuṭe", "otu": "makkaḷōṭ" }
+    - word: "ml-0217"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "അരിക്ക്", "nte": "അരിയുടെ", "il": "അരിയിൽ", "ninnu": "അരിയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "arikk", "nte": "ariyuṭe", "il": "ariyil", "ninnu": "ariyil ninn" }
+    - word: "ml-0218"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "പഞ്ചസാരയ്ക്ക്", "nte": "പഞ്ചസാരയുടെ", "il": "പഞ്ചസാരയിൽ", "ninnu": "പഞ്ചസാരയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "pañcasāraykk", "nte": "pañcasārayuṭe", "il": "pañcasārayil", "ninnu": "pañcasārayil ninn" }
+    - word: "ml-0219"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "എണ്ണയ്ക്ക്", "nte": "എണ്ണയുടെ", "il": "എണ്ണയിൽ", "ninnu": "എണ്ണയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "eṇṇaykk", "nte": "eṇṇayuṭe", "il": "eṇṇayil", "ninnu": "eṇṇayil ninn" }
+    - word: "ml-0220"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "പാലിന്", "nte": "പാലിന്റെ", "il": "പാലിൽ", "ninnu": "പാലിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "pālin", "nte": "pālinṟe", "il": "pālil", "ninnu": "pālil ninn" }
+    - word: "ml-0221"
+      forms: { "plural": "മുട്ടകൾ", "plural-mar": null, "oblique": null, "e": "മുട്ടയെ", "kku": "മുട്ടയ്ക്ക്", "nte": "മുട്ടയുടെ", "il": "മുട്ടയിൽ", "ninnu": "മുട്ടയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "muṭṭakaḷ", "e": "muṭṭaye", "kku": "muṭṭaykk", "nte": "muṭṭayuṭe", "il": "muṭṭayil", "ninnu": "muṭṭayil ninn" }
+    - word: "ml-0222"
+      forms: { "plural": "റൊട്ടികൾ", "plural-mar": null, "oblique": null, "e": "റൊട്ടിയെ", "kku": "റൊട്ടിക്ക്", "nte": "റൊട്ടിയുടെ", "il": "റൊട്ടിയിൽ", "ninnu": "റൊട്ടിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "ṟoṭṭikaḷ", "e": "ṟoṭṭiye", "kku": "ṟoṭṭikk", "nte": "ṟoṭṭiyuṭe", "il": "ṟoṭṭiyil", "ninnu": "ṟoṭṭiyil ninn" }
+    - word: "ml-0223"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "ചായപ്പൊടിക്ക്", "nte": "ചായപ്പൊടിയുടെ", "il": "ചായപ്പൊടിയിൽ", "ninnu": "ചായപ്പൊടിയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "cāyappoṭikk", "nte": "cāyappoṭiyuṭe", "il": "cāyappoṭiyil", "ninnu": "cāyappoṭiyil ninn" }
+    - word: "ml-0224"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "തൈരിന്", "nte": "തൈരിന്റെ", "il": "തൈരിൽ", "ninnu": "തൈരിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "tairin", "nte": "tairinṟe", "il": "tairil", "ninnu": "tairil ninn" }
+    - word: "ml-0225"
+      forms: { "plural": "പഴങ്ങൾ", "plural-mar": null, "oblique": "പഴത്ത്", "e": "പഴത്തിനെ", "kku": "പഴത്തിന്", "nte": "പഴത്തിന്റെ", "il": "പഴത്തിൽ", "ninnu": "പഴത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "paḻaṅṅaḷ", "oblique": "paḻatt", "e": "paḻattine", "kku": "paḻattin", "nte": "paḻattinṟe", "il": "paḻattil", "ninnu": "paḻattil ninn" }
+    - word: "ml-0226"
+      forms: { "plural": "സോപ്പുകൾ", "plural-mar": null, "oblique": null, "e": "സോപ്പിനെ", "kku": "സോപ്പിന്", "nte": "സോപ്പിന്റെ", "il": "സോപ്പിൽ", "ninnu": "സോപ്പിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "sōppukaḷ", "e": "sōppine", "kku": "sōppin", "nte": "sōppinṟe", "il": "sōppil", "ninnu": "sōppil ninn" }
+    - word: "ml-0227"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "മഞ്ഞളിന്", "nte": "മഞ്ഞളിന്റെ", "il": "മഞ്ഞളിൽ", "ninnu": "മഞ്ഞളിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "maññaḷin", "nte": "maññaḷinṟe", "il": "maññaḷil", "ninnu": "maññaḷil ninn" }
+    - word: "ml-0228"
+      forms: { "plural": "മുളകുകൾ", "plural-mar": null, "oblique": null, "e": "മുളകിനെ", "kku": "മുളകിന്", "nte": "മുളകിന്റെ", "il": "മുളകിൽ", "ninnu": "മുളകിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "muḷakukaḷ", "e": "muḷakine", "kku": "muḷakin", "nte": "muḷakinṟe", "il": "muḷakil", "ninnu": "muḷakil ninn" }
+    - word: "ml-0229"
+      forms: { "plural": "ഉള്ളികൾ", "plural-mar": null, "oblique": null, "e": "ഉള്ളിയെ", "kku": "ഉള്ളിക്ക്", "nte": "ഉള്ളിയുടെ", "il": "ഉള്ളിയിൽ", "ninnu": "ഉള്ളിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "uḷḷikaḷ", "e": "uḷḷiye", "kku": "uḷḷikk", "nte": "uḷḷiyuṭe", "il": "uḷḷiyil", "ninnu": "uḷḷiyil ninn" }
+    - word: "ml-0230"
+      forms: { "plural": "തേങ്ങകൾ", "plural-mar": null, "oblique": null, "e": "തേങ്ങയെ", "kku": "തേങ്ങയ്ക്ക്", "nte": "തേങ്ങയുടെ", "il": "തേങ്ങയിൽ", "ninnu": "തേങ്ങയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "tēṅṅakaḷ", "e": "tēṅṅaye", "kku": "tēṅṅaykk", "nte": "tēṅṅayuṭe", "il": "tēṅṅayil", "ninnu": "tēṅṅayil ninn" }
+    - word: "ml-0231"
+      forms: { "plural": "ഉരുളക്കിഴങ്ങുകൾ", "plural-mar": null, "oblique": null, "e": "ഉരുളക്കിഴങ്ങിനെ", "kku": "ഉരുളക്കിഴങ്ങിന്", "nte": "ഉരുളക്കിഴങ്ങിന്റെ", "il": "ഉരുളക്കിഴങ്ങിൽ", "ninnu": "ഉരുളക്കിഴങ്ങിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "uruḷakkiḻaṅṅukaḷ", "e": "uruḷakkiḻaṅṅine", "kku": "uruḷakkiḻaṅṅin", "nte": "uruḷakkiḻaṅṅinṟe", "il": "uruḷakkiḻaṅṅil", "ninnu": "uruḷakkiḻaṅṅil ninn" }
+    - word: "ml-0232"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "വെണ്ണയ്ക്ക്", "nte": "വെണ്ണയുടെ", "il": "വെണ്ണയിൽ", "ninnu": "വെണ്ണയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "veṇṇaykk", "nte": "veṇṇayuṭe", "il": "veṇṇayil", "ninnu": "veṇṇayil ninn" }
+    - word: "ml-0386"
+      forms: { "plural": "അടുക്കളകൾ", "plural-mar": null, "oblique": null, "e": "അടുക്കളയെ", "kku": "അടുക്കളയ്ക്ക്", "nte": "അടുക്കളയുടെ", "il": "അടുക്കളയിൽ", "ninnu": "അടുക്കളയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "aṭukkaḷakaḷ", "e": "aṭukkaḷaye", "kku": "aṭukkaḷaykk", "nte": "aṭukkaḷayuṭe", "il": "aṭukkaḷayil", "ninnu": "aṭukkaḷayil ninn" }
+    - word: "ml-0387"
+      forms: { "plural": "മുറികൾ", "plural-mar": null, "oblique": null, "e": "മുറിയെ", "kku": "മുറിക്ക്", "nte": "മുറിയുടെ", "il": "മുറിയിൽ", "ninnu": "മുറിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "muṟikaḷ", "e": "muṟiye", "kku": "muṟikk", "nte": "muṟiyuṭe", "il": "muṟiyil", "ninnu": "muṟiyil ninn" }
+    - word: "ml-0388"
+      forms: { "plural": "കുളിമുറികൾ", "plural-mar": null, "oblique": null, "e": "കുളിമുറിയെ", "kku": "കുളിമുറിക്ക്", "nte": "കുളിമുറിയുടെ", "il": "കുളിമുറിയിൽ", "ninnu": "കുളിമുറിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kuḷimuṟikaḷ", "e": "kuḷimuṟiye", "kku": "kuḷimuṟikk", "nte": "kuḷimuṟiyuṭe", "il": "kuḷimuṟiyil", "ninnu": "kuḷimuṟiyil ninn" }
+    - word: "ml-0389"
+      forms: { "plural": "നിലങ്ങൾ", "plural-mar": null, "oblique": "നിലത്ത്", "e": "നിലത്തിനെ", "kku": "നിലത്തിന്", "nte": "നിലത്തിന്റെ", "il": "നിലത്തിൽ", "ninnu": "നിലത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "nilaṅṅaḷ", "oblique": "nilatt", "e": "nilattine", "kku": "nilattin", "nte": "nilattinṟe", "il": "nilattil", "ninnu": "nilattil ninn" }
+    - word: "ml-0390"
+      forms: { "plural": "ചുമരുകൾ", "plural-mar": null, "oblique": null, "e": "ചുമരിനെ", "kku": "ചുമരിന്", "nte": "ചുമരിന്റെ", "il": "ചുമരിൽ", "ninnu": "ചുമരിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "cumarukaḷ", "e": "cumarine", "kku": "cumarin", "nte": "cumarinṟe", "il": "cumaril", "ninnu": "cumaril ninn" }
+    - word: "ml-0391"
+      forms: { "plural": "മേൽക്കൂരകൾ", "plural-mar": null, "oblique": null, "e": "മേൽക്കൂരയെ", "kku": "മേൽക്കൂരയ്ക്ക്", "nte": "മേൽക്കൂരയുടെ", "il": "മേൽക്കൂരയിൽ", "ninnu": "മേൽക്കൂരയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "mēlkkūrakaḷ", "e": "mēlkkūraye", "kku": "mēlkkūraykk", "nte": "mēlkkūrayuṭe", "il": "mēlkkūrayil", "ninnu": "mēlkkūrayil ninn" }
+    - word: "ml-0392"
+      forms: { "plural": "അടുപ്പുകൾ", "plural-mar": null, "oblique": null, "e": "അടുപ്പിനെ", "kku": "അടുപ്പിന്", "nte": "അടുപ്പിന്റെ", "il": "അടുപ്പിൽ", "ninnu": "അടുപ്പിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "aṭuppukaḷ", "e": "aṭuppine", "kku": "aṭuppin", "nte": "aṭuppinṟe", "il": "aṭuppil", "ninnu": "aṭuppil ninn" }
+    - word: "ml-0393"
+      forms: { "plural": "ഫ്രിഡ്ജുകൾ", "plural-mar": null, "oblique": null, "e": "ഫ്രിഡ്ജിനെ", "kku": "ഫ്രിഡ്ജിന്", "nte": "ഫ്രിഡ്ജിന്റെ", "il": "ഫ്രിഡ്ജിൽ", "ninnu": "ഫ്രിഡ്ജിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "phriḍjukaḷ", "e": "phriḍjine", "kku": "phriḍjin", "nte": "phriḍjinṟe", "il": "phriḍjil", "ninnu": "phriḍjil ninn" }
+    - word: "ml-0394"
+      forms: { "plural": "സിങ്കുകൾ", "plural-mar": null, "oblique": null, "e": "സിങ്കിനെ", "kku": "സിങ്കിന്", "nte": "സിങ്കിന്റെ", "il": "സിങ്കിൽ", "ninnu": "സിങ്കിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "siṅkukaḷ", "e": "siṅkine", "kku": "siṅkin", "nte": "siṅkinṟe", "il": "siṅkil", "ninnu": "siṅkil ninn" }
+    - word: "ml-0395"
+      forms: { "plural": "ചൂലുകൾ", "plural-mar": null, "oblique": null, "e": "ചൂലിനെ", "kku": "ചൂലിന്", "nte": "ചൂലിന്റെ", "il": "ചൂലിൽ", "ninnu": "ചൂലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "cūlukaḷ", "e": "cūline", "kku": "cūlin", "nte": "cūlinṟe", "il": "cūlil", "ninnu": "cūlil ninn" }
+    - word: "ml-0396"
+      forms: { "plural": "ചവറ്റുകുട്ടകൾ", "plural-mar": null, "oblique": null, "e": "ചവറ്റുകുട്ടയെ", "kku": "ചവറ്റുകുട്ടയ്ക്ക്", "nte": "ചവറ്റുകുട്ടയുടെ", "il": "ചവറ്റുകുട്ടയിൽ", "ninnu": "ചവറ്റുകുട്ടയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "cavaṟṟukuṭṭakaḷ", "e": "cavaṟṟukuṭṭaye", "kku": "cavaṟṟukuṭṭaykk", "nte": "cavaṟṟukuṭṭayuṭe", "il": "cavaṟṟukuṭṭayil", "ninnu": "cavaṟṟukuṭṭayil ninn" }
+    - word: "ml-0397"
+      forms: { "plural": "സോഫകൾ", "plural-mar": null, "oblique": null, "e": "സോഫയെ", "kku": "സോഫയ്ക്ക്", "nte": "സോഫയുടെ", "il": "സോഫയിൽ", "ninnu": "സോഫയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "sōphakaḷ", "e": "sōphaye", "kku": "sōphaykk", "nte": "sōphayuṭe", "il": "sōphayil", "ninnu": "sōphayil ninn" }
+    - word: "ml-0398"
+      forms: { "plural": "മുറ്റങ്ങൾ", "plural-mar": null, "oblique": "മുറ്റത്ത്", "e": "മുറ്റത്തിനെ", "kku": "മുറ്റത്തിന്", "nte": "മുറ്റത്തിന്റെ", "il": "മുറ്റത്തിൽ", "ninnu": "മുറ്റത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "muṟṟaṅṅaḷ", "oblique": "muṟṟatt", "e": "muṟṟattine", "kku": "muṟṟattin", "nte": "muṟṟattinṟe", "il": "muṟṟattil", "ninnu": "muṟṟattil ninn" }
+    - word: "ml-0399"
+      forms: { "plural": "തോട്ടങ്ങൾ", "plural-mar": null, "oblique": "തോട്ടത്ത്", "e": "തോട്ടത്തിനെ", "kku": "തോട്ടത്തിന്", "nte": "തോട്ടത്തിന്റെ", "il": "തോട്ടത്തിൽ", "ninnu": "തോട്ടത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "tōṭṭaṅṅaḷ", "oblique": "tōṭṭatt", "e": "tōṭṭattine", "kku": "tōṭṭattin", "nte": "tōṭṭattinṟe", "il": "tōṭṭattil", "ninnu": "tōṭṭattil ninn" }
+    - word: "ml-0400"
+      forms: { "plural": "ഗേറ്റുകൾ", "plural-mar": null, "oblique": null, "e": "ഗേറ്റിനെ", "kku": "ഗേറ്റിന്", "nte": "ഗേറ്റിന്റെ", "il": "ഗേറ്റിൽ", "ninnu": "ഗേറ്റിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "gēṟṟukaḷ", "e": "gēṟṟine", "kku": "gēṟṟin", "nte": "gēṟṟinṟe", "il": "gēṟṟil", "ninnu": "gēṟṟil ninn" }
+    - word: "ml-0401"
+      forms: { "plural": "മതിലുകൾ", "plural-mar": null, "oblique": null, "e": "മതിലിനെ", "kku": "മതിലിന്", "nte": "മതിലിന്റെ", "il": "മതിലിൽ", "ninnu": "മതിലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "matilukaḷ", "e": "matiline", "kku": "matilin", "nte": "matilinṟe", "il": "matilil", "ninnu": "matilil ninn" }
+    - word: "ml-0402"
+      forms: { "plural": "ഷെൽഫുകൾ", "plural-mar": null, "oblique": null, "e": "ഷെൽഫിനെ", "kku": "ഷെൽഫിന്", "nte": "ഷെൽഫിന്റെ", "il": "ഷെൽഫിൽ", "ninnu": "ഷെൽഫിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "ṣelphukaḷ", "e": "ṣelphine", "kku": "ṣelphin", "nte": "ṣelphinṟe", "il": "ṣelphil", "ninnu": "ṣelphil ninn" }
+    - word: "ml-1549"
+      forms: { "plural": "കിണറുകൾ", "plural-mar": null, "oblique": null, "e": "കിണറിനെ", "kku": "കിണറിന്", "nte": "കിണറിന്റെ", "il": "കിണറിൽ", "ninnu": "കിണറിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kiṇaṟukaḷ", "e": "kiṇaṟine", "kku": "kiṇaṟin", "nte": "kiṇaṟinṟe", "il": "kiṇaṟil", "ninnu": "kiṇaṟil ninn" }
+    - word: "ml-1550"
+      forms: { "plural": "തലയിണകൾ", "plural-mar": null, "oblique": null, "e": "തലയിണയെ", "kku": "തലയിണയ്ക്ക്", "nte": "തലയിണയുടെ", "il": "തലയിണയിൽ", "ninnu": "തലയിണയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "talayiṇakaḷ", "e": "talayiṇaye", "kku": "talayiṇaykk", "nte": "talayiṇayuṭe", "il": "talayiṇayil", "ninnu": "talayiṇayil ninn" }
+    - word: "ml-0233"
+      forms: { "plural": "മീനുകൾ", "plural-mar": null, "oblique": null, "e": "മീനിനെ", "kku": "മീനിന്", "nte": "മീനിന്റെ", "il": "മീനിൽ", "ninnu": "മീനിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "mīnukaḷ", "e": "mīnine", "kku": "mīnin", "nte": "mīninṟe", "il": "mīnil", "ninnu": "mīnil ninn" }
+    - word: "ml-0234"
+      forms: { "plural": "പച്ചക്കറികൾ", "plural-mar": null, "oblique": null, "e": "പച്ചക്കറിയെ", "kku": "പച്ചക്കറിക്ക്", "nte": "പച്ചക്കറിയുടെ", "il": "പച്ചക്കറിയിൽ", "ninnu": "പച്ചക്കറിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "paccakkaṟikaḷ", "e": "paccakkaṟiye", "kku": "paccakkaṟikk", "nte": "paccakkaṟiyuṭe", "il": "paccakkaṟiyil", "ninnu": "paccakkaṟiyil ninn" }
+    - word: "ml-0235"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "ഇറച്ചിക്ക്", "nte": "ഇറച്ചിയുടെ", "il": "ഇറച്ചിയിൽ", "ninnu": "ഇറച്ചിയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "iṟaccikk", "nte": "iṟacciyuṭe", "il": "iṟacciyil", "ninnu": "iṟacciyil ninn" }
+    - word: "ml-0236"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "വിലയ്ക്ക്", "nte": "വിലയുടെ", "il": "വിലയിൽ", "ninnu": "വിലയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "vilaykk", "nte": "vilayuṭe", "il": "vilayil", "ninnu": "vilayil ninn" }
+    - word: "ml-0237"
+      forms: { "plural": null, "plural-mar": null, "oblique": "തൂക്കത്ത്", "e": null, "kku": "തൂക്കത്തിന്", "nte": "തൂക്കത്തിന്റെ", "il": "തൂക്കത്തിൽ", "ninnu": "തൂക്കത്തിൽ നിന്ന്", "otu": null }
+      readings: { "oblique": "tūkkatt", "kku": "tūkkattin", "nte": "tūkkattinṟe", "il": "tūkkattil", "ninnu": "tūkkattil ninn" }
+    - word: "ml-0238"
+      forms: { "plural": "ചന്തകൾ", "plural-mar": null, "oblique": null, "e": "ചന്തയെ", "kku": "ചന്തയ്ക്ക്", "nte": "ചന്തയുടെ", "il": "ചന്തയിൽ", "ninnu": "ചന്തയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "cantakaḷ", "e": "cantaye", "kku": "cantaykk", "nte": "cantayuṭe", "il": "cantayil", "ninnu": "cantayil ninn" }
+    - word: "ml-0239"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "പഴങ്ങൾക്ക്", "nte": "പഴങ്ങളുടെ", "il": "പഴങ്ങളിൽ", "ninnu": "പഴങ്ങളിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "paḻaṅṅaḷkk", "nte": "paḻaṅṅaḷuṭe", "il": "paḻaṅṅaḷil", "ninnu": "paḻaṅṅaḷil ninn" }
+    - word: "ml-0337"
+      forms: { "plural": "ഹോട്ടലുകൾ", "plural-mar": null, "oblique": null, "e": "ഹോട്ടലിനെ", "kku": "ഹോട്ടലിന്", "nte": "ഹോട്ടലിന്റെ", "il": "ഹോട്ടലിൽ", "ninnu": "ഹോട്ടലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "hōṭṭalukaḷ", "e": "hōṭṭaline", "kku": "hōṭṭalin", "nte": "hōṭṭalinṟe", "il": "hōṭṭalil", "ninnu": "hōṭṭalil ninn" }
+    - word: "ml-0338"
+      forms: { "plural": "കടകൾ", "plural-mar": null, "oblique": null, "e": "കടയെ", "kku": "കടയ്ക്ക്", "nte": "കടയുടെ", "il": "കടയിൽ", "ninnu": "കടയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kaṭakaḷ", "e": "kaṭaye", "kku": "kaṭaykk", "nte": "kaṭayuṭe", "il": "kaṭayil", "ninnu": "kaṭayil ninn" }
+    - word: "ml-0339"
+      forms: { "plural": "ചായക്കടകൾ", "plural-mar": null, "oblique": null, "e": "ചായക്കടയെ", "kku": "ചായക്കടയ്ക്ക്", "nte": "ചായക്കടയുടെ", "il": "ചായക്കടയിൽ", "ninnu": "ചായക്കടയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "cāyakkaṭakaḷ", "e": "cāyakkaṭaye", "kku": "cāyakkaṭaykk", "nte": "cāyakkaṭayuṭe", "il": "cāyakkaṭayil", "ninnu": "cāyakkaṭayil ninn" }
+    - word: "ml-0340"
+      forms: { "plural": "ക്ഷേത്രങ്ങൾ", "plural-mar": null, "oblique": "ക്ഷേത്രത്ത്", "e": "ക്ഷേത്രത്തിനെ", "kku": "ക്ഷേത്രത്തിന്", "nte": "ക്ഷേത്രത്തിന്റെ", "il": "ക്ഷേത്രത്തിൽ", "ninnu": "ക്ഷേത്രത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kṣētraṅṅaḷ", "oblique": "kṣētratt", "e": "kṣētrattine", "kku": "kṣētrattin", "nte": "kṣētrattinṟe", "il": "kṣētrattil", "ninnu": "kṣētrattil ninn" }
+    - word: "ml-0341"
+      forms: { "plural": "പള്ളികൾ", "plural-mar": null, "oblique": null, "e": "പള്ളിയെ", "kku": "പള്ളിക്ക്", "nte": "പള്ളിയുടെ", "il": "പള്ളിയിൽ", "ninnu": "പള്ളിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "paḷḷikaḷ", "e": "paḷḷiye", "kku": "paḷḷikk", "nte": "paḷḷiyuṭe", "il": "paḷḷiyil", "ninnu": "paḷḷiyil ninn" }
+    - word: "ml-0342"
+      forms: { "plural": "പാർക്കുകൾ", "plural-mar": null, "oblique": null, "e": "പാർക്കിനെ", "kku": "പാർക്കിന്", "nte": "പാർക്കിന്റെ", "il": "പാർക്കിൽ", "ninnu": "പാർക്കിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pārkkukaḷ", "e": "pārkkine", "kku": "pārkkin", "nte": "pārkkinṟe", "il": "pārkkil", "ninnu": "pārkkil ninn" }
+    - word: "ml-0343"
+      forms: { "plural": "ലൈബ്രറികൾ", "plural-mar": null, "oblique": null, "e": "ലൈബ്രറിയെ", "kku": "ലൈബ്രറിക്ക്", "nte": "ലൈബ്രറിയുടെ", "il": "ലൈബ്രറിയിൽ", "ninnu": "ലൈബ്രറിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "laibraṟikaḷ", "e": "laibraṟiye", "kku": "laibraṟikk", "nte": "laibraṟiyuṭe", "il": "laibraṟiyil", "ninnu": "laibraṟiyil ninn" }
+    - word: "ml-0344"
+      forms: { "plural": "പോസ്റ്റ് ഓഫീസുകൾ", "plural-mar": null, "oblique": null, "e": "പോസ്റ്റ് ഓഫീസിനെ", "kku": "പോസ്റ്റ് ഓഫീസിന്", "nte": "പോസ്റ്റ് ഓഫീസിന്റെ", "il": "പോസ്റ്റ് ഓഫീസിൽ", "ninnu": "പോസ്റ്റ് ഓഫീസിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pōsṭ ōphīsukaḷ", "e": "pōsṭ ōphīsine", "kku": "pōsṭ ōphīsin", "nte": "pōsṭ ōphīsinṟe", "il": "pōsṭ ōphīsil", "ninnu": "pōsṭ ōphīsil ninn" }
+    - word: "ml-0345"
+      forms: { "plural": "പെട്രോൾ പമ്പുകൾ", "plural-mar": null, "oblique": null, "e": "പെട്രോൾ പമ്പിനെ", "kku": "പെട്രോൾ പമ്പിന്", "nte": "പെട്രോൾ പമ്പിന്റെ", "il": "പെട്രോൾ പമ്പിൽ", "ninnu": "പെട്രോൾ പമ്പിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "peṭrōḷ pampukaḷ", "e": "peṭrōḷ pampine", "kku": "peṭrōḷ pampin", "nte": "peṭrōḷ pampinṟe", "il": "peṭrōḷ pampil", "ninnu": "peṭrōḷ pampil ninn" }
+    - word: "ml-0346"
+      forms: { "plural": "ബീച്ചുകൾ", "plural-mar": null, "oblique": null, "e": "ബീച്ചിനെ", "kku": "ബീച്ചിന്", "nte": "ബീച്ചിന്റെ", "il": "ബീച്ചിൽ", "ninnu": "ബീച്ചിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "bīccukaḷ", "e": "bīccine", "kku": "bīccin", "nte": "bīccinṟe", "il": "bīccil", "ninnu": "bīccil ninn" }
+    - word: "ml-0347"
+      forms: { "plural": "പുഴകൾ", "plural-mar": null, "oblique": null, "e": "പുഴയെ", "kku": "പുഴയ്ക്ക്", "nte": "പുഴയുടെ", "il": "പുഴയിൽ", "ninnu": "പുഴയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "puḻakaḷ", "e": "puḻaye", "kku": "puḻaykk", "nte": "puḻayuṭe", "il": "puḻayil", "ninnu": "puḻayil ninn" }
+    - word: "ml-0348"
+      forms: { "plural": "കുന്നുകൾ", "plural-mar": null, "oblique": null, "e": "കുന്നിനെ", "kku": "കുന്നിന്", "nte": "കുന്നിന്റെ", "il": "കുന്നിൽ", "ninnu": "കുന്നിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kunnukaḷ", "e": "kunnine", "kku": "kunnin", "nte": "kunninṟe", "il": "kunnil", "ninnu": "kunnil ninn" }
+    - word: "ml-0349"
+      forms: { "plural": "കാടുകൾ", "plural-mar": null, "oblique": "കാട്ട്", "e": "കാടിനെ", "kku": "കാടിന്", "nte": "കാടിന്റെ", "il": "കാട്ടിൽ", "ninnu": "കാട്ടിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kāṭukaḷ", "oblique": "kāṭṭ", "e": "kāṭine", "kku": "kāṭin", "nte": "kāṭinṟe", "il": "kāṭṭil", "ninnu": "kāṭṭil ninn" }
+    - word: "ml-0350"
+      forms: { "plural": "നഗരങ്ങൾ", "plural-mar": null, "oblique": "നഗരത്ത്", "e": "നഗരത്തിനെ", "kku": "നഗരത്തിന്", "nte": "നഗരത്തിന്റെ", "il": "നഗരത്തിൽ", "ninnu": "നഗരത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "nagaraṅṅaḷ", "oblique": "nagaratt", "e": "nagarattine", "kku": "nagarattin", "nte": "nagarattinṟe", "il": "nagarattil", "ninnu": "nagarattil ninn" }
+    - word: "ml-0351"
+      forms: { "plural": "ഗ്രാമങ്ങൾ", "plural-mar": null, "oblique": "ഗ്രാമത്ത്", "e": "ഗ്രാമത്തിനെ", "kku": "ഗ്രാമത്തിന്", "nte": "ഗ്രാമത്തിന്റെ", "il": "ഗ്രാമത്തിൽ", "ninnu": "ഗ്രാമത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "grāmaṅṅaḷ", "oblique": "grāmatt", "e": "grāmattine", "kku": "grāmattin", "nte": "grāmattinṟe", "il": "grāmattil", "ninnu": "grāmattil ninn" }
+    - word: "ml-0352"
+      forms: { "plural": "പട്ടണങ്ങൾ", "plural-mar": null, "oblique": "പട്ടണത്ത്", "e": "പട്ടണത്തിനെ", "kku": "പട്ടണത്തിന്", "nte": "പട്ടണത്തിന്റെ", "il": "പട്ടണത്തിൽ", "ninnu": "പട്ടണത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "paṭṭaṇaṅṅaḷ", "oblique": "paṭṭaṇatt", "e": "paṭṭaṇattine", "kku": "paṭṭaṇattin", "nte": "paṭṭaṇattinṟe", "il": "paṭṭaṇattil", "ninnu": "paṭṭaṇattil ninn" }
+    - word: "ml-0353"
+      forms: { "plural": "തെരുവുകൾ", "plural-mar": null, "oblique": null, "e": "തെരുവിനെ", "kku": "തെരുവിന്", "nte": "തെരുവിന്റെ", "il": "തെരുവിൽ", "ninnu": "തെരുവിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "teruvukaḷ", "e": "teruvine", "kku": "teruvin", "nte": "teruvinṟe", "il": "teruvil", "ninnu": "teruvil ninn" }
+    - word: "ml-0354"
+      forms: { "plural": "ബസ് സ്റ്റോപ്പുകൾ", "plural-mar": null, "oblique": null, "e": "ബസ് സ്റ്റോപ്പിനെ", "kku": "ബസ് സ്റ്റോപ്പിന്", "nte": "ബസ് സ്റ്റോപ്പിന്റെ", "il": "ബസ് സ്റ്റോപ്പിൽ", "ninnu": "ബസ് സ്റ്റോപ്പിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "bas sṭōppukaḷ", "e": "bas sṭōppine", "kku": "bas sṭōppin", "nte": "bas sṭōppinṟe", "il": "bas sṭōppil", "ninnu": "bas sṭōppil ninn" }
+    - word: "ml-0355"
+      forms: { "plural": "കളിസ്ഥലങ്ങൾ", "plural-mar": null, "oblique": "കളിസ്ഥലത്ത്", "e": "കളിസ്ഥലത്തിനെ", "kku": "കളിസ്ഥലത്തിന്", "nte": "കളിസ്ഥലത്തിന്റെ", "il": "കളിസ്ഥലത്തിൽ", "ninnu": "കളിസ്ഥലത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kaḷisthalaṅṅaḷ", "oblique": "kaḷisthalatt", "e": "kaḷisthalattine", "kku": "kaḷisthalattin", "nte": "kaḷisthalattinṟe", "il": "kaḷisthalattil", "ninnu": "kaḷisthalattil ninn" }
+    - word: "ml-1500"
+      forms: { "plural": "കടലുകൾ", "plural-mar": null, "oblique": null, "e": "കടലിനെ", "kku": "കടലിന്", "nte": "കടലിന്റെ", "il": "കടലിൽ", "ninnu": "കടലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kaṭalukaḷ", "e": "kaṭaline", "kku": "kaṭalin", "nte": "kaṭalinṟe", "il": "kaṭalil", "ninnu": "kaṭalil ninn" }
+    - word: "ml-1501"
+      forms: { "plural": "തടാകങ്ങൾ", "plural-mar": null, "oblique": "തടാകത്ത്", "e": "തടാകത്തിനെ", "kku": "തടാകത്തിന്", "nte": "തടാകത്തിന്റെ", "il": "തടാകത്തിൽ", "ninnu": "തടാകത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "taṭākaṅṅaḷ", "oblique": "taṭākatt", "e": "taṭākattine", "kku": "taṭākattin", "nte": "taṭākattinṟe", "il": "taṭākattil", "ninnu": "taṭākattil ninn" }
+    - word: "ml-1502"
+      forms: { "plural": "കുളങ്ങൾ", "plural-mar": null, "oblique": "കുളത്ത്", "e": "കുളത്തിനെ", "kku": "കുളത്തിന്", "nte": "കുളത്തിന്റെ", "il": "കുളത്തിൽ", "ninnu": "കുളത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kuḷaṅṅaḷ", "oblique": "kuḷatt", "e": "kuḷattine", "kku": "kuḷattin", "nte": "kuḷattinṟe", "il": "kuḷattil", "ninnu": "kuḷattil ninn" }
+    - word: "ml-1503"
+      forms: { "plural": "തോടുകൾ", "plural-mar": null, "oblique": null, "e": "തോടിനെ", "kku": "തോടിന്", "nte": "തോടിന്റെ", "il": "തോടിൽ", "ninnu": "തോടിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "tōṭukaḷ", "e": "tōṭine", "kku": "tōṭin", "nte": "tōṭinṟe", "il": "tōṭil", "ninnu": "tōṭil ninn" }
+    - word: "ml-1504"
+      forms: { "plural": "പാടങ്ങൾ", "plural-mar": null, "oblique": "പാടത്ത്", "e": "പാടത്തിനെ", "kku": "പാടത്തിന്", "nte": "പാടത്തിന്റെ", "il": "പാടത്തിൽ", "ninnu": "പാടത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pāṭaṅṅaḷ", "oblique": "pāṭatt", "e": "pāṭattine", "kku": "pāṭattin", "nte": "pāṭattinṟe", "il": "pāṭattil", "ninnu": "pāṭattil ninn" }
+    - word: "ml-1505"
+      forms: { "plural": "മലകൾ", "plural-mar": null, "oblique": null, "e": "മലയെ", "kku": "മലയ്ക്ക്", "nte": "മലയുടെ", "il": "മലയിൽ", "ninnu": "മലയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "malakaḷ", "e": "malaye", "kku": "malaykk", "nte": "malayuṭe", "il": "malayil", "ninnu": "malayil ninn" }
+    - word: "ml-1506"
+      forms: { "plural": "ദ്വീപുകൾ", "plural-mar": null, "oblique": null, "e": "ദ്വീപിനെ", "kku": "ദ്വീപിന്", "nte": "ദ്വീപിന്റെ", "il": "ദ്വീപിൽ", "ninnu": "ദ്വീപിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "dvīpukaḷ", "e": "dvīpine", "kku": "dvīpin", "nte": "dvīpinṟe", "il": "dvīpil", "ninnu": "dvīpil ninn" }
+    - word: "ml-1507"
+      forms: { "plural": "മൈതാനങ്ങൾ", "plural-mar": null, "oblique": "മൈതാനത്ത്", "e": "മൈതാനത്തിനെ", "kku": "മൈതാനത്തിന്", "nte": "മൈതാനത്തിന്റെ", "il": "മൈതാനത്തിൽ", "ninnu": "മൈതാനത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "maitānaṅṅaḷ", "oblique": "maitānatt", "e": "maitānattine", "kku": "maitānattin", "nte": "maitānattinṟe", "il": "maitānattil", "ninnu": "maitānattil ninn" }
+    - word: "ml-1508"
+      forms: { "plural": "സ്റ്റേഡിയങ്ങൾ", "plural-mar": null, "oblique": "സ്റ്റേഡിയത്ത്", "e": "സ്റ്റേഡിയത്തിനെ", "kku": "സ്റ്റേഡിയത്തിന്", "nte": "സ്റ്റേഡിയത്തിന്റെ", "il": "സ്റ്റേഡിയത്തിൽ", "ninnu": "സ്റ്റേഡിയത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "sṭēḍiyaṅṅaḷ", "oblique": "sṭēḍiyatt", "e": "sṭēḍiyattine", "kku": "sṭēḍiyattin", "nte": "sṭēḍiyattinṟe", "il": "sṭēḍiyattil", "ninnu": "sṭēḍiyattil ninn" }
+    - word: "ml-1509"
+      forms: { "plural": "മ്യൂസിയങ്ങൾ", "plural-mar": null, "oblique": "മ്യൂസിയത്ത്", "e": "മ്യൂസിയത്തിനെ", "kku": "മ്യൂസിയത്തിന്", "nte": "മ്യൂസിയത്തിന്റെ", "il": "മ്യൂസിയത്തിൽ", "ninnu": "മ്യൂസിയത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "myūsiyaṅṅaḷ", "oblique": "myūsiyatt", "e": "myūsiyattine", "kku": "myūsiyattin", "nte": "myūsiyattinṟe", "il": "myūsiyattil", "ninnu": "myūsiyattil ninn" }
+    - word: "ml-1510"
+      forms: { "plural": "കോളേജുകൾ", "plural-mar": null, "oblique": null, "e": "കോളേജിനെ", "kku": "കോളേജിന്", "nte": "കോളേജിന്റെ", "il": "കോളേജിൽ", "ninnu": "കോളേജിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kōḷējukaḷ", "e": "kōḷējine", "kku": "kōḷējin", "nte": "kōḷējinṟe", "il": "kōḷējil", "ninnu": "kōḷējil ninn" }
+    - word: "ml-1511"
+      forms: { "plural": "ബേക്കറികൾ", "plural-mar": null, "oblique": null, "e": "ബേക്കറിയെ", "kku": "ബേക്കറിക്ക്", "nte": "ബേക്കറിയുടെ", "il": "ബേക്കറിയിൽ", "ninnu": "ബേക്കറിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "bēkkaṟikaḷ", "e": "bēkkaṟiye", "kku": "bēkkaṟikk", "nte": "bēkkaṟiyuṭe", "il": "bēkkaṟiyil", "ninnu": "bēkkaṟiyil ninn" }
+    - word: "ml-1512"
+      forms: { "plural": "കോടതികൾ", "plural-mar": null, "oblique": null, "e": "കോടതിയെ", "kku": "കോടതിക്ക്", "nte": "കോടതിയുടെ", "il": "കോടതിയിൽ", "ninnu": "കോടതിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kōṭatikaḷ", "e": "kōṭatiye", "kku": "kōṭatikk", "nte": "kōṭatiyuṭe", "il": "kōṭatiyil", "ninnu": "kōṭatiyil ninn" }
+    - word: "ml-1513"
+      forms: { "plural": "ജയിലുകൾ", "plural-mar": null, "oblique": null, "e": "ജയിലിനെ", "kku": "ജയിലിന്", "nte": "ജയിലിന്റെ", "il": "ജയിലിൽ", "ninnu": "ജയിലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "jayilukaḷ", "e": "jayiline", "kku": "jayilin", "nte": "jayilinṟe", "il": "jayilil", "ninnu": "jayilil ninn" }
+    - word: "ml-1514"
+      forms: { "plural": "കൊട്ടാരങ്ങൾ", "plural-mar": null, "oblique": "കൊട്ടാരത്ത്", "e": "കൊട്ടാരത്തിനെ", "kku": "കൊട്ടാരത്തിന്", "nte": "കൊട്ടാരത്തിന്റെ", "il": "കൊട്ടാരത്തിൽ", "ninnu": "കൊട്ടാരത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "koṭṭāraṅṅaḷ", "oblique": "koṭṭāratt", "e": "koṭṭārattine", "kku": "koṭṭārattin", "nte": "koṭṭārattinṟe", "il": "koṭṭārattil", "ninnu": "koṭṭārattil ninn" }
+    - word: "ml-1515"
+      forms: { "plural": "കോട്ടകൾ", "plural-mar": null, "oblique": null, "e": "കോട്ടയെ", "kku": "കോട്ടയ്ക്ക്", "nte": "കോട്ടയുടെ", "il": "കോട്ടയിൽ", "ninnu": "കോട്ടയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kōṭṭakaḷ", "e": "kōṭṭaye", "kku": "kōṭṭaykk", "nte": "kōṭṭayuṭe", "il": "kōṭṭayil", "ninnu": "kōṭṭayil ninn" }
+    - word: "ml-1516"
+      forms: { "plural": "ജില്ലകൾ", "plural-mar": null, "oblique": null, "e": "ജില്ലയെ", "kku": "ജില്ലയ്ക്ക്", "nte": "ജില്ലയുടെ", "il": "ജില്ലയിൽ", "ninnu": "ജില്ലയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "jillakaḷ", "e": "jillaye", "kku": "jillaykk", "nte": "jillayuṭe", "il": "jillayil", "ninnu": "jillayil ninn" }
+    - word: "ml-1517"
+      forms: { "plural": "യൂണിവേഴ്സിറ്റികൾ", "plural-mar": null, "oblique": null, "e": "യൂണിവേഴ്സിറ്റിയെ", "kku": "യൂണിവേഴ്സിറ്റിക്ക്", "nte": "യൂണിവേഴ്സിറ്റിയുടെ", "il": "യൂണിവേഴ്സിറ്റിയിൽ", "ninnu": "യൂണിവേഴ്സിറ്റിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "yūṇivēḻsiṟṟikaḷ", "e": "yūṇivēḻsiṟṟiye", "kku": "yūṇivēḻsiṟṟikk", "nte": "yūṇivēḻsiṟṟiyuṭe", "il": "yūṇivēḻsiṟṟiyil", "ninnu": "yūṇivēḻsiṟṟiyil ninn" }
+    - word: "ml-1518"
+      forms: { "plural": "ഗുഹകൾ", "plural-mar": null, "oblique": null, "e": "ഗുഹയെ", "kku": "ഗുഹയ്ക്ക്", "nte": "ഗുഹയുടെ", "il": "ഗുഹയിൽ", "ninnu": "ഗുഹയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "guhakaḷ", "e": "guhaye", "kku": "guhaykk", "nte": "guhayuṭe", "il": "guhayil", "ninnu": "guhayil ninn" }
+    - word: "ml-1519"
+      forms: { "plural": "മരുഭൂമികൾ", "plural-mar": null, "oblique": null, "e": "മരുഭൂമിയെ", "kku": "മരുഭൂമിക്ക്", "nte": "മരുഭൂമിയുടെ", "il": "മരുഭൂമിയിൽ", "ninnu": "മരുഭൂമിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "marubhūmikaḷ", "e": "marubhūmiye", "kku": "marubhūmikk", "nte": "marubhūmiyuṭe", "il": "marubhūmiyil", "ninnu": "marubhūmiyil ninn" }
+    - word: "ml-1520"
+      forms: { "plural": "ആശ്രമങ്ങൾ", "plural-mar": null, "oblique": "ആശ്രമത്ത്", "e": "ആശ്രമത്തിനെ", "kku": "ആശ്രമത്തിന്", "nte": "ആശ്രമത്തിന്റെ", "il": "ആശ്രമത്തിൽ", "ninnu": "ആശ്രമത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "āśramaṅṅaḷ", "oblique": "āśramatt", "e": "āśramattine", "kku": "āśramattin", "nte": "āśramattinṟe", "il": "āśramattil", "ninnu": "āśramattil ninn" }
+    - word: "ml-1521"
+      forms: { "plural": "ഓഡിറ്റോറിയങ്ങൾ", "plural-mar": null, "oblique": "ഓഡിറ്റോറിയത്ത്", "e": "ഓഡിറ്റോറിയത്തിനെ", "kku": "ഓഡിറ്റോറിയത്തിന്", "nte": "ഓഡിറ്റോറിയത്തിന്റെ", "il": "ഓഡിറ്റോറിയത്തിൽ", "ninnu": "ഓഡിറ്റോറിയത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "ōḍiṟṟōṟiyaṅṅaḷ", "oblique": "ōḍiṟṟōṟiyatt", "e": "ōḍiṟṟōṟiyattine", "kku": "ōḍiṟṟōṟiyattin", "nte": "ōḍiṟṟōṟiyattinṟe", "il": "ōḍiṟṟōṟiyattil", "ninnu": "ōḍiṟṟōṟiyattil ninn" }
+    - word: "ml-1522"
+      forms: { "plural": "ചതുപ്പുകൾ", "plural-mar": null, "oblique": null, "e": "ചതുപ്പിനെ", "kku": "ചതുപ്പിന്", "nte": "ചതുപ്പിന്റെ", "il": "ചതുപ്പിൽ", "ninnu": "ചതുപ്പിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "catuppukaḷ", "e": "catuppine", "kku": "catuppin", "nte": "catuppinṟe", "il": "catuppil", "ninnu": "catuppil ninn" }
+    - word: "ml-0460"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "പകുതിക്ക്", "nte": "പകുതിയുടെ", "il": "പകുതിയിൽ", "ninnu": "പകുതിയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "pakutikk", "nte": "pakutiyuṭe", "il": "pakutiyil", "ninnu": "pakutiyil ninn" }
+    - word: "ml-0464"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "കിലോയ്ക്ക്", "nte": "കിലോയുടെ", "il": "കിലോയിൽ", "ninnu": "കിലോയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "kilōykk", "nte": "kilōyuṭe", "il": "kilōyil", "ninnu": "kilōyil ninn" }
+    - word: "ml-0465"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "ലിറ്ററിന്", "nte": "ലിറ്ററിന്റെ", "il": "ലിറ്ററിൽ", "ninnu": "ലിറ്ററിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "liṟṟaṟin", "nte": "liṟṟaṟinṟe", "il": "liṟṟaṟil", "ninnu": "liṟṟaṟil ninn" }
+    - word: "ml-0466"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "ഗ്രാമിന്", "nte": "ഗ്രാമിന്റെ", "il": "ഗ്രാമിൽ", "ninnu": "ഗ്രാമിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "grāmin", "nte": "grāminṟe", "il": "grāmil", "ninnu": "grāmil ninn" }
+    - word: "ml-0468"
+      forms: { "plural": "ജോഡികൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "ജോഡിക്ക്", "nte": "ജോഡിയുടെ", "il": "ജോഡിയിൽ", "ninnu": "ജോഡിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "jōḍikaḷ", "kku": "jōḍikk", "nte": "jōḍiyuṭe", "il": "jōḍiyil", "ninnu": "jōḍiyil ninn" }
+    - word: "ml-0469"
+      forms: { "plural": "പാക്കറ്റുകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "പാക്കറ്റിന്", "nte": "പാക്കറ്റിന്റെ", "il": "പാക്കറ്റിൽ", "ninnu": "പാക്കറ്റിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pākkaṟṟukaḷ", "kku": "pākkaṟṟin", "nte": "pākkaṟṟinṟe", "il": "pākkaṟṟil", "ninnu": "pākkaṟṟil ninn" }
+    - word: "ml-0470"
+      forms: { "plural": "എണ്ണങ്ങൾ", "plural-mar": null, "oblique": "എണ്ണത്ത്", "e": null, "kku": "എണ്ണത്തിന്", "nte": "എണ്ണത്തിന്റെ", "il": "എണ്ണത്തിൽ", "ninnu": "എണ്ണത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "eṇṇaṅṅaḷ", "oblique": "eṇṇatt", "kku": "eṇṇattin", "nte": "eṇṇattinṟe", "il": "eṇṇattil", "ninnu": "eṇṇattil ninn" }
+    - word: "ml-0471"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "ഇരട്ടിക്ക്", "nte": "ഇരട്ടിയുടെ", "il": "ഇരട്ടിയിൽ", "ninnu": "ഇരട്ടിയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "iraṭṭikk", "nte": "iraṭṭiyuṭe", "il": "iraṭṭiyil", "ninnu": "iraṭṭiyil ninn" }
+    - word: "ml-0474"
+      forms: { "plural": "ആവശ്യങ്ങൾ", "plural-mar": null, "oblique": "ആവശ്യത്ത്", "e": null, "kku": "ആവശ്യത്തിന്", "nte": "ആവശ്യത്തിന്റെ", "il": "ആവശ്യത്തിൽ", "ninnu": "ആവശ്യത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "āvaśyaṅṅaḷ", "oblique": "āvaśyatt", "kku": "āvaśyattin", "nte": "āvaśyattinṟe", "il": "āvaśyattil", "ninnu": "āvaśyattil ninn" }
+    - word: "ml-0476"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "ബാക്കിക്ക്", "nte": "ബാക്കിയുടെ", "il": "ബാക്കിയിൽ", "ninnu": "ബാക്കിയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "bākkikk", "nte": "bākkiyuṭe", "il": "bākkiyil", "ninnu": "bākkiyil ninn" }
+    - word: "ml-1055"
+      forms: { "plural": "ഗ്ലാസുകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "ഗ്ലാസിന്", "nte": "ഗ്ലാസിന്റെ", "il": "ഗ്ലാസിൽ", "ninnu": "ഗ്ലാസിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "glāsukaḷ", "kku": "glāsin", "nte": "glāsinṟe", "il": "glāsil", "ninnu": "glāsil ninn" }
+    - word: "ml-1056"
+      forms: { "plural": "കെട്ടുകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "കെട്ടിന്", "nte": "കെട്ടിന്റെ", "il": "കെട്ടിൽ", "ninnu": "കെട്ടിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "keṭṭukaḷ", "kku": "keṭṭin", "nte": "keṭṭinṟe", "il": "keṭṭil", "ninnu": "keṭṭil ninn" }
+    - word: "ml-1057"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "അരയ്ക്ക്", "nte": "അരയുടെ", "il": "അരയിൽ", "ninnu": "അരയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "araykk", "nte": "arayuṭe", "il": "arayil", "ninnu": "arayil ninn" }
+    - word: "ml-1058"
+      forms: { "plural": "ഭാഗങ്ങൾ", "plural-mar": null, "oblique": "ഭാഗത്ത്", "e": null, "kku": "ഭാഗത്തിന്", "nte": "ഭാഗത്തിന്റെ", "il": "ഭാഗത്തിൽ", "ninnu": "ഭാഗത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "bhāgaṅṅaḷ", "oblique": "bhāgatt", "kku": "bhāgattin", "nte": "bhāgattinṟe", "il": "bhāgattil", "ninnu": "bhāgattil ninn" }
+    - word: "ml-1059"
+      forms: { "plural": "അളവുകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "അളവിന്", "nte": "അളവിന്റെ", "il": "അളവിൽ", "ninnu": "അളവിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "aḷavukaḷ", "kku": "aḷavin", "nte": "aḷavinṟe", "il": "aḷavil", "ninnu": "aḷavil ninn" }
+    - word: "ml-1060"
+      forms: { "plural": "സഞ്ചികൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "സഞ്ചിക്ക്", "nte": "സഞ്ചിയുടെ", "il": "സഞ്ചിയിൽ", "ninnu": "സഞ്ചിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "sañcikaḷ", "kku": "sañcikk", "nte": "sañciyuṭe", "il": "sañciyil", "ninnu": "sañciyil ninn" }
+    - word: "ml-0733"
+      forms: { "plural": "കട്ടകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "കട്ടയ്ക്ക്", "nte": "കട്ടയുടെ", "il": "കട്ടയിൽ", "ninnu": "കട്ടയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kaṭṭakaḷ", "kku": "kaṭṭaykk", "nte": "kaṭṭayuṭe", "il": "kaṭṭayil", "ninnu": "kaṭṭayil ninn" }
+    - word: "ml-0734"
+      forms: { "plural": "മണങ്ങൾ", "plural-mar": null, "oblique": "മണത്ത്", "e": null, "kku": "മണത്തിന്", "nte": "മണത്തിന്റെ", "il": "മണത്തിൽ", "ninnu": "മണത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "maṇaṅṅaḷ", "oblique": "maṇatt", "kku": "maṇattin", "nte": "maṇattinṟe", "il": "maṇattil", "ninnu": "maṇattil ninn" }
+    - word: "ml-0735"
+      forms: { "plural": "മനങ്ങൾ", "plural-mar": null, "oblique": "മനത്ത്", "e": null, "kku": "മനത്തിന്", "nte": "മനത്തിന്റെ", "il": "മനത്തിൽ", "ninnu": "മനത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "manaṅṅaḷ", "oblique": "manatt", "kku": "manattin", "nte": "manattinṟe", "il": "manattil", "ninnu": "manattil ninn" }
+    - word: "ml-0736"
+      forms: { "plural": "വെല്ലങ്ങൾ", "plural-mar": null, "oblique": "വെല്ലത്ത്", "e": null, "kku": "വെല്ലത്തിന്", "nte": "വെല്ലത്തിന്റെ", "il": "വെല്ലത്തിൽ", "ninnu": "വെല്ലത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "vellaṅṅaḷ", "oblique": "vellatt", "kku": "vellattin", "nte": "vellattinṟe", "il": "vellattil", "ninnu": "vellattil ninn" }
+    - word: "ml-0737"
+      forms: { "plural": "കലങ്ങൾ", "plural-mar": null, "oblique": "കലത്ത്", "e": null, "kku": "കലത്തിന്", "nte": "കലത്തിന്റെ", "il": "കലത്തിൽ", "ninnu": "കലത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kalaṅṅaḷ", "oblique": "kalatt", "kku": "kalattin", "nte": "kalattinṟe", "il": "kalattil", "ninnu": "kalattil ninn" }
+    - word: "ml-0738"
+      forms: { "plural": "കാലങ്ങൾ", "plural-mar": null, "oblique": "കാലത്ത്", "e": null, "kku": "കാലത്തിന്", "nte": "കാലത്തിന്റെ", "il": "കാലത്തിൽ", "ninnu": "കാലത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kālaṅṅaḷ", "oblique": "kālatt", "kku": "kālattin", "nte": "kālattinṟe", "il": "kālattil", "ninnu": "kālattil ninn" }
+    - word: "ml-1000"
+      forms: { "plural": "മഴകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "മഴയ്ക്ക്", "nte": "മഴയുടെ", "il": "മഴയിൽ", "ninnu": "മഴയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "maḻakaḷ", "kku": "maḻaykk", "nte": "maḻayuṭe", "il": "maḻayil", "ninnu": "maḻayil ninn" }
+    - word: "ml-1001"
+      forms: { "plural": "മലകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "മലയ്ക്ക്", "nte": "മലയുടെ", "il": "മലയിൽ", "ninnu": "മലയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "malakaḷ", "kku": "malaykk", "nte": "malayuṭe", "il": "malayil", "ninnu": "malayil ninn" }
+    - word: "ml-1002"
+      forms: { "plural": "കരകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "കരയ്ക്ക്", "nte": "കരയുടെ", "il": "കരയിൽ", "ninnu": "കരയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "karakaḷ", "kku": "karaykk", "nte": "karayuṭe", "il": "karayil", "ninnu": "karayil ninn" }
+    - word: "ml-1003"
+      forms: { "plural": "കറകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "കറയ്ക്ക്", "nte": "കറയുടെ", "il": "കറയിൽ", "ninnu": "കറയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kaṟakaḷ", "kku": "kaṟaykk", "nte": "kaṟayuṭe", "il": "kaṟayil", "ninnu": "kaṟayil ninn" }
+    - word: "ml-0356"
+      forms: { "plural": "പുസ്തകങ്ങൾ", "plural-mar": null, "oblique": "പുസ്തകത്ത്", "e": "പുസ്തകത്തിനെ", "kku": "പുസ്തകത്തിന്", "nte": "പുസ്തകത്തിന്റെ", "il": "പുസ്തകത്തിൽ", "ninnu": "പുസ്തകത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pustakaṅṅaḷ", "oblique": "pustakatt", "e": "pustakattine", "kku": "pustakattin", "nte": "pustakattinṟe", "il": "pustakattil", "ninnu": "pustakattil ninn" }
+    - word: "ml-0357"
+      forms: { "plural": "പേനകൾ", "plural-mar": null, "oblique": null, "e": "പേനയെ", "kku": "പേനയ്ക്ക്", "nte": "പേനയുടെ", "il": "പേനയിൽ", "ninnu": "പേനയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pēnakaḷ", "e": "pēnaye", "kku": "pēnaykk", "nte": "pēnayuṭe", "il": "pēnayil", "ninnu": "pēnayil ninn" }
+    - word: "ml-0358"
+      forms: { "plural": "പെൻസിലുകൾ", "plural-mar": null, "oblique": null, "e": "പെൻസിലിനെ", "kku": "പെൻസിലിന്", "nte": "പെൻസിലിന്റെ", "il": "പെൻസിലിൽ", "ninnu": "പെൻസിലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "peṉsilukaḷ", "e": "peṉsiline", "kku": "peṉsilin", "nte": "peṉsilinṟe", "il": "peṉsilil", "ninnu": "peṉsilil ninn" }
+    - word: "ml-0359"
+      forms: { "plural": "മേശകൾ", "plural-mar": null, "oblique": null, "e": "മേശയെ", "kku": "മേശയ്ക്ക്", "nte": "മേശയുടെ", "il": "മേശയിൽ", "ninnu": "മേശയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "mēśakaḷ", "e": "mēśaye", "kku": "mēśaykk", "nte": "mēśayuṭe", "il": "mēśayil", "ninnu": "mēśayil ninn" }
+    - word: "ml-0360"
+      forms: { "plural": "കസേരകൾ", "plural-mar": null, "oblique": null, "e": "കസേരയെ", "kku": "കസേരയ്ക്ക്", "nte": "കസേരയുടെ", "il": "കസേരയിൽ", "ninnu": "കസേരയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kasērakaḷ", "e": "kasēraye", "kku": "kasēraykk", "nte": "kasērayuṭe", "il": "kasērayil", "ninnu": "kasērayil ninn" }
+    - word: "ml-0361"
+      forms: { "plural": "ബാഗുകൾ", "plural-mar": null, "oblique": null, "e": "ബാഗിനെ", "kku": "ബാഗിന്", "nte": "ബാഗിന്റെ", "il": "ബാഗിൽ", "ninnu": "ബാഗിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "bāgukaḷ", "e": "bāgine", "kku": "bāgin", "nte": "bāginṟe", "il": "bāgil", "ninnu": "bāgil ninn" }
+    - word: "ml-0362"
+      forms: { "plural": "താക്കോലുകൾ", "plural-mar": null, "oblique": null, "e": "താക്കോലിനെ", "kku": "താക്കോലിന്", "nte": "താക്കോലിന്റെ", "il": "താക്കോലിൽ", "ninnu": "താക്കോലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "tākkōlukaḷ", "e": "tākkōline", "kku": "tākkōlin", "nte": "tākkōlinṟe", "il": "tākkōlil", "ninnu": "tākkōlil ninn" }
+    - word: "ml-0363"
+      forms: { "plural": "ഫോണുകൾ", "plural-mar": null, "oblique": null, "e": "ഫോണിനെ", "kku": "ഫോണിന്", "nte": "ഫോണിന്റെ", "il": "ഫോണിൽ", "ninnu": "ഫോണിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "phōṇukaḷ", "e": "phōṇine", "kku": "phōṇin", "nte": "phōṇinṟe", "il": "phōṇil", "ninnu": "phōṇil ninn" }
+    - word: "ml-0364"
+      forms: { "plural": "വാച്ചുകൾ", "plural-mar": null, "oblique": null, "e": "വാച്ചിനെ", "kku": "വാച്ചിന്", "nte": "വാച്ചിന്റെ", "il": "വാച്ചിൽ", "ninnu": "വാച്ചിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "vāccukaḷ", "e": "vāccine", "kku": "vāccin", "nte": "vāccinṟe", "il": "vāccil", "ninnu": "vāccil ninn" }
+    - word: "ml-0365"
+      forms: { "plural": "കണ്ണടകൾ", "plural-mar": null, "oblique": null, "e": "കണ്ണടയെ", "kku": "കണ്ണടയ്ക്ക്", "nte": "കണ്ണടയുടെ", "il": "കണ്ണടയിൽ", "ninnu": "കണ്ണടയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kaṇṇaṭakaḷ", "e": "kaṇṇaṭaye", "kku": "kaṇṇaṭaykk", "nte": "kaṇṇaṭayuṭe", "il": "kaṇṇaṭayil", "ninnu": "kaṇṇaṭayil ninn" }
+    - word: "ml-0366"
+      forms: { "plural": "കുടകൾ", "plural-mar": null, "oblique": null, "e": "കുടയെ", "kku": "കുടയ്ക്ക്", "nte": "കുടയുടെ", "il": "കുടയിൽ", "ninnu": "കുടയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kuṭakaḷ", "e": "kuṭaye", "kku": "kuṭaykk", "nte": "kuṭayuṭe", "il": "kuṭayil", "ninnu": "kuṭayil ninn" }
+    - word: "ml-0367"
+      forms: { "plural": "കുപ്പികൾ", "plural-mar": null, "oblique": null, "e": "കുപ്പിയെ", "kku": "കുപ്പിക്ക്", "nte": "കുപ്പിയുടെ", "il": "കുപ്പിയിൽ", "ninnu": "കുപ്പിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kuppikaḷ", "e": "kuppiye", "kku": "kuppikk", "nte": "kuppiyuṭe", "il": "kuppiyil", "ninnu": "kuppiyil ninn" }
+    - word: "ml-0368"
+      forms: { "plural": "കപ്പുകൾ", "plural-mar": null, "oblique": null, "e": "കപ്പിനെ", "kku": "കപ്പിന്", "nte": "കപ്പിന്റെ", "il": "കപ്പിൽ", "ninnu": "കപ്പിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kappukaḷ", "e": "kappine", "kku": "kappin", "nte": "kappinṟe", "il": "kappil", "ninnu": "kappil ninn" }
+    - word: "ml-0369"
+      forms: { "plural": "പ്ലേറ്റുകൾ", "plural-mar": null, "oblique": null, "e": "പ്ലേറ്റിനെ", "kku": "പ്ലേറ്റിന്", "nte": "പ്ലേറ്റിന്റെ", "il": "പ്ലേറ്റിൽ", "ninnu": "പ്ലേറ്റിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "plēṟṟukaḷ", "e": "plēṟṟine", "kku": "plēṟṟin", "nte": "plēṟṟinṟe", "il": "plēṟṟil", "ninnu": "plēṟṟil ninn" }
+    - word: "ml-0370"
+      forms: { "plural": "സ്പൂണുകൾ", "plural-mar": null, "oblique": null, "e": "സ്പൂണിനെ", "kku": "സ്പൂണിന്", "nte": "സ്പൂണിന്റെ", "il": "സ്പൂണിൽ", "ninnu": "സ്പൂണിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "spūṇukaḷ", "e": "spūṇine", "kku": "spūṇin", "nte": "spūṇinṟe", "il": "spūṇil", "ninnu": "spūṇil ninn" }
+    - word: "ml-0371"
+      forms: { "plural": "പെട്ടികൾ", "plural-mar": null, "oblique": null, "e": "പെട്ടിയെ", "kku": "പെട്ടിക്ക്", "nte": "പെട്ടിയുടെ", "il": "പെട്ടിയിൽ", "ninnu": "പെട്ടിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "peṭṭikaḷ", "e": "peṭṭiye", "kku": "peṭṭikk", "nte": "peṭṭiyuṭe", "il": "peṭṭiyil", "ninnu": "peṭṭiyil ninn" }
+    - word: "ml-0372"
+      forms: { "plural": "തുണികൾ", "plural-mar": null, "oblique": null, "e": "തുണിയെ", "kku": "തുണിക്ക്", "nte": "തുണിയുടെ", "il": "തുണിയിൽ", "ninnu": "തുണിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "tuṇikaḷ", "e": "tuṇiye", "kku": "tuṇikk", "nte": "tuṇiyuṭe", "il": "tuṇiyil", "ninnu": "tuṇiyil ninn" }
+    - word: "ml-0373"
+      forms: { "plural": "കണ്ണാടികൾ", "plural-mar": null, "oblique": null, "e": "കണ്ണാടിയെ", "kku": "കണ്ണാടിക്ക്", "nte": "കണ്ണാടിയുടെ", "il": "കണ്ണാടിയിൽ", "ninnu": "കണ്ണാടിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kaṇṇāṭikaḷ", "e": "kaṇṇāṭiye", "kku": "kaṇṇāṭikk", "nte": "kaṇṇāṭiyuṭe", "il": "kaṇṇāṭiyil", "ninnu": "kaṇṇāṭiyil ninn" }
+    - word: "ml-0374"
+      forms: { "plural": "കിടക്കകൾ", "plural-mar": null, "oblique": null, "e": "കിടക്കയെ", "kku": "കിടക്കയ്ക്ക്", "nte": "കിടക്കയുടെ", "il": "കിടക്കയിൽ", "ninnu": "കിടക്കയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kiṭakkakaḷ", "e": "kiṭakkaye", "kku": "kiṭakkaykk", "nte": "kiṭakkayuṭe", "il": "kiṭakkayil", "ninnu": "kiṭakkayil ninn" }
+    - word: "ml-0375"
+      forms: { "plural": "വാതിലുകൾ", "plural-mar": null, "oblique": null, "e": "വാതിലിനെ", "kku": "വാതിലിന്", "nte": "വാതിലിന്റെ", "il": "വാതിലിൽ", "ninnu": "വാതിലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "vātilukaḷ", "e": "vātiline", "kku": "vātilin", "nte": "vātilinṟe", "il": "vātilil", "ninnu": "vātilil ninn" }
+    - word: "ml-0376"
+      forms: { "plural": "ജനലുകൾ", "plural-mar": null, "oblique": null, "e": "ജനലിനെ", "kku": "ജനലിന്", "nte": "ജനലിന്റെ", "il": "ജനലിൽ", "ninnu": "ജനലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "janalukaḷ", "e": "janaline", "kku": "janalin", "nte": "janalinṟe", "il": "janalil", "ninnu": "janalil ninn" }
+    - word: "ml-0377"
+      forms: { "plural": "ടിവികൾ", "plural-mar": null, "oblique": null, "e": "ടിവിയെ", "kku": "ടിവിക്ക്", "nte": "ടിവിയുടെ", "il": "ടിവിയിൽ", "ninnu": "ടിവിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "ṭivikaḷ", "e": "ṭiviye", "kku": "ṭivikk", "nte": "ṭiviyuṭe", "il": "ṭiviyil", "ninnu": "ṭiviyil ninn" }
+    - word: "ml-0378"
+      forms: { "plural": "ഫാനുകൾ", "plural-mar": null, "oblique": null, "e": "ഫാനിനെ", "kku": "ഫാനിന്", "nte": ["ഫാനിന്റെ", "ഫാന്റെ"], "il": "ഫാനിൽ", "ninnu": "ഫാനിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "phānukaḷ", "e": "phānine", "kku": "phānin", "nte": ["phāninṟe", "phānṟe"], "il": "phānil", "ninnu": "phānil ninn" }
+    - word: "ml-0379"
+      forms: { "plural": "ലൈറ്റുകൾ", "plural-mar": null, "oblique": null, "e": "ലൈറ്റിനെ", "kku": "ലൈറ്റിന്", "nte": "ലൈറ്റിന്റെ", "il": "ലൈറ്റിൽ", "ninnu": "ലൈറ്റിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "laiṟṟukaḷ", "e": "laiṟṟine", "kku": "laiṟṟin", "nte": "laiṟṟinṟe", "il": "laiṟṟil", "ninnu": "laiṟṟil ninn" }
+    - word: "ml-0380"
+      forms: { "plural": "പേപ്പറുകൾ", "plural-mar": null, "oblique": null, "e": "പേപ്പറിനെ", "kku": "പേപ്പറിന്", "nte": "പേപ്പറിന്റെ", "il": "പേപ്പറിൽ", "ninnu": "പേപ്പറിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pēppaṟukaḷ", "e": "pēppaṟine", "kku": "pēppaṟin", "nte": "pēppaṟinṟe", "il": "pēppaṟil", "ninnu": "pēppaṟil ninn" }
+    - word: "ml-0381"
+      forms: { "plural": "ചീപ്പുകൾ", "plural-mar": null, "oblique": null, "e": "ചീപ്പിനെ", "kku": "ചീപ്പിന്", "nte": "ചീപ്പിന്റെ", "il": "ചീപ്പിൽ", "ninnu": "ചീപ്പിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "cīppukaḷ", "e": "cīppine", "kku": "cīppin", "nte": "cīppinṟe", "il": "cīppil", "ninnu": "cīppil ninn" }
+    - word: "ml-0382"
+      forms: { "plural": "ബ്രഷുകൾ", "plural-mar": null, "oblique": null, "e": "ബ്രഷിനെ", "kku": "ബ്രഷിന്", "nte": "ബ്രഷിന്റെ", "il": "ബ്രഷിൽ", "ninnu": "ബ്രഷിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "braṣukaḷ", "e": "braṣine", "kku": "braṣin", "nte": "braṣinṟe", "il": "braṣil", "ninnu": "braṣil ninn" }
+    - word: "ml-0383"
+      forms: { "plural": "കത്തികൾ", "plural-mar": null, "oblique": null, "e": "കത്തിയെ", "kku": "കത്തിക്ക്", "nte": "കത്തിയുടെ", "il": "കത്തിയിൽ", "ninnu": "കത്തിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kattikaḷ", "e": "kattiye", "kku": "kattikk", "nte": "kattiyuṭe", "il": "kattiyil", "ninnu": "kattiyil ninn" }
+    - word: "ml-0384"
+      forms: { "plural": "ചട്ടികൾ", "plural-mar": null, "oblique": null, "e": "ചട്ടിയെ", "kku": "ചട്ടിക്ക്", "nte": "ചട്ടിയുടെ", "il": "ചട്ടിയിൽ", "ninnu": "ചട്ടിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "caṭṭikaḷ", "e": "caṭṭiye", "kku": "caṭṭikk", "nte": "caṭṭiyuṭe", "il": "caṭṭiyil", "ninnu": "caṭṭiyil ninn" }
+    - word: "ml-0385"
+      forms: { "plural": "സാധനങ്ങൾ", "plural-mar": null, "oblique": "സാധനത്ത്", "e": "സാധനത്തിനെ", "kku": "സാധനത്തിന്", "nte": "സാധനത്തിന്റെ", "il": "സാധനത്തിൽ", "ninnu": "സാധനത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "sādhanaṅṅaḷ", "oblique": "sādhanatt", "e": "sādhanattine", "kku": "sādhanattin", "nte": "sādhanattinṟe", "il": "sādhanattil", "ninnu": "sādhanattil ninn" }
+    - word: "ml-1540"
+      forms: { "plural": "ഗ്ലാസുകൾ", "plural-mar": null, "oblique": null, "e": "ഗ്ലാസിനെ", "kku": "ഗ്ലാസിന്", "nte": "ഗ്ലാസിന്റെ", "il": "ഗ്ലാസിൽ", "ninnu": "ഗ്ലാസിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "glāsukaḷ", "e": "glāsine", "kku": "glāsin", "nte": "glāsinṟe", "il": "glāsil", "ninnu": "glāsil ninn" }
+    - word: "ml-1541"
+      forms: { "plural": "ഫോർക്കുകൾ", "plural-mar": null, "oblique": null, "e": "ഫോർക്കിനെ", "kku": "ഫോർക്കിന്", "nte": "ഫോർക്കിന്റെ", "il": "ഫോർക്കിൽ", "ninnu": "ഫോർക്കിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "phōrkkukaḷ", "e": "phōrkkine", "kku": "phōrkkin", "nte": "phōrkkinṟe", "il": "phōrkkil", "ninnu": "phōrkkil ninn" }
+    - word: "ml-1542"
+      forms: { "plural": "പാത്രങ്ങൾ", "plural-mar": null, "oblique": "പാത്രത്ത്", "e": "പാത്രത്തിനെ", "kku": "പാത്രത്തിന്", "nte": "പാത്രത്തിന്റെ", "il": "പാത്രത്തിൽ", "ninnu": "പാത്രത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pātraṅṅaḷ", "oblique": "pātratt", "e": "pātrattine", "kku": "pātrattin", "nte": "pātrattinṟe", "il": "pātrattil", "ninnu": "pātrattil ninn" }
+    - word: "ml-1543"
+      forms: { "plural": "പൂട്ടുകൾ", "plural-mar": null, "oblique": null, "e": "പൂട്ടിനെ", "kku": "പൂട്ടിന്", "nte": "പൂട്ടിന്റെ", "il": "പൂട്ടിൽ", "ninnu": "പൂട്ടിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pūṭṭukaḷ", "e": "pūṭṭine", "kku": "pūṭṭin", "nte": "pūṭṭinṟe", "il": "pūṭṭil", "ninnu": "pūṭṭil ninn" }
+    - word: "ml-1544"
+      forms: { "plural": "കമ്പ്യൂട്ടറുകൾ", "plural-mar": null, "oblique": null, "e": "കമ്പ്യൂട്ടറിനെ", "kku": "കമ്പ്യൂട്ടറിന്", "nte": "കമ്പ്യൂട്ടറിന്റെ", "il": "കമ്പ്യൂട്ടറിൽ", "ninnu": "കമ്പ്യൂട്ടറിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kampyūṭṭaṟukaḷ", "e": "kampyūṭṭaṟine", "kku": "kampyūṭṭaṟin", "nte": "kampyūṭṭaṟinṟe", "il": "kampyūṭṭaṟil", "ninnu": "kampyūṭṭaṟil ninn" }
+    - word: "ml-1545"
+      forms: { "plural": "ക്യാമറകൾ", "plural-mar": null, "oblique": null, "e": "ക്യാമറയെ", "kku": "ക്യാമറയ്ക്ക്", "nte": "ക്യാമറയുടെ", "il": "ക്യാമറയിൽ", "ninnu": "ക്യാമറയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kyāmaṟakaḷ", "e": "kyāmaṟaye", "kku": "kyāmaṟaykk", "nte": "kyāmaṟayuṭe", "il": "kyāmaṟayil", "ninnu": "kyāmaṟayil ninn" }
+    - word: "ml-1546"
+      forms: { "plural": "വിളക്കുകൾ", "plural-mar": null, "oblique": null, "e": "വിളക്കിനെ", "kku": "വിളക്കിന്", "nte": "വിളക്കിന്റെ", "il": "വിളക്കിൽ", "ninnu": "വിളക്കിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "viḷakkukaḷ", "e": "viḷakkine", "kku": "viḷakkin", "nte": "viḷakkinṟe", "il": "viḷakkil", "ninnu": "viḷakkil ninn" }
+    - word: "ml-1547"
+      forms: { "plural": "സൂചികൾ", "plural-mar": null, "oblique": null, "e": "സൂചിയെ", "kku": "സൂചിക്ക്", "nte": "സൂചിയുടെ", "il": "സൂചിയിൽ", "ninnu": "സൂചിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "sūcikaḷ", "e": "sūciye", "kku": "sūcikk", "nte": "sūciyuṭe", "il": "sūciyil", "ninnu": "sūciyil ninn" }
+    - word: "ml-1548"
+      forms: { "plural": "കയറുകൾ", "plural-mar": null, "oblique": null, "e": "കയറിനെ", "kku": "കയറിന്", "nte": "കയറിന്റെ", "il": "കയറിൽ", "ninnu": "കയറിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "kayaṟukaḷ", "e": "kayaṟine", "kku": "kayaṟin", "nte": "kayaṟinṟe", "il": "kayaṟil", "ninnu": "kayaṟil ninn" }
+    - word: "ml-0131"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "ഉച്ചയ്ക്ക്", "nte": "ഉച്ചയുടെ", "il": "ഉച്ചയിൽ", "ninnu": "ഉച്ചയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "uccaykk", "nte": "uccayuṭe", "il": "uccayil", "ninnu": "uccayil ninn" }
+    - word: "ml-0132"
+      forms: { "plural": null, "plural-mar": null, "oblique": "വൈകുന്നേരത്ത്", "e": null, "kku": "വൈകുന്നേരത്തിന്", "nte": "വൈകുന്നേരത്തിന്റെ", "il": "വൈകുന്നേരത്തിൽ", "ninnu": "വൈകുന്നേരത്തിൽ നിന്ന്", "otu": null }
+      readings: { "oblique": "vaikunnēratt", "kku": "vaikunnērattin", "nte": "vaikunnērattinṟe", "il": "vaikunnērattil", "ninnu": "vaikunnērattil ninn" }
+    - word: "ml-0133"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "രാത്രിക്ക്", "nte": "രാത്രിയുടെ", "il": "രാത്രിയിൽ", "ninnu": "രാത്രിയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "rātrikk", "nte": "rātriyuṭe", "il": "rātriyil", "ninnu": "rātriyil ninn" }
+    - word: "ml-0135"
+      forms: { "plural": "മണികൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "മണിക്ക്", "nte": "മണിയുടെ", "il": "മണിയിൽ", "ninnu": "മണിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "maṇikaḷ", "kku": "maṇikk", "nte": "maṇiyuṭe", "il": "maṇiyil", "ninnu": "maṇiyil ninn" }
+    - word: "ml-0136"
+      forms: { "plural": "മിനിറ്റുകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "മിനിറ്റിന്", "nte": "മിനിറ്റിന്റെ", "il": "മിനിറ്റിൽ", "ninnu": "മിനിറ്റിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "miniṟṟukaḷ", "kku": "miniṟṟin", "nte": "miniṟṟinṟe", "il": "miniṟṟil", "ninnu": "miniṟṟil ninn" }
+    - word: "ml-0137"
+      forms: { "plural": null, "plural-mar": null, "oblique": "സമയത്ത്", "e": null, "kku": "സമയത്തിന്", "nte": "സമയത്തിന്റെ", "il": "സമയത്തിൽ", "ninnu": "സമയത്തിൽ നിന്ന്", "otu": null }
+      readings: { "oblique": "samayatt", "kku": "samayattin", "nte": "samayattinṟe", "il": "samayattil", "ninnu": "samayattil ninn" }
+    - word: "ml-0138"
+      forms: { "plural": null, "plural-mar": null, "oblique": null, "e": null, "kku": "ആഴ്ചയ്ക്ക്", "nte": "ആഴ്ചയുടെ", "il": "ആഴ്ചയിൽ", "ninnu": "ആഴ്ചയിൽ നിന്ന്", "otu": null }
+      readings: { "kku": "āḻcaykk", "nte": "āḻcayuṭe", "il": "āḻcayil", "ninnu": "āḻcayil ninn" }
+    - word: "ml-1065"
+      forms: { "plural": "ദിവസങ്ങൾ", "plural-mar": null, "oblique": "ദിവസത്ത്", "e": null, "kku": "ദിവസത്തിന്", "nte": "ദിവസത്തിന്റെ", "il": "ദിവസത്തിൽ", "ninnu": "ദിവസത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "divasaṅṅaḷ", "oblique": "divasatt", "kku": "divasattin", "nte": "divasattinṟe", "il": "divasattil", "ninnu": "divasattil ninn" }
+    - word: "ml-1066"
+      forms: { "plural": "മാസങ്ങൾ", "plural-mar": null, "oblique": "മാസത്ത്", "e": null, "kku": "മാസത്തിന്", "nte": "മാസത്തിന്റെ", "il": "മാസത്തിൽ", "ninnu": "മാസത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "māsaṅṅaḷ", "oblique": "māsatt", "kku": "māsattin", "nte": "māsattinṟe", "il": "māsattil", "ninnu": "māsattil ninn" }
+    - word: "ml-1067"
+      forms: { "plural": "വർഷങ്ങൾ", "plural-mar": null, "oblique": "വർഷത്ത്", "e": null, "kku": "വർഷത്തിന്", "nte": "വർഷത്തിന്റെ", "il": "വർഷത്തിൽ", "ninnu": "വർഷത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "varṣaṅṅaḷ", "oblique": "varṣatt", "kku": "varṣattin", "nte": "varṣattinṟe", "il": "varṣattil", "ninnu": "varṣattil ninn" }
+    - word: "ml-1068"
+      forms: { "plural": "മറ്റന്നാളുകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "മറ്റന്നാളിന്", "nte": "മറ്റന്നാളിന്റെ", "il": "മറ്റന്നാളിൽ", "ninnu": "മറ്റന്നാളിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "maṟṟannāḷukaḷ", "kku": "maṟṟannāḷin", "nte": "maṟṟannāḷinṟe", "il": "maṟṟannāḷil", "ninnu": "maṟṟannāḷil ninn" }
+    - word: "ml-1069"
+      forms: { "plural": "പകലുകൾ", "plural-mar": null, "oblique": null, "e": null, "kku": "പകലിന്", "nte": "പകലിന്റെ", "il": "പകലിൽ", "ninnu": "പകലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "pakalukaḷ", "kku": "pakalin", "nte": "pakalinṟe", "il": "pakalil", "ninnu": "pakalil ninn" }
+    - word: "ml-0252"
+      forms: { "plural": "ബസുകൾ", "plural-mar": null, "oblique": null, "e": "ബസിനെ", "kku": "ബസിന്", "nte": "ബസിന്റെ", "il": "ബസിൽ", "ninnu": "ബസിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "basukaḷ", "e": "basine", "kku": "basin", "nte": "basinṟe", "il": "basil", "ninnu": "basil ninn" }
+    - word: "ml-0253"
+      forms: { "plural": "ഓട്ടോകൾ", "plural-mar": null, "oblique": null, "e": "ഓട്ടോയെ", "kku": "ഓട്ടോയ്ക്ക്", "nte": "ഓട്ടോയുടെ", "il": "ഓട്ടോയിൽ", "ninnu": "ഓട്ടോയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "ōṭṭōkaḷ", "e": "ōṭṭōye", "kku": "ōṭṭōykk", "nte": "ōṭṭōyuṭe", "il": "ōṭṭōyil", "ninnu": "ōṭṭōyil ninn" }
+    - word: "ml-0254"
+      forms: { "plural": "ട്രെയിനുകൾ", "plural-mar": null, "oblique": null, "e": "ട്രെയിനിനെ", "kku": "ട്രെയിനിന്", "nte": "ട്രെയിനിന്റെ", "il": "ട്രെയിനിൽ", "ninnu": "ട്രെയിനിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "ṭreyinukaḷ", "e": "ṭreyinine", "kku": "ṭreyinin", "nte": "ṭreyininṟe", "il": "ṭreyinil", "ninnu": "ṭreyinil ninn" }
+    - word: "ml-0255"
+      forms: { "plural": "വിമാനങ്ങൾ", "plural-mar": null, "oblique": "വിമാനത്ത്", "e": "വിമാനത്തിനെ", "kku": "വിമാനത്തിന്", "nte": "വിമാനത്തിന്റെ", "il": "വിമാനത്തിൽ", "ninnu": "വിമാനത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "vimānaṅṅaḷ", "oblique": "vimānatt", "e": "vimānattine", "kku": "vimānattin", "nte": "vimānattinṟe", "il": "vimānattil", "ninnu": "vimānattil ninn" }
+    - word: "ml-0256"
+      forms: { "plural": "ടാക്സികൾ", "plural-mar": null, "oblique": null, "e": "ടാക്സിയെ", "kku": "ടാക്സിക്ക്", "nte": "ടാക്സിയുടെ", "il": "ടാക്സിയിൽ", "ninnu": "ടാക്സിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "ṭāksikaḷ", "e": "ṭāksiye", "kku": "ṭāksikk", "nte": "ṭāksiyuṭe", "il": "ṭāksiyil", "ninnu": "ṭāksiyil ninn" }
+    - word: "ml-0257"
+      forms: { "plural": "സൈക്കിളുകൾ", "plural-mar": null, "oblique": null, "e": "സൈക്കിളിനെ", "kku": "സൈക്കിളിന്", "nte": "സൈക്കിളിന്റെ", "il": "സൈക്കിളിൽ", "ninnu": "സൈക്കിളിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "saikkiḷukaḷ", "e": "saikkiḷine", "kku": "saikkiḷin", "nte": "saikkiḷinṟe", "il": "saikkiḷil", "ninnu": "saikkiḷil ninn" }
+    - word: "ml-0258"
+      forms: { "plural": "ബോട്ടുകൾ", "plural-mar": null, "oblique": null, "e": "ബോട്ടിനെ", "kku": "ബോട്ടിന്", "nte": "ബോട്ടിന്റെ", "il": "ബോട്ടിൽ", "ninnu": "ബോട്ടിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "bōṭṭukaḷ", "e": "bōṭṭine", "kku": "bōṭṭin", "nte": "bōṭṭinṟe", "il": "bōṭṭil", "ninnu": "bōṭṭil ninn" }
+    - word: "ml-0259"
+      forms: { "plural": "സ്റ്റേഷനുകൾ", "plural-mar": null, "oblique": null, "e": "സ്റ്റേഷനെ", "kku": "സ്റ്റേഷന്", "nte": "സ്റ്റേഷന്റെ", "il": "സ്റ്റേഷനിൽ", "ninnu": "സ്റ്റേഷനിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "sṭēṣanukaḷ", "e": "sṭēṣane", "kku": "sṭēṣan", "nte": "sṭēṣanṟe", "il": "sṭēṣanil", "ninnu": "sṭēṣanil ninn" }
+    - word: "ml-0185"
+      forms: { "plural": "ഓഫീസുകൾ", "plural-mar": null, "oblique": null, "e": "ഓഫീസിനെ", "kku": "ഓഫീസിന്", "nte": "ഓഫീസിന്റെ", "il": "ഓഫീസിൽ", "ninnu": "ഓഫീസിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "ōphīsukaḷ", "e": "ōphīsine", "kku": "ōphīsin", "nte": "ōphīsinṟe", "il": "ōphīsil", "ninnu": "ōphīsil ninn" }
+    - word: "ml-0186"
+      forms: { "plural": "ആശുപത്രികൾ", "plural-mar": null, "oblique": null, "e": "ആശുപത്രിയെ", "kku": "ആശുപത്രിക്ക്", "nte": "ആശുപത്രിയുടെ", "il": "ആശുപത്രിയിൽ", "ninnu": "ആശുപത്രിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "āśupatrikaḷ", "e": "āśupatriye", "kku": "āśupatrikk", "nte": "āśupatriyuṭe", "il": "āśupatriyil", "ninnu": "āśupatriyil ninn" }
+    - word: "ml-0187"
+      forms: { "plural": "സ്കൂളുകൾ", "plural-mar": null, "oblique": null, "e": "സ്കൂളിനെ", "kku": "സ്കൂളിന്", "nte": "സ്കൂളിന്റെ", "il": "സ്കൂളിൽ", "ninnu": "സ്കൂളിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "skūḷukaḷ", "e": "skūḷine", "kku": "skūḷin", "nte": "skūḷinṟe", "il": "skūḷil", "ninnu": "skūḷil ninn" }
+    - word: "ml-0188"
+      forms: { "plural": "അധ്യാപകർ", "plural-mar": null, "oblique": null, "e": "അധ്യാപകനെ", "kku": "അധ്യാപകന്", "nte": "അധ്യാപകന്റെ", "il": null, "ninnu": null, "otu": "അധ്യാപകനോട്" }
+      readings: { "plural": "adhyāpakar", "e": "adhyāpakane", "kku": "adhyāpakan", "nte": "adhyāpakanṟe", "otu": "adhyāpakanōṭ" }
+    - word: "ml-0189"
+      forms: { "plural": null, "plural-mar": "അധ്യാപികമാർ", "oblique": null, "e": "അധ്യാപികയെ", "kku": "അധ്യാപികയ്ക്ക്", "nte": "അധ്യാപികയുടെ", "il": null, "ninnu": null, "otu": "അധ്യാപികയോട്" }
+      readings: { "plural-mar": "adhyāpikamār", "e": "adhyāpikaye", "kku": "adhyāpikaykk", "nte": "adhyāpikayuṭe", "otu": "adhyāpikayōṭ" }
+    - word: "ml-0190"
+      forms: { "plural": null, "plural-mar": "ഡോക്ടർമാർ", "oblique": null, "e": "ഡോക്ടറെ", "kku": "ഡോക്ടർക്ക്", "nte": "ഡോക്ടറുടെ", "il": null, "ninnu": null, "otu": "ഡോക്ടറോട്" }
+      readings: { "plural-mar": "ḍōkṭarmār", "e": "ḍōkṭaṟe", "kku": "ḍōkṭarkk", "nte": "ḍōkṭaṟuṭe", "otu": "ḍōkṭaṟōṭ" }
+    - word: "ml-0191"
+      forms: { "plural": null, "plural-mar": "നഴ്സുമാർ", "oblique": null, "e": "നഴ്സിനെ", "kku": "നഴ്സിന്", "nte": "നഴ്സിന്റെ", "il": null, "ninnu": null, "otu": "നഴ്സിനോട്" }
+      readings: { "plural-mar": "naḻsumār", "e": "naḻsine", "kku": "naḻsin", "nte": "naḻsinṟe", "otu": "naḻsinōṭ" }
+    - word: "ml-0192"
+      forms: { "plural": "കർഷകർ", "plural-mar": null, "oblique": null, "e": "കർഷകനെ", "kku": "കർഷകന്", "nte": "കർഷകന്റെ", "il": null, "ninnu": null, "otu": "കർഷകനോട്" }
+      readings: { "plural": "karṣakar", "e": "karṣakane", "kku": "karṣakan", "nte": "karṣakanṟe", "otu": "karṣakanōṭ" }
+    - word: "ml-0193"
+      forms: { "plural": "പാചകക്കാർ", "plural-mar": null, "oblique": null, "e": "പാചകക്കാരനെ", "kku": "പാചകക്കാരന്", "nte": "പാചകക്കാരന്റെ", "il": null, "ninnu": null, "otu": "പാചകക്കാരനോട്" }
+      readings: { "plural": "pācakakkār", "e": "pācakakkārane", "kku": "pācakakkāran", "nte": "pācakakkāranṟe", "otu": "pācakakkāranōṭ" }
+    - word: "ml-0194"
+      forms: { "plural": "കച്ചവടക്കാർ", "plural-mar": null, "oblique": null, "e": "കച്ചവടക്കാരനെ", "kku": "കച്ചവടക്കാരന്", "nte": "കച്ചവടക്കാരന്റെ", "il": null, "ninnu": null, "otu": "കച്ചവടക്കാരനോട്" }
+      readings: { "plural": "kaccavaṭakkār", "e": "kaccavaṭakkārane", "kku": "kaccavaṭakkāran", "nte": "kaccavaṭakkāranṟe", "otu": "kaccavaṭakkāranōṭ" }
+    - word: "ml-0195"
+      forms: { "plural": "മെക്കാനിക്കുകൾ", "plural-mar": null, "oblique": null, "e": "മെക്കാനിക്കിനെ", "kku": "മെക്കാനിക്കിന്", "nte": "മെക്കാനിക്കിന്റെ", "il": null, "ninnu": null, "otu": "മെക്കാനിക്കിനോട്" }
+      readings: { "plural": "mekkānikkukaḷ", "e": "mekkānikkine", "kku": "mekkānikkin", "nte": "mekkānikkinṟe", "otu": "mekkānikkinōṭ" }
+    - word: "ml-0196"
+      forms: { "plural": null, "plural-mar": "എഞ്ചിനീയർമാർ", "oblique": null, "e": "എഞ്ചിനീയറെ", "kku": "എഞ്ചിനീയർക്ക്", "nte": "എഞ്ചിനീയറുടെ", "il": null, "ninnu": null, "otu": "എഞ്ചിനീയറോട്" }
+      readings: { "plural-mar": "eñcinīyarmār", "e": "eñcinīyaṟe", "kku": "eñcinīyarkk", "nte": "eñcinīyaṟuṭe", "otu": "eñcinīyaṟōṭ" }
+    - word: "ml-0197"
+      forms: { "plural": "പോലീസുകാർ", "plural-mar": null, "oblique": null, "e": "പോലീസുകാരനെ", "kku": "പോലീസുകാരന്", "nte": "പോലീസുകാരന്റെ", "il": null, "ninnu": null, "otu": "പോലീസുകാരനോട്" }
+      readings: { "plural": "pōlīsukār", "e": "pōlīsukārane", "kku": "pōlīsukāran", "nte": "pōlīsukāranṟe", "otu": "pōlīsukāranōṭ" }
+    - word: "ml-0198"
+      forms: { "plural": "ബാങ്കുകൾ", "plural-mar": null, "oblique": null, "e": "ബാങ്കിനെ", "kku": "ബാങ്കിന്", "nte": "ബാങ്കിന്റെ", "il": "ബാങ്കിൽ", "ninnu": "ബാങ്കിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "bāṅkukaḷ", "e": "bāṅkine", "kku": "bāṅkin", "nte": "bāṅkinṟe", "il": "bāṅkil", "ninnu": "bāṅkil ninn" }
+    - word: "ml-0199"
+      forms: { "plural": "ഫാക്ടറികൾ", "plural-mar": null, "oblique": null, "e": "ഫാക്ടറിയെ", "kku": "ഫാക്ടറിക്ക്", "nte": "ഫാക്ടറിയുടെ", "il": "ഫാക്ടറിയിൽ", "ninnu": "ഫാക്ടറിയിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "phākṭaṟikaḷ", "e": "phākṭaṟiye", "kku": "phākṭaṟikk", "nte": "phākṭaṟiyuṭe", "il": "phākṭaṟiyil", "ninnu": "phākṭaṟiyil ninn" }
+    - word: "ml-0200"
+      forms: { "plural": "തൊഴിലുകൾ", "plural-mar": null, "oblique": null, "e": "തൊഴിലിനെ", "kku": "തൊഴിലിന്", "nte": "തൊഴിലിന്റെ", "il": "തൊഴിലിൽ", "ninnu": "തൊഴിലിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "toḻilukaḷ", "e": "toḻiline", "kku": "toḻilin", "nte": "toḻilinṟe", "il": "toḻilil", "ninnu": "toḻilil ninn" }
+    - word: "ml-0201"
+      forms: { "plural": "ശമ്പളങ്ങൾ", "plural-mar": null, "oblique": "ശമ്പളത്ത്", "e": "ശമ്പളത്തിനെ", "kku": "ശമ്പളത്തിന്", "nte": "ശമ്പളത്തിന്റെ", "il": "ശമ്പളത്തിൽ", "ninnu": "ശമ്പളത്തിൽ നിന്ന്", "otu": null }
+      readings: { "plural": "śampaḷaṅṅaḷ", "oblique": "śampaḷatt", "e": "śampaḷattine", "kku": "śampaḷattin", "nte": "śampaḷattinṟe", "il": "śampaḷattil", "ninnu": "śampaḷattil ninn" }
+    - word: "ml-0202"
+      forms: { "plural": "വിദ്യാർത്ഥികൾ", "plural-mar": null, "oblique": null, "e": "വിദ്യാർത്ഥിയെ", "kku": "വിദ്യാർത്ഥിക്ക്", "nte": "വിദ്യാർത്ഥിയുടെ", "il": null, "ninnu": null, "otu": "വിദ്യാർത്ഥിയോട്" }
+      readings: { "plural": "vidyārtthikaḷ", "e": "vidyārtthiye", "kku": "vidyārtthikk", "nte": "vidyārtthiyuṭe", "otu": "vidyārtthiyōṭ" }
+    - word: "ml-0203"
+      forms: { "plural": "ജോലിക്കാർ", "plural-mar": null, "oblique": null, "e": "ജോലിക്കാരനെ", "kku": "ജോലിക്കാരന്", "nte": "ജോലിക്കാരന്റെ", "il": null, "ninnu": null, "otu": "ജോലിക്കാരനോട്" }
+      readings: { "plural": "jōlikkār", "e": "jōlikkārane", "kku": "jōlikkāran", "nte": "jōlikkāranṟe", "otu": "jōlikkāranōṭ" }
+rules:
+  - id: "ml-rule-plural"
+    slots: ["plural"]
+    words: [{ word: "-കൾ", reading: "-kaḷ" }, { word: "വീട്", reading: "vīṭ" }, { word: "വീടുകൾ", reading: "vīṭukaḷ" }, { word: "മീൻ", reading: "mīṉ" }, { word: "മീനുകൾ", reading: "mīnukaḷ" }, { word: "കുട്ടി", reading: "kuṭṭi" }, { word: "കുട്ടികൾ", reading: "kuṭṭikaḷ" }, { word: "-ങ്ങൾ", reading: "-ṅṅaḷ" }, { word: "പുസ്തകം", reading: "pustakaṁ" }, { word: "പുസ്തകങ്ങൾ", reading: "pustakaṅṅaḷ" }, { word: "നായ", reading: "nāya" }, { word: "നായ്ക്കൾ", reading: "nāykkaḷ" }, { word: "നായകൾ", reading: "nāyakaḷ" }]
+  - id: "ml-rule-plural-mar"
+    slots: ["plural-mar"]
+    words: [{ word: "-മാർ", reading: "-māṟ" }, { word: "അമ്മ", reading: "amma" }, { word: "അമ്മമാർ", reading: "ammamār" }, { word: "-ന്മാർ", reading: "-nmāṟ" }, { word: "അച്ഛൻ", reading: "acchaṉ" }, { word: "അച്ഛന്മാർ", reading: "acchanmār" }, { word: "-അർ", reading: "-aṟ" }, { word: "മനുഷ്യൻ", reading: "manuṣyaṉ" }, { word: "മനുഷ്യർ", reading: "manuṣyar" }, { word: "കുട്ടി", reading: "kuṭṭi" }, { word: "കുട്ടികൾ", reading: "kuṭṭikaḷ" }]
+  - id: "ml-rule-oblique"
+    slots: ["oblique"]
+    words: [{ word: "-ത്ത്", reading: "-tt" }, { word: "പുസ്തകം", reading: "pustakaṁ" }, { word: "പുസ്തകത്ത്", reading: "pustakatt" }, { word: "പുസ്തകത്തിൽ", reading: "pustakattil" }, { word: "വീട്", reading: "vīṭ" }, { word: "വീട്ട്", reading: "vīṭṭ" }, { word: "വീട്ടിൽ", reading: "vīṭṭil" }]
+  - id: "ml-rule-e"
+    slots: ["e"]
+    words: [{ word: "-എ", reading: "-e" }, { word: "അമ്മ", reading: "amma" }, { word: "അമ്മയെ", reading: "ammaye" }, { word: "കുട്ടി", reading: "kuṭṭi" }, { word: "കുട്ടിയെ", reading: "kuṭṭiye" }, { word: "അച്ഛൻ", reading: "acchaṉ" }, { word: "അച്ഛനെ", reading: "acchane" }, { word: "സ്കൂൾ", reading: "skūḷ" }, { word: "സ്കൂളിനെ", reading: "skūḷine" }, { word: "പുസ്തകം", reading: "pustakaṁ" }, { word: "പുസ്തകത്തിനെ", reading: "pustakattine" }]
+  - id: "ml-rule-kku"
+    slots: ["kku"]
+    words: [{ word: "-ക്ക്", reading: "-kk" }, { word: "-ന്", reading: "-n" }, { word: "കുട്ടി", reading: "kuṭṭi" }, { word: "കുട്ടിക്ക്", reading: "kuṭṭikk" }, { word: "അമ്മ", reading: "amma" }, { word: "അമ്മയ്ക്ക്", reading: "ammaykk" }, { word: "വീട്", reading: "vīṭ" }, { word: "വീടിന്", reading: "vīṭin" }, { word: "പുസ്തകം", reading: "pustakaṁ" }, { word: "പുസ്തകത്തിന്", reading: "pustakattin" }]
+  - id: "ml-rule-nte"
+    slots: ["nte"]
+    words: [{ word: "-ന്റെ", reading: "-nṟe" }, { word: "-ഉടെ", reading: "-uṭe" }, { word: "അമ്മ", reading: "amma" }, { word: "അമ്മയുടെ", reading: "ammayuṭe" }, { word: "വീട്", reading: "vīṭ" }, { word: "വീടിന്റെ", reading: "vīṭinṟe" }, { word: "അച്ഛൻ", reading: "acchaṉ" }, { word: "അച്ഛന്റെ", reading: "acchanṟe" }, { word: "പുസ്തകം", reading: "pustakaṁ" }, { word: "പുസ്തകത്തിന്റെ", reading: "pustakattinṟe" }]
+  - id: "ml-rule-il"
+    slots: ["il"]
+    words: [{ word: "-ഇൽ", reading: "-il" }, { word: "വീട്", reading: "vīṭ" }, { word: "വീട്ടിൽ", reading: "vīṭṭil" }, { word: "ചായ", reading: "cāya" }, { word: "ചായയിൽ", reading: "cāyayil" }, { word: "ബസ്", reading: "bas" }, { word: "ബസിൽ", reading: "basil" }, { word: "പുസ്തകം", reading: "pustakaṁ" }, { word: "പുസ്തകത്തിൽ", reading: "pustakattil" }]
+  - id: "ml-rule-ninnu"
+    slots: ["ninnu"]
+    words: [{ word: "നിന്ന്", reading: "ninn" }, { word: "വീട്ടിൽ", reading: "vīṭṭil" }, { word: "വീട്ടിൽ നിന്ന്", reading: "vīṭṭil ninn" }, { word: "ബസിൽ", reading: "basil" }, { word: "ബസിൽ നിന്ന്", reading: "basil ninn" }]
+  - id: "ml-rule-otu"
+    slots: ["otu"]
+    words: [{ word: "-ഓട്", reading: "-ōṭ" }, { word: "അമ്മ", reading: "amma" }, { word: "അമ്മയോട്", reading: "ammayōṭ" }, { word: "അച്ഛൻ", reading: "acchaṉ" }, { word: "അച്ഛനോട്", reading: "acchanōṭ" }, { word: "പശു", reading: "paśu" }, { word: "പശുവിനോട്", reading: "paśuvinōṭ" }]
