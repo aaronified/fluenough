@@ -859,7 +859,8 @@ units:
       - { id: "it-was-done", text: { "en": "Saying what was done, without saying by whom" } }
     reading_passages:
       - { id: "notice-board", text: { "en": "A notice board with announcements" } }
-  - planned: { id: "ta-abstract-words", theme: "abstract-words", words: 60 }
+  - decks: ["ta-abstract-words", "ta-abstract-words-sentences", "*"]
+    words: 60
     listening_passages:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:
