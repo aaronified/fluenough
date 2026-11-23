@@ -1,0 +1,47 @@
+schema: 1
+id: "ta-en-reading-school"
+name: "Reading: a school timetable"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A school timetable for the week, using the school words taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-timetable"
+    title: "A school timetable"
+    sentences:
+      - text: "திங்கள் தமிழ் வகுப்பு."
+        reading: "tiṅkaḷ tamiḻ vakuppu."
+        ipa: "t̪iŋkaɭ t̪amiɻ ʋakuppu"
+      - text: "செவ்வாய் கணக்கு வகுப்பு."
+        reading: "cevvāy kaṇakku vakuppu."
+        ipa: "seʋʋaːj kaɳakku ʋakuppu"
+      - text: "புதன் அறிவியல் வகுப்பு."
+        reading: "putaṉ aṟiviyal vakuppu."
+        ipa: "put̪an ariʋijal ʋakuppu"
+      - text: "வியாழன் ஆங்கிலம்."
+        reading: "viyāḻaṉ āṅkilam."
+        ipa: "ʋijaːɻan aːŋkilam"
+      - text: "வெள்ளி நூலகம்."
+        reading: "veḷḷi nūlakam."
+        ipa: "ʋeɭɭi nuːlakam"
+    questions:
+      - id: "ta-9926"
+        prompt: { en: "Which class is on Wednesday?" }
+        options:
+          - { en: "Maths" }
+          - { en: "Science" }
+          - { en: "English" }
+        answer: 2
+      - id: "ta-9927"
+        prompt: { en: "On which day is the Tamil class?" }
+        options:
+          - { en: "Monday" }
+          - { en: "Tuesday" }
+          - { en: "Thursday" }
+        answer: 1
+      - id: "ta-9928"
+        prompt: { en: "There is a maths class on Friday." }
+        answer: false
