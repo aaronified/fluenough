@@ -186,3 +186,11 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-hobbies | Gender m is given to வீரர் (ta-1886) and பாடகர் (ta-1887), -ர் nouns that can name women too; is m right? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-journey | Gender m is given to டிரைவர் (ta-2161), ஓட்டுநர் (ta-2162), நடத்துநர் (ta-2163) and வழிகாட்டி (ta-2173), who may be women; is m right? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-workplace | Gender m is given to the 16 person nouns ta-2307 to ta-2322 (ஊழியர், மேலாளர் and others), epicene -ர் or -ி nouns; is m right, as for ஆசிரியர் in ta-work? | Sonnet builder | 2026-11-23 |
+| ta-6000 | ta-culture-1 | Is ஆரளவு (the base given for மாரள) rightly glossed 'depth, great measure' in "நீரினு மாரள வின்றே" (the page's commentary reads it as deeper than sea water)? | ta-culture | 2026-11-23 |
+| ta-6001 | ta-culture-1 | In "நோமென் னெஞ்சே" is the base of நோமென் rightly given as நோ (to ache) with என் (my) fused, and is the doubled ன் of னெஞ்சே the old sandhi spelling? | ta-culture | 2026-11-23 |
+| ta-6004 | ta-culture-1 | In "கல்போற் பிரியலம் என்ற சொல்தாம் மறந்தனர் கொல்லோ தோழி" is சொல்தாம் rightly read as 'the word' plus the respectful 'he', and is the whole line a woman's doubt about her absent lover? | ta-culture | 2026-11-23 |
+| ta-6005 | ta-culture-1 | Is "பொருள் பொருள் ஆகுமோ" rightly rendered 'is the wealth truly wealth' (the repeated word as 'thing' and 'real value')? | ta-culture | 2026-11-23 |
+| ta-6012 | ta-culture-1 | Is நடந்த in "பகடு நடந்த கூழ்" rightly rendered 'won by the work of the oxen' (the page's commentary reads நடந்த as 'ploughed')? | ta-culture | 2026-11-23 |
+| ta-6014 | ta-culture-1 | The page splits கடையகத்தாள் என்று and அறிவிப்பாயே across spaces by the metre; are the bases given for தாளென்று and பாயே a sensible way to teach them? | ta-culture | 2026-11-23 |
+| ta-6016 | ta-culture-1 | Is "மேற்றே உலகின் மெய்ந்நெறி வாழ்க்கை" rightly read 'on them rests the true way of life of the world'? | ta-culture | 2026-11-23 |
+| unit-level | ta-culture-1 | Every ancient work is stored as an anonymous source (no creator) because no page read gives its poet a death year; the attributed poets are named in the notes only. Is that the right treatment? | ta-culture | 2026-11-23 |
