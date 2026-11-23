@@ -1,0 +1,51 @@
+schema: 1
+id: "ta-en-reading-groceries"
+name: "Reading: a grocery list"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short grocery list: what to buy, what is missing and how much is wanted. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-grocery-list"
+    title: "A grocery list"
+    sentences:
+      - text: "அரிசி வாங்கு."
+        reading: "arici vāṅku."
+        ipa: "aɾisi ʋaːŋku"
+      - text: "இரண்டு முட்டை வாங்கு."
+        reading: "iraṇṭu muṭṭai vāṅku."
+        ipa: "iɾaɳʈu muʈʈai ʋaːŋku"
+      - text: "எண்ணெய் வாங்கு."
+        reading: "eṇṇey vāṅku."
+        ipa: "eɳɳej ʋaːŋku"
+      - text: "உப்பு இல்லை."
+        reading: "uppu illai."
+        ipa: "uppu illai"
+      - text: "பழம் கொஞ்சம் வேண்டும்."
+        reading: "paḻam koñcam vēṇṭum."
+        ipa: "paɻam koɲtʃam ʋeːɳʈum"
+    questions:
+      - id: "ta-9744"
+        prompt: { en: "How many eggs are to be bought?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "Twelve" }
+        answer: 2
+      - id: "ta-9745"
+        prompt: { en: "Which thing is not there?" }
+        options:
+          - { en: "Sugar" }
+          - { en: "Salt" }
+          - { en: "Rice" }
+        answer: 2
+      - id: "ta-9746"
+        prompt: { en: "How much fruit is wanted?" }
+        options:
+          - { en: "A lot" }
+          - { en: "A little" }
+          - { en: "Half" }
+        answer: 2

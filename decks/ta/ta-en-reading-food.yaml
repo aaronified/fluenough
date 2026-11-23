@@ -1,0 +1,47 @@
+schema: 1
+id: "ta-en-reading-food"
+name: "Reading: a menu board"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short menu board of dishes and drinks: what costs how much, and what there is not. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-menu-board"
+    title: "A menu board"
+    sentences:
+      - text: "தோசை இருபது."
+        reading: "tōcai irupatu."
+        ipa: "t̪oːsai iɾupat̪u"
+      - text: "இட்லி பத்து."
+        reading: "iṭli pattu."
+        ipa: "iʈli pat̪t̪u"
+      - text: "சாம்பார் இருக்கிறது."
+        reading: "cāmpār irukkiṟatu."
+        ipa: "saːmpaːɾ iɾukkirat̪u"
+      - text: "ரசம் இல்லை."
+        reading: "racam illai."
+        ipa: "ɾasam illai"
+      - text: "காபி இருக்கிறது, தேநீர் இல்லை."
+        reading: "kāpi irukkiṟatu, tēnīr illai."
+        ipa: "kaːpi iɾukkirat̪u t̪eːniːɾ illai"
+    questions:
+      - id: "ta-9741"
+        prompt: { en: "Which is cheaper?" }
+        options:
+          - { en: "Dosa" }
+          - { en: "Idli" }
+          - { en: "Neither" }
+        answer: 2
+      - id: "ta-9742"
+        prompt: { en: "Which dish is not available?" }
+        options:
+          - { en: "Sambar" }
+          - { en: "Rasam" }
+          - { en: "Idli" }
+        answer: 2
+      - id: "ta-9743"
+        prompt: { en: "There is tea on the board." }
+        answer: false

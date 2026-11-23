@@ -1,0 +1,48 @@
+schema: 1
+id: "ta-en-reading-more-verbs"
+name: "Reading: house rules"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short list of house rules written as plain commands, the form used with a friend or a child. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-house-rules"
+    title: "House rules"
+    sentences:
+      - text: "வீட்டில் தமிழ் பேசு."
+        reading: "vīṭṭil tamiḻ pēcu."
+        ipa: "ʋiːʈʈil t̪amiɻ peːsu"
+      - text: "உள்ளே உட்கார்."
+        reading: "uḷḷē uṭkār."
+        ipa: "uɭɭeː uʈkaːɾ"
+      - text: "வெளியே விளையாடு."
+        reading: "veḷiyē viḷaiyāṭu."
+        ipa: "ʋeɭijeː ʋiɭaijaːʈu"
+      - text: "இங்கே நில்."
+        reading: "iṅkē nil."
+        ipa: "iŋkeː nil"
+    questions:
+      - id: "ta-9732"
+        prompt: { en: "Where should you sit?" }
+        options:
+          - { en: "Inside" }
+          - { en: "Outside" }
+          - { en: "At the front" }
+        answer: 1
+      - id: "ta-9733"
+        prompt: { en: "Which language is to be spoken at home?" }
+        options:
+          - { en: "Hindi" }
+          - { en: "English" }
+          - { en: "Tamil" }
+        answer: 3
+      - id: "ta-9734"
+        prompt: { en: "Where should you play?" }
+        options:
+          - { en: "Inside" }
+          - { en: "Outside" }
+          - { en: "Behind the house" }
+        answer: 2

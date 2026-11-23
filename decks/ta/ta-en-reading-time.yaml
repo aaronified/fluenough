@@ -1,0 +1,48 @@
+schema: 1
+id: "ta-en-reading-time"
+name: "Reading: opening hours"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short timetable of days and hours, with the day of the week and the hour said as in the course. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-opening-hours"
+    title: "Opening hours"
+    sentences:
+      - text: "திங்கள் காலை மணி ஒன்பது."
+        reading: "tiṅkaḷ kālai maṇi oṉpatu."
+        ipa: "t̪iŋkaɭ kaːlai maɳi onpat̪u"
+      - text: "வெள்ளி மாலை மணி ஆறு."
+        reading: "veḷḷi mālai maṇi āṟu."
+        ipa: "ʋeɭɭi maːlai maɳi aːru"
+      - text: "சனி, ஞாயிறு இல்லை."
+        reading: "caṉi, ñāyiṟu illai."
+        ipa: "sani ɲaːjiru illai"
+      - text: "இன்று புதன்."
+        reading: "iṉṟu putaṉ."
+        ipa: "inru put̪an"
+    questions:
+      - id: "ta-9726"
+        prompt: { en: "At what hour does Monday start?" }
+        options:
+          - { en: "Eight" }
+          - { en: "Nine" }
+          - { en: "Ten" }
+        answer: 2
+      - id: "ta-9727"
+        prompt: { en: "On which days is there nothing?" }
+        options:
+          - { en: "Monday and Tuesday" }
+          - { en: "Saturday and Sunday" }
+          - { en: "Wednesday only" }
+        answer: 2
+      - id: "ta-9728"
+        prompt: { en: "Which day is it today?" }
+        options:
+          - { en: "Monday" }
+          - { en: "Wednesday" }
+          - { en: "Friday" }
+        answer: 2
