@@ -1,0 +1,411 @@
+schema: 1
+id: "ml-quantities"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "quantities"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0454"
+    target: "ധാരാളം"
+    reading: "dhārāḷaṁ"
+    ipa: "d̪ʱaːɾaːɭam"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വെള്ളം ധാരാളം വേണം."
+        reading: "veḷḷaṁ dhārāḷaṁ vēṇaṁ."
+        ipa: "ʋeɭɭam d̪ʱaːɾaːɭam ʋeːɳam"
+        bases: [{ word: "വെള്ളം", ref: "ml-0005" }, { word: "ധാരാളം", base: "ധാരാളം", reading: "dhārāḷaṁ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "ആളുകൾ ധാരാളം."
+        reading: "āḷukaḷ dhārāḷaṁ."
+        ipa: "aːɭukaɭ d̪ʱaːɾaːɭam"
+        bases: [{ word: "ആളുകൾ", base: "ആളുകൾ", reading: "āḷukaḷ" }, { word: "ധാരാളം", base: "ധാരാളം", reading: "dhārāḷaṁ" }]
+  - id: "ml-0455"
+    target: "കൂടുതൽ"
+    reading: "kūṭutal"
+    ipa: "kuːʈut̪al"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വില കൂടുതൽ."
+        reading: "vila kūṭutal."
+        ipa: "ʋila kuːʈut̪al"
+        bases: [{ word: "വില", ref: "ml-0236" }, { word: "കൂടുതൽ", base: "കൂടുതൽ", reading: "kūṭutal" }]
+      - target: "കൂടുതൽ വേണോ?"
+        reading: "kūṭutal vēṇō?"
+        ipa: "kuːʈut̪al ʋeːɳoː"
+        bases: [{ word: "കൂടുതൽ", base: "കൂടുതൽ", reading: "kūṭutal" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+  - id: "ml-0456"
+    target: "മതി"
+    reading: "mati"
+    ipa: "mət̪i"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇത് മതി."
+        reading: "it mati."
+        ipa: "it̪ mət̪i"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "മതി", base: "മതി", reading: "mati" }]
+      - target: "ഒന്ന് മതി."
+        reading: "onn mati."
+        ipa: "onn mət̪i"
+        bases: [{ word: "ഒന്ന്", ref: "ml-0007" }, { word: "മതി", base: "മതി", reading: "mati" }]
+  - id: "ml-0457"
+    target: "എല്ലാം"
+    reading: "ellāṁ"
+    ipa: "ellaːm"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എല്ലാം വേണം."
+        reading: "ellāṁ vēṇaṁ."
+        ipa: "ellaːm ʋeːɳam"
+        bases: [{ word: "എല്ലാം", base: "എല്ലാം", reading: "ellāṁ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "എല്ലാവരും വരൂ."
+        reading: "ellāvaruṁ varū."
+        ipa: "ellaːʋəɾum ʋəɾuː"
+        bases: [{ word: "എല്ലാവരും", base: "എല്ലാവരും", reading: "ellāvaruṁ" }, { word: "വരൂ", ref: "ml-0010" }]
+  - id: "ml-0458"
+    target: "ചിലത്"
+    reading: "cilat"
+    ipa: "tʃilat̪"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചിലത് വേണം."
+        reading: "cilat vēṇaṁ."
+        ipa: "tʃilat̪ ʋeːɳam"
+        bases: [{ word: "ചിലത്", base: "ചിലത്", reading: "cilat" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "ചിലർ വരും."
+        reading: "cilar varuṁ."
+        ipa: "tʃilaɾ ʋəɾum"
+        bases: [{ word: "ചിലർ", base: "ചിലർ", reading: "cilar" }, { word: "വരും", base: "വരും", reading: "varuṁ" }]
+  - id: "ml-0459"
+    target: "ഒന്നുമില്ല"
+    reading: "onnumilla"
+    ipa: "onnumilla"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇവിടെ ഒന്നുമില്ല."
+        reading: "iviṭe onnumilla."
+        ipa: "iʋiʈe onnumilla"
+        bases: [{ word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഒന്നുമില്ല", base: "ഒന്നുമില്ല", reading: "onnumilla" }]
+      - target: "എനിക്ക് ഒന്നുമില്ല."
+        reading: "enikk onnumilla."
+        ipa: "enikk onnumilla"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "ഒന്നുമില്ല", base: "ഒന്നുമില്ല", reading: "onnumilla" }]
+  - id: "ml-0460"
+    target: "പകുതി"
+    reading: "pakuti"
+    ipa: "pəkut̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഒരു പകുതി വേണം."
+        reading: "oru pakuti vēṇaṁ."
+        ipa: "oɾu pəkut̪i ʋeːɳam"
+        bases: [{ word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "പകുതി", base: "പകുതി", reading: "pakuti" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "പഴത്തിന്റെ പകുതി."
+        reading: "paḻattinṟe pakuti."
+        ipa: "pəɻət̪t̪int̪ɾe pəkut̪i"
+        bases: [{ word: "പഴത്തിന്റെ", ref: "ml-0225" }, { word: "പകുതി", base: "പകുതി", reading: "pakuti" }]
+  - id: "ml-0461"
+    target: "മുഴുവൻ"
+    reading: "muḻuvaṉ"
+    ipa: "muɻuʋan"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മുഴുവൻ ചിക്കൻ."
+        reading: "muḻuvaṉ cikkaṉ."
+        ipa: "muɻuʋan tʃikkan"
+        bases: [{ word: "മുഴുവൻ", base: "മുഴുവൻ", reading: "muḻuvaṉ" }, { word: "ചിക്കൻ", ref: "ml-0294" }]
+      - target: "മുഴുവൻ വീട്."
+        reading: "muḻuvaṉ vīṭ."
+        ipa: "muɻuʋan ʋiːʈ"
+        bases: [{ word: "മുഴുവൻ", base: "മുഴുവൻ", reading: "muḻuvaṉ" }, { word: "വീട്", ref: "ml-0009" }]
+  - id: "ml-0462"
+    target: "നിറഞ്ഞ"
+    reading: "niṟañña"
+    ipa: "niɾəɲɲa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കുപ്പി നിറഞ്ഞു."
+        reading: "kuppi niṟaññu."
+        ipa: "kuppi niɾəɲɲu"
+        bases: [{ word: "കുപ്പി", ref: "ml-0367" }, { word: "നിറഞ്ഞു", base: "നിറഞ്ഞു", reading: "niṟaññu" }]
+      - target: "നിറഞ്ഞ ബാഗ്."
+        reading: "niṟañña bāg."
+        ipa: "niɾəɲɲa baːɡ"
+        bases: [{ word: "നിറഞ്ഞ", base: "നിറഞ്ഞ", reading: "niṟañña" }, { word: "ബാഗ്", ref: "ml-0361" }]
+  - id: "ml-0463"
+    target: "ഒഴിഞ്ഞ"
+    reading: "oḻiñña"
+    ipa: "oɻiɲɲa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഒഴിഞ്ഞ കുപ്പി."
+        reading: "oḻiñña kuppi."
+        ipa: "oɻiɲɲa kuppi"
+        bases: [{ word: "ഒഴിഞ്ഞ", base: "ഒഴിഞ്ഞ", reading: "oḻiñña" }, { word: "കുപ്പി", ref: "ml-0367" }]
+      - target: "കുപ്പി ഒഴിഞ്ഞു."
+        reading: "kuppi oḻiññu."
+        ipa: "kuppi oɻiɲɲu"
+        bases: [{ word: "കുപ്പി", ref: "ml-0367" }, { word: "ഒഴിഞ്ഞു", base: "ഒഴിഞ്ഞു", reading: "oḻiññu" }]
+  - id: "ml-0464"
+    target: "കിലോ"
+    reading: "kilō"
+    ipa: "kiloː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഒരു കിലോ തക്കാളി."
+        reading: "oru kilō takkāḷi."
+        ipa: "oɾu kiloː t̪əkkaːɭi"
+        bases: [{ word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "കിലോ", base: "കിലോ", reading: "kilō" }, { word: "തക്കാളി", ref: "ml-0295" }]
+      - target: "കിലോ എത്ര?"
+        reading: "kilō etra?"
+        ipa: "kiloː et̪ɾa"
+        bases: [{ word: "കിലോ", base: "കിലോ", reading: "kilō" }, { word: "എത്ര", ref: "ml-0038" }]
+  - id: "ml-0465"
+    target: "ലിറ്റർ"
+    reading: "liṟṟar"
+    ipa: "littaɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "രണ്ട് ലിറ്റർ പാൽ."
+        reading: "raṇṭ liṟṟar pāl."
+        ipa: "ɾaɳʈ littaɾ paːl"
+        bases: [{ word: "രണ്ട്", ref: "ml-0049" }, { word: "ലിറ്റർ", base: "ലിറ്റർ", reading: "liṟṟar" }, { word: "പാൽ", ref: "ml-0220" }]
+      - target: "ഒരു ലിറ്റർ വെള്ളം."
+        reading: "oru liṟṟar veḷḷaṁ."
+        ipa: "oɾu littaɾ ʋeɭɭam"
+        bases: [{ word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "ലിറ്റർ", base: "ലിറ്റർ", reading: "liṟṟar" }, { word: "വെള്ളം", ref: "ml-0005" }]
+  - id: "ml-0466"
+    target: "ഗ്രാം"
+    reading: "grāṁ"
+    ipa: "ɡɾaːm"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഒരു ഗ്രാം മഞ്ഞൾ."
+        reading: "oru grāṁ maññaḷ."
+        ipa: "oɾu ɡɾaːm məɲɲaɭ"
+        bases: [{ word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "ഗ്രാം", base: "ഗ്രാം", reading: "grāṁ" }, { word: "മഞ്ഞൾ", ref: "ml-0227" }]
+      - target: "നൂറ് ഗ്രാം വേണം."
+        reading: "nūṟ grāṁ vēṇaṁ."
+        ipa: "nuːɾ ɡɾaːm ʋeːɳam"
+        bases: [{ word: "നൂറ്", ref: "ml-0211" }, { word: "ഗ്രാം", base: "ഗ്രാം", reading: "grāṁ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0467"
+    target: "ഡസൻ"
+    reading: "ḍasaṉ"
+    ipa: "ɖəsan"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഒരു ഡസൻ മുട്ട."
+        reading: "oru ḍasaṉ muṭṭa."
+        ipa: "oɾu ɖəsan muʈʈa"
+        bases: [{ word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "ഡസൻ", base: "ഡസൻ", reading: "ḍasaṉ" }, { word: "മുട്ട", ref: "ml-0221" }]
+      - target: "ഒരു ഡസൻ വാഴപ്പഴം വേണം."
+        reading: "oru ḍasaṉ vāḻappaḻaṁ vēṇaṁ."
+        ipa: "oɾu ɖəsan ʋaːɻəppəɻam ʋeːɳam"
+        bases: [{ word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "ഡസൻ", base: "ഡസൻ", reading: "ḍasaṉ" }, { word: "വാഴപ്പഴം", ref: "ml-0287" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0468"
+    target: "ജോഡി"
+    reading: "jōḍi"
+    ipa: "dʒoːɖi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഒരു ജോഡി ചെരിപ്പ്."
+        reading: "oru jōḍi ceripp."
+        ipa: "oɾu dʒoːɖi tʃeɾipp"
+        bases: [{ word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "ജോഡി", base: "ജോഡി", reading: "jōḍi" }, { word: "ചെരിപ്പ്", ref: "ml-0408" }]
+      - target: "രണ്ട് ജോഡി സോക്സ് വേണം."
+        reading: "raṇṭ jōḍi sōks vēṇaṁ."
+        ipa: "ɾaɳʈ dʒoːɖi soːks ʋeːɳam"
+        bases: [{ word: "രണ്ട്", ref: "ml-0049" }, { word: "ജോഡി", base: "ജോഡി", reading: "jōḍi" }, { word: "സോക്സ്", ref: "ml-0409" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0469"
+    target: "പാക്കറ്റ്"
+    reading: "pākkaṟṟ"
+    ipa: "paːkkatt"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഒരു പാക്കറ്റ് ബിസ്കറ്റ്."
+        reading: "oru pākkaṟṟ biskaṟṟ."
+        ipa: "oɾu paːkkatt biskatt"
+        bases: [{ word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "പാക്കറ്റ്", base: "പാക്കറ്റ്", reading: "pākkaṟṟ" }, { word: "ബിസ്കറ്റ്", ref: "ml-0274" }]
+      - target: "പാക്കറ്റ് തുറക്കൂ."
+        reading: "pākkaṟṟ tuṟakkū."
+        ipa: "paːkkatt t̪uɾəkkuː"
+        bases: [{ word: "പാക്കറ്റ്", base: "പാക്കറ്റ്", reading: "pākkaṟṟ" }, { word: "തുറക്കൂ", ref: "ml-0125" }]
+  - id: "ml-0470"
+    target: "എണ്ണം"
+    reading: "eṇṇaṁ"
+    ipa: "eɳɳam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എത്ര എണ്ണം?"
+        reading: "etra eṇṇaṁ?"
+        ipa: "et̪ɾa eɳɳam"
+        bases: [{ word: "എത്ര", ref: "ml-0038" }, { word: "എണ്ണം", base: "എണ്ണം", reading: "eṇṇaṁ" }]
+      - target: "എണ്ണം കൂടുതലാണ്"
+        reading: "eṇṇaṁ kūṭutalāṇ"
+        ipa: "eɳɳam kuːʈut̪əlaːɳ"
+        bases: [{ word: "എണ്ണം", base: "എണ്ണം", reading: "eṇṇaṁ" }, { word: "കൂടുതലാണ്", ref: "ml-0455" }]
+  - id: "ml-0471"
+    target: "ഇരട്ടി"
+    reading: "iraṭṭi"
+    ipa: "iɾəʈʈi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇരട്ടി വില."
+        reading: "iraṭṭi vila."
+        ipa: "iɾəʈʈi ʋila"
+        bases: [{ word: "ഇരട്ടി", ref: "ml-0471" }, { word: "വില", ref: "ml-0236" }]
+      - target: "ഈ വില ഇരട്ടിയാണ്."
+        reading: "ī vila iraṭṭiyāṇ."
+        ipa: "iː ʋila iɾəʈʈijaːɳ"
+        bases: [{ word: "ഈ", ref: "ml-0584" }, { word: "വില", ref: "ml-0236" }, { word: "ഇരട്ടിയാണ്", base: "ഇരട്ടിയാണ്", reading: "iraṭṭiyāṇ" }]
+  - id: "ml-0472"
+    target: "ഒരുപാട്"
+    reading: "orupāṭ"
+    ipa: "oɾupaːʈ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഒരുപാട് ആളുകൾ."
+        reading: "orupāṭ āḷukaḷ."
+        ipa: "oɾupaːʈ aːɭukaɭ"
+        bases: [{ word: "ഒരുപാട്", base: "ഒരുപാട്", reading: "orupāṭ" }, { word: "ആളുകൾ", base: "ആളുകൾ", reading: "āḷukaḷ" }]
+      - target: "ഒരുപാട് വേണ്ട."
+        reading: "orupāṭ vēṇṭa."
+        ipa: "oɾupaːʈ ʋeːɳʈa"
+        bases: [{ word: "ഒരുപാട്", base: "ഒരുപാട്", reading: "orupāṭ" }, { word: "വേണ്ട", base: "വേണ്ട", reading: "vēṇṭa" }]
+  - id: "ml-0473"
+    target: "അല്പം"
+    reading: "alpaṁ"
+    ipa: "əlpam"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അല്പം വെള്ളം."
+        reading: "alpaṁ veḷḷaṁ."
+        ipa: "əlpam ʋeɭɭam"
+        bases: [{ word: "അല്പം", base: "അല്പം", reading: "alpaṁ" }, { word: "വെള്ളം", ref: "ml-0005" }]
+      - target: "അല്പം ഉപ്പ് വേണം."
+        reading: "alpaṁ upp vēṇaṁ."
+        ipa: "əlpam upp ʋeːɳam"
+        bases: [{ word: "അല്പം", base: "അല്പം", reading: "alpaṁ" }, { word: "ഉപ്പ്", ref: "ml-0279" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0474"
+    target: "ആവശ്യം"
+    reading: "āvaśyaṁ"
+    ipa: "aːʋəʃjam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ആവശ്യം ഉണ്ടോ?"
+        reading: "āvaśyaṁ uṇṭō?"
+        ipa: "aːʋəʃjam uɳʈoː"
+        bases: [{ word: "ആവശ്യം", base: "ആവശ്യം", reading: "āvaśyaṁ" }, { word: "ഉണ്ടോ", ref: "ml-0040" }]
+      - target: "ഇതിന് ആവശ്യമില്ല"
+        reading: "itin āvaśyamilla"
+        ipa: "it̪in aːʋəʃjəmilla"
+        bases: [{ word: "ഇതിന്", base: "ഇതിന്", reading: "itin" }, { word: "ആവശ്യമില്ല", base: "ആവശ്യം", reading: "āvaśyaṁ" }]
+  - id: "ml-0475"
+    target: "നിറയെ"
+    reading: "niṟaye"
+    ipa: "niɾəje"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പെട്ടി നിറയെ പുസ്തകം."
+        reading: "peṭṭi niṟaye pustakaṁ."
+        ipa: "peʈʈi niɾəje pust̪əkam"
+        bases: [{ word: "പെട്ടി", ref: "ml-0371" }, { word: "നിറയെ", base: "നിറയെ", reading: "niṟaye" }, { word: "പുസ്തകം", ref: "ml-0356" }]
+      - target: "ബാഗ് നിറയെ തുണി."
+        reading: "bāg niṟaye tuṇi."
+        ipa: "baːɡ niɾəje t̪uɳi"
+        bases: [{ word: "ബാഗ്", ref: "ml-0361" }, { word: "നിറയെ", base: "നിറയെ", reading: "niṟaye" }, { word: "തുണി", ref: "ml-0372" }]
+  - id: "ml-0476"
+    target: "ബാക്കി"
+    reading: "bākki"
+    ipa: "baːkki"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ബാക്കി എവിടെ?"
+        reading: "bākki eviṭe?"
+        ipa: "baːkki eʋiʈe"
+        bases: [{ word: "ബാക്കി", base: "ബാക്കി", reading: "bākki" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "ബാക്കി വേണ്ട."
+        reading: "bākki vēṇṭa."
+        ipa: "baːkki ʋeːɳʈa"
+        bases: [{ word: "ബാക്കി", base: "ബാക്കി", reading: "bākki" }, { word: "വേണ്ട", base: "വേണ്ട", reading: "vēṇṭa" }]

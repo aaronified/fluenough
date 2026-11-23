@@ -1,0 +1,216 @@
+schema: 1
+id: "ml-en-verbs"
+kind: "layer"
+core: "ml-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Everyday verbs"
+description: "Short commands in everyday use: go, eat, drink, sit, stand, look, listen, write, read, sleep, take, give, open and buy. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0112":
+    native: "go!"
+    notes:
+      n1: "A command to go. The dictionary form means to go."
+    examples:
+      "ഇവിടെ പോകൂ.":
+        native: "Go here."
+        bases:
+          "പോകൂ": "go"
+      "വീട്ടിൽ പോകൂ.":
+        native: "Go home."
+        bases:
+          "പോകൂ": "go"
+  "ml-0113":
+    native: "eat!"
+    notes:
+      n1: "A command to eat. The dictionary form means to eat."
+    examples:
+      "ചോറ് കഴിക്കൂ.":
+        native: "Eat the rice."
+        bases:
+          "ചോറ്": "cooked rice"
+          "കഴിക്കൂ": "eat"
+      "ഇത് കഴിക്കൂ.":
+        native: "Eat this."
+        bases:
+          "ഇത്": "this"
+          "കഴിക്കൂ": "eat"
+  "ml-0114":
+    native: "drink!"
+    notes:
+      n1: "A command to drink. The dictionary form means to drink."
+    examples:
+      "വെള്ളം കുടിക്കൂ.":
+        native: "Drink the water."
+        bases:
+          "കുടിക്കൂ": "drink"
+      "ചായ കുടിക്കൂ.":
+        native: "Drink tea."
+        bases:
+          "ചായ": "tea"
+          "കുടിക്കൂ": "drink"
+  "ml-0115":
+    native: "sit!"
+    notes:
+      n1: "A command to sit. The dictionary form means to sit."
+    examples:
+      "ഇവിടെ ഇരിക്കൂ.":
+        native: "Sit here."
+        bases:
+          "ഇരിക്കൂ": "sit"
+      "ഇരിക്കൂ, ദയവായി.":
+        native: "Sit, please."
+        bases:
+          "ഇരിക്കൂ": "sit"
+  "ml-0116":
+    native: "stand!"
+    notes:
+      n1: "A command to stand or to wait where you are. The dictionary form means to stand."
+    examples:
+      "ഇവിടെ നിൽക്കൂ.":
+        native: "Stand here."
+        bases:
+          "നിൽക്കൂ": "stand"
+      "അവിടെ നിൽക്കൂ.":
+        native: "Stand there."
+        bases:
+          "അവിടെ": "there"
+          "നിൽക്കൂ": "stand"
+  "ml-0117":
+    native: "look at; see!"
+    notes:
+      n1: "A command to look at something or to see someone. Another verb means to look for."
+    examples:
+      "അത് കാണൂ.":
+        native: "Look at it."
+        bases:
+          "കാണൂ": "look at"
+      "എന്നെ കാണൂ.":
+        native: "See me."
+        bases:
+          "കാണൂ": "see"
+  "ml-0118":
+    native: "listen!"
+    notes:
+      n1: "A command to listen. The dictionary form means to listen or to hear."
+    examples:
+      "ദയവായി കേൾക്കൂ.":
+        native: "Listen, please."
+        bases:
+          "കേൾക്കൂ": "listen"
+      "നീ കേൾക്കൂ.":
+        native: "You listen."
+        bases:
+          "കേൾക്കൂ": "listen"
+  "ml-0119":
+    native: "write!"
+    notes:
+      n1: "A command to write. The dictionary form means to write."
+    examples:
+      "ഇവിടെ എഴുതൂ.":
+        native: "Write here."
+        bases:
+          "എഴുതൂ": "write"
+      "പേര് എഴുതൂ.":
+        native: "Write the name."
+        bases:
+          "എഴുതൂ": "write"
+  "ml-0120":
+    native: "read!"
+    notes:
+      n1: "A command to read. The dictionary form means to read."
+    examples:
+      "അത് വായിക്കൂ.":
+        native: "Read it."
+        bases:
+          "വായിക്കൂ": "read"
+      "വീണ്ടും വായിക്കൂ.":
+        native: "Read again."
+        bases:
+          "വീണ്ടും": "again"
+          "വായിക്കൂ": "read"
+  "ml-0121":
+    native: "sleep!"
+    notes:
+      n1: "A command to sleep. The dictionary form means to sleep."
+    examples:
+      "ഇപ്പോൾ ഉറങ്ങൂ.":
+        native: "Sleep now."
+        bases:
+          "ഇപ്പോൾ": "now"
+          "ഉറങ്ങൂ": "sleep"
+      "നീ ഉറങ്ങൂ.":
+        native: "You sleep."
+        bases:
+          "ഉറങ്ങൂ": "sleep"
+  "ml-0122":
+    native: "take!"
+    notes:
+      n1: "A command to take or pick up. The dictionary form means to take."
+    examples:
+      "വെള്ളം എടുക്കൂ.":
+        native: "Take the water."
+        bases:
+          "എടുക്കൂ": "take"
+      "അത് എടുക്കൂ.":
+        native: "Take it."
+        bases:
+          "എടുക്കൂ": "take"
+  "ml-0123":
+    native: "give!"
+    notes:
+      n1: "A command to give. The dictionary form means to give."
+    examples:
+      "വെള്ളം തരൂ.":
+        native: "Give me the water."
+        bases:
+          "തരൂ": "give"
+      "എനിക്ക് തരൂ.":
+        native: "Give it to me."
+        bases:
+          "തരൂ": "give"
+  "ml-0124":
+    native: "look!"
+    notes:
+      n1: "A command to look or to pay attention. The dictionary form means to look."
+    examples:
+      "ഇവിടെ നോക്കൂ.":
+        native: "Look here."
+        bases:
+          "നോക്കൂ": "look"
+      "എന്നെ നോക്കൂ.":
+        native: "Look at me."
+        bases:
+          "നോക്കൂ": "look"
+  "ml-0125":
+    native: "open!"
+    notes:
+      n1: "A command to open. The dictionary form means to open."
+    examples:
+      "വാതിൽ തുറക്കൂ.":
+        native: "Open the door."
+        bases:
+          "വാതിൽ": "door"
+          "തുറക്കൂ": "open"
+      "ജനൽ തുറക്കൂ.":
+        native: "Open the window."
+        bases:
+          "ജനൽ": "window"
+          "തുറക്കൂ": "open"
+  "ml-0126":
+    native: "buy!"
+    notes:
+      n1: "A command to buy. The dictionary form means to buy."
+    examples:
+      "ഒരു ചായ വാങ്ങൂ.":
+        native: "Buy a tea."
+        bases:
+          "ഒരു": "a"
+          "ചായ": "tea"
+          "വാങ്ങൂ": "buy"
+      "ഇത് വാങ്ങൂ.":
+        native: "Buy this."
+        bases:
+          "ഇത്": "this"
+          "വാങ്ങൂ": "buy"

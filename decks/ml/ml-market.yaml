@@ -1,0 +1,135 @@
+schema: 1
+id: "ml-market"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "market"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0233"
+    target: "മീൻ"
+    reading: "mīṉ"
+    ipa: "miːn"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മീൻ വേണം."
+        reading: "mīṉ vēṇaṁ."
+        ipa: "miːn ʋeːɳam"
+        bases: [{ word: "മീൻ", base: "മീൻ", reading: "mīṉ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "മീൻ എവിടെ?"
+        reading: "mīṉ eviṭe?"
+        ipa: "miːn eʋiʈe"
+        bases: [{ word: "മീൻ", base: "മീൻ", reading: "mīṉ" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0234"
+    target: "പച്ചക്കറി"
+    reading: "paccakkaṟi"
+    ipa: "pətʃtʃəkkəɾi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പച്ചക്കറി ചന്തയിൽ"
+        reading: "paccakkaṟi cantayil"
+        ipa: "pətʃtʃəkkəɾi tʃənt̪əjil"
+        bases: [{ word: "പച്ചക്കറി", base: "പച്ചക്കറി", reading: "paccakkaṟi" }, { word: "ചന്തയിൽ", ref: "ml-0238" }]
+      - target: "പച്ചക്കറി വേണം."
+        reading: "paccakkaṟi vēṇaṁ."
+        ipa: "pətʃtʃəkkəɾi ʋeːɳam"
+        bases: [{ word: "പച്ചക്കറി", base: "പച്ചക്കറി", reading: "paccakkaṟi" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0235"
+    target: "ഇറച്ചി"
+    reading: "iṟacci"
+    ipa: "iɾətʃtʃi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇറച്ചി വേണം."
+        reading: "iṟacci vēṇaṁ."
+        ipa: "iɾətʃtʃi ʋeːɳam"
+        bases: [{ word: "ഇറച്ചി", base: "ഇറച്ചി", reading: "iṟacci" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "ഇറച്ചിക്ക് എത്ര വില?"
+        reading: "iṟaccikk etra vila?"
+        ipa: "iɾətʃtʃikk et̪ɾa ʋila"
+        bases: [{ word: "ഇറച്ചിക്ക്", base: "ഇറച്ചി", reading: "iṟacci" }, { word: "എത്ര", ref: "ml-0038" }, { word: "വില", ref: "ml-0236" }]
+  - id: "ml-0236"
+    target: "വില"
+    reading: "vila"
+    ipa: "ʋila"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വില എത്ര?"
+        reading: "vila etra?"
+        ipa: "ʋila et̪ɾa"
+        bases: [{ word: "വില", base: "വില", reading: "vila" }, { word: "എത്ര", ref: "ml-0038" }]
+      - target: "വില കൂടുതൽ."
+        reading: "vila kūṭutal."
+        ipa: "ʋila kuːʈut̪al"
+        bases: [{ word: "വില", base: "വില", reading: "vila" }, { word: "കൂടുതൽ", base: "കൂടുതൽ", reading: "kūṭutal" }]
+  - id: "ml-0237"
+    target: "തൂക്കം"
+    reading: "tūkkaṁ"
+    ipa: "t̪uːkkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "തൂക്കം എത്ര?"
+        reading: "tūkkaṁ etra?"
+        ipa: "t̪uːkkam et̪ɾa"
+        bases: [{ word: "തൂക്കം", base: "തൂക്കം", reading: "tūkkaṁ" }, { word: "എത്ര", ref: "ml-0038" }]
+      - target: "തൂക്കം കുറവ്."
+        reading: "tūkkaṁ kuṟav."
+        ipa: "t̪uːkkam kuɾaʋ"
+        bases: [{ word: "തൂക്കം", base: "തൂക്കം", reading: "tūkkaṁ" }, { word: "കുറവ്", base: "കുറവ്", reading: "kuṟav" }]
+  - id: "ml-0238"
+    target: "ചന്ത"
+    reading: "canta"
+    ipa: "tʃənt̪a"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചന്ത എവിടെ?"
+        reading: "canta eviṭe?"
+        ipa: "tʃənt̪a eʋiʈe"
+        bases: [{ word: "ചന്ത", base: "ചന്ത", reading: "canta" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "ചന്ത അകലെ."
+        reading: "canta akale."
+        ipa: "tʃənt̪a əkəle"
+        bases: [{ word: "ചന്ത", base: "ചന്ത", reading: "canta" }, { word: "അകലെ", ref: "ml-0144" }]
+  - id: "ml-0239"
+    target: "പഴങ്ങൾ"
+    reading: "paḻaṅṅaḷ"
+    ipa: "pəɻəŋŋaɭ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പഴങ്ങൾ വേണം."
+        reading: "paḻaṅṅaḷ vēṇaṁ."
+        ipa: "pəɻəŋŋaɭ ʋeːɳam"
+        bases: [{ word: "പഴങ്ങൾ", base: "പഴങ്ങൾ", reading: "paḻaṅṅaḷ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "പഴങ്ങൾ എവിടെ?"
+        reading: "paḻaṅṅaḷ eviṭe?"
+        ipa: "pəɻəŋŋaɭ eʋiʈe"
+        bases: [{ word: "പഴങ്ങൾ", base: "പഴങ്ങൾ", reading: "paḻaṅṅaḷ" }, { word: "എവിടെ", ref: "ml-0033" }]

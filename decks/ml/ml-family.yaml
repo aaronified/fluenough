@@ -1,0 +1,333 @@
+schema: 1
+id: "ml-family"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "family"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0069"
+    target: "കുടുംബം"
+    reading: "kuṭuṁbaṁ"
+    ipa: "kuʈumbam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ കുടുംബം."
+        reading: "enṟe kuṭuṁbaṁ."
+        ipa: "ent̪ɾe kuʈumbam"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "കുടുംബം", base: "കുടുംബം", reading: "kuṭuṁbaṁ" }]
+      - target: "ഇത് എന്റെ കുടുംബം."
+        reading: "it enṟe kuṭuṁbaṁ."
+        ipa: "it̪ ent̪ɾe kuʈumbam"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "എന്റെ", ref: "ml-0003" }, { word: "കുടുംബം", base: "കുടുംബം", reading: "kuṭuṁbaṁ" }]
+  - id: "ml-0070"
+    target: "അച്ഛൻ"
+    reading: "acchaṉ"
+    ipa: "ətʃtʃan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇത് അച്ഛൻ."
+        reading: "it acchaṉ."
+        ipa: "it̪ ətʃtʃan"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "അച്ഛൻ", base: "അച്ഛൻ", reading: "acchaṉ" }]
+      - target: "എന്റെ അച്ഛൻ ഡോക്ടർ."
+        reading: "enṟe acchaṉ ḍōkṭar."
+        ipa: "ent̪ɾe ətʃtʃan ɖoːkʈaɾ"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "അച്ഛൻ", base: "അച്ഛൻ", reading: "acchaṉ" }, { word: "ഡോക്ടർ", base: "ഡോക്ടർ", reading: "ḍōkṭar" }]
+  - id: "ml-0071"
+    target: "അമ്മ"
+    reading: "amma"
+    ipa: "əmma"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇത് അമ്മ."
+        reading: "it amma."
+        ipa: "it̪ əmma"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "അമ്മ", base: "അമ്മ", reading: "amma" }]
+      - target: "എന്റെ അമ്മ വീട്ടിൽ."
+        reading: "enṟe amma vīṭṭil."
+        ipa: "ent̪ɾe əmma ʋiːʈʈil"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "അമ്മ", base: "അമ്മ", reading: "amma" }, { word: "വീട്ടിൽ", ref: "ml-0009" }]
+  - id: "ml-0072"
+    target: "മകൻ"
+    reading: "makaṉ"
+    ipa: "məkan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ മകൻ."
+        reading: "enṟe makaṉ."
+        ipa: "ent̪ɾe məkan"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "മകൻ", base: "മകൻ", reading: "makaṉ" }]
+      - target: "മകൻ ഇവിടെ."
+        reading: "makaṉ iviṭe."
+        ipa: "məkan iʋiʈe"
+        bases: [{ word: "മകൻ", base: "മകൻ", reading: "makaṉ" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0073"
+    target: "മകൾ"
+    reading: "makaḷ"
+    ipa: "məkaɭ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ മകൾ."
+        reading: "enṟe makaḷ."
+        ipa: "ent̪ɾe məkaɭ"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "മകൾ", base: "മകൾ", reading: "makaḷ" }]
+      - target: "മകൾ എവിടെ?"
+        reading: "makaḷ eviṭe?"
+        ipa: "məkaɭ eʋiʈe"
+        bases: [{ word: "മകൾ", base: "മകൾ", reading: "makaḷ" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0074"
+    target: "ചേട്ടൻ"
+    reading: "cēṭṭaṉ"
+    ipa: "tʃeːʈʈan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ ചേട്ടൻ."
+        reading: "enṟe cēṭṭaṉ."
+        ipa: "ent̪ɾe tʃeːʈʈan"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "ചേട്ടൻ", base: "ചേട്ടൻ", reading: "cēṭṭaṉ" }]
+      - target: "ചേട്ടൻ വരുന്നു."
+        reading: "cēṭṭaṉ varunnu."
+        ipa: "tʃeːʈʈan ʋəɾunnu"
+        bases: [{ word: "ചേട്ടൻ", base: "ചേട്ടൻ", reading: "cēṭṭaṉ" }, { word: "വരുന്നു", base: "വരിക", reading: "varika" }]
+  - id: "ml-0075"
+    target: "ചേച്ചി"
+    reading: "cēcci"
+    ipa: "tʃeːtʃtʃi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ ചേച്ചി."
+        reading: "enṟe cēcci."
+        ipa: "ent̪ɾe tʃeːtʃtʃi"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "ചേച്ചി", base: "ചേച്ചി", reading: "cēcci" }]
+      - target: "ചേച്ചി വീട്ടിൽ."
+        reading: "cēcci vīṭṭil."
+        ipa: "tʃeːtʃtʃi ʋiːʈʈil"
+        bases: [{ word: "ചേച്ചി", base: "ചേച്ചി", reading: "cēcci" }, { word: "വീട്ടിൽ", ref: "ml-0009" }]
+  - id: "ml-0076"
+    target: "അനിയൻ"
+    reading: "aniyaṉ"
+    ipa: "ənijan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ അനിയൻ."
+        reading: "enṟe aniyaṉ."
+        ipa: "ent̪ɾe ənijan"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "അനിയൻ", base: "അനിയൻ", reading: "aniyaṉ" }]
+      - target: "അനിയൻ ഇവിടെ."
+        reading: "aniyaṉ iviṭe."
+        ipa: "ənijan iʋiʈe"
+        bases: [{ word: "അനിയൻ", base: "അനിയൻ", reading: "aniyaṉ" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0077"
+    target: "അനിയത്തി"
+    reading: "aniyatti"
+    ipa: "ənijət̪t̪i"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ അനിയത്തി."
+        reading: "enṟe aniyatti."
+        ipa: "ent̪ɾe ənijət̪t̪i"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "അനിയത്തി", base: "അനിയത്തി", reading: "aniyatti" }]
+      - target: "അനിയത്തി എവിടെ?"
+        reading: "aniyatti eviṭe?"
+        ipa: "ənijət̪t̪i eʋiʈe"
+        bases: [{ word: "അനിയത്തി", base: "അനിയത്തി", reading: "aniyatti" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0078"
+    target: "മുത്തച്ഛൻ"
+    reading: "muttacchaṉ"
+    ipa: "mut̪t̪ətʃtʃan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ മുത്തച്ഛൻ."
+        reading: "enṟe muttacchaṉ."
+        ipa: "ent̪ɾe mut̪t̪ətʃtʃan"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "മുത്തച്ഛൻ", base: "മുത്തച്ഛൻ", reading: "muttacchaṉ" }]
+      - target: "മുത്തച്ഛൻ ഇവിടെ."
+        reading: "muttacchaṉ iviṭe."
+        ipa: "mut̪t̪ətʃtʃan iʋiʈe"
+        bases: [{ word: "മുത്തച്ഛൻ", base: "മുത്തച്ഛൻ", reading: "muttacchaṉ" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0079"
+    target: "മുത്തശ്ശി"
+    reading: "muttaśśi"
+    ipa: "mut̪t̪əʃʃi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ മുത്തശ്ശി."
+        reading: "enṟe muttaśśi."
+        ipa: "ent̪ɾe mut̪t̪əʃʃi"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "മുത്തശ്ശി", base: "മുത്തശ്ശി", reading: "muttaśśi" }]
+      - target: "മുത്തശ്ശി വീട്ടിൽ."
+        reading: "muttaśśi vīṭṭil."
+        ipa: "mut̪t̪əʃʃi ʋiːʈʈil"
+        bases: [{ word: "മുത്തശ്ശി", base: "മുത്തശ്ശി", reading: "muttaśśi" }, { word: "വീട്ടിൽ", ref: "ml-0009" }]
+  - id: "ml-0080"
+    target: "ഭർത്താവ്"
+    reading: "bharttāv"
+    ipa: "bʱəɾt̪t̪aːʋ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ ഭർത്താവ് ഡോക്ടർ."
+        reading: "enṟe bharttāv ḍōkṭar."
+        ipa: "ent̪ɾe bʱəɾt̪t̪aːʋ ɖoːkʈaɾ"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "ഭർത്താവ്", base: "ഭർത്താവ്", reading: "bharttāv" }, { word: "ഡോക്ടർ", base: "ഡോക്ടർ", reading: "ḍōkṭar" }]
+      - target: "ഭർത്താവ് എവിടെ?"
+        reading: "bharttāv eviṭe?"
+        ipa: "bʱəɾt̪t̪aːʋ eʋiʈe"
+        bases: [{ word: "ഭർത്താവ്", base: "ഭർത്താവ്", reading: "bharttāv" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0081"
+    target: "ഭാര്യ"
+    reading: "bhārya"
+    ipa: "bʱaːɾja"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ ഭാര്യ ഇവിടെ."
+        reading: "enṟe bhārya iviṭe."
+        ipa: "ent̪ɾe bʱaːɾja iʋiʈe"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "ഭാര്യ", base: "ഭാര്യ", reading: "bhārya" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "ഭാര്യ എവിടെ?"
+        reading: "bhārya eviṭe?"
+        ipa: "bʱaːɾja eʋiʈe"
+        bases: [{ word: "ഭാര്യ", base: "ഭാര്യ", reading: "bhārya" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0082"
+    target: "കുട്ടി"
+    reading: "kuṭṭi"
+    ipa: "kuʈʈi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കുട്ടി ഇവിടെ."
+        reading: "kuṭṭi iviṭe."
+        ipa: "kuʈʈi iʋiʈe"
+        bases: [{ word: "കുട്ടി", base: "കുട്ടി", reading: "kuṭṭi" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "ഇത് ആരുടെ കുട്ടി?"
+        reading: "it āruṭe kuṭṭi?"
+        ipa: "it̪ aːɾuʈe kuʈʈi"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "ആരുടെ", ref: "ml-0031" }, { word: "കുട്ടി", base: "കുട്ടി", reading: "kuṭṭi" }]
+  - id: "ml-0083"
+    target: "അമ്മാവൻ"
+    reading: "ammāvaṉ"
+    ipa: "əmmaːʋan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ അമ്മാവൻ."
+        reading: "enṟe ammāvaṉ."
+        ipa: "ent̪ɾe əmmaːʋan"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "അമ്മാവൻ", base: "അമ്മാവൻ", reading: "ammāvaṉ" }]
+      - target: "അമ്മാവൻ വീട്ടിൽ."
+        reading: "ammāvaṉ vīṭṭil."
+        ipa: "əmmaːʋan ʋiːʈʈil"
+        bases: [{ word: "അമ്മാവൻ", base: "അമ്മാവൻ", reading: "ammāvaṉ" }, { word: "വീട്ടിൽ", ref: "ml-0009" }]
+  - id: "ml-0084"
+    target: "അമ്മായി"
+    reading: "ammāyi"
+    ipa: "əmmaːji"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ അമ്മായി."
+        reading: "enṟe ammāyi."
+        ipa: "ent̪ɾe əmmaːji"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "അമ്മായി", base: "അമ്മായി", reading: "ammāyi" }]
+      - target: "അമ്മായി എവിടെ?"
+        reading: "ammāyi eviṭe?"
+        ipa: "əmmaːji eʋiʈe"
+        bases: [{ word: "അമ്മായി", base: "അമ്മായി", reading: "ammāyi" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0085"
+    target: "സഹോദരൻ"
+    reading: "sahōdaraṉ"
+    ipa: "səhoːd̪əɾan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ സഹോദരൻ."
+        reading: "enṟe sahōdaraṉ."
+        ipa: "ent̪ɾe səhoːd̪əɾan"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "സഹോദരൻ", base: "സഹോദരൻ", reading: "sahōdaraṉ" }]
+      - target: "സഹോദരൻ വരുന്നു."
+        reading: "sahōdaraṉ varunnu."
+        ipa: "səhoːd̪əɾan ʋəɾunnu"
+        bases: [{ word: "സഹോദരൻ", base: "സഹോദരൻ", reading: "sahōdaraṉ" }, { word: "വരുന്നു", base: "വരിക", reading: "varika" }]
+  - id: "ml-0086"
+    target: "സഹോദരി"
+    reading: "sahōdari"
+    ipa: "səhoːd̪əɾi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ സഹോദരി."
+        reading: "enṟe sahōdari."
+        ipa: "ent̪ɾe səhoːd̪əɾi"
+        bases: [{ word: "എന്റെ", ref: "ml-0003" }, { word: "സഹോദരി", base: "സഹോദരി", reading: "sahōdari" }]
+      - target: "സഹോദരി വരുന്നു."
+        reading: "sahōdari varunnu."
+        ipa: "səhoːd̪əɾi ʋəɾunnu"
+        bases: [{ word: "സഹോദരി", base: "സഹോദരി", reading: "sahōdari" }, { word: "വരുന്നു", base: "വരിക", reading: "varika" }]

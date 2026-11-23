@@ -1,0 +1,270 @@
+schema: 1
+id: "ml-en-places"
+kind: "layer"
+core: "ml-places"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places"
+description: "Places in town and on the road: a hotel, a shop, a tea shop, a temple, a church, a park, a library, a post office, a petrol pump, a beach, a river, a hill, a forest, a city, a village, a town, a street, a bus stop and a playground. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0337":
+    native: "hotel; restaurant"
+    notes:
+      n1: "hotel; restaurant"
+    examples:
+      "ഹോട്ടൽ എവിടെ?":
+        native: "Where is the restaurant?"
+        bases:
+          "ഹോട്ടൽ": "hotel; restaurant"
+      "ഹോട്ടൽ അകലെ.":
+        native: "The restaurant is far."
+        bases:
+          "ഹോട്ടൽ": "hotel; restaurant"
+  "ml-0338":
+    native: "shop"
+    notes:
+      n1: "shop"
+    examples:
+      "കട എവിടെ?":
+        native: "Where is the shop?"
+        bases:
+          "കട": "shop"
+      "കട അടുത്ത്.":
+        native: "The shop is near."
+        bases:
+          "കട": "shop"
+  "ml-0339":
+    native: "tea shop"
+    notes:
+      n1: "tea shop"
+    examples:
+      "ചായക്കട ഇവിടെ ഉണ്ട്.":
+        native: "There is a tea shop here."
+        bases:
+          "ചായക്കട": "tea shop"
+          "ഉണ്ട്": "there is"
+      "ചായക്കടയിൽ പോകാം":
+        native: "Let us go to the tea shop."
+        bases:
+          "ചായക്കടയിൽ": "tea shop"
+  "ml-0340":
+    native: "temple"
+    notes:
+      n1: "temple"
+    examples:
+      "ക്ഷേത്രം എവിടെ?":
+        native: "Where is the temple?"
+        bases:
+          "ക്ഷേത്രം": "temple"
+      "ക്ഷേത്രം അടുത്താണ്.":
+        native: "The temple is near."
+        bases:
+          "ക്ഷേത്രം": "temple"
+          "അടുത്താണ്": "is near"
+  "ml-0341":
+    native: "church; mosque"
+    notes:
+      n1: "church; mosque"
+    examples:
+      "പള്ളി എവിടെ?":
+        native: "Where is the church?"
+        bases:
+          "പള്ളി": "church; mosque"
+      "പള്ളി ഇവിടെ നിന്ന് അകലെയാണ്":
+        native: "The church is far from here."
+        bases:
+          "പള്ളി": "church; mosque"
+          "നിന്ന്": "from"
+  "ml-0342":
+    native: "park"
+    notes:
+      n1: "park"
+    examples:
+      "പാർക്ക് എവിടെ?":
+        native: "Where is the park?"
+        bases:
+          "പാർക്ക്": "park"
+      "കുട്ടികൾ പാർക്കിൽ കളിക്കുന്നു.":
+        native: "The children are playing in the park."
+        bases:
+          "പാർക്കിൽ": "park"
+          "കളിക്കുന്നു": "play"
+  "ml-0343":
+    native: "library"
+    notes:
+      n1: "library"
+    examples:
+      "ലൈബ്രറി അടുത്ത്.":
+        native: "The library is near."
+        bases:
+          "ലൈബ്രറി": "library"
+      "ലൈബ്രറി എവിടെ?":
+        native: "Where is the library?"
+        bases:
+          "ലൈബ്രറി": "library"
+  "ml-0344":
+    native: "post office"
+    notes:
+      n1: "post office"
+    examples:
+      "പോസ്റ്റ് ഓഫീസ് എവിടെ?":
+        native: "Where is the post office?"
+        bases:
+          "പോസ്റ്റ്": "post"
+      "പോസ്റ്റ് ഓഫീസ് അകലെ.":
+        native: "The post office is far."
+        bases:
+          "പോസ്റ്റ്": "post"
+  "ml-0345":
+    native: "petrol pump"
+    notes:
+      n1: "petrol pump"
+    examples:
+      "പെട്രോൾ പമ്പ് എവിടെ?":
+        native: "Where is the petrol pump?"
+        bases:
+          "പെട്രോൾ": "petrol"
+          "പമ്പ്": "pump"
+      "പെട്രോൾ പമ്പ് റോഡിന്റെ മൂലയിൽ":
+        native: "The petrol pump is at the corner of the road."
+        bases:
+          "പെട്രോൾ": "petrol"
+          "പമ്പ്": "pump"
+  "ml-0346":
+    native: "beach"
+    notes:
+      n1: "beach"
+    examples:
+      "ബീച്ച് അകലെ.":
+        native: "The beach is far."
+        bases:
+          "ബീച്ച്": "beach"
+      "ബീച്ച് എവിടെ?":
+        native: "Where is the beach?"
+        bases:
+          "ബീച്ച്": "beach"
+  "ml-0347":
+    native: "river"
+    notes:
+      n1: "river"
+    examples:
+      "പുഴ വലിയതാണ്":
+        native: "The river is big."
+        bases:
+          "പുഴ": "river"
+      "പുഴ എവിടെ?":
+        native: "Where is the river?"
+        bases:
+          "പുഴ": "river"
+  "ml-0348":
+    native: "hill"
+    notes:
+      n1: "hill"
+    examples:
+      "കുന്ന് ഉയരമാണ്.":
+        native: "The hill is high."
+        bases:
+          "കുന്ന്": "hill"
+          "ഉയരമാണ്": "is high"
+      "കുന്ന് എവിടെ?":
+        native: "Where is the hill?"
+        bases:
+          "കുന്ന്": "hill"
+  "ml-0349":
+    native: "forest"
+    notes:
+      n1: "forest"
+    examples:
+      "കാട് അകലെ.":
+        native: "The forest is far."
+        bases:
+          "കാട്": "forest"
+      "കാട്ടിൽ പോകരുത്.":
+        native: "Do not go into the forest."
+        bases:
+          "കാട്ടിൽ": "forest"
+          "പോകരുത്": "must not go"
+  "ml-0350":
+    native: "city"
+    notes:
+      n1: "city"
+    examples:
+      "നഗരം വലിയതാണ്":
+        native: "The city is big."
+        bases:
+          "നഗരം": "city"
+      "നഗരത്തിൽ എത്ര ആളുകൾ?":
+        native: "How many people are in the city?"
+        bases:
+          "നഗരത്തിൽ": "city"
+          "ആളുകൾ": "people"
+  "ml-0351":
+    native: "village"
+    notes:
+      n1: "village"
+    examples:
+      "ഗ്രാമം ചെറുതാണ്.":
+        native: "The village is small."
+        bases:
+          "ഗ്രാമം": "village"
+          "ചെറുതാണ്": "is small"
+      "ഗ്രാമം എവിടെ?":
+        native: "Where is the village?"
+        bases:
+          "ഗ്രാമം": "village"
+  "ml-0352":
+    native: "town"
+    notes:
+      n1: "town"
+    examples:
+      "പട്ടണം അടുത്ത്.":
+        native: "The town is near."
+        bases:
+          "പട്ടണം": "town"
+      "പട്ടണത്തിലേക്ക് എങ്ങനെ പോകാം":
+        native: "How can I go to town?"
+        bases:
+          "പട്ടണത്തിലേക്ക്": "town"
+  "ml-0353":
+    native: "street"
+    notes:
+      n1: "street"
+    examples:
+      "തെരുവ് വീതിയാണ്.":
+        native: "The street is wide."
+        bases:
+          "തെരുവ്": "street"
+          "വീതിയാണ്": "is wide"
+      "തെരുവ് എവിടെ?":
+        native: "Where is the street?"
+        bases:
+          "തെരുവ്": "street"
+  "ml-0354":
+    native: "bus stop"
+    notes:
+      n1: "bus stop"
+    examples:
+      "ബസ് സ്റ്റോപ്പ് എവിടെ?":
+        native: "Where is the bus stop?"
+        bases:
+          "സ്റ്റോപ്പ്": "stop"
+      "ബസ് സ്റ്റോപ്പ് അകലെ.":
+        native: "The bus stop is far."
+        bases:
+          "സ്റ്റോപ്പ്": "stop"
+  "ml-0355":
+    native: "playground"
+    notes:
+      n1: "playground"
+    examples:
+      "കളിസ്ഥലം അടുത്താണ്.":
+        native: "The playground is near."
+        bases:
+          "കളിസ്ഥലം": "playground"
+          "അടുത്താണ്": "is near"
+      "കുട്ടി കളിസ്ഥലത്ത് കളിക്കുന്നു.":
+        native: "The child is playing on the playground."
+        bases:
+          "കളിസ്ഥലത്ത്": "playground"
+          "കളിക്കുന്നു": "plays"

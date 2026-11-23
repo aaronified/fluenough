@@ -1,0 +1,681 @@
+schema: 1
+id: "ml-en-food"
+kind: "layer"
+core: "ml-food"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Food"
+description: "Food and drink: a meal, rice, curry, the South Indian breakfast dishes, tea and coffee, snacks, fruit, vegetables, spices, lunch and the words for hunger and thirst. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0260":
+    native: "food; meal"
+    notes:
+      n1: "food; meal"
+    examples:
+      "ഭക്ഷണം വേണം.":
+        native: "I need food."
+        bases:
+          "ഭക്ഷണം": "food; meal"
+          "വേണം": "need"
+      "ഭക്ഷണം ഇവിടെ ഉണ്ട്.":
+        native: "There is food here."
+        bases:
+          "ഭക്ഷണം": "food; meal"
+          "ഉണ്ട്": "there is"
+  "ml-0261":
+    native: "cooked rice"
+    notes:
+      n1: "cooked rice"
+    examples:
+      "ചോറ് വേണോ?":
+        native: "Do you want rice?"
+        bases:
+          "ചോറ്": "cooked rice"
+          "വേണോ": "do you want"
+      "ചോറ് ചൂടാണ്.":
+        native: "The rice is hot."
+        bases:
+          "ചോറ്": "cooked rice"
+          "ചൂടാണ്": "is hot"
+  "ml-0262":
+    native: "curry"
+    notes:
+      n1: "curry"
+    examples:
+      "എനിക്ക് കറി ഇഷ്ടമാണ്.":
+        native: "I like curry."
+        bases:
+          "കറി": "curry"
+          "ഇഷ്ടമാണ്": "like"
+      "കറി നല്ലതാണ്.":
+        native: "The curry is good."
+        bases:
+          "കറി": "curry"
+          "നല്ലതാണ്": "is good"
+  "ml-0263":
+    native: "dosa; a thin rice pancake"
+    notes:
+      n1: "dosa; a thin rice pancake"
+    examples:
+      "രാവിലെ ദോശ കഴിക്കും":
+        native: "I will eat dosa in the morning."
+        bases:
+          "ദോശ": "dosa; a thin rice pancake"
+      "ദോശ നല്ലതാണ്.":
+        native: "The dosa is good."
+        bases:
+          "ദോശ": "dosa; a thin rice pancake"
+          "നല്ലതാണ്": "is good"
+  "ml-0264":
+    native: "idli; a steamed rice cake"
+    notes:
+      n1: "idli; a steamed rice cake"
+    examples:
+      "ഇഡ്ഡലി രണ്ട് വേണം.":
+        native: "I need two idlis."
+        bases:
+          "ഇഡ്ഡലി": "idli; a steamed rice cake"
+          "വേണം": "need"
+      "ഇഡ്ഡലി എത്ര?":
+        native: "How much is an idli?"
+        bases:
+          "ഇഡ്ഡലി": "idli; a steamed rice cake"
+  "ml-0265":
+    native: "chapati; flat bread"
+    notes:
+      n1: "chapati; flat bread"
+    examples:
+      "രാത്രി ചപ്പാത്തി കഴിക്കും":
+        native: "I will eat chapati at night."
+        bases:
+          "ചപ്പാത്തി": "chapati; flat bread"
+      "ചപ്പാത്തി എത്ര വേണം?":
+        native: "How many chapatis do you need?"
+        bases:
+          "ചപ്പാത്തി": "chapati; flat bread"
+          "വേണം": "need"
+  "ml-0266":
+    native: "biryani; a spiced rice dish"
+    notes:
+      n1: "biryani; a spiced rice dish"
+    examples:
+      "ഇന്ന് ബിരിയാണി ഉണ്ടാക്കും":
+        native: "Today I will make biryani."
+        bases:
+          "ബിരിയാണി": "biryani; a spiced rice dish"
+      "ബിരിയാണി നല്ലതാണ്.":
+        native: "The biryani is good."
+        bases:
+          "ബിരിയാണി": "biryani; a spiced rice dish"
+          "നല്ലതാണ്": "is good"
+  "ml-0267":
+    native: "sambar; lentil and vegetable stew"
+    notes:
+      n1: "sambar; lentil and vegetable stew"
+    examples:
+      "നിനക്ക് സാമ്പാർ ഇഷ്ടമാണോ?":
+        native: "Do you like sambar?"
+        bases:
+          "സാമ്പാർ": "sambar; lentil and vegetable stew"
+          "ഇഷ്ടമാണോ": "do you like"
+      "സാമ്പാർ കുറച്ച് വേണം.":
+        native: "I need a little sambar."
+        bases:
+          "സാമ്പാർ": "sambar; lentil and vegetable stew"
+          "കുറച്ച്": "a little"
+          "വേണം": "need"
+  "ml-0268":
+    native: "lentils; dal"
+    notes:
+      n1: "lentils; dal"
+    examples:
+      "പരിപ്പ് ചോറിനൊപ്പം":
+        native: "The dal goes with the rice."
+        bases:
+          "പരിപ്പ്": "lentils; dal"
+      "പരിപ്പ് എവിടെ?":
+        native: "Where is the dal?"
+        bases:
+          "പരിപ്പ്": "lentils; dal"
+  "ml-0269":
+    native: "buttermilk"
+    notes:
+      n1: "buttermilk"
+    examples:
+      "മോര് കുടിക്കൂ.":
+        native: "Drink buttermilk."
+        bases:
+          "മോര്": "buttermilk"
+      "മോര് ഇവിടെ ഉണ്ടോ?":
+        native: "Is there buttermilk here?"
+        bases:
+          "മോര്": "buttermilk"
+  "ml-0270":
+    native: "tea"
+    notes:
+      n1: "tea"
+    examples:
+      "ചായ ചൂടാണ്.":
+        native: "The tea is hot."
+        bases:
+          "ചായ": "tea"
+          "ചൂടാണ്": "is hot"
+      "ചായ കുടിക്കാം":
+        native: "Let us drink tea."
+        bases:
+          "ചായ": "tea"
+  "ml-0271":
+    native: "coffee"
+    notes:
+      n1: "coffee"
+    examples:
+      "എനിക്ക് കാപ്പി വേണം.":
+        native: "I need coffee."
+        bases:
+          "കാപ്പി": "coffee"
+          "വേണം": "need"
+      "കാപ്പി പതുക്കെ കുടിക്കൂ.":
+        native: "Drink the coffee slowly."
+        bases:
+          "കാപ്പി": "coffee"
+          "പതുക്കെ": "slowly"
+  "ml-0272":
+    native: "vada; a fried savoury snack"
+    notes:
+      n1: "vada; a fried savoury snack"
+    examples:
+      "വട രണ്ട് വേണം.":
+        native: "I need two vadas."
+        bases:
+          "വട": "vada; a fried savoury snack"
+          "വേണം": "need"
+      "ചായയുടെ കൂടെ വട.":
+        native: "Vada with the tea."
+        bases:
+          "കൂടെ": "with; together"
+          "വട": "vada; a fried savoury snack"
+  "ml-0273":
+    native: "snack"
+    notes:
+      n1: "snack"
+    examples:
+      "വൈകുന്നേരം പലഹാരം കഴിക്കാം":
+        native: "Let us have a snack in the evening."
+        bases:
+          "പലഹാരം": "snack"
+      "പലഹാരം എവിടെ കിട്ടും?":
+        native: "Where can I get snacks?"
+        bases:
+          "പലഹാരം": "snack"
+          "കിട്ടും": "can get"
+  "ml-0274":
+    native: "biscuit"
+    notes:
+      n1: "biscuit"
+    examples:
+      "ബിസ്കറ്റ് ഇവിടെ ഉണ്ട്.":
+        native: "There are biscuits here."
+        bases:
+          "ബിസ്കറ്റ്": "biscuit"
+          "ഉണ്ട്": "there are"
+      "കുട്ടിക്ക് ബിസ്കറ്റ് വേണം.":
+        native: "The child needs a biscuit."
+        bases:
+          "ബിസ്കറ്റ്": "biscuit"
+          "വേണം": "needs"
+  "ml-0275":
+    native: "cake"
+    notes:
+      n1: "cake"
+    examples:
+      "കേക്ക് വേണോ?":
+        native: "Do you want cake?"
+        bases:
+          "കേക്ക്": "cake"
+          "വേണോ": "do you want"
+      "കേക്ക് മധുരമാണ്":
+        native: "The cake is sweet."
+        bases:
+          "കേക്ക്": "cake"
+  "ml-0276":
+    native: "ice cream"
+    notes:
+      n1: "ice cream"
+    examples:
+      "ഐസ്ക്രീം എത്ര?":
+        native: "How much is the ice cream?"
+        bases:
+          "ഐസ്ക്രീം": "ice cream"
+      "കുട്ടിക്ക് ഐസ്ക്രീം ഇഷ്ടമാണ്.":
+        native: "The child likes ice cream."
+        bases:
+          "ഐസ്ക്രീം": "ice cream"
+          "ഇഷ്ടമാണ്": "likes"
+  "ml-0277":
+    native: "fruit juice"
+    notes:
+      n1: "fruit juice"
+    examples:
+      "പഴച്ചാറ് കുടിക്കൂ.":
+        native: "Drink fruit juice."
+        bases:
+          "പഴച്ചാറ്": "fruit juice"
+      "ഒരു ഗ്ലാസ് പഴച്ചാറ് വേണം.":
+        native: "I need a glass of fruit juice."
+        bases:
+          "ഒരു": "a; one"
+          "ഗ്ലാസ്": "glass"
+          "പഴച്ചാറ്": "fruit juice"
+          "വേണം": "need"
+  "ml-0278":
+    native: "sweetness; a sweet taste"
+    notes:
+      n1: "sweetness; a sweet taste"
+    examples:
+      "കുറച്ച് മധുരം വേണം.":
+        native: "I need a little sweetness."
+        bases:
+          "കുറച്ച്": "a little"
+          "മധുരം": "sweetness; a sweet taste"
+          "വേണം": "need"
+      "മധുരം എനിക്ക് ഇഷ്ടമാണ്.":
+        native: "I like sweet things."
+        bases:
+          "മധുരം": "sweetness; a sweet taste"
+          "ഇഷ്ടമാണ്": "like"
+  "ml-0279":
+    native: "salt"
+    notes:
+      n1: "salt"
+    examples:
+      "ഉപ്പ് എടുക്കൂ.":
+        native: "Take the salt."
+        bases:
+          "ഉപ്പ്": "salt"
+      "ഈ കറിയിൽ ഉപ്പ് ഇല്ല.":
+        native: "There is no salt in this curry."
+        bases:
+          "ഈ": "this"
+          "ഉപ്പ്": "salt"
+  "ml-0280":
+    native: "spiciness; heat"
+    notes:
+      n1: "spiciness; heat"
+    examples:
+      "എരിവ് വേണ്ട.":
+        native: "No spice, please."
+        bases:
+          "എരിവ്": "spiciness; heat"
+          "വേണ്ട": "not needed"
+      "നിനക്ക് എരിവ് ഇഷ്ടമാണോ?":
+        native: "Do you like spicy food?"
+        bases:
+          "എരിവ്": "spiciness; heat"
+          "ഇഷ്ടമാണോ": "do you like"
+  "ml-0281":
+    native: "spinach"
+    notes:
+      n1: "spinach"
+    examples:
+      "ചീര എവിടെ വാങ്ങാം":
+        native: "Where can I buy spinach?"
+        bases:
+          "ചീര": "spinach"
+      "ചീര കഴുകൂ.":
+        native: "Wash the spinach."
+        bases:
+          "ചീര": "spinach"
+  "ml-0282":
+    native: "ginger"
+    notes:
+      n1: "ginger"
+    examples:
+      "ഇഞ്ചി വേണോ?":
+        native: "Do you want ginger?"
+        bases:
+          "ഇഞ്ചി": "ginger"
+          "വേണോ": "do you want"
+      "ഇഞ്ചി ഒരു കഷണം വേണം.":
+        native: "I need a piece of ginger."
+        bases:
+          "ഇഞ്ചി": "ginger"
+          "ഒരു": "a; one"
+          "കഷണം": "piece"
+          "വേണം": "need"
+  "ml-0283":
+    native: "garlic"
+    notes:
+      n1: "garlic"
+    examples:
+      "വെളുത്തുള്ളി ഇവിടെ ഉണ്ട്.":
+        native: "There is garlic here."
+        bases:
+          "വെളുത്തുള്ളി": "garlic"
+          "ഉണ്ട്": "there is"
+      "വെളുത്തുള്ളി നല്ലതാണ്.":
+        native: "Garlic is good."
+        bases:
+          "വെളുത്തുള്ളി": "garlic"
+          "നല്ലതാണ്": "is good"
+  "ml-0284":
+    native: "mustard seed"
+    notes:
+      n1: "mustard seed"
+    examples:
+      "എണ്ണയിൽ കടുക് ഇടൂ.":
+        native: "Put mustard seed in the oil."
+        bases:
+          "കടുക്": "mustard seed"
+          "ഇടൂ": "put"
+      "കടുക് കറുത്തതാണ്.":
+        native: "Mustard seed is black."
+        bases:
+          "കടുക്": "mustard seed"
+          "കറുത്തതാണ്": "is black"
+  "ml-0285":
+    native: "cumin"
+    notes:
+      n1: "cumin"
+    examples:
+      "ജീരകം വേണോ?":
+        native: "Do you want cumin?"
+        bases:
+          "ജീരകം": "cumin"
+          "വേണോ": "do you want"
+      "ജീരകം ചെറുതാണ്.":
+        native: "Cumin is small."
+        bases:
+          "ജീരകം": "cumin"
+          "ചെറുതാണ്": "is small"
+  "ml-0286":
+    native: "mango"
+    notes:
+      n1: "mango"
+    examples:
+      "മാങ്ങ മധുരമാണ്":
+        native: "The mango is sweet."
+        bases:
+          "മാങ്ങ": "mango"
+      "മാങ്ങ എത്ര?":
+        native: "How much is the mango?"
+        bases:
+          "മാങ്ങ": "mango"
+  "ml-0287":
+    native: "banana"
+    notes:
+      n1: "banana"
+    examples:
+      "വാഴപ്പഴം രണ്ട് വേണം.":
+        native: "I need two bananas."
+        bases:
+          "വാഴപ്പഴം": "banana"
+          "വേണം": "need"
+      "വാഴപ്പഴം കഴിക്കൂ.":
+        native: "Eat a banana."
+        bases:
+          "വാഴപ്പഴം": "banana"
+  "ml-0288":
+    native: "apple"
+    notes:
+      n1: "apple"
+    examples:
+      "ആപ്പിൾ എവിടെ?":
+        native: "Where is the apple?"
+        bases:
+          "ആപ്പിൾ": "apple"
+      "ആപ്പിൾ ഒന്ന്.":
+        native: "One apple."
+        bases:
+          "ആപ്പിൾ": "apple"
+  "ml-0289":
+    native: "orange"
+    notes:
+      n1: "orange"
+    examples:
+      "ഓറഞ്ച് മധുരമാണ്":
+        native: "The orange is sweet."
+        bases:
+          "ഓറഞ്ച്": "orange"
+      "ഓറഞ്ച് എടുക്കൂ.":
+        native: "Take an orange."
+        bases:
+          "ഓറഞ്ച്": "orange"
+  "ml-0290":
+    native: "jackfruit"
+    notes:
+      n1: "jackfruit"
+    examples:
+      "ചക്ക വലിയതാണ്":
+        native: "The jackfruit is big."
+        bases:
+          "ചക്ക": "jackfruit"
+      "നിനക്ക് ചക്ക ഇഷ്ടമാണോ?":
+        native: "Do you like jackfruit?"
+        bases:
+          "ചക്ക": "jackfruit"
+          "ഇഷ്ടമാണോ": "do you like"
+  "ml-0291":
+    native: "string hoppers; rice noodle cakes"
+    notes:
+      n1: "string hoppers; rice noodle cakes"
+    examples:
+      "രാവിലെ ഇടിയപ്പം കഴിക്കാം":
+        native: "Let us have string hoppers in the morning."
+        bases:
+          "ഇടിയപ്പം": "string hoppers; rice noodle cakes"
+      "ഇടിയപ്പത്തിന് കറി വേണം.":
+        native: "I need curry with the string hoppers."
+        bases:
+          "ഇടിയപ്പത്തിന്": "string hoppers; rice noodle cakes"
+          "വേണം": "need"
+  "ml-0292":
+    native: "omelette"
+    notes:
+      n1: "omelette"
+    examples:
+      "ഓംലറ്റ് വേണം.":
+        native: "I want an omelette."
+        bases:
+          "ഓംലറ്റ്": "omelette"
+          "വേണം": "want"
+      "ഓംലറ്റ് ഉണ്ടാക്കൂ.":
+        native: "Make an omelette."
+        bases:
+          "ഓംലറ്റ്": "omelette"
+  "ml-0293":
+    native: "dried fish"
+    notes:
+      n1: "dried fish"
+    examples:
+      "എനിക്ക് ഉണക്കമീൻ ഇഷ്ടമാണ്.":
+        native: "I like dried fish."
+        bases:
+          "ഉണക്കമീൻ": "dried fish"
+          "ഇഷ്ടമാണ്": "like"
+      "ഉണക്കമീൻ എവിടെ കിട്ടും?":
+        native: "Where can I get dried fish?"
+        bases:
+          "ഉണക്കമീൻ": "dried fish"
+          "കിട്ടും": "can get"
+  "ml-0294":
+    native: "chicken meat"
+    notes:
+      n1: "chicken meat"
+    examples:
+      "ചിക്കൻ വേണം.":
+        native: "I need chicken."
+        bases:
+          "ചിക്കൻ": "chicken meat"
+          "വേണം": "need"
+      "ചിക്കൻ കഴുകൂ.":
+        native: "Wash the chicken."
+        bases:
+          "ചിക്കൻ": "chicken meat"
+  "ml-0295":
+    native: "tomato"
+    notes:
+      n1: "tomato"
+    examples:
+      "തക്കാളി എത്ര?":
+        native: "How much are the tomatoes?"
+        bases:
+          "തക്കാളി": "tomato"
+      "തക്കാളി കഴുകൂ.":
+        native: "Wash the tomatoes."
+        bases:
+          "തക്കാളി": "tomato"
+  "ml-0296":
+    native: "brinjal; aubergine"
+    notes:
+      n1: "brinjal; aubergine"
+    examples:
+      "നിനക്ക് വഴുതന ഇഷ്ടമാണോ?":
+        native: "Do you like brinjal?"
+        bases:
+          "വഴുതന": "brinjal; aubergine"
+          "ഇഷ്ടമാണോ": "do you like"
+      "വഴുതന കറി നല്ലതാണ്.":
+        native: "Brinjal curry is good."
+        bases:
+          "വഴുതന": "brinjal; aubergine"
+          "നല്ലതാണ്": "is good"
+  "ml-0297":
+    native: "cucumber"
+    notes:
+      n1: "cucumber"
+    examples:
+      "വെള്ളരിക്ക ഒന്ന് വേണം.":
+        native: "I need one cucumber."
+        bases:
+          "വെള്ളരിക്ക": "cucumber"
+          "വേണം": "need"
+      "വെള്ളരിക്ക എവിടെ?":
+        native: "Where is the cucumber?"
+        bases:
+          "വെള്ളരിക്ക": "cucumber"
+  "ml-0298":
+    native: "carrot"
+    notes:
+      n1: "carrot"
+    examples:
+      "കാരറ്റ് മധുരമാണ്":
+        native: "The carrot is sweet."
+        bases:
+          "കാരറ്റ്": "carrot"
+      "കാരറ്റ് കഴുകൂ.":
+        native: "Wash the carrot."
+        bases:
+          "കാരറ്റ്": "carrot"
+  "ml-0299":
+    native: "tapioca; cassava"
+    notes:
+      n1: "tapioca; cassava"
+    examples:
+      "കപ്പ വേണോ?":
+        native: "Do you want tapioca?"
+        bases:
+          "കപ്പ": "tapioca; cassava"
+          "വേണോ": "do you want"
+      "കപ്പ കഴിക്കാം":
+        native: "Let us eat tapioca."
+        bases:
+          "കപ്പ": "tapioca; cassava"
+  "ml-0300":
+    native: "pickle"
+    notes:
+      n1: "pickle"
+    examples:
+      "നിനക്ക് അച്ചാർ ഇഷ്ടമാണോ?":
+        native: "Do you like pickle?"
+        bases:
+          "അച്ചാർ": "pickle"
+          "ഇഷ്ടമാണോ": "do you like"
+      "അച്ചാർ അധികം വേണ്ട.":
+        native: "Not much pickle, please."
+        bases:
+          "അച്ചാർ": "pickle"
+          "അധികം": "much; too much"
+          "വേണ്ട": "not needed"
+  "ml-0301":
+    native: "spice; spice mix"
+    notes:
+      n1: "spice; spice mix"
+    examples:
+      "മസാല ഇല്ല.":
+        native: "There is no spice."
+        bases:
+          "മസാല": "spice; spice mix"
+      "മസാല ഇവിടെ ഉണ്ട്.":
+        native: "There is spice here."
+        bases:
+          "മസാല": "spice; spice mix"
+          "ഉണ്ട്": "there is"
+  "ml-0302":
+    native: "black pepper"
+    notes:
+      n1: "black pepper"
+    examples:
+      "കുരുമുളക് കുറച്ച് വേണം.":
+        native: "I need a little black pepper."
+        bases:
+          "കുരുമുളക്": "black pepper"
+          "കുറച്ച്": "a little"
+          "വേണം": "need"
+      "കുരുമുളക് എടുക്കൂ.":
+        native: "Take the black pepper."
+        bases:
+          "കുരുമുളക്": "black pepper"
+  "ml-0303":
+    native: "hunger"
+    notes:
+      n1: "hunger"
+    examples:
+      "എനിക്ക് വിശപ്പുണ്ട്":
+        native: "I am hungry."
+        bases:
+          "വിശപ്പുണ്ട്": "hunger"
+      "വിശപ്പ് ഉണ്ടോ?":
+        native: "Are you hungry?"
+        bases:
+          "വിശപ്പ്": "hunger"
+  "ml-0304":
+    native: "thirst"
+    notes:
+      n1: "thirst"
+    examples:
+      "എനിക്ക് ദാഹമുണ്ട്":
+        native: "I am thirsty."
+        bases:
+          "ദാഹമുണ്ട്": "thirst"
+      "ദാഹത്തിന് വെള്ളം കുടിക്കൂ.":
+        native: "Drink water for thirst."
+        bases:
+          "ദാഹത്തിന്": "thirst"
+  "ml-0305":
+    native: "menu"
+    notes:
+      n1: "menu"
+    examples:
+      "മെനു ഇവിടെ.":
+        native: "Here is the menu."
+        bases:
+          "മെനു": "menu"
+      "മെനു കാണിക്കൂ.":
+        native: "Show the menu."
+        bases:
+          "മെനു": "menu"
+  "ml-0306":
+    native: "lunch; a rice meal"
+    notes:
+      n1: "lunch; a rice meal"
+    examples:
+      "ഉച്ചയ്ക്ക് ഊണ് കഴിക്കാം":
+        native: "Let us have lunch at noon."
+        bases:
+          "ഊണ്": "lunch; a rice meal"
+      "ഊണ് വേണോ?":
+        native: "Do you want lunch?"
+        bases:
+          "ഊണ്": "lunch; a rice meal"
+          "വേണോ": "do you want"

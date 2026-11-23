@@ -1,0 +1,169 @@
+schema: 1
+id: "ml-en-time"
+kind: "layer"
+core: "ml-time"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Time"
+description: "Today, tomorrow, yesterday, the parts of the day, now, o'clock, minutes, time itself and the week. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0127":
+    native: "today"
+    notes:
+      n1: "Today, as in the day being spoken about."
+    examples:
+      "ഇന്ന് വരൂ.":
+        native: "Come today."
+        bases:
+          "ഇന്ന്": "today"
+      "ഇന്ന് ഇവിടെ.":
+        native: "Today here."
+        bases:
+          "ഇന്ന്": "today"
+  "ml-0128":
+    native: "tomorrow"
+    notes:
+      n1: "Tomorrow, the day after today."
+    examples:
+      "നാളെ വരൂ.":
+        native: "Come tomorrow."
+        bases:
+          "നാളെ": "tomorrow"
+      "നാളെ പോകാം.":
+        native: "Let's go tomorrow."
+        bases:
+          "നാളെ": "tomorrow"
+          "പോകാം": "can go"
+  "ml-0129":
+    native: "yesterday"
+    notes:
+      n1: "Yesterday, the day before today."
+    examples:
+      "ഇന്നലെ വെള്ളം ഇല്ല.":
+        native: "There was no water yesterday."
+        bases: {}
+      "ഇന്നലെ ഞാൻ ഇവിടെ ഉണ്ടായിരുന്നു.":
+        native: "I was here yesterday."
+        bases: {"ഉണ്ടായിരുന്നു": "was"}
+  "ml-0130":
+    native: "in the morning"
+    notes:
+      n1: "In the morning, from sunrise to noon."
+    examples:
+      "രാവിലെ ചായ കുടിക്കൂ.":
+        native: "Drink tea in the morning."
+        bases:
+          "രാവിലെ": "in the morning"
+          "ചായ": "tea"
+      "രാവിലെ ഇവിടെ.":
+        native: "Here in the morning."
+        bases:
+          "രാവിലെ": "in the morning"
+  "ml-0131":
+    native: "noon"
+    notes:
+      n1: "Noon, the middle of the day, and the time after it."
+    examples:
+      "ഇപ്പോൾ ഉച്ച.":
+        native: "It is noon now."
+        bases:
+          "ഉച്ച": "noon"
+      "ഉച്ച കഴിഞ്ഞു.":
+        native: "It is past noon."
+        bases:
+          "ഉച്ച": "noon"
+          "കഴിഞ്ഞു": "is past"
+  "ml-0132":
+    native: "evening"
+    notes:
+      n1: "The evening, from the end of the afternoon to night."
+    examples:
+      "വൈകുന്നേരം വരൂ.":
+        native: "Come in the evening."
+        bases:
+          "വൈകുന്നേരം": "evening"
+      "ഇപ്പോൾ വൈകുന്നേരം.":
+        native: "It is evening now."
+        bases:
+          "വൈകുന്നേരം": "evening"
+  "ml-0133":
+    native: "night"
+    notes:
+      n1: "The night, from dark until morning."
+    examples:
+      "രാത്രി ഉറങ്ങൂ.":
+        native: "Sleep at night."
+        bases:
+          "രാത്രി": "night"
+      "ഇന്ന് രാത്രി.":
+        native: "Tonight."
+        bases:
+          "രാത്രി": "night"
+  "ml-0134":
+    native: "now"
+    notes:
+      n1: "Now, at this moment."
+    examples:
+      "ഇപ്പോൾ വരൂ.":
+        native: "Come now."
+        bases:
+          "ഇപ്പോൾ": "now"
+      "ഇപ്പോൾ ഇവിടെ.":
+        native: "Here now."
+        bases:
+          "ഇപ്പോൾ": "now"
+  "ml-0135":
+    native: "o'clock; hour"
+    notes:
+      n1: "The hour, as in three o'clock."
+    examples:
+      "ഇപ്പോൾ മണി എത്ര?":
+        native: "What time is it now?"
+        bases:
+          "മണി": "o'clock"
+      "മൂന്ന് മണി.":
+        native: "Three o'clock."
+        bases:
+          "മണി": "o'clock"
+  "ml-0136":
+    native: "minute"
+    notes:
+      n1: "A minute, one of sixty in an hour."
+    examples:
+      "ഒരു മിനിറ്റ്.":
+        native: "One minute."
+        bases:
+          "ഒരു": "a; one"
+          "മിനിറ്റ്": "minute"
+      "രണ്ട് മിനിറ്റ്.":
+        native: "Two minutes."
+        bases:
+          "മിനിറ്റ്": "minute"
+  "ml-0137":
+    native: "time"
+    notes:
+      n1: "Time, as the time of day, and also a span of time."
+    examples:
+      "സമയം എത്ര?":
+        native: "What is the time?"
+        bases:
+          "സമയം": "time"
+      "സമയം ഇല്ല.":
+        native: "There is no time."
+        bases:
+          "സമയം": "time"
+  "ml-0138":
+    native: "week"
+    notes:
+      n1: "A week, seven days."
+    examples:
+      "ഒരു ആഴ്ച.":
+        native: "One week."
+        bases:
+          "ഒരു": "a; one"
+          "ആഴ്ച": "week"
+      "രണ്ട് ആഴ്ച.":
+        native: "Two weeks."
+        bases:
+          "ആഴ്ച": "week"

@@ -1,0 +1,536 @@
+schema: 1
+id: "ml-describing"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "describing"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0477"
+    target: "പുതിയ"
+    reading: "putiya"
+    ipa: "put̪ija"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പുതിയ ഷർട്ട്."
+        reading: "putiya ṣarṭṭ."
+        ipa: "put̪ija ʂaɾʈʈ"
+        bases: [{ word: "പുതിയ", base: "പുതിയ", reading: "putiya" }, { word: "ഷർട്ട്", ref: "ml-0405" }]
+      - target: "ഈ പുസ്തകം പുതിയതാണ്"
+        reading: "ī pustakaṁ putiyatāṇ"
+        ipa: "iː pust̪əkam put̪ijət̪aːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "പുസ്തകം", ref: "ml-0356" }, { word: "പുതിയതാണ്", base: "പുതിയ", reading: "putiya" }]
+  - id: "ml-0478"
+    target: "പഴയ"
+    reading: "paḻaya"
+    ipa: "pəɻəja"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പഴയ വീട്."
+        reading: "paḻaya vīṭ."
+        ipa: "pəɻəja ʋiːʈ"
+        bases: [{ word: "പഴയ", base: "പഴയ", reading: "paḻaya" }, { word: "വീട്", ref: "ml-0009" }]
+      - target: "ഈ കസേര പഴയതാണ്"
+        reading: "ī kasēra paḻayatāṇ"
+        ipa: "iː kəseːɾa pəɻəjət̪aːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "കസേര", ref: "ml-0360" }, { word: "പഴയതാണ്", base: "പഴയ", reading: "paḻaya" }]
+  - id: "ml-0479"
+    target: "ചൂടുള്ള"
+    reading: "cūṭuḷḷa"
+    ipa: "tʃuːʈuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചൂടുള്ള ചായ."
+        reading: "cūṭuḷḷa cāya."
+        ipa: "tʃuːʈuɭɭa tʃaːja"
+        bases: [{ word: "ചൂടുള്ള", base: "ചൂടുള്ള", reading: "cūṭuḷḷa" }, { word: "ചായ", ref: "ml-0270" }]
+      - target: "ഭക്ഷണം ചൂടുള്ളതാണ്"
+        reading: "bhakṣaṇaṁ cūṭuḷḷatāṇ"
+        ipa: "bʱəkʂəɳam tʃuːʈuɭɭət̪aːɳ"
+        bases: [{ word: "ഭക്ഷണം", ref: "ml-0260" }, { word: "ചൂടുള്ളതാണ്", base: "ചൂടുള്ള", reading: "cūṭuḷḷa" }]
+  - id: "ml-0480"
+    target: "തണുത്ത"
+    reading: "taṇutta"
+    ipa: "t̪əɳut̪t̪a"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "തണുത്ത വെള്ളം."
+        reading: "taṇutta veḷḷaṁ."
+        ipa: "t̪əɳut̪t̪a ʋeɭɭam"
+        bases: [{ word: "തണുത്ത", base: "തണുത്ത", reading: "taṇutta" }, { word: "വെള്ളം", ref: "ml-0005" }]
+      - target: "കാപ്പി തണുത്തതാണ്"
+        reading: "kāppi taṇuttatāṇ"
+        ipa: "kaːppi t̪əɳut̪t̪ət̪aːɳ"
+        bases: [{ word: "കാപ്പി", ref: "ml-0271" }, { word: "തണുത്തതാണ്", base: "തണുത്ത", reading: "taṇutta" }]
+  - id: "ml-0481"
+    target: "വൃത്തിയുള്ള"
+    reading: "vṛttiyuḷḷa"
+    ipa: "ʋɾɯt̪t̪ijuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വൃത്തിയുള്ള മുറി."
+        reading: "vṛttiyuḷḷa muṟi."
+        ipa: "ʋɾɯt̪t̪ijuɭɭa muɾi"
+        bases: [{ word: "വൃത്തിയുള്ള", base: "വൃത്തിയുള്ള", reading: "vṛttiyuḷḷa" }, { word: "മുറി", ref: "ml-0387" }]
+      - target: "ഈ മേശ വൃത്തിയാണ്."
+        reading: "ī mēśa vṛttiyāṇ."
+        ipa: "iː meːʃa ʋɾɯt̪t̪ijaːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "മേശ", ref: "ml-0359" }, { word: "വൃത്തിയാണ്", base: "വൃത്തിയാണ്", reading: "vṛttiyāṇ" }]
+  - id: "ml-0482"
+    target: "വൃത്തികെട്ട"
+    reading: "vṛttikeṭṭa"
+    ipa: "ʋɾɯt̪t̪ikeʈʈa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വൃത്തികെട്ട കൈ."
+        reading: "vṛttikeṭṭa kai."
+        ipa: "ʋɾɯt̪t̪ikeʈʈa kai"
+        bases: [{ word: "വൃത്തികെട്ട", base: "വൃത്തികെട്ട", reading: "vṛttikeṭṭa" }, { word: "കൈ", ref: "ml-0317" }]
+      - target: "തെരുവ് വൃത്തികെട്ടതാണ്"
+        reading: "teruv vṛttikeṭṭatāṇ"
+        ipa: "t̪eɾuʋ ʋɾɯt̪t̪ikeʈʈət̪aːɳ"
+        bases: [{ word: "തെരുവ്", ref: "ml-0353" }, { word: "വൃത്തികെട്ടതാണ്", base: "വൃത്തികെട്ട", reading: "vṛttikeṭṭa" }]
+  - id: "ml-0483"
+    target: "വേഗത്തിലുള്ള"
+    reading: "vēgattiluḷḷa"
+    ipa: "ʋeːɡət̪t̪iluɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വേഗത്തിലുള്ള ബസ്."
+        reading: "vēgattiluḷḷa bas."
+        ipa: "ʋeːɡət̪t̪iluɭɭa bas"
+        bases: [{ word: "വേഗത്തിലുള്ള", base: "വേഗത്തിലുള്ള", reading: "vēgattiluḷḷa" }, { word: "ബസ്", ref: "ml-0252" }]
+      - target: "ട്രെയിൻ വേഗത്തിലാണ്."
+        reading: "ṭreyiṉ vēgattilāṇ."
+        ipa: "ʈɾejin ʋeːɡət̪t̪ilaːɳ"
+        bases: [{ word: "ട്രെയിൻ", ref: "ml-0254" }, { word: "വേഗത്തിലാണ്", base: "വേഗത്തിലാണ്", reading: "vēgattilāṇ" }]
+  - id: "ml-0484"
+    target: "സുന്ദരമായ"
+    reading: "sundaramāya"
+    ipa: "sund̪əɾəmaːja"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "സുന്ദരമായ സ്ഥലം."
+        reading: "sundaramāya sthalaṁ."
+        ipa: "sund̪əɾəmaːja st̪ʰəlam"
+        bases: [{ word: "സുന്ദരമായ", base: "സുന്ദരമായ", reading: "sundaramāya" }, { word: "സ്ഥലം", ref: "ml-0047" }]
+      - target: "ഈ പൂവ് സുന്ദരമാണ്."
+        reading: "ī pūv sundaramāṇ."
+        ipa: "iː puːʋ sund̪əɾəmaːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "പൂവ്", base: "പൂവ്", reading: "pūv" }, { word: "സുന്ദരമാണ്", base: "സുന്ദരമാണ്", reading: "sundaramāṇ" }]
+  - id: "ml-0485"
+    target: "വിലകൂടിയ"
+    reading: "vilakūṭiya"
+    ipa: "ʋiləkuːʈija"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വിലകൂടിയ ഫോൺ."
+        reading: "vilakūṭiya phōṇ."
+        ipa: "ʋiləkuːʈija pʰoːɳ"
+        bases: [{ word: "വിലകൂടിയ", base: "വിലകൂടിയ", reading: "vilakūṭiya" }, { word: "ഫോൺ", ref: "ml-0363" }]
+      - target: "ഈ വാച്ച് വിലകൂടിയതാണ്"
+        reading: "ī vācc vilakūṭiyatāṇ"
+        ipa: "iː ʋaːtʃtʃ ʋiləkuːʈijət̪aːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "വാച്ച്", ref: "ml-0364" }, { word: "വിലകൂടിയതാണ്", base: "വിലകൂടിയ", reading: "vilakūṭiya" }]
+  - id: "ml-0486"
+    target: "വിലകുറഞ്ഞ"
+    reading: "vilakuṟañña"
+    ipa: "ʋiləkuɾəɲɲa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വിലകുറഞ്ഞ സാധനം."
+        reading: "vilakuṟañña sādhanaṁ."
+        ipa: "ʋiləkuɾəɲɲa saːd̪ʱənam"
+        bases: [{ word: "വിലകുറഞ്ഞ", base: "വിലകുറഞ്ഞ", reading: "vilakuṟañña" }, { word: "സാധനം", ref: "ml-0385" }]
+      - target: "ഇത് വിലകുറഞ്ഞതാണ്"
+        reading: "it vilakuṟaññatāṇ"
+        ipa: "it̪ ʋiləkuɾəɲɲət̪aːɳ"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "വിലകുറഞ്ഞതാണ്", base: "വിലകുറഞ്ഞ", reading: "vilakuṟañña" }]
+  - id: "ml-0487"
+    target: "ഭാരമുള്ള"
+    reading: "bhāramuḷḷa"
+    ipa: "bʱaːɾəmuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഭാരമുള്ള ബാഗ്."
+        reading: "bhāramuḷḷa bāg."
+        ipa: "bʱaːɾəmuɭɭa baːɡ"
+        bases: [{ word: "ഭാരമുള്ള", base: "ഭാരമുള്ള", reading: "bhāramuḷḷa" }, { word: "ബാഗ്", ref: "ml-0361" }]
+      - target: "ഈ പെട്ടി ഭാരമാണ്."
+        reading: "ī peṭṭi bhāramāṇ."
+        ipa: "iː peʈʈi bʱaːɾəmaːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "പെട്ടി", ref: "ml-0371" }, { word: "ഭാരമാണ്", base: "ഭാരമാണ്", reading: "bhāramāṇ" }]
+  - id: "ml-0488"
+    target: "നീളമുള്ള"
+    reading: "nīḷamuḷḷa"
+    ipa: "niːɭəmuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "നീളമുള്ള പാവാട."
+        reading: "nīḷamuḷḷa pāvāṭa."
+        ipa: "niːɭəmuɭɭa paːʋaːʈa"
+        bases: [{ word: "നീളമുള്ള", base: "നീളമുള്ള", reading: "nīḷamuḷḷa" }, { word: "പാവാട", ref: "ml-0415" }]
+      - target: "റോഡ് നീളമാണ്."
+        reading: "ṟōḍ nīḷamāṇ."
+        ipa: "ɾoːɖ niːɭəmaːɳ"
+        bases: [{ word: "റോഡ്", ref: "ml-0244" }, { word: "നീളമാണ്", base: "നീളമാണ്", reading: "nīḷamāṇ" }]
+  - id: "ml-0489"
+    target: "ചെറിയ"
+    reading: "ceṟiya"
+    ipa: "tʃeɾija"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചെറിയ കുട്ടി."
+        reading: "ceṟiya kuṭṭi."
+        ipa: "tʃeɾija kuʈʈi"
+        bases: [{ word: "ചെറിയ", base: "ചെറിയ", reading: "ceṟiya" }, { word: "കുട്ടി", ref: "ml-0082" }]
+      - target: "ഈ വീട് ചെറിയതാണ്"
+        reading: "ī vīṭ ceṟiyatāṇ"
+        ipa: "iː ʋiːʈ tʃeɾijət̪aːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "വീട്", ref: "ml-0009" }, { word: "ചെറിയതാണ്", base: "ചെറിയ", reading: "ceṟiya" }]
+  - id: "ml-0490"
+    target: "ഉയരമുള്ള"
+    reading: "uyaramuḷḷa"
+    ipa: "ujəɾəmuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഉയരമുള്ള മരം."
+        reading: "uyaramuḷḷa maraṁ."
+        ipa: "ujəɾəmuɭɭa məɾam"
+        bases: [{ word: "ഉയരമുള്ള", ref: "ml-0490" }, { word: "മരം", base: "മരം", reading: "maraṁ" }]
+      - target: "അവൻ ഉയരമുള്ളവനാണ്."
+        reading: "avaṉ uyaramuḷḷavanāṇ."
+        ipa: "əʋan ujəɾəmuɭɭəʋənaːɳ"
+        bases: [{ word: "അവൻ", ref: "ml-0097" }, { word: "ഉയരമുള്ളവനാണ്", base: "ഉയരമുള്ളവനാണ്", reading: "uyaramuḷḷavanāṇ" }]
+  - id: "ml-0491"
+    target: "വീതിയുള്ള"
+    reading: "vītiyuḷḷa"
+    ipa: "ʋiːt̪ijuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വീതിയുള്ള തെരുവ്."
+        reading: "vītiyuḷḷa teruv."
+        ipa: "ʋiːt̪ijuɭɭa t̪eɾuʋ"
+        bases: [{ word: "വീതിയുള്ള", base: "വീതിയുള്ള", reading: "vītiyuḷḷa" }, { word: "തെരുവ്", ref: "ml-0353" }]
+      - target: "മേശ വീതിയാണ്."
+        reading: "mēśa vītiyāṇ."
+        ipa: "meːʃa ʋiːt̪ijaːɳ"
+        bases: [{ word: "മേശ", ref: "ml-0359" }, { word: "വീതിയാണ്", base: "വീതിയാണ്", reading: "vītiyāṇ" }]
+  - id: "ml-0492"
+    target: "ഇടുങ്ങിയ"
+    reading: "iṭuṅṅiya"
+    ipa: "iʈuŋŋija"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇടുങ്ങിയ വഴി."
+        reading: "iṭuṅṅiya vaḻi."
+        ipa: "iʈuŋŋija ʋəɻi"
+        bases: [{ word: "ഇടുങ്ങിയ", base: "ഇടുങ്ങിയ", reading: "iṭuṅṅiya" }, { word: "വഴി", ref: "ml-0243" }]
+      - target: "ഈ വാതിൽ ഇടുങ്ങിയതാണ്"
+        reading: "ī vātil iṭuṅṅiyatāṇ"
+        ipa: "iː ʋaːt̪il iʈuŋŋijət̪aːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "വാതിൽ", ref: "ml-0375" }, { word: "ഇടുങ്ങിയതാണ്", base: "ഇടുങ്ങിയ", reading: "iṭuṅṅiya" }]
+  - id: "ml-0493"
+    target: "എളുപ്പമുള്ള"
+    reading: "eḷuppamuḷḷa"
+    ipa: "eɭuppəmuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എളുപ്പമുള്ള ചോദ്യം."
+        reading: "eḷuppamuḷḷa cōdyaṁ."
+        ipa: "eɭuppəmuɭɭa tʃoːd̪jam"
+        bases: [{ word: "എളുപ്പമുള്ള", base: "എളുപ്പമുള്ള", reading: "eḷuppamuḷḷa" }, { word: "ചോദ്യം", base: "ചോദ്യം", reading: "cōdyaṁ" }]
+      - target: "ഇത് എളുപ്പമാണ്."
+        reading: "it eḷuppamāṇ."
+        ipa: "it̪ eɭuppəmaːɳ"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "എളുപ്പമാണ്", base: "എളുപ്പമാണ്", reading: "eḷuppamāṇ" }]
+  - id: "ml-0494"
+    target: "ബുദ്ധിമുട്ടുള്ള"
+    reading: "buddhimuṭṭuḷḷa"
+    ipa: "bud̪d̪ʱimuʈʈuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ബുദ്ധിമുട്ടുള്ള ജോലി."
+        reading: "buddhimuṭṭuḷḷa jōli."
+        ipa: "bud̪d̪ʱimuʈʈuɭɭa dʒoːli"
+        bases: [{ word: "ബുദ്ധിമുട്ടുള്ള", base: "ബുദ്ധിമുട്ടുള്ള", reading: "buddhimuṭṭuḷḷa" }, { word: "ജോലി", ref: "ml-0046" }]
+      - target: "ഇത് ബുദ്ധിമുട്ടാണ്."
+        reading: "it buddhimuṭṭāṇ."
+        ipa: "it̪ bud̪d̪ʱimuʈʈaːɳ"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "ബുദ്ധിമുട്ടാണ്", base: "ബുദ്ധിമുട്ടാണ്", reading: "buddhimuṭṭāṇ" }]
+  - id: "ml-0495"
+    target: "സന്തോഷമുള്ള"
+    reading: "santōṣamuḷḷa"
+    ipa: "sənt̪oːʂəmuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "സന്തോഷമുള്ള കുട്ടി."
+        reading: "santōṣamuḷḷa kuṭṭi."
+        ipa: "sənt̪oːʂəmuɭɭa kuʈʈi"
+        bases: [{ word: "സന്തോഷമുള്ള", ref: "ml-0495" }, { word: "കുട്ടി", ref: "ml-0082" }]
+      - target: "അവൾ സന്തോഷത്തിലാണ്."
+        reading: "avaḷ santōṣattilāṇ."
+        ipa: "əʋaɭ sənt̪oːʂət̪t̪ilaːɳ"
+        bases: [{ word: "അവൾ", ref: "ml-0098" }, { word: "സന്തോഷത്തിലാണ്", base: "സന്തോഷത്തിലാണ്", reading: "santōṣattilāṇ" }]
+  - id: "ml-0496"
+    target: "ദുഃഖമുള്ള"
+    reading: "duḥkhamuḷḷa"
+    ipa: "d̪uhkʰəmuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ദുഃഖമുള്ള മുഖം."
+        reading: "duḥkhamuḷḷa mukhaṁ."
+        ipa: "d̪uhkʰəmuɭɭa mukʰam"
+        bases: [{ word: "ദുഃഖമുള്ള", base: "ദുഃഖമുള്ള", reading: "duḥkhamuḷḷa" }, { word: "മുഖം", ref: "ml-0308" }]
+      - target: "അവൻ ദുഃഖിതനാണ്."
+        reading: "avaṉ duḥkhitanāṇ."
+        ipa: "əʋan d̪uhkʰit̪ənaːɳ"
+        bases: [{ word: "അവൻ", ref: "ml-0097" }, { word: "ദുഃഖിതനാണ്", base: "ദുഃഖിതനാണ്", reading: "duḥkhitanāṇ" }]
+  - id: "ml-0497"
+    target: "ക്ഷീണിച്ച"
+    reading: "kṣīṇicca"
+    ipa: "kʂiːɳitʃtʃa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ക്ഷീണിച്ച കുട്ടി."
+        reading: "kṣīṇicca kuṭṭi."
+        ipa: "kʂiːɳitʃtʃa kuʈʈi"
+        bases: [{ word: "ക്ഷീണിച്ച", base: "ക്ഷീണിച്ച", reading: "kṣīṇicca" }, { word: "കുട്ടി", ref: "ml-0082" }]
+      - target: "ഞാൻ ക്ഷീണിച്ചു."
+        reading: "ñāṉ kṣīṇiccu."
+        ipa: "ɲaːn kʂiːɳitʃtʃu"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "ക്ഷീണിച്ചു", base: "ക്ഷീണിച്ചു", reading: "kṣīṇiccu" }]
+  - id: "ml-0498"
+    target: "വിശക്കുന്ന"
+    reading: "viśakkunna"
+    ipa: "ʋiʃəkkunna"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വിശക്കുന്ന കുട്ടി."
+        reading: "viśakkunna kuṭṭi."
+        ipa: "ʋiʃəkkunna kuʈʈi"
+        bases: [{ word: "വിശക്കുന്ന", base: "വിശക്കുന്ന", reading: "viśakkunna" }, { word: "കുട്ടി", ref: "ml-0082" }]
+      - target: "എനിക്ക് വിശക്കുന്നു."
+        reading: "enikk viśakkunnu."
+        ipa: "enikk ʋiʃəkkunnu"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "വിശക്കുന്നു", base: "വിശക്കുന്നു", reading: "viśakkunnu" }]
+  - id: "ml-0499"
+    target: "ദാഹിക്കുന്ന"
+    reading: "dāhikkunna"
+    ipa: "d̪aːhikkunna"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ദാഹിക്കുന്ന ആൾ."
+        reading: "dāhikkunna āḷ."
+        ipa: "d̪aːhikkunna aːɭ"
+        bases: [{ word: "ദാഹിക്കുന്ന", base: "ദാഹിക്കുന്ന", reading: "dāhikkunna" }, { word: "ആൾ", base: "ആൾ", reading: "āḷ" }]
+      - target: "എനിക്ക് ദാഹിക്കുന്നു."
+        reading: "enikk dāhikkunnu."
+        ipa: "enikk d̪aːhikkunnu"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "ദാഹിക്കുന്നു", base: "ദാഹിക്കുന്നു", reading: "dāhikkunnu" }]
+  - id: "ml-0500"
+    target: "ഇരുണ്ട"
+    reading: "iruṇṭa"
+    ipa: "iɾuɳʈa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇരുണ്ട മുറി."
+        reading: "iruṇṭa muṟi."
+        ipa: "iɾuɳʈa muɾi"
+        bases: [{ word: "ഇരുണ്ട", base: "ഇരുണ്ട", reading: "iruṇṭa" }, { word: "മുറി", ref: "ml-0387" }]
+      - target: "രാത്രി ഇരുണ്ടതാണ്"
+        reading: "rātri iruṇṭatāṇ"
+        ipa: "ɾaːt̪ɾi iɾuɳʈət̪aːɳ"
+        bases: [{ word: "രാത്രി", ref: "ml-0133" }, { word: "ഇരുണ്ടതാണ്", base: "ഇരുണ്ട", reading: "iruṇṭa" }]
+  - id: "ml-0501"
+    target: "പ്രകാശമുള്ള"
+    reading: "prakāśamuḷḷa"
+    ipa: "pɾəkaːʃəmuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പ്രകാശമുള്ള ലൈറ്റ്."
+        reading: "prakāśamuḷḷa laiṟṟ."
+        ipa: "pɾəkaːʃəmuɭɭa laitt"
+        bases: [{ word: "പ്രകാശമുള്ള", base: "പ്രകാശമുള്ള", reading: "prakāśamuḷḷa" }, { word: "ലൈറ്റ്", ref: "ml-0379" }]
+      - target: "മുറി പ്രകാശമാണ്."
+        reading: "muṟi prakāśamāṇ."
+        ipa: "muɾi pɾəkaːʃəmaːɳ"
+        bases: [{ word: "മുറി", ref: "ml-0387" }, { word: "പ്രകാശമാണ്", base: "പ്രകാശമാണ്", reading: "prakāśamāṇ" }]
+  - id: "ml-0502"
+    target: "മോശമായ"
+    reading: "mōśamāya"
+    ipa: "moːʃəmaːja"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മോശമായ ഭക്ഷണം."
+        reading: "mōśamāya bhakṣaṇaṁ."
+        ipa: "moːʃəmaːja bʱəkʂəɳam"
+        bases: [{ word: "മോശമായ", base: "മോശമായ", reading: "mōśamāya" }, { word: "ഭക്ഷണം", ref: "ml-0260" }]
+      - target: "ഈ കറി മോശമാണ്"
+        reading: "ī kaṟi mōśamāṇ"
+        ipa: "iː kəɾi moːʃəmaːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "കറി", ref: "ml-0262" }, { word: "മോശമാണ്", base: "മോശമായ", reading: "mōśamāya" }]
+  - id: "ml-0503"
+    target: "മധുരമുള്ള"
+    reading: "madhuramuḷḷa"
+    ipa: "məd̪ʱuɾəmuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മധുരമുള്ള മാങ്ങ."
+        reading: "madhuramuḷḷa māṅṅa."
+        ipa: "məd̪ʱuɾəmuɭɭa maːŋŋa"
+        bases: [{ word: "മധുരമുള്ള", base: "മധുരമുള്ള", reading: "madhuramuḷḷa" }, { word: "മാങ്ങ", ref: "ml-0286" }]
+      - target: "ഈ പഴം മധുരമാണ്"
+        reading: "ī paḻaṁ madhuramāṇ"
+        ipa: "iː pəɻam məd̪ʱuɾəmaːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "പഴം", ref: "ml-0225" }, { word: "മധുരമാണ്", ref: "ml-0278" }]
+  - id: "ml-0504"
+    target: "എരിവുള്ള"
+    reading: "erivuḷḷa"
+    ipa: "eɾiʋuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എരിവുള്ള കറി."
+        reading: "erivuḷḷa kaṟi."
+        ipa: "eɾiʋuɭɭa kəɾi"
+        bases: [{ word: "എരിവുള്ള", base: "എരിവുള്ള", reading: "erivuḷḷa" }, { word: "കറി", ref: "ml-0262" }]
+      - target: "ഈ കറി എരിവാണ്."
+        reading: "ī kaṟi erivāṇ."
+        ipa: "iː kəɾi eɾiʋaːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "കറി", ref: "ml-0262" }, { word: "എരിവാണ്", base: "എരിവാണ്", reading: "erivāṇ" }]
+  - id: "ml-0505"
+    target: "പുളിയുള്ള"
+    reading: "puḷiyuḷḷa"
+    ipa: "puɭijuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പുളിയുള്ള മാങ്ങ."
+        reading: "puḷiyuḷḷa māṅṅa."
+        ipa: "puɭijuɭɭa maːŋŋa"
+        bases: [{ word: "പുളിയുള്ള", base: "പുളിയുള്ള", reading: "puḷiyuḷḷa" }, { word: "മാങ്ങ", ref: "ml-0286" }]
+      - target: "ഈ മാങ്ങ പുളിയാണ്."
+        reading: "ī māṅṅa puḷiyāṇ."
+        ipa: "iː maːŋŋa puɭijaːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "മാങ്ങ", ref: "ml-0286" }, { word: "പുളിയാണ്", base: "പുളിയാണ്", reading: "puḷiyāṇ" }]
+  - id: "ml-0506"
+    target: "ഉപ്പുള്ള"
+    reading: "uppuḷḷa"
+    ipa: "uppuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഉപ്പുള്ള കറി."
+        reading: "uppuḷḷa kaṟi."
+        ipa: "uppuɭɭa kəɾi"
+        bases: [{ word: "ഉപ്പുള്ള", base: "ഉപ്പുള്ള", reading: "uppuḷḷa" }, { word: "കറി", ref: "ml-0262" }]
+      - target: "കറി ഉപ്പുള്ളതാണ്"
+        reading: "kaṟi uppuḷḷatāṇ"
+        ipa: "kəɾi uppuɭɭət̪aːɳ"
+        bases: [{ word: "കറി", ref: "ml-0262" }, { word: "ഉപ്പുള്ളതാണ്", base: "ഉപ്പുള്ള", reading: "uppuḷḷa" }]
+  - id: "ml-0507"
+    target: "കയ്പുള്ള"
+    reading: "kaypuḷḷa"
+    ipa: "kəjpuɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കയ്പുള്ള മരുന്ന്."
+        reading: "kaypuḷḷa marunn."
+        ipa: "kəjpuɭɭa məɾunn"
+        bases: [{ word: "കയ്പുള്ള", base: "കയ്പുള്ള", reading: "kaypuḷḷa" }, { word: "മരുന്ന്", ref: "ml-0334" }]
+      - target: "ഈ മരുന്ന് കയ്പാണ്."
+        reading: "ī marunn kaypāṇ."
+        ipa: "iː məɾunn kəjpaːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "മരുന്ന്", ref: "ml-0334" }, { word: "കയ്പാണ്", base: "കയ്പാണ്", reading: "kaypāṇ" }]

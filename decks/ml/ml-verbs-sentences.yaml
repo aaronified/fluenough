@@ -1,0 +1,56 @@
+schema: 1
+id: "ml-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0708"
+    target: "ഇവിടെ ഇരിക്കൂ."
+    reading: "iviṭe irikkū."
+    ipa: "iʋiʈe iɾikkuː"
+    pos: "phrase"
+    bases: [{ word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഇരിക്കൂ", ref: "ml-0115" }]
+  - id: "ml-0709"
+    target: "പുസ്തകം വായിക്കൂ."
+    reading: "pustakaṁ vāyikkū."
+    ipa: "pust̪əkam ʋaːjikkuː"
+    pos: "phrase"
+    bases: [{ word: "പുസ്തകം", ref: "ml-0356" }, { word: "വായിക്കൂ", ref: "ml-0120" }]
+  - id: "ml-0710"
+    target: "എഴുതൂ, ദയവായി."
+    reading: "eḻutū, dayavāyi."
+    ipa: "eɻut̪uː d̪əjəʋaːji"
+    pos: "phrase"
+    bases: [{ word: "എഴുതൂ", ref: "ml-0119" }, { word: "ദയവായി", ref: "ml-0017" }]
+  - id: "ml-0711"
+    target: "വാതിൽ തുറക്കൂ."
+    reading: "vātil tuṟakkū."
+    ipa: "ʋaːt̪il t̪uɾəkkuː"
+    pos: "phrase"
+    bases: [{ word: "വാതിൽ", ref: "ml-0375" }, { word: "തുറക്കൂ", ref: "ml-0125" }]
+  - id: "ml-0712"
+    target: "ഉറങ്ങൂ, നാളെ വരൂ."
+    reading: "uṟaṅṅū, nāḷe varū."
+    ipa: "uɾəŋŋuː naːɭe ʋəɾuː"
+    pos: "phrase"
+    bases: [{ word: "ഉറങ്ങൂ", ref: "ml-0121" }, { word: "നാളെ", ref: "ml-0128" }, { word: "വരൂ", ref: "ml-0010" }]
+  - id: "ml-0713"
+    target: "നോക്കൂ, ഇതാണ്."
+    reading: "nōkkū, itāṇ."
+    ipa: "noːkkuː it̪aːɳ"
+    pos: "phrase"
+    bases: [{ word: "നോക്കൂ", ref: "ml-0124" }, { word: "ഇതാണ്", base: "ഇതാണ്", reading: "itāṇ" }]
+  - id: "ml-0714"
+    target: "ഇപ്പോൾ കേൾക്കൂ."
+    reading: "ippōḷ kēḷkkū."
+    ipa: "ippoːɭ keːɭkkuː"
+    pos: "phrase"
+    bases: [{ word: "ഇപ്പോൾ", ref: "ml-0134" }, { word: "കേൾക്കൂ", ref: "ml-0118" }]
+  - id: "ml-0715"
+    target: "ചായ കുടിക്കൂ."
+    reading: "cāya kuṭikkū."
+    ipa: "tʃaːja kuʈikkuː"
+    pos: "phrase"
+    bases: [{ word: "ചായ", ref: "ml-0270" }, { word: "കുടിക്കൂ", ref: "ml-0114" }]

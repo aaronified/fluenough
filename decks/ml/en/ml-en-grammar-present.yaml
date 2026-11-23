@@ -1,0 +1,20 @@
+schema: 1
+id: "ml-en-grammar-present"
+kind: "layer"
+core: "ml-grammar-present"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Malayalam present tense"
+description: "The present tense of a few common verbs. Malayalam does not change the verb for the person, so one form serves I, you, he and she. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+pattern:
+  name: "The present tense: one form for every person"
+  slot_name: "form"
+  slots:
+    "statement": "a statement"
+    "negative": "a negative"
+  entries:
+    "poka": "to go"
+    "kazhikka": "to eat"
+    "varika": "to come"
+    "kudikka": "to drink"

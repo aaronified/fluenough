@@ -1,0 +1,37 @@
+schema: 1
+id: "ml-en-food-sentences"
+kind: "layer"
+core: "ml-food-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Food in sentences"
+description: "Short sentences about tea, rice, fish, water and milk, and what someone wants to drink or eat. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0533":
+    native: "Do you want a cup of tea?"
+    bases:
+      "ഒരു": "a; one"
+      "വേണോ": "do you want"
+  "ml-0534":
+    native: "I need rice."
+    bases:
+      "വേണം": "need"
+  "ml-0535":
+    native: "There is rice and curry here."
+    bases:
+      "ഉണ്ട്": "there is"
+  "ml-0536":
+    native: "Drink water."
+  "ml-0537":
+    native: "Do you want milk?"
+    bases:
+      "വേണോ": "do you want"
+  "ml-0538":
+    native: "The child likes fish."
+    bases:
+      "ഇഷ്ടമാണ്": "likes"
+  "ml-0539":
+    native: "Where is the coffee?"
+  "ml-0540":
+    native: "Bring two teas."

@@ -1,0 +1,38 @@
+schema: 1
+id: "ml-en-pronouns-sentences"
+kind: "layer"
+core: "ml-pronouns-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Who is who in sentences"
+description: "Short sentences with I, you, he, she, you all, we and they, where they are and what they do. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0700":
+    native: "I am here."
+  "ml-0701":
+    native: "Where are you going?"
+    bases:
+      "പോകുന്നു": "going"
+  "ml-0702":
+    native: "He is a good man."
+    bases:
+      "നല്ലവനാണ്": "is good"
+  "ml-0703":
+    native: "She is here."
+    bases:
+      "ഉണ്ട്": "is here"
+  "ml-0704":
+    native: "Where are you from?"
+    bases:
+      "നിന്നാണ്": "from"
+  "ml-0705":
+    native: "We are coming."
+    bases:
+      "വരുന്നു": "are coming"
+  "ml-0706":
+    native: "My name is this."
+    bases:
+      "ഇതാണ്": "is this"
+  "ml-0707":
+    native: "Let us go together."

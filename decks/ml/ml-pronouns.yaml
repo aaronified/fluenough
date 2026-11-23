@@ -1,0 +1,284 @@
+schema: 1
+id: "ml-pronouns"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "pronouns"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0095"
+    target: "നീ"
+    reading: "nī"
+    ipa: "niː"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "നീ എവിടെ?"
+        reading: "nī eviṭe?"
+        ipa: "niː eʋiʈe"
+        bases: [{ word: "നീ", base: "നീ", reading: "nī" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "നീ വരൂ."
+        reading: "nī varū."
+        ipa: "niː ʋəɾuː"
+        bases: [{ word: "നീ", base: "നീ", reading: "nī" }, { word: "വരൂ", ref: "ml-0010" }]
+  - id: "ml-0096"
+    target: "താങ്കൾ"
+    reading: "tāṅkaḷ"
+    ipa: "t̪aːŋkaɭ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "താങ്കൾ ആര്?"
+        reading: "tāṅkaḷ ār?"
+        ipa: "t̪aːŋkaɭ aːɾ"
+        bases: [{ word: "താങ്കൾ", base: "താങ്കൾ", reading: "tāṅkaḷ" }, { word: "ആര്", ref: "ml-0031" }]
+      - target: "താങ്കൾ വീട്ടിൽ ഉണ്ടോ?"
+        reading: "tāṅkaḷ vīṭṭil uṇṭō?"
+        ipa: "t̪aːŋkaɭ ʋiːʈʈil uɳʈoː"
+        bases: [{ word: "താങ്കൾ", base: "താങ്കൾ", reading: "tāṅkaḷ" }, { word: "വീട്ടിൽ", ref: "ml-0009" }, { word: "ഉണ്ടോ", base: "ഉണ്ട്", reading: "uṇṭ" }]
+  - id: "ml-0097"
+    target: "അവൻ"
+    reading: "avaṉ"
+    ipa: "əʋan"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അവൻ ആര്?"
+        reading: "avaṉ ār?"
+        ipa: "əʋan aːɾ"
+        bases: [{ word: "അവൻ", base: "അവൻ", reading: "avaṉ" }, { word: "ആര്", ref: "ml-0031" }]
+      - target: "അവൻ ഇവിടെ."
+        reading: "avaṉ iviṭe."
+        ipa: "əʋan iʋiʈe"
+        bases: [{ word: "അവൻ", base: "അവൻ", reading: "avaṉ" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0098"
+    target: "അവൾ"
+    reading: "avaḷ"
+    ipa: "əʋaɭ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അവൾ ആര്?"
+        reading: "avaḷ ār?"
+        ipa: "əʋaɭ aːɾ"
+        bases: [{ word: "അവൾ", base: "അവൾ", reading: "avaḷ" }, { word: "ആര്", ref: "ml-0031" }]
+      - target: "അവൾ എവിടെ?"
+        reading: "avaḷ eviṭe?"
+        ipa: "əʋaɭ eʋiʈe"
+        bases: [{ word: "അവൾ", base: "അവൾ", reading: "avaḷ" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0099"
+    target: "അത്"
+    reading: "at"
+    ipa: "at̪"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അത് എന്ത്?"
+        reading: "at ent?"
+        ipa: "at̪ ent̪"
+        bases: [{ word: "അത്", base: "അത്", reading: "at" }, { word: "എന്ത്", ref: "ml-0032" }]
+      - target: "അത് വെള്ളം."
+        reading: "at veḷḷaṁ."
+        ipa: "at̪ ʋeɭɭam"
+        bases: [{ word: "അത്", base: "അത്", reading: "at" }, { word: "വെള്ളം", ref: "ml-0005" }]
+  - id: "ml-0100"
+    target: "ഞങ്ങൾ"
+    reading: "ñaṅṅaḷ"
+    ipa: "ɲəŋŋaɭ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഞങ്ങൾ ഇവിടെ."
+        reading: "ñaṅṅaḷ iviṭe."
+        ipa: "ɲəŋŋaɭ iʋiʈe"
+        bases: [{ word: "ഞങ്ങൾ", base: "ഞങ്ങൾ", reading: "ñaṅṅaḷ" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "ഞങ്ങൾ എവിടെ?"
+        reading: "ñaṅṅaḷ eviṭe?"
+        ipa: "ɲəŋŋaɭ eʋiʈe"
+        bases: [{ word: "ഞങ്ങൾ", base: "ഞങ്ങൾ", reading: "ñaṅṅaḷ" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0101"
+    target: "നമ്മൾ"
+    reading: "nammaḷ"
+    ipa: "nəmmaɭ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "നമ്മൾ പോകാം."
+        reading: "nammaḷ pōkāṁ."
+        ipa: "nəmmaɭ poːkaːm"
+        bases: [{ word: "നമ്മൾ", base: "നമ്മൾ", reading: "nammaḷ" }, { word: "പോകാം", base: "പോകുക", reading: "pōkuka" }]
+      - target: "നമ്മൾ ഇവിടെ."
+        reading: "nammaḷ iviṭe."
+        ipa: "nəmmaɭ iʋiʈe"
+        bases: [{ word: "നമ്മൾ", base: "നമ്മൾ", reading: "nammaḷ" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0102"
+    target: "അവന്റെ"
+    reading: "avanṟe"
+    ipa: "əʋənt̪ɾe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "അവന്റെ", ref: "ml-0097" }]
+    examples:
+      - target: "അവന്റെ വീട്."
+        reading: "avanṟe vīṭ."
+        ipa: "əʋənt̪ɾe ʋiːʈ"
+        bases: [{ word: "അവന്റെ", ref: "ml-0097" }, { word: "വീട്", ref: "ml-0009" }]
+      - target: "അവന്റെ പേര് എന്ത്?"
+        reading: "avanṟe pēr ent?"
+        ipa: "əʋənt̪ɾe peːɾ ent̪"
+        bases: [{ word: "അവന്റെ", ref: "ml-0097" }, { word: "പേര്", ref: "ml-0042" }, { word: "എന്ത്", ref: "ml-0032" }]
+  - id: "ml-0103"
+    target: "അവളുടെ"
+    reading: "avaḷuṭe"
+    ipa: "əʋəɭuʈe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "അവളുടെ", ref: "ml-0098" }]
+    examples:
+      - target: "അവളുടെ വീട്."
+        reading: "avaḷuṭe vīṭ."
+        ipa: "əʋəɭuʈe ʋiːʈ"
+        bases: [{ word: "അവളുടെ", ref: "ml-0098" }, { word: "വീട്", ref: "ml-0009" }]
+      - target: "അവളുടെ പേര് എന്ത്?"
+        reading: "avaḷuṭe pēr ent?"
+        ipa: "əʋəɭuʈe peːɾ ent̪"
+        bases: [{ word: "അവളുടെ", ref: "ml-0098" }, { word: "പേര്", ref: "ml-0042" }, { word: "എന്ത്", ref: "ml-0032" }]
+  - id: "ml-0104"
+    target: "നിന്റെ"
+    reading: "ninṟe"
+    ipa: "nint̪ɾe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "നിന്റെ", ref: "ml-0095" }]
+    examples:
+      - target: "നിന്റെ വീട് എവിടെ?"
+        reading: "ninṟe vīṭ eviṭe?"
+        ipa: "nint̪ɾe ʋiːʈ eʋiʈe"
+        bases: [{ word: "നിന്റെ", ref: "ml-0095" }, { word: "വീട്", ref: "ml-0009" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "നിന്റെ പേര് എന്ത്?"
+        reading: "ninṟe pēr ent?"
+        ipa: "nint̪ɾe peːɾ ent̪"
+        bases: [{ word: "നിന്റെ", ref: "ml-0095" }, { word: "പേര്", ref: "ml-0042" }, { word: "എന്ത്", ref: "ml-0032" }]
+  - id: "ml-0105"
+    target: "നമ്മുടെ"
+    reading: "nammuṭe"
+    ipa: "nəmmuʈe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "നമ്മുടെ", ref: "ml-0101" }]
+    examples:
+      - target: "നമ്മുടെ വീട്."
+        reading: "nammuṭe vīṭ."
+        ipa: "nəmmuʈe ʋiːʈ"
+        bases: [{ word: "നമ്മുടെ", ref: "ml-0101" }, { word: "വീട്", ref: "ml-0009" }]
+      - target: "നമ്മുടെ ജോലി എന്ത്?"
+        reading: "nammuṭe jōli ent?"
+        ipa: "nəmmuʈe dʒoːli ent̪"
+        bases: [{ word: "നമ്മുടെ", ref: "ml-0101" }, { word: "ജോലി", ref: "ml-0046" }, { word: "എന്ത്", ref: "ml-0032" }]
+  - id: "ml-0106"
+    target: "അവരുടെ"
+    reading: "avaruṭe"
+    ipa: "əʋəɾuʈe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "അവരുടെ", base: "അവർ", reading: "avar" }]
+    examples:
+      - target: "അവരുടെ വീട് എവിടെ?"
+        reading: "avaruṭe vīṭ eviṭe?"
+        ipa: "əʋəɾuʈe ʋiːʈ eʋiʈe"
+        bases: [{ word: "അവരുടെ", base: "അവർ", reading: "avar" }, { word: "വീട്", ref: "ml-0009" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "അവരുടെ പേര് എന്ത്?"
+        reading: "avaruṭe pēr ent?"
+        ipa: "əʋəɾuʈe peːɾ ent̪"
+        bases: [{ word: "അവരുടെ", base: "അവർ", reading: "avar" }, { word: "പേര്", ref: "ml-0042" }, { word: "എന്ത്", ref: "ml-0032" }]
+  - id: "ml-0107"
+    target: "എനിക്ക്"
+    reading: "enikk"
+    ipa: "enikk"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "എനിക്ക്", ref: "ml-0003" }]
+    examples:
+      - target: "എനിക്ക് വെള്ളം വേണം."
+        reading: "enikk veḷḷaṁ vēṇaṁ."
+        ipa: "enikk ʋeɭɭam ʋeːɳam"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0003" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "എനിക്ക് സമയം ഇല്ല."
+        reading: "enikk samayaṁ illa."
+        ipa: "enikk səməjam illa"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0003" }, { word: "സമയം", base: "സമയം", reading: "samayaṁ" }, { word: "ഇല്ല", ref: "ml-0002" }]
+  - id: "ml-0108"
+    target: "നിനക്ക്"
+    reading: "ninakk"
+    ipa: "ninakk"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "നിനക്ക്", ref: "ml-0095" }]
+    examples:
+      - target: "നിനക്ക് സമയം ഉണ്ടോ?"
+        reading: "ninakk samayaṁ uṇṭō?"
+        ipa: "ninakk səməjam uɳʈoː"
+        bases: [{ word: "നിനക്ക്", ref: "ml-0095" }, { word: "സമയം", base: "സമയം", reading: "samayaṁ" }, { word: "ഉണ്ടോ", base: "ഉണ്ട്", reading: "uṇṭ" }]
+      - target: "നിനക്ക് വെള്ളം ഇല്ലേ?"
+        reading: "ninakk veḷḷaṁ illē?"
+        ipa: "ninakk ʋeɭɭam illeː"
+        bases: [{ word: "നിനക്ക്", ref: "ml-0095" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "ഇല്ലേ", ref: "ml-0002" }]
+  - id: "ml-0109"
+    target: "എന്നെ"
+    reading: "enne"
+    ipa: "enne"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "എന്നെ", ref: "ml-0003" }]
+    examples:
+      - target: "എന്നെ വിളിക്കൂ."
+        reading: "enne viḷikkū."
+        ipa: "enne ʋiɭikkuː"
+        bases: [{ word: "എന്നെ", ref: "ml-0003" }, { word: "വിളിക്കൂ", base: "വിളിക്കുക", reading: "viḷikkuka" }]
+      - target: "അവൻ എന്നെ വിളിക്കുന്നു."
+        reading: "avaṉ enne viḷikkunnu."
+        ipa: "əʋan enne ʋiɭikkunnu"
+        bases: [{ word: "അവൻ", ref: "ml-0097" }, { word: "എന്നെ", ref: "ml-0003" }, { word: "വിളിക്കുന്നു", base: "വിളിക്കുക", reading: "viḷikkuka" }]
+  - id: "ml-0110"
+    target: "സ്വയം"
+    reading: "svayaṁ"
+    ipa: "sʋəjam"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഞാൻ സ്വയം."
+        reading: "ñāṉ svayaṁ."
+        ipa: "ɲaːn sʋəjam"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "സ്വയം", base: "സ്വയം", reading: "svayaṁ" }]
+      - target: "അവൻ സ്വയം ചെയ്യുന്നു."
+        reading: "avaṉ svayaṁ ceyyunnu."
+        ipa: "əʋan sʋəjam tʃejjunnu"
+        bases: [{ word: "അവൻ", ref: "ml-0097" }, { word: "സ്വയം", base: "സ്വയം", reading: "svayaṁ" }, { word: "ചെയ്യുന്നു", base: "ചെയ്യുക", reading: "ceyyuka" }]
+  - id: "ml-0111"
+    kind: "set"
+    members: [{ ref: "ml-0003" }, { ref: "ml-0004" }, { ref: "ml-0095" }, { ref: "ml-0096" }, { ref: "ml-0097" }, { ref: "ml-0098" }, { ref: "ml-0099" }, { ref: "ml-0100" }, { ref: "ml-0101" }]

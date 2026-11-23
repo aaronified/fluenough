@@ -1,0 +1,855 @@
+schema: 1
+id: "ml-food"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "food"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0260"
+    target: "ഭക്ഷണം"
+    reading: "bhakṣaṇaṁ"
+    ipa: "bʱəkʂəɳam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഭക്ഷണം വേണം."
+        reading: "bhakṣaṇaṁ vēṇaṁ."
+        ipa: "bʱəkʂəɳam ʋeːɳam"
+        bases: [{ word: "ഭക്ഷണം", base: "ഭക്ഷണം", reading: "bhakṣaṇaṁ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "ഭക്ഷണം ഇവിടെ ഉണ്ട്."
+        reading: "bhakṣaṇaṁ iviṭe uṇṭ."
+        ipa: "bʱəkʂəɳam iʋiʈe uɳʈ"
+        bases: [{ word: "ഭക്ഷണം", base: "ഭക്ഷണം", reading: "bhakṣaṇaṁ" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+  - id: "ml-0261"
+    target: "ചോറ്"
+    reading: "cōṟ"
+    ipa: "tʃoːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചോറ് വേണോ?"
+        reading: "cōṟ vēṇō?"
+        ipa: "tʃoːɾ ʋeːɳoː"
+        bases: [{ word: "ചോറ്", base: "ചോറ്", reading: "cōṟ" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+      - target: "ചോറ് ചൂടാണ്."
+        reading: "cōṟ cūṭāṇ."
+        ipa: "tʃoːɾ tʃuːʈaːɳ"
+        bases: [{ word: "ചോറ്", base: "ചോറ്", reading: "cōṟ" }, { word: "ചൂടാണ്", base: "ചൂടാണ്", reading: "cūṭāṇ" }]
+  - id: "ml-0262"
+    target: "കറി"
+    reading: "kaṟi"
+    ipa: "kəɾi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എനിക്ക് കറി ഇഷ്ടമാണ്."
+        reading: "enikk kaṟi iṣṭamāṇ."
+        ipa: "enikk kəɾi iʂʈəmaːɳ"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "കറി", base: "കറി", reading: "kaṟi" }, { word: "ഇഷ്ടമാണ്", base: "ഇഷ്ടമാണ്", reading: "iṣṭamāṇ" }]
+      - target: "കറി നല്ലതാണ്."
+        reading: "kaṟi nallatāṇ."
+        ipa: "kəɾi nəllət̪aːɳ"
+        bases: [{ word: "കറി", base: "കറി", reading: "kaṟi" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-0263"
+    target: "ദോശ"
+    reading: "dōśa"
+    ipa: "d̪oːʃa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "രാവിലെ ദോശ കഴിക്കും"
+        reading: "rāvile dōśa kaḻikkuṁ"
+        ipa: "ɾaːʋile d̪oːʃa kəɻikkum"
+        bases: [{ word: "രാവിലെ", ref: "ml-0130" }, { word: "ദോശ", base: "ദോശ", reading: "dōśa" }, { word: "കഴിക്കും", ref: "ml-0113" }]
+      - target: "ദോശ നല്ലതാണ്."
+        reading: "dōśa nallatāṇ."
+        ipa: "d̪oːʃa nəllət̪aːɳ"
+        bases: [{ word: "ദോശ", base: "ദോശ", reading: "dōśa" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-0264"
+    target: "ഇഡ്ഡലി"
+    reading: "iḍḍali"
+    ipa: "iɖɖəli"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇഡ്ഡലി രണ്ട് വേണം."
+        reading: "iḍḍali raṇṭ vēṇaṁ."
+        ipa: "iɖɖəli ɾaɳʈ ʋeːɳam"
+        bases: [{ word: "ഇഡ്ഡലി", base: "ഇഡ്ഡലി", reading: "iḍḍali" }, { word: "രണ്ട്", ref: "ml-0049" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "ഇഡ്ഡലി എത്ര?"
+        reading: "iḍḍali etra?"
+        ipa: "iɖɖəli et̪ɾa"
+        bases: [{ word: "ഇഡ്ഡലി", base: "ഇഡ്ഡലി", reading: "iḍḍali" }, { word: "എത്ര", ref: "ml-0038" }]
+  - id: "ml-0265"
+    target: "ചപ്പാത്തി"
+    reading: "cappātti"
+    ipa: "tʃəppaːt̪t̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "രാത്രി ചപ്പാത്തി കഴിക്കും"
+        reading: "rātri cappātti kaḻikkuṁ"
+        ipa: "ɾaːt̪ɾi tʃəppaːt̪t̪i kəɻikkum"
+        bases: [{ word: "രാത്രി", ref: "ml-0133" }, { word: "ചപ്പാത്തി", base: "ചപ്പാത്തി", reading: "cappātti" }, { word: "കഴിക്കും", ref: "ml-0113" }]
+      - target: "ചപ്പാത്തി എത്ര വേണം?"
+        reading: "cappātti etra vēṇaṁ?"
+        ipa: "tʃəppaːt̪t̪i et̪ɾa ʋeːɳam"
+        bases: [{ word: "ചപ്പാത്തി", base: "ചപ്പാത്തി", reading: "cappātti" }, { word: "എത്ര", ref: "ml-0038" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0266"
+    target: "ബിരിയാണി"
+    reading: "biriyāṇi"
+    ipa: "biɾijaːɳi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇന്ന് ബിരിയാണി ഉണ്ടാക്കും"
+        reading: "inn biriyāṇi uṇṭākkuṁ"
+        ipa: "inn biɾijaːɳi uɳʈaːkkum"
+        bases: [{ word: "ഇന്ന്", ref: "ml-0127" }, { word: "ബിരിയാണി", base: "ബിരിയാണി", reading: "biriyāṇi" }, { word: "ഉണ്ടാക്കും", ref: "ml-0164" }]
+      - target: "ബിരിയാണി നല്ലതാണ്."
+        reading: "biriyāṇi nallatāṇ."
+        ipa: "biɾijaːɳi nəllət̪aːɳ"
+        bases: [{ word: "ബിരിയാണി", base: "ബിരിയാണി", reading: "biriyāṇi" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-0267"
+    target: "സാമ്പാർ"
+    reading: "sāmpār"
+    ipa: "saːmpaːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "നിനക്ക് സാമ്പാർ ഇഷ്ടമാണോ?"
+        reading: "ninakk sāmpār iṣṭamāṇō?"
+        ipa: "ninakk saːmpaːɾ iʂʈəmaːɳoː"
+        bases: [{ word: "നിനക്ക്", ref: "ml-0108" }, { word: "സാമ്പാർ", base: "സാമ്പാർ", reading: "sāmpār" }, { word: "ഇഷ്ടമാണോ", base: "ഇഷ്ടമാണോ", reading: "iṣṭamāṇō" }]
+      - target: "സാമ്പാർ കുറച്ച് വേണം."
+        reading: "sāmpār kuṟacc vēṇaṁ."
+        ipa: "saːmpaːɾ kuɾatʃtʃ ʋeːɳam"
+        bases: [{ word: "സാമ്പാർ", base: "സാമ്പാർ", reading: "sāmpār" }, { word: "കുറച്ച്", base: "കുറച്ച്", reading: "kuṟacc" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0268"
+    target: "പരിപ്പ്"
+    reading: "paripp"
+    ipa: "pəɾipp"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പരിപ്പ് ചോറിനൊപ്പം"
+        reading: "paripp cōṟinoppaṁ"
+        ipa: "pəɾipp tʃoːɾinoppam"
+        bases: [{ word: "പരിപ്പ്", base: "പരിപ്പ്", reading: "paripp" }, { word: "ചോറിനൊപ്പം", ref: "ml-0261" }]
+      - target: "പരിപ്പ് എവിടെ?"
+        reading: "paripp eviṭe?"
+        ipa: "pəɾipp eʋiʈe"
+        bases: [{ word: "പരിപ്പ്", base: "പരിപ്പ്", reading: "paripp" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0269"
+    target: "മോര്"
+    reading: "mōr"
+    ipa: "moːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മോര് കുടിക്കൂ."
+        reading: "mōr kuṭikkū."
+        ipa: "moːɾ kuʈikkuː"
+        bases: [{ word: "മോര്", base: "മോര്", reading: "mōr" }, { word: "കുടിക്കൂ", ref: "ml-0114" }]
+      - target: "മോര് ഇവിടെ ഉണ്ടോ?"
+        reading: "mōr iviṭe uṇṭō?"
+        ipa: "moːɾ iʋiʈe uɳʈoː"
+        bases: [{ word: "മോര്", base: "മോര്", reading: "mōr" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ടോ", ref: "ml-0040" }]
+  - id: "ml-0270"
+    target: "ചായ"
+    reading: "cāya"
+    ipa: "tʃaːja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചായ ചൂടാണ്."
+        reading: "cāya cūṭāṇ."
+        ipa: "tʃaːja tʃuːʈaːɳ"
+        bases: [{ word: "ചായ", base: "ചായ", reading: "cāya" }, { word: "ചൂടാണ്", base: "ചൂടാണ്", reading: "cūṭāṇ" }]
+      - target: "ചായ കുടിക്കാം"
+        reading: "cāya kuṭikkāṁ"
+        ipa: "tʃaːja kuʈikkaːm"
+        bases: [{ word: "ചായ", base: "ചായ", reading: "cāya" }, { word: "കുടിക്കാം", ref: "ml-0114" }]
+  - id: "ml-0271"
+    target: "കാപ്പി"
+    reading: "kāppi"
+    ipa: "kaːppi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എനിക്ക് കാപ്പി വേണം."
+        reading: "enikk kāppi vēṇaṁ."
+        ipa: "enikk kaːppi ʋeːɳam"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "കാപ്പി", base: "കാപ്പി", reading: "kāppi" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "കാപ്പി പതുക്കെ കുടിക്കൂ."
+        reading: "kāppi patukke kuṭikkū."
+        ipa: "kaːppi pət̪ukke kuʈikkuː"
+        bases: [{ word: "കാപ്പി", base: "കാപ്പി", reading: "kāppi" }, { word: "പതുക്കെ", base: "പതുക്കെ", reading: "patukke" }, { word: "കുടിക്കൂ", ref: "ml-0114" }]
+  - id: "ml-0272"
+    target: "വട"
+    reading: "vaṭa"
+    ipa: "ʋəʈa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വട രണ്ട് വേണം."
+        reading: "vaṭa raṇṭ vēṇaṁ."
+        ipa: "ʋəʈa ɾaɳʈ ʋeːɳam"
+        bases: [{ word: "വട", base: "വട", reading: "vaṭa" }, { word: "രണ്ട്", ref: "ml-0049" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "ചായയുടെ കൂടെ വട."
+        reading: "cāyayuṭe kūṭe vaṭa."
+        ipa: "tʃaːjəjuʈe kuːʈe ʋəʈa"
+        bases: [{ word: "ചായയുടെ", ref: "ml-0270" }, { word: "കൂടെ", base: "കൂടെ", reading: "kūṭe" }, { word: "വട", base: "വട", reading: "vaṭa" }]
+  - id: "ml-0273"
+    target: "പലഹാരം"
+    reading: "palahāraṁ"
+    ipa: "pələhaːɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വൈകുന്നേരം പലഹാരം കഴിക്കാം"
+        reading: "vaikunnēraṁ palahāraṁ kaḻikkāṁ"
+        ipa: "ʋaikunneːɾam pələhaːɾam kəɻikkaːm"
+        bases: [{ word: "വൈകുന്നേരം", ref: "ml-0132" }, { word: "പലഹാരം", base: "പലഹാരം", reading: "palahāraṁ" }, { word: "കഴിക്കാം", ref: "ml-0113" }]
+      - target: "പലഹാരം എവിടെ കിട്ടും?"
+        reading: "palahāraṁ eviṭe kiṭṭuṁ?"
+        ipa: "pələhaːɾam eʋiʈe kiʈʈum"
+        bases: [{ word: "പലഹാരം", base: "പലഹാരം", reading: "palahāraṁ" }, { word: "എവിടെ", ref: "ml-0033" }, { word: "കിട്ടും", base: "കിട്ടും", reading: "kiṭṭuṁ" }]
+  - id: "ml-0274"
+    target: "ബിസ്കറ്റ്"
+    reading: "biskaṟṟ"
+    ipa: "biskatt"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ബിസ്കറ്റ് ഇവിടെ ഉണ്ട്."
+        reading: "biskaṟṟ iviṭe uṇṭ."
+        ipa: "biskatt iʋiʈe uɳʈ"
+        bases: [{ word: "ബിസ്കറ്റ്", base: "ബിസ്കറ്റ്", reading: "biskaṟṟ" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+      - target: "കുട്ടിക്ക് ബിസ്കറ്റ് വേണം."
+        reading: "kuṭṭikk biskaṟṟ vēṇaṁ."
+        ipa: "kuʈʈikk biskatt ʋeːɳam"
+        bases: [{ word: "കുട്ടിക്ക്", ref: "ml-0082" }, { word: "ബിസ്കറ്റ്", base: "ബിസ്കറ്റ്", reading: "biskaṟṟ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0275"
+    target: "കേക്ക്"
+    reading: "kēkk"
+    ipa: "keːkk"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കേക്ക് വേണോ?"
+        reading: "kēkk vēṇō?"
+        ipa: "keːkk ʋeːɳoː"
+        bases: [{ word: "കേക്ക്", base: "കേക്ക്", reading: "kēkk" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+      - target: "കേക്ക് മധുരമാണ്"
+        reading: "kēkk madhuramāṇ"
+        ipa: "keːkk məd̪ʱuɾəmaːɳ"
+        bases: [{ word: "കേക്ക്", base: "കേക്ക്", reading: "kēkk" }, { word: "മധുരമാണ്", ref: "ml-0278" }]
+  - id: "ml-0276"
+    target: "ഐസ്ക്രീം"
+    reading: "aiskrīṁ"
+    ipa: "aiskɾiːm"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഐസ്ക്രീം എത്ര?"
+        reading: "aiskrīṁ etra?"
+        ipa: "aiskɾiːm et̪ɾa"
+        bases: [{ word: "ഐസ്ക്രീം", base: "ഐസ്ക്രീം", reading: "aiskrīṁ" }, { word: "എത്ര", ref: "ml-0038" }]
+      - target: "കുട്ടിക്ക് ഐസ്ക്രീം ഇഷ്ടമാണ്."
+        reading: "kuṭṭikk aiskrīṁ iṣṭamāṇ."
+        ipa: "kuʈʈikk aiskɾiːm iʂʈəmaːɳ"
+        bases: [{ word: "കുട്ടിക്ക്", ref: "ml-0082" }, { word: "ഐസ്ക്രീം", base: "ഐസ്ക്രീം", reading: "aiskrīṁ" }, { word: "ഇഷ്ടമാണ്", base: "ഇഷ്ടമാണ്", reading: "iṣṭamāṇ" }]
+  - id: "ml-0277"
+    target: "പഴച്ചാറ്"
+    reading: "paḻaccāṟ"
+    ipa: "pəɻətʃtʃaːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പഴച്ചാറ് കുടിക്കൂ."
+        reading: "paḻaccāṟ kuṭikkū."
+        ipa: "pəɻətʃtʃaːɾ kuʈikkuː"
+        bases: [{ word: "പഴച്ചാറ്", base: "പഴച്ചാറ്", reading: "paḻaccāṟ" }, { word: "കുടിക്കൂ", ref: "ml-0114" }]
+      - target: "ഒരു ഗ്ലാസ് പഴച്ചാറ് വേണം."
+        reading: "oru glās paḻaccāṟ vēṇaṁ."
+        ipa: "oɾu ɡlaːs pəɻətʃtʃaːɾ ʋeːɳam"
+        bases: [{ word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "ഗ്ലാസ്", base: "ഗ്ലാസ്", reading: "glās" }, { word: "പഴച്ചാറ്", base: "പഴച്ചാറ്", reading: "paḻaccāṟ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0278"
+    target: "മധുരം"
+    reading: "madhuraṁ"
+    ipa: "məd̪ʱuɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കുറച്ച് മധുരം വേണം."
+        reading: "kuṟacc madhuraṁ vēṇaṁ."
+        ipa: "kuɾatʃtʃ məd̪ʱuɾam ʋeːɳam"
+        bases: [{ word: "കുറച്ച്", base: "കുറച്ച്", reading: "kuṟacc" }, { word: "മധുരം", base: "മധുരം", reading: "madhuraṁ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "മധുരം എനിക്ക് ഇഷ്ടമാണ്."
+        reading: "madhuraṁ enikk iṣṭamāṇ."
+        ipa: "məd̪ʱuɾam enikk iʂʈəmaːɳ"
+        bases: [{ word: "മധുരം", base: "മധുരം", reading: "madhuraṁ" }, { word: "എനിക്ക്", ref: "ml-0107" }, { word: "ഇഷ്ടമാണ്", base: "ഇഷ്ടമാണ്", reading: "iṣṭamāṇ" }]
+  - id: "ml-0279"
+    target: "ഉപ്പ്"
+    reading: "upp"
+    ipa: "upp"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഉപ്പ് എടുക്കൂ."
+        reading: "upp eṭukkū."
+        ipa: "upp eʈukkuː"
+        bases: [{ word: "ഉപ്പ്", base: "ഉപ്പ്", reading: "upp" }, { word: "എടുക്കൂ", ref: "ml-0122" }]
+      - target: "ഈ കറിയിൽ ഉപ്പ് ഇല്ല."
+        reading: "ī kaṟiyil upp illa."
+        ipa: "iː kəɾijil upp illa"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "കറിയിൽ", ref: "ml-0262" }, { word: "ഉപ്പ്", base: "ഉപ്പ്", reading: "upp" }, { word: "ഇല്ല", ref: "ml-0002" }]
+  - id: "ml-0280"
+    target: "എരിവ്"
+    reading: "eriv"
+    ipa: "eɾiʋ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എരിവ് വേണ്ട."
+        reading: "eriv vēṇṭa."
+        ipa: "eɾiʋ ʋeːɳʈa"
+        bases: [{ word: "എരിവ്", base: "എരിവ്", reading: "eriv" }, { word: "വേണ്ട", base: "വേണ്ട", reading: "vēṇṭa" }]
+      - target: "നിനക്ക് എരിവ് ഇഷ്ടമാണോ?"
+        reading: "ninakk eriv iṣṭamāṇō?"
+        ipa: "ninakk eɾiʋ iʂʈəmaːɳoː"
+        bases: [{ word: "നിനക്ക്", ref: "ml-0108" }, { word: "എരിവ്", base: "എരിവ്", reading: "eriv" }, { word: "ഇഷ്ടമാണോ", base: "ഇഷ്ടമാണോ", reading: "iṣṭamāṇō" }]
+  - id: "ml-0281"
+    target: "ചീര"
+    reading: "cīra"
+    ipa: "tʃiːɾa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചീര എവിടെ വാങ്ങാം"
+        reading: "cīra eviṭe vāṅṅāṁ"
+        ipa: "tʃiːɾa eʋiʈe ʋaːŋŋaːm"
+        bases: [{ word: "ചീര", base: "ചീര", reading: "cīra" }, { word: "എവിടെ", ref: "ml-0033" }, { word: "വാങ്ങാം", ref: "ml-0126" }]
+      - target: "ചീര കഴുകൂ."
+        reading: "cīra kaḻukū."
+        ipa: "tʃiːɾa kəɻukuː"
+        bases: [{ word: "ചീര", base: "ചീര", reading: "cīra" }, { word: "കഴുകൂ", ref: "ml-0162" }]
+  - id: "ml-0282"
+    target: "ഇഞ്ചി"
+    reading: "iñci"
+    ipa: "iɲtʃi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇഞ്ചി വേണോ?"
+        reading: "iñci vēṇō?"
+        ipa: "iɲtʃi ʋeːɳoː"
+        bases: [{ word: "ഇഞ്ചി", base: "ഇഞ്ചി", reading: "iñci" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+      - target: "ഇഞ്ചി ഒരു കഷണം വേണം."
+        reading: "iñci oru kaṣaṇaṁ vēṇaṁ."
+        ipa: "iɲtʃi oɾu kəʂəɳam ʋeːɳam"
+        bases: [{ word: "ഇഞ്ചി", base: "ഇഞ്ചി", reading: "iñci" }, { word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "കഷണം", base: "കഷണം", reading: "kaṣaṇaṁ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0283"
+    target: "വെളുത്തുള്ളി"
+    reading: "veḷuttuḷḷi"
+    ipa: "ʋeɭut̪t̪uɭɭi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വെളുത്തുള്ളി ഇവിടെ ഉണ്ട്."
+        reading: "veḷuttuḷḷi iviṭe uṇṭ."
+        ipa: "ʋeɭut̪t̪uɭɭi iʋiʈe uɳʈ"
+        bases: [{ word: "വെളുത്തുള്ളി", base: "വെളുത്തുള്ളി", reading: "veḷuttuḷḷi" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+      - target: "വെളുത്തുള്ളി നല്ലതാണ്."
+        reading: "veḷuttuḷḷi nallatāṇ."
+        ipa: "ʋeɭut̪t̪uɭɭi nəllət̪aːɳ"
+        bases: [{ word: "വെളുത്തുള്ളി", base: "വെളുത്തുള്ളി", reading: "veḷuttuḷḷi" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-0284"
+    target: "കടുക്"
+    reading: "kaṭuk"
+    ipa: "kəʈuk"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എണ്ണയിൽ കടുക് ഇടൂ."
+        reading: "eṇṇayil kaṭuk iṭū."
+        ipa: "eɳɳəjil kəʈuk iʈuː"
+        bases: [{ word: "എണ്ണയിൽ", ref: "ml-0219" }, { word: "കടുക്", base: "കടുക്", reading: "kaṭuk" }, { word: "ഇടൂ", base: "ഇടൂ", reading: "iṭū" }]
+      - target: "കടുക് കറുത്തതാണ്."
+        reading: "kaṭuk kaṟuttatāṇ."
+        ipa: "kəʈuk kəɾut̪t̪ət̪aːɳ"
+        bases: [{ word: "കടുക്", base: "കടുക്", reading: "kaṭuk" }, { word: "കറുത്തതാണ്", base: "കറുത്തതാണ്", reading: "kaṟuttatāṇ" }]
+  - id: "ml-0285"
+    target: "ജീരകം"
+    reading: "jīrakaṁ"
+    ipa: "dʒiːɾəkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ജീരകം വേണോ?"
+        reading: "jīrakaṁ vēṇō?"
+        ipa: "dʒiːɾəkam ʋeːɳoː"
+        bases: [{ word: "ജീരകം", base: "ജീരകം", reading: "jīrakaṁ" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+      - target: "ജീരകം ചെറുതാണ്."
+        reading: "jīrakaṁ ceṟutāṇ."
+        ipa: "dʒiːɾəkam tʃeɾut̪aːɳ"
+        bases: [{ word: "ജീരകം", base: "ജീരകം", reading: "jīrakaṁ" }, { word: "ചെറുതാണ്", base: "ചെറുതാണ്", reading: "ceṟutāṇ" }]
+  - id: "ml-0286"
+    target: "മാങ്ങ"
+    reading: "māṅṅa"
+    ipa: "maːŋŋa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മാങ്ങ മധുരമാണ്"
+        reading: "māṅṅa madhuramāṇ"
+        ipa: "maːŋŋa məd̪ʱuɾəmaːɳ"
+        bases: [{ word: "മാങ്ങ", base: "മാങ്ങ", reading: "māṅṅa" }, { word: "മധുരമാണ്", ref: "ml-0278" }]
+      - target: "മാങ്ങ എത്ര?"
+        reading: "māṅṅa etra?"
+        ipa: "maːŋŋa et̪ɾa"
+        bases: [{ word: "മാങ്ങ", base: "മാങ്ങ", reading: "māṅṅa" }, { word: "എത്ര", ref: "ml-0038" }]
+  - id: "ml-0287"
+    target: "വാഴപ്പഴം"
+    reading: "vāḻappaḻaṁ"
+    ipa: "ʋaːɻəppəɻam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വാഴപ്പഴം രണ്ട് വേണം."
+        reading: "vāḻappaḻaṁ raṇṭ vēṇaṁ."
+        ipa: "ʋaːɻəppəɻam ɾaɳʈ ʋeːɳam"
+        bases: [{ word: "വാഴപ്പഴം", base: "വാഴപ്പഴം", reading: "vāḻappaḻaṁ" }, { word: "രണ്ട്", ref: "ml-0049" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "വാഴപ്പഴം കഴിക്കൂ."
+        reading: "vāḻappaḻaṁ kaḻikkū."
+        ipa: "ʋaːɻəppəɻam kəɻikkuː"
+        bases: [{ word: "വാഴപ്പഴം", base: "വാഴപ്പഴം", reading: "vāḻappaḻaṁ" }, { word: "കഴിക്കൂ", ref: "ml-0113" }]
+  - id: "ml-0288"
+    target: "ആപ്പിൾ"
+    reading: "āppiḷ"
+    ipa: "aːppiɭ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ആപ്പിൾ എവിടെ?"
+        reading: "āppiḷ eviṭe?"
+        ipa: "aːppiɭ eʋiʈe"
+        bases: [{ word: "ആപ്പിൾ", base: "ആപ്പിൾ", reading: "āppiḷ" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "ആപ്പിൾ ഒന്ന്."
+        reading: "āppiḷ onn."
+        ipa: "aːppiɭ onn"
+        bases: [{ word: "ആപ്പിൾ", base: "ആപ്പിൾ", reading: "āppiḷ" }, { word: "ഒന്ന്", ref: "ml-0007" }]
+  - id: "ml-0289"
+    target: "ഓറഞ്ച്"
+    reading: "ōṟañc"
+    ipa: "oːɾaɲtʃ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഓറഞ്ച് മധുരമാണ്"
+        reading: "ōṟañc madhuramāṇ"
+        ipa: "oːɾaɲtʃ məd̪ʱuɾəmaːɳ"
+        bases: [{ word: "ഓറഞ്ച്", base: "ഓറഞ്ച്", reading: "ōṟañc" }, { word: "മധുരമാണ്", ref: "ml-0278" }]
+      - target: "ഓറഞ്ച് എടുക്കൂ."
+        reading: "ōṟañc eṭukkū."
+        ipa: "oːɾaɲtʃ eʈukkuː"
+        bases: [{ word: "ഓറഞ്ച്", base: "ഓറഞ്ച്", reading: "ōṟañc" }, { word: "എടുക്കൂ", ref: "ml-0122" }]
+  - id: "ml-0290"
+    target: "ചക്ക"
+    reading: "cakka"
+    ipa: "tʃəkka"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചക്ക വലിയതാണ്"
+        reading: "cakka valiyatāṇ"
+        ipa: "tʃəkka ʋəlijət̪aːɳ"
+        bases: [{ word: "ചക്ക", base: "ചക്ക", reading: "cakka" }, { word: "വലിയതാണ്", ref: "ml-0008" }]
+      - target: "നിനക്ക് ചക്ക ഇഷ്ടമാണോ?"
+        reading: "ninakk cakka iṣṭamāṇō?"
+        ipa: "ninakk tʃəkka iʂʈəmaːɳoː"
+        bases: [{ word: "നിനക്ക്", ref: "ml-0108" }, { word: "ചക്ക", base: "ചക്ക", reading: "cakka" }, { word: "ഇഷ്ടമാണോ", base: "ഇഷ്ടമാണോ", reading: "iṣṭamāṇō" }]
+  - id: "ml-0291"
+    target: "ഇടിയപ്പം"
+    reading: "iṭiyappaṁ"
+    ipa: "iʈijəppam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "രാവിലെ ഇടിയപ്പം കഴിക്കാം"
+        reading: "rāvile iṭiyappaṁ kaḻikkāṁ"
+        ipa: "ɾaːʋile iʈijəppam kəɻikkaːm"
+        bases: [{ word: "രാവിലെ", ref: "ml-0130" }, { word: "ഇടിയപ്പം", base: "ഇടിയപ്പം", reading: "iṭiyappaṁ" }, { word: "കഴിക്കാം", ref: "ml-0113" }]
+      - target: "ഇടിയപ്പത്തിന് കറി വേണം."
+        reading: "iṭiyappattin kaṟi vēṇaṁ."
+        ipa: "iʈijəppət̪t̪in kəɾi ʋeːɳam"
+        bases: [{ word: "ഇടിയപ്പത്തിന്", base: "ഇടിയപ്പം", reading: "iṭiyappaṁ" }, { word: "കറി", ref: "ml-0262" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0292"
+    target: "ഓംലറ്റ്"
+    reading: "ōṁlaṟṟ"
+    ipa: "oːmlatt"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഓംലറ്റ് വേണം."
+        reading: "ōṁlaṟṟ vēṇaṁ."
+        ipa: "oːmlatt ʋeːɳam"
+        bases: [{ word: "ഓംലറ്റ്", base: "ഓംലറ്റ്", reading: "ōṁlaṟṟ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "ഓംലറ്റ് ഉണ്ടാക്കൂ."
+        reading: "ōṁlaṟṟ uṇṭākkū."
+        ipa: "oːmlatt uɳʈaːkkuː"
+        bases: [{ word: "ഓംലറ്റ്", base: "ഓംലറ്റ്", reading: "ōṁlaṟṟ" }, { word: "ഉണ്ടാക്കൂ", ref: "ml-0164" }]
+  - id: "ml-0293"
+    target: "ഉണക്കമീൻ"
+    reading: "uṇakkamīṉ"
+    ipa: "uɳəkkəmiːn"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എനിക്ക് ഉണക്കമീൻ ഇഷ്ടമാണ്."
+        reading: "enikk uṇakkamīṉ iṣṭamāṇ."
+        ipa: "enikk uɳəkkəmiːn iʂʈəmaːɳ"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "ഉണക്കമീൻ", base: "ഉണക്കമീൻ", reading: "uṇakkamīṉ" }, { word: "ഇഷ്ടമാണ്", base: "ഇഷ്ടമാണ്", reading: "iṣṭamāṇ" }]
+      - target: "ഉണക്കമീൻ എവിടെ കിട്ടും?"
+        reading: "uṇakkamīṉ eviṭe kiṭṭuṁ?"
+        ipa: "uɳəkkəmiːn eʋiʈe kiʈʈum"
+        bases: [{ word: "ഉണക്കമീൻ", base: "ഉണക്കമീൻ", reading: "uṇakkamīṉ" }, { word: "എവിടെ", ref: "ml-0033" }, { word: "കിട്ടും", base: "കിട്ടും", reading: "kiṭṭuṁ" }]
+  - id: "ml-0294"
+    target: "ചിക്കൻ"
+    reading: "cikkaṉ"
+    ipa: "tʃikkan"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചിക്കൻ വേണം."
+        reading: "cikkaṉ vēṇaṁ."
+        ipa: "tʃikkan ʋeːɳam"
+        bases: [{ word: "ചിക്കൻ", base: "ചിക്കൻ", reading: "cikkaṉ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "ചിക്കൻ കഴുകൂ."
+        reading: "cikkaṉ kaḻukū."
+        ipa: "tʃikkan kəɻukuː"
+        bases: [{ word: "ചിക്കൻ", base: "ചിക്കൻ", reading: "cikkaṉ" }, { word: "കഴുകൂ", ref: "ml-0162" }]
+  - id: "ml-0295"
+    target: "തക്കാളി"
+    reading: "takkāḷi"
+    ipa: "t̪əkkaːɭi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "തക്കാളി എത്ര?"
+        reading: "takkāḷi etra?"
+        ipa: "t̪əkkaːɭi et̪ɾa"
+        bases: [{ word: "തക്കാളി", base: "തക്കാളി", reading: "takkāḷi" }, { word: "എത്ര", ref: "ml-0038" }]
+      - target: "തക്കാളി കഴുകൂ."
+        reading: "takkāḷi kaḻukū."
+        ipa: "t̪əkkaːɭi kəɻukuː"
+        bases: [{ word: "തക്കാളി", base: "തക്കാളി", reading: "takkāḷi" }, { word: "കഴുകൂ", ref: "ml-0162" }]
+  - id: "ml-0296"
+    target: "വഴുതന"
+    reading: "vaḻutana"
+    ipa: "ʋəɻut̪əna"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "നിനക്ക് വഴുതന ഇഷ്ടമാണോ?"
+        reading: "ninakk vaḻutana iṣṭamāṇō?"
+        ipa: "ninakk ʋəɻut̪əna iʂʈəmaːɳoː"
+        bases: [{ word: "നിനക്ക്", ref: "ml-0108" }, { word: "വഴുതന", base: "വഴുതന", reading: "vaḻutana" }, { word: "ഇഷ്ടമാണോ", base: "ഇഷ്ടമാണോ", reading: "iṣṭamāṇō" }]
+      - target: "വഴുതന കറി നല്ലതാണ്."
+        reading: "vaḻutana kaṟi nallatāṇ."
+        ipa: "ʋəɻut̪əna kəɾi nəllət̪aːɳ"
+        bases: [{ word: "വഴുതന", base: "വഴുതന", reading: "vaḻutana" }, { word: "കറി", ref: "ml-0262" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-0297"
+    target: "വെള്ളരിക്ക"
+    reading: "veḷḷarikka"
+    ipa: "ʋeɭɭəɾikka"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വെള്ളരിക്ക ഒന്ന് വേണം."
+        reading: "veḷḷarikka onn vēṇaṁ."
+        ipa: "ʋeɭɭəɾikka onn ʋeːɳam"
+        bases: [{ word: "വെള്ളരിക്ക", base: "വെള്ളരിക്ക", reading: "veḷḷarikka" }, { word: "ഒന്ന്", ref: "ml-0007" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "വെള്ളരിക്ക എവിടെ?"
+        reading: "veḷḷarikka eviṭe?"
+        ipa: "ʋeɭɭəɾikka eʋiʈe"
+        bases: [{ word: "വെള്ളരിക്ക", base: "വെള്ളരിക്ക", reading: "veḷḷarikka" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0298"
+    target: "കാരറ്റ്"
+    reading: "kāraṟṟ"
+    ipa: "kaːɾatt"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കാരറ്റ് മധുരമാണ്"
+        reading: "kāraṟṟ madhuramāṇ"
+        ipa: "kaːɾatt məd̪ʱuɾəmaːɳ"
+        bases: [{ word: "കാരറ്റ്", base: "കാരറ്റ്", reading: "kāraṟṟ" }, { word: "മധുരമാണ്", ref: "ml-0278" }]
+      - target: "കാരറ്റ് കഴുകൂ."
+        reading: "kāraṟṟ kaḻukū."
+        ipa: "kaːɾatt kəɻukuː"
+        bases: [{ word: "കാരറ്റ്", base: "കാരറ്റ്", reading: "kāraṟṟ" }, { word: "കഴുകൂ", ref: "ml-0162" }]
+  - id: "ml-0299"
+    target: "കപ്പ"
+    reading: "kappa"
+    ipa: "kəppa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കപ്പ വേണോ?"
+        reading: "kappa vēṇō?"
+        ipa: "kəppa ʋeːɳoː"
+        bases: [{ word: "കപ്പ", base: "കപ്പ", reading: "kappa" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+      - target: "കപ്പ കഴിക്കാം"
+        reading: "kappa kaḻikkāṁ"
+        ipa: "kəppa kəɻikkaːm"
+        bases: [{ word: "കപ്പ", base: "കപ്പ", reading: "kappa" }, { word: "കഴിക്കാം", ref: "ml-0113" }]
+  - id: "ml-0300"
+    target: "അച്ചാർ"
+    reading: "accār"
+    ipa: "ətʃtʃaːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "നിനക്ക് അച്ചാർ ഇഷ്ടമാണോ?"
+        reading: "ninakk accār iṣṭamāṇō?"
+        ipa: "ninakk ətʃtʃaːɾ iʂʈəmaːɳoː"
+        bases: [{ word: "നിനക്ക്", ref: "ml-0108" }, { word: "അച്ചാർ", base: "അച്ചാർ", reading: "accār" }, { word: "ഇഷ്ടമാണോ", base: "ഇഷ്ടമാണോ", reading: "iṣṭamāṇō" }]
+      - target: "അച്ചാർ അധികം വേണ്ട."
+        reading: "accār adhikaṁ vēṇṭa."
+        ipa: "ətʃtʃaːɾ əd̪ʱikam ʋeːɳʈa"
+        bases: [{ word: "അച്ചാർ", base: "അച്ചാർ", reading: "accār" }, { word: "അധികം", base: "അധികം", reading: "adhikaṁ" }, { word: "വേണ്ട", base: "വേണ്ട", reading: "vēṇṭa" }]
+  - id: "ml-0301"
+    target: "മസാല"
+    reading: "masāla"
+    ipa: "məsaːla"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മസാല ഇല്ല."
+        reading: "masāla illa."
+        ipa: "məsaːla illa"
+        bases: [{ word: "മസാല", base: "മസാല", reading: "masāla" }, { word: "ഇല്ല", ref: "ml-0002" }]
+      - target: "മസാല ഇവിടെ ഉണ്ട്."
+        reading: "masāla iviṭe uṇṭ."
+        ipa: "məsaːla iʋiʈe uɳʈ"
+        bases: [{ word: "മസാല", base: "മസാല", reading: "masāla" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+  - id: "ml-0302"
+    target: "കുരുമുളക്"
+    reading: "kurumuḷak"
+    ipa: "kuɾumuɭak"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കുരുമുളക് കുറച്ച് വേണം."
+        reading: "kurumuḷak kuṟacc vēṇaṁ."
+        ipa: "kuɾumuɭak kuɾatʃtʃ ʋeːɳam"
+        bases: [{ word: "കുരുമുളക്", base: "കുരുമുളക്", reading: "kurumuḷak" }, { word: "കുറച്ച്", base: "കുറച്ച്", reading: "kuṟacc" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "കുരുമുളക് എടുക്കൂ."
+        reading: "kurumuḷak eṭukkū."
+        ipa: "kuɾumuɭak eʈukkuː"
+        bases: [{ word: "കുരുമുളക്", base: "കുരുമുളക്", reading: "kurumuḷak" }, { word: "എടുക്കൂ", ref: "ml-0122" }]
+  - id: "ml-0303"
+    target: "വിശപ്പ്"
+    reading: "viśapp"
+    ipa: "ʋiʃapp"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എനിക്ക് വിശപ്പുണ്ട്"
+        reading: "enikk viśappuṇṭ"
+        ipa: "enikk ʋiʃəppuɳʈ"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "വിശപ്പുണ്ട്", base: "വിശപ്പ്", reading: "viśapp" }]
+      - target: "വിശപ്പ് ഉണ്ടോ?"
+        reading: "viśapp uṇṭō?"
+        ipa: "ʋiʃapp uɳʈoː"
+        bases: [{ word: "വിശപ്പ്", base: "വിശപ്പ്", reading: "viśapp" }, { word: "ഉണ്ടോ", ref: "ml-0040" }]
+  - id: "ml-0304"
+    target: "ദാഹം"
+    reading: "dāhaṁ"
+    ipa: "d̪aːham"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എനിക്ക് ദാഹമുണ്ട്"
+        reading: "enikk dāhamuṇṭ"
+        ipa: "enikk d̪aːhəmuɳʈ"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "ദാഹമുണ്ട്", base: "ദാഹം", reading: "dāhaṁ" }]
+      - target: "ദാഹത്തിന് വെള്ളം കുടിക്കൂ."
+        reading: "dāhattin veḷḷaṁ kuṭikkū."
+        ipa: "d̪aːhət̪t̪in ʋeɭɭam kuʈikkuː"
+        bases: [{ word: "ദാഹത്തിന്", base: "ദാഹം", reading: "dāhaṁ" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "കുടിക്കൂ", ref: "ml-0114" }]
+  - id: "ml-0305"
+    target: "മെനു"
+    reading: "menu"
+    ipa: "menu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മെനു ഇവിടെ."
+        reading: "menu iviṭe."
+        ipa: "menu iʋiʈe"
+        bases: [{ word: "മെനു", base: "മെനു", reading: "menu" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "മെനു കാണിക്കൂ."
+        reading: "menu kāṇikkū."
+        ipa: "menu kaːɳikkuː"
+        bases: [{ word: "മെനു", base: "മെനു", reading: "menu" }, { word: "കാണിക്കൂ", ref: "ml-0177" }]
+  - id: "ml-0306"
+    target: "ഊണ്"
+    reading: "ūṇ"
+    ipa: "uːɳ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഉച്ചയ്ക്ക് ഊണ് കഴിക്കാം"
+        reading: "uccaykk ūṇ kaḻikkāṁ"
+        ipa: "utʃtʃajkk uːɳ kəɻikkaːm"
+        bases: [{ word: "ഉച്ചയ്ക്ക്", ref: "ml-0131" }, { word: "ഊണ്", base: "ഊണ്", reading: "ūṇ" }, { word: "കഴിക്കാം", ref: "ml-0113" }]
+      - target: "ഊണ് വേണോ?"
+        reading: "ūṇ vēṇō?"
+        ipa: "uːɳ ʋeːɳoː"
+        bases: [{ word: "ഊണ്", base: "ഊണ്", reading: "ūṇ" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]

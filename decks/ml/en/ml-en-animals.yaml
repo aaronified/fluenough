@@ -1,0 +1,395 @@
+schema: 1
+id: "ml-en-animals"
+kind: "layer"
+core: "ml-animals"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Animals"
+description: "Animals: a cow, a dog, a cat, a bird, a horse, a goat, a hen, a snake, a monkey, an elephant, a tiger, a lion, a duck, a spider, a fly, a mosquito, a frog, a rabbit, a rat, a pig, a deer, a camel, a bee, a tortoise, a crow, a donkey and a parrot. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0427":
+    native: "cow"
+    notes:
+      n1: "cow"
+    examples:
+      "പശു പുല്ല് തിന്നുന്നു.":
+        native: "The cow eats grass."
+        bases:
+          "പശു": "cow"
+          "പുല്ല്": "grass"
+          "തിന്നുന്നു": "eats"
+      "പശു ഇവിടെ ഉണ്ടോ?":
+        native: "Is there a cow here?"
+        bases:
+          "പശു": "cow"
+  "ml-0428":
+    native: "dog"
+    notes:
+      n1: "dog"
+    examples:
+      "നായ കുരയ്ക്കുന്നു.":
+        native: "The dog barks."
+        bases:
+          "നായ": "dog"
+          "കുരയ്ക്കുന്നു": "barks"
+      "നായ വെളുത്തതാണ്.":
+        native: "The dog is white."
+        bases:
+          "നായ": "dog"
+          "വെളുത്തതാണ്": "is white"
+  "ml-0429":
+    native: "cat"
+    notes:
+      n1: "cat"
+    examples:
+      "പൂച്ച പാൽ കുടിക്കും":
+        native: "The cat will drink milk."
+        bases:
+          "പൂച്ച": "cat"
+      "പൂച്ച എവിടെ?":
+        native: "Where is the cat?"
+        bases:
+          "പൂച്ച": "cat"
+  "ml-0430":
+    native: "bird"
+    notes:
+      n1: "bird"
+    examples:
+      "പക്ഷി പറക്കുന്നു.":
+        native: "The bird flies."
+        bases:
+          "പക്ഷി": "bird"
+          "പറക്കുന്നു": "flies"
+      "പക്ഷി മേശയുടെ മുകളിൽ.":
+        native: "The bird is on the table."
+        bases:
+          "പക്ഷി": "bird"
+  "ml-0431":
+    native: "horse"
+    notes:
+      n1: "horse"
+    examples:
+      "കുതിര വേഗത്തിൽ ഓടുന്നു.":
+        native: "The horse runs fast."
+        bases:
+          "കുതിര": "horse"
+          "വേഗത്തിൽ": "fast"
+          "ഓടുന്നു": "runs"
+      "കുതിര വലിയതാണ്":
+        native: "The horse is big."
+        bases:
+          "കുതിര": "horse"
+  "ml-0432":
+    native: "goat"
+    notes:
+      n1: "goat"
+    examples:
+      "ആട് ഇവിടെ.":
+        native: "The goat is here."
+        bases:
+          "ആട്": "goat"
+      "ആടിന് പാൽ ഉണ്ട്.":
+        native: "The goat has milk."
+        bases:
+          "ആടിന്": "goat"
+          "ഉണ്ട്": "has"
+  "ml-0433":
+    native: "hen; chicken (bird)"
+    notes:
+      n1: "hen; chicken (bird)"
+    examples:
+      "കോഴി മുട്ടയിടുന്നു.":
+        native: "The hen lays eggs."
+        bases:
+          "കോഴി": "hen; chicken (bird)"
+          "മുട്ടയിടുന്നു": "lays eggs"
+      "കോഴി മുറ്റത്ത്":
+        native: "The hen is in the yard."
+        bases:
+          "കോഴി": "hen; chicken (bird)"
+  "ml-0434":
+    native: "snake"
+    notes:
+      n1: "snake"
+    examples:
+      "പാമ്പ് അപകടമാണ്.":
+        native: "The snake is dangerous."
+        bases:
+          "പാമ്പ്": "snake"
+          "അപകടമാണ്": "is dangerous"
+      "പാമ്പ് കാട്ടിൽ":
+        native: "The snake is in the forest."
+        bases:
+          "പാമ്പ്": "snake"
+  "ml-0435":
+    native: "monkey"
+    notes:
+      n1: "monkey"
+    examples:
+      "കുരങ്ങ് ചാടുന്നു.":
+        native: "The monkey jumps."
+        bases:
+          "കുരങ്ങ്": "monkey"
+          "ചാടുന്നു": "jumps"
+      "കുരങ്ങ് പഴം തിന്നും.":
+        native: "The monkey will eat a banana."
+        bases:
+          "കുരങ്ങ്": "monkey"
+          "തിന്നും": "will eat"
+  "ml-0436":
+    native: "elephant"
+    notes:
+      n1: "elephant"
+    examples:
+      "ആന വലിയതാണ്":
+        native: "The elephant is big."
+        bases:
+          "ആന": "elephant"
+      "ആന വെള്ളത്തിൽ":
+        native: "The elephant is in the water."
+        bases:
+          "ആന": "elephant"
+  "ml-0437":
+    native: "tiger"
+    notes:
+      n1: "tiger"
+    examples:
+      "കടുവ അപകടമാണ്.":
+        native: "The tiger is dangerous."
+        bases:
+          "കടുവ": "tiger"
+          "അപകടമാണ്": "is dangerous"
+      "കടുവ കാട്ടിൽ ഉണ്ട്.":
+        native: "There is a tiger in the forest."
+        bases:
+          "കടുവ": "tiger"
+          "ഉണ്ട്": "there is"
+  "ml-0438":
+    native: "lion"
+    notes:
+      n1: "lion"
+    examples:
+      "സിംഹം വലിയതാണ്":
+        native: "The lion is big."
+        bases:
+          "സിംഹം": "lion"
+      "സിംഹം കാട്ടിൽ":
+        native: "The lion is in the forest."
+        bases:
+          "സിംഹം": "lion"
+  "ml-0439":
+    native: "duck"
+    notes:
+      n1: "duck"
+    examples:
+      "താറാവ് വെള്ളത്തിൽ നീന്തുന്നു.":
+        native: "The duck swims in the water."
+        bases:
+          "താറാവ്": "duck"
+          "നീന്തുന്നു": "swims"
+      "താറാവ് മുട്ടയിടുന്നു.":
+        native: "The duck lays eggs."
+        bases:
+          "താറാവ്": "duck"
+          "മുട്ടയിടുന്നു": "lays eggs"
+  "ml-0440":
+    native: "spider"
+    notes:
+      n1: "spider"
+    examples:
+      "ചിലന്തി ചുമരിൽ":
+        native: "The spider is on the wall."
+        bases:
+          "ചിലന്തി": "spider"
+      "ചിലന്തി ചെറുതാണ്.":
+        native: "The spider is small."
+        bases:
+          "ചിലന്തി": "spider"
+          "ചെറുതാണ്": "is small"
+  "ml-0441":
+    native: "fly (insect)"
+    notes:
+      n1: "fly (insect)"
+    examples:
+      "ഈച്ച ഭക്ഷണത്തിൽ":
+        native: "A fly is on the food."
+        bases:
+          "ഈച്ച": "fly (insect)"
+      "ഈച്ച വേണ്ട.":
+        native: "No flies, please."
+        bases:
+          "ഈച്ച": "fly (insect)"
+          "വേണ്ട": "not wanted"
+  "ml-0442":
+    native: "mosquito"
+    notes:
+      n1: "mosquito"
+    examples:
+      "കൊതുക് കടിക്കുന്നു.":
+        native: "The mosquito bites."
+        bases:
+          "കൊതുക്": "mosquito"
+          "കടിക്കുന്നു": "bites"
+      "കൊതുക് ഉണ്ടോ?":
+        native: "Are there mosquitoes?"
+        bases:
+          "കൊതുക്": "mosquito"
+  "ml-0443":
+    native: "frog"
+    notes:
+      n1: "frog"
+    examples:
+      "തവള ചാടുന്നു.":
+        native: "The frog jumps."
+        bases:
+          "തവള": "frog"
+          "ചാടുന്നു": "jumps"
+      "തവള പച്ചയാണ്":
+        native: "The frog is green."
+        bases:
+          "തവള": "frog"
+  "ml-0444":
+    native: "rabbit"
+    notes:
+      n1: "rabbit"
+    examples:
+      "മുയൽ ചെറുതാണ്.":
+        native: "The rabbit is small."
+        bases:
+          "മുയൽ": "rabbit"
+          "ചെറുതാണ്": "is small"
+      "മുയൽ കാരറ്റ് തിന്നും.":
+        native: "The rabbit will eat carrots."
+        bases:
+          "മുയൽ": "rabbit"
+          "തിന്നും": "will eat"
+  "ml-0445":
+    native: "rat; mouse"
+    notes:
+      n1: "rat; mouse"
+    examples:
+      "എലി അടുക്കളയിൽ":
+        native: "The rat is in the kitchen."
+        bases:
+          "എലി": "rat; mouse"
+      "എലി പേടിക്കുന്നു.":
+        native: "The rat is afraid."
+        bases:
+          "എലി": "rat; mouse"
+          "പേടിക്കുന്നു": "is afraid"
+  "ml-0446":
+    native: "pig"
+    notes:
+      n1: "pig"
+    examples:
+      "പന്നി വൃത്തികെട്ടതാണ്.":
+        native: "The pig is dirty."
+        bases:
+          "പന്നി": "pig"
+          "വൃത്തികെട്ടതാണ്": "is dirty"
+      "പന്നി ഓടുന്നു.":
+        native: "The pig runs."
+        bases:
+          "പന്നി": "pig"
+          "ഓടുന്നു": "runs"
+  "ml-0447":
+    native: "deer"
+    notes:
+      n1: "deer"
+    examples:
+      "മാൻ വേഗത്തിൽ ഓടുന്നു.":
+        native: "The deer runs fast."
+        bases:
+          "മാൻ": "deer"
+          "വേഗത്തിൽ": "fast"
+          "ഓടുന്നു": "runs"
+      "മാൻ കാട്ടിൽ":
+        native: "The deer is in the forest."
+        bases:
+          "മാൻ": "deer"
+  "ml-0448":
+    native: "camel"
+    notes:
+      n1: "camel"
+    examples:
+      "ഒട്ടകം വലിയതാണ്":
+        native: "The camel is big."
+        bases:
+          "ഒട്ടകം": "camel"
+      "ഒട്ടകം നടക്കുന്നു.":
+        native: "The camel walks."
+        bases:
+          "ഒട്ടകം": "camel"
+          "നടക്കുന്നു": "walks"
+  "ml-0449":
+    native: "bee"
+    notes:
+      n1: "bee"
+    examples:
+      "തേനീച്ച കുത്തുന്നു.":
+        native: "The bee stings."
+        bases: {"കുത്തുന്നു": "stings"}
+      "തേനീച്ച ചെറുതാണ്.":
+        native: "The bee is small."
+        bases: {"ചെറുതാണ്": "is small"}
+  "ml-0450":
+    native: "tortoise"
+    notes:
+      n1: "tortoise"
+    examples:
+      "ആമ പതുക്കെ നടക്കുന്നു.":
+        native: "The tortoise walks slowly."
+        bases:
+          "ആമ": "tortoise"
+          "പതുക്കെ": "slowly"
+          "നടക്കുന്നു": "walks"
+      "ആമ ചെറുതാണ്.":
+        native: "The tortoise is small."
+        bases:
+          "ആമ": "tortoise"
+          "ചെറുതാണ്": "is small"
+  "ml-0451":
+    native: "crow"
+    notes:
+      n1: "crow"
+    examples:
+      "കാക്ക കരയുന്നു.":
+        native: "The crow caws."
+        bases:
+          "കാക്ക": "crow"
+          "കരയുന്നു": "caws"
+      "കാക്ക ഇവിടെ.":
+        native: "The crow is here."
+        bases:
+          "കാക്ക": "crow"
+  "ml-0452":
+    native: "donkey"
+    notes:
+      n1: "donkey"
+    examples:
+      "കഴുത വലിയതാണ്":
+        native: "The donkey is big."
+        bases:
+          "കഴുത": "donkey"
+      "കഴുത ഭാരം ചുമക്കുന്നു.":
+        native: "The donkey carries a load."
+        bases:
+          "കഴുത": "donkey"
+          "ഭാരം": "load"
+          "ചുമക്കുന്നു": "carries"
+  "ml-0453":
+    native: "parrot; small bird"
+    notes:
+      n1: "parrot; small bird"
+    examples:
+      "കിളി പാടുന്നു.":
+        native: "The bird sings."
+        bases:
+          "കിളി": "parrot; small bird"
+          "പാടുന്നു": "sings"
+      "കിളി ചെറുതാണ്.":
+        native: "The bird is small."
+        bases:
+          "കിളി": "parrot; small bird"
+          "ചെറുതാണ്": "is small"

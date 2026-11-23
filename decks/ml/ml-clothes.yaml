@@ -1,0 +1,435 @@
+schema: 1
+id: "ml-clothes"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "clothes"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0403"
+    target: "വസ്ത്രം"
+    reading: "vastraṁ"
+    ipa: "ʋəst̪ɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വസ്ത്രം വൃത്തിയാണ്."
+        reading: "vastraṁ vṛttiyāṇ."
+        ipa: "ʋəst̪ɾam ʋɾɯt̪t̪ijaːɳ"
+        bases: [{ word: "വസ്ത്രം", base: "വസ്ത്രം", reading: "vastraṁ" }, { word: "വൃത്തിയാണ്", base: "വൃത്തിയാണ്", reading: "vṛttiyāṇ" }]
+      - target: "വസ്ത്രം എവിടെ?"
+        reading: "vastraṁ eviṭe?"
+        ipa: "ʋəst̪ɾam eʋiʈe"
+        bases: [{ word: "വസ്ത്രം", base: "വസ്ത്രം", reading: "vastraṁ" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0404"
+    target: "ഉടുപ്പ്"
+    reading: "uṭupp"
+    ipa: "uʈupp"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഈ ഉടുപ്പ് നല്ലതാണ്."
+        reading: "ī uṭupp nallatāṇ."
+        ipa: "iː uʈupp nəllət̪aːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "ഉടുപ്പ്", base: "ഉടുപ്പ്", reading: "uṭupp" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+      - target: "ഉടുപ്പ് എത്ര?"
+        reading: "uṭupp etra?"
+        ipa: "uʈupp et̪ɾa"
+        bases: [{ word: "ഉടുപ്പ്", base: "ഉടുപ്പ്", reading: "uṭupp" }, { word: "എത്ര", ref: "ml-0038" }]
+  - id: "ml-0405"
+    target: "ഷർട്ട്"
+    reading: "ṣarṭṭ"
+    ipa: "ʂaɾʈʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഷർട്ട് വേണം."
+        reading: "ṣarṭṭ vēṇaṁ."
+        ipa: "ʂaɾʈʈ ʋeːɳam"
+        bases: [{ word: "ഷർട്ട്", base: "ഷർട്ട്", reading: "ṣarṭṭ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "നീല ഷർട്ട് നല്ലതാണ്."
+        reading: "nīla ṣarṭṭ nallatāṇ."
+        ipa: "niːla ʂaɾʈʈ nəllət̪aːɳ"
+        bases: [{ word: "നീല", ref: "ml-0421" }, { word: "ഷർട്ട്", base: "ഷർട്ട്", reading: "ṣarṭṭ" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-0406"
+    target: "പാന്റ്സ്"
+    reading: "pānṟs"
+    ipa: "paːnt̪ɾs"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പാന്റ്സ് എവിടെ?"
+        reading: "pānṟs eviṭe?"
+        ipa: "paːnt̪ɾs eʋiʈe"
+        bases: [{ word: "പാന്റ്സ്", base: "പാന്റ്സ്", reading: "pānṟs" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "പാന്റ്സ് ചെറുതാണ്."
+        reading: "pānṟs ceṟutāṇ."
+        ipa: "paːnt̪ɾs tʃeɾut̪aːɳ"
+        bases: [{ word: "പാന്റ്സ്", base: "പാന്റ്സ്", reading: "pānṟs" }, { word: "ചെറുതാണ്", base: "ചെറുതാണ്", reading: "ceṟutāṇ" }]
+  - id: "ml-0407"
+    target: "ഷൂസ്"
+    reading: "ṣūs"
+    ipa: "ʂuːs"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഷൂസ് എടുക്കൂ."
+        reading: "ṣūs eṭukkū."
+        ipa: "ʂuːs eʈukkuː"
+        bases: [{ word: "ഷൂസ്", base: "ഷൂസ്", reading: "ṣūs" }, { word: "എടുക്കൂ", ref: "ml-0122" }]
+      - target: "ഷൂസ് വേണോ?"
+        reading: "ṣūs vēṇō?"
+        ipa: "ʂuːs ʋeːɳoː"
+        bases: [{ word: "ഷൂസ്", base: "ഷൂസ്", reading: "ṣūs" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+  - id: "ml-0408"
+    target: "ചെരിപ്പ്"
+    reading: "ceripp"
+    ipa: "tʃeɾipp"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചെരിപ്പ് ഇവിടെ."
+        reading: "ceripp iviṭe."
+        ipa: "tʃeɾipp iʋiʈe"
+        bases: [{ word: "ചെരിപ്പ്", base: "ചെരിപ്പ്", reading: "ceripp" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "ചെരിപ്പ് ഇടൂ."
+        reading: "ceripp iṭū."
+        ipa: "tʃeɾipp iʈuː"
+        bases: [{ word: "ചെരിപ്പ്", base: "ചെരിപ്പ്", reading: "ceripp" }, { word: "ഇടൂ", base: "ഇടൂ", reading: "iṭū" }]
+  - id: "ml-0409"
+    target: "സോക്സ്"
+    reading: "sōks"
+    ipa: "soːks"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "സോക്സ് കഴുകൂ."
+        reading: "sōks kaḻukū."
+        ipa: "soːks kəɻukuː"
+        bases: [{ word: "സോക്സ്", base: "സോക്സ്", reading: "sōks" }, { word: "കഴുകൂ", ref: "ml-0162" }]
+      - target: "സോക്സ് എവിടെ?"
+        reading: "sōks eviṭe?"
+        ipa: "soːks eʋiʈe"
+        bases: [{ word: "സോക്സ്", base: "സോക്സ്", reading: "sōks" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0410"
+    target: "തൊപ്പി"
+    reading: "toppi"
+    ipa: "t̪oppi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "തൊപ്പി വെക്കൂ."
+        reading: "toppi vekkū."
+        ipa: "t̪oppi ʋekkuː"
+        bases: [{ word: "തൊപ്പി", base: "തൊപ്പി", reading: "toppi" }, { word: "വെക്കൂ", base: "വെക്കൂ", reading: "vekkū" }]
+      - target: "തൊപ്പി എവിടെ?"
+        reading: "toppi eviṭe?"
+        ipa: "t̪oppi eʋiʈe"
+        bases: [{ word: "തൊപ്പി", base: "തൊപ്പി", reading: "toppi" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0411"
+    target: "സാരി"
+    reading: "sāri"
+    ipa: "saːɾi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "സാരി മനോഹരമാണ്."
+        reading: "sāri manōharamāṇ."
+        ipa: "saːɾi mənoːhəɾəmaːɳ"
+        bases: [{ word: "സാരി", base: "സാരി", reading: "sāri" }, { word: "മനോഹരമാണ്", base: "മനോഹരമാണ്", reading: "manōharamāṇ" }]
+      - target: "സാരി എത്ര?"
+        reading: "sāri etra?"
+        ipa: "saːɾi et̪ɾa"
+        bases: [{ word: "സാരി", base: "സാരി", reading: "sāri" }, { word: "എത്ര", ref: "ml-0038" }]
+  - id: "ml-0412"
+    target: "മുണ്ട്"
+    reading: "muṇṭ"
+    ipa: "muɳʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അച്ഛന് മുണ്ട് വേണം."
+        reading: "acchan muṇṭ vēṇaṁ."
+        ipa: "ətʃtʃan muɳʈ ʋeːɳam"
+        bases: [{ word: "അച്ഛന്", ref: "ml-0070" }, { word: "മുണ്ട്", base: "മുണ്ട്", reading: "muṇṭ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "മുണ്ട് വെളുത്തതാണ്."
+        reading: "muṇṭ veḷuttatāṇ."
+        ipa: "muɳʈ ʋeɭut̪t̪ət̪aːɳ"
+        bases: [{ word: "മുണ്ട്", base: "മുണ്ട്", reading: "muṇṭ" }, { word: "വെളുത്തതാണ്", base: "വെളുത്തതാണ്", reading: "veḷuttatāṇ" }]
+  - id: "ml-0413"
+    target: "ബ്ലൗസ്"
+    reading: "blaus"
+    ipa: "blaus"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ബ്ലൗസ് വലിയതാണ്"
+        reading: "blaus valiyatāṇ"
+        ipa: "blaus ʋəlijət̪aːɳ"
+        bases: [{ word: "ബ്ലൗസ്", base: "ബ്ലൗസ്", reading: "blaus" }, { word: "വലിയതാണ്", ref: "ml-0008" }]
+      - target: "ബ്ലൗസ് എവിടെ?"
+        reading: "blaus eviṭe?"
+        ipa: "blaus eʋiʈe"
+        bases: [{ word: "ബ്ലൗസ്", base: "ബ്ലൗസ്", reading: "blaus" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0414"
+    target: "കുപ്പായം"
+    reading: "kuppāyaṁ"
+    ipa: "kuppaːjam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കുപ്പായം ചെറിയതാണ്."
+        reading: "kuppāyaṁ ceṟiyatāṇ."
+        ipa: "kuppaːjam tʃeɾijət̪aːɳ"
+        bases: [{ word: "കുപ്പായം", base: "കുപ്പായം", reading: "kuppāyaṁ" }, { word: "ചെറിയതാണ്", base: "ചെറിയതാണ്", reading: "ceṟiyatāṇ" }]
+      - target: "ഈ കുപ്പായം നല്ലതാണ്."
+        reading: "ī kuppāyaṁ nallatāṇ."
+        ipa: "iː kuppaːjam nəllət̪aːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "കുപ്പായം", base: "കുപ്പായം", reading: "kuppāyaṁ" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-0415"
+    target: "പാവാട"
+    reading: "pāvāṭa"
+    ipa: "paːʋaːʈa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പാവാട നീളമാണ്."
+        reading: "pāvāṭa nīḷamāṇ."
+        ipa: "paːʋaːʈa niːɭəmaːɳ"
+        bases: [{ word: "പാവാട", base: "പാവാട", reading: "pāvāṭa" }, { word: "നീളമാണ്", base: "നീളമാണ്", reading: "nīḷamāṇ" }]
+      - target: "പാവാട ഇവിടെ."
+        reading: "pāvāṭa iviṭe."
+        ipa: "paːʋaːʈa iʋiʈe"
+        bases: [{ word: "പാവാട", base: "പാവാട", reading: "pāvāṭa" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0416"
+    target: "ജാക്കറ്റ്"
+    reading: "jākkaṟṟ"
+    ipa: "dʒaːkkatt"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ജാക്കറ്റ് വേണോ?"
+        reading: "jākkaṟṟ vēṇō?"
+        ipa: "dʒaːkkatt ʋeːɳoː"
+        bases: [{ word: "ജാക്കറ്റ്", base: "ജാക്കറ്റ്", reading: "jākkaṟṟ" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+      - target: "ജാക്കറ്റ് ചൂടാണ്."
+        reading: "jākkaṟṟ cūṭāṇ."
+        ipa: "dʒaːkkatt tʃuːʈaːɳ"
+        bases: [{ word: "ജാക്കറ്റ്", base: "ജാക്കറ്റ്", reading: "jākkaṟṟ" }, { word: "ചൂടാണ്", base: "ചൂടാണ്", reading: "cūṭāṇ" }]
+  - id: "ml-0417"
+    target: "കോട്ട്"
+    reading: "kōṭṭ"
+    ipa: "koːʈʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കോട്ട് എടുക്കൂ."
+        reading: "kōṭṭ eṭukkū."
+        ipa: "koːʈʈ eʈukkuː"
+        bases: [{ word: "കോട്ട്", base: "കോട്ട്", reading: "kōṭṭ" }, { word: "എടുക്കൂ", ref: "ml-0122" }]
+      - target: "തണുപ്പുണ്ട്, കോട്ട് വേണം."
+        reading: "taṇuppuṇṭ, kōṭṭ vēṇaṁ."
+        ipa: "t̪əɳuppuɳʈ koːʈʈ ʋeːɳam"
+        bases: [{ word: "തണുപ്പുണ്ട്", base: "തണുപ്പുണ്ട്", reading: "taṇuppuṇṭ" }, { word: "കോട്ട്", base: "കോട്ട്", reading: "kōṭṭ" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0418"
+    target: "സ്വെറ്റർ"
+    reading: "sveṟṟar"
+    ipa: "sʋettaɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "സ്വെറ്റർ വേണം."
+        reading: "sveṟṟar vēṇaṁ."
+        ipa: "sʋettaɾ ʋeːɳam"
+        bases: [{ word: "സ്വെറ്റർ", base: "സ്വെറ്റർ", reading: "sveṟṟar" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "സ്വെറ്റർ ഇടൂ."
+        reading: "sveṟṟar iṭū."
+        ipa: "sʋettaɾ iʈuː"
+        bases: [{ word: "സ്വെറ്റർ", base: "സ്വെറ്റർ", reading: "sveṟṟar" }, { word: "ഇടൂ", base: "ഇടൂ", reading: "iṭū" }]
+  - id: "ml-0419"
+    target: "നിറം"
+    reading: "niṟaṁ"
+    ipa: "niɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഏത് നിറം?"
+        reading: "ēt niṟaṁ?"
+        ipa: "eːt̪ niɾam"
+        bases: [{ word: "ഏത്", ref: "ml-0037" }, { word: "നിറം", base: "നിറം", reading: "niṟaṁ" }]
+      - target: "ഈ നിറം നല്ലതാണ്."
+        reading: "ī niṟaṁ nallatāṇ."
+        ipa: "iː niɾam nəllət̪aːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "നിറം", base: "നിറം", reading: "niṟaṁ" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-0420"
+    target: "ചുവപ്പ്"
+    reading: "cuvapp"
+    ipa: "tʃuʋapp"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചുവന്ന ഷർട്ട്."
+        reading: "cuvanna ṣarṭṭ."
+        ipa: "tʃuʋənna ʂaɾʈʈ"
+        bases: [{ word: "ചുവന്ന", base: "ചുവപ്പ്", reading: "cuvapp" }, { word: "ഷർട്ട്", ref: "ml-0405" }]
+      - target: "ചുവപ്പ് എനിക്ക് ഇഷ്ടമാണ്."
+        reading: "cuvapp enikk iṣṭamāṇ."
+        ipa: "tʃuʋapp enikk iʂʈəmaːɳ"
+        bases: [{ word: "ചുവപ്പ്", base: "ചുവപ്പ്", reading: "cuvapp" }, { word: "എനിക്ക്", ref: "ml-0107" }, { word: "ഇഷ്ടമാണ്", base: "ഇഷ്ടമാണ്", reading: "iṣṭamāṇ" }]
+  - id: "ml-0421"
+    target: "നീല"
+    reading: "nīla"
+    ipa: "niːla"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "നീല സാരി."
+        reading: "nīla sāri."
+        ipa: "niːla saːɾi"
+        bases: [{ word: "നീല", base: "നീല", reading: "nīla" }, { word: "സാരി", ref: "ml-0411" }]
+      - target: "നീല നിറം ഇഷ്ടമാണോ?"
+        reading: "nīla niṟaṁ iṣṭamāṇō?"
+        ipa: "niːla niɾam iʂʈəmaːɳoː"
+        bases: [{ word: "നീല", base: "നീല", reading: "nīla" }, { word: "നിറം", ref: "ml-0419" }, { word: "ഇഷ്ടമാണോ", base: "ഇഷ്ടമാണോ", reading: "iṣṭamāṇō" }]
+  - id: "ml-0422"
+    target: "പച്ച"
+    reading: "pacca"
+    ipa: "pətʃtʃa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പച്ച മുണ്ട്."
+        reading: "pacca muṇṭ."
+        ipa: "pətʃtʃa muɳʈ"
+        bases: [{ word: "പച്ച", base: "പച്ച", reading: "pacca" }, { word: "മുണ്ട്", ref: "ml-0412" }]
+      - target: "പച്ച നിറം നല്ലതാണ്."
+        reading: "pacca niṟaṁ nallatāṇ."
+        ipa: "pətʃtʃa niɾam nəllət̪aːɳ"
+        bases: [{ word: "പച്ച", base: "പച്ച", reading: "pacca" }, { word: "നിറം", ref: "ml-0419" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-0423"
+    target: "വെള്ള"
+    reading: "veḷḷa"
+    ipa: "ʋeɭɭa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വെള്ള ഷർട്ട് വേണം."
+        reading: "veḷḷa ṣarṭṭ vēṇaṁ."
+        ipa: "ʋeɭɭa ʂaɾʈʈ ʋeːɳam"
+        bases: [{ word: "വെള്ള", base: "വെള്ള", reading: "veḷḷa" }, { word: "ഷർട്ട്", ref: "ml-0405" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "വെള്ള ചുമർ."
+        reading: "veḷḷa cumar."
+        ipa: "ʋeɭɭa tʃumaɾ"
+        bases: [{ word: "വെള്ള", base: "വെള്ള", reading: "veḷḷa" }, { word: "ചുമർ", ref: "ml-0390" }]
+  - id: "ml-0424"
+    target: "കറുപ്പ്"
+    reading: "kaṟupp"
+    ipa: "kəɾupp"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കറുപ്പ് ഇഷ്ടമാണോ?"
+        reading: "kaṟupp iṣṭamāṇō?"
+        ipa: "kəɾupp iʂʈəmaːɳoː"
+        bases: [{ word: "കറുപ്പ്", base: "കറുപ്പ്", reading: "kaṟupp" }, { word: "ഇഷ്ടമാണോ", base: "ഇഷ്ടമാണോ", reading: "iṣṭamāṇō" }]
+      - target: "കറുത്ത ചെരിപ്പ്."
+        reading: "kaṟutta ceripp."
+        ipa: "kəɾut̪t̪a tʃeɾipp"
+        bases: [{ word: "കറുത്ത", base: "കറുപ്പ്", reading: "kaṟupp" }, { word: "ചെരിപ്പ്", ref: "ml-0408" }]
+  - id: "ml-0425"
+    target: "മഞ്ഞ"
+    reading: "mañña"
+    ipa: "məɲɲa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മഞ്ഞ ജാക്കറ്റ്."
+        reading: "mañña jākkaṟṟ."
+        ipa: "məɲɲa dʒaːkkatt"
+        bases: [{ word: "മഞ്ഞ", base: "മഞ്ഞ", reading: "mañña" }, { word: "ജാക്കറ്റ്", ref: "ml-0416" }]
+      - target: "മഞ്ഞ നല്ലതാണ്."
+        reading: "mañña nallatāṇ."
+        ipa: "məɲɲa nəllət̪aːɳ"
+        bases: [{ word: "മഞ്ഞ", base: "മഞ്ഞ", reading: "mañña" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-0426"
+    target: "വലുപ്പം"
+    reading: "valuppaṁ"
+    ipa: "ʋəluppam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വലുപ്പം എത്ര?"
+        reading: "valuppaṁ etra?"
+        ipa: "ʋəluppam et̪ɾa"
+        bases: [{ word: "വലുപ്പം", base: "വലുപ്പം", reading: "valuppaṁ" }, { word: "എത്ര", ref: "ml-0038" }]
+      - target: "വലുപ്പം ചെറുതാണോ?"
+        reading: "valuppaṁ ceṟutāṇō?"
+        ipa: "ʋəluppam tʃeɾut̪aːɳoː"
+        bases: [{ word: "വലുപ്പം", base: "വലുപ്പം", reading: "valuppaṁ" }, { word: "ചെറുതാണോ", base: "ചെറുതാണോ", reading: "ceṟutāṇō" }]

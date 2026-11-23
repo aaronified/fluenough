@@ -1,0 +1,137 @@
+schema: 1
+id: "ml-sound-differences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "sound-differences"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0733"
+    target: "കട്ട"
+    reading: "kaṭṭa"
+    ipa: "kəʈʈa"
+    pos: "noun"
+    gender: "n"
+    tags: ["gemination", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "pair", ref: "ml-0338" }
+    bases: "self"
+    examples:
+      - target: "കട്ട ഇവിടെ."
+        reading: "kaṭṭa iviṭe."
+        ipa: "kəʈʈa iʋiʈe"
+        bases: [{ word: "കട്ട", base: "കട്ട", reading: "kaṭṭa" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "കട്ട കൊണ്ടുവരൂ."
+        reading: "kaṭṭa koṇṭuvarū."
+        ipa: "kəʈʈa koɳʈuʋəɾuː"
+        bases: [{ word: "കട്ട", base: "കട്ട", reading: "kaṭṭa" }, { word: "കൊണ്ടുവരൂ", ref: "ml-0153" }]
+  - id: "ml-0734"
+    target: "മണം"
+    reading: "maṇaṁ"
+    ipa: "məɳam"
+    pos: "noun"
+    gender: "n"
+    tags: ["retroflex-n", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "pair", ref: "ml-0735" }
+    bases: "self"
+    examples:
+      - target: "മണം നല്ലതാണ്."
+        reading: "maṇaṁ nallatāṇ."
+        ipa: "məɳam nəllət̪aːɳ"
+        bases: [{ word: "മണം", base: "മണം", reading: "maṇaṁ" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+      - target: "ഈ മണം എന്ത്?"
+        reading: "ī maṇaṁ ent?"
+        ipa: "iː məɳam ent̪"
+        bases: [{ word: "ഈ", ref: "ml-0584" }, { word: "മണം", base: "മണം", reading: "maṇaṁ" }, { word: "എന്ത്", ref: "ml-0032" }]
+  - id: "ml-0735"
+    target: "മനം"
+    reading: "manaṁ"
+    ipa: "mənam"
+    pos: "noun"
+    gender: "n"
+    tags: ["retroflex-n", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "pair", ref: "ml-0734" }
+    bases: "self"
+    examples:
+      - target: "മനം സന്തോഷമാണ്."
+        reading: "manaṁ santōṣamāṇ."
+        ipa: "mənam sənt̪oːʂəmaːɳ"
+        bases: [{ word: "മനം", base: "മനം", reading: "manaṁ" }, { word: "സന്തോഷമാണ്", base: "സന്തോഷമാണ്", reading: "santōṣamāṇ" }]
+      - target: "മനം ശാന്തമാണ്."
+        reading: "manaṁ śāntamāṇ."
+        ipa: "mənam ʃaːnt̪əmaːɳ"
+        bases: [{ word: "മനം", base: "മനം", reading: "manaṁ" }, { word: "ശാന്തമാണ്", base: "ശാന്തമാണ്", reading: "śāntamāṇ" }]
+  - id: "ml-0736"
+    target: "വെല്ലം"
+    reading: "vellaṁ"
+    ipa: "ʋellam"
+    pos: "noun"
+    gender: "n"
+    tags: ["lateral", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "pair", ref: "ml-0005" }
+    bases: "self"
+    examples:
+      - target: "വെല്ലം മധുരമാണ്."
+        reading: "vellaṁ madhuramāṇ."
+        ipa: "ʋellam məd̪ʱuɾəmaːɳ"
+        bases: [{ word: "വെല്ലം", base: "വെല്ലം", reading: "vellaṁ" }, { word: "മധുരമാണ്", base: "മധുരമാണ്", reading: "madhuramāṇ" }]
+      - target: "വെല്ലം വേണോ?"
+        reading: "vellaṁ vēṇō?"
+        ipa: "ʋellam ʋeːɳoː"
+        bases: [{ word: "വെല്ലം", base: "വെല്ലം", reading: "vellaṁ" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+  - id: "ml-0737"
+    target: "കലം"
+    reading: "kalaṁ"
+    ipa: "kəlam"
+    pos: "noun"
+    gender: "n"
+    tags: ["vowel-length", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "pair", ref: "ml-0738" }
+    bases: "self"
+    examples:
+      - target: "കലം ഇവിടെ."
+        reading: "kalaṁ iviṭe."
+        ipa: "kəlam iʋiʈe"
+        bases: [{ word: "കലം", base: "കലം", reading: "kalaṁ" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "കലം വേണോ?"
+        reading: "kalaṁ vēṇō?"
+        ipa: "kəlam ʋeːɳoː"
+        bases: [{ word: "കലം", base: "കലം", reading: "kalaṁ" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+  - id: "ml-0738"
+    target: "കാലം"
+    reading: "kālaṁ"
+    ipa: "kaːlam"
+    pos: "noun"
+    gender: "n"
+    tags: ["vowel-length", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "pair", ref: "ml-0737" }
+    bases: "self"
+    examples:
+      - target: "ഏത് കാലമാണ്?"
+        reading: "ēt kālamāṇ?"
+        ipa: "eːt̪ kaːləmaːɳ"
+        bases: [{ word: "ഏത്", ref: "ml-0037" }, { word: "കാലമാണ്", base: "കാലമാണ്", reading: "kālamāṇ" }]
+      - target: "ഈ കാലം നല്ലതാണ്."
+        reading: "ī kālaṁ nallatāṇ."
+        ipa: "iː kaːlam nəllət̪aːɳ"
+        bases: [{ word: "ഈ", ref: "ml-0584" }, { word: "കാലം", base: "കാലം", reading: "kālaṁ" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - ref: "ml-0338"
+    tags: ["gemination", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "pair", ref: "ml-0733" }
+  - ref: "ml-0005"
+    tags: ["lateral", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "pair", ref: "ml-0736" }
