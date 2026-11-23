@@ -1,0 +1,596 @@
+schema: 1
+id: "ta-en-chores"
+kind: "layer"
+core: "ta-chores"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Household chores"
+description: "Cleaning and household work: tools and things around the house, and the verbs of sweeping, washing, folding and pouring. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-1917":
+    native: "cleanliness; clean"
+    notes:
+      n1: "சுத்தம் செய் (cuttam cey) is to clean: the noun with செய் (cey) (to do). Spoken Tamil often says சுத்தம் பண்ணு (cuttam paṇṇu)."
+    examples:
+      "வீடு சுத்தம்.":
+        native: "The house is clean."
+        bases:
+          "சுத்தம்": "cleanliness; clean"
+      "வீட்டைச் சுத்தம் செய்.":
+        native: "Clean the house."
+        bases:
+          "வீட்டைச்": "the house (as object); from வீடு (vīṭu), house; home"
+          "சுத்தம்": "cleanliness; clean"
+  "ta-1918":
+    native: "vessel; dish; utensil"
+    notes:
+      n1: "Any cooking or serving vessel; பாத்திரம் கழுவு (pāttiram kaḻuvu) is wash the dishes."
+    examples:
+      "பாத்திரம் கழுவு.":
+        native: "Wash the dishes."
+        bases:
+          "பாத்திரம்": "vessel; dish; utensil"
+      "பாத்திரம் எங்கே?":
+        native: "Where is the vessel?"
+        bases:
+          "பாத்திரம்": "vessel; dish; utensil"
+  "ta-1919":
+    native: "broom"
+    notes:
+      n1: "The broom used to sweep the floor."
+    examples:
+      "துடைப்பம் எங்கே?":
+        native: "Where is the broom?"
+        bases:
+          "துடைப்பம்": "broom"
+      "துடைப்பம் கொடு.":
+        native: "Give me the broom."
+        bases:
+          "துடைப்பம்": "broom"
+  "ta-1920":
+    native: "rubbish; waste"
+    notes:
+      n1: "Household waste."
+    examples:
+      "குப்பை எங்கே?":
+        native: "Where is the rubbish?"
+        bases:
+          "குப்பை": "rubbish; waste"
+      "இங்கே குப்பை இல்லை.":
+        native: "There is no rubbish here."
+        bases:
+          "குப்பை": "rubbish; waste"
+  "ta-1921":
+    native: "dustbin"
+    notes:
+      n1: "Made of குப்பை (kuppai) (rubbish) and தொட்டி (toṭṭi) (tub)."
+    examples:
+      "இது குப்பைத்தொட்டி.":
+        native: "This is the dustbin."
+        bases:
+          "குப்பைத்தொட்டி": "dustbin"
+      "குப்பைத்தொட்டி எங்கே?":
+        native: "Where is the dustbin?"
+        bases:
+          "குப்பைத்தொட்டி": "dustbin"
+  "ta-1922":
+    native: "floor; ground"
+    notes:
+      n1: "The floor of a room. With -ஐ (-ai) the object form is தரையை (taraiyai)."
+    examples:
+      "தரை சுத்தம்.":
+        native: "The floor is clean."
+        bases:
+          "தரை": "floor; ground"
+      "தரையைப் பெருக்கு.":
+        native: "Sweep the floor."
+        bases:
+          "தரையைப்": "the floor (as object); from தரை (tarai), floor; ground"
+  "ta-1923":
+    native: "wall"
+    notes:
+      n1: "A wall of a house. The ending -இல் (-il) gives சுவரில் (cuvaril), on the wall."
+    examples:
+      "சுவர் வெள்ளை.":
+        native: "The wall is white."
+        bases:
+          "சுவர்": "wall"
+      "சுவரில் படம்.":
+        native: "A picture on the wall."
+        bases:
+          "சுவரில்": "on the wall; from சுவர் (cuvar), wall"
+  "ta-1924":
+    native: "door"
+    notes:
+      n1: "A door; கதவு திற (katavu tiṟa) is open the door."
+    examples:
+      "கதவு திற.":
+        native: "Open the door."
+        bases:
+          "கதவு": "door"
+      "கதவு மூடு.":
+        native: "Close the door."
+        bases:
+          "கதவு": "door"
+  "ta-1925":
+    native: "ceiling fan"
+    notes:
+      n1: "Made of மின் (miṉ) (electric) and விசிறி (viciṟi) (fan)."
+    examples:
+      "மின்விசிறி போடு.":
+        native: "Switch on the fan."
+        bases:
+          "மின்விசிறி": "ceiling fan"
+      "மின்விசிறி எங்கே?":
+        native: "Where is the fan?"
+        bases:
+          "மின்விசிறி": "ceiling fan"
+  "ta-1926":
+    native: "lamp; light"
+    notes:
+      n1: "A lamp or a light. A lit lamp is part of many prayers and festivals."
+    examples:
+      "விளக்கு ஏற்று.":
+        native: "Light the lamp."
+        bases:
+          "விளக்கு": "lamp; light"
+      "விளக்கு எங்கே?":
+        native: "Where is the lamp?"
+        bases:
+          "விளக்கு": "lamp; light"
+  "ta-1927":
+    native: "electricity"
+    notes:
+      n1: "Electric power; மின்சாரம் இல்லை (miṉcāram illai) says the power is out."
+    examples:
+      "மின்சாரம் இல்லை.":
+        native: "There is no electricity."
+        bases:
+          "மின்சாரம்": "electricity"
+      "மின்சாரம் வேண்டும்.":
+        native: "Electricity is needed."
+        bases:
+          "மின்சாரம்": "electricity"
+  "ta-1928":
+    native: "soap"
+    notes:
+      n1: "The English loan for soap."
+    examples:
+      "சோப்பு கொடு.":
+        native: "Give me the soap."
+        bases:
+          "சோப்பு": "soap"
+      "சோப்பு இல்லை.":
+        native: "There is no soap."
+        bases:
+          "சோப்பு": "soap"
+  "ta-1929":
+    native: "bucket"
+    notes:
+      n1: "A bucket for water. The ending -இல் (-il) gives வாளியில் (vāḷiyil), in the bucket."
+    examples:
+      "வாளி எங்கே?":
+        native: "Where is the bucket?"
+        bases:
+          "வாளி": "bucket"
+      "வாளியில் தண்ணீர்.":
+        native: "Water in the bucket."
+        bases:
+          "வாளியில்": "in the bucket; from வாளி (vāḷi), bucket"
+  "ta-1930":
+    native: "ironing"
+    notes:
+      n1: "இஸ்திரி போடு (istiri pōṭu) is to iron clothes; the verb is போடு (pōṭu), to put."
+    examples:
+      "துணி இஸ்திரி.":
+        native: "The clothes are ironed."
+        bases:
+          "இஸ்திரி": "ironing"
+      "இஸ்திரி போடு.":
+        native: "Iron the clothes."
+        bases:
+          "இஸ்திரி": "ironing"
+  "ta-1931":
+    native: "box; suitcase"
+    notes:
+      n1: "A box or a suitcase."
+    examples:
+      "பெட்டி திற.":
+        native: "Open the box."
+        bases:
+          "பெட்டி": "box; suitcase"
+      "இது பெரிய பெட்டி.":
+        native: "This is a big box."
+        bases:
+          "பெட்டி": "box; suitcase"
+  "ta-1932":
+    native: "mat"
+    notes:
+      n1: "A mat to sleep or sit on."
+    examples:
+      "பாய் போடு.":
+        native: "Spread the mat."
+        bases:
+          "பாய்": "mat"
+      "பாய் எங்கே?":
+        native: "Where is the mat?"
+        bases:
+          "பாய்": "mat"
+  "ta-1933":
+    native: "pillow"
+    notes:
+      n1: "A pillow for the head."
+    examples:
+      "தலையணை எங்கே?":
+        native: "Where is the pillow?"
+        bases:
+          "தலையணை": "pillow"
+      "தலையணை கொடு.":
+        native: "Give me the pillow."
+        bases:
+          "தலையணை": "pillow"
+  "ta-1934":
+    native: "blanket"
+    notes:
+      n1: "A blanket."
+    examples:
+      "போர்வை மடி.":
+        native: "Fold the blanket."
+        bases:
+          "போர்வை": "blanket"
+      "போர்வை வேண்டும்.":
+        native: "A blanket is wanted."
+        bases:
+          "போர்வை": "blanket"
+  "ta-1935":
+    native: "cupboard"
+    notes:
+      n1: "A cupboard for clothes or books. The ending -இல் (-il) gives அலமாரியில் (alamāriyil), in the cupboard."
+    examples:
+      "அலமாரி திற.":
+        native: "Open the cupboard."
+        bases:
+          "அலமாரி": "cupboard"
+      "துணி அலமாரியில்.":
+        native: "The clothes are in the cupboard."
+        bases:
+          "அலமாரியில்": "in the cupboard; from அலமாரி (alamāri), cupboard"
+  "ta-1936":
+    native: "dust"
+    notes:
+      n1: "Dust on a surface."
+    examples:
+      "தூசி துடை.":
+        native: "Wipe off the dust."
+        bases:
+          "தூசி": "dust"
+      "தூசி இல்லை.":
+        native: "There is no dust."
+        bases:
+          "தூசி": "dust"
+  "ta-1937":
+    native: "dirt; dirty"
+    notes:
+      n1: "Dirt; used before a noun it means dirty: அழுக்கு துணி (aḻukku tuṇi) is dirty clothes."
+    examples:
+      "அழுக்கு துணி.":
+        native: "Dirty clothes."
+        bases:
+          "அழுக்கு": "dirt; dirty"
+      "இது அழுக்கு.":
+        native: "This is dirty."
+        bases:
+          "அழுக்கு": "dirt; dirty"
+  "ta-1938":
+    native: "tap; pipe"
+    notes:
+      n1: "A water tap or a pipe."
+    examples:
+      "குழாய் மூடு.":
+        native: "Turn off the tap."
+        bases:
+          "குழாய்": "tap; pipe"
+      "குழாய் எங்கே?":
+        native: "Where is the tap?"
+        bases:
+          "குழாய்": "tap; pipe"
+  "ta-1939":
+    native: "stove; hearth"
+    notes:
+      n1: "The cooking stove."
+    examples:
+      "அடுப்பு எங்கே?":
+        native: "Where is the stove?"
+        bases:
+          "அடுப்பு": "stove; hearth"
+      "அடுப்பு அணை.":
+        native: "Turn off the stove."
+        bases:
+          "அடுப்பு": "stove; hearth"
+  "ta-1940":
+    native: "plate"
+    notes:
+      n1: "A plate to eat from. The same spelling is also the verb to tap, a different word."
+    examples:
+      "தட்டு கழுவு.":
+        native: "Wash the plate."
+        bases:
+          "தட்டு": "plate"
+      "தட்டு கொடு.":
+        native: "Give me the plate."
+        bases:
+          "தட்டு": "plate"
+  "ta-1941":
+    native: "spoon; ladle"
+    notes:
+      n1: "A spoon or a serving ladle."
+    examples:
+      "கரண்டி கொடு.":
+        native: "Give me the spoon."
+        bases:
+          "கரண்டி": "spoon; ladle"
+      "கரண்டி எங்கே?":
+        native: "Where is the spoon?"
+        bases:
+          "கரண்டி": "spoon; ladle"
+  "ta-1942":
+    native: "tumbler"
+    notes:
+      n1: "The English loan for a metal drinking tumbler."
+    examples:
+      "டம்ளர் எங்கே?":
+        native: "Where is the tumbler?"
+        bases:
+          "டம்ளர்": "tumbler"
+      "டம்ளர் நிரப்பு.":
+        native: "Fill the tumbler."
+        bases:
+          "டம்ளர்": "tumbler"
+  "ta-1943":
+    native: "plant"
+    notes:
+      n1: "A small plant. The ending -க்கு (-kku) gives செடிக்கு (ceṭikku), to the plant."
+    examples:
+      "செடிக்குத் தண்ணீர் ஊற்று.":
+        native: "Pour water on the plant."
+        bases:
+          "செடிக்குத்": "to the plant; from செடி (ceṭi), plant"
+      "செடி பச்சை.":
+        native: "The plant is green."
+        bases:
+          "செடி": "plant"
+  "ta-1944":
+    native: "lock"
+    notes:
+      n1: "A padlock. The same spelling is also the verb to lock, a different word."
+    examples:
+      "இது புதிய பூட்டு.":
+        native: "This is a new lock."
+        bases:
+          "பூட்டு": "lock"
+      "பூட்டு எங்கே?":
+        native: "Where is the lock?"
+        bases:
+          "பூட்டு": "lock"
+  "ta-1945":
+    native: "to sweep"
+    notes:
+      n1: "The spoken word for sweeping the floor; கூட்டு (kūṭṭu) (kūṭṭu) is used in some regions."
+    examples:
+      "தரை பெருக்கு.":
+        native: "Sweep the floor."
+        bases:
+          "பெருக்கு": "to sweep"
+      "நான் பெருக்குகிறேன்.":
+        native: "I am sweeping."
+        bases:
+          "பெருக்குகிறேன்": "am sweeping; from பெருக்கு (perukku), to sweep"
+  "ta-1946":
+    native: "to wipe"
+    notes:
+      n1: "To wipe a surface or dry something."
+    examples:
+      "மேசை துடை.":
+        native: "Wipe the table."
+        bases:
+          "துடை": "to wipe"
+      "நான் துடைக்கிறேன்.":
+        native: "I am wiping."
+        bases:
+          "துடைக்கிறேன்": "am wiping; from துடை (tuṭai), to wipe"
+  "ta-1947":
+    native: "to wash clothes"
+    notes:
+      n1: "துவை (tuvai) is for washing clothes; கழுவு (kaḻuvu) (kaḻuvu) is for dishes, hands and things."
+    examples:
+      "துணி துவை.":
+        native: "Wash the clothes."
+        bases:
+          "துவை": "to wash clothes"
+      "நான் துணி துவைக்கிறேன்.":
+        native: "I am washing clothes."
+        bases:
+          "துவைக்கிறேன்": "am washing clothes; from துவை (tuvai), to wash clothes"
+  "ta-1948":
+    native: "to fold"
+    notes:
+      n1: "To fold clothes or a blanket."
+    examples:
+      "துணி மடி.":
+        native: "Fold the clothes."
+        bases:
+          "மடி": "to fold"
+      "போர்வை மடி.":
+        native: "Fold the blanket."
+        bases:
+          "மடி": "to fold"
+  "ta-1949":
+    native: "to pull"
+    notes:
+      n1: "To pull a door or rope."
+    examples:
+      "கதவு இழு.":
+        native: "Pull the door."
+        bases:
+          "இழு": "to pull"
+      "நான் இழுக்கிறேன்.":
+        native: "I am pulling."
+        bases:
+          "இழுக்கிறேன்": "am pulling; from இழு (iḻu), to pull"
+  "ta-1950":
+    native: "to push"
+    notes:
+      n1: "To push a door or a cart."
+    examples:
+      "கதவு தள்ளு.":
+        native: "Push the door."
+        bases:
+          "தள்ளு": "to push"
+      "நாம் தள்ளலாம்.":
+        native: "Let's push."
+        bases:
+          "தள்ளலாம்": "let's push; from தள்ளு (taḷḷu), to push"
+  "ta-1951":
+    native: "to fill"
+    notes:
+      n1: "To fill a vessel."
+    examples:
+      "டம்ளர் நிரப்பு.":
+        native: "Fill the tumbler."
+        bases:
+          "நிரப்பு": "to fill"
+      "வாளி நிரப்பு.":
+        native: "Fill the bucket."
+        bases:
+          "நிரப்பு": "to fill"
+  "ta-1952":
+    native: "to pour"
+    notes:
+      n1: "To pour a liquid."
+    examples:
+      "தண்ணீர் ஊற்று.":
+        native: "Pour water."
+        bases:
+          "ஊற்று": "to pour"
+      "பால் ஊற்று.":
+        native: "Pour milk."
+        bases:
+          "ஊற்று": "to pour"
+  "ta-1953":
+    native: "to switch off; to put out"
+    notes:
+      n1: "To turn off a light or stove, or to put out a flame."
+    examples:
+      "மின்விசிறி அணை.":
+        native: "Switch off the fan."
+        bases:
+          "அணை": "to switch off; to put out"
+      "நான் அணைக்கிறேன்.":
+        native: "I am switching off."
+        bases:
+          "அணைக்கிறேன்": "am switching off; from அணை (aṇai), to switch off; to put out"
+  "ta-1954":
+    native: "to light; to switch on"
+    notes:
+      n1: "To light a lamp."
+    examples:
+      "விளக்கு ஏற்று.":
+        native: "Light the lamp."
+        bases:
+          "ஏற்று": "to light; to switch on"
+      "நான் ஏற்றுகிறேன்.":
+        native: "I am lighting it."
+        bases:
+          "ஏற்றுகிறேன்": "am lighting; from ஏற்று (ēṟṟu), to light; to switch on"
+  "ta-1955":
+    native: "to dry (clothes)"
+    notes:
+      n1: "To hang clothes out to dry."
+    examples:
+      "துணி உலர்த்து.":
+        native: "Hang the clothes to dry."
+        bases:
+          "உலர்த்து": "to dry (clothes)"
+      "நான் துணி உலர்த்துகிறேன்.":
+        native: "I am drying clothes."
+        bases:
+          "உலர்த்துகிறேன்": "am drying; from உலர்த்து (ularttu), to dry (clothes)"
+  "ta-1956":
+    native: "to cut"
+    notes:
+      n1: "To cut vegetables or fruit."
+    examples:
+      "காய்கறி வெட்டு.":
+        native: "Cut the vegetables."
+        bases:
+          "வெட்டு": "to cut"
+      "நான் பழம் வெட்டுகிறேன்.":
+        native: "I am cutting fruit."
+        bases:
+          "வெட்டுகிறேன்": "am cutting; from வெட்டு (veṭṭu), to cut"
+  "ta-1957":
+    native: "to mix; to stir"
+    notes:
+      n1: "To mix or stir."
+    examples:
+      "சர்க்கரை கலக்கு.":
+        native: "Mix in the sugar."
+        bases:
+          "கலக்கு": "to mix; to stir"
+      "நான் பால் கலக்குகிறேன்.":
+        native: "I am stirring the milk."
+        bases:
+          "கலக்குகிறேன்": "am stirring; from கலக்கு (kalakku), to mix; to stir"
+  "ta-1958":
+    native: "to search; to look for"
+    notes:
+      n1: "To look for something lost."
+    examples:
+      "சாவி தேடு.":
+        native: "Look for the key."
+        bases:
+          "தேடு": "to search; to look for"
+      "நான் சாவி தேடுகிறேன்.":
+        native: "I am looking for the key."
+        bases:
+          "தேடுகிறேன்": "am looking for; from தேடு (tēṭu), to search; to look for"
+  "ta-1959":
+    native: "to arrange; to stack"
+    notes:
+      n1: "To arrange things neatly or stack them."
+    examples:
+      "புத்தகம் அடுக்கு.":
+        native: "Arrange the books."
+        bases:
+          "அடுக்கு": "to arrange; to stack"
+      "நான் துணி அடுக்குகிறேன்.":
+        native: "I am arranging clothes."
+        bases:
+          "அடுக்குகிறேன்": "am arranging; from அடுக்கு (aṭukku), to arrange; to stack"
+  "ta-1960":
+    native: "to put; to throw; to put on"
+    notes:
+      n1: "A very common verb that goes with many nouns: குப்பை போடு (kuppai pōṭu) is throw rubbish, சட்டை போடு (caṭṭai pōṭu) is put on a shirt."
+    examples:
+      "குப்பை போடு.":
+        native: "Throw away the rubbish."
+        bases:
+          "போடு": "to put; to throw; to put on"
+      "நான் போடுகிறேன்.":
+        native: "I am putting it."
+        bases:
+          "போடுகிறேன்": "am putting; from போடு (pōṭu), to put; to throw; to put on"
+  "ta-1961":
+    native: "to change"
+    notes:
+      n1: "To change one thing for another."
+    examples:
+      "துணி மாற்று.":
+        native: "Change the clothes."
+        bases:
+          "மாற்று": "to change"
+      "நான் மாற்றுகிறேன்.":
+        native: "I am changing it."
+        bases:
+          "மாற்றுகிறேன்": "am changing; from மாற்று (māṟṟu), to change"

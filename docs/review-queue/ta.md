@@ -70,3 +70,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1916 | ta-hobbies | Is ஜெயி (jeyi) the usual spoken word for win beside வெல்? | Sonnet builder | 2026-11-23 |
 | ta-1905 | ta-hobbies | Is பாடுறேன் the right spoken present of sing? | Sonnet builder | 2026-11-23 |
 | ta-1883 | ta-hobbies | Is சீட்டு விளையாடு the natural way to say play cards? | Sonnet builder | 2026-11-23 |
+| ta-1945 | ta-chores | Is பெருக்கு the usual spoken word for sweep in Tamil Nadu? | Sonnet builder | 2026-11-23 |
+| ta-1917 | ta-chores | Is சுத்தம் பண்ணு the right spoken form beside சுத்தம் செய்? | Sonnet builder | 2026-11-23 |
+| ta-1930 | ta-chores | Is இஸ்திரி போடு the natural way to say iron clothes? | Sonnet builder | 2026-11-23 |
