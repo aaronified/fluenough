@@ -48,7 +48,7 @@ Measured on `origin/decks-live` after #1734: all 46 path units to the A1 mark ar
 
 | Left | Why |
 |---|---|
-| Words under plan | pronouns 23 of 33, adverbs 44 of 50, describing 35 of 40, quantities 29 of 30, numbers-1-20 20 of 20 words but 19 cards of the plan's list, time 17 of 18, verbs 32 of 33; the others reached their planned size. Many candidates have no readable dictionary page: each is a row in `docs/review-queue/ml.md` |
+| Words under plan | pronouns 23 of 33, adverbs 44 of 50, describing 35 of 40, quantities 29 of 30, time 17 of 18, verbs 32 of 33; the others reached their planned size. Many candidates have no readable dictionary page: each is a row in `docs/review-queue/ml.md` |
 | Review queue | rows await a Malayalam speaker (sandhi forms, noun-table exceptions `ml-0467`, `ml-1006`, the glosses written from standard meaning, `ml-3048` direction suffix) |
 | Narrow IPA rules | open for a phonetician: voicing of single medial stops, ɐ for every short a, no rule for final ് and ന്റ (needs an engine change); see `ml-phonetics.yaml` |
 | After A1 | not started, by the owner's order: A2 and B1, genre decks (culture, proverbs, situations, topics, facts, recommendations, readings), professional. Rerun `derive_phonetic.py ml --bracket-unchanged --write` after any later Malayalam card is added |
