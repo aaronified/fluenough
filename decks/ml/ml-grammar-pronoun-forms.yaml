@@ -1,0 +1,77 @@
+schema: 1
+id: "ml-grammar-pronoun-forms"
+part: "core"
+kind: "rules"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["pronoun"]
+    except: ["ml-0110", "ml-1005"]
+  slots: ["gen", "dat", "acc", "with"]
+  rows:
+    - word: "ml-0003"
+      forms: { "gen": "എന്റെ", "dat": "എനിക്ക്", "acc": "എന്നെ", "with": "എന്നോട്" }
+      readings: { "gen": "enṟe", "dat": "enikk", "acc": "enne", "with": "ennōṭ" }
+    - word: "ml-0004"
+      forms: { "gen": "നിങ്ങളുടെ", "dat": "നിങ്ങൾക്ക്", "acc": "നിങ്ങളെ", "with": "നിങ്ങളോട്" }
+      readings: { "gen": "niṅṅaḷuṭe", "dat": "niṅṅaḷkk", "acc": "niṅṅaḷe", "with": "niṅṅaḷōṭ" }
+    - word: "ml-0031"
+      forms: { "gen": "ആരുടെ", "dat": "ആർക്ക്", "acc": "ആരെ", "with": "ആരോട്" }
+      readings: { "gen": "āruṭe", "dat": "ārkk", "acc": "āre", "with": "ārōṭ" }
+    - word: "ml-0032"
+      forms: { "gen": "എന്തിന്റെ", "dat": "എന്തിന്", "acc": "എന്തിനെ", "with": null }
+      readings: { "gen": "entinṟe", "dat": "entin", "acc": "entine" }
+    - word: "ml-0095"
+      forms: { "gen": "നിന്റെ", "dat": "നിനക്ക്", "acc": "നിന്നെ", "with": "നിന്നോട്" }
+      readings: { "gen": "ninṟe", "dat": "ninakk", "acc": "ninne", "with": "ninnōṭ" }
+    - word: "ml-0096"
+      forms: { "gen": "താങ്കളുടെ", "dat": "താങ്കൾക്ക്", "acc": "താങ്കളെ", "with": "താങ്കളോട്" }
+      readings: { "gen": "tāṅkaḷuṭe", "dat": "tāṅkaḷkk", "acc": "tāṅkaḷe", "with": "tāṅkaḷōṭ" }
+    - word: "ml-0097"
+      forms: { "gen": "അവന്റെ", "dat": "അവന്", "acc": "അവനെ", "with": "അവനോട്" }
+      readings: { "gen": "avanṟe", "dat": "avan", "acc": "avane", "with": "avanōṭ" }
+    - word: "ml-0098"
+      forms: { "gen": "അവളുടെ", "dat": "അവൾക്ക്", "acc": "അവളെ", "with": "അവളോട്" }
+      readings: { "gen": "avaḷuṭe", "dat": "avaḷkk", "acc": "avaḷe", "with": "avaḷōṭ" }
+    - word: "ml-0099"
+      forms: { "gen": "അതിന്റെ", "dat": "അതിന്", "acc": "അതിനെ", "with": "അതിനോട്" }
+      readings: { "gen": "atinṟe", "dat": "atin", "acc": "atine", "with": "atinōṭ" }
+    - word: "ml-0100"
+      forms: { "gen": "ഞങ്ങളുടെ", "dat": "ഞങ്ങൾക്ക്", "acc": "ഞങ്ങളെ", "with": "ഞങ്ങളോട്" }
+      readings: { "gen": "ñaṅṅaḷuṭe", "dat": "ñaṅṅaḷkk", "acc": "ñaṅṅaḷe", "with": "ñaṅṅaḷōṭ" }
+    - word: "ml-0101"
+      forms: { "gen": ["നമ്മുടെ", "നമ്മളുടെ"], "dat": ["നമുക്ക്", "നമ്മൾക്ക്"], "acc": ["നമ്മളെ", "നമ്മെ"], "with": ["നമ്മളോട്", "നമ്മോട്"] }
+      readings: { "gen": ["nammuṭe", "nammaḷuṭe"], "dat": ["namukk", "nammaḷkk"], "acc": ["nammaḷe", "namme"], "with": ["nammaḷōṭ", "nammōṭ"] }
+    - word: "ml-1004"
+      forms: { "gen": "അവരുടെ", "dat": "അവർക്ക്", "acc": "അവരെ", "with": "അവരോട്" }
+      readings: { "gen": "avaruṭe", "dat": "avarkk", "acc": "avare", "with": "avarōṭ" }
+    - word: "ml-1009"
+      forms: { "gen": "ഇവരുടെ", "dat": "ഇവർക്ക്", "acc": "ഇവരെ", "with": "ഇവരോട്" }
+      readings: { "gen": "ivaruṭe", "dat": "ivarkk", "acc": "ivare", "with": "ivarōṭ" }
+    - word: "ml-1007"
+      forms: { "gen": "ഇവന്റെ", "dat": "ഇവന്", "acc": "ഇവനെ", "with": "ഇവനോട്" }
+      readings: { "gen": "ivanṟe", "dat": "ivan", "acc": "ivane", "with": "ivanōṭ" }
+    - word: "ml-1008"
+      forms: { "gen": "ഇവളുടെ", "dat": "ഇവൾക്ക്", "acc": "ഇവളെ", "with": "ഇവളോട്" }
+      readings: { "gen": "ivaḷuṭe", "dat": "ivaḷkk", "acc": "ivaḷe", "with": "ivaḷōṭ" }
+    - word: "ml-0769"
+      forms: { "gen": "അവയുടെ", "dat": "അവയ്ക്ക്", "acc": "അവയെ", "with": "അവയോട്" }
+      readings: { "gen": "avayuṭe", "dat": "avaykk", "acc": "avaye", "with": "avayōṭ" }
+    - word: "ml-0770"
+      forms: { "gen": "ഇവയുടെ", "dat": "ഇവയ്ക്ക്", "acc": "ഇവയെ", "with": "ഇവയോട്" }
+      readings: { "gen": "ivayuṭe", "dat": "ivaykk", "acc": "ivaye", "with": "ivayōṭ" }
+rules:
+  - id: "ml-rule-pronoun-gen"
+    slots: ["gen"]
+    words: [{ word: "ഞാൻ", reading: "ñāṉ" }, { word: "എന്റെ", reading: "enṟe" }, { word: "നീ", reading: "nī" }, { word: "നിന്റെ", reading: "ninṟe" }, { word: "അവൾ", reading: "avaḷ" }, { word: "അവളുടെ", reading: "avaḷuṭe" }, { word: "അത്", reading: "at" }, { word: "അതിന്റെ", reading: "atinṟe" }]
+  - id: "ml-rule-pronoun-dat"
+    slots: ["dat"]
+    words: [{ word: "ഞാൻ", reading: "ñāṉ" }, { word: "എനിക്ക്", reading: "enikk" }, { word: "നീ", reading: "nī" }, { word: "നിനക്ക്", reading: "ninakk" }, { word: "അവൾ", reading: "avaḷ" }, { word: "അവൾക്ക്", reading: "avaḷkk" }, { word: "അവൻ", reading: "avaṉ" }, { word: "അവന്", reading: "avan" }]
+  - id: "ml-rule-pronoun-acc"
+    slots: ["acc"]
+    words: [{ word: "ഞാൻ", reading: "ñāṉ" }, { word: "എന്നെ", reading: "enne" }, { word: "നീ", reading: "nī" }, { word: "നിന്നെ", reading: "ninne" }, { word: "അവർ", reading: "avar" }, { word: "അവരെ", reading: "avare" }]
+  - id: "ml-rule-pronoun-with"
+    slots: ["with"]
+    words: [{ word: "ഞാൻ", reading: "ñāṉ" }, { word: "എന്നോട്", reading: "ennōṭ" }, { word: "നീ", reading: "nī" }, { word: "നിന്നോട്", reading: "ninnōṭ" }, { word: "നമ്മൾ", reading: "nammaḷ" }, { word: "നമ്മോട്", reading: "nammōṭ" }]

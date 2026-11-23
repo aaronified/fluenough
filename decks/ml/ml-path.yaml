@@ -252,7 +252,9 @@ units:
     reading_passages:
       - { id: "two-plans", text: { "en": "A note with two plans joined by and, or and but" } }
   # ml-grammar-pronouns joins this unit.
-  - planned: { id: "ml-grammar-pronoun-forms", grammar: ["pronouns", "inclusive-we", "pronoun-gen", "pronoun-dat", "pronoun-acc", "pronoun-with"], words: 0 }
+  - decks: ["ml-grammar-pronouns", "ml-grammar-pronoun-forms", "ml-grammar-inclusive-we"]
+    words: 0
+    grammar: ["pronouns", "inclusive-we", "pronoun-gen", "pronoun-dat", "pronoun-acc", "pronoun-with"]
     listening_passages:
       - { id: "whose-is-it", text: { "en": "Asking whose things are whose" } }
     reading_passages:

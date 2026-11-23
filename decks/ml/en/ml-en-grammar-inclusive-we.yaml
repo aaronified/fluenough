@@ -1,0 +1,22 @@
+schema: 1
+id: "ml-en-grammar-inclusive-we"
+kind: "layer"
+core: "ml-grammar-inclusive-we"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "We: with you or without you"
+description: "The two Malayalam words for we, one that includes the listener and one that leaves them out, with their endings. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Inclusive and exclusive we"
+  slot_name: "form"
+  slots:
+    "we": "we"
+    "of-us": "of us, our (before a noun)"
+    "to-us": "to us, for us"
+    "us": "us, the ones acted on"
+    "with-us": "with us"
+  entries:
+    "njangal": "we, not including you"
+    "nammal": "we, including you"
+  notes: "നമ്മൾ (nammaḷ) means you and I, and maybe others: use it to invite someone, as in നമുക്ക് പോകാം (namukk pōkāṁ), let us go. ഞങ്ങൾ (ñaṅṅaḷ) means we without the person you are speaking to: ഞങ്ങൾ വീട്ടിലേക്ക് പോകുന്നു (ñaṅṅaḷ vīṭṭilēkk pōkunnu), we are going home. Both take the endings of നിങ്ങൾ (niṅṅaḷ) and അവർ (avar), with -ഉടെ (-uṭe) for of, -എ (-e) for the one acted on and -ഓട് (-ōṭ) for with; for to, നമ്മൾ (nammaḷ) has a short form നമുക്ക് (namukk). Source: English Wikipedia, Malayalam grammar (the pronoun declension, with നമ്മുടെ (nammuṭe) and നമ്മെ (namme) as the short forms); English Wiktionary, the entries ഞങ്ങൾ (ñaṅṅaḷ) and നമ്മൾ (nammaḷ) (exclusive and inclusive we)."

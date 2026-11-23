@@ -79,3 +79,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | not added | ml-things | ബക്കറ്റ് (bucket) not added: not found on en.wiktionary or ml.wiktionary. | Haiku builder ml-topup2 | 2026-11-23 |
 | not added | ml-things | പേഴ്സ് (purse) not added: not found on en.wiktionary or ml.wiktionary. | Haiku builder ml-topup2 | 2026-11-23 |
 | not added | ml-numbers-1-20 | Planned 20, the unit holds 19 words (ml-0049 to ml-0067). 1 is ml-0007 in first-words. No number from 1 to 20 is left to add; zero (പൂജ്യം) would be outside the theme, so it was not added. | Haiku builder ml-topup2 | 2026-11-23 |
+| ml-0101 | ml-grammar-pronoun-forms | നമ്മൾ (nammaḷ) has short and long case forms (നമ്മുടെ and നമ്മളുടെ, നമുക്ക് and നമ്മൾക്ക്, നമ്മെ and നമ്മളെ); which is the usual spoken form of each? | Sonnet builder | 2026-11-23 |
+| ml-0032 | ml-grammar-pronoun-forms | Is എന്തിന് (entin) as the to-form of എന്ത് (ent) a form to teach, given that it is mostly the word for why, and should the with cell stay empty? | Sonnet builder | 2026-11-23 |
+| ml-0096 | ml-grammar-pronoun-forms | Are the case forms of താങ്കൾ (tāṅkaḷ) (താങ്കളുടെ, താങ്കൾക്ക്, താങ്കളെ, താങ്കളോട്) built like those of നിങ്ങൾ (niṅṅaḷ) in speech? | Sonnet builder | 2026-11-23 |
+| ml-1005 | ml-grammar-pronoun-forms | നിന്നെ (ninne) is a case form of നീ (nī), so it is listed as an exception in the pronoun table and has no row of its own; should it be a card at all? | Sonnet builder | 2026-11-23 |
+| ml-0110 | ml-grammar-pronoun-forms | സ്വയം (svayaṁ) has no case forms and is listed as an exception in the pronoun table; is its part of speech pronoun or adverb? | Sonnet builder | 2026-11-23 |
