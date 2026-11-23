@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-opinions"
+name: "Reading: opinions"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-opinions-text-1"
+    title: "Truth, decision and praise"
+    theme: "opinions"
+    sentences:
+      - { text: "सत्यं सदा बुधो वदति.", reading: "satyaṃ sadā budho vadati.", ipa: "sət̪jəm səd̪aː bud̪ʱoː ʋəd̪ət̪i" }
+      - { text: "मेधिरो मन्त्री नृपाय निश्चयं कथयति.", reading: "medhiro mantrī nṛpāya niścayaṃ kathayati.", ipa: "meːd̪ʱiroː mənt̪riː nr̩paːjə niʃtʃəjəm kət̪ʰəjət̪i" }
+      - { text: "तर्कम् अज्ञो न जानाति.", reading: "tarkam ajño na jānāti.", ipa: "t̪ərkəm ədʒɲoː nə dʒaːnaːt̪i" }
+      - { text: "सदा साधुः प्रशंसां लभते.", reading: "sadā sādhuḥ praśaṃsāṃ labhate.", ipa: "səd̪aː saːd̪ʱuh prəʃə̃saːm ləbʱət̪eː" }
+      - { text: "उपमया वाक्यं रम्यं भवति.", reading: "upamayā vākyaṃ ramyaṃ bhavati.", ipa: "upəməjaː ʋaːkjəm rəmjəm bʱəʋət̪i" }
+    questions:
+      - id: "sa-6724"
+        prompt: { en: "What does the minister tell the king?" }
+        options: [{ en: "A plan" }, { en: "His decision" }, { en: "A story" }]
+        answer: 2
+      - id: "sa-6725"
+        prompt: { en: "What makes a sentence pleasing?" }
+        options: [{ en: "A rhyme" }, { en: "A verb" }, { en: "A simile" }]
+        answer: 3
+      - id: "sa-6726"
+        prompt: { en: "Which word means 'praise'?" }
+        options: [{ en: "प्रशंसां (praśaṃsāṃ)" }, { en: "तर्कम् (tarkam)" }, { en: "वाक्यं (vākyaṃ)" }]
+        answer: 1
+      - id: "sa-6727"
+        prompt: { en: "An ignorant person knows the argument." }
+        answer: false
+  - id: "sa-opinions-text-2"
+    title: "Mountain, book and trust"
+    theme: "opinions"
+    sentences:
+      - { text: "पर्वतो नित्यं स्थिरो भवति.", reading: "parvato nityaṃ sthiro bhavati.", ipa: "pərʋət̪oː nit̪jəm st̪ʰiroː bʱəʋət̪i" }
+      - { text: "उत्तमं ग्रन्थं पण्डितो नित्यं पठति.", reading: "uttamaṃ granthaṃ paṇḍito nityaṃ paṭhati.", ipa: "ut̪t̪əməm ɡrənt̪ʰəm pəɳɖit̪oː nit̪jəm pəʈʰət̪i" }
+      - { text: "संदेहे बुधो विचारं करोति.", reading: "saṃdehe budho vicāraṃ karoti.", ipa: "sənd̪eːɦeː bud̪ʱoː ʋitʃaːrəm kəroːt̪i" }
+      - { text: "विचक्षणो ऽनुभवेन तत्त्वं जानाति.", reading: "vicakṣaṇo 'nubhavena tattvaṃ jānāti.", ipa: "ʋitʃəkʂəɳoː nubʱəʋeːnə t̪ət̪t̪ʋəm dʒaːnaːt̪i" }
+      - { text: "सदा विश्वासेन मित्रता वर्धते.", reading: "sadā viśvāsena mitratā vardhate.", ipa: "səd̪aː ʋiʃʋaːseːnə mit̪rət̪aː ʋərd̪ʱət̪eː" }
+    questions:
+      - id: "sa-6728"
+        prompt: { en: "What does the scholar always read?" }
+        options: [{ en: "A hymn" }, { en: "An excellent book" }, { en: "A letter" }]
+        answer: 2
+      - id: "sa-6729"
+        prompt: { en: "What grows with trust?" }
+        options: [{ en: "Friendship" }, { en: "Wealth" }, { en: "Learning" }]
+        answer: 1
+      - id: "sa-6730"
+        prompt: { en: "Which word means 'mountain'?" }
+        options: [{ en: "नित्यं (nityaṃ)" }, { en: "स्थिरो (sthiro)" }, { en: "पर्वतो (parvato)" }]
+        answer: 3
+      - id: "sa-6731"
+        prompt: { en: "A mountain is always steady." }
+        answer: true

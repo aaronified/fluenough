@@ -1,0 +1,1444 @@
+schema: 1
+id: "sa-health"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "health"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-7000"
+    target: "आरोग्यम्"
+    reading: "ārogyam"
+    ipa: "aːroːɡjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "आरोग्यम्", base: "आरोग्य", reading: "ārogya" }]
+    examples:
+      - target: "आरोग्यं भवति"
+        reading: "ārogyaṃ bhavati"
+        ipa: "aːroːɡjəm bʱəʋət̪i"
+        bases: [{ word: "आरोग्यं", base: "आरोग्य", reading: "ārogya" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "आरोग्यं त्वं जानासि"
+        reading: "ārogyaṃ tvaṃ jānāsi"
+        ipa: "aːroːɡjəm t̪ʋəm dʒaːnaːsi"
+        bases: [{ word: "आरोग्यं", base: "आरोग्य", reading: "ārogya" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "जानासि", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-7001"
+    target: "स्वास्थ्यम्"
+    reading: "svāsthyam"
+    ipa: "sʋaːst̪ʰjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "स्वास्थ्यम्", base: "स्वास्थ्य", reading: "svāsthya" }]
+    examples:
+      - target: "स्वास्थ्यं देहे तिष्ठति"
+        reading: "svāsthyaṃ dehe tiṣṭhati"
+        ipa: "sʋaːst̪ʰjəm d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "स्वास्थ्यं", base: "स्वास्थ्य", reading: "svāsthya" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "स्वास्थ्यं करोति वैद्यः"
+        reading: "svāsthyaṃ karoti vaidyaḥ"
+        ipa: "sʋaːst̪ʰjəm kəroːt̪i ʋəid̪jəh"
+        bases: [{ word: "स्वास्थ्यं", base: "स्वास्थ्य", reading: "svāsthya" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7002"
+    target: "स्वस्थः"
+    reading: "svasthaḥ"
+    ipa: "sʋəst̪ʰəh"
+    pos: "adj"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "स्वस्थः", base: "स्वस्थ", reading: "svastha" }]
+    examples:
+      - target: "स्वस्थो भवति"
+        reading: "svastho bhavati"
+        ipa: "sʋəst̪ʰoː bʱəʋət̪i"
+        bases: [{ word: "स्वस्थो", base: "स्वस्थ", reading: "svastha" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "स्वस्थो बालः"
+        reading: "svastho bālaḥ"
+        ipa: "sʋəst̪ʰoː baːləh"
+        bases: [{ word: "स्वस्थो", base: "स्वस्थ", reading: "svastha" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+  - id: "sa-7003"
+    target: "ज्वरः"
+    reading: "jvaraḥ"
+    ipa: "dʒʋərəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "ज्वरः", base: "ज्वर", reading: "jvara" }]
+    examples:
+      - target: "ज्वरो भवति"
+        reading: "jvaro bhavati"
+        ipa: "dʒʋəroː bʱəʋət̪i"
+        bases: [{ word: "ज्वरो", base: "ज्वर", reading: "jvara" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "ज्वरं वयं जानीमः"
+        reading: "jvaraṃ vayaṃ jānīmaḥ"
+        ipa: "dʒʋərəm ʋəjəm dʒaːniːməh"
+        bases: [{ word: "ज्वरं", base: "ज्वर", reading: "jvara" }, { word: "वयं", base: "अहम्", reading: "aham" }, { word: "जानीमः", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-7004"
+    target: "भेषजम्"
+    reading: "bheṣajam"
+    ipa: "bʱeːʂədʒəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "भेषजम्", base: "भेषज", reading: "bheṣaja" }]
+    examples:
+      - target: "भेषजं गृहे भवति"
+        reading: "bheṣajaṃ gṛhe bhavati"
+        ipa: "bʱeːʂədʒəm ɡr̩ɦeː bʱəʋət̪i"
+        bases: [{ word: "भेषजं", base: "भेषज", reading: "bheṣaja" }, { word: "गृहे", base: "गृह", reading: "gṛha" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "भेषजं करोति वैद्यः"
+        reading: "bheṣajaṃ karoti vaidyaḥ"
+        ipa: "bʱeːʂədʒəm kəroːt̪i ʋəid̪jəh"
+        bases: [{ word: "भेषजं", base: "भेषज", reading: "bheṣaja" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7005"
+    target: "चिकित्सा"
+    reading: "cikitsā"
+    ipa: "tʃikit̪saː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "चिकित्सा", base: "चिकित्सा", reading: "cikitsā" }]
+    examples:
+      - target: "चिकित्सा नगरे भवति"
+        reading: "cikitsā nagare bhavati"
+        ipa: "tʃikit̪saː nəɡəreː bʱəʋət̪i"
+        bases: [{ word: "चिकित्सा", base: "चिकित्सा", reading: "cikitsā" }, { word: "नगरे", base: "नगर", reading: "nagara" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "चिकित्सां सा पश्यति"
+        reading: "cikitsāṃ sā paśyati"
+        ipa: "tʃikit̪saːm saː pəʃjət̪i"
+        bases: [{ word: "चिकित्सां", base: "चिकित्सा", reading: "cikitsā" }, { word: "सा", base: "तद्", reading: "tad" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-7006"
+    target: "आयुर्वेदः"
+    reading: "āyurvedaḥ"
+    ipa: "aːjurʋeːd̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "आयुर्वेदः", base: "आयुर्वेद", reading: "āyurveda" }]
+    examples:
+      - target: "आयुर्वेदो भवति"
+        reading: "āyurvedo bhavati"
+        ipa: "aːjurʋeːd̪oː bʱəʋət̪i"
+        bases: [{ word: "आयुर्वेदो", base: "आयुर्वेद", reading: "āyurveda" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "आयुर्वेदं पठति बालः"
+        reading: "āyurvedaṃ paṭhati bālaḥ"
+        ipa: "aːjurʋeːd̪əm pəʈʰət̪i baːləh"
+        bases: [{ word: "आयुर्वेदं", base: "आयुर्वेद", reading: "āyurveda" }, { word: "पठति", base: "पठ्", reading: "paṭh" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+  - id: "sa-7007"
+    target: "रसायनम्"
+    reading: "rasāyanam"
+    ipa: "rəsaːjənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "रसायनम्", base: "रसायन", reading: "rasāyana" }]
+    examples:
+      - target: "रसायनं गृहे भवति"
+        reading: "rasāyanaṃ gṛhe bhavati"
+        ipa: "rəsaːjənəm ɡr̩ɦeː bʱəʋət̪i"
+        bases: [{ word: "रसायनं", base: "रसायन", reading: "rasāyana" }, { word: "गृहे", base: "गृह", reading: "gṛha" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "रसायनं पिबति जनः"
+        reading: "rasāyanaṃ pibati janaḥ"
+        ipa: "rəsaːjənəm pibət̪i dʒənəh"
+        bases: [{ word: "रसायनं", base: "रसायन", reading: "rasāyana" }, { word: "पिबति", base: "पा", reading: "pā" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-7008"
+    target: "शरीरम्"
+    reading: "śarīram"
+    ipa: "ʃəriːrəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "शरीरम्", base: "शरीर", reading: "śarīra" }]
+    examples:
+      - target: "शरीरं पश्यति वैद्यः"
+        reading: "śarīraṃ paśyati vaidyaḥ"
+        ipa: "ʃəriːrəm pəʃjət̪i ʋəid̪jəh"
+        bases: [{ word: "शरीरं", base: "शरीर", reading: "śarīra" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+      - target: "शरीरं जानाति जनः"
+        reading: "śarīraṃ jānāti janaḥ"
+        ipa: "ʃəriːrəm dʒaːnaːt̪i dʒənəh"
+        bases: [{ word: "शरीरं", base: "शरीर", reading: "śarīra" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-7009"
+    target: "शोथः"
+    reading: "śothaḥ"
+    ipa: "ʃoːt̪ʰəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "शोथः", base: "शोथ", reading: "śotha" }]
+    examples:
+      - target: "शोथो भवति"
+        reading: "śotho bhavati"
+        ipa: "ʃoːt̪ʰoː bʱəʋət̪i"
+        bases: [{ word: "शोथो", base: "शोथ", reading: "śotha" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "शोथं सा पश्यति"
+        reading: "śothaṃ sā paśyati"
+        ipa: "ʃoːt̪ʰəm saː pəʃjət̪i"
+        bases: [{ word: "शोथं", base: "शोथ", reading: "śotha" }, { word: "सा", base: "तद्", reading: "tad" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-7010"
+    target: "अर्बुदः"
+    reading: "arbudaḥ"
+    ipa: "ərbud̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "अर्बुदः", base: "अर्बुद", reading: "arbuda" }]
+    examples:
+      - target: "अर्बुदो देहे तिष्ठति"
+        reading: "arbudo dehe tiṣṭhati"
+        ipa: "ərbud̪oː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "अर्बुदो", base: "अर्बुद", reading: "arbuda" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "अर्बुदं पश्यति वैद्यः"
+        reading: "arbudaṃ paśyati vaidyaḥ"
+        ipa: "ərbud̪əm pəʃjət̪i ʋəid̪jəh"
+        bases: [{ word: "अर्बुदं", base: "अर्बुद", reading: "arbuda" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7011"
+    target: "आमयः"
+    reading: "āmayaḥ"
+    ipa: "aːməjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "आमयः", base: "आमय", reading: "āmaya" }]
+    examples:
+      - target: "आमयो देहे तिष्ठति"
+        reading: "āmayo dehe tiṣṭhati"
+        ipa: "aːməjoː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "आमयो", base: "आमय", reading: "āmaya" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "आमयं वयं पश्यामः"
+        reading: "āmayaṃ vayaṃ paśyāmaḥ"
+        ipa: "aːməjəm ʋəjəm pəʃjaːməh"
+        bases: [{ word: "आमयं", base: "आमय", reading: "āmaya" }, { word: "वयं", base: "अहम्", reading: "aham" }, { word: "पश्यामः", base: "पश्", reading: "paś" }]
+  - id: "sa-7012"
+    target: "दाहः"
+    reading: "dāhaḥ"
+    ipa: "d̪aːɦəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "दाहः", base: "दाह", reading: "dāha" }]
+    examples:
+      - target: "दाहो भवति"
+        reading: "dāho bhavati"
+        ipa: "d̪aːɦoː bʱəʋət̪i"
+        bases: [{ word: "दाहो", base: "दाह", reading: "dāha" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "दाहं त्वं जानासि"
+        reading: "dāhaṃ tvaṃ jānāsi"
+        ipa: "d̪aːɦəm t̪ʋəm dʒaːnaːsi"
+        bases: [{ word: "दाहं", base: "दाह", reading: "dāha" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "जानासि", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-7013"
+    target: "कम्पः"
+    reading: "kampaḥ"
+    ipa: "kəmpəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "कम्पः", base: "कम्प", reading: "kampa" }]
+    examples:
+      - target: "कम्पो देहे तिष्ठति"
+        reading: "kampo dehe tiṣṭhati"
+        ipa: "kəmpoː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "कम्पो", base: "कम्प", reading: "kampa" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "कम्पं पश्यति वैद्यः"
+        reading: "kampaṃ paśyati vaidyaḥ"
+        ipa: "kəmpəm pəʃjət̪i ʋəid̪jəh"
+        bases: [{ word: "कम्पं", base: "कम्प", reading: "kampa" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7014"
+    target: "अपस्मारः"
+    reading: "apasmāraḥ"
+    ipa: "əpəsmaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "अपस्मारः", base: "अपस्मार", reading: "apasmāra" }]
+    examples:
+      - target: "अपस्मारो देहे तिष्ठति"
+        reading: "apasmāro dehe tiṣṭhati"
+        ipa: "əpəsmaːroː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "अपस्मारो", base: "अपस्मार", reading: "apasmāra" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "अपस्मारं ते जानन्ति"
+        reading: "apasmāraṃ te jānanti"
+        ipa: "əpəsmaːrəm t̪eː dʒaːnənt̪i"
+        bases: [{ word: "अपस्मारं", base: "अपस्मार", reading: "apasmāra" }, { word: "ते", base: "तद्", reading: "tad" }, { word: "जानन्ति", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-7015"
+    target: "क्षयरोगः"
+    reading: "kṣayarogaḥ"
+    ipa: "kʂəjəroːɡəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "क्षयरोगः", base: "क्षयरोग", reading: "kṣayaroga" }]
+    examples:
+      - target: "क्षयरोगो भवति"
+        reading: "kṣayarogo bhavati"
+        ipa: "kʂəjəroːɡoː bʱəʋət̪i"
+        bases: [{ word: "क्षयरोगो", base: "क्षयरोग", reading: "kṣayaroga" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "क्षयरोगं वयं जानीमः"
+        reading: "kṣayarogaṃ vayaṃ jānīmaḥ"
+        ipa: "kʂəjəroːɡəm ʋəjəm dʒaːniːməh"
+        bases: [{ word: "क्षयरोगं", base: "क्षयरोग", reading: "kṣayaroga" }, { word: "वयं", base: "अहम्", reading: "aham" }, { word: "जानीमः", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-7016"
+    target: "हृद्रोगः"
+    reading: "hṛdrogaḥ"
+    ipa: "ɦr̩d̪roːɡəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "हृद्रोगः", base: "हृद्रोग", reading: "hṛdroga" }]
+    examples:
+      - target: "हृद्रोगो देहे तिष्ठति"
+        reading: "hṛdrogo dehe tiṣṭhati"
+        ipa: "ɦr̩d̪roːɡoː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "हृद्रोगो", base: "हृद्रोग", reading: "hṛdroga" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "हृद्रोगं पश्यति वैद्यः"
+        reading: "hṛdrogaṃ paśyati vaidyaḥ"
+        ipa: "ɦr̩d̪roːɡəm pəʃjət̪i ʋəid̪jəh"
+        bases: [{ word: "हृद्रोगं", base: "हृद्रोग", reading: "hṛdroga" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7017"
+    target: "कफः"
+    reading: "kaphaḥ"
+    ipa: "kəpʰəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "कफः", base: "कफ", reading: "kapha" }]
+    examples:
+      - target: "कफो देहे तिष्ठति"
+        reading: "kapho dehe tiṣṭhati"
+        ipa: "kəpʰoː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "कफो", base: "कफ", reading: "kapha" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "कफं सा पश्यति"
+        reading: "kaphaṃ sā paśyati"
+        ipa: "kəpʰəm saː pəʃjət̪i"
+        bases: [{ word: "कफं", base: "कफ", reading: "kapha" }, { word: "सा", base: "तद्", reading: "tad" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-7018"
+    target: "पित्तम्"
+    reading: "pittam"
+    ipa: "pit̪t̪əm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "पित्तम्", base: "पित्त", reading: "pitta" }]
+    examples:
+      - target: "पित्तं भवति"
+        reading: "pittaṃ bhavati"
+        ipa: "pit̪t̪əm bʱəʋət̪i"
+        bases: [{ word: "पित्तं", base: "पित्त", reading: "pitta" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "पित्तं वैद्यः पश्यति"
+        reading: "pittaṃ vaidyaḥ paśyati"
+        ipa: "pit̪t̪əm ʋəid̪jəh pəʃjət̪i"
+        bases: [{ word: "पित्तं", base: "पित्त", reading: "pitta" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-7019"
+    target: "जठरम्"
+    reading: "jaṭharam"
+    ipa: "dʒəʈʰərəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "जठरम्", base: "जठर", reading: "jaṭhara" }]
+    examples:
+      - target: "जठरं वैद्यः पश्यति"
+        reading: "jaṭharaṃ vaidyaḥ paśyati"
+        ipa: "dʒəʈʰərəm ʋəid̪jəh pəʃjət̪i"
+        bases: [{ word: "जठरं", base: "जठर", reading: "jaṭhara" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+      - target: "जठरे वेदना भवति"
+        reading: "jaṭhare vedanā bhavati"
+        ipa: "dʒəʈʰəreː ʋeːd̪ənaː bʱəʋət̪i"
+        bases: [{ word: "जठरे", base: "जठर", reading: "jaṭhara" }, { word: "वेदना", base: "वेदना", reading: "vedanā" }, { word: "भवति", base: "भू", reading: "bhū" }]
+  - id: "sa-7020"
+    target: "मूत्रम्"
+    reading: "mūtram"
+    ipa: "muːt̪rəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "मूत्रम्", base: "मूत्र", reading: "mūtra" }]
+    examples:
+      - target: "मूत्रं पश्यति वैद्यः"
+        reading: "mūtraṃ paśyati vaidyaḥ"
+        ipa: "muːt̪rəm pəʃjət̪i ʋəid̪jəh"
+        bases: [{ word: "मूत्रं", base: "मूत्र", reading: "mūtra" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+      - target: "वैद्यो मूत्रं पश्यति"
+        reading: "vaidyo mūtraṃ paśyati"
+        ipa: "ʋəid̪joː muːt̪rəm pəʃjət̪i"
+        bases: [{ word: "वैद्यो", base: "वैद्य", reading: "vaidya" }, { word: "मूत्रं", base: "मूत्र", reading: "mūtra" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-7021"
+    target: "स्वेदः"
+    reading: "svedaḥ"
+    ipa: "sʋeːd̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "स्वेदः", base: "स्वेद", reading: "sveda" }]
+    examples:
+      - target: "स्वेदो गच्छति"
+        reading: "svedo gacchati"
+        ipa: "sʋeːd̪oː ɡətʃtʃʰət̪i"
+        bases: [{ word: "स्वेदो", base: "स्वेद", reading: "sveda" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+      - target: "स्वेदं वैद्यः पश्यति"
+        reading: "svedaṃ vaidyaḥ paśyati"
+        ipa: "sʋeːd̪əm ʋəid̪jəh pəʃjət̪i"
+        bases: [{ word: "स्वेदं", base: "स्वेद", reading: "sveda" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-7022"
+    target: "श्वासः"
+    reading: "śvāsaḥ"
+    ipa: "ʃʋaːsəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "श्वासः", base: "श्वास", reading: "śvāsa" }]
+    examples:
+      - target: "श्वासो गच्छति"
+        reading: "śvāso gacchati"
+        ipa: "ʃʋaːsoː ɡətʃtʃʰət̪i"
+        bases: [{ word: "श्वासो", base: "श्वास", reading: "śvāsa" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+      - target: "श्वासं जानाति वैद्यः"
+        reading: "śvāsaṃ jānāti vaidyaḥ"
+        ipa: "ʃʋaːsəm dʒaːnaːt̪i ʋəid̪jəh"
+        bases: [{ word: "श्वासं", base: "श्वास", reading: "śvāsa" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7023"
+    target: "प्राणः"
+    reading: "prāṇaḥ"
+    ipa: "praːɳəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "प्राणः", base: "प्राण", reading: "prāṇa" }]
+    examples:
+      - target: "प्राणो देहे तिष्ठति"
+        reading: "prāṇo dehe tiṣṭhati"
+        ipa: "praːɳoː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "प्राणो", base: "प्राण", reading: "prāṇa" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "प्राणं स्मरति जनः"
+        reading: "prāṇaṃ smarati janaḥ"
+        ipa: "praːɳəm smərət̪i dʒənəh"
+        bases: [{ word: "प्राणं", base: "प्राण", reading: "prāṇa" }, { word: "स्मरति", base: "स्मृ", reading: "smṛ" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-7024"
+    target: "उच्छ्वासः"
+    reading: "ucchvāsaḥ"
+    ipa: "utʃtʃʰʋaːsəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "उच्छ्वासः", base: "उच्छ्वास", reading: "ucchvāsa" }]
+    examples:
+      - target: "उच्छ्वासो गच्छति"
+        reading: "ucchvāso gacchati"
+        ipa: "utʃtʃʰʋaːsoː ɡətʃtʃʰət̪i"
+        bases: [{ word: "उच्छ्वासो", base: "उच्छ्वास", reading: "ucchvāsa" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+      - target: "उच्छ्वासं शृणोति वैद्यः"
+        reading: "ucchvāsaṃ śṛṇoti vaidyaḥ"
+        ipa: "utʃtʃʰʋaːsəm ʃr̩ɳoːt̪i ʋəid̪jəh"
+        bases: [{ word: "उच्छ्वासं", base: "उच्छ्वास", reading: "ucchvāsa" }, { word: "शृणोति", base: "श्रु", reading: "śru" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7025"
+    target: "वमनम्"
+    reading: "vamanam"
+    ipa: "ʋəmənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "वमनम्", base: "वमन", reading: "vamana" }]
+    examples:
+      - target: "वमनं भवति"
+        reading: "vamanaṃ bhavati"
+        ipa: "ʋəmənəm bʱəʋət̪i"
+        bases: [{ word: "वमनं", base: "वमन", reading: "vamana" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "वमनं करोति वैद्यः"
+        reading: "vamanaṃ karoti vaidyaḥ"
+        ipa: "ʋəmənəm kəroːt̪i ʋəid̪jəh"
+        bases: [{ word: "वमनं", base: "वमन", reading: "vamana" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7026"
+    target: "हिक्का"
+    reading: "hikkā"
+    ipa: "ɦikkaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "हिक्का", base: "हिक्का", reading: "hikkā" }]
+    examples:
+      - target: "हिक्का भवति"
+        reading: "hikkā bhavati"
+        ipa: "ɦikkaː bʱəʋət̪i"
+        bases: [{ word: "हिक्का", base: "हिक्का", reading: "hikkā" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "हिक्कां ते जानन्ति"
+        reading: "hikkāṃ te jānanti"
+        ipa: "ɦikkaːm t̪eː dʒaːnənt̪i"
+        bases: [{ word: "हिक्कां", base: "हिक्का", reading: "hikkā" }, { word: "ते", base: "तद्", reading: "tad" }, { word: "जानन्ति", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-7027"
+    target: "तन्द्रा"
+    reading: "tandrā"
+    ipa: "t̪ənd̪raː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "तन्द्रा", base: "तन्द्रा", reading: "tandrā" }]
+    examples:
+      - target: "तन्द्रा भवति"
+        reading: "tandrā bhavati"
+        ipa: "t̪ənd̪raː bʱəʋət̪i"
+        bases: [{ word: "तन्द्रा", base: "तन्द्रा", reading: "tandrā" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "तन्द्रां वयं जानीमः"
+        reading: "tandrāṃ vayaṃ jānīmaḥ"
+        ipa: "t̪ənd̪raːm ʋəjəm dʒaːniːməh"
+        bases: [{ word: "तन्द्रां", base: "तन्द्रा", reading: "tandrā" }, { word: "वयं", base: "अहम्", reading: "aham" }, { word: "जानीमः", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-7028"
+    target: "मूर्छा"
+    reading: "mūrchā"
+    ipa: "muːrtʃʰaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "मूर्छा", base: "मूर्छा", reading: "mūrchā" }]
+    examples:
+      - target: "मूर्छा भवति"
+        reading: "mūrchā bhavati"
+        ipa: "muːrtʃʰaː bʱəʋət̪i"
+        bases: [{ word: "मूर्छा", base: "मूर्छा", reading: "mūrchā" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "मूर्छां स्मरति जनः"
+        reading: "mūrchāṃ smarati janaḥ"
+        ipa: "muːrtʃʰaːm smərət̪i dʒənəh"
+        bases: [{ word: "मूर्छां", base: "मूर्छा", reading: "mūrchā" }, { word: "स्मरति", base: "स्मृ", reading: "smṛ" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-7029"
+    target: "निद्रा"
+    reading: "nidrā"
+    ipa: "nid̪raː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "निद्रा", base: "निद्रा", reading: "nidrā" }]
+    examples:
+      - target: "निद्रा भवति"
+        reading: "nidrā bhavati"
+        ipa: "nid̪raː bʱəʋət̪i"
+        bases: [{ word: "निद्रा", base: "निद्रा", reading: "nidrā" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "निद्रां सा पश्यति"
+        reading: "nidrāṃ sā paśyati"
+        ipa: "nid̪raːm saː pəʃjət̪i"
+        bases: [{ word: "निद्रां", base: "निद्रा", reading: "nidrā" }, { word: "सा", base: "तद्", reading: "tad" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-7030"
+    target: "मज्जा"
+    reading: "majjā"
+    ipa: "mədʒdʒaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "मज्जा", base: "मज्जा", reading: "majjā" }]
+    examples:
+      - target: "मज्जा भवति"
+        reading: "majjā bhavati"
+        ipa: "mədʒdʒaː bʱəʋət̪i"
+        bases: [{ word: "मज्जा", base: "मज्जा", reading: "majjā" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "मज्जां ते पश्यन्ति"
+        reading: "majjāṃ te paśyanti"
+        ipa: "mədʒdʒaːm t̪eː pəʃjənt̪i"
+        bases: [{ word: "मज्जां", base: "मज्जा", reading: "majjā" }, { word: "ते", base: "तद्", reading: "tad" }, { word: "पश्यन्ति", base: "पश्", reading: "paś" }]
+  - id: "sa-7031"
+    target: "मस्तिष्कः"
+    reading: "mastiṣkaḥ"
+    ipa: "məst̪iʂkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "मस्तिष्कः", base: "मस्तिष्क", reading: "mastiṣka" }]
+    examples:
+      - target: "मस्तिष्को देहे तिष्ठति"
+        reading: "mastiṣko dehe tiṣṭhati"
+        ipa: "məst̪iʂkoː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "मस्तिष्को", base: "मस्तिष्क", reading: "mastiṣka" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "मस्तिष्कं पश्यति वैद्यः"
+        reading: "mastiṣkaṃ paśyati vaidyaḥ"
+        ipa: "məst̪iʂkəm pəʃjət̪i ʋəid̪jəh"
+        bases: [{ word: "मस्तिष्कं", base: "मस्तिष्क", reading: "mastiṣka" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7032"
+    target: "गर्भः"
+    reading: "garbhaḥ"
+    ipa: "ɡərbʱəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "गर्भः", base: "गर्भ", reading: "garbha" }]
+    examples:
+      - target: "गर्भो देहे तिष्ठति"
+        reading: "garbho dehe tiṣṭhati"
+        ipa: "ɡərbʱoː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "गर्भो", base: "गर्भ", reading: "garbha" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "गर्भं त्वं पश्यसि"
+        reading: "garbhaṃ tvaṃ paśyasi"
+        ipa: "ɡərbʱəm t̪ʋəm pəʃjəsi"
+        bases: [{ word: "गर्भं", base: "गर्भ", reading: "garbha" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "पश्यसि", base: "पश्", reading: "paś" }]
+  - id: "sa-7033"
+    target: "स्तनः"
+    reading: "stanaḥ"
+    ipa: "st̪ənəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "स्तनः", base: "स्तन", reading: "stana" }]
+    examples:
+      - target: "स्तनो भवति"
+        reading: "stano bhavati"
+        ipa: "st̪ənoː bʱəʋət̪i"
+        bases: [{ word: "स्तनो", base: "स्तन", reading: "stana" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "स्तनं सा पश्यति"
+        reading: "stanaṃ sā paśyati"
+        ipa: "st̪ənəm saː pəʃjət̪i"
+        bases: [{ word: "स्तनं", base: "स्तन", reading: "stana" }, { word: "सा", base: "तद्", reading: "tad" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-7034"
+    target: "गण्डः"
+    reading: "gaṇḍaḥ"
+    ipa: "ɡəɳɖəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "गण्डः", base: "गण्ड", reading: "gaṇḍa" }]
+    examples:
+      - target: "गण्डो देहे तिष्ठति"
+        reading: "gaṇḍo dehe tiṣṭhati"
+        ipa: "ɡəɳɖoː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "गण्डो", base: "गण्ड", reading: "gaṇḍa" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "गण्डं पश्यति वैद्यः"
+        reading: "gaṇḍaṃ paśyati vaidyaḥ"
+        ipa: "ɡəɳɖəm pəʃjət̪i ʋəid̪jəh"
+        bases: [{ word: "गण्डं", base: "गण्ड", reading: "gaṇḍa" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7035"
+    target: "तैलम्"
+    reading: "tailam"
+    ipa: "t̪əiləm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "तैलम्", base: "तैल", reading: "taila" }]
+    examples:
+      - target: "तैलं गृहे भवति"
+        reading: "tailaṃ gṛhe bhavati"
+        ipa: "t̪əiləm ɡr̩ɦeː bʱəʋət̪i"
+        bases: [{ word: "तैलं", base: "तैल", reading: "taila" }, { word: "गृहे", base: "गृह", reading: "gṛha" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "तैलं वैद्यो ददाति"
+        reading: "tailaṃ vaidyo dadāti"
+        ipa: "t̪əiləm ʋəid̪joː d̪əd̪aːt̪i"
+        bases: [{ word: "तैलं", base: "तैल", reading: "taila" }, { word: "वैद्यो", base: "वैद्य", reading: "vaidya" }, { word: "ददाति", base: "दा", reading: "dā" }]
+  - id: "sa-7036"
+    target: "अश्वगन्धा"
+    reading: "aśvagandhā"
+    ipa: "əʃʋəɡənd̪ʱaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "अश्वगन्धा", base: "अश्वगन्धा", reading: "aśvagandhā" }]
+    examples:
+      - target: "अश्वगन्धा भवति"
+        reading: "aśvagandhā bhavati"
+        ipa: "əʃʋəɡənd̪ʱaː bʱəʋət̪i"
+        bases: [{ word: "अश्वगन्धा", base: "अश्वगन्धा", reading: "aśvagandhā" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "अश्वगन्धां त्वं जानासि"
+        reading: "aśvagandhāṃ tvaṃ jānāsi"
+        ipa: "əʃʋəɡənd̪ʱaːm t̪ʋəm dʒaːnaːsi"
+        bases: [{ word: "अश्वगन्धां", base: "अश्वगन्धा", reading: "aśvagandhā" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "जानासि", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-7037"
+    target: "व्यायामः"
+    reading: "vyāyāmaḥ"
+    ipa: "ʋjaːjaːməh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "व्यायामः", base: "व्यायाम", reading: "vyāyāma" }]
+    examples:
+      - target: "व्यायामो नगरे भवति"
+        reading: "vyāyāmo nagare bhavati"
+        ipa: "ʋjaːjaːmoː nəɡəreː bʱəʋət̪i"
+        bases: [{ word: "व्यायामो", base: "व्यायाम", reading: "vyāyāma" }, { word: "नगरे", base: "नगर", reading: "nagara" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "व्यायामं करोति बालः"
+        reading: "vyāyāmaṃ karoti bālaḥ"
+        ipa: "ʋjaːjaːməm kəroːt̪i baːləh"
+        bases: [{ word: "व्यायामं", base: "व्यायाम", reading: "vyāyāma" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+  - id: "sa-7038"
+    target: "विषम्"
+    reading: "viṣam"
+    ipa: "ʋiʂəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "विषम्", base: "विष", reading: "viṣa" }]
+    examples:
+      - target: "विषं गृहे भवति"
+        reading: "viṣaṃ gṛhe bhavati"
+        ipa: "ʋiʂəm ɡr̩ɦeː bʱəʋət̪i"
+        bases: [{ word: "विषं", base: "विष", reading: "viṣa" }, { word: "गृहे", base: "गृह", reading: "gṛha" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "विषं वैद्यो जानाति"
+        reading: "viṣaṃ vaidyo jānāti"
+        ipa: "ʋiʂəm ʋəid̪joː dʒaːnaːt̪i"
+        bases: [{ word: "विषं", base: "विष", reading: "viṣa" }, { word: "वैद्यो", base: "वैद्य", reading: "vaidya" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-7039"
+    target: "पीडा"
+    reading: "pīḍā"
+    ipa: "piːɖaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "पीडा", base: "पीडा", reading: "pīḍā" }]
+    examples:
+      - target: "पीडा भवति"
+        reading: "pīḍā bhavati"
+        ipa: "piːɖaː bʱəʋət̪i"
+        bases: [{ word: "पीडा", base: "पीडा", reading: "pīḍā" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "पीडां करोति रोगः"
+        reading: "pīḍāṃ karoti rogaḥ"
+        ipa: "piːɖaːm kəroːt̪i roːɡəh"
+        bases: [{ word: "पीडां", base: "पीडा", reading: "pīḍā" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "रोगः", base: "रोग", reading: "roga" }]
+  - id: "sa-7040"
+    target: "वेदना"
+    reading: "vedanā"
+    ipa: "ʋeːd̪ənaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "वेदना", base: "वेदना", reading: "vedanā" }]
+    examples:
+      - target: "वेदना देहे तिष्ठति"
+        reading: "vedanā dehe tiṣṭhati"
+        ipa: "ʋeːd̪ənaː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "वेदना", base: "वेदना", reading: "vedanā" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "वेदनां जानाति वैद्यः"
+        reading: "vedanāṃ jānāti vaidyaḥ"
+        ipa: "ʋeːd̪ənaːm dʒaːnaːt̪i ʋəid̪jəh"
+        bases: [{ word: "वेदनां", base: "वेदना", reading: "vedanā" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7041"
+    target: "शूलम्"
+    reading: "śūlam"
+    ipa: "ʃuːləm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "शूलम्", base: "शूल", reading: "śūla" }]
+    examples:
+      - target: "शूलं देहे तिष्ठति"
+        reading: "śūlaṃ dehe tiṣṭhati"
+        ipa: "ʃuːləm d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "शूलं", base: "शूल", reading: "śūla" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "शूलं करोति रोगः"
+        reading: "śūlaṃ karoti rogaḥ"
+        ipa: "ʃuːləm kəroːt̪i roːɡəh"
+        bases: [{ word: "शूलं", base: "शूल", reading: "śūla" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "रोगः", base: "रोग", reading: "roga" }]
+  - id: "sa-7042"
+    target: "रुजा"
+    reading: "rujā"
+    ipa: "rudʒaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "रुजा", base: "रुजा", reading: "rujā" }]
+    examples:
+      - target: "रुजा भवति"
+        reading: "rujā bhavati"
+        ipa: "rudʒaː bʱəʋət̪i"
+        bases: [{ word: "रुजा", base: "रुजा", reading: "rujā" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "रुजां ते पश्यन्ति"
+        reading: "rujāṃ te paśyanti"
+        ipa: "rudʒaːm t̪eː pəʃjənt̪i"
+        bases: [{ word: "रुजां", base: "रुजा", reading: "rujā" }, { word: "ते", base: "तद्", reading: "tad" }, { word: "पश्यन्ति", base: "पश्", reading: "paś" }]
+  - id: "sa-7043"
+    target: "क्लेशः"
+    reading: "kleśaḥ"
+    ipa: "kleːʃəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "क्लेशः", base: "क्लेश", reading: "kleśa" }]
+    examples:
+      - target: "क्लेशो देहे तिष्ठति"
+        reading: "kleśo dehe tiṣṭhati"
+        ipa: "kleːʃoː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "क्लेशो", base: "क्लेश", reading: "kleśa" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "क्लेशं पश्यति जनः"
+        reading: "kleśaṃ paśyati janaḥ"
+        ipa: "kleːʃəm pəʃjət̪i dʒənəh"
+        bases: [{ word: "क्लेशं", base: "क्लेश", reading: "kleśa" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-7044"
+    target: "क्षुधा"
+    reading: "kṣudhā"
+    ipa: "kʂud̪ʱaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "क्षुधा", base: "क्षुधा", reading: "kṣudhā" }]
+    examples:
+      - target: "क्षुधा भवति"
+        reading: "kṣudhā bhavati"
+        ipa: "kʂud̪ʱaː bʱəʋət̪i"
+        bases: [{ word: "क्षुधा", base: "क्षुधा", reading: "kṣudhā" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "क्षुधां जानाति बालः"
+        reading: "kṣudhāṃ jānāti bālaḥ"
+        ipa: "kʂud̪ʱaːm dʒaːnaːt̪i baːləh"
+        bases: [{ word: "क्षुधां", base: "क्षुधा", reading: "kṣudhā" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+  - id: "sa-7045"
+    target: "तृष्णा"
+    reading: "tṛṣṇā"
+    ipa: "t̪r̩ʂɳaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "तृष्णा", base: "तृष्णा", reading: "tṛṣṇā" }]
+    examples:
+      - target: "तृष्णा भवति"
+        reading: "tṛṣṇā bhavati"
+        ipa: "t̪r̩ʂɳaː bʱəʋət̪i"
+        bases: [{ word: "तृष्णा", base: "तृष्णा", reading: "tṛṣṇā" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "तृष्णां स्मरति जनः"
+        reading: "tṛṣṇāṃ smarati janaḥ"
+        ipa: "t̪r̩ʂɳaːm smərət̪i dʒənəh"
+        bases: [{ word: "तृष्णां", base: "तृष्णा", reading: "tṛṣṇā" }, { word: "स्मरति", base: "स्मृ", reading: "smṛ" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-7046"
+    target: "जीवनम्"
+    reading: "jīvanam"
+    ipa: "dʒiːʋənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "जीवनम्", base: "जीवन", reading: "jīvana" }]
+    examples:
+      - target: "जीवनं भवति"
+        reading: "jīvanaṃ bhavati"
+        ipa: "dʒiːʋənəm bʱəʋət̪i"
+        bases: [{ word: "जीवनं", base: "जीवन", reading: "jīvana" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "जीवनं स्मरति जनः"
+        reading: "jīvanaṃ smarati janaḥ"
+        ipa: "dʒiːʋənəm smərət̪i dʒənəh"
+        bases: [{ word: "जीवनं", base: "जीवन", reading: "jīvana" }, { word: "स्मरति", base: "स्मृ", reading: "smṛ" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-7047"
+    target: "लक्षणम्"
+    reading: "lakṣaṇam"
+    ipa: "ləkʂəɳəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "लक्षणम्", base: "लक्षण", reading: "lakṣaṇa" }]
+    examples:
+      - target: "लक्षणं देहे तिष्ठति"
+        reading: "lakṣaṇaṃ dehe tiṣṭhati"
+        ipa: "ləkʂəɳəm d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "लक्षणं", base: "लक्षण", reading: "lakṣaṇa" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "लक्षणं वयं पश्यामः"
+        reading: "lakṣaṇaṃ vayaṃ paśyāmaḥ"
+        ipa: "ləkʂəɳəm ʋəjəm pəʃjaːməh"
+        bases: [{ word: "लक्षणं", base: "लक्षण", reading: "lakṣaṇa" }, { word: "वयं", base: "अहम्", reading: "aham" }, { word: "पश्यामः", base: "पश्", reading: "paś" }]
+  - id: "sa-7048"
+    target: "रुग्णः"
+    reading: "rugṇaḥ"
+    ipa: "ruɡɳəh"
+    pos: "adj"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "रुग्णः", base: "रुग्ण", reading: "rugṇa" }]
+    examples:
+      - target: "रुग्णो भवति"
+        reading: "rugṇo bhavati"
+        ipa: "ruɡɳoː bʱəʋət̪i"
+        bases: [{ word: "रुग्णो", base: "रुग्ण", reading: "rugṇa" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "रुग्णो बालः"
+        reading: "rugṇo bālaḥ"
+        ipa: "ruɡɳoː baːləh"
+        bases: [{ word: "रुग्णो", base: "रुग्ण", reading: "rugṇa" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+  - id: "sa-7049"
+    target: "आतुरः"
+    reading: "āturaḥ"
+    ipa: "aːt̪urəh"
+    pos: "adj"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "आतुरः", base: "आतुर", reading: "ātura" }]
+    examples:
+      - target: "आतुरो भवति"
+        reading: "āturo bhavati"
+        ipa: "aːt̪uroː bʱəʋət̪i"
+        bases: [{ word: "आतुरो", base: "आतुर", reading: "ātura" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "आतुरो जनः"
+        reading: "āturo janaḥ"
+        ipa: "aːt̪uroː dʒənəh"
+        bases: [{ word: "आतुरो", base: "आतुर", reading: "ātura" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-7050"
+    target: "वातुलः"
+    reading: "vātulaḥ"
+    ipa: "ʋaːt̪uləh"
+    pos: "adj"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "वातुलः", base: "वातुल", reading: "vātula" }]
+    examples:
+      - target: "वातुलो भवति"
+        reading: "vātulo bhavati"
+        ipa: "ʋaːt̪uloː bʱəʋət̪i"
+        bases: [{ word: "वातुलो", base: "वातुल", reading: "vātula" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "वातुलो जनः"
+        reading: "vātulo janaḥ"
+        ipa: "ʋaːt̪uloː dʒənəh"
+        bases: [{ word: "वातुलो", base: "वातुल", reading: "vātula" }, { word: "जनः", base: "जन", reading: "jana" }]
+  - id: "sa-7051"
+    target: "अक्षतः"
+    reading: "akṣataḥ"
+    ipa: "əkʂət̪əh"
+    pos: "adj"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "अक्षतः", base: "अक्षत", reading: "akṣata" }]
+    examples:
+      - target: "अक्षतो भवति"
+        reading: "akṣato bhavati"
+        ipa: "əkʂət̪oː bʱəʋət̪i"
+        bases: [{ word: "अक्षतो", base: "अक्षत", reading: "akṣata" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "अक्षतो बालः"
+        reading: "akṣato bālaḥ"
+        ipa: "əkʂət̪oː baːləh"
+        bases: [{ word: "अक्षतो", base: "अक्षत", reading: "akṣata" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+  - id: "sa-7052"
+    target: "उपचारः"
+    reading: "upacāraḥ"
+    ipa: "upətʃaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "उपचारः", base: "उपचार", reading: "upacāra" }]
+    examples:
+      - target: "उपचारो नगरे भवति"
+        reading: "upacāro nagare bhavati"
+        ipa: "upətʃaːroː nəɡəreː bʱəʋət̪i"
+        bases: [{ word: "उपचारो", base: "उपचार", reading: "upacāra" }, { word: "नगरे", base: "नगर", reading: "nagara" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "उपचारं करोति वैद्यः"
+        reading: "upacāraṃ karoti vaidyaḥ"
+        ipa: "upətʃaːrəm kəroːt̪i ʋəid̪jəh"
+        bases: [{ word: "उपचारं", base: "उपचार", reading: "upacāra" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7053"
+    target: "व्रणः"
+    reading: "vraṇaḥ"
+    ipa: "ʋrəɳəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "व्रणः", base: "व्रण", reading: "vraṇa" }]
+    examples:
+      - target: "व्रणो देहे तिष्ठति"
+        reading: "vraṇo dehe tiṣṭhati"
+        ipa: "ʋrəɳoː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "व्रणो", base: "व्रण", reading: "vraṇa" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "व्रणं सा पश्यति"
+        reading: "vraṇaṃ sā paśyati"
+        ipa: "ʋrəɳəm saː pəʃjət̪i"
+        bases: [{ word: "व्रणं", base: "व्रण", reading: "vraṇa" }, { word: "सा", base: "तद्", reading: "tad" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-7054"
+    target: "अजीर्णम्"
+    reading: "ajīrṇam"
+    ipa: "ədʒiːrɳəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "अजीर्णम्", base: "अजीर्ण", reading: "ajīrṇa" }]
+    examples:
+      - target: "अजीर्णं भवति"
+        reading: "ajīrṇaṃ bhavati"
+        ipa: "ədʒiːrɳəm bʱəʋət̪i"
+        bases: [{ word: "अजीर्णं", base: "अजीर्ण", reading: "ajīrṇa" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "अजीर्णं वैद्यो जानाति"
+        reading: "ajīrṇaṃ vaidyo jānāti"
+        ipa: "ədʒiːrɳəm ʋəid̪joː dʒaːnaːt̪i"
+        bases: [{ word: "अजीर्णं", base: "अजीर्ण", reading: "ajīrṇa" }, { word: "वैद्यो", base: "वैद्य", reading: "vaidya" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-7055"
+    target: "हरिद्रा"
+    reading: "haridrā"
+    ipa: "ɦərid̪raː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "हरिद्रा", base: "हरिद्रा", reading: "haridrā" }]
+    examples:
+      - target: "हरिद्रा गृहे भवति"
+        reading: "haridrā gṛhe bhavati"
+        ipa: "ɦərid̪raː ɡr̩ɦeː bʱəʋət̪i"
+        bases: [{ word: "हरिद्रा", base: "हरिद्रा", reading: "haridrā" }, { word: "गृहे", base: "गृह", reading: "gṛha" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "हरिद्रां खादति बालः"
+        reading: "haridrāṃ khādati bālaḥ"
+        ipa: "ɦərid̪raːm kʰaːd̪ət̪i baːləh"
+        bases: [{ word: "हरिद्रां", base: "हरिद्रा", reading: "haridrā" }, { word: "खादति", base: "खाद्", reading: "khād" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+  - id: "sa-7056"
+    target: "कायः"
+    reading: "kāyaḥ"
+    ipa: "kaːjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "कायः", base: "काय", reading: "kāya" }]
+    examples:
+      - target: "कायो भवति"
+        reading: "kāyo bhavati"
+        ipa: "kaːjoː bʱəʋət̪i"
+        bases: [{ word: "कायो", base: "काय", reading: "kāya" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "कायं जानाति वैद्यः"
+        reading: "kāyaṃ jānāti vaidyaḥ"
+        ipa: "kaːjəm dʒaːnaːt̪i ʋəid̪jəh"
+        bases: [{ word: "कायं", base: "काय", reading: "kāya" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7057"
+    target: "कण्ठः"
+    reading: "kaṇṭhaḥ"
+    ipa: "kəɳʈʰəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "कण्ठः", base: "कण्ठ", reading: "kaṇṭha" }]
+    examples:
+      - target: "कण्ठो भवति"
+        reading: "kaṇṭho bhavati"
+        ipa: "kəɳʈʰoː bʱəʋət̪i"
+        bases: [{ word: "कण्ठो", base: "कण्ठ", reading: "kaṇṭha" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "कण्ठं सा पश्यति"
+        reading: "kaṇṭhaṃ sā paśyati"
+        ipa: "kəɳʈʰəm saː pəʃjət̪i"
+        bases: [{ word: "कण्ठं", base: "कण्ठ", reading: "kaṇṭha" }, { word: "सा", base: "तद्", reading: "tad" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-7058"
+    target: "नासा"
+    reading: "nāsā"
+    ipa: "naːsaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "नासा", base: "नासा", reading: "nāsā" }]
+    examples:
+      - target: "नासा देहे तिष्ठति"
+        reading: "nāsā dehe tiṣṭhati"
+        ipa: "naːsaː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "नासा", base: "नासा", reading: "nāsā" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "नासां पश्यति वैद्यः"
+        reading: "nāsāṃ paśyati vaidyaḥ"
+        ipa: "naːsaːm pəʃjət̪i ʋəid̪jəh"
+        bases: [{ word: "नासां", base: "नासा", reading: "nāsā" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7059"
+    target: "अभ्यङ्गः"
+    reading: "abhyaṅgaḥ"
+    ipa: "əbʱjəŋɡəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "अभ्यङ्गः", base: "अभ्यङ्ग", reading: "abhyaṅga" }]
+    examples:
+      - target: "अभ्यङ्गो नगरे भवति"
+        reading: "abhyaṅgo nagare bhavati"
+        ipa: "əbʱjəŋɡoː nəɡəreː bʱəʋət̪i"
+        bases: [{ word: "अभ्यङ्गो", base: "अभ्यङ्ग", reading: "abhyaṅga" }, { word: "नगरे", base: "नगर", reading: "nagara" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "अभ्यङ्गं वयं पश्यामः"
+        reading: "abhyaṅgaṃ vayaṃ paśyāmaḥ"
+        ipa: "əbʱjəŋɡəm ʋəjəm pəʃjaːməh"
+        bases: [{ word: "अभ्यङ्गं", base: "अभ्यङ्ग", reading: "abhyaṅga" }, { word: "वयं", base: "अहम्", reading: "aham" }, { word: "पश्यामः", base: "पश्", reading: "paś" }]
+  - id: "sa-7060"
+    target: "लेपः"
+    reading: "lepaḥ"
+    ipa: "leːpəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "लेपः", base: "लेप", reading: "lepa" }]
+    examples:
+      - target: "लेपो भवति"
+        reading: "lepo bhavati"
+        ipa: "leːpoː bʱəʋət̪i"
+        bases: [{ word: "लेपो", base: "लेप", reading: "lepa" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "लेपं त्वं जानासि"
+        reading: "lepaṃ tvaṃ jānāsi"
+        ipa: "leːpəm t̪ʋəm dʒaːnaːsi"
+        bases: [{ word: "लेपं", base: "लेप", reading: "lepa" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "जानासि", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-7061"
+    target: "आन्त्रम्"
+    reading: "āntram"
+    ipa: "aːnt̪rəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "आन्त्रम्", base: "आन्त्र", reading: "āntra" }]
+    examples:
+      - target: "आन्त्रं देहे तिष्ठति"
+        reading: "āntraṃ dehe tiṣṭhati"
+        ipa: "aːnt̪rəm d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "आन्त्रं", base: "आन्त्र", reading: "āntra" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "आन्त्रं पश्यति वैद्यः"
+        reading: "āntraṃ paśyati vaidyaḥ"
+        ipa: "aːnt̪rəm pəʃjət̪i ʋəid̪jəh"
+        bases: [{ word: "आन्त्रं", base: "आन्त्र", reading: "āntra" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7062"
+    target: "वृक्कः"
+    reading: "vṛkkaḥ"
+    ipa: "ʋr̩kkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "वृक्कः", base: "वृक्क", reading: "vṛkka" }]
+    examples:
+      - target: "वृक्को देहे तिष्ठति"
+        reading: "vṛkko dehe tiṣṭhati"
+        ipa: "ʋr̩kkoː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "वृक्को", base: "वृक्क", reading: "vṛkka" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "वृक्कं ते जानन्ति"
+        reading: "vṛkkaṃ te jānanti"
+        ipa: "ʋr̩kkəm t̪eː dʒaːnənt̪i"
+        bases: [{ word: "वृक्कं", base: "वृक्क", reading: "vṛkka" }, { word: "ते", base: "तद्", reading: "tad" }, { word: "जानन्ति", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-7063"
+    target: "शुण्ठी"
+    reading: "śuṇṭhī"
+    ipa: "ʃuɳʈʰiː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "शुण्ठी", base: "शुण्ठी", reading: "śuṇṭhī" }]
+    examples:
+      - target: "शुण्ठी भवति"
+        reading: "śuṇṭhī bhavati"
+        ipa: "ʃuɳʈʰiː bʱəʋət̪i"
+        bases: [{ word: "शुण्ठी", base: "शुण्ठी", reading: "śuṇṭhī" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "शुण्ठीं खादति बालः"
+        reading: "śuṇṭhīṃ khādati bālaḥ"
+        ipa: "ʃuɳʈʰiːm kʰaːd̪ət̪i baːləh"
+        bases: [{ word: "शुण्ठीं", base: "शुण्ठी", reading: "śuṇṭhī" }, { word: "खादति", base: "खाद्", reading: "khād" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+  - id: "sa-7064"
+    target: "नाडी"
+    reading: "nāḍī"
+    ipa: "naːɖiː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "नाडी", base: "नाडी", reading: "nāḍī" }]
+    examples:
+      - target: "नाडी देहे तिष्ठति"
+        reading: "nāḍī dehe tiṣṭhati"
+        ipa: "naːɖiː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "नाडी", base: "नाडी", reading: "nāḍī" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "नाडीं पश्यति वैद्यः"
+        reading: "nāḍīṃ paśyati vaidyaḥ"
+        ipa: "naːɖiːm pəʃjət̪i ʋəid̪jəh"
+        bases: [{ word: "नाडीं", base: "नाडी", reading: "nāḍī" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7065"
+    target: "छर्दिः"
+    reading: "chardiḥ"
+    ipa: "tʃʰərd̪ih"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "छर्दिः", base: "छर्दि", reading: "chardi" }]
+    examples:
+      - target: "छर्दिं पश्यति वैद्यः"
+        reading: "chardiṃ paśyati vaidyaḥ"
+        ipa: "tʃʰərd̪im pəʃjət̪i ʋəid̪jəh"
+        bases: [{ word: "छर्दिं", base: "छर्दि", reading: "chardi" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+      - target: "छर्दिं करोति बालः"
+        reading: "chardiṃ karoti bālaḥ"
+        ipa: "tʃʰərd̪im kəroːt̪i baːləh"
+        bases: [{ word: "छर्दिं", base: "छर्दि", reading: "chardi" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "बालः", base: "बाल", reading: "bāla" }]
+  - id: "sa-7066"
+    target: "गलगण्डः"
+    reading: "galagaṇḍaḥ"
+    ipa: "ɡələɡəɳɖəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "गलगण्डः", base: "गलगण्ड", reading: "galagaṇḍa" }]
+    examples:
+      - target: "गलगण्डो भवति"
+        reading: "galagaṇḍo bhavati"
+        ipa: "ɡələɡəɳɖoː bʱəʋət̪i"
+        bases: [{ word: "गलगण्डो", base: "गलगण्ड", reading: "galagaṇḍa" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "गलगण्डं ते पश्यन्ति"
+        reading: "galagaṇḍaṃ te paśyanti"
+        ipa: "ɡələɡəɳɖəm t̪eː pəʃjənt̪i"
+        bases: [{ word: "गलगण्डं", base: "गलगण्ड", reading: "galagaṇḍa" }, { word: "ते", base: "तद्", reading: "tad" }, { word: "पश्यन्ति", base: "पश्", reading: "paś" }]
+  - id: "sa-7067"
+    target: "धमनी"
+    reading: "dhamanī"
+    ipa: "d̪ʱəməniː"
+    pos: "noun"
+    gender: "f"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "धमनी", base: "धमनी", reading: "dhamanī" }]
+    examples:
+      - target: "धमनी देहे तिष्ठति"
+        reading: "dhamanī dehe tiṣṭhati"
+        ipa: "d̪ʱəməniː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "धमनी", base: "धमनी", reading: "dhamanī" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "धमनीं पश्यति वैद्यः"
+        reading: "dhamanīṃ paśyati vaidyaḥ"
+        ipa: "d̪ʱəməniːm pəʃjət̪i ʋəid̪jəh"
+        bases: [{ word: "धमनीं", base: "धमनी", reading: "dhamanī" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7068"
+    target: "बस्तिकोपः"
+    reading: "bastikopaḥ"
+    ipa: "bəst̪ikoːpəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "बस्तिकोपः", base: "बस्तिकोप", reading: "bastikopa" }]
+    examples:
+      - target: "बस्तिकोपो देहे तिष्ठति"
+        reading: "bastikopo dehe tiṣṭhati"
+        ipa: "bəst̪ikoːpoː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "बस्तिकोपो", base: "बस्तिकोप", reading: "bastikopa" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "बस्तिकोपं त्वं पश्यसि"
+        reading: "bastikopaṃ tvaṃ paśyasi"
+        ipa: "bəst̪ikoːpəm t̪ʋəm pəʃjəsi"
+        bases: [{ word: "बस्तिकोपं", base: "बस्तिकोप", reading: "bastikopa" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "पश्यसि", base: "पश्", reading: "paś" }]
+  - id: "sa-7069"
+    target: "कुष्ठम्"
+    reading: "kuṣṭham"
+    ipa: "kuʂʈʰəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "कुष्ठम्", base: "कुष्ठ", reading: "kuṣṭha" }]
+    examples:
+      - target: "कुष्ठं भवति"
+        reading: "kuṣṭhaṃ bhavati"
+        ipa: "kuʂʈʰəm bʱəʋət̪i"
+        bases: [{ word: "कुष्ठं", base: "कुष्ठ", reading: "kuṣṭha" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "कुष्ठं सा पश्यति"
+        reading: "kuṣṭhaṃ sā paśyati"
+        ipa: "kuʂʈʰəm saː pəʃjət̪i"
+        bases: [{ word: "कुष्ठं", base: "कुष्ठ", reading: "kuṣṭha" }, { word: "सा", base: "तद्", reading: "tad" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-7070"
+    target: "मलम्"
+    reading: "malam"
+    ipa: "mələm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "मलम्", base: "मल", reading: "mala" }]
+    examples:
+      - target: "मलं गृहे भवति"
+        reading: "malaṃ gṛhe bhavati"
+        ipa: "mələm ɡr̩ɦeː bʱəʋət̪i"
+        bases: [{ word: "मलं", base: "मल", reading: "mala" }, { word: "गृहे", base: "गृह", reading: "gṛha" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "मलं पश्यति वैद्यः"
+        reading: "malaṃ paśyati vaidyaḥ"
+        ipa: "mələm pəʃjət̪i ʋəid̪jəh"
+        bases: [{ word: "मलं", base: "मल", reading: "mala" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7071"
+    target: "चिकित्सकः"
+    reading: "cikitsakaḥ"
+    ipa: "tʃikit̪səkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }, { id: "n4", kind: "note" }]
+    bases: [{ word: "चिकित्सकः", base: "चिकित्सक", reading: "cikitsaka" }]
+    examples:
+      - target: "चिकित्सको गृहे वसति"
+        reading: "cikitsako gṛhe vasati"
+        ipa: "tʃikit̪səkoː ɡr̩ɦeː ʋəsət̪i"
+        bases: [{ word: "चिकित्सको", base: "चिकित्सक", reading: "cikitsaka" }, { word: "गृहे", base: "गृह", reading: "gṛha" }, { word: "वसति", base: "वस्", reading: "vas" }]
+      - target: "चिकित्सकं वयं पश्यामः"
+        reading: "cikitsakaṃ vayaṃ paśyāmaḥ"
+        ipa: "tʃikit̪səkəm ʋəjəm pəʃjaːməh"
+        bases: [{ word: "चिकित्सकं", base: "चिकित्सक", reading: "cikitsaka" }, { word: "वयं", base: "अहम्", reading: "aham" }, { word: "पश्यामः", base: "पश्", reading: "paś" }]
+  - id: "sa-7072"
+    target: "उदावर्तः"
+    reading: "udāvartaḥ"
+    ipa: "ud̪aːʋərt̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "उदावर्तः", base: "उदावर्त", reading: "udāvarta" }]
+    examples:
+      - target: "उदावर्तो भवति"
+        reading: "udāvarto bhavati"
+        ipa: "ud̪aːʋərt̪oː bʱəʋət̪i"
+        bases: [{ word: "उदावर्तो", base: "उदावर्त", reading: "udāvarta" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "उदावर्तं त्वं जानासि"
+        reading: "udāvartaṃ tvaṃ jānāsi"
+        ipa: "ud̪aːʋərt̪əm t̪ʋəm dʒaːnaːsi"
+        bases: [{ word: "उदावर्तं", base: "उदावर्त", reading: "udāvarta" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "जानासि", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-7073"
+    target: "विकारः"
+    reading: "vikāraḥ"
+    ipa: "ʋikaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "विकारः", base: "विकार", reading: "vikāra" }]
+    examples:
+      - target: "विकारो देहे तिष्ठति"
+        reading: "vikāro dehe tiṣṭhati"
+        ipa: "ʋikaːroː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "विकारो", base: "विकार", reading: "vikāra" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "विकारं पश्यति वैद्यः"
+        reading: "vikāraṃ paśyati vaidyaḥ"
+        ipa: "ʋikaːrəm pəʃjət̪i ʋəid̪jəh"
+        bases: [{ word: "विकारं", base: "विकार", reading: "vikāra" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7074"
+    target: "अस्वास्थ्यम्"
+    reading: "asvāsthyam"
+    ipa: "əsʋaːst̪ʰjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "अस्वास्थ्यम्", base: "अस्वास्थ्य", reading: "asvāsthya" }]
+    examples:
+      - target: "अस्वास्थ्यं देहे तिष्ठति"
+        reading: "asvāsthyaṃ dehe tiṣṭhati"
+        ipa: "əsʋaːst̪ʰjəm d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "अस्वास्थ्यं", base: "अस्वास्थ्य", reading: "asvāsthya" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "अस्वास्थ्यं ते जानन्ति"
+        reading: "asvāsthyaṃ te jānanti"
+        ipa: "əsʋaːst̪ʰjəm t̪eː dʒaːnənt̪i"
+        bases: [{ word: "अस्वास्थ्यं", base: "अस्वास्थ्य", reading: "asvāsthya" }, { word: "ते", base: "तद्", reading: "tad" }, { word: "जानन्ति", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-7075"
+    target: "उपद्रवः"
+    reading: "upadravaḥ"
+    ipa: "upəd̪rəʋəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "उपद्रवः", base: "उपद्रव", reading: "upadrava" }]
+    examples:
+      - target: "उपद्रवो भवति"
+        reading: "upadravo bhavati"
+        ipa: "upəd̪rəʋoː bʱəʋət̪i"
+        bases: [{ word: "उपद्रवो", base: "उपद्रव", reading: "upadrava" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "उपद्रवं वयं जानीमः"
+        reading: "upadravaṃ vayaṃ jānīmaḥ"
+        ipa: "upəd̪rəʋəm ʋəjəm dʒaːniːməh"
+        bases: [{ word: "उपद्रवं", base: "उपद्रव", reading: "upadrava" }, { word: "वयं", base: "अहम्", reading: "aham" }, { word: "जानीमः", base: "ज्ञा", reading: "jñā" }]
+  - id: "sa-7076"
+    target: "स्फोटः"
+    reading: "sphoṭaḥ"
+    ipa: "spʰoːʈəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "स्फोटः", base: "स्फोट", reading: "sphoṭa" }]
+    examples:
+      - target: "स्फोटो देहे तिष्ठति"
+        reading: "sphoṭo dehe tiṣṭhati"
+        ipa: "spʰoːʈoː d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "स्फोटो", base: "स्फोट", reading: "sphoṭa" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "स्फोटं पश्यति वैद्यः"
+        reading: "sphoṭaṃ paśyati vaidyaḥ"
+        ipa: "spʰoːʈəm pəʃjət̪i ʋəid̪jəh"
+        bases: [{ word: "स्फोटं", base: "स्फोट", reading: "sphoṭa" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]
+  - id: "sa-7077"
+    target: "पूयम्"
+    reading: "pūyam"
+    ipa: "puːjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "पूयम्", base: "पूय", reading: "pūya" }]
+    examples:
+      - target: "पूयं देहे तिष्ठति"
+        reading: "pūyaṃ dehe tiṣṭhati"
+        ipa: "puːjəm d̪eːɦeː t̪iʂʈʰət̪i"
+        bases: [{ word: "पूयं", base: "पूय", reading: "pūya" }, { word: "देहे", base: "देह", reading: "deha" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+      - target: "पूयं सा पश्यति"
+        reading: "pūyaṃ sā paśyati"
+        ipa: "puːjəm saː pəʃjət̪i"
+        bases: [{ word: "पूयं", base: "पूय", reading: "pūya" }, { word: "सा", base: "तद्", reading: "tad" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+  - id: "sa-7078"
+    target: "क्वाथः"
+    reading: "kvāthaḥ"
+    ipa: "kʋaːt̪ʰəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }, { id: "n3", kind: "note" }]
+    bases: [{ word: "क्वाथः", base: "क्वाथ", reading: "kvātha" }]
+    examples:
+      - target: "क्वाथो भवति"
+        reading: "kvātho bhavati"
+        ipa: "kʋaːt̪ʰoː bʱəʋət̪i"
+        bases: [{ word: "क्वाथो", base: "क्वाथ", reading: "kvātha" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "क्वाथं ते पश्यन्ति"
+        reading: "kvāthaṃ te paśyanti"
+        ipa: "kʋaːt̪ʰəm t̪eː pəʃjənt̪i"
+        bases: [{ word: "क्वाथं", base: "क्वाथ", reading: "kvātha" }, { word: "ते", base: "तद्", reading: "tad" }, { word: "पश्यन्ति", base: "पश्", reading: "paś" }]
+  - id: "sa-7079"
+    target: "स्वेदनम्"
+    reading: "svedanam"
+    ipa: "sʋeːd̪ənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["health"]
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "note" }]
+    bases: [{ word: "स्वेदनम्", base: "स्वेदन", reading: "svedana" }]
+    examples:
+      - target: "स्वेदनं नगरे भवति"
+        reading: "svedanaṃ nagare bhavati"
+        ipa: "sʋeːd̪ənəm nəɡəreː bʱəʋət̪i"
+        bases: [{ word: "स्वेदनं", base: "स्वेदन", reading: "svedana" }, { word: "नगरे", base: "नगर", reading: "nagara" }, { word: "भवति", base: "भू", reading: "bhū" }]
+      - target: "स्वेदनं करोति वैद्यः"
+        reading: "svedanaṃ karoti vaidyaḥ"
+        ipa: "sʋeːd̪ənəm kəroːt̪i ʋəid̪jəh"
+        bases: [{ word: "स्वेदनं", base: "स्वेदन", reading: "svedana" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "वैद्यः", base: "वैद्य", reading: "vaidya" }]

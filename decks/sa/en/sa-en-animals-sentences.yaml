@@ -1,0 +1,60 @@
+schema: 1
+id: "sa-en-animals-sentences"
+kind: "layer"
+core: "sa-animals-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about animals"
+description: "Short sentences about animals, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3210":
+    native: "The lion sees the elephant and the deer runs."
+    bases: { "सिंहो": "lion", "गजं": "elephant", "पश्यति": "to see (sees)", "मृगो": "deer", "धावति": "to run (runs)" }
+    confusables: { "w1": { why: "Tiger, not lion: व्याघ्रः (vyāghraḥ) means tiger." }, "w2": { why: "Camel, not elephant: उष्ट्रः (uṣṭraḥ) means camel." }, "w3": { why: "To walk, not to run: चल् (cal) means to walk." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. सिंहः (siṃhaḥ) is written सिंहो (siṃho) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of गजम् (gajam) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). गजम् (gajam) is written गजं (gajaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of पश्यति (paśyati) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i). मृगः (mṛgaḥ) is written मृगो (mṛgo), for the same reason, before धावति (dhāvati).", "n2": "The two halves are set side by side without च (ca): the pause between them does the joining." }
+  "sa-3211":
+    native: "Where does the tiger stand and where does the cat walk?"
+    bases: { "तिष्ठति": "to stand (stands)", "चलति": "to move (moves)" }
+    confusables: { "w1": { why: "Lion, not tiger: सिंहः (siṃhaḥ) means lion." }, "w2": { why: "Dog, not cat: कुक्कुरः (kukkuraḥ) means dog." }, "w3": { why: "To dwell, not to stand: वस् (vas) means to dwell." } }
+    notes: { "n1": "तिष्ठति (tiṣṭhati) is the present of स्था (sthā), which changes its stem to तिष्ठ (tiṣṭha)." }
+  "sa-3212":
+    native: "The mouse does not drink water and the cat drinks milk."
+    bases: { "मूषको": "mouse", "जलं": "water", "पिबति": "to drink (drinks)", "क्षीरं": "milk" }
+    confusables: { "w1": { why: "Hare, not mouse: शशकः (śaśakaḥ) means hare." }, "w2": { why: "Dog, not cat: कुक्कुरः (kukkuraḥ) means dog." }, "w3": { why: "To eat, not to drink: खाद् (khād) means to eat." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. मूषकः (mūṣakaḥ) is written मूषको (mūṣako) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of जलम् (jalam) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). जलम् (jalam) is written जलं (jalaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of न (na) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). क्षीरम् (kṣīram) is written क्षीरं (kṣīraṃ), for the same reason, before पिबति (pibati). The labial keeps म् (m) in Whitney 213 a, but the anusvāra sign is the usual writing (Whitney 213 i).", "n2": "न (na) stands right before the verb it denies: न (na) पिबति (pibati) means does not drink." }
+  "sa-3213":
+    native: "The monkey eats a pomegranate and the peacock dances."
+    bases: { "वानरो": "monkey", "दाडिमं": "pomegranate", "खादति": "to eat (eats)", "मयूरो": "peacock", "नृत्यति": "to dance (dances)" }
+    confusables: { "w1": { why: "Swan, not peacock: हंसः (haṃsaḥ) means swan." }, "w2": { why: "Parrot, not monkey: शुकः (śukaḥ) means parrot." }, "w3": { why: "To cry, not to dance: रुद् (rud) means to cry." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. वानरः (vānaraḥ) is written वानरो (vānaro) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of दाडिमम् (dāḍimam) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). दाडिमम् (dāḍimam) is written दाडिमं (dāḍimaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of खादति (khādati) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). मयूरः (mayūraḥ) is written मयूरो (mayūro), for the same reason, before नृत्यति (nṛtyati).", "n2": "नृत्यति (nṛtyati) is the present of नृत् (nṛt): the stem takes य (ya)." }
+  "sa-3214":
+    native: "The swan moves on the water and the crocodile lives in the water."
+    bases: { "हंसो": "swan", "जले": "in the water", "चलति": "to move (moves)", "मकरो": "crocodile", "वसति": "to dwell (lives)" }
+    confusables: { "w1": { why: "Frog, not crocodile: मण्डूकः (maṇḍūkaḥ) means frog." }, "w2": { why: "Tortoise, not swan: कूर्मः (kūrmaḥ) means tortoise." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. हंसः (haṃsaḥ) is written हंसो (haṃso) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of जले (jale) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). मकरः (makaraḥ) is written मकरो (makaro), for the same reason, before जले (jale).", "n2": "जले (jale) is the locative case of जलम् (jalam): it says where." }
+  "sa-3215":
+    native: "The goat gives milk and the ram does not."
+    bases: { "क्षीरं": "milk", "ददाति": "to give (gives)", "मेषो": "ram" }
+    confusables: { "w1": { why: "Bull, not ram: वृषभः (vṛṣabhaḥ) means bull." }, "w2": { why: "Dog, not goat: कुक्कुरः (kukkuraḥ) means dog." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. क्षीरम् (kṣīram) is written क्षीरं (kṣīraṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of ददाति (dadāti) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). मेषः (meṣaḥ) is written मेषो (meṣo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of न (na) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)).", "n2": "A verb does not show gender: ददाति (dadāti) is the same for the goat, a feminine word, and the ram, a masculine word." }
+  "sa-3216":
+    native: "The bee gets honey and the ant gets molasses."
+    bases: { "भ्रमरो": "bee", "लभते": "to get (gets)", "गुडं": "molasses" }
+    confusables: { "w1": { why: "Brother, not bee: भ्राता (bhrātā) means brother." }, "w2": { why: "Father, not ant: पिता (pitā) means father." }, "w3": { why: "To seize, not to take: ग्रह् (grah) means to seize." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. भ्रमरः (bhramaraḥ) is written भ्रमरो (bhramaro) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of मधु (madhu) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). गुडम् (guḍam) is written गुडं (guḍaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of लभते (labhate) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "लभते (labhate) takes the middle ending ते (te): the middle voice is taught in its own lesson.", "n3": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3217":
+    native: "The parrot always talks and the crow always eats."
+    bases: { "शुको": "parrot", "वदति": "to speak (speaks)", "खादति": "to eat (eats)" }
+    confusables: { "w1": { why: "Sometimes, not always: कदाचित् (kadācit) means sometimes." }, "w2": { why: "To cook, not to eat: पच् (pac) means to cook." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. शुकः (śukaḥ) is written शुको (śuko) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of वदति (vadati) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)).", "n2": "सदा (sadā) is said twice, once before each half, and so is understood twice in English." }
+  "sa-3218":
+    native: "Where does the bear live and where does the monkey live?"
+    bases: { "वसति": "to dwell (lives)" }
+    confusables: { "w1": { why: "Deer, not bear: मृगः (mṛgaḥ) means deer." }, "w2": { why: "Parrot, not monkey: शुकः (śukaḥ) means parrot." }, "w3": { why: "To stand, not to dwell: स्था (sthā) means to stand." } }
+    notes: { "n1": "वसति (vasati) means to live in a place, to dwell; it asks for the place with कुत्र (kutra)." }
+  "sa-3219":
+    native: "The tortoise does not run and the hare runs."
+    bases: { "कूर्मो": "tortoise", "धावति": "to run (runs)", "शशको": "hare" }
+    confusables: { "w1": { why: "Frog, not tortoise: मण्डूकः (maṇḍūkaḥ) means frog." }, "w2": { why: "Mouse, not hare: मूषकः (mūṣakaḥ) means mouse." }, "w3": { why: "To walk, not to run: चल् (cal) means to walk." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. कूर्मः (kūrmaḥ) is written कूर्मो (kūrmo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of न (na) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). शशकः (śaśakaḥ) is written शशको (śaśako), for the same reason, before धावति (dhāvati).", "n2": "न (na) stands right before the verb it denies: न (na) धावति (dhāvati) means does not run." }

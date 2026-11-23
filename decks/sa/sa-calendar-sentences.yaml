@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-calendar-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3620"
+    target: "संवत्सरे द्वादश मासा भवन्ति."
+    reading: "saṃvatsare dvādaśa māsā bhavanti."
+    ipa: "sə̃ʋət̪səreː d̪ʋaːd̪əʃə maːsaː bʱəʋənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "संवत्सरे", base: "संवत्सरः", reading: "saṃvatsaraḥ" }, { word: "द्वादश", ref: "sa-1060" }, { word: "मासा", base: "मासः", reading: "māsaḥ" }, { word: "भवन्ति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5207", kind: "word" }, { id: "w2", ref: "sa-1058", kind: "word" }, { id: "w3", ref: "sa-1061", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3621"
+    target: "सप्ताहे सप्त दिनानि भवन्ति."
+    reading: "saptāhe sapta dināni bhavanti."
+    ipa: "səpt̪aːɦeː səpt̪ə d̪inaːni bʱəʋənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सप्ताहे", base: "सप्ताहः", reading: "saptāhaḥ" }, { word: "सप्त", ref: "sa-1055" }, { word: "दिनानि", base: "दिनम्", reading: "dinam" }, { word: "भवन्ति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5202", kind: "word" }, { id: "w2", ref: "sa-1056", kind: "word" }, { id: "w3", ref: "sa-1054", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "sa-3622"
+    target: "यदा चन्द्रः पूर्णो भवति तदा पूर्णिमा भवति."
+    reading: "yadā candraḥ pūrṇo bhavati tadā pūrṇimā bhavati."
+    ipa: "jəd̪aː tʃənd̪rəh puːrɳoː bʱəʋət̪i t̪əd̪aː puːrɳimaː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "यदा", ref: "sa-1085" }, { word: "चन्द्रः", ref: "sa-5013" }, { word: "पूर्णो", base: "पूर्णः", reading: "pūrṇaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "तदा", ref: "sa-1084" }, { word: "पूर्णिमा", ref: "sa-5212" }]
+    confusables: [{ id: "w1", ref: "sa-5213", kind: "word" }, { id: "w2", ref: "sa-1507", kind: "word" }, { id: "w3", ref: "sa-5229", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3623"
+    target: "सूर्यास्तस्य पश्चाद् रजनी भवति."
+    reading: "sūryāstasya paścād rajanī bhavati."
+    ipa: "suːrjaːst̪əsjə pəʃtʃaːd̪ rədʒəniː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सूर्यास्तस्य", base: "सूर्यास्तः", reading: "sūryāstaḥ" }, { word: "पश्चाद्", base: "पश्चात्", reading: "paścāt" }, { word: "रजनी", ref: "sa-5206" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5216", kind: "word" }, { id: "w2", ref: "sa-5214", kind: "word" }, { id: "w3", ref: "sa-5204", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3624"
+    target: "उदये सूर्यो रक्तो भवति."
+    reading: "udaye sūryo rakto bhavati."
+    ipa: "ud̪əjeː suːrjoː rəkt̪oː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "उदये", base: "उदयः", reading: "udayaḥ" }, { word: "सूर्यो", base: "सूर्यः", reading: "sūryaḥ" }, { word: "रक्तो", base: "रक्तः", reading: "raktaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5230", kind: "word" }, { id: "w2", ref: "sa-1517", kind: "word" }, { id: "w3", ref: "sa-1519", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3625"
+    target: "मध्याह्ने सूर्यो बहु तपति."
+    reading: "madhyāhne sūryo bahu tapati."
+    ipa: "məd̪ʱjaːɦneː suːrjoː bəɦu t̪əpət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "मध्याह्ने", base: "मध्याह्नः", reading: "madhyāhnaḥ" }, { word: "सूर्यो", base: "सूर्यः", reading: "sūryaḥ" }, { word: "बहु", ref: "sa-1096" }, { word: "तपति", base: "तप्", reading: "tap" }]
+    confusables: [{ id: "w1", ref: "sa-5216", kind: "word" }, { id: "w2", ref: "sa-5230", kind: "word" }, { id: "w3", ref: "sa-1500", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3626"
+    target: "पौषे माघे च शीतं भवति."
+    reading: "pauṣe māghe ca śītaṃ bhavati."
+    ipa: "pəuʂeː maːɡʱeː tʃə ʃiːt̪əm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पौषे", base: "पौषः", reading: "pauṣaḥ" }, { word: "माघे", base: "माघः", reading: "māghaḥ" }, { word: "च", ref: "sa-1104" }, { word: "शीतं", base: "शीतः", reading: "śītaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5226", kind: "word" }, { id: "w2", ref: "sa-5219", kind: "word" }, { id: "w3", ref: "sa-1531", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3627"
+    target: "चैत्रे वैशाखे च वसन्तो भवति."
+    reading: "caitre vaiśākhe ca vasanto bhavati."
+    ipa: "tʃəit̪reː ʋəiʃaːkʰeː tʃə ʋəsənt̪oː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "चैत्रे", base: "चैत्रः", reading: "caitraḥ" }, { word: "वैशाखे", base: "वैशाखः", reading: "vaiśākhaḥ" }, { word: "च", ref: "sa-1104" }, { word: "वसन्तो", base: "वसन्तः", reading: "vasantaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5222", kind: "word" }, { id: "w2", ref: "sa-5101", kind: "word" }, { id: "w3", ref: "sa-5102", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3628"
+    target: "भाद्रपदे वर्षा भवति फाल्गुने न भवति."
+    reading: "bhādrapade varṣā bhavati phālgune na bhavati."
+    ipa: "bʱaːd̪rəpəd̪eː ʋərʂaː bʱəʋət̪i pʰaːlɡuneː nə bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "भाद्रपदे", base: "भाद्रपदः", reading: "bhādrapadaḥ" }, { word: "वर्षा", ref: "sa-1637" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "फाल्गुने", base: "फाल्गुनः", reading: "phālgunaḥ" }, { word: "न", ref: "sa-0026" }]
+    confusables: [{ id: "w1", ref: "sa-5221", kind: "word" }, { id: "w2", ref: "sa-5222", kind: "word" }, { id: "w3", ref: "sa-5223", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "sa-3629"
+    target: "कालो न कदाचित् तिष्ठति चलति."
+    reading: "kālo na kadācit tiṣṭhati calati."
+    ipa: "kaːloː nə kəd̪aːtʃit̪ t̪iʂʈʰət̪i tʃələt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कालो", base: "कालः", reading: "kālaḥ" }, { word: "न", ref: "sa-0026" }, { word: "कदाचित्", ref: "sa-1087" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }, { word: "चलति", base: "चल्", reading: "cal" }]
+    confusables: [{ id: "w1", ref: "sa-5209", kind: "word" }, { id: "w2", ref: "sa-5208", kind: "word" }, { id: "w3", ref: "sa-1086", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]

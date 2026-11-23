@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-abstract-words-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-6800"
+    target: "सदा कारणात् कार्यं भवति."
+    reading: "sadā kāraṇāt kāryaṃ bhavati."
+    ipa: "səd̪aː kaːrəɳaːt̪ kaːrjəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सदा", ref: "sa-1086" }, { word: "कारणात्", base: "कारणम्", reading: "kāraṇam" }, { word: "कार्यं", base: "कार्यम्", reading: "kāryam" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-11581", kind: "word" }, { id: "w2", ref: "sa-11546", kind: "word" }, { id: "w3", ref: "sa-11524", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-6801"
+    target: "अविद्यया संसारे भ्रमो भवति."
+    reading: "avidyayā saṃsāre bhramo bhavati."
+    ipa: "əʋid̪jəjaː sə̃saːreː bʱrəmoː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अविद्यया", base: "अविद्या", reading: "avidyā" }, { word: "संसारे", base: "संसारः", reading: "saṃsāraḥ" }, { word: "भ्रमो", base: "भ्रमः", reading: "bhramaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5818", kind: "word" }, { id: "w2", ref: "sa-11531", kind: "word" }, { id: "w3", ref: "sa-11520", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-6802"
+    target: "योगेन चित्तं शान्तं भवति."
+    reading: "yogena cittaṃ śāntaṃ bhavati."
+    ipa: "joːɡeːnə tʃit̪t̪əm ʃaːnt̪əm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "योगेन", base: "योगः", reading: "yogaḥ" }, { word: "चित्तं", base: "चित्तम्", reading: "cittam" }, { word: "शान्तं", base: "शान्तः", reading: "śāntaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-11536", kind: "word" }, { id: "w2", ref: "sa-11514", kind: "word" }, { id: "w3", ref: "sa-7226", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-6803"
+    target: "मननेन ज्ञानं स्थिरं भवति."
+    reading: "mananena jñānaṃ sthiraṃ bhavati."
+    ipa: "mənəneːnə dʒɲaːnəm st̪ʰirəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "मननेन", base: "मननम्", reading: "mananam" }, { word: "ज्ञानं", base: "ज्ञानम्", reading: "jñānam" }, { word: "स्थिरं", base: "स्थिरः", reading: "sthiraḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-11543", kind: "word" }, { id: "w2", ref: "sa-7512", kind: "word" }, { id: "w3", ref: "sa-7438", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-6804"
+    target: "सृष्टेः पश्चाद् विनाशो भवति."
+    reading: "sṛṣṭeḥ paścād vināśo bhavati."
+    ipa: "sr̩ʂʈeːh pəʃtʃaːd̪ ʋinaːʃoː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सृष्टेः", base: "सृष्टिः", reading: "sṛṣṭiḥ" }, { word: "पश्चाद्", base: "पश्चात्", reading: "paścāt" }, { word: "विनाशो", base: "विनाशः", reading: "vināśaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-11542", kind: "word" }, { id: "w2", ref: "sa-9339", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-6805"
+    target: "नित्यं साधनेन सिद्धिर् भवति."
+    reading: "nityaṃ sādhanena siddhir bhavati."
+    ipa: "nit̪jəm saːd̪ʱəneːnə sid̪d̪ʱir bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "नित्यं", base: "नित्यम्", reading: "nityam" }, { word: "साधनेन", base: "साधनम्", reading: "sādhanam" }, { word: "सिद्धिर्", base: "सिद्धिः", reading: "siddhiḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-11538", kind: "word" }, { id: "w2", ref: "sa-11539", kind: "word" }, { id: "w3", ref: "sa-11530", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-6806"
+    target: "आत्मनो मुक्तिर् ज्ञानेन भवति."
+    reading: "ātmano muktir jñānena bhavati."
+    ipa: "aːt̪mənoː mukt̪ir dʒɲaːneːnə bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "आत्मनो", base: "आत्मन्", reading: "ātman" }, { word: "मुक्तिर्", base: "मुक्तिः", reading: "muktiḥ" }, { word: "ज्ञानेन", base: "ज्ञानम्", reading: "jñānam" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-11518", kind: "word" }, { id: "w2", ref: "sa-11550", kind: "word" }, { id: "w3", ref: "sa-11512", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-6807"
+    target: "प्रकृतौ सत्त्वं गुणो भवति."
+    reading: "prakṛtau sattvaṃ guṇo bhavati."
+    ipa: "prəkr̩t̪əu sət̪t̪ʋəm ɡuɳoː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "प्रकृतौ", base: "प्रकृतिः", reading: "prakṛtiḥ" }, { word: "सत्त्वं", base: "सत्त्वम्", reading: "sattvam" }, { word: "गुणो", base: "गुणः", reading: "guṇaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-11521", kind: "word" }, { id: "w2", ref: "sa-11545", kind: "word" }, { id: "w3", ref: "sa-5824", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-6808"
+    target: "आचार्यो रहस्यं बालकाय कथयति."
+    reading: "ācāryo rahasyaṃ bālakāya kathayati."
+    ipa: "aːtʃaːrjoː rəɦəsjəm baːləkaːjə kət̪ʰəjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "आचार्यो", base: "आचार्यः", reading: "ācāryaḥ" }, { word: "रहस्यं", base: "रहस्यम्", reading: "rahasyam" }, { word: "बालकाय", base: "बालकः", reading: "bālakaḥ" }, { word: "कथयति", base: "कथ्", reading: "kath" }]
+    confusables: [{ id: "w1", ref: "sa-9031", kind: "word" }, { id: "w2", ref: "sa-11570", kind: "word" }, { id: "w3", ref: "sa-2108", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-6809"
+    target: "भक्त्या चित्तं प्रसन्नं भवति."
+    reading: "bhaktyā cittaṃ prasannaṃ bhavati."
+    ipa: "bʱəkt̪jaː tʃit̪t̪əm prəsənnəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "भक्त्या", base: "भक्तिः", reading: "bhaktiḥ" }, { word: "चित्तं", base: "चित्तम्", reading: "cittam" }, { word: "प्रसन्नं", base: "प्रसन्नः", reading: "prasannaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-5833", kind: "word" }, { id: "w2", ref: "sa-11514", kind: "word" }, { id: "w3", ref: "sa-7224", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]

@@ -1,0 +1,33 @@
+# How Classical Sanskrit readings are written: IAST, the scheme the texts a
+# learner meets are printed in, and the one the Vedic course uses. Each group
+# lists spellings a learner may type for the same sound; the first is the one
+# the decks use. Sources: Wikipedia, IAST (the comparison with ISO 15919),
+# read 2026-11-16. See "Romanisation" in wiki/Deck-Format.md.
+schema: 1
+kind: romanisation
+id: sa-romanisation
+language: sa
+scheme: "IAST, the International Alphabet of Sanskrit Transliteration, spelled letter for letter as the Devanagari is written: ā ī ū for the long vowels, ṛ ṝ ḷ for the syllabic r, long r and l, e o ai au (e and o are always long in Sanskrit, so they carry no mark), ṭ ṭh ḍ ḍh ṇ for the retroflex row and t th d dh n for the row on the teeth, ṅ and ñ for the nasals of the first two rows, ś for श and ṣ for ष kept apart, ṃ for the anusvara and ḥ for the visarga, and an apostrophe for the avagraha. Every inherent a is written, the last one of a word included (rāmaḥ, gacchati), because Sanskrit says it. IAST is close to ISO 15919 and differs from it in four places: ṃ for ISO ṁ, ṛ ṝ ḷ for ISO r̥ r̥̄ l̥, and e o for ISO ē ō. Hindi's schwa deletion does not apply to Sanskrit."
+standard: "IAST"
+# How a reading's letters are typed, read from the left, longest first:
+# each reading is spelled so before an answer is compared with it.
+typed:
+  - ["jñ", "jn"]
+  - ["ṅ", "ng"]
+  - ["ñ", "ny"]
+  - ["cch", "chchh"]
+  - ["ch", "chh"]
+  - ["c", "ch"]
+  - ["ś", "sh"]
+  - ["ṣ", "sh"]
+  - ["ṃ", "m"]
+  - ["ṛ", "ri"]
+  - ["ṝ", "ri"]
+  - ["ḷ", "li"]
+equivalents:
+  - ["a", "aa"]
+  - ["i", "ee", "ii"]
+  - ["u", "oo", "uu"]
+  - ["v", "w"]
+  - ["ksh", "x"]
+  - ["au", "ou"]

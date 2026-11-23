@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-things-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3250"
+    target: "सखा ग्रन्थं पठति कलमेन लिखति."
+    reading: "sakhā granthaṃ paṭhati kalamena likhati."
+    ipa: "səkʰaː ɡrənt̪ʰəm pəʈʰət̪i kələmeːnə likʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सखा", ref: "sa-1038" }, { word: "ग्रन्थं", base: "ग्रन्थः", reading: "granthaḥ" }, { word: "पठति", base: "पठ्", reading: "paṭh" }, { word: "कलमेन", base: "कलमः", reading: "kalamaḥ" }, { word: "लिखति", base: "लिख्", reading: "likh" }]
+    confusables: [{ id: "w1", ref: "sa-1798", kind: "word" }, { id: "w2", ref: "sa-2122", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3251"
+    target: "घटो जलेन पूर्णो भवति पात्रं च रिक्तं भवति."
+    reading: "ghaṭo jalena pūrṇo bhavati pātraṃ ca riktaṃ bhavati."
+    ipa: "ɡʱəʈoː dʒəleːnə puːrɳoː bʱəʋət̪i paːt̪rəm tʃə rikt̪əm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "घटो", base: "घटः", reading: "ghaṭaḥ" }, { word: "जलेन", base: "जलम्", reading: "jalam" }, { word: "पूर्णो", base: "पूर्णः", reading: "pūrṇaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "पात्रं", base: "पात्रम्", reading: "pātram" }, { word: "च", ref: "sa-1104" }, { word: "रिक्तं", base: "रिक्तः", reading: "riktaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1508", kind: "word" }, { id: "w2", ref: "sa-1798", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3252"
+    target: "सा नारी दर्पणे मुखं पश्यति."
+    reading: "sā nārī darpaṇe mukhaṃ paśyati."
+    ipa: "saː naːriː d̪ərpəɳeː mukʰəm pəʃjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सा", ref: "sa-1011" }, { word: "नारी", ref: "sa-1042" }, { word: "दर्पणे", base: "दर्पणः", reading: "darpaṇaḥ" }, { word: "मुखं", base: "मुखम्", reading: "mukham" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+    confusables: [{ id: "w1", ref: "sa-1570", kind: "word" }, { id: "w2", ref: "sa-1010", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3253"
+    target: "वर्षायां पिता छत्त्रं वहति."
+    reading: "varṣāyāṃ pitā chattraṃ vahati."
+    ipa: "ʋərʂaːjaːm pit̪aː tʃʰət̪t̪rəm ʋəɦət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वर्षायां", base: "वर्षा", reading: "varṣā" }, { word: "पिता", ref: "sa-1031" }, { word: "छत्त्रं", base: "छत्त्रम्", reading: "chattram" }, { word: "वहति", base: "वह्", reading: "vah" }]
+    confusables: [{ id: "w1", ref: "sa-1798", kind: "word" }, { id: "w2", ref: "sa-2016", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3254"
+    target: "अग्रे ध्वजो भवति पश्चात् पुष्पाणि भवन्ति."
+    reading: "agre dhvajo bhavati paścāt puṣpāṇi bhavanti."
+    ipa: "əɡreː d̪ʱʋədʒoː bʱəʋət̪i pəʃtʃaːt̪ puʂpaːɳi bʱəʋənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अग्रे", ref: "sa-1592" }, { word: "ध्वजो", base: "ध्वजः", reading: "dhvajaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "पश्चात्", ref: "sa-1585" }, { word: "पुष्पाणि", base: "पुष्पम्", reading: "puṣpam" }, { word: "भवन्ति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-1799", kind: "word" }, { id: "w2", ref: "sa-1802", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3255"
+    target: "लोहं कठिनं भवति सुवर्णं च सुन्दरं भवति."
+    reading: "lohaṃ kaṭhinaṃ bhavati suvarṇaṃ ca sundaraṃ bhavati."
+    ipa: "loːɦəm kəʈʰinəm bʱəʋət̪i suʋərɳəm tʃə sund̪ərəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "लोहं", base: "लोहम्", reading: "loham" }, { word: "कठिनं", base: "कठिनः", reading: "kaṭhinaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "सुवर्णं", base: "सुवर्णम्", reading: "suvarṇam" }, { word: "च", ref: "sa-1104" }, { word: "सुन्दरं", base: "सुन्दरः", reading: "sundaraḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1802", kind: "word" }, { id: "w2", ref: "sa-1536", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3256"
+    target: "शस्त्रं पतति चक्रं च न चलति."
+    reading: "śastraṃ patati cakraṃ ca na calati."
+    ipa: "ʃəst̪rəm pət̪ət̪i tʃəkrəm tʃə nə tʃələt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "शस्त्रं", base: "शस्त्रम्", reading: "śastram" }, { word: "पतति", base: "पत्", reading: "pat" }, { word: "चक्रं", base: "चक्रम्", reading: "cakram" }, { word: "च", ref: "sa-1104" }, { word: "न", ref: "sa-0026" }, { word: "चलति", base: "चल्", reading: "cal" }]
+    confusables: [{ id: "w1", ref: "sa-1798", kind: "word" }, { id: "w2", ref: "sa-2009", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3257"
+    target: "माता वीणां वहति पिता मृदङ्गं वहति."
+    reading: "mātā vīṇāṃ vahati pitā mṛdaṅgaṃ vahati."
+    ipa: "maːt̪aː ʋiːɳaːm ʋəɦət̪i pit̪aː mr̩d̪əŋɡəm ʋəɦət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "माता", ref: "sa-1030" }, { word: "वीणां", base: "वीणा", reading: "vīṇā" }, { word: "वहति", base: "वह्", reading: "vah" }, { word: "पिता", ref: "sa-1031" }, { word: "मृदङ्गं", base: "मृदङ्गः", reading: "mṛdaṅgaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1807", kind: "word" }, { id: "w2", ref: "sa-1798", kind: "word" }, { id: "w3", ref: "sa-2016", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3258"
+    target: "तुलायां सुवर्णं भवति शिलायां च रत्नं भवति."
+    reading: "tulāyāṃ suvarṇaṃ bhavati śilāyāṃ ca ratnaṃ bhavati."
+    ipa: "t̪ulaːjaːm suʋərɳəm bʱəʋət̪i ʃilaːjaːm tʃə rət̪nəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "तुलायां", base: "तुला", reading: "tulā" }, { word: "सुवर्णं", base: "सुवर्णम्", reading: "suvarṇam" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "शिलायां", base: "शिला", reading: "śilā" }, { word: "च", ref: "sa-1104" }, { word: "रत्नं", base: "रत्नम्", reading: "ratnam" }]
+    confusables: [{ id: "w1", ref: "sa-1808", kind: "word" }, { id: "w2", ref: "sa-1813", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3259"
+    target: "पिता काष्ठेन गृहं करोति."
+    reading: "pitā kāṣṭhena gṛhaṃ karoti."
+    ipa: "pit̪aː kaːʂʈʰeːnə ɡr̩ɦəm kəroːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पिता", ref: "sa-1031" }, { word: "काष्ठेन", base: "काष्ठम्", reading: "kāṣṭham" }, { word: "गृहं", base: "गृहम्", reading: "gṛham" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+    confusables: [{ id: "w1", ref: "sa-1804", kind: "word" }, { id: "w2", ref: "sa-2109", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]

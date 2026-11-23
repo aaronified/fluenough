@@ -1,0 +1,464 @@
+schema: 1
+id: "sa-en-multiword-2"
+kind: "layer"
+core: "sa-multiword-2"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: other prefix and root pairs"
+license: "CC-BY-SA-4.0"
+description: "Thirty-three more verbs made of a prefix and a root: to sit down, forget, scold, flow and wake up. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "sa-8320":
+    native: "to go by, to pass by"
+    notes:
+      "u1": "The prefix अति (ati, over, beyond) is joined to एति (eti, goes) in अत्येति (atyeti). The verb takes the accusative of what is passed."
+      "n1": "अति (ati) and एति (eti) meet as अत्येति (atyeti): a final इ (i) before a vowel becomes य् (y) (Aṣṭādhyāyī 6.1.77, इको यणचि (iko yaṇaci))."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in पथिको (pathiko) नगरम् (nagaram)."
+    bases:
+      "अत्येति": "to go"
+    examples:
+      "अत्येति पथिको नगरम्":
+        native: "The traveller passes by the city."
+        bases:
+          "अत्येति": "to go"
+      "अत्येति सैनिको ग्रामम्":
+        native: "The soldier passes by the village."
+        bases:
+          "अत्येति": "to go"
+  "sa-8321":
+    native: "to stand over, to control, to occupy"
+    notes:
+      "u1": "The prefix अधि (adhi, over, above) is joined to तिष्ठति (tiṣṭhati, stands) in अधितिष्ठति (adhitiṣṭhati). The verb takes the accusative of what is occupied or ruled."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in नृपो (nṛpo) राज्यम् (rājyam)."
+    examples:
+      "अधितिष्ठति राजा सिंहासनम्":
+        native: "The king occupies the throne."
+      "अधितिष्ठति नृपो राज्यम्":
+        native: "The king governs the kingdom."
+  "sa-8322":
+    native: "to strip, to take off (clothes)"
+    notes:
+      "u1": "The prefix अप (apa, away, off) is joined to नह्यति (nahyati, binds) in अपनह्यति (apanahyati). The verb takes the accusative of the garment taken off."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in बालो (bālo) वस्त्रम् (vastram)."
+    examples:
+      "अपनह्यति बालो वस्त्रम्":
+        native: "The child takes off a garment."
+        bases:
+          "बालो": "child"
+      "अपनह्यति पिता पादत्राणम्":
+        native: "The father takes off his shoes."
+  "sa-8323":
+    native: "to push away, to remove, to drive off"
+    notes:
+      "u1": "The prefix अप (apa, away, off) is joined to ऊहति (ūhati, pushes) in अपोहति (apohati). The verb takes the accusative of what is removed."
+      "n1": "अप (apa) and ऊहति (ūhati) meet as अपोहति (apohati): अ (a) and ऊ (ū) become ओ (o) (Aṣṭādhyāyī 6.1.87, आद् गुणः (ād guṇaḥ))."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in वैद्यो (vaidyo) रोगम् (rogam)."
+    bases:
+      "अपोहति": "to push, to thrust"
+    examples:
+      "अपोहति वैद्यो रोगम्":
+        native: "The physician drives the disease away."
+        bases:
+          "अपोहति": "to push, to thrust"
+      "अपोहति जनो भयम्":
+        native: "A person drives fear away."
+        bases:
+          "अपोहति": "to push, to thrust"
+          "जनो": "person"
+  "sa-8324":
+    native: "to turn off"
+    notes:
+      "u1": "The prefix अव (ava, away, off) is joined to कर्षति (karṣati, draws) in अवकर्षति (avakarṣati). The verb takes the accusative of what is turned and the ablative of what it is turned from."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in कृषको (kṛṣako) बलीवर्दं (balīvardaṃ)."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in बलीवर्दं (balīvardaṃ) मार्गात् (mārgāt)."
+    examples:
+      "अवकर्षति कृषको बलीवर्दं मार्गात्":
+        native: "The farmer turns the ox off the road."
+        bases:
+          "मार्गात्": "road"
+      "अवकर्षति गोपालो वृषभं मार्गात्":
+        native: "The cowherd turns the bull off the road."
+        bases:
+          "मार्गात्": "road"
+  "sa-8325":
+    native: "to desire, to wish"
+    notes:
+      "u1": "The prefix आ (ā, towards) is joined to काङ्क्षते (kāṅkṣate, wishes) in आकाङ्क्षते (ākāṅkṣate). The verb takes the accusative of what is desired."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in शिष्यो (śiṣyo) ज्ञानम् (jñānam)."
+    examples:
+      "आकाङ्क्षते जनः सुखम्":
+        native: "A person desires happiness."
+        bases:
+          "जनः": "person"
+          "सुखम्": "happiness"
+      "आकाङ्क्षते शिष्यो ज्ञानम्":
+        native: "The pupil desires knowledge."
+  "sa-8326":
+    native: "to scold, to revile, to curse"
+    notes:
+      "u1": "The prefix आ (ā, towards) is joined to क्रोशति (krośati, cries) in आक्रोशति (ākrośati). The verb takes the accusative of the person scolded."
+    bases:
+      "आक्रोशति": "to cry out"
+    examples:
+      "आक्रोशति गुरुः शिष्यम्":
+        native: "The teacher scolds the pupil."
+        bases:
+          "आक्रोशति": "to cry out"
+      "आक्रोशति माता बालम्":
+        native: "The mother scolds the child."
+        bases:
+          "आक्रोशति": "to cry out"
+          "बालम्": "child"
+  "sa-8327":
+    native: "to point out, to challenge, to insult"
+    notes:
+      "u1": "The prefix आ (ā, towards) is joined to क्षिपति (kṣipati, throws) in आक्षिपति (ākṣipati). The verb takes the accusative of what is pointed out or of the one challenged."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in वैद्यो (vaidyo) दोषम् (doṣam)."
+    examples:
+      "आक्षिपति सैनिकः शत्रुम्":
+        native: "The soldier challenges the enemy."
+      "आक्षिपति वैद्यो दोषम्":
+        native: "The physician points out the fault."
+  "sa-8328":
+    native: "to behave, to act, to manage; also to approach"
+    notes:
+      "u1": "The prefix आ (ā, towards) is joined to चरति (carati, moves) in आचरति (ācarati). The verb takes the accusative of what is managed, or an adverb for the manner."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in नृपो (nṛpo) राज्यम् (rājyam)."
+    examples:
+      "आचरति नृपो राज्यम्":
+        native: "The king manages the kingdom."
+      "आचरति बालः शुभम्":
+        native: "The child behaves well."
+        bases:
+          "बालः": "child"
+          "शुभम्": "auspicious"
+  "sa-8329":
+    native: "to come near, to approach"
+    notes:
+      "u1": "The prefix आ (ā, towards) is joined to याति (yāti, goes) in आयाति (āyāti). The verb takes the accusative of the place one comes to."
+    examples:
+      "आयाति पिता गृहम्":
+        native: "The father comes near the house."
+      "आयाति गुरुर् नगरम्":
+        native: "The teacher comes to the city."
+  "sa-8330":
+    native: "to call"
+    notes:
+      "u1": "The prefix आ (ā, towards) is joined to ह्वयति (hvayati, calls) in आह्वयति (āhvayati). The verb takes the accusative of the person called."
+    examples:
+      "आह्वयति माता बालम्":
+        native: "The mother calls the child."
+        bases:
+          "बालम्": "child"
+      "आह्वयति राजा वैद्यम्":
+        native: "The king calls the physician."
+  "sa-8331":
+    native: "to be agitated, to start, to fear"
+    notes:
+      "u1": "The prefix उद् (ud, up) is joined to विजते (vijate, trembles) in उद्विजते (udvijate). The verb takes the ablative of what is feared."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in जनो (jano) रोगात् (rogāt)."
+    bases:
+      "उद्विजते": "to tremble"
+    examples:
+      "उद्विजते बालः सर्पात्":
+        native: "The child is afraid of the snake."
+        bases:
+          "उद्विजते": "to tremble"
+          "बालः": "child"
+      "उद्विजते जनो रोगात्":
+        native: "A person fears disease."
+        bases:
+          "उद्विजते": "to tremble"
+          "जनो": "person"
+  "sa-8332":
+    native: "to tie up, to bind to"
+    notes:
+      "u1": "The prefix उप (upa, near) is joined to नह्यति (nahyati, binds) in उपनह्यति (upanahyati). The verb takes the accusative of what is tied and the locative of what it is tied to."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in कृषको (kṛṣako) बलीवर्दं (balīvardaṃ)."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in बलीवर्दं (balīvardaṃ) स्तम्भे (stambhe)."
+    examples:
+      "उपनह्यति कृषको बलीवर्दं स्तम्भे":
+        native: "The farmer ties the ox to the post."
+      "उपनह्यति गोपालो धेनुं वृक्षे":
+        native: "The cowherd ties the cow to the tree."
+  "sa-8333":
+    native: "to propose (to put forward for discussion)"
+    notes:
+      "u1": "The prefixes उप (upa, near) and नि (ni, down) are joined to अस्यति (asyati, throws) in उपन्यस्यति (upanyasyati). The verb takes the accusative of what is proposed."
+      "n1": "उप (upa), नि (ni) and अस्यति (asyati) meet as उपन्यस्यति (upanyasyati): a final इ (i) before a vowel becomes य् (y) (Aṣṭādhyāyī 6.1.77, इको यणचि (iko yaṇaci))."
+    bases:
+      "उपन्यस्यति": "to throw"
+    examples:
+      "उपन्यस्यति मन्त्री कार्यम्":
+        native: "The minister proposes a matter."
+        bases:
+          "उपन्यस्यति": "to throw"
+      "उपन्यस्यति नृपः प्रश्नम्":
+        native: "The king proposes a question."
+        bases:
+          "उपन्यस्यति": "to throw"
+  "sa-8334":
+    native: "to sit down"
+    notes:
+      "u1": "The prefix उप (upa, near) is joined to विशति (viśati, enters) in उपविशति (upaviśati). The verb takes the locative of the seat or place."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in शिष्यो (śiṣyo) गृहे (gṛhe)."
+    examples:
+      "उपविशति नृपः सभायाम्":
+        native: "The king sits in the assembly."
+      "उपविशति शिष्यो गृहे":
+        native: "The pupil sits in the house."
+  "sa-8335":
+    native: "to shine forth, to be brilliant"
+    notes:
+      "u1": "The prefix उद् (ud, up) is joined to लसति (lasati, shines) in उल्लसति (ullasati). The verb takes the locative of the place where it shines."
+      "n1": "The द् (d) of उद् (ud) becomes ल् (l) before ल (la): उल्लसति (ullasati)."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in दीपो (dīpo) गृहे (gṛhe)."
+    bases:
+      "उल्लसति": "to shine"
+    examples:
+      "उल्लसति दीपो गृहे":
+        native: "The lamp shines in the house."
+        bases:
+          "उल्लसति": "to shine"
+      "उल्लसति सूर्यो गगने":
+        native: "The sun shines forth in the sky."
+        bases:
+          "उल्लसति": "to shine"
+  "sa-8336":
+    native: "to make lines on, to scratch, to engrave"
+    notes:
+      "u1": "The prefix उद् (ud, up) is joined to लिखति (likhati, writes) in उल्लिखति (ullikhati). The verb takes the locative of the surface."
+      "n1": "The द् (d) of उद् (ud) becomes ल् (l) before ल (la): उल्लिखति (ullikhati)."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in बालो (bālo) भूमौ (bhūmau)."
+    examples:
+      "उल्लिखति बालो भूमौ":
+        native: "The child draws lines on the ground."
+        bases:
+          "बालो": "child"
+      "उल्लिखति कविः पत्रे":
+        native: "The poet scratches lines on a leaf."
+        bases:
+          "पत्रे": "leaf"
+  "sa-8337":
+    native: "to perform, to accomplish"
+    notes:
+      "u1": "The prefix निस् (nis, out) is joined to वाहयति (vāhayati, makes carry) in निर्वाहयति (nirvāhayati). The verb takes the accusative of what is accomplished."
+      "n1": "निस् (nis) becomes निर् (nir) before the voiced व (va) (Aṣṭādhyāyī 8.2.66, ससजुषो रुः (sasajuṣo ruḥ))."
+    bases:
+      "निर्वाहयति": "to make carry"
+    examples:
+      "निर्वाहयति गुरुः कार्यम्":
+        native: "The teacher carries out the task."
+        bases:
+          "निर्वाहयति": "to make carry"
+      "निर्वाहयति राजा यज्ञम्":
+        native: "The king carries out the sacrifice."
+        bases:
+          "निर्वाहयति": "to make carry"
+  "sa-8338":
+    native: "to drive out"
+    notes:
+      "u1": "The prefix निस् (nis, out) is joined to कालयति (kālayati, drives) in निष्कालयति (niṣkālayati). The verb takes the accusative of the one driven out and the ablative of the place."
+      "n1": "The स् (s) of निस् (nis) becomes ष् (ṣ) before क (ka): निष्कालयति (niṣkālayati)."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in चोरं (coraṃ) नगरात् (nagarāt)."
+      "n3": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in गोपालो (gopālo) मृगं (mṛgaṃ)."
+    bases:
+      "निष्कालयति": "to drive"
+    examples:
+      "निष्कालयति राजा चोरं नगरात्":
+        native: "The king drives the thief out of the city."
+        bases:
+          "निष्कालयति": "to drive"
+      "निष्कालयति गोपालो मृगं वनात्":
+        native: "The cowherd drives the deer out of the forest."
+        bases:
+          "निष्कालयति": "to drive"
+  "sa-8339":
+    native: "to put aside, to avoid; to lead round"
+    notes:
+      "u1": "The prefix परि (pari, around) is joined to हरति (harati, takes) in परिहरति (pariharati). The verb takes the accusative of what is put aside."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in जनो (jano) दोषम् (doṣam)."
+    examples:
+      "परिहरति जनो दोषम्":
+        native: "A person puts faults aside."
+        bases:
+          "जनो": "person"
+      "परिहरति गुरुः क्रोधम्":
+        native: "The teacher puts anger aside."
+  "sa-8340":
+    native: "to speak out, to say, to name"
+    notes:
+      "u1": "The prefix प्र (pra, forwards) is joined to वदति (vadati, speaks) in प्रवदति (pravadati). The verb takes the accusative of what is said."
+    examples:
+      "प्रवदति गुरुर् वचनम्":
+        native: "The teacher speaks out a word."
+      "प्रवदति कविः काव्यम्":
+        native: "The poet recites a poem."
+  "sa-8341":
+    native: "to flow, to rush"
+    notes:
+      "u1": "The prefix प्र (pra, forwards) is joined to वहति (vahati, carries) in प्रवहति (pravahati). The verb takes the locative of the place where it flows."
+      "n1": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in जलं (jalaṃ) पर्वते (parvate)."
+    examples:
+      "प्रवहति नदी वने":
+        native: "The river flows in the forest."
+      "प्रवहति जलं पर्वते":
+        native: "Water flows on the mountain."
+  "sa-8342":
+    native: "to turn out"
+    notes:
+      "u1": "The prefix प्र (pra, forwards) is joined to पद्यते (padyate, goes) in प्रपद्यते (prapadyate). The verb takes a predicate adjective for the result."
+      "n1": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in कार्यं (kāryaṃ) शुभम् (śubham)."
+    examples:
+      "प्रपद्यते कार्यं शुभम्":
+        native: "The task turns out well."
+        bases:
+          "शुभम्": "auspicious"
+      "प्रपद्यते फलं मधुरम्":
+        native: "The fruit turns out sweet."
+        bases:
+          "फलं": "fruit"
+          "मधुरम्": "sweet"
+  "sa-8343":
+    native: "to cause to be obtained, to make reach"
+    notes:
+      "u1": "The prefix प्र (pra, forwards) is joined to आपयति (āpayati, makes obtain) in प्रापयति (prāpayati). The verb takes two accusatives for the person and the thing."
+      "n1": "प्र (pra) and आपयति (āpayati) meet as प्रापयति (prāpayati): अ (a) and आ (ā) become आ (ā) (Aṣṭādhyāyī 6.1.101, अकः सवर्णे दीर्घः (akaḥ savarṇe dīrghaḥ))."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in विप्रं (vipraṃ) धनम् (dhanam)."
+    bases:
+      "प्रापयति": "to cause to obtain"
+    examples:
+      "प्रापयति राजा विप्रं धनम्":
+        native: "The king makes the priest obtain wealth."
+        bases:
+          "प्रापयति": "to cause to obtain"
+          "विप्रं": "priest"
+      "प्रापयति गुरुः शिष्यं ज्ञानम्":
+        native: "The teacher makes the pupil obtain knowledge."
+        bases:
+          "प्रापयति": "to cause to obtain"
+  "sa-8344":
+    native: "to fly apart, to disperse, to break up"
+    notes:
+      "u1": "The prefix वि (vi, apart) is joined to घटते (ghaṭate, strives) in विघटते (vighaṭate). The verb takes the instrumental of the cause or the locative of the time."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in मेघो (megho) वायुना (vāyunā)."
+    examples:
+      "विघटते मेघो वायुना":
+        native: "The cloud disperses with the wind."
+      "विघटते सभा रात्रौ":
+        native: "The assembly breaks up at night."
+        bases:
+          "रात्रौ": "night"
+  "sa-8345":
+    native: "to reign, to rule, to excel"
+    notes:
+      "u1": "The prefix वि (vi, apart) is joined to राजति (rājati, shines) in विराजति (virājati). The verb takes the locative of the realm."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in सिंहो (siṃho) वने (vane)."
+    examples:
+      "विराजति राजा राज्ये":
+        native: "The king reigns in the kingdom."
+      "विराजति सिंहो वने":
+        native: "The lion rules in the forest."
+  "sa-8346":
+    native: "to grow, to thrive, to prosper"
+    notes:
+      "u1": "The prefix वि (vi, apart) is joined to वर्धते (vardhate, grows) in विवर्धते (vivardhate). The verb takes the locative of the place."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in वृक्षो (vṛkṣo) वने (vane)."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in धनं (dhanaṃ) गृहे (gṛhe)."
+    examples:
+      "विवर्धते वृक्षो वने":
+        native: "The tree grows in the forest."
+      "विवर्धते धनं गृहे":
+        native: "Wealth grows in the house."
+  "sa-8347":
+    native: "to rest, to relax"
+    notes:
+      "u1": "The prefix वि (vi, apart) is joined to श्रमते (śramate, tires) in विश्रमते (viśramate). The verb takes the locative of the place or time."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in पथिको (pathiko) गृहे (gṛhe)."
+    bases:
+      "विश्रमते": "to tire, to labour"
+    examples:
+      "विश्रमते पथिको गृहे":
+        native: "The traveller rests in the house."
+        bases:
+          "विश्रमते": "to tire, to labour"
+      "विश्रमते कृषको रात्रौ":
+        native: "The farmer rests at night."
+        bases:
+          "विश्रमते": "to tire, to labour"
+          "रात्रौ": "night"
+  "sa-8348":
+    native: "to forget"
+    notes:
+      "u1": "The prefix वि (vi, apart) is joined to स्मरति (smarati, remembers) in विस्मरति (vismarati). The verb takes the accusative of what is forgotten."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in जनो (jano) मित्रम् (mitram)."
+    examples:
+      "विस्मरति शिष्यः पाठम्":
+        native: "The pupil forgets the lesson."
+        bases:
+          "पाठम्": "lesson"
+      "विस्मरति जनो मित्रम्":
+        native: "A person forgets a friend."
+        bases:
+          "जनो": "person"
+  "sa-8349":
+    native: "to deliver over, to hand over, to consign; also to throw at, to hurl at"
+    notes:
+      "u1": "The prefix सम् (sam, together) is joined to अर्पयति (arpayati, makes go) in समर्पयति (samarpayati). The verb takes the accusative of what is handed over and the dative of the receiver."
+      "n1": "सम् (sam) and अर्पयति (arpayati) run together as समर्पयति (samarpayati): the म् (m) stands before a vowel."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in पुस्तकं (pustakaṃ) शिष्याय (śiṣyāya)."
+    bases:
+      "समर्पयति": "to cause to go, to throw"
+    examples:
+      "समर्पयति गुरुः पुस्तकं शिष्याय":
+        native: "The teacher hands the book over to the pupil."
+        bases:
+          "समर्पयति": "to cause to go, to throw"
+      "समर्पयति पिता पत्रं मित्राय":
+        native: "The father hands the letter over to a friend."
+        bases:
+          "समर्पयति": "to cause to go, to throw"
+          "पत्रं": "leaf"
+  "sa-8350":
+    native: "to unite, to gather, to prepare"
+    notes:
+      "u1": "The prefixes सम् (sam, together) and आ (ā, towards) are joined to कुरुते (kurute, does) in समाकुरुते (samākurute). The verb takes the accusative of what is gathered or prepared."
+      "n1": "सम् (sam), आ (ā) and कुरुते (kurute) run together as समाकुरुते (samākurute): the म् (m) stands before a vowel."
+      "n2": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in कृषको (kṛṣako) धान्यम् (dhānyam)."
+    examples:
+      "समाकुरुते कृषको धान्यम्":
+        native: "The farmer gathers grain."
+      "समाकुरुते माता भोजनम्":
+        native: "The mother prepares food."
+  "sa-8351":
+    native: "to wake up; to understand, to notice"
+    notes:
+      "u1": "The prefix सम् (sam, together) is joined to बुध्यते (budhyate, wakes) in सम्बुध्यते (sambudhyate). The verb takes the locative of the time or the accusative of what is understood."
+    examples:
+      "सम्बुध्यते बालः प्रभाते":
+        native: "The child wakes up at dawn."
+        bases:
+          "बालः": "child"
+      "सम्बुध्यते शिष्यः सत्यम्":
+        native: "The pupil perceives the truth."
+        bases:
+          "सत्यम्": "truth"
+  "sa-8352":
+    native: "to shut the eyes; to close up (as a flower)"
+    notes:
+      "u1": "The prefix सम् (sam, together) is joined to मीलति (mīlati, closes) in सम्मीलति (sammīlati). The verb takes the accusative of the eyes, or no object for a flower."
+      "n1": "A final अः (aḥ) before a voiced consonant is written ओ (o) (Aṣṭādhyāyī 6.1.114, हशि (haśi) च (ca)), as in बालो (bālo) नेत्रे (netre)."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ)), as in पुष्पं (puṣpaṃ) रात्रौ (rātrau)."
+    bases:
+      "सम्मीलति": "to close the eyes"
+    examples:
+      "सम्मीलति बालो नेत्रे":
+        native: "The child shuts his eyes."
+        bases:
+          "सम्मीलति": "to close the eyes"
+          "बालो": "child"
+      "सम्मीलति पुष्पं रात्रौ":
+        native: "The flower closes at night."
+        bases:
+          "सम्मीलति": "to close the eyes"
+          "रात्रौ": "night"

@@ -1,0 +1,60 @@
+schema: 1
+id: "sa-en-clothes-sentences"
+kind: "layer"
+core: "sa-clothes-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about clothes"
+description: "Short sentences about clothes and ornaments, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3240":
+    native: "The cloth is white and the rag is black."
+    bases: { "वस्त्रं": "cloth", "शुक्लं": "white", "भवति": "to be (is)", "कृष्णो": "black" }
+    confusables: { "w1": { why: "Garment, not cloth: वसनम् (vasanam) means garment." }, "w2": { why: "Red, not black: रक्तः (raktaḥ) means red." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. वस्त्रम् (vastram) is written वस्त्रं (vastraṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of शुक्लम् (śuklam) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). शुक्लम् (śuklam) is written शुक्लं (śuklaṃ), for the same reason, before भवति (bhavati). The labial keeps म् (m) in Whitney 213 a, but the anusvāra sign is the usual writing (Whitney 213 i). कृष्णः (kṛṣṇaḥ) is written कृष्णो (kṛṣṇo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of भवति (bhavati) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)).", "n2": "शुक्लम् (śuklam) is the neuter form of शुक्लः (śuklaḥ), to agree with वस्त्रम् (vastram)." }
+  "sa-3241":
+    native: "Mother buys new cloth and father buys shoes."
+    bases: { "नवं": "new", "वस्त्रं": "cloth", "क्रीणाति": "to buy (buys)", "पादत्राणं": "shoe" }
+    confusables: { "w1": { why: "Fine cloth, not cloth: अंशुकम् (aṃśukam) means fine cloth." }, "w2": { why: "Bracelet, not shoe: कङ्कणम् (kaṅkaṇam) means bracelet." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. नवम् (navam) is written नवं (navaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of वस्त्रम् (vastram) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). वस्त्रम् (vastram) is written वस्त्रं (vastraṃ), for the same reason, before क्रीणाति (krīṇāti). पादत्राणम् (pādatrāṇam) is written पादत्राणं (pādatrāṇaṃ), for the same reason, before क्रीणाति (krīṇāti).", "n2": "नवम् (navam) stands before वस्त्रम् (vastram), the word it describes, and has its neuter form.", "n3": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3242":
+    native: "The earring is on the ear and the bracelet is on the hand."
+    bases: { "कुण्डलं": "earring", "कर्णे": "on the ear", "भवति": "to be (is)", "कङ्कणं": "bracelet", "हस्ते": "on the hand" }
+    confusables: { "w1": { why: "Eye, not ear: नेत्रम् (netram) means eye." }, "w2": { why: "Foot, not hand: पादः (pādaḥ) means foot." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. कुण्डलम् (kuṇḍalam) is written कुण्डलं (kuṇḍalaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of कर्णे (karṇe) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). कङ्कणम् (kaṅkaṇam) is written कङ्कणं (kaṅkaṇaṃ), for the same reason, before हस्ते (haste).", "n2": "कर्णे (karṇe) and हस्ते (haste) are the locative case: it says where the ornament is." }
+  "sa-3243":
+    native: "The crown is on the head and the shoe is on the foot."
+    bases: { "मुकुटो": "crown", "मस्तके": "on the head", "भवति": "to be (is)", "पादत्राणं": "shoe", "पादे": "on the foot" }
+    confusables: { "w1": { why: "Turban, not crown: उष्णीषम् (uṣṇīṣam) means turban." }, "w2": { why: "Hand, not foot: हस्तः (hastaḥ) means hand." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. मुकुटः (mukuṭaḥ) is written मुकुटो (mukuṭo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of मस्तके (mastake) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). पादत्राणम् (pādatrāṇam) is written पादत्राणं (pādatrāṇaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of पादे (pāde) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i).", "n2": "मस्तकम् (mastakam) and शिरः (śiraḥ) both mean head.", "n3": "मस्तके (mastake) and पादे (pāde) are the locative case: it says where." }
+  "sa-3244":
+    native: "The garland is new and the jacket is old."
+    bases: { "नवा": "new", "भवति": "to be (is)", "पुराणो": "old" }
+    confusables: { "w1": { why: "Thread, not garland: सूत्रम् (sūtram) means thread." }, "w2": { why: "Rag, not jacket: चीरः (cīraḥ) means rag." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. पुराणः (purāṇaḥ) is written पुराणो (purāṇo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of भवति (bhavati) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)).", "n2": "नवा (navā) is the feminine of नवः (navaḥ), to agree with माला (mālā)." }
+  "sa-3245":
+    native: "The ram has wool and the cow gives milk."
+    bases: { "मेषस्य": "of the ram", "भवति": "to be (is)", "क्षीरं": "milk", "ददाति": "to give (gives)" }
+    confusables: { "w1": { why: "Thread, not wool: सूत्रम् (sūtram) means thread." }, "w2": { why: "Bull, not ram: वृषभः (vṛṣabhaḥ) means bull." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. क्षीरम् (kṣīram) is written क्षीरं (kṣīraṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of ददाति (dadāti) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "मेषस्य (meṣasya) is the genitive case: it says whose, and भवति (bhavati) then says that the wool belongs to the ram." }
+  "sa-3246":
+    native: "The thread is long and the girdle is short."
+    bases: { "सूत्रं": "thread", "दीर्घं": "long", "भवति": "to be (is)", "ह्रस्वा": "short" }
+    confusables: { "w1": { why: "Garland, not girdle: माला (mālā) means garland." }, "w2": { why: "Small, not short: लघुः (laghuḥ) means small." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. सूत्रम् (sūtram) is written सूत्रं (sūtraṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of दीर्घम् (dīrgham) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). दीर्घम् (dīrgham) is written दीर्घं (dīrghaṃ), for the same reason, before भवति (bhavati). The labial keeps म् (m) in Whitney 213 a, but the anusvāra sign is the usual writing (Whitney 213 i).", "n2": "ह्रस्वा (hrasvā) is the feminine of ह्रस्वः (hrasvaḥ), to agree with मेखला (mekhalā)." }
+  "sa-3247":
+    native: "The turban is yellow and the garment is red."
+    bases: { "उष्णीषं": "turban", "पीतं": "yellow", "भवति": "to be (is)", "रक्ता": "red" }
+    confusables: { "w1": { why: "Crown, not turban: मुकुटः (mukuṭaḥ) means crown." }, "w2": { why: "Cloth, not garment: वस्त्रम् (vastram) means cloth." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. उष्णीषम् (uṣṇīṣam) is written उष्णीषं (uṣṇīṣaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of पीतम् (pītam) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i). पीतम् (pītam) is written पीतं (pītaṃ), for the same reason, before भवति (bhavati).", "n2": "रक्ता (raktā) is the feminine of रक्तः (raktaḥ), to agree with शाटी (śāṭī)." }
+  "sa-3248":
+    native: "Where is the shoe and where is the jacket?"
+    bases: { "पादत्राणं": "shoe", "भवति": "to be (is)" }
+    confusables: { "w1": { why: "Foot, not shoe: पादः (pādaḥ) means foot." }, "w2": { why: "Fine cloth, not jacket: अंशुकम् (aṃśukam) means fine cloth." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. पादत्राणम् (pādatrāṇam) is written पादत्राणं (pādatrāṇaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of कुत्र (kutra) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "कुत्र (kutra) is said twice, once for each half of the question." }
+  "sa-3249":
+    native: "I buy a garment and you buy cloth."
+    bases: { "अहं": "I", "वसनं": "garment", "क्रीणामि": "to buy (I buy)", "त्वं": "you", "वस्त्रं": "cloth", "क्रीणासि": "to buy (you buy)" }
+    confusables: { "w1": { why: "Rag, not garment: चीरः (cīraḥ) means rag." }, "w2": { why: "Thread, not cloth: सूत्रम् (sūtram) means thread." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. अहम् (aham) is written अहं (ahaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of वसनम् (vasanam) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). वसनम् (vasanam) is written वसनं (vasanaṃ), for the same reason, before क्रीणामि (krīṇāmi). त्वम् (tvam) is written त्वं (tvaṃ), for the same reason, before च (ca). वस्त्रम् (vastram) is written वस्त्रं (vastraṃ), for the same reason, before क्रीणासि (krīṇāsi).", "n2": "क्रीणामि (krīṇāmi) and क्रीणासि (krīṇāsi) end for I and you, so the pronouns only set the two halves against each other.", "n3": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }

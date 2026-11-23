@@ -1,0 +1,37 @@
+schema: 1
+id: "sa-en-grammar-past-tenses"
+kind: "layer"
+core: "sa-grammar-past-tenses"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The imperfect: past tense with the augment"
+description: "The imperfect (laṅ), the past tense with the augment a, for the verbs of the course in the active and the middle voice. All verbs are covered except vṛt, whose Wiktionary page has no imperfect table (the gap is in docs/review-queue/sa.md). The past tenses are two rules decks of one path unit because a rules table can except a verb only from the whole table, and the perfect and the aorist are sourced for fewer verbs than the imperfect; they carry no theme. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "tense, voice, person and number"
+  slots:
+    "impf-p3-sg": "imperfect (laṅ), active (parasmaipada), third person singular (he, she, it)"
+    "impf-p3-du": "imperfect (laṅ), active (parasmaipada), third person dual (the two of them)"
+    "impf-p3-pl": "imperfect (laṅ), active (parasmaipada), third person plural (they)"
+    "impf-p2-sg": "imperfect (laṅ), active (parasmaipada), second person singular (you)"
+    "impf-p2-du": "imperfect (laṅ), active (parasmaipada), second person dual (the two of you)"
+    "impf-p2-pl": "imperfect (laṅ), active (parasmaipada), second person plural (you all)"
+    "impf-p1-sg": "imperfect (laṅ), active (parasmaipada), first person singular (I)"
+    "impf-p1-du": "imperfect (laṅ), active (parasmaipada), first person dual (the two of us)"
+    "impf-p1-pl": "imperfect (laṅ), active (parasmaipada), first person plural (we)"
+    "impf-m3-sg": "imperfect (laṅ), middle (ātmanepada), third person singular (he, she, it)"
+    "impf-m3-du": "imperfect (laṅ), middle (ātmanepada), third person dual (the two of them)"
+    "impf-m3-pl": "imperfect (laṅ), middle (ātmanepada), third person plural (they)"
+    "impf-m2-sg": "imperfect (laṅ), middle (ātmanepada), second person singular (you)"
+    "impf-m2-du": "imperfect (laṅ), middle (ātmanepada), second person dual (the two of you)"
+    "impf-m2-pl": "imperfect (laṅ), middle (ātmanepada), second person plural (you all)"
+    "impf-m1-sg": "imperfect (laṅ), middle (ātmanepada), first person singular (I)"
+    "impf-m1-du": "imperfect (laṅ), middle (ātmanepada), first person dual (the two of us)"
+    "impf-m1-pl": "imperfect (laṅ), middle (ātmanepada), first person plural (we)"
+rules:
+  "sa-rule-imperfect-active":
+    name: "Imperfect, active: augment a- and the secondary endings"
+    explanation: "The imperfect is the past tense Pāṇini calls laṅ: sūtra 3.2.111 says {1}, laṅ for a past that is not today's. It is made from the present stem with the augment, a short a put in front of it (Whitney 585, 586), and with the secondary endings, which are not the endings of the present: the stem of {2} (to be) is {3} and the form is {2}, not {4}. The endings are -t, -tām, -an in the third person (Whitney 880 calls -an the usual ending of the third plural), -ḥ, -tam, -ta in the second and -am, -va, -ma in the first, and a final a of the stem is joined to them or lengthened before -va and -ma: {5}, {6}, {7} for the verb to go, and {8}, {9}, {10}. Some verbs take -uḥ in the third plural: {11} from the verb to give (Pāṇini 3.4.108, read on GRETIL, says jher jus: jus in place of jhi). A root with the vowel at the front has the augment join it into the heavier vṛddhi vowel: the verb to be {12} gives {13}, and the third plural {14} (Whitney 585; Pāṇini 6.4.71 and 6.4.72, read on GRETIL, teach the augment: luṅ-laṅ-lṛṅ-kṣv aḍ-udāttaḥ and āḍ aj-ādīnām). Verbs that take both voices have the active forms here and the middle forms in the next rule; the verbs of the course that take only the middle voice have no active cells."
+  "sa-rule-imperfect-middle":
+    name: "Imperfect, middle: augment a- and the middle secondary endings"
+    explanation: "The imperfect of the middle (ātmanepada) voice uses the same augment and present stem with the middle secondary endings: -ta, -ātām, -anta in the third person, -thāḥ, -āthām, -dhvam in the second, and -e, -vahi, -mahi in the first. The verb to get {1} has the present stem {2} and the imperfect {3}, {4}, {5}; the second person is {6}, {7}, {8} and the first is {9}, {10}, {11}. A root that begins with the vowel ī has the augment join it into ai: {12} (he looks) gives {13} (Whitney 585). The verbs that take both voices put the middle forms beside the active ones, as {14} beside {15} for the verb to say, and {16} beside {17} for the verb to put. The list of all eighteen endings is Pāṇini 3.4.78 (GRETIL: tip-tas-jhi-sip-thas-tha-mib-vas-mas-ta-ātāṃ-jha-thās-āthām-dhvam-iḍ-vahi-mahiṅ, the eighteen endings). Which voice a verb takes is learned with the verb, as in the unit on the middle voice."

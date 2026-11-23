@@ -1,0 +1,64 @@
+schema: 1
+id: "hi-grammar-pronoun-forms"
+part: "core"
+kind: "rules"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["pronoun"]
+    except: ["hi-0752", "hi-0753", "hi-0754", "hi-0755", "hi-0756", "hi-0757", "hi-0760"]
+  slots: ["obl", "ko", "se", "ne", "ka"]
+  rows:
+    - word: "hi-0053"
+      forms: { "obl": "हम", "ko": "हमें", "se": "हमसे", "ne": "हमने", "ka": "हमारा" }
+      readings: { "obl": "ham", "ko": "hamēm̐", "se": "hamsē", "ne": "hamnē", "ka": "hamārā" }
+    - word: "hi-0134"
+      forms: { "obl": "आप", "ko": "आपको", "se": "आपसे", "ne": "आपने", "ka": "आपका" }
+      readings: { "obl": "āp", "ko": "āpkō", "se": "āpsē", "ne": "āpnē", "ka": "āpkā" }
+    - word: "hi-0745"
+      forms: { "obl": "मुझ", "ko": "मुझे", "se": "मुझसे", "ne": "मैंने", "ka": "मेरा" }
+      readings: { "obl": "mujh", "ko": "mujhē", "se": "mujhsē", "ne": "mainnē", "ka": "mērā" }
+    - word: "hi-0746"
+      forms: { "obl": "तुझ", "ko": "तुझे", "se": "तुझसे", "ne": "तूने", "ka": "तेरा" }
+      readings: { "obl": "tujh", "ko": "tujhē", "se": "tujhsē", "ne": "tūnē", "ka": "tērā" }
+    - word: "hi-0747"
+      forms: { "obl": "तुम", "ko": "तुम्हें", "se": "तुमसे", "ne": "तुमने", "ka": "तुम्हारा" }
+      readings: { "obl": "tum", "ko": "tumhēm̐", "se": "tumsē", "ne": "tumnē", "ka": "tumhārā" }
+    - word: "hi-0748"
+      forms: { "obl": "इस", "ko": "इसे", "se": "इससे", "ne": "इसने", "ka": "इसका" }
+      readings: { "obl": "is", "ko": "isē", "se": "issē", "ne": "isnē", "ka": "iskā" }
+    - word: "hi-0749"
+      forms: { "obl": "उस", "ko": "उसे", "se": "उससे", "ne": "उसने", "ka": "उसका" }
+      readings: { "obl": "us", "ko": "usē", "se": "ussē", "ne": "usnē", "ka": "uskā" }
+    - word: "hi-0750"
+      forms: { "obl": "इन", "ko": "इन्हें", "se": "इनसे", "ne": "इन्होंने", "ka": "इनका" }
+      readings: { "obl": "in", "ko": "inhēm̐", "se": "insē", "ne": "inhōnnē", "ka": "inkā" }
+    - word: "hi-0751"
+      forms: { "obl": "उन", "ko": "उन्हें", "se": "उनसे", "ne": "उन्होंने", "ka": "उनका" }
+      readings: { "obl": "un", "ko": "unhēm̐", "se": "unsē", "ne": "unhōnnē", "ka": "unkā" }
+    - word: "hi-0758"
+      forms: { "obl": "किसी", "ko": "किसी को", "se": "किसी से", "ne": "किसी ने", "ka": "किसी का" }
+      readings: { "obl": "kisī", "ko": "kisī kō", "se": "kisī sē", "ne": "kisī nē", "ka": "kisī kā" }
+    - word: "hi-0759"
+      forms: { "obl": "कुछ", "ko": null, "se": null, "ne": null, "ka": null }
+      readings: { "obl": "kuch" }
+rules:
+  - id: "hi-rule-pronoun-oblique"
+    slots: ["obl"]
+    words: [{ word: "मैं", reading: "maim̐" }, { word: "मुझ", reading: "mujh" }, { word: "वह", reading: "vah" }, { word: "उस", reading: "us" }, { word: "हम", reading: "ham" }, { word: "हम", reading: "ham" }]
+  - id: "hi-rule-pronoun-ko"
+    slots: ["ko"]
+    words: [{ word: "मैं", reading: "maim̐" }, { word: "मुझे", reading: "mujhē" }, { word: "तुम", reading: "tum" }, { word: "तुम्हें", reading: "tumhēm̐" }, { word: "वह", reading: "vah" }, { word: "उसे", reading: "usē" }]
+  - id: "hi-rule-pronoun-se"
+    slots: ["se"]
+    words: [{ word: "मैं", reading: "maim̐" }, { word: "मुझसे", reading: "mujhsē" }, { word: "वह", reading: "vah" }, { word: "उससे", reading: "ussē" }, { word: "आप", reading: "āp" }, { word: "आपसे", reading: "āpsē" }]
+  - id: "hi-rule-pronoun-ne"
+    slots: ["ne"]
+    words: [{ word: "मैं", reading: "maim̐" }, { word: "मैंने", reading: "mainnē" }, { word: "वह", reading: "vah" }, { word: "उसने", reading: "usnē" }, { word: "वे", reading: "vē" }, { word: "उन्होंने", reading: "unhōnnē" }]
+  - id: "hi-rule-pronoun-ka"
+    slots: ["ka"]
+    words: [{ word: "मैं", reading: "maim̐" }, { word: "मेरा", reading: "mērā" }, { word: "वह", reading: "vah" }, { word: "उसका", reading: "uskā" }, { word: "हम", reading: "ham" }, { word: "हमारा", reading: "hamārā" }]

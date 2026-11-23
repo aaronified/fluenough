@@ -1,0 +1,33 @@
+schema: 1
+id: "hi-en-grammar-pronoun-forms"
+kind: "layer"
+core: "hi-grammar-pronoun-forms"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns: the stem, to, from, did, of"
+description: "Every personal and demonstrative pronoun the course teaches, with its stem before a postposition and with the words for to, from, the doer of a past action, and of. The two words for some and any have only the forms they use. The possessives are in their own table. The forms are written in Devanagari for now. Not yet checked by a Hindustani speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "obl": "stem, before a postposition"
+    "ko": "to, for"
+    "se": "from, with"
+    "ne": "the doer of a past action"
+    "ka": "of (before a masculine noun)"
+rules:
+  "hi-rule-pronoun-oblique":
+    name: "stem: before a postposition"
+    explanation: "Before a postposition most pronouns change their stem: {1}, I, becomes {2}; {3}, he or she, becomes {4}; {5}, we, stays {6}. The stem is the part that the other cells build on."
+  "hi-rule-pronoun-ko":
+    name: "-को (-kō), -े (-ē): to, for"
+    explanation: "To or for a pronoun is the stem with a short ending: {1}, I, gives {2}; {3}, you, gives {4}; {5}, he or she, gives {6}. The longer spelling with a separate word for to is also correct."
+  "hi-rule-pronoun-se":
+    name: "-से (-sē): from, with"
+    explanation: "From or with a pronoun joins the word for from to the stem: {1}, I, gives {2}; {3}, he or she, gives {4}; {5}, you, gives {6}."
+  "hi-rule-pronoun-ne":
+    name: "-ने (-nē): the doer of a past action"
+    explanation: "The doer of a past action with a verb that takes an object is marked with the word for did: {1}, I, gives {2}; {3}, he or she, gives {4}; {5}, they, gives {6}."
+  "hi-rule-pronoun-ka":
+    name: "-का (-kā): of"
+    explanation: "Of is shown by a word that agrees with what is owned. Before a masculine noun: {1}, I, gives {2}; {3}, he or she, gives {4}; {5}, we, gives {6}."

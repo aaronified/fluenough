@@ -1,0 +1,1060 @@
+schema: 1
+id: "gu-weather"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC-BY-SA-4.0"
+
+theme: "weather"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "gu-2000"
+    target: "વરસાદ"
+    reading: "varsād"
+    ipa: "ʋərsad̪"
+    phonetic: "[ʋərsad̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "વરસાદ પડે છે."
+        reading: "varsād paḍe che."
+        ipa: "ʋərsad̪ pəɖe tʃʰe"
+        bases:
+          - { word: "વરસાદ", base: "વરસાદ", reading: "varsād" }
+          - { word: "પડે", ref: "gu-2034" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "આજે ભારે વરસાદ છે."
+        reading: "āje bhāre varsād che."
+        ipa: "adʒe bʱare ʋərsad̪ tʃʰe"
+        bases:
+          - { word: "આજે", ref: "gu-0482" }
+          - { word: "ભારે", ref: "gu-1249" }
+          - { word: "વરસાદ", base: "વરસાદ", reading: "varsād" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2001"
+    target: "તડકો"
+    reading: "taḍko"
+    ipa: "t̪əɖko"
+    phonetic: "[t̪əɽko]"
+    phonetic_source: "wiktionary"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "બહાર બહુ તડકો છે."
+        reading: "bahār bahu taḍko che."
+        ipa: "bəɦar bəɦu t̪əɖko tʃʰe"
+        bases:
+          - { word: "બહાર", base: "બહાર", reading: "bahār" }
+          - { word: "બહુ", ref: "gu-0692" }
+          - { word: "તડકો", base: "તડકો", reading: "taḍko" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "તડકામાં ન બેસો."
+        reading: "taḍkāmām̐ na beso."
+        ipa: "t̪əɖkamã nə beso"
+        bases:
+          - { word: "તડકામાં", base: "તડકો", reading: "taḍko" }
+          - { word: "ન", base: "ન", reading: "na" }
+          - { word: "બેસો", base: "બેસવું", reading: "besvum̐" }
+  - id: "gu-2002"
+    target: "સૂરજ"
+    reading: "suraj"
+    ipa: "surədʒ"
+    phonetic: "[surədʒ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "સવારે સૂરજ ઊગ્યો."
+        reading: "savāre suraj ugyo."
+        ipa: "səʋare surədʒ uɡjo"
+        bases:
+          - { word: "સવારે", ref: "gu-0486" }
+          - { word: "સૂરજ", base: "સૂરજ", reading: "suraj" }
+          - { word: "ઊગ્યો", ref: "gu-2039" }
+      - target: "સાંજે સૂરજ આથમ્યો."
+        reading: "sāñje suraj āthamyo."
+        ipa: "saɲdʒe surədʒ at̪ʰəmjo"
+        bases:
+          - { word: "સાંજે", ref: "gu-0488" }
+          - { word: "સૂરજ", base: "સૂરજ", reading: "suraj" }
+          - { word: "આથમ્યો", ref: "gu-2040" }
+  - id: "gu-2003"
+    target: "પવન"
+    reading: "pavan"
+    ipa: "pəʋən"
+    phonetic: "[pəʋən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ઠંડો પવન ફૂંકાય છે."
+        reading: "ṭhaṇḍo pavan phuṅkāy che."
+        ipa: "ʈʰəɳɖo pəʋən pʰuŋkaj tʃʰe"
+        bases:
+          - { word: "ઠંડો", ref: "gu-2028" }
+          - { word: "પવન", base: "પવન", reading: "pavan" }
+          - { word: "ફૂંકાય", ref: "gu-2035" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "આજે પવન નથી."
+        reading: "āje pavan nathi."
+        ipa: "adʒe pəʋən nət̪ʰi"
+        bases:
+          - { word: "આજે", ref: "gu-0482" }
+          - { word: "પવન", base: "પવન", reading: "pavan" }
+          - { word: "નથી", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2004"
+    target: "વાદળ"
+    reading: "vādaḷ"
+    ipa: "ʋad̪əɭ"
+    phonetic: "[ʋad̪əɭ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "આકાશમાં વાદળ છે."
+        reading: "ākāśmām̐ vādaḷ che."
+        ipa: "akaʃmã ʋad̪əɭ tʃʰe"
+        bases:
+          - { word: "આકાશમાં", ref: "gu-2005" }
+          - { word: "વાદળ", base: "વાદળ", reading: "vādaḷ" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "કાળું વાદળ આવ્યું."
+        reading: "kāḷum̐ vādaḷ āvyum̐."
+        ipa: "kaɭũ ʋad̪əɭ aʋjũ"
+        bases:
+          - { word: "કાળું", base: "કાળો", reading: "kāḷo" }
+          - { word: "વાદળ", base: "વાદળ", reading: "vādaḷ" }
+          - { word: "આવ્યું", ref: "gu-0509" }
+  - id: "gu-2005"
+    target: "આકાશ"
+    reading: "ākāś"
+    ipa: "akaʃ"
+    phonetic: "[akaʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "આકાશ સાફ છે."
+        reading: "ākāś sāph che."
+        ipa: "akaʃ sapʰ tʃʰe"
+        bases:
+          - { word: "આકાશ", base: "આકાશ", reading: "ākāś" }
+          - { word: "સાફ", base: "સાફ", reading: "sāph" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "આકાશમાં તારા છે."
+        reading: "ākāśmām̐ tārā che."
+        ipa: "akaʃmã t̪ara tʃʰe"
+        bases:
+          - { word: "આકાશમાં", base: "આકાશ", reading: "ākāś" }
+          - { word: "તારા", base: "તારો", reading: "tāro" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2006"
+    target: "ઠંડી"
+    reading: "ṭhaṇḍi"
+    ipa: "ʈʰəɳɖi"
+    phonetic: "[ʈʰəɳɖi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "આજે બહુ ઠંડી છે."
+        reading: "āje bahu ṭhaṇḍi che."
+        ipa: "adʒe bəɦu ʈʰəɳɖi tʃʰe"
+        bases:
+          - { word: "આજે", ref: "gu-0482" }
+          - { word: "બહુ", ref: "gu-0692" }
+          - { word: "ઠંડી", base: "ઠંડી", reading: "ṭhaṇḍi" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "શિયાળામાં ઠંડી પડે છે."
+        reading: "śiyāḷāmām̐ ṭhaṇḍi paḍe che."
+        ipa: "ʃijaɭamã ʈʰəɳɖi pəɖe tʃʰe"
+        bases:
+          - { word: "શિયાળામાં", ref: "gu-0531" }
+          - { word: "ઠંડી", base: "ઠંડી", reading: "ṭhaṇḍi" }
+          - { word: "પડે", ref: "gu-2034" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - ref: "gu-0529"
+  - ref: "gu-0531"
+  - id: "gu-2007"
+    target: "ગરમી"
+    reading: "garmi"
+    ipa: "ɡərmi"
+    phonetic: "[ɡərmi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "આજે ભારે ગરમી છે."
+        reading: "āje bhāre garmi che."
+        ipa: "adʒe bʱare ɡərmi tʃʰe"
+        bases:
+          - { word: "આજે", ref: "gu-0482" }
+          - { word: "ભારે", ref: "gu-1249" }
+          - { word: "ગરમી", base: "ગરમી", reading: "garmi" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "ઉનાળામાં ગરમી વધારે છે."
+        reading: "unāḷāmām̐ garmi vadhāre che."
+        ipa: "unaɭamã ɡərmi ʋəd̪ʱare tʃʰe"
+        bases:
+          - { word: "ઉનાળામાં", ref: "gu-0529" }
+          - { word: "ગરમી", base: "ગરમી", reading: "garmi" }
+          - { word: "વધારે", base: "વધારે", reading: "vadhāre" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - ref: "gu-0057"
+  - id: "gu-2008"
+    target: "ઋતુ"
+    reading: "rutu"
+    ipa: "rut̪u"
+    phonetic: "[rut̪u]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "આ ઋતુ સારી છે."
+        reading: "ā rutu sāri che."
+        ipa: "a rut̪u sari tʃʰe"
+        bases:
+          - { word: "આ", base: "આ", reading: "ā" }
+          - { word: "ઋતુ", base: "ઋતુ", reading: "rutu" }
+          - { word: "સારી", base: "સારો", reading: "sāro" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "કઈ ઋતુ તમને ગમે છે?"
+        reading: "kai rutu tamne game che?"
+        ipa: "kəi rut̪u t̪əmne ɡəme tʃʰe"
+        bases:
+          - { word: "કઈ", base: "કઈ", reading: "kai" }
+          - { word: "ઋતુ", base: "ઋતુ", reading: "rutu" }
+          - { word: "તમને", ref: "gu-0251" }
+          - { word: "ગમે", base: "ગમવું", reading: "gamvum̐" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2009"
+    target: "હવામાન"
+    reading: "havāmān"
+    ipa: "ɦəʋaman"
+    phonetic: "[ɦəʋaman]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "હવામાન સારું છે."
+        reading: "havāmān sārum̐ che."
+        ipa: "ɦəʋaman sarũ tʃʰe"
+        bases:
+          - { word: "હવામાન", base: "હવામાન", reading: "havāmān" }
+          - { word: "સારું", ref: "gu-0691" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "હવામાન કેવું છે?"
+        reading: "havāmān kevum̐ che?"
+        ipa: "ɦəʋaman keʋũ tʃʰe"
+        bases:
+          - { word: "હવામાન", base: "હવામાન", reading: "havāmān" }
+          - { word: "કેવું", base: "કેવું", reading: "kevum̐" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2010"
+    target: "તાપમાન"
+    reading: "tāpamān"
+    ipa: "t̪apəman"
+    phonetic: "[t̪apəman]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "આજે તાપમાન વધારે છે."
+        reading: "āje tāpmān vadhāre che."
+        ipa: "adʒe t̪apman ʋəd̪ʱare tʃʰe"
+        bases:
+          - { word: "આજે", ref: "gu-0482" }
+          - { word: "તાપમાન", base: "તાપમાન", reading: "tāpamān" }
+          - { word: "વધારે", base: "વધારે", reading: "vadhāre" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "રાત્રે તાપમાન ઓછું થયું."
+        reading: "rātre tāpmān ochum̐ thayum̐."
+        ipa: "rat̪re t̪apman otʃʰũ t̪ʰəjũ"
+        bases:
+          - { word: "રાત્રે", ref: "gu-0489" }
+          - { word: "તાપમાન", base: "તાપમાન", reading: "tāpamān" }
+          - { word: "ઓછું", base: "ઓછું", reading: "ochum̐" }
+          - { word: "થયું", base: "થવું", reading: "thavum̐" }
+  - id: "gu-2011"
+    target: "વીજળી"
+    reading: "vijaḷi"
+    ipa: "ʋidʒəɭi"
+    phonetic: "[ʋidʒəɭi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "આકાશમાં વીજળી ચમકી."
+        reading: "ākāśmām̐ vijḷi camki."
+        ipa: "akaʃmã ʋidʒɭi tʃəmki"
+        bases:
+          - { word: "આકાશમાં", ref: "gu-2005" }
+          - { word: "વીજળી", base: "વીજળી", reading: "vijaḷi" }
+          - { word: "ચમકી", ref: "gu-2036" }
+      - target: "વીજળી પડે ત્યારે ઘરમાં રહો."
+        reading: "vijḷi paḍe tyāre gharmām̐ raho."
+        ipa: "ʋidʒɭi pəɖe t̪jare ɡʱərmã rəɦo"
+        bases:
+          - { word: "વીજળી", base: "વીજળી", reading: "vijaḷi" }
+          - { word: "પડે", ref: "gu-2034" }
+          - { word: "ત્યારે", base: "ત્યારે", reading: "tyāre" }
+          - { word: "ઘરમાં", ref: "gu-0048" }
+          - { word: "રહો", base: "રહેવું", reading: "rahevum̐" }
+  - id: "gu-2012"
+    target: "ગર્જના"
+    reading: "garjanā"
+    ipa: "ɡərdʒəna"
+    phonetic: "[ɡərdʒəna]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "મોટી ગર્જના થઈ."
+        reading: "moṭi garjanā thai."
+        ipa: "moʈi ɡərdʒəna t̪ʰəi"
+        bases:
+          - { word: "મોટી", base: "મોટો", reading: "moṭo" }
+          - { word: "ગર્જના", base: "ગર્જના", reading: "garjanā" }
+          - { word: "થઈ", base: "થવું", reading: "thavum̐" }
+      - target: "ગર્જના પછી વરસાદ આવ્યો."
+        reading: "garjanā pachi varsād āvyo."
+        ipa: "ɡərdʒəna pətʃʰi ʋərsad̪ aʋjo"
+        bases:
+          - { word: "ગર્જના", base: "ગર્જના", reading: "garjanā" }
+          - { word: "પછી", base: "પછી", reading: "pachi" }
+          - { word: "વરસાદ", ref: "gu-2000" }
+          - { word: "આવ્યો", ref: "gu-0509" }
+  - id: "gu-2013"
+    target: "વાવાઝોડું"
+    reading: "vāvājhoḍum̐"
+    ipa: "ʋaʋadʒʱoɖũ"
+    phonetic: "[ʋaʋadʒʱoɽũ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "વાવાઝોડું આવ્યું."
+        reading: "vāvājhoḍum̐ āvyum̐."
+        ipa: "ʋaʋadʒʱoɖũ aʋjũ"
+        bases:
+          - { word: "વાવાઝોડું", base: "વાવાઝોડું", reading: "vāvājhoḍum̐" }
+          - { word: "આવ્યું", ref: "gu-0509" }
+      - target: "દરિયામાં વાવાઝોડું છે."
+        reading: "dariyāmām̐ vāvājhoḍum̐ che."
+        ipa: "d̪ərijamã ʋaʋadʒʱoɖũ tʃʰe"
+        bases:
+          - { word: "દરિયામાં", base: "દરિયો", reading: "dariyo" }
+          - { word: "વાવાઝોડું", base: "વાવાઝોડું", reading: "vāvājhoḍum̐" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2014"
+    target: "ધુમ્મસ"
+    reading: "dhummas"
+    ipa: "d̪ʱumməs"
+    phonetic: "[d̪ʱumməs]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "સવારે ધુમ્મસ હતું."
+        reading: "savāre dhummas hatum̐."
+        ipa: "səʋare d̪ʱumməs ɦət̪ũ"
+        bases:
+          - { word: "સવારે", ref: "gu-0486" }
+          - { word: "ધુમ્મસ", base: "ધુમ્મસ", reading: "dhummas" }
+          - { word: "હતું", base: "હોવું", reading: "hovum̐" }
+      - target: "આજે ધુમ્મસ છે."
+        reading: "āje dhummas che."
+        ipa: "adʒe d̪ʱumməs tʃʰe"
+        bases:
+          - { word: "આજે", ref: "gu-0482" }
+          - { word: "ધુમ્મસ", base: "ધુમ્મસ", reading: "dhummas" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2015"
+    target: "બરફ"
+    reading: "baraph"
+    ipa: "bərəpʰ"
+    phonetic: "[bərəpʰ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "પાણીમાં બરફ છે."
+        reading: "pāṇimām̐ baraph che."
+        ipa: "paɳimã bərəpʰ tʃʰe"
+        bases:
+          - { word: "પાણીમાં", ref: "gu-0565" }
+          - { word: "બરફ", base: "બરફ", reading: "baraph" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "ઠંડીમાં બરફ પડે છે."
+        reading: "ṭhaṇḍimām̐ baraph paḍe che."
+        ipa: "ʈʰəɳɖimã bərəpʰ pəɖe tʃʰe"
+        bases:
+          - { word: "ઠંડીમાં", ref: "gu-2006" }
+          - { word: "બરફ", base: "બરફ", reading: "baraph" }
+          - { word: "પડે", ref: "gu-2034" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2016"
+    target: "ભેજ"
+    reading: "bhej"
+    ipa: "bʱedʒ"
+    phonetic: "[bʱedʒ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "આજે ભેજ બહુ છે."
+        reading: "āje bhej bahu che."
+        ipa: "adʒe bʱedʒ bəɦu tʃʰe"
+        bases:
+          - { word: "આજે", ref: "gu-0482" }
+          - { word: "ભેજ", base: "ભેજ", reading: "bhej" }
+          - { word: "બહુ", ref: "gu-0692" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "ચોમાસામાં ભેજ વધારે હોય છે."
+        reading: "comāsāmām̐ bhej vadhāre hoy che."
+        ipa: "tʃomasamã bʱedʒ ʋəd̪ʱare ɦoj tʃʰe"
+        bases:
+          - { word: "ચોમાસામાં", ref: "gu-0530" }
+          - { word: "ભેજ", base: "ભેજ", reading: "bhej" }
+          - { word: "વધારે", base: "વધારે", reading: "vadhāre" }
+          - { word: "હોય", base: "હોવું", reading: "hovum̐" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - ref: "gu-0530"
+  - ref: "gu-1765"
+  - id: "gu-2018"
+    target: "છાંટો"
+    reading: "chāṇṭo"
+    ipa: "tʃʰaɳʈo"
+    phonetic: "[tʃʰaɳʈo]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "વરસાદનો એક છાંટો પડ્યો."
+        reading: "varsādno ek chāṇṭo paḍyo."
+        ipa: "ʋərsad̪no ek tʃʰaɳʈo pəɖjo"
+        bases:
+          - { word: "વરસાદનો", ref: "gu-2000" }
+          - { word: "એક", ref: "gu-0109" }
+          - { word: "છાંટો", base: "છાંટો", reading: "chāṇṭo" }
+          - { word: "પડ્યો", ref: "gu-2034" }
+      - target: "હાથ પર છાંટો પડ્યો."
+        reading: "hāth par chāṇṭo paḍyo."
+        ipa: "ɦat̪ʰ pər tʃʰaɳʈo pəɖjo"
+        bases:
+          - { word: "હાથ", base: "હાથ", reading: "hāth" }
+          - { word: "પર", base: "પર", reading: "par" }
+          - { word: "છાંટો", base: "છાંટો", reading: "chāṇṭo" }
+          - { word: "પડ્યો", ref: "gu-2034" }
+  - id: "gu-2019"
+    target: "મોસમ"
+    reading: "mosam"
+    ipa: "mosəm"
+    phonetic: "[mosəm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "આ મોસમ બહુ સરસ છે."
+        reading: "ā mosam bahu saras che."
+        ipa: "a mosəm bəɦu sərəs tʃʰe"
+        bases:
+          - { word: "આ", base: "આ", reading: "ā" }
+          - { word: "મોસમ", base: "મોસમ", reading: "mosam" }
+          - { word: "બહુ", ref: "gu-0692" }
+          - { word: "સરસ", base: "સરસ", reading: "saras" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "મોસમ બદલાઈ ગઈ."
+        reading: "mosam badlāi gai."
+        ipa: "mosəm bəd̪lai ɡəi"
+        bases:
+          - { word: "મોસમ", base: "મોસમ", reading: "mosam" }
+          - { word: "બદલાઈ", base: "બદલાવું", reading: "badlāvum̐" }
+          - { word: "ગઈ", ref: "gu-0508" }
+  - id: "gu-2020"
+    target: "દુષ્કાળ"
+    reading: "duśkāḷ"
+    ipa: "d̪uʃkaɭ"
+    phonetic: "[d̪uʃkaɭ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "આ વર્ષે દુષ્કાળ પડ્યો."
+        reading: "ā varśe duśkāḷ paḍyo."
+        ipa: "a ʋərʃe d̪uʃkaɭ pəɖjo"
+        bases:
+          - { word: "આ", base: "આ", reading: "ā" }
+          - { word: "વર્ષે", ref: "gu-0522" }
+          - { word: "દુષ્કાળ", base: "દુષ્કાળ", reading: "duśkāḷ" }
+          - { word: "પડ્યો", ref: "gu-2034" }
+      - target: "ગામમાં દુષ્કાળ છે."
+        reading: "gāmmām̐ duśkāḷ che."
+        ipa: "ɡammã d̪uʃkaɭ tʃʰe"
+        bases:
+          - { word: "ગામમાં", base: "ગામ", reading: "gām" }
+          - { word: "દુષ્કાળ", base: "દુષ્કાળ", reading: "duśkāḷ" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2021"
+    target: "અંધારું"
+    reading: "andhārum̐"
+    ipa: "ənd̪ʱarũ"
+    phonetic: "[ənd̪ʱarũ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "વરસાદ પહેલાં અંધારું થયું."
+        reading: "varsād pahelām̐ andhārum̐ thayum̐."
+        ipa: "ʋərsad̪ pəɦelã ənd̪ʱarũ t̪ʰəjũ"
+        bases:
+          - { word: "વરસાદ", ref: "gu-2000" }
+          - { word: "પહેલાં", base: "પહેલાં", reading: "pahelām̐" }
+          - { word: "અંધારું", base: "અંધારું", reading: "andhārum̐" }
+          - { word: "થયું", base: "થવું", reading: "thavum̐" }
+      - target: "રાત્રે બહુ અંધારું હોય છે."
+        reading: "rātre bahu andhārum̐ hoy che."
+        ipa: "rat̪re bəɦu ənd̪ʱarũ ɦoj tʃʰe"
+        bases:
+          - { word: "રાત્રે", ref: "gu-0489" }
+          - { word: "બહુ", ref: "gu-0692" }
+          - { word: "અંધારું", base: "અંધારું", reading: "andhārum̐" }
+          - { word: "હોય", base: "હોવું", reading: "hovum̐" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2022"
+    target: "કાદવ"
+    reading: "kādav"
+    ipa: "kad̪əʋ"
+    phonetic: "[kad̪əʋ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "વરસાદમાં રસ્તા પર કાદવ છે."
+        reading: "varsādmām̐ rastā par kādav che."
+        ipa: "ʋərsad̪mã rəst̪a pər kad̪əʋ tʃʰe"
+        bases:
+          - { word: "વરસાદમાં", ref: "gu-2000" }
+          - { word: "રસ્તા", ref: "gu-0444" }
+          - { word: "પર", base: "પર", reading: "par" }
+          - { word: "કાદવ", base: "કાદવ", reading: "kādav" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "પગમાં કાદવ લાગ્યો."
+        reading: "pagmām̐ kādav lāgyo."
+        ipa: "pəɡmã kad̪əʋ laɡjo"
+        bases:
+          - { word: "પગમાં", base: "પગ", reading: "pag" }
+          - { word: "કાદવ", base: "કાદવ", reading: "kādav" }
+          - { word: "લાગ્યો", base: "લાગવું", reading: "lāgvum̐" }
+  - id: "gu-2023"
+    target: "ધૂળ"
+    reading: "dhuḷ"
+    ipa: "d̪ʱuɭ"
+    phonetic: "[d̪ʱuɭ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ઘરમાં ધૂળ છે."
+        reading: "gharmām̐ dhuḷ che."
+        ipa: "ɡʱərmã d̪ʱuɭ tʃʰe"
+        bases:
+          - { word: "ઘરમાં", ref: "gu-0048" }
+          - { word: "ધૂળ", base: "ધૂળ", reading: "dhuḷ" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "પવનથી ધૂળ ઊડી."
+        reading: "pavnthi dhuḷ uḍi."
+        ipa: "pəʋnt̪ʰi d̪ʱuɭ uɖi"
+        bases:
+          - { word: "પવનથી", ref: "gu-2003" }
+          - { word: "ધૂળ", base: "ધૂળ", reading: "dhuḷ" }
+          - { word: "ઊડી", base: "ઊડવું", reading: "uḍvum̐" }
+  - id: "gu-2024"
+    target: "છાંયડો"
+    reading: "chām̐yaḍo"
+    ipa: "tʃʰãjəɖo"
+    phonetic: "[tʃʰãjəɽo]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ઝાડ નીચે છાંયડો છે."
+        reading: "jhāḍ nice chāṁyaḍo che."
+        ipa: "dʒʱaɖ nitʃe tʃʰãjəɖo tʃʰe"
+        bases:
+          - { word: "ઝાડ", base: "ઝાડ", reading: "jhāḍ" }
+          - { word: "નીચે", ref: "gu-0456" }
+          - { word: "છાંયડો", base: "છાંયડો", reading: "chām̐yaḍo" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "છાંયડામાં બેસો."
+        reading: "chāṁyaḍāmām̐ beso."
+        ipa: "tʃʰãjəɖamã beso"
+        bases:
+          - { word: "છાંયડામાં", base: "છાંયડો", reading: "chām̐yaḍo" }
+          - { word: "બેસો", base: "બેસવું", reading: "besvum̐" }
+  - id: "gu-2025"
+    target: "હવા"
+    reading: "havā"
+    ipa: "ɦəʋa"
+    phonetic: "[ɦəʋa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "બહાર ઠંડી હવા છે."
+        reading: "bahār ṭhaṇḍi havā che."
+        ipa: "bəɦar ʈʰəɳɖi ɦəʋa tʃʰe"
+        bases:
+          - { word: "બહાર", base: "બહાર", reading: "bahār" }
+          - { word: "ઠંડી", ref: "gu-2028" }
+          - { word: "હવા", base: "હવા", reading: "havā" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "બારી ખોલો."
+        reading: "bāri kholo."
+        ipa: "bari kʰolo"
+        bases:
+          - { word: "બારી", ref: "gu-0461" }
+          - { word: "ખોલો", base: "ખોલવું", reading: "kholvum̐" }
+  - id: "gu-2026"
+    target: "વાતાવરણ"
+    reading: "vātāvaraṇ"
+    ipa: "ʋat̪aʋərəɳ"
+    phonetic: "[ʋat̪aʋərəɳ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "અહીંનું વાતાવરણ સરસ છે."
+        reading: "ahinnum̐ vātāvraṇ saras che."
+        ipa: "əɦinnũ ʋat̪aʋrəɳ sərəs tʃʰe"
+        bases:
+          - { word: "અહીંનું", ref: "gu-0693" }
+          - { word: "વાતાવરણ", base: "વાતાવરણ", reading: "vātāvaraṇ" }
+          - { word: "સરસ", base: "સરસ", reading: "saras" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "વાતાવરણ ઠંડું થયું."
+        reading: "vātāvraṇ ṭhaṇḍum̐ thayum̐."
+        ipa: "ʋat̪aʋrəɳ ʈʰəɳɖũ t̪ʰəjũ"
+        bases:
+          - { word: "વાતાવરણ", base: "વાતાવરણ", reading: "vātāvaraṇ" }
+          - { word: "ઠંડું", ref: "gu-2028" }
+          - { word: "થયું", base: "થવું", reading: "thavum̐" }
+  - id: "gu-2027"
+    target: "આબોહવા"
+    reading: "ābohavā"
+    ipa: "aboɦəʋa"
+    phonetic: "[aboɦəʋa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "આ શહેરની આબોહવા સારી છે."
+        reading: "ā śaherni ābohvā sāri che."
+        ipa: "a ʃəɦerni aboɦʋa sari tʃʰe"
+        bases:
+          - { word: "આ", base: "આ", reading: "ā" }
+          - { word: "શહેરની", base: "શહેર", reading: "śaher" }
+          - { word: "આબોહવા", base: "આબોહવા", reading: "ābohavā" }
+          - { word: "સારી", base: "સારો", reading: "sāro" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "ગુજરાતની આબોહવા ગરમ છે."
+        reading: "gujrātni ābohvā garam che."
+        ipa: "ɡudʒrat̪ni aboɦʋa ɡərəm tʃʰe"
+        bases:
+          - { word: "ગુજરાતની", base: "ગુજરાત", reading: "gujrāt" }
+          - { word: "આબોહવા", base: "આબોહવા", reading: "ābohavā" }
+          - { word: "ગરમ", ref: "gu-0057" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2028"
+    target: "ઠંડો"
+    reading: "ṭhaṇḍo"
+    ipa: "ʈʰəɳɖo"
+    phonetic: "[ʈʰəɳɖo]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "પાણી ઠંડું છે."
+        reading: "pāṇi ṭhaṇḍum̐ che."
+        ipa: "paɳi ʈʰəɳɖũ tʃʰe"
+        bases:
+          - { word: "પાણી", ref: "gu-0565" }
+          - { word: "ઠંડું", base: "ઠંડો", reading: "ṭhaṇḍo" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "ચા ઠંડી છે."
+        reading: "cā ṭhaṇḍi che."
+        ipa: "tʃa ʈʰəɳɖi tʃʰe"
+        bases:
+          - { word: "ચા", ref: "gu-0564" }
+          - { word: "ઠંડી", base: "ઠંડો", reading: "ṭhaṇḍo" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2029"
+    target: "ભીનો"
+    reading: "bhino"
+    ipa: "bʱino"
+    phonetic: "[bʱino]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "કપડાં ભીનાં છે."
+        reading: "kapḍām̐ bhinām̐ che."
+        ipa: "kəpɖã bʱinã tʃʰe"
+        bases:
+          - { word: "કપડાં", base: "કપડું", reading: "kapḍum̐" }
+          - { word: "ભીનાં", base: "ભીનો", reading: "bhino" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "હાથ ભીના થયા."
+        reading: "hāth bhinā thayā."
+        ipa: "ɦat̪ʰ bʱina t̪ʰəja"
+        bases:
+          - { word: "હાથ", base: "હાથ", reading: "hāth" }
+          - { word: "ભીના", base: "ભીનો", reading: "bhino" }
+          - { word: "થયા", base: "થવું", reading: "thavum̐" }
+  - id: "gu-2030"
+    target: "સૂકો"
+    reading: "suko"
+    ipa: "suko"
+    phonetic: "[suko]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "કપડાં સૂકાં છે."
+        reading: "kapḍām̐ sukām̐ che."
+        ipa: "kəpɖã sukã tʃʰe"
+        bases:
+          - { word: "કપડાં", base: "કપડું", reading: "kapḍum̐" }
+          - { word: "સૂકાં", base: "સૂકો", reading: "suko" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "ઘાસ સૂકું છે."
+        reading: "ghās sukum̐ che."
+        ipa: "ɡʱas sukũ tʃʰe"
+        bases:
+          - { word: "ઘાસ", base: "ઘાસ", reading: "ghās" }
+          - { word: "સૂકું", base: "સૂકો", reading: "suko" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2031"
+    target: "હળવો"
+    reading: "haḷavo"
+    ipa: "ɦəɭəʋo"
+    phonetic: "[ɦəɭəʋo]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "હળવો વરસાદ પડે છે."
+        reading: "haḷvo varsād paḍe che."
+        ipa: "ɦəɭʋo ʋərsad̪ pəɖe tʃʰe"
+        bases:
+          - { word: "હળવો", base: "હળવો", reading: "haḷavo" }
+          - { word: "વરસાદ", ref: "gu-2000" }
+          - { word: "પડે", ref: "gu-2034" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "આજે પવન હળવો છે."
+        reading: "āje pavan haḷvo che."
+        ipa: "adʒe pəʋən ɦəɭʋo tʃʰe"
+        bases:
+          - { word: "આજે", ref: "gu-0482" }
+          - { word: "પવન", ref: "gu-2003" }
+          - { word: "હળવો", base: "હળવો", reading: "haḷavo" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - ref: "gu-1249"
+  - id: "gu-2033"
+    target: "વરસવું"
+    reading: "varasavum̐"
+    ipa: "ʋərəsəʋũ"
+    phonetic: "[ʋərəsəʋũ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "આજે વરસાદ વરસે છે."
+        reading: "āje varsād varse che."
+        ipa: "adʒe ʋərsad̪ ʋərse tʃʰe"
+        bases:
+          - { word: "આજે", ref: "gu-0482" }
+          - { word: "વરસાદ", ref: "gu-2000" }
+          - { word: "વરસે", base: "વરસવું", reading: "varasavum̐" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "અહીં ખૂબ વરસે છે."
+        reading: "ahim̐ khub varse che."
+        ipa: "əɦĩ kʰub ʋərse tʃʰe"
+        bases:
+          - { word: "અહીં", ref: "gu-0693" }
+          - { word: "ખૂબ", base: "ખૂબ", reading: "khub" }
+          - { word: "વરસે", base: "વરસવું", reading: "varasavum̐" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2034"
+    target: "પડવું"
+    reading: "paḍavum̐"
+    ipa: "pəɖəʋũ"
+    phonetic: "[pəɽəʋũ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "પાંદડું પડ્યું."
+        reading: "pāndaḍum̐ paḍyum̐."
+        ipa: "pand̪əɖũ pəɖjũ"
+        bases:
+          - { word: "પાંદડું", base: "પાંદડું", reading: "pāndaḍum̐" }
+          - { word: "પડ્યું", base: "પડવું", reading: "paḍavum̐" }
+      - target: "છત પરથી પાણી પડે છે."
+        reading: "chat parthi pāṇi paḍe che."
+        ipa: "tʃʰət̪ pərt̪ʰi paɳi pəɖe tʃʰe"
+        bases:
+          - { word: "છત", base: "છત", reading: "chat" }
+          - { word: "પરથી", base: "પર", reading: "par" }
+          - { word: "પાણી", ref: "gu-0565" }
+          - { word: "પડે", base: "પડવું", reading: "paḍavum̐" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2035"
+    target: "ફૂંકાવું"
+    reading: "phuṅkāvum̐"
+    ipa: "pʰuŋkaʋũ"
+    phonetic: "[pʰuŋkaʋũ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ઠંડો પવન ફૂંકાય છે."
+        reading: "ṭhaṇḍo pavan phuṅkāy che."
+        ipa: "ʈʰəɳɖo pəʋən pʰuŋkaj tʃʰe"
+        bases:
+          - { word: "ઠંડો", ref: "gu-2028" }
+          - { word: "પવન", ref: "gu-2003" }
+          - { word: "ફૂંકાય", base: "ફૂંકાવું", reading: "phuṅkāvum̐" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "જોરથી પવન ફૂંકાયો."
+        reading: "jorthi pavan phuṅkāyo."
+        ipa: "dʒort̪ʰi pəʋən pʰuŋkajo"
+        bases:
+          - { word: "જોરથી", base: "જોર", reading: "jor" }
+          - { word: "પવન", ref: "gu-2003" }
+          - { word: "ફૂંકાયો", base: "ફૂંકાવું", reading: "phuṅkāvum̐" }
+  - id: "gu-2036"
+    target: "ચમકવું"
+    reading: "camakavum̐"
+    ipa: "tʃəməkəʋũ"
+    phonetic: "[tʃəməkəʋũ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "તારા ચમકે છે."
+        reading: "tārā camke che."
+        ipa: "t̪ara tʃəmke tʃʰe"
+        bases:
+          - { word: "તારા", base: "તારો", reading: "tāro" }
+          - { word: "ચમકે", base: "ચમકવું", reading: "camakavum̐" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "સોનું ચમકે છે."
+        reading: "sonum̐ camke che."
+        ipa: "sonũ tʃəmke tʃʰe"
+        bases:
+          - { word: "સોનું", base: "સોનું", reading: "sonum̐" }
+          - { word: "ચમકે", base: "ચમકવું", reading: "camakavum̐" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2037"
+    target: "ગરજવું"
+    reading: "garajavum̐"
+    ipa: "ɡərədʒəʋũ"
+    phonetic: "[ɡərədʒəʋũ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "દૂર વાદળ ગરજે છે."
+        reading: "dur vādaḷ garje che."
+        ipa: "d̪ur ʋad̪əɭ ɡərdʒe tʃʰe"
+        bases:
+          - { word: "દૂર", ref: "gu-0452" }
+          - { word: "વાદળ", ref: "gu-2004" }
+          - { word: "ગરજે", base: "ગરજવું", reading: "garajavum̐" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "વાદળ ગરજે છે, પણ વરસાદ નથી."
+        reading: "vādaḷ garje che, paṇ varsād nathi."
+        ipa: "ʋad̪əɭ ɡərdʒe tʃʰe pəɳ ʋərsad̪ nət̪ʰi"
+        bases:
+          - { word: "વાદળ", ref: "gu-2004" }
+          - { word: "ગરજે", base: "ગરજવું", reading: "garajavum̐" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+          - { word: "પણ", ref: "gu-0055" }
+          - { word: "વરસાદ", ref: "gu-2000" }
+          - { word: "નથી", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-2038"
+    target: "ભીંજાવું"
+    reading: "bhiñjāvum̐"
+    ipa: "bʱiɲdʒaʋũ"
+    phonetic: "[bʱiɲdʒaʋũ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "વરસાદમાં હું ભીંજાયો."
+        reading: "varsādmām̐ hum̐ bhiñjāyo."
+        ipa: "ʋərsad̪mã ɦũ bʱiɲdʒajo"
+        bases:
+          - { word: "વરસાદમાં", ref: "gu-2000" }
+          - { word: "હું", ref: "gu-0690" }
+          - { word: "ભીંજાયો", base: "ભીંજાવું", reading: "bhiñjāvum̐" }
+      - target: "બધા ભીંજાઈ ગયા."
+        reading: "badhā bhiñjāi gayā."
+        ipa: "bəd̪ʱa bʱiɲdʒai ɡəja"
+        bases:
+          - { word: "બધા", base: "બધા", reading: "badhā" }
+          - { word: "ભીંજાઈ", base: "ભીંજાવું", reading: "bhiñjāvum̐" }
+          - { word: "ગયા", ref: "gu-0508" }
+  - id: "gu-2039"
+    target: "ઊગવું"
+    reading: "ugavum̐"
+    ipa: "uɡəʋũ"
+    phonetic: "[uɡəʋũ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "સવારે સૂરજ ઊગે છે."
+        reading: "savāre suraj uge che."
+        ipa: "səʋare surədʒ uɡe tʃʰe"
+        bases:
+          - { word: "સવારે", ref: "gu-0486" }
+          - { word: "સૂરજ", ref: "gu-2002" }
+          - { word: "ઊગે", base: "ઊગવું", reading: "ugavum̐" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "ચંદ્ર ઊગ્યો."
+        reading: "candra ugyo."
+        ipa: "tʃənd̪rə uɡjo"
+        bases:
+          - { word: "ચંદ્ર", base: "ચંદ્ર", reading: "candra" }
+          - { word: "ઊગ્યો", base: "ઊગવું", reading: "ugavum̐" }
+  - id: "gu-2040"
+    target: "આથમવું"
+    reading: "āthamavum̐"
+    ipa: "at̪ʰəməʋũ"
+    phonetic: "[at̪ʰəməʋũ]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "સાંજે સૂરજ આથમે છે."
+        reading: "sāñje suraj āthme che."
+        ipa: "saɲdʒe surədʒ at̪ʰme tʃʰe"
+        bases:
+          - { word: "સાંજે", ref: "gu-0488" }
+          - { word: "સૂરજ", ref: "gu-2002" }
+          - { word: "આથમે", base: "આથમવું", reading: "āthamavum̐" }
+          - { word: "છે", base: "હોવું", reading: "hovum̐" }
+      - target: "સૂરજ આથમ્યો."
+        reading: "suraj āthamyo."
+        ipa: "surədʒ at̪ʰəmjo"
+        bases:
+          - { word: "સૂરજ", ref: "gu-2002" }
+          - { word: "આથમ્યો", base: "આથમવું", reading: "āthamavum̐" }

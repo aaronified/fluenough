@@ -78,17 +78,16 @@
 # 6. sentences, each after its words and rules; then the other themes,
 #    each its words, then its rules, then its sentences.
 #
-# Scripts. Latin letters are the course's script. sitelen pona, the
+# Scripts. Latin letters are the course's first script. sitelen pona, the
 # logographic script Sonja Lang drew in pu (a glyph per word, a name
-# spelled in a cartouche), is proposed as an optional unit after B1,
-# taught to read only: it is not in Unicode, only in the Under-ConScript
-# Unicode Registry (UCSUR, U+F1900 to U+F19FF, private use), so it needs a
-# bundled font and cannot be typed on a phone's keyboard. The format has
-# no place to plan it (a planned unit after B1 is an error, and `alphabet`
-# lists only written decks), so it is not in `units`: it comes in as a
-# written unit after the B1 mark, once its deck and its font exist. The
-# owner decides the font and its licence (#581, question 2). sitelen
-# sitelen, Jonathan Gabel's decorative non-linear script, is not planned:
+# spelled in a cartouche), is its second (owner, 2026-11-16, ADR-0055): it
+# is not in Unicode, only in the Under-ConScript Unicode Registry (UCSUR,
+# U+F1900 to U+F19FF, private use), so it is drawn in a font that downloads
+# with the course (decks/fonts/sitelen_pona) and cannot be typed on a
+# phone's keyboard: a learner reads it and answers in Latin letters. Every
+# vocab card gives its sitelen pona as `target_scripts`, and the first unit,
+# tok-script-sitelen-pona, teaches the glyphs to a learner who reads it.
+# sitelen sitelen, Jonathan Gabel's decorative non-linear script, is not planned:
 # it is art more than a writing system for daily use, and has no font.
 #
 # Toki Pona has no grammatical gender, so `genders` is empty. mije, meli
@@ -123,9 +122,18 @@ language: "tok"
 # The gender classes a noun's gender is one of (#512; DECK-FORMAT.md, Card
 # data): none, since Toki Pona has no grammatical gender.
 genders: []
+# The decks that need the alphabet: a learner who learns without it, or reads
+# Toki Pona in Latin letters only, skips them. Here the glyph deck of sitelen
+# pona, offered to a learner who reads that script (ADR-0055).
+alphabet:
+  - "tok-script-sitelen-pona"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
+  # 0. Sitelen pona: the glyphs, for a learner who reads that script: each
+  # glyph of the words the course teaches, in the order it meets them, said
+  # in Latin letters. An alphabet unit counts no words and no milestone.
+  - ["tok-script-sitelen-pona"]
   # A1: about half the language, the basic sentence, negation, questions,
   # commands, modifiers and time.
   #

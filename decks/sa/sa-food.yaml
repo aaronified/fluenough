@@ -1,0 +1,655 @@
+schema: 1
+id: "sa-food"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "food"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-1700"
+    target: "नवनीतम्"
+    reading: "navanītam"
+    ipa: "nəʋəniːt̪əm"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "नवनीतम्", base: "नवनीत", reading: "navanīta" }
+    examples:
+      - target: "नवनीतं मधुरम्"
+        reading: "navanītaṃ madhuram"
+        ipa: "nəʋəniːt̪əm məd̪ʱurəm"
+        bases:
+          - { word: "नवनीतं", base: "नवनीत", reading: "navanīta" }
+          - { word: "मधुरम्", base: "मधुर", reading: "madhura" }
+      - target: "गृहे नवनीतम् अस्ति"
+        reading: "gṛhe navanītam asti"
+        ipa: "ɡr̩ɦeː nəʋəniːt̪əm əst̪i"
+        bases:
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "नवनीतम्", base: "नवनीत", reading: "navanīta" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1701"
+    target: "क्षीरम्"
+    reading: "kṣīram"
+    ipa: "kʂiːrəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "क्षीरम्", base: "क्षीर", reading: "kṣīra" }
+    examples:
+      - target: "क्षीरं शीतलम्"
+        reading: "kṣīraṃ śītalam"
+        ipa: "kʂiːrəm ʃiːt̪ələm"
+        bases:
+          - { word: "क्षीरं", base: "क्षीर", reading: "kṣīra" }
+          - { word: "शीतलम्", base: "शीतल", reading: "śītala" }
+      - target: "गृहे क्षीरम् अस्ति"
+        reading: "gṛhe kṣīram asti"
+        ipa: "ɡr̩ɦeː kʂiːrəm əst̪i"
+        bases:
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "क्षीरम्", base: "क्षीर", reading: "kṣīra" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1702"
+    target: "दधि"
+    reading: "dadhi"
+    ipa: "d̪əd̪ʱi"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "दधि", base: "दधि", reading: "dadhi" }
+    examples:
+      - target: "दधि मधुरम्"
+        reading: "dadhi madhuram"
+        ipa: "d̪əd̪ʱi məd̪ʱurəm"
+        bases:
+          - { word: "दधि", base: "दधि", reading: "dadhi" }
+          - { word: "मधुरम्", base: "मधुर", reading: "madhura" }
+      - target: "अस्ति गृहे दधि"
+        reading: "asti gṛhe dadhi"
+        ipa: "əst̪i ɡr̩ɦeː d̪əd̪ʱi"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "दधि", base: "दधि", reading: "dadhi" }
+  - id: "sa-1703"
+    target: "मधु"
+    reading: "madhu"
+    ipa: "məd̪ʱu"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "मधु", base: "मधु", reading: "madhu" }
+    examples:
+      - target: "मधु मधुरम्"
+        reading: "madhu madhuram"
+        ipa: "məd̪ʱu məd̪ʱurəm"
+        bases:
+          - { word: "मधु", base: "मधु", reading: "madhu" }
+          - { word: "मधुरम्", base: "मधुर", reading: "madhura" }
+      - target: "अस्ति वने मधु"
+        reading: "asti vane madhu"
+        ipa: "əst̪i ʋəneː məd̪ʱu"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "वने", base: "वन", reading: "vana" }
+          - { word: "मधु", base: "मधु", reading: "madhu" }
+  - id: "sa-1704"
+    target: "पायसम्"
+    reading: "pāyasam"
+    ipa: "paːjəsəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "पायसम्", base: "पायस", reading: "pāyasa" }
+    examples:
+      - target: "पायसं मधुरम्"
+        reading: "pāyasaṃ madhuram"
+        ipa: "paːjəsəm məd̪ʱurəm"
+        bases:
+          - { word: "पायसं", base: "पायस", reading: "pāyasa" }
+          - { word: "मधुरम्", base: "मधुर", reading: "madhura" }
+      - target: "पात्रे पायसम् अस्ति"
+        reading: "pātre pāyasam asti"
+        ipa: "paːt̪reː paːjəsəm əst̪i"
+        bases:
+          - { word: "पात्रे", base: "पात्र", reading: "pātra" }
+          - { word: "पायसम्", base: "पायस", reading: "pāyasa" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1705"
+    target: "आम्रः"
+    reading: "āmraḥ"
+    ipa: "aːmrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "आम्रः", base: "आम्र", reading: "āmra" }
+    examples:
+      - target: "आम्रो मधुरः"
+        reading: "āmro madhuraḥ"
+        ipa: "aːmroː məd̪ʱurəh"
+        bases:
+          - { word: "आम्रो", base: "आम्र", reading: "āmra" }
+          - { word: "मधुरः", base: "मधुर", reading: "madhura" }
+      - target: "आम्रो भवति वने"
+        reading: "āmro bhavati vane"
+        ipa: "aːmroː bʱəʋət̪i ʋəneː"
+        bases:
+          - { word: "आम्रो", base: "आम्र", reading: "āmra" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+          - { word: "वने", base: "वन", reading: "vana" }
+  - id: "sa-1706"
+    target: "ओदनः"
+    reading: "odanaḥ"
+    ipa: "oːd̪ənəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "ओदनः", base: "ओदन", reading: "odana" }
+    examples:
+      - target: "ओदन उष्णः"
+        reading: "odana uṣṇaḥ"
+        ipa: "oːd̪ənə uʂɳəh"
+        bases:
+          - { word: "ओदन", base: "ओदन", reading: "odana" }
+          - { word: "उष्णः", base: "उष्ण", reading: "uṣṇa" }
+      - target: "ओदनो भवति पात्रे"
+        reading: "odano bhavati pātre"
+        ipa: "oːd̪ənoː bʱəʋət̪i paːt̪reː"
+        bases:
+          - { word: "ओदनो", base: "ओदन", reading: "odana" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+          - { word: "पात्रे", base: "पात्र", reading: "pātra" }
+  - id: "sa-1707"
+    target: "यवः"
+    reading: "yavaḥ"
+    ipa: "jəʋəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "यवः", base: "यव", reading: "yava" }
+    examples:
+      - target: "यवः शुष्कः"
+        reading: "yavaḥ śuṣkaḥ"
+        ipa: "jəʋəh ʃuʂkəh"
+        bases:
+          - { word: "यवः", base: "यव", reading: "yava" }
+          - { word: "शुष्कः", base: "शुष्क", reading: "śuṣka" }
+      - target: "क्षेत्रे यवो ऽस्ति"
+        reading: "kṣetre yavo 'sti"
+        ipa: "kʂeːt̪reː jəʋoː st̪i"
+        bases:
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+          - { word: "यवो", base: "यव", reading: "yava" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1708"
+    target: "गोधूमः"
+    reading: "godhūmaḥ"
+    ipa: "ɡoːd̪ʱuːməh"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "गोधूमः", base: "गोधूम", reading: "godhūma" }
+    examples:
+      - target: "गोधूमो नवः"
+        reading: "godhūmo navaḥ"
+        ipa: "ɡoːd̪ʱuːmoː nəʋəh"
+        bases:
+          - { word: "गोधूमो", base: "गोधूम", reading: "godhūma" }
+          - { word: "नवः", base: "नव", reading: "nava" }
+      - target: "क्षेत्रे गोधूमो ऽस्ति"
+        reading: "kṣetre godhūmo 'sti"
+        ipa: "kʂeːt̪reː ɡoːd̪ʱuːmoː st̪i"
+        bases:
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+          - { word: "गोधूमो", base: "गोधूम", reading: "godhūma" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1709"
+    target: "शाकः"
+    reading: "śākaḥ"
+    ipa: "ʃaːkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "शाकः", base: "शाक", reading: "śāka" }
+    examples:
+      - target: "शाको हरितः"
+        reading: "śāko haritaḥ"
+        ipa: "ʃaːkoː ɦərit̪əh"
+        bases:
+          - { word: "शाको", base: "शाक", reading: "śāka" }
+          - { word: "हरितः", base: "हरित", reading: "harita" }
+      - target: "उद्याने शाको ऽस्ति"
+        reading: "udyāne śāko 'sti"
+        ipa: "ud̪jaːneː ʃaːkoː st̪i"
+        bases:
+          - { word: "उद्याने", base: "उद्यान", reading: "udyāna" }
+          - { word: "शाको", base: "शाक", reading: "śāka" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1710"
+    target: "लवणम्"
+    reading: "lavaṇam"
+    ipa: "ləʋəɳəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "लवणम्", base: "लवण", reading: "lavaṇa" }
+    examples:
+      - target: "लवणं शुक्लम्"
+        reading: "lavaṇaṃ śuklam"
+        ipa: "ləʋəɳəm ʃukləm"
+        bases:
+          - { word: "लवणं", base: "लवण", reading: "lavaṇa" }
+          - { word: "शुक्लम्", base: "शुक्ल", reading: "śukla" }
+      - target: "पात्रे लवणम् अस्ति"
+        reading: "pātre lavaṇam asti"
+        ipa: "paːt̪reː ləʋəɳəm əst̪i"
+        bases:
+          - { word: "पात्रे", base: "पात्र", reading: "pātra" }
+          - { word: "लवणम्", base: "लवण", reading: "lavaṇa" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1711"
+    target: "शर्करा"
+    reading: "śarkarā"
+    ipa: "ʃərkəraː"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "शर्करा", base: "शर्करा", reading: "śarkarā" }
+    examples:
+      - target: "शर्करा मधुरा"
+        reading: "śarkarā madhurā"
+        ipa: "ʃərkəraː məd̪ʱuraː"
+        bases:
+          - { word: "शर्करा", base: "शर्करा", reading: "śarkarā" }
+          - { word: "मधुरा", base: "मधुर", reading: "madhura" }
+      - target: "अस्ति गृहे शर्करा"
+        reading: "asti gṛhe śarkarā"
+        ipa: "əst̪i ɡr̩ɦeː ʃərkəraː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "शर्करा", base: "शर्करा", reading: "śarkarā" }
+  - id: "sa-1712"
+    target: "सूपः"
+    reading: "sūpaḥ"
+    ipa: "suːpəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "सूपः", base: "सूप", reading: "sūpa" }
+    examples:
+      - target: "सूप उष्णः"
+        reading: "sūpa uṣṇaḥ"
+        ipa: "suːpə uʂɳəh"
+        bases:
+          - { word: "सूप", base: "सूप", reading: "sūpa" }
+          - { word: "उष्णः", base: "उष्ण", reading: "uṣṇa" }
+      - target: "पात्रे सूपो ऽस्ति"
+        reading: "pātre sūpo 'sti"
+        ipa: "paːt̪reː suːpoː st̪i"
+        bases:
+          - { word: "पात्रे", base: "पात्र", reading: "pātra" }
+          - { word: "सूपो", base: "सूप", reading: "sūpa" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1713"
+    target: "मांसम्"
+    reading: "māṃsam"
+    ipa: "mãːsəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "मांसम्", base: "मांस", reading: "māṃsa" }
+    examples:
+      - target: "मांसं शीतलम्"
+        reading: "māṃsaṃ śītalam"
+        ipa: "mãːsəm ʃiːt̪ələm"
+        bases:
+          - { word: "मांसं", base: "मांस", reading: "māṃsa" }
+          - { word: "शीतलम्", base: "शीतल", reading: "śītala" }
+      - target: "गृहे मांसम् अस्ति"
+        reading: "gṛhe māṃsam asti"
+        ipa: "ɡr̩ɦeː mãːsəm əst̪i"
+        bases:
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "मांसम्", base: "मांस", reading: "māṃsa" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1714"
+    target: "मत्स्यः"
+    reading: "matsyaḥ"
+    ipa: "mət̪sjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "मत्स्यः", base: "मत्स्य", reading: "matsya" }
+    examples:
+      - target: "मत्स्यो नवः"
+        reading: "matsyo navaḥ"
+        ipa: "mət̪sjoː nəʋəh"
+        bases:
+          - { word: "मत्स्यो", base: "मत्स्य", reading: "matsya" }
+          - { word: "नवः", base: "नव", reading: "nava" }
+      - target: "नद्यां मत्स्यो ऽस्ति"
+        reading: "nadyāṃ matsyo 'sti"
+        ipa: "nəd̪jaːm mət̪sjoː st̪i"
+        bases:
+          - { word: "नद्यां", base: "नदी", reading: "nadī" }
+          - { word: "मत्स्यो", base: "मत्स्य", reading: "matsya" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1715"
+    target: "अपूपः"
+    reading: "apūpaḥ"
+    ipa: "əpuːpəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "अपूपः", base: "अपूप", reading: "apūpa" }
+    examples:
+      - target: "अपूपो मधुरः"
+        reading: "apūpo madhuraḥ"
+        ipa: "əpuːpoː məd̪ʱurəh"
+        bases:
+          - { word: "अपूपो", base: "अपूप", reading: "apūpa" }
+          - { word: "मधुरः", base: "मधुर", reading: "madhura" }
+      - target: "अपूपो भवति गृहे"
+        reading: "apūpo bhavati gṛhe"
+        ipa: "əpuːpoː bʱəʋət̪i ɡr̩ɦeː"
+        bases:
+          - { word: "अपूपो", base: "अपूप", reading: "apūpa" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+  - id: "sa-1716"
+    target: "तिलः"
+    reading: "tilaḥ"
+    ipa: "t̪iləh"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "तिलः", base: "तिल", reading: "tila" }
+    examples:
+      - target: "तिलः कृष्णः"
+        reading: "tilaḥ kṛṣṇaḥ"
+        ipa: "t̪iləh kr̩ʂɳəh"
+        bases:
+          - { word: "तिलः", base: "तिल", reading: "tila" }
+          - { word: "कृष्णः", base: "कृष्ण", reading: "kṛṣṇa" }
+      - target: "क्षेत्रे तिलो ऽस्ति"
+        reading: "kṣetre tilo 'sti"
+        ipa: "kʂeːt̪reː t̪iloː st̪i"
+        bases:
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+          - { word: "तिलो", base: "तिल", reading: "tila" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1717"
+    target: "इक्षुः"
+    reading: "ikṣuḥ"
+    ipa: "ikʂuh"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "इक्षुः", base: "इक्षु", reading: "ikṣu" }
+    examples:
+      - target: "इक्षुर् मधुरः"
+        reading: "ikṣur madhuraḥ"
+        ipa: "ikʂur məd̪ʱurəh"
+        bases:
+          - { word: "इक्षुर्", base: "इक्षु", reading: "ikṣu" }
+          - { word: "मधुरः", base: "मधुर", reading: "madhura" }
+      - target: "इक्षुर् भवति क्षेत्रे"
+        reading: "ikṣur bhavati kṣetre"
+        ipa: "ikʂur bʱəʋət̪i kʂeːt̪reː"
+        bases:
+          - { word: "इक्षुर्", base: "इक्षु", reading: "ikṣu" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+  - id: "sa-1718"
+    target: "तक्रम्"
+    reading: "takram"
+    ipa: "t̪əkrəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "तक्रम्", base: "तक्र", reading: "takra" }
+    examples:
+      - target: "तक्रं शीतलम्"
+        reading: "takraṃ śītalam"
+        ipa: "t̪əkrəm ʃiːt̪ələm"
+        bases:
+          - { word: "तक्रं", base: "तक्र", reading: "takra" }
+          - { word: "शीतलम्", base: "शीतल", reading: "śītala" }
+      - target: "पात्रे तक्रम् अस्ति"
+        reading: "pātre takram asti"
+        ipa: "paːt̪reː t̪əkrəm əst̪i"
+        bases:
+          - { word: "पात्रे", base: "पात्र", reading: "pātra" }
+          - { word: "तक्रम्", base: "तक्र", reading: "takra" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1719"
+    target: "उदकम्"
+    reading: "udakam"
+    ipa: "ud̪əkəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "उदकम्", base: "उदक", reading: "udaka" }
+    examples:
+      - target: "उदकं शीतलम्"
+        reading: "udakaṃ śītalam"
+        ipa: "ud̪əkəm ʃiːt̪ələm"
+        bases:
+          - { word: "उदकं", base: "उदक", reading: "udaka" }
+          - { word: "शीतलम्", base: "शीतल", reading: "śītala" }
+      - target: "उदकं भवति कूपे"
+        reading: "udakaṃ bhavati kūpe"
+        ipa: "ud̪əkəm bʱəʋət̪i kuːpeː"
+        bases:
+          - { word: "उदकं", base: "उदक", reading: "udaka" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+          - { word: "कूपे", base: "कूप", reading: "kūpa" }
+  - id: "sa-1720"
+    target: "गुडः"
+    reading: "guḍaḥ"
+    ipa: "ɡuɖəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "गुडः", base: "गुड", reading: "guḍa" }
+    examples:
+      - target: "गुडो मधुरः"
+        reading: "guḍo madhuraḥ"
+        ipa: "ɡuɖoː məd̪ʱurəh"
+        bases:
+          - { word: "गुडो", base: "गुड", reading: "guḍa" }
+          - { word: "मधुरः", base: "मधुर", reading: "madhura" }
+      - target: "गृहे गुडो ऽस्ति"
+        reading: "gṛhe guḍo 'sti"
+        ipa: "ɡr̩ɦeː ɡuɖoː st̪i"
+        bases:
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "गुडो", base: "गुड", reading: "guḍa" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1721"
+    target: "मरिचम्"
+    reading: "maricam"
+    ipa: "məritʃəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "मरिचम्", base: "मरिच", reading: "marica" }
+    examples:
+      - target: "मरिचं श्यामम्"
+        reading: "maricaṃ śyāmam"
+        ipa: "məritʃəm ʃjaːməm"
+        bases:
+          - { word: "मरिचं", base: "मरिच", reading: "marica" }
+          - { word: "श्यामम्", base: "श्याम", reading: "śyāma" }
+      - target: "पात्रे मरिचम् अस्ति"
+        reading: "pātre maricam asti"
+        ipa: "paːt̪reː məritʃəm əst̪i"
+        bases:
+          - { word: "पात्रे", base: "पात्र", reading: "pātra" }
+          - { word: "मरिचम्", base: "मरिच", reading: "marica" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1722"
+    target: "कन्दः"
+    reading: "kandaḥ"
+    ipa: "kənd̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "कन्दः", base: "कन्द", reading: "kanda" }
+    examples:
+      - target: "कन्दो गोलः"
+        reading: "kando golaḥ"
+        ipa: "kənd̪oː ɡoːləh"
+        bases:
+          - { word: "कन्दो", base: "कन्द", reading: "kanda" }
+          - { word: "गोलः", base: "गोल", reading: "gola" }
+      - target: "क्षेत्रे कन्दो ऽस्ति"
+        reading: "kṣetre kando 'sti"
+        ipa: "kʂeːt̪reː kənd̪oː st̪i"
+        bases:
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+          - { word: "कन्दो", base: "कन्द", reading: "kanda" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1814"
+    target: "दाडिमः"
+    reading: "dāḍimaḥ"
+    ipa: "d̪aːɖiməh"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "दाडिमः", base: "दाडिम", reading: "dāḍima" }
+    examples:
+      - target: "दाडिमो मधुरः"
+        reading: "dāḍimo madhuraḥ"
+        ipa: "d̪aːɖimoː məd̪ʱurəh"
+        bases:
+          - { word: "दाडिमो", base: "दाडिम", reading: "dāḍima" }
+          - { word: "मधुरः", base: "मधुर", reading: "madhura" }
+      - target: "उद्याने दाडिमो ऽस्ति"
+        reading: "udyāne dāḍimo 'sti"
+        ipa: "ud̪jaːneː d̪aːɖimoː st̪i"
+        bases:
+          - { word: "उद्याने", base: "उद्यान", reading: "udyāna" }
+          - { word: "दाडिमो", base: "दाडिम", reading: "dāḍima" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }

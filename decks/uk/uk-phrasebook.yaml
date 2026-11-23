@@ -1,0 +1,176 @@
+schema: 1
+id: "uk-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "uk", iso639_3: "ukr", name: "Ukrainian", script: "cyrillic", tts: "uk-UA", icon: "Ук" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "uk-0001"
+    target: "привіт"
+    reading: "pryvit"
+    ipa: "prɪˈʋit"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "привіт", base: "привіт", reading: "pryvit" }]
+  - id: "uk-0002"
+    target: "добрий ранок"
+    reading: "dobryi ranok"
+    ipa: "ˈdɔbrɪj ˈrɑnɔk"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "добрий", base: "добрий", reading: "dobryi" }, { word: "ранок", base: "ранок", reading: "ranok" }]
+  - id: "uk-0003"
+    target: "добрий вечір"
+    reading: "dobryi vechir"
+    ipa: "ˈdɔbrɪj ˈʋɛtʃir"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "добрий", base: "добрий", reading: "dobryi" }, { word: "вечір", base: "вечір", reading: "vechir" }]
+  - id: "uk-0004"
+    target: "добраніч"
+    reading: "dobranich"
+    ipa: "dɔbrɑˈnitʃ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "добраніч", base: "добраніч", reading: "dobranich" }]
+  - id: "uk-0005"
+    target: "до побачення"
+    reading: "do pobachennia"
+    ipa: "dɔ pɔˈbɑtʃɛnʲːɑ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "до", base: "до", reading: "do" }, { word: "побачення", base: "побачення", reading: "pobachennia" }]
+  - id: "uk-0006"
+    target: "будь ласка"
+    reading: "bud laska"
+    ipa: "budʲ ˈlɑskɑ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "будь", base: "бути", reading: "bud" }, { word: "ласка", base: "ласка", reading: "laska" }]
+  - id: "uk-0007"
+    target: "дякую"
+    reading: "diakuiu"
+    ipa: "ˈdʲɑkuju"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "дякую", base: "дякувати", reading: "diakuiu" }]
+  - id: "uk-0008"
+    target: "не має за що"
+    reading: "ne maie za shcho"
+    ipa: "nɛ ˈmɑjɛ zɑ ʃtɔ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "не", base: "не", reading: "ne" }, { word: "має", base: "мати", reading: "maie" }, { word: "за", base: "за", reading: "za" }, { word: "що", base: "що", reading: "shcho" }]
+  - id: "uk-0009"
+    target: "вибачте"
+    reading: "vybachte"
+    ipa: "ˈʋɪbɑtʃtɛ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "вибачте", base: "вибачити", reading: "vybachte" }]
+  - id: "uk-0010"
+    target: "перепрошую"
+    reading: "pereproshuiu"
+    ipa: "pɛrɛˈprɔʃuju"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "перепрошую", base: "перепрошувати", reading: "pereproshuiu" }]
+  - id: "uk-0011"
+    target: "я не розумію"
+    reading: "ya ne rozumiiu"
+    ipa: "jɑ nɛ rɔzuˈmiju"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "я", base: "я", reading: "ya" }, { word: "не", base: "не", reading: "ne" }, { word: "розумію", base: "розуміти", reading: "rozumiiu" }]
+  - id: "uk-0012"
+    target: "я не знаю"
+    reading: "ya ne znaiu"
+    ipa: "jɑ nɛ ˈznɑju"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "я", base: "я", reading: "ya" }, { word: "не", base: "не", reading: "ne" }, { word: "знаю", base: "знати", reading: "znaiu" }]
+  - id: "uk-0013"
+    target: "будь ласка, говоріть повільніше"
+    reading: "bud laska, hovorit povilnishe"
+    ipa: "budʲ ˈlɑskɑ ɦɔʋɔˈrʲitʲ pɔʋilʲˈnʲiʃɛ"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "будь", base: "бути", reading: "bud" }, { word: "ласка", base: "ласка", reading: "laska" }, { word: "говоріть", base: "говорити", reading: "hovorit" }, { word: "повільніше", base: "повільно", reading: "povilnishe" }]
+  - id: "uk-0014"
+    target: "ви говорите англійською?"
+    reading: "vy hovorite anhliiskoiu?"
+    ipa: "ʋɪ ɦɔʋɔˈrɪtɛ ɑnɦliˈjsʲkɔju"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "ви", base: "ви", reading: "vy" }, { word: "говорите", base: "говорити", reading: "hovorite" }, { word: "англійською", base: "англійська", reading: "anhliiskoiu" }]
+  - id: "uk-0015"
+    target: "як справи?"
+    reading: "yak spravy?"
+    ipa: "jɑk ˈsprɑʋɪ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "як", base: "як", reading: "yak" }, { word: "справи", base: "справа", reading: "spravy" }]
+  - id: "uk-0016"
+    target: "добре, дякую"
+    reading: "dobre, diakuiu"
+    ipa: "ˈdɔbrɛ ˈdʲɑkuju"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "добре", base: "добре", reading: "dobre" }, { word: "дякую", base: "дякувати", reading: "diakuiu" }]
+  - id: "uk-0017"
+    target: "як вас звати?"
+    reading: "yak vas zvaty?"
+    ipa: "jɑk ʋɑs ˈzʋɑtɪ"
+    pos: "phrase"
+    tags: ["introduction"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "як", base: "як", reading: "yak" }, { word: "вас", base: "ви", reading: "vas" }, { word: "звати", base: "звати", reading: "zvaty" }]
+  - id: "uk-0018"
+    target: "мене звати"
+    reading: "mene zvaty"
+    ipa: "mɛˈnɛ ˈzʋɑtɪ"
+    pos: "phrase"
+    tags: ["introduction"]
+    phrasebook: true
+    bases: [{ word: "мене", base: "я", reading: "mene" }, { word: "звати", base: "звати", reading: "zvaty" }]
+  - id: "uk-0019"
+    target: "де туалет?"
+    reading: "de tualet?"
+    ipa: "dɛ tuɑˈlɛt"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "де", base: "де", reading: "de" }, { word: "туалет", base: "туалет", reading: "tualet" }]
+  - id: "uk-0020"
+    target: "допоможіть!"
+    reading: "dopomozhit!"
+    ipa: "dɔpɔˈmɔʒitʲ"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "допоможіть", base: "допомогти", reading: "dopomozhit" }]

@@ -1,0 +1,33 @@
+schema: 1
+id: "hi-en-grammar-verb-future"
+kind: "layer"
+core: "hi-grammar-verb-future"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs: the future, for every person"
+description: "Every verb the course teaches, in the future, for each person and for a man or a woman. The forms are written in Devanagari for now. Not yet checked by a Hindustani speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "main-m": "I, a man, in the future"
+    "main-f": "I, a woman, in the future"
+    "tum-m": "you (familiar), a man, in the future"
+    "tum-f": "you (familiar), a woman, in the future"
+    "vah-m": "he, or you (intimate), a man, in the future"
+    "vah-f": "she, or you (intimate), a woman, in the future"
+    "ham-m": "we, they or you (respectful), men or a mixed group, in the future"
+    "ham-f": "we, they or you (respectful), women, in the future"
+rules:
+  "hi-rule-future-first":
+    name: "-ूँगा (-ūm̐gā)/-ूँगी (-ūm̐gī): I will"
+    explanation: "For I, the ending {1} for a man or {2} for a woman follows the stem: {3}, to do, gives {4} or {5}. After a stem that ends in a vowel the ending is spelled differently: {6}, to go, gives {7}."
+  "hi-rule-future-second":
+    name: "-ोगे (-ōgē)/-ोगी (-ōgī): you (tum) will"
+    explanation: "For you (familiar), the ending is {1} for a man and {2} for a woman: {3}, to do, gives {4} or {5}; {6}, to go, gives {7}."
+  "hi-rule-future-third":
+    name: "-ेगा (-ēgā)/-ेगी (-ēgī): he, she will"
+    explanation: "For he or she the ending is {1} or {2}: {3}, to do, gives {4} or {5}; {6}, to go, gives {7}. The very close you, {8}, uses the same form."
+  "hi-rule-future-plural":
+    name: "-ेंगे (-ēm̐gē)/-ेंगी (-ēm̐gī): we, they will"
+    explanation: "For we, they and the respectful you the ending is {1} or {2}: {3}, to do, gives {4} or {5}; {6}, to go, gives {7}. The same form serves {8}, you (respectful), and {9}, they."

@@ -1,0 +1,158 @@
+schema: 1
+id: "sa-en-numbers-big"
+kind: "layer"
+core: "sa-numbers-big"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Hundreds, thousands and big numbers"
+description: "Thirty, forty and fifty, then hundreds, thousands and the larger counts of Classical Sanskrit, with the count noun that follows them."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1559":
+    native: "A hundred."
+    notes:
+      "n1": "A neuter a-stem noun; as a count it takes its noun in the plural, as in शतं (śataṃ) वर्षाणि (varṣāṇi), a hundred years."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign."
+    bases:
+      "शतम्": "a hundred"
+    examples:
+      "शतं वर्षाणि":
+        native: "A hundred years."
+        bases:
+          "शतं": "hundred"
+          "वर्षाणि": "years"
+      "शतं पुस्तकानि":
+        native: "A hundred books."
+        bases:
+          "शतं": "hundred"
+          "पुस्तकानि": "books"
+  "sa-1560":
+    native: "A thousand."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign."
+    bases:
+      "सहस्रम्": "a thousand"
+    examples:
+      "सहस्रं पुरुषाः":
+        native: "A thousand men."
+        bases:
+          "सहस्रं": "thousand"
+          "पुरुषाः": "men"
+      "सहस्रं फलानि":
+        native: "A thousand fruits."
+        bases:
+          "सहस्रं": "thousand"
+          "फलानि": "fruits"
+  "sa-1561":
+    native: "Ten thousand."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign."
+    bases:
+      "अयुतम्": "ten thousand"
+    examples:
+      "अयुतं पुष्पाणि":
+        native: "Ten thousand flowers."
+        bases:
+          "अयुतं": "ten thousand"
+          "पुष्पाणि": "flowers"
+      "अयुतं जनाः":
+        native: "Ten thousand people."
+        bases:
+          "अयुतं": "ten thousand"
+          "जनाः": "people"
+  "sa-1562":
+    native: "A hundred thousand."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign."
+    bases:
+      "लक्षम्": "a hundred thousand"
+    examples:
+      "लक्षं गृहाणि":
+        native: "A hundred thousand houses."
+        bases:
+          "लक्षं": "hundred thousand"
+          "गृहाणि": "houses"
+      "लक्षं वर्षाणि":
+        native: "A hundred thousand years."
+        bases:
+          "लक्षं": "hundred thousand"
+          "वर्षाणि": "years"
+  "sa-1565":
+    native: "Ten lakhs; a million."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign."
+    bases:
+      "प्रयुतम्": "ten lakhs"
+    examples:
+      "प्रयुतं पुस्तकानि":
+        native: "A million books."
+        bases:
+          "प्रयुतं": "a million"
+          "पुस्तकानि": "books"
+      "प्रयुतं फलानि":
+        native: "A million fruits."
+        bases:
+          "प्रयुतं": "a million"
+          "फलानि": "fruits"
+  "sa-1566":
+    native: "Ten million; a crore."
+    notes:
+      "n1": "A feminine i-stem noun; its endings differ from the a-stem table."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+      "n3": "A final visarga after a vowel other than अ (a) or आ (ā) becomes र् (r) before a voiced consonant or a vowel (Whitney 174)."
+    bases:
+      "कोटिः": "ten million"
+    examples:
+      "कोटिर् जनाः":
+        native: "Ten million people."
+        bases:
+          "कोटिर्": "ten million"
+          "जनाः": "people"
+      "कोटिर् वर्षाणि":
+        native: "Ten million years."
+        bases:
+          "कोटिर्": "ten million"
+          "वर्षाणि": "years"
+  "sa-1610":
+    native: "Thirty."
+    notes:
+      "n1": "Thirty. A feminine noun ending in a consonant (stem triṃśat), so it is not in the a-stems table; the count noun follows it in the plural."
+    examples:
+      "त्रिंशत् पुस्तकानि":
+        native: "Thirty books."
+        bases:
+          "पुस्तकानि": "books (plural)"
+      "त्रिंशत् कुम्भाः":
+        native: "Thirty jars."
+        bases:
+          "कुम्भाः": "jars (plural)"
+  "sa-1611":
+    native: "Forty."
+    notes:
+      "n1": "Forty. A feminine noun ending in a consonant (stem catvāriṃśat), so it is not in the a-stems table; the count noun follows it in the plural."
+    examples:
+      "चत्वारिंशत् पुस्तकानि":
+        native: "Forty books."
+        bases:
+          "पुस्तकानि": "books (plural)"
+      "चत्वारिंशत् कुम्भाः":
+        native: "Forty jars."
+        bases:
+          "कुम्भाः": "jars (plural)"
+  "sa-1612":
+    native: "Fifty."
+    notes:
+      "n1": "Fifty. A feminine noun ending in a consonant (stem pañcāśat), so it is not in the a-stems table; the count noun follows it in the plural."
+    examples:
+      "पञ्चाशत् पुस्तकानि":
+        native: "Fifty books."
+        bases:
+          "पुस्तकानि": "books (plural)"
+      "पञ्चाशत् पुष्पाणि":
+        native: "Fifty flowers."
+        bases:
+          "पुष्पाणि": "flowers (plural)"

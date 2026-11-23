@@ -1,0 +1,33 @@
+schema: 1
+id: "sa-en-grammar-krt"
+kind: "layer"
+core: "sa-grammar-krt"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Primary derivation (kṛt): ghañ, lyuṭ, tṛc, ktin and ṇvul"
+description: "The nouns that the verbs of the course make by kṛt suffixes: the action nouns in -a, -ana and -ti and the doer nouns in -tṛ and -aka, with the sūtras, the change of the root and the verbs of the course as examples. Only nouns found on Wiktionary are cells; an empty cell means none was found. Not yet checked by a Sanskrit speaker: please report any mistake. For the verbs of sa-verbs-3 a cell holds only a form read on the en.wiktionary.org root page or conjugation table, or made by a rule marked in the review queue; an empty cell means none was found."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "kṛt noun"
+  slots:
+    "ghan": "action noun with -a (ghañ)"
+    "lyut": "action noun with -ana (lyuṭ)"
+    "trc": "agent noun with -tṛ (tṛc)"
+    "ktin": "action noun with -ti (ktin)"
+    "nvul": "agent noun with -aka (ṇvul)"
+rules:
+  "sa-rule-krt-ghan":
+    name: "Action noun in -a (ghañ): vṛddhi and kutva"
+    explanation: "Pāṇini 3.3.18, {1}, is the general sūtra: ghañ in the sense of the action itself, after a root; 3.3.16 ({2}, as typed on the page) is limited to the roots pad, ruj, viś and spṛś, and the page types both in separate words. Whitney 1148 calls the result the noun in a: in the great majority of such nouns the root has guṇa-strengthening (a), and it has vṛddhi-strengthening only where ā is the resulting vowel, that is of a medial a and, most often, of a final ṛ (e). From {3} comes {4} (reading, recitation) and from {5} comes {6} (speaking); from {7} comes {8} (cooking), where Pāṇini 7.3.52, typed {9}, turns c into k before the suffix; from {10} comes {11} (making), the final ṛ becoming ār. A medial i takes guṇa: from {12} comes {13} (a line, writing). A verb with no such noun on Wiktionary has an empty cell."
+  "sa-rule-krt-lyut":
+    name: "Action noun in -ana (lyuṭ): guṇa, vṛddhi and ṇ"
+    explanation: "Pāṇini 3.3.115 gives {1}, the suffix lyuṭ, which is -ana in the word (Whitney 1150): the neuter noun of the action, and sometimes of its place or its tool. The root has oftenest guṇa-strengthening and not seldom vṛddhi (Whitney 1150 c, d): {2} gives {3}, {4} gives {5} and {6} gives {7}. After r, ṛ or ṣ the n of the suffix becomes ṇ, as in Whitney's rákṣaṇa and káraṇa: {8} gives {9} and {10} gives {11}, {12} gives {13}. A root in ā keeps its vowel and joins the suffix: {14} gives {15}, {16} gives {17} and {18} gives {19}; {20} gives {21}, the ai changing to ā."
+  "sa-rule-krt-trc":
+    name: "Agent noun in -tṛ (tṛc): guṇa and the joining i"
+    explanation: "Pāṇini 3.1.133 reads {1}: the suffixes ṇvul and tṛc, the two agent suffixes; tṛc is -tṛ in the word and makes the noun of the doer. Whitney 1182 says the root has regularly guṇa-strengthening and often takes a joining vowel i, and that the root grah takes ī: {2} gives {3} (doer), {4} gives {5} (leader), {6} gives {7} (hearer), but {8} gives {9} with the i, {10} gives {11} with ī, and {12} gives {13} with n for m before t. A root in ā takes the suffix unchanged: {14} gives {15} (giver), {16} gives {17} (knower). The feminine is in trī (Whitney 1182)."
+  "sa-rule-krt-ktin":
+    name: "Action noun in -ti (ktin): the weak root"
+    explanation: "Pāṇini 3.3.94 gives {1}: ktin in the feminine, the suffix -ti. Whitney 1157 says it makes feminine nouns of action, with the root in the same form as before the ta of the passive participle, a weak and often abbreviated form, and without the joining i: {2} gives {3} (being), {4} gives {5} (going, the nasal dropped), {6} gives {7} (memory), {8} gives {9} (a deed) and {10} gives {11} (hearing). A root in ā usually takes i, as the participle does: {12} gives {13} (standing), and {14} (to drink) gives {15} (a drink). A final c becomes k before the t: {16} gives {17} (cooking)."
+  "sa-rule-krt-nvul":
+    name: "Agent noun in -aka (ṇvul): vṛddhi"
+    explanation: "The suffix ṇvul of Pāṇini 3.1.133 ({1}) is -aka in the word (Whitney 1181) and makes the noun or adjective of the doer: the root has vṛddhi, so a medial a becomes ā and a final ṛ becomes ār, as in the ghañ nouns. From {2} comes {3} (speaker), from {4} comes {5} (cook, with k for c as before), from {6} comes {7} (doer, the name of the case-roles of the kāraka unit), from {8} comes {9} (leader) and from {10} comes {11} (taker). A medial i or ṛ has guṇa and not vṛddhi: {12} gives {13} (writer) and {14} gives {15} (dancer)."

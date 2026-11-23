@@ -1,0 +1,89 @@
+schema: 1
+id: "sa-en-about-me"
+kind: "layer"
+core: "sa-about-me"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "About me"
+description: "Words for naming yourself and saying your age, your language and your origin, with the questions to ask them back."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1070":
+    native: "Name."
+    notes:
+      "n1": "Name. It is the nominative of the n stem nāman; the other cases keep the n."
+    bases:
+      "नाम": "name (stem nāman)"
+    examples:
+      "मम नाम रामः":
+        native: "My name is Rāma."
+        bases:
+          "मम": "my (of I)"
+          "रामः": "Rāma"
+      "तव नाम किम्":
+        native: "What is your name?"
+        bases:
+          "तव": "your (of you)"
+  "sa-1071":
+    native: "Age."
+    notes:
+      "n1": "Age, or years of life. It is the nominative of the neuter s stem vayas, with the visarga of the nominative."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o) (Whitney 175 a; Aṣṭādhyāyī 6.1.113, अतो रोरप्लुतादप्लुते (ato roraplutādaplute), and 6.1.114, हशि च (haśi ca))."
+    bases:
+      "वयः": "age (stem vayas)"
+    examples:
+      "मम वयो विंशतिः":
+        native: "My age is twenty."
+        bases:
+          "वयो": "age"
+          "मम": "my (of I)"
+      "तव वयः किम्":
+        native: "What is your age?"
+        bases:
+          "तव": "your (of you)"
+  "sa-1072":
+    native: "Language."
+    notes:
+      "n1": "Language, or speech. It is a feminine ā stem."
+    examples:
+      "भाषा संस्कृतम्":
+        native: "The language is Sanskrit."
+        bases:
+          "संस्कृतम्": "Sanskrit"
+      "का भाषा":
+        native: "Which language?"
+        bases:
+          "का": "which? (feminine of who)"
+  "sa-1073":
+    native: "Life; lifespan."
+    notes:
+      "n1": "Life, or lifespan. It is the nominative of the neuter s stem āyus."
+      "n2": "After इ (i), ई (ī), उ (u) or ऊ (ū) the final ः (ḥ) before a voiced sound becomes र् (r), as in आयुर् (āyur) from आयुः (āyuḥ) (Whitney 174; Aṣṭādhyāyī 8.2.66)."
+    bases:
+      "आयुः": "life (stem āyus)"
+    examples:
+      "आयुर् दीर्घम्":
+        native: "Long life."
+        bases:
+          "आयुर्": "life"
+          "दीर्घम्": "long"
+      "आयुर् मम दीर्घम्":
+        native: "My life is long."
+        bases:
+          "आयुर्": "life"
+          "मम": "my (of I)"
+          "दीर्घम्": "long"
+  "sa-1074":
+    native: "Birth; origin; kind."
+    notes:
+      "n1": "Birth, origin, or kind. In later usage it is the word for caste, as the context shows."
+    bases:
+      "जातिः": "birth, kind (stem jāti)"
+    examples:
+      "का जातिः":
+        native: "What kind?"
+        bases:
+          "का": "which? (feminine of who)"
+      "सा जातिः":
+        native: "That kind."

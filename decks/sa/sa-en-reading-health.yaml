@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-health"
+name: "Reading: health"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-health-text-1"
+    title: "Body, hunger and thirst"
+    theme: "health"
+    sentences:
+      - { text: "स्वस्थो बालको नित्यं व्यायामं करोति.", reading: "svastho bālako nityaṃ vyāyāmaṃ karoti.", ipa: "sʋəst̪ʰoː baːləkoː nit̪jəm ʋjaːjaːməm kəroːt̪i" }
+      - { text: "चिकित्सको रुग्णस्य व्रणं पश्यति.", reading: "cikitsako rugṇasya vraṇaṃ paśyati.", ipa: "tʃikit̪səkoː ruɡɳəsjə ʋrəɳəm pəʃjət̪i" }
+      - { text: "ज्वरे शरीरे दाहो भवति.", reading: "jvare śarīre dāho bhavati.", ipa: "dʒʋəreː ʃəriːreː d̪aːɦoː bʱəʋət̪i" }
+      - { text: "क्षुधया बालको गृहे रोदिति.", reading: "kṣudhayā bālako gṛhe roditi.", ipa: "kʂud̪ʱəjaː baːləkoː ɡr̩ɦeː roːd̪it̪i" }
+      - { text: "तृष्णया पथिको जलं पिबति.", reading: "tṛṣṇayā pathiko jalaṃ pibati.", ipa: "t̪r̩ʂɳəjaː pət̪ʰikoː dʒələm pibət̪i" }
+    questions:
+      - id: "sa-6708"
+        prompt: { en: "What does the physician examine?" }
+        options: [{ en: "The patient's tongue" }, { en: "The patient's wound" }, { en: "The patient's pulse" }]
+        answer: 2
+      - id: "sa-6709"
+        prompt: { en: "Why does the boy cry?" }
+        options: [{ en: "From thirst" }, { en: "From fear" }, { en: "From hunger" }]
+        answer: 3
+      - id: "sa-6710"
+        prompt: { en: "Which word means 'exercise'?" }
+        options: [{ en: "व्यायामं (vyāyāmaṃ)" }, { en: "व्रणं (vraṇaṃ)" }, { en: "ज्वरे (jvare)" }]
+        answer: 1
+      - id: "sa-6711"
+        prompt: { en: "The traveller drinks water from hunger." }
+        answer: false
+  - id: "sa-health-text-2"
+    title: "Sleep, oil and the humours"
+    theme: "health"
+    sentences:
+      - { text: "निद्रा शरीरस्य स्वास्थ्यं रक्षति.", reading: "nidrā śarīrasya svāsthyaṃ rakṣati.", ipa: "nid̪raː ʃəriːrəsjə sʋaːst̪ʰjəm rəkʂət̪i" }
+      - { text: "शरीरम् अभ्यङ्गेन स्वस्थं भवति.", reading: "śarīram abhyaṅgena svasthaṃ bhavati.", ipa: "ʃəriːrəm əbʱjəŋɡeːnə sʋəst̪ʰəm bʱəʋət̪i" }
+      - { text: "आयुर्वेदो जीवनस्य ज्ञानं भवति.", reading: "āyurvedo jīvanasya jñānaṃ bhavati.", ipa: "aːjurʋeːd̪oː dʒiːʋənəsjə dʒɲaːnəm bʱəʋət̪i" }
+      - { text: "कफः पित्तं वायुश् च शरीरे भवन्ति.", reading: "kaphaḥ pittaṃ vāyuś ca śarīre bhavanti.", ipa: "kəpʰəh pit̪t̪əm ʋaːjuʃ tʃə ʃəriːreː bʱəʋənt̪i" }
+      - { text: "वैद्यस्य चिकित्सया रोगो नश्यति.", reading: "vaidyasya cikitsayā rogo naśyati.", ipa: "ʋəid̪jəsjə tʃikit̪səjaː roːɡoː nəʃjət̪i" }
+    questions:
+      - id: "sa-6712"
+        prompt: { en: "What does sleep protect?" }
+        options: [{ en: "The mind" }, { en: "The health of the body" }, { en: "The breath" }]
+        answer: 2
+      - id: "sa-6713"
+        prompt: { en: "What makes the body healthy?" }
+        options: [{ en: "An oil massage" }, { en: "A hot bath" }, { en: "A decoction" }]
+        answer: 1
+      - id: "sa-6714"
+        prompt: { en: "Which word means 'knowledge'?" }
+        options: [{ en: "जीवनस्य (jīvanasya)" }, { en: "रोगो (rogo)" }, { en: "ज्ञानं (jñānaṃ)" }]
+        answer: 3
+      - id: "sa-6715"
+        prompt: { en: "Phlegm, bile and wind are in the body." }
+        answer: true
