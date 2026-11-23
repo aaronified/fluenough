@@ -534,7 +534,9 @@ units:
       - { id: "asking-for-help", text: { "en": "Asking a passer-by for help" } }
     reading_passages:
       - { id: "help-desk-sign", text: { "en": "A help desk sign" } }
-  - planned: { id: "ta-grammar-irregular", grammar: "irregular" }
+  - decks: ["ta-grammar-irregular"]
+    words: 0
+    grammar: ["irregular"]
     listening_passages:
       - { id: "irregular-heard", text: { "en": "A short exchange that uses irregular, after the help unit" } }
     reading_passages:

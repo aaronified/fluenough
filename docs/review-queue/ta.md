@@ -95,3 +95,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-0453 | ta-grammar-compound-verbs | Is தா (to me or us) versus கொடு (to others) stated correctly? | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-0452 | ta-grammar-compound-verbs | Are put, throw and put on the right senses of போடு to teach together? | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-comparison | Check the comparison pattern (X-ஐ விட adjective-து), the word எல்லாவற்றையும், and the doubling after விட and மிக. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-irregular | Check the stems given for come, go, do, give, stand, sit and listen, and the spoken நிக்கிறேன் and தர்றேன். | Sonnet builder (ta-gram2) | 2026-11-23 |
