@@ -1,0 +1,29 @@
+schema: 1
+id: "ta-en-grammar-emphasis"
+kind: "layer"
+core: "ta-grammar-emphasis"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Emphasis: just me, even me"
+description: "Every pronoun the course teaches with தான் (tāṉ), the ending -ஏ (-ē), கூட (kūṭa) and மட்டும் (maṭṭum), the four ways to stress one person or thing. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "tan": "{meaning}: it is exactly this one (tāṉ)"
+    "ee": "{meaning}: the very one, itself (-ē)"
+    "also": "{meaning}: even, too (kūṭa)"
+    "only": "{meaning}: only this one (maṭṭum)"
+rules:
+  "ta-rule-emphasis":
+    name: "தான் (tāṉ): it is this one"
+    explanation: "Join தான் (tāṉ) to a pronoun to say that it is exactly this one: {1}, I, gives {2}, it is I who, and {3} is it is he. The same word also means just or only, and in a question it asks for sure: English Wiktionary gives it as an intensifier, a restrictive and a word of certainty. Source: English Wiktionary, entry தான் (tāṉ)."
+  "ta-rule-emphasis-ee":
+    name: "-ஏ (-ē): the very one"
+    explanation: "The ending -ஏ (-ē) means the very one or oneself. After a consonant it joins directly: {1}, I, gives {2}, I myself. After a long vowel the glide -ய (-ya) comes between: {3}, you, gives {4}. After -உ (-u) it is -வ (-va): {5}, it, gives {6}."
+  "ta-rule-emphasis-also":
+    name: "கூட (kūṭa): even, too"
+    explanation: "Put கூட (kūṭa) after a pronoun for even or too: {1}, I, gives {2}, even I, or I too. The same word is also the postposition with. Source: English Wiktionary, entry கூட (kūṭa): even, also, and with."
+  "ta-rule-emphasis-only":
+    name: "மட்டும் (maṭṭum): only"
+    explanation: "Put மட்டும் (maṭṭum), only, after a pronoun as a separate word: {1}, I, gives {2}, only I. It limits the group, where தான் (tāṉ) points to one."
