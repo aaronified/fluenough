@@ -179,3 +179,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-grammar-noun-forms | Rows for the ~550 later nouns are generated from the noun-class patterns (stem doubling, -ம் nouns, -ு glide nouns, loanwords in -ட், people and animals): check them, above all loanwords, -வு nouns, and plurals of people. | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-1297 | ta-illness | Is இரும் (to cough) given the right stem and forms (இருமு, இருமினேன்)? | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-negative and the other verb tables | Compound verbs கலந்துகொள், பெருமைப்படு and சுற்றித்திரி take forms built from their helper verb: check them. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-school | Gender m is given to தலைமையாசிரியர் (ta-1809), as ta-work does for ஆசிரியர்; the respectful -ர் nouns are epicene, so is m right? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-hobbies | Gender m is given to வீரர் (ta-1886) and பாடகர் (ta-1887), -ர் nouns that can name women too; is m right? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-journey | Gender m is given to டிரைவர் (ta-2161), ஓட்டுநர் (ta-2162), நடத்துநர் (ta-2163) and வழிகாட்டி (ta-2173), who may be women; is m right? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-workplace | Gender m is given to the 16 person nouns ta-2307 to ta-2322 (ஊழியர், மேலாளர் and others), epicene -ர் or -ி nouns; is m right, as for ஆசிரியர் in ta-work? | Sonnet builder | 2026-11-23 |
