@@ -184,3 +184,9 @@ Questions a deck builder could not settle, asked of a bilingual reviewer. Table 
 | vsn-1015 | vsn-pronouns (path 4) | Is the gloss 'other' right for this verse (RV 8.5.39)? Flagged weak in the plan: the English rests on the word's ordinary sense, so please check it against the verse. | Haiku builder | 2026-11-23 |
 | vsn-1016 | vsn-pronouns (path 4) | Is the gloss 'oneself' right for this verse (RV 9.47.4)? Flagged weak in the plan: the English rests on the word's ordinary sense, so please check it against the verse. | Haiku builder | 2026-11-23 |
 | vsn-1042 | vsn-numbers-1-20 (path 6) | Is it right to teach the attested form एकादशासः (stem एकादश, RV 9.92.4) as the headword? | Haiku builder | 2026-11-23 |
+| vsn-2502 | people (30) | Is it right to teach the attested form विशः (stem विश्, RV 7.31.10) as the headword? | Haiku builder | 2026-11-23 |
+| vsn-2511 | people (30) | Is it right to teach the attested form दस्यवः (stem दस्यु, RV 1.51.8) as the headword? The verse writes it दस्यवो. | Haiku builder | 2026-11-23 |
+| vsn-2517 | numbers-big (31) | The verse fuses पञ्चाशत्कृष्णा (fifty swarthy ones) into one written word (RV 4.16.13). Is the numeral पञ्चाशत् with this fused word as its example the right card? | Haiku builder | 2026-11-23 |
+| vsn-2519 | directions (32) | Is it right to teach the attested form दक्षिणतः (stem दक्षिणतस्, RV 10.15.6) as the headword? The verse writes it दक्षिणतो. | Haiku builder | 2026-11-23 |
+| vsn-2521 | directions (32) | Is it right to teach the attested form प्राचीनम् (stem प्राचीन, RV 1.188.4) as the headword? The verse writes it प्राचीनं. | Haiku builder | 2026-11-23 |
+| vsn-2522 | directions (32) | Is it right to teach the attested form दिशः (stem दिश्, RV 9.114.3) as the headword? The verse writes it दिशो. | Haiku builder | 2026-11-23 |
