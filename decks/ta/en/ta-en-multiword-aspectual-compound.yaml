@@ -1,0 +1,104 @@
+# Layer for ta-multiword-aspectual-compound.
+schema: 1
+id: "ta-en-multiword-aspectual-compound"
+kind: "layer"
+core: "ta-multiword-aspectual-compound"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: compound verbs"
+description: "14 Tamil verb phrases: to hug, to find out, to look after someone or something, to keep something for oneself, to teach, to get put off or postponed, to get someone into trouble, to put off, to make someone come, to leave out, to stop, to say goodbye, to put off, and to have. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "ta-6320":
+    native: "to hug; to marry"
+    notes:
+      "u1": "The participle கட்டி (kaṭṭi) plus கொள் (koḷ); besides hugging it means to marry, to cling to and to tie on a garment, and a variant is கட்டிக்கொள்ளு (kaṭṭikkoḷḷu)."
+      "l1": "Literally to tie oneself to."
+    bases:
+      "கட்டிக்கொள்": { meaning: "to hug, to marry; from கட்டி (kaṭṭi) and கொள் (koḷ)" }
+  "ta-6321":
+    native: "to find out; to take notice of"
+    notes:
+      "u1": "The participle கண்டு (kaṇṭu) plus கொள் (koḷ); in negative forms it means to take no notice of someone or something."
+    bases:
+      "கண்டுகொள்": { meaning: "to notice, to find out; from கண்டு (kaṇṭu) and கொள் (koḷ)" }
+  "ta-6322":
+    native: "to look after someone or something; to take care of"
+    notes:
+      "u1": "The participle பார்த்து (pārttu) plus கொள் (koḷ); it takes an object, the person or thing looked after."
+    bases:
+      "பார்த்துக்கொள்": { meaning: "to look after; from பார்த்து (pārttu) and கொள் (koḷ)" }
+  "ta-6323":
+    native: "to keep something for oneself; to suppose"
+    notes:
+      "u1": "The participle வைத்து (vaittu) plus கொள் (koḷ); the spoken form is வெச்சுக்கோ (veccukkō), and it also means to suppose or take for granted."
+    bases:
+      "வைத்துக்கொள்": { meaning: "to keep for oneself, to suppose; from வைத்து (vaittu) and கொள் (koḷ)" }
+  "ta-6324":
+    native: "to teach; to instruct"
+    notes:
+      "u1": "The participle கற்று (kaṟṟu) plus கொடு (koṭu); the spoken form is கத்துக்குடு (kattukkuṭu), and it is the partner of கற்றுக்கொள் (kaṟṟukkoḷ), to learn."
+      "l1": "Literally to give learning."
+    bases:
+      "கற்றுக்கொடு": { meaning: "to teach; from கற்று (kaṟṟu) and கொடு (koṭu)" }
+  "ta-6325":
+    native: "to get put off or postponed"
+    notes:
+      "u1": "The participle தள்ளி (taḷḷi) plus போ (pō); it does not take an object, so the event is the subject, and the literal sense is to move aside."
+      "l1": "Literally to move aside and go."
+    bases:
+      "தள்ளிப்போ": { meaning: "to get postponed; from தள்ளி (taḷḷi) and போ (pō)" }
+  "ta-6326":
+    native: "to get someone into trouble; to tell on someone"
+    notes:
+      "u1": "The participle மாட்டி (māṭṭi) plus விடு (viṭu); the action is done to someone else, so it means to drag a person into trouble, or to inform on them."
+    bases:
+      "மாட்டிவிடு": { meaning: "to get someone into trouble; from மாட்டி (māṭṭi) and விடு (viṭu)" }
+  "ta-6327":
+    native: "to put off; to postpone"
+    notes:
+      "u1": "பின் (piṉ) (after) plus போடு (pōṭu); it takes an object, and means to push a thing to a later time."
+      "l1": "Literally to put behind."
+    bases:
+      "பின்போடு": { meaning: "to postpone; from பின் (piṉ) and போடு (pōṭu)" }
+  "ta-6328":
+    native: "to make someone come; to bring about"
+    notes:
+      "u1": "The infinitive வர (vara) plus பண்ணு (paṇṇu) makes a causative: you cause something to come; the synonym வரவழை (varavaḻai) is a single verb with the same meaning."
+      "l1": "Literally to make come."
+    bases:
+      "வரப்பண்ணு": { meaning: "to cause to come; from வர (vara) and பண்ணு (paṇṇu)" }
+  "ta-6329":
+    native: "to leave out; to give something up"
+    notes:
+      "u1": "The participle விட்டு (viṭṭu) plus விடு (viṭu), where the second விடு (viṭu) adds force: you leave something out, drop it or omit it."
+    bases:
+      "விட்டுவிடு": { meaning: "to leave out, to give up; from விட்டு (viṭṭu) and விடு (viṭu)" }
+  "ta-6330":
+    native: "to stop; to come to a halt"
+    notes:
+      "u1": "The participle நின்று (niṉṟu) plus போ (pō); it does not take an object, it is said of work that stops, and the spoken form is நின்னுபோ (niṉṉupō)."
+      "l1": "Literally to stand and go."
+    bases:
+      "நின்றுபோ": { meaning: "to stop; from நின்று (niṉṟu) and போ (pō)" }
+  "ta-6331":
+    native: "to say goodbye; to go and come back"
+    notes:
+      "u1": "Literally to go, leave and come back; it is the usual way to say goodbye to someone who is leaving, the spoken forms are போயிட்டுவா (pōyiṭṭuvā) and போய்ட்டுவா (pōyṭṭuvā), the formal ones are போய்வா (pōyvā) and சென்றுவா (ceṉṟuvā), and it is also an interjection on its own."
+      "l1": "Literally to go, leave and come back."
+    bases:
+      "போய்விட்டுவா": { meaning: "to go and come back; from போய் (pōy), விட்டு (viṭṭu) and வா (vā)" }
+  "ta-6332":
+    native: "to put off; to postpone"
+    notes:
+      "u1": "The participle தடுத்து (taṭuttu) (holding back) plus வை (vai); it takes an object, and it is a less common word than ஒத்திவை (ottivai) for postponing."
+    bases:
+      "தடுத்துவை": { meaning: "to postpone; from தடுத்து (taṭuttu) and வை (vai)" }
+  "ta-6333":
+    native: "to have; to keep; to hold"
+    notes:
+      "u1": "The participle வைத்து (vaittu) plus இரு (iru); the spoken form is வெச்சுரு (veccuru), and வைத்துக்கொள் (vaittukkoḷ) is a synonym."
+      "l1": "Literally to put and be."
+    bases:
+      "வைத்திரு": { meaning: "to keep, to have; from வைத்து (vaittu) and இரு (iru)" }

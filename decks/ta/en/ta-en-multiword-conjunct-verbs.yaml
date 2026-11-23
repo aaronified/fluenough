@@ -1,0 +1,158 @@
+# Layer for ta-multiword-conjunct-verbs.
+schema: 1
+id: "ta-en-multiword-conjunct-verbs"
+kind: "layer"
+core: "ta-multiword-conjunct-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: conjunct verbs"
+description: "20 Tamil verb phrases: to phone someone, to feel bad, to vacate a place, to commit suicide, to make or create something, to notify or inform, to arrest someone, to cremate, to translate, to put on airs, to show off, to vote, to open a shop, to show off by speaking English, to make a noise, to give birth to young, to work out a sum, to chew tobacco, to invest money, and to be a yes-man. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "ta-6300":
+    native: "to phone someone; to make a phone call"
+    notes:
+      "u1": "A colloquial verb phrase made from the English loanword ஃபோன் (ḵpōṉ) and பண்ணு (paṇṇu); the person who is called takes the dative ending, as in அவனுக்கு (avaṉukku) (to him); en.wiktionary labels it colloquial."
+    bases:
+      "ஃபோன்": { meaning: "phone" }
+      "பண்ணு": { meaning: "to do, to make; a light verb" }
+  "ta-6301":
+    native: "to feel bad; to grieve"
+    notes:
+      "u1": "A colloquial, slangy idiom made from the English word feel and பண்ணு (paṇṇu); it means to be upset or hurt, not simply to feel something."
+    bases:
+      "ஃபீல்": { meaning: "feel, from English" }
+      "பண்ணு": { meaning: "to do, to make; a light verb" }
+  "ta-6302":
+    native: "to vacate a place; to empty something"
+    notes:
+      "u1": "Literally to make empty; in colloquial Indian speech it is the usual way to say that you leave a house, a room or a seat, as in இடத்தை காலி பண்ணு (iṭattai kāli paṇṇu) (vacate the place)."
+    bases:
+      "காலி": { meaning: "empty" }
+      "பண்ணு": { meaning: "to do, to make; a light verb" }
+  "ta-6303":
+    native: "to commit suicide"
+    notes:
+      "u1": "The colloquial form; தற்கொலை செய் (taṟkolai cey) has the same meaning and is the choice in formal Tamil, where செய் (cey) is preferred over பண்ணு (paṇṇu)."
+    bases:
+      "தற்கொலை": { meaning: "suicide" }
+      "பண்ணு": { meaning: "to do, to make; a light verb" }
+  "ta-6304":
+    native: "to make or create something; to give rise to something"
+    notes:
+      "u1": "Written as one word; it is built from உண்டு (uṇṭu) (there is) and பண்ணு (paṇṇu), so it means to make a thing exist, and it takes an object."
+      "l1": "Literally to make it be there."
+    bases:
+      "உண்டுபண்ணு": { meaning: "to make, to create; from உண்டு (uṇṭu) (there is) and பண்ணு (paṇṇu)" }
+  "ta-6305":
+    native: "to notify or inform; to confess, in the Catholic sense"
+    notes:
+      "u1": "Written as one word, from அறிக்கை (aṟikkai) (a statement, a confession) and பண்ணு (paṇṇu); it takes an object, and the sense of confessing is used in Catholic Tamil."
+    bases:
+      "அறிக்கைபண்ணு": { meaning: "to inform, to confess; from அறிக்கை (aṟikkai) (statement) and பண்ணு (paṇṇu)" }
+  "ta-6306":
+    native: "to arrest someone"
+    notes:
+      "u1": "A noun plus பண்ணு (paṇṇu) makes a verb: கைது (kaitu) is an arrest, so this is the colloquial way to say arrest, and கைது செய் (kaitu cey) is the formal one."
+    bases:
+      "கைது": { meaning: "arrest" }
+      "பண்ணு": { meaning: "to do, to make; a light verb" }
+  "ta-6307":
+    native: "to cremate"
+    notes:
+      "u1": "A noun plus பண்ணு (paṇṇu) makes a verb; en.wiktionary gives this sense as to cremate."
+    bases:
+      "அடக்கம்": { meaning: "funeral rites; also restraint" }
+      "பண்ணு": { meaning: "to do, to make; a light verb" }
+  "ta-6308":
+    native: "to translate"
+    notes:
+      "u1": "In spoken Tamil an English verb or noun plus பண்ணு (paṇṇu) makes a new verb, and பண்ணு (paṇṇu) is preferred over செய் (cey) with English words; en.wiktionary gives the example அதை ட்ரான்ஸ்லேட் பண்ணிக்கொடு (atai ṭrāṉslēṭ paṇṇikkoṭu) (translate that for me)."
+    bases:
+      "ட்ரான்ஸ்லேட்": { meaning: "translate, from English" }
+      "பண்ணு": { meaning: "to do, to make; a light verb" }
+  "ta-6309":
+    native: "to put on airs; to act condescendingly"
+    notes:
+      "u1": "A colloquial phrase; the example on ta.wiktionary is negative, about a rich man who does not put on airs and mixes easily with everyone."
+    bases:
+      "பிகு": { meaning: "airs, aloofness" }
+      "பண்ணு": { meaning: "to do, to make; a light verb" }
+  "ta-6310":
+    native: "to show off; to make a scene"
+    notes:
+      "u1": "A colloquial phrase from the English word scene and போடு (pōṭu); it has two senses, to show off or brag and to make a scene."
+    bases:
+      "சீன்": { meaning: "scene, from English" }
+      "போடு": { meaning: "to put, to drop; a light verb" }
+  "ta-6311":
+    native: "to vote; to cast one's vote"
+    notes:
+      "u1": "Written as one word, or as two words, ஓட்டு போடு (ōṭṭu pōṭu); the formal verb for voting is வாக்களி (vākkaḷi)."
+      "l1": "Literally to put in a vote."
+    bases:
+      "ஓட்டுப்போடு": { meaning: "to vote; from ஓட்டு (ōṭṭu) (vote) and போடு (pōṭu) (to cast)" }
+  "ta-6312":
+    native: "to open a shop"
+    notes:
+      "u1": "Written as one word, from கடை (kaṭai) (shop) and போடு (pōṭu); it does not take an object."
+      "l1": "Literally to drop a shop."
+    bases:
+      "கடைபோடு": { meaning: "to open a shop; from கடை (kaṭai) (shop) and போடு (pōṭu)" }
+  "ta-6313":
+    native: "to show off by speaking English"
+    notes:
+      "u1": "A slang phrase for putting on a pretentious air by using English words; en.wiktionary labels it slang."
+    bases:
+      "பீட்டர்": { meaning: "Peter; slang for showy English" }
+      "போடு": { meaning: "to put, to drop; a light verb" }
+  "ta-6314":
+    native: "to make a noise"
+    notes:
+      "u1": "போடு (pōṭu) here means to produce a sound."
+      "l1": "Literally to put a sound."
+    bases:
+      "சத்தம்": { meaning: "noise, sound" }
+      "போடு": { meaning: "to put; to produce a sound" }
+  "ta-6315":
+    native: "to give birth to young; to have kittens or pups"
+    notes:
+      "u1": "போடு (pōṭu) here means to bring forth, and it is said of animals, as in பூனை குட்டி போட்டது (pūṉai kuṭṭi pōṭṭatu) (the cat had kittens)."
+      "l1": "Literally to put a young one."
+    bases:
+      "குட்டி": { meaning: "young animal, cub" }
+      "போடு": { meaning: "to put; to bring forth young" }
+  "ta-6316":
+    native: "to work out a sum; to calculate"
+    notes:
+      "u1": "In colloquial Tamil போடு (pōṭu) can mean to work out, so this is to do a sum or add things up."
+      "l1": "Literally to put a calculation."
+    bases:
+      "கணக்கு": { meaning: "sum, account, calculation" }
+      "போடு": { meaning: "to put; to work out" }
+  "ta-6317":
+    native: "to chew tobacco"
+    notes:
+      "u1": "போடு (pōṭu) here means to take or use a substance; en.wiktionary lists this sense for tobacco, as in புகையிலை போடுகிறவன் (pukaiyilai pōṭukiṟavaṉ) (a chronic user of tobacco)."
+      "l1": "Literally to put tobacco in."
+    bases:
+      "புகையிலை": { meaning: "tobacco" }
+      "போடு": { meaning: "to put; to use a substance" }
+  "ta-6318":
+    native: "to invest money; to put money in"
+    notes:
+      "u1": "போடு (pōṭu) here means to pay in or invest; the entry gives பணம் போட்டு வாங்கினான் (paṇam pōṭṭu vāṅkiṉāṉ) (he invested money and got back the returns)."
+      "l1": "Literally to put money."
+    bases:
+      "பணம்": { meaning: "money" }
+      "போடு": { meaning: "to put; to pay in, to invest" }
+  "ta-6319":
+    native: "to be a yes-man; to agree to everything servilely"
+    notes:
+      "u1": "A set phrase for someone who says yes to everything out of servility; போடு (pōṭu) is the light verb, and the phrase is made of ஆமாம் (āmām) (yes) and சாமி (cāmi) (master, sir)."
+      "l1": "Literally to do 'yes, master'."
+    bases:
+      "ஆமாம்": { meaning: "yes" }
+      "சாமி": { meaning: "master, sir; also god" }
+      "போடு": { meaning: "to put, to do; a light verb" }
