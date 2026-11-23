@@ -1,0 +1,672 @@
+schema: 1
+id: "ta-en-geography"
+kind: "layer"
+core: "ta-geography"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Geography: the world and the Tamil lands"
+description: "The world, continents and countries, Tamil Nadu and its neighbours, its cities, rivers and seas, and Sri Lanka and Singapore, where Tamil is spoken. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-2357":
+    native: "world"
+    notes:
+      n1: "The world, or the earth and its people."
+    examples:
+      "உலகம் அழகு.":
+        native: "The world is beautiful."
+        bases:
+          "உலகம்": "world"
+      "இது என் உலகம்.":
+        native: "This is my world."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "உலகம்": "world"
+  "ta-2358":
+    native: "continent"
+    notes:
+      n1: "One of the great land masses."
+    examples:
+      "ஆசியா பெரிய கண்டம்.":
+        native: "Asia is a big continent."
+        bases:
+          "கண்டம்": "continent"
+      "இது ஒரு கண்டம்.":
+        native: "This is a continent."
+        bases:
+          "கண்டம்": "continent"
+  "ta-2359":
+    native: "country"
+    notes:
+      n1: "A country or nation; it is also the நாடு (nāṭu) of தமிழ்நாடு (tamiḻnāṭu) (Tamil Nadu), the land of Tamil."
+    examples:
+      "இது என்ன நாடு?":
+        native: "What country is this?"
+        bases:
+          "நாடு": "country"
+      "இது பெரிய நாடு.":
+        native: "This is a big country."
+        bases:
+          "நாடு": "country"
+  "ta-2360":
+    native: "state"
+    notes:
+      n1: "A state of a country, as in India."
+    examples:
+      "தமிழ்நாடு ஒரு மாநிலம்.":
+        native: "Tamil Nadu is a state."
+        bases:
+          "மாநிலம்": "state"
+      "இது பெரிய மாநிலம்.":
+        native: "This is a big state."
+        bases:
+          "மாநிலம்": "state"
+  "ta-2361":
+    native: "district"
+    notes:
+      n1: "Tamil Nadu is divided into 38 districts, each with its own headquarters town."
+    examples:
+      "இது பெரிய மாவட்டம்.":
+        native: "This is a big district."
+        bases:
+          "மாவட்டம்": "district"
+      "மாவட்டம் எது?":
+        native: "Which district?"
+        bases:
+          "மாவட்டம்": "district"
+  "ta-2362":
+    native: "capital city"
+    notes:
+      n1: "The capital of a state or country."
+    examples:
+      "சென்னை தலைநகரம்.":
+        native: "Chennai is the capital."
+        bases:
+          "தலைநகரம்": "capital city"
+      "தலைநகரம் எது?":
+        native: "Which is the capital?"
+        bases:
+          "தலைநகரம்": "capital city"
+  "ta-2363":
+    native: "ocean"
+    notes:
+      n1: "Made of பெரு (peru) (big) and கடல் (kaṭal) (sea)."
+    examples:
+      "இது பெருங்கடல்.":
+        native: "This is an ocean."
+        bases:
+          "பெருங்கடல்": "ocean"
+      "பெருங்கடல் எங்கே?":
+        native: "Where is the ocean?"
+        bases:
+          "பெருங்கடல்": "ocean"
+  "ta-2364":
+    native: "plain"
+    notes:
+      n1: "A flat stretch of land."
+    examples:
+      "இது சமவெளி.":
+        native: "This is a plain."
+        bases:
+          "சமவெளி": "plain"
+      "சமவெளி பச்சை.":
+        native: "The plain is green."
+        bases:
+          "சமவெளி": "plain"
+  "ta-2365":
+    native: "population"
+    notes:
+      n1: "The number of people of a place; made of மக்கள் (makkaḷ) (people) and தொகை (tokai) (total)."
+    examples:
+      "மக்கள்தொகை அதிகம்.":
+        native: "The population is large."
+        bases:
+          "மக்கள்தொகை": "population"
+      "மக்கள்தொகை எவ்வளவு?":
+        native: "How large is the population?"
+        bases:
+          "மக்கள்தொகை": "population"
+  "ta-2366":
+    native: "bay"
+    notes:
+      n1: "A wide bay of the sea."
+    examples:
+      "இது விரிகுடா.":
+        native: "This is a bay."
+        bases:
+          "விரிகுடா": "bay"
+      "விரிகுடா எங்கே?":
+        native: "Where is the bay?"
+        bases:
+          "விரிகுடா": "bay"
+  "ta-2367":
+    native: "strait"
+    notes:
+      n1: "A narrow channel of sea between two lands."
+    examples:
+      "இது நீரிணை.":
+        native: "This is a strait."
+        bases:
+          "நீரிணை": "strait"
+      "நீரிணை எங்கே?":
+        native: "Where is the strait?"
+        bases:
+          "நீரிணை": "strait"
+  "ta-2368":
+    native: "India"
+    notes:
+      n1: "India. The ending -வுக்கு (-vukku) gives இந்தியாவுக்கு (intiyāvukku), to India."
+    examples:
+      "இது இந்தியா.":
+        native: "This is India."
+        bases:
+          "இந்தியா": "India"
+      "நான் இந்தியாவுக்குப் போகிறேன்.":
+        native: "I am going to India."
+        bases:
+          "இந்தியாவுக்குப்": "to India; from இந்தியா (intiyā), India"
+          "போகிறேன்": "am going; from போ (pō), to go"
+  "ta-2369":
+    native: "Tamil Nadu"
+    notes:
+      n1: "Tamil Nadu is the southernmost state of India. Tamil is its official language and Chennai is its capital. The name means the land of Tamil; before an ending the last sound doubles, as in தமிழ்நாட்டில் (tamiḻnāṭṭil), in Tamil Nadu."
+    examples:
+      "இது தமிழ்நாடு.":
+        native: "This is Tamil Nadu."
+        bases:
+          "தமிழ்நாடு": "Tamil Nadu"
+      "நான் தமிழ்நாட்டுக்குப் போகிறேன்.":
+        native: "I am going to Tamil Nadu."
+        bases:
+          "தமிழ்நாட்டுக்குப்": "to Tamil Nadu; from தமிழ்நாடு (tamiḻnāṭu), Tamil Nadu"
+          "போகிறேன்": "am going; from போ (pō), to go"
+  "ta-2370":
+    native: "Sri Lanka"
+    notes:
+      n1: "Sri Lanka gives official status to both Sinhala and Tamil."
+      n2: "Sri Lanka is an island country, separated from India by the Gulf of Mannar and the Palk Strait."
+    examples:
+      "இது இலங்கை.":
+        native: "This is Sri Lanka."
+        bases:
+          "இலங்கை": "Sri Lanka"
+      "இலங்கை ஒரு தீவு.":
+        native: "Sri Lanka is an island."
+        bases:
+          "இலங்கை": "Sri Lanka"
+  "ta-2371":
+    native: "Singapore"
+    notes:
+      n1: "Singapore has four official languages: English, Mandarin Chinese, Malay and Tamil."
+    examples:
+      "இது சிங்கப்பூர்.":
+        native: "This is Singapore."
+        bases:
+          "சிங்கப்பூர்": "Singapore"
+      "சிங்கப்பூர் சின்ன நாடு.":
+        native: "Singapore is a small country."
+        bases:
+          "சிங்கப்பூர்": "Singapore"
+  "ta-2372":
+    native: "Malaysia"
+    notes:
+      n1: "A country of Southeast Asia, written as it is said."
+    examples:
+      "இது மலேசியா.":
+        native: "This is Malaysia."
+        bases:
+          "மலேசியா": "Malaysia"
+      "மலேசியா பெரிய நாடு.":
+        native: "Malaysia is a big country."
+        bases:
+          "மலேசியா": "Malaysia"
+  "ta-2373":
+    native: "Chennai"
+    notes:
+      n1: "Chennai, once called Madras, is the capital and largest city of Tamil Nadu, on the Bay of Bengal. The ending -இல் (-il) gives சென்னையில் (ceṉṉaiyil), in Chennai."
+    examples:
+      "சென்னை தமிழ்நாட்டின் தலைநகரம்.":
+        native: "Chennai is the capital of Tamil Nadu."
+        bases:
+          "சென்னை": "Chennai"
+          "தமிழ்நாட்டின்": "of Tamil Nadu; from தமிழ்நாடு (tamiḻnāṭu), Tamil Nadu"
+      "சென்னையில் கடற்கரை.":
+        native: "There is a beach in Chennai."
+        bases:
+          "சென்னையில்": "in Chennai; from சென்னை (ceṉṉai), Chennai"
+  "ta-2374":
+    native: "Madurai"
+    notes:
+      n1: "Madurai stands on the banks of the Vaigai river."
+      n2: "The Meenakshi Temple is on the southern bank of the Vaigai in Madurai."
+    examples:
+      "இது மதுரை.":
+        native: "This is Madurai."
+        bases:
+          "மதுரை": "Madurai"
+      "மதுரையில் கோயில்.":
+        native: "There is a temple in Madurai."
+        bases:
+          "மதுரையில்": "in Madurai; from மதுரை (maturai), Madurai"
+  "ta-2375":
+    native: "Coimbatore"
+    notes:
+      n1: "Coimbatore is the second largest city of Tamil Nadu after Chennai, surrounded by the Western Ghats. Spoken Tamil often says கோவை (kōvai) (kōvai)."
+    examples:
+      "இது கோயம்புத்தூர்.":
+        native: "This is Coimbatore."
+        bases:
+          "கோயம்புத்தூர்": "Coimbatore"
+      "கோயம்புத்தூர் பெரிய நகரம்.":
+        native: "Coimbatore is a big city."
+        bases:
+          "கோயம்புத்தூர்": "Coimbatore"
+  "ta-2376":
+    native: "Tiruchirappalli"
+    notes:
+      n1: "Tiruchirappalli, also called Trichy, is about 322 km south of Chennai. திருச்சி (tirucci) is the short everyday name."
+    examples:
+      "இது திருச்சி.":
+        native: "This is Tiruchirappalli."
+        bases:
+          "திருச்சி": "Tiruchirappalli"
+      "திருச்சி பெரிய நகரம்.":
+        native: "Tiruchirappalli is a big city."
+        bases:
+          "திருச்சி": "Tiruchirappalli"
+  "ta-2377":
+    native: "Thanjavur"
+    notes:
+      n1: "Thanjavur is home to the Brihadisvara Temple, part of the UNESCO World Heritage Site of the Great Living Chola Temples. The ending -இல் (-il) gives தஞ்சாவூரில் (tañcāvūril), in Thanjavur."
+    examples:
+      "இது தஞ்சாவூர்.":
+        native: "This is Thanjavur."
+        bases:
+          "தஞ்சாவூர்": "Thanjavur"
+      "தஞ்சாவூரில் பெரிய கோயில்.":
+        native: "There is a big temple in Thanjavur."
+        bases:
+          "தஞ்சாவூரில்": "in Thanjavur; from தஞ்சாவூர் (tañcāvūr), Thanjavur"
+  "ta-2378":
+    native: "Tirunelveli"
+    notes:
+      n1: "Tirunelveli, also called Nellai, lies on the west bank of the Thamirabarani river."
+    examples:
+      "இது திருநெல்வேலி.":
+        native: "This is Tirunelveli."
+        bases:
+          "திருநெல்வேலி": "Tirunelveli"
+      "திருநெல்வேலி எங்கே?":
+        native: "Where is Tirunelveli?"
+        bases:
+          "திருநெல்வேலி": "Tirunelveli"
+  "ta-2379":
+    native: "Salem"
+    notes:
+      n1: "Salem was the fifth largest city of Tamil Nadu in the 2011 census."
+    examples:
+      "இது சேலம்.":
+        native: "This is Salem."
+        bases:
+          "சேலம்": "Salem"
+      "சேலம் எங்கே?":
+        native: "Where is Salem?"
+        bases:
+          "சேலம்": "Salem"
+  "ta-2380":
+    native: "Puducherry"
+    notes:
+      n1: "Also spelled Pondicherry in English; spoken Tamil often says பாண்டிச்சேரி (pāṇṭiccēri)."
+    examples:
+      "இது புதுச்சேரி.":
+        native: "This is Puducherry."
+        bases:
+          "புதுச்சேரி": "Puducherry"
+      "புதுச்சேரி எங்கே?":
+        native: "Where is Puducherry?"
+        bases:
+          "புதுச்சேரி": "Puducherry"
+  "ta-2381":
+    native: "Kerala"
+    notes:
+      n1: "Kerala lies on the west coast, with Tamil Nadu to its east. The formal Tamil name is கேரளம் (kēraḷam) (kēraḷam)."
+    examples:
+      "இது கேரளா.":
+        native: "This is Kerala."
+        bases:
+          "கேரளா": "Kerala"
+      "கேரளா எங்கே?":
+        native: "Where is Kerala?"
+        bases:
+          "கேரளா": "Kerala"
+  "ta-2382":
+    native: "Karnataka"
+    notes:
+      n1: "Karnataka lies to the north-west of Tamil Nadu."
+    examples:
+      "இது கர்நாடகா.":
+        native: "This is Karnataka."
+        bases:
+          "கர்நாடகா": "Karnataka"
+      "கர்நாடகா எங்கே?":
+        native: "Where is Karnataka?"
+        bases:
+          "கர்நாடகா": "Karnataka"
+  "ta-2383":
+    native: "Andhra Pradesh"
+    notes:
+      n1: "Andhra Pradesh lies to the north of Tamil Nadu; Telugu is its official language."
+    examples:
+      "இது ஆந்திரா.":
+        native: "This is Andhra Pradesh."
+        bases:
+          "ஆந்திரா": "Andhra Pradesh"
+      "ஆந்திரா எங்கே?":
+        native: "Where is Andhra Pradesh?"
+        bases:
+          "ஆந்திரா": "Andhra Pradesh"
+  "ta-2384":
+    native: "Kanyakumari"
+    notes:
+      n1: "Kanyakumari is the southernmost tip of the Indian mainland, known as the Land's End."
+    examples:
+      "இது கன்னியாகுமரி.":
+        native: "This is Kanyakumari."
+        bases:
+          "கன்னியாகுமரி": "Kanyakumari"
+      "கன்னியாகுமரி தெற்கில்.":
+        native: "Kanyakumari is in the south."
+        bases:
+          "கன்னியாகுமரி": "Kanyakumari"
+          "தெற்கில்": "in the south; from தெற்கு (teṟku), south"
+  "ta-2385":
+    native: "Rameswaram"
+    notes:
+      n1: "Rameswaram is on Pamban Island, about 40 km from Mannar Island in Sri Lanka across the Gulf of Mannar."
+    examples:
+      "இது ராமேஸ்வரம்.":
+        native: "This is Rameswaram."
+        bases:
+          "ராமேஸ்வரம்": "Rameswaram"
+      "ராமேஸ்வரம் எங்கே?":
+        native: "Where is Rameswaram?"
+        bases:
+          "ராமேஸ்வரம்": "Rameswaram"
+  "ta-2386":
+    native: "Ooty"
+    notes:
+      n1: "Ooty is a hill town in the Nilgiri Mountains, at 2,240 m, called the Queen of hill stations. Its formal name is உதகமண்டலம் (utakamaṇṭalam) (utakamaṇṭalam)."
+    examples:
+      "இது ஊட்டி.":
+        native: "This is Ooty."
+        bases:
+          "ஊட்டி": "Ooty"
+      "ஊட்டியில் குளிர்.":
+        native: "It is cold in Ooty."
+        bases:
+          "ஊட்டியில்": "in Ooty; from ஊட்டி (ūṭṭi), Ooty"
+  "ta-2387":
+    native: "Kaveri"
+    notes:
+      n1: "The Kaveri flows through Tamil Nadu, Karnataka, Kerala and Puducherry; in old Tamil it is called பொன்னி (poṉṉi) (poṉṉi)."
+    examples:
+      "இது காவிரி.":
+        native: "This is the Kaveri."
+        bases:
+          "காவிரி": "Kaveri"
+      "காவிரி தமிழ்நாட்டில் ஓடுகிறது.":
+        native: "The Kaveri flows in Tamil Nadu."
+        bases:
+          "காவிரி": "Kaveri"
+          "தமிழ்நாட்டில்": "in Tamil Nadu; from தமிழ்நாடு (tamiḻnāṭu), Tamil Nadu"
+          "ஓடுகிறது": "is running; from ஓடு (ōṭu), to run"
+  "ta-2388":
+    native: "Vaigai"
+    notes:
+      n1: "The Vaigai is a river of southern Tamil Nadu, about 295 km long, with Madurai on its banks."
+    examples:
+      "இது வைகை.":
+        native: "This is the Vaigai."
+        bases:
+          "வைகை": "Vaigai"
+      "வைகை நதி.":
+        native: "The Vaigai river."
+        bases:
+          "வைகை": "Vaigai"
+  "ta-2389":
+    native: "Ganga"
+    notes:
+      n1: "The Ganges is a river of India and Bangladesh, about 2,525 km long."
+    examples:
+      "இது கங்கை.":
+        native: "This is the Ganga."
+        bases:
+          "கங்கை": "Ganga"
+      "கங்கை நதி.":
+        native: "The Ganga river."
+        bases:
+          "கங்கை": "Ganga"
+  "ta-2390":
+    native: "Himalaya"
+    notes:
+      n1: "The Himalayas separate the plains of the Indian subcontinent from the Tibetan Plateau; they include Mount Everest."
+    examples:
+      "இது இமயமலை.":
+        native: "This is the Himalaya."
+        bases:
+          "இமயமலை": "Himalaya"
+      "இமயமலை வடக்கில்.":
+        native: "The Himalaya is in the north."
+        bases:
+          "இமயமலை": "Himalaya"
+          "வடக்கில்": "in the north; from வடக்கு (vaṭakku), north"
+  "ta-2391":
+    native: "Nilgiris"
+    notes:
+      n1: "The Nilgiri Mountains span Tamil Nadu, Karnataka and Kerala."
+    examples:
+      "இது நீலகிரி.":
+        native: "This is the Nilgiris."
+        bases:
+          "நீலகிரி": "Nilgiris"
+      "நீலகிரி மலை.":
+        native: "The Nilgiri hills."
+        bases:
+          "நீலகிரி": "Nilgiris"
+  "ta-2392":
+    native: "Bay of Bengal"
+    notes:
+      n1: "The Bay of Bengal is the north-eastern part of the Indian Ocean; Tamil Nadu's east coast faces it."
+    examples:
+      "இது வங்கக்கடல்.":
+        native: "This is the Bay of Bengal."
+        bases:
+          "வங்கக்கடல்": "Bay of Bengal"
+      "வங்கக்கடல் கிழக்கு.":
+        native: "The Bay of Bengal is to the east."
+        bases:
+          "வங்கக்கடல்": "Bay of Bengal"
+  "ta-2393":
+    native: "Arabian Sea"
+    notes:
+      n1: "The Arabian Sea lies on the west of India."
+    examples:
+      "இது அரபிக்கடல்.":
+        native: "This is the Arabian Sea."
+        bases:
+          "அரபிக்கடல்": "Arabian Sea"
+      "அரபிக்கடல் மேற்கு.":
+        native: "The Arabian Sea is to the west."
+        bases:
+          "அரபிக்கடல்": "Arabian Sea"
+  "ta-2394":
+    native: "Jaffna"
+    notes:
+      n1: "Jaffna is the capital of the Northern Province of Sri Lanka, on a peninsula."
+    examples:
+      "இது யாழ்ப்பாணம்.":
+        native: "This is Jaffna."
+        bases:
+          "யாழ்ப்பாணம்": "Jaffna"
+      "யாழ்ப்பாணம் இலங்கையில்.":
+        native: "Jaffna is in Sri Lanka."
+        bases:
+          "யாழ்ப்பாணம்": "Jaffna"
+          "இலங்கையில்": "in Sri Lanka; from இலங்கை (ilaṅkai), Sri Lanka"
+  "ta-2395":
+    native: "Colombo"
+    notes:
+      n1: "Colombo is Sri Lanka's most populous city and its executive and judicial capital."
+    examples:
+      "இது கொழும்பு.":
+        native: "This is Colombo."
+        bases:
+          "கொழும்பு": "Colombo"
+      "கொழும்பு இலங்கையில்.":
+        native: "Colombo is in Sri Lanka."
+        bases:
+          "கொழும்பு": "Colombo"
+          "இலங்கையில்": "in Sri Lanka; from இலங்கை (ilaṅkai), Sri Lanka"
+  "ta-2396":
+    native: "Asia"
+    notes:
+      n1: "The continent; the ending -இல் (-il) gives ஆசியாவில் (āciyāvil), in Asia."
+    examples:
+      "இது ஆசியா.":
+        native: "This is Asia."
+        bases:
+          "ஆசியா": "Asia"
+      "இந்தியா ஆசியாவில்.":
+        native: "India is in Asia."
+        bases:
+          "ஆசியாவில்": "in Asia; from ஆசியா (āciyā), Asia"
+  "ta-2397":
+    native: "Europe"
+    notes:
+      n1: "The continent of Europe."
+    examples:
+      "இது ஐரோப்பா.":
+        native: "This is Europe."
+        bases:
+          "ஐரோப்பா": "Europe"
+      "ஐரோப்பா எங்கே?":
+        native: "Where is Europe?"
+        bases:
+          "ஐரோப்பா": "Europe"
+  "ta-2398":
+    native: "Africa"
+    notes:
+      n1: "The continent of Africa."
+    examples:
+      "இது ஆப்பிரிக்கா.":
+        native: "This is Africa."
+        bases:
+          "ஆப்பிரிக்கா": "Africa"
+      "ஆப்பிரிக்கா எங்கே?":
+        native: "Where is Africa?"
+        bases:
+          "ஆப்பிரிக்கா": "Africa"
+  "ta-2399":
+    native: "America"
+    notes:
+      n1: "America; spoken Tamil uses it mostly for the United States."
+    examples:
+      "இது அமெரிக்கா.":
+        native: "This is America."
+        bases:
+          "அமெரிக்கா": "America"
+      "அமெரிக்கா எங்கே?":
+        native: "Where is America?"
+        bases:
+          "அமெரிக்கா": "America"
+  "ta-2400":
+    native: "Australia"
+    notes:
+      n1: "The country and continent of Australia."
+    examples:
+      "இது ஆஸ்திரேலியா.":
+        native: "This is Australia."
+        bases:
+          "ஆஸ்திரேலியா": "Australia"
+      "ஆஸ்திரேலியா எங்கே?":
+        native: "Where is Australia?"
+        bases:
+          "ஆஸ்திரேலியா": "Australia"
+  "ta-2401":
+    native: "China"
+    notes:
+      n1: "China."
+    examples:
+      "இது சீனா.":
+        native: "This is China."
+        bases:
+          "சீனா": "China"
+      "சீனா பெரிய நாடு.":
+        native: "China is a big country."
+        bases:
+          "சீனா": "China"
+  "ta-2402":
+    native: "Japan"
+    notes:
+      n1: "Japan, written as it is said."
+    examples:
+      "இது ஜப்பான்.":
+        native: "This is Japan."
+        bases:
+          "ஜப்பான்": "Japan"
+      "ஜப்பான் எங்கே?":
+        native: "Where is Japan?"
+        bases:
+          "ஜப்பான்": "Japan"
+  "ta-2403":
+    native: "Pakistan"
+    notes:
+      n1: "Pakistan."
+    examples:
+      "இது பாகிஸ்தான்.":
+        native: "This is Pakistan."
+        bases:
+          "பாகிஸ்தான்": "Pakistan"
+      "பாகிஸ்தான் எங்கே?":
+        native: "Where is Pakistan?"
+        bases:
+          "பாகிஸ்தான்": "Pakistan"
+  "ta-2404":
+    native: "England"
+    notes:
+      n1: "England; spoken Tamil often uses it for Britain as well."
+    examples:
+      "இது இங்கிலாந்து.":
+        native: "This is England."
+        bases:
+          "இங்கிலாந்து": "England"
+      "இங்கிலாந்து எங்கே?":
+        native: "Where is England?"
+        bases:
+          "இங்கிலாந்து": "England"
+  "ta-2405":
+    native: "Nepal"
+    notes:
+      n1: "Nepal."
+    examples:
+      "இது நேபாளம்.":
+        native: "This is Nepal."
+        bases:
+          "நேபாளம்": "Nepal"
+      "நேபாளம் எங்கே?":
+        native: "Where is Nepal?"
+        bases:
+          "நேபாளம்": "Nepal"
+  "ta-2406":
+    native: "Bangladesh"
+    notes:
+      n1: "Bangladesh, literally the land of Bengal."
+    examples:
+      "இது வங்காளதேசம்.":
+        native: "This is Bangladesh."
+        bases:
+          "வங்காளதேசம்": "Bangladesh"
+      "வங்காளதேசம் எங்கே?":
+        native: "Where is Bangladesh?"
+        bases:
+          "வங்காளதேசம்": "Bangladesh"

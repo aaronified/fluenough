@@ -633,7 +633,8 @@ units:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
     reading_passages:
       - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
-  - planned: { id: "ta-geography", theme: "geography", words: 50 }
+  - decks: ["ta-geography", "ta-geography-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "where-tamil-is-spoken", text: { "en": "Naming the places Tamil is spoken: Tamil Nadu, Sri Lanka and beyond" } }
     reading_passages:
