@@ -1,0 +1,29 @@
+schema: 1
+id: "ta-en-grammar-past-more"
+kind: "layer"
+core: "ta-grammar-past-more"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Has done and had done: the verbal participle with இரு (iru)"
+description: "Every verb the course teaches, with has done and had done for five persons, spoken forms before written ones. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "perfect-naan": "I (have done)"
+    "perfect-nee": "you, to a friend or child (have done)"
+    "perfect-avan": "he (have done)"
+    "perfect-atu": "it (have done)"
+    "perfect-avarkal": "they (have done)"
+    "pastperfect-naan": "I (had done)"
+    "pastperfect-nee": "you, to a friend or child (had done)"
+    "pastperfect-avan": "he (had done)"
+    "pastperfect-atu": "it (had done)"
+    "pastperfect-avarkal": "they (had done)"
+rules:
+  "ta-rule-past-more-perfect":
+    name: "Has done: the verbal participle and இரு (iru), to be, now"
+    explanation: "What has happened, with its result still true now, is said with the verbal participle and then the verb இரு (iru), to be, in the present. {1}, having come, and {2}, I am, join into {3}, I have come. {4} is I have studied, and speech says {5}. A participle that ends in -ய் (-y) joins as in {6}, which gives {7}. The person endings are those of இரு (iru) in the present: the table gives five persons, and the first form in a cell is the spoken one."
+  "ta-rule-past-more-pluperfect":
+    name: "Had done: the verbal participle and the past of இரு (iru), to be"
+    explanation: "What had already happened before another time is said with the verbal participle and the past of இரு (iru), to be: {3} and {2}, I was, join into {1}, I had come. {4} is I had gone, {5} is he had come, and {6} is the spoken I had studied. The person endings are those of the plain past, so a spoken she or they shortens as there."

@@ -1,0 +1,798 @@
+schema: 1
+id: "ta-en-journey"
+kind: "layer"
+core: "ta-journey"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Travel and journeys"
+description: "Tickets, stations and vehicles, roads and routes, luggage and documents, and the verbs of setting out, driving and arriving. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-2132":
+    native: "journey; trip"
+    notes:
+      n1: "A journey of any length."
+    examples:
+      "பயணம் எப்போது?":
+        native: "When is the journey?"
+        bases:
+          "பயணம்": "journey; trip"
+      "நாளை பயணம்.":
+        native: "The journey is tomorrow."
+        bases:
+          "பயணம்": "journey; trip"
+  "ta-2133":
+    native: "ticket"
+    notes:
+      n1: "The formal word, literally a journey slip; spoken Tamil says டிக்கெட் (ṭikkeṭ)."
+    examples:
+      "பயணச்சீட்டு எங்கே?":
+        native: "Where is the ticket?"
+        bases:
+          "பயணச்சீட்டு": "ticket"
+      "பயணச்சீட்டு வாங்கு.":
+        native: "Buy a ticket."
+        bases:
+          "பயணச்சீட்டு": "ticket"
+  "ta-2134":
+    native: "ticket"
+    notes:
+      n1: "The everyday English loan for a ticket."
+    examples:
+      "டிக்கெட் எவ்வளவு?":
+        native: "How much is the ticket?"
+        bases:
+          "டிக்கெட்": "ticket"
+      "இரண்டு டிக்கெட்.":
+        native: "Two tickets."
+        bases:
+          "டிக்கெட்": "ticket"
+  "ta-2135":
+    native: "station"
+    notes:
+      n1: "A station; it comes after the kind, as in ரயில் நிலையம் (rayil nilaiyam), railway station."
+    examples:
+      "ரயில் நிலையம் எங்கே?":
+        native: "Where is the railway station?"
+        bases:
+          "நிலையம்": "station"
+      "பேருந்து நிலையம் எங்கே?":
+        native: "Where is the bus station?"
+        bases:
+          "நிலையம்": "station"
+  "ta-2136":
+    native: "platform"
+    notes:
+      n1: "A railway platform."
+    examples:
+      "நடைமேடை எங்கே?":
+        native: "Where is the platform?"
+        bases:
+          "நடைமேடை": "platform"
+      "நடைமேடை ஐந்து.":
+        native: "Platform five."
+        bases:
+          "நடைமேடை": "platform"
+  "ta-2137":
+    native: "aeroplane"
+    notes:
+      n1: "An aeroplane or a flight."
+    examples:
+      "விமானம் எப்போது?":
+        native: "When is the flight?"
+        bases:
+          "விமானம்": "aeroplane"
+      "இது பெரிய விமானம்.":
+        native: "This is a big aeroplane."
+        bases:
+          "விமானம்": "aeroplane"
+  "ta-2138":
+    native: "ship"
+    notes:
+      n1: "A ship."
+    examples:
+      "கப்பல் எங்கே?":
+        native: "Where is the ship?"
+        bases:
+          "கப்பல்": "ship"
+      "இது பெரிய கப்பல்.":
+        native: "This is a big ship."
+        bases:
+          "கப்பல்": "ship"
+  "ta-2139":
+    native: "boat"
+    notes:
+      n1: "A small boat."
+    examples:
+      "படகு எங்கே?":
+        native: "Where is the boat?"
+        bases:
+          "படகு": "boat"
+      "இது சின்ன படகு.":
+        native: "This is a small boat."
+        bases:
+          "படகு": "boat"
+  "ta-2140":
+    native: "lorry"
+    notes:
+      n1: "The English loan for a lorry."
+    examples:
+      "இது பெரிய லாரி.":
+        native: "This is a big lorry."
+        bases:
+          "லாரி": "lorry"
+      "லாரி வருகிறது.":
+        native: "A lorry is coming."
+        bases:
+          "லாரி": "lorry"
+          "வருகிறது": "is coming; from வா (vā), come"
+  "ta-2141":
+    native: "motorbike"
+    notes:
+      n1: "The English loan for a motorbike."
+    examples:
+      "இது என் பைக்.":
+        native: "This is my bike."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "பைக்": "motorbike"
+      "பைக் எங்கே?":
+        native: "Where is the bike?"
+        bases:
+          "பைக்": "motorbike"
+  "ta-2142":
+    native: "scooter"
+    notes:
+      n1: "The English loan for a scooter."
+    examples:
+      "இது புதிய ஸ்கூட்டர்.":
+        native: "This is a new scooter."
+        bases:
+          "ஸ்கூட்டர்": "scooter"
+      "ஸ்கூட்டர் எங்கே?":
+        native: "Where is the scooter?"
+        bases:
+          "ஸ்கூட்டர்": "scooter"
+  "ta-2143":
+    native: "road"
+    notes:
+      n1: "A road."
+    examples:
+      "சாலை எங்கே?":
+        native: "Where is the road?"
+        bases:
+          "சாலை": "road"
+      "இது பெரிய சாலை.":
+        native: "This is a big road."
+        bases:
+          "சாலை": "road"
+  "ta-2144":
+    native: "bridge"
+    notes:
+      n1: "A bridge over water or a road."
+    examples:
+      "பாலம் எங்கே?":
+        native: "Where is the bridge?"
+        bases:
+          "பாலம்": "bridge"
+      "இது பழைய பாலம்.":
+        native: "This is an old bridge."
+        bases:
+          "பாலம்": "bridge"
+  "ta-2145":
+    native: "junction; meeting"
+    notes:
+      n1: "A road junction, and also a meeting."
+    examples:
+      "சந்திப்பு எங்கே?":
+        native: "Where is the junction?"
+        bases:
+          "சந்திப்பு": "junction; meeting"
+      "அடுத்த சந்திப்பு.":
+        native: "The next junction."
+        bases:
+          "சந்திப்பு": "junction; meeting"
+  "ta-2146":
+    native: "route"
+    notes:
+      n1: "A route followed by a bus or train."
+    examples:
+      "வழித்தடம் எங்கே?":
+        native: "Where is the route?"
+        bases:
+          "வழித்தடம்": "route"
+      "இது பேருந்து வழித்தடம்.":
+        native: "This is the bus route."
+        bases:
+          "வழித்தடம்": "route"
+  "ta-2147":
+    native: "distance"
+    notes:
+      n1: "How far it is."
+    examples:
+      "தூரம் எவ்வளவு?":
+        native: "How far is it?"
+        bases:
+          "தூரம்": "distance"
+      "தூரம் அதிகம்.":
+        native: "It is far."
+        bases:
+          "தூரம்": "distance"
+  "ta-2148":
+    native: "place; space"
+    notes:
+      n1: "A place, or room for something; இடம் இல்லை (iṭam illai) is there is no room."
+    examples:
+      "இடம் இல்லை.":
+        native: "There is no room."
+        bases:
+          "இடம்": "place; space"
+      "இது நல்ல இடம்.":
+        native: "This is a good place."
+        bases:
+          "இடம்": "place; space"
+  "ta-2149":
+    native: "direction"
+    notes:
+      n1: "A compass direction, or a way."
+    examples:
+      "திசை எது?":
+        native: "Which direction?"
+        bases:
+          "திசை": "direction"
+      "இது வடக்கு திசை.":
+        native: "This is the north direction."
+        bases:
+          "திசை": "direction"
+  "ta-2150":
+    native: "map"
+    notes:
+      n1: "A map."
+    examples:
+      "வரைபடம் பார்.":
+        native: "Look at the map."
+        bases:
+          "வரைபடம்": "map"
+      "வரைபடம் எங்கே?":
+        native: "Where is the map?"
+        bases:
+          "வரைபடம்": "map"
+  "ta-2151":
+    native: "path; track"
+    notes:
+      n1: "A path or track."
+    examples:
+      "பாதை எங்கே?":
+        native: "Where is the path?"
+        bases:
+          "பாதை": "path; track"
+      "இது நல்ல பாதை.":
+        native: "This is a good path."
+        bases:
+          "பாதை": "path; track"
+  "ta-2152":
+    native: "traffic; transport"
+    notes:
+      n1: "Traffic on the road, or transport in general."
+    examples:
+      "போக்குவரத்து அதிகம்.":
+        native: "There is a lot of traffic."
+        bases:
+          "போக்குவரத்து": "traffic; transport"
+      "இங்கே போக்குவரத்து அதிகம்.":
+        native: "There is a lot of traffic here."
+        bases:
+          "போக்குவரத்து": "traffic; transport"
+  "ta-2153":
+    native: "entry ticket"
+    notes:
+      n1: "A ticket for entry, as to a museum or temple."
+    examples:
+      "நுழைவுச்சீட்டு எங்கே?":
+        native: "Where is the entry ticket?"
+        bases:
+          "நுழைவுச்சீட்டு": "entry ticket"
+      "நுழைவுச்சீட்டு வாங்கு.":
+        native: "Buy an entry ticket."
+        bases:
+          "நுழைவுச்சீட்டு": "entry ticket"
+  "ta-2154":
+    native: "seat"
+    notes:
+      n1: "A seat on a bus, train or plane."
+    examples:
+      "இருக்கை எங்கே?":
+        native: "Where is the seat?"
+        bases:
+          "இருக்கை": "seat"
+      "இருக்கை இல்லை.":
+        native: "There is no seat."
+        bases:
+          "இருக்கை": "seat"
+  "ta-2155":
+    native: "travel bag"
+    notes:
+      n1: "A bag for travelling."
+    examples:
+      "பயணப்பை எங்கே?":
+        native: "Where is the travel bag?"
+        bases:
+          "பயணப்பை": "travel bag"
+      "இது என் பயணப்பை.":
+        native: "This is my travel bag."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "பயணப்பை": "travel bag"
+  "ta-2156":
+    native: "vehicle"
+    notes:
+      n1: "The formal word for a vehicle; spoken Tamil says வண்டி (vaṇṭi)."
+    examples:
+      "வாகனம் எங்கே?":
+        native: "Where is the vehicle?"
+        bases:
+          "வாகனம்": "vehicle"
+      "இது புதிய வாகனம்.":
+        native: "This is a new vehicle."
+        bases:
+          "வாகனம்": "vehicle"
+  "ta-2157":
+    native: "passport"
+    notes:
+      n1: "The English loan for a passport."
+    examples:
+      "பாஸ்போர்ட் எங்கே?":
+        native: "Where is the passport?"
+        bases:
+          "பாஸ்போர்ட்": "passport"
+      "பாஸ்போர்ட் கொடு.":
+        native: "Give me the passport."
+        bases:
+          "பாஸ்போர்ட்": "passport"
+  "ta-2158":
+    native: "visa"
+    notes:
+      n1: "The English loan for a visa."
+    examples:
+      "விசா வேண்டும்.":
+        native: "A visa is needed."
+        bases:
+          "விசா": "visa"
+      "விசா எங்கே?":
+        native: "Where is the visa?"
+        bases:
+          "விசா": "visa"
+  "ta-2159":
+    native: "border; limit"
+    notes:
+      n1: "The border of a country or an area."
+    examples:
+      "எல்லை எங்கே?":
+        native: "Where is the border?"
+        bases:
+          "எல்லை": "border; limit"
+      "இது எல்லை.":
+        native: "This is the border."
+        bases:
+          "எல்லை": "border; limit"
+  "ta-2160":
+    native: "pavement; footpath"
+    notes:
+      n1: "A path for walkers beside a road."
+    examples:
+      "நடைபாதை எங்கே?":
+        native: "Where is the pavement?"
+        bases:
+          "நடைபாதை": "pavement; footpath"
+      "இது நல்ல நடைபாதை.":
+        native: "This is a good pavement."
+        bases:
+          "நடைபாதை": "pavement; footpath"
+  "ta-2161":
+    native: "driver"
+    notes:
+      n1: "The spoken English loan; the formal word is ஓட்டுநர் (ōṭṭunar)."
+    examples:
+      "டிரைவர் எங்கே?":
+        native: "Where is the driver?"
+        bases:
+          "டிரைவர்": "driver"
+      "அவர் டிரைவர்.":
+        native: "He is a driver."
+        bases:
+          "டிரைவர்": "driver"
+  "ta-2162":
+    native: "driver"
+    notes:
+      n1: "The formal word for a driver, from the verb ஓட்டு (ōṭṭu) (to drive)."
+    examples:
+      "அவர் ஓட்டுநர்.":
+        native: "He is a driver."
+        bases:
+          "ஓட்டுநர்": "driver"
+      "ஓட்டுநர் வருகிறார்.":
+        native: "The driver is coming."
+        bases:
+          "ஓட்டுநர்": "driver"
+          "வருகிறார்": "is coming; from வா (vā), come"
+  "ta-2163":
+    native: "conductor"
+    notes:
+      n1: "The conductor on a bus or train."
+    examples:
+      "நடத்துநர் எங்கே?":
+        native: "Where is the conductor?"
+        bases:
+          "நடத்துநர்": "conductor"
+      "அவர் நடத்துநர்.":
+        native: "He is the conductor."
+        bases:
+          "நடத்துநர்": "conductor"
+  "ta-2164":
+    native: "hotel; restaurant"
+    notes:
+      n1: "In Tamil Nadu ஹோட்டல் (hōṭṭal) often means a place to eat, not only a place to stay."
+    examples:
+      "ஹோட்டல் எங்கே?":
+        native: "Where is the hotel?"
+        bases:
+          "ஹோட்டல்": "hotel; restaurant"
+      "இது பெரிய ஹோட்டல்.":
+        native: "This is a big hotel."
+        bases:
+          "ஹோட்டல்": "hotel; restaurant"
+  "ta-2165":
+    native: "departure"
+    notes:
+      n1: "The time or act of leaving."
+    examples:
+      "புறப்பாடு எப்போது?":
+        native: "When is the departure?"
+        bases:
+          "புறப்பாடு": "departure"
+      "புறப்பாடு காலை.":
+        native: "Departure is in the morning."
+        bases:
+          "புறப்பாடு": "departure"
+  "ta-2166":
+    native: "arrival; visit"
+    notes:
+      n1: "The arrival of a person or vehicle, or a visit."
+    examples:
+      "வருகை எப்போது?":
+        native: "When is the arrival?"
+        bases:
+          "வருகை": "arrival; visit"
+      "வருகை மாலை.":
+        native: "Arrival is in the evening."
+        bases:
+          "வருகை": "arrival; visit"
+  "ta-2167":
+    native: "delay"
+    notes:
+      n1: "A delay or lateness."
+    examples:
+      "தாமதம் இல்லை.":
+        native: "There is no delay."
+        bases:
+          "தாமதம்": "delay"
+      "கொஞ்சம் தாமதம்.":
+        native: "A little delay."
+        bases:
+          "தாமதம்": "delay"
+  "ta-2168":
+    native: "speed"
+    notes:
+      n1: "Speed."
+    examples:
+      "வேகம் அதிகம்.":
+        native: "The speed is high."
+        bases:
+          "வேகம்": "speed"
+      "வேகம் குறை.":
+        native: "Slow down."
+        bases:
+          "வேகம்": "speed"
+  "ta-2169":
+    native: "accident"
+    notes:
+      n1: "An accident on the road or elsewhere."
+    examples:
+      "இங்கே விபத்து.":
+        native: "There is an accident here."
+        bases:
+          "விபத்து": "accident"
+      "விபத்து எங்கே?":
+        native: "Where is the accident?"
+        bases:
+          "விபத்து": "accident"
+  "ta-2170":
+    native: "petrol"
+    notes:
+      n1: "The English loan for petrol."
+    examples:
+      "பெட்ரோல் இல்லை.":
+        native: "There is no petrol."
+        bases:
+          "பெட்ரோல்": "petrol"
+      "பெட்ரோல் வேண்டும்.":
+        native: "Petrol is needed."
+        bases:
+          "பெட்ரோல்": "petrol"
+  "ta-2171":
+    native: "vehicle; cart"
+    notes:
+      n1: "The all-purpose word for a vehicle: a car, bike, bus or cart."
+    examples:
+      "வண்டி எங்கே?":
+        native: "Where is the vehicle?"
+        bases:
+          "வண்டி": "vehicle; cart"
+      "வண்டி வருகிறது.":
+        native: "The vehicle is coming."
+        bases:
+          "வண்டி": "vehicle; cart"
+          "வருகிறது": "is coming; from வா (vā), come"
+  "ta-2172":
+    native: "tour; outing"
+    notes:
+      n1: "A tour or a pleasure trip."
+    examples:
+      "சுற்றுலா எப்போது?":
+        native: "When is the trip?"
+        bases:
+          "சுற்றுலா": "tour; outing"
+      "நாம் சுற்றுலா போகலாம்.":
+        native: "Let's go on a trip."
+        bases:
+          "சுற்றுலா": "tour; outing"
+          "போகலாம்": "let's go; from போ (pō), to go"
+  "ta-2173":
+    native: "guide"
+    notes:
+      n1: "A tour guide, or a guidebook."
+    examples:
+      "அவர் வழிகாட்டி.":
+        native: "He is a guide."
+        bases:
+          "வழிகாட்டி": "guide"
+      "வழிகாட்டி எங்கே?":
+        native: "Where is the guide?"
+        bases:
+          "வழிகாட்டி": "guide"
+  "ta-2174":
+    native: "restaurant"
+    notes:
+      n1: "The formal word for a restaurant."
+    examples:
+      "உணவகம் எங்கே?":
+        native: "Where is the restaurant?"
+        bases:
+          "உணவகம்": "restaurant"
+      "இது நல்ல உணவகம்.":
+        native: "This is a good restaurant."
+        bases:
+          "உணவகம்": "restaurant"
+  "ta-2175":
+    native: "kilometre"
+    notes:
+      n1: "The English loan for a kilometre."
+    examples:
+      "இரண்டு கிலோமீட்டர்.":
+        native: "Two kilometres."
+        bases:
+          "கிலோமீட்டர்": "kilometre"
+      "ஐந்து கிலோமீட்டர் தூரம்.":
+        native: "A distance of five kilometres."
+        bases:
+          "கிலோமீட்டர்": "kilometre"
+  "ta-2176":
+    native: "walk; gait"
+    notes:
+      n1: "Walking, as a walk or as exercise."
+    examples:
+      "காலை நடை.":
+        native: "A morning walk."
+        bases:
+          "நடை": "walk; gait"
+      "நடை பயிற்சி.":
+        native: "Walking exercise."
+        bases:
+          "நடை": "walk; gait"
+  "ta-2177":
+    native: "shortcut"
+    notes:
+      n1: "Made of குறுக்கு (kuṟukku) (across) and வழி (vaḻi) (way)."
+    examples:
+      "குறுக்குவழி எங்கே?":
+        native: "Where is the shortcut?"
+        bases:
+          "குறுக்குவழி": "shortcut"
+      "இது குறுக்குவழி.":
+        native: "This is a shortcut."
+        bases:
+          "குறுக்குவழி": "shortcut"
+  "ta-2178":
+    native: "curve; bend"
+    notes:
+      n1: "A bend in a road."
+    examples:
+      "முன்னால் வளைவு.":
+        native: "A bend ahead."
+        bases:
+          "வளைவு": "curve; bend"
+      "வளைவு அதிகம்.":
+        native: "There are many bends."
+        bases:
+          "வளைவு": "curve; bend"
+  "ta-2179":
+    native: "bundle; bag"
+    notes:
+      n1: "A bundle or sack of things."
+    examples:
+      "மூட்டை தூக்கு.":
+        native: "Lift the bundle."
+        bases:
+          "மூட்டை": "bundle; bag"
+      "இது பெரிய மூட்டை.":
+        native: "This is a big bundle."
+        bases:
+          "மூட்டை": "bundle; bag"
+  "ta-2180":
+    native: "to drive; to ride"
+    notes:
+      n1: "To drive a car or ride a bike."
+    examples:
+      "கார் ஓட்டு.":
+        native: "Drive the car."
+        bases:
+          "ஓட்டு": "to drive; to ride"
+      "நான் கார் ஓட்டுகிறேன்.":
+        native: "I am driving a car."
+        bases:
+          "ஓட்டுகிறேன்": "am driving; from ஓட்டு (ōṭṭu), to drive; to ride"
+  "ta-2181":
+    native: "to set out; to leave"
+    notes:
+      n1: "To start off on a journey."
+    examples:
+      "நாளை புறப்படு.":
+        native: "Set out tomorrow."
+        bases:
+          "புறப்படு": "to set out; to leave"
+      "நான் புறப்படுகிறேன்.":
+        native: "I am leaving."
+        bases:
+          "புறப்படுகிறேன்": "am leaving; from புறப்படு (puṟappaṭu), to set out; to leave"
+  "ta-2182":
+    native: "to reach; to arrive at"
+    notes:
+      n1: "To reach a place."
+    examples:
+      "நாம் நகரம் அடைகிறோம்.":
+        native: "We are reaching the city."
+        bases:
+          "அடைகிறோம்": "we reach; from அடை (aṭai), to reach; to arrive at"
+      "நான் ஊர் அடைகிறேன்.":
+        native: "I am reaching the town."
+        bases:
+          "அடைகிறேன்": "am reaching; from அடை (aṭai), to reach; to arrive at"
+  "ta-2183":
+    native: "to drop off; to unload"
+    notes:
+      n1: "To drop someone off or to unload."
+    examples:
+      "என்னை இங்கே இறக்கு.":
+        native: "Drop me here."
+        bases:
+          "என்னை": "me; from நான் (nāṉ), I; me"
+          "இறக்கு": "to drop off; to unload"
+      "நான் சாமான் இறக்குகிறேன்.":
+        native: "I am unloading the luggage."
+        bases:
+          "இறக்குகிறேன்": "am unloading; from இறக்கு (iṟakku), to drop off; to unload"
+  "ta-2184":
+    native: "to lose one's way"
+    notes:
+      n1: "Made of வழி (vaḻi) (way) and தவறு (tavaṟu) (to err)."
+    examples:
+      "வழிதவறாதே.":
+        native: "Do not lose your way."
+        bases:
+          "வழிதவறாதே": "do not lose your way; from வழிதவறு (vaḻitavaṟu), to lose one's way"
+      "நான் வழிதவறுகிறேன்.":
+        native: "I am losing my way."
+        bases:
+          "வழிதவறுகிறேன்": "am losing my way; from வழிதவறு (vaḻitavaṟu), to lose one's way"
+  "ta-2185":
+    native: "to roam about"
+    notes:
+      n1: "To wander about for pleasure or without aim."
+    examples:
+      "ஊர் சுற்றித்திரி.":
+        native: "Roam about the town."
+        bases:
+          "சுற்றித்திரி": "to roam about"
+      "நான் சுற்றித்திரிகிறேன்.":
+        native: "I am roaming about."
+        bases:
+          "சுற்றித்திரிகிறேன்": "am roaming about; from சுற்றித்திரி (cuṟṟittiri), to roam about"
+  "ta-2186":
+    native: "to run; to operate"
+    notes:
+      n1: "To run, as a bus service or a machine does."
+    examples:
+      "பேருந்து இயங்குகிறது.":
+        native: "The bus is running."
+        bases:
+          "இயங்குகிறது": "is running; from இயங்கு (iyaṅku), to run; to operate"
+      "ரயில் இயங்குகிறது.":
+        native: "The train is running."
+        bases:
+          "இயங்குகிறது": "is running; from இயங்கு (iyaṅku), to run; to operate"
+  "ta-2187":
+    native: "to see off"
+    notes:
+      n1: "To see someone off on a journey."
+    examples:
+      "நண்பனை வழியனுப்பு.":
+        native: "See the friend off."
+        bases:
+          "நண்பனை": "friend (as object); from நண்பன் (naṇpaṉ), male friend"
+          "வழியனுப்பு": "to see off"
+      "நான் வழியனுப்புகிறேன்.":
+        native: "I am seeing him off."
+        bases:
+          "வழியனுப்புகிறேன்": "am seeing off; from வழியனுப்பு (vaḻiyaṉuppu), to see off"
+  "ta-2188":
+    native: "to plan"
+    notes:
+      n1: "To plan something."
+    examples:
+      "பயணம் திட்டமிடு.":
+        native: "Plan the trip."
+        bases:
+          "திட்டமிடு": "to plan"
+      "நாம் திட்டமிடலாம்.":
+        native: "Let's plan."
+        bases:
+          "திட்டமிடலாம்": "let's plan; from திட்டமிடு (tiṭṭamiṭu), to plan"
+  "ta-2189":
+    native: "to take along"
+    notes:
+      n1: "To carry something with you."
+    examples:
+      "குடை எடுத்துச்செல்.":
+        native: "Take an umbrella."
+        bases:
+          "எடுத்துச்செல்": "to take along"
+      "நான் பை எடுத்துச்செல்கிறேன்.":
+        native: "I am taking a bag."
+        bases:
+          "எடுத்துச்செல்கிறேன்": "am taking along; from எடுத்துச்செல் (eṭuttuccel), to take along"
+  "ta-2190":
+    native: "to look around; to sightsee"
+    notes:
+      n1: "To see the sights of a place."
+    examples:
+      "ஊர் சுற்றிப்பார்.":
+        native: "Look around the town."
+        bases:
+          "சுற்றிப்பார்": "to look around; to sightsee"
+      "நாம் சுற்றிப்பார்க்கலாம்.":
+        native: "Let's look around."
+        bases:
+          "சுற்றிப்பார்க்கலாம்": "let's look around; from சுற்றிப்பார் (cuṟṟippār), to look around; to sightsee"
+  "ta-2191":
+    native: "to inspect; to check"
+    notes:
+      n1: "To inspect or examine."
+    examples:
+      "பாஸ்போர்ட் பரிசோதி.":
+        native: "Check the passport."
+        bases:
+          "பரிசோதி": "to inspect; to check"
+      "அவர் பரிசோதிக்கிறார்.":
+        native: "He is inspecting."
+        bases:
+          "பரிசோதிக்கிறார்": "is inspecting; from பரிசோதி (paricōti), to inspect; to check"

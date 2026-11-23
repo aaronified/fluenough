@@ -1,0 +1,59 @@
+schema: 1
+id: "ta-grammar-pitfalls"
+part: "core"
+kind: "grammar"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["first word", "second word"]
+  entries:
+    - lemma: "கொடு / தா"
+      key: "give"
+      reading: "koṭu / tā"
+      ipa: "koʈu t̪aː"
+      forms: { "first word": "அவனுக்குக் கொடு", "second word": "எனக்குத் தா" }
+      readings: { "first word": "avaṉukkuk koṭu", "second word": "eṉakkut tā" }
+      ipas: { "first word": "aʋanukkuk koʈu", "second word": "enakkut̪ t̪aː" }
+    - lemma: "அல்ல / இல்லை"
+      key: "not"
+      reading: "alla / illai"
+      ipa: "alla illai"
+      forms: { "first word": "இது தண்ணீர் அல்ல", "second word": "தண்ணீர் இல்லை" }
+      readings: { "first word": "itu taṇṇīr alla", "second word": "taṇṇīr illai" }
+      ipas: { "first word": "it̪u t̪aɳɳiːɾ alla", "second word": "t̪aɳɳiːɾ illai" }
+    - lemma: "பிடிக்கும் / வேண்டும்"
+      key: "likewant"
+      reading: "piṭikkum / vēṇṭum"
+      ipa: "piʈikkum ʋeːɳʈum"
+      forms: { "first word": "எனக்குத் தேநீர் பிடிக்கும்", "second word": "எனக்குத் தேநீர் வேண்டும்" }
+      readings: { "first word": "eṉakkut tēnīr piṭikkum", "second word": "eṉakkut tēnīr vēṇṭum" }
+      ipas: { "first word": "enakkut̪ t̪eːniːɾ piʈikkum", "second word": "enakkut̪ t̪eːniːɾ ʋeːɳʈum" }
+    - lemma: "வா / போ"
+      key: "comego"
+      reading: "vā / pō"
+      ipa: "ʋaː poː"
+      forms: { "first word": "இங்கே வா", "second word": "அங்கே போ" }
+      readings: { "first word": "iṅkē vā", "second word": "aṅkē pō" }
+      ipas: { "first word": "iŋkeː ʋaː", "second word": "aŋkeː poː" }
+    - lemma: "வரமாட்டேன் / வரவில்லை"
+      key: "willdid"
+      reading: "varamāṭṭēṉ / varavillai"
+      ipa: "ʋaɾamaːʈʈeːn ʋaɾaʋillai"
+      forms: { "first word": "நான் நாளை வரமாட்டேன்", "second word": "நான் நேற்று வரவில்லை" }
+      readings: { "first word": "nāṉ nāḷai varamāṭṭēṉ", "second word": "nāṉ nēṟṟu varavillai" }
+      ipas: { "first word": "naːn naːɭai ʋaɾamaːʈʈeːn", "second word": "naːn neːrru ʋaɾaʋillai" }
+    - lemma: "ஒன்று / ஒரு"
+      key: "one"
+      reading: "oṉṟu / oru"
+      ipa: "onru oɾu"
+      forms: { "first word": "எனக்கு ஒன்று வேண்டும்", "second word": "எனக்கு ஒரு தேநீர் வேண்டும்" }
+      readings: { "first word": "eṉakku oṉṟu vēṇṭum", "second word": "eṉakku oru tēnīr vēṇṭum" }
+      ipas: { "first word": "enakku onru ʋeːɳʈum", "second word": "enakku oɾu t̪eːniːɾ ʋeːɳʈum" }
+    - lemma: "கேள்"
+      key: "listenask"
+      reading: "kēḷ"
+      ipa: "keːɭ"
+      forms: { "first word": "இதைக் கேளுங்கள்", "second word": "அவரிடம் கேளுங்கள்" }
+      readings: { "first word": "itaik kēḷuṅkaḷ", "second word": "avariṭam kēḷuṅkaḷ" }
+      ipas: { "first word": "it̪aik keːɭuŋkaɭ", "second word": "aʋaɾiʈam keːɭuŋkaɭ" }

@@ -1,0 +1,80 @@
+schema: 1
+id: "ta-en-weather-sentences"
+kind: "layer"
+core: "ta-weather-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Weather in sentences"
+description: "Nine short sentences about rain, sun, cold, wind and the seasons. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-4008":
+    native: "How is the weather today?"
+    confusables:
+      w1: { why: "மழை (maḻai), rain, is a different word." }
+      w2: { why: "வெயில் (veyil), sunshine; the heat of the sun, is a different word." }
+  "ta-4009":
+    native: "It will rain tomorrow morning."
+    notes:
+      n1: "பெய்யும் (peyyum) is the future of பெய் (pey): it will rain."
+    bases:
+      "பெய்யும்": "will rain; from பெய் (pey), to rain"
+    confusables:
+      w1: { why: "மேகம் (mēkam), cloud, is a different word." }
+      w2: { why: "புயல் (puyal), storm; cyclone, is a different word." }
+  "ta-4010":
+    native: "It is very sunny outside."
+    confusables:
+      w1: { why: "குளிர் (kuḷir), cold; chill, is a different word." }
+      w2: { why: "வெப்பம் (veppam), heat, is a different word." }
+  "ta-4011":
+    native: "Take an umbrella with you."
+    notes:
+      n1: "எடுத்துப் போ (eṭuttup pō) means take along; the linking form எடுத்துப் (eṭuttup) comes first."
+    bases:
+      "எடுத்துப்": "taking; from எடு (eṭu), to take"
+    confusables:
+      w1: { why: "மழை (maḻai), rain, is a different word." }
+      w2: { why: "காற்று (kāṟṟu), wind; air, is a different word." }
+  "ta-4012":
+    native: "It is very cold at night in the hills."
+    bases:
+      "மலையில்": "in the hills; from மலை (malai), hill"
+    confusables:
+      w1: { why: "கடல் (kaṭal), sea, is a different word." }
+      w2: { why: "வெப்பம் (veppam), heat, is a different word." }
+  "ta-4013":
+    native: "Do not get wet in the rain."
+    notes:
+      n1: "நனையாதே (naṉaiyātē) is a firm order not to; to an elder say it more politely."
+    bases:
+      "மழையில்": "in the rain; from மழை (maḻai), rain"
+      "நனையாதே": "do not get wet; from நனை (naṉai), to get wet"
+    confusables:
+      w1: { why: "துணி (tuṇi), cloth, is a different word." }
+      w2: { why: "குடை (kuṭai), umbrella, is a different word." }
+  "ta-4014":
+    native: "Here there is mist in the morning and sun in the evening."
+    bases:
+      "காலையில்": "in the morning; from காலை (kālai), morning"
+      "மாலையில்": "in the evening; from மாலை (mālai), evening"
+    confusables:
+      w1: { why: "வெள்ளம் (veḷḷam), flood, is a different word." }
+      w2: { why: "ஈரம் (īram), dampness; moisture, is a different word." }
+  "ta-4015":
+    native: "Summer is sultry and winter is cold."
+    notes:
+      n1: "Time words take an ending that means in or at: கோடையில் (kōṭaiyil), in summer, and குளிர்காலத்தில் (kuḷirkālattil), in winter."
+    bases:
+      "கோடையில்": "in summer; from கோடை (kōṭai), summer"
+      "குளிர்காலத்தில்": "in the cold season; from குளிர்காலம் (kuḷirkālam), cold season"
+    confusables:
+      w1: { why: "மழைக்காலம் (maḻaikkālam), rainy season, is a different word." }
+      w2: { why: "பருவம் (paruvam), season; stage of life, is a different word." }
+  "ta-4016":
+    native: "There was a loud thunderclap last night."
+    bases:
+      "இடித்தது": "thundered; from இடி (iṭi), to thunder"
+    confusables:
+      w1: { why: "மின்னல் (miṉṉal), lightning, is a different word." }
+      w2: { why: "மழை (maḻai), rain, is a different word." }

@@ -1,0 +1,715 @@
+schema: 1
+id: "ta-grammar-verbal-participle"
+part: "core"
+kind: "rules"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ta-0409", "ta-0410", "ta-0412", "ta-0413"]
+  slots: ["vp", "without"]
+  rows:
+    - word: "ta-0010"
+      forms: { "vp": "வந்து", "without": ["வராமே", "வராமல்"] }
+      readings: { "vp": "vantu", "without": ["varāmē", "varāmal"] }
+    - word: "ta-0038"
+      forms: { "vp": "எழுந்து", "without": ["எழாமே", "எழாமல்"] }
+      readings: { "vp": "eḻuntu", "without": ["eḻāmē", "eḻāmal"] }
+    - word: "ta-0115"
+      forms: { "vp": ["படிச்சு", "படித்து"], "without": ["படிக்காமே", "படிக்காமல்"] }
+      readings: { "vp": ["paṭiccu", "paṭittu"], "without": ["paṭikkāmē", "paṭikkāmal"] }
+    - word: "ta-0118"
+      forms: { "vp": "போய்", "without": ["போகாமே", "போகாமல்"] }
+      readings: { "vp": "pōy", "without": ["pōkāmē", "pōkāmal"] }
+    - word: "ta-0119"
+      forms: { "vp": "சாப்பிட்டு", "without": ["சாப்பிடாமே", "சாப்பிடாமல்"] }
+      readings: { "vp": "cāppiṭṭu", "without": ["cāppiṭāmē", "cāppiṭāmal"] }
+    - word: "ta-0120"
+      forms: { "vp": ["குடிச்சு", "குடித்து"], "without": ["குடிக்காமே", "குடிக்காமல்"] }
+      readings: { "vp": ["kuṭiccu", "kuṭittu"], "without": ["kuṭikkāmē", "kuṭikkāmal"] }
+    - word: "ta-0121"
+      forms: { "vp": ["பாத்து", "பார்த்து"], "without": ["பார்க்காமே", "பார்க்காமல்"] }
+      readings: { "vp": ["pāttu", "pārttu"], "without": ["pārkkāmē", "pārkkāmal"] }
+    - word: "ta-0122"
+      forms: { "vp": "கேட்டு", "without": ["கேட்காமே", "கேட்காமல்"] }
+      readings: { "vp": "kēṭṭu", "without": ["kēṭkāmē", "kēṭkāmal"] }
+    - word: "ta-0123"
+      forms: { "vp": "பேசி", "without": ["பேசாமே", "பேசாமல்"] }
+      readings: { "vp": "pēci", "without": ["pēcāmē", "pēcāmal"] }
+    - word: "ta-0124"
+      forms: { "vp": "எழுதி", "without": ["எழுதாமே", "எழுதாமல்"] }
+      readings: { "vp": "eḻuti", "without": ["eḻutāmē", "eḻutāmal"] }
+    - word: "ta-0125"
+      forms: { "vp": "கொடுத்து", "without": ["கொடுக்காமே", "கொடுக்காமல்"] }
+      readings: { "vp": "koṭuttu", "without": ["koṭukkāmē", "koṭukkāmal"] }
+    - word: "ta-0126"
+      forms: { "vp": "தூங்கி", "without": ["தூங்காமே", "தூங்காமல்"] }
+      readings: { "vp": "tūṅki", "without": ["tūṅkāmē", "tūṅkāmal"] }
+    - word: "ta-0127"
+      forms: { "vp": ["செஞ்சு", "செய்து"], "without": ["செய்யாமே", "செய்யாமல்"] }
+      readings: { "vp": ["ceñcu", "ceytu"], "without": ["ceyyāmē", "ceyyāmal"] }
+    - word: "ta-0128"
+      forms: { "vp": ["சமைச்சு", "சமைத்து"], "without": ["சமைக்காமே", "சமைக்காமல்"] }
+      readings: { "vp": ["camaiccu", "camaittu"], "without": ["camaikkāmē", "camaikkāmal"] }
+    - word: "ta-0129"
+      forms: { "vp": "வாங்கி", "without": ["வாங்காமே", "வாங்காமல்"] }
+      readings: { "vp": "vāṅki", "without": ["vāṅkāmē", "vāṅkāmal"] }
+    - word: "ta-0184"
+      forms: { "vp": "எடுத்து", "without": ["எடுக்காமே", "எடுக்காமல்"] }
+      readings: { "vp": "eṭuttu", "without": ["eṭukkāmē", "eṭukkāmal"] }
+    - word: "ta-0185"
+      forms: { "vp": ["வச்சு", "வைத்து"], "without": ["வைக்காமே", "வைக்காமல்"] }
+      readings: { "vp": ["vaccu", "vaittu"], "without": ["vaikkāmē", "vaikkāmal"] }
+    - word: "ta-0186"
+      forms: { "vp": "திறந்து", "without": ["திறக்காமே", "திறக்காமல்"] }
+      readings: { "vp": "tiṟantu", "without": ["tiṟakkāmē", "tiṟakkāmal"] }
+    - word: "ta-0187"
+      forms: { "vp": "மூடி", "without": ["மூடாமே", "மூடாமல்"] }
+      readings: { "vp": "mūṭi", "without": ["mūṭāmē", "mūṭāmal"] }
+    - word: "ta-0188"
+      forms: { "vp": "உட்கார்ந்து", "without": ["உட்காராமே", "உட்காராமல்"] }
+      readings: { "vp": "uṭkārntu", "without": ["uṭkārāmē", "uṭkārāmal"] }
+    - word: "ta-0189"
+      forms: { "vp": "நின்று", "without": ["நிற்காமே", "நிற்காமல்"] }
+      readings: { "vp": "niṉṟu", "without": ["niṟkāmē", "niṟkāmal"] }
+    - word: "ta-0190"
+      forms: { "vp": "கழுவி", "without": ["கழுவாமே", "கழுவாமல்"] }
+      readings: { "vp": "kaḻuvi", "without": ["kaḻuvāmē", "kaḻuvāmal"] }
+    - word: "ta-0191"
+      forms: { "vp": "விளையாடி", "without": ["விளையாடாமே", "விளையாடாமல்"] }
+      readings: { "vp": "viḷaiyāṭi", "without": ["viḷaiyāṭāmē", "viḷaiyāṭāmal"] }
+    - word: "ta-1101"
+      forms: { "vp": ["குளிச்சு", "குளித்து"], "without": ["குளிக்காமே", "குளிக்காமல்"] }
+      readings: { "vp": ["kuḷiccu", "kuḷittu"], "without": ["kuḷikkāmē", "kuḷikkāmal"] }
+    - word: "ta-1102"
+      forms: { "vp": "துலக்கி", "without": ["துலக்காமே", "துலக்காமல்"] }
+      readings: { "vp": "tulakki", "without": ["tulakkāmē", "tulakkāmal"] }
+    - word: "ta-1103"
+      forms: { "vp": "நடந்து", "without": ["நடக்காமே", "நடக்காமல்"] }
+      readings: { "vp": "naṭantu", "without": ["naṭakkāmē", "naṭakkāmal"] }
+    - word: "ta-1104"
+      forms: { "vp": "திரும்பி", "without": ["திரும்பாமே", "திரும்பாமல்"] }
+      readings: { "vp": "tirumpi", "without": ["tirumpāmē", "tirumpāmal"] }
+    - word: "ta-1107"
+      forms: { "vp": "தொடங்கி", "without": ["தொடங்காமே", "தொடங்காமல்"] }
+      readings: { "vp": "toṭaṅki", "without": ["toṭaṅkāmē", "toṭaṅkāmal"] }
+    - word: "ta-1801"
+      forms: { "vp": "உதவி", "without": ["உதவாமே", "உதவாமல்"] }
+      readings: { "vp": "utavi", "without": ["utavāmē", "utavāmal"] }
+    - word: "ta-0450"
+      forms: { "vp": "விட்டு", "without": ["விடாமே", "விடாமல்"] }
+      readings: { "vp": "viṭṭu", "without": ["viṭāmē", "viṭāmal"] }
+    - word: "ta-0451"
+      forms: { "vp": "கொண்டு", "without": ["கொள்ளாமே", "கொள்ளாமல்"] }
+      readings: { "vp": "koṇṭu", "without": ["koḷḷāmē", "koḷḷāmal"] }
+    - word: "ta-0452"
+      forms: { "vp": "போட்டு", "without": ["போடாமே", "போடாமல்"] }
+      readings: { "vp": "pōṭṭu", "without": ["pōṭāmē", "pōṭāmal"] }
+    - word: "ta-0453"
+      forms: { "vp": "தந்து", "without": ["தராமே", "தராமல்"] }
+      readings: { "vp": "tantu", "without": ["tarāmē", "tarāmal"] }
+    - word: "ta-0454"
+      forms: { "vp": "நிறுத்தி", "without": ["நிறுத்தாமே", "நிறுத்தாமல்"] }
+      readings: { "vp": "niṟutti", "without": ["niṟuttāmē", "niṟuttāmal"] }
+    - word: "ta-0455"
+      forms: { "vp": "தள்ளி", "without": ["தள்ளாமே", "தள்ளாமல்"] }
+      readings: { "vp": "taḷḷi", "without": ["taḷḷāmē", "taḷḷāmal"] }
+    - word: "ta-0456"
+      forms: { "vp": ["பிடிச்சு", "பிடித்து"], "without": ["பிடிக்காமே", "பிடிக்காமல்"] }
+      readings: { "vp": ["piṭiccu", "piṭittu"], "without": ["piṭikkāmē", "piṭikkāmal"] }
+    - word: "ta-0457"
+      forms: { "vp": "வீசி", "without": ["வீசாமே", "வீசாமல்"] }
+      readings: { "vp": "vīci", "without": ["vīcāmē", "vīcāmal"] }
+    - word: "ta-0458"
+      forms: { "vp": "தூக்கி", "without": ["தூக்காமே", "தூக்காமல்"] }
+      readings: { "vp": "tūkki", "without": ["tūkkāmē", "tūkkāmal"] }
+    - word: "ta-0460"
+      forms: { "vp": "பண்ணி", "without": ["பண்ணாமே", "பண்ணாமல்"] }
+      readings: { "vp": "paṇṇi", "without": ["paṇṇāmē", "paṇṇāmal"] }
+    - word: "ta-0461"
+      forms: { "vp": "ஆகி", "without": ["ஆகாமே", "ஆகாமல்"] }
+      readings: { "vp": "āki", "without": ["ākāmē", "ākāmal"] }
+    - word: "ta-0462"
+      forms: { "vp": "பட்டு", "without": ["படாமே", "படாமல்"] }
+      readings: { "vp": "paṭṭu", "without": ["paṭāmē", "paṭāmal"] }
+    - word: "ta-0470"
+      forms: { "vp": "சென்று", "without": ["செல்லாமே", "செல்லாமல்"] }
+      readings: { "vp": "ceṉṟu", "without": ["cellāmē", "cellāmal"] }
+    - word: "ta-0471"
+      forms: { "vp": "உண்டு", "without": ["உண்ணாமே", "உண்ணாமல்"] }
+      readings: { "vp": "uṇṭu", "without": ["uṇṇāmē", "uṇṇāmal"] }
+    - word: "ta-0472"
+      forms: { "vp": "அருந்தி", "without": ["அருந்தாமே", "அருந்தாமல்"] }
+      readings: { "vp": "arunti", "without": ["aruntāmē", "aruntāmal"] }
+    - word: "ta-0473"
+      forms: { "vp": "கூறி", "without": ["கூறாமே", "கூறாமல்"] }
+      readings: { "vp": "kūṟi", "without": ["kūṟāmē", "kūṟāmal"] }
+    - word: "ta-0474"
+      forms: { "vp": "தெரிவித்து", "without": ["தெரிவிக்காமே", "தெரிவிக்காமல்"] }
+      readings: { "vp": "terivittu", "without": ["terivikkāmē", "terivikkāmal"] }
+    - word: "ta-2003"
+      forms: { "vp": "உடுத்தி", "without": ["உடுத்தாமே", "உடுத்தாமல்"] }
+      readings: { "vp": "uṭutti", "without": ["uṭuttāmē", "uṭuttāmal"] }
+    - word: "ta-2004"
+      forms: { "vp": "கழற்றி", "without": ["கழற்றாமே", "கழற்றாமல்"] }
+      readings: { "vp": "kaḻaṟṟi", "without": ["kaḻaṟṟāmē", "kaḻaṟṟāmal"] }
+    - word: "ta-2005"
+      forms: { "vp": "கட்டி", "without": ["கட்டாமே", "கட்டாமல்"] }
+      readings: { "vp": "kaṭṭi", "without": ["kaṭṭāmē", "kaṭṭāmal"] }
+    - word: "ta-2006"
+      forms: { "vp": "சீவி", "without": ["சீவாமே", "சீவாமல்"] }
+      readings: { "vp": "cīvi", "without": ["cīvāmē", "cīvāmal"] }
+    - word: "ta-2007"
+      forms: { "vp": "அலங்கரித்து", "without": ["அலங்கரிக்காமே", "அலங்கரிக்காமல்"] }
+      readings: { "vp": "alaṅkarittu", "without": ["alaṅkarikkāmē", "alaṅkarikkāmal"] }
+    - word: "ta-2008"
+      forms: { "vp": "வளர்ந்து", "without": ["வளராமே", "வளராமல்"] }
+      readings: { "vp": "vaḷarntu", "without": ["vaḷarāmē", "vaḷarāmal"] }
+    - word: "ta-2009"
+      forms: { "vp": "பூசி", "without": ["பூசாமே", "பூசாமல்"] }
+      readings: { "vp": "pūci", "without": ["pūcāmē", "pūcāmal"] }
+    - word: "ta-1945"
+      forms: { "vp": "பெருக்கி", "without": ["பெருக்காமே", "பெருக்காமல்"] }
+      readings: { "vp": "perukki", "without": ["perukkāmē", "perukkāmal"] }
+    - word: "ta-1946"
+      forms: { "vp": "துடைத்து", "without": ["துடைக்காமே", "துடைக்காமல்"] }
+      readings: { "vp": "tuṭaittu", "without": ["tuṭaikkāmē", "tuṭaikkāmal"] }
+    - word: "ta-1947"
+      forms: { "vp": "துவைத்து", "without": ["துவைக்காமே", "துவைக்காமல்"] }
+      readings: { "vp": "tuvaittu", "without": ["tuvaikkāmē", "tuvaikkāmal"] }
+    - word: "ta-1948"
+      forms: { "vp": "மடித்து", "without": ["மடிக்காமே", "மடிக்காமல்"] }
+      readings: { "vp": "maṭittu", "without": ["maṭikkāmē", "maṭikkāmal"] }
+    - word: "ta-1949"
+      forms: { "vp": "இழுத்து", "without": ["இழுக்காமே", "இழுக்காமல்"] }
+      readings: { "vp": "iḻuttu", "without": ["iḻukkāmē", "iḻukkāmal"] }
+    - word: "ta-1951"
+      forms: { "vp": "நிரப்பி", "without": ["நிரப்பாமே", "நிரப்பாமல்"] }
+      readings: { "vp": "nirappi", "without": ["nirappāmē", "nirappāmal"] }
+    - word: "ta-1952"
+      forms: { "vp": "ஊற்றி", "without": ["ஊற்றாமே", "ஊற்றாமல்"] }
+      readings: { "vp": "ūṟṟi", "without": ["ūṟṟāmē", "ūṟṟāmal"] }
+    - word: "ta-1953"
+      forms: { "vp": "அணைத்து", "without": ["அணைக்காமே", "அணைக்காமல்"] }
+      readings: { "vp": "aṇaittu", "without": ["aṇaikkāmē", "aṇaikkāmal"] }
+    - word: "ta-1954"
+      forms: { "vp": "ஏற்றி", "without": ["ஏற்றாமே", "ஏற்றாமல்"] }
+      readings: { "vp": "ēṟṟi", "without": ["ēṟṟāmē", "ēṟṟāmal"] }
+    - word: "ta-1955"
+      forms: { "vp": "உலர்த்தி", "without": ["உலர்த்தாமே", "உலர்த்தாமல்"] }
+      readings: { "vp": "ulartti", "without": ["ularttāmē", "ularttāmal"] }
+    - word: "ta-1956"
+      forms: { "vp": "வெட்டி", "without": ["வெட்டாமே", "வெட்டாமல்"] }
+      readings: { "vp": "veṭṭi", "without": ["veṭṭāmē", "veṭṭāmal"] }
+    - word: "ta-1957"
+      forms: { "vp": "கலக்கி", "without": ["கலக்காமே", "கலக்காமல்"] }
+      readings: { "vp": "kalakki", "without": ["kalakkāmē", "kalakkāmal"] }
+    - word: "ta-1958"
+      forms: { "vp": "தேடி", "without": ["தேடாமே", "தேடாமல்"] }
+      readings: { "vp": "tēṭi", "without": ["tēṭāmē", "tēṭāmal"] }
+    - word: "ta-1959"
+      forms: { "vp": "அடுக்கி", "without": ["அடுக்காமே", "அடுக்காமல்"] }
+      readings: { "vp": "aṭukki", "without": ["aṭukkāmē", "aṭukkāmal"] }
+    - word: "ta-1961"
+      forms: { "vp": "மாற்றி", "without": ["மாற்றாமே", "மாற்றாமல்"] }
+      readings: { "vp": "māṟṟi", "without": ["māṟṟāmē", "māṟṟāmal"] }
+    - word: "ta-1183"
+      forms: { "vp": "பொங்கி", "without": ["பொங்காமே", "பொங்காமல்"] }
+      readings: { "vp": "poṅki", "without": ["poṅkāmē", "poṅkāmal"] }
+    - word: "ta-1192"
+      forms: { "vp": "கொண்டாடி", "without": ["கொண்டாடாமே", "கொண்டாடாமல்"] }
+      readings: { "vp": "koṇṭāṭi", "without": ["koṇṭāṭāmē", "koṇṭāṭāmal"] }
+    - word: "ta-1202"
+      forms: { "vp": "வணங்கி", "without": ["வணங்காமே", "வணங்காமல்"] }
+      readings: { "vp": "vaṇaṅki", "without": ["vaṇaṅkāmē", "vaṇaṅkāmal"] }
+    - word: "ta-1905"
+      forms: { "vp": "பாடி", "without": ["பாடாமே", "பாடாமல்"] }
+      readings: { "vp": "pāṭi", "without": ["pāṭāmē", "pāṭāmal"] }
+    - word: "ta-1907"
+      forms: { "vp": "தீட்டி", "without": ["தீட்டாமே", "தீட்டாமல்"] }
+      readings: { "vp": "tīṭṭi", "without": ["tīṭṭāmē", "tīṭṭāmal"] }
+    - word: "ta-1908"
+      forms: { "vp": "ஓடி", "without": ["ஓடாமே", "ஓடாமல்"] }
+      readings: { "vp": "ōṭi", "without": ["ōṭāmē", "ōṭāmal"] }
+    - word: "ta-1909"
+      forms: { "vp": "பறந்து", "without": ["பறக்காமே", "பறக்காமல்"] }
+      readings: { "vp": "paṟantu", "without": ["paṟakkāmē", "paṟakkāmal"] }
+    - word: "ta-1910"
+      forms: { "vp": "நீந்தி", "without": ["நீந்தாமே", "நீந்தாமல்"] }
+      readings: { "vp": "nīnti", "without": ["nīntāmē", "nīntāmal"] }
+    - word: "ta-1911"
+      forms: { "vp": "குதித்து", "without": ["குதிக்காமே", "குதிக்காமல்"] }
+      readings: { "vp": "kutittu", "without": ["kutikkāmē", "kutikkāmal"] }
+    - word: "ta-1912"
+      forms: { "vp": "ஏறி", "without": ["ஏறாமே", "ஏறாமல்"] }
+      readings: { "vp": "ēṟi", "without": ["ēṟāmē", "ēṟāmal"] }
+    - word: "ta-1913"
+      forms: { "vp": "சேகரித்து", "without": ["சேகரிக்காமே", "சேகரிக்காமல்"] }
+      readings: { "vp": "cēkarittu", "without": ["cēkarikkāmē", "cēkarikkāmal"] }
+    - word: "ta-1914"
+      forms: { "vp": "சிரித்து", "without": ["சிரிக்காமே", "சிரிக்காமல்"] }
+      readings: { "vp": "cirittu", "without": ["cirikkāmē", "cirikkāmal"] }
+    - word: "ta-1915"
+      forms: { "vp": "ரசித்து", "without": ["ரசிக்காமே", "ரசிக்காமல்"] }
+      readings: { "vp": "racittu", "without": ["racikkāmē", "racikkāmal"] }
+    - word: "ta-1916"
+      forms: { "vp": "வென்று", "without": ["வெல்லாமே", "வெல்லாமல்"] }
+      readings: { "vp": "veṉṟu", "without": ["vellāmē", "vellāmal"] }
+    - word: "ta-2180"
+      forms: { "vp": "ஓட்டி", "without": ["ஓட்டாமே", "ஓட்டாமல்"] }
+      readings: { "vp": "ōṭṭi", "without": ["ōṭṭāmē", "ōṭṭāmal"] }
+    - word: "ta-2182"
+      forms: { "vp": "அடைந்து", "without": ["அடையாமே", "அடையாமல்"] }
+      readings: { "vp": "aṭaintu", "without": ["aṭaiyāmē", "aṭaiyāmal"] }
+    - word: "ta-2183"
+      forms: { "vp": "இறக்கி", "without": ["இறக்காமே", "இறக்காமல்"] }
+      readings: { "vp": "iṟakki", "without": ["iṟakkāmē", "iṟakkāmal"] }
+    - word: "ta-2186"
+      forms: { "vp": "இயங்கி", "without": ["இயங்காமே", "இயங்காமல்"] }
+      readings: { "vp": "iyaṅki", "without": ["iyaṅkāmē", "iyaṅkāmal"] }
+    - word: "ta-2191"
+      forms: { "vp": "பரிசோதித்து", "without": ["பரிசோதிக்காமே", "பரிசோதிக்காமல்"] }
+      readings: { "vp": "paricōtittu", "without": ["paricōtikkāmē", "paricōtikkāmal"] }
+    - word: "ta-2241"
+      forms: { "vp": "மலர்ந்து", "without": ["மலராமே", "மலராமல்"] }
+      readings: { "vp": "malarntu", "without": ["malarāmē", "malarāmal"] }
+    - word: "ta-2242"
+      forms: { "vp": "உதிர்ந்து", "without": ["உதிராமே", "உதிராமல்"] }
+      readings: { "vp": "utirntu", "without": ["utirāmē", "utirāmal"] }
+    - word: "ta-2243"
+      forms: { "vp": "முளைத்து", "without": ["முளைக்காமே", "முளைக்காமல்"] }
+      readings: { "vp": "muḷaittu", "without": ["muḷaikkāmē", "muḷaikkāmal"] }
+    - word: "ta-2244"
+      forms: { "vp": "உருகி", "without": ["உருகாமே", "உருகாமல்"] }
+      readings: { "vp": "uruki", "without": ["urukāmē", "urukāmal"] }
+    - word: "ta-2245"
+      forms: { "vp": "உறைந்து", "without": ["உறையாமே", "உறையாமல்"] }
+      readings: { "vp": "uṟaintu", "without": ["uṟaiyāmē", "uṟaiyāmal"] }
+    - word: "ta-2246"
+      forms: { "vp": "ஒழுகி", "without": ["ஒழுகாமே", "ஒழுகாமல்"] }
+      readings: { "vp": "oḻuki", "without": ["oḻukāmē", "oḻukāmal"] }
+    - word: "ta-2122"
+      forms: { "vp": "இணைத்து", "without": ["இணைக்காமே", "இணைக்காமல்"] }
+      readings: { "vp": "iṇaittu", "without": ["iṇaikkāmē", "iṇaikkāmal"] }
+    - word: "ta-2123"
+      forms: { "vp": "துண்டித்து", "without": ["துண்டிக்காமே", "துண்டிக்காமல்"] }
+      readings: { "vp": "tuṇṭittu", "without": ["tuṇṭikkāmē", "tuṇṭikkāmal"] }
+    - word: "ta-2124"
+      forms: { "vp": "நீக்கி", "without": ["நீக்காமே", "நீக்காமல்"] }
+      readings: { "vp": "nīkki", "without": ["nīkkāmē", "nīkkāmal"] }
+    - word: "ta-2125"
+      forms: { "vp": "புதுப்பித்து", "without": ["புதுப்பிக்காமே", "புதுப்பிக்காமல்"] }
+      readings: { "vp": "putuppittu", "without": ["putuppikkāmē", "putuppikkāmal"] }
+    - word: "ta-2126"
+      forms: { "vp": "நிறுவி", "without": ["நிறுவாமே", "நிறுவாமல்"] }
+      readings: { "vp": "niṟuvi", "without": ["niṟuvāmē", "niṟuvāmal"] }
+    - word: "ta-2128"
+      forms: { "vp": "அழுத்தி", "without": ["அழுத்தாமே", "அழுத்தாமல்"] }
+      readings: { "vp": "aḻutti", "without": ["aḻuttāmē", "aḻuttāmal"] }
+    - word: "ta-1857"
+      forms: { "vp": "புரிந்து", "without": ["புரியாமே", "புரியாமல்"] }
+      readings: { "vp": "purintu", "without": ["puriyāmē", "puriyāmal"] }
+    - word: "ta-1858"
+      forms: { "vp": "மறந்து", "without": ["மறக்காமே", "மறக்காமல்"] }
+      readings: { "vp": "maṟantu", "without": ["maṟakkāmē", "maṟakkāmal"] }
+    - word: "ta-1859"
+      forms: { "vp": "நினைத்து", "without": ["நினைக்காமே", "நினைக்காமல்"] }
+      readings: { "vp": "niṉaittu", "without": ["niṉaikkāmē", "niṉaikkāmal"] }
+    - word: "ta-1242"
+      forms: { "vp": "செலுத்தி", "without": ["செலுத்தாமே", "செலுத்தாமல்"] }
+      readings: { "vp": "celutti", "without": ["celuttāmē", "celuttāmal"] }
+    - word: "ta-1243"
+      forms: { "vp": "ஒப்பிட்டு", "without": ["ஒப்பிடாமே", "ஒப்பிடாமல்"] }
+      readings: { "vp": "oppiṭṭu", "without": ["oppiṭāmē", "oppiṭāmal"] }
+    - word: "ta-1244"
+      forms: { "vp": "விசாரித்து", "without": ["விசாரிக்காமே", "விசாரிக்காமல்"] }
+      readings: { "vp": "vicārittu", "without": ["vicārikkāmē", "vicārikkāmal"] }
+    - word: "ta-1245"
+      forms: { "vp": "கூட்டி", "without": ["கூட்டாமே", "கூட்டாமல்"] }
+      readings: { "vp": "kūṭṭi", "without": ["kūṭṭāmē", "kūṭṭāmal"] }
+    - word: "ta-1246"
+      forms: { "vp": "வசூலித்து", "without": ["வசூலிக்காமே", "வசூலிக்காமல்"] }
+      readings: { "vp": "vacūlittu", "without": ["vacūlikkāmē", "vacūlikkāmal"] }
+    - word: "ta-2017"
+      forms: { "vp": "சொல்லி", "without": ["சொல்லாமே", "சொல்லாமல்"] }
+      readings: { "vp": "colli", "without": ["collāmē", "collāmal"] }
+    - word: "ta-2018"
+      forms: { "vp": "இருந்து", "without": ["இருக்காமே", "இருக்காமல்"] }
+      readings: { "vp": "iruntu", "without": ["irukkāmē", "irukkāmal"] }
+    - word: "ta-2019"
+      forms: { "vp": "தெரிந்து", "without": ["தெரியாமே", "தெரியாமல்"] }
+      readings: { "vp": "terintu", "without": ["teriyāmē", "teriyāmal"] }
+    - word: "ta-2020"
+      forms: { "vp": "தங்கி", "without": ["தங்காமே", "தங்காமல்"] }
+      readings: { "vp": "taṅki", "without": ["taṅkāmē", "taṅkāmal"] }
+    - word: "ta-2021"
+      forms: { "vp": "வாழ்ந்து", "without": ["வாழாமே", "வாழாமல்"] }
+      readings: { "vp": "vāḻntu", "without": ["vāḻāmē", "vāḻāmal"] }
+    - word: "ta-2022"
+      forms: { "vp": "இறங்கி", "without": ["இறங்காமே", "இறங்காமல்"] }
+      readings: { "vp": "iṟaṅki", "without": ["iṟaṅkāmē", "iṟaṅkāmal"] }
+    - word: "ta-2024"
+      forms: { "vp": "பெற்று", "without": ["பெறாமே", "பெறாமல்"] }
+      readings: { "vp": "peṟṟu", "without": ["peṟāmē", "peṟāmal"] }
+    - word: "ta-2025"
+      forms: { "vp": "கிடைத்து", "without": ["கிடைக்காமே", "கிடைக்காமல்"] }
+      readings: { "vp": "kiṭaittu", "without": ["kiṭaikkāmē", "kiṭaikkāmal"] }
+    - word: "ta-2029"
+      forms: { "vp": "அனுப்பி", "without": ["அனுப்பாமே", "அனுப்பாமல்"] }
+      readings: { "vp": "aṉuppi", "without": ["aṉuppāmē", "aṉuppāmal"] }
+    - word: "ta-2030"
+      forms: { "vp": "கூப்பிட்டு", "without": ["கூப்பிடாமே", "கூப்பிடாமல்"] }
+      readings: { "vp": "kūppiṭṭu", "without": ["kūppiṭāmē", "kūppiṭāmal"] }
+    - word: "ta-2031"
+      forms: { "vp": "அழைத்து", "without": ["அழைக்காமே", "அழைக்காமல்"] }
+      readings: { "vp": "aḻaittu", "without": ["aḻaikkāmē", "aḻaikkāmal"] }
+    - word: "ta-2033"
+      forms: { "vp": "சந்தித்து", "without": ["சந்திக்காமே", "சந்திக்காமல்"] }
+      readings: { "vp": "cantittu", "without": ["cantikkāmē", "cantikkāmal"] }
+    - word: "ta-2034"
+      forms: { "vp": "சேர்ந்து", "without": ["சேராமே", "சேராமல்"] }
+      readings: { "vp": "cērntu", "without": ["cērāmē", "cērāmal"] }
+    - word: "ta-2035"
+      forms: { "vp": "பிரிந்து", "without": ["பிரியாமே", "பிரியாமல்"] }
+      readings: { "vp": "pirintu", "without": ["piriyāmē", "piriyāmal"] }
+    - word: "ta-2036"
+      forms: { "vp": "நம்பி", "without": ["நம்பாமே", "நம்பாமல்"] }
+      readings: { "vp": "nampi", "without": ["nampāmē", "nampāmal"] }
+    - word: "ta-2038"
+      forms: { "vp": "பகிர்ந்து", "without": ["பகிராமே", "பகிராமல்"] }
+      readings: { "vp": "pakirntu", "without": ["pakirāmē", "pakirāmal"] }
+    - word: "ta-2039"
+      forms: { "vp": "ஒட்டி", "without": ["ஒட்டாமே", "ஒட்டாமல்"] }
+      readings: { "vp": "oṭṭi", "without": ["oṭṭāmē", "oṭṭāmal"] }
+    - word: "ta-2040"
+      forms: { "vp": "கொட்டி", "without": ["கொட்டாமே", "கொட்டாமல்"] }
+      readings: { "vp": "koṭṭi", "without": ["koṭṭāmē", "koṭṭāmal"] }
+    - word: "ta-2041"
+      forms: { "vp": "எரிந்து", "without": ["எரியாமே", "எரியாமல்"] }
+      readings: { "vp": "erintu", "without": ["eriyāmē", "eriyāmal"] }
+    - word: "ta-2042"
+      forms: { "vp": "உருவாக்கி", "without": ["உருவாக்காமே", "உருவாக்காமல்"] }
+      readings: { "vp": "uruvākki", "without": ["uruvākkāmē", "uruvākkāmal"] }
+    - word: "ta-2043"
+      forms: { "vp": "திருடி", "without": ["திருடாமே", "திருடாமல்"] }
+      readings: { "vp": "tiruṭi", "without": ["tiruṭāmē", "tiruṭāmal"] }
+    - word: "ta-2044"
+      forms: { "vp": "யோசித்து", "without": ["யோசிக்காமே", "யோசிக்காமல்"] }
+      readings: { "vp": "yōcittu", "without": ["yōcikkāmē", "yōcikkāmal"] }
+    - word: "ta-2045"
+      forms: { "vp": "விரும்பி", "without": ["விரும்பாமே", "விரும்பாமல்"] }
+      readings: { "vp": "virumpi", "without": ["virumpāmē", "virumpāmal"] }
+    - word: "ta-2049"
+      forms: { "vp": "அழுது", "without": ["அழாமே", "அழாமல்"] }
+      readings: { "vp": "aḻutu", "without": ["aḻāmē", "aḻāmal"] }
+    - word: "ta-2050"
+      forms: { "vp": "எண்ணி", "without": ["எண்ணாமே", "எண்ணாமல்"] }
+      readings: { "vp": "eṇṇi", "without": ["eṇṇāmē", "eṇṇāmal"] }
+    - word: "ta-2051"
+      forms: { "vp": "நுழைந்து", "without": ["நுழையாமே", "நுழையாமல்"] }
+      readings: { "vp": "nuḻaintu", "without": ["nuḻaiyāmē", "nuḻaiyāmal"] }
+    - word: "ta-2052"
+      forms: { "vp": "வெளியேறி", "without": ["வெளியேறாமே", "வெளியேறாமல்"] }
+      readings: { "vp": "veḷiyēṟi", "without": ["veḷiyēṟāmē", "veḷiyēṟāmal"] }
+    - word: "ta-2053"
+      forms: { "vp": "கடந்து", "without": ["கடக்காமே", "கடக்காமல்"] }
+      readings: { "vp": "kaṭantu", "without": ["kaṭakkāmē", "kaṭakkāmal"] }
+    - word: "ta-2054"
+      forms: { "vp": "சுற்றி", "without": ["சுற்றாமே", "சுற்றாமல்"] }
+      readings: { "vp": "cuṟṟi", "without": ["cuṟṟāmē", "cuṟṟāmal"] }
+    - word: "ta-2055"
+      forms: { "vp": "அமர்ந்து", "without": ["அமராமே", "அமராமல்"] }
+      readings: { "vp": "amarntu", "without": ["amarāmē", "amarāmal"] }
+    - word: "ta-2056"
+      forms: { "vp": "நகர்ந்து", "without": ["நகராமே", "நகராமல்"] }
+      readings: { "vp": "nakarntu", "without": ["nakarāmē", "nakarāmal"] }
+    - word: "ta-2057"
+      forms: { "vp": "தொட்டு", "without": ["தொடாமே", "தொடாமல்"] }
+      readings: { "vp": "toṭṭu", "without": ["toṭāmē", "toṭāmal"] }
+    - word: "ta-2058"
+      forms: { "vp": "எறிந்து", "without": ["எறியாமே", "எறியாமல்"] }
+      readings: { "vp": "eṟintu", "without": ["eṟiyāmē", "eṟiyāmal"] }
+    - word: "ta-2059"
+      forms: { "vp": "மாறி", "without": ["மாறாமே", "மாறாமல்"] }
+      readings: { "vp": "māṟi", "without": ["māṟāmē", "māṟāmal"] }
+    - word: "ta-2062"
+      forms: { "vp": "தொடர்ந்து", "without": ["தொடராமே", "தொடராமல்"] }
+      readings: { "vp": "toṭarntu", "without": ["toṭarāmē", "toṭarāmal"] }
+    - word: "ta-2063"
+      forms: { "vp": "முயன்று", "without": ["முயலாமே", "முயலாமல்"] }
+      readings: { "vp": "muyaṉṟu", "without": ["muyalāmē", "muyalāmal"] }
+    - word: "ta-2064"
+      forms: { "vp": "சேமித்து", "without": ["சேமிக்காமே", "சேமிக்காமல்"] }
+      readings: { "vp": "cēmittu", "without": ["cēmikkāmē", "cēmikkāmal"] }
+    - word: "ta-2065"
+      forms: { "vp": "செலவழித்து", "without": ["செலவழிக்காமே", "செலவழிக்காமல்"] }
+      readings: { "vp": "celavaḻittu", "without": ["celavaḻikkāmē", "celavaḻikkāmal"] }
+    - word: "ta-2066"
+      forms: { "vp": "எழுப்பி", "without": ["எழுப்பாமே", "எழுப்பாமல்"] }
+      readings: { "vp": "eḻuppi", "without": ["eḻuppāmē", "eḻuppāmal"] }
+    - word: "ta-2067"
+      forms: { "vp": "விழித்து", "without": ["விழிக்காமே", "விழிக்காமல்"] }
+      readings: { "vp": "viḻittu", "without": ["viḻikkāmē", "viḻikkāmal"] }
+    - word: "ta-2068"
+      forms: { "vp": "விழுந்து", "without": ["விழாமே", "விழாமல்"] }
+      readings: { "vp": "viḻuntu", "without": ["viḻāmē", "viḻāmal"] }
+    - word: "ta-2070"
+      forms: { "vp": "காட்டி", "without": ["காட்டாமே", "காட்டாமல்"] }
+      readings: { "vp": "kāṭṭi", "without": ["kāṭṭāmē", "kāṭṭāmal"] }
+    - word: "ta-2071"
+      forms: { "vp": "குனிந்து", "without": ["குனியாமே", "குனியாமல்"] }
+      readings: { "vp": "kuṉintu", "without": ["kuṉiyāmē", "kuṉiyāmal"] }
+    - word: "ta-2072"
+      forms: { "vp": "சாய்ந்து", "without": ["சாயாமே", "சாயாமல்"] }
+      readings: { "vp": "cāyntu", "without": ["cāyāmē", "cāyāmal"] }
+    - word: "ta-2074"
+      forms: { "vp": "சம்பாதித்து", "without": ["சம்பாதிக்காமே", "சம்பாதிக்காமல்"] }
+      readings: { "vp": "campātittu", "without": ["campātikkāmē", "campātikkāmal"] }
+    - word: "ta-2075"
+      forms: { "vp": "பழகி", "without": ["பழகாமே", "பழகாமல்"] }
+      readings: { "vp": "paḻaki", "without": ["paḻakāmē", "paḻakāmal"] }
+    - word: "ta-2076"
+      forms: { "vp": "திட்டி", "without": ["திட்டாமே", "திட்டாமல்"] }
+      readings: { "vp": "tiṭṭi", "without": ["tiṭṭāmē", "tiṭṭāmal"] }
+    - word: "ta-2077"
+      forms: { "vp": "பாராட்டி", "without": ["பாராட்டாமே", "பாராட்டாமல்"] }
+      readings: { "vp": "pārāṭṭi", "without": ["pārāṭṭāmē", "pārāṭṭāmal"] }
+    - word: "ta-2078"
+      forms: { "vp": "நடித்து", "without": ["நடிக்காமே", "நடிக்காமல்"] }
+      readings: { "vp": "naṭittu", "without": ["naṭikkāmē", "naṭikkāmal"] }
+    - word: "ta-2079"
+      forms: { "vp": "ஆடி", "without": ["ஆடாமே", "ஆடாமல்"] }
+      readings: { "vp": "āṭi", "without": ["āṭāmē", "āṭāmal"] }
+    - word: "ta-2080"
+      forms: { "vp": "குறைந்து", "without": ["குறையாமே", "குறையாமல்"] }
+      readings: { "vp": "kuṟaintu", "without": ["kuṟaiyāmē", "kuṟaiyāmal"] }
+    - word: "ta-2081"
+      forms: { "vp": "அதிகரித்து", "without": ["அதிகரிக்காமே", "அதிகரிக்காமல்"] }
+      readings: { "vp": "atikarittu", "without": ["atikarikkāmē", "atikarikkāmal"] }
+    - word: "ta-2083"
+      forms: { "vp": "மன்னித்து", "without": ["மன்னிக்காமே", "மன்னிக்காமல்"] }
+      readings: { "vp": "maṉṉittu", "without": ["maṉṉikkāmē", "maṉṉikkāmal"] }
+    - word: "ta-2084"
+      forms: { "vp": "ஏமாற்றி", "without": ["ஏமாற்றாமே", "ஏமாற்றாமல்"] }
+      readings: { "vp": "ēmāṟṟi", "without": ["ēmāṟṟāmē", "ēmāṟṟāmal"] }
+    - word: "ta-2085"
+      forms: { "vp": "பயன்படுத்தி", "without": ["பயன்படுத்தாமே", "பயன்படுத்தாமல்"] }
+      readings: { "vp": "payaṉpaṭutti", "without": ["payaṉpaṭuttāmē", "payaṉpaṭuttāmal"] }
+    - word: "ta-1141"
+      forms: { "vp": "பெய்து", "without": ["பெய்யாமே", "பெய்யாமல்"] }
+      readings: { "vp": "peytu", "without": ["peyyāmē", "peyyāmal"] }
+    - word: "ta-1143"
+      forms: { "vp": "அடித்து", "without": ["அடிக்காமே", "அடிக்காமல்"] }
+      readings: { "vp": "aṭittu", "without": ["aṭikkāmē", "aṭikkāmal"] }
+    - word: "ta-1144"
+      forms: { "vp": "நனைந்து", "without": ["நனையாமே", "நனையாமல்"] }
+      readings: { "vp": "naṉaintu", "without": ["naṉaiyāmē", "naṉaiyāmal"] }
+    - word: "ta-1145"
+      forms: { "vp": "காய்ந்து", "without": ["காயாமே", "காயாமல்"] }
+      readings: { "vp": "kāyntu", "without": ["kāyāmē", "kāyāmal"] }
+    - word: "ta-2023"
+      forms: { "vp": "தோன்றி", "without": ["தோன்றாமே", "தோன்றாமல்"] }
+      readings: { "vp": "tōṉṟi", "without": ["tōṉṟāmē", "tōṉṟāmal"] }
+    - word: "ta-2027"
+      forms: { "vp": "கவனித்து", "without": ["கவனிக்காமே", "கவனிக்காமல்"] }
+      readings: { "vp": "kavaṉittu", "without": ["kavaṉikkāmē", "kavaṉikkāmal"] }
+    - word: "ta-2028"
+      forms: { "vp": "வருந்தி", "without": ["வருந்தாமே", "வருந்தாமல்"] }
+      readings: { "vp": "varunti", "without": ["varuntāmē", "varuntāmal"] }
+    - word: "ta-2061"
+      forms: { "vp": "ஊக்குவித்து", "without": ["ஊக்குவிக்காமே", "ஊக்குவிக்காமல்"] }
+      readings: { "vp": "ūkkuvittu", "without": ["ūkkuvikkāmē", "ūkkuvikkāmal"] }
+    - word: "ta-2082"
+      forms: { "vp": "நிரூபித்து", "without": ["நிரூபிக்காமே", "நிரூபிக்காமல்"] }
+      readings: { "vp": "nirūpittu", "without": ["nirūpikkāmē", "nirūpikkāmal"] }
+    - word: "ta-1142"
+      forms: { "vp": "மறைந்து", "without": ["மறையாமே", "மறையாமல்"] }
+      readings: { "vp": "maṟaintu", "without": ["maṟaiyāmē", "maṟaiyāmal"] }
+    - word: "ta-1950"
+      forms: { "vp": "அலசி", "without": ["அலசாமே", "அலசாமல்"] }
+      readings: { "vp": "alaci", "without": ["alacāmē", "alacāmal"] }
+    - word: "ta-1960"
+      forms: { "vp": "பரப்பி", "without": ["பரப்பாமே", "பரப்பாமல்"] }
+      readings: { "vp": "parappi", "without": ["parappāmē", "parappāmal"] }
+    - word: "ta-1146"
+      forms: { "vp": "மின்னி", "without": ["மின்னாமே", "மின்னாமல்"] }
+      readings: { "vp": "miṉṉi", "without": ["miṉṉāmē", "miṉṉāmal"] }
+    - word: "ta-1297"
+      forms: { "vp": "இருமி", "without": ["இருமாமே", "இருமாமல்"] }
+      readings: { "vp": "irumi", "without": ["irumāmē", "irumāmal"] }
+    - word: "ta-1298"
+      forms: { "vp": "தும்மி", "without": ["தும்மாமே", "தும்மாமல்"] }
+      readings: { "vp": "tummi", "without": ["tummāmē", "tummāmal"] }
+    - word: "ta-1300"
+      forms: { "vp": "மயங்கி", "without": ["மயங்காமே", "மயங்காமல்"] }
+      readings: { "vp": "mayaṅki", "without": ["mayaṅkāmē", "mayaṅkāmal"] }
+    - word: "ta-1303"
+      forms: { "vp": "வீங்கி", "without": ["வீங்காமே", "வீங்காமல்"] }
+      readings: { "vp": "vīṅki", "without": ["vīṅkāmē", "vīṅkāmal"] }
+    - word: "ta-1304"
+      forms: { "vp": "நடுங்கி", "without": ["நடுங்காமே", "நடுங்காமல்"] }
+      readings: { "vp": "naṭuṅki", "without": ["naṭuṅkāmē", "naṭuṅkāmal"] }
+    - word: "ta-1305"
+      forms: { "vp": "வியர்த்து", "without": ["வியர்க்காமே", "வியர்க்காமல்"] }
+      readings: { "vp": "viyarttu", "without": ["viyarkkāmē", "viyarkkāmal"] }
+    - word: "ta-1317"
+      forms: { "vp": "பரிமாறி", "without": ["பரிமாறாமே", "பரிமாறாமல்"] }
+      readings: { "vp": "parimāṟi", "without": ["parimāṟāmē", "parimāṟāmal"] }
+    - word: "ta-1346"
+      forms: { "vp": "வறுத்து", "without": ["வறுக்காமே", "வறுக்காமல்"] }
+      readings: { "vp": "vaṟuttu", "without": ["vaṟukkāmē", "vaṟukkāmal"] }
+    - word: "ta-1347"
+      forms: { "vp": "வதக்கி", "without": ["வதக்காமே", "வதக்காமல்"] }
+      readings: { "vp": "vatakki", "without": ["vatakkāmē", "vatakkāmal"] }
+    - word: "ta-1348"
+      forms: { "vp": "கொதித்து", "without": ["கொதிக்காமே", "கொதிக்காமல்"] }
+      readings: { "vp": "kotittu", "without": ["kotikkāmē", "kotikkāmal"] }
+    - word: "ta-1349"
+      forms: { "vp": "நறுக்கி", "without": ["நறுக்காமே", "நறுக்காமல்"] }
+      readings: { "vp": "naṟukki", "without": ["naṟukkāmē", "naṟukkāmal"] }
+    - word: "ta-1350"
+      forms: { "vp": "கிளறி", "without": ["கிளறாமே", "கிளறாமல்"] }
+      readings: { "vp": "kiḷaṟi", "without": ["kiḷaṟāmē", "kiḷaṟāmal"] }
+    - word: "ta-1351"
+      forms: { "vp": "வெந்து", "without": ["வேகாமே", "வேகாமல்"] }
+      readings: { "vp": "ventu", "without": ["vēkāmē", "vēkāmal"] }
+    - word: "ta-1352"
+      forms: { "vp": "பொரித்து", "without": ["பொரிக்காமே", "பொரிக்காமல்"] }
+      readings: { "vp": "porittu", "without": ["porikkāmē", "porikkāmal"] }
+    - word: "ta-1353"
+      forms: { "vp": "அவித்து", "without": ["அவிக்காமே", "அவிக்காமல்"] }
+      readings: { "vp": "avittu", "without": ["avikkāmē", "avikkāmal"] }
+    - word: "ta-1354"
+      forms: { "vp": "சுட்டு", "without": ["சுடாமே", "சுடாமல்"] }
+      readings: { "vp": "cuṭṭu", "without": ["cuṭāmē", "cuṭāmal"] }
+    - word: "ta-1355"
+      forms: { "vp": "தாளித்து", "without": ["தாளிக்காமே", "தாளிக்காமல்"] }
+      readings: { "vp": "tāḷittu", "without": ["tāḷikkāmē", "tāḷikkāmal"] }
+    - word: "ta-1356"
+      forms: { "vp": "பிசைந்து", "without": ["பிசையாமே", "பிசையாமல்"] }
+      readings: { "vp": "picaintu", "without": ["picaiyāmē", "picaiyāmal"] }
+    - word: "ta-1357"
+      forms: { "vp": "உரித்து", "without": ["உரிக்காமே", "உரிக்காமல்"] }
+      readings: { "vp": "urittu", "without": ["urikkāmē", "urikkāmal"] }
+    - word: "ta-1358"
+      forms: { "vp": "துருவி", "without": ["துருவாமே", "துருவாமல்"] }
+      readings: { "vp": "turuvi", "without": ["turuvāmē", "turuvāmal"] }
+    - word: "ta-2347"
+      forms: { "vp": "நடத்தி", "without": ["நடத்தாமே", "நடத்தாமல்"] }
+      readings: { "vp": "naṭatti", "without": ["naṭattāmē", "naṭattāmal"] }
+    - word: "ta-2348"
+      forms: { "vp": "நிர்வகித்து", "without": ["நிர்வகிக்காமே", "நிர்வகிக்காமல்"] }
+      readings: { "vp": "nirvakittu", "without": ["nirvakikkāmē", "nirvakikkāmal"] }
+    - word: "ta-2349"
+      forms: { "vp": "விண்ணப்பித்து", "without": ["விண்ணப்பிக்காமே", "விண்ணப்பிக்காமல்"] }
+      readings: { "vp": "viṇṇappittu", "without": ["viṇṇappikkāmē", "viṇṇappikkāmal"] }
+    - word: "ta-2356"
+      forms: { "vp": "ஒத்துழைத்து", "without": ["ஒத்துழைக்காமே", "ஒத்துழைக்காமல்"] }
+      readings: { "vp": "ottuḻaittu", "without": ["ottuḻaikkāmē", "ottuḻaikkāmal"] }
+    - word: "ta-2026"
+      forms: { "vp": "கலந்துகொண்டு", "without": ["கலந்துகொள்ளாமே", "கலந்துகொள்ளாமல்"] }
+      readings: { "vp": "kalantukoṇṭu", "without": ["kalantukoḷḷāmē", "kalantukoḷḷāmal"] }
+    - word: "ta-2060"
+      forms: { "vp": "பெருமைப்பட்டு", "without": ["பெருமைப்படாமே", "பெருமைப்படாமல்"] }
+      readings: { "vp": "perumaippaṭṭu", "without": ["perumaippaṭāmē", "perumaippaṭāmal"] }
+    - word: "ta-2185"
+      forms: { "vp": "சுற்றித்திரிந்து", "without": ["சுற்றித்திரியாமே", "சுற்றித்திரியாமல்"] }
+      readings: { "vp": "cuṟṟittirintu", "without": ["cuṟṟittiriyāmē", "cuṟṟittiriyāmal"] }
+    - word: "ta-1906"
+      forms: { "vp": "நடனமாடி", "without": ["நடனமாடாமே", "நடனமாடாமல்"] }
+      readings: { "vp": "naṭaṉamāṭi", "without": ["naṭaṉamāṭāmē", "naṭaṉamāṭāmal"] }
+    - word: "ta-2181"
+      forms: { "vp": "புறப்பட்டு", "without": ["புறப்படாமே", "புறப்படாமல்"] }
+      readings: { "vp": "puṟappaṭṭu", "without": ["puṟappaṭāmē", "puṟappaṭāmal"] }
+    - word: "ta-2184"
+      forms: { "vp": "வழிதவறி", "without": ["வழிதவறாமே", "வழிதவறாமல்"] }
+      readings: { "vp": "vaḻitavaṟi", "without": ["vaḻitavaṟāmē", "vaḻitavaṟāmal"] }
+    - word: "ta-2187"
+      forms: { "vp": "வழியனுப்பி", "without": ["வழியனுப்பாமே", "வழியனுப்பாமல்"] }
+      readings: { "vp": "vaḻiyaṉuppi", "without": ["vaḻiyaṉuppāmē", "vaḻiyaṉuppāmal"] }
+    - word: "ta-2188"
+      forms: { "vp": "திட்டமிட்டு", "without": ["திட்டமிடாமே", "திட்டமிடாமல்"] }
+      readings: { "vp": "tiṭṭamiṭṭu", "without": ["tiṭṭamiṭāmē", "tiṭṭamiṭāmal"] }
+    - word: "ta-2189"
+      forms: { "vp": "எடுத்துச்சென்று", "without": ["எடுத்துச்செல்லாமே", "எடுத்துச்செல்லாமல்"] }
+      readings: { "vp": "eṭuttucceṉṟu", "without": ["eṭuttuccellāmē", "eṭuttuccellāmal"] }
+    - word: "ta-2190"
+      forms: { "vp": ["சுற்றிப்பாத்து", "சுற்றிப்பார்த்து"], "without": ["சுற்றிப்பார்க்காமே", "சுற்றிப்பார்க்காமல்"] }
+      readings: { "vp": ["cuṟṟippāttu", "cuṟṟippārttu"], "without": ["cuṟṟippārkkāmē", "cuṟṟippārkkāmal"] }
+    - word: "ta-2121"
+      forms: { "vp": "பதிவிறக்கி", "without": ["பதிவிறக்காமே", "பதிவிறக்காமல்"] }
+      readings: { "vp": "pativiṟakki", "without": ["pativiṟakkāmē", "pativiṟakkāmal"] }
+    - word: "ta-2127"
+      forms: { "vp": "தொடர்புகொண்டு", "without": ["தொடர்புகொள்ளாமே", "தொடர்புகொள்ளாமல்"] }
+      readings: { "vp": "toṭarpukoṇṭu", "without": ["toṭarpukoḷḷāmē", "toṭarpukoḷḷāmal"] }
+    - word: "ta-2129"
+      forms: { "vp": "தவறவிட்டு", "without": ["தவறவிடாமே", "தவறவிடாமல்"] }
+      readings: { "vp": "tavaṟaviṭṭu", "without": ["tavaṟaviṭāmē", "tavaṟaviṭāmal"] }
+    - word: "ta-2130"
+      forms: { "vp": "பதிலளித்து", "without": ["பதிலளிக்காமே", "பதிலளிக்காமல்"] }
+      readings: { "vp": "patilaḷittu", "without": ["patilaḷikkāmē", "patilaḷikkāmal"] }
+    - word: "ta-2131"
+      forms: { "vp": "பதிவேற்றி", "without": ["பதிவேற்றாமே", "பதிவேற்றாமல்"] }
+      readings: { "vp": "pativēṟṟi", "without": ["pativēṟṟāmē", "pativēṟṟāmal"] }
+    - word: "ta-1860"
+      forms: { "vp": "கற்றுக்கொண்டு", "without": ["கற்றுக்கொள்ளாமே", "கற்றுக்கொள்ளாமல்"] }
+      readings: { "vp": "kaṟṟukkoṇṭu", "without": ["kaṟṟukkoḷḷāmē", "kaṟṟukkoḷḷāmal"] }
+    - word: "ta-1861"
+      forms: { "vp": "சொல்லிக்கொடுத்து", "without": ["சொல்லிக்கொடுக்காமே", "சொல்லிக்கொடுக்காமல்"] }
+      readings: { "vp": "collikkoṭuttu", "without": ["collikkoṭukkāmē", "collikkoṭukkāmal"] }
+    - word: "ta-2032"
+      forms: { "vp": "காத்திருந்து", "without": ["காத்திருக்காமே", "காத்திருக்காமல்"] }
+      readings: { "vp": "kāttiruntu", "without": ["kāttirukkāmē", "kāttirukkāmal"] }
+    - word: "ta-2037"
+      forms: { "vp": "ஒப்புக்கொண்டு", "without": ["ஒப்புக்கொள்ளாமே", "ஒப்புக்கொள்ளாமல்"] }
+      readings: { "vp": "oppukkoṇṭu", "without": ["oppukkoḷḷāmē", "oppukkoḷḷāmal"] }
+    - word: "ta-2046"
+      forms: { "vp": "பயப்பட்டு", "without": ["பயப்படாமே", "பயப்படாமல்"] }
+      readings: { "vp": "payappaṭṭu", "without": ["payappaṭāmē", "payappaṭāmal"] }
+    - word: "ta-2047"
+      forms: { "vp": "கவலைப்பட்டு", "without": ["கவலைப்படாமே", "கவலைப்படாமல்"] }
+      readings: { "vp": "kavalaippaṭṭu", "without": ["kavalaippaṭāmē", "kavalaippaṭāmal"] }
+    - word: "ta-2048"
+      forms: { "vp": "கோபப்பட்டு", "without": ["கோபப்படாமே", "கோபப்படாமல்"] }
+      readings: { "vp": "kōpappaṭṭu", "without": ["kōpappaṭāmē", "kōpappaṭāmal"] }
+    - word: "ta-2069"
+      forms: { "vp": "தேர்ந்தெடுத்து", "without": ["தேர்ந்தெடுக்காமே", "தேர்ந்தெடுக்காமல்"] }
+      readings: { "vp": "tērnteṭuttu", "without": ["tērnteṭukkāmē", "tērnteṭukkāmal"] }
+    - word: "ta-2073"
+      forms: { "vp": ["கண்டுபிடிச்சு", "கண்டுபிடித்து"], "without": ["கண்டுபிடிக்காமே", "கண்டுபிடிக்காமல்"] }
+      readings: { "vp": ["kaṇṭupiṭiccu", "kaṇṭupiṭittu"], "without": ["kaṇṭupiṭikkāmē", "kaṇṭupiṭikkāmal"] }
+    - word: "ta-2086"
+      forms: { "vp": ["சரிபாத்து", "சரிபார்த்து"], "without": ["சரிபார்க்காமே", "சரிபார்க்காமல்"] }
+      readings: { "vp": ["caripāttu", "caripārttu"], "without": ["caripārkkāmē", "caripārkkāmal"] }
+    - word: "ta-1299"
+      forms: { "vp": "குணமாகி", "without": ["குணமாகாமே", "குணமாகாமல்"] }
+      readings: { "vp": "kuṇamāki", "without": ["kuṇamākāmē", "kuṇamākāmal"] }
+    - word: "ta-2350"
+      forms: { "vp": "கையெழுத்திட்டு", "without": ["கையெழுத்திடாமே", "கையெழுத்திடாமல்"] }
+      readings: { "vp": "kaiyeḻuttiṭṭu", "without": ["kaiyeḻuttiṭāmē", "kaiyeḻuttiṭāmal"] }
+    - word: "ta-2351"
+      forms: { "vp": "ஈடுபட்டு", "without": ["ஈடுபடாமே", "ஈடுபடாமல்"] }
+      readings: { "vp": "īṭupaṭṭu", "without": ["īṭupaṭāmē", "īṭupaṭāmal"] }
+    - word: "ta-2352"
+      forms: { "vp": "முடிவெடுத்து", "without": ["முடிவெடுக்காமே", "முடிவெடுக்காமல்"] }
+      readings: { "vp": "muṭiveṭuttu", "without": ["muṭiveṭukkāmē", "muṭiveṭukkāmal"] }
+    - word: "ta-2353"
+      forms: { "vp": "அச்சிட்டு", "without": ["அச்சிடாமே", "அச்சிடாமல்"] }
+      readings: { "vp": "acciṭṭu", "without": ["acciṭāmē", "acciṭāmal"] }
+    - word: "ta-2354"
+      forms: { "vp": "நகலெடுத்து", "without": ["நகலெடுக்காமே", "நகலெடுக்காமல்"] }
+      readings: { "vp": "nakaleṭuttu", "without": ["nakaleṭukkāmē", "nakaleṭukkāmal"] }
+    - word: "ta-2355"
+      forms: { "vp": "கணக்கிட்டு", "without": ["கணக்கிடாமே", "கணக்கிடாமல்"] }
+      readings: { "vp": "kaṇakkiṭṭu", "without": ["kaṇakkiṭāmē", "kaṇakkiṭāmal"] }
+rules:
+  - id: "ta-rule-verbal-participle-and"
+    slots: ["vp"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வந்து", reading: "vantu" }, { word: "போ", reading: "pō" }, { word: "போய்", reading: "pōy" }, { word: "படி", reading: "paṭi" }, { word: "படித்து", reading: "paṭittu" }, { word: "படிச்சு", reading: "paṭiccu" }, { word: "எழுந்து குளித்தேன்", reading: "eḻuntu kuḷittēṉ" }]
+  - id: "ta-rule-verbal-participle-without"
+    slots: ["without"]
+    words: [{ word: "-ஆமல்", reading: "-āmal" }, { word: "வா", reading: "vā" }, { word: "வராமல்", reading: "varāmal" }, { word: "வராமே", reading: "varāmē" }, { word: "போ", reading: "pō" }, { word: "போகாமல்", reading: "pōkāmal" }]

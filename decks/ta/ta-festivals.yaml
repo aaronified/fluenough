@@ -1,0 +1,725 @@
+schema: 1
+id: "ta-festivals"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "festivals"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-1168"
+    target: "பண்டிகை"
+    reading: "paṇṭikai"
+    ipa: "paɳʈikai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று பண்டிகை."
+        reading: "iṉṟu paṇṭikai."
+        ipa: "inru paɳʈikai"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "பண்டிகை", base: "பண்டிகை", reading: "paṇṭikai" }]
+      - target: "பண்டிகைக்கு புது துணி வாங்கு."
+        reading: "paṇṭikaikku putu tuṇi vāṅku."
+        ipa: "paɳʈikaikku put̪u t̪uɳi ʋaːŋku"
+        bases: [{ word: "பண்டிகைக்கு", base: "பண்டிகை", reading: "paṇṭikai" }, { word: "புது", ref: "ta-1201" }, { word: "துணி", ref: "ta-0272" }, { word: "வாங்கு", ref: "ta-0129" }]
+  - id: "ta-1169"
+    target: "பொங்கல்"
+    reading: "poṅkal"
+    ipa: "poŋkal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Pongal_(festival)" }
+    bases: "self"
+    examples:
+      - target: "நாளை பொங்கல்."
+        reading: "nāḷai poṅkal."
+        ipa: "naːɭai poŋkal"
+        bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "பொங்கல்", base: "பொங்கல்", reading: "poṅkal" }]
+      - target: "பொங்கலுக்கு புது துணி."
+        reading: "poṅkalukku putu tuṇi."
+        ipa: "poŋkalukku put̪u t̪uɳi"
+        bases: [{ word: "பொங்கலுக்கு", base: "பொங்கல்", reading: "poṅkal" }, { word: "புது", ref: "ta-1201" }, { word: "துணி", ref: "ta-0272" }]
+  - id: "ta-1170"
+    target: "தீபாவளி"
+    reading: "tīpāvaḷi"
+    ipa: "t̪iːpaːʋaɭi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Diwali" }
+    bases: "self"
+    examples:
+      - target: "இன்று தீபாவளி."
+        reading: "iṉṟu tīpāvaḷi."
+        ipa: "inru t̪iːpaːʋaɭi"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "தீபாவளி", base: "தீபாவளி", reading: "tīpāvaḷi" }]
+      - target: "தீபாவளிக்கு பட்டாசு வாங்கு."
+        reading: "tīpāvaḷikku paṭṭācu vāṅku."
+        ipa: "t̪iːpaːʋaɭikku paʈʈaːsu ʋaːŋku"
+        bases: [{ word: "தீபாவளிக்கு", base: "தீபாவளி", reading: "tīpāvaḷi" }, { word: "பட்டாசு", ref: "ta-1177" }, { word: "வாங்கு", ref: "ta-0129" }]
+  - id: "ta-1171"
+    target: "புத்தாண்டு"
+    reading: "puttāṇṭu"
+    ipa: "put̪t̪aːɳʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Puthandu" }
+    bases: "self"
+    examples:
+      - target: "இன்று புத்தாண்டு."
+        reading: "iṉṟu puttāṇṭu."
+        ipa: "inru put̪t̪aːɳʈu"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "புத்தாண்டு", base: "புத்தாண்டு", reading: "puttāṇṭu" }]
+      - target: "புத்தாண்டுக்கு புது துணி."
+        reading: "puttāṇṭukku putu tuṇi."
+        ipa: "put̪t̪aːɳʈukku put̪u t̪uɳi"
+        bases: [{ word: "புத்தாண்டுக்கு", base: "புத்தாண்டு", reading: "puttāṇṭu" }, { word: "புது", ref: "ta-1201" }, { word: "துணி", ref: "ta-0272" }]
+  - id: "ta-1172"
+    target: "நவராத்திரி"
+    reading: "navarāttiri"
+    ipa: "naʋaɾaːt̪t̪iɾi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Navaratri" }
+    bases: "self"
+    examples:
+      - target: "நவராத்திரி ஒன்பது இரவு."
+        reading: "navarāttiri oṉpatu iravu."
+        ipa: "naʋaɾaːt̪t̪iɾi onpat̪u iɾaʋu"
+        bases: [{ word: "நவராத்திரி", base: "நவராத்திரி", reading: "navarāttiri" }, { word: "ஒன்பது", ref: "ta-0095" }, { word: "இரவு", ref: "ta-0154" }]
+      - target: "நவராத்திரியில் கொலு இருக்கிறது."
+        reading: "navarāttiriyil kolu irukkiṟatu."
+        ipa: "naʋaɾaːt̪t̪iɾijil kolu iɾukkirat̪u"
+        bases: [{ word: "நவராத்திரியில்", base: "நவராத்திரி", reading: "navarāttiri" }, { word: "கொலு", ref: "ta-1173" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1173"
+    target: "கொலு"
+    reading: "kolu"
+    ipa: "kolu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Golu_(festival)" }
+    bases: "self"
+    examples:
+      - target: "வீட்டில் கொலு இருக்கிறது."
+        reading: "vīṭṭil kolu irukkiṟatu."
+        ipa: "ʋiːʈʈil kolu iɾukkirat̪u"
+        bases: [{ word: "வீட்டில்", ref: "ta-0414" }, { word: "கொலு", base: "கொலு", reading: "kolu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "கொலுவுக்கு வா."
+        reading: "koluvukku vā."
+        ipa: "koluʋukku ʋaː"
+        bases: [{ word: "கொலுவுக்கு", base: "கொலு", reading: "kolu" }, { word: "வா", ref: "ta-0010" }]
+  - id: "ta-1174"
+    target: "பூஜை"
+    reading: "pūjai"
+    ipa: "puːdʒai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வீட்டில் பூஜை."
+        reading: "vīṭṭil pūjai."
+        ipa: "ʋiːʈʈil puːdʒai"
+        bases: [{ word: "வீட்டில்", ref: "ta-0414" }, { word: "பூஜை", base: "பூஜை", reading: "pūjai" }]
+      - target: "நான் காலையில் பூஜை செய்கிறேன்."
+        reading: "nāṉ kālaiyil pūjai ceykiṟēṉ."
+        ipa: "naːn kaːlaijil puːdʒai sejkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "காலையில்", base: "காலை", reading: "kālai" }, { word: "பூஜை", base: "பூஜை", reading: "pūjai" }, { word: "செய்கிறேன்", base: "செய்", reading: "cey" }]
+  - id: "ta-1175"
+    target: "தீபம்"
+    reading: "tīpam"
+    ipa: "t̪iːpam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Karthikai_Deepam" }
+    bases: "self"
+    examples:
+      - target: "தீபம் வை."
+        reading: "tīpam vai."
+        ipa: "t̪iːpam ʋai"
+        bases: [{ word: "தீபம்", base: "தீபம்", reading: "tīpam" }, { word: "வை", ref: "ta-0185" }]
+      - target: "கோயிலில் தீபம் இருக்கிறது."
+        reading: "kōyilil tīpam irukkiṟatu."
+        ipa: "koːjilil t̪iːpam iɾukkirat̪u"
+        bases: [{ word: "கோயிலில்", base: "கோயில்", reading: "kōyil" }, { word: "தீபம்", base: "தீபம்", reading: "tīpam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1176"
+    target: "மெழுகுவர்த்தி"
+    reading: "meḻukuvartti"
+    ipa: "meɻukuʋaɾt̪t̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மேசையில் மெழுகுவர்த்தி இருக்கிறது."
+        reading: "mēcaiyil meḻukuvartti irukkiṟatu."
+        ipa: "meːsaijil meɻukuʋaɾt̪t̪i iɾukkirat̪u"
+        bases: [{ word: "மேசையில்", base: "மேசை", reading: "mēcai" }, { word: "மெழுகுவர்த்தி", base: "மெழுகுவர்த்தி", reading: "meḻukuvartti" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "மெழுகுவர்த்தி வேண்டும்."
+        reading: "meḻukuvartti vēṇṭum."
+        ipa: "meɻukuʋaɾt̪t̪i ʋeːɳʈum"
+        bases: [{ word: "மெழுகுவர்த்தி", base: "மெழுகுவர்த்தி", reading: "meḻukuvartti" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1177"
+    target: "பட்டாசு"
+    reading: "paṭṭācu"
+    ipa: "paʈʈaːsu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பட்டாசு வேண்டாம்."
+        reading: "paṭṭācu vēṇṭām."
+        ipa: "paʈʈaːsu ʋeːɳʈaːm"
+        bases: [{ word: "பட்டாசு", base: "பட்டாசு", reading: "paṭṭācu" }, { word: "வேண்டாம்", ref: "ta-0410" }]
+      - target: "இங்கே பட்டாசு இல்லை."
+        reading: "iṅkē paṭṭācu illai."
+        ipa: "iŋkeː paʈʈaːsu illai"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "பட்டாசு", base: "பட்டாசு", reading: "paṭṭācu" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1178"
+    target: "இனிப்பு"
+    reading: "iṉippu"
+    ipa: "inippu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது இனிப்பு."
+        reading: "itu iṉippu."
+        ipa: "it̪u inippu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "இனிப்பு", base: "இனிப்பு", reading: "iṉippu" }]
+      - target: "இனிப்பு கொடு."
+        reading: "iṉippu koṭu."
+        ipa: "inippu koʈu"
+        bases: [{ word: "இனிப்பு", base: "இனிப்பு", reading: "iṉippu" }, { word: "கொடு", ref: "ta-0125" }]
+  - id: "ta-1179"
+    target: "பாயசம்"
+    reading: "pāyacam"
+    ipa: "paːjasam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பாயசம் குடி."
+        reading: "pāyacam kuṭi."
+        ipa: "paːjasam kuʈi"
+        bases: [{ word: "பாயசம்", base: "பாயசம்", reading: "pāyacam" }, { word: "குடி", ref: "ta-0120" }]
+      - target: "பாயசம் இனிப்பு."
+        reading: "pāyacam iṉippu."
+        ipa: "paːjasam inippu"
+        bases: [{ word: "பாயசம்", base: "பாயசம்", reading: "pāyacam" }, { word: "இனிப்பு", ref: "ta-1178" }]
+  - id: "ta-1180"
+    target: "குங்குமம்"
+    reading: "kuṅkumam"
+    ipa: "kuŋkumam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "குங்குமம் வேண்டும்."
+        reading: "kuṅkumam vēṇṭum."
+        ipa: "kuŋkumam ʋeːɳʈum"
+        bases: [{ word: "குங்குமம்", base: "குங்குமம்", reading: "kuṅkumam" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "பூ, குங்குமம் வாங்கு."
+        reading: "pū, kuṅkumam vāṅku."
+        ipa: "puː kuŋkumam ʋaːŋku"
+        bases: [{ word: "பூ", ref: "ta-1189" }, { word: "குங்குமம்", base: "குங்குமம்", reading: "kuṅkumam" }, { word: "வாங்கு", ref: "ta-0129" }]
+  - id: "ta-1181"
+    target: "கரும்பு"
+    reading: "karumpu"
+    ipa: "kaɾumpu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Pongal_(festival)" }
+    bases: "self"
+    examples:
+      - target: "கரும்பு இனிப்பு."
+        reading: "karumpu iṉippu."
+        ipa: "kaɾumpu inippu"
+        bases: [{ word: "கரும்பு", base: "கரும்பு", reading: "karumpu" }, { word: "இனிப்பு", ref: "ta-1178" }]
+      - target: "பொங்கலுக்கு கரும்பு வேண்டும்."
+        reading: "poṅkalukku karumpu vēṇṭum."
+        ipa: "poŋkalukku kaɾumpu ʋeːɳʈum"
+        bases: [{ word: "பொங்கலுக்கு", base: "பொங்கல்", reading: "poṅkal" }, { word: "கரும்பு", base: "கரும்பு", reading: "karumpu" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1182"
+    target: "பானை"
+    reading: "pāṉai"
+    ipa: "paːnai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Pongal_(festival)" }
+    bases: "self"
+    examples:
+      - target: "பானையில் பால் இருக்கிறது."
+        reading: "pāṉaiyil pāl irukkiṟatu."
+        ipa: "paːnaijil paːl iɾukkirat̪u"
+        bases: [{ word: "பானையில்", base: "பானை", reading: "pāṉai" }, { word: "பால்", ref: "ta-0036" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "புதிய பானை வேண்டும்."
+        reading: "putiya pāṉai vēṇṭum."
+        ipa: "put̪ija paːnai ʋeːɳʈum"
+        bases: [{ word: "புதிய", ref: "ta-0171" }, { word: "பானை", base: "பானை", reading: "pāṉai" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1183"
+    target: "பொங்கு"
+    reading: "poṅku"
+    ipa: "poŋku"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பால் பொங்குகிறது."
+        reading: "pāl poṅkukiṟatu."
+        ipa: "paːl poŋkukirat̪u"
+        bases: [{ word: "பால்", ref: "ta-0036" }, { word: "பொங்குகிறது", base: "பொங்கு", reading: "poṅku" }]
+      - target: "பானை பொங்குகிறது."
+        reading: "pāṉai poṅkukiṟatu."
+        ipa: "paːnai poŋkukirat̪u"
+        bases: [{ word: "பானை", ref: "ta-1182" }, { word: "பொங்குகிறது", base: "பொங்கு", reading: "poṅku" }]
+  - id: "ta-1184"
+    target: "வாழ்த்து"
+    reading: "vāḻttu"
+    ipa: "ʋaːɻt̪t̪u"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பிறந்தநாள் வாழ்த்து."
+        reading: "piṟantanāḷ vāḻttu."
+        ipa: "pirant̪anaːɭ ʋaːɻt̪t̪u"
+        bases: [{ word: "பிறந்தநாள்", ref: "ta-1158" }, { word: "வாழ்த்து", base: "வாழ்த்து", reading: "vāḻttu" }]
+      - target: "புத்தாண்டு வாழ்த்து."
+        reading: "puttāṇṭu vāḻttu."
+        ipa: "put̪t̪aːɳʈu ʋaːɻt̪t̪u"
+        bases: [{ word: "புத்தாண்டு", ref: "ta-1171" }, { word: "வாழ்த்து", base: "வாழ்த்து", reading: "vāḻttu" }]
+  - id: "ta-1185"
+    target: "திருவிழா"
+    reading: "tiruviḻā"
+    ipa: "t̪iɾuʋiɻaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஊரில் திருவிழா."
+        reading: "ūril tiruviḻā."
+        ipa: "uːɾil t̪iɾuʋiɻaː"
+        bases: [{ word: "ஊரில்", base: "ஊர்", reading: "ūr" }, { word: "திருவிழா", base: "திருவிழா", reading: "tiruviḻā" }]
+      - target: "கோயில் திருவிழா நாளை."
+        reading: "kōyil tiruviḻā nāḷai."
+        ipa: "koːjil t̪iɾuʋiɻaː naːɭai"
+        bases: [{ word: "கோயில்", ref: "ta-0262" }, { word: "திருவிழா", base: "திருவிழா", reading: "tiruviḻā" }, { word: "நாளை", ref: "ta-0133" }]
+  - id: "ta-1186"
+    target: "தேர்"
+    reading: "tēr"
+    ipa: "t̪eːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தேர் வருகிறது."
+        reading: "tēr varukiṟatu."
+        ipa: "t̪eːɾ ʋaɾukirat̪u"
+        bases: [{ word: "தேர்", base: "தேர்", reading: "tēr" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+      - target: "கோயிலில் தேர் இருக்கிறது."
+        reading: "kōyilil tēr irukkiṟatu."
+        ipa: "koːjilil t̪eːɾ iɾukkirat̪u"
+        bases: [{ word: "கோயிலில்", base: "கோயில்", reading: "kōyil" }, { word: "தேர்", base: "தேர்", reading: "tēr" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1187"
+    target: "கடவுள்"
+    reading: "kaṭavuḷ"
+    ipa: "kaʈaʋuɭ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கடவுள் இருக்கிறார்."
+        reading: "kaṭavuḷ irukkiṟār."
+        ipa: "kaʈaʋuɭ iɾukkiraːɾ"
+        bases: [{ word: "கடவுள்", base: "கடவுள்", reading: "kaṭavuḷ" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+      - target: "கடவுளுக்கு நன்றி."
+        reading: "kaṭavuḷukku naṉṟi."
+        ipa: "kaʈaʋuɭukku nanri"
+        bases: [{ word: "கடவுளுக்கு", base: "கடவுள்", reading: "kaṭavuḷ" }, { word: "நன்றி", ref: "ta-0013" }]
+  - id: "ta-1188"
+    target: "சாமி"
+    reading: "cāmi"
+    ipa: "saːmi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சாமிக்கு பூ கொடு."
+        reading: "cāmikku pū koṭu."
+        ipa: "saːmikku puː koʈu"
+        bases: [{ word: "சாமிக்கு", base: "சாமி", reading: "cāmi" }, { word: "பூ", ref: "ta-1189" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "நான் சாமியை வணங்குகிறேன்."
+        reading: "nāṉ cāmiyai vaṇaṅkukiṟēṉ."
+        ipa: "naːn saːmijai ʋaɳaŋkukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சாமியை", base: "சாமி", reading: "cāmi" }, { word: "வணங்குகிறேன்", base: "வணங்கு", reading: "vaṇaṅku" }]
+  - id: "ta-1189"
+    target: "பூ"
+    reading: "pū"
+    ipa: "puː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பூ."
+        reading: "itu pū."
+        ipa: "it̪u puː"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பூ", base: "பூ", reading: "pū" }]
+      - target: "கோயிலுக்கு பூ வாங்கு."
+        reading: "kōyilukku pū vāṅku."
+        ipa: "koːjilukku puː ʋaːŋku"
+        bases: [{ word: "கோயிலுக்கு", base: "கோயில்", reading: "kōyil" }, { word: "பூ", base: "பூ", reading: "pū" }, { word: "வாங்கு", ref: "ta-0129" }]
+  - id: "ta-1190"
+    target: "ஊர்வலம்"
+    reading: "ūrvalam"
+    ipa: "uːɾʋalam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தெருவில் ஊர்வலம் இருக்கிறது."
+        reading: "teruvil ūrvalam irukkiṟatu."
+        ipa: "t̪eɾuʋil uːɾʋalam iɾukkirat̪u"
+        bases: [{ word: "தெருவில்", base: "தெரு", reading: "teru" }, { word: "ஊர்வலம்", base: "ஊர்வலம்", reading: "ūrvalam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "ஊர்வலம் வருகிறது."
+        reading: "ūrvalam varukiṟatu."
+        ipa: "uːɾʋalam ʋaɾukirat̪u"
+        bases: [{ word: "ஊர்வலம்", base: "ஊர்வலம்", reading: "ūrvalam" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+  - id: "ta-1191"
+    target: "அலங்காரம்"
+    reading: "alaṅkāram"
+    ipa: "alaŋkaːɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வீட்டில் நிறைய அலங்காரம்."
+        reading: "vīṭṭil niṟaiya alaṅkāram."
+        ipa: "ʋiːʈʈil niraija alaŋkaːɾam"
+        bases: [{ word: "வீட்டில்", ref: "ta-0414" }, { word: "நிறைய", ref: "ta-0141" }, { word: "அலங்காரம்", base: "அலங்காரம்", reading: "alaṅkāram" }]
+      - target: "தேருக்கு அலங்காரம் வேண்டும்."
+        reading: "tērukku alaṅkāram vēṇṭum."
+        ipa: "t̪eːɾukku alaŋkaːɾam ʋeːɳʈum"
+        bases: [{ word: "தேருக்கு", base: "தேர்", reading: "tēr" }, { word: "அலங்காரம்", base: "அலங்காரம்", reading: "alaṅkāram" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1192"
+    target: "கொண்டாடு"
+    reading: "koṇṭāṭu"
+    ipa: "koɳʈaːʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாம் பண்டிகை கொண்டாடுகிறோம்."
+        reading: "nām paṇṭikai koṇṭāṭukiṟōm."
+        ipa: "naːm paɳʈikai koɳʈaːʈukiroːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "பண்டிகை", ref: "ta-1168" }, { word: "கொண்டாடுகிறோம்", base: "கொண்டாடு", reading: "koṇṭāṭu" }]
+      - target: "பொங்கல் கொண்டாடலாம்."
+        reading: "poṅkal koṇṭāṭalām."
+        ipa: "poŋkal koɳʈaːʈalaːm"
+        bases: [{ word: "பொங்கல்", ref: "ta-1169" }, { word: "கொண்டாடலாம்", base: "கொண்டாடு", reading: "koṇṭāṭu" }]
+  - id: "ta-1193"
+    target: "வாணவேடிக்கை"
+    reading: "vāṇavēṭikkai"
+    ipa: "ʋaːɳaʋeːʈikkai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வாணவேடிக்கை பார்."
+        reading: "vāṇavēṭikkai pār."
+        ipa: "ʋaːɳaʋeːʈikkai paːɾ"
+        bases: [{ word: "வாணவேடிக்கை", base: "வாணவேடிக்கை", reading: "vāṇavēṭikkai" }, { word: "பார்", ref: "ta-0121" }]
+      - target: "விழாவில் வாணவேடிக்கை இருக்கிறது."
+        reading: "viḻāvil vāṇavēṭikkai irukkiṟatu."
+        ipa: "ʋiɻaːʋil ʋaːɳaʋeːʈikkai iɾukkirat̪u"
+        bases: [{ word: "விழாவில்", base: "விழா", reading: "viḻā" }, { word: "வாணவேடிக்கை", base: "வாணவேடிக்கை", reading: "vāṇavēṭikkai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1194"
+    target: "தேங்காய்"
+    reading: "tēṅkāy"
+    ipa: "t̪eːŋkaːj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தேங்காய் வேண்டும்."
+        reading: "tēṅkāy vēṇṭum."
+        ipa: "t̪eːŋkaːj ʋeːɳʈum"
+        bases: [{ word: "தேங்காய்", base: "தேங்காய்", reading: "tēṅkāy" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "கோயிலுக்கு தேங்காய் வாங்கு."
+        reading: "kōyilukku tēṅkāy vāṅku."
+        ipa: "koːjilukku t̪eːŋkaːj ʋaːŋku"
+        bases: [{ word: "கோயிலுக்கு", base: "கோயில்", reading: "kōyil" }, { word: "தேங்காய்", base: "தேங்காய்", reading: "tēṅkāy" }, { word: "வாங்கு", ref: "ta-0129" }]
+  - id: "ta-1195"
+    target: "விருந்து"
+    reading: "viruntu"
+    ipa: "ʋiɾunt̪u"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வீட்டில் விருந்து."
+        reading: "vīṭṭil viruntu."
+        ipa: "ʋiːʈʈil ʋiɾunt̪u"
+        bases: [{ word: "வீட்டில்", ref: "ta-0414" }, { word: "விருந்து", base: "விருந்து", reading: "viruntu" }]
+      - target: "விருந்து தயார்."
+        reading: "viruntu tayār."
+        ipa: "ʋiɾunt̪u t̪ajaːɾ"
+        bases: [{ word: "விருந்து", base: "விருந்து", reading: "viruntu" }, { word: "தயார்", base: "தயார்", reading: "tayār" }]
+  - id: "ta-1196"
+    target: "விருந்தினர்"
+    reading: "viruntiṉar"
+    ipa: "ʋiɾunt̪inaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வீட்டில் விருந்தினர் இருக்கிறார்."
+        reading: "vīṭṭil viruntiṉar irukkiṟār."
+        ipa: "ʋiːʈʈil ʋiɾunt̪inaɾ iɾukkiraːɾ"
+        bases: [{ word: "வீட்டில்", ref: "ta-0414" }, { word: "விருந்தினர்", base: "விருந்தினர்", reading: "viruntiṉar" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+      - target: "விருந்தினர் வருகிறார்."
+        reading: "viruntiṉar varukiṟār."
+        ipa: "ʋiɾunt̪inaɾ ʋaɾukiraːɾ"
+        bases: [{ word: "விருந்தினர்", base: "விருந்தினர்", reading: "viruntiṉar" }, { word: "வருகிறார்", base: "வா", reading: "vā" }]
+  - id: "ta-1197"
+    target: "உறவினர்"
+    reading: "uṟaviṉar"
+    ipa: "uraʋinaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பண்டிகைக்கு உறவினர் வருகிறார்கள்."
+        reading: "paṇṭikaikku uṟaviṉar varukiṟārkaḷ."
+        ipa: "paɳʈikaikku uraʋinaɾ ʋaɾukiraːɾkaɭ"
+        bases: [{ word: "பண்டிகைக்கு", base: "பண்டிகை", reading: "paṇṭikai" }, { word: "உறவினர்", base: "உறவினர்", reading: "uṟaviṉar" }, { word: "வருகிறார்கள்", base: "வா", reading: "vā" }]
+      - target: "உறவினர் நிறைய."
+        reading: "uṟaviṉar niṟaiya."
+        ipa: "uraʋinaɾ niraija"
+        bases: [{ word: "உறவினர்", base: "உறவினர்", reading: "uṟaviṉar" }, { word: "நிறைய", ref: "ta-0141" }]
+  - id: "ta-1198"
+    target: "மகிழ்ச்சி"
+    reading: "makiḻcci"
+    ipa: "makiɻtʃtʃi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பண்டிகையில் மகிழ்ச்சி."
+        reading: "paṇṭikaiyil makiḻcci."
+        ipa: "paɳʈikaijil makiɻtʃtʃi"
+        bases: [{ word: "பண்டிகையில்", base: "பண்டிகை", reading: "paṇṭikai" }, { word: "மகிழ்ச்சி", base: "மகிழ்ச்சி", reading: "makiḻcci" }]
+      - target: "எனக்கு மகிழ்ச்சி."
+        reading: "eṉakku makiḻcci."
+        ipa: "enakku makiɻtʃtʃi"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "மகிழ்ச்சி", base: "மகிழ்ச்சி", reading: "makiḻcci" }]
+  - id: "ta-1199"
+    target: "ரம்ஜான்"
+    reading: "ramjāṉ"
+    ipa: "ɾamdʒaːn"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாளை ரம்ஜான்."
+        reading: "nāḷai ramjāṉ."
+        ipa: "naːɭai ɾamdʒaːn"
+        bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "ரம்ஜான்", base: "ரம்ஜான்", reading: "ramjāṉ" }]
+      - target: "ரம்ஜானுக்கு விருந்து."
+        reading: "ramjāṉukku viruntu."
+        ipa: "ɾamdʒaːnukku ʋiɾunt̪u"
+        bases: [{ word: "ரம்ஜானுக்கு", base: "ரம்ஜான்", reading: "ramjāṉ" }, { word: "விருந்து", ref: "ta-1195" }]
+  - id: "ta-1200"
+    target: "வெடி"
+    reading: "veṭi"
+    ipa: "ʋeʈi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நிறைய வெடி இருக்கிறது."
+        reading: "niṟaiya veṭi irukkiṟatu."
+        ipa: "niraija ʋeʈi iɾukkirat̪u"
+        bases: [{ word: "நிறைய", ref: "ta-0141" }, { word: "வெடி", base: "வெடி", reading: "veṭi" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "பட்டாசு வெடிக்கிறது."
+        reading: "paṭṭācu veṭikkiṟatu."
+        ipa: "paʈʈaːsu ʋeʈikkirat̪u"
+        bases: [{ word: "பட்டாசு", ref: "ta-1177" }, { word: "வெடிக்கிறது", base: "வெடி", reading: "veṭi" }]
+  - id: "ta-1201"
+    target: "புது"
+    reading: "putu"
+    ipa: "put̪u"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பண்டிகைக்கு புது துணி."
+        reading: "paṇṭikaikku putu tuṇi."
+        ipa: "paɳʈikaikku put̪u t̪uɳi"
+        bases: [{ word: "பண்டிகைக்கு", base: "பண்டிகை", reading: "paṇṭikai" }, { word: "புது", base: "புது", reading: "putu" }, { word: "துணி", ref: "ta-0272" }]
+      - target: "இது புது வீடு."
+        reading: "itu putu vīṭu."
+        ipa: "it̪u put̪u ʋiːʈu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "புது", base: "புது", reading: "putu" }, { word: "வீடு", ref: "ta-0009" }]
+  - id: "ta-1202"
+    target: "வணங்கு"
+    reading: "vaṇaṅku"
+    ipa: "ʋaɳaŋku"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாம் கடவுளை வணங்குகிறோம்."
+        reading: "nām kaṭavuḷai vaṇaṅkukiṟōm."
+        ipa: "naːm kaʈaʋuɭai ʋaɳaŋkukiroːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "கடவுளை", base: "கடவுள்", reading: "kaṭavuḷ" }, { word: "வணங்குகிறோம்", base: "வணங்கு", reading: "vaṇaṅku" }]
+      - target: "நான் விநாயகரை வணங்குகிறேன்."
+        reading: "nāṉ vināyakarai vaṇaṅkukiṟēṉ."
+        ipa: "naːn ʋinaːjakaɾai ʋaɳaŋkukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "விநாயகரை", base: "விநாயகர்", reading: "vināyakar" }, { word: "வணங்குகிறேன்", base: "வணங்கு", reading: "vaṇaṅku" }]
+  - id: "ta-1203"
+    target: "சிறப்பு"
+    reading: "ciṟappu"
+    ipa: "sirappu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று சிறப்பு விருந்து."
+        reading: "iṉṟu ciṟappu viruntu."
+        ipa: "inru sirappu ʋiɾunt̪u"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "சிறப்பு", base: "சிறப்பு", reading: "ciṟappu" }, { word: "விருந்து", ref: "ta-1195" }]
+      - target: "இது பொங்கல் சிறப்பு."
+        reading: "itu poṅkal ciṟappu."
+        ipa: "it̪u poŋkal sirappu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பொங்கல்", ref: "ta-1169" }, { word: "சிறப்பு", base: "சிறப்பு", reading: "ciṟappu" }]
+  - id: "ta-1204"
+    target: "விழா"
+    reading: "viḻā"
+    ipa: "ʋiɻaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பள்ளியில் விழா."
+        reading: "paḷḷiyil viḻā."
+        ipa: "paɭɭijil ʋiɻaː"
+        bases: [{ word: "பள்ளியில்", base: "பள்ளி", reading: "paḷḷi" }, { word: "விழா", base: "விழா", reading: "viḻā" }]
+      - target: "நாளை விழா."
+        reading: "nāḷai viḻā."
+        ipa: "naːɭai ʋiɻaː"
+        bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "விழா", base: "விழா", reading: "viḻā" }]
+  - id: "ta-1205"
+    target: "போகி"
+    reading: "pōki"
+    ipa: "poːki"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Pongal_(festival)" }
+    bases: "self"
+    examples:
+      - target: "இன்று போகி."
+        reading: "iṉṟu pōki."
+        ipa: "inru poːki"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "போகி", base: "போகி", reading: "pōki" }]
+      - target: "போகிக்கு மறுநாள் பொங்கல்."
+        reading: "pōkikku maṟunāḷ poṅkal."
+        ipa: "poːkikku marunaːɭ poŋkal"
+        bases: [{ word: "போகிக்கு", base: "போகி", reading: "pōki" }, { word: "மறுநாள்", ref: "ta-1160" }, { word: "பொங்கல்", ref: "ta-1169" }]
+  - id: "ta-1206"
+    target: "விநாயகர்"
+    reading: "vināyakar"
+    ipa: "ʋinaːjakaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Ganesh_Chaturthi" }
+    bases: "self"
+    examples:
+      - target: "விநாயகர் கோயில் பக்கத்தில் இருக்கிறது."
+        reading: "vināyakar kōyil pakkattil irukkiṟatu."
+        ipa: "ʋinaːjakaɾ koːjil pakkat̪t̪il iɾukkirat̪u"
+        bases: [{ word: "விநாயகர்", base: "விநாயகர்", reading: "vināyakar" }, { word: "கோயில்", ref: "ta-0262" }, { word: "பக்கத்தில்", base: "பக்கத்தில்", reading: "pakkattil" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "விநாயகரை வணங்குகிறேன்."
+        reading: "vināyakarai vaṇaṅkukiṟēṉ."
+        ipa: "ʋinaːjakaɾai ʋaɳaŋkukireːn"
+        bases: [{ word: "விநாயகரை", base: "விநாயகர்", reading: "vināyakar" }, { word: "வணங்குகிறேன்", base: "வணங்கு", reading: "vaṇaṅku" }]
+  - id: "ta-1207"
+    target: "கிறிஸ்துமஸ்"
+    reading: "kiṟistumas"
+    ipa: "kirist̪umas"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாளை கிறிஸ்துமஸ்."
+        reading: "nāḷai kiṟistumas."
+        ipa: "naːɭai kirist̪umas"
+        bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "கிறிஸ்துமஸ்", base: "கிறிஸ்துமஸ்", reading: "kiṟistumas" }]
+      - target: "கிறிஸ்துமஸுக்கு இனிப்பு கொடு."
+        reading: "kiṟistumasukku iṉippu koṭu."
+        ipa: "kirist̪umasukku inippu koʈu"
+        bases: [{ word: "கிறிஸ்துமஸுக்கு", base: "கிறிஸ்துமஸ்", reading: "kiṟistumas" }, { word: "இனிப்பு", ref: "ta-1178" }, { word: "கொடு", ref: "ta-0125" }]

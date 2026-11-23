@@ -1,0 +1,63 @@
+schema: 1
+id: "ta-en-calendar-sentences"
+kind: "layer"
+core: "ta-calendar-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The calendar in sentences"
+description: "Eight short sentences about dates, weeks, months and the days before and after today. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-4017":
+    native: "What is the date tomorrow?"
+    confusables:
+      w1: { why: "வாரம் (vāram), week, is a different word." }
+      w2: { why: "மாதம் (mātam), month, is a different word." }
+  "ta-4018":
+    native: "There is no work next week."
+    confusables:
+      w1: { why: "மாதம் (mātam), month, is a different word." }
+      w2: { why: "வருடம் (varuṭam), year, is a different word." }
+  "ta-4019":
+    native: "I came here last month."
+    bases:
+      "வந்தேன்": "came; from வா (vā), to come"
+    confusables:
+      w1: { why: "வாரம் (vāram), week, is a different word." }
+      w2: { why: "வருடம் (varuṭam), year, is a different word." }
+  "ta-4020":
+    native: "Mother's birthday is on Sunday."
+    notes:
+      n1: "Tamil needs no word for is or on here: பிறந்தநாள் ஞாயிறு (piṟantanāḷ ñāyiṟu), the birthday is Sunday."
+    bases:
+      "அம்மாவின்": "mother's; from அம்மா (ammā), mother"
+    confusables:
+      w1: { why: "தேதி (tēti), date (of the month), is a different word." }
+      w2: { why: "நாள் (nāḷ), day, is a different word." }
+  "ta-4021":
+    native: "I will come in a week."
+    bases:
+      "வாரத்தில்": "in a week; from வாரம் (vāram), week"
+      "வருகிறேன்": "come; from வா (vā), to come"
+    confusables:
+      w1: { why: "மாதம் (mātam), month, is a different word." }
+      w2: { why: "நாள் (nāḷ), day, is a different word." }
+  "ta-4022":
+    native: "Look at the date on the calendar."
+    bases:
+      "காலண்டரில்": "on the calendar; from காலண்டர் (kālaṇṭar), calendar"
+    confusables:
+      w1: { why: "நாள் (nāḷ), day, is a different word." }
+      w2: { why: "மாதம் (mātam), month, is a different word." }
+  "ta-4023":
+    native: "Wait two minutes."
+    notes:
+      n1: "நில் (nil) is stand, and with a time it means wait."
+    confusables:
+      w1: { why: "மணி (maṇi), hour; o'clock, is a different word." }
+      w2: { why: "நேரம் (nēram), time, is a different word." }
+  "ta-4024":
+    native: "There was no work the day before yesterday, and yesterday there was work."
+    confusables:
+      w1: { why: "மறுநாள் (maṟunāḷ), the next day, is a different word." }
+      w2: { why: "நாளை (nāḷai), tomorrow, is a different word." }

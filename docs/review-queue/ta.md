@@ -58,3 +58,131 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-grammar-adjectives | The -து and -வை forms (பெரியது, பெரியவை ...) were built by rule for all nine adjectives with no source page; are they all natural? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-articles | ஓர் before a vowel is from English Wiktionary; are the six pairs right? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-verb-present | வேண்டும், வேண்டாம், பிடிக்கும் and பிடிக்காது are verbs with one form for every person, so they are left out of the table (except list); is that the right way to teach them? | Sonnet builder | 2026-11-23 |
+| ta-1105 | ta-daily-life | Is டிபன் (tiffin) the right everyday word for a light meal or breakfast, as written from a dictionary gloss? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1102 | ta-daily-life | Is துலக்கு the everyday spoken verb for brushing teeth, or is another verb more usual? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1804 | ta-help | Is பிரச்சினை (not பிரச்சனை) the spelling to teach first? | Sonnet builder | 2026-11-23 |
+| ta-1805 | ta-help | Is போலீஸ் the right spoken form, and the register correct? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-negative | Check the spoken nee, aval and avarkal negatives (மாட்ட, மாட்டா, மாட்டாங்க) and the spoken past negative in -ல (-la). | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-1129 | ta-weather | Is புழுக்கம் the everyday word for sultry, close heat in spoken Tamil? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1120 | ta-weather | Is சூரியன் best given as masculine (m) for a course that uses m, f and n? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1119 | ta-weather | Is the split between வெப்பம் (forecast word) and வெயில் (felt sun) right for everyday speech? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1143 | ta-weather | Is குளிர் அடிக்கிறது a natural way to say it feels cold? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1148 | ta-weather | Is காய்ந்த the right word for a cloth that has dried? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1816 | ta-school | Is the written word மதிப்பெண் (not மார்க்) the right one to teach first? | Sonnet builder | 2026-11-23 |
+| ta-1813 | ta-school | Is புக் (puk) the right spoken form for a school book? | Sonnet builder | 2026-11-23 |
+| ta-1860 | ta-school | Is கத்துக்கோ (kattukkō) the right spoken form of learn? | Sonnet builder | 2026-11-23 |
+| ta-1844 | ta-school | Is பரிசு natural at school, or is பரிசளிப்பு better? | Sonnet builder | 2026-11-23 |
+| ta-1896 | ta-hobbies | Is காத்தாடி the spoken word for a kite, and not mainly a fan? | Sonnet builder | 2026-11-23 |
+| ta-1916 | ta-hobbies | Is ஜெயி (jeyi) the usual spoken word for win beside வெல்? | Sonnet builder | 2026-11-23 |
+| ta-1905 | ta-hobbies | Is பாடுறேன் the right spoken present of sing? | Sonnet builder | 2026-11-23 |
+| ta-1883 | ta-hobbies | Is சீட்டு விளையாடு the natural way to say play cards? | Sonnet builder | 2026-11-23 |
+| ta-1162 | ta-calendar | Is போன the usual spoken word for last (week, month, year) and கடந்த the written one? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1155 | ta-calendar | Is வருடம் the everyday word for year, with ஆண்டு more written? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1159 | ta-calendar | Is முந்தாநாள் the usual spoken word for the day before yesterday? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1945 | ta-chores | Is பெருக்கு the usual spoken word for sweep in Tamil Nadu? | Sonnet builder | 2026-11-23 |
+| ta-1917 | ta-chores | Is சுத்தம் பண்ணு the right spoken form beside சுத்தம் செய்? | Sonnet builder | 2026-11-23 |
+| ta-1930 | ta-chores | Is இஸ்திரி போடு the natural way to say iron clothes? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-past | Check the spoken past stems (படிச்ச, பாத்த, செஞ்ச, வச்ச) and the spoken second-person past. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-1179 | ta-festivals | Is பாயசம் the usual spoken name, or is பாயாசம் more common? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1199 | ta-festivals | Is ரம்ஜான் the everyday spoken name for Ramzan and the festival at its end? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1187 | ta-festivals | Is கடவுள் best marked masculine (m), given the respectful verb it takes? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1197 | ta-festivals | Are உறவினர் and விருந்தினர் best marked masculine (m), given the respectful verb they take? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1188 | ta-festivals | Is the split between சாமி (everyday) and கடவுள் (general) right? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1176 | ta-festivals | Is மெழுகுவர்த்தி the everyday word for a candle? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1180 | ta-festivals | Is குங்குமம் correctly glossed as the red powder for worship and the forehead mark? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1168 | ta-festivals | Is the split between பண்டிகை (home), திருவிழா (temple) and விழா (function) right? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1194 | ta-festivals | Is the temple offering of a coconut right for this card, and is தேங்காய் the usual word? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1193 | ta-festivals | Is வாணவேடிக்கை natural in speech, or is it more written than பட்டாசு? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-2013 | ta-appearance | Is குண்டான too rude for a person, and is a gentler word better to teach? | Sonnet builder | 2026-11-23 |
+| ta-2005 | ta-appearance | Is புடவை கட்டு the usual verb for wearing a sari beside உடுத்து? | Sonnet builder | 2026-11-23 |
+| ta-2000 | ta-appearance | Is பாவாடை the right everyday word for a skirt? | Sonnet builder | 2026-11-23 |
+| ta-1987 | ta-appearance | Is சாம்பல் the usual word for the colour grey? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-verb-classes | Check the six past-marker groups and the future markers given for every verb. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-ordinals | Check the shortened spoken ordinals (ரெண்டாவது, மூணாவது, நாலாவது, அஞ்சாவது, ஒம்பதாவது) and the date forms. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-past-more | Check has done and had done (participle plus இரு) and their spoken forms, such as வந்திருக்கேன் and வந்திருந்துச்சு. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-verbal-participle | Check the spoken verbal participles (படிச்சு, செஞ்சு, வச்சு, பாத்து) and the spoken without-doing ending -ஆமே. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-2017 | ta-verbs-3 | Is சொல்லு (not சொல்) the usual spoken command for say? | Sonnet builder | 2026-11-23 |
+| ta-2025 | ta-verbs-3 | Are the கிடை examples natural for something being available? | Sonnet builder | 2026-11-23 |
+| ta-2085 | ta-verbs-3 | Is யூஸ் பண்ணு (yūs paṇṇu) the usual spoken form of use? | Sonnet builder | 2026-11-23 |
+| ta-0451 | ta-grammar-compound-verbs | Is எடுத்துக்கோங்க the usual spoken polite form of the helper கொள்? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0453 | ta-grammar-compound-verbs | Is தா (to me or us) versus கொடு (to others) stated correctly? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0452 | ta-grammar-compound-verbs | Are put, throw and put on the right senses of போடு to teach together? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-comparison | Check the comparison pattern (X-ஐ விட adjective-து), the word எல்லாவற்றையும், and the doubling after விட and மிக. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-irregular | Check the stems given for come, go, do, give, stand, sit and listen, and the spoken நிக்கிறேன் and தர்றேன். | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-pitfalls | Check the seven pairs and their sentences, especially அல்ல versus இல்லை and கொடு versus தா. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-2113 | ta-phone | Is ஹலோ the usual spoken way to answer a phone call? | Sonnet builder | 2026-11-23 |
+| ta-2097 | ta-phone | Is செயலி or the English ஆப் more usual for app? | Sonnet builder | 2026-11-23 |
+| ta-2098 | ta-phone | Is கடவுச்சொல் the everyday word for password? | Sonnet builder | 2026-11-23 |
+| ta-2090 | ta-phone | Is போன் வை the usual way to say hang up? | Sonnet builder | 2026-11-23 |
+| ta-2130 | ta-phone | Is பதிலளி natural in speech, or is a spoken word better? | Sonnet builder | 2026-11-23 |
+| ta-0462 | ta-grammar-conjunct-verbs | Is to undergo; to feel the right gloss of படு, and is பயப்படு the form to show first? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0460 | ta-grammar-conjunct-verbs | Are spoken பண்றேன் and the noun plus பண்ணு pattern shown correctly? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0461 | ta-grammar-conjunct-verbs | Is நேரம் ஆகிறது the usual way to say it is getting late? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-imperatives | Check the polite spoken commands (-ங்க), the polite forms of திற and நட, and the negative commands. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-2173 | ta-journey | Is gender m right for வழிகாட்டி, a guide of any gender? | Sonnet builder | 2026-11-23 |
+| ta-2161 | ta-journey | Is gender m right for டிரைவர், ஓட்டுநர் and நடத்துநர், who may be women? | Sonnet builder | 2026-11-23 |
+| ta-2164 | ta-journey | Does ஹோட்டல் mean restaurant more often than hotel in Tamil Nadu? | Sonnet builder | 2026-11-23 |
+| ta-2141 | ta-journey | Is பைக் the usual word for a motorbike? | Sonnet builder | 2026-11-23 |
+| ta-2184 | ta-journey | Is வழிதவறு one word, and natural in speech? | Sonnet builder | 2026-11-23 |
+| ta-2189 | ta-journey | Is எடுத்துச்செல் written as one word? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-when | Check போது after the infinitive plus -உம், and the spoken conditional in -ஆ, for every verb. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0490 | ta-grammar-registers | Is the gender of அலுவலர் (m) right for an officer of either sex? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0489 | ta-grammar-registers | Is the gender m right for பொதுமக்கள், a plural noun? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0486 | ta-grammar-registers | Is சான்றிதழ் the right formal word for certificate? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0476 | ta-grammar-registers | Is நீர் the right everyday-versus-formal contrast with தண்ணீர்? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0471 | ta-grammar-registers | Is உண் in current use or only literary? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0474 | ta-grammar-registers | Check the stem தெரிவி and its forms தெரிவித்தார் and தெரிவியுங்கள். | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0496 | ta-grammar-registers | Is கூடாது with the infinitive the usual form of a rule on signs? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-written-forms | Check the spoken forms (இங்க, எங்க, இல்ல, வேணும், ரெண்டு, ஒண்ணு, மூணு, நாலு, தண்ணி, வருது, வர்றேன், சாப்பிடுறேன், பேசுறேன). | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-1246 | ta-shopping | Is வசூலி the usual verb for collecting money that is owed, in a shop? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1225 | ta-shopping | Is சாமான் the usual spoken word for belongings or shopping, against பொருள்? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1214 | ta-shopping | Is the split between ரசீது (receipt) and பில் (bill) how shops say it? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1258 | ta-shopping | Is பாக்கி right for both the balance owed and the change due? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1215 | ta-shopping | Is கடன் the word a shop uses for buying on credit? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1210 | ta-shopping | Is வாடிக்கையாளர் the word used in speech, or mostly in writing? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| unit-level | ta-nature | The examples use பனி (from the weather unit) as frost; check that this gloss fits. | Sonnet builder | 2026-11-23 |
+| ta-2192 | ta-nature | Is நதி or ஆறு the usual word for a river in speech? | Sonnet builder | 2026-11-23 |
+| ta-2197 | ta-nature | Is வனம் natural in speech, or only written beside காடு? | Sonnet builder | 2026-11-23 |
+| ta-2219 | ta-nature | Does ஆமை cover both tortoise and turtle? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-verb-present and the A2 rules decks | Forms of the 150 later verbs are generated from a pattern (stem, past marker, future marker, participle): check them, above all the compound verbs, wh stems (பற, மற, கட) and -ய் verbs. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-2278 | ta-adjectives-2 | Is காலியான (from the English loan காலி) natural for empty? | Sonnet builder | 2026-11-23 |
+| ta-2279 | ta-adjectives-2 | Is நிரம்பிய the usual spoken form of full, or நிறைந்த? | Sonnet builder | 2026-11-23 |
+| ta-2300 | ta-adjectives-2 | Is பிரமாண்டமான natural in speech for huge? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-adjectives-2 | All adjectives are given in the -ஆன attributive form; check that each is spelled as spoken Tamil writes it. | Sonnet builder | 2026-11-23 |
+| ta-1275 | ta-illness | Is nurse best marked feminine (f) in a course that uses m, f and n? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1277 | ta-illness | Is ரத்தம் the everyday spoken form, with இரத்தம் written? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1312 | ta-illness | Is பத்தியம் the usual spoken word for the diet kept during treatment? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1311 | ta-illness | Is தடுப்பூசி the everyday word for a vaccination? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1305 | ta-illness | Is எனக்கு வியர்க்கிறது the natural way to say I am sweating? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1300 | ta-illness | Is மயங்கு the everyday verb for fainting, or is another more usual? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| unit-level | ta-workplace | The job words ஊழியர் to தலைவர் are given gender m, as people of either sex take them; check each. | Sonnet builder | 2026-11-23 |
+| ta-2314 | ta-workplace | Is சமையல்காரர் the right word for a cook, and do women use the same form? | Sonnet builder | 2026-11-23 |
+| ta-2317 | ta-workplace | Is gender m right for கணக்காளர், and is the word natural? | Sonnet builder | 2026-11-23 |
+| ta-2350 | ta-workplace | Is கையெழுத்திடு one word, and natural in speech for sign? | Sonnet builder | 2026-11-23 |
+| ta-2353 | ta-workplace | Is அச்சிடு natural in speech, or is a spoken word used for print? | Sonnet builder | 2026-11-23 |
+| ta-1320 | ta-eating-out | Is மீல்ஸ் the usual restaurant name for a full rice meal, and is the gloss right? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1319 | ta-eating-out | Is பார்சல் the usual word for takeaway food? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1321 | ta-eating-out | Is சர்வர் the everyday word for a waiter? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-2399 | ta-geography | Does அமெரிக்கா mean mostly the United States in speech? | Sonnet builder | 2026-11-23 |
+| ta-2404 | ta-geography | Does இங்கிலாந்து stand for Britain in speech, or is பிரிட்டன் used? | Sonnet builder | 2026-11-23 |
+| ta-2380 | ta-geography | Is பாண்டிச்சேரி the usual spoken name beside புதுச்சேரி? | Sonnet builder | 2026-11-23 |
+| ta-2375 | ta-geography | Is கோவை the usual spoken short form of Coimbatore? | Sonnet builder | 2026-11-23 |
+| ta-2386 | ta-geography | Is உதகமண்டலம் the correct formal name of Ooty? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-geography | The facts in the culture notes are taken from the cited English Wikipedia pages; a Tamil Nadu speaker may confirm them. | Sonnet builder | 2026-11-23 |
+| ta-1344 | ta-cooking | Is சட்டி the everyday word for a round cooking pot, next to பாத்திரம் and கடாய்? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1345 | ta-cooking | Is மிக்ஸி the usual word for the electric mixer-grinder? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1369 | ta-cooking | Is பதம் used in speech for the right state of a cooked dish? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1360 | ta-cooking | Is the split between ருசி (spoken) and சுவை right? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1347 | ta-cooking | Is வதக்கு the everyday verb for sautéing in a little oil? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1354 | ta-cooking | Is தோசை சுடு the natural way to say make dosa? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1356 | ta-cooking | Is சாதம் பிசை natural for mashing rice, or is it more used for dough? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| unit-level | ta-grammar-noun-forms | Rows for the ~550 later nouns are generated from the noun-class patterns (stem doubling, -ம் nouns, -ு glide nouns, loanwords in -ட், people and animals): check them, above all loanwords, -வு nouns, and plurals of people. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-1297 | ta-illness | Is இரும் (to cough) given the right stem and forms (இருமு, இருமினேன்)? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-negative and the other verb tables | Compound verbs கலந்துகொள், பெருமைப்படு and சுற்றித்திரி take forms built from their helper verb: check them. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-1209 | ta-shopping | Are கடைக்காரர், வாடிக்கையாளர் and வியாபாரி best marked masculine (m), given that they take the respectful verb ending? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1274 | ta-illness | Is டாக்டர் best marked masculine (m), given that it takes the respectful verb ending? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| unit-level | ta-grammar-compound-verbs-forms | Check the written joining of the helper forms (செய்துக்கொண்டேன், செய்துப்பார்த்தேன்): one word, or two words with the doubled -க்/-ப்? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-school | Gender m is given to தலைமையாசிரியர் (ta-1809), as ta-work does for ஆசிரியர்; the respectful -ர் nouns are epicene, so is m right? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-hobbies | Gender m is given to வீரர் (ta-1886) and பாடகர் (ta-1887), -ர் nouns that can name women too; is m right? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-journey | Gender m is given to டிரைவர் (ta-2161), ஓட்டுநர் (ta-2162), நடத்துநர் (ta-2163) and வழிகாட்டி (ta-2173), who may be women; is m right? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-workplace | Gender m is given to the 16 person nouns ta-2307 to ta-2322 (ஊழியர், மேலாளர் and others), epicene -ர் or -ி nouns; is m right, as for ஆசிரியர் in ta-work? | Sonnet builder | 2026-11-23 |

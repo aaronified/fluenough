@@ -1,0 +1,718 @@
+schema: 1
+id: "ta-grammar-when"
+part: "core"
+kind: "rules"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ta-0409", "ta-0410", "ta-0412", "ta-0413"]
+  slots: ["when-now", "when-past", "if-or-when"]
+  rows:
+    - word: "ta-0010"
+      forms: { "when-now": "வரும்போது", "when-past": "வந்தபோது", "if-or-when": ["வந்தா", "வந்தால்"] }
+      readings: { "when-now": "varumpōtu", "when-past": "vantapōtu", "if-or-when": ["vantā", "vantāl"] }
+    - word: "ta-0038"
+      forms: { "when-now": "எழும்போது", "when-past": "எழுந்தபோது", "if-or-when": ["எழுந்தா", "எழுந்தால்"] }
+      readings: { "when-now": "eḻumpōtu", "when-past": "eḻuntapōtu", "if-or-when": ["eḻuntā", "eḻuntāl"] }
+    - word: "ta-0115"
+      forms: { "when-now": "படிக்கும்போது", "when-past": "படித்தபோது", "if-or-when": ["படிச்சா", "படித்தால்"] }
+      readings: { "when-now": "paṭikkumpōtu", "when-past": "paṭittapōtu", "if-or-when": ["paṭiccā", "paṭittāl"] }
+    - word: "ta-0118"
+      forms: { "when-now": "போகும்போது", "when-past": "போனபோது", "if-or-when": ["போனா", "போனால்"] }
+      readings: { "when-now": "pōkumpōtu", "when-past": "pōṉapōtu", "if-or-when": ["pōṉā", "pōṉāl"] }
+    - word: "ta-0119"
+      forms: { "when-now": "சாப்பிடும்போது", "when-past": "சாப்பிட்டபோது", "if-or-when": ["சாப்பிட்டா", "சாப்பிட்டால்"] }
+      readings: { "when-now": "cāppiṭumpōtu", "when-past": "cāppiṭṭapōtu", "if-or-when": ["cāppiṭṭā", "cāppiṭṭāl"] }
+    - word: "ta-0120"
+      forms: { "when-now": "குடிக்கும்போது", "when-past": "குடித்தபோது", "if-or-when": ["குடிச்சா", "குடித்தால்"] }
+      readings: { "when-now": "kuṭikkumpōtu", "when-past": "kuṭittapōtu", "if-or-when": ["kuṭiccā", "kuṭittāl"] }
+    - word: "ta-0121"
+      forms: { "when-now": "பார்க்கும்போது", "when-past": "பார்த்தபோது", "if-or-when": ["பாத்தா", "பார்த்தால்"] }
+      readings: { "when-now": "pārkkumpōtu", "when-past": "pārttapōtu", "if-or-when": ["pāttā", "pārttāl"] }
+    - word: "ta-0122"
+      forms: { "when-now": "கேட்கும்போது", "when-past": "கேட்டபோது", "if-or-when": ["கேட்டா", "கேட்டால்"] }
+      readings: { "when-now": "kēṭkumpōtu", "when-past": "kēṭṭapōtu", "if-or-when": ["kēṭṭā", "kēṭṭāl"] }
+    - word: "ta-0123"
+      forms: { "when-now": "பேசும்போது", "when-past": ["பேசினபோது", "பேசியபோது"], "if-or-when": ["பேசினா", "பேசினால்"] }
+      readings: { "when-now": "pēcumpōtu", "when-past": ["pēciṉapōtu", "pēciyapōtu"], "if-or-when": ["pēciṉā", "pēciṉāl"] }
+    - word: "ta-0124"
+      forms: { "when-now": "எழுதும்போது", "when-past": ["எழுதினபோது", "எழுதியபோது"], "if-or-when": ["எழுதினா", "எழுதினால்"] }
+      readings: { "when-now": "eḻutumpōtu", "when-past": ["eḻutiṉapōtu", "eḻutiyapōtu"], "if-or-when": ["eḻutiṉā", "eḻutiṉāl"] }
+    - word: "ta-0125"
+      forms: { "when-now": "கொடுக்கும்போது", "when-past": "கொடுத்தபோது", "if-or-when": ["கொடுத்தா", "கொடுத்தால்"] }
+      readings: { "when-now": "koṭukkumpōtu", "when-past": "koṭuttapōtu", "if-or-when": ["koṭuttā", "koṭuttāl"] }
+    - word: "ta-0126"
+      forms: { "when-now": "தூங்கும்போது", "when-past": ["தூங்கினபோது", "தூங்கியபோது"], "if-or-when": ["தூங்கினா", "தூங்கினால்"] }
+      readings: { "when-now": "tūṅkumpōtu", "when-past": ["tūṅkiṉapōtu", "tūṅkiyapōtu"], "if-or-when": ["tūṅkiṉā", "tūṅkiṉāl"] }
+    - word: "ta-0127"
+      forms: { "when-now": "செய்யும்போது", "when-past": "செய்தபோது", "if-or-when": ["செஞ்சா", "செய்தால்"] }
+      readings: { "when-now": "ceyyumpōtu", "when-past": "ceytapōtu", "if-or-when": ["ceñcā", "ceytāl"] }
+    - word: "ta-0128"
+      forms: { "when-now": "சமைக்கும்போது", "when-past": "சமைத்தபோது", "if-or-when": ["சமைச்சா", "சமைத்தால்"] }
+      readings: { "when-now": "camaikkumpōtu", "when-past": "camaittapōtu", "if-or-when": ["camaiccā", "camaittāl"] }
+    - word: "ta-0129"
+      forms: { "when-now": "வாங்கும்போது", "when-past": ["வாங்கினபோது", "வாங்கியபோது"], "if-or-when": ["வாங்கினா", "வாங்கினால்"] }
+      readings: { "when-now": "vāṅkumpōtu", "when-past": ["vāṅkiṉapōtu", "vāṅkiyapōtu"], "if-or-when": ["vāṅkiṉā", "vāṅkiṉāl"] }
+    - word: "ta-0184"
+      forms: { "when-now": "எடுக்கும்போது", "when-past": "எடுத்தபோது", "if-or-when": ["எடுத்தா", "எடுத்தால்"] }
+      readings: { "when-now": "eṭukkumpōtu", "when-past": "eṭuttapōtu", "if-or-when": ["eṭuttā", "eṭuttāl"] }
+    - word: "ta-0185"
+      forms: { "when-now": "வைக்கும்போது", "when-past": "வைத்தபோது", "if-or-when": ["வச்சா", "வைத்தால்"] }
+      readings: { "when-now": "vaikkumpōtu", "when-past": "vaittapōtu", "if-or-when": ["vaccā", "vaittāl"] }
+    - word: "ta-0186"
+      forms: { "when-now": "திறக்கும்போது", "when-past": "திறந்தபோது", "if-or-when": ["திறந்தா", "திறந்தால்"] }
+      readings: { "when-now": "tiṟakkumpōtu", "when-past": "tiṟantapōtu", "if-or-when": ["tiṟantā", "tiṟantāl"] }
+    - word: "ta-0187"
+      forms: { "when-now": "மூடும்போது", "when-past": ["மூடினபோது", "மூடியபோது"], "if-or-when": ["மூடினா", "மூடினால்"] }
+      readings: { "when-now": "mūṭumpōtu", "when-past": ["mūṭiṉapōtu", "mūṭiyapōtu"], "if-or-when": ["mūṭiṉā", "mūṭiṉāl"] }
+    - word: "ta-0188"
+      forms: { "when-now": "உட்காரும்போது", "when-past": "உட்கார்ந்தபோது", "if-or-when": ["உட்கார்ந்தா", "உட்கார்ந்தால்"] }
+      readings: { "when-now": "uṭkārumpōtu", "when-past": "uṭkārntapōtu", "if-or-when": ["uṭkārntā", "uṭkārntāl"] }
+    - word: "ta-0189"
+      forms: { "when-now": "நிற்கும்போது", "when-past": "நின்றபோது", "if-or-when": ["நின்றா", "நின்றால்"] }
+      readings: { "when-now": "niṟkumpōtu", "when-past": "niṉṟapōtu", "if-or-when": ["niṉṟā", "niṉṟāl"] }
+    - word: "ta-0190"
+      forms: { "when-now": "கழுவும்போது", "when-past": ["கழுவினபோது", "கழுவியபோது"], "if-or-when": ["கழுவினா", "கழுவினால்"] }
+      readings: { "when-now": "kaḻuvumpōtu", "when-past": ["kaḻuviṉapōtu", "kaḻuviyapōtu"], "if-or-when": ["kaḻuviṉā", "kaḻuviṉāl"] }
+    - word: "ta-0191"
+      forms: { "when-now": "விளையாடும்போது", "when-past": ["விளையாடினபோது", "விளையாடியபோது"], "if-or-when": ["விளையாடினா", "விளையாடினால்"] }
+      readings: { "when-now": "viḷaiyāṭumpōtu", "when-past": ["viḷaiyāṭiṉapōtu", "viḷaiyāṭiyapōtu"], "if-or-when": ["viḷaiyāṭiṉā", "viḷaiyāṭiṉāl"] }
+    - word: "ta-1101"
+      forms: { "when-now": "குளிக்கும்போது", "when-past": "குளித்தபோது", "if-or-when": ["குளிச்சா", "குளித்தால்"] }
+      readings: { "when-now": "kuḷikkumpōtu", "when-past": "kuḷittapōtu", "if-or-when": ["kuḷiccā", "kuḷittāl"] }
+    - word: "ta-1102"
+      forms: { "when-now": "துலக்கும்போது", "when-past": ["துலக்கினபோது", "துலக்கியபோது"], "if-or-when": ["துலக்கினா", "துலக்கினால்"] }
+      readings: { "when-now": "tulakkumpōtu", "when-past": ["tulakkiṉapōtu", "tulakkiyapōtu"], "if-or-when": ["tulakkiṉā", "tulakkiṉāl"] }
+    - word: "ta-1103"
+      forms: { "when-now": "நடக்கும்போது", "when-past": "நடந்தபோது", "if-or-when": ["நடந்தா", "நடந்தால்"] }
+      readings: { "when-now": "naṭakkumpōtu", "when-past": "naṭantapōtu", "if-or-when": ["naṭantā", "naṭantāl"] }
+    - word: "ta-1104"
+      forms: { "when-now": "திரும்பும்போது", "when-past": ["திரும்பினபோது", "திரும்பியபோது"], "if-or-when": ["திரும்பினா", "திரும்பினால்"] }
+      readings: { "when-now": "tirumpumpōtu", "when-past": ["tirumpiṉapōtu", "tirumpiyapōtu"], "if-or-when": ["tirumpiṉā", "tirumpiṉāl"] }
+    - word: "ta-1107"
+      forms: { "when-now": "தொடங்கும்போது", "when-past": ["தொடங்கினபோது", "தொடங்கியபோது"], "if-or-when": ["தொடங்கினா", "தொடங்கினால்"] }
+      readings: { "when-now": "toṭaṅkumpōtu", "when-past": ["toṭaṅkiṉapōtu", "toṭaṅkiyapōtu"], "if-or-when": ["toṭaṅkiṉā", "toṭaṅkiṉāl"] }
+    - word: "ta-1801"
+      forms: { "when-now": "உதவும்போது", "when-past": ["உதவினபோது", "உதவியபோது"], "if-or-when": ["உதவினா", "உதவினால்"] }
+      readings: { "when-now": "utavumpōtu", "when-past": ["utaviṉapōtu", "utaviyapōtu"], "if-or-when": ["utaviṉā", "utaviṉāl"] }
+    - word: "ta-0450"
+      forms: { "when-now": "விடும்போது", "when-past": "விட்டபோது", "if-or-when": ["விட்டா", "விட்டால்"] }
+      readings: { "when-now": "viṭumpōtu", "when-past": "viṭṭapōtu", "if-or-when": ["viṭṭā", "viṭṭāl"] }
+    - word: "ta-0451"
+      forms: { "when-now": "கொள்ளும்போது", "when-past": "கொண்டபோது", "if-or-when": ["கொண்டா", "கொண்டால்"] }
+      readings: { "when-now": "koḷḷumpōtu", "when-past": "koṇṭapōtu", "if-or-when": ["koṇṭā", "koṇṭāl"] }
+    - word: "ta-0452"
+      forms: { "when-now": "போடும்போது", "when-past": "போட்டபோது", "if-or-when": ["போட்டா", "போட்டால்"] }
+      readings: { "when-now": "pōṭumpōtu", "when-past": "pōṭṭapōtu", "if-or-when": ["pōṭṭā", "pōṭṭāl"] }
+    - word: "ta-0453"
+      forms: { "when-now": "தரும்போது", "when-past": "தந்தபோது", "if-or-when": ["தந்தா", "தந்தால்"] }
+      readings: { "when-now": "tarumpōtu", "when-past": "tantapōtu", "if-or-when": ["tantā", "tantāl"] }
+    - word: "ta-0454"
+      forms: { "when-now": "நிறுத்தும்போது", "when-past": ["நிறுத்தினபோது", "நிறுத்தியபோது"], "if-or-when": ["நிறுத்தினா", "நிறுத்தினால்"] }
+      readings: { "when-now": "niṟuttumpōtu", "when-past": ["niṟuttiṉapōtu", "niṟuttiyapōtu"], "if-or-when": ["niṟuttiṉā", "niṟuttiṉāl"] }
+    - word: "ta-0455"
+      forms: { "when-now": "தள்ளும்போது", "when-past": ["தள்ளினபோது", "தள்ளியபோது"], "if-or-when": ["தள்ளினா", "தள்ளினால்"] }
+      readings: { "when-now": "taḷḷumpōtu", "when-past": ["taḷḷiṉapōtu", "taḷḷiyapōtu"], "if-or-when": ["taḷḷiṉā", "taḷḷiṉāl"] }
+    - word: "ta-0456"
+      forms: { "when-now": "பிடிக்கும்போது", "when-past": "பிடித்தபோது", "if-or-when": ["பிடிச்சா", "பிடித்தால்"] }
+      readings: { "when-now": "piṭikkumpōtu", "when-past": "piṭittapōtu", "if-or-when": ["piṭiccā", "piṭittāl"] }
+    - word: "ta-0457"
+      forms: { "when-now": "வீசும்போது", "when-past": ["வீசினபோது", "வீசியபோது"], "if-or-when": ["வீசினா", "வீசினால்"] }
+      readings: { "when-now": "vīcumpōtu", "when-past": ["vīciṉapōtu", "vīciyapōtu"], "if-or-when": ["vīciṉā", "vīciṉāl"] }
+    - word: "ta-0458"
+      forms: { "when-now": "தூக்கும்போது", "when-past": ["தூக்கினபோது", "தூக்கியபோது"], "if-or-when": ["தூக்கினா", "தூக்கினால்"] }
+      readings: { "when-now": "tūkkumpōtu", "when-past": ["tūkkiṉapōtu", "tūkkiyapōtu"], "if-or-when": ["tūkkiṉā", "tūkkiṉāl"] }
+    - word: "ta-0460"
+      forms: { "when-now": "பண்ணும்போது", "when-past": ["பண்ணினபோது", "பண்ணியபோது"], "if-or-when": ["பண்ணினா", "பண்ணினால்"] }
+      readings: { "when-now": "paṇṇumpōtu", "when-past": ["paṇṇiṉapōtu", "paṇṇiyapōtu"], "if-or-when": ["paṇṇiṉā", "paṇṇiṉāl"] }
+    - word: "ta-0461"
+      forms: { "when-now": "ஆகும்போது", "when-past": "ஆனபோது", "if-or-when": ["ஆனா", "ஆனால்"] }
+      readings: { "when-now": "ākumpōtu", "when-past": "āṉapōtu", "if-or-when": ["āṉā", "āṉāl"] }
+    - word: "ta-0462"
+      forms: { "when-now": "படும்போது", "when-past": "பட்டபோது", "if-or-when": ["பட்டா", "பட்டால்"] }
+      readings: { "when-now": "paṭumpōtu", "when-past": "paṭṭapōtu", "if-or-when": ["paṭṭā", "paṭṭāl"] }
+    - word: "ta-0470"
+      forms: { "when-now": "செல்லும்போது", "when-past": "சென்றபோது", "if-or-when": ["சென்றா", "சென்றால்"] }
+      readings: { "when-now": "cellumpōtu", "when-past": "ceṉṟapōtu", "if-or-when": ["ceṉṟā", "ceṉṟāl"] }
+    - word: "ta-0471"
+      forms: { "when-now": "உண்ணும்போது", "when-past": "உண்டபோது", "if-or-when": ["உண்டா", "உண்டால்"] }
+      readings: { "when-now": "uṇṇumpōtu", "when-past": "uṇṭapōtu", "if-or-when": ["uṇṭā", "uṇṭāl"] }
+    - word: "ta-0472"
+      forms: { "when-now": "அருந்தும்போது", "when-past": ["அருந்தினபோது", "அருந்தியபோது"], "if-or-when": ["அருந்தினா", "அருந்தினால்"] }
+      readings: { "when-now": "aruntumpōtu", "when-past": ["aruntiṉapōtu", "aruntiyapōtu"], "if-or-when": ["aruntiṉā", "aruntiṉāl"] }
+    - word: "ta-0473"
+      forms: { "when-now": "கூறும்போது", "when-past": ["கூறினபோது", "கூறியபோது"], "if-or-when": ["கூறினா", "கூறினால்"] }
+      readings: { "when-now": "kūṟumpōtu", "when-past": ["kūṟiṉapōtu", "kūṟiyapōtu"], "if-or-when": ["kūṟiṉā", "kūṟiṉāl"] }
+    - word: "ta-0474"
+      forms: { "when-now": "தெரிவிக்கும்போது", "when-past": "தெரிவித்தபோது", "if-or-when": ["தெரிவித்தா", "தெரிவித்தால்"] }
+      readings: { "when-now": "terivikkumpōtu", "when-past": "terivittapōtu", "if-or-when": ["terivittā", "terivittāl"] }
+    - word: "ta-2003"
+      forms: { "when-now": "உடுத்தும்போது", "when-past": ["உடுத்தினபோது", "உடுத்தியபோது"], "if-or-when": ["உடுத்தினா", "உடுத்தினால்"] }
+      readings: { "when-now": "uṭuttumpōtu", "when-past": ["uṭuttiṉapōtu", "uṭuttiyapōtu"], "if-or-when": ["uṭuttiṉā", "uṭuttiṉāl"] }
+    - word: "ta-2004"
+      forms: { "when-now": "கழற்றும்போது", "when-past": ["கழற்றினபோது", "கழற்றியபோது"], "if-or-when": ["கழற்றினா", "கழற்றினால்"] }
+      readings: { "when-now": "kaḻaṟṟumpōtu", "when-past": ["kaḻaṟṟiṉapōtu", "kaḻaṟṟiyapōtu"], "if-or-when": ["kaḻaṟṟiṉā", "kaḻaṟṟiṉāl"] }
+    - word: "ta-2005"
+      forms: { "when-now": "கட்டும்போது", "when-past": ["கட்டினபோது", "கட்டியபோது"], "if-or-when": ["கட்டினா", "கட்டினால்"] }
+      readings: { "when-now": "kaṭṭumpōtu", "when-past": ["kaṭṭiṉapōtu", "kaṭṭiyapōtu"], "if-or-when": ["kaṭṭiṉā", "kaṭṭiṉāl"] }
+    - word: "ta-2006"
+      forms: { "when-now": "சீவும்போது", "when-past": ["சீவினபோது", "சீவியபோது"], "if-or-when": ["சீவினா", "சீவினால்"] }
+      readings: { "when-now": "cīvumpōtu", "when-past": ["cīviṉapōtu", "cīviyapōtu"], "if-or-when": ["cīviṉā", "cīviṉāl"] }
+    - word: "ta-2007"
+      forms: { "when-now": "அலங்கரிக்கும்போது", "when-past": "அலங்கரித்தபோது", "if-or-when": ["அலங்கரித்தா", "அலங்கரித்தால்"] }
+      readings: { "when-now": "alaṅkarikkumpōtu", "when-past": "alaṅkarittapōtu", "if-or-when": ["alaṅkarittā", "alaṅkarittāl"] }
+    - word: "ta-2008"
+      forms: { "when-now": "வளரும்போது", "when-past": "வளர்ந்தபோது", "if-or-when": ["வளர்ந்தா", "வளர்ந்தால்"] }
+      readings: { "when-now": "vaḷarumpōtu", "when-past": "vaḷarntapōtu", "if-or-when": ["vaḷarntā", "vaḷarntāl"] }
+    - word: "ta-2009"
+      forms: { "when-now": "பூசும்போது", "when-past": ["பூசினபோது", "பூசியபோது"], "if-or-when": ["பூசினா", "பூசினால்"] }
+      readings: { "when-now": "pūcumpōtu", "when-past": ["pūciṉapōtu", "pūciyapōtu"], "if-or-when": ["pūciṉā", "pūciṉāl"] }
+    - word: "ta-1945"
+      forms: { "when-now": "பெருக்கும்போது", "when-past": ["பெருக்கினபோது", "பெருக்கியபோது"], "if-or-when": ["பெருக்கினா", "பெருக்கினால்"] }
+      readings: { "when-now": "perukkumpōtu", "when-past": ["perukkiṉapōtu", "perukkiyapōtu"], "if-or-when": ["perukkiṉā", "perukkiṉāl"] }
+    - word: "ta-1946"
+      forms: { "when-now": "துடைக்கும்போது", "when-past": "துடைத்தபோது", "if-or-when": ["துடைத்தா", "துடைத்தால்"] }
+      readings: { "when-now": "tuṭaikkumpōtu", "when-past": "tuṭaittapōtu", "if-or-when": ["tuṭaittā", "tuṭaittāl"] }
+    - word: "ta-1947"
+      forms: { "when-now": "துவைக்கும்போது", "when-past": "துவைத்தபோது", "if-or-when": ["துவைத்தா", "துவைத்தால்"] }
+      readings: { "when-now": "tuvaikkumpōtu", "when-past": "tuvaittapōtu", "if-or-when": ["tuvaittā", "tuvaittāl"] }
+    - word: "ta-1948"
+      forms: { "when-now": "மடிக்கும்போது", "when-past": "மடித்தபோது", "if-or-when": ["மடித்தா", "மடித்தால்"] }
+      readings: { "when-now": "maṭikkumpōtu", "when-past": "maṭittapōtu", "if-or-when": ["maṭittā", "maṭittāl"] }
+    - word: "ta-1949"
+      forms: { "when-now": "இழுக்கும்போது", "when-past": "இழுத்தபோது", "if-or-when": ["இழுத்தா", "இழுத்தால்"] }
+      readings: { "when-now": "iḻukkumpōtu", "when-past": "iḻuttapōtu", "if-or-when": ["iḻuttā", "iḻuttāl"] }
+    - word: "ta-1951"
+      forms: { "when-now": "நிரப்பும்போது", "when-past": ["நிரப்பினபோது", "நிரப்பியபோது"], "if-or-when": ["நிரப்பினா", "நிரப்பினால்"] }
+      readings: { "when-now": "nirappumpōtu", "when-past": ["nirappiṉapōtu", "nirappiyapōtu"], "if-or-when": ["nirappiṉā", "nirappiṉāl"] }
+    - word: "ta-1952"
+      forms: { "when-now": "ஊற்றும்போது", "when-past": ["ஊற்றினபோது", "ஊற்றியபோது"], "if-or-when": ["ஊற்றினா", "ஊற்றினால்"] }
+      readings: { "when-now": "ūṟṟumpōtu", "when-past": ["ūṟṟiṉapōtu", "ūṟṟiyapōtu"], "if-or-when": ["ūṟṟiṉā", "ūṟṟiṉāl"] }
+    - word: "ta-1953"
+      forms: { "when-now": "அணைக்கும்போது", "when-past": "அணைத்தபோது", "if-or-when": ["அணைத்தா", "அணைத்தால்"] }
+      readings: { "when-now": "aṇaikkumpōtu", "when-past": "aṇaittapōtu", "if-or-when": ["aṇaittā", "aṇaittāl"] }
+    - word: "ta-1954"
+      forms: { "when-now": "ஏற்றும்போது", "when-past": ["ஏற்றினபோது", "ஏற்றியபோது"], "if-or-when": ["ஏற்றினா", "ஏற்றினால்"] }
+      readings: { "when-now": "ēṟṟumpōtu", "when-past": ["ēṟṟiṉapōtu", "ēṟṟiyapōtu"], "if-or-when": ["ēṟṟiṉā", "ēṟṟiṉāl"] }
+    - word: "ta-1955"
+      forms: { "when-now": "உலர்த்தும்போது", "when-past": ["உலர்த்தினபோது", "உலர்த்தியபோது"], "if-or-when": ["உலர்த்தினா", "உலர்த்தினால்"] }
+      readings: { "when-now": "ularttumpōtu", "when-past": ["ularttiṉapōtu", "ularttiyapōtu"], "if-or-when": ["ularttiṉā", "ularttiṉāl"] }
+    - word: "ta-1956"
+      forms: { "when-now": "வெட்டும்போது", "when-past": ["வெட்டினபோது", "வெட்டியபோது"], "if-or-when": ["வெட்டினா", "வெட்டினால்"] }
+      readings: { "when-now": "veṭṭumpōtu", "when-past": ["veṭṭiṉapōtu", "veṭṭiyapōtu"], "if-or-when": ["veṭṭiṉā", "veṭṭiṉāl"] }
+    - word: "ta-1957"
+      forms: { "when-now": "கலக்கும்போது", "when-past": ["கலக்கினபோது", "கலக்கியபோது"], "if-or-when": ["கலக்கினா", "கலக்கினால்"] }
+      readings: { "when-now": "kalakkumpōtu", "when-past": ["kalakkiṉapōtu", "kalakkiyapōtu"], "if-or-when": ["kalakkiṉā", "kalakkiṉāl"] }
+    - word: "ta-1958"
+      forms: { "when-now": "தேடும்போது", "when-past": ["தேடினபோது", "தேடியபோது"], "if-or-when": ["தேடினா", "தேடினால்"] }
+      readings: { "when-now": "tēṭumpōtu", "when-past": ["tēṭiṉapōtu", "tēṭiyapōtu"], "if-or-when": ["tēṭiṉā", "tēṭiṉāl"] }
+    - word: "ta-1959"
+      forms: { "when-now": "அடுக்கும்போது", "when-past": ["அடுக்கினபோது", "அடுக்கியபோது"], "if-or-when": ["அடுக்கினா", "அடுக்கினால்"] }
+      readings: { "when-now": "aṭukkumpōtu", "when-past": ["aṭukkiṉapōtu", "aṭukkiyapōtu"], "if-or-when": ["aṭukkiṉā", "aṭukkiṉāl"] }
+    - word: "ta-1961"
+      forms: { "when-now": "மாற்றும்போது", "when-past": ["மாற்றினபோது", "மாற்றியபோது"], "if-or-when": ["மாற்றினா", "மாற்றினால்"] }
+      readings: { "when-now": "māṟṟumpōtu", "when-past": ["māṟṟiṉapōtu", "māṟṟiyapōtu"], "if-or-when": ["māṟṟiṉā", "māṟṟiṉāl"] }
+    - word: "ta-1183"
+      forms: { "when-now": "பொங்கும்போது", "when-past": ["பொங்கினபோது", "பொங்கியபோது"], "if-or-when": ["பொங்கினா", "பொங்கினால்"] }
+      readings: { "when-now": "poṅkumpōtu", "when-past": ["poṅkiṉapōtu", "poṅkiyapōtu"], "if-or-when": ["poṅkiṉā", "poṅkiṉāl"] }
+    - word: "ta-1192"
+      forms: { "when-now": "கொண்டாடும்போது", "when-past": ["கொண்டாடினபோது", "கொண்டாடியபோது"], "if-or-when": ["கொண்டாடினா", "கொண்டாடினால்"] }
+      readings: { "when-now": "koṇṭāṭumpōtu", "when-past": ["koṇṭāṭiṉapōtu", "koṇṭāṭiyapōtu"], "if-or-when": ["koṇṭāṭiṉā", "koṇṭāṭiṉāl"] }
+    - word: "ta-1202"
+      forms: { "when-now": "வணங்கும்போது", "when-past": ["வணங்கினபோது", "வணங்கியபோது"], "if-or-when": ["வணங்கினா", "வணங்கினால்"] }
+      readings: { "when-now": "vaṇaṅkumpōtu", "when-past": ["vaṇaṅkiṉapōtu", "vaṇaṅkiyapōtu"], "if-or-when": ["vaṇaṅkiṉā", "vaṇaṅkiṉāl"] }
+    - word: "ta-1905"
+      forms: { "when-now": "பாடும்போது", "when-past": ["பாடினபோது", "பாடியபோது"], "if-or-when": ["பாடினா", "பாடினால்"] }
+      readings: { "when-now": "pāṭumpōtu", "when-past": ["pāṭiṉapōtu", "pāṭiyapōtu"], "if-or-when": ["pāṭiṉā", "pāṭiṉāl"] }
+    - word: "ta-1907"
+      forms: { "when-now": "தீட்டும்போது", "when-past": ["தீட்டினபோது", "தீட்டியபோது"], "if-or-when": ["தீட்டினா", "தீட்டினால்"] }
+      readings: { "when-now": "tīṭṭumpōtu", "when-past": ["tīṭṭiṉapōtu", "tīṭṭiyapōtu"], "if-or-when": ["tīṭṭiṉā", "tīṭṭiṉāl"] }
+    - word: "ta-1908"
+      forms: { "when-now": "ஓடும்போது", "when-past": ["ஓடினபோது", "ஓடியபோது"], "if-or-when": ["ஓடினா", "ஓடினால்"] }
+      readings: { "when-now": "ōṭumpōtu", "when-past": ["ōṭiṉapōtu", "ōṭiyapōtu"], "if-or-when": ["ōṭiṉā", "ōṭiṉāl"] }
+    - word: "ta-1909"
+      forms: { "when-now": "பறக்கும்போது", "when-past": "பறந்தபோது", "if-or-when": ["பறந்தா", "பறந்தால்"] }
+      readings: { "when-now": "paṟakkumpōtu", "when-past": "paṟantapōtu", "if-or-when": ["paṟantā", "paṟantāl"] }
+    - word: "ta-1910"
+      forms: { "when-now": "நீந்தும்போது", "when-past": ["நீந்தினபோது", "நீந்தியபோது"], "if-or-when": ["நீந்தினா", "நீந்தினால்"] }
+      readings: { "when-now": "nīntumpōtu", "when-past": ["nīntiṉapōtu", "nīntiyapōtu"], "if-or-when": ["nīntiṉā", "nīntiṉāl"] }
+    - word: "ta-1911"
+      forms: { "when-now": "குதிக்கும்போது", "when-past": "குதித்தபோது", "if-or-when": ["குதித்தா", "குதித்தால்"] }
+      readings: { "when-now": "kutikkumpōtu", "when-past": "kutittapōtu", "if-or-when": ["kutittā", "kutittāl"] }
+    - word: "ta-1912"
+      forms: { "when-now": "ஏறும்போது", "when-past": ["ஏறினபோது", "ஏறியபோது"], "if-or-when": ["ஏறினா", "ஏறினால்"] }
+      readings: { "when-now": "ēṟumpōtu", "when-past": ["ēṟiṉapōtu", "ēṟiyapōtu"], "if-or-when": ["ēṟiṉā", "ēṟiṉāl"] }
+    - word: "ta-1913"
+      forms: { "when-now": "சேகரிக்கும்போது", "when-past": "சேகரித்தபோது", "if-or-when": ["சேகரித்தா", "சேகரித்தால்"] }
+      readings: { "when-now": "cēkarikkumpōtu", "when-past": "cēkarittapōtu", "if-or-when": ["cēkarittā", "cēkarittāl"] }
+    - word: "ta-1914"
+      forms: { "when-now": "சிரிக்கும்போது", "when-past": "சிரித்தபோது", "if-or-when": ["சிரித்தா", "சிரித்தால்"] }
+      readings: { "when-now": "cirikkumpōtu", "when-past": "cirittapōtu", "if-or-when": ["cirittā", "cirittāl"] }
+    - word: "ta-1915"
+      forms: { "when-now": "ரசிக்கும்போது", "when-past": "ரசித்தபோது", "if-or-when": ["ரசித்தா", "ரசித்தால்"] }
+      readings: { "when-now": "racikkumpōtu", "when-past": "racittapōtu", "if-or-when": ["racittā", "racittāl"] }
+    - word: "ta-1916"
+      forms: { "when-now": "வெல்லும்போது", "when-past": "வென்றபோது", "if-or-when": ["வென்றா", "வென்றால்"] }
+      readings: { "when-now": "vellumpōtu", "when-past": "veṉṟapōtu", "if-or-when": ["veṉṟā", "veṉṟāl"] }
+    - word: "ta-2180"
+      forms: { "when-now": "ஓட்டும்போது", "when-past": ["ஓட்டினபோது", "ஓட்டியபோது"], "if-or-when": ["ஓட்டினா", "ஓட்டினால்"] }
+      readings: { "when-now": "ōṭṭumpōtu", "when-past": ["ōṭṭiṉapōtu", "ōṭṭiyapōtu"], "if-or-when": ["ōṭṭiṉā", "ōṭṭiṉāl"] }
+    - word: "ta-2182"
+      forms: { "when-now": "அடையும்போது", "when-past": "அடைந்தபோது", "if-or-when": ["அடைந்தா", "அடைந்தால்"] }
+      readings: { "when-now": "aṭaiyumpōtu", "when-past": "aṭaintapōtu", "if-or-when": ["aṭaintā", "aṭaintāl"] }
+    - word: "ta-2183"
+      forms: { "when-now": "இறக்கும்போது", "when-past": ["இறக்கினபோது", "இறக்கியபோது"], "if-or-when": ["இறக்கினா", "இறக்கினால்"] }
+      readings: { "when-now": "iṟakkumpōtu", "when-past": ["iṟakkiṉapōtu", "iṟakkiyapōtu"], "if-or-when": ["iṟakkiṉā", "iṟakkiṉāl"] }
+    - word: "ta-2186"
+      forms: { "when-now": "இயங்கும்போது", "when-past": ["இயங்கினபோது", "இயங்கியபோது"], "if-or-when": ["இயங்கினா", "இயங்கினால்"] }
+      readings: { "when-now": "iyaṅkumpōtu", "when-past": ["iyaṅkiṉapōtu", "iyaṅkiyapōtu"], "if-or-when": ["iyaṅkiṉā", "iyaṅkiṉāl"] }
+    - word: "ta-2191"
+      forms: { "when-now": "பரிசோதிக்கும்போது", "when-past": "பரிசோதித்தபோது", "if-or-when": ["பரிசோதித்தா", "பரிசோதித்தால்"] }
+      readings: { "when-now": "paricōtikkumpōtu", "when-past": "paricōtittapōtu", "if-or-when": ["paricōtittā", "paricōtittāl"] }
+    - word: "ta-2241"
+      forms: { "when-now": "மலரும்போது", "when-past": "மலர்ந்தபோது", "if-or-when": ["மலர்ந்தா", "மலர்ந்தால்"] }
+      readings: { "when-now": "malarumpōtu", "when-past": "malarntapōtu", "if-or-when": ["malarntā", "malarntāl"] }
+    - word: "ta-2242"
+      forms: { "when-now": "உதிரும்போது", "when-past": "உதிர்ந்தபோது", "if-or-when": ["உதிர்ந்தா", "உதிர்ந்தால்"] }
+      readings: { "when-now": "utirumpōtu", "when-past": "utirntapōtu", "if-or-when": ["utirntā", "utirntāl"] }
+    - word: "ta-2243"
+      forms: { "when-now": "முளைக்கும்போது", "when-past": "முளைத்தபோது", "if-or-when": ["முளைத்தா", "முளைத்தால்"] }
+      readings: { "when-now": "muḷaikkumpōtu", "when-past": "muḷaittapōtu", "if-or-when": ["muḷaittā", "muḷaittāl"] }
+    - word: "ta-2244"
+      forms: { "when-now": "உருகும்போது", "when-past": ["உருகினபோது", "உருகியபோது"], "if-or-when": ["உருகினா", "உருகினால்"] }
+      readings: { "when-now": "urukumpōtu", "when-past": ["urukiṉapōtu", "urukiyapōtu"], "if-or-when": ["urukiṉā", "urukiṉāl"] }
+    - word: "ta-2245"
+      forms: { "when-now": "உறையும்போது", "when-past": "உறைந்தபோது", "if-or-when": ["உறைந்தா", "உறைந்தால்"] }
+      readings: { "when-now": "uṟaiyumpōtu", "when-past": "uṟaintapōtu", "if-or-when": ["uṟaintā", "uṟaintāl"] }
+    - word: "ta-2246"
+      forms: { "when-now": "ஒழுகும்போது", "when-past": ["ஒழுகினபோது", "ஒழுகியபோது"], "if-or-when": ["ஒழுகினா", "ஒழுகினால்"] }
+      readings: { "when-now": "oḻukumpōtu", "when-past": ["oḻukiṉapōtu", "oḻukiyapōtu"], "if-or-when": ["oḻukiṉā", "oḻukiṉāl"] }
+    - word: "ta-2122"
+      forms: { "when-now": "இணைக்கும்போது", "when-past": "இணைத்தபோது", "if-or-when": ["இணைத்தா", "இணைத்தால்"] }
+      readings: { "when-now": "iṇaikkumpōtu", "when-past": "iṇaittapōtu", "if-or-when": ["iṇaittā", "iṇaittāl"] }
+    - word: "ta-2123"
+      forms: { "when-now": "துண்டிக்கும்போது", "when-past": "துண்டித்தபோது", "if-or-when": ["துண்டித்தா", "துண்டித்தால்"] }
+      readings: { "when-now": "tuṇṭikkumpōtu", "when-past": "tuṇṭittapōtu", "if-or-when": ["tuṇṭittā", "tuṇṭittāl"] }
+    - word: "ta-2124"
+      forms: { "when-now": "நீக்கும்போது", "when-past": ["நீக்கினபோது", "நீக்கியபோது"], "if-or-when": ["நீக்கினா", "நீக்கினால்"] }
+      readings: { "when-now": "nīkkumpōtu", "when-past": ["nīkkiṉapōtu", "nīkkiyapōtu"], "if-or-when": ["nīkkiṉā", "nīkkiṉāl"] }
+    - word: "ta-2125"
+      forms: { "when-now": "புதுப்பிக்கும்போது", "when-past": "புதுப்பித்தபோது", "if-or-when": ["புதுப்பித்தா", "புதுப்பித்தால்"] }
+      readings: { "when-now": "putuppikkumpōtu", "when-past": "putuppittapōtu", "if-or-when": ["putuppittā", "putuppittāl"] }
+    - word: "ta-2126"
+      forms: { "when-now": "நிறுவும்போது", "when-past": ["நிறுவினபோது", "நிறுவியபோது"], "if-or-when": ["நிறுவினா", "நிறுவினால்"] }
+      readings: { "when-now": "niṟuvumpōtu", "when-past": ["niṟuviṉapōtu", "niṟuviyapōtu"], "if-or-when": ["niṟuviṉā", "niṟuviṉāl"] }
+    - word: "ta-2128"
+      forms: { "when-now": "அழுத்தும்போது", "when-past": ["அழுத்தினபோது", "அழுத்தியபோது"], "if-or-when": ["அழுத்தினா", "அழுத்தினால்"] }
+      readings: { "when-now": "aḻuttumpōtu", "when-past": ["aḻuttiṉapōtu", "aḻuttiyapōtu"], "if-or-when": ["aḻuttiṉā", "aḻuttiṉāl"] }
+    - word: "ta-1857"
+      forms: { "when-now": "புரியும்போது", "when-past": "புரிந்தபோது", "if-or-when": ["புரிந்தா", "புரிந்தால்"] }
+      readings: { "when-now": "puriyumpōtu", "when-past": "purintapōtu", "if-or-when": ["purintā", "purintāl"] }
+    - word: "ta-1858"
+      forms: { "when-now": "மறக்கும்போது", "when-past": "மறந்தபோது", "if-or-when": ["மறந்தா", "மறந்தால்"] }
+      readings: { "when-now": "maṟakkumpōtu", "when-past": "maṟantapōtu", "if-or-when": ["maṟantā", "maṟantāl"] }
+    - word: "ta-1859"
+      forms: { "when-now": "நினைக்கும்போது", "when-past": "நினைத்தபோது", "if-or-when": ["நினைத்தா", "நினைத்தால்"] }
+      readings: { "when-now": "niṉaikkumpōtu", "when-past": "niṉaittapōtu", "if-or-when": ["niṉaittā", "niṉaittāl"] }
+    - word: "ta-1242"
+      forms: { "when-now": "செலுத்தும்போது", "when-past": ["செலுத்தினபோது", "செலுத்தியபோது"], "if-or-when": ["செலுத்தினா", "செலுத்தினால்"] }
+      readings: { "when-now": "celuttumpōtu", "when-past": ["celuttiṉapōtu", "celuttiyapōtu"], "if-or-when": ["celuttiṉā", "celuttiṉāl"] }
+    - word: "ta-1243"
+      forms: { "when-now": "ஒப்பிடும்போது", "when-past": "ஒப்பிட்டபோது", "if-or-when": ["ஒப்பிட்டா", "ஒப்பிட்டால்"] }
+      readings: { "when-now": "oppiṭumpōtu", "when-past": "oppiṭṭapōtu", "if-or-when": ["oppiṭṭā", "oppiṭṭāl"] }
+    - word: "ta-1244"
+      forms: { "when-now": "விசாரிக்கும்போது", "when-past": "விசாரித்தபோது", "if-or-when": ["விசாரித்தா", "விசாரித்தால்"] }
+      readings: { "when-now": "vicārikkumpōtu", "when-past": "vicārittapōtu", "if-or-when": ["vicārittā", "vicārittāl"] }
+    - word: "ta-1245"
+      forms: { "when-now": "கூட்டும்போது", "when-past": ["கூட்டினபோது", "கூட்டியபோது"], "if-or-when": ["கூட்டினா", "கூட்டினால்"] }
+      readings: { "when-now": "kūṭṭumpōtu", "when-past": ["kūṭṭiṉapōtu", "kūṭṭiyapōtu"], "if-or-when": ["kūṭṭiṉā", "kūṭṭiṉāl"] }
+    - word: "ta-1246"
+      forms: { "when-now": "வசூலிக்கும்போது", "when-past": "வசூலித்தபோது", "if-or-when": ["வசூலித்தா", "வசூலித்தால்"] }
+      readings: { "when-now": "vacūlikkumpōtu", "when-past": "vacūlittapōtu", "if-or-when": ["vacūlittā", "vacūlittāl"] }
+    - word: "ta-2017"
+      forms: { "when-now": "சொல்லும்போது", "when-past": "சொன்னபோது", "if-or-when": ["சொன்னா", "சொன்னால்"] }
+      readings: { "when-now": "collumpōtu", "when-past": "coṉṉapōtu", "if-or-when": ["coṉṉā", "coṉṉāl"] }
+    - word: "ta-2018"
+      forms: { "when-now": "இருக்கும்போது", "when-past": "இருந்தபோது", "if-or-when": ["இருந்தா", "இருந்தால்"] }
+      readings: { "when-now": "irukkumpōtu", "when-past": "iruntapōtu", "if-or-when": ["iruntā", "iruntāl"] }
+    - word: "ta-2019"
+      forms: { "when-now": "தெரியும்போது", "when-past": "தெரிந்தபோது", "if-or-when": ["தெரிந்தா", "தெரிந்தால்"] }
+      readings: { "when-now": "teriyumpōtu", "when-past": "terintapōtu", "if-or-when": ["terintā", "terintāl"] }
+    - word: "ta-2020"
+      forms: { "when-now": "தங்கும்போது", "when-past": ["தங்கினபோது", "தங்கியபோது"], "if-or-when": ["தங்கினா", "தங்கினால்"] }
+      readings: { "when-now": "taṅkumpōtu", "when-past": ["taṅkiṉapōtu", "taṅkiyapōtu"], "if-or-when": ["taṅkiṉā", "taṅkiṉāl"] }
+    - word: "ta-2021"
+      forms: { "when-now": "வாழும்போது", "when-past": "வாழ்ந்தபோது", "if-or-when": ["வாழ்ந்தா", "வாழ்ந்தால்"] }
+      readings: { "when-now": "vāḻumpōtu", "when-past": "vāḻntapōtu", "if-or-when": ["vāḻntā", "vāḻntāl"] }
+    - word: "ta-2022"
+      forms: { "when-now": "இறங்கும்போது", "when-past": ["இறங்கினபோது", "இறங்கியபோது"], "if-or-when": ["இறங்கினா", "இறங்கினால்"] }
+      readings: { "when-now": "iṟaṅkumpōtu", "when-past": ["iṟaṅkiṉapōtu", "iṟaṅkiyapōtu"], "if-or-when": ["iṟaṅkiṉā", "iṟaṅkiṉāl"] }
+    - word: "ta-2024"
+      forms: { "when-now": "பெறும்போது", "when-past": "பெற்றபோது", "if-or-when": ["பெற்றா", "பெற்றால்"] }
+      readings: { "when-now": "peṟumpōtu", "when-past": "peṟṟapōtu", "if-or-when": ["peṟṟā", "peṟṟāl"] }
+    - word: "ta-2025"
+      forms: { "when-now": "கிடைக்கும்போது", "when-past": "கிடைத்தபோது", "if-or-when": ["கிடைத்தா", "கிடைத்தால்"] }
+      readings: { "when-now": "kiṭaikkumpōtu", "when-past": "kiṭaittapōtu", "if-or-when": ["kiṭaittā", "kiṭaittāl"] }
+    - word: "ta-2029"
+      forms: { "when-now": "அனுப்பும்போது", "when-past": ["அனுப்பினபோது", "அனுப்பியபோது"], "if-or-when": ["அனுப்பினா", "அனுப்பினால்"] }
+      readings: { "when-now": "aṉuppumpōtu", "when-past": ["aṉuppiṉapōtu", "aṉuppiyapōtu"], "if-or-when": ["aṉuppiṉā", "aṉuppiṉāl"] }
+    - word: "ta-2030"
+      forms: { "when-now": "கூப்பிடும்போது", "when-past": "கூப்பிட்டபோது", "if-or-when": ["கூப்பிட்டா", "கூப்பிட்டால்"] }
+      readings: { "when-now": "kūppiṭumpōtu", "when-past": "kūppiṭṭapōtu", "if-or-when": ["kūppiṭṭā", "kūppiṭṭāl"] }
+    - word: "ta-2031"
+      forms: { "when-now": "அழைக்கும்போது", "when-past": "அழைத்தபோது", "if-or-when": ["அழைத்தா", "அழைத்தால்"] }
+      readings: { "when-now": "aḻaikkumpōtu", "when-past": "aḻaittapōtu", "if-or-when": ["aḻaittā", "aḻaittāl"] }
+    - word: "ta-2033"
+      forms: { "when-now": "சந்திக்கும்போது", "when-past": "சந்தித்தபோது", "if-or-when": ["சந்தித்தா", "சந்தித்தால்"] }
+      readings: { "when-now": "cantikkumpōtu", "when-past": "cantittapōtu", "if-or-when": ["cantittā", "cantittāl"] }
+    - word: "ta-2034"
+      forms: { "when-now": "சேரும்போது", "when-past": "சேர்ந்தபோது", "if-or-when": ["சேர்ந்தா", "சேர்ந்தால்"] }
+      readings: { "when-now": "cērumpōtu", "when-past": "cērntapōtu", "if-or-when": ["cērntā", "cērntāl"] }
+    - word: "ta-2035"
+      forms: { "when-now": "பிரியும்போது", "when-past": "பிரிந்தபோது", "if-or-when": ["பிரிந்தா", "பிரிந்தால்"] }
+      readings: { "when-now": "piriyumpōtu", "when-past": "pirintapōtu", "if-or-when": ["pirintā", "pirintāl"] }
+    - word: "ta-2036"
+      forms: { "when-now": "நம்பும்போது", "when-past": ["நம்பினபோது", "நம்பியபோது"], "if-or-when": ["நம்பினா", "நம்பினால்"] }
+      readings: { "when-now": "nampumpōtu", "when-past": ["nampiṉapōtu", "nampiyapōtu"], "if-or-when": ["nampiṉā", "nampiṉāl"] }
+    - word: "ta-2038"
+      forms: { "when-now": "பகிரும்போது", "when-past": "பகிர்ந்தபோது", "if-or-when": ["பகிர்ந்தா", "பகிர்ந்தால்"] }
+      readings: { "when-now": "pakirumpōtu", "when-past": "pakirntapōtu", "if-or-when": ["pakirntā", "pakirntāl"] }
+    - word: "ta-2039"
+      forms: { "when-now": "ஒட்டும்போது", "when-past": ["ஒட்டினபோது", "ஒட்டியபோது"], "if-or-when": ["ஒட்டினா", "ஒட்டினால்"] }
+      readings: { "when-now": "oṭṭumpōtu", "when-past": ["oṭṭiṉapōtu", "oṭṭiyapōtu"], "if-or-when": ["oṭṭiṉā", "oṭṭiṉāl"] }
+    - word: "ta-2040"
+      forms: { "when-now": "கொட்டும்போது", "when-past": ["கொட்டினபோது", "கொட்டியபோது"], "if-or-when": ["கொட்டினா", "கொட்டினால்"] }
+      readings: { "when-now": "koṭṭumpōtu", "when-past": ["koṭṭiṉapōtu", "koṭṭiyapōtu"], "if-or-when": ["koṭṭiṉā", "koṭṭiṉāl"] }
+    - word: "ta-2041"
+      forms: { "when-now": "எரியும்போது", "when-past": "எரிந்தபோது", "if-or-when": ["எரிந்தா", "எரிந்தால்"] }
+      readings: { "when-now": "eriyumpōtu", "when-past": "erintapōtu", "if-or-when": ["erintā", "erintāl"] }
+    - word: "ta-2042"
+      forms: { "when-now": "உருவாக்கும்போது", "when-past": ["உருவாக்கினபோது", "உருவாக்கியபோது"], "if-or-when": ["உருவாக்கினா", "உருவாக்கினால்"] }
+      readings: { "when-now": "uruvākkumpōtu", "when-past": ["uruvākkiṉapōtu", "uruvākkiyapōtu"], "if-or-when": ["uruvākkiṉā", "uruvākkiṉāl"] }
+    - word: "ta-2043"
+      forms: { "when-now": "திருடும்போது", "when-past": ["திருடினபோது", "திருடியபோது"], "if-or-when": ["திருடினா", "திருடினால்"] }
+      readings: { "when-now": "tiruṭumpōtu", "when-past": ["tiruṭiṉapōtu", "tiruṭiyapōtu"], "if-or-when": ["tiruṭiṉā", "tiruṭiṉāl"] }
+    - word: "ta-2044"
+      forms: { "when-now": "யோசிக்கும்போது", "when-past": "யோசித்தபோது", "if-or-when": ["யோசித்தா", "யோசித்தால்"] }
+      readings: { "when-now": "yōcikkumpōtu", "when-past": "yōcittapōtu", "if-or-when": ["yōcittā", "yōcittāl"] }
+    - word: "ta-2045"
+      forms: { "when-now": "விரும்பும்போது", "when-past": ["விரும்பினபோது", "விரும்பியபோது"], "if-or-when": ["விரும்பினா", "விரும்பினால்"] }
+      readings: { "when-now": "virumpumpōtu", "when-past": ["virumpiṉapōtu", "virumpiyapōtu"], "if-or-when": ["virumpiṉā", "virumpiṉāl"] }
+    - word: "ta-2049"
+      forms: { "when-now": "அழும்போது", "when-past": "அழுதபோது", "if-or-when": ["அழுதா", "அழுதால்"] }
+      readings: { "when-now": "aḻumpōtu", "when-past": "aḻutapōtu", "if-or-when": ["aḻutā", "aḻutāl"] }
+    - word: "ta-2050"
+      forms: { "when-now": "எண்ணும்போது", "when-past": ["எண்ணினபோது", "எண்ணியபோது"], "if-or-when": ["எண்ணினா", "எண்ணினால்"] }
+      readings: { "when-now": "eṇṇumpōtu", "when-past": ["eṇṇiṉapōtu", "eṇṇiyapōtu"], "if-or-when": ["eṇṇiṉā", "eṇṇiṉāl"] }
+    - word: "ta-2051"
+      forms: { "when-now": "நுழையும்போது", "when-past": "நுழைந்தபோது", "if-or-when": ["நுழைந்தா", "நுழைந்தால்"] }
+      readings: { "when-now": "nuḻaiyumpōtu", "when-past": "nuḻaintapōtu", "if-or-when": ["nuḻaintā", "nuḻaintāl"] }
+    - word: "ta-2052"
+      forms: { "when-now": "வெளியேறும்போது", "when-past": ["வெளியேறினபோது", "வெளியேறியபோது"], "if-or-when": ["வெளியேறினா", "வெளியேறினால்"] }
+      readings: { "when-now": "veḷiyēṟumpōtu", "when-past": ["veḷiyēṟiṉapōtu", "veḷiyēṟiyapōtu"], "if-or-when": ["veḷiyēṟiṉā", "veḷiyēṟiṉāl"] }
+    - word: "ta-2053"
+      forms: { "when-now": "கடக்கும்போது", "when-past": "கடந்தபோது", "if-or-when": ["கடந்தா", "கடந்தால்"] }
+      readings: { "when-now": "kaṭakkumpōtu", "when-past": "kaṭantapōtu", "if-or-when": ["kaṭantā", "kaṭantāl"] }
+    - word: "ta-2054"
+      forms: { "when-now": "சுற்றும்போது", "when-past": ["சுற்றினபோது", "சுற்றியபோது"], "if-or-when": ["சுற்றினா", "சுற்றினால்"] }
+      readings: { "when-now": "cuṟṟumpōtu", "when-past": ["cuṟṟiṉapōtu", "cuṟṟiyapōtu"], "if-or-when": ["cuṟṟiṉā", "cuṟṟiṉāl"] }
+    - word: "ta-2055"
+      forms: { "when-now": "அமரும்போது", "when-past": "அமர்ந்தபோது", "if-or-when": ["அமர்ந்தா", "அமர்ந்தால்"] }
+      readings: { "when-now": "amarumpōtu", "when-past": "amarntapōtu", "if-or-when": ["amarntā", "amarntāl"] }
+    - word: "ta-2056"
+      forms: { "when-now": "நகரும்போது", "when-past": "நகர்ந்தபோது", "if-or-when": ["நகர்ந்தா", "நகர்ந்தால்"] }
+      readings: { "when-now": "nakarumpōtu", "when-past": "nakarntapōtu", "if-or-when": ["nakarntā", "nakarntāl"] }
+    - word: "ta-2057"
+      forms: { "when-now": "தொடும்போது", "when-past": "தொட்டபோது", "if-or-when": ["தொட்டா", "தொட்டால்"] }
+      readings: { "when-now": "toṭumpōtu", "when-past": "toṭṭapōtu", "if-or-when": ["toṭṭā", "toṭṭāl"] }
+    - word: "ta-2058"
+      forms: { "when-now": "எறியும்போது", "when-past": "எறிந்தபோது", "if-or-when": ["எறிந்தா", "எறிந்தால்"] }
+      readings: { "when-now": "eṟiyumpōtu", "when-past": "eṟintapōtu", "if-or-when": ["eṟintā", "eṟintāl"] }
+    - word: "ta-2059"
+      forms: { "when-now": "மாறும்போது", "when-past": ["மாறினபோது", "மாறியபோது"], "if-or-when": ["மாறினா", "மாறினால்"] }
+      readings: { "when-now": "māṟumpōtu", "when-past": ["māṟiṉapōtu", "māṟiyapōtu"], "if-or-when": ["māṟiṉā", "māṟiṉāl"] }
+    - word: "ta-2062"
+      forms: { "when-now": "தொடரும்போது", "when-past": "தொடர்ந்தபோது", "if-or-when": ["தொடர்ந்தா", "தொடர்ந்தால்"] }
+      readings: { "when-now": "toṭarumpōtu", "when-past": "toṭarntapōtu", "if-or-when": ["toṭarntā", "toṭarntāl"] }
+    - word: "ta-2063"
+      forms: { "when-now": "முயலும்போது", "when-past": "முயன்றபோது", "if-or-when": ["முயன்றா", "முயன்றால்"] }
+      readings: { "when-now": "muyalumpōtu", "when-past": "muyaṉṟapōtu", "if-or-when": ["muyaṉṟā", "muyaṉṟāl"] }
+    - word: "ta-2064"
+      forms: { "when-now": "சேமிக்கும்போது", "when-past": "சேமித்தபோது", "if-or-when": ["சேமித்தா", "சேமித்தால்"] }
+      readings: { "when-now": "cēmikkumpōtu", "when-past": "cēmittapōtu", "if-or-when": ["cēmittā", "cēmittāl"] }
+    - word: "ta-2065"
+      forms: { "when-now": "செலவழிக்கும்போது", "when-past": "செலவழித்தபோது", "if-or-when": ["செலவழித்தா", "செலவழித்தால்"] }
+      readings: { "when-now": "celavaḻikkumpōtu", "when-past": "celavaḻittapōtu", "if-or-when": ["celavaḻittā", "celavaḻittāl"] }
+    - word: "ta-2066"
+      forms: { "when-now": "எழுப்பும்போது", "when-past": ["எழுப்பினபோது", "எழுப்பியபோது"], "if-or-when": ["எழுப்பினா", "எழுப்பினால்"] }
+      readings: { "when-now": "eḻuppumpōtu", "when-past": ["eḻuppiṉapōtu", "eḻuppiyapōtu"], "if-or-when": ["eḻuppiṉā", "eḻuppiṉāl"] }
+    - word: "ta-2067"
+      forms: { "when-now": "விழிக்கும்போது", "when-past": "விழித்தபோது", "if-or-when": ["விழித்தா", "விழித்தால்"] }
+      readings: { "when-now": "viḻikkumpōtu", "when-past": "viḻittapōtu", "if-or-when": ["viḻittā", "viḻittāl"] }
+    - word: "ta-2068"
+      forms: { "when-now": "விழும்போது", "when-past": "விழுந்தபோது", "if-or-when": ["விழுந்தா", "விழுந்தால்"] }
+      readings: { "when-now": "viḻumpōtu", "when-past": "viḻuntapōtu", "if-or-when": ["viḻuntā", "viḻuntāl"] }
+    - word: "ta-2070"
+      forms: { "when-now": "காட்டும்போது", "when-past": ["காட்டினபோது", "காட்டியபோது"], "if-or-when": ["காட்டினா", "காட்டினால்"] }
+      readings: { "when-now": "kāṭṭumpōtu", "when-past": ["kāṭṭiṉapōtu", "kāṭṭiyapōtu"], "if-or-when": ["kāṭṭiṉā", "kāṭṭiṉāl"] }
+    - word: "ta-2071"
+      forms: { "when-now": "குனியும்போது", "when-past": "குனிந்தபோது", "if-or-when": ["குனிந்தா", "குனிந்தால்"] }
+      readings: { "when-now": "kuṉiyumpōtu", "when-past": "kuṉintapōtu", "if-or-when": ["kuṉintā", "kuṉintāl"] }
+    - word: "ta-2072"
+      forms: { "when-now": "சாயும்போது", "when-past": "சாய்ந்தபோது", "if-or-when": ["சாய்ந்தா", "சாய்ந்தால்"] }
+      readings: { "when-now": "cāyumpōtu", "when-past": "cāyntapōtu", "if-or-when": ["cāyntā", "cāyntāl"] }
+    - word: "ta-2074"
+      forms: { "when-now": "சம்பாதிக்கும்போது", "when-past": "சம்பாதித்தபோது", "if-or-when": ["சம்பாதித்தா", "சம்பாதித்தால்"] }
+      readings: { "when-now": "campātikkumpōtu", "when-past": "campātittapōtu", "if-or-when": ["campātittā", "campātittāl"] }
+    - word: "ta-2075"
+      forms: { "when-now": "பழகும்போது", "when-past": ["பழகினபோது", "பழகியபோது"], "if-or-when": ["பழகினா", "பழகினால்"] }
+      readings: { "when-now": "paḻakumpōtu", "when-past": ["paḻakiṉapōtu", "paḻakiyapōtu"], "if-or-when": ["paḻakiṉā", "paḻakiṉāl"] }
+    - word: "ta-2076"
+      forms: { "when-now": "திட்டும்போது", "when-past": ["திட்டினபோது", "திட்டியபோது"], "if-or-when": ["திட்டினா", "திட்டினால்"] }
+      readings: { "when-now": "tiṭṭumpōtu", "when-past": ["tiṭṭiṉapōtu", "tiṭṭiyapōtu"], "if-or-when": ["tiṭṭiṉā", "tiṭṭiṉāl"] }
+    - word: "ta-2077"
+      forms: { "when-now": "பாராட்டும்போது", "when-past": ["பாராட்டினபோது", "பாராட்டியபோது"], "if-or-when": ["பாராட்டினா", "பாராட்டினால்"] }
+      readings: { "when-now": "pārāṭṭumpōtu", "when-past": ["pārāṭṭiṉapōtu", "pārāṭṭiyapōtu"], "if-or-when": ["pārāṭṭiṉā", "pārāṭṭiṉāl"] }
+    - word: "ta-2078"
+      forms: { "when-now": "நடிக்கும்போது", "when-past": "நடித்தபோது", "if-or-when": ["நடித்தா", "நடித்தால்"] }
+      readings: { "when-now": "naṭikkumpōtu", "when-past": "naṭittapōtu", "if-or-when": ["naṭittā", "naṭittāl"] }
+    - word: "ta-2079"
+      forms: { "when-now": "ஆடும்போது", "when-past": ["ஆடினபோது", "ஆடியபோது"], "if-or-when": ["ஆடினா", "ஆடினால்"] }
+      readings: { "when-now": "āṭumpōtu", "when-past": ["āṭiṉapōtu", "āṭiyapōtu"], "if-or-when": ["āṭiṉā", "āṭiṉāl"] }
+    - word: "ta-2080"
+      forms: { "when-now": "குறையும்போது", "when-past": "குறைந்தபோது", "if-or-when": ["குறைந்தா", "குறைந்தால்"] }
+      readings: { "when-now": "kuṟaiyumpōtu", "when-past": "kuṟaintapōtu", "if-or-when": ["kuṟaintā", "kuṟaintāl"] }
+    - word: "ta-2081"
+      forms: { "when-now": "அதிகரிக்கும்போது", "when-past": "அதிகரித்தபோது", "if-or-when": ["அதிகரித்தா", "அதிகரித்தால்"] }
+      readings: { "when-now": "atikarikkumpōtu", "when-past": "atikarittapōtu", "if-or-when": ["atikarittā", "atikarittāl"] }
+    - word: "ta-2083"
+      forms: { "when-now": "மன்னிக்கும்போது", "when-past": "மன்னித்தபோது", "if-or-when": ["மன்னித்தா", "மன்னித்தால்"] }
+      readings: { "when-now": "maṉṉikkumpōtu", "when-past": "maṉṉittapōtu", "if-or-when": ["maṉṉittā", "maṉṉittāl"] }
+    - word: "ta-2084"
+      forms: { "when-now": "ஏமாற்றும்போது", "when-past": ["ஏமாற்றினபோது", "ஏமாற்றியபோது"], "if-or-when": ["ஏமாற்றினா", "ஏமாற்றினால்"] }
+      readings: { "when-now": "ēmāṟṟumpōtu", "when-past": ["ēmāṟṟiṉapōtu", "ēmāṟṟiyapōtu"], "if-or-when": ["ēmāṟṟiṉā", "ēmāṟṟiṉāl"] }
+    - word: "ta-2085"
+      forms: { "when-now": "பயன்படுத்தும்போது", "when-past": ["பயன்படுத்தினபோது", "பயன்படுத்தியபோது"], "if-or-when": ["பயன்படுத்தினா", "பயன்படுத்தினால்"] }
+      readings: { "when-now": "payaṉpaṭuttumpōtu", "when-past": ["payaṉpaṭuttiṉapōtu", "payaṉpaṭuttiyapōtu"], "if-or-when": ["payaṉpaṭuttiṉā", "payaṉpaṭuttiṉāl"] }
+    - word: "ta-1141"
+      forms: { "when-now": "பெய்யும்போது", "when-past": "பெய்தபோது", "if-or-when": ["பெய்தா", "பெய்தால்"] }
+      readings: { "when-now": "peyyumpōtu", "when-past": "peytapōtu", "if-or-when": ["peytā", "peytāl"] }
+    - word: "ta-1143"
+      forms: { "when-now": "அடிக்கும்போது", "when-past": "அடித்தபோது", "if-or-when": ["அடித்தா", "அடித்தால்"] }
+      readings: { "when-now": "aṭikkumpōtu", "when-past": "aṭittapōtu", "if-or-when": ["aṭittā", "aṭittāl"] }
+    - word: "ta-1144"
+      forms: { "when-now": "நனையும்போது", "when-past": "நனைந்தபோது", "if-or-when": ["நனைந்தா", "நனைந்தால்"] }
+      readings: { "when-now": "naṉaiyumpōtu", "when-past": "naṉaintapōtu", "if-or-when": ["naṉaintā", "naṉaintāl"] }
+    - word: "ta-1145"
+      forms: { "when-now": "காயும்போது", "when-past": "காய்ந்தபோது", "if-or-when": ["காய்ந்தா", "காய்ந்தால்"] }
+      readings: { "when-now": "kāyumpōtu", "when-past": "kāyntapōtu", "if-or-when": ["kāyntā", "kāyntāl"] }
+    - word: "ta-2023"
+      forms: { "when-now": "தோன்றும்போது", "when-past": ["தோன்றினபோது", "தோன்றியபோது"], "if-or-when": ["தோன்றினா", "தோன்றினால்"] }
+      readings: { "when-now": "tōṉṟumpōtu", "when-past": ["tōṉṟiṉapōtu", "tōṉṟiyapōtu"], "if-or-when": ["tōṉṟiṉā", "tōṉṟiṉāl"] }
+    - word: "ta-2027"
+      forms: { "when-now": "கவனிக்கும்போது", "when-past": "கவனித்தபோது", "if-or-when": ["கவனித்தா", "கவனித்தால்"] }
+      readings: { "when-now": "kavaṉikkumpōtu", "when-past": "kavaṉittapōtu", "if-or-when": ["kavaṉittā", "kavaṉittāl"] }
+    - word: "ta-2028"
+      forms: { "when-now": "வருந்தும்போது", "when-past": ["வருந்தினபோது", "வருந்தியபோது"], "if-or-when": ["வருந்தினா", "வருந்தினால்"] }
+      readings: { "when-now": "varuntumpōtu", "when-past": ["varuntiṉapōtu", "varuntiyapōtu"], "if-or-when": ["varuntiṉā", "varuntiṉāl"] }
+    - word: "ta-2061"
+      forms: { "when-now": "ஊக்குவிக்கும்போது", "when-past": "ஊக்குவித்தபோது", "if-or-when": ["ஊக்குவித்தா", "ஊக்குவித்தால்"] }
+      readings: { "when-now": "ūkkuvikkumpōtu", "when-past": "ūkkuvittapōtu", "if-or-when": ["ūkkuvittā", "ūkkuvittāl"] }
+    - word: "ta-2082"
+      forms: { "when-now": "நிரூபிக்கும்போது", "when-past": "நிரூபித்தபோது", "if-or-when": ["நிரூபித்தா", "நிரூபித்தால்"] }
+      readings: { "when-now": "nirūpikkumpōtu", "when-past": "nirūpittapōtu", "if-or-when": ["nirūpittā", "nirūpittāl"] }
+    - word: "ta-1142"
+      forms: { "when-now": "மறையும்போது", "when-past": "மறைந்தபோது", "if-or-when": ["மறைந்தா", "மறைந்தால்"] }
+      readings: { "when-now": "maṟaiyumpōtu", "when-past": "maṟaintapōtu", "if-or-when": ["maṟaintā", "maṟaintāl"] }
+    - word: "ta-1950"
+      forms: { "when-now": "அலசும்போது", "when-past": ["அலசினபோது", "அலசியபோது"], "if-or-when": ["அலசினா", "அலசினால்"] }
+      readings: { "when-now": "alacumpōtu", "when-past": ["alaciṉapōtu", "alaciyapōtu"], "if-or-when": ["alaciṉā", "alaciṉāl"] }
+    - word: "ta-1960"
+      forms: { "when-now": "பரப்பும்போது", "when-past": ["பரப்பினபோது", "பரப்பியபோது"], "if-or-when": ["பரப்பினா", "பரப்பினால்"] }
+      readings: { "when-now": "parappumpōtu", "when-past": ["parappiṉapōtu", "parappiyapōtu"], "if-or-when": ["parappiṉā", "parappiṉāl"] }
+    - word: "ta-1146"
+      forms: { "when-now": "மின்னும்போது", "when-past": ["மின்னினபோது", "மின்னியபோது"], "if-or-when": ["மின்னினா", "மின்னினால்"] }
+      readings: { "when-now": "miṉṉumpōtu", "when-past": ["miṉṉiṉapōtu", "miṉṉiyapōtu"], "if-or-when": ["miṉṉiṉā", "miṉṉiṉāl"] }
+    - word: "ta-1297"
+      forms: { "when-now": "இரும்போது", "when-past": ["இருமினபோது", "இருமியபோது"], "if-or-when": ["இருமினா", "இருமினால்"] }
+      readings: { "when-now": "irumpōtu", "when-past": ["irumiṉapōtu", "irumiyapōtu"], "if-or-when": ["irumiṉā", "irumiṉāl"] }
+    - word: "ta-1298"
+      forms: { "when-now": "தும்மும்போது", "when-past": ["தும்மினபோது", "தும்மியபோது"], "if-or-when": ["தும்மினா", "தும்மினால்"] }
+      readings: { "when-now": "tummumpōtu", "when-past": ["tummiṉapōtu", "tummiyapōtu"], "if-or-when": ["tummiṉā", "tummiṉāl"] }
+    - word: "ta-1300"
+      forms: { "when-now": "மயங்கும்போது", "when-past": ["மயங்கினபோது", "மயங்கியபோது"], "if-or-when": ["மயங்கினா", "மயங்கினால்"] }
+      readings: { "when-now": "mayaṅkumpōtu", "when-past": ["mayaṅkiṉapōtu", "mayaṅkiyapōtu"], "if-or-when": ["mayaṅkiṉā", "mayaṅkiṉāl"] }
+    - word: "ta-1303"
+      forms: { "when-now": "வீங்கும்போது", "when-past": ["வீங்கினபோது", "வீங்கியபோது"], "if-or-when": ["வீங்கினா", "வீங்கினால்"] }
+      readings: { "when-now": "vīṅkumpōtu", "when-past": ["vīṅkiṉapōtu", "vīṅkiyapōtu"], "if-or-when": ["vīṅkiṉā", "vīṅkiṉāl"] }
+    - word: "ta-1304"
+      forms: { "when-now": "நடுங்கும்போது", "when-past": ["நடுங்கினபோது", "நடுங்கியபோது"], "if-or-when": ["நடுங்கினா", "நடுங்கினால்"] }
+      readings: { "when-now": "naṭuṅkumpōtu", "when-past": ["naṭuṅkiṉapōtu", "naṭuṅkiyapōtu"], "if-or-when": ["naṭuṅkiṉā", "naṭuṅkiṉāl"] }
+    - word: "ta-1305"
+      forms: { "when-now": "வியர்க்கும்போது", "when-past": "வியர்த்தபோது", "if-or-when": ["வியர்த்தா", "வியர்த்தால்"] }
+      readings: { "when-now": "viyarkkumpōtu", "when-past": "viyarttapōtu", "if-or-when": ["viyarttā", "viyarttāl"] }
+    - word: "ta-1317"
+      forms: { "when-now": "பரிமாறும்போது", "when-past": ["பரிமாறினபோது", "பரிமாறியபோது"], "if-or-when": ["பரிமாறினா", "பரிமாறினால்"] }
+      readings: { "when-now": "parimāṟumpōtu", "when-past": ["parimāṟiṉapōtu", "parimāṟiyapōtu"], "if-or-when": ["parimāṟiṉā", "parimāṟiṉāl"] }
+    - word: "ta-1346"
+      forms: { "when-now": "வறுக்கும்போது", "when-past": "வறுத்தபோது", "if-or-when": ["வறுத்தா", "வறுத்தால்"] }
+      readings: { "when-now": "vaṟukkumpōtu", "when-past": "vaṟuttapōtu", "if-or-when": ["vaṟuttā", "vaṟuttāl"] }
+    - word: "ta-1347"
+      forms: { "when-now": "வதக்கும்போது", "when-past": ["வதக்கினபோது", "வதக்கியபோது"], "if-or-when": ["வதக்கினா", "வதக்கினால்"] }
+      readings: { "when-now": "vatakkumpōtu", "when-past": ["vatakkiṉapōtu", "vatakkiyapōtu"], "if-or-when": ["vatakkiṉā", "vatakkiṉāl"] }
+    - word: "ta-1348"
+      forms: { "when-now": "கொதிக்கும்போது", "when-past": "கொதித்தபோது", "if-or-when": ["கொதித்தா", "கொதித்தால்"] }
+      readings: { "when-now": "kotikkumpōtu", "when-past": "kotittapōtu", "if-or-when": ["kotittā", "kotittāl"] }
+    - word: "ta-1349"
+      forms: { "when-now": "நறுக்கும்போது", "when-past": ["நறுக்கினபோது", "நறுக்கியபோது"], "if-or-when": ["நறுக்கினா", "நறுக்கினால்"] }
+      readings: { "when-now": "naṟukkumpōtu", "when-past": ["naṟukkiṉapōtu", "naṟukkiyapōtu"], "if-or-when": ["naṟukkiṉā", "naṟukkiṉāl"] }
+    - word: "ta-1350"
+      forms: { "when-now": "கிளறும்போது", "when-past": ["கிளறினபோது", "கிளறியபோது"], "if-or-when": ["கிளறினா", "கிளறினால்"] }
+      readings: { "when-now": "kiḷaṟumpōtu", "when-past": ["kiḷaṟiṉapōtu", "kiḷaṟiyapōtu"], "if-or-when": ["kiḷaṟiṉā", "kiḷaṟiṉāl"] }
+    - word: "ta-1351"
+      forms: { "when-now": "வேகும்போது", "when-past": "வெந்தபோது", "if-or-when": ["வெந்தா", "வெந்தால்"] }
+      readings: { "when-now": "vēkumpōtu", "when-past": "ventapōtu", "if-or-when": ["ventā", "ventāl"] }
+    - word: "ta-1352"
+      forms: { "when-now": "பொரிக்கும்போது", "when-past": "பொரித்தபோது", "if-or-when": ["பொரித்தா", "பொரித்தால்"] }
+      readings: { "when-now": "porikkumpōtu", "when-past": "porittapōtu", "if-or-when": ["porittā", "porittāl"] }
+    - word: "ta-1353"
+      forms: { "when-now": "அவிக்கும்போது", "when-past": "அவித்தபோது", "if-or-when": ["அவித்தா", "அவித்தால்"] }
+      readings: { "when-now": "avikkumpōtu", "when-past": "avittapōtu", "if-or-when": ["avittā", "avittāl"] }
+    - word: "ta-1354"
+      forms: { "when-now": "சுடும்போது", "when-past": "சுட்டபோது", "if-or-when": ["சுட்டா", "சுட்டால்"] }
+      readings: { "when-now": "cuṭumpōtu", "when-past": "cuṭṭapōtu", "if-or-when": ["cuṭṭā", "cuṭṭāl"] }
+    - word: "ta-1355"
+      forms: { "when-now": "தாளிக்கும்போது", "when-past": "தாளித்தபோது", "if-or-when": ["தாளித்தா", "தாளித்தால்"] }
+      readings: { "when-now": "tāḷikkumpōtu", "when-past": "tāḷittapōtu", "if-or-when": ["tāḷittā", "tāḷittāl"] }
+    - word: "ta-1356"
+      forms: { "when-now": "பிசையும்போது", "when-past": "பிசைந்தபோது", "if-or-when": ["பிசைந்தா", "பிசைந்தால்"] }
+      readings: { "when-now": "picaiyumpōtu", "when-past": "picaintapōtu", "if-or-when": ["picaintā", "picaintāl"] }
+    - word: "ta-1357"
+      forms: { "when-now": "உரிக்கும்போது", "when-past": "உரித்தபோது", "if-or-when": ["உரித்தா", "உரித்தால்"] }
+      readings: { "when-now": "urikkumpōtu", "when-past": "urittapōtu", "if-or-when": ["urittā", "urittāl"] }
+    - word: "ta-1358"
+      forms: { "when-now": "துருவும்போது", "when-past": ["துருவினபோது", "துருவியபோது"], "if-or-when": ["துருவினா", "துருவினால்"] }
+      readings: { "when-now": "turuvumpōtu", "when-past": ["turuviṉapōtu", "turuviyapōtu"], "if-or-when": ["turuviṉā", "turuviṉāl"] }
+    - word: "ta-2347"
+      forms: { "when-now": "நடத்தும்போது", "when-past": ["நடத்தினபோது", "நடத்தியபோது"], "if-or-when": ["நடத்தினா", "நடத்தினால்"] }
+      readings: { "when-now": "naṭattumpōtu", "when-past": ["naṭattiṉapōtu", "naṭattiyapōtu"], "if-or-when": ["naṭattiṉā", "naṭattiṉāl"] }
+    - word: "ta-2348"
+      forms: { "when-now": "நிர்வகிக்கும்போது", "when-past": "நிர்வகித்தபோது", "if-or-when": ["நிர்வகித்தா", "நிர்வகித்தால்"] }
+      readings: { "when-now": "nirvakikkumpōtu", "when-past": "nirvakittapōtu", "if-or-when": ["nirvakittā", "nirvakittāl"] }
+    - word: "ta-2349"
+      forms: { "when-now": "விண்ணப்பிக்கும்போது", "when-past": "விண்ணப்பித்தபோது", "if-or-when": ["விண்ணப்பித்தா", "விண்ணப்பித்தால்"] }
+      readings: { "when-now": "viṇṇappikkumpōtu", "when-past": "viṇṇappittapōtu", "if-or-when": ["viṇṇappittā", "viṇṇappittāl"] }
+    - word: "ta-2356"
+      forms: { "when-now": "ஒத்துழைக்கும்போது", "when-past": "ஒத்துழைத்தபோது", "if-or-when": ["ஒத்துழைத்தா", "ஒத்துழைத்தால்"] }
+      readings: { "when-now": "ottuḻaikkumpōtu", "when-past": "ottuḻaittapōtu", "if-or-when": ["ottuḻaittā", "ottuḻaittāl"] }
+    - word: "ta-2026"
+      forms: { "when-now": "கலந்துகொள்ளும்போது", "when-past": "கலந்துகொண்டபோது", "if-or-when": ["கலந்துகொண்டா", "கலந்துகொண்டால்"] }
+      readings: { "when-now": "kalantukoḷḷumpōtu", "when-past": "kalantukoṇṭapōtu", "if-or-when": ["kalantukoṇṭā", "kalantukoṇṭāl"] }
+    - word: "ta-2060"
+      forms: { "when-now": "பெருமைப்படும்போது", "when-past": "பெருமைப்பட்டபோது", "if-or-when": ["பெருமைப்பட்டா", "பெருமைப்பட்டால்"] }
+      readings: { "when-now": "perumaippaṭumpōtu", "when-past": "perumaippaṭṭapōtu", "if-or-when": ["perumaippaṭṭā", "perumaippaṭṭāl"] }
+    - word: "ta-2185"
+      forms: { "when-now": "சுற்றித்திரியும்போது", "when-past": "சுற்றித்திரிந்தபோது", "if-or-when": ["சுற்றித்திரிந்தா", "சுற்றித்திரிந்தால்"] }
+      readings: { "when-now": "cuṟṟittiriyumpōtu", "when-past": "cuṟṟittirintapōtu", "if-or-when": ["cuṟṟittirintā", "cuṟṟittirintāl"] }
+    - word: "ta-1906"
+      forms: { "when-now": "நடனமாடும்போது", "when-past": ["நடனமாடினபோது", "நடனமாடியபோது"], "if-or-when": ["நடனமாடினா", "நடனமாடினால்"] }
+      readings: { "when-now": "naṭaṉamāṭumpōtu", "when-past": ["naṭaṉamāṭiṉapōtu", "naṭaṉamāṭiyapōtu"], "if-or-when": ["naṭaṉamāṭiṉā", "naṭaṉamāṭiṉāl"] }
+    - word: "ta-2181"
+      forms: { "when-now": "புறப்படும்போது", "when-past": "புறப்பட்டபோது", "if-or-when": ["புறப்பட்டா", "புறப்பட்டால்"] }
+      readings: { "when-now": "puṟappaṭumpōtu", "when-past": "puṟappaṭṭapōtu", "if-or-when": ["puṟappaṭṭā", "puṟappaṭṭāl"] }
+    - word: "ta-2184"
+      forms: { "when-now": "வழிதவறும்போது", "when-past": ["வழிதவறினபோது", "வழிதவறியபோது"], "if-or-when": ["வழிதவறினா", "வழிதவறினால்"] }
+      readings: { "when-now": "vaḻitavaṟumpōtu", "when-past": ["vaḻitavaṟiṉapōtu", "vaḻitavaṟiyapōtu"], "if-or-when": ["vaḻitavaṟiṉā", "vaḻitavaṟiṉāl"] }
+    - word: "ta-2187"
+      forms: { "when-now": "வழியனுப்பும்போது", "when-past": ["வழியனுப்பினபோது", "வழியனுப்பியபோது"], "if-or-when": ["வழியனுப்பினா", "வழியனுப்பினால்"] }
+      readings: { "when-now": "vaḻiyaṉuppumpōtu", "when-past": ["vaḻiyaṉuppiṉapōtu", "vaḻiyaṉuppiyapōtu"], "if-or-when": ["vaḻiyaṉuppiṉā", "vaḻiyaṉuppiṉāl"] }
+    - word: "ta-2188"
+      forms: { "when-now": "திட்டமிடும்போது", "when-past": "திட்டமிட்டபோது", "if-or-when": ["திட்டமிட்டா", "திட்டமிட்டால்"] }
+      readings: { "when-now": "tiṭṭamiṭumpōtu", "when-past": "tiṭṭamiṭṭapōtu", "if-or-when": ["tiṭṭamiṭṭā", "tiṭṭamiṭṭāl"] }
+    - word: "ta-2189"
+      forms: { "when-now": "எடுத்துச்செல்லும்போது", "when-past": "எடுத்துச்சென்றபோது", "if-or-when": ["எடுத்துச்சென்றா", "எடுத்துச்சென்றால்"] }
+      readings: { "when-now": "eṭuttuccellumpōtu", "when-past": "eṭuttucceṉṟapōtu", "if-or-when": ["eṭuttucceṉṟā", "eṭuttucceṉṟāl"] }
+    - word: "ta-2190"
+      forms: { "when-now": "சுற்றிப்பார்க்கும்போது", "when-past": "சுற்றிப்பார்த்தபோது", "if-or-when": ["சுற்றிப்பாத்தா", "சுற்றிப்பார்த்தால்"] }
+      readings: { "when-now": "cuṟṟippārkkumpōtu", "when-past": "cuṟṟippārttapōtu", "if-or-when": ["cuṟṟippāttā", "cuṟṟippārttāl"] }
+    - word: "ta-2121"
+      forms: { "when-now": "பதிவிறக்கும்போது", "when-past": ["பதிவிறக்கினபோது", "பதிவிறக்கியபோது"], "if-or-when": ["பதிவிறக்கினா", "பதிவிறக்கினால்"] }
+      readings: { "when-now": "pativiṟakkumpōtu", "when-past": ["pativiṟakkiṉapōtu", "pativiṟakkiyapōtu"], "if-or-when": ["pativiṟakkiṉā", "pativiṟakkiṉāl"] }
+    - word: "ta-2127"
+      forms: { "when-now": "தொடர்புகொள்ளும்போது", "when-past": "தொடர்புகொண்டபோது", "if-or-when": ["தொடர்புகொண்டா", "தொடர்புகொண்டால்"] }
+      readings: { "when-now": "toṭarpukoḷḷumpōtu", "when-past": "toṭarpukoṇṭapōtu", "if-or-when": ["toṭarpukoṇṭā", "toṭarpukoṇṭāl"] }
+    - word: "ta-2129"
+      forms: { "when-now": "தவறவிடும்போது", "when-past": "தவறவிட்டபோது", "if-or-when": ["தவறவிட்டா", "தவறவிட்டால்"] }
+      readings: { "when-now": "tavaṟaviṭumpōtu", "when-past": "tavaṟaviṭṭapōtu", "if-or-when": ["tavaṟaviṭṭā", "tavaṟaviṭṭāl"] }
+    - word: "ta-2130"
+      forms: { "when-now": "பதிலளிக்கும்போது", "when-past": "பதிலளித்தபோது", "if-or-when": ["பதிலளித்தா", "பதிலளித்தால்"] }
+      readings: { "when-now": "patilaḷikkumpōtu", "when-past": "patilaḷittapōtu", "if-or-when": ["patilaḷittā", "patilaḷittāl"] }
+    - word: "ta-2131"
+      forms: { "when-now": "பதிவேற்றும்போது", "when-past": ["பதிவேற்றினபோது", "பதிவேற்றியபோது"], "if-or-when": ["பதிவேற்றினா", "பதிவேற்றினால்"] }
+      readings: { "when-now": "pativēṟṟumpōtu", "when-past": ["pativēṟṟiṉapōtu", "pativēṟṟiyapōtu"], "if-or-when": ["pativēṟṟiṉā", "pativēṟṟiṉāl"] }
+    - word: "ta-1860"
+      forms: { "when-now": "கற்றுக்கொள்ளும்போது", "when-past": "கற்றுக்கொண்டபோது", "if-or-when": ["கற்றுக்கொண்டா", "கற்றுக்கொண்டால்"] }
+      readings: { "when-now": "kaṟṟukkoḷḷumpōtu", "when-past": "kaṟṟukkoṇṭapōtu", "if-or-when": ["kaṟṟukkoṇṭā", "kaṟṟukkoṇṭāl"] }
+    - word: "ta-1861"
+      forms: { "when-now": "சொல்லிக்கொடுக்கும்போது", "when-past": "சொல்லிக்கொடுத்தபோது", "if-or-when": ["சொல்லிக்கொடுத்தா", "சொல்லிக்கொடுத்தால்"] }
+      readings: { "when-now": "collikkoṭukkumpōtu", "when-past": "collikkoṭuttapōtu", "if-or-when": ["collikkoṭuttā", "collikkoṭuttāl"] }
+    - word: "ta-2032"
+      forms: { "when-now": "காத்திருக்கும்போது", "when-past": "காத்திருந்தபோது", "if-or-when": ["காத்திருந்தா", "காத்திருந்தால்"] }
+      readings: { "when-now": "kāttirukkumpōtu", "when-past": "kāttiruntapōtu", "if-or-when": ["kāttiruntā", "kāttiruntāl"] }
+    - word: "ta-2037"
+      forms: { "when-now": "ஒப்புக்கொள்ளும்போது", "when-past": "ஒப்புக்கொண்டபோது", "if-or-when": ["ஒப்புக்கொண்டா", "ஒப்புக்கொண்டால்"] }
+      readings: { "when-now": "oppukkoḷḷumpōtu", "when-past": "oppukkoṇṭapōtu", "if-or-when": ["oppukkoṇṭā", "oppukkoṇṭāl"] }
+    - word: "ta-2046"
+      forms: { "when-now": "பயப்படும்போது", "when-past": "பயப்பட்டபோது", "if-or-when": ["பயப்பட்டா", "பயப்பட்டால்"] }
+      readings: { "when-now": "payappaṭumpōtu", "when-past": "payappaṭṭapōtu", "if-or-when": ["payappaṭṭā", "payappaṭṭāl"] }
+    - word: "ta-2047"
+      forms: { "when-now": "கவலைப்படும்போது", "when-past": "கவலைப்பட்டபோது", "if-or-when": ["கவலைப்பட்டா", "கவலைப்பட்டால்"] }
+      readings: { "when-now": "kavalaippaṭumpōtu", "when-past": "kavalaippaṭṭapōtu", "if-or-when": ["kavalaippaṭṭā", "kavalaippaṭṭāl"] }
+    - word: "ta-2048"
+      forms: { "when-now": "கோபப்படும்போது", "when-past": "கோபப்பட்டபோது", "if-or-when": ["கோபப்பட்டா", "கோபப்பட்டால்"] }
+      readings: { "when-now": "kōpappaṭumpōtu", "when-past": "kōpappaṭṭapōtu", "if-or-when": ["kōpappaṭṭā", "kōpappaṭṭāl"] }
+    - word: "ta-2069"
+      forms: { "when-now": "தேர்ந்தெடுக்கும்போது", "when-past": "தேர்ந்தெடுத்தபோது", "if-or-when": ["தேர்ந்தெடுத்தா", "தேர்ந்தெடுத்தால்"] }
+      readings: { "when-now": "tērnteṭukkumpōtu", "when-past": "tērnteṭuttapōtu", "if-or-when": ["tērnteṭuttā", "tērnteṭuttāl"] }
+    - word: "ta-2073"
+      forms: { "when-now": "கண்டுபிடிக்கும்போது", "when-past": "கண்டுபிடித்தபோது", "if-or-when": ["கண்டுபிடிச்சா", "கண்டுபிடித்தால்"] }
+      readings: { "when-now": "kaṇṭupiṭikkumpōtu", "when-past": "kaṇṭupiṭittapōtu", "if-or-when": ["kaṇṭupiṭiccā", "kaṇṭupiṭittāl"] }
+    - word: "ta-2086"
+      forms: { "when-now": "சரிபார்க்கும்போது", "when-past": "சரிபார்த்தபோது", "if-or-when": ["சரிபாத்தா", "சரிபார்த்தால்"] }
+      readings: { "when-now": "caripārkkumpōtu", "when-past": "caripārttapōtu", "if-or-when": ["caripāttā", "caripārttāl"] }
+    - word: "ta-1299"
+      forms: { "when-now": "குணமாகும்போது", "when-past": "குணமானபோது", "if-or-when": ["குணமானா", "குணமானால்"] }
+      readings: { "when-now": "kuṇamākumpōtu", "when-past": "kuṇamāṉapōtu", "if-or-when": ["kuṇamāṉā", "kuṇamāṉāl"] }
+    - word: "ta-2350"
+      forms: { "when-now": "கையெழுத்திடும்போது", "when-past": "கையெழுத்திட்டபோது", "if-or-when": ["கையெழுத்திட்டா", "கையெழுத்திட்டால்"] }
+      readings: { "when-now": "kaiyeḻuttiṭumpōtu", "when-past": "kaiyeḻuttiṭṭapōtu", "if-or-when": ["kaiyeḻuttiṭṭā", "kaiyeḻuttiṭṭāl"] }
+    - word: "ta-2351"
+      forms: { "when-now": "ஈடுபடும்போது", "when-past": "ஈடுபட்டபோது", "if-or-when": ["ஈடுபட்டா", "ஈடுபட்டால்"] }
+      readings: { "when-now": "īṭupaṭumpōtu", "when-past": "īṭupaṭṭapōtu", "if-or-when": ["īṭupaṭṭā", "īṭupaṭṭāl"] }
+    - word: "ta-2352"
+      forms: { "when-now": "முடிவெடுக்கும்போது", "when-past": "முடிவெடுத்தபோது", "if-or-when": ["முடிவெடுத்தா", "முடிவெடுத்தால்"] }
+      readings: { "when-now": "muṭiveṭukkumpōtu", "when-past": "muṭiveṭuttapōtu", "if-or-when": ["muṭiveṭuttā", "muṭiveṭuttāl"] }
+    - word: "ta-2353"
+      forms: { "when-now": "அச்சிடும்போது", "when-past": "அச்சிட்டபோது", "if-or-when": ["அச்சிட்டா", "அச்சிட்டால்"] }
+      readings: { "when-now": "acciṭumpōtu", "when-past": "acciṭṭapōtu", "if-or-when": ["acciṭṭā", "acciṭṭāl"] }
+    - word: "ta-2354"
+      forms: { "when-now": "நகலெடுக்கும்போது", "when-past": "நகலெடுத்தபோது", "if-or-when": ["நகலெடுத்தா", "நகலெடுத்தால்"] }
+      readings: { "when-now": "nakaleṭukkumpōtu", "when-past": "nakaleṭuttapōtu", "if-or-when": ["nakaleṭuttā", "nakaleṭuttāl"] }
+    - word: "ta-2355"
+      forms: { "when-now": "கணக்கிடும்போது", "when-past": "கணக்கிட்டபோது", "if-or-when": ["கணக்கிட்டா", "கணக்கிட்டால்"] }
+      readings: { "when-now": "kaṇakkiṭumpōtu", "when-past": "kaṇakkiṭṭapōtu", "if-or-when": ["kaṇakkiṭṭā", "kaṇakkiṭṭāl"] }
+rules:
+  - id: "ta-rule-when-now"
+    slots: ["when-now"]
+    words: [{ word: "போது", reading: "pōtu" }, { word: "வா", reading: "vā" }, { word: "வரும்போது", reading: "varumpōtu" }, { word: "போ", reading: "pō" }, { word: "போகும்போது", reading: "pōkumpōtu" }]
+  - id: "ta-rule-when-past"
+    slots: ["when-past"]
+    words: [{ word: "போது", reading: "pōtu" }, { word: "வந்தபோது", reading: "vantapōtu" }, { word: "வா", reading: "vā" }, { word: "பேசு", reading: "pēcu" }, { word: "பேசியபோது", reading: "pēciyapōtu" }, { word: "பேசினபோது", reading: "pēciṉapōtu" }]
+  - id: "ta-rule-when-if"
+    slots: ["if-or-when"]
+    words: [{ word: "-ஆல்", reading: "-āl" }, { word: "வந்தால்", reading: "vantāl" }, { word: "வா", reading: "vā" }, { word: "வந்தா", reading: "vantā" }, { word: "போனால்", reading: "pōṉāl" }, { word: "போனா", reading: "pōṉā" }]

@@ -1,0 +1,891 @@
+schema: 1
+id: "ta-cooking"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "cooking"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-1322"
+    target: "வெங்காயம்"
+    reading: "veṅkāyam"
+    ipa: "ʋeŋkaːjam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வெங்காயம் நறுக்கு."
+        reading: "veṅkāyam naṟukku."
+        ipa: "ʋeŋkaːjam narukku"
+        bases: [{ word: "வெங்காயம்", base: "வெங்காயம்", reading: "veṅkāyam" }, { word: "நறுக்கு", ref: "ta-1349" }]
+      - target: "வெங்காயம் இல்லை."
+        reading: "veṅkāyam illai."
+        ipa: "ʋeŋkaːjam illai"
+        bases: [{ word: "வெங்காயம்", base: "வெங்காயம்", reading: "veṅkāyam" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1323"
+    target: "தக்காளி"
+    reading: "takkāḷi"
+    ipa: "t̪akkaːɭi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தக்காளி நறுக்கு."
+        reading: "takkāḷi naṟukku."
+        ipa: "t̪akkaːɭi narukku"
+        bases: [{ word: "தக்காளி", base: "தக்காளி", reading: "takkāḷi" }, { word: "நறுக்கு", ref: "ta-1349" }]
+      - target: "தக்காளி வேண்டும்."
+        reading: "takkāḷi vēṇṭum."
+        ipa: "t̪akkaːɭi ʋeːɳʈum"
+        bases: [{ word: "தக்காளி", base: "தக்காளி", reading: "takkāḷi" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1324"
+    target: "பூண்டு"
+    reading: "pūṇṭu"
+    ipa: "puːɳʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பூண்டு வேண்டும்."
+        reading: "pūṇṭu vēṇṭum."
+        ipa: "puːɳʈu ʋeːɳʈum"
+        bases: [{ word: "பூண்டு", base: "பூண்டு", reading: "pūṇṭu" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "பூண்டு போடு."
+        reading: "pūṇṭu pōṭu."
+        ipa: "puːɳʈu poːʈu"
+        bases: [{ word: "பூண்டு", base: "பூண்டு", reading: "pūṇṭu" }, { word: "போடு", ref: "ta-0452" }]
+  - id: "ta-1325"
+    target: "இஞ்சி"
+    reading: "iñci"
+    ipa: "iɲtʃi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இஞ்சி வேண்டும்."
+        reading: "iñci vēṇṭum."
+        ipa: "iɲtʃi ʋeːɳʈum"
+        bases: [{ word: "இஞ்சி", base: "இஞ்சி", reading: "iñci" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "இஞ்சி கொஞ்சம் போடு."
+        reading: "iñci koñcam pōṭu."
+        ipa: "iɲtʃi koɲtʃam poːʈu"
+        bases: [{ word: "இஞ்சி", base: "இஞ்சி", reading: "iñci" }, { word: "கொஞ்சம்", ref: "ta-0158" }, { word: "போடு", ref: "ta-0452" }]
+  - id: "ta-1326"
+    target: "கடுகு"
+    reading: "kaṭuku"
+    ipa: "kaʈuku"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கடுகு போடு."
+        reading: "kaṭuku pōṭu."
+        ipa: "kaʈuku poːʈu"
+        bases: [{ word: "கடுகு", base: "கடுகு", reading: "kaṭuku" }, { word: "போடு", ref: "ta-0452" }]
+      - target: "எண்ணெயில் கடுகு."
+        reading: "eṇṇeyil kaṭuku."
+        ipa: "eɳɳejil kaʈuku"
+        bases: [{ word: "எண்ணெயில்", base: "எண்ணெய்", reading: "eṇṇey" }, { word: "கடுகு", base: "கடுகு", reading: "kaṭuku" }]
+  - id: "ta-1327"
+    target: "மிளகாய்"
+    reading: "miḷakāy"
+    ipa: "miɭakaːj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மிளகாய் காரம்."
+        reading: "miḷakāy kāram."
+        ipa: "miɭakaːj kaːɾam"
+        bases: [{ word: "மிளகாய்", base: "மிளகாய்", reading: "miḷakāy" }, { word: "காரம்", ref: "ta-1315" }]
+      - target: "இரண்டு மிளகாய் போடு."
+        reading: "iraṇṭu miḷakāy pōṭu."
+        ipa: "iɾaɳʈu miɭakaːj poːʈu"
+        bases: [{ word: "இரண்டு", ref: "ta-0089" }, { word: "மிளகாய்", base: "மிளகாய்", reading: "miḷakāy" }, { word: "போடு", ref: "ta-0452" }]
+  - id: "ta-1328"
+    target: "மசாலா"
+    reading: "macālā"
+    ipa: "masaːlaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மசாலா வேண்டும்."
+        reading: "macālā vēṇṭum."
+        ipa: "masaːlaː ʋeːɳʈum"
+        bases: [{ word: "மசாலா", base: "மசாலா", reading: "macālā" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "மசாலா கொஞ்சம் போடு."
+        reading: "macālā koñcam pōṭu."
+        ipa: "masaːlaː koɲtʃam poːʈu"
+        bases: [{ word: "மசாலா", base: "மசாலா", reading: "macālā" }, { word: "கொஞ்சம்", ref: "ta-0158" }, { word: "போடு", ref: "ta-0452" }]
+  - id: "ta-1329"
+    target: "புளி"
+    reading: "puḷi"
+    ipa: "puɭi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "புளி புளிப்பு."
+        reading: "puḷi puḷippu."
+        ipa: "puɭi puɭippu"
+        bases: [{ word: "புளி", base: "புளி", reading: "puḷi" }, { word: "புளிப்பு", ref: "ta-1316" }]
+      - target: "புளி தண்ணீரில் போடு."
+        reading: "puḷi taṇṇīril pōṭu."
+        ipa: "puɭi t̪aɳɳiːɾil poːʈu"
+        bases: [{ word: "புளி", base: "புளி", reading: "puḷi" }, { word: "தண்ணீரில்", base: "தண்ணீர்", reading: "taṇṇīr" }, { word: "போடு", ref: "ta-0452" }]
+  - id: "ta-1330"
+    target: "உருளைக்கிழங்கு"
+    reading: "uruḷaikkiḻaṅku"
+    ipa: "uɾuɭaikkiɻaŋku"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "உருளைக்கிழங்கு நறுக்கு."
+        reading: "uruḷaikkiḻaṅku naṟukku."
+        ipa: "uɾuɭaikkiɻaŋku narukku"
+        bases: [{ word: "உருளைக்கிழங்கு", base: "உருளைக்கிழங்கு", reading: "uruḷaikkiḻaṅku" }, { word: "நறுக்கு", ref: "ta-1349" }]
+      - target: "உருளைக்கிழங்கு வேண்டும்."
+        reading: "uruḷaikkiḻaṅku vēṇṭum."
+        ipa: "uɾuɭaikkiɻaŋku ʋeːɳʈum"
+        bases: [{ word: "உருளைக்கிழங்கு", base: "உருளைக்கிழங்கு", reading: "uruḷaikkiḻaṅku" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1331"
+    target: "கத்தரிக்காய்"
+    reading: "kattarikkāy"
+    ipa: "kat̪t̪aɾikkaːj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கத்தரிக்காய் நறுக்கு."
+        reading: "kattarikkāy naṟukku."
+        ipa: "kat̪t̪aɾikkaːj narukku"
+        bases: [{ word: "கத்தரிக்காய்", base: "கத்தரிக்காய்", reading: "kattarikkāy" }, { word: "நறுக்கு", ref: "ta-1349" }]
+      - target: "கத்தரிக்காய் சாம்பார்."
+        reading: "kattarikkāy cāmpār."
+        ipa: "kat̪t̪aɾikkaːj saːmpaːɾ"
+        bases: [{ word: "கத்தரிக்காய்", base: "கத்தரிக்காய்", reading: "kattarikkāy" }, { word: "சாம்பார்", ref: "ta-0250" }]
+  - id: "ta-1332"
+    target: "கொத்தமல்லி"
+    reading: "kottamalli"
+    ipa: "kot̪t̪amalli"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கொத்தமல்லி போடு."
+        reading: "kottamalli pōṭu."
+        ipa: "kot̪t̪amalli poːʈu"
+        bases: [{ word: "கொத்தமல்லி", base: "கொத்தமல்லி", reading: "kottamalli" }, { word: "போடு", ref: "ta-0452" }]
+      - target: "கொத்தமல்லி இல்லை."
+        reading: "kottamalli illai."
+        ipa: "kot̪t̪amalli illai"
+        bases: [{ word: "கொத்தமல்லி", base: "கொத்தமல்லி", reading: "kottamalli" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1333"
+    target: "கறிவேப்பிலை"
+    reading: "kaṟivēppilai"
+    ipa: "kariʋeːppilai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கறிவேப்பிலை போடு."
+        reading: "kaṟivēppilai pōṭu."
+        ipa: "kariʋeːppilai poːʈu"
+        bases: [{ word: "கறிவேப்பிலை", base: "கறிவேப்பிலை", reading: "kaṟivēppilai" }, { word: "போடு", ref: "ta-0452" }]
+      - target: "கறிவேப்பிலை வாசனை."
+        reading: "kaṟivēppilai vācaṉai."
+        ipa: "kariʋeːppilai ʋaːsanai"
+        bases: [{ word: "கறிவேப்பிலை", base: "கறிவேப்பிலை", reading: "kaṟivēppilai" }, { word: "வாசனை", ref: "ta-1361" }]
+  - id: "ta-1334"
+    target: "நெய்"
+    reading: "ney"
+    ipa: "nej"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நெய் கொஞ்சம்."
+        reading: "ney koñcam."
+        ipa: "nej koɲtʃam"
+        bases: [{ word: "நெய்", base: "நெய்", reading: "ney" }, { word: "கொஞ்சம்", ref: "ta-0158" }]
+      - target: "நெய்யில் வறு."
+        reading: "neyyil vaṟu."
+        ipa: "nejjil ʋaru"
+        bases: [{ word: "நெய்யில்", base: "நெய்", reading: "ney" }, { word: "வறு", ref: "ta-1346" }]
+  - id: "ta-1335"
+    target: "தயிர்"
+    reading: "tayir"
+    ipa: "t̪ajiɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தயிர் சாதம்."
+        reading: "tayir cātam."
+        ipa: "t̪ajiɾ saːt̪am"
+        bases: [{ word: "தயிர்", base: "தயிர்", reading: "tayir" }, { word: "சாதம்", ref: "ta-0247" }]
+      - target: "தயிர் வேண்டும்."
+        reading: "tayir vēṇṭum."
+        ipa: "t̪ajiɾ ʋeːɳʈum"
+        bases: [{ word: "தயிர்", base: "தயிர்", reading: "tayir" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1336"
+    target: "மோர்"
+    reading: "mōr"
+    ipa: "moːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மோர் குடி."
+        reading: "mōr kuṭi."
+        ipa: "moːɾ kuʈi"
+        bases: [{ word: "மோர்", base: "மோர்", reading: "mōr" }, { word: "குடி", ref: "ta-0120" }]
+      - target: "மோர் இல்லை."
+        reading: "mōr illai."
+        ipa: "moːɾ illai"
+        bases: [{ word: "மோர்", base: "மோர்", reading: "mōr" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1337"
+    target: "வெல்லம்"
+    reading: "vellam"
+    ipa: "ʋellam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வெல்லம் இனிப்பு."
+        reading: "vellam iṉippu."
+        ipa: "ʋellam inippu"
+        bases: [{ word: "வெல்லம்", base: "வெல்லம்", reading: "vellam" }, { word: "இனிப்பு", ref: "ta-1178" }]
+      - target: "வெல்லம் போடு."
+        reading: "vellam pōṭu."
+        ipa: "ʋellam poːʈu"
+        bases: [{ word: "வெல்லம்", base: "வெல்லம்", reading: "vellam" }, { word: "போடு", ref: "ta-0452" }]
+  - id: "ta-1338"
+    target: "மாவு"
+    reading: "māvu"
+    ipa: "maːʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தோசை மாவு."
+        reading: "tōcai māvu."
+        ipa: "t̪oːsai maːʋu"
+        bases: [{ word: "தோசை", ref: "ta-0248" }, { word: "மாவு", base: "மாவு", reading: "māvu" }]
+      - target: "மாவு இல்லை."
+        reading: "māvu illai."
+        ipa: "maːʋu illai"
+        bases: [{ word: "மாவு", base: "மாவு", reading: "māvu" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1339"
+    target: "மிளகு"
+    reading: "miḷaku"
+    ipa: "miɭaku"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மிளகு போடு."
+        reading: "miḷaku pōṭu."
+        ipa: "miɭaku poːʈu"
+        bases: [{ word: "மிளகு", base: "மிளகு", reading: "miḷaku" }, { word: "போடு", ref: "ta-0452" }]
+      - target: "ரசத்தில் மிளகு."
+        reading: "racattil miḷaku."
+        ipa: "ɾasat̪t̪il miɭaku"
+        bases: [{ word: "ரசத்தில்", base: "ரசம்", reading: "racam" }, { word: "மிளகு", base: "மிளகு", reading: "miḷaku" }]
+  - id: "ta-1340"
+    target: "சீரகம்"
+    reading: "cīrakam"
+    ipa: "siːɾakam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சீரகம் போடு."
+        reading: "cīrakam pōṭu."
+        ipa: "siːɾakam poːʈu"
+        bases: [{ word: "சீரகம்", base: "சீரகம்", reading: "cīrakam" }, { word: "போடு", ref: "ta-0452" }]
+      - target: "சீரகம் வாசனை."
+        reading: "cīrakam vācaṉai."
+        ipa: "siːɾakam ʋaːsanai"
+        bases: [{ word: "சீரகம்", base: "சீரகம்", reading: "cīrakam" }, { word: "வாசனை", ref: "ta-1361" }]
+  - id: "ta-1341"
+    target: "கீரை"
+    reading: "kīrai"
+    ipa: "kiːɾai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கீரை கழுவு."
+        reading: "kīrai kaḻuvu."
+        ipa: "kiːɾai kaɻuʋu"
+        bases: [{ word: "கீரை", base: "கீரை", reading: "kīrai" }, { word: "கழுவு", ref: "ta-0190" }]
+      - target: "இன்று கீரை."
+        reading: "iṉṟu kīrai."
+        ipa: "inru kiːɾai"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "கீரை", base: "கீரை", reading: "kīrai" }]
+  - id: "ta-1342"
+    target: "குக்கர்"
+    reading: "kukkar"
+    ipa: "kukkaɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "குக்கர் அடுப்பில் இருக்கிறது."
+        reading: "kukkar aṭuppil irukkiṟatu."
+        ipa: "kukkaɾ aʈuppil iɾukkirat̪u"
+        bases: [{ word: "குக்கர்", base: "குக்கர்", reading: "kukkar" }, { word: "அடுப்பில்", base: "அடுப்பு", reading: "aṭuppu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "குக்கர் மூடு."
+        reading: "kukkar mūṭu."
+        ipa: "kukkaɾ muːʈu"
+        bases: [{ word: "குக்கர்", base: "குக்கர்", reading: "kukkar" }, { word: "மூடு", ref: "ta-0187" }]
+  - id: "ta-1343"
+    target: "கடாய்"
+    reading: "kaṭāy"
+    ipa: "kaʈaːj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கடாய் அடுப்பில் வை."
+        reading: "kaṭāy aṭuppil vai."
+        ipa: "kaʈaːj aʈuppil ʋai"
+        bases: [{ word: "கடாய்", base: "கடாய்", reading: "kaṭāy" }, { word: "அடுப்பில்", base: "அடுப்பு", reading: "aṭuppu" }, { word: "வை", ref: "ta-0185" }]
+      - target: "கடாய் கழுவு."
+        reading: "kaṭāy kaḻuvu."
+        ipa: "kaʈaːj kaɻuʋu"
+        bases: [{ word: "கடாய்", base: "கடாய்", reading: "kaṭāy" }, { word: "கழுவு", ref: "ta-0190" }]
+  - id: "ta-1344"
+    target: "சட்டி"
+    reading: "caṭṭi"
+    ipa: "saʈʈi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சட்டி அடுப்பில் இருக்கிறது."
+        reading: "caṭṭi aṭuppil irukkiṟatu."
+        ipa: "saʈʈi aʈuppil iɾukkirat̪u"
+        bases: [{ word: "சட்டி", base: "சட்டி", reading: "caṭṭi" }, { word: "அடுப்பில்", base: "அடுப்பு", reading: "aṭuppu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "சட்டி எங்கே?"
+        reading: "caṭṭi eṅkē?"
+        ipa: "saʈʈi eŋkeː"
+        bases: [{ word: "சட்டி", base: "சட்டி", reading: "caṭṭi" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1345"
+    target: "மிக்ஸி"
+    reading: "miksi"
+    ipa: "miksi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மிக்ஸி இங்கே இருக்கிறது."
+        reading: "miksi iṅkē irukkiṟatu."
+        ipa: "miksi iŋkeː iɾukkirat̪u"
+        bases: [{ word: "மிக்ஸி", base: "மிக்ஸி", reading: "miksi" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "மிக்ஸியில் மசாலா அரைக்கிறேன்."
+        reading: "miksiyil macālā araikkiṟēṉ."
+        ipa: "miksijil masaːlaː aɾaikkireːn"
+        bases: [{ word: "மிக்ஸியில்", base: "மிக்ஸி", reading: "miksi" }, { word: "மசாலா", ref: "ta-1328" }, { word: "அரைக்கிறேன்", base: "அரை", reading: "arai" }]
+  - id: "ta-1346"
+    target: "வறு"
+    reading: "vaṟu"
+    ipa: "ʋaru"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பருப்பு வறு."
+        reading: "paruppu vaṟu."
+        ipa: "paɾuppu ʋaru"
+        bases: [{ word: "பருப்பு", ref: "ta-0216" }, { word: "வறு", base: "வறு", reading: "vaṟu" }]
+      - target: "மிளகாய் வறு."
+        reading: "miḷakāy vaṟu."
+        ipa: "miɭakaːj ʋaru"
+        bases: [{ word: "மிளகாய்", ref: "ta-1327" }, { word: "வறு", base: "வறு", reading: "vaṟu" }]
+  - id: "ta-1347"
+    target: "வதக்கு"
+    reading: "vatakku"
+    ipa: "ʋat̪akku"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வெங்காயம் வதக்கு."
+        reading: "veṅkāyam vatakku."
+        ipa: "ʋeŋkaːjam ʋat̪akku"
+        bases: [{ word: "வெங்காயம்", ref: "ta-1322" }, { word: "வதக்கு", base: "வதக்கு", reading: "vatakku" }]
+      - target: "தக்காளி வதக்கு."
+        reading: "takkāḷi vatakku."
+        ipa: "t̪akkaːɭi ʋat̪akku"
+        bases: [{ word: "தக்காளி", ref: "ta-1323" }, { word: "வதக்கு", base: "வதக்கு", reading: "vatakku" }]
+  - id: "ta-1348"
+    target: "கொதி"
+    reading: "koti"
+    ipa: "kot̪i"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தண்ணீர் கொதிக்கிறது."
+        reading: "taṇṇīr kotikkiṟatu."
+        ipa: "t̪aɳɳiːɾ kot̪ikkirat̪u"
+        bases: [{ word: "தண்ணீர்", ref: "ta-0005" }, { word: "கொதிக்கிறது", base: "கொதி", reading: "koti" }]
+      - target: "பால் கொதிக்கிறது."
+        reading: "pāl kotikkiṟatu."
+        ipa: "paːl kot̪ikkirat̪u"
+        bases: [{ word: "பால்", ref: "ta-0036" }, { word: "கொதிக்கிறது", base: "கொதி", reading: "koti" }]
+  - id: "ta-1349"
+    target: "நறுக்கு"
+    reading: "naṟukku"
+    ipa: "narukku"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காய்கறி நறுக்கு."
+        reading: "kāykaṟi naṟukku."
+        ipa: "kaːjkari narukku"
+        bases: [{ word: "காய்கறி", ref: "ta-0221" }, { word: "நறுக்கு", base: "நறுக்கு", reading: "naṟukku" }]
+      - target: "கத்தியால் நறுக்கு."
+        reading: "kattiyāl naṟukku."
+        ipa: "kat̪t̪ijaːl narukku"
+        bases: [{ word: "கத்தியால்", base: "கத்தி", reading: "katti" }, { word: "நறுக்கு", base: "நறுக்கு", reading: "naṟukku" }]
+  - id: "ta-1350"
+    target: "கிளறு"
+    reading: "kiḷaṟu"
+    ipa: "kiɭaru"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கரண்டியால் கிளறு."
+        reading: "karaṇṭiyāl kiḷaṟu."
+        ipa: "kaɾaɳʈijaːl kiɭaru"
+        bases: [{ word: "கரண்டியால்", base: "கரண்டி", reading: "karaṇṭi" }, { word: "கிளறு", base: "கிளறு", reading: "kiḷaṟu" }]
+      - target: "பால் கிளறு."
+        reading: "pāl kiḷaṟu."
+        ipa: "paːl kiɭaru"
+        bases: [{ word: "பால்", ref: "ta-0036" }, { word: "கிளறு", base: "கிளறு", reading: "kiḷaṟu" }]
+  - id: "ta-1351"
+    target: "வேகு"
+    reading: "vēku"
+    ipa: "ʋeːku"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சாதம் வேகிறது."
+        reading: "cātam vēkiṟatu."
+        ipa: "saːt̪am ʋeːkirat̪u"
+        bases: [{ word: "சாதம்", ref: "ta-0247" }, { word: "வேகிறது", base: "வேகு", reading: "vēku" }]
+      - target: "பருப்பு வேகிறது."
+        reading: "paruppu vēkiṟatu."
+        ipa: "paɾuppu ʋeːkirat̪u"
+        bases: [{ word: "பருப்பு", ref: "ta-0216" }, { word: "வேகிறது", base: "வேகு", reading: "vēku" }]
+  - id: "ta-1352"
+    target: "பொரி"
+    reading: "pori"
+    ipa: "poɾi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மீன் பொரி."
+        reading: "mīṉ pori."
+        ipa: "miːn poɾi"
+        bases: [{ word: "மீன்", ref: "ta-0302" }, { word: "பொரி", base: "பொரி", reading: "pori" }]
+      - target: "எண்ணெயில் பொரி."
+        reading: "eṇṇeyil pori."
+        ipa: "eɳɳejil poɾi"
+        bases: [{ word: "எண்ணெயில்", base: "எண்ணெய்", reading: "eṇṇey" }, { word: "பொரி", base: "பொரி", reading: "pori" }]
+  - id: "ta-1353"
+    target: "அவி"
+    reading: "avi"
+    ipa: "aʋi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "முட்டை அவி."
+        reading: "muṭṭai avi."
+        ipa: "muʈʈai aʋi"
+        bases: [{ word: "முட்டை", ref: "ta-0220" }, { word: "அவி", base: "அவி", reading: "avi" }]
+      - target: "இட்லி அவிக்கிறேன்."
+        reading: "iṭli avikkiṟēṉ."
+        ipa: "iʈli aʋikkireːn"
+        bases: [{ word: "இட்லி", ref: "ta-0249" }, { word: "அவிக்கிறேன்", base: "அவி", reading: "avi" }]
+  - id: "ta-1354"
+    target: "சுடு"
+    reading: "cuṭu"
+    ipa: "suʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தோசை சுடு."
+        reading: "tōcai cuṭu."
+        ipa: "t̪oːsai suʈu"
+        bases: [{ word: "தோசை", ref: "ta-0248" }, { word: "சுடு", base: "சுடு", reading: "cuṭu" }]
+      - target: "அம்மா தோசை சுடுகிறார்."
+        reading: "ammā tōcai cuṭukiṟār."
+        ipa: "ammaː t̪oːsai suʈukiraːɾ"
+        bases: [{ word: "அம்மா", ref: "ta-0072" }, { word: "தோசை", ref: "ta-0248" }, { word: "சுடுகிறார்", base: "சுடு", reading: "cuṭu" }]
+  - id: "ta-1355"
+    target: "தாளி"
+    reading: "tāḷi"
+    ipa: "t̪aːɭi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சாம்பாரில் தாளி."
+        reading: "cāmpāril tāḷi."
+        ipa: "saːmpaːɾil t̪aːɭi"
+        bases: [{ word: "சாம்பாரில்", base: "சாம்பார்", reading: "cāmpār" }, { word: "தாளி", base: "தாளி", reading: "tāḷi" }]
+      - target: "கடுகு போட்டுத் தாளி."
+        reading: "kaṭuku pōṭṭut tāḷi."
+        ipa: "kaʈuku poːʈʈut̪ t̪aːɭi"
+        bases: [{ word: "கடுகு", ref: "ta-1326" }, { word: "போட்டுத்", base: "போடு", reading: "pōṭu" }, { word: "தாளி", base: "தாளி", reading: "tāḷi" }]
+  - id: "ta-1356"
+    target: "பிசை"
+    reading: "picai"
+    ipa: "pisai"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மாவு பிசை."
+        reading: "māvu picai."
+        ipa: "maːʋu pisai"
+        bases: [{ word: "மாவு", ref: "ta-1338" }, { word: "பிசை", base: "பிசை", reading: "picai" }]
+      - target: "சாதம் பிசை."
+        reading: "cātam picai."
+        ipa: "saːt̪am pisai"
+        bases: [{ word: "சாதம்", ref: "ta-0247" }, { word: "பிசை", base: "பிசை", reading: "picai" }]
+  - id: "ta-1357"
+    target: "உரி"
+    reading: "uri"
+    ipa: "uɾi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வெங்காயம் உரி."
+        reading: "veṅkāyam uri."
+        ipa: "ʋeŋkaːjam uɾi"
+        bases: [{ word: "வெங்காயம்", ref: "ta-1322" }, { word: "உரி", base: "உரி", reading: "uri" }]
+      - target: "பூண்டு உரி."
+        reading: "pūṇṭu uri."
+        ipa: "puːɳʈu uɾi"
+        bases: [{ word: "பூண்டு", ref: "ta-1324" }, { word: "உரி", base: "உரி", reading: "uri" }]
+  - id: "ta-1358"
+    target: "துருவு"
+    reading: "turuvu"
+    ipa: "t̪uɾuʋu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தேங்காய் துருவு."
+        reading: "tēṅkāy turuvu."
+        ipa: "t̪eːŋkaːj t̪uɾuʋu"
+        bases: [{ word: "தேங்காய்", ref: "ta-1194" }, { word: "துருவு", base: "துருவு", reading: "turuvu" }]
+      - target: "காய்கறி துருவு."
+        reading: "kāykaṟi turuvu."
+        ipa: "kaːjkari t̪uɾuʋu"
+        bases: [{ word: "காய்கறி", ref: "ta-0221" }, { word: "துருவு", base: "துருவு", reading: "turuvu" }]
+  - id: "ta-1359"
+    target: "சுவை"
+    reading: "cuvai"
+    ipa: "suʋai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சுவை நல்லது."
+        reading: "cuvai nallatu."
+        ipa: "suʋai nallat̪u"
+        bases: [{ word: "சுவை", base: "சுவை", reading: "cuvai" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "சுவை எப்படி?"
+        reading: "cuvai eppaṭi?"
+        ipa: "suʋai eppaʈi"
+        bases: [{ word: "சுவை", base: "சுவை", reading: "cuvai" }, { word: "எப்படி", ref: "ta-0045" }]
+  - id: "ta-1360"
+    target: "ருசி"
+    reading: "ruci"
+    ipa: "ɾusi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ருசி ரொம்ப நல்லது."
+        reading: "ruci rompa nallatu."
+        ipa: "ɾusi ɾompa nallat̪u"
+        bases: [{ word: "ருசி", base: "ருசி", reading: "ruci" }, { word: "ரொம்ப", ref: "ta-0166" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "ருசி பார்."
+        reading: "ruci pār."
+        ipa: "ɾusi paːɾ"
+        bases: [{ word: "ருசி", base: "ருசி", reading: "ruci" }, { word: "பார்", ref: "ta-0121" }]
+  - id: "ta-1361"
+    target: "வாசனை"
+    reading: "vācaṉai"
+    ipa: "ʋaːsanai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வாசனை நல்லது."
+        reading: "vācaṉai nallatu."
+        ipa: "ʋaːsanai nallat̪u"
+        bases: [{ word: "வாசனை", base: "வாசனை", reading: "vācaṉai" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "மசாலா வாசனை."
+        reading: "macālā vācaṉai."
+        ipa: "masaːlaː ʋaːsanai"
+        bases: [{ word: "மசாலா", ref: "ta-1328" }, { word: "வாசனை", base: "வாசனை", reading: "vācaṉai" }]
+  - id: "ta-1362"
+    target: "சூடு"
+    reading: "cūṭu"
+    ipa: "suːʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சூடு குறைவு."
+        reading: "cūṭu kuṟaivu."
+        ipa: "suːʈu kuraiʋu"
+        bases: [{ word: "சூடு", base: "சூடு", reading: "cūṭu" }, { word: "குறைவு", ref: "ta-0160" }]
+      - target: "சாப்பாடு சூடு."
+        reading: "cāppāṭu cūṭu."
+        ipa: "saːppaːʈu suːʈu"
+        bases: [{ word: "சாப்பாடு", ref: "ta-0244" }, { word: "சூடு", base: "சூடு", reading: "cūṭu" }]
+  - id: "ta-1363"
+    target: "வெந்த"
+    reading: "venta"
+    ipa: "ʋent̪a"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வெந்த சாதம்."
+        reading: "venta cātam."
+        ipa: "ʋent̪a saːt̪am"
+        bases: [{ word: "வெந்த", base: "வெந்த", reading: "venta" }, { word: "சாதம்", ref: "ta-0247" }]
+      - target: "பருப்பு வெந்தது."
+        reading: "paruppu ventatu."
+        ipa: "paɾuppu ʋent̪at̪u"
+        bases: [{ word: "பருப்பு", ref: "ta-0216" }, { word: "வெந்தது", base: "வேகு", reading: "vēku" }]
+  - id: "ta-1364"
+    target: "பொன்னிறமான"
+    reading: "poṉṉiṟamāṉa"
+    ipa: "ponniramaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பொன்னிறமான தோசை."
+        reading: "poṉṉiṟamāṉa tōcai."
+        ipa: "ponniramaːna t̪oːsai"
+        bases: [{ word: "பொன்னிறமான", base: "பொன்னிறமான", reading: "poṉṉiṟamāṉa" }, { word: "தோசை", ref: "ta-0248" }]
+      - target: "பொன்னிறமாக வறு."
+        reading: "poṉṉiṟamāka vaṟu."
+        ipa: "ponniramaːka ʋaru"
+        bases: [{ word: "பொன்னிறமாக", base: "பொன்னிறமான", reading: "poṉṉiṟamāṉa" }, { word: "வறு", ref: "ta-1346" }]
+  - id: "ta-1365"
+    target: "மிருதுவான"
+    reading: "mirutuvāṉa"
+    ipa: "miɾut̪uʋaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மிருதுவான இட்லி."
+        reading: "mirutuvāṉa iṭli."
+        ipa: "miɾut̪uʋaːna iʈli"
+        bases: [{ word: "மிருதுவான", base: "மிருதுவான", reading: "mirutuvāṉa" }, { word: "இட்லி", ref: "ta-0249" }]
+      - target: "இட்லி மிருதுவாக இருக்கிறது."
+        reading: "iṭli mirutuvāka irukkiṟatu."
+        ipa: "iʈli miɾut̪uʋaːka iɾukkirat̪u"
+        bases: [{ word: "இட்லி", ref: "ta-0249" }, { word: "மிருதுவாக", base: "மிருதுவான", reading: "mirutuvāṉa" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1366"
+    target: "மொறுமொறுப்பான"
+    reading: "moṟumoṟuppāṉa"
+    ipa: "morumoruppaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மொறுமொறுப்பான தோசை."
+        reading: "moṟumoṟuppāṉa tōcai."
+        ipa: "morumoruppaːna t̪oːsai"
+        bases: [{ word: "மொறுமொறுப்பான", base: "மொறுமொறுப்பான", reading: "moṟumoṟuppāṉa" }, { word: "தோசை", ref: "ta-0248" }]
+      - target: "தோசை மொறுமொறுப்பாக இருக்கிறது."
+        reading: "tōcai moṟumoṟuppāka irukkiṟatu."
+        ipa: "t̪oːsai morumoruppaːka iɾukkirat̪u"
+        bases: [{ word: "தோசை", ref: "ta-0248" }, { word: "மொறுமொறுப்பாக", base: "மொறுமொறுப்பான", reading: "moṟumoṟuppāṉa" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1367"
+    target: "கெட்டியான"
+    reading: "keṭṭiyāṉa"
+    ipa: "keʈʈijaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கெட்டியான தயிர்."
+        reading: "keṭṭiyāṉa tayir."
+        ipa: "keʈʈijaːna t̪ajiɾ"
+        bases: [{ word: "கெட்டியான", base: "கெட்டியான", reading: "keṭṭiyāṉa" }, { word: "தயிர்", ref: "ta-1335" }]
+      - target: "சாம்பார் கெட்டியாக இருக்கிறது."
+        reading: "cāmpār keṭṭiyāka irukkiṟatu."
+        ipa: "saːmpaːɾ keʈʈijaːka iɾukkirat̪u"
+        bases: [{ word: "சாம்பார்", ref: "ta-0250" }, { word: "கெட்டியாக", base: "கெட்டியான", reading: "keṭṭiyāṉa" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1368"
+    target: "செய்முறை"
+    reading: "ceymuṟai"
+    ipa: "sejmurai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "செய்முறை எழுது."
+        reading: "ceymuṟai eḻutu."
+        ipa: "sejmurai eɻut̪u"
+        bases: [{ word: "செய்முறை", base: "செய்முறை", reading: "ceymuṟai" }, { word: "எழுது", ref: "ta-0124" }]
+      - target: "இது தோசை செய்முறை."
+        reading: "itu tōcai ceymuṟai."
+        ipa: "it̪u t̪oːsai sejmurai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "தோசை", ref: "ta-0248" }, { word: "செய்முறை", base: "செய்முறை", reading: "ceymuṟai" }]
+  - id: "ta-1369"
+    target: "பதம்"
+    reading: "patam"
+    ipa: "pat̪am"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பதம் சரி."
+        reading: "patam cari."
+        ipa: "pat̪am saɾi"
+        bases: [{ word: "பதம்", base: "பதம்", reading: "patam" }, { word: "சரி", ref: "ta-0023" }]
+      - target: "சாதம் பதம் பார்."
+        reading: "cātam patam pār."
+        ipa: "saːt̪am pat̪am paːɾ"
+        bases: [{ word: "சாதம்", ref: "ta-0247" }, { word: "பதம்", base: "பதம்", reading: "patam" }, { word: "பார்", ref: "ta-0121" }]
+  - id: "ta-1370"
+    target: "தாளிப்பு"
+    reading: "tāḷippu"
+    ipa: "t̪aːɭippu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தாளிப்பு தயார்."
+        reading: "tāḷippu tayār."
+        ipa: "t̪aːɭippu t̪ajaːɾ"
+        bases: [{ word: "தாளிப்பு", base: "தாளிப்பு", reading: "tāḷippu" }, { word: "தயார்", base: "தயார்", reading: "tayār" }]
+      - target: "தாளிப்பு வாசனை."
+        reading: "tāḷippu vācaṉai."
+        ipa: "t̪aːɭippu ʋaːsanai"
+        bases: [{ word: "தாளிப்பு", base: "தாளிப்பு", reading: "tāḷippu" }, { word: "வாசனை", ref: "ta-1361" }]
+  - id: "ta-1371"
+    target: "துண்டு"
+    reading: "tuṇṭu"
+    ipa: "t̪uɳʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஒரு துண்டு கொடு."
+        reading: "oru tuṇṭu koṭu."
+        ipa: "oɾu t̪uɳʈu koʈu"
+        bases: [{ word: "ஒரு", ref: "ta-0419" }, { word: "துண்டு", base: "துண்டு", reading: "tuṇṭu" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "சின்ன துண்டு போதும்."
+        reading: "ciṉṉa tuṇṭu pōtum."
+        ipa: "sinna t̪uɳʈu poːt̪um"
+        bases: [{ word: "சின்ன", ref: "ta-0168" }, { word: "துண்டு", base: "துண்டு", reading: "tuṇṭu" }, { word: "போதும்", ref: "ta-0161" }]

@@ -1,0 +1,59 @@
+schema: 1
+id: "ta-grammar-conjunct-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+cards:
+  - id: "ta-0460"
+    target: "பண்ணு"
+    reading: "paṇṇu"
+    ipa: "paɳɳu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் அம்மாவுக்குப் போன் பண்றேன்."
+        reading: "nāṉ ammāvukkup pōṉ paṇṟēṉ."
+        ipa: "naːn ammaːʋukkup poːn paɳreːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "அம்மாவுக்குப்", base: "அம்மா", reading: "ammā" }, { word: "போன்", base: "போன்", reading: "pōṉ" }, { word: "பண்றேன்", base: "பண்ணு", reading: "paṇṇu" }]
+      - target: "நீங்கள் எனக்கு உதவி பண்ணுங்கள்."
+        reading: "nīṅkaḷ eṉakku utavi paṇṇuṅkaḷ."
+        ipa: "niːŋkaɭ enakku ut̪aʋi paɳɳuŋkaɭ"
+        bases: [{ word: "நீங்கள்", ref: "ta-0004" }, { word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "உதவி", ref: "ta-1800" }, { word: "பண்ணுங்கள்", base: "பண்ணு", reading: "paṇṇu" }]
+  - id: "ta-0461"
+    target: "ஆகு"
+    reading: "āku"
+    ipa: "aːku"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவன் மருத்துவர் ஆனான்."
+        reading: "avaṉ maruttuvar āṉāṉ."
+        ipa: "aʋan maɾut̪t̪uʋaɾ aːnaːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "மருத்துவர்", ref: "ta-0199" }, { word: "ஆனான்", base: "ஆகு", reading: "āku" }]
+      - target: "நேரம் ஆகிறது."
+        reading: "nēram ākiṟatu."
+        ipa: "neːɾam aːkirat̪u"
+        bases: [{ word: "நேரம்", ref: "ta-0155" }, { word: "ஆகிறது", base: "ஆகு", reading: "āku" }]
+  - id: "ta-0462"
+    target: "படு"
+    reading: "paṭu"
+    ipa: "paʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "குழந்தை பயப்படுகிறது."
+        reading: "kuḻantai payappaṭukiṟatu."
+        ipa: "kuɻant̪ai pajappaʈukirat̪u"
+        bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "பயப்படுகிறது", base: "படு", reading: "paṭu" }]
+      - target: "பயப்படாதீர்கள்."
+        reading: "payappaṭātīrkaḷ."
+        ipa: "pajappaʈaːt̪iːɾkaɭ"
+        bases: [{ word: "பயப்படாதீர்கள்", base: "படு", reading: "paṭu" }]

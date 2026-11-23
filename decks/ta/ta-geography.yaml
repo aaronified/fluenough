@@ -1,0 +1,911 @@
+schema: 1
+id: "ta-geography"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "geography"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-2357"
+    target: "உலகம்"
+    reading: "ulakam"
+    ipa: "ulakam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "உலகம் அழகு."
+        reading: "ulakam aḻaku."
+        ipa: "ulakam aɻaku"
+        bases: [{ word: "உலகம்", base: "உலகம்", reading: "ulakam" }, { word: "அழகு", ref: "ta-1980" }]
+      - target: "இது என் உலகம்."
+        reading: "itu eṉ ulakam."
+        ipa: "it̪u en ulakam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "என்", base: "நான்", reading: "nāṉ" }, { word: "உலகம்", base: "உலகம்", reading: "ulakam" }]
+  - id: "ta-2358"
+    target: "கண்டம்"
+    reading: "kaṇṭam"
+    ipa: "kaɳʈam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஆசியா பெரிய கண்டம்."
+        reading: "āciyā periya kaṇṭam."
+        ipa: "aːsijaː peɾija kaɳʈam"
+        bases: [{ word: "ஆசியா", ref: "ta-2396" }, { word: "பெரிய", ref: "ta-0167" }, { word: "கண்டம்", base: "கண்டம்", reading: "kaṇṭam" }]
+      - target: "இது ஒரு கண்டம்."
+        reading: "itu oru kaṇṭam."
+        ipa: "it̪u oɾu kaɳʈam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "ஒரு", ref: "ta-0419" }, { word: "கண்டம்", base: "கண்டம்", reading: "kaṇṭam" }]
+  - id: "ta-2359"
+    target: "நாடு"
+    reading: "nāṭu"
+    ipa: "naːʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது என்ன நாடு?"
+        reading: "itu eṉṉa nāṭu?"
+        ipa: "it̪u enna naːʈu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "என்ன", ref: "ta-0042" }, { word: "நாடு", base: "நாடு", reading: "nāṭu" }]
+      - target: "இது பெரிய நாடு."
+        reading: "itu periya nāṭu."
+        ipa: "it̪u peɾija naːʈu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0167" }, { word: "நாடு", base: "நாடு", reading: "nāṭu" }]
+  - id: "ta-2360"
+    target: "மாநிலம்"
+    reading: "mānilam"
+    ipa: "maːnilam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தமிழ்நாடு ஒரு மாநிலம்."
+        reading: "tamiḻnāṭu oru mānilam."
+        ipa: "t̪amiɻnaːʈu oɾu maːnilam"
+        bases: [{ word: "தமிழ்நாடு", ref: "ta-2369" }, { word: "ஒரு", ref: "ta-0419" }, { word: "மாநிலம்", base: "மாநிலம்", reading: "mānilam" }]
+      - target: "இது பெரிய மாநிலம்."
+        reading: "itu periya mānilam."
+        ipa: "it̪u peɾija maːnilam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0167" }, { word: "மாநிலம்", base: "மாநிலம்", reading: "mānilam" }]
+  - id: "ta-2361"
+    target: "மாவட்டம்"
+    reading: "māvaṭṭam"
+    ipa: "maːʋaʈʈam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Districts_of_Tamil_Nadu" }
+    bases: "self"
+    examples:
+      - target: "இது பெரிய மாவட்டம்."
+        reading: "itu periya māvaṭṭam."
+        ipa: "it̪u peɾija maːʋaʈʈam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0167" }, { word: "மாவட்டம்", base: "மாவட்டம்", reading: "māvaṭṭam" }]
+      - target: "மாவட்டம் எது?"
+        reading: "māvaṭṭam etu?"
+        ipa: "maːʋaʈʈam et̪u"
+        bases: [{ word: "மாவட்டம்", base: "மாவட்டம்", reading: "māvaṭṭam" }, { word: "எது", ref: "ta-0047" }]
+  - id: "ta-2362"
+    target: "தலைநகரம்"
+    reading: "talainakaram"
+    ipa: "t̪alainakaɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சென்னை தலைநகரம்."
+        reading: "ceṉṉai talainakaram."
+        ipa: "sennai t̪alainakaɾam"
+        bases: [{ word: "சென்னை", ref: "ta-2373" }, { word: "தலைநகரம்", base: "தலைநகரம்", reading: "talainakaram" }]
+      - target: "தலைநகரம் எது?"
+        reading: "talainakaram etu?"
+        ipa: "t̪alainakaɾam et̪u"
+        bases: [{ word: "தலைநகரம்", base: "தலைநகரம்", reading: "talainakaram" }, { word: "எது", ref: "ta-0047" }]
+  - id: "ta-2363"
+    target: "பெருங்கடல்"
+    reading: "peruṅkaṭal"
+    ipa: "peɾuŋkaʈal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பெருங்கடல்."
+        reading: "itu peruṅkaṭal."
+        ipa: "it̪u peɾuŋkaʈal"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெருங்கடல்", base: "பெருங்கடல்", reading: "peruṅkaṭal" }]
+      - target: "பெருங்கடல் எங்கே?"
+        reading: "peruṅkaṭal eṅkē?"
+        ipa: "peɾuŋkaʈal eŋkeː"
+        bases: [{ word: "பெருங்கடல்", base: "பெருங்கடல்", reading: "peruṅkaṭal" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2364"
+    target: "சமவெளி"
+    reading: "camaveḷi"
+    ipa: "samaʋeɭi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது சமவெளி."
+        reading: "itu camaveḷi."
+        ipa: "it̪u samaʋeɭi"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "சமவெளி", base: "சமவெளி", reading: "camaveḷi" }]
+      - target: "சமவெளி பச்சை."
+        reading: "camaveḷi paccai."
+        ipa: "samaʋeɭi patʃtʃai"
+        bases: [{ word: "சமவெளி", base: "சமவெளி", reading: "camaveḷi" }, { word: "பச்சை", ref: "ta-0293" }]
+  - id: "ta-2365"
+    target: "மக்கள்தொகை"
+    reading: "makkaḷtokai"
+    ipa: "makkaɭt̪okai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மக்கள்தொகை அதிகம்."
+        reading: "makkaḷtokai atikam."
+        ipa: "makkaɭt̪okai at̪ikam"
+        bases: [{ word: "மக்கள்தொகை", base: "மக்கள்தொகை", reading: "makkaḷtokai" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "மக்கள்தொகை எவ்வளவு?"
+        reading: "makkaḷtokai evvaḷavu?"
+        ipa: "makkaɭt̪okai eʋʋaɭaʋu"
+        bases: [{ word: "மக்கள்தொகை", base: "மக்கள்தொகை", reading: "makkaḷtokai" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+  - id: "ta-2366"
+    target: "விரிகுடா"
+    reading: "virikuṭā"
+    ipa: "ʋiɾikuʈaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது விரிகுடா."
+        reading: "itu virikuṭā."
+        ipa: "it̪u ʋiɾikuʈaː"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "விரிகுடா", base: "விரிகுடா", reading: "virikuṭā" }]
+      - target: "விரிகுடா எங்கே?"
+        reading: "virikuṭā eṅkē?"
+        ipa: "ʋiɾikuʈaː eŋkeː"
+        bases: [{ word: "விரிகுடா", base: "விரிகுடா", reading: "virikuṭā" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2367"
+    target: "நீரிணை"
+    reading: "nīriṇai"
+    ipa: "niːɾiɳai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது நீரிணை."
+        reading: "itu nīriṇai."
+        ipa: "it̪u niːɾiɳai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நீரிணை", base: "நீரிணை", reading: "nīriṇai" }]
+      - target: "நீரிணை எங்கே?"
+        reading: "nīriṇai eṅkē?"
+        ipa: "niːɾiɳai eŋkeː"
+        bases: [{ word: "நீரிணை", base: "நீரிணை", reading: "nīriṇai" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2368"
+    target: "இந்தியா"
+    reading: "intiyā"
+    ipa: "int̪ijaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது இந்தியா."
+        reading: "itu intiyā."
+        ipa: "it̪u int̪ijaː"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "இந்தியா", base: "இந்தியா", reading: "intiyā" }]
+      - target: "நான் இந்தியாவுக்குப் போகிறேன்."
+        reading: "nāṉ intiyāvukkup pōkiṟēṉ."
+        ipa: "naːn int̪ijaːʋukkup poːkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "இந்தியாவுக்குப்", base: "இந்தியா", reading: "intiyā" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+  - id: "ta-2369"
+    target: "தமிழ்நாடு"
+    reading: "tamiḻnāṭu"
+    ipa: "t̪amiɻnaːʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Tamil_Nadu" }
+    bases: "self"
+    examples:
+      - target: "இது தமிழ்நாடு."
+        reading: "itu tamiḻnāṭu."
+        ipa: "it̪u t̪amiɻnaːʈu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "தமிழ்நாடு", base: "தமிழ்நாடு", reading: "tamiḻnāṭu" }]
+      - target: "நான் தமிழ்நாட்டுக்குப் போகிறேன்."
+        reading: "nāṉ tamiḻnāṭṭukkup pōkiṟēṉ."
+        ipa: "naːn t̪amiɻnaːʈʈukkup poːkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "தமிழ்நாட்டுக்குப்", base: "தமிழ்நாடு", reading: "tamiḻnāṭu" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+  - id: "ta-2370"
+    target: "இலங்கை"
+    reading: "ilaṅkai"
+    ipa: "ilaŋkai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Languages_of_Sri_Lanka" }
+      - { id: "n2", kind: "culture", source: "https://en.wikipedia.org/wiki/Sri_Lanka" }
+    bases: "self"
+    examples:
+      - target: "இது இலங்கை."
+        reading: "itu ilaṅkai."
+        ipa: "it̪u ilaŋkai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "இலங்கை", base: "இலங்கை", reading: "ilaṅkai" }]
+      - target: "இலங்கை ஒரு தீவு."
+        reading: "ilaṅkai oru tīvu."
+        ipa: "ilaŋkai oɾu t̪iːʋu"
+        bases: [{ word: "இலங்கை", base: "இலங்கை", reading: "ilaṅkai" }, { word: "ஒரு", ref: "ta-0419" }, { word: "தீவு", ref: "ta-2196" }]
+  - id: "ta-2371"
+    target: "சிங்கப்பூர்"
+    reading: "ciṅkappūr"
+    ipa: "siŋkappuːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Languages_of_Singapore" }
+    bases: "self"
+    examples:
+      - target: "இது சிங்கப்பூர்."
+        reading: "itu ciṅkappūr."
+        ipa: "it̪u siŋkappuːɾ"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "சிங்கப்பூர்", base: "சிங்கப்பூர்", reading: "ciṅkappūr" }]
+      - target: "சிங்கப்பூர் சின்ன நாடு."
+        reading: "ciṅkappūr ciṉṉa nāṭu."
+        ipa: "siŋkappuːɾ sinna naːʈu"
+        bases: [{ word: "சிங்கப்பூர்", base: "சிங்கப்பூர்", reading: "ciṅkappūr" }, { word: "சின்ன", ref: "ta-0168" }, { word: "நாடு", ref: "ta-2359" }]
+  - id: "ta-2372"
+    target: "மலேசியா"
+    reading: "malēciyā"
+    ipa: "maleːsijaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது மலேசியா."
+        reading: "itu malēciyā."
+        ipa: "it̪u maleːsijaː"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "மலேசியா", base: "மலேசியா", reading: "malēciyā" }]
+      - target: "மலேசியா பெரிய நாடு."
+        reading: "malēciyā periya nāṭu."
+        ipa: "maleːsijaː peɾija naːʈu"
+        bases: [{ word: "மலேசியா", base: "மலேசியா", reading: "malēciyā" }, { word: "பெரிய", ref: "ta-0167" }, { word: "நாடு", ref: "ta-2359" }]
+  - id: "ta-2373"
+    target: "சென்னை"
+    reading: "ceṉṉai"
+    ipa: "sennai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Chennai" }
+    bases: "self"
+    examples:
+      - target: "சென்னை தமிழ்நாட்டின் தலைநகரம்."
+        reading: "ceṉṉai tamiḻnāṭṭiṉ talainakaram."
+        ipa: "sennai t̪amiɻnaːʈʈin t̪alainakaɾam"
+        bases: [{ word: "சென்னை", base: "சென்னை", reading: "ceṉṉai" }, { word: "தமிழ்நாட்டின்", base: "தமிழ்நாடு", reading: "tamiḻnāṭu" }, { word: "தலைநகரம்", ref: "ta-2362" }]
+      - target: "சென்னையில் கடற்கரை."
+        reading: "ceṉṉaiyil kaṭaṟkarai."
+        ipa: "sennaijil kaʈarkaɾai"
+        bases: [{ word: "சென்னையில்", base: "சென்னை", reading: "ceṉṉai" }, { word: "கடற்கரை", ref: "ta-2195" }]
+  - id: "ta-2374"
+    target: "மதுரை"
+    reading: "maturai"
+    ipa: "mat̪uɾai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Vaigai_River" }
+      - { id: "n2", kind: "culture", source: "https://en.wikipedia.org/wiki/Meenakshi_Temple" }
+    bases: "self"
+    examples:
+      - target: "இது மதுரை."
+        reading: "itu maturai."
+        ipa: "it̪u mat̪uɾai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "மதுரை", base: "மதுரை", reading: "maturai" }]
+      - target: "மதுரையில் கோயில்."
+        reading: "maturaiyil kōyil."
+        ipa: "mat̪uɾaijil koːjil"
+        bases: [{ word: "மதுரையில்", base: "மதுரை", reading: "maturai" }, { word: "கோயில்", ref: "ta-0262" }]
+  - id: "ta-2375"
+    target: "கோயம்புத்தூர்"
+    reading: "kōyamputtūr"
+    ipa: "koːjamput̪t̪uːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Coimbatore" }
+    bases: "self"
+    examples:
+      - target: "இது கோயம்புத்தூர்."
+        reading: "itu kōyamputtūr."
+        ipa: "it̪u koːjamput̪t̪uːɾ"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "கோயம்புத்தூர்", base: "கோயம்புத்தூர்", reading: "kōyamputtūr" }]
+      - target: "கோயம்புத்தூர் பெரிய நகரம்."
+        reading: "kōyamputtūr periya nakaram."
+        ipa: "koːjamput̪t̪uːɾ peɾija nakaɾam"
+        bases: [{ word: "கோயம்புத்தூர்", base: "கோயம்புத்தூர்", reading: "kōyamputtūr" }, { word: "பெரிய", ref: "ta-0167" }, { word: "நகரம்", ref: "ta-0264" }]
+  - id: "ta-2376"
+    target: "திருச்சி"
+    reading: "tirucci"
+    ipa: "t̪iɾutʃtʃi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Tiruchirappalli" }
+    bases: "self"
+    examples:
+      - target: "இது திருச்சி."
+        reading: "itu tirucci."
+        ipa: "it̪u t̪iɾutʃtʃi"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "திருச்சி", base: "திருச்சி", reading: "tirucci" }]
+      - target: "திருச்சி பெரிய நகரம்."
+        reading: "tirucci periya nakaram."
+        ipa: "t̪iɾutʃtʃi peɾija nakaɾam"
+        bases: [{ word: "திருச்சி", base: "திருச்சி", reading: "tirucci" }, { word: "பெரிய", ref: "ta-0167" }, { word: "நகரம்", ref: "ta-0264" }]
+  - id: "ta-2377"
+    target: "தஞ்சாவூர்"
+    reading: "tañcāvūr"
+    ipa: "t̪aɲtʃaːʋuːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Thanjavur" }
+    bases: "self"
+    examples:
+      - target: "இது தஞ்சாவூர்."
+        reading: "itu tañcāvūr."
+        ipa: "it̪u t̪aɲtʃaːʋuːɾ"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "தஞ்சாவூர்", base: "தஞ்சாவூர்", reading: "tañcāvūr" }]
+      - target: "தஞ்சாவூரில் பெரிய கோயில்."
+        reading: "tañcāvūril periya kōyil."
+        ipa: "t̪aɲtʃaːʋuːɾil peɾija koːjil"
+        bases: [{ word: "தஞ்சாவூரில்", base: "தஞ்சாவூர்", reading: "tañcāvūr" }, { word: "பெரிய", ref: "ta-0167" }, { word: "கோயில்", ref: "ta-0262" }]
+  - id: "ta-2378"
+    target: "திருநெல்வேலி"
+    reading: "tirunelvēli"
+    ipa: "t̪iɾunelʋeːli"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Tirunelveli" }
+    bases: "self"
+    examples:
+      - target: "இது திருநெல்வேலி."
+        reading: "itu tirunelvēli."
+        ipa: "it̪u t̪iɾunelʋeːli"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "திருநெல்வேலி", base: "திருநெல்வேலி", reading: "tirunelvēli" }]
+      - target: "திருநெல்வேலி எங்கே?"
+        reading: "tirunelvēli eṅkē?"
+        ipa: "t̪iɾunelʋeːli eŋkeː"
+        bases: [{ word: "திருநெல்வேலி", base: "திருநெல்வேலி", reading: "tirunelvēli" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2379"
+    target: "சேலம்"
+    reading: "cēlam"
+    ipa: "seːlam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Salem,_Tamil_Nadu" }
+    bases: "self"
+    examples:
+      - target: "இது சேலம்."
+        reading: "itu cēlam."
+        ipa: "it̪u seːlam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "சேலம்", base: "சேலம்", reading: "cēlam" }]
+      - target: "சேலம் எங்கே?"
+        reading: "cēlam eṅkē?"
+        ipa: "seːlam eŋkeː"
+        bases: [{ word: "சேலம்", base: "சேலம்", reading: "cēlam" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2380"
+    target: "புதுச்சேரி"
+    reading: "putuccēri"
+    ipa: "put̪utʃtʃeːɾi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது புதுச்சேரி."
+        reading: "itu putuccēri."
+        ipa: "it̪u put̪utʃtʃeːɾi"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "புதுச்சேரி", base: "புதுச்சேரி", reading: "putuccēri" }]
+      - target: "புதுச்சேரி எங்கே?"
+        reading: "putuccēri eṅkē?"
+        ipa: "put̪utʃtʃeːɾi eŋkeː"
+        bases: [{ word: "புதுச்சேரி", base: "புதுச்சேரி", reading: "putuccēri" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2381"
+    target: "கேரளா"
+    reading: "kēraḷā"
+    ipa: "keːɾaɭaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Kerala" }
+    bases: "self"
+    examples:
+      - target: "இது கேரளா."
+        reading: "itu kēraḷā."
+        ipa: "it̪u keːɾaɭaː"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "கேரளா", base: "கேரளா", reading: "kēraḷā" }]
+      - target: "கேரளா எங்கே?"
+        reading: "kēraḷā eṅkē?"
+        ipa: "keːɾaɭaː eŋkeː"
+        bases: [{ word: "கேரளா", base: "கேரளா", reading: "kēraḷā" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2382"
+    target: "கர்நாடகா"
+    reading: "karnāṭakā"
+    ipa: "kaɾnaːʈakaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Karnataka" }
+    bases: "self"
+    examples:
+      - target: "இது கர்நாடகா."
+        reading: "itu karnāṭakā."
+        ipa: "it̪u kaɾnaːʈakaː"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "கர்நாடகா", base: "கர்நாடகா", reading: "karnāṭakā" }]
+      - target: "கர்நாடகா எங்கே?"
+        reading: "karnāṭakā eṅkē?"
+        ipa: "kaɾnaːʈakaː eŋkeː"
+        bases: [{ word: "கர்நாடகா", base: "கர்நாடகா", reading: "karnāṭakā" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2383"
+    target: "ஆந்திரா"
+    reading: "āntirā"
+    ipa: "aːnt̪iɾaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Andhra_Pradesh" }
+    bases: "self"
+    examples:
+      - target: "இது ஆந்திரா."
+        reading: "itu āntirā."
+        ipa: "it̪u aːnt̪iɾaː"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "ஆந்திரா", base: "ஆந்திரா", reading: "āntirā" }]
+      - target: "ஆந்திரா எங்கே?"
+        reading: "āntirā eṅkē?"
+        ipa: "aːnt̪iɾaː eŋkeː"
+        bases: [{ word: "ஆந்திரா", base: "ஆந்திரா", reading: "āntirā" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2384"
+    target: "கன்னியாகுமரி"
+    reading: "kaṉṉiyākumari"
+    ipa: "kannijaːkumaɾi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Kanyakumari" }
+    bases: "self"
+    examples:
+      - target: "இது கன்னியாகுமரி."
+        reading: "itu kaṉṉiyākumari."
+        ipa: "it̪u kannijaːkumaɾi"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "கன்னியாகுமரி", base: "கன்னியாகுமரி", reading: "kaṉṉiyākumari" }]
+      - target: "கன்னியாகுமரி தெற்கில்."
+        reading: "kaṉṉiyākumari teṟkil."
+        ipa: "kannijaːkumaɾi t̪erkil"
+        bases: [{ word: "கன்னியாகுமரி", base: "கன்னியாகுமரி", reading: "kaṉṉiyākumari" }, { word: "தெற்கில்", base: "தெற்கு", reading: "teṟku" }]
+  - id: "ta-2385"
+    target: "ராமேஸ்வரம்"
+    reading: "rāmēsvaram"
+    ipa: "ɾaːmeːsʋaɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Rameswaram" }
+    bases: "self"
+    examples:
+      - target: "இது ராமேஸ்வரம்."
+        reading: "itu rāmēsvaram."
+        ipa: "it̪u ɾaːmeːsʋaɾam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "ராமேஸ்வரம்", base: "ராமேஸ்வரம்", reading: "rāmēsvaram" }]
+      - target: "ராமேஸ்வரம் எங்கே?"
+        reading: "rāmēsvaram eṅkē?"
+        ipa: "ɾaːmeːsʋaɾam eŋkeː"
+        bases: [{ word: "ராமேஸ்வரம்", base: "ராமேஸ்வரம்", reading: "rāmēsvaram" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2386"
+    target: "ஊட்டி"
+    reading: "ūṭṭi"
+    ipa: "uːʈʈi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Ooty" }
+    bases: "self"
+    examples:
+      - target: "இது ஊட்டி."
+        reading: "itu ūṭṭi."
+        ipa: "it̪u uːʈʈi"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "ஊட்டி", base: "ஊட்டி", reading: "ūṭṭi" }]
+      - target: "ஊட்டியில் குளிர்."
+        reading: "ūṭṭiyil kuḷir."
+        ipa: "uːʈʈijil kuɭiɾ"
+        bases: [{ word: "ஊட்டியில்", base: "ஊட்டி", reading: "ūṭṭi" }, { word: "குளிர்", ref: "ta-1118" }]
+  - id: "ta-2387"
+    target: "காவிரி"
+    reading: "kāviri"
+    ipa: "kaːʋiɾi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Kaveri" }
+    bases: "self"
+    examples:
+      - target: "இது காவிரி."
+        reading: "itu kāviri."
+        ipa: "it̪u kaːʋiɾi"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "காவிரி", base: "காவிரி", reading: "kāviri" }]
+      - target: "காவிரி தமிழ்நாட்டில் ஓடுகிறது."
+        reading: "kāviri tamiḻnāṭṭil ōṭukiṟatu."
+        ipa: "kaːʋiɾi t̪amiɻnaːʈʈil oːʈukirat̪u"
+        bases: [{ word: "காவிரி", base: "காவிரி", reading: "kāviri" }, { word: "தமிழ்நாட்டில்", base: "தமிழ்நாடு", reading: "tamiḻnāṭu" }, { word: "ஓடுகிறது", base: "ஓடு", reading: "ōṭu" }]
+  - id: "ta-2388"
+    target: "வைகை"
+    reading: "vaikai"
+    ipa: "ʋaikai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Vaigai_River" }
+    bases: "self"
+    examples:
+      - target: "இது வைகை."
+        reading: "itu vaikai."
+        ipa: "it̪u ʋaikai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "வைகை", base: "வைகை", reading: "vaikai" }]
+      - target: "வைகை நதி."
+        reading: "vaikai nati."
+        ipa: "ʋaikai nat̪i"
+        bases: [{ word: "வைகை", base: "வைகை", reading: "vaikai" }, { word: "நதி", ref: "ta-2192" }]
+  - id: "ta-2389"
+    target: "கங்கை"
+    reading: "kaṅkai"
+    ipa: "kaŋkai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Ganges" }
+    bases: "self"
+    examples:
+      - target: "இது கங்கை."
+        reading: "itu kaṅkai."
+        ipa: "it̪u kaŋkai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "கங்கை", base: "கங்கை", reading: "kaṅkai" }]
+      - target: "கங்கை நதி."
+        reading: "kaṅkai nati."
+        ipa: "kaŋkai nat̪i"
+        bases: [{ word: "கங்கை", base: "கங்கை", reading: "kaṅkai" }, { word: "நதி", ref: "ta-2192" }]
+  - id: "ta-2390"
+    target: "இமயமலை"
+    reading: "imayamalai"
+    ipa: "imajamalai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Himalayas" }
+    bases: "self"
+    examples:
+      - target: "இது இமயமலை."
+        reading: "itu imayamalai."
+        ipa: "it̪u imajamalai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "இமயமலை", base: "இமயமலை", reading: "imayamalai" }]
+      - target: "இமயமலை வடக்கில்."
+        reading: "imayamalai vaṭakkil."
+        ipa: "imajamalai ʋaʈakkil"
+        bases: [{ word: "இமயமலை", base: "இமயமலை", reading: "imayamalai" }, { word: "வடக்கில்", base: "வடக்கு", reading: "vaṭakku" }]
+  - id: "ta-2391"
+    target: "நீலகிரி"
+    reading: "nīlakiri"
+    ipa: "niːlakiɾi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Nilgiri_mountains" }
+    bases: "self"
+    examples:
+      - target: "இது நீலகிரி."
+        reading: "itu nīlakiri."
+        ipa: "it̪u niːlakiɾi"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நீலகிரி", base: "நீலகிரி", reading: "nīlakiri" }]
+      - target: "நீலகிரி மலை."
+        reading: "nīlakiri malai."
+        ipa: "niːlakiɾi malai"
+        bases: [{ word: "நீலகிரி", base: "நீலகிரி", reading: "nīlakiri" }, { word: "மலை", ref: "ta-1132" }]
+  - id: "ta-2392"
+    target: "வங்கக்கடல்"
+    reading: "vaṅkakkaṭal"
+    ipa: "ʋaŋkakkaʈal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Bay_of_Bengal" }
+    bases: "self"
+    examples:
+      - target: "இது வங்கக்கடல்."
+        reading: "itu vaṅkakkaṭal."
+        ipa: "it̪u ʋaŋkakkaʈal"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "வங்கக்கடல்", base: "வங்கக்கடல்", reading: "vaṅkakkaṭal" }]
+      - target: "வங்கக்கடல் கிழக்கு."
+        reading: "vaṅkakkaṭal kiḻakku."
+        ipa: "ʋaŋkakkaʈal kiɻakku"
+        bases: [{ word: "வங்கக்கடல்", base: "வங்கக்கடல்", reading: "vaṅkakkaṭal" }, { word: "கிழக்கு", ref: "ta-0235" }]
+  - id: "ta-2393"
+    target: "அரபிக்கடல்"
+    reading: "arapikkaṭal"
+    ipa: "aɾapikkaʈal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Arabian_Sea" }
+    bases: "self"
+    examples:
+      - target: "இது அரபிக்கடல்."
+        reading: "itu arapikkaṭal."
+        ipa: "it̪u aɾapikkaʈal"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "அரபிக்கடல்", base: "அரபிக்கடல்", reading: "arapikkaṭal" }]
+      - target: "அரபிக்கடல் மேற்கு."
+        reading: "arapikkaṭal mēṟku."
+        ipa: "aɾapikkaʈal meːrku"
+        bases: [{ word: "அரபிக்கடல்", base: "அரபிக்கடல்", reading: "arapikkaṭal" }, { word: "மேற்கு", ref: "ta-0236" }]
+  - id: "ta-2394"
+    target: "யாழ்ப்பாணம்"
+    reading: "yāḻppāṇam"
+    ipa: "jaːɻppaːɳam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Jaffna" }
+    bases: "self"
+    examples:
+      - target: "இது யாழ்ப்பாணம்."
+        reading: "itu yāḻppāṇam."
+        ipa: "it̪u jaːɻppaːɳam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "யாழ்ப்பாணம்", base: "யாழ்ப்பாணம்", reading: "yāḻppāṇam" }]
+      - target: "யாழ்ப்பாணம் இலங்கையில்."
+        reading: "yāḻppāṇam ilaṅkaiyil."
+        ipa: "jaːɻppaːɳam ilaŋkaijil"
+        bases: [{ word: "யாழ்ப்பாணம்", base: "யாழ்ப்பாணம்", reading: "yāḻppāṇam" }, { word: "இலங்கையில்", base: "இலங்கை", reading: "ilaṅkai" }]
+  - id: "ta-2395"
+    target: "கொழும்பு"
+    reading: "koḻumpu"
+    ipa: "koɻumpu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Colombo" }
+    bases: "self"
+    examples:
+      - target: "இது கொழும்பு."
+        reading: "itu koḻumpu."
+        ipa: "it̪u koɻumpu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "கொழும்பு", base: "கொழும்பு", reading: "koḻumpu" }]
+      - target: "கொழும்பு இலங்கையில்."
+        reading: "koḻumpu ilaṅkaiyil."
+        ipa: "koɻumpu ilaŋkaijil"
+        bases: [{ word: "கொழும்பு", base: "கொழும்பு", reading: "koḻumpu" }, { word: "இலங்கையில்", base: "இலங்கை", reading: "ilaṅkai" }]
+  - id: "ta-2396"
+    target: "ஆசியா"
+    reading: "āciyā"
+    ipa: "aːsijaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது ஆசியா."
+        reading: "itu āciyā."
+        ipa: "it̪u aːsijaː"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "ஆசியா", base: "ஆசியா", reading: "āciyā" }]
+      - target: "இந்தியா ஆசியாவில்."
+        reading: "intiyā āciyāvil."
+        ipa: "int̪ijaː aːsijaːʋil"
+        bases: [{ word: "இந்தியா", ref: "ta-2368" }, { word: "ஆசியாவில்", base: "ஆசியா", reading: "āciyā" }]
+  - id: "ta-2397"
+    target: "ஐரோப்பா"
+    reading: "airōppā"
+    ipa: "aiɾoːppaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது ஐரோப்பா."
+        reading: "itu airōppā."
+        ipa: "it̪u aiɾoːppaː"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "ஐரோப்பா", base: "ஐரோப்பா", reading: "airōppā" }]
+      - target: "ஐரோப்பா எங்கே?"
+        reading: "airōppā eṅkē?"
+        ipa: "aiɾoːppaː eŋkeː"
+        bases: [{ word: "ஐரோப்பா", base: "ஐரோப்பா", reading: "airōppā" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2398"
+    target: "ஆப்பிரிக்கா"
+    reading: "āppirikkā"
+    ipa: "aːppiɾikkaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது ஆப்பிரிக்கா."
+        reading: "itu āppirikkā."
+        ipa: "it̪u aːppiɾikkaː"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "ஆப்பிரிக்கா", base: "ஆப்பிரிக்கா", reading: "āppirikkā" }]
+      - target: "ஆப்பிரிக்கா எங்கே?"
+        reading: "āppirikkā eṅkē?"
+        ipa: "aːppiɾikkaː eŋkeː"
+        bases: [{ word: "ஆப்பிரிக்கா", base: "ஆப்பிரிக்கா", reading: "āppirikkā" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2399"
+    target: "அமெரிக்கா"
+    reading: "amerikkā"
+    ipa: "ameɾikkaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது அமெரிக்கா."
+        reading: "itu amerikkā."
+        ipa: "it̪u ameɾikkaː"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "அமெரிக்கா", base: "அமெரிக்கா", reading: "amerikkā" }]
+      - target: "அமெரிக்கா எங்கே?"
+        reading: "amerikkā eṅkē?"
+        ipa: "ameɾikkaː eŋkeː"
+        bases: [{ word: "அமெரிக்கா", base: "அமெரிக்கா", reading: "amerikkā" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2400"
+    target: "ஆஸ்திரேலியா"
+    reading: "āstirēliyā"
+    ipa: "aːst̪iɾeːlijaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது ஆஸ்திரேலியா."
+        reading: "itu āstirēliyā."
+        ipa: "it̪u aːst̪iɾeːlijaː"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "ஆஸ்திரேலியா", base: "ஆஸ்திரேலியா", reading: "āstirēliyā" }]
+      - target: "ஆஸ்திரேலியா எங்கே?"
+        reading: "āstirēliyā eṅkē?"
+        ipa: "aːst̪iɾeːlijaː eŋkeː"
+        bases: [{ word: "ஆஸ்திரேலியா", base: "ஆஸ்திரேலியா", reading: "āstirēliyā" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2401"
+    target: "சீனா"
+    reading: "cīṉā"
+    ipa: "siːnaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது சீனா."
+        reading: "itu cīṉā."
+        ipa: "it̪u siːnaː"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "சீனா", base: "சீனா", reading: "cīṉā" }]
+      - target: "சீனா பெரிய நாடு."
+        reading: "cīṉā periya nāṭu."
+        ipa: "siːnaː peɾija naːʈu"
+        bases: [{ word: "சீனா", base: "சீனா", reading: "cīṉā" }, { word: "பெரிய", ref: "ta-0167" }, { word: "நாடு", ref: "ta-2359" }]
+  - id: "ta-2402"
+    target: "ஜப்பான்"
+    reading: "jappāṉ"
+    ipa: "dʒappaːn"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது ஜப்பான்."
+        reading: "itu jappāṉ."
+        ipa: "it̪u dʒappaːn"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "ஜப்பான்", base: "ஜப்பான்", reading: "jappāṉ" }]
+      - target: "ஜப்பான் எங்கே?"
+        reading: "jappāṉ eṅkē?"
+        ipa: "dʒappaːn eŋkeː"
+        bases: [{ word: "ஜப்பான்", base: "ஜப்பான்", reading: "jappāṉ" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2403"
+    target: "பாகிஸ்தான்"
+    reading: "pākistāṉ"
+    ipa: "paːkist̪aːn"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பாகிஸ்தான்."
+        reading: "itu pākistāṉ."
+        ipa: "it̪u paːkist̪aːn"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பாகிஸ்தான்", base: "பாகிஸ்தான்", reading: "pākistāṉ" }]
+      - target: "பாகிஸ்தான் எங்கே?"
+        reading: "pākistāṉ eṅkē?"
+        ipa: "paːkist̪aːn eŋkeː"
+        bases: [{ word: "பாகிஸ்தான்", base: "பாகிஸ்தான்", reading: "pākistāṉ" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2404"
+    target: "இங்கிலாந்து"
+    reading: "iṅkilāntu"
+    ipa: "iŋkilaːnt̪u"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது இங்கிலாந்து."
+        reading: "itu iṅkilāntu."
+        ipa: "it̪u iŋkilaːnt̪u"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "இங்கிலாந்து", base: "இங்கிலாந்து", reading: "iṅkilāntu" }]
+      - target: "இங்கிலாந்து எங்கே?"
+        reading: "iṅkilāntu eṅkē?"
+        ipa: "iŋkilaːnt̪u eŋkeː"
+        bases: [{ word: "இங்கிலாந்து", base: "இங்கிலாந்து", reading: "iṅkilāntu" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2405"
+    target: "நேபாளம்"
+    reading: "nēpāḷam"
+    ipa: "neːpaːɭam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது நேபாளம்."
+        reading: "itu nēpāḷam."
+        ipa: "it̪u neːpaːɭam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நேபாளம்", base: "நேபாளம்", reading: "nēpāḷam" }]
+      - target: "நேபாளம் எங்கே?"
+        reading: "nēpāḷam eṅkē?"
+        ipa: "neːpaːɭam eŋkeː"
+        bases: [{ word: "நேபாளம்", base: "நேபாளம்", reading: "nēpāḷam" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-2406"
+    target: "வங்காளதேசம்"
+    reading: "vaṅkāḷatēcam"
+    ipa: "ʋaŋkaːɭat̪eːsam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது வங்காளதேசம்."
+        reading: "itu vaṅkāḷatēcam."
+        ipa: "it̪u ʋaŋkaːɭat̪eːsam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "வங்காளதேசம்", base: "வங்காளதேசம்", reading: "vaṅkāḷatēcam" }]
+      - target: "வங்காளதேசம் எங்கே?"
+        reading: "vaṅkāḷatēcam eṅkē?"
+        ipa: "ʋaŋkaːɭat̪eːsam eŋkeː"
+        bases: [{ word: "வங்காளதேசம்", base: "வங்காளதேசம்", reading: "vaṅkāḷatēcam" }, { word: "எங்கே", ref: "ta-0043" }]

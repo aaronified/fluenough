@@ -1,0 +1,102 @@
+schema: 1
+id: "ta-geography-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4608"
+    target: "சென்னை தமிழ்நாட்டின் தலைநகரம்."
+    reading: "ceṉṉai tamiḻnāṭṭiṉ talainakaram."
+    ipa: "sennai t̪amiɻnaːʈʈin t̪alainakaɾam"
+    pos: "phrase"
+    bases: [{ word: "சென்னை", ref: "ta-2373" }, { word: "தமிழ்நாட்டின்", base: "தமிழ்நாடு", reading: "tamiḻnāṭu" }, { word: "தலைநகரம்", ref: "ta-2362" }]
+    confusables:
+      - { id: "w1", ref: "ta-2374", kind: "word" }
+      - { id: "w2", ref: "ta-2379", kind: "word" }
+  - id: "ta-4609"
+    target: "தஞ்சாவூரில் பெரிய கோயில்."
+    reading: "tañcāvūril periya kōyil."
+    ipa: "t̪aɲtʃaːʋuːɾil peɾija koːjil"
+    pos: "phrase"
+    bases: [{ word: "தஞ்சாவூரில்", base: "தஞ்சாவூர்", reading: "tañcāvūr" }, { word: "பெரிய", ref: "ta-0167" }, { word: "கோயில்", ref: "ta-0262" }]
+    confusables:
+      - { id: "w1", ref: "ta-2376", kind: "word" }
+      - { id: "w2", ref: "ta-2374", kind: "word" }
+  - id: "ta-4610"
+    target: "கன்னியாகுமரி தெற்கில்."
+    reading: "kaṉṉiyākumari teṟkil."
+    ipa: "kannijaːkumaɾi t̪erkil"
+    pos: "phrase"
+    bases: [{ word: "கன்னியாகுமரி", ref: "ta-2384" }, { word: "தெற்கில்", base: "தெற்கு", reading: "teṟku" }]
+    confusables:
+      - { id: "w1", ref: "ta-2386", kind: "word" }
+      - { id: "w2", ref: "ta-2373", kind: "word" }
+  - id: "ta-4611"
+    target: "இலங்கை ஒரு தீவு."
+    reading: "ilaṅkai oru tīvu."
+    ipa: "ilaŋkai oɾu t̪iːʋu"
+    pos: "phrase"
+    bases: [{ word: "இலங்கை", ref: "ta-2370" }, { word: "ஒரு", ref: "ta-0419" }, { word: "தீவு", ref: "ta-2196" }]
+    confusables:
+      - { id: "w1", ref: "ta-2368", kind: "word" }
+      - { id: "w2", ref: "ta-2371", kind: "word" }
+  - id: "ta-4612"
+    target: "இலங்கையில் தமிழ் பேசுகிறார்கள்."
+    reading: "ilaṅkaiyil tamiḻ pēcukiṟārkaḷ."
+    ipa: "ilaŋkaijil t̪amiɻ peːsukiraːɾkaɭ"
+    pos: "phrase"
+    bases: [{ word: "இலங்கையில்", base: "இலங்கை", reading: "ilaṅkai" }, { word: "தமிழ்", ref: "ta-1820" }, { word: "பேசுகிறார்கள்", base: "பேசு", reading: "pēcu" }]
+    confusables:
+      - { id: "w1", ref: "ta-2371", kind: "word" }
+      - { id: "w2", ref: "ta-2372", kind: "word" }
+  - id: "ta-4613"
+    target: "சிங்கப்பூர் சின்ன நாடு."
+    reading: "ciṅkappūr ciṉṉa nāṭu."
+    ipa: "siŋkappuːɾ sinna naːʈu"
+    pos: "phrase"
+    bases: [{ word: "சிங்கப்பூர்", ref: "ta-2371" }, { word: "சின்ன", ref: "ta-0168" }, { word: "நாடு", ref: "ta-2359" }]
+    confusables:
+      - { id: "w1", ref: "ta-2401", kind: "word" }
+      - { id: "w2", ref: "ta-2368", kind: "word" }
+  - id: "ta-4614"
+    target: "காவிரி தமிழ்நாட்டில் ஓடுகிறது."
+    reading: "kāviri tamiḻnāṭṭil ōṭukiṟatu."
+    ipa: "kaːʋiɾi t̪amiɻnaːʈʈil oːʈukirat̪u"
+    pos: "phrase"
+    bases: [{ word: "காவிரி", ref: "ta-2387" }, { word: "தமிழ்நாட்டில்", base: "தமிழ்நாடு", reading: "tamiḻnāṭu" }, { word: "ஓடுகிறது", base: "ஓடு", reading: "ōṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-2388", kind: "word" }
+      - { id: "w2", ref: "ta-2389", kind: "word" }
+  - id: "ta-4615"
+    target: "வங்கக்கடல் கிழக்கு."
+    reading: "vaṅkakkaṭal kiḻakku."
+    ipa: "ʋaŋkakkaʈal kiɻakku"
+    pos: "phrase"
+    bases: [{ word: "வங்கக்கடல்", ref: "ta-2392" }, { word: "கிழக்கு", ref: "ta-0235" }]
+    confusables:
+      - { id: "w1", ref: "ta-2393", kind: "word" }
+      - { id: "w2", ref: "ta-2390", kind: "word" }
+  - id: "ta-4616"
+    target: "தமிழ்நாடு இந்தியாவின் தெற்கு மாநிலம்."
+    reading: "tamiḻnāṭu intiyāviṉ teṟku mānilam."
+    ipa: "t̪amiɻnaːʈu int̪ijaːʋin t̪erku maːnilam"
+    pos: "phrase"
+    bases:
+      - { word: "தமிழ்நாடு", ref: "ta-2369" }
+      - { word: "இந்தியாவின்", base: "இந்தியா", reading: "intiyā" }
+      - { word: "தெற்கு", ref: "ta-0234" }
+      - { word: "மாநிலம்", ref: "ta-2360" }
+    confusables:
+      - { id: "w1", ref: "ta-2381", kind: "word" }
+      - { id: "w2", ref: "ta-2382", kind: "word" }
+  - id: "ta-4617"
+    target: "மதுரையில் கோயில்."
+    reading: "maturaiyil kōyil."
+    ipa: "mat̪uɾaijil koːjil"
+    pos: "phrase"
+    bases: [{ word: "மதுரையில்", base: "மதுரை", reading: "maturai" }, { word: "கோயில்", ref: "ta-0262" }]
+    confusables:
+      - { id: "w1", ref: "ta-2375", kind: "word" }
+      - { id: "w2", ref: "ta-2379", kind: "word" }

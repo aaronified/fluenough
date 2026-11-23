@@ -1,0 +1,68 @@
+schema: 1
+id: "ta-en-phone-sentences"
+kind: "layer"
+core: "ta-phone-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phone in sentences"
+description: "Sentences on the phone: answering, asking for numbers, messages and apps. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-4558":
+    native: "Hello, who is speaking?"
+    bases:
+      "பேசுகிறீர்கள்": "are speaking; from பேசு (pēcu), to speak"
+    confusables:
+      w1: { why: "எங்கே (eṅkē), where, is a different word." }
+      w2: { why: "என்ன (eṉṉa), what, is a different word." }
+  "ta-4559":
+    native: "What is your phone number?"
+    bases:
+      "உன்": "your; from நீ (nī), you (to a friend or child)"
+    confusables:
+      w1: { why: "முகவரி (mukavari), address, is a different word." }
+      w2: { why: "பெயர் (peyar), name, is a different word." }
+  "ta-4560":
+    native: "Pick up the phone."
+    confusables:
+      w1: { why: "வை (vai), to put; to place, is a different word." }
+      w2: { why: "கொடு (koṭu), to give, is a different word." }
+  "ta-4561":
+    native: "Where is my mobile?"
+    bases:
+      "என்": "my; from நான் (nāṉ), I; me"
+    confusables:
+      w1: { why: "சார்ஜர் (cārjar), charger, is a different word." }
+      w2: { why: "பேட்டரி (pēṭṭari), battery, is a different word." }
+  "ta-4562":
+    native: "There is no signal here."
+    confusables:
+      w1: { why: "இணையம் (iṇaiyam), internet, is a different word." }
+      w2: { why: "இணைப்பு (iṇaippu), connection; link, is a different word." }
+  "ta-4563":
+    native: "Send a text message."
+    confusables:
+      w1: { why: "மின்னஞ்சல் (miṉṉañcal), email, is a different word." }
+      w2: { why: "மெசேஜ் (mecēj), message, is a different word." }
+  "ta-4564":
+    native: "What is the password?"
+    confusables:
+      w1: { why: "முகவரி (mukavari), address, is a different word." }
+      w2: { why: "தகவல் (takaval), information, is a different word." }
+  "ta-4565":
+    native: "The battery is low."
+    confusables:
+      w1: { why: "சார்ஜர் (cārjar), charger, is a different word." }
+      w2: { why: "ரீசார்ஜ் (rīcārj), recharge, is a different word." }
+  "ta-4566":
+    native: "Contact me."
+    bases:
+      "என்னைத்": "me; from நான் (nāṉ), I; me"
+    confusables:
+      w1: { why: "அழை (aḻai), to call; to invite, is a different word." }
+      w2: { why: "பதிலளி (patilaḷi), to reply, is a different word." }
+  "ta-4567":
+    native: "Download the app."
+    confusables:
+      w1: { why: "புதுப்பி (putuppi), to update; to renew, is a different word." }
+      w2: { why: "நிறுவு (niṟuvu), to install; to set up, is a different word." }

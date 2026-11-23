@@ -1,0 +1,98 @@
+schema: 1
+id: "ta-school-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4508"
+    target: "நான் பள்ளிக்குப் போகிறேன்."
+    reading: "nāṉ paḷḷikkup pōkiṟēṉ."
+    ipa: "naːn paɭɭikkup poːkireːn"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பள்ளிக்குப்", base: "பள்ளி", reading: "paḷḷi" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+    confusables:
+      - { id: "w1", ref: "ta-1828", kind: "word" }
+      - { id: "w2", ref: "ta-1829", kind: "word" }
+  - id: "ta-4509"
+    target: "இன்று தேர்வு இல்லை."
+    reading: "iṉṟu tērvu illai."
+    ipa: "inru t̪eːɾʋu illai"
+    pos: "phrase"
+    bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "தேர்வு", ref: "ta-1815" }, { word: "இல்லை", ref: "ta-0002" }]
+    confusables:
+      - { id: "w1", ref: "ta-1817", kind: "word" }
+      - { id: "w2", ref: "ta-1818", kind: "word" }
+  - id: "ta-4510"
+    target: "ஆசிரியர் பாடம் சொல்லிக்கொடுக்கிறார்."
+    reading: "āciriyar pāṭam collikkoṭukkiṟār."
+    ipa: "aːsiɾijaɾ paːʈam sollikkoʈukkiraːɾ"
+    pos: "phrase"
+    bases: [{ word: "ஆசிரியர்", ref: "ta-0198" }, { word: "பாடம்", ref: "ta-1812" }, { word: "சொல்லிக்கொடுக்கிறார்", base: "சொல்லிக்கொடு", reading: "collikkoṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-1806", kind: "word" }
+      - { id: "w2", ref: "ta-1807", kind: "word" }
+  - id: "ta-4511"
+    target: "நான் புத்தகம் படிக்கிறேன்."
+    reading: "nāṉ puttakam paṭikkiṟēṉ."
+    ipa: "naːn put̪t̪akam paʈikkireːn"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "புத்தகம்", ref: "ta-1813" }, { word: "படிக்கிறேன்", base: "படி", reading: "paṭi" }]
+    confusables:
+      - { id: "w1", ref: "ta-1814", kind: "word" }
+      - { id: "w2", ref: "ta-1852", kind: "word" }
+  - id: "ta-4512"
+    target: "எனக்குப் புரிகிறது."
+    reading: "eṉakkup purikiṟatu."
+    ipa: "enakkup puɾikirat̪u"
+    pos: "phrase"
+    bases: [{ word: "எனக்குப்", base: "நான்", reading: "nāṉ" }, { word: "புரிகிறது", base: "புரி", reading: "puri" }]
+    confusables:
+      - { id: "w1", ref: "ta-1858", kind: "word" }
+      - { id: "w2", ref: "ta-1859", kind: "word" }
+  - id: "ta-4513"
+    target: "கேள்வி கேள்."
+    reading: "kēḷvi kēḷ."
+    ipa: "keːɭʋi keːɭ"
+    pos: "phrase"
+    bases: [{ word: "கேள்வி", ref: "ta-1832" }, { word: "கேள்", ref: "ta-0122" }]
+    confusables:
+      - { id: "w1", ref: "ta-1833", kind: "word" }
+      - { id: "w2", ref: "ta-1853", kind: "word" }
+  - id: "ta-4514"
+    target: "வீட்டுப்பாடம் செய்."
+    reading: "vīṭṭuppāṭam cey."
+    ipa: "ʋiːʈʈuppaːʈam sej"
+    pos: "phrase"
+    bases: [{ word: "வீட்டுப்பாடம்", ref: "ta-1818" }, { word: "செய்", ref: "ta-0127" }]
+    confusables:
+      - { id: "w1", ref: "ta-1810", kind: "word" }
+      - { id: "w2", ref: "ta-1848", kind: "word" }
+  - id: "ta-4515"
+    target: "நாளை விடுமுறை."
+    reading: "nāḷai viṭumuṟai."
+    ipa: "naːɭai ʋiʈumurai"
+    pos: "phrase"
+    bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "விடுமுறை", ref: "ta-1817" }]
+    confusables:
+      - { id: "w1", ref: "ta-1815", kind: "word" }
+      - { id: "w2", ref: "ta-1831", kind: "word" }
+  - id: "ta-4516"
+    target: "அவள் நல்ல மாணவி."
+    reading: "avaḷ nalla māṇavi."
+    ipa: "aʋaɭ nalla maːɳaʋi"
+    pos: "phrase"
+    bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "நல்ல", ref: "ta-0169" }, { word: "மாணவி", ref: "ta-1807" }]
+    confusables:
+      - { id: "w1", ref: "ta-1808", kind: "word" }
+      - { id: "w2", ref: "ta-1806", kind: "word" }
+  - id: "ta-4517"
+    target: "பதில் என்ன?"
+    reading: "patil eṉṉa?"
+    ipa: "pat̪il enna"
+    pos: "phrase"
+    bases: [{ word: "பதில்", ref: "ta-1833" }, { word: "என்ன", ref: "ta-0042" }]
+    confusables:
+      - { id: "w1", ref: "ta-1832", kind: "word" }
+      - { id: "w2", ref: "ta-1847", kind: "word" }

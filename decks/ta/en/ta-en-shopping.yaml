@@ -1,0 +1,745 @@
+schema: 1
+id: "ta-en-shopping"
+kind: "layer"
+core: "ta-shopping"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Shopping"
+description: "Shops, shopkeepers, money, bills, weights and measures, bargaining, and the words for cheap, good quality and free. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-1208":
+    native: "shop"
+    notes:
+      n1: "கடை (kaṭai) takes an ending to show the place: கடையில் (kaṭaiyil), at the shop; கடைக்கு (kaṭaikku), to the shop."
+    examples:
+      "கடை அங்கே இருக்கிறது.":
+        native: "The shop is over there."
+        bases:
+          "கடை": "shop"
+          "அங்கே": "there"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "கடைக்கு போகிறேன்.":
+        native: "I am going to the shop."
+        bases:
+          "கடைக்கு": "to the shop; from கடை (kaṭai), shop"
+          "போகிறேன்": "go; from போ (pō), to go"
+  "ta-1209":
+    native: "shopkeeper"
+    notes:
+      n1: "It is made from கடை (kaṭai), shop, and takes the respectful verb ending: கடைக்காரர் வருகிறார் (kaṭaikkārar varukiṟār)."
+    examples:
+      "கடைக்காரர் இங்கே இல்லை.":
+        native: "The shopkeeper is not here."
+        bases:
+          "கடைக்காரர்": "shopkeeper"
+      "கடைக்காரர் வருகிறார்.":
+        native: "The shopkeeper is coming."
+        bases:
+          "கடைக்காரர்": "shopkeeper"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+  "ta-1210":
+    native: "customer"
+    notes:
+      n1: "வாடிக்கையாளர் (vāṭikkaiyāḷar) is the polite word for a customer in shops and banks."
+    examples:
+      "வாடிக்கையாளர் வருகிறார்.":
+        native: "The customer is coming."
+        bases:
+          "வாடிக்கையாளர்": "customer"
+          "வருகிறார்": "comes (respectful); from வா (vā), to come"
+      "நான் வாடிக்கையாளர்.":
+        native: "I am a customer."
+        bases:
+          "வாடிக்கையாளர்": "customer"
+  "ta-1211":
+    native: "money; coin"
+    notes:
+      n1: "காசு (kācu) is the spoken word for money or a coin; பணம் (paṇam), taught earlier, is the usual word."
+    examples:
+      "காசு இல்லை.":
+        native: "I have no money."
+        bases:
+          "காசு": "money; coin"
+      "காசு கொடு.":
+        native: "Give the money."
+        bases:
+          "காசு": "money; coin"
+  "ta-1212":
+    native: "small change"
+    notes:
+      n1: "சில்லறை (cillaṟai) is change in coins and small notes; shops often ask for it."
+    examples:
+      "சில்லறை இல்லை.":
+        native: "I have no change."
+        bases:
+          "சில்லறை": "small change"
+      "சில்லறை வேண்டும்.":
+        native: "Change is needed."
+        bases:
+          "சில்லறை": "small change"
+  "ta-1213":
+    native: "bill"
+    notes:
+      n1: "பில் (pil) is borrowed from the English word bill."
+    examples:
+      "பில் எவ்வளவு?":
+        native: "How much is the bill?"
+        bases:
+          "பில்": "bill"
+      "பில் கொடு.":
+        native: "Give the bill."
+        bases:
+          "பில்": "bill"
+  "ta-1214":
+    native: "receipt"
+    notes:
+      n1: "ரசீது (racītu) is the receipt you keep as proof of paying; பில் (pil) is the bill you pay."
+    examples:
+      "ரசீது வேண்டும்.":
+        native: "A receipt is needed."
+        bases:
+          "ரசீது": "receipt"
+      "ரசீது இங்கே.":
+        native: "The receipt is here."
+        bases:
+          "ரசீது": "receipt"
+  "ta-1215":
+    native: "debt; credit"
+    notes:
+      n1: "கடன் (kaṭaṉ) is a debt or a loan, and in a shop it means buying on credit."
+    examples:
+      "கடன் வேண்டாம்.":
+        native: "No credit, please."
+        bases:
+          "கடன்": "debt; credit"
+      "கடன் இல்லை.":
+        native: "There is no debt."
+        bases:
+          "கடன்": "debt; credit"
+  "ta-1216":
+    native: "cash"
+    notes:
+      n1: "ரொக்கம் (rokkam) is cash, as against paying by card."
+    examples:
+      "ரொக்கம் மட்டும்.":
+        native: "Cash only."
+        bases:
+          "ரொக்கம்": "cash"
+      "ரொக்கம் இல்லை.":
+        native: "There is no cash."
+        bases:
+          "ரொக்கம்": "cash"
+  "ta-1217":
+    native: "card (bank or credit)"
+    notes:
+      n1: "கார்டு (kārṭu) is borrowed from English; to pay by card say கார்டில் (kārṭil)."
+    examples:
+      "கார்டு இல்லை.":
+        native: "There is no card."
+        bases:
+          "கார்டு": "card (bank or credit)"
+      "கார்டு எடு.":
+        native: "Take the card."
+        bases:
+          "கார்டு": "card (bank or credit)"
+  "ta-1218":
+    native: "bargaining"
+    notes:
+      n1: "The phrase is பேரம் பேசு (pēram pēcu): the verb பேசு (pēcu), talk, goes with பேரம் (pēram)."
+    examples:
+      "பேரம் வேண்டாம்.":
+        native: "No bargaining."
+        bases:
+          "பேரம்": "bargaining"
+      "சந்தையில் பேரம் பேசு.":
+        native: "Bargain in the market."
+        bases:
+          "சந்தையில்": "in the market; from சந்தை (cantai), market"
+          "பேரம்": "bargaining"
+  "ta-1219":
+    native: "profit"
+    notes:
+      n1: "The final letter changes before an ending: லாபம் (lāpam) becomes லாபத்தில் (lāpattil), in profit."
+    examples:
+      "லாபம் இல்லை.":
+        native: "There is no profit."
+        bases:
+          "லாபம்": "profit"
+      "லாபம் கொஞ்சம்.":
+        native: "The profit is small."
+        bases:
+          "லாபம்": "profit"
+  "ta-1220":
+    native: "loss"
+    notes:
+      n1: "நஷ்டம் (naṣṭam) is the opposite of லாபம் (lāpam), profit."
+    examples:
+      "நஷ்டம் இல்லை.":
+        native: "There is no loss."
+        bases:
+          "நஷ்டம்": "loss"
+      "நஷ்டம் அதிகம்.":
+        native: "The loss is large."
+        bases:
+          "நஷ்டம்": "loss"
+  "ta-1221":
+    native: "sale; selling"
+    notes:
+      n1: "விற்பனை (viṟpaṉai) is selling; to say I sell, use the verb விற்கிறேன் (viṟkiṟēṉ)."
+    examples:
+      "இன்று விற்பனை அதிகம்.":
+        native: "Sales are high today."
+        bases:
+          "விற்பனை": "sale; selling"
+      "விற்பனை இல்லை.":
+        native: "There are no sales."
+        bases:
+          "விற்பனை": "sale; selling"
+  "ta-1222":
+    native: "offer; concession"
+    notes:
+      n1: "சலுகை (calukai) is an offer or a concession; தள்ளுபடி (taḷḷupaṭi), taught earlier, is the price cut itself."
+    examples:
+      "சலுகை இருக்கிறது.":
+        native: "There is an offer."
+        bases:
+          "சலுகை": "offer; concession"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இன்று சலுகை.":
+        native: "There is an offer today."
+        bases:
+          "சலுகை": "offer; concession"
+  "ta-1223":
+    native: "basket"
+    notes:
+      n1: "கூடை (kūṭai) takes an ending for in: கூடையில் (kūṭaiyil), in the basket."
+    examples:
+      "கூடையில் பழம் இருக்கிறது.":
+        native: "There is fruit in the basket."
+        bases:
+          "கூடையில்": "in the basket; from கூடை (kūṭai), basket"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "பெரிய கூடை வேண்டும்.":
+        native: "A big basket is needed."
+        bases:
+          "கூடை": "basket"
+  "ta-1224":
+    native: "thing; goods; meaning"
+    notes:
+      n1: "பொருள் (poruḷ) is a thing or goods, and also the meaning of a word; the plural is பொருட்கள் (poruṭkaḷ)."
+    examples:
+      "இது என்ன பொருள்?":
+        native: "What thing is this?"
+        bases:
+          "பொருள்": "thing; goods; meaning"
+      "பொருள் நல்லது.":
+        native: "The goods are good."
+        bases:
+          "பொருள்": "thing; goods; meaning"
+  "ta-1225":
+    native: "goods; belongings"
+    notes:
+      n1: "சாமான் (cāmāṉ) is the spoken word for belongings, luggage or shopping; பொருள் (poruḷ) is more general."
+    examples:
+      "சாமான் நிறைய.":
+        native: "There are many things."
+        bases:
+          "சாமான்": "goods; belongings"
+      "சாமான் எடு.":
+        native: "Take the things."
+        bases:
+          "சாமான்": "goods; belongings"
+  "ta-1226":
+    native: "packet"
+    notes:
+      n1: "பாக்கெட் (pākkeṭ) is borrowed from English packet."
+    examples:
+      "ஒரு பாக்கெட் கொடு.":
+        native: "Give a packet."
+        bases:
+          "பாக்கெட்": "packet"
+      "பாக்கெட் எவ்வளவு?":
+        native: "How much is the packet?"
+        bases:
+          "பாக்கெட்": "packet"
+  "ta-1227":
+    native: "kilo"
+    notes:
+      n1: "The amount comes before the thing: ஒரு கிலோ அரிசி (oru kilō arici), a kilo of rice."
+    examples:
+      "ஒரு கிலோ அரிசி கொடு.":
+        native: "Give one kilo of rice."
+        bases:
+          "கிலோ": "kilo"
+      "இரண்டு கிலோ போதும்.":
+        native: "Two kilos is enough."
+        bases:
+          "கிலோ": "kilo"
+  "ta-1228":
+    native: "gram"
+    notes:
+      n1: "The number comes first: நூறு கிராம் (nūṟu kirām), a hundred grams."
+    examples:
+      "நூறு கிராம் உப்பு கொடு.":
+        native: "Give a hundred grams of salt."
+        bases:
+          "கிராம்": "gram"
+      "ஐநூறு கிராம் போதும்.":
+        native: "Five hundred grams is enough."
+        bases:
+          "கிராம்": "gram"
+  "ta-1229":
+    native: "litre"
+    notes:
+      n1: "The measure comes before the thing: ஒரு லிட்டர் எண்ணெய் (oru liṭṭar eṇṇey)."
+    examples:
+      "ஒரு லிட்டர் எண்ணெய் கொடு.":
+        native: "Give one litre of oil."
+        bases:
+          "லிட்டர்": "litre"
+      "இரண்டு லிட்டர் தண்ணீர் வேண்டும்.":
+        native: "Two litres of water are needed."
+        bases:
+          "லிட்டர்": "litre"
+  "ta-1230":
+    native: "metre"
+    notes:
+      n1: "Cloth is sold by the மீட்டர் (mīṭṭar): ஒரு மீட்டர் துணி (oru mīṭṭar tuṇi)."
+    examples:
+      "ஒரு மீட்டர் துணி கொடு.":
+        native: "Give one metre of cloth."
+        bases:
+          "மீட்டர்": "metre"
+      "இரண்டு மீட்டர் போதும்.":
+        native: "Two metres is enough."
+        bases:
+          "மீட்டர்": "metre"
+  "ta-1231":
+    native: "dozen"
+    notes:
+      n1: "டஜன் (ṭajaṉ) is borrowed from English dozen; the number goes before it."
+    examples:
+      "ஒரு டஜன் முட்டை கொடு.":
+        native: "Give a dozen eggs."
+        bases:
+          "டஜன்": "dozen"
+      "ஒரு டஜன் எவ்வளவு?":
+        native: "How much is a dozen?"
+        bases:
+          "டஜன்": "dozen"
+  "ta-1232":
+    native: "quality; grade"
+    notes:
+      n1: "The final letter changes before an ending: தரம் (taram) becomes தரத்தில் (tarattil)."
+    examples:
+      "தரம் நல்லது.":
+        native: "The quality is good."
+        bases:
+          "தரம்": "quality; grade"
+      "தரம் எப்படி?":
+        native: "How is the quality?"
+        bases:
+          "தரம்": "quality; grade"
+  "ta-1233":
+    native: "size; measure; amount"
+    notes:
+      n1: "அளவு (aḷavu) is size for clothes and shoes, and also how much of something."
+    examples:
+      "அளவு என்ன?":
+        native: "What is the size?"
+        bases:
+          "அளவு": "size; measure; amount"
+      "பெரிய அளவு வேண்டும்.":
+        native: "A big size is needed."
+        bases:
+          "அளவு": "size; measure; amount"
+  "ta-1234":
+    native: "total; whole"
+    notes:
+      n1: "மொத்தம் (mottam) is the total you ask for at the counter: மொத்தம் எவ்வளவு (mottam evvaḷavu)."
+    examples:
+      "மொத்தம் எவ்வளவு?":
+        native: "How much is the total?"
+        bases:
+          "மொத்தம்": "total; whole"
+      "மொத்தம் நூறு ரூபாய்.":
+        native: "The total is a hundred rupees."
+        bases:
+          "மொத்தம்": "total; whole"
+  "ta-1235":
+    native: "queue; row"
+    notes:
+      n1: "வரிசையில் நில் (varicaiyil nil) is the phrase for waiting in line."
+    examples:
+      "இங்கே வரிசை இருக்கிறது.":
+        native: "There is a queue here."
+        bases:
+          "வரிசை": "queue; row"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "வரிசையில் நில்.":
+        native: "Stand in the queue."
+        bases:
+          "வரிசையில்": "in the queue; from வரிசை (varicai), queue"
+  "ta-1236":
+    native: "wallet; purse"
+    notes:
+      n1: "It is பணம் (paṇam), money, plus பை (pai), bag."
+    examples:
+      "பணப்பை எங்கே?":
+        native: "Where is the wallet?"
+        bases:
+          "பணப்பை": "wallet; purse"
+      "பணப்பையில் காசு இல்லை.":
+        native: "There is no money in the wallet."
+        bases:
+          "பணப்பையில்": "in the wallet; from பணப்பை (paṇappai), wallet"
+  "ta-1237":
+    native: "list"
+    notes:
+      n1: "பட்டியல் (paṭṭiyal) is a list, such as a shopping list; the place form is பட்டியலில் (paṭṭiyalil), on the list."
+    examples:
+      "பட்டியல் எழுது.":
+        native: "Write the list."
+        bases:
+          "பட்டியல்": "list"
+      "பட்டியலில் அரிசி இருக்கிறது.":
+        native: "Rice is on the list."
+        bases:
+          "பட்டியலில்": "on the list; from பட்டியல் (paṭṭiyal), list"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1238":
+    native: "garment; clothing"
+    notes:
+      n1: "ஆடை (āṭai) is clothing in general or one garment; துணி (tuṇi), taught earlier, is cloth."
+    examples:
+      "ஆடை எவ்வளவு?":
+        native: "How much is the garment?"
+        bases:
+          "ஆடை": "garment; clothing"
+      "புதிய ஆடை வேண்டும்.":
+        native: "A new garment is wanted."
+        bases:
+          "ஆடை": "garment; clothing"
+  "ta-1239":
+    native: "paisa"
+    notes:
+      n1: "பைசா (paicā) is a hundredth of a rupee; ஒரு பைசா கூட இல்லை (oru paicā kūṭa illai) means there is no money at all."
+    examples:
+      "பைசா இல்லை.":
+        native: "There is not a paisa."
+        bases:
+          "பைசா": "paisa"
+      "ஒரு பைசா கூட இல்லை.":
+        native: "There is not even one paisa."
+        bases:
+          "பைசா": "paisa"
+  "ta-1240":
+    native: "expense; spending"
+    notes:
+      n1: "செலவு (celavu) is spending or cost in general; விலை (vilai) is the price of one thing."
+    examples:
+      "செலவு அதிகம்.":
+        native: "The expense is high."
+        bases:
+          "செலவு": "expense; spending"
+      "செலவு குறைவு.":
+        native: "The expense is low."
+        bases:
+          "செலவு": "expense; spending"
+  "ta-1241":
+    native: "advertisement"
+    notes:
+      n1: "The final letter changes before an ending: விளம்பரம் (viḷamparam) becomes விளம்பரத்தில் (viḷamparattil), in an advertisement."
+    examples:
+      "விளம்பரம் பார்.":
+        native: "Look at the advertisement."
+        bases:
+          "விளம்பரம்": "advertisement"
+      "கடையில் விளம்பரம் இருக்கிறது.":
+        native: "There is an advertisement at the shop."
+        bases:
+          "கடையில்": "at the shop; from கடை (kaṭai), shop"
+          "விளம்பரம்": "advertisement"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1242":
+    native: "to pay"
+    notes:
+      n1: "செலுத்து (celuttu) is the formal word for paying a bill or a fee."
+    examples:
+      "பணம் செலுத்து.":
+        native: "Pay the money."
+        bases:
+          "செலுத்து": "to pay"
+      "நான் பில் செலுத்துகிறேன்.":
+        native: "I am paying the bill."
+        bases:
+          "செலுத்துகிறேன்": "am paying; from செலுத்து (celuttu), to pay"
+  "ta-1243":
+    native: "to compare"
+    notes:
+      n1: "The things compared come before the verb: விலை ஒப்பிடு (vilai oppiṭu)."
+    examples:
+      "விலை ஒப்பிடு.":
+        native: "Compare the prices."
+        bases:
+          "ஒப்பிடு": "to compare"
+      "நான் விலை ஒப்பிடுகிறேன்.":
+        native: "I am comparing prices."
+        bases:
+          "ஒப்பிடுகிறேன்": "am comparing; from ஒப்பிடு (oppiṭu), to compare"
+  "ta-1244":
+    native: "to enquire; to ask about"
+    notes:
+      n1: "விசாரி (vicāri) is to ask about something, as when you ask a price before buying; to ask for a thing is கேள் (kēḷ)."
+    examples:
+      "விலை விசாரி.":
+        native: "Ask the price."
+        bases:
+          "விசாரி": "to enquire; to ask about"
+      "நான் கடையில் விசாரிக்கிறேன்.":
+        native: "I am enquiring at the shop."
+        bases:
+          "கடையில்": "at the shop; from கடை (kaṭai), shop"
+          "விசாரிக்கிறேன்": "am enquiring; from விசாரி (vicāri), to enquire"
+  "ta-1245":
+    native: "to add up; to gather"
+    notes:
+      n1: "கூட்டு (kūṭṭu) is to add numbers together, and also to gather things; at the counter it is விலை கூட்டு (vilai kūṭṭu)."
+    examples:
+      "பணம் கூட்டு.":
+        native: "Add up the money."
+        bases:
+          "கூட்டு": "to add up; to gather"
+      "நான் விலை கூட்டுகிறேன்.":
+        native: "I am adding up the prices."
+        bases:
+          "கூட்டுகிறேன்": "am adding up; from கூட்டு (kūṭṭu), to add up"
+  "ta-1246":
+    native: "to collect (money)"
+    notes:
+      n1: "வசூலி (vacūli) is to collect money that is owed; the shopkeeper or the collector does it."
+    examples:
+      "பணம் வசூலி.":
+        native: "Collect the money."
+        bases:
+          "வசூலி": "to collect (money)"
+      "கடைக்காரர் பணம் வசூலிக்கிறார்.":
+        native: "The shopkeeper collects the money."
+        bases:
+          "வசூலிக்கிறார்": "collects (respectful); from வசூலி (vacūli), to collect"
+  "ta-1247":
+    native: "order (of goods)"
+    notes:
+      n1: "ஆர்டர் (ārṭar) is borrowed from English order, for goods asked for from a shop."
+    examples:
+      "ஆர்டர் எப்போது?":
+        native: "When is the order?"
+        bases:
+          "ஆர்டர்": "order (of goods)"
+      "ஆர்டர் தயார்.":
+        native: "The order is ready."
+        bases:
+          "ஆர்டர்": "order (of goods)"
+          "தயார்": "ready"
+  "ta-1248":
+    native: "delivery"
+    notes:
+      n1: "டெலிவரி (ṭelivari) is borrowed from English delivery."
+    examples:
+      "டெலிவரி இலவசம்.":
+        native: "Delivery is free."
+        bases:
+          "டெலிவரி": "delivery"
+      "டெலிவரி எப்போது?":
+        native: "When is the delivery?"
+        bases:
+          "டெலிவரி": "delivery"
+  "ta-1249":
+    native: "cheap"
+    notes:
+      n1: "மலிவான (malivāṉa) goes before a noun; after the noun say மலிவாக இருக்கிறது (malivāka irukkiṟatu), is cheap."
+    examples:
+      "இது மலிவான பை.":
+        native: "This is a cheap bag."
+        bases:
+          "மலிவான": "cheap"
+      "பை மலிவாக இருக்கிறது.":
+        native: "The bag is cheap."
+        bases:
+          "மலிவாக": "cheap (adverb form); from மலிவான (malivāṉa), cheap"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1250":
+    native: "of good quality"
+    notes:
+      n1: "தரமான (taramāṉa) is made from தரம் (taram), quality, and goes before a noun."
+    examples:
+      "இது தரமான பொருள்.":
+        native: "This is a good-quality product."
+        bases:
+          "தரமான": "of good quality"
+      "தரமான பை வேண்டும்.":
+        native: "A good-quality bag is needed."
+        bases:
+          "தரமான": "of good quality"
+  "ta-1251":
+    native: "free of charge"
+    notes:
+      n1: "இலவசம் (ilavacam) stands alone as a word, with no verb: பை இலவசம் (pai ilavacam), the bag is free."
+    examples:
+      "இது இலவசம்.":
+        native: "This is free."
+        bases:
+          "இலவசம்": "free of charge"
+      "பை இலவசம்.":
+        native: "The bag is free."
+        bases:
+          "இலவசம்": "free of charge"
+  "ta-1252":
+    native: "extra; additional"
+    notes:
+      n1: "கூடுதல் (kūṭutal) goes before the noun: கூடுதல் கட்டணம் (kūṭutal kaṭṭaṇam), an extra charge."
+    examples:
+      "கூடுதல் பை வேண்டும்.":
+        native: "An extra bag is needed."
+        bases:
+          "கூடுதல்": "extra; additional"
+      "கூடுதல் கட்டணம் இல்லை.":
+        native: "There is no extra charge."
+        bases:
+          "கூடுதல்": "extra; additional"
+  "ta-1253":
+    native: "less; low"
+    notes:
+      n1: "குறைந்த (kuṟainta) is related to குறைவு (kuṟaivu), little, taught earlier."
+    examples:
+      "குறைந்த விலை நல்லது.":
+        native: "A low price is good."
+        bases:
+          "குறைந்த": "less; low"
+      "குறைந்த எடை.":
+        native: "Low weight."
+        bases:
+          "குறைந்த": "less; low"
+  "ta-1254":
+    native: "right; exact"
+    notes:
+      n1: "சரியான (cariyāṉa) goes before a noun; சரி (cari), okay, is the word taught earlier."
+    examples:
+      "இது சரியான விலை.":
+        native: "This is the right price."
+        bases:
+          "சரியான": "right; exact"
+      "சரியான அளவு வேண்டும்.":
+        native: "The right size is needed."
+        bases:
+          "சரியான": "right; exact"
+  "ta-1255":
+    native: "whole; full"
+    notes:
+      n1: "முழு (muḻu) goes before a noun: முழு நாள் (muḻu nāḷ), a whole day."
+    examples:
+      "முழு பணம் கொடு.":
+        native: "Give the full amount."
+        bases:
+          "முழு": "whole; full"
+      "முழு நாள் வேலை.":
+        native: "A full day of work."
+        bases:
+          "முழு": "whole; full"
+  "ta-1256":
+    native: "online"
+    notes:
+      n1: "ஆன்லைன் (āṉlaiṉ) is borrowed from English; it takes an ending for in: ஆன்லைனில் (āṉlaiṉil)."
+    examples:
+      "ஆன்லைனில் வாங்கு.":
+        native: "Buy online."
+        bases:
+          "ஆன்லைனில்": "online; from ஆன்லைன் (āṉlaiṉ), online"
+      "ஆன்லைனில் பணம் செலுத்து.":
+        native: "Pay online."
+        bases:
+          "ஆன்லைனில்": "online; from ஆன்லைன் (āṉlaiṉ), online"
+  "ta-1257":
+    native: "amount; sum of money"
+    notes:
+      n1: "தொகை (tokai) is an amount of money; மொத்தம் (mottam) is the total at the counter."
+    examples:
+      "தொகை எவ்வளவு?":
+        native: "How much is the amount?"
+        bases:
+          "தொகை": "amount; sum of money"
+      "தொகை சரி.":
+        native: "The amount is right."
+        bases:
+          "தொகை": "amount; sum of money"
+  "ta-1258":
+    native: "balance; what is left"
+    notes:
+      n1: "பாக்கி (pākki) is the balance still owed, or the change still due."
+    examples:
+      "பாக்கி கொடு.":
+        native: "Give the balance."
+        bases:
+          "பாக்கி": "balance; what is left"
+      "பாக்கி எவ்வளவு?":
+        native: "How much is left?"
+        bases:
+          "பாக்கி": "balance; what is left"
+  "ta-1259":
+    native: "fee; charge"
+    notes:
+      n1: "கட்டணம் (kaṭṭaṇam) is a fee for a service; விலை (vilai) is the price of goods."
+    examples:
+      "கட்டணம் எவ்வளவு?":
+        native: "How much is the fee?"
+        bases:
+          "கட்டணம்": "fee; charge"
+      "கூடுதல் கட்டணம் இல்லை.":
+        native: "There is no extra charge."
+        bases:
+          "கட்டணம்": "fee; charge"
+  "ta-1260":
+    native: "trade; business"
+    notes:
+      n1: "வியாபாரம் (viyāpāram) is trade; the person in it is a வியாபாரி (viyāpāri)."
+    examples:
+      "வியாபாரம் நல்லது.":
+        native: "Business is good."
+        bases:
+          "வியாபாரம்": "trade; business"
+      "சந்தையில் வியாபாரம் நிறைய.":
+        native: "There is a lot of trade in the market."
+        bases:
+          "சந்தையில்": "in the market; from சந்தை (cantai), market"
+          "வியாபாரம்": "trade; business"
+  "ta-1261":
+    native: "trader; businessperson"
+    notes:
+      n1: "வியாபாரி (viyāpāri) takes the respectful verb ending: வியாபாரி இருக்கிறார் (viyāpāri irukkiṟār)."
+    examples:
+      "அவர் வியாபாரி.":
+        native: "He is a trader."
+        bases:
+          "வியாபாரி": "trader; businessperson"
+      "வியாபாரி சந்தையில் இருக்கிறார்.":
+        native: "The trader is in the market."
+        bases:
+          "வியாபாரி": "trader; businessperson"
+          "சந்தையில்": "in the market; from சந்தை (cantai), market"
+          "இருக்கிறார்": "is (respectful); from இரு (iru), to be"
+  "ta-1262":
+    native: "grocery shop"
+    notes:
+      n1: "மளிகைக்கடை (maḷikaikkaṭai) sells rice, lentils, oil and spices; it is made from மளிகை (maḷikai), grocery, and கடை (kaṭai), shop."
+    examples:
+      "மளிகைக்கடை பக்கத்தில் இருக்கிறது.":
+        native: "The grocery shop is nearby."
+        bases:
+          "மளிகைக்கடை": "grocery shop"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "மளிகைக்கடைக்கு போகிறேன்.":
+        native: "I am going to the grocery shop."
+        bases:
+          "மளிகைக்கடைக்கு": "to the grocery shop; from மளிகைக்கடை (maḷikaikkaṭai), grocery shop"
+          "போகிறேன்": "go; from போ (pō), to go"

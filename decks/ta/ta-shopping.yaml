@@ -1,0 +1,986 @@
+schema: 1
+id: "ta-shopping"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "shopping"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-1208"
+    target: "கடை"
+    reading: "kaṭai"
+    ipa: "kaʈai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கடை அங்கே இருக்கிறது."
+        reading: "kaṭai aṅkē irukkiṟatu."
+        ipa: "kaʈai aŋkeː iɾukkirat̪u"
+        bases: [{ word: "கடை", base: "கடை", reading: "kaṭai" }, { word: "அங்கே", base: "அங்கே", reading: "aṅkē" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "கடைக்கு போகிறேன்."
+        reading: "kaṭaikku pōkiṟēṉ."
+        ipa: "kaʈaikku poːkireːn"
+        bases: [{ word: "கடைக்கு", base: "கடை", reading: "kaṭai" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+  - id: "ta-1209"
+    target: "கடைக்காரர்"
+    reading: "kaṭaikkārar"
+    ipa: "kaʈaikkaːɾaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கடைக்காரர் இங்கே இல்லை."
+        reading: "kaṭaikkārar iṅkē illai."
+        ipa: "kaʈaikkaːɾaɾ iŋkeː illai"
+        bases: [{ word: "கடைக்காரர்", base: "கடைக்காரர்", reading: "kaṭaikkārar" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "கடைக்காரர் வருகிறார்."
+        reading: "kaṭaikkārar varukiṟār."
+        ipa: "kaʈaikkaːɾaɾ ʋaɾukiraːɾ"
+        bases: [{ word: "கடைக்காரர்", base: "கடைக்காரர்", reading: "kaṭaikkārar" }, { word: "வருகிறார்", base: "வா", reading: "vā" }]
+  - id: "ta-1210"
+    target: "வாடிக்கையாளர்"
+    reading: "vāṭikkaiyāḷar"
+    ipa: "ʋaːʈikkaijaːɭaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வாடிக்கையாளர் வருகிறார்."
+        reading: "vāṭikkaiyāḷar varukiṟār."
+        ipa: "ʋaːʈikkaijaːɭaɾ ʋaɾukiraːɾ"
+        bases: [{ word: "வாடிக்கையாளர்", base: "வாடிக்கையாளர்", reading: "vāṭikkaiyāḷar" }, { word: "வருகிறார்", base: "வா", reading: "vā" }]
+      - target: "நான் வாடிக்கையாளர்."
+        reading: "nāṉ vāṭikkaiyāḷar."
+        ipa: "naːn ʋaːʈikkaijaːɭaɾ"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "வாடிக்கையாளர்", base: "வாடிக்கையாளர்", reading: "vāṭikkaiyāḷar" }]
+  - id: "ta-1211"
+    target: "காசு"
+    reading: "kācu"
+    ipa: "kaːsu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காசு இல்லை."
+        reading: "kācu illai."
+        ipa: "kaːsu illai"
+        bases: [{ word: "காசு", base: "காசு", reading: "kācu" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "காசு கொடு."
+        reading: "kācu koṭu."
+        ipa: "kaːsu koʈu"
+        bases: [{ word: "காசு", base: "காசு", reading: "kācu" }, { word: "கொடு", ref: "ta-0125" }]
+  - id: "ta-1212"
+    target: "சில்லறை"
+    reading: "cillaṟai"
+    ipa: "sillarai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சில்லறை இல்லை."
+        reading: "cillaṟai illai."
+        ipa: "sillarai illai"
+        bases: [{ word: "சில்லறை", base: "சில்லறை", reading: "cillaṟai" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "சில்லறை வேண்டும்."
+        reading: "cillaṟai vēṇṭum."
+        ipa: "sillarai ʋeːɳʈum"
+        bases: [{ word: "சில்லறை", base: "சில்லறை", reading: "cillaṟai" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1213"
+    target: "பில்"
+    reading: "pil"
+    ipa: "pil"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பில் எவ்வளவு?"
+        reading: "pil evvaḷavu?"
+        ipa: "pil eʋʋaɭaʋu"
+        bases: [{ word: "பில்", base: "பில்", reading: "pil" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+      - target: "பில் கொடு."
+        reading: "pil koṭu."
+        ipa: "pil koʈu"
+        bases: [{ word: "பில்", base: "பில்", reading: "pil" }, { word: "கொடு", ref: "ta-0125" }]
+  - id: "ta-1214"
+    target: "ரசீது"
+    reading: "racītu"
+    ipa: "ɾasiːt̪u"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ரசீது வேண்டும்."
+        reading: "racītu vēṇṭum."
+        ipa: "ɾasiːt̪u ʋeːɳʈum"
+        bases: [{ word: "ரசீது", base: "ரசீது", reading: "racītu" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "ரசீது இங்கே."
+        reading: "racītu iṅkē."
+        ipa: "ɾasiːt̪u iŋkeː"
+        bases: [{ word: "ரசீது", base: "ரசீது", reading: "racītu" }, { word: "இங்கே", ref: "ta-0112" }]
+  - id: "ta-1215"
+    target: "கடன்"
+    reading: "kaṭaṉ"
+    ipa: "kaʈan"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கடன் வேண்டாம்."
+        reading: "kaṭaṉ vēṇṭām."
+        ipa: "kaʈan ʋeːɳʈaːm"
+        bases: [{ word: "கடன்", base: "கடன்", reading: "kaṭaṉ" }, { word: "வேண்டாம்", ref: "ta-0410" }]
+      - target: "கடன் இல்லை."
+        reading: "kaṭaṉ illai."
+        ipa: "kaʈan illai"
+        bases: [{ word: "கடன்", base: "கடன்", reading: "kaṭaṉ" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1216"
+    target: "ரொக்கம்"
+    reading: "rokkam"
+    ipa: "ɾokkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ரொக்கம் மட்டும்."
+        reading: "rokkam maṭṭum."
+        ipa: "ɾokkam maʈʈum"
+        bases: [{ word: "ரொக்கம்", base: "ரொக்கம்", reading: "rokkam" }, { word: "மட்டும்", ref: "ta-0164" }]
+      - target: "ரொக்கம் இல்லை."
+        reading: "rokkam illai."
+        ipa: "ɾokkam illai"
+        bases: [{ word: "ரொக்கம்", base: "ரொக்கம்", reading: "rokkam" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1217"
+    target: "கார்டு"
+    reading: "kārṭu"
+    ipa: "kaːɾʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கார்டு இல்லை."
+        reading: "kārṭu illai."
+        ipa: "kaːɾʈu illai"
+        bases: [{ word: "கார்டு", base: "கார்டு", reading: "kārṭu" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "கார்டு எடு."
+        reading: "kārṭu eṭu."
+        ipa: "kaːɾʈu eʈu"
+        bases: [{ word: "கார்டு", base: "கார்டு", reading: "kārṭu" }, { word: "எடு", ref: "ta-0184" }]
+  - id: "ta-1218"
+    target: "பேரம்"
+    reading: "pēram"
+    ipa: "peːɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பேரம் வேண்டாம்."
+        reading: "pēram vēṇṭām."
+        ipa: "peːɾam ʋeːɳʈaːm"
+        bases: [{ word: "பேரம்", base: "பேரம்", reading: "pēram" }, { word: "வேண்டாம்", ref: "ta-0410" }]
+      - target: "சந்தையில் பேரம் பேசு."
+        reading: "cantaiyil pēram pēcu."
+        ipa: "sant̪aijil peːɾam peːsu"
+        bases: [{ word: "சந்தையில்", base: "சந்தை", reading: "cantai" }, { word: "பேரம்", base: "பேரம்", reading: "pēram" }, { word: "பேசு", ref: "ta-0123" }]
+  - id: "ta-1219"
+    target: "லாபம்"
+    reading: "lāpam"
+    ipa: "laːpam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "லாபம் இல்லை."
+        reading: "lāpam illai."
+        ipa: "laːpam illai"
+        bases: [{ word: "லாபம்", base: "லாபம்", reading: "lāpam" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "லாபம் கொஞ்சம்."
+        reading: "lāpam koñcam."
+        ipa: "laːpam koɲtʃam"
+        bases: [{ word: "லாபம்", base: "லாபம்", reading: "lāpam" }, { word: "கொஞ்சம்", ref: "ta-0158" }]
+  - id: "ta-1220"
+    target: "நஷ்டம்"
+    reading: "naṣṭam"
+    ipa: "naʂʈam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நஷ்டம் இல்லை."
+        reading: "naṣṭam illai."
+        ipa: "naʂʈam illai"
+        bases: [{ word: "நஷ்டம்", base: "நஷ்டம்", reading: "naṣṭam" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "நஷ்டம் அதிகம்."
+        reading: "naṣṭam atikam."
+        ipa: "naʂʈam at̪ikam"
+        bases: [{ word: "நஷ்டம்", base: "நஷ்டம்", reading: "naṣṭam" }, { word: "அதிகம்", ref: "ta-0159" }]
+  - id: "ta-1221"
+    target: "விற்பனை"
+    reading: "viṟpaṉai"
+    ipa: "ʋirpanai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று விற்பனை அதிகம்."
+        reading: "iṉṟu viṟpaṉai atikam."
+        ipa: "inru ʋirpanai at̪ikam"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "விற்பனை", base: "விற்பனை", reading: "viṟpaṉai" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "விற்பனை இல்லை."
+        reading: "viṟpaṉai illai."
+        ipa: "ʋirpanai illai"
+        bases: [{ word: "விற்பனை", base: "விற்பனை", reading: "viṟpaṉai" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1222"
+    target: "சலுகை"
+    reading: "calukai"
+    ipa: "salukai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சலுகை இருக்கிறது."
+        reading: "calukai irukkiṟatu."
+        ipa: "salukai iɾukkirat̪u"
+        bases: [{ word: "சலுகை", base: "சலுகை", reading: "calukai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "இன்று சலுகை."
+        reading: "iṉṟu calukai."
+        ipa: "inru salukai"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "சலுகை", base: "சலுகை", reading: "calukai" }]
+  - id: "ta-1223"
+    target: "கூடை"
+    reading: "kūṭai"
+    ipa: "kuːʈai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கூடையில் பழம் இருக்கிறது."
+        reading: "kūṭaiyil paḻam irukkiṟatu."
+        ipa: "kuːʈaijil paɻam iɾukkirat̪u"
+        bases: [{ word: "கூடையில்", base: "கூடை", reading: "kūṭai" }, { word: "பழம்", ref: "ta-0222" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "பெரிய கூடை வேண்டும்."
+        reading: "periya kūṭai vēṇṭum."
+        ipa: "peɾija kuːʈai ʋeːɳʈum"
+        bases: [{ word: "பெரிய", ref: "ta-0008" }, { word: "கூடை", base: "கூடை", reading: "kūṭai" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1224"
+    target: "பொருள்"
+    reading: "poruḷ"
+    ipa: "poɾuɭ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது என்ன பொருள்?"
+        reading: "itu eṉṉa poruḷ?"
+        ipa: "it̪u enna poɾuɭ"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "என்ன", ref: "ta-0042" }, { word: "பொருள்", base: "பொருள்", reading: "poruḷ" }]
+      - target: "பொருள் நல்லது."
+        reading: "poruḷ nallatu."
+        ipa: "poɾuɭ nallat̪u"
+        bases: [{ word: "பொருள்", base: "பொருள்", reading: "poruḷ" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-1225"
+    target: "சாமான்"
+    reading: "cāmāṉ"
+    ipa: "saːmaːn"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சாமான் நிறைய."
+        reading: "cāmāṉ niṟaiya."
+        ipa: "saːmaːn niraija"
+        bases: [{ word: "சாமான்", base: "சாமான்", reading: "cāmāṉ" }, { word: "நிறைய", ref: "ta-0141" }]
+      - target: "சாமான் எடு."
+        reading: "cāmāṉ eṭu."
+        ipa: "saːmaːn eʈu"
+        bases: [{ word: "சாமான்", base: "சாமான்", reading: "cāmāṉ" }, { word: "எடு", ref: "ta-0184" }]
+  - id: "ta-1226"
+    target: "பாக்கெட்"
+    reading: "pākkeṭ"
+    ipa: "paːkkeʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஒரு பாக்கெட் கொடு."
+        reading: "oru pākkeṭ koṭu."
+        ipa: "oɾu paːkkeʈ koʈu"
+        bases: [{ word: "ஒரு", ref: "ta-0419" }, { word: "பாக்கெட்", base: "பாக்கெட்", reading: "pākkeṭ" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "பாக்கெட் எவ்வளவு?"
+        reading: "pākkeṭ evvaḷavu?"
+        ipa: "paːkkeʈ eʋʋaɭaʋu"
+        bases: [{ word: "பாக்கெட்", base: "பாக்கெட்", reading: "pākkeṭ" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+  - id: "ta-1227"
+    target: "கிலோ"
+    reading: "kilō"
+    ipa: "kiloː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஒரு கிலோ அரிசி கொடு."
+        reading: "oru kilō arici koṭu."
+        ipa: "oɾu kiloː aɾisi koʈu"
+        bases: [{ word: "ஒரு", ref: "ta-0419" }, { word: "கிலோ", base: "கிலோ", reading: "kilō" }, { word: "அரிசி", ref: "ta-0215" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "இரண்டு கிலோ போதும்."
+        reading: "iraṇṭu kilō pōtum."
+        ipa: "iɾaɳʈu kiloː poːt̪um"
+        bases: [{ word: "இரண்டு", ref: "ta-0089" }, { word: "கிலோ", base: "கிலோ", reading: "kilō" }, { word: "போதும்", ref: "ta-0161" }]
+  - id: "ta-1228"
+    target: "கிராம்"
+    reading: "kirām"
+    ipa: "kiɾaːm"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நூறு கிராம் உப்பு கொடு."
+        reading: "nūṟu kirām uppu koṭu."
+        ipa: "nuːru kiɾaːm uppu koʈu"
+        bases: [{ word: "நூறு", ref: "ta-0209" }, { word: "கிராம்", base: "கிராம்", reading: "kirām" }, { word: "உப்பு", ref: "ta-0219" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "ஐநூறு கிராம் போதும்."
+        reading: "ainūṟu kirām pōtum."
+        ipa: "ainuːru kiɾaːm poːt̪um"
+        bases: [{ word: "ஐநூறு", ref: "ta-0211" }, { word: "கிராம்", base: "கிராம்", reading: "kirām" }, { word: "போதும்", ref: "ta-0161" }]
+  - id: "ta-1229"
+    target: "லிட்டர்"
+    reading: "liṭṭar"
+    ipa: "liʈʈaɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஒரு லிட்டர் எண்ணெய் கொடு."
+        reading: "oru liṭṭar eṇṇey koṭu."
+        ipa: "oɾu liʈʈaɾ eɳɳej koʈu"
+        bases: [{ word: "ஒரு", ref: "ta-0419" }, { word: "லிட்டர்", base: "லிட்டர்", reading: "liṭṭar" }, { word: "எண்ணெய்", ref: "ta-0217" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "இரண்டு லிட்டர் தண்ணீர் வேண்டும்."
+        reading: "iraṇṭu liṭṭar taṇṇīr vēṇṭum."
+        ipa: "iɾaɳʈu liʈʈaɾ t̪aɳɳiːɾ ʋeːɳʈum"
+        bases: [{ word: "இரண்டு", ref: "ta-0089" }, { word: "லிட்டர்", base: "லிட்டர்", reading: "liṭṭar" }, { word: "தண்ணீர்", ref: "ta-0005" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1230"
+    target: "மீட்டர்"
+    reading: "mīṭṭar"
+    ipa: "miːʈʈaɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஒரு மீட்டர் துணி கொடு."
+        reading: "oru mīṭṭar tuṇi koṭu."
+        ipa: "oɾu miːʈʈaɾ t̪uɳi koʈu"
+        bases: [{ word: "ஒரு", ref: "ta-0419" }, { word: "மீட்டர்", base: "மீட்டர்", reading: "mīṭṭar" }, { word: "துணி", ref: "ta-0272" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "இரண்டு மீட்டர் போதும்."
+        reading: "iraṇṭu mīṭṭar pōtum."
+        ipa: "iɾaɳʈu miːʈʈaɾ poːt̪um"
+        bases: [{ word: "இரண்டு", ref: "ta-0089" }, { word: "மீட்டர்", base: "மீட்டர்", reading: "mīṭṭar" }, { word: "போதும்", ref: "ta-0161" }]
+  - id: "ta-1231"
+    target: "டஜன்"
+    reading: "ṭajaṉ"
+    ipa: "ʈadʒan"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஒரு டஜன் முட்டை கொடு."
+        reading: "oru ṭajaṉ muṭṭai koṭu."
+        ipa: "oɾu ʈadʒan muʈʈai koʈu"
+        bases: [{ word: "ஒரு", ref: "ta-0419" }, { word: "டஜன்", base: "டஜன்", reading: "ṭajaṉ" }, { word: "முட்டை", ref: "ta-0220" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "ஒரு டஜன் எவ்வளவு?"
+        reading: "oru ṭajaṉ evvaḷavu?"
+        ipa: "oɾu ʈadʒan eʋʋaɭaʋu"
+        bases: [{ word: "ஒரு", ref: "ta-0419" }, { word: "டஜன்", base: "டஜன்", reading: "ṭajaṉ" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+  - id: "ta-1232"
+    target: "தரம்"
+    reading: "taram"
+    ipa: "t̪aɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தரம் நல்லது."
+        reading: "taram nallatu."
+        ipa: "t̪aɾam nallat̪u"
+        bases: [{ word: "தரம்", base: "தரம்", reading: "taram" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "தரம் எப்படி?"
+        reading: "taram eppaṭi?"
+        ipa: "t̪aɾam eppaʈi"
+        bases: [{ word: "தரம்", base: "தரம்", reading: "taram" }, { word: "எப்படி", ref: "ta-0045" }]
+  - id: "ta-1233"
+    target: "அளவு"
+    reading: "aḷavu"
+    ipa: "aɭaʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அளவு என்ன?"
+        reading: "aḷavu eṉṉa?"
+        ipa: "aɭaʋu enna"
+        bases: [{ word: "அளவு", base: "அளவு", reading: "aḷavu" }, { word: "என்ன", ref: "ta-0042" }]
+      - target: "பெரிய அளவு வேண்டும்."
+        reading: "periya aḷavu vēṇṭum."
+        ipa: "peɾija aɭaʋu ʋeːɳʈum"
+        bases: [{ word: "பெரிய", ref: "ta-0008" }, { word: "அளவு", base: "அளவு", reading: "aḷavu" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1234"
+    target: "மொத்தம்"
+    reading: "mottam"
+    ipa: "mot̪t̪am"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மொத்தம் எவ்வளவு?"
+        reading: "mottam evvaḷavu?"
+        ipa: "mot̪t̪am eʋʋaɭaʋu"
+        bases: [{ word: "மொத்தம்", base: "மொத்தம்", reading: "mottam" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+      - target: "மொத்தம் நூறு ரூபாய்."
+        reading: "mottam nūṟu rūpāy."
+        ipa: "mot̪t̪am nuːru ɾuːpaːj"
+        bases: [{ word: "மொத்தம்", base: "மொத்தம்", reading: "mottam" }, { word: "நூறு", ref: "ta-0209" }, { word: "ரூபாய்", ref: "ta-0226" }]
+  - id: "ta-1235"
+    target: "வரிசை"
+    reading: "varicai"
+    ipa: "ʋaɾisai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே வரிசை இருக்கிறது."
+        reading: "iṅkē varicai irukkiṟatu."
+        ipa: "iŋkeː ʋaɾisai iɾukkirat̪u"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "வரிசை", base: "வரிசை", reading: "varicai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "வரிசையில் நில்."
+        reading: "varicaiyil nil."
+        ipa: "ʋaɾisaijil nil"
+        bases: [{ word: "வரிசையில்", base: "வரிசை", reading: "varicai" }, { word: "நில்", ref: "ta-0189" }]
+  - id: "ta-1236"
+    target: "பணப்பை"
+    reading: "paṇappai"
+    ipa: "paɳappai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பணப்பை எங்கே?"
+        reading: "paṇappai eṅkē?"
+        ipa: "paɳappai eŋkeː"
+        bases: [{ word: "பணப்பை", base: "பணப்பை", reading: "paṇappai" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "பணப்பையில் காசு இல்லை."
+        reading: "paṇappaiyil kācu illai."
+        ipa: "paɳappaijil kaːsu illai"
+        bases: [{ word: "பணப்பையில்", base: "பணப்பை", reading: "paṇappai" }, { word: "காசு", ref: "ta-1211" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1237"
+    target: "பட்டியல்"
+    reading: "paṭṭiyal"
+    ipa: "paʈʈijal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பட்டியல் எழுது."
+        reading: "paṭṭiyal eḻutu."
+        ipa: "paʈʈijal eɻut̪u"
+        bases: [{ word: "பட்டியல்", base: "பட்டியல்", reading: "paṭṭiyal" }, { word: "எழுது", ref: "ta-0124" }]
+      - target: "பட்டியலில் அரிசி இருக்கிறது."
+        reading: "paṭṭiyalil arici irukkiṟatu."
+        ipa: "paʈʈijalil aɾisi iɾukkirat̪u"
+        bases: [{ word: "பட்டியலில்", base: "பட்டியல்", reading: "paṭṭiyal" }, { word: "அரிசி", ref: "ta-0215" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1238"
+    target: "ஆடை"
+    reading: "āṭai"
+    ipa: "aːʈai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஆடை எவ்வளவு?"
+        reading: "āṭai evvaḷavu?"
+        ipa: "aːʈai eʋʋaɭaʋu"
+        bases: [{ word: "ஆடை", base: "ஆடை", reading: "āṭai" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+      - target: "புதிய ஆடை வேண்டும்."
+        reading: "putiya āṭai vēṇṭum."
+        ipa: "put̪ija aːʈai ʋeːɳʈum"
+        bases: [{ word: "புதிய", ref: "ta-0171" }, { word: "ஆடை", base: "ஆடை", reading: "āṭai" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1239"
+    target: "பைசா"
+    reading: "paicā"
+    ipa: "paisaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பைசா இல்லை."
+        reading: "paicā illai."
+        ipa: "paisaː illai"
+        bases: [{ word: "பைசா", base: "பைசா", reading: "paicā" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "ஒரு பைசா கூட இல்லை."
+        reading: "oru paicā kūṭa illai."
+        ipa: "oɾu paisaː kuːʈa illai"
+        bases: [{ word: "ஒரு", ref: "ta-0419" }, { word: "பைசா", base: "பைசா", reading: "paicā" }, { word: "கூட", ref: "ta-0138" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1240"
+    target: "செலவு"
+    reading: "celavu"
+    ipa: "selaʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "செலவு அதிகம்."
+        reading: "celavu atikam."
+        ipa: "selaʋu at̪ikam"
+        bases: [{ word: "செலவு", base: "செலவு", reading: "celavu" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "செலவு குறைவு."
+        reading: "celavu kuṟaivu."
+        ipa: "selaʋu kuraiʋu"
+        bases: [{ word: "செலவு", base: "செலவு", reading: "celavu" }, { word: "குறைவு", ref: "ta-0160" }]
+  - id: "ta-1241"
+    target: "விளம்பரம்"
+    reading: "viḷamparam"
+    ipa: "ʋiɭampaɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "விளம்பரம் பார்."
+        reading: "viḷamparam pār."
+        ipa: "ʋiɭampaɾam paːɾ"
+        bases: [{ word: "விளம்பரம்", base: "விளம்பரம்", reading: "viḷamparam" }, { word: "பார்", ref: "ta-0121" }]
+      - target: "கடையில் விளம்பரம் இருக்கிறது."
+        reading: "kaṭaiyil viḷamparam irukkiṟatu."
+        ipa: "kaʈaijil ʋiɭampaɾam iɾukkirat̪u"
+        bases: [{ word: "கடையில்", base: "கடை", reading: "kaṭai" }, { word: "விளம்பரம்", base: "விளம்பரம்", reading: "viḷamparam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1242"
+    target: "செலுத்து"
+    reading: "celuttu"
+    ipa: "selut̪t̪u"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பணம் செலுத்து."
+        reading: "paṇam celuttu."
+        ipa: "paɳam selut̪t̪u"
+        bases: [{ word: "பணம்", ref: "ta-0197" }, { word: "செலுத்து", base: "செலுத்து", reading: "celuttu" }]
+      - target: "நான் பில் செலுத்துகிறேன்."
+        reading: "nāṉ pil celuttukiṟēṉ."
+        ipa: "naːn pil selut̪t̪ukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பில்", ref: "ta-1213" }, { word: "செலுத்துகிறேன்", base: "செலுத்து", reading: "celuttu" }]
+  - id: "ta-1243"
+    target: "ஒப்பிடு"
+    reading: "oppiṭu"
+    ipa: "oppiʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "விலை ஒப்பிடு."
+        reading: "vilai oppiṭu."
+        ipa: "ʋilai oppiʈu"
+        bases: [{ word: "விலை", ref: "ta-0225" }, { word: "ஒப்பிடு", base: "ஒப்பிடு", reading: "oppiṭu" }]
+      - target: "நான் விலை ஒப்பிடுகிறேன்."
+        reading: "nāṉ vilai oppiṭukiṟēṉ."
+        ipa: "naːn ʋilai oppiʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "விலை", ref: "ta-0225" }, { word: "ஒப்பிடுகிறேன்", base: "ஒப்பிடு", reading: "oppiṭu" }]
+  - id: "ta-1244"
+    target: "விசாரி"
+    reading: "vicāri"
+    ipa: "ʋisaːɾi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "விலை விசாரி."
+        reading: "vilai vicāri."
+        ipa: "ʋilai ʋisaːɾi"
+        bases: [{ word: "விலை", ref: "ta-0225" }, { word: "விசாரி", base: "விசாரி", reading: "vicāri" }]
+      - target: "நான் கடையில் விசாரிக்கிறேன்."
+        reading: "nāṉ kaṭaiyil vicārikkiṟēṉ."
+        ipa: "naːn kaʈaijil ʋisaːɾikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "கடையில்", base: "கடை", reading: "kaṭai" }, { word: "விசாரிக்கிறேன்", base: "விசாரி", reading: "vicāri" }]
+  - id: "ta-1245"
+    target: "கூட்டு"
+    reading: "kūṭṭu"
+    ipa: "kuːʈʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பணம் கூட்டு."
+        reading: "paṇam kūṭṭu."
+        ipa: "paɳam kuːʈʈu"
+        bases: [{ word: "பணம்", ref: "ta-0197" }, { word: "கூட்டு", base: "கூட்டு", reading: "kūṭṭu" }]
+      - target: "நான் விலை கூட்டுகிறேன்."
+        reading: "nāṉ vilai kūṭṭukiṟēṉ."
+        ipa: "naːn ʋilai kuːʈʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "விலை", ref: "ta-0225" }, { word: "கூட்டுகிறேன்", base: "கூட்டு", reading: "kūṭṭu" }]
+  - id: "ta-1246"
+    target: "வசூலி"
+    reading: "vacūli"
+    ipa: "ʋasuːli"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பணம் வசூலி."
+        reading: "paṇam vacūli."
+        ipa: "paɳam ʋasuːli"
+        bases: [{ word: "பணம்", ref: "ta-0197" }, { word: "வசூலி", base: "வசூலி", reading: "vacūli" }]
+      - target: "கடைக்காரர் பணம் வசூலிக்கிறார்."
+        reading: "kaṭaikkārar paṇam vacūlikkiṟār."
+        ipa: "kaʈaikkaːɾaɾ paɳam ʋasuːlikkiraːɾ"
+        bases: [{ word: "கடைக்காரர்", ref: "ta-1209" }, { word: "பணம்", ref: "ta-0197" }, { word: "வசூலிக்கிறார்", base: "வசூலி", reading: "vacūli" }]
+  - id: "ta-1247"
+    target: "ஆர்டர்"
+    reading: "ārṭar"
+    ipa: "aːɾʈaɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஆர்டர் எப்போது?"
+        reading: "ārṭar eppōtu?"
+        ipa: "aːɾʈaɾ eppoːt̪u"
+        bases: [{ word: "ஆர்டர்", base: "ஆர்டர்", reading: "ārṭar" }, { word: "எப்போது", ref: "ta-0044" }]
+      - target: "ஆர்டர் தயார்."
+        reading: "ārṭar tayār."
+        ipa: "aːɾʈaɾ t̪ajaːɾ"
+        bases: [{ word: "ஆர்டர்", base: "ஆர்டர்", reading: "ārṭar" }, { word: "தயார்", base: "தயார்", reading: "tayār" }]
+  - id: "ta-1248"
+    target: "டெலிவரி"
+    reading: "ṭelivari"
+    ipa: "ʈeliʋaɾi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "டெலிவரி இலவசம்."
+        reading: "ṭelivari ilavacam."
+        ipa: "ʈeliʋaɾi ilaʋasam"
+        bases: [{ word: "டெலிவரி", base: "டெலிவரி", reading: "ṭelivari" }, { word: "இலவசம்", ref: "ta-1251" }]
+      - target: "டெலிவரி எப்போது?"
+        reading: "ṭelivari eppōtu?"
+        ipa: "ʈeliʋaɾi eppoːt̪u"
+        bases: [{ word: "டெலிவரி", base: "டெலிவரி", reading: "ṭelivari" }, { word: "எப்போது", ref: "ta-0044" }]
+  - id: "ta-1249"
+    target: "மலிவான"
+    reading: "malivāṉa"
+    ipa: "maliʋaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது மலிவான பை."
+        reading: "itu malivāṉa pai."
+        ipa: "it̪u maliʋaːna pai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "மலிவான", base: "மலிவான", reading: "malivāṉa" }, { word: "பை", ref: "ta-0228" }]
+      - target: "பை மலிவாக இருக்கிறது."
+        reading: "pai malivāka irukkiṟatu."
+        ipa: "pai maliʋaːka iɾukkirat̪u"
+        bases: [{ word: "பை", ref: "ta-0228" }, { word: "மலிவாக", base: "மலிவான", reading: "malivāṉa" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1250"
+    target: "தரமான"
+    reading: "taramāṉa"
+    ipa: "t̪aɾamaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது தரமான பொருள்."
+        reading: "itu taramāṉa poruḷ."
+        ipa: "it̪u t̪aɾamaːna poɾuɭ"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "தரமான", base: "தரமான", reading: "taramāṉa" }, { word: "பொருள்", ref: "ta-1224" }]
+      - target: "தரமான பை வேண்டும்."
+        reading: "taramāṉa pai vēṇṭum."
+        ipa: "t̪aɾamaːna pai ʋeːɳʈum"
+        bases: [{ word: "தரமான", base: "தரமான", reading: "taramāṉa" }, { word: "பை", ref: "ta-0228" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1251"
+    target: "இலவசம்"
+    reading: "ilavacam"
+    ipa: "ilaʋasam"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது இலவசம்."
+        reading: "itu ilavacam."
+        ipa: "it̪u ilaʋasam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "இலவசம்", base: "இலவசம்", reading: "ilavacam" }]
+      - target: "பை இலவசம்."
+        reading: "pai ilavacam."
+        ipa: "pai ilaʋasam"
+        bases: [{ word: "பை", ref: "ta-0228" }, { word: "இலவசம்", base: "இலவசம்", reading: "ilavacam" }]
+  - id: "ta-1252"
+    target: "கூடுதல்"
+    reading: "kūṭutal"
+    ipa: "kuːʈut̪al"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கூடுதல் பை வேண்டும்."
+        reading: "kūṭutal pai vēṇṭum."
+        ipa: "kuːʈut̪al pai ʋeːɳʈum"
+        bases: [{ word: "கூடுதல்", base: "கூடுதல்", reading: "kūṭutal" }, { word: "பை", ref: "ta-0228" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "கூடுதல் கட்டணம் இல்லை."
+        reading: "kūṭutal kaṭṭaṇam illai."
+        ipa: "kuːʈut̪al kaʈʈaɳam illai"
+        bases: [{ word: "கூடுதல்", base: "கூடுதல்", reading: "kūṭutal" }, { word: "கட்டணம்", ref: "ta-1259" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1253"
+    target: "குறைந்த"
+    reading: "kuṟainta"
+    ipa: "kuraint̪a"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "குறைந்த விலை நல்லது."
+        reading: "kuṟainta vilai nallatu."
+        ipa: "kuraint̪a ʋilai nallat̪u"
+        bases: [{ word: "குறைந்த", base: "குறைந்த", reading: "kuṟainta" }, { word: "விலை", ref: "ta-0225" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "குறைந்த எடை."
+        reading: "kuṟainta eṭai."
+        ipa: "kuraint̪a eʈai"
+        bases: [{ word: "குறைந்த", base: "குறைந்த", reading: "kuṟainta" }, { word: "எடை", ref: "ta-0229" }]
+  - id: "ta-1254"
+    target: "சரியான"
+    reading: "cariyāṉa"
+    ipa: "saɾijaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது சரியான விலை."
+        reading: "itu cariyāṉa vilai."
+        ipa: "it̪u saɾijaːna ʋilai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "சரியான", base: "சரியான", reading: "cariyāṉa" }, { word: "விலை", ref: "ta-0225" }]
+      - target: "சரியான அளவு வேண்டும்."
+        reading: "cariyāṉa aḷavu vēṇṭum."
+        ipa: "saɾijaːna aɭaʋu ʋeːɳʈum"
+        bases: [{ word: "சரியான", base: "சரியான", reading: "cariyāṉa" }, { word: "அளவு", ref: "ta-1233" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1255"
+    target: "முழு"
+    reading: "muḻu"
+    ipa: "muɻu"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "முழு பணம் கொடு."
+        reading: "muḻu paṇam koṭu."
+        ipa: "muɻu paɳam koʈu"
+        bases: [{ word: "முழு", base: "முழு", reading: "muḻu" }, { word: "பணம்", ref: "ta-0197" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "முழு நாள் வேலை."
+        reading: "muḻu nāḷ vēlai."
+        ipa: "muɻu naːɭ ʋeːlai"
+        bases: [{ word: "முழு", base: "முழு", reading: "muḻu" }, { word: "நாள்", ref: "ta-1100" }, { word: "வேலை", ref: "ta-0192" }]
+  - id: "ta-1256"
+    target: "ஆன்லைன்"
+    reading: "āṉlaiṉ"
+    ipa: "aːnlain"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஆன்லைனில் வாங்கு."
+        reading: "āṉlaiṉil vāṅku."
+        ipa: "aːnlainil ʋaːŋku"
+        bases: [{ word: "ஆன்லைனில்", base: "ஆன்லைன்", reading: "āṉlaiṉ" }, { word: "வாங்கு", ref: "ta-0129" }]
+      - target: "ஆன்லைனில் பணம் செலுத்து."
+        reading: "āṉlaiṉil paṇam celuttu."
+        ipa: "aːnlainil paɳam selut̪t̪u"
+        bases: [{ word: "ஆன்லைனில்", base: "ஆன்லைன்", reading: "āṉlaiṉ" }, { word: "பணம்", ref: "ta-0197" }, { word: "செலுத்து", ref: "ta-1242" }]
+  - id: "ta-1257"
+    target: "தொகை"
+    reading: "tokai"
+    ipa: "t̪okai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தொகை எவ்வளவு?"
+        reading: "tokai evvaḷavu?"
+        ipa: "t̪okai eʋʋaɭaʋu"
+        bases: [{ word: "தொகை", base: "தொகை", reading: "tokai" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+      - target: "தொகை சரி."
+        reading: "tokai cari."
+        ipa: "t̪okai saɾi"
+        bases: [{ word: "தொகை", base: "தொகை", reading: "tokai" }, { word: "சரி", ref: "ta-0023" }]
+  - id: "ta-1258"
+    target: "பாக்கி"
+    reading: "pākki"
+    ipa: "paːkki"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பாக்கி கொடு."
+        reading: "pākki koṭu."
+        ipa: "paːkki koʈu"
+        bases: [{ word: "பாக்கி", base: "பாக்கி", reading: "pākki" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "பாக்கி எவ்வளவு?"
+        reading: "pākki evvaḷavu?"
+        ipa: "paːkki eʋʋaɭaʋu"
+        bases: [{ word: "பாக்கி", base: "பாக்கி", reading: "pākki" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+  - id: "ta-1259"
+    target: "கட்டணம்"
+    reading: "kaṭṭaṇam"
+    ipa: "kaʈʈaɳam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கட்டணம் எவ்வளவு?"
+        reading: "kaṭṭaṇam evvaḷavu?"
+        ipa: "kaʈʈaɳam eʋʋaɭaʋu"
+        bases: [{ word: "கட்டணம்", base: "கட்டணம்", reading: "kaṭṭaṇam" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+      - target: "கூடுதல் கட்டணம் இல்லை."
+        reading: "kūṭutal kaṭṭaṇam illai."
+        ipa: "kuːʈut̪al kaʈʈaɳam illai"
+        bases: [{ word: "கூடுதல்", ref: "ta-1252" }, { word: "கட்டணம்", base: "கட்டணம்", reading: "kaṭṭaṇam" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1260"
+    target: "வியாபாரம்"
+    reading: "viyāpāram"
+    ipa: "ʋijaːpaːɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வியாபாரம் நல்லது."
+        reading: "viyāpāram nallatu."
+        ipa: "ʋijaːpaːɾam nallat̪u"
+        bases: [{ word: "வியாபாரம்", base: "வியாபாரம்", reading: "viyāpāram" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "சந்தையில் வியாபாரம் நிறைய."
+        reading: "cantaiyil viyāpāram niṟaiya."
+        ipa: "sant̪aijil ʋijaːpaːɾam niraija"
+        bases: [{ word: "சந்தையில்", base: "சந்தை", reading: "cantai" }, { word: "வியாபாரம்", base: "வியாபாரம்", reading: "viyāpāram" }, { word: "நிறைய", ref: "ta-0141" }]
+  - id: "ta-1261"
+    target: "வியாபாரி"
+    reading: "viyāpāri"
+    ipa: "ʋijaːpaːɾi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் வியாபாரி."
+        reading: "avar viyāpāri."
+        ipa: "aʋaɾ ʋijaːpaːɾi"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "வியாபாரி", base: "வியாபாரி", reading: "viyāpāri" }]
+      - target: "வியாபாரி சந்தையில் இருக்கிறார்."
+        reading: "viyāpāri cantaiyil irukkiṟār."
+        ipa: "ʋijaːpaːɾi sant̪aijil iɾukkiraːɾ"
+        bases: [{ word: "வியாபாரி", base: "வியாபாரி", reading: "viyāpāri" }, { word: "சந்தையில்", base: "சந்தை", reading: "cantai" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+  - id: "ta-1262"
+    target: "மளிகைக்கடை"
+    reading: "maḷikaikkaṭai"
+    ipa: "maɭikaikkaʈai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மளிகைக்கடை பக்கத்தில் இருக்கிறது."
+        reading: "maḷikaikkaṭai pakkattil irukkiṟatu."
+        ipa: "maɭikaikkaʈai pakkat̪t̪il iɾukkirat̪u"
+        bases: [{ word: "மளிகைக்கடை", base: "மளிகைக்கடை", reading: "maḷikaikkaṭai" }, { word: "பக்கத்தில்", ref: "ta-0182" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "மளிகைக்கடைக்கு போகிறேன்."
+        reading: "maḷikaikkaṭaikku pōkiṟēṉ."
+        ipa: "maɭikaikkaʈaikku poːkireːn"
+        bases: [{ word: "மளிகைக்கடைக்கு", base: "மளிகைக்கடை", reading: "maḷikaikkaṭai" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]

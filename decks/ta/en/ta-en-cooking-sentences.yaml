@@ -1,0 +1,84 @@
+schema: 1
+id: "ta-en-cooking-sentences"
+kind: "layer"
+core: "ta-cooking-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Cooking in sentences"
+description: "Ten short sentences that give cooking steps: chopping, tempering, boiling, making dosa and tasting. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-4062":
+    native: "Mother is chopping the onion."
+    bases:
+      "நறுக்குகிறார்": "chops (respectful); from நறுக்கு (naṟukku), to chop"
+    confusables:
+      w1: { why: "தக்காளி (takkāḷi), tomato, is a different word." }
+      w2: { why: "பூண்டு (pūṇṭu), garlic, is a different word." }
+  "ta-4063":
+    native: "Put the mustard seeds in the oil."
+    bases:
+      "எண்ணெயில்": "in the oil; from எண்ணெய் (eṇṇey), oil"
+    confusables:
+      w1: { why: "சீரகம் (cīrakam), cumin, is a different word." }
+      w2: { why: "மிளகு (miḷaku), black pepper, is a different word." }
+  "ta-4064":
+    native: "Sauté the onion, then add the tomato."
+    notes:
+      n1: "Steps come in the order they are done: வதக்கு (vatakku), then போடு (pōṭu)."
+    bases:
+      "பிறகு": "then; after"
+    confusables:
+      w1: { why: "இஞ்சி (iñci), ginger, is a different word." }
+      w2: { why: "மசாலா (macālā), spice mix, is a different word." }
+  "ta-4065":
+    native: "The rice is cooking in the cooker."
+    bases:
+      "குக்கரில்": "in the cooker; from குக்கர் (kukkar), cooker"
+      "வேகிறது": "is cooking; from வேகு (vēku), to cook (of food)"
+    confusables:
+      w1: { why: "கடாய் (kaṭāy), pan (for frying), is a different word." }
+      w2: { why: "சட்டி (caṭṭi), pot, is a different word." }
+  "ta-4066":
+    native: "The water is boiling; where is the milk?"
+    bases:
+      "கொதிக்கிறது": "boils; from கொதி (koti), to boil"
+    confusables:
+      w1: { why: "தயிர் (tayir), curd; yoghurt, is a different word." }
+      w2: { why: "மோர் (mōr), buttermilk, is a different word." }
+  "ta-4067":
+    native: "Grandmother is making dosa."
+    notes:
+      n1: "You சுடு (cuṭu) a dosa on a hot pan; you பொரி (pori) things in oil."
+    bases:
+      "சுடுகிறார்": "makes on a pan (respectful); from சுடு (cuṭu), to bake; to cook on a hot pan"
+    confusables:
+      w1: { why: "தாளி (tāḷi), to temper, is a different word." }
+      w2: { why: "பொரி (pori), to fry in oil, is a different word." }
+  "ta-4068":
+    native: "Put a little tamarind in the sambar."
+    bases:
+      "சாம்பாரில்": "in the sambar; from சாம்பார் (cāmpār), sambar"
+    confusables:
+      w1: { why: "வெல்லம் (vellam), jaggery, is a different word." }
+      w2: { why: "உப்பு (uppu), salt, is a different word." }
+  "ta-4069":
+    native: "The sambar is very spicy."
+    bases:
+      "காரமாக": "spicy (adverb form); from காரமான (kāramāṉa), spicy"
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "புளிப்பு (puḷippu), sourness, is a different word." }
+      w2: { why: "சுவை (cuvai), taste, is a different word." }
+  "ta-4070":
+    native: "Taste it: is the salt right?"
+    bases:
+      "சரியா": "right?; from சரி (cari), right"
+    confusables:
+      w1: { why: "வாசனை (vācaṉai), smell; fragrance, is a different word." }
+      w2: { why: "சுவை (cuvai), taste, is a different word." }
+  "ta-4071":
+    native: "Knead the dough and take a small piece."
+    confusables:
+      w1: { why: "உரி (uri), to peel, is a different word." }
+      w2: { why: "துருவு (turuvu), to grate, is a different word." }

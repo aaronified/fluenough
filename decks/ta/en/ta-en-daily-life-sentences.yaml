@@ -1,0 +1,71 @@
+schema: 1
+id: "ta-en-daily-life-sentences"
+kind: "layer"
+core: "ta-daily-life-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "A day in sentences"
+description: "Eight short sentences about getting up, bathing, walking, coming home and starting work. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-4000":
+    native: "I get up at six o'clock."
+    notes:
+      n1: "The hour comes before the clock word: ஆறு மணிக்கு (āṟu maṇikku), at six o'clock."
+    bases:
+      "மணிக்கு": "at o'clock; from மணி (maṇi), hour; o'clock"
+      "எழுகிறேன்": "get up; from எழு (eḻu), to get up"
+    confusables:
+      w1: { why: "குளி (kuḷi), to bathe, is a different word." }
+      w2: { why: "தூங்கு (tūṅku), to sleep, is a different word." }
+  "ta-4001":
+    native: "He eats breakfast."
+    bases:
+      "சாப்பிடுகிறான்": "eats; from சாப்பிடு (cāppiṭu), to eat"
+    confusables:
+      w1: { why: "சாப்பாடு (cāppāṭu), food; meal, is a different word." }
+      w2: { why: "தேநீர் (tēnīr), tea, is a different word." }
+  "ta-4002":
+    native: "She walks every day."
+    bases:
+      "நடக்கிறாள்": "walks; from நட (naṭa), to walk"
+    confusables:
+      w1: { why: "போ (pō), to go, is a different word." }
+      w2: { why: "வா (vā), come, is a different word." }
+  "ta-4003":
+    native: "Mother comes back in the evening."
+    bases:
+      "மாலையில்": "in the evening; from மாலை (mālai), evening"
+      "திரும்புகிறார்": "returns (respectful); from திரும்பு (tirumpu), to return"
+    confusables:
+      w1: { why: "வா (vā), come, is a different word." }
+      w2: { why: "போ (pō), to go, is a different word." }
+  "ta-4004":
+    native: "This is a good day."
+    confusables:
+      w1: { why: "இன்று (iṉṟu), today, is a different word." }
+      w2: { why: "நேற்று (nēṟṟu), yesterday, is a different word." }
+  "ta-4005":
+    native: "We start work at eight o'clock."
+    notes:
+      n1: "The thing that starts comes before the verb: வேலை தொடங்குகிறோம் (vēlai toṭaṅkukiṟōm), we start work."
+    bases:
+      "மணிக்கு": "at o'clock; from மணி (maṇi), hour; o'clock"
+      "தொடங்குகிறோம்": "start; from தொடங்கு (toṭaṅku), to start"
+    confusables:
+      w1: { why: "ஆறு (āṟu), six, is a different word." }
+      w2: { why: "ஏழு (ēḻu), seven, is a different word." }
+  "ta-4006":
+    native: "When do you come back?"
+    bases:
+      "திரும்புகிறீர்கள்": "come back; from திரும்பு (tirumpu), to return"
+    confusables:
+      w1: { why: "எங்கே (eṅkē), where, is a different word." }
+      w2: { why: "இப்போது (ippōtu), now, is a different word." }
+  "ta-4007":
+    native: "I sleep at night."
+    bases:
+      "தூங்குகிறேன்": "sleep; from தூங்கு (tūṅku), to sleep"
+    confusables:
+      w1: { why: "எழு (eḻu), to get up; to rise, is a different word." }
+      w2: { why: "குளி (kuḷi), to bathe, is a different word." }

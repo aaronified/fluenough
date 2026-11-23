@@ -1,0 +1,808 @@
+schema: 1
+id: "ta-weather"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "weather"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-1108"
+    target: "வானம்"
+    reading: "vāṉam"
+    ipa: "ʋaːnam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வானம் நீலமாக இருக்கிறது."
+        reading: "vāṉam nīlamāka irukkiṟatu."
+        ipa: "ʋaːnam niːlamaːka iɾukkirat̪u"
+        bases: [{ word: "வானம்", base: "வானம்", reading: "vāṉam" }, { word: "நீலமாக", base: "நீலம்", reading: "nīlam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "வானத்தில் மேகம் இருக்கிறது."
+        reading: "vāṉattil mēkam irukkiṟatu."
+        ipa: "ʋaːnat̪t̪il meːkam iɾukkirat̪u"
+        bases: [{ word: "வானத்தில்", base: "வானம்", reading: "vāṉam" }, { word: "மேகம்", ref: "ta-1112" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1109"
+    target: "மழை"
+    reading: "maḻai"
+    ipa: "maɻai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று மழை இல்லை."
+        reading: "iṉṟu maḻai illai."
+        ipa: "inru maɻai illai"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "மழை", base: "மழை", reading: "maḻai" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "நாளை மழை வரும்."
+        reading: "nāḷai maḻai varum."
+        ipa: "naːɭai maɻai ʋaɾum"
+        bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "மழை", base: "மழை", reading: "maḻai" }, { word: "வரும்", base: "வா", reading: "vā" }]
+  - id: "ta-1110"
+    target: "வெயில்"
+    reading: "veyil"
+    ipa: "ʋejil"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று வெயில் அதிகம்."
+        reading: "iṉṟu veyil atikam."
+        ipa: "inru ʋejil at̪ikam"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "வெயில்", base: "வெயில்", reading: "veyil" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "இங்கே வெயில் இல்லை."
+        reading: "iṅkē veyil illai."
+        ipa: "iŋkeː ʋejil illai"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "வெயில்", base: "வெயில்", reading: "veyil" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1111"
+    target: "காற்று"
+    reading: "kāṟṟu"
+    ipa: "kaːrru"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே காற்று இல்லை."
+        reading: "iṅkē kāṟṟu illai."
+        ipa: "iŋkeː kaːrru illai"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "காற்று", base: "காற்று", reading: "kāṟṟu" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "காற்றில் ஈரம் இருக்கிறது."
+        reading: "kāṟṟil īram irukkiṟatu."
+        ipa: "kaːrril iːɾam iɾukkirat̪u"
+        bases: [{ word: "காற்றில்", base: "காற்று", reading: "kāṟṟu" }, { word: "ஈரம்", ref: "ta-1128" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1112"
+    target: "மேகம்"
+    reading: "mēkam"
+    ipa: "meːkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நிறைய மேகம் இருக்கிறது."
+        reading: "niṟaiya mēkam irukkiṟatu."
+        ipa: "niraija meːkam iɾukkirat̪u"
+        bases: [{ word: "நிறைய", ref: "ta-0141" }, { word: "மேகம்", base: "மேகம்", reading: "mēkam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "மேகம் வருகிறது."
+        reading: "mēkam varukiṟatu."
+        ipa: "meːkam ʋaɾukirat̪u"
+        bases: [{ word: "மேகம்", base: "மேகம்", reading: "mēkam" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+  - id: "ta-1113"
+    target: "இடி"
+    reading: "iṭi"
+    ipa: "iʈi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இடி இடிக்கிறது."
+        reading: "iṭi iṭikkiṟatu."
+        ipa: "iʈi iʈikkirat̪u"
+        bases: [{ word: "இடி", base: "இடி", reading: "iṭi" }, { word: "இடிக்கிறது", base: "இடி", reading: "iṭi" }]
+      - target: "மழை இல்லை, ஆனால் இடி இருக்கிறது."
+        reading: "maḻai illai, āṉāl iṭi irukkiṟatu."
+        ipa: "maɻai illai aːnaːl iʈi iɾukkirat̪u"
+        bases: [{ word: "மழை", ref: "ta-1109" }, { word: "இல்லை", ref: "ta-0002" }, { word: "ஆனால்", ref: "ta-0400" }, { word: "இடி", base: "இடி", reading: "iṭi" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1114"
+    target: "மின்னல்"
+    reading: "miṉṉal"
+    ipa: "minnal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மழையில் மின்னல் இருக்கிறது."
+        reading: "maḻaiyil miṉṉal irukkiṟatu."
+        ipa: "maɻaijil minnal iɾukkirat̪u"
+        bases: [{ word: "மழையில்", base: "மழை", reading: "maḻai" }, { word: "மின்னல்", base: "மின்னல்", reading: "miṉṉal" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "இன்று மின்னல் இல்லை."
+        reading: "iṉṟu miṉṉal illai."
+        ipa: "inru minnal illai"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "மின்னல்", base: "மின்னல்", reading: "miṉṉal" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1115"
+    target: "புயல்"
+    reading: "puyal"
+    ipa: "pujal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாளை புயல் வரும்."
+        reading: "nāḷai puyal varum."
+        ipa: "naːɭai pujal ʋaɾum"
+        bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "புயல்", base: "புயல்", reading: "puyal" }, { word: "வரும்", base: "வா", reading: "vā" }]
+      - target: "இன்று புயல் இல்லை."
+        reading: "iṉṟu puyal illai."
+        ipa: "inru pujal illai"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "புயல்", base: "புயல்", reading: "puyal" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1116"
+    target: "வெள்ளம்"
+    reading: "veḷḷam"
+    ipa: "ʋeɭɭam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மழையில் வெள்ளம் வருகிறது."
+        reading: "maḻaiyil veḷḷam varukiṟatu."
+        ipa: "maɻaijil ʋeɭɭam ʋaɾukirat̪u"
+        bases: [{ word: "மழையில்", base: "மழை", reading: "maḻai" }, { word: "வெள்ளம்", base: "வெள்ளம்", reading: "veḷḷam" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+      - target: "தெருவில் வெள்ளம் இருக்கிறது."
+        reading: "teruvil veḷḷam irukkiṟatu."
+        ipa: "t̪eɾuʋil ʋeɭɭam iɾukkirat̪u"
+        bases: [{ word: "தெருவில்", base: "தெரு", reading: "teru" }, { word: "வெள்ளம்", base: "வெள்ளம்", reading: "veḷḷam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1117"
+    target: "பனி"
+    reading: "paṉi"
+    ipa: "pani"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காலையில் பனி இருக்கிறது."
+        reading: "kālaiyil paṉi irukkiṟatu."
+        ipa: "kaːlaijil pani iɾukkirat̪u"
+        bases: [{ word: "காலையில்", base: "காலை", reading: "kālai" }, { word: "பனி", base: "பனி", reading: "paṉi" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "இங்கே பனி இல்லை."
+        reading: "iṅkē paṉi illai."
+        ipa: "iŋkeː pani illai"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "பனி", base: "பனி", reading: "paṉi" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1118"
+    target: "குளிர்"
+    reading: "kuḷir"
+    ipa: "kuɭiɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று குளிர் அதிகம்."
+        reading: "iṉṟu kuḷir atikam."
+        ipa: "inru kuɭiɾ at̪ikam"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "குளிர்", base: "குளிர்", reading: "kuḷir" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "குளிர் குறைவு."
+        reading: "kuḷir kuṟaivu."
+        ipa: "kuɭiɾ kuraiʋu"
+        bases: [{ word: "குளிர்", base: "குளிர்", reading: "kuḷir" }, { word: "குறைவு", ref: "ta-0160" }]
+  - id: "ta-1119"
+    target: "வெப்பம்"
+    reading: "veppam"
+    ipa: "ʋeppam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று வெப்பம் அதிகம்."
+        reading: "iṉṟu veppam atikam."
+        ipa: "inru ʋeppam at̪ikam"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "வெப்பம்", base: "வெப்பம்", reading: "veppam" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "வெப்பம் குறைவு."
+        reading: "veppam kuṟaivu."
+        ipa: "ʋeppam kuraiʋu"
+        bases: [{ word: "வெப்பம்", base: "வெப்பம்", reading: "veppam" }, { word: "குறைவு", ref: "ta-0160" }]
+  - id: "ta-1120"
+    target: "சூரியன்"
+    reading: "cūriyaṉ"
+    ipa: "suːɾijan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சூரியன் கிழக்கில் எழுகிறது."
+        reading: "cūriyaṉ kiḻakkil eḻukiṟatu."
+        ipa: "suːɾijan kiɻakkil eɻukirat̪u"
+        bases: [{ word: "சூரியன்", base: "சூரியன்", reading: "cūriyaṉ" }, { word: "கிழக்கில்", base: "கிழக்கு", reading: "kiḻakku" }, { word: "எழுகிறது", base: "எழு", reading: "eḻu" }]
+      - target: "இன்று சூரியன் இல்லை."
+        reading: "iṉṟu cūriyaṉ illai."
+        ipa: "inru suːɾijan illai"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "சூரியன்", base: "சூரியன்", reading: "cūriyaṉ" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1121"
+    target: "நிலா"
+    reading: "nilā"
+    ipa: "nilaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நிலா வானத்தில் இருக்கிறது."
+        reading: "nilā vāṉattil irukkiṟatu."
+        ipa: "nilaː ʋaːnat̪t̪il iɾukkirat̪u"
+        bases: [{ word: "நிலா", base: "நிலா", reading: "nilā" }, { word: "வானத்தில்", base: "வானம்", reading: "vāṉam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "இன்று நிலா இல்லை."
+        reading: "iṉṟu nilā illai."
+        ipa: "inru nilaː illai"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "நிலா", base: "நிலா", reading: "nilā" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1122"
+    target: "நட்சத்திரம்"
+    reading: "naṭcattiram"
+    ipa: "naʈtʃat̪t̪iɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வானத்தில் நிறைய நட்சத்திரம் இருக்கிறது."
+        reading: "vāṉattil niṟaiya naṭcattiram irukkiṟatu."
+        ipa: "ʋaːnat̪t̪il niraija naʈtʃat̪t̪iɾam iɾukkirat̪u"
+        bases: [{ word: "வானத்தில்", base: "வானம்", reading: "vāṉam" }, { word: "நிறைய", ref: "ta-0141" }, { word: "நட்சத்திரம்", base: "நட்சத்திரம்", reading: "naṭcattiram" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "இன்று நட்சத்திரம் இல்லை."
+        reading: "iṉṟu naṭcattiram illai."
+        ipa: "inru naʈtʃat̪t̪iɾam illai"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "நட்சத்திரம்", base: "நட்சத்திரம்", reading: "naṭcattiram" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1123"
+    target: "வானிலை"
+    reading: "vāṉilai"
+    ipa: "ʋaːnilai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று வானிலை எப்படி?"
+        reading: "iṉṟu vāṉilai eppaṭi?"
+        ipa: "inru ʋaːnilai eppaʈi"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "வானிலை", base: "வானிலை", reading: "vāṉilai" }, { word: "எப்படி", ref: "ta-0045" }]
+      - target: "இன்று வானிலை நல்லது."
+        reading: "iṉṟu vāṉilai nallatu."
+        ipa: "inru ʋaːnilai nallat̪u"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "வானிலை", base: "வானிலை", reading: "vāṉilai" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-1124"
+    target: "கோடை"
+    reading: "kōṭai"
+    ipa: "koːʈai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கோடையில் வெயில் அதிகம்."
+        reading: "kōṭaiyil veyil atikam."
+        ipa: "koːʈaijil ʋejil at̪ikam"
+        bases: [{ word: "கோடையில்", base: "கோடை", reading: "kōṭai" }, { word: "வெயில்", ref: "ta-1110" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "கோடை வருகிறது."
+        reading: "kōṭai varukiṟatu."
+        ipa: "koːʈai ʋaɾukirat̪u"
+        bases: [{ word: "கோடை", base: "கோடை", reading: "kōṭai" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+  - id: "ta-1125"
+    target: "குளிர்காலம்"
+    reading: "kuḷirkālam"
+    ipa: "kuɭiɾkaːlam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "குளிர்காலத்தில் பனி இருக்கிறது."
+        reading: "kuḷirkālattil paṉi irukkiṟatu."
+        ipa: "kuɭiɾkaːlat̪t̪il pani iɾukkirat̪u"
+        bases: [{ word: "குளிர்காலத்தில்", base: "குளிர்காலம்", reading: "kuḷirkālam" }, { word: "பனி", ref: "ta-1117" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "குளிர்காலம் வருகிறது."
+        reading: "kuḷirkālam varukiṟatu."
+        ipa: "kuɭiɾkaːlam ʋaɾukirat̪u"
+        bases: [{ word: "குளிர்காலம்", base: "குளிர்காலம்", reading: "kuḷirkālam" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+  - id: "ta-1126"
+    target: "மழைக்காலம்"
+    reading: "maḻaikkālam"
+    ipa: "maɻaikkaːlam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மழைக்காலத்தில் வெள்ளம் வருகிறது."
+        reading: "maḻaikkālattil veḷḷam varukiṟatu."
+        ipa: "maɻaikkaːlat̪t̪il ʋeɭɭam ʋaɾukirat̪u"
+        bases: [{ word: "மழைக்காலத்தில்", base: "மழைக்காலம்", reading: "maḻaikkālam" }, { word: "வெள்ளம்", ref: "ta-1116" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+      - target: "மழைக்காலம் எப்போது?"
+        reading: "maḻaikkālam eppōtu?"
+        ipa: "maɻaikkaːlam eppoːt̪u"
+        bases: [{ word: "மழைக்காலம்", base: "மழைக்காலம்", reading: "maḻaikkālam" }, { word: "எப்போது", ref: "ta-0044" }]
+  - id: "ta-1127"
+    target: "பருவம்"
+    reading: "paruvam"
+    ipa: "paɾuʋam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது நல்ல பருவம்."
+        reading: "itu nalla paruvam."
+        ipa: "it̪u nalla paɾuʋam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நல்ல", ref: "ta-0169" }, { word: "பருவம்", base: "பருவம்", reading: "paruvam" }]
+      - target: "பருவம் மாறுகிறது."
+        reading: "paruvam māṟukiṟatu."
+        ipa: "paɾuʋam maːrukirat̪u"
+        bases: [{ word: "பருவம்", base: "பருவம்", reading: "paruvam" }, { word: "மாறுகிறது", base: "மாறு", reading: "māṟu" }]
+  - id: "ta-1128"
+    target: "ஈரம்"
+    reading: "īram"
+    ipa: "iːɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "துணியில் ஈரம் இருக்கிறது."
+        reading: "tuṇiyil īram irukkiṟatu."
+        ipa: "t̪uɳijil iːɾam iɾukkirat̪u"
+        bases: [{ word: "துணியில்", base: "துணி", reading: "tuṇi" }, { word: "ஈரம்", base: "ஈரம்", reading: "īram" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "ஈரம் இல்லை."
+        reading: "īram illai."
+        ipa: "iːɾam illai"
+        bases: [{ word: "ஈரம்", base: "ஈரம்", reading: "īram" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1129"
+    target: "புழுக்கம்"
+    reading: "puḻukkam"
+    ipa: "puɻukkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று ரொம்ப புழுக்கம்."
+        reading: "iṉṟu rompa puḻukkam."
+        ipa: "inru ɾompa puɻukkam"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "ரொம்ப", ref: "ta-0166" }, { word: "புழுக்கம்", base: "புழுக்கம்", reading: "puḻukkam" }]
+      - target: "இங்கே புழுக்கம் அதிகம்."
+        reading: "iṅkē puḻukkam atikam."
+        ipa: "iŋkeː puɻukkam at̪ikam"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "புழுக்கம்", base: "புழுக்கம்", reading: "puḻukkam" }, { word: "அதிகம்", ref: "ta-0159" }]
+  - id: "ta-1130"
+    target: "தூறல்"
+    reading: "tūṟal"
+    ipa: "t̪uːral"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தூறல் பெய்கிறது."
+        reading: "tūṟal peykiṟatu."
+        ipa: "t̪uːral pejkirat̪u"
+        bases: [{ word: "தூறல்", base: "தூறல்", reading: "tūṟal" }, { word: "பெய்கிறது", base: "பெய்", reading: "pey" }]
+      - target: "காலையில் தூறல் இருக்கிறது."
+        reading: "kālaiyil tūṟal irukkiṟatu."
+        ipa: "kaːlaijil t̪uːral iɾukkirat̪u"
+        bases: [{ word: "காலையில்", base: "காலை", reading: "kālai" }, { word: "தூறல்", base: "தூறல்", reading: "tūṟal" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1131"
+    target: "கடல்"
+    reading: "kaṭal"
+    ipa: "kaʈal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கடல் அருகில் இருக்கிறது."
+        reading: "kaṭal arukil irukkiṟatu."
+        ipa: "kaʈal aɾukil iɾukkirat̪u"
+        bases: [{ word: "கடல்", base: "கடல்", reading: "kaṭal" }, { word: "அருகில்", ref: "ta-0183" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "கடலில் காற்று வீசுகிறது."
+        reading: "kaṭalil kāṟṟu vīcukiṟatu."
+        ipa: "kaʈalil kaːrru ʋiːsukirat̪u"
+        bases: [{ word: "கடலில்", base: "கடல்", reading: "kaṭal" }, { word: "காற்று", ref: "ta-1111" }, { word: "வீசுகிறது", base: "வீசு", reading: "vīcu" }]
+  - id: "ta-1132"
+    target: "மலை"
+    reading: "malai"
+    ipa: "malai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மலையில் குளிர் அதிகம்."
+        reading: "malaiyil kuḷir atikam."
+        ipa: "malaijil kuɭiɾ at̪ikam"
+        bases: [{ word: "மலையில்", base: "மலை", reading: "malai" }, { word: "குளிர்", ref: "ta-1118" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "அங்கே மலை இருக்கிறது."
+        reading: "aṅkē malai irukkiṟatu."
+        ipa: "aŋkeː malai iɾukkirat̪u"
+        bases: [{ word: "அங்கே", base: "அங்கே", reading: "aṅkē" }, { word: "மலை", base: "மலை", reading: "malai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1133"
+    target: "மரம்"
+    reading: "maram"
+    ipa: "maɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அங்கே பெரிய மரம் இருக்கிறது."
+        reading: "aṅkē periya maram irukkiṟatu."
+        ipa: "aŋkeː peɾija maɾam iɾukkirat̪u"
+        bases: [{ word: "அங்கே", base: "அங்கே", reading: "aṅkē" }, { word: "பெரிய", ref: "ta-0008" }, { word: "மரம்", base: "மரம்", reading: "maram" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "பூமியில் நிறைய மரம் இருக்கிறது."
+        reading: "pūmiyil niṟaiya maram irukkiṟatu."
+        ipa: "puːmijil niraija maɾam iɾukkirat̪u"
+        bases: [{ word: "பூமியில்", base: "பூமி", reading: "pūmi" }, { word: "நிறைய", ref: "ta-0141" }, { word: "மரம்", base: "மரம்", reading: "maram" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1134"
+    target: "இலை"
+    reading: "ilai"
+    ipa: "ilai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இலை பச்சை."
+        reading: "ilai paccai."
+        ipa: "ilai patʃtʃai"
+        bases: [{ word: "இலை", base: "இலை", reading: "ilai" }, { word: "பச்சை", ref: "ta-0293" }]
+      - target: "இலையில் சாப்பிடுகிறோம்."
+        reading: "ilaiyil cāppiṭukiṟōm."
+        ipa: "ilaijil saːppiʈukiroːm"
+        bases: [{ word: "இலையில்", base: "இலை", reading: "ilai" }, { word: "சாப்பிடுகிறோம்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+  - id: "ta-1135"
+    target: "நிழல்"
+    reading: "niḻal"
+    ipa: "niɻal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே நிழல் இருக்கிறது."
+        reading: "iṅkē niḻal irukkiṟatu."
+        ipa: "iŋkeː niɻal iɾukkirat̪u"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "நிழல்", base: "நிழல்", reading: "niḻal" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "நிழலில் உட்கார்."
+        reading: "niḻalil uṭkār."
+        ipa: "niɻalil uʈkaːɾ"
+        bases: [{ word: "நிழலில்", base: "நிழல்", reading: "niḻal" }, { word: "உட்கார்", ref: "ta-0188" }]
+  - id: "ta-1136"
+    target: "வெளிச்சம்"
+    reading: "veḷiccam"
+    ipa: "ʋeɭitʃtʃam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே வெளிச்சம் இல்லை."
+        reading: "iṅkē veḷiccam illai."
+        ipa: "iŋkeː ʋeɭitʃtʃam illai"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "வெளிச்சம்", base: "வெளிச்சம்", reading: "veḷiccam" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "அறையில் வெளிச்சம் கொஞ்சம்."
+        reading: "aṟaiyil veḷiccam koñcam."
+        ipa: "araijil ʋeɭitʃtʃam koɲtʃam"
+        bases: [{ word: "அறையில்", base: "அறை", reading: "aṟai" }, { word: "வெளிச்சம்", base: "வெளிச்சம்", reading: "veḷiccam" }, { word: "கொஞ்சம்", ref: "ta-0158" }]
+  - id: "ta-1137"
+    target: "இருட்டு"
+    reading: "iruṭṭu"
+    ipa: "iɾuʈʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இரவில் இருட்டு."
+        reading: "iravil iruṭṭu."
+        ipa: "iɾaʋil iɾuʈʈu"
+        bases: [{ word: "இரவில்", base: "இரவு", reading: "iravu" }, { word: "இருட்டு", base: "இருட்டு", reading: "iruṭṭu" }]
+      - target: "அறையில் இருட்டு."
+        reading: "aṟaiyil iruṭṭu."
+        ipa: "araijil iɾuʈʈu"
+        bases: [{ word: "அறையில்", base: "அறை", reading: "aṟai" }, { word: "இருட்டு", base: "இருட்டு", reading: "iruṭṭu" }]
+  - id: "ta-1138"
+    target: "பூமி"
+    reading: "pūmi"
+    ipa: "puːmi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பூமியில் மழை பெய்கிறது."
+        reading: "pūmiyil maḻai peykiṟatu."
+        ipa: "puːmijil maɻai pejkirat̪u"
+        bases: [{ word: "பூமியில்", base: "பூமி", reading: "pūmi" }, { word: "மழை", ref: "ta-1109" }, { word: "பெய்கிறது", base: "பெய்", reading: "pey" }]
+      - target: "பூமியில் நிறைய மரம் இருக்கிறது."
+        reading: "pūmiyil niṟaiya maram irukkiṟatu."
+        ipa: "puːmijil niraija maɾam iɾukkirat̪u"
+        bases: [{ word: "பூமியில்", base: "பூமி", reading: "pūmi" }, { word: "நிறைய", ref: "ta-0141" }, { word: "மரம்", ref: "ta-1133" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1139"
+    target: "டிகிரி"
+    reading: "ṭikiri"
+    ipa: "ʈikiɾi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று முப்பது டிகிரி."
+        reading: "iṉṟu muppatu ṭikiri."
+        ipa: "inru muppat̪u ʈikiɾi"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "முப்பது", ref: "ta-0202" }, { word: "டிகிரி", base: "டிகிரி", reading: "ṭikiri" }]
+      - target: "இங்கே நாற்பது டிகிரி."
+        reading: "iṅkē nāṟpatu ṭikiri."
+        ipa: "iŋkeː naːrpat̪u ʈikiɾi"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "நாற்பது", ref: "ta-0203" }, { word: "டிகிரி", base: "டிகிரி", reading: "ṭikiri" }]
+  - id: "ta-1140"
+    target: "வெப்பநிலை"
+    reading: "veppanilai"
+    ipa: "ʋeppanilai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று வெப்பநிலை என்ன?"
+        reading: "iṉṟu veppanilai eṉṉa?"
+        ipa: "inru ʋeppanilai enna"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "வெப்பநிலை", base: "வெப்பநிலை", reading: "veppanilai" }, { word: "என்ன", ref: "ta-0042" }]
+      - target: "வெப்பநிலை இருபது டிகிரி."
+        reading: "veppanilai irupatu ṭikiri."
+        ipa: "ʋeppanilai iɾupat̪u ʈikiɾi"
+        bases: [{ word: "வெப்பநிலை", base: "வெப்பநிலை", reading: "veppanilai" }, { word: "இருபது", ref: "ta-0106" }, { word: "டிகிரி", ref: "ta-1139" }]
+  - id: "ta-1141"
+    target: "பெய்"
+    reading: "pey"
+    ipa: "pej"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மழை பெய்கிறது."
+        reading: "maḻai peykiṟatu."
+        ipa: "maɻai pejkirat̪u"
+        bases: [{ word: "மழை", ref: "ta-1109" }, { word: "பெய்கிறது", base: "பெய்", reading: "pey" }]
+      - target: "நேற்று மழை பெய்தது."
+        reading: "nēṟṟu maḻai peytatu."
+        ipa: "neːrru maɻai pejt̪at̪u"
+        bases: [{ word: "நேற்று", ref: "ta-0134" }, { word: "மழை", ref: "ta-1109" }, { word: "பெய்தது", base: "பெய்", reading: "pey" }]
+  - id: "ta-1142"
+    target: "மறை"
+    reading: "maṟai"
+    ipa: "marai"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சூரியன் மேற்கில் மறைகிறது."
+        reading: "cūriyaṉ mēṟkil maṟaikiṟatu."
+        ipa: "suːɾijan meːrkil maraikirat̪u"
+        bases: [{ word: "சூரியன்", ref: "ta-1120" }, { word: "மேற்கில்", base: "மேற்கு", reading: "mēṟku" }, { word: "மறைகிறது", base: "மறை", reading: "maṟai" }]
+      - target: "நிலா மேகத்தில் மறைகிறது."
+        reading: "nilā mēkattil maṟaikiṟatu."
+        ipa: "nilaː meːkat̪t̪il maraikirat̪u"
+        bases: [{ word: "நிலா", ref: "ta-1121" }, { word: "மேகத்தில்", base: "மேகம்", reading: "mēkam" }, { word: "மறைகிறது", base: "மறை", reading: "maṟai" }]
+  - id: "ta-1143"
+    target: "அடி"
+    reading: "aṭi"
+    ipa: "aʈi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று வெயில் ரொம்ப அடிக்கிறது."
+        reading: "iṉṟu veyil rompa aṭikkiṟatu."
+        ipa: "inru ʋejil ɾompa aʈikkirat̪u"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "வெயில்", ref: "ta-1110" }, { word: "ரொம்ப", ref: "ta-0166" }, { word: "அடிக்கிறது", base: "அடி", reading: "aṭi" }]
+      - target: "குளிர் அடிக்கிறது."
+        reading: "kuḷir aṭikkiṟatu."
+        ipa: "kuɭiɾ aʈikkirat̪u"
+        bases: [{ word: "குளிர்", ref: "ta-1118" }, { word: "அடிக்கிறது", base: "அடி", reading: "aṭi" }]
+  - id: "ta-1144"
+    target: "நனை"
+    reading: "naṉai"
+    ipa: "nanai"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மழையில் நனைகிறேன்."
+        reading: "maḻaiyil naṉaikiṟēṉ."
+        ipa: "maɻaijil nanaikireːn"
+        bases: [{ word: "மழையில்", base: "மழை", reading: "maḻai" }, { word: "நனைகிறேன்", base: "நனை", reading: "naṉai" }]
+      - target: "துணி நனைகிறது."
+        reading: "tuṇi naṉaikiṟatu."
+        ipa: "t̪uɳi nanaikirat̪u"
+        bases: [{ word: "துணி", ref: "ta-0272" }, { word: "நனைகிறது", base: "நனை", reading: "naṉai" }]
+  - id: "ta-1145"
+    target: "காய்"
+    reading: "kāy"
+    ipa: "kaːj"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "துணி வெயிலில் காய்கிறது."
+        reading: "tuṇi veyilil kāykiṟatu."
+        ipa: "t̪uɳi ʋejilil kaːjkirat̪u"
+        bases: [{ word: "துணி", ref: "ta-0272" }, { word: "வெயிலில்", base: "வெயில்", reading: "veyil" }, { word: "காய்கிறது", base: "காய்", reading: "kāy" }]
+      - target: "நிழலில் துணி காயாது."
+        reading: "niḻalil tuṇi kāyātu."
+        ipa: "niɻalil t̪uɳi kaːjaːt̪u"
+        bases: [{ word: "நிழலில்", base: "நிழல்", reading: "niḻal" }, { word: "துணி", ref: "ta-0272" }, { word: "காயாது", base: "காய்", reading: "kāy" }]
+  - id: "ta-1146"
+    target: "மின்னு"
+    reading: "miṉṉu"
+    ipa: "minnu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இரவில் நட்சத்திரம் மின்னுகிறது."
+        reading: "iravil naṭcattiram miṉṉukiṟatu."
+        ipa: "iɾaʋil naʈtʃat̪t̪iɾam minnukirat̪u"
+        bases: [{ word: "இரவில்", base: "இரவு", reading: "iravu" }, { word: "நட்சத்திரம்", ref: "ta-1122" }, { word: "மின்னுகிறது", base: "மின்னு", reading: "miṉṉu" }]
+      - target: "நேற்று இரவு மின்னல் மின்னியது."
+        reading: "nēṟṟu iravu miṉṉal miṉṉiyatu."
+        ipa: "neːrru iɾaʋu minnal minnijat̪u"
+        bases: [{ word: "நேற்று", ref: "ta-0134" }, { word: "இரவு", ref: "ta-0154" }, { word: "மின்னல்", ref: "ta-1114" }, { word: "மின்னியது", base: "மின்னு", reading: "miṉṉu" }]
+  - id: "ta-1147"
+    target: "ஈரமான"
+    reading: "īramāṉa"
+    ipa: "iːɾamaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது ஈரமான துணி."
+        reading: "itu īramāṉa tuṇi."
+        ipa: "it̪u iːɾamaːna t̪uɳi"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "ஈரமான", base: "ஈரமான", reading: "īramāṉa" }, { word: "துணி", ref: "ta-0272" }]
+      - target: "துணி ஈரமாக இருக்கிறது."
+        reading: "tuṇi īramāka irukkiṟatu."
+        ipa: "t̪uɳi iːɾamaːka iɾukkirat̪u"
+        bases: [{ word: "துணி", ref: "ta-0272" }, { word: "ஈரமாக", base: "ஈரமான", reading: "īramāṉa" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1148"
+    target: "வறண்ட"
+    reading: "vaṟaṇṭa"
+    ipa: "ʋaraɳʈa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே வறண்ட காற்று வீசுகிறது."
+        reading: "iṅkē vaṟaṇṭa kāṟṟu vīcukiṟatu."
+        ipa: "iŋkeː ʋaraɳʈa kaːrru ʋiːsukirat̪u"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "வறண்ட", base: "வறண்ட", reading: "vaṟaṇṭa" }, { word: "காற்று", ref: "ta-1111" }, { word: "வீசுகிறது", base: "வீசு", reading: "vīcu" }]
+      - target: "இது வறண்ட பூமி."
+        reading: "itu vaṟaṇṭa pūmi."
+        ipa: "it̪u ʋaraɳʈa puːmi"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "வறண்ட", base: "வறண்ட", reading: "vaṟaṇṭa" }, { word: "பூமி", ref: "ta-1138" }]
+  - id: "ta-1149"
+    target: "மிதமான"
+    reading: "mitamāṉa"
+    ipa: "mit̪amaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று மிதமான வெயில்."
+        reading: "iṉṟu mitamāṉa veyil."
+        ipa: "inru mit̪amaːna ʋejil"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "மிதமான", base: "மிதமான", reading: "mitamāṉa" }, { word: "வெயில்", ref: "ta-1110" }]
+      - target: "இங்கே மிதமான குளிர்."
+        reading: "iṅkē mitamāṉa kuḷir."
+        ipa: "iŋkeː mit̪amaːna kuɭiɾ"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "மிதமான", base: "மிதமான", reading: "mitamāṉa" }, { word: "குளிர்", ref: "ta-1118" }]
+  - id: "ta-1150"
+    target: "தெளிவான"
+    reading: "teḷivāṉa"
+    ipa: "t̪eɭiʋaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது தெளிவான வானம்."
+        reading: "itu teḷivāṉa vāṉam."
+        ipa: "it̪u t̪eɭiʋaːna ʋaːnam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "தெளிவான", base: "தெளிவான", reading: "teḷivāṉa" }, { word: "வானம்", ref: "ta-1108" }]
+      - target: "இன்று வானம் தெளிவாக இருக்கிறது."
+        reading: "iṉṟu vāṉam teḷivāka irukkiṟatu."
+        ipa: "inru ʋaːnam t̪eɭiʋaːka iɾukkirat̪u"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "வானம்", ref: "ta-1108" }, { word: "தெளிவாக", base: "தெளிவான", reading: "teḷivāṉa" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-1151"
+    target: "இதமான"
+    reading: "itamāṉa"
+    ipa: "it̪amaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று இதமான காற்று."
+        reading: "iṉṟu itamāṉa kāṟṟu."
+        ipa: "inru it̪amaːna kaːrru"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "இதமான", base: "இதமான", reading: "itamāṉa" }, { word: "காற்று", ref: "ta-1111" }]
+      - target: "இங்கே இதமான வெயில்."
+        reading: "iṅkē itamāṉa veyil."
+        ipa: "iŋkeː it̪amaːna ʋejil"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "இதமான", base: "இதமான", reading: "itamāṉa" }, { word: "வெயில்", ref: "ta-1110" }]
+  - id: "ta-1152"
+    target: "மேகமூட்டம்"
+    reading: "mēkamūṭṭam"
+    ipa: "meːkamuːʈʈam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று மேகமூட்டம்."
+        reading: "iṉṟu mēkamūṭṭam."
+        ipa: "inru meːkamuːʈʈam"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "மேகமூட்டம்", base: "மேகமூட்டம்", reading: "mēkamūṭṭam" }]
+      - target: "காலையில் மேகமூட்டம் இருக்கிறது."
+        reading: "kālaiyil mēkamūṭṭam irukkiṟatu."
+        ipa: "kaːlaijil meːkamuːʈʈam iɾukkirat̪u"
+        bases: [{ word: "காலையில்", base: "காலை", reading: "kālai" }, { word: "மேகமூட்டம்", base: "மேகமூட்டம்", reading: "mēkamūṭṭam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]

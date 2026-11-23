@@ -1,0 +1,91 @@
+schema: 1
+id: "ta-festivals-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4025"
+    target: "நாளை பொங்கல் பண்டிகை."
+    reading: "nāḷai poṅkal paṇṭikai."
+    ipa: "naːɭai poŋkal paɳʈikai"
+    pos: "phrase"
+    bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "பொங்கல்", ref: "ta-1169" }, { word: "பண்டிகை", ref: "ta-1168" }]
+    confusables:
+      - { id: "w1", ref: "ta-1170", kind: "word" }
+      - { id: "w2", ref: "ta-1205", kind: "word" }
+  - id: "ta-4026"
+    target: "பானையில் பால் பொங்குகிறது."
+    reading: "pāṉaiyil pāl poṅkukiṟatu."
+    ipa: "paːnaijil paːl poŋkukirat̪u"
+    pos: "phrase"
+    bases: [{ word: "பானையில்", base: "பானை", reading: "pāṉai" }, { word: "பால்", ref: "ta-0036" }, { word: "பொங்குகிறது", base: "பொங்கு", reading: "poṅku" }]
+    confusables:
+      - { id: "w1", ref: "ta-1181", kind: "word" }
+      - { id: "w2", ref: "ta-1176", kind: "word" }
+  - id: "ta-4027"
+    target: "தீபாவளிக்கு நாங்கள் பட்டாசு வெடிக்கிறோம்."
+    reading: "tīpāvaḷikku nāṅkaḷ paṭṭācu veṭikkiṟōm."
+    ipa: "t̪iːpaːʋaɭikku naːŋkaɭ paʈʈaːsu ʋeʈikkiroːm"
+    pos: "phrase"
+    bases: [{ word: "தீபாவளிக்கு", base: "தீபாவளி", reading: "tīpāvaḷi" }, { word: "நாங்கள்", ref: "ta-0064" }, { word: "பட்டாசு", ref: "ta-1177" }, { word: "வெடிக்கிறோம்", base: "வெடி", reading: "veṭi" }]
+    confusables:
+      - { id: "w1", ref: "ta-1178", kind: "word" }
+      - { id: "w2", ref: "ta-1175", kind: "word" }
+  - id: "ta-4028"
+    target: "வீட்டின் முன்னால் அம்மா கோலம் போடுகிறார்."
+    reading: "vīṭṭiṉ muṉṉāl ammā kōlam pōṭukiṟār."
+    ipa: "ʋiːʈʈin munnaːl ammaː koːlam poːʈukiraːɾ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "வீட்டின்", base: "வீடு", reading: "vīṭu" }, { word: "முன்னால்", ref: "ta-0180" }, { word: "அம்மா", ref: "ta-0072" }, { word: "கோலம்", ref: "ta-1901" }, { word: "போடுகிறார்", base: "போடு", reading: "pōṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-1189", kind: "word" }
+      - { id: "w2", ref: "ta-1180", kind: "word" }
+  - id: "ta-4029"
+    target: "நவராத்திரியில் வீட்டில் கொலு இருக்கிறது."
+    reading: "navarāttiriyil vīṭṭil kolu irukkiṟatu."
+    ipa: "naʋaɾaːt̪t̪iɾijil ʋiːʈʈil kolu iɾukkirat̪u"
+    pos: "phrase"
+    bases: [{ word: "நவராத்திரியில்", base: "நவராத்திரி", reading: "navarāttiri" }, { word: "வீட்டில்", ref: "ta-0414" }, { word: "கொலு", ref: "ta-1173" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-1174", kind: "word" }
+      - { id: "w2", ref: "ta-1168", kind: "word" }
+  - id: "ta-4030"
+    target: "பண்டிகைக்கு எல்லோரும் புது துணி வாங்குகிறார்கள்."
+    reading: "paṇṭikaikku ellōrum putu tuṇi vāṅkukiṟārkaḷ."
+    ipa: "paɳʈikaikku elloːɾum put̪u t̪uɳi ʋaːŋkukiraːɾkaɭ"
+    pos: "phrase"
+    bases: [{ word: "பண்டிகைக்கு", base: "பண்டிகை", reading: "paṇṭikai" }, { word: "எல்லோரும்", ref: "ta-0449" }, { word: "புது", ref: "ta-1201" }, { word: "துணி", ref: "ta-0272" }, { word: "வாங்குகிறார்கள்", base: "வாங்கு", reading: "vāṅku" }]
+    confusables:
+      - { id: "w1", ref: "ta-1195", kind: "word" }
+      - { id: "w2", ref: "ta-1178", kind: "word" }
+  - id: "ta-4031"
+    target: "உறவினர் வருகிறார்கள், விருந்து தயார்."
+    reading: "uṟaviṉar varukiṟārkaḷ, viruntu tayār."
+    ipa: "uraʋinaɾ ʋaɾukiraːɾkaɭ ʋiɾunt̪u t̪ajaːɾ"
+    pos: "phrase"
+    bases: [{ word: "உறவினர்", ref: "ta-1197" }, { word: "வருகிறார்கள்", base: "வா", reading: "vā" }, { word: "விருந்து", ref: "ta-1195" }, { word: "தயார்", base: "தயார்", reading: "tayār" }]
+    confusables:
+      - { id: "w1", ref: "ta-1196", kind: "word" }
+      - { id: "w2", ref: "ta-1198", kind: "word" }
+  - id: "ta-4032"
+    target: "கோயில் திருவிழாவில் தேர் வருகிறது."
+    reading: "kōyil tiruviḻāvil tēr varukiṟatu."
+    ipa: "koːjil t̪iɾuʋiɻaːʋil t̪eːɾ ʋaɾukirat̪u"
+    pos: "phrase"
+    bases: [{ word: "கோயில்", ref: "ta-0262" }, { word: "திருவிழாவில்", base: "திருவிழா", reading: "tiruviḻā" }, { word: "தேர்", ref: "ta-1186" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+    confusables:
+      - { id: "w1", ref: "ta-1190", kind: "word" }
+      - { id: "w2", ref: "ta-1204", kind: "word" }
+  - id: "ta-4033"
+    target: "உங்களுக்கு புத்தாண்டு வாழ்த்து."
+    reading: "uṅkaḷukku puttāṇṭu vāḻttu."
+    ipa: "uŋkaɭukku put̪t̪aːɳʈu ʋaːɻt̪t̪u"
+    pos: "phrase"
+    bases: [{ word: "உங்களுக்கு", base: "நீங்கள்", reading: "nīṅkaḷ" }, { word: "புத்தாண்டு", ref: "ta-1171" }, { word: "வாழ்த்து", ref: "ta-1184" }]
+    confusables:
+      - { id: "w1", ref: "ta-1158", kind: "word" }
+      - { id: "w2", ref: "ta-1169", kind: "word" }

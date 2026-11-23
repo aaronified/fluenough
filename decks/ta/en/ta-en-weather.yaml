@@ -1,0 +1,655 @@
+schema: 1
+id: "ta-en-weather"
+kind: "layer"
+core: "ta-weather"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Weather"
+description: "Rain, sun, wind, clouds, the seasons, and the words for hot, cold, wet and dry weather. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-1108":
+    native: "sky"
+    notes:
+      n1: "The final letter changes before an ending: வானம் (vāṉam) becomes வானத்தில் (vāṉattil), in the sky."
+    examples:
+      "வானம் நீலமாக இருக்கிறது.":
+        native: "The sky is blue."
+        bases:
+          "வானம்": "sky"
+          "நீலமாக": "blue (adverb form); from நீலம் (nīlam), blue"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "வானத்தில் மேகம் இருக்கிறது.":
+        native: "There are clouds in the sky."
+        bases:
+          "வானத்தில்": "in the sky; from வானம் (vāṉam), sky"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1109":
+    native: "rain"
+    notes:
+      n1: "Rain falls with the verb பெய் (pey): மழை பெய்கிறது (maḻai peykiṟatu), it is raining."
+    examples:
+      "இன்று மழை இல்லை.":
+        native: "There is no rain today."
+        bases:
+          "மழை": "rain"
+      "நாளை மழை வரும்.":
+        native: "Rain will come tomorrow."
+        bases:
+          "மழை": "rain"
+          "வரும்": "will come; from வா (vā), to come"
+  "ta-1110":
+    native: "sunshine; the heat of the sun"
+    notes:
+      n1: "வெயில் (veyil) is the sun as you feel it; the sun in the sky is சூரியன் (cūriyaṉ)."
+    examples:
+      "இன்று வெயில் அதிகம்.":
+        native: "The sun is strong today."
+        bases:
+          "வெயில்": "sunshine; the heat of the sun"
+      "இங்கே வெயில் இல்லை.":
+        native: "There is no sun here."
+        bases:
+          "வெயில்": "sunshine; the heat of the sun"
+  "ta-1111":
+    native: "wind; air"
+    notes:
+      n1: "The word doubles its last consonant before an ending: காற்று (kāṟṟu) becomes காற்றில் (kāṟṟil), in the air."
+    examples:
+      "இங்கே காற்று இல்லை.":
+        native: "There is no air here."
+        bases:
+          "காற்று": "wind; air"
+      "காற்றில் ஈரம் இருக்கிறது.":
+        native: "There is damp in the air."
+        bases:
+          "காற்றில்": "in the air; from காற்று (kāṟṟu), wind; air"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1112":
+    native: "cloud"
+    notes:
+      n1: "The plural is மேகங்கள் (mēkaṅkaḷ); the singular is also used for clouds in general."
+    examples:
+      "நிறைய மேகம் இருக்கிறது.":
+        native: "There are many clouds."
+        bases:
+          "மேகம்": "cloud"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "மேகம் வருகிறது.":
+        native: "Clouds are coming."
+        bases:
+          "மேகம்": "cloud"
+          "வருகிறது": "comes; from வா (vā), to come"
+  "ta-1113":
+    native: "thunder"
+    notes:
+      n1: "இடி (iṭi) is both the noun thunder and the verb to thunder: இடி இடிக்கிறது (iṭi iṭikkiṟatu)."
+    examples:
+      "இடி இடிக்கிறது.":
+        native: "It is thundering."
+        bases:
+          "இடி": "thunder"
+          "இடிக்கிறது": "thunders; from இடி (iṭi), thunder"
+      "மழை இல்லை, ஆனால் இடி இருக்கிறது.":
+        native: "There is no rain, but there is thunder."
+        bases:
+          "இடி": "thunder"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1114":
+    native: "lightning"
+    notes:
+      n1: "மின்னல் (miṉṉal) is the noun; the verb it comes from is மின்னு (miṉṉu), to flash."
+    examples:
+      "மழையில் மின்னல் இருக்கிறது.":
+        native: "There is lightning in the rain."
+        bases:
+          "மழையில்": "in the rain; from மழை (maḻai), rain"
+          "மின்னல்": "lightning"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இன்று மின்னல் இல்லை.":
+        native: "There is no lightning today."
+        bases:
+          "மின்னல்": "lightning"
+  "ta-1115":
+    native: "storm; cyclone"
+    notes:
+      n1: "புயல் (puyal) is a storm, and in the news it often means a cyclone."
+    examples:
+      "நாளை புயல் வரும்.":
+        native: "A storm will come tomorrow."
+        bases:
+          "புயல்": "storm; cyclone"
+          "வரும்": "will come; from வா (vā), to come"
+      "இன்று புயல் இல்லை.":
+        native: "There is no storm today."
+        bases:
+          "புயல்": "storm; cyclone"
+  "ta-1116":
+    native: "flood"
+    notes:
+      n1: "வெள்ளம் (veḷḷam) is flood water; it is not the colour word வெள்ளை (veḷḷai), white."
+    examples:
+      "மழையில் வெள்ளம் வருகிறது.":
+        native: "Floods come with the rain."
+        bases:
+          "மழையில்": "in the rain; from மழை (maḻai), rain"
+          "வெள்ளம்": "flood"
+          "வருகிறது": "comes; from வா (vā), to come"
+      "தெருவில் வெள்ளம் இருக்கிறது.":
+        native: "There is flooding in the street."
+        bases:
+          "தெருவில்": "in the street; from தெரு (teru), street"
+          "வெள்ளம்": "flood"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1117":
+    native: "mist; dew; snow"
+    notes:
+      n1: "பனி (paṉi) covers mist, dew and snow; the place and the season tell you which."
+    examples:
+      "காலையில் பனி இருக்கிறது.":
+        native: "There is mist in the morning."
+        bases:
+          "காலையில்": "in the morning; from காலை (kālai), morning"
+          "பனி": "mist; dew; snow"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இங்கே பனி இல்லை.":
+        native: "There is no mist here."
+        bases:
+          "பனி": "mist; dew; snow"
+  "ta-1118":
+    native: "cold; chill"
+    notes:
+      n1: "குளிர் (kuḷir) is the cold as a thing; the adjective cold, taught earlier, is குளிரான (kuḷirāṉa)."
+    examples:
+      "இன்று குளிர் அதிகம்.":
+        native: "It is very cold today."
+        bases:
+          "குளிர்": "cold; chill"
+      "குளிர் குறைவு.":
+        native: "The cold is slight."
+        bases:
+          "குளிர்": "cold; chill"
+  "ta-1119":
+    native: "heat"
+    notes:
+      n1: "வெப்பம் (veppam) is the word for heat in a forecast; வெயில் (veyil) is the sun that people feel."
+    examples:
+      "இன்று வெப்பம் அதிகம்.":
+        native: "The heat is great today."
+        bases:
+          "வெப்பம்": "heat"
+      "வெப்பம் குறைவு.":
+        native: "The heat is low."
+        bases:
+          "வெப்பம்": "heat"
+  "ta-1120":
+    native: "sun"
+    notes:
+      n1: "சூரியன் (cūriyaṉ) has a masculine ending, like அண்ணன் (aṇṇaṉ), elder brother, so the noun is given as masculine."
+    examples:
+      "சூரியன் கிழக்கில் எழுகிறது.":
+        native: "The sun rises in the east."
+        bases:
+          "சூரியன்": "sun"
+          "கிழக்கில்": "in the east; from கிழக்கு (kiḻakku), east"
+          "எழுகிறது": "rises; from எழு (eḻu), to rise"
+      "இன்று சூரியன் இல்லை.":
+        native: "There is no sun today."
+        bases:
+          "சூரியன்": "sun"
+  "ta-1121":
+    native: "moon"
+    notes:
+      n1: "நிலா (nilā) is the everyday word for the moon."
+    examples:
+      "நிலா வானத்தில் இருக்கிறது.":
+        native: "The moon is in the sky."
+        bases:
+          "நிலா": "moon"
+          "வானத்தில்": "in the sky; from வானம் (vāṉam), sky"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இன்று நிலா இல்லை.":
+        native: "There is no moon tonight."
+        bases:
+          "நிலா": "moon"
+  "ta-1122":
+    native: "star"
+    notes:
+      n1: "The plural is நட்சத்திரங்கள் (naṭcattiraṅkaḷ)."
+    examples:
+      "வானத்தில் நிறைய நட்சத்திரம் இருக்கிறது.":
+        native: "There are many stars in the sky."
+        bases:
+          "வானத்தில்": "in the sky; from வானம் (vāṉam), sky"
+          "நட்சத்திரம்": "star"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இன்று நட்சத்திரம் இல்லை.":
+        native: "There are no stars tonight."
+        bases:
+          "நட்சத்திரம்": "star"
+  "ta-1123":
+    native: "weather"
+    notes:
+      n1: "வானிலை (vāṉilai) is made of வானம் (vāṉam), sky, and நிலை (nilai), state."
+    examples:
+      "இன்று வானிலை எப்படி?":
+        native: "How is the weather today?"
+        bases:
+          "வானிலை": "weather"
+      "இன்று வானிலை நல்லது.":
+        native: "The weather is good today."
+        bases:
+          "வானிலை": "weather"
+  "ta-1124":
+    native: "summer; the hot season"
+    notes:
+      n1: "In Tamil Nadu கோடை (kōṭai) is the hot dry season, about March to June."
+    examples:
+      "கோடையில் வெயில் அதிகம்.":
+        native: "The sun is strong in summer."
+        bases:
+          "கோடையில்": "in summer; from கோடை (kōṭai), summer"
+      "கோடை வருகிறது.":
+        native: "Summer is coming."
+        bases:
+          "கோடை": "summer; the hot season"
+          "வருகிறது": "comes; from வா (vā), to come"
+  "ta-1125":
+    native: "winter; the cold season"
+    notes:
+      n1: "It is குளிர் (kuḷir), cold, plus காலம் (kālam), time; the ending changes in குளிர்காலத்தில் (kuḷirkālattil)."
+    examples:
+      "குளிர்காலத்தில் பனி இருக்கிறது.":
+        native: "There is mist in the cold season."
+        bases:
+          "குளிர்காலத்தில்": "in the cold season; from குளிர்காலம் (kuḷirkālam), cold season"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "குளிர்காலம் வருகிறது.":
+        native: "The cold season is coming."
+        bases:
+          "குளிர்காலம்": "winter; the cold season"
+          "வருகிறது": "comes; from வா (vā), to come"
+  "ta-1126":
+    native: "rainy season"
+    notes:
+      n1: "In Tamil Nadu the main rains come with the northeast monsoon, from about October to December."
+    examples:
+      "மழைக்காலத்தில் வெள்ளம் வருகிறது.":
+        native: "Floods come in the rainy season."
+        bases:
+          "மழைக்காலத்தில்": "in the rainy season; from மழைக்காலம் (maḻaikkālam), rainy season"
+          "வருகிறது": "comes; from வா (vā), to come"
+      "மழைக்காலம் எப்போது?":
+        native: "When is the rainy season?"
+        bases:
+          "மழைக்காலம்": "rainy season"
+  "ta-1127":
+    native: "season; stage of life"
+    notes:
+      n1: "பருவம் (paruvam) is a season or a stage of life; பருவமழை (paruvamaḻai) is the monsoon rain."
+    examples:
+      "இது நல்ல பருவம்.":
+        native: "This is a good season."
+        bases:
+          "பருவம்": "season; stage of life"
+      "பருவம் மாறுகிறது.":
+        native: "The season is changing."
+        bases:
+          "பருவம்": "season; stage of life"
+          "மாறுகிறது": "changes; from மாறு (māṟu), to change"
+  "ta-1128":
+    native: "dampness; moisture"
+    notes:
+      n1: "ஈரம் (īram) is the noun; ஈரமான (īramāṉa), wet, is the adjective."
+    examples:
+      "துணியில் ஈரம் இருக்கிறது.":
+        native: "There is damp in the cloth."
+        bases:
+          "துணியில்": "in the cloth; from துணி (tuṇi), cloth"
+          "ஈரம்": "dampness; moisture"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "ஈரம் இல்லை.":
+        native: "There is no moisture."
+        bases:
+          "ஈரம்": "dampness; moisture"
+  "ta-1129":
+    native: "sultry, close heat"
+    notes:
+      n1: "புழுக்கம் (puḻukkam) is hot, still, sticky air, with no breeze."
+    examples:
+      "இன்று ரொம்ப புழுக்கம்.":
+        native: "It is very sultry today."
+        bases:
+          "புழுக்கம்": "sultry, close heat"
+      "இங்கே புழுக்கம் அதிகம்.":
+        native: "The air is very close here."
+        bases:
+          "புழுக்கம்": "sultry, close heat"
+  "ta-1130":
+    native: "drizzle"
+    notes:
+      n1: "தூறல் (tūṟal) is light rain, finer than மழை (maḻai)."
+    examples:
+      "தூறல் பெய்கிறது.":
+        native: "A drizzle is falling."
+        bases:
+          "தூறல்": "drizzle"
+          "பெய்கிறது": "falls, rains; from பெய் (pey), to rain"
+      "காலையில் தூறல் இருக்கிறது.":
+        native: "There is drizzle in the morning."
+        bases:
+          "காலையில்": "in the morning; from காலை (kālai), morning"
+          "தூறல்": "drizzle"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1131":
+    native: "sea"
+    notes:
+      n1: "கடல் (kaṭal) takes its ending straight onto the stem: கடலில் (kaṭalil), over the sea."
+    examples:
+      "கடல் அருகில் இருக்கிறது.":
+        native: "The sea is nearby."
+        bases:
+          "கடல்": "sea"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "கடலில் காற்று வீசுகிறது.":
+        native: "The wind blows over the sea."
+        bases:
+          "கடலில்": "over the sea; from கடல் (kaṭal), sea"
+          "வீசுகிறது": "blows; from வீசு (vīcu), to blow"
+  "ta-1132":
+    native: "hill; mountain"
+    notes:
+      n1: "மலை (malai), hill, and மழை (maḻai), rain, differ by one letter: ல (la) and ழ (ḻa)."
+    examples:
+      "மலையில் குளிர் அதிகம்.":
+        native: "It is colder up in the hills."
+        bases:
+          "மலையில்": "in the hills; from மலை (malai), hill"
+      "அங்கே மலை இருக்கிறது.":
+        native: "There is a hill there."
+        bases:
+          "அங்கே": "there"
+          "மலை": "hill; mountain"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1133":
+    native: "tree"
+    notes:
+      n1: "The final letter changes before an ending: மரம் (maram) becomes மரத்தில் (marattil), on the tree."
+    examples:
+      "அங்கே பெரிய மரம் இருக்கிறது.":
+        native: "There is a big tree there."
+        bases:
+          "அங்கே": "there"
+          "மரம்": "tree"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "பூமியில் நிறைய மரம் இருக்கிறது.":
+        native: "There are many trees on the earth."
+        bases:
+          "பூமியில்": "on the earth; from பூமி (pūmi), earth"
+          "மரம்": "tree"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1134":
+    native: "leaf"
+    notes:
+      n1: "இலை (ilai) is also the banana leaf that a meal is served on."
+    examples:
+      "இலை பச்சை.":
+        native: "The leaf is green."
+        bases:
+          "இலை": "leaf"
+      "இலையில் சாப்பிடுகிறோம்.":
+        native: "We eat on a leaf."
+        bases:
+          "இலையில்": "on a leaf; from இலை (ilai), leaf"
+          "சாப்பிடுகிறோம்": "eat; from சாப்பிடு (cāppiṭu), to eat"
+  "ta-1135":
+    native: "shade; shadow"
+    notes:
+      n1: "நிழல் (niḻal) is both shade and a shadow; the place word is நிழலில் (niḻalil), in the shade."
+    examples:
+      "இங்கே நிழல் இருக்கிறது.":
+        native: "There is shade here."
+        bases:
+          "நிழல்": "shade; shadow"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "நிழலில் உட்கார்.":
+        native: "Sit in the shade."
+        bases:
+          "நிழலில்": "in the shade; from நிழல் (niḻal), shade"
+  "ta-1136":
+    native: "light; brightness"
+    notes:
+      n1: "வெளிச்சம் (veḷiccam) is the light that lets you see; its opposite is இருட்டு (iruṭṭu)."
+    examples:
+      "இங்கே வெளிச்சம் இல்லை.":
+        native: "There is no light here."
+        bases:
+          "வெளிச்சம்": "light; brightness"
+      "அறையில் வெளிச்சம் கொஞ்சம்.":
+        native: "There is a little light in the room."
+        bases:
+          "அறையில்": "in the room; from அறை (aṟai), room"
+          "வெளிச்சம்": "light; brightness"
+  "ta-1137":
+    native: "darkness"
+    notes:
+      n1: "Tamil says darkness is there: அறையில் இருட்டு (aṟaiyil iruṭṭu), with no verb for is."
+    examples:
+      "இரவில் இருட்டு.":
+        native: "It is dark at night."
+        bases:
+          "இரவில்": "at night; from இரவு (iravu), night"
+          "இருட்டு": "darkness"
+      "அறையில் இருட்டு.":
+        native: "The room is dark."
+        bases:
+          "அறையில்": "in the room; from அறை (aṟai), room"
+          "இருட்டு": "darkness"
+  "ta-1138":
+    native: "earth; the world"
+    notes:
+      n1: "பூமி (pūmi) is the earth as a planet and as the ground; the place form is பூமியில் (pūmiyil)."
+    examples:
+      "பூமியில் மழை பெய்கிறது.":
+        native: "Rain falls on the earth."
+        bases:
+          "பூமியில்": "on the earth; from பூமி (pūmi), earth"
+          "பெய்கிறது": "falls, rains; from பெய் (pey), to rain"
+      "பூமியில் நிறைய மரம் இருக்கிறது.":
+        native: "There are many trees on the earth."
+        bases:
+          "பூமியில்": "on the earth; from பூமி (pūmi), earth"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1139":
+    native: "degree (of temperature)"
+    notes:
+      n1: "டிகிரி (ṭikiri) is the English word degree; people say the number first, then டிகிரி (ṭikiri)."
+    examples:
+      "இன்று முப்பது டிகிரி.":
+        native: "It is thirty degrees today."
+        bases:
+          "டிகிரி": "degree (of temperature)"
+      "இங்கே நாற்பது டிகிரி.":
+        native: "It is forty degrees here."
+        bases:
+          "டிகிரி": "degree (of temperature)"
+  "ta-1140":
+    native: "temperature"
+    notes:
+      n1: "வெப்பநிலை (veppanilai) is made of வெப்பம் (veppam), heat, and நிலை (nilai), state; it is the word used in a forecast."
+    examples:
+      "இன்று வெப்பநிலை என்ன?":
+        native: "What is the temperature today?"
+        bases:
+          "வெப்பநிலை": "temperature"
+      "வெப்பநிலை இருபது டிகிரி.":
+        native: "The temperature is twenty degrees."
+        bases:
+          "வெப்பநிலை": "temperature"
+  "ta-1141":
+    native: "to rain; to fall (of rain)"
+    notes:
+      n1: "The subject is மழை (maḻai): பெய்கிறது (peykiṟatu), it rains now; பெய்தது (peytatu), it rained."
+    examples:
+      "மழை பெய்கிறது.":
+        native: "It is raining."
+        bases:
+          "பெய்கிறது": "falls, rains; from பெய் (pey), to rain"
+      "நேற்று மழை பெய்தது.":
+        native: "It rained yesterday."
+        bases:
+          "பெய்தது": "rained; from பெய் (pey), to rain"
+  "ta-1142":
+    native: "to disappear; to hide; to set (of the sun)"
+    notes:
+      n1: "மறை (maṟai) is to disappear or hide; for the sun it means to set: சூரியன் மறைகிறது (cūriyaṉ maṟaikiṟatu)."
+    examples:
+      "சூரியன் மேற்கில் மறைகிறது.":
+        native: "The sun sets in the west."
+        bases:
+          "மேற்கில்": "in the west; from மேற்கு (mēṟku), west"
+          "மறைகிறது": "sets, hides; from மறை (maṟai), to disappear"
+      "நிலா மேகத்தில் மறைகிறது.":
+        native: "The moon hides in the clouds."
+        bases:
+          "மேகத்தில்": "in the clouds; from மேகம் (mēkam), cloud"
+          "மறைகிறது": "sets, hides; from மறை (maṟai), to disappear"
+  "ta-1143":
+    native: "to hit; to beat; to blaze (of the sun)"
+    notes:
+      n1: "அடி (aṭi) is to hit; for weather it says the sun or the cold strikes: வெயில் அடிக்கிறது (veyil aṭikkiṟatu)."
+    examples:
+      "இன்று வெயில் ரொம்ப அடிக்கிறது.":
+        native: "The sun is beating down hard today."
+        bases:
+          "அடிக்கிறது": "beats, strikes; from அடி (aṭi), to hit"
+      "குளிர் அடிக்கிறது.":
+        native: "It feels cold."
+        bases:
+          "அடிக்கிறது": "beats, strikes; from அடி (aṭi), to hit"
+  "ta-1144":
+    native: "to get wet"
+    notes:
+      n1: "நனை (naṉai) is for the thing that becomes wet: துணி நனைகிறது (tuṇi naṉaikiṟatu)."
+    examples:
+      "மழையில் நனைகிறேன்.":
+        native: "I am getting wet in the rain."
+        bases:
+          "மழையில்": "in the rain; from மழை (maḻai), rain"
+          "நனைகிறேன்": "am getting wet; from நனை (naṉai), to get wet"
+      "துணி நனைகிறது.":
+        native: "The cloth is getting wet."
+        bases:
+          "நனைகிறது": "is getting wet; from நனை (naṉai), to get wet"
+  "ta-1145":
+    native: "to dry"
+    notes:
+      n1: "காய் (kāy) is to dry in the sun or the air; the cloth is the subject."
+    examples:
+      "துணி வெயிலில் காய்கிறது.":
+        native: "The cloth dries in the sun."
+        bases:
+          "வெயிலில்": "in the sun; from வெயில் (veyil), sun"
+          "காய்கிறது": "dries; from காய் (kāy), to dry"
+      "நிழலில் துணி காயாது.":
+        native: "Cloth will not dry in the shade."
+        bases:
+          "நிழலில்": "in the shade; from நிழல் (niḻal), shade"
+          "காயாது": "will not dry; from காய் (kāy), to dry"
+  "ta-1146":
+    native: "to flash; to shine"
+    notes:
+      n1: "மின்னு (miṉṉu) is for lightning and for twinkling stars."
+    examples:
+      "இரவில் நட்சத்திரம் மின்னுகிறது.":
+        native: "The stars twinkle at night."
+        bases:
+          "இரவில்": "at night; from இரவு (iravu), night"
+          "மின்னுகிறது": "flashes; from மின்னு (miṉṉu), to flash"
+      "நேற்று இரவு மின்னல் மின்னியது.":
+        native: "Lightning flashed last night."
+        bases:
+          "மின்னியது": "flashed; from மின்னு (miṉṉu), to flash"
+  "ta-1147":
+    native: "wet; damp"
+    notes:
+      n1: "ஈரமான (īramāṉa) goes before a noun; after the noun say ஈரமாக இருக்கிறது (īramāka irukkiṟatu), is wet."
+    examples:
+      "இது ஈரமான துணி.":
+        native: "This is a wet cloth."
+        bases:
+          "ஈரமான": "wet; damp"
+      "துணி ஈரமாக இருக்கிறது.":
+        native: "The cloth is wet."
+        bases:
+          "ஈரமாக": "wet (adverb form); from ஈரமான (īramāṉa), wet"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1148":
+    native: "dry; arid"
+    notes:
+      n1: "வறண்ட (vaṟaṇṭa) describes dry land or air; a cloth that has dried is காய்ந்த (kāynta)."
+    examples:
+      "இங்கே வறண்ட காற்று வீசுகிறது.":
+        native: "A dry wind blows here."
+        bases:
+          "வறண்ட": "dry; arid"
+          "வீசுகிறது": "blows; from வீசு (vīcu), to blow"
+      "இது வறண்ட பூமி.":
+        native: "This is dry land."
+        bases:
+          "வறண்ட": "dry; arid"
+  "ta-1149":
+    native: "mild; moderate"
+    notes:
+      n1: "மிதமான (mitamāṉa) goes before the noun it softens: மிதமான குளிர் (mitamāṉa kuḷir)."
+    examples:
+      "இன்று மிதமான வெயில்.":
+        native: "The sun is mild today."
+        bases:
+          "மிதமான": "mild; moderate"
+      "இங்கே மிதமான குளிர்.":
+        native: "The cold here is mild."
+        bases:
+          "மிதமான": "mild; moderate"
+  "ta-1150":
+    native: "clear"
+    notes:
+      n1: "தெளிவான (teḷivāṉa) goes before a noun; after it use தெளிவாக இருக்கிறது (teḷivāka irukkiṟatu)."
+    examples:
+      "இது தெளிவான வானம்.":
+        native: "This is a clear sky."
+        bases:
+          "தெளிவான": "clear"
+      "இன்று வானம் தெளிவாக இருக்கிறது.":
+        native: "The sky is clear today."
+        bases:
+          "தெளிவாக": "clear (adverb form); from தெளிவான (teḷivāṉa), clear"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-1151":
+    native: "pleasant; soothing"
+    notes:
+      n1: "இதமான (itamāṉa) is for a comfortable warmth or breeze, not for a food or a person."
+    examples:
+      "இன்று இதமான காற்று.":
+        native: "The breeze is pleasant today."
+        bases:
+          "இதமான": "pleasant; soothing"
+      "இங்கே இதமான வெயில்.":
+        native: "The sun is gentle here."
+        bases:
+          "இதமான": "pleasant; soothing"
+  "ta-1152":
+    native: "overcast sky"
+    notes:
+      n1: "மேகமூட்டம் (mēkamūṭṭam) is மேகம் (mēkam), cloud, plus மூட்டம் (mūṭṭam), a covering."
+    examples:
+      "இன்று மேகமூட்டம்.":
+        native: "It is overcast today."
+        bases:
+          "மேகமூட்டம்": "overcast sky"
+      "காலையில் மேகமூட்டம் இருக்கிறது.":
+        native: "The sky is overcast in the morning."
+        bases:
+          "காலையில்": "in the morning; from காலை (kālai), morning"
+          "மேகமூட்டம்": "overcast sky"
+          "இருக்கிறது": "is; from இரு (iru), to be"
