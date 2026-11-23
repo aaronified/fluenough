@@ -1,0 +1,47 @@
+schema: 1
+id: "ta-en-reading-festivals"
+name: "Reading: a festival invitation"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "An invitation to a festival feast at home, using the festival words taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-festival-invitation"
+    title: "A festival invitation"
+    sentences:
+      - text: "அடுத்த வாரம் பொங்கல் பண்டிகை."
+        reading: "aṭutta vāram poṅkal paṇṭikai."
+        ipa: "aʈut̪t̪a ʋaːɾam poŋkal paɳʈikai"
+      - text: "எங்கள் வீட்டில் விருந்து."
+        reading: "eṅkaḷ vīṭṭil viruntu."
+        ipa: "eŋkaɭ ʋiːʈʈil ʋiɾunt̪u"
+      - text: "உறவினர்கள் வருகிறார்கள்."
+        reading: "uṟaviṉarkaḷ varukiṟārkaḷ."
+        ipa: "uraʋinaɾkaɭ ʋaɾukiraːɾkaɭ"
+      - text: "நாங்கள் கரும்பு சாப்பிடுகிறோம்."
+        reading: "nāṅkaḷ karumpu cāppiṭukiṟōm."
+        ipa: "naːŋkaɭ kaɾumpu saːppiʈukiroːm"
+      - text: "எல்லோரும் வாருங்கள்."
+        reading: "ellōrum vāruṅkaḷ."
+        ipa: "elloːɾum ʋaːɾuŋkaɭ"
+    questions:
+      - id: "ta-9909"
+        prompt: { en: "Which festival is the invitation for?" }
+        options:
+          - { en: "Pongal" }
+          - { en: "Deepavali" }
+          - { en: "Christmas" }
+        answer: 1
+      - id: "ta-9910"
+        prompt: { en: "What do the family eat?" }
+        options:
+          - { en: "Sugarcane" }
+          - { en: "Coconut" }
+          - { en: "Mango" }
+        answer: 1
+      - id: "ta-9911"
+        prompt: { en: "The feast is at a temple." }
+        answer: false

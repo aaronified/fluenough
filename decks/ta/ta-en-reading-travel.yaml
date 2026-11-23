@@ -1,0 +1,55 @@
+schema: 1
+id: "ta-en-reading-travel"
+name: "Tamil reading: travel"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short travel plan, using the words of travel. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-itinerary"
+    title: "Our travel plan"
+    theme: "travel"
+    sentences:
+      - text: "காலை ஏழு மணிக்கு ரயில்நிலையம் வருகிறோம்."
+        reading: "kālai ēḻu maṇikku rayilnilaiyam varukiṟōm."
+        ipa: "kaːlai eːɻu maɳikku ɾajilnilaijam ʋaɾukiroːm"
+      - text: "எட்டு மணிக்கு தங்குமிடத்துக்குப் போகிறோம்."
+        reading: "eṭṭu maṇikku taṅkumiṭattukkup pōkiṟōm."
+        ipa: "eʈʈu maɳikku t̪aŋkumiʈat̪t̪ukkup poːkiroːm"
+      - text: "மதியம் சுற்றுலாத்தலத்தைப் பார்வையிடுகிறோம்."
+        reading: "matiyam cuṟṟulāttalattaip pārvaiyiṭukiṟōm."
+        ipa: "mat̪ijam surrulaːt̪t̪alat̪t̪aip paːɾʋaijiʈukiroːm"
+      - text: "இரவு வாடகைவண்டியில் திரும்புகிறோம்."
+        reading: "iravu vāṭakaivaṇṭiyil tirumpukiṟōm."
+        ipa: "iɾaʋu ʋaːʈakaiʋaɳʈijil t̪iɾumpukiroːm"
+      - text: "நாளை படகுச்சவாரி இருக்கிறது."
+        reading: "nāḷai paṭakuccavāri irukkiṟatu."
+        ipa: "naːɭai paʈakutʃtʃaʋaːɾi iɾukkirat̪u"
+    questions:
+      - id: "ta-5214"
+        prompt: { "en": "Where do they arrive at seven in the morning?" }
+        options:
+          - { "en": "At the railway station" }
+          - { "en": "At the airport" }
+          - { "en": "At the bus station" }
+        answer: 1
+      - id: "ta-5215"
+        prompt: { "en": "What do they do at noon?" }
+        options:
+          - { "en": "Visit a tourist place" }
+          - { "en": "Go on a boat ride" }
+          - { "en": "Pack their suitcases" }
+        answer: 1
+      - id: "ta-5216"
+        prompt: { "en": "How do they come back at night?" }
+        options:
+          - { "en": "By taxi" }
+          - { "en": "By train" }
+          - { "en": "On foot" }
+        answer: 1
+      - id: "ta-5217"
+        prompt: { "en": "The boat ride is planned for tomorrow." }
+        answer: true

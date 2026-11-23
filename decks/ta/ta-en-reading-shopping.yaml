@@ -1,0 +1,47 @@
+schema: 1
+id: "ta-en-reading-shopping"
+name: "Reading: a price list"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A shop's price list, using the shopping words and the numbers taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-price-list"
+    title: "A shop price list"
+    sentences:
+      - text: "அரிசி ஒரு கிலோ அறுபது ரூபாய்."
+        reading: "arici oru kilō aṟupatu rūpāy."
+        ipa: "aɾisi oɾu kiloː arupat̪u ɾuːpaːj"
+      - text: "பால் ஒரு லிட்டர் ஐம்பது ரூபாய்."
+        reading: "pāl oru liṭṭar aimpatu rūpāy."
+        ipa: "paːl oɾu liʈʈaɾ aimpat̪u ɾuːpaːj"
+      - text: "முட்டை ஒரு டஜன் எழுபது ரூபாய்."
+        reading: "muṭṭai oru ṭajaṉ eḻupatu rūpāy."
+        ipa: "muʈʈai oɾu ʈadʒan eɻupat̪u ɾuːpaːj"
+      - text: "சர்க்கரை ஒரு கிலோ நாற்பது ரூபாய்."
+        reading: "carkkarai oru kilō nāṟpatu rūpāy."
+        ipa: "saɾkkaɾai oɾu kiloː naːrpat̪u ɾuːpaːj"
+      - text: "இன்று தள்ளுபடி இல்லை."
+        reading: "iṉṟu taḷḷupaṭi illai."
+        ipa: "inru t̪aɭɭupaʈi illai"
+    questions:
+      - id: "ta-9912"
+        prompt: { en: "How much is a kilo of rice?" }
+        options:
+          - { en: "Sixty rupees" }
+          - { en: "Forty rupees" }
+          - { en: "Seventy rupees" }
+        answer: 1
+      - id: "ta-9913"
+        prompt: { en: "Which item costs fifty rupees?" }
+        options:
+          - { en: "Eggs" }
+          - { en: "Milk" }
+          - { en: "Sugar" }
+        answer: 2
+      - id: "ta-9914"
+        prompt: { en: "There is a discount today." }
+        answer: false

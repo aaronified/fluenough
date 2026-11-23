@@ -1,0 +1,47 @@
+schema: 1
+id: "ta-en-reading-cooking"
+name: "Reading: a recipe card"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short recipe card, using the cooking words taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-recipe-card"
+    title: "A recipe card"
+    sentences:
+      - text: "வெங்காயம் நறுக்கு."
+        reading: "veṅkāyam naṟukku."
+        ipa: "ʋeŋkaːjam narukku"
+      - text: "தக்காளி நறுக்கு."
+        reading: "takkāḷi naṟukku."
+        ipa: "t̪akkaːɭi narukku"
+      - text: "கடாயில் வெங்காயம் வதக்கு."
+        reading: "kaṭāyil veṅkāyam vatakku."
+        ipa: "kaʈaːjil ʋeŋkaːjam ʋat̪akku"
+      - text: "தக்காளி போடு."
+        reading: "takkāḷi pōṭu."
+        ipa: "t̪akkaːɭi poːʈu"
+      - text: "கொஞ்சம் உப்பு போடு."
+        reading: "koñcam uppu pōṭu."
+        ipa: "koɲtʃam uppu poːʈu"
+    questions:
+      - id: "ta-9921"
+        prompt: { en: "Which vegetable is sautéed first in the pan?" }
+        options:
+          - { en: "Onion" }
+          - { en: "Tomato" }
+          - { en: "Ginger" }
+        answer: 1
+      - id: "ta-9922"
+        prompt: { en: "What small amount is added at the end?" }
+        options:
+          - { en: "Salt" }
+          - { en: "Sugar" }
+          - { en: "Milk" }
+        answer: 1
+      - id: "ta-9923"
+        prompt: { en: "The tomato is chopped." }
+        answer: true

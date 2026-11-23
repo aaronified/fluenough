@@ -1,0 +1,59 @@
+schema: 1
+id: "ta-en-reading-law"
+name: "Tamil reading: law"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short leaflet about rights and duties, using the words of the law. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-rights-leaflet"
+    title: "A leaflet on rights"
+    theme: "law"
+    sentences:
+      - text: "சட்டம் எல்லோருக்கும் ஒன்று."
+        reading: "caṭṭam ellōrukkum oṉṟu."
+        ipa: "saʈʈam elloːɾukkum onru"
+      - text: "எல்லோருக்கும் உரிமை உண்டு."
+        reading: "ellōrukkum urimai uṇṭu."
+        ipa: "elloːɾukkum uɾimai uɳʈu"
+      - text: "கடமையும் உண்டு."
+        reading: "kaṭamaiyum uṇṭu."
+        ipa: "kaʈamaijum uɳʈu"
+      - text: "புகார் இருந்தால் காவல்நிலையத்துக்குப் போகலாம்."
+        reading: "pukār iruntāl kāvalnilaiyattukkup pōkalām."
+        ipa: "pukaːɾ iɾunt̪aːl kaːʋalnilaijat̪t̪ukkup poːkalaːm"
+      - text: "உதவி வேண்டுமா? வழக்கறிஞரிடம் கேளுங்கள்."
+        reading: "utavi vēṇṭumā? vaḻakkaṟiñariṭam kēḷuṅkaḷ."
+        ipa: "ut̪aʋi ʋeːɳʈumaː ʋaɻakkariɲaɾiʈam keːɭuŋkaɭ"
+    questions:
+      - id: "ta-5269"
+        prompt: { "en": "Who does the law apply to, according to the leaflet?" }
+        options:
+          - { "en": "Everyone" }
+          - { "en": "Only judges" }
+          - { "en": "Only citizens of one town" }
+        answer: 1
+      - id: "ta-5270"
+        prompt: { "en": "Besides rights, what do people also have?" }
+        options:
+          - { "en": "Duties" }
+          - { "en": "Prizes" }
+          - { "en": "Fines" }
+        answer: 1
+      - id: "ta-5271"
+        prompt: { "en": "Where can you go with a complaint?" }
+        options:
+          - { "en": "The police station" }
+          - { "en": "The post office" }
+          - { "en": "The bank" }
+        answer: 1
+      - id: "ta-5272"
+        prompt: { "en": "Whom should you ask for help?" }
+        options:
+          - { "en": "A lawyer" }
+          - { "en": "A cashier" }
+          - { "en": "A tailor" }
+        answer: 1

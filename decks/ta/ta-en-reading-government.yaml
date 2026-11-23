@@ -1,0 +1,59 @@
+schema: 1
+id: "ta-en-reading-government"
+name: "Tamil reading: government"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short set of instructions on a government form, using the words of government. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-form-instructions"
+    title: "Instructions on a form"
+    theme: "government"
+    sentences:
+      - text: "இது உரிமம் வாங்கும் மனு."
+        reading: "itu urimam vāṅkum maṉu."
+        ipa: "it̪u uɾimam ʋaːŋkum manu"
+      - text: "படிவத்தில் உங்கள் பெயரை எழுதுங்கள்."
+        reading: "paṭivattil uṅkaḷ peyarai eḻutuṅkaḷ."
+        ipa: "paʈiʋat̪t̪il uŋkaɭ pejaɾai eɻut̪uŋkaɭ"
+      - text: "அடையாள அட்டையைக் கொண்டு வாருங்கள்."
+        reading: "aṭaiyāḷa aṭṭaiyaik koṇṭu vāruṅkaḷ."
+        ipa: "aʈaijaːɭa aʈʈaijaik koɳʈu ʋaːɾuŋkaɭ"
+      - text: "எழுத்தரிடம் மனுவைக் கொடுங்கள்."
+        reading: "eḻuttariṭam maṉuvaik koṭuṅkaḷ."
+        ipa: "eɻut̪t̪aɾiʈam manuʋaik koʈuŋkaɭ"
+      - text: "உத்தரவு வர ஒரு வாரம் ஆகும்."
+        reading: "uttaravu vara oru vāram ākum."
+        ipa: "ut̪t̪aɾaʋu ʋaɾa oɾu ʋaːɾam aːkum"
+    questions:
+      - id: "ta-5222"
+        prompt: { "en": "What is the application for?" }
+        options:
+          - { "en": "A licence" }
+          - { "en": "A pension" }
+          - { "en": "A birth certificate" }
+        answer: 1
+      - id: "ta-5223"
+        prompt: { "en": "What must the applicant bring?" }
+        options:
+          - { "en": "An identity card" }
+          - { "en": "A cheque" }
+          - { "en": "A passport" }
+        answer: 1
+      - id: "ta-5224"
+        prompt: { "en": "To whom is the application handed?" }
+        options:
+          - { "en": "The clerk" }
+          - { "en": "The judge" }
+          - { "en": "The police" }
+        answer: 1
+      - id: "ta-5225"
+        prompt: { "en": "How long does the order take to come?" }
+        options:
+          - { "en": "One week" }
+          - { "en": "One day" }
+          - { "en": "One year" }
+        answer: 1

@@ -1,0 +1,49 @@
+schema: 1
+id: "ta-en-reading-agriculture"
+name: "Tamil reading: agriculture"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short list of invented market prices, using the words of farming. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-market-prices"
+    title: "Prices at the market"
+    theme: "agriculture"
+    sentences:
+      - text: "இன்று சந்தையில் நெல் ஒரு கிலோ இருபது ரூபாய்."
+        reading: "iṉṟu cantaiyil nel oru kilō irupatu rūpāy."
+        ipa: "inru sant̪aijil nel oɾu kiloː iɾupat̪u ɾuːpaːj"
+      - text: "கோதுமை ஒரு கிலோ முப்பது ரூபாய்."
+        reading: "kōtumai oru kilō muppatu rūpāy."
+        ipa: "koːt̪umai oɾu kiloː muppat̪u ɾuːpaːj"
+      - text: "நிலக்கடலை விலை உயர்வு."
+        reading: "nilakkaṭalai vilai uyarvu."
+        ipa: "nilakkaʈalai ʋilai ujaɾʋu"
+      - text: "உழவர்கள் நாளை அறுவடை செய்கிறார்கள்."
+        reading: "uḻavarkaḷ nāḷai aṟuvaṭai ceykiṟārkaḷ."
+        ipa: "uɻaʋaɾkaɭ naːɭai aruʋaʈai sejkiraːɾkaɭ"
+    questions:
+      - id: "ta-5237"
+        prompt: { "en": "How much is a kilo of paddy today?" }
+        options:
+          - { "en": "Twenty rupees" }
+          - { "en": "Thirty rupees" }
+          - { "en": "Ten rupees" }
+        answer: 1
+      - id: "ta-5238"
+        prompt: { "en": "Which price has gone up?" }
+        options:
+          - { "en": "Groundnut" }
+          - { "en": "Paddy" }
+          - { "en": "Wheat" }
+        answer: 1
+      - id: "ta-5239"
+        prompt: { "en": "When are the farmers harvesting?" }
+        options:
+          - { "en": "Tomorrow" }
+          - { "en": "Today" }
+          - { "en": "Next year" }
+        answer: 1

@@ -1,0 +1,50 @@
+schema: 1
+id: "ta-en-reading-daily-life"
+name: "Reading: a daily routine chart"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A child's daily routine on a chart, using the daily-life words and the times taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-daily-routine"
+    title: "A child's daily routine"
+    sentences:
+      - text: "நான் ஆறு மணிக்கு எழுகிறேன்."
+        reading: "nāṉ āṟu maṇikku eḻukiṟēṉ."
+        ipa: "naːn aːru maɳikku eɻukireːn"
+      - text: "நான் குளிக்கிறேன்."
+        reading: "nāṉ kuḷikkiṟēṉ."
+        ipa: "naːn kuɭikkireːn"
+      - text: "நான் பல் துலக்குகிறேன்."
+        reading: "nāṉ pal tulakkukiṟēṉ."
+        ipa: "naːn pal t̪ulakkukireːn"
+      - text: "நான் டிபன் சாப்பிடுகிறேன்."
+        reading: "nāṉ ṭipaṉ cāppiṭukiṟēṉ."
+        ipa: "naːn ʈipan saːppiʈukireːn"
+      - text: "நான் எட்டு மணிக்கு பள்ளிக்குப் போகிறேன்."
+        reading: "nāṉ eṭṭu maṇikku paḷḷikkup pōkiṟēṉ."
+        ipa: "naːn eʈʈu maɳikku paɭɭikkup poːkireːn"
+      - text: "மாலையில் வீட்டுக்குத் திரும்புகிறேன்."
+        reading: "mālaiyil vīṭṭukkut tirumpukiṟēṉ."
+        ipa: "maːlaijil ʋiːʈʈukkut̪ t̪iɾumpukireːn"
+    questions:
+      - id: "ta-9900"
+        prompt: { en: "At what time does the child get up?" }
+        options:
+          - { en: "Six o'clock" }
+          - { en: "Seven o'clock" }
+          - { en: "Eight o'clock" }
+        answer: 1
+      - id: "ta-9901"
+        prompt: { en: "Where does the child go after breakfast?" }
+        options:
+          - { en: "To the market" }
+          - { en: "To school" }
+          - { en: "To the temple" }
+        answer: 2
+      - id: "ta-9902"
+        prompt: { en: "The child comes home in the morning." }
+        answer: false

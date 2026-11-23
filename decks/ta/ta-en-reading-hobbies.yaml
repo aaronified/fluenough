@@ -1,0 +1,41 @@
+schema: 1
+id: "ta-en-reading-hobbies"
+name: "Reading: a club poster"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A poster for a club with singing and a cricket match, using the hobby words taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-club-poster"
+    title: "A club poster"
+    sentences:
+      - text: "எங்கள் குழு சனி மாலை பாட்டு பாடுகிறது."
+        reading: "eṅkaḷ kuḻu caṉi mālai pāṭṭu pāṭukiṟatu."
+        ipa: "eŋkaɭ kuɻu sani maːlai paːʈʈu paːʈukirat̪u"
+      - text: "ஞாயிறு காலை கிரிக்கெட் போட்டி."
+        reading: "ñāyiṟu kālai kirikkeṭ pōṭṭi."
+        ipa: "ɲaːjiru kaːlai kiɾikkeʈ poːʈʈi"
+      - text: "நீங்களும் வாருங்கள்."
+        reading: "nīṅkaḷum vāruṅkaḷ."
+        ipa: "niːŋkaɭum ʋaːɾuŋkaɭ"
+    questions:
+      - id: "ta-9929"
+        prompt: { en: "Which game is played on Sunday?" }
+        options:
+          - { en: "Cricket" }
+          - { en: "Football" }
+          - { en: "Chess" }
+        answer: 1
+      - id: "ta-9930"
+        prompt: { en: "When does the group sing?" }
+        options:
+          - { en: "Saturday evening" }
+          - { en: "Sunday morning" }
+          - { en: "Friday night" }
+        answer: 1
+      - id: "ta-9931"
+        prompt: { en: "The match is in the evening." }
+        answer: false

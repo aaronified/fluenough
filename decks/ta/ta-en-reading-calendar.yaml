@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-calendar"
+name: "Reading: a wall calendar"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A wall calendar with a birthday and a holiday marked, using the calendar words taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-wall-calendar"
+    title: "A wall calendar"
+    sentences:
+      - text: "இது காலண்டர்."
+        reading: "itu kālaṇṭar."
+        ipa: "it̪u kaːlaɳʈaɾ"
+      - text: "இன்று திங்கள்."
+        reading: "iṉṟu tiṅkaḷ."
+        ipa: "inru t̪iŋkaɭ"
+      - text: "வெள்ளி தம்பிக்குப் பிறந்தநாள்."
+        reading: "veḷḷi tampikkup piṟantanāḷ."
+        ipa: "ʋeɭɭi t̪ampikkup pirant̪anaːɭ"
+      - text: "அடுத்த வாரம் விடுமுறை."
+        reading: "aṭutta vāram viṭumuṟai."
+        ipa: "aʈut̪t̪a ʋaːɾam ʋiʈumurai"
+    questions:
+      - id: "ta-9906"
+        prompt: { en: "On which day is the younger brother's birthday?" }
+        options:
+          - { en: "Monday" }
+          - { en: "Friday" }
+          - { en: "Sunday" }
+        answer: 2
+      - id: "ta-9907"
+        prompt: { en: "What is next week?" }
+        options:
+          - { en: "A holiday" }
+          - { en: "An exam" }
+          - { en: "A festival" }
+        answer: 1
+      - id: "ta-9908"
+        prompt: { en: "Today is Monday." }
+        answer: true
