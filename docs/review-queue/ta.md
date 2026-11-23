@@ -23,3 +23,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1023 | ta-script-vowel-signs | The pulli card shows the bare consonant க் (k), with reading 'k' and IPA 'k': is that right for a dead consonant? | Haiku deck worker (ta-script) | 2026-11-23 |
 | ta-1024 | ta-script-vowel-signs | The aytam ஃ has the tool's reading 'ḵ' and IPA 'x' (a known engine limit): is the broad IPA right, and can a reviewer give an everyday word that uses it? | Haiku deck worker (ta-script) | 2026-11-23 |
 | unit-level | ta-script-vowel-signs | The sign notes say 'makes the consonant a long aa' and so on, and each sign card's examples are existing words; does a reviewer agree with the sign notes? | Haiku deck worker (ta-script) | 2026-11-23 |
+| ta-1026 | ta-script-grantha | No word of the course has ஷ (ṣa), so the card has no example: can a reviewer suggest a common word? | Haiku deck worker (ta-script) | 2026-11-23 |
+| ta-1027 | ta-script-grantha | No word of the course has ஸ (sa), so the card has no example: can a reviewer suggest a common word? | Haiku deck worker (ta-script) | 2026-11-23 |
+| ta-1028 | ta-script-grantha | No word of the course has ஹ (ha), so the card has no example: can a reviewer suggest a common word? | Haiku deck worker (ta-script) | 2026-11-23 |
+| ta-1029 | ta-script-grantha | No word of the course has க்ஷ (kṣa), so the card has no example: can a reviewer suggest a common word? | Haiku deck worker (ta-script) | 2026-11-23 |
+| unit-level | ta-script-grantha | The notes say Grantha letters are supplementary to the Tamil alphabet and taught from elementary school (en.wikipedia 'Tamil script'): does a reviewer agree with the wording? | Haiku deck worker (ta-script) | 2026-11-23 |
