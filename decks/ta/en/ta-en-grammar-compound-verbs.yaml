@@ -1,0 +1,143 @@
+schema: 1
+id: "ta-en-grammar-compound-verbs"
+kind: "layer"
+core: "ta-grammar-compound-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Helper verbs: finished, for oneself, and more"
+description: "Nine verbs that carry the helper meanings finished, for oneself, give and push, with the main meaning of each. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+cards:
+  "ta-0450":
+    native: "to leave; to let go; to finish doing (after a participle)"
+    notes:
+      "n1": "As a plain verb it means to leave or to let go. After the verbal participle it is a helper that says the action is done and finished: சாப்பிட்டு விட்டேன் (cāppiṭṭu viṭṭēṉ), I have eaten up. Writing may join the two words, and speech shortens the helper: சாப்பிட்டுட்டேன் (cāppiṭṭuṭṭēṉ)."
+    examples:
+      "நான் சாப்பிட்டுவிட்டேன்.":
+        native: "I have finished eating."
+        bases:
+          "சாப்பிட்டுவிட்டேன்": "have finished eating; from சாப்பிடு (cāppiṭu), to eat"
+      "என்னை விடுங்கள்.":
+        native: "Please let me go."
+        bases:
+          "என்னை": "me; from நான் (nāṉ), I"
+          "விடுங்கள்": "please let go; from விடு (viṭu), to leave; to let go"
+  "ta-0451":
+    native: "to hold; to take; to do for oneself (after a participle)"
+    notes:
+      "n1": "As a helper after the verbal participle it says the action is done for oneself, or by oneself: எடுத்துக்கொள் (eṭuttukkoḷ), take it for yourself. The polite request is often said எடுத்துக்கோங்க (eṭuttukkōṅka) in speech."
+    examples:
+      "இதை எடுத்துக்கொள்ளுங்கள்.":
+        native: "Please take this for yourself."
+        bases:
+          "இதை": "this; from இது (itu), this"
+          "எடுத்துக்கொள்ளுங்கள்": "please take for yourself; from எடு (eṭu), to take"
+      "நான் இதை வைத்துக்கொள்கிறேன்.":
+        native: "I will keep this for myself."
+        bases:
+          "இதை": "this; from இது (itu), this"
+          "வைத்துக்கொள்கிறேன்": "keep for myself; from வை (vai), to put; to place"
+  "ta-0452":
+    native: "to put; to throw; to put on"
+    notes:
+      "n1": "One verb for several actions: சர்க்கரை போடு (carkkarai pōṭu) is put in sugar, சட்டை போடு (caṭṭai pōṭu) is put on a shirt, and the object tells which meaning is meant."
+    examples:
+      "அம்மா காபியில் சர்க்கரை போடுகிறார்.":
+        native: "Mother puts sugar in the coffee."
+        bases:
+          "காபியில்": "in the coffee; from காபி (kāpi), coffee"
+          "போடுகிறார்": "puts; from போடு (pōṭu), to put; to throw"
+      "நான் சட்டை போடுகிறேன்.":
+        native: "I put on a shirt."
+        bases:
+          "போடுகிறேன்": "put on; from போடு (pōṭu), to put; to throw"
+  "ta-0453":
+    native: "to give (to me or to us)"
+    notes:
+      "n1": "This verb always gives towards the speaker: தா (tā) to a friend, தாருங்கள் (tāruṅkaḷ) to someone you respect. To give to a third person the verb is கொடு (koṭu) instead. The stem changes in the past and the future: தந்தேன் (tantēṉ) and தருவேன் (taruvēṉ)."
+    examples:
+      "எனக்குத் தண்ணீர் தாருங்கள்.":
+        native: "Please give me water."
+        bases:
+          "எனக்குத்": "to me; from நான் (nāṉ), I"
+          "தாருங்கள்": "please give; from தா (tā), to give"
+      "அவன் எனக்குப் பணம் தந்தான்.":
+        native: "He gave me money."
+        bases:
+          "எனக்குப்": "to me; from நான் (nāṉ), I"
+          "தந்தான்": "gave; from தா (tā), to give"
+  "ta-0454":
+    native: "to stop (something); to park"
+    notes:
+      "n1": "It stops something else, so it takes an object: காரை நிறுத்து (kārai niṟuttu), stop the car. To stop yourself, as a person or a bus does, the verb is நில் (nil)."
+    examples:
+      "இங்கே நிறுத்துங்கள்.":
+        native: "Please stop here."
+        bases:
+          "நிறுத்துங்கள்": "please stop; from நிறுத்து (niṟuttu), to stop; to park"
+      "அவர் காரை நிறுத்தினார்.":
+        native: "He stopped the car."
+        bases:
+          "காரை": "the car; from கார் (kār), car"
+          "நிறுத்தினார்": "stopped; from நிறுத்து (niṟuttu), to stop; to park"
+  "ta-0455":
+    native: "to push"
+    notes:
+      "n1": "It is the word on a door that is pushed open: தள்ளு (taḷḷu) means push. The object takes -ஐ (-ai) and the doubled consonant after it, as in கதவைத் தள்ளுங்கள் (katavait taḷḷuṅkaḷ)."
+    examples:
+      "கதவைத் தள்ளுங்கள்.":
+        native: "Please push the door."
+        bases:
+          "கதவைத்": "the door; from கதவு (katavu), door"
+          "தள்ளுங்கள்": "please push; from தள்ளு (taḷḷu), to push"
+      "குழந்தை பந்தைத் தள்ளுகிறது.":
+        native: "The child pushes the ball."
+        bases:
+          "பந்தைத்": "the ball; from பந்து (pantu), ball"
+          "தள்ளுகிறது": "pushes; from தள்ளு (taḷḷu), to push"
+  "ta-0456":
+    native: "to hold; to catch"
+    notes:
+      "n1": "The same verb stands inside பிடிக்கும் (piṭikkum), which is how Tamil says is liked: what you like, in a way, holds you. As a plain verb it is to hold or to catch: பேருந்தைப் பிடி (pēruntaip piṭi), catch the bus."
+    examples:
+      "நான் பேருந்தைப் பிடிக்கிறேன்.":
+        native: "I catch the bus."
+        bases:
+          "பேருந்தைப்": "the bus; from பேருந்து (pēruntu), bus"
+          "பிடிக்கிறேன்": "catch; from பிடி (piṭi), to hold; to catch"
+      "குழந்தை என் கையைப் பிடிக்கிறது.":
+        native: "The child holds my hand."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "கையைப்": "the hand; from கை (kai), hand"
+          "பிடிக்கிறது": "holds; from பிடி (piṭi), to hold; to catch"
+  "ta-0457":
+    native: "to throw; to blow"
+    notes:
+      "n1": "A thing that is thrown and wind both use this verb: பந்தை வீசு (pantai vīcu), throw the ball, and காற்று வீசுகிறது (kāṟṟu vīcukiṟatu), the wind blows."
+    examples:
+      "குழந்தை பந்தை வீசுகிறது.":
+        native: "The child throws the ball."
+        bases:
+          "பந்தை": "the ball; from பந்து (pantu), ball"
+          "வீசுகிறது": "throws; from வீசு (vīcu), to throw; to blow"
+      "காற்று வீசுகிறது.":
+        native: "The wind is blowing."
+        bases:
+          "காற்று": "wind"
+          "வீசுகிறது": "is blowing; from வீசு (vīcu), to throw; to blow"
+  "ta-0458":
+    native: "to lift; to pick up"
+    notes:
+      "n1": "It is to lift something up, a bag or a child: பையைத் தூக்கு (paiyait tūkku), lift the bag. A noun with the same spelling means a hanging, so the object shows which one is meant."
+    examples:
+      "அப்பா பையைத் தூக்குகிறார்.":
+        native: "Father lifts the bag."
+        bases:
+          "பையைத்": "the bag; from பை (pai), bag"
+          "தூக்குகிறார்": "lifts; from தூக்கு (tūkku), to lift; to pick up"
+      "குழந்தையைத் தூக்குங்கள்.":
+        native: "Please pick up the child."
+        bases:
+          "குழந்தையைத்": "the child; from குழந்தை (kuḻantai), child"
+          "தூக்குங்கள்": "please pick up; from தூக்கு (tūkku), to lift; to pick up"

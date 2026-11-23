@@ -1,0 +1,115 @@
+schema: 1
+id: "ta-grammar-verb-classes"
+part: "core"
+kind: "rules"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ta-0409", "ta-0410", "ta-0412", "ta-0413"]
+  slots: ["inf", "vp", "past", "future"]
+  rows:
+    - word: "ta-0010"
+      forms: { "inf": "வர", "vp": "வந்து", "past": "வந்தான்", "future": "வருவான்" }
+      readings: { "inf": "vara", "vp": "vantu", "past": "vantāṉ", "future": "varuvāṉ" }
+    - word: "ta-0038"
+      forms: { "inf": "எழ", "vp": "எழுந்து", "past": "எழுந்தான்", "future": "எழுவான்" }
+      readings: { "inf": "eḻa", "vp": "eḻuntu", "past": "eḻuntāṉ", "future": "eḻuvāṉ" }
+    - word: "ta-0115"
+      forms: { "inf": "படிக்க", "vp": ["படிச்சு", "படித்து"], "past": ["படிச்சான்", "படித்தான்"], "future": "படிப்பான்" }
+      readings: { "inf": "paṭikka", "vp": ["paṭiccu", "paṭittu"], "past": ["paṭiccāṉ", "paṭittāṉ"], "future": "paṭippāṉ" }
+    - word: "ta-0118"
+      forms: { "inf": "போக", "vp": "போய்", "past": "போனான்", "future": "போவான்" }
+      readings: { "inf": "pōka", "vp": "pōy", "past": "pōṉāṉ", "future": "pōvāṉ" }
+    - word: "ta-0119"
+      forms: { "inf": "சாப்பிட", "vp": "சாப்பிட்டு", "past": "சாப்பிட்டான்", "future": "சாப்பிடுவான்" }
+      readings: { "inf": "cāppiṭa", "vp": "cāppiṭṭu", "past": "cāppiṭṭāṉ", "future": "cāppiṭuvāṉ" }
+    - word: "ta-0120"
+      forms: { "inf": "குடிக்க", "vp": ["குடிச்சு", "குடித்து"], "past": ["குடிச்சான்", "குடித்தான்"], "future": "குடிப்பான்" }
+      readings: { "inf": "kuṭikka", "vp": ["kuṭiccu", "kuṭittu"], "past": ["kuṭiccāṉ", "kuṭittāṉ"], "future": "kuṭippāṉ" }
+    - word: "ta-0121"
+      forms: { "inf": "பார்க்க", "vp": ["பாத்து", "பார்த்து"], "past": ["பாத்தான்", "பார்த்தான்"], "future": "பார்ப்பான்" }
+      readings: { "inf": "pārkka", "vp": ["pāttu", "pārttu"], "past": ["pāttāṉ", "pārttāṉ"], "future": "pārppāṉ" }
+    - word: "ta-0122"
+      forms: { "inf": "கேட்க", "vp": "கேட்டு", "past": "கேட்டான்", "future": "கேட்பான்" }
+      readings: { "inf": "kēṭka", "vp": "kēṭṭu", "past": "kēṭṭāṉ", "future": "kēṭpāṉ" }
+    - word: "ta-0123"
+      forms: { "inf": "பேச", "vp": "பேசி", "past": "பேசினான்", "future": "பேசுவான்" }
+      readings: { "inf": "pēca", "vp": "pēci", "past": "pēciṉāṉ", "future": "pēcuvāṉ" }
+    - word: "ta-0124"
+      forms: { "inf": "எழுத", "vp": "எழுதி", "past": "எழுதினான்", "future": "எழுதுவான்" }
+      readings: { "inf": "eḻuta", "vp": "eḻuti", "past": "eḻutiṉāṉ", "future": "eḻutuvāṉ" }
+    - word: "ta-0125"
+      forms: { "inf": "கொடுக்க", "vp": "கொடுத்து", "past": "கொடுத்தான்", "future": "கொடுப்பான்" }
+      readings: { "inf": "koṭukka", "vp": "koṭuttu", "past": "koṭuttāṉ", "future": "koṭuppāṉ" }
+    - word: "ta-0126"
+      forms: { "inf": "தூங்க", "vp": "தூங்கி", "past": "தூங்கினான்", "future": "தூங்குவான்" }
+      readings: { "inf": "tūṅka", "vp": "tūṅki", "past": "tūṅkiṉāṉ", "future": "tūṅkuvāṉ" }
+    - word: "ta-0127"
+      forms: { "inf": "செய்ய", "vp": ["செஞ்சு", "செய்து"], "past": ["செஞ்சான்", "செய்தான்"], "future": "செய்வான்" }
+      readings: { "inf": "ceyya", "vp": ["ceñcu", "ceytu"], "past": ["ceñcāṉ", "ceytāṉ"], "future": "ceyvāṉ" }
+    - word: "ta-0128"
+      forms: { "inf": "சமைக்க", "vp": ["சமைச்சு", "சமைத்து"], "past": ["சமைச்சான்", "சமைத்தான்"], "future": "சமைப்பான்" }
+      readings: { "inf": "camaikka", "vp": ["camaiccu", "camaittu"], "past": ["camaiccāṉ", "camaittāṉ"], "future": "camaippāṉ" }
+    - word: "ta-0129"
+      forms: { "inf": "வாங்க", "vp": "வாங்கி", "past": "வாங்கினான்", "future": "வாங்குவான்" }
+      readings: { "inf": "vāṅka", "vp": "vāṅki", "past": "vāṅkiṉāṉ", "future": "vāṅkuvāṉ" }
+    - word: "ta-0184"
+      forms: { "inf": "எடுக்க", "vp": "எடுத்து", "past": "எடுத்தான்", "future": "எடுப்பான்" }
+      readings: { "inf": "eṭukka", "vp": "eṭuttu", "past": "eṭuttāṉ", "future": "eṭuppāṉ" }
+    - word: "ta-0185"
+      forms: { "inf": "வைக்க", "vp": ["வச்சு", "வைத்து"], "past": ["வச்சான்", "வைத்தான்"], "future": "வைப்பான்" }
+      readings: { "inf": "vaikka", "vp": ["vaccu", "vaittu"], "past": ["vaccāṉ", "vaittāṉ"], "future": "vaippāṉ" }
+    - word: "ta-0186"
+      forms: { "inf": "திறக்க", "vp": "திறந்து", "past": "திறந்தான்", "future": "திறப்பான்" }
+      readings: { "inf": "tiṟakka", "vp": "tiṟantu", "past": "tiṟantāṉ", "future": "tiṟappāṉ" }
+    - word: "ta-0187"
+      forms: { "inf": "மூட", "vp": "மூடி", "past": "மூடினான்", "future": "மூடுவான்" }
+      readings: { "inf": "mūṭa", "vp": "mūṭi", "past": "mūṭiṉāṉ", "future": "mūṭuvāṉ" }
+    - word: "ta-0188"
+      forms: { "inf": "உட்கார", "vp": "உட்கார்ந்து", "past": "உட்கார்ந்தான்", "future": "உட்காருவான்" }
+      readings: { "inf": "uṭkāra", "vp": "uṭkārntu", "past": "uṭkārntāṉ", "future": "uṭkāruvāṉ" }
+    - word: "ta-0189"
+      forms: { "inf": "நிற்க", "vp": "நின்று", "past": "நின்றான்", "future": "நிற்பான்" }
+      readings: { "inf": "niṟka", "vp": "niṉṟu", "past": "niṉṟāṉ", "future": "niṟpāṉ" }
+    - word: "ta-0190"
+      forms: { "inf": "கழுவ", "vp": "கழுவி", "past": "கழுவினான்", "future": "கழுவுவான்" }
+      readings: { "inf": "kaḻuva", "vp": "kaḻuvi", "past": "kaḻuviṉāṉ", "future": "kaḻuvuvāṉ" }
+    - word: "ta-0191"
+      forms: { "inf": "விளையாட", "vp": "விளையாடி", "past": "விளையாடினான்", "future": "விளையாடுவான்" }
+      readings: { "inf": "viḷaiyāṭa", "vp": "viḷaiyāṭi", "past": "viḷaiyāṭiṉāṉ", "future": "viḷaiyāṭuvāṉ" }
+    - word: "ta-1101"
+      forms: { "inf": "குளிக்க", "vp": ["குளிச்சு", "குளித்து"], "past": ["குளிச்சான்", "குளித்தான்"], "future": "குளிப்பான்" }
+      readings: { "inf": "kuḷikka", "vp": ["kuḷiccu", "kuḷittu"], "past": ["kuḷiccāṉ", "kuḷittāṉ"], "future": "kuḷippāṉ" }
+    - word: "ta-1102"
+      forms: { "inf": "துலக்க", "vp": "துலக்கி", "past": "துலக்கினான்", "future": "துலக்குவான்" }
+      readings: { "inf": "tulakka", "vp": "tulakki", "past": "tulakkiṉāṉ", "future": "tulakkuvāṉ" }
+    - word: "ta-1103"
+      forms: { "inf": "நடக்க", "vp": "நடந்து", "past": "நடந்தான்", "future": "நடப்பான்" }
+      readings: { "inf": "naṭakka", "vp": "naṭantu", "past": "naṭantāṉ", "future": "naṭappāṉ" }
+    - word: "ta-1104"
+      forms: { "inf": "திரும்ப", "vp": "திரும்பி", "past": "திரும்பினான்", "future": "திரும்புவான்" }
+      readings: { "inf": "tirumpa", "vp": "tirumpi", "past": "tirumpiṉāṉ", "future": "tirumpuvāṉ" }
+    - word: "ta-1107"
+      forms: { "inf": "தொடங்க", "vp": "தொடங்கி", "past": "தொடங்கினான்", "future": "தொடங்குவான்" }
+      readings: { "inf": "toṭaṅka", "vp": "toṭaṅki", "past": "toṭaṅkiṉāṉ", "future": "toṭaṅkuvāṉ" }
+    - word: "ta-1801"
+      forms: { "inf": "உதவ", "vp": "உதவி", "past": "உதவினான்", "future": "உதவுவான்" }
+      readings: { "inf": "utava", "vp": "utavi", "past": "utaviṉāṉ", "future": "utavuvāṉ" }
+rules:
+  - id: "ta-rule-verb-classes-infinitive"
+    slots: ["inf"]
+    words: [{ word: "-அ", reading: "-a" }, { word: "போ", reading: "pō" }, { word: "போக", reading: "pōka" }, { word: "படி", reading: "paṭi" }, { word: "படிக்க", reading: "paṭikka" }, { word: "பேசு", reading: "pēcu" }, { word: "பேச", reading: "pēca" }, { word: "செய்", reading: "cey" }, { word: "செய்ய", reading: "ceyya" }]
+  - id: "ta-rule-verb-classes-participle"
+    slots: ["vp"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வந்து", reading: "vantu" }, { word: "போ", reading: "pō" }, { word: "போய்", reading: "pōy" }, { word: "படி", reading: "paṭi" }, { word: "படித்து", reading: "paṭittu" }, { word: "படிச்சு", reading: "paṭiccu" }, { word: "பேசு", reading: "pēcu" }, { word: "பேசி", reading: "pēci" }]
+  - id: "ta-rule-verb-classes-past"
+    slots: ["past"]
+    words: [{ word: "படி", reading: "paṭi" }, { word: "படித்தான்", reading: "paṭittāṉ" }, { word: "பார்", reading: "pār" }, { word: "பார்த்தான்", reading: "pārttāṉ" }, { word: "செய்", reading: "cey" }, { word: "செய்தான்", reading: "ceytāṉ" }, { word: "வா", reading: "vā" }, { word: "வந்தான்", reading: "vantāṉ" }, { word: "திற", reading: "tiṟa" }, { word: "திறந்தான்", reading: "tiṟantāṉ" }, { word: "பேசு", reading: "pēcu" }, { word: "பேசினான்", reading: "pēciṉāṉ" }, { word: "மூடு", reading: "mūṭu" }, { word: "மூடினான்", reading: "mūṭiṉāṉ" }, { word: "சாப்பிடு", reading: "cāppiṭu" }, { word: "சாப்பிட்டான்", reading: "cāppiṭṭāṉ" }, { word: "கேள்", reading: "kēḷ" }, { word: "கேட்டான்", reading: "kēṭṭāṉ" }, { word: "போ", reading: "pō" }, { word: "போனான்", reading: "pōṉāṉ" }, { word: "நில்", reading: "nil" }, { word: "நின்றான்", reading: "niṉṟāṉ" }]
+  - id: "ta-rule-verb-classes-future"
+    slots: ["future"]
+    words: [{ word: "படி", reading: "paṭi" }, { word: "படிப்பான்", reading: "paṭippāṉ" }, { word: "பார்", reading: "pār" }, { word: "பார்ப்பான்", reading: "pārppāṉ" }, { word: "வா", reading: "vā" }, { word: "வருவான்", reading: "varuvāṉ" }, { word: "பேசு", reading: "pēcu" }, { word: "பேசுவான்", reading: "pēcuvāṉ" }]

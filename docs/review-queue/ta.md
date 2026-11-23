@@ -93,3 +93,16 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1168 | ta-festivals | Is the split between பண்டிகை (home), திருவிழா (temple) and விழா (function) right? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1194 | ta-festivals | Is the temple offering of a coconut right for this card, and is தேங்காய் the usual word? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1193 | ta-festivals | Is வாணவேடிக்கை natural in speech, or is it more written than பட்டாசு? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-2013 | ta-appearance | Is குண்டான too rude for a person, and is a gentler word better to teach? | Sonnet builder | 2026-11-23 |
+| ta-2005 | ta-appearance | Is புடவை கட்டு the usual verb for wearing a sari beside உடுத்து? | Sonnet builder | 2026-11-23 |
+| ta-2000 | ta-appearance | Is பாவாடை the right everyday word for a skirt? | Sonnet builder | 2026-11-23 |
+| ta-1987 | ta-appearance | Is சாம்பல் the usual word for the colour grey? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-verb-classes | Check the six past-marker groups and the future markers given for every verb. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-ordinals | Check the shortened spoken ordinals (ரெண்டாவது, மூணாவது, நாலாவது, அஞ்சாவது, ஒம்பதாவது) and the date forms. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-past-more | Check has done and had done (participle plus இரு) and their spoken forms, such as வந்திருக்கேன் and வந்திருந்துச்சு. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-verbal-participle | Check the spoken verbal participles (படிச்சு, செஞ்சு, வச்சு, பாத்து) and the spoken without-doing ending -ஆமே. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0451 | ta-grammar-compound-verbs | Is எடுத்துக்கோங்க the usual spoken polite form of the helper கொள்? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0453 | ta-grammar-compound-verbs | Is தா (to me or us) versus கொடு (to others) stated correctly? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0452 | ta-grammar-compound-verbs | Are put, throw and put on the right senses of போடு to teach together? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-comparison | Check the comparison pattern (X-ஐ விட adjective-து), the word எல்லாவற்றையும், and the doubling after விட and மிக. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-irregular | Check the stems given for come, go, do, give, stand, sit and listen, and the spoken நிக்கிறேன் and தர்றேன். | Sonnet builder (ta-gram2) | 2026-11-23 |

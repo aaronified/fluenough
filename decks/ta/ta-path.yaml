@@ -460,12 +460,16 @@ units:
       - { id: "past-heard", text: { "en": "A short exchange that uses past, after the calendar unit" } }
     reading_passages:
       - { id: "past-read", text: { "en": "A short text that uses past, after the calendar unit" } }
-  - planned: { id: "ta-grammar-verb-classes", grammar: "verb-classes", words: 0 }
+  - decks: ["ta-grammar-verb-classes"]
+    words: 0
+    grammar: ["verb-classes-infinitive", "verb-classes-participle", "verb-classes-past", "verb-classes-future"]
     listening_passages:
       - { id: "yesterday-at-home", text: { "en": "A family says what each of them did yesterday" } }
     reading_passages:
       - { id: "past-notes", text: { "en": "Short notes on what was done, and by whom" } }
-  - planned: { id: "ta-grammar-ordinals", grammar: "ordinals" }
+  - decks: ["ta-grammar-ordinals"]
+    words: 0
+    grammar: ["ordinals"]
     listening_passages:
       - { id: "birthday-dates", text: { "en": "People say their birthdays and anniversaries" } }
     reading_passages:
@@ -476,7 +480,9 @@ units:
       - { id: "festival-plans", text: { "en": "Neighbours plan the Pongal harvest festival together" } }
     reading_passages:
       - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
-  - planned: { id: "ta-grammar-past-more", grammar: "past-more" }
+  - decks: ["ta-grammar-past-more"]
+    words: 0
+    grammar: ["past-more-perfect", "past-more-pluperfect"]
     listening_passages:
       - { id: "had-already", text: { "en": "Saying what had already happened" } }
     reading_passages:
@@ -486,12 +492,16 @@ units:
       - { id: "bargaining", text: { "en": "Bargaining politely for a bag" } }
     reading_passages:
       - { id: "price-list", text: { "en": "A shop's price list and offers" } }
-  - planned: { id: "ta-grammar-verbal-participle", grammar: "verbal-participle" }
+  - decks: ["ta-grammar-verbal-participle"]
+    words: 0
+    grammar: ["verbal-participle-and", "verbal-participle-without"]
     listening_passages:
       - { id: "what-i-did-today", text: { "en": "Telling a day as one chain of actions" } }
     reading_passages:
       - { id: "travel-diary", text: { "en": "A travel diary that chains what happened" } }
-  - planned: { id: "ta-grammar-compound-verbs", grammar: "compound-verbs", words: 9 }
+  - decks: ["ta-grammar-compound-verbs", "ta-grammar-compound-verbs-forms"]
+    words: 9
+    grammar: ["compound-verbs", "compound-verbs-forms"]
     listening_passages:
       - { id: "it-got-done", text: { "en": "Saying a thing is finished, or done for oneself" } }
     reading_passages:
@@ -511,7 +521,9 @@ units:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
     reading_passages:
       - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
-  - planned: { id: "ta-grammar-comparison", grammar: "comparison" }
+  - decks: ["ta-grammar-comparison"]
+    words: 0
+    grammar: ["comparison"]
     listening_passages:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
     reading_passages:
@@ -523,7 +535,9 @@ units:
       - { id: "asking-for-help", text: { "en": "Asking a passer-by for help" } }
     reading_passages:
       - { id: "help-desk-sign", text: { "en": "A help desk sign" } }
-  - planned: { id: "ta-grammar-irregular", grammar: "irregular" }
+  - decks: ["ta-grammar-irregular"]
+    words: 0
+    grammar: ["irregular"]
     listening_passages:
       - { id: "irregular-heard", text: { "en": "A short exchange that uses irregular, after the help unit" } }
     reading_passages:
@@ -561,7 +575,8 @@ units:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
       - { id: "chore-list", text: { "en": "A weekly chore list on the wall" } }
-  - planned: { id: "ta-appearance", theme: "appearance", words: 55 }
+  - decks: ["ta-appearance", "ta-appearance-sentences", "*"]
+    words: 55
     listening_passages:
       - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them" } }
     reading_passages:
