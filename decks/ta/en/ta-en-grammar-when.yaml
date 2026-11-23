@@ -1,0 +1,25 @@
+schema: 1
+id: "ta-en-grammar-when"
+kind: "layer"
+core: "ta-grammar-when"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "When and if: at the time that"
+description: "Every verb the course teaches with when it happens, when it happened, and if or when, with the common spoken form before the written one. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "when-now": "when it happens, or is going to happen"
+    "when-past": "when it happened"
+    "if-or-when": "if, or when it will surely happen"
+rules:
+  "ta-rule-when-now":
+    name: "போது (pōtu) after the infinitive and -உம் (-um): when it happens"
+    explanation: "{1} means time or when. After the verb's infinitive and -உம் (-um) it says when something happens or is going to happen, whoever does it: {2}, to come, gives {3}, when someone comes, and {4}, to go, gives {5}, when going. It is written as one word."
+  "ta-rule-when-past":
+    name: "போது (pōtu) after the past stem: when it happened"
+    explanation: "To say when something happened, put {1} after the past stem: {3}, to come, gives {2}, when someone came. A verb with the past marker -இன (-iṉa) has two forms: {4}, to speak, gives {5} in writing and {6} in speech."
+  "ta-rule-when-if":
+    name: "-ஆல் (-āl) after the past stem: if, or when it will surely happen"
+    explanation: "{1} after the past stem means if, or when something is sure to happen. {3}, to come, gives {2}, if or when someone comes. Speech drops the last sound: {4}, and {6} for {5}. The same form is used for every person."
