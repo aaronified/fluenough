@@ -57,3 +57,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-grammar-gender-number | மக்கள் (people) is given gender m only because a noun needs one; it is a plural of people. Are the ten words and the neuter plural verb அவை இருக்கின்றன right for A1? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-adjectives | The -து and -வை forms (பெரியது, பெரியவை ...) were built by rule for all nine adjectives with no source page; are they all natural? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-articles | ஓர் before a vowel is from English Wiktionary; are the six pairs right? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-verb-present | வேண்டும், வேண்டாம், பிடிக்கும் and பிடிக்காது are verbs with one form for every person, so they are left out of the table (except list); is that the right way to teach them? | Sonnet builder | 2026-11-23 |
