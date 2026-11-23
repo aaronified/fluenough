@@ -60,3 +60,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-grammar-verb-present | வேண்டும், வேண்டாம், பிடிக்கும் and பிடிக்காது are verbs with one form for every person, so they are left out of the table (except list); is that the right way to teach them? | Sonnet builder | 2026-11-23 |
 | ta-1804 | ta-help | Is பிரச்சினை (not பிரச்சனை) the spelling to teach first? | Sonnet builder | 2026-11-23 |
 | ta-1805 | ta-help | Is போலீஸ் the right spoken form, and the register correct? | Sonnet builder | 2026-11-23 |
+| ta-1816 | ta-school | Is the written word மதிப்பெண் (not மார்க்) the right one to teach first? | Sonnet builder | 2026-11-23 |
+| ta-1813 | ta-school | Is புக் (puk) the right spoken form for a school book? | Sonnet builder | 2026-11-23 |
+| ta-1860 | ta-school | Is கத்துக்கோ (kattukkō) the right spoken form of learn? | Sonnet builder | 2026-11-23 |
+| ta-1844 | ta-school | Is பரிசு natural at school, or is பரிசளிப்பு better? | Sonnet builder | 2026-11-23 |
