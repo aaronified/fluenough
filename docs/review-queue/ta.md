@@ -121,3 +121,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-0460 | ta-grammar-conjunct-verbs | Are spoken பண்றேன் and the noun plus பண்ணு pattern shown correctly? | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-0461 | ta-grammar-conjunct-verbs | Is நேரம் ஆகிறது the usual way to say it is getting late? | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-imperatives | Check the polite spoken commands (-ங்க), the polite forms of திற and நட, and the negative commands. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-2173 | ta-journey | Is gender m right for வழிகாட்டி, a guide of any gender? | Sonnet builder | 2026-11-23 |
+| ta-2161 | ta-journey | Is gender m right for டிரைவர், ஓட்டுநர் and நடத்துநர், who may be women? | Sonnet builder | 2026-11-23 |
+| ta-2164 | ta-journey | Does ஹோட்டல் mean restaurant more often than hotel in Tamil Nadu? | Sonnet builder | 2026-11-23 |
+| ta-2141 | ta-journey | Is பைக் the usual word for a motorbike? | Sonnet builder | 2026-11-23 |
+| ta-2184 | ta-journey | Is வழிதவறு one word, and natural in speech? | Sonnet builder | 2026-11-23 |
+| ta-2189 | ta-journey | Is எடுத்துச்செல் written as one word? | Sonnet builder | 2026-11-23 |
