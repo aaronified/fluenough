@@ -3,15 +3,19 @@ import 'dart:isolate';
 
 import '../core/data/course_path.dart' show CoursePath;
 import '../core/decks/adult_gate.dart';
+import '../core/decks/credits.dart';
 import '../core/decks/language_catalog.dart' show B1Unit;
 import '../core/decks/language_summary.dart';
 import '../core/decks/language_unit.dart';
 import '../core/decks/sha256.dart';
 import '../core/languages/language_skills.dart' show kanaScript, kanjiScript;
 import '../core/models/card.dart';
+import '../core/models/creator.dart' show Creator, CreatorImage;
 import '../core/models/deck.dart';
+import '../core/models/recommendation.dart' show Recommendation;
 import 'deck_catalog.dart';
 import 'deck_files.dart';
+import 'voice_sample.dart';
 
 /// The job that reads and parses one language's files (ADR-0062, Plan-Lazy-
 /// Language-Loading, 3.2), run on an isolate of its own: the files, and the
@@ -377,6 +381,7 @@ LanguageSummary summariseLanguage(
         if (entry.language.code == code)
           SummaryDeck(
             id: entry.id,
+            name: entry.deck.name,
             path: entry.path,
             native: entry.deck.native.code,
             kind: entry.deck.kind.name,
@@ -413,7 +418,31 @@ LanguageSummary summariseLanguage(
     glyph: _glyphOf(first),
     scriptCount: language?.alphabet.length ?? 0,
     ipaSymbols: _ipaSymbolsOf(teaching),
+    voiceSample: voiceSampleOf(teaching),
+    privatelyModified: language?.privatelyModified ?? false,
+    credits: _creditsOf(catalog, code, teaching),
     stamp: stamp,
+  );
+}
+
+/// What [teaching], the decks of [code], credit, with the credits of the
+/// pictures of the language's people and works: the Sources page lists them
+/// from the directory.
+SummaryCredits _creditsOf(
+  Catalog catalog,
+  String code,
+  List<DeckEntry> teaching,
+) {
+  final people = catalog.creators[code]?.creators ?? const <Creator>[];
+  final works =
+      catalog.recommendations[code]?.recommendations ??
+      const <Recommendation>[];
+  return creditsOfDecks(
+    <Deck>[for (final entry in teaching) entry.deck],
+    <CreatorImage>[
+      for (final creator in people) ?creator.image,
+      for (final work in works) ?work.image,
+    ],
   );
 }
 
