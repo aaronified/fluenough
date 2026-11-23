@@ -1,0 +1,596 @@
+schema: 1
+id: "ta-en-law"
+kind: "layer"
+core: "ta-law"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Law: police, courts, rights and the rules"
+description: "Law and order: the law, courts, judges and verdicts, rights and rules, fines and prison, and the verbs for arresting, punishing and following the rules. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-8400":
+    native: "law; act"
+    notes:
+      n1: "The law of a country, or a single act of the law."
+    examples:
+      "சட்டம் எல்லோருக்கும் ஒன்று.":
+        native: "The law is the same for everyone."
+        bases:
+          "சட்டம்": "law; act"
+          "எல்லோருக்கும்": "to everyone; for everyone; from எல்லோர் (ellōr), everyone"
+      "நாம் சட்டத்தைப் பின்பற்றுகிறோம்.":
+        native: "We follow the law."
+        bases:
+          "சட்டத்தைப்": "the law (object); from சட்டம் (caṭṭam), law"
+          "பின்பற்றுகிறோம்": "we follow; from பின்பற்று (piṉpaṟṟu), to follow"
+  "ta-8401":
+    native: "judge"
+    notes:
+      n1: "The person who gives a verdict in court."
+    examples:
+      "நீதிபதி நீதிமன்றத்தில் இருக்கிறார்.":
+        native: "The judge is in the court."
+        bases:
+          "நீதிபதி": "judge"
+          "நீதிமன்றத்தில்": "in the court; from நீதிமன்றம் (nītimaṉṟam), court of law"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+      "நீதிபதி நல்லவர்.":
+        native: "The judge is a good man."
+        bases:
+          "நீதிபதி": "judge"
+          "நல்லவர்": "good man (polite); from நல்ல (nalla), good"
+  "ta-8402":
+    native: "punishment; sentence"
+    notes:
+      n1: "What a court gives to the guilty."
+    examples:
+      "அவனுக்குத் தண்டனை கிடைக்கிறது.":
+        native: "He gets a punishment."
+        bases:
+          "அவனுக்குத்": "to him; for him; from அவன் (avaṉ), he; him"
+          "தண்டனை": "punishment; sentence"
+          "கிடைக்கிறது": "is received; is available; from கிடை (kiṭai), to be obtained"
+      "தண்டனை பெரியது.":
+        native: "The punishment is big."
+        bases:
+          "தண்டனை": "punishment; sentence"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8403":
+    native: "fine; penalty"
+    notes:
+      n1: "Money paid as a penalty."
+    examples:
+      "அவன் அபராதம் கட்டுகிறான்.":
+        native: "He pays a fine."
+        bases:
+          "அபராதம்": "fine; penalty"
+          "கட்டுகிறான்": "he pays; from கட்டு (kaṭṭu), to pay; to tie; to build"
+      "அபராதம் எவ்வளவு?":
+        native: "How much is the fine?"
+        bases:
+          "அபராதம்": "fine; penalty"
+  "ta-8404":
+    native: "prison; jail"
+    notes:
+      n1: "A place where the guilty are kept."
+    examples:
+      "அவன் சிறையில் இருக்கிறான்.":
+        native: "He is in prison."
+        bases:
+          "சிறையில்": "in prison; from சிறை (ciṟai), prison"
+          "இருக்கிறான்": "is; from இரு (iru), to be"
+      "சிறை பெரியது.":
+        native: "The prison is big."
+        bases:
+          "சிறை": "prison; jail"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8405":
+    native: "right; ownership; claim"
+    notes:
+      n1: "Something a person is allowed to have or do."
+    examples:
+      "இது என் உரிமை.":
+        native: "This is my right."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "உரிமை": "right; ownership; claim"
+      "உனக்கு உரிமை இருக்கிறது.":
+        native: "You have a right."
+        bases:
+          "உனக்கு": "to you; from நீ (nī), you"
+          "உரிமை": "right; ownership; claim"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8406":
+    native: "petition; application"
+    notes:
+      n1: "A written request given to an office or a court."
+    examples:
+      "நான் மனு கொடுக்கிறேன்.":
+        native: "I give a petition."
+        bases:
+          "மனு": "petition; application"
+          "கொடுக்கிறேன்": "I give; from கொடு (koṭu), to give"
+      "மனு எங்கே?":
+        native: "Where is the petition?"
+        bases:
+          "மனு": "petition; application"
+  "ta-8407":
+    native: "order; permission"
+    notes:
+      n1: "An order given by a court or an officer."
+    examples:
+      "இது நீதிமன்ற உத்தரவு.":
+        native: "This is a court order."
+        bases:
+          "நீதிமன்ற": "court (before a noun); from நீதிமன்றம் (nītimaṉṟam), court of law"
+          "உத்தரவு": "order; permission"
+      "உத்தரவு எங்கே?":
+        native: "Where is the order?"
+        bases:
+          "உத்தரவு": "order; permission"
+  "ta-8408":
+    native: "rule; regulation"
+    notes:
+      n1: "Built from விதி (viti), rule and முறை (muṟai), method; the written rules of an office."
+    examples:
+      "இது விதிமுறை.":
+        native: "This is a rule."
+        bases:
+          "விதிமுறை": "rule; regulation"
+      "விதிமுறை முக்கியம்.":
+        native: "The rule is important."
+        bases:
+          "விதிமுறை": "rule; regulation"
+          "முக்கியம்": "important"
+  "ta-8409":
+    native: "citizen"
+    notes:
+      n1: "A man who belongs to a country; the woman is குடிமகள் (kuṭimakaḷ), woman citizen."
+    examples:
+      "அவன் இந்த நாட்டின் குடிமகன்.":
+        native: "He is a citizen of this country."
+        bases:
+          "இந்த": "this (before a noun)"
+          "நாட்டின்": "of the country; from நாடு (nāṭu), country"
+          "குடிமகன்": "citizen"
+      "குடிமகன் வாக்கு அளிக்கிறான்.":
+        native: "The citizen casts a vote."
+        bases:
+          "குடிமகன்": "citizen"
+          "அளிக்கிறான்": "he gives; from அளி (aḷi), to give"
+  "ta-8410":
+    native: "citizenship"
+    notes:
+      n1: "Built from குடி (kuṭi), people and உரிமை (urimai), right."
+    examples:
+      "எனக்குக் குடியுரிமை இருக்கிறது.":
+        native: "I have citizenship."
+        bases:
+          "எனக்குக்": "to me; for me; from நான் (nāṉ), I; me"
+          "குடியுரிமை": "citizenship"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "குடியுரிமை முக்கியம்.":
+        native: "Citizenship is important."
+        bases:
+          "குடியுரிமை": "citizenship"
+          "முக்கியம்": "important"
+  "ta-8411":
+    native: "constitution"
+    notes:
+      n1: "The basic law of a country."
+    examples:
+      "இது அரசியலமைப்பு.":
+        native: "This is the constitution."
+        bases:
+          "அரசியலமைப்பு": "constitution"
+      "அரசியலமைப்பு முக்கியம்.":
+        native: "The constitution is important."
+        bases:
+          "அரசியலமைப்பு": "constitution"
+          "முக்கியம்": "important"
+  "ta-8412":
+    native: "justice; fairness"
+    notes:
+      n1: "A fair judgement; நீதி (nīti) is also a short moral saying."
+    examples:
+      "எல்லோருக்கும் நீதி வேண்டும்.":
+        native: "Everyone needs justice."
+        bases:
+          "எல்லோருக்கும்": "to everyone; for everyone; from எல்லோர் (ellōr), everyone"
+          "நீதி": "justice; fairness"
+      "நீதி முக்கியம்.":
+        native: "Justice is important."
+        bases:
+          "நீதி": "justice; fairness"
+          "முக்கியம்": "important"
+  "ta-8413":
+    native: "bail; surety"
+    notes:
+      n1: "Money or a promise given so that an arrested person can go free for now."
+    examples:
+      "அவனுக்குப் பிணை கிடைக்கிறது.":
+        native: "He gets bail."
+        bases:
+          "அவனுக்குப்": "to him; for him; from அவன் (avaṉ), he; him"
+          "பிணை": "bail; surety"
+          "கிடைக்கிறது": "is received; is available; from கிடை (kiṭai), to be obtained"
+      "பிணை எவ்வளவு?":
+        native: "How much is the bail?"
+        bases:
+          "பிணை": "bail; surety"
+  "ta-8414":
+    native: "inquiry; trial; hearing"
+    notes:
+      n1: "The questioning in a court or by the police; from விசாரி (vicāri), to enquire."
+    examples:
+      "இன்று விசாரணை இருக்கிறது.":
+        native: "There is a hearing today."
+        bases:
+          "விசாரணை": "inquiry; trial; hearing"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "விசாரணை எப்போது?":
+        native: "When is the hearing?"
+        bases:
+          "விசாரணை": "inquiry; trial; hearing"
+  "ta-8415":
+    native: "accusation; charge"
+    notes:
+      n1: "Built from குற்றம் (kuṟṟam), crime and சாட்டு (cāṭṭu), to lay on."
+    examples:
+      "அவன் மேல் குற்றச்சாட்டு இருக்கிறது.":
+        native: "There is a charge against him."
+        bases:
+          "மேல்": "on; over; about"
+          "குற்றச்சாட்டு": "accusation; charge"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "குற்றச்சாட்டு பெரியது.":
+        native: "The charge is serious."
+        bases:
+          "குற்றச்சாட்டு": "accusation; charge"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8416":
+    native: "appeal"
+    notes:
+      n1: "Built from மேல் (mēl), upper and முறையீடு (muṟaiyīṭu), complaint: an appeal to a higher court."
+    examples:
+      "அவன் மேல்முறையீடு செய்கிறான்.":
+        native: "He makes an appeal."
+        bases:
+          "மேல்முறையீடு": "appeal"
+          "செய்கிறான்": "is doing; from செய் (cey), to do; to make"
+      "மேல்முறையீடு எப்போது?":
+        native: "When is the appeal?"
+        bases:
+          "மேல்முறையீடு": "appeal"
+  "ta-8417":
+    native: "oath; pledge"
+    notes:
+      n1: "Built from உறுதி (uṟuti), firm and மொழி (moḻi), word."
+    examples:
+      "அவன் உறுதிமொழி எடுக்கிறான்.":
+        native: "He takes an oath."
+        bases:
+          "உறுதிமொழி": "oath; pledge"
+          "எடுக்கிறான்": "he takes; from எடு (eṭu), to take"
+      "இது என் உறுதிமொழி.":
+        native: "This is my pledge."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "உறுதிமொழி": "oath; pledge"
+  "ta-8418":
+    native: "authority; power"
+    notes:
+      n1: "The power to decide; also a chapter of a book."
+    examples:
+      "அவருக்கு அதிகாரம் இருக்கிறது.":
+        native: "He has authority."
+        bases:
+          "அவருக்கு": "to him or her (polite); for him or her (polite); from அவர் (avar), he or she (polite)"
+          "அதிகாரம்": "authority; power"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "அதிகாரம் முக்கியம்.":
+        native: "Authority is important."
+        bases:
+          "அதிகாரம்": "authority; power"
+          "முக்கியம்": "important"
+  "ta-8419":
+    native: "order; command"
+    notes:
+      n1: "A formal order from a ruler or an office."
+    examples:
+      "இது அரசு ஆணை.":
+        native: "This is a government order."
+        bases:
+          "ஆணை": "order; command"
+      "ஆணை எங்கே?":
+        native: "Where is the order?"
+        bases:
+          "ஆணை": "order; command"
+  "ta-8420":
+    native: "innocent person"
+    notes:
+      n1: "Built from நிர (nira), without and அபராதி (aparāti), offender."
+    examples:
+      "அவன் நிரபராதி.":
+        native: "He is innocent."
+        bases:
+          "நிரபராதி": "innocent person"
+      "நிரபராதி விடுதலை ஆகிறான்.":
+        native: "The innocent man is released."
+        bases:
+          "நிரபராதி": "innocent person"
+          "ஆகிறான்": "he becomes; from ஆகு (āku), to become"
+  "ta-8421":
+    native: "release; freedom"
+    notes:
+      n1: "Being set free from prison or from a bond."
+    examples:
+      "அவனுக்கு விடுதலை கிடைக்கிறது.":
+        native: "He gets release."
+        bases:
+          "அவனுக்கு": "to him; from அவன் (avaṉ), he"
+          "விடுதலை": "release; freedom"
+          "கிடைக்கிறது": "is received; is available; from கிடை (kiṭai), to be obtained"
+      "விடுதலை நல்லது.":
+        native: "Release is good."
+        bases:
+          "விடுதலை": "release; freedom"
+  "ta-8422":
+    native: "filing; submission"
+    notes:
+      n1: "Handing in a paper to a court or an office; the verb phrase is தாக்கல் செய் (tākkal cey), to file."
+    examples:
+      "அவர் மனு தாக்கல் செய்கிறார்.":
+        native: "He files a petition."
+        bases:
+          "தாக்கல்": "filing; submission"
+          "செய்கிறார்": "he does; from செய் (cey), to do"
+      "தாக்கல் எப்போது?":
+        native: "When is the filing?"
+        bases:
+          "தாக்கல்": "filing; submission"
+  "ta-8423":
+    native: "testimony; evidence given"
+    notes:
+      n1: "What a witness says in court."
+    examples:
+      "சாட்சியம் முக்கியம்.":
+        native: "Testimony is important."
+        bases:
+          "சாட்சியம்": "testimony; evidence given"
+          "முக்கியம்": "important"
+      "அவர் சாட்சியம் சொல்கிறார்.":
+        native: "He gives testimony."
+        bases:
+          "சாட்சியம்": "testimony; evidence given"
+          "சொல்கிறார்": "he says; from சொல் (col), to say; to tell"
+  "ta-8424":
+    native: "statement; confession"
+    notes:
+      n1: "A statement given to the police or a court."
+    examples:
+      "அவன் வாக்குமூலம் கொடுக்கிறான்.":
+        native: "He gives a statement."
+        bases:
+          "வாக்குமூலம்": "statement; confession"
+          "கொடுக்கிறான்": "he gives; from கொடு (koṭu), to give"
+      "வாக்குமூலம் எங்கே?":
+        native: "Where is the statement?"
+        bases:
+          "வாக்குமூலம்": "statement; confession"
+  "ta-8425":
+    native: "summons"
+    notes:
+      n1: "A loanword from English summons: a paper that calls a person to court."
+    examples:
+      "எனக்குச் சம்மன் வந்தது.":
+        native: "A summons came to me."
+        bases:
+          "எனக்குச்": "to me; from நான் (nāṉ), I"
+          "சம்மன்": "summons"
+          "வந்தது": "came; from வா (vā), to come"
+      "சம்மன் எங்கே?":
+        native: "Where is the summons?"
+        bases:
+          "சம்மன்": "summons"
+  "ta-8426":
+    native: "legislative assembly"
+    notes:
+      n1: "Built from சட்டம் (caṭṭam), law and மன்றம் (maṉṟam), assembly."
+    examples:
+      "சட்டமன்றம் எங்கே இருக்கிறது?":
+        native: "Where is the assembly?"
+        bases:
+          "சட்டமன்றம்": "legislative assembly"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "சட்டமன்றம் பெரியது.":
+        native: "The assembly is big."
+        bases:
+          "சட்டமன்றம்": "legislative assembly"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8427":
+    native: "prison; jail"
+    notes:
+      n1: "Built from சிறை (ciṟai), prison and சாலை (cālai), hall; a more formal word for prison."
+    examples:
+      "சிறைச்சாலை எங்கே இருக்கிறது?":
+        native: "Where is the prison?"
+        bases:
+          "சிறைச்சாலை": "prison; jail"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "சிறைச்சாலை பெரியது.":
+        native: "The prison is big."
+        bases:
+          "சிறைச்சாலை": "prison; jail"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8428":
+    native: "judiciary; the courts"
+    notes:
+      n1: "Built from நீதி (nīti), justice and துறை (tuṟai), department."
+    examples:
+      "இது நீதித்துறை.":
+        native: "This is the judiciary."
+        bases:
+          "நீதித்துறை": "judiciary; the courts"
+      "நீதித்துறை முக்கியம்.":
+        native: "The judiciary is important."
+        bases:
+          "நீதித்துறை": "judiciary; the courts"
+          "முக்கியம்": "important"
+  "ta-8429":
+    native: "to arrest"
+    notes:
+      n1: "Built from கைது (kaitu), arrest, a word taught earlier, and செய் (cey), to do."
+    examples:
+      "திருடனைக் கைதுசெய்.":
+        native: "Arrest the thief."
+        bases:
+          "திருடனைக்": "the thief (object); from திருடன் (tiruṭaṉ), thief"
+          "கைதுசெய்": "to arrest"
+      "போலீஸ் அவனைக் கைதுசெய்கிறது.":
+        native: "The police arrest him."
+        bases:
+          "அவனைக்": "him (object); from அவன் (avaṉ), he"
+          "கைதுசெய்கிறது": "arrests; from கைதுசெய் (kaitucey), to arrest"
+  "ta-8430":
+    native: "to punish"
+    notes:
+      n1: "To give a punishment; the person punished is the object."
+    examples:
+      "அவனைத் தண்டி.":
+        native: "Punish him."
+        bases:
+          "அவனைத்": "him (object); from அவன் (avaṉ), he"
+          "தண்டி": "to punish"
+      "நீதிபதி அவனைத் தண்டிக்கிறார்.":
+        native: "The judge punishes him."
+        bases:
+          "அவனைத்": "him (object); from அவன் (avaṉ), he"
+          "தண்டிக்கிறார்": "he punishes; from தண்டி (taṇṭi), to punish"
+  "ta-8431":
+    native: "to give a verdict"
+    notes:
+      n1: "Built from தீர்ப்பு (tīrppu), verdict and அளி (aḷi), to give."
+    examples:
+      "நீதிபதி தீர்ப்பளிக்கிறார்.":
+        native: "The judge gives a verdict."
+        bases:
+          "தீர்ப்பளிக்கிறார்": "he gives a verdict; from தீர்ப்பளி (tīrppaḷi), to give a verdict"
+      "நாளை தீர்ப்பளிக்கிறார்கள்.":
+        native: "They give the verdict tomorrow."
+        bases:
+          "தீர்ப்பளிக்கிறார்கள்": "they give a verdict; from தீர்ப்பளி (tīrppaḷi), to give a verdict"
+  "ta-8432":
+    native: "to follow; to obey"
+    notes:
+      n1: "To keep a rule or follow a leader."
+    examples:
+      "சட்டத்தைப் பின்பற்று.":
+        native: "Follow the law."
+        bases:
+          "சட்டத்தைப்": "the law (object); from சட்டம் (caṭṭam), law"
+          "பின்பற்று": "to follow; to obey"
+      "நாம் விதிமுறையைப் பின்பற்றுகிறோம்.":
+        native: "We follow the rules."
+        bases:
+          "விதிமுறையைப்": "the rule (object); from விதிமுறை (vitimuṟai), rule"
+          "பின்பற்றுகிறோம்": "we follow; from பின்பற்று (piṉpaṟṟu), to follow"
+  "ta-8433":
+    native: "to break; to violate"
+    notes:
+      n1: "To go against a rule or a law."
+    examples:
+      "விதியை மீறாதே.":
+        native: "Do not break the rule."
+        bases:
+          "விதியை": "the rule (object); from விதி (viti), rule; fate"
+          "மீறாதே": "do not break; from மீறு (mīṟu), to break"
+      "அவன் சட்டத்தை மீறுகிறான்.":
+        native: "He breaks the law."
+        bases:
+          "சட்டத்தை": "the law (object); from சட்டம் (caṭṭam), law"
+          "மீறுகிறான்": "he breaks; from மீறு (mīṟu), to break"
+  "ta-8434":
+    native: "to observe; to keep to"
+    notes:
+      n1: "To keep to a rule or a habit."
+    examples:
+      "விதிமுறையைக் கடைப்பிடி.":
+        native: "Keep to the rule."
+        bases:
+          "விதிமுறையைக்": "the rule (object); from விதிமுறை (vitimuṟai), rule"
+          "கடைப்பிடி": "to observe; to keep to"
+      "நாம் விதிமுறையைக் கடைப்பிடிக்கிறோம்.":
+        native: "We keep to the rule."
+        bases:
+          "விதிமுறையைக்": "the rule (object); from விதிமுறை (vitimuṟai), rule"
+          "கடைப்பிடிக்கிறோம்": "we keep to; from கடைப்பிடி (kaṭaippiṭi), to keep to"
+  "ta-8435":
+    native: "to accuse; to charge"
+    notes:
+      n1: "Built from குற்றம் (kuṟṟam), crime and சாட்டு (cāṭṭu), to lay on."
+    examples:
+      "அவனைக் குற்றம்சாட்டாதே.":
+        native: "Do not accuse him."
+        bases:
+          "அவனைக்": "him (object); from அவன் (avaṉ), he"
+          "குற்றம்சாட்டாதே": "do not accuse; from குற்றம்சாட்டு (kuṟṟamcāṭṭu), to accuse"
+      "அவர்கள் அவனைக் குற்றம்சாட்டுகிறார்கள்.":
+        native: "They accuse him."
+        bases:
+          "அவனைக்": "him (object); from அவன் (avaṉ), he"
+          "குற்றம்சாட்டுகிறார்கள்": "they accuse; from குற்றம்சாட்டு (kuṟṟamcāṭṭu), to accuse"
+  "ta-8436":
+    native: "to release; to set free"
+    notes:
+      n1: "Built from விடுதலை (viṭutalai), release and செய் (cey), to do."
+    examples:
+      "அவனை விடுதலைசெய்.":
+        native: "Release him."
+        bases:
+          "அவனை": "him (object); from அவன் (avaṉ), he"
+          "விடுதலைசெய்": "to release; to set free"
+      "நீதிபதி அவனை விடுதலைசெய்கிறார்.":
+        native: "The judge releases him."
+        bases:
+          "அவனை": "him (object); from அவன் (avaṉ), he"
+          "விடுதலைசெய்கிறார்": "he releases; from விடுதலைசெய் (viṭutalaicey), to release"
+  "ta-8437":
+    native: "illegal; unlawful"
+    notes:
+      n1: "Built from சட்டம் (caṭṭam), law and விரோதம் (virōtam), against."
+    examples:
+      "இது சட்டவிரோதமான வேலை.":
+        native: "This is illegal work."
+        bases:
+          "சட்டவிரோதமான": "illegal; unlawful"
+      "இது சட்டவிரோதமானது.":
+        native: "This is illegal."
+        bases:
+          "சட்டவிரோதமானது": "is illegal; from சட்டவிரோதமான (caṭṭavirōtamāṉa), illegal"
+  "ta-8438":
+    native: "legal; lawful"
+    notes:
+      n1: "Built from சட்டம் (caṭṭam), law and பூர்வம் (pūrvam), by the way of."
+    examples:
+      "இது சட்டபூர்வமான வேலை.":
+        native: "This is legal work."
+        bases:
+          "சட்டபூர்வமான": "legal; lawful"
+      "இது சட்டபூர்வமானது.":
+        native: "This is legal."
+        bases:
+          "சட்டபூர்வமானது": "is legal; from சட்டபூர்வமான (caṭṭapūrvamāṉa), legal"
+  "ta-8439":
+    native: "innocent; faultless"
+    notes:
+      n1: "It stands before a noun and does not change: குற்றமற்ற மனிதன் (kuṟṟamaṟṟa maṉitaṉ), an innocent person."
+    examples:
+      "அவன் குற்றமற்ற மனிதன்.":
+        native: "He is an innocent man."
+        bases:
+          "குற்றமற்ற": "innocent; faultless"
+      "குற்றமற்ற குழந்தை.":
+        native: "An innocent child."
+        bases:
+          "குற்றமற்ற": "innocent; faultless"
