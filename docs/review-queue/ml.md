@@ -13,3 +13,5 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ml-0744 | ml-grammar-conjunctions | Is എന്നാൽ (ennāl) used in speech mostly as well then, in that case, with but as a written sense? | Sonnet builder | 2026-11-23 |
 | ml-0745 | ml-grammar-conjunctions | Is കൂടാതെ (kūṭāte) natural at the start of a sentence for besides, also, given that it can also mean without? | Sonnet builder | 2026-11-23 |
 | unit-level | ml-grammar-conjunctions | The -ഉം (-uṁ) forms (അമ്മയും, അച്ഛനും, പഴവും) follow the rules of English Wiktionary and were not read by a speaker; are they right? | Sonnet builder | 2026-11-23 |
+| ml-0749 | ml-grammar-differences | Is സ്കൂളിലേക്ക് (skūḷilēkk) the natural spoken form for to school, and is the directional ending -ഇലേക്ക് (-ilēkk) the right one to teach for places? | Sonnet builder | 2026-11-23 |
+| ml-0755 | ml-grammar-differences | Is ഡോക്ടറാണ് (ḍōkṭarāṇ) with a full റ (ṟa) the usual written form for doctor plus is? | Sonnet builder | 2026-11-23 |

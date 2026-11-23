@@ -1,0 +1,151 @@
+schema: 1
+id: "ml-grammar-differences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ml-0748"
+    target: "വീട്ടിൽ"
+    reading: "vīṭṭil"
+    ipa: "ʋiːʈʈil"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ഞാൻ വീട്ടിൽ ഉണ്ട്."
+        reading: "ñāṉ vīṭṭil uṇṭ."
+        ipa: "ɲaːn ʋiːʈʈil uɳʈ"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "വീട്ടിൽ", ref: "ml-0009" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+      - target: "അമ്മ വീട്ടിൽ ഇല്ല."
+        reading: "amma vīṭṭil illa."
+        ipa: "əmma ʋiːʈʈil illa"
+        bases: [{ word: "അമ്മ", ref: "ml-0071" }, { word: "വീട്ടിൽ", ref: "ml-0009" }, { word: "ഇല്ല", ref: "ml-0002" }]
+  - id: "ml-0749"
+    target: "സ്കൂളിലേക്ക്"
+    reading: "skūḷilēkk"
+    ipa: "skuːɭileːkk"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ഞാൻ സ്കൂളിലേക്ക് പോകുന്നു."
+        reading: "ñāṉ skūḷilēkk pōkunnu."
+        ipa: "ɲaːn skuːɭileːkk poːkunnu"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "സ്കൂളിലേക്ക്", ref: "ml-0187" }, { word: "പോകുന്നു", ref: "ml-0112" }]
+      - target: "കുട്ടി സ്കൂളിലേക്ക് വരുന്നു."
+        reading: "kuṭṭi skūḷilēkk varunnu."
+        ipa: "kuʈʈi skuːɭileːkk ʋəɾunnu"
+        bases: [{ word: "കുട്ടി", ref: "ml-0082" }, { word: "സ്കൂളിലേക്ക്", ref: "ml-0187" }, { word: "വരുന്നു", ref: "ml-0010" }]
+  - id: "ml-0750"
+    target: "മലയാളത്തിൽ"
+    reading: "malayāḷattil"
+    ipa: "mələjaːɭət̪t̪il"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ഇത് മലയാളത്തിൽ എന്താണ്?"
+        reading: "it malayāḷattil entāṇ?"
+        ipa: "it̪ mələjaːɭət̪t̪il ent̪aːɳ"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "മലയാളത്തിൽ", base: "മലയാളം", reading: "malayāḷaṁ" }, { word: "എന്താണ്", ref: "ml-0032" }]
+      - target: "അവൾ മലയാളത്തിൽ പറയുന്നു."
+        reading: "avaḷ malayāḷattil paṟayunnu."
+        ipa: "əʋaɭ mələjaːɭət̪t̪il pəɾəjunnu"
+        bases: [{ word: "അവൾ", ref: "ml-0098" }, { word: "മലയാളത്തിൽ", base: "മലയാളം", reading: "malayāḷaṁ" }, { word: "പറയുന്നു", ref: "ml-0158" }]
+  - id: "ml-0751"
+    target: "ഒരു"
+    reading: "oru"
+    ipa: "oɾu"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "എനിക്ക് ഒരു ചായ വേണം."
+        reading: "enikk oru cāya vēṇaṁ."
+        ipa: "enikk oɾu tʃaːja ʋeːɳam"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "ചായ", ref: "ml-0270" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "വീട്ടിൽ ഒരു കുട്ടി ഉണ്ട്."
+        reading: "vīṭṭil oru kuṭṭi uṇṭ."
+        ipa: "ʋiːʈʈil oɾu kuʈʈi uɳʈ"
+        bases: [{ word: "വീട്ടിൽ", ref: "ml-0009" }, { word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "കുട്ടി", ref: "ml-0082" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+  - id: "ml-0752"
+    target: "ആണ്"
+    reading: "āṇ"
+    ipa: "aːɳ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇത് എന്റെ വീട് ആണ്."
+        reading: "it enṟe vīṭ āṇ."
+        ipa: "it̪ ent̪ɾe ʋiːʈ aːɳ"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "എന്റെ", ref: "ml-0043" }, { word: "വീട്", ref: "ml-0009" }, { word: "ആണ്", base: "ആണ്", reading: "āṇ" }]
+      - target: "അവൾ അധ്യാപിക ആണ്."
+        reading: "avaḷ adhyāpika āṇ."
+        ipa: "əʋaɭ əd̪ʱjaːpika aːɳ"
+        bases: [{ word: "അവൾ", ref: "ml-0098" }, { word: "അധ്യാപിക", ref: "ml-0189" }, { word: "ആണ്", base: "ആണ്", reading: "āṇ" }]
+  - id: "ml-0753"
+    target: "ഉണ്ട്"
+    reading: "uṇṭ"
+    ipa: "uɳʈ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വീട്ടിൽ ചായ ഉണ്ട്."
+        reading: "vīṭṭil cāya uṇṭ."
+        ipa: "ʋiːʈʈil tʃaːja uɳʈ"
+        bases: [{ word: "വീട്ടിൽ", ref: "ml-0009" }, { word: "ചായ", ref: "ml-0270" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+      - target: "എനിക്ക് ഒരു പുസ്തകം ഉണ്ട്."
+        reading: "enikk oru pustakaṁ uṇṭ."
+        ipa: "enikk oɾu pust̪əkam uɳʈ"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "ഒരു", ref: "ml-0751" }, { word: "പുസ്തകം", ref: "ml-0356" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+  - id: "ml-0754"
+    target: "ഞാൻ ചോറ് കഴിക്കുന്നു."
+    reading: "ñāṉ cōṟ kaḻikkunnu."
+    ipa: "ɲaːn tʃoːɾ kəɻikkunnu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "ചോറ്", ref: "ml-0261" }, { word: "കഴിക്കുന്നു", ref: "ml-0113" }]
+  - id: "ml-0755"
+    target: "അവൻ ഡോക്ടറാണ്."
+    reading: "avaṉ ḍōkṭaṟāṇ."
+    ipa: "əʋan ɖoːkʈəɾaːɳ"
+    alt_target: ["അവൻ ഡോക്ടർ ആണ്."]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "അവൻ", ref: "ml-0097" }, { word: "ഡോക്ടറാണ്", ref: "ml-0190" }]
+  - id: "ml-0756"
+    target: "അവൾ വരുന്നു."
+    reading: "avaḷ varunnu."
+    ipa: "əʋaɭ ʋəɾunnu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "അവൾ", ref: "ml-0098" }, { word: "വരുന്നു", ref: "ml-0010" }]
+  - id: "ml-0757"
+    target: "എനിക്ക് ഒരു പുസ്തകം ഉണ്ട്."
+    reading: "enikk oru pustakaṁ uṇṭ."
+    ipa: "enikk oɾu pust̪əkam uɳʈ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "ഒരു", ref: "ml-0751" }, { word: "പുസ്തകം", ref: "ml-0356" }, { word: "ഉണ്ട്", ref: "ml-0753" }]
+  - id: "ml-0758"
+    target: "ഇത് വീടാണോ?"
+    reading: "it vīṭāṇō?"
+    ipa: "it̪ ʋiːʈaːɳoː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "വീടാണോ", ref: "ml-0009" }]

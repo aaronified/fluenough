@@ -392,7 +392,9 @@ units:
     reading_passages:
       - { id: "how-to-card", text: { "en": "A short how-to card for making tea" } }
   # ml-quantities-sentences joins this unit.
-  - planned: { id: "ml-grammar-differences", grammar: "differences", words: 6 }
+  - decks: ["ml-grammar-differences"]
+    words: 6
+    grammar: ["differences"]
     listening_passages:
       - { id: "how-much-how-many", text: { "en": "Asking how much and how many at a stall" } }
     reading_passages:
