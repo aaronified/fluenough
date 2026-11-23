@@ -541,7 +541,9 @@ units:
       - { id: "irregular-heard", text: { "en": "A short exchange that uses irregular, after the help unit" } }
     reading_passages:
       - { id: "irregular-read", text: { "en": "A short text that uses irregular, after the help unit" } }
-  - planned: { id: "ta-grammar-pitfalls", grammar: "pitfalls" }
+  - decks: ["ta-grammar-pitfalls"]
+    words: 0
+    grammar: ["pitfalls"]
     listening_passages:
       - { id: "pitfalls-heard", text: { "en": "A short exchange that uses pitfalls, after the help unit" } }
     reading_passages:
