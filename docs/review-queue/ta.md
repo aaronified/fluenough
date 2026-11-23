@@ -76,3 +76,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1916 | ta-hobbies | Is ஜெயி (jeyi) the usual spoken word for win beside வெல்? | Sonnet builder | 2026-11-23 |
 | ta-1905 | ta-hobbies | Is பாடுறேன் the right spoken present of sing? | Sonnet builder | 2026-11-23 |
 | ta-1883 | ta-hobbies | Is சீட்டு விளையாடு the natural way to say play cards? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-past | Check the spoken past stems (படிச்ச, பாத்த, செஞ்ச, வச்ச) and the spoken second-person past. | Sonnet builder (ta-gram2) | 2026-11-23 |

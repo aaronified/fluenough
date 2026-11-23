@@ -452,7 +452,9 @@ units:
       - { id: "what-i-did", text: { "en": "Saying what you did last week" } }
     reading_passages:
       - { id: "wall-calendar", text: { "en": "A wall calendar with its months and holidays" } }
-  - planned: { id: "ta-grammar-past", grammar: "past" }
+  - decks: ["ta-grammar-past"]
+    words: 0
+    grammar: ["past-first", "past-second", "past-third"]
     listening_passages:
       - { id: "past-heard", text: { "en": "A short exchange that uses past, after the calendar unit" } }
     reading_passages:
