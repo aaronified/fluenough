@@ -40,7 +40,9 @@ class TodayPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
-    final Widget body = switch (state.status) {
+    // While the shown language's unit is read, one language at a time, the
+    // content is the same skeleton as while the catalog loads (ADR-0062).
+    final Widget body = switch (state.contentStatus) {
       CatalogStatus.loading => _loading(context, state, l10n),
       CatalogStatus.failed => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -44,6 +44,23 @@ class MemoryDeckFiles implements DeckFiles {
   Map<String, String> readAll(List<String> failed) => texts;
 }
 
+/// [DeckFiles] made of several, read one after the other.
+class JoinedDeckFiles implements DeckFiles {
+  const JoinedDeckFiles(this.parts);
+
+  final List<DeckFiles> parts;
+
+  @override
+  Iterable<String> get paths => <String>[
+    for (final part in parts) ...part.paths,
+  ];
+
+  @override
+  Map<String, String> readAll(List<String> failed) => <String, String>{
+    for (final part in parts) ...part.readAll(failed),
+  };
+}
+
 /// A stored snapshot a worker reads for itself.
 abstract interface class SnapshotReader {
   /// The snapshot's text, or null if there is none or it cannot be read.

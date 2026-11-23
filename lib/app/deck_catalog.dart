@@ -759,7 +759,13 @@ CatalogOutcome runCatalogJob(CatalogJob job) {
 
 /// What [parseWithSnapshot] found.
 class SnapshotParse {
-  const SnapshotParse(this.catalog, this.snapshot, this.hashed, this.reused);
+  const SnapshotParse(
+    this.catalog,
+    this.snapshot,
+    this.hashed,
+    this.reused,
+    this.shas,
+  );
 
   final Catalog catalog;
 
@@ -772,6 +778,9 @@ class SnapshotParse {
 
   /// How many files' kept trees were used in place of reading their YAML.
   final int reused;
+
+  /// The SHA-256 of every file, as the phone knew it or as it was hashed.
+  final Map<String, String> shas;
 }
 
 /// Parses [files] with [parse], reading the YAML of only those the
@@ -848,11 +857,11 @@ SnapshotParse parseWithSnapshot({
     }
     final snap = CatalogSnapshot(app: app, files: next);
     if (!forceWrite && stored != null && stored.sameFilesAs(snap)) {
-      return SnapshotParse(catalog, null, hashed, used.length);
+      return SnapshotParse(catalog, null, hashed, used.length, shas);
     }
-    return SnapshotParse(catalog, snap.encode(), hashed, used.length);
+    return SnapshotParse(catalog, snap.encode(), hashed, used.length, shas);
   } on Object {
-    return SnapshotParse(catalog, null, hashed, used.length);
+    return SnapshotParse(catalog, null, hashed, used.length, shas);
   }
 }
 

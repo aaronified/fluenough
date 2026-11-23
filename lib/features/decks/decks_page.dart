@@ -542,7 +542,7 @@ class _DecksPageState extends State<DecksPage> {
     final state = AppScope.of(context);
     final languages = _languages(state);
     final code = state.shownLanguage;
-    final ready = state.status == CatalogStatus.ready && code != null;
+    final ready = state.contentStatus == CatalogStatus.ready && code != null;
     // The buttons give way while the search is open (#527).
     final open = _isOpen(state);
 
@@ -575,7 +575,7 @@ class _DecksPageState extends State<DecksPage> {
     String? code,
   ) {
     final l10n = AppLocalizations.of(context)!;
-    switch (state.status) {
+    switch (state.contentStatus) {
       case CatalogStatus.loading:
         return Center(
           child: CircularProgressIndicator(

@@ -3,6 +3,7 @@ import 'dart:async';
 import '../core/decks/language_summary.dart';
 import '../core/decks/language_unit.dart';
 import '../core/logs/log_entry.dart';
+import '../core/models/deck.dart' show LanguageInfo;
 import 'added_decks.dart';
 import 'app_log.dart';
 import 'deck_catalog.dart';
@@ -22,6 +23,13 @@ enum CatalogMode { whole, lazy }
 /// The mode the app starts in. Whole stays the default until every consumer
 /// of the catalog has moved to the per-language API.
 const bool kLazyCatalogDefault = false;
+
+/// The mode a stored `catalogMode` setting names, else the app's default.
+CatalogMode catalogModeFor(String? setting) => switch (setting) {
+  'lazy' => CatalogMode.lazy,
+  'whole' => CatalogMode.whole,
+  _ => kLazyCatalogDefault ? CatalogMode.lazy : CatalogMode.whole,
+};
 
 /// Where a language's unit is in loading.
 enum LoadPhase { notLoaded, loading, loaded, failed }
@@ -46,12 +54,15 @@ class LanguageLoad {
 
 /// One language's parsed files, and the summary worked out with them.
 class LanguageCatalog {
-  const LanguageCatalog({
+  LanguageCatalog({
     required this.code,
     required this.catalog,
     required this.summary,
     required this.version,
-  });
+    Catalog? scoped,
+    bool adult = false,
+  }) : _scoped = scoped ?? catalog,
+       _scopedAdult = scoped == null ? null : adult;
 
   final String code;
 
@@ -64,6 +75,20 @@ class LanguageCatalog {
   /// Changes whenever the unit is read again, so that a cache keyed on a
   /// unit can tell.
   final int version;
+
+  Catalog _scoped;
+  bool? _scopedAdult;
+
+  /// The unit as a learner with Adult content [adult] has it (`forAdult`):
+  /// the worker made it for the setting the unit was read under, so that
+  /// only a change of the setting works it out again, for this unit alone.
+  Catalog scopedFor({required bool adult}) {
+    if (_scopedAdult != adult) {
+      _scoped = catalog.forAdult(adult: adult);
+      _scopedAdult = adult;
+    }
+    return _scoped;
+  }
 }
 
 /// Where each language's snapshot (ADR-0048, one file per language) is kept.
@@ -155,7 +180,22 @@ class CatalogSet {
   Future<_Layout>? _layout;
   Future<void> _tail = Future<void>.value();
   Catalog? _composed;
+  Catalog? _scopedComposed;
+  bool? _scopedComposedAdult;
   Catalog? _sharedOnly;
+  List<LanguageInfo> _directory = const <LanguageInfo>[];
+  int _directoryEpoch = -1;
+  bool? _directoryAdult;
+
+  /// The Adult content setting the units are scoped for when they are read.
+  /// Set before a unit is read; a unit read under another value is scoped
+  /// again, for that unit alone, when [scopedCatalog] is asked.
+  bool adult = false;
+
+  void _dirty() {
+    _composed = null;
+    _scopedComposed = null;
+  }
 
   /// Where [code] is in loading.
   LanguageLoad loadOf(String code) => _loads[code] ?? LanguageLoad.notLoaded;
@@ -169,6 +209,83 @@ class CatalogSet {
   /// The kept summary of [code], or null.
   LanguageSummary? summaryOf(String code) => summaries?[code];
 
+  /// Every summary kept (the loaded units' own when none is kept), which the
+  /// directory and the skill map are made from.
+  Iterable<LanguageSummary> get knownSummaries {
+    final book = summaries;
+    if (book != null) return book.all;
+    return <LanguageSummary>[for (final unit in _units.values) unit.summary];
+  }
+
+  /// The codes of the loaded units, sorted.
+  List<String> get loadedCodes => _units.keys.toList()..sort();
+
+  /// A number that changes whenever any unit is read again or forgotten, for
+  /// what is kept against the whole of what is loaded.
+  int get versionSum => _versions.values.fold<int>(0, (sum, v) => sum + v);
+
+  /// Opens the kept summaries and lists the files on the phone, which is all
+  /// a start from the cache needs before it knows which language to show.
+  Future<void> openCache() async {
+    await summaries?.open();
+    await _scan();
+  }
+
+  /// Looks at the files on the phone again the next time they are listed.
+  void rescan() {
+    _layout = null;
+  }
+
+  /// The codes of the languages that have files on the phone, in the order
+  /// the whole catalog lists its languages: the downloaded ones by folder,
+  /// then private packages, then the learner's own decks.
+  Future<List<String>> codesOnPhone() async {
+    final layout = await _scan();
+    final firsts = <(String, String)>[
+      for (final e in layout.byLanguage.entries)
+        if (e.value.isNotEmpty) (e.key, e.value.first),
+    ]..sort((a, b) => _byRankAndPath(a.$2, b.$2));
+    return <String>[for (final first in firsts) first.$1];
+  }
+
+  /// Every language the kept summaries name, as the language bar and the
+  /// screens that list languages read it, in the order the whole catalog
+  /// lists them. With Adult content off a language of adult decks alone is
+  /// not one. Without summaries, the loaded units' languages.
+  List<LanguageInfo> directory({required bool adult}) {
+    final book = summaries;
+    if (book == null) return catalog.languages;
+    if (_directoryEpoch == book.epoch && _directoryAdult == adult) {
+      return _directory;
+    }
+    final firsts = <(LanguageInfo, String)>[];
+    for (final summary in book.all) {
+      final paths = <String>[
+        for (final deck in summary.decks)
+          if (!deck.hidden && (adult || !deck.adult)) deck.path,
+      ]..sort(_byRankAndPath);
+      if (paths.isEmpty) continue;
+      firsts.add((summary.info, paths.first));
+    }
+    firsts.sort((a, b) => _byRankAndPath(a.$2, b.$2));
+    _directoryEpoch = book.epoch;
+    _directoryAdult = adult;
+    return _directory = List<LanguageInfo>.unmodifiable(<LanguageInfo>[
+      for (final first in firsts) first.$1,
+    ]);
+  }
+
+  static int _rank(String path) => path.startsWith(addedDeckPrefix)
+      ? 2
+      : path.startsWith(privateDeckPrefix)
+      ? 1
+      : 0;
+
+  static int _byRankAndPath(String a, String b) {
+    final byRank = _rank(a).compareTo(_rank(b));
+    return byRank != 0 ? byRank : a.compareTo(b);
+  }
+
   /// What is loaded, as one catalog: the loaded units' decks and files, in
   /// the order a whole read gives them.
   Catalog get catalog => _composed ??= _compose();
@@ -181,11 +298,31 @@ class CatalogSet {
     ]);
   }
 
+  /// [catalog] as a learner with Adult content [adult] has it: each unit's
+  /// own scoped catalog, composed, so that a change of the setting never
+  /// loops over a language that is not loaded.
+  Catalog scopedCatalog({required bool adult}) {
+    final kept = _scopedComposed;
+    if (kept != null && _scopedComposedAdult == adult) return kept;
+    final Catalog next;
+    if (_units.isEmpty) {
+      next = _sharedOnly ?? Catalog.empty;
+    } else {
+      final codes = _units.keys.toList()..sort();
+      next = Catalog.compose(<Catalog>[
+        for (final code in codes) _units[code]!.scopedFor(adult: adult),
+      ]);
+    }
+    _scopedComposed = next;
+    _scopedComposedAdult = adult;
+    return next;
+  }
+
   /// Forgets what is loaded of [code], or of every language, and the list of
   /// files, so that the next read looks at the phone again.
   void invalidate([String? code]) {
     _layout = null;
-    _composed = null;
+    _dirty();
     _generation++;
     if (code == null) {
       _units.clear();
@@ -228,7 +365,13 @@ class CatalogSet {
       }
     }
     _sharedOnly = DeckCatalog.parseAll(texts);
-    _composed = null;
+    _dirty();
+  }
+
+  /// Reads the shared files alone (the theme list and the sections): what a
+  /// phone with no language on it has to show.
+  Future<void> loadShared() async {
+    await _readSharedOnly(await _scan());
   }
 
   /// The unit of [code], read now if it is not loaded: in a worker, after
@@ -268,12 +411,14 @@ class CatalogSet {
       catalog: outcome.catalog,
       summary: outcome.summary,
       version: ++_clock,
+      scoped: outcome.scoped,
+      adult: outcome.adult,
     );
     if (generation == _generation) {
       _units[code] = unit;
       _versions[code] = unit.version;
       _loads[code] = LanguageLoad.loaded;
-      _composed = null;
+      _dirty();
     }
     return unit;
   }
@@ -290,7 +435,7 @@ class CatalogSet {
       _units.remove(code);
       _loads.remove(code);
       _versions[code] = ++_clock;
-      _composed = null;
+      _dirty();
       try {
         await summaries?.open();
         await summaries?.remove(code);
@@ -325,27 +470,33 @@ class CatalogSet {
     await summaries?.open();
     final layout = await _scan();
     final known = await _known();
-    final wanted = codes ?? layout.byLanguage.keys;
-    final shas = <String, Map<String, String>>{
-      for (final code in wanted)
-        code: <String, String>{
-          for (final path in layout.byLanguage[code] ?? const <String>[])
-            path: ?known[path],
-        },
-    };
-    final checked = await verifier(
-      VerifyJob(summaries: summaries?.text, shas: shas, app: app),
+    // A language that has a summary and no files left is checked too, so
+    // that its summary is found stale and forgotten.
+    final wanted = codes ?? _everyCode(layout);
+    final shas = <String, Map<String, String>>{};
+    final unhashed = <String, DeckFiles>{};
+    for (final code in wanted) {
+      final paths = layout.byLanguage[code] ?? const <String>[];
+      shas[code] = <String, String>{
+        for (final path in paths) path: ?known[path],
+      };
+      // A deck the learner added, a private package and a shared file of the
+      // language are not in the download manifest: the verify job reads and
+      // hashes them, so that they are vouched for like any other file.
+      final unknown = <String>[
+        for (final path in paths)
+          if (!known.containsKey(path)) path,
+      ];
+      if (unknown.isNotEmpty) unhashed[code] = await _filesOf(unknown, layout);
+    }
+    final verdicts = await verifier(
+      VerifyJob(
+        summaries: summaries?.text,
+        shas: shas,
+        local: unhashed,
+        app: app,
+      ),
     );
-    // A deck the learner added or a private package is not in the download
-    // manifest, so no digest vouches for it: its language is made again.
-    bool local(String code) => (layout.byLanguage[code] ?? const <String>[])
-        .any((path) => layout.from[path] != _From.source);
-    final verdicts = <String, CacheVerdict>{
-      for (final e in checked.entries)
-        e.key: local(e.key)
-            ? const CacheVerdict.mismatch('local decks')
-            : e.value,
-    };
     marks?.record(
       'catalog.verify',
       watch.elapsedMilliseconds,
@@ -370,6 +521,36 @@ class CatalogSet {
       rebuilt.add(code);
     }
     return rebuilt;
+  }
+
+  /// Every language that has files on the phone or a kept summary.
+  Set<String> _everyCode(_Layout layout) => <String>{
+    ...layout.byLanguage.keys,
+    ...?summaries?.all.map((summary) => summary.code),
+  };
+
+  /// The files at [paths] as a worker reads them: those on disk by their
+  /// place, the rest read now.
+  Future<DeckFiles> _filesOf(List<String> paths, _Layout layout) async {
+    final disk = <String, String>{};
+    final texts = <String, String>{};
+    for (final path in paths) {
+      final store = _store(layout.from[path]!);
+      final at = locateOn(store, path);
+      if (at != null) {
+        disk[path] = at;
+        continue;
+      }
+      try {
+        texts[path] = await store.read(path);
+      } on Object catch (e, stack) {
+        log?.warning(describeError('Deck file $path', e, stack));
+      }
+    }
+    return JoinedDeckFiles(<DeckFiles>[
+      DiskDeckFiles(disk),
+      MemoryDeckFiles(texts),
+    ]);
   }
 
   Future<Map<String, String>> _known() async {
@@ -431,6 +612,8 @@ class CatalogSet {
       snapshot: snapshots?.readerFor(code),
       seed: snapshots?.seed,
       app: app,
+      adult: adult,
+      stored: summaries?[code],
     );
   }
 
@@ -451,13 +634,22 @@ class CatalogSet {
         log?.warning(describeError('Keeping the $code snapshot', e, stack));
       }
     }
+    // A summary kept as it is, because its stamp is the one the job found,
+    // is not written again.
     final book = summaries;
-    if (book != null) {
+    final kept = book?[code]?.stamp;
+    if (book != null && !_sameStamp(kept, outcome.summary.stamp)) {
       unawaited(
         book.put(outcome.summary).then<void>((_) {}, onError: (Object _) {}),
       );
     }
   }
+
+  static bool _sameStamp(SummaryStamp? kept, SummaryStamp found) =>
+      kept != null &&
+      kept.format == found.format &&
+      kept.filesDigest == found.filesDigest &&
+      kept.app == found.app;
 
   DeckSource _store(_From origin) => switch (origin) {
     _From.source => source,

@@ -45,6 +45,8 @@ import '../core/updates/release_notes.dart';
 import '../core/data/themes.dart';
 import '../core/grading/synonym_sets.dart';
 import '../core/decks/adult_gate.dart';
+import '../core/decks/language_summary.dart' show skillMapOf;
+import '../core/decks/language_unit.dart' show isSharedUnitPath;
 import '../core/models/fact.dart';
 import '../core/models/situation.dart';
 import '../core/scheduling/ability.dart';
@@ -64,6 +66,7 @@ import 'unlocks.dart';
 import 'daily_plan.dart';
 import '../core/decks/ipa_course.dart';
 import '../core/decks/script_fonts.dart';
+import 'catalog_set.dart';
 import 'deck_catalog.dart';
 import 'private_languages.dart';
 import 'private_store.dart';
@@ -80,6 +83,7 @@ import 'mail_share.dart';
 import 'fsrs_tuner.dart';
 import 'database_progress.dart';
 import 'memory_progress.dart';
+import 'startup_language.dart';
 import 'startup_marks.dart';
 import 'pacing.dart';
 import '../features/stats/progress_numbers.dart';
@@ -280,6 +284,7 @@ class AppState extends ChangeNotifier {
     _reviewerToDownloads();
     this.settings.addListener(_languageShownChanged);
     addListener(_rememberShown);
+    addListener(_ensureShownLoaded);
     reminders = ReminderService(
       scheduler: reminderScheduler,
       settings: this.settings,
@@ -357,8 +362,10 @@ class AppState extends ChangeNotifier {
   bool get needsVolume => settings.soundOn && volume.muted;
 
   /// An app on fakes, for widget tests: the repository's decks, as a phone
-  /// that downloaded every language has them, unless [decks] is given, decks added in memory, no voices unless [tts] has some, empty in-memory
-  /// progress, links that open unless [links] says otherwise, phone settings
+  /// that downloaded every language has them, unless [decks] is given (or a
+  /// [catalog], which then is the one read), decks added in memory, no voices
+  /// unless [tts] has some, empty in-memory progress, links that open unless
+  /// [links] says otherwise, phone settings
   /// that open nothing unless [systemSettings] does, no network
   /// for the update check unless [releases] answers, none for the release
   /// notes unless [releaseNotes] does, no download unless
@@ -367,6 +374,7 @@ class AppState extends ChangeNotifier {
   /// seeded the same every time.
   factory AppState.test({
     DeckSource? decks,
+    DeckCatalog? catalog,
     TtsEngine tts = const NullTtsEngine(),
     ClipPlayer clips = const NullClipPlayer(),
     CardMedia media = const NoCardMedia(),
@@ -410,12 +418,14 @@ class AppState extends ChangeNotifier {
     String? currentProfileId,
   }) {
     final fixed = now ?? DateTime(2026, 9, 28, 19);
+    var made = catalog;
+    made ??= DeckCatalog(
+      decks ?? RepositoryDeckSource(),
+      added: addedDecks ?? MemoryDeckStore(),
+      privateStore: privateStore,
+    );
     final state = AppState(
-      catalog: DeckCatalog(
-        decks ?? RepositoryDeckSource(),
-        added: addedDecks ?? MemoryDeckStore(),
-        privateStore: privateStore,
-      ),
+      catalog: made,
       progress: progress ?? MemoryProgress(),
       tts: tts,
       clips: clips,
@@ -843,11 +853,77 @@ class AppState extends ChangeNotifier {
   // Decks
 
   CatalogStatus _status = CatalogStatus.loading;
-  Catalog _catalog = Catalog.empty;
+
+  /// The catalog as the whole read made it; read through [_catalog].
+  Catalog _wholeCatalog = Catalog.empty;
   Object? _loadError;
   Future<void>? _loading;
 
+  /// Whether the catalog is read one language at a time, from the cache
+  /// (ADR-0062), and not every language together. Hidden behind a setting.
+  bool get _perLanguage => deckCatalog.mode == CatalogMode.lazy;
+
+  /// What is loaded, as one catalog: every language when read whole, else
+  /// the languages whose units are loaded.
+  Catalog get _catalog =>
+      _perLanguage ? deckCatalog.catalogSet.catalog : _wholeCatalog;
+
   CatalogStatus get status => _status;
+
+  /// Where the shown language's content is: [status] while the catalog loads
+  /// and when it is read whole; read one language at a time, loading while
+  /// the shown language's unit is read, and failed if that read failed. The
+  /// screens that draw a language's content draw a skeleton for loading.
+  CatalogStatus get contentStatus {
+    if (_status != CatalogStatus.ready || !_perLanguage) return _status;
+    final shown = shownLanguage;
+    if (shown == null) return _status;
+    return switch (deckCatalog.catalogSet.loadOf(shown).phase) {
+      LoadPhase.loaded => CatalogStatus.ready,
+      LoadPhase.failed => CatalogStatus.failed,
+      LoadPhase.notLoaded || LoadPhase.loading => CatalogStatus.loading,
+    };
+  }
+
+  /// Where [code]'s unit is in loading; loaded for every language when the
+  /// catalog is read whole.
+  LanguageLoad languageLoad(String code) =>
+      _perLanguage ? deckCatalog.catalogSet.loadOf(code) : LanguageLoad.loaded;
+
+  /// Reads [code]'s unit now if it is not loaded, in a worker (ADR-0062): a
+  /// thin pass-through to the catalog set that tells the screens when it is
+  /// done, and does nothing when the catalog is read whole. Never throws: a
+  /// language that cannot be read is told in the log and stays failed, and a
+  /// later call tries again.
+  Future<void> ensureLoaded(String code) async {
+    if (!_perLanguage || _disposed) return;
+    final set = deckCatalog.catalogSet;
+    if (set.loadOf(code).isLoaded) return;
+    set.adult = settings.adultContent;
+    try {
+      await set.ensureLoaded(code);
+    } on Object {
+      // Told in the log by the catalog set.
+    }
+    if (_disposed) return;
+    // Another language's queues stay as they were: only this unit's version
+    // moved, and what is kept about this language reads it.
+    _notifyKeepingStructure();
+    if (set.loadOf(code).isLoaded) unawaited(refreshVoices());
+  }
+
+  /// Reads the shown language's unit when it is not read yet, as after the
+  /// learner picked another language, switched profile or removed the shown
+  /// one. A unit that failed is not read again until [ensureLoaded] asks.
+  void _ensureShownLoaded() {
+    if (!_perLanguage || _disposed || _status != CatalogStatus.ready) return;
+    final shown = shownLanguage;
+    if (shown == null) return;
+    if (deckCatalog.catalogSet.loadOf(shown).phase != LoadPhase.notLoaded) {
+      return;
+    }
+    unawaited(ensureLoaded(shown));
+  }
 
   /// Why the catalog failed to load, when [status] is [CatalogStatus.failed].
   /// A deck that fails to parse is not this: it is a [BrokenDeck].
@@ -885,6 +961,11 @@ class AppState extends ChangeNotifier {
   /// card out of it (owner, 2026-11-16: everything is viewable and learnable).
   Catalog get _view {
     final adult = settings.adultContent;
+    // One language at a time, each unit was scoped by its worker, and only a
+    // change of the setting scopes a loaded unit again, that unit alone.
+    if (_perLanguage) {
+      return deckCatalog.catalogSet.scopedCatalog(adult: adult);
+    }
     if (!identical(_adultOf, _catalog) || _adultOn != adult) {
       _adultOf = _catalog;
       _adultOn = adult;
@@ -1096,8 +1177,12 @@ class AppState extends ChangeNotifier {
     return <DeckEntry>[for (final (_, entry) in byRank) entry];
   }
 
-  /// Every language the catalog teaches, one per code.
-  List<LanguageInfo> get languages => _view.languages;
+  /// Every language the catalog teaches, one per code. Read one language at
+  /// a time, from the directory of language summaries, which is complete from
+  /// the start: no language has to be loaded to be listed.
+  List<LanguageInfo> get languages => _perLanguage
+      ? deckCatalog.catalogSet.directory(adult: settings.adultContent)
+      : _view.languages;
 
   /// The languages the language bar at the top of Today, Decks and
   /// Progress offers (#461, #528): those the profile learns that have
@@ -1138,6 +1223,9 @@ class AppState extends ChangeNotifier {
   void showLanguage(String code, {bool allOff = false}) {
     settings.languageChoice = code;
     if (allOff) settings.progressAll = false;
+    // The bar shows the choice at once; the content draws a skeleton until
+    // the language's unit is read (ADR-0062).
+    if (_perLanguage) unawaited(ensureLoaded(code));
   }
 
   /// Whether Progress counts every language together (#528). Never: the
@@ -1200,11 +1288,15 @@ class AppState extends ChangeNotifier {
   Future<void> _reloadDecks({String cause = 'decks changed'}) async {
     log.event('Decks reload: $cause');
     await _span('reloadDecks', () async {
-      deckCatalog.invalidate();
-      _catalog = await deckCatalog.load();
-      _status = CatalogStatus.ready;
-      _loadError = null;
-      _mapSkills();
+      if (_perLanguage) {
+        await _reloadLanguages();
+      } else {
+        deckCatalog.invalidate();
+        _wholeCatalog = await deckCatalog.load();
+        _status = CatalogStatus.ready;
+        _loadError = null;
+        _mapSkills();
+      }
       // A different skill map is replayed on an isolate: wait for it, so
       // that the decks and the progress change together.
       if (progress case final DatabaseProgress p) await p.skillsSettled;
@@ -1212,6 +1304,43 @@ class AppState extends ChangeNotifier {
       notifyListeners();
       await refreshVoices();
     }, extra: <String, Object?>{'cause': cause});
+  }
+
+  /// Set when the theme list or the sections changed, which every language
+  /// unit is read with: the loaded units are read again.
+  bool _sharedUnitChanged = false;
+
+  /// [_reloadDecks] when the catalog is read one language at a time: only the
+  /// languages whose files changed are made again, in a worker, by comparing
+  /// each language's cache with the files (ADR-0062); a change of a shared
+  /// file reads the loaded units again. No other language is touched.
+  Future<void> _reloadLanguages() async {
+    final set = deckCatalog.catalogSet;
+    set.adult = settings.adultContent;
+    try {
+      if (_sharedUnitChanged) {
+        _sharedUnitChanged = false;
+        final loaded = set.loadedCodes;
+        final shown = shownLanguage;
+        if (shown != null && loaded.remove(shown)) loaded.insert(0, shown);
+        set.invalidate();
+        for (final code in loaded) {
+          try {
+            await set.ensureLoaded(code);
+          } on Object catch (e, stack) {
+            log.warning(describeError('Reading $code again failed', e, stack));
+          }
+        }
+      } else {
+        set.rescan();
+        await set.verifyAndRebuild();
+      }
+    } on Object catch (e, stack) {
+      log.warning(describeError('Reading the changed decks failed', e, stack));
+    }
+    _status = CatalogStatus.ready;
+    _loadError = null;
+    _mapSkills();
   }
 
   /// Reports to the log what in the decks' kind fields, and in the sections
@@ -1280,6 +1409,14 @@ class AppState extends ChangeNotifier {
     await _loading;
     final downloads = deckDownloads;
     if (_disposed || downloads == null) return;
+    // One language at a time, nothing is patched into a whole catalog: the
+    // files of a language are checked against its cache, and the theme list
+    // and the sections, which every unit is read with, read the units again.
+    if (_perLanguage) {
+      if (paths.any(isSharedUnitPath)) _sharedUnitChanged = true;
+      await _reloadCoalesced('shared-file, per language');
+      return;
+    }
     if (_reloading != null) {
       await _reloadCoalesced('shared-file, after a reload');
       return;
@@ -1296,7 +1433,7 @@ class AppState extends ChangeNotifier {
     }
     log.event('Decks reload: shared-file patched, ${paths.length} files');
     deckCatalog.replaceLoaded(patched);
-    _catalog = patched;
+    _wholeCatalog = patched;
     _logKindProblems();
     notifyListeners();
   }
@@ -1475,6 +1612,21 @@ class AppState extends ChangeNotifier {
   /// Recognition (ADR-0034).
   void _mapSkills() {
     final watch = Stopwatch()..start();
+    // One language at a time, the map is the union of what each language's
+    // summary holds: no card of any deck is looped over here, and loading a
+    // unit never changes it (ADR-0062).
+    if (_perLanguage) {
+      progress.skills = skillMapOf(deckCatalog.catalogSet.knownSummaries);
+      marks?.record(
+        'mapSkills',
+        watch.elapsedMilliseconds,
+        extra: <String, Object?>{
+          'reviews': progress.log.length,
+          'from': 'summaries',
+        },
+      );
+      return;
+    }
     final scriptDecks = <String>{
       for (final entry in decks)
         if (needsAlphabet(entry)) entry.id,
@@ -1504,6 +1656,109 @@ class AppState extends ChangeNotifier {
     );
   }
 
+  /// The language the app opens on, worked out as [languageChoices] and
+  /// [shownLanguage] work it out but over [codes], the languages on the
+  /// phone, so that no catalog is needed (ADR-0062).
+  String? _startupLanguage(Iterable<String> codes) => StartupLanguage.resolve(
+    chosen: settings.languageChoice,
+    learning: <String>[
+      ...<String>{...settings.learningLanguages, ...?currentProfile.languages},
+    ],
+    learns: currentProfile.learns,
+    available: codes,
+  );
+
+  /// Starts from the caches (ADR-0062, cache-first): the kept summaries give
+  /// the languages and the skill map at once, so the review log is replayed
+  /// under the map while only the language to show is read, in a worker from
+  /// its snapshot. Nothing is made again here for a cache that is valid; the
+  /// first start in this mode, with no summaries yet, makes them now, and
+  /// [_verifyCaches] later checks the rest off the UI isolate.
+  Future<void> _loadStartup() async {
+    final set = deckCatalog.catalogSet;
+    set.adult = settings.adultContent;
+    await _span('catalog.summaries', set.openCache);
+    final codes = await set.codesOnPhone();
+    final missing = <String>[
+      for (final code in codes)
+        if (set.summaryOf(code) == null) code,
+    ];
+    var listed = codes;
+    if (missing.isEmpty) {
+      // The languages the summaries list that still have files.
+      final onPhone = codes.toSet();
+      listed = <String>[
+        for (final l in set.directory(adult: settings.adultContent))
+          if (onPhone.contains(l.code)) l.code,
+      ];
+    }
+    final startup = _startupLanguage(listed);
+    final first = startup == null ? null : set.ensureLoaded(startup);
+    first?.ignore();
+    // With every summary kept the skill map is known now, and the review log
+    // is replayed under it while the language is read.
+    if (missing.isEmpty) _mapSkills();
+    if (first != null) {
+      try {
+        await first;
+      } on Object {
+        // Told in the log by the catalog set: the language shows as failed,
+        // with a retry, and the app opens on what else works.
+      }
+    }
+    for (final code in missing) {
+      if (code == startup) continue;
+      try {
+        await set.summarise(code);
+      } on Object catch (e, stack) {
+        log.warning(describeError('Reading the $code decks failed', e, stack));
+      }
+    }
+    if (missing.isNotEmpty) _mapSkills();
+    if (set.loadedCodes.isEmpty) await set.loadShared();
+  }
+
+  /// Checks every kept cache against the files on the phone, in a worker and
+  /// without reading a deck, and makes again only the languages whose cache
+  /// does not match: one at a time, in idle slots, the shown language first
+  /// (ADR-0062). The new cache replaces the old and is swapped in.
+  Future<void> _verifyCaches() async {
+    try {
+      final set = deckCatalog.catalogSet;
+      final verdicts = await set.verify();
+      final stale = <String>[
+        for (final e in verdicts.entries)
+          if (!e.value.matches) e.key,
+      ];
+      final shown = shownLanguage;
+      if (shown != null && stale.remove(shown)) stale.insert(0, shown);
+      for (final code in stale) {
+        if (_disposed) return;
+        log.event('The $code cache does not match: ${verdicts[code]}');
+        await _idleSlot();
+        if (_disposed) return;
+        set.adult = settings.adultContent;
+        await set.summarise(code);
+        if (_disposed) return;
+        _mapSkills();
+        notifyListeners();
+      }
+    } on Object catch (e, stack) {
+      log.warning(describeError('Checking the decks cache failed', e, stack));
+    }
+  }
+
+  /// Completes in an idle slot between frames, or at once where there is no
+  /// scheduler to wait for.
+  Future<void> _idleSlot() {
+    try {
+      final binding = SchedulerBinding.instance;
+      return binding.scheduleTask<void>(() {}, Priority.idle);
+    } catch (_) {
+      return Future<void>.value();
+    }
+  }
+
   Future<void> _load() async {
     try {
       // Progress may still be reading its log (#857): the catalog reads
@@ -1514,10 +1769,16 @@ class AppState extends ChangeNotifier {
       // What is downloaded, before the catalog reads it. Never the network.
       final downloads = deckDownloads;
       if (downloads != null) await _span('downloads.open', downloads.open);
-      _catalog = await _span('catalog', deckCatalog.load);
-      // The skill map first: the review log is replayed under it, so that
-      // no replay is left to make on the UI isolate (#1699).
-      _mapSkills();
+      if (_perLanguage) {
+        // From the caches: only the language to show is read, and the skill
+        // map comes from the summaries (ADR-0062).
+        await _span('catalog', _loadStartup);
+      } else {
+        _wholeCatalog = await _span('catalog', deckCatalog.load);
+        // The skill map first: the review log is replayed under it, so that
+        // no replay is left to make on the UI isolate (#1699).
+        _mapSkills();
+      }
       await _span('progress ready (waited)', () => progressReady);
       await recommendationProgress.load();
       _status = CatalogStatus.ready;
@@ -1530,6 +1791,7 @@ class AppState extends ChangeNotifier {
       });
       _logKindProblems();
       unawaited(_afterLaunch());
+      if (_perLanguage) unawaited(_verifyCaches());
     } catch (error, stack) {
       _loadError = error;
       _status = CatalogStatus.failed;
@@ -1933,6 +2195,8 @@ class AppState extends ChangeNotifier {
       ]),
       extra: <String, Object?>{'tags': tags.length},
     );
+    // A language read after the first screens asks without being waited for.
+    if (_disposed) return;
     final before = _queueInputs();
     for (final (index, tag) in tags.indexed) {
       _voices[tag] = answers[index];
@@ -2404,7 +2668,18 @@ class AppState extends ChangeNotifier {
     _settingsVersion,
     _structureVersion,
     now().millisecondsSinceEpoch ~/ 30000,
+    _unitStamp(scope),
   );
+
+  /// What the loaded units were read as, for a value kept about [scope]
+  /// ('*' for all): reading another language's unit leaves a language's kept
+  /// values as they were, and reading its own drops them (ADR-0062). Always 0
+  /// when the catalog is read whole.
+  int _unitStamp(String scope) {
+    if (!_perLanguage) return 0;
+    final set = deckCatalog.catalogSet;
+    return scope == '*' ? set.versionSum : set.versionOf(scope);
+  }
 
   // Batching (#852): Today's value for a language that is not among the
   // first few is worked out in an idle slot, one language at a time, and
@@ -4699,6 +4974,7 @@ class AppState extends ChangeNotifier {
       ..removeListener(_marksChanged)
       ..dispose();
     removeListener(_structureChanged);
+    removeListener(_ensureShownLoaded);
     shellTab
       ..removeListener(_logTab)
       ..dispose();

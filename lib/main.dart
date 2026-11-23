@@ -12,6 +12,7 @@ import 'app/app_log.dart';
 import 'app/app_state.dart';
 import 'app/synonym_loader.dart';
 import 'app/backup_store.dart';
+import 'app/catalog_set.dart';
 import 'app/deck_catalog.dart';
 import 'app/deck_downloads.dart';
 import 'app/downloaded_decks.dart';
@@ -179,6 +180,9 @@ Future<void> main() async {
     privateStore: privateStore,
     log: log,
     marks: marks,
+    // Whole by default; the hidden catalogMode setting reads it one language
+    // at a time, from the cache (ADR-0062).
+    mode: catalogModeFor(storage.settings.catalogMode),
     parser: (texts) => parseInIsolate(texts, onFallback: log.warning),
     // The decks' YAML, kept as JSON between launches and read again
     // only for a file whose SHA-256 changed (#875, ADR-0048). The files
@@ -205,8 +209,6 @@ Future<void> main() async {
         runLanguageJobInIsolate(job, onFallback: log.warning),
     languageVerifier: (job) => verifyInIsolate(job, onFallback: log.warning),
   );
-  // A language's files changed: its unit and summary are made again.
-  deckDownloads.onLanguageChanged = catalog.languageChanged;
   final state = AppState(
     catalog: catalog,
     // The Find my level question banks, made once per language and deck set.
