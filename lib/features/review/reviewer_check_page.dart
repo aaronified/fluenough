@@ -22,6 +22,7 @@ import '../../ui/widgets/target_text.dart';
 import '../drill/choice_tile.dart';
 import '../placement/placement_questions.dart' show PlacementFrame;
 import 'review_source.dart' show otherChecksOf;
+import 'review_loader.dart';
 import 'review_waiting.dart' show languageNamesOf;
 
 // The reviewer check's screens (ADR-0058, decision 1; the reviewer-ux mockup,
@@ -58,8 +59,15 @@ ReviewerCheckRow _rowOf(AppState state, String code) {
 class ReviewerCheckCoursesPage extends StatelessWidget {
   const ReviewerCheckCoursesPage({super.key});
 
+  /// One language at a time, each course's decks are read as the page opens:
+  /// whether a check can be offered for it depends on its cards.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => ReviewLoader(
+    languages: (state) => state.learningCodes,
+    child: Builder(builder: _page),
+  );
+
+  Widget _page(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     return Scaffold(
@@ -98,6 +106,9 @@ class ReviewerCheckCoursesPage extends StatelessWidget {
   ) {
     final l10n = AppLocalizations.of(context)!;
     final name = names[code] ?? code;
+    if (state.isLanguageReading(code)) {
+      return GroupedTile(title: name, subtitle: l10n.commonLoadingDecks);
+    }
     return switch (_rowOf(state, code)) {
       ReviewerCheckRow.take => GroupedTile(
         title: name,
@@ -126,6 +137,8 @@ Future<void> startReviewerCheck(
 ) async {
   final state = AppScope.read(context);
   final navigator = Navigator.of(context);
+  // One language at a time: the course's decks are read first.
+  await state.ensureLoaded(code);
   final plan = state.placementRunPlan(code, native: state.courseNative(code));
   if (plan == null) return;
   await navigator.push(

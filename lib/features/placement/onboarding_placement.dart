@@ -75,10 +75,9 @@ void saveLanguagePlacement(AppState state, PlacementFound found) {
   final settings = state.settings;
   for (final MapEntry(key: code, value: placed) in found.placed.entries) {
     if (placed.isEmpty) continue;
-    final replaced = <String>{
-      for (final entry in state.decks)
-        if (entry.language.code == code) entry.id,
-    };
+    // The ids of the language's decks come from the language directory: no
+    // unit has to be read to name them (ADR-0062).
+    final replaced = state.deckIdsOf(code);
     settings.placedDecks = <String>{
       for (final id in settings.placedDecks)
         if (!replaced.contains(id)) id,

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
@@ -59,6 +61,14 @@ enum _Step { why, age, words }
 class _OffensiveReviewPageState extends State<OffensiveReviewPage> {
   _Step _step = _Step.why;
 
+  /// One language at a time, the language's unit is read as the page opens
+  /// (ADR-0062): its words are drawn once it is there.
+  @override
+  void initState() {
+    super.initState();
+    unawaited(AppScope.read(context).ensureLoaded(widget.language));
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -108,6 +118,16 @@ class _OffensiveReviewPageState extends State<OffensiveReviewPage> {
   ) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
+    if (state.isLanguageReading(language.code)) {
+      return Scaffold(
+        appBar: AppBar(leading: const CloseButton(), title: title),
+        body: Center(
+          child: CircularProgressIndicator(
+            semanticsLabel: l10n.commonLoadingDecks,
+          ),
+        ),
+      );
+    }
     final reviewing = state.reviewing;
     final decks = offensiveDecksIn(state, language.code);
     final pairs = offensivePairsIn(state, language.code);

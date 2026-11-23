@@ -3,6 +3,7 @@ import '../../app/deck_catalog.dart';
 import '../../app/language_skills.dart' show LanguageSkillsOnState;
 import '../../app/reviewing.dart' show Reviewing;
 import '../../core/decks/deck_index.dart' show IndexLanguage;
+import '../../core/decks/language_summary.dart' show SummaryCourse;
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/proposal.dart';
@@ -36,6 +37,24 @@ import 'review_words.dart';
 /// they know, and whether they read each one's script.
 ReviewerLanguages reviewerOf(AppState state) => state.reviewerLanguages();
 
+/// The courses with decks on the phone, a language and the one its decks
+/// are taught from. Read one language at a time (ADR-0062), from the
+/// language directory, so that no unit has to be loaded to know them; read
+/// whole, from the decks.
+Set<ReviewPair> pairsOnPhone(AppState state) {
+  if (!state.readsPerLanguage) {
+    return <ReviewPair>{for (final deck in state.decks) pairOf(deck)};
+  }
+  return <ReviewPair>{
+    for (final language in state.languages)
+      for (final course in _coursesOf(state, language.code))
+        ReviewPair(language.code, course.native),
+  };
+}
+
+List<SummaryCourse> _coursesOf(AppState state, String code) =>
+    state.summaryOf(code)?.courses ?? const <SummaryCourse>[];
+
 /// Every course a reviewer could review (#462), a language and the one its
 /// decks are taught from: each in the deck index, downloaded or not, then
 /// any other on the phone.
@@ -44,8 +63,7 @@ List<ReviewPair> offeredPairs(AppState state) => <ReviewPair>{
       in state.deckDownloads?.index?.languages ?? const <IndexLanguage>[])
     for (final native in language.natives)
       ReviewPair(language.code, native.code),
-  for (final deck in state.decks)
-    ReviewPair(deck.language.code, deck.deck.native.code),
+  ...pairsOnPhone(state),
 }.toList();
 
 /// The courses [state]'s reviewer reviews: those they ticked in Languages
@@ -60,7 +78,7 @@ Set<ReviewPair> reviewPairsOf(AppState state) => <ReviewPair>{
   ...reviewedPairs(
     chosenPairs: state.settings.reviewPairs,
     chosenLanguages: state.settings.reviewLanguages,
-    offered: <ReviewPair>{for (final deck in state.decks) pairOf(deck)},
+    offered: pairsOnPhone(state),
     reviewer: reviewerOf(state),
   ),
   ...keyPairsOf(state),
@@ -74,7 +92,7 @@ Set<ReviewPair> keyPairsOf(AppState state) {
   return <ReviewPair>{
     for (final pair in <ReviewPair>[
       ...offeredPairs(state),
-      for (final deck in state.decks) pairOf(deck),
+      ...pairsOnPhone(state),
     ])
       if (key.unlocks(pair)) pair,
   };
@@ -99,11 +117,29 @@ Map<String, String> languageNamesOf(AppState state) => <String, String>{
     language.code: language.name,
     for (final native in language.natives) native.code: native.name,
   },
-  for (final deck in state.decks) ...<String, String>{
-    deck.language.code: deck.language.name,
-    deck.deck.native.code: deck.deck.native.name,
-  },
+  ..._namesOnPhone(state),
 };
+
+/// The names of the languages with decks on the phone, and of the ones they
+/// are taught from, by code: from the language directory when the catalog
+/// is read one language at a time, else from the decks.
+Map<String, String> _namesOnPhone(AppState state) {
+  if (!state.readsPerLanguage) {
+    return <String, String>{
+      for (final deck in state.decks) ...<String, String>{
+        deck.language.code: deck.language.name,
+        deck.deck.native.code: deck.deck.native.name,
+      },
+    };
+  }
+  return <String, String>{
+    for (final language in state.languages) ...<String, String>{
+      language.code: language.name,
+      for (final course in _coursesOf(state, language.code))
+        course.native: course.nativeName,
+    },
+  };
+}
 
 /// The course [deck] belongs to, for review.
 ReviewPair pairOf(DeckEntry deck) =>
@@ -148,9 +184,15 @@ class WaitingLanguage {
     this.unconfirmed = const <WaitingCard>[],
     this.offensive = 0,
     this.pairs = 0,
+    this.reading = false,
   });
 
   final LanguageInfo language;
+
+  /// Whether the language's decks are still being read (one language at a
+  /// time, ADR-0062): nothing is known of what waits in it yet, so it is
+  /// drawn as loading and not as empty.
+  final bool reading;
 
   /// The units of its course's path with a deck not yet signed off, in
   /// order.
@@ -196,6 +238,9 @@ class WaitingLanguage {
 /// Offensive words review, which asks its own 18+ question.
 WaitingLanguage waitingIn(AppState state, LanguageInfo language) {
   final code = language.code;
+  if (state.isLanguageReading(code)) {
+    return WaitingLanguage(language: language, reading: true);
+  }
   // The ordinary review's cards: a deck's rude words are reviewed apart.
   WaitingDeck count(DeckEntry deck) {
     final cards = <Card>[
@@ -230,19 +275,15 @@ WaitingLanguage waitingIn(AppState state, LanguageInfo language) {
     }
   }
   final others = <WaitingDeck>[
-    for (final deck in state.decks)
-      if (deck.language.code == code &&
-          !inCourse.contains(deck.id) &&
-          waits(deck))
-        count(deck),
+    for (final deck in state.decksOf(code))
+      if (!inCourse.contains(deck.id) && waits(deck)) count(deck),
   ];
 
   final unrated = <WaitingCard>[];
   final unconfirmed = <WaitingCard>[];
   var offensive = 0;
   var pairs = 0;
-  for (final deck in state.reviewDecks) {
-    if (deck.language.code != code) continue;
+  for (final deck in state.reviewDecksOf(code)) {
     final waiting = awaitsReview(state, deck);
     for (final card in deck.cards) {
       final review = state.reviewing.reviewOf(deck, card);
@@ -331,9 +372,8 @@ List<SentSuggestion> sentSuggestionsOf(AppState state) {
             proposals: card == null || deck == null
                 ? const <Proposal>[]
                 : <Proposal>[
-                    for (final d in state.decks)
-                      if (d.language.code == deck.language.code)
-                        ...?d.deck.proposals[card.id],
+                    for (final d in state.decksOf(deck.language.code))
+                      ...?d.deck.proposals[card.id],
                   ],
             code: code.isEmpty ? null : code,
             agreementsNeeded: Reviewing.agreementsNeeded,

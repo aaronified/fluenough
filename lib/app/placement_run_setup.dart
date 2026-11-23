@@ -57,7 +57,10 @@ class PlacementRunPlan {
 
 /// Find my level's reading of a course, and the write at the end of a run.
 extension PlacementRunSetup on AppState {
-  /// [code]'s course as a run asks it, or null when it has no word deck.
+  /// [code]'s course as a run asks it, or null when it has no word deck. One
+  /// language at a time (ADR-0062) that is also null while its decks are not
+  /// read: the caller reads them first ([AppState.ensureLoaded]), as Find my
+  /// level does behind a spinner.
   /// The decks stop at the unit marked B1 (section 1: "from the first A1
   /// deck to the unit marked B1"); a path with no B1 mark gives every deck.
   PlacementRunPlan? placementRunPlan(String code, {String? native}) {

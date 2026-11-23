@@ -218,8 +218,9 @@ class ReviewCardSheet extends StatelessWidget {
     final pos = card.pos;
     final rating = review?.rating;
     final alike = review?.alike;
-    final proposals = waitingProposals(state.decks, deck, card);
-    final checked = checkedByOf(state.decks, card, deck: deck).length;
+    final here = state.decksOf(deck.language.code);
+    final proposals = waitingProposals(here, deck, card);
+    final checked = checkedByOf(here, card, deck: deck).length;
     void close(ReviewCardAction? action) => Navigator.of(context).pop(action);
 
     return SafeArea(

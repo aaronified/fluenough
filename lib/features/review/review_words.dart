@@ -1,7 +1,11 @@
+import 'dart:async';
+
 import '../../app/app_state.dart';
+import '../../app/catalog_set.dart' show LoadPhase;
 import '../../app/deck_catalog.dart';
 import '../../core/data/course_path.dart' show Region;
 import '../../core/models/card.dart';
+import '../../core/private/private_ids.dart' show languageOfId;
 import '../../core/review/deck_review.dart';
 import '../decks/card_notes.dart';
 import '../decks/word_sheet.dart' show isRude;
@@ -61,8 +65,12 @@ List<RudeAlike> rudeAlikesOf(AppState state, Card card) {
   if (pairs.isEmpty) return const <RudeAlike>[];
   final out = <RudeAlike>[];
   for (final pair in pairs) {
+    // The partner is a card of the same language (ADR-0018): one language at
+    // a time, its unit is the one that holds it, read now if it is not.
+    final language = languageOfId(pair.id);
+    _readSoon(state, language);
     found:
-    for (final entry in state.allDecks) {
+    for (final entry in state.allDecksOf(language)) {
       for (final other in entry.cards) {
         if (other.id == pair.id && isRude(other, entry)) {
           out.add((partner: other, kind: AlikeKind.sound, care: pair.care));
@@ -72,6 +80,16 @@ List<RudeAlike> rudeAlikesOf(AppState state, Card card) {
     }
   }
   return out;
+}
+
+/// Starts reading [language]'s unit when it is on the phone and not read
+/// yet. Asked from a build, so it waits for the end of the frame: reading
+/// notifies, and nothing may notify while a screen is being built. The
+/// screen draws again when the unit is there.
+void _readSoon(AppState state, String language) {
+  if (state.languageLoad(language).phase != LoadPhase.notLoaded) return;
+  if (!state.isLanguageReading(language)) return;
+  scheduleMicrotask(() => unawaited(state.ensureLoaded(language)));
 }
 
 /// Whether [card] in [deck] is rude: recognition only, and shown to a
@@ -100,10 +118,9 @@ typedef OffensiveDeck = ({DeckEntry deck, List<Card> words});
 /// language with none.
 List<OffensiveDeck> offensiveDecksIn(AppState state, String language) =>
     <OffensiveDeck>[
-      for (final deck in state.reviewDecks)
-        if (deck.language.code == language)
-          if (rudeCardsOf(deck) case final words when words.isNotEmpty)
-            (deck: deck, words: words),
+      for (final deck in state.reviewDecksOf(language))
+        if (rudeCardsOf(deck) case final words when words.isNotEmpty)
+          (deck: deck, words: words),
     ];
 
 /// A word of [language] that is not rude but sounds or looks like a rude
@@ -118,10 +135,9 @@ typedef OffensivePair = ({DeckEntry deck, Card card, RudeAlike pair});
 /// the rude word, so the pair is checked here alone (owner, 2026-10-10).
 List<OffensivePair> offensivePairsIn(AppState state, String language) =>
     <OffensivePair>[
-      for (final deck in state.decks)
-        if (deck.language.code == language)
-          for (final card in deck.cards)
-            if (!isRudeIn(deck, card))
-              if (rudeAlikesOf(state, card).firstOrNull case final pair?)
-                (deck: deck, card: card, pair: pair),
+      for (final deck in state.decksOf(language))
+        for (final card in deck.cards)
+          if (!isRudeIn(deck, card))
+            if (rudeAlikesOf(state, card).firstOrNull case final pair?)
+              (deck: deck, card: card, pair: pair),
     ];

@@ -14,6 +14,7 @@ import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import 'daily_questions.dart';
 import 'facet_labels.dart';
+import 'review_loader.dart';
 
 /// Opens the daily questions (#519).
 Future<void> showDailyQuestions(BuildContext context) =>
@@ -64,13 +65,28 @@ class _DailyQuestionsPageState extends State<DailyQuestionsPage> {
   /// The questions answered or put off on this screen, for going on.
   final Set<String> _past = <String>{};
 
+  /// The decks [_queue] was made from: one language at a time, the decks of
+  /// the reviewer's courses arrive as each unit is read, and a course not
+  /// read yet is asked about once it is (Plan-Lazy-Language-Loading, Q9).
+  Object? _madeFrom;
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     if (_queue != null) return;
     final state = AppScope.read(context);
+    _madeFrom = state.decks;
     _queue = dailyQuestionsOf(state);
     _readBuilderQuestions(state);
+  }
+
+  /// Works the queue out again when more decks have been read, as long as
+  /// nothing has been answered or put off on this screen: what is asked
+  /// never shifts under the reviewer's thumb.
+  void _refreshQueue(AppState state) {
+    if (!state.readsPerLanguage || identical(_madeFrom, state.decks)) return;
+    _madeFrom = state.decks;
+    if (_past.isEmpty) _queue = dailyQuestionsOf(state);
   }
 
   /// Reads the deck builders' questions again. A card already on screen
@@ -143,11 +159,14 @@ class _DailyQuestionsPageState extends State<DailyQuestionsPage> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
+    _refreshQueue(state);
     return Scaffold(
       appBar: AppBar(title: Text(l10n.reviewQuestionsTitle)),
-      body: ListenableBuilder(
-        listenable: state.settings,
-        builder: (context, _) => _body(context, state),
+      body: ReviewLoader(
+        child: ListenableBuilder(
+          listenable: state.settings,
+          builder: (context, _) => _body(context, state),
+        ),
       ),
     );
   }
@@ -174,6 +193,13 @@ class _DailyQuestionsPageState extends State<DailyQuestionsPage> {
     final next = left == 0
         ? null
         : _queue!.where((q) => !_past.contains(q.id)).firstOrNull;
+    if (next == null && anyReading(state, reviewLanguageCodes(state))) {
+      return Center(
+        child: CircularProgressIndicator(
+          semanticsLabel: l10n.commonLoadingDecks,
+        ),
+      );
+    }
     if (next == null) {
       final answeredToday = reviewing.questions.answeredOn(reviewing.today);
       return _Done(
