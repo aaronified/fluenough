@@ -339,6 +339,17 @@ class CatalogSet {
     }
   }
 
+  /// Lets go of the loaded unit of [code], as after a read made only to work
+  /// something out from it (the learned figures of a language the learner is
+  /// not on). Its summary and snapshot stay, so it loads again from the
+  /// cache. Does nothing for a language that is not loaded.
+  void drop(String code) {
+    if (_units.remove(code) == null) return;
+    _loads.remove(code);
+    _versions[code] = ++_clock;
+    _dirty();
+  }
+
   /// Reads every language on the phone, one at a time, and returns [catalog].
   /// A language that cannot be read is told in the log and left out.
   Future<Catalog> loadAll() async {

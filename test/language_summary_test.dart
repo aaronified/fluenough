@@ -77,9 +77,11 @@ void main() {
       'hasSounds',
       'hasNumbers',
       'scriptGuideKeys',
+      'glyph',
+      'scriptCount',
       'stamp',
     ]);
-    expect(LanguageSummary.format, 1);
+    expect(LanguageSummary.format, 2);
     final text = jsonEncode(json);
     final back = LanguageSummary.tryFromJson(jsonDecode(text));
     expect(back, isNotNull);
