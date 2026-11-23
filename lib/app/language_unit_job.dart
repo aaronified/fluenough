@@ -412,8 +412,24 @@ LanguageSummary summariseLanguage(
     ]..sort(),
     glyph: _glyphOf(first),
     scriptCount: language?.alphabet.length ?? 0,
+    ipaSymbols: _ipaSymbolsOf(teaching),
     stamp: stamp,
   );
+}
+
+/// Every answer the IPA course asks for, and its alternatives, once each, in
+/// the order its cards come: empty unless [teaching] is the IPA course's
+/// decks.
+List<String> _ipaSymbolsOf(List<DeckEntry> teaching) {
+  final seen = <String>{};
+  for (final entry in teaching) {
+    if (!entry.language.isIpa) continue;
+    for (final card in entry.cards) {
+      seen.add(card.target);
+      seen.addAll(card.altTarget);
+    }
+  }
+  return seen.toList();
 }
 
 /// What `languageGlyph` showed from the decks: the language's icon, else the

@@ -151,7 +151,7 @@ extension TopicsState on AppState {
   /// catalog or the index's shelves change; what the app log should hear of
   /// is reported once.
   Topics topicsOf(String language) {
-    final catalog = catalogView;
+    final catalog = catalogOf(language);
     final shelves =
         deckDownloads?.index?.language(language)?.shelves ??
         const <IndexShelf>[];

@@ -16,7 +16,7 @@ extension RecommendationFeed on AppState {
     for (final candidate in languages) {
       if (candidate.code == language) info = candidate;
     }
-    final path = catalogView.languagePaths[language];
+    final path = catalogOf(language).languagePaths[language];
     return RecommendationCourse(
       pathHasAlphabet: path != null && path.alphabet.isNotEmpty,
       latinOnly: info != null && info.allScripts.every((s) => s == 'latin'),
@@ -27,7 +27,7 @@ extension RecommendationFeed on AppState {
   /// The works of [language]'s file the learner is offered in their course, in
   /// the file's order; none without a file.
   List<Recommendation> recommendationsFor(String language) {
-    final file = catalogView.recommendations[language];
+    final file = catalogOf(language).recommendations[language];
     if (file == null) return const <Recommendation>[];
     return offeredRecommendations(
       file.recommendations,

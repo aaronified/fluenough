@@ -1073,6 +1073,27 @@ class AppState extends ChangeNotifier {
   /// reads more of it than the decks: search, topics, culture.
   Catalog get catalogView => _view;
 
+  /// [catalogView] for what is about [language] alone, as the learner has it:
+  /// read one language at a time, that language's unit (ADR-0062), the same
+  /// catalog until the unit is read again, so that what is kept against it (a
+  /// search index, the topics) stays while another language loads, and empty
+  /// while the unit is not loaded (a screen of it reads the unit first,
+  /// [ensureLoaded]). Read whole, the whole catalog.
+  Catalog catalogOf(String language) {
+    if (!_perLanguage) return _view;
+    final unit = deckCatalog.catalogSet.unitOf(language);
+    if (unit == null) return Catalog.empty;
+    return unit.scopedFor(adult: settings.adultContent);
+  }
+
+  /// [catalogOf] with Adult content left as the files hold it, for the
+  /// language's data files (facts, number rules, sounds, romanisation, script
+  /// guides) which the setting never touches.
+  Catalog _filesOf(String language) {
+    if (!_perLanguage) return _catalog;
+    return deckCatalog.catalogSet.unitOf(language)?.catalog ?? Catalog.empty;
+  }
+
   /// The hidden decks a learner added from a search result, which are on the
   /// phone (D3): the only decks outside [decks] that Today's reviews and a
   /// deck's own page read. Never in the Decks tab's lists, the path,
@@ -1128,7 +1149,7 @@ class AppState extends ChangeNotifier {
   /// first (#546): what the Facts section at the end of a card's sheet
   /// lists. Empty when none names the card.
   List<CardFact> factsNaming(Card card, LanguageInfo language) {
-    final file = _catalog.facts[language.code];
+    final file = _filesOf(language.code).facts[language.code];
     if (file == null) return const <CardFact>[];
     final spoken = settings.spokenLanguages;
     return <CardFact>[
@@ -1139,7 +1160,7 @@ class AppState extends ChangeNotifier {
 
   /// [language]'s situation sheets (#724), or null where it has none.
   SituationsFile? situationsOf(String language) =>
-      _catalog.situations[language];
+      _filesOf(language).situations[language];
 
   /// The languages Today's fact can be shown in (#926): those the learner
   /// knows, in their order.
@@ -1174,8 +1195,12 @@ class AppState extends ChangeNotifier {
       for (final key in progress.states.keys) key.cardId,
     };
     final today = <TodayFact>[];
+    // Read one language at a time, Today shows the shown language's fact
+    // alone (Plan-Lazy-Language-Loading, Q3), whichever units are read.
+    final only = _perLanguage ? shownLanguage : null;
     for (final language in learned.values) {
-      final file = _catalog.facts[language.code];
+      if (only != null && language.code != only) continue;
+      final file = _filesOf(language.code).facts[language.code];
       if (file == null) continue;
       final shown = settings.factsShownFor(language.code);
       final fact = factForToday(
@@ -4962,22 +4987,46 @@ class AppState extends ChangeNotifier {
     if (ipa == null) return const <Card>[];
     final native = courseNative(ipaLanguageCode);
     final seen = <String>{};
+    final ipaDecks = _ipaDecks();
     final cards = <Card>[
-      for (final entry in _catalog.decks)
-        if (entry.language.isIpa &&
-            (native == null || entry.deck.native.code == native))
+      for (final entry in ipaDecks)
+        if (native == null || entry.deck.native.code == native)
           for (final c in entry.cards)
             if (seen.add(c.id)) c,
     ];
     // A course taught from no language the learner speaks still has cards.
     if (cards.isEmpty && native != null) {
-      for (final entry in _catalog.decks) {
-        if (entry.language.isIpa) {
-          cards.addAll(entry.cards.where((c) => seen.add(c.id)));
-        }
+      for (final entry in ipaDecks) {
+        cards.addAll(entry.cards.where((c) => seen.add(c.id)));
       }
     }
     return ipaCardsFor(ipa, cards);
+  }
+
+  /// The decks of the IPA course on the phone, rude cards and all as the
+  /// files hold them. Read one language at a time, the `ipa` unit's: a
+  /// dependency language, read when "The sounds of this word" opens
+  /// ([ensureIpaReady]), and empty until then.
+  List<DeckEntry> _ipaDecks() {
+    if (_perLanguage) return allDecksOf(ipaLanguageCode);
+    return <DeckEntry>[
+      for (final entry in _catalog.decks)
+        if (entry.language.isIpa) entry,
+    ];
+  }
+
+  /// Whether the sounds of a word can be looked up now: the `ipa` unit is
+  /// read, or is not on the phone at all (the screens offer to add the
+  /// course), or the catalog is read whole. False while it is being read.
+  bool get ipaReady => !isLanguageReading(ipaLanguageCode);
+
+  /// Reads the `ipa` unit when it is on the phone and not read yet
+  /// (Plan-Lazy-Language-Loading, P-C4): the IPA course is a dependency of
+  /// every card's sounds, not a language the shown one needs.
+  Future<void> ensureIpaReady() async {
+    if (isLanguageReading(ipaLanguageCode)) {
+      await ensureLoaded(ipaLanguageCode);
+    }
   }
 
   /// Every answer the IPA course can ask for: its cards' targets and their
@@ -4985,9 +5034,16 @@ class AppState extends ChangeNotifier {
   /// The IPA keyboard's symbols are found from them (#836); empty while the
   /// IPA decks are not on the phone.
   List<String> ipaAnswerTargets() {
+    // Read one language at a time, the symbols are in the directory, so that
+    // typing never waits for the unit (ADR-0062).
+    if (_perLanguage) {
+      final loaded = deckCatalog.catalogSet.unitOf(ipaLanguageCode);
+      if (loaded == null) {
+        return summaryOf(ipaLanguageCode)?.ipaSymbols ?? const <String>[];
+      }
+    }
     final seen = <String>{};
-    for (final entry in _catalog.decks) {
-      if (!entry.language.isIpa) continue;
+    for (final entry in _ipaDecks()) {
       for (final card in entry.cards) {
         seen.add(card.target);
         seen.addAll(card.altTarget);
@@ -5011,8 +5067,13 @@ class AppState extends ChangeNotifier {
     final ids = request.cardIds ?? const <String>{};
     final byId = <String, Card>{};
     final native = courseNative(ipaLanguageCode);
-    for (final entry in decks) {
-      if (!entry.language.isIpa) continue;
+    final ipaDecks = _perLanguage
+        ? decksOf(ipaLanguageCode)
+        : <DeckEntry>[
+            for (final entry in decks)
+              if (entry.language.isIpa) entry,
+          ];
+    for (final entry in ipaDecks) {
       for (final card in entry.cards) {
         if (!ids.contains(card.id)) continue;
         // One card, taught from the course's language where there is one.
@@ -5108,13 +5169,33 @@ class AppState extends ChangeNotifier {
   /// How numbers are spelled in [language], or null for a language with no
   /// number rules (#54).
   NumberRules? numberRulesFor(LanguageInfo language) =>
-      _catalog.numberRules[language.code];
+      _filesOf(language.code).numberRules[language.code];
+
+  /// Whether [language] has number rules, which a button that offers number
+  /// practice reads: read one language at a time, from the directory, so that
+  /// the button is drawn without the unit.
+  bool hasNumberRules(String language) => _perLanguage
+      ? summaryOf(language)?.hasNumbers ?? false
+      : _catalog.numberRules.containsKey(language);
 
   /// The script guide for a deck in [language] (#30, ADR-0016): the guide
   /// for the deck's own script ([LanguageInfo.script]), else the language's
   /// default guide, or null if it has neither.
   ScriptGuide? scriptGuideFor(LanguageInfo language) =>
-      _catalog.scriptGuideFor(language.code, language.script);
+      _filesOf(language.code).scriptGuideFor(language.code, language.script);
+
+  /// The code of the language whose unit holds the script guide with [key],
+  /// from the directory (`scriptGuideKeys`), so that the Tips page reads that
+  /// unit first. Null when the catalog is read whole, where every guide is
+  /// there, and when no language on the phone has the guide.
+  String? scriptGuideLanguage(String key) {
+    if (!_perLanguage) return null;
+    for (final language in languages) {
+      final keys = summaryOf(language.code)?.scriptGuideKeys;
+      if (keys != null && keys.contains(key)) return language.code;
+    }
+    return null;
+  }
 
   /// The script guide with [key] (`ScriptGuide.key`), with the language as
   /// one of its script decks names it: the Tips page shows the guide's
@@ -5132,12 +5213,12 @@ class AppState extends ChangeNotifier {
   /// [language]'s sound contrasts (#89, ADR-0015), or null if it has no
   /// sounds file.
   SoundContrasts? soundsFor(LanguageInfo language) =>
-      _catalog.sounds[language.code];
+      _filesOf(language.code).sounds[language.code];
 
   /// How [language] is romanised (#47), or null if it has no romanisation
   /// file.
   Romanisation? romanisationFor(LanguageInfo language) =>
-      _catalog.romanisations[language.code];
+      _filesOf(language.code).romanisations[language.code];
 
   /// A card in [language] whose target is [text], as the grader compares
   /// them, for saying what a word heard instead means. Null if no deck has

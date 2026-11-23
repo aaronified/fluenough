@@ -13,7 +13,7 @@ const String numberPracticeTheme = 'numbers-big';
 /// theme is [numberPracticeTheme] and its language has number rules.
 bool hasNumberPractice(AppState state, DeckEntry entry) =>
     entry.deck.theme == numberPracticeTheme &&
-    state.numberRulesFor(entry.language) != null;
+    state.hasNumberRules(entry.language.code);
 
 /// Number practice, as a row under the big-numbers deck on the Decks tab:
 /// generated four-digit numbers, drilled and not recorded (ADR-0011).

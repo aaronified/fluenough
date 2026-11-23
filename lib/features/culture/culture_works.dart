@@ -155,7 +155,7 @@ class CultureWorkRow extends StatelessWidget {
   String? _quotingDeck(AppState state) {
     final id = work.quotedIn;
     if (id == null) return null;
-    for (final entry in state.catalogView.decks) {
+    for (final entry in state.catalogOf(language).decks) {
       if (entry.language.code == language &&
           (entry.id == id || coreIdOfDeck(entry) == id)) {
         return entry.deck.name;

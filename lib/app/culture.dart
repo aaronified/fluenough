@@ -22,7 +22,7 @@ extension CultureState on AppState {
   List<CultureItem> cultureItemsIn(String language) =>
       derived<List<CultureItem>>(('cultureItems', language), () {
         try {
-          final catalog = catalogView;
+          final catalog = catalogOf(language);
           final native = courseNative(language);
           final entries = <DeckEntry>[
             for (final entry in catalog.decks)
@@ -97,7 +97,8 @@ extension CultureState on AppState {
   }
 
   /// The people of [language]'s culture, or null when it has none.
-  CreatorsFile? creatorsOf(String language) => catalogView.creators[language];
+  CreatorsFile? creatorsOf(String language) =>
+      catalogOf(language).creators[language];
 
   /// Every creator any work of [language] cites: each card and passage of
   /// every deck of the language, hidden or not, woven or not, and every
@@ -114,7 +115,7 @@ extension CultureState on AppState {
     () {
       final cited = <String>{};
       try {
-        final catalog = catalogView;
+        final catalog = catalogOf(language);
         for (final entry in <DeckEntry>[...catalog.decks, ...catalog.hidden]) {
           if (entry.language.code != language) continue;
           for (final card in entry.deck.cards) {

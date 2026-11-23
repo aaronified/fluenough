@@ -264,14 +264,16 @@ class LanguageSummary {
     this.scriptGuideKeys = const <String>[],
     this.glyph = '',
     this.scriptCount = 0,
+    this.ipaSymbols = const <String>[],
   });
 
   /// The layout of the JSON, and of what a summary holds. Raised when a field
   /// is added, removed or means something else: an older summary is then not
   /// trusted and is worked out again. 2 added the glyph, the script count and
   /// each course's native language, written units and script letters, for the
-  /// screens that list languages (Plan-Lazy-Language-Loading, P-C1).
-  static const int format = 2;
+  /// screens that list languages (Plan-Lazy-Language-Loading, P-C1). 3 added
+  /// the IPA symbols, for the IPA keyboard (P-C4).
+  static const int format = 3;
 
   final String code;
   final LanguageInfo info;
@@ -308,6 +310,11 @@ class LanguageSummary {
   /// not each is on the phone: the picker's "3 script decks".
   final int scriptCount;
 
+  /// Every answer the IPA course asks for, and its alternatives, once each:
+  /// the IPA keyboard's symbols are found from them, so that typing never
+  /// waits for the course's unit. Empty for every other language.
+  final List<String> ipaSymbols;
+
   Map<String, Object?> toJson() => <String, Object?>{
     'code': code,
     'info': _infoToJson(info),
@@ -329,6 +336,7 @@ class LanguageSummary {
     'scriptGuideKeys': scriptGuideKeys,
     'glyph': glyph,
     'scriptCount': scriptCount,
+    'ipaSymbols': ipaSymbols,
     'stamp': stamp.toJson(),
   };
 
@@ -368,6 +376,10 @@ class LanguageSummary {
         // languages while it is worked out again.
         glyph: (json['glyph'] as String?) ?? '',
         scriptCount: (json['scriptCount'] as int?) ?? 0,
+        // Kept since format 3, in the same way.
+        ipaSymbols: json['ipaSymbols'] == null
+            ? const <String>[]
+            : strings(json['ipaSymbols']),
         stamp: SummaryStamp.fromJson(json['stamp']! as Map<Object?, Object?>),
       );
     } on Object {

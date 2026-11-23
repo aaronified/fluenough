@@ -15,8 +15,8 @@ import 'deck_catalog.dart';
 /// own word search finds the plain words, so the corpus holds only what that
 /// search does not ([SearchSource.plainCards] is off).
 ///
-/// Built from the catalog ([AppState.catalogView]): a level labels a result and
-/// never hides it (owner, 2026-11-16).
+/// Built from the language's unit ([AppState.catalogOf]): a level labels a
+/// result and never hides it (owner, 2026-11-16).
 class ItemSearchIndex {
   ItemSearchIndex._({
     required this.language,
@@ -213,7 +213,7 @@ extension ItemSearchState on AppState {
   /// The index of [language]'s items for the course it is learned from. Kept
   /// until the catalog or the index's shelves change.
   ItemSearchIndex itemSearchFor(String language) {
-    final catalog = catalogView;
+    final catalog = catalogOf(language);
     final shelves =
         deckDownloads?.index?.language(language)?.shelves ??
         const <IndexShelf>[];
@@ -251,7 +251,7 @@ extension ItemSearchState on AppState {
           query,
           languages: <String>{language},
           typos: typos,
-          sections: catalogView.sections,
+          sections: catalogOf(language).sections,
         ),
       );
 

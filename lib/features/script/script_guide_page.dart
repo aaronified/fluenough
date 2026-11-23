@@ -7,6 +7,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/card_text_scale.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/bottom_actions.dart';
+import '../../ui/widgets/language_unit_loader.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 
@@ -22,6 +23,16 @@ class ScriptGuidePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Read one language at a time, the guide is in its language's unit,
+    // which the directory names, so that it is read before the guide is
+    // looked for (ADR-0062).
+    final language = AppScope.of(context).scriptGuideLanguage(guideKey);
+    final page = Builder(builder: _page);
+    if (language == null) return page;
+    return LanguageUnitLoader(language: language, child: page);
+  }
+
+  Widget _page(BuildContext context) {
     final state = AppScope.of(context);
     final l10n = AppLocalizations.of(context)!;
     final found = state.scriptGuideByKey(guideKey);

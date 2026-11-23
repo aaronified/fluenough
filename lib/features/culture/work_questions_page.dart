@@ -48,7 +48,8 @@ class _WorkQuestionsPageState extends State<WorkQuestionsPage> {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     final request = widget.request;
-    final work = state.catalogView.recommendations[request.language]?.byId(
+    final catalog = state.catalogOf(request.language);
+    final work = catalog.recommendations[request.language]?.byId(
       request.recommendationId,
     );
     if (work == null) {
