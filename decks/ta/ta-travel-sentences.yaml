@@ -1,0 +1,101 @@
+schema: 1
+id: "ta-travel-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-9040"
+    target: "எனக்கு ஒரு அறை வேண்டும்."
+    reading: "eṉakku oru aṟai vēṇṭum."
+    ipa: "enakku oɾu arai ʋeːɳʈum"
+    pos: "phrase"
+    bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "ஒரு", ref: "ta-0419" }, { word: "அறை", ref: "ta-0276" }, { word: "வேண்டும்", ref: "ta-0409" }]
+    confusables:
+      - { id: "w1", ref: "ta-7235", kind: "word" }
+      - { id: "w2", ref: "ta-7242", kind: "word" }
+      - { id: "w3", ref: "ta-7239", kind: "word" }
+  - id: "ta-9041"
+    target: "நாளை விமானநிலையத்துக்குப் போகிறேன்."
+    reading: "nāḷai vimāṉanilaiyattukkup pōkiṟēṉ."
+    ipa: "naːɭai ʋimaːnanilaijat̪t̪ukkup poːkireːn"
+    pos: "phrase"
+    bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "விமானநிலையத்துக்குப்", base: "விமானநிலையம்", reading: "vimāṉanilaiyam" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+    confusables:
+      - { id: "w1", ref: "ta-7247", kind: "word" }
+      - { id: "w2", ref: "ta-7248", kind: "word" }
+  - id: "ta-9042"
+    target: "கடவுச்சீட்டு இங்கே இருக்கிறது."
+    reading: "kaṭavuccīṭṭu iṅkē irukkiṟatu."
+    ipa: "kaʈaʋutʃtʃiːʈʈu iŋkeː iɾukkirat̪u"
+    pos: "phrase"
+    bases: [{ word: "கடவுச்சீட்டு", ref: "ta-7250" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-7237", kind: "word" }
+      - { id: "w2", ref: "ta-7238", kind: "word" }
+  - id: "ta-9043"
+    target: "அறைச்சாவி வரவேற்பறையில் இருக்கிறது."
+    reading: "aṟaiccāvi varavēṟpaṟaiyil irukkiṟatu."
+    ipa: "araitʃtʃaːʋi ʋaɾaʋeːrparaijil iɾukkirat̪u"
+    pos: "phrase"
+    bases: [{ word: "அறைச்சாவி", ref: "ta-7253" }, { word: "வரவேற்பறையில்", base: "வரவேற்பறை", reading: "varavēṟpaṟai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-7254", kind: "word" }
+      - { id: "w2", ref: "ta-7256", kind: "word" }
+  - id: "ta-9044"
+    target: "இந்த அறையில் ஏசி இருக்கிறது."
+    reading: "inta aṟaiyil ēci irukkiṟatu."
+    ipa: "int̪a araijil eːsi iɾukkirat̪u"
+    pos: "phrase"
+    bases: [{ word: "இந்த", base: "இந்த", reading: "inta" }, { word: "அறையில்", base: "அறை", reading: "aṟai" }, { word: "ஏசி", ref: "ta-7244" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-7245", kind: "word" }
+      - { id: "w2", ref: "ta-7243", kind: "word" }
+  - id: "ta-9045"
+    target: "பயணத்தை ஒத்திவைக்கிறோம்."
+    reading: "payaṇattai ottivaikkiṟōm."
+    ipa: "pajaɳat̪t̪ai ot̪t̪iʋaikkiroːm"
+    pos: "phrase"
+    bases: [{ word: "பயணத்தை", base: "பயணம்", reading: "payaṇam" }, { word: "ஒத்திவைக்கிறோம்", base: "ஒத்திவை", reading: "ottivai" }]
+    confusables:
+      - { id: "w1", ref: "ta-7286", kind: "word" }
+      - { id: "w2", ref: "ta-7287", kind: "word" }
+      - { id: "w3", ref: "ta-7288", kind: "word" }
+  - id: "ta-9046"
+    target: "இங்கே நுழைவுக்கட்டணம் எவ்வளவு?"
+    reading: "iṅkē nuḻaivukkaṭṭaṇam evvaḷavu?"
+    ipa: "iŋkeː nuɻaiʋukkaʈʈaɳam eʋʋaɭaʋu"
+    pos: "phrase"
+    bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "நுழைவுக்கட்டணம்", ref: "ta-7283" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+    confusables:
+      - { id: "w1", ref: "ta-7269", kind: "word" }
+      - { id: "w2", ref: "ta-7235", kind: "word" }
+  - id: "ta-9047"
+    target: "நாங்கள் நாளை மலையேற்றம் போகிறோம்."
+    reading: "nāṅkaḷ nāḷai malaiyēṟṟam pōkiṟōm."
+    ipa: "naːŋkaɭ naːɭai malaijeːrram poːkiroːm"
+    pos: "phrase"
+    bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "நாளை", ref: "ta-0133" }, { word: "மலையேற்றம்", ref: "ta-7259" }, { word: "போகிறோம்", base: "போ", reading: "pō" }]
+    confusables:
+      - { id: "w1", ref: "ta-7260", kind: "word" }
+      - { id: "w2", ref: "ta-7274", kind: "word" }
+  - id: "ta-9048"
+    target: "இங்கே நல்ல சுற்றுலாத்தலம் இருக்கிறது."
+    reading: "iṅkē nalla cuṟṟulāttalam irukkiṟatu."
+    ipa: "iŋkeː nalla surrulaːt̪t̪alam iɾukkirat̪u"
+    pos: "phrase"
+    bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "நல்ல", ref: "ta-0169" }, { word: "சுற்றுலாத்தலம்", ref: "ta-7240" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-7241", kind: "word" }
+      - { id: "w2", ref: "ta-7257", kind: "word" }
+      - { id: "w3", ref: "ta-7258", kind: "word" }
+  - id: "ta-9049"
+    target: "எனக்குப் பயணக்களைப்பு இருக்கிறது."
+    reading: "eṉakkup payaṇakkaḷaippu irukkiṟatu."
+    ipa: "enakkup pajaɳakkaɭaippu iɾukkirat̪u"
+    pos: "phrase"
+    bases: [{ word: "எனக்குப்", base: "நான்", reading: "nāṉ" }, { word: "பயணக்களைப்பு", ref: "ta-7280" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-7279", kind: "word" }
+      - { id: "w2", ref: "ta-7275", kind: "word" }
