@@ -68,21 +68,67 @@ class SummaryDeck {
   );
 }
 
+/// A letter of a script deck with its reading, which the language picker
+/// previews: the first cards of the course's first script deck.
+class SummaryLetter {
+  const SummaryLetter({required this.letter, this.reading});
+
+  final String letter;
+  final String? reading;
+
+  Map<String, Object?> toJson() => <String, Object?>{
+    'letter': letter,
+    'reading': ?reading,
+  };
+
+  static SummaryLetter fromJson(Map<Object?, Object?> json) => SummaryLetter(
+    letter: json['letter']! as String,
+    reading: json['reading'] as String?,
+  );
+}
+
+/// How many letters of a script deck a summary keeps for the picker's
+/// preview of a script.
+const int summaryLetterCount = 8;
+
 /// One course of a language: the language taught from one native language.
 class SummaryCourse {
   const SummaryCourse({
     required this.native,
     required this.nativeName,
     required this.units,
+    this.nativeInfo,
     this.decks = 0,
     this.cards = 0,
     this.words = 0,
     this.cultureCards = 0,
     this.hasPath = false,
+    this.coveredUnits = 0,
+    this.writtenUnits = 0,
+    this.scriptLetters = const <SummaryLetter>[],
   });
 
   final String native;
   final String nativeName;
+
+  /// The native language as its decks name it, or null in a summary written
+  /// before it was kept.
+  final LanguageInfo? nativeInfo;
+
+  /// [nativeInfo], or the language [native] with only its name known.
+  LanguageInfo get nativeLanguage =>
+      nativeInfo ??
+      LanguageInfo(code: native, iso639_3: native, name: nativeName);
+
+  /// How many of the language's written units this course teaches, and how
+  /// many units the language has written (`CoursePath.coveredUnits` and
+  /// `writtenUnits`).
+  final int coveredUnits;
+  final int writtenUnits;
+
+  /// The first letters of the course's first script deck, up to
+  /// [summaryLetterCount], with their readings.
+  final List<SummaryLetter> scriptLetters;
 
   /// The units of its path as completeness counts them (`B1Unit`).
   final List<B1Unit> units;
@@ -105,11 +151,25 @@ class SummaryCourse {
     'words': words,
     'cultureCards': cultureCards,
     if (hasPath) 'hasPath': true,
+    if (nativeInfo != null) 'nativeInfo': _infoToJson(nativeInfo!),
+    if (coveredUnits != 0) 'coveredUnits': coveredUnits,
+    if (writtenUnits != 0) 'writtenUnits': writtenUnits,
+    if (scriptLetters.isNotEmpty)
+      'scriptLetters': <Object?>[for (final l in scriptLetters) l.toJson()],
   };
 
   static SummaryCourse fromJson(Map<Object?, Object?> json) => SummaryCourse(
     native: json['native']! as String,
     nativeName: json['nativeName']! as String,
+    nativeInfo: json['nativeInfo'] is Map
+        ? _infoFromJson(json['nativeInfo']! as Map<Object?, Object?>)
+        : null,
+    coveredUnits: (json['coveredUnits'] as int?) ?? 0,
+    writtenUnits: (json['writtenUnits'] as int?) ?? 0,
+    scriptLetters: <SummaryLetter>[
+      for (final l in (json['scriptLetters'] as List<Object?>?) ?? <Object?>[])
+        SummaryLetter.fromJson(l! as Map<Object?, Object?>),
+    ],
     units: <B1Unit>[
       for (final unit in json['units']! as List<Object?>)
         _unitFromJson(unit! as Map<Object?, Object?>),
@@ -202,12 +262,16 @@ class LanguageSummary {
     this.hasSounds = false,
     this.hasNumbers = false,
     this.scriptGuideKeys = const <String>[],
+    this.glyph = '',
+    this.scriptCount = 0,
   });
 
   /// The layout of the JSON, and of what a summary holds. Raised when a field
   /// is added, removed or means something else: an older summary is then not
-  /// trusted and is worked out again.
-  static const int format = 1;
+  /// trusted and is worked out again. 2 added the glyph, the script count and
+  /// each course's native language, written units and script letters, for the
+  /// screens that list languages (Plan-Lazy-Language-Loading, P-C1).
+  static const int format = 2;
 
   final String code;
   final LanguageInfo info;
@@ -236,6 +300,14 @@ class LanguageSummary {
   final bool hasNumbers;
   final List<String> scriptGuideKeys;
 
+  /// What the language's chip shows: its icon, else the glyph of its first
+  /// deck, so that no deck is scanned for it.
+  final String glyph;
+
+  /// How many decks the language's path lists under `alphabet`, whether or
+  /// not each is on the phone: the picker's "3 script decks".
+  final int scriptCount;
+
   Map<String, Object?> toJson() => <String, Object?>{
     'code': code,
     'info': _infoToJson(info),
@@ -255,6 +327,8 @@ class LanguageSummary {
     'hasSounds': hasSounds,
     'hasNumbers': hasNumbers,
     'scriptGuideKeys': scriptGuideKeys,
+    'glyph': glyph,
+    'scriptCount': scriptCount,
     'stamp': stamp.toJson(),
   };
 
@@ -290,6 +364,10 @@ class LanguageSummary {
         hasSounds: json['hasSounds']! as bool,
         hasNumbers: json['hasNumbers']! as bool,
         scriptGuideKeys: strings(json['scriptGuideKeys']),
+        // Kept since format 2: a summary of format 1 still names its
+        // languages while it is worked out again.
+        glyph: (json['glyph'] as String?) ?? '',
+        scriptCount: (json['scriptCount'] as int?) ?? 0,
         stamp: SummaryStamp.fromJson(json['stamp']! as Map<Object?, Object?>),
       );
     } on Object {

@@ -8,6 +8,7 @@ import '../core/decks/language_summary.dart';
 import '../core/decks/language_unit.dart';
 import '../core/decks/sha256.dart';
 import '../core/languages/language_skills.dart' show kanaScript, kanjiScript;
+import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import 'deck_catalog.dart';
 import 'deck_files.dart';
@@ -336,8 +337,8 @@ String _primaryScript(List<DeckEntry> decks) {
 }
 
 /// What the screens that list languages read of [code], from its unit's
-/// [catalog], stamped with [stamp]. Counts are made as
-/// `catalogLanguageFromDecks` makes them.
+/// [catalog], stamped with [stamp]. Counts are made as `tools/deck_index.py`
+/// makes them, with `countsAsWord`.
 LanguageSummary summariseLanguage(
   Catalog catalog,
   String code,
@@ -409,8 +410,40 @@ LanguageSummary summariseLanguage(
       for (final guide in catalog.scriptGuides.values)
         if (guide.language == code) guide.key,
     ]..sort(),
+    glyph: _glyphOf(first),
+    scriptCount: language?.alphabet.length ?? 0,
     stamp: stamp,
   );
+}
+
+/// What `languageGlyph` showed from the decks: the language's icon, else the
+/// glyph of its first deck.
+String _glyphOf(DeckEntry? first) {
+  if (first == null) return '';
+  return first.language.icon ?? first.glyph;
+}
+
+/// The first letters of the first script deck [native]'s course has, in
+/// path order, as the language picker previews a script: the cards of the
+/// first deck the path lists under `alphabet` that the catalog has.
+List<SummaryLetter> _scriptLetters(
+  Catalog catalog,
+  String code,
+  String native,
+) {
+  final path = catalog.languagePaths[code];
+  if (path == null || path.alphabet.isEmpty) return const <SummaryLetter>[];
+  DeckEntry? firstDeck;
+  for (final unit in path.plan) {
+    for (final core in unit.decks) {
+      if (!path.alphabet.contains(core)) continue;
+      firstDeck ??= catalog.byId(path.deckFor(native, core));
+    }
+  }
+  return <SummaryLetter>[
+    for (final card in firstDeck?.cards.take(summaryLetterCount) ?? <Card>[])
+      SummaryLetter(letter: card.target, reading: card.reading),
+  ];
 }
 
 SummaryCourse _course(
@@ -423,9 +456,14 @@ SummaryCourse _course(
     for (final entry in teaching)
       if (entry.deck.native.code == native.code) entry,
   ];
+  final path = catalog.paths['$code/${native.code}'];
   return SummaryCourse(
     native: native.code,
     nativeName: native.name,
+    nativeInfo: native,
+    coveredUnits: path?.coveredUnits ?? 0,
+    writtenUnits: path?.writtenUnits ?? 0,
+    scriptLetters: _scriptLetters(catalog, code, native.code),
     units: b1UnitsOf(catalog, code, native.code),
     decks: decks.length,
     cards: decks.fold(0, (sum, e) => sum + e.cards.length),

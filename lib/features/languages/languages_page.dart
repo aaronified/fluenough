@@ -18,7 +18,6 @@ import '../../ui/widgets/grouped_list.dart';
 import '../downloads/deck_update_controls.dart';
 import '../downloads/download_text.dart';
 import '../private/private_widgets.dart';
-import '../settings/your_decks_page.dart';
 import 'add_language_page.dart';
 import 'language_skills_sheet.dart';
 import 'languages_menu.dart';
@@ -338,9 +337,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
                 key: const ValueKey<String>('languages-your-decks'),
                 leading: const Icon(Icons.style_outlined),
                 title: l10n.settingsRowDecks,
-                subtitle: l10n.settingsSumDecks(
-                  YourDecksPage.ownDecks(state.decks).length,
-                ),
+                subtitle: l10n.settingsSumDecks(state.ownDeckCount),
                 trailing: const Icon(Icons.open_in_new),
                 onTap: () => AppNavigator.openSettingsPage(
                   context,

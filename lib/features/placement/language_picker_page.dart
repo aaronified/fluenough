@@ -592,10 +592,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
           languageNames: _spokenNames,
           onFinished: (found) {
             final settings = state.settings;
-            final replaced = <String>{
-              for (final entry in state.decks)
-                if (entry.language.code == code) entry.id,
-            };
+            final replaced = state.deckIdsOf(code);
             Navigator.of(context).pop();
             settings.placedDecks = <String>{
               for (final id in settings.placedDecks)
@@ -833,8 +830,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
       state.chooseNative(key, value);
     }
     final replaced = <String>{
-      for (final entry in state.decks)
-        if (placed.containsKey(entry.language.code)) entry.id,
+      for (final code in placed.keys) ...state.deckIdsOf(code),
     };
     // Back to the first route first: from Settings that is the app; on
     // first launch it is this page, which saving then swaps for the app.

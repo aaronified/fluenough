@@ -8,7 +8,6 @@ import 'package:flutter/services.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
-import '../../app/deck_catalog.dart';
 import '../../app/language_work.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
@@ -347,7 +346,7 @@ class _LanguageBarState extends State<LanguageBar>
     final scaler = MediaQuery.textScalerOf(context);
     final direction = Directionality.of(context);
     final language = choices[i];
-    final glyph = languageGlyph(language, AppScope.read(context).decks);
+    final glyph = languageGlyph(language, AppScope.read(context));
     double width(String text, TextStyle style) => (TextPainter(
       text: TextSpan(text: text, style: style),
       textDirection: direction,
@@ -553,7 +552,7 @@ class _LanguageBarState extends State<LanguageBar>
   /// The wheel's glyphs, each at its place round the wheel.
   List<Widget> _glyphs(
     List<LanguageInfo> choices,
-    List<DeckEntry> decks,
+    AppState state,
     ColorScheme scheme,
     TextTheme text,
     double half,
@@ -595,7 +594,7 @@ class _LanguageBarState extends State<LanguageBar>
                     child: LanguageDotted(
                       show: hasWork(language.code),
                       child: Text(
-                        languageGlyph(language, decks),
+                        languageGlyph(language, state),
                         locale: Locale(language.code),
                         textScaler: TextScaler.noScaling,
                         maxLines: 1,
@@ -748,7 +747,7 @@ class _LanguageBarState extends State<LanguageBar>
       final next = n > 1 ? choices[(at + 1) % n] : null;
       final previous = n > 1 ? choices[(at - 1 + n) % n] : null;
       final here = choices[_mod(_pos!.round())];
-      final glyph = languageGlyph(here, state.decks);
+      final glyph = languageGlyph(here, state);
       Widget wheel = LayoutBuilder(
         builder: (context, box) => SizedBox(
           height: 48,
@@ -765,7 +764,7 @@ class _LanguageBarState extends State<LanguageBar>
                 ),
                 ..._glyphs(
                   choices,
-                  state.decks,
+                  state,
                   scheme,
                   theme.textTheme,
                   box.maxWidth / 2,
@@ -806,7 +805,7 @@ class _LanguageBarState extends State<LanguageBar>
                 checked: language.code == shown,
                 child: LanguageBarChip(
                   language: language,
-                  glyph: languageGlyph(language, state.decks),
+                  glyph: languageGlyph(language, state),
                   selected: language.code == shown,
                   hasWork: state.languageHasWork(language.code),
                 ),
@@ -931,7 +930,7 @@ class _LanguageBarState extends State<LanguageBar>
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       LanguageGlyphTile(
-                        glyph: languageGlyph(language, state.decks),
+                        glyph: languageGlyph(language, state),
                         language: language,
                         background: scheme.onInverseSurface,
                         foreground: scheme.inverseSurface,
