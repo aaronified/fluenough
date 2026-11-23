@@ -1,0 +1,869 @@
+schema: 1
+id: "ta-en-cinema"
+kind: "layer"
+core: "ta-cinema"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Cinema"
+description: "The cinema: films, actors, directors, scenes and songs, and the words for reviewing and enjoying a film. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-8000":
+    native: "film; movie"
+    notes:
+      n1: "The formal and written word; in speech people mostly say படம் (paṭam), film, a word taught earlier."
+    examples:
+      "இது நல்ல திரைப்படம்.":
+        native: "This is a good film."
+        bases:
+          "திரைப்படம்": "film; movie"
+      "திரைப்படம் எங்கே?":
+        native: "Where is the film?"
+        bases:
+          "திரைப்படம்": "film; movie"
+  "ta-8001":
+    native: "actor"
+    notes:
+      n1: "The ending -ர் (-r) is the respectful form for a man; the woman is நடிகை (naṭikai), actress."
+    examples:
+      "அவர் நல்ல நடிகர்.":
+        native: "He is a good actor."
+        bases:
+          "நடிகர்": "actor"
+      "இவர் என் நடிகர்.":
+        native: "This is my actor."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "நடிகர்": "actor"
+  "ta-8002":
+    native: "actress"
+    notes:
+      n1: "Its pair is நடிகர் (naṭikar), actor; both come from the verb நடி (naṭi), to act, taught earlier."
+    examples:
+      "அவள் பிரபலமான நடிகை.":
+        native: "She is a famous actress."
+        bases:
+          "நடிகை": "actress"
+      "அவள் நல்ல நடிகை.":
+        native: "She is a good actress."
+        bases:
+          "நடிகை": "actress"
+  "ta-8003":
+    native: "acting; performance"
+    notes:
+      n1: "The noun from நடி (naṭi), to act: the stem plus -ப்பு (-ppu) makes a noun."
+    examples:
+      "அவன் நடிப்பு நல்லது.":
+        native: "His acting is good."
+        bases:
+          "நடிப்பு": "acting; performance"
+      "உன் நடிப்பு அருமை.":
+        native: "Your acting is wonderful."
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "நடிப்பு": "acting; performance"
+          "அருமை": "wonderful; excellent"
+  "ta-8004":
+    native: "director"
+    notes:
+      n1: "The word for a film's director; it also means a company or institute director."
+    examples:
+      "அவர் படத்தின் இயக்குநர்.":
+        native: "He is the director of the film."
+        bases:
+          "படத்தின்": "of the film; from படம் (paṭam), film"
+          "இயக்குநர்": "director"
+      "இயக்குநர் எங்கே?":
+        native: "Where is the director?"
+        bases:
+          "இயக்குநர்": "director"
+  "ta-8005":
+    native: "producer"
+    notes:
+      n1: "Someone who pays for and organises a film; from தயாரி (tayāri), to produce."
+    examples:
+      "அவர் படத்தின் தயாரிப்பாளர்.":
+        native: "He is the producer of the film."
+        bases:
+          "படத்தின்": "of the film; from படம் (paṭam), film"
+          "தயாரிப்பாளர்": "producer"
+      "தயாரிப்பாளர் இங்கே இருக்கிறார்.":
+        native: "The producer is here."
+        bases:
+          "தயாரிப்பாளர்": "producer"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-8006":
+    native: "hero; male lead"
+    notes:
+      n1: "The male lead of a film; the woman is கதாநாயகி (katānāyaki), heroine."
+    examples:
+      "அவன் படத்தின் கதாநாயகன்.":
+        native: "He is the hero of the film."
+        bases:
+          "படத்தின்": "of the film; from படம் (paṭam), film"
+          "கதாநாயகன்": "hero; male lead"
+      "கதாநாயகன் நல்லவன்.":
+        native: "The hero is a good man."
+        bases:
+          "கதாநாயகன்": "hero; male lead"
+          "நல்லவன்": "good man; from நல்ல (nalla), good"
+  "ta-8007":
+    native: "heroine; female lead"
+    notes:
+      n1: "The female lead of a film."
+    examples:
+      "அவள் படத்தின் கதாநாயகி.":
+        native: "She is the heroine of the film."
+        bases:
+          "படத்தின்": "of the film; from படம் (paṭam), film"
+          "கதாநாயகி": "heroine; female lead"
+      "கதாநாயகி அழகானவள்.":
+        native: "The heroine is beautiful."
+        bases:
+          "கதாநாயகி": "heroine; female lead"
+          "அழகானவள்": "a beautiful woman; from அழகான (aḻakāṉa), beautiful"
+  "ta-8008":
+    native: "villain"
+    notes:
+      n1: "A loanword from English villain; it is also said of a bad man in real life, as a joke."
+    examples:
+      "படத்தில் ஒரு வில்லன் இருக்கிறான்.":
+        native: "There is a villain in the film."
+        bases:
+          "படத்தில்": "in the film; from படம் (paṭam), film"
+          "வில்லன்": "villain"
+          "இருக்கிறான்": "is; from இரு (iru), to be"
+      "வில்லன் கெட்டவன்.":
+        native: "The villain is a bad man."
+        bases:
+          "வில்லன்": "villain"
+          "கெட்டவன்": "a bad man; from கெட்ட (keṭṭa), bad"
+  "ta-8009":
+    native: "scene; sight"
+    notes:
+      n1: "A scene of a film; it also means a sight or a show."
+    examples:
+      "இது நல்ல காட்சி.":
+        native: "This is a good scene."
+        bases:
+          "காட்சி": "scene; sight"
+      "படத்தில் ஒரு சண்டை காட்சி இருக்கிறது.":
+        native: "There is a fight scene in the film."
+        bases:
+          "படத்தில்": "in the film; from படம் (paṭam), film"
+          "காட்சி": "scene; sight"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8010":
+    native: "dialogue; spoken lines"
+    notes:
+      n1: "The lines the actors speak; people often praise a film's வசனம் (vacaṉam)."
+    examples:
+      "படத்தின் வசனம் நல்லது.":
+        native: "The film's dialogue is good."
+        bases:
+          "படத்தின்": "of the film; from படம் (paṭam), film"
+          "வசனம்": "dialogue; spoken lines"
+      "வசனம் அருமை.":
+        native: "The dialogue is wonderful."
+        bases:
+          "வசனம்": "dialogue; spoken lines"
+          "அருமை": "wonderful; excellent"
+  "ta-8011":
+    native: "song; film song"
+    notes:
+      n1: "The written word for a song; in speech பாட்டு (pāṭṭu), song is common, a word taught earlier."
+    examples:
+      "படத்தின் பாடல் நல்லது.":
+        native: "The film's song is good."
+        bases:
+          "படத்தின்": "of the film; from படம் (paṭam), film"
+          "பாடல்": "song; film song"
+      "எனக்கு இந்தப் பாடல் பிடிக்கும்.":
+        native: "I like this song."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "இந்தப்": "this (before a word starting with p); from இந்த (inta), this"
+          "பாடல்": "song; film song"
+  "ta-8012":
+    native: "fight; quarrel"
+    notes:
+      n1: "Used for a film fight and for a quarrel between people."
+    examples:
+      "படத்தில் சண்டை இருக்கிறது.":
+        native: "There is a fight in the film."
+        bases:
+          "படத்தில்": "in the film; from படம் (paṭam), film"
+          "சண்டை": "fight; quarrel"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "அவர்கள் சண்டை போடுகிறார்கள்.":
+        native: "They are quarrelling."
+        bases:
+          "சண்டை": "fight; quarrel"
+          "போடுகிறார்கள்": "they put; from போடு (pōṭu), to put; to throw"
+  "ta-8013":
+    native: "comedy; humour"
+    notes:
+      n1: "A comedy scene or a funny film; from நகை (nakai), laughter."
+    examples:
+      "இது நகைச்சுவை படம்.":
+        native: "This is a comedy film."
+        bases:
+          "நகைச்சுவை": "comedy; humour"
+      "எனக்கு நகைச்சுவை பிடிக்கும்.":
+        native: "I like comedy."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "நகைச்சுவை": "comedy; humour"
+  "ta-8014":
+    native: "love; romance"
+    notes:
+      n1: "Romantic love, the most common theme of a film; not the love of a mother."
+    examples:
+      "இது காதல் படம்.":
+        native: "This is a love film."
+        bases:
+          "காதல்": "love; romance"
+      "படத்தில் காதல் இருக்கிறது.":
+        native: "There is love in the film."
+        bases:
+          "படத்தில்": "in the film; from படம் (paṭam), film"
+          "காதல்": "love; romance"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8015":
+    native: "horror; fright"
+    notes:
+      n1: "A horror film is a திகில் படம் (tikil paṭam); the word means fright."
+    examples:
+      "இது திகில் படம்.":
+        native: "This is a horror film."
+        bases:
+          "திகில்": "horror; fright"
+      "எனக்குத் திகில் பிடிக்காது.":
+        native: "I do not like horror."
+        bases:
+          "எனக்குத்": "to me; from நான் (nāṉ), I"
+          "திகில்": "horror; fright"
+  "ta-8016":
+    native: "cinema hall; theatre"
+    notes:
+      n1: "Built from திரை (tirai), screen and அரங்கு (araṅku), hall; people also say தியேட்டர் (tiyēṭṭar), theatre in speech."
+    examples:
+      "திரையரங்கு எங்கே இருக்கிறது?":
+        native: "Where is the cinema hall?"
+        bases:
+          "திரையரங்கு": "cinema hall; theatre"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "திரையரங்கில் கூட்டம் இருக்கிறது.":
+        native: "There is a crowd in the cinema hall."
+        bases:
+          "திரையரங்கில்": "in the cinema hall; from திரையரங்கு (tiraiyaraṅku), cinema hall"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8017":
+    native: "review; criticism"
+    notes:
+      n1: "A film review in a paper or online; it also means criticism."
+    examples:
+      "இது படத்தின் விமர்சனம்.":
+        native: "This is the film's review."
+        bases:
+          "படத்தின்": "of the film; from படம் (paṭam), film"
+          "விமர்சனம்": "review; criticism"
+      "நான் விமர்சனம் படிக்கிறேன்.":
+        native: "I read the review."
+        bases:
+          "விமர்சனம்": "review; criticism"
+          "படிக்கிறேன்": "am studying; from படி (paṭi), to study"
+  "ta-8018":
+    native: "fan; admirer"
+    notes:
+      n1: "A fan of an actor or a film; from ரசி (raci), to enjoy."
+    examples:
+      "அவர் என் ரசிகர்.":
+        native: "He is my fan."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "ரசிகர்": "fan; admirer"
+      "நான் அவர் ரசிகர்.":
+        native: "I am his fan."
+        bases:
+          "ரசிகர்": "fan; admirer"
+  "ta-8019":
+    native: "award; prize"
+    notes:
+      n1: "The prize given for a film or an actor."
+    examples:
+      "அவளுக்கு விருது கிடைக்கும்.":
+        native: "She will get an award."
+        bases:
+          "அவளுக்கு": "to her; for her; from அவள் (avaḷ), she"
+          "விருது": "award; prize"
+          "கிடைக்கும்": "will be available; from கிடை (kiṭai), to be available; to be obtained"
+      "இது பெரிய விருது.":
+        native: "This is a big award."
+        bases:
+          "விருது": "award; prize"
+  "ta-8020":
+    native: "release"
+    notes:
+      n1: "The release of a film; from வெளியிடு (veḷiyiṭu), to release."
+    examples:
+      "படத்தின் வெளியீடு இன்று.":
+        native: "The film's release is today."
+        bases:
+          "படத்தின்": "of the film; from படம் (paṭam), film"
+          "வெளியீடு": "release"
+      "வெளியீடு எப்போது?":
+        native: "When is the release?"
+        bases:
+          "வெளியீடு": "release"
+  "ta-8021":
+    native: "title; heading"
+    notes:
+      n1: "The title of a film, a book or a news item."
+    examples:
+      "படத்தின் தலைப்பு என்ன?":
+        native: "What is the film's title?"
+        bases:
+          "படத்தின்": "of the film; from படம் (paṭam), film"
+          "தலைப்பு": "title; heading"
+      "இது நல்ல தலைப்பு.":
+        native: "This is a good title."
+        bases:
+          "தலைப்பு": "title; heading"
+  "ta-8022":
+    native: "film shooting"
+    notes:
+      n1: "Built from படம் (paṭam), film and பிடிப்பு (piṭippu), catching; it is the shoot of a film."
+    examples:
+      "படப்பிடிப்பு இங்கே நடக்கிறது.":
+        native: "The shooting is happening here."
+        bases:
+          "படப்பிடிப்பு": "film shooting"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+      "படப்பிடிப்பு எப்போது?":
+        native: "When is the shooting?"
+        bases:
+          "படப்பிடிப்பு": "film shooting"
+  "ta-8023":
+    native: "end; decision; result"
+    notes:
+      n1: "The end of a film, and also a decision or a result."
+    examples:
+      "படத்தின் முடிவு நல்லது.":
+        native: "The film's end is good."
+        bases:
+          "படத்தின்": "of the film; from படம் (paṭam), film"
+          "முடிவு": "end; decision; result"
+      "இது என் முடிவு.":
+        native: "This is my decision."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "முடிவு": "end; decision; result"
+  "ta-8024":
+    native: "beginning; start"
+    notes:
+      n1: "The opposite of முடிவு (muṭivu), end."
+    examples:
+      "படத்தின் தொடக்கம் நல்லது.":
+        native: "The film's beginning is good."
+        bases:
+          "படத்தின்": "of the film; from படம் (paṭam), film"
+          "தொடக்கம்": "beginning; start"
+      "தொடக்கம் எப்போது?":
+        native: "When is the start?"
+        bases:
+          "தொடக்கம்": "beginning; start"
+  "ta-8025":
+    native: "music director; composer"
+    notes:
+      n1: "Built from இசை (icai), music, அமை (amai), to arrange and -பாளர் (-pāḷar), the doer."
+    examples:
+      "அவர் இசையமைப்பாளர்.":
+        native: "He is a music director."
+        bases:
+          "இசையமைப்பாளர்": "music director; composer"
+      "இசையமைப்பாளர் எங்கே?":
+        native: "Where is the music director?"
+        bases:
+          "இசையமைப்பாளர்": "music director; composer"
+  "ta-8026":
+    native: "background; backdrop"
+    notes:
+      n1: "பின்னணி இசை (piṉṉaṇi icai) is background music in a film; it also means a person's background."
+    examples:
+      "பின்னணி இசை நல்லது.":
+        native: "The background music is good."
+        bases:
+          "பின்னணி": "background; backdrop"
+      "படத்தின் பின்னணி என்ன?":
+        native: "What is the film's background?"
+        bases:
+          "படத்தின்": "of the film; from படம் (paṭam), film"
+          "பின்னணி": "background; backdrop"
+  "ta-8027":
+    native: "trailer; preview"
+    notes:
+      n1: "The short preview of a film."
+    examples:
+      "முன்னோட்டம் பார்.":
+        native: "Watch the trailer."
+        bases:
+          "முன்னோட்டம்": "trailer; preview"
+      "முன்னோட்டம் நல்லது.":
+        native: "The trailer is good."
+        bases:
+          "முன்னோட்டம்": "trailer; preview"
+  "ta-8028":
+    native: "short film"
+    notes:
+      n1: "Built from குறு (kuṟu), short and படம் (paṭam), film."
+    examples:
+      "இது குறும்படம்.":
+        native: "This is a short film."
+        bases:
+          "குறும்படம்": "short film"
+      "நான் குறும்படம் பார்க்கிறேன்.":
+        native: "I am watching a short film."
+        bases:
+          "குறும்படம்": "short film"
+          "பார்க்கிறேன்": "am watching; from பார் (pār), to see; to look"
+  "ta-8029":
+    native: "documentary"
+    notes:
+      n1: "A film of real events; from ஆவணம் (āvaṇam), document and படம் (paṭam), film."
+    examples:
+      "இது ஆவணப்படம்.":
+        native: "This is a documentary."
+        bases:
+          "ஆவணப்படம்": "documentary"
+      "நான் ஆவணப்படம் பார்க்கிறேன்.":
+        native: "I am watching a documentary."
+        bases:
+          "ஆவணப்படம்": "documentary"
+          "பார்க்கிறேன்": "am watching; from பார் (pār), to see; to look"
+  "ta-8030":
+    native: "dubbing"
+    notes:
+      n1: "A loanword from English dubbing, as டப்பிங் படம் (ṭappiṅ paṭam), dubbed film."
+    examples:
+      "இது டப்பிங் படம்.":
+        native: "This is a dubbed film."
+        bases:
+          "டப்பிங்": "dubbing"
+      "டப்பிங் நல்லது.":
+        native: "The dubbing is good."
+        bases:
+          "டப்பிங்": "dubbing"
+  "ta-8031":
+    native: "role; share"
+    notes:
+      n1: "A role in a film and also a share of money or work."
+    examples:
+      "இது என் பங்கு.":
+        native: "This is my role."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "பங்கு": "role; share"
+      "உன் பங்கு என்ன?":
+        native: "What is your role?"
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "பங்கு": "role; share"
+  "ta-8032":
+    native: "fame; praise"
+    notes:
+      n1: "Good name that people give."
+    examples:
+      "அவருக்குப் புகழ் இருக்கிறது.":
+        native: "He has fame."
+        bases:
+          "அவருக்குப்": "to him; for him; from அவர் (avar), he; she (polite)"
+          "புகழ்": "fame; praise"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இது புகழ் பெற்ற படம்.":
+        native: "This is a famous film."
+        bases:
+          "புகழ்": "fame; praise"
+          "பெற்ற": "that got; from பெறு (peṟu), to get; to receive"
+  "ta-8033":
+    native: "hit film"
+    notes:
+      n1: "Built from வெற்றி (veṟṟi), success and படம் (paṭam), film."
+    examples:
+      "இது வெற்றிப்படம்.":
+        native: "This is a hit film."
+        bases:
+          "வெற்றிப்படம்": "hit film"
+      "அது வெற்றிப்படம் இல்லை.":
+        native: "That is not a hit film."
+        bases:
+          "வெற்றிப்படம்": "hit film"
+  "ta-8034":
+    native: "character; role"
+    notes:
+      n1: "A person in a story or a film."
+    examples:
+      "இது நல்ல கதாபாத்திரம்.":
+        native: "This is a good character."
+        bases:
+          "கதாபாத்திரம்": "character; role"
+      "அவன் கதாபாத்திரம் நல்லது.":
+        native: "His character is good."
+        bases:
+          "கதாபாத்திரம்": "character; role"
+  "ta-8035":
+    native: "screenplay"
+    notes:
+      n1: "Built from திரை (tirai), screen and கதை (katai), story."
+    examples:
+      "இது நல்ல திரைக்கதை.":
+        native: "This is a good screenplay."
+        bases:
+          "திரைக்கதை": "screenplay"
+      "திரைக்கதை நன்றாக இருக்கிறது.":
+        native: "The screenplay is good."
+        bases:
+          "திரைக்கதை": "screenplay"
+          "நன்றாக": "well; nicely; from நன்று (naṉṟu), good"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8036":
+    native: "make-up"
+    notes:
+      n1: "The make-up that an actor wears."
+    examples:
+      "ஒப்பனை நன்றாக இருக்கிறது.":
+        native: "The make-up is good."
+        bases:
+          "ஒப்பனை": "make-up"
+          "நன்றாக": "well; nicely; from நன்று (naṉṟu), good"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "அவள் ஒப்பனை போடுகிறாள்.":
+        native: "She puts on make-up."
+        bases:
+          "ஒப்பனை": "make-up"
+          "போடுகிறாள்": "she puts; from போடு (pōṭu), to put; to throw"
+  "ta-8037":
+    native: "cinematography; filming"
+    notes:
+      n1: "Built from ஒளி (oḷi), light and பதிவு (pativu), recording."
+    examples:
+      "ஒளிப்பதிவு நன்றாக இருக்கிறது.":
+        native: "The cinematography is good."
+        bases:
+          "ஒளிப்பதிவு": "cinematography; filming"
+          "நன்றாக": "well; nicely; from நன்று (naṉṟu), good"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இது நல்ல ஒளிப்பதிவு.":
+        native: "This is good cinematography."
+        bases:
+          "ஒளிப்பதிவு": "cinematography; filming"
+  "ta-8038":
+    native: "applause; clapping"
+    notes:
+      n1: "From கைதட்டு (kaitaṭṭu), to clap."
+    examples:
+      "கைதட்டல் பெரியது.":
+        native: "The applause is big."
+        bases:
+          "கைதட்டல்": "applause; clapping"
+          "பெரியது": "big; from பெரிய (periya), big"
+      "கைதட்டல் கேட்கிறது.":
+        native: "Applause is heard."
+        bases:
+          "கைதட்டல்": "applause; clapping"
+          "கேட்கிறது": "is heard; from கேள் (kēḷ), to hear; to ask"
+  "ta-8039":
+    native: "viewer; audience member"
+    notes:
+      n1: "From பார் (pār), to see and -வையாளர் (-vaiyāḷar); the plural names an audience."
+    examples:
+      "பார்வையாளர் இங்கே இருக்கிறார்.":
+        native: "The viewer is here."
+        bases:
+          "பார்வையாளர்": "viewer; audience member"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+      "பார்வையாளர் நிறைய இருக்கிறார்கள்.":
+        native: "There are many viewers."
+        bases:
+          "பார்வையாளர்": "viewer; audience member"
+          "இருக்கிறார்கள்": "are; from இரு (iru), to be"
+  "ta-8040":
+    native: "emotion; feeling"
+    notes:
+      n1: "A strong feeling in a scene."
+    examples:
+      "இது உணர்ச்சி காட்சி.":
+        native: "This is an emotional scene."
+        bases:
+          "உணர்ச்சி": "emotion; feeling"
+      "அவனுக்கு உணர்ச்சி அதிகம்.":
+        native: "He has a lot of emotion."
+        bases:
+          "அவனுக்கு": "to him; from அவன் (avaṉ), he"
+          "உணர்ச்சி": "emotion; feeling"
+  "ta-8041":
+    native: "twist; turn"
+    notes:
+      n1: "A turn in a story, and also a turn in a road."
+    examples:
+      "படத்தில் ஒரு திருப்பம் இருக்கிறது.":
+        native: "There is a twist in the film."
+        bases:
+          "படத்தில்": "in the film; from படம் (paṭam), film"
+          "திருப்பம்": "twist; turn"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இது நல்ல திருப்பம்.":
+        native: "This is a good twist."
+        bases:
+          "திருப்பம்": "twist; turn"
+  "ta-8042":
+    native: "sadness; sorrow"
+    notes:
+      n1: "The mood of a sad film."
+    examples:
+      "படத்தில் சோகம் இருக்கிறது.":
+        native: "There is sadness in the film."
+        bases:
+          "படத்தில்": "in the film; from படம் (paṭam), film"
+          "சோகம்": "sadness; sorrow"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "எனக்குச் சோகம் பிடிக்காது.":
+        native: "I do not like sadness."
+        bases:
+          "எனக்குச்": "to me; from நான் (nāṉ), I"
+          "சோகம்": "sadness; sorrow"
+  "ta-8043":
+    native: "broadcast"
+    notes:
+      n1: "A show sent out on television or radio."
+    examples:
+      "இன்று ஒளிபரப்பு இருக்கிறது.":
+        native: "There is a broadcast today."
+        bases:
+          "ஒளிபரப்பு": "broadcast"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "ஒளிபரப்பு எப்போது?":
+        native: "When is the broadcast?"
+        bases:
+          "ஒளிபரப்பு": "broadcast"
+  "ta-8044":
+    native: "translation"
+    notes:
+      n1: "A film's dubbed or subtitled version is its translation."
+    examples:
+      "இது நல்ல மொழிபெயர்ப்பு.":
+        native: "This is a good translation."
+        bases:
+          "மொழிபெயர்ப்பு": "translation"
+      "மொழிபெயர்ப்பு எங்கே?":
+        native: "Where is the translation?"
+        bases:
+          "மொழிபெயர்ப்பு": "translation"
+  "ta-8045":
+    native: "fear; fright"
+    notes:
+      n1: "A horror film gives பயம் (payam); it takes the dative: எனக்குப் பயம் (eṉakkup payam), I am afraid."
+    examples:
+      "எனக்குப் பயம்.":
+        native: "I am afraid."
+        bases:
+          "எனக்குப்": "to me; from நான் (nāṉ), I"
+          "பயம்": "fear; fright"
+      "படத்தில் பயம் இருக்கிறது.":
+        native: "There is fear in the film."
+        bases:
+          "படத்தில்": "in the film; from படம் (paṭam), film"
+          "பயம்": "fear; fright"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8046":
+    native: "laughter; smile"
+    notes:
+      n1: "The noun from சிரி (ciri), to laugh."
+    examples:
+      "அவன் சிரிப்பு அழகு.":
+        native: "His smile is beautiful."
+        bases:
+          "சிரிப்பு": "laughter; smile"
+      "படத்தில் சிரிப்பு இருக்கிறது.":
+        native: "There is laughter in the film."
+        bases:
+          "படத்தில்": "in the film; from படம் (paṭam), film"
+          "சிரிப்பு": "laughter; smile"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8047":
+    native: "crying; weeping"
+    notes:
+      n1: "The noun from அழு (aḻu), to cry."
+    examples:
+      "அழுகை கேட்கிறது.":
+        native: "Crying is heard."
+        bases:
+          "அழுகை": "crying; weeping"
+          "கேட்கிறது": "is heard; from கேள் (kēḷ), to hear; to ask"
+      "படத்தில் அழுகை இருக்கிறது.":
+        native: "There is crying in the film."
+        bases:
+          "படத்தில்": "in the film; from படம் (paṭam), film"
+          "அழுகை": "crying; weeping"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8048":
+    native: "imagination; fiction"
+    notes:
+      n1: "A made-up story, not a true one."
+    examples:
+      "இது கற்பனை கதை.":
+        native: "This is an imaginary story."
+        bases:
+          "கற்பனை": "imagination; fiction"
+      "அவளுக்குக் கற்பனை அதிகம்.":
+        native: "She has a lot of imagination."
+        bases:
+          "அவளுக்குக்": "to her; for her; from அவள் (avaḷ), she"
+          "கற்பனை": "imagination; fiction"
+  "ta-8049":
+    native: "to direct; to run"
+    notes:
+      n1: "For a film it means to direct; it also means to operate a machine."
+    examples:
+      "படம் இயக்கு.":
+        native: "Direct a film."
+        bases:
+          "இயக்கு": "to direct; to run"
+      "அவர் படம் இயக்குகிறார்.":
+        native: "He directs a film."
+        bases:
+          "இயக்குகிறார்": "he directs; from இயக்கு (iyakku), to direct"
+  "ta-8050":
+    native: "to produce; to prepare"
+    notes:
+      n1: "For a film it means to produce; it also means to prepare food or goods."
+    examples:
+      "படம் தயாரி.":
+        native: "Produce a film."
+        bases:
+          "தயாரி": "to produce; to prepare"
+      "அவர் படம் தயாரிக்கிறார்.":
+        native: "He produces a film."
+        bases:
+          "தயாரிக்கிறார்": "he produces; from தயாரி (tayāri), to produce"
+  "ta-8051":
+    native: "to release; to publish"
+    notes:
+      n1: "To put a film or a book out for the public."
+    examples:
+      "படம் வெளியிடு.":
+        native: "Release the film."
+        bases:
+          "வெளியிடு": "to release; to publish"
+      "அவர்கள் படம் வெளியிடுகிறார்கள்.":
+        native: "They are releasing the film."
+        bases:
+          "வெளியிடுகிறார்கள்": "they release; from வெளியிடு (veḷiyiṭu), to release"
+  "ta-8052":
+    native: "to review; to criticise"
+    notes:
+      n1: "The verb behind விமர்சனம் (vimarcaṉam), review."
+    examples:
+      "படத்தை விமர்சி.":
+        native: "Review the film."
+        bases:
+          "படத்தை": "the film (object); from படம் (paṭam), film"
+          "விமர்சி": "to review; to criticise"
+      "அவர் படத்தை விமர்சிக்கிறார்.":
+        native: "He reviews the film."
+        bases:
+          "படத்தை": "the film (object); from படம் (paṭam), film"
+          "விமர்சிக்கிறார்": "he reviews; from விமர்சி (vimarci), to review"
+  "ta-8053":
+    native: "to clap"
+    notes:
+      n1: "Built from கை (kai), hand and தட்டு (taṭṭu), to strike; written as one word."
+    examples:
+      "கைதட்டு.":
+        native: "Clap."
+        bases:
+          "கைதட்டு": "to clap"
+      "எல்லோரும் கைதட்டுகிறார்கள்.":
+        native: "Everyone is clapping."
+        bases:
+          "கைதட்டுகிறார்கள்": "they clap; from கைதட்டு (kaitaṭṭu), to clap"
+  "ta-8054":
+    native: "to frighten; to scare"
+    notes:
+      n1: "Built from பயம் (payam), fear and முறுத்து (muṟuttu)."
+    examples:
+      "என்னைப் பயமுறுத்தாதே.":
+        native: "Do not frighten me."
+        bases:
+          "என்னைப்": "me (object); from நான் (nāṉ), I; me"
+          "பயமுறுத்தாதே": "do not frighten; from பயமுறுத்து (payamuṟuttu), to frighten"
+      "படம் என்னைப் பயமுறுத்துகிறது.":
+        native: "The film frightens me."
+        bases:
+          "என்னைப்": "me (object); from நான் (nāṉ), I; me"
+          "பயமுறுத்துகிறது": "frightens; from பயமுறுத்து (payamuṟuttu), to frighten"
+  "ta-8055":
+    native: "to shout; to scream"
+    notes:
+      n1: "Said of a person who shouts and also of a crow or a dog that cries out."
+    examples:
+      "கத்தாதே.":
+        native: "Do not shout."
+        bases:
+          "கத்தாதே": "do not shout; from கத்து (kattu), to shout"
+      "அவன் கத்துகிறான்.":
+        native: "He is shouting."
+        bases:
+          "கத்துகிறான்": "he shouts; from கத்து (kattu), to shout"
+  "ta-8056":
+    native: "to be released; to come out"
+    notes:
+      n1: "The passive of வெளியிடு (veḷiyiṭu), to release: a film வெளியாகிறது (veḷiyākiṟatu), comes out."
+    examples:
+      "படம் வெளியாகு.":
+        native: "Let the film come out."
+        bases:
+          "வெளியாகு": "to be released; to come out"
+      "படம் இன்று வெளியாகிறது.":
+        native: "The film is released today."
+        bases:
+          "வெளியாகிறது": "is released; from வெளியாகு (veḷiyāku), to be released"
+  "ta-8057":
+    native: "interesting; entertaining"
+    notes:
+      n1: "Said of a story, a film or a person."
+    examples:
+      "இது சுவாரசியமான படம்.":
+        native: "This is an interesting film."
+        bases:
+          "சுவாரசியமான": "interesting; entertaining"
+      "கதை சுவாரசியமானது.":
+        native: "The story is interesting."
+        bases:
+          "சுவாரசியமானது": "is interesting; from சுவாரசியமான (cuvāraciyamāṉa), interesting"
+  "ta-8058":
+    native: "successful"
+    notes:
+      n1: "Built from வெற்றி (veṟṟi), success and -கரமான (-karamāṉa), making."
+    examples:
+      "இது வெற்றிகரமான படம்.":
+        native: "This is a successful film."
+        bases:
+          "வெற்றிகரமான": "successful"
+      "அவர் வெற்றிகரமான நடிகர்.":
+        native: "He is a successful actor."
+        bases:
+          "வெற்றிகரமான": "successful"
+  "ta-8059":
+    native: "funny; humorous"
+    notes:
+      n1: "The adjective from நகைச்சுவை (nakaiccuvai), comedy."
+    examples:
+      "இது நகைச்சுவையான படம்.":
+        native: "This is a funny film."
+        bases:
+          "நகைச்சுவையான": "funny; humorous"
+      "அவன் நகைச்சுவையானவன்.":
+        native: "He is a funny man."
+        bases:
+          "நகைச்சுவையானவன்": "a funny man; from நகைச்சுவையான (nakaiccuvaiyāṉa), funny"
