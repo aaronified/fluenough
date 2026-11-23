@@ -1,0 +1,100 @@
+schema: 1
+id: "ta-directions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-3050"
+    target: "நேராக வா."
+    reading: "nērāka vā."
+    ipa: "neːɾaːka ʋaː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "நேராக", ref: "ta-0232" }, { word: "வா", ref: "ta-0010" }]
+    confusables:
+      - { id: "w1", ref: "ta-0231", kind: "word" }
+      - { id: "w2", ref: "ta-0230", kind: "word" }
+  - id: "ta-3051"
+    target: "வலது, இடது?"
+    reading: "valatu, iṭatu?"
+    ipa: "ʋalat̪u iʈat̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "வலது", ref: "ta-0230" }, { word: "இடது", ref: "ta-0231" }]
+    confusables:
+      - { id: "w1", ref: "ta-0232", kind: "word" }
+      - { id: "w2", ref: "ta-0236", kind: "word" }
+  - id: "ta-3052"
+    target: "தெரு எங்கே?"
+    reading: "teru eṅkē?"
+    ipa: "t̪eɾu eŋkeː"
+    pos: "phrase"
+    bases: [{ word: "தெரு", ref: "ta-0237" }, { word: "எங்கே", ref: "ta-0043" }]
+    confusables:
+      - { id: "w1", ref: "ta-0041", kind: "word" }
+      - { id: "w2", ref: "ta-0042", kind: "word" }
+  - id: "ta-3053"
+    target: "வடக்கு தெரு பெரியது."
+    reading: "vaṭakku teru periyatu."
+    ipa: "ʋaʈakku t̪eɾu peɾijat̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "வடக்கு", ref: "ta-0233" }, { word: "தெரு", ref: "ta-0237" }, { word: "பெரியது", ref: "ta-0008" }]
+    confusables:
+      - { id: "w1", ref: "ta-0234", kind: "word" }
+      - { id: "w2", ref: "ta-0168", kind: "word" }
+  - id: "ta-3054"
+    target: "முன்னால் நேராக போ."
+    reading: "muṉṉāl nērāka pō."
+    ipa: "munnaːl neːɾaːka poː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "முன்னால்", ref: "ta-0180" }, { word: "நேராக", ref: "ta-0232" }, { word: "போ", ref: "ta-0118" }]
+    confusables:
+      - { id: "w1", ref: "ta-0181", kind: "word" }
+      - { id: "w2", ref: "ta-0231", kind: "word" }
+  - id: "ta-3055"
+    target: "நேராக போறேன்."
+    reading: "nērāka pōṟēṉ."
+    ipa: "neːɾaːka poːreːn"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "நேராக", ref: "ta-0232" }, { word: "போறேன்", ref: "ta-0118" }]
+    confusables:
+      - { id: "w1", ref: "ta-0230", kind: "word" }
+      - { id: "w2", ref: "ta-0233", kind: "word" }
+  - id: "ta-3056"
+    target: "வடக்கு, தெற்கு, கிழக்கு, மேற்கு."
+    reading: "vaṭakku, teṟku, kiḻakku, mēṟku."
+    ipa: "ʋaʈakku t̪erku kiɻakku meːrku"
+    pos: "phrase"
+    bases:
+      - { word: "வடக்கு", ref: "ta-0233" }
+      - { word: "தெற்கு", ref: "ta-0234" }
+      - { word: "கிழக்கு", ref: "ta-0235" }
+      - { word: "மேற்கு", ref: "ta-0236" }
+    confusables:
+      - { id: "w1", ref: "ta-0230", kind: "word" }
+      - { id: "w2", ref: "ta-0231", kind: "word" }
+  - id: "ta-3057"
+    target: "தெற்கு தெரு இங்கே இருக்கிறதா?"
+    reading: "teṟku teru iṅkē irukkiṟatā?"
+    ipa: "t̪erku t̪eɾu iŋkeː iɾukkirat̪aː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "தெற்கு", ref: "ta-0234" }
+      - { word: "தெரு", ref: "ta-0237" }
+      - { word: "இங்கே", ref: "ta-0112" }
+      - { word: "இருக்கிறதா", base: "இரு", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ta-0233", kind: "word" }
+      - { id: "w2", ref: "ta-0235", kind: "word" }

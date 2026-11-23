@@ -1,0 +1,42 @@
+schema: 1
+id: "ta-en-grammar-likes"
+kind: "layer"
+core: "ta-grammar-likes"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Likes"
+description: "பிடிக்கும் (piṭikkum) and பிடிக்காது (piṭikkātu): what you like and what you do not. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "ta-0412":
+    native: "likes; is liked"
+    alt_native: ["is pleasing"]
+    notes:
+      "n1": "The one who likes takes -உக்கு (-ukku), and the thing liked stays plain: எனக்குத் தோசை பிடிக்கும் (eṉakkut tōcai piṭikkum), I like dosa, literally \"to me dosa is pleasing\". The same form says what you like in general."
+    examples:
+      "எனக்குத் தோசை பிடிக்கும்.":
+        native: "I like dosa."
+        bases:
+          "எனக்குத்": "to me; from நான் (nāṉ), I"
+          "பிடிக்கும்": "is liked"
+      "உங்களுக்கு என்ன பிடிக்கும்?":
+        native: "What do you like?"
+        bases:
+          "உங்களுக்கு": "to you; from நீங்கள் (nīṅkaḷ), you (polite)"
+          "பிடிக்கும்": "is liked"
+  "ta-0413":
+    native: "does not like; is not liked"
+    alt_native: ["dislikes"]
+    notes:
+      "n1": "The negative of பிடிக்கும் (piṭikkum), with the same ending on the one who does not like: அவனுக்கு மீன் பிடிக்காது (avaṉukku mīṉ piṭikkātu), he does not like fish."
+    examples:
+      "எனக்கு இது பிடிக்காது.":
+        native: "I do not like this."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "பிடிக்காது": "is not liked"
+      "அவனுக்கு மீன் பிடிக்காது.":
+        native: "He does not like fish."
+        bases:
+          "அவனுக்கு": "to him; from அவன் (avaṉ), he"
+          "பிடிக்காது": "is not liked"

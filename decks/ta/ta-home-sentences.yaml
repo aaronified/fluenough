@@ -1,0 +1,107 @@
+schema: 1
+id: "ta-home-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-3066"
+    target: "சமையலறை எங்கே?"
+    reading: "camaiyalaṟai eṅkē?"
+    ipa: "samaijalaɾai eŋkeː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "சமையலறை", ref: "ta-0277" }, { word: "எங்கே", ref: "ta-0043" }]
+    confusables:
+      - { id: "w1", ref: "ta-0041", kind: "word" }
+      - { id: "w2", ref: "ta-0042", kind: "word" }
+  - id: "ta-3067"
+    target: "நான் படுக்கையில் தூங்குகிறேன்."
+    reading: "nāṉ paṭukkaiyil tūṅkukiṟēṉ."
+    ipa: "naːn paʈukkaijil t̪uːŋkukireːn"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "நான்", ref: "ta-0003" }
+      - { word: "படுக்கையில்", ref: "ta-0278" }
+      - { word: "தூங்குகிறேன்", ref: "ta-0126" }
+    confusables:
+      - { id: "w1", ref: "ta-0280", kind: "word" }
+      - { id: "w2", ref: "ta-0281", kind: "word" }
+  - id: "ta-3068"
+    target: "ஜன்னல் பெரியது."
+    reading: "jaṉṉal periyatu."
+    ipa: "dʒannal peɾijat̪u"
+    pos: "phrase"
+    bases: [{ word: "ஜன்னல்", ref: "ta-0279" }, { word: "பெரியது", ref: "ta-0008" }]
+    confusables:
+      - { id: "w1", ref: "ta-0280", kind: "word" }
+      - { id: "w2", ref: "ta-0278", kind: "word" }
+  - id: "ta-3069"
+    target: "நாற்காலி அறையில் இருக்கிறது."
+    reading: "nāṟkāli aṟaiyil irukkiṟatu."
+    ipa: "naːrkaːli araijil iɾukkirat̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "நாற்காலி", ref: "ta-0281" }
+      - { word: "அறையில்", ref: "ta-0276" }
+      - { word: "இருக்கிறது", base: "இரு", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ta-0280", kind: "word" }
+      - { id: "w2", ref: "ta-0282", kind: "word" }
+  - id: "ta-3070"
+    target: "தோட்டம் வெளியே இருக்கிறது."
+    reading: "tōṭṭam veḷiyē irukkiṟatu."
+    ipa: "t̪oːʈʈam ʋeɭijeː iɾukkirat̪u"
+    pos: "phrase"
+    bases:
+      - { word: "தோட்டம்", ref: "ta-0282" }
+      - { word: "வெளியே", ref: "ta-0179" }
+      - { word: "இருக்கிறது", base: "இரு", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ta-0178", kind: "word" }
+      - { id: "w2", ref: "ta-0283", kind: "word" }
+  - id: "ta-3071"
+    target: "கழிவறை எங்கே இருக்கிறது?"
+    reading: "kaḻivaṟai eṅkē irukkiṟatu?"
+    ipa: "kaɻiʋarai eŋkeː iɾukkirat̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "கழிவறை", ref: "ta-0283" }
+      - { word: "எங்கே", ref: "ta-0043" }
+      - { word: "இருக்கிறது", base: "இரு", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ta-0041", kind: "word" }
+      - { id: "w2", ref: "ta-0044", kind: "word" }
+  - id: "ta-3072"
+    target: "சமையலறையில் காபி குடி."
+    reading: "camaiyalaṟaiyil kāpi kuṭi."
+    ipa: "samaijalaraijil kaːpi kuʈi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "சமையலறையில்", ref: "ta-0277" }
+      - { word: "காபி", ref: "ta-0245" }
+      - { word: "குடி", ref: "ta-0120" }
+    confusables:
+      - { id: "w1", ref: "ta-0283", kind: "word" }
+      - { id: "w2", ref: "ta-0282", kind: "word" }
+  - id: "ta-3073"
+    target: "மேசையில் சாப்பிடு."
+    reading: "mēcaiyil cāppiṭu."
+    ipa: "meːsaijil saːppiʈu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "மேசையில்", ref: "ta-0280" }, { word: "சாப்பிடு", ref: "ta-0119" }]
+    confusables:
+      - { id: "w1", ref: "ta-0281", kind: "word" }
+      - { id: "w2", ref: "ta-0278", kind: "word" }

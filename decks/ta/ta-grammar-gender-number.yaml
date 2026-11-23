@@ -1,0 +1,185 @@
+schema: 1
+id: "ta-grammar-gender-number"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ta-0440"
+    target: "ஆண்"
+    reading: "āṇ"
+    ipa: "aːɳ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அந்த ஆண் என் நண்பன்."
+        reading: "anta āṇ eṉ naṇpaṉ."
+        ipa: "ant̪a aːɳ en naɳpan"
+        bases: [{ word: "அந்த", base: "அந்த", reading: "anta" }, { word: "ஆண்", base: "ஆண்", reading: "āṇ" }, { word: "என்", base: "நான்", reading: "nāṉ" }, { word: "நண்பன்", ref: "ta-0113" }]
+      - target: "ஓர் ஆண் வருகிறான்."
+        reading: "ōr āṇ varukiṟāṉ."
+        ipa: "oːɾ aːɳ ʋaɾukiraːn"
+        bases: [{ word: "ஓர்", base: "ஒரு", reading: "oru" }, { word: "ஆண்", base: "ஆண்", reading: "āṇ" }, { word: "வருகிறான்", base: "வா", reading: "vā" }]
+  - id: "ta-0441"
+    target: "பெண்"
+    reading: "peṇ"
+    ipa: "peɳ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அந்தப் பெண் என் நண்பி."
+        reading: "antap peṇ eṉ naṇpi."
+        ipa: "ant̪ap peɳ en naɳpi"
+        bases: [{ word: "அந்தப்", base: "அந்த", reading: "anta" }, { word: "பெண்", base: "பெண்", reading: "peṇ" }, { word: "என்", base: "நான்", reading: "nāṉ" }, { word: "நண்பி", ref: "ta-0114" }]
+      - target: "ஒரு பெண் வருகிறாள்."
+        reading: "oru peṇ varukiṟāḷ."
+        ipa: "oɾu peɳ ʋaɾukiraːɭ"
+        bases: [{ word: "ஒரு", base: "ஒரு", reading: "oru" }, { word: "பெண்", base: "பெண்", reading: "peṇ" }, { word: "வருகிறாள்", base: "வா", reading: "vā" }]
+  - id: "ta-0442"
+    target: "பையன்"
+    reading: "paiyaṉ"
+    ipa: "paijan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அந்தப் பையன் சாப்பிடுகிறான்."
+        reading: "antap paiyaṉ cāppiṭukiṟāṉ."
+        ipa: "ant̪ap paijan saːppiʈukiraːn"
+        bases: [{ word: "அந்தப்", base: "அந்த", reading: "anta" }, { word: "பையன்", base: "பையன்", reading: "paiyaṉ" }, { word: "சாப்பிடுகிறான்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+      - target: "ஒரு பையன் பள்ளிக்குப் போகிறான்."
+        reading: "oru paiyaṉ paḷḷikkup pōkiṟāṉ."
+        ipa: "oɾu paijan paɭɭikkup poːkiraːn"
+        bases: [{ word: "ஒரு", base: "ஒரு", reading: "oru" }, { word: "பையன்", base: "பையன்", reading: "paiyaṉ" }, { word: "பள்ளிக்குப்", base: "பள்ளி", reading: "paḷḷi" }, { word: "போகிறான்", base: "போ", reading: "pō" }]
+  - id: "ta-0443"
+    target: "மனிதன்"
+    reading: "maṉitaṉ"
+    ipa: "manit̪an"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவன் நல்ல மனிதன்."
+        reading: "avaṉ nalla maṉitaṉ."
+        ipa: "aʋan nalla manit̪an"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "நல்ல", ref: "ta-0169" }, { word: "மனிதன்", base: "மனிதன்", reading: "maṉitaṉ" }]
+      - target: "இங்கே ஒரு மனிதன் இருக்கிறான்."
+        reading: "iṅkē oru maṉitaṉ irukkiṟāṉ."
+        ipa: "iŋkeː oɾu manit̪an iɾukkiraːn"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "ஒரு", base: "ஒரு", reading: "oru" }, { word: "மனிதன்", base: "மனிதன்", reading: "maṉitaṉ" }, { word: "இருக்கிறான்", base: "இரு", reading: "iru" }]
+  - id: "ta-0444"
+    target: "மக்கள்"
+    reading: "makkaḷ"
+    ipa: "makkaɭ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "இங்கே நிறைய மக்கள் இருக்கிறார்கள்."
+        reading: "iṅkē niṟaiya makkaḷ irukkiṟārkaḷ."
+        ipa: "iŋkeː niraija makkaɭ iɾukkiraːɾkaɭ"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "நிறைய", ref: "ta-0141" }, { word: "மக்கள்", base: "மக்கள்", reading: "makkaḷ" }, { word: "இருக்கிறார்கள்", base: "இரு", reading: "iru" }]
+      - target: "மக்கள் வீட்டுக்குப் போகிறார்கள்."
+        reading: "makkaḷ vīṭṭukkup pōkiṟārkaḷ."
+        ipa: "makkaɭ ʋiːʈʈukkup poːkiraːɾkaɭ"
+        bases: [{ word: "மக்கள்", base: "மக்கள்", reading: "makkaḷ" }, { word: "வீட்டுக்குப்", base: "வீடு", reading: "vīṭu" }, { word: "போகிறார்கள்", base: "போ", reading: "pō" }]
+  - id: "ta-0445"
+    target: "ஆண்கள்"
+    reading: "āṇkaḷ"
+    ipa: "aːɳkaɭ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ஆண்கள் விளையாடுகிறார்கள்."
+        reading: "āṇkaḷ viḷaiyāṭukiṟārkaḷ."
+        ipa: "aːɳkaɭ ʋiɭaijaːʈukiraːɾkaɭ"
+        bases: [{ word: "ஆண்கள்", base: "ஆண்கள்", reading: "āṇkaḷ" }, { word: "விளையாடுகிறார்கள்", base: "விளையாடு", reading: "viḷaiyāṭu" }]
+      - target: "அந்த ஆண்கள் என் நண்பர்கள்."
+        reading: "anta āṇkaḷ eṉ naṇparkaḷ."
+        ipa: "ant̪a aːɳkaɭ en naɳpaɾkaɭ"
+        bases: [{ word: "அந்த", base: "அந்த", reading: "anta" }, { word: "ஆண்கள்", base: "ஆண்கள்", reading: "āṇkaḷ" }, { word: "என்", base: "நான்", reading: "nāṉ" }, { word: "நண்பர்கள்", base: "நண்பன்", reading: "naṇpaṉ" }]
+  - id: "ta-0446"
+    target: "பெண்கள்"
+    reading: "peṇkaḷ"
+    ipa: "peɳkaɭ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "பெண்கள் சாப்பிடுகிறார்கள்."
+        reading: "peṇkaḷ cāppiṭukiṟārkaḷ."
+        ipa: "peɳkaɭ saːppiʈukiraːɾkaɭ"
+        bases: [{ word: "பெண்கள்", base: "பெண்கள்", reading: "peṇkaḷ" }, { word: "சாப்பிடுகிறார்கள்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+      - target: "அந்தப் பெண்கள் என் நண்பிகள்."
+        reading: "antap peṇkaḷ eṉ naṇpikaḷ."
+        ipa: "ant̪ap peɳkaɭ en naɳpikaɭ"
+        bases: [{ word: "அந்தப்", base: "அந்த", reading: "anta" }, { word: "பெண்கள்", base: "பெண்கள்", reading: "peṇkaḷ" }, { word: "என்", base: "நான்", reading: "nāṉ" }, { word: "நண்பிகள்", base: "நண்பி", reading: "naṇpi" }]
+  - id: "ta-0447"
+    target: "அவை"
+    reading: "avai"
+    ipa: "aʋai"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "அவை நாய்கள்."
+        reading: "avai nāykaḷ."
+        ipa: "aʋai naːjkaɭ"
+        bases: [{ word: "அவை", base: "அவை", reading: "avai" }, { word: "நாய்கள்", base: "நாய்", reading: "nāy" }]
+      - target: "அவை எங்கே இருக்கின்றன?"
+        reading: "avai eṅkē irukkiṉṟaṉa?"
+        ipa: "aʋai eŋkeː iɾukkinrana"
+        bases: [{ word: "அவை", base: "அவை", reading: "avai" }, { word: "எங்கே", ref: "ta-0043" }, { word: "இருக்கின்றன", base: "இரு", reading: "iru" }]
+  - id: "ta-0448"
+    target: "இவை"
+    reading: "ivai"
+    ipa: "iʋai"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "இவை பேனாக்கள்."
+        reading: "ivai pēṉākkaḷ."
+        ipa: "iʋai peːnaːkkaɭ"
+        bases: [{ word: "இவை", base: "இவை", reading: "ivai" }, { word: "பேனாக்கள்", base: "பேனா", reading: "pēṉā" }]
+      - target: "இவை நல்லவை."
+        reading: "ivai nallavai."
+        ipa: "iʋai nallaʋai"
+        bases: [{ word: "இவை", base: "இவை", reading: "ivai" }, { word: "நல்லவை", base: "நல்ல", reading: "nalla" }]
+  - id: "ta-0449"
+    target: "எல்லோரும்"
+    reading: "ellōrum"
+    ipa: "elloːɾum"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "எல்லோரும் வீட்டில் இருக்கிறார்கள்."
+        reading: "ellōrum vīṭṭil irukkiṟārkaḷ."
+        ipa: "elloːɾum ʋiːʈʈil iɾukkiraːɾkaɭ"
+        bases: [{ word: "எல்லோரும்", base: "எல்லோரும்", reading: "ellōrum" }, { word: "வீட்டில்", base: "வீடு", reading: "vīṭu" }, { word: "இருக்கிறார்கள்", base: "இரு", reading: "iru" }]
+      - target: "எல்லோரும் சாப்பிடுகிறார்கள்."
+        reading: "ellōrum cāppiṭukiṟārkaḷ."
+        ipa: "elloːɾum saːppiʈukiraːɾkaɭ"
+        bases: [{ word: "எல்லோரும்", base: "எல்லோரும்", reading: "ellōrum" }, { word: "சாப்பிடுகிறார்கள்", base: "சாப்பிடு", reading: "cāppiṭu" }]

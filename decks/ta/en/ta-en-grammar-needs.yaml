@@ -1,0 +1,57 @@
+schema: 1
+id: "ta-en-grammar-needs"
+kind: "layer"
+core: "ta-grammar-needs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Need and want"
+description: "வேண்டும் (vēṇṭum), வேண்டாம் (vēṇṭām) and தேவை (tēvai): what you need, what you want, and what you do not. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "ta-0409":
+    native: "is needed; is wanted"
+    alt_native: ["is required"]
+    notes:
+      "n1": "The one who needs or wants takes the ending -உக்கு (-ukku): எனக்கு (eṉakku), உங்களுக்கு (uṅkaḷukku) ... வேண்டும் (vēṇṭum), literally \"to me it is needed\". It does not change for person, and the thing needed stays plain. In speech it is often வேணும் (vēṇum). Source: English Wiktionary, வேண்டும் (used with every person; spoken வேணும்; எனக்கு அது வேண்டும் \"I want that\")."
+    examples:
+      "எனக்குத் தண்ணீர் வேண்டும்.":
+        native: "I need water."
+        bases:
+          "எனக்குத்": "to me; from நான் (nāṉ), I"
+          "வேண்டும்": "is needed"
+      "உங்களுக்கு என்ன வேண்டும்?":
+        native: "What do you want?"
+        bases:
+          "உங்களுக்கு": "to you; from நீங்கள் (nīṅkaḷ), you (polite)"
+          "வேண்டும்": "is wanted"
+  "ta-0410":
+    native: "is not wanted; no, thank you"
+    alt_native: ["do not"]
+    notes:
+      "n1": "The opposite of வேண்டும் (vēṇṭum): எனக்கு இது வேண்டாம் (eṉakku itu vēṇṭām), I do not want this. On its own it is a polite no. Source: English Wiktionary, வேண்டும் (antonym வேண்டாம்)."
+    examples:
+      "எனக்கு இது வேண்டாம்.":
+        native: "I do not want this."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "வேண்டாம்": "is not wanted"
+      "போதும், இன்னும் வேண்டாம்.":
+        native: "That is enough, no more."
+        bases:
+          "வேண்டாம்": "is not wanted"
+  "ta-0411":
+    native: "need; necessity"
+    alt_native: ["requirement"]
+    notes:
+      "n1": "A noun, firmer than வேண்டும் (vēṇṭum): எனக்கு உதவி தேவை (eṉakku utavi tēvai), I need help. For there is no need, use இல்லை (illai) after it: தேவை இல்லை (tēvai illai). Source: English Wiktionary, தேவை (need, necessity)."
+    examples:
+      "எனக்கு உதவி தேவை.":
+        native: "I need help."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "உதவி": "help"
+          "தேவை": "need"
+      "இங்கே பணம் தேவை இல்லை.":
+        native: "There is no need for money here."
+        bases:
+          "தேவை": "need"

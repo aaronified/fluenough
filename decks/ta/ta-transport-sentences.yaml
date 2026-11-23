@@ -1,0 +1,100 @@
+schema: 1
+id: "ta-transport-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-3058"
+    target: "பேருந்து எப்போது?"
+    reading: "pēruntu eppōtu?"
+    ipa: "peːɾunt̪u eppoːt̪u"
+    pos: "phrase"
+    bases: [{ word: "பேருந்து", ref: "ta-0238" }, { word: "எப்போது", ref: "ta-0044" }]
+    confusables:
+      - { id: "w1", ref: "ta-0043", kind: "word" }
+      - { id: "w2", ref: "ta-0046", kind: "word" }
+  - id: "ta-3059"
+    target: "ஆட்டோ இருக்கிறதா?"
+    reading: "āṭṭō irukkiṟatā?"
+    ipa: "aːʈʈoː iɾukkirat̪aː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "ஆட்டோ", ref: "ta-0239" }, { word: "இருக்கிறதா", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-0240", kind: "word" }
+      - { id: "w2", ref: "ta-0241", kind: "word" }
+  - id: "ta-3060"
+    target: "நான் சைக்கிளில் போறேன்."
+    reading: "nāṉ caikkiḷil pōṟēṉ."
+    ipa: "naːn saikkiɭil poːreːn"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "behaviour" }
+    bases:
+      - { word: "நான்", ref: "ta-0003" }
+      - { word: "சைக்கிளில்", ref: "ta-0242" }
+      - { word: "போறேன்", ref: "ta-0118" }
+    confusables:
+      - { id: "w1", ref: "ta-0243", kind: "word" }
+      - { id: "w2", ref: "ta-0241", kind: "word" }
+  - id: "ta-3061"
+    target: "பேருந்தில் போ."
+    reading: "pēruntil pō."
+    ipa: "peːɾunt̪il poː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "பேருந்தில்", ref: "ta-0238" }, { word: "போ", ref: "ta-0118" }]
+    confusables:
+      - { id: "w1", ref: "ta-0239", kind: "word" }
+      - { id: "w2", ref: "ta-0241", kind: "word" }
+  - id: "ta-3062"
+    target: "ரயில் இங்கே இருக்கிறதா?"
+    reading: "rayil iṅkē irukkiṟatā?"
+    ipa: "ɾajil iŋkeː iɾukkirat̪aː"
+    pos: "phrase"
+    bases:
+      - { word: "ரயில்", ref: "ta-0241" }
+      - { word: "இங்கே", ref: "ta-0112" }
+      - { word: "இருக்கிறதா", base: "இரு", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ta-0238", kind: "word" }
+      - { id: "w2", ref: "ta-0242", kind: "word" }
+  - id: "ta-3063"
+    target: "நான் கார் வாங்குவேன்."
+    reading: "nāṉ kār vāṅkuvēṉ."
+    ipa: "naːn kaːɾ ʋaːŋkuʋeːn"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "நான்", ref: "ta-0003" }
+      - { word: "கார்", ref: "ta-0243" }
+      - { word: "வாங்குவேன்", ref: "ta-0129" }
+    confusables:
+      - { id: "w1", ref: "ta-0242", kind: "word" }
+      - { id: "w2", ref: "ta-0240", kind: "word" }
+  - id: "ta-3064"
+    target: "டாக்சி எவ்வளவு?"
+    reading: "ṭākci evvaḷavu?"
+    ipa: "ʈaːktʃi eʋʋaɭaʋu"
+    pos: "phrase"
+    bases: [{ word: "டாக்சி", ref: "ta-0240" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+    confusables:
+      - { id: "w1", ref: "ta-0048", kind: "word" }
+      - { id: "w2", ref: "ta-0044", kind: "word" }
+  - id: "ta-3065"
+    target: "சைக்கிள் பழையது."
+    reading: "caikkiḷ paḻaiyatu."
+    ipa: "saikkiɭ paɻaijat̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "சைக்கிள்", ref: "ta-0242" }, { word: "பழையது", ref: "ta-0172" }]
+    confusables:
+      - { id: "w1", ref: "ta-0171", kind: "word" }
+      - { id: "w2", ref: "ta-0167", kind: "word" }

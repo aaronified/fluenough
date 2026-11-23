@@ -1,0 +1,64 @@
+schema: 1
+id: "ta-en-market-sentences"
+kind: "layer"
+core: "ta-market-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The market in sentences"
+description: "Eight short sentences at a market stall: prices, rupees, discounts, bags and weight. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-3042":
+    native: "What is the price?"
+    notes:
+      n1: "விலை (vilai) is the price and எடை (eṭai) is the weight: ask which one you mean."
+    confusables:
+      w1: { why: "எத்தனை (ettaṉai), how many, counts things, not money." }
+      w2: { why: "எடை (eṭai), weight, is not a price." }
+  "ta-3043":
+    native: "A hundred rupees."
+    notes:
+      n1: "The number comes before ரூபாய் (rūpāy), rupee, as நூறு (nūṟu), a hundred, does here."
+    confusables:
+      w1: { why: "ஆயிரம் (āyiram), a thousand, is a different amount." }
+      w2: { why: "இருநூறு (irunūṟu), two hundred, is a different amount." }
+  "ta-3044":
+    native: "Where is the bag?"
+    confusables:
+      w1: { why: "பணம் (paṇam), money, is not a bag." }
+      w2: { why: "எப்போது (eppōtu), when, asks a time." }
+  "ta-3045":
+    native: "Is there a discount?"
+    notes:
+      n1: "-ஆ (-ā) at the end asks a yes-or-no question: இருக்கிறதா (irukkiṟatā), is there?"
+    bases:
+      "இருக்கிறதா": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "விலை (vilai), price, is not a discount." }
+      w2: { why: "சந்தை (cantai), market, is a place, not a discount." }
+  "ta-3046":
+    native: "The market is big."
+    notes:
+      n1: "பெரியது (periyatu), it is big, is பெரிய (periya), big, with -அது (-atu) for a thing."
+    confusables:
+      w1: { why: "சின்ன (ciṉṉa), small, is the opposite." }
+      w2: { why: "பழைய (paḻaiya), old, is a different quality." }
+  "ta-3047":
+    native: "Ten rupees off."
+    notes:
+      n1: "தள்ளுபடி (taḷḷupaṭi), discount, comes last, and no verb is needed."
+    confusables:
+      w1: { why: "விலை (vilai), price, is not a discount." }
+      w2: { why: "பை (pai), bag, is a different thing." }
+  "ta-3048":
+    native: "The price is good."
+    confusables:
+      w1: { why: "எடை (eṭai), weight, is not a price." }
+      w2: { why: "தள்ளுபடி (taḷḷupaṭi), discount, is not a price." }
+  "ta-3049":
+    native: "Fifty rupees is enough."
+    notes:
+      n1: "போதும் (pōtum), enough, ends the sentence with no verb needed."
+    confusables:
+      w1: { why: "நூறு (nūṟu), a hundred, is a different amount." }
+      w2: { why: "நாற்பது (nāṟpatu), forty, is a different amount." }

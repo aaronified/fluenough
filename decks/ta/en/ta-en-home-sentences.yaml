@@ -1,0 +1,68 @@
+schema: 1
+id: "ta-en-home-sentences"
+kind: "layer"
+core: "ta-home-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The home in sentences"
+description: "Eight short sentences about the rooms and furniture of a home: where things are, what is outside and what is done at the table, in the kitchen and on the bed. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-3066":
+    native: "Where is the kitchen?"
+    notes:
+      n1: "சமையலறை (camaiyalaṟai), kitchen, is made of சமை (camai), to cook, and அறை (aṟai), room."
+    confusables:
+      w1: { why: "யார் (yār), who, asks about a person." }
+      w2: { why: "என்ன (eṉṉa), what, asks what a thing is." }
+  "ta-3067":
+    native: "I sleep on the bed."
+    notes:
+      n1: "-இல் (-il) shows where: படுக்கையில் (paṭukkaiyil), on the bed."
+    confusables:
+      w1: { why: "மேசை (mēcai), table, is a different piece of furniture." }
+      w2: { why: "நாற்காலி (nāṟkāli), chair, is a different piece of furniture." }
+  "ta-3068":
+    native: "The window is big."
+    confusables:
+      w1: { why: "மேசை (mēcai), table, is a different piece of furniture." }
+      w2: { why: "படுக்கை (paṭukkai), bed, is a different piece of furniture." }
+  "ta-3069":
+    native: "The chair is in the room."
+    notes:
+      n1: "The place comes before the verb, and -இல் (-il) says where: அறையில் (aṟaiyil), in the room."
+    bases:
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "மேசை (mēcai), table, is a different piece of furniture." }
+      w2: { why: "தோட்டம் (tōṭṭam), garden, is not in the room." }
+  "ta-3070":
+    native: "The garden is outside."
+    bases:
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "உள்ளே (uḷḷē), inside, is the opposite." }
+      w2: { why: "கழிவறை (kaḻivaṟai), toilet, is a different place." }
+  "ta-3071":
+    native: "Where is the toilet?"
+    notes:
+      n1: "The phrasebook asks கழிவறை (kaḻivaṟai) எங்கே (eṅkē)? with no verb; இருக்கிறது (irukkiṟatu), it is, makes it a full sentence."
+    bases:
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "யார் (yār), who, asks about a person." }
+      w2: { why: "எப்போது (eppōtu), when, asks a time." }
+  "ta-3072":
+    native: "Drink coffee in the kitchen."
+    notes:
+      n1: "The place comes first, then the drink, then the verb: சமையலறையில் (camaiyalaṟaiyil), in the kitchen, காபி (kāpi), coffee, குடி (kuṭi), drink."
+    confusables:
+      w1: { why: "கழிவறை (kaḻivaṟai), toilet, is not a place to drink." }
+      w2: { why: "தோட்டம் (tōṭṭam), garden, is a different place." }
+  "ta-3073":
+    native: "Eat at the table."
+    notes:
+      n1: "-இல் (-il) is said for both 'at' and 'on': மேசையில் (mēcaiyil), at the table."
+    confusables:
+      w1: { why: "நாற்காலி (nāṟkāli), chair, is a different piece of furniture." }
+      w2: { why: "படுக்கை (paṭukkai), bed, is a different piece of furniture." }
