@@ -292,7 +292,7 @@ extension PrivateLanguagesOnState on AppState {
   }
 
   /// Whether [code]'s path is that of a private package that modifies the
-  /// language ([LanguagePath.privatelyModified]): the "Privately modified"
+  /// language (`LanguagePath.privatelyModified`): the "Privately modified"
   /// tag. Read one language at a time it is in the language's summary, so
   /// that the tag needs no unit.
   bool isPrivatelyModified(String code) => readsPerLanguage
