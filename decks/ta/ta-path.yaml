@@ -247,7 +247,9 @@ units:
       - { id: "who-and-where", text: { "en": "Saying who someone is and where they are" } }
     reading_passages:
       - { id: "is-there", text: { "en": "A note: what there is at home and what there is not" } }
-  - planned: { id: "ta-grammar-verb-present", grammar: ["present-first", "present-second", "present-third"], words: 0 }
+  - decks: ["ta-grammar-verb-present", "*"]
+    words: 0
+    grammar: ["present-first", "present-second", "present-third"]
     listening_passages:
       - { id: "morning-at-home", text: { "en": "A family member says what she does every morning" } }
     reading_passages:
