@@ -309,7 +309,10 @@ void main() {
   testWidgets('the Languages page and names read no unit', (tester) async {
     usePhone(tester, textScale: 1.4);
     final phone = _Phone();
-    final state = await _lazyLoaded(phone);
+    // pumpEventQueue waits on real timers, which the test clock never fires:
+    // the start runs in the real zone.
+    final loaded = await tester.runAsync(() => _lazyLoaded(phone));
+    final state = loaded!;
     final before = phone.jobs.length;
     final page = LanguagesPage(spokenList: pickerSpokenList);
     await pumpScreen(tester, page, state: state);
