@@ -146,6 +146,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-2192 | ta-nature | Is நதி or ஆறு the usual word for a river in speech? | Sonnet builder | 2026-11-23 |
 | ta-2197 | ta-nature | Is வனம் natural in speech, or only written beside காடு? | Sonnet builder | 2026-11-23 |
 | ta-2219 | ta-nature | Does ஆமை cover both tortoise and turtle? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-verb-present and the A2 rules decks | Forms of the 150 later verbs are generated from a pattern (stem, past marker, future marker, participle): check them, above all the compound verbs, wh stems (பற, மற, கட) and -ய் verbs. | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-2278 | ta-adjectives-2 | Is காலியான (from the English loan காலி) natural for empty? | Sonnet builder | 2026-11-23 |
 | ta-2279 | ta-adjectives-2 | Is நிரம்பிய the usual spoken form of full, or நிறைந்த? | Sonnet builder | 2026-11-23 |
 | ta-2300 | ta-adjectives-2 | Is பிரமாண்டமான natural in speech for huge? | Sonnet builder | 2026-11-23 |
@@ -170,3 +171,11 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-2375 | ta-geography | Is கோவை the usual spoken short form of Coimbatore? | Sonnet builder | 2026-11-23 |
 | ta-2386 | ta-geography | Is உதகமண்டலம் the correct formal name of Ooty? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-geography | The facts in the culture notes are taken from the cited English Wikipedia pages; a Tamil Nadu speaker may confirm them. | Sonnet builder | 2026-11-23 |
+| ta-1344 | ta-cooking | Is சட்டி the everyday word for a round cooking pot, next to பாத்திரம் and கடாய்? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1345 | ta-cooking | Is மிக்ஸி the usual word for the electric mixer-grinder? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1369 | ta-cooking | Is பதம் used in speech for the right state of a cooked dish? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1360 | ta-cooking | Is the split between ருசி (spoken) and சுவை right? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1347 | ta-cooking | Is வதக்கு the everyday verb for sautéing in a little oil? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1354 | ta-cooking | Is தோசை சுடு the natural way to say make dosa? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1356 | ta-cooking | Is சாதம் பிசை natural for mashing rice, or is it more used for dough? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| unit-level | ta-grammar-noun-forms | Rows for the ~550 later nouns are generated from the noun-class patterns (stem doubling, -ம் nouns, -ு glide nouns, loanwords in -ட், people and animals): check them, above all loanwords, -வு nouns, and plurals of people. | Sonnet builder (ta-gram2) | 2026-11-23 |

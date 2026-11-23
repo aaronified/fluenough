@@ -519,7 +519,8 @@ units:
       - { id: "ordering-meals", text: { "en": "Ordering a meal on a banana leaf" } }
     reading_passages:
       - { id: "restaurant-bill", text: { "en": "A restaurant bill" } }
-  - planned: { id: "ta-cooking", theme: "cooking", words: 50 }
+  - decks: ["ta-cooking", "ta-cooking-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
     reading_passages:
