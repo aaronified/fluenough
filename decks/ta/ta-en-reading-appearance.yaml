@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-appearance"
+name: "Reading: lost and found"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A lost-and-found notice listing what was left behind, using the appearance words taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-lost-and-found"
+    title: "Lost and found"
+    sentences:
+      - text: "இங்கே ஒரு கருப்பு பெல்ட் இருக்கிறது."
+        reading: "iṅkē oru karuppu pelṭ irukkiṟatu."
+        ipa: "iŋkeː oɾu kaɾuppu pelʈ iɾukkirat̪u"
+      - text: "ஒரு சிவப்பு கைக்குட்டை இருக்கிறது."
+        reading: "oru civappu kaikkuṭṭai irukkiṟatu."
+        ipa: "oɾu siʋappu kaikkuʈʈai iɾukkirat̪u"
+      - text: "ஒரு தங்க மோதிரம் இருக்கிறது."
+        reading: "oru taṅka mōtiram irukkiṟatu."
+        ipa: "oɾu t̪aŋka moːt̪iɾam iɾukkirat̪u"
+      - text: "உங்கள் பொருள் இங்கே இருக்கிறதா?"
+        reading: "uṅkaḷ poruḷ iṅkē irukkiṟatā?"
+        ipa: "uŋkaɭ poɾuɭ iŋkeː iɾukkirat̪aː"
+    questions:
+      - id: "ta-9935"
+        prompt: { en: "What colour is the belt?" }
+        options:
+          - { en: "Black" }
+          - { en: "Red" }
+          - { en: "White" }
+        answer: 1
+      - id: "ta-9936"
+        prompt: { en: "Which thing is made of gold?" }
+        options:
+          - { en: "The ring" }
+          - { en: "The handkerchief" }
+          - { en: "The belt" }
+        answer: 1
+      - id: "ta-9937"
+        prompt: { en: "The handkerchief is red." }
+        answer: true
