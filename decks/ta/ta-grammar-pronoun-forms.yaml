@@ -1,0 +1,70 @@
+schema: 1
+id: "ta-grammar-pronoun-forms"
+part: "core"
+kind: "rules"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["pronoun"]
+    except: ["ta-0042", "ta-0163"]
+  slots: ["gen", "dat", "acc", "with"]
+  rows:
+    - word: "ta-0003"
+      forms: { "gen": ["என்", "என்னுடைய"], "dat": "எனக்கு", "acc": "என்னை", "with": "என்னோடு" }
+      readings: { "gen": ["eṉ", "eṉṉuṭaiya"], "dat": "eṉakku", "acc": "eṉṉai", "with": "eṉṉōṭu" }
+    - word: "ta-0004"
+      forms: { "gen": ["உங்கள்", "உங்களுடைய"], "dat": "உங்களுக்கு", "acc": "உங்களை", "with": "உங்களோடு" }
+      readings: { "gen": ["uṅkaḷ", "uṅkaḷuṭaiya"], "dat": "uṅkaḷukku", "acc": "uṅkaḷai", "with": "uṅkaḷōṭu" }
+    - word: "ta-0041"
+      forms: { "gen": "யாருடைய", "dat": "யாருக்கு", "acc": "யாரை", "with": "யாரோடு" }
+      readings: { "gen": "yāruṭaiya", "dat": "yārukku", "acc": "yārai", "with": "yārōṭu" }
+    - word: "ta-0047"
+      forms: { "gen": "எதன்", "dat": "எதற்கு", "acc": "எதை", "with": "எதோடு" }
+      readings: { "gen": "etaṉ", "dat": "etaṟku", "acc": "etai", "with": "etōṭu" }
+    - word: "ta-0057"
+      forms: { "gen": ["உன்", "உன்னுடைய"], "dat": "உனக்கு", "acc": "உன்னை", "with": "உன்னோடு" }
+      readings: { "gen": ["uṉ", "uṉṉuṭaiya"], "dat": "uṉakku", "acc": "uṉṉai", "with": "uṉṉōṭu" }
+    - word: "ta-0058"
+      forms: { "gen": "அவனுடைய", "dat": "அவனுக்கு", "acc": "அவனை", "with": "அவனோடு" }
+      readings: { "gen": "avaṉuṭaiya", "dat": "avaṉukku", "acc": "avaṉai", "with": "avaṉōṭu" }
+    - word: "ta-0059"
+      forms: { "gen": "அவளுடைய", "dat": "அவளுக்கு", "acc": "அவளை", "with": "அவளோடு" }
+      readings: { "gen": "avaḷuṭaiya", "dat": "avaḷukku", "acc": "avaḷai", "with": "avaḷōṭu" }
+    - word: "ta-0060"
+      forms: { "gen": "அவருடைய", "dat": "அவருக்கு", "acc": "அவரை", "with": "அவரோடு" }
+      readings: { "gen": "avaruṭaiya", "dat": "avarukku", "acc": "avarai", "with": "avarōṭu" }
+    - word: "ta-0061"
+      forms: { "gen": ["அதன்", "அதனுடைய"], "dat": "அதற்கு", "acc": "அதை", "with": "அதோடு" }
+      readings: { "gen": ["ataṉ", "ataṉuṭaiya"], "dat": "ataṟku", "acc": "atai", "with": "atōṭu" }
+    - word: "ta-0062"
+      forms: { "gen": "இவருடைய", "dat": "இவருக்கு", "acc": "இவரை", "with": "இவரோடு" }
+      readings: { "gen": "ivaruṭaiya", "dat": "ivarukku", "acc": "ivarai", "with": "ivarōṭu" }
+    - word: "ta-0063"
+      forms: { "gen": ["நம்", "நம்முடைய"], "dat": "நமக்கு", "acc": "நம்மை", "with": "நம்மோடு" }
+      readings: { "gen": ["nam", "nammuṭaiya"], "dat": "namakku", "acc": "nammai", "with": "nammōṭu" }
+    - word: "ta-0064"
+      forms: { "gen": ["எங்கள்", "எங்களுடைய"], "dat": "எங்களுக்கு", "acc": "எங்களை", "with": "எங்களோடு" }
+      readings: { "gen": ["eṅkaḷ", "eṅkaḷuṭaiya"], "dat": "eṅkaḷukku", "acc": "eṅkaḷai", "with": "eṅkaḷōṭu" }
+    - word: "ta-0065"
+      forms: { "gen": "அவர்களுடைய", "dat": "அவர்களுக்கு", "acc": "அவர்களை", "with": "அவர்களோடு" }
+      readings: { "gen": "avarkaḷuṭaiya", "dat": "avarkaḷukku", "acc": "avarkaḷai", "with": "avarkaḷōṭu" }
+    - word: "ta-0066"
+      forms: { "gen": ["இதன்", "இதனுடைய"], "dat": "இதற்கு", "acc": "இதை", "with": "இதோடு" }
+      readings: { "gen": ["itaṉ", "itaṉuṭaiya"], "dat": "itaṟku", "acc": "itai", "with": "itōṭu" }
+rules:
+  - id: "ta-rule-pronoun-gen"
+    slots: ["gen"]
+    words: [{ word: "நான்", reading: "nāṉ" }, { word: "என்", reading: "eṉ" }, { word: "நீ", reading: "nī" }, { word: "உன்", reading: "uṉ" }, { word: "அவன்", reading: "avaṉ" }, { word: "அவனுடைய", reading: "avaṉuṭaiya" }, { word: "என்னுடைய", reading: "eṉṉuṭaiya" }, { word: "அதன்", reading: "ataṉ" }]
+  - id: "ta-rule-pronoun-dat"
+    slots: ["dat"]
+    words: [{ word: "நான்", reading: "nāṉ" }, { word: "எனக்கு", reading: "eṉakku" }, { word: "நீ", reading: "nī" }, { word: "உனக்கு", reading: "uṉakku" }, { word: "யார்", reading: "yār" }, { word: "யாருக்கு", reading: "yārukku" }]
+  - id: "ta-rule-pronoun-acc"
+    slots: ["acc"]
+    words: [{ word: "நான்", reading: "nāṉ" }, { word: "என்னை", reading: "eṉṉai" }, { word: "நீ", reading: "nī" }, { word: "உன்னை", reading: "uṉṉai" }, { word: "அவர்", reading: "avar" }, { word: "அவரை", reading: "avarai" }]
+  - id: "ta-rule-pronoun-with"
+    slots: ["with"]
+    words: [{ word: "நான்", reading: "nāṉ" }, { word: "என்னோடு", reading: "eṉṉōṭu" }, { word: "நீ", reading: "nī" }, { word: "உன்னோடு", reading: "uṉṉōṭu" }, { word: "நாம்", reading: "nām" }, { word: "நம்மோடு", reading: "nammōṭu" }]

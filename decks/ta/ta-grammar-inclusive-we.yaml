@@ -1,0 +1,24 @@
+schema: 1
+id: "ta-grammar-inclusive-we"
+part: "core"
+kind: "grammar"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["we", "of us (before a noun)", "to us", "us, the one acted on", "with us"]
+  entries:
+    - lemma: "நாங்கள்"
+      key: "naangal"
+      reading: "nāṅkaḷ"
+      ipa: "naːŋkaɭ"
+      forms: { "we": "நாங்கள்", "of us (before a noun)": ["எங்கள்", "எங்களுடைய"], "to us": "எங்களுக்கு", "us, the one acted on": "எங்களை", "with us": "எங்களோடு" }
+      readings: { "we": "nāṅkaḷ", "of us (before a noun)": ["eṅkaḷ", "eṅkaḷuṭaiya"], "to us": "eṅkaḷukku", "us, the one acted on": "eṅkaḷai", "with us": "eṅkaḷōṭu" }
+      ipas: { "we": "naːŋkaɭ", "of us (before a noun)": ["eŋkaɭ", "eŋkaɭuʈaija"], "to us": "eŋkaɭukku", "us, the one acted on": "eŋkaɭai", "with us": "eŋkaɭoːʈu" }
+    - lemma: "நாம்"
+      key: "naam"
+      reading: "nām"
+      ipa: "naːm"
+      forms: { "we": "நாம்", "of us (before a noun)": ["நம்", "நம்முடைய"], "to us": "நமக்கு", "us, the one acted on": "நம்மை", "with us": "நம்மோடு" }
+      readings: { "we": "nām", "of us (before a noun)": ["nam", "nammuṭaiya"], "to us": "namakku", "us, the one acted on": "nammai", "with us": "nammōṭu" }
+      ipas: { "we": "naːm", "of us (before a noun)": ["nam", "nammuʈaija"], "to us": "namakku", "us, the one acted on": "nammai", "with us": "nammoːʈu" }
