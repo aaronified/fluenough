@@ -76,6 +76,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1916 | ta-hobbies | Is ஜெயி (jeyi) the usual spoken word for win beside வெல்? | Sonnet builder | 2026-11-23 |
 | ta-1905 | ta-hobbies | Is பாடுறேன் the right spoken present of sing? | Sonnet builder | 2026-11-23 |
 | ta-1883 | ta-hobbies | Is சீட்டு விளையாடு the natural way to say play cards? | Sonnet builder | 2026-11-23 |
+| ta-1162 | ta-calendar | Is போன the usual spoken word for last (week, month, year) and கடந்த the written one? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1155 | ta-calendar | Is வருடம் the everyday word for year, with ஆண்டு more written? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1159 | ta-calendar | Is முந்தாநாள் the usual spoken word for the day before yesterday? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1945 | ta-chores | Is பெருக்கு the usual spoken word for sweep in Tamil Nadu? | Sonnet builder | 2026-11-23 |
 | ta-1917 | ta-chores | Is சுத்தம் பண்ணு the right spoken form beside சுத்தம் செய்? | Sonnet builder | 2026-11-23 |
 | ta-1930 | ta-chores | Is இஸ்திரி போடு the natural way to say iron clothes? | Sonnet builder | 2026-11-23 |
@@ -84,3 +87,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-2005 | ta-appearance | Is புடவை கட்டு the usual verb for wearing a sari beside உடுத்து? | Sonnet builder | 2026-11-23 |
 | ta-2000 | ta-appearance | Is பாவாடை the right everyday word for a skirt? | Sonnet builder | 2026-11-23 |
 | ta-1987 | ta-appearance | Is சாம்பல் the usual word for the colour grey? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-verb-classes | Check the six past-marker groups and the future markers given for every verb. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-ordinals | Check the shortened spoken ordinals (ரெண்டாவது, மூணாவது, நாலாவது, அஞ்சாவது, ஒம்பதாவது) and the date forms. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-past-more | Check has done and had done (participle plus இரு) and their spoken forms, such as வந்திருக்கேன் and வந்திருந்துச்சு. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-verbal-participle | Check the spoken verbal participles (படிச்சு, செஞ்சு, வச்சு, பாத்து) and the spoken without-doing ending -ஆமே. | Sonnet builder (ta-gram2) | 2026-11-23 |

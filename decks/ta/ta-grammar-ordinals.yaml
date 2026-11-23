@@ -1,0 +1,80 @@
+schema: 1
+id: "ta-grammar-ordinals"
+part: "core"
+kind: "grammar"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["ordinal", "before a noun", "the date"]
+  entries:
+    - lemma: "ஒன்று"
+      key: "onru"
+      reading: "oṉṟu"
+      ipa: "onru"
+      forms: { "ordinal": "முதலாவது", "before a noun": "முதல்", "the date": "முதல் தேதி" }
+      readings: { "ordinal": "mutalāvatu", "before a noun": "mutal", "the date": "mutal tēti" }
+      ipas: { "ordinal": "mut̪alaːʋat̪u", "before a noun": "mut̪al", "the date": "mut̪al t̪eːt̪i" }
+    - lemma: "இரண்டு"
+      key: "irandu"
+      reading: "iraṇṭu"
+      ipa: "iɾaɳʈu"
+      forms: { "ordinal": ["ரெண்டாவது", "இரண்டாவது"], "before a noun": ["ரெண்டாம்", "இரண்டாம்"], "the date": ["ரெண்டாம் தேதி", "இரண்டாம் தேதி"] }
+      readings: { "ordinal": ["reṇṭāvatu", "iraṇṭāvatu"], "before a noun": ["reṇṭām", "iraṇṭām"], "the date": ["reṇṭām tēti", "iraṇṭām tēti"] }
+      ipas: { "ordinal": "ɾeɳʈaːʋat̪u", "before a noun": "ɾeɳʈaːm", "the date": "ɾeɳʈaːm t̪eːt̪i" }
+    - lemma: "மூன்று"
+      key: "moonru"
+      reading: "mūṉṟu"
+      ipa: "muːnru"
+      forms: { "ordinal": ["மூணாவது", "மூன்றாவது"], "before a noun": ["மூணாம்", "மூன்றாம்"], "the date": ["மூணாம் தேதி", "மூன்றாம் தேதி"] }
+      readings: { "ordinal": ["mūṇāvatu", "mūṉṟāvatu"], "before a noun": ["mūṇām", "mūṉṟām"], "the date": ["mūṇām tēti", "mūṉṟām tēti"] }
+      ipas: { "ordinal": "muːɳaːʋat̪u", "before a noun": "muːɳaːm", "the date": "muːɳaːm t̪eːt̪i" }
+    - lemma: "நான்கு"
+      key: "naanku"
+      reading: "nāṉku"
+      ipa: "naːnku"
+      forms: { "ordinal": ["நாலாவது", "நான்காவது"], "before a noun": ["நாலாம்", "நான்காம்"], "the date": ["நாலாம் தேதி", "நான்காம் தேதி"] }
+      readings: { "ordinal": ["nālāvatu", "nāṉkāvatu"], "before a noun": ["nālām", "nāṉkām"], "the date": ["nālām tēti", "nāṉkām tēti"] }
+      ipas: { "ordinal": "naːlaːʋat̪u", "before a noun": "naːlaːm", "the date": "naːlaːm t̪eːt̪i" }
+    - lemma: "ஐந்து"
+      key: "ainthu"
+      reading: "aintu"
+      ipa: "aint̪u"
+      forms: { "ordinal": ["அஞ்சாவது", "ஐந்தாவது"], "before a noun": ["அஞ்சாம்", "ஐந்தாம்"], "the date": ["அஞ்சாம் தேதி", "ஐந்தாம் தேதி"] }
+      readings: { "ordinal": ["añcāvatu", "aintāvatu"], "before a noun": ["añcām", "aintām"], "the date": ["añcām tēti", "aintām tēti"] }
+      ipas: { "ordinal": "aɲtʃaːʋat̪u", "before a noun": "aɲtʃaːm", "the date": "aɲtʃaːm t̪eːt̪i" }
+    - lemma: "ஆறு"
+      key: "aaru"
+      reading: "āṟu"
+      ipa: "aːru"
+      forms: { "ordinal": "ஆறாவது", "before a noun": "ஆறாம்", "the date": "ஆறாம் தேதி" }
+      readings: { "ordinal": "āṟāvatu", "before a noun": "āṟām", "the date": "āṟām tēti" }
+      ipas: { "ordinal": "aːraːʋat̪u", "before a noun": "aːraːm", "the date": "aːraːm t̪eːt̪i" }
+    - lemma: "ஏழு"
+      key: "ezhu"
+      reading: "ēḻu"
+      ipa: "eːɻu"
+      forms: { "ordinal": "ஏழாவது", "before a noun": "ஏழாம்", "the date": "ஏழாம் தேதி" }
+      readings: { "ordinal": "ēḻāvatu", "before a noun": "ēḻām", "the date": "ēḻām tēti" }
+      ipas: { "ordinal": "eːɻaːʋat̪u", "before a noun": "eːɻaːm", "the date": "eːɻaːm t̪eːt̪i" }
+    - lemma: "எட்டு"
+      key: "ettu"
+      reading: "eṭṭu"
+      ipa: "eʈʈu"
+      forms: { "ordinal": "எட்டாவது", "before a noun": "எட்டாம்", "the date": "எட்டாம் தேதி" }
+      readings: { "ordinal": "eṭṭāvatu", "before a noun": "eṭṭām", "the date": "eṭṭām tēti" }
+      ipas: { "ordinal": "eʈʈaːʋat̪u", "before a noun": "eʈʈaːm", "the date": "eʈʈaːm t̪eːt̪i" }
+    - lemma: "ஒன்பது"
+      key: "onpathu"
+      reading: "oṉpatu"
+      ipa: "onpat̪u"
+      forms: { "ordinal": ["ஒம்பதாவது", "ஒன்பதாவது"], "before a noun": ["ஒம்பதாம்", "ஒன்பதாம்"], "the date": ["ஒம்பதாம் தேதி", "ஒன்பதாம் தேதி"] }
+      readings: { "ordinal": ["ompatāvatu", "oṉpatāvatu"], "before a noun": ["ompatām", "oṉpatām"], "the date": ["ompatām tēti", "oṉpatām tēti"] }
+      ipas: { "ordinal": "ompat̪aːʋat̪u", "before a noun": "ompat̪aːm", "the date": "ompat̪aːm t̪eːt̪i" }
+    - lemma: "பத்து"
+      key: "pathu"
+      reading: "pattu"
+      ipa: "pat̪t̪u"
+      forms: { "ordinal": "பத்தாவது", "before a noun": "பத்தாம்", "the date": "பத்தாம் தேதி" }
+      readings: { "ordinal": "pattāvatu", "before a noun": "pattām", "the date": "pattām tēti" }
+      ipas: { "ordinal": "pat̪t̪aːʋat̪u", "before a noun": "pat̪t̪aːm", "the date": "pat̪t̪aːm t̪eːt̪i" }

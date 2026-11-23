@@ -1,0 +1,84 @@
+schema: 1
+id: "ta-calendar-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4017"
+    target: "நாளை என்ன தேதி?"
+    reading: "nāḷai eṉṉa tēti?"
+    ipa: "naːɭai enna t̪eːt̪i"
+    pos: "phrase"
+    bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "என்ன", ref: "ta-0042" }, { word: "தேதி", ref: "ta-1156" }]
+    confusables:
+      - { id: "w1", ref: "ta-1153", kind: "word" }
+      - { id: "w2", ref: "ta-1154", kind: "word" }
+  - id: "ta-4018"
+    target: "அடுத்த வாரம் விடுமுறை இல்லை."
+    reading: "aṭutta vāram viṭumuṟai illai."
+    ipa: "aʈut̪t̪a ʋaːɾam ʋiʈumurai illai"
+    pos: "phrase"
+    bases: [{ word: "அடுத்த", ref: "ta-1161" }, { word: "வாரம்", ref: "ta-1153" }, { word: "விடுமுறை", ref: "ta-1817" }, { word: "இல்லை", ref: "ta-0002" }]
+    confusables:
+      - { id: "w1", ref: "ta-1154", kind: "word" }
+      - { id: "w2", ref: "ta-1155", kind: "word" }
+  - id: "ta-4019"
+    target: "போன மாதம் நான் இங்கே வந்தேன்."
+    reading: "pōṉa mātam nāṉ iṅkē vantēṉ."
+    ipa: "poːna maːt̪am naːn iŋkeː ʋant̪eːn"
+    pos: "phrase"
+    bases: [{ word: "போன", ref: "ta-1162" }, { word: "மாதம்", ref: "ta-1154" }, { word: "நான்", ref: "ta-0003" }, { word: "இங்கே", ref: "ta-0112" }, { word: "வந்தேன்", base: "வா", reading: "vā" }]
+    confusables:
+      - { id: "w1", ref: "ta-1153", kind: "word" }
+      - { id: "w2", ref: "ta-1155", kind: "word" }
+  - id: "ta-4020"
+    target: "அம்மாவின் பிறந்தநாள் ஞாயிறு."
+    reading: "ammāviṉ piṟantanāḷ ñāyiṟu."
+    ipa: "ammaːʋin pirant̪anaːɭ ɲaːjiru"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "அம்மாவின்", base: "அம்மா", reading: "ammā" }, { word: "பிறந்தநாள்", ref: "ta-1158" }, { word: "ஞாயிறு", ref: "ta-0151" }]
+    confusables:
+      - { id: "w1", ref: "ta-1817", kind: "word" }
+      - { id: "w2", ref: "ta-1156", kind: "word" }
+  - id: "ta-4021"
+    target: "ஒரு வாரத்தில் வருகிறேன்."
+    reading: "oru vārattil varukiṟēṉ."
+    ipa: "oɾu ʋaːɾat̪t̪il ʋaɾukireːn"
+    pos: "phrase"
+    bases: [{ word: "ஒரு", ref: "ta-0419" }, { word: "வாரத்தில்", base: "வாரம்", reading: "vāram" }, { word: "வருகிறேன்", base: "வா", reading: "vā" }]
+    confusables:
+      - { id: "w1", ref: "ta-1154", kind: "word" }
+      - { id: "w2", ref: "ta-1100", kind: "word" }
+  - id: "ta-4022"
+    target: "காலண்டரில் தேதி பார்."
+    reading: "kālaṇṭaril tēti pār."
+    ipa: "kaːlaɳʈaɾil t̪eːt̪i paːɾ"
+    pos: "phrase"
+    bases: [{ word: "காலண்டரில்", base: "காலண்டர்", reading: "kālaṇṭar" }, { word: "தேதி", ref: "ta-1156" }, { word: "பார்", ref: "ta-0121" }]
+    confusables:
+      - { id: "w1", ref: "ta-1100", kind: "word" }
+      - { id: "w2", ref: "ta-1154", kind: "word" }
+  - id: "ta-4023"
+    target: "இரண்டு நிமிடம் நில்."
+    reading: "iraṇṭu nimiṭam nil."
+    ipa: "iɾaɳʈu nimiʈam nil"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "இரண்டு", ref: "ta-0089" }, { word: "நிமிடம்", ref: "ta-1163" }, { word: "நில்", ref: "ta-0189" }]
+    confusables:
+      - { id: "w1", ref: "ta-0156", kind: "word" }
+      - { id: "w2", ref: "ta-0155", kind: "word" }
+  - id: "ta-4024"
+    target: "முந்தாநாள் விடுமுறை, நேற்று வேலை."
+    reading: "muntānāḷ viṭumuṟai, nēṟṟu vēlai."
+    ipa: "munt̪aːnaːɭ ʋiʈumurai neːrru ʋeːlai"
+    pos: "phrase"
+    bases: [{ word: "முந்தாநாள்", ref: "ta-1159" }, { word: "விடுமுறை", ref: "ta-1817" }, { word: "நேற்று", ref: "ta-0134" }, { word: "வேலை", ref: "ta-0192" }]
+    confusables:
+      - { id: "w1", ref: "ta-1160", kind: "word" }
+      - { id: "w2", ref: "ta-0133", kind: "word" }

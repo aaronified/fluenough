@@ -1,0 +1,274 @@
+schema: 1
+id: "ta-calendar"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "calendar"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-1153"
+    target: "வாரம்"
+    reading: "vāram"
+    ipa: "ʋaːɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஒரு வாரம் போதும்."
+        reading: "oru vāram pōtum."
+        ipa: "oɾu ʋaːɾam poːt̪um"
+        bases: [{ word: "ஒரு", ref: "ta-0419" }, { word: "வாரம்", base: "வாரம்", reading: "vāram" }, { word: "போதும்", ref: "ta-0161" }]
+      - target: "அடுத்த வாரம் விடுமுறை."
+        reading: "aṭutta vāram viṭumuṟai."
+        ipa: "aʈut̪t̪a ʋaːɾam ʋiʈumurai"
+        bases: [{ word: "அடுத்த", ref: "ta-1161" }, { word: "வாரம்", base: "வாரம்", reading: "vāram" }, { word: "விடுமுறை", ref: "ta-1817" }]
+  - id: "ta-1154"
+    target: "மாதம்"
+    reading: "mātam"
+    ipa: "maːt̪am"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஒரு மாதம் போதும்."
+        reading: "oru mātam pōtum."
+        ipa: "oɾu maːt̪am poːt̪um"
+        bases: [{ word: "ஒரு", ref: "ta-0419" }, { word: "மாதம்", base: "மாதம்", reading: "mātam" }, { word: "போதும்", ref: "ta-0161" }]
+      - target: "அடுத்த மாதம் வருகிறேன்."
+        reading: "aṭutta mātam varukiṟēṉ."
+        ipa: "aʈut̪t̪a maːt̪am ʋaɾukireːn"
+        bases: [{ word: "அடுத்த", ref: "ta-1161" }, { word: "மாதம்", base: "மாதம்", reading: "mātam" }, { word: "வருகிறேன்", base: "வா", reading: "vā" }]
+  - id: "ta-1155"
+    target: "வருடம்"
+    reading: "varuṭam"
+    ipa: "ʋaɾuʈam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "போன வருடம் மழை நிறைய."
+        reading: "pōṉa varuṭam maḻai niṟaiya."
+        ipa: "poːna ʋaɾuʈam maɻai niraija"
+        bases: [{ word: "போன", ref: "ta-1162" }, { word: "வருடம்", base: "வருடம்", reading: "varuṭam" }, { word: "மழை", ref: "ta-1109" }, { word: "நிறைய", ref: "ta-0141" }]
+      - target: "அடுத்த வருடம் புதிய வீடு."
+        reading: "aṭutta varuṭam putiya vīṭu."
+        ipa: "aʈut̪t̪a ʋaɾuʈam put̪ija ʋiːʈu"
+        bases: [{ word: "அடுத்த", ref: "ta-1161" }, { word: "வருடம்", base: "வருடம்", reading: "varuṭam" }, { word: "புதிய", ref: "ta-0171" }, { word: "வீடு", ref: "ta-0009" }]
+  - id: "ta-1156"
+    target: "தேதி"
+    reading: "tēti"
+    ipa: "t̪eːt̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று என்ன தேதி?"
+        reading: "iṉṟu eṉṉa tēti?"
+        ipa: "inru enna t̪eːt̪i"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "என்ன", ref: "ta-0042" }, { word: "தேதி", base: "தேதி", reading: "tēti" }]
+      - target: "தேதி எழுது."
+        reading: "tēti eḻutu."
+        ipa: "t̪eːt̪i eɻut̪u"
+        bases: [{ word: "தேதி", base: "தேதி", reading: "tēti" }, { word: "எழுது", ref: "ta-0124" }]
+  - id: "ta-1157"
+    target: "காலண்டர்"
+    reading: "kālaṇṭar"
+    ipa: "kaːlaɳʈaɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சுவரில் காலண்டர் இருக்கிறது."
+        reading: "cuvaril kālaṇṭar irukkiṟatu."
+        ipa: "suʋaɾil kaːlaɳʈaɾ iɾukkirat̪u"
+        bases: [{ word: "சுவரில்", base: "சுவர்", reading: "cuvar" }, { word: "காலண்டர்", base: "காலண்டர்", reading: "kālaṇṭar" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "புதிய காலண்டர் வேண்டும்."
+        reading: "putiya kālaṇṭar vēṇṭum."
+        ipa: "put̪ija kaːlaɳʈaɾ ʋeːɳʈum"
+        bases: [{ word: "புதிய", ref: "ta-0171" }, { word: "காலண்டர்", base: "காலண்டர்", reading: "kālaṇṭar" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1158"
+    target: "பிறந்தநாள்"
+    reading: "piṟantanāḷ"
+    ipa: "pirant̪anaːɭ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று என் பிறந்தநாள்."
+        reading: "iṉṟu eṉ piṟantanāḷ."
+        ipa: "inru en pirant̪anaːɭ"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "பிறந்தநாள்", base: "பிறந்தநாள்", reading: "piṟantanāḷ" }]
+      - target: "அம்மாவின் பிறந்தநாள் நாளை."
+        reading: "ammāviṉ piṟantanāḷ nāḷai."
+        ipa: "ammaːʋin pirant̪anaːɭ naːɭai"
+        bases: [{ word: "அம்மாவின்", base: "அம்மா", reading: "ammā" }, { word: "பிறந்தநாள்", base: "பிறந்தநாள்", reading: "piṟantanāḷ" }, { word: "நாளை", ref: "ta-0133" }]
+  - id: "ta-1159"
+    target: "முந்தாநாள்"
+    reading: "muntānāḷ"
+    ipa: "munt̪aːnaːɭ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "முந்தாநாள் மழை பெய்தது."
+        reading: "muntānāḷ maḻai peytatu."
+        ipa: "munt̪aːnaːɭ maɻai pejt̪at̪u"
+        bases: [{ word: "முந்தாநாள்", base: "முந்தாநாள்", reading: "muntānāḷ" }, { word: "மழை", ref: "ta-1109" }, { word: "பெய்தது", base: "பெய்", reading: "pey" }]
+      - target: "முந்தாநாள் வந்தேன்."
+        reading: "muntānāḷ vantēṉ."
+        ipa: "munt̪aːnaːɭ ʋant̪eːn"
+        bases: [{ word: "முந்தாநாள்", base: "முந்தாநாள்", reading: "muntānāḷ" }, { word: "வந்தேன்", base: "வா", reading: "vā" }]
+  - id: "ta-1160"
+    target: "மறுநாள்"
+    reading: "maṟunāḷ"
+    ipa: "marunaːɭ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மறுநாள் விடுமுறை."
+        reading: "maṟunāḷ viṭumuṟai."
+        ipa: "marunaːɭ ʋiʈumurai"
+        bases: [{ word: "மறுநாள்", base: "மறுநாள்", reading: "maṟunāḷ" }, { word: "விடுமுறை", ref: "ta-1817" }]
+      - target: "மறுநாள் வருகிறேன்."
+        reading: "maṟunāḷ varukiṟēṉ."
+        ipa: "marunaːɭ ʋaɾukireːn"
+        bases: [{ word: "மறுநாள்", base: "மறுநாள்", reading: "maṟunāḷ" }, { word: "வருகிறேன்", base: "வா", reading: "vā" }]
+  - id: "ta-1161"
+    target: "அடுத்த"
+    reading: "aṭutta"
+    ipa: "aʈut̪t̪a"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அடுத்த வாரம் வா."
+        reading: "aṭutta vāram vā."
+        ipa: "aʈut̪t̪a ʋaːɾam ʋaː"
+        bases: [{ word: "அடுத்த", base: "அடுத்த", reading: "aṭutta" }, { word: "வாரம்", ref: "ta-1153" }, { word: "வா", ref: "ta-0010" }]
+      - target: "அடுத்த மாதம் நல்லது."
+        reading: "aṭutta mātam nallatu."
+        ipa: "aʈut̪t̪a maːt̪am nallat̪u"
+        bases: [{ word: "அடுத்த", base: "அடுத்த", reading: "aṭutta" }, { word: "மாதம்", ref: "ta-1154" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-1162"
+    target: "போன"
+    reading: "pōṉa"
+    ipa: "poːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "போன வாரம் மழை பெய்தது."
+        reading: "pōṉa vāram maḻai peytatu."
+        ipa: "poːna ʋaːɾam maɻai pejt̪at̪u"
+        bases: [{ word: "போன", base: "போன", reading: "pōṉa" }, { word: "வாரம்", ref: "ta-1153" }, { word: "மழை", ref: "ta-1109" }, { word: "பெய்தது", base: "பெய்", reading: "pey" }]
+      - target: "போன மாதம் வந்தேன்."
+        reading: "pōṉa mātam vantēṉ."
+        ipa: "poːna maːt̪am ʋant̪eːn"
+        bases: [{ word: "போன", base: "போன", reading: "pōṉa" }, { word: "மாதம்", ref: "ta-1154" }, { word: "வந்தேன்", base: "வா", reading: "vā" }]
+  - id: "ta-1163"
+    target: "நிமிடம்"
+    reading: "nimiṭam"
+    ipa: "nimiʈam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஒரு நிமிடம் போதும்."
+        reading: "oru nimiṭam pōtum."
+        ipa: "oɾu nimiʈam poːt̪um"
+        bases: [{ word: "ஒரு", ref: "ta-0419" }, { word: "நிமிடம்", base: "நிமிடம்", reading: "nimiṭam" }, { word: "போதும்", ref: "ta-0161" }]
+      - target: "பத்து நிமிடம் நில்."
+        reading: "pattu nimiṭam nil."
+        ipa: "pat̪t̪u nimiʈam nil"
+        bases: [{ word: "பத்து", ref: "ta-0096" }, { word: "நிமிடம்", base: "நிமிடம்", reading: "nimiṭam" }, { word: "நில்", ref: "ta-0189" }]
+  - id: "ta-1164"
+    target: "அரை"
+    reading: "arai"
+    ipa: "aɾai"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அரை மணி போதும்."
+        reading: "arai maṇi pōtum."
+        ipa: "aɾai maɳi poːt̪um"
+        bases: [{ word: "அரை", base: "அரை", reading: "arai" }, { word: "மணி", ref: "ta-0156" }, { word: "போதும்", ref: "ta-0161" }]
+      - target: "அரை நாள் விடுமுறை."
+        reading: "arai nāḷ viṭumuṟai."
+        ipa: "aɾai naːɭ ʋiʈumurai"
+        bases: [{ word: "அரை", base: "அரை", reading: "arai" }, { word: "நாள்", ref: "ta-1100" }, { word: "விடுமுறை", ref: "ta-1817" }]
+  - id: "ta-1165"
+    target: "காலம்"
+    reading: "kālam"
+    ipa: "kaːlam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது நல்ல காலம்."
+        reading: "itu nalla kālam."
+        ipa: "it̪u nalla kaːlam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நல்ல", ref: "ta-0169" }, { word: "காலம்", base: "காலம்", reading: "kālam" }]
+      - target: "காலம் மாறுகிறது."
+        reading: "kālam māṟukiṟatu."
+        ipa: "kaːlam maːrukirat̪u"
+        bases: [{ word: "காலம்", base: "காலம்", reading: "kālam" }, { word: "மாறுகிறது", base: "மாறு", reading: "māṟu" }]
+  - id: "ta-1166"
+    target: "மதியம்"
+    reading: "matiyam"
+    ipa: "mat̪ijam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மதியம் சாப்பாடு தயார்."
+        reading: "matiyam cāppāṭu tayār."
+        ipa: "mat̪ijam saːppaːʈu t̪ajaːɾ"
+        bases: [{ word: "மதியம்", base: "மதியம்", reading: "matiyam" }, { word: "சாப்பாடு", ref: "ta-0244" }, { word: "தயார்", base: "தயார்", reading: "tayār" }]
+      - target: "மதியம் வெயில் அதிகம்."
+        reading: "matiyam veyil atikam."
+        ipa: "mat̪ijam ʋejil at̪ikam"
+        bases: [{ word: "மதியம்", base: "மதியம்", reading: "matiyam" }, { word: "வெயில்", ref: "ta-1110" }, { word: "அதிகம்", ref: "ta-0159" }]
+  - id: "ta-1167"
+    target: "பகல்"
+    reading: "pakal"
+    ipa: "pakal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இரவு குளிர், பகல் வெயில்."
+        reading: "iravu kuḷir, pakal veyil."
+        ipa: "iɾaʋu kuɭiɾ pakal ʋejil"
+        bases: [{ word: "இரவு", ref: "ta-0154" }, { word: "குளிர்", ref: "ta-1118" }, { word: "பகல்", base: "பகல்", reading: "pakal" }, { word: "வெயில்", ref: "ta-1110" }]
+      - target: "பகலில் தூங்காதே."
+        reading: "pakalil tūṅkātē."
+        ipa: "pakalil t̪uːŋkaːt̪eː"
+        bases: [{ word: "பகலில்", base: "பகல்", reading: "pakal" }, { word: "தூங்காதே", base: "தூங்கு", reading: "tūṅku" }]

@@ -447,7 +447,8 @@ units:
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the monsoon" } }
   # ta-grammar-past follows this unit.
-  - planned: { id: "ta-calendar", theme: "calendar", words: 15 }
+  - decks: ["ta-calendar", "ta-calendar-sentences", "*"]
+    words: 15
     listening_passages:
       - { id: "what-i-did", text: { "en": "Saying what you did last week" } }
     reading_passages:
@@ -459,12 +460,16 @@ units:
       - { id: "past-heard", text: { "en": "A short exchange that uses past, after the calendar unit" } }
     reading_passages:
       - { id: "past-read", text: { "en": "A short text that uses past, after the calendar unit" } }
-  - planned: { id: "ta-grammar-verb-classes", grammar: "verb-classes", words: 0 }
+  - decks: ["ta-grammar-verb-classes"]
+    words: 0
+    grammar: ["verb-classes-infinitive", "verb-classes-participle", "verb-classes-past", "verb-classes-future"]
     listening_passages:
       - { id: "yesterday-at-home", text: { "en": "A family says what each of them did yesterday" } }
     reading_passages:
       - { id: "past-notes", text: { "en": "Short notes on what was done, and by whom" } }
-  - planned: { id: "ta-grammar-ordinals", grammar: "ordinals" }
+  - decks: ["ta-grammar-ordinals"]
+    words: 0
+    grammar: ["ordinals"]
     listening_passages:
       - { id: "birthday-dates", text: { "en": "People say their birthdays and anniversaries" } }
     reading_passages:
@@ -474,7 +479,9 @@ units:
       - { id: "festival-plans", text: { "en": "Neighbours plan the Pongal harvest festival together" } }
     reading_passages:
       - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
-  - planned: { id: "ta-grammar-past-more", grammar: "past-more" }
+  - decks: ["ta-grammar-past-more"]
+    words: 0
+    grammar: ["past-more-perfect", "past-more-pluperfect"]
     listening_passages:
       - { id: "had-already", text: { "en": "Saying what had already happened" } }
     reading_passages:
@@ -484,7 +491,9 @@ units:
       - { id: "bargaining", text: { "en": "Bargaining politely for a bag" } }
     reading_passages:
       - { id: "price-list", text: { "en": "A shop's price list and offers" } }
-  - planned: { id: "ta-grammar-verbal-participle", grammar: "verbal-participle" }
+  - decks: ["ta-grammar-verbal-participle"]
+    words: 0
+    grammar: ["verbal-participle-and", "verbal-participle-without"]
     listening_passages:
       - { id: "what-i-did-today", text: { "en": "Telling a day as one chain of actions" } }
     reading_passages:

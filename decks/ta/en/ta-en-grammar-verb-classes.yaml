@@ -1,0 +1,29 @@
+schema: 1
+id: "ta-en-grammar-verb-classes"
+kind: "layer"
+core: "ta-grammar-verb-classes"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verb groups: the forms to learn with each verb"
+description: "The forms to learn with each verb, for every verb the course teaches: the infinitive, the verbal participle, he did and he will do, so that the past and future markers show. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "inf": "the infinitive: to do, in order to do"
+    "vp": "the verbal participle: having done, and then"
+    "past": "he did (shows the past marker)"
+    "future": "he will do (shows the future marker)"
+rules:
+  "ta-rule-verb-classes-infinitive":
+    name: "The infinitive: the verb ending in -அ (-a)"
+    explanation: "The infinitive ends in {1}. It is the base of the negative, and it also follows words such as can and must, which later units teach. Most verbs add -க்க (-kka) or -க (-ka) to the stem: {2} gives {3} and {4} gives {5}. Other verbs add only {1}: {6} gives {7}. {8} adds -ய (-ya): {9}."
+  "ta-rule-verb-classes-participle":
+    name: "The verbal participle: having done, and then"
+    explanation: "This form is the same for every person, and it joins one action to the next. Verbs with a past marker in -த (-ta) or -ட (-ṭa) or -ந (-nta) take -து (-tu) or -ட்டு (-ṭṭu): {5} gives {6}. Speech often says {7}. {1} gives {2}, and {3} gives {4}, with -ய் (-y). Verbs with the past marker -இன (-iṉa) take -இ (-i): {8} gives {9}."
+  "ta-rule-verb-classes-past":
+    name: "The past markers: six groups of verbs"
+    explanation: "The table gives he did, so that the past marker shows. Group one has -த்த (-tta): {1}, to study, gives {2}; {3}, to see, gives {4}; {5}, to do, gives {6}. Group two has -ந்த (-nta): {7}, to come, gives {8}; {9}, to open, gives {10}. Group three has -இன (-iṉa): {11}, to speak, gives {12}; {13}, to close, gives {14}. Group four has -ட்ட (-ṭṭa): {15}, to eat, gives {16}; {17}, to listen, gives {18}. Group five has -ன (-ṉa): {19}, to go, gives {20}. Group six has -ன்ற (-ṉṟa): {21}, to stand, gives {22}. Learn the group together with each new verb. English Wikipedia, Tamil grammar, lists thirteen classes by past marker; this course joins them into the six that its own verbs fall into."
+  "ta-rule-verb-classes-future":
+    name: "The future markers: -ப்ப் (-pp-) or -வ் (-v-)"
+    explanation: "The future adds one of two markers before the person ending. {1}, to study, gives {2}, and {3}, to see, gives {4}, with -ப்ப் (-pp-). {5}, to come, gives {6}, and {7}, to speak, gives {8}, with -வ் (-v-). The past does not tell you which one a verb takes, except that a verb with the past marker -இன (-iṉa) always takes -வ் (-v-): learn the future of each new verb with its past."

@@ -1,0 +1,218 @@
+schema: 1
+id: "ta-en-calendar"
+kind: "layer"
+core: "ta-calendar"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Months and years"
+description: "Week, month, year, date, calendar, birthday, next and last, and the small units of time. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-1153":
+    native: "week"
+    notes:
+      n1: "The final letter changes before an ending: வாரம் (vāram) becomes வாரத்தில் (vārattil), in a week."
+    examples:
+      "ஒரு வாரம் போதும்.":
+        native: "One week is enough."
+        bases:
+          "வாரம்": "week"
+      "அடுத்த வாரம் விடுமுறை.":
+        native: "Next week is a holiday."
+        bases:
+          "வாரம்": "week"
+  "ta-1154":
+    native: "month"
+    notes:
+      n1: "மாதம் (mātam) is a month; the Tamil months have their own names, such as தை (tai), the month of Pongal."
+    examples:
+      "ஒரு மாதம் போதும்.":
+        native: "One month is enough."
+        bases:
+          "மாதம்": "month"
+      "அடுத்த மாதம் வருகிறேன்.":
+        native: "I am coming next month."
+        bases:
+          "மாதம்": "month"
+          "வருகிறேன்": "come; from வா (vā), to come"
+  "ta-1155":
+    native: "year"
+    notes:
+      n1: "வருடம் (varuṭam) is the everyday word for year; ஆண்டு (āṇṭu) is also used, more in writing."
+    examples:
+      "போன வருடம் மழை நிறைய.":
+        native: "Last year there was a lot of rain."
+        bases:
+          "வருடம்": "year"
+      "அடுத்த வருடம் புதிய வீடு.":
+        native: "Next year, a new house."
+        bases:
+          "வருடம்": "year"
+  "ta-1156":
+    native: "date (of the month)"
+    notes:
+      n1: "To ask the date, say என்ன தேதி (eṉṉa tēti), what date."
+    examples:
+      "இன்று என்ன தேதி?":
+        native: "What is the date today?"
+        bases:
+          "தேதி": "date (of the month)"
+      "தேதி எழுது.":
+        native: "Write the date."
+        bases:
+          "தேதி": "date (of the month)"
+  "ta-1157":
+    native: "calendar"
+    notes:
+      n1: "காலண்டர் (kālaṇṭar) comes from the English word calendar."
+    examples:
+      "சுவரில் காலண்டர் இருக்கிறது.":
+        native: "There is a calendar on the wall."
+        bases:
+          "சுவரில்": "on the wall; from சுவர் (cuvar), wall"
+          "காலண்டர்": "calendar"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "புதிய காலண்டர் வேண்டும்.":
+        native: "A new calendar is needed."
+        bases:
+          "காலண்டர்": "calendar"
+  "ta-1158":
+    native: "birthday"
+    notes:
+      n1: "The owner comes first with an ending: அம்மாவின் பிறந்தநாள் (ammāviṉ piṟantanāḷ), Mother's birthday."
+    examples:
+      "இன்று என் பிறந்தநாள்.":
+        native: "Today is my birthday."
+        bases:
+          "என்": "my"
+          "பிறந்தநாள்": "birthday"
+      "அம்மாவின் பிறந்தநாள் நாளை.":
+        native: "Mother's birthday is tomorrow."
+        bases:
+          "அம்மாவின்": "mother's; from அம்மா (ammā), mother"
+          "பிறந்தநாள்": "birthday"
+  "ta-1159":
+    native: "the day before yesterday"
+    notes:
+      n1: "முந்தாநாள் (muntānāḷ) is the day before நேற்று (nēṟṟu), yesterday."
+    examples:
+      "முந்தாநாள் மழை பெய்தது.":
+        native: "It rained the day before yesterday."
+        bases:
+          "முந்தாநாள்": "the day before yesterday"
+          "பெய்தது": "rained; from பெய் (pey), to rain"
+      "முந்தாநாள் வந்தேன்.":
+        native: "I came the day before yesterday."
+        bases:
+          "முந்தாநாள்": "the day before yesterday"
+          "வந்தேன்": "came; from வா (vā), to come"
+  "ta-1160":
+    native: "the next day"
+    notes:
+      n1: "மறுநாள் (maṟunāḷ) is the day after a day just named; for the day after today say நாளை (nāḷai)."
+    examples:
+      "மறுநாள் விடுமுறை.":
+        native: "The next day is a holiday."
+        bases:
+          "மறுநாள்": "the next day"
+      "மறுநாள் வருகிறேன்.":
+        native: "I will come the next day."
+        bases:
+          "மறுநாள்": "the next day"
+          "வருகிறேன்": "come; from வா (vā), to come"
+  "ta-1161":
+    native: "next"
+    notes:
+      n1: "அடுத்த (aṭutta) goes before the noun it points to: அடுத்த வாரம் (aṭutta vāram), next week."
+    examples:
+      "அடுத்த வாரம் வா.":
+        native: "Come next week."
+        bases:
+          "அடுத்த": "next"
+      "அடுத்த மாதம் நல்லது.":
+        native: "Next month is good."
+        bases:
+          "அடுத்த": "next"
+  "ta-1162":
+    native: "last; previous"
+    notes:
+      n1: "போன (pōṉa) comes from போ (pō), go: the week that has gone; in writing, கடந்த (kaṭanta) is used."
+    examples:
+      "போன வாரம் மழை பெய்தது.":
+        native: "It rained last week."
+        bases:
+          "போன": "last; previous"
+          "பெய்தது": "rained; from பெய் (pey), to rain"
+      "போன மாதம் வந்தேன்.":
+        native: "I came last month."
+        bases:
+          "போன": "last; previous"
+          "வந்தேன்": "came; from வா (vā), to come"
+  "ta-1163":
+    native: "minute"
+    notes:
+      n1: "ஒரு நிமிடம் (oru nimiṭam) is also what people say to ask someone to wait a moment."
+    examples:
+      "ஒரு நிமிடம் போதும்.":
+        native: "One minute is enough."
+        bases:
+          "நிமிடம்": "minute"
+      "பத்து நிமிடம் நில்.":
+        native: "Wait ten minutes."
+        bases:
+          "நிமிடம்": "minute"
+  "ta-1164":
+    native: "half"
+    notes:
+      n1: "அரை (arai) goes before the word it halves: அரை மணி (arai maṇi), half an hour; பாதி (pāti) is the other word for half."
+    examples:
+      "அரை மணி போதும்.":
+        native: "Half an hour is enough."
+        bases:
+          "அரை": "half"
+      "அரை நாள் விடுமுறை.":
+        native: "A half day of holiday."
+        bases:
+          "அரை": "half"
+  "ta-1165":
+    native: "time; period; age"
+    notes:
+      n1: "காலம் (kālam) is time as a period or an age; நேரம் (nēram), taught earlier, is time on the clock."
+    examples:
+      "இது நல்ல காலம்.":
+        native: "This is a good time."
+        bases:
+          "காலம்": "time; period; age"
+      "காலம் மாறுகிறது.":
+        native: "Times are changing."
+        bases:
+          "காலம்": "time; period; age"
+          "மாறுகிறது": "changes; from மாறு (māṟu), to change"
+  "ta-1166":
+    native: "midday; afternoon"
+    notes:
+      n1: "மதியம் சாப்பாடு (matiyam cāppāṭu) is the midday meal, lunch."
+    examples:
+      "மதியம் சாப்பாடு தயார்.":
+        native: "Lunch is ready at noon."
+        bases:
+          "மதியம்": "midday; afternoon"
+          "தயார்": "ready"
+      "மதியம் வெயில் அதிகம்.":
+        native: "The sun is strong at midday."
+        bases:
+          "மதியம்": "midday; afternoon"
+  "ta-1167":
+    native: "daytime; day"
+    notes:
+      n1: "பகல் (pakal) is the daytime, the opposite of இரவு (iravu), night."
+    examples:
+      "இரவு குளிர், பகல் வெயில்.":
+        native: "Nights are cold, days are sunny."
+        bases:
+          "பகல்": "daytime; day"
+      "பகலில் தூங்காதே.":
+        native: "Do not sleep in the daytime."
+        bases:
+          "பகலில்": "in the daytime; from பகல் (pakal), daytime"
+          "தூங்காதே": "do not sleep; from தூங்கு (tūṅku), to sleep"
