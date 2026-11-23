@@ -166,6 +166,7 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, DateTime> _lessonsDone = const <String, DateTime>{};
   bool _reviewDecks = false;
   bool _adultContent = false;
+  String? _catalogMode;
   Map<String, CultureOptions> _culture = const <String, CultureOptions>{};
   Map<String, String> _voices = const <String, String>{};
   String? _raterCode;
@@ -246,6 +247,15 @@ class SettingsNotifier extends ChangeNotifier {
   bool get adultContent => _adultContent;
   set adultContent(bool value) =>
       _set(_adultContent, value, (v) => _adultContent = v);
+
+  /// How the deck catalog is read (ADR-0062), a hidden diagnostics setting
+  /// read once at launch: `lazy` (one language at a time, from the cache),
+  /// `whole` (every language together), or null for the app's own default.
+  String? get catalogMode => _catalogMode;
+  set catalogMode(String? value) {
+    if (value != null && value != 'lazy' && value != 'whole') return;
+    _set(_catalogMode, value, (v) => _catalogMode = v);
+  }
 
   /// [language]'s culture options (the approved mockup `culture-in-decks`):
   /// whether culture items are in its path, Today and reviews, what to do with
@@ -1586,6 +1596,7 @@ class SettingsNotifier extends ChangeNotifier {
     'clock_time': jsonEncode(_clockTime),
     'review_decks': '$_reviewDecks',
     'adult_content': '$_adultContent',
+    'catalog_mode': _catalogMode ?? '',
     'culture_by_language': jsonEncode(<String, Object>{
       for (final MapEntry(:key, :value) in _culture.entries)
         key: value.toJson(),
@@ -2028,6 +2039,9 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('review_decks', flag) case final v?) reviewDecks = v;
     if (pick('adult_content', flag) case final v?) adultContent = v;
+    if (pick('catalog_mode', (t) => t) case final v?) {
+      catalogMode = v.isEmpty ? null : v;
+    }
     if (pick('tts_voices', _parseJsonMap) case final v?) {
       for (final MapEntry(:key, :value) in v.entries) {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) &&
