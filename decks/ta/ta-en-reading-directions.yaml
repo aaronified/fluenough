@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-directions"
+name: "Reading: street signs"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "Four short street signs with directions and the names of two streets. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-street-signs"
+    title: "Street signs"
+    sentences:
+      - text: "நேராகப் போ."
+        reading: "nērākap pō."
+        ipa: "neːɾaːkap poː"
+      - text: "வடக்குத் தெரு பெரியது."
+        reading: "vaṭakkut teru periyatu."
+        ipa: "ʋaʈakkut̪ t̪eɾu peɾijat̪u"
+      - text: "தெற்குத் தெரு அருகில் இருக்கிறது."
+        reading: "teṟkut teru arukil irukkiṟatu."
+        ipa: "t̪erkut̪ t̪eɾu aɾukil iɾukkirat̪u"
+      - text: "வலது, இடது."
+        reading: "valatu, iṭatu."
+        ipa: "ʋalat̪u iʈat̪u"
+    questions:
+      - id: "ta-9750"
+        prompt: { en: "Which street is big?" }
+        options:
+          - { en: "The north street" }
+          - { en: "The south street" }
+          - { en: "Neither" }
+        answer: 1
+      - id: "ta-9751"
+        prompt: { en: "Which street is near?" }
+        options:
+          - { en: "The north street" }
+          - { en: "The south street" }
+          - { en: "Neither" }
+        answer: 2
+      - id: "ta-9752"
+        prompt: { en: "One sign tells you to go straight." }
+        answer: true

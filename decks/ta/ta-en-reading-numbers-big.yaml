@@ -1,0 +1,48 @@
+schema: 1
+id: "ta-en-reading-numbers-big"
+name: "Reading: a shop bill"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short bill with two prices and a total, using the tens. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-bill"
+    title: "A shop bill"
+    sentences:
+      - text: "தண்ணீர் முப்பது."
+        reading: "taṇṇīr muppatu."
+        ipa: "t̪aɳɳiːɾ muppat̪u"
+      - text: "தேநீர் நாற்பது."
+        reading: "tēnīr nāṟpatu."
+        ipa: "t̪eːniːɾ naːrpat̪u"
+      - text: "எல்லாம் எழுபது."
+        reading: "ellām eḻupatu."
+        ipa: "ellaːm eɻupat̪u"
+      - text: "பணம் கொடு."
+        reading: "paṇam koṭu."
+        ipa: "paɳam koʈu"
+    questions:
+      - id: "ta-9738"
+        prompt: { en: "How much is the total?" }
+        options:
+          - { en: "Sixty" }
+          - { en: "Seventy" }
+          - { en: "Eighty" }
+        answer: 2
+      - id: "ta-9739"
+        prompt: { en: "Which costs more?" }
+        options:
+          - { en: "The water" }
+          - { en: "The tea" }
+          - { en: "They cost the same" }
+        answer: 2
+      - id: "ta-9740"
+        prompt: { en: "What does the bill ask you to do?" }
+        options:
+          - { en: "Give the money" }
+          - { en: "Buy more" }
+          - { en: "Come back tomorrow" }
+        answer: 1

@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-home"
+name: "Reading: a how-to card for the house"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short card saying where to do things in the house, in the plain command form. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-how-to-card"
+    title: "A how-to card"
+    sentences:
+      - text: "மேசையில் சாப்பிடு."
+        reading: "mēcaiyil cāppiṭu."
+        ipa: "meːsaijil saːppiʈu"
+      - text: "படுக்கையில் தூங்கு."
+        reading: "paṭukkaiyil tūṅku."
+        ipa: "paʈukkaijil t̪uːŋku"
+      - text: "வெளியே விளையாடு."
+        reading: "veḷiyē viḷaiyāṭu."
+        ipa: "ʋeɭijeː ʋiɭaijaːʈu"
+      - text: "ஜன்னல் மூடு."
+        reading: "jaṉṉal mūṭu."
+        ipa: "dʒannal muːʈu"
+    questions:
+      - id: "ta-9765"
+        prompt: { en: "Where should you eat?" }
+        options:
+          - { en: "At the table" }
+          - { en: "In the bed" }
+          - { en: "In the garden" }
+        answer: 1
+      - id: "ta-9766"
+        prompt: { en: "Where should you sleep?" }
+        options:
+          - { en: "At the table" }
+          - { en: "In the bed" }
+          - { en: "Outside" }
+        answer: 2
+      - id: "ta-9767"
+        prompt: { en: "The card tells you to close the window." }
+        answer: true
