@@ -84,3 +84,14 @@ Engine findings for the builders: bare digits (௦ to ௯) give an empty IPA, an
 2. Wave 1, parallel, one worktree each: ta-script (Haiku: `ta-script-vowels`, `-vowel-signs` for units 7 and 8, then consonants, Grantha, digits, reading; `alphabet` in the path; ids `ta-1000..1299`); ta-sent (Haiku: sentences decks for time, location, work, numbers-big, groceries, market, directions, transport, home, first-words; ids `ta-3000..3999`); ta-gram (Sonnet: grammar units 17 to 22, 27, 29 to 32, 34, 40 to 42, 45 modelled on the Telugu, Kannada and Bengali grammar decks; ids `ta-0400..0899`; each unit's `planned` becomes `decks` in its commit); the `ʧ` to `tʃ` fix on the 14 cards.
 3. One PR to `decks-live`, one Sonnet review, merge on green ("Validate decks" and "Released app reads the decks").
 4. Then in order: TA-120 notes and review-queue rows (owner directive: a note on every card with a real teachable point), TA-040 topics, TA-050 situations, TA-080 facts, culture, proverbs, multi-word and recommendations from `Plan-Culture-Tamil` (before dropping an item try every reachable source and record a one-line reason), TA-2xx readings, TA-111/112 narrow IPA last, then A2 and B1.
+
+## 5. Progress, 2026-11-23
+
+| Wave | PR | State |
+|---|---|---|
+| A1 wave 1 (6 script decks, 16 grammar units, 10 sentences decks) | #1710 | merged to decks-live, CI green (10 of 10 checks), one Sonnet review |
+| A2 wave 1 (14 grammar units incl. registers, 20 word units with sentences decks, units 46 to 79) | #1714 | merged to decks-live, CI green, one Sonnet review |
+| B1 wave (units 80 to 114: 13 grammar units, 22 word units) and culture (`ta-culture-1` to `-4`, creators) | to open | in progress on `decks/ta-b1-wave1` and `decks/ta-culture-wave1` |
+
+Lessons carried into every brief: a word is one card once (grep the merged tree, other workers reserve ranges); a card's table row follows the card's dictionary lemma (en.wiktionary form); stem doubling and -வ- rules in the noun table are checked per row; no card refers to a later unit's card; path units without a theme deck do not end in `*`.
+Still to do after B1: topics, situations, facts, proverbs, multi-word verbs, recommendations, reading decks, the `ʧ` to `tʃ` fix on 14 old cards, narrow IPA, review-queue rows kept current.
