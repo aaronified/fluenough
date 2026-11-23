@@ -1,0 +1,104 @@
+schema: 1
+id: "ta-opinions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-9030"
+    target: "உன் கருத்து என்ன?"
+    reading: "uṉ karuttu eṉṉa?"
+    ipa: "un kaɾut̪t̪u enna"
+    pos: "phrase"
+    bases: [{ word: "உன்", base: "நீ", reading: "nī" }, { word: "கருத்து", ref: "ta-7179" }, { word: "என்ன", ref: "ta-0042" }]
+    confusables:
+      - { id: "w1", ref: "ta-7180", kind: "word" }
+      - { id: "w2", ref: "ta-7181", kind: "word" }
+      - { id: "w3", ref: "ta-7043", kind: "word" }
+  - id: "ta-9031"
+    target: "எனக்கு உடன்பாடு இல்லை."
+    reading: "eṉakku uṭaṉpāṭu illai."
+    ipa: "enakku uʈanpaːʈu illai"
+    pos: "phrase"
+    bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "உடன்பாடு", ref: "ta-7183" }, { word: "இல்லை", ref: "ta-0002" }]
+    confusables:
+      - { id: "w1", ref: "ta-7182", kind: "word" }
+      - { id: "w2", ref: "ta-7184", kind: "word" }
+      - { id: "w3", ref: "ta-7188", kind: "word" }
+  - id: "ta-9032"
+    target: "நீ சொல்வது சரிதான்."
+    reading: "nī colvatu caritāṉ."
+    ipa: "niː solʋat̪u saɾit̪aːn"
+    pos: "phrase"
+    bases: [{ word: "நீ", ref: "ta-0057" }, { word: "சொல்வது", base: "சொல்", reading: "col" }, { word: "சரிதான்", ref: "ta-7222" }]
+    confusables:
+      - { id: "w1", ref: "ta-7189", kind: "word" }
+      - { id: "w2", ref: "ta-7129", kind: "word" }
+  - id: "ta-9033"
+    target: "நான் உன்னை ஆதரிக்கிறேன்."
+    reading: "nāṉ uṉṉai ātarikkiṟēṉ."
+    ipa: "naːn unnai aːt̪aɾikkireːn"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "உன்னை", base: "நீ", reading: "nī" }, { word: "ஆதரிக்கிறேன்", base: "ஆதரி", reading: "ātari" }]
+    confusables:
+      - { id: "w1", ref: "ta-7226", kind: "word" }
+      - { id: "w2", ref: "ta-7223", kind: "word" }
+      - { id: "w3", ref: "ta-7228", kind: "word" }
+  - id: "ta-9034"
+    target: "இது ஒரு சிறந்த திட்டம்."
+    reading: "itu oru ciṟanta tiṭṭam."
+    ipa: "it̪u oɾu sirant̪a t̪iʈʈam"
+    pos: "phrase"
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "ஒரு", ref: "ta-0419" }, { word: "சிறந்த", ref: "ta-7204" }, { word: "திட்டம்", ref: "ta-2329" }]
+    confusables:
+      - { id: "w1", ref: "ta-7203", kind: "word" }
+      - { id: "w2", ref: "ta-7205", kind: "word" }
+      - { id: "w3", ref: "ta-7206", kind: "word" }
+  - id: "ta-9035"
+    target: "இந்த வேலை பயனற்றது."
+    reading: "inta vēlai payaṉaṟṟatu."
+    ipa: "int̪a ʋeːlai pajanarrat̪u"
+    pos: "phrase"
+    bases: [{ word: "இந்த", base: "இந்த", reading: "inta" }, { word: "வேலை", ref: "ta-0192" }, { word: "பயனற்றது", base: "பயனற்ற", reading: "payaṉaṟṟa" }]
+    confusables:
+      - { id: "w1", ref: "ta-7212", kind: "word" }
+      - { id: "w2", ref: "ta-7206", kind: "word" }
+  - id: "ta-9036"
+    target: "இந்த விலை நியாயமானது."
+    reading: "inta vilai niyāyamāṉatu."
+    ipa: "int̪a ʋilai nijaːjamaːnat̪u"
+    pos: "phrase"
+    bases: [{ word: "இந்த", base: "இந்த", reading: "inta" }, { word: "விலை", ref: "ta-0225" }, { word: "நியாயமானது", base: "நியாயமான", reading: "niyāyamāṉa" }]
+    confusables:
+      - { id: "w1", ref: "ta-7185", kind: "word" }
+      - { id: "w2", ref: "ta-7186", kind: "word" }
+  - id: "ta-9037"
+    target: "நிச்சயமாக நாளை வருகிறேன்."
+    reading: "niccayamāka nāḷai varukiṟēṉ."
+    ipa: "nitʃtʃajamaːka naːɭai ʋaɾukireːn"
+    pos: "phrase"
+    bases: [{ word: "நிச்சயமாக", ref: "ta-7216" }, { word: "நாளை", ref: "ta-0133" }, { word: "வருகிறேன்", base: "வா", reading: "vā" }]
+    confusables:
+      - { id: "w1", ref: "ta-7217", kind: "word" }
+      - { id: "w2", ref: "ta-7218", kind: "word" }
+      - { id: "w3", ref: "ta-7219", kind: "word" }
+  - id: "ta-9038"
+    target: "இந்தப் படம் ஏமாற்றம்."
+    reading: "intap paṭam ēmāṟṟam."
+    ipa: "int̪ap paʈam eːmaːrram"
+    pos: "phrase"
+    bases: [{ word: "இந்தப்", base: "இந்த", reading: "inta" }, { word: "படம்", ref: "ta-1825" }, { word: "ஏமாற்றம்", ref: "ta-7076" }]
+    confusables:
+      - { id: "w1", ref: "ta-7209", kind: "word" }
+      - { id: "w2", ref: "ta-7191", kind: "word" }
+      - { id: "w3", ref: "ta-7195", kind: "word" }
+  - id: "ta-9039"
+    target: "உண்மையில் எனக்கு இது பிடிக்கவில்லை."
+    reading: "uṇmaiyil eṉakku itu piṭikkavillai."
+    ipa: "uɳmaijil enakku it̪u piʈikkaʋillai"
+    pos: "phrase"
+    bases: [{ word: "உண்மையில்", ref: "ta-7215" }, { word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "இது", ref: "ta-0066" }, { word: "பிடிக்கவில்லை", base: "பிடி", reading: "piṭi" }]
+    confusables:
+      - { id: "w1", ref: "ta-7221", kind: "word" }
+      - { id: "w2", ref: "ta-7220", kind: "word" }
