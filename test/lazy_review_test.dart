@@ -133,6 +133,18 @@ Future<AppState> _warm(_Phone phone) async {
   return _launch(phone);
 }
 
+/// Lets the unit of [code] finish reading: real time, which the test clock
+/// never gives, then a frame to draw it.
+Future<void> _loaded(WidgetTester tester, AppState state, String code) async {
+  for (var i = 0; i < 50 && !state.languageLoad(code).isLoaded; i++) {
+    await tester.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 50)),
+    );
+    await tester.pump();
+  }
+  await tester.pump();
+}
+
 void main() {
   test('the courses to review come from the directory', () async {
     final phone = _Phone();
@@ -163,9 +175,7 @@ void main() {
       settle: false,
     );
     expect(find.byType(CircularProgressIndicator), findsOneWidget);
-    for (var i = 0; i < 20; i++) {
-      await tester.pump();
-    }
+    await _loaded(tester, state, 'te');
     expect(state.languageLoad('te').isLoaded, isTrue);
     expect(state.languageLoad('fr').isLoaded, isFalse, reason: 'not asked');
     await pumpScreen(
@@ -174,9 +184,7 @@ void main() {
       state: state,
       settle: false,
     );
-    for (var i = 0; i < 20; i++) {
-      await tester.pump();
-    }
+    await _loaded(tester, state, 'fr');
     expect(state.languageLoad('fr').isLoaded, isTrue);
     expect(tester.takeException(), isNull);
   });
@@ -199,9 +207,8 @@ void main() {
   test('the daily questions of a course are made once it is loaded', () async {
     final phone = _Phone();
     final lazy = await _warm(phone);
-    List<String> languages() => <String>{
-      for (final q in dailyQuestionsOf(lazy)) q.language,
-    }.toList();
+    List<String> languages() =>
+        <String>{for (final q in dailyQuestionsOf(lazy)) q.language}.toList();
     expect(languages(), isEmpty, reason: 'no reviewed course is loaded');
     await lazy.ensureLoaded('te');
     expect(languages(), <String>['te']);
@@ -236,9 +243,7 @@ void main() {
       settle: false,
     );
     expect(find.byType(CircularProgressIndicator), findsOneWidget);
-    for (var i = 0; i < 20; i++) {
-      await tester.pump();
-    }
+    await _loaded(tester, state, 'fr');
     expect(state.languageLoad('fr').isLoaded, isTrue);
     expect(tester.takeException(), isNull);
   });
