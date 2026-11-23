@@ -9,6 +9,7 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/system_bar.dart';
 import 'flagged_page.dart';
 import 'review_flow_page.dart';
+import 'review_loader.dart';
 import 'review_source.dart';
 import 'review_waiting.dart';
 
@@ -98,8 +99,13 @@ class ReviewQueuePage extends StatelessWidget {
                 ],
               ),
             ),
-            body: const TabBarView(
-              children: <Widget>[_SessionTab(), FlaggedList()],
+            // One language at a time, the languages the reviewer reviews are
+            // read as the page opens, and what they hold is drawn as it
+            // arrives.
+            body: const ReviewLoader(
+              child: TabBarView(
+                children: <Widget>[_SessionTab(), FlaggedList()],
+              ),
             ),
           ),
         );
@@ -175,6 +181,13 @@ class _SessionTabState extends State<_SessionTab> {
     }
     final sources = _sources;
     if (sources.isEmpty) {
+      if (anyReading(state, reviewLanguageCodes(state))) {
+        return Center(
+          child: CircularProgressIndicator(
+            semanticsLabel: l10n.commonLoadingDecks,
+          ),
+        );
+      }
       return EmptyState(
         icon: Icons.style_outlined,
         title: l10n.reviewQueueEmpty,

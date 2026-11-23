@@ -291,11 +291,7 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
     if (downloads == null) return true;
     return downloads.languagesOnPhone.contains(pair.target) ||
         downloads.isDownloading(pair.target) ||
-        state.decks.any(
-          (d) =>
-              d.language.code == pair.target &&
-              d.deck.native.code == pair.native,
-        );
+        pairsOnPhone(state).contains(pair);
   }
 
   /// [code]'s script, as decks name it: from the deck index, else the

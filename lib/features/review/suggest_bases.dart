@@ -77,8 +77,7 @@ Card? cardForForm(
   final want = form.trim();
   if (want.isEmpty) return null;
   Card? other;
-  for (final entry in state.decks) {
-    if (entry.language.code != language) continue;
+  for (final entry in state.decksOf(language)) {
     for (final c in entry.cards) {
       if (c.id == except || c.target.trim() != want) continue;
       if (native == null || entry.deck.native.code == native) return c;

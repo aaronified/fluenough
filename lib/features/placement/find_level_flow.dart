@@ -57,6 +57,34 @@ List<String> findLevelScriptNames(AppState state, String code) => <String>[
   for (final script in state.placementScripts(code)) script.script,
 ];
 
+/// [AppState.placementRunPlan] after [code]'s decks are read, which is shown
+/// as a spinner over the screen: the loading state of placement.
+Future<PlacementRunPlan?> _readThenPlan(
+  BuildContext context,
+  AppState state,
+  String code,
+  String? native,
+) async {
+  final navigator = Navigator.of(context, rootNavigator: true);
+  final label = AppLocalizations.of(context)!.learnLoading;
+  unawaited(
+    showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => PopScope(
+        canPop: false,
+        child: Center(child: CircularProgressIndicator(semanticsLabel: label)),
+      ),
+    ),
+  );
+  try {
+    await state.ensureLoaded(code);
+  } finally {
+    navigator.pop();
+  }
+  return state.placementRunPlan(code, native: native);
+}
+
 /// Find my level, after the decks are on the phone (wiki/Plan-Placement-V2.md,
 /// steps 3 and 4): a paused run is offered back; else the declaration
 /// ("How well do you know it?"), whose Back cancels everything and writes
@@ -78,7 +106,14 @@ Future<void> startFindLevel(
   final navigator = Navigator.of(context);
   if (built < builtA1) return;
   final native = state.courseNative(code);
-  final plan = state.placementRunPlan(code, native: native);
+  final planned = state.placementRunPlan(code, native: native);
+  // One language at a time (ADR-0062): a language whose decks are not read
+  // yet is read first, behind a spinner, and placement goes on from it.
+  final reading = planned == null && state.isLanguageReading(code);
+  final plan = reading
+      ? await _readThenPlan(context, state, code, native)
+      : planned;
+  if (!context.mounted) return;
   if (plan == null) {
     showAppSnackBar(context, l10n.findLevelNoCourse(name));
     return;

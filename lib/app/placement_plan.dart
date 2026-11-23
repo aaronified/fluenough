@@ -17,14 +17,15 @@ typedef PlacementScript = ({
 /// What placement reads of a course (#481, `docs/plans/placement-v2.md`).
 extension PlacementPlan on AppState {
   /// [code]'s course from [native], or the language it is learned from,
-  /// with every one of its scripts' decks, in path order.
+  /// with every one of its scripts' decks, in path order. Placement is a
+  /// one-language flow: the course of a language whose decks are not read yet
+  /// (ADR-0062) is empty, so the page that places it reads them first.
   List<DeckEntry> _wholeCourse(String code, {String? native}) {
     final scripts = <String>{
-      for (final entry in decks)
-        if (entry.language.code == code) ...<String>[
-          entry.language.script,
-          ...entry.language.allScripts,
-        ],
+      for (final entry in decksOf(code)) ...<String>[
+        entry.language.script,
+        ...entry.language.allScripts,
+      ],
     };
     return <DeckEntry>[
       for (final unit in courseUnits(code, scripts: scripts, native: native))

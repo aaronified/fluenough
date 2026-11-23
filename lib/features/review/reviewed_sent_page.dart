@@ -7,6 +7,7 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../decks/path_parts.dart' show joinParts;
+import 'review_loader.dart';
 import 'review_sheets.dart' show partName, suggestionPartName;
 import 'review_waiting.dart';
 import 'suggestion_lines.dart';
@@ -23,8 +24,15 @@ import 'suggestion_lines.dart';
 class ReviewedSentPage extends StatelessWidget {
   const ReviewedSentPage({super.key});
 
+  /// One language at a time, the units of the decks reviewed are read as the
+  /// page opens, to work out where each suggestion stands.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => ReviewLoader(
+    languages: reviewedLanguageCodes,
+    child: Builder(builder: _page),
+  );
+
+  Widget _page(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final state = AppScope.of(context);

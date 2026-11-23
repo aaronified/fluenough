@@ -11,6 +11,7 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../decks/path_parts.dart' show joinParts;
 import 'review_languages_page.dart';
+import 'review_loader.dart';
 import 'review_waiting.dart';
 
 /// "Waiting for review" (docs/plans/deck-browser.md, #471): at the top, "Your
@@ -35,10 +36,13 @@ class WaitingForReviewPage extends StatelessWidget {
     final state = AppScope.of(context);
     return Scaffold(
       appBar: AppBar(title: Text(l10n.reviewSettingsWaiting)),
-      // The reviews and the languages chosen are in the settings.
-      body: ListenableBuilder(
-        listenable: state.settings,
-        builder: (context, _) => _body(context, state),
+      // The reviews and the languages chosen are in the settings. One
+      // language at a time, each language's decks are read as the page opens.
+      body: ReviewLoader(
+        child: ListenableBuilder(
+          listenable: state.settings,
+          builder: (context, _) => _body(context, state),
+        ),
       ),
     );
   }
@@ -179,7 +183,9 @@ class _Language extends StatelessWidget {
       expanded: unfolded,
       leading: const Icon(Icons.translate_outlined),
       title: language.name,
-      subtitle: decks.isEmpty
+      subtitle: waiting.reading
+          ? l10n.commonLoadingDecks
+          : decks.isEmpty
           ? l10n.reviewLanguageNothing
           : l10n.reviewLanguageCounts(
               decks.length,
@@ -213,7 +219,15 @@ class _Language extends StatelessWidget {
   ) {
     final language = waiting.language;
     return <Widget>[
-      if (waiting.isEmpty)
+      if (waiting.reading)
+        GroupedTile(
+          leading: const SizedBox.square(
+            dimension: 24,
+            child: CircularProgressIndicator(strokeWidth: 2),
+          ),
+          title: l10n.commonLoadingDecks,
+        )
+      else if (waiting.isEmpty)
         GroupedTile(
           leading: const Icon(Icons.check_circle_outline),
           title: l10n.reviewWaitingNothing(language.name),

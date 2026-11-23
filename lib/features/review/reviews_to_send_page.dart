@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_info.dart';
@@ -23,6 +25,7 @@ import '../../ui/widgets/target_text.dart';
 import '../decks/path_parts.dart' show joinParts;
 import 'daily_questions_page.dart' show reasonLabel;
 import 'facet_labels.dart';
+import 'review_loader.dart';
 import 'review_sheets.dart' show partName, suggestionPartName;
 import 'review_waiting.dart';
 import 'suggestion_lines.dart' show yoursOf;
@@ -110,6 +113,15 @@ class _ReviewsToSendPageState extends State<ReviewsToSendPage> {
   /// starts open, any other shut.
   final Set<String> _flipped = <String>{};
   bool _sending = false;
+
+  /// One language at a time, the units of the decks reviewed and of the
+  /// languages answered are read as the page opens, for the names and words.
+  @override
+  void initState() {
+    super.initState();
+    final state = AppScope.read(context);
+    unawaited(readLanguages(state, reviewedLanguageCodes(state)));
+  }
 
   bool _isOpen(String key, bool single) => _flipped.contains(key) != single;
 
@@ -791,9 +803,8 @@ class _AnswerGroup extends StatelessWidget {
     final scheme = theme.colorScheme;
     final state = AppScope.of(context);
     DeckEntry? deckOf(String cardId) {
-      for (final d in state.decks) {
-        final here = d.language.code == code;
-        if (here && d.cards.any((c) => c.id == cardId)) return d;
+      for (final d in state.decksOf(code)) {
+        if (d.cards.any((c) => c.id == cardId)) return d;
       }
       return null;
     }

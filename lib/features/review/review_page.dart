@@ -6,6 +6,7 @@ import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
+import '../../core/private/private_ids.dart' show languageOfId;
 import '../../core/review/deck_review.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -18,6 +19,7 @@ import '../../ui/widgets/target_text.dart';
 import '../decks/checked_by_line.dart';
 import '../decks/path_model.dart';
 import 'proposal_card.dart';
+import 'review_loader.dart';
 import 'review_sheets.dart';
 import 'review_waiting.dart';
 import 'review_words.dart';
@@ -45,15 +47,28 @@ class ReviewPage extends StatelessWidget {
   /// The course's plan, for tests and the gallery, as [UnitPage] takes it.
   final CoursePlan? plan;
 
+  /// One language at a time, the unit of the deck's language is read as the
+  /// screen opens (ADR-0062): the screen draws a spinner until it is there.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => ReviewLoader(
+    languages: (_) => <String>{languageOfId(deckId)},
+    child: Builder(builder: _screen),
+  );
+
+  Widget _screen(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     final unit = unitOfDeck(state, deckId, plan: plan);
     if (unit == null) {
       return Scaffold(
         appBar: AppBar(),
-        body: EmptyState(icon: Icons.style_outlined, title: l10n.deckNotFound),
+        body: state.isLanguageReading(languageOfId(deckId))
+            ? Center(
+                child: CircularProgressIndicator(
+                  semanticsLabel: l10n.commonLoadingDecks,
+                ),
+              )
+            : EmptyState(icon: Icons.style_outlined, title: l10n.deckNotFound),
       );
     }
     return ListenableBuilder(
@@ -412,8 +427,9 @@ class _ReviewRow extends StatelessWidget {
         ),
       ),
     };
-    final proposals = waitingProposals(state.decks, deck, card).length;
-    final checked = checkedByOf(state.decks, card, deck: deck).length;
+    final here = state.decksOf(deck.language.code);
+    final proposals = waitingProposals(here, deck, card).length;
+    final checked = checkedByOf(here, card, deck: deck).length;
     final extra = <String>[
       if (checked > 0) l10n.cardCheckedBy(checked),
       if (proposals > 0) l10n.reviewProposalsWaiting(proposals),

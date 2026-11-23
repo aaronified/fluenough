@@ -58,7 +58,10 @@ void main() {
       final state = await reviewState(rudeRated: false, adult: false);
       expect(state.reviewDeckById(rudeDeck), isNull);
       expect(offensiveDecksIn(state, 'te'), isEmpty);
-      expect(state.reviewDecks.map((d) => d.id), isNot(contains(rudeDeck)));
+      expect(
+        state.reviewDecksOf('te').map((d) => d.id),
+        isNot(contains(rudeDeck)),
+      );
 
       state.settings.adultContent = true;
       expect(state.reviewDeckById(rudeDeck), isNotNull);

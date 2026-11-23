@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -142,6 +143,10 @@ class _PlacementPageState extends State<PlacementPage> {
   /// Whether the learner may try the walk again: the last try got further.
   bool _canTryAgain = true;
   bool _stopped = false;
+
+  /// The languages whose decks were asked for: one language at a time
+  /// (ADR-0062), a language placed is read first, and asked once.
+  final Set<String> _asked = <String>{};
 
   /// The questions answered for this language, for "Question 4".
   int _number = 0;
@@ -367,7 +372,16 @@ class _PlacementPageState extends State<PlacementPage> {
     final stage = _stage;
     if (language == null || stage == null) {
       // Begins once the catalog has the language: nothing is asked first.
-      if (language != null) {
+      // A language whose decks are not read yet is read first, behind the
+      // spinner.
+      if (language != null && state.isLanguageReading(_code)) {
+        final code = _code;
+        if (_asked.add(code)) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) unawaited(AppScope.read(context).ensureLoaded(code));
+          });
+        }
+      } else if (language != null) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
           if (mounted && _stage == null) {
             setState(() => _begin(AppScope.read(context)));
@@ -641,8 +655,7 @@ class _PlacementPageState extends State<PlacementPage> {
     String lemma,
     Set<String>? scripts,
   ) {
-    for (final entry in state.decks) {
-      if (entry.language.code != language.code) continue;
+    for (final entry in state.decksOf(language.code)) {
       for (final card in entry.cards) {
         if (card.target == lemma && card.targetScripts.isNotEmpty) {
           return state.targetShown(card, entry.language, scripts: scripts);

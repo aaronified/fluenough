@@ -11,20 +11,26 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/system_bar.dart';
 import 'facet_labels.dart';
 import 'review_flow_page.dart';
+import 'review_loader.dart';
 import 'review_source.dart' show otherChecksOf;
 import 'review_waiting.dart';
 
 /// The decks the flagged queue reads for [state]'s reviewer, each with the
 /// other speakers' checks of its cards ([FlaggedSourceDeck.others]): the
 /// sign-offs and facet answers the decks publish ([otherChecksOf]).
+///
+/// Those of the languages the reviewer reviews, and so of the units loaded:
+/// the pages that draw it read each language's unit as they open
+/// ([ReviewLoader]).
 List<FlaggedSourceDeck> flaggedSourcesOf(AppState state) => <FlaggedSourceDeck>[
-  for (final deck in state.reviewDecks)
-    FlaggedSourceDeck(
-      deckId: deck.id,
-      pair: pairOf(deck),
-      cards: deck.cards,
-      others: otherChecksOf(deck, deck.cards),
-    ),
+  for (final language in reviewLanguagesOf(state))
+    for (final deck in state.reviewDecksOf(language.code))
+      FlaggedSourceDeck(
+        deckId: deck.id,
+        pair: pairOf(deck),
+        cards: deck.cards,
+        others: otherChecksOf(deck, deck.cards),
+      ),
 ];
 
 /// The flagged queue of [state]'s reviewer: the cards of the courses they
@@ -75,7 +81,7 @@ class FlaggedPage extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(title: Text(l10n.reviewFlaggedTitle)),
-      body: const FlaggedList(),
+      body: const ReviewLoader(child: FlaggedList()),
     );
   }
 }
@@ -105,13 +111,21 @@ class FlaggedList extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final queue = flaggedQueueOf(state);
     if (queue.isEmpty) {
+      if (anyReading(state, reviewLanguageCodes(state))) {
+        return Center(
+          child: CircularProgressIndicator(
+            semanticsLabel: l10n.commonLoadingDecks,
+          ),
+        );
+      }
       return EmptyState(
         icon: Icons.flag_outlined,
         title: l10n.reviewFlaggedEmpty,
       );
     }
     final decks = <String, DeckEntry>{
-      for (final deck in state.reviewDecks) deck.id: deck,
+      for (final language in reviewLanguagesOf(state))
+        for (final deck in state.reviewDecksOf(language.code)) deck.id: deck,
     };
     String wordOf(FlaggedCard card) =>
         decks[card.deckId]?.cards

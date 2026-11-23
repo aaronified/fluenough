@@ -995,17 +995,44 @@ class AppState extends ChangeNotifier {
   /// alike warning, which hides the word itself (#628).
   List<DeckEntry> get allDecks => _catalog.decks;
 
-  /// The decks the Offensive words review lists: the learner's [decks] and,
-  /// only with Adult content on (owner, 2026-10-24, #630: "Require Adult
-  /// on"), the adult decks no native speaker has rated yet, which no learner
-  /// sees and only a reviewer reads, in the catalog's order.
-  List<DeckEntry> get reviewDecks {
+  /// Every deck of [language], adult decks and rude cards too, whatever
+  /// "Adult content" says: what the sound-alike warning and the reviewer's
+  /// pages read (#628). Read one language at a time, the loaded unit's own
+  /// list, empty while it is not loaded (ADR-0062); the reviewer's screens
+  /// read the unit first ([ensureLoaded]). Read whole, [language]'s part of
+  /// [allDecks], kept until the catalog changes.
+  List<DeckEntry> allDecksOf(String language) {
+    if (_perLanguage) {
+      return deckCatalog.catalogSet.unitOf(language)?.catalog.decks ??
+          const <DeckEntry>[];
+    }
+    final catalog = _catalog;
+    if (!identical(_allOfCatalog, catalog)) {
+      _wholeAllOf.clear();
+      _allOfCatalog = catalog;
+    }
+    final kept = _wholeAllOf[language];
+    if (kept != null) return kept;
+    return _wholeAllOf[language] = List<DeckEntry>.unmodifiable(<DeckEntry>[
+      for (final entry in catalog.decks)
+        if (entry.language.code == language) entry,
+    ]);
+  }
+
+  Catalog? _allOfCatalog;
+  final Map<String, List<DeckEntry>> _wholeAllOf = <String, List<DeckEntry>>{};
+
+  /// The decks of [language] the Offensive words review lists: the learner's
+  /// [decksOf] and, only with Adult content on (owner, 2026-10-24, #630:
+  /// "Require Adult on"), the adult decks no native speaker has rated yet,
+  /// which no learner sees and only a reviewer reads, in the catalog's order.
+  List<DeckEntry> reviewDecksOf(String language) {
     final shown = <String, DeckEntry>{
-      for (final entry in decks) entry.path: entry,
+      for (final entry in decksOf(language)) entry.path: entry,
     };
     final adult = settings.adultContent;
     return <DeckEntry>[
-      for (final entry in _catalog.decks)
+      for (final entry in allDecksOf(language))
         if (isUnratedAdultDeck(entry.deck))
           ?(adult ? entry : null)
         else
@@ -1179,8 +1206,12 @@ class AppState extends ChangeNotifier {
 
   /// [deckById], or a deck no native speaker has rated yet (#630): what a
   /// review of it reads, sent from the review screens alone.
-  DeckEntry? reviewDeckById(String id) =>
-      reviewDecks.where((entry) => entry.id == id).firstOrNull;
+  DeckEntry? reviewDeckById(String id) {
+    for (final entry in reviewDecksOf(languageOfId(id))) {
+      if (entry.id == id) return entry;
+    }
+    return null;
+  }
 
   /// The path of [entry]'s course (ADR-0013), or null if it has none.
   CoursePath? pathOf(DeckEntry entry) => _catalog.pathOf(entry);

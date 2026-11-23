@@ -18,6 +18,7 @@ import 'questions_per_day.dart';
 import 'review_queue_page.dart';
 import 'reviewer_check_page.dart';
 import 'reviewer_key_sheet.dart';
+import 'review_loader.dart';
 import 'review_waiting.dart';
 import 'review_words.dart' show hasOrdinaryCards;
 import 'review_languages_page.dart';
@@ -76,7 +77,7 @@ class ReviewSection extends StatelessWidget {
           if (reviewing.helpedBuild(entry))
             l10n.reviewSettingsHelpedDeck(entry.deck.name, entry.language.name),
     ];
-    return GroupedList.settings(
+    final list = GroupedList.settings(
       header: heading ? l10n.reviewSettingsSection : null,
       children: <Widget>[
         GroupedTile.toggle(
@@ -219,6 +220,9 @@ class ReviewSection extends StatelessWidget {
         ),
       ],
     );
+    // One language at a time, what waits and what is flagged is counted over
+    // the units read: a reviewer's languages are read while this is shown.
+    return on ? ReviewLoader(child: list) : list;
   }
 
   /// Asks once, then turns reviewing on, and the first time opens "How
