@@ -887,9 +887,8 @@ class AppState extends ChangeNotifier {
 
   /// Where [code]'s unit is in loading; loaded for every language when the
   /// catalog is read whole.
-  LanguageLoad languageLoad(String code) => _perLanguage
-      ? deckCatalog.catalogSet.loadOf(code)
-      : LanguageLoad.loaded;
+  LanguageLoad languageLoad(String code) =>
+      _perLanguage ? deckCatalog.catalogSet.loadOf(code) : LanguageLoad.loaded;
 
   /// Reads [code]'s unit now if it is not loaded, in a worker (ADR-0062): a
   /// thin pass-through to the catalog set that tells the screens when it is
