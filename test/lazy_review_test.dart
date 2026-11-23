@@ -9,7 +9,6 @@ import 'package:fluenough/app/catalog_set.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/deck_files.dart';
 import 'package:fluenough/app/language_unit_job.dart';
-import 'package:fluenough/app/language_work.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/summary_store.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
@@ -218,7 +217,9 @@ void main() {
     await lazy.ensureLoaded('te');
     expect(lazy.allDecksOf('te').map((d) => d.id), contains(rudeDeck));
     expect(lazy.reviewDeckById(wordsDeck), isNotNull);
-    expect(lazy.reviewDeckById('es-en-words'), isNull, reason: 'es is other');
+    expect(lazy.reviewDeckById('fr-en-words'), isNull, reason: 'not loaded');
+    await lazy.ensureLoaded('fr');
+    expect(lazy.reviewDeckById('fr-en-words'), isNotNull);
   });
 
   testWidgets('placement of a language not read yet reads it first', (
@@ -235,7 +236,6 @@ void main() {
       settle: false,
     );
     expect(find.byType(CircularProgressIndicator), findsOneWidget);
-    expect(state.languageLoad('fr').isLoaded, isFalse);
     for (var i = 0; i < 20; i++) {
       await tester.pump();
     }
