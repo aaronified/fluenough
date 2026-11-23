@@ -1,0 +1,24 @@
+schema: 1
+id: "ml-en-grammar-nouns"
+kind: "layer"
+core: "ml-grammar-nouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns: men, women and things"
+description: "Which word stands for a noun, and its plural: a man, a woman, an animal and a thing. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Noun classes"
+  slot_name: "form"
+  slots:
+    "pronoun": "the word that stands for it"
+    "plural": "plural"
+  entries:
+    "acchan": "father, a man"
+    "amma": "mother, a woman"
+    "sahodari": "sister, a woman"
+    "doctor": "doctor, a man"
+    "pustakam": "book, a thing"
+    "naya": "dog, an animal"
+    "veedu": "house, a thing"
+  notes: "Malayalam sorts every noun into three classes by its meaning: masculine for men, feminine for women, and neuter for everything else, animals too. The verb does not change, but the class decides the word that stands for the noun: അവൻ (avaṉ), he, for a man, അവൾ (avaḷ), she, for a woman, and അത് (at), it, for a thing or an animal. A few nouns for people take the plural ending -മാർ (-māṟ), as അമ്മ (amma) becomes അമ്മമാർ (ammamār); a word in -ൻ (-ṉ) changes it to -ന് (-n) first, as അച്ഛൻ (acchaṉ) becomes അച്ഛന്മാർ (acchanmār). Everything else takes -കൾ (-kaḷ), or -ങ്ങൾ (-ṅṅaḷ) for a word in -ം (-ṁ): പുസ്തകം (pustakaṁ) becomes പുസ്തകങ്ങൾ (pustakaṅṅaḷ). The dog has two plurals, നായ്ക്കൾ (nāykkaḷ) and നായകൾ (nāyakaḷ). Source: English Wikipedia, Malayalam grammar (the third person and the plural of nouns)."

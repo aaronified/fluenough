@@ -84,3 +84,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ml-0096 | ml-grammar-pronoun-forms | Are the case forms of താങ്കൾ (tāṅkaḷ) (താങ്കളുടെ, താങ്കൾക്ക്, താങ്കളെ, താങ്കളോട്) built like those of നിങ്ങൾ (niṅṅaḷ) in speech? | Sonnet builder | 2026-11-23 |
 | ml-1005 | ml-grammar-pronoun-forms | നിന്നെ (ninne) is a case form of നീ (nī), so it is listed as an exception in the pronoun table and has no row of its own; should it be a card at all? | Sonnet builder | 2026-11-23 |
 | ml-0110 | ml-grammar-pronoun-forms | സ്വയം (svayaṁ) has no case forms and is listed as an exception in the pronoun table; is its part of speech pronoun or adverb? | Sonnet builder | 2026-11-23 |
+| unit-level | ml-grammar-nouns | The -മാർ (-māṟ) plurals (അച്ഛന്മാർ, അമ്മമാർ, സഹോദരിമാർ, ഡോക്ടർമാർ) and the two plurals of നായ (nāya) were taken from English Wikipedia and Wiktionary or checked by their frequency; are they the usual ones? | Sonnet builder | 2026-11-23 |

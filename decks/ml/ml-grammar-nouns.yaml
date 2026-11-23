@@ -1,0 +1,101 @@
+schema: 1
+id: "ml-grammar-nouns"
+part: "core"
+kind: "grammar"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["pronoun", "plural"]
+  entries:
+    - lemma: "അച്ഛൻ"
+      key: "acchan"
+      reading: "acchaṉ"
+      ipa: "ətʃtʃan"
+      forms:
+        "pronoun": "അവൻ"
+        "plural": "അച്ഛന്മാർ"
+      readings:
+        "pronoun": "avaṉ"
+        "plural": "acchanmār"
+      ipas:
+        "pronoun": "əʋan"
+        "plural": "ətʃtʃənmaːɾ"
+    - lemma: "അമ്മ"
+      key: "amma"
+      reading: "amma"
+      ipa: "əmma"
+      forms:
+        "pronoun": "അവൾ"
+        "plural": "അമ്മമാർ"
+      readings:
+        "pronoun": "avaḷ"
+        "plural": "ammamār"
+      ipas:
+        "pronoun": "əʋaɭ"
+        "plural": "əmməmaːɾ"
+    - lemma: "സഹോദരി"
+      key: "sahodari"
+      reading: "sahōdari"
+      ipa: "səhoːd̪əɾi"
+      forms:
+        "pronoun": "അവൾ"
+        "plural": "സഹോദരിമാർ"
+      readings:
+        "pronoun": "avaḷ"
+        "plural": "sahōdarimār"
+      ipas:
+        "pronoun": "əʋaɭ"
+        "plural": "səhoːd̪əɾimaːɾ"
+    - lemma: "ഡോക്ടർ"
+      key: "doctor"
+      reading: "ḍōkṭar"
+      ipa: "ɖoːkʈaɾ"
+      forms:
+        "pronoun": "അവൻ"
+        "plural": "ഡോക്ടർമാർ"
+      readings:
+        "pronoun": "avaṉ"
+        "plural": "ḍōkṭarmār"
+      ipas:
+        "pronoun": "əʋan"
+        "plural": "ɖoːkʈəɾmaːɾ"
+    - lemma: "പുസ്തകം"
+      key: "pustakam"
+      reading: "pustakaṁ"
+      ipa: "pust̪əkam"
+      forms:
+        "pronoun": "അത്"
+        "plural": "പുസ്തകങ്ങൾ"
+      readings:
+        "pronoun": "at"
+        "plural": "pustakaṅṅaḷ"
+      ipas:
+        "pronoun": "at̪"
+        "plural": "pust̪əkəŋŋaɭ"
+    - lemma: "നായ"
+      key: "naya"
+      reading: "nāya"
+      ipa: "naːja"
+      forms:
+        "pronoun": "അത്"
+        "plural": ["നായ്ക്കൾ", "നായകൾ"]
+      readings:
+        "pronoun": "at"
+        "plural": ["nāykkaḷ", "nāyakaḷ"]
+      ipas:
+        "pronoun": "at̪"
+        "plural": "naːjkkaɭ"
+    - lemma: "വീട്"
+      key: "veedu"
+      reading: "vīṭ"
+      ipa: "ʋiːʈ"
+      forms:
+        "pronoun": "അത്"
+        "plural": "വീടുകൾ"
+      readings:
+        "pronoun": "at"
+        "plural": "vīṭukaḷ"
+      ipas:
+        "pronoun": "at̪"
+        "plural": "ʋiːʈukaɭ"
