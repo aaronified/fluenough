@@ -1,0 +1,900 @@
+schema: 1
+id: "ta-weddings"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "weddings"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-8160"
+    target: "திருமணம்"
+    reading: "tirumaṇam"
+    ipa: "t̪iɾumaɳam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாளை திருமணம்."
+        reading: "nāḷai tirumaṇam."
+        ipa: "naːɭai t̪iɾumaɳam"
+        bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "திருமணம்", base: "திருமணம்", reading: "tirumaṇam" }]
+      - target: "திருமணம் எங்கே?"
+        reading: "tirumaṇam eṅkē?"
+        ipa: "t̪iɾumaɳam eŋkeː"
+        bases: [{ word: "திருமணம்", base: "திருமணம்", reading: "tirumaṇam" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-8161"
+    target: "கல்யாணம்"
+    reading: "kalyāṇam"
+    ipa: "kaljaːɳam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று கல்யாணம்."
+        reading: "iṉṟu kalyāṇam."
+        ipa: "inru kaljaːɳam"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "கல்யாணம்", base: "கல்யாணம்", reading: "kalyāṇam" }]
+      - target: "கல்யாணம் மண்டபத்தில் நடக்கிறது."
+        reading: "kalyāṇam maṇṭapattil naṭakkiṟatu."
+        ipa: "kaljaːɳam maɳʈapat̪t̪il naʈakkirat̪u"
+        bases: [{ word: "கல்யாணம்", base: "கல்யாணம்", reading: "kalyāṇam" }, { word: "மண்டபத்தில்", base: "மண்டபம்", reading: "maṇṭapam" }, { word: "நடக்கிறது", base: "நட", reading: "naṭa" }]
+  - id: "ta-8162"
+    target: "மணமகன்"
+    reading: "maṇamakaṉ"
+    ipa: "maɳamakan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மணமகன் இங்கே இருக்கிறான்."
+        reading: "maṇamakaṉ iṅkē irukkiṟāṉ."
+        ipa: "maɳamakan iŋkeː iɾukkiraːn"
+        bases: [{ word: "மணமகன்", base: "மணமகன்", reading: "maṇamakaṉ" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறான்", base: "இரு", reading: "iru" }]
+      - target: "இவன் மணமகன்."
+        reading: "ivaṉ maṇamakaṉ."
+        ipa: "iʋan maɳamakan"
+        bases: [{ word: "இவன்", base: "இவன்", reading: "ivaṉ" }, { word: "மணமகன்", base: "மணமகன்", reading: "maṇamakaṉ" }]
+  - id: "ta-8163"
+    target: "மணமகள்"
+    reading: "maṇamakaḷ"
+    ipa: "maɳamakaɭ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மணமகள் அழகாக இருக்கிறாள்."
+        reading: "maṇamakaḷ aḻakāka irukkiṟāḷ."
+        ipa: "maɳamakaɭ aɻakaːka iɾukkiraːɭ"
+        bases: [{ word: "மணமகள்", base: "மணமகள்", reading: "maṇamakaḷ" }, { word: "அழகாக", base: "அழகான", reading: "aḻakāṉa" }, { word: "இருக்கிறாள்", base: "இரு", reading: "iru" }]
+      - target: "இவள் மணமகள்."
+        reading: "ivaḷ maṇamakaḷ."
+        ipa: "iʋaɭ maɳamakaɭ"
+        bases: [{ word: "இவள்", base: "இவள்", reading: "ivaḷ" }, { word: "மணமகள்", base: "மணமகள்", reading: "maṇamakaḷ" }]
+  - id: "ta-8164"
+    target: "மாப்பிள்ளை"
+    reading: "māppiḷḷai"
+    ipa: "maːppiɭɭai"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மாப்பிள்ளை நல்லவன்."
+        reading: "māppiḷḷai nallavaṉ."
+        ipa: "maːppiɭɭai nallaʋan"
+        bases: [{ word: "மாப்பிள்ளை", base: "மாப்பிள்ளை", reading: "māppiḷḷai" }, { word: "நல்லவன்", base: "நல்ல", reading: "nalla" }]
+      - target: "மாப்பிள்ளை எங்கே?"
+        reading: "māppiḷḷai eṅkē?"
+        ipa: "maːppiɭɭai eŋkeː"
+        bases: [{ word: "மாப்பிள்ளை", base: "மாப்பிள்ளை", reading: "māppiḷḷai" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-8165"
+    target: "மணப்பெண்"
+    reading: "maṇappeṇ"
+    ipa: "maɳappeɳ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மணப்பெண் அங்கே இருக்கிறாள்."
+        reading: "maṇappeṇ aṅkē irukkiṟāḷ."
+        ipa: "maɳappeɳ aŋkeː iɾukkiraːɭ"
+        bases: [{ word: "மணப்பெண்", base: "மணப்பெண்", reading: "maṇappeṇ" }, { word: "அங்கே", base: "அங்கே", reading: "aṅkē" }, { word: "இருக்கிறாள்", base: "இரு", reading: "iru" }]
+      - target: "மணப்பெண் புடவை அழகு."
+        reading: "maṇappeṇ puṭavai aḻaku."
+        ipa: "maɳappeɳ puʈaʋai aɻaku"
+        bases: [{ word: "மணப்பெண்", base: "மணப்பெண்", reading: "maṇappeṇ" }, { word: "புடவை", ref: "ta-0286" }, { word: "அழகு", ref: "ta-1980" }]
+  - id: "ta-8166"
+    target: "தாலி"
+    reading: "tāli"
+    ipa: "t̪aːli"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது தாலி."
+        reading: "itu tāli."
+        ipa: "it̪u t̪aːli"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "தாலி", base: "தாலி", reading: "tāli" }]
+      - target: "தாலி எங்கே?"
+        reading: "tāli eṅkē?"
+        ipa: "t̪aːli eŋkeː"
+        bases: [{ word: "தாலி", base: "தாலி", reading: "tāli" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-8167"
+    target: "மண்டபம்"
+    reading: "maṇṭapam"
+    ipa: "maɳʈapam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "திருமண மண்டபம் பெரியது."
+        reading: "tirumaṇa maṇṭapam periyatu."
+        ipa: "t̪iɾumaɳa maɳʈapam peɾijat̪u"
+        bases: [{ word: "திருமண", base: "திருமணம்", reading: "tirumaṇam" }, { word: "மண்டபம்", base: "மண்டபம்", reading: "maṇṭapam" }, { word: "பெரியது", base: "பெரிய", reading: "periya" }]
+      - target: "மண்டபம் எங்கே இருக்கிறது?"
+        reading: "maṇṭapam eṅkē irukkiṟatu?"
+        ipa: "maɳʈapam eŋkeː iɾukkirat̪u"
+        bases: [{ word: "மண்டபம்", base: "மண்டபம்", reading: "maṇṭapam" }, { word: "எங்கே", ref: "ta-0043" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-8168"
+    target: "அழைப்பிதழ்"
+    reading: "aḻaippitaḻ"
+    ipa: "aɻaippit̪aɻ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது திருமண அழைப்பிதழ்."
+        reading: "itu tirumaṇa aḻaippitaḻ."
+        ipa: "it̪u t̪iɾumaɳa aɻaippit̪aɻ"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "திருமண", base: "திருமணம்", reading: "tirumaṇam" }, { word: "அழைப்பிதழ்", base: "அழைப்பிதழ்", reading: "aḻaippitaḻ" }]
+      - target: "அழைப்பிதழ் எங்கே?"
+        reading: "aḻaippitaḻ eṅkē?"
+        ipa: "aɻaippit̪aɻ eŋkeː"
+        bases: [{ word: "அழைப்பிதழ்", base: "அழைப்பிதழ்", reading: "aḻaippitaḻ" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-8169"
+    target: "மொய்"
+    reading: "moy"
+    ipa: "moj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் மொய் கொடுக்கிறேன்."
+        reading: "nāṉ moy koṭukkiṟēṉ."
+        ipa: "naːn moj koʈukkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "மொய்", base: "மொய்", reading: "moy" }, { word: "கொடுக்கிறேன்", base: "கொடு", reading: "koṭu" }]
+      - target: "மொய் எவ்வளவு?"
+        reading: "moy evvaḷavu?"
+        ipa: "moj eʋʋaɭaʋu"
+        bases: [{ word: "மொய்", base: "மொய்", reading: "moy" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+  - id: "ta-8170"
+    target: "ஆசீர்வாதம்"
+    reading: "ācīrvātam"
+    ipa: "aːsiːɾʋaːt̪am"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பெரியவர் ஆசீர்வாதம் கொடுக்கிறார்."
+        reading: "periyavar ācīrvātam koṭukkiṟār."
+        ipa: "peɾijaʋaɾ aːsiːɾʋaːt̪am koʈukkiraːɾ"
+        bases: [{ word: "பெரியவர்", base: "பெரியவர்", reading: "periyavar" }, { word: "ஆசீர்வாதம்", base: "ஆசீர்வாதம்", reading: "ācīrvātam" }, { word: "கொடுக்கிறார்", base: "கொடு", reading: "koṭu" }]
+      - target: "எனக்கு உங்கள் ஆசீர்வாதம் வேண்டும்."
+        reading: "eṉakku uṅkaḷ ācīrvātam vēṇṭum."
+        ipa: "enakku uŋkaɭ aːsiːɾʋaːt̪am ʋeːɳʈum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "உங்கள்", base: "உங்கள்", reading: "uṅkaḷ" }, { word: "ஆசீர்வாதம்", base: "ஆசீர்வாதம்", reading: "ācīrvātam" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-8171"
+    target: "சடங்கு"
+    reading: "caṭaṅku"
+    ipa: "saʈaŋku"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது திருமண சடங்கு."
+        reading: "itu tirumaṇa caṭaṅku."
+        ipa: "it̪u t̪iɾumaɳa saʈaŋku"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "திருமண", base: "திருமணம்", reading: "tirumaṇam" }, { word: "சடங்கு", base: "சடங்கு", reading: "caṭaṅku" }]
+      - target: "சடங்கு நடக்கிறது."
+        reading: "caṭaṅku naṭakkiṟatu."
+        ipa: "saʈaŋku naʈakkirat̪u"
+        bases: [{ word: "சடங்கு", base: "சடங்கு", reading: "caṭaṅku" }, { word: "நடக்கிறது", base: "நட", reading: "naṭa" }]
+  - id: "ta-8172"
+    target: "புரோகிதர்"
+    reading: "purōkitar"
+    ipa: "puɾoːkit̪aɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "புரோகிதர் இங்கே இருக்கிறார்."
+        reading: "purōkitar iṅkē irukkiṟār."
+        ipa: "puɾoːkit̪aɾ iŋkeː iɾukkiraːɾ"
+        bases: [{ word: "புரோகிதர்", base: "புரோகிதர்", reading: "purōkitar" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+      - target: "புரோகிதர் மந்திரம் சொல்கிறார்."
+        reading: "purōkitar mantiram colkiṟār."
+        ipa: "puɾoːkit̪aɾ mant̪iɾam solkiraːɾ"
+        bases: [{ word: "புரோகிதர்", base: "புரோகிதர்", reading: "purōkitar" }, { word: "மந்திரம்", ref: "ta-8173" }, { word: "சொல்கிறார்", base: "சொல்", reading: "col" }]
+  - id: "ta-8173"
+    target: "மந்திரம்"
+    reading: "mantiram"
+    ipa: "mant̪iɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது மந்திரம்."
+        reading: "itu mantiram."
+        ipa: "it̪u mant̪iɾam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "மந்திரம்", base: "மந்திரம்", reading: "mantiram" }]
+      - target: "மந்திரம் கேட்கிறது."
+        reading: "mantiram kēṭkiṟatu."
+        ipa: "mant̪iɾam keːʈkirat̪u"
+        bases: [{ word: "மந்திரம்", base: "மந்திரம்", reading: "mantiram" }, { word: "கேட்கிறது", base: "கேள்", reading: "kēḷ" }]
+  - id: "ta-8174"
+    target: "ஜோடி"
+    reading: "jōṭi"
+    ipa: "dʒoːʈi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இவர்கள் நல்ல ஜோடி."
+        reading: "ivarkaḷ nalla jōṭi."
+        ipa: "iʋaɾkaɭ nalla dʒoːʈi"
+        bases: [{ word: "இவர்கள்", base: "இவர்", reading: "ivar" }, { word: "நல்ல", ref: "ta-0169" }, { word: "ஜோடி", base: "ஜோடி", reading: "jōṭi" }]
+      - target: "ஜோடி மேடையில் இருக்கிறது."
+        reading: "jōṭi mēṭaiyil irukkiṟatu."
+        ipa: "dʒoːʈi meːʈaijil iɾukkirat̪u"
+        bases: [{ word: "ஜோடி", base: "ஜோடி", reading: "jōṭi" }, { word: "மேடையில்", base: "மேடை", reading: "mēṭai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-8175"
+    target: "தம்பதி"
+    reading: "tampati"
+    ipa: "t̪ampat̪i"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இவர்கள் தம்பதி."
+        reading: "ivarkaḷ tampati."
+        ipa: "iʋaɾkaɭ t̪ampat̪i"
+        bases: [{ word: "இவர்கள்", base: "இவர்", reading: "ivar" }, { word: "தம்பதி", base: "தம்பதி", reading: "tampati" }]
+      - target: "தம்பதி இங்கே இருக்கிறார்கள்."
+        reading: "tampati iṅkē irukkiṟārkaḷ."
+        ipa: "t̪ampat̪i iŋkeː iɾukkiraːɾkaɭ"
+        bases: [{ word: "தம்பதி", base: "தம்பதி", reading: "tampati" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறார்கள்", base: "இரு", reading: "iru" }]
+  - id: "ta-8176"
+    target: "கணவன்"
+    reading: "kaṇavaṉ"
+    ipa: "kaɳaʋan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் என் கணவன்."
+        reading: "avar eṉ kaṇavaṉ."
+        ipa: "aʋaɾ en kaɳaʋan"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "கணவன்", base: "கணவன்", reading: "kaṇavaṉ" }]
+      - target: "என் கணவன் வீட்டில் இருக்கிறான்."
+        reading: "eṉ kaṇavaṉ vīṭṭil irukkiṟāṉ."
+        ipa: "en kaɳaʋan ʋiːʈʈil iɾukkiraːn"
+        bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "கணவன்", base: "கணவன்", reading: "kaṇavaṉ" }, { word: "வீட்டில்", ref: "ta-0414" }, { word: "இருக்கிறான்", base: "இரு", reading: "iru" }]
+  - id: "ta-8177"
+    target: "மாமியார்"
+    reading: "māmiyār"
+    ipa: "maːmijaːɾ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவள் என் மாமியார்."
+        reading: "avaḷ eṉ māmiyār."
+        ipa: "aʋaɭ en maːmijaːɾ"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "மாமியார்", base: "மாமியார்", reading: "māmiyār" }]
+      - target: "மாமியார் வீட்டில் இருக்கிறாள்."
+        reading: "māmiyār vīṭṭil irukkiṟāḷ."
+        ipa: "maːmijaːɾ ʋiːʈʈil iɾukkiraːɭ"
+        bases: [{ word: "மாமியார்", base: "மாமியார்", reading: "māmiyār" }, { word: "வீட்டில்", ref: "ta-0414" }, { word: "இருக்கிறாள்", base: "இரு", reading: "iru" }]
+  - id: "ta-8178"
+    target: "மாமனார்"
+    reading: "māmaṉār"
+    ipa: "maːmanaːɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் என் மாமனார்."
+        reading: "avar eṉ māmaṉār."
+        ipa: "aʋaɾ en maːmanaːɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "மாமனார்", base: "மாமனார்", reading: "māmaṉār" }]
+      - target: "மாமனார் வீட்டில் இருக்கிறார்."
+        reading: "māmaṉār vīṭṭil irukkiṟār."
+        ipa: "maːmanaːɾ ʋiːʈʈil iɾukkiraːɾ"
+        bases: [{ word: "மாமனார்", base: "மாமனார்", reading: "māmaṉār" }, { word: "வீட்டில்", ref: "ta-0414" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+  - id: "ta-8179"
+    target: "மருமகள்"
+    reading: "marumakaḷ"
+    ipa: "maɾumakaɭ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவள் என் மருமகள்."
+        reading: "avaḷ eṉ marumakaḷ."
+        ipa: "aʋaɭ en maɾumakaɭ"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "மருமகள்", base: "மருமகள்", reading: "marumakaḷ" }]
+      - target: "மருமகள் இங்கே இருக்கிறாள்."
+        reading: "marumakaḷ iṅkē irukkiṟāḷ."
+        ipa: "maɾumakaɭ iŋkeː iɾukkiraːɭ"
+        bases: [{ word: "மருமகள்", base: "மருமகள்", reading: "marumakaḷ" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறாள்", base: "இரு", reading: "iru" }]
+  - id: "ta-8180"
+    target: "மருமகன்"
+    reading: "marumakaṉ"
+    ipa: "maɾumakan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவன் என் மருமகன்."
+        reading: "avaṉ eṉ marumakaṉ."
+        ipa: "aʋan en maɾumakan"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "மருமகன்", base: "மருமகன்", reading: "marumakaṉ" }]
+      - target: "மருமகன் இங்கே இருக்கிறான்."
+        reading: "marumakaṉ iṅkē irukkiṟāṉ."
+        ipa: "maɾumakan iŋkeː iɾukkiraːn"
+        bases: [{ word: "மருமகன்", base: "மருமகன்", reading: "marumakaṉ" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறான்", base: "இரு", reading: "iru" }]
+  - id: "ta-8181"
+    target: "சம்பந்தி"
+    reading: "campanti"
+    ipa: "sampant̪i"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் என் சம்பந்தி."
+        reading: "avar eṉ campanti."
+        ipa: "aʋaɾ en sampant̪i"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "சம்பந்தி", base: "சம்பந்தி", reading: "campanti" }]
+      - target: "சம்பந்தி வீடு எங்கே?"
+        reading: "campanti vīṭu eṅkē?"
+        ipa: "sampant̪i ʋiːʈu eŋkeː"
+        bases: [{ word: "சம்பந்தி", base: "சம்பந்தி", reading: "campanti" }, { word: "வீடு", ref: "ta-0009" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-8182"
+    target: "நண்பர்"
+    reading: "naṇpar"
+    ipa: "naɳpaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் என் நண்பர்."
+        reading: "avar eṉ naṇpar."
+        ipa: "aʋaɾ en naɳpaɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "நண்பர்", base: "நண்பர்", reading: "naṇpar" }]
+      - target: "நண்பர் திருமணத்துக்கு வருகிறார்."
+        reading: "naṇpar tirumaṇattukku varukiṟār."
+        ipa: "naɳpaɾ t̪iɾumaɳat̪t̪ukku ʋaɾukiraːɾ"
+        bases: [{ word: "நண்பர்", base: "நண்பர்", reading: "naṇpar" }, { word: "திருமணத்துக்கு", base: "திருமணம்", reading: "tirumaṇam" }, { word: "வருகிறார்", base: "வா", reading: "vā" }]
+  - id: "ta-8183"
+    target: "நிச்சயதார்த்தம்"
+    reading: "niccayatārttam"
+    ipa: "nitʃtʃajat̪aːɾt̪t̪am"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று நிச்சயதார்த்தம்."
+        reading: "iṉṟu niccayatārttam."
+        ipa: "inru nitʃtʃajat̪aːɾt̪t̪am"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "நிச்சயதார்த்தம்", base: "நிச்சயதார்த்தம்", reading: "niccayatārttam" }]
+      - target: "நிச்சயதார்த்தம் மண்டபத்தில் நடக்கிறது."
+        reading: "niccayatārttam maṇṭapattil naṭakkiṟatu."
+        ipa: "nitʃtʃajat̪aːɾt̪t̪am maɳʈapat̪t̪il naʈakkirat̪u"
+        bases: [{ word: "நிச்சயதார்த்தம்", base: "நிச்சயதார்த்தம்", reading: "niccayatārttam" }, { word: "மண்டபத்தில்", base: "மண்டபம்", reading: "maṇṭapam" }, { word: "நடக்கிறது", base: "நட", reading: "naṭa" }]
+  - id: "ta-8184"
+    target: "ஜாதகம்"
+    reading: "jātakam"
+    ipa: "dʒaːt̪akam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது அவள் ஜாதகம்."
+        reading: "itu avaḷ jātakam."
+        ipa: "it̪u aʋaɭ dʒaːt̪akam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "அவள்", ref: "ta-0059" }, { word: "ஜாதகம்", base: "ஜாதகம்", reading: "jātakam" }]
+      - target: "ஜாதகம் எங்கே?"
+        reading: "jātakam eṅkē?"
+        ipa: "dʒaːt̪akam eŋkeː"
+        bases: [{ word: "ஜாதகம்", base: "ஜாதகம்", reading: "jātakam" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-8185"
+    target: "பொருத்தம்"
+    reading: "poruttam"
+    ipa: "poɾut̪t̪am"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இவர்களுக்குப் பொருத்தம் இருக்கிறது."
+        reading: "ivarkaḷukkup poruttam irukkiṟatu."
+        ipa: "iʋaɾkaɭukkup poɾut̪t̪am iɾukkirat̪u"
+        bases: [{ word: "இவர்களுக்குப்", base: "இவர்", reading: "ivar" }, { word: "பொருத்தம்", base: "பொருத்தம்", reading: "poruttam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "பொருத்தம் நல்லது."
+        reading: "poruttam nallatu."
+        ipa: "poɾut̪t̪am nallat̪u"
+        bases: [{ word: "பொருத்தம்", base: "பொருத்தம்", reading: "poruttam" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-8186"
+    target: "சந்தனம்"
+    reading: "cantaṉam"
+    ipa: "sant̪anam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சந்தனம் இங்கே இருக்கிறது."
+        reading: "cantaṉam iṅkē irukkiṟatu."
+        ipa: "sant̪anam iŋkeː iɾukkirat̪u"
+        bases: [{ word: "சந்தனம்", base: "சந்தனம்", reading: "cantaṉam" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "எனக்குச் சந்தனம் கொடு."
+        reading: "eṉakkuc cantaṉam koṭu."
+        ipa: "enakkus sant̪anam koʈu"
+        bases: [{ word: "எனக்குச்", base: "நான்", reading: "nāṉ" }, { word: "சந்தனம்", base: "சந்தனம்", reading: "cantaṉam" }, { word: "கொடு", ref: "ta-0125" }]
+  - id: "ta-8187"
+    target: "வெற்றிலை"
+    reading: "veṟṟilai"
+    ipa: "ʋerrilai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது வெற்றிலை."
+        reading: "itu veṟṟilai."
+        ipa: "it̪u ʋerrilai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "வெற்றிலை", base: "வெற்றிலை", reading: "veṟṟilai" }]
+      - target: "வெற்றிலை பாக்கு கொடு."
+        reading: "veṟṟilai pākku koṭu."
+        ipa: "ʋerrilai paːkku koʈu"
+        bases: [{ word: "வெற்றிலை", base: "வெற்றிலை", reading: "veṟṟilai" }, { word: "பாக்கு", ref: "ta-8188" }, { word: "கொடு", ref: "ta-0125" }]
+  - id: "ta-8188"
+    target: "பாக்கு"
+    reading: "pākku"
+    ipa: "paːkku"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பாக்கு."
+        reading: "itu pākku."
+        ipa: "it̪u paːkku"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பாக்கு", base: "பாக்கு", reading: "pākku" }]
+      - target: "பாக்கு எங்கே?"
+        reading: "pākku eṅkē?"
+        ipa: "paːkku eŋkeː"
+        bases: [{ word: "பாக்கு", base: "பாக்கு", reading: "pākku" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-8189"
+    target: "வாழையிலை"
+    reading: "vāḻaiyilai"
+    ipa: "ʋaːɻaijilai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வாழையிலை இங்கே இருக்கிறது."
+        reading: "vāḻaiyilai iṅkē irukkiṟatu."
+        ipa: "ʋaːɻaijilai iŋkeː iɾukkirat̪u"
+        bases: [{ word: "வாழையிலை", base: "வாழையிலை", reading: "vāḻaiyilai" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "வாழையிலையில் சாப்பிடுகிறோம்."
+        reading: "vāḻaiyilaiyil cāppiṭukiṟōm."
+        ipa: "ʋaːɻaijilaijil saːppiʈukiroːm"
+        bases: [{ word: "வாழையிலையில்", base: "வாழையிலை", reading: "vāḻaiyilai" }, { word: "சாப்பிடுகிறோம்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+  - id: "ta-8190"
+    target: "பந்தல்"
+    reading: "pantal"
+    ipa: "pant̪al"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வீட்டில் பந்தல் இருக்கிறது."
+        reading: "vīṭṭil pantal irukkiṟatu."
+        ipa: "ʋiːʈʈil pant̪al iɾukkirat̪u"
+        bases: [{ word: "வீட்டில்", ref: "ta-0414" }, { word: "பந்தல்", base: "பந்தல்", reading: "pantal" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "பந்தல் அழகாக இருக்கிறது."
+        reading: "pantal aḻakāka irukkiṟatu."
+        ipa: "pant̪al aɻakaːka iɾukkirat̪u"
+        bases: [{ word: "பந்தல்", base: "பந்தல்", reading: "pantal" }, { word: "அழகாக", base: "அழகான", reading: "aḻakāṉa" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-8191"
+    target: "புகைப்படக்காரர்"
+    reading: "pukaippaṭakkārar"
+    ipa: "pukaippaʈakkaːɾaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "புகைப்படக்காரர் இங்கே இருக்கிறார்."
+        reading: "pukaippaṭakkārar iṅkē irukkiṟār."
+        ipa: "pukaippaʈakkaːɾaɾ iŋkeː iɾukkiraːɾ"
+        bases: [{ word: "புகைப்படக்காரர்", base: "புகைப்படக்காரர்", reading: "pukaippaṭakkārar" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+      - target: "புகைப்படக்காரர் படம் எடுக்கிறார்."
+        reading: "pukaippaṭakkārar paṭam eṭukkiṟār."
+        ipa: "pukaippaʈakkaːɾaɾ paʈam eʈukkiraːɾ"
+        bases: [{ word: "புகைப்படக்காரர்", base: "புகைப்படக்காரர்", reading: "pukaippaṭakkārar" }, { word: "படம்", ref: "ta-1825" }, { word: "எடுக்கிறார்", base: "எடு", reading: "eṭu" }]
+  - id: "ta-8192"
+    target: "ஏற்பாடு"
+    reading: "ēṟpāṭu"
+    ipa: "eːrpaːʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "திருமண ஏற்பாடு நடக்கிறது."
+        reading: "tirumaṇa ēṟpāṭu naṭakkiṟatu."
+        ipa: "t̪iɾumaɳa eːrpaːʈu naʈakkirat̪u"
+        bases: [{ word: "திருமண", base: "திருமணம்", reading: "tirumaṇam" }, { word: "ஏற்பாடு", base: "ஏற்பாடு", reading: "ēṟpāṭu" }, { word: "நடக்கிறது", base: "நட", reading: "naṭa" }]
+      - target: "ஏற்பாடு நல்லது."
+        reading: "ēṟpāṭu nallatu."
+        ipa: "eːrpaːʈu nallat̪u"
+        bases: [{ word: "ஏற்பாடு", base: "ஏற்பாடு", reading: "ēṟpāṭu" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-8193"
+    target: "முகூர்த்தம்"
+    reading: "mukūrttam"
+    ipa: "mukuːɾt̪t̪am"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "முகூர்த்தம் எப்போது?"
+        reading: "mukūrttam eppōtu?"
+        ipa: "mukuːɾt̪t̪am eppoːt̪u"
+        bases: [{ word: "முகூர்த்தம்", base: "முகூர்த்தம்", reading: "mukūrttam" }, { word: "எப்போது", ref: "ta-0044" }]
+      - target: "நாளை முகூர்த்தம்."
+        reading: "nāḷai mukūrttam."
+        ipa: "naːɭai mukuːɾt̪t̪am"
+        bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "முகூர்த்தம்", base: "முகூர்த்தம்", reading: "mukūrttam" }]
+  - id: "ta-8194"
+    target: "மணம்"
+    reading: "maṇam"
+    ipa: "maɳam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பூவின் மணம் அருமை."
+        reading: "pūviṉ maṇam arumai."
+        ipa: "puːʋin maɳam aɾumai"
+        bases: [{ word: "பூவின்", base: "பூ", reading: "pū" }, { word: "மணம்", base: "மணம்", reading: "maṇam" }, { word: "அருமை", base: "அருமை", reading: "arumai" }]
+      - target: "மணம் இன்று நடக்கிறது."
+        reading: "maṇam iṉṟu naṭakkiṟatu."
+        ipa: "maɳam inru naʈakkirat̪u"
+        bases: [{ word: "மணம்", base: "மணம்", reading: "maṇam" }, { word: "இன்று", ref: "ta-0144" }, { word: "நடக்கிறது", base: "நட", reading: "naṭa" }]
+  - id: "ta-8195"
+    target: "பரிசுப்பொருள்"
+    reading: "paricupporuḷ"
+    ipa: "paɾisuppoɾuɭ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பரிசுப்பொருள்."
+        reading: "itu paricupporuḷ."
+        ipa: "it̪u paɾisuppoɾuɭ"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பரிசுப்பொருள்", base: "பரிசுப்பொருள்", reading: "paricupporuḷ" }]
+      - target: "பரிசுப்பொருள் எங்கே?"
+        reading: "paricupporuḷ eṅkē?"
+        ipa: "paɾisuppoɾuɭ eŋkeː"
+        bases: [{ word: "பரிசுப்பொருள்", base: "பரிசுப்பொருள்", reading: "paricupporuḷ" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-8196"
+    target: "அத்தை"
+    reading: "attai"
+    ipa: "at̪t̪ai"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவள் என் அத்தை."
+        reading: "avaḷ eṉ attai."
+        ipa: "aʋaɭ en at̪t̪ai"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "அத்தை", base: "அத்தை", reading: "attai" }]
+      - target: "அத்தை வீட்டில் இருக்கிறாள்."
+        reading: "attai vīṭṭil irukkiṟāḷ."
+        ipa: "at̪t̪ai ʋiːʈʈil iɾukkiraːɭ"
+        bases: [{ word: "அத்தை", base: "அத்தை", reading: "attai" }, { word: "வீட்டில்", ref: "ta-0414" }, { word: "இருக்கிறாள்", base: "இரு", reading: "iru" }]
+  - id: "ta-8197"
+    target: "மாமா"
+    reading: "māmā"
+    ipa: "maːmaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் என் மாமா."
+        reading: "avar eṉ māmā."
+        ipa: "aʋaɾ en maːmaː"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "மாமா", base: "மாமா", reading: "māmā" }]
+      - target: "மாமா இங்கே இருக்கிறார்."
+        reading: "māmā iṅkē irukkiṟār."
+        ipa: "maːmaː iŋkeː iɾukkiraːɾ"
+        bases: [{ word: "மாமா", base: "மாமா", reading: "māmā" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+  - id: "ta-8198"
+    target: "சித்தி"
+    reading: "citti"
+    ipa: "sit̪t̪i"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவள் என் சித்தி."
+        reading: "avaḷ eṉ citti."
+        ipa: "aʋaɭ en sit̪t̪i"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "சித்தி", base: "சித்தி", reading: "citti" }]
+      - target: "சித்தி இங்கே இருக்கிறாள்."
+        reading: "citti iṅkē irukkiṟāḷ."
+        ipa: "sit̪t̪i iŋkeː iɾukkiraːɭ"
+        bases: [{ word: "சித்தி", base: "சித்தி", reading: "citti" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறாள்", base: "இரு", reading: "iru" }]
+  - id: "ta-8199"
+    target: "ஆரத்தி"
+    reading: "āratti"
+    ipa: "aːɾat̪t̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஆரத்தி எடுக்கிறார்கள்."
+        reading: "āratti eṭukkiṟārkaḷ."
+        ipa: "aːɾat̪t̪i eʈukkiraːɾkaɭ"
+        bases: [{ word: "ஆரத்தி", base: "ஆரத்தி", reading: "āratti" }, { word: "எடுக்கிறார்கள்", base: "எடு", reading: "eṭu" }]
+      - target: "ஆரத்தி எங்கே?"
+        reading: "āratti eṅkē?"
+        ipa: "aːɾat̪t̪i eŋkeː"
+        bases: [{ word: "ஆரத்தி", base: "ஆரத்தி", reading: "āratti" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-8200"
+    target: "தேனிலவு"
+    reading: "tēṉilavu"
+    ipa: "t̪eːnilaʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர்கள் தேனிலவுக்குப் போகிறார்கள்."
+        reading: "avarkaḷ tēṉilavukkup pōkiṟārkaḷ."
+        ipa: "aʋaɾkaɭ t̪eːnilaʋukkup poːkiraːɾkaɭ"
+        bases: [{ word: "அவர்கள்", ref: "ta-0065" }, { word: "தேனிலவுக்குப்", base: "தேனிலவு", reading: "tēṉilavu" }, { word: "போகிறார்கள்", base: "போ", reading: "pō" }]
+      - target: "தேனிலவு எங்கே?"
+        reading: "tēṉilavu eṅkē?"
+        ipa: "t̪eːnilaʋu eŋkeː"
+        bases: [{ word: "தேனிலவு", base: "தேனிலவு", reading: "tēṉilavu" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-8201"
+    target: "ஆசீர்வதி"
+    reading: "ācīrvati"
+    ipa: "aːsiːɾʋat̪i"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எங்களை ஆசீர்வதி."
+        reading: "eṅkaḷai ācīrvati."
+        ipa: "eŋkaɭai aːsiːɾʋat̪i"
+        bases: [{ word: "எங்களை", base: "நாங்கள்", reading: "nāṅkaḷ" }, { word: "ஆசீர்வதி", base: "ஆசீர்வதி", reading: "ācīrvati" }]
+      - target: "பெரியவர் அவர்களை ஆசீர்வதிக்கிறார்."
+        reading: "periyavar avarkaḷai ācīrvatikkiṟār."
+        ipa: "peɾijaʋaɾ aʋaɾkaɭai aːsiːɾʋat̪ikkiraːɾ"
+        bases: [{ word: "பெரியவர்", base: "பெரியவர்", reading: "periyavar" }, { word: "அவர்களை", base: "அவர்கள்", reading: "avarkaḷ" }, { word: "ஆசீர்வதிக்கிறார்", base: "ஆசீர்வதி", reading: "ācīrvati" }]
+  - id: "ta-8202"
+    target: "வரவேற்று"
+    reading: "varavēṟṟu"
+    ipa: "ʋaɾaʋeːrru"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "விருந்தினரை வரவேற்று."
+        reading: "viruntiṉarai varavēṟṟu."
+        ipa: "ʋiɾunt̪inaɾai ʋaɾaʋeːrru"
+        bases: [{ word: "விருந்தினரை", base: "விருந்தினர்", reading: "viruntiṉar" }, { word: "வரவேற்று", base: "வரவேற்று", reading: "varavēṟṟu" }]
+      - target: "நாங்கள் விருந்தினரை வரவேற்கிறோம்."
+        reading: "nāṅkaḷ viruntiṉarai varavēṟkiṟōm."
+        ipa: "naːŋkaɭ ʋiɾunt̪inaɾai ʋaɾaʋeːrkiroːm"
+        bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "விருந்தினரை", base: "விருந்தினர்", reading: "viruntiṉar" }, { word: "வரவேற்கிறோம்", base: "வரவேற்று", reading: "varavēṟṟu" }]
+  - id: "ta-8203"
+    target: "நிச்சயி"
+    reading: "niccayi"
+    ipa: "nitʃtʃaji"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தேதி நிச்சயி."
+        reading: "tēti niccayi."
+        ipa: "t̪eːt̪i nitʃtʃaji"
+        bases: [{ word: "தேதி", ref: "ta-1156" }, { word: "நிச்சயி", base: "நிச்சயி", reading: "niccayi" }]
+      - target: "அவர்கள் தேதி நிச்சயிக்கிறார்கள்."
+        reading: "avarkaḷ tēti niccayikkiṟārkaḷ."
+        ipa: "aʋaɾkaɭ t̪eːt̪i nitʃtʃajikkiraːɾkaɭ"
+        bases: [{ word: "அவர்கள்", ref: "ta-0065" }, { word: "தேதி", ref: "ta-1156" }, { word: "நிச்சயிக்கிறார்கள்", base: "நிச்சயி", reading: "niccayi" }]
+  - id: "ta-8204"
+    target: "தூவு"
+    reading: "tūvu"
+    ipa: "t̪uːʋu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பூ தூவு."
+        reading: "pū tūvu."
+        ipa: "puː t̪uːʋu"
+        bases: [{ word: "பூ", ref: "ta-1189" }, { word: "தூவு", base: "தூவு", reading: "tūvu" }]
+      - target: "அவர்கள் பூ தூவுகிறார்கள்."
+        reading: "avarkaḷ pū tūvukiṟārkaḷ."
+        ipa: "aʋaɾkaɭ puː t̪uːʋukiraːɾkaɭ"
+        bases: [{ word: "அவர்கள்", ref: "ta-0065" }, { word: "பூ", ref: "ta-1189" }, { word: "தூவுகிறார்கள்", base: "தூவு", reading: "tūvu" }]
+  - id: "ta-8205"
+    target: "அணி"
+    reading: "aṇi"
+    ipa: "aɳi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மாலை அணி."
+        reading: "mālai aṇi."
+        ipa: "maːlai aɳi"
+        bases: [{ word: "மாலை", ref: "ta-0153" }, { word: "அணி", base: "அணி", reading: "aṇi" }]
+      - target: "அவள் நகை அணிகிறாள்."
+        reading: "avaḷ nakai aṇikiṟāḷ."
+        ipa: "aʋaɭ nakai aɳikiraːɭ"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "நகை", ref: "ta-1993" }, { word: "அணிகிறாள்", base: "அணி", reading: "aṇi" }]
+  - id: "ta-8206"
+    target: "திருமணமான"
+    reading: "tirumaṇamāṉa"
+    ipa: "t̪iɾumaɳamaːna"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவள் திருமணமான பெண்."
+        reading: "avaḷ tirumaṇamāṉa peṇ."
+        ipa: "aʋaɭ t̪iɾumaɳamaːna peɳ"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "திருமணமான", base: "திருமணமான", reading: "tirumaṇamāṉa" }, { word: "பெண்", ref: "ta-0441" }]
+      - target: "அவன் திருமணமானவன்."
+        reading: "avaṉ tirumaṇamāṉavaṉ."
+        ipa: "aʋan t̪iɾumaɳamaːnaʋan"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "திருமணமானவன்", base: "திருமணமான", reading: "tirumaṇamāṉa" }]
+  - id: "ta-8207"
+    target: "மங்களகரமான"
+    reading: "maṅkaḷakaramāṉa"
+    ipa: "maŋkaɭakaɾamaːna"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது மங்களகரமான நாள்."
+        reading: "itu maṅkaḷakaramāṉa nāḷ."
+        ipa: "it̪u maŋkaɭakaɾamaːna naːɭ"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "மங்களகரமான", base: "மங்களகரமான", reading: "maṅkaḷakaramāṉa" }, { word: "நாள்", ref: "ta-1100" }]
+      - target: "மங்களகரமான நேரம்."
+        reading: "maṅkaḷakaramāṉa nēram."
+        ipa: "maŋkaɭakaɾamaːna neːɾam"
+        bases: [{ word: "மங்களகரமான", base: "மங்களகரமான", reading: "maṅkaḷakaramāṉa" }, { word: "நேரம்", ref: "ta-0155" }]
+  - id: "ta-8208"
+    target: "விமரிசையான"
+    reading: "vimaricaiyāṉa"
+    ipa: "ʋimaɾisaijaːna"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது விமரிசையான திருமணம்."
+        reading: "itu vimaricaiyāṉa tirumaṇam."
+        ipa: "it̪u ʋimaɾisaijaːna t̪iɾumaɳam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "விமரிசையான", base: "விமரிசையான", reading: "vimaricaiyāṉa" }, { word: "திருமணம்", ref: "ta-8160" }]
+      - target: "விழா விமரிசையாக நடக்கிறது."
+        reading: "viḻā vimaricaiyāka naṭakkiṟatu."
+        ipa: "ʋiɻaː ʋimaɾisaijaːka naʈakkirat̪u"
+        bases: [{ word: "விழா", ref: "ta-1204" }, { word: "விமரிசையாக", base: "விமரிசையான", reading: "vimaricaiyāṉa" }, { word: "நடக்கிறது", base: "நட", reading: "naṭa" }]
+  - id: "ta-8209"
+    target: "எளிமையான"
+    reading: "eḷimaiyāṉa"
+    ipa: "eɭimaijaːna"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது எளிமையான திருமணம்."
+        reading: "itu eḷimaiyāṉa tirumaṇam."
+        ipa: "it̪u eɭimaijaːna t̪iɾumaɳam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "எளிமையான", base: "எளிமையான", reading: "eḷimaiyāṉa" }, { word: "திருமணம்", ref: "ta-8160" }]
+      - target: "அவள் எளிமையானவள்."
+        reading: "avaḷ eḷimaiyāṉavaḷ."
+        ipa: "aʋaɭ eɭimaijaːnaʋaɭ"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "எளிமையானவள்", base: "எளிமையான", reading: "eḷimaiyāṉa" }]

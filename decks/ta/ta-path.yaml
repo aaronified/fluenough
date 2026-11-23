@@ -783,7 +783,8 @@ units:
       - { id: "a-temple-visit", text: { "en": "A guide tells the story of an old temple" } }
     reading_passages:
       - { id: "museum-card", text: { "en": "A museum card about a king" } }
-  - planned: { id: "ta-weddings", theme: "weddings", words: 50 }
+  - decks: ["ta-weddings", "ta-weddings-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
     reading_passages:
