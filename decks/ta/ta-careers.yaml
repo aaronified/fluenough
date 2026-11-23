@@ -1,0 +1,1096 @@
+schema: 1
+id: "ta-careers"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "careers"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-7436"
+    target: "வேலைவாய்ப்பு"
+    reading: "vēlaivāyppu"
+    ipa: "ʋeːlaiʋaːjppu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "வேலைவாய்ப்பு இருக்கிறது."
+        reading: "vēlaivāyppu irukkiṟatu."
+        ipa: "ʋeːlaiʋaːjppu iɾukkirat̪u"
+        bases: [{ word: "வேலைவாய்ப்பு", base: "வேலைவாய்ப்பு", reading: "vēlaivāyppu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "இங்கே வேலைவாய்ப்பு குறைவு."
+        reading: "iṅkē vēlaivāyppu kuṟaivu."
+        ipa: "iŋkeː ʋeːlaiʋaːjppu kuraiʋu"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "வேலைவாய்ப்பு", base: "வேலைவாய்ப்பு", reading: "vēlaivāyppu" }, { word: "குறைவு", ref: "ta-0160" }]
+  - id: "ta-7437"
+    target: "விண்ணப்பதாரர்"
+    reading: "viṇṇappatārar"
+    ipa: "ʋiɳɳappat̪aːɾaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவர் விண்ணப்பதாரர்."
+        reading: "avar viṇṇappatārar."
+        ipa: "aʋaɾ ʋiɳɳappat̪aːɾaɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "விண்ணப்பதாரர்", base: "விண்ணப்பதாரர்", reading: "viṇṇappatārar" }]
+      - target: "விண்ணப்பதாரர் வருகிறார்."
+        reading: "viṇṇappatārar varukiṟār."
+        ipa: "ʋiɳɳappat̪aːɾaɾ ʋaɾukiraːɾ"
+        bases: [{ word: "விண்ணப்பதாரர்", base: "விண்ணப்பதாரர்", reading: "viṇṇappatārar" }, { word: "வருகிறார்", base: "வா", reading: "vā" }]
+  - id: "ta-7438"
+    target: "சுயவிவரம்"
+    reading: "cuyavivaram"
+    ipa: "sujaʋiʋaɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "என் சுயவிவரம் இங்கே."
+        reading: "eṉ cuyavivaram iṅkē."
+        ipa: "en sujaʋiʋaɾam iŋkeː"
+        bases: [{ word: "என்", base: "நான்", reading: "nāṉ" }, { word: "சுயவிவரம்", base: "சுயவிவரம்", reading: "cuyavivaram" }, { word: "இங்கே", ref: "ta-0112" }]
+      - target: "சுயவிவரம் அனுப்பு."
+        reading: "cuyavivaram aṉuppu."
+        ipa: "sujaʋiʋaɾam anuppu"
+        bases: [{ word: "சுயவிவரம்", base: "சுயவிவரம்", reading: "cuyavivaram" }, { word: "அனுப்பு", ref: "ta-2029" }]
+  - id: "ta-7439"
+    target: "பயோடேட்டா"
+    reading: "payōṭēṭṭā"
+    ipa: "pajoːʈeːʈʈaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பயோடேட்டா வேண்டும்."
+        reading: "payōṭēṭṭā vēṇṭum."
+        ipa: "pajoːʈeːʈʈaː ʋeːɳʈum"
+        bases: [{ word: "பயோடேட்டா", base: "பயோடேட்டா", reading: "payōṭēṭṭā" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "என் பயோடேட்டா எழுதுகிறேன்."
+        reading: "eṉ payōṭēṭṭā eḻutukiṟēṉ."
+        ipa: "en pajoːʈeːʈʈaː eɻut̪ukireːn"
+        bases: [{ word: "என்", base: "நான்", reading: "nāṉ" }, { word: "பயோடேட்டா", base: "பயோடேட்டா", reading: "payōṭēṭṭā" }, { word: "எழுதுகிறேன்", base: "எழுது", reading: "eḻutu" }]
+  - id: "ta-7440"
+    target: "திறன்"
+    reading: "tiṟaṉ"
+    ipa: "t̪iran"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவனுக்குத் திறன் இருக்கிறது."
+        reading: "avaṉukkut tiṟaṉ irukkiṟatu."
+        ipa: "aʋanukkut̪ t̪iran iɾukkirat̪u"
+        bases: [{ word: "அவனுக்குத்", base: "அவன்", reading: "avaṉ" }, { word: "திறன்", base: "திறன்", reading: "tiṟaṉ" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "என் திறன் குறைவு."
+        reading: "eṉ tiṟaṉ kuṟaivu."
+        ipa: "en t̪iran kuraiʋu"
+        bases: [{ word: "என்", base: "நான்", reading: "nāṉ" }, { word: "திறன்", base: "திறன்", reading: "tiṟaṉ" }, { word: "குறைவு", ref: "ta-0160" }]
+  - id: "ta-7441"
+    target: "ஊதியம்"
+    reading: "ūtiyam"
+    ipa: "uːt̪ijam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஊதியம் எவ்வளவு?"
+        reading: "ūtiyam evvaḷavu?"
+        ipa: "uːt̪ijam eʋʋaɭaʋu"
+        bases: [{ word: "ஊதியம்", base: "ஊதியம்", reading: "ūtiyam" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+      - target: "ஊதியம் மாதம் ஒருமுறை கிடைக்கிறது."
+        reading: "ūtiyam mātam orumuṟai kiṭaikkiṟatu."
+        ipa: "uːt̪ijam maːt̪am oɾumurai kiʈaikkirat̪u"
+        bases: [{ word: "ஊதியம்", base: "ஊதியம்", reading: "ūtiyam" }, { word: "மாதம்", ref: "ta-1154" }, { word: "ஒருமுறை", base: "ஒருமுறை", reading: "orumuṟai" }, { word: "கிடைக்கிறது", base: "கிடை", reading: "kiṭai" }]
+  - id: "ta-7442"
+    target: "பதவிஉயர்வு"
+    reading: "pataviuyarvu"
+    ipa: "pat̪aʋiujaɾʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "எனக்குப் பதவிஉயர்வு கிடைக்கிறது."
+        reading: "eṉakkup pataviuyarvu kiṭaikkiṟatu."
+        ipa: "enakkup pat̪aʋiujaɾʋu kiʈaikkirat̪u"
+        bases: [{ word: "எனக்குப்", base: "நான்", reading: "nāṉ" }, { word: "பதவிஉயர்வு", base: "பதவிஉயர்வு", reading: "pataviuyarvu" }, { word: "கிடைக்கிறது", base: "கிடை", reading: "kiṭai" }]
+      - target: "பதவிஉயர்வு நல்லது."
+        reading: "pataviuyarvu nallatu."
+        ipa: "pat̪aʋiujaɾʋu nallat̪u"
+        bases: [{ word: "பதவிஉயர்வு", base: "பதவிஉயர்வு", reading: "pataviuyarvu" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-7443"
+    target: "பணியாளர்"
+    reading: "paṇiyāḷar"
+    ipa: "paɳijaːɭaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் பணியாளர்."
+        reading: "avar paṇiyāḷar."
+        ipa: "aʋaɾ paɳijaːɭaɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "பணியாளர்", base: "பணியாளர்", reading: "paṇiyāḷar" }]
+      - target: "பணியாளர் வருகிறார்."
+        reading: "paṇiyāḷar varukiṟār."
+        ipa: "paɳijaːɭaɾ ʋaɾukiraːɾ"
+        bases: [{ word: "பணியாளர்", base: "பணியாளர்", reading: "paṇiyāḷar" }, { word: "வருகிறார்", base: "வா", reading: "vā" }]
+  - id: "ta-7444"
+    target: "தொழில்முனைவோர்"
+    reading: "toḻilmuṉaivōr"
+    ipa: "t̪oɻilmunaiʋoːɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவர் தொழில்முனைவோர்."
+        reading: "avar toḻilmuṉaivōr."
+        ipa: "aʋaɾ t̪oɻilmunaiʋoːɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "தொழில்முனைவோர்", base: "தொழில்முனைவோர்", reading: "toḻilmuṉaivōr" }]
+      - target: "தொழில்முனைவோர் புதிய கடை திறக்கிறார்."
+        reading: "toḻilmuṉaivōr putiya kaṭai tiṟakkiṟār."
+        ipa: "t̪oɻilmunaiʋoːɾ put̪ija kaʈai t̪irakkiraːɾ"
+        bases: [{ word: "தொழில்முனைவோர்", base: "தொழில்முனைவோர்", reading: "toḻilmuṉaivōr" }, { word: "புதிய", ref: "ta-0171" }, { word: "கடை", ref: "ta-1208" }, { word: "திறக்கிறார்", base: "திற", reading: "tiṟa" }]
+  - id: "ta-7445"
+    target: "வேலைநேரம்"
+    reading: "vēlainēram"
+    ipa: "ʋeːlaineːɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "வேலைநேரம் எப்போது?"
+        reading: "vēlainēram eppōtu?"
+        ipa: "ʋeːlaineːɾam eppoːt̪u"
+        bases: [{ word: "வேலைநேரம்", base: "வேலைநேரம்", reading: "vēlainēram" }, { word: "எப்போது", ref: "ta-0044" }]
+      - target: "வேலைநேரம் காலை ஒன்பது மணி."
+        reading: "vēlainēram kālai oṉpatu maṇi."
+        ipa: "ʋeːlaineːɾam kaːlai onpat̪u maɳi"
+        bases: [{ word: "வேலைநேரம்", base: "வேலைநேரம்", reading: "vēlainēram" }, { word: "காலை", ref: "ta-0152" }, { word: "ஒன்பது", ref: "ta-0095" }, { word: "மணி", ref: "ta-0156" }]
+  - id: "ta-7446"
+    target: "விடுப்பு"
+    reading: "viṭuppu"
+    ipa: "ʋiʈuppu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு விடுப்பு வேண்டும்."
+        reading: "eṉakku viṭuppu vēṇṭum."
+        ipa: "enakku ʋiʈuppu ʋeːɳʈum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "விடுப்பு", base: "விடுப்பு", reading: "viṭuppu" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "நாளை விடுப்பு."
+        reading: "nāḷai viṭuppu."
+        ipa: "naːɭai ʋiʈuppu"
+        bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "விடுப்பு", base: "விடுப்பு", reading: "viṭuppu" }]
+  - id: "ta-7447"
+    target: "பகுதிநேரம்"
+    reading: "pakutinēram"
+    ipa: "pakut̪ineːɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "இது பகுதிநேரம் வேலை."
+        reading: "itu pakutinēram vēlai."
+        ipa: "it̪u pakut̪ineːɾam ʋeːlai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பகுதிநேரம்", base: "பகுதிநேரம்", reading: "pakutinēram" }, { word: "வேலை", ref: "ta-0192" }]
+      - target: "பகுதிநேரம் வேலை வேண்டும்."
+        reading: "pakutinēram vēlai vēṇṭum."
+        ipa: "pakut̪ineːɾam ʋeːlai ʋeːɳʈum"
+        bases: [{ word: "பகுதிநேரம்", base: "பகுதிநேரம்", reading: "pakutinēram" }, { word: "வேலை", ref: "ta-0192" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-7448"
+    target: "முழுநேரம்"
+    reading: "muḻunēram"
+    ipa: "muɻuneːɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "இது முழுநேரம் வேலை."
+        reading: "itu muḻunēram vēlai."
+        ipa: "it̪u muɻuneːɾam ʋeːlai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "முழுநேரம்", base: "முழுநேரம்", reading: "muḻunēram" }, { word: "வேலை", ref: "ta-0192" }]
+      - target: "முழுநேரம் வேலை வேண்டும்."
+        reading: "muḻunēram vēlai vēṇṭum."
+        ipa: "muɻuneːɾam ʋeːlai ʋeːɳʈum"
+        bases: [{ word: "முழுநேரம்", base: "முழுநேரம்", reading: "muḻunēram" }, { word: "வேலை", ref: "ta-0192" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-7449"
+    target: "ராஜினாமா"
+    reading: "rājiṉāmā"
+    ipa: "ɾaːdʒinaːmaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் ராஜினாமா செய்கிறேன்."
+        reading: "nāṉ rājiṉāmā ceykiṟēṉ."
+        ipa: "naːn ɾaːdʒinaːmaː sejkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "ராஜினாமா", base: "ராஜினாமா", reading: "rājiṉāmā" }, { word: "செய்கிறேன்", base: "செய்", reading: "cey" }]
+      - target: "ராஜினாமா கடிதம் எழுது."
+        reading: "rājiṉāmā kaṭitam eḻutu."
+        ipa: "ɾaːdʒinaːmaː kaʈit̪am eɻut̪u"
+        bases: [{ word: "ராஜினாமா", base: "ராஜினாமா", reading: "rājiṉāmā" }, { word: "கடிதம்", ref: "ta-0487" }, { word: "எழுது", ref: "ta-0124" }]
+  - id: "ta-7450"
+    target: "பணிநீக்கம்"
+    reading: "paṇinīkkam"
+    ipa: "paɳiniːkkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவருக்குப் பணிநீக்கம்."
+        reading: "avarukkup paṇinīkkam."
+        ipa: "aʋaɾukkup paɳiniːkkam"
+        bases: [{ word: "அவருக்குப்", base: "அவர்", reading: "avar" }, { word: "பணிநீக்கம்", base: "பணிநீக்கம்", reading: "paṇinīkkam" }]
+      - target: "பணிநீக்கம் நடந்தது."
+        reading: "paṇinīkkam naṭantatu."
+        ipa: "paɳiniːkkam naʈant̪at̪u"
+        bases: [{ word: "பணிநீக்கம்", base: "பணிநீக்கம்", reading: "paṇinīkkam" }, { word: "நடந்தது", base: "நட", reading: "naṭa" }]
+  - id: "ta-7451"
+    target: "பணிநிறைவு"
+    reading: "paṇiniṟaivu"
+    ipa: "paɳiniraiʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவருக்குப் பணிநிறைவு."
+        reading: "avarukkup paṇiniṟaivu."
+        ipa: "aʋaɾukkup paɳiniraiʋu"
+        bases: [{ word: "அவருக்குப்", base: "அவர்", reading: "avar" }, { word: "பணிநிறைவு", base: "பணிநிறைவு", reading: "paṇiniṟaivu" }]
+      - target: "பணிநிறைவு விழா நாளை."
+        reading: "paṇiniṟaivu viḻā nāḷai."
+        ipa: "paɳiniraiʋu ʋiɻaː naːɭai"
+        bases: [{ word: "பணிநிறைவு", base: "பணிநிறைவு", reading: "paṇiniṟaivu" }, { word: "விழா", ref: "ta-1204" }, { word: "நாளை", ref: "ta-0133" }]
+  - id: "ta-7452"
+    target: "பணியிடம்"
+    reading: "paṇiyiṭam"
+    ipa: "paɳijiʈam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "பணியிடம் எங்கே?"
+        reading: "paṇiyiṭam eṅkē?"
+        ipa: "paɳijiʈam eŋkeː"
+        bases: [{ word: "பணியிடம்", base: "பணியிடம்", reading: "paṇiyiṭam" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "பணியிடம் சுத்தமாக இருக்கிறது."
+        reading: "paṇiyiṭam cuttamāka irukkiṟatu."
+        ipa: "paɳijiʈam sut̪t̪amaːka iɾukkirat̪u"
+        bases: [{ word: "பணியிடம்", base: "பணியிடம்", reading: "paṇiyiṭam" }, { word: "சுத்தமாக", base: "சுத்தம்", reading: "cuttam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7453"
+    target: "சாதனை"
+    reading: "cātaṉai"
+    ipa: "saːt̪anai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பெரிய சாதனை."
+        reading: "itu periya cātaṉai."
+        ipa: "it̪u peɾija saːt̪anai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0167" }, { word: "சாதனை", base: "சாதனை", reading: "cātaṉai" }]
+      - target: "அவன் சாதனை நல்லது."
+        reading: "avaṉ cātaṉai nallatu."
+        ipa: "aʋan saːt̪anai nallat̪u"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "சாதனை", base: "சாதனை", reading: "cātaṉai" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-7454"
+    target: "வாய்ப்பு"
+    reading: "vāyppu"
+    ipa: "ʋaːjppu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது நல்ல வாய்ப்பு."
+        reading: "itu nalla vāyppu."
+        ipa: "it̪u nalla ʋaːjppu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நல்ல", ref: "ta-0169" }, { word: "வாய்ப்பு", base: "வாய்ப்பு", reading: "vāyppu" }]
+      - target: "எனக்கு வாய்ப்பு வேண்டும்."
+        reading: "eṉakku vāyppu vēṇṭum."
+        ipa: "enakku ʋaːjppu ʋeːɳʈum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "வாய்ப்பு", base: "வாய்ப்பு", reading: "vāyppu" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-7455"
+    target: "பட்டம்"
+    reading: "paṭṭam"
+    ipa: "paʈʈam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "homograph" }
+    bases: "self"
+    examples:
+      - target: "அவருக்குப் பட்டம் இருக்கிறது."
+        reading: "avarukkup paṭṭam irukkiṟatu."
+        ipa: "aʋaɾukkup paʈʈam iɾukkirat̪u"
+        bases: [{ word: "அவருக்குப்", base: "அவர்", reading: "avar" }, { word: "பட்டம்", base: "பட்டம்", reading: "paṭṭam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "பட்டம் வாங்குகிறேன்."
+        reading: "paṭṭam vāṅkukiṟēṉ."
+        ipa: "paʈʈam ʋaːŋkukireːn"
+        bases: [{ word: "பட்டம்", base: "பட்டம்", reading: "paṭṭam" }, { word: "வாங்குகிறேன்", base: "வாங்கு", reading: "vāṅku" }]
+  - id: "ta-7456"
+    target: "பட்டதாரி"
+    reading: "paṭṭatāri"
+    ipa: "paʈʈat̪aːɾi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவர் பட்டதாரி."
+        reading: "avar paṭṭatāri."
+        ipa: "aʋaɾ paʈʈat̪aːɾi"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "பட்டதாரி", base: "பட்டதாரி", reading: "paṭṭatāri" }]
+      - target: "பட்டதாரி வேலை தேடுகிறார்."
+        reading: "paṭṭatāri vēlai tēṭukiṟār."
+        ipa: "paʈʈat̪aːɾi ʋeːlai t̪eːʈukiraːɾ"
+        bases: [{ word: "பட்டதாரி", base: "பட்டதாரி", reading: "paṭṭatāri" }, { word: "வேலை", ref: "ta-0192" }, { word: "தேடுகிறார்", base: "தேடு", reading: "tēṭu" }]
+  - id: "ta-7457"
+    target: "தேர்ச்சி"
+    reading: "tērcci"
+    ipa: "t̪eːɾtʃtʃi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தேர்ச்சி கிடைத்தது."
+        reading: "tērcci kiṭaittatu."
+        ipa: "t̪eːɾtʃtʃi kiʈait̪t̪at̪u"
+        bases: [{ word: "தேர்ச்சி", base: "தேர்ச்சி", reading: "tērcci" }, { word: "கிடைத்தது", base: "கிடை", reading: "kiṭai" }]
+      - target: "அவனுக்குத் தமிழ் தேர்ச்சி."
+        reading: "avaṉukkut tamiḻ tērcci."
+        ipa: "aʋanukkut̪ t̪amiɻ t̪eːɾtʃtʃi"
+        bases: [{ word: "அவனுக்குத்", base: "அவன்", reading: "avaṉ" }, { word: "தமிழ்", ref: "ta-1820" }, { word: "தேர்ச்சி", base: "தேர்ச்சி", reading: "tērcci" }]
+  - id: "ta-7458"
+    target: "கூலி"
+    reading: "kūli"
+    ipa: "kuːli"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கூலி எவ்வளவு?"
+        reading: "kūli evvaḷavu?"
+        ipa: "kuːli eʋʋaɭaʋu"
+        bases: [{ word: "கூலி", base: "கூலி", reading: "kūli" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+      - target: "கூலி கொடு."
+        reading: "kūli koṭu."
+        ipa: "kuːli koʈu"
+        bases: [{ word: "கூலி", base: "கூலி", reading: "kūli" }, { word: "கொடு", ref: "ta-0125" }]
+  - id: "ta-7459"
+    target: "தினக்கூலி"
+    reading: "tiṉakkūli"
+    ipa: "t̪inakkuːli"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவர் தினக்கூலி."
+        reading: "avar tiṉakkūli."
+        ipa: "aʋaɾ t̪inakkuːli"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "தினக்கூலி", base: "தினக்கூலி", reading: "tiṉakkūli" }]
+      - target: "தினக்கூலி குறைவு."
+        reading: "tiṉakkūli kuṟaivu."
+        ipa: "t̪inakkuːli kuraiʋu"
+        bases: [{ word: "தினக்கூலி", base: "தினக்கூலி", reading: "tiṉakkūli" }, { word: "குறைவு", ref: "ta-0160" }]
+  - id: "ta-7460"
+    target: "போனஸ்"
+    reading: "pōṉas"
+    ipa: "poːnas"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "போனஸ் கிடைக்கிறது."
+        reading: "pōṉas kiṭaikkiṟatu."
+        ipa: "poːnas kiʈaikkirat̪u"
+        bases: [{ word: "போனஸ்", base: "போனஸ்", reading: "pōṉas" }, { word: "கிடைக்கிறது", base: "கிடை", reading: "kiṭai" }]
+      - target: "தீபாவளி போனஸ் வருகிறது."
+        reading: "tīpāvaḷi pōṉas varukiṟatu."
+        ipa: "t̪iːpaːʋaɭi poːnas ʋaɾukirat̪u"
+        bases: [{ word: "தீபாவளி", ref: "ta-1170" }, { word: "போனஸ்", base: "போனஸ்", reading: "pōṉas" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+  - id: "ta-7461"
+    target: "வருமானம்"
+    reading: "varumāṉam"
+    ipa: "ʋaɾumaːnam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "என் வருமானம் குறைவு."
+        reading: "eṉ varumāṉam kuṟaivu."
+        ipa: "en ʋaɾumaːnam kuraiʋu"
+        bases: [{ word: "என்", base: "நான்", reading: "nāṉ" }, { word: "வருமானம்", base: "வருமானம்", reading: "varumāṉam" }, { word: "குறைவு", ref: "ta-0160" }]
+      - target: "வருமானம் அதிகம்."
+        reading: "varumāṉam atikam."
+        ipa: "ʋaɾumaːnam at̪ikam"
+        bases: [{ word: "வருமானம்", base: "வருமானம்", reading: "varumāṉam" }, { word: "அதிகம்", ref: "ta-0159" }]
+  - id: "ta-7462"
+    target: "தொழிலதிபர்"
+    reading: "toḻilatipar"
+    ipa: "t̪oɻilat̪ipaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவர் தொழிலதிபர்."
+        reading: "avar toḻilatipar."
+        ipa: "aʋaɾ t̪oɻilat̪ipaɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "தொழிலதிபர்", base: "தொழிலதிபர்", reading: "toḻilatipar" }]
+      - target: "தொழிலதிபர் பேசுகிறார்."
+        reading: "toḻilatipar pēcukiṟār."
+        ipa: "t̪oɻilat̪ipaɾ peːsukiraːɾ"
+        bases: [{ word: "தொழிலதிபர்", base: "தொழிலதிபர்", reading: "toḻilatipar" }, { word: "பேசுகிறார்", base: "பேசு", reading: "pēcu" }]
+  - id: "ta-7463"
+    target: "இடமாற்றம்"
+    reading: "iṭamāṟṟam"
+    ipa: "iʈamaːrram"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு இடமாற்றம்."
+        reading: "eṉakku iṭamāṟṟam."
+        ipa: "enakku iʈamaːrram"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "இடமாற்றம்", base: "இடமாற்றம்", reading: "iṭamāṟṟam" }]
+      - target: "இடமாற்றம் வந்தது."
+        reading: "iṭamāṟṟam vantatu."
+        ipa: "iʈamaːrram ʋant̪at̪u"
+        bases: [{ word: "இடமாற்றம்", base: "இடமாற்றம்", reading: "iṭamāṟṟam" }, { word: "வந்தது", base: "வா", reading: "vā" }]
+  - id: "ta-7464"
+    target: "வேலைபளு"
+    reading: "vēlaipaḷu"
+    ipa: "ʋeːlaipaɭu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "வேலைபளு அதிகம்."
+        reading: "vēlaipaḷu atikam."
+        ipa: "ʋeːlaipaɭu at̪ikam"
+        bases: [{ word: "வேலைபளு", base: "வேலைபளு", reading: "vēlaipaḷu" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "வேலைபளு குறைகிறது."
+        reading: "vēlaipaḷu kuṟaikiṟatu."
+        ipa: "ʋeːlaipaɭu kuraikirat̪u"
+        bases: [{ word: "வேலைபளு", base: "வேலைபளு", reading: "vēlaipaḷu" }, { word: "குறைகிறது", base: "குறை", reading: "kuṟai" }]
+  - id: "ta-7465"
+    target: "சவால்"
+    reading: "cavāl"
+    ipa: "saʋaːl"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "இது பெரிய சவால்."
+        reading: "itu periya cavāl."
+        ipa: "it̪u peɾija saʋaːl"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0167" }, { word: "சவால்", base: "சவால்", reading: "cavāl" }]
+      - target: "சவால் எனக்குப் பிடிக்கும்."
+        reading: "cavāl eṉakkup piṭikkum."
+        ipa: "saʋaːl enakkup piʈikkum"
+        bases: [{ word: "சவால்", base: "சவால்", reading: "cavāl" }, { word: "எனக்குப்", base: "நான்", reading: "nāṉ" }, { word: "பிடிக்கும்", ref: "ta-0412" }]
+  - id: "ta-7466"
+    target: "தன்னம்பிக்கை"
+    reading: "taṉṉampikkai"
+    ipa: "t̪annampikkai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "எனக்குத் தன்னம்பிக்கை இருக்கிறது."
+        reading: "eṉakkut taṉṉampikkai irukkiṟatu."
+        ipa: "enakkut̪ t̪annampikkai iɾukkirat̪u"
+        bases: [{ word: "எனக்குத்", base: "நான்", reading: "nāṉ" }, { word: "தன்னம்பிக்கை", base: "தன்னம்பிக்கை", reading: "taṉṉampikkai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "தன்னம்பிக்கை வேண்டும்."
+        reading: "taṉṉampikkai vēṇṭum."
+        ipa: "t̪annampikkai ʋeːɳʈum"
+        bases: [{ word: "தன்னம்பிக்கை", base: "தன்னம்பிக்கை", reading: "taṉṉampikkai" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-7467"
+    target: "ஆர்வம்"
+    reading: "ārvam"
+    ipa: "aːɾʋam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு ஆர்வம் இருக்கிறது."
+        reading: "eṉakku ārvam irukkiṟatu."
+        ipa: "enakku aːɾʋam iɾukkirat̪u"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "ஆர்வம்", base: "ஆர்வம்", reading: "ārvam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "அவனுக்கு ஆர்வம் இல்லை."
+        reading: "avaṉukku ārvam illai."
+        ipa: "aʋanukku aːɾʋam illai"
+        bases: [{ word: "அவனுக்கு", base: "அவன்", reading: "avaṉ" }, { word: "ஆர்வம்", base: "ஆர்வம்", reading: "ārvam" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-7468"
+    target: "ஆலோசகர்"
+    reading: "ālōcakar"
+    ipa: "aːloːsakaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவர் ஆலோசகர்."
+        reading: "avar ālōcakar."
+        ipa: "aʋaɾ aːloːsakaɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "ஆலோசகர்", base: "ஆலோசகர்", reading: "ālōcakar" }]
+      - target: "ஆலோசகர் வருகிறார்."
+        reading: "ālōcakar varukiṟār."
+        ipa: "aːloːsakaɾ ʋaɾukiraːɾ"
+        bases: [{ word: "ஆலோசகர்", base: "ஆலோசகர்", reading: "ālōcakar" }, { word: "வருகிறார்", base: "வா", reading: "vā" }]
+  - id: "ta-7469"
+    target: "மேற்பார்வையாளர்"
+    reading: "mēṟpārvaiyāḷar"
+    ipa: "meːrpaːɾʋaijaːɭaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "மேற்பார்வையாளர் எங்கே?"
+        reading: "mēṟpārvaiyāḷar eṅkē?"
+        ipa: "meːrpaːɾʋaijaːɭaɾ eŋkeː"
+        bases: [{ word: "மேற்பார்வையாளர்", base: "மேற்பார்வையாளர்", reading: "mēṟpārvaiyāḷar" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "மேற்பார்வையாளர் பார்க்கிறார்."
+        reading: "mēṟpārvaiyāḷar pārkkiṟār."
+        ipa: "meːrpaːɾʋaijaːɭaɾ paːɾkkiraːɾ"
+        bases: [{ word: "மேற்பார்வையாளர்", base: "மேற்பார்வையாளர்", reading: "mēṟpārvaiyāḷar" }, { word: "பார்க்கிறார்", base: "பார்", reading: "pār" }]
+  - id: "ta-7470"
+    target: "கைவினைஞர்"
+    reading: "kaiviṉaiñar"
+    ipa: "kaiʋinaiɲaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவர் கைவினைஞர்."
+        reading: "avar kaiviṉaiñar."
+        ipa: "aʋaɾ kaiʋinaiɲaɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "கைவினைஞர்", base: "கைவினைஞர்", reading: "kaiviṉaiñar" }]
+      - target: "கைவினைஞர் பொம்மை செய்கிறார்."
+        reading: "kaiviṉaiñar pommai ceykiṟār."
+        ipa: "kaiʋinaiɲaɾ pommai sejkiraːɾ"
+        bases: [{ word: "கைவினைஞர்", base: "கைவினைஞர்", reading: "kaiviṉaiñar" }, { word: "பொம்மை", ref: "ta-1894" }, { word: "செய்கிறார்", base: "செய்", reading: "cey" }]
+  - id: "ta-7471"
+    target: "பத்திரிகையாளர்"
+    reading: "pattirikaiyāḷar"
+    ipa: "pat̪t̪iɾikaijaːɭaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவர் பத்திரிகையாளர்."
+        reading: "avar pattirikaiyāḷar."
+        ipa: "aʋaɾ pat̪t̪iɾikaijaːɭaɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "பத்திரிகையாளர்", base: "பத்திரிகையாளர்", reading: "pattirikaiyāḷar" }]
+      - target: "பத்திரிகையாளர் எழுதுகிறார்."
+        reading: "pattirikaiyāḷar eḻutukiṟār."
+        ipa: "pat̪t̪iɾikaijaːɭaɾ eɻut̪ukiraːɾ"
+        bases: [{ word: "பத்திரிகையாளர்", base: "பத்திரிகையாளர்", reading: "pattirikaiyāḷar" }, { word: "எழுதுகிறார்", base: "எழுது", reading: "eḻutu" }]
+  - id: "ta-7472"
+    target: "வடிவமைப்பாளர்"
+    reading: "vaṭivamaippāḷar"
+    ipa: "ʋaʈiʋamaippaːɭaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவர் வடிவமைப்பாளர்."
+        reading: "avar vaṭivamaippāḷar."
+        ipa: "aʋaɾ ʋaʈiʋamaippaːɭaɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "வடிவமைப்பாளர்", base: "வடிவமைப்பாளர்", reading: "vaṭivamaippāḷar" }]
+      - target: "வடிவமைப்பாளர் வேலை செய்கிறார்."
+        reading: "vaṭivamaippāḷar vēlai ceykiṟār."
+        ipa: "ʋaʈiʋamaippaːɭaɾ ʋeːlai sejkiraːɾ"
+        bases: [{ word: "வடிவமைப்பாளர்", base: "வடிவமைப்பாளர்", reading: "vaṭivamaippāḷar" }, { word: "வேலை", ref: "ta-0192" }, { word: "செய்கிறார்", base: "செய்", reading: "cey" }]
+  - id: "ta-7473"
+    target: "ஆய்வாளர்"
+    reading: "āyvāḷar"
+    ipa: "aːjʋaːɭaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "homograph" }
+    bases: "self"
+    examples:
+      - target: "அவர் ஆய்வாளர்."
+        reading: "avar āyvāḷar."
+        ipa: "aʋaɾ aːjʋaːɭaɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "ஆய்வாளர்", base: "ஆய்வாளர்", reading: "āyvāḷar" }]
+      - target: "ஆய்வாளர் வருகிறார்."
+        reading: "āyvāḷar varukiṟār."
+        ipa: "aːjʋaːɭaɾ ʋaɾukiraːɾ"
+        bases: [{ word: "ஆய்வாளர்", base: "ஆய்வாளர்", reading: "āyvāḷar" }, { word: "வருகிறார்", base: "வா", reading: "vā" }]
+  - id: "ta-7474"
+    target: "பேராசிரியர்"
+    reading: "pērāciriyar"
+    ipa: "peːɾaːsiɾijaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவர் பேராசிரியர்."
+        reading: "avar pērāciriyar."
+        ipa: "aʋaɾ peːɾaːsiɾijaɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "பேராசிரியர்", base: "பேராசிரியர்", reading: "pērāciriyar" }]
+      - target: "பேராசிரியர் பாடம் நடத்துகிறார்."
+        reading: "pērāciriyar pāṭam naṭattukiṟār."
+        ipa: "peːɾaːsiɾijaɾ paːʈam naʈat̪t̪ukiraːɾ"
+        bases: [{ word: "பேராசிரியர்", base: "பேராசிரியர்", reading: "pērāciriyar" }, { word: "பாடம்", ref: "ta-1812" }, { word: "நடத்துகிறார்", base: "நடத்து", reading: "naṭattu" }]
+  - id: "ta-7475"
+    target: "ஆராய்ச்சி"
+    reading: "ārāycci"
+    ipa: "aːɾaːjtʃtʃi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் ஆராய்ச்சி செய்கிறார்."
+        reading: "avar ārāycci ceykiṟār."
+        ipa: "aʋaɾ aːɾaːjtʃtʃi sejkiraːɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "ஆராய்ச்சி", base: "ஆராய்ச்சி", reading: "ārāycci" }, { word: "செய்கிறார்", base: "செய்", reading: "cey" }]
+      - target: "ஆராய்ச்சி முக்கியம்."
+        reading: "ārāycci mukkiyam."
+        ipa: "aːɾaːjtʃtʃi mukkijam"
+        bases: [{ word: "ஆராய்ச்சி", base: "ஆராய்ச்சி", reading: "ārāycci" }, { word: "முக்கியம்", base: "முக்கியம்", reading: "mukkiyam" }]
+  - id: "ta-7476"
+    target: "உழைப்பு"
+    reading: "uḻaippu"
+    ipa: "uɻaippu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "உழைப்பு முக்கியம்."
+        reading: "uḻaippu mukkiyam."
+        ipa: "uɻaippu mukkijam"
+        bases: [{ word: "உழைப்பு", base: "உழைப்பு", reading: "uḻaippu" }, { word: "முக்கியம்", base: "முக்கியம்", reading: "mukkiyam" }]
+      - target: "அவன் உழைப்பு பெரியது."
+        reading: "avaṉ uḻaippu periyatu."
+        ipa: "aʋan uɻaippu peɾijat̪u"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "உழைப்பு", base: "உழைப்பு", reading: "uḻaippu" }, { word: "பெரியது", base: "பெரிய", reading: "periya" }]
+  - id: "ta-7477"
+    target: "ஊக்கம்"
+    reading: "ūkkam"
+    ipa: "uːkkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு ஊக்கம் வேண்டும்."
+        reading: "eṉakku ūkkam vēṇṭum."
+        ipa: "enakku uːkkam ʋeːɳʈum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "ஊக்கம்", base: "ஊக்கம்", reading: "ūkkam" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "ஊக்கம் கொடு."
+        reading: "ūkkam koṭu."
+        ipa: "uːkkam koʈu"
+        bases: [{ word: "ஊக்கம்", base: "ஊக்கம்", reading: "ūkkam" }, { word: "கொடு", ref: "ta-0125" }]
+  - id: "ta-7478"
+    target: "நிர்வாகம்"
+    reading: "nirvākam"
+    ipa: "niɾʋaːkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நிர்வாகம் நல்லது."
+        reading: "nirvākam nallatu."
+        ipa: "niɾʋaːkam nallat̪u"
+        bases: [{ word: "நிர்வாகம்", base: "நிர்வாகம்", reading: "nirvākam" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "நிர்வாகம் முடிவு செய்கிறது."
+        reading: "nirvākam muṭivu ceykiṟatu."
+        ipa: "niɾʋaːkam muʈiʋu sejkirat̪u"
+        bases: [{ word: "நிர்வாகம்", base: "நிர்வாகம்", reading: "nirvākam" }, { word: "முடிவு", base: "முடிவு", reading: "muṭivu" }, { word: "செய்கிறது", base: "செய்", reading: "cey" }]
+  - id: "ta-7479"
+    target: "முன்னேற்றம்"
+    reading: "muṉṉēṟṟam"
+    ipa: "munneːrram"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "உன் முன்னேற்றம் நல்லது."
+        reading: "uṉ muṉṉēṟṟam nallatu."
+        ipa: "un munneːrram nallat̪u"
+        bases: [{ word: "உன்", base: "நீ", reading: "nī" }, { word: "முன்னேற்றம்", base: "முன்னேற்றம்", reading: "muṉṉēṟṟam" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "முன்னேற்றம் இருக்கிறது."
+        reading: "muṉṉēṟṟam irukkiṟatu."
+        ipa: "munneːrram iɾukkirat̪u"
+        bases: [{ word: "முன்னேற்றம்", base: "முன்னேற்றம்", reading: "muṉṉēṟṟam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7480"
+    target: "முன்னுரிமை"
+    reading: "muṉṉurimai"
+    ipa: "munnuɾimai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "இது முன்னுரிமை."
+        reading: "itu muṉṉurimai."
+        ipa: "it̪u munnuɾimai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "முன்னுரிமை", base: "முன்னுரிமை", reading: "muṉṉurimai" }]
+      - target: "உடல்நலம் எனக்கு முன்னுரிமை."
+        reading: "uṭalnalam eṉakku muṉṉurimai."
+        ipa: "uʈalnalam enakku munnuɾimai"
+        bases: [{ word: "உடல்நலம்", ref: "ta-7002" }, { word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "முன்னுரிமை", base: "முன்னுரிமை", reading: "muṉṉurimai" }]
+  - id: "ta-7481"
+    target: "தலைமை"
+    reading: "talaimai"
+    ipa: "t̪alaimai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தலைமை வேண்டும்."
+        reading: "talaimai vēṇṭum."
+        ipa: "t̪alaimai ʋeːɳʈum"
+        bases: [{ word: "தலைமை", base: "தலைமை", reading: "talaimai" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "அவன் தலைமை நல்லது."
+        reading: "avaṉ talaimai nallatu."
+        ipa: "aʋan t̪alaimai nallat̪u"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "தலைமை", base: "தலைமை", reading: "talaimai" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-7482"
+    target: "குழுப்பணி"
+    reading: "kuḻuppaṇi"
+    ipa: "kuɻuppaɳi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "குழுப்பணி முக்கியம்."
+        reading: "kuḻuppaṇi mukkiyam."
+        ipa: "kuɻuppaɳi mukkijam"
+        bases: [{ word: "குழுப்பணி", base: "குழுப்பணி", reading: "kuḻuppaṇi" }, { word: "முக்கியம்", base: "முக்கியம்", reading: "mukkiyam" }]
+      - target: "குழுப்பணி நன்றாக இருக்கிறது."
+        reading: "kuḻuppaṇi naṉṟāka irukkiṟatu."
+        ipa: "kuɻuppaɳi nanraːka iɾukkirat̪u"
+        bases: [{ word: "குழுப்பணி", base: "குழுப்பணி", reading: "kuḻuppaṇi" }, { word: "நன்றாக", base: "நன்றாக", reading: "naṉṟāka" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7483"
+    target: "விற்பனையாளர்"
+    reading: "viṟpaṉaiyāḷar"
+    ipa: "ʋirpanaijaːɭaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவர் விற்பனையாளர்."
+        reading: "avar viṟpaṉaiyāḷar."
+        ipa: "aʋaɾ ʋirpanaijaːɭaɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "விற்பனையாளர்", base: "விற்பனையாளர்", reading: "viṟpaṉaiyāḷar" }]
+      - target: "விற்பனையாளர் வருகிறார்."
+        reading: "viṟpaṉaiyāḷar varukiṟār."
+        ipa: "ʋirpanaijaːɭaɾ ʋaɾukiraːɾ"
+        bases: [{ word: "விற்பனையாளர்", base: "விற்பனையாளர்", reading: "viṟpaṉaiyāḷar" }, { word: "வருகிறார்", base: "வா", reading: "vā" }]
+  - id: "ta-7484"
+    target: "தன்னார்வலர்"
+    reading: "taṉṉārvalar"
+    ipa: "t̪annaːɾʋalaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவர் தன்னார்வலர்."
+        reading: "avar taṉṉārvalar."
+        ipa: "aʋaɾ t̪annaːɾʋalaɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "தன்னார்வலர்", base: "தன்னார்வலர்", reading: "taṉṉārvalar" }]
+      - target: "தன்னார்வலர் உதவுகிறார்."
+        reading: "taṉṉārvalar utavukiṟār."
+        ipa: "t̪annaːɾʋalaɾ ut̪aʋukiraːɾ"
+        bases: [{ word: "தன்னார்வலர்", base: "தன்னார்வலர்", reading: "taṉṉārvalar" }, { word: "உதவுகிறார்", base: "உதவு", reading: "utavu" }]
+  - id: "ta-7485"
+    target: "நிறுவனர்"
+    reading: "niṟuvaṉar"
+    ipa: "niruʋanaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவர் நிறுவனர்."
+        reading: "avar niṟuvaṉar."
+        ipa: "aʋaɾ niruʋanaɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "நிறுவனர்", base: "நிறுவனர்", reading: "niṟuvaṉar" }]
+      - target: "நிறுவனர் பேசுகிறார்."
+        reading: "niṟuvaṉar pēcukiṟār."
+        ipa: "niruʋanaɾ peːsukiraːɾ"
+        bases: [{ word: "நிறுவனர்", base: "நிறுவனர்", reading: "niṟuvaṉar" }, { word: "பேசுகிறார்", base: "பேசு", reading: "pēcu" }]
+  - id: "ta-7486"
+    target: "பணியாற்று"
+    reading: "paṇiyāṟṟu"
+    ipa: "paɳijaːrru"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் இங்கே பணியாற்றுகிறேன்."
+        reading: "nāṉ iṅkē paṇiyāṟṟukiṟēṉ."
+        ipa: "naːn iŋkeː paɳijaːrrukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "இங்கே", ref: "ta-0112" }, { word: "பணியாற்றுகிறேன்", base: "பணியாற்று", reading: "paṇiyāṟṟu" }]
+      - target: "அவர் வங்கியில் பணியாற்றுகிறார்."
+        reading: "avar vaṅkiyil paṇiyāṟṟukiṟār."
+        ipa: "aʋaɾ ʋaŋkijil paɳijaːrrukiraːɾ"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "வங்கியில்", base: "வங்கி", reading: "vaṅki" }, { word: "பணியாற்றுகிறார்", base: "பணியாற்று", reading: "paṇiyāṟṟu" }]
+  - id: "ta-7487"
+    target: "பணிபுரி"
+    reading: "paṇipuri"
+    ipa: "paɳipuɾi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் அலுவலகத்தில் பணிபுரிகிறேன்."
+        reading: "nāṉ aluvalakattil paṇipurikiṟēṉ."
+        ipa: "naːn aluʋalakat̪t̪il paɳipuɾikireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "அலுவலகத்தில்", base: "அலுவலகம்", reading: "aluvalakam" }, { word: "பணிபுரிகிறேன்", base: "பணிபுரி", reading: "paṇipuri" }]
+      - target: "அவள் பள்ளியில் பணிபுரிகிறாள்."
+        reading: "avaḷ paḷḷiyil paṇipurikiṟāḷ."
+        ipa: "aʋaɭ paɭɭijil paɳipuɾikiraːɭ"
+        bases: [{ word: "அவள்", base: "அவள்", reading: "avaḷ" }, { word: "பள்ளியில்", base: "பள்ளி", reading: "paḷḷi" }, { word: "பணிபுரிகிறாள்", base: "பணிபுரி", reading: "paṇipuri" }]
+  - id: "ta-7488"
+    target: "முன்னேறு"
+    reading: "muṉṉēṟu"
+    ipa: "munneːru"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "நான் முன்னேறுகிறேன்."
+        reading: "nāṉ muṉṉēṟukiṟēṉ."
+        ipa: "naːn munneːrukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "முன்னேறுகிறேன்", base: "முன்னேறு", reading: "muṉṉēṟu" }]
+      - target: "அவன் வேலையில் முன்னேறுகிறான்."
+        reading: "avaṉ vēlaiyil muṉṉēṟukiṟāṉ."
+        ipa: "aʋan ʋeːlaijil munneːrukiraːn"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "வேலையில்", base: "வேலை", reading: "vēlai" }, { word: "முன்னேறுகிறான்", base: "முன்னேறு", reading: "muṉṉēṟu" }]
+  - id: "ta-7489"
+    target: "உழை"
+    reading: "uḻai"
+    ipa: "uɻai"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவன் உழைக்கிறான்."
+        reading: "avaṉ uḻaikkiṟāṉ."
+        ipa: "aʋan uɻaikkiraːn"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "உழைக்கிறான்", base: "உழை", reading: "uḻai" }]
+      - target: "நாம் உழைக்கிறோம்."
+        reading: "nām uḻaikkiṟōm."
+        ipa: "naːm uɻaikkiroːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "உழைக்கிறோம்", base: "உழை", reading: "uḻai" }]
+  - id: "ta-7490"
+    target: "திறமையான"
+    reading: "tiṟamaiyāṉa"
+    ipa: "t̪iramaijaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "திறமையான ஆசிரியர்."
+        reading: "tiṟamaiyāṉa āciriyar."
+        ipa: "t̪iramaijaːna aːsiɾijaɾ"
+        bases: [{ word: "திறமையான", base: "திறமையான", reading: "tiṟamaiyāṉa" }, { word: "ஆசிரியர்", ref: "ta-0198" }]
+      - target: "திறமையான வேலை."
+        reading: "tiṟamaiyāṉa vēlai."
+        ipa: "t̪iramaijaːna ʋeːlai"
+        bases: [{ word: "திறமையான", base: "திறமையான", reading: "tiṟamaiyāṉa" }, { word: "வேலை", ref: "ta-0192" }]
+  - id: "ta-7491"
+    target: "அனுபவமுள்ள"
+    reading: "aṉupavamuḷḷa"
+    ipa: "anupaʋamuɭɭa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அனுபவமுள்ள மருத்துவர்."
+        reading: "aṉupavamuḷḷa maruttuvar."
+        ipa: "anupaʋamuɭɭa maɾut̪t̪uʋaɾ"
+        bases: [{ word: "அனுபவமுள்ள", base: "அனுபவமுள்ள", reading: "aṉupavamuḷḷa" }, { word: "மருத்துவர்", ref: "ta-0199" }]
+      - target: "அனுபவமுள்ள தொழிலாளி."
+        reading: "aṉupavamuḷḷa toḻilāḷi."
+        ipa: "anupaʋamuɭɭa t̪oɻilaːɭi"
+        bases: [{ word: "அனுபவமுள்ள", base: "அனுபவமுள்ள", reading: "aṉupavamuḷḷa" }, { word: "தொழிலாளி", ref: "ta-0201" }]
+  - id: "ta-7492"
+    target: "நிரந்தர"
+    reading: "nirantara"
+    ipa: "niɾant̪aɾa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நிரந்தர வேலை."
+        reading: "nirantara vēlai."
+        ipa: "niɾant̪aɾa ʋeːlai"
+        bases: [{ word: "நிரந்தர", base: "நிரந்தர", reading: "nirantara" }, { word: "வேலை", ref: "ta-0192" }]
+      - target: "நிரந்தர முகவரி."
+        reading: "nirantara mukavari."
+        ipa: "niɾant̪aɾa mukaʋaɾi"
+        bases: [{ word: "நிரந்தர", base: "நிரந்தர", reading: "nirantara" }, { word: "முகவரி", ref: "ta-2109" }]
+  - id: "ta-7493"
+    target: "தற்காலிக"
+    reading: "taṟkālika"
+    ipa: "t̪arkaːlika"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தற்காலிக வேலை."
+        reading: "taṟkālika vēlai."
+        ipa: "t̪arkaːlika ʋeːlai"
+        bases: [{ word: "தற்காலிக", base: "தற்காலிக", reading: "taṟkālika" }, { word: "வேலை", ref: "ta-0192" }]
+      - target: "தற்காலிக அறை."
+        reading: "taṟkālika aṟai."
+        ipa: "t̪arkaːlika arai"
+        bases: [{ word: "தற்காலிக", base: "தற்காலிக", reading: "taṟkālika" }, { word: "அறை", ref: "ta-0276" }]
+  - id: "ta-7494"
+    target: "தகுதியான"
+    reading: "takutiyāṉa"
+    ipa: "t̪akut̪ijaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "தகுதியான ஆள்."
+        reading: "takutiyāṉa āḷ."
+        ipa: "t̪akut̪ijaːna aːɭ"
+        bases: [{ word: "தகுதியான", base: "தகுதியான", reading: "takutiyāṉa" }, { word: "ஆள்", base: "ஆள்", reading: "āḷ" }]
+      - target: "தகுதியான வேலை."
+        reading: "takutiyāṉa vēlai."
+        ipa: "t̪akut̪ijaːna ʋeːlai"
+        bases: [{ word: "தகுதியான", base: "தகுதியான", reading: "takutiyāṉa" }, { word: "வேலை", ref: "ta-0192" }]
+  - id: "ta-7495"
+    target: "பொறுப்பான"
+    reading: "poṟuppāṉa"
+    ipa: "poruppaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "பொறுப்பான பையன்."
+        reading: "poṟuppāṉa paiyaṉ."
+        ipa: "poruppaːna paijan"
+        bases: [{ word: "பொறுப்பான", base: "பொறுப்பான", reading: "poṟuppāṉa" }, { word: "பையன்", ref: "ta-0442" }]
+      - target: "பொறுப்பான வேலை."
+        reading: "poṟuppāṉa vēlai."
+        ipa: "poruppaːna ʋeːlai"
+        bases: [{ word: "பொறுப்பான", base: "பொறுப்பான", reading: "poṟuppāṉa" }, { word: "வேலை", ref: "ta-0192" }]
+  - id: "ta-7496"
+    target: "தொழில்முறை"
+    reading: "toḻilmuṟai"
+    ipa: "t̪oɻilmurai"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "தொழில்முறை வேலை."
+        reading: "toḻilmuṟai vēlai."
+        ipa: "t̪oɻilmurai ʋeːlai"
+        bases: [{ word: "தொழில்முறை", base: "தொழில்முறை", reading: "toḻilmuṟai" }, { word: "வேலை", ref: "ta-0192" }]
+      - target: "தொழில்முறை பயிற்சி."
+        reading: "toḻilmuṟai payiṟci."
+        ipa: "t̪oɻilmurai pajirsi"
+        bases: [{ word: "தொழில்முறை", base: "தொழில்முறை", reading: "toḻilmuṟai" }, { word: "பயிற்சி", ref: "ta-1848" }]
