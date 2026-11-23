@@ -459,7 +459,9 @@ units:
       - { id: "past-heard", text: { "en": "A short exchange that uses past, after the calendar unit" } }
     reading_passages:
       - { id: "past-read", text: { "en": "A short text that uses past, after the calendar unit" } }
-  - planned: { id: "ta-grammar-verb-classes", grammar: "verb-classes", words: 0 }
+  - decks: ["ta-grammar-verb-classes"]
+    words: 0
+    grammar: ["verb-classes-infinitive", "verb-classes-participle", "verb-classes-past", "verb-classes-future"]
     listening_passages:
       - { id: "yesterday-at-home", text: { "en": "A family says what each of them did yesterday" } }
     reading_passages:
