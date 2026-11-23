@@ -1,0 +1,106 @@
+schema: 1
+id: "ta-housing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-9560"
+    target: "எனக்கு வாடகைக்கு ஒரு வீடு வேண்டும்."
+    reading: "eṉakku vāṭakaikku oru vīṭu vēṇṭum."
+    ipa: "enakku ʋaːʈakaikku oɾu ʋiːʈu ʋeːɳʈum"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "வாடகைக்கு", base: "வாடகை", reading: "vāṭakai" }, { word: "ஒரு", ref: "ta-0419" }, { word: "வீடு", ref: "ta-0009" }, { word: "வேண்டும்", ref: "ta-0409" }]
+    confusables:
+      - { id: "w1", ref: "ta-8312", kind: "word" }
+      - { id: "w2", ref: "ta-8313", kind: "word" }
+      - { id: "w3", ref: "ta-8345", kind: "word" }
+  - id: "ta-9561"
+    target: "மாத வாடகை எவ்வளவு?"
+    reading: "māta vāṭakai evvaḷavu?"
+    ipa: "maːt̪a ʋaːʈakai eʋʋaɭaʋu"
+    pos: "phrase"
+    bases: [{ word: "மாத", base: "மாதம்", reading: "mātam" }, { word: "வாடகை", ref: "ta-8310" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+    confusables:
+      - { id: "w1", ref: "ta-8315", kind: "word" }
+      - { id: "w2", ref: "ta-8327", kind: "word" }
+      - { id: "w3", ref: "ta-2326", kind: "word" }
+  - id: "ta-9562"
+    target: "உரிமையாளர் எங்களுக்குச் சாவி கொடுக்கிறார்."
+    reading: "urimaiyāḷar eṅkaḷukkuc cāvi koṭukkiṟār."
+    ipa: "uɾimaijaːɭaɾ eŋkaɭukkus saːʋi koʈukkiraːɾ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "உரிமையாளர்", ref: "ta-8311" }, { word: "எங்களுக்குச்", base: "நாங்கள்", reading: "nāṅkaḷ" }, { word: "சாவி", ref: "ta-0273" }, { word: "கொடுக்கிறார்", base: "கொடு", reading: "koṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-8333", kind: "word" }
+      - { id: "w2", ref: "ta-8314", kind: "word" }
+      - { id: "w3", ref: "ta-8332", kind: "word" }
+  - id: "ta-9563"
+    target: "குளியலறையில் தண்ணீர் வரவில்லை."
+    reading: "kuḷiyalaṟaiyil taṇṇīr varavillai."
+    ipa: "kuɭijalaraijil t̪aɳɳiːɾ ʋaɾaʋillai"
+    pos: "phrase"
+    bases: [{ word: "குளியலறையில்", base: "குளியலறை", reading: "kuḷiyalaṟai" }, { word: "தண்ணீர்", ref: "ta-0005" }, { word: "வரவில்லை", base: "வா", reading: "vā" }]
+    confusables:
+      - { id: "w1", ref: "ta-8328", kind: "word" }
+      - { id: "w2", ref: "ta-8329", kind: "word" }
+      - { id: "w3", ref: "ta-8327", kind: "word" }
+  - id: "ta-9564"
+    target: "இந்த வீட்டில் எல்லா வசதியும் இருக்கிறது."
+    reading: "inta vīṭṭil ellā vacatiyum irukkiṟatu."
+    ipa: "int̪a ʋiːʈʈil ellaː ʋasat̪ijum iɾukkirat̪u"
+    pos: "phrase"
+    bases: [{ word: "இந்த", base: "இந்த", reading: "inta" }, { word: "வீட்டில்", ref: "ta-0414" }, { word: "எல்லா", base: "எல்லா", reading: "ellā" }, { word: "வசதியும்", base: "வசதி", reading: "vacati" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-8342", kind: "word" }
+      - { id: "w2", ref: "ta-8331", kind: "word" }
+      - { id: "w3", ref: "ta-8326", kind: "word" }
+  - id: "ta-9565"
+    target: "மின்தூக்கி இன்று வேலை செய்யவில்லை."
+    reading: "miṉtūkki iṉṟu vēlai ceyyavillai."
+    ipa: "mint̪uːkki inru ʋeːlai sejjaʋillai"
+    pos: "phrase"
+    bases: [{ word: "மின்தூக்கி", ref: "ta-8323" }, { word: "இன்று", ref: "ta-0144" }, { word: "வேலை", ref: "ta-0192" }, { word: "செய்யவில்லை", base: "செய்", reading: "cey" }]
+    confusables:
+      - { id: "w1", ref: "ta-8322", kind: "word" }
+      - { id: "w2", ref: "ta-8319", kind: "word" }
+      - { id: "w3", ref: "ta-8329", kind: "word" }
+  - id: "ta-9566"
+    target: "எங்கள் குடியிருப்பில் காவலாளி இருக்கிறார்."
+    reading: "eṅkaḷ kuṭiyiruppil kāvalāḷi irukkiṟār."
+    ipa: "eŋkaɭ kuʈijiɾuppil kaːʋalaːɭi iɾukkiraːɾ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "எங்கள்", base: "நாங்கள்", reading: "nāṅkaḷ" }, { word: "குடியிருப்பில்", base: "குடியிருப்பு", reading: "kuṭiyiruppu" }, { word: "காவலாளி", ref: "ta-8332" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-8333", kind: "word" }
+      - { id: "w2", ref: "ta-8311", kind: "word" }
+      - { id: "w3", ref: "ta-8331", kind: "word" }
+  - id: "ta-9567"
+    target: "வீட்டுக்கு முன்னால் நிறுத்துமிடம் இருக்கிறது."
+    reading: "vīṭṭukku muṉṉāl niṟuttumiṭam irukkiṟatu."
+    ipa: "ʋiːʈʈukku munnaːl nirut̪t̪umiʈam iɾukkirat̪u"
+    pos: "phrase"
+    bases: [{ word: "வீட்டுக்கு", base: "வீடு", reading: "vīṭu" }, { word: "முன்னால்", ref: "ta-0180" }, { word: "நிறுத்துமிடம்", ref: "ta-8324" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-8335", kind: "word" }
+      - { id: "w2", ref: "ta-8334", kind: "word" }
+      - { id: "w3", ref: "ta-8336", kind: "word" }
+  - id: "ta-9568"
+    target: "நாங்கள் ஒப்பந்தத்தில் கையெழுத்து போடுகிறோம்."
+    reading: "nāṅkaḷ oppantattil kaiyeḻuttu pōṭukiṟōm."
+    ipa: "naːŋkaɭ oppant̪at̪t̪il kaijeɻut̪t̪u poːʈukiroːm"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "ஒப்பந்தத்தில்", base: "ஒப்பந்தம்", reading: "oppantam" }, { word: "கையெழுத்து", ref: "ta-0485" }, { word: "போடுகிறோம்", base: "போடு", reading: "pōṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-8343", kind: "word" }
+      - { id: "w2", ref: "ta-8344", kind: "word" }
+      - { id: "w3", ref: "ta-8315", kind: "word" }
