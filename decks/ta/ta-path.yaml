@@ -479,7 +479,9 @@ units:
       - { id: "festival-plans", text: { "en": "Neighbours plan the Pongal harvest festival together" } }
     reading_passages:
       - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
-  - planned: { id: "ta-grammar-past-more", grammar: "past-more" }
+  - decks: ["ta-grammar-past-more"]
+    words: 0
+    grammar: ["past-more-perfect", "past-more-pluperfect"]
     listening_passages:
       - { id: "had-already", text: { "en": "Saying what had already happened" } }
     reading_passages:
