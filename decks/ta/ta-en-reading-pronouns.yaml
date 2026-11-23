@@ -6,7 +6,7 @@ language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "t
 native: { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for this course"
-description: "A short exchange about where he, she and we are going, with the informal and polite pronouns. Not yet checked by a Tamil speaker: please report any mistake."
+description: "A short exchange about where he and we are going, with the informal word for you. Not yet checked by a Tamil speaker: please report any mistake."
 tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "ta-who-is-who"
@@ -18,12 +18,6 @@ passages:
       - text: "அவன் வீட்டுக்குப் போகிறான்."
         reading: "avaṉ vīṭṭukkup pōkiṟāṉ."
         ipa: "aʋan ʋiːʈʈukkup poːkiraːn"
-      - text: "அவள் எங்கே போகிறாள்?"
-        reading: "avaḷ eṅkē pōkiṟāḷ?"
-        ipa: "aʋaɭ eŋkeː poːkiraːɭ"
-      - text: "அவள் வீட்டுக்குப் போகிறாள்."
-        reading: "avaḷ vīṭṭukkup pōkiṟāḷ."
-        ipa: "aʋaɭ ʋiːʈʈukkup poːkiraːɭ"
       - text: "நீ எங்கே போகிறாய்?"
         reading: "nī eṅkē pōkiṟāy?"
         ipa: "niː eŋkeː poːkiraːj"
@@ -32,13 +26,12 @@ passages:
         ipa: "naːŋkaɭ ʋiːʈʈukkup poːkiroːm"
     questions:
       - id: "ta-9703"
-        prompt: { en: "Who is going home?" }
+        prompt: { en: "Who is going somewhere?" }
         options:
-          - { en: "Only he" }
+          - { en: "He and the speakers" }
           - { en: "Only she" }
-          - { en: "He, she and the speakers" }
           - { en: "Nobody" }
-        answer: 3
+        answer: 1
       - id: "ta-9704"
         prompt: { en: "Someone is asked a question with the informal word for you." }
         answer: true

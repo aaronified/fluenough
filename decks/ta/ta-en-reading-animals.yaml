@@ -21,9 +21,9 @@ passages:
       - text: "பாம்பு கீழே போகிறது."
         reading: "pāmpu kīḻē pōkiṟatu."
         ipa: "paːmpu kiːɻeː poːkirat̪u"
-      - text: "நாய் சாப்பிடுகிறது."
-        reading: "nāy cāppiṭukiṟatu."
-        ipa: "naːj saːppiʈukirat̪u"
+      - text: "நாய் இறைச்சி சாப்பிடுகிறது."
+        reading: "nāy iṟaicci cāppiṭukiṟatu."
+        ipa: "naːj iraitʃtʃi saːppiʈukirat̪u"
     questions:
       - id: "ta-9771"
         prompt: { en: "Which animal is big?" }
@@ -42,3 +42,10 @@ passages:
       - id: "ta-9773"
         prompt: { en: "The snake is going up." }
         answer: false
+      - id: "ta-9774"
+        prompt: { en: "What does the dog eat?" }
+        options:
+          - { en: "Fruit" }
+          - { en: "Meat" }
+          - { en: "Rice" }
+        answer: 2
