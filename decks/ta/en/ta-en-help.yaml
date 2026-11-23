@@ -1,0 +1,90 @@
+schema: 1
+id: "ta-en-help"
+kind: "layer"
+core: "ta-help"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Asking for help"
+description: "The words for help, danger, problems and police, for calling out and asking for help. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-1800":
+    native: "help"
+    notes:
+      n1: "Help, as in a request or a favour: எனக்கு உதவி வேண்டும் (eṉakku utavi vēṇṭum), I need help."
+    examples:
+      "எனக்கு உதவி வேண்டும்.":
+        native: "I need help."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "உதவி": "help"
+      "உதவி எங்கே?":
+        native: "Where is help?"
+        bases:
+          "உதவி": "help"
+  "ta-1801":
+    native: "to help"
+    notes:
+      n1: "The dictionary form. The polite request adds -ங்கள் (-ṅkaḷ): உதவுங்கள் (utavuṅkaḷ), please help."
+      n2: "Spoken Tamil often shortens the polite ending to -ங்க (-ṅka): உதவுங்க (utavuṅka)."
+    examples:
+      "நான் உதவுகிறேன்.":
+        native: "I am helping."
+        bases:
+          "உதவுகிறேன்": "am helping; from உதவு (utavu), to help"
+      "உதவுங்கள்.":
+        native: "Please help."
+        bases:
+          "உதவுங்கள்": "please help; from உதவு (utavu), to help"
+  "ta-1802":
+    native: "urgency; hurry"
+    notes:
+      n1: "Used for an urgent matter: இது அவசரம் (itu avacaram), this is urgent."
+    examples:
+      "இது அவசரம்.":
+        native: "This is urgent."
+        bases:
+          "அவசரம்": "urgency; hurry"
+      "அவசரம் இல்லை.":
+        native: "There is no hurry."
+        bases:
+          "அவசரம்": "urgency; hurry"
+  "ta-1803":
+    native: "danger"
+    notes:
+      n1: "Danger, or an emergency. Said as a call for help: ஆபத்து (āpattu)!"
+    examples:
+      "இங்கே ஆபத்து.":
+        native: "There is danger here."
+        bases:
+          "ஆபத்து": "danger"
+      "ஆபத்து இல்லை.":
+        native: "There is no danger."
+        bases:
+          "ஆபத்து": "danger"
+  "ta-1804":
+    native: "problem"
+    notes:
+      n1: "Also written பிரச்சனை (piraccaṉai); both spellings are common."
+    examples:
+      "என்ன பிரச்சினை?":
+        native: "What is the problem?"
+        bases:
+          "பிரச்சினை": "problem"
+      "பிரச்சினை இல்லை.":
+        native: "There is no problem."
+        bases:
+          "பிரச்சினை": "problem"
+  "ta-1805":
+    native: "police"
+    notes:
+      n1: "The everyday English loan; the formal word is காவல்துறை (kāvaltuṟai)."
+    examples:
+      "போலீஸ் எங்கே?":
+        native: "Where are the police?"
+        bases:
+          "போலீஸ்": "police"
+      "போலீஸ் வேண்டும்.":
+        native: "The police are needed."
+        bases:
+          "போலீஸ்": "police"

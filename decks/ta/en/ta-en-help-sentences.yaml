@@ -1,0 +1,58 @@
+schema: 1
+id: "ta-en-help-sentences"
+kind: "layer"
+core: "ta-help-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Asking for help in sentences"
+description: "Sentences for asking for help, naming a problem and calling the police, using the help words. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-4500":
+    native: "I need help."
+    bases:
+      "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+    confusables:
+      w1: { why: "தேவை (tēvai), need; necessity, is a different word." }
+      w2: { why: "எங்கே (eṅkē), where, is a different word." }
+  "ta-4501":
+    native: "Please help!"
+    bases:
+      "உதவுங்கள்": "please help; from உதவு (utavu), to help"
+    confusables:
+      w1: { why: "நன்றி (naṉṟi), thank you; thanks, is a different word." }
+      w2: { why: "மன்னிக்கவும் (maṉṉikkavum), excuse me; sorry, is a different word." }
+  "ta-4502":
+    native: "What is the problem?"
+    confusables:
+      w1: { why: "யார் (yār), who, is a different word." }
+      w2: { why: "எங்கே (eṅkē), where, is a different word." }
+  "ta-4503":
+    native: "Danger! Please help!"
+    bases:
+      "உதவுங்கள்": "please help; from உதவு (utavu), to help"
+    confusables:
+      w1: { why: "அவசரம் (avacaram), urgency; hurry, is a different word." }
+      w2: { why: "நன்றி (naṉṟi), thank you; thanks, is a different word." }
+  "ta-4504":
+    native: "Where are the police?"
+    confusables:
+      w1: { why: "யார் (yār), who, is a different word." }
+      w2: { why: "என்ன (eṉṉa), what, is a different word." }
+  "ta-4505":
+    native: "This is urgent."
+    confusables:
+      w1: { why: "பிரச்சினை (piracciṉai), problem, is a different word." }
+      w2: { why: "சரி (cari), OK; all right, is a different word." }
+  "ta-4506":
+    native: "No problem."
+    confusables:
+      w1: { why: "பரவாயில்லை (paravāyillai), it's all right; never mind, is a different word." }
+      w2: { why: "ஆபத்து (āpattu), danger, is a different word." }
+  "ta-4507":
+    native: "I will help."
+    bases:
+      "உதவுகிறேன்": "am helping; from உதவு (utavu), to help"
+    confusables:
+      w1: { why: "நீங்கள் (nīṅkaḷ), you (polite); you (plural), is a different word." }
+      w2: { why: "நாம் (nām), we (including you), is a different word." }
