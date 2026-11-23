@@ -152,3 +152,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1311 | ta-illness | Is தடுப்பூசி the everyday word for a vaccination? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1305 | ta-illness | Is எனக்கு வியர்க்கிறது the natural way to say I am sweating? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1300 | ta-illness | Is மயங்கு the everyday verb for fainting, or is another more usual? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1320 | ta-eating-out | Is மீல்ஸ் the usual restaurant name for a full rice meal, and is the gloss right? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1319 | ta-eating-out | Is பார்சல் the usual word for takeaway food? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1321 | ta-eating-out | Is சர்வர் the everyday word for a waiter? | ta-words1 (Sonnet builder) | 2026-11-23 |
