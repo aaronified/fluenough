@@ -122,3 +122,9 @@ Merged to decks-live since section 6, each with CI green (10 of 10 checks) and o
 | Plan-word shortfall | six B1 units a few words under plan (services 47 of 50, travel 57 of 60, health 59 of 60, opinions 54 of 55, technology 52 of 55, environment 52 of 55); optional unique-word top-up |
 | Multi-word 54 of 60, topics deck-level `ta-multiword-idiomatic` header level A2 | optional |
 | Professional | held (needs the owner) |
+
+## 8. Final state, 2026-11-23
+
+Measured on `origin/decks-live` after #1728: path 114 of 114 units built to the B1 mark, 2,394 of 2,394 planned words, culture 72 of 72, 3,271 cards, `phonetic` on 3,254 of 3,254 cards that have a broad `ipa`, 482 files under `decks/ta/`. Merged this session, each with CI green and one Sonnet review: #1710, #1714, #1716, #1717, #1719, #1720, #1721, #1724, #1725, #1726, #1727, #1728 (the engine #1722 and the registry entry are on main).
+
+Left, none needed for the app's B1 measure: multi-word verbs 54 of 60 (six plan headwords have no readable dictionary page); review-queue rows await a bilingual reviewer through the app; the `ta-8606` plural, `ta-8606` note and `ta-8600` gloss nits of #1728; an optional second pass on formal coinages `ta-8602` and `ta-8603` (synonyms of the loanword cards `ta-2110` and `ta-2100`); the professional section (empty `professions`, needs the owner); rerun `derive_phonetic.py ta --bracket-unchanged --write` after any later Tamil card is added.
