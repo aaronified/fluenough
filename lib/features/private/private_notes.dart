@@ -24,9 +24,9 @@ class PrivateModifiedTag extends StatelessWidget {
     final code = language;
     if (code == null) return const SizedBox.shrink();
     final state = AppScope.of(context);
-    if (state.languagePathOf(code)?.privatelyModified != true) {
-      return const SizedBox.shrink();
-    }
+    // From the language's summary when the catalog is read one language at a
+    // time: the tag needs no unit.
+    if (!state.isPrivatelyModified(code)) return const SizedBox.shrink();
     final l10n = AppLocalizations.of(context)!;
     return Semantics(
       button: true,

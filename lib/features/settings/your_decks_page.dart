@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
-import '../../app/deck_catalog.dart';
+import '../../app/own_decks.dart';
 import '../../app/routes.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
@@ -27,12 +27,6 @@ class YourDecksPage extends StatefulWidget {
 
   @override
   State<YourDecksPage> createState() => _YourDecksPageState();
-
-  /// The decks the learner added, in the order they were found.
-  static List<DeckEntry> ownDecks(Iterable<DeckEntry> decks) => <DeckEntry>[
-    for (final entry in decks)
-      if (!entry.bundled && !entry.private) entry,
-  ];
 }
 
 class _YourDecksPageState extends State<YourDecksPage> {
@@ -57,15 +51,12 @@ class _YourDecksPageState extends State<YourDecksPage> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
-    final own = YourDecksPage.ownDecks(state.decks);
-    // Grouped by "language › from native", in the order first met.
-    final groups = <(String, String), List<DeckEntry>>{};
-    for (final entry in own) {
+    // Grouped by "language › from native", in the order first met, from the
+    // language directory: no unit is read for the page.
+    final groups = <(String, String), List<OwnDeck>>{};
+    for (final entry in state.ownDecks) {
       groups
-          .putIfAbsent((
-            entry.language.name,
-            entry.deck.native.name,
-          ), () => <DeckEntry>[])
+          .putIfAbsent((entry.language, entry.native), () => <OwnDeck>[])
           .add(entry);
     }
     return SettingsSectionPage(
@@ -129,12 +120,12 @@ class _YourDecksPageState extends State<YourDecksPage> {
 class _OwnDeck extends StatelessWidget {
   const _OwnDeck({required this.entry});
 
-  final DeckEntry entry;
+  final OwnDeck entry;
 
   Future<void> _remove(BuildContext context) async {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.read(context);
-    final name = entry.deck.name;
+    final name = entry.name;
     final remove = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
@@ -176,9 +167,9 @@ class _OwnDeck extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(entry.deck.name, style: theme.textTheme.titleMedium),
+          Text(entry.name, style: theme.textTheme.titleMedium),
           Text(
-            l10n.settingsDecksCards(entry.itemCount),
+            l10n.settingsDecksCards(entry.cards),
             style: theme.textTheme.bodyMedium!.copyWith(
               color: scheme.onSurfaceVariant,
             ),

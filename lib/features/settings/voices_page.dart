@@ -8,6 +8,7 @@ import '../../app/deck_catalog.dart';
 import '../../app/features.dart';
 import '../../app/skill.dart';
 import '../../app/system_settings.dart';
+import '../../app/voice_sample.dart';
 import '../../core/models/deck.dart';
 import '../../core/speech/asr/asr_pack_installer.dart';
 import '../../core/tts/tts_engine.dart';
@@ -19,7 +20,6 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../downloads/download_text.dart' show formatSize;
-import '../decks/word_sheet.dart' show isRude;
 import 'settings_controls.dart';
 import 'speech_test_sheet.dart';
 
@@ -75,23 +75,17 @@ class VoicesPage extends StatefulWidget {
   /// What Play says for [language]: the first card of its first vocabulary
   /// deck, or of a script deck when that is all there is, passing over any
   /// rude word. Null when no deck in the language has a card to say, such as
-  /// a grammar deck on its own.
+  /// a grammar deck on its own. Read one language at a time, it is in the
+  /// language's summary, so that no unit is read for it (ADR-0062, P-C5).
   static String? sampleFor(AppState state, LanguageInfo language) {
+    if (state.readsPerLanguage) {
+      return state.summaryOf(language.code)?.voiceSample.firstOrNull;
+    }
     final decks = <DeckEntry>[
       for (final deck in state.decks)
-        if (deck.language.code == language.code && deck.cards.isNotEmpty) deck,
+        if (deck.language.code == language.code) deck,
     ];
-    if (decks.isEmpty) return null;
-    // Never a rude word (docs/plans/offensive-words.md).
-    for (final deck in <DeckEntry>[
-      ...decks.where((d) => !d.isScript),
-      ...decks.where((d) => d.isScript),
-    ]) {
-      for (final card in deck.cards) {
-        if (!isRude(card, deck)) return card.target;
-      }
-    }
-    return null;
+    return voiceSampleOf(decks, count: 1).firstOrNull;
   }
 
   /// [state]'s languages in the order the learner learns them: those the
@@ -497,10 +491,8 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
   /// the glyph of its first deck when it names none.
   static String _glyphOf(AppState state, LanguageInfo language) {
     if (language.icon case final icon?) return icon;
-    for (final entry in state.decks) {
-      if (entry.language.code == language.code) return entry.glyph;
-    }
-    return language.name.characters.first;
+    final glyph = state.glyphOf(language);
+    return glyph.isEmpty ? language.name.characters.first : glyph;
   }
 }
 

@@ -109,14 +109,29 @@ extension PrivateLanguagesOnState on AppState {
       // The decks of the course on the phone, which a modified language's
       // path may name (layers are named by no path, so listing them is
       // harmless).
-      builtInCoreIds: <String>{
-        for (final entry in allDecks)
-          if (entry.bundled) entry.id,
-      },
+      builtInCoreIds: _builtInDeckIds(),
       builtInLanguages: builtInLanguages,
       allowLowerRevision: allowLowerRevision,
       log: log,
     );
+  }
+
+  /// The ids of the app's own decks on the phone, which a modified language's
+  /// path may name. Read one language at a time they are in the directory of
+  /// summaries, so that no unit is read for the check (ADR-0062,
+  /// Plan-Lazy-Language-Loading, P-C5).
+  Set<String> _builtInDeckIds() {
+    if (!readsPerLanguage) {
+      return <String>{
+        for (final entry in allDecks)
+          if (entry.bundled) entry.id,
+      };
+    }
+    return <String>{
+      for (final summary in deckCatalog.catalogSet.knownSummaries)
+        for (final deck in summary.decks)
+          if (deck.bundled && !deck.hidden) deck.id,
+    };
   }
 
   /// Installs a package [staging] found no error in, then reads the catalog
@@ -136,7 +151,10 @@ extension PrivateLanguagesOnState on AppState {
       active: active,
       log: log,
     );
-    if (result.installed) await _reloadPrivate();
+    if (result.installed) {
+      await _reloadPrivate();
+      await _readModifiedLanguage(result.manifest);
+    }
     return result;
   }
 
@@ -160,6 +178,7 @@ extension PrivateLanguagesOnState on AppState {
       if (done == PrivateActivation.done) {
         log.event('Private decks: $id ${active ? 'on' : 'off'}');
         await _reloadPrivate();
+        if (active) await _readModifiedLanguage(await manifestOf(id));
       }
       return done;
     } on Object catch (e, stack) {
@@ -259,10 +278,37 @@ extension PrivateLanguagesOnState on AppState {
   }
 
   /// Whether [code] is the language of an active private package's decks.
-  bool isPrivateLanguage(String code) => derived<bool>((
-    'privateLanguage',
-    code,
-  ), () => decks.any((d) => d.private && d.language.code == code));
+  bool isPrivateLanguage(String code) =>
+      derived<bool>(('privateLanguage', code), () => _hasPrivateDeck(code));
+
+  /// Whether a private package's deck teaches [code]: read one language at a
+  /// time, from the directory, so that no unit is read for it.
+  bool _hasPrivateDeck(String code) {
+    if (readsPerLanguage) {
+      final summary = summaryOf(code);
+      return summary?.decks.any((d) => d.private && !d.hidden) ?? false;
+    }
+    return decks.any((d) => d.private && d.language.code == code);
+  }
+
+  /// Whether [code]'s path is that of a private package that modifies the
+  /// language ([LanguagePath.privatelyModified]): the "Privately modified"
+  /// tag. Read one language at a time it is in the language's summary, so
+  /// that the tag needs no unit.
+  bool isPrivatelyModified(String code) => readsPerLanguage
+      ? summaryOf(code)?.privatelyModified ?? false
+      : languagePathOf(code)?.privatelyModified == true;
+
+  /// Reads the unit of the built-in language the package of [manifest]
+  /// modifies, when the catalog is read one language at a time and it is not
+  /// read yet, so that the learner finds its changed course in place (P-C5).
+  /// Never throws.
+  Future<void> _readModifiedLanguage(PrivateManifest? manifest) async {
+    if (manifest == null || manifest.kind != PrivateKind.modifiedLanguage) {
+      return;
+    }
+    await ensureLoaded(manifest.language.code);
+  }
 
   /// What the phone can do for the private language [language]: a voice, a
   /// recogniser, and whether its script shows as boxes (task 14).
@@ -310,13 +356,25 @@ extension PrivateLanguagesOnState on AppState {
   /// that has decks of the app's own on the phone, with how many.
   List<({LanguageInfo language, int decks})> downloadableCourses() {
     final counts = <String, ({LanguageInfo language, int decks})>{};
-    for (final entry in allDecks) {
-      if (!entry.bundled) continue;
-      final earlier = counts[entry.language.code];
-      counts[entry.language.code] = (
-        language: earlier?.language ?? entry.language,
+    void count(LanguageInfo language) {
+      final earlier = counts[language.code];
+      counts[language.code] = (
+        language: earlier?.language ?? language,
         decks: (earlier?.decks ?? 0) + 1,
       );
+    }
+
+    if (readsPerLanguage) {
+      // From the directory: no unit is read to list the courses.
+      for (final summary in deckCatalog.catalogSet.knownSummaries) {
+        for (final deck in summary.decks) {
+          if (deck.bundled && !deck.hidden) count(summary.info);
+        }
+      }
+    } else {
+      for (final entry in allDecks) {
+        if (entry.bundled) count(entry.language);
+      }
     }
     return counts.values.toList()
       ..sort((a, b) => a.language.name.compareTo(b.language.name));

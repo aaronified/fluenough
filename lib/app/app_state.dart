@@ -2398,11 +2398,31 @@ class AppState extends ChangeNotifier {
   /// no voice, left out. An IPA card's examples are said in these (ADR-0041).
   List<LanguageInfo> get voiceLanguages {
     // Asked for by every deck's voice check, so kept until the catalog
-    // changes.
-    if (identical(_voiceCatalog, _catalog)) return _voiceList;
+    // changes, or until the directory does when it is read one language at a
+    // time.
+    final epoch = _perLanguage
+        ? deckCatalog.catalogSet.summaries?.epoch ?? 0
+        : 0;
+    if (identical(_voiceCatalog, _catalog) && _voiceEpoch == epoch) {
+      return _voiceList;
+    }
     final found = <String, LanguageInfo>{};
     for (final entry in _catalog.decks) {
       final language = entry.language;
+      if (!language.isNotation) {
+        found.putIfAbsent(
+          '${language.code}/${language.ttsTag}',
+          () => language,
+        );
+      }
+    }
+    // A language whose unit is not read has its voice asked about as well,
+    // as its summary names it (ADR-0062, P-C5).
+    final known = _perLanguage
+        ? deckCatalog.catalogSet.knownSummaries
+        : const <LanguageSummary>[];
+    for (final summary in known) {
+      final language = summary.info;
       if (!language.isNotation) {
         found.putIfAbsent(
           '${language.code}/${language.ttsTag}',
@@ -2417,11 +2437,21 @@ class AppState extends ChangeNotifier {
         found['${native.code}/${native.ttsTag}'] = native;
       }
     }
+    for (final summary in known) {
+      for (final course in summary.courses) {
+        final native = course.nativeLanguage;
+        if (codes.add(native.code)) {
+          found['${native.code}/${native.ttsTag}'] = native;
+        }
+      }
+    }
     _voiceCatalog = _catalog;
+    _voiceEpoch = epoch;
     return _voiceList = List<LanguageInfo>.unmodifiable(found.values);
   }
 
   Catalog? _voiceCatalog;
+  int _voiceEpoch = 0;
   List<LanguageInfo> _voiceList = const <LanguageInfo>[];
 
   /// The language with [code], as the decks name it, or null when none does:

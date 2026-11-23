@@ -312,9 +312,18 @@ class AppearancePage extends StatelessWidget {
 
   /// The card the preview shows: the first with a reading line in the
   /// profile's decks, then in any deck, so that the romanisation shows too;
-  /// failing that, any card at all. Null with no cards loaded.
+  /// failing that, any card at all. Null with no cards loaded. Read one
+  /// language at a time, "any deck" is the shown language's: no other unit is
+  /// read for a sample (ADR-0062, P-C5).
   static ({Card card, LanguageInfo language})? previewCard(AppState state) {
-    final decks = <DeckEntry>[...state.profileDecks, ...state.decks];
+    final shown = state.shownLanguage;
+    final List<DeckEntry> others;
+    if (!state.readsPerLanguage) {
+      others = state.decks;
+    } else {
+      others = shown == null ? const <DeckEntry>[] : state.decksOf(shown);
+    }
+    final decks = <DeckEntry>[...state.profileDecks, ...others];
     for (final deck in decks) {
       for (final card in deck.cards) {
         if (card.reading?.trim().isNotEmpty ?? false) {
