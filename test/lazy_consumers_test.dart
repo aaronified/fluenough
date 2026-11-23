@@ -16,6 +16,7 @@ import 'package:fluenough/app/reminder_words.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/app/summary_store.dart';
+import 'package:fluenough/app/unlocks.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/progress/progress_index.dart' show kLeechLapses;
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
