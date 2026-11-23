@@ -1,0 +1,987 @@
+schema: 1
+id: "ta-hobbies"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "hobbies"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-1862"
+    target: "பொழுதுபோக்கு"
+    reading: "poḻutupōkku"
+    ipa: "poɻut̪upoːkku"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என் பொழுதுபோக்கு இசை."
+        reading: "eṉ poḻutupōkku icai."
+        ipa: "en poɻut̪upoːkku isai"
+        bases: [{ word: "என்", base: "நான்", reading: "nāṉ" }, { word: "பொழுதுபோக்கு", base: "பொழுதுபோக்கு", reading: "poḻutupōkku" }, { word: "இசை", ref: "ta-1865" }]
+      - target: "உன் பொழுதுபோக்கு என்ன?"
+        reading: "uṉ poḻutupōkku eṉṉa?"
+        ipa: "un poɻut̪upoːkku enna"
+        bases: [{ word: "உன்", base: "நீ", reading: "nī" }, { word: "பொழுதுபோக்கு", base: "பொழுதுபோக்கு", reading: "poḻutupōkku" }, { word: "என்ன", ref: "ta-0042" }]
+  - id: "ta-1863"
+    target: "விருப்பம்"
+    reading: "viruppam"
+    ipa: "ʋiɾuppam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என் விருப்பம் இது."
+        reading: "eṉ viruppam itu."
+        ipa: "en ʋiɾuppam it̪u"
+        bases: [{ word: "என்", base: "நான்", reading: "nāṉ" }, { word: "விருப்பம்", base: "விருப்பம்", reading: "viruppam" }, { word: "இது", ref: "ta-0066" }]
+      - target: "உன் விருப்பம் என்ன?"
+        reading: "uṉ viruppam eṉṉa?"
+        ipa: "un ʋiɾuppam enna"
+        bases: [{ word: "உன்", base: "நீ", reading: "nī" }, { word: "விருப்பம்", base: "விருப்பம்", reading: "viruppam" }, { word: "என்ன", ref: "ta-0042" }]
+  - id: "ta-1864"
+    target: "பாட்டு"
+    reading: "pāṭṭu"
+    ipa: "paːʈʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நல்ல பாட்டு."
+        reading: "nalla pāṭṭu."
+        ipa: "nalla paːʈʈu"
+        bases: [{ word: "நல்ல", ref: "ta-0169" }, { word: "பாட்டு", base: "பாட்டு", reading: "pāṭṭu" }]
+      - target: "எனக்குப் பாட்டு பிடிக்கும்."
+        reading: "eṉakkup pāṭṭu piṭikkum."
+        ipa: "enakkup paːʈʈu piʈikkum"
+        bases: [{ word: "எனக்குப்", base: "நான்", reading: "nāṉ" }, { word: "பாட்டு", base: "பாட்டு", reading: "pāṭṭu" }, { word: "பிடிக்கும்", ref: "ta-0412" }]
+  - id: "ta-1865"
+    target: "இசை"
+    reading: "icai"
+    ipa: "isai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு இசை பிடிக்கும்."
+        reading: "eṉakku icai piṭikkum."
+        ipa: "enakku isai piʈikkum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "இசை", base: "இசை", reading: "icai" }, { word: "பிடிக்கும்", ref: "ta-0412" }]
+      - target: "இசை கேள்."
+        reading: "icai kēḷ."
+        ipa: "isai keːɭ"
+        bases: [{ word: "இசை", base: "இசை", reading: "icai" }, { word: "கேள்", ref: "ta-0122" }]
+  - id: "ta-1866"
+    target: "நடனம்"
+    reading: "naṭaṉam"
+    ipa: "naʈanam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு நடனம் பிடிக்கும்."
+        reading: "eṉakku naṭaṉam piṭikkum."
+        ipa: "enakku naʈanam piʈikkum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "நடனம்", base: "நடனம்", reading: "naṭaṉam" }, { word: "பிடிக்கும்", ref: "ta-0412" }]
+      - target: "அவள் நடனம் நல்லது."
+        reading: "avaḷ naṭaṉam nallatu."
+        ipa: "aʋaɭ naʈanam nallat̪u"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "நடனம்", base: "நடனம்", reading: "naṭaṉam" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-1867"
+    target: "ஓவியம்"
+    reading: "ōviyam"
+    ipa: "oːʋijam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது நல்ல ஓவியம்."
+        reading: "itu nalla ōviyam."
+        ipa: "it̪u nalla oːʋijam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நல்ல", ref: "ta-0169" }, { word: "ஓவியம்", base: "ஓவியம்", reading: "ōviyam" }]
+      - target: "எனக்கு ஓவியம் பிடிக்கும்."
+        reading: "eṉakku ōviyam piṭikkum."
+        ipa: "enakku oːʋijam piʈikkum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "ஓவியம்", base: "ஓவியம்", reading: "ōviyam" }, { word: "பிடிக்கும்", ref: "ta-0412" }]
+  - id: "ta-1868"
+    target: "புகைப்படம்"
+    reading: "pukaippaṭam"
+    ipa: "pukaippaʈam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "புகைப்படம் எடு."
+        reading: "pukaippaṭam eṭu."
+        ipa: "pukaippaʈam eʈu"
+        bases: [{ word: "புகைப்படம்", base: "புகைப்படம்", reading: "pukaippaṭam" }, { word: "எடு", ref: "ta-0184" }]
+      - target: "இது என் புகைப்படம்."
+        reading: "itu eṉ pukaippaṭam."
+        ipa: "it̪u en pukaippaʈam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "என்", base: "நான்", reading: "nāṉ" }, { word: "புகைப்படம்", base: "புகைப்படம்", reading: "pukaippaṭam" }]
+  - id: "ta-1869"
+    target: "கேமரா"
+    reading: "kēmarā"
+    ipa: "keːmaɾaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கேமரா எங்கே?"
+        reading: "kēmarā eṅkē?"
+        ipa: "keːmaɾaː eŋkeː"
+        bases: [{ word: "கேமரா", base: "கேமரா", reading: "kēmarā" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "இது புதிய கேமரா."
+        reading: "itu putiya kēmarā."
+        ipa: "it̪u put̪ija keːmaɾaː"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "புதிய", ref: "ta-0171" }, { word: "கேமரா", base: "கேமரா", reading: "kēmarā" }]
+  - id: "ta-1870"
+    target: "சினிமா"
+    reading: "ciṉimā"
+    ipa: "sinimaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் சினிமா பார்க்கிறேன்."
+        reading: "nāṉ ciṉimā pārkkiṟēṉ."
+        ipa: "naːn sinimaː paːɾkkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சினிமா", base: "சினிமா", reading: "ciṉimā" }, { word: "பார்க்கிறேன்", base: "பார்", reading: "pār" }]
+      - target: "இன்று சினிமா."
+        reading: "iṉṟu ciṉimā."
+        ipa: "inru sinimaː"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "சினிமா", base: "சினிமா", reading: "ciṉimā" }]
+  - id: "ta-1871"
+    target: "தொலைக்காட்சி"
+    reading: "tolaikkāṭci"
+    ipa: "t̪olaikkaːʈtʃi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தொலைக்காட்சி பார்."
+        reading: "tolaikkāṭci pār."
+        ipa: "t̪olaikkaːʈtʃi paːɾ"
+        bases: [{ word: "தொலைக்காட்சி", base: "தொலைக்காட்சி", reading: "tolaikkāṭci" }, { word: "பார்", ref: "ta-0121" }]
+      - target: "தொலைக்காட்சி எங்கே?"
+        reading: "tolaikkāṭci eṅkē?"
+        ipa: "t̪olaikkaːʈtʃi eŋkeː"
+        bases: [{ word: "தொலைக்காட்சி", base: "தொலைக்காட்சி", reading: "tolaikkāṭci" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1872"
+    target: "வானொலி"
+    reading: "vāṉoli"
+    ipa: "ʋaːnoli"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வானொலி கேள்."
+        reading: "vāṉoli kēḷ."
+        ipa: "ʋaːnoli keːɭ"
+        bases: [{ word: "வானொலி", base: "வானொலி", reading: "vāṉoli" }, { word: "கேள்", ref: "ta-0122" }]
+      - target: "வானொலி எங்கே?"
+        reading: "vāṉoli eṅkē?"
+        ipa: "ʋaːnoli eŋkeː"
+        bases: [{ word: "வானொலி", base: "வானொலி", reading: "vāṉoli" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1873"
+    target: "செய்தி"
+    reading: "ceyti"
+    ipa: "sejt̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "செய்தி கேள்."
+        reading: "ceyti kēḷ."
+        ipa: "sejt̪i keːɭ"
+        bases: [{ word: "செய்தி", base: "செய்தி", reading: "ceyti" }, { word: "கேள்", ref: "ta-0122" }]
+      - target: "நல்ல செய்தி."
+        reading: "nalla ceyti."
+        ipa: "nalla sejt̪i"
+        bases: [{ word: "நல்ல", ref: "ta-0169" }, { word: "செய்தி", base: "செய்தி", reading: "ceyti" }]
+  - id: "ta-1874"
+    target: "செய்தித்தாள்"
+    reading: "ceytittāḷ"
+    ipa: "sejt̪it̪t̪aːɭ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "செய்தித்தாள் படி."
+        reading: "ceytittāḷ paṭi."
+        ipa: "sejt̪it̪t̪aːɭ paʈi"
+        bases: [{ word: "செய்தித்தாள்", base: "செய்தித்தாள்", reading: "ceytittāḷ" }, { word: "படி", ref: "ta-0115" }]
+      - target: "செய்தித்தாள் எங்கே?"
+        reading: "ceytittāḷ eṅkē?"
+        ipa: "sejt̪it̪t̪aːɭ eŋkeː"
+        bases: [{ word: "செய்தித்தாள்", base: "செய்தித்தாள்", reading: "ceytittāḷ" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1875"
+    target: "பத்திரிகை"
+    reading: "pattirikai"
+    ipa: "pat̪t̪iɾikai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பத்திரிகை படி."
+        reading: "pattirikai paṭi."
+        ipa: "pat̪t̪iɾikai paʈi"
+        bases: [{ word: "பத்திரிகை", base: "பத்திரிகை", reading: "pattirikai" }, { word: "படி", ref: "ta-0115" }]
+      - target: "இது புதிய பத்திரிகை."
+        reading: "itu putiya pattirikai."
+        ipa: "it̪u put̪ija pat̪t̪iɾikai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "புதிய", ref: "ta-0171" }, { word: "பத்திரிகை", base: "பத்திரிகை", reading: "pattirikai" }]
+  - id: "ta-1876"
+    target: "நாவல்"
+    reading: "nāval"
+    ipa: "naːʋal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாவல் படி."
+        reading: "nāval paṭi."
+        ipa: "naːʋal paʈi"
+        bases: [{ word: "நாவல்", base: "நாவல்", reading: "nāval" }, { word: "படி", ref: "ta-0115" }]
+      - target: "இது நல்ல நாவல்."
+        reading: "itu nalla nāval."
+        ipa: "it̪u nalla naːʋal"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நல்ல", ref: "ta-0169" }, { word: "நாவல்", base: "நாவல்", reading: "nāval" }]
+  - id: "ta-1877"
+    target: "விளையாட்டு"
+    reading: "viḷaiyāṭṭu"
+    ipa: "ʋiɭaijaːʈʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "விளையாட்டு எப்போது?"
+        reading: "viḷaiyāṭṭu eppōtu?"
+        ipa: "ʋiɭaijaːʈʈu eppoːt̪u"
+        bases: [{ word: "விளையாட்டு", base: "விளையாட்டு", reading: "viḷaiyāṭṭu" }, { word: "எப்போது", ref: "ta-0044" }]
+      - target: "எனக்கு விளையாட்டு பிடிக்கும்."
+        reading: "eṉakku viḷaiyāṭṭu piṭikkum."
+        ipa: "enakku ʋiɭaijaːʈʈu piʈikkum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "விளையாட்டு", base: "விளையாட்டு", reading: "viḷaiyāṭṭu" }, { word: "பிடிக்கும்", ref: "ta-0412" }]
+  - id: "ta-1878"
+    target: "கிரிக்கெட்"
+    reading: "kirikkeṭ"
+    ipa: "kiɾikkeʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குக் கிரிக்கெட் பிடிக்கும்."
+        reading: "eṉakkuk kirikkeṭ piṭikkum."
+        ipa: "enakkuk kiɾikkeʈ piʈikkum"
+        bases: [{ word: "எனக்குக்", base: "நான்", reading: "nāṉ" }, { word: "கிரிக்கெட்", base: "கிரிக்கெட்", reading: "kirikkeṭ" }, { word: "பிடிக்கும்", ref: "ta-0412" }]
+      - target: "நாம் கிரிக்கெட் விளையாடலாம்."
+        reading: "nām kirikkeṭ viḷaiyāṭalām."
+        ipa: "naːm kiɾikkeʈ ʋiɭaijaːʈalaːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "கிரிக்கெட்", base: "கிரிக்கெட்", reading: "kirikkeṭ" }, { word: "விளையாடலாம்", base: "விளையாடு", reading: "viḷaiyāṭu" }]
+  - id: "ta-1879"
+    target: "கால்பந்து"
+    reading: "kālpantu"
+    ipa: "kaːlpant̪u"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கால்பந்து விளையாடு."
+        reading: "kālpantu viḷaiyāṭu."
+        ipa: "kaːlpant̪u ʋiɭaijaːʈu"
+        bases: [{ word: "கால்பந்து", base: "கால்பந்து", reading: "kālpantu" }, { word: "விளையாடு", ref: "ta-0191" }]
+      - target: "நான் கால்பந்து விளையாடுகிறேன்."
+        reading: "nāṉ kālpantu viḷaiyāṭukiṟēṉ."
+        ipa: "naːn kaːlpant̪u ʋiɭaijaːʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "கால்பந்து", base: "கால்பந்து", reading: "kālpantu" }, { word: "விளையாடுகிறேன்", base: "விளையாடு", reading: "viḷaiyāṭu" }]
+  - id: "ta-1880"
+    target: "மட்டை"
+    reading: "maṭṭai"
+    ipa: "maʈʈai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மட்டை கொடு."
+        reading: "maṭṭai koṭu."
+        ipa: "maʈʈai koʈu"
+        bases: [{ word: "மட்டை", base: "மட்டை", reading: "maṭṭai" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "இது என் மட்டை."
+        reading: "itu eṉ maṭṭai."
+        ipa: "it̪u en maʈʈai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "என்", base: "நான்", reading: "nāṉ" }, { word: "மட்டை", base: "மட்டை", reading: "maṭṭai" }]
+  - id: "ta-1881"
+    target: "சதுரங்கம்"
+    reading: "caturaṅkam"
+    ipa: "sat̪uɾaŋkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் சதுரங்கம் விளையாடுகிறேன்."
+        reading: "nāṉ caturaṅkam viḷaiyāṭukiṟēṉ."
+        ipa: "naːn sat̪uɾaŋkam ʋiɭaijaːʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சதுரங்கம்", base: "சதுரங்கம்", reading: "caturaṅkam" }, { word: "விளையாடுகிறேன்", base: "விளையாடு", reading: "viḷaiyāṭu" }]
+      - target: "எனக்குச் சதுரங்கம் பிடிக்கும்."
+        reading: "eṉakkuc caturaṅkam piṭikkum."
+        ipa: "enakkus sat̪uɾaŋkam piʈikkum"
+        bases: [{ word: "எனக்குச்", base: "நான்", reading: "nāṉ" }, { word: "சதுரங்கம்", base: "சதுரங்கம்", reading: "caturaṅkam" }, { word: "பிடிக்கும்", ref: "ta-0412" }]
+  - id: "ta-1882"
+    target: "கேரம்"
+    reading: "kēram"
+    ipa: "keːɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கேரம் விளையாடு."
+        reading: "kēram viḷaiyāṭu."
+        ipa: "keːɾam ʋiɭaijaːʈu"
+        bases: [{ word: "கேரம்", base: "கேரம்", reading: "kēram" }, { word: "விளையாடு", ref: "ta-0191" }]
+      - target: "கேரம் எங்கே?"
+        reading: "kēram eṅkē?"
+        ipa: "keːɾam eŋkeː"
+        bases: [{ word: "கேரம்", base: "கேரம்", reading: "kēram" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1883"
+    target: "சீட்டு"
+    reading: "cīṭṭu"
+    ipa: "siːʈʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சீட்டு விளையாடு."
+        reading: "cīṭṭu viḷaiyāṭu."
+        ipa: "siːʈʈu ʋiɭaijaːʈu"
+        bases: [{ word: "சீட்டு", base: "சீட்டு", reading: "cīṭṭu" }, { word: "விளையாடு", ref: "ta-0191" }]
+      - target: "நாம் சீட்டு விளையாடலாம்."
+        reading: "nām cīṭṭu viḷaiyāṭalām."
+        ipa: "naːm siːʈʈu ʋiɭaijaːʈalaːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "சீட்டு", base: "சீட்டு", reading: "cīṭṭu" }, { word: "விளையாடலாம்", base: "விளையாடு", reading: "viḷaiyāṭu" }]
+  - id: "ta-1884"
+    target: "போட்டி"
+    reading: "pōṭṭi"
+    ipa: "poːʈʈi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "போட்டி எப்போது?"
+        reading: "pōṭṭi eppōtu?"
+        ipa: "poːʈʈi eppoːt̪u"
+        bases: [{ word: "போட்டி", base: "போட்டி", reading: "pōṭṭi" }, { word: "எப்போது", ref: "ta-0044" }]
+      - target: "இன்று போட்டி."
+        reading: "iṉṟu pōṭṭi."
+        ipa: "inru poːʈʈi"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "போட்டி", base: "போட்டி", reading: "pōṭṭi" }]
+  - id: "ta-1885"
+    target: "குழு"
+    reading: "kuḻu"
+    ipa: "kuɻu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது என் குழு."
+        reading: "itu eṉ kuḻu."
+        ipa: "it̪u en kuɻu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "என்", base: "நான்", reading: "nāṉ" }, { word: "குழு", base: "குழு", reading: "kuḻu" }]
+      - target: "குழு எங்கே?"
+        reading: "kuḻu eṅkē?"
+        ipa: "kuɻu eŋkeː"
+        bases: [{ word: "குழு", base: "குழு", reading: "kuḻu" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1886"
+    target: "வீரர்"
+    reading: "vīrar"
+    ipa: "ʋiːɾaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் நல்ல வீரர்."
+        reading: "avar nalla vīrar."
+        ipa: "aʋaɾ nalla ʋiːɾaɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "நல்ல", ref: "ta-0169" }, { word: "வீரர்", base: "வீரர்", reading: "vīrar" }]
+      - target: "வீரர் ஓடுகிறார்."
+        reading: "vīrar ōṭukiṟār."
+        ipa: "ʋiːɾaɾ oːʈukiraːɾ"
+        bases: [{ word: "வீரர்", base: "வீரர்", reading: "vīrar" }, { word: "ஓடுகிறார்", base: "ஓடு", reading: "ōṭu" }]
+  - id: "ta-1887"
+    target: "பாடகர்"
+    reading: "pāṭakar"
+    ipa: "paːʈakaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் நல்ல பாடகர்."
+        reading: "avar nalla pāṭakar."
+        ipa: "aʋaɾ nalla paːʈakaɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "நல்ல", ref: "ta-0169" }, { word: "பாடகர்", base: "பாடகர்", reading: "pāṭakar" }]
+      - target: "அவர் பாடகர்."
+        reading: "avar pāṭakar."
+        ipa: "aʋaɾ paːʈakaɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "பாடகர்", base: "பாடகர்", reading: "pāṭakar" }]
+  - id: "ta-1888"
+    target: "பாடகி"
+    reading: "pāṭaki"
+    ipa: "paːʈaki"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவள் நல்ல பாடகி."
+        reading: "avaḷ nalla pāṭaki."
+        ipa: "aʋaɭ nalla paːʈaki"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "நல்ல", ref: "ta-0169" }, { word: "பாடகி", base: "பாடகி", reading: "pāṭaki" }]
+      - target: "அவள் பாடகி."
+        reading: "avaḷ pāṭaki."
+        ipa: "aʋaɭ paːʈaki"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "பாடகி", base: "பாடகி", reading: "pāṭaki" }]
+  - id: "ta-1889"
+    target: "கலை"
+    reading: "kalai"
+    ipa: "kalai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது நல்ல கலை."
+        reading: "itu nalla kalai."
+        ipa: "it̪u nalla kalai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நல்ல", ref: "ta-0169" }, { word: "கலை", base: "கலை", reading: "kalai" }]
+      - target: "எனக்குக் கலை பிடிக்கும்."
+        reading: "eṉakkuk kalai piṭikkum."
+        ipa: "enakkuk kalai piʈikkum"
+        bases: [{ word: "எனக்குக்", base: "நான்", reading: "nāṉ" }, { word: "கலை", base: "கலை", reading: "kalai" }, { word: "பிடிக்கும்", ref: "ta-0412" }]
+  - id: "ta-1890"
+    target: "கிடார்"
+    reading: "kiṭār"
+    ipa: "kiʈaːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கிடார் எங்கே?"
+        reading: "kiṭār eṅkē?"
+        ipa: "kiʈaːɾ eŋkeː"
+        bases: [{ word: "கிடார்", base: "கிடார்", reading: "kiṭār" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "இது என் கிடார்."
+        reading: "itu eṉ kiṭār."
+        ipa: "it̪u en kiʈaːɾ"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "என்", base: "நான்", reading: "nāṉ" }, { word: "கிடார்", base: "கிடார்", reading: "kiṭār" }]
+  - id: "ta-1891"
+    target: "வீணை"
+    reading: "vīṇai"
+    ipa: "ʋiːɳai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வீணை கேள்."
+        reading: "vīṇai kēḷ."
+        ipa: "ʋiːɳai keːɭ"
+        bases: [{ word: "வீணை", base: "வீணை", reading: "vīṇai" }, { word: "கேள்", ref: "ta-0122" }]
+      - target: "இது வீணை."
+        reading: "itu vīṇai."
+        ipa: "it̪u ʋiːɳai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "வீணை", base: "வீணை", reading: "vīṇai" }]
+  - id: "ta-1892"
+    target: "புல்லாங்குழல்"
+    reading: "pullāṅkuḻal"
+    ipa: "pullaːŋkuɻal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "புல்லாங்குழல் கொடு."
+        reading: "pullāṅkuḻal koṭu."
+        ipa: "pullaːŋkuɻal koʈu"
+        bases: [{ word: "புல்லாங்குழல்", base: "புல்லாங்குழல்", reading: "pullāṅkuḻal" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "இது புல்லாங்குழல்."
+        reading: "itu pullāṅkuḻal."
+        ipa: "it̪u pullaːŋkuɻal"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "புல்லாங்குழல்", base: "புல்லாங்குழல்", reading: "pullāṅkuḻal" }]
+  - id: "ta-1893"
+    target: "மேடை"
+    reading: "mēṭai"
+    ipa: "meːʈai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மேடையில் பாடு."
+        reading: "mēṭaiyil pāṭu."
+        ipa: "meːʈaijil paːʈu"
+        bases: [{ word: "மேடையில்", base: "மேடை", reading: "mēṭai" }, { word: "பாடு", ref: "ta-1905" }]
+      - target: "மேடை எங்கே?"
+        reading: "mēṭai eṅkē?"
+        ipa: "meːʈai eŋkeː"
+        bases: [{ word: "மேடை", base: "மேடை", reading: "mēṭai" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1894"
+    target: "பொம்மை"
+    reading: "pommai"
+    ipa: "pommai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது என் பொம்மை."
+        reading: "itu eṉ pommai."
+        ipa: "it̪u en pommai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "என்", base: "நான்", reading: "nāṉ" }, { word: "பொம்மை", base: "பொம்மை", reading: "pommai" }]
+      - target: "பொம்மை வேண்டும்."
+        reading: "pommai vēṇṭum."
+        ipa: "pommai ʋeːɳʈum"
+        bases: [{ word: "பொம்மை", base: "பொம்மை", reading: "pommai" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-1895"
+    target: "ஊஞ்சல்"
+    reading: "ūñcal"
+    ipa: "uːɲtʃal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஊஞ்சல் எங்கே?"
+        reading: "ūñcal eṅkē?"
+        ipa: "uːɲtʃal eŋkeː"
+        bases: [{ word: "ஊஞ்சல்", base: "ஊஞ்சல்", reading: "ūñcal" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "இது பெரிய ஊஞ்சல்."
+        reading: "itu periya ūñcal."
+        ipa: "it̪u peɾija uːɲtʃal"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0167" }, { word: "ஊஞ்சல்", base: "ஊஞ்சல்", reading: "ūñcal" }]
+  - id: "ta-1896"
+    target: "காத்தாடி"
+    reading: "kāttāṭi"
+    ipa: "kaːt̪t̪aːʈi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது என் காத்தாடி."
+        reading: "itu eṉ kāttāṭi."
+        ipa: "it̪u en kaːt̪t̪aːʈi"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "என்", base: "நான்", reading: "nāṉ" }, { word: "காத்தாடி", base: "காத்தாடி", reading: "kāttāṭi" }]
+      - target: "காத்தாடி எங்கே?"
+        reading: "kāttāṭi eṅkē?"
+        ipa: "kaːt̪t̪aːʈi eŋkeː"
+        bases: [{ word: "காத்தாடி", base: "காத்தாடி", reading: "kāttāṭi" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-1897"
+    target: "நீச்சல்"
+    reading: "nīccal"
+    ipa: "niːtʃtʃal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு நீச்சல் பிடிக்கும்."
+        reading: "eṉakku nīccal piṭikkum."
+        ipa: "enakku niːtʃtʃal piʈikkum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "நீச்சல்", base: "நீச்சல்", reading: "nīccal" }, { word: "பிடிக்கும்", ref: "ta-0412" }]
+      - target: "நீச்சல் பயிற்சி."
+        reading: "nīccal payiṟci."
+        ipa: "niːtʃtʃal pajirsi"
+        bases: [{ word: "நீச்சல்", base: "நீச்சல்", reading: "nīccal" }, { word: "பயிற்சி", ref: "ta-1848" }]
+  - id: "ta-1898"
+    target: "ஓட்டம்"
+    reading: "ōṭṭam"
+    ipa: "oːʈʈam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காலை ஓட்டம்."
+        reading: "kālai ōṭṭam."
+        ipa: "kaːlai oːʈʈam"
+        bases: [{ word: "காலை", ref: "ta-0152" }, { word: "ஓட்டம்", base: "ஓட்டம்", reading: "ōṭṭam" }]
+      - target: "எனக்கு ஓட்டம் பிடிக்கும்."
+        reading: "eṉakku ōṭṭam piṭikkum."
+        ipa: "enakku oːʈʈam piʈikkum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "ஓட்டம்", base: "ஓட்டம்", reading: "ōṭṭam" }, { word: "பிடிக்கும்", ref: "ta-0412" }]
+  - id: "ta-1899"
+    target: "சமையல்"
+    reading: "camaiyal"
+    ipa: "samaijal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அம்மா சமையல் நல்லது."
+        reading: "ammā camaiyal nallatu."
+        ipa: "ammaː samaijal nallat̪u"
+        bases: [{ word: "அம்மா", ref: "ta-0072" }, { word: "சமையல்", base: "சமையல்", reading: "camaiyal" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "எனக்குச் சமையல் பிடிக்கும்."
+        reading: "eṉakkuc camaiyal piṭikkum."
+        ipa: "enakkus samaijal piʈikkum"
+        bases: [{ word: "எனக்குச்", base: "நான்", reading: "nāṉ" }, { word: "சமையல்", base: "சமையல்", reading: "camaiyal" }, { word: "பிடிக்கும்", ref: "ta-0412" }]
+  - id: "ta-1900"
+    target: "புதிர்"
+    reading: "putir"
+    ipa: "put̪iɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது புதிர்."
+        reading: "itu putir."
+        ipa: "it̪u put̪iɾ"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "புதிர்", base: "புதிர்", reading: "putir" }]
+      - target: "புதிர் என்ன?"
+        reading: "putir eṉṉa?"
+        ipa: "put̪iɾ enna"
+        bases: [{ word: "புதிர்", base: "புதிர்", reading: "putir" }, { word: "என்ன", ref: "ta-0042" }]
+  - id: "ta-1901"
+    target: "கோலம்"
+    reading: "kōlam"
+    ipa: "koːlam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது அழகான கோலம்."
+        reading: "itu aḻakāṉa kōlam."
+        ipa: "it̪u aɻakaːna koːlam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "அழகான", ref: "ta-0175" }, { word: "கோலம்", base: "கோலம்", reading: "kōlam" }]
+      - target: "வீட்டில் கோலம்."
+        reading: "vīṭṭil kōlam."
+        ipa: "ʋiːʈʈil koːlam"
+        bases: [{ word: "வீட்டில்", ref: "ta-0414" }, { word: "கோலம்", base: "கோலம்", reading: "kōlam" }]
+  - id: "ta-1902"
+    target: "வேடிக்கை"
+    reading: "vēṭikkai"
+    ipa: "ʋeːʈikkai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது வேடிக்கை."
+        reading: "itu vēṭikkai."
+        ipa: "it̪u ʋeːʈikkai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "வேடிக்கை", base: "வேடிக்கை", reading: "vēṭikkai" }]
+      - target: "வேடிக்கை இல்லை."
+        reading: "vēṭikkai illai."
+        ipa: "ʋeːʈikkai illai"
+        bases: [{ word: "வேடிக்கை", base: "வேடிக்கை", reading: "vēṭikkai" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-1903"
+    target: "நாடகம்"
+    reading: "nāṭakam"
+    ipa: "naːʈakam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாடகம் பார்."
+        reading: "nāṭakam pār."
+        ipa: "naːʈakam paːɾ"
+        bases: [{ word: "நாடகம்", base: "நாடகம்", reading: "nāṭakam" }, { word: "பார்", ref: "ta-0121" }]
+      - target: "இன்று நாடகம்."
+        reading: "iṉṟu nāṭakam."
+        ipa: "inru naːʈakam"
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "நாடகம்", base: "நாடகம்", reading: "nāṭakam" }]
+  - id: "ta-1904"
+    target: "ஆட்டம்"
+    reading: "āṭṭam"
+    ipa: "aːʈʈam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஆட்டம் எப்போது?"
+        reading: "āṭṭam eppōtu?"
+        ipa: "aːʈʈam eppoːt̪u"
+        bases: [{ word: "ஆட்டம்", base: "ஆட்டம்", reading: "āṭṭam" }, { word: "எப்போது", ref: "ta-0044" }]
+      - target: "நல்ல ஆட்டம்."
+        reading: "nalla āṭṭam."
+        ipa: "nalla aːʈʈam"
+        bases: [{ word: "நல்ல", ref: "ta-0169" }, { word: "ஆட்டம்", base: "ஆட்டம்", reading: "āṭṭam" }]
+  - id: "ta-1905"
+    target: "பாடு"
+    reading: "pāṭu"
+    ipa: "paːʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் பாடுகிறேன்."
+        reading: "nāṉ pāṭukiṟēṉ."
+        ipa: "naːn paːʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பாடுகிறேன்", base: "பாடு", reading: "pāṭu" }]
+      - target: "நீ பாடு."
+        reading: "nī pāṭu."
+        ipa: "niː paːʈu"
+        bases: [{ word: "நீ", ref: "ta-0057" }, { word: "பாடு", base: "பாடு", reading: "pāṭu" }]
+  - id: "ta-1906"
+    target: "நடனமாடு"
+    reading: "naṭaṉamāṭu"
+    ipa: "naʈanamaːʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவள் நடனமாடுகிறாள்."
+        reading: "avaḷ naṭaṉamāṭukiṟāḷ."
+        ipa: "aʋaɭ naʈanamaːʈukiraːɭ"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "நடனமாடுகிறாள்", base: "நடனமாடு", reading: "naṭaṉamāṭu" }]
+      - target: "நீ நடனமாடு."
+        reading: "nī naṭaṉamāṭu."
+        ipa: "niː naʈanamaːʈu"
+        bases: [{ word: "நீ", ref: "ta-0057" }, { word: "நடனமாடு", base: "நடனமாடு", reading: "naṭaṉamāṭu" }]
+  - id: "ta-1907"
+    target: "தீட்டு"
+    reading: "tīṭṭu"
+    ipa: "t̪iːʈʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவன் ஓவியம் தீட்டுகிறான்."
+        reading: "avaṉ ōviyam tīṭṭukiṟāṉ."
+        ipa: "aʋan oːʋijam t̪iːʈʈukiraːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "ஓவியம்", ref: "ta-1867" }, { word: "தீட்டுகிறான்", base: "தீட்டு", reading: "tīṭṭu" }]
+      - target: "ஓவியம் தீட்டு."
+        reading: "ōviyam tīṭṭu."
+        ipa: "oːʋijam t̪iːʈʈu"
+        bases: [{ word: "ஓவியம்", ref: "ta-1867" }, { word: "தீட்டு", base: "தீட்டு", reading: "tīṭṭu" }]
+  - id: "ta-1908"
+    target: "ஓடு"
+    reading: "ōṭu"
+    ipa: "oːʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் ஓடுகிறேன்."
+        reading: "nāṉ ōṭukiṟēṉ."
+        ipa: "naːn oːʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "ஓடுகிறேன்", base: "ஓடு", reading: "ōṭu" }]
+      - target: "அவன் ஓடுகிறான்."
+        reading: "avaṉ ōṭukiṟāṉ."
+        ipa: "aʋan oːʈukiraːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "ஓடுகிறான்", base: "ஓடு", reading: "ōṭu" }]
+  - id: "ta-1909"
+    target: "பற"
+    reading: "paṟa"
+    ipa: "para"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பறவை பறக்கிறது."
+        reading: "paṟavai paṟakkiṟatu."
+        ipa: "paraʋai parakkirat̪u"
+        bases: [{ word: "பறவை", ref: "ta-0301" }, { word: "பறக்கிறது", base: "பற", reading: "paṟa" }]
+      - target: "காத்தாடி பறக்கிறது."
+        reading: "kāttāṭi paṟakkiṟatu."
+        ipa: "kaːt̪t̪aːʈi parakkirat̪u"
+        bases: [{ word: "காத்தாடி", ref: "ta-1896" }, { word: "பறக்கிறது", base: "பற", reading: "paṟa" }]
+  - id: "ta-1910"
+    target: "நீந்து"
+    reading: "nīntu"
+    ipa: "niːnt̪u"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவள் நீந்துகிறாள்."
+        reading: "avaḷ nīntukiṟāḷ."
+        ipa: "aʋaɭ niːnt̪ukiraːɭ"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "நீந்துகிறாள்", base: "நீந்து", reading: "nīntu" }]
+      - target: "நாம் நீந்தலாம்."
+        reading: "nām nīntalām."
+        ipa: "naːm niːnt̪alaːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "நீந்தலாம்", base: "நீந்து", reading: "nīntu" }]
+  - id: "ta-1911"
+    target: "குதி"
+    reading: "kuti"
+    ipa: "kut̪i"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் குதிக்கிறேன்."
+        reading: "nāṉ kutikkiṟēṉ."
+        ipa: "naːn kut̪ikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "குதிக்கிறேன்", base: "குதி", reading: "kuti" }]
+      - target: "அவன் குதிக்கிறான்."
+        reading: "avaṉ kutikkiṟāṉ."
+        ipa: "aʋan kut̪ikkiraːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "குதிக்கிறான்", base: "குதி", reading: "kuti" }]
+  - id: "ta-1912"
+    target: "ஏறு"
+    reading: "ēṟu"
+    ipa: "eːru"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பேருந்தில் ஏறு."
+        reading: "pēruntil ēṟu."
+        ipa: "peːɾunt̪il eːru"
+        bases: [{ word: "பேருந்தில்", base: "பேருந்து", reading: "pēruntu" }, { word: "ஏறு", base: "ஏறு", reading: "ēṟu" }]
+      - target: "அவன் ஏறுகிறான்."
+        reading: "avaṉ ēṟukiṟāṉ."
+        ipa: "aʋan eːrukiraːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "ஏறுகிறான்", base: "ஏறு", reading: "ēṟu" }]
+  - id: "ta-1913"
+    target: "சேகரி"
+    reading: "cēkari"
+    ipa: "seːkaɾi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் புத்தகம் சேகரிக்கிறேன்."
+        reading: "nāṉ puttakam cēkarikkiṟēṉ."
+        ipa: "naːn put̪t̪akam seːkaɾikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "புத்தகம்", ref: "ta-1813" }, { word: "சேகரிக்கிறேன்", base: "சேகரி", reading: "cēkari" }]
+      - target: "அவள் பொம்மை சேகரிக்கிறாள்."
+        reading: "avaḷ pommai cēkarikkiṟāḷ."
+        ipa: "aʋaɭ pommai seːkaɾikkiraːɭ"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "பொம்மை", ref: "ta-1894" }, { word: "சேகரிக்கிறாள்", base: "சேகரி", reading: "cēkari" }]
+  - id: "ta-1914"
+    target: "சிரி"
+    reading: "ciri"
+    ipa: "siɾi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவள் சிரிக்கிறாள்."
+        reading: "avaḷ cirikkiṟāḷ."
+        ipa: "aʋaɭ siɾikkiraːɭ"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "சிரிக்கிறாள்", base: "சிரி", reading: "ciri" }]
+      - target: "குழந்தை சிரிக்கிறது."
+        reading: "kuḻantai cirikkiṟatu."
+        ipa: "kuɻant̪ai siɾikkirat̪u"
+        bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "சிரிக்கிறது", base: "சிரி", reading: "ciri" }]
+  - id: "ta-1915"
+    target: "ரசி"
+    reading: "raci"
+    ipa: "ɾasi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் இசை ரசிக்கிறேன்."
+        reading: "nāṉ icai racikkiṟēṉ."
+        ipa: "naːn isai ɾasikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "இசை", ref: "ta-1865" }, { word: "ரசிக்கிறேன்", base: "ரசி", reading: "raci" }]
+      - target: "அவன் படம் ரசிக்கிறான்."
+        reading: "avaṉ paṭam racikkiṟāṉ."
+        ipa: "aʋan paʈam ɾasikkiraːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "படம்", ref: "ta-1825" }, { word: "ரசிக்கிறான்", base: "ரசி", reading: "raci" }]
+  - id: "ta-1916"
+    target: "வெல்"
+    reading: "vel"
+    ipa: "ʋel"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாம் வெல்கிறோம்."
+        reading: "nām velkiṟōm."
+        ipa: "naːm ʋelkiroːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "வெல்கிறோம்", base: "வெல்", reading: "vel" }]
+      - target: "அவன் வெல்கிறான்."
+        reading: "avaṉ velkiṟāṉ."
+        ipa: "aʋan ʋelkiraːn"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "வெல்கிறான்", base: "வெல்", reading: "vel" }]

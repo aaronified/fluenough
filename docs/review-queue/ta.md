@@ -66,3 +66,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1813 | ta-school | Is புக் (puk) the right spoken form for a school book? | Sonnet builder | 2026-11-23 |
 | ta-1860 | ta-school | Is கத்துக்கோ (kattukkō) the right spoken form of learn? | Sonnet builder | 2026-11-23 |
 | ta-1844 | ta-school | Is பரிசு natural at school, or is பரிசளிப்பு better? | Sonnet builder | 2026-11-23 |
+| ta-1896 | ta-hobbies | Is காத்தாடி the spoken word for a kite, and not mainly a fan? | Sonnet builder | 2026-11-23 |
+| ta-1916 | ta-hobbies | Is ஜெயி (jeyi) the usual spoken word for win beside வெல்? | Sonnet builder | 2026-11-23 |
+| ta-1905 | ta-hobbies | Is பாடுறேன் the right spoken present of sing? | Sonnet builder | 2026-11-23 |
+| ta-1883 | ta-hobbies | Is சீட்டு விளையாடு the natural way to say play cards? | Sonnet builder | 2026-11-23 |
