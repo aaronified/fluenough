@@ -181,3 +181,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-grammar-negative and the other verb tables | Compound verbs கலந்துகொள், பெருமைப்படு and சுற்றித்திரி take forms built from their helper verb: check them. | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-1209 | ta-shopping | Are கடைக்காரர், வாடிக்கையாளர் and வியாபாரி best marked masculine (m), given that they take the respectful verb ending? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1274 | ta-illness | Is டாக்டர் best marked masculine (m), given that it takes the respectful verb ending? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| unit-level | ta-grammar-compound-verbs-forms | Check the written joining of the helper forms (செய்துக்கொண்டேன், செய்துப்பார்த்தேன்): one word, or two words with the doubled -க்/-ப்? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-school | Gender m is given to தலைமையாசிரியர் (ta-1809), as ta-work does for ஆசிரியர்; the respectful -ர் nouns are epicene, so is m right? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-hobbies | Gender m is given to வீரர் (ta-1886) and பாடகர் (ta-1887), -ர் nouns that can name women too; is m right? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-journey | Gender m is given to டிரைவர் (ta-2161), ஓட்டுநர் (ta-2162), நடத்துநர் (ta-2163) and வழிகாட்டி (ta-2173), who may be women; is m right? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-workplace | Gender m is given to the 16 person nouns ta-2307 to ta-2322 (ஊழியர், மேலாளர் and others), epicene -ர் or -ி nouns; is m right, as for ஆசிரியர் in ta-work? | Sonnet builder | 2026-11-23 |
