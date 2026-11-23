@@ -1,0 +1,87 @@
+schema: 1
+id: "ta-grammar-passive"
+part: "core"
+kind: "grammar"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["present", "past", "future"]
+  entries:
+    - lemma: "செய்"
+      key: "cey"
+      reading: "cey"
+      ipa: "sej"
+      forms: { "present": "செய்யப்படுகிறது", "past": "செய்யப்பட்டது", "future": "செய்யப்படும்" }
+      readings: { "present": "ceyyappaṭukiṟatu", "past": "ceyyappaṭṭatu", "future": "ceyyappaṭum" }
+      ipas: { "present": "sejjappaʈukirat̪u", "past": "sejjappaʈʈat̪u", "future": "sejjappaʈum" }
+    - lemma: "எழுது"
+      key: "elutu"
+      reading: "eḻutu"
+      ipa: "eɻut̪u"
+      forms: { "present": "எழுதப்படுகிறது", "past": "எழுதப்பட்டது", "future": "எழுதப்படும்" }
+      readings: { "present": "eḻutappaṭukiṟatu", "past": "eḻutappaṭṭatu", "future": "eḻutappaṭum" }
+      ipas: { "present": "eɻut̪appaʈukirat̪u", "past": "eɻut̪appaʈʈat̪u", "future": "eɻut̪appaʈum" }
+    - lemma: "திற"
+      key: "tira"
+      reading: "tiṟa"
+      ipa: "t̪ira"
+      forms: { "present": "திறக்கப்படுகிறது", "past": "திறக்கப்பட்டது", "future": "திறக்கப்படும்" }
+      readings: { "present": "tiṟakkappaṭukiṟatu", "past": "tiṟakkappaṭṭatu", "future": "tiṟakkappaṭum" }
+      ipas: { "present": "t̪irakkappaʈukirat̪u", "past": "t̪irakkappaʈʈat̪u", "future": "t̪irakkappaʈum" }
+    - lemma: "மூடு"
+      key: "mutu"
+      reading: "mūṭu"
+      ipa: "muːʈu"
+      forms: { "present": "மூடப்படுகிறது", "past": "மூடப்பட்டது", "future": "மூடப்படும்" }
+      readings: { "present": "mūṭappaṭukiṟatu", "past": "mūṭappaṭṭatu", "future": "mūṭappaṭum" }
+      ipas: { "present": "muːʈappaʈukirat̪u", "past": "muːʈappaʈʈat̪u", "future": "muːʈappaʈum" }
+    - lemma: "சமை"
+      key: "camai"
+      reading: "camai"
+      ipa: "samai"
+      forms: { "present": "சமைக்கப்படுகிறது", "past": "சமைக்கப்பட்டது", "future": "சமைக்கப்படும்" }
+      readings: { "present": "camaikkappaṭukiṟatu", "past": "camaikkappaṭṭatu", "future": "camaikkappaṭum" }
+      ipas: { "present": "samaikkappaʈukirat̪u", "past": "samaikkappaʈʈat̪u", "future": "samaikkappaʈum" }
+    - lemma: "கட்டு"
+      key: "kattu"
+      reading: "kaṭṭu"
+      ipa: "kaʈʈu"
+      forms: { "present": "கட்டப்படுகிறது", "past": "கட்டப்பட்டது", "future": "கட்டப்படும்" }
+      readings: { "present": "kaṭṭappaṭukiṟatu", "past": "kaṭṭappaṭṭatu", "future": "kaṭṭappaṭum" }
+      ipas: { "present": "kaʈʈappaʈukirat̪u", "past": "kaʈʈappaʈʈat̪u", "future": "kaʈʈappaʈum" }
+    - lemma: "அனுப்பு"
+      key: "anuppu"
+      reading: "aṉuppu"
+      ipa: "anuppu"
+      forms: { "present": "அனுப்பப்படுகிறது", "past": "அனுப்பப்பட்டது", "future": "அனுப்பப்படும்" }
+      readings: { "present": "aṉuppappaṭukiṟatu", "past": "aṉuppappaṭṭatu", "future": "aṉuppappaṭum" }
+      ipas: { "present": "anuppappaʈukirat̪u", "past": "anuppappaʈʈat̪u", "future": "anuppappaʈum" }
+    - lemma: "கொண்டாடு"
+      key: "kontatu"
+      reading: "koṇṭāṭu"
+      ipa: "koɳʈaːʈu"
+      forms: { "present": "கொண்டாடப்படுகிறது", "past": "கொண்டாடப்பட்டது", "future": "கொண்டாடப்படும்" }
+      readings: { "present": "koṇṭāṭappaṭukiṟatu", "past": "koṇṭāṭappaṭṭatu", "future": "koṇṭāṭappaṭum" }
+      ipas: { "present": "koɳʈaːʈappaʈukirat̪u", "past": "koɳʈaːʈappaʈʈat̪u", "future": "koɳʈaːʈappaʈum" }
+    - lemma: "தேர்ந்தெடு"
+      key: "terntetu"
+      reading: "tērnteṭu"
+      ipa: "t̪eːɾnt̪eʈu"
+      forms: { "present": "தேர்ந்தெடுக்கப்படுகிறது", "past": "தேர்ந்தெடுக்கப்பட்டது", "future": "தேர்ந்தெடுக்கப்படும்" }
+      readings: { "present": "tērnteṭukkappaṭukiṟatu", "past": "tērnteṭukkappaṭṭatu", "future": "tērnteṭukkappaṭum" }
+      ipas: { "present": "t̪eːɾnt̪eʈukkappaʈukirat̪u", "past": "t̪eːɾnt̪eʈukkappaʈʈat̪u", "future": "t̪eːɾnt̪eʈukkappaʈum" }
+    - lemma: "கேள்"
+      key: "kel"
+      reading: "kēḷ"
+      ipa: "keːɭ"
+      forms: { "present": "கேட்கப்படுகிறது", "past": "கேட்கப்பட்டது", "future": "கேட்கப்படும்" }
+      readings: { "present": "kēṭkappaṭukiṟatu", "past": "kēṭkappaṭṭatu", "future": "kēṭkappaṭum" }
+      ipas: { "present": "keːʈkappaʈukirat̪u", "past": "keːʈkappaʈʈat̪u", "future": "keːʈkappaʈum" }
+    - lemma: "பயன்படுத்து"
+      key: "payanpatuttu"
+      reading: "payaṉpaṭuttu"
+      ipa: "pajanpaʈut̪t̪u"
+      forms: { "present": "பயன்படுத்தப்படுகிறது", "past": "பயன்படுத்தப்பட்டது", "future": "பயன்படுத்தப்படும்" }
+      readings: { "present": "payaṉpaṭuttappaṭukiṟatu", "past": "payaṉpaṭuttappaṭṭatu", "future": "payaṉpaṭuttappaṭum" }
+      ipas: { "present": "pajanpaʈut̪t̪appaʈukirat̪u", "past": "pajanpaʈut̪t̪appaʈʈat̪u", "future": "pajanpaʈut̪t̪appaʈum" }
