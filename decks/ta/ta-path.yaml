@@ -225,7 +225,9 @@ units:
       - { id: "which-way-home", text: { "en": "Two people say where they go, with whom, and where from" } }
     reading_passages:
       - { id: "class-notice", text: { "en": "A class notice: where, with whom and when" } }
-  - planned: { id: "ta-grammar-conjunctions", grammar: "conjunctions", words: 8 }
+  - decks: ["ta-grammar-conjunctions", "*"]
+    words: 8
+    grammar: ["conjunctions"]
     listening_passages:
       - { id: "this-and-that", text: { "en": "Choosing this or that, and saying but and so" } }
     reading_passages:
