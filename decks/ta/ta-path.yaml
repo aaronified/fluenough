@@ -254,7 +254,9 @@ units:
       - { id: "morning-at-home", text: { "en": "A family member says what she does every morning" } }
     reading_passages:
       - { id: "note-on-the-fridge", text: { "en": "A short note: what to eat and drink" } }
-  - planned: { id: "ta-grammar-demonstratives", grammar: "demonstratives", words: 0 }
+  - decks: ["ta-grammar-demonstratives", "*"]
+    words: 0
+    grammar: ["demonstratives"]
     listening_passages:
       - { id: "this-one-that-one", text: { "en": "Pointing at things: this one, that one, which one" } }
     reading_passages:
