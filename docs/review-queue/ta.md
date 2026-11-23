@@ -58,3 +58,5 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-grammar-adjectives | The -து and -வை forms (பெரியது, பெரியவை ...) were built by rule for all nine adjectives with no source page; are they all natural? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-articles | ஓர் before a vowel is from English Wiktionary; are the six pairs right? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-verb-present | வேண்டும், வேண்டாம், பிடிக்கும் and பிடிக்காது are verbs with one form for every person, so they are left out of the table (except list); is that the right way to teach them? | Sonnet builder | 2026-11-23 |
+| ta-1804 | ta-help | Is பிரச்சினை (not பிரச்சனை) the spelling to teach first? | Sonnet builder | 2026-11-23 |
+| ta-1805 | ta-help | Is போலீஸ் the right spoken form, and the register correct? | Sonnet builder | 2026-11-23 |

@@ -509,7 +509,8 @@ units:
     reading_passages:
       - { id: "two-cities", text: { "en": "A short text comparing two cities" } }
   # ta-grammar-irregular and ta-grammar-pitfalls follow this unit.
-  - planned: { id: "ta-help", theme: "help", words: 6 }
+  - decks: ["ta-help", "ta-help-sentences", "*"]
+    words: 6
     listening_passages:
       - { id: "asking-for-help", text: { "en": "Asking a passer-by for help" } }
     reading_passages:
