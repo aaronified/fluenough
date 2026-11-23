@@ -549,7 +549,9 @@ units:
       - { id: "pitfalls-heard", text: { "en": "A short exchange that uses pitfalls, after the help unit" } }
     reading_passages:
       - { id: "pitfalls-read", text: { "en": "A short text that uses pitfalls, after the help unit" } }
-  - planned: { id: "ta-grammar-conjunct-verbs", grammar: "conjunct-verbs", words: 3 }
+  - decks: ["ta-grammar-conjunct-verbs", "ta-grammar-conjunct-verbs-forms"]
+    words: 3
+    grammar: ["conjunct-verbs", "conjunct-verbs-forms"]
     listening_passages:
       - { id: "doing-a-favour", text: { "en": "Asking someone to do a favour or make a call" } }
     reading_passages:

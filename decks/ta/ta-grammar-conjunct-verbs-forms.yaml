@@ -1,0 +1,24 @@
+schema: 1
+id: "ta-grammar-conjunct-verbs-forms"
+part: "core"
+kind: "grammar"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["written", "spoken"]
+  entries:
+    - lemma: "உதவி"
+      key: "utavi"
+      reading: "utavi"
+      ipa: "ut̪aʋi"
+      forms: { "written": "உதவி செய்கிறேன்", "spoken": "உதவி பண்றேன்" }
+      readings: { "written": "utavi ceykiṟēṉ", "spoken": "utavi paṇṟēṉ" }
+      ipas: { "written": "ut̪aʋi sejkireːn", "spoken": "ut̪aʋi paɳreːn" }
+    - lemma: "வேலை"
+      key: "velai"
+      reading: "vēlai"
+      ipa: "ʋeːlai"
+      forms: { "written": "வேலை செய்கிறேன்", "spoken": "வேலை பண்றேன்" }
+      readings: { "written": "vēlai ceykiṟēṉ", "spoken": "vēlai paṇṟēṉ" }
+      ipas: { "written": "ʋeːlai sejkireːn", "spoken": "ʋeːlai paɳreːn" }

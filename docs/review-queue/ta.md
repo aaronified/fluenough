@@ -107,3 +107,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-grammar-comparison | Check the comparison pattern (X-ஐ விட adjective-து), the word எல்லாவற்றையும், and the doubling after விட and மிக. | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-irregular | Check the stems given for come, go, do, give, stand, sit and listen, and the spoken நிக்கிறேன் and தர்றேன். | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-pitfalls | Check the seven pairs and their sentences, especially அல்ல versus இல்லை and கொடு versus தா. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0462 | ta-grammar-conjunct-verbs | Is to undergo; to feel the right gloss of படு, and is பயப்படு the form to show first? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0460 | ta-grammar-conjunct-verbs | Are spoken பண்றேன் and the noun plus பண்ணு pattern shown correctly? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0461 | ta-grammar-conjunct-verbs | Is நேரம் ஆகிறது the usual way to say it is getting late? | Sonnet builder (ta-gram2) | 2026-11-23 |
