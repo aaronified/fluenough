@@ -277,7 +277,7 @@ units:
     reading_passages:
       - { id: "menu-board", text: { "en": "A menu board with dishes and prices" } }
   # ta-grammar-needs follows this unit.
-  - decks: ["ta-groceries", "*"]
+  - decks: ["ta-groceries", "ta-groceries-sentences", "*"]
     words: 9
     listening_passages:
       - { id: "what-we-need", text: { "en": "Two people say what they need from the shop" } }
@@ -289,7 +289,7 @@ units:
     reading_passages:
       - { id: "needs-read", text: { "en": "A short text that uses needs, after the groceries unit" } }
   # ta-grammar-nouns follows this unit.
-  - decks: ["ta-market", "*"]
+  - decks: ["ta-market", "ta-market-sentences", "*"]
     words: 6
     listening_passages:
       - { id: "at-the-market", text: { "en": "Buying vegetables at a market" } }
@@ -318,7 +318,7 @@ units:
     reading_passages:
       - { id: "a-short-diary", text: { "en": "A few lines about a day: who did what, and where" } }
   # ta-grammar-continuous follows this unit.
-  - decks: ["ta-directions", "*"]
+  - decks: ["ta-directions", "ta-directions-sentences", "*"]
     words: 8
     listening_passages:
       - { id: "turn-left", text: { "en": "Directions to a temple: left, right and straight on" } }
@@ -329,7 +329,7 @@ units:
       - { id: "continuous-heard", text: { "en": "A short exchange that uses continuous, after the directions unit" } }
     reading_passages:
       - { id: "continuous-read", text: { "en": "A short text that uses continuous, after the directions unit" } }
-  - decks: ["ta-transport", "*"]
+  - decks: ["ta-transport", "ta-transport-sentences", "*"]
     words: 6
     listening_passages:
       - { id: "auto-fare", text: { "en": "Agreeing a fare with an auto driver" } }
