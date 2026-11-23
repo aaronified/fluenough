@@ -86,3 +86,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-grammar-verb-classes | Check the six past-marker groups and the future markers given for every verb. | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-ordinals | Check the shortened spoken ordinals (ரெண்டாவது, மூணாவது, நாலாவது, அஞ்சாவது, ஒம்பதாவது) and the date forms. | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-past-more | Check has done and had done (participle plus இரு) and their spoken forms, such as வந்திருக்கேன் and வந்திருந்துச்சு. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-verbal-participle | Check the spoken verbal participles (படிச்சு, செஞ்சு, வச்சு, பாத்து) and the spoken without-doing ending -ஆமே. | Sonnet builder (ta-gram2) | 2026-11-23 |
