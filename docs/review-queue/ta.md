@@ -223,3 +223,24 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-8475 | ta-grammar-verb-classes | The lemma சுமக்கு (sumakku) is built as the சும (suma) type verb (சுமந்தான், சுமப்பான்); is the lemma and its stem right? | Sonnet builder | 2026-11-23 |
 | ta-8484 | ta-grammar-verb-classes | The lemma வியர்க்கு (viyarkku) is built as the வியர் (viyar) type verb (வியர்த்தது, வியர்க்கிறது); is the lemma and its stem right? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-noun-forms | The new nouns of ta-opinions to ta-abstract-words: plural and the with-form (-ஓடு) are left out for abstract nouns, mass nouns and places by the builder's judgement; the short-u nouns மது, குரு, பசு, மனு and புழு take -வ- (மதுவை, குருவை), and short one-syllable nouns double the last letter (புண்ணை, நெல்லை, பொய்யை); are these right? | Sonnet builder | 2026-11-23 |
+| ta-8290 | ta-relationships | சிநேகிதர் (cinēkitar) is marked gender m or f by its ending (the -ர் form is respectful and can be said of either sex): is the gender right? | ta-words4 | 2026-11-23 |
+| ta-8383 | ta-emergencies | தப்பு (tappu), to escape: the same spelling is also the noun for a mistake; does the note make this clear? | ta-words4 | 2026-11-23 |
+| ta-8390 | ta-emergencies | உடை (uṭai), to break: the same spelling is also the noun for a garment; does the note make this clear? | ta-words4 | 2026-11-23 |
+| ta-8001 | ta-cinema | நடிகர் (naṭikar) is marked gender m or f by its ending (the -ர் form is respectful and can be said of either sex): is the gender right? | ta-words4 | 2026-11-23 |
+| ta-8018 | ta-cinema | ரசிகர் (racikar) is marked gender m or f by its ending (the -ர் form is respectful and can be said of either sex): is the gender right? | ta-words4 | 2026-11-23 |
+| ta-8039 | ta-cinema | பார்வையாளர் (pārvaiyāḷar) is marked gender m or f by its ending (the -ர் form is respectful and can be said of either sex): is the gender right? | ta-words4 | 2026-11-23 |
+| ta-8249 | ta-sports | ஜெயி (jeyi), to win: is it the common spoken verb, with வெல் (vel) the written one? | ta-words4 | 2026-11-23 |
+| ta-8117 | ta-history | தளபதி (taḷapati) is marked gender m or f by its ending (the -ர் form is respectful and can be said of either sex): is the gender right? | ta-words4 | 2026-11-23 |
+| ta-8144 | ta-history | முன்னோர் (muṉṉōr), ancestors: is gender m right for a rational plural, as மக்கள் (makkaḷ) has? | ta-words4 | 2026-11-23 |
+| ta-8149 | ta-history | ஆள் (āḷ), to rule: the same spelling is also the noun for a person; does the note make this clear? | ta-words4 | 2026-11-23 |
+| ta-8181 | ta-weddings | சம்பந்தி (campanti) is marked gender m or f by its ending (the -ர் form is respectful and can be said of either sex): is the gender right? | ta-words4 | 2026-11-23 |
+| ta-8182 | ta-weddings | நண்பர் (naṇpar) is marked gender m or f by its ending (the -ர் form is respectful and can be said of either sex): is the gender right? | ta-words4 | 2026-11-23 |
+| ta-8194 | ta-weddings | மணம் (maṇam), marriage or fragrance: is it right to teach both senses on one card? | ta-words4 | 2026-11-23 |
+| ta-8440 | ta-verbs-4 | ஆரம்பி (ārampi), to begin: is the gloss right and does it mean the same as தொடங்கு (toṭaṅku)? | ta-words4 | 2026-11-23 |
+| ta-8451 | ta-verbs-4 | வருணி (varuṇi), to describe in rich words: is the gloss and the literary register right? | ta-words4 | 2026-11-23 |
+| ta-8453 | ta-verbs-4 | இற (iṟa), to die: is it right to call it the formal verb and சா (cā) the everyday one? | ta-words4 | 2026-11-23 |
+| ta-8083 | ta-arts | குரு (kuru) is marked gender m or f by its ending (the -ர் form is respectful and can be said of either sex): is the gender right? | ta-words4 | 2026-11-23 |
+| ta-8087 | ta-arts | ரசனை (racaṉai), taste; appreciation: is the gloss right and is it used of taste in art? | ta-words4 | 2026-11-23 |
+| ta-8089 | ta-arts | கலைஞர் (kalaiñar) is marked gender m or f by its ending (the -ர் form is respectful and can be said of either sex): is the gender right? | ta-words4 | 2026-11-23 |
+| ta-8101 | ta-arts | வாசி (vāci), to play an instrument or to read: is it right to teach both senses on one card? | ta-words4 | 2026-11-23 |
+| ta-8103 | ta-arts | The verb படை (paṭai), to create, has the same spelling as the word for army, which the course cannot teach as a second card: is the meaning and the note enough? | ta-words4 | 2026-11-23 |
