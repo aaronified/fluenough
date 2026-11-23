@@ -91,3 +91,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-grammar-ordinals | Check the shortened spoken ordinals (ரெண்டாவது, மூணாவது, நாலாவது, அஞ்சாவது, ஒம்பதாவது) and the date forms. | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-past-more | Check has done and had done (participle plus இரு) and their spoken forms, such as வந்திருக்கேன் and வந்திருந்துச்சு. | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-verbal-participle | Check the spoken verbal participles (படிச்சு, செஞ்சு, வச்சு, பாத்து) and the spoken without-doing ending -ஆமே. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-2017 | ta-verbs-3 | Is சொல்லு (not சொல்) the usual spoken command for say? | Sonnet builder | 2026-11-23 |
+| ta-2023 | ta-verbs-3 | Is தருகிறேன் the right present of தா, and is its note clear? | Sonnet builder | 2026-11-23 |
+| ta-2025 | ta-verbs-3 | Are the கிடை examples natural for something being available? | Sonnet builder | 2026-11-23 |
+| ta-2082 | ta-verbs-3 | Is the verb வாழ்த்து natural beside the noun வாழ்த்து? | Sonnet builder | 2026-11-23 |
+| ta-2085 | ta-verbs-3 | Is யூஸ் பண்ணு (yūs paṇṇu) the usual spoken form of use? | Sonnet builder | 2026-11-23 |
