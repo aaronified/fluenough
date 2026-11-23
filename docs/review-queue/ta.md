@@ -246,4 +246,16 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-8103 | ta-arts | The verb படை (paṭai), to create, has the same spelling as the word for army, which the course cannot teach as a second card: is the meaning and the note enough? | ta-words4 | 2026-11-23 |
 | ta-8154 | ta-grammar-verb-classes | முற்றுகையிடு (muṟṟukaiyiṭu), to besiege, is built as an -இடு compound (முற்றுகையிட்டான், முற்றுகையிடுவான்); is the stem right? | Sonnet builder | 2026-11-23 |
 
-| ta-8251 | ta-grammar-verb-classes | தோற்று (tōṟṟu) is the linking form of தோல்; its row is built as a verb with தோற்றான், தோற்பான், தோற்கிறான்; is that right? | Sonnet builder | 2026-11-23 |
+| ta-8251 | ta-grammar-verb-classes | தோற்று (tōṟṟu) is the linking form of தோல்; its row is built as a verb with தோற்றான், தோற்பான், தோற்கிறான்; is that right? | Sonnet builder | 2026-11-23 || ta-6401 | ta-situations | Spoken போகணும் (pōkaṇum) for போக வேண்டும்: right spelling and register for a taxi request? | Sonnet builder | 2026-11-23 |
+| ta-6428 | ta-situations | Spoken ஆஸ்பத்திரி and போகணும்: natural for an urgent statement, and spelled right? | Sonnet builder | 2026-11-23 |
+| ta-6423 | ta-situations | Is உடம்பு (spoken) the right register here, and is the note's claim that உடல் is the written word right? | Sonnet builder | 2026-11-23 |
+| ta-6459 | ta-situations | Is this the natural cry for a fire, or would people say நெருப்பு or தீ விபத்து? | Sonnet builder | 2026-11-23 |
+| ta-6418 | ta-situations | Is குறைவாக natural here, or do speakers say கம்மியா in a restaurant? | Sonnet builder | 2026-11-23 |
+| ta-6408 | ta-situations | Do shoppers say இதன் or the spoken இதோட? The note says spoken Tamil prefers இதோட. | Sonnet builder | 2026-11-23 |
+| ta-6442 | ta-situations | Natural way to ask a hotel whether hot water runs from the tap? | Sonnet builder | 2026-11-23 |
+| ta-6451 | ta-situations | Is போடு the right verb for paying money into an account? | Sonnet builder | 2026-11-23 |
+| ta-6444 | ta-situations | Natural for a wake-up call request? | Sonnet builder | 2026-11-23 |
+| ta-6468 | ta-situations | Is வழி தவறு natural for 'I am lost', or is காணாமல் போய்விட்டேன் heard more? | Sonnet builder | 2026-11-23 |
+| ta-6461 | ta-situations | Natural for 'my wallet was stolen', and is the impersonal 'they stole' reading right? | Sonnet builder | 2026-11-23 |
+| ta-6454 | ta-situations | Is நீங்கள் எப்படி இருக்கிறீர்கள் the usual greeting, or do speakers say சௌக்கியமா? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-situations (ta-6400 to ta-6469) | The 70 new phrase cards and the 10 sheet titles (ta, hi, bn) are the builder's own; check that each phrase is common, polite and spelled right, and that the sheet titles read well. | Sonnet builder | 2026-11-23 |
