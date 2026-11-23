@@ -1,0 +1,59 @@
+# The people behind the Tamil culture decks (wiki/Plan-Deck-Kinds-And-Topics.md, D5). Dates are the years of birth and death, circa where the page read gives an estimate.
+# Most works of the culture decks are ancient and anonymous in the validator's sense (no author with a death year), so only the creators of dated works are here.
+# No pictures: none has a licence checked yet. Built from English Wikipedia pages read on 2026-11-23; the legacy items cite those pages.
+schema: 1
+kind: "creators"
+id: "creators-ta"
+language: "ta"
+license: "CC-BY-SA-4.0"
+eras:
+  - id: "sangam"
+    name: { en: "Sangam period" }
+    from: -300
+    to: 300
+  - id: "pallava-chola"
+    name: { en: "Pallava and Chola period" }
+    from: 600
+    to: 1300
+  - id: "vijayanagara-nayak"
+    name: { en: "Vijayanagara and Nayak period" }
+    from: 1300
+    to: 1700
+  - id: "colonial"
+    name: { en: "Colonial period" }
+    from: 1700
+    to: 1947
+  - id: "modern"
+    name: { en: "Modern period" }
+    from: 1947
+    to: null
+creators:
+  - id: "ta-arunagirinathar"
+    name:
+      en: { text: "Arunagirinathar" }
+    born: { year: 1370, circa: true }
+    died: { year: 1450, circa: true }
+    era: "vijayanagara-nayak"
+    bio:
+      en: "Arunagirinathar was a Tamil Shaiva saint-poet of the 14th century. The Czech scholar Kamil Zvelebil places his life between about 1370 and about 1450, according to English Wikipedia. He wrote the Tiruppugazh, a book of poems in praise of Murugan."
+    legacy:
+      text: { en: "English Wikipedia says the Tiruppugazh songs lay forgotten in manuscript until the nineteenth century, and that musicians have set them to music since." }
+      items:
+        - { kind: "other", text: { en: "V. T. Subramania Pillai gathered the songs from manuscripts and published them in two volumes, the first in 1894 and the second in 1901." }, year: 1894, source: { url: "https://en.wikipedia.org/wiki/Arunagirinathar", accessed: "2026-11-23" } }
+        - { kind: "music", text: { en: "Musicians such as Kancheepuram Naina Pillai set Tiruppugazh songs to music, and A. S. Raghavan set more than 500 of them in over 100 ragas." }, source: { url: "https://en.wikipedia.org/wiki/Arunagirinathar", accessed: "2026-11-23" } }
+  - id: "ta-samuel-vedanayagam-pillai"
+    name:
+      en: { text: "Samuel Vedanayagam Pillai" }
+    born: 1826
+    died: 1889
+    era: "colonial"
+    bio:
+      en: "Samuel Vedanayagam Pillai was an Indian civil servant, Tamil poet, novelist and social worker. He is remembered for Prathapa Mudaliar Charithram, published in 1879 and called the first modern Tamil novel on English Wikipedia."
+  - id: "ta-subramania-bharati"
+    name:
+      en: { text: "Subramania Bharati" }
+    born: 1882
+    died: 1921
+    era: "colonial"
+    bio:
+      en: "Subramania Bharati, also called Bharathiyar, was a Tamil poet, social reformer and fighter for Indian freedom and women's rights, as the Wikidata description says. He was born in 1882 and died in 1921 (Wikidata). The Tamil Wikisource pages give Kuyil Pattu, Pappa Pattu and Kannan Pattu as his works."
