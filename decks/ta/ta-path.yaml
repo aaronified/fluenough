@@ -728,12 +728,14 @@ units:
       - { id: "why-are-you-going", text: { "en": "Saying what you are going somewhere to do" } }
     reading_passages:
       - { id: "course-advert", text: { "en": "An advert for a course: what it is for" } }
-  - planned: { id: "ta-technology", theme: "technology", words: 55 }
+  - decks: ["ta-technology", "ta-technology-sentences", "*"]
+    words: 55
     listening_passages:
       - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
     reading_passages:
       - { id: "app-instructions", text: { "en": "Instructions inside a phone app" } }
-  - planned: { id: "ta-careers", theme: "careers", words: 55 }
+  - decks: ["ta-careers", "ta-careers-sentences", "*"]
+    words: 55
     listening_passages:
       - { id: "job-interview", text: { "en": "A short job interview" } }
     reading_passages:
