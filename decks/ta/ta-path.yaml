@@ -289,7 +289,9 @@ units:
       - { id: "what-we-need", text: { "en": "Two people say what they need from the shop" } }
     reading_passages:
       - { id: "grocery-list", text: { "en": "A grocery list" } }
-  - planned: { id: "ta-grammar-needs", grammar: "needs" }
+  - decks: ["ta-grammar-needs", "*"]
+    words: 3
+    grammar: ["needs"]
     listening_passages:
       - { id: "needs-heard", text: { "en": "A short exchange that uses needs, after the groceries unit" } }
     reading_passages:
@@ -311,7 +313,9 @@ units:
       - { id: "asking-the-way", text: { "en": "Asking a stranger short questions" } }
     reading_passages:
       - { id: "a-form-to-fill", text: { "en": "A short form: name, age and where you live" } }
-  - planned: { id: "ta-grammar-likes", grammar: "likes", words: 2 }
+  - decks: ["ta-grammar-likes", "*"]
+    words: 2
+    grammar: ["likes"]
     listening_passages:
       - { id: "what-do-you-like", text: { "en": "Friends say what they like and do not like" } }
     reading_passages:

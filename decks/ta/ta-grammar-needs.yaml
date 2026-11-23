@@ -1,0 +1,60 @@
+schema: 1
+id: "ta-grammar-needs"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ta-0409"
+    target: "வேண்டும்"
+    reading: "vēṇṭum"
+    ipa: "ʋeːɳʈum"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "எனக்குத் தண்ணீர் வேண்டும்."
+        reading: "eṉakkut taṇṇīr vēṇṭum."
+        ipa: "enakkut̪ t̪aɳɳiːɾ ʋeːɳʈum"
+        bases: [{ word: "எனக்குத்", base: "நான்", reading: "nāṉ" }, { word: "தண்ணீர்", ref: "ta-0005" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]
+      - target: "உங்களுக்கு என்ன வேண்டும்?"
+        reading: "uṅkaḷukku eṉṉa vēṇṭum?"
+        ipa: "uŋkaɭukku enna ʋeːɳʈum"
+        bases: [{ word: "உங்களுக்கு", base: "நீங்கள்", reading: "nīṅkaḷ" }, { word: "என்ன", ref: "ta-0042" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]
+  - id: "ta-0410"
+    target: "வேண்டாம்"
+    reading: "vēṇṭām"
+    ipa: "ʋeːɳʈaːm"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு இது வேண்டாம்."
+        reading: "eṉakku itu vēṇṭām."
+        ipa: "enakku it̪u ʋeːɳʈaːm"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "இது", ref: "ta-0066" }, { word: "வேண்டாம்", base: "வேண்டாம்", reading: "vēṇṭām" }]
+      - target: "போதும், இன்னும் வேண்டாம்."
+        reading: "pōtum, iṉṉum vēṇṭām."
+        ipa: "poːt̪um innum ʋeːɳʈaːm"
+        bases: [{ word: "போதும்", ref: "ta-0161" }, { word: "இன்னும்", ref: "ta-0139" }, { word: "வேண்டாம்", base: "வேண்டாம்", reading: "vēṇṭām" }]
+  - id: "ta-0411"
+    target: "தேவை"
+    reading: "tēvai"
+    ipa: "t̪eːʋai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு உதவி தேவை."
+        reading: "eṉakku utavi tēvai."
+        ipa: "enakku ut̪aʋi t̪eːʋai"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "உதவி", base: "உதவி", reading: "utavi" }, { word: "தேவை", base: "தேவை", reading: "tēvai" }]
+      - target: "இங்கே பணம் தேவை இல்லை."
+        reading: "iṅkē paṇam tēvai illai."
+        ipa: "iŋkeː paɳam t̪eːʋai illai"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "பணம்", ref: "ta-0197" }, { word: "தேவை", base: "தேவை", reading: "tēvai" }, { word: "இல்லை", ref: "ta-0002" }]
