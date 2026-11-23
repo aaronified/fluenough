@@ -20,9 +20,14 @@ import 'summary_store.dart';
 /// it is first needed.
 enum CatalogMode { whole, lazy }
 
-/// The mode the app starts in. Whole stays the default until every consumer
-/// of the catalog has moved to the per-language API.
-const bool kLazyCatalogDefault = false;
+/// The mode the phone app starts in when no `catalogMode` setting says
+/// otherwise: one language at a time, from the cache (ADR-0062). Every
+/// consumer of the catalog has moved to the per-language API, so this is
+/// true; to roll back, a patch release sets it to false, and a learner
+/// whose stored setting is `whole` or `lazy` keeps that either way. Only
+/// `main.dart` reads it: a [DeckCatalog] made with no mode, as the tests,
+/// the gallery and the web build make one, reads whole.
+const bool kLazyCatalogDefault = true;
 
 /// The mode a stored `catalogMode` setting names, else the app's default.
 CatalogMode catalogModeFor(String? setting) => switch (setting) {

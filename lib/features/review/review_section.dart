@@ -63,6 +63,8 @@ class ReviewSection extends StatelessWidget {
     final flagged = on ? flaggedQueueOf(state).count : 0;
     final reviewed = on ? reviewPairsOf(state) : const <ReviewPair>{};
     final names = languageNamesOf(state);
+    // Read one language at a time, the decks of the languages read so far:
+    // the reviewer's screens read a course when they open it (P-C3).
     final toReview = <String>{
       for (final deck in state.decks)
         // A deck of offensive words only is reviewed apart, on purpose.

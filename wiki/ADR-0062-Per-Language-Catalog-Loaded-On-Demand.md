@@ -2,7 +2,7 @@
 
 Source of truth: this wiki page.
 
-- **Status:** Proposed (owner order, 2026-11-22). The choices below are the author's defaults for the owner to confirm; the open questions, each with its default, are in section 9 of the plan. The full reasoning, the consumer inventory, the work packages and the acceptance numbers are in [Plan-Lazy-Language-Loading](Plan-Lazy-Language-Loading).
+- **Status:** Accepted and in use as the default (2026-11-23): P-A to P-C are merged and `kLazyCatalogDefault` is true; the whole-catalog path stays as a rollback until P-D. The choices below were the author's defaults, confirmed by the owner's order to flip; the open questions, each with its default, are in section 9 of the plan. The full reasoning, the consumer inventory, the work packages and the acceptance numbers are in [Plan-Lazy-Language-Loading](Plan-Lazy-Language-Loading).
 - **Date:** 2026-11-22
 
 ## Context

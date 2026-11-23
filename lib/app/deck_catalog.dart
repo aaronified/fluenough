@@ -929,7 +929,7 @@ class DeckCatalog {
     this.privateStore,
     this.log,
     this.marks,
-    this.mode = kLazyCatalogDefault ? CatalogMode.lazy : CatalogMode.whole,
+    this.mode = CatalogMode.whole,
     this.languageSnapshots,
     this.summaries,
     this.languageRunner = runLanguageJobInPlace,
@@ -939,7 +939,9 @@ class DeckCatalog {
   final DeckSource source;
 
   /// Whether the catalog is read as one unit of every language, as it always
-  /// was, or one language at a time (ADR-0062). Whole is the default.
+  /// was, or one language at a time (ADR-0062). Whole unless told: the phone
+  /// app passes `catalogModeFor(setting)`, which holds [kLazyCatalogDefault],
+  /// and the tests, the gallery and the web build read whole.
   final CatalogMode mode;
 
   /// Where each language's snapshot is kept, in lazy mode.
