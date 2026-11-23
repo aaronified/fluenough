@@ -399,7 +399,9 @@ units:
       - { id: "how-much-how-many", text: { "en": "Asking how much and how many at a stall" } }
     reading_passages:
       - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
-  - planned: { id: "ml-grammar-postpositions", grammar: ["postpositions", "al"], words: 2 }
+  - decks: ["ml-grammar-postpositions", "ml-grammar-al"]
+    words: 2
+    grammar: ["postpositions", "al"]
     listening_passages:
       - { id: "by-bus-by-hand", text: { "en": "Saying how things are done: by bus, by hand, for whom" } }
     reading_passages:

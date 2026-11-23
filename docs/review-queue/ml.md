@@ -15,3 +15,5 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ml-grammar-conjunctions | The -ഉം (-uṁ) forms (അമ്മയും, അച്ഛനും, പഴവും) follow the rules of English Wiktionary and were not read by a speaker; are they right? | Sonnet builder | 2026-11-23 |
 | ml-0749 | ml-grammar-differences | Is സ്കൂളിലേക്ക് (skūḷilēkk) the natural spoken form for to school, and is the directional ending -ഇലേക്ക് (-ilēkk) the right one to teach for places? | Sonnet builder | 2026-11-23 |
 | ml-0755 | ml-grammar-differences | Is ഡോക്ടറാണ് (ḍōkṭarāṇ) with a full റ (ṟa) the usual written form for doctor plus is? | Sonnet builder | 2026-11-23 |
+| ml-0759 | ml-grammar-postpositions | Is വരെ (vare) used after the plain noun, as in വീട് വരെ (vīṭ vare), with no case ending on the noun? | Sonnet builder | 2026-11-23 |
+| unit-level | ml-grammar-al | Are the -ആൽ (-āl) forms (പേനയാൽ, കൈയാൽ, കത്തിയാൽ) used at all in speech, or only in writing, and is കൊണ്ട് (koṇṭ) after the plain noun right? | Sonnet builder | 2026-11-23 |
