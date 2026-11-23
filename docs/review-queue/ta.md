@@ -128,7 +128,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-grammar-when | Check போது after the infinitive plus -உம், and the spoken conditional in -ஆ, for every verb. | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-0490 | ta-grammar-registers | Is the gender of அலுவலர் (m) right for an officer of either sex? | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-0489 | ta-grammar-registers | Is the gender m right for பொதுமக்கள், a plural noun? | Sonnet builder (ta-gram2) | 2026-11-23 |
-| ta-0486 | ta-grammar-registers | Check the gloss of கட்டணம் against விலை for fee versus price. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0486 | ta-grammar-registers | Is சான்றிதழ் the right formal word for certificate? | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-0476 | ta-grammar-registers | Is நீர் the right everyday-versus-formal contrast with தண்ணீர்? | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-0471 | ta-grammar-registers | Is உண் in current use or only literary? | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-0474 | ta-grammar-registers | Check the stem தெரிவி and its forms தெரிவித்தார் and தெரிவியுங்கள். | Sonnet builder (ta-gram2) | 2026-11-23 |
