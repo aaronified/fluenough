@@ -236,7 +236,6 @@ void main() {
     final navigator = tester.state<NavigatorState>(find.byType(Navigator));
     unawaited(navigator.pushNamed(AppRoutes.culture, arguments: 'zz'));
     await tester.pump();
-    await tester.pump(const Duration(seconds: 1));
     expect(find.byType(CircularProgressIndicator), findsOneWidget);
     expect(find.byType(CultureDeckPage), findsNothing);
     await _loaded(tester, state, 'zz');

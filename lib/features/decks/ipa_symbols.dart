@@ -38,6 +38,14 @@ class _IpaSymbolsState extends State<IpaSymbols> {
   }
 
   @override
+  void didUpdateWidget(IpaSymbols old) {
+    super.didUpdateWidget(old);
+    if (widget.card.ipa != null) {
+      unawaited(AppScope.read(context).ensureIpaReady());
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     final card = widget.card;
     final ipa = ipaToShow(context, card.ipa, target: card.target);

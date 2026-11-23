@@ -40,6 +40,14 @@ class _SoundsOfWordButtonState extends State<SoundsOfWordButton> {
   }
 
   @override
+  void didUpdateWidget(SoundsOfWordButton old) {
+    super.didUpdateWidget(old);
+    if (widget.card.ipa != null) {
+      unawaited(AppScope.read(context).ensureIpaReady());
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     final card = widget.card;
     if (card.ipa == null) return const SizedBox.shrink();

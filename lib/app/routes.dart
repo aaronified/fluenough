@@ -236,10 +236,7 @@ abstract final class AppRoutes {
         args.language,
         TopicPage(request: args),
       ),
-      culture when args is String => _of(
-        args,
-        CultureDeckPage(language: args),
-      ),
+      culture when args is String => _of(args, CultureDeckPage(language: args)),
       cultureItem when args is CultureItemRequest => _of(
         args.language,
         CultureItemPage(request: args),
