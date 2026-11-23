@@ -113,40 +113,6 @@ cards:
         reading: "āḷ vīṭṭil illa."
         ipa: "aːɭ ʋiːʈʈil illa"
         bases: [{ word: "ആൾ", base: "ആൾ", reading: "āḷ" }, { word: "വീട്ടിൽ", ref: "ml-0009" }, { word: "ഇല്ല", ref: "ml-0002" }]
-  - id: "ml-0767"
-    target: "അവർ"
-    reading: "avar"
-    ipa: "əʋaɾ"
-    pos: "pronoun"
-    notes:
-      - { id: "n1", kind: "behaviour" }
-    bases: "self"
-    examples:
-      - target: "അവർ ഇവിടെ ഉണ്ട്."
-        reading: "avar iviṭe uṇṭ."
-        ipa: "əʋaɾ iʋiʈe uɳʈ"
-        bases: [{ word: "അവർ", base: "അവർ", reading: "avar" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", ref: "ml-0753" }]
-      - target: "അവർ എന്റെ അമ്മയും അച്ഛനുമാണ്."
-        reading: "avar enṟe ammayuṁ acchanumāṇ."
-        ipa: "əʋaɾ ent̪ɾe əmməjum ətʃtʃənumaːɳ"
-        bases: [{ word: "അവർ", base: "അവർ", reading: "avar" }, { word: "എന്റെ", ref: "ml-0043" }, { word: "അമ്മയും", ref: "ml-0071" }, { word: "അച്ഛനുമാണ്", ref: "ml-0070" }]
-  - id: "ml-0768"
-    target: "ഇവർ"
-    reading: "ivar"
-    ipa: "iʋaɾ"
-    pos: "pronoun"
-    notes:
-      - { id: "n1", kind: "behaviour" }
-    bases: "self"
-    examples:
-      - target: "ഇവർ എന്റെ കുട്ടികളാണ്."
-        reading: "ivar enṟe kuṭṭikaḷāṇ."
-        ipa: "iʋaɾ ent̪ɾe kuʈʈikəɭaːɳ"
-        bases: [{ word: "ഇവർ", base: "ഇവർ", reading: "ivar" }, { word: "എന്റെ", ref: "ml-0043" }, { word: "കുട്ടികളാണ്", ref: "ml-0082" }]
-      - target: "ഇവർ ആരാണ്?"
-        reading: "ivar ārāṇ?"
-        ipa: "iʋaɾ aːɾaːɳ"
-        bases: [{ word: "ഇവർ", base: "ഇവർ", reading: "ivar" }, { word: "ആരാണ്", ref: "ml-0031" }]
   - id: "ml-0769"
     target: "അവ"
     reading: "ava"
@@ -181,6 +147,41 @@ cards:
         reading: "iva entāṇ?"
         ipa: "iʋa ent̪aːɳ"
         bases: [{ word: "ഇവ", base: "ഇവ", reading: "iva" }, { word: "എന്താണ്", ref: "ml-0032" }]
+  - id: "ml-0772"
+    target: "പെണ്ണ്"
+    reading: "peṇṇ"
+    ipa: "peɳɳ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ആ പെണ്ണ് എന്റെ ചേച്ചിയാണ്."
+        reading: "ā peṇṇ enṟe cēcciyāṇ."
+        ipa: "aː peɳɳ ent̪ɾe tʃeːtʃtʃijaːɳ"
+        bases: [{ word: "ആ", ref: "ml-0099" }, { word: "പെണ്ണ്", base: "പെണ്ണ്", reading: "peṇṇ" }, { word: "എന്റെ", ref: "ml-0043" }, { word: "ചേച്ചിയാണ്", ref: "ml-0075" }]
+      - target: "പെണ്ണുങ്ങൾ വീട്ടിൽ ഉണ്ട്."
+        reading: "peṇṇuṅṅaḷ vīṭṭil uṇṭ."
+        ipa: "peɳɳuŋŋaɭ ʋiːʈʈil uɳʈ"
+        bases: [{ word: "പെണ്ണുങ്ങൾ", base: "പെണ്ണ്", reading: "peṇṇ" }, { word: "വീട്ടിൽ", ref: "ml-0009" }, { word: "ഉണ്ട്", ref: "ml-0753" }]
+  - id: "ml-0773"
+    target: "മക്കൾ"
+    reading: "makkaḷ"
+    ipa: "məkkaɭ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "എനിക്ക് രണ്ട് മക്കൾ ഉണ്ട്."
+        reading: "enikk raṇṭ makkaḷ uṇṭ."
+        ipa: "enikk ɾaɳʈ məkkaɭ uɳʈ"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "രണ്ട്", ref: "ml-0049" }, { word: "മക്കൾ", base: "മക്കൾ", reading: "makkaḷ" }, { word: "ഉണ്ട്", ref: "ml-0753" }]
+      - target: "അവളുടെ മക്കൾ ഇവിടെ ഉണ്ട്."
+        reading: "avaḷuṭe makkaḷ iviṭe uṇṭ."
+        ipa: "əʋəɭuʈe məkkaɭ iʋiʈe uɳʈ"
+        bases: [{ word: "അവളുടെ", ref: "ml-0098" }, { word: "മക്കൾ", base: "മക്കൾ", reading: "makkaḷ" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", ref: "ml-0753" }]
   - id: "ml-0771"
     kind: "set"
-    members: [{ ref: "ml-0097" }, { ref: "ml-0098" }, { ref: "ml-0099" }, { ref: "ml-0767" }, { ref: "ml-0769" }]
+    members: [{ ref: "ml-0097" }, { ref: "ml-0098" }, { ref: "ml-0099" }, { ref: "ml-1004" }, { ref: "ml-0769" }]

@@ -61,3 +61,5 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ml-adverbs | മുമ്പ് is an alternative spelling on English Wiktionary (lemma മുൻപ്); the card uses മുമ്പ്. Can a reviewer confirm the spoken spelling? | Haiku builder (ml-topup1) | 2026-11-23 |
 | unit-level | ml-describing | ശക്തിയുള്ള is a phrase on Malayalam Wiktionary (ശക്തി with ഉള്ള), not a lemma. Can a reviewer confirm it as a card? | Haiku builder (ml-topup1) | 2026-11-23 |
 | unit-level | ml-time | ദിവസം, മാസം, വർഷം, മറ്റന്നാൾ and പകൽ are verified on English Wiktionary; the example sentences were not read by a speaker. Can a reviewer read them? | Haiku builder (ml-topup1) | 2026-11-23 |
+| ml-0772 | ml-grammar-gender-number | Is പെണ്ണ് (peṇṇ) an acceptable everyday word for a woman or girl, or does it sound blunt, and is the plural പെണ്ണുങ്ങൾ (peṇṇuṅṅaḷ) right? | Sonnet builder | 2026-11-23 |
+| ml-0773 | ml-grammar-gender-number | Which gender, if any, fits മക്കൾ (makkaḷ), children, and is it fine as a card without a singular? | Sonnet builder | 2026-11-23 |
