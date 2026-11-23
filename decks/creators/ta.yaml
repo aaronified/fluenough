@@ -1,0 +1,171 @@
+# The people behind the Tamil culture decks (wiki/Plan-Deck-Kinds-And-Topics.md, D5). Dates are the years of birth and death, circa where the page read gives an estimate.
+# Most works of the culture decks are ancient and anonymous in the validator's sense (no author with a death year), so only the creators of dated works are here.
+# No pictures: none has a licence checked yet. Built from English Wikipedia pages read on 2026-11-23; the legacy items cite those pages.
+schema: 1
+kind: "creators"
+id: "creators-ta"
+language: "ta"
+license: "CC-BY-SA-4.0"
+eras:
+  - id: "sangam"
+    name: { en: "Sangam period" }
+    from: -300
+    to: 300
+  - id: "pallava-chola"
+    name: { en: "Pallava and Chola period" }
+    from: 600
+    to: 1300
+  - id: "vijayanagara-nayak"
+    name: { en: "Vijayanagara and Nayak period" }
+    from: 1300
+    to: 1700
+  - id: "colonial"
+    name: { en: "Colonial period" }
+    from: 1700
+    to: 1947
+  - id: "modern"
+    name: { en: "Modern period" }
+    from: 1947
+    to: null
+creators:
+  - id: "ta-arunagirinathar"
+    name:
+      en: { text: "Arunagirinathar" }
+    born: { year: 1370, circa: true }
+    died: { year: 1450, circa: true }
+    era: "vijayanagara-nayak"
+    bio:
+      en: "Arunagirinathar was a Tamil Shaiva saint-poet of the 14th century. The Czech scholar Kamil Zvelebil places his life between about 1370 and about 1450, according to English Wikipedia. He wrote the Tiruppugazh, a book of poems in praise of Murugan."
+    legacy:
+      text: { en: "English Wikipedia says the Tiruppugazh songs lay forgotten in manuscript until the nineteenth century, and that musicians have set them to music since." }
+      items:
+        - { kind: "other", text: { en: "V. T. Subramania Pillai gathered the songs from manuscripts and published them in two volumes, the first in 1894 and the second in 1901." }, year: 1894, source: { url: "https://en.wikipedia.org/wiki/Arunagirinathar", accessed: "2026-11-23" } }
+        - { kind: "music", text: { en: "Musicians such as Kancheepuram Naina Pillai set Tiruppugazh songs to music, and A. S. Raghavan set more than 500 of them in over 100 ragas." }, source: { url: "https://en.wikipedia.org/wiki/Arunagirinathar", accessed: "2026-11-23" } }
+  - id: "ta-samuel-vedanayagam-pillai"
+    name:
+      en: { text: "Samuel Vedanayagam Pillai" }
+    born: 1826
+    died: 1889
+    era: "colonial"
+    bio:
+      en: "Samuel Vedanayagam Pillai was an Indian civil servant, Tamil poet, novelist and social worker. He is remembered for Prathapa Mudaliar Charithram, published in 1879 and called the first modern Tamil novel on English Wikipedia."
+  - id: "ta-subramania-bharati"
+    name:
+      en: { text: "Subramania Bharati" }
+    born: 1882
+    died: 1921
+    era: "colonial"
+    bio:
+      en: "Subramania Bharati, also called Bharathiyar, was a Tamil poet, social reformer and fighter for Indian freedom and women's rights, as the Wikidata description says. He was born in 1882 and died in 1921 (Wikidata). The Tamil Wikisource pages give Kuyil Pattu, Pappa Pattu and Kannan Pattu as his works."
+  - id: "ta-r-krishnan"
+    name:
+      en: { text: "R. Krishnan" }
+    born: 1909
+    died: 1997
+    bio:
+      en: "R. Krishnan was an Indian film director who made films in South Indian languages and Hindi. With S. Panju he formed the directing pair Krishnan–Panju, who directed Parasakthi."
+  - id: "ta-s-panju"
+    name:
+      en: { text: "S. Panju" }
+    born: 1915
+    died: 1984
+    bio:
+      en: "S. Panju, born Panchapakesan, was an Indian film director who made films in South Indian languages and Hindi. With R. Krishnan he formed the directing pair Krishnan–Panju, who directed Parasakthi."
+  - id: "ta-m-karunanidhi"
+    name:
+      en: { text: "M. Karunanidhi" }
+    born: 1924
+    died: 2018
+    bio:
+      en: "M. Karunanidhi was an Indian politician, author and screenwriter who served five times as Chief Minister of Tamil Nadu. He wrote the script of the film Parasakthi."
+  - id: "ta-b-r-panthulu"
+    name:
+      en: { text: "B. R. Panthulu" }
+    born: 1910
+    died: 1974
+    bio:
+      en: "B. R. Panthulu was an Indian film director, producer and actor, best known for films in Tamil, Kannada, Telugu and Hindi. He directed Veerapandiya Kattabomman."
+  - id: "ta-c-v-sridhar"
+    name:
+      en: { text: "C. V. Sridhar" }
+    born: 1933
+    died: 2008
+    bio:
+      en: "C. V. Sridhar was an Indian screenwriter and film director who directed nearly 60 films in Tamil, Hindi and Telugu. He directed Kadhalikka Neramillai."
+  - id: "ta-bharathiraja"
+    name:
+      en: { text: "Bharathiraja" }
+    born: 1941
+    died: 2026
+    bio:
+      en: "Bharathiraja, born Chinnaasamy Periyamaya Thevar, was an Indian film director, producer, screenwriter and actor who worked mainly in Tamil cinema. He directed Muthal Mariyathai."
+  - id: "ta-mani-ratnam"
+    name:
+      en: { text: "Mani Ratnam" }
+    born: 1956
+    living: true
+    bio:
+      en: "Mani Ratnam is an Indian film director, producer and screenwriter who works mainly in Tamil cinema. He directed Mouna Ragam, Anjali, Nayakan and Roja."
+  - id: "ta-bharathan"
+    name:
+      en: { text: "Bharathan" }
+    born: 1946
+    died: 1998
+    bio:
+      en: "Bharathan was a Kerala-born Indian filmmaker, artist and art director who helped found a new school of meaningful mainstream filmmaking in Malayalam cinema. He directed the Tamil film Thevar Magan."
+  - id: "ta-sundar-c"
+    name:
+      en: { text: "Sundar C" }
+    born: 1968
+    living: true
+    bio:
+      en: "Sundar C is an Indian politician, actor, filmmaker and playback singer who works mainly in Tamil cinema. He directed Anbe Sivam."
+  - id: "ta-m-sasikumar"
+    name:
+      en: { text: "M. Sasikumar" }
+    born: 1974
+    living: true
+    bio:
+      en: "M. Sasikumar is an Indian actor, film director, film producer, screenwriter and playback singer, best known for his work in Tamil cinema. He directed Subramaniapuram."
+  - id: "ta-vetrimaaran"
+    name:
+      en: { text: "Vetrimaaran" }
+    born: 1975
+    living: true
+    bio:
+      en: "Vetrimaaran is an Indian film director, film producer and screenwriter who works mainly in Tamil cinema. He directed Aadukalam, Visaranai and Asuran."
+  - id: "ta-mari-selvaraj"
+    name:
+      en: { text: "Mari Selvaraj" }
+    born: 1984
+    living: true
+    bio:
+      en: "Mariselvam Selvaraj is an Indian film director, screenwriter, producer and lyricist who works mainly in Tamil cinema. He directed Pariyerum Perumal and Karnan."
+  - id: "ta-c-prem-kumar"
+    name:
+      en: { text: "C. Prem Kumar" }
+    born: 1976
+    living: true
+    bio:
+      en: "C. Prem Kumar is a Tamil-language filmmaker who works as a director, screenwriter and cinematographer. He is known for directing the 2018 film 96."
+  - id: "ta-sudha-kongara"
+    name:
+      en: { text: "Sudha Kongara" }
+    born: 1971
+    living: true
+    bio:
+      en: "Sudha Kongara is an Indian film director and screenwriter who works mainly in Tamil. She directed Soorarai Pottru."
+  - id: "ta-perumal-murugan"
+    name:
+      en: { text: "Perumal Murugan" }
+    born: 1966
+    living: true
+    bio:
+      en: "Perumal Murugan is an Indian writer, scholar and literary chronicler who writes in Tamil. His novel Mathorubhagan was published in English as One Part Woman."
+  - id: "ta-kalki-krishnamurthy"
+    name:
+      en: { text: "Kalki Krishnamurthy" }
+    born: 1899
+    died: 1954
+    bio:
+      en: "Kalki Krishnamurthy was an Indian writer, journalist, poet, critic and independence activist who wrote in Tamil. His novel Sivagamiyin Sapatham ran in the magazine Kalki from 1944 to 1946."
