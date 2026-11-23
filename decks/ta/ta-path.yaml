@@ -240,7 +240,9 @@ units:
       - { id: "whose-is-it", text: { "en": "Asking whose things are whose" } }
     reading_passages:
       - { id: "we-and-you", text: { "en": "A message to a group: we, all of us, and you" } }
-  - planned: { id: "ta-grammar-be", grammar: "be", words: 0 }
+  - decks: ["ta-grammar-be", "*"]
+    words: 0
+    grammar: ["be"]
     listening_passages:
       - { id: "who-and-where", text: { "en": "Saying who someone is and where they are" } }
     reading_passages:
