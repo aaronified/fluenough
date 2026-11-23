@@ -127,6 +127,86 @@ cards:
         reading: "ī kālaṁ nallatāṇ."
         ipa: "iː kaːlam nəllət̪aːɳ"
         bases: [{ word: "ഈ", ref: "ml-0584" }, { word: "കാലം", base: "കാലം", reading: "kālaṁ" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-1000"
+    target: "മഴ"
+    reading: "maḻa"
+    ipa: "məɻa"
+    pos: "noun"
+    gender: "n"
+    tags: ["retroflex-zha", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "pair", ref: "ml-1001" }
+    bases: "self"
+    examples:
+      - target: "വലിയ മഴ."
+        reading: "valiya maḻa."
+        ipa: "ʋəlija məɻa"
+        bases: [{ word: "വലിയ", ref: "ml-0008" }, { word: "മഴ", base: "മഴ", reading: "maḻa" }]
+      - target: "നല്ല മഴ."
+        reading: "nalla maḻa."
+        ipa: "nəlla məɻa"
+        bases: [{ word: "നല്ല", ref: "ml-0006" }, { word: "മഴ", base: "മഴ", reading: "maḻa" }]
+  - id: "ml-1001"
+    target: "മല"
+    reading: "mala"
+    ipa: "məla"
+    pos: "noun"
+    gender: "n"
+    tags: ["lateral", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "pair", ref: "ml-1000" }
+    bases: "self"
+    examples:
+      - target: "വലിയ മല."
+        reading: "valiya mala."
+        ipa: "ʋəlija məla"
+        bases: [{ word: "വലിയ", ref: "ml-0008" }, { word: "മല", base: "മല", reading: "mala" }]
+      - target: "ഇത് മല."
+        reading: "it mala."
+        ipa: "it̪ məla"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "മല", base: "മല", reading: "mala" }]
+  - id: "ml-1002"
+    target: "കര"
+    reading: "kara"
+    ipa: "kəɾa"
+    pos: "noun"
+    gender: "n"
+    tags: ["rhotic-ra", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "pair", ref: "ml-1003" }
+    bases: "self"
+    examples:
+      - target: "വലിയ കര."
+        reading: "valiya kara."
+        ipa: "ʋəlija kəɾa"
+        bases: [{ word: "വലിയ", ref: "ml-0008" }, { word: "കര", base: "കര", reading: "kara" }]
+      - target: "ഇത് കര."
+        reading: "it kara."
+        ipa: "it̪ kəɾa"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "കര", base: "കര", reading: "kara" }]
+  - id: "ml-1003"
+    target: "കറ"
+    reading: "kaṟa"
+    ipa: "kəɾa"
+    pos: "noun"
+    gender: "n"
+    tags: ["rhotic-rra", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "pair", ref: "ml-1002" }
+    bases: "self"
+    examples:
+      - target: "വലിയ കറ."
+        reading: "valiya kaṟa."
+        ipa: "ʋəlija kəɾa"
+        bases: [{ word: "വലിയ", ref: "ml-0008" }, { word: "കറ", base: "കറ", reading: "kaṟa" }]
+      - target: "ഇത് കറ."
+        reading: "it kaṟa."
+        ipa: "it̪ kəɾa"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "കറ", base: "കറ", reading: "kaṟa" }]
   - ref: "ml-0338"
     tags: ["gemination", "unreviewed"]
     notes:
