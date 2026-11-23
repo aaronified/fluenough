@@ -63,3 +63,16 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1804 | ta-help | Is பிரச்சினை (not பிரச்சனை) the spelling to teach first? | Sonnet builder | 2026-11-23 |
 | ta-1805 | ta-help | Is போலீஸ் the right spoken form, and the register correct? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-negative | Check the spoken nee, aval and avarkal negatives (மாட்ட, மாட்டா, மாட்டாங்க) and the spoken past negative in -ல (-la). | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-1129 | ta-weather | Is புழுக்கம் the everyday word for sultry, close heat in spoken Tamil? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1120 | ta-weather | Is சூரியன் best given as masculine (m) for a course that uses m, f and n? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1119 | ta-weather | Is the split between வெப்பம் (forecast word) and வெயில் (felt sun) right for everyday speech? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1143 | ta-weather | Is குளிர் அடிக்கிறது a natural way to say it feels cold? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1148 | ta-weather | Is காய்ந்த the right word for a cloth that has dried? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1816 | ta-school | Is the written word மதிப்பெண் (not மார்க்) the right one to teach first? | Sonnet builder | 2026-11-23 |
+| ta-1813 | ta-school | Is புக் (puk) the right spoken form for a school book? | Sonnet builder | 2026-11-23 |
+| ta-1860 | ta-school | Is கத்துக்கோ (kattukkō) the right spoken form of learn? | Sonnet builder | 2026-11-23 |
+| ta-1844 | ta-school | Is பரிசு natural at school, or is பரிசளிப்பு better? | Sonnet builder | 2026-11-23 |
+| ta-1896 | ta-hobbies | Is காத்தாடி the spoken word for a kite, and not mainly a fan? | Sonnet builder | 2026-11-23 |
+| ta-1916 | ta-hobbies | Is ஜெயி (jeyi) the usual spoken word for win beside வெல்? | Sonnet builder | 2026-11-23 |
+| ta-1905 | ta-hobbies | Is பாடுறேன் the right spoken present of sing? | Sonnet builder | 2026-11-23 |
+| ta-1883 | ta-hobbies | Is சீட்டு விளையாடு the natural way to say play cards? | Sonnet builder | 2026-11-23 |
