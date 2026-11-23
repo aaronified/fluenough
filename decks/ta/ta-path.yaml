@@ -683,7 +683,8 @@ units:
       - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
     reading_passages:
       - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
-  - planned: { id: "ta-opinions", theme: "opinions", words: 55 }
+  - decks: ["ta-opinions", "ta-opinions-sentences", "*"]
+    words: 55
     listening_passages:
       - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely" } }
     reading_passages:
