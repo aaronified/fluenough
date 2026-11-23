@@ -1,0 +1,62 @@
+# Tamil's situation sheets (#724): lists of card ids, never card text. Every id
+# is a card of a Tamil deck, so progress, audio and notes are the card's own.
+# Draft: the choice of cards and the Tamil titles need a Tamil reviewer.
+schema: 1
+id: ta-situations
+name: "Tamil situations"
+kind: situations
+language: { code: ta, iso639_3: tam, name: Tamil, script: tamil, tts: ta-IN, icon: "த" }
+license: "CC-BY-SA-4.0"
+description: "Key phrases and words for everyday moments. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["unreviewed"]
+situations:
+  - id: "taxi"
+    icon: "taxi"
+    title: { en: "Taxi", ta: "டாக்சி (ṭākci)", hi: "टैक्सी", bn: "ট্যাক্সি" }
+    phrases: ["ta-6400", "ta-6401", "ta-6402", "ta-6403", "ta-6404", "ta-6405", "ta-6406", "ta-6407", "ta-0020"]
+    words: ["ta-0240", "ta-7262", "ta-0239", "ta-0243", "ta-2143", "ta-0230", "ta-0231", "ta-0232", "ta-0488", "ta-7269", "ta-0197", "ta-0226"]
+  - id: "shops"
+    icon: "shops"
+    title: { en: "Shopping", ta: "கடை (kaṭai)", hi: "खरीदारी", bn: "কেনাকাটা" }
+    phrases: ["ta-0020", "ta-6408", "ta-6409", "ta-6410", "ta-6411", "ta-6412", "ta-6413", "ta-6414", "ta-6407"]
+    words: ["ta-1208", "ta-0225", "ta-1249", "ta-0197", "ta-1216", "ta-1212", "ta-1213", "ta-1214", "ta-1227", "ta-1223", "ta-1236", "ta-1209"]
+  - id: "eat"
+    icon: "eat"
+    title: { en: "Eating out", ta: "உணவகம் (uṇavakam)", hi: "बाहर खाना", bn: "বাইরে খাওয়া" }
+    phrases: ["ta-6415", "ta-6416", "ta-6417", "ta-6418", "ta-6419", "ta-6420", "ta-6421", "ta-6422", "ta-0026"]
+    words: ["ta-1313", "ta-0005", "ta-0244", "ta-0246", "ta-1314", "ta-1315", "ta-1213", "ta-1321", "ta-1319", "ta-1320", "ta-2164"]
+  - id: "doctor"
+    icon: "doctor"
+    title: { en: "Doctor and pharmacy", ta: "மருத்துவர் (maruttuvar), மருந்தகம் (maruntakam)", hi: "डॉक्टर और दवाखाना", bn: "ডাক্তার ও ওষুধের দোকান" }
+    phrases: ["ta-6423", "ta-6424", "ta-6425", "ta-6426", "ta-6427", "ta-6428", "ta-6429", "ta-6430", "ta-9000"]
+    words: ["ta-1274", "ta-0199", "ta-1271", "ta-7052", "ta-7050", "ta-1264", "ta-1269", "ta-7004", "ta-7005", "ta-1290"]
+  - id: "rail"
+    icon: "rail"
+    title: { en: "Rail station", ta: "ரயில் நிலையம் (rayil nilaiyam)", hi: "रेलवे स्टेशन", bn: "রেল স্টেশন" }
+    phrases: ["ta-6431", "ta-6432", "ta-6433", "ta-6434", "ta-6435", "ta-6436", "ta-6437", "ta-0019"]
+    words: ["ta-0241", "ta-7247", "ta-2134", "ta-2136", "ta-2154", "ta-7234", "ta-7267", "ta-7250", "ta-2167", "ta-0283"]
+  - id: "hotel"
+    icon: "hotel"
+    title: { en: "Hotel", ta: "தங்குமிடம் (taṅkumiṭam)", hi: "होटल", bn: "হোটেল" }
+    phrases: ["ta-9040", "ta-6439", "ta-6440", "ta-6441", "ta-6442", "ta-6443", "ta-6444"]
+    words: ["ta-0276", "ta-0273", "ta-7253", "ta-7244", "ta-7256", "ta-7254", "ta-7252", "ta-7245", "ta-7270"]
+  - id: "post"
+    icon: "post"
+    title: { en: "Post office and bank", ta: "அஞ்சலகம் (añcalakam), வங்கி (vaṅki)", hi: "डाकघर और बैंक", bn: "ডাকঘর ও ব্যাংক" }
+    phrases: ["ta-6445", "ta-6446", "ta-6447", "ta-6448", "ta-6449", "ta-6450", "ta-6451"]
+    words: ["ta-7303", "ta-7304", "ta-7305", "ta-0263", "ta-7290", "ta-7268", "ta-7295", "ta-7293", "ta-0197", "ta-7299"]
+  - id: "greetings"
+    icon: "greeting"
+    title: { en: "Greetings and thanks", ta: "வணக்கம் (vaṇakkam)", hi: "अभिवादन और धन्यवाद", bn: "শুভেচ্ছা ও ধন্যবাদ" }
+    phrases: ["ta-6452", "ta-6453", "ta-6454", "ta-6455", "ta-0052", "ta-6456", "ta-0012", "ta-0028", "ta-0015"]
+    words: ["ta-0011", "ta-0013", "ta-0014", "ta-0017", "ta-0023", "ta-0025", "ta-0152", "ta-0153"]
+  - id: "emergencies"
+    icon: "emergency"
+    title: { en: "Emergency", ta: "அவசர உதவி (avacara utavi)", hi: "आपातकाल", bn: "জরুরি অবস্থা" }
+    phrases: ["ta-0018", "ta-6457", "ta-6458", "ta-6459", "ta-6460", "ta-6461", "ta-6462", "ta-4505"]
+    words: ["ta-1800", "ta-1805", "ta-1290", "ta-2169", "ta-7132", "ta-8364", "ta-8374", "ta-8361", "ta-8367", "ta-7348"]
+  - id: "directions"
+    icon: "travel"
+    title: { en: "Asking the way", ta: "வழி (vaḻi)", hi: "रास्ता पूछना", bn: "পথ জিজ্ঞাসা" }
+    phrases: ["ta-6463", "ta-6464", "ta-6465", "ta-6466", "ta-6467", "ta-6468", "ta-6469", "ta-6405", "ta-6406"]
+    words: ["ta-0491", "ta-0230", "ta-0231", "ta-0232", "ta-0237", "ta-2143", "ta-0488", "ta-0262", "ta-2150", "ta-2147"]

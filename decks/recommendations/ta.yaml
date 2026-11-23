@@ -1,0 +1,253 @@
+# Popular works of Tamil Nadu in Tamil, recommended for the learner to find: the learner finds them (a library, a shop, a service) and the app asks
+# the questions after the learner has marked the work as seen, read or heard. Nothing of a work is quoted (wiki/Plan-Language-Completeness.md,
+# "Source-it-yourself works"). No links are given: no link has been checked. Briefings and questions use only what the work's own English Wikipedia article
+# says (plot sections read 2026-11-23); years and creators are as that article gives them. Levels are defaults (B1) until a reviewer sets them. Not reviewed by a
+# Tamil speaker (docs/review-queue/ta.md).
+schema: 1
+kind: "recommendations"
+id: "recommendations-ta"
+language: "ta"
+license: "CC-BY-SA-4.0"
+recommendations:
+  - id: "ta-rec-parasakthi"
+    medium: "film"
+    title: { text: "பராசக்தி", reading: "parācakti" }
+    creator: ["ta-r-krishnan", "ta-s-panju", "ta-m-karunanidhi"]
+    year: 1952
+    level: "B1"
+    briefing: { en: "A 1952 drama directed by Krishnan and Panju from a script by M. Karunanidhi. A family of Tamil migrants in Rangoon is scattered by the Second World War, and a young woman in Madurai struggles to survive after losing her husband." }
+    questions:
+      - { id: "q1", prompt: { en: "Why does Kalyani marry without any of her brothers present?" }, options: { en: ["The ship is delayed", "They refuse to approve of the groom", "They are in prison"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "How does Gunasekaran get by after he is robbed in Madras?" }, options: { en: ["He joins a dance troupe", "He works as a cook", "He pretends to be mad"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "What post does Chandrasekaran hold when he faces his sister in court?" }, options: { en: ["Lawyer", "Judge", "Police inspector"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-veerapandiya-kattabomman"
+    medium: "film"
+    title: { text: "வீரபாண்டிய கட்டபொம்மன்", reading: "vīrapāṇṭiya kaṭṭapommaṉ" }
+    creator: ["ta-b-r-panthulu"]
+    year: 1959
+    level: "B1"
+    briefing: { en: "A 1959 historical drama about Veerapandiya Kattabomman, a chieftain of Panchalankurichi who stands up to the British East India Company. It follows his quarrel with the tax collectors, his battles and his end." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Vellaiyammal vow at the jallikattu bull-taming game?" }, options: { en: ["To fight the bull herself in the ring", "To marry the man who tames her bull", "To give her prize bull away to the temple"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Which British tax collector insults Kattabomman at the meeting at Ramanathapuram?" }, options: { en: ["Bannerman", "W. C. Jackson", "Lushington"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Who captures Kattabomman and hands him over to the British?" }, options: { en: ["King Thondaimaan", "His minister Pillai", "His brother Oomaithurai"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-kadhalikka-neramillai"
+    medium: "film"
+    title: { text: "காதலிக்க நேரமில்லை", reading: "kātalikka nēramillai" }
+    creator: ["ta-c-v-sridhar"]
+    year: 1964
+    level: "B1"
+    briefing: { en: "A 1964 comedy by C. V. Sridhar set on an estate near Pollachi, full of disguises and mistaken identities. Two sisters, their strict father and two young men who are not what they seem make up the cast of the story." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Nirmala accidentally drop on Ashok's head?" }, options: { en: ["A bucket", "A book", "A flowerpot"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who does Vasu pretend to be when he arrives in disguise?" }, options: { en: ["A tax inspector from Madras", "Ashok's elder brother", "Ashok's wealthy father"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "What is the name of the film company that Chellappa starts?" }, options: { en: ["Pollachi Pictures", "Chinnamalai Films", "Oho Productions"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-muthal-mariyathai"
+    medium: "film"
+    title: { text: "முதல் மரியாதை", reading: "mutal mariyātai" }
+    creator: ["ta-bharathiraja"]
+    year: 1985
+    level: "B1"
+    briefing: { en: "A 1985 village drama by Bharathiraja. An ageing village chief in an unhappy marriage and a young boatwoman become close friends, and the village begins to talk about them. The story is told in flashbacks." }
+    questions:
+      - { id: "q1", prompt: { en: "How does the film begin?" }, options: { en: ["At Malaichami's deathbed", "At a boat race", "At a village wedding"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What does Chellakannu plan to do with Sevuli?" }, options: { en: ["Move to Madras", "Elope with her", "Open a shop with her"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Which clue helps Malaichami to find out who killed Sevuli?" }, options: { en: ["A missing toe", "A lost sandal", "A torn jewel"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-mouna-ragam"
+    medium: "film"
+    title: { text: "மௌன ராகம்", reading: "mauṉa rākam" }
+    creator: ["ta-mani-ratnam"]
+    year: 1986
+    level: "B1"
+    briefing: { en: "A 1986 romantic drama by Mani Ratnam. Divya, a college student from Madras, agrees to an arranged marriage with Chandrakumar while she is still haunted by a past love, and the two must learn to live together." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Divya ask Chandrakumar for as a wedding gift in Delhi?" }, options: { en: ["A new house", "A trip home", "A divorce"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "How long do the couple have to wait before a divorce can be granted?" }, options: { en: ["Three years", "One year", "Six months"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What does Divya do with the divorce papers at the railway station?" }, options: { en: ["She tears them up", "She gives them to a lawyer", "She signs them"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-nayakan"
+    medium: "film"
+    title: { text: "நாயகன்", reading: "nāyakaṉ" }
+    creator: ["ta-mani-ratnam"]
+    year: 1987
+    level: "B1"
+    briefing: { en: "A 1987 crime drama by Mani Ratnam about Velu, a young man from Thoothukudi who flees to Bombay and grows into a feared and loved underworld don. It follows the price he pays for it." }
+    questions:
+      - { id: "q1", prompt: { en: "Who adopts Velu in Bombay?" }, options: { en: ["Selva, a boy", "Kelkar, an inspector", "Hussain, a smuggler"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "Who is Velu's wife?" }, options: { en: ["Kalyani", "Charumathi", "Neela"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "Who shoots Velu outside the courthouse?" }, options: { en: ["Ajit, Kelkar's son", "Surya, Velu's son", "Selva, Velu's friend"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-roja"
+    medium: "film"
+    title: { text: "ரோஜா", reading: "rōjā" }
+    creator: ["ta-mani-ratnam"]
+    year: 1992
+    level: "B1"
+    briefing: { en: "A 1992 romance and thriller by Mani Ratnam. A newly married woman from a Tamil village follows her husband to Kashmir, where militants kidnap him, and she tries to win his freedom although she speaks only Tamil." }
+    questions:
+      - { id: "q1", prompt: { en: "What is Rishi Kumar's job?" }, options: { en: ["Cryptologist", "Army doctor", "Journalist"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Whom do the militants demand in exchange for Rishi?" }, options: { en: ["Wasim Khan", "Colonel Rayappa", "Liaqat"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What does Rishi do when the militants try to burn the Indian flag?" }, options: { en: ["He pleads for mercy", "He snatches it and runs", "He throws himself on the fire"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-thevar-magan"
+    medium: "film"
+    title: { text: "தேவர் மகன்", reading: "tēvar makaṉ" }
+    creator: ["ta-bharathan"]
+    year: 1992
+    level: "B1"
+    briefing: { en: "A 1992 family drama directed by Bharathan. A young man returns from London to his father's village near Madurai, and is drawn into a long feud between two branches of the family." }
+    questions:
+      - { id: "q1", prompt: { en: "Who is Bhanumathi?" }, options: { en: ["Mayan's sister", "Sakthi's girlfriend", "The village teacher"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What does Sakthi use his IAS contacts to do?" }, options: { en: ["Open the old temple by law", "Close the village market", "Build a school in the village"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Who is Sakthi's rival in the village?" }, options: { en: ["Isakki", "Chinnasamy Thevar", "Mayan Thevar"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-thillana-mohanambal"
+    medium: "film"
+    title: { text: "தில்லானா மோகனாம்பாள்", reading: "tillāṉā mōkaṉāmpāḷ" }
+    creator: ["ta-a-p-nagarajan"]
+    year: 1968
+    level: "B1"
+    briefing: { en: "A 1968 drama by A. P. Nagarajan, based on a Tamil novel by Kothamangalam Subbu. A proud young musician and a Bharatanatyam dancer fall in love, but ego, a greedy mother and a scheming outsider keep them apart." }
+    questions:
+      - { id: "q1", prompt: { en: "What instrument does Sundaram play?" }, options: { en: ["The nadaswaram", "The flute", "The violin"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who helps Sundaram to recover in hospital after he is stabbed?" }, options: { en: ["His mother", "A nurse called Mary", "The Maharani"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "How does the film end?" }, options: { en: ["Mohana leaves for Madhanpur", "Sundaram and Mohana marry", "Sundaram goes abroad"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-subramaniapuram"
+    medium: "film"
+    title: { text: "சுப்ரமணியபுரம்", reading: "cupramaṇiyapuram" }
+    creator: ["ta-m-sasikumar"]
+    year: 2008
+    level: "B1"
+    briefing: { en: "A 2008 period crime drama set in Madurai, the first film directed by Sasikumar. It follows a group of jobless young friends in the 1980s and how a favour done for a local politician leads them to violence and betrayal." }
+    questions:
+      - { id: "q1", prompt: { en: "In which year does the flashback begin?" }, options: { en: ["1975", "1980", "1990"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Who takes the district chief post of the party from Somu?" }, options: { en: ["Ravi", "Kanagu", "Palaniswamy"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "Who turns out to be the convict stabbed outside the prison?" }, options: { en: ["Kasi", "Paraman", "Dopa"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-aadukalam"
+    medium: "film"
+    title: { text: "ஆடுகளம்", reading: "āṭukaḷam" }
+    creator: ["ta-vetrimaaran"]
+    year: 2011
+    level: "B1"
+    briefing: { en: "A 2011 drama by Vetrimaaran set in the cockfighting world of Madurai. A young man called Karuppu joins the rooster trainer Pettaikaran and learns what rivalry, pride and jealousy can do." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the name of the police inspector who is Pettaikaran's rival?" }, options: { en: ["Durai", "Ayub", "Rathnaswamy"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "Who does Karuppu fall in love with?" }, options: { en: ["Jayashree", "Kalyani", "Irene"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "What does the loser of the one-on-one fight have to do?" }, options: { en: ["Hand over his best bird", "Leave the city for a year", "Shave his head and quit"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-visaranai"
+    medium: "film"
+    title: { text: "விசாரணை", reading: "vicāraṇai" }
+    creator: ["ta-vetrimaaran"]
+    year: 2015
+    level: "B1"
+    briefing: { en: "A 2015 crime drama by Vetrimaaran, based on the novel Lock Up by M. Chandrakumar. Four Tamil labourers in Guntur are caught in the machinery of the police and then in a plot that is much bigger than they are. It deals with hard subjects." }
+    questions:
+      - { id: "q1", prompt: { en: "Where do the four labourers live when the film begins?" }, options: { en: ["In a hostel in Chennai", "On a farm near Madurai", "In a park in Guntur"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "Why are the four men arrested?" }, options: { en: ["They had crossed the state border", "They were seen fighting in a bazaar", "Police must close a robbery case"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "Who translates for the men in court and vouches for them?" }, options: { en: ["Muthuvel, a police inspector", "Pandi, one of the four men", "The judge's own clerk"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-pariyerum-perumal"
+    medium: "film"
+    title: { text: "பரியேறும் பெருமாள்", reading: "pariyēṟum perumāḷ" }
+    creator: ["ta-mari-selvaraj"]
+    year: 2018
+    level: "B1"
+    briefing: { en: "A 2018 drama by Mari Selvaraj about a young man from a lower-caste family who goes to law college in Tirunelveli. His friendship with an upper-caste classmate brings him into conflict with her relatives." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the name of Pariyan's dog, whose loss opens the story?" }, options: { en: ["Karuppi", "Raja", "Moti"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who offers to teach Pariyan English?" }, options: { en: ["His mother, a teacher", "Sankaralingam, her cousin", "Jothi Mahalakshmi (Jo)"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "What does Pariyan's father do for a living?" }, options: { en: ["He drives a bus", "He farms rice", "He is a folk dancer"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-96"
+    medium: "film"
+    title: { text: "96" }
+    creator: ["ta-c-prem-kumar"]
+    year: 2018
+    level: "B1"
+    briefing: { en: "A 2018 romance by C. Prem Kumar. A travel photographer is added to a class WhatsApp group, goes to a school reunion in Chennai and meets the girl he loved at school, and the two spend one long night together." }
+    questions:
+      - { id: "q1", prompt: { en: "In which town is Ram's old school?" }, options: { en: ["Coimbatore", "Thanjavur", "Madurai"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What does Ram keep in his apartment that Jaanu notices?" }, options: { en: ["Her old school uniform", "Her old letters", "A school photograph"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Where does Jaanu fly back to at the end?" }, options: { en: ["Dubai", "London", "Singapore"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-asuran"
+    medium: "film"
+    title: { text: "அசுரன்", reading: "acuraṉ" }
+    creator: ["ta-vetrimaaran"]
+    year: 2019
+    level: "B1"
+    briefing: { en: "A 2019 drama by Vetrimaaran, based on the novel Vekkai by Poomani. A farming family fights a powerful landlord who wants their land, and a father does everything he can to keep his younger son safe. It has violent scenes." }
+    questions:
+      - { id: "q1", prompt: { en: "What does the landlord Narasimhan want from the family?" }, options: { en: ["Their house in the town", "Their three-acre farm", "Their cattle"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What is the name of Sivasaami's elder son?" }, options: { en: ["Murugan", "Chidambaram", "Velmurugan"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "How does Sivasaami protect Chidambaram at the end?" }, options: { en: ["He sends the boy abroad", "He takes the blame himself", "He pays the landlord off"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-soorarai-pottru"
+    medium: "film"
+    title: { text: "சூரரைப் போற்று", reading: "cūraraip pōṟṟu" }
+    creator: ["ta-sudha-kongara"]
+    year: 2020
+    level: "B1"
+    briefing: { en: "A 2020 drama by Sudha Kongara, loosely based on the book Simply Fly by G. R. Gopinath. A former air force pilot dreams of a low-cost airline and has to face a powerful rival. It was released on Amazon Prime Video." }
+    questions:
+      - { id: "q1", prompt: { en: "What is Nedumaaran Rajangam's nickname?" }, options: { en: ["Raja", "Velu", "Maara"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "What is the name of his airline?" }, options: { en: ["Deccan Air", "Jaz Airlines", "Plane Am"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Where are tickets sold to fill the first flights?" }, options: { en: ["Only on the internet", "Through travel agents", "At stations and petrol pumps"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-one-part-woman"
+    medium: "book"
+    title: { text: "மாதொருபாகன்", reading: "mātorupākaṉ" }
+    creator: ["ta-perumal-murugan"]
+    year: 2010
+    level: "B1"
+    script: "tamil"
+    briefing: { en: "A 2010 Tamil novel by Perumal Murugan, called Mathorubhagan in Tamil, translated into English by Aniruddhan Vasudevan in 2013. It follows a married couple who face pressure from their families and village because they have no child." }
+    questions:
+      - { id: "q1", prompt: { en: "How many years have Kali and Ponna been married without a child when the story begins?" }, options: { en: ["Five", "Twelve", "Twenty"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Whose chariot festival do the families suggest Ponna should attend?" }, options: { en: ["Ardhanarishvara", "Ganesha", "Murugan"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "In which town is the novel set?" }, options: { en: ["Tiruchengode", "Salem", "Madurai"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-sivagamiyin-sapatham"
+    medium: "book"
+    title: { text: "சிவகாமியின் சபதம்", reading: "civakāmiyiṉ capatam" }
+    creator: ["ta-kalki-krishnamurthy"]
+    year: 1944
+    level: "B1"
+    script: "tamil"
+    briefing: { en: "A historical novel by Kalki Krishnamurthy, serialised in the magazine Kalki from 1944 to 1946 and published as a book in 1948. It is set in 7th-century South India, in the time of the Pallava and Chalukya kings." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Paranjothi save Sivagami and her father from at the start?" }, options: { en: ["A fire", "A flood", "A mad elephant"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "Which king besieges Kanchi?" }, options: { en: ["Pulakeshin", "Mahendravarman", "Narasimhavarman"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What does Paranjothi become in the end?" }, options: { en: ["A king of the Pandyas", "A Pallava soldier", "A Saivite monk"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-karnan"
+    medium: "film"
+    title: { text: "கர்ணன்", reading: "karṇaṉ" }
+    creator: ["ta-mari-selvaraj"]
+    year: 2021
+    level: "B1"
+    briefing: { en: "A 2021 drama by Mari Selvaraj set in southern Tamil Nadu in the late 1990s. A hot-headed young man stands up for his village, which has been denied a bus stop, against a prejudiced police officer." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Karnan win at the start of the film?" }, options: { en: ["A bullock race", "A sword competition", "A kabaddi cup"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "For which force does Karnan receive an appointment letter?" }, options: { en: ["The navy", "The CRPF", "The air force"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Who sacrifices his life to rally the villagers?" }, options: { en: ["Vadamalaiyan", "Yaema Raja", "Kannabiran"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "ta-rec-anjali"
+    medium: "film"
+    title: { text: "அஞ்சலி", reading: "añcali" }
+    creator: ["ta-mani-ratnam"]
+    year: 1990
+    level: "B1"
+    briefing: { en: "A 1990 family drama by Mani Ratnam about a couple and their children living in a housing colony, and the secret about a third child that comes out. It is a gentle film with a sad ending." }
+    questions:
+      - { id: "q1", prompt: { en: "Whom do the children of the colony fear?" }, options: { en: ["Dr. Sheela, a doctor", "Dennis Joseph, an ex-convict", "The colony's watchman"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What was Anjali first reported to have been at birth?" }, options: { en: ["Stillborn", "Premature", "Adopted"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Which child forms a close bond with Anjali?" }, options: { en: ["Chitra", "Anu", "Arjun"] }, answer: 3 }
+    tags: ["unreviewed"]

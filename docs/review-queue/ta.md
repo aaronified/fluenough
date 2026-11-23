@@ -272,8 +272,26 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-8101 | ta-arts | வாசி (vāci), to play an instrument or to read: is it right to teach both senses on one card? | ta-words4 | 2026-11-23 |
 | ta-8103 | ta-arts | The verb படை (paṭai), to create, has the same spelling as the word for army, which the course cannot teach as a second card: is the meaning and the note enough? | ta-words4 | 2026-11-23 |
 | ta-8154 | ta-grammar-verb-classes | முற்றுகையிடு (muṟṟukaiyiṭu), to besiege, is built as an -இடு compound (முற்றுகையிட்டான், முற்றுகையிடுவான்); is the stem right? | Sonnet builder | 2026-11-23 |
-
 | ta-8251 | ta-grammar-verb-classes | தோற்று (tōṟṟu) is the linking form of தோல்; its row is built as a verb with தோற்றான், தோற்பான், தோற்கிறான்; is that right? | Sonnet builder | 2026-11-23 |
+| ta-6401 | ta-situations | Spoken போகணும் (pōkaṇum) for போக வேண்டும்: right spelling and register for a taxi request? | Sonnet builder | 2026-11-23 |
+| ta-6428 | ta-situations | Spoken ஆஸ்பத்திரி and போகணும்: natural for an urgent statement, and spelled right? | Sonnet builder | 2026-11-23 |
+| ta-6423 | ta-situations | Is உடம்பு (spoken) the right register here, and is the note's claim that உடல் is the written word right? | Sonnet builder | 2026-11-23 |
+| ta-6459 | ta-situations | Is this the natural cry for a fire, or would people say நெருப்பு or தீ விபத்து? | Sonnet builder | 2026-11-23 |
+| ta-6418 | ta-situations | Is குறைவாக natural here, or do speakers say கம்மியா in a restaurant? | Sonnet builder | 2026-11-23 |
+| ta-6408 | ta-situations | Do shoppers say இதன் or the spoken இதோட? The note says spoken Tamil prefers இதோட. | Sonnet builder | 2026-11-23 |
+| ta-6442 | ta-situations | Natural way to ask a hotel whether hot water runs from the tap? | Sonnet builder | 2026-11-23 |
+| ta-6451 | ta-situations | Is போடு the right verb for paying money into an account? | Sonnet builder | 2026-11-23 |
+| ta-6444 | ta-situations | Natural for a wake-up call request? | Sonnet builder | 2026-11-23 |
+| ta-6468 | ta-situations | Is வழி தவறு natural for 'I am lost', or is காணாமல் போய்விட்டேன் heard more? | Sonnet builder | 2026-11-23 |
+| ta-6461 | ta-situations | Natural for 'my wallet was stolen', and is the impersonal 'they stole' reading right? | Sonnet builder | 2026-11-23 |
+| ta-6454 | ta-situations | Is நீங்கள் எப்படி இருக்கிறீர்கள் the usual greeting, or do speakers say சௌக்கியமா? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-situations (ta-6400 to ta-6469) | The 70 new phrase cards and the 10 sheet titles (ta, hi, bn) are the builder's own; check that each phrase is common, polite and spelled right, and that the sheet titles read well. | Sonnet builder | 2026-11-23 |
+| unit-level | decks/recommendations/ta.yaml | ta-rec-kaadhal: Dropped from the 20 (Kaadhal, 2004, Balaji Sakthivel): en.wikipedia gives his birth as 1 January 1975 but its own short description and Wikidata say 1964, so the creator's birth year could not be verified; Karnan took its place. | Sonnet builder | 2026-11-23 |
+| unit-level | decks/recommendations/ta.yaml | ta-rec-naveena-saraswathi-sabatham: Dropped from the 20 (Naveena Saraswathi Sabatham, 2013): the film's en.wikipedia page names the director K. Chandru but links no article for him (the K. Chandru article is a judge), so no birth year could be read from any source; Anjali took its place. | Sonnet builder | 2026-11-23 |
+| unit-level | decks/creators/ta.yaml | ta-bharathiraja: en.wikipedia gives Bharathiraja's birth as 17 July 1941 and death as 10 June 2026, but its short description says 1942 to 2026: is 1941 right? | Sonnet builder | 2026-11-23 |
+| unit-level | decks/creators/ta.yaml | ta-sudha-kongara: Birth year 1971 comes from the article's '1971 births' category only; the text gives no birth date. Can it be checked? | Sonnet builder | 2026-11-23 |
+| unit-level | decks/creators/ta.yaml | ta-mari-selvaraj: Birth year 1984 comes from the article's opening ('born 1984') with no full date. Can it be checked? | Sonnet builder | 2026-11-23 |
+| unit-level | decks/recommendations/ta.yaml | All 20 recommendations: briefings, levels (all a default B1) and quiz questions are the builder's own from the English Wikipedia plot sections read on 2026-11-23; check that each question is answerable only by someone who has watched or read the work, and that the levels fit. | Sonnet builder | 2026-11-23 |
 | ta-6205 | ta-proverbs-1 | Percival gives no explanation; is the figurative sense (harm to the one who sustains others ruins her dependants) right? | Haiku deck worker (ta-kinds1) | 2026-11-23 |
 | ta-6206 | ta-proverbs-1 | Is the verb form முட்டானால் (muṭṭāṉāl) glossed right as 'if it falls short' (from முட்டு (muṭṭu), shortage)? | Haiku deck worker (ta-kinds1) | 2026-11-23 |
 | ta-6207 | ta-proverbs-1 | Is the sense 'share even a little with guests before eating' right for the proverb மருந்தே ஆயினும் விருந்தோடு உண் (maruntē āyiṉum viruntōṭu uṇ)? | Haiku deck worker (ta-kinds1) | 2026-11-23 |
@@ -343,3 +361,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | dropped: கூட்டிக்கொடு | ta-multiword-aspectual-compound | Tried as an extra headword to fill the deck: no page on en.wiktionary, so not used. | Haiku deck worker (ta-kinds1) | 2026-11-23 |
 | dropped: வரப்பண்ணு | ta-multiword-aspectual-compound | A causative (infinitive plus பண்ணு), which the plan keeps out of the aspectual deck; replaced by கற்றுத்தா. | Haiku deck worker (ta-kinds1) | 2026-11-23 |
 | dropped: கற்றுத்தா (en.wiktionary) | ta-multiword-aspectual-compound | No page on en.wiktionary, but ta.wiktionary has one, so it is used. | Haiku deck worker (ta-kinds1) | 2026-11-23 |
+| unit-level | decks/recommendations/ta.yaml | ta-rec-anbe-sivam (Anbe Sivam, 2003) and creator ta-sundar-c were dropped from the 20: the director Sundar C is a politician and is living, and the rule is no living politicians; Thillana Mohanambal (1968, A. P. Nagarajan) took its place. | Sonnet builder | 2026-11-23 |
+| unit-level | decks/recommendations/ta.yaml | Replacement work Thillana Mohanambal: en.wikipedia says its novel ends tragically and the film in marriage; the quiz asks only about the film. Is A. P. Nagarajan's en.wikipedia category 'Politicians from Coimbatore' about him or about a namesake? He died in 1977. | Sonnet builder | 2026-11-23 |
+| unit-level | ta-situations (ta-6400, ta-6401, ta-6402, ta-6403, ta-6404, ta-6405, ta-6406, ta-6407, ta-6409, ta-6410, ta-6421, ta-6454, ta-6455, ta-6456, ta-6463, ta-6464, ta-6466, ta-6467, ta-6468, ta-6469) | These 20 new phrase cards give inline glossed bases, not refs, for words whose own cards are taught in later units of the path (for example ஒரு, இரு, வழி, பக்கம்); is that acceptable for teaching order? | Sonnet builder | 2026-11-23 |
