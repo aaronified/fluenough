@@ -1,0 +1,1073 @@
+schema: 1
+id: "ta-feelings"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "feelings"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-7060"
+    target: "சந்தோஷம்"
+    reading: "cantōṣam"
+    ipa: "sant̪oːʂam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குச் சந்தோஷம்."
+        reading: "eṉakkuc cantōṣam."
+        ipa: "enakkus sant̪oːʂam"
+        bases: [{ word: "எனக்குச்", base: "நான்", reading: "nāṉ" }, { word: "சந்தோஷம்", base: "சந்தோஷம்", reading: "cantōṣam" }]
+      - target: "குழந்தைக்குச் சந்தோஷம்."
+        reading: "kuḻantaikkuc cantōṣam."
+        ipa: "kuɻant̪aikkus sant̪oːʂam"
+        bases: [{ word: "குழந்தைக்குச்", base: "குழந்தை", reading: "kuḻantai" }, { word: "சந்தோஷம்", base: "சந்தோஷம்", reading: "cantōṣam" }]
+  - id: "ta-7061"
+    target: "துக்கம்"
+    reading: "tukkam"
+    ipa: "t̪ukkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவருக்குத் துக்கம்."
+        reading: "avarukkut tukkam."
+        ipa: "aʋaɾukkut̪ t̪ukkam"
+        bases: [{ word: "அவருக்குத்", base: "அவர்", reading: "avar" }, { word: "துக்கம்", base: "துக்கம்", reading: "tukkam" }]
+      - target: "துக்கம் வருகிறது."
+        reading: "tukkam varukiṟatu."
+        ipa: "t̪ukkam ʋaɾukirat̪u"
+        bases: [{ word: "துக்கம்", base: "துக்கம்", reading: "tukkam" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+  - id: "ta-7062"
+    target: "கோபம்"
+    reading: "kōpam"
+    ipa: "koːpam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குக் கோபம் வருகிறது."
+        reading: "eṉakkuk kōpam varukiṟatu."
+        ipa: "enakkuk koːpam ʋaɾukirat̪u"
+        bases: [{ word: "எனக்குக்", base: "நான்", reading: "nāṉ" }, { word: "கோபம்", base: "கோபம்", reading: "kōpam" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+      - target: "அவன் கோபம் அதிகம்."
+        reading: "avaṉ kōpam atikam."
+        ipa: "aʋan koːpam at̪ikam"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "கோபம்", base: "கோபம்", reading: "kōpam" }, { word: "அதிகம்", ref: "ta-0159" }]
+  - id: "ta-7063"
+    target: "கவலை"
+    reading: "kavalai"
+    ipa: "kaʋalai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குக் கவலை இல்லை."
+        reading: "eṉakkuk kavalai illai."
+        ipa: "enakkuk kaʋalai illai"
+        bases: [{ word: "எனக்குக்", base: "நான்", reading: "nāṉ" }, { word: "கவலை", base: "கவலை", reading: "kavalai" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "அம்மாவுக்குக் கவலை."
+        reading: "ammāvukkuk kavalai."
+        ipa: "ammaːʋukkuk kaʋalai"
+        bases: [{ word: "அம்மாவுக்குக்", base: "அம்மா", reading: "ammā" }, { word: "கவலை", base: "கவலை", reading: "kavalai" }]
+  - id: "ta-7064"
+    target: "நம்பிக்கை"
+    reading: "nampikkai"
+    ipa: "nampikkai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு நம்பிக்கை இருக்கிறது."
+        reading: "eṉakku nampikkai irukkiṟatu."
+        ipa: "enakku nampikkai iɾukkirat̪u"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "நம்பிக்கை", base: "நம்பிக்கை", reading: "nampikkai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "உன்மேல் நம்பிக்கை இருக்கிறது."
+        reading: "uṉmēl nampikkai irukkiṟatu."
+        ipa: "unmeːl nampikkai iɾukkirat̪u"
+        bases: [{ word: "உன்மேல்", base: "நீ", reading: "nī" }, { word: "நம்பிக்கை", base: "நம்பிக்கை", reading: "nampikkai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7065"
+    target: "ஆசை"
+    reading: "ācai"
+    ipa: "aːsai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு ஆசை இருக்கிறது."
+        reading: "eṉakku ācai irukkiṟatu."
+        ipa: "enakku aːsai iɾukkirat̪u"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "ஆசை", base: "ஆசை", reading: "ācai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "அவனுக்குப் பெரிய ஆசை."
+        reading: "avaṉukkup periya ācai."
+        ipa: "aʋanukkup peɾija aːsai"
+        bases: [{ word: "அவனுக்குப்", base: "அவன்", reading: "avaṉ" }, { word: "பெரிய", ref: "ta-0167" }, { word: "ஆசை", base: "ஆசை", reading: "ācai" }]
+  - id: "ta-7066"
+    target: "கனவு"
+    reading: "kaṉavu"
+    ipa: "kanaʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "homograph" }
+    bases: "self"
+    examples:
+      - target: "நேற்று ஒரு கனவு."
+        reading: "nēṟṟu oru kaṉavu."
+        ipa: "neːrru oɾu kanaʋu"
+        bases: [{ word: "நேற்று", ref: "ta-0134" }, { word: "ஒரு", ref: "ta-0419" }, { word: "கனவு", base: "கனவு", reading: "kaṉavu" }]
+      - target: "எனக்குப் பெரிய கனவு இருக்கிறது."
+        reading: "eṉakkup periya kaṉavu irukkiṟatu."
+        ipa: "enakkup peɾija kanaʋu iɾukkirat̪u"
+        bases: [{ word: "எனக்குப்", base: "நான்", reading: "nāṉ" }, { word: "பெரிய", ref: "ta-0167" }, { word: "கனவு", base: "கனவு", reading: "kaṉavu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7067"
+    target: "எதிர்பார்ப்பு"
+    reading: "etirpārppu"
+    ipa: "et̪iɾpaːɾppu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு எதிர்பார்ப்பு இருக்கிறது."
+        reading: "eṉakku etirpārppu irukkiṟatu."
+        ipa: "enakku et̪iɾpaːɾppu iɾukkirat̪u"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "எதிர்பார்ப்பு", base: "எதிர்பார்ப்பு", reading: "etirpārppu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "அவன் எதிர்பார்ப்பு அதிகம்."
+        reading: "avaṉ etirpārppu atikam."
+        ipa: "aʋan et̪iɾpaːɾppu at̪ikam"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "எதிர்பார்ப்பு", base: "எதிர்பார்ப்பு", reading: "etirpārppu" }, { word: "அதிகம்", ref: "ta-0159" }]
+  - id: "ta-7068"
+    target: "அன்பு"
+    reading: "aṉpu"
+    ipa: "anpu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அம்மாவுக்கு அன்பு அதிகம்."
+        reading: "ammāvukku aṉpu atikam."
+        ipa: "ammaːʋukku anpu at̪ikam"
+        bases: [{ word: "அம்மாவுக்கு", base: "அம்மா", reading: "ammā" }, { word: "அன்பு", base: "அன்பு", reading: "aṉpu" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "அன்புடன் எழுது."
+        reading: "aṉpuṭaṉ eḻutu."
+        ipa: "anpuʈan eɻut̪u"
+        bases: [{ word: "அன்புடன்", base: "அன்பு", reading: "aṉpu" }, { word: "எழுது", ref: "ta-0124" }]
+  - id: "ta-7069"
+    target: "வெறுப்பு"
+    reading: "veṟuppu"
+    ipa: "ʋeruppu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு வெறுப்பு வருகிறது."
+        reading: "eṉakku veṟuppu varukiṟatu."
+        ipa: "enakku ʋeruppu ʋaɾukirat̪u"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "வெறுப்பு", base: "வெறுப்பு", reading: "veṟuppu" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+      - target: "வெறுப்பு வேண்டாம்."
+        reading: "veṟuppu vēṇṭām."
+        ipa: "ʋeruppu ʋeːɳʈaːm"
+        bases: [{ word: "வெறுப்பு", base: "வெறுப்பு", reading: "veṟuppu" }, { word: "வேண்டாம்", ref: "ta-0410" }]
+  - id: "ta-7070"
+    target: "பொறாமை"
+    reading: "poṟāmai"
+    ipa: "poraːmai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவனுக்குப் பொறாமை."
+        reading: "avaṉukkup poṟāmai."
+        ipa: "aʋanukkup poraːmai"
+        bases: [{ word: "அவனுக்குப்", base: "அவன்", reading: "avaṉ" }, { word: "பொறாமை", base: "பொறாமை", reading: "poṟāmai" }]
+      - target: "பொறாமை கெட்டது."
+        reading: "poṟāmai keṭṭatu."
+        ipa: "poraːmai keʈʈat̪u"
+        bases: [{ word: "பொறாமை", base: "பொறாமை", reading: "poṟāmai" }, { word: "கெட்டது", base: "கெட்டது", reading: "keṭṭatu" }]
+  - id: "ta-7071"
+    target: "வெட்கம்"
+    reading: "veṭkam"
+    ipa: "ʋeʈkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு வெட்கம் வருகிறது."
+        reading: "eṉakku veṭkam varukiṟatu."
+        ipa: "enakku ʋeʈkam ʋaɾukirat̪u"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "வெட்கம்", base: "வெட்கம்", reading: "veṭkam" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+      - target: "குழந்தைக்கு வெட்கம்."
+        reading: "kuḻantaikku veṭkam."
+        ipa: "kuɻant̪aikku ʋeʈkam"
+        bases: [{ word: "குழந்தைக்கு", base: "குழந்தை", reading: "kuḻantai" }, { word: "வெட்கம்", base: "வெட்கம்", reading: "veṭkam" }]
+  - id: "ta-7072"
+    target: "பெருமை"
+    reading: "perumai"
+    ipa: "peɾumai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குப் பெருமை."
+        reading: "eṉakkup perumai."
+        ipa: "enakkup peɾumai"
+        bases: [{ word: "எனக்குப்", base: "நான்", reading: "nāṉ" }, { word: "பெருமை", base: "பெருமை", reading: "perumai" }]
+      - target: "இது பெரிய பெருமை."
+        reading: "itu periya perumai."
+        ipa: "it̪u peɾija peɾumai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0167" }, { word: "பெருமை", base: "பெருமை", reading: "perumai" }]
+  - id: "ta-7073"
+    target: "நிம்மதி"
+    reading: "nimmati"
+    ipa: "nimmat̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு நிம்மதி இல்லை."
+        reading: "eṉakku nimmati illai."
+        ipa: "enakku nimmat̪i illai"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "நிம்மதி", base: "நிம்மதி", reading: "nimmati" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "இப்போது நிம்மதி."
+        reading: "ippōtu nimmati."
+        ipa: "ippoːt̪u nimmat̪i"
+        bases: [{ word: "இப்போது", ref: "ta-0132" }, { word: "நிம்மதி", base: "நிம்மதி", reading: "nimmati" }]
+  - id: "ta-7074"
+    target: "அமைதி"
+    reading: "amaiti"
+    ipa: "amait̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே அமைதி இருக்கிறது."
+        reading: "iṅkē amaiti irukkiṟatu."
+        ipa: "iŋkeː amait̪i iɾukkirat̪u"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "அமைதி", base: "அமைதி", reading: "amaiti" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "அமைதி வேண்டும்."
+        reading: "amaiti vēṇṭum."
+        ipa: "amait̪i ʋeːɳʈum"
+        bases: [{ word: "அமைதி", base: "அமைதி", reading: "amaiti" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-7075"
+    target: "எரிச்சல்"
+    reading: "ericcal"
+    ipa: "eɾitʃtʃal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "homograph" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு எரிச்சல் வருகிறது."
+        reading: "eṉakku ericcal varukiṟatu."
+        ipa: "enakku eɾitʃtʃal ʋaɾukirat̪u"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "எரிச்சல்", base: "எரிச்சல்", reading: "ericcal" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+      - target: "அவருக்கு எரிச்சல்."
+        reading: "avarukku ericcal."
+        ipa: "aʋaɾukku eɾitʃtʃal"
+        bases: [{ word: "அவருக்கு", base: "அவர்", reading: "avar" }, { word: "எரிச்சல்", base: "எரிச்சல்", reading: "ericcal" }]
+  - id: "ta-7076"
+    target: "ஏமாற்றம்"
+    reading: "ēmāṟṟam"
+    ipa: "eːmaːrram"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு ஏமாற்றம்."
+        reading: "eṉakku ēmāṟṟam."
+        ipa: "enakku eːmaːrram"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "ஏமாற்றம்", base: "ஏமாற்றம்", reading: "ēmāṟṟam" }]
+      - target: "இது பெரிய ஏமாற்றம்."
+        reading: "itu periya ēmāṟṟam."
+        ipa: "it̪u peɾija eːmaːrram"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0167" }, { word: "ஏமாற்றம்", base: "ஏமாற்றம்", reading: "ēmāṟṟam" }]
+  - id: "ta-7077"
+    target: "அதிர்ச்சி"
+    reading: "atircci"
+    ipa: "at̪iɾtʃtʃi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு அதிர்ச்சி."
+        reading: "eṉakku atircci."
+        ipa: "enakku at̪iɾtʃtʃi"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "அதிர்ச்சி", base: "அதிர்ச்சி", reading: "atircci" }]
+      - target: "அது பெரிய அதிர்ச்சி."
+        reading: "atu periya atircci."
+        ipa: "at̪u peɾija at̪iɾtʃtʃi"
+        bases: [{ word: "அது", ref: "ta-0061" }, { word: "பெரிய", ref: "ta-0167" }, { word: "அதிர்ச்சி", base: "அதிர்ச்சி", reading: "atircci" }]
+  - id: "ta-7078"
+    target: "ஆச்சரியம்"
+    reading: "āccariyam"
+    ipa: "aːtʃtʃaɾijam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு ஆச்சரியம்."
+        reading: "eṉakku āccariyam."
+        ipa: "enakku aːtʃtʃaɾijam"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "ஆச்சரியம்", base: "ஆச்சரியம்", reading: "āccariyam" }]
+      - target: "இது ஆச்சரியம்."
+        reading: "itu āccariyam."
+        ipa: "it̪u aːtʃtʃaɾijam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "ஆச்சரியம்", base: "ஆச்சரியம்", reading: "āccariyam" }]
+  - id: "ta-7079"
+    target: "தனிமை"
+    reading: "taṉimai"
+    ipa: "t̪animai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குத் தனிமை."
+        reading: "eṉakkut taṉimai."
+        ipa: "enakkut̪ t̪animai"
+        bases: [{ word: "எனக்குத்", base: "நான்", reading: "nāṉ" }, { word: "தனிமை", base: "தனிமை", reading: "taṉimai" }]
+      - target: "தனிமை கஷ்டம்."
+        reading: "taṉimai kaṣṭam."
+        ipa: "t̪animai kaʂʈam"
+        bases: [{ word: "தனிமை", base: "தனிமை", reading: "taṉimai" }, { word: "கஷ்டம்", base: "கஷ்டம்", reading: "kaṣṭam" }]
+  - id: "ta-7080"
+    target: "சலிப்பு"
+    reading: "calippu"
+    ipa: "salippu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குச் சலிப்பு வருகிறது."
+        reading: "eṉakkuc calippu varukiṟatu."
+        ipa: "enakkus salippu ʋaɾukirat̪u"
+        bases: [{ word: "எனக்குச்", base: "நான்", reading: "nāṉ" }, { word: "சலிப்பு", base: "சலிப்பு", reading: "calippu" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+      - target: "சலிப்பு வேண்டாம்."
+        reading: "calippu vēṇṭām."
+        ipa: "salippu ʋeːɳʈaːm"
+        bases: [{ word: "சலிப்பு", base: "சலிப்பு", reading: "calippu" }, { word: "வேண்டாம்", ref: "ta-0410" }]
+  - id: "ta-7081"
+    target: "உற்சாகம்"
+    reading: "uṟcākam"
+    ipa: "ursaːkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவனுக்கு உற்சாகம்."
+        reading: "avaṉukku uṟcākam."
+        ipa: "aʋanukku ursaːkam"
+        bases: [{ word: "அவனுக்கு", base: "அவன்", reading: "avaṉ" }, { word: "உற்சாகம்", base: "உற்சாகம்", reading: "uṟcākam" }]
+      - target: "உற்சாகம் இருக்கிறது."
+        reading: "uṟcākam irukkiṟatu."
+        ipa: "ursaːkam iɾukkirat̪u"
+        bases: [{ word: "உற்சாகம்", base: "உற்சாகம்", reading: "uṟcākam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7082"
+    target: "குழப்பம்"
+    reading: "kuḻappam"
+    ipa: "kuɻappam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "எனக்குக் குழப்பம்."
+        reading: "eṉakkuk kuḻappam."
+        ipa: "enakkuk kuɻappam"
+        bases: [{ word: "எனக்குக்", base: "நான்", reading: "nāṉ" }, { word: "குழப்பம்", base: "குழப்பம்", reading: "kuḻappam" }]
+      - target: "குழப்பம் இல்லை."
+        reading: "kuḻappam illai."
+        ipa: "kuɻappam illai"
+        bases: [{ word: "குழப்பம்", base: "குழப்பம்", reading: "kuḻappam" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-7083"
+    target: "சந்தேகம்"
+    reading: "cantēkam"
+    ipa: "sant̪eːkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குச் சந்தேகம் இருக்கிறது."
+        reading: "eṉakkuc cantēkam irukkiṟatu."
+        ipa: "enakkus sant̪eːkam iɾukkirat̪u"
+        bases: [{ word: "எனக்குச்", base: "நான்", reading: "nāṉ" }, { word: "சந்தேகம்", base: "சந்தேகம்", reading: "cantēkam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "உனக்குச் சந்தேகம் இருக்கிறதா?"
+        reading: "uṉakkuc cantēkam irukkiṟatā?"
+        ipa: "unakkus sant̪eːkam iɾukkirat̪aː"
+        bases: [{ word: "உனக்குச்", base: "நீ", reading: "nī" }, { word: "சந்தேகம்", base: "சந்தேகம்", reading: "cantēkam" }, { word: "இருக்கிறதா", base: "இரு", reading: "iru" }]
+  - id: "ta-7084"
+    target: "தைரியம்"
+    reading: "tairiyam"
+    ipa: "t̪aiɾijam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவனுக்குத் தைரியம் இருக்கிறது."
+        reading: "avaṉukkut tairiyam irukkiṟatu."
+        ipa: "aʋanukkut̪ t̪aiɾijam iɾukkirat̪u"
+        bases: [{ word: "அவனுக்குத்", base: "அவன்", reading: "avaṉ" }, { word: "தைரியம்", base: "தைரியம்", reading: "tairiyam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "தைரியம் வேண்டும்."
+        reading: "tairiyam vēṇṭum."
+        ipa: "t̪aiɾijam ʋeːɳʈum"
+        bases: [{ word: "தைரியம்", base: "தைரியம்", reading: "tairiyam" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-7085"
+    target: "பொறுமை"
+    reading: "poṟumai"
+    ipa: "porumai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பொறுமை வேண்டும்."
+        reading: "poṟumai vēṇṭum."
+        ipa: "porumai ʋeːɳʈum"
+        bases: [{ word: "பொறுமை", base: "பொறுமை", reading: "poṟumai" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "அவனுக்குப் பொறுமை இல்லை."
+        reading: "avaṉukkup poṟumai illai."
+        ipa: "aʋanukkup porumai illai"
+        bases: [{ word: "அவனுக்குப்", base: "அவன்", reading: "avaṉ" }, { word: "பொறுமை", base: "பொறுமை", reading: "poṟumai" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-7086"
+    target: "மன்னிப்பு"
+    reading: "maṉṉippu"
+    ipa: "mannippu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மன்னிப்பு கேள்."
+        reading: "maṉṉippu kēḷ."
+        ipa: "mannippu keːɭ"
+        bases: [{ word: "மன்னிப்பு", base: "மன்னிப்பு", reading: "maṉṉippu" }, { word: "கேள்", ref: "ta-0122" }]
+      - target: "மன்னிப்பு கொடு."
+        reading: "maṉṉippu koṭu."
+        ipa: "mannippu koʈu"
+        bases: [{ word: "மன்னிப்பு", base: "மன்னிப்பு", reading: "maṉṉippu" }, { word: "கொடு", ref: "ta-0125" }]
+  - id: "ta-7087"
+    target: "ஞாபகம்"
+    reading: "ñāpakam"
+    ipa: "ɲaːpakam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு ஞாபகம் இல்லை."
+        reading: "eṉakku ñāpakam illai."
+        ipa: "enakku ɲaːpakam illai"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "ஞாபகம்", base: "ஞாபகம்", reading: "ñāpakam" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "உன் ஞாபகம் வருகிறது."
+        reading: "uṉ ñāpakam varukiṟatu."
+        ipa: "un ɲaːpakam ʋaɾukirat̪u"
+        bases: [{ word: "உன்", base: "நீ", reading: "nī" }, { word: "ஞாபகம்", base: "ஞாபகம்", reading: "ñāpakam" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+  - id: "ta-7088"
+    target: "நினைவு"
+    reading: "niṉaivu"
+    ipa: "ninaiʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நல்ல நினைவு."
+        reading: "nalla niṉaivu."
+        ipa: "nalla ninaiʋu"
+        bases: [{ word: "நல்ல", ref: "ta-0169" }, { word: "நினைவு", base: "நினைவு", reading: "niṉaivu" }]
+      - target: "எனக்கு நினைவு இருக்கிறது."
+        reading: "eṉakku niṉaivu irukkiṟatu."
+        ipa: "enakku ninaiʋu iɾukkirat̪u"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "நினைவு", base: "நினைவு", reading: "niṉaivu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-7089"
+    target: "உணர்வு"
+    reading: "uṇarvu"
+    ipa: "uɳaɾʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "இது நல்ல உணர்வு."
+        reading: "itu nalla uṇarvu."
+        ipa: "it̪u nalla uɳaɾʋu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நல்ல", ref: "ta-0169" }, { word: "உணர்வு", base: "உணர்வு", reading: "uṇarvu" }]
+      - target: "எனக்கு உணர்வு இல்லை."
+        reading: "eṉakku uṇarvu illai."
+        ipa: "enakku uɳaɾʋu illai"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "உணர்வு", base: "உணர்வு", reading: "uṇarvu" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-7090"
+    target: "மனநிலை"
+    reading: "maṉanilai"
+    ipa: "mananilai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "என் மனநிலை நல்லது."
+        reading: "eṉ maṉanilai nallatu."
+        ipa: "en mananilai nallat̪u"
+        bases: [{ word: "என்", base: "நான்", reading: "nāṉ" }, { word: "மனநிலை", base: "மனநிலை", reading: "maṉanilai" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "அவன் மனநிலை சரியில்லை."
+        reading: "avaṉ maṉanilai cariyillai."
+        ipa: "aʋan mananilai saɾijillai"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "மனநிலை", base: "மனநிலை", reading: "maṉanilai" }, { word: "சரியில்லை", base: "சரி", reading: "cari" }]
+  - id: "ta-7091"
+    target: "கண்ணீர்"
+    reading: "kaṇṇīr"
+    ipa: "kaɳɳiːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "கண்ணீர் வருகிறது."
+        reading: "kaṇṇīr varukiṟatu."
+        ipa: "kaɳɳiːɾ ʋaɾukirat̪u"
+        bases: [{ word: "கண்ணீர்", base: "கண்ணீர்", reading: "kaṇṇīr" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+      - target: "கண்ணீர் துடை."
+        reading: "kaṇṇīr tuṭai."
+        ipa: "kaɳɳiːɾ t̪uʈai"
+        bases: [{ word: "கண்ணீர்", base: "கண்ணீர்", reading: "kaṇṇīr" }, { word: "துடை", ref: "ta-1946" }]
+  - id: "ta-7092"
+    target: "புன்னகை"
+    reading: "puṉṉakai"
+    ipa: "punnakai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அவள் புன்னகை அழகு."
+        reading: "avaḷ puṉṉakai aḻaku."
+        ipa: "aʋaɭ punnakai aɻaku"
+        bases: [{ word: "அவள்", base: "அவள்", reading: "avaḷ" }, { word: "புன்னகை", base: "புன்னகை", reading: "puṉṉakai" }, { word: "அழகு", ref: "ta-1980" }]
+      - target: "புன்னகை செய்."
+        reading: "puṉṉakai cey."
+        ipa: "punnakai sej"
+        bases: [{ word: "புன்னகை", base: "புன்னகை", reading: "puṉṉakai" }, { word: "செய்", ref: "ta-0127" }]
+  - id: "ta-7093"
+    target: "வருத்தம்"
+    reading: "varuttam"
+    ipa: "ʋaɾut̪t̪am"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு வருத்தம்."
+        reading: "eṉakku varuttam."
+        ipa: "enakku ʋaɾut̪t̪am"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "வருத்தம்", base: "வருத்தம்", reading: "varuttam" }]
+      - target: "வருத்தம் வேண்டாம்."
+        reading: "varuttam vēṇṭām."
+        ipa: "ʋaɾut̪t̪am ʋeːɳʈaːm"
+        bases: [{ word: "வருத்தம்", base: "வருத்தம்", reading: "varuttam" }, { word: "வேண்டாம்", ref: "ta-0410" }]
+  - id: "ta-7094"
+    target: "ஆனந்தம்"
+    reading: "āṉantam"
+    ipa: "aːnant̪am"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு ஆனந்தம்."
+        reading: "eṉakku āṉantam."
+        ipa: "enakku aːnant̪am"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "ஆனந்தம்", base: "ஆனந்தம்", reading: "āṉantam" }]
+      - target: "இது ஆனந்தம்."
+        reading: "itu āṉantam."
+        ipa: "it̪u aːnant̪am"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "ஆனந்தம்", base: "ஆனந்தம்", reading: "āṉantam" }]
+  - id: "ta-7095"
+    target: "பதற்றம்"
+    reading: "pataṟṟam"
+    ipa: "pat̪arram"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குப் பதற்றம்."
+        reading: "eṉakkup pataṟṟam."
+        ipa: "enakkup pat̪arram"
+        bases: [{ word: "எனக்குப்", base: "நான்", reading: "nāṉ" }, { word: "பதற்றம்", base: "பதற்றம்", reading: "pataṟṟam" }]
+      - target: "பதற்றம் வேண்டாம்."
+        reading: "pataṟṟam vēṇṭām."
+        ipa: "pat̪arram ʋeːɳʈaːm"
+        bases: [{ word: "பதற்றம்", base: "பதற்றம்", reading: "pataṟṟam" }, { word: "வேண்டாம்", ref: "ta-0410" }]
+  - id: "ta-7096"
+    target: "அவமானம்"
+    reading: "avamāṉam"
+    ipa: "aʋamaːnam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "அது அவமானம்."
+        reading: "atu avamāṉam."
+        ipa: "at̪u aʋamaːnam"
+        bases: [{ word: "அது", ref: "ta-0061" }, { word: "அவமானம்", base: "அவமானம்", reading: "avamāṉam" }]
+      - target: "எனக்கு அவமானம்."
+        reading: "eṉakku avamāṉam."
+        ipa: "enakku aʋamaːnam"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "அவமானம்", base: "அவமானம்", reading: "avamāṉam" }]
+  - id: "ta-7097"
+    target: "கருணை"
+    reading: "karuṇai"
+    ipa: "kaɾuɳai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவருக்குக் கருணை இருக்கிறது."
+        reading: "avarukkuk karuṇai irukkiṟatu."
+        ipa: "aʋaɾukkuk kaɾuɳai iɾukkirat̪u"
+        bases: [{ word: "அவருக்குக்", base: "அவர்", reading: "avar" }, { word: "கருணை", base: "கருணை", reading: "karuṇai" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "கருணை வேண்டும்."
+        reading: "karuṇai vēṇṭum."
+        ipa: "kaɾuɳai ʋeːɳʈum"
+        bases: [{ word: "கருணை", base: "கருணை", reading: "karuṇai" }, { word: "வேண்டும்", ref: "ta-0409" }]
+  - id: "ta-7098"
+    target: "நட்பு"
+    reading: "naṭpu"
+    ipa: "naʈpu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நம் நட்பு நல்லது."
+        reading: "nam naṭpu nallatu."
+        ipa: "nam naʈpu nallat̪u"
+        bases: [{ word: "நம்", base: "நாம்", reading: "nām" }, { word: "நட்பு", base: "நட்பு", reading: "naṭpu" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "நட்பு முக்கியம்."
+        reading: "naṭpu mukkiyam."
+        ipa: "naʈpu mukkijam"
+        bases: [{ word: "நட்பு", base: "நட்பு", reading: "naṭpu" }, { word: "முக்கியம்", base: "முக்கியம்", reading: "mukkiyam" }]
+  - id: "ta-7099"
+    target: "பாசம்"
+    reading: "pācam"
+    ipa: "paːsam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அம்மாவுக்குப் பாசம்."
+        reading: "ammāvukkup pācam."
+        ipa: "ammaːʋukkup paːsam"
+        bases: [{ word: "அம்மாவுக்குப்", base: "அம்மா", reading: "ammā" }, { word: "பாசம்", base: "பாசம்", reading: "pācam" }]
+      - target: "பாசம் அதிகம்."
+        reading: "pācam atikam."
+        ipa: "paːsam at̪ikam"
+        bases: [{ word: "பாசம்", base: "பாசம்", reading: "pācam" }, { word: "அதிகம்", ref: "ta-0159" }]
+  - id: "ta-7100"
+    target: "மரியாதை"
+    reading: "mariyātai"
+    ipa: "maɾijaːt̪ai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பெரியவர்களுக்கு மரியாதை கொடு."
+        reading: "periyavarkaḷukku mariyātai koṭu."
+        ipa: "peɾijaʋaɾkaɭukku maɾijaːt̪ai koʈu"
+        bases: [{ word: "பெரியவர்களுக்கு", base: "பெரியவர்", reading: "periyavar" }, { word: "மரியாதை", base: "மரியாதை", reading: "mariyātai" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "அவருக்கு மரியாதை உண்டு."
+        reading: "avarukku mariyātai uṇṭu."
+        ipa: "aʋaɾukku maɾijaːt̪ai uɳʈu"
+        bases: [{ word: "அவருக்கு", base: "அவர்", reading: "avar" }, { word: "மரியாதை", base: "மரியாதை", reading: "mariyātai" }, { word: "உண்டு", base: "உண்டு", reading: "uṇṭu" }]
+  - id: "ta-7101"
+    target: "திருப்தி"
+    reading: "tirupti"
+    ipa: "t̪iɾupt̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்குத் திருப்தி."
+        reading: "eṉakkut tirupti."
+        ipa: "enakkut̪ t̪iɾupt̪i"
+        bases: [{ word: "எனக்குத்", base: "நான்", reading: "nāṉ" }, { word: "திருப்தி", base: "திருப்தி", reading: "tirupti" }]
+      - target: "திருப்தி இல்லை."
+        reading: "tirupti illai."
+        ipa: "t̪iɾupt̪i illai"
+        bases: [{ word: "திருப்தி", base: "திருப்தி", reading: "tirupti" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-7102"
+    target: "ஏக்கம்"
+    reading: "ēkkam"
+    ipa: "eːkkam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு ஏக்கம் இருக்கிறது."
+        reading: "eṉakku ēkkam irukkiṟatu."
+        ipa: "enakku eːkkam iɾukkirat̪u"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "ஏக்கம்", base: "ஏக்கம்", reading: "ēkkam" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "ஏக்கம் வருகிறது."
+        reading: "ēkkam varukiṟatu."
+        ipa: "eːkkam ʋaɾukirat̪u"
+        bases: [{ word: "ஏக்கம்", base: "ஏக்கம்", reading: "ēkkam" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+  - id: "ta-7103"
+    target: "ஆறுதல்"
+    reading: "āṟutal"
+    ipa: "aːrut̪al"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு ஆறுதல் வேண்டும்."
+        reading: "eṉakku āṟutal vēṇṭum."
+        ipa: "enakku aːrut̪al ʋeːɳʈum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "ஆறுதல்", base: "ஆறுதல்", reading: "āṟutal" }, { word: "வேண்டும்", ref: "ta-0409" }]
+      - target: "உன் வார்த்தை ஆறுதல்."
+        reading: "uṉ vārttai āṟutal."
+        ipa: "un ʋaːɾt̪t̪ai aːrut̪al"
+        bases: [{ word: "உன்", base: "நீ", reading: "nī" }, { word: "வார்த்தை", ref: "ta-1834" }, { word: "ஆறுதல்", base: "ஆறுதல்", reading: "āṟutal" }]
+  - id: "ta-7104"
+    target: "மகிழ்"
+    reading: "makiḻ"
+    ipa: "makiɻ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் மகிழ்கிறேன்."
+        reading: "nāṉ makiḻkiṟēṉ."
+        ipa: "naːn makiɻkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "மகிழ்கிறேன்", base: "மகிழ்", reading: "makiḻ" }]
+      - target: "அவர்கள் மகிழ்கிறார்கள்."
+        reading: "avarkaḷ makiḻkiṟārkaḷ."
+        ipa: "aʋaɾkaɭ makiɻkiraːɾkaɭ"
+        bases: [{ word: "அவர்கள்", base: "அவர்கள்", reading: "avarkaḷ" }, { word: "மகிழ்கிறார்கள்", base: "மகிழ்", reading: "makiḻ" }]
+  - id: "ta-7105"
+    target: "வெறு"
+    reading: "veṟu"
+    ipa: "ʋeru"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "நான் பொய்யை வெறுக்கிறேன்."
+        reading: "nāṉ poyyai veṟukkiṟēṉ."
+        ipa: "naːn pojjai ʋerukkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பொய்யை", base: "பொய்", reading: "poy" }, { word: "வெறுக்கிறேன்", base: "வெறு", reading: "veṟu" }]
+      - target: "அவன் என்னை வெறுக்கிறான்."
+        reading: "avaṉ eṉṉai veṟukkiṟāṉ."
+        ipa: "aʋan ennai ʋerukkiraːn"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "என்னை", base: "நான்", reading: "nāṉ" }, { word: "வெறுக்கிறான்", base: "வெறு", reading: "veṟu" }]
+  - id: "ta-7106"
+    target: "ஆசைப்படு"
+    reading: "ācaippaṭu"
+    ipa: "aːsaippaʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "நான் அதை ஆசைப்படுகிறேன்."
+        reading: "nāṉ atai ācaippaṭukiṟēṉ."
+        ipa: "naːn at̪ai aːsaippaʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "அதை", base: "அது", reading: "atu" }, { word: "ஆசைப்படுகிறேன்", base: "ஆசைப்படு", reading: "ācaippaṭu" }]
+      - target: "அவன் புதிய கேமரா ஆசைப்படுகிறான்."
+        reading: "avaṉ putiya kēmarā ācaippaṭukiṟāṉ."
+        ipa: "aʋan put̪ija keːmaɾaː aːsaippaʈukiraːn"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "புதிய", ref: "ta-0171" }, { word: "கேமரா", ref: "ta-1869" }, { word: "ஆசைப்படுகிறான்", base: "ஆசைப்படு", reading: "ācaippaṭu" }]
+  - id: "ta-7107"
+    target: "எதிர்பார்"
+    reading: "etirpār"
+    ipa: "et̪iɾpaːɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "நான் அவரை எதிர்பார்க்கிறேன்."
+        reading: "nāṉ avarai etirpārkkiṟēṉ."
+        ipa: "naːn aʋaɾai et̪iɾpaːɾkkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "அவரை", base: "அவர்", reading: "avar" }, { word: "எதிர்பார்க்கிறேன்", base: "எதிர்பார்", reading: "etirpār" }]
+      - target: "நாம் மழையை எதிர்பார்க்கிறோம்."
+        reading: "nām maḻaiyai etirpārkkiṟōm."
+        ipa: "naːm maɻaijai et̪iɾpaːɾkkiroːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "மழையை", base: "மழை", reading: "maḻai" }, { word: "எதிர்பார்க்கிறோம்", base: "எதிர்பார்", reading: "etirpār" }]
+  - id: "ta-7108"
+    target: "உணர்"
+    reading: "uṇar"
+    ipa: "uɳaɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் வலியை உணர்கிறேன்."
+        reading: "nāṉ valiyai uṇarkiṟēṉ."
+        ipa: "naːn ʋalijai uɳaɾkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "வலியை", base: "வலி", reading: "vali" }, { word: "உணர்கிறேன்", base: "உணர்", reading: "uṇar" }]
+      - target: "அவன் இதை உணர்கிறான்."
+        reading: "avaṉ itai uṇarkiṟāṉ."
+        ipa: "aʋan it̪ai uɳaɾkiraːn"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "இதை", base: "இது", reading: "itu" }, { word: "உணர்கிறான்", base: "உணர்", reading: "uṇar" }]
+  - id: "ta-7109"
+    target: "வெட்கப்படு"
+    reading: "veṭkappaṭu"
+    ipa: "ʋeʈkappaʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "குழந்தை வெட்கப்படுகிறது."
+        reading: "kuḻantai veṭkappaṭukiṟatu."
+        ipa: "kuɻant̪ai ʋeʈkappaʈukirat̪u"
+        bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "வெட்கப்படுகிறது", base: "வெட்கப்படு", reading: "veṭkappaṭu" }]
+      - target: "நான் வெட்கப்படுகிறேன்."
+        reading: "nāṉ veṭkappaṭukiṟēṉ."
+        ipa: "naːn ʋeʈkappaʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "வெட்கப்படுகிறேன்", base: "வெட்கப்படு", reading: "veṭkappaṭu" }]
+  - id: "ta-7110"
+    target: "ஏமாறு"
+    reading: "ēmāṟu"
+    ipa: "eːmaːru"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "நான் ஏமாறுகிறேன்."
+        reading: "nāṉ ēmāṟukiṟēṉ."
+        ipa: "naːn eːmaːrukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "ஏமாறுகிறேன்", base: "ஏமாறு", reading: "ēmāṟu" }]
+      - target: "அவன் ஏமாறுகிறான்."
+        reading: "avaṉ ēmāṟukiṟāṉ."
+        ipa: "aʋan eːmaːrukiraːn"
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "ஏமாறுகிறான்", base: "ஏமாறு", reading: "ēmāṟu" }]
+  - id: "ta-7111"
+    target: "நிம்மதியான"
+    reading: "nimmatiyāṉa"
+    ipa: "nimmat̪ijaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "நிம்மதியான வாழ்க்கை."
+        reading: "nimmatiyāṉa vāḻkkai."
+        ipa: "nimmat̪ijaːna ʋaːɻkkai"
+        bases: [{ word: "நிம்மதியான", base: "நிம்மதியான", reading: "nimmatiyāṉa" }, { word: "வாழ்க்கை", base: "வாழ்க்கை", reading: "vāḻkkai" }]
+      - target: "நிம்மதியான தூக்கம்."
+        reading: "nimmatiyāṉa tūkkam."
+        ipa: "nimmat̪ijaːna t̪uːkkam"
+        bases: [{ word: "நிம்மதியான", base: "நிம்மதியான", reading: "nimmatiyāṉa" }, { word: "தூக்கம்", ref: "ta-7021" }]
+  - id: "ta-7112"
+    target: "உற்சாகமான"
+    reading: "uṟcākamāṉa"
+    ipa: "ursaːkamaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "உற்சாகமான பையன்."
+        reading: "uṟcākamāṉa paiyaṉ."
+        ipa: "ursaːkamaːna paijan"
+        bases: [{ word: "உற்சாகமான", base: "உற்சாகமான", reading: "uṟcākamāṉa" }, { word: "பையன்", ref: "ta-0442" }]
+      - target: "உற்சாகமான நாள்."
+        reading: "uṟcākamāṉa nāḷ."
+        ipa: "ursaːkamaːna naːɭ"
+        bases: [{ word: "உற்சாகமான", base: "உற்சாகமான", reading: "uṟcākamāṉa" }, { word: "நாள்", ref: "ta-1100" }]
+  - id: "ta-7113"
+    target: "கவலையான"
+    reading: "kavalaiyāṉa"
+    ipa: "kaʋalaijaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "கவலையான முகம்."
+        reading: "kavalaiyāṉa mukam."
+        ipa: "kaʋalaijaːna mukam"
+        bases: [{ word: "கவலையான", base: "கவலையான", reading: "kavalaiyāṉa" }, { word: "முகம்", ref: "ta-0253" }]
+      - target: "கவலையான செய்தி."
+        reading: "kavalaiyāṉa ceyti."
+        ipa: "kaʋalaijaːna sejt̪i"
+        bases: [{ word: "கவலையான", base: "கவலையான", reading: "kavalaiyāṉa" }, { word: "செய்தி", ref: "ta-1873" }]
+  - id: "ta-7114"
+    target: "சலிப்பான"
+    reading: "calippāṉa"
+    ipa: "salippaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "சலிப்பான வேலை."
+        reading: "calippāṉa vēlai."
+        ipa: "salippaːna ʋeːlai"
+        bases: [{ word: "சலிப்பான", base: "சலிப்பான", reading: "calippāṉa" }, { word: "வேலை", ref: "ta-0192" }]
+      - target: "சலிப்பான நாள்."
+        reading: "calippāṉa nāḷ."
+        ipa: "salippaːna naːɭ"
+        bases: [{ word: "சலிப்பான", base: "சலிப்பான", reading: "calippāṉa" }, { word: "நாள்", ref: "ta-1100" }]
+  - id: "ta-7115"
+    target: "குழப்பமான"
+    reading: "kuḻappamāṉa"
+    ipa: "kuɻappamaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "குழப்பமான வழி."
+        reading: "kuḻappamāṉa vaḻi."
+        ipa: "kuɻappamaːna ʋaɻi"
+        bases: [{ word: "குழப்பமான", base: "குழப்பமான", reading: "kuḻappamāṉa" }, { word: "வழி", ref: "ta-0491" }]
+      - target: "குழப்பமான நேரம்."
+        reading: "kuḻappamāṉa nēram."
+        ipa: "kuɻappamaːna neːɾam"
+        bases: [{ word: "குழப்பமான", base: "குழப்பமான", reading: "kuḻappamāṉa" }, { word: "நேரம்", ref: "ta-0155" }]
+  - id: "ta-7116"
+    target: "ஆச்சரியமான"
+    reading: "āccariyamāṉa"
+    ipa: "aːtʃtʃaɾijamaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ஆச்சரியமான செய்தி."
+        reading: "āccariyamāṉa ceyti."
+        ipa: "aːtʃtʃaɾijamaːna sejt̪i"
+        bases: [{ word: "ஆச்சரியமான", base: "ஆச்சரியமான", reading: "āccariyamāṉa" }, { word: "செய்தி", ref: "ta-1873" }]
+      - target: "ஆச்சரியமான படம்."
+        reading: "āccariyamāṉa paṭam."
+        ipa: "aːtʃtʃaɾijamaːna paʈam"
+        bases: [{ word: "ஆச்சரியமான", base: "ஆச்சரியமான", reading: "āccariyamāṉa" }, { word: "படம்", ref: "ta-1825" }]
+  - id: "ta-7117"
+    target: "பெருமையான"
+    reading: "perumaiyāṉa"
+    ipa: "peɾumaijaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "பெருமையான நாள்."
+        reading: "perumaiyāṉa nāḷ."
+        ipa: "peɾumaijaːna naːɭ"
+        bases: [{ word: "பெருமையான", base: "பெருமையான", reading: "perumaiyāṉa" }, { word: "நாள்", ref: "ta-1100" }]
+      - target: "பெருமையான வேலை."
+        reading: "perumaiyāṉa vēlai."
+        ipa: "peɾumaijaːna ʋeːlai"
+        bases: [{ word: "பெருமையான", base: "பெருமையான", reading: "perumaiyāṉa" }, { word: "வேலை", ref: "ta-0192" }]
+  - id: "ta-7118"
+    target: "எரிச்சலான"
+    reading: "ericcalāṉa"
+    ipa: "eɾitʃtʃalaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "எரிச்சலான சத்தம்."
+        reading: "ericcalāṉa cattam."
+        ipa: "eɾitʃtʃalaːna sat̪t̪am"
+        bases: [{ word: "எரிச்சலான", base: "எரிச்சலான", reading: "ericcalāṉa" }, { word: "சத்தம்", base: "சத்தம்", reading: "cattam" }]
+      - target: "எரிச்சலான நாள்."
+        reading: "ericcalāṉa nāḷ."
+        ipa: "eɾitʃtʃalaːna naːɭ"
+        bases: [{ word: "எரிச்சலான", base: "எரிச்சலான", reading: "ericcalāṉa" }, { word: "நாள்", ref: "ta-1100" }]
+  - id: "ta-7119"
+    target: "பதற்றமான"
+    reading: "pataṟṟamāṉa"
+    ipa: "pat̪arramaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "பதற்றமான நேரம்."
+        reading: "pataṟṟamāṉa nēram."
+        ipa: "pat̪arramaːna neːɾam"
+        bases: [{ word: "பதற்றமான", base: "பதற்றமான", reading: "pataṟṟamāṉa" }, { word: "நேரம்", ref: "ta-0155" }]
+      - target: "பதற்றமான முகம்."
+        reading: "pataṟṟamāṉa mukam."
+        ipa: "pat̪arramaːna mukam"
+        bases: [{ word: "பதற்றமான", base: "பதற்றமான", reading: "pataṟṟamāṉa" }, { word: "முகம்", ref: "ta-0253" }]

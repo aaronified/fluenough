@@ -1,0 +1,885 @@
+schema: 1
+id: "ta-en-feelings"
+kind: "layer"
+core: "ta-feelings"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Feelings and moods"
+description: "Feelings and moods: joy, sadness, anger, worry, hope and love, the words for describing how you feel, and the verbs of feeling, wanting and expecting. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-7060":
+    native: "joy; happiness"
+    notes:
+      n1: "The everyday spoken word for happiness; மகிழ்ச்சி (makiḻcci) is the more formal word."
+    examples:
+      "எனக்குச் சந்தோஷம்.":
+        native: "I am happy."
+        bases:
+          "எனக்குச்": "to me; for me; from நான் (nāṉ), I; me"
+          "சந்தோஷம்": "joy; happiness"
+      "குழந்தைக்குச் சந்தோஷம்.":
+        native: "The child is happy."
+        bases:
+          "குழந்தைக்குச்": "to the child; for the child; from குழந்தை (kuḻantai), child"
+          "சந்தோஷம்": "joy; happiness"
+  "ta-7061":
+    native: "grief; sorrow"
+    notes:
+      n1: "A deep sorrow, as at a death; for ordinary sadness people say சோகம் (cōkam)."
+    examples:
+      "அவருக்குத் துக்கம்.":
+        native: "He is grieving."
+        bases:
+          "அவருக்குத்": "to him or her (polite); for him or her (polite); from அவர் (avar), he or she (polite)"
+          "துக்கம்": "grief; sorrow"
+      "துக்கம் வருகிறது.":
+        native: "Sorrow is coming over me."
+        bases:
+          "துக்கம்": "grief; sorrow"
+          "வருகிறது": "is coming; from வா (vā), come"
+  "ta-7062":
+    native: "anger"
+    notes:
+      n1: "Tamil says that anger 'comes' to you (வருகிறது (varukiṟatu)), so the person who feels it takes -க்கு (-kku)."
+    examples:
+      "எனக்குக் கோபம் வருகிறது.":
+        native: "I am getting angry."
+        bases:
+          "எனக்குக்": "to me; for me; from நான் (nāṉ), I; me"
+          "கோபம்": "anger"
+          "வருகிறது": "is coming; from வா (vā), come"
+      "அவன் கோபம் அதிகம்.":
+        native: "His anger is great."
+        bases:
+          "அவன்": "his"
+          "கோபம்": "anger"
+  "ta-7063":
+    native: "worry; concern"
+    notes:
+      n1: "With படு (paṭu) it becomes the verb கவலைப்படு (kavalaippaṭu) (to worry), which is already in the course."
+    examples:
+      "எனக்குக் கவலை இல்லை.":
+        native: "I have no worry."
+        bases:
+          "எனக்குக்": "to me; for me; from நான் (nāṉ), I; me"
+          "கவலை": "worry; concern"
+      "அம்மாவுக்குக் கவலை.":
+        native: "Mother is worried."
+        bases:
+          "அம்மாவுக்குக்": "for mother; from அம்மா (ammā), mother"
+          "கவலை": "worry; concern"
+  "ta-7064":
+    native: "hope; trust; faith"
+    notes:
+      n1: "The same word means hope, trust and faith; 'trust in someone' takes the ending -மேல் (-mēl), as in உன்மேல் (uṉmēl)."
+    examples:
+      "எனக்கு நம்பிக்கை இருக்கிறது.":
+        native: "I have hope."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "நம்பிக்கை": "hope; trust; faith"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "உன்மேல் நம்பிக்கை இருக்கிறது.":
+        native: "I trust you."
+        bases:
+          "உன்மேல்": "on you; about you; from நீ (nī), you (to a friend or child)"
+          "நம்பிக்கை": "hope; trust; faith"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7065":
+    native: "wish; desire"
+    notes:
+      n1: "A strong wish or longing; it is also the base of the verb ஆசைப்படு (ācaippaṭu) (to wish for)."
+    examples:
+      "எனக்கு ஆசை இருக்கிறது.":
+        native: "I have a wish."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "ஆசை": "wish; desire"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "அவனுக்குப் பெரிய ஆசை.":
+        native: "He has a big wish."
+        bases:
+          "அவனுக்குப்": "to him; for him; from அவன் (avaṉ), he; him"
+          "ஆசை": "wish; desire"
+  "ta-7066":
+    native: "dream"
+    notes:
+      n1: "The word means a dream seen in sleep and a dream or ambition in life."
+    examples:
+      "நேற்று ஒரு கனவு.":
+        native: "A dream yesterday."
+        bases:
+          "கனவு": "dream"
+      "எனக்குப் பெரிய கனவு இருக்கிறது.":
+        native: "I have a big dream."
+        bases:
+          "எனக்குப்": "to me; for me; from நான் (nāṉ), I; me"
+          "கனவு": "dream"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7067":
+    native: "expectation"
+    notes:
+      n1: "The noun of எதிர்பார் (etirpār) (to expect)."
+    examples:
+      "எனக்கு எதிர்பார்ப்பு இருக்கிறது.":
+        native: "I have an expectation."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "எதிர்பார்ப்பு": "expectation"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "அவன் எதிர்பார்ப்பு அதிகம்.":
+        native: "His expectations are high."
+        bases:
+          "அவன்": "his"
+          "எதிர்பார்ப்பு": "expectation"
+  "ta-7068":
+    native: "love; affection"
+    notes:
+      n1: "Warm love between family and friends, not romantic love; letters end with அன்புடன் (aṉpuṭaṉ) (with love)."
+    examples:
+      "அம்மாவுக்கு அன்பு அதிகம்.":
+        native: "Mother has a lot of love."
+        bases:
+          "அம்மாவுக்கு": "to the mother; for the mother; from அம்மா (ammā), mother"
+          "அன்பு": "love; affection"
+      "அன்புடன் எழுது.":
+        native: "Write with love."
+        bases:
+          "அன்புடன்": "with love; from அன்பு (aṉpu), love; affection"
+  "ta-7069":
+    native: "hatred; dislike"
+    notes:
+      n1: "The noun of வெறு (veṟu) (to hate); it can also be mild disgust or being fed up."
+    examples:
+      "எனக்கு வெறுப்பு வருகிறது.":
+        native: "I feel disgust."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "வெறுப்பு": "hatred; dislike"
+          "வருகிறது": "is coming; from வா (vā), come"
+      "வெறுப்பு வேண்டாம்.":
+        native: "No hatred, please."
+        bases:
+          "வெறுப்பு": "hatred; dislike"
+  "ta-7070":
+    native: "jealousy; envy"
+    notes:
+      n1: "Used for envy of what another person has."
+    examples:
+      "அவனுக்குப் பொறாமை.":
+        native: "He is jealous."
+        bases:
+          "அவனுக்குப்": "to him; for him; from அவன் (avaṉ), he; him"
+          "பொறாமை": "jealousy; envy"
+      "பொறாமை கெட்டது.":
+        native: "Jealousy is bad."
+        bases:
+          "பொறாமை": "jealousy; envy"
+          "கெட்டது": "bad"
+  "ta-7071":
+    native: "shyness; shame"
+    notes:
+      n1: "It is shyness more than guilt; the verb is வெட்கப்படு (veṭkappaṭu)."
+    examples:
+      "எனக்கு வெட்கம் வருகிறது.":
+        native: "I feel shy."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "வெட்கம்": "shyness; shame"
+          "வருகிறது": "is coming; from வா (vā), come"
+      "குழந்தைக்கு வெட்கம்.":
+        native: "The child is shy."
+        bases:
+          "குழந்தைக்கு": "to the child; from குழந்தை (kuḻantai), child"
+          "வெட்கம்": "shyness; shame"
+  "ta-7072":
+    native: "pride; greatness"
+    notes:
+      n1: "Both the feeling of pride and the honour of something."
+    examples:
+      "எனக்குப் பெருமை.":
+        native: "I am proud."
+        bases:
+          "எனக்குப்": "to me; for me; from நான் (nāṉ), I; me"
+          "பெருமை": "pride; greatness"
+      "இது பெரிய பெருமை.":
+        native: "This is a great honour."
+        bases:
+          "பெருமை": "pride; greatness"
+  "ta-7073":
+    native: "peace of mind; relief"
+    notes:
+      n1: "Said when a worry is gone ('now I can breathe'), and for a calm mind."
+    examples:
+      "எனக்கு நிம்மதி இல்லை.":
+        native: "I have no peace of mind."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "நிம்மதி": "peace of mind; relief"
+      "இப்போது நிம்மதி.":
+        native: "Now there is relief."
+        bases:
+          "நிம்மதி": "peace of mind; relief"
+  "ta-7074":
+    native: "calm; quiet; peace"
+    notes:
+      n1: "Calm and quiet in a place or a person; signs ask for அமைதி (amaiti)."
+    examples:
+      "இங்கே அமைதி இருக்கிறது.":
+        native: "There is calm here."
+        bases:
+          "அமைதி": "calm; quiet; peace"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "அமைதி வேண்டும்.":
+        native: "Quiet, please."
+        bases:
+          "அமைதி": "calm; quiet; peace"
+  "ta-7075":
+    native: "irritation; annoyance"
+    notes:
+      n1: "The word also means a burning or itching feeling on the skin."
+    examples:
+      "எனக்கு எரிச்சல் வருகிறது.":
+        native: "I am getting annoyed."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "எரிச்சல்": "irritation; annoyance"
+          "வருகிறது": "is coming; from வா (vā), come"
+      "அவருக்கு எரிச்சல்.":
+        native: "He is annoyed."
+        bases:
+          "அவருக்கு": "to him or her (polite); for him or her (polite); from அவர் (avar), he or she (polite)"
+          "எரிச்சல்": "irritation; annoyance"
+  "ta-7076":
+    native: "disappointment"
+    notes:
+      n1: "Related to ஏமாறு (ēmāṟu) (to be let down or fooled)."
+    examples:
+      "எனக்கு ஏமாற்றம்.":
+        native: "I am disappointed."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "ஏமாற்றம்": "disappointment"
+      "இது பெரிய ஏமாற்றம்.":
+        native: "This is a big disappointment."
+        bases:
+          "ஏமாற்றம்": "disappointment"
+  "ta-7077":
+    native: "shock"
+    notes:
+      n1: "Used for a sudden shock, good or bad."
+    examples:
+      "எனக்கு அதிர்ச்சி.":
+        native: "I am shocked."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "அதிர்ச்சி": "shock"
+      "அது பெரிய அதிர்ச்சி.":
+        native: "That is a big shock."
+        bases:
+          "அதிர்ச்சி": "shock"
+  "ta-7078":
+    native: "surprise; wonder"
+    notes:
+      n1: "A pleasant or neutral surprise; அதிர்ச்சி (atircci) is a shock."
+    examples:
+      "எனக்கு ஆச்சரியம்.":
+        native: "I am surprised."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "ஆச்சரியம்": "surprise; wonder"
+      "இது ஆச்சரியம்.":
+        native: "This is a surprise."
+        bases:
+          "ஆச்சரியம்": "surprise; wonder"
+  "ta-7079":
+    native: "loneliness; solitude"
+    notes:
+      n1: "It can mean being alone by choice or feeling lonely."
+    examples:
+      "எனக்குத் தனிமை.":
+        native: "I feel lonely."
+        bases:
+          "எனக்குத்": "to me; for me; from நான் (nāṉ), I; me"
+          "தனிமை": "loneliness; solitude"
+      "தனிமை கஷ்டம்.":
+        native: "Loneliness is hard."
+        bases:
+          "தனிமை": "loneliness; solitude"
+          "கஷ்டம்": "hard; difficult"
+  "ta-7080":
+    native: "boredom; weariness"
+    notes:
+      n1: "Boredom from doing the same thing again and again."
+    examples:
+      "எனக்குச் சலிப்பு வருகிறது.":
+        native: "I am getting bored."
+        bases:
+          "எனக்குச்": "to me; for me; from நான் (nāṉ), I; me"
+          "சலிப்பு": "boredom; weariness"
+          "வருகிறது": "is coming; from வா (vā), come"
+      "சலிப்பு வேண்டாம்.":
+        native: "No boredom, please."
+        bases:
+          "சலிப்பு": "boredom; weariness"
+  "ta-7081":
+    native: "enthusiasm; excitement"
+    notes:
+      n1: "Used for energy and keenness; people cheer each other with it."
+    examples:
+      "அவனுக்கு உற்சாகம்.":
+        native: "He is excited."
+        bases:
+          "அவனுக்கு": "to him; for him; from அவன் (avaṉ), he; him"
+          "உற்சாகம்": "enthusiasm; excitement"
+      "உற்சாகம் இருக்கிறது.":
+        native: "There is enthusiasm."
+        bases:
+          "உற்சாகம்": "enthusiasm; excitement"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7082":
+    native: "confusion"
+    notes:
+      n1: "Used for a confused mind and for a confused situation."
+    examples:
+      "எனக்குக் குழப்பம்.":
+        native: "I am confused."
+        bases:
+          "எனக்குக்": "to me; for me; from நான் (nāṉ), I; me"
+          "குழப்பம்": "confusion"
+      "குழப்பம் இல்லை.":
+        native: "There is no confusion."
+        bases:
+          "குழப்பம்": "confusion"
+  "ta-7083":
+    native: "doubt; question"
+    notes:
+      n1: "In class, a question you want cleared is also called a சந்தேகம் (cantēkam)."
+    examples:
+      "எனக்குச் சந்தேகம் இருக்கிறது.":
+        native: "I have a doubt."
+        bases:
+          "எனக்குச்": "to me; for me; from நான் (nāṉ), I; me"
+          "சந்தேகம்": "doubt; question"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "உனக்குச் சந்தேகம் இருக்கிறதா?":
+        native: "Do you have a doubt?"
+        bases:
+          "உனக்குச்": "to you; for you; from நீ (nī), you (to a friend or child)"
+          "சந்தேகம்": "doubt; question"
+          "இருக்கிறதா": "is; from இரு (iru), to be"
+  "ta-7084":
+    native: "courage"
+    notes:
+      n1: "Said to encourage someone: தைரியம் (tairiyam) வேண்டும் (vēṇṭum), 'be brave'."
+    examples:
+      "அவனுக்குத் தைரியம் இருக்கிறது.":
+        native: "He has courage."
+        bases:
+          "அவனுக்குத்": "to him; for him; from அவன் (avaṉ), he; him"
+          "தைரியம்": "courage"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "தைரியம் வேண்டும்.":
+        native: "Courage is needed."
+        bases:
+          "தைரியம்": "courage"
+  "ta-7085":
+    native: "patience"
+    notes:
+      n1: "The noun that goes with பொறுமை (poṟumai) வேண்டும் (vēṇṭum), a common thing to say to someone who is waiting."
+    examples:
+      "பொறுமை வேண்டும்.":
+        native: "Patience is needed."
+        bases:
+          "பொறுமை": "patience"
+      "அவனுக்குப் பொறுமை இல்லை.":
+        native: "He has no patience."
+        bases:
+          "அவனுக்குப்": "to him; for him; from அவன் (avaṉ), he; him"
+          "பொறுமை": "patience"
+  "ta-7086":
+    native: "forgiveness; apology"
+    notes:
+      n1: "Tamil 'asks' (கேள் (kēḷ)) for forgiveness to say sorry."
+    examples:
+      "மன்னிப்பு கேள்.":
+        native: "Ask for forgiveness."
+        bases:
+          "மன்னிப்பு": "forgiveness; apology"
+      "மன்னிப்பு கொடு.":
+        native: "Give forgiveness."
+        bases:
+          "மன்னிப்பு": "forgiveness; apology"
+  "ta-7087":
+    native: "memory; remembrance"
+    notes:
+      n1: "The spoken word for memory; 'your memory comes' means I am thinking of you."
+    examples:
+      "எனக்கு ஞாபகம் இல்லை.":
+        native: "I do not remember."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "ஞாபகம்": "memory; remembrance"
+      "உன் ஞாபகம் வருகிறது.":
+        native: "I am missing you."
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "ஞாபகம்": "memory; remembrance"
+          "வருகிறது": "is coming; from வா (vā), come"
+  "ta-7088":
+    native: "memory; thought"
+    notes:
+      n1: "The written word for memory; ஞாபகம் (ñāpakam) is the one used in speech."
+    examples:
+      "நல்ல நினைவு.":
+        native: "A good memory."
+        bases:
+          "நினைவு": "memory; thought"
+      "எனக்கு நினைவு இருக்கிறது.":
+        native: "I remember."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "நினைவு": "memory; thought"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7089":
+    native: "feeling; sense"
+    notes:
+      n1: "The noun of உணர் (uṇar) (to feel)."
+    examples:
+      "இது நல்ல உணர்வு.":
+        native: "This is a good feeling."
+        bases:
+          "உணர்வு": "feeling; sense"
+      "எனக்கு உணர்வு இல்லை.":
+        native: "I have no feeling."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "உணர்வு": "feeling; sense"
+  "ta-7090":
+    native: "mood; state of mind"
+    notes:
+      n1: "A compound of மனம் (maṉam) (mind) and நிலை (nilai) (state)."
+    examples:
+      "என் மனநிலை நல்லது.":
+        native: "My mood is good."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "மனநிலை": "mood; state of mind"
+      "அவன் மனநிலை சரியில்லை.":
+        native: "His mood is not right."
+        bases:
+          "அவன்": "his"
+          "மனநிலை": "mood; state of mind"
+          "சரியில்லை": "not right; from சரி (cari), okay"
+  "ta-7091":
+    native: "tears"
+    notes:
+      n1: "Literally eye water; it takes no plural ending."
+    examples:
+      "கண்ணீர் வருகிறது.":
+        native: "Tears are coming."
+        bases:
+          "கண்ணீர்": "tears"
+          "வருகிறது": "is coming; from வா (vā), come"
+      "கண்ணீர் துடை.":
+        native: "Wipe your tears."
+        bases:
+          "கண்ணீர்": "tears"
+  "ta-7092":
+    native: "smile"
+    notes:
+      n1: "A soft smile; the wider laugh is சிரிப்பு (cirippu)."
+    examples:
+      "அவள் புன்னகை அழகு.":
+        native: "Her smile is beautiful."
+        bases:
+          "அவள்": "her"
+          "புன்னகை": "smile"
+      "புன்னகை செய்.":
+        native: "Smile."
+        bases:
+          "புன்னகை": "smile"
+  "ta-7093":
+    native: "sadness; regret"
+    notes:
+      n1: "Used to say sorry as well: வருத்தம் (varuttam) இருக்கிறது (irukkiṟatu) means 'I am sorry'."
+    examples:
+      "எனக்கு வருத்தம்.":
+        native: "I am sad."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "வருத்தம்": "sadness; regret"
+      "வருத்தம் வேண்டாம்.":
+        native: "Do not be sad."
+        bases:
+          "வருத்தம்": "sadness; regret"
+  "ta-7094":
+    native: "bliss; great joy"
+    notes:
+      n1: "A stronger, more poetic word than சந்தோஷம் (cantōṣam)."
+    examples:
+      "எனக்கு ஆனந்தம்.":
+        native: "I am overjoyed."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "ஆனந்தம்": "bliss; great joy"
+      "இது ஆனந்தம்.":
+        native: "This is bliss."
+        bases:
+          "ஆனந்தம்": "bliss; great joy"
+  "ta-7095":
+    native: "nervousness; panic"
+    notes:
+      n1: "The tension before an exam or a meeting."
+    examples:
+      "எனக்குப் பதற்றம்.":
+        native: "I am nervous."
+        bases:
+          "எனக்குப்": "to me; for me; from நான் (nāṉ), I; me"
+          "பதற்றம்": "nervousness; panic"
+      "பதற்றம் வேண்டாம்.":
+        native: "Do not panic."
+        bases:
+          "பதற்றம்": "nervousness; panic"
+  "ta-7096":
+    native: "humiliation; insult"
+    notes:
+      n1: "A word for the shame of being insulted in front of others."
+    examples:
+      "அது அவமானம்.":
+        native: "That is an insult."
+        bases:
+          "அவமானம்": "humiliation; insult"
+      "எனக்கு அவமானம்.":
+        native: "I am humiliated."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "அவமானம்": "humiliation; insult"
+  "ta-7097":
+    native: "compassion; mercy"
+    notes:
+      n1: "A formal word for kindness shown to those who suffer."
+    examples:
+      "அவருக்குக் கருணை இருக்கிறது.":
+        native: "He has compassion."
+        bases:
+          "அவருக்குக்": "to him or her (polite); for him or her (polite); from அவர் (avar), he or she (polite)"
+          "கருணை": "compassion; mercy"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "கருணை வேண்டும்.":
+        native: "Mercy, please."
+        bases:
+          "கருணை": "compassion; mercy"
+  "ta-7098":
+    native: "friendship"
+    notes:
+      n1: "நம் (nam) (our) is the inclusive 'our', so the friend is included."
+    examples:
+      "நம் நட்பு நல்லது.":
+        native: "Our friendship is good."
+        bases:
+          "நம்": "our; from நாம் (nām), we (including you)"
+          "நட்பு": "friendship"
+      "நட்பு முக்கியம்.":
+        native: "Friendship is important."
+        bases:
+          "நட்பு": "friendship"
+          "முக்கியம்": "important"
+  "ta-7099":
+    native: "affection; attachment"
+    notes:
+      n1: "The warm bond of family, especially of parents and children."
+    examples:
+      "அம்மாவுக்குப் பாசம்.":
+        native: "Mother has affection."
+        bases:
+          "அம்மாவுக்குப்": "to mother; from அம்மா (ammā), mother"
+          "பாசம்": "affection; attachment"
+      "பாசம் அதிகம்.":
+        native: "The affection is great."
+        bases:
+          "பாசம்": "affection; attachment"
+  "ta-7100":
+    native: "respect"
+    notes:
+      n1: "Tamil 'gives' (கொடு (koṭu)) respect; it is the noun behind the polite forms."
+    examples:
+      "பெரியவர்களுக்கு மரியாதை கொடு.":
+        native: "Give respect to elders."
+        bases:
+          "பெரியவர்களுக்கு": "to elders; for elders; from பெரியவர் (periyavar), elder; grown-up"
+          "மரியாதை": "respect"
+      "அவருக்கு மரியாதை உண்டு.":
+        native: "He is respected."
+        bases:
+          "அவருக்கு": "to him or her (polite); for him or her (polite); from அவர் (avar), he or she (polite)"
+          "மரியாதை": "respect"
+          "உண்டு": "there is; has"
+  "ta-7101":
+    native: "satisfaction; contentment"
+    notes:
+      n1: "Said at the end of a meal or after a job done well."
+    examples:
+      "எனக்குத் திருப்தி.":
+        native: "I am satisfied."
+        bases:
+          "எனக்குத்": "to me; for me; from நான் (nāṉ), I; me"
+          "திருப்தி": "satisfaction; contentment"
+      "திருப்தி இல்லை.":
+        native: "I am not satisfied."
+        bases:
+          "திருப்தி": "satisfaction; contentment"
+  "ta-7102":
+    native: "longing; yearning"
+    notes:
+      n1: "Used for missing a person or a place that is far away."
+    examples:
+      "எனக்கு ஏக்கம் இருக்கிறது.":
+        native: "I have a longing."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "ஏக்கம்": "longing; yearning"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "ஏக்கம் வருகிறது.":
+        native: "A longing is coming."
+        bases:
+          "ஏக்கம்": "longing; yearning"
+          "வருகிறது": "is coming; from வா (vā), come"
+  "ta-7103":
+    native: "comfort; consolation"
+    notes:
+      n1: "Words or help that calm a sad person."
+    examples:
+      "எனக்கு ஆறுதல் வேண்டும்.":
+        native: "I need comfort."
+        bases:
+          "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+          "ஆறுதல்": "comfort; consolation"
+      "உன் வார்த்தை ஆறுதல்.":
+        native: "Your words are a comfort."
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "ஆறுதல்": "comfort; consolation"
+  "ta-7104":
+    native: "to rejoice; to be glad"
+    notes:
+      n1: "A written-style verb; in speech people say they feel சந்தோஷம் (cantōṣam) instead."
+    examples:
+      "நான் மகிழ்கிறேன்.":
+        native: "I am glad."
+        bases:
+          "மகிழ்கிறேன்": "am rejoicing; from மகிழ் (makiḻ), to rejoice; to be glad"
+      "அவர்கள் மகிழ்கிறார்கள்.":
+        native: "They are glad."
+        bases:
+          "அவர்கள்": "their"
+          "மகிழ்கிறார்கள்": "are rejoicing (they, respectful); from மகிழ் (makiḻ), to rejoice; to be glad"
+  "ta-7105":
+    native: "to hate; to dislike"
+    notes:
+      n1: "A strong verb; the object takes the -ஐ (-ai) ending."
+    examples:
+      "நான் பொய்யை வெறுக்கிறேன்.":
+        native: "I hate lies."
+        bases:
+          "பொய்யை": "lies (object); from பொய் (poy), lie; falsehood"
+          "வெறுக்கிறேன்": "am hating; from வெறு (veṟu), to hate; to dislike"
+      "அவன் என்னை வெறுக்கிறான்.":
+        native: "He hates me."
+        bases:
+          "அவன்": "his"
+          "என்னை": "me (object); from நான் (nāṉ), I; me"
+          "வெறுக்கிறான்": "is hating (he); from வெறு (veṟu), to hate; to dislike"
+  "ta-7106":
+    native: "to wish for; to want badly"
+    notes:
+      n1: "A compound of ஆசை (ācai) (wish) and படு (paṭu) (suffer, feel), the same pattern as கவலைப்படு (kavalaippaṭu)."
+    examples:
+      "நான் அதை ஆசைப்படுகிறேன்.":
+        native: "I wish for it."
+        bases:
+          "அதை": "it (object); from அது (atu), that; it"
+          "ஆசைப்படுகிறேன்": "am wishing for; from ஆசைப்படு (ācaippaṭu), to wish for; to want badly"
+      "அவன் புதிய கேமரா ஆசைப்படுகிறான்.":
+        native: "He longs for a new camera."
+        bases:
+          "அவன்": "his"
+          "ஆசைப்படுகிறான்": "is wishing for (he); from ஆசைப்படு (ācaippaṭu), to wish for; to want badly"
+  "ta-7107":
+    native: "to expect; to hope for"
+    notes:
+      n1: "Literally to look towards; the thing expected takes the -ஐ (-ai) ending."
+    examples:
+      "நான் அவரை எதிர்பார்க்கிறேன்.":
+        native: "I expect him."
+        bases:
+          "அவரை": "him or her (polite; object); from அவர் (avar), he or she (polite)"
+          "எதிர்பார்க்கிறேன்": "am expecting; from எதிர்பார் (etirpār), to expect; to hope for"
+      "நாம் மழையை எதிர்பார்க்கிறோம்.":
+        native: "We expect rain."
+        bases:
+          "மழையை": "the rain; from மழை (maḻai), rain"
+          "எதிர்பார்க்கிறோம்": "are expecting (we); from எதிர்பார் (etirpār), to expect; to hope for"
+  "ta-7108":
+    native: "to feel; to realise"
+    notes:
+      n1: "Used for a feeling the body or mind notices; it also means to realise."
+    examples:
+      "நான் வலியை உணர்கிறேன்.":
+        native: "I feel the pain."
+        bases:
+          "வலியை": "the pain; from வலி (vali), pain"
+          "உணர்கிறேன்": "am feeling; from உணர் (uṇar), to feel; to realise"
+      "அவன் இதை உணர்கிறான்.":
+        native: "He realises this."
+        bases:
+          "அவன்": "his"
+          "இதை": "this (object); from இது (itu), this; it"
+          "உணர்கிறான்": "is feeling (he); from உணர் (uṇar), to feel; to realise"
+  "ta-7109":
+    native: "to feel shy; to be ashamed"
+    notes:
+      n1: "A compound of வெட்கம் (veṭkam) (shyness) and படு (paṭu); the verb takes no object."
+    examples:
+      "குழந்தை வெட்கப்படுகிறது.":
+        native: "The child is feeling shy."
+        bases:
+          "வெட்கப்படுகிறது": "is feeling shy; from வெட்கப்படு (veṭkappaṭu), to feel shy; to be ashamed"
+      "நான் வெட்கப்படுகிறேன்.":
+        native: "I feel shy."
+        bases:
+          "வெட்கப்படுகிறேன்": "am feeling shy; from வெட்கப்படு (veṭkappaṭu), to feel shy; to be ashamed"
+  "ta-7110":
+    native: "to be let down; to be fooled"
+    notes:
+      n1: "The person who is fooled is the subject; the one who fools is ஏமாற்று (ēmāṟṟu) (to fool)."
+    examples:
+      "நான் ஏமாறுகிறேன்.":
+        native: "I am being let down."
+        bases:
+          "ஏமாறுகிறேன்": "am being let down; from ஏமாறு (ēmāṟu), to be let down; to be fooled"
+      "அவன் ஏமாறுகிறான்.":
+        native: "He is being fooled."
+        bases:
+          "அவன்": "his"
+          "ஏமாறுகிறான்": "is being let down (he); from ஏமாறு (ēmāṟu), to be let down; to be fooled"
+  "ta-7111":
+    native: "peaceful; relaxed"
+    notes:
+      n1: "The -ஆன (-āṉa) form of நிம்மதி (nimmati), used before a noun."
+    examples:
+      "நிம்மதியான வாழ்க்கை.":
+        native: "A peaceful life."
+        bases:
+          "நிம்மதியான": "peaceful; relaxed"
+          "வாழ்க்கை": "life"
+      "நிம்மதியான தூக்கம்.":
+        native: "A restful sleep."
+        bases:
+          "நிம்மதியான": "peaceful; relaxed"
+  "ta-7112":
+    native: "cheerful; lively"
+    notes:
+      n1: "The -ஆன (-āṉa) form of உற்சாகம் (uṟcākam), used before a noun."
+    examples:
+      "உற்சாகமான பையன்.":
+        native: "A lively boy."
+        bases:
+          "உற்சாகமான": "cheerful; lively"
+      "உற்சாகமான நாள்.":
+        native: "A lively day."
+        bases:
+          "உற்சாகமான": "cheerful; lively"
+  "ta-7113":
+    native: "worried; worrying"
+    notes:
+      n1: "The -ஆன (-āṉa) form of கவலை (kavalai), used for a worried person or worrying news."
+    examples:
+      "கவலையான முகம்.":
+        native: "A worried face."
+        bases:
+          "கவலையான": "worried; worrying"
+      "கவலையான செய்தி.":
+        native: "Worrying news."
+        bases:
+          "கவலையான": "worried; worrying"
+  "ta-7114":
+    native: "boring; tedious"
+    notes:
+      n1: "The -ஆன (-āṉa) form of சலிப்பு (calippu); it describes the thing that bores."
+    examples:
+      "சலிப்பான வேலை.":
+        native: "A boring job."
+        bases:
+          "சலிப்பான": "boring; tedious"
+      "சலிப்பான நாள்.":
+        native: "A dull day."
+        bases:
+          "சலிப்பான": "boring; tedious"
+  "ta-7115":
+    native: "confusing; confused"
+    notes:
+      n1: "The -ஆன (-āṉa) form of குழப்பம் (kuḻappam), used before a noun."
+    examples:
+      "குழப்பமான வழி.":
+        native: "A confusing way."
+        bases:
+          "குழப்பமான": "confusing; confused"
+      "குழப்பமான நேரம்.":
+        native: "A confusing time."
+        bases:
+          "குழப்பமான": "confusing; confused"
+  "ta-7116":
+    native: "surprising; amazing"
+    notes:
+      n1: "The -ஆன (-āṉa) form of ஆச்சரியம் (āccariyam), used before a noun."
+    examples:
+      "ஆச்சரியமான செய்தி.":
+        native: "A surprising piece of news."
+        bases:
+          "ஆச்சரியமான": "surprising; amazing"
+      "ஆச்சரியமான படம்.":
+        native: "An amazing film."
+        bases:
+          "ஆச்சரியமான": "surprising; amazing"
+  "ta-7117":
+    native: "proud; honourable"
+    notes:
+      n1: "The -ஆன (-āṉa) form of பெருமை (perumai), used before a noun."
+    examples:
+      "பெருமையான நாள்.":
+        native: "A proud day."
+        bases:
+          "பெருமையான": "proud; honourable"
+      "பெருமையான வேலை.":
+        native: "An honourable job."
+        bases:
+          "பெருமையான": "proud; honourable"
+  "ta-7118":
+    native: "annoyed; annoying"
+    notes:
+      n1: "The -ஆன (-āṉa) form of எரிச்சல் (ericcal), used before a noun."
+    examples:
+      "எரிச்சலான சத்தம்.":
+        native: "An annoying noise."
+        bases:
+          "எரிச்சலான": "annoyed; annoying"
+          "சத்தம்": "noise; sound"
+      "எரிச்சலான நாள்.":
+        native: "An irritating day."
+        bases:
+          "எரிச்சலான": "annoyed; annoying"
+  "ta-7119":
+    native: "tense; nervous"
+    notes:
+      n1: "The -ஆன (-āṉa) form of பதற்றம் (pataṟṟam), used before a noun."
+    examples:
+      "பதற்றமான நேரம்.":
+        native: "A tense time."
+        bases:
+          "பதற்றமான": "tense; nervous"
+      "பதற்றமான முகம்.":
+        native: "A nervous face."
+        bases:
+          "பதற்றமான": "tense; nervous"
