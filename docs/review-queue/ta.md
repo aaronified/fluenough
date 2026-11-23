@@ -28,3 +28,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1028 | ta-script-grantha | No word of the course has ஹ (ha), so the card has no example: can a reviewer suggest a common word? | Haiku deck worker (ta-script) | 2026-11-23 |
 | ta-1029 | ta-script-grantha | No word of the course has க்ஷ (kṣa), so the card has no example: can a reviewer suggest a common word? | Haiku deck worker (ta-script) | 2026-11-23 |
 | unit-level | ta-script-grantha | The notes say Grantha letters are supplementary to the Tamil alphabet and taught from elementary school (en.wikipedia 'Tamil script'): does a reviewer agree with the wording? | Haiku deck worker (ta-script) | 2026-11-23 |
+| unit-level | ta-script-digits | The transcriber reads each Tamil digit as its Arabic numeral ('0' to '9'), not as a Tamil word. Should the reading be the Tamil number word instead? | Haiku deck worker (ta-script) | 2026-11-23 |
+| unit-level | ta-script-digits | The transcriber gives no broad IPA for digits, so the cards have no ipa field. Can a later fix or a reviewer supply one? | Haiku deck worker (ta-script) | 2026-11-23 |
+| ta-1030 | ta-script-digits | Zero (௦) has no Tamil number word in the course yet: can a reviewer give the Tamil word for zero, and a word that uses it? | Haiku deck worker (ta-script) | 2026-11-23 |
