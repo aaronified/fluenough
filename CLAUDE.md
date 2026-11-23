@@ -29,6 +29,7 @@ ones that matter most; read the section before acting on one.
 - **Mockups and text size:** build the approved spec exactly, at 1.4x text only; a `direct-code` issue has every decision made ([Mockups, issues and dependencies](#mockups-issues-and-dependencies)).
 - **Never stop anything** unless the owner explicitly asks ([Agents and models](#agents-and-models)).
 - **Contributor sessions** (`DhyanendraSinghSikarwar`) follow their own rules ([Contributor DhyanendraSinghSikarwar](#contributor-dhyanendrasinghsikarwar-2026-10-13)).
+- **Watch CI properly** (owner, 2026-11-23): a "completed" notification is not a result; read the output, start watchers directly with `run_in_background`, read red CI at once, never promise to "hear back" without a live watcher ([.claude/skills/ci-watch/SKILL.md](.claude/skills/ci-watch/SKILL.md)).
 
 Rules that no longer govern, and what replaced them, are kept in the wiki page
 [Owner-Decisions-History](wiki/Owner-Decisions-History.md)

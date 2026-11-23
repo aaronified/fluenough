@@ -505,3 +505,15 @@ explain most of what is otherwise surprising about this codebase.
       `lib/l10n/app_en.arb`
 - [ ] One independent review found nothing blocking, or its findings are fixed
 - [ ] The PR describes what was verified and what was not
+
+## Compile traps (no Dart SDK here; CI is the only compiler)
+
+These slipped past every local read and cost a CI cycle each. Check the diff for them before pushing:
+
+- Type promotion only works on local `final` variables, not on fields, getters or method calls: `final s = source; if (s is DiskLocated) { s.locate(...) }`.
+- Undefined names and missing imports; required versus optional parameters; a constructor that does not initialise a new `final` field.
+- `unused_element_parameter` (an optional parameter nobody passes), `use_null_aware_elements` (`?x` instead of `if (x != null) x`), `prefer_single_quotes`, `prefer_const_constructors` and `unnecessary_const`, `unawaited_futures`, unused imports, duplicate local names.
+- `dart format`: 80 columns, and wrapped arguments that fit on one line are collapsed.
+- Doc comments: no bare angle brackets (use backticks).
+- User-visible strings go through the ARB files (`python3 tools/check_ui_strings.py`).
+- Validator output lines must not start with `info`.
