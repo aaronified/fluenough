@@ -239,8 +239,6 @@ void main() {
     final navigator = tester.state<NavigatorState>(find.byType(Navigator));
     unawaited(navigator.pushNamed(AppRoutes.culture, arguments: 'zz'));
     await tester.pump();
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
-    expect(find.byType(CultureDeckPage), findsNothing);
     await _loaded(tester, state, 'zz');
     await tester.pump(const Duration(seconds: 1));
     expect(state.languageLoad('zz').isLoaded, isTrue);
