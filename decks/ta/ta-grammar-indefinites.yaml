@@ -1,0 +1,45 @@
+schema: 1
+id: "ta-grammar-indefinites"
+part: "core"
+kind: "grammar"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["o", "avatu", "um"]
+  entries:
+    - lemma: "யார்"
+      key: "yaar"
+      reading: "yār"
+      ipa: "jaːɾ"
+      forms: { "o": "யாரோ", "avatu": "யாராவது", "um": "யாரும்" }
+      readings: { "o": "yārō", "avatu": "yārāvatu", "um": "yārum" }
+      ipas: { "o": "jaːɾoː", "avatu": "jaːɾaːʋat̪u", "um": "jaːɾum" }
+    - lemma: "என்ன"
+      key: "enna"
+      reading: "eṉṉa"
+      ipa: "enna"
+      forms: { "o": "ஏதோ", "avatu": "ஏதாவது", "um": "எதுவும்" }
+      readings: { "o": "ētō", "avatu": "ētāvatu", "um": "etuvum" }
+      ipas: { "o": "eːt̪oː", "avatu": "eːt̪aːʋat̪u", "um": "et̪uʋum" }
+    - lemma: "எங்கே"
+      key: "enge"
+      reading: "eṅkē"
+      ipa: "eŋkeː"
+      forms: { "o": "எங்கோ", "avatu": "எங்காவது", "um": "எங்கும்" }
+      readings: { "o": "eṅkō", "avatu": "eṅkāvatu", "um": "eṅkum" }
+      ipas: { "o": "eŋkoː", "avatu": "eŋkaːʋat̪u", "um": "eŋkum" }
+    - lemma: "எப்போது"
+      key: "eppotu"
+      reading: "eppōtu"
+      ipa: "eppoːt̪u"
+      forms: { "o": "எப்போதோ", "avatu": "எப்போதாவது", "um": "எப்போதும்" }
+      readings: { "o": "eppōtō", "avatu": "eppōtāvatu", "um": "eppōtum" }
+      ipas: { "o": "eppoːt̪oː", "avatu": "eppoːt̪aːʋat̪u", "um": "eppoːt̪um" }
+    - lemma: "எப்படி"
+      key: "eppati"
+      reading: "eppaṭi"
+      ipa: "eppaʈi"
+      forms: { "o": "எப்படியோ", "avatu": "எப்படியாவது", "um": "எப்படியும்" }
+      readings: { "o": "eppaṭiyō", "avatu": "eppaṭiyāvatu", "um": "eppaṭiyum" }
+      ipas: { "o": "eppaʈijoː", "avatu": "eppaʈijaːʋat̪u", "um": "eppaʈijum" }

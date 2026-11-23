@@ -1,0 +1,97 @@
+schema: 1
+id: "ta-en-health-sentences"
+kind: "layer"
+core: "ta-health-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Health in sentences"
+description: "Sentences about seeing a doctor, symptoms, medicine, rest, food and exercise. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-9000":
+    native: "I have a fever."
+    bases:
+      "எனக்குக்": "to me; for me; from நான் (nāṉ), I; me"
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "சளி (caḷi), cold; mucus, is a different word." }
+      w2: { why: "இருமல் (irumal), cough, is a different word." }
+  "ta-9001":
+    native: "I am seeing the doctor tomorrow."
+    bases:
+      "மருத்துவரைப்": "the doctor; from மருத்துவர் (maruttuvar), doctor"
+      "பார்க்கிறேன்": "am watching; from பார் (pār), to see; to look"
+    confusables:
+      w1: { why: "நோயாளி (nōyāḷi), patient, is a different word." }
+      w2: { why: "டாக்டர் (ṭākṭar), doctor, is a different word." }
+  "ta-9002":
+    native: "Take this medicine twice."
+    notes:
+      n1: "Medicine is 'eaten' with சாப்பிடு (cāppiṭu) in Tamil, as tablets and food are."
+    bases:
+      "இந்த": "this"
+      "மருந்தை": "the medicine; from மருந்து (maruntu), medicine"
+      "முறை": "time; turn"
+      "சாப்பிடுங்கள்": "please eat; please take; from சாப்பிடு (cāppiṭu), to eat"
+    confusables:
+      w1: { why: "மாத்திரை (māttirai), tablet; pill, is a different word." }
+      w2: { why: "ஊசி (ūci), injection; needle, is a different word." }
+      w3: { why: "மருந்துச்சீட்டு (maruntuccīṭṭu), prescription, is a different word." }
+  "ta-9003":
+    native: "Please exercise every day."
+    bases:
+      "செய்யுங்கள்": "to do"
+    confusables:
+      w1: { why: "யோகா (yōkā), yoga, is a different word." }
+      w2: { why: "நடைப்பயிற்சி (naṭaippayiṟci), walking exercise; a walk for health, is a different word." }
+  "ta-9004":
+    native: "I am not well, I need rest."
+    notes:
+      n1: "சரியில்லை (cariyillai) is a short way to say 'is not right', and with the body it means unwell."
+    bases:
+      "சரியில்லை": "not right; from சரி (cari), okay"
+    confusables:
+      w1: { why: "தூக்கம் (tūkkam), sleep, is a different word." }
+      w2: { why: "உடல்நிலை (uṭalnilai), state of health; condition, is a different word." }
+  "ta-9005":
+    native: "Please avoid sweets."
+    bases:
+      "இனிப்பைத்": "the sweet; from இனிப்பு (iṉippu), sweet; sweet dish"
+      "தவிருங்கள்": "please avoid; from தவிர் (tavir), to avoid"
+    confusables:
+      w1: { why: "குறை (kuṟai), to decrease, is a different word." }
+      w2: { why: "தடு (taṭu), to prevent; to stop, is a different word." }
+  "ta-9006":
+    native: "This infection is spreading."
+    bases:
+      "இந்தத்": "this; from இந்த (inta), this (before a noun)"
+      "பரவுகிறது": "spreads; from பரவு (paravu), to spread"
+    confusables:
+      w1: { why: "வைரஸ் (vairas), virus, is a different word." }
+      w2: { why: "கிருமி (kirumi), germ, is a different word." }
+  "ta-9007":
+    native: "There is an operation tomorrow."
+    bases:
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "பரிசோதனை (paricōtaṉai), test; check-up, is a different word." }
+      w2: { why: "மருத்துவமனை (maruttuvamaṉai), hospital, is a different word." }
+  "ta-9008":
+    native: "Please put on a face mask."
+    notes:
+      n1: "Tamil 'puts' (போடு (pōṭu)) a mask on, as it does clothes."
+    bases:
+      "போடுங்கள்": "please put; from போடு (pōṭu), to put; to throw"
+    confusables:
+      w1: { why: "தடுப்பூசி (taṭuppūci), vaccine; vaccination, is a different word." }
+      w2: { why: "கிருமி (kirumi), germ, is a different word." }
+  "ta-9009":
+    native: "There is protein in this food."
+    bases:
+      "இந்த": "this"
+      "உணவில்": "in the food; from உணவு (uṇavu), food"
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "வைட்டமின் (vaiṭṭamiṉ), vitamin, is a different word." }
+      w2: { why: "கொழுப்பு (koḻuppu), fat; cholesterol, is a different word." }
+      w3: { why: "ஊட்டச்சத்து (ūṭṭaccattu), nutrition; nutrient, is a different word." }

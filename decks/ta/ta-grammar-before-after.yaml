@@ -1,0 +1,715 @@
+schema: 1
+id: "ta-grammar-before-after"
+part: "core"
+kind: "rules"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ta-0409", "ta-0410", "ta-0412", "ta-0413"]
+  slots: ["before", "after", "assoon"]
+  rows:
+    - word: "ta-0010"
+      forms: { "before": ["வர்றதுக்கு முன்னாடி", "வருவதற்கு முன்"], "after": "வந்த பிறகு", "assoon": "வந்ததும்" }
+      readings: { "before": ["varṟatukku muṉṉāṭi", "varuvataṟku muṉ"], "after": "vanta piṟaku", "assoon": "vantatum" }
+    - word: "ta-0038"
+      forms: { "before": ["எழுகிறதுக்கு முன்னாடி", "எழுவதற்கு முன்"], "after": "எழுந்த பிறகு", "assoon": "எழுந்ததும்" }
+      readings: { "before": ["eḻukiṟatukku muṉṉāṭi", "eḻuvataṟku muṉ"], "after": "eḻunta piṟaku", "assoon": "eḻuntatum" }
+    - word: "ta-0115"
+      forms: { "before": ["படிக்கிறதுக்கு முன்னாடி", "படிப்பதற்கு முன்"], "after": ["படிச்ச பிறகு", "படித்த பிறகு"], "assoon": ["படிச்சதும்", "படித்ததும்"] }
+      readings: { "before": ["paṭikkiṟatukku muṉṉāṭi", "paṭippataṟku muṉ"], "after": ["paṭicca piṟaku", "paṭitta piṟaku"], "assoon": ["paṭiccatum", "paṭittatum"] }
+    - word: "ta-0118"
+      forms: { "before": ["போறதுக்கு முன்னாடி", "போவதற்கு முன்"], "after": "போன பிறகு", "assoon": "போனதும்" }
+      readings: { "before": ["pōṟatukku muṉṉāṭi", "pōvataṟku muṉ"], "after": "pōṉa piṟaku", "assoon": "pōṉatum" }
+    - word: "ta-0119"
+      forms: { "before": ["சாப்பிடுறதுக்கு முன்னாடி", "சாப்பிடுவதற்கு முன்"], "after": "சாப்பிட்ட பிறகு", "assoon": "சாப்பிட்டதும்" }
+      readings: { "before": ["cāppiṭuṟatukku muṉṉāṭi", "cāppiṭuvataṟku muṉ"], "after": "cāppiṭṭa piṟaku", "assoon": "cāppiṭṭatum" }
+    - word: "ta-0120"
+      forms: { "before": ["குடிக்கிறதுக்கு முன்னாடி", "குடிப்பதற்கு முன்"], "after": ["குடிச்ச பிறகு", "குடித்த பிறகு"], "assoon": ["குடிச்சதும்", "குடித்ததும்"] }
+      readings: { "before": ["kuṭikkiṟatukku muṉṉāṭi", "kuṭippataṟku muṉ"], "after": ["kuṭicca piṟaku", "kuṭitta piṟaku"], "assoon": ["kuṭiccatum", "kuṭittatum"] }
+    - word: "ta-0121"
+      forms: { "before": ["பார்க்கிறதுக்கு முன்னாடி", "பார்ப்பதற்கு முன்"], "after": ["பாத்த பிறகு", "பார்த்த பிறகு"], "assoon": ["பாத்ததும்", "பார்த்ததும்"] }
+      readings: { "before": ["pārkkiṟatukku muṉṉāṭi", "pārppataṟku muṉ"], "after": ["pātta piṟaku", "pārtta piṟaku"], "assoon": ["pāttatum", "pārttatum"] }
+    - word: "ta-0122"
+      forms: { "before": ["கேட்கிறதுக்கு முன்னாடி", "கேட்பதற்கு முன்"], "after": "கேட்ட பிறகு", "assoon": "கேட்டதும்" }
+      readings: { "before": ["kēṭkiṟatukku muṉṉāṭi", "kēṭpataṟku muṉ"], "after": "kēṭṭa piṟaku", "assoon": "kēṭṭatum" }
+    - word: "ta-0123"
+      forms: { "before": ["பேசுறதுக்கு முன்னாடி", "பேசுவதற்கு முன்"], "after": "பேசின பிறகு", "assoon": "பேசினதும்" }
+      readings: { "before": ["pēcuṟatukku muṉṉāṭi", "pēcuvataṟku muṉ"], "after": "pēciṉa piṟaku", "assoon": "pēciṉatum" }
+    - word: "ta-0124"
+      forms: { "before": ["எழுதுறதுக்கு முன்னாடி", "எழுதுவதற்கு முன்"], "after": "எழுதின பிறகு", "assoon": "எழுதினதும்" }
+      readings: { "before": ["eḻutuṟatukku muṉṉāṭi", "eḻutuvataṟku muṉ"], "after": "eḻutiṉa piṟaku", "assoon": "eḻutiṉatum" }
+    - word: "ta-0125"
+      forms: { "before": ["கொடுக்கிறதுக்கு முன்னாடி", "கொடுப்பதற்கு முன்"], "after": "கொடுத்த பிறகு", "assoon": "கொடுத்ததும்" }
+      readings: { "before": ["koṭukkiṟatukku muṉṉāṭi", "koṭuppataṟku muṉ"], "after": "koṭutta piṟaku", "assoon": "koṭuttatum" }
+    - word: "ta-0126"
+      forms: { "before": ["தூங்குறதுக்கு முன்னாடி", "தூங்குவதற்கு முன்"], "after": "தூங்கின பிறகு", "assoon": "தூங்கினதும்" }
+      readings: { "before": ["tūṅkuṟatukku muṉṉāṭi", "tūṅkuvataṟku muṉ"], "after": "tūṅkiṉa piṟaku", "assoon": "tūṅkiṉatum" }
+    - word: "ta-0127"
+      forms: { "before": ["செய்கிறதுக்கு முன்னாடி", "செய்வதற்கு முன்"], "after": ["செஞ்ச பிறகு", "செய்த பிறகு"], "assoon": ["செஞ்சதும்", "செய்ததும்"] }
+      readings: { "before": ["ceykiṟatukku muṉṉāṭi", "ceyvataṟku muṉ"], "after": ["ceñca piṟaku", "ceyta piṟaku"], "assoon": ["ceñcatum", "ceytatum"] }
+    - word: "ta-0128"
+      forms: { "before": ["சமைக்கிறதுக்கு முன்னாடி", "சமைப்பதற்கு முன்"], "after": ["சமைச்ச பிறகு", "சமைத்த பிறகு"], "assoon": ["சமைச்சதும்", "சமைத்ததும்"] }
+      readings: { "before": ["camaikkiṟatukku muṉṉāṭi", "camaippataṟku muṉ"], "after": ["camaicca piṟaku", "camaitta piṟaku"], "assoon": ["camaiccatum", "camaittatum"] }
+    - word: "ta-0129"
+      forms: { "before": ["வாங்குறதுக்கு முன்னாடி", "வாங்குவதற்கு முன்"], "after": "வாங்கின பிறகு", "assoon": "வாங்கினதும்" }
+      readings: { "before": ["vāṅkuṟatukku muṉṉāṭi", "vāṅkuvataṟku muṉ"], "after": "vāṅkiṉa piṟaku", "assoon": "vāṅkiṉatum" }
+    - word: "ta-0184"
+      forms: { "before": ["எடுக்கிறதுக்கு முன்னாடி", "எடுப்பதற்கு முன்"], "after": "எடுத்த பிறகு", "assoon": "எடுத்ததும்" }
+      readings: { "before": ["eṭukkiṟatukku muṉṉāṭi", "eṭuppataṟku muṉ"], "after": "eṭutta piṟaku", "assoon": "eṭuttatum" }
+    - word: "ta-0185"
+      forms: { "before": ["வைக்கிறதுக்கு முன்னாடி", "வைப்பதற்கு முன்"], "after": ["வச்ச பிறகு", "வைத்த பிறகு"], "assoon": ["வச்சதும்", "வைத்ததும்"] }
+      readings: { "before": ["vaikkiṟatukku muṉṉāṭi", "vaippataṟku muṉ"], "after": ["vacca piṟaku", "vaitta piṟaku"], "assoon": ["vaccatum", "vaittatum"] }
+    - word: "ta-0186"
+      forms: { "before": ["திறக்கிறதுக்கு முன்னாடி", "திறப்பதற்கு முன்"], "after": "திறந்த பிறகு", "assoon": "திறந்ததும்" }
+      readings: { "before": ["tiṟakkiṟatukku muṉṉāṭi", "tiṟappataṟku muṉ"], "after": "tiṟanta piṟaku", "assoon": "tiṟantatum" }
+    - word: "ta-0187"
+      forms: { "before": ["மூடுறதுக்கு முன்னாடி", "மூடுவதற்கு முன்"], "after": "மூடின பிறகு", "assoon": "மூடினதும்" }
+      readings: { "before": ["mūṭuṟatukku muṉṉāṭi", "mūṭuvataṟku muṉ"], "after": "mūṭiṉa piṟaku", "assoon": "mūṭiṉatum" }
+    - word: "ta-0188"
+      forms: { "before": ["உட்காருகிறதுக்கு முன்னாடி", "உட்காருவதற்கு முன்"], "after": "உட்கார்ந்த பிறகு", "assoon": "உட்கார்ந்ததும்" }
+      readings: { "before": ["uṭkārukiṟatukku muṉṉāṭi", "uṭkāruvataṟku muṉ"], "after": "uṭkārnta piṟaku", "assoon": "uṭkārntatum" }
+    - word: "ta-0189"
+      forms: { "before": ["நிற்கிறதுக்கு முன்னாடி", "நிற்பதற்கு முன்"], "after": "நின்ற பிறகு", "assoon": "நின்றதும்" }
+      readings: { "before": ["niṟkiṟatukku muṉṉāṭi", "niṟpataṟku muṉ"], "after": "niṉṟa piṟaku", "assoon": "niṉṟatum" }
+    - word: "ta-0190"
+      forms: { "before": ["கழுவுறதுக்கு முன்னாடி", "கழுவுவதற்கு முன்"], "after": "கழுவின பிறகு", "assoon": "கழுவினதும்" }
+      readings: { "before": ["kaḻuvuṟatukku muṉṉāṭi", "kaḻuvuvataṟku muṉ"], "after": "kaḻuviṉa piṟaku", "assoon": "kaḻuviṉatum" }
+    - word: "ta-0191"
+      forms: { "before": ["விளையாடுறதுக்கு முன்னாடி", "விளையாடுவதற்கு முன்"], "after": "விளையாடின பிறகு", "assoon": "விளையாடினதும்" }
+      readings: { "before": ["viḷaiyāṭuṟatukku muṉṉāṭi", "viḷaiyāṭuvataṟku muṉ"], "after": "viḷaiyāṭiṉa piṟaku", "assoon": "viḷaiyāṭiṉatum" }
+    - word: "ta-1101"
+      forms: { "before": ["குளிக்கிறதுக்கு முன்னாடி", "குளிப்பதற்கு முன்"], "after": ["குளிச்ச பிறகு", "குளித்த பிறகு"], "assoon": ["குளிச்சதும்", "குளித்ததும்"] }
+      readings: { "before": ["kuḷikkiṟatukku muṉṉāṭi", "kuḷippataṟku muṉ"], "after": ["kuḷicca piṟaku", "kuḷitta piṟaku"], "assoon": ["kuḷiccatum", "kuḷittatum"] }
+    - word: "ta-1102"
+      forms: { "before": ["துலக்குகிறதுக்கு முன்னாடி", "துலக்குவதற்கு முன்"], "after": "துலக்கின பிறகு", "assoon": "துலக்கினதும்" }
+      readings: { "before": ["tulakkukiṟatukku muṉṉāṭi", "tulakkuvataṟku muṉ"], "after": "tulakkiṉa piṟaku", "assoon": "tulakkiṉatum" }
+    - word: "ta-1103"
+      forms: { "before": ["நடக்கிறதுக்கு முன்னாடி", "நடப்பதற்கு முன்"], "after": "நடந்த பிறகு", "assoon": "நடந்ததும்" }
+      readings: { "before": ["naṭakkiṟatukku muṉṉāṭi", "naṭappataṟku muṉ"], "after": "naṭanta piṟaku", "assoon": "naṭantatum" }
+    - word: "ta-1104"
+      forms: { "before": ["திரும்புகிறதுக்கு முன்னாடி", "திரும்புவதற்கு முன்"], "after": "திரும்பின பிறகு", "assoon": "திரும்பினதும்" }
+      readings: { "before": ["tirumpukiṟatukku muṉṉāṭi", "tirumpuvataṟku muṉ"], "after": "tirumpiṉa piṟaku", "assoon": "tirumpiṉatum" }
+    - word: "ta-1107"
+      forms: { "before": ["தொடங்குகிறதுக்கு முன்னாடி", "தொடங்குவதற்கு முன்"], "after": "தொடங்கின பிறகு", "assoon": "தொடங்கினதும்" }
+      readings: { "before": ["toṭaṅkukiṟatukku muṉṉāṭi", "toṭaṅkuvataṟku muṉ"], "after": "toṭaṅkiṉa piṟaku", "assoon": "toṭaṅkiṉatum" }
+    - word: "ta-1801"
+      forms: { "before": ["உதவுகிறதுக்கு முன்னாடி", "உதவுவதற்கு முன்"], "after": "உதவின பிறகு", "assoon": "உதவினதும்" }
+      readings: { "before": ["utavukiṟatukku muṉṉāṭi", "utavuvataṟku muṉ"], "after": "utaviṉa piṟaku", "assoon": "utaviṉatum" }
+    - word: "ta-0450"
+      forms: { "before": ["விடுகிறதுக்கு முன்னாடி", "விடுவதற்கு முன்"], "after": "விட்ட பிறகு", "assoon": "விட்டதும்" }
+      readings: { "before": ["viṭukiṟatukku muṉṉāṭi", "viṭuvataṟku muṉ"], "after": "viṭṭa piṟaku", "assoon": "viṭṭatum" }
+    - word: "ta-0451"
+      forms: { "before": ["கொள்கிறதுக்கு முன்னாடி", "கொள்வதற்கு முன்"], "after": "கொண்ட பிறகு", "assoon": "கொண்டதும்" }
+      readings: { "before": ["koḷkiṟatukku muṉṉāṭi", "koḷvataṟku muṉ"], "after": "koṇṭa piṟaku", "assoon": "koṇṭatum" }
+    - word: "ta-0452"
+      forms: { "before": ["போடுகிறதுக்கு முன்னாடி", "போடுவதற்கு முன்"], "after": "போட்ட பிறகு", "assoon": "போட்டதும்" }
+      readings: { "before": ["pōṭukiṟatukku muṉṉāṭi", "pōṭuvataṟku muṉ"], "after": "pōṭṭa piṟaku", "assoon": "pōṭṭatum" }
+    - word: "ta-0453"
+      forms: { "before": ["தருகிறதுக்கு முன்னாடி", "தருவதற்கு முன்"], "after": "தந்த பிறகு", "assoon": "தந்ததும்" }
+      readings: { "before": ["tarukiṟatukku muṉṉāṭi", "taruvataṟku muṉ"], "after": "tanta piṟaku", "assoon": "tantatum" }
+    - word: "ta-0454"
+      forms: { "before": ["நிறுத்துகிறதுக்கு முன்னாடி", "நிறுத்துவதற்கு முன்"], "after": "நிறுத்தின பிறகு", "assoon": "நிறுத்தினதும்" }
+      readings: { "before": ["niṟuttukiṟatukku muṉṉāṭi", "niṟuttuvataṟku muṉ"], "after": "niṟuttiṉa piṟaku", "assoon": "niṟuttiṉatum" }
+    - word: "ta-0455"
+      forms: { "before": ["தள்ளுகிறதுக்கு முன்னாடி", "தள்ளுவதற்கு முன்"], "after": "தள்ளின பிறகு", "assoon": "தள்ளினதும்" }
+      readings: { "before": ["taḷḷukiṟatukku muṉṉāṭi", "taḷḷuvataṟku muṉ"], "after": "taḷḷiṉa piṟaku", "assoon": "taḷḷiṉatum" }
+    - word: "ta-0456"
+      forms: { "before": ["பிடிக்கிறதுக்கு முன்னாடி", "பிடிப்பதற்கு முன்"], "after": ["பிடிச்ச பிறகு", "பிடித்த பிறகு"], "assoon": ["பிடிச்சதும்", "பிடித்ததும்"] }
+      readings: { "before": ["piṭikkiṟatukku muṉṉāṭi", "piṭippataṟku muṉ"], "after": ["piṭicca piṟaku", "piṭitta piṟaku"], "assoon": ["piṭiccatum", "piṭittatum"] }
+    - word: "ta-0457"
+      forms: { "before": ["வீசுகிறதுக்கு முன்னாடி", "வீசுவதற்கு முன்"], "after": "வீசின பிறகு", "assoon": "வீசினதும்" }
+      readings: { "before": ["vīcukiṟatukku muṉṉāṭi", "vīcuvataṟku muṉ"], "after": "vīciṉa piṟaku", "assoon": "vīciṉatum" }
+    - word: "ta-0458"
+      forms: { "before": ["தூக்குகிறதுக்கு முன்னாடி", "தூக்குவதற்கு முன்"], "after": "தூக்கின பிறகு", "assoon": "தூக்கினதும்" }
+      readings: { "before": ["tūkkukiṟatukku muṉṉāṭi", "tūkkuvataṟku muṉ"], "after": "tūkkiṉa piṟaku", "assoon": "tūkkiṉatum" }
+    - word: "ta-0460"
+      forms: { "before": ["பண்ணுகிறதுக்கு முன்னாடி", "பண்ணுவதற்கு முன்"], "after": "பண்ணின பிறகு", "assoon": "பண்ணினதும்" }
+      readings: { "before": ["paṇṇukiṟatukku muṉṉāṭi", "paṇṇuvataṟku muṉ"], "after": "paṇṇiṉa piṟaku", "assoon": "paṇṇiṉatum" }
+    - word: "ta-0461"
+      forms: { "before": ["ஆகுகிறதுக்கு முன்னாடி", "ஆவதற்கு முன்"], "after": "ஆன பிறகு", "assoon": "ஆனதும்" }
+      readings: { "before": ["ākukiṟatukku muṉṉāṭi", "āvataṟku muṉ"], "after": "āṉa piṟaku", "assoon": "āṉatum" }
+    - word: "ta-0462"
+      forms: { "before": ["படுகிறதுக்கு முன்னாடி", "படுவதற்கு முன்"], "after": "பட்ட பிறகு", "assoon": "பட்டதும்" }
+      readings: { "before": ["paṭukiṟatukku muṉṉāṭi", "paṭuvataṟku muṉ"], "after": "paṭṭa piṟaku", "assoon": "paṭṭatum" }
+    - word: "ta-0470"
+      forms: { "before": ["செல்கிறதுக்கு முன்னாடி", "செல்வதற்கு முன்"], "after": "சென்ற பிறகு", "assoon": "சென்றதும்" }
+      readings: { "before": ["celkiṟatukku muṉṉāṭi", "celvataṟku muṉ"], "after": "ceṉṟa piṟaku", "assoon": "ceṉṟatum" }
+    - word: "ta-0471"
+      forms: { "before": ["உண்கிறதுக்கு முன்னாடி", "உண்பதற்கு முன்"], "after": "உண்ட பிறகு", "assoon": "உண்டதும்" }
+      readings: { "before": ["uṇkiṟatukku muṉṉāṭi", "uṇpataṟku muṉ"], "after": "uṇṭa piṟaku", "assoon": "uṇṭatum" }
+    - word: "ta-0472"
+      forms: { "before": ["அருந்துகிறதுக்கு முன்னாடி", "அருந்துவதற்கு முன்"], "after": "அருந்தின பிறகு", "assoon": "அருந்தினதும்" }
+      readings: { "before": ["aruntukiṟatukku muṉṉāṭi", "aruntuvataṟku muṉ"], "after": "aruntiṉa piṟaku", "assoon": "aruntiṉatum" }
+    - word: "ta-0473"
+      forms: { "before": ["கூறுகிறதுக்கு முன்னாடி", "கூறுவதற்கு முன்"], "after": "கூறின பிறகு", "assoon": "கூறினதும்" }
+      readings: { "before": ["kūṟukiṟatukku muṉṉāṭi", "kūṟuvataṟku muṉ"], "after": "kūṟiṉa piṟaku", "assoon": "kūṟiṉatum" }
+    - word: "ta-0474"
+      forms: { "before": ["தெரிவிக்கிறதுக்கு முன்னாடி", "தெரிவிப்பதற்கு முன்"], "after": "தெரிவித்த பிறகு", "assoon": "தெரிவித்ததும்" }
+      readings: { "before": ["terivikkiṟatukku muṉṉāṭi", "terivippataṟku muṉ"], "after": "terivitta piṟaku", "assoon": "terivittatum" }
+    - word: "ta-2003"
+      forms: { "before": ["உடுத்துகிறதுக்கு முன்னாடி", "உடுத்துவதற்கு முன்"], "after": "உடுத்தின பிறகு", "assoon": "உடுத்தினதும்" }
+      readings: { "before": ["uṭuttukiṟatukku muṉṉāṭi", "uṭuttuvataṟku muṉ"], "after": "uṭuttiṉa piṟaku", "assoon": "uṭuttiṉatum" }
+    - word: "ta-2004"
+      forms: { "before": ["கழற்றுகிறதுக்கு முன்னாடி", "கழற்றுவதற்கு முன்"], "after": "கழற்றின பிறகு", "assoon": "கழற்றினதும்" }
+      readings: { "before": ["kaḻaṟṟukiṟatukku muṉṉāṭi", "kaḻaṟṟuvataṟku muṉ"], "after": "kaḻaṟṟiṉa piṟaku", "assoon": "kaḻaṟṟiṉatum" }
+    - word: "ta-2005"
+      forms: { "before": ["கட்டுகிறதுக்கு முன்னாடி", "கட்டுவதற்கு முன்"], "after": "கட்டின பிறகு", "assoon": "கட்டினதும்" }
+      readings: { "before": ["kaṭṭukiṟatukku muṉṉāṭi", "kaṭṭuvataṟku muṉ"], "after": "kaṭṭiṉa piṟaku", "assoon": "kaṭṭiṉatum" }
+    - word: "ta-2006"
+      forms: { "before": ["சீவுகிறதுக்கு முன்னாடி", "சீவுவதற்கு முன்"], "after": "சீவின பிறகு", "assoon": "சீவினதும்" }
+      readings: { "before": ["cīvukiṟatukku muṉṉāṭi", "cīvuvataṟku muṉ"], "after": "cīviṉa piṟaku", "assoon": "cīviṉatum" }
+    - word: "ta-2007"
+      forms: { "before": ["அலங்கரிக்கிறதுக்கு முன்னாடி", "அலங்கரிப்பதற்கு முன்"], "after": "அலங்கரித்த பிறகு", "assoon": "அலங்கரித்ததும்" }
+      readings: { "before": ["alaṅkarikkiṟatukku muṉṉāṭi", "alaṅkarippataṟku muṉ"], "after": "alaṅkaritta piṟaku", "assoon": "alaṅkarittatum" }
+    - word: "ta-2008"
+      forms: { "before": ["வளர்கிறதுக்கு முன்னாடி", "வளர்வதற்கு முன்"], "after": "வளர்ந்த பிறகு", "assoon": "வளர்ந்ததும்" }
+      readings: { "before": ["vaḷarkiṟatukku muṉṉāṭi", "vaḷarvataṟku muṉ"], "after": "vaḷarnta piṟaku", "assoon": "vaḷarntatum" }
+    - word: "ta-2009"
+      forms: { "before": ["பூசுகிறதுக்கு முன்னாடி", "பூசுவதற்கு முன்"], "after": "பூசின பிறகு", "assoon": "பூசினதும்" }
+      readings: { "before": ["pūcukiṟatukku muṉṉāṭi", "pūcuvataṟku muṉ"], "after": "pūciṉa piṟaku", "assoon": "pūciṉatum" }
+    - word: "ta-1945"
+      forms: { "before": ["பெருக்குகிறதுக்கு முன்னாடி", "பெருக்குவதற்கு முன்"], "after": "பெருக்கின பிறகு", "assoon": "பெருக்கினதும்" }
+      readings: { "before": ["perukkukiṟatukku muṉṉāṭi", "perukkuvataṟku muṉ"], "after": "perukkiṉa piṟaku", "assoon": "perukkiṉatum" }
+    - word: "ta-1946"
+      forms: { "before": ["துடைக்கிறதுக்கு முன்னாடி", "துடைப்பதற்கு முன்"], "after": "துடைத்த பிறகு", "assoon": "துடைத்ததும்" }
+      readings: { "before": ["tuṭaikkiṟatukku muṉṉāṭi", "tuṭaippataṟku muṉ"], "after": "tuṭaitta piṟaku", "assoon": "tuṭaittatum" }
+    - word: "ta-1947"
+      forms: { "before": ["துவைக்கிறதுக்கு முன்னாடி", "துவைப்பதற்கு முன்"], "after": "துவைத்த பிறகு", "assoon": "துவைத்ததும்" }
+      readings: { "before": ["tuvaikkiṟatukku muṉṉāṭi", "tuvaippataṟku muṉ"], "after": "tuvaitta piṟaku", "assoon": "tuvaittatum" }
+    - word: "ta-1948"
+      forms: { "before": ["மடிக்கிறதுக்கு முன்னாடி", "மடிப்பதற்கு முன்"], "after": "மடித்த பிறகு", "assoon": "மடித்ததும்" }
+      readings: { "before": ["maṭikkiṟatukku muṉṉāṭi", "maṭippataṟku muṉ"], "after": "maṭitta piṟaku", "assoon": "maṭittatum" }
+    - word: "ta-1949"
+      forms: { "before": ["இழுகிறதுக்கு முன்னாடி", "இழுப்பதற்கு முன்"], "after": "இழுத்த பிறகு", "assoon": "இழுத்ததும்" }
+      readings: { "before": ["iḻukiṟatukku muṉṉāṭi", "iḻuppataṟku muṉ"], "after": "iḻutta piṟaku", "assoon": "iḻuttatum" }
+    - word: "ta-1951"
+      forms: { "before": ["நிரப்புகிறதுக்கு முன்னாடி", "நிரப்புவதற்கு முன்"], "after": "நிரப்பின பிறகு", "assoon": "நிரப்பினதும்" }
+      readings: { "before": ["nirappukiṟatukku muṉṉāṭi", "nirappuvataṟku muṉ"], "after": "nirappiṉa piṟaku", "assoon": "nirappiṉatum" }
+    - word: "ta-1952"
+      forms: { "before": ["ஊற்றுகிறதுக்கு முன்னாடி", "ஊற்றுவதற்கு முன்"], "after": "ஊற்றின பிறகு", "assoon": "ஊற்றினதும்" }
+      readings: { "before": ["ūṟṟukiṟatukku muṉṉāṭi", "ūṟṟuvataṟku muṉ"], "after": "ūṟṟiṉa piṟaku", "assoon": "ūṟṟiṉatum" }
+    - word: "ta-1953"
+      forms: { "before": ["அணைக்கிறதுக்கு முன்னாடி", "அணைப்பதற்கு முன்"], "after": "அணைத்த பிறகு", "assoon": "அணைத்ததும்" }
+      readings: { "before": ["aṇaikkiṟatukku muṉṉāṭi", "aṇaippataṟku muṉ"], "after": "aṇaitta piṟaku", "assoon": "aṇaittatum" }
+    - word: "ta-1954"
+      forms: { "before": ["ஏற்றுகிறதுக்கு முன்னாடி", "ஏற்றுவதற்கு முன்"], "after": "ஏற்றின பிறகு", "assoon": "ஏற்றினதும்" }
+      readings: { "before": ["ēṟṟukiṟatukku muṉṉāṭi", "ēṟṟuvataṟku muṉ"], "after": "ēṟṟiṉa piṟaku", "assoon": "ēṟṟiṉatum" }
+    - word: "ta-1955"
+      forms: { "before": ["உலர்த்துகிறதுக்கு முன்னாடி", "உலர்த்துவதற்கு முன்"], "after": "உலர்த்தின பிறகு", "assoon": "உலர்த்தினதும்" }
+      readings: { "before": ["ularttukiṟatukku muṉṉāṭi", "ularttuvataṟku muṉ"], "after": "ularttiṉa piṟaku", "assoon": "ularttiṉatum" }
+    - word: "ta-1956"
+      forms: { "before": ["வெட்டுகிறதுக்கு முன்னாடி", "வெட்டுவதற்கு முன்"], "after": "வெட்டின பிறகு", "assoon": "வெட்டினதும்" }
+      readings: { "before": ["veṭṭukiṟatukku muṉṉāṭi", "veṭṭuvataṟku muṉ"], "after": "veṭṭiṉa piṟaku", "assoon": "veṭṭiṉatum" }
+    - word: "ta-1957"
+      forms: { "before": ["கலக்குகிறதுக்கு முன்னாடி", "கலக்குவதற்கு முன்"], "after": "கலக்கின பிறகு", "assoon": "கலக்கினதும்" }
+      readings: { "before": ["kalakkukiṟatukku muṉṉāṭi", "kalakkuvataṟku muṉ"], "after": "kalakkiṉa piṟaku", "assoon": "kalakkiṉatum" }
+    - word: "ta-1958"
+      forms: { "before": ["தேடுகிறதுக்கு முன்னாடி", "தேடுவதற்கு முன்"], "after": "தேடின பிறகு", "assoon": "தேடினதும்" }
+      readings: { "before": ["tēṭukiṟatukku muṉṉāṭi", "tēṭuvataṟku muṉ"], "after": "tēṭiṉa piṟaku", "assoon": "tēṭiṉatum" }
+    - word: "ta-1959"
+      forms: { "before": ["அடுக்குகிறதுக்கு முன்னாடி", "அடுக்குவதற்கு முன்"], "after": "அடுக்கின பிறகு", "assoon": "அடுக்கினதும்" }
+      readings: { "before": ["aṭukkukiṟatukku muṉṉāṭi", "aṭukkuvataṟku muṉ"], "after": "aṭukkiṉa piṟaku", "assoon": "aṭukkiṉatum" }
+    - word: "ta-1961"
+      forms: { "before": ["மாற்றுகிறதுக்கு முன்னாடி", "மாற்றுவதற்கு முன்"], "after": "மாற்றின பிறகு", "assoon": "மாற்றினதும்" }
+      readings: { "before": ["māṟṟukiṟatukku muṉṉāṭi", "māṟṟuvataṟku muṉ"], "after": "māṟṟiṉa piṟaku", "assoon": "māṟṟiṉatum" }
+    - word: "ta-1183"
+      forms: { "before": ["பொங்குகிறதுக்கு முன்னாடி", "பொங்குவதற்கு முன்"], "after": "பொங்கின பிறகு", "assoon": "பொங்கினதும்" }
+      readings: { "before": ["poṅkukiṟatukku muṉṉāṭi", "poṅkuvataṟku muṉ"], "after": "poṅkiṉa piṟaku", "assoon": "poṅkiṉatum" }
+    - word: "ta-1192"
+      forms: { "before": ["கொண்டாடுகிறதுக்கு முன்னாடி", "கொண்டாடுவதற்கு முன்"], "after": "கொண்டாடின பிறகு", "assoon": "கொண்டாடினதும்" }
+      readings: { "before": ["koṇṭāṭukiṟatukku muṉṉāṭi", "koṇṭāṭuvataṟku muṉ"], "after": "koṇṭāṭiṉa piṟaku", "assoon": "koṇṭāṭiṉatum" }
+    - word: "ta-1202"
+      forms: { "before": ["வணங்குகிறதுக்கு முன்னாடி", "வணங்குவதற்கு முன்"], "after": "வணங்கின பிறகு", "assoon": "வணங்கினதும்" }
+      readings: { "before": ["vaṇaṅkukiṟatukku muṉṉāṭi", "vaṇaṅkuvataṟku muṉ"], "after": "vaṇaṅkiṉa piṟaku", "assoon": "vaṇaṅkiṉatum" }
+    - word: "ta-1905"
+      forms: { "before": ["பாடுகிறதுக்கு முன்னாடி", "பாடுவதற்கு முன்"], "after": "பாடின பிறகு", "assoon": "பாடினதும்" }
+      readings: { "before": ["pāṭukiṟatukku muṉṉāṭi", "pāṭuvataṟku muṉ"], "after": "pāṭiṉa piṟaku", "assoon": "pāṭiṉatum" }
+    - word: "ta-1907"
+      forms: { "before": ["தீட்டுகிறதுக்கு முன்னாடி", "தீட்டுவதற்கு முன்"], "after": "தீட்டின பிறகு", "assoon": "தீட்டினதும்" }
+      readings: { "before": ["tīṭṭukiṟatukku muṉṉāṭi", "tīṭṭuvataṟku muṉ"], "after": "tīṭṭiṉa piṟaku", "assoon": "tīṭṭiṉatum" }
+    - word: "ta-1908"
+      forms: { "before": ["ஓடுகிறதுக்கு முன்னாடி", "ஓடுவதற்கு முன்"], "after": "ஓடின பிறகு", "assoon": "ஓடினதும்" }
+      readings: { "before": ["ōṭukiṟatukku muṉṉāṭi", "ōṭuvataṟku muṉ"], "after": "ōṭiṉa piṟaku", "assoon": "ōṭiṉatum" }
+    - word: "ta-1909"
+      forms: { "before": ["பறக்கிறதுக்கு முன்னாடி", "பறப்பதற்கு முன்"], "after": "பறந்த பிறகு", "assoon": "பறந்ததும்" }
+      readings: { "before": ["paṟakkiṟatukku muṉṉāṭi", "paṟappataṟku muṉ"], "after": "paṟanta piṟaku", "assoon": "paṟantatum" }
+    - word: "ta-1910"
+      forms: { "before": ["நீந்துகிறதுக்கு முன்னாடி", "நீந்துவதற்கு முன்"], "after": "நீந்தின பிறகு", "assoon": "நீந்தினதும்" }
+      readings: { "before": ["nīntukiṟatukku muṉṉāṭi", "nīntuvataṟku muṉ"], "after": "nīntiṉa piṟaku", "assoon": "nīntiṉatum" }
+    - word: "ta-1911"
+      forms: { "before": ["குதிக்கிறதுக்கு முன்னாடி", "குதிப்பதற்கு முன்"], "after": "குதித்த பிறகு", "assoon": "குதித்ததும்" }
+      readings: { "before": ["kutikkiṟatukku muṉṉāṭi", "kutippataṟku muṉ"], "after": "kutitta piṟaku", "assoon": "kutittatum" }
+    - word: "ta-1912"
+      forms: { "before": ["ஏறுகிறதுக்கு முன்னாடி", "ஏறுவதற்கு முன்"], "after": "ஏறின பிறகு", "assoon": "ஏறினதும்" }
+      readings: { "before": ["ēṟukiṟatukku muṉṉāṭi", "ēṟuvataṟku muṉ"], "after": "ēṟiṉa piṟaku", "assoon": "ēṟiṉatum" }
+    - word: "ta-1913"
+      forms: { "before": ["சேகரிக்கிறதுக்கு முன்னாடி", "சேகரிப்பதற்கு முன்"], "after": "சேகரித்த பிறகு", "assoon": "சேகரித்ததும்" }
+      readings: { "before": ["cēkarikkiṟatukku muṉṉāṭi", "cēkarippataṟku muṉ"], "after": "cēkaritta piṟaku", "assoon": "cēkarittatum" }
+    - word: "ta-1914"
+      forms: { "before": ["சிரிக்கிறதுக்கு முன்னாடி", "சிரிப்பதற்கு முன்"], "after": "சிரித்த பிறகு", "assoon": "சிரித்ததும்" }
+      readings: { "before": ["cirikkiṟatukku muṉṉāṭi", "cirippataṟku muṉ"], "after": "ciritta piṟaku", "assoon": "cirittatum" }
+    - word: "ta-1915"
+      forms: { "before": ["ரசிக்கிறதுக்கு முன்னாடி", "ரசிப்பதற்கு முன்"], "after": "ரசித்த பிறகு", "assoon": "ரசித்ததும்" }
+      readings: { "before": ["racikkiṟatukku muṉṉāṭi", "racippataṟku muṉ"], "after": "racitta piṟaku", "assoon": "racittatum" }
+    - word: "ta-1916"
+      forms: { "before": ["வெல்கிறதுக்கு முன்னாடி", "வெல்வதற்கு முன்"], "after": "வென்ற பிறகு", "assoon": "வென்றதும்" }
+      readings: { "before": ["velkiṟatukku muṉṉāṭi", "velvataṟku muṉ"], "after": "veṉṟa piṟaku", "assoon": "veṉṟatum" }
+    - word: "ta-2180"
+      forms: { "before": ["ஓட்டுகிறதுக்கு முன்னாடி", "ஓட்டுவதற்கு முன்"], "after": "ஓட்டின பிறகு", "assoon": "ஓட்டினதும்" }
+      readings: { "before": ["ōṭṭukiṟatukku muṉṉāṭi", "ōṭṭuvataṟku muṉ"], "after": "ōṭṭiṉa piṟaku", "assoon": "ōṭṭiṉatum" }
+    - word: "ta-2182"
+      forms: { "before": ["அடைகிறதுக்கு முன்னாடி", "அடைவதற்கு முன்"], "after": "அடைந்த பிறகு", "assoon": "அடைந்ததும்" }
+      readings: { "before": ["aṭaikiṟatukku muṉṉāṭi", "aṭaivataṟku muṉ"], "after": "aṭainta piṟaku", "assoon": "aṭaintatum" }
+    - word: "ta-2183"
+      forms: { "before": ["இறக்குகிறதுக்கு முன்னாடி", "இறக்குவதற்கு முன்"], "after": "இறக்கின பிறகு", "assoon": "இறக்கினதும்" }
+      readings: { "before": ["iṟakkukiṟatukku muṉṉāṭi", "iṟakkuvataṟku muṉ"], "after": "iṟakkiṉa piṟaku", "assoon": "iṟakkiṉatum" }
+    - word: "ta-2186"
+      forms: { "before": ["இயங்குகிறதுக்கு முன்னாடி", "இயங்குவதற்கு முன்"], "after": "இயங்கின பிறகு", "assoon": "இயங்கினதும்" }
+      readings: { "before": ["iyaṅkukiṟatukku muṉṉāṭi", "iyaṅkuvataṟku muṉ"], "after": "iyaṅkiṉa piṟaku", "assoon": "iyaṅkiṉatum" }
+    - word: "ta-2191"
+      forms: { "before": ["பரிசோதிக்கிறதுக்கு முன்னாடி", "பரிசோதிப்பதற்கு முன்"], "after": "பரிசோதித்த பிறகு", "assoon": "பரிசோதித்ததும்" }
+      readings: { "before": ["paricōtikkiṟatukku muṉṉāṭi", "paricōtippataṟku muṉ"], "after": "paricōtitta piṟaku", "assoon": "paricōtittatum" }
+    - word: "ta-2241"
+      forms: { "before": ["மலர்கிறதுக்கு முன்னாடி", "மலர்வதற்கு முன்"], "after": "மலர்ந்த பிறகு", "assoon": "மலர்ந்ததும்" }
+      readings: { "before": ["malarkiṟatukku muṉṉāṭi", "malarvataṟku muṉ"], "after": "malarnta piṟaku", "assoon": "malarntatum" }
+    - word: "ta-2242"
+      forms: { "before": ["உதிர்கிறதுக்கு முன்னாடி", "உதிர்வதற்கு முன்"], "after": "உதிர்ந்த பிறகு", "assoon": "உதிர்ந்ததும்" }
+      readings: { "before": ["utirkiṟatukku muṉṉāṭi", "utirvataṟku muṉ"], "after": "utirnta piṟaku", "assoon": "utirntatum" }
+    - word: "ta-2243"
+      forms: { "before": ["முளைக்கிறதுக்கு முன்னாடி", "முளைப்பதற்கு முன்"], "after": "முளைத்த பிறகு", "assoon": "முளைத்ததும்" }
+      readings: { "before": ["muḷaikkiṟatukku muṉṉāṭi", "muḷaippataṟku muṉ"], "after": "muḷaitta piṟaku", "assoon": "muḷaittatum" }
+    - word: "ta-2244"
+      forms: { "before": ["உருகுகிறதுக்கு முன்னாடி", "உருகுவதற்கு முன்"], "after": "உருகின பிறகு", "assoon": "உருகினதும்" }
+      readings: { "before": ["urukukiṟatukku muṉṉāṭi", "urukuvataṟku muṉ"], "after": "urukiṉa piṟaku", "assoon": "urukiṉatum" }
+    - word: "ta-2245"
+      forms: { "before": ["உறைகிறதுக்கு முன்னாடி", "உறைவதற்கு முன்"], "after": "உறைந்த பிறகு", "assoon": "உறைந்ததும்" }
+      readings: { "before": ["uṟaikiṟatukku muṉṉāṭi", "uṟaivataṟku muṉ"], "after": "uṟainta piṟaku", "assoon": "uṟaintatum" }
+    - word: "ta-2246"
+      forms: { "before": ["ஒழுகுகிறதுக்கு முன்னாடி", "ஒழுகுவதற்கு முன்"], "after": "ஒழுகின பிறகு", "assoon": "ஒழுகினதும்" }
+      readings: { "before": ["oḻukukiṟatukku muṉṉāṭi", "oḻukuvataṟku muṉ"], "after": "oḻukiṉa piṟaku", "assoon": "oḻukiṉatum" }
+    - word: "ta-2122"
+      forms: { "before": ["இணைக்கிறதுக்கு முன்னாடி", "இணைப்பதற்கு முன்"], "after": "இணைத்த பிறகு", "assoon": "இணைத்ததும்" }
+      readings: { "before": ["iṇaikkiṟatukku muṉṉāṭi", "iṇaippataṟku muṉ"], "after": "iṇaitta piṟaku", "assoon": "iṇaittatum" }
+    - word: "ta-2123"
+      forms: { "before": ["துண்டிக்கிறதுக்கு முன்னாடி", "துண்டிப்பதற்கு முன்"], "after": "துண்டித்த பிறகு", "assoon": "துண்டித்ததும்" }
+      readings: { "before": ["tuṇṭikkiṟatukku muṉṉāṭi", "tuṇṭippataṟku muṉ"], "after": "tuṇṭitta piṟaku", "assoon": "tuṇṭittatum" }
+    - word: "ta-2124"
+      forms: { "before": ["நீக்குகிறதுக்கு முன்னாடி", "நீக்குவதற்கு முன்"], "after": "நீக்கின பிறகு", "assoon": "நீக்கினதும்" }
+      readings: { "before": ["nīkkukiṟatukku muṉṉāṭi", "nīkkuvataṟku muṉ"], "after": "nīkkiṉa piṟaku", "assoon": "nīkkiṉatum" }
+    - word: "ta-2125"
+      forms: { "before": ["புதுப்பிக்கிறதுக்கு முன்னாடி", "புதுப்பிப்பதற்கு முன்"], "after": "புதுப்பித்த பிறகு", "assoon": "புதுப்பித்ததும்" }
+      readings: { "before": ["putuppikkiṟatukku muṉṉāṭi", "putuppippataṟku muṉ"], "after": "putuppitta piṟaku", "assoon": "putuppittatum" }
+    - word: "ta-2126"
+      forms: { "before": ["நிறுவுகிறதுக்கு முன்னாடி", "நிறுவுவதற்கு முன்"], "after": "நிறுவின பிறகு", "assoon": "நிறுவினதும்" }
+      readings: { "before": ["niṟuvukiṟatukku muṉṉāṭi", "niṟuvuvataṟku muṉ"], "after": "niṟuviṉa piṟaku", "assoon": "niṟuviṉatum" }
+    - word: "ta-2128"
+      forms: { "before": ["அழுத்துகிறதுக்கு முன்னாடி", "அழுத்துவதற்கு முன்"], "after": "அழுத்தின பிறகு", "assoon": "அழுத்தினதும்" }
+      readings: { "before": ["aḻuttukiṟatukku muṉṉāṭi", "aḻuttuvataṟku muṉ"], "after": "aḻuttiṉa piṟaku", "assoon": "aḻuttiṉatum" }
+    - word: "ta-1857"
+      forms: { "before": ["புரிகிறதுக்கு முன்னாடி", "புரிவதற்கு முன்"], "after": "புரிந்த பிறகு", "assoon": "புரிந்ததும்" }
+      readings: { "before": ["purikiṟatukku muṉṉāṭi", "purivataṟku muṉ"], "after": "purinta piṟaku", "assoon": "purintatum" }
+    - word: "ta-1858"
+      forms: { "before": ["மறக்கிறதுக்கு முன்னாடி", "மறப்பதற்கு முன்"], "after": "மறந்த பிறகு", "assoon": "மறந்ததும்" }
+      readings: { "before": ["maṟakkiṟatukku muṉṉāṭi", "maṟappataṟku muṉ"], "after": "maṟanta piṟaku", "assoon": "maṟantatum" }
+    - word: "ta-1859"
+      forms: { "before": ["நினைக்கிறதுக்கு முன்னாடி", "நினைப்பதற்கு முன்"], "after": "நினைத்த பிறகு", "assoon": "நினைத்ததும்" }
+      readings: { "before": ["niṉaikkiṟatukku muṉṉāṭi", "niṉaippataṟku muṉ"], "after": "niṉaitta piṟaku", "assoon": "niṉaittatum" }
+    - word: "ta-1242"
+      forms: { "before": ["செலுத்துகிறதுக்கு முன்னாடி", "செலுத்துவதற்கு முன்"], "after": "செலுத்தின பிறகு", "assoon": "செலுத்தினதும்" }
+      readings: { "before": ["celuttukiṟatukku muṉṉāṭi", "celuttuvataṟku muṉ"], "after": "celuttiṉa piṟaku", "assoon": "celuttiṉatum" }
+    - word: "ta-1243"
+      forms: { "before": ["ஒப்பிடுகிறதுக்கு முன்னாடி", "ஒப்பிடுவதற்கு முன்"], "after": "ஒப்பிட்ட பிறகு", "assoon": "ஒப்பிட்டதும்" }
+      readings: { "before": ["oppiṭukiṟatukku muṉṉāṭi", "oppiṭuvataṟku muṉ"], "after": "oppiṭṭa piṟaku", "assoon": "oppiṭṭatum" }
+    - word: "ta-1244"
+      forms: { "before": ["விசாரிக்கிறதுக்கு முன்னாடி", "விசாரிப்பதற்கு முன்"], "after": "விசாரித்த பிறகு", "assoon": "விசாரித்ததும்" }
+      readings: { "before": ["vicārikkiṟatukku muṉṉāṭi", "vicārippataṟku muṉ"], "after": "vicāritta piṟaku", "assoon": "vicārittatum" }
+    - word: "ta-1245"
+      forms: { "before": ["கூட்டுகிறதுக்கு முன்னாடி", "கூட்டுவதற்கு முன்"], "after": "கூட்டின பிறகு", "assoon": "கூட்டினதும்" }
+      readings: { "before": ["kūṭṭukiṟatukku muṉṉāṭi", "kūṭṭuvataṟku muṉ"], "after": "kūṭṭiṉa piṟaku", "assoon": "kūṭṭiṉatum" }
+    - word: "ta-1246"
+      forms: { "before": ["வசூலிக்கிறதுக்கு முன்னாடி", "வசூலிப்பதற்கு முன்"], "after": "வசூலித்த பிறகு", "assoon": "வசூலித்ததும்" }
+      readings: { "before": ["vacūlikkiṟatukku muṉṉāṭi", "vacūlippataṟku muṉ"], "after": "vacūlitta piṟaku", "assoon": "vacūlittatum" }
+    - word: "ta-2017"
+      forms: { "before": ["சொல்கிறதுக்கு முன்னாடி", "சொல்வதற்கு முன்"], "after": "சொன்ன பிறகு", "assoon": "சொன்னதும்" }
+      readings: { "before": ["colkiṟatukku muṉṉāṭi", "colvataṟku muṉ"], "after": "coṉṉa piṟaku", "assoon": "coṉṉatum" }
+    - word: "ta-2018"
+      forms: { "before": ["இருகிறதுக்கு முன்னாடி", "இருப்பதற்கு முன்"], "after": "இருந்த பிறகு", "assoon": "இருந்ததும்" }
+      readings: { "before": ["irukiṟatukku muṉṉāṭi", "iruppataṟku muṉ"], "after": "irunta piṟaku", "assoon": "iruntatum" }
+    - word: "ta-2019"
+      forms: { "before": ["தெரிகிறதுக்கு முன்னாடி", "தெரிவதற்கு முன்"], "after": "தெரிந்த பிறகு", "assoon": "தெரிந்ததும்" }
+      readings: { "before": ["terikiṟatukku muṉṉāṭi", "terivataṟku muṉ"], "after": "terinta piṟaku", "assoon": "terintatum" }
+    - word: "ta-2020"
+      forms: { "before": ["தங்குகிறதுக்கு முன்னாடி", "தங்குவதற்கு முன்"], "after": "தங்கின பிறகு", "assoon": "தங்கினதும்" }
+      readings: { "before": ["taṅkukiṟatukku muṉṉāṭi", "taṅkuvataṟku muṉ"], "after": "taṅkiṉa piṟaku", "assoon": "taṅkiṉatum" }
+    - word: "ta-2021"
+      forms: { "before": ["வாழ்கிறதுக்கு முன்னாடி", "வாழ்வதற்கு முன்"], "after": "வாழ்ந்த பிறகு", "assoon": "வாழ்ந்ததும்" }
+      readings: { "before": ["vāḻkiṟatukku muṉṉāṭi", "vāḻvataṟku muṉ"], "after": "vāḻnta piṟaku", "assoon": "vāḻntatum" }
+    - word: "ta-2022"
+      forms: { "before": ["இறங்குகிறதுக்கு முன்னாடி", "இறங்குவதற்கு முன்"], "after": "இறங்கின பிறகு", "assoon": "இறங்கினதும்" }
+      readings: { "before": ["iṟaṅkukiṟatukku muṉṉāṭi", "iṟaṅkuvataṟku muṉ"], "after": "iṟaṅkiṉa piṟaku", "assoon": "iṟaṅkiṉatum" }
+    - word: "ta-2024"
+      forms: { "before": ["பெறுகிறதுக்கு முன்னாடி", "பெறுவதற்கு முன்"], "after": "பெற்ற பிறகு", "assoon": "பெற்றதும்" }
+      readings: { "before": ["peṟukiṟatukku muṉṉāṭi", "peṟuvataṟku muṉ"], "after": "peṟṟa piṟaku", "assoon": "peṟṟatum" }
+    - word: "ta-2025"
+      forms: { "before": ["கிடைக்கிறதுக்கு முன்னாடி", "கிடைப்பதற்கு முன்"], "after": "கிடைத்த பிறகு", "assoon": "கிடைத்ததும்" }
+      readings: { "before": ["kiṭaikkiṟatukku muṉṉāṭi", "kiṭaippataṟku muṉ"], "after": "kiṭaitta piṟaku", "assoon": "kiṭaittatum" }
+    - word: "ta-2029"
+      forms: { "before": ["அனுப்புகிறதுக்கு முன்னாடி", "அனுப்புவதற்கு முன்"], "after": "அனுப்பின பிறகு", "assoon": "அனுப்பினதும்" }
+      readings: { "before": ["aṉuppukiṟatukku muṉṉāṭi", "aṉuppuvataṟku muṉ"], "after": "aṉuppiṉa piṟaku", "assoon": "aṉuppiṉatum" }
+    - word: "ta-2030"
+      forms: { "before": ["கூப்பிடுகிறதுக்கு முன்னாடி", "கூப்பிடுவதற்கு முன்"], "after": "கூப்பிட்ட பிறகு", "assoon": "கூப்பிட்டதும்" }
+      readings: { "before": ["kūppiṭukiṟatukku muṉṉāṭi", "kūppiṭuvataṟku muṉ"], "after": "kūppiṭṭa piṟaku", "assoon": "kūppiṭṭatum" }
+    - word: "ta-2031"
+      forms: { "before": ["அழைக்கிறதுக்கு முன்னாடி", "அழைப்பதற்கு முன்"], "after": "அழைத்த பிறகு", "assoon": "அழைத்ததும்" }
+      readings: { "before": ["aḻaikkiṟatukku muṉṉāṭi", "aḻaippataṟku muṉ"], "after": "aḻaitta piṟaku", "assoon": "aḻaittatum" }
+    - word: "ta-2033"
+      forms: { "before": ["சந்திக்கிறதுக்கு முன்னாடி", "சந்திப்பதற்கு முன்"], "after": "சந்தித்த பிறகு", "assoon": "சந்தித்ததும்" }
+      readings: { "before": ["cantikkiṟatukku muṉṉāṭi", "cantippataṟku muṉ"], "after": "cantitta piṟaku", "assoon": "cantittatum" }
+    - word: "ta-2034"
+      forms: { "before": ["சேர்கிறதுக்கு முன்னாடி", "சேர்வதற்கு முன்"], "after": "சேர்ந்த பிறகு", "assoon": "சேர்ந்ததும்" }
+      readings: { "before": ["cērkiṟatukku muṉṉāṭi", "cērvataṟku muṉ"], "after": "cērnta piṟaku", "assoon": "cērntatum" }
+    - word: "ta-2035"
+      forms: { "before": ["பிரிகிறதுக்கு முன்னாடி", "பிரிவதற்கு முன்"], "after": "பிரிந்த பிறகு", "assoon": "பிரிந்ததும்" }
+      readings: { "before": ["pirikiṟatukku muṉṉāṭi", "pirivataṟku muṉ"], "after": "pirinta piṟaku", "assoon": "pirintatum" }
+    - word: "ta-2036"
+      forms: { "before": ["நம்புகிறதுக்கு முன்னாடி", "நம்புவதற்கு முன்"], "after": "நம்பின பிறகு", "assoon": "நம்பினதும்" }
+      readings: { "before": ["nampukiṟatukku muṉṉāṭi", "nampuvataṟku muṉ"], "after": "nampiṉa piṟaku", "assoon": "nampiṉatum" }
+    - word: "ta-2038"
+      forms: { "before": ["பகிர்கிறதுக்கு முன்னாடி", "பகிர்வதற்கு முன்"], "after": "பகிர்ந்த பிறகு", "assoon": "பகிர்ந்ததும்" }
+      readings: { "before": ["pakirkiṟatukku muṉṉāṭi", "pakirvataṟku muṉ"], "after": "pakirnta piṟaku", "assoon": "pakirntatum" }
+    - word: "ta-2039"
+      forms: { "before": ["ஒட்டுகிறதுக்கு முன்னாடி", "ஒட்டுவதற்கு முன்"], "after": "ஒட்டின பிறகு", "assoon": "ஒட்டினதும்" }
+      readings: { "before": ["oṭṭukiṟatukku muṉṉāṭi", "oṭṭuvataṟku muṉ"], "after": "oṭṭiṉa piṟaku", "assoon": "oṭṭiṉatum" }
+    - word: "ta-2040"
+      forms: { "before": ["கொட்டுகிறதுக்கு முன்னாடி", "கொட்டுவதற்கு முன்"], "after": "கொட்டின பிறகு", "assoon": "கொட்டினதும்" }
+      readings: { "before": ["koṭṭukiṟatukku muṉṉāṭi", "koṭṭuvataṟku muṉ"], "after": "koṭṭiṉa piṟaku", "assoon": "koṭṭiṉatum" }
+    - word: "ta-2041"
+      forms: { "before": ["எரிகிறதுக்கு முன்னாடி", "எரிவதற்கு முன்"], "after": "எரிந்த பிறகு", "assoon": "எரிந்ததும்" }
+      readings: { "before": ["erikiṟatukku muṉṉāṭi", "erivataṟku muṉ"], "after": "erinta piṟaku", "assoon": "erintatum" }
+    - word: "ta-2042"
+      forms: { "before": ["உருவாக்குகிறதுக்கு முன்னாடி", "உருவாக்குவதற்கு முன்"], "after": "உருவாக்கின பிறகு", "assoon": "உருவாக்கினதும்" }
+      readings: { "before": ["uruvākkukiṟatukku muṉṉāṭi", "uruvākkuvataṟku muṉ"], "after": "uruvākkiṉa piṟaku", "assoon": "uruvākkiṉatum" }
+    - word: "ta-2043"
+      forms: { "before": ["திருடுகிறதுக்கு முன்னாடி", "திருடுவதற்கு முன்"], "after": "திருடின பிறகு", "assoon": "திருடினதும்" }
+      readings: { "before": ["tiruṭukiṟatukku muṉṉāṭi", "tiruṭuvataṟku muṉ"], "after": "tiruṭiṉa piṟaku", "assoon": "tiruṭiṉatum" }
+    - word: "ta-2044"
+      forms: { "before": ["யோசிக்கிறதுக்கு முன்னாடி", "யோசிப்பதற்கு முன்"], "after": "யோசித்த பிறகு", "assoon": "யோசித்ததும்" }
+      readings: { "before": ["yōcikkiṟatukku muṉṉāṭi", "yōcippataṟku muṉ"], "after": "yōcitta piṟaku", "assoon": "yōcittatum" }
+    - word: "ta-2045"
+      forms: { "before": ["விரும்புகிறதுக்கு முன்னாடி", "விரும்புவதற்கு முன்"], "after": "விரும்பின பிறகு", "assoon": "விரும்பினதும்" }
+      readings: { "before": ["virumpukiṟatukku muṉṉāṭi", "virumpuvataṟku muṉ"], "after": "virumpiṉa piṟaku", "assoon": "virumpiṉatum" }
+    - word: "ta-2049"
+      forms: { "before": ["அழுகிறதுக்கு முன்னாடி", "அழுவதற்கு முன்"], "after": "அழுத பிறகு", "assoon": "அழுததும்" }
+      readings: { "before": ["aḻukiṟatukku muṉṉāṭi", "aḻuvataṟku muṉ"], "after": "aḻuta piṟaku", "assoon": "aḻutatum" }
+    - word: "ta-2050"
+      forms: { "before": ["எண்ணுகிறதுக்கு முன்னாடி", "எண்ணுவதற்கு முன்"], "after": "எண்ணின பிறகு", "assoon": "எண்ணினதும்" }
+      readings: { "before": ["eṇṇukiṟatukku muṉṉāṭi", "eṇṇuvataṟku muṉ"], "after": "eṇṇiṉa piṟaku", "assoon": "eṇṇiṉatum" }
+    - word: "ta-2051"
+      forms: { "before": ["நுழைகிறதுக்கு முன்னாடி", "நுழைவதற்கு முன்"], "after": "நுழைந்த பிறகு", "assoon": "நுழைந்ததும்" }
+      readings: { "before": ["nuḻaikiṟatukku muṉṉāṭi", "nuḻaivataṟku muṉ"], "after": "nuḻainta piṟaku", "assoon": "nuḻaintatum" }
+    - word: "ta-2052"
+      forms: { "before": ["வெளியேறுகிறதுக்கு முன்னாடி", "வெளியேறுவதற்கு முன்"], "after": "வெளியேறின பிறகு", "assoon": "வெளியேறினதும்" }
+      readings: { "before": ["veḷiyēṟukiṟatukku muṉṉāṭi", "veḷiyēṟuvataṟku muṉ"], "after": "veḷiyēṟiṉa piṟaku", "assoon": "veḷiyēṟiṉatum" }
+    - word: "ta-2053"
+      forms: { "before": ["கடக்கிறதுக்கு முன்னாடி", "கடப்பதற்கு முன்"], "after": "கடந்த பிறகு", "assoon": "கடந்ததும்" }
+      readings: { "before": ["kaṭakkiṟatukku muṉṉāṭi", "kaṭappataṟku muṉ"], "after": "kaṭanta piṟaku", "assoon": "kaṭantatum" }
+    - word: "ta-2054"
+      forms: { "before": ["சுற்றுகிறதுக்கு முன்னாடி", "சுற்றுவதற்கு முன்"], "after": "சுற்றின பிறகு", "assoon": "சுற்றினதும்" }
+      readings: { "before": ["cuṟṟukiṟatukku muṉṉāṭi", "cuṟṟuvataṟku muṉ"], "after": "cuṟṟiṉa piṟaku", "assoon": "cuṟṟiṉatum" }
+    - word: "ta-2055"
+      forms: { "before": ["அமர்கிறதுக்கு முன்னாடி", "அமர்வதற்கு முன்"], "after": "அமர்ந்த பிறகு", "assoon": "அமர்ந்ததும்" }
+      readings: { "before": ["amarkiṟatukku muṉṉāṭi", "amarvataṟku muṉ"], "after": "amarnta piṟaku", "assoon": "amarntatum" }
+    - word: "ta-2056"
+      forms: { "before": ["நகர்கிறதுக்கு முன்னாடி", "நகர்வதற்கு முன்"], "after": "நகர்ந்த பிறகு", "assoon": "நகர்ந்ததும்" }
+      readings: { "before": ["nakarkiṟatukku muṉṉāṭi", "nakarvataṟku muṉ"], "after": "nakarnta piṟaku", "assoon": "nakarntatum" }
+    - word: "ta-2057"
+      forms: { "before": ["தொடுகிறதுக்கு முன்னாடி", "தொடுவதற்கு முன்"], "after": "தொட்ட பிறகு", "assoon": "தொட்டதும்" }
+      readings: { "before": ["toṭukiṟatukku muṉṉāṭi", "toṭuvataṟku muṉ"], "after": "toṭṭa piṟaku", "assoon": "toṭṭatum" }
+    - word: "ta-2058"
+      forms: { "before": ["எறிகிறதுக்கு முன்னாடி", "எறிவதற்கு முன்"], "after": "எறிந்த பிறகு", "assoon": "எறிந்ததும்" }
+      readings: { "before": ["eṟikiṟatukku muṉṉāṭi", "eṟivataṟku muṉ"], "after": "eṟinta piṟaku", "assoon": "eṟintatum" }
+    - word: "ta-2059"
+      forms: { "before": ["மாறுகிறதுக்கு முன்னாடி", "மாறுவதற்கு முன்"], "after": "மாறின பிறகு", "assoon": "மாறினதும்" }
+      readings: { "before": ["māṟukiṟatukku muṉṉāṭi", "māṟuvataṟku muṉ"], "after": "māṟiṉa piṟaku", "assoon": "māṟiṉatum" }
+    - word: "ta-2062"
+      forms: { "before": ["தொடர்கிறதுக்கு முன்னாடி", "தொடர்வதற்கு முன்"], "after": "தொடர்ந்த பிறகு", "assoon": "தொடர்ந்ததும்" }
+      readings: { "before": ["toṭarkiṟatukku muṉṉāṭi", "toṭarvataṟku muṉ"], "after": "toṭarnta piṟaku", "assoon": "toṭarntatum" }
+    - word: "ta-2063"
+      forms: { "before": ["முயல்கிறதுக்கு முன்னாடி", "முயல்வதற்கு முன்"], "after": "முயன்ற பிறகு", "assoon": "முயன்றதும்" }
+      readings: { "before": ["muyalkiṟatukku muṉṉāṭi", "muyalvataṟku muṉ"], "after": "muyaṉṟa piṟaku", "assoon": "muyaṉṟatum" }
+    - word: "ta-2064"
+      forms: { "before": ["சேமிக்கிறதுக்கு முன்னாடி", "சேமிப்பதற்கு முன்"], "after": "சேமித்த பிறகு", "assoon": "சேமித்ததும்" }
+      readings: { "before": ["cēmikkiṟatukku muṉṉāṭi", "cēmippataṟku muṉ"], "after": "cēmitta piṟaku", "assoon": "cēmittatum" }
+    - word: "ta-2065"
+      forms: { "before": ["செலவழிக்கிறதுக்கு முன்னாடி", "செலவழிப்பதற்கு முன்"], "after": "செலவழித்த பிறகு", "assoon": "செலவழித்ததும்" }
+      readings: { "before": ["celavaḻikkiṟatukku muṉṉāṭi", "celavaḻippataṟku muṉ"], "after": "celavaḻitta piṟaku", "assoon": "celavaḻittatum" }
+    - word: "ta-2066"
+      forms: { "before": ["எழுப்புகிறதுக்கு முன்னாடி", "எழுப்புவதற்கு முன்"], "after": "எழுப்பின பிறகு", "assoon": "எழுப்பினதும்" }
+      readings: { "before": ["eḻuppukiṟatukku muṉṉāṭi", "eḻuppuvataṟku muṉ"], "after": "eḻuppiṉa piṟaku", "assoon": "eḻuppiṉatum" }
+    - word: "ta-2067"
+      forms: { "before": ["விழிக்கிறதுக்கு முன்னாடி", "விழிப்பதற்கு முன்"], "after": "விழித்த பிறகு", "assoon": "விழித்ததும்" }
+      readings: { "before": ["viḻikkiṟatukku muṉṉāṭi", "viḻippataṟku muṉ"], "after": "viḻitta piṟaku", "assoon": "viḻittatum" }
+    - word: "ta-2068"
+      forms: { "before": ["விழுகிறதுக்கு முன்னாடி", "விழுவதற்கு முன்"], "after": "விழுந்த பிறகு", "assoon": "விழுந்ததும்" }
+      readings: { "before": ["viḻukiṟatukku muṉṉāṭi", "viḻuvataṟku muṉ"], "after": "viḻunta piṟaku", "assoon": "viḻuntatum" }
+    - word: "ta-2070"
+      forms: { "before": ["காட்டுகிறதுக்கு முன்னாடி", "காட்டுவதற்கு முன்"], "after": "காட்டின பிறகு", "assoon": "காட்டினதும்" }
+      readings: { "before": ["kāṭṭukiṟatukku muṉṉāṭi", "kāṭṭuvataṟku muṉ"], "after": "kāṭṭiṉa piṟaku", "assoon": "kāṭṭiṉatum" }
+    - word: "ta-2071"
+      forms: { "before": ["குனிகிறதுக்கு முன்னாடி", "குனிவதற்கு முன்"], "after": "குனிந்த பிறகு", "assoon": "குனிந்ததும்" }
+      readings: { "before": ["kuṉikiṟatukku muṉṉāṭi", "kuṉivataṟku muṉ"], "after": "kuṉinta piṟaku", "assoon": "kuṉintatum" }
+    - word: "ta-2072"
+      forms: { "before": ["சாய்கிறதுக்கு முன்னாடி", "சாய்வதற்கு முன்"], "after": "சாய்ந்த பிறகு", "assoon": "சாய்ந்ததும்" }
+      readings: { "before": ["cāykiṟatukku muṉṉāṭi", "cāyvataṟku muṉ"], "after": "cāynta piṟaku", "assoon": "cāyntatum" }
+    - word: "ta-2074"
+      forms: { "before": ["சம்பாதிக்கிறதுக்கு முன்னாடி", "சம்பாதிப்பதற்கு முன்"], "after": "சம்பாதித்த பிறகு", "assoon": "சம்பாதித்ததும்" }
+      readings: { "before": ["campātikkiṟatukku muṉṉāṭi", "campātippataṟku muṉ"], "after": "campātitta piṟaku", "assoon": "campātittatum" }
+    - word: "ta-2075"
+      forms: { "before": ["பழகுகிறதுக்கு முன்னாடி", "பழகுவதற்கு முன்"], "after": "பழகின பிறகு", "assoon": "பழகினதும்" }
+      readings: { "before": ["paḻakukiṟatukku muṉṉāṭi", "paḻakuvataṟku muṉ"], "after": "paḻakiṉa piṟaku", "assoon": "paḻakiṉatum" }
+    - word: "ta-2076"
+      forms: { "before": ["திட்டுகிறதுக்கு முன்னாடி", "திட்டுவதற்கு முன்"], "after": "திட்டின பிறகு", "assoon": "திட்டினதும்" }
+      readings: { "before": ["tiṭṭukiṟatukku muṉṉāṭi", "tiṭṭuvataṟku muṉ"], "after": "tiṭṭiṉa piṟaku", "assoon": "tiṭṭiṉatum" }
+    - word: "ta-2077"
+      forms: { "before": ["பாராட்டுகிறதுக்கு முன்னாடி", "பாராட்டுவதற்கு முன்"], "after": "பாராட்டின பிறகு", "assoon": "பாராட்டினதும்" }
+      readings: { "before": ["pārāṭṭukiṟatukku muṉṉāṭi", "pārāṭṭuvataṟku muṉ"], "after": "pārāṭṭiṉa piṟaku", "assoon": "pārāṭṭiṉatum" }
+    - word: "ta-2078"
+      forms: { "before": ["நடிக்கிறதுக்கு முன்னாடி", "நடிப்பதற்கு முன்"], "after": "நடித்த பிறகு", "assoon": "நடித்ததும்" }
+      readings: { "before": ["naṭikkiṟatukku muṉṉāṭi", "naṭippataṟku muṉ"], "after": "naṭitta piṟaku", "assoon": "naṭittatum" }
+    - word: "ta-2079"
+      forms: { "before": ["ஆடுகிறதுக்கு முன்னாடி", "ஆடுவதற்கு முன்"], "after": "ஆடின பிறகு", "assoon": "ஆடினதும்" }
+      readings: { "before": ["āṭukiṟatukku muṉṉāṭi", "āṭuvataṟku muṉ"], "after": "āṭiṉa piṟaku", "assoon": "āṭiṉatum" }
+    - word: "ta-2080"
+      forms: { "before": ["குறைகிறதுக்கு முன்னாடி", "குறைவதற்கு முன்"], "after": "குறைந்த பிறகு", "assoon": "குறைந்ததும்" }
+      readings: { "before": ["kuṟaikiṟatukku muṉṉāṭi", "kuṟaivataṟku muṉ"], "after": "kuṟainta piṟaku", "assoon": "kuṟaintatum" }
+    - word: "ta-2081"
+      forms: { "before": ["அதிகரிக்கிறதுக்கு முன்னாடி", "அதிகரிப்பதற்கு முன்"], "after": "அதிகரித்த பிறகு", "assoon": "அதிகரித்ததும்" }
+      readings: { "before": ["atikarikkiṟatukku muṉṉāṭi", "atikarippataṟku muṉ"], "after": "atikaritta piṟaku", "assoon": "atikarittatum" }
+    - word: "ta-2083"
+      forms: { "before": ["மன்னிக்கிறதுக்கு முன்னாடி", "மன்னிப்பதற்கு முன்"], "after": "மன்னித்த பிறகு", "assoon": "மன்னித்ததும்" }
+      readings: { "before": ["maṉṉikkiṟatukku muṉṉāṭi", "maṉṉippataṟku muṉ"], "after": "maṉṉitta piṟaku", "assoon": "maṉṉittatum" }
+    - word: "ta-2084"
+      forms: { "before": ["ஏமாற்றுகிறதுக்கு முன்னாடி", "ஏமாற்றுவதற்கு முன்"], "after": "ஏமாற்றின பிறகு", "assoon": "ஏமாற்றினதும்" }
+      readings: { "before": ["ēmāṟṟukiṟatukku muṉṉāṭi", "ēmāṟṟuvataṟku muṉ"], "after": "ēmāṟṟiṉa piṟaku", "assoon": "ēmāṟṟiṉatum" }
+    - word: "ta-2085"
+      forms: { "before": ["பயன்படுத்துகிறதுக்கு முன்னாடி", "பயன்படுத்துவதற்கு முன்"], "after": "பயன்படுத்தின பிறகு", "assoon": "பயன்படுத்தினதும்" }
+      readings: { "before": ["payaṉpaṭuttukiṟatukku muṉṉāṭi", "payaṉpaṭuttuvataṟku muṉ"], "after": "payaṉpaṭuttiṉa piṟaku", "assoon": "payaṉpaṭuttiṉatum" }
+    - word: "ta-1141"
+      forms: { "before": ["பெய்கிறதுக்கு முன்னாடி", "பெய்வதற்கு முன்"], "after": "பெய்த பிறகு", "assoon": "பெய்ததும்" }
+      readings: { "before": ["peykiṟatukku muṉṉāṭi", "peyvataṟku muṉ"], "after": "peyta piṟaku", "assoon": "peytatum" }
+    - word: "ta-1143"
+      forms: { "before": ["அடிக்கிறதுக்கு முன்னாடி", "அடிப்பதற்கு முன்"], "after": "அடித்த பிறகு", "assoon": "அடித்ததும்" }
+      readings: { "before": ["aṭikkiṟatukku muṉṉāṭi", "aṭippataṟku muṉ"], "after": "aṭitta piṟaku", "assoon": "aṭittatum" }
+    - word: "ta-1144"
+      forms: { "before": ["நனைகிறதுக்கு முன்னாடி", "நனைவதற்கு முன்"], "after": "நனைந்த பிறகு", "assoon": "நனைந்ததும்" }
+      readings: { "before": ["naṉaikiṟatukku muṉṉāṭi", "naṉaivataṟku muṉ"], "after": "naṉainta piṟaku", "assoon": "naṉaintatum" }
+    - word: "ta-1145"
+      forms: { "before": ["காய்கிறதுக்கு முன்னாடி", "காய்வதற்கு முன்"], "after": "காய்ந்த பிறகு", "assoon": "காய்ந்ததும்" }
+      readings: { "before": ["kāykiṟatukku muṉṉāṭi", "kāyvataṟku muṉ"], "after": "kāynta piṟaku", "assoon": "kāyntatum" }
+    - word: "ta-2023"
+      forms: { "before": ["தோன்றுகிறதுக்கு முன்னாடி", "தோன்றுவதற்கு முன்"], "after": "தோன்றின பிறகு", "assoon": "தோன்றினதும்" }
+      readings: { "before": ["tōṉṟukiṟatukku muṉṉāṭi", "tōṉṟuvataṟku muṉ"], "after": "tōṉṟiṉa piṟaku", "assoon": "tōṉṟiṉatum" }
+    - word: "ta-2027"
+      forms: { "before": ["கவனிக்கிறதுக்கு முன்னாடி", "கவனிப்பதற்கு முன்"], "after": "கவனித்த பிறகு", "assoon": "கவனித்ததும்" }
+      readings: { "before": ["kavaṉikkiṟatukku muṉṉāṭi", "kavaṉippataṟku muṉ"], "after": "kavaṉitta piṟaku", "assoon": "kavaṉittatum" }
+    - word: "ta-2028"
+      forms: { "before": ["வருந்துகிறதுக்கு முன்னாடி", "வருந்துவதற்கு முன்"], "after": "வருந்தின பிறகு", "assoon": "வருந்தினதும்" }
+      readings: { "before": ["varuntukiṟatukku muṉṉāṭi", "varuntuvataṟku muṉ"], "after": "varuntiṉa piṟaku", "assoon": "varuntiṉatum" }
+    - word: "ta-2061"
+      forms: { "before": ["ஊக்குவிக்கிறதுக்கு முன்னாடி", "ஊக்குவிப்பதற்கு முன்"], "after": "ஊக்குவித்த பிறகு", "assoon": "ஊக்குவித்ததும்" }
+      readings: { "before": ["ūkkuvikkiṟatukku muṉṉāṭi", "ūkkuvippataṟku muṉ"], "after": "ūkkuvitta piṟaku", "assoon": "ūkkuvittatum" }
+    - word: "ta-2082"
+      forms: { "before": ["நிரூபிக்கிறதுக்கு முன்னாடி", "நிரூபிப்பதற்கு முன்"], "after": "நிரூபித்த பிறகு", "assoon": "நிரூபித்ததும்" }
+      readings: { "before": ["nirūpikkiṟatukku muṉṉāṭi", "nirūpippataṟku muṉ"], "after": "nirūpitta piṟaku", "assoon": "nirūpittatum" }
+    - word: "ta-1142"
+      forms: { "before": ["மறைகிறதுக்கு முன்னாடி", "மறைவதற்கு முன்"], "after": "மறைந்த பிறகு", "assoon": "மறைந்ததும்" }
+      readings: { "before": ["maṟaikiṟatukku muṉṉāṭi", "maṟaivataṟku muṉ"], "after": "maṟainta piṟaku", "assoon": "maṟaintatum" }
+    - word: "ta-1950"
+      forms: { "before": ["அலசுகிறதுக்கு முன்னாடி", "அலசுவதற்கு முன்"], "after": "அலசின பிறகு", "assoon": "அலசினதும்" }
+      readings: { "before": ["alacukiṟatukku muṉṉāṭi", "alacuvataṟku muṉ"], "after": "alaciṉa piṟaku", "assoon": "alaciṉatum" }
+    - word: "ta-1960"
+      forms: { "before": ["பரப்புகிறதுக்கு முன்னாடி", "பரப்புவதற்கு முன்"], "after": "பரப்பின பிறகு", "assoon": "பரப்பினதும்" }
+      readings: { "before": ["parappukiṟatukku muṉṉāṭi", "parappuvataṟku muṉ"], "after": "parappiṉa piṟaku", "assoon": "parappiṉatum" }
+    - word: "ta-1146"
+      forms: { "before": ["மின்னுகிறதுக்கு முன்னாடி", "மின்னுவதற்கு முன்"], "after": "மின்னின பிறகு", "assoon": "மின்னினதும்" }
+      readings: { "before": ["miṉṉukiṟatukku muṉṉāṭi", "miṉṉuvataṟku muṉ"], "after": "miṉṉiṉa piṟaku", "assoon": "miṉṉiṉatum" }
+    - word: "ta-1297"
+      forms: { "before": ["இருமுகிறதுக்கு முன்னாடி", "இருமுவதற்கு முன்"], "after": "இருமின பிறகு", "assoon": "இருமினதும்" }
+      readings: { "before": ["irumukiṟatukku muṉṉāṭi", "irumuvataṟku muṉ"], "after": "irumiṉa piṟaku", "assoon": "irumiṉatum" }
+    - word: "ta-1298"
+      forms: { "before": ["தும்முகிறதுக்கு முன்னாடி", "தும்முவதற்கு முன்"], "after": "தும்மின பிறகு", "assoon": "தும்மினதும்" }
+      readings: { "before": ["tummukiṟatukku muṉṉāṭi", "tummuvataṟku muṉ"], "after": "tummiṉa piṟaku", "assoon": "tummiṉatum" }
+    - word: "ta-1300"
+      forms: { "before": ["மயங்குகிறதுக்கு முன்னாடி", "மயங்குவதற்கு முன்"], "after": "மயங்கின பிறகு", "assoon": "மயங்கினதும்" }
+      readings: { "before": ["mayaṅkukiṟatukku muṉṉāṭi", "mayaṅkuvataṟku muṉ"], "after": "mayaṅkiṉa piṟaku", "assoon": "mayaṅkiṉatum" }
+    - word: "ta-1303"
+      forms: { "before": ["வீங்குகிறதுக்கு முன்னாடி", "வீங்குவதற்கு முன்"], "after": "வீங்கின பிறகு", "assoon": "வீங்கினதும்" }
+      readings: { "before": ["vīṅkukiṟatukku muṉṉāṭi", "vīṅkuvataṟku muṉ"], "after": "vīṅkiṉa piṟaku", "assoon": "vīṅkiṉatum" }
+    - word: "ta-1304"
+      forms: { "before": ["நடுங்குகிறதுக்கு முன்னாடி", "நடுங்குவதற்கு முன்"], "after": "நடுங்கின பிறகு", "assoon": "நடுங்கினதும்" }
+      readings: { "before": ["naṭuṅkukiṟatukku muṉṉāṭi", "naṭuṅkuvataṟku muṉ"], "after": "naṭuṅkiṉa piṟaku", "assoon": "naṭuṅkiṉatum" }
+    - word: "ta-1305"
+      forms: { "before": ["வியர்க்கிறதுக்கு முன்னாடி", "வியர்ப்பதற்கு முன்"], "after": "வியர்த்த பிறகு", "assoon": "வியர்த்ததும்" }
+      readings: { "before": ["viyarkkiṟatukku muṉṉāṭi", "viyarppataṟku muṉ"], "after": "viyartta piṟaku", "assoon": "viyarttatum" }
+    - word: "ta-1317"
+      forms: { "before": ["பரிமாறுகிறதுக்கு முன்னாடி", "பரிமாறுவதற்கு முன்"], "after": "பரிமாறின பிறகு", "assoon": "பரிமாறினதும்" }
+      readings: { "before": ["parimāṟukiṟatukku muṉṉāṭi", "parimāṟuvataṟku muṉ"], "after": "parimāṟiṉa piṟaku", "assoon": "parimāṟiṉatum" }
+    - word: "ta-1346"
+      forms: { "before": ["வறுகிறதுக்கு முன்னாடி", "வறுப்பதற்கு முன்"], "after": "வறுத்த பிறகு", "assoon": "வறுத்ததும்" }
+      readings: { "before": ["vaṟukiṟatukku muṉṉāṭi", "vaṟuppataṟku muṉ"], "after": "vaṟutta piṟaku", "assoon": "vaṟuttatum" }
+    - word: "ta-1347"
+      forms: { "before": ["வதக்குகிறதுக்கு முன்னாடி", "வதக்குவதற்கு முன்"], "after": "வதக்கின பிறகு", "assoon": "வதக்கினதும்" }
+      readings: { "before": ["vatakkukiṟatukku muṉṉāṭi", "vatakkuvataṟku muṉ"], "after": "vatakkiṉa piṟaku", "assoon": "vatakkiṉatum" }
+    - word: "ta-1348"
+      forms: { "before": ["கொதிக்கிறதுக்கு முன்னாடி", "கொதிப்பதற்கு முன்"], "after": "கொதித்த பிறகு", "assoon": "கொதித்ததும்" }
+      readings: { "before": ["kotikkiṟatukku muṉṉāṭi", "kotippataṟku muṉ"], "after": "kotitta piṟaku", "assoon": "kotittatum" }
+    - word: "ta-1349"
+      forms: { "before": ["நறுக்குகிறதுக்கு முன்னாடி", "நறுக்குவதற்கு முன்"], "after": "நறுக்கின பிறகு", "assoon": "நறுக்கினதும்" }
+      readings: { "before": ["naṟukkukiṟatukku muṉṉāṭi", "naṟukkuvataṟku muṉ"], "after": "naṟukkiṉa piṟaku", "assoon": "naṟukkiṉatum" }
+    - word: "ta-1350"
+      forms: { "before": ["கிளறுகிறதுக்கு முன்னாடி", "கிளறுவதற்கு முன்"], "after": "கிளறின பிறகு", "assoon": "கிளறினதும்" }
+      readings: { "before": ["kiḷaṟukiṟatukku muṉṉāṭi", "kiḷaṟuvataṟku muṉ"], "after": "kiḷaṟiṉa piṟaku", "assoon": "kiḷaṟiṉatum" }
+    - word: "ta-1351"
+      forms: { "before": ["வேகுகிறதுக்கு முன்னாடி", "வேகுவதற்கு முன்"], "after": "வெந்த பிறகு", "assoon": "வெந்ததும்" }
+      readings: { "before": ["vēkukiṟatukku muṉṉāṭi", "vēkuvataṟku muṉ"], "after": "venta piṟaku", "assoon": "ventatum" }
+    - word: "ta-1352"
+      forms: { "before": ["பொரிக்கிறதுக்கு முன்னாடி", "பொரிப்பதற்கு முன்"], "after": "பொரித்த பிறகு", "assoon": "பொரித்ததும்" }
+      readings: { "before": ["porikkiṟatukku muṉṉāṭi", "porippataṟku muṉ"], "after": "poritta piṟaku", "assoon": "porittatum" }
+    - word: "ta-1353"
+      forms: { "before": ["அவிக்கிறதுக்கு முன்னாடி", "அவிப்பதற்கு முன்"], "after": "அவித்த பிறகு", "assoon": "அவித்ததும்" }
+      readings: { "before": ["avikkiṟatukku muṉṉāṭi", "avippataṟku muṉ"], "after": "avitta piṟaku", "assoon": "avittatum" }
+    - word: "ta-1354"
+      forms: { "before": ["சுடுகிறதுக்கு முன்னாடி", "சுடுவதற்கு முன்"], "after": "சுட்ட பிறகு", "assoon": "சுட்டதும்" }
+      readings: { "before": ["cuṭukiṟatukku muṉṉāṭi", "cuṭuvataṟku muṉ"], "after": "cuṭṭa piṟaku", "assoon": "cuṭṭatum" }
+    - word: "ta-1355"
+      forms: { "before": ["தாளிக்கிறதுக்கு முன்னாடி", "தாளிப்பதற்கு முன்"], "after": "தாளித்த பிறகு", "assoon": "தாளித்ததும்" }
+      readings: { "before": ["tāḷikkiṟatukku muṉṉāṭi", "tāḷippataṟku muṉ"], "after": "tāḷitta piṟaku", "assoon": "tāḷittatum" }
+    - word: "ta-1356"
+      forms: { "before": ["பிசைகிறதுக்கு முன்னாடி", "பிசைவதற்கு முன்"], "after": "பிசைந்த பிறகு", "assoon": "பிசைந்ததும்" }
+      readings: { "before": ["picaikiṟatukku muṉṉāṭi", "picaivataṟku muṉ"], "after": "picainta piṟaku", "assoon": "picaintatum" }
+    - word: "ta-1357"
+      forms: { "before": ["உரிக்கிறதுக்கு முன்னாடி", "உரிப்பதற்கு முன்"], "after": "உரித்த பிறகு", "assoon": "உரித்ததும்" }
+      readings: { "before": ["urikkiṟatukku muṉṉāṭi", "urippataṟku muṉ"], "after": "uritta piṟaku", "assoon": "urittatum" }
+    - word: "ta-1358"
+      forms: { "before": ["துருவுகிறதுக்கு முன்னாடி", "துருவுவதற்கு முன்"], "after": "துருவின பிறகு", "assoon": "துருவினதும்" }
+      readings: { "before": ["turuvukiṟatukku muṉṉāṭi", "turuvuvataṟku muṉ"], "after": "turuviṉa piṟaku", "assoon": "turuviṉatum" }
+    - word: "ta-2347"
+      forms: { "before": ["நடத்துகிறதுக்கு முன்னாடி", "நடத்துவதற்கு முன்"], "after": "நடத்தின பிறகு", "assoon": "நடத்தினதும்" }
+      readings: { "before": ["naṭattukiṟatukku muṉṉāṭi", "naṭattuvataṟku muṉ"], "after": "naṭattiṉa piṟaku", "assoon": "naṭattiṉatum" }
+    - word: "ta-2348"
+      forms: { "before": ["நிர்வகிக்கிறதுக்கு முன்னாடி", "நிர்வகிப்பதற்கு முன்"], "after": "நிர்வகித்த பிறகு", "assoon": "நிர்வகித்ததும்" }
+      readings: { "before": ["nirvakikkiṟatukku muṉṉāṭi", "nirvakippataṟku muṉ"], "after": "nirvakitta piṟaku", "assoon": "nirvakittatum" }
+    - word: "ta-2349"
+      forms: { "before": ["விண்ணப்பிக்கிறதுக்கு முன்னாடி", "விண்ணப்பிப்பதற்கு முன்"], "after": "விண்ணப்பித்த பிறகு", "assoon": "விண்ணப்பித்ததும்" }
+      readings: { "before": ["viṇṇappikkiṟatukku muṉṉāṭi", "viṇṇappippataṟku muṉ"], "after": "viṇṇappitta piṟaku", "assoon": "viṇṇappittatum" }
+    - word: "ta-2356"
+      forms: { "before": ["ஒத்துழைக்கிறதுக்கு முன்னாடி", "ஒத்துழைப்பதற்கு முன்"], "after": "ஒத்துழைத்த பிறகு", "assoon": "ஒத்துழைத்ததும்" }
+      readings: { "before": ["ottuḻaikkiṟatukku muṉṉāṭi", "ottuḻaippataṟku muṉ"], "after": "ottuḻaitta piṟaku", "assoon": "ottuḻaittatum" }
+    - word: "ta-2026"
+      forms: { "before": ["கலந்துகொள்கிறதுக்கு முன்னாடி", "கலந்துகொள்வதற்கு முன்"], "after": "கலந்துகொண்ட பிறகு", "assoon": "கலந்துகொண்டதும்" }
+      readings: { "before": ["kalantukoḷkiṟatukku muṉṉāṭi", "kalantukoḷvataṟku muṉ"], "after": "kalantukoṇṭa piṟaku", "assoon": "kalantukoṇṭatum" }
+    - word: "ta-2060"
+      forms: { "before": ["பெருமைப்படுகிறதுக்கு முன்னாடி", "பெருமைப்படுவதற்கு முன்"], "after": "பெருமைப்பட்ட பிறகு", "assoon": "பெருமைப்பட்டதும்" }
+      readings: { "before": ["perumaippaṭukiṟatukku muṉṉāṭi", "perumaippaṭuvataṟku muṉ"], "after": "perumaippaṭṭa piṟaku", "assoon": "perumaippaṭṭatum" }
+    - word: "ta-2185"
+      forms: { "before": ["சுற்றித்திரிகிறதுக்கு முன்னாடி", "சுற்றித்திரிவதற்கு முன்"], "after": "சுற்றித்திரிந்த பிறகு", "assoon": "சுற்றித்திரிந்ததும்" }
+      readings: { "before": ["cuṟṟittirikiṟatukku muṉṉāṭi", "cuṟṟittirivataṟku muṉ"], "after": "cuṟṟittirinta piṟaku", "assoon": "cuṟṟittirintatum" }
+    - word: "ta-1906"
+      forms: { "before": ["நடனமாடுகிறதுக்கு முன்னாடி", "நடனமாடுவதற்கு முன்"], "after": "நடனமாடின பிறகு", "assoon": "நடனமாடினதும்" }
+      readings: { "before": ["naṭaṉamāṭukiṟatukku muṉṉāṭi", "naṭaṉamāṭuvataṟku muṉ"], "after": "naṭaṉamāṭiṉa piṟaku", "assoon": "naṭaṉamāṭiṉatum" }
+    - word: "ta-2181"
+      forms: { "before": ["புறப்படுகிறதுக்கு முன்னாடி", "புறப்படுவதற்கு முன்"], "after": "புறப்பட்ட பிறகு", "assoon": "புறப்பட்டதும்" }
+      readings: { "before": ["puṟappaṭukiṟatukku muṉṉāṭi", "puṟappaṭuvataṟku muṉ"], "after": "puṟappaṭṭa piṟaku", "assoon": "puṟappaṭṭatum" }
+    - word: "ta-2184"
+      forms: { "before": ["வழிதவறுகிறதுக்கு முன்னாடி", "வழிதவறுவதற்கு முன்"], "after": "வழிதவறின பிறகு", "assoon": "வழிதவறினதும்" }
+      readings: { "before": ["vaḻitavaṟukiṟatukku muṉṉāṭi", "vaḻitavaṟuvataṟku muṉ"], "after": "vaḻitavaṟiṉa piṟaku", "assoon": "vaḻitavaṟiṉatum" }
+    - word: "ta-2187"
+      forms: { "before": ["வழியனுப்புகிறதுக்கு முன்னாடி", "வழியனுப்புவதற்கு முன்"], "after": "வழியனுப்பின பிறகு", "assoon": "வழியனுப்பினதும்" }
+      readings: { "before": ["vaḻiyaṉuppukiṟatukku muṉṉāṭi", "vaḻiyaṉuppuvataṟku muṉ"], "after": "vaḻiyaṉuppiṉa piṟaku", "assoon": "vaḻiyaṉuppiṉatum" }
+    - word: "ta-2188"
+      forms: { "before": ["திட்டமிடுகிறதுக்கு முன்னாடி", "திட்டமிடுவதற்கு முன்"], "after": "திட்டமிட்ட பிறகு", "assoon": "திட்டமிட்டதும்" }
+      readings: { "before": ["tiṭṭamiṭukiṟatukku muṉṉāṭi", "tiṭṭamiṭuvataṟku muṉ"], "after": "tiṭṭamiṭṭa piṟaku", "assoon": "tiṭṭamiṭṭatum" }
+    - word: "ta-2189"
+      forms: { "before": ["எடுத்துச்செல்கிறதுக்கு முன்னாடி", "எடுத்துச்செல்வதற்கு முன்"], "after": "எடுத்துச்சென்ற பிறகு", "assoon": "எடுத்துச்சென்றதும்" }
+      readings: { "before": ["eṭuttuccelkiṟatukku muṉṉāṭi", "eṭuttuccelvataṟku muṉ"], "after": "eṭuttucceṉṟa piṟaku", "assoon": "eṭuttucceṉṟatum" }
+    - word: "ta-2190"
+      forms: { "before": ["சுற்றிப்பார்க்கிறதுக்கு முன்னாடி", "சுற்றிப்பார்ப்பதற்கு முன்"], "after": ["சுற்றிப்பாத்த பிறகு", "சுற்றிப்பார்த்த பிறகு"], "assoon": ["சுற்றிப்பாத்ததும்", "சுற்றிப்பார்த்ததும்"] }
+      readings: { "before": ["cuṟṟippārkkiṟatukku muṉṉāṭi", "cuṟṟippārppataṟku muṉ"], "after": ["cuṟṟippātta piṟaku", "cuṟṟippārtta piṟaku"], "assoon": ["cuṟṟippāttatum", "cuṟṟippārttatum"] }
+    - word: "ta-2121"
+      forms: { "before": ["பதிவிறக்குகிறதுக்கு முன்னாடி", "பதிவிறக்குவதற்கு முன்"], "after": "பதிவிறக்கின பிறகு", "assoon": "பதிவிறக்கினதும்" }
+      readings: { "before": ["pativiṟakkukiṟatukku muṉṉāṭi", "pativiṟakkuvataṟku muṉ"], "after": "pativiṟakkiṉa piṟaku", "assoon": "pativiṟakkiṉatum" }
+    - word: "ta-2127"
+      forms: { "before": ["தொடர்புகொள்கிறதுக்கு முன்னாடி", "தொடர்புகொள்வதற்கு முன்"], "after": "தொடர்புகொண்ட பிறகு", "assoon": "தொடர்புகொண்டதும்" }
+      readings: { "before": ["toṭarpukoḷkiṟatukku muṉṉāṭi", "toṭarpukoḷvataṟku muṉ"], "after": "toṭarpukoṇṭa piṟaku", "assoon": "toṭarpukoṇṭatum" }
+    - word: "ta-2129"
+      forms: { "before": ["தவறவிடுகிறதுக்கு முன்னாடி", "தவறவிடுவதற்கு முன்"], "after": "தவறவிட்ட பிறகு", "assoon": "தவறவிட்டதும்" }
+      readings: { "before": ["tavaṟaviṭukiṟatukku muṉṉāṭi", "tavaṟaviṭuvataṟku muṉ"], "after": "tavaṟaviṭṭa piṟaku", "assoon": "tavaṟaviṭṭatum" }
+    - word: "ta-2130"
+      forms: { "before": ["பதிலளிக்கிறதுக்கு முன்னாடி", "பதிலளிப்பதற்கு முன்"], "after": "பதிலளித்த பிறகு", "assoon": "பதிலளித்ததும்" }
+      readings: { "before": ["patilaḷikkiṟatukku muṉṉāṭi", "patilaḷippataṟku muṉ"], "after": "patilaḷitta piṟaku", "assoon": "patilaḷittatum" }
+    - word: "ta-2131"
+      forms: { "before": ["பதிவேற்றுகிறதுக்கு முன்னாடி", "பதிவேற்றுவதற்கு முன்"], "after": "பதிவேற்றின பிறகு", "assoon": "பதிவேற்றினதும்" }
+      readings: { "before": ["pativēṟṟukiṟatukku muṉṉāṭi", "pativēṟṟuvataṟku muṉ"], "after": "pativēṟṟiṉa piṟaku", "assoon": "pativēṟṟiṉatum" }
+    - word: "ta-1860"
+      forms: { "before": ["கற்றுக்கொள்கிறதுக்கு முன்னாடி", "கற்றுக்கொள்வதற்கு முன்"], "after": "கற்றுக்கொண்ட பிறகு", "assoon": "கற்றுக்கொண்டதும்" }
+      readings: { "before": ["kaṟṟukkoḷkiṟatukku muṉṉāṭi", "kaṟṟukkoḷvataṟku muṉ"], "after": "kaṟṟukkoṇṭa piṟaku", "assoon": "kaṟṟukkoṇṭatum" }
+    - word: "ta-1861"
+      forms: { "before": ["சொல்லிக்கொடுக்கிறதுக்கு முன்னாடி", "சொல்லிக்கொடுப்பதற்கு முன்"], "after": "சொல்லிக்கொடுத்த பிறகு", "assoon": "சொல்லிக்கொடுத்ததும்" }
+      readings: { "before": ["collikkoṭukkiṟatukku muṉṉāṭi", "collikkoṭuppataṟku muṉ"], "after": "collikkoṭutta piṟaku", "assoon": "collikkoṭuttatum" }
+    - word: "ta-2032"
+      forms: { "before": ["காத்திருகிறதுக்கு முன்னாடி", "காத்திருப்பதற்கு முன்"], "after": "காத்திருந்த பிறகு", "assoon": "காத்திருந்ததும்" }
+      readings: { "before": ["kāttirukiṟatukku muṉṉāṭi", "kāttiruppataṟku muṉ"], "after": "kāttirunta piṟaku", "assoon": "kāttiruntatum" }
+    - word: "ta-2037"
+      forms: { "before": ["ஒப்புக்கொள்கிறதுக்கு முன்னாடி", "ஒப்புக்கொள்வதற்கு முன்"], "after": "ஒப்புக்கொண்ட பிறகு", "assoon": "ஒப்புக்கொண்டதும்" }
+      readings: { "before": ["oppukkoḷkiṟatukku muṉṉāṭi", "oppukkoḷvataṟku muṉ"], "after": "oppukkoṇṭa piṟaku", "assoon": "oppukkoṇṭatum" }
+    - word: "ta-2046"
+      forms: { "before": ["பயப்படுகிறதுக்கு முன்னாடி", "பயப்படுவதற்கு முன்"], "after": "பயப்பட்ட பிறகு", "assoon": "பயப்பட்டதும்" }
+      readings: { "before": ["payappaṭukiṟatukku muṉṉāṭi", "payappaṭuvataṟku muṉ"], "after": "payappaṭṭa piṟaku", "assoon": "payappaṭṭatum" }
+    - word: "ta-2047"
+      forms: { "before": ["கவலைப்படுகிறதுக்கு முன்னாடி", "கவலைப்படுவதற்கு முன்"], "after": "கவலைப்பட்ட பிறகு", "assoon": "கவலைப்பட்டதும்" }
+      readings: { "before": ["kavalaippaṭukiṟatukku muṉṉāṭi", "kavalaippaṭuvataṟku muṉ"], "after": "kavalaippaṭṭa piṟaku", "assoon": "kavalaippaṭṭatum" }
+    - word: "ta-2048"
+      forms: { "before": ["கோபப்படுகிறதுக்கு முன்னாடி", "கோபப்படுவதற்கு முன்"], "after": "கோபப்பட்ட பிறகு", "assoon": "கோபப்பட்டதும்" }
+      readings: { "before": ["kōpappaṭukiṟatukku muṉṉāṭi", "kōpappaṭuvataṟku muṉ"], "after": "kōpappaṭṭa piṟaku", "assoon": "kōpappaṭṭatum" }
+    - word: "ta-2069"
+      forms: { "before": ["தேர்ந்தெடுக்கிறதுக்கு முன்னாடி", "தேர்ந்தெடுப்பதற்கு முன்"], "after": "தேர்ந்தெடுத்த பிறகு", "assoon": "தேர்ந்தெடுத்ததும்" }
+      readings: { "before": ["tērnteṭukkiṟatukku muṉṉāṭi", "tērnteṭuppataṟku muṉ"], "after": "tērnteṭutta piṟaku", "assoon": "tērnteṭuttatum" }
+    - word: "ta-2073"
+      forms: { "before": ["கண்டுபிடிக்கிறதுக்கு முன்னாடி", "கண்டுபிடிப்பதற்கு முன்"], "after": ["கண்டுபிடிச்ச பிறகு", "கண்டுபிடித்த பிறகு"], "assoon": ["கண்டுபிடிச்சதும்", "கண்டுபிடித்ததும்"] }
+      readings: { "before": ["kaṇṭupiṭikkiṟatukku muṉṉāṭi", "kaṇṭupiṭippataṟku muṉ"], "after": ["kaṇṭupiṭicca piṟaku", "kaṇṭupiṭitta piṟaku"], "assoon": ["kaṇṭupiṭiccatum", "kaṇṭupiṭittatum"] }
+    - word: "ta-2086"
+      forms: { "before": ["சரிபார்க்கிறதுக்கு முன்னாடி", "சரிபார்ப்பதற்கு முன்"], "after": ["சரிபாத்த பிறகு", "சரிபார்த்த பிறகு"], "assoon": ["சரிபாத்ததும்", "சரிபார்த்ததும்"] }
+      readings: { "before": ["caripārkkiṟatukku muṉṉāṭi", "caripārppataṟku muṉ"], "after": ["caripātta piṟaku", "caripārtta piṟaku"], "assoon": ["caripāttatum", "caripārttatum"] }
+    - word: "ta-1299"
+      forms: { "before": ["குணமாகுகிறதுக்கு முன்னாடி", "குணமாவதற்கு முன்"], "after": "குணமான பிறகு", "assoon": "குணமானதும்" }
+      readings: { "before": ["kuṇamākukiṟatukku muṉṉāṭi", "kuṇamāvataṟku muṉ"], "after": "kuṇamāṉa piṟaku", "assoon": "kuṇamāṉatum" }
+    - word: "ta-2350"
+      forms: { "before": ["கையெழுத்திடுகிறதுக்கு முன்னாடி", "கையெழுத்திடுவதற்கு முன்"], "after": "கையெழுத்திட்ட பிறகு", "assoon": "கையெழுத்திட்டதும்" }
+      readings: { "before": ["kaiyeḻuttiṭukiṟatukku muṉṉāṭi", "kaiyeḻuttiṭuvataṟku muṉ"], "after": "kaiyeḻuttiṭṭa piṟaku", "assoon": "kaiyeḻuttiṭṭatum" }
+    - word: "ta-2351"
+      forms: { "before": ["ஈடுபடுகிறதுக்கு முன்னாடி", "ஈடுபடுவதற்கு முன்"], "after": "ஈடுபட்ட பிறகு", "assoon": "ஈடுபட்டதும்" }
+      readings: { "before": ["īṭupaṭukiṟatukku muṉṉāṭi", "īṭupaṭuvataṟku muṉ"], "after": "īṭupaṭṭa piṟaku", "assoon": "īṭupaṭṭatum" }
+    - word: "ta-2352"
+      forms: { "before": ["முடிவெடுக்கிறதுக்கு முன்னாடி", "முடிவெடுப்பதற்கு முன்"], "after": "முடிவெடுத்த பிறகு", "assoon": "முடிவெடுத்ததும்" }
+      readings: { "before": ["muṭiveṭukkiṟatukku muṉṉāṭi", "muṭiveṭuppataṟku muṉ"], "after": "muṭiveṭutta piṟaku", "assoon": "muṭiveṭuttatum" }
+    - word: "ta-2353"
+      forms: { "before": ["அச்சிடுகிறதுக்கு முன்னாடி", "அச்சிடுவதற்கு முன்"], "after": "அச்சிட்ட பிறகு", "assoon": "அச்சிட்டதும்" }
+      readings: { "before": ["acciṭukiṟatukku muṉṉāṭi", "acciṭuvataṟku muṉ"], "after": "acciṭṭa piṟaku", "assoon": "acciṭṭatum" }
+    - word: "ta-2354"
+      forms: { "before": ["நகலெடுக்கிறதுக்கு முன்னாடி", "நகலெடுப்பதற்கு முன்"], "after": "நகலெடுத்த பிறகு", "assoon": "நகலெடுத்ததும்" }
+      readings: { "before": ["nakaleṭukkiṟatukku muṉṉāṭi", "nakaleṭuppataṟku muṉ"], "after": "nakaleṭutta piṟaku", "assoon": "nakaleṭuttatum" }
+    - word: "ta-2355"
+      forms: { "before": ["கணக்கிடுகிறதுக்கு முன்னாடி", "கணக்கிடுவதற்கு முன்"], "after": "கணக்கிட்ட பிறகு", "assoon": "கணக்கிட்டதும்" }
+      readings: { "before": ["kaṇakkiṭukiṟatukku muṉṉāṭi", "kaṇakkiṭuvataṟku muṉ"], "after": "kaṇakkiṭṭa piṟaku", "assoon": "kaṇakkiṭṭatum" }
+rules:
+  - id: "ta-rule-before"
+    slots: ["before"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வர்றதுக்கு முன்னாடி", reading: "varṟatukku muṉṉāṭi" }, { word: "வருவதற்கு முன்", reading: "varuvataṟku muṉ" }]
+  - id: "ta-rule-after"
+    slots: ["after", "assoon"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வந்த பிறகு", reading: "vanta piṟaku" }, { word: "வந்ததும்", reading: "vantatum" }]

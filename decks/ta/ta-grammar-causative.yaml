@@ -1,0 +1,101 @@
+schema: 1
+id: "ta-grammar-causative"
+part: "core"
+kind: "grammar"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["base", "caused"]
+  entries:
+    - lemma: "ஏறு"
+      key: "eru"
+      reading: "ēṟu"
+      ipa: "eːru"
+      forms: { "base": "ஏறினான்", "caused": "ஏற்றினான்" }
+      readings: { "base": "ēṟiṉāṉ", "caused": "ēṟṟiṉāṉ" }
+      ipas: { "base": "eːrinaːn", "caused": "eːrrinaːn" }
+    - lemma: "இறங்கு"
+      key: "irangu"
+      reading: "iṟaṅku"
+      ipa: "iraŋku"
+      forms: { "base": "இறங்கினான்", "caused": "இறக்கினான்" }
+      readings: { "base": "iṟaṅkiṉāṉ", "caused": "iṟakkiṉāṉ" }
+      ipas: { "base": "iraŋkinaːn", "caused": "irakkinaːn" }
+    - lemma: "மாறு"
+      key: "maru"
+      reading: "māṟu"
+      ipa: "maːru"
+      forms: { "base": "மாறினான்", "caused": "மாற்றினான்" }
+      readings: { "base": "māṟiṉāṉ", "caused": "māṟṟiṉāṉ" }
+      ipas: { "base": "maːrinaːn", "caused": "maːrrinaːn" }
+    - lemma: "எழு"
+      key: "ezhu"
+      reading: "eḻu"
+      ipa: "eɻu"
+      forms: { "base": "எழுந்தான்", "caused": "எழுப்பினான்" }
+      readings: { "base": "eḻuntāṉ", "caused": "eḻuppiṉāṉ" }
+      ipas: { "base": "eɻunt̪aːn", "caused": "eɻuppinaːn" }
+    - lemma: "ஓடு"
+      key: "otu"
+      reading: "ōṭu"
+      ipa: "oːʈu"
+      forms: { "base": "ஓடினான்", "caused": "ஓட்டினான்" }
+      readings: { "base": "ōṭiṉāṉ", "caused": "ōṭṭiṉāṉ" }
+      ipas: { "base": "oːʈinaːn", "caused": "oːʈʈinaːn" }
+    - lemma: "நட"
+      key: "nata"
+      reading: "naṭa"
+      ipa: "naʈa"
+      forms: { "base": "நடந்தான்", "caused": "நடத்தினான்" }
+      readings: { "base": "naṭantāṉ", "caused": "naṭattiṉāṉ" }
+      ipas: { "base": "naʈant̪aːn", "caused": "naʈat̪t̪inaːn" }
+    - lemma: "கற்றுக்கொள்"
+      key: "karru"
+      reading: "kaṟṟukkoḷ"
+      ipa: "karrukkoɭ"
+      forms: { "base": "கற்றுக்கொண்டான்", "caused": "சொல்லிக்கொடுத்தான்" }
+      readings: { "base": "kaṟṟukkoṇṭāṉ", "caused": "collikkoṭuttāṉ" }
+      ipas: { "base": "karrukkoɳʈaːn", "caused": "sollikkoʈut̪t̪aːn" }
+    - lemma: "படி"
+      key: "padi"
+      reading: "paṭi"
+      ipa: "paʈi"
+      forms: { "base": ["படிச்சான்", "படித்தான்"], "caused": ["படிக்க வச்சான்", "படிக்க வைத்தான்"] }
+      readings: { "base": ["paṭiccāṉ", "paṭittāṉ"], "caused": ["paṭikka vaccāṉ", "paṭikka vaittāṉ"] }
+      ipas: { "base": ["paʈitʃtʃaːn", "paʈit̪t̪aːn"], "caused": ["paʈikka ʋatʃtʃaːn", "paʈikka ʋait̪t̪aːn"] }
+    - lemma: "சிரி"
+      key: "siri"
+      reading: "ciri"
+      ipa: "siɾi"
+      forms: { "base": "சிரித்தான்", "caused": ["சிரிக்க வச்சான்", "சிரிக்க வைத்தான்"] }
+      readings: { "base": "cirittāṉ", "caused": ["cirikka vaccāṉ", "cirikka vaittāṉ"] }
+      ipas: { "base": "siɾit̪t̪aːn", "caused": ["siɾikka ʋatʃtʃaːn", "siɾikka ʋait̪t̪aːn"] }
+    - lemma: "அழு"
+      key: "azhu"
+      reading: "aḻu"
+      ipa: "aɻu"
+      forms: { "base": "அழுதான்", "caused": ["அழ வச்சான்", "அழ வைத்தான்"] }
+      readings: { "base": "aḻutāṉ", "caused": ["aḻa vaccāṉ", "aḻa vaittāṉ"] }
+      ipas: { "base": "aɻut̪aːn", "caused": ["aɻa ʋatʃtʃaːn", "aɻa ʋait̪t̪aːn"] }
+    - lemma: "தூங்கு"
+      key: "thoongu"
+      reading: "tūṅku"
+      ipa: "t̪uːŋku"
+      forms: { "base": "தூங்கினான்", "caused": ["தூங்க வச்சான்", "தூங்க வைத்தான்"] }
+      readings: { "base": "tūṅkiṉāṉ", "caused": ["tūṅka vaccāṉ", "tūṅka vaittāṉ"] }
+      ipas: { "base": "t̪uːŋkinaːn", "caused": ["t̪uːŋka ʋatʃtʃaːn", "t̪uːŋka ʋait̪t̪aːn"] }
+    - lemma: "சாப்பிடு"
+      key: "saappidu"
+      reading: "cāppiṭu"
+      ipa: "saːppiʈu"
+      forms: { "base": "சாப்பிட்டான்", "caused": ["சாப்பிட வச்சான்", "சாப்பிட வைத்தான்"] }
+      readings: { "base": "cāppiṭṭāṉ", "caused": ["cāppiṭa vaccāṉ", "cāppiṭa vaittāṉ"] }
+      ipas: { "base": "saːppiʈʈaːn", "caused": ["saːppiʈa ʋatʃtʃaːn", "saːppiʈa ʋait̪t̪aːn"] }
+    - lemma: "வா"
+      key: "vaa"
+      reading: "vā"
+      ipa: "ʋaː"
+      forms: { "base": "வந்தான்", "caused": ["வர வச்சான்", "வர வைத்தான்"] }
+      readings: { "base": "vantāṉ", "caused": ["vara vaccāṉ", "vara vaittāṉ"] }
+      ipas: { "base": "ʋant̪aːn", "caused": ["ʋaɾa ʋatʃtʃaːn", "ʋaɾa ʋait̪t̪aːn"] }

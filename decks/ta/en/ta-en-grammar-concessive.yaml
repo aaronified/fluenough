@@ -1,0 +1,21 @@
+schema: 1
+id: "ta-en-grammar-concessive"
+kind: "layer"
+core: "ta-grammar-concessive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Even if and even though"
+description: "Every verb the course teaches after even if and even though. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "evenif": "even if"
+    "eventhough": "even though, although"
+rules:
+  "ta-rule-concessive":
+    name: "Even if: -ஆலும் (-ālum)"
+    explanation: "Add -உம் (-um), also, to the conditional form to say even if: {1}, to come, gives {2}, even if he comes. The conditional itself was taught earlier, with -ஆல் (-āl) in writing and -ஆ (-ā) in speech; {3}, to study, gives {4} in speech and {5} in writing."
+  "ta-rule-concessive-though":
+    name: "Even though: the participle with -உம் (-um)"
+    explanation: "Add -உம் (-um) to the verbal participle to say even though it has happened: {1}, to study, gives {2} in speech and {3} in writing, even though he studied. After a participle that ends in -இ (-i) or -ய் (-y) the sound -ய (-ya) joins them: {4}, to go, gives {5}."

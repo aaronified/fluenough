@@ -1,0 +1,718 @@
+schema: 1
+id: "ta-grammar-reported-speech"
+part: "core"
+kind: "rules"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ta-0409", "ta-0410", "ta-0412", "ta-0413"]
+  slots: ["said_did", "said_does", "said_will"]
+  rows:
+    - word: "ta-0010"
+      forms: { "said_did": ["வந்தான்னு", "வந்தான் என்று"], "said_does": ["வர்றான்னு", "வருகிறான் என்று"], "said_will": ["வருவான்னு", "வருவான் என்று"] }
+      readings: { "said_did": ["vantāṉṉu", "vantāṉ eṉṟu"], "said_does": ["varṟāṉṉu", "varukiṟāṉ eṉṟu"], "said_will": ["varuvāṉṉu", "varuvāṉ eṉṟu"] }
+    - word: "ta-0038"
+      forms: { "said_did": ["எழுந்தான்னு", "எழுந்தான் என்று"], "said_does": ["எழுகிறான்னு", "எழுகிறான் என்று"], "said_will": ["எழுவான்னு", "எழுவான் என்று"] }
+      readings: { "said_did": ["eḻuntāṉṉu", "eḻuntāṉ eṉṟu"], "said_does": ["eḻukiṟāṉṉu", "eḻukiṟāṉ eṉṟu"], "said_will": ["eḻuvāṉṉu", "eḻuvāṉ eṉṟu"] }
+    - word: "ta-0115"
+      forms: { "said_did": ["படிச்சான்னு", "படித்தான் என்று"], "said_does": ["படிக்கிறான்னு", "படிக்கிறான் என்று"], "said_will": ["படிப்பான்னு", "படிப்பான் என்று"] }
+      readings: { "said_did": ["paṭiccāṉṉu", "paṭittāṉ eṉṟu"], "said_does": ["paṭikkiṟāṉṉu", "paṭikkiṟāṉ eṉṟu"], "said_will": ["paṭippāṉṉu", "paṭippāṉ eṉṟu"] }
+    - word: "ta-0118"
+      forms: { "said_did": ["போனான்னு", "போனான் என்று"], "said_does": ["போறான்னு", "போகிறான் என்று"], "said_will": ["போவான்னு", "போவான் என்று"] }
+      readings: { "said_did": ["pōṉāṉṉu", "pōṉāṉ eṉṟu"], "said_does": ["pōṟāṉṉu", "pōkiṟāṉ eṉṟu"], "said_will": ["pōvāṉṉu", "pōvāṉ eṉṟu"] }
+    - word: "ta-0119"
+      forms: { "said_did": ["சாப்பிட்டான்னு", "சாப்பிட்டான் என்று"], "said_does": ["சாப்பிடுறான்னு", "சாப்பிடுகிறான் என்று"], "said_will": ["சாப்பிடுவான்னு", "சாப்பிடுவான் என்று"] }
+      readings: { "said_did": ["cāppiṭṭāṉṉu", "cāppiṭṭāṉ eṉṟu"], "said_does": ["cāppiṭuṟāṉṉu", "cāppiṭukiṟāṉ eṉṟu"], "said_will": ["cāppiṭuvāṉṉu", "cāppiṭuvāṉ eṉṟu"] }
+    - word: "ta-0120"
+      forms: { "said_did": ["குடிச்சான்னு", "குடித்தான் என்று"], "said_does": ["குடிக்கிறான்னு", "குடிக்கிறான் என்று"], "said_will": ["குடிப்பான்னு", "குடிப்பான் என்று"] }
+      readings: { "said_did": ["kuṭiccāṉṉu", "kuṭittāṉ eṉṟu"], "said_does": ["kuṭikkiṟāṉṉu", "kuṭikkiṟāṉ eṉṟu"], "said_will": ["kuṭippāṉṉu", "kuṭippāṉ eṉṟu"] }
+    - word: "ta-0121"
+      forms: { "said_did": ["பாத்தான்னு", "பார்த்தான் என்று"], "said_does": ["பார்க்கிறான்னு", "பார்க்கிறான் என்று"], "said_will": ["பார்ப்பான்னு", "பார்ப்பான் என்று"] }
+      readings: { "said_did": ["pāttāṉṉu", "pārttāṉ eṉṟu"], "said_does": ["pārkkiṟāṉṉu", "pārkkiṟāṉ eṉṟu"], "said_will": ["pārppāṉṉu", "pārppāṉ eṉṟu"] }
+    - word: "ta-0122"
+      forms: { "said_did": ["கேட்டான்னு", "கேட்டான் என்று"], "said_does": ["கேட்கிறான்னு", "கேட்கிறான் என்று"], "said_will": ["கேட்பான்னு", "கேட்பான் என்று"] }
+      readings: { "said_did": ["kēṭṭāṉṉu", "kēṭṭāṉ eṉṟu"], "said_does": ["kēṭkiṟāṉṉu", "kēṭkiṟāṉ eṉṟu"], "said_will": ["kēṭpāṉṉu", "kēṭpāṉ eṉṟu"] }
+    - word: "ta-0123"
+      forms: { "said_did": ["பேசினான்னு", "பேசினான் என்று"], "said_does": ["பேசுறான்னு", "பேசுகிறான் என்று"], "said_will": ["பேசுவான்னு", "பேசுவான் என்று"] }
+      readings: { "said_did": ["pēciṉāṉṉu", "pēciṉāṉ eṉṟu"], "said_does": ["pēcuṟāṉṉu", "pēcukiṟāṉ eṉṟu"], "said_will": ["pēcuvāṉṉu", "pēcuvāṉ eṉṟu"] }
+    - word: "ta-0124"
+      forms: { "said_did": ["எழுதினான்னு", "எழுதினான் என்று"], "said_does": ["எழுதுறான்னு", "எழுதுகிறான் என்று"], "said_will": ["எழுதுவான்னு", "எழுதுவான் என்று"] }
+      readings: { "said_did": ["eḻutiṉāṉṉu", "eḻutiṉāṉ eṉṟu"], "said_does": ["eḻutuṟāṉṉu", "eḻutukiṟāṉ eṉṟu"], "said_will": ["eḻutuvāṉṉu", "eḻutuvāṉ eṉṟu"] }
+    - word: "ta-0125"
+      forms: { "said_did": ["கொடுத்தான்னு", "கொடுத்தான் என்று"], "said_does": ["கொடுக்கிறான்னு", "கொடுக்கிறான் என்று"], "said_will": ["கொடுப்பான்னு", "கொடுப்பான் என்று"] }
+      readings: { "said_did": ["koṭuttāṉṉu", "koṭuttāṉ eṉṟu"], "said_does": ["koṭukkiṟāṉṉu", "koṭukkiṟāṉ eṉṟu"], "said_will": ["koṭuppāṉṉu", "koṭuppāṉ eṉṟu"] }
+    - word: "ta-0126"
+      forms: { "said_did": ["தூங்கினான்னு", "தூங்கினான் என்று"], "said_does": ["தூங்குறான்னு", "தூங்குகிறான் என்று"], "said_will": ["தூங்குவான்னு", "தூங்குவான் என்று"] }
+      readings: { "said_did": ["tūṅkiṉāṉṉu", "tūṅkiṉāṉ eṉṟu"], "said_does": ["tūṅkuṟāṉṉu", "tūṅkukiṟāṉ eṉṟu"], "said_will": ["tūṅkuvāṉṉu", "tūṅkuvāṉ eṉṟu"] }
+    - word: "ta-0127"
+      forms: { "said_did": ["செஞ்சான்னு", "செய்தான் என்று"], "said_does": ["செய்கிறான்னு", "செய்கிறான் என்று"], "said_will": ["செய்வான்னு", "செய்வான் என்று"] }
+      readings: { "said_did": ["ceñcāṉṉu", "ceytāṉ eṉṟu"], "said_does": ["ceykiṟāṉṉu", "ceykiṟāṉ eṉṟu"], "said_will": ["ceyvāṉṉu", "ceyvāṉ eṉṟu"] }
+    - word: "ta-0128"
+      forms: { "said_did": ["சமைச்சான்னு", "சமைத்தான் என்று"], "said_does": ["சமைக்கிறான்னு", "சமைக்கிறான் என்று"], "said_will": ["சமைப்பான்னு", "சமைப்பான் என்று"] }
+      readings: { "said_did": ["camaiccāṉṉu", "camaittāṉ eṉṟu"], "said_does": ["camaikkiṟāṉṉu", "camaikkiṟāṉ eṉṟu"], "said_will": ["camaippāṉṉu", "camaippāṉ eṉṟu"] }
+    - word: "ta-0129"
+      forms: { "said_did": ["வாங்கினான்னு", "வாங்கினான் என்று"], "said_does": ["வாங்குறான்னு", "வாங்குகிறான் என்று"], "said_will": ["வாங்குவான்னு", "வாங்குவான் என்று"] }
+      readings: { "said_did": ["vāṅkiṉāṉṉu", "vāṅkiṉāṉ eṉṟu"], "said_does": ["vāṅkuṟāṉṉu", "vāṅkukiṟāṉ eṉṟu"], "said_will": ["vāṅkuvāṉṉu", "vāṅkuvāṉ eṉṟu"] }
+    - word: "ta-0184"
+      forms: { "said_did": ["எடுத்தான்னு", "எடுத்தான் என்று"], "said_does": ["எடுக்கிறான்னு", "எடுக்கிறான் என்று"], "said_will": ["எடுப்பான்னு", "எடுப்பான் என்று"] }
+      readings: { "said_did": ["eṭuttāṉṉu", "eṭuttāṉ eṉṟu"], "said_does": ["eṭukkiṟāṉṉu", "eṭukkiṟāṉ eṉṟu"], "said_will": ["eṭuppāṉṉu", "eṭuppāṉ eṉṟu"] }
+    - word: "ta-0185"
+      forms: { "said_did": ["வச்சான்னு", "வைத்தான் என்று"], "said_does": ["வைக்கிறான்னு", "வைக்கிறான் என்று"], "said_will": ["வைப்பான்னு", "வைப்பான் என்று"] }
+      readings: { "said_did": ["vaccāṉṉu", "vaittāṉ eṉṟu"], "said_does": ["vaikkiṟāṉṉu", "vaikkiṟāṉ eṉṟu"], "said_will": ["vaippāṉṉu", "vaippāṉ eṉṟu"] }
+    - word: "ta-0186"
+      forms: { "said_did": ["திறந்தான்னு", "திறந்தான் என்று"], "said_does": ["திறக்கிறான்னு", "திறக்கிறான் என்று"], "said_will": ["திறப்பான்னு", "திறப்பான் என்று"] }
+      readings: { "said_did": ["tiṟantāṉṉu", "tiṟantāṉ eṉṟu"], "said_does": ["tiṟakkiṟāṉṉu", "tiṟakkiṟāṉ eṉṟu"], "said_will": ["tiṟappāṉṉu", "tiṟappāṉ eṉṟu"] }
+    - word: "ta-0187"
+      forms: { "said_did": ["மூடினான்னு", "மூடினான் என்று"], "said_does": ["மூடுறான்னு", "மூடுகிறான் என்று"], "said_will": ["மூடுவான்னு", "மூடுவான் என்று"] }
+      readings: { "said_did": ["mūṭiṉāṉṉu", "mūṭiṉāṉ eṉṟu"], "said_does": ["mūṭuṟāṉṉu", "mūṭukiṟāṉ eṉṟu"], "said_will": ["mūṭuvāṉṉu", "mūṭuvāṉ eṉṟu"] }
+    - word: "ta-0188"
+      forms: { "said_did": ["உட்கார்ந்தான்னு", "உட்கார்ந்தான் என்று"], "said_does": ["உட்காருகிறான்னு", "உட்காருகிறான் என்று"], "said_will": ["உட்காருவான்னு", "உட்காருவான் என்று"] }
+      readings: { "said_did": ["uṭkārntāṉṉu", "uṭkārntāṉ eṉṟu"], "said_does": ["uṭkārukiṟāṉṉu", "uṭkārukiṟāṉ eṉṟu"], "said_will": ["uṭkāruvāṉṉu", "uṭkāruvāṉ eṉṟu"] }
+    - word: "ta-0189"
+      forms: { "said_did": ["நின்றான்னு", "நின்றான் என்று"], "said_does": ["நிற்கிறான்னு", "நிற்கிறான் என்று"], "said_will": ["நிற்பான்னு", "நிற்பான் என்று"] }
+      readings: { "said_did": ["niṉṟāṉṉu", "niṉṟāṉ eṉṟu"], "said_does": ["niṟkiṟāṉṉu", "niṟkiṟāṉ eṉṟu"], "said_will": ["niṟpāṉṉu", "niṟpāṉ eṉṟu"] }
+    - word: "ta-0190"
+      forms: { "said_did": ["கழுவினான்னு", "கழுவினான் என்று"], "said_does": ["கழுவுறான்னு", "கழுவுகிறான் என்று"], "said_will": ["கழுவுவான்னு", "கழுவுவான் என்று"] }
+      readings: { "said_did": ["kaḻuviṉāṉṉu", "kaḻuviṉāṉ eṉṟu"], "said_does": ["kaḻuvuṟāṉṉu", "kaḻuvukiṟāṉ eṉṟu"], "said_will": ["kaḻuvuvāṉṉu", "kaḻuvuvāṉ eṉṟu"] }
+    - word: "ta-0191"
+      forms: { "said_did": ["விளையாடினான்னு", "விளையாடினான் என்று"], "said_does": ["விளையாடுறான்னு", "விளையாடுகிறான் என்று"], "said_will": ["விளையாடுவான்னு", "விளையாடுவான் என்று"] }
+      readings: { "said_did": ["viḷaiyāṭiṉāṉṉu", "viḷaiyāṭiṉāṉ eṉṟu"], "said_does": ["viḷaiyāṭuṟāṉṉu", "viḷaiyāṭukiṟāṉ eṉṟu"], "said_will": ["viḷaiyāṭuvāṉṉu", "viḷaiyāṭuvāṉ eṉṟu"] }
+    - word: "ta-1101"
+      forms: { "said_did": ["குளிச்சான்னு", "குளித்தான் என்று"], "said_does": ["குளிக்கிறான்னு", "குளிக்கிறான் என்று"], "said_will": ["குளிப்பான்னு", "குளிப்பான் என்று"] }
+      readings: { "said_did": ["kuḷiccāṉṉu", "kuḷittāṉ eṉṟu"], "said_does": ["kuḷikkiṟāṉṉu", "kuḷikkiṟāṉ eṉṟu"], "said_will": ["kuḷippāṉṉu", "kuḷippāṉ eṉṟu"] }
+    - word: "ta-1102"
+      forms: { "said_did": ["துலக்கினான்னு", "துலக்கினான் என்று"], "said_does": ["துலக்குகிறான்னு", "துலக்குகிறான் என்று"], "said_will": ["துலக்குவான்னு", "துலக்குவான் என்று"] }
+      readings: { "said_did": ["tulakkiṉāṉṉu", "tulakkiṉāṉ eṉṟu"], "said_does": ["tulakkukiṟāṉṉu", "tulakkukiṟāṉ eṉṟu"], "said_will": ["tulakkuvāṉṉu", "tulakkuvāṉ eṉṟu"] }
+    - word: "ta-1103"
+      forms: { "said_did": ["நடந்தான்னு", "நடந்தான் என்று"], "said_does": ["நடக்கிறான்னு", "நடக்கிறான் என்று"], "said_will": ["நடப்பான்னு", "நடப்பான் என்று"] }
+      readings: { "said_did": ["naṭantāṉṉu", "naṭantāṉ eṉṟu"], "said_does": ["naṭakkiṟāṉṉu", "naṭakkiṟāṉ eṉṟu"], "said_will": ["naṭappāṉṉu", "naṭappāṉ eṉṟu"] }
+    - word: "ta-1104"
+      forms: { "said_did": ["திரும்பினான்னு", "திரும்பினான் என்று"], "said_does": ["திரும்புகிறான்னு", "திரும்புகிறான் என்று"], "said_will": ["திரும்புவான்னு", "திரும்புவான் என்று"] }
+      readings: { "said_did": ["tirumpiṉāṉṉu", "tirumpiṉāṉ eṉṟu"], "said_does": ["tirumpukiṟāṉṉu", "tirumpukiṟāṉ eṉṟu"], "said_will": ["tirumpuvāṉṉu", "tirumpuvāṉ eṉṟu"] }
+    - word: "ta-1107"
+      forms: { "said_did": ["தொடங்கினான்னு", "தொடங்கினான் என்று"], "said_does": ["தொடங்குகிறான்னு", "தொடங்குகிறான் என்று"], "said_will": ["தொடங்குவான்னு", "தொடங்குவான் என்று"] }
+      readings: { "said_did": ["toṭaṅkiṉāṉṉu", "toṭaṅkiṉāṉ eṉṟu"], "said_does": ["toṭaṅkukiṟāṉṉu", "toṭaṅkukiṟāṉ eṉṟu"], "said_will": ["toṭaṅkuvāṉṉu", "toṭaṅkuvāṉ eṉṟu"] }
+    - word: "ta-1801"
+      forms: { "said_did": ["உதவினான்னு", "உதவினான் என்று"], "said_does": ["உதவுகிறான்னு", "உதவுகிறான் என்று"], "said_will": ["உதவுவான்னு", "உதவுவான் என்று"] }
+      readings: { "said_did": ["utaviṉāṉṉu", "utaviṉāṉ eṉṟu"], "said_does": ["utavukiṟāṉṉu", "utavukiṟāṉ eṉṟu"], "said_will": ["utavuvāṉṉu", "utavuvāṉ eṉṟu"] }
+    - word: "ta-0450"
+      forms: { "said_did": ["விட்டான்னு", "விட்டான் என்று"], "said_does": ["விடுகிறான்னு", "விடுகிறான் என்று"], "said_will": ["விடுவான்னு", "விடுவான் என்று"] }
+      readings: { "said_did": ["viṭṭāṉṉu", "viṭṭāṉ eṉṟu"], "said_does": ["viṭukiṟāṉṉu", "viṭukiṟāṉ eṉṟu"], "said_will": ["viṭuvāṉṉu", "viṭuvāṉ eṉṟu"] }
+    - word: "ta-0451"
+      forms: { "said_did": ["கொண்டான்னு", "கொண்டான் என்று"], "said_does": ["கொள்கிறான்னு", "கொள்கிறான் என்று"], "said_will": ["கொள்வான்னு", "கொள்வான் என்று"] }
+      readings: { "said_did": ["koṇṭāṉṉu", "koṇṭāṉ eṉṟu"], "said_does": ["koḷkiṟāṉṉu", "koḷkiṟāṉ eṉṟu"], "said_will": ["koḷvāṉṉu", "koḷvāṉ eṉṟu"] }
+    - word: "ta-0452"
+      forms: { "said_did": ["போட்டான்னு", "போட்டான் என்று"], "said_does": ["போடுகிறான்னு", "போடுகிறான் என்று"], "said_will": ["போடுவான்னு", "போடுவான் என்று"] }
+      readings: { "said_did": ["pōṭṭāṉṉu", "pōṭṭāṉ eṉṟu"], "said_does": ["pōṭukiṟāṉṉu", "pōṭukiṟāṉ eṉṟu"], "said_will": ["pōṭuvāṉṉu", "pōṭuvāṉ eṉṟu"] }
+    - word: "ta-0453"
+      forms: { "said_did": ["தந்தான்னு", "தந்தான் என்று"], "said_does": ["தருகிறான்னு", "தருகிறான் என்று"], "said_will": ["தருவான்னு", "தருவான் என்று"] }
+      readings: { "said_did": ["tantāṉṉu", "tantāṉ eṉṟu"], "said_does": ["tarukiṟāṉṉu", "tarukiṟāṉ eṉṟu"], "said_will": ["taruvāṉṉu", "taruvāṉ eṉṟu"] }
+    - word: "ta-0454"
+      forms: { "said_did": ["நிறுத்தினான்னு", "நிறுத்தினான் என்று"], "said_does": ["நிறுத்துகிறான்னு", "நிறுத்துகிறான் என்று"], "said_will": ["நிறுத்துவான்னு", "நிறுத்துவான் என்று"] }
+      readings: { "said_did": ["niṟuttiṉāṉṉu", "niṟuttiṉāṉ eṉṟu"], "said_does": ["niṟuttukiṟāṉṉu", "niṟuttukiṟāṉ eṉṟu"], "said_will": ["niṟuttuvāṉṉu", "niṟuttuvāṉ eṉṟu"] }
+    - word: "ta-0455"
+      forms: { "said_did": ["தள்ளினான்னு", "தள்ளினான் என்று"], "said_does": ["தள்ளுகிறான்னு", "தள்ளுகிறான் என்று"], "said_will": ["தள்ளுவான்னு", "தள்ளுவான் என்று"] }
+      readings: { "said_did": ["taḷḷiṉāṉṉu", "taḷḷiṉāṉ eṉṟu"], "said_does": ["taḷḷukiṟāṉṉu", "taḷḷukiṟāṉ eṉṟu"], "said_will": ["taḷḷuvāṉṉu", "taḷḷuvāṉ eṉṟu"] }
+    - word: "ta-0456"
+      forms: { "said_did": ["பிடிச்சான்னு", "பிடித்தான் என்று"], "said_does": ["பிடிக்கிறான்னு", "பிடிக்கிறான் என்று"], "said_will": ["பிடிப்பான்னு", "பிடிப்பான் என்று"] }
+      readings: { "said_did": ["piṭiccāṉṉu", "piṭittāṉ eṉṟu"], "said_does": ["piṭikkiṟāṉṉu", "piṭikkiṟāṉ eṉṟu"], "said_will": ["piṭippāṉṉu", "piṭippāṉ eṉṟu"] }
+    - word: "ta-0457"
+      forms: { "said_did": ["வீசினான்னு", "வீசினான் என்று"], "said_does": ["வீசுகிறான்னு", "வீசுகிறான் என்று"], "said_will": ["வீசுவான்னு", "வீசுவான் என்று"] }
+      readings: { "said_did": ["vīciṉāṉṉu", "vīciṉāṉ eṉṟu"], "said_does": ["vīcukiṟāṉṉu", "vīcukiṟāṉ eṉṟu"], "said_will": ["vīcuvāṉṉu", "vīcuvāṉ eṉṟu"] }
+    - word: "ta-0458"
+      forms: { "said_did": ["தூக்கினான்னு", "தூக்கினான் என்று"], "said_does": ["தூக்குகிறான்னு", "தூக்குகிறான் என்று"], "said_will": ["தூக்குவான்னு", "தூக்குவான் என்று"] }
+      readings: { "said_did": ["tūkkiṉāṉṉu", "tūkkiṉāṉ eṉṟu"], "said_does": ["tūkkukiṟāṉṉu", "tūkkukiṟāṉ eṉṟu"], "said_will": ["tūkkuvāṉṉu", "tūkkuvāṉ eṉṟu"] }
+    - word: "ta-0460"
+      forms: { "said_did": ["பண்ணினான்னு", "பண்ணினான் என்று"], "said_does": ["பண்ணுகிறான்னு", "பண்ணுகிறான் என்று"], "said_will": ["பண்ணுவான்னு", "பண்ணுவான் என்று"] }
+      readings: { "said_did": ["paṇṇiṉāṉṉu", "paṇṇiṉāṉ eṉṟu"], "said_does": ["paṇṇukiṟāṉṉu", "paṇṇukiṟāṉ eṉṟu"], "said_will": ["paṇṇuvāṉṉu", "paṇṇuvāṉ eṉṟu"] }
+    - word: "ta-0461"
+      forms: { "said_did": ["ஆனான்னு", "ஆனான் என்று"], "said_does": ["ஆகுகிறான்னு", "ஆகுகிறான் என்று"], "said_will": ["ஆவான்னு", "ஆவான் என்று"] }
+      readings: { "said_did": ["āṉāṉṉu", "āṉāṉ eṉṟu"], "said_does": ["ākukiṟāṉṉu", "ākukiṟāṉ eṉṟu"], "said_will": ["āvāṉṉu", "āvāṉ eṉṟu"] }
+    - word: "ta-0462"
+      forms: { "said_did": ["பட்டான்னு", "பட்டான் என்று"], "said_does": ["படுகிறான்னு", "படுகிறான் என்று"], "said_will": ["படுவான்னு", "படுவான் என்று"] }
+      readings: { "said_did": ["paṭṭāṉṉu", "paṭṭāṉ eṉṟu"], "said_does": ["paṭukiṟāṉṉu", "paṭukiṟāṉ eṉṟu"], "said_will": ["paṭuvāṉṉu", "paṭuvāṉ eṉṟu"] }
+    - word: "ta-0470"
+      forms: { "said_did": ["சென்றான்னு", "சென்றான் என்று"], "said_does": ["செல்கிறான்னு", "செல்கிறான் என்று"], "said_will": ["செல்வான்னு", "செல்வான் என்று"] }
+      readings: { "said_did": ["ceṉṟāṉṉu", "ceṉṟāṉ eṉṟu"], "said_does": ["celkiṟāṉṉu", "celkiṟāṉ eṉṟu"], "said_will": ["celvāṉṉu", "celvāṉ eṉṟu"] }
+    - word: "ta-0471"
+      forms: { "said_did": ["உண்டான்னு", "உண்டான் என்று"], "said_does": ["உண்கிறான்னு", "உண்கிறான் என்று"], "said_will": ["உண்பான்னு", "உண்பான் என்று"] }
+      readings: { "said_did": ["uṇṭāṉṉu", "uṇṭāṉ eṉṟu"], "said_does": ["uṇkiṟāṉṉu", "uṇkiṟāṉ eṉṟu"], "said_will": ["uṇpāṉṉu", "uṇpāṉ eṉṟu"] }
+    - word: "ta-0472"
+      forms: { "said_did": ["அருந்தினான்னு", "அருந்தினான் என்று"], "said_does": ["அருந்துகிறான்னு", "அருந்துகிறான் என்று"], "said_will": ["அருந்துவான்னு", "அருந்துவான் என்று"] }
+      readings: { "said_did": ["aruntiṉāṉṉu", "aruntiṉāṉ eṉṟu"], "said_does": ["aruntukiṟāṉṉu", "aruntukiṟāṉ eṉṟu"], "said_will": ["aruntuvāṉṉu", "aruntuvāṉ eṉṟu"] }
+    - word: "ta-0473"
+      forms: { "said_did": ["கூறினான்னு", "கூறினான் என்று"], "said_does": ["கூறுகிறான்னு", "கூறுகிறான் என்று"], "said_will": ["கூறுவான்னு", "கூறுவான் என்று"] }
+      readings: { "said_did": ["kūṟiṉāṉṉu", "kūṟiṉāṉ eṉṟu"], "said_does": ["kūṟukiṟāṉṉu", "kūṟukiṟāṉ eṉṟu"], "said_will": ["kūṟuvāṉṉu", "kūṟuvāṉ eṉṟu"] }
+    - word: "ta-0474"
+      forms: { "said_did": ["தெரிவித்தான்னு", "தெரிவித்தான் என்று"], "said_does": ["தெரிவிக்கிறான்னு", "தெரிவிக்கிறான் என்று"], "said_will": ["தெரிவிப்பான்னு", "தெரிவிப்பான் என்று"] }
+      readings: { "said_did": ["terivittāṉṉu", "terivittāṉ eṉṟu"], "said_does": ["terivikkiṟāṉṉu", "terivikkiṟāṉ eṉṟu"], "said_will": ["terivippāṉṉu", "terivippāṉ eṉṟu"] }
+    - word: "ta-2003"
+      forms: { "said_did": ["உடுத்தினான்னு", "உடுத்தினான் என்று"], "said_does": ["உடுத்துகிறான்னு", "உடுத்துகிறான் என்று"], "said_will": ["உடுத்துவான்னு", "உடுத்துவான் என்று"] }
+      readings: { "said_did": ["uṭuttiṉāṉṉu", "uṭuttiṉāṉ eṉṟu"], "said_does": ["uṭuttukiṟāṉṉu", "uṭuttukiṟāṉ eṉṟu"], "said_will": ["uṭuttuvāṉṉu", "uṭuttuvāṉ eṉṟu"] }
+    - word: "ta-2004"
+      forms: { "said_did": ["கழற்றினான்னு", "கழற்றினான் என்று"], "said_does": ["கழற்றுகிறான்னு", "கழற்றுகிறான் என்று"], "said_will": ["கழற்றுவான்னு", "கழற்றுவான் என்று"] }
+      readings: { "said_did": ["kaḻaṟṟiṉāṉṉu", "kaḻaṟṟiṉāṉ eṉṟu"], "said_does": ["kaḻaṟṟukiṟāṉṉu", "kaḻaṟṟukiṟāṉ eṉṟu"], "said_will": ["kaḻaṟṟuvāṉṉu", "kaḻaṟṟuvāṉ eṉṟu"] }
+    - word: "ta-2005"
+      forms: { "said_did": ["கட்டினான்னு", "கட்டினான் என்று"], "said_does": ["கட்டுகிறான்னு", "கட்டுகிறான் என்று"], "said_will": ["கட்டுவான்னு", "கட்டுவான் என்று"] }
+      readings: { "said_did": ["kaṭṭiṉāṉṉu", "kaṭṭiṉāṉ eṉṟu"], "said_does": ["kaṭṭukiṟāṉṉu", "kaṭṭukiṟāṉ eṉṟu"], "said_will": ["kaṭṭuvāṉṉu", "kaṭṭuvāṉ eṉṟu"] }
+    - word: "ta-2006"
+      forms: { "said_did": ["சீவினான்னு", "சீவினான் என்று"], "said_does": ["சீவுகிறான்னு", "சீவுகிறான் என்று"], "said_will": ["சீவுவான்னு", "சீவுவான் என்று"] }
+      readings: { "said_did": ["cīviṉāṉṉu", "cīviṉāṉ eṉṟu"], "said_does": ["cīvukiṟāṉṉu", "cīvukiṟāṉ eṉṟu"], "said_will": ["cīvuvāṉṉu", "cīvuvāṉ eṉṟu"] }
+    - word: "ta-2007"
+      forms: { "said_did": ["அலங்கரித்தான்னு", "அலங்கரித்தான் என்று"], "said_does": ["அலங்கரிக்கிறான்னு", "அலங்கரிக்கிறான் என்று"], "said_will": ["அலங்கரிப்பான்னு", "அலங்கரிப்பான் என்று"] }
+      readings: { "said_did": ["alaṅkarittāṉṉu", "alaṅkarittāṉ eṉṟu"], "said_does": ["alaṅkarikkiṟāṉṉu", "alaṅkarikkiṟāṉ eṉṟu"], "said_will": ["alaṅkarippāṉṉu", "alaṅkarippāṉ eṉṟu"] }
+    - word: "ta-2008"
+      forms: { "said_did": ["வளர்ந்தான்னு", "வளர்ந்தான் என்று"], "said_does": ["வளர்கிறான்னு", "வளர்கிறான் என்று"], "said_will": ["வளர்வான்னு", "வளர்வான் என்று"] }
+      readings: { "said_did": ["vaḷarntāṉṉu", "vaḷarntāṉ eṉṟu"], "said_does": ["vaḷarkiṟāṉṉu", "vaḷarkiṟāṉ eṉṟu"], "said_will": ["vaḷarvāṉṉu", "vaḷarvāṉ eṉṟu"] }
+    - word: "ta-2009"
+      forms: { "said_did": ["பூசினான்னு", "பூசினான் என்று"], "said_does": ["பூசுகிறான்னு", "பூசுகிறான் என்று"], "said_will": ["பூசுவான்னு", "பூசுவான் என்று"] }
+      readings: { "said_did": ["pūciṉāṉṉu", "pūciṉāṉ eṉṟu"], "said_does": ["pūcukiṟāṉṉu", "pūcukiṟāṉ eṉṟu"], "said_will": ["pūcuvāṉṉu", "pūcuvāṉ eṉṟu"] }
+    - word: "ta-1945"
+      forms: { "said_did": ["பெருக்கினான்னு", "பெருக்கினான் என்று"], "said_does": ["பெருக்குகிறான்னு", "பெருக்குகிறான் என்று"], "said_will": ["பெருக்குவான்னு", "பெருக்குவான் என்று"] }
+      readings: { "said_did": ["perukkiṉāṉṉu", "perukkiṉāṉ eṉṟu"], "said_does": ["perukkukiṟāṉṉu", "perukkukiṟāṉ eṉṟu"], "said_will": ["perukkuvāṉṉu", "perukkuvāṉ eṉṟu"] }
+    - word: "ta-1946"
+      forms: { "said_did": ["துடைத்தான்னு", "துடைத்தான் என்று"], "said_does": ["துடைக்கிறான்னு", "துடைக்கிறான் என்று"], "said_will": ["துடைப்பான்னு", "துடைப்பான் என்று"] }
+      readings: { "said_did": ["tuṭaittāṉṉu", "tuṭaittāṉ eṉṟu"], "said_does": ["tuṭaikkiṟāṉṉu", "tuṭaikkiṟāṉ eṉṟu"], "said_will": ["tuṭaippāṉṉu", "tuṭaippāṉ eṉṟu"] }
+    - word: "ta-1947"
+      forms: { "said_did": ["துவைத்தான்னு", "துவைத்தான் என்று"], "said_does": ["துவைக்கிறான்னு", "துவைக்கிறான் என்று"], "said_will": ["துவைப்பான்னு", "துவைப்பான் என்று"] }
+      readings: { "said_did": ["tuvaittāṉṉu", "tuvaittāṉ eṉṟu"], "said_does": ["tuvaikkiṟāṉṉu", "tuvaikkiṟāṉ eṉṟu"], "said_will": ["tuvaippāṉṉu", "tuvaippāṉ eṉṟu"] }
+    - word: "ta-1948"
+      forms: { "said_did": ["மடித்தான்னு", "மடித்தான் என்று"], "said_does": ["மடிக்கிறான்னு", "மடிக்கிறான் என்று"], "said_will": ["மடிப்பான்னு", "மடிப்பான் என்று"] }
+      readings: { "said_did": ["maṭittāṉṉu", "maṭittāṉ eṉṟu"], "said_does": ["maṭikkiṟāṉṉu", "maṭikkiṟāṉ eṉṟu"], "said_will": ["maṭippāṉṉu", "maṭippāṉ eṉṟu"] }
+    - word: "ta-1949"
+      forms: { "said_did": ["இழுத்தான்னு", "இழுத்தான் என்று"], "said_does": ["இழுகிறான்னு", "இழுகிறான் என்று"], "said_will": ["இழுப்பான்னு", "இழுப்பான் என்று"] }
+      readings: { "said_did": ["iḻuttāṉṉu", "iḻuttāṉ eṉṟu"], "said_does": ["iḻukiṟāṉṉu", "iḻukiṟāṉ eṉṟu"], "said_will": ["iḻuppāṉṉu", "iḻuppāṉ eṉṟu"] }
+    - word: "ta-1951"
+      forms: { "said_did": ["நிரப்பினான்னு", "நிரப்பினான் என்று"], "said_does": ["நிரப்புகிறான்னு", "நிரப்புகிறான் என்று"], "said_will": ["நிரப்புவான்னு", "நிரப்புவான் என்று"] }
+      readings: { "said_did": ["nirappiṉāṉṉu", "nirappiṉāṉ eṉṟu"], "said_does": ["nirappukiṟāṉṉu", "nirappukiṟāṉ eṉṟu"], "said_will": ["nirappuvāṉṉu", "nirappuvāṉ eṉṟu"] }
+    - word: "ta-1952"
+      forms: { "said_did": ["ஊற்றினான்னு", "ஊற்றினான் என்று"], "said_does": ["ஊற்றுகிறான்னு", "ஊற்றுகிறான் என்று"], "said_will": ["ஊற்றுவான்னு", "ஊற்றுவான் என்று"] }
+      readings: { "said_did": ["ūṟṟiṉāṉṉu", "ūṟṟiṉāṉ eṉṟu"], "said_does": ["ūṟṟukiṟāṉṉu", "ūṟṟukiṟāṉ eṉṟu"], "said_will": ["ūṟṟuvāṉṉu", "ūṟṟuvāṉ eṉṟu"] }
+    - word: "ta-1953"
+      forms: { "said_did": ["அணைத்தான்னு", "அணைத்தான் என்று"], "said_does": ["அணைக்கிறான்னு", "அணைக்கிறான் என்று"], "said_will": ["அணைப்பான்னு", "அணைப்பான் என்று"] }
+      readings: { "said_did": ["aṇaittāṉṉu", "aṇaittāṉ eṉṟu"], "said_does": ["aṇaikkiṟāṉṉu", "aṇaikkiṟāṉ eṉṟu"], "said_will": ["aṇaippāṉṉu", "aṇaippāṉ eṉṟu"] }
+    - word: "ta-1954"
+      forms: { "said_did": ["ஏற்றினான்னு", "ஏற்றினான் என்று"], "said_does": ["ஏற்றுகிறான்னு", "ஏற்றுகிறான் என்று"], "said_will": ["ஏற்றுவான்னு", "ஏற்றுவான் என்று"] }
+      readings: { "said_did": ["ēṟṟiṉāṉṉu", "ēṟṟiṉāṉ eṉṟu"], "said_does": ["ēṟṟukiṟāṉṉu", "ēṟṟukiṟāṉ eṉṟu"], "said_will": ["ēṟṟuvāṉṉu", "ēṟṟuvāṉ eṉṟu"] }
+    - word: "ta-1955"
+      forms: { "said_did": ["உலர்த்தினான்னு", "உலர்த்தினான் என்று"], "said_does": ["உலர்த்துகிறான்னு", "உலர்த்துகிறான் என்று"], "said_will": ["உலர்த்துவான்னு", "உலர்த்துவான் என்று"] }
+      readings: { "said_did": ["ularttiṉāṉṉu", "ularttiṉāṉ eṉṟu"], "said_does": ["ularttukiṟāṉṉu", "ularttukiṟāṉ eṉṟu"], "said_will": ["ularttuvāṉṉu", "ularttuvāṉ eṉṟu"] }
+    - word: "ta-1956"
+      forms: { "said_did": ["வெட்டினான்னு", "வெட்டினான் என்று"], "said_does": ["வெட்டுகிறான்னு", "வெட்டுகிறான் என்று"], "said_will": ["வெட்டுவான்னு", "வெட்டுவான் என்று"] }
+      readings: { "said_did": ["veṭṭiṉāṉṉu", "veṭṭiṉāṉ eṉṟu"], "said_does": ["veṭṭukiṟāṉṉu", "veṭṭukiṟāṉ eṉṟu"], "said_will": ["veṭṭuvāṉṉu", "veṭṭuvāṉ eṉṟu"] }
+    - word: "ta-1957"
+      forms: { "said_did": ["கலக்கினான்னு", "கலக்கினான் என்று"], "said_does": ["கலக்குகிறான்னு", "கலக்குகிறான் என்று"], "said_will": ["கலக்குவான்னு", "கலக்குவான் என்று"] }
+      readings: { "said_did": ["kalakkiṉāṉṉu", "kalakkiṉāṉ eṉṟu"], "said_does": ["kalakkukiṟāṉṉu", "kalakkukiṟāṉ eṉṟu"], "said_will": ["kalakkuvāṉṉu", "kalakkuvāṉ eṉṟu"] }
+    - word: "ta-1958"
+      forms: { "said_did": ["தேடினான்னு", "தேடினான் என்று"], "said_does": ["தேடுகிறான்னு", "தேடுகிறான் என்று"], "said_will": ["தேடுவான்னு", "தேடுவான் என்று"] }
+      readings: { "said_did": ["tēṭiṉāṉṉu", "tēṭiṉāṉ eṉṟu"], "said_does": ["tēṭukiṟāṉṉu", "tēṭukiṟāṉ eṉṟu"], "said_will": ["tēṭuvāṉṉu", "tēṭuvāṉ eṉṟu"] }
+    - word: "ta-1959"
+      forms: { "said_did": ["அடுக்கினான்னு", "அடுக்கினான் என்று"], "said_does": ["அடுக்குகிறான்னு", "அடுக்குகிறான் என்று"], "said_will": ["அடுக்குவான்னு", "அடுக்குவான் என்று"] }
+      readings: { "said_did": ["aṭukkiṉāṉṉu", "aṭukkiṉāṉ eṉṟu"], "said_does": ["aṭukkukiṟāṉṉu", "aṭukkukiṟāṉ eṉṟu"], "said_will": ["aṭukkuvāṉṉu", "aṭukkuvāṉ eṉṟu"] }
+    - word: "ta-1961"
+      forms: { "said_did": ["மாற்றினான்னு", "மாற்றினான் என்று"], "said_does": ["மாற்றுகிறான்னு", "மாற்றுகிறான் என்று"], "said_will": ["மாற்றுவான்னு", "மாற்றுவான் என்று"] }
+      readings: { "said_did": ["māṟṟiṉāṉṉu", "māṟṟiṉāṉ eṉṟu"], "said_does": ["māṟṟukiṟāṉṉu", "māṟṟukiṟāṉ eṉṟu"], "said_will": ["māṟṟuvāṉṉu", "māṟṟuvāṉ eṉṟu"] }
+    - word: "ta-1183"
+      forms: { "said_did": ["பொங்கினான்னு", "பொங்கினான் என்று"], "said_does": ["பொங்குகிறான்னு", "பொங்குகிறான் என்று"], "said_will": ["பொங்குவான்னு", "பொங்குவான் என்று"] }
+      readings: { "said_did": ["poṅkiṉāṉṉu", "poṅkiṉāṉ eṉṟu"], "said_does": ["poṅkukiṟāṉṉu", "poṅkukiṟāṉ eṉṟu"], "said_will": ["poṅkuvāṉṉu", "poṅkuvāṉ eṉṟu"] }
+    - word: "ta-1192"
+      forms: { "said_did": ["கொண்டாடினான்னு", "கொண்டாடினான் என்று"], "said_does": ["கொண்டாடுகிறான்னு", "கொண்டாடுகிறான் என்று"], "said_will": ["கொண்டாடுவான்னு", "கொண்டாடுவான் என்று"] }
+      readings: { "said_did": ["koṇṭāṭiṉāṉṉu", "koṇṭāṭiṉāṉ eṉṟu"], "said_does": ["koṇṭāṭukiṟāṉṉu", "koṇṭāṭukiṟāṉ eṉṟu"], "said_will": ["koṇṭāṭuvāṉṉu", "koṇṭāṭuvāṉ eṉṟu"] }
+    - word: "ta-1202"
+      forms: { "said_did": ["வணங்கினான்னு", "வணங்கினான் என்று"], "said_does": ["வணங்குகிறான்னு", "வணங்குகிறான் என்று"], "said_will": ["வணங்குவான்னு", "வணங்குவான் என்று"] }
+      readings: { "said_did": ["vaṇaṅkiṉāṉṉu", "vaṇaṅkiṉāṉ eṉṟu"], "said_does": ["vaṇaṅkukiṟāṉṉu", "vaṇaṅkukiṟāṉ eṉṟu"], "said_will": ["vaṇaṅkuvāṉṉu", "vaṇaṅkuvāṉ eṉṟu"] }
+    - word: "ta-1905"
+      forms: { "said_did": ["பாடினான்னு", "பாடினான் என்று"], "said_does": ["பாடுகிறான்னு", "பாடுகிறான் என்று"], "said_will": ["பாடுவான்னு", "பாடுவான் என்று"] }
+      readings: { "said_did": ["pāṭiṉāṉṉu", "pāṭiṉāṉ eṉṟu"], "said_does": ["pāṭukiṟāṉṉu", "pāṭukiṟāṉ eṉṟu"], "said_will": ["pāṭuvāṉṉu", "pāṭuvāṉ eṉṟu"] }
+    - word: "ta-1907"
+      forms: { "said_did": ["தீட்டினான்னு", "தீட்டினான் என்று"], "said_does": ["தீட்டுகிறான்னு", "தீட்டுகிறான் என்று"], "said_will": ["தீட்டுவான்னு", "தீட்டுவான் என்று"] }
+      readings: { "said_did": ["tīṭṭiṉāṉṉu", "tīṭṭiṉāṉ eṉṟu"], "said_does": ["tīṭṭukiṟāṉṉu", "tīṭṭukiṟāṉ eṉṟu"], "said_will": ["tīṭṭuvāṉṉu", "tīṭṭuvāṉ eṉṟu"] }
+    - word: "ta-1908"
+      forms: { "said_did": ["ஓடினான்னு", "ஓடினான் என்று"], "said_does": ["ஓடுகிறான்னு", "ஓடுகிறான் என்று"], "said_will": ["ஓடுவான்னு", "ஓடுவான் என்று"] }
+      readings: { "said_did": ["ōṭiṉāṉṉu", "ōṭiṉāṉ eṉṟu"], "said_does": ["ōṭukiṟāṉṉu", "ōṭukiṟāṉ eṉṟu"], "said_will": ["ōṭuvāṉṉu", "ōṭuvāṉ eṉṟu"] }
+    - word: "ta-1909"
+      forms: { "said_did": ["பறந்தான்னு", "பறந்தான் என்று"], "said_does": ["பறக்கிறான்னு", "பறக்கிறான் என்று"], "said_will": ["பறப்பான்னு", "பறப்பான் என்று"] }
+      readings: { "said_did": ["paṟantāṉṉu", "paṟantāṉ eṉṟu"], "said_does": ["paṟakkiṟāṉṉu", "paṟakkiṟāṉ eṉṟu"], "said_will": ["paṟappāṉṉu", "paṟappāṉ eṉṟu"] }
+    - word: "ta-1910"
+      forms: { "said_did": ["நீந்தினான்னு", "நீந்தினான் என்று"], "said_does": ["நீந்துகிறான்னு", "நீந்துகிறான் என்று"], "said_will": ["நீந்துவான்னு", "நீந்துவான் என்று"] }
+      readings: { "said_did": ["nīntiṉāṉṉu", "nīntiṉāṉ eṉṟu"], "said_does": ["nīntukiṟāṉṉu", "nīntukiṟāṉ eṉṟu"], "said_will": ["nīntuvāṉṉu", "nīntuvāṉ eṉṟu"] }
+    - word: "ta-1911"
+      forms: { "said_did": ["குதித்தான்னு", "குதித்தான் என்று"], "said_does": ["குதிக்கிறான்னு", "குதிக்கிறான் என்று"], "said_will": ["குதிப்பான்னு", "குதிப்பான் என்று"] }
+      readings: { "said_did": ["kutittāṉṉu", "kutittāṉ eṉṟu"], "said_does": ["kutikkiṟāṉṉu", "kutikkiṟāṉ eṉṟu"], "said_will": ["kutippāṉṉu", "kutippāṉ eṉṟu"] }
+    - word: "ta-1912"
+      forms: { "said_did": ["ஏறினான்னு", "ஏறினான் என்று"], "said_does": ["ஏறுகிறான்னு", "ஏறுகிறான் என்று"], "said_will": ["ஏறுவான்னு", "ஏறுவான் என்று"] }
+      readings: { "said_did": ["ēṟiṉāṉṉu", "ēṟiṉāṉ eṉṟu"], "said_does": ["ēṟukiṟāṉṉu", "ēṟukiṟāṉ eṉṟu"], "said_will": ["ēṟuvāṉṉu", "ēṟuvāṉ eṉṟu"] }
+    - word: "ta-1913"
+      forms: { "said_did": ["சேகரித்தான்னு", "சேகரித்தான் என்று"], "said_does": ["சேகரிக்கிறான்னு", "சேகரிக்கிறான் என்று"], "said_will": ["சேகரிப்பான்னு", "சேகரிப்பான் என்று"] }
+      readings: { "said_did": ["cēkarittāṉṉu", "cēkarittāṉ eṉṟu"], "said_does": ["cēkarikkiṟāṉṉu", "cēkarikkiṟāṉ eṉṟu"], "said_will": ["cēkarippāṉṉu", "cēkarippāṉ eṉṟu"] }
+    - word: "ta-1914"
+      forms: { "said_did": ["சிரித்தான்னு", "சிரித்தான் என்று"], "said_does": ["சிரிக்கிறான்னு", "சிரிக்கிறான் என்று"], "said_will": ["சிரிப்பான்னு", "சிரிப்பான் என்று"] }
+      readings: { "said_did": ["cirittāṉṉu", "cirittāṉ eṉṟu"], "said_does": ["cirikkiṟāṉṉu", "cirikkiṟāṉ eṉṟu"], "said_will": ["cirippāṉṉu", "cirippāṉ eṉṟu"] }
+    - word: "ta-1915"
+      forms: { "said_did": ["ரசித்தான்னு", "ரசித்தான் என்று"], "said_does": ["ரசிக்கிறான்னு", "ரசிக்கிறான் என்று"], "said_will": ["ரசிப்பான்னு", "ரசிப்பான் என்று"] }
+      readings: { "said_did": ["racittāṉṉu", "racittāṉ eṉṟu"], "said_does": ["racikkiṟāṉṉu", "racikkiṟāṉ eṉṟu"], "said_will": ["racippāṉṉu", "racippāṉ eṉṟu"] }
+    - word: "ta-1916"
+      forms: { "said_did": ["வென்றான்னு", "வென்றான் என்று"], "said_does": ["வெல்கிறான்னு", "வெல்கிறான் என்று"], "said_will": ["வெல்வான்னு", "வெல்வான் என்று"] }
+      readings: { "said_did": ["veṉṟāṉṉu", "veṉṟāṉ eṉṟu"], "said_does": ["velkiṟāṉṉu", "velkiṟāṉ eṉṟu"], "said_will": ["velvāṉṉu", "velvāṉ eṉṟu"] }
+    - word: "ta-2180"
+      forms: { "said_did": ["ஓட்டினான்னு", "ஓட்டினான் என்று"], "said_does": ["ஓட்டுகிறான்னு", "ஓட்டுகிறான் என்று"], "said_will": ["ஓட்டுவான்னு", "ஓட்டுவான் என்று"] }
+      readings: { "said_did": ["ōṭṭiṉāṉṉu", "ōṭṭiṉāṉ eṉṟu"], "said_does": ["ōṭṭukiṟāṉṉu", "ōṭṭukiṟāṉ eṉṟu"], "said_will": ["ōṭṭuvāṉṉu", "ōṭṭuvāṉ eṉṟu"] }
+    - word: "ta-2182"
+      forms: { "said_did": ["அடைந்தான்னு", "அடைந்தான் என்று"], "said_does": ["அடைகிறான்னு", "அடைகிறான் என்று"], "said_will": ["அடைவான்னு", "அடைவான் என்று"] }
+      readings: { "said_did": ["aṭaintāṉṉu", "aṭaintāṉ eṉṟu"], "said_does": ["aṭaikiṟāṉṉu", "aṭaikiṟāṉ eṉṟu"], "said_will": ["aṭaivāṉṉu", "aṭaivāṉ eṉṟu"] }
+    - word: "ta-2183"
+      forms: { "said_did": ["இறக்கினான்னு", "இறக்கினான் என்று"], "said_does": ["இறக்குகிறான்னு", "இறக்குகிறான் என்று"], "said_will": ["இறக்குவான்னு", "இறக்குவான் என்று"] }
+      readings: { "said_did": ["iṟakkiṉāṉṉu", "iṟakkiṉāṉ eṉṟu"], "said_does": ["iṟakkukiṟāṉṉu", "iṟakkukiṟāṉ eṉṟu"], "said_will": ["iṟakkuvāṉṉu", "iṟakkuvāṉ eṉṟu"] }
+    - word: "ta-2186"
+      forms: { "said_did": ["இயங்கினான்னு", "இயங்கினான் என்று"], "said_does": ["இயங்குகிறான்னு", "இயங்குகிறான் என்று"], "said_will": ["இயங்குவான்னு", "இயங்குவான் என்று"] }
+      readings: { "said_did": ["iyaṅkiṉāṉṉu", "iyaṅkiṉāṉ eṉṟu"], "said_does": ["iyaṅkukiṟāṉṉu", "iyaṅkukiṟāṉ eṉṟu"], "said_will": ["iyaṅkuvāṉṉu", "iyaṅkuvāṉ eṉṟu"] }
+    - word: "ta-2191"
+      forms: { "said_did": ["பரிசோதித்தான்னு", "பரிசோதித்தான் என்று"], "said_does": ["பரிசோதிக்கிறான்னு", "பரிசோதிக்கிறான் என்று"], "said_will": ["பரிசோதிப்பான்னு", "பரிசோதிப்பான் என்று"] }
+      readings: { "said_did": ["paricōtittāṉṉu", "paricōtittāṉ eṉṟu"], "said_does": ["paricōtikkiṟāṉṉu", "paricōtikkiṟāṉ eṉṟu"], "said_will": ["paricōtippāṉṉu", "paricōtippāṉ eṉṟu"] }
+    - word: "ta-2241"
+      forms: { "said_did": ["மலர்ந்தான்னு", "மலர்ந்தான் என்று"], "said_does": ["மலர்கிறான்னு", "மலர்கிறான் என்று"], "said_will": ["மலர்வான்னு", "மலர்வான் என்று"] }
+      readings: { "said_did": ["malarntāṉṉu", "malarntāṉ eṉṟu"], "said_does": ["malarkiṟāṉṉu", "malarkiṟāṉ eṉṟu"], "said_will": ["malarvāṉṉu", "malarvāṉ eṉṟu"] }
+    - word: "ta-2242"
+      forms: { "said_did": ["உதிர்ந்தான்னு", "உதிர்ந்தான் என்று"], "said_does": ["உதிர்கிறான்னு", "உதிர்கிறான் என்று"], "said_will": ["உதிர்வான்னு", "உதிர்வான் என்று"] }
+      readings: { "said_did": ["utirntāṉṉu", "utirntāṉ eṉṟu"], "said_does": ["utirkiṟāṉṉu", "utirkiṟāṉ eṉṟu"], "said_will": ["utirvāṉṉu", "utirvāṉ eṉṟu"] }
+    - word: "ta-2243"
+      forms: { "said_did": ["முளைத்தான்னு", "முளைத்தான் என்று"], "said_does": ["முளைக்கிறான்னு", "முளைக்கிறான் என்று"], "said_will": ["முளைப்பான்னு", "முளைப்பான் என்று"] }
+      readings: { "said_did": ["muḷaittāṉṉu", "muḷaittāṉ eṉṟu"], "said_does": ["muḷaikkiṟāṉṉu", "muḷaikkiṟāṉ eṉṟu"], "said_will": ["muḷaippāṉṉu", "muḷaippāṉ eṉṟu"] }
+    - word: "ta-2244"
+      forms: { "said_did": ["உருகினான்னு", "உருகினான் என்று"], "said_does": ["உருகுகிறான்னு", "உருகுகிறான் என்று"], "said_will": ["உருகுவான்னு", "உருகுவான் என்று"] }
+      readings: { "said_did": ["urukiṉāṉṉu", "urukiṉāṉ eṉṟu"], "said_does": ["urukukiṟāṉṉu", "urukukiṟāṉ eṉṟu"], "said_will": ["urukuvāṉṉu", "urukuvāṉ eṉṟu"] }
+    - word: "ta-2245"
+      forms: { "said_did": ["உறைந்தான்னு", "உறைந்தான் என்று"], "said_does": ["உறைகிறான்னு", "உறைகிறான் என்று"], "said_will": ["உறைவான்னு", "உறைவான் என்று"] }
+      readings: { "said_did": ["uṟaintāṉṉu", "uṟaintāṉ eṉṟu"], "said_does": ["uṟaikiṟāṉṉu", "uṟaikiṟāṉ eṉṟu"], "said_will": ["uṟaivāṉṉu", "uṟaivāṉ eṉṟu"] }
+    - word: "ta-2246"
+      forms: { "said_did": ["ஒழுகினான்னு", "ஒழுகினான் என்று"], "said_does": ["ஒழுகுகிறான்னு", "ஒழுகுகிறான் என்று"], "said_will": ["ஒழுகுவான்னு", "ஒழுகுவான் என்று"] }
+      readings: { "said_did": ["oḻukiṉāṉṉu", "oḻukiṉāṉ eṉṟu"], "said_does": ["oḻukukiṟāṉṉu", "oḻukukiṟāṉ eṉṟu"], "said_will": ["oḻukuvāṉṉu", "oḻukuvāṉ eṉṟu"] }
+    - word: "ta-2122"
+      forms: { "said_did": ["இணைத்தான்னு", "இணைத்தான் என்று"], "said_does": ["இணைக்கிறான்னு", "இணைக்கிறான் என்று"], "said_will": ["இணைப்பான்னு", "இணைப்பான் என்று"] }
+      readings: { "said_did": ["iṇaittāṉṉu", "iṇaittāṉ eṉṟu"], "said_does": ["iṇaikkiṟāṉṉu", "iṇaikkiṟāṉ eṉṟu"], "said_will": ["iṇaippāṉṉu", "iṇaippāṉ eṉṟu"] }
+    - word: "ta-2123"
+      forms: { "said_did": ["துண்டித்தான்னு", "துண்டித்தான் என்று"], "said_does": ["துண்டிக்கிறான்னு", "துண்டிக்கிறான் என்று"], "said_will": ["துண்டிப்பான்னு", "துண்டிப்பான் என்று"] }
+      readings: { "said_did": ["tuṇṭittāṉṉu", "tuṇṭittāṉ eṉṟu"], "said_does": ["tuṇṭikkiṟāṉṉu", "tuṇṭikkiṟāṉ eṉṟu"], "said_will": ["tuṇṭippāṉṉu", "tuṇṭippāṉ eṉṟu"] }
+    - word: "ta-2124"
+      forms: { "said_did": ["நீக்கினான்னு", "நீக்கினான் என்று"], "said_does": ["நீக்குகிறான்னு", "நீக்குகிறான் என்று"], "said_will": ["நீக்குவான்னு", "நீக்குவான் என்று"] }
+      readings: { "said_did": ["nīkkiṉāṉṉu", "nīkkiṉāṉ eṉṟu"], "said_does": ["nīkkukiṟāṉṉu", "nīkkukiṟāṉ eṉṟu"], "said_will": ["nīkkuvāṉṉu", "nīkkuvāṉ eṉṟu"] }
+    - word: "ta-2125"
+      forms: { "said_did": ["புதுப்பித்தான்னு", "புதுப்பித்தான் என்று"], "said_does": ["புதுப்பிக்கிறான்னு", "புதுப்பிக்கிறான் என்று"], "said_will": ["புதுப்பிப்பான்னு", "புதுப்பிப்பான் என்று"] }
+      readings: { "said_did": ["putuppittāṉṉu", "putuppittāṉ eṉṟu"], "said_does": ["putuppikkiṟāṉṉu", "putuppikkiṟāṉ eṉṟu"], "said_will": ["putuppippāṉṉu", "putuppippāṉ eṉṟu"] }
+    - word: "ta-2126"
+      forms: { "said_did": ["நிறுவினான்னு", "நிறுவினான் என்று"], "said_does": ["நிறுவுகிறான்னு", "நிறுவுகிறான் என்று"], "said_will": ["நிறுவுவான்னு", "நிறுவுவான் என்று"] }
+      readings: { "said_did": ["niṟuviṉāṉṉu", "niṟuviṉāṉ eṉṟu"], "said_does": ["niṟuvukiṟāṉṉu", "niṟuvukiṟāṉ eṉṟu"], "said_will": ["niṟuvuvāṉṉu", "niṟuvuvāṉ eṉṟu"] }
+    - word: "ta-2128"
+      forms: { "said_did": ["அழுத்தினான்னு", "அழுத்தினான் என்று"], "said_does": ["அழுத்துகிறான்னு", "அழுத்துகிறான் என்று"], "said_will": ["அழுத்துவான்னு", "அழுத்துவான் என்று"] }
+      readings: { "said_did": ["aḻuttiṉāṉṉu", "aḻuttiṉāṉ eṉṟu"], "said_does": ["aḻuttukiṟāṉṉu", "aḻuttukiṟāṉ eṉṟu"], "said_will": ["aḻuttuvāṉṉu", "aḻuttuvāṉ eṉṟu"] }
+    - word: "ta-1857"
+      forms: { "said_did": ["புரிந்தான்னு", "புரிந்தான் என்று"], "said_does": ["புரிகிறான்னு", "புரிகிறான் என்று"], "said_will": ["புரிவான்னு", "புரிவான் என்று"] }
+      readings: { "said_did": ["purintāṉṉu", "purintāṉ eṉṟu"], "said_does": ["purikiṟāṉṉu", "purikiṟāṉ eṉṟu"], "said_will": ["purivāṉṉu", "purivāṉ eṉṟu"] }
+    - word: "ta-1858"
+      forms: { "said_did": ["மறந்தான்னு", "மறந்தான் என்று"], "said_does": ["மறக்கிறான்னு", "மறக்கிறான் என்று"], "said_will": ["மறப்பான்னு", "மறப்பான் என்று"] }
+      readings: { "said_did": ["maṟantāṉṉu", "maṟantāṉ eṉṟu"], "said_does": ["maṟakkiṟāṉṉu", "maṟakkiṟāṉ eṉṟu"], "said_will": ["maṟappāṉṉu", "maṟappāṉ eṉṟu"] }
+    - word: "ta-1859"
+      forms: { "said_did": ["நினைத்தான்னு", "நினைத்தான் என்று"], "said_does": ["நினைக்கிறான்னு", "நினைக்கிறான் என்று"], "said_will": ["நினைப்பான்னு", "நினைப்பான் என்று"] }
+      readings: { "said_did": ["niṉaittāṉṉu", "niṉaittāṉ eṉṟu"], "said_does": ["niṉaikkiṟāṉṉu", "niṉaikkiṟāṉ eṉṟu"], "said_will": ["niṉaippāṉṉu", "niṉaippāṉ eṉṟu"] }
+    - word: "ta-1242"
+      forms: { "said_did": ["செலுத்தினான்னு", "செலுத்தினான் என்று"], "said_does": ["செலுத்துகிறான்னு", "செலுத்துகிறான் என்று"], "said_will": ["செலுத்துவான்னு", "செலுத்துவான் என்று"] }
+      readings: { "said_did": ["celuttiṉāṉṉu", "celuttiṉāṉ eṉṟu"], "said_does": ["celuttukiṟāṉṉu", "celuttukiṟāṉ eṉṟu"], "said_will": ["celuttuvāṉṉu", "celuttuvāṉ eṉṟu"] }
+    - word: "ta-1243"
+      forms: { "said_did": ["ஒப்பிட்டான்னு", "ஒப்பிட்டான் என்று"], "said_does": ["ஒப்பிடுகிறான்னு", "ஒப்பிடுகிறான் என்று"], "said_will": ["ஒப்பிடுவான்னு", "ஒப்பிடுவான் என்று"] }
+      readings: { "said_did": ["oppiṭṭāṉṉu", "oppiṭṭāṉ eṉṟu"], "said_does": ["oppiṭukiṟāṉṉu", "oppiṭukiṟāṉ eṉṟu"], "said_will": ["oppiṭuvāṉṉu", "oppiṭuvāṉ eṉṟu"] }
+    - word: "ta-1244"
+      forms: { "said_did": ["விசாரித்தான்னு", "விசாரித்தான் என்று"], "said_does": ["விசாரிக்கிறான்னு", "விசாரிக்கிறான் என்று"], "said_will": ["விசாரிப்பான்னு", "விசாரிப்பான் என்று"] }
+      readings: { "said_did": ["vicārittāṉṉu", "vicārittāṉ eṉṟu"], "said_does": ["vicārikkiṟāṉṉu", "vicārikkiṟāṉ eṉṟu"], "said_will": ["vicārippāṉṉu", "vicārippāṉ eṉṟu"] }
+    - word: "ta-1245"
+      forms: { "said_did": ["கூட்டினான்னு", "கூட்டினான் என்று"], "said_does": ["கூட்டுகிறான்னு", "கூட்டுகிறான் என்று"], "said_will": ["கூட்டுவான்னு", "கூட்டுவான் என்று"] }
+      readings: { "said_did": ["kūṭṭiṉāṉṉu", "kūṭṭiṉāṉ eṉṟu"], "said_does": ["kūṭṭukiṟāṉṉu", "kūṭṭukiṟāṉ eṉṟu"], "said_will": ["kūṭṭuvāṉṉu", "kūṭṭuvāṉ eṉṟu"] }
+    - word: "ta-1246"
+      forms: { "said_did": ["வசூலித்தான்னு", "வசூலித்தான் என்று"], "said_does": ["வசூலிக்கிறான்னு", "வசூலிக்கிறான் என்று"], "said_will": ["வசூலிப்பான்னு", "வசூலிப்பான் என்று"] }
+      readings: { "said_did": ["vacūlittāṉṉu", "vacūlittāṉ eṉṟu"], "said_does": ["vacūlikkiṟāṉṉu", "vacūlikkiṟāṉ eṉṟu"], "said_will": ["vacūlippāṉṉu", "vacūlippāṉ eṉṟu"] }
+    - word: "ta-2017"
+      forms: { "said_did": ["சொன்னான்னு", "சொன்னான் என்று"], "said_does": ["சொல்கிறான்னு", "சொல்கிறான் என்று"], "said_will": ["சொல்வான்னு", "சொல்வான் என்று"] }
+      readings: { "said_did": ["coṉṉāṉṉu", "coṉṉāṉ eṉṟu"], "said_does": ["colkiṟāṉṉu", "colkiṟāṉ eṉṟu"], "said_will": ["colvāṉṉu", "colvāṉ eṉṟu"] }
+    - word: "ta-2018"
+      forms: { "said_did": ["இருந்தான்னு", "இருந்தான் என்று"], "said_does": ["இருகிறான்னு", "இருகிறான் என்று"], "said_will": ["இருப்பான்னு", "இருப்பான் என்று"] }
+      readings: { "said_did": ["iruntāṉṉu", "iruntāṉ eṉṟu"], "said_does": ["irukiṟāṉṉu", "irukiṟāṉ eṉṟu"], "said_will": ["iruppāṉṉu", "iruppāṉ eṉṟu"] }
+    - word: "ta-2019"
+      forms: { "said_did": ["தெரிந்தான்னு", "தெரிந்தான் என்று"], "said_does": ["தெரிகிறான்னு", "தெரிகிறான் என்று"], "said_will": ["தெரிவான்னு", "தெரிவான் என்று"] }
+      readings: { "said_did": ["terintāṉṉu", "terintāṉ eṉṟu"], "said_does": ["terikiṟāṉṉu", "terikiṟāṉ eṉṟu"], "said_will": ["terivāṉṉu", "terivāṉ eṉṟu"] }
+    - word: "ta-2020"
+      forms: { "said_did": ["தங்கினான்னு", "தங்கினான் என்று"], "said_does": ["தங்குகிறான்னு", "தங்குகிறான் என்று"], "said_will": ["தங்குவான்னு", "தங்குவான் என்று"] }
+      readings: { "said_did": ["taṅkiṉāṉṉu", "taṅkiṉāṉ eṉṟu"], "said_does": ["taṅkukiṟāṉṉu", "taṅkukiṟāṉ eṉṟu"], "said_will": ["taṅkuvāṉṉu", "taṅkuvāṉ eṉṟu"] }
+    - word: "ta-2021"
+      forms: { "said_did": ["வாழ்ந்தான்னு", "வாழ்ந்தான் என்று"], "said_does": ["வாழ்கிறான்னு", "வாழ்கிறான் என்று"], "said_will": ["வாழ்வான்னு", "வாழ்வான் என்று"] }
+      readings: { "said_did": ["vāḻntāṉṉu", "vāḻntāṉ eṉṟu"], "said_does": ["vāḻkiṟāṉṉu", "vāḻkiṟāṉ eṉṟu"], "said_will": ["vāḻvāṉṉu", "vāḻvāṉ eṉṟu"] }
+    - word: "ta-2022"
+      forms: { "said_did": ["இறங்கினான்னு", "இறங்கினான் என்று"], "said_does": ["இறங்குகிறான்னு", "இறங்குகிறான் என்று"], "said_will": ["இறங்குவான்னு", "இறங்குவான் என்று"] }
+      readings: { "said_did": ["iṟaṅkiṉāṉṉu", "iṟaṅkiṉāṉ eṉṟu"], "said_does": ["iṟaṅkukiṟāṉṉu", "iṟaṅkukiṟāṉ eṉṟu"], "said_will": ["iṟaṅkuvāṉṉu", "iṟaṅkuvāṉ eṉṟu"] }
+    - word: "ta-2024"
+      forms: { "said_did": ["பெற்றான்னு", "பெற்றான் என்று"], "said_does": ["பெறுகிறான்னு", "பெறுகிறான் என்று"], "said_will": ["பெறுவான்னு", "பெறுவான் என்று"] }
+      readings: { "said_did": ["peṟṟāṉṉu", "peṟṟāṉ eṉṟu"], "said_does": ["peṟukiṟāṉṉu", "peṟukiṟāṉ eṉṟu"], "said_will": ["peṟuvāṉṉu", "peṟuvāṉ eṉṟu"] }
+    - word: "ta-2025"
+      forms: { "said_did": ["கிடைத்தான்னு", "கிடைத்தான் என்று"], "said_does": ["கிடைக்கிறான்னு", "கிடைக்கிறான் என்று"], "said_will": ["கிடைப்பான்னு", "கிடைப்பான் என்று"] }
+      readings: { "said_did": ["kiṭaittāṉṉu", "kiṭaittāṉ eṉṟu"], "said_does": ["kiṭaikkiṟāṉṉu", "kiṭaikkiṟāṉ eṉṟu"], "said_will": ["kiṭaippāṉṉu", "kiṭaippāṉ eṉṟu"] }
+    - word: "ta-2029"
+      forms: { "said_did": ["அனுப்பினான்னு", "அனுப்பினான் என்று"], "said_does": ["அனுப்புகிறான்னு", "அனுப்புகிறான் என்று"], "said_will": ["அனுப்புவான்னு", "அனுப்புவான் என்று"] }
+      readings: { "said_did": ["aṉuppiṉāṉṉu", "aṉuppiṉāṉ eṉṟu"], "said_does": ["aṉuppukiṟāṉṉu", "aṉuppukiṟāṉ eṉṟu"], "said_will": ["aṉuppuvāṉṉu", "aṉuppuvāṉ eṉṟu"] }
+    - word: "ta-2030"
+      forms: { "said_did": ["கூப்பிட்டான்னு", "கூப்பிட்டான் என்று"], "said_does": ["கூப்பிடுகிறான்னு", "கூப்பிடுகிறான் என்று"], "said_will": ["கூப்பிடுவான்னு", "கூப்பிடுவான் என்று"] }
+      readings: { "said_did": ["kūppiṭṭāṉṉu", "kūppiṭṭāṉ eṉṟu"], "said_does": ["kūppiṭukiṟāṉṉu", "kūppiṭukiṟāṉ eṉṟu"], "said_will": ["kūppiṭuvāṉṉu", "kūppiṭuvāṉ eṉṟu"] }
+    - word: "ta-2031"
+      forms: { "said_did": ["அழைத்தான்னு", "அழைத்தான் என்று"], "said_does": ["அழைக்கிறான்னு", "அழைக்கிறான் என்று"], "said_will": ["அழைப்பான்னு", "அழைப்பான் என்று"] }
+      readings: { "said_did": ["aḻaittāṉṉu", "aḻaittāṉ eṉṟu"], "said_does": ["aḻaikkiṟāṉṉu", "aḻaikkiṟāṉ eṉṟu"], "said_will": ["aḻaippāṉṉu", "aḻaippāṉ eṉṟu"] }
+    - word: "ta-2033"
+      forms: { "said_did": ["சந்தித்தான்னு", "சந்தித்தான் என்று"], "said_does": ["சந்திக்கிறான்னு", "சந்திக்கிறான் என்று"], "said_will": ["சந்திப்பான்னு", "சந்திப்பான் என்று"] }
+      readings: { "said_did": ["cantittāṉṉu", "cantittāṉ eṉṟu"], "said_does": ["cantikkiṟāṉṉu", "cantikkiṟāṉ eṉṟu"], "said_will": ["cantippāṉṉu", "cantippāṉ eṉṟu"] }
+    - word: "ta-2034"
+      forms: { "said_did": ["சேர்ந்தான்னு", "சேர்ந்தான் என்று"], "said_does": ["சேர்கிறான்னு", "சேர்கிறான் என்று"], "said_will": ["சேர்வான்னு", "சேர்வான் என்று"] }
+      readings: { "said_did": ["cērntāṉṉu", "cērntāṉ eṉṟu"], "said_does": ["cērkiṟāṉṉu", "cērkiṟāṉ eṉṟu"], "said_will": ["cērvāṉṉu", "cērvāṉ eṉṟu"] }
+    - word: "ta-2035"
+      forms: { "said_did": ["பிரிந்தான்னு", "பிரிந்தான் என்று"], "said_does": ["பிரிகிறான்னு", "பிரிகிறான் என்று"], "said_will": ["பிரிவான்னு", "பிரிவான் என்று"] }
+      readings: { "said_did": ["pirintāṉṉu", "pirintāṉ eṉṟu"], "said_does": ["pirikiṟāṉṉu", "pirikiṟāṉ eṉṟu"], "said_will": ["pirivāṉṉu", "pirivāṉ eṉṟu"] }
+    - word: "ta-2036"
+      forms: { "said_did": ["நம்பினான்னு", "நம்பினான் என்று"], "said_does": ["நம்புகிறான்னு", "நம்புகிறான் என்று"], "said_will": ["நம்புவான்னு", "நம்புவான் என்று"] }
+      readings: { "said_did": ["nampiṉāṉṉu", "nampiṉāṉ eṉṟu"], "said_does": ["nampukiṟāṉṉu", "nampukiṟāṉ eṉṟu"], "said_will": ["nampuvāṉṉu", "nampuvāṉ eṉṟu"] }
+    - word: "ta-2038"
+      forms: { "said_did": ["பகிர்ந்தான்னு", "பகிர்ந்தான் என்று"], "said_does": ["பகிர்கிறான்னு", "பகிர்கிறான் என்று"], "said_will": ["பகிர்வான்னு", "பகிர்வான் என்று"] }
+      readings: { "said_did": ["pakirntāṉṉu", "pakirntāṉ eṉṟu"], "said_does": ["pakirkiṟāṉṉu", "pakirkiṟāṉ eṉṟu"], "said_will": ["pakirvāṉṉu", "pakirvāṉ eṉṟu"] }
+    - word: "ta-2039"
+      forms: { "said_did": ["ஒட்டினான்னு", "ஒட்டினான் என்று"], "said_does": ["ஒட்டுகிறான்னு", "ஒட்டுகிறான் என்று"], "said_will": ["ஒட்டுவான்னு", "ஒட்டுவான் என்று"] }
+      readings: { "said_did": ["oṭṭiṉāṉṉu", "oṭṭiṉāṉ eṉṟu"], "said_does": ["oṭṭukiṟāṉṉu", "oṭṭukiṟāṉ eṉṟu"], "said_will": ["oṭṭuvāṉṉu", "oṭṭuvāṉ eṉṟu"] }
+    - word: "ta-2040"
+      forms: { "said_did": ["கொட்டினான்னு", "கொட்டினான் என்று"], "said_does": ["கொட்டுகிறான்னு", "கொட்டுகிறான் என்று"], "said_will": ["கொட்டுவான்னு", "கொட்டுவான் என்று"] }
+      readings: { "said_did": ["koṭṭiṉāṉṉu", "koṭṭiṉāṉ eṉṟu"], "said_does": ["koṭṭukiṟāṉṉu", "koṭṭukiṟāṉ eṉṟu"], "said_will": ["koṭṭuvāṉṉu", "koṭṭuvāṉ eṉṟu"] }
+    - word: "ta-2041"
+      forms: { "said_did": ["எரிந்தான்னு", "எரிந்தான் என்று"], "said_does": ["எரிகிறான்னு", "எரிகிறான் என்று"], "said_will": ["எரிவான்னு", "எரிவான் என்று"] }
+      readings: { "said_did": ["erintāṉṉu", "erintāṉ eṉṟu"], "said_does": ["erikiṟāṉṉu", "erikiṟāṉ eṉṟu"], "said_will": ["erivāṉṉu", "erivāṉ eṉṟu"] }
+    - word: "ta-2042"
+      forms: { "said_did": ["உருவாக்கினான்னு", "உருவாக்கினான் என்று"], "said_does": ["உருவாக்குகிறான்னு", "உருவாக்குகிறான் என்று"], "said_will": ["உருவாக்குவான்னு", "உருவாக்குவான் என்று"] }
+      readings: { "said_did": ["uruvākkiṉāṉṉu", "uruvākkiṉāṉ eṉṟu"], "said_does": ["uruvākkukiṟāṉṉu", "uruvākkukiṟāṉ eṉṟu"], "said_will": ["uruvākkuvāṉṉu", "uruvākkuvāṉ eṉṟu"] }
+    - word: "ta-2043"
+      forms: { "said_did": ["திருடினான்னு", "திருடினான் என்று"], "said_does": ["திருடுகிறான்னு", "திருடுகிறான் என்று"], "said_will": ["திருடுவான்னு", "திருடுவான் என்று"] }
+      readings: { "said_did": ["tiruṭiṉāṉṉu", "tiruṭiṉāṉ eṉṟu"], "said_does": ["tiruṭukiṟāṉṉu", "tiruṭukiṟāṉ eṉṟu"], "said_will": ["tiruṭuvāṉṉu", "tiruṭuvāṉ eṉṟu"] }
+    - word: "ta-2044"
+      forms: { "said_did": ["யோசித்தான்னு", "யோசித்தான் என்று"], "said_does": ["யோசிக்கிறான்னு", "யோசிக்கிறான் என்று"], "said_will": ["யோசிப்பான்னு", "யோசிப்பான் என்று"] }
+      readings: { "said_did": ["yōcittāṉṉu", "yōcittāṉ eṉṟu"], "said_does": ["yōcikkiṟāṉṉu", "yōcikkiṟāṉ eṉṟu"], "said_will": ["yōcippāṉṉu", "yōcippāṉ eṉṟu"] }
+    - word: "ta-2045"
+      forms: { "said_did": ["விரும்பினான்னு", "விரும்பினான் என்று"], "said_does": ["விரும்புகிறான்னு", "விரும்புகிறான் என்று"], "said_will": ["விரும்புவான்னு", "விரும்புவான் என்று"] }
+      readings: { "said_did": ["virumpiṉāṉṉu", "virumpiṉāṉ eṉṟu"], "said_does": ["virumpukiṟāṉṉu", "virumpukiṟāṉ eṉṟu"], "said_will": ["virumpuvāṉṉu", "virumpuvāṉ eṉṟu"] }
+    - word: "ta-2049"
+      forms: { "said_did": ["அழுதான்னு", "அழுதான் என்று"], "said_does": ["அழுகிறான்னு", "அழுகிறான் என்று"], "said_will": ["அழுவான்னு", "அழுவான் என்று"] }
+      readings: { "said_did": ["aḻutāṉṉu", "aḻutāṉ eṉṟu"], "said_does": ["aḻukiṟāṉṉu", "aḻukiṟāṉ eṉṟu"], "said_will": ["aḻuvāṉṉu", "aḻuvāṉ eṉṟu"] }
+    - word: "ta-2050"
+      forms: { "said_did": ["எண்ணினான்னு", "எண்ணினான் என்று"], "said_does": ["எண்ணுகிறான்னு", "எண்ணுகிறான் என்று"], "said_will": ["எண்ணுவான்னு", "எண்ணுவான் என்று"] }
+      readings: { "said_did": ["eṇṇiṉāṉṉu", "eṇṇiṉāṉ eṉṟu"], "said_does": ["eṇṇukiṟāṉṉu", "eṇṇukiṟāṉ eṉṟu"], "said_will": ["eṇṇuvāṉṉu", "eṇṇuvāṉ eṉṟu"] }
+    - word: "ta-2051"
+      forms: { "said_did": ["நுழைந்தான்னு", "நுழைந்தான் என்று"], "said_does": ["நுழைகிறான்னு", "நுழைகிறான் என்று"], "said_will": ["நுழைவான்னு", "நுழைவான் என்று"] }
+      readings: { "said_did": ["nuḻaintāṉṉu", "nuḻaintāṉ eṉṟu"], "said_does": ["nuḻaikiṟāṉṉu", "nuḻaikiṟāṉ eṉṟu"], "said_will": ["nuḻaivāṉṉu", "nuḻaivāṉ eṉṟu"] }
+    - word: "ta-2052"
+      forms: { "said_did": ["வெளியேறினான்னு", "வெளியேறினான் என்று"], "said_does": ["வெளியேறுகிறான்னு", "வெளியேறுகிறான் என்று"], "said_will": ["வெளியேறுவான்னு", "வெளியேறுவான் என்று"] }
+      readings: { "said_did": ["veḷiyēṟiṉāṉṉu", "veḷiyēṟiṉāṉ eṉṟu"], "said_does": ["veḷiyēṟukiṟāṉṉu", "veḷiyēṟukiṟāṉ eṉṟu"], "said_will": ["veḷiyēṟuvāṉṉu", "veḷiyēṟuvāṉ eṉṟu"] }
+    - word: "ta-2053"
+      forms: { "said_did": ["கடந்தான்னு", "கடந்தான் என்று"], "said_does": ["கடக்கிறான்னு", "கடக்கிறான் என்று"], "said_will": ["கடப்பான்னு", "கடப்பான் என்று"] }
+      readings: { "said_did": ["kaṭantāṉṉu", "kaṭantāṉ eṉṟu"], "said_does": ["kaṭakkiṟāṉṉu", "kaṭakkiṟāṉ eṉṟu"], "said_will": ["kaṭappāṉṉu", "kaṭappāṉ eṉṟu"] }
+    - word: "ta-2054"
+      forms: { "said_did": ["சுற்றினான்னு", "சுற்றினான் என்று"], "said_does": ["சுற்றுகிறான்னு", "சுற்றுகிறான் என்று"], "said_will": ["சுற்றுவான்னு", "சுற்றுவான் என்று"] }
+      readings: { "said_did": ["cuṟṟiṉāṉṉu", "cuṟṟiṉāṉ eṉṟu"], "said_does": ["cuṟṟukiṟāṉṉu", "cuṟṟukiṟāṉ eṉṟu"], "said_will": ["cuṟṟuvāṉṉu", "cuṟṟuvāṉ eṉṟu"] }
+    - word: "ta-2055"
+      forms: { "said_did": ["அமர்ந்தான்னு", "அமர்ந்தான் என்று"], "said_does": ["அமர்கிறான்னு", "அமர்கிறான் என்று"], "said_will": ["அமர்வான்னு", "அமர்வான் என்று"] }
+      readings: { "said_did": ["amarntāṉṉu", "amarntāṉ eṉṟu"], "said_does": ["amarkiṟāṉṉu", "amarkiṟāṉ eṉṟu"], "said_will": ["amarvāṉṉu", "amarvāṉ eṉṟu"] }
+    - word: "ta-2056"
+      forms: { "said_did": ["நகர்ந்தான்னு", "நகர்ந்தான் என்று"], "said_does": ["நகர்கிறான்னு", "நகர்கிறான் என்று"], "said_will": ["நகர்வான்னு", "நகர்வான் என்று"] }
+      readings: { "said_did": ["nakarntāṉṉu", "nakarntāṉ eṉṟu"], "said_does": ["nakarkiṟāṉṉu", "nakarkiṟāṉ eṉṟu"], "said_will": ["nakarvāṉṉu", "nakarvāṉ eṉṟu"] }
+    - word: "ta-2057"
+      forms: { "said_did": ["தொட்டான்னு", "தொட்டான் என்று"], "said_does": ["தொடுகிறான்னு", "தொடுகிறான் என்று"], "said_will": ["தொடுவான்னு", "தொடுவான் என்று"] }
+      readings: { "said_did": ["toṭṭāṉṉu", "toṭṭāṉ eṉṟu"], "said_does": ["toṭukiṟāṉṉu", "toṭukiṟāṉ eṉṟu"], "said_will": ["toṭuvāṉṉu", "toṭuvāṉ eṉṟu"] }
+    - word: "ta-2058"
+      forms: { "said_did": ["எறிந்தான்னு", "எறிந்தான் என்று"], "said_does": ["எறிகிறான்னு", "எறிகிறான் என்று"], "said_will": ["எறிவான்னு", "எறிவான் என்று"] }
+      readings: { "said_did": ["eṟintāṉṉu", "eṟintāṉ eṉṟu"], "said_does": ["eṟikiṟāṉṉu", "eṟikiṟāṉ eṉṟu"], "said_will": ["eṟivāṉṉu", "eṟivāṉ eṉṟu"] }
+    - word: "ta-2059"
+      forms: { "said_did": ["மாறினான்னு", "மாறினான் என்று"], "said_does": ["மாறுகிறான்னு", "மாறுகிறான் என்று"], "said_will": ["மாறுவான்னு", "மாறுவான் என்று"] }
+      readings: { "said_did": ["māṟiṉāṉṉu", "māṟiṉāṉ eṉṟu"], "said_does": ["māṟukiṟāṉṉu", "māṟukiṟāṉ eṉṟu"], "said_will": ["māṟuvāṉṉu", "māṟuvāṉ eṉṟu"] }
+    - word: "ta-2062"
+      forms: { "said_did": ["தொடர்ந்தான்னு", "தொடர்ந்தான் என்று"], "said_does": ["தொடர்கிறான்னு", "தொடர்கிறான் என்று"], "said_will": ["தொடர்வான்னு", "தொடர்வான் என்று"] }
+      readings: { "said_did": ["toṭarntāṉṉu", "toṭarntāṉ eṉṟu"], "said_does": ["toṭarkiṟāṉṉu", "toṭarkiṟāṉ eṉṟu"], "said_will": ["toṭarvāṉṉu", "toṭarvāṉ eṉṟu"] }
+    - word: "ta-2063"
+      forms: { "said_did": ["முயன்றான்னு", "முயன்றான் என்று"], "said_does": ["முயல்கிறான்னு", "முயல்கிறான் என்று"], "said_will": ["முயல்வான்னு", "முயல்வான் என்று"] }
+      readings: { "said_did": ["muyaṉṟāṉṉu", "muyaṉṟāṉ eṉṟu"], "said_does": ["muyalkiṟāṉṉu", "muyalkiṟāṉ eṉṟu"], "said_will": ["muyalvāṉṉu", "muyalvāṉ eṉṟu"] }
+    - word: "ta-2064"
+      forms: { "said_did": ["சேமித்தான்னு", "சேமித்தான் என்று"], "said_does": ["சேமிக்கிறான்னு", "சேமிக்கிறான் என்று"], "said_will": ["சேமிப்பான்னு", "சேமிப்பான் என்று"] }
+      readings: { "said_did": ["cēmittāṉṉu", "cēmittāṉ eṉṟu"], "said_does": ["cēmikkiṟāṉṉu", "cēmikkiṟāṉ eṉṟu"], "said_will": ["cēmippāṉṉu", "cēmippāṉ eṉṟu"] }
+    - word: "ta-2065"
+      forms: { "said_did": ["செலவழித்தான்னு", "செலவழித்தான் என்று"], "said_does": ["செலவழிக்கிறான்னு", "செலவழிக்கிறான் என்று"], "said_will": ["செலவழிப்பான்னு", "செலவழிப்பான் என்று"] }
+      readings: { "said_did": ["celavaḻittāṉṉu", "celavaḻittāṉ eṉṟu"], "said_does": ["celavaḻikkiṟāṉṉu", "celavaḻikkiṟāṉ eṉṟu"], "said_will": ["celavaḻippāṉṉu", "celavaḻippāṉ eṉṟu"] }
+    - word: "ta-2066"
+      forms: { "said_did": ["எழுப்பினான்னு", "எழுப்பினான் என்று"], "said_does": ["எழுப்புகிறான்னு", "எழுப்புகிறான் என்று"], "said_will": ["எழுப்புவான்னு", "எழுப்புவான் என்று"] }
+      readings: { "said_did": ["eḻuppiṉāṉṉu", "eḻuppiṉāṉ eṉṟu"], "said_does": ["eḻuppukiṟāṉṉu", "eḻuppukiṟāṉ eṉṟu"], "said_will": ["eḻuppuvāṉṉu", "eḻuppuvāṉ eṉṟu"] }
+    - word: "ta-2067"
+      forms: { "said_did": ["விழித்தான்னு", "விழித்தான் என்று"], "said_does": ["விழிக்கிறான்னு", "விழிக்கிறான் என்று"], "said_will": ["விழிப்பான்னு", "விழிப்பான் என்று"] }
+      readings: { "said_did": ["viḻittāṉṉu", "viḻittāṉ eṉṟu"], "said_does": ["viḻikkiṟāṉṉu", "viḻikkiṟāṉ eṉṟu"], "said_will": ["viḻippāṉṉu", "viḻippāṉ eṉṟu"] }
+    - word: "ta-2068"
+      forms: { "said_did": ["விழுந்தான்னு", "விழுந்தான் என்று"], "said_does": ["விழுகிறான்னு", "விழுகிறான் என்று"], "said_will": ["விழுவான்னு", "விழுவான் என்று"] }
+      readings: { "said_did": ["viḻuntāṉṉu", "viḻuntāṉ eṉṟu"], "said_does": ["viḻukiṟāṉṉu", "viḻukiṟāṉ eṉṟu"], "said_will": ["viḻuvāṉṉu", "viḻuvāṉ eṉṟu"] }
+    - word: "ta-2070"
+      forms: { "said_did": ["காட்டினான்னு", "காட்டினான் என்று"], "said_does": ["காட்டுகிறான்னு", "காட்டுகிறான் என்று"], "said_will": ["காட்டுவான்னு", "காட்டுவான் என்று"] }
+      readings: { "said_did": ["kāṭṭiṉāṉṉu", "kāṭṭiṉāṉ eṉṟu"], "said_does": ["kāṭṭukiṟāṉṉu", "kāṭṭukiṟāṉ eṉṟu"], "said_will": ["kāṭṭuvāṉṉu", "kāṭṭuvāṉ eṉṟu"] }
+    - word: "ta-2071"
+      forms: { "said_did": ["குனிந்தான்னு", "குனிந்தான் என்று"], "said_does": ["குனிகிறான்னு", "குனிகிறான் என்று"], "said_will": ["குனிவான்னு", "குனிவான் என்று"] }
+      readings: { "said_did": ["kuṉintāṉṉu", "kuṉintāṉ eṉṟu"], "said_does": ["kuṉikiṟāṉṉu", "kuṉikiṟāṉ eṉṟu"], "said_will": ["kuṉivāṉṉu", "kuṉivāṉ eṉṟu"] }
+    - word: "ta-2072"
+      forms: { "said_did": ["சாய்ந்தான்னு", "சாய்ந்தான் என்று"], "said_does": ["சாய்கிறான்னு", "சாய்கிறான் என்று"], "said_will": ["சாய்வான்னு", "சாய்வான் என்று"] }
+      readings: { "said_did": ["cāyntāṉṉu", "cāyntāṉ eṉṟu"], "said_does": ["cāykiṟāṉṉu", "cāykiṟāṉ eṉṟu"], "said_will": ["cāyvāṉṉu", "cāyvāṉ eṉṟu"] }
+    - word: "ta-2074"
+      forms: { "said_did": ["சம்பாதித்தான்னு", "சம்பாதித்தான் என்று"], "said_does": ["சம்பாதிக்கிறான்னு", "சம்பாதிக்கிறான் என்று"], "said_will": ["சம்பாதிப்பான்னு", "சம்பாதிப்பான் என்று"] }
+      readings: { "said_did": ["campātittāṉṉu", "campātittāṉ eṉṟu"], "said_does": ["campātikkiṟāṉṉu", "campātikkiṟāṉ eṉṟu"], "said_will": ["campātippāṉṉu", "campātippāṉ eṉṟu"] }
+    - word: "ta-2075"
+      forms: { "said_did": ["பழகினான்னு", "பழகினான் என்று"], "said_does": ["பழகுகிறான்னு", "பழகுகிறான் என்று"], "said_will": ["பழகுவான்னு", "பழகுவான் என்று"] }
+      readings: { "said_did": ["paḻakiṉāṉṉu", "paḻakiṉāṉ eṉṟu"], "said_does": ["paḻakukiṟāṉṉu", "paḻakukiṟāṉ eṉṟu"], "said_will": ["paḻakuvāṉṉu", "paḻakuvāṉ eṉṟu"] }
+    - word: "ta-2076"
+      forms: { "said_did": ["திட்டினான்னு", "திட்டினான் என்று"], "said_does": ["திட்டுகிறான்னு", "திட்டுகிறான் என்று"], "said_will": ["திட்டுவான்னு", "திட்டுவான் என்று"] }
+      readings: { "said_did": ["tiṭṭiṉāṉṉu", "tiṭṭiṉāṉ eṉṟu"], "said_does": ["tiṭṭukiṟāṉṉu", "tiṭṭukiṟāṉ eṉṟu"], "said_will": ["tiṭṭuvāṉṉu", "tiṭṭuvāṉ eṉṟu"] }
+    - word: "ta-2077"
+      forms: { "said_did": ["பாராட்டினான்னு", "பாராட்டினான் என்று"], "said_does": ["பாராட்டுகிறான்னு", "பாராட்டுகிறான் என்று"], "said_will": ["பாராட்டுவான்னு", "பாராட்டுவான் என்று"] }
+      readings: { "said_did": ["pārāṭṭiṉāṉṉu", "pārāṭṭiṉāṉ eṉṟu"], "said_does": ["pārāṭṭukiṟāṉṉu", "pārāṭṭukiṟāṉ eṉṟu"], "said_will": ["pārāṭṭuvāṉṉu", "pārāṭṭuvāṉ eṉṟu"] }
+    - word: "ta-2078"
+      forms: { "said_did": ["நடித்தான்னு", "நடித்தான் என்று"], "said_does": ["நடிக்கிறான்னு", "நடிக்கிறான் என்று"], "said_will": ["நடிப்பான்னு", "நடிப்பான் என்று"] }
+      readings: { "said_did": ["naṭittāṉṉu", "naṭittāṉ eṉṟu"], "said_does": ["naṭikkiṟāṉṉu", "naṭikkiṟāṉ eṉṟu"], "said_will": ["naṭippāṉṉu", "naṭippāṉ eṉṟu"] }
+    - word: "ta-2079"
+      forms: { "said_did": ["ஆடினான்னு", "ஆடினான் என்று"], "said_does": ["ஆடுகிறான்னு", "ஆடுகிறான் என்று"], "said_will": ["ஆடுவான்னு", "ஆடுவான் என்று"] }
+      readings: { "said_did": ["āṭiṉāṉṉu", "āṭiṉāṉ eṉṟu"], "said_does": ["āṭukiṟāṉṉu", "āṭukiṟāṉ eṉṟu"], "said_will": ["āṭuvāṉṉu", "āṭuvāṉ eṉṟu"] }
+    - word: "ta-2080"
+      forms: { "said_did": ["குறைந்தான்னு", "குறைந்தான் என்று"], "said_does": ["குறைகிறான்னு", "குறைகிறான் என்று"], "said_will": ["குறைவான்னு", "குறைவான் என்று"] }
+      readings: { "said_did": ["kuṟaintāṉṉu", "kuṟaintāṉ eṉṟu"], "said_does": ["kuṟaikiṟāṉṉu", "kuṟaikiṟāṉ eṉṟu"], "said_will": ["kuṟaivāṉṉu", "kuṟaivāṉ eṉṟu"] }
+    - word: "ta-2081"
+      forms: { "said_did": ["அதிகரித்தான்னு", "அதிகரித்தான் என்று"], "said_does": ["அதிகரிக்கிறான்னு", "அதிகரிக்கிறான் என்று"], "said_will": ["அதிகரிப்பான்னு", "அதிகரிப்பான் என்று"] }
+      readings: { "said_did": ["atikarittāṉṉu", "atikarittāṉ eṉṟu"], "said_does": ["atikarikkiṟāṉṉu", "atikarikkiṟāṉ eṉṟu"], "said_will": ["atikarippāṉṉu", "atikarippāṉ eṉṟu"] }
+    - word: "ta-2083"
+      forms: { "said_did": ["மன்னித்தான்னு", "மன்னித்தான் என்று"], "said_does": ["மன்னிக்கிறான்னு", "மன்னிக்கிறான் என்று"], "said_will": ["மன்னிப்பான்னு", "மன்னிப்பான் என்று"] }
+      readings: { "said_did": ["maṉṉittāṉṉu", "maṉṉittāṉ eṉṟu"], "said_does": ["maṉṉikkiṟāṉṉu", "maṉṉikkiṟāṉ eṉṟu"], "said_will": ["maṉṉippāṉṉu", "maṉṉippāṉ eṉṟu"] }
+    - word: "ta-2084"
+      forms: { "said_did": ["ஏமாற்றினான்னு", "ஏமாற்றினான் என்று"], "said_does": ["ஏமாற்றுகிறான்னு", "ஏமாற்றுகிறான் என்று"], "said_will": ["ஏமாற்றுவான்னு", "ஏமாற்றுவான் என்று"] }
+      readings: { "said_did": ["ēmāṟṟiṉāṉṉu", "ēmāṟṟiṉāṉ eṉṟu"], "said_does": ["ēmāṟṟukiṟāṉṉu", "ēmāṟṟukiṟāṉ eṉṟu"], "said_will": ["ēmāṟṟuvāṉṉu", "ēmāṟṟuvāṉ eṉṟu"] }
+    - word: "ta-2085"
+      forms: { "said_did": ["பயன்படுத்தினான்னு", "பயன்படுத்தினான் என்று"], "said_does": ["பயன்படுத்துகிறான்னு", "பயன்படுத்துகிறான் என்று"], "said_will": ["பயன்படுத்துவான்னு", "பயன்படுத்துவான் என்று"] }
+      readings: { "said_did": ["payaṉpaṭuttiṉāṉṉu", "payaṉpaṭuttiṉāṉ eṉṟu"], "said_does": ["payaṉpaṭuttukiṟāṉṉu", "payaṉpaṭuttukiṟāṉ eṉṟu"], "said_will": ["payaṉpaṭuttuvāṉṉu", "payaṉpaṭuttuvāṉ eṉṟu"] }
+    - word: "ta-1141"
+      forms: { "said_did": ["பெய்தான்னு", "பெய்தான் என்று"], "said_does": ["பெய்கிறான்னு", "பெய்கிறான் என்று"], "said_will": ["பெய்வான்னு", "பெய்வான் என்று"] }
+      readings: { "said_did": ["peytāṉṉu", "peytāṉ eṉṟu"], "said_does": ["peykiṟāṉṉu", "peykiṟāṉ eṉṟu"], "said_will": ["peyvāṉṉu", "peyvāṉ eṉṟu"] }
+    - word: "ta-1143"
+      forms: { "said_did": ["அடித்தான்னு", "அடித்தான் என்று"], "said_does": ["அடிக்கிறான்னு", "அடிக்கிறான் என்று"], "said_will": ["அடிப்பான்னு", "அடிப்பான் என்று"] }
+      readings: { "said_did": ["aṭittāṉṉu", "aṭittāṉ eṉṟu"], "said_does": ["aṭikkiṟāṉṉu", "aṭikkiṟāṉ eṉṟu"], "said_will": ["aṭippāṉṉu", "aṭippāṉ eṉṟu"] }
+    - word: "ta-1144"
+      forms: { "said_did": ["நனைந்தான்னு", "நனைந்தான் என்று"], "said_does": ["நனைகிறான்னு", "நனைகிறான் என்று"], "said_will": ["நனைவான்னு", "நனைவான் என்று"] }
+      readings: { "said_did": ["naṉaintāṉṉu", "naṉaintāṉ eṉṟu"], "said_does": ["naṉaikiṟāṉṉu", "naṉaikiṟāṉ eṉṟu"], "said_will": ["naṉaivāṉṉu", "naṉaivāṉ eṉṟu"] }
+    - word: "ta-1145"
+      forms: { "said_did": ["காய்ந்தான்னு", "காய்ந்தான் என்று"], "said_does": ["காய்கிறான்னு", "காய்கிறான் என்று"], "said_will": ["காய்வான்னு", "காய்வான் என்று"] }
+      readings: { "said_did": ["kāyntāṉṉu", "kāyntāṉ eṉṟu"], "said_does": ["kāykiṟāṉṉu", "kāykiṟāṉ eṉṟu"], "said_will": ["kāyvāṉṉu", "kāyvāṉ eṉṟu"] }
+    - word: "ta-2023"
+      forms: { "said_did": ["தோன்றினான்னு", "தோன்றினான் என்று"], "said_does": ["தோன்றுகிறான்னு", "தோன்றுகிறான் என்று"], "said_will": ["தோன்றுவான்னு", "தோன்றுவான் என்று"] }
+      readings: { "said_did": ["tōṉṟiṉāṉṉu", "tōṉṟiṉāṉ eṉṟu"], "said_does": ["tōṉṟukiṟāṉṉu", "tōṉṟukiṟāṉ eṉṟu"], "said_will": ["tōṉṟuvāṉṉu", "tōṉṟuvāṉ eṉṟu"] }
+    - word: "ta-2027"
+      forms: { "said_did": ["கவனித்தான்னு", "கவனித்தான் என்று"], "said_does": ["கவனிக்கிறான்னு", "கவனிக்கிறான் என்று"], "said_will": ["கவனிப்பான்னு", "கவனிப்பான் என்று"] }
+      readings: { "said_did": ["kavaṉittāṉṉu", "kavaṉittāṉ eṉṟu"], "said_does": ["kavaṉikkiṟāṉṉu", "kavaṉikkiṟāṉ eṉṟu"], "said_will": ["kavaṉippāṉṉu", "kavaṉippāṉ eṉṟu"] }
+    - word: "ta-2028"
+      forms: { "said_did": ["வருந்தினான்னு", "வருந்தினான் என்று"], "said_does": ["வருந்துகிறான்னு", "வருந்துகிறான் என்று"], "said_will": ["வருந்துவான்னு", "வருந்துவான் என்று"] }
+      readings: { "said_did": ["varuntiṉāṉṉu", "varuntiṉāṉ eṉṟu"], "said_does": ["varuntukiṟāṉṉu", "varuntukiṟāṉ eṉṟu"], "said_will": ["varuntuvāṉṉu", "varuntuvāṉ eṉṟu"] }
+    - word: "ta-2061"
+      forms: { "said_did": ["ஊக்குவித்தான்னு", "ஊக்குவித்தான் என்று"], "said_does": ["ஊக்குவிக்கிறான்னு", "ஊக்குவிக்கிறான் என்று"], "said_will": ["ஊக்குவிப்பான்னு", "ஊக்குவிப்பான் என்று"] }
+      readings: { "said_did": ["ūkkuvittāṉṉu", "ūkkuvittāṉ eṉṟu"], "said_does": ["ūkkuvikkiṟāṉṉu", "ūkkuvikkiṟāṉ eṉṟu"], "said_will": ["ūkkuvippāṉṉu", "ūkkuvippāṉ eṉṟu"] }
+    - word: "ta-2082"
+      forms: { "said_did": ["நிரூபித்தான்னு", "நிரூபித்தான் என்று"], "said_does": ["நிரூபிக்கிறான்னு", "நிரூபிக்கிறான் என்று"], "said_will": ["நிரூபிப்பான்னு", "நிரூபிப்பான் என்று"] }
+      readings: { "said_did": ["nirūpittāṉṉu", "nirūpittāṉ eṉṟu"], "said_does": ["nirūpikkiṟāṉṉu", "nirūpikkiṟāṉ eṉṟu"], "said_will": ["nirūpippāṉṉu", "nirūpippāṉ eṉṟu"] }
+    - word: "ta-1142"
+      forms: { "said_did": ["மறைந்தான்னு", "மறைந்தான் என்று"], "said_does": ["மறைகிறான்னு", "மறைகிறான் என்று"], "said_will": ["மறைவான்னு", "மறைவான் என்று"] }
+      readings: { "said_did": ["maṟaintāṉṉu", "maṟaintāṉ eṉṟu"], "said_does": ["maṟaikiṟāṉṉu", "maṟaikiṟāṉ eṉṟu"], "said_will": ["maṟaivāṉṉu", "maṟaivāṉ eṉṟu"] }
+    - word: "ta-1950"
+      forms: { "said_did": ["அலசினான்னு", "அலசினான் என்று"], "said_does": ["அலசுகிறான்னு", "அலசுகிறான் என்று"], "said_will": ["அலசுவான்னு", "அலசுவான் என்று"] }
+      readings: { "said_did": ["alaciṉāṉṉu", "alaciṉāṉ eṉṟu"], "said_does": ["alacukiṟāṉṉu", "alacukiṟāṉ eṉṟu"], "said_will": ["alacuvāṉṉu", "alacuvāṉ eṉṟu"] }
+    - word: "ta-1960"
+      forms: { "said_did": ["பரப்பினான்னு", "பரப்பினான் என்று"], "said_does": ["பரப்புகிறான்னு", "பரப்புகிறான் என்று"], "said_will": ["பரப்புவான்னு", "பரப்புவான் என்று"] }
+      readings: { "said_did": ["parappiṉāṉṉu", "parappiṉāṉ eṉṟu"], "said_does": ["parappukiṟāṉṉu", "parappukiṟāṉ eṉṟu"], "said_will": ["parappuvāṉṉu", "parappuvāṉ eṉṟu"] }
+    - word: "ta-1146"
+      forms: { "said_did": ["மின்னினான்னு", "மின்னினான் என்று"], "said_does": ["மின்னுகிறான்னு", "மின்னுகிறான் என்று"], "said_will": ["மின்னுவான்னு", "மின்னுவான் என்று"] }
+      readings: { "said_did": ["miṉṉiṉāṉṉu", "miṉṉiṉāṉ eṉṟu"], "said_does": ["miṉṉukiṟāṉṉu", "miṉṉukiṟāṉ eṉṟu"], "said_will": ["miṉṉuvāṉṉu", "miṉṉuvāṉ eṉṟu"] }
+    - word: "ta-1297"
+      forms: { "said_did": ["இருமினான்னு", "இருமினான் என்று"], "said_does": ["இருமுகிறான்னு", "இருமுகிறான் என்று"], "said_will": ["இருமுவான்னு", "இருமுவான் என்று"] }
+      readings: { "said_did": ["irumiṉāṉṉu", "irumiṉāṉ eṉṟu"], "said_does": ["irumukiṟāṉṉu", "irumukiṟāṉ eṉṟu"], "said_will": ["irumuvāṉṉu", "irumuvāṉ eṉṟu"] }
+    - word: "ta-1298"
+      forms: { "said_did": ["தும்மினான்னு", "தும்மினான் என்று"], "said_does": ["தும்முகிறான்னு", "தும்முகிறான் என்று"], "said_will": ["தும்முவான்னு", "தும்முவான் என்று"] }
+      readings: { "said_did": ["tummiṉāṉṉu", "tummiṉāṉ eṉṟu"], "said_does": ["tummukiṟāṉṉu", "tummukiṟāṉ eṉṟu"], "said_will": ["tummuvāṉṉu", "tummuvāṉ eṉṟu"] }
+    - word: "ta-1300"
+      forms: { "said_did": ["மயங்கினான்னு", "மயங்கினான் என்று"], "said_does": ["மயங்குகிறான்னு", "மயங்குகிறான் என்று"], "said_will": ["மயங்குவான்னு", "மயங்குவான் என்று"] }
+      readings: { "said_did": ["mayaṅkiṉāṉṉu", "mayaṅkiṉāṉ eṉṟu"], "said_does": ["mayaṅkukiṟāṉṉu", "mayaṅkukiṟāṉ eṉṟu"], "said_will": ["mayaṅkuvāṉṉu", "mayaṅkuvāṉ eṉṟu"] }
+    - word: "ta-1303"
+      forms: { "said_did": ["வீங்கினான்னு", "வீங்கினான் என்று"], "said_does": ["வீங்குகிறான்னு", "வீங்குகிறான் என்று"], "said_will": ["வீங்குவான்னு", "வீங்குவான் என்று"] }
+      readings: { "said_did": ["vīṅkiṉāṉṉu", "vīṅkiṉāṉ eṉṟu"], "said_does": ["vīṅkukiṟāṉṉu", "vīṅkukiṟāṉ eṉṟu"], "said_will": ["vīṅkuvāṉṉu", "vīṅkuvāṉ eṉṟu"] }
+    - word: "ta-1304"
+      forms: { "said_did": ["நடுங்கினான்னு", "நடுங்கினான் என்று"], "said_does": ["நடுங்குகிறான்னு", "நடுங்குகிறான் என்று"], "said_will": ["நடுங்குவான்னு", "நடுங்குவான் என்று"] }
+      readings: { "said_did": ["naṭuṅkiṉāṉṉu", "naṭuṅkiṉāṉ eṉṟu"], "said_does": ["naṭuṅkukiṟāṉṉu", "naṭuṅkukiṟāṉ eṉṟu"], "said_will": ["naṭuṅkuvāṉṉu", "naṭuṅkuvāṉ eṉṟu"] }
+    - word: "ta-1305"
+      forms: { "said_did": ["வியர்த்தான்னு", "வியர்த்தான் என்று"], "said_does": ["வியர்க்கிறான்னு", "வியர்க்கிறான் என்று"], "said_will": ["வியர்ப்பான்னு", "வியர்ப்பான் என்று"] }
+      readings: { "said_did": ["viyarttāṉṉu", "viyarttāṉ eṉṟu"], "said_does": ["viyarkkiṟāṉṉu", "viyarkkiṟāṉ eṉṟu"], "said_will": ["viyarppāṉṉu", "viyarppāṉ eṉṟu"] }
+    - word: "ta-1317"
+      forms: { "said_did": ["பரிமாறினான்னு", "பரிமாறினான் என்று"], "said_does": ["பரிமாறுகிறான்னு", "பரிமாறுகிறான் என்று"], "said_will": ["பரிமாறுவான்னு", "பரிமாறுவான் என்று"] }
+      readings: { "said_did": ["parimāṟiṉāṉṉu", "parimāṟiṉāṉ eṉṟu"], "said_does": ["parimāṟukiṟāṉṉu", "parimāṟukiṟāṉ eṉṟu"], "said_will": ["parimāṟuvāṉṉu", "parimāṟuvāṉ eṉṟu"] }
+    - word: "ta-1346"
+      forms: { "said_did": ["வறுத்தான்னு", "வறுத்தான் என்று"], "said_does": ["வறுகிறான்னு", "வறுகிறான் என்று"], "said_will": ["வறுப்பான்னு", "வறுப்பான் என்று"] }
+      readings: { "said_did": ["vaṟuttāṉṉu", "vaṟuttāṉ eṉṟu"], "said_does": ["vaṟukiṟāṉṉu", "vaṟukiṟāṉ eṉṟu"], "said_will": ["vaṟuppāṉṉu", "vaṟuppāṉ eṉṟu"] }
+    - word: "ta-1347"
+      forms: { "said_did": ["வதக்கினான்னு", "வதக்கினான் என்று"], "said_does": ["வதக்குகிறான்னு", "வதக்குகிறான் என்று"], "said_will": ["வதக்குவான்னு", "வதக்குவான் என்று"] }
+      readings: { "said_did": ["vatakkiṉāṉṉu", "vatakkiṉāṉ eṉṟu"], "said_does": ["vatakkukiṟāṉṉu", "vatakkukiṟāṉ eṉṟu"], "said_will": ["vatakkuvāṉṉu", "vatakkuvāṉ eṉṟu"] }
+    - word: "ta-1348"
+      forms: { "said_did": ["கொதித்தான்னு", "கொதித்தான் என்று"], "said_does": ["கொதிக்கிறான்னு", "கொதிக்கிறான் என்று"], "said_will": ["கொதிப்பான்னு", "கொதிப்பான் என்று"] }
+      readings: { "said_did": ["kotittāṉṉu", "kotittāṉ eṉṟu"], "said_does": ["kotikkiṟāṉṉu", "kotikkiṟāṉ eṉṟu"], "said_will": ["kotippāṉṉu", "kotippāṉ eṉṟu"] }
+    - word: "ta-1349"
+      forms: { "said_did": ["நறுக்கினான்னு", "நறுக்கினான் என்று"], "said_does": ["நறுக்குகிறான்னு", "நறுக்குகிறான் என்று"], "said_will": ["நறுக்குவான்னு", "நறுக்குவான் என்று"] }
+      readings: { "said_did": ["naṟukkiṉāṉṉu", "naṟukkiṉāṉ eṉṟu"], "said_does": ["naṟukkukiṟāṉṉu", "naṟukkukiṟāṉ eṉṟu"], "said_will": ["naṟukkuvāṉṉu", "naṟukkuvāṉ eṉṟu"] }
+    - word: "ta-1350"
+      forms: { "said_did": ["கிளறினான்னு", "கிளறினான் என்று"], "said_does": ["கிளறுகிறான்னு", "கிளறுகிறான் என்று"], "said_will": ["கிளறுவான்னு", "கிளறுவான் என்று"] }
+      readings: { "said_did": ["kiḷaṟiṉāṉṉu", "kiḷaṟiṉāṉ eṉṟu"], "said_does": ["kiḷaṟukiṟāṉṉu", "kiḷaṟukiṟāṉ eṉṟu"], "said_will": ["kiḷaṟuvāṉṉu", "kiḷaṟuvāṉ eṉṟu"] }
+    - word: "ta-1351"
+      forms: { "said_did": ["வெந்தான்னு", "வெந்தான் என்று"], "said_does": ["வேகுகிறான்னு", "வேகுகிறான் என்று"], "said_will": ["வேகுவான்னு", "வேகுவான் என்று"] }
+      readings: { "said_did": ["ventāṉṉu", "ventāṉ eṉṟu"], "said_does": ["vēkukiṟāṉṉu", "vēkukiṟāṉ eṉṟu"], "said_will": ["vēkuvāṉṉu", "vēkuvāṉ eṉṟu"] }
+    - word: "ta-1352"
+      forms: { "said_did": ["பொரித்தான்னு", "பொரித்தான் என்று"], "said_does": ["பொரிக்கிறான்னு", "பொரிக்கிறான் என்று"], "said_will": ["பொரிப்பான்னு", "பொரிப்பான் என்று"] }
+      readings: { "said_did": ["porittāṉṉu", "porittāṉ eṉṟu"], "said_does": ["porikkiṟāṉṉu", "porikkiṟāṉ eṉṟu"], "said_will": ["porippāṉṉu", "porippāṉ eṉṟu"] }
+    - word: "ta-1353"
+      forms: { "said_did": ["அவித்தான்னு", "அவித்தான் என்று"], "said_does": ["அவிக்கிறான்னு", "அவிக்கிறான் என்று"], "said_will": ["அவிப்பான்னு", "அவிப்பான் என்று"] }
+      readings: { "said_did": ["avittāṉṉu", "avittāṉ eṉṟu"], "said_does": ["avikkiṟāṉṉu", "avikkiṟāṉ eṉṟu"], "said_will": ["avippāṉṉu", "avippāṉ eṉṟu"] }
+    - word: "ta-1354"
+      forms: { "said_did": ["சுட்டான்னு", "சுட்டான் என்று"], "said_does": ["சுடுகிறான்னு", "சுடுகிறான் என்று"], "said_will": ["சுடுவான்னு", "சுடுவான் என்று"] }
+      readings: { "said_did": ["cuṭṭāṉṉu", "cuṭṭāṉ eṉṟu"], "said_does": ["cuṭukiṟāṉṉu", "cuṭukiṟāṉ eṉṟu"], "said_will": ["cuṭuvāṉṉu", "cuṭuvāṉ eṉṟu"] }
+    - word: "ta-1355"
+      forms: { "said_did": ["தாளித்தான்னு", "தாளித்தான் என்று"], "said_does": ["தாளிக்கிறான்னு", "தாளிக்கிறான் என்று"], "said_will": ["தாளிப்பான்னு", "தாளிப்பான் என்று"] }
+      readings: { "said_did": ["tāḷittāṉṉu", "tāḷittāṉ eṉṟu"], "said_does": ["tāḷikkiṟāṉṉu", "tāḷikkiṟāṉ eṉṟu"], "said_will": ["tāḷippāṉṉu", "tāḷippāṉ eṉṟu"] }
+    - word: "ta-1356"
+      forms: { "said_did": ["பிசைந்தான்னு", "பிசைந்தான் என்று"], "said_does": ["பிசைகிறான்னு", "பிசைகிறான் என்று"], "said_will": ["பிசைவான்னு", "பிசைவான் என்று"] }
+      readings: { "said_did": ["picaintāṉṉu", "picaintāṉ eṉṟu"], "said_does": ["picaikiṟāṉṉu", "picaikiṟāṉ eṉṟu"], "said_will": ["picaivāṉṉu", "picaivāṉ eṉṟu"] }
+    - word: "ta-1357"
+      forms: { "said_did": ["உரித்தான்னு", "உரித்தான் என்று"], "said_does": ["உரிக்கிறான்னு", "உரிக்கிறான் என்று"], "said_will": ["உரிப்பான்னு", "உரிப்பான் என்று"] }
+      readings: { "said_did": ["urittāṉṉu", "urittāṉ eṉṟu"], "said_does": ["urikkiṟāṉṉu", "urikkiṟāṉ eṉṟu"], "said_will": ["urippāṉṉu", "urippāṉ eṉṟu"] }
+    - word: "ta-1358"
+      forms: { "said_did": ["துருவினான்னு", "துருவினான் என்று"], "said_does": ["துருவுகிறான்னு", "துருவுகிறான் என்று"], "said_will": ["துருவுவான்னு", "துருவுவான் என்று"] }
+      readings: { "said_did": ["turuviṉāṉṉu", "turuviṉāṉ eṉṟu"], "said_does": ["turuvukiṟāṉṉu", "turuvukiṟāṉ eṉṟu"], "said_will": ["turuvuvāṉṉu", "turuvuvāṉ eṉṟu"] }
+    - word: "ta-2347"
+      forms: { "said_did": ["நடத்தினான்னு", "நடத்தினான் என்று"], "said_does": ["நடத்துகிறான்னு", "நடத்துகிறான் என்று"], "said_will": ["நடத்துவான்னு", "நடத்துவான் என்று"] }
+      readings: { "said_did": ["naṭattiṉāṉṉu", "naṭattiṉāṉ eṉṟu"], "said_does": ["naṭattukiṟāṉṉu", "naṭattukiṟāṉ eṉṟu"], "said_will": ["naṭattuvāṉṉu", "naṭattuvāṉ eṉṟu"] }
+    - word: "ta-2348"
+      forms: { "said_did": ["நிர்வகித்தான்னு", "நிர்வகித்தான் என்று"], "said_does": ["நிர்வகிக்கிறான்னு", "நிர்வகிக்கிறான் என்று"], "said_will": ["நிர்வகிப்பான்னு", "நிர்வகிப்பான் என்று"] }
+      readings: { "said_did": ["nirvakittāṉṉu", "nirvakittāṉ eṉṟu"], "said_does": ["nirvakikkiṟāṉṉu", "nirvakikkiṟāṉ eṉṟu"], "said_will": ["nirvakippāṉṉu", "nirvakippāṉ eṉṟu"] }
+    - word: "ta-2349"
+      forms: { "said_did": ["விண்ணப்பித்தான்னு", "விண்ணப்பித்தான் என்று"], "said_does": ["விண்ணப்பிக்கிறான்னு", "விண்ணப்பிக்கிறான் என்று"], "said_will": ["விண்ணப்பிப்பான்னு", "விண்ணப்பிப்பான் என்று"] }
+      readings: { "said_did": ["viṇṇappittāṉṉu", "viṇṇappittāṉ eṉṟu"], "said_does": ["viṇṇappikkiṟāṉṉu", "viṇṇappikkiṟāṉ eṉṟu"], "said_will": ["viṇṇappippāṉṉu", "viṇṇappippāṉ eṉṟu"] }
+    - word: "ta-2356"
+      forms: { "said_did": ["ஒத்துழைத்தான்னு", "ஒத்துழைத்தான் என்று"], "said_does": ["ஒத்துழைக்கிறான்னு", "ஒத்துழைக்கிறான் என்று"], "said_will": ["ஒத்துழைப்பான்னு", "ஒத்துழைப்பான் என்று"] }
+      readings: { "said_did": ["ottuḻaittāṉṉu", "ottuḻaittāṉ eṉṟu"], "said_does": ["ottuḻaikkiṟāṉṉu", "ottuḻaikkiṟāṉ eṉṟu"], "said_will": ["ottuḻaippāṉṉu", "ottuḻaippāṉ eṉṟu"] }
+    - word: "ta-2026"
+      forms: { "said_did": ["கலந்துகொண்டான்னு", "கலந்துகொண்டான் என்று"], "said_does": ["கலந்துகொள்கிறான்னு", "கலந்துகொள்கிறான் என்று"], "said_will": ["கலந்துகொள்வான்னு", "கலந்துகொள்வான் என்று"] }
+      readings: { "said_did": ["kalantukoṇṭāṉṉu", "kalantukoṇṭāṉ eṉṟu"], "said_does": ["kalantukoḷkiṟāṉṉu", "kalantukoḷkiṟāṉ eṉṟu"], "said_will": ["kalantukoḷvāṉṉu", "kalantukoḷvāṉ eṉṟu"] }
+    - word: "ta-2060"
+      forms: { "said_did": ["பெருமைப்பட்டான்னு", "பெருமைப்பட்டான் என்று"], "said_does": ["பெருமைப்படுகிறான்னு", "பெருமைப்படுகிறான் என்று"], "said_will": ["பெருமைப்படுவான்னு", "பெருமைப்படுவான் என்று"] }
+      readings: { "said_did": ["perumaippaṭṭāṉṉu", "perumaippaṭṭāṉ eṉṟu"], "said_does": ["perumaippaṭukiṟāṉṉu", "perumaippaṭukiṟāṉ eṉṟu"], "said_will": ["perumaippaṭuvāṉṉu", "perumaippaṭuvāṉ eṉṟu"] }
+    - word: "ta-2185"
+      forms: { "said_did": ["சுற்றித்திரிந்தான்னு", "சுற்றித்திரிந்தான் என்று"], "said_does": ["சுற்றித்திரிகிறான்னு", "சுற்றித்திரிகிறான் என்று"], "said_will": ["சுற்றித்திரிவான்னு", "சுற்றித்திரிவான் என்று"] }
+      readings: { "said_did": ["cuṟṟittirintāṉṉu", "cuṟṟittirintāṉ eṉṟu"], "said_does": ["cuṟṟittirikiṟāṉṉu", "cuṟṟittirikiṟāṉ eṉṟu"], "said_will": ["cuṟṟittirivāṉṉu", "cuṟṟittirivāṉ eṉṟu"] }
+    - word: "ta-1906"
+      forms: { "said_did": ["நடனமாடினான்னு", "நடனமாடினான் என்று"], "said_does": ["நடனமாடுகிறான்னு", "நடனமாடுகிறான் என்று"], "said_will": ["நடனமாடுவான்னு", "நடனமாடுவான் என்று"] }
+      readings: { "said_did": ["naṭaṉamāṭiṉāṉṉu", "naṭaṉamāṭiṉāṉ eṉṟu"], "said_does": ["naṭaṉamāṭukiṟāṉṉu", "naṭaṉamāṭukiṟāṉ eṉṟu"], "said_will": ["naṭaṉamāṭuvāṉṉu", "naṭaṉamāṭuvāṉ eṉṟu"] }
+    - word: "ta-2181"
+      forms: { "said_did": ["புறப்பட்டான்னு", "புறப்பட்டான் என்று"], "said_does": ["புறப்படுகிறான்னு", "புறப்படுகிறான் என்று"], "said_will": ["புறப்படுவான்னு", "புறப்படுவான் என்று"] }
+      readings: { "said_did": ["puṟappaṭṭāṉṉu", "puṟappaṭṭāṉ eṉṟu"], "said_does": ["puṟappaṭukiṟāṉṉu", "puṟappaṭukiṟāṉ eṉṟu"], "said_will": ["puṟappaṭuvāṉṉu", "puṟappaṭuvāṉ eṉṟu"] }
+    - word: "ta-2184"
+      forms: { "said_did": ["வழிதவறினான்னு", "வழிதவறினான் என்று"], "said_does": ["வழிதவறுகிறான்னு", "வழிதவறுகிறான் என்று"], "said_will": ["வழிதவறுவான்னு", "வழிதவறுவான் என்று"] }
+      readings: { "said_did": ["vaḻitavaṟiṉāṉṉu", "vaḻitavaṟiṉāṉ eṉṟu"], "said_does": ["vaḻitavaṟukiṟāṉṉu", "vaḻitavaṟukiṟāṉ eṉṟu"], "said_will": ["vaḻitavaṟuvāṉṉu", "vaḻitavaṟuvāṉ eṉṟu"] }
+    - word: "ta-2187"
+      forms: { "said_did": ["வழியனுப்பினான்னு", "வழியனுப்பினான் என்று"], "said_does": ["வழியனுப்புகிறான்னு", "வழியனுப்புகிறான் என்று"], "said_will": ["வழியனுப்புவான்னு", "வழியனுப்புவான் என்று"] }
+      readings: { "said_did": ["vaḻiyaṉuppiṉāṉṉu", "vaḻiyaṉuppiṉāṉ eṉṟu"], "said_does": ["vaḻiyaṉuppukiṟāṉṉu", "vaḻiyaṉuppukiṟāṉ eṉṟu"], "said_will": ["vaḻiyaṉuppuvāṉṉu", "vaḻiyaṉuppuvāṉ eṉṟu"] }
+    - word: "ta-2188"
+      forms: { "said_did": ["திட்டமிட்டான்னு", "திட்டமிட்டான் என்று"], "said_does": ["திட்டமிடுகிறான்னு", "திட்டமிடுகிறான் என்று"], "said_will": ["திட்டமிடுவான்னு", "திட்டமிடுவான் என்று"] }
+      readings: { "said_did": ["tiṭṭamiṭṭāṉṉu", "tiṭṭamiṭṭāṉ eṉṟu"], "said_does": ["tiṭṭamiṭukiṟāṉṉu", "tiṭṭamiṭukiṟāṉ eṉṟu"], "said_will": ["tiṭṭamiṭuvāṉṉu", "tiṭṭamiṭuvāṉ eṉṟu"] }
+    - word: "ta-2189"
+      forms: { "said_did": ["எடுத்துச்சென்றான்னு", "எடுத்துச்சென்றான் என்று"], "said_does": ["எடுத்துச்செல்கிறான்னு", "எடுத்துச்செல்கிறான் என்று"], "said_will": ["எடுத்துச்செல்வான்னு", "எடுத்துச்செல்வான் என்று"] }
+      readings: { "said_did": ["eṭuttucceṉṟāṉṉu", "eṭuttucceṉṟāṉ eṉṟu"], "said_does": ["eṭuttuccelkiṟāṉṉu", "eṭuttuccelkiṟāṉ eṉṟu"], "said_will": ["eṭuttuccelvāṉṉu", "eṭuttuccelvāṉ eṉṟu"] }
+    - word: "ta-2190"
+      forms: { "said_did": ["சுற்றிப்பாத்தான்னு", "சுற்றிப்பார்த்தான் என்று"], "said_does": ["சுற்றிப்பார்க்கிறான்னு", "சுற்றிப்பார்க்கிறான் என்று"], "said_will": ["சுற்றிப்பார்ப்பான்னு", "சுற்றிப்பார்ப்பான் என்று"] }
+      readings: { "said_did": ["cuṟṟippāttāṉṉu", "cuṟṟippārttāṉ eṉṟu"], "said_does": ["cuṟṟippārkkiṟāṉṉu", "cuṟṟippārkkiṟāṉ eṉṟu"], "said_will": ["cuṟṟippārppāṉṉu", "cuṟṟippārppāṉ eṉṟu"] }
+    - word: "ta-2121"
+      forms: { "said_did": ["பதிவிறக்கினான்னு", "பதிவிறக்கினான் என்று"], "said_does": ["பதிவிறக்குகிறான்னு", "பதிவிறக்குகிறான் என்று"], "said_will": ["பதிவிறக்குவான்னு", "பதிவிறக்குவான் என்று"] }
+      readings: { "said_did": ["pativiṟakkiṉāṉṉu", "pativiṟakkiṉāṉ eṉṟu"], "said_does": ["pativiṟakkukiṟāṉṉu", "pativiṟakkukiṟāṉ eṉṟu"], "said_will": ["pativiṟakkuvāṉṉu", "pativiṟakkuvāṉ eṉṟu"] }
+    - word: "ta-2127"
+      forms: { "said_did": ["தொடர்புகொண்டான்னு", "தொடர்புகொண்டான் என்று"], "said_does": ["தொடர்புகொள்கிறான்னு", "தொடர்புகொள்கிறான் என்று"], "said_will": ["தொடர்புகொள்வான்னு", "தொடர்புகொள்வான் என்று"] }
+      readings: { "said_did": ["toṭarpukoṇṭāṉṉu", "toṭarpukoṇṭāṉ eṉṟu"], "said_does": ["toṭarpukoḷkiṟāṉṉu", "toṭarpukoḷkiṟāṉ eṉṟu"], "said_will": ["toṭarpukoḷvāṉṉu", "toṭarpukoḷvāṉ eṉṟu"] }
+    - word: "ta-2129"
+      forms: { "said_did": ["தவறவிட்டான்னு", "தவறவிட்டான் என்று"], "said_does": ["தவறவிடுகிறான்னு", "தவறவிடுகிறான் என்று"], "said_will": ["தவறவிடுவான்னு", "தவறவிடுவான் என்று"] }
+      readings: { "said_did": ["tavaṟaviṭṭāṉṉu", "tavaṟaviṭṭāṉ eṉṟu"], "said_does": ["tavaṟaviṭukiṟāṉṉu", "tavaṟaviṭukiṟāṉ eṉṟu"], "said_will": ["tavaṟaviṭuvāṉṉu", "tavaṟaviṭuvāṉ eṉṟu"] }
+    - word: "ta-2130"
+      forms: { "said_did": ["பதிலளித்தான்னு", "பதிலளித்தான் என்று"], "said_does": ["பதிலளிக்கிறான்னு", "பதிலளிக்கிறான் என்று"], "said_will": ["பதிலளிப்பான்னு", "பதிலளிப்பான் என்று"] }
+      readings: { "said_did": ["patilaḷittāṉṉu", "patilaḷittāṉ eṉṟu"], "said_does": ["patilaḷikkiṟāṉṉu", "patilaḷikkiṟāṉ eṉṟu"], "said_will": ["patilaḷippāṉṉu", "patilaḷippāṉ eṉṟu"] }
+    - word: "ta-2131"
+      forms: { "said_did": ["பதிவேற்றினான்னு", "பதிவேற்றினான் என்று"], "said_does": ["பதிவேற்றுகிறான்னு", "பதிவேற்றுகிறான் என்று"], "said_will": ["பதிவேற்றுவான்னு", "பதிவேற்றுவான் என்று"] }
+      readings: { "said_did": ["pativēṟṟiṉāṉṉu", "pativēṟṟiṉāṉ eṉṟu"], "said_does": ["pativēṟṟukiṟāṉṉu", "pativēṟṟukiṟāṉ eṉṟu"], "said_will": ["pativēṟṟuvāṉṉu", "pativēṟṟuvāṉ eṉṟu"] }
+    - word: "ta-1860"
+      forms: { "said_did": ["கற்றுக்கொண்டான்னு", "கற்றுக்கொண்டான் என்று"], "said_does": ["கற்றுக்கொள்கிறான்னு", "கற்றுக்கொள்கிறான் என்று"], "said_will": ["கற்றுக்கொள்வான்னு", "கற்றுக்கொள்வான் என்று"] }
+      readings: { "said_did": ["kaṟṟukkoṇṭāṉṉu", "kaṟṟukkoṇṭāṉ eṉṟu"], "said_does": ["kaṟṟukkoḷkiṟāṉṉu", "kaṟṟukkoḷkiṟāṉ eṉṟu"], "said_will": ["kaṟṟukkoḷvāṉṉu", "kaṟṟukkoḷvāṉ eṉṟu"] }
+    - word: "ta-1861"
+      forms: { "said_did": ["சொல்லிக்கொடுத்தான்னு", "சொல்லிக்கொடுத்தான் என்று"], "said_does": ["சொல்லிக்கொடுக்கிறான்னு", "சொல்லிக்கொடுக்கிறான் என்று"], "said_will": ["சொல்லிக்கொடுப்பான்னு", "சொல்லிக்கொடுப்பான் என்று"] }
+      readings: { "said_did": ["collikkoṭuttāṉṉu", "collikkoṭuttāṉ eṉṟu"], "said_does": ["collikkoṭukkiṟāṉṉu", "collikkoṭukkiṟāṉ eṉṟu"], "said_will": ["collikkoṭuppāṉṉu", "collikkoṭuppāṉ eṉṟu"] }
+    - word: "ta-2032"
+      forms: { "said_did": ["காத்திருந்தான்னு", "காத்திருந்தான் என்று"], "said_does": ["காத்திருகிறான்னு", "காத்திருகிறான் என்று"], "said_will": ["காத்திருப்பான்னு", "காத்திருப்பான் என்று"] }
+      readings: { "said_did": ["kāttiruntāṉṉu", "kāttiruntāṉ eṉṟu"], "said_does": ["kāttirukiṟāṉṉu", "kāttirukiṟāṉ eṉṟu"], "said_will": ["kāttiruppāṉṉu", "kāttiruppāṉ eṉṟu"] }
+    - word: "ta-2037"
+      forms: { "said_did": ["ஒப்புக்கொண்டான்னு", "ஒப்புக்கொண்டான் என்று"], "said_does": ["ஒப்புக்கொள்கிறான்னு", "ஒப்புக்கொள்கிறான் என்று"], "said_will": ["ஒப்புக்கொள்வான்னு", "ஒப்புக்கொள்வான் என்று"] }
+      readings: { "said_did": ["oppukkoṇṭāṉṉu", "oppukkoṇṭāṉ eṉṟu"], "said_does": ["oppukkoḷkiṟāṉṉu", "oppukkoḷkiṟāṉ eṉṟu"], "said_will": ["oppukkoḷvāṉṉu", "oppukkoḷvāṉ eṉṟu"] }
+    - word: "ta-2046"
+      forms: { "said_did": ["பயப்பட்டான்னு", "பயப்பட்டான் என்று"], "said_does": ["பயப்படுகிறான்னு", "பயப்படுகிறான் என்று"], "said_will": ["பயப்படுவான்னு", "பயப்படுவான் என்று"] }
+      readings: { "said_did": ["payappaṭṭāṉṉu", "payappaṭṭāṉ eṉṟu"], "said_does": ["payappaṭukiṟāṉṉu", "payappaṭukiṟāṉ eṉṟu"], "said_will": ["payappaṭuvāṉṉu", "payappaṭuvāṉ eṉṟu"] }
+    - word: "ta-2047"
+      forms: { "said_did": ["கவலைப்பட்டான்னு", "கவலைப்பட்டான் என்று"], "said_does": ["கவலைப்படுகிறான்னு", "கவலைப்படுகிறான் என்று"], "said_will": ["கவலைப்படுவான்னு", "கவலைப்படுவான் என்று"] }
+      readings: { "said_did": ["kavalaippaṭṭāṉṉu", "kavalaippaṭṭāṉ eṉṟu"], "said_does": ["kavalaippaṭukiṟāṉṉu", "kavalaippaṭukiṟāṉ eṉṟu"], "said_will": ["kavalaippaṭuvāṉṉu", "kavalaippaṭuvāṉ eṉṟu"] }
+    - word: "ta-2048"
+      forms: { "said_did": ["கோபப்பட்டான்னு", "கோபப்பட்டான் என்று"], "said_does": ["கோபப்படுகிறான்னு", "கோபப்படுகிறான் என்று"], "said_will": ["கோபப்படுவான்னு", "கோபப்படுவான் என்று"] }
+      readings: { "said_did": ["kōpappaṭṭāṉṉu", "kōpappaṭṭāṉ eṉṟu"], "said_does": ["kōpappaṭukiṟāṉṉu", "kōpappaṭukiṟāṉ eṉṟu"], "said_will": ["kōpappaṭuvāṉṉu", "kōpappaṭuvāṉ eṉṟu"] }
+    - word: "ta-2069"
+      forms: { "said_did": ["தேர்ந்தெடுத்தான்னு", "தேர்ந்தெடுத்தான் என்று"], "said_does": ["தேர்ந்தெடுக்கிறான்னு", "தேர்ந்தெடுக்கிறான் என்று"], "said_will": ["தேர்ந்தெடுப்பான்னு", "தேர்ந்தெடுப்பான் என்று"] }
+      readings: { "said_did": ["tērnteṭuttāṉṉu", "tērnteṭuttāṉ eṉṟu"], "said_does": ["tērnteṭukkiṟāṉṉu", "tērnteṭukkiṟāṉ eṉṟu"], "said_will": ["tērnteṭuppāṉṉu", "tērnteṭuppāṉ eṉṟu"] }
+    - word: "ta-2073"
+      forms: { "said_did": ["கண்டுபிடிச்சான்னு", "கண்டுபிடித்தான் என்று"], "said_does": ["கண்டுபிடிக்கிறான்னு", "கண்டுபிடிக்கிறான் என்று"], "said_will": ["கண்டுபிடிப்பான்னு", "கண்டுபிடிப்பான் என்று"] }
+      readings: { "said_did": ["kaṇṭupiṭiccāṉṉu", "kaṇṭupiṭittāṉ eṉṟu"], "said_does": ["kaṇṭupiṭikkiṟāṉṉu", "kaṇṭupiṭikkiṟāṉ eṉṟu"], "said_will": ["kaṇṭupiṭippāṉṉu", "kaṇṭupiṭippāṉ eṉṟu"] }
+    - word: "ta-2086"
+      forms: { "said_did": ["சரிபாத்தான்னு", "சரிபார்த்தான் என்று"], "said_does": ["சரிபார்க்கிறான்னு", "சரிபார்க்கிறான் என்று"], "said_will": ["சரிபார்ப்பான்னு", "சரிபார்ப்பான் என்று"] }
+      readings: { "said_did": ["caripāttāṉṉu", "caripārttāṉ eṉṟu"], "said_does": ["caripārkkiṟāṉṉu", "caripārkkiṟāṉ eṉṟu"], "said_will": ["caripārppāṉṉu", "caripārppāṉ eṉṟu"] }
+    - word: "ta-1299"
+      forms: { "said_did": ["குணமானான்னு", "குணமானான் என்று"], "said_does": ["குணமாகுகிறான்னு", "குணமாகுகிறான் என்று"], "said_will": ["குணமாவான்னு", "குணமாவான் என்று"] }
+      readings: { "said_did": ["kuṇamāṉāṉṉu", "kuṇamāṉāṉ eṉṟu"], "said_does": ["kuṇamākukiṟāṉṉu", "kuṇamākukiṟāṉ eṉṟu"], "said_will": ["kuṇamāvāṉṉu", "kuṇamāvāṉ eṉṟu"] }
+    - word: "ta-2350"
+      forms: { "said_did": ["கையெழுத்திட்டான்னு", "கையெழுத்திட்டான் என்று"], "said_does": ["கையெழுத்திடுகிறான்னு", "கையெழுத்திடுகிறான் என்று"], "said_will": ["கையெழுத்திடுவான்னு", "கையெழுத்திடுவான் என்று"] }
+      readings: { "said_did": ["kaiyeḻuttiṭṭāṉṉu", "kaiyeḻuttiṭṭāṉ eṉṟu"], "said_does": ["kaiyeḻuttiṭukiṟāṉṉu", "kaiyeḻuttiṭukiṟāṉ eṉṟu"], "said_will": ["kaiyeḻuttiṭuvāṉṉu", "kaiyeḻuttiṭuvāṉ eṉṟu"] }
+    - word: "ta-2351"
+      forms: { "said_did": ["ஈடுபட்டான்னு", "ஈடுபட்டான் என்று"], "said_does": ["ஈடுபடுகிறான்னு", "ஈடுபடுகிறான் என்று"], "said_will": ["ஈடுபடுவான்னு", "ஈடுபடுவான் என்று"] }
+      readings: { "said_did": ["īṭupaṭṭāṉṉu", "īṭupaṭṭāṉ eṉṟu"], "said_does": ["īṭupaṭukiṟāṉṉu", "īṭupaṭukiṟāṉ eṉṟu"], "said_will": ["īṭupaṭuvāṉṉu", "īṭupaṭuvāṉ eṉṟu"] }
+    - word: "ta-2352"
+      forms: { "said_did": ["முடிவெடுத்தான்னு", "முடிவெடுத்தான் என்று"], "said_does": ["முடிவெடுக்கிறான்னு", "முடிவெடுக்கிறான் என்று"], "said_will": ["முடிவெடுப்பான்னு", "முடிவெடுப்பான் என்று"] }
+      readings: { "said_did": ["muṭiveṭuttāṉṉu", "muṭiveṭuttāṉ eṉṟu"], "said_does": ["muṭiveṭukkiṟāṉṉu", "muṭiveṭukkiṟāṉ eṉṟu"], "said_will": ["muṭiveṭuppāṉṉu", "muṭiveṭuppāṉ eṉṟu"] }
+    - word: "ta-2353"
+      forms: { "said_did": ["அச்சிட்டான்னு", "அச்சிட்டான் என்று"], "said_does": ["அச்சிடுகிறான்னு", "அச்சிடுகிறான் என்று"], "said_will": ["அச்சிடுவான்னு", "அச்சிடுவான் என்று"] }
+      readings: { "said_did": ["acciṭṭāṉṉu", "acciṭṭāṉ eṉṟu"], "said_does": ["acciṭukiṟāṉṉu", "acciṭukiṟāṉ eṉṟu"], "said_will": ["acciṭuvāṉṉu", "acciṭuvāṉ eṉṟu"] }
+    - word: "ta-2354"
+      forms: { "said_did": ["நகலெடுத்தான்னு", "நகலெடுத்தான் என்று"], "said_does": ["நகலெடுக்கிறான்னு", "நகலெடுக்கிறான் என்று"], "said_will": ["நகலெடுப்பான்னு", "நகலெடுப்பான் என்று"] }
+      readings: { "said_did": ["nakaleṭuttāṉṉu", "nakaleṭuttāṉ eṉṟu"], "said_does": ["nakaleṭukkiṟāṉṉu", "nakaleṭukkiṟāṉ eṉṟu"], "said_will": ["nakaleṭuppāṉṉu", "nakaleṭuppāṉ eṉṟu"] }
+    - word: "ta-2355"
+      forms: { "said_did": ["கணக்கிட்டான்னு", "கணக்கிட்டான் என்று"], "said_does": ["கணக்கிடுகிறான்னு", "கணக்கிடுகிறான் என்று"], "said_will": ["கணக்கிடுவான்னு", "கணக்கிடுவான் என்று"] }
+      readings: { "said_did": ["kaṇakkiṭṭāṉṉu", "kaṇakkiṭṭāṉ eṉṟu"], "said_does": ["kaṇakkiṭukiṟāṉṉu", "kaṇakkiṭukiṟāṉ eṉṟu"], "said_will": ["kaṇakkiṭuvāṉṉu", "kaṇakkiṭuvāṉ eṉṟu"] }
+rules:
+  - id: "ta-rule-reported-did"
+    slots: ["said_did"]
+    words: [{ word: "-ன்னு", reading: "-ṉṉu" }, { word: "என்று", reading: "eṉṟu" }, { word: "வா", reading: "vā" }, { word: "வந்தான்னு", reading: "vantāṉṉu" }, { word: "வந்தான்னு சொன்னான்", reading: "vantāṉṉu coṉṉāṉ" }]
+  - id: "ta-rule-reported-does"
+    slots: ["said_does"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வர்றான்னு", reading: "varṟāṉṉu" }, { word: "வருகிறான் என்று", reading: "varukiṟāṉ eṉṟu" }, { word: "வர்றான்னு சொன்னான்", reading: "varṟāṉṉu coṉṉāṉ" }]
+  - id: "ta-rule-reported-will"
+    slots: ["said_will"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வருவான்னு", reading: "varuvāṉṉu" }, { word: "வருவான் என்று", reading: "varuvāṉ eṉṟu" }, { word: "வருவான்னு சொன்னான்", reading: "varuvāṉṉu coṉṉāṉ" }]
