@@ -1,0 +1,75 @@
+schema: 1
+id: "ta-en-time-sentences"
+kind: "layer"
+core: "ta-time-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Time in sentences"
+description: "Nine sentences with the days, the parts of the day, the hour and the verbs of coming, eating and sleeping. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-3000":
+    native: "Tomorrow is Monday."
+    notes:
+      n1: "No verb is needed: நாளை (nāḷai), tomorrow, and then the day, as திங்கள் (tiṅkaḷ), Monday."
+    confusables:
+      w1: { why: "இன்று (iṉṟu), today, is not tomorrow." }
+      w2: { why: "நேற்று (nēṟṟu), yesterday, is the day before." }
+  "ta-3001":
+    native: "I will come on Friday."
+    notes:
+      n1: "The future of வா (vā), to come, is வருவேன் (varuvēṉ), I will come; the day needs no word for 'on'."
+    confusables:
+      w1: { why: "திங்கள் (tiṅkaḷ), Monday, is a different day." }
+      w2: { why: "போ (pō), to go, is a different verb." }
+  "ta-3002":
+    native: "I will be at home in the evening."
+    bases:
+      "இருப்பேன்": "will be; from இரு (iru), to be"
+    notes:
+      n1: "The stem of வீடு (vīṭu), house, becomes வீட்டு- (vīṭṭu-) before a case ending, so வீட்டில் (vīṭṭil) means at home."
+    confusables:
+      w1: { why: "இரவு (iravu), night, is not evening." }
+      w2: { why: "போ (pō), to go, is a different verb." }
+  "ta-3003":
+    native: "We will eat in the morning."
+    notes:
+      n1: "The time comes before the verb, and the verb ends the sentence: காலை (kālai), morning, goes before சாப்பிடுவோம் (cāppiṭuvōm), we will eat."
+    confusables:
+      w1: { why: "மாலை (mālai), evening, is a different time of day." }
+      w2: { why: "இரவு (iravu), night, is a different time of day." }
+  "ta-3004":
+    native: "What time is it?"
+    notes:
+      n1: "This asks the time: நேரம் (nēram), time, and என்ன (eṉṉa), what; the answer gives மணி (maṇi), o'clock, and a number."
+    confusables:
+      w1: { why: "எப்போது (eppōtu), when, asks for a day or a time of an event, not the clock." }
+      w2: { why: "எத்தனை (ettaṉai), how many, counts things." }
+  "ta-3005":
+    native: "It is nine o'clock now."
+    notes:
+      n1: "A time is said with மணி (maṇi), o'clock, before the number and with no verb: மணி ஒன்பது (maṇi oṉpatu), nine o'clock."
+    confusables:
+      w1: { why: "இன்று (iṉṟu), today, is a day, not a time." }
+      w2: { why: "காலை (kālai), morning, is a part of the day, not an hour." }
+  "ta-3006":
+    native: "I will come tomorrow morning."
+    notes:
+      n1: "Tamil puts the time words first and the verb last: நாளை (nāḷai) காலை (kālai), tomorrow morning, then நான் (nāṉ), I, and வருவேன் (varuvēṉ), I will come."
+    confusables:
+      w1: { why: "நேற்று (nēṟṟu), yesterday, is the wrong day." }
+      w2: { why: "மாலை (mālai), evening, is the wrong part of the day." }
+  "ta-3007":
+    native: "Last night I slept."
+    notes:
+      n1: "The past of தூங்கு (tūṅku), to sleep, is தூங்கினேன் (tūṅkiṉēṉ), I slept: the past adds -இன் (-iṉ) to the stem."
+    confusables:
+      w1: { why: "இப்போது (ippōtu), now, is not the past." }
+      w2: { why: "மாலை (mālai), evening, is a different time of day." }
+  "ta-3008":
+    native: "Please eat at night."
+    notes:
+      n1: "The polite order is சாப்பிடுங்கள் (cāppiṭuṅkaḷ), please eat; a friend hears சாப்பிடு (cāppiṭu), eat."
+    confusables:
+      w1: { why: "காலை (kālai), morning, is the wrong time of day." }
+      w2: { why: "மாலை (mālai), evening, is the wrong time of day." }

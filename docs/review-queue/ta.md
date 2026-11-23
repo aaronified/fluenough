@@ -14,6 +14,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-work to ta-transport | The broad IPA was made from each reading by a simple rule that does not write voicing. Can it be checked for these six units? | Haiku builder | 2026-11-07 |
 | unit-level | ta-numbers-big | Lakh and crore are written as one word with a noun after them: is the counting and the register right for Tamil? | Haiku builder | 2026-11-07 |
 | unit-level | ta-food to ta-animals | The broad IPA was made from each reading by a simple rule that does not write voicing. Can it be checked for these seven units? | Haiku builder | 2026-11-07 |
+| ta-3004 | ta-time-sentences | Is நேரம் என்ன? the everyday way to ask the time in speech, or is மணி என்ன? more usual? | Haiku deck worker (ta-sent) | 2026-11-23 |
+| ta-3006 | ta-time-sentences | Is நாளை காலை நான் வருவேன் the natural order (time first, verb last) for a spoken sentence? | Haiku deck worker (ta-sent) | 2026-11-23 |
+| ta-3007 | ta-time-sentences | Is தூங்கினேன் the usual spoken past here, and does the note on the -இன் past stem hold? | Haiku deck worker (ta-sent) | 2026-11-23 |
 | ta-1003 | ta-script-vowels | No word of the course starts with ஈ (long ee) and the card has no example: can a bilingual reviewer suggest a common word for it? | Haiku deck worker (ta-script) | 2026-11-23 |
 | ta-1011 | ta-script-vowels | No word of the course uses ஔ (au) and the card has no example: can a reviewer suggest a common word? | Haiku deck worker (ta-script) | 2026-11-23 |
 | ta-1005 | ta-script-vowels | Only one example for ஊ (long oo): can a reviewer suggest a second common word? | Haiku deck worker (ta-script) | 2026-11-23 |
