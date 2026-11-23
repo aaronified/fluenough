@@ -1,0 +1,68 @@
+schema: 1
+id: "ta-en-location-sentences"
+kind: "layer"
+core: "ta-location-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places in sentences"
+description: "Eight short sentences with above, below, inside, outside, in front, behind, beside and near. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-3009":
+    native: "Father goes inside."
+    confusables:
+      w1: { why: "வெளியே (veḷiyē), outside, is the opposite." }
+      w2: { why: "கீழே (kīḻē), below, is a different place." }
+  "ta-3010":
+    native: "Mother comes outside."
+    notes:
+      n1: "வா (vā), come, with வெளியே (veḷiyē), outside, gives come out; with போ (pō), go, it gives go out."
+    confusables:
+      w1: { why: "உள்ளே (uḷḷē), inside, is the opposite." }
+      w2: { why: "பின்னால் (piṉṉāl), behind, is a different place." }
+  "ta-3011":
+    native: "Mother is beside."
+    notes:
+      n1: "பக்கத்தில் (pakkattil), beside, names a side; அருகில் (arukil), near, names how close."
+    bases:
+      "இருக்கிறார்": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "அருகில் (arukil), near, names distance, not a side." }
+      w2: { why: "பின்னால் (piṉṉāl), behind, is a different side." }
+  "ta-3012":
+    native: "Go in front."
+    notes:
+      n1: "போ (pō), go, is a plain order to a friend; to a stranger say போங்கள் (pōṅkaḷ), please go."
+    confusables:
+      w1: { why: "பின்னால் (piṉṉāl), behind, is the opposite." }
+      w2: { why: "மேலே (mēlē), above, is a different direction." }
+  "ta-3013":
+    native: "It is above."
+    bases:
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    notes:
+      n1: "இருக்கிறது (irukkiṟatu), it is, is for a thing; for a person the verb is இருக்கிறார் (irukkiṟār)."
+    confusables:
+      w1: { why: "கீழே (kīḻē), below, is the opposite." }
+      w2: { why: "பின்னால் (piṉṉāl), behind, is a different place." }
+  "ta-3014":
+    native: "Come here."
+    notes:
+      n1: "இங்கே (iṅkē), here, differs from எங்கே (eṅkē), where, by one letter: check which one you hear."
+    confusables:
+      w1: { why: "எங்கே (eṅkē), where, asks a question." }
+      w2: { why: "மேலே (mēlē), above, is a different place." }
+  "ta-3015":
+    native: "Father is behind."
+    notes:
+      n1: "பின்னால் (piṉṉāl), behind, is the opposite of முன்னால் (muṉṉāl), in front."
+    bases:
+      "இருக்கிறார்": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "முன்னால் (muṉṉāl), in front, is the opposite." }
+      w2: { why: "உள்ளே (uḷḷē), inside, is a different place." }
+  "ta-3016":
+    native: "Come near."
+    confusables:
+      w1: { why: "இங்கே (iṅkē), here, is a different place." }
+      w2: { why: "கீழே (kīḻē), below, is a different place." }
