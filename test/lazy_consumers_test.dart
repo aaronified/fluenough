@@ -201,9 +201,12 @@ void main() {
       expect(lazy.hasDueInLog('fr'), isTrue);
       expect(lazy.hasDueInLog('es'), isTrue);
       expect(lazy.languageHasWork('fr'), isTrue);
-      expect(<String>[
-        for (final language in lazy.nextTodayLanguages('es')) language.code,
-      ], <String>['fr', 'hi']);
+      expect(
+        <String>[
+          for (final language in lazy.nextTodayLanguages('es')) language.code,
+        ],
+        <String>['fr', 'hi'],
+      );
       expect(phone.jobs, jobs);
     });
 
@@ -212,9 +215,12 @@ void main() {
       final lazy = await _warm(phone);
       _answer(lazy, 'fr-en-words', 'fr-2000');
       expect(lazy.hasDueInLog('hi'), isFalse);
-      expect(<String>[
-        for (final language in lazy.nextTodayLanguages('es')) language.code,
-      ], <String>['fr']);
+      expect(
+        <String>[
+          for (final language in lazy.nextTodayLanguages('es')) language.code,
+        ],
+        <String>['fr'],
+      );
     });
   });
 
@@ -388,10 +394,10 @@ void main() {
       final state = await _warm(_Phone());
       expect(state.decksOf('fr'), isEmpty);
       expect(cardLookupOf(state, language: 'fr')('fr-2000'), isNull);
-      expect(
-        state.decksOf('es').single.cards.map((c) => c.id),
-        <String>['es-1000', 'es-1001'],
-      );
+      expect(state.decksOf('es').single.cards.map((c) => c.id), <String>[
+        'es-1000',
+        'es-1001',
+      ]);
     });
   });
 

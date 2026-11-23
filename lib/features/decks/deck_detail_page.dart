@@ -84,9 +84,7 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
   @override
   void initState() {
     super.initState();
-    unawaited(
-      AppScope.read(context).ensureLoaded(languageOfId(widget.deckId)),
-    );
+    unawaited(AppScope.read(context).ensureLoaded(languageOfId(widget.deckId)));
     // A deck written in a script whose font is not on the phone offers the
     // font check, as a course does when it is downloaded.
     WidgetsBinding.instance.addPostFrameCallback((_) {

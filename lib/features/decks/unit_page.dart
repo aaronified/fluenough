@@ -107,9 +107,7 @@ class _UnitPageState extends State<UnitPage> {
   @override
   void initState() {
     super.initState();
-    unawaited(
-      AppScope.read(context).ensureLoaded(languageOfId(widget.deckId)),
-    );
+    unawaited(AppScope.read(context).ensureLoaded(languageOfId(widget.deckId)));
   }
 
   void _openWordOnce(AppState state, LanguageInfo language) {
