@@ -1,0 +1,24 @@
+schema: 1
+id: "ta-en-grammar-indefinites"
+kind: "layer"
+core: "ta-grammar-indefinites"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Someone, anywhere, nobody: the indefinites"
+description: "The question words of the course made into some, any and every. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  name: "Someone, anywhere, nobody: the indefinites"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "o": "some, one does not know which (-o)"
+    "avatu": "any, some or other (-avatu)"
+    "um": "every; none with a negative (-um)"
+  entries:
+    "yaar": "who"
+    "enna": "what"
+    "enge": "where"
+    "eppotu": "when"
+    "eppati": "how"
+  notes: "A question word becomes an indefinite when a small word is joined to it. With -ஓ (-ō) it means some, a speaker does not know which: யாரோ (yārō), someone, எங்கோ (eṅkō), somewhere. With -ஆவது (-āvatu) it means any or some, whichever one: யாராவது (yārāvatu), anyone, எங்காவது (eṅkāvatu), anywhere; it is the form for requests, as in யாராவது உதவுங்கள் (yārāvatu utavuṅkaḷ), someone please help. With -உம் (-um) it means every, and with a negative verb none: யாரும் வரவில்லை (yārum varavillai), nobody came. என்ன (eṉṉa) changes its stem before these endings: ஏதோ (ētō) and ஏதாவது (ētāvatu), but எதுவும் (etuvum). எப்போதும் (eppōtum) means always, not at any time. Not yet confirmed by a Tamil speaker; reviewers check the forms."

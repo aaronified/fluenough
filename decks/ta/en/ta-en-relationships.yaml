@@ -1,0 +1,743 @@
+schema: 1
+id: "ta-en-relationships"
+kind: "layer"
+core: "ta-relationships"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Relationships: neighbours, friends and thank-you notes"
+description: "Neighbours, friends and acquaintances: trust, quarrels and making up, saying thanks and sorry, and the words for how people get on. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-8260":
+    native: "neighbour"
+    notes:
+      n1: "The spoken word for the person next door; it is long, so people also say பக்கத்து வீடு (pakkattu vīṭu), the next house."
+    examples:
+      "அவர் என் பக்கத்துவீட்டுக்காரர்.":
+        native: "He is my neighbour."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "பக்கத்துவீட்டுக்காரர்": "neighbour"
+      "பக்கத்துவீட்டுக்காரர் நல்லவர்.":
+        native: "The neighbour is a good man."
+        bases:
+          "பக்கத்துவீட்டுக்காரர்": "neighbour"
+          "நல்லவர்": "good man (polite); from நல்ல (nalla), good"
+  "ta-8261":
+    native: "female friend"
+    notes:
+      n1: "A woman's close friend; the man's pair is தோழன் (tōḻaṉ), male friend."
+    examples:
+      "அவள் என் தோழி.":
+        native: "She is my friend."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "தோழி": "female friend"
+      "என் தோழி இங்கே இருக்கிறாள்.":
+        native: "My friend is here."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "தோழி": "female friend"
+          "இருக்கிறாள்": "is; from இரு (iru), to be"
+  "ta-8262":
+    native: "male friend; comrade"
+    notes:
+      n1: "A man's close friend; நண்பன் (naṇpaṉ), friend, a word taught earlier, is the everyday word."
+    examples:
+      "அவன் என் தோழன்.":
+        native: "He is my friend."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "தோழன்": "male friend; comrade"
+      "என் தோழன் வீட்டில் இருக்கிறான்.":
+        native: "My friend is at home."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "தோழன்": "male friend; comrade"
+          "இருக்கிறான்": "is; from இரு (iru), to be"
+  "ta-8263":
+    native: "relationship; relation"
+    notes:
+      n1: "A tie of blood or of friendship; the noun உறவினர் (uṟaviṉar), relative is made from it."
+    examples:
+      "எங்கள் உறவு நல்லது.":
+        native: "Our relationship is good."
+        bases:
+          "எங்கள்": "our; from நாங்கள் (nāṅkaḷ), we"
+          "உறவு": "relationship; relation"
+      "அவர்களுக்குள் உறவு இருக்கிறது.":
+        native: "There is a relationship between them."
+        bases:
+          "அவர்களுக்குள்": "among them; between them; from அவர்கள் (avarkaḷ), they"
+          "உறவு": "relationship; relation"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8264":
+    native: "goodwill"
+    notes:
+      n1: "Built from நல்ல (nalla), good and எண்ணம் (eṇṇam), thought."
+    examples:
+      "அவனிடம் நல்லெண்ணம் இருக்கிறது.":
+        native: "He has goodwill."
+        bases:
+          "அவனிடம்": "with him; from அவன் (avaṉ), he"
+          "நல்லெண்ணம்": "goodwill"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "நல்லெண்ணம் முக்கியம்.":
+        native: "Goodwill is important."
+        bases:
+          "நல்லெண்ணம்": "goodwill"
+          "முக்கியம்": "important"
+  "ta-8265":
+    native: "secret"
+    notes:
+      n1: "Something kept from others."
+    examples:
+      "இது ரகசியம்.":
+        native: "This is a secret."
+        bases:
+          "ரகசியம்": "secret"
+      "ரகசியம் சொல்லாதே.":
+        native: "Do not tell the secret."
+        bases:
+          "ரகசியம்": "secret"
+          "சொல்லாதே": "do not tell; from சொல் (col), to say; to tell"
+  "ta-8266":
+    native: "promise"
+    notes:
+      n1: "A word given; the verb is வாக்குறுதி கொடு (vākkuṟuti koṭu), to give a promise."
+    examples:
+      "இது என் வாக்குறுதி.":
+        native: "This is my promise."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "வாக்குறுதி": "promise"
+      "அவன் வாக்குறுதி கொடுக்கிறான்.":
+        native: "He gives a promise."
+        bases:
+          "வாக்குறுதி": "promise"
+          "கொடுக்கிறான்": "he gives; from கொடு (koṭu), to give"
+  "ta-8267":
+    native: "talk; speech; way of speaking"
+    notes:
+      n1: "Talk in general; it also names a person's way of speaking."
+    examples:
+      "அவன் பேச்சு நல்லது.":
+        native: "His way of speaking is good."
+        bases:
+          "பேச்சு": "talk; speech; way of speaking"
+      "என்ன பேச்சு இது?":
+        native: "What talk is this?"
+        bases:
+          "பேச்சு": "talk; speech; way of speaking"
+  "ta-8268":
+    native: "conversation; dialogue"
+    notes:
+      n1: "A talk between two or more people; a written lesson dialogue is also an உரையாடல் (uraiyāṭal)."
+    examples:
+      "இது நல்ல உரையாடல்.":
+        native: "This is a good conversation."
+        bases:
+          "உரையாடல்": "conversation; dialogue"
+      "உரையாடல் இனிமையானது.":
+        native: "The conversation is pleasant."
+        bases:
+          "உரையாடல்": "conversation; dialogue"
+          "இனிமையானது": "is sweet; from இனிமையான (iṉimaiyāṉa), sweet"
+  "ta-8269":
+    native: "cooperation"
+    notes:
+      n1: "Working together; from ஒத்துழை (ottuḻai), to cooperate."
+    examples:
+      "உன் ஒத்துழைப்பு வேண்டும்.":
+        native: "I need your cooperation."
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "ஒத்துழைப்பு": "cooperation"
+      "அவன் ஒத்துழைப்பு தருகிறான்.":
+        native: "He gives cooperation."
+        bases:
+          "ஒத்துழைப்பு": "cooperation"
+          "தருகிறான்": "he gives; from தா (tā), to give"
+  "ta-8270":
+    native: "introduction; acquaintance"
+    notes:
+      n1: "The first meeting of two people."
+    examples:
+      "இது என் அறிமுகம்.":
+        native: "This is my introduction."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "அறிமுகம்": "introduction; acquaintance"
+      "அவர்களுக்குள் அறிமுகம் இருக்கிறது.":
+        native: "They know each other."
+        bases:
+          "அவர்களுக்குள்": "among them; between them; from அவர்கள் (avarkaḷ), they"
+          "அறிமுகம்": "introduction; acquaintance"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8271":
+    native: "unity; togetherness"
+    notes:
+      n1: "People standing together."
+    examples:
+      "நம்மிடம் ஒற்றுமை இருக்கிறது.":
+        native: "We have unity."
+        bases:
+          "நம்மிடம்": "with us; from நாம் (nām), we (including you)"
+          "ஒற்றுமை": "unity; togetherness"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "ஒற்றுமை முக்கியம்.":
+        native: "Unity is important."
+        bases:
+          "ஒற்றுமை": "unity; togetherness"
+          "முக்கியம்": "important"
+  "ta-8272":
+    native: "separation; parting; section"
+    notes:
+      n1: "A parting of two people, and also a section of an office."
+    examples:
+      "எனக்குப் பிரிவு பிடிக்காது.":
+        native: "I do not like parting."
+        bases:
+          "எனக்குப்": "to me; from நான் (nāṉ), I"
+          "பிரிவு": "separation; parting; section"
+      "இது பெரிய பிரிவு.":
+        native: "This is a big separation."
+        bases:
+          "பிரிவு": "separation; parting; section"
+  "ta-8273":
+    native: "companion; support; spouse"
+    notes:
+      n1: "A person who goes with you; it also means a helper or a partner."
+    examples:
+      "அவன் என் துணை.":
+        native: "He is my companion."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "துணை": "companion; support; spouse"
+      "உன் துணை எனக்கு வேண்டும்.":
+        native: "I want your support."
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "துணை": "companion; support; spouse"
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+  "ta-8274":
+    native: "teasing; mockery"
+    notes:
+      n1: "Joking at someone's cost; the verb is கேலி செய் (kēli cey), to tease."
+    examples:
+      "இது கேலி.":
+        native: "This is teasing."
+        bases:
+          "கேலி": "teasing; mockery"
+      "கேலி செய்யாதே.":
+        native: "Do not tease."
+        bases:
+          "கேலி": "teasing; mockery"
+          "செய்யாதே": "do not do; from செய் (cey), to do"
+  "ta-8275":
+    native: "honesty; straightness"
+    notes:
+      n1: "The noun of நேர்மையான (nērmaiyāṉa), honest, a word taught earlier."
+    examples:
+      "அவனிடம் நேர்மை இருக்கிறது.":
+        native: "He has honesty."
+        bases:
+          "அவனிடம்": "with him; from அவன் (avaṉ), he"
+          "நேர்மை": "honesty; straightness"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "நேர்மை முக்கியம்.":
+        native: "Honesty is important."
+        bases:
+          "நேர்மை": "honesty; straightness"
+          "முக்கியம்": "important"
+  "ta-8276":
+    native: "disagreement; contradiction"
+    notes:
+      n1: "When two views do not fit."
+    examples:
+      "அவர்களுக்குள் முரண்பாடு இருக்கிறது.":
+        native: "There is a disagreement between them."
+        bases:
+          "அவர்களுக்குள்": "among them; between them; from அவர்கள் (avarkaḷ), they"
+          "முரண்பாடு": "disagreement; contradiction"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இது பெரிய முரண்பாடு.":
+        native: "This is a big contradiction."
+        bases:
+          "முரண்பாடு": "disagreement; contradiction"
+  "ta-8277":
+    native: "dispute; quarrel"
+    notes:
+      n1: "A loud argument, often over a small matter."
+    examples:
+      "அவர்களுக்குள் தகராறு.":
+        native: "There is a dispute between them."
+        bases:
+          "அவர்களுக்குள்": "among them; between them; from அவர்கள் (avarkaḷ), they"
+          "தகராறு": "dispute; quarrel"
+      "தகராறு வேண்டாம்.":
+        native: "No quarrel, please."
+        bases:
+          "தகராறு": "dispute; quarrel"
+  "ta-8278":
+    native: "understanding"
+    notes:
+      n1: "The noun of புரி (puri), to understand, a verb taught earlier."
+    examples:
+      "எங்களுக்குள் நல்ல புரிதல் இருக்கிறது.":
+        native: "There is good understanding between us."
+        bases:
+          "எங்களுக்குள்": "among us; between us; from நாங்கள் (nāṅkaḷ), we (not including you)"
+          "புரிதல்": "understanding"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "புரிதல் முக்கியம்.":
+        native: "Understanding is important."
+        bases:
+          "புரிதல்": "understanding"
+          "முக்கியம்": "important"
+  "ta-8279":
+    native: "neighbour; outsider"
+    notes:
+      n1: "An older word for neighbours, also for strangers."
+    examples:
+      "அயலார் இங்கே இருக்கிறார்.":
+        native: "The neighbour is here."
+        bases:
+          "அயலார்": "neighbour; outsider"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+      "அவர் அயலார்.":
+        native: "He is an outsider."
+        bases:
+          "அயலார்": "neighbour; outsider"
+  "ta-8280":
+    native: "brother"
+    notes:
+      n1: "A formal word for a brother or a man of the same community."
+    examples:
+      "அவர் என் சகோதரர்.":
+        native: "He is my brother."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "சகோதரர்": "brother"
+      "சகோதரர் இங்கே இருக்கிறார்.":
+        native: "The brother is here."
+        bases:
+          "சகோதரர்": "brother"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-8281":
+    native: "sister"
+    notes:
+      n1: "The formal pair of சகோதரர் (cakōtarar), brother."
+    examples:
+      "அவள் என் சகோதரி.":
+        native: "She is my sister."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "சகோதரி": "sister"
+      "சகோதரி இங்கே இருக்கிறாள்.":
+        native: "The sister is here."
+        bases:
+          "சகோதரி": "sister"
+          "இருக்கிறாள்": "is; from இரு (iru), to be"
+  "ta-8282":
+    native: "thank-you letter"
+    notes:
+      n1: "Built from நன்றி (naṉṟi), thanks and கடிதம் (kaṭitam), letter, both taught earlier."
+    examples:
+      "நான் நன்றிக்கடிதம் எழுதுகிறேன்.":
+        native: "I write a thank-you letter."
+        bases:
+          "நன்றிக்கடிதம்": "thank-you letter"
+          "எழுதுகிறேன்": "I write; from எழுது (eḻutu), to write"
+      "இது நன்றிக்கடிதம்.":
+        native: "This is a thank-you letter."
+        bases:
+          "நன்றிக்கடிதம்": "thank-you letter"
+  "ta-8283":
+    native: "gratitude"
+    notes:
+      n1: "Built from நன்றி (naṉṟi), thanks and உணர்வு (uṇarvu), feeling."
+    examples:
+      "எனக்கு நன்றியுணர்வு இருக்கிறது.":
+        native: "I feel gratitude."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "நன்றியுணர்வு": "gratitude"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "நன்றியுணர்வு முக்கியம்.":
+        native: "Gratitude is important."
+        bases:
+          "நன்றியுணர்வு": "gratitude"
+          "முக்கியம்": "important"
+  "ta-8284":
+    native: "hospitality"
+    notes:
+      n1: "Built from விருந்து (viruntu), feast and ஓம்பல் (ōmpal), care."
+    examples:
+      "இது நல்ல விருந்தோம்பல்.":
+        native: "This is good hospitality."
+        bases:
+          "விருந்தோம்பல்": "hospitality"
+      "அவர்கள் விருந்தோம்பல் அருமை.":
+        native: "Their hospitality is wonderful."
+        bases:
+          "விருந்தோம்பல்": "hospitality"
+          "அருமை": "wonderful; excellent"
+  "ta-8285":
+    native: "care; concern"
+    notes:
+      n1: "Caring about someone or something."
+    examples:
+      "அவளுக்கு என் மேல் அக்கறை.":
+        native: "She cares about me."
+        bases:
+          "அவளுக்கு": "to her; for her; from அவள் (avaḷ), she"
+          "என்": "my; from நான் (nāṉ), I"
+          "மேல்": "on; over; about"
+          "அக்கறை": "care; concern"
+      "அக்கறை முக்கியம்.":
+        native: "Care is important."
+        bases:
+          "அக்கறை": "care; concern"
+          "முக்கியம்": "important"
+  "ta-8286":
+    native: "enmity; hostility"
+    notes:
+      n1: "A long hate between two people or two families."
+    examples:
+      "அவர்களுக்குள் பகை இருக்கிறது.":
+        native: "There is enmity between them."
+        bases:
+          "அவர்களுக்குள்": "among them; between them; from அவர்கள் (avarkaḷ), they"
+          "பகை": "enmity; hostility"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "எனக்குப் பகை பிடிக்காது.":
+        native: "I do not like enmity."
+        bases:
+          "எனக்குப்": "to me; from நான் (nāṉ), I"
+          "பகை": "enmity; hostility"
+  "ta-8287":
+    native: "enemy; opponent"
+    notes:
+      n1: "A person against you."
+    examples:
+      "அவன் என் எதிரி இல்லை.":
+        native: "He is not my enemy."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "எதிரி": "enemy; opponent"
+      "எதிரி இங்கே இல்லை.":
+        native: "The enemy is not here."
+        bases:
+          "எதிரி": "enemy; opponent"
+  "ta-8288":
+    native: "nature; character; normal state"
+    notes:
+      n1: "The way a person is."
+    examples:
+      "இது அவன் இயல்பு.":
+        native: "This is his nature."
+        bases:
+          "இயல்பு": "nature; character; normal state"
+      "உன் இயல்பு நல்லது.":
+        native: "Your nature is good."
+        bases:
+          "உன்": "your; from நீ (nī), you (to a friend or child)"
+          "இயல்பு": "nature; character; normal state"
+  "ta-8289":
+    native: "good relations"
+    notes:
+      n1: "Built from நல்ல (nalla), good and உறவு (uṟavu), relationship."
+    examples:
+      "அவர்களுக்குள் நல்லுறவு இருக்கிறது.":
+        native: "There are good relations between them."
+        bases:
+          "அவர்களுக்குள்": "among them; between them; from அவர்கள் (avarkaḷ), they"
+          "நல்லுறவு": "good relations"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "நல்லுறவு முக்கியம்.":
+        native: "Good relations are important."
+        bases:
+          "நல்லுறவு": "good relations"
+          "முக்கியம்": "important"
+  "ta-8290":
+    native: "friend"
+    notes:
+      n1: "A respectful word for a friend, close to நண்பர் (naṇpar), friend."
+    examples:
+      "அவர் என் சிநேகிதர்.":
+        native: "He is my friend."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "சிநேகிதர்": "friend"
+      "சிநேகிதர் இங்கே இருக்கிறார்.":
+        native: "The friend is here."
+        bases:
+          "சிநேகிதர்": "friend"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-8291":
+    native: "female friend"
+    notes:
+      n1: "The woman's pair of சிநேகிதர் (cinēkitar), friend."
+    examples:
+      "அவள் என் சிநேகிதி.":
+        native: "She is my friend."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "சிநேகிதி": "female friend"
+      "சிநேகிதி வீட்டில் இருக்கிறாள்.":
+        native: "The friend is at home."
+        bases:
+          "சிநேகிதி": "female friend"
+          "இருக்கிறாள்": "is; from இரு (iru), to be"
+  "ta-8292":
+    native: "trouble; nuisance"
+    notes:
+      n1: "Something that bothers you, like noise from next door."
+    examples:
+      "இது பெரிய தொல்லை.":
+        native: "This is a big nuisance."
+        bases:
+          "தொல்லை": "trouble; nuisance"
+      "தொல்லை செய்யாதே.":
+        native: "Do not cause trouble."
+        bases:
+          "தொல்லை": "trouble; nuisance"
+          "செய்யாதே": "do not do; from செய் (cey), to do"
+  "ta-8293":
+    native: "noise; sound"
+    notes:
+      n1: "Noise, often unwanted; ஒலி (oli), sound is the neutral word."
+    examples:
+      "சத்தம் போடாதே.":
+        native: "Do not make noise."
+        bases:
+          "சத்தம்": "noise; sound"
+          "போடாதே": "do not put; from போடு (pōṭu), to put; to throw"
+      "வீட்டில் சத்தம் கேட்கிறது.":
+        native: "Noise is heard in the house."
+        bases:
+          "சத்தம்": "noise; sound"
+          "கேட்கிறது": "is heard; from கேள் (kēḷ), to hear; to ask"
+  "ta-8294":
+    native: "loyalty"
+    notes:
+      n1: "Staying true to a person or a cause."
+    examples:
+      "அவனிடம் விசுவாசம் இருக்கிறது.":
+        native: "He has loyalty."
+        bases:
+          "அவனிடம்": "with him; from அவன் (avaṉ), he"
+          "விசுவாசம்": "loyalty"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "விசுவாசம் முக்கியம்.":
+        native: "Loyalty is important."
+        bases:
+          "விசுவாசம்": "loyalty"
+          "முக்கியம்": "important"
+  "ta-8295":
+    native: "to give way; to yield"
+    notes:
+      n1: "To let go of your own wish for peace."
+    examples:
+      "நீ விட்டுக்கொடு.":
+        native: "You give way."
+        bases:
+          "விட்டுக்கொடு": "to give way; to yield"
+      "அவள் விட்டுக்கொடுக்கிறாள்.":
+        native: "She gives way."
+        bases:
+          "விட்டுக்கொடுக்கிறாள்": "present, she; from விட்டுக்கொடு (viṭṭukkoṭu), to give way"
+  "ta-8296":
+    native: "to bear; to be patient"
+    notes:
+      n1: "To wait without anger; பொறு (poṟu) alone is also wait, a little."
+    examples:
+      "கொஞ்சம் பொறு.":
+        native: "Wait a little."
+        bases:
+          "பொறு": "to bear; to be patient"
+      "அவன் பொறுக்கிறான்.":
+        native: "He is patient."
+        bases:
+          "பொறுக்கிறான்": "present, he; from பொறு (poṟu), to bear"
+  "ta-8297":
+    native: "to introduce"
+    notes:
+      n1: "Built from அறிமுகம் (aṟimukam), introduction and படுத்து (paṭuttu), to make."
+    examples:
+      "அவனை அறிமுகப்படுத்து.":
+        native: "Introduce him."
+        bases:
+          "அவனை": "him (object); from அவன் (avaṉ), he"
+          "அறிமுகப்படுத்து": "to introduce"
+      "நான் அவளை அறிமுகப்படுத்துகிறேன்.":
+        native: "I introduce her."
+        bases:
+          "அவளை": "her (object); from அவள் (avaḷ), she"
+          "அறிமுகப்படுத்துகிறேன்": "present, I; from அறிமுகப்படுத்து (aṟimukappaṭuttu), to introduce"
+  "ta-8298":
+    native: "argument; heated talk"
+    notes:
+      n1: "Back-and-forth talk in anger; it is milder than a சண்டை (caṇṭai), fight."
+    examples:
+      "அவர்களுக்குள் வாக்குவாதம்.":
+        native: "There is an argument between them."
+        bases:
+          "அவர்களுக்குள்": "among them; between them; from அவர்கள் (avarkaḷ), they"
+          "வாக்குவாதம்": "argument; heated talk"
+      "வாக்குவாதம் வேண்டாம்.":
+        native: "No arguments, please."
+        bases:
+          "வாக்குவாதம்": "argument; heated talk"
+  "ta-8299":
+    native: "to manage; to cope"
+    notes:
+      n1: "To handle a hard thing."
+    examples:
+      "நீ சமாளி.":
+        native: "You manage."
+        bases:
+          "சமாளி": "to manage; to cope"
+      "நான் சமாளிக்கிறேன்.":
+        native: "I manage."
+        bases:
+          "சமாளிக்கிறேன்": "present, I; from சமாளி (camāḷi), to manage"
+  "ta-8300":
+    native: "to console; to pacify"
+    notes:
+      n1: "Built from சமாதானம் (camātāṉam), peace and படுத்து (paṭuttu), to make."
+    examples:
+      "அவளைச் சமாதானப்படுத்து.":
+        native: "Console her."
+        bases:
+          "அவளைச்": "her (object); from அவள் (avaḷ), she"
+          "சமாதானப்படுத்து": "to console; to pacify"
+      "நான் அவனைச் சமாதானப்படுத்துகிறேன்.":
+        native: "I console him."
+        bases:
+          "அவனைச்": "him (object); from அவன் (avaṉ), he"
+          "சமாதானப்படுத்துகிறேன்": "present, I; from சமாதானப்படுத்து (camātāṉappaṭuttu), to console"
+  "ta-8301":
+    native: "to respect; to value"
+    notes:
+      n1: "To think well of a person; the noun மதி (mati) also means mind."
+    examples:
+      "பெரியவரை மதி.":
+        native: "Respect elders."
+        bases:
+          "பெரியவரை": "the elder (object); from பெரியவர் (periyavar), elder"
+          "மதி": "to respect; to value"
+      "அவன் எல்லோரையும் மதிக்கிறான்.":
+        native: "He respects everyone."
+        bases:
+          "எல்லோரையும்": "everyone (object); from எல்லோர் (ellōr), everyone"
+          "மதிக்கிறான்": "present, he; from மதி (mati), to respect"
+  "ta-8302":
+    native: "to understand; to grasp"
+    notes:
+      n1: "Built from புரிந்து (purintu), having understood and கொள் (koḷ), to take: the learner grasps it for himself."
+    examples:
+      "என்னைப் புரிந்துகொள்.":
+        native: "Understand me."
+        bases:
+          "என்னைப்": "me (object); from நான் (nāṉ), I; me"
+          "புரிந்துகொள்": "to understand; to grasp"
+      "அவள் என்னைப் புரிந்துகொள்கிறாள்.":
+        native: "She understands me."
+        bases:
+          "என்னைப்": "me (object); from நான் (nāṉ), I; me"
+          "புரிந்துகொள்கிறாள்": "present, she; from புரிந்துகொள் (purintukoḷ), to understand"
+  "ta-8303":
+    native: "grateful; thankful"
+    notes:
+      n1: "It stands before a noun and does not change: நன்றியுள்ள மனிதன் (naṉṟiyuḷḷa maṉitaṉ), a grateful person."
+    examples:
+      "அவன் நன்றியுள்ள மனிதன்.":
+        native: "He is a grateful man."
+        bases:
+          "நன்றியுள்ள": "grateful; thankful"
+      "நான் நன்றியுள்ளவன்.":
+        native: "I am grateful."
+        bases:
+          "நன்றியுள்ளவன்": "a grateful man; from நன்றியுள்ள (naṉṟiyuḷḷa), grateful"
+  "ta-8304":
+    native: "close; near"
+    notes:
+      n1: "Said of a friend, a place or a time."
+    examples:
+      "அவன் என் நெருக்கமான நண்பன்.":
+        native: "He is my close friend."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "நெருக்கமான": "close; near"
+      "இது நெருக்கமான உறவு.":
+        native: "This is a close relationship."
+        bases:
+          "நெருக்கமான": "close; near"
+  "ta-8305":
+    native: "reliable; trusted"
+    notes:
+      n1: "Said of a person you can trust."
+    examples:
+      "அவன் நம்பிக்கையான நண்பன்.":
+        native: "He is a reliable friend."
+        bases:
+          "நம்பிக்கையான": "reliable; trusted"
+      "அவர் நம்பிக்கையானவர்.":
+        native: "He is a trusted person."
+        bases:
+          "நம்பிக்கையானவர்": "a trusted person; from நம்பிக்கையான (nampikkaiyāṉa), reliable"
+  "ta-8306":
+    native: "generous; liberal"
+    notes:
+      n1: "Said of a person who gives freely."
+    examples:
+      "அவர் தாராளமான மனிதர்.":
+        native: "He is a generous person."
+        bases:
+          "தாராளமான": "generous; liberal"
+          "மனிதர்": "person; human being (polite)"
+      "அவள் தாராளமானவள்.":
+        native: "She is a generous woman."
+        bases:
+          "தாராளமானவள்": "a generous woman; from தாராளமான (tārāḷamāṉa), generous"
+  "ta-8307":
+    native: "gentle; kind"
+    notes:
+      n1: "Said of a voice or a way of speaking."
+    examples:
+      "அவள் கனிவான பெண்.":
+        native: "She is a kind girl."
+        bases:
+          "கனிவான": "gentle; kind"
+      "கனிவான பேச்சு.":
+        native: "Gentle speech."
+        bases:
+          "கனிவான": "gentle; kind"
+  "ta-8308":
+    native: "united; harmonious"
+    notes:
+      n1: "Said of a family or a team that stands together."
+    examples:
+      "இது ஒற்றுமையான குடும்பம்.":
+        native: "This is a united family."
+        bases:
+          "ஒற்றுமையான": "united; harmonious"
+      "அவர்கள் ஒற்றுமையானவர்கள்.":
+        native: "They are united."
+        bases:
+          "ஒற்றுமையானவர்கள்": "united people; from ஒற்றுமையான (oṟṟumaiyāṉa), united"
+  "ta-8309":
+    native: "patient"
+    notes:
+      n1: "Said of a person who does not lose calm."
+    examples:
+      "அவள் பொறுமையான பெண்.":
+        native: "She is a patient girl."
+        bases:
+          "பொறுமையான": "patient"
+      "அவர் பொறுமையானவர்.":
+        native: "He is a patient man."
+        bases:
+          "பொறுமையானவர்": "a patient man; from பொறுமையான (poṟumaiyāṉa), patient"

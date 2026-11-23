@@ -1,0 +1,21 @@
+schema: 1
+id: "ta-en-grammar-purpose"
+kind: "layer"
+core: "ta-grammar-purpose"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "In order to: the purpose"
+description: "Every verb the course teaches as to do, in order to do and for the sake of doing, spoken forms before written ones. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "to": "in order to do"
+    "sake": "for the sake of doing"
+rules:
+  "ta-rule-purpose":
+    name: "In order to: -துக்கு (-tukku) and -தற்கு (-taṟku)"
+    explanation: "To say what something is for, turn the verb into a noun and put it in the dative: {1}, to come, gives {2} in speech and {3} in writing, in order to come. Speech takes the present stem and -துக்கு (-tukku); writing takes the future stem and -தற்கு (-taṟku). With a verb of going the plain infinitive also says the purpose: {4}, I go to eat, as the infinitive is taught earlier."
+  "ta-rule-purpose-sake":
+    name: "For the sake of: -துக்காக (-tukkāka)"
+    explanation: "Add -ஆக (-āka) after the dative to say for the sake of or because of the aim: {1}, to come, gives {2} in speech and {3} in writing. It gives the reason behind a plan, where {4} only gives the plain purpose."

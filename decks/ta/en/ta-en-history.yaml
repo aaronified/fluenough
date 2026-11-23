@@ -1,0 +1,729 @@
+schema: 1
+id: "ta-en-history"
+kind: "layer"
+core: "ta-history"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "History: kings, forts, wars and heritage"
+description: "History and heritage: kings and queens, forts and palaces, wars and weapons, inscriptions and coins, and the freedom struggle, with the verbs of ruling and fighting. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-8110":
+    native: "king; raja"
+    notes:
+      n1: "The everyday word for a king; அரசர் (aracar), king is the more formal word."
+    examples:
+      "அவர் ராஜா.":
+        native: "He is a king."
+        bases:
+          "ராஜா": "king; raja"
+      "ராஜா எங்கே இருக்கிறார்?":
+        native: "Where is the king?"
+        bases:
+          "ராஜா": "king; raja"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-8111":
+    native: "queen"
+    notes:
+      n1: "The wife of a king, or a woman who rules."
+    examples:
+      "அவள் ராணி.":
+        native: "She is a queen."
+        bases:
+          "ராணி": "queen"
+      "ராணி அரண்மனையில் இருக்கிறாள்.":
+        native: "The queen is in the palace."
+        bases:
+          "ராணி": "queen"
+          "அரண்மனையில்": "in the palace; from அரண்மனை (araṇmaṉai), palace"
+          "இருக்கிறாள்": "is; from இரு (iru), to be"
+  "ta-8112":
+    native: "king; ruler"
+    notes:
+      n1: "The formal word for a ruler; the woman is அரசி (araci), queen."
+    examples:
+      "அரசர் நல்லவர்.":
+        native: "The king is a good man."
+        bases:
+          "அரசர்": "king; ruler"
+          "நல்லவர்": "good man (polite); from நல்ல (nalla), good"
+      "இவர் அரசர்.":
+        native: "This is a king."
+        bases:
+          "அரசர்": "king; ruler"
+  "ta-8113":
+    native: "queen; woman ruler"
+    notes:
+      n1: "The pair of அரசர் (aracar), king."
+    examples:
+      "அரசி இங்கே இருக்கிறாள்.":
+        native: "The queen is here."
+        bases:
+          "அரசி": "queen; woman ruler"
+          "இருக்கிறாள்": "is; from இரு (iru), to be"
+      "அவள் அரசி.":
+        native: "She is a queen."
+        bases:
+          "அரசி": "queen; woman ruler"
+  "ta-8114":
+    native: "fort; fortress"
+    notes:
+      n1: "A fort with strong walls."
+    examples:
+      "இது பழைய கோட்டை.":
+        native: "This is an old fort."
+        bases:
+          "கோட்டை": "fort; fortress"
+      "கோட்டை பெரியது.":
+        native: "The fort is big."
+        bases:
+          "கோட்டை": "fort; fortress"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8115":
+    native: "palace"
+    notes:
+      n1: "The home of a king."
+    examples:
+      "இது பெரிய அரண்மனை.":
+        native: "This is a big palace."
+        bases:
+          "அரண்மனை": "palace"
+      "அரண்மனை எங்கே இருக்கிறது?":
+        native: "Where is the palace?"
+        bases:
+          "அரண்மனை": "palace"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8116":
+    native: "war; battle"
+    notes:
+      n1: "A war between kings or countries; it is a short word with a final ர் (r)."
+    examples:
+      "போர் பெரியது.":
+        native: "The war is big."
+        bases:
+          "போர்": "war; battle"
+          "பெரியது": "big; from பெரிய (periya), big"
+      "போரில் வீரர்கள் இருக்கிறார்கள்.":
+        native: "There are soldiers in the war."
+        bases:
+          "போரில்": "in the war; from போர் (pōr), war"
+          "வீரர்கள்": "soldiers; players; from வீரர் (vīrar), soldier; player"
+          "இருக்கிறார்கள்": "are; from இரு (iru), to be"
+  "ta-8117":
+    native: "commander; general"
+    notes:
+      n1: "The head of an army."
+    examples:
+      "அவர் தளபதி.":
+        native: "He is a commander."
+        bases:
+          "தளபதி": "commander; general"
+      "தளபதி இங்கே இருக்கிறார்.":
+        native: "The commander is here."
+        bases:
+          "தளபதி": "commander; general"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-8118":
+    native: "empire"
+    notes:
+      n1: "Built from பெரு (peru), big and அரசு (aracu), state."
+    examples:
+      "இது பெரிய பேரரசு.":
+        native: "This is a big empire."
+        bases:
+          "பேரரசு": "empire"
+      "பேரரசு பெரியது.":
+        native: "The empire is big."
+        bases:
+          "பேரரசு": "empire"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8119":
+    native: "government; state; kingdom"
+    notes:
+      n1: "In the past a kingdom; today the government."
+    examples:
+      "அரசு உதவி செய்கிறது.":
+        native: "The government helps."
+        bases:
+          "அரசு": "government; state; kingdom"
+          "செய்கிறது": "does; from செய் (cey), to do"
+      "அரசு அலுவலகம் எங்கே?":
+        native: "Where is the government office?"
+        bases:
+          "அரசு": "government; state; kingdom"
+  "ta-8120":
+    native: "dynasty; lineage"
+    notes:
+      n1: "A line of rulers or a family line."
+    examples:
+      "இது அரச வம்சம்.":
+        native: "This is a royal dynasty."
+        bases:
+          "அரச": "royal; from அரசு (aracu), state; kingdom"
+          "வம்சம்": "dynasty; lineage"
+      "அவன் வம்சம் பெரியது.":
+        native: "His lineage is big."
+        bases:
+          "வம்சம்": "dynasty; lineage"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8121":
+    native: "century"
+    notes:
+      n1: "Built from நூறு (nūṟu), hundred and ஆண்டு (āṇṭu), year."
+    examples:
+      "இது பழைய நூற்றாண்டு.":
+        native: "This is an old century."
+        bases:
+          "நூற்றாண்டு": "century"
+      "ஒரு நூற்றாண்டு நூறு ஆண்டு.":
+        native: "One century is a hundred years."
+        bases:
+          "நூற்றாண்டு": "century"
+  "ta-8122":
+    native: "stone inscription"
+    notes:
+      n1: "Built from கல் (kal), stone and வெட்டு (veṭṭu), cut; writing cut on a stone."
+    examples:
+      "கோயிலில் கல்வெட்டு இருக்கிறது.":
+        native: "There is a stone inscription in the temple."
+        bases:
+          "கோயிலில்": "in the temple; from கோயில் (kōyil), temple"
+          "கல்வெட்டு": "stone inscription"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இது பழைய கல்வெட்டு.":
+        native: "This is an old stone inscription."
+        bases:
+          "கல்வெட்டு": "stone inscription"
+  "ta-8123":
+    native: "palm-leaf manuscript"
+    notes:
+      n1: "Built from ஓலை (ōlai), palm leaf and சுவடி (cuvaṭi), book."
+    examples:
+      "இது பழைய ஓலைச்சுவடி.":
+        native: "This is an old palm-leaf manuscript."
+        bases:
+          "ஓலைச்சுவடி": "palm-leaf manuscript"
+      "அருங்காட்சியகத்தில் ஓலைச்சுவடி இருக்கிறது.":
+        native: "There is a palm-leaf manuscript in the museum."
+        bases:
+          "அருங்காட்சியகத்தில்": "in the museum; from அருங்காட்சியகம் (aruṅkāṭciyakam), museum"
+          "ஓலைச்சுவடி": "palm-leaf manuscript"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8124":
+    native: "coin; honesty"
+    notes:
+      n1: "A metal coin; in speech நாணயம் (nāṇayam) also means a person's honesty."
+    examples:
+      "இது பழைய நாணயம்.":
+        native: "This is an old coin."
+        bases:
+          "நாணயம்": "coin; honesty"
+      "என்னிடம் நாணயம் இருக்கிறது.":
+        native: "I have a coin."
+        bases:
+          "என்னிடம்": "with me; from நான் (nāṉ), I; me"
+          "நாணயம்": "coin; honesty"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8125":
+    native: "archaeology"
+    notes:
+      n1: "The study of old remains; it is the word used on a department's name."
+    examples:
+      "எனக்குத் தொல்லியல் பிடிக்கும்.":
+        native: "I like archaeology."
+        bases:
+          "எனக்குத்": "to me; for me; from நான் (nāṉ), I; me"
+          "தொல்லியல்": "archaeology"
+      "தொல்லியல் முக்கியம்.":
+        native: "Archaeology is important."
+        bases:
+          "தொல்லியல்": "archaeology"
+          "முக்கியம்": "important"
+  "ta-8126":
+    native: "ancient times; old days"
+    notes:
+      n1: "Built from பழைய (paḻaiya), old and காலம் (kālam), time."
+    examples:
+      "பழங்காலத்தில் ராஜா இருந்தார்.":
+        native: "There was a king in ancient times."
+        bases:
+          "பழங்காலத்தில்": "in ancient times; from பழங்காலம் (paḻaṅkālam), ancient times"
+          "இருந்தார்": "he was; from இரு (iru), to be"
+      "பழங்காலம் அருமை.":
+        native: "The old days are wonderful."
+        bases:
+          "பழங்காலம்": "ancient times; old days"
+          "அருமை": "wonderful; excellent"
+  "ta-8127":
+    native: "freedom; independence"
+    notes:
+      n1: "The freedom of a person or a country."
+    examples:
+      "சுதந்திரம் முக்கியம்.":
+        native: "Freedom is important."
+        bases:
+          "சுதந்திரம்": "freedom; independence"
+          "முக்கியம்": "important"
+      "எனக்குச் சுதந்திரம் பிடிக்கும்.":
+        native: "I like freedom."
+        bases:
+          "எனக்குச்": "to me; from நான் (nāṉ), I"
+          "சுதந்திரம்": "freedom; independence"
+  "ta-8128":
+    native: "struggle; protest"
+    notes:
+      n1: "A long effort against something; also a street protest."
+    examples:
+      "இது பெரிய போராட்டம்.":
+        native: "This is a big struggle."
+        bases:
+          "போராட்டம்": "struggle; protest"
+      "போராட்டம் இன்று நடக்கிறது.":
+        native: "The protest happens today."
+        bases:
+          "போராட்டம்": "struggle; protest"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+  "ta-8129":
+    native: "sacrifice"
+    notes:
+      n1: "Giving up something dear for others."
+    examples:
+      "இது பெரிய தியாகம்.":
+        native: "This is a big sacrifice."
+        bases:
+          "தியாகம்": "sacrifice"
+      "அம்மா தியாகம் செய்கிறாள்.":
+        native: "Mother makes a sacrifice."
+        bases:
+          "தியாகம்": "sacrifice"
+          "செய்கிறாள்": "she does; from செய் (cey), to do"
+  "ta-8130":
+    native: "rule; reign"
+    notes:
+      n1: "The time or the way a king or a government rules."
+    examples:
+      "இது அரசர் ஆட்சி.":
+        native: "This is the king's rule."
+        bases:
+          "ஆட்சி": "rule; reign"
+      "ஆட்சி நல்லது.":
+        native: "The rule is good."
+        bases:
+          "ஆட்சி": "rule; reign"
+  "ta-8131":
+    native: "weapon"
+    notes:
+      n1: "Anything used to fight."
+    examples:
+      "இது ஆயுதம்.":
+        native: "This is a weapon."
+        bases:
+          "ஆயுதம்": "weapon"
+      "ஆயுதம் ஆபத்தானது.":
+        native: "A weapon is dangerous."
+        bases:
+          "ஆயுதம்": "weapon"
+          "ஆபத்தானது": "is dangerous; from ஆபத்தான (āpattāṉa), dangerous"
+  "ta-8132":
+    native: "sword"
+    notes:
+      n1: "A long blade; a short word with a final ள் (ḷ)."
+    examples:
+      "இது பழைய வாள்.":
+        native: "This is an old sword."
+        bases:
+          "வாள்": "sword"
+      "வீரன் வாள் எடுக்கிறான்.":
+        native: "The soldier takes a sword."
+        bases:
+          "வீரன்": "soldier; warrior (man)"
+          "வாள்": "sword"
+          "எடுக்கிறான்": "he takes; from எடு (eṭu), to take"
+  "ta-8133":
+    native: "shield"
+    notes:
+      n1: "A shield held against a sword."
+    examples:
+      "இது கேடயம்.":
+        native: "This is a shield."
+        bases:
+          "கேடயம்": "shield"
+      "அருங்காட்சியகத்தில் கேடயம் இருக்கிறது.":
+        native: "There is a shield in the museum."
+        bases:
+          "அருங்காட்சியகத்தில்": "in the museum; from அருங்காட்சியகம் (aruṅkāṭciyakam), museum"
+          "கேடயம்": "shield"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8134":
+    native: "monument; memorial"
+    notes:
+      n1: "Built from நினைவு (niṉaivu), memory and சின்னம் (ciṉṉam), sign."
+    examples:
+      "இது பழைய நினைவுச்சின்னம்.":
+        native: "This is an old monument."
+        bases:
+          "நினைவுச்சின்னம்": "monument; memorial"
+      "நினைவுச்சின்னம் எங்கே இருக்கிறது?":
+        native: "Where is the monument?"
+        bases:
+          "நினைவுச்சின்னம்": "monument; memorial"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8135":
+    native: "tower; temple gateway tower"
+    notes:
+      n1: "The tall tower over a temple gate."
+    examples:
+      "கோயிலில் பெரிய கோபுரம் இருக்கிறது.":
+        native: "There is a big tower in the temple."
+        bases:
+          "கோயிலில்": "in the temple; from கோயில் (kōyil), temple"
+          "கோபுரம்": "tower; temple gateway tower"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "கோபுரம் உயரமானது.":
+        native: "The tower is tall."
+        bases:
+          "கோபுரம்": "tower; temple gateway tower"
+          "உயரமானது": "is tall; from உயரமான (uyaramāṉa), tall"
+  "ta-8136":
+    native: "civilisation; manners"
+    notes:
+      n1: "A people's way of life; in speech it also means being modern or polite."
+    examples:
+      "இது பழைய நாகரிகம்.":
+        native: "This is an old civilisation."
+        bases:
+          "நாகரிகம்": "civilisation; manners"
+      "அவன் நாகரிகம் நல்லது.":
+        native: "His manners are good."
+        bases:
+          "நாகரிகம்": "civilisation; manners"
+  "ta-8137":
+    native: "trade; business"
+    notes:
+      n1: "Buying and selling over a long way."
+    examples:
+      "வணிகம் நன்றாக நடக்கிறது.":
+        native: "The trade goes well."
+        bases:
+          "வணிகம்": "trade; business"
+          "நன்றாக": "well; nicely; from நன்று (naṉṟu), good"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+      "அவன் வணிகம் செய்கிறான்.":
+        native: "He does business."
+        bases:
+          "வணிகம்": "trade; business"
+          "செய்கிறான்": "is doing; from செய் (cey), to do; to make"
+  "ta-8138":
+    native: "merchant; trader"
+    notes:
+      n1: "The person who does வணிகம் (vaṇikam), trade."
+    examples:
+      "அவர் வணிகர்.":
+        native: "He is a merchant."
+        bases:
+          "வணிகர்": "merchant; trader"
+      "வணிகர் கடையில் இருக்கிறார்.":
+        native: "The merchant is in the shop."
+        bases:
+          "வணிகர்": "merchant; trader"
+          "கடையில்": "at the shop; from கடை (kaṭai), shop"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-8139":
+    native: "navy"
+    notes:
+      n1: "Built from கடல் (kaṭal), sea and படை (paṭai), army."
+    examples:
+      "இது கடற்படை.":
+        native: "This is the navy."
+        bases:
+          "கடற்படை": "navy"
+      "அவர் கடற்படையில் இருக்கிறார்.":
+        native: "He is in the navy."
+        bases:
+          "கடற்படையில்": "in the navy; from கடற்படை (kaṭaṟpaṭai), navy"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-8140":
+    native: "year"
+    notes:
+      n1: "A year; it is a written word, and in speech வருடம் (varuṭam), year is also common."
+    examples:
+      "இது புதிய ஆண்டு.":
+        native: "This is a new year."
+        bases:
+          "ஆண்டு": "year"
+      "ஒரு ஆண்டு பன்னிரண்டு மாதம்.":
+        native: "One year is twelve months."
+        bases:
+          "ஆண்டு": "year"
+  "ta-8141":
+    native: "royal court"
+    notes:
+      n1: "Built from அரசு (aracu), state and அவை (avai), assembly."
+    examples:
+      "அரசவையில் அமைச்சர் இருக்கிறார்.":
+        native: "There is a minister in the royal court."
+        bases:
+          "அரசவையில்": "in the royal court; from அரசவை (aracavai), royal court"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+      "அரசவை பெரியது.":
+        native: "The royal court is big."
+        bases:
+          "அரசவை": "royal court"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8142":
+    native: "minister"
+    notes:
+      n1: "A king's adviser in the past and a government minister today."
+    examples:
+      "அவர் அமைச்சர்.":
+        native: "He is a minister."
+        bases:
+          "அமைச்சர்": "minister"
+      "அமைச்சர் இங்கே இருக்கிறார்.":
+        native: "The minister is here."
+        bases:
+          "அமைச்சர்": "minister"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-8143":
+    native: "poet-scholar; learned poet"
+    notes:
+      n1: "A man learned in Tamil poetry; a title of respect."
+    examples:
+      "அவர் புலவர்.":
+        native: "He is a poet-scholar."
+        bases:
+          "புலவர்": "poet-scholar; learned poet"
+      "புலவர் பாட்டு எழுதுகிறார்.":
+        native: "The poet-scholar writes a song."
+        bases:
+          "புலவர்": "poet-scholar; learned poet"
+          "எழுதுகிறார்": "he writes; from எழுது (eḻutu), to write"
+  "ta-8144":
+    native: "ancestors; forefathers"
+    notes:
+      n1: "It is already plural, like மக்கள் (makkaḷ), people; the verb takes the plural -ஆர்கள் (-ārkaḷ)."
+    examples:
+      "முன்னோர் இங்கே இருந்தார்கள்.":
+        native: "The ancestors were here."
+        bases:
+          "முன்னோர்": "ancestors; forefathers"
+          "இருந்தார்கள்": "they were; from இரு (iru), to be"
+      "எங்கள் முன்னோர் கிராமத்தில் இருந்தார்கள்.":
+        native: "Our ancestors were in the village."
+        bases:
+          "எங்கள்": "our; from நாங்கள் (nāṅkaḷ), we"
+          "முன்னோர்": "ancestors; forefathers"
+          "கிராமத்தில்": "in a village; from கிராமம் (kirāmam), village"
+          "இருந்தார்கள்": "they were; from இரு (iru), to be"
+  "ta-8145":
+    native: "proof; evidence; source"
+    notes:
+      n1: "Something that backs a claim."
+    examples:
+      "இது ஆதாரம்.":
+        native: "This is proof."
+        bases:
+          "ஆதாரம்": "proof; evidence; source"
+      "ஆதாரம் எங்கே?":
+        native: "Where is the proof?"
+        bases:
+          "ஆதாரம்": "proof; evidence; source"
+  "ta-8146":
+    native: "symbol; sign; emblem"
+    notes:
+      n1: "A mark that stands for something; also a badge."
+    examples:
+      "இது அரசு சின்னம்.":
+        native: "This is the state emblem."
+        bases:
+          "சின்னம்": "symbol; sign; emblem"
+      "சின்னம் எங்கே?":
+        native: "Where is the emblem?"
+        bases:
+          "சின்னம்": "symbol; sign; emblem"
+  "ta-8147":
+    native: "army; military"
+    notes:
+      n1: "The country's armed forces; the word படை (paṭai), army is also used."
+    examples:
+      "ராணுவம் பெரியது.":
+        native: "The army is big."
+        bases:
+          "ராணுவம்": "army; military"
+          "பெரியது": "big; from பெரிய (periya), big"
+      "அவர் ராணுவத்தில் இருக்கிறார்.":
+        native: "He is in the army."
+        bases:
+          "ராணுவத்தில்": "in the army; from ராணுவம் (rāṇuvam), army"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-8148":
+    native: "history; story of the past"
+    notes:
+      n1: "A written word, close to வரலாறு (varalāṟu), history, a word taught earlier."
+    examples:
+      "இது நல்ல சரித்திரம்.":
+        native: "This is a good history."
+        bases:
+          "சரித்திரம்": "history; story of the past"
+      "சரித்திரம் முக்கியம்.":
+        native: "History is important."
+        bases:
+          "சரித்திரம்": "history; story of the past"
+          "முக்கியம்": "important"
+  "ta-8149":
+    native: "to rule; to govern"
+    notes:
+      n1: "Said of a king ruling a land; the noun ஆள் (āḷ) also means a person."
+    examples:
+      "நாட்டை ஆள்.":
+        native: "Rule the country."
+        bases:
+          "நாட்டை": "the country (object); from நாடு (nāṭu), country"
+          "ஆள்": "to rule; to govern"
+      "ராஜா நாட்டை ஆளுகிறார்.":
+        native: "The king rules the country."
+        bases:
+          "நாட்டை": "the country (object); from நாடு (nāṭu), country"
+          "ஆளுகிறார்": "present, he or she (polite); from ஆள் (āḷ), to rule"
+  "ta-8150":
+    native: "to fight a war; to battle"
+    notes:
+      n1: "Built from போர் (pōr), war and இடு (iṭu), to put."
+    examples:
+      "போரிடு.":
+        native: "Fight the war."
+        bases:
+          "போரிடு": "to fight a war; to battle"
+      "வீரர்கள் போரிடுகிறார்கள்.":
+        native: "The soldiers fight a war."
+        bases:
+          "வீரர்கள்": "soldiers; players; from வீரர் (vīrar), soldier; player"
+          "போரிடுகிறார்கள்": "present, they; from போரிடு (pōriṭu), to fight a war"
+  "ta-8151":
+    native: "to defeat"
+    notes:
+      n1: "Built from தோற்று (tōṟṟu), to lose and அடி (aṭi), to strike; it takes an object."
+    examples:
+      "அவனைத் தோற்கடி.":
+        native: "Defeat him."
+        bases:
+          "அவனைத்": "him (object); from அவன் (avaṉ), he"
+          "தோற்கடி": "to defeat"
+      "அவர்கள் அவர்களைத் தோற்கடிக்கிறார்கள்.":
+        native: "They defeat them."
+        bases:
+          "அவர்களைத்": "them (object); from அவர்கள் (avarkaḷ), they"
+          "தோற்கடிக்கிறார்கள்": "present, they; from தோற்கடி (tōṟkaṭi), to defeat"
+  "ta-8152":
+    native: "to destroy; to be destroyed"
+    notes:
+      n1: "A war destroys; it also means to rub out."
+    examples:
+      "கோட்டை அழிகிறது.":
+        native: "The fort is destroyed."
+        bases:
+          "அழிகிறது": "present, it; from அழி (aḻi), to destroy"
+      "அவர்கள் கோட்டையை அழிக்கிறார்கள்.":
+        native: "They destroy the fort."
+        bases:
+          "கோட்டையை": "the fort (object); from கோட்டை (kōṭṭai), fort"
+          "அழிக்கிறார்கள்": "present, they; from அழி (aḻi), to destroy"
+  "ta-8153":
+    native: "to attack; to strike"
+    notes:
+      n1: "To attack a person or a place."
+    examples:
+      "கோட்டையைத் தாக்கு.":
+        native: "Attack the fort."
+        bases:
+          "கோட்டையைத்": "the fort (object); from கோட்டை (kōṭṭai), fort"
+          "தாக்கு": "to attack; to strike"
+      "அவர்கள் கோட்டையைத் தாக்குகிறார்கள்.":
+        native: "They attack the fort."
+        bases:
+          "கோட்டையைத்": "the fort (object); from கோட்டை (kōṭṭai), fort"
+          "தாக்குகிறார்கள்": "present, they; from தாக்கு (tākku), to attack"
+  "ta-8154":
+    native: "to besiege; to surround"
+    notes:
+      n1: "Built from முற்றுகை (muṟṟukai), siege and இடு (iṭu), to put: to lay siege."
+    examples:
+      "கோட்டையை முற்றுகையிடு.":
+        native: "Besiege the fort."
+        bases:
+          "கோட்டையை": "the fort (object); from கோட்டை (kōṭṭai), fort"
+          "முற்றுகையிடு": "to besiege; to surround"
+      "வீரர்கள் கோட்டையை முற்றுகையிடுகிறார்கள்.":
+        native: "The soldiers besiege the fort."
+        bases:
+          "வீரர்கள்": "soldiers; players; from வீரர் (vīrar), soldier; player"
+          "கோட்டையை": "the fort (object); from கோட்டை (kōṭṭai), fort"
+          "முற்றுகையிடுகிறார்கள்": "present, they; from முற்றுகையிடு (muṟṟukaiyiṭu), to besiege"
+  "ta-8155":
+    native: "to invade; to occupy"
+    notes:
+      n1: "To take over a place by force; also to occupy land unlawfully."
+    examples:
+      "நாட்டை ஆக்கிரமி.":
+        native: "Invade the country."
+        bases:
+          "நாட்டை": "the country (object); from நாடு (nāṭu), country"
+          "ஆக்கிரமி": "to invade; to occupy"
+      "அவர்கள் நாட்டை ஆக்கிரமிக்கிறார்கள்.":
+        native: "They invade the country."
+        bases:
+          "நாட்டை": "the country (object); from நாடு (nāṭu), country"
+          "ஆக்கிரமிக்கிறார்கள்": "present, they; from ஆக்கிரமி (ākkirami), to invade"
+  "ta-8156":
+    native: "historical"
+    notes:
+      n1: "It stands before a noun and does not change: வரலாற்று இடம் (varalāṟṟu iṭam), historical place."
+    examples:
+      "இது வரலாற்று இடம்.":
+        native: "This is a historical place."
+        bases:
+          "வரலாற்று": "historical"
+      "வரலாற்றுப் படம் பார்.":
+        native: "Watch a historical film."
+        bases:
+          "வரலாற்றுப்": "historical (before a word starting with p); from வரலாற்று (varalāṟṟu), historical"
+  "ta-8157":
+    native: "ancient; very old"
+    notes:
+      n1: "Said of a thing that is very old, such as a temple; for a person's age use வயதான (vayatāṉa), aged."
+    examples:
+      "இது பழமையான கோயில்.":
+        native: "This is an ancient temple."
+        bases:
+          "பழமையான": "ancient; very old"
+      "இது பழமையான கோட்டை.":
+        native: "This is an ancient fort."
+        bases:
+          "பழமையான": "ancient; very old"
+  "ta-8158":
+    native: "ancient; of old"
+    notes:
+      n1: "It stands before a noun and does not change: பண்டைய காலம் (paṇṭaiya kālam), ancient time."
+    examples:
+      "இது பண்டைய காலம்.":
+        native: "This is ancient time."
+        bases:
+          "பண்டைய": "ancient; of old"
+      "இது பண்டைய நாகரிகம்.":
+        native: "This is an ancient civilisation."
+        bases:
+          "பண்டைய": "ancient; of old"
+  "ta-8159":
+    native: "brave; bold"
+    notes:
+      n1: "Said of a person who is not afraid."
+    examples:
+      "அவன் துணிச்சலான வீரன்.":
+        native: "He is a brave soldier."
+        bases:
+          "துணிச்சலான": "brave; bold"
+          "வீரன்": "soldier; warrior (man)"
+      "ராணி துணிச்சலானவள்.":
+        native: "The queen is brave."
+        bases:
+          "துணிச்சலானவள்": "a brave woman; from துணிச்சலான (tuṇiccalāṉa), brave"

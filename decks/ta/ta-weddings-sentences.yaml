@@ -1,0 +1,108 @@
+schema: 1
+id: "ta-weddings-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-9530"
+    target: "நான் எல்லோருக்கும் அழைப்பிதழ் கொடுக்கிறேன்."
+    reading: "nāṉ ellōrukkum aḻaippitaḻ koṭukkiṟēṉ."
+    ipa: "naːn elloːɾukkum aɻaippit̪aɻ koʈukkireːn"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "எல்லோருக்கும்", base: "எல்லோர்", reading: "ellōr" }, { word: "அழைப்பிதழ்", ref: "ta-8168" }, { word: "கொடுக்கிறேன்", base: "கொடு", reading: "koṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-8195", kind: "word" }
+      - { id: "w2", ref: "ta-8169", kind: "word" }
+      - { id: "w3", ref: "ta-8192", kind: "word" }
+  - id: "ta-9531"
+    target: "மணமகள் புதிய பட்டுப்புடவை அணிகிறாள்."
+    reading: "maṇamakaḷ putiya paṭṭuppuṭavai aṇikiṟāḷ."
+    ipa: "maɳamakaɭ put̪ija paʈʈuppuʈaʋai aɳikiraːɭ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "மணமகள்", ref: "ta-8163" }, { word: "புதிய", ref: "ta-0171" }, { word: "பட்டுப்புடவை", base: "பட்டுப்புடவை", reading: "paṭṭuppuṭavai" }, { word: "அணிகிறாள்", base: "அணி", reading: "aṇi" }]
+    confusables:
+      - { id: "w1", ref: "ta-8166", kind: "word" }
+      - { id: "w2", ref: "ta-1993", kind: "word" }
+      - { id: "w3", ref: "ta-8186", kind: "word" }
+  - id: "ta-9532"
+    target: "மாப்பிள்ளை மண்டபத்துக்கு வருகிறார்."
+    reading: "māppiḷḷai maṇṭapattukku varukiṟār."
+    ipa: "maːppiɭɭai maɳʈapat̪t̪ukku ʋaɾukiraːɾ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "மாப்பிள்ளை", ref: "ta-8164" }, { word: "மண்டபத்துக்கு", base: "மண்டபம்", reading: "maṇṭapam" }, { word: "வருகிறார்", base: "வா", reading: "vā" }]
+    confusables:
+      - { id: "w1", ref: "ta-8162", kind: "word" }
+      - { id: "w2", ref: "ta-8172", kind: "word" }
+      - { id: "w3", ref: "ta-8182", kind: "word" }
+  - id: "ta-9533"
+    target: "விருந்தினர்கள் வாழையிலையில் சாப்பிடுகிறார்கள்."
+    reading: "viruntiṉarkaḷ vāḻaiyilaiyil cāppiṭukiṟārkaḷ."
+    ipa: "ʋiɾunt̪inaɾkaɭ ʋaːɻaijilaijil saːppiʈukiraːɾkaɭ"
+    pos: "phrase"
+    bases: [{ word: "விருந்தினர்கள்", base: "விருந்தினர்", reading: "viruntiṉar" }, { word: "வாழையிலையில்", base: "வாழையிலை", reading: "vāḻaiyilai" }, { word: "சாப்பிடுகிறார்கள்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-0244", kind: "word" }
+      - { id: "w2", ref: "ta-8190", kind: "word" }
+      - { id: "w3", ref: "ta-8167", kind: "word" }
+  - id: "ta-9534"
+    target: "முகூர்த்தம் காலை ஏழு மணிக்கு."
+    reading: "mukūrttam kālai ēḻu maṇikku."
+    ipa: "mukuːɾt̪t̪am kaːlai eːɻu maɳikku"
+    pos: "phrase"
+    bases: [{ word: "முகூர்த்தம்", ref: "ta-8193" }, { word: "காலை", ref: "ta-0152" }, { word: "ஏழு", ref: "ta-0037" }, { word: "மணிக்கு", base: "மணி", reading: "maṇi" }]
+    confusables:
+      - { id: "w1", ref: "ta-1156", kind: "word" }
+      - { id: "w2", ref: "ta-0155", kind: "word" }
+      - { id: "w3", ref: "ta-8192", kind: "word" }
+  - id: "ta-9535"
+    target: "என் மாமியார் வீடு பக்கத்தில் இருக்கிறது."
+    reading: "eṉ māmiyār vīṭu pakkattil irukkiṟatu."
+    ipa: "en maːmijaːɾ ʋiːʈu pakkat̪t̪il iɾukkirat̪u"
+    pos: "phrase"
+    bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "மாமியார்", ref: "ta-8177" }, { word: "வீடு", ref: "ta-0009" }, { word: "பக்கத்தில்", ref: "ta-0182" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-8178", kind: "word" }
+      - { id: "w2", ref: "ta-8179", kind: "word" }
+      - { id: "w3", ref: "ta-8180", kind: "word" }
+  - id: "ta-9536"
+    target: "அவர்கள் ஜோடியாக மேடையில் நிற்கிறார்கள்."
+    reading: "avarkaḷ jōṭiyāka mēṭaiyil niṟkiṟārkaḷ."
+    ipa: "aʋaɾkaɭ dʒoːʈijaːka meːʈaijil nirkiraːɾkaɭ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "அவர்கள்", ref: "ta-0065" }, { word: "ஜோடியாக", base: "ஜோடி", reading: "jōṭi" }, { word: "மேடையில்", base: "மேடை", reading: "mēṭai" }, { word: "நிற்கிறார்கள்", base: "நில்", reading: "nil" }]
+    confusables:
+      - { id: "w1", ref: "ta-8175", kind: "word" }
+      - { id: "w2", ref: "ta-8162", kind: "word" }
+      - { id: "w3", ref: "ta-8163", kind: "word" }
+  - id: "ta-9537"
+    target: "எல்லோரும் அவர்களை வாழ்த்துகிறார்கள்."
+    reading: "ellōrum avarkaḷai vāḻttukiṟārkaḷ."
+    ipa: "elloːɾum aʋaɾkaɭai ʋaːɻt̪t̪ukiraːɾkaɭ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "எல்லோரும்", ref: "ta-0449" }, { word: "அவர்களை", base: "அவர்கள்", reading: "avarkaḷ" }, { word: "வாழ்த்துகிறார்கள்", base: "வாழ்த்து", reading: "vāḻttu" }]
+    confusables:
+      - { id: "w1", ref: "ta-8170", kind: "word" }
+      - { id: "w2", ref: "ta-8195", kind: "word" }
+      - { id: "w3", ref: "ta-8169", kind: "word" }
+  - id: "ta-9538"
+    target: "அவர்களுக்கு நாளை நிச்சயதார்த்தம்."
+    reading: "avarkaḷukku nāḷai niccayatārttam."
+    ipa: "aʋaɾkaɭukku naːɭai nitʃtʃajat̪aːɾt̪t̪am"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "அவர்களுக்கு", base: "அவர்கள்", reading: "avarkaḷ" }, { word: "நாளை", ref: "ta-0133" }, { word: "நிச்சயதார்த்தம்", ref: "ta-8183" }]
+    confusables:
+      - { id: "w1", ref: "ta-8160", kind: "word" }
+      - { id: "w2", ref: "ta-8184", kind: "word" }
+      - { id: "w3", ref: "ta-8185", kind: "word" }

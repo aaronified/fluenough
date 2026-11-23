@@ -1,0 +1,59 @@
+schema: 1
+id: "ta-grammar-honorifics"
+part: "core"
+kind: "grammar"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["friend", "polite", "nee", "neenkal", "avan", "avar"]
+  entries:
+    - lemma: "வா"
+      key: "vaa"
+      reading: "vā"
+      ipa: "ʋaː"
+      forms: { "friend": "வா", "polite": ["வாங்க", "வாருங்கள்"], "nee": ["வர்ற", "வருகிறாய்"], "neenkal": ["வர்றீங்க", "வருகிறீர்கள்"], "avan": ["வர்றான்", "வருகிறான்"], "avar": ["வர்றார்", "வருகிறார்"] }
+      readings: { "friend": "vā", "polite": ["vāṅka", "vāruṅkaḷ"], "nee": ["varṟa", "varukiṟāy"], "neenkal": ["varṟīṅka", "varukiṟīrkaḷ"], "avan": ["varṟāṉ", "varukiṟāṉ"], "avar": ["varṟār", "varukiṟār"] }
+      ipas: { "friend": "ʋaː", "polite": "ʋaːŋka", "nee": "ʋaɾra", "neenkal": "ʋaɾriːŋka", "avan": "ʋaɾraːn", "avar": "ʋaɾraːɾ" }
+    - lemma: "போ"
+      key: "poo"
+      reading: "pō"
+      ipa: "poː"
+      forms: { "friend": "போ", "polite": ["போங்க", "போங்கள்"], "nee": ["போற", "போகிறாய்"], "neenkal": ["போறீங்க", "போகிறீர்கள்"], "avan": ["போறான்", "போகிறான்"], "avar": ["போறார்", "போகிறார்"] }
+      readings: { "friend": "pō", "polite": ["pōṅka", "pōṅkaḷ"], "nee": ["pōṟa", "pōkiṟāy"], "neenkal": ["pōṟīṅka", "pōkiṟīrkaḷ"], "avan": ["pōṟāṉ", "pōkiṟāṉ"], "avar": ["pōṟār", "pōkiṟār"] }
+      ipas: { "friend": "poː", "polite": "poːŋka", "nee": "poːra", "neenkal": "poːriːŋka", "avan": "poːraːn", "avar": "poːraːɾ" }
+    - lemma: "உட்கார்"
+      key: "utkaar"
+      reading: "uṭkār"
+      ipa: "uʈkaːɾ"
+      forms: { "friend": "உட்கார்", "polite": ["உட்காருங்க", "உட்காருங்கள்"], "nee": "உட்காருகிறாய்", "neenkal": "உட்காருகிறீர்கள்", "avan": "உட்காருகிறான்", "avar": "உட்காருகிறார்" }
+      readings: { "friend": "uṭkār", "polite": ["uṭkāruṅka", "uṭkāruṅkaḷ"], "nee": "uṭkārukiṟāy", "neenkal": "uṭkārukiṟīrkaḷ", "avan": "uṭkārukiṟāṉ", "avar": "uṭkārukiṟār" }
+      ipas: { "friend": "uʈkaːɾ", "polite": "uʈkaːɾuŋka", "nee": "uʈkaːɾukiraːj", "neenkal": "uʈkaːɾukiriːɾkaɭ", "avan": "uʈkaːɾukiraːn", "avar": "uʈkaːɾukiraːɾ" }
+    - lemma: "சாப்பிடு"
+      key: "saappidu"
+      reading: "cāppiṭu"
+      ipa: "saːppiʈu"
+      forms: { "friend": "சாப்பிடு", "polite": ["சாப்பிடுங்க", "சாப்பிடுங்கள்"], "nee": ["சாப்பிடுற", "சாப்பிடுகிறாய்"], "neenkal": ["சாப்பிடுறீங்க", "சாப்பிடுகிறீர்கள்"], "avan": ["சாப்பிடுறான்", "சாப்பிடுகிறான்"], "avar": ["சாப்பிடுறார்", "சாப்பிடுகிறார்"] }
+      readings: { "friend": "cāppiṭu", "polite": ["cāppiṭuṅka", "cāppiṭuṅkaḷ"], "nee": ["cāppiṭuṟa", "cāppiṭukiṟāy"], "neenkal": ["cāppiṭuṟīṅka", "cāppiṭukiṟīrkaḷ"], "avan": ["cāppiṭuṟāṉ", "cāppiṭukiṟāṉ"], "avar": ["cāppiṭuṟār", "cāppiṭukiṟār"] }
+      ipas: { "friend": "saːppiʈu", "polite": "saːppiʈuŋka", "nee": "saːppiʈura", "neenkal": "saːppiʈuriːŋka", "avan": "saːppiʈuraːn", "avar": "saːppiʈuraːɾ" }
+    - lemma: "பேசு"
+      key: "pesu"
+      reading: "pēcu"
+      ipa: "peːsu"
+      forms: { "friend": "பேசு", "polite": ["பேசுங்க", "பேசுங்கள்"], "nee": ["பேசுற", "பேசுகிறாய்"], "neenkal": ["பேசுறீங்க", "பேசுகிறீர்கள்"], "avan": ["பேசுறான்", "பேசுகிறான்"], "avar": ["பேசுறார்", "பேசுகிறார்"] }
+      readings: { "friend": "pēcu", "polite": ["pēcuṅka", "pēcuṅkaḷ"], "nee": ["pēcuṟa", "pēcukiṟāy"], "neenkal": ["pēcuṟīṅka", "pēcukiṟīrkaḷ"], "avan": ["pēcuṟāṉ", "pēcukiṟāṉ"], "avar": ["pēcuṟār", "pēcukiṟār"] }
+      ipas: { "friend": "peːsu", "polite": "peːsuŋka", "nee": "peːsura", "neenkal": "peːsuriːŋka", "avan": "peːsuraːn", "avar": "peːsuraːɾ" }
+    - lemma: "பார்"
+      key: "paar"
+      reading: "pār"
+      ipa: "paːɾ"
+      forms: { "friend": "பார்", "polite": ["பாருங்க", "பாருங்கள்"], "nee": "பார்க்கிறாய்", "neenkal": "பார்க்கிறீர்கள்", "avan": "பார்க்கிறான்", "avar": "பார்க்கிறார்" }
+      readings: { "friend": "pār", "polite": ["pāruṅka", "pāruṅkaḷ"], "nee": "pārkkiṟāy", "neenkal": "pārkkiṟīrkaḷ", "avan": "pārkkiṟāṉ", "avar": "pārkkiṟār" }
+      ipas: { "friend": "paːɾ", "polite": "paːɾuŋka", "nee": "paːɾkkiraːj", "neenkal": "paːɾkkiriːɾkaɭ", "avan": "paːɾkkiraːn", "avar": "paːɾkkiraːɾ" }
+    - lemma: "படி"
+      key: "padi"
+      reading: "paṭi"
+      ipa: "paʈi"
+      forms: { "friend": "படி", "polite": ["படியுங்க", "படியுங்கள்"], "nee": "படிக்கிறாய்", "neenkal": "படிக்கிறீர்கள்", "avan": "படிக்கிறான்", "avar": "படிக்கிறார்" }
+      readings: { "friend": "paṭi", "polite": ["paṭiyuṅka", "paṭiyuṅkaḷ"], "nee": "paṭikkiṟāy", "neenkal": "paṭikkiṟīrkaḷ", "avan": "paṭikkiṟāṉ", "avar": "paṭikkiṟār" }
+      ipas: { "friend": "paʈi", "polite": "paʈijuŋka", "nee": "paʈikkiraːj", "neenkal": "paʈikkiriːɾkaɭ", "avan": "paʈikkiraːn", "avar": "paʈikkiraːɾ" }

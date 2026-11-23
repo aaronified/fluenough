@@ -1,0 +1,106 @@
+schema: 1
+id: "ta-feelings-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-9010"
+    target: "எனக்குக் கோபம் வருகிறது."
+    reading: "eṉakkuk kōpam varukiṟatu."
+    ipa: "enakkuk koːpam ʋaɾukirat̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "எனக்குக்", base: "நான்", reading: "nāṉ" }, { word: "கோபம்", ref: "ta-7062" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+    confusables:
+      - { id: "w1", ref: "ta-7063", kind: "word" }
+      - { id: "w2", ref: "ta-7069", kind: "word" }
+      - { id: "w3", ref: "ta-7075", kind: "word" }
+  - id: "ta-9011"
+    target: "குழந்தைக்கு வெட்கம்."
+    reading: "kuḻantaikku veṭkam."
+    ipa: "kuɻant̪aikku ʋeʈkam"
+    pos: "phrase"
+    bases: [{ word: "குழந்தைக்கு", base: "குழந்தை", reading: "kuḻantai" }, { word: "வெட்கம்", ref: "ta-7071" }]
+    confusables:
+      - { id: "w1", ref: "ta-7070", kind: "word" }
+      - { id: "w2", ref: "ta-7075", kind: "word" }
+  - id: "ta-9012"
+    target: "நான் ஆசைப்படுகிறேன்."
+    reading: "nāṉ ācaippaṭukiṟēṉ."
+    ipa: "naːn aːsaippaʈukireːn"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "ஆசைப்படுகிறேன்", base: "ஆசைப்படு", reading: "ācaippaṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-7107", kind: "word" }
+      - { id: "w2", ref: "ta-7108", kind: "word" }
+      - { id: "w3", ref: "ta-7105", kind: "word" }
+  - id: "ta-9013"
+    target: "அம்மாவுக்குக் கவலை."
+    reading: "ammāvukkuk kavalai."
+    ipa: "ammaːʋukkuk kaʋalai"
+    pos: "phrase"
+    bases: [{ word: "அம்மாவுக்குக்", base: "அம்மா", reading: "ammā" }, { word: "கவலை", ref: "ta-7063" }]
+    confusables:
+      - { id: "w1", ref: "ta-7095", kind: "word" }
+      - { id: "w2", ref: "ta-7082", kind: "word" }
+      - { id: "w3", ref: "ta-7073", kind: "word" }
+  - id: "ta-9014"
+    target: "இது ஆச்சரியம்."
+    reading: "itu āccariyam."
+    ipa: "it̪u aːtʃtʃaɾijam"
+    pos: "phrase"
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "ஆச்சரியம்", ref: "ta-7078" }]
+    confusables:
+      - { id: "w1", ref: "ta-7077", kind: "word" }
+      - { id: "w2", ref: "ta-7076", kind: "word" }
+  - id: "ta-9015"
+    target: "மன்னிப்பு கேள்."
+    reading: "maṉṉippu kēḷ."
+    ipa: "mannippu keːɭ"
+    pos: "phrase"
+    bases: [{ word: "மன்னிப்பு", ref: "ta-7086" }, { word: "கேள்", ref: "ta-0122" }]
+    confusables:
+      - { id: "w1", ref: "ta-7103", kind: "word" }
+      - { id: "w2", ref: "ta-7100", kind: "word" }
+  - id: "ta-9016"
+    target: "நாம் மழையை எதிர்பார்க்கிறோம்."
+    reading: "nām maḻaiyai etirpārkkiṟōm."
+    ipa: "naːm maɻaijai et̪iɾpaːɾkkiroːm"
+    pos: "phrase"
+    bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "மழையை", base: "மழை", reading: "maḻai" }, { word: "எதிர்பார்க்கிறோம்", base: "எதிர்பார்", reading: "etirpār" }]
+    confusables:
+      - { id: "w1", ref: "ta-7106", kind: "word" }
+      - { id: "w2", ref: "ta-7108", kind: "word" }
+  - id: "ta-9017"
+    target: "எனக்கு நம்பிக்கை இருக்கிறது."
+    reading: "eṉakku nampikkai irukkiṟatu."
+    ipa: "enakku nampikkai iɾukkirat̪u"
+    pos: "phrase"
+    bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "நம்பிக்கை", ref: "ta-7064" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-7084", kind: "word" }
+      - { id: "w2", ref: "ta-7085", kind: "word" }
+      - { id: "w3", ref: "ta-7065", kind: "word" }
+  - id: "ta-9018"
+    target: "அவன் மனநிலை சரியில்லை."
+    reading: "avaṉ maṉanilai cariyillai."
+    ipa: "aʋan mananilai saɾijillai"
+    pos: "phrase"
+    bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "மனநிலை", ref: "ta-7090" }, { word: "சரியில்லை", base: "சரி", reading: "cari" }]
+    confusables:
+      - { id: "w1", ref: "ta-7089", kind: "word" }
+      - { id: "w2", ref: "ta-7093", kind: "word" }
+  - id: "ta-9019"
+    target: "உன் ஞாபகம் வருகிறது."
+    reading: "uṉ ñāpakam varukiṟatu."
+    ipa: "un ɲaːpakam ʋaɾukirat̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "உன்", base: "நீ", reading: "nī" }, { word: "ஞாபகம்", ref: "ta-7087" }, { word: "வருகிறது", base: "வா", reading: "vā" }]
+    confusables:
+      - { id: "w1", ref: "ta-7088", kind: "word" }
+      - { id: "w2", ref: "ta-7102", kind: "word" }

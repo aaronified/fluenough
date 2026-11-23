@@ -1,0 +1,850 @@
+schema: 1
+id: "ta-en-agriculture"
+kind: "layer"
+core: "ta-agriculture"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Agriculture: farms, crops and the harvest"
+description: "Farming: crops and grains, fields and tools, sowing, watering and harvesting, farm animals, and selling the produce, with the verbs of ploughing, reaping and grazing. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-7549":
+    native: "agriculture; farming"
+    notes:
+      n1: "Tamil 'does' (செய் (cey)) farming; the person who farms is a விவசாயி (vivacāyi), already in the course."
+    examples:
+      "விவசாயம் முக்கியம்.":
+        native: "Farming is important."
+        bases:
+          "விவசாயம்": "agriculture; farming"
+          "முக்கியம்": "important"
+      "என் அப்பா விவசாயம் செய்கிறார்.":
+        native: "My father does farming."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "விவசாயம்": "agriculture; farming"
+          "செய்கிறார்": "he does; from செய் (cey), to do"
+  "ta-7550":
+    native: "crop; plant (grown)"
+    notes:
+      n1: "The crops growing in a field; a single plant is more often செடி (ceṭi)."
+    examples:
+      "பயிர் பசுமையாக இருக்கிறது.":
+        native: "The crop is green."
+        bases:
+          "பயிர்": "crop; plant (grown)"
+          "பசுமையாக": "green; from பசுமை (pacumai), greenery"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "மழை பயிருக்கு நல்லது.":
+        native: "Rain is good for the crop."
+        bases:
+          "பயிருக்கு": "to the crop; for the crop; from பயிர் (payir), crop; plant (grown)"
+  "ta-7551":
+    native: "paddy; unhusked rice"
+    notes:
+      n1: "The rice plant and the grain before it is husked; after husking it is அரிசி (arici), already in the course."
+    examples:
+      "நெல் வயலில் வளர்கிறது.":
+        native: "Paddy grows in the field."
+        bases:
+          "நெல்": "paddy; unhusked rice"
+          "வயலில்": "in the field; from வயல் (vayal), field (farm)"
+          "வளர்கிறது": "is growing; from வளர் (vaḷar), to grow"
+      "இது நெல்.":
+        native: "This is paddy."
+        bases:
+          "நெல்": "paddy; unhusked rice"
+  "ta-7552":
+    native: "wheat"
+    notes:
+      n1: "Wheat grain; wheat flour is கோதுமை (kōtumai) மாவு (māvu)."
+    examples:
+      "கோதுமை மாவு வேண்டும்.":
+        native: "I need wheat flour."
+        bases:
+          "கோதுமை": "wheat"
+      "இது கோதுமை.":
+        native: "This is wheat."
+        bases:
+          "கோதுமை": "wheat"
+  "ta-7553":
+    native: "cotton"
+    notes:
+      n1: "The cotton plant and the cotton fibre; cloth made of it is பருத்தித் (paruttit) துணி (tuṇi)."
+    examples:
+      "பருத்தி நல்ல பயிர்.":
+        native: "Cotton is a good crop."
+        bases:
+          "பருத்தி": "cotton"
+      "பருத்தித் துணி மென்மை.":
+        native: "Cotton cloth is soft."
+        bases:
+          "பருத்தித்": "cotton (before a noun); from பருத்தி (parutti), cotton"
+          "மென்மை": "soft"
+  "ta-7554":
+    native: "sesame"
+    notes:
+      n1: "Sesame seed and the oil of it, a common cooking oil in Tamil homes."
+    examples:
+      "எள் சிறியது.":
+        native: "Sesame is small."
+        bases:
+          "எள்": "sesame"
+          "சிறியது": "is small; from சிறிய (ciṟiya), small"
+      "எள் எண்ணெய் வேண்டும்.":
+        native: "I need sesame oil."
+        bases:
+          "எள்": "sesame"
+  "ta-7555":
+    native: "groundnut; peanut"
+    notes:
+      n1: "Literally earth nut; நிலம் (nilam) (ground) plus கடலை (kaṭalai) (pulse or nut), written as one word."
+    examples:
+      "நிலக்கடலை நிலத்தில் வளர்கிறது.":
+        native: "Groundnuts grow in the ground."
+        bases:
+          "நிலக்கடலை": "groundnut; peanut"
+          "நிலத்தில்": "in the land; from நிலம் (nilam), land; ground"
+          "வளர்கிறது": "is growing; from வளர் (vaḷar), to grow"
+      "நான் நிலக்கடலை சாப்பிடுகிறேன்.":
+        native: "I eat groundnuts."
+        bases:
+          "நிலக்கடலை": "groundnut; peanut"
+          "சாப்பிடுகிறேன்": "am eating; from சாப்பிடு (cāppiṭu), to eat"
+  "ta-7556":
+    native: "sorghum; maize"
+    notes:
+      n1: "The millet-like grain sorghum, and in some places maize."
+    examples:
+      "சோளம் வளர்கிறது.":
+        native: "The sorghum is growing."
+        bases:
+          "சோளம்": "sorghum; maize"
+          "வளர்கிறது": "is growing; from வளர் (vaḷar), to grow"
+      "இது சோளம்.":
+        native: "This is sorghum."
+        bases:
+          "சோளம்": "sorghum; maize"
+  "ta-7557":
+    native: "pearl millet"
+    notes:
+      n1: "A small grain used for porridge and flour; the word also means a stick."
+    examples:
+      "கம்பு சத்தானது.":
+        native: "Pearl millet is nutritious."
+        bases:
+          "கம்பு": "pearl millet"
+          "சத்தானது": "is nutritious; from சத்தான (cattāṉa), nutritious"
+      "கம்பு கூழ் குடிக்கிறேன்.":
+        native: "I drink pearl millet porridge."
+        bases:
+          "கம்பு": "pearl millet"
+          "கூழ்": "porridge"
+          "குடிக்கிறேன்": "drink; from குடி (kuṭi), to drink"
+  "ta-7558":
+    native: "finger millet"
+    notes:
+      n1: "Finger millet, known in other languages as ragi; used for flour and porridge."
+    examples:
+      "கேழ்வரகு சத்தானது.":
+        native: "Finger millet is nutritious."
+        bases:
+          "கேழ்வரகு": "finger millet"
+          "சத்தானது": "is nutritious; from சத்தான (cattāṉa), nutritious"
+      "கேழ்வரகு களி சாப்பிடுகிறேன்.":
+        native: "I eat finger-millet dumpling."
+        bases:
+          "கேழ்வரகு": "finger millet"
+          "களி": "dumpling (a thick millet dish)"
+          "சாப்பிடுகிறேன்": "am eating; from சாப்பிடு (cāppiṭu), to eat"
+  "ta-7559":
+    native: "ploughing; farming"
+    notes:
+      n1: "The noun of உழு (uḻu) (to plough); it also names the farmer's work as a whole."
+    examples:
+      "உழவு தொடங்குகிறது.":
+        native: "The ploughing is starting."
+        bases:
+          "உழவு": "ploughing; farming"
+          "தொடங்குகிறது": "starts; from தொடங்கு (toṭaṅku), to start"
+      "உழவு நல்லது.":
+        native: "Ploughing is good."
+        bases:
+          "உழவு": "ploughing; farming"
+  "ta-7560":
+    native: "farmer; ploughman"
+    notes:
+      n1: "A literary word for a farmer; in speech people say விவசாயி (vivacāyi), already in the course."
+    examples:
+      "உழவன் வயலில் இருக்கிறான்.":
+        native: "The farmer is in the field."
+        bases:
+          "உழவன்": "farmer; ploughman"
+          "வயலில்": "in the field; from வயல் (vayal), field (farm)"
+          "இருக்கிறான்": "is; from இரு (iru), to be"
+      "அவன் உழவன்.":
+        native: "He is a farmer."
+        bases:
+          "அவன்": "his"
+          "உழவன்": "farmer; ploughman"
+  "ta-7561":
+    native: "plough"
+    notes:
+      n1: "The traditional plough drawn by oxen; a modern one is a டிராக்டர் (ṭirākṭar)."
+    examples:
+      "ஏர் எங்கே?":
+        native: "Where is the plough?"
+        bases:
+          "ஏர்": "plough"
+      "உழவன் ஏர் ஓட்டுகிறான்.":
+        native: "The farmer drives the plough."
+        bases:
+          "ஏர்": "plough"
+          "ஓட்டுகிறான்": "is driving (he); from ஓட்டு (ōṭṭu), to drive; to ride"
+  "ta-7562":
+    native: "plough (blade)"
+    notes:
+      n1: "The plough itself, close in meaning to ஏர் (ēr); the two words are often used together."
+    examples:
+      "கலப்பை பழையது.":
+        native: "The plough is old."
+        bases:
+          "கலப்பை": "plough (blade)"
+          "பழையது": "is old; from பழைய (paḻaiya), old"
+      "கலப்பை வயலில் இருக்கிறது.":
+        native: "The plough is in the field."
+        bases:
+          "கலப்பை": "plough (blade)"
+          "வயலில்": "in the field; from வயல் (vayal), field (farm)"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7563":
+    native: "tractor"
+    notes:
+      n1: "A loanword from English, said as it is."
+    examples:
+      "டிராக்டர் வருகிறது.":
+        native: "The tractor is coming."
+        bases:
+          "டிராக்டர்": "tractor"
+          "வருகிறது": "is coming; from வா (vā), come"
+      "டிராக்டர் வயலில் ஓடுகிறது.":
+        native: "The tractor runs in the field."
+        bases:
+          "டிராக்டர்": "tractor"
+          "வயலில்": "in the field; from வயல் (vayal), field (farm)"
+          "ஓடுகிறது": "is running; from ஓடு (ōṭu), to run"
+  "ta-7564":
+    native: "farm"
+    notes:
+      n1: "A farm, a poultry farm or a fish farm, named with a word before it."
+    examples:
+      "இது என் பண்ணை.":
+        native: "This is my farm."
+        bases:
+          "என்": "my; from நான் (nāṉ), I; me"
+          "பண்ணை": "farm"
+      "பண்ணை பெரியது.":
+        native: "The farm is big."
+        bases:
+          "பண்ணை": "farm"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-7565":
+    native: "seedling; sapling"
+    notes:
+      n1: "The young rice seedlings that are moved into the paddy field."
+    examples:
+      "நாற்று நடுகிறேன்.":
+        native: "I am planting seedlings."
+        bases:
+          "நாற்று": "seedling; sapling"
+          "நடுகிறேன்": "am planting (a tree); from நடு (naṭu), to plant (a tree); to fix in place"
+      "நாற்று பசுமை.":
+        native: "The seedlings are green."
+        bases:
+          "நாற்று": "seedling; sapling"
+  "ta-7566":
+    native: "sowing"
+    notes:
+      n1: "The noun of the verb for sowing; the seed itself is விதை (vitai), already in the course."
+    examples:
+      "விதைப்பு நடக்கிறது.":
+        native: "The sowing is going on."
+        bases:
+          "விதைப்பு": "sowing"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+      "விதைப்பு நேரம் இது.":
+        native: "This is the sowing time."
+        bases:
+          "விதைப்பு": "sowing"
+  "ta-7567":
+    native: "harvest"
+    notes:
+      n1: "The harvest and the harvest season; the festival பொங்கல் (poṅkal) is linked to it."
+    examples:
+      "அறுவடை நாளை.":
+        native: "The harvest is tomorrow."
+        bases:
+          "அறுவடை": "harvest"
+      "அறுவடை நன்றாக இருக்கிறது.":
+        native: "The harvest is good."
+        bases:
+          "அறுவடை": "harvest"
+          "நன்றாக": "well; fine"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7568":
+    native: "weed"
+    notes:
+      n1: "The same word also means weariness; for weeds it goes with எடு (eṭu) (take out), as in களையெடு (kaḷaiyeṭu)."
+    examples:
+      "வயலில் களை இருக்கிறது.":
+        native: "There are weeds in the field."
+        bases:
+          "வயலில்": "in the field; from வயல் (vayal), field (farm)"
+          "களை": "weed"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "களை எடு.":
+        native: "Remove the weeds."
+        bases:
+          "களை": "weed"
+  "ta-7569":
+    native: "fertiliser; manure"
+    notes:
+      n1: "Both chemical fertiliser and natural manure, with a word before it to say which."
+    examples:
+      "உரம் வேண்டும்.":
+        native: "Fertiliser is needed."
+        bases:
+          "உரம்": "fertiliser; manure"
+      "உரம் விலை அதிகம்.":
+        native: "Fertiliser is expensive."
+        bases:
+          "உரம்": "fertiliser; manure"
+  "ta-7570":
+    native: "pesticide"
+    notes:
+      n1: "Literally insect killer; பூச்சி (pūcci) (insect) plus கொல்லி (kolli) (killer), written as one word."
+    examples:
+      "பூச்சிக்கொல்லி ஆபத்து.":
+        native: "Pesticide is a danger."
+        bases:
+          "பூச்சிக்கொல்லி": "pesticide"
+      "பயிருக்குப் பூச்சிக்கொல்லி அடிக்கிறார்கள்.":
+        native: "They spray pesticide on the crop."
+        bases:
+          "பயிருக்குப்": "to the crop; for the crop; from பயிர் (payir), crop; plant (grown)"
+          "பூச்சிக்கொல்லி": "pesticide"
+          "அடிக்கிறார்கள்": "are hiting (they, respectful); from அடி (aṭi), to hit; to beat; to blaze (of the sun)"
+  "ta-7571":
+    native: "irrigation"
+    notes:
+      n1: "நீர் (nīr) (water) plus பாசனம் (pācaṉam) (watering), written as one word."
+    examples:
+      "நீர்ப்பாசனம் முக்கியம்.":
+        native: "Irrigation is important."
+        bases:
+          "நீர்ப்பாசனம்": "irrigation"
+          "முக்கியம்": "important"
+      "வயலுக்கு நீர்ப்பாசனம் வேண்டும்.":
+        native: "The field needs irrigation."
+        bases:
+          "வயலுக்கு": "to the field; for the field; from வயல் (vayal), field"
+          "நீர்ப்பாசனம்": "irrigation"
+  "ta-7572":
+    native: "well"
+    notes:
+      n1: "Before an ending the last letter doubles, as in கிணற்றில் (kiṇaṟṟil) (in the well)."
+    examples:
+      "கிணறு ஆழம்.":
+        native: "The well is deep."
+        bases:
+          "கிணறு": "well"
+          "ஆழம்": "deep"
+      "கிணற்றில் தண்ணீர் இருக்கிறது.":
+        native: "There is water in the well."
+        bases:
+          "கிணற்றில்": "in the well; from கிணறு (kiṇaṟu), well"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7573":
+    native: "motor; water pump"
+    notes:
+      n1: "On a farm it means the electric water pump, and you 'put on' (போடு (pōṭu)) the motor."
+    examples:
+      "மோட்டார் ஓடுகிறது.":
+        native: "The motor is running."
+        bases:
+          "மோட்டார்": "motor; water pump"
+          "ஓடுகிறது": "is running; from ஓடு (ōṭu), to run"
+      "மோட்டார் போடு.":
+        native: "Switch on the pump."
+        bases:
+          "மோட்டார்": "motor; water pump"
+  "ta-7574":
+    native: "irrigation channel"
+    notes:
+      n1: "A small canal that carries water to the fields."
+    examples:
+      "வாய்க்கால் தண்ணீர் வருகிறது.":
+        native: "Water is coming in the channel."
+        bases:
+          "வாய்க்கால்": "irrigation channel"
+          "வருகிறது": "is coming; from வா (vā), come"
+      "வாய்க்கால் வயலுக்குப் போகிறது.":
+        native: "The channel goes to the field."
+        bases:
+          "வாய்க்கால்": "irrigation channel"
+          "வயலுக்குப்": "to the field; for the field; from வயல் (vayal), field"
+          "போகிறது": "is going; from போ (pō), to go"
+  "ta-7575":
+    native: "yield; produce"
+    notes:
+      n1: "The noun of விளை (viḷai) (to grow or yield)."
+    examples:
+      "இந்த ஆண்டு விளைச்சல் நல்லது.":
+        native: "This year's yield is good."
+        bases:
+          "இந்த": "this"
+          "ஆண்டு": "year"
+          "விளைச்சல்": "yield; produce"
+      "விளைச்சல் குறைவு.":
+        native: "The yield is low."
+        bases:
+          "விளைச்சல்": "yield; produce"
+  "ta-7576":
+    native: "produce; farm product"
+    notes:
+      n1: "Literally grown thing; விளை (viḷai) (grow) plus பொருள் (poruḷ) (thing)."
+    examples:
+      "விளைபொருள் சந்தைக்குப் போகிறது.":
+        native: "The produce goes to the market."
+        bases:
+          "விளைபொருள்": "produce; farm product"
+          "சந்தைக்குப்": "to the market; from சந்தை (cantai), market"
+          "போகிறது": "is going; from போ (pō), to go"
+      "விளைபொருள் விலை என்ன?":
+        native: "What is the price of the produce?"
+        bases:
+          "விளைபொருள்": "produce; farm product"
+  "ta-7577":
+    native: "crop yield"
+    notes:
+      n1: "A word used by farmers for what a field gives; விளைச்சல் (viḷaiccal) is a near word."
+    examples:
+      "மகசூல் அதிகம்.":
+        native: "The crop yield is high."
+        bases:
+          "மகசூல்": "crop yield"
+      "மகசூல் குறைகிறது.":
+        native: "The crop yield is decreasing."
+        bases:
+          "மகசூல்": "crop yield"
+          "குறைகிறது": "goes down; from குறை (kuṟai), to decrease; to lessen"
+  "ta-7578":
+    native: "procurement; buying of produce"
+    notes:
+      n1: "கொள் (koḷ) (buy) plus முதல் (mutal) (first, capital); the buying of a crop by a buyer."
+    examples:
+      "அரசு கொள்முதல் செய்கிறது.":
+        native: "The government buys the produce."
+        bases:
+          "அரசு": "government; state; kingdom"
+          "கொள்முதல்": "procurement; buying of produce"
+          "செய்கிறது": "does; from செய் (cey), to do"
+      "நெல் கொள்முதல் நடக்கிறது.":
+        native: "Paddy procurement is going on."
+        bases:
+          "கொள்முதல்": "procurement; buying of produce"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+  "ta-7579":
+    native: "warehouse; godown"
+    notes:
+      n1: "A store for grain and goods; the spoken word is குடோன் (kuṭōṉ) (godown)."
+    examples:
+      "கிடங்கு பெரியது.":
+        native: "The warehouse is big."
+        bases:
+          "கிடங்கு": "warehouse; godown"
+          "பெரியது": "big; from பெரிய (periya), big"
+      "நெல் கிடங்கில் இருக்கிறது.":
+        native: "The paddy is in the warehouse."
+        bases:
+          "கிடங்கில்": "in the warehouse; from கிடங்கு (kiṭaṅku), warehouse; godown"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7580":
+    native: "buffalo"
+    notes:
+      n1: "The water buffalo, an animal for milk and field work."
+    examples:
+      "எருமை பால் தருகிறது.":
+        native: "The buffalo gives milk."
+        bases:
+          "எருமை": "buffalo"
+          "தருகிறது": "gives; from தா (tā), to give"
+      "எருமை குளத்தில் இருக்கிறது.":
+        native: "The buffalo is in the pond."
+        bases:
+          "எருமை": "buffalo"
+          "குளத்தில்": "in the pond; from குளம் (kuḷam), pond; tank"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7581":
+    native: "cow"
+    notes:
+      n1: "A cow, seen as a gentle animal; the common word for cattle is மாடு (māṭu)."
+    examples:
+      "பசு பால் தருகிறது.":
+        native: "The cow gives milk."
+        bases:
+          "பசு": "cow"
+          "தருகிறது": "gives; from தா (tā), to give"
+      "பசு புல் சாப்பிடுகிறது.":
+        native: "The cow eats grass."
+        bases:
+          "பசு": "cow"
+          "சாப்பிடுகிறது": "is eating; from சாப்பிடு (cāppiṭu), to eat"
+  "ta-7582":
+    native: "bull; ox"
+    notes:
+      n1: "A bull, often a draught animal in farming."
+    examples:
+      "காளை வயலில் இருக்கிறது.":
+        native: "The bull is in the field."
+        bases:
+          "காளை": "bull; ox"
+          "வயலில்": "in the field; from வயல் (vayal), field (farm)"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "காளை பெரியது.":
+        native: "The bull is big."
+        bases:
+          "காளை": "bull; ox"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-7583":
+    native: "calf; young plant"
+    notes:
+      n1: "The same word is the young of a cow and a young plant, as in a sapling."
+    examples:
+      "கன்று பால் குடிக்கிறது.":
+        native: "The calf drinks milk."
+        bases:
+          "கன்று": "calf; young plant"
+          "குடிக்கிறது": "is drinking; from குடி (kuṭi), to drink"
+      "பசுவின் கன்று.":
+        native: "The cow's calf."
+        bases:
+          "பசுவின்": "of the cow; from பசு (pacu), cow"
+          "கன்று": "calf; young plant"
+  "ta-7584":
+    native: "milch animal"
+    notes:
+      n1: "Used before மாடு (māṭu) (cattle) for a cow that gives milk."
+    examples:
+      "இது கறவை மாடு.":
+        native: "This is a milch cow."
+        bases:
+          "கறவை": "milch animal"
+      "கறவை குறைவு.":
+        native: "Few animals give milk."
+        bases:
+          "கறவை": "milch animal"
+  "ta-7585":
+    native: "grazing"
+    notes:
+      n1: "The noun of மேய் (mēy) (to graze)."
+    examples:
+      "மேய்ச்சல் நிலம் எங்கே?":
+        native: "Where is the grazing land?"
+        bases:
+          "மேய்ச்சல்": "grazing"
+      "மாடு மேய்ச்சலுக்குப் போகிறது.":
+        native: "The cattle go out to graze."
+        bases:
+          "மேய்ச்சலுக்குப்": "to the grazing; for the grazing; from மேய்ச்சல் (mēyccal), grazing"
+          "போகிறது": "is going; from போ (pō), to go"
+  "ta-7586":
+    native: "cattle shed"
+    notes:
+      n1: "A shed where cattle are kept at night."
+    examples:
+      "மாடு தொழுவத்தில் இருக்கிறது.":
+        native: "The cattle are in the shed."
+        bases:
+          "தொழுவத்தில்": "in the cattle shed; from தொழுவம் (toḻuvam), cattle shed"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "தொழுவம் சுத்தமாக இருக்கிறது.":
+        native: "The cattle shed is clean."
+        bases:
+          "தொழுவம்": "cattle shed"
+          "சுத்தமாக": "clean; from சுத்தம் (cuttam), cleanliness; clean"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7587":
+    native: "straw"
+    notes:
+      n1: "Dry rice straw, used as cattle feed and for thatch."
+    examples:
+      "வைக்கோல் மாட்டுக்கு.":
+        native: "The straw is for the cattle."
+        bases:
+          "வைக்கோல்": "straw"
+          "மாட்டுக்கு": "to the cow; for the cow; from மாடு (māṭu), cow"
+      "வைக்கோல் எங்கே?":
+        native: "Where is the straw?"
+        bases:
+          "வைக்கோல்": "straw"
+  "ta-7588":
+    native: "grain; cereal"
+    notes:
+      n1: "Grain in general, such as rice, wheat and millets."
+    examples:
+      "தானியம் சேமிக்கிறேன்.":
+        native: "I store grain."
+        bases:
+          "தானியம்": "grain; cereal"
+          "சேமிக்கிறேன்": "am saving; from சேமி (cēmi), to save"
+      "தானியம் கிடங்கில் இருக்கிறது.":
+        native: "The grain is in the warehouse."
+        bases:
+          "தானியம்": "grain; cereal"
+          "கிடங்கில்": "in the warehouse; from கிடங்கு (kiṭaṅku), warehouse; godown"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7589":
+    native: "farmland; arable land"
+    notes:
+      n1: "விளை (viḷai) (grow) plus நிலம் (nilam) (land); land that is fit to grow crops."
+    examples:
+      "இது விளைநிலம்.":
+        native: "This is farmland."
+        bases:
+          "விளைநிலம்": "farmland; arable land"
+      "விளைநிலம் குறைகிறது.":
+        native: "The farmland is shrinking."
+        bases:
+          "விளைநிலம்": "farmland; arable land"
+          "குறைகிறது": "goes down; from குறை (kuṟai), to decrease; to lessen"
+  "ta-7590":
+    native: "fallow land; barren land"
+    notes:
+      n1: "Land left unused, often before it is sown again."
+    examples:
+      "இது தரிசு நிலம்.":
+        native: "This is fallow land."
+        bases:
+          "தரிசு": "fallow land; barren land"
+      "தரிசு பசுமை இல்லை.":
+        native: "Fallow land has no greenery."
+        bases:
+          "தரிசு": "fallow land; barren land"
+  "ta-7591":
+    native: "cultivation"
+    notes:
+      n1: "The whole process of growing a crop."
+    examples:
+      "சாகுபடி நடக்கிறது.":
+        native: "Cultivation is going on."
+        bases:
+          "சாகுபடி": "cultivation"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+      "சாகுபடி நேரம் இது.":
+        native: "This is the cultivation time."
+        bases:
+          "சாகுபடி": "cultivation"
+  "ta-7592":
+    native: "grove; orchard"
+    notes:
+      n1: "A grove of one kind of tree, as a coconut or mango grove."
+    examples:
+      "தோப்பு பெரியது.":
+        native: "The grove is big."
+        bases:
+          "தோப்பு": "grove; orchard"
+          "பெரியது": "big; from பெரிய (periya), big"
+      "தோப்பில் மரம் இருக்கிறது.":
+        native: "There are trees in the grove."
+        bases:
+          "தோப்பில்": "in the grove; from தோப்பு (tōppu), grove; orchard"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-7593":
+    native: "fence; hedge"
+    notes:
+      n1: "A fence made of wood, wire or plants round a field or a house."
+    examples:
+      "வேலி உடைந்தது.":
+        native: "The fence broke."
+        bases:
+          "வேலி": "fence; hedge"
+          "உடைந்தது": "broke; from உடை (uṭai), to break"
+      "வேலி வயலுக்கு.":
+        native: "The fence is for the field."
+        bases:
+          "வேலி": "fence; hedge"
+          "வயலுக்கு": "to the field; for the field; from வயல் (vayal), field"
+  "ta-7594":
+    native: "threshing floor; field of action"
+    notes:
+      n1: "A களம் (kaḷam) is the floor where grain is threshed and also an arena or battlefield."
+    examples:
+      "களம் வயலுக்குப் பக்கத்தில் இருக்கிறது.":
+        native: "The threshing floor is near the field."
+        bases:
+          "களம்": "threshing floor; field of action"
+          "வயலுக்குப்": "to the field; for the field; from வயல் (vayal), field"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "களம் பெரியது.":
+        native: "The threshing floor is big."
+        bases:
+          "களம்": "threshing floor; field of action"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-7595":
+    native: "middleman; broker"
+    notes:
+      n1: "இடை (iṭai) (between) plus தரகர் (tarakar) (broker); used for men and women alike."
+    examples:
+      "இடைத்தரகர் பணம் எடுக்கிறார்.":
+        native: "The middleman takes money."
+        bases:
+          "இடைத்தரகர்": "middleman; broker"
+          "எடுக்கிறார்": "he takes; he makes (a film); from எடு (eṭu), to take"
+      "இடைத்தரகர் வேண்டாம்.":
+        native: "No middleman, please."
+        bases:
+          "இடைத்தரகர்": "middleman; broker"
+  "ta-7596":
+    native: "to plough"
+    notes:
+      n1: "The thing ploughed takes the -ஐ (-ai) ending; the noun is உழவு (uḻavu)."
+    examples:
+      "உழவன் வயலை உழுகிறான்.":
+        native: "The farmer ploughs the field."
+        bases:
+          "வயலை": "the field; from வயல் (vayal), field"
+          "உழுகிறான்": "is ploughing (he); from உழு (uḻu), to plough"
+      "நாங்கள் நிலத்தை உழுகிறோம்.":
+        native: "We plough the land."
+        bases:
+          "நிலத்தை": "the land; from நிலம் (nilam), land; ground"
+          "உழுகிறோம்": "are ploughing (we); from உழு (uḻu), to plough"
+  "ta-7597":
+    native: "to reap; to cut"
+    notes:
+      n1: "Used for harvesting a crop and for cutting a rope; the harvest is அறுவடை (aṟuvaṭai)."
+    examples:
+      "நான் நெல்லை அறுக்கிறேன்.":
+        native: "I am reaping the paddy."
+        bases:
+          "நெல்லை": "the paddy; from நெல் (nel), paddy; unhusked rice"
+          "அறுக்கிறேன்": "am reaping; from அறு (aṟu), to reap; to cut"
+      "அவர்கள் பயிரை அறுக்கிறார்கள்.":
+        native: "They are cutting the crop."
+        bases:
+          "அவர்கள்": "their"
+          "பயிரை": "the crop; from பயிர் (payir), crop"
+          "அறுக்கிறார்கள்": "are reaping (they, respectful); from அறு (aṟu), to reap; to cut"
+  "ta-7598":
+    native: "to weed"
+    notes:
+      n1: "Literally to take out weeds; களை (kaḷai) (weed) plus எடு (eṭu) (take), written as one word."
+    examples:
+      "நான் வயலில் களையெடுக்கிறேன்.":
+        native: "I am weeding the field."
+        bases:
+          "வயலில்": "in the field; from வயல் (vayal), field (farm)"
+          "களையெடுக்கிறேன்": "am weeding; from களையெடு (kaḷaiyeṭu), to weed"
+      "அவர்கள் களையெடுக்கிறார்கள்.":
+        native: "They are weeding."
+        bases:
+          "அவர்கள்": "their"
+          "களையெடுக்கிறார்கள்": "are weeding (they, respectful); from களையெடு (kaḷaiyeṭu), to weed"
+  "ta-7599":
+    native: "to grow; to yield"
+    notes:
+      n1: "A crop 'grows' on its own, so the crop is the subject; the noun is விளைச்சல் (viḷaiccal)."
+    examples:
+      "நெல் வயலில் விளைகிறது.":
+        native: "Paddy grows in the field."
+        bases:
+          "வயலில்": "in the field; from வயல் (vayal), field (farm)"
+          "விளைகிறது": "is growing; from விளை (viḷai), to grow; to yield"
+      "இங்கே பருத்தி விளைகிறது.":
+        native: "Cotton grows here."
+        bases:
+          "விளைகிறது": "is growing; from விளை (viḷai), to grow; to yield"
+  "ta-7600":
+    native: "to winnow"
+    notes:
+      n1: "The verb also means to scatter and to slander; for grain it means to winnow in the wind."
+    examples:
+      "அம்மா நெல்லைத் தூற்றுகிறார்.":
+        native: "Mother is winnowing the paddy."
+        bases:
+          "நெல்லைத்": "the paddy; from நெல் (nel), paddy; unhusked rice"
+          "தூற்றுகிறார்": "is winnowing (respectful); from தூற்று (tūṟṟu), to winnow"
+      "அவர்கள் தானியம் தூற்றுகிறார்கள்.":
+        native: "They are winnowing grain."
+        bases:
+          "அவர்கள்": "their"
+          "தூற்றுகிறார்கள்": "are winnowing (they, respectful); from தூற்று (tūṟṟu), to winnow"
+  "ta-7601":
+    native: "to graze"
+    notes:
+      n1: "Animals graze; the person who tends them is said to மேய் (mēy) them too, as in herding."
+    examples:
+      "மாடு புல் மேய்கிறது.":
+        native: "The cattle graze the grass."
+        bases:
+          "மேய்கிறது": "is grazing; from மேய் (mēy), to graze"
+      "ஆடு மேய்கிறது.":
+        native: "The goat is grazing."
+        bases:
+          "மேய்கிறது": "is grazing; from மேய் (mēy), to graze"
+  "ta-7602":
+    native: "to milk"
+    notes:
+      n1: "The animal milked takes the -ஐ (-ai) ending."
+    examples:
+      "அவர் மாட்டைக் கறக்கிறார்.":
+        native: "He milks the cow."
+        bases:
+          "அவர்": "he or she (polite)"
+          "மாட்டைக்": "the cow; from மாடு (māṭu), cattle; cow; ox"
+          "கறக்கிறார்": "is milking (respectful); from கற (kaṟa), to milk"
+      "அம்மா பசுவைக் கறக்கிறார்.":
+        native: "Mother milks the cow."
+        bases:
+          "பசுவைக்": "the cow; from பசு (pacu), cow"
+          "கறக்கிறார்": "is milking (respectful); from கற (kaṟa), to milk"
+  "ta-7603":
+    native: "fertile; rich"
+    notes:
+      n1: "The -ஆன (-āṉa) form of வளம் (vaḷam) (richness), used before a noun."
+    examples:
+      "வளமான நிலம்.":
+        native: "Fertile land."
+        bases:
+          "வளமான": "fertile; rich"
+      "வளமான மண்.":
+        native: "Rich soil."
+        bases:
+          "வளமான": "fertile; rich"
+  "ta-7604":
+    native: "lush; prosperous"
+    notes:
+      n1: "The -ஆன (-āṉa) form of செழிப்பு (ceḻippu) (lushness), used before a noun."
+    examples:
+      "செழிப்பான பயிர்.":
+        native: "A lush crop."
+        bases:
+          "செழிப்பான": "lush; prosperous"
+      "செழிப்பான வயல்.":
+        native: "A lush field."
+        bases:
+          "செழிப்பான": "lush; prosperous"
+  "ta-7605":
+    native: "green; fresh"
+    notes:
+      n1: "The -ஆன (-āṉa) form of பசுமை (pacumai) (greenery), used before a noun."
+    examples:
+      "பசுமையான வயல்.":
+        native: "A green field."
+        bases:
+          "பசுமையான": "green; fresh"
+      "பசுமையான காடு.":
+        native: "A green forest."
+        bases:
+          "பசுமையான": "green; fresh"
