@@ -487,7 +487,8 @@ units:
       - { id: "had-already", text: { "en": "Saying what had already happened" } }
     reading_passages:
       - { id: "missed-call", text: { "en": "A message about a missed meeting" } }
-  - planned: { id: "ta-shopping", theme: "shopping", words: 55 }
+  - decks: ["ta-shopping", "ta-shopping-sentences", "*"]
+    words: 55
     listening_passages:
       - { id: "bargaining", text: { "en": "Bargaining politely for a bag" } }
     reading_passages:
@@ -599,12 +600,14 @@ units:
       - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
     reading_passages:
       - { id: "text-messages", text: { "en": "A few text messages between friends" } }
-  - planned: { id: "ta-journey", theme: "journey", words: 60 }
+  - decks: ["ta-journey", "ta-journey-sentences", "*"]
+    words: 60
     listening_passages:
       - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
     reading_passages:
       - { id: "train-timetable", text: { "en": "A train timetable and a platform notice" } }
-  - planned: { id: "ta-nature", theme: "nature", words: 55 }
+  - decks: ["ta-nature", "ta-nature-sentences", "*"]
+    words: 55
     listening_passages:
       - { id: "walk-in-the-hills", text: { "en": "Two people describe a walk in the hills" } }
     reading_passages:

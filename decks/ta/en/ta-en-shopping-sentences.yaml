@@ -1,0 +1,81 @@
+schema: 1
+id: "ta-en-shopping-sentences"
+kind: "layer"
+core: "ta-shopping-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Shopping in sentences"
+description: "Ten short sentences about asking prices, bargaining, paying and waiting in a queue. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-4034":
+    native: "The shopkeeper asks for the money."
+    bases:
+      "கேட்கிறார்": "asks (respectful); from கேள் (kēḷ), to ask"
+    confusables:
+      w1: { why: "வாடிக்கையாளர் (vāṭikkaiyāḷar), customer, is a different word." }
+      w2: { why: "பில் (pil), bill, is a different word." }
+  "ta-4035":
+    native: "How much is a kilo of rice?"
+    confusables:
+      w1: { why: "லிட்டர் (liṭṭar), litre, is a different word." }
+      w2: { why: "கிராம் (kirām), gram, is a different word." }
+  "ta-4036":
+    native: "Do not bargain, the price is low."
+    bases:
+      "பேசாதே": "do not talk; from பேசு (pēcu), to talk"
+    confusables:
+      w1: { why: "தள்ளுபடி (taḷḷupaṭi), discount, is a different word." }
+      w2: { why: "சலுகை (calukai), offer; concession, is a different word." }
+  "ta-4037":
+    native: "May I pay by card?"
+    notes:
+      n1: "கட்டலாமா (kaṭṭalāmā) is கட்டு (kaṭṭu) with the endings for may I and the question."
+    bases:
+      "கார்டில்": "by card; from கார்டு (kārṭu), card"
+      "கட்டலாமா": "may I pay; from கட்டு (kaṭṭu), to pay"
+    confusables:
+      w1: { why: "ரொக்கம் (rokkam), cash, is a different word." }
+      w2: { why: "ரசீது (racītu), receipt, is a different word." }
+  "ta-4038":
+    native: "I will give the balance tomorrow."
+    notes:
+      n1: "The present கொடுக்கிறேன் (koṭukkiṟēṉ) is also used for a plan: I will give."
+    bases:
+      "கொடுக்கிறேன்": "give; from கொடு (koṭu), to give"
+    confusables:
+      w1: { why: "சில்லறை (cillaṟai), small change, is a different word." }
+      w2: { why: "கடன் (kaṭaṉ), debt; credit, is a different word." }
+  "ta-4039":
+    native: "The discount is for today only."
+    confusables:
+      w1: { why: "சலுகை (calukai), offer; concession, is a different word." }
+      w2: { why: "விற்பனை (viṟpaṉai), sale; selling, is a different word." }
+  "ta-4040":
+    native: "There is a card in the wallet."
+    bases:
+      "பணப்பையில்": "in the wallet; from பணப்பை (paṇappai), wallet"
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "கூடை (kūṭai), basket, is a different word." }
+      w2: { why: "காசு (kācu), money; coin, is a different word." }
+  "ta-4041":
+    native: "Stand in the queue, the shopkeeper is coming."
+    bases:
+      "வரிசையில்": "in the queue; from வரிசை (varicai), queue"
+      "வருகிறார்": "comes (respectful); from வா (vā), to come"
+    confusables:
+      w1: { why: "வாடிக்கையாளர் (vāṭikkaiyāḷar), customer, is a different word." }
+      w2: { why: "வியாபாரி (viyāpāri), trader; businessperson, is a different word." }
+  "ta-4042":
+    native: "Buy the goods online."
+    bases:
+      "ஆன்லைனில்": "online; from ஆன்லைன் (āṉlaiṉ), online"
+    confusables:
+      w1: { why: "மளிகைக்கடை (maḷikaikkaṭai), grocery shop, is a different word." }
+      w2: { why: "பொருள் (poruḷ), thing; goods; meaning, is a different word." }
+  "ta-4043":
+    native: "This is a good-quality product, but the price is high."
+    confusables:
+      w1: { why: "மலிவான (malivāṉa), cheap, is a different word." }
+      w2: { why: "சரியான (cariyāṉa), right; exact, is a different word." }

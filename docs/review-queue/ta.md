@@ -121,6 +121,12 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-0460 | ta-grammar-conjunct-verbs | Are spoken பண்றேன் and the noun plus பண்ணு pattern shown correctly? | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-0461 | ta-grammar-conjunct-verbs | Is நேரம் ஆகிறது the usual way to say it is getting late? | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-imperatives | Check the polite spoken commands (-ங்க), the polite forms of திற and நட, and the negative commands. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-2173 | ta-journey | Is gender m right for வழிகாட்டி, a guide of any gender? | Sonnet builder | 2026-11-23 |
+| ta-2161 | ta-journey | Is gender m right for டிரைவர், ஓட்டுநர் and நடத்துநர், who may be women? | Sonnet builder | 2026-11-23 |
+| ta-2164 | ta-journey | Does ஹோட்டல் mean restaurant more often than hotel in Tamil Nadu? | Sonnet builder | 2026-11-23 |
+| ta-2141 | ta-journey | Is பைக் the usual word for a motorbike? | Sonnet builder | 2026-11-23 |
+| ta-2184 | ta-journey | Is வழிதவறு one word, and natural in speech? | Sonnet builder | 2026-11-23 |
+| ta-2189 | ta-journey | Is எடுத்துச்செல் written as one word? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-when | Check போது after the infinitive plus -உம், and the spoken conditional in -ஆ, for every verb. | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-0490 | ta-grammar-registers | Is the gender of அலுவலர் (m) right for an officer of either sex? | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-0489 | ta-grammar-registers | Is the gender m right for பொதுமக்கள், a plural noun? | Sonnet builder (ta-gram2) | 2026-11-23 |
@@ -130,3 +136,13 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-0474 | ta-grammar-registers | Check the stem தெரிவி and its forms தெரிவித்தார் and தெரிவியுங்கள். | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-0496 | ta-grammar-registers | Is கூடாது with the infinitive the usual form of a rule on signs? | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-written-forms | Check the spoken forms (இங்க, எங்க, இல்ல, வேணும், ரெண்டு, ஒண்ணு, மூணு, நாலு, தண்ணி, வருது, வர்றேன், சாப்பிடுறேன், பேசுறேன). | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-1246 | ta-shopping | Is வசூலி the usual verb for collecting money that is owed, in a shop? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1225 | ta-shopping | Is சாமான் the usual spoken word for belongings or shopping, against பொருள்? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1214 | ta-shopping | Is the split between ரசீது (receipt) and பில் (bill) how shops say it? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1258 | ta-shopping | Is பாக்கி right for both the balance owed and the change due? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1215 | ta-shopping | Is கடன் the word a shop uses for buying on credit? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1210 | ta-shopping | Is வாடிக்கையாளர் the word used in speech, or mostly in writing? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| unit-level | ta-nature | The examples use பனி (from the weather unit) as frost; check that this gloss fits. | Sonnet builder | 2026-11-23 |
+| ta-2192 | ta-nature | Is நதி or ஆறு the usual word for a river in speech? | Sonnet builder | 2026-11-23 |
+| ta-2197 | ta-nature | Is வனம் natural in speech, or only written beside காடு? | Sonnet builder | 2026-11-23 |
+| ta-2219 | ta-nature | Does ஆமை cover both tortoise and turtle? | Sonnet builder | 2026-11-23 |
