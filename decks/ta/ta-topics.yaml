@@ -1,0 +1,412 @@
+# Topics a learner of Tamil would search for: what each one is, and the decks that teach it (wiki/Plan-Deck-Kinds-And-Topics.md, D6).
+# A script topic lists its characters, each with its reading as the script deck gives it; a topic holds no card text of its own.
+schema: 1
+kind: "topics"
+id: "ta-topics"
+language: "ta"
+license: "CC-BY-SA-4.0"
+topics:
+  - id: "ta-vowels-script"
+    name: { en: "Tamil vowels" }
+    summary: { en: "The twelve Tamil vowel letters written on their own, five short and long pairs of a, i, u, e and o, with the diphthongs ai and au." }
+    kind: "script"
+    level: "A1"
+    decks: ["ta-script-vowels"]
+    chars: [{ text: "அ", reading: "a" }, { text: "ஆ", reading: "ā" }, { text: "இ", reading: "i" }, { text: "ஈ", reading: "ī" }, { text: "உ", reading: "u" }, { text: "ஊ", reading: "ū" }, { text: "எ", reading: "e" }, { text: "ஏ", reading: "ē" }, { text: "ஐ", reading: "ai" }, { text: "ஒ", reading: "o" }, { text: "ஓ", reading: "ō" }, { text: "ஔ", reading: "au" }]
+  - id: "ta-consonants-script"
+    name: { en: "Tamil consonants" }
+    summary: { en: "The eighteen Tamil consonant letters, each written with the a vowel built in, from ka to na, including the retroflex, the ழ (ḻa) and the two r letters ர (ra) and ற (ṟa)." }
+    kind: "script"
+    level: "A1"
+    decks: ["ta-script-consonants"]
+    chars: [{ text: "க", reading: "ka" }, { text: "ங", reading: "ṅa" }, { text: "ச", reading: "ca" }, { text: "ஞ", reading: "ña" }, { text: "ட", reading: "ṭa" }, { text: "ண", reading: "ṇa" }, { text: "த", reading: "ta" }, { text: "ந", reading: "na" }, { text: "ப", reading: "pa" }, { text: "ம", reading: "ma" }, { text: "ய", reading: "ya" }, { text: "ர", reading: "ra" }, { text: "ல", reading: "la" }, { text: "வ", reading: "va" }, { text: "ழ", reading: "ḻa" }, { text: "ள", reading: "ḷa" }, { text: "ற", reading: "ṟa" }, { text: "ன", reading: "ṉa" }]
+  - id: "ta-vowel-signs-script"
+    name: { en: "Vowel signs and the pulli" }
+    summary: { en: "The marks written around a consonant to change its vowel, shown on க (ka), and the dot called the pulli that removes the vowel, as in க் (k); the aytam ஃ (ḵ) is taught with them." }
+    kind: "script"
+    level: "A1"
+    decks: ["ta-script-vowel-signs"]
+    chars: [{ text: "கா", reading: "kā" }, { text: "கி", reading: "ki" }, { text: "கீ", reading: "kī" }, { text: "கு", reading: "ku" }, { text: "கூ", reading: "kū" }, { text: "கெ", reading: "ke" }, { text: "கே", reading: "kē" }, { text: "கை", reading: "kai" }, { text: "கொ", reading: "ko" }, { text: "கோ", reading: "kō" }, { text: "கௌ", reading: "kau" }, { text: "க்", reading: "k" }, { text: "ஃ", reading: "ḵ" }]
+  - id: "ta-grantha-script"
+    name: { en: "Grantha letters" }
+    summary: { en: "The five extra letters Tamil writes for sounds of Sanskrit and other languages, ஜ (ja), ஷ (ṣa), ஸ (sa), ஹ (ha) and the cluster க்ஷ (kṣa)." }
+    kind: "script"
+    level: "A1"
+    decks: ["ta-script-grantha"]
+    chars: [{ text: "ஜ", reading: "ja" }, { text: "ஷ", reading: "ṣa" }, { text: "ஸ", reading: "sa" }, { text: "ஹ", reading: "ha" }, { text: "க்ஷ", reading: "kṣa" }]
+  - id: "ta-digits-script"
+    name: { en: "Tamil digits" }
+    summary: { en: "The ten Tamil digits, 0 to 9, each with the number it stands for." }
+    kind: "script"
+    level: "A1"
+    decks: ["ta-script-digits"]
+    chars: [{ text: "௦", reading: "0" }, { text: "௧", reading: "1" }, { text: "௨", reading: "2" }, { text: "௩", reading: "3" }, { text: "௪", reading: "4" }, { text: "௫", reading: "5" }, { text: "௬", reading: "6" }, { text: "௭", reading: "7" }, { text: "௮", reading: "8" }, { text: "௯", reading: "9" }]
+  - id: "ta-reading-practice"
+    name: { en: "Reading whole words" }
+    summary: { en: "Fourteen everyday words to sound out in Tamil script, such as அம்மா (ammā) and வணக்கம் (vaṇakkam), pairing short and long vowels and the doubled consonants." }
+    kind: "script"
+    level: "A1"
+    decks: ["ta-script-reading"]
+  - id: "ta-sound-pairs"
+    name: { en: "Sounds English lacks" }
+    summary: { en: "Five pairs of words that Tamil tells apart by one sound: a dental and a retroflex t, short and long vowels, a short and a long e, and a plain and a trilled r." }
+    kind: "other"
+    level: "A1"
+    decks: ["ta-sound-differences"]
+  - id: "ta-word-order"
+    name: { en: "Word order and what Tamil leaves out" }
+    summary: { en: "The verb comes last, there is no word for the, ஒரு (oru) stands for a, and the doer comes first and the thing next; the first things an English speaker notices." }
+    term: { text: "ஒரு", reading: "oru" }
+    kind: "grammar"
+    level: "A1"
+    decks: ["ta-grammar-differences", "ta-grammar-sentences", "ta-grammar-articles"]
+  - id: "ta-noun-cases"
+    name: { en: "Noun endings and cases" }
+    summary: { en: "The plural and the endings that mean to, in, at a person, from, with and of, and the oblique stem that comes before them, taught on every noun of the course, with -ஆல் (-āl) for by and with." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["ta-grammar-noun-forms", "ta-grammar-al", "ta-grammar-postpositions"]
+  - id: "ta-gender-number"
+    name: { en: "Gender, number and the verb ending" }
+    summary: { en: "Which verb ending a man, a woman, a respected person, a thing, an animal or a group takes, and how nouns make their plural." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["ta-grammar-nouns", "ta-grammar-gender-number"]
+  - id: "ta-pronouns"
+    name: { en: "Pronouns and the two words for we" }
+    summary: { en: "I, you, he, she, it, we and they, how they change before a noun, and the two words for we: நாம் (nām) with the listener and நாங்கள் (nāṅkaḷ) without." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["ta-grammar-pronouns", "ta-grammar-pronoun-forms", "ta-grammar-inclusive-we"]
+  - id: "ta-demonstratives"
+    name: { en: "This, that and which" }
+    summary: { en: "The words for this and that, here and there, now and then, and the question word that goes with each." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["ta-grammar-demonstratives"]
+  - id: "ta-to-be"
+    name: { en: "To be and not to be" }
+    summary: { en: "Is, was and will be with இரு (iru), no verb at all between two nouns, and இல்லை (illai) for not." }
+    term: { text: "இல்லை", reading: "illai" }
+    kind: "grammar"
+    level: "A1"
+    decks: ["ta-grammar-be"]
+  - id: "ta-present-tense"
+    name: { en: "Present tense and the continuous" }
+    summary: { en: "I go, you go, she goes, and I am going, for every verb of the course, with the common spoken form before the written one where the verb is regular." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["ta-grammar-verb-present", "ta-grammar-continuous"]
+  - id: "ta-past-tense"
+    name: { en: "Past tense and has done" }
+    summary: { en: "I did, you did, he did, and has done and had done, for every verb of the course, with the spoken form before the written one." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["ta-grammar-past", "ta-grammar-past-more"]
+  - id: "ta-future-tense"
+    name: { en: "Future tense" }
+    summary: { en: "I will go, she will come: what will happen." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["ta-grammar-future"]
+  - id: "ta-negation"
+    name: { en: "Saying no to a verb" }
+    summary: { en: "I do not, I will not and I did not for each person, with the common spoken form before the written one." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["ta-grammar-negative"]
+  - id: "ta-verb-classes"
+    name: { en: "Verb groups and verbs that change their stem" }
+    summary: { en: "The forms to learn with each verb so that its past and future markers show, and seven common verbs, such as come, go and give, whose stem changes." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["ta-grammar-verb-classes", "ta-grammar-irregular"]
+  - id: "ta-verbal-participle"
+    name: { en: "Having done: the verbal participle" }
+    summary: { en: "Every verb of the course as having done and then, and as without doing; the form that the helper verbs are built on." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["ta-grammar-verbal-participle"]
+  - id: "ta-relative-participle"
+    name: { en: "Verbs that describe a noun" }
+    summary: { en: "A verb placed before a noun to describe it, as in the man who came or the book that I read, in the past, present, future and negative." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["ta-grammar-relative-participle"]
+  - id: "ta-if-and-when"
+    name: { en: "If, when and even if" }
+    summary: { en: "Every verb of the course with if, only if, if not, when it happens, when it happened, even if and even though." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["ta-grammar-conditional", "ta-grammar-when", "ta-grammar-concessive"]
+  - id: "ta-before-after-while"
+    name: { en: "Before, after, while and until" }
+    summary: { en: "Every verb of the course before and after another action, and as soon as it is done, while another action goes on, and until it happens." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["ta-grammar-before-after", "ta-grammar-while"]
+  - id: "ta-purpose"
+    name: { en: "In order to" }
+    summary: { en: "Every verb of the course as to do, in order to do and for the sake of doing, with the spoken form before the written one." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["ta-grammar-purpose"]
+  - id: "ta-reported-speech"
+    name: { en: "Saying what someone said" }
+    summary: { en: "Every verb of the course inside a quotation, as he said that he came, comes or will come, with the spoken quote marker before the written one." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["ta-grammar-reported-speech"]
+  - id: "ta-can-must"
+    name: { en: "May, must and need not" }
+    summary: { en: "Every verb of the course with may, must, must not and need not." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["ta-grammar-can-must"]
+  - id: "ta-likes-needs"
+    name: { en: "Liking, needing and wanting" }
+    summary: { en: "பிடிக்கும் (piṭikkum) for what you like, வேண்டும் (vēṇṭum) for what you want or need, and the forms that say you do not." }
+    term: { text: "பிடிக்கும்", reading: "piṭikkum" }
+    kind: "grammar"
+    level: "A1"
+    decks: ["ta-grammar-likes", "ta-grammar-needs"]
+  - id: "ta-questions"
+    name: { en: "Questions and indefinites" }
+    summary: { en: "Turning a statement into a yes-or-no question with the ending -ஆ (-ā), and making the question words into some, any and every." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["ta-grammar-questions", "ta-grammar-indefinites"]
+  - id: "ta-commands-respect"
+    name: { en: "Commands and respect in the verb" }
+    summary: { en: "The command to a friend and to a respected person, do not and let us, and the plain and the polite you in the present." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["ta-grammar-imperatives", "ta-grammar-honorifics"]
+  - id: "ta-emphasis"
+    name: { en: "Emphasis" }
+    summary: { en: "The four ways to stress one person or thing: தான் (tāṉ), the ending -ஏ (-ē), கூட (kūṭa) and மட்டும் (maṭṭum)." }
+    term: { text: "தான்", reading: "tāṉ" }
+    kind: "grammar"
+    level: "B1"
+    decks: ["ta-grammar-emphasis"]
+  - id: "ta-comparison-adjectives"
+    name: { en: "Adjectives, comparing and ordinals" }
+    summary: { en: "Describing words before a noun and on their own, bigger than, very and the biggest, and first to tenth, alone, before a noun and in a date." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["ta-grammar-adjectives", "ta-grammar-comparison", "ta-grammar-ordinals"]
+  - id: "ta-causative-passive"
+    name: { en: "The causative and the passive" }
+    summary: { en: "Making someone do it, with pairs such as climb and light and verbs made causative with வை (vai), and being done, as written Tamil says it." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["ta-grammar-causative", "ta-grammar-passive"]
+  - id: "ta-conjunctions"
+    name: { en: "Joining words" }
+    summary: { en: "But, or, and, so and because: joining words and sentences." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["ta-grammar-conjunctions"]
+  - id: "ta-spoken-written"
+    name: { en: "Spoken and written Tamil" }
+    summary: { en: "Words and verb forms as people say them and as they are written, and the formal words of signs, letters and notices." }
+    kind: "register"
+    level: "B1"
+    decks: ["ta-grammar-written-forms", "ta-grammar-registers"]
+  - id: "ta-learner-pitfalls"
+    name: { en: "Pairs that learners mix up" }
+    summary: { en: "Seven pairs that English speakers often confuse: give, not, like and want, come and go, will not and did not, one and a, and listen and ask." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["ta-grammar-pitfalls"]
+  - id: "ta-conjunct-verbs"
+    name: { en: "Noun plus verb" }
+    summary: { en: "A noun, often an English loanword, and a light verb such as பண்ணு (paṇṇu) or போடு (pōṭu) that together make one verb phrase." }
+    term: { text: "பண்ணு", reading: "paṇṇu" }
+    kind: "verbs"
+    level: "A2"
+    decks: ["ta-multiword-conjunct-verbs", "ta-grammar-conjunct-verbs", "ta-grammar-conjunct-verbs-forms"]
+  - id: "ta-compound-verbs"
+    name: { en: "Helper verbs" }
+    summary: { en: "A verb in its participle form plus a helper such as கொள் (koḷ), கொடு (koṭu), போ (pō) or விடு (viṭu), which add meanings such as finished, for oneself and for someone." }
+    term: { text: "விடு", reading: "viṭu" }
+    kind: "verbs"
+    level: "A2"
+    decks: ["ta-multiword-aspectual-compound", "ta-grammar-compound-verbs", "ta-grammar-compound-verbs-forms"]
+  - id: "ta-idiomatic-verbs"
+    name: { en: "Idiomatic verb phrases" }
+    summary: { en: "A noun and a verb that together mean something other than their parts, such as rubbing the eye for weeping." }
+    kind: "verbs"
+    level: "A2"
+    decks: ["ta-multiword-idiomatic"]
+  - id: "ta-common-verbs"
+    name: { en: "Everyday verbs" }
+    summary: { en: "The common verbs of the course, from the first verbs of the beginner units to the later verb units, each with sentences that use them." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["ta-verbs", "ta-verbs-sentences", "ta-more-verbs", "ta-more-verbs-sentences", "ta-verbs-3", "ta-verbs-3-sentences", "ta-verbs-4", "ta-verbs-4-sentences"]
+  - id: "ta-first-phrases"
+    name: { en: "Greetings and first phrases" }
+    summary: { en: "The phrasebook and the first words, taught whole from the first lesson, with questions and pronouns to build short sentences." }
+    kind: "words"
+    level: "A1"
+    decks: ["ta-phrasebook", "ta-first-words", "ta-first-words-sentences", "ta-questions", "ta-questions-sentences", "ta-about-me", "ta-about-me-sentences"]
+  - id: "ta-kinship"
+    name: { en: "Family and relationships" }
+    summary: { en: "Words for family members and for friends and the people around you, with short sentences." }
+    kind: "words"
+    level: "A1"
+    decks: ["ta-family", "ta-family-sentences", "ta-relationships", "ta-relationships-sentences"]
+  - id: "ta-numbers"
+    name: { en: "Numbers and counting" }
+    summary: { en: "Counting from one to twenty and on to bigger numbers, with amounts and short sentences that use them." }
+    kind: "words"
+    level: "A1"
+    decks: ["ta-numbers-1-20", "ta-numbers-sentences", "ta-numbers-big", "ta-numbers-big-sentences", "ta-quantities", "ta-quantities-sentences"]
+  - id: "ta-food-cooking"
+    name: { en: "Food, cooking and eating out" }
+    summary: { en: "Words for food, groceries, cooking and eating out, with short sentences." }
+    kind: "words"
+    level: "A1"
+    decks: ["ta-food", "ta-food-sentences", "ta-groceries", "ta-groceries-sentences", "ta-cooking", "ta-cooking-sentences", "ta-eating-out", "ta-eating-out-sentences"]
+  - id: "ta-shopping-money"
+    name: { en: "Shopping and the market" }
+    summary: { en: "Words for the market and for buying things in shops, with short sentences." }
+    kind: "words"
+    level: "A1"
+    decks: ["ta-market", "ta-market-sentences", "ta-shopping", "ta-shopping-sentences"]
+  - id: "ta-time-calendar"
+    name: { en: "Time, calendar and weather" }
+    summary: { en: "Telling the time, the days and months, and the weather, with short sentences." }
+    kind: "words"
+    level: "A1"
+    decks: ["ta-time", "ta-time-sentences", "ta-calendar", "ta-calendar-sentences", "ta-weather", "ta-weather-sentences"]
+  - id: "ta-body-health"
+    name: { en: "Body, illness and health" }
+    summary: { en: "Words for the body, for being ill and for health care, with short sentences." }
+    kind: "words"
+    level: "A1"
+    decks: ["ta-body", "ta-body-sentences", "ta-illness", "ta-illness-sentences", "ta-health", "ta-health-sentences"]
+  - id: "ta-home-housing"
+    name: { en: "Home, housing and chores" }
+    summary: { en: "Words for the home, for renting and housing, and for household chores, with short sentences." }
+    kind: "words"
+    level: "A1"
+    decks: ["ta-home", "ta-home-sentences", "ta-housing", "ta-housing-sentences", "ta-chores", "ta-chores-sentences", "ta-things", "ta-things-sentences"]
+  - id: "ta-clothes-appearance"
+    name: { en: "Clothes and appearance" }
+    summary: { en: "Words for clothes and for how a person looks, with short sentences." }
+    kind: "words"
+    level: "A1"
+    decks: ["ta-clothes", "ta-clothes-sentences", "ta-appearance", "ta-appearance-sentences"]
+  - id: "ta-travel-transport"
+    name: { en: "Travel, transport and directions" }
+    summary: { en: "Words for getting around, asking the way, journeys and travel, with short sentences." }
+    kind: "words"
+    level: "A1"
+    decks: ["ta-transport", "ta-transport-sentences", "ta-directions", "ta-directions-sentences", "ta-journey", "ta-journey-sentences", "ta-travel", "ta-travel-sentences", "ta-location", "ta-location-sentences", "ta-places", "ta-places-sentences"]
+  - id: "ta-work-careers"
+    name: { en: "Work and careers" }
+    summary: { en: "Words for work, the workplace and careers, with short sentences." }
+    kind: "words"
+    level: "A1"
+    decks: ["ta-work", "ta-work-sentences", "ta-workplace", "ta-workplace-sentences", "ta-careers", "ta-careers-sentences"]
+  - id: "ta-school-learning"
+    name: { en: "School and learning" }
+    summary: { en: "Words for school and study, with short sentences." }
+    kind: "words"
+    level: "A2"
+    decks: ["ta-school", "ta-school-sentences"]
+  - id: "ta-phone-technology"
+    name: { en: "Phones and technology" }
+    summary: { en: "Words for the phone and for technology, with short sentences." }
+    kind: "words"
+    level: "A2"
+    decks: ["ta-phone", "ta-phone-sentences", "ta-technology", "ta-technology-sentences"]
+  - id: "ta-nature-animals"
+    name: { en: "Nature, animals and farming" }
+    summary: { en: "Words for nature, animals, the environment, farming and geography, with short sentences." }
+    kind: "words"
+    level: "A1"
+    decks: ["ta-nature", "ta-nature-sentences", "ta-animals", "ta-animals-sentences", "ta-environment", "ta-environment-sentences", "ta-agriculture", "ta-agriculture-sentences", "ta-geography", "ta-geography-sentences"]
+  - id: "ta-festivals-weddings"
+    name: { en: "Festivals and weddings" }
+    summary: { en: "Words for festivals and for weddings, with short sentences." }
+    kind: "words"
+    level: "A2"
+    decks: ["ta-festivals", "ta-festivals-sentences", "ta-weddings", "ta-weddings-sentences"]
+  - id: "ta-arts-sports"
+    name: { en: "Arts, cinema, sports and hobbies" }
+    summary: { en: "Words for the arts, cinema, sports and hobbies, with short sentences." }
+    kind: "words"
+    level: "A2"
+    decks: ["ta-arts", "ta-arts-sentences", "ta-cinema", "ta-cinema-sentences", "ta-sports", "ta-sports-sentences", "ta-hobbies", "ta-hobbies-sentences"]
+  - id: "ta-feelings-opinions"
+    name: { en: "Feelings, opinions and describing" }
+    summary: { en: "Words for feelings, for giving an opinion and for describing things, with short sentences." }
+    kind: "words"
+    level: "A1"
+    decks: ["ta-feelings", "ta-feelings-sentences", "ta-opinions", "ta-opinions-sentences", "ta-describing", "ta-describing-sentences", "ta-adjectives-2", "ta-adjectives-2-sentences", "ta-adverbs", "ta-adverbs-sentences", "ta-abstract-words", "ta-abstract-words-sentences"]
+  - id: "ta-society-law"
+    name: { en: "Government, law, news and history" }
+    summary: { en: "Words for government, the law, the news and history, with short sentences." }
+    kind: "words"
+    level: "B1"
+    decks: ["ta-government", "ta-government-sentences", "ta-law", "ta-law-sentences", "ta-news", "ta-news-sentences", "ta-history", "ta-history-sentences", "ta-services", "ta-services-sentences"]
+  - id: "ta-help-emergencies"
+    name: { en: "Asking for help and emergencies" }
+    summary: { en: "Words and phrases for asking for help and for emergencies, with short sentences." }
+    kind: "words"
+    level: "A2"
+    decks: ["ta-help", "ta-help-sentences", "ta-emergencies", "ta-emergencies-sentences"]
+  - id: "ta-everyday-situations"
+    name: { en: "Everyday situations" }
+    summary: { en: "Key phrases and words for everyday moments: taxis, shops, eating out, the doctor, the rail station, hotels, the post office and bank, greetings, emergencies and asking the way." }
+    kind: "other"
+    level: "A1"
+    situations: ["taxi", "shops", "eat", "doctor", "rail", "hotel", "post", "greetings", "emergencies", "directions"]
+  - id: "ta-proverbs"
+    name: { en: "Proverbs" }
+    summary: { en: "Sixty proverbs from Rev. P. Percival's 1874 collection of Tamil proverbs, each with its literal rendering and what it means." }
+    kind: "other"
+    level: "A2"
+    decks: ["ta-proverbs-1", "ta-proverbs-2", "ta-proverbs-3"]
+  - id: "ta-sangam-classics"
+    name: { en: "Sangam poems and early classics" }
+    summary: { en: "Short passages from the Sangam anthologies, the Tirukkural, the Naladiyar and the epics Silappatikaram and Manimekalai, each with an English rendering." }
+    kind: "other"
+    level: "B1"
+    decks: ["ta-culture-1"]
+    cards: ["ta-6000", "ta-6001", "ta-6002", "ta-6003", "ta-6004", "ta-6005", "ta-6006", "ta-6007", "ta-6008", "ta-6009", "ta-6010", "ta-6011", "ta-6012", "ta-6013", "ta-6014", "ta-6015", "ta-6016", "ta-6017"]
+  - id: "ta-tirukkural"
+    name: { en: "Tirukkural" }
+    summary: { en: "The first three couplets of the Tirukkural, from its opening chapter, which praises the divine." }
+    kind: "other"
+    level: "B1"
+    cards: ["ta-6009", "ta-6010", "ta-6017"]
+  - id: "ta-devotional-verse"
+    name: { en: "Devotional verse and the epic" }
+    summary: { en: "Passages of devotional verse from the Tiruppavai, the Nachiyar Tirumozhi, the Thiruvasagam, the Tirumantiram and the Tiruppugazh, and three verses of the Kamba Ramayanam, each with an English rendering." }
+    kind: "other"
+    level: "B1"
+    decks: ["ta-culture-2"]
+    cards: ["ta-6050", "ta-6051", "ta-6052", "ta-6053", "ta-6054", "ta-6055", "ta-6056", "ta-6057", "ta-6058", "ta-6059", "ta-6060", "ta-6061", "ta-6062", "ta-6063", "ta-6064", "ta-6065"]
+  - id: "ta-aathichudi"
+    name: { en: "Aathichudi and moral sayings" }
+    summary: { en: "Short moral sayings: the Aathichudi, the Mutharai and the Konrai Vendan, and Bharati's Puthiya Aathichudi." }
+    kind: "other"
+    level: "B1"
+    cards: ["ta-6100", "ta-6101", "ta-6102", "ta-6103", "ta-6104", "ta-6105", "ta-6106", "ta-6107", "ta-6108", "ta-6160", "ta-6161", "ta-6162"]
+  - id: "ta-first-novel"
+    name: { en: "The first Tamil novel" }
+    summary: { en: "Three passages of Prathapa Mudaliar Charithram by Samuel Vedanayagam Pillai, the first Tamil novel, each with an English rendering." }
+    kind: "other"
+    level: "B1"
+    cards: ["ta-6109", "ta-6110", "ta-6111"]
+  - id: "ta-bharati"
+    name: { en: "Subramania Bharati" }
+    summary: { en: "Passages of the poet Subramania Bharati, from Kuyil Pattu, Pappa Pattu, Nalladhor Veenai, Gnanaratham, Puthiya Aathichudi and Kannan Pattu, each with an English rendering." }
+    kind: "other"
+    level: "B1"
+    decks: ["ta-culture-4"]
+    cards: ["ta-6150", "ta-6151", "ta-6152", "ta-6153", "ta-6154", "ta-6155", "ta-6156", "ta-6157", "ta-6158", "ta-6159", "ta-6160", "ta-6161", "ta-6162", "ta-6163", "ta-6164", "ta-6165"]
