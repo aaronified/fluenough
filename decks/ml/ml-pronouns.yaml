@@ -282,3 +282,105 @@ cards:
   - id: "ml-0111"
     kind: "set"
     members: [{ ref: "ml-0003" }, { ref: "ml-0004" }, { ref: "ml-0095" }, { ref: "ml-0096" }, { ref: "ml-0097" }, { ref: "ml-0098" }, { ref: "ml-0099" }, { ref: "ml-0100" }, { ref: "ml-0101" }]
+  - id: "ml-1004"
+    target: "അവർ"
+    reading: "avar"
+    ipa: "əʋaɾ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അവർ ആര്?"
+        reading: "avar ār?"
+        ipa: "əʋaɾ aːɾ"
+        bases: [{ word: "അവർ", base: "അവർ", reading: "avar" }, { word: "ആര്", ref: "ml-0031" }]
+      - target: "അവർ എവിടെ?"
+        reading: "avar eviṭe?"
+        ipa: "əʋaɾ eʋiʈe"
+        bases: [{ word: "അവർ", base: "അവർ", reading: "avar" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-1005"
+    target: "നിന്നെ"
+    reading: "ninne"
+    ipa: "ninne"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "നിന്നെ", ref: "ml-0095" }]
+    examples:
+      - target: "എനിക്ക് നിന്നെ മനസ്സിലായില്ല."
+        reading: "enikk ninne manassilāyilla."
+        ipa: "enikk ninne mənəssilaːjilla"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "നിന്നെ", ref: "ml-0095" }, { word: "മനസ്സിലായില്ല", base: "മനസ്സിലാകുക", reading: "manassilākuka" }]
+      - target: "ക്ഷമിക്കണം, നിന്നെ മനസ്സിലായില്ല."
+        reading: "kṣamikkaṇaṁ, ninne manassilāyilla."
+        ipa: "kʂəmikkəɳam ninne mənəssilaːjilla"
+        bases: [{ word: "ക്ഷമിക്കണം", ref: "ml-0014" }, { word: "നിന്നെ", ref: "ml-0095" }, { word: "മനസ്സിലായില്ല", base: "മനസ്സിലാകുക", reading: "manassilākuka" }]
+  - id: "ml-1006"
+    target: "എല്ലാവരും"
+    reading: "ellāvaruṁ"
+    ipa: "ellaːʋəɾum"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എല്ലാവരും വരൂ."
+        reading: "ellāvaruṁ varū."
+        ipa: "ellaːʋəɾum ʋəɾuː"
+        bases: [{ word: "എല്ലാവരും", base: "എല്ലാവരും", reading: "ellāvaruṁ" }, { word: "വരൂ", ref: "ml-0010" }]
+      - target: "എല്ലാവരും വരൂ, ദയവായി."
+        reading: "ellāvaruṁ varū, dayavāyi."
+        ipa: "ellaːʋəɾum ʋəɾuː d̪əjəʋaːji"
+        bases: [{ word: "എല്ലാവരും", base: "എല്ലാവരും", reading: "ellāvaruṁ" }, { word: "വരൂ", ref: "ml-0010" }, { word: "ദയവായി", ref: "ml-0017" }]
+  - id: "ml-1007"
+    target: "ഇവൻ"
+    reading: "ivaṉ"
+    ipa: "iʋan"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇവൻ ആര്?"
+        reading: "ivaṉ ār?"
+        ipa: "iʋan aːɾ"
+        bases: [{ word: "ഇവൻ", base: "ഇവൻ", reading: "ivaṉ" }, { word: "ആര്", ref: "ml-0031" }]
+      - target: "ഇവൻ എവിടെ?"
+        reading: "ivaṉ eviṭe?"
+        ipa: "iʋan eʋiʈe"
+        bases: [{ word: "ഇവൻ", base: "ഇവൻ", reading: "ivaṉ" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-1008"
+    target: "ഇവൾ"
+    reading: "ivaḷ"
+    ipa: "iʋaɭ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇവൾ ആര്?"
+        reading: "ivaḷ ār?"
+        ipa: "iʋaɭ aːɾ"
+        bases: [{ word: "ഇവൾ", base: "ഇവൾ", reading: "ivaḷ" }, { word: "ആര്", ref: "ml-0031" }]
+      - target: "ഇവൾ എവിടെ?"
+        reading: "ivaḷ eviṭe?"
+        ipa: "iʋaɭ eʋiʈe"
+        bases: [{ word: "ഇവൾ", base: "ഇവൾ", reading: "ivaḷ" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-1009"
+    target: "ഇവർ"
+    reading: "ivar"
+    ipa: "iʋaɾ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇവർ ആര്?"
+        reading: "ivar ār?"
+        ipa: "iʋaɾ aːɾ"
+        bases: [{ word: "ഇവർ", base: "ഇവർ", reading: "ivar" }, { word: "ആര്", ref: "ml-0031" }]
+      - target: "ഇവർ എവിടെ?"
+        reading: "ivar eviṭe?"
+        ipa: "iʋaɾ eʋiʈe"
+        bases: [{ word: "ഇവർ", base: "ഇവർ", reading: "ivar" }, { word: "എവിടെ", ref: "ml-0033" }]

@@ -1,0 +1,120 @@
+schema: 1
+id: "ml-grammar-adjectives"
+part: "core"
+kind: "grammar"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["before-noun", "one", "ones"]
+  entries:
+    - lemma: "നല്ല"
+      key: "nalla"
+      reading: "nalla"
+      ipa: "nəlla"
+      forms:
+        "before-noun": "നല്ല"
+        "one": "നല്ലത്"
+        "ones": "നല്ലവ"
+      readings:
+        "before-noun": "nalla"
+        "one": "nallat"
+        "ones": "nallava"
+      ipas:
+        "before-noun": "nəlla"
+        "one": "nəllat̪"
+        "ones": "nəlləʋa"
+    - lemma: "വലിയ"
+      key: "valiya"
+      reading: "valiya"
+      ipa: "ʋəlija"
+      forms:
+        "before-noun": "വലിയ"
+        "one": ["വലുത്", "വലിയത്"]
+        "ones": "വലിയവ"
+      readings:
+        "before-noun": "valiya"
+        "one": ["valut", "valiyat"]
+        "ones": "valiyava"
+      ipas:
+        "before-noun": "ʋəlija"
+        "one": "ʋəlut̪"
+        "ones": "ʋəlijəʋa"
+    - lemma: "ചെറിയ"
+      key: "ceriya"
+      reading: "ceṟiya"
+      ipa: "tʃeɾija"
+      forms:
+        "before-noun": "ചെറിയ"
+        "one": ["ചെറുത്", "ചെറിയത്"]
+        "ones": "ചെറിയവ"
+      readings:
+        "before-noun": "ceṟiya"
+        "one": ["ceṟut", "ceṟiyat"]
+        "ones": "ceṟiyava"
+      ipas:
+        "before-noun": "tʃeɾija"
+        "one": "tʃeɾut̪"
+        "ones": "tʃeɾijəʋa"
+    - lemma: "പുതിയ"
+      key: "putiya"
+      reading: "putiya"
+      ipa: "put̪ija"
+      forms:
+        "before-noun": "പുതിയ"
+        "one": "പുതിയത്"
+        "ones": "പുതിയവ"
+      readings:
+        "before-noun": "putiya"
+        "one": "putiyat"
+        "ones": "putiyava"
+      ipas:
+        "before-noun": "put̪ija"
+        "one": "put̪ijat̪"
+        "ones": "put̪ijəʋa"
+    - lemma: "പഴയ"
+      key: "pazhaya"
+      reading: "paḻaya"
+      ipa: "pəɻəja"
+      forms:
+        "before-noun": "പഴയ"
+        "one": "പഴയത്"
+        "ones": "പഴയവ"
+      readings:
+        "before-noun": "paḻaya"
+        "one": "paḻayat"
+        "ones": "paḻayava"
+      ipas:
+        "before-noun": "pəɻəja"
+        "one": "pəɻəjat̪"
+        "ones": "pəɻəjəʋa"
+    - lemma: "ചൂടുള്ള"
+      key: "cuduulla"
+      reading: "cūṭuḷḷa"
+      ipa: "tʃuːʈuɭɭa"
+      forms:
+        "before-noun": "ചൂടുള്ള"
+        "one": "ചൂടുള്ളത്"
+        "ones": null
+      readings:
+        "before-noun": "cūṭuḷḷa"
+        "one": "cūṭuḷḷat"
+      ipas:
+        "before-noun": "tʃuːʈuɭɭa"
+        "one": "tʃuːʈuɭɭat̪"
+    - lemma: "തണുത്ത"
+      key: "thanutta"
+      reading: "taṇutta"
+      ipa: "t̪əɳut̪t̪a"
+      forms:
+        "before-noun": "തണുത്ത"
+        "one": "തണുത്തത്"
+        "ones": "തണുത്തവ"
+      readings:
+        "before-noun": "taṇutta"
+        "one": "taṇuttat"
+        "ones": "taṇuttava"
+      ipas:
+        "before-noun": "t̪əɳut̪t̪a"
+        "one": "t̪əɳut̪t̪at̪"
+        "ones": "t̪əɳut̪t̪əʋa"

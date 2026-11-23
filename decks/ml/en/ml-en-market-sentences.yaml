@@ -1,0 +1,76 @@
+schema: 1
+id: "ml-en-market-sentences"
+kind: "layer"
+core: "ml-market-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The market in sentences"
+description: "Short sentences at the market: fish, vegetables, meat, the price, the weight and the fruit on sale. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-3040":
+    native: "How much is the fish?"
+    notes:
+      n1: "എത്ര (etra) asks how much the fish costs, so the price word വില (vila) is not needed."
+    confusables:
+      w1: { why: "തൂക്കം (tūkkaṁ) is weight, asked in a different way." }
+      w2: { why: "ഇറച്ചി (iṟacci) is meat, another thing at the market." }
+  "ml-3041":
+    native: "There are vegetables at the market."
+    bases:
+      "ഉണ്ട്": "there are"
+    notes:
+      n1: "The place ending ഇൽ (il), in, turns ചന്ത (canta), market, into ചന്തയിൽ (cantayil), at the market."
+    confusables:
+      w1: { why: "മീൻ (mīṉ) is fish, a different thing at the market." }
+      w2: { why: "പഴങ്ങൾ (paḻaṅṅaḷ) is fruits, a different thing at the market." }
+  "ml-3042":
+    native: "Do you want meat?"
+    bases:
+      "വേണോ": "do you want"
+    notes:
+      n1: "ഇറച്ചി (iṟacci) is meat in general; chicken meat is ചിക്കൻ (cikkaṉ)."
+    confusables:
+      w1: { why: "മീൻ (mīṉ) is fish, not meat in the general sense." }
+      w2: { why: "ചിക്കൻ (cikkaṉ) is chicken meat, one kind of meat." }
+  "ml-3043":
+    native: "I need a kilo of fish."
+    bases:
+      "ഒരു": "a; one"
+      "വേണം": "need"
+    notes:
+      n1: "എനിക്ക് (enikk) is the form of ഞാൻ (ñāṉ) before the dative ending ക്ക് (kk); the stem changes to എന (ena)."
+      n2: "കിലോ (kilō) comes after ഒരു (oru) and before the thing weighed, with no word for 'of'."
+    confusables:
+      w1: { why: "ലിറ്റർ (liṟṟar) is a litre, which measures liquid." }
+      w2: { why: "ഗ്രാം (grāṁ) is a gram, a smaller weight." }
+  "ml-3044":
+    native: "What is the weight?"
+    notes:
+      n1: "തൂക്കം (tūkkaṁ) is asked with എത്ര (etra), how much, as the price is."
+    confusables:
+      w1: { why: "വില (vila) is the price, not the weight." }
+      w2: { why: "എണ്ണം (eṇṇaṁ) counts pieces, not weight." }
+  "ml-3045":
+    native: "Are there fruits at the market?"
+    notes:
+      n1: "പഴങ്ങൾ (paḻaṅṅaḷ) is the plural of പഴം (paḻaṁ), fruit, used for several fruits."
+    confusables:
+      w1: { why: "പഴം (paḻaṁ) is the one-word form for fruit in general." }
+      w2: { why: "പച്ചക്കറി (paccakkaṟi) is vegetables, a different kind of produce." }
+  "ml-3046":
+    native: "The price is high."
+    notes:
+      n1: "കൂടുതൽ (kūṭutal) takes ആണ് (āṇ) as a suffix: കൂടുതലാണ് (kūṭutalāṇ), is more. Said of a price, it means the price is high."
+    confusables:
+      w1: { why: "വിലകൂടിയ (vilakūṭiya) is an adjective for an expensive thing." }
+      w2: { why: "വിലകുറഞ്ഞ (vilakuṟañña) is the opposite: cheap." }
+  "ml-3047":
+    native: "Do you like fish?"
+    bases:
+      "ഇഷ്ടമാണോ": "do you like"
+    notes:
+      n1: "നിനക്ക് (ninakk) is the form of നീ (nī) before the dative ending ക്ക് (kk); the stem changes to നിന (nina), and the liked thing is the subject."
+    confusables:
+      w1: { why: "ഇറച്ചി (iṟacci) is meat, another thing at the market." }
+      w2: { why: "പച്ചക്കറി (paccakkaṟi) is vegetables, another thing at the market." }

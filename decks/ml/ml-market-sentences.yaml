@@ -1,0 +1,88 @@
+schema: 1
+id: "ml-market-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-3040"
+    target: "മീൻ എത്ര?"
+    reading: "mīṉ etra?"
+    ipa: "miːn et̪ɾa"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "മീൻ", ref: "ml-0233" }, { word: "എത്ര", ref: "ml-0038" }]
+    confusables:
+      - { id: "w1", ref: "ml-0237", kind: "word" }
+      - { id: "w2", ref: "ml-0235", kind: "word" }
+  - id: "ml-3041"
+    target: "പച്ചക്കറി ചന്തയിൽ ഉണ്ട്."
+    reading: "paccakkaṟi cantayil uṇṭ."
+    ipa: "pətʃtʃəkkəɾi tʃənt̪əjil uɳʈ"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "പച്ചക്കറി", ref: "ml-0234" }, { word: "ചന്തയിൽ", ref: "ml-0238" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+    confusables:
+      - { id: "w1", ref: "ml-0233", kind: "word" }
+      - { id: "w2", ref: "ml-0239", kind: "word" }
+  - id: "ml-3042"
+    target: "ഇറച്ചി വേണോ?"
+    reading: "iṟacci vēṇō?"
+    ipa: "iɾətʃtʃi ʋeːɳoː"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "ഇറച്ചി", ref: "ml-0235" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+    confusables:
+      - { id: "w1", ref: "ml-0233", kind: "word" }
+      - { id: "w2", ref: "ml-0294", kind: "word" }
+  - id: "ml-3043"
+    target: "എനിക്ക് ഒരു കിലോ മീൻ വേണം."
+    reading: "enikk oru kilō mīṉ vēṇaṁ."
+    ipa: "enikk oɾu kiloː miːn ʋeːɳam"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }, { id: "n2", kind: "usage" }]
+    bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "കിലോ", ref: "ml-0464" }, { word: "മീൻ", ref: "ml-0233" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+    confusables:
+      - { id: "w1", ref: "ml-0465", kind: "word" }
+      - { id: "w2", ref: "ml-0466", kind: "word" }
+  - id: "ml-3044"
+    target: "തൂക്കം എത്ര?"
+    reading: "tūkkaṁ etra?"
+    ipa: "t̪uːkkam et̪ɾa"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "തൂക്കം", ref: "ml-0237" }, { word: "എത്ര", ref: "ml-0038" }]
+    confusables:
+      - { id: "w1", ref: "ml-0236", kind: "word" }
+      - { id: "w2", ref: "ml-0470", kind: "word" }
+  - id: "ml-3045"
+    target: "പഴങ്ങൾ ചന്തയിൽ ഉണ്ടോ?"
+    reading: "paḻaṅṅaḷ cantayil uṇṭō?"
+    ipa: "pəɻəŋŋaɭ tʃənt̪əjil uɳʈoː"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "പഴങ്ങൾ", ref: "ml-0239" }, { word: "ചന്തയിൽ", ref: "ml-0238" }, { word: "ഉണ്ടോ", ref: "ml-0040" }]
+    confusables:
+      - { id: "w1", ref: "ml-0225", kind: "word" }
+      - { id: "w2", ref: "ml-0234", kind: "word" }
+  - id: "ml-3046"
+    target: "വില കൂടുതലാണ്."
+    reading: "vila kūṭutalāṇ."
+    ipa: "ʋila kuːʈut̪əlaːɳ"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "വില", ref: "ml-0236" }, { word: "കൂടുതലാണ്", ref: "ml-0455" }]
+    confusables:
+      - { id: "w1", ref: "ml-0485", kind: "word" }
+      - { id: "w2", ref: "ml-0486", kind: "word" }
+  - id: "ml-3047"
+    target: "നിനക്ക് മീൻ ഇഷ്ടമാണോ?"
+    reading: "ninakk mīṉ iṣṭamāṇō?"
+    ipa: "ninakk miːn iʂʈəmaːɳoː"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "നിനക്ക്", ref: "ml-0108" }, { word: "മീൻ", ref: "ml-0233" }, { word: "ഇഷ്ടമാണോ", base: "ഇഷ്ടമാണോ", reading: "iṣṭamāṇō" }]
+    confusables:
+      - { id: "w1", ref: "ml-0235", kind: "word" }
+      - { id: "w2", ref: "ml-0234", kind: "word" }

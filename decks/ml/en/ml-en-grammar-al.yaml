@@ -1,0 +1,21 @@
+schema: 1
+id: "ml-en-grammar-al"
+kind: "layer"
+core: "ml-grammar-al"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "By and with: കൊണ്ട് (koṇṭ) and -ആൽ (-āl)"
+description: "By a pen, by hand, with a knife: the spoken word കൊണ്ട് (koṇṭ) and the written ending -ആൽ (-āl). Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Instrument"
+  slot_name: "form"
+  slots:
+    "kondu": "with {meaning} (spoken): the plain noun and കൊണ്ട് (koṇṭ)"
+    "al": "by {meaning} (written): the ending -ആൽ (-āl)"
+  entries:
+    "pena": "pen"
+    "kai": "hand"
+    "katti": "knife"
+    "maram": "tree; wood"
+  notes: "-ആൽ (-āl) says by what means or tool something is done, as in പേനയാൽ (pēnayāl), with a pen. It is written, and it joins the noun as the other endings do: after a vowel with a glide, as പേന (pēna) becomes പേനയാൽ (pēnayāl), and a word in -ം (-ṁ) changes it to -ത്ത് (-tt), as മരം (maraṁ) becomes മരത്താൽ (marattāl). In speech the word കൊണ്ട് (koṇṭ) is used after the plain noun: പേന കൊണ്ട് (pēna koṇṭ). For a vehicle Malayalam says in, with the ending -ഇൽ (-il), as ബസിൽ (basil). Source: English Wikipedia, Malayalam grammar (the instrumental case, the declension of മരം (maraṁ))."
