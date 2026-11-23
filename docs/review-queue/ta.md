@@ -62,3 +62,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1102 | ta-daily-life | Is துலக்கு the everyday spoken verb for brushing teeth, or is another verb more usual? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1804 | ta-help | Is பிரச்சினை (not பிரச்சனை) the spelling to teach first? | Sonnet builder | 2026-11-23 |
 | ta-1805 | ta-help | Is போலீஸ் the right spoken form, and the register correct? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-negative | Check the spoken nee, aval and avarkal negatives (மாட்ட, மாட்டா, மாட்டாங்க) and the spoken past negative in -ல (-la). | Sonnet builder (ta-gram2) | 2026-11-23 |
