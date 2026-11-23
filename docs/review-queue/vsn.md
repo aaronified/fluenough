@@ -1,3 +1,94 @@
+# Review queue: vsn
+
+Questions a deck builder could not settle, asked of a bilingual reviewer. Table of v2 rows first: one row per doubted facet of a card (see docs/review-queue/README.md). Rows of the earlier question table follow, kept as they were written; the README says they are removed by a separate change.
+
+## Rows: facets (v2)
+
+| card id | unit | facet | concern (optional) | raised by | date |
+|---|---|---|---|---|---|
+| vsn-0001 | vsn-first-words | example:02e03fba | Engine: ipa was əhəm dʒaːnaːmi, now əɦəm dʒaːnaːmi | Haiku builder | 2026-11-23 |
+| vsn-0001 | vsn-first-words | example:b81ccc7f | Engine: ipa was əhəm vədaːmi, now əɦəm ʋəd̪aːmi | Haiku builder | 2026-11-23 |
+| vsn-0001 | vsn-first-words | ipa | Engine: ipa was əhəm, now əɦəm | Haiku builder | 2026-11-23 |
+| vsn-0001 | vsn-first-words | meaning | Gloss taken from the card's own example base; the Vedic word plan does not list this headword | Haiku builder | 2026-11-23 |
+| vsn-0001 | vsn-first-words | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0002 | vsn-first-words | example:bd4a74ba | Engine: ipa was tvəm dʒaːnaːsi, now t̪ʋəm dʒaːnaːsi | Haiku builder | 2026-11-23 |
+| vsn-0002 | vsn-first-words | example:f4b0c176 | Engine: ipa was tvəm devəh əsi, now t̪ʋəm d̪eːʋəh əsi | Haiku builder | 2026-11-23 |
+| vsn-0002 | vsn-first-words | ipa | Engine: ipa was tvəm, now t̪ʋəm | Haiku builder | 2026-11-23 |
+| vsn-0002 | vsn-first-words | meaning | Gloss taken from the card's own example base; the Vedic word plan does not list this headword | Haiku builder | 2026-11-23 |
+| vsn-0002 | vsn-first-words | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0003 | vsn-first-words | example:c7cbeb11 | Engine: reading was āpaḥ agniś ca, now āpaḥ agniśca; ipa was aːpəh əɡnɪʃtʃə, now aːpəh əɡniʃtʃə | Haiku builder | 2026-11-23 |
+| vsn-0003 | vsn-first-words | example:eba0fa04 | Engine: ipa was aːpəh səntɪ, now aːpəh sənt̪i | Haiku builder | 2026-11-23 |
+| vsn-0003 | vsn-first-words | meaning | Gloss taken from the card's own example base; the Vedic word plan does not list this headword | Haiku builder | 2026-11-23 |
+| vsn-0003 | vsn-first-words | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0004 | vsn-first-words | example:0469e8cf | Engine: ipa was əɡnɪm pəʃjə, now əɡnim pəʃjə | Haiku builder | 2026-11-23 |
+| vsn-0004 | vsn-first-words | example:a7f85668 | Engine: ipa was əɡnɪh devəh əsti, now əɡnih d̪eːʋəh əst̪i | Haiku builder | 2026-11-23 |
+| vsn-0004 | vsn-first-words | ipa | Engine: ipa was əɡnɪh, now əɡnih | Haiku builder | 2026-11-23 |
+| vsn-0004 | vsn-first-words | meaning | Gloss taken from the card's own example base; the Vedic word plan does not list this headword | Haiku builder | 2026-11-23 |
+| vsn-0004 | vsn-first-words | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0005 | vsn-first-words | example:33430e94 | Engine: ipa was devaːh səntɪ, now d̪eːʋaːh sənt̪i | Haiku builder | 2026-11-23 |
+| vsn-0005 | vsn-first-words | example:bff0bd9d | Engine: ipa was devaːjə nəməh, now d̪eːʋaːjə nəməh | Haiku builder | 2026-11-23 |
+| vsn-0005 | vsn-first-words | ipa | Engine: ipa was devəh, now d̪eːʋəh | Haiku builder | 2026-11-23 |
+| vsn-0005 | vsn-first-words | meaning | Gloss taken from the card's own example base; the Vedic word plan does not list this headword | Haiku builder | 2026-11-23 |
+| vsn-0005 | vsn-first-words | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0006 | vsn-first-words | example:c0c0f6ea | Engine: ipa was nə devəh, now nə d̪eːʋəh | Haiku builder | 2026-11-23 |
+| vsn-0006 | vsn-first-words | meaning | Gloss taken from the card's own example base; the Vedic word plan does not list this headword | Haiku builder | 2026-11-23 |
+| vsn-0006 | vsn-first-words | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0007 | vsn-first-words | example:8ea4eefd | Engine: ipa was ekəh devəh, now eːkəh d̪eːʋəh | Haiku builder | 2026-11-23 |
+| vsn-0007 | vsn-first-words | example:decdf908 | Engine: ipa was ekəh əʃvəh, now eːkəh əʃʋəh | Haiku builder | 2026-11-23 |
+| vsn-0007 | vsn-first-words | ipa | Engine: ipa was ekəh, now eːkəh | Haiku builder | 2026-11-23 |
+| vsn-0007 | vsn-first-words | meaning | Gloss taken from the card's own example base; the Vedic word plan does not list this headword | Haiku builder | 2026-11-23 |
+| vsn-0007 | vsn-first-words | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0008 | vsn-first-words | example:309d7a8d | Engine: ipa was dvau devau, now d̪ʋaːu d̪eːʋaːu | Haiku builder | 2026-11-23 |
+| vsn-0008 | vsn-first-words | example:5044e196 | Engine: ipa was dvau əʃvau, now d̪ʋaːu əʃʋaːu | Haiku builder | 2026-11-23 |
+| vsn-0008 | vsn-first-words | ipa | Engine: ipa was dvau, now d̪ʋaːu | Haiku builder | 2026-11-23 |
+| vsn-0008 | vsn-first-words | meaning | Gloss taken from the card's own example base; the Vedic word plan does not list this headword | Haiku builder | 2026-11-23 |
+| vsn-0009 | vsn-first-words | example:0652c345 | Engine: ipa was ɡauh tʃə əʃvəh tʃə, now ɡaːuh tʃə əʃʋəh tʃə | Haiku builder | 2026-11-23 |
+| vsn-0009 | vsn-first-words | example:eb643733 | Engine: ipa was ɡauh pibətɪ, now ɡaːuh pibət̪i | Haiku builder | 2026-11-23 |
+| vsn-0009 | vsn-first-words | ipa | Engine: ipa was ɡauh, now ɡaːuh | Haiku builder | 2026-11-23 |
+| vsn-0009 | vsn-first-words | meaning | Gloss taken from the card's own example base; the Vedic word plan does not list this headword | Haiku builder | 2026-11-23 |
+| vsn-0009 | vsn-first-words | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0010 | vsn-first-words | example:9d53d8b6 | Engine: ipa was əʃvəm pəʃjə, now əʃʋəm pəʃjə | Haiku builder | 2026-11-23 |
+| vsn-0010 | vsn-first-words | example:f0445838 | Engine: ipa was əʃvəh dʰaːvətɪ, now əʃʋəh d̪ʱaːʋət̪i | Haiku builder | 2026-11-23 |
+| vsn-0010 | vsn-first-words | ipa | Engine: ipa was əʃvəh, now əʃʋəh | Haiku builder | 2026-11-23 |
+| vsn-0010 | vsn-first-words | meaning | Gloss taken from the card's own example base; the Vedic word plan does not list this headword | Haiku builder | 2026-11-23 |
+| vsn-0010 | vsn-first-words | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0011 | vsn-phrasebook | note | unattested in read sources: no Rigveda page read confirms this form, and the note says so | Haiku builder | 2026-11-23 |
+| vsn-0012 | vsn-phrasebook | ipa | Engine: ipa was nəməs te, now nəməst̪eː | Haiku builder | 2026-11-23 |
+| vsn-0012 | vsn-phrasebook | note | unattested in read sources: no Rigveda page read confirms this form, and the note says so | Haiku builder | 2026-11-23 |
+| vsn-0013 | vsn-phrasebook | ipa | Engine: ipa was svəsti, now sʋəst̪i | Haiku builder | 2026-11-23 |
+| vsn-0014 | vsn-phrasebook | ipa | Engine: ipa was svəsti nə indrəh, now sʋəst̪i nə ind̪rəh | Haiku builder | 2026-11-23 |
+| vsn-0015 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0016 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0017 | vsn-phrasebook | ipa | Engine: ipa was kvə, now kʋə | Haiku builder | 2026-11-23 |
+| vsn-0017 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0018 | vsn-phrasebook | ipa | Engine: ipa was kijət, now kijət̪ | Haiku builder | 2026-11-23 |
+| vsn-0018 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0019 | vsn-phrasebook | ipa | Engine: ipa was əsti, now əst̪i | Haiku builder | 2026-11-23 |
+| vsn-0019 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0020 | vsn-phrasebook | ipa | Engine: ipa was naːsti, now naːst̪i | Haiku builder | 2026-11-23 |
+| vsn-0020 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0021 | vsn-phrasebook | ipa | Engine: ipa was ʃrɪnu, now ʃr̩ɳu | Haiku builder | 2026-11-23 |
+| vsn-0021 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0022 | vsn-phrasebook | ipa | Engine: ipa was ehi, now eːɦi | Haiku builder | 2026-11-23 |
+| vsn-0022 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0023 | vsn-phrasebook | ipa | Engine: ipa was pibətə, now pibət̪ə | Haiku builder | 2026-11-23 |
+| vsn-0023 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0024 | vsn-phrasebook | ipa | Engine: ipa was maː bʰəih, now maː bʱaːih | Haiku builder | 2026-11-23 |
+| vsn-0024 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0025 | vsn-phrasebook | ipa | Engine: ipa was rɯtəm, now r̩t̪əm | Haiku builder | 2026-11-23 |
+| vsn-0025 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0026 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0027 | vsn-phrasebook | ipa | Engine: ipa was mitrəh, now mit̪rəh | Haiku builder | 2026-11-23 |
+| vsn-0027 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0028 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0029 | vsn-phrasebook | ipa | Engine: ipa was prəsiːdə, now prəsiːd̪ə | Haiku builder | 2026-11-23 |
+| vsn-0029 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+| vsn-0030 | vsn-phrasebook | note | Note not checked against a page read in this pass; kept from the first build | Haiku builder | 2026-11-23 |
+
+## Earlier rows: question table (kept as written)
+
+| card id | unit | question for the reviewer | raised by | date |
+|---|---|---|---|---|
 | vsn-6212 | see card | प्र वोचत्: the verb runs into the next word by sandhi (वोचत्कुत in RV 10.129.6); is the form read as written right? | Haiku builder | 2026-11-16 |
 | vsn-6218 | see card | Whitney's examples: only the two Atharvaveda lines (AV 2.4.6, AV 2.7.4) were found on sa.wikisource; his RV lines (gámad vā́jebhir, tā́v ā́ yātam) found no verse, so the deck has 2 cards. | Haiku builder | 2026-11-16 |
 | vsn-6209 | see card | परि बभूव: the gloss "to surround, embrace" follows Griffith's rendering of RV 10.121.10; the card's meaning should be checked by a Vedicist. | Haiku builder | 2026-11-16 |
@@ -31,10 +122,6 @@
 | vsn-1349 | see card | विद्युत् (vidyut): fused in the line with the next word विद्युत्स्तनयन्त्यभ्रैः; the card is its first part. Is the card right? | Haiku builder | 2026-11-23 |
 | vsn-1334 | see card | द्यौः (dyauḥ): the plan records both masculine and feminine; no gender is set. Which gender should the card take, if any? | Haiku builder | 2026-11-23 |
 | vsn-1304 | see card | एति (eti): the plan gives 'goes', and Griffith renders this verse as 'comes'; the card gives both. Is that right? | Haiku builder | 2026-11-23 |
-# Review queue: vsn
-Questions a deck builder could not settle, asked of a bilingual reviewer. One row per card.
-| card id | unit | question for the reviewer | raised by | date |
-|---|---|---|---|---|
 | vsn-2210 | cattle-horse (25) | Is it right to teach the attested form गोपाः (stem गोप, RV 2.9.2) as the headword? | Haiku builder | 2026-11-23 |
 | vsn-2212 | cattle-horse (25) | The verse fuses अश्वावत्पुरुभोजो with the next word; is the first part the right card to teach? (RV 7.75.8) | Haiku builder | 2026-11-23 |
 | vsn-2213 | cattle-horse (25) | Is it right to teach the attested form हरी (stem हरि, RV 1.28.7) as the headword? | Haiku builder | 2026-11-23 |
