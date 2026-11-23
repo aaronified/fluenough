@@ -210,7 +210,9 @@ units:
       - { id: "house-rules", text: { "en": "A short list of house rules" } }
   # 5. Rules as forms, practised on the words known: noun endings and
   # conjunctions first, then pronoun and verb forms.
-  - planned: { id: "ta-grammar-noun-forms", grammar: ["plural", "oblique", "ai", "ukku", "il", "itam", "iliruntu", "otu", "utaiya"], words: 0 }
+  - decks: ["ta-grammar-noun-forms", "*"]
+    words: 0
+    grammar: ["plural", "oblique", "ai", "ukku", "il", "itam", "iliruntu", "otu", "utaiya"]
     listening_passages:
       - { id: "which-way-home", text: { "en": "Two people say where they go, with whom, and where from" } }
     reading_passages:
