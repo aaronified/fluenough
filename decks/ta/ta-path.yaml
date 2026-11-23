@@ -381,12 +381,16 @@ units:
     reading_passages:
       - { id: "how-to-card", text: { "en": "A short how-to card for making filter coffee" } }
   # ta-quantities-sentences joins this unit.
-  - planned: { id: "ta-grammar-differences", grammar: "differences", words: 6 }
+  - decks: ["ta-grammar-differences", "*"]
+    words: 6
+    grammar: ["differences"]
     listening_passages:
       - { id: "how-much-how-many", text: { "en": "Asking how much and how many at a stall" } }
     reading_passages:
       - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
-  - planned: { id: "ta-grammar-postpositions", grammar: ["postpositions", "al"], words: 2 }
+  - decks: ["ta-grammar-postpositions", "ta-grammar-al", "*"]
+    words: 2
+    grammar: ["postpositions", "al"]
     listening_passages:
       - { id: "by-bus-by-hand", text: { "en": "Saying how things are done: by bus, by hand, for whom" } }
     reading_passages:

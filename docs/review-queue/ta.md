@@ -51,3 +51,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-grammar-nouns | The noun-class unit was renamed from the planned topic noun-classes to nouns, so that its topic matches its deck name; are the neuter plural verbs in -இன்றன right for spoken use? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-questions | The yes-or-no ending -ஆ is from English Wiktionary; check the six statements and questions for naturalness. | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-sentences | Word order unit: the object marker -ஐ is said to be used on a particular thing (கதவை) and left off a general one (காபி); is that right? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-differences | Six fragments (வீட்டில், பள்ளிக்கு, அம்மாவோடு, தமிழில், வாருங்கள், ஒரு) and seven phrases were written from the standard patterns; are they the right six to show how Tamil differs? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-postpositions | வரை and பற்றி and their four examples were written without a source page; is the use of -ஐ before பற்றி right? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-al | -ஆல் forms were built by rule; is it right that a vehicle takes -இல் (பேருந்தில்) where a tool takes -ஆல்? | Sonnet builder | 2026-11-23 |
