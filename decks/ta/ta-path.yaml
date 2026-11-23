@@ -445,7 +445,8 @@ units:
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the monsoon" } }
   # ta-grammar-past follows this unit.
-  - planned: { id: "ta-calendar", theme: "calendar", words: 15 }
+  - decks: ["ta-calendar", "ta-calendar-sentences", "*"]
+    words: 15
     listening_passages:
       - { id: "what-i-did", text: { "en": "Saying what you did last week" } }
     reading_passages:
