@@ -80,3 +80,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1917 | ta-chores | Is சுத்தம் பண்ணு the right spoken form beside சுத்தம் செய்? | Sonnet builder | 2026-11-23 |
 | ta-1930 | ta-chores | Is இஸ்திரி போடு the natural way to say iron clothes? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-past | Check the spoken past stems (படிச்ச, பாத்த, செஞ்ச, வச்ச) and the spoken second-person past. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-2013 | ta-appearance | Is குண்டான too rude for a person, and is a gentler word better to teach? | Sonnet builder | 2026-11-23 |
+| ta-2005 | ta-appearance | Is புடவை கட்டு the usual verb for wearing a sari beside உடுத்து? | Sonnet builder | 2026-11-23 |
+| ta-2000 | ta-appearance | Is பாவாடை the right everyday word for a skirt? | Sonnet builder | 2026-11-23 |
+| ta-1987 | ta-appearance | Is சாம்பல் the usual word for the colour grey? | Sonnet builder | 2026-11-23 |

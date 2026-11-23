@@ -1,0 +1,102 @@
+schema: 1
+id: "ta-appearance-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4538"
+    target: "அவள் உயரமான பெண்."
+    reading: "avaḷ uyaramāṉa peṇ."
+    ipa: "aʋaɭ ujaɾamaːna peɳ"
+    pos: "phrase"
+    bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "உயரமான", ref: "ta-2010" }, { word: "பெண்", ref: "ta-0441" }]
+    confusables:
+      - { id: "w1", ref: "ta-2015", kind: "word" }
+      - { id: "w2", ref: "ta-2013", kind: "word" }
+  - id: "ta-4539"
+    target: "உன் வயது என்ன?"
+    reading: "uṉ vayatu eṉṉa?"
+    ipa: "un ʋajat̪u enna"
+    pos: "phrase"
+    bases: [{ word: "உன்", base: "நீ", reading: "nī" }, { word: "வயது", ref: "ta-1979" }, { word: "என்ன", ref: "ta-0042" }]
+    confusables:
+      - { id: "w1", ref: "ta-1978", kind: "word" }
+      - { id: "w2", ref: "ta-1981", kind: "word" }
+  - id: "ta-4540"
+    target: "நீளமான முடி."
+    reading: "nīḷamāṉa muṭi."
+    ipa: "niːɭamaːna muʈi"
+    pos: "phrase"
+    bases: [{ word: "நீளமான", ref: "ta-2012" }, { word: "முடி", ref: "ta-0256" }]
+    confusables:
+      - { id: "w1", ref: "ta-2011", kind: "word" }
+      - { id: "w2", ref: "ta-1982", kind: "word" }
+  - id: "ta-4541"
+    target: "நான் வேட்டி கட்டுகிறேன்."
+    reading: "nāṉ vēṭṭi kaṭṭukiṟēṉ."
+    ipa: "naːn ʋeːʈʈi kaʈʈukireːn"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "வேட்டி", ref: "ta-0287" }, { word: "கட்டுகிறேன்", base: "கட்டு", reading: "kaṭṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-2003", kind: "word" }
+      - { id: "w2", ref: "ta-2004", kind: "word" }
+  - id: "ta-4542"
+    target: "முடி சீவு."
+    reading: "muṭi cīvu."
+    ipa: "muʈi siːʋu"
+    pos: "phrase"
+    bases: [{ word: "முடி", ref: "ta-0256" }, { word: "சீவு", ref: "ta-2006" }]
+    confusables:
+      - { id: "w1", ref: "ta-1996", kind: "word" }
+      - { id: "w2", ref: "ta-1995", kind: "word" }
+  - id: "ta-4543"
+    target: "அவள் நெற்றியில் பொட்டு வைக்கிறாள்."
+    reading: "avaḷ neṟṟiyil poṭṭu vaikkiṟāḷ."
+    ipa: "aʋaɭ nerrijil poʈʈu ʋaikkiraːɭ"
+    pos: "phrase"
+    bases:
+      - { word: "அவள்", ref: "ta-0059" }
+      - { word: "நெற்றியில்", base: "நெற்றி", reading: "neṟṟi" }
+      - { word: "பொட்டு", ref: "ta-1995" }
+      - { word: "வைக்கிறாள்", base: "வை", reading: "vai" }
+    confusables:
+      - { id: "w1", ref: "ta-1991", kind: "word" }
+      - { id: "w2", ref: "ta-1989", kind: "word" }
+  - id: "ta-4544"
+    target: "இது தங்கச் சங்கிலி."
+    reading: "itu taṅkac caṅkili."
+    ipa: "it̪u t̪aŋkas saŋkili"
+    pos: "phrase"
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "தங்கச்", base: "தங்கம்", reading: "taṅkam" }, { word: "சங்கிலி", ref: "ta-1994" }]
+    confusables:
+      - { id: "w1", ref: "ta-1989", kind: "word" }
+      - { id: "w2", ref: "ta-1990", kind: "word" }
+  - id: "ta-4545"
+    target: "அவன் ஒல்லியான பையன்."
+    reading: "avaṉ olliyāṉa paiyaṉ."
+    ipa: "aʋan ollijaːna paijan"
+    pos: "phrase"
+    bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "ஒல்லியான", ref: "ta-2014" }, { word: "பையன்", ref: "ta-0442" }]
+    confusables:
+      - { id: "w1", ref: "ta-2013", kind: "word" }
+      - { id: "w2", ref: "ta-2015", kind: "word" }
+  - id: "ta-4546"
+    target: "நான் காலை குளிக்கிறேன்."
+    reading: "nāṉ kālai kuḷikkiṟēṉ."
+    ipa: "naːn kaːlai kuɭikkireːn"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "காலை", ref: "ta-0152" }, { word: "குளிக்கிறேன்", base: "குளி", reading: "kuḷi" }]
+    confusables:
+      - { id: "w1", ref: "ta-2003", kind: "word" }
+      - { id: "w2", ref: "ta-2004", kind: "word" }
+  - id: "ta-4547"
+    target: "அவள் கண் அழகு."
+    reading: "avaḷ kaṇ aḻaku."
+    ipa: "aʋaɭ kaɳ aɻaku"
+    pos: "phrase"
+    bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "கண்", ref: "ta-1962" }, { word: "அழகு", ref: "ta-1980" }]
+    confusables:
+      - { id: "w1", ref: "ta-1969", kind: "word" }
+      - { id: "w2", ref: "ta-1964", kind: "word" }
