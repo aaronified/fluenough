@@ -1,0 +1,98 @@
+schema: 1
+id: "ta-chores-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4528"
+    target: "வீட்டைச் சுத்தம் செய்."
+    reading: "vīṭṭaic cuttam cey."
+    ipa: "ʋiːʈʈais sut̪t̪am sej"
+    pos: "phrase"
+    bases: [{ word: "வீட்டைச்", base: "வீடு", reading: "vīṭu" }, { word: "சுத்தம்", ref: "ta-1917" }, { word: "செய்", ref: "ta-0127" }]
+    confusables:
+      - { id: "w1", ref: "ta-1918", kind: "word" }
+      - { id: "w2", ref: "ta-1922", kind: "word" }
+  - id: "ta-4529"
+    target: "நான் பாத்திரம் கழுவுகிறேன்."
+    reading: "nāṉ pāttiram kaḻuvukiṟēṉ."
+    ipa: "naːn paːt̪t̪iɾam kaɻuʋukireːn"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பாத்திரம்", ref: "ta-1918" }, { word: "கழுவுகிறேன்", base: "கழுவு", reading: "kaḻuvu" }]
+    confusables:
+      - { id: "w1", ref: "ta-0272", kind: "word" }
+      - { id: "w2", ref: "ta-1940", kind: "word" }
+  - id: "ta-4530"
+    target: "அம்மா தரை பெருக்குகிறார்."
+    reading: "ammā tarai perukkukiṟār."
+    ipa: "ammaː t̪aɾai peɾukkukiraːɾ"
+    pos: "phrase"
+    bases: [{ word: "அம்மா", ref: "ta-0072" }, { word: "தரை", ref: "ta-1922" }, { word: "பெருக்குகிறார்", base: "பெருக்கு", reading: "perukku" }]
+    confusables:
+      - { id: "w1", ref: "ta-1919", kind: "word" }
+      - { id: "w2", ref: "ta-1920", kind: "word" }
+  - id: "ta-4531"
+    target: "குப்பை எங்கே?"
+    reading: "kuppai eṅkē?"
+    ipa: "kuppai eŋkeː"
+    pos: "phrase"
+    bases: [{ word: "குப்பை", ref: "ta-1920" }, { word: "எங்கே", ref: "ta-0043" }]
+    confusables:
+      - { id: "w1", ref: "ta-1921", kind: "word" }
+      - { id: "w2", ref: "ta-1936", kind: "word" }
+  - id: "ta-4532"
+    target: "துணி துவை."
+    reading: "tuṇi tuvai."
+    ipa: "t̪uɳi t̪uʋai"
+    pos: "phrase"
+    bases: [{ word: "துணி", ref: "ta-0272" }, { word: "துவை", ref: "ta-1947" }]
+    confusables:
+      - { id: "w1", ref: "ta-1930", kind: "word" }
+      - { id: "w2", ref: "ta-1928", kind: "word" }
+  - id: "ta-4533"
+    target: "கதவு மூடு."
+    reading: "katavu mūṭu."
+    ipa: "kat̪aʋu muːʈu"
+    pos: "phrase"
+    bases: [{ word: "கதவு", ref: "ta-1924" }, { word: "மூடு", ref: "ta-0187" }]
+    confusables:
+      - { id: "w1", ref: "ta-0279", kind: "word" }
+      - { id: "w2", ref: "ta-1944", kind: "word" }
+  - id: "ta-4534"
+    target: "விளக்கு அணை."
+    reading: "viḷakku aṇai."
+    ipa: "ʋiɭakku aɳai"
+    pos: "phrase"
+    bases: [{ word: "விளக்கு", ref: "ta-1926" }, { word: "அணை", ref: "ta-1953" }]
+    confusables:
+      - { id: "w1", ref: "ta-1925", kind: "word" }
+      - { id: "w2", ref: "ta-1939", kind: "word" }
+  - id: "ta-4535"
+    target: "நான் சாவி தேடுகிறேன்."
+    reading: "nāṉ cāvi tēṭukiṟēṉ."
+    ipa: "naːn saːʋi t̪eːʈukireːn"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சாவி", ref: "ta-0273" }, { word: "தேடுகிறேன்", base: "தேடு", reading: "tēṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-1931", kind: "word" }
+      - { id: "w2", ref: "ta-1935", kind: "word" }
+  - id: "ta-4536"
+    target: "தண்ணீர் ஊற்று."
+    reading: "taṇṇīr ūṟṟu."
+    ipa: "t̪aɳɳiːɾ uːrru"
+    pos: "phrase"
+    bases: [{ word: "தண்ணீர்", ref: "ta-0005" }, { word: "ஊற்று", ref: "ta-1952" }]
+    confusables:
+      - { id: "w1", ref: "ta-1929", kind: "word" }
+      - { id: "w2", ref: "ta-1942", kind: "word" }
+  - id: "ta-4537"
+    target: "மின்சாரம் இல்லை."
+    reading: "miṉcāram illai."
+    ipa: "mintʃaːɾam illai"
+    pos: "phrase"
+    bases: [{ word: "மின்சாரம்", ref: "ta-1927" }, { word: "இல்லை", ref: "ta-0002" }]
+    confusables:
+      - { id: "w1", ref: "ta-1938", kind: "word" }
+      - { id: "w2", ref: "ta-1926", kind: "word" }

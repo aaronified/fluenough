@@ -1,0 +1,112 @@
+schema: 1
+id: "ta-grammar-past"
+part: "core"
+kind: "rules"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ta-0409", "ta-0410", "ta-0412", "ta-0413"]
+  slots: ["naan", "naankal", "naam", "nee", "neenkal", "avan", "aval", "avar", "atu", "avarkal"]
+  rows:
+    - word: "ta-0010"
+      forms: { "naan": "வந்தேன்", "naankal": "வந்தோம்", "naam": "வந்தோம்", "nee": ["வந்த", "வந்தாய்"], "neenkal": ["வந்தீங்க", "வந்தீர்கள்"], "avan": "வந்தான்", "aval": ["வந்தா", "வந்தாள்"], "avar": "வந்தார்", "atu": "வந்தது", "avarkal": ["வந்தாங்க", "வந்தார்கள்"] }
+      readings: { "naan": "vantēṉ", "naankal": "vantōm", "naam": "vantōm", "nee": ["vanta", "vantāy"], "neenkal": ["vantīṅka", "vantīrkaḷ"], "avan": "vantāṉ", "aval": ["vantā", "vantāḷ"], "avar": "vantār", "atu": "vantatu", "avarkal": ["vantāṅka", "vantārkaḷ"] }
+    - word: "ta-0038"
+      forms: { "naan": "எழுந்தேன்", "naankal": "எழுந்தோம்", "naam": "எழுந்தோம்", "nee": ["எழுந்த", "எழுந்தாய்"], "neenkal": ["எழுந்தீங்க", "எழுந்தீர்கள்"], "avan": "எழுந்தான்", "aval": ["எழுந்தா", "எழுந்தாள்"], "avar": "எழுந்தார்", "atu": "எழுந்தது", "avarkal": ["எழுந்தாங்க", "எழுந்தார்கள்"] }
+      readings: { "naan": "eḻuntēṉ", "naankal": "eḻuntōm", "naam": "eḻuntōm", "nee": ["eḻunta", "eḻuntāy"], "neenkal": ["eḻuntīṅka", "eḻuntīrkaḷ"], "avan": "eḻuntāṉ", "aval": ["eḻuntā", "eḻuntāḷ"], "avar": "eḻuntār", "atu": "eḻuntatu", "avarkal": ["eḻuntāṅka", "eḻuntārkaḷ"] }
+    - word: "ta-0115"
+      forms: { "naan": ["படிச்சேன்", "படித்தேன்"], "naankal": ["படிச்சோம்", "படித்தோம்"], "naam": ["படிச்சோம்", "படித்தோம்"], "nee": ["படிச்ச", "படித்தாய்"], "neenkal": ["படிச்சீங்க", "படித்தீர்கள்"], "avan": ["படிச்சான்", "படித்தான்"], "aval": ["படிச்சா", "படித்தாள்"], "avar": ["படிச்சார்", "படித்தார்"], "atu": "படித்தது", "avarkal": ["படிச்சாங்க", "படித்தார்கள்"] }
+      readings: { "naan": ["paṭiccēṉ", "paṭittēṉ"], "naankal": ["paṭiccōm", "paṭittōm"], "naam": ["paṭiccōm", "paṭittōm"], "nee": ["paṭicca", "paṭittāy"], "neenkal": ["paṭiccīṅka", "paṭittīrkaḷ"], "avan": ["paṭiccāṉ", "paṭittāṉ"], "aval": ["paṭiccā", "paṭittāḷ"], "avar": ["paṭiccār", "paṭittār"], "atu": "paṭittatu", "avarkal": ["paṭiccāṅka", "paṭittārkaḷ"] }
+    - word: "ta-0118"
+      forms: { "naan": "போனேன்", "naankal": "போனோம்", "naam": "போனோம்", "nee": ["போன", "போனாய்"], "neenkal": ["போனீங்க", "போனீர்கள்"], "avan": "போனான்", "aval": ["போனா", "போனாள்"], "avar": "போனார்", "atu": "போனது", "avarkal": ["போனாங்க", "போனார்கள்"] }
+      readings: { "naan": "pōṉēṉ", "naankal": "pōṉōm", "naam": "pōṉōm", "nee": ["pōṉa", "pōṉāy"], "neenkal": ["pōṉīṅka", "pōṉīrkaḷ"], "avan": "pōṉāṉ", "aval": ["pōṉā", "pōṉāḷ"], "avar": "pōṉār", "atu": "pōṉatu", "avarkal": ["pōṉāṅka", "pōṉārkaḷ"] }
+    - word: "ta-0119"
+      forms: { "naan": "சாப்பிட்டேன்", "naankal": "சாப்பிட்டோம்", "naam": "சாப்பிட்டோம்", "nee": ["சாப்பிட்ட", "சாப்பிட்டாய்"], "neenkal": ["சாப்பிட்டீங்க", "சாப்பிட்டீர்கள்"], "avan": "சாப்பிட்டான்", "aval": ["சாப்பிட்டா", "சாப்பிட்டாள்"], "avar": "சாப்பிட்டார்", "atu": "சாப்பிட்டது", "avarkal": ["சாப்பிட்டாங்க", "சாப்பிட்டார்கள்"] }
+      readings: { "naan": "cāppiṭṭēṉ", "naankal": "cāppiṭṭōm", "naam": "cāppiṭṭōm", "nee": ["cāppiṭṭa", "cāppiṭṭāy"], "neenkal": ["cāppiṭṭīṅka", "cāppiṭṭīrkaḷ"], "avan": "cāppiṭṭāṉ", "aval": ["cāppiṭṭā", "cāppiṭṭāḷ"], "avar": "cāppiṭṭār", "atu": "cāppiṭṭatu", "avarkal": ["cāppiṭṭāṅka", "cāppiṭṭārkaḷ"] }
+    - word: "ta-0120"
+      forms: { "naan": ["குடிச்சேன்", "குடித்தேன்"], "naankal": ["குடிச்சோம்", "குடித்தோம்"], "naam": ["குடிச்சோம்", "குடித்தோம்"], "nee": ["குடிச்ச", "குடித்தாய்"], "neenkal": ["குடிச்சீங்க", "குடித்தீர்கள்"], "avan": ["குடிச்சான்", "குடித்தான்"], "aval": ["குடிச்சா", "குடித்தாள்"], "avar": ["குடிச்சார்", "குடித்தார்"], "atu": "குடித்தது", "avarkal": ["குடிச்சாங்க", "குடித்தார்கள்"] }
+      readings: { "naan": ["kuṭiccēṉ", "kuṭittēṉ"], "naankal": ["kuṭiccōm", "kuṭittōm"], "naam": ["kuṭiccōm", "kuṭittōm"], "nee": ["kuṭicca", "kuṭittāy"], "neenkal": ["kuṭiccīṅka", "kuṭittīrkaḷ"], "avan": ["kuṭiccāṉ", "kuṭittāṉ"], "aval": ["kuṭiccā", "kuṭittāḷ"], "avar": ["kuṭiccār", "kuṭittār"], "atu": "kuṭittatu", "avarkal": ["kuṭiccāṅka", "kuṭittārkaḷ"] }
+    - word: "ta-0121"
+      forms: { "naan": ["பாத்தேன்", "பார்த்தேன்"], "naankal": ["பாத்தோம்", "பார்த்தோம்"], "naam": ["பாத்தோம்", "பார்த்தோம்"], "nee": ["பாத்த", "பார்த்தாய்"], "neenkal": ["பாத்தீங்க", "பார்த்தீர்கள்"], "avan": ["பாத்தான்", "பார்த்தான்"], "aval": ["பாத்தா", "பார்த்தாள்"], "avar": ["பாத்தார்", "பார்த்தார்"], "atu": "பார்த்தது", "avarkal": ["பாத்தாங்க", "பார்த்தார்கள்"] }
+      readings: { "naan": ["pāttēṉ", "pārttēṉ"], "naankal": ["pāttōm", "pārttōm"], "naam": ["pāttōm", "pārttōm"], "nee": ["pātta", "pārttāy"], "neenkal": ["pāttīṅka", "pārttīrkaḷ"], "avan": ["pāttāṉ", "pārttāṉ"], "aval": ["pāttā", "pārttāḷ"], "avar": ["pāttār", "pārttār"], "atu": "pārttatu", "avarkal": ["pāttāṅka", "pārttārkaḷ"] }
+    - word: "ta-0122"
+      forms: { "naan": "கேட்டேன்", "naankal": "கேட்டோம்", "naam": "கேட்டோம்", "nee": ["கேட்ட", "கேட்டாய்"], "neenkal": ["கேட்டீங்க", "கேட்டீர்கள்"], "avan": "கேட்டான்", "aval": ["கேட்டா", "கேட்டாள்"], "avar": "கேட்டார்", "atu": "கேட்டது", "avarkal": ["கேட்டாங்க", "கேட்டார்கள்"] }
+      readings: { "naan": "kēṭṭēṉ", "naankal": "kēṭṭōm", "naam": "kēṭṭōm", "nee": ["kēṭṭa", "kēṭṭāy"], "neenkal": ["kēṭṭīṅka", "kēṭṭīrkaḷ"], "avan": "kēṭṭāṉ", "aval": ["kēṭṭā", "kēṭṭāḷ"], "avar": "kēṭṭār", "atu": "kēṭṭatu", "avarkal": ["kēṭṭāṅka", "kēṭṭārkaḷ"] }
+    - word: "ta-0123"
+      forms: { "naan": "பேசினேன்", "naankal": "பேசினோம்", "naam": "பேசினோம்", "nee": ["பேசின", "பேசினாய்"], "neenkal": ["பேசினீங்க", "பேசினீர்கள்"], "avan": "பேசினான்", "aval": ["பேசினா", "பேசினாள்"], "avar": "பேசினார்", "atu": "பேசியது", "avarkal": ["பேசினாங்க", "பேசினார்கள்"] }
+      readings: { "naan": "pēciṉēṉ", "naankal": "pēciṉōm", "naam": "pēciṉōm", "nee": ["pēciṉa", "pēciṉāy"], "neenkal": ["pēciṉīṅka", "pēciṉīrkaḷ"], "avan": "pēciṉāṉ", "aval": ["pēciṉā", "pēciṉāḷ"], "avar": "pēciṉār", "atu": "pēciyatu", "avarkal": ["pēciṉāṅka", "pēciṉārkaḷ"] }
+    - word: "ta-0124"
+      forms: { "naan": "எழுதினேன்", "naankal": "எழுதினோம்", "naam": "எழுதினோம்", "nee": ["எழுதின", "எழுதினாய்"], "neenkal": ["எழுதினீங்க", "எழுதினீர்கள்"], "avan": "எழுதினான்", "aval": ["எழுதினா", "எழுதினாள்"], "avar": "எழுதினார்", "atu": "எழுதியது", "avarkal": ["எழுதினாங்க", "எழுதினார்கள்"] }
+      readings: { "naan": "eḻutiṉēṉ", "naankal": "eḻutiṉōm", "naam": "eḻutiṉōm", "nee": ["eḻutiṉa", "eḻutiṉāy"], "neenkal": ["eḻutiṉīṅka", "eḻutiṉīrkaḷ"], "avan": "eḻutiṉāṉ", "aval": ["eḻutiṉā", "eḻutiṉāḷ"], "avar": "eḻutiṉār", "atu": "eḻutiyatu", "avarkal": ["eḻutiṉāṅka", "eḻutiṉārkaḷ"] }
+    - word: "ta-0125"
+      forms: { "naan": "கொடுத்தேன்", "naankal": "கொடுத்தோம்", "naam": "கொடுத்தோம்", "nee": ["கொடுத்த", "கொடுத்தாய்"], "neenkal": ["கொடுத்தீங்க", "கொடுத்தீர்கள்"], "avan": "கொடுத்தான்", "aval": ["கொடுத்தா", "கொடுத்தாள்"], "avar": "கொடுத்தார்", "atu": "கொடுத்தது", "avarkal": ["கொடுத்தாங்க", "கொடுத்தார்கள்"] }
+      readings: { "naan": "koṭuttēṉ", "naankal": "koṭuttōm", "naam": "koṭuttōm", "nee": ["koṭutta", "koṭuttāy"], "neenkal": ["koṭuttīṅka", "koṭuttīrkaḷ"], "avan": "koṭuttāṉ", "aval": ["koṭuttā", "koṭuttāḷ"], "avar": "koṭuttār", "atu": "koṭuttatu", "avarkal": ["koṭuttāṅka", "koṭuttārkaḷ"] }
+    - word: "ta-0126"
+      forms: { "naan": "தூங்கினேன்", "naankal": "தூங்கினோம்", "naam": "தூங்கினோம்", "nee": ["தூங்கின", "தூங்கினாய்"], "neenkal": ["தூங்கினீங்க", "தூங்கினீர்கள்"], "avan": "தூங்கினான்", "aval": ["தூங்கினா", "தூங்கினாள்"], "avar": "தூங்கினார்", "atu": "தூங்கியது", "avarkal": ["தூங்கினாங்க", "தூங்கினார்கள்"] }
+      readings: { "naan": "tūṅkiṉēṉ", "naankal": "tūṅkiṉōm", "naam": "tūṅkiṉōm", "nee": ["tūṅkiṉa", "tūṅkiṉāy"], "neenkal": ["tūṅkiṉīṅka", "tūṅkiṉīrkaḷ"], "avan": "tūṅkiṉāṉ", "aval": ["tūṅkiṉā", "tūṅkiṉāḷ"], "avar": "tūṅkiṉār", "atu": "tūṅkiyatu", "avarkal": ["tūṅkiṉāṅka", "tūṅkiṉārkaḷ"] }
+    - word: "ta-0127"
+      forms: { "naan": ["செஞ்சேன்", "செய்தேன்"], "naankal": ["செஞ்சோம்", "செய்தோம்"], "naam": ["செஞ்சோம்", "செய்தோம்"], "nee": ["செஞ்ச", "செய்தாய்"], "neenkal": ["செஞ்சீங்க", "செய்தீர்கள்"], "avan": ["செஞ்சான்", "செய்தான்"], "aval": ["செஞ்சா", "செய்தாள்"], "avar": ["செஞ்சார்", "செய்தார்"], "atu": "செய்தது", "avarkal": ["செஞ்சாங்க", "செய்தார்கள்"] }
+      readings: { "naan": ["ceñcēṉ", "ceytēṉ"], "naankal": ["ceñcōm", "ceytōm"], "naam": ["ceñcōm", "ceytōm"], "nee": ["ceñca", "ceytāy"], "neenkal": ["ceñcīṅka", "ceytīrkaḷ"], "avan": ["ceñcāṉ", "ceytāṉ"], "aval": ["ceñcā", "ceytāḷ"], "avar": ["ceñcār", "ceytār"], "atu": "ceytatu", "avarkal": ["ceñcāṅka", "ceytārkaḷ"] }
+    - word: "ta-0128"
+      forms: { "naan": ["சமைச்சேன்", "சமைத்தேன்"], "naankal": ["சமைச்சோம்", "சமைத்தோம்"], "naam": ["சமைச்சோம்", "சமைத்தோம்"], "nee": ["சமைச்ச", "சமைத்தாய்"], "neenkal": ["சமைச்சீங்க", "சமைத்தீர்கள்"], "avan": ["சமைச்சான்", "சமைத்தான்"], "aval": ["சமைச்சா", "சமைத்தாள்"], "avar": ["சமைச்சார்", "சமைத்தார்"], "atu": "சமைத்தது", "avarkal": ["சமைச்சாங்க", "சமைத்தார்கள்"] }
+      readings: { "naan": ["camaiccēṉ", "camaittēṉ"], "naankal": ["camaiccōm", "camaittōm"], "naam": ["camaiccōm", "camaittōm"], "nee": ["camaicca", "camaittāy"], "neenkal": ["camaiccīṅka", "camaittīrkaḷ"], "avan": ["camaiccāṉ", "camaittāṉ"], "aval": ["camaiccā", "camaittāḷ"], "avar": ["camaiccār", "camaittār"], "atu": "camaittatu", "avarkal": ["camaiccāṅka", "camaittārkaḷ"] }
+    - word: "ta-0129"
+      forms: { "naan": "வாங்கினேன்", "naankal": "வாங்கினோம்", "naam": "வாங்கினோம்", "nee": ["வாங்கின", "வாங்கினாய்"], "neenkal": ["வாங்கினீங்க", "வாங்கினீர்கள்"], "avan": "வாங்கினான்", "aval": ["வாங்கினா", "வாங்கினாள்"], "avar": "வாங்கினார்", "atu": "வாங்கியது", "avarkal": ["வாங்கினாங்க", "வாங்கினார்கள்"] }
+      readings: { "naan": "vāṅkiṉēṉ", "naankal": "vāṅkiṉōm", "naam": "vāṅkiṉōm", "nee": ["vāṅkiṉa", "vāṅkiṉāy"], "neenkal": ["vāṅkiṉīṅka", "vāṅkiṉīrkaḷ"], "avan": "vāṅkiṉāṉ", "aval": ["vāṅkiṉā", "vāṅkiṉāḷ"], "avar": "vāṅkiṉār", "atu": "vāṅkiyatu", "avarkal": ["vāṅkiṉāṅka", "vāṅkiṉārkaḷ"] }
+    - word: "ta-0184"
+      forms: { "naan": "எடுத்தேன்", "naankal": "எடுத்தோம்", "naam": "எடுத்தோம்", "nee": ["எடுத்த", "எடுத்தாய்"], "neenkal": ["எடுத்தீங்க", "எடுத்தீர்கள்"], "avan": "எடுத்தான்", "aval": ["எடுத்தா", "எடுத்தாள்"], "avar": "எடுத்தார்", "atu": "எடுத்தது", "avarkal": ["எடுத்தாங்க", "எடுத்தார்கள்"] }
+      readings: { "naan": "eṭuttēṉ", "naankal": "eṭuttōm", "naam": "eṭuttōm", "nee": ["eṭutta", "eṭuttāy"], "neenkal": ["eṭuttīṅka", "eṭuttīrkaḷ"], "avan": "eṭuttāṉ", "aval": ["eṭuttā", "eṭuttāḷ"], "avar": "eṭuttār", "atu": "eṭuttatu", "avarkal": ["eṭuttāṅka", "eṭuttārkaḷ"] }
+    - word: "ta-0185"
+      forms: { "naan": ["வச்சேன்", "வைத்தேன்"], "naankal": ["வச்சோம்", "வைத்தோம்"], "naam": ["வச்சோம்", "வைத்தோம்"], "nee": ["வச்ச", "வைத்தாய்"], "neenkal": ["வச்சீங்க", "வைத்தீர்கள்"], "avan": ["வச்சான்", "வைத்தான்"], "aval": ["வச்சா", "வைத்தாள்"], "avar": ["வச்சார்", "வைத்தார்"], "atu": "வைத்தது", "avarkal": ["வச்சாங்க", "வைத்தார்கள்"] }
+      readings: { "naan": ["vaccēṉ", "vaittēṉ"], "naankal": ["vaccōm", "vaittōm"], "naam": ["vaccōm", "vaittōm"], "nee": ["vacca", "vaittāy"], "neenkal": ["vaccīṅka", "vaittīrkaḷ"], "avan": ["vaccāṉ", "vaittāṉ"], "aval": ["vaccā", "vaittāḷ"], "avar": ["vaccār", "vaittār"], "atu": "vaittatu", "avarkal": ["vaccāṅka", "vaittārkaḷ"] }
+    - word: "ta-0186"
+      forms: { "naan": "திறந்தேன்", "naankal": "திறந்தோம்", "naam": "திறந்தோம்", "nee": ["திறந்த", "திறந்தாய்"], "neenkal": ["திறந்தீங்க", "திறந்தீர்கள்"], "avan": "திறந்தான்", "aval": ["திறந்தா", "திறந்தாள்"], "avar": "திறந்தார்", "atu": "திறந்தது", "avarkal": ["திறந்தாங்க", "திறந்தார்கள்"] }
+      readings: { "naan": "tiṟantēṉ", "naankal": "tiṟantōm", "naam": "tiṟantōm", "nee": ["tiṟanta", "tiṟantāy"], "neenkal": ["tiṟantīṅka", "tiṟantīrkaḷ"], "avan": "tiṟantāṉ", "aval": ["tiṟantā", "tiṟantāḷ"], "avar": "tiṟantār", "atu": "tiṟantatu", "avarkal": ["tiṟantāṅka", "tiṟantārkaḷ"] }
+    - word: "ta-0187"
+      forms: { "naan": "மூடினேன்", "naankal": "மூடினோம்", "naam": "மூடினோம்", "nee": ["மூடின", "மூடினாய்"], "neenkal": ["மூடினீங்க", "மூடினீர்கள்"], "avan": "மூடினான்", "aval": ["மூடினா", "மூடினாள்"], "avar": "மூடினார்", "atu": "மூடியது", "avarkal": ["மூடினாங்க", "மூடினார்கள்"] }
+      readings: { "naan": "mūṭiṉēṉ", "naankal": "mūṭiṉōm", "naam": "mūṭiṉōm", "nee": ["mūṭiṉa", "mūṭiṉāy"], "neenkal": ["mūṭiṉīṅka", "mūṭiṉīrkaḷ"], "avan": "mūṭiṉāṉ", "aval": ["mūṭiṉā", "mūṭiṉāḷ"], "avar": "mūṭiṉār", "atu": "mūṭiyatu", "avarkal": ["mūṭiṉāṅka", "mūṭiṉārkaḷ"] }
+    - word: "ta-0188"
+      forms: { "naan": "உட்கார்ந்தேன்", "naankal": "உட்கார்ந்தோம்", "naam": "உட்கார்ந்தோம்", "nee": ["உட்கார்ந்த", "உட்கார்ந்தாய்"], "neenkal": ["உட்கார்ந்தீங்க", "உட்கார்ந்தீர்கள்"], "avan": "உட்கார்ந்தான்", "aval": ["உட்கார்ந்தா", "உட்கார்ந்தாள்"], "avar": "உட்கார்ந்தார்", "atu": "உட்கார்ந்தது", "avarkal": ["உட்கார்ந்தாங்க", "உட்கார்ந்தார்கள்"] }
+      readings: { "naan": "uṭkārntēṉ", "naankal": "uṭkārntōm", "naam": "uṭkārntōm", "nee": ["uṭkārnta", "uṭkārntāy"], "neenkal": ["uṭkārntīṅka", "uṭkārntīrkaḷ"], "avan": "uṭkārntāṉ", "aval": ["uṭkārntā", "uṭkārntāḷ"], "avar": "uṭkārntār", "atu": "uṭkārntatu", "avarkal": ["uṭkārntāṅka", "uṭkārntārkaḷ"] }
+    - word: "ta-0189"
+      forms: { "naan": "நின்றேன்", "naankal": "நின்றோம்", "naam": "நின்றோம்", "nee": ["நின்ற", "நின்றாய்"], "neenkal": ["நின்றீங்க", "நின்றீர்கள்"], "avan": "நின்றான்", "aval": ["நின்றா", "நின்றாள்"], "avar": "நின்றார்", "atu": "நின்றது", "avarkal": ["நின்றாங்க", "நின்றார்கள்"] }
+      readings: { "naan": "niṉṟēṉ", "naankal": "niṉṟōm", "naam": "niṉṟōm", "nee": ["niṉṟa", "niṉṟāy"], "neenkal": ["niṉṟīṅka", "niṉṟīrkaḷ"], "avan": "niṉṟāṉ", "aval": ["niṉṟā", "niṉṟāḷ"], "avar": "niṉṟār", "atu": "niṉṟatu", "avarkal": ["niṉṟāṅka", "niṉṟārkaḷ"] }
+    - word: "ta-0190"
+      forms: { "naan": "கழுவினேன்", "naankal": "கழுவினோம்", "naam": "கழுவினோம்", "nee": ["கழுவின", "கழுவினாய்"], "neenkal": ["கழுவினீங்க", "கழுவினீர்கள்"], "avan": "கழுவினான்", "aval": ["கழுவினா", "கழுவினாள்"], "avar": "கழுவினார்", "atu": "கழுவியது", "avarkal": ["கழுவினாங்க", "கழுவினார்கள்"] }
+      readings: { "naan": "kaḻuviṉēṉ", "naankal": "kaḻuviṉōm", "naam": "kaḻuviṉōm", "nee": ["kaḻuviṉa", "kaḻuviṉāy"], "neenkal": ["kaḻuviṉīṅka", "kaḻuviṉīrkaḷ"], "avan": "kaḻuviṉāṉ", "aval": ["kaḻuviṉā", "kaḻuviṉāḷ"], "avar": "kaḻuviṉār", "atu": "kaḻuviyatu", "avarkal": ["kaḻuviṉāṅka", "kaḻuviṉārkaḷ"] }
+    - word: "ta-0191"
+      forms: { "naan": "விளையாடினேன்", "naankal": "விளையாடினோம்", "naam": "விளையாடினோம்", "nee": ["விளையாடின", "விளையாடினாய்"], "neenkal": ["விளையாடினீங்க", "விளையாடினீர்கள்"], "avan": "விளையாடினான்", "aval": ["விளையாடினா", "விளையாடினாள்"], "avar": "விளையாடினார்", "atu": "விளையாடியது", "avarkal": ["விளையாடினாங்க", "விளையாடினார்கள்"] }
+      readings: { "naan": "viḷaiyāṭiṉēṉ", "naankal": "viḷaiyāṭiṉōm", "naam": "viḷaiyāṭiṉōm", "nee": ["viḷaiyāṭiṉa", "viḷaiyāṭiṉāy"], "neenkal": ["viḷaiyāṭiṉīṅka", "viḷaiyāṭiṉīrkaḷ"], "avan": "viḷaiyāṭiṉāṉ", "aval": ["viḷaiyāṭiṉā", "viḷaiyāṭiṉāḷ"], "avar": "viḷaiyāṭiṉār", "atu": "viḷaiyāṭiyatu", "avarkal": ["viḷaiyāṭiṉāṅka", "viḷaiyāṭiṉārkaḷ"] }
+    - word: "ta-1101"
+      forms: { "naan": ["குளிச்சேன்", "குளித்தேன்"], "naankal": ["குளிச்சோம்", "குளித்தோம்"], "naam": ["குளிச்சோம்", "குளித்தோம்"], "nee": ["குளிச்ச", "குளித்தாய்"], "neenkal": ["குளிச்சீங்க", "குளித்தீர்கள்"], "avan": ["குளிச்சான்", "குளித்தான்"], "aval": ["குளிச்சா", "குளித்தாள்"], "avar": ["குளிச்சார்", "குளித்தார்"], "atu": "குளித்தது", "avarkal": ["குளிச்சாங்க", "குளித்தார்கள்"] }
+      readings: { "naan": ["kuḷiccēṉ", "kuḷittēṉ"], "naankal": ["kuḷiccōm", "kuḷittōm"], "naam": ["kuḷiccōm", "kuḷittōm"], "nee": ["kuḷicca", "kuḷittāy"], "neenkal": ["kuḷiccīṅka", "kuḷittīrkaḷ"], "avan": ["kuḷiccāṉ", "kuḷittāṉ"], "aval": ["kuḷiccā", "kuḷittāḷ"], "avar": ["kuḷiccār", "kuḷittār"], "atu": "kuḷittatu", "avarkal": ["kuḷiccāṅka", "kuḷittārkaḷ"] }
+    - word: "ta-1102"
+      forms: { "naan": "துலக்கினேன்", "naankal": "துலக்கினோம்", "naam": "துலக்கினோம்", "nee": ["துலக்கின", "துலக்கினாய்"], "neenkal": ["துலக்கினீங்க", "துலக்கினீர்கள்"], "avan": "துலக்கினான்", "aval": ["துலக்கினா", "துலக்கினாள்"], "avar": "துலக்கினார்", "atu": "துலக்கியது", "avarkal": ["துலக்கினாங்க", "துலக்கினார்கள்"] }
+      readings: { "naan": "tulakkiṉēṉ", "naankal": "tulakkiṉōm", "naam": "tulakkiṉōm", "nee": ["tulakkiṉa", "tulakkiṉāy"], "neenkal": ["tulakkiṉīṅka", "tulakkiṉīrkaḷ"], "avan": "tulakkiṉāṉ", "aval": ["tulakkiṉā", "tulakkiṉāḷ"], "avar": "tulakkiṉār", "atu": "tulakkiyatu", "avarkal": ["tulakkiṉāṅka", "tulakkiṉārkaḷ"] }
+    - word: "ta-1103"
+      forms: { "naan": "நடந்தேன்", "naankal": "நடந்தோம்", "naam": "நடந்தோம்", "nee": ["நடந்த", "நடந்தாய்"], "neenkal": ["நடந்தீங்க", "நடந்தீர்கள்"], "avan": "நடந்தான்", "aval": ["நடந்தா", "நடந்தாள்"], "avar": "நடந்தார்", "atu": "நடந்தது", "avarkal": ["நடந்தாங்க", "நடந்தார்கள்"] }
+      readings: { "naan": "naṭantēṉ", "naankal": "naṭantōm", "naam": "naṭantōm", "nee": ["naṭanta", "naṭantāy"], "neenkal": ["naṭantīṅka", "naṭantīrkaḷ"], "avan": "naṭantāṉ", "aval": ["naṭantā", "naṭantāḷ"], "avar": "naṭantār", "atu": "naṭantatu", "avarkal": ["naṭantāṅka", "naṭantārkaḷ"] }
+    - word: "ta-1104"
+      forms: { "naan": "திரும்பினேன்", "naankal": "திரும்பினோம்", "naam": "திரும்பினோம்", "nee": ["திரும்பின", "திரும்பினாய்"], "neenkal": ["திரும்பினீங்க", "திரும்பினீர்கள்"], "avan": "திரும்பினான்", "aval": ["திரும்பினா", "திரும்பினாள்"], "avar": "திரும்பினார்", "atu": "திரும்பியது", "avarkal": ["திரும்பினாங்க", "திரும்பினார்கள்"] }
+      readings: { "naan": "tirumpiṉēṉ", "naankal": "tirumpiṉōm", "naam": "tirumpiṉōm", "nee": ["tirumpiṉa", "tirumpiṉāy"], "neenkal": ["tirumpiṉīṅka", "tirumpiṉīrkaḷ"], "avan": "tirumpiṉāṉ", "aval": ["tirumpiṉā", "tirumpiṉāḷ"], "avar": "tirumpiṉār", "atu": "tirumpiyatu", "avarkal": ["tirumpiṉāṅka", "tirumpiṉārkaḷ"] }
+    - word: "ta-1107"
+      forms: { "naan": "தொடங்கினேன்", "naankal": "தொடங்கினோம்", "naam": "தொடங்கினோம்", "nee": ["தொடங்கின", "தொடங்கினாய்"], "neenkal": ["தொடங்கினீங்க", "தொடங்கினீர்கள்"], "avan": "தொடங்கினான்", "aval": ["தொடங்கினா", "தொடங்கினாள்"], "avar": "தொடங்கினார்", "atu": "தொடங்கியது", "avarkal": ["தொடங்கினாங்க", "தொடங்கினார்கள்"] }
+      readings: { "naan": "toṭaṅkiṉēṉ", "naankal": "toṭaṅkiṉōm", "naam": "toṭaṅkiṉōm", "nee": ["toṭaṅkiṉa", "toṭaṅkiṉāy"], "neenkal": ["toṭaṅkiṉīṅka", "toṭaṅkiṉīrkaḷ"], "avan": "toṭaṅkiṉāṉ", "aval": ["toṭaṅkiṉā", "toṭaṅkiṉāḷ"], "avar": "toṭaṅkiṉār", "atu": "toṭaṅkiyatu", "avarkal": ["toṭaṅkiṉāṅka", "toṭaṅkiṉārkaḷ"] }
+    - word: "ta-1801"
+      forms: { "naan": "உதவினேன்", "naankal": "உதவினோம்", "naam": "உதவினோம்", "nee": ["உதவின", "உதவினாய்"], "neenkal": ["உதவினீங்க", "உதவினீர்கள்"], "avan": "உதவினான்", "aval": ["உதவினா", "உதவினாள்"], "avar": "உதவினார்", "atu": "உதவியது", "avarkal": ["உதவினாங்க", "உதவினார்கள்"] }
+      readings: { "naan": "utaviṉēṉ", "naankal": "utaviṉōm", "naam": "utaviṉōm", "nee": ["utaviṉa", "utaviṉāy"], "neenkal": ["utaviṉīṅka", "utaviṉīrkaḷ"], "avan": "utaviṉāṉ", "aval": ["utaviṉā", "utaviṉāḷ"], "avar": "utaviṉār", "atu": "utaviyatu", "avarkal": ["utaviṉāṅka", "utaviṉārkaḷ"] }
+rules:
+  - id: "ta-rule-past-first"
+    slots: ["naan", "naankal", "naam"]
+    words: [{ word: "-ஏன்", reading: "-ēṉ" }, { word: "-ஓம்", reading: "-ōm" }, { word: "போ", reading: "pō" }, { word: "போனேன்", reading: "pōṉēṉ" }, { word: "படி", reading: "paṭi" }, { word: "படித்தேன்", reading: "paṭittēṉ" }, { word: "வா", reading: "vā" }, { word: "வந்தேன்", reading: "vantēṉ" }, { word: "சாப்பிடு", reading: "cāppiṭu" }, { word: "சாப்பிட்டேன்", reading: "cāppiṭṭēṉ" }, { word: "பேசு", reading: "pēcu" }, { word: "பேசினேன்", reading: "pēciṉēṉ" }, { word: "நாங்கள்", reading: "nāṅkaḷ" }, { word: "நாம்", reading: "nām" }, { word: "படிச்சேன்", reading: "paṭiccēṉ" }]
+  - id: "ta-rule-past-second"
+    slots: ["nee", "neenkal"]
+    words: [{ word: "-ஆய்", reading: "-āy" }, { word: "-ஈர்கள்", reading: "-īrkaḷ" }, { word: "நீ", reading: "nī" }, { word: "நீங்கள்", reading: "nīṅkaḷ" }, { word: "வந்தாய்", reading: "vantāy" }, { word: "வந்தீர்கள்", reading: "vantīrkaḷ" }, { word: "வந்தீங்க", reading: "vantīṅka" }, { word: "வந்த", reading: "vanta" }]
+  - id: "ta-rule-past-third"
+    slots: ["avan", "aval", "avar", "atu", "avarkal"]
+    words: [{ word: "-ஆன்", reading: "-āṉ" }, { word: "-ஆள்", reading: "-āḷ" }, { word: "-ஆர்", reading: "-ār" }, { word: "-அது", reading: "-atu" }, { word: "-ஆர்கள்", reading: "-ārkaḷ" }, { word: "வந்தான்", reading: "vantāṉ" }, { word: "வந்தாள்", reading: "vantāḷ" }, { word: "வந்தார்", reading: "vantār" }, { word: "வந்தது", reading: "vantatu" }, { word: "வந்தார்கள்", reading: "vantārkaḷ" }, { word: "வந்தா", reading: "vantā" }, { word: "வந்தாங்க", reading: "vantāṅka" }, { word: "மூடு", reading: "mūṭu" }, { word: "மூடியது", reading: "mūṭiyatu" }, { word: "மூடினது", reading: "mūṭiṉatu" }]

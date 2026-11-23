@@ -62,6 +62,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1102 | ta-daily-life | Is துலக்கு the everyday spoken verb for brushing teeth, or is another verb more usual? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1804 | ta-help | Is பிரச்சினை (not பிரச்சனை) the spelling to teach first? | Sonnet builder | 2026-11-23 |
 | ta-1805 | ta-help | Is போலீஸ் the right spoken form, and the register correct? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-negative | Check the spoken nee, aval and avarkal negatives (மாட்ட, மாட்டா, மாட்டாங்க) and the spoken past negative in -ல (-la). | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-1129 | ta-weather | Is புழுக்கம் the everyday word for sultry, close heat in spoken Tamil? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1120 | ta-weather | Is சூரியன் best given as masculine (m) for a course that uses m, f and n? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1119 | ta-weather | Is the split between வெப்பம் (forecast word) and வெயில் (felt sun) right for everyday speech? | ta-words1 (Sonnet builder) | 2026-11-23 |
@@ -78,3 +79,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1162 | ta-calendar | Is போன the usual spoken word for last (week, month, year) and கடந்த the written one? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1155 | ta-calendar | Is வருடம் the everyday word for year, with ஆண்டு more written? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1159 | ta-calendar | Is முந்தாநாள் the usual spoken word for the day before yesterday? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1945 | ta-chores | Is பெருக்கு the usual spoken word for sweep in Tamil Nadu? | Sonnet builder | 2026-11-23 |
+| ta-1917 | ta-chores | Is சுத்தம் பண்ணு the right spoken form beside சுத்தம் செய்? | Sonnet builder | 2026-11-23 |
+| ta-1930 | ta-chores | Is இஸ்திரி போடு the natural way to say iron clothes? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-past | Check the spoken past stems (படிச்ச, பாத்த, செஞ்ச, வச்ச) and the spoken second-person past. | Sonnet builder (ta-gram2) | 2026-11-23 |
