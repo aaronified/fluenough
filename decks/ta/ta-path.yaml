@@ -839,7 +839,8 @@ units:
       - { id: "only-this-one", text: { "en": "Insisting on one choice" } }
     reading_passages:
       - { id: "advert-slogans", text: { "en": "Short advert slogans" } }
-  - planned: { id: "ta-law", theme: "law", words: 40 }
+  - decks: ["ta-law", "ta-law-sentences", "*"]
+    words: 40
     listening_passages:
       - { id: "police-complaint", text: { "en": "Making a complaint at a police station" } }
     reading_passages:
