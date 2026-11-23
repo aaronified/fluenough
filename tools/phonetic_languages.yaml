@@ -286,3 +286,22 @@
     # `normalise` list for ɐ ä ɪ ʊ e̞ o̞ kː ss ɐɪ̯ and an `agree` guard.
     name: "Standard Tamil; no Wiktionary form is taken (rules only)"
     untagged: false
+
+"ml":
+  dump: "Malayalam"
+  variety:
+    # Measured on the kaikki.org dump (23.9 MB, read 2026-11-23): 1,350 narrow
+    # `[ ]` forms, 1,344 of them with no note and no tag (the rest are letter
+    # and anusvara notes). They are written in another convention than the
+    # course's rules file (decks/ml/ml-phonetics.yaml): tie bars (t͡ʃ d͡ʒ), an
+    # unreleased ̚ before a stop, ɨ for the word-final samvruthokaram (which
+    # the broad `ipa` does not write at all), ʷ on ʋ and s after a consonant,
+    # and many forms of whole phrases and letter names. Where they overlap
+    # they agree with the rules: ɐ for the short a, voiced stops between
+    # vowels and after a nasal, n̪ before a dental stop. Nothing is imported,
+    # as Tamil and Kannada: every Malayalam card gets its narrow form from
+    # decks/ml/ml-phonetics.yaml, in one convention. Flip `untagged` to true
+    # only with a `normalise` list for the differences above and an `agree`
+    # guard.
+    name: "Standard Malayalam; no Wiktionary form is taken (rules only)"
+    untagged: false
