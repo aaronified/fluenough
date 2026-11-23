@@ -1,0 +1,51 @@
+schema: 1
+id: "ta-en-reading-numbers-1-20"
+name: "Reading: price tags"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short talk at a stall about prices, using numbers up to twenty. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-price-tags"
+    title: "Price tags"
+    sentences:
+      - text: "இது எவ்வளவு?"
+        reading: "itu evvaḷavu?"
+        ipa: "it̪u eʋʋaɭaʋu"
+      - text: "தண்ணீர் பத்து."
+        reading: "taṇṇīr pattu."
+        ipa: "t̪aɳɳiːɾ pat̪t̪u"
+      - text: "அது எவ்வளவு?"
+        reading: "atu evvaḷavu?"
+        ipa: "at̪u eʋʋaɭaʋu"
+      - text: "அது இருபது."
+        reading: "atu irupatu."
+        ipa: "at̪u iɾupat̪u"
+      - text: "சரி, தண்ணீர் இரண்டு வேண்டும்."
+        reading: "cari, taṇṇīr iraṇṭu vēṇṭum."
+        ipa: "saɾi t̪aɳɳiːɾ iɾaɳʈu ʋeːɳʈum"
+    questions:
+      - id: "ta-9709"
+        prompt: { en: "How much is the water?" }
+        options:
+          - { en: "Two" }
+          - { en: "Ten" }
+          - { en: "Twenty" }
+        answer: 2
+      - id: "ta-9710"
+        prompt: { en: "Which thing costs more?" }
+        options:
+          - { en: "The water" }
+          - { en: "The other thing" }
+          - { en: "They cost the same" }
+        answer: 2
+      - id: "ta-9711"
+        prompt: { en: "How many does the buyer ask for?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "Twelve" }
+        answer: 2

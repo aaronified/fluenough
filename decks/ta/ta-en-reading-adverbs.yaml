@@ -1,0 +1,48 @@
+schema: 1
+id: "ta-en-reading-adverbs"
+name: "Reading: a habit survey"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short survey about everyday habits, using the adverbs of how often and when. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-habit-survey"
+    title: "A habit survey"
+    sentences:
+      - text: "நான் எப்போதும் தமிழ் படிக்கிறேன்."
+        reading: "nāṉ eppōtum tamiḻ paṭikkiṟēṉ."
+        ipa: "naːn eppoːt̪um t̪amiɻ paʈikkireːn"
+      - text: "நான் சில சமயம் தேநீர் குடிக்கிறேன்."
+        reading: "nāṉ cila camayam tēnīr kuṭikkiṟēṉ."
+        ipa: "naːn sila samajam t̪eːniːɾ kuʈikkireːn"
+      - text: "நான் நிறைய தண்ணீர் குடிக்கிறேன்."
+        reading: "nāṉ niṟaiya taṇṇīr kuṭikkiṟēṉ."
+        ipa: "naːn niraija t̪aɳɳiːɾ kuʈikkireːn"
+      - text: "நாளை நான் வீட்டுக்குப் போகிறேன்."
+        reading: "nāḷai nāṉ vīṭṭukkup pōkiṟēṉ."
+        ipa: "naːɭai naːn ʋiːʈʈukkup poːkireːn"
+    questions:
+      - id: "ta-9718"
+        prompt: { en: "How often does the speaker study Tamil?" }
+        options:
+          - { en: "Always" }
+          - { en: "Sometimes" }
+          - { en: "Never" }
+        answer: 1
+      - id: "ta-9719"
+        prompt: { en: "What does the speaker drink only sometimes?" }
+        options:
+          - { en: "Water" }
+          - { en: "Tea" }
+          - { en: "Milk" }
+        answer: 2
+      - id: "ta-9720"
+        prompt: { en: "When does the speaker go home?" }
+        options:
+          - { en: "Yesterday" }
+          - { en: "Now" }
+          - { en: "Tomorrow" }
+        answer: 3

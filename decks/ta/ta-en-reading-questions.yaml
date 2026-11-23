@@ -1,0 +1,50 @@
+schema: 1
+id: "ta-en-reading-questions"
+name: "Reading: question cards"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A set of short question cards with their answers, using the question words and yes-or-no endings. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-question-cards"
+    title: "Question cards"
+    sentences:
+      - text: "இது என்ன?"
+        reading: "itu eṉṉa?"
+        ipa: "it̪u enna"
+      - text: "இது வீடு."
+        reading: "itu vīṭu."
+        ipa: "it̪u ʋiːʈu"
+      - text: "வீடு பெரியது, இல்லையா?"
+        reading: "vīṭu periyatu, illaiyā?"
+        ipa: "ʋiːʈu peɾijat̪u illaijaː"
+      - text: "ஆம், பெரியது."
+        reading: "ām, periyatu."
+        ipa: "aːm peɾijat̪u"
+      - text: "தண்ணீர் எங்கே?"
+        reading: "taṇṇīr eṅkē?"
+        ipa: "t̪aɳɳiːɾ eŋkeː"
+      - text: "ஒரு நிமிடம்."
+        reading: "oru nimiṭam."
+        ipa: "oɾu nimiʈam"
+    questions:
+      - id: "ta-9700"
+        prompt: { en: "Which thing is called big?" }
+        options:
+          - { en: "The water" }
+          - { en: "The house" }
+          - { en: "The question" }
+        answer: 2
+      - id: "ta-9701"
+        prompt: { en: "What is the answer to the question about the water?" }
+        options:
+          - { en: "Thank you" }
+          - { en: "Goodbye" }
+          - { en: "Please wait a moment" }
+        answer: 3
+      - id: "ta-9702"
+        prompt: { en: "The speaker agrees that the thing is big." }
+        answer: true

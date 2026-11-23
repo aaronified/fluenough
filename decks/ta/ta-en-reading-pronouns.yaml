@@ -1,0 +1,51 @@
+schema: 1
+id: "ta-en-reading-pronouns"
+name: "Reading: who is who"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short exchange about where he, she and we are going, with the informal and polite pronouns. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-who-is-who"
+    title: "Who is who"
+    sentences:
+      - text: "அவன் எங்கே போகிறான்?"
+        reading: "avaṉ eṅkē pōkiṟāṉ?"
+        ipa: "aʋan eŋkeː poːkiraːn"
+      - text: "அவன் வீட்டுக்குப் போகிறான்."
+        reading: "avaṉ vīṭṭukkup pōkiṟāṉ."
+        ipa: "aʋan ʋiːʈʈukkup poːkiraːn"
+      - text: "அவள் எங்கே போகிறாள்?"
+        reading: "avaḷ eṅkē pōkiṟāḷ?"
+        ipa: "aʋaɭ eŋkeː poːkiraːɭ"
+      - text: "அவள் வீட்டுக்குப் போகிறாள்."
+        reading: "avaḷ vīṭṭukkup pōkiṟāḷ."
+        ipa: "aʋaɭ ʋiːʈʈukkup poːkiraːɭ"
+      - text: "நீ எங்கே போகிறாய்?"
+        reading: "nī eṅkē pōkiṟāy?"
+        ipa: "niː eŋkeː poːkiraːj"
+      - text: "நாங்கள் வீட்டுக்குப் போகிறோம்."
+        reading: "nāṅkaḷ vīṭṭukkup pōkiṟōm."
+        ipa: "naːŋkaɭ ʋiːʈʈukkup poːkiroːm"
+    questions:
+      - id: "ta-9703"
+        prompt: { en: "Who is going home?" }
+        options:
+          - { en: "Only he" }
+          - { en: "Only she" }
+          - { en: "He, she and the speakers" }
+          - { en: "Nobody" }
+        answer: 3
+      - id: "ta-9704"
+        prompt: { en: "Someone is asked a question with the informal word for you." }
+        answer: true
+      - id: "ta-9705"
+        prompt: { en: "Where are the speakers going?" }
+        options:
+          - { en: "To the market" }
+          - { en: "Home" }
+          - { en: "To school" }
+        answer: 2
