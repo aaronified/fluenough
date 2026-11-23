@@ -173,3 +173,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1354 | ta-cooking | Is தோசை சுடு the natural way to say make dosa? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1356 | ta-cooking | Is சாதம் பிசை natural for mashing rice, or is it more used for dough? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | unit-level | ta-grammar-noun-forms | Rows for the ~550 later nouns are generated from the noun-class patterns (stem doubling, -ம் nouns, -ு glide nouns, loanwords in -ட், people and animals): check them, above all loanwords, -வு nouns, and plurals of people. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-1297 | ta-illness | Is இரும் (to cough) given the right stem and forms (இருமு, இருமினேன்)? | Sonnet builder (ta-gram2) | 2026-11-23 |
