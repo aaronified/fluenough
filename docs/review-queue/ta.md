@@ -84,3 +84,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1930 | ta-chores | Is இஸ்திரி போடு the natural way to say iron clothes? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-past | Check the spoken past stems (படிச்ச, பாத்த, செஞ்ச, வச்ச) and the spoken second-person past. | Sonnet builder (ta-gram2) | 2026-11-23 |
 | unit-level | ta-grammar-verb-classes | Check the six past-marker groups and the future markers given for every verb. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-ordinals | Check the shortened spoken ordinals (ரெண்டாவது, மூணாவது, நாலாவது, அஞ்சாவது, ஒம்பதாவது) and the date forms. | Sonnet builder (ta-gram2) | 2026-11-23 |

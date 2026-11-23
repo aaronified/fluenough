@@ -467,7 +467,9 @@ units:
       - { id: "yesterday-at-home", text: { "en": "A family says what each of them did yesterday" } }
     reading_passages:
       - { id: "past-notes", text: { "en": "Short notes on what was done, and by whom" } }
-  - planned: { id: "ta-grammar-ordinals", grammar: "ordinals" }
+  - decks: ["ta-grammar-ordinals"]
+    words: 0
+    grammar: ["ordinals"]
     listening_passages:
       - { id: "birthday-dates", text: { "en": "People say their birthdays and anniversaries" } }
     reading_passages:
