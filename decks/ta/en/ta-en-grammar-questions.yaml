@@ -1,0 +1,20 @@
+schema: 1
+id: "ta-en-grammar-questions"
+kind: "layer"
+core: "ta-grammar-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions: yes or no"
+description: "Turning a statement into a yes-or-no question with the ending -ஆ (-ā). Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Yes-or-no questions"
+  slot_name: "form"
+  entries:
+    "varu": "you come"
+    "pokaan": "he goes"
+    "nallatu": "that is good"
+    "veedu": "this is your house"
+    "kadai": "the shop is here"
+    "pesu": "you speak Tamil"
+  notes: "A yes-or-no question needs no word order change: add -ஆ (-ā) to the last word, or to the word you ask about: நீங்கள் வருகிறீர்களா (nīṅkaḷ varukiṟīrkaḷā)? A word in -உ (-u) loses it before -ஆ (-ā): வீடு (vīṭu) becomes வீடா (vīṭā). The answers are ஆம் (ām), yes, and இல்லை (illai), no. A question with a question word, such as யார் (yār), who, or என்ன (eṉṉa), what, has no -ஆ (-ā): உங்கள் பெயர் என்ன (uṅkaḷ peyar eṉṉa)? Source: English Wiktionary, the interrogative suffix ஆ (ā); the question words are those of the unit ta-questions."

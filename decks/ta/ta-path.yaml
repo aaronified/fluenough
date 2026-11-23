@@ -303,12 +303,16 @@ units:
       - { id: "at-the-market", text: { "en": "Buying vegetables at a market" } }
     reading_passages:
       - { id: "market-board", text: { "en": "A market stall's board" } }
-  - planned: { id: "ta-grammar-nouns", grammar: "noun-classes" }
+  - decks: ["ta-grammar-nouns", "*"]
+    words: 0
+    grammar: ["nouns"]
     listening_passages:
       - { id: "noun-classes-heard", text: { "en": "A short exchange that uses noun-classes, after the market unit" } }
     reading_passages:
       - { id: "noun-classes-read", text: { "en": "A short text that uses noun-classes, after the market unit" } }
-  - planned: { id: "ta-grammar-questions", grammar: "questions", words: 0 }
+  - decks: ["ta-grammar-questions", "*"]
+    words: 0
+    grammar: ["questions"]
     listening_passages:
       - { id: "asking-the-way", text: { "en": "Asking a stranger short questions" } }
     reading_passages:
@@ -322,7 +326,9 @@ units:
       - { id: "likes-poll", text: { "en": "A poll of favourite foods" } }
   # ta-pronouns-sentences, ta-verbs-sentences and ta-noun-forms-sentences
   # join this unit.
-  - planned: { id: "ta-grammar-sentences", grammar: "sentences", words: 0 }
+  - decks: ["ta-grammar-sentences", "*"]
+    words: 0
+    grammar: ["sentences"]
     listening_passages:
       - { id: "introducing-friends", text: { "en": "Introducing two friends: who is who, he and she" } }
     reading_passages:
@@ -334,7 +340,9 @@ units:
       - { id: "turn-left", text: { "en": "Directions to a temple: left, right and straight on" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Street signs and an arrow board" } }
-  - planned: { id: "ta-grammar-continuous", grammar: "continuous" }
+  - decks: ["ta-grammar-continuous", "*"]
+    words: 0
+    grammar: ["continuous"]
     listening_passages:
       - { id: "continuous-heard", text: { "en": "A short exchange that uses continuous, after the directions unit" } }
     reading_passages:
@@ -403,7 +411,9 @@ units:
       - { id: "animals-on-the-farm", text: { "en": "A child names the animals on a farm" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - planned: { id: "ta-grammar-future", grammar: "future", words: 0 }
+  - decks: ["ta-grammar-future", "*"]
+    words: 0
+    grammar: ["future"]
     listening_passages:
       - { id: "tomorrows-plans", text: { "en": "Friends say what they will do tomorrow" } }
     reading_passages:
