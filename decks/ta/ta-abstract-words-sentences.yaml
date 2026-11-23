@@ -1,0 +1,112 @@
+schema: 1
+id: "ta-abstract-words-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-9600"
+    target: "அவனிடம் நேர்மையும் துணிச்சலும் இருக்கின்றன."
+    reading: "avaṉiṭam nērmaiyum tuṇiccalum irukkiṉṟaṉa."
+    ipa: "aʋaniʈam neːɾmaijum t̪uɳitʃtʃalum iɾukkinrana"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "அவனிடம்", base: "அவன்", reading: "avaṉ" }, { word: "நேர்மையும்", base: "நேர்மை", reading: "nērmai" }, { word: "துணிச்சலும்", base: "துணிச்சல்", reading: "tuṇiccal" }, { word: "இருக்கின்றன", base: "இரு", reading: "iru" }]
+    confusables:
+      - { id: "w1", ref: "ta-8521", kind: "word" }
+      - { id: "w2", ref: "ta-8534", kind: "word" }
+      - { id: "w3", ref: "ta-8519", kind: "word" }
+  - id: "ta-9601"
+    target: "அவன் முயற்சியால் சாதிக்கிறான்."
+    reading: "avaṉ muyaṟciyāl cātikkiṟāṉ."
+    ipa: "aʋan mujarsijaːl saːt̪ikkiraːn"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "முயற்சியால்", base: "முயற்சி", reading: "muyaṟci" }, { word: "சாதிக்கிறான்", base: "சாதி", reading: "cāti" }]
+    confusables:
+      - { id: "w1", ref: "ta-7476", kind: "word" }
+      - { id: "w2", ref: "ta-7454", kind: "word" }
+      - { id: "w3", ref: "ta-8538", kind: "word" }
+  - id: "ta-9602"
+    target: "இந்த வார்த்தையின் அர்த்தம் எனக்குப் புரியவில்லை."
+    reading: "inta vārttaiyiṉ arttam eṉakkup puriyavillai."
+    ipa: "int̪a ʋaːɾt̪t̪aijin aɾt̪t̪am enakkup puɾijaʋillai"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "இந்த", base: "இந்த", reading: "inta" }, { word: "வார்த்தையின்", base: "வார்த்தை", reading: "vārttai" }, { word: "அர்த்தம்", ref: "ta-8537" }, { word: "எனக்குப்", base: "நான்", reading: "nāṉ" }, { word: "புரியவில்லை", base: "புரி", reading: "puri" }]
+    confusables:
+      - { id: "w1", ref: "ta-1224", kind: "word" }
+      - { id: "w2", ref: "ta-7179", kind: "word" }
+      - { id: "w3", ref: "ta-7180", kind: "word" }
+  - id: "ta-9603"
+    target: "வாழ்க்கையில் இன்பமும் துன்பமும் உண்டு."
+    reading: "vāḻkkaiyil iṉpamum tuṉpamum uṇṭu."
+    ipa: "ʋaːɻkkaijil inpamum t̪unpamum uɳʈu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "வாழ்க்கையில்", base: "வாழ்க்கை", reading: "vāḻkkai" }, { word: "இன்பமும்", base: "இன்பம்", reading: "iṉpam" }, { word: "துன்பமும்", base: "துன்பம்", reading: "tuṉpam" }, { word: "உண்டு", base: "உண்டு", reading: "uṇṭu" }]
+    confusables:
+      - { id: "w1", ref: "ta-8528", kind: "word" }
+      - { id: "w2", ref: "ta-1198", kind: "word" }
+      - { id: "w3", ref: "ta-8042", kind: "word" }
+  - id: "ta-9604"
+    target: "நீ உன் மனசாட்சியைக் கேள்."
+    reading: "nī uṉ maṉacāṭciyaik kēḷ."
+    ipa: "niː un manasaːʈtʃijaik keːɭ"
+    pos: "phrase"
+    bases: [{ word: "நீ", ref: "ta-0057" }, { word: "உன்", base: "நீ", reading: "nī" }, { word: "மனசாட்சியைக்", base: "மனசாட்சி", reading: "maṉacāṭci" }, { word: "கேள்", ref: "ta-0122" }]
+    confusables:
+      - { id: "w1", ref: "ta-8520", kind: "word" }
+      - { id: "w2", ref: "ta-7047", kind: "word" }
+      - { id: "w3", ref: "ta-8519", kind: "word" }
+  - id: "ta-9605"
+    target: "அவள் தன் லட்சியத்தை அடைகிறாள்."
+    reading: "avaḷ taṉ laṭciyattai aṭaikiṟāḷ."
+    ipa: "aʋaɭ t̪an laʈtʃijat̪t̪ai aʈaikiraːɭ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "தன்", base: "தான்", reading: "tāṉ" }, { word: "லட்சியத்தை", base: "லட்சியம்", reading: "laṭciyam" }, { word: "அடைகிறாள்", base: "அடை", reading: "aṭai" }]
+    confusables:
+      - { id: "w1", ref: "ta-2330", kind: "word" }
+      - { id: "w2", ref: "ta-7066", kind: "word" }
+      - { id: "w3", ref: "ta-7065", kind: "word" }
+  - id: "ta-9606"
+    target: "ஆணவம் வீழ்ச்சிக்குக் காரணம்."
+    reading: "āṇavam vīḻccikkuk kāraṇam."
+    ipa: "aːɳaʋam ʋiːɻtʃtʃikkuk kaːɾaɳam"
+    pos: "phrase"
+    bases: [{ word: "ஆணவம்", ref: "ta-8532" }, { word: "வீழ்ச்சிக்குக்", base: "வீழ்ச்சி", reading: "vīḻcci" }, { word: "காரணம்", ref: "ta-7169" }]
+    confusables:
+      - { id: "w1", ref: "ta-8533", kind: "word" }
+      - { id: "w2", ref: "ta-8531", kind: "word" }
+      - { id: "w3", ref: "ta-8530", kind: "word" }
+  - id: "ta-9607"
+    target: "நமக்குள் வேற்றுமை இல்லை."
+    reading: "namakkuḷ vēṟṟumai illai."
+    ipa: "namakkuɭ ʋeːrrumai illai"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "நமக்குள்", base: "நாம்", reading: "nām" }, { word: "வேற்றுமை", ref: "ta-8547" }, { word: "இல்லை", ref: "ta-0002" }]
+    confusables:
+      - { id: "w1", ref: "ta-8271", kind: "word" }
+      - { id: "w2", ref: "ta-8524", kind: "word" }
+      - { id: "w3", ref: "ta-8523", kind: "word" }
+  - id: "ta-9608"
+    target: "பணிவுடன் பேசு."
+    reading: "paṇivuṭaṉ pēcu."
+    ipa: "paɳiʋuʈan peːsu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "பணிவுடன்", base: "பணிவு", reading: "paṇivu" }, { word: "பேசு", ref: "ta-0123" }]
+    confusables:
+      - { id: "w1", ref: "ta-8512", kind: "word" }
+      - { id: "w2", ref: "ta-8511", kind: "word" }
+      - { id: "w3", ref: "ta-7100", kind: "word" }
