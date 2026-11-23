@@ -154,13 +154,13 @@ units:
   # 3. The script, after the first six units (#554: skipped by a learner
   # who already reads it). ta-script-consonants and ta-script-reading join
   # the first; ta-script-grantha joins the second.
-  - decks: ["ta-script-vowels", "ta-script-consonants", "ta-script-reading", "*"]
+  - decks: ["ta-script-vowels", "ta-script-consonants", "ta-script-reading"]
     words: 0
     listening_passages:
       - { id: "letter-names", text: { "en": "The vowels and consonants said in order" } }
     reading_passages:
       - { id: "first-signs", text: { "en": "Short words on shop signs, letter by letter" } }
-  - decks: ["ta-script-vowel-signs", "ta-script-grantha", "ta-script-digits", "*"]
+  - decks: ["ta-script-vowel-signs", "ta-script-grantha", "ta-script-digits"]
     words: 0
     listening_passages:
       - { id: "syllable-rows", text: { "en": "One consonant with each vowel sign, said in a row" } }
@@ -218,14 +218,14 @@ units:
       - { id: "house-rules", text: { "en": "A short list of house rules" } }
   # 5. Rules as forms, practised on the words known: noun endings and
   # conjunctions first, then pronoun and verb forms.
-  - decks: ["ta-grammar-noun-forms", "*"]
+  - decks: ["ta-grammar-noun-forms"]
     words: 0
     grammar: ["plural", "oblique", "ai", "ukku", "il", "itam", "iliruntu", "otu", "utaiya"]
     listening_passages:
       - { id: "which-way-home", text: { "en": "Two people say where they go, with whom, and where from" } }
     reading_passages:
       - { id: "class-notice", text: { "en": "A class notice: where, with whom and when" } }
-  - decks: ["ta-grammar-conjunctions", "*"]
+  - decks: ["ta-grammar-conjunctions"]
     words: 8
     grammar: ["conjunctions"]
     listening_passages:
@@ -233,28 +233,28 @@ units:
     reading_passages:
       - { id: "two-plans", text: { "en": "A note with two plans joined by and, or and but" } }
   # ta-grammar-pronouns joins this unit.
-  - decks: ["ta-grammar-pronouns", "ta-grammar-pronoun-forms", "ta-grammar-inclusive-we", "*"]
+  - decks: ["ta-grammar-pronouns", "ta-grammar-pronoun-forms", "ta-grammar-inclusive-we"]
     words: 0
     grammar: ["pronouns", "inclusive-we", "pronoun-gen", "pronoun-dat", "pronoun-acc", "pronoun-with"]
     listening_passages:
       - { id: "whose-is-it", text: { "en": "Asking whose things are whose" } }
     reading_passages:
       - { id: "we-and-you", text: { "en": "A message to a group: we, all of us, and you" } }
-  - decks: ["ta-grammar-be", "*"]
+  - decks: ["ta-grammar-be"]
     words: 0
     grammar: ["be"]
     listening_passages:
       - { id: "who-and-where", text: { "en": "Saying who someone is and where they are" } }
     reading_passages:
       - { id: "is-there", text: { "en": "A note: what there is at home and what there is not" } }
-  - decks: ["ta-grammar-verb-present", "*"]
+  - decks: ["ta-grammar-verb-present"]
     words: 0
     grammar: ["present-first", "present-second", "present-third"]
     listening_passages:
       - { id: "morning-at-home", text: { "en": "A family member says what she does every morning" } }
     reading_passages:
       - { id: "note-on-the-fridge", text: { "en": "A short note: what to eat and drink" } }
-  - decks: ["ta-grammar-demonstratives", "*"]
+  - decks: ["ta-grammar-demonstratives"]
     words: 0
     grammar: ["demonstratives"]
     listening_passages:
@@ -289,7 +289,7 @@ units:
       - { id: "what-we-need", text: { "en": "Two people say what they need from the shop" } }
     reading_passages:
       - { id: "grocery-list", text: { "en": "A grocery list" } }
-  - decks: ["ta-grammar-needs", "*"]
+  - decks: ["ta-grammar-needs"]
     words: 3
     grammar: ["needs"]
     listening_passages:
@@ -303,21 +303,21 @@ units:
       - { id: "at-the-market", text: { "en": "Buying vegetables at a market" } }
     reading_passages:
       - { id: "market-board", text: { "en": "A market stall's board" } }
-  - decks: ["ta-grammar-nouns", "*"]
+  - decks: ["ta-grammar-nouns"]
     words: 0
     grammar: ["nouns"]
     listening_passages:
       - { id: "noun-classes-heard", text: { "en": "A short exchange that uses noun-classes, after the market unit" } }
     reading_passages:
       - { id: "noun-classes-read", text: { "en": "A short text that uses noun-classes, after the market unit" } }
-  - decks: ["ta-grammar-questions", "*"]
+  - decks: ["ta-grammar-questions"]
     words: 0
     grammar: ["questions"]
     listening_passages:
       - { id: "asking-the-way", text: { "en": "Asking a stranger short questions" } }
     reading_passages:
       - { id: "a-form-to-fill", text: { "en": "A short form: name, age and where you live" } }
-  - decks: ["ta-grammar-likes", "*"]
+  - decks: ["ta-grammar-likes"]
     words: 2
     grammar: ["likes"]
     listening_passages:
@@ -326,7 +326,7 @@ units:
       - { id: "likes-poll", text: { "en": "A poll of favourite foods" } }
   # ta-pronouns-sentences, ta-verbs-sentences and ta-noun-forms-sentences
   # join this unit.
-  - decks: ["ta-grammar-sentences", "*"]
+  - decks: ["ta-grammar-sentences"]
     words: 0
     grammar: ["sentences"]
     listening_passages:
@@ -340,7 +340,7 @@ units:
       - { id: "turn-left", text: { "en": "Directions to a temple: left, right and straight on" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Street signs and an arrow board" } }
-  - decks: ["ta-grammar-continuous", "*"]
+  - decks: ["ta-grammar-continuous"]
     words: 0
     grammar: ["continuous"]
     listening_passages:
@@ -381,14 +381,14 @@ units:
     reading_passages:
       - { id: "how-to-card", text: { "en": "A short how-to card for making filter coffee" } }
   # ta-quantities-sentences joins this unit.
-  - decks: ["ta-grammar-differences", "*"]
+  - decks: ["ta-grammar-differences"]
     words: 6
     grammar: ["differences"]
     listening_passages:
       - { id: "how-much-how-many", text: { "en": "Asking how much and how many at a stall" } }
     reading_passages:
       - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
-  - decks: ["ta-grammar-postpositions", "ta-grammar-al", "*"]
+  - decks: ["ta-grammar-postpositions", "ta-grammar-al"]
     words: 2
     grammar: ["postpositions", "al"]
     listening_passages:
@@ -396,7 +396,7 @@ units:
     reading_passages:
       - { id: "route-note", text: { "en": "A note on how to reach a house: past, behind and near" } }
   # ta-grammar-adjectives and ta-grammar-articles join this unit.
-  - decks: ["ta-grammar-gender-number", "ta-grammar-adjectives", "ta-grammar-articles", "*"]
+  - decks: ["ta-grammar-gender-number", "ta-grammar-adjectives", "ta-grammar-articles"]
     words: 10
     grammar: ["articles", "gender-number", "adjectives"]
     listening_passages:
@@ -417,7 +417,7 @@ units:
       - { id: "animals-on-the-farm", text: { "en": "A child names the animals on a farm" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - decks: ["ta-grammar-future", "*"]
+  - decks: ["ta-grammar-future"]
     words: 0
     grammar: ["future"]
     listening_passages:
