@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-workplace"
+name: "Reading: an office notice"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A notice on an office board, using the workplace words taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-office-notice"
+    title: "An office notice"
+    sentences:
+      - text: "நாளை காலை பத்து மணிக்கு கூட்டம்."
+        reading: "nāḷai kālai pattu maṇikku kūṭṭam."
+        ipa: "naːɭai kaːlai pat̪t̪u maɳikku kuːʈʈam"
+      - text: "மேலாளர் பேசுகிறார்."
+        reading: "mēlāḷar pēcukiṟār."
+        ipa: "meːlaːɭaɾ peːsukiraːɾ"
+      - text: "ஊழியர்கள் எல்லோரும் வாருங்கள்."
+        reading: "ūḻiyarkaḷ ellōrum vāruṅkaḷ."
+        ipa: "uːɻijaɾkaɭ elloːɾum ʋaːɾuŋkaɭ"
+      - text: "படிவத்தில் கையெழுத்திடுங்கள்."
+        reading: "paṭivattil kaiyeḻuttiṭuṅkaḷ."
+        ipa: "paʈiʋat̪t̪il kaijeɻut̪t̪iʈuŋkaɭ"
+    questions:
+      - id: "ta-9953"
+        prompt: { en: "At what time is the meeting?" }
+        options:
+          - { en: "Ten in the morning" }
+          - { en: "Six in the evening" }
+          - { en: "Eight in the morning" }
+        answer: 1
+      - id: "ta-9954"
+        prompt: { en: "Who speaks at the meeting?" }
+        options:
+          - { en: "The manager" }
+          - { en: "The farmer" }
+          - { en: "The doctor" }
+        answer: 1
+      - id: "ta-9955"
+        prompt: { en: "Everyone is asked to sign a form." }
+        answer: true
