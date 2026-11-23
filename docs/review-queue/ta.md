@@ -58,3 +58,5 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-grammar-adjectives | The -து and -வை forms (பெரியது, பெரியவை ...) were built by rule for all nine adjectives with no source page; are they all natural? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-articles | ஓர் before a vowel is from English Wiktionary; are the six pairs right? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-verb-present | வேண்டும், வேண்டாம், பிடிக்கும் and பிடிக்காது are verbs with one form for every person, so they are left out of the table (except list); is that the right way to teach them? | Sonnet builder | 2026-11-23 |
+| ta-1105 | ta-daily-life | Is டிபன் (tiffin) the right everyday word for a light meal or breakfast, as written from a dictionary gloss? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1102 | ta-daily-life | Is துலக்கு the everyday spoken verb for brushing teeth, or is another verb more usual? | ta-words1 (Sonnet builder) | 2026-11-23 |
