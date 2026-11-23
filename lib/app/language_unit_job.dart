@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:isolate';
 
 import '../core/data/course_path.dart' show CoursePath;
@@ -5,6 +6,7 @@ import '../core/decks/adult_gate.dart';
 import '../core/decks/language_catalog.dart' show B1Unit;
 import '../core/decks/language_summary.dart';
 import '../core/decks/language_unit.dart';
+import '../core/decks/sha256.dart';
 import '../core/languages/language_skills.dart' show kanaScript, kanjiScript;
 import '../core/models/deck.dart';
 import 'deck_catalog.dart';
@@ -23,6 +25,8 @@ class LanguageJob {
     this.disk,
     this.snapshot,
     this.seed,
+    this.adult = false,
+    this.stored,
   });
 
   /// The language's code, such as `te`.
@@ -48,6 +52,14 @@ class LanguageJob {
 
   /// The running app's version.
   final String app;
+
+  /// The Adult content setting the language is scoped for (`forAdult`),
+  /// worked out here so that no loop over its cards runs on the UI isolate.
+  final bool adult;
+
+  /// The summary kept for the language, used as it is when its stamp is the
+  /// one this job works out, so that a valid cache is not worked out again.
+  final LanguageSummary? stored;
 }
 
 /// What [runLanguageJob] found.
@@ -56,6 +68,8 @@ class LanguageOutcome {
     required this.catalog,
     required this.summary,
     required this.snapshot,
+    required this.scoped,
+    required this.adult,
     this.filesRead = 0,
     this.bytesRead = 0,
     this.hashed = 0,
@@ -68,6 +82,10 @@ class LanguageOutcome {
   final Catalog catalog;
 
   final LanguageSummary summary;
+
+  /// [catalog] as a learner with Adult content [adult] has it.
+  final Catalog scoped;
+  final bool adult;
 
   /// The text of the language's snapshot to write, or null when the stored
   /// one is still right.
@@ -110,23 +128,34 @@ LanguageOutcome runLanguageJob(LanguageJob job) {
     parse: (all) => DeckCatalog.parseLanguage(job.code, all),
     forceWrite: seeded,
   );
+  // Every file of the language counts, the ones the phone knows by hash and
+  // the ones hashed here (a deck the learner added, a private package, a
+  // shared file of the language), so that a verify job can say the same.
   final digest = filesDigestOf(<String, String>{
-    for (final e in job.shas.entries)
-      if (files.containsKey(e.key) && !isSharedUnitPath(e.key)) e.key: e.value,
+    for (final e in parsed.shas.entries)
+      if (!isSharedUnitPath(e.key)) e.key: e.value,
   });
-  final summary = summariseLanguage(
-    parsed.catalog,
-    job.code,
-    SummaryStamp(
-      format: LanguageSummary.format,
-      filesDigest: digest,
-      app: job.app,
-    ),
-  );
+  final kept = job.stored;
+  final LanguageSummary summary;
+  if (kept != null && _stampIs(kept.stamp, digest, job.app)) {
+    summary = kept;
+  } else {
+    summary = summariseLanguage(
+      parsed.catalog,
+      job.code,
+      SummaryStamp(
+        format: LanguageSummary.format,
+        filesDigest: digest,
+        app: job.app,
+      ),
+    );
+  }
   return LanguageOutcome(
     catalog: parsed.catalog,
     summary: summary,
     snapshot: parsed.snapshot,
+    scoped: parsed.catalog.forAdult(adult: job.adult),
+    adult: job.adult,
     filesRead: read.length,
     bytesRead: bytes,
     hashed: parsed.hashed,
@@ -134,6 +163,12 @@ LanguageOutcome runLanguageJob(LanguageJob job) {
     parsed: files.length - parsed.reused,
     unreadable: unreadable,
   );
+}
+
+bool _stampIs(SummaryStamp stamp, String digest, String app) {
+  return stamp.format == LanguageSummary.format &&
+      stamp.filesDigest == digest &&
+      stamp.app == app;
 }
 
 /// Runs a [LanguageJob] somewhere.
@@ -175,6 +210,7 @@ class VerifyJob {
     required this.summaries,
     required this.shas,
     required this.app,
+    this.local = const <String, DeckFiles>{},
   });
 
   /// The summaries file's text, or null.
@@ -183,13 +219,30 @@ class VerifyJob {
   /// Each language's known file hashes, by language code.
   final Map<String, Map<String, String>> shas;
 
+  /// Each language's files the phone knows no hash of (decks the learner
+  /// added, private packages, shared files): the job reads and hashes them,
+  /// reading is all it does with them.
+  final Map<String, DeckFiles> local;
+
   final String app;
 }
 
 /// Checks the caches of [job]'s languages against their files' hashes and
 /// parses nothing.
-Map<String, CacheVerdict> runVerifyJob(VerifyJob job) =>
-    verifyCaches(summaries: job.summaries, shas: job.shas, app: job.app);
+Map<String, CacheVerdict> runVerifyJob(VerifyJob job) {
+  final shas = <String, Map<String, String>>{
+    for (final e in job.shas.entries) e.key: <String, String>{...e.value},
+  };
+  for (final e in job.local.entries) {
+    final into = shas[e.key];
+    if (into == null) continue;
+    final texts = e.value.readAll(<String>[]);
+    for (final file in texts.entries) {
+      into[file.key] = sha256Hex(utf8.encode(file.value));
+    }
+  }
+  return verifyCaches(summaries: job.summaries, shas: shas, app: job.app);
+}
 
 /// Runs a [VerifyJob] somewhere.
 typedef CacheVerifier = Future<Map<String, CacheVerdict>> Function(

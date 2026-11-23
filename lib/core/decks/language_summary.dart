@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import '../models/deck.dart' show LanguageInfo;
+import '../scheduling/skill_map.dart';
 import 'language_catalog.dart' show B1Unit, milestoneNamed;
 import 'sha256.dart';
 
@@ -323,6 +324,28 @@ LanguageInfo _infoFromJson(Map<Object?, Object?> json) => LanguageInfo(
   icon: json['icon'] as String?,
   typed: json['typed'] != false,
 );
+
+/// The skill map (ADR-0034) of the languages in [summaries], which is what
+/// `AppState` builds from every card of every deck: the cards that ask for
+/// what is heard, the decks a path lists under `alphabet`, and each course's
+/// primary script. A language with no deck to teach from adds nothing, as it
+/// adds nothing to the map made from the decks.
+SkillMap skillMapOf(Iterable<LanguageSummary> summaries) {
+  final heard = <String>{};
+  final scripts = <String>{};
+  final primary = <String, String>{};
+  for (final summary in summaries) {
+    if (!summary.decks.any((deck) => !deck.hidden)) continue;
+    heard.addAll(summary.formHeardCards);
+    scripts.addAll(summary.scriptDecks);
+    primary[summary.code] = summary.primaryScript;
+  }
+  return SkillMap(
+    formHeardCards: heard,
+    scriptDecks: scripts,
+    primaryScripts: primary,
+  );
+}
 
 /// How much a stored summary can be trusted (3.4): [fresh] is used as it is,
 /// [refresh] is used and worked out again in idle time, [untrusted] is not

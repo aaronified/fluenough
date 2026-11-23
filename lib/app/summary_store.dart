@@ -16,6 +16,10 @@ class SummaryBook {
   /// The summaries' file text as last read or written, for a verify job.
   String? text;
 
+  /// Changes whenever a summary is read, kept or forgotten, so that what is
+  /// worked out from the summaries can tell when to be worked out again.
+  int epoch = 0;
+
   /// Reads the file, once. A file that cannot be read is no summaries.
   Future<void> open() => _opening ??= _read();
 
@@ -28,6 +32,7 @@ class SummaryBook {
     _byCode
       ..clear()
       ..addAll(decodeSummaries(text));
+    epoch++;
   }
 
   /// The summary of [code], or null.
@@ -38,12 +43,14 @@ class SummaryBook {
   /// Keeps [summary] and writes the file.
   Future<void> put(LanguageSummary summary) {
     _byCode[summary.code] = summary;
+    epoch++;
     return _write();
   }
 
   /// Forgets the summary of [code] and writes the file.
   Future<void> remove(String code) {
     if (_byCode.remove(code) == null) return Future<void>.value();
+    epoch++;
     return _write();
   }
 
