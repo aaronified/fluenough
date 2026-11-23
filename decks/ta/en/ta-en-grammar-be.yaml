@@ -1,0 +1,18 @@
+schema: 1
+id: "ta-en-grammar-be"
+kind: "layer"
+core: "ta-grammar-be"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "To be: இரு (iru) and இல்லை (illai)"
+description: "Is, was, will be and is not: இரு (iru) for where and how someone is, no verb between two nouns, and இல்லை (illai) for not. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "இரு (iru) by tense"
+  slot_name: "person"
+  entries:
+    "present": "is, am, are, now"
+    "past": "was, were"
+    "future": "will be"
+    "not": "is not, am not, are not (here or there)"
+  notes: "Tamil uses இரு (iru) to say where something is or how it is: நான் வீட்டில் இருக்கிறேன் (nāṉ vīṭṭil irukkiṟēṉ), I am at home. Between two nouns there is no verb at all: அது என் வீடு (atu eṉ vīṭu), that is my house. The negative is the one word இல்லை (illai), the same for every person and tense, at the end of the sentence: அவர் வீட்டில் இல்லை (avar vīṭṭil illai), he is not at home. Where a present cell has two forms, the first is the common spoken one, such as இருக்கேன் (irukkēṉ), and the second the written one, இருக்கிறேன் (irukkiṟēṉ). The verb agrees with the doer: a man (-ஆன் (-āṉ)), a woman (-ஆள் (-āḷ)) and a thing (-அது (-atu)) each have their own ending, and அவர் (avar), polite he or she, and அவர்கள் (avarkaḷ), they, take the polite ending. Both நாங்கள் (nāṅkaḷ) and நாம் (nām) take -ஓம் (-ōm). Source: English Wikipedia, Tamil grammar (equational sentences, இல்லை (illai) and the verb endings)."

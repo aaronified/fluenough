@@ -1,0 +1,42 @@
+schema: 1
+id: "ta-grammar-likes"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ta-0412"
+    target: "பிடிக்கும்"
+    reading: "piṭikkum"
+    ipa: "piʈikkum"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "எனக்குத் தோசை பிடிக்கும்."
+        reading: "eṉakkut tōcai piṭikkum."
+        ipa: "enakkut̪ t̪oːsai piʈikkum"
+        bases: [{ word: "எனக்குத்", base: "நான்", reading: "nāṉ" }, { word: "தோசை", ref: "ta-0248" }, { word: "பிடிக்கும்", base: "பிடிக்கும்", reading: "piṭikkum" }]
+      - target: "உங்களுக்கு என்ன பிடிக்கும்?"
+        reading: "uṅkaḷukku eṉṉa piṭikkum?"
+        ipa: "uŋkaɭukku enna piʈikkum"
+        bases: [{ word: "உங்களுக்கு", base: "நீங்கள்", reading: "nīṅkaḷ" }, { word: "என்ன", ref: "ta-0042" }, { word: "பிடிக்கும்", base: "பிடிக்கும்", reading: "piṭikkum" }]
+  - id: "ta-0413"
+    target: "பிடிக்காது"
+    reading: "piṭikkātu"
+    ipa: "piʈikkaːt̪u"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு இது பிடிக்காது."
+        reading: "eṉakku itu piṭikkātu."
+        ipa: "enakku it̪u piʈikkaːt̪u"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "இது", ref: "ta-0066" }, { word: "பிடிக்காது", base: "பிடிக்காது", reading: "piṭikkātu" }]
+      - target: "அவனுக்கு மீன் பிடிக்காது."
+        reading: "avaṉukku mīṉ piṭikkātu."
+        ipa: "aʋanukku miːn piʈikkaːt̪u"
+        bases: [{ word: "அவனுக்கு", base: "அவன்", reading: "avaṉ" }, { word: "மீன்", ref: "ta-0302" }, { word: "பிடிக்காது", base: "பிடிக்காது", reading: "piṭikkātu" }]

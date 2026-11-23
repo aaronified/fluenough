@@ -1,0 +1,41 @@
+schema: 1
+id: "ta-en-grammar-postpositions"
+kind: "layer"
+core: "ta-grammar-postpositions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Words after the noun"
+description: "வரை (varai) and பற்றி (paṟṟi): words that follow a noun to say until and about. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "ta-0430":
+    native: "until; up to; as far as"
+    notes:
+      "n1": "A word that comes after what it limits, in time or place: நாளை வரை (nāḷai varai), until tomorrow. It follows the noun with no ending."
+    examples:
+      "நாளை வரை இங்கே இருக்கிறேன்.":
+        native: "I am here until tomorrow."
+        bases:
+          "வரை": "until"
+          "இருக்கிறேன்": "am; from இரு (iru), to be"
+      "பத்து மணி வரை வேலை.":
+        native: "There is work until ten o'clock."
+        bases:
+          "வரை": "until"
+  "ta-0431":
+    native: "about; concerning"
+    notes:
+      "n1": "A word that follows the thing talked about, which takes -ஐ (-ai): தமிழைப் பற்றி (tamiḻaip paṟṟi), about Tamil."
+    examples:
+      "அவர் தமிழைப் பற்றிப் பேசுகிறார்.":
+        native: "He is talking about Tamil."
+        bases:
+          "தமிழைப்": "Tamil (the thing acted on); from தமிழ் (tamiḻ), Tamil"
+          "பற்றிப்": "about; from பற்றி (paṟṟi), None"
+          "பேசுகிறார்": "is speaking; from பேசு (pēcu), to speak"
+      "இதைப் பற்றிச் சொல்லுங்கள்.":
+        native: "Please tell me about this."
+        bases:
+          "இதைப்": "this (the thing acted on); from இது (itu), this"
+          "பற்றிச்": "about; from பற்றி (paṟṟi), None"
+          "சொல்லுங்கள்": "please tell; from சொல் (col), to say"

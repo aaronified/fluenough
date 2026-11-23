@@ -1,0 +1,64 @@
+schema: 1
+id: "ta-en-directions-sentences"
+kind: "layer"
+core: "ta-directions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Directions in sentences"
+description: "Eight short sentences giving and asking directions: straight on, right and left, the four points of the compass and the street. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-3050":
+    native: "Come straight."
+    notes:
+      n1: "நேராக (nērāka), straight, goes with a verb of motion, such as வா (vā), come, or போ (pō), go."
+    confusables:
+      w1: { why: "இடது (iṭatu), left, is a side, not a way." }
+      w2: { why: "வலது (valatu), right, is a side, not a way." }
+  "ta-3051":
+    native: "Right or left?"
+    notes:
+      n1: "-ஆ (-ā) on each side asks whether it is that side: வலதா (valatā), is it right?, and இடதா (iṭatā), is it left?; together they ask which one."
+    confusables:
+      w1: { why: "நேராக (nērāka), straight, is not a side." }
+      w2: { why: "மேற்கு (mēṟku), west, is a point of the compass." }
+  "ta-3052":
+    native: "Where is the street?"
+    confusables:
+      w1: { why: "யார் (yār), who, asks about a person." }
+      w2: { why: "என்ன (eṉṉa), what, asks what a thing is." }
+  "ta-3053":
+    native: "The north street is big."
+    notes:
+      n1: "The direction comes before the noun it names: வடக்குத் (vaṭakkut), north, then தெரு (teru), street."
+    confusables:
+      w1: { why: "தெற்கு (teṟku), south, is the opposite point of the compass." }
+      w2: { why: "சின்ன (ciṉṉa), small, is the opposite of big." }
+  "ta-3054":
+    native: "Go straight ahead."
+    notes:
+      n1: "The place comes first, then the way: முன்னால் (muṉṉāl), in front, then நேராகப் (nērākap), straight, then போ (pō), go."
+    confusables:
+      w1: { why: "பின்னால் (piṉṉāl), behind, is the opposite." }
+      w2: { why: "இடது (iṭatu), left, is a side, not a way." }
+  "ta-3055":
+    native: "I am going straight."
+    notes:
+      n1: "போறேன் (pōṟēṉ) is the spoken form of போகிறேன் (pōkiṟēṉ), I go."
+    confusables:
+      w1: { why: "வலது (valatu), right, is a side." }
+      w2: { why: "வடக்கு (vaṭakku), north, is a point of the compass." }
+  "ta-3056":
+    native: "North, south, east and west."
+    confusables:
+      w1: { why: "வலது (valatu), right, is a side, not a point of the compass." }
+      w2: { why: "இடது (iṭatu), left, is a side, not a point of the compass." }
+  "ta-3057":
+    native: "Is the south street here?"
+    notes:
+      n1: "இருக்கிறதா (irukkiṟatā) asks whether something is there, with -ஆ (-ā); இங்கே (iṅkē), here, comes before it."
+    bases:
+      "இருக்கிறதா": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "வடக்கு (vaṭakku), north, is a different point of the compass." }
+      w2: { why: "கிழக்கு (kiḻakku), east, is a different point of the compass." }

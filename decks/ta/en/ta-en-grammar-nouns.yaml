@@ -1,0 +1,19 @@
+schema: 1
+id: "ta-en-grammar-nouns"
+kind: "layer"
+core: "ta-grammar-nouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns: people, animals and things"
+description: "Which verb ending a noun takes, and its plural: men, women, respected people, animals and things. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Noun classes"
+  slot_name: "form"
+  entries:
+    "nanpan": "male friend"
+    "nanpi": "female friend"
+    "amma": "mother, a respected person"
+    "naay": "dog, an animal"
+    "veedu": "house, a thing"
+  notes: "Tamil sorts nouns into two classes: உயர்திணை (uyartiṇai), the rational class of people, and அஃறிணை (aḵṟiṇai), the irrational class of animals and things. In the singular a man takes -ஆன் (-āṉ), a woman -ஆள் (-āḷ) and a thing or an animal -அது (-atu); a respected person, such as அம்மா (ammā), takes -ஆர் (-ār). In the plural people take -ஆர்கள் (-ārkaḷ), and the verb of things and animals ends in -அன (-aṉa): இருக்கின்றன (irukkiṉṟaṉa). A man's word in -ன் (-ṉ) changes it to -ர் (-r) before the plural: நண்பன் (naṇpaṉ) becomes நண்பர்கள் (naṇparkaḷ). The verb forms here are the written ones; the spoken forms are in the verb decks. Source: English Wikipedia, Tamil grammar (verb terminations; the neuter plural in -அன (-aṉa)); English Wiktionary (the declension of a man's word)."
