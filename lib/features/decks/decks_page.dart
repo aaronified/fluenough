@@ -793,10 +793,7 @@ class _DecksPageState extends State<DecksPage> {
                                 opacity: dim,
                                 child: CourseCard(
                                   view: view,
-                                  glyph: languageGlyph(
-                                    view.language,
-                                    state.decks,
-                                  ),
+                                  glyph: languageGlyph(view.language, state),
                                   hours: courseHours(state, code!),
                                   onCulture: () => _toggleCulture(code),
                                   cultureShown: cultureMode,

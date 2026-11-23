@@ -37,7 +37,7 @@ class ProgressHours {
       for (final choice in state.languageChoices)
         (
           language: choice,
-          glyph: languageGlyph(choice, state.decks),
+          glyph: languageGlyph(choice, state),
           spent: courseHours(state, choice.code).spent,
           left: hoursLeftToB1(state, choice.code),
         ),

@@ -45,7 +45,8 @@ import '../core/updates/release_notes.dart';
 import '../core/data/themes.dart';
 import '../core/grading/synonym_sets.dart';
 import '../core/decks/adult_gate.dart';
-import '../core/decks/language_summary.dart' show skillMapOf;
+import '../core/decks/language_summary.dart'
+    show LanguageSummary, SummaryCourse, SummaryStamp, skillMapOf;
 import '../core/decks/language_unit.dart' show isSharedUnitPath;
 import '../core/models/fact.dart';
 import '../core/models/situation.dart';
@@ -76,6 +77,9 @@ import 'deck_import.dart';
 import 'features.dart';
 import 'haptics.dart';
 import 'language_choice.dart';
+import 'language_offer.dart' show learnedFiguresOf;
+import 'language_unit_job.dart' show summariseLanguage;
+import 'learned_cache.dart';
 import 'language_skills.dart';
 import 'links.dart';
 import 'log_files.dart';
@@ -1183,6 +1187,143 @@ class AppState extends ChangeNotifier {
   List<LanguageInfo> get languages => _perLanguage
       ? deckCatalog.catalogSet.directory(adult: settings.adultContent)
       : _view.languages;
+
+  /// The summary of [code] in the language directory (ADR-0062,
+  /// Plan-Lazy-Language-Loading, 3.4): what every screen that lists or names
+  /// languages reads, with no unit loaded. Read one language at a time, the
+  /// kept summary, else the loaded unit's own. Read whole, worked out from
+  /// the composed catalog the first time it is asked and kept until the
+  /// catalog or Adult content changes, so that both modes answer alike.
+  /// Null when no deck on the phone teaches [code].
+  LanguageSummary? summaryOf(String code) {
+    if (_perLanguage) {
+      final set = deckCatalog.catalogSet;
+      return set.summaryOf(code) ?? set.unitOf(code)?.summary;
+    }
+    final view = _view;
+    if (!identical(_summariesOf, view)) {
+      _wholeSummaries.clear();
+      _summariesOf = view;
+    }
+    if (_wholeSummaries.containsKey(code)) return _wholeSummaries[code];
+    final teaches = view.decks.any((entry) => entry.language.code == code);
+    if (!teaches) return _wholeSummaries[code] = null;
+    return _wholeSummaries[code] = summariseLanguage(view, code, _wholeStamp);
+  }
+
+  Catalog? _summariesOf;
+  final Map<String, LanguageSummary?> _wholeSummaries =
+      <String, LanguageSummary?>{};
+  static const SummaryStamp _wholeStamp = SummaryStamp(
+    format: LanguageSummary.format,
+    filesDigest: '',
+    app: '',
+  );
+
+  /// What the language's chip shows: its icon, else the glyph of its first
+  /// deck (ADR-0027), from the directory and not from a scan of the decks.
+  String glyphOf(LanguageInfo language) {
+    if (language.icon case final icon?) return icon;
+    if (!_perLanguage) {
+      // Read whole, the first deck's glyph is a short scan, and no summary
+      // has to be worked out for it.
+      for (final entry in decks) {
+        if (entry.language.code == language.code) {
+          return entry.language.icon ?? entry.glyph;
+        }
+      }
+      return '';
+    }
+    return summaryOf(language.code)?.glyph ?? '';
+  }
+
+  /// The ids of the decks the learner has for [language]: those a deck list
+  /// shows, with the adult decks only while Adult content is on. For what
+  /// names the decks a placement replaces, from the directory.
+  Set<String> deckIdsOf(String language) {
+    final summary = summaryOf(language);
+    if (summary == null) return const <String>{};
+    final adult = settings.adultContent;
+    return <String>{
+      for (final deck in summary.decks)
+        if (!deck.hidden && (adult || !deck.adult)) deck.id,
+    };
+  }
+
+  /// How many decks the learner added themselves (not bundled, not private),
+  /// across every language: "Your decks" on the Languages page.
+  int get ownDeckCount {
+    if (!_perLanguage) {
+      return decks.where((entry) => !entry.bundled && !entry.private).length;
+    }
+    final adult = settings.adultContent;
+    var count = 0;
+    for (final language in languages) {
+      final summary = summaryOf(language.code);
+      if (summary == null) continue;
+      for (final deck in summary.decks) {
+        if (!deck.hidden &&
+            (adult || !deck.adult) &&
+            !deck.bundled &&
+            !deck.private) {
+          count++;
+        }
+      }
+    }
+    return count;
+  }
+
+  /// What the learner has learned of each language, worked out when it was
+  /// last asked and kept with what it was worked out from (4.3).
+  final LearnedCache learnedCache = LearnedCache();
+
+  /// What a figure for [language] in [learnedCache] is worked out from: the
+  /// log's version for the language, what its decks are (the files' digest
+  /// of the summary, or read whole the catalog itself) and the course the
+  /// learner is taught from. A restore or an import touches every language's
+  /// version, so every kept figure is stale after one.
+  LearnedStamp learnedStampOf(String language) {
+    final Object content = _perLanguage
+        ? summaryOf(language)?.stamp.filesDigest ?? ''
+        : identityHashCode(_view);
+    return (progress.versionOf(language), content, courseNative(language));
+  }
+
+  final Set<String> _learnedPending = <String>{};
+
+  /// Works out [language]'s figures in the background, for a language whose
+  /// unit is not loaded and whose kept figure is stale or missing: reads its
+  /// unit in a worker, works the figures out, keeps them and lets the unit go
+  /// again unless it is the shown language. One at a time, as every read is.
+  /// Does nothing when the catalog is read whole, where every unit is loaded.
+  void queueLearnedRefresh(String language) {
+    if (!_perLanguage || _disposed) return;
+    // A unit that failed to read is not read again for this: its figures stay
+    // as they were until the learner opens the language and retries.
+    final phase = deckCatalog.catalogSet.loadOf(language).phase;
+    if (phase == LoadPhase.failed || !_learnedPending.add(language)) return;
+    unawaited(_refreshLearned(language));
+  }
+
+  Future<void> _refreshLearned(String language) async {
+    try {
+      final set = deckCatalog.catalogSet;
+      final wasLoaded = set.loadOf(language).isLoaded;
+      await ensureLoaded(language);
+      if (_disposed || !set.loadOf(language).isLoaded) return;
+      learnedCache.keep(
+        language,
+        learnedStampOf(language),
+        learnedFiguresOf(this, language),
+      );
+      if (!wasLoaded && language != shownLanguage) set.drop(language);
+      _notifyKeepingStructure();
+    } on Object catch (e, stack) {
+      log.warning(describeError('Counting the $language words', e, stack));
+    } finally {
+      _learnedPending.remove(language);
+    }
+  }
 
   /// The languages the language bar at the top of Today, Decks and
   /// Progress offers (#461, #528): those the profile learns that have
@@ -3204,23 +3345,22 @@ class AppState extends ChangeNotifier {
   /// and that the learner speaks, or, when they speak none of them, every
   /// one that teaches it. Empty if no deck teaches [language].
   List<NativeOption> nativeOptions(String language) {
-    final natives = <String, LanguageInfo>{
-      for (final entry in decks)
-        if (entry.language.code == language)
-          entry.deck.native.code: entry.deck.native,
+    // From the language's summary in the directory: no unit is read for it
+    // (ADR-0062). Its courses are in the order its decks first name them.
+    final natives = <String, SummaryCourse>{
+      for (final course in summaryOf(language)?.courses ?? <SummaryCourse>[])
+        course.native: course,
     };
-    final spoken = <LanguageInfo>[
-      for (final native in natives.values)
-        if (settings.rankOf(native.code) != null) native,
+    final spoken = <SummaryCourse>[
+      for (final course in natives.values)
+        if (settings.rankOf(course.native) != null) course,
     ];
-    CoursePath? pathOf(LanguageInfo native) =>
-        _catalog.paths['$language/${native.code}'];
     return <NativeOption>[
-      for (final native in spoken.isEmpty ? natives.values : spoken)
+      for (final course in spoken.isEmpty ? natives.values : spoken)
         (
-          native: native,
-          covered: pathOf(native)?.coveredUnits,
-          total: pathOf(native)?.writtenUnits,
+          native: course.nativeLanguage,
+          covered: course.hasPath ? course.coveredUnits : null,
+          total: course.hasPath ? course.writtenUnits : null,
         ),
     ];
   }
@@ -4730,13 +4870,8 @@ class AppState extends ChangeNotifier {
 
   /// Whether [language]'s course has decks that need its alphabet, so that
   /// it can be learned without them.
-  bool hasAlphabet(String language) {
-    for (final entry in decks) {
-      if (entry.language.code != language) continue;
-      if (pathOf(entry)?.alphabet.contains(entry.id) ?? false) return true;
-    }
-    return false;
-  }
+  bool hasAlphabet(String language) =>
+      summaryOf(language)?.hasAlphabet ?? false;
 
   /// [units]' cards, one from each unit in turn, so that a day's new cards
   /// mix the pending units rather than finishing one first.

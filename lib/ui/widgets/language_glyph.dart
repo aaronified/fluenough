@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../../app/deck_catalog.dart';
+import '../../app/app_state.dart';
 import '../../core/models/deck.dart';
 import '../theme.dart';
 
 /// The language's icon, the first letter of its own name (ADR-0027), or for
-/// a language that names none, the glyph of its first deck in [decks].
-String languageGlyph(LanguageInfo language, List<DeckEntry> decks) {
-  if (language.icon case final icon?) return icon;
-  for (final entry in decks) {
-    if (entry.language.code == language.code) {
-      return entry.language.icon ?? entry.glyph;
-    }
-  }
-  return '';
-}
+/// a language that names none, the glyph of its first deck, which the
+/// language directory holds (`AppState.glyphOf`): no deck is read for it.
+String languageGlyph(LanguageInfo language, AppState state) =>
+    state.glyphOf(language);
 
 /// How much larger [language]'s glyph is set than the others' (#681). The
 /// IPA course's icon, a schwa, is drawn at the height of a lower-case
