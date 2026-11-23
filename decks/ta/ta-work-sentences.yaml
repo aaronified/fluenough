@@ -1,0 +1,118 @@
+schema: 1
+id: "ta-work-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-3017"
+    target: "அவர் மருத்துவர்."
+    reading: "avar maruttuvar."
+    ipa: "aʋaɾ maɾut̪t̪uʋaɾ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "மருத்துவர்", ref: "ta-0199" }]
+    confusables:
+      - { id: "w1", ref: "ta-0198", kind: "word" }
+      - { id: "w2", ref: "ta-0201", kind: "word" }
+  - id: "ta-3018"
+    target: "நான் அலுவலகத்தில் வேலை செய்கிறேன்."
+    reading: "nāṉ aluvalakattil vēlai ceykiṟēṉ."
+    ipa: "naːn aluʋalakat̪t̪il ʋeːlai sejkireːn"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "நான்", ref: "ta-0003" }
+      - { word: "அலுவலகத்தில்", ref: "ta-0193" }
+      - { word: "வேலை", ref: "ta-0192" }
+      - { word: "செய்கிறேன்", ref: "ta-0127" }
+    confusables:
+      - { id: "w1", ref: "ta-0196", kind: "word" }
+      - { id: "w2", ref: "ta-0197", kind: "word" }
+  - id: "ta-3019"
+    target: "இன்று கூட்டம் இருக்கிறது."
+    reading: "iṉṟu kūṭṭam irukkiṟatu."
+    ipa: "inru kuːʈʈam iɾukkirat̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "இன்று", ref: "ta-0144" }
+      - { word: "கூட்டம்", ref: "ta-0195" }
+      - { word: "இருக்கிறது", base: "இரு", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ta-0193", kind: "word" }
+      - { id: "w2", ref: "ta-0200", kind: "word" }
+  - id: "ta-3020"
+    target: "இப்போது ஓய்வு நேரம்."
+    reading: "ippōtu ōyvu nēram."
+    ipa: "ippoːt̪u oːjʋu neːɾam"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "இப்போது", ref: "ta-0132" }, { word: "ஓய்வு", ref: "ta-0200" }, { word: "நேரம்", ref: "ta-0155" }]
+    confusables:
+      - { id: "w1", ref: "ta-0195", kind: "word" }
+      - { id: "w2", ref: "ta-0194", kind: "word" }
+  - id: "ta-3021"
+    target: "அவன் தொழிலாளி."
+    reading: "avaṉ toḻilāḷi."
+    ipa: "aʋan t̪oɻilaːɭi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "தொழிலாளி", ref: "ta-0201" }]
+    confusables:
+      - { id: "w1", ref: "ta-0199", kind: "word" }
+      - { id: "w2", ref: "ta-0198", kind: "word" }
+  - id: "ta-3022"
+    target: "நீ கணினியில் வேலை செய்கிறாயா?"
+    reading: "nī kaṇiṉiyil vēlai ceykiṟāyā?"
+    ipa: "niː kaɳinijil ʋeːlai sejkiraːjaː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "நீ", ref: "ta-0057" }
+      - { word: "கணினியில்", ref: "ta-0196" }
+      - { word: "வேலை", ref: "ta-0192" }
+      - { word: "செய்கிறாயா", ref: "ta-0127" }
+    confusables:
+      - { id: "w1", ref: "ta-0195", kind: "word" }
+      - { id: "w2", ref: "ta-0193", kind: "word" }
+  - id: "ta-3023"
+    target: "சம்பளம் எவ்வளவு?"
+    reading: "campaḷam evvaḷavu?"
+    ipa: "sampaɭam eʋʋaɭaʋu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "சம்பளம்", ref: "ta-0194" }, { word: "எவ்வளவு", ref: "ta-0049" }]
+    confusables:
+      - { id: "w1", ref: "ta-0048", kind: "word" }
+      - { id: "w2", ref: "ta-0044", kind: "word" }
+  - id: "ta-3024"
+    target: "நாளை கூட்டம் இல்லை."
+    reading: "nāḷai kūṭṭam illai."
+    ipa: "naːɭai kuːʈʈam illai"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "கூட்டம்", ref: "ta-0195" }, { word: "இல்லை", ref: "ta-0002" }]
+    confusables:
+      - { id: "w1", ref: "ta-0001", kind: "word" }
+      - { id: "w2", ref: "ta-0144", kind: "word" }
+  - id: "ta-3025"
+    target: "நாங்கள் ஓய்வு எடுக்கிறோம்."
+    reading: "nāṅkaḷ ōyvu eṭukkiṟōm."
+    ipa: "naːŋkaɭ oːjʋu eʈukkiroːm"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "ஓய்வு", ref: "ta-0200" }, { word: "எடுக்கிறோம்", ref: "ta-0184" }]
+    confusables:
+      - { id: "w1", ref: "ta-0193", kind: "word" }
+      - { id: "w2", ref: "ta-0197", kind: "word" }
