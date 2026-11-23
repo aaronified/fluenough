@@ -128,6 +128,14 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-2184 | ta-journey | Is வழிதவறு one word, and natural in speech? | Sonnet builder | 2026-11-23 |
 | ta-2189 | ta-journey | Is எடுத்துச்செல் written as one word? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-when | Check போது after the infinitive plus -உம், and the spoken conditional in -ஆ, for every verb. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0490 | ta-grammar-registers | Is the gender of அலுவலர் (m) right for an officer of either sex? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0489 | ta-grammar-registers | Is the gender m right for பொதுமக்கள், a plural noun? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0486 | ta-grammar-registers | Check the gloss of கட்டணம் against விலை for fee versus price. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0476 | ta-grammar-registers | Is நீர் the right everyday-versus-formal contrast with தண்ணீர்? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0471 | ta-grammar-registers | Is உண் in current use or only literary? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0474 | ta-grammar-registers | Check the stem தெரிவி and its forms தெரிவித்தார் and தெரிவியுங்கள். | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0496 | ta-grammar-registers | Is கூடாது with the infinitive the usual form of a rule on signs? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-written-forms | Check the spoken forms (இங்க, எங்க, இல்ல, வேணும், ரெண்டு, ஒண்ணு, மூணு, நாலு, தண்ணி, வருது, வர்றேன், சாப்பிடுறேன், பேசுறேன). | Sonnet builder (ta-gram2) | 2026-11-23 |
 | ta-1246 | ta-shopping | Is வசூலி the usual verb for collecting money that is owed, in a shop? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1225 | ta-shopping | Is சாமான் the usual spoken word for belongings or shopping, against பொருள்? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1214 | ta-shopping | Is the split between ரசீது (receipt) and பில் (bill) how shops say it? | ta-words1 (Sonnet builder) | 2026-11-23 |
