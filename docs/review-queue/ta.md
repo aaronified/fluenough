@@ -62,3 +62,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1102 | ta-daily-life | Is துலக்கு the everyday spoken verb for brushing teeth, or is another verb more usual? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1804 | ta-help | Is பிரச்சினை (not பிரச்சனை) the spelling to teach first? | Sonnet builder | 2026-11-23 |
 | ta-1805 | ta-help | Is போலீஸ் the right spoken form, and the register correct? | Sonnet builder | 2026-11-23 |
+| ta-1129 | ta-weather | Is புழுக்கம் the everyday word for sultry, close heat in spoken Tamil? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1120 | ta-weather | Is சூரியன் best given as masculine (m) for a course that uses m, f and n? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1119 | ta-weather | Is the split between வெப்பம் (forecast word) and வெயில் (felt sun) right for everyday speech? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1143 | ta-weather | Is குளிர் அடிக்கிறது a natural way to say it feels cold? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1148 | ta-weather | Is காய்ந்த the right word for a cloth that has dried? | ta-words1 (Sonnet builder) | 2026-11-23 |
