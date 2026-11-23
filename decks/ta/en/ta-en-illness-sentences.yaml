@@ -1,0 +1,87 @@
+schema: 1
+id: "ta-en-illness-sentences"
+kind: "layer"
+core: "ta-illness-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Illness in sentences"
+description: "Ten short sentences for telling a doctor or a friend how you feel, and for taking medicine. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-4044":
+    native: "I have had a fever for two days."
+    notes:
+      n1: "நாளாக (nāḷāka) means for days; the number comes before it: இரண்டு நாளாக (iraṇṭu nāḷāka)."
+    bases:
+      "நாளாக": "for days; from நாள் (nāḷ), day"
+    confusables:
+      w1: { why: "சளி (caḷi), cold; mucus, is a different word." }
+      w2: { why: "இருமல் (irumal), cough, is a different word." }
+  "ta-4045":
+    native: "I must see the doctor."
+    notes:
+      n1: "பார்க்க வேண்டும் (pārkka vēṇṭum) means must see: the verb form for to, then வேண்டும் (vēṇṭum)."
+    bases:
+      "டாக்டரை": "the doctor (object); from டாக்டர் (ṭākṭar), doctor"
+      "பார்க்க": "to see; from பார் (pār), to see"
+    confusables:
+      w1: { why: "நர்ஸ் (nars), nurse, is a different word." }
+      w2: { why: "மருந்து (maruntu), medicine, is a different word." }
+  "ta-4046":
+    native: "Headache: take a tablet."
+    confusables:
+      w1: { why: "ஊசி (ūci), injection; needle, is a different word." }
+      w2: { why: "மருந்து (maruntu), medicine, is a different word." }
+  "ta-4047":
+    native: "Will the doctor be there tomorrow?"
+    bases:
+      "இருக்கிறாரா": "is he (respectful)?; from இரு (iru), to be"
+    confusables:
+      w1: { why: "மருந்துக்கடை (maruntukkaṭai), pharmacy, is a different word." }
+      w2: { why: "நர்ஸ் (nars), nurse, is a different word." }
+  "ta-4048":
+    native: "Take the medicine in the morning and at night."
+    notes:
+      n1: "The ending meaning too is added to each time: காலையிலும் இரவிலும் (kālaiyilum iravilum), in the morning and at night."
+    bases:
+      "காலையிலும்": "in the morning too; from காலை (kālai), morning"
+      "இரவிலும்": "at night too; from இரவு (iravu), night"
+    confusables:
+      w1: { why: "மாத்திரை (māttirai), tablet; pill, is a different word." }
+      w2: { why: "ஊசி (ūci), injection; needle, is a different word." }
+  "ta-4049":
+    native: "My stomach hurts and I feel like vomiting."
+    notes:
+      n1: "The sore place is the subject: வயிறு வலிக்கிறது (vayiṟu valikkiṟatu), the stomach hurts."
+    bases:
+      "வலிக்கிறது": "hurts; from வலி (vali), pain; to hurt"
+      "வருகிறது": "comes; from வா (vā), to come"
+    confusables:
+      w1: { why: "வயிற்றுவலி (vayiṟṟuvali), stomach ache, is a different word." }
+      w2: { why: "தலைசுற்றல் (talaicuṟṟal), dizziness, is a different word." }
+  "ta-4050":
+    native: "I am not well; I need rest."
+    bases:
+      "சரியில்லை": "not right; from சரி (cari), okay"
+    confusables:
+      w1: { why: "சோர்வு (cōrvu), tiredness, is a different word." }
+      w2: { why: "நோய் (nōy), illness; disease, is a different word." }
+  "ta-4051":
+    native: "Drink water and take the medicine."
+    confusables:
+      w1: { why: "ஆரோக்கியம் (ārōkkiyam), health, is a different word." }
+      w2: { why: "பத்தியம் (pattiyam), diet kept during treatment, is a different word." }
+  "ta-4052":
+    native: "I have a sore throat and a cough."
+    bases:
+      "எனக்கு": "to me; from நான் (nāṉ), I"
+    confusables:
+      w1: { why: "தலைவலி (talaivali), headache, is a different word." }
+      w2: { why: "காய்ச்சல் (kāyccal), fever, is a different word." }
+  "ta-4053":
+    native: "It is an emergency; call an ambulance."
+    bases:
+      "கூப்பிடு": "call"
+    confusables:
+      w1: { why: "டாக்டர் (ṭākṭar), doctor, is a different word." }
+      w2: { why: "நர்ஸ் (nars), nurse, is a different word." }

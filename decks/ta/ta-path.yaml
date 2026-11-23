@@ -507,7 +507,8 @@ units:
       - { id: "it-got-done", text: { "en": "Saying a thing is finished, or done for oneself" } }
     reading_passages:
       - { id: "finished-list", text: { "en": "A list of jobs, each ticked off" } }
-  - planned: { id: "ta-illness", theme: "illness", words: 50 }
+  - decks: ["ta-illness", "ta-illness-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "a-cold", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
@@ -639,7 +640,9 @@ units:
   # B1: the themes and grammar of the CEFR's B1. The first unit is the
   # written language: the forms of written Tamil beside the spoken ones
   # taught so far, and the registers. ta-slang joins it.
-  - planned: { id: "ta-registers", grammar: ["registers", "written-forms"], words: 27 }
+  - decks: ["ta-grammar-registers", "ta-grammar-written-forms"]
+    words: 27
+    grammar: ["registers", "written-forms"]
     listening_passages:
       - { id: "news-and-chat", text: { "en": "The same news read on the radio, then told to a friend" } }
     reading_passages:
