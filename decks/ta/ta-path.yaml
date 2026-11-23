@@ -107,6 +107,7 @@ regions:
 # skips them.
 alphabet:
   - "ta-script-vowels"
+  - "ta-script-consonants"
   - "ta-script-vowel-signs"
   - "ta-script-grantha"
   - "ta-script-digits"
@@ -152,7 +153,7 @@ units:
   # 3. The script, after the first six units (#554: skipped by a learner
   # who already reads it). ta-script-consonants and ta-script-reading join
   # the first; ta-script-grantha joins the second.
-  - decks: ["ta-script-vowels", "*"]
+  - decks: ["ta-script-vowels", "ta-script-consonants", "*"]
     words: 0
     listening_passages:
       - { id: "letter-names", text: { "en": "The vowels and consonants said in order" } }
