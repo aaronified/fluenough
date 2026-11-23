@@ -141,7 +141,7 @@ units:
       - { id: "sound-pairs", text: { "en": "Pairs of words that differ in one sound, said slowly" } }
     reading_passages:
       - { id: "sound-pairs-list", text: { "en": "A list of word pairs with their readings" } }
-  - decks: ["ml-questions", "*"]
+  - decks: ["ml-questions", "ml-questions-sentences", "*"]
     words: 12
     listening_passages:
       - { id: "yes-or-no", text: { "en": "Short questions answered with yes and no" } }
@@ -154,13 +154,13 @@ units:
       - { id: "polite-or-not", text: { "en": "Speaking to a friend, an elder and a shopkeeper" } }
     reading_passages:
       - { id: "who-is-who", text: { "en": "A short list of people and how to address them" } }
-  - decks: ["ml-family", "*"]
+  - decks: ["ml-family", "ml-family-sentences", "*"]
     words: 18
     listening_passages:
       - { id: "family-photo", text: { "en": "Someone names the people in a family photo" } }
     reading_passages:
       - { id: "family-tree", text: { "en": "A family tree with its labels" } }
-  - decks: ["ml-numbers-1-20", "*"]
+  - decks: ["ml-numbers-1-20", "ml-numbers-1-20-sentences", "*"]
     words: 20
     listening_passages:
       - { id: "phone-number", text: { "en": "Someone reads out a phone number" } }
@@ -189,7 +189,7 @@ units:
       - { id: "old-and-new-letters", text: { "en": "The same words in the traditional and the reformed script" } }
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - decks: ["ml-about-me", "*"]
+  - decks: ["ml-about-me", "ml-about-me-sentences", "*"]
     words: 7
     listening_passages:
       - { id: "introducing-myself", text: { "en": "Someone says their name, home town and work" } }
@@ -201,7 +201,7 @@ units:
       - { id: "what-i-do", text: { "en": "Someone lists what they do each day" } }
     reading_passages:
       - { id: "to-do-list", text: { "en": "A short to-do list" } }
-  - decks: ["ml-adverbs", "*"]
+  - decks: ["ml-adverbs", "ml-adverbs-sentences", "*"]
     words: 25
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
@@ -219,13 +219,13 @@ units:
       - { id: "big-and-small", text: { "en": "Describing things: big, small, hot and cold" } }
     reading_passages:
       - { id: "for-sale-note", text: { "en": "A note describing something for sale" } }
-  - decks: ["ml-time", "*"]
+  - decks: ["ml-time", "ml-time-sentences", "*"]
     words: 12
     listening_passages:
       - { id: "what-time", text: { "en": "Asking and telling the time" } }
     reading_passages:
       - { id: "opening-hours", text: { "en": "A shop's opening hours" } }
-  - decks: ["ml-location", "*"]
+  - decks: ["ml-location", "ml-location-sentences", "*"]
     words: 14
     listening_passages:
       - { id: "where-is-it", text: { "en": "Saying where things are in a room" } }
@@ -278,13 +278,13 @@ units:
       - { id: "shop-labels", text: { "en": "Labels in a shop: this here, that there" } }
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
-  - decks: ["ml-work", "*"]
+  - decks: ["ml-work", "ml-work-sentences", "*"]
     words: 19
     listening_passages:
       - { id: "what-do-you-do", text: { "en": "People say what work they do" } }
     reading_passages:
       - { id: "name-tags", text: { "en": "Name tags at a meeting: who is who and what they do" } }
-  - decks: ["ml-numbers-big", "*"]
+  - decks: ["ml-numbers-big", "ml-numbers-big-sentences", "*"]
     words: 13
     listening_passages:
       - { id: "how-much-is-it", text: { "en": "Prices said aloud at a stall" } }
@@ -298,7 +298,7 @@ units:
     reading_passages:
       - { id: "menu-board", text: { "en": "A menu board with dishes and prices" } }
   # ml-grammar-needs follows this unit.
-  - decks: ["ml-groceries", "*"]
+  - decks: ["ml-groceries", "ml-groceries-sentences", "*"]
     words: 16
     listening_passages:
       - { id: "what-we-need", text: { "en": "Two people say what they need from the shop" } }
@@ -312,7 +312,7 @@ units:
     reading_passages:
       - { id: "needs-read", text: { "en": "A short text that uses needs, after the groceries unit" } }
   # ml-grammar-nouns follows this unit.
-  - decks: ["ml-market", "*"]
+  - decks: ["ml-market", "ml-market-sentences", "*"]
     words: 7
     listening_passages:
       - { id: "at-the-market", text: { "en": "Buying fish and vegetables at a market" } }
@@ -343,7 +343,7 @@ units:
     reading_passages:
       - { id: "a-short-diary", text: { "en": "A few lines about a day: who did what, and where" } }
   # ml-grammar-continuous follows this unit.
-  - decks: ["ml-directions", "*"]
+  - decks: ["ml-directions", "ml-directions-sentences", "*"]
     words: 12
     listening_passages:
       - { id: "turn-left", text: { "en": "Directions to a temple: left, right and straight on" } }
@@ -356,7 +356,7 @@ units:
       - { id: "continuous-heard", text: { "en": "A short exchange that uses continuous, after the directions unit" } }
     reading_passages:
       - { id: "continuous-read", text: { "en": "A short text that uses continuous, after the directions unit" } }
-  - decks: ["ml-transport", "*"]
+  - decks: ["ml-transport", "ml-transport-sentences", "*"]
     words: 8
     listening_passages:
       - { id: "auto-fare", text: { "en": "Agreeing a fare with an auto driver" } }
