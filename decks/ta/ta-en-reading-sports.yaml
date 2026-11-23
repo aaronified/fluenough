@@ -1,0 +1,59 @@
+schema: 1
+id: "ta-en-reading-sports"
+name: "Tamil reading: sports"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short match report, using the words of sports. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-match-report"
+    title: "A match report"
+    theme: "sports"
+    sentences:
+      - text: "நேற்று கபடி இறுதிப்போட்டி இருந்தது."
+        reading: "nēṟṟu kapaṭi iṟutippōṭṭi iruntatu."
+        ipa: "neːrru kapaʈi irut̪ippoːʈʈi iɾunt̪at̪u"
+      - text: "எங்கள் ஆட்டக்காரர் பத்து புள்ளி எடுத்தார்."
+        reading: "eṅkaḷ āṭṭakkārar pattu puḷḷi eṭuttār."
+        ipa: "eŋkaɭ aːʈʈakkaːɾaɾ pat̪t̪u puɭɭi eʈut̪t̪aːɾ"
+      - text: "நடுவர் நன்றாக இருந்தார்."
+        reading: "naṭuvar naṉṟāka iruntār."
+        ipa: "naʈuʋaɾ nanraːka iɾunt̪aːɾ"
+      - text: "ஆட்டம் சமன்."
+        reading: "āṭṭam camaṉ."
+        ipa: "aːʈʈam saman"
+      - text: "நாளை கோப்பை கொடுக்கிறார்கள்."
+        reading: "nāḷai kōppai koṭukkiṟārkaḷ."
+        ipa: "naːɭai koːppai koʈukkiraːɾkaɭ"
+    questions:
+      - id: "ta-5254"
+        prompt: { "en": "Which sport was played?" }
+        options:
+          - { "en": "Kabaddi" }
+          - { "en": "Hockey" }
+          - { "en": "Tennis" }
+        answer: 1
+      - id: "ta-5255"
+        prompt: { "en": "How many points did our player score?" }
+        options:
+          - { "en": "Ten" }
+          - { "en": "Five" }
+          - { "en": "Twenty" }
+        answer: 1
+      - id: "ta-5256"
+        prompt: { "en": "How did the match end?" }
+        options:
+          - { "en": "A draw" }
+          - { "en": "Our team won" }
+          - { "en": "The other team won" }
+        answer: 1
+      - id: "ta-5257"
+        prompt: { "en": "When will the cup be given?" }
+        options:
+          - { "en": "Tomorrow" }
+          - { "en": "Yesterday" }
+          - { "en": "Next year" }
+        answer: 1

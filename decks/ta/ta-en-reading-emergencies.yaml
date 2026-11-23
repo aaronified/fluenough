@@ -1,0 +1,59 @@
+schema: 1
+id: "ta-en-reading-emergencies"
+name: "Tamil reading: emergencies"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short safety notice, using the words of emergencies. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-safety-notice"
+    title: "A safety notice"
+    theme: "emergencies"
+    sentences:
+      - text: "தீப்பிடித்தால் சைரன் கேட்கும்."
+        reading: "tīppiṭittāl cairaṉ kēṭkum."
+        ipa: "t̪iːppiʈit̪t̪aːl saiɾan keːʈkum"
+      - text: "உடனே வெளியே போங்கள்."
+        reading: "uṭaṉē veḷiyē pōṅkaḷ."
+        ipa: "uʈaneː ʋeɭijeː poːŋkaɭ"
+      - text: "மின்தூக்கியைப் பயன்படுத்த வேண்டாம்."
+        reading: "miṉtūkkiyaip payaṉpaṭutta vēṇṭām."
+        ipa: "mint̪uːkkijaip pajanpaʈut̪t̪a ʋeːɳʈaːm"
+      - text: "தீயணைப்பான் வாசலில் இருக்கிறது."
+        reading: "tīyaṇaippāṉ vācalil irukkiṟatu."
+        ipa: "t̪iːjaɳaippaːn ʋaːsalil iɾukkirat̪u"
+      - text: "அபாயம் இருந்தால் காவல்துறைக்குச் சொல்லுங்கள்."
+        reading: "apāyam iruntāl kāvaltuṟaikkuc colluṅkaḷ."
+        ipa: "apaːjam iɾunt̪aːl kaːʋalt̪uraikkus solluŋkaɭ"
+    questions:
+      - id: "ta-5265"
+        prompt: { "en": "What will you hear if a fire starts?" }
+        options:
+          - { "en": "A siren" }
+          - { "en": "A song" }
+          - { "en": "A bell at school" }
+        answer: 1
+      - id: "ta-5266"
+        prompt: { "en": "What should you do at once?" }
+        options:
+          - { "en": "Go outside" }
+          - { "en": "Hide in a room" }
+          - { "en": "Take a bath" }
+        answer: 1
+      - id: "ta-5267"
+        prompt: { "en": "What should you not use?" }
+        options:
+          - { "en": "The lift" }
+          - { "en": "The stairs" }
+          - { "en": "The door" }
+        answer: 1
+      - id: "ta-5268"
+        prompt: { "en": "Where is the fire extinguisher?" }
+        options:
+          - { "en": "At the entrance" }
+          - { "en": "On the terrace" }
+          - { "en": "In the bedroom" }
+        answer: 1

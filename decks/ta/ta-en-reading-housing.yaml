@@ -1,0 +1,55 @@
+schema: 1
+id: "ta-en-reading-housing"
+name: "Tamil reading: housing"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short list of rental terms, using the words of housing. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-rental-terms"
+    title: "Terms of a rented flat"
+    theme: "housing"
+    sentences:
+      - text: "வீடு வாடகைக்கு உண்டு."
+        reading: "vīṭu vāṭakaikku uṇṭu."
+        ipa: "ʋiːʈu ʋaːʈakaikku uɳʈu"
+      - text: "இரண்டு படுக்கையறை இருக்கிறது."
+        reading: "iraṇṭu paṭukkaiyaṟai irukkiṟatu."
+        ipa: "iɾaɳʈu paʈukkaijarai iɾukkirat̪u"
+      - text: "மாதம் வாடகை பத்து ஆயிரம் ரூபாய்."
+        reading: "mātam vāṭakai pattu āyiram rūpāy."
+        ipa: "maːt̪am ʋaːʈakai pat̪t̪u aːjiɾam ɾuːpaːj"
+      - text: "மின்கட்டணம் வாடகைதாரர் கொடுக்கிறார்."
+        reading: "miṉkaṭṭaṇam vāṭakaitārar koṭukkiṟār."
+        ipa: "minkaʈʈaɳam ʋaːʈakait̪aːɾaɾ koʈukkiraːɾ"
+      - text: "நிறுத்துமிடம் இல்லை."
+        reading: "niṟuttumiṭam illai."
+        ipa: "nirut̪t̪umiʈam illai"
+    questions:
+      - id: "ta-5261"
+        prompt: { "en": "How many bedrooms does the flat have?" }
+        options:
+          - { "en": "Two" }
+          - { "en": "One" }
+          - { "en": "Three" }
+        answer: 1
+      - id: "ta-5262"
+        prompt: { "en": "Who pays the electricity bill?" }
+        options:
+          - { "en": "The tenant" }
+          - { "en": "The landlord" }
+          - { "en": "The watchman" }
+        answer: 1
+      - id: "ta-5263"
+        prompt: { "en": "Is there a parking place?" }
+        options:
+          - { "en": "No" }
+          - { "en": "Yes, one" }
+          - { "en": "Yes, two" }
+        answer: 1
+      - id: "ta-5264"
+        prompt: { "en": "The rent is paid every month." }
+        answer: true
