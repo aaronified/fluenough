@@ -1,0 +1,93 @@
+schema: 1
+id: "ta-en-sports-sentences"
+kind: "layer"
+core: "ta-sports-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sports: games, teams, matches and medals in sentences"
+description: "Sentences about matches, teams, scores, medals and training. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-9540":
+    native: "The final is today at six in the evening."
+    bases:
+      "மணிக்கு": "at the hour; from மணி (maṇi), hour; bell"
+    confusables:
+      w1: { why: "அரையிறுதி (araiyiṟuti), semi-final, is a different word." }
+      w2: { why: "பந்தயம் (pantayam), race; bet, is a different word." }
+      w3: { why: "உலகக்கோப்பை (ulakakkōppai), world cup, is a different word." }
+  "ta-9541":
+    native: "Our team gets first place."
+    bases:
+      "எங்கள்": "our; from நாங்கள் (nāṅkaḷ), we"
+      "பெறுகிறது": "gets; from பெறு (peṟu), to get; to receive"
+    confusables:
+      w1: { why: "பதக்கம் (patakkam), medal, is a different word." }
+      w2: { why: "கோப்பை (kōppai), cup; trophy, is a different word." }
+      w3: { why: "சாம்பியன் (cāmpiyaṉ), champion, is a different word." }
+  "ta-9542":
+    native: "The opposing team scores two goals."
+    bases:
+      "அடிக்கிறது": "beats, strikes; from அடி (aṭi), to hit"
+    notes:
+      n1: "After a number the noun stays singular: இரண்டு கோல் (iraṇṭu kōl), two goals, with no plural ending."
+    confusables:
+      w1: { why: "புள்ளி (puḷḷi), point; dot; score, is a different word." }
+      w2: { why: "ரன் (raṉ), run (cricket), is a different word." }
+      w3: { why: "விக்கெட் (vikkeṭ), wicket, is a different word." }
+  "ta-9543":
+    native: "The coach gives training to the players."
+    bases:
+      "வீரர்களுக்குப்": "to the players; from வீரர் (vīrar), player; soldier"
+      "கொடுக்கிறார்": "is giving; from கொடு (koṭu), to give"
+    notes:
+      n1: "To train is பயிற்சி கொடு (payiṟci koṭu), to give practice."
+    confusables:
+      w1: { why: "நடுவர் (naṭuvar), referee; umpire; judge, is a different word." }
+      w2: { why: "ஆட்டக்காரர் (āṭṭakkārar), player, is a different word." }
+      w3: { why: "போட்டியாளர் (pōṭṭiyāḷar), competitor; contestant, is a different word." }
+  "ta-9544":
+    native: "He runs very fast."
+    bases:
+      "மிக": "very"
+      "வேகமாக": "fast; from வேகம் (vēkam), speed"
+      "ஓடுகிறான்": "he runs; from ஓடு (ōṭu), to run"
+    notes:
+      n1: "-ஆன (-āṉa) becomes -ஆக (-āka) to make an adverb: வேகமான (vēkamāṉa), fast becomes வேகமாக (vēkamāka), fast, as an adverb."
+    confusables:
+      w1: { why: "ஓட்டப்பந்தயம் (ōṭṭappantayam), running race, is a different word." }
+      w2: { why: "தடகளம் (taṭakaḷam), athletics; track and field, is a different word." }
+      w3: { why: "தாவல் (tāval), jump; leap, is a different word." }
+  "ta-9545":
+    native: "The match ends in a draw."
+    bases:
+      "ஆகிறது": "becomes; from ஆகு (āku), to become"
+    notes:
+      n1: "ஆகிறது (ākiṟatu), becomes follows a noun: சமன் ஆகிறது (camaṉ ākiṟatu), it becomes level."
+    confusables:
+      w1: { why: "வெற்றி (veṟṟi), success; victory, is a different word." }
+      w2: { why: "தோல்வி (tōlvi), failure; defeat, is a different word." }
+      w3: { why: "புள்ளி (puḷḷi), point; dot; score, is a different word." }
+  "ta-9546":
+    native: "The fans shout in the field."
+    bases:
+      "மைதானத்தில்": "on the field; from மைதானம் (maitāṉam), playground; field"
+      "ரசிகர்கள்": "fans; from ரசிகர் (racikar), fan"
+      "போடுகிறார்கள்": "they put; from போடு (pōṭu), to put; to throw"
+    notes:
+      n1: "To shout is கூச்சல் போடு (kūccal pōṭu), to put a din."
+    confusables:
+      w1: { why: "வலை (valai), net; web, is a different word." }
+      w2: { why: "கோப்பை (kōppai), cup; trophy, is a different word." }
+      w3: { why: "அரங்கு (araṅku), stadium; hall, is a different word." }
+  "ta-9547":
+    native: "He did not play because of an injury."
+    bases:
+      "காயத்தால்": "because of the injury; from காயம் (kāyam), wound; injury"
+      "விளையாடவில்லை": "did not play; from விளையாடு (viḷaiyāṭu), to play"
+    notes:
+      n1: "The past negative adds -வில்லை (-villai) to the stem: விளையாடவில்லை (viḷaiyāṭavillai), did not play."
+    confusables:
+      w1: { why: "சோர்வு (cōrvu), tiredness, is a different word." }
+      w2: { why: "ஓய்வு (ōyvu), rest, is a different word." }
+      w3: { why: "பயிற்சி (payiṟci), practice; exercise, is a different word." }
