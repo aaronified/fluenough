@@ -1,0 +1,129 @@
+schema: 1
+id: "ta-grammar-written-forms"
+part: "core"
+kind: "grammar"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["spoken", "written"]
+  entries:
+    - lemma: "நீங்கள்"
+      key: "nenkal"
+      reading: "nīṅkaḷ"
+      ipa: "niːŋkaɭ"
+      forms: { "spoken": "நீங்க", "written": "நீங்கள்" }
+      readings: { "spoken": "nīṅka", "written": "nīṅkaḷ" }
+      ipas: { "spoken": "niːŋka", "written": "niːŋkaɭ" }
+    - lemma: "நாங்கள்"
+      key: "nankal"
+      reading: "nāṅkaḷ"
+      ipa: "naːŋkaɭ"
+      forms: { "spoken": "நாங்க", "written": "நாங்கள்" }
+      readings: { "spoken": "nāṅka", "written": "nāṅkaḷ" }
+      ipas: { "spoken": "naːŋka", "written": "naːŋkaɭ" }
+    - lemma: "அவர்கள்"
+      key: "avarkal"
+      reading: "avarkaḷ"
+      ipa: "aʋaɾkaɭ"
+      forms: { "spoken": "அவங்க", "written": "அவர்கள்" }
+      readings: { "spoken": "avaṅka", "written": "avarkaḷ" }
+      ipas: { "spoken": "aʋaŋka", "written": "aʋaɾkaɭ" }
+    - lemma: "இங்கே"
+      key: "inge"
+      reading: "iṅkē"
+      ipa: "iŋkeː"
+      forms: { "spoken": "இங்க", "written": "இங்கே" }
+      readings: { "spoken": "iṅka", "written": "iṅkē" }
+      ipas: { "spoken": "iŋka", "written": "iŋkeː" }
+    - lemma: "எங்கே"
+      key: "enge"
+      reading: "eṅkē"
+      ipa: "eŋkeː"
+      forms: { "spoken": "எங்க", "written": "எங்கே" }
+      readings: { "spoken": "eṅka", "written": "eṅkē" }
+      ipas: { "spoken": "eŋka", "written": "eŋkeː" }
+    - lemma: "இல்லை"
+      key: "illai"
+      reading: "illai"
+      ipa: "illai"
+      forms: { "spoken": "இல்ல", "written": "இல்லை" }
+      readings: { "spoken": "illa", "written": "illai" }
+      ipas: { "spoken": "illa", "written": "illai" }
+    - lemma: "வேண்டும்"
+      key: "ventum"
+      reading: "vēṇṭum"
+      ipa: "ʋeːɳʈum"
+      forms: { "spoken": "வேணும்", "written": "வேண்டும்" }
+      readings: { "spoken": "vēṇum", "written": "vēṇṭum" }
+      ipas: { "spoken": "ʋeːɳum", "written": "ʋeːɳʈum" }
+    - lemma: "இரண்டு"
+      key: "irandu"
+      reading: "iraṇṭu"
+      ipa: "iɾaɳʈu"
+      forms: { "spoken": "ரெண்டு", "written": "இரண்டு" }
+      readings: { "spoken": "reṇṭu", "written": "iraṇṭu" }
+      ipas: { "spoken": "ɾeɳʈu", "written": "iɾaɳʈu" }
+    - lemma: "ஒன்று"
+      key: "onru"
+      reading: "oṉṟu"
+      ipa: "onru"
+      forms: { "spoken": "ஒண்ணு", "written": "ஒன்று" }
+      readings: { "spoken": "oṇṇu", "written": "oṉṟu" }
+      ipas: { "spoken": "oɳɳu", "written": "onru" }
+    - lemma: "மூன்று"
+      key: "moonru"
+      reading: "mūṉṟu"
+      ipa: "muːnru"
+      forms: { "spoken": "மூணு", "written": "மூன்று" }
+      readings: { "spoken": "mūṇu", "written": "mūṉṟu" }
+      ipas: { "spoken": "muːɳu", "written": "muːnru" }
+    - lemma: "நான்கு"
+      key: "naanku"
+      reading: "nāṉku"
+      ipa: "naːnku"
+      forms: { "spoken": "நாலு", "written": "நான்கு" }
+      readings: { "spoken": "nālu", "written": "nāṉku" }
+      ipas: { "spoken": "naːlu", "written": "naːnku" }
+    - lemma: "தண்ணீர்"
+      key: "thanneer"
+      reading: "taṇṇīr"
+      ipa: "t̪aɳɳiːɾ"
+      forms: { "spoken": "தண்ணி", "written": "தண்ணீர்" }
+      readings: { "spoken": "taṇṇi", "written": "taṇṇīr" }
+      ipas: { "spoken": "t̪aɳɳi", "written": "t̪aɳɳiːɾ" }
+    - lemma: "வா (I come)"
+      key: "vaa-i"
+      reading: "vā"
+      ipa: "ʋaː"
+      forms: { "spoken": "வர்றேன்", "written": "வருகிறேன்" }
+      readings: { "spoken": "varṟēṉ", "written": "varukiṟēṉ" }
+      ipas: { "spoken": "ʋaɾreːn", "written": "ʋaɾukireːn" }
+    - lemma: "வா (it comes)"
+      key: "vaa-it"
+      reading: "vā"
+      ipa: "ʋaː"
+      forms: { "spoken": "வருது", "written": "வருகிறது" }
+      readings: { "spoken": "varutu", "written": "varukiṟatu" }
+      ipas: { "spoken": "ʋaɾut̪u", "written": "ʋaɾukirat̪u" }
+    - lemma: "போ (I go)"
+      key: "po-i"
+      reading: "pō"
+      ipa: "poː"
+      forms: { "spoken": "போறேன்", "written": "போகிறேன்" }
+      readings: { "spoken": "pōṟēṉ", "written": "pōkiṟēṉ" }
+      ipas: { "spoken": "poːreːn", "written": "poːkireːn" }
+    - lemma: "சாப்பிடு (I eat)"
+      key: "cappitu-i"
+      reading: "cāppiṭu"
+      ipa: "saːppiʈu"
+      forms: { "spoken": "சாப்பிடுறேன்", "written": "சாப்பிடுகிறேன்" }
+      readings: { "spoken": "cāppiṭuṟēṉ", "written": "cāppiṭukiṟēṉ" }
+      ipas: { "spoken": "saːppiʈureːn", "written": "saːppiʈukireːn" }
+    - lemma: "பேசு (I speak)"
+      key: "pesu-i"
+      reading: "pēcu"
+      ipa: "peːsu"
+      forms: { "spoken": "பேசுறேன்", "written": "பேசுகிறேன்" }
+      readings: { "spoken": "pēcuṟēṉ", "written": "pēcukiṟēṉ" }
+      ipas: { "spoken": "peːsureːn", "written": "peːsukireːn" }
