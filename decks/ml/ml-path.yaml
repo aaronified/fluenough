@@ -325,7 +325,9 @@ units:
       - { id: "noun-classes-heard", text: { "en": "A short exchange that uses noun classes, after the market unit" } }
     reading_passages:
       - { id: "noun-classes-read", text: { "en": "A short text that uses noun classes, after the market unit" } }
-  - planned: { id: "ml-grammar-questions", grammar: "questions", words: 0 }
+  - decks: ["ml-grammar-questions"]
+    words: 0
+    grammar: ["questions"]
     listening_passages:
       - { id: "asking-the-way", text: { "en": "Asking a stranger short questions" } }
     reading_passages:

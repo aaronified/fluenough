@@ -1,0 +1,114 @@
+schema: 1
+id: "ml-grammar-questions"
+part: "core"
+kind: "grammar"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["statement", "question"]
+  entries:
+    - lemma: "നിങ്ങൾ വരും"
+      key: "varum"
+      reading: "niṅṅaḷ varuṁ"
+      ipa: "niŋŋaɭ ʋəɾum"
+      forms:
+        "statement": "നിങ്ങൾ വരും"
+        "question": "നിങ്ങൾ വരുമോ"
+      readings:
+        "statement": "niṅṅaḷ varuṁ"
+        "question": "niṅṅaḷ varumō"
+      ipas:
+        "statement": "niŋŋaɭ ʋəɾum"
+        "question": "niŋŋaɭ ʋəɾumoː"
+    - lemma: "അവൻ പോകും"
+      key: "pokum"
+      reading: "avaṉ pōkuṁ"
+      ipa: "əʋan poːkum"
+      forms:
+        "statement": "അവൻ പോകും"
+        "question": "അവൻ പോകുമോ"
+      readings:
+        "statement": "avaṉ pōkuṁ"
+        "question": "avaṉ pōkumō"
+      ipas:
+        "statement": "əʋan poːkum"
+        "question": "əʋan poːkumoː"
+    - lemma: "ഇത് നല്ലതാണ്"
+      key: "nallathanu"
+      reading: "it nallatāṇ"
+      ipa: "it̪ nəllət̪aːɳ"
+      forms:
+        "statement": "ഇത് നല്ലതാണ്"
+        "question": "ഇത് നല്ലതാണോ"
+      readings:
+        "statement": "it nallatāṇ"
+        "question": "it nallatāṇō"
+      ipas:
+        "statement": "it̪ nəllət̪aːɳ"
+        "question": "it̪ nəllət̪aːɳoː"
+    - lemma: "ഇത് നിങ്ങളുടെ വീടാണ്"
+      key: "veedanu"
+      reading: "it niṅṅaḷuṭe vīṭāṇ"
+      ipa: "it̪ niŋŋəɭuʈe ʋiːʈaːɳ"
+      forms:
+        "statement": "ഇത് നിങ്ങളുടെ വീടാണ്"
+        "question": "ഇത് നിങ്ങളുടെ വീടാണോ"
+      readings:
+        "statement": "it niṅṅaḷuṭe vīṭāṇ"
+        "question": "it niṅṅaḷuṭe vīṭāṇō"
+      ipas:
+        "statement": "it̪ niŋŋəɭuʈe ʋiːʈaːɳ"
+        "question": "it̪ niŋŋəɭuʈe ʋiːʈaːɳoː"
+    - lemma: "ഇവിടെ കടയുണ്ട്"
+      key: "kadayundu"
+      reading: "iviṭe kaṭayuṇṭ"
+      ipa: "iʋiʈe kəʈəjuɳʈ"
+      forms:
+        "statement": "ഇവിടെ കടയുണ്ട്"
+        "question": "ഇവിടെ കടയുണ്ടോ"
+      readings:
+        "statement": "iviṭe kaṭayuṇṭ"
+        "question": "iviṭe kaṭayuṇṭō"
+      ipas:
+        "statement": "iʋiʈe kəʈəjuɳʈ"
+        "question": "iʋiʈe kəʈəjuɳʈoː"
+    - lemma: "ചായ വേണം"
+      key: "venam"
+      reading: "cāya vēṇaṁ"
+      ipa: "tʃaːja ʋeːɳam"
+      forms:
+        "statement": "ചായ വേണം"
+        "question": ["ചായ വേണോ", "ചായ വേണമോ"]
+      readings:
+        "statement": "cāya vēṇaṁ"
+        "question": ["cāya vēṇō", "cāya vēṇamō"]
+      ipas:
+        "statement": "tʃaːja ʋeːɳam"
+        "question": "tʃaːja ʋeːɳoː"
+    - lemma: "നിങ്ങൾക്ക് അറിയാം"
+      key: "ariyam"
+      reading: "niṅṅaḷkk aṟiyāṁ"
+      ipa: "niŋŋaɭkk əɾijaːm"
+      forms:
+        "statement": "നിങ്ങൾക്ക് അറിയാം"
+        "question": "നിങ്ങൾക്ക് അറിയാമോ"
+      readings:
+        "statement": "niṅṅaḷkk aṟiyāṁ"
+        "question": "niṅṅaḷkk aṟiyāmō"
+      ipas:
+        "statement": "niŋŋaɭkk əɾijaːm"
+        "question": "niŋŋaɭkk əɾijaːmoː"
+    - lemma: "അവൻ വരുന്നില്ല"
+      key: "varunnilla"
+      reading: "avaṉ varunnilla"
+      ipa: "əʋan ʋəɾunnilla"
+      forms:
+        "statement": "അവൻ വരുന്നില്ല"
+        "question": "അവൻ വരുന്നില്ലേ"
+      readings:
+        "statement": "avaṉ varunnilla"
+        "question": "avaṉ varunnillē"
+      ipas:
+        "statement": "əʋan ʋəɾunnilla"
+        "question": "əʋan ʋəɾunnilleː"

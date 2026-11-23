@@ -17,3 +17,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ml-0755 | ml-grammar-differences | Is ഡോക്ടറാണ് (ḍōkṭarāṇ) with a full റ (ṟa) the usual written form for doctor plus is? | Sonnet builder | 2026-11-23 |
 | ml-0759 | ml-grammar-postpositions | Is വരെ (vare) used after the plain noun, as in വീട് വരെ (vīṭ vare), with no case ending on the noun? | Sonnet builder | 2026-11-23 |
 | unit-level | ml-grammar-al | Are the -ആൽ (-āl) forms (പേനയാൽ, കൈയാൽ, കത്തിയാൽ) used at all in speech, or only in writing, and is കൊണ്ട് (koṇṭ) after the plain noun right? | Sonnet builder | 2026-11-23 |
+| unit-level | ml-grammar-questions | The question forms (വരുമോ, ആണോ, ഉണ്ടോ, വേണോ, വരുന്നില്ലേ) follow English Wiktionary's entry for -ഓ (-ō); is ചായ വേണോ (cāya vēṇō) the usual spoken form of ചായ വേണമോ? | Sonnet builder | 2026-11-23 |
