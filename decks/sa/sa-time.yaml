@@ -1,0 +1,285 @@
+schema: 1
+id: "sa-time"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "time"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-1546"
+    target: "पूर्वम्"
+    reading: "pūrvam"
+    ipa: "puːrʋəm"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "पूर्वम्", base: "पूर्व", reading: "pūrva" }
+    examples:
+      - target: "पूर्वं गृहं नवम्"
+        reading: "pūrvaṃ gṛhaṃ navam"
+        ipa: "puːrʋəm ɡr̩ɦəm nəʋəm"
+        bases:
+          - { word: "पूर्वं", base: "पूर्व", reading: "pūrva" }
+          - { word: "गृहं", base: "गृह", reading: "gṛha" }
+          - { word: "नवम्", base: "नव", reading: "nava" }
+      - target: "पूर्वं पुराणं पुस्तकम्"
+        reading: "pūrvaṃ purāṇaṃ pustakam"
+        ipa: "puːrʋəm puraːɳəm pust̪əkəm"
+        bases:
+          - { word: "पूर्वं", base: "पूर्व", reading: "pūrva" }
+          - { word: "पुराणं", base: "पुराण", reading: "purāṇa" }
+          - { word: "पुस्तकम्", base: "पुस्तक", reading: "pustaka" }
+  - id: "sa-1547"
+    target: "सायम्"
+    reading: "sāyam"
+    ipa: "saːjəm"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "सायं शीतम्"
+        reading: "sāyaṃ śītam"
+        ipa: "saːjəm ʃiːt̪əm"
+        bases:
+          - { word: "सायं", base: "सायम्", reading: "sāyam" }
+          - { word: "शीतम्", base: "शीत", reading: "śīta" }
+      - target: "सायं पिता सुखी"
+        reading: "sāyaṃ pitā sukhī"
+        ipa: "saːjəm pit̪aː sukʰiː"
+        bases:
+          - { word: "सायं", base: "सायम्", reading: "sāyam" }
+          - { word: "पिता", base: "पितृ", reading: "pitṛ" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhin" }
+  - id: "sa-1548"
+    target: "प्रातः"
+    reading: "prātaḥ"
+    ipa: "praːt̪əh"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "प्रातः", base: "प्रातर्", reading: "prātar" }
+    examples:
+      - target: "प्रातः शीतम्"
+        reading: "prātaḥ śītam"
+        ipa: "praːt̪əh ʃiːt̪əm"
+        bases:
+          - { word: "प्रातः", base: "प्रातर्", reading: "prātar" }
+          - { word: "शीतम्", base: "शीत", reading: "śīta" }
+      - target: "प्रातः पवित्रा गङ्गा"
+        reading: "prātaḥ pavitrā gaṅgā"
+        ipa: "praːt̪əh pəʋit̪raː ɡəŋɡaː"
+        bases:
+          - { word: "प्रातः", base: "प्रातर्", reading: "prātar" }
+          - { word: "पवित्रा", base: "पवित्र", reading: "pavitra" }
+          - { word: "गङ्गा", base: "गङ्गा", reading: "gaṅgā" }
+  - id: "sa-1549"
+    target: "रात्रौ"
+    reading: "rātrau"
+    ipa: "raːt̪rəu"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "रात्रौ", base: "रात्रि", reading: "rātri" }
+    examples:
+      - target: "रात्रौ शून्यो मार्गः"
+        reading: "rātrau śūnyo mārgaḥ"
+        ipa: "raːt̪rəu ʃuːnjoː maːrɡəh"
+        bases:
+          - { word: "रात्रौ", base: "रात्रि", reading: "rātri" }
+          - { word: "शून्यो", base: "शून्य", reading: "śūnya" }
+          - { word: "मार्गः", base: "मार्ग", reading: "mārga" }
+      - target: "रात्रौ जलं शीतम्"
+        reading: "rātrau jalaṃ śītam"
+        ipa: "raːt̪rəu dʒələm ʃiːt̪əm"
+        bases:
+          - { word: "रात्रौ", base: "रात्रि", reading: "rātri" }
+          - { word: "जलं", base: "जल", reading: "jala" }
+          - { word: "शीतम्", base: "शीत", reading: "śīta" }
+  - id: "sa-1630"
+    target: "चिरम्"
+    reading: "ciram"
+    ipa: "tʃirəm"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "चिरं जानामि"
+        reading: "ciraṃ jānāmi"
+        ipa: "tʃirəm dʒaːnaːmi"
+        bases:
+          - { word: "चिरं", base: "चिरम्", reading: "ciram" }
+          - { word: "जानामि", base: "ज्ञा", reading: "jñā" }
+      - target: "चिरं जानन्ति"
+        reading: "ciraṃ jānanti"
+        ipa: "tʃirəm dʒaːnənt̪i"
+        bases:
+          - { word: "चिरं", base: "चिरम्", reading: "ciram" }
+          - { word: "जानन्ति", base: "ज्ञा", reading: "jñā" }
+  - id: "sa-1631"
+    target: "अधुना"
+    reading: "adhunā"
+    ipa: "əd̪ʱunaː"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "अधुना जानामि"
+        reading: "adhunā jānāmi"
+        ipa: "əd̪ʱunaː dʒaːnaːmi"
+        bases:
+          - { word: "जानामि", base: "ज्ञा", reading: "jñā" }
+      - target: "अधुना माता दुःखिनी"
+        reading: "adhunā mātā duḥkhinī"
+        ipa: "əd̪ʱunaː maːt̪aː d̪uhkʰiniː"
+        bases:
+          - { word: "माता", base: "मातृ", reading: "mātṛ" }
+          - { word: "दुःखिनी", base: "दुःखिन्", reading: "duḥkhin" }
+  - id: "sa-1632"
+    target: "पुरा"
+    reading: "purā"
+    ipa: "puraː"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "पुरा पुस्तकं नवम्"
+        reading: "purā pustakaṃ navam"
+        ipa: "puraː pust̪əkəm nəʋəm"
+        bases:
+          - { word: "पुस्तकं", base: "पुस्तक", reading: "pustaka" }
+          - { word: "नवम्", base: "नव", reading: "nava" }
+      - target: "पुरा पिता सुखी"
+        reading: "purā pitā sukhī"
+        ipa: "puraː pit̪aː sukʰiː"
+        bases:
+          - { word: "पिता", base: "पितृ", reading: "pitṛ" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhin" }
+  - id: "sa-1633"
+    target: "ऋतुः"
+    reading: "ṛtuḥ"
+    ipa: "r̩t̪uh"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ऋतुः", base: "ऋतु", reading: "ṛtu" }
+    examples:
+      - target: "ऋतुः कठिनः"
+        reading: "ṛtuḥ kaṭhinaḥ"
+        ipa: "r̩t̪uh kəʈʰinəh"
+        bases:
+          - { word: "ऋतुः", base: "ऋतु", reading: "ṛtu" }
+          - { word: "कठिनः", base: "कठिन", reading: "kaṭhina" }
+      - target: "ऋतुः पवित्रः"
+        reading: "ṛtuḥ pavitraḥ"
+        ipa: "r̩t̪uh pəʋit̪rəh"
+        bases:
+          - { word: "ऋतुः", base: "ऋतु", reading: "ṛtu" }
+          - { word: "पवित्रः", base: "पवित्र", reading: "pavitra" }
+  - id: "sa-1634"
+    target: "निशा"
+    reading: "niśā"
+    ipa: "niʃaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "निशा दीर्घा"
+        reading: "niśā dīrghā"
+        ipa: "niʃaː d̪iːrɡʱaː"
+        bases:
+          - { word: "दीर्घा", base: "दीर्घ", reading: "dīrgha" }
+      - target: "निशा शीता"
+        reading: "niśā śītā"
+        ipa: "niʃaː ʃiːt̪aː"
+        bases:
+          - { word: "शीता", base: "शीत", reading: "śīta" }
+  - id: "sa-1635"
+    target: "उषा"
+    reading: "uṣā"
+    ipa: "uʂaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "उषा सुन्दरा"
+        reading: "uṣā sundarā"
+        ipa: "uʂaː sund̪əraː"
+        bases:
+          - { word: "सुन्दरा", base: "सुन्दर", reading: "sundara" }
+      - target: "उषा शीता"
+        reading: "uṣā śītā"
+        ipa: "uʂaː ʃiːt̪aː"
+        bases:
+          - { word: "शीता", base: "शीत", reading: "śīta" }
+  - id: "sa-1636"
+    target: "वेला"
+    reading: "velā"
+    ipa: "ʋeːlaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "का वेला"
+        reading: "kā velā"
+        ipa: "kaː ʋeːlaː"
+        bases:
+          - { word: "का", base: "किम्", reading: "kim" }
+      - target: "वेला दीर्घा"
+        reading: "velā dīrghā"
+        ipa: "ʋeːlaː d̪iːrɡʱaː"
+        bases:
+          - { word: "दीर्घा", base: "दीर्घ", reading: "dīrgha" }
+  - id: "sa-1637"
+    target: "वर्षा"
+    reading: "varṣā"
+    ipa: "ʋərʂaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वर्षा सुन्दरा"
+        reading: "varṣā sundarā"
+        ipa: "ʋərʂaː sund̪əraː"
+        bases:
+          - { word: "सुन्दरा", base: "सुन्दर", reading: "sundara" }
+      - target: "वर्षा दीर्घा"
+        reading: "varṣā dīrghā"
+        ipa: "ʋərʂaː d̪iːrɡʱaː"
+        bases:
+          - { word: "दीर्घा", base: "दीर्घ", reading: "dīrgha" }

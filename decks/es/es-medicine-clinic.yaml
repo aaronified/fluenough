@@ -1,0 +1,116 @@
+schema: 1
+id: "es-medicine-clinic"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+genre: "professional"
+professional: "medicine"
+hidden: true
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "es-4662"
+    target: "¿Qué le pasa?"
+    ipa: "ke le ˈpasa"
+    phonetic: "[ke le ˈpasa]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4663"
+    target: "Tengo fiebre desde ayer."
+    ipa: "ˈtenɡo ˈfjebɾe ˈdesde aˈʝeɾ"
+    phonetic: "[ˈt̪eŋɡo ˈfjeβɾe ˈðezðe aˈʝeɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4664"
+    target: "Me duele la cabeza."
+    ipa: "me ˈdwele la kaˈbeθa"
+    phonetic: "[me ˈðwele la kaˈβeθa]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4665"
+    target: "¿Desde cuándo tiene estos síntomas?"
+    ipa: "ˈdesde ˈkwando ˈtjene ˈestos ˈsintomas"
+    phonetic: "[ˈd̪ezðe ˈkwan̪d̪o ˈt̪jene ˈest̪os ˈsin̪t̪omas]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4666"
+    target: "Respire hondo."
+    ipa: "resˈpiɾe ˈondo"
+    phonetic: "[resˈpiɾe ˈon̪d̪o]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4667"
+    target: "Tome una pastilla cada ocho horas."
+    ipa: "ˈtome ˈuna pasˈtiʝa ˈkada ˈotʃo ˈoɾas"
+    phonetic: "[ˈt̪ome ˈuna pasˈt̪iʝa ˈkaða ˈotʃo ˈoɾas]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4668"
+    target: "¿Tiene seguro médico?"
+    ipa: "ˈtjene seˈɡuɾo ˈmediko"
+    phonetic: "[ˈt̪jene seˈɣuɾo ˈmeðiko]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4669"
+    target: "Vuelva en una semana."
+    ipa: "ˈbwelba en ˈuna seˈmana"
+    phonetic: "[ˈbwelβa en ˈuna seˈmana]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4670"
+    target: "la tensión arterial"
+    ipa: "la tenˈsjon aɾteˈɾjal"
+    phonetic: "[la t̪enˈsjon aɾt̪eˈɾjal]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    modes: ["recognition", "production"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "la", base: "la" }, { word: "tensión", base: "tensión" }, { word: "arterial", base: "arterial" }]
+    examples:
+      - target: "Me toman la tensión."
+        ipa: "me ˈtoman la tenˈsjon"
+        bases: [{ word: "Me", base: "me" }, { word: "toman", base: "tomar" }, { word: "la", base: "la" }, { word: "tensión", base: "tensión" }]
+      - target: "La tensión está alta."
+        ipa: "la tenˈsjon esˈta ˈalta"
+        bases: [{ word: "La", base: "la" }, { word: "tensión", base: "tensión" }, { word: "está", base: "estar" }, { word: "alta", base: "alto" }]
+  - ref: "es-4607"
+  - ref: "es-0506"
+  - ref: "es-0844"
+  - ref: "es-1470"
+  - ref: "es-0873"
+  - ref: "es-1488"
+  - id: "es-4721"
+    target: "la receta médica"
+    ipa: "la reˈθeta ˈmedika"
+    phonetic: "[la reˈθet̪a ˈmeðika]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    modes: ["recognition", "production"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "la", base: "la" }, { word: "receta", base: "receta" }, { word: "médica", base: "médica" }]
+    examples:
+      - target: "Necesito una receta médica para este antibiótico."
+        ipa: "neθeˈsito ˈuna reˈθeta ˈmedika ˈpaɾa ˈeste antiˈbjotiko"
+        bases: [{ word: "Necesito", base: "necesitar" }, { word: "una", base: "una" }, { word: "receta", base: "receta" }, { word: "médica", base: "médica" }, { word: "para", base: "para" }, { word: "este", base: "este" }, { word: "antibiótico", base: "antibiótico" }]
+      - target: "El médico me escribió una receta médica."
+        ipa: "el ˈmediko me eskɾiˈbjo ˈuna reˈθeta ˈmedika"
+        bases: [{ word: "El", base: "el" }, { word: "médico", base: "médico" }, { word: "me", base: "me" }, { word: "escribió", base: "escribir" }, { word: "una", base: "una" }, { word: "receta", base: "receta" }, { word: "médica", base: "médica" }]

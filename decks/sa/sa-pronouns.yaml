@@ -1,0 +1,364 @@
+schema: 1
+id: "sa-pronouns"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "pronouns"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-1010"
+    target: "सः"
+    reading: "saḥ"
+    ipa: "səh"
+    pos: "pronoun"
+    tags: ["pronoun", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "स जानाति"
+        reading: "sa jānāti"
+        ipa: "sə dʒaːnaːt̪i"
+        bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "स करोति"
+        reading: "sa karoti"
+        ipa: "sə kəroːt̪i"
+        bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1011"
+    target: "सा"
+    reading: "sā"
+    ipa: "saː"
+    pos: "pronoun"
+    tags: ["pronoun", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "सा जानाति"
+        reading: "sā jānāti"
+        ipa: "saː dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "सा करोति"
+        reading: "sā karoti"
+        ipa: "saː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1012"
+    target: "तत्"
+    reading: "tat"
+    ipa: "t̪ət̪"
+    pos: "pronoun"
+    tags: ["pronoun", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "तत् पुस्तकम्"
+        reading: "tat pustakam"
+        ipa: "t̪ət̪ pust̪əkəm"
+        bases:
+          - { word: "पुस्तकम्", base: "पुस्तक", reading: "pustaka" }
+      - target: "तत् करोमि"
+        reading: "tat karomi"
+        ipa: "t̪ət̪ kəroːmi"
+        bases:
+          - { word: "करोमि", base: "कृ", reading: "kṛ" }
+  - id: "sa-1013"
+    target: "अयम्"
+    reading: "ayam"
+    ipa: "əjəm"
+    pos: "pronoun"
+    tags: ["pronoun", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "अयं जानाति"
+        reading: "ayaṃ jānāti"
+        ipa: "əjəm dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+          - { word: "अयं", base: "अयम्", reading: "ayam" }
+      - target: "अयं करोति"
+        reading: "ayaṃ karoti"
+        ipa: "əjəm kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+          - { word: "अयं", base: "अयम्", reading: "ayam" }
+  - id: "sa-1014"
+    target: "इयम्"
+    reading: "iyam"
+    ipa: "ijəm"
+    pos: "pronoun"
+    tags: ["pronoun", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "इयं जानाति"
+        reading: "iyaṃ jānāti"
+        ipa: "ijəm dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+          - { word: "इयं", base: "इयम्", reading: "iyam" }
+      - target: "इयं करोति"
+        reading: "iyaṃ karoti"
+        ipa: "ijəm kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+          - { word: "इयं", base: "इयम्", reading: "iyam" }
+  - id: "sa-1015"
+    target: "इदम्"
+    reading: "idam"
+    ipa: "id̪əm"
+    pos: "pronoun"
+    tags: ["pronoun", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "इदं पुस्तकम्"
+        reading: "idaṃ pustakam"
+        ipa: "id̪əm pust̪əkəm"
+        bases:
+          - { word: "पुस्तकम्", base: "पुस्तक", reading: "pustaka" }
+          - { word: "इदं", base: "इदम्", reading: "idam" }
+      - target: "इदं करोमि"
+        reading: "idaṃ karomi"
+        ipa: "id̪əm kəroːmi"
+        bases:
+          - { word: "करोमि", base: "कृ", reading: "kṛ" }
+          - { word: "इदं", base: "इदम्", reading: "idam" }
+  - id: "sa-1016"
+    target: "एषः"
+    reading: "eṣaḥ"
+    ipa: "eːʂəh"
+    pos: "pronoun"
+    tags: ["pronoun", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "एष जानाति"
+        reading: "eṣa jānāti"
+        ipa: "eːʂə dʒaːnaːt̪i"
+        bases:
+          - { word: "एष", base: "एषः", reading: "eṣaḥ" }
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "एष करोति"
+        reading: "eṣa karoti"
+        ipa: "eːʂə kəroːt̪i"
+        bases:
+          - { word: "एष", base: "एषः", reading: "eṣaḥ" }
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1017"
+    target: "एषा"
+    reading: "eṣā"
+    ipa: "eːʂaː"
+    pos: "pronoun"
+    tags: ["pronoun", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "एषा जानाति"
+        reading: "eṣā jānāti"
+        ipa: "eːʂaː dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "एषा करोति"
+        reading: "eṣā karoti"
+        ipa: "eːʂaː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1018"
+    target: "एतत्"
+    reading: "etat"
+    ipa: "eːt̪ət̪"
+    pos: "pronoun"
+    tags: ["pronoun", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "एतत् पुस्तकम्"
+        reading: "etat pustakam"
+        ipa: "eːt̪ət̪ pust̪əkəm"
+        bases:
+          - { word: "पुस्तकम्", base: "पुस्तक", reading: "pustaka" }
+      - target: "एतत् करोमि"
+        reading: "etat karomi"
+        ipa: "eːt̪ət̪ kəroːmi"
+        bases:
+          - { word: "करोमि", base: "कृ", reading: "kṛ" }
+  - id: "sa-1019"
+    target: "यः"
+    reading: "yaḥ"
+    ipa: "jəh"
+    pos: "pronoun"
+    tags: ["pronoun", "relative", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यो जानाति"
+        reading: "yo jānāti"
+        ipa: "joː dʒaːnaːt̪i"
+        bases:
+          - { word: "यो", base: "यः", reading: "yaḥ" }
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "यः करोति"
+        reading: "yaḥ karoti"
+        ipa: "jəh kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1020"
+    target: "या"
+    reading: "yā"
+    ipa: "jaː"
+    pos: "pronoun"
+    tags: ["pronoun", "relative", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "या जानाति"
+        reading: "yā jānāti"
+        ipa: "jaː dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "या करोति"
+        reading: "yā karoti"
+        ipa: "jaː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1021"
+    target: "यत्"
+    reading: "yat"
+    ipa: "jət̪"
+    pos: "pronoun"
+    tags: ["pronoun", "relative", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यत् पुस्तकम्"
+        reading: "yat pustakam"
+        ipa: "jət̪ pust̪əkəm"
+        bases:
+          - { word: "पुस्तकम्", base: "पुस्तक", reading: "pustaka" }
+      - target: "यत् करोमि"
+        reading: "yat karomi"
+        ipa: "jət̪ kəroːmi"
+        bases:
+          - { word: "करोमि", base: "कृ", reading: "kṛ" }
+  - id: "sa-1022"
+    target: "वयम्"
+    reading: "vayam"
+    ipa: "ʋəjəm"
+    pos: "pronoun"
+    tags: ["pronoun", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वयं जानीमः"
+        reading: "vayaṃ jānīmaḥ"
+        ipa: "ʋəjəm dʒaːniːməh"
+        bases:
+          - { word: "जानीमः", base: "ज्ञा", reading: "jñā" }
+          - { word: "वयं", base: "वयम्", reading: "vayam" }
+      - target: "वयं कुर्मः"
+        reading: "vayaṃ kurmaḥ"
+        ipa: "ʋəjəm kurməh"
+        bases:
+          - { word: "कुर्मः", base: "कृ", reading: "kṛ" }
+          - { word: "वयं", base: "वयम्", reading: "vayam" }
+  - id: "sa-1023"
+    target: "यूयम्"
+    reading: "yūyam"
+    ipa: "juːjəm"
+    pos: "pronoun"
+    tags: ["pronoun", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यूयं जानीथ"
+        reading: "yūyaṃ jānītha"
+        ipa: "juːjəm dʒaːniːt̪ʰə"
+        bases:
+          - { word: "जानीथ", base: "ज्ञा", reading: "jñā" }
+          - { word: "यूयं", base: "यूयम्", reading: "yūyam" }
+      - target: "यूयं कुरुथ"
+        reading: "yūyaṃ kurutha"
+        ipa: "juːjəm kurut̪ʰə"
+        bases:
+          - { word: "कुरुथ", base: "कृ", reading: "kṛ" }
+          - { word: "यूयं", base: "यूयम्", reading: "yūyam" }
+  - id: "sa-1024"
+    target: "सर्वा"
+    reading: "sarvā"
+    ipa: "sərʋaː"
+    pos: "adj"
+    tags: ["quantity", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "सर्वा", ref: "sa-1503" }
+    examples:
+      - target: "सर्वा नारी"
+        reading: "sarvā nārī"
+        ipa: "sərʋaː naːriː"
+      - target: "सर्वा भाषा"
+        reading: "sarvā bhāṣā"
+        ipa: "sərʋaː bʱaːʂaː"
+  - id: "sa-1025"
+    target: "सर्वम्"
+    reading: "sarvam"
+    ipa: "sərʋəm"
+    pos: "adj"
+    tags: ["quantity", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "सर्वम्", ref: "sa-1503" }
+    examples:
+      - target: "तत् सर्वम्"
+        reading: "tat sarvam"
+        ipa: "t̪ət̪ sərʋəm"
+      - target: "एतत् सर्वम्"
+        reading: "etat sarvam"
+        ipa: "eːt̪ət̪ sərʋəm"
+  - id: "sa-1026"
+    target: "का"
+    reading: "kā"
+    ipa: "kaː"
+    pos: "pronoun"
+    tags: ["pronoun", "question", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "का", ref: "sa-1001" }
+    examples:
+      - target: "का नारी"
+        reading: "kā nārī"
+        ipa: "kaː naːriː"
+      - target: "का भाषा"
+        reading: "kā bhāṣā"
+        ipa: "kaː bʱaːʂaː"

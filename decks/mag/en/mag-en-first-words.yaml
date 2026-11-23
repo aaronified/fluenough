@@ -1,0 +1,668 @@
+schema: 1
+id: "mag-en-first-words"
+kind: "layer"
+core: "mag-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "The first words of Magahi: the pronouns, yes and no, the numbers 1 to 10, the family, and the everyday words for food, house, name and time. Not yet checked by a Magahi speaker: please report any mistake."
+cards:
+  "mag-0101":
+    native: "yes"
+    notes:
+      "n1": "The usual 'yes'."
+    examples:
+      "हँ, इ पानी हइ।":
+        native: "Yes, this is water."
+        bases:
+          "हँ": "yes"
+          "इ": "this"
+          "पानी": "water"
+          "हइ": "is"
+  "mag-0102":
+    native: "no; not"
+    notes:
+      "n1": "The negative. The Survey's text has 'na' before verbs (as in 'ok-ra na de-balai', no one gave him) and 'nahi' (as in 'ghar-me nahi jaibo', I will not go home). The verb 'to be' has its own negative, nahikhi. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "ना, हम घर में नहीं जैबो।":
+        native: "No, I will not go home."
+        bases:
+          "ना": "no"
+          "हम": "I"
+          "घर": "house"
+          "में": "at"
+          "नहीं": "not"
+          "जैबो": "will go"
+  "mag-0103":
+    native: "I"
+    notes:
+      "n1": "The first person. The Survey has 'ham bhukhe mara-hi' for 'I am dying of hunger', so 'I am' is hi. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "हम घर में ही।":
+        native: "I am at home."
+        bases:
+          "हम": "I"
+          "घर": "home"
+          "में": "at"
+          "ही": "am"
+      "ई हमार घर हइ।":
+        native: "This is my house."
+        bases:
+          "ई": "this"
+          "हमार": "my"
+          "घर": "home"
+          "हइ": "is"
+  "mag-0104":
+    native: "you (to a friend or child)"
+    notes:
+      "n1": "The Survey gives tu or to for 'you' to one person, and tohar for 'your'. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "तोहर घर।":
+        native: "Your house."
+        bases:
+          "तोहर": "your"
+          "घर": "home"
+      "तू अउ हम।":
+        native: "You and I."
+        bases:
+          "तू": "you"
+          "अउ": "and"
+          "हम": "I"
+  "mag-0105":
+    native: "he; she"
+    notes:
+      "n1": "One word for he, she and that. The Survey's text has 'u' for 'he'. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "ऊ घर में हइ।":
+        native: "He is at home."
+        bases:
+          "ऊ": "he"
+          "घर": "home"
+          "में": "at"
+          "हइ": "is"
+      "ऊ के हइ?":
+        native: "Who is he?"
+        bases:
+          "ऊ": "he"
+          "के": "who"
+          "हइ": "is"
+  "mag-0106":
+    native: "we"
+    notes:
+      "n1": "The Survey gives hamnī (or ham sab) for 'we'. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "हमनी अउ ऊ।":
+        native: "We and he."
+        bases:
+          "हमनी": "we"
+          "अउ": "and"
+          "ऊ": "he"
+      "हमनी अउ तू।":
+        native: "We and you."
+        bases:
+          "हमनी": "we"
+          "अउ": "and"
+          "तू": "you"
+  "mag-0107":
+    native: "they"
+    notes:
+      "n1": "The plural of ऊ (ū) for a group."
+    examples:
+      "उनहन पढ़ै हइ।":
+        native: "They study."
+        bases:
+          "उनहन": "they"
+          "पढ़ै": "study"
+          "हइ": "are"
+      "उनहन नेपाली हइ।":
+        native: "They are Nepali."
+        bases:
+          "उनहन": "they"
+          "नेपाली": "Nepali"
+          "हइ": "are"
+  "mag-0108":
+    native: "one"
+    notes:
+      "n1": "The number one. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "एक घर।":
+        native: "one house."
+        bases:
+          "एक": "one"
+          "घर": "home"
+      "एक भाई।":
+        native: "one brother."
+        bases:
+          "एक": "one"
+          "भाई": "brother"
+  "mag-0109":
+    native: "two"
+    notes:
+      "n1": "The Survey gives du for 'two'. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "दू घर।":
+        native: "two houses."
+        bases:
+          "दू": "two"
+          "घर": "home"
+      "दू भाई।":
+        native: "two brothers."
+        bases:
+          "दू": "two"
+          "भाई": "brother"
+  "mag-0110":
+    native: "three"
+    notes:
+      "n1": "The number three. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "तीन घर।":
+        native: "three houses."
+        bases:
+          "तीन": "three"
+          "घर": "home"
+      "तीन भाई।":
+        native: "three brothers."
+        bases:
+          "तीन": "three"
+          "भाई": "brother"
+  "mag-0111":
+    native: "four"
+    notes:
+      "n1": "The number four. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "चार घर।":
+        native: "four houses."
+        bases:
+          "चार": "four"
+          "घर": "home"
+      "चार भाई।":
+        native: "four brothers."
+        bases:
+          "चार": "four"
+          "भाई": "brother"
+  "mag-0112":
+    native: "five"
+    notes:
+      "n1": "The number five. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "पाँच घर।":
+        native: "five houses."
+        bases:
+          "पाँच": "five"
+          "घर": "home"
+      "पाँच भाई।":
+        native: "five brothers."
+        bases:
+          "पाँच": "five"
+          "भाई": "brother"
+  "mag-0113":
+    native: "six"
+    notes:
+      "n1": "The Survey gives chhau for 'six', not chhav. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "छौ घर।":
+        native: "six houses."
+        bases:
+          "छौ": "six"
+          "घर": "home"
+      "छौ भाई।":
+        native: "six brothers."
+        bases:
+          "छौ": "six"
+          "भाई": "brother"
+  "mag-0114":
+    native: "seven"
+    notes:
+      "n1": "The number seven. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "सात घर।":
+        native: "seven houses."
+        bases:
+          "सात": "seven"
+          "घर": "home"
+      "सात भाई।":
+        native: "seven brothers."
+        bases:
+          "सात": "seven"
+          "भाई": "brother"
+  "mag-0115":
+    native: "eight"
+    notes:
+      "n1": "The number eight. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "आठ घर।":
+        native: "eight houses."
+        bases:
+          "आठ": "eight"
+          "घर": "home"
+      "आठ भाई।":
+        native: "eight brothers."
+        bases:
+          "आठ": "eight"
+          "भाई": "brother"
+  "mag-0116":
+    native: "nine"
+    notes:
+      "n1": "The Survey gives nau for 'nine'. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "नौ घर।":
+        native: "nine houses."
+        bases:
+          "नौ": "nine"
+          "घर": "home"
+      "नौ भाई।":
+        native: "nine brothers."
+        bases:
+          "नौ": "nine"
+          "भाई": "brother"
+  "mag-0117":
+    native: "ten"
+    notes:
+      "n1": "The number ten. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "दस घर।":
+        native: "ten houses."
+        bases:
+          "दस": "ten"
+          "घर": "home"
+      "दस भाई।":
+        native: "ten brothers."
+        bases:
+          "दस": "ten"
+          "भाई": "brother"
+  "mag-0118":
+    native: "mother"
+    notes:
+      "n1": "The Survey gives mai or mā for 'mother'. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "हमार माई घर में हइ।":
+        native: "My mother is at home."
+        bases:
+          "हमार": "my"
+          "माई": "mother"
+          "घर": "home"
+          "में": "at"
+          "हइ": "is"
+      "ई हमार माई हइ।":
+        native: "This is my mother."
+        bases:
+          "ई": "this"
+          "हमार": "my"
+          "माई": "mother"
+          "हइ": "is"
+  "mag-0119":
+    native: "father"
+    notes:
+      "n1": "The Survey's text has 'babu-ji' and 'bap' for 'father'. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "हमार बाबूजी घर में हइ।":
+        native: "My father is at home."
+        bases:
+          "हमार": "my"
+          "बाबूजी": "father"
+          "घर": "home"
+          "में": "at"
+          "हइ": "is"
+      "ई हमार बाबूजी हइ।":
+        native: "This is my father."
+        bases:
+          "ई": "this"
+          "हमार": "my"
+          "बाबूजी": "father"
+          "हइ": "is"
+  "mag-0120":
+    native: "brother"
+    notes:
+      "n1": "The Survey gives bhai. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "हमार भाई घर में हइ।":
+        native: "My brother is at home."
+        bases:
+          "हमार": "my"
+          "भाई": "brother"
+          "घर": "home"
+          "में": "at"
+          "हइ": "is"
+      "ई हमार भाई हइ।":
+        native: "This is my brother."
+        bases:
+          "ई": "this"
+          "हमार": "my"
+          "भाई": "brother"
+          "हइ": "is"
+  "mag-0121":
+    native: "sister"
+    notes:
+      "n1": "The Survey gives bahin. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "हमार बहिन घर में हइ।":
+        native: "My sister is at home."
+        bases:
+          "हमार": "my"
+          "बहिन": "sister"
+          "घर": "home"
+          "में": "at"
+          "हइ": "is"
+      "ई हमार बहिन हइ।":
+        native: "This is my sister."
+        bases:
+          "ई": "this"
+          "हमार": "my"
+          "बहिन": "sister"
+          "हइ": "is"
+  "mag-0122":
+    native: "child"
+    notes:
+      "n1": "The Survey's text has beta and chhawa for 'son'. बच्चा (baccā) is not attested there. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "बच्चा खेल रहल हइ।":
+        native: "The child is playing."
+        bases:
+          "बच्चा": "child"
+          "खेल": "play"
+          "रहल": "be"
+          "हइ": "is"
+      "बच्चा छोट हइ।":
+        native: "The child is small."
+        bases:
+          "बच्चा": "child"
+          "छोट": "small"
+          "हइ": "is"
+  "mag-0123":
+    native: "man; person"
+    notes:
+      "n1": "The Survey's text has ādmī for 'man'. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "ऊ आदमी घर में हइ।":
+        native: "That man is at home."
+        bases:
+          "ऊ": "he"
+          "आदमी": "man"
+          "घर": "home"
+          "में": "at"
+          "हइ": "is"
+      "ई आदमी के हइ?":
+        native: "Who is this man?"
+        bases:
+          "ई": "this"
+          "आदमी": "man"
+          "के": "who"
+          "हइ": "is"
+  "mag-0124":
+    native: "woman; wife"
+    notes:
+      "n1": "The Survey's list of words gives mehrārū among the words for 'woman'. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "ऊ मेहरारू घर में हइ।":
+        native: "That woman is at home."
+        bases:
+          "ऊ": "he"
+          "मेहरारू": "woman"
+          "घर": "home"
+          "में": "at"
+          "हइ": "is"
+      "ई मेहरारू के हइ?":
+        native: "Who is this woman?"
+        bases:
+          "ई": "this"
+          "मेहरारू": "woman"
+          "के": "who"
+          "हइ": "is"
+  "mag-0125":
+    native: "water"
+    notes:
+      "n1": "Water. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "ई पानी हइ।":
+        native: "This is water."
+        bases:
+          "ई": "this"
+          "पानी": "water"
+          "हइ": "is"
+      "घर में पानी हइ।":
+        native: "There is water in the house."
+        bases:
+          "घर": "home"
+          "में": "at"
+          "पानी": "water"
+          "हइ": "is"
+  "mag-0126":
+    native: "food; meal"
+    notes:
+      "n1": "Food in general, or a meal."
+    examples:
+      "हम खाना खाब।":
+        native: "I will eat food."
+        bases:
+          "हम": "I"
+          "खाना": "food"
+          "खाब": "eat"
+      "खाना तैयार हइ।":
+        native: "The food is ready."
+        bases:
+          "खाना": "food"
+          "तैयार": "ready"
+          "हइ": "is"
+  "mag-0127":
+    native: "tea"
+    notes:
+      "n1": "Milk tea is the everyday tea."
+    examples:
+      "चाय गरम हइ।":
+        native: "The tea is hot."
+        bases:
+          "चाय": "tea"
+          "गरम": "hot"
+          "हइ": "is"
+      "हमरा चाय नीक लागै हइ।":
+        native: "I like tea."
+        bases:
+          "हमरा": "to me"
+          "चाय": "tea"
+          "नीक": "good"
+          "लागै": "like"
+          "हइ": "is"
+  "mag-0128":
+    native: "house; home"
+    notes:
+      "n1": "'House' and 'home'. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "ई हमार घर हइ।":
+        native: "This is my house."
+        bases:
+          "ई": "this"
+          "हमार": "my"
+          "घर": "home"
+          "हइ": "is"
+      "हम घर में ही।":
+        native: "I am at home."
+        bases:
+          "हम": "I"
+          "घर": "home"
+          "में": "at"
+          "ही": "am"
+  "mag-0129":
+    native: "name"
+    notes:
+      "n1": "Not yet checked: the Survey's list of words does not give this word. The Survey's text uses hai for 'is'. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "तोहर नाम का हइ?":
+        native: "What is your name?"
+        bases:
+          "तोहर": "your"
+          "नाम": "name"
+          "का": "what"
+          "हइ": "is"
+      "नाम नीक हइ।":
+        native: "The name is good."
+        bases:
+          "नाम": "name"
+          "नीक": "good"
+          "हइ": "is"
+  "mag-0130":
+    native: "good; nice"
+    notes:
+      "n1": "Good or nice."
+    examples:
+      "आज मौसम नीक हइ।":
+        native: "The weather is good today."
+        bases:
+          "आज": "today"
+          "मौसम": "weather"
+          "नीक": "good"
+          "हइ": "is"
+      "इ नीक हइ।":
+        native: "This is good."
+        bases:
+          "इ": "this"
+          "नीक": "good"
+          "हइ": "is"
+  "mag-0131":
+    native: "big; large"
+    notes:
+      "n1": "The Survey has 'bari' for 'very' and 'great'. The adjective form बड़ (baṛ) is not checked. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "बड़ कुकुर।":
+        native: "A big dog."
+        bases:
+          "बड़": "big"
+          "कुकुर": "dog"
+      "घर बड़ हइ।":
+        native: "The house is big."
+        bases:
+          "घर": "house"
+          "बड़": "big"
+          "हइ": "is"
+  "mag-0132":
+    native: "small; little"
+    notes:
+      "n1": "The Survey has chhot-ka for 'the younger one'. The spelling here is not checked. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "छोट घर।":
+        native: "A small house."
+        bases:
+          "छोट": "small"
+          "घर": "house"
+      "बच्चा छोट हइ।":
+        native: "The child is small."
+        bases:
+          "बच्चा": "child"
+          "छोट": "small"
+          "हइ": "is"
+  "mag-0133":
+    native: "here"
+    notes:
+      "n1": "The place where the speaker is."
+    examples:
+      "एहिजा आव।":
+        native: "Come here."
+        bases:
+          "एहिजा": "here"
+          "आव": "come"
+      "हम एहिजा ही।":
+        native: "I am here."
+        bases:
+          "हम": "I"
+          "एहिजा": "here"
+          "ही": "am"
+  "mag-0134":
+    native: "there"
+    notes:
+      "n1": "A place away from the speaker."
+    examples:
+      "ओहिजा जा।":
+        native: "Go there."
+        bases:
+          "ओहिजा": "there"
+          "जा": "go"
+      "ओहिजा पानी हइ।":
+        native: "There is water there."
+        bases:
+          "ओहिजा": "there"
+          "पानी": "water"
+          "हइ": "is"
+  "mag-0135":
+    native: "what"
+    notes:
+      "n1": "The Survey's pronoun table gives ka for 'what'. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "ई का हइ?":
+        native: "What is this?"
+        bases:
+          "ई": "this"
+          "का": "what"
+          "हइ": "is"
+      "ऊ का हइ?":
+        native: "What is that?"
+        bases:
+          "ऊ": "he"
+          "का": "what"
+          "हइ": "is"
+  "mag-0136":
+    native: "who"
+    notes:
+      "n1": "The Survey gives ke (or kaun) for 'who'. केकर (kekar) is 'whose'. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "ई के हइ?":
+        native: "Who is this?"
+        bases:
+          "ई": "this"
+          "के": "who"
+          "हइ": "is"
+      "ऊ के हइ?":
+        native: "Who is that?"
+        bases:
+          "ऊ": "he"
+          "के": "who"
+          "हइ": "is"
+  "mag-0137":
+    native: "where"
+    notes:
+      "n1": "Asks about a place."
+    examples:
+      "घर कहाँ हइ?":
+        native: "Where is the house?"
+        bases:
+          "घर": "house"
+          "कहाँ": "where"
+          "हइ": "is"
+      "तू कहाँ हा?":
+        native: "Where are you?"
+        bases:
+          "तू": "you"
+          "कहाँ": "where"
+          "हा": "are"
+  "mag-0138":
+    native: "and"
+    notes:
+      "n1": "The Survey's text has 'au' for 'and'. Source: Grierson, Linguistic Survey of India, vol. V part 2 (1903), the Magahi section and the list of words."
+    examples:
+      "हम अउ तू।":
+        native: "You and I."
+        bases:
+          "हम": "I"
+          "अउ": "and"
+          "तू": "you"
+      "घर अउ पानी।":
+        native: "A house and water."
+        bases:
+          "घर": "home"
+          "अउ": "and"
+          "पानी": "water"
+  "mag-0139":
+    native: "today"
+    notes:
+      "n1": "The day you are in now."
+    examples:
+      "आज घाम निकलल।":
+        native: "The sun came out today."
+        bases:
+          "आज": "today"
+          "घाम": "sun"
+          "निकलल": "come out"
+      "आज पानी परत।":
+        native: "It will rain today."
+        bases:
+          "आज": "today"
+          "पानी": "water"
+          "परत": "fall"

@@ -2,12 +2,14 @@ schema: 1
 id: "tok-relationships-sentences"
 part: "core"
 kind: "vocab"
-language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", scripts: ["latin", "sitelen_pona"], icon: "Tp" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "tok-0760"
     target: "jan tonsi li lukin e moku."
+    target_scripts:
+      sitelen_pona: "󱤑 󱥾 󱤧 󱤮 󱤉 󱤶."
     ipa: "jan ˈtonsi li ˈlukin e ˈmoku"
     pos: "phrase"
     bases:
@@ -22,6 +24,8 @@ cards:
       - { id: "w2", ref: "tok-0158", kind: "word" }
   - id: "tok-0761"
     target: "jan tonsi ni li lon poka mi."
+    target_scripts:
+      sitelen_pona: "󱤑 󱥾 󱥁 󱤧 󱤬 󱥒 󱤴."
     ipa: "jan ˈtonsi ni li lon ˈpoka mi"
     pos: "phrase"
     bases:
@@ -37,6 +41,8 @@ cards:
       - { id: "w2", ref: "tok-0159", kind: "word" }
   - id: "tok-0762"
     target: "mi olin e jan tonsi ni."
+    target_scripts:
+      sitelen_pona: "󱤴 󱥅 󱤉 󱤑 󱥾 󱥁."
     ipa: "mi ˈolin e jan ˈtonsi ni"
     pos: "phrase"
     bases:
@@ -51,6 +57,8 @@ cards:
       - { id: "w2", ref: "tok-0085", kind: "word" }
   - id: "tok-0763"
     target: "jan tonsi en meli li tawa tomo."
+    target_scripts:
+      sitelen_pona: "󱤑 󱥾 󱤊 󱤳 󱤧 󱥩 󱥭."
     ipa: "jan ˈtonsi en ˈmeli li ˈtawa ˈtomo"
     pos: "phrase"
     bases:
@@ -66,6 +74,8 @@ cards:
       - { id: "w2", ref: "tok-0158", kind: "word" }
   - id: "tok-0764"
     target: "kulupu ni li pona tawa jan tonsi."
+    target_scripts:
+      sitelen_pona: "󱤟 󱥁 󱤧 󱥔 󱥩 󱤑 󱥾."
     ipa: "ˈkulupu ni li ˈpona ˈtawa jan ˈtonsi"
     pos: "phrase"
     bases:
@@ -81,6 +91,8 @@ cards:
       - { id: "w2", ref: "tok-0121", kind: "word" }
   - id: "tok-0765"
     target: "jan tonsi li pilin pona."
+    target_scripts:
+      sitelen_pona: "󱤑 󱥾 󱤧 󱥎 󱥔."
     ipa: "jan ˈtonsi li ˈpilin ˈpona"
     pos: "phrase"
     bases:

@@ -1,0 +1,40 @@
+schema: 1
+id: "gu-multiword-compound-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+genre: "multiword"
+pattern_family: "compound-verb"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "gu-6450"
+    target: "ખાઈ જવું"
+    words: ["ખાઈ", "જવું"]
+    reading: "khāi javum"
+    ipa: "kʰai dʒəʋum"
+    phonetic: "[kʰai dʒəʋum]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    level: "A2"
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ખાઈ", ref: "gu-0504" }
+      - { word: "જવું", ref: "gu-0508" }
+    examples:
+      - target: "તે બધું ખાઈ ગયો."
+        reading: "te badhum̐ khāi gayo."
+        bases:
+          - { word: "તે", ref: "gu-1000" }
+          - { word: "બધું", ref: "gu-1014" }
+          - { word: "ખાઈ", ref: "gu-0504" }
+          - { word: "ગયો", ref: "gu-0508" }
+      - target: "જલદી ખાઈ જા."
+        reading: "jaldi khāi jā."
+        bases:
+          - { word: "જલદી", ref: "gu-1113" }
+          - { word: "ખાઈ", ref: "gu-0504" }
+          - { word: "જા", ref: "gu-0508" }

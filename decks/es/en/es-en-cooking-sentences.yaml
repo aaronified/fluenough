@@ -8,6 +8,8 @@ license: "CC-BY-SA-4.0"
 description: "Six sentences from a recipe and a kitchen, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
 cards:
   "es-1337":
+    notes:
+      "n1": "Each noun takes its own article: ajo is masculine, so el, and cebolla is feminine, so la."
     native: "I chop the garlic and the onion."
     bases: { "el": "the", "la": "the" }
     confusables: { "cortar": { why: "Cortar is to cut in general, not to chop small." }, "pelar": { why: "Pelar is to peel, done before chopping." } }
@@ -30,6 +32,8 @@ cards:
     bases: { "El": "the", "lo": "it" }
     confusables: { "quemar": { why: "Quemar is to burn, from too much heat." }, "cocido": { why: "Cocido is cooked, the result we want." } }
   "es-1341":
+    notes:
+      "n1": "Mezclar takes con for what is mixed in, as in con dos huevos, with two eggs."
     native: "I mix the flour with two eggs."
     bases: { "la": "the", "con": "with" }
     confusables: { "batir": { why: "Batir is to beat the eggs until light and soft." }, "anadir": { why: "Añadir is to add one more thing." } }

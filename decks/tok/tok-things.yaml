@@ -7,6 +7,7 @@
   "iso639_3": "tok"
   "name": "Toki Pona"
   "script": "latin"
+  "scripts": ["latin", "sitelen_pona"]
   "icon": "Tp"
 "license": "CC-BY-SA-4.0"
 "theme": "things"
@@ -16,6 +17,8 @@
 "cards":
 - "id": "tok-0456"
   "target": "palisa"
+  "target_scripts":
+    "sitelen_pona": "󱥊"
   "ipa": "ˈpalisa"
   "pos": "noun"
   "bases": "self"
@@ -26,6 +29,8 @@
     "kind": "behaviour"
   "examples":
   - "target": "palisa lili li lon poki."
+    "target_scripts":
+      "sitelen_pona": "󱥊 󱤨 󱤧 󱤬 󱥓."
     "ipa": "ˈpalisa ˈlili li lon ˈpoki"
     "bases":
     - "word": "palisa"
@@ -39,6 +44,8 @@
     - "word": "poki"
       "ref": "tok-0247"
   - "target": "palisa ni li pakala."
+    "target_scripts":
+      "sitelen_pona": "󱥊 󱥁 󱤧 󱥈."
     "ipa": "ˈpalisa ni li ˈpakala"
     "bases":
     - "word": "palisa"
@@ -51,6 +58,8 @@
       "ref": "tok-0298"
 - "id": "tok-0457"
   "target": "sike"
+  "target_scripts":
+    "sitelen_pona": "󱥜"
   "ipa": "ˈsike"
   "pos": "noun"
   "bases": "self"
@@ -61,6 +70,8 @@
     "kind": "note"
   "examples":
   - "target": "sike li lon."
+    "target_scripts":
+      "sitelen_pona": "󱥜 󱤧 󱤬."
     "ipa": "ˈsike li lon"
     "bases":
     - "word": "sike"
@@ -70,6 +81,8 @@
     - "word": "lon"
       "ref": "tok-0046"
   - "target": "mi lukin e sike."
+    "target_scripts":
+      "sitelen_pona": "󱤴 󱤮 󱤉 󱥜."
     "ipa": "mi ˈlukin e ˈsike"
     "bases":
     - "word": "mi"
@@ -82,6 +95,8 @@
       "base": "sike"
 - "id": "tok-0458"
   "target": "linja"
+  "target_scripts":
+    "sitelen_pona": "󱤩"
   "ipa": "ˈlinja"
   "pos": "noun"
   "bases": "self"
@@ -92,6 +107,8 @@
     "kind": "behaviour"
   "examples":
   - "target": "linja pona li lon."
+    "target_scripts":
+      "sitelen_pona": "󱤩 󱥔 󱤧 󱤬."
     "ipa": "ˈlinja ˈpona li lon"
     "bases":
     - "word": "linja"
@@ -103,6 +120,8 @@
     - "word": "lon"
       "ref": "tok-0046"
   - "target": "mi pali e linja."
+    "target_scripts":
+      "sitelen_pona": "󱤴 󱥉 󱤉 󱤩."
     "ipa": "mi ˈpali e ˈlinja"
     "bases":
     - "word": "mi"
@@ -115,6 +134,8 @@
       "base": "linja"
 - "id": "tok-0459"
   "target": "lipu"
+  "target_scripts":
+    "sitelen_pona": "󱤪"
   "ipa": "ˈlipu"
   "pos": "noun"
   "bases": "self"
@@ -125,6 +146,8 @@
     "kind": "note"
   "examples":
   - "target": "lipu walo li lon poki."
+    "target_scripts":
+      "sitelen_pona": "󱤪 󱥲 󱤧 󱤬 󱥓."
     "ipa": "ˈlipu ˈwalo li lon ˈpoki"
     "bases":
     - "word": "lipu"
@@ -138,6 +161,8 @@
     - "word": "poki"
       "ref": "tok-0247"
   - "target": "mi lukin e lipu."
+    "target_scripts":
+      "sitelen_pona": "󱤴 󱤮 󱤉 󱤪."
     "ipa": "mi ˈlukin e ˈlipu"
     "bases":
     - "word": "mi"
@@ -150,6 +175,8 @@
       "base": "lipu"
 - "id": "tok-0460"
   "target": "sitelen"
+  "target_scripts":
+    "sitelen_pona": "󱥠"
   "ipa": "ˈsitelen"
   "pos": "noun"
   "bases": "self"
@@ -160,6 +187,8 @@
     "kind": "behaviour"
   "examples":
   - "target": "sitelen ni li suli."
+    "target_scripts":
+      "sitelen_pona": "󱥠 󱥁 󱤧 󱥣."
     "ipa": "ˈsitelen ni li ˈsuli"
     "bases":
     - "word": "sitelen"
@@ -171,6 +200,8 @@
     - "word": "suli"
       "ref": "tok-0119"
   - "target": "mi pali e sitelen."
+    "target_scripts":
+      "sitelen_pona": "󱤴 󱥉 󱤉 󱥠."
     "ipa": "mi ˈpali e ˈsitelen"
     "bases":
     - "word": "mi"
@@ -183,6 +214,8 @@
       "base": "sitelen"
 - "id": "tok-0461"
   "target": "kiwen"
+  "target_scripts":
+    "sitelen_pona": "󱤛"
   "ipa": "ˈkiwen"
   "pos": "noun"
   "bases": "self"
@@ -193,6 +226,8 @@
     "kind": "behaviour"
   "examples":
   - "target": "kiwen ni li wawa."
+    "target_scripts":
+      "sitelen_pona": "󱤛 󱥁 󱤧 󱥵."
     "ipa": "ˈkiwen ni li ˈwawa"
     "bases":
     - "word": "kiwen"
@@ -204,6 +239,8 @@
     - "word": "wawa"
       "ref": "tok-0123"
   - "target": "kiwen suli li lon."
+    "target_scripts":
+      "sitelen_pona": "󱤛 󱥣 󱤧 󱤬."
     "ipa": "ˈkiwen ˈsuli li lon"
     "bases":
     - "word": "kiwen"

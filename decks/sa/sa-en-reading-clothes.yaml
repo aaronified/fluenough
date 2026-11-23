@@ -1,0 +1,57 @@
+schema: 1
+id: "sa-en-reading-clothes"
+name: "Reading: clothes"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-clothes-text-1"
+    title: "Cloth, crown, bracelet"
+    theme: "clothes"
+    sentences:
+      - { text: "वस्त्रं शुक्लं भवति चीरः कृष्णो भवति.", reading: "vastraṃ śuklaṃ bhavati cīraḥ kṛṣṇo bhavati.", ipa: "ʋəst̪rəm ʃukləm bʱəʋət̪i tʃiːrəh kr̩ʂɳoː bʱəʋət̪i" }
+      - { text: "मुकुटो मस्तके भवति पादत्राणं पादे भवति.", reading: "mukuṭo mastake bhavati pādatrāṇaṃ pāde bhavati.", ipa: "mukuʈoː məst̪əkeː bʱəʋət̪i paːd̪ət̪raːɳəm paːd̪eː bʱəʋət̪i" }
+      - { text: "कुण्डलं कर्णे भवति कङ्कणं हस्ते भवति.", reading: "kuṇḍalaṃ karṇe bhavati kaṅkaṇaṃ haste bhavati.", ipa: "kuɳɖələm kərɳeː bʱəʋət̪i kəŋkəɳəm ɦəst̪eː bʱəʋət̪i" }
+      - { text: "उष्णीषं पीतं भवति शाटी रक्ता भवति.", reading: "uṣṇīṣaṃ pītaṃ bhavati śāṭī raktā bhavati.", ipa: "uʂɳiːʂəm piːt̪əm bʱəʋət̪i ʃaːʈiː rəkt̪aː bʱəʋət̪i" }
+    questions:
+      - id: "sa-3547"
+        prompt: { en: "What is white?" }
+        options: [{ en: "The cloth" }, { en: "The rag" }, { en: "The turban" }]
+        answer: 1
+      - id: "sa-3548"
+        prompt: { en: "What is black?" }
+        options: [{ en: "The cloth" }, { en: "The rag" }, { en: "The garment" }]
+        answer: 2
+      - id: "sa-3549"
+        prompt: { en: "The turban is yellow." }
+        answer: true
+      - id: "sa-3550"
+        prompt: { en: "The garment is white." }
+        answer: false
+  - id: "sa-clothes-text-2"
+    title: "Buying clothes"
+    theme: "clothes"
+    sentences:
+      - { text: "माता नवं वस्त्रं क्रीणाति पिता च पादत्राणं क्रीणाति.", reading: "mātā navaṃ vastraṃ krīṇāti pitā ca pādatrāṇaṃ krīṇāti.", ipa: "maːt̪aː nəʋəm ʋəst̪rəm kriːɳaːt̪i pit̪aː tʃə paːd̪ət̪raːɳəm kriːɳaːt̪i" }
+      - { text: "माला नवा भवति कञ्चुकः पुराणो भवति.", reading: "mālā navā bhavati kañcukaḥ purāṇo bhavati.", ipa: "maːlaː nəʋaː bʱəʋət̪i kəɲtʃukəh puraːɳoː bʱəʋət̪i" }
+      - { text: "सूत्रं दीर्घं भवति मेखला ह्रस्वा भवति.", reading: "sūtraṃ dīrghaṃ bhavati mekhalā hrasvā bhavati.", ipa: "suːt̪rəm d̪iːrɡʱəm bʱəʋət̪i meːkʰəlaː ɦrəsʋaː bʱəʋət̪i" }
+      - { text: "अहं वसनं क्रीणामि त्वं च वस्त्रं क्रीणासि.", reading: "ahaṃ vasanaṃ krīṇāmi tvaṃ ca vastraṃ krīṇāsi.", ipa: "əɦəm ʋəsənəm kriːɳaːmi t̪ʋəm tʃə ʋəst̪rəm kriːɳaːsi" }
+    questions:
+      - id: "sa-3551"
+        prompt: { en: "What does father buy?" }
+        options: [{ en: "Cloth" }, { en: "A garment" }, { en: "Shoes" }]
+        answer: 3
+      - id: "sa-3552"
+        prompt: { en: "What is old?" }
+        options: [{ en: "The jacket" }, { en: "The garland" }, { en: "The thread" }]
+        answer: 1
+      - id: "sa-3553"
+        prompt: { en: "The thread is long." }
+        answer: true
+      - id: "sa-3554"
+        prompt: { en: "'You' buy a garment." }
+        answer: false

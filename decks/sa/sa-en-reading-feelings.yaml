@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-feelings"
+name: "Reading: feelings"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-feelings-text-1"
+    title: "Mother, queen and king"
+    theme: "feelings"
+    sentences:
+      - { text: "माता सूनौ स्नेहं करोति.", reading: "mātā sūnau snehaṃ karoti.", ipa: "maːt̪aː suːnəu sneːɦəm kəroːt̪i" }
+      - { text: "राज्ञी शोकेन गृहे रोदिति.", reading: "rājñī śokena gṛhe roditi.", ipa: "raːdʒɲiː ʃoːkeːnə ɡr̩ɦeː roːd̪it̪i" }
+      - { text: "आशा दुःखे धैर्यं ददाति.", reading: "āśā duḥkhe dhairyaṃ dadāti.", ipa: "aːʃaː d̪uhkʰeː d̪ʱəirjəm d̪əd̪aːt̪i" }
+      - { text: "भीतो बालको मातरं पश्यति.", reading: "bhīto bālako mātaraṃ paśyati.", ipa: "bʱiːt̪oː baːləkoː maːt̪ərəm pəʃjət̪i" }
+      - { text: "कुपितो राजा चोरं बध्नाति.", reading: "kupito rājā coraṃ badhnāti.", ipa: "kupit̪oː raːdʒaː tʃoːrəm bəd̪ʱnaːt̪i" }
+    questions:
+      - id: "sa-6716"
+        prompt: { en: "Who weeps with grief?" }
+        options: [{ en: "The mother" }, { en: "The queen" }, { en: "The girl" }]
+        answer: 2
+      - id: "sa-6717"
+        prompt: { en: "What does hope give in sorrow?" }
+        options: [{ en: "Strength" }, { en: "Wealth" }, { en: "Patience" }]
+        answer: 3
+      - id: "sa-6718"
+        prompt: { en: "Which word means 'angry'?" }
+        options: [{ en: "कुपितो (kupito)" }, { en: "भीतो (bhīto)" }, { en: "राज्ञी (rājñī)" }]
+        answer: 1
+      - id: "sa-6719"
+        prompt: { en: "The angry king binds the thief." }
+        answer: true
+  - id: "sa-feelings-text-2"
+    title: "Forest, hermitage and home"
+    theme: "feelings"
+    sentences:
+      - { text: "प्रसन्ना कन्या वने गायति.", reading: "prasannā kanyā vane gāyati.", ipa: "prəsənnaː kənjaː ʋəneː ɡaːjət̪i" }
+      - { text: "शान्तो मुनिर् आश्रमे वसति.", reading: "śānto munir āśrame vasati.", ipa: "ʃaːnt̪oː munir aːʃrəmeː ʋəsət̪i" }
+      - { text: "सिंहो निर्भयो वने चरति.", reading: "siṃho nirbhayo vane carati.", ipa: "sĩɦoː nirbʱəjoː ʋəneː tʃərət̪i" }
+      - { text: "विस्मयेन कन्या दीपं पश्यति.", reading: "vismayena kanyā dīpaṃ paśyati.", ipa: "ʋisməjeːnə kənjaː d̪iːpəm pəʃjət̪i" }
+      - { text: "संतुष्टो वणिग् धनेन गृहं गच्छति.", reading: "saṃtuṣṭo vaṇig dhanena gṛhaṃ gacchati.", ipa: "sənt̪uʂʈoː ʋəɳiɡ d̪ʱəneːnə ɡr̩ɦəm ɡətʃtʃʰət̪i" }
+    questions:
+      - id: "sa-6720"
+        prompt: { en: "Where does the cheerful girl sing?" }
+        options: [{ en: "In the temple" }, { en: "In the forest" }, { en: "In the house" }]
+        answer: 2
+      - id: "sa-6721"
+        prompt: { en: "What does the merchant go home with?" }
+        options: [{ en: "With wealth" }, { en: "With grain" }, { en: "With cloth" }]
+        answer: 1
+      - id: "sa-6722"
+        prompt: { en: "Which word means 'fearless'?" }
+        options: [{ en: "शान्तो (śānto)" }, { en: "संतुष्टो (saṃtuṣṭo)" }, { en: "निर्भयो (nirbhayo)" }]
+        answer: 3
+      - id: "sa-6723"
+        prompt: { en: "The girl looks at a flower with wonder." }
+        answer: false

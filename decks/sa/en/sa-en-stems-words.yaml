@@ -1,0 +1,201 @@
+schema: 1
+id: "sa-en-stems-words"
+kind: "layer"
+core: "sa-stems-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns with consonant stems"
+description: "Twelve nouns that end in a consonant in the stem (an, in, as, is, us, at and root stems), each with its nominative forms and two examples, so the other-stems table has a model for every consonant stem. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-2300":
+    native: "King."
+    notes:
+      "n1": "King. A masculine an stem: the nominative singular is राजा (rājā) and the genitive singular राज्ञः (rājñaḥ); the table of the other-stems unit has all its forms, read in the en.wiktionary.org table of राजन् (rājan)."
+    examples:
+      "राजा गच्छति":
+        native: "The king goes."
+        bases:
+          "राजा": "king (inflected form of rājan)"
+          "गच्छति": "go"
+      "राजा पठति":
+        native: "The king reads."
+        bases:
+          "राजा": "king (inflected form of rājan)"
+          "पठति": "read"
+  "sa-2301":
+    native: "Speech; voice."
+    notes:
+      "n1": "Speech; voice. A feminine consonant stem (a root stem in c): the nominative singular is वाक् (vāk) and the genitive singular वाचः (vācaḥ); the table of the other-stems unit has all its forms, read in the en.wiktionary.org table of वाच् (vāc)."
+      "n2": "In running text a final म् (m) before a consonant is written as the anusvāra ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo'nusvāraḥ); Whitney 213 and 73)."
+    examples:
+      "वाचं वदति":
+        native: "He utters speech."
+        bases:
+          "वाचं": "speech; voice (inflected form of vāc)"
+          "वदति": "speak"
+      "वाचा पठति":
+        native: "He reads aloud."
+        bases:
+          "वाचा": "speech; voice (inflected form of vāc)"
+          "पठति": "read"
+  "sa-2302":
+    native: "Sir; your honour."
+    notes:
+      "n1": "Sir; your honour. A masculine at stem, the polite way to address or name someone, which en.wiktionary lists as a pronoun: the nominative singular is भवान् (bhavān) and the genitive singular भवतः (bhavataḥ); the table of the other-stems unit has all its forms, read in the en.wiktionary.org table of भवत् (bhavat)."
+    examples:
+      "भवान् गच्छति":
+        native: "Your honour goes."
+        bases:
+          "भवान्": "sir; your honour (inflected form of bhavat)"
+          "गच्छति": "go"
+      "भवान् पठति":
+        native: "Your honour reads."
+        bases:
+          "भवान्": "sir; your honour (inflected form of bhavat)"
+          "पठति": "read"
+  "sa-2303":
+    native: "Self; soul."
+    notes:
+      "n1": "Self; soul. A masculine an stem: the nominative singular is आत्मा (ātmā) and the genitive singular आत्मनः (ātmanaḥ); the table of the other-stems unit has all its forms, read in the en.wiktionary.org table of आत्मन् (ātman)."
+      "n2": "In running text a final म् (m) before a consonant is written as the anusvāra ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo'nusvāraḥ); Whitney 213 and 73)."
+    examples:
+      "आत्मानं पश्यति":
+        native: "He sees himself."
+        bases:
+          "आत्मानं": "self; soul (inflected form of ātman)"
+          "पश्यति": "see"
+      "आत्मना गच्छति":
+        native: "He goes by himself."
+        bases:
+          "आत्मना": "self; soul (inflected form of ātman)"
+          "गच्छति": "go"
+  "sa-2304":
+    native: "Moon."
+    notes:
+      "n1": "Moon. A masculine as stem: the nominative singular is चन्द्रमाः (candramāḥ) and the genitive singular चन्द्रमसः (candramasaḥ); the table of the other-stems unit has all its forms, read in the en.wiktionary.org table of चन्द्रमस् (candramas)."
+      "n2": "In running text a final म् (m) before a consonant is written as the anusvāra ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo'nusvāraḥ); Whitney 213 and 73)."
+      "n3": "In these examples the words are written apart, with the junction of the first word's last sound applied: the visarga of a long ā becomes nothing before a voiced sound (Whitney 177); the junctions are taught in the consonant and visarga sandhi units."
+    examples:
+      "चन्द्रमसं पश्यति":
+        native: "He sees the moon."
+        bases:
+          "चन्द्रमसं": "moon (inflected form of candramas)"
+          "पश्यति": "see"
+      "चन्द्रमा गच्छति":
+        native: "The moon moves."
+        bases:
+          "चन्द्रमा": "moon (inflected form of candramas)"
+          "गच्छति": "go"
+  "sa-2305":
+    native: "Light."
+    notes:
+      "n1": "Light. A neuter is stem: the nominative singular is ज्योतिः (jyotiḥ) and the genitive singular ज्योतिषः (jyotiṣaḥ); the table of the other-stems unit has all its forms, read in the en.wiktionary.org table of ज्योतिस् (jyotis)."
+      "n2": "In these examples the words are written apart, with the junction of the first word's last sound applied: the visarga after i before a voiced sound becomes r (Whitney 174); the junctions are taught in the consonant and visarga sandhi units."
+    examples:
+      "ज्योतिषा पश्यति":
+        native: "He sees by light."
+        bases:
+          "ज्योतिषा": "light (inflected form of jyotis)"
+          "पश्यति": "see"
+      "ज्योतिर् गच्छति":
+        native: "Light moves."
+        bases:
+          "ज्योतिर्": "light (inflected form of jyotis)"
+          "गच्छति": "go"
+  "sa-2306":
+    native: "Bow."
+    notes:
+      "n1": "Bow. A neuter us stem: the nominative singular is धनुः (dhanuḥ) and the genitive singular धनुषः (dhanuṣaḥ); the table of the other-stems unit has all its forms, read in the en.wiktionary.org table of धनुस् (dhanus)."
+      "n2": "In these examples the words are written apart, with the junction of the first word's last sound applied: the visarga after u before n becomes r (Whitney 174), and before p it stays (Whitney 170 d); the junctions are taught in the consonant and visarga sandhi units."
+    examples:
+      "धनुर् नमति":
+        native: "The bow bends."
+        bases:
+          "धनुर्": "bow (inflected form of dhanus)"
+          "नमति": "bend"
+      "धनुः पतति":
+        native: "The bow falls."
+        bases:
+          "धनुः": "bow (inflected form of dhanus)"
+          "पतति": "fall"
+  "sa-2307":
+    native: "World."
+    notes:
+      "n1": "World. A neuter at stem: the nominative singular is जगत् (jagat) and the genitive singular जगतः (jagataḥ); the table of the other-stems unit has all its forms, read in the en.wiktionary.org table of जगत् (jagat)."
+      "n2": "In these examples the words are written apart, with the junction of the first word's last sound applied: a final t before a voiced sound becomes d (Whitney 159); the junctions are taught in the consonant and visarga sandhi units."
+    examples:
+      "जगद् गच्छति":
+        native: "The world moves."
+        bases:
+          "जगद्": "world (inflected form of jagat)"
+          "गच्छति": "go"
+      "जगत् तिष्ठति":
+        native: "The world stands."
+        bases:
+          "जगत्": "world (stem of jagat)"
+          "तिष्ठति": "stand"
+  "sa-2308":
+    native: "Lightning."
+    notes:
+      "n1": "Lightning. A feminine consonant stem (a root stem in t): the nominative singular is विद्युत् (vidyut) and the genitive singular विद्युतः (vidyutaḥ); the table of the other-stems unit has all its forms, read in the en.wiktionary.org table of विद्युत् (vidyut)."
+    examples:
+      "विद्युत् पतति":
+        native: "Lightning falls."
+        bases:
+          "विद्युत्": "lightning (stem of vidyut)"
+          "पतति": "fall"
+      "विद्युता पश्यति":
+        native: "He sees by lightning."
+        bases:
+          "विद्युता": "lightning (inflected form of vidyut)"
+          "पश्यति": "see"
+  "sa-2309":
+    native: "Elephant."
+    notes:
+      "n1": "Elephant. A masculine in stem: the nominative singular is हस्ती (hastī) and the genitive singular हस्तिनः (hastinaḥ); the table of the other-stems unit has all its forms, read in the en.wiktionary.org table of हस्तिन् (hastin)."
+      "n2": "In running text a final म् (m) before a consonant is written as the anusvāra ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo'nusvāraḥ); Whitney 213 and 73)."
+    examples:
+      "हस्ती गच्छति":
+        native: "The elephant goes."
+        bases:
+          "हस्ती": "elephant (inflected form of hastin)"
+          "गच्छति": "go"
+      "हस्ती जलं पिबति":
+        native: "The elephant drinks water."
+        bases:
+          "हस्ती": "elephant (inflected form of hastin)"
+          "जलं": "water"
+          "पिबति": "drink"
+  "sa-2310":
+    native: "Wind."
+    notes:
+      "n1": "Wind. A masculine consonant stem (a root stem in t): the nominative singular is मरुत् (marut) and the genitive singular मरुतः (marutaḥ); the table of the other-stems unit has all its forms, read in the en.wiktionary.org table of मरुत् (marut)."
+      "n2": "In these examples the words are written apart, with the junction of the first word's last sound applied: a final t before a voiced sound becomes d (Whitney 159); a final t before c becomes c (Whitney 202 a); the junctions are taught in the consonant and visarga sandhi units."
+    examples:
+      "मरुद् वहति":
+        native: "The wind blows."
+        bases:
+          "मरुद्": "wind (inflected form of marut)"
+          "वहति": "carry; flow"
+      "मरुच् चलति":
+        native: "The wind stirs."
+        bases:
+          "मरुच्": "wind (inflected form of marut)"
+          "चलति": "move"
+  "sa-2311":
+    native: "Skin."
+    notes:
+      "n1": "Skin. A feminine consonant stem (a root stem in c): the nominative singular is त्वक् (tvak) and the genitive singular त्वचः (tvacaḥ); the table of the other-stems unit has all its forms, read in the en.wiktionary.org table of त्वच् (tvac)."
+      "n2": "In running text a final म् (m) before a consonant is written as the anusvāra ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo'nusvāraḥ); Whitney 213 and 73)."
+    examples:
+      "त्वचं पश्यति":
+        native: "He sees the skin."
+        bases:
+          "त्वचं": "skin (inflected form of tvac)"
+          "पश्यति": "see"
+      "त्वक् पतति":
+        native: "The skin falls off."
+        bases:
+          "त्वक्": "skin (inflected form of tvac)"
+          "पतति": "fall"

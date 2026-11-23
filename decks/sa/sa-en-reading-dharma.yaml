@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-dharma"
+name: "Reading: dharma"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-dharma-text-1"
+    title: "Virtues and faults"
+    theme: "dharma"
+    sentences:
+      - { text: "दया धर्मस्य मूलं भवति.", reading: "dayā dharmasya mūlaṃ bhavati.", ipa: "d̪əjaː d̪ʱərməsjə muːləm bʱəʋət̪i" }
+      - { text: "क्रोधो लोभश् च दोषौ भवतः.", reading: "krodho lobhaś ca doṣau bhavataḥ.", ipa: "kroːd̪ʱoː loːbʱəʃ tʃə d̪oːʂəu bʱəʋət̪əh" }
+      - { text: "साधुः क्षमया क्रोधं जयति.", reading: "sādhuḥ kṣamayā krodhaṃ jayati.", ipa: "saːd̪ʱuh kʂəməjaː kroːd̪ʱəm dʒəjət̪i" }
+      - { text: "आचार्यो विद्याम् आदरेण ददाति.", reading: "ācāryo vidyām ādareṇa dadāti.", ipa: "aːtʃaːrjoː ʋid̪jaːm aːd̪əreːɳə d̪əd̪aːt̪i" }
+      - { text: "धैर्यं दुःखे गुणो ऽस्ति.", reading: "dhairyaṃ duḥkhe guṇo 'sti.", ipa: "d̪ʱəirjəm d̪uhkʰeː ɡuɳoː st̪i" }
+    questions:
+      - id: "sa-6624"
+        prompt: { en: "What is the root of dharma, according to the passage?" }
+        options: [{ en: "Knowledge" }, { en: "Compassion" }, { en: "Patience" }]
+        answer: 2
+      - id: "sa-6625"
+        prompt: { en: "What does a good person conquer anger with?" }
+        options: [{ en: "Patience" }, { en: "Respect" }, { en: "Forbearance" }]
+        answer: 3
+      - id: "sa-6626"
+        prompt: { en: "Which word means 'anger'?" }
+        options: [{ en: "क्रोधो (krodho)" }, { en: "लोभश् (lobhaś)" }, { en: "दया (dayā)" }]
+        answer: 1
+      - id: "sa-6627"
+        prompt: { en: "Patience is a fault in sorrow." }
+        answer: false
+  - id: "sa-dharma-text-2"
+    title: "Enemy, monk and knowledge"
+    theme: "dharma"
+    sentences:
+      - { text: "आलस्यं सदा शत्रुर् अस्ति.", reading: "ālasyaṃ sadā śatrur asti.", ipa: "aːləsjəm səd̪aː ʃət̪rur əst̪i" }
+      - { text: "दुर्जनो द्वेषेण दुःखं लभते.", reading: "durjano dveṣeṇa duḥkhaṃ labhate.", ipa: "d̪urdʒənoː d̪ʋeːʂeːɳə d̪uhkʰəm ləbʱət̪eː" }
+      - { text: "भिक्षुर् अहिंसां संयमेन रक्षति.", reading: "bhikṣur ahiṃsāṃ saṃyamena rakṣati.", ipa: "bʱikʂur əɦĩsaːm sə̃jəmeːnə rəkʂət̪i" }
+      - { text: "धार्मिको विवेकेन गुणं दोषं च जानाति.", reading: "dhārmiko vivekena guṇaṃ doṣaṃ ca jānāti.", ipa: "d̪ʱaːrmikoː ʋiʋeːkeːnə ɡuɳəm d̪oːʂəm tʃə dʒaːnaːt̪i" }
+      - { text: "विद्या धनाद् अधिका भवति.", reading: "vidyā dhanād adhikā bhavati.", ipa: "ʋid̪jaː d̪ʱənaːd̪ əd̪ʱikaː bʱəʋət̪i" }
+    questions:
+      - id: "sa-6628"
+        prompt: { en: "What is laziness always, according to the passage?" }
+        options: [{ en: "A fault" }, { en: "An enemy" }, { en: "A sorrow" }]
+        answer: 2
+      - id: "sa-6629"
+        prompt: { en: "How does the monk guard non-violence?" }
+        options: [{ en: "With respect" }, { en: "With patience" }, { en: "With self-control" }]
+        answer: 3
+      - id: "sa-6630"
+        prompt: { en: "Which word means 'than wealth'?" }
+        options: [{ en: "धनाद् (dhanād)" }, { en: "अधिका (adhikā)" }, { en: "विद्या (vidyā)" }]
+        answer: 1
+      - id: "sa-6631"
+        prompt: { en: "Knowledge is greater than wealth." }
+        answer: true

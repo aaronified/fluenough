@@ -1,0 +1,134 @@
+# Topics a learner of Classical Sanskrit would search for: what each one is, and the decks that teach it (wiki/Plan-Deck-Kinds-And-Topics.md, D6).
+# A topic holds no card text of its own; it names the decks that already teach it. Draft: not yet checked by a Sanskrit speaker.
+schema: 1
+kind: "topics"
+id: "sa-topics"
+language: "sa"
+license: "CC-BY-SA-4.0"
+topics:
+  - id: "sa-devanagari-script"
+    name: { en: "The Devanagari script" }
+    summary: { en: "The script Classical Sanskrit is written in here: its vowels, consonants, vowel signs, conjunct letters and digits, and how each is read." }
+    kind: "script"
+    level: "A1"
+    decks: ["sa-script-vowels", "sa-script-consonants", "sa-script-vowel-signs", "sa-script-conjuncts", "sa-script-digits"]
+  - id: "sa-sounds-and-spelling"
+    name: { en: "Sounds and spelling" }
+    summary: { en: "The Sanskrit sounds that English lacks, such as the dental and retroflex stops and the aspirated consonants, and the rules for writing them." }
+    kind: "script"
+    level: "A1"
+    decks: ["sa-sound-differences", "sa-spelling"]
+  - id: "sa-sandhi"
+    name: { en: "Sandhi, the joining of sounds" }
+    summary: { en: "How sounds change where words meet, in vowel, consonant and visarga junctions, which is why written Sanskrit runs words together." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["sa-grammar-sandhi-vowel", "sa-grammar-sandhi-consonant", "sa-grammar-sandhi-visarga"]
+  - id: "sa-case-system"
+    name: { en: "Cases, vibhakti and the kārakas" }
+    summary: { en: "The cases of the noun, eight if the vocative is counted, and the roles of the kāraka that they express, with the tables of the a-stems, the other stems and the pronouns." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["sa-grammar-case-system", "sa-grammar-karakas", "sa-grammar-a-stems", "sa-grammar-other-stems", "sa-grammar-pronouns"]
+  - id: "sa-present-system"
+    name: { en: "The present system and the verb classes" }
+    summary: { en: "The present tense of the verb, the first and the other classes of verbs, and the middle voice, with the root and the present stem of each verb." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["sa-verbs-first-class", "sa-grammar-present-system", "sa-grammar-gana-1", "sa-grammar-gana-2", "sa-grammar-atmanepada"]
+  - id: "sa-past-tenses-and-moods"
+    name: { en: "Past tenses and moods" }
+    summary: { en: "The past tenses, the perfect and the aorist, the ten lakāras, the imperative and the optative, which carry commands, wishes and possibilities." }
+    kind: "verbs"
+    level: "A2"
+    decks: ["sa-grammar-past-tenses", "sa-grammar-past-tenses-perfect-aorist", "sa-grammar-lakaras", "sa-grammar-imperatives", "sa-grammar-optative"]
+  - id: "sa-verbal-derivatives"
+    name: { en: "Participles and other forms made from verbs" }
+    summary: { en: "Participles and their declension, krt suffixes, gerundives, absolutives and infinitives, the passive and the causative." }
+    kind: "verbs"
+    level: "A2"
+    decks: ["sa-grammar-participles", "sa-grammar-participles-declension", "sa-grammar-krt", "sa-grammar-gerundives", "sa-grammar-absolutives-infinitives", "sa-grammar-passive", "sa-grammar-causatives"]
+  - id: "sa-compounds-and-suffixes"
+    name: { en: "Compounds and secondary suffixes" }
+    summary: { en: "How words are joined into compounds, samāsa, and how taddhita suffixes make new nouns and adjectives from nouns." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["sa-grammar-samasa", "sa-grammar-taddhita"]
+  - id: "sa-panini-sutras"
+    name: { en: "Pāṇini's sūtras" }
+    summary: { en: "Rules of the Aṣṭādhyāyī read from the text itself, with the technical terms they define and the forms they explain." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["sa-grammar-sutra-1", "sa-grammar-sutra-2", "sa-grammar-sutra-3", "sa-grammar-sutra-4"]
+  - id: "sa-culture-scriptures"
+    name: { en: "Scripture, philosophy and law" }
+    summary: { en: "Short lines from the Bhagavad Gītā, the Upaniṣads, the Brahma and Yoga Sūtras and the Manusmṛti, with when each work is dated and what it is." }
+    kind: "other"
+    level: "A2"
+    decks: ["sa-culture-1"]
+  - id: "sa-culture-epic-and-court-poetry"
+    name: { en: "Epic and court poetry" }
+    summary: { en: "Lines from the Mahābhārata and the Rāmāyaṇa and from the court poets, among them Kālidāsa, Bhāravi, Māgha and Bhavabhūti." }
+    kind: "other"
+    level: "B1"
+    decks: ["sa-culture-2"]
+  - id: "sa-culture-fables"
+    name: { en: "Fables and story collections" }
+    summary: { en: "Verses and story sentences from the Pañcatantra, the Hitopadeśa, the Vetālapañcaviṃśati and the Kathāsaritsāgara." }
+    kind: "other"
+    level: "A2"
+    decks: ["sa-culture-3"]
+  - id: "sa-culture-sciences-and-arts"
+    name: { en: "Grammar, statecraft, science and the arts" }
+    summary: { en: "Lines from the Aṣṭādhyāyī, Patañjali, Bhartṛhari, Daṇḍin, the Arthaśāstra, the Nāṭyaśāstra, Āryabhaṭa, Varāhamihira and Caraka." }
+    kind: "other"
+    level: "A2"
+    decks: ["sa-culture-4"]
+  - id: "sa-proverbs"
+    name: { en: "Subhāṣita, wise sayings" }
+    summary: { en: "Sixty verses of advice on learning, friends, effort and wealth from the Hitopadeśa, the Pañcatantra and the Nītiśataka." }
+    kind: "other"
+    level: "B1"
+    decks: ["sa-proverbs-1", "sa-proverbs-2", "sa-proverbs-3"]
+  - id: "sa-numbers"
+    name: { en: "Numbers" }
+    summary: { en: "The numbers from one to twenty and the tens and big numbers, with the digits of the script." }
+    kind: "words"
+    level: "A1"
+    decks: ["sa-numbers-1-20", "sa-numbers-big", "sa-script-digits"]
+  - id: "sa-family-and-people"
+    name: { en: "Family and people" }
+    summary: { en: "Words for family members, relationships, pronouns and the first phrases of introducing oneself." }
+    kind: "words"
+    level: "A1"
+    decks: ["sa-family", "sa-relationships", "sa-pronouns", "sa-about-me"]
+  - id: "sa-nature-and-seasons"
+    name: { en: "Nature, animals and seasons" }
+    summary: { en: "Words for the natural world: animals, the seasons, the land and the farm." }
+    kind: "words"
+    level: "A1"
+    decks: ["sa-nature", "sa-animals", "sa-seasons", "sa-agriculture"]
+  - id: "sa-time-and-festivals"
+    name: { en: "Time, calendar and festivals" }
+    summary: { en: "Words for the times of day, the months and years, and the festivals of the year." }
+    kind: "words"
+    level: "A1"
+    decks: ["sa-time", "sa-calendar", "sa-festivals"]
+  - id: "sa-dharma-and-ritual"
+    name: { en: "Dharma and ritual" }
+    summary: { en: "Words for duty and right conduct, rites and worship, and the thoughts and feelings that go with them." }
+    kind: "words"
+    level: "A1"
+    decks: ["sa-dharma", "sa-ritual", "sa-feelings", "sa-opinions"]
+  - id: "sa-law-and-government"
+    name: { en: "Law and government" }
+    summary: { en: "Words for the state, kings and officials, the law and its courts, and the words of history." }
+    kind: "words"
+    level: "A2"
+    decks: ["sa-government", "sa-law", "sa-history"]
+  - id: "sa-arts-and-literature"
+    name: { en: "Arts, literature and stories" }
+    summary: { en: "Words for the arts, for writing and books, and for the tellers and heroes of stories." }
+    kind: "words"
+    level: "A2"
+    decks: ["sa-arts", "sa-literature", "sa-stories"]

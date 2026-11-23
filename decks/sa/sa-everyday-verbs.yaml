@@ -1,0 +1,492 @@
+# Everyday verbs of the first class. Each root and its present stem were read on the en.wiktionary page of the
+# verb's third person singular present (class, voice and glosses), 2026-11-16;
+# the readings and IPA are from tools/transcribe.py (sa).
+schema: 1
+id: "sa-everyday-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "everyday-verbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-2000"
+    target: "खाद्"
+    reading: "khād"
+    ipa: "kʰaːd̪"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता खादति"
+        reading: "mātā khādati"
+        ipa: "maːt̪aː kʰaːd̪ət̪i"
+        bases:
+          - { word: "खादति", base: "खाद्", reading: "khād" }
+      - target: "पिता तत्र खादति"
+        reading: "pitā tatra khādati"
+        ipa: "pit̪aː t̪ət̪rə kʰaːd̪ət̪i"
+        bases:
+          - { word: "खादति", base: "खाद्", reading: "khād" }
+  - id: "sa-2001"
+    target: "पा"
+    reading: "pā"
+    ipa: "paː"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "सखा तत्र पिबति"
+        reading: "sakhā tatra pibati"
+        ipa: "səkʰaː t̪ət̪rə pibət̪i"
+        bases:
+          - { word: "पिबति", base: "पा", reading: "pā" }
+      - target: "पिबति माता जलम्"
+        reading: "pibati mātā jalam"
+        ipa: "pibət̪i maːt̪aː dʒələm"
+        bases:
+          - { word: "पिबति", base: "पा", reading: "pā" }
+  - id: "sa-2002"
+    target: "स्था"
+    reading: "sthā"
+    ipa: "st̪ʰaː"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता तत्र तिष्ठति"
+        reading: "mātā tatra tiṣṭhati"
+        ipa: "maːt̪aː t̪ət̪rə t̪iʂʈʰət̪i"
+        bases:
+          - { word: "तिष्ठति", base: "स्था", reading: "sthā" }
+      - target: "स्वसा सदा तिष्ठति"
+        reading: "svasā sadā tiṣṭhati"
+        ipa: "sʋəsaː səd̪aː t̪iʂʈʰət̪i"
+        bases:
+          - { word: "तिष्ठति", base: "स्था", reading: "sthā" }
+  - id: "sa-2003"
+    target: "हस्"
+    reading: "has"
+    ipa: "ɦəs"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता हसति"
+        reading: "mātā hasati"
+        ipa: "maːt̪aː ɦəsət̪i"
+        bases:
+          - { word: "हसति", base: "हस्", reading: "has" }
+      - target: "सखा सदा हसति"
+        reading: "sakhā sadā hasati"
+        ipa: "səkʰaː səd̪aː ɦəsət̪i"
+        bases:
+          - { word: "हसति", base: "हस्", reading: "has" }
+  - id: "sa-2004"
+    target: "रक्ष्"
+    reading: "rakṣ"
+    ipa: "rəkʂ"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता सदा रक्षति"
+        reading: "mātā sadā rakṣati"
+        ipa: "maːt̪aː səd̪aː rəkʂət̪i"
+        bases:
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣ" }
+      - target: "पिता तत्र रक्षति"
+        reading: "pitā tatra rakṣati"
+        ipa: "pit̪aː t̪ət̪rə rəkʂət̪i"
+        bases:
+          - { word: "रक्षति", base: "रक्ष्", reading: "rakṣ" }
+  - id: "sa-2005"
+    target: "वस्"
+    reading: "vas"
+    ipa: "ʋəs"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "पिता तत्र वसति"
+        reading: "pitā tatra vasati"
+        ipa: "pit̪aː t̪ət̪rə ʋəsət̪i"
+        bases:
+          - { word: "वसति", base: "वस्", reading: "vas" }
+      - target: "स्वसा दूरे वसति"
+        reading: "svasā dūre vasati"
+        ipa: "sʋəsaː d̪uːreː ʋəsət̪i"
+        bases:
+          - { word: "वसति", base: "वस्", reading: "vas" }
+  - id: "sa-2006"
+    target: "नम्"
+    reading: "nam"
+    ipa: "nəm"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता नमति"
+        reading: "mātā namati"
+        ipa: "maːt̪aː nəmət̪i"
+        bases:
+          - { word: "नमति", base: "नम्", reading: "nam" }
+      - target: "भ्राता तत्र नमति"
+        reading: "bhrātā tatra namati"
+        ipa: "bʱraːt̪aː t̪ət̪rə nəmət̪i"
+        bases:
+          - { word: "नमति", base: "नम्", reading: "nam" }
+  - id: "sa-2007"
+    target: "जि"
+    reading: "ji"
+    ipa: "dʒi"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "सखा सदा जयति"
+        reading: "sakhā sadā jayati"
+        ipa: "səkʰaː səd̪aː dʒəjət̪i"
+        bases:
+          - { word: "जयति", base: "जि", reading: "ji" }
+      - target: "भ्राता जयति"
+        reading: "bhrātā jayati"
+        ipa: "bʱraːt̪aː dʒəjət̪i"
+        bases:
+          - { word: "जयति", base: "जि", reading: "ji" }
+  - id: "sa-2008"
+    target: "स्मृ"
+    reading: "smṛ"
+    ipa: "smr̩"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता स्मरति"
+        reading: "mātā smarati"
+        ipa: "maːt̪aː smərət̪i"
+        bases:
+          - { word: "स्मरति", base: "स्मृ", reading: "smṛ" }
+      - target: "पिता सदा स्मरति"
+        reading: "pitā sadā smarati"
+        ipa: "pit̪aː səd̪aː smərət̪i"
+        bases:
+          - { word: "स्मरति", base: "स्मृ", reading: "smṛ" }
+  - id: "sa-2009"
+    target: "धाव्"
+    reading: "dhāv"
+    ipa: "d̪ʱaːʋ"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "भ्राता तत्र धावति"
+        reading: "bhrātā tatra dhāvati"
+        ipa: "bʱraːt̪aː t̪ət̪rə d̪ʱaːʋət̪i"
+        bases:
+          - { word: "धावति", base: "धाव्", reading: "dhāv" }
+      - target: "सखा सदा धावति"
+        reading: "sakhā sadā dhāvati"
+        ipa: "səkʰaː səd̪aː d̪ʱaːʋət̪i"
+        bases:
+          - { word: "धावति", base: "धाव्", reading: "dhāv" }
+  - id: "sa-2010"
+    target: "पत्"
+    reading: "pat"
+    ipa: "pət̪"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "पतति जलम्"
+        reading: "patati jalam"
+        ipa: "pət̪ət̪i dʒələm"
+        bases:
+          - { word: "पतति", base: "पत्", reading: "pat" }
+      - target: "भ्राता तत्र पतति"
+        reading: "bhrātā tatra patati"
+        ipa: "bʱraːt̪aː t̪ət̪rə pət̪ət̪i"
+        bases:
+          - { word: "पतति", base: "पत्", reading: "pat" }
+  - id: "sa-2011"
+    target: "चल्"
+    reading: "cal"
+    ipa: "tʃəl"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता तत्र चलति"
+        reading: "mātā tatra calati"
+        ipa: "maːt̪aː t̪ət̪rə tʃələt̪i"
+        bases:
+          - { word: "चलति", base: "चल्", reading: "cal" }
+      - target: "पिता सदा चलति"
+        reading: "pitā sadā calati"
+        ipa: "pit̪aː səd̪aː tʃələt̪i"
+        bases:
+          - { word: "चलति", base: "चल्", reading: "cal" }
+  - id: "sa-2012"
+    target: "क्रीड्"
+    reading: "krīḍ"
+    ipa: "kriːɖ"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "सखा तत्र क्रीडति"
+        reading: "sakhā tatra krīḍati"
+        ipa: "səkʰaː t̪ət̪rə kriːɖət̪i"
+        bases:
+          - { word: "क्रीडति", base: "क्रीड्", reading: "krīḍ" }
+      - target: "भ्राता सदा क्रीडति"
+        reading: "bhrātā sadā krīḍati"
+        ipa: "bʱraːt̪aː səd̪aː kriːɖət̪i"
+        bases:
+          - { word: "क्रीडति", base: "क्रीड्", reading: "krīḍ" }
+  - id: "sa-2013"
+    target: "जीव्"
+    reading: "jīv"
+    ipa: "dʒiːʋ"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता जीवति"
+        reading: "mātā jīvati"
+        ipa: "maːt̪aː dʒiːʋət̪i"
+        bases:
+          - { word: "जीवति", base: "जीव्", reading: "jīv" }
+      - target: "पिता जीवति"
+        reading: "pitā jīvati"
+        ipa: "pit̪aː dʒiːʋət̪i"
+        bases:
+          - { word: "जीवति", base: "जीव्", reading: "jīv" }
+  - id: "sa-2014"
+    target: "चर्"
+    reading: "car"
+    ipa: "tʃər"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "सखा सदा चरति"
+        reading: "sakhā sadā carati"
+        ipa: "səkʰaː səd̪aː tʃərət̪i"
+        bases:
+          - { word: "चरति", base: "चर्", reading: "car" }
+      - target: "स्वसा तत्र चरति"
+        reading: "svasā tatra carati"
+        ipa: "sʋəsaː t̪ət̪rə tʃərət̪i"
+        bases:
+          - { word: "चरति", base: "चर्", reading: "car" }
+  - id: "sa-2015"
+    target: "वह्"
+    reading: "vah"
+    ipa: "ʋəɦ"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वहति माता जलम्"
+        reading: "vahati mātā jalam"
+        ipa: "ʋəɦət̪i maːt̪aː dʒələm"
+        bases:
+          - { word: "वहति", base: "वह्", reading: "vah" }
+      - target: "वहति पिता पुस्तकम्"
+        reading: "vahati pitā pustakam"
+        ipa: "ʋəɦət̪i pit̪aː pust̪əkəm"
+        bases:
+          - { word: "वहति", base: "वह्", reading: "vah" }
+  - id: "sa-2016"
+    target: "हृ"
+    reading: "hṛ"
+    ipa: "ɦr̩"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "हरति सखा पुस्तकम्"
+        reading: "harati sakhā pustakam"
+        ipa: "ɦərət̪i səkʰaː pust̪əkəm"
+        bases:
+          - { word: "हरति", base: "हृ", reading: "hṛ" }
+      - target: "हरति भ्राता जलम्"
+        reading: "harati bhrātā jalam"
+        ipa: "ɦərət̪i bʱraːt̪aː dʒələm"
+        bases:
+          - { word: "हरति", base: "हृ", reading: "hṛ" }
+  - id: "sa-2017"
+    target: "सृ"
+    reading: "sṛ"
+    ipa: "sr̩"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "सरति जलम्"
+        reading: "sarati jalam"
+        ipa: "sərət̪i dʒələm"
+        bases:
+          - { word: "सरति", base: "सृ", reading: "sṛ" }
+      - target: "तत्र सरति जलम्"
+        reading: "tatra sarati jalam"
+        ipa: "t̪ət̪rə sərət̪i dʒələm"
+        bases:
+          - { word: "सरति", base: "सृ", reading: "sṛ" }
+  - id: "sa-2018"
+    target: "गै"
+    reading: "gai"
+    ipa: "ɡəi"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता गायति"
+        reading: "mātā gāyati"
+        ipa: "maːt̪aː ɡaːjət̪i"
+        bases:
+          - { word: "गायति", base: "गै", reading: "gai" }
+      - target: "स्वसा तत्र गायति"
+        reading: "svasā tatra gāyati"
+        ipa: "sʋəsaː t̪ət̪rə ɡaːjət̪i"
+        bases:
+          - { word: "गायति", base: "गै", reading: "gai" }
+  - id: "sa-2019"
+    target: "तप्"
+    reading: "tap"
+    ipa: "t̪əp"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "तत् तपति"
+        reading: "tat tapati"
+        ipa: "t̪ət̪ t̪əpət̪i"
+        bases:
+          - { word: "तपति", base: "तप्", reading: "tap" }
+      - target: "तत् तत्र तपति"
+        reading: "tat tatra tapati"
+        ipa: "t̪ət̪ t̪ət̪rə t̪əpət̪i"
+        bases:
+          - { word: "तपति", base: "तप्", reading: "tap" }
+  - id: "sa-2020"
+    target: "धृ"
+    reading: "dhṛ"
+    ipa: "d̪ʱr̩"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "धरति माता जलम्"
+        reading: "dharati mātā jalam"
+        ipa: "d̪ʱərət̪i maːt̪aː dʒələm"
+        bases:
+          - { word: "धरति", base: "धृ", reading: "dhṛ" }
+      - target: "धरति पिता पुस्तकम्"
+        reading: "dharati pitā pustakam"
+        ipa: "d̪ʱərət̪i pit̪aː pust̪əkəm"
+        bases:
+          - { word: "धरति", base: "धृ", reading: "dhṛ" }
+  - id: "sa-2021"
+    target: "जप्"
+    reading: "jap"
+    ipa: "dʒəp"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता सदा जपति"
+        reading: "mātā sadā japati"
+        ipa: "maːt̪aː səd̪aː dʒəpət̪i"
+        bases:
+          - { word: "जपति", base: "जप्", reading: "jap" }
+      - target: "पिता तत्र जपति"
+        reading: "pitā tatra japati"
+        ipa: "pit̪aː t̪ət̪rə dʒəpət̪i"
+        bases:
+          - { word: "जपति", base: "जप्", reading: "jap" }
+  - id: "sa-2022"
+    target: "खन्"
+    reading: "khan"
+    ipa: "kʰən"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "भ्राता तत्र खनति"
+        reading: "bhrātā tatra khanati"
+        ipa: "bʱraːt̪aː t̪ət̪rə kʰənət̪i"
+        bases:
+          - { word: "खनति", base: "खन्", reading: "khan" }
+      - target: "सखा सदा खनति"
+        reading: "sakhā sadā khanati"
+        ipa: "səkʰaː səd̪aː kʰənət̪i"
+        bases:
+          - { word: "खनति", base: "खन्", reading: "khan" }
+  - id: "sa-2023"
+    target: "ह्वे"
+    reading: "hve"
+    ipa: "ɦʋeː"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता ह्वयति"
+        reading: "mātā hvayati"
+        ipa: "maːt̪aː ɦʋəjət̪i"
+        bases:
+          - { word: "ह्वयति", base: "ह्वे", reading: "hve" }
+      - target: "सखा तत्र ह्वयति"
+        reading: "sakhā tatra hvayati"
+        ipa: "səkʰaː t̪ət̪rə ɦʋəjət̪i"
+        bases:
+          - { word: "ह्वयति", base: "ह्वे", reading: "hve" }

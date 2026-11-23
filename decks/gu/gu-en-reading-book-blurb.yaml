@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "gu-en-reading-book-blurb",
+  "name": "Reading: The back of a novel",
+  "kind": "reading",
+  "language": {
+    "code": "gu",
+    "iso639_3": "guj",
+    "name": "Gujarati",
+    "script": "gujarati",
+    "tts": "gu-IN",
+    "icon": "ગુ"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this deck, and released under CC BY-SA 4.0",
+  "description": "The back-cover blurb of a short novel about a village and a secret. Written for this deck and released under CC BY-SA 4.0. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "reading",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "gu-book-blurb",
+      "title": "Reading: The back of a novel",
+      "theme": "literature",
+      "sentences": [
+        {
+          "text": "આ નવલકથા એક ગામની વાર્તા છે.",
+          "reading": "ā navlkthā ek gāmni vārtā che.",
+          "ipa": "a nəʋlkt̪ʰa ek ɡamni ʋart̪a tʃʰe"
+        },
+        {
+          "text": "મુખ્ય પાત્ર એક યુવાન છોકરી છે.",
+          "reading": "mukhya pātra ek yuvān chokri che.",
+          "ipa": "mukʰjə pat̪rə ek juʋan tʃʰokri tʃʰe"
+        },
+        {
+          "text": "એક રહસ્ય તેની જિંદગી બદલી નાખે છે.",
+          "reading": "ek rahasya teni jindagi badli nākhe che.",
+          "ipa": "ek rəɦəsjə t̪eni dʒind̪əɡi bəd̪li nakʰe tʃʰe"
+        },
+        {
+          "text": "આ કરુણ પણ સુંદર વાર્તા તમને રડાવશે.",
+          "reading": "ā karuṇ paṇ sundar vārtā tamne raḍāvśe.",
+          "ipa": "a kəruɳ pəɳ sund̪ər ʋart̪a t̪əmne rəɖaʋʃe"
+        }
+      ],
+      "questions": [
+        {
+          "id": "gu-5150",
+          "prompt": {
+            "en": "What is the novel about?"
+          },
+          "options": [
+            {
+              "en": "A town in the city"
+            },
+            {
+              "en": "A village"
+            },
+            {
+              "en": "A ship at sea"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "id": "gu-5151",
+          "prompt": {
+            "en": "The main character is an old man."
+          },
+          "answer": false
+        },
+        {
+          "id": "gu-5152",
+          "prompt": {
+            "en": "What will the story make the reader do?"
+          },
+          "options": [
+            {
+              "en": "Laugh"
+            },
+            {
+              "en": "Cry"
+            },
+            {
+              "en": "Sleep"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  ]
+}

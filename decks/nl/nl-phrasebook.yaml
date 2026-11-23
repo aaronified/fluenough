@@ -1,0 +1,154 @@
+schema: 1
+id: "nl-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "nl", iso639_3: "nld", name: "Dutch", script: "latin", tts: "nl-NL", icon: "Nl" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "nl-0001"
+    target: "hallo"
+    ipa: "ɦɑˈloː"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "hallo", base: "hallo" }]
+  - id: "nl-0002"
+    target: "goedemorgen"
+    ipa: "ˌɣudəˈmɔrɣən"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "goedemorgen", base: "goedemorgen" }]
+  - id: "nl-0003"
+    target: "goedenavond"
+    ipa: "ˌɣudəˈnaːvɔnt"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "goedenavond", base: "goedenavond" }]
+  - id: "nl-0004"
+    target: "goedenacht"
+    ipa: "ˌɣudəˈnɑxt"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "goedenacht", base: "goedenacht" }]
+  - id: "nl-0005"
+    target: "tot ziens"
+    ipa: "tɔt ˈzins"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "tot", base: "tot" }, { word: "ziens", base: "ziens" }]
+  - id: "nl-0006"
+    target: "alsjeblieft"
+    ipa: "ɑlʃəˈblift"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "alsjeblieft", base: "alsjeblieft" }]
+  - id: "nl-0007"
+    target: "dank je wel"
+    ipa: "dɑŋk jə ʋɛl"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "dank", base: "dank" }, { word: "je", base: "je" }, { word: "wel", base: "wel" }]
+  - id: "nl-0008"
+    target: "graag gedaan"
+    ipa: "ɣraːx ɣəˈdaːn"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "graag", base: "graag" }, { word: "gedaan", base: "doen" }]
+  - id: "nl-0009"
+    target: "sorry"
+    ipa: "ˈsɔri"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "sorry", base: "sorry" }]
+  - id: "nl-0010"
+    target: "pardon"
+    ipa: "pɑrˈdɔn"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "pardon", base: "pardon" }]
+  - id: "nl-0011"
+    target: "ik begrijp het niet"
+    ipa: "ɪk bəˈɣrɛip ɦɛt nit"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "ik", base: "ik" }, { word: "begrijp", base: "begrijpen" }, { word: "het", base: "het" }, { word: "niet", base: "niet" }]
+  - id: "nl-0012"
+    target: "ik weet het niet"
+    ipa: "ɪk ʋeːt ɦɛt nit"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "ik", base: "ik" }, { word: "weet", base: "weten" }, { word: "het", base: "het" }, { word: "niet", base: "niet" }]
+  - id: "nl-0013"
+    target: "kunt u langzamer praten?"
+    ipa: "kʏnt y ˈlɑŋzaːmər ˈpraːtən"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "kunt", base: "kunnen" }, { word: "u", base: "u" }, { word: "langzamer", base: "langzaam" }, { word: "praten", base: "praten" }]
+  - id: "nl-0014"
+    target: "spreekt u Engels?"
+    ipa: "spreːkt y ˈɛŋəls"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "spreekt", base: "spreken" }, { word: "u", base: "u" }, { word: "Engels", base: "Engels" }]
+  - id: "nl-0015"
+    target: "hoe gaat het?"
+    ipa: "ɦu ɣaːt ɦɛt"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "hoe", base: "hoe" }, { word: "gaat", base: "gaan" }, { word: "het", base: "het" }]
+  - id: "nl-0016"
+    target: "goed, dank je"
+    ipa: "ɣut dɑŋk jə"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "goed", base: "goed" }, { word: "dank", base: "dank" }, { word: "je", base: "je" }]
+  - id: "nl-0017"
+    target: "hoe heet je?"
+    ipa: "ɦu ɦeːt jə"
+    pos: "phrase"
+    tags: ["introduction"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "hoe", base: "hoe" }, { word: "heet", base: "heten" }, { word: "je", base: "je" }]
+  - id: "nl-0018"
+    target: "ik heet"
+    ipa: "ɪk ɦeːt"
+    pos: "phrase"
+    tags: ["introduction"]
+    phrasebook: true
+    bases: [{ word: "ik", base: "ik" }, { word: "heet", base: "heten" }]
+  - id: "nl-0019"
+    target: "waar is het toilet?"
+    ipa: "ʋaːr ɪs ɦɛt tʋaːˈlɛt"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "waar", base: "waar" }, { word: "is", base: "zijn" }, { word: "het", base: "het" }, { word: "toilet", base: "toilet" }]
+  - id: "nl-0020"
+    target: "help!"
+    ipa: "ɦɛlp"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "help", base: "help" }]

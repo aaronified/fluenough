@@ -1,0 +1,1481 @@
+schema: 1
+id: "sa-agriculture"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "agriculture"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-5600"
+    target: "सस्यम्"
+    reading: "sasyam"
+    ipa: "səsjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "सस्यम्", base: "सस्य", reading: "sasya" }
+    examples:
+      - target: "अस्ति सस्यं क्षेत्रे"
+        reading: "asti sasyaṃ kṣetre"
+        ipa: "əst̪i səsjəm kʂeːt̪reː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सस्यं", base: "सस्य", reading: "sasya" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+      - target: "अस्ति सस्यं शुष्कम्"
+        reading: "asti sasyaṃ śuṣkam"
+        ipa: "əst̪i səsjəm ʃuʂkəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सस्यं", base: "सस्य", reading: "sasya" }
+          - { word: "शुष्कम्", base: "शुष्क", reading: "śuṣka" }
+  - id: "sa-5601"
+    target: "व्रीहिः"
+    reading: "vrīhiḥ"
+    ipa: "ʋriːɦih"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5602" }
+    bases:
+      - { word: "व्रीहिः", base: "व्रीहि", reading: "vrīhi" }
+    examples:
+      - target: "अस्ति व्रीहिः क्षेत्रे"
+        reading: "asti vrīhiḥ kṣetre"
+        ipa: "əst̪i ʋriːɦih kʂeːt̪reː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "व्रीहिः", base: "व्रीहि", reading: "vrīhi" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+      - target: "अस्ति गृहे व्रीहिः"
+        reading: "asti gṛhe vrīhiḥ"
+        ipa: "əst̪i ɡr̩ɦeː ʋriːɦih"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "व्रीहिः", base: "व्रीहि", reading: "vrīhi" }
+  - id: "sa-5602"
+    target: "शालिः"
+    reading: "śāliḥ"
+    ipa: "ʃaːlih"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5601" }
+    bases:
+      - { word: "शालिः", base: "शालि", reading: "śāli" }
+    examples:
+      - target: "अस्ति शालिः क्षेत्रे"
+        reading: "asti śāliḥ kṣetre"
+        ipa: "əst̪i ʃaːlih kʂeːt̪reː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "शालिः", base: "शालि", reading: "śāli" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+      - target: "अस्ति गृहे शालिः"
+        reading: "asti gṛhe śāliḥ"
+        ipa: "əst̪i ɡr̩ɦeː ʃaːlih"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "शालिः", base: "शालि", reading: "śāli" }
+  - id: "sa-5603"
+    target: "मुद्गः"
+    reading: "mudgaḥ"
+    ipa: "mud̪ɡəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5604" }
+    bases:
+      - { word: "मुद्गः", base: "मुद्ग", reading: "mudga" }
+    examples:
+      - target: "अस्ति मुद्गः क्षेत्रे"
+        reading: "asti mudgaḥ kṣetre"
+        ipa: "əst̪i mud̪ɡəh kʂeːt̪reː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मुद्गः", base: "मुद्ग", reading: "mudga" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+      - target: "अस्ति गृहे मुद्गः"
+        reading: "asti gṛhe mudgaḥ"
+        ipa: "əst̪i ɡr̩ɦeː mud̪ɡəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "मुद्गः", base: "मुद्ग", reading: "mudga" }
+  - id: "sa-5604"
+    target: "माषः"
+    reading: "māṣaḥ"
+    ipa: "maːʂəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5603" }
+    bases:
+      - { word: "माषः", base: "माष", reading: "māṣa" }
+    examples:
+      - target: "अस्ति माषः क्षेत्रे"
+        reading: "asti māṣaḥ kṣetre"
+        ipa: "əst̪i maːʂəh kʂeːt̪reː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "माषः", base: "माष", reading: "māṣa" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+      - target: "अस्ति गृहे माषः"
+        reading: "asti gṛhe māṣaḥ"
+        ipa: "əst̪i ɡr̩ɦeː maːʂəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "माषः", base: "माष", reading: "māṣa" }
+  - id: "sa-5605"
+    target: "कर्षकः"
+    reading: "karṣakaḥ"
+    ipa: "kərʂəkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "कर्षकः", base: "कर्षक", reading: "karṣaka" }
+    examples:
+      - target: "अस्ति कर्षकः क्षेत्रे"
+        reading: "asti karṣakaḥ kṣetre"
+        ipa: "əst̪i kərʂəkəh kʂeːt̪reː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "कर्षकः", base: "कर्षक", reading: "karṣaka" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+      - target: "कर्षकस् तत्र"
+        reading: "karṣakas tatra"
+        ipa: "kərʂəkəs t̪ət̪rə"
+        bases:
+          - { word: "कर्षकस्", base: "कर्षक", reading: "karṣaka" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+  - id: "sa-5606"
+    target: "लाङ्गलम्"
+    reading: "lāṅgalam"
+    ipa: "laːŋɡələm"
+    pos: "noun"
+    gender: "n"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "pair", ref: "sa-5607" }
+    bases:
+      - { word: "लाङ्गलम्", base: "लाङ्गल", reading: "lāṅgala" }
+    examples:
+      - target: "अस्ति लाङ्गलं क्षेत्रे"
+        reading: "asti lāṅgalaṃ kṣetre"
+        ipa: "əst̪i laːŋɡələm kʂeːt̪reː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "लाङ्गलं", base: "लाङ्गल", reading: "lāṅgala" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+      - target: "अस्ति गृहे लाङ्गलम्"
+        reading: "asti gṛhe lāṅgalam"
+        ipa: "əst̪i ɡr̩ɦeː laːŋɡələm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "लाङ्गलम्", base: "लाङ्गल", reading: "lāṅgala" }
+  - id: "sa-5607"
+    target: "फालः"
+    reading: "phālaḥ"
+    ipa: "pʰaːləh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5606" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "फालः", base: "फाल", reading: "phāla" }
+    examples:
+      - target: "अस्ति लाङ्गले फालः"
+        reading: "asti lāṅgale phālaḥ"
+        ipa: "əst̪i laːŋɡəleː pʰaːləh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "लाङ्गले", base: "लाङ्गल", reading: "lāṅgala" }
+          - { word: "फालः", base: "फाल", reading: "phāla" }
+      - target: "अस्ति फालस् तत्र"
+        reading: "asti phālas tatra"
+        ipa: "əst̪i pʰaːləs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "फालस्", base: "फाल", reading: "phāla" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+  - id: "sa-5608"
+    target: "खनित्रम्"
+    reading: "khanitram"
+    ipa: "kʰənit̪rəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "खनित्रम्", base: "खनित्र", reading: "khanitra" }
+    examples:
+      - target: "अस्ति खनित्रं तत्र"
+        reading: "asti khanitraṃ tatra"
+        ipa: "əst̪i kʰənit̪rəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "खनित्रं", base: "खनित्र", reading: "khanitra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति क्षेत्रे खनित्रम्"
+        reading: "asti kṣetre khanitram"
+        ipa: "əst̪i kʂeːt̪reː kʰənit̪rəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+          - { word: "खनित्रम्", base: "खनित्र", reading: "khanitra" }
+  - id: "sa-5609"
+    target: "दात्रम्"
+    reading: "dātram"
+    ipa: "d̪aːt̪rəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "दात्रम्", base: "दात्र", reading: "dātra" }
+    examples:
+      - target: "अस्ति दात्रं तत्र"
+        reading: "asti dātraṃ tatra"
+        ipa: "əst̪i d̪aːt̪rəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "दात्रं", base: "दात्र", reading: "dātra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति क्षेत्रे दात्रम्"
+        reading: "asti kṣetre dātram"
+        ipa: "əst̪i kʂeːt̪reː d̪aːt̪rəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+          - { word: "दात्रम्", base: "दात्र", reading: "dātra" }
+  - id: "sa-5610"
+    target: "खलः"
+    reading: "khalaḥ"
+    ipa: "kʰələh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "खलः", base: "खल", reading: "khala" }
+    examples:
+      - target: "अस्ति खलस् तत्र"
+        reading: "asti khalas tatra"
+        ipa: "əst̪i kʰələs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "खलस्", base: "खल", reading: "khala" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति क्षेत्रे खलः"
+        reading: "asti kṣetre khalaḥ"
+        ipa: "əst̪i kʂeːt̪reː kʰələh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+          - { word: "खलः", base: "खल", reading: "khala" }
+  - id: "sa-5611"
+    target: "कुल्या"
+    reading: "kulyā"
+    ipa: "kuljaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    bases:
+      - { word: "कुल्या", base: "कुल्या", reading: "kulyā" }
+    examples:
+      - target: "अस्ति कुल्या क्षेत्रे"
+        reading: "asti kulyā kṣetre"
+        ipa: "əst̪i kuljaː kʂeːt̪reː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "कुल्या", base: "कुल्या", reading: "kulyā" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+      - target: "अस्ति कुल्या तत्र"
+        reading: "asti kulyā tatra"
+        ipa: "əst̪i kuljaː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "कुल्या", base: "कुल्या", reading: "kulyā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+  - id: "sa-5612"
+    target: "बलीवर्दः"
+    reading: "balīvardaḥ"
+    ipa: "bəliːʋərd̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "बलीवर्दः", base: "बलीवर्द", reading: "balīvarda" }
+    examples:
+      - target: "अस्ति बलीवर्दः क्षेत्रे"
+        reading: "asti balīvardaḥ kṣetre"
+        ipa: "əst̪i bəliːʋərd̪əh kʂeːt̪reː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "बलीवर्दः", base: "बलीवर्द", reading: "balīvarda" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+      - target: "अस्ति गृहे बलीवर्दः"
+        reading: "asti gṛhe balīvardaḥ"
+        ipa: "əst̪i ɡr̩ɦeː bəliːʋərd̪əh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "बलीवर्दः", base: "बलीवर्द", reading: "balīvarda" }
+  - id: "sa-5613"
+    target: "धेनुः"
+    reading: "dhenuḥ"
+    ipa: "d̪ʱeːnuh"
+    pos: "noun"
+    gender: "f"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "धेनुः", base: "धेनु", reading: "dhenu" }
+    examples:
+      - target: "अस्ति गृहे धेनुः"
+        reading: "asti gṛhe dhenuḥ"
+        ipa: "əst̪i ɡr̩ɦeː d̪ʱeːnuh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "धेनुः", base: "धेनु", reading: "dhenu" }
+      - target: "अस्ति धेनुस् तत्र"
+        reading: "asti dhenus tatra"
+        ipa: "əst̪i d̪ʱeːnus t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "धेनुस्", base: "धेनु", reading: "dhenu" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+  - id: "sa-5614"
+    target: "कीटः"
+    reading: "kīṭaḥ"
+    ipa: "kiːʈəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5615" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "कीटः", base: "कीट", reading: "kīṭa" }
+    examples:
+      - target: "अस्ति कीटस् तत्र"
+        reading: "asti kīṭas tatra"
+        ipa: "əst̪i kiːʈəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "कीटस्", base: "कीट", reading: "kīṭa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति क्षेत्रे कीटः"
+        reading: "asti kṣetre kīṭaḥ"
+        ipa: "əst̪i kʂeːt̪reː kiːʈəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+          - { word: "कीटः", base: "कीट", reading: "kīṭa" }
+  - id: "sa-5615"
+    target: "कृमिः"
+    reading: "kṛmiḥ"
+    ipa: "kr̩mih"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5614" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "कृमिः", base: "कृमि", reading: "kṛmi" }
+    examples:
+      - target: "अस्ति कृमिस् तत्र"
+        reading: "asti kṛmis tatra"
+        ipa: "əst̪i kr̩mis t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "कृमिस्", base: "कृमि", reading: "kṛmi" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति भूमौ कृमिः"
+        reading: "asti bhūmau kṛmiḥ"
+        ipa: "əst̪i bʱuːməu kr̩mih"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "भूमौ", base: "भूमि", reading: "bhūmi" }
+          - { word: "कृमिः", base: "कृमि", reading: "kṛmi" }
+  - id: "sa-5616"
+    target: "भूमिः"
+    reading: "bhūmiḥ"
+    ipa: "bʱuːmih"
+    pos: "noun"
+    gender: "f"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "भूमिः", base: "भूमि", reading: "bhūmi" }
+    examples:
+      - target: "अस्ति भूमिस् तत्र"
+        reading: "asti bhūmis tatra"
+        ipa: "əst̪i bʱuːmis t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "भूमिस्", base: "भूमि", reading: "bhūmi" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति भूमिः क्षेत्रे"
+        reading: "asti bhūmiḥ kṣetre"
+        ipa: "əst̪i bʱuːmih kʂeːt̪reː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "भूमिः", base: "भूमि", reading: "bhūmi" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+  - id: "sa-5617"
+    target: "पशुः"
+    reading: "paśuḥ"
+    ipa: "pəʃuh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+      - { id: "n5", kind: "note" }
+    bases:
+      - { word: "पशुः", base: "पशु", reading: "paśu" }
+    examples:
+      - target: "अस्ति पशुस् तत्र"
+        reading: "asti paśus tatra"
+        ipa: "əst̪i pəʃus t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "पशुस्", base: "पशु", reading: "paśu" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति गोशालायां पशुः"
+        reading: "asti gośālāyāṃ paśuḥ"
+        ipa: "əst̪i ɡoːʃaːlaːjaːm pəʃuh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गोशालायां", base: "गोशाला", reading: "gośālā" }
+          - { word: "पशुः", base: "पशु", reading: "paśu" }
+  - id: "sa-5618"
+    target: "राशिः"
+    reading: "rāśiḥ"
+    ipa: "raːʃih"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "राशिः", base: "राशि", reading: "rāśi" }
+    examples:
+      - target: "अस्ति राशिस् तत्र"
+        reading: "asti rāśis tatra"
+        ipa: "əst̪i raːʃis t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "राशिस्", base: "राशि", reading: "rāśi" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति धान्यस्य राशिः"
+        reading: "asti dhānyasya rāśiḥ"
+        ipa: "əst̪i d̪ʱaːnjəsjə raːʃih"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "धान्यस्य", base: "धान्य", reading: "dhānya" }
+          - { word: "राशिः", base: "राशि", reading: "rāśi" }
+  - id: "sa-5619"
+    target: "तुषः"
+    reading: "tuṣaḥ"
+    ipa: "t̪uʂəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5620" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "तुषः", base: "तुष", reading: "tuṣa" }
+    examples:
+      - target: "अस्ति तुषस् तत्र"
+        reading: "asti tuṣas tatra"
+        ipa: "əst̪i t̪uʂəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "तुषस्", base: "तुष", reading: "tuṣa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति क्षेत्रे तुषः"
+        reading: "asti kṣetre tuṣaḥ"
+        ipa: "əst̪i kʂeːt̪reː t̪uʂəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+          - { word: "तुषः", base: "तुष", reading: "tuṣa" }
+  - id: "sa-5620"
+    target: "पलालम्"
+    reading: "palālam"
+    ipa: "pəlaːləm"
+    pos: "noun"
+    gender: "n"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "pair", ref: "sa-5619" }
+    bases:
+      - { word: "पलालम्", base: "पलाल", reading: "palāla" }
+    examples:
+      - target: "अस्ति पलालं तत्र"
+        reading: "asti palālaṃ tatra"
+        ipa: "əst̪i pəlaːləm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "पलालं", base: "पलाल", reading: "palāla" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति क्षेत्रे पलालम्"
+        reading: "asti kṣetre palālam"
+        ipa: "əst̪i kʂeːt̪reː pəlaːləm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+          - { word: "पलालम्", base: "पलाल", reading: "palāla" }
+  - id: "sa-5621"
+    target: "कुठारः"
+    reading: "kuṭhāraḥ"
+    ipa: "kuʈʰaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "कुठारः", base: "कुठार", reading: "kuṭhāra" }
+    examples:
+      - target: "अस्ति कुठारस् तत्र"
+        reading: "asti kuṭhāras tatra"
+        ipa: "əst̪i kuʈʰaːrəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "कुठारस्", base: "कुठार", reading: "kuṭhāra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति गृहे कुठारः"
+        reading: "asti gṛhe kuṭhāraḥ"
+        ipa: "əst̪i ɡr̩ɦeː kuʈʰaːrəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "कुठारः", base: "कुठार", reading: "kuṭhāra" }
+  - id: "sa-5622"
+    target: "दुर्भिक्षम्"
+    reading: "durbhikṣam"
+    ipa: "d̪urbʱikʂəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "दुर्भिक्षम्", base: "दुर्भिक्ष", reading: "durbhikṣa" }
+    examples:
+      - target: "अस्ति दुर्भिक्षं ग्रामे"
+        reading: "asti durbhikṣaṃ grāme"
+        ipa: "əst̪i d̪urbʱikʂəm ɡraːmeː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "दुर्भिक्षं", base: "दुर्भिक्ष", reading: "durbhikṣa" }
+          - { word: "ग्रामे", base: "ग्राम", reading: "grāma" }
+      - target: "अस्ति दुर्भिक्षं राज्ये"
+        reading: "asti durbhikṣaṃ rājye"
+        ipa: "əst̪i d̪urbʱikʂəm raːdʒjeː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "दुर्भिक्षं", base: "दुर्भिक्ष", reading: "durbhikṣa" }
+          - { word: "राज्ये", base: "राज्य", reading: "rājya" }
+  - id: "sa-5623"
+    target: "सीता"
+    reading: "sītā"
+    ipa: "siːt̪aː"
+    pos: "noun"
+    gender: "f"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    bases:
+      - { word: "सीता", base: "सीता", reading: "sītā" }
+    examples:
+      - target: "अस्ति सीता क्षेत्रे"
+        reading: "asti sītā kṣetre"
+        ipa: "əst̪i siːt̪aː kʂeːt̪reː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सीता", base: "सीता", reading: "sītā" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+      - target: "अस्ति सीता तत्र"
+        reading: "asti sītā tatra"
+        ipa: "əst̪i siːt̪aː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सीता", base: "सीता", reading: "sītā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+  - id: "sa-5624"
+    target: "घासः"
+    reading: "ghāsaḥ"
+    ipa: "ɡʱaːsəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+      - { id: "n5", kind: "note" }
+    bases:
+      - { word: "घासः", base: "घास", reading: "ghāsa" }
+    examples:
+      - target: "अस्ति घासस् तत्र"
+        reading: "asti ghāsas tatra"
+        ipa: "əst̪i ɡʱaːsəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "घासस्", base: "घास", reading: "ghāsa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति गोशालायां घासः"
+        reading: "asti gośālāyāṃ ghāsaḥ"
+        ipa: "əst̪i ɡoːʃaːlaːjaːm ɡʱaːsəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गोशालायां", base: "गोशाला", reading: "gośālā" }
+          - { word: "घासः", base: "घास", reading: "ghāsa" }
+  - id: "sa-5625"
+    target: "वारि"
+    reading: "vāri"
+    ipa: "ʋaːri"
+    pos: "noun"
+    gender: "n"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    bases:
+      - { word: "वारि", base: "वारि", reading: "vāri" }
+    examples:
+      - target: "अस्ति वारि तत्र"
+        reading: "asti vāri tatra"
+        ipa: "əst̪i ʋaːri t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "वारि", base: "वारि", reading: "vāri" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति क्षेत्रे वारि"
+        reading: "asti kṣetre vāri"
+        ipa: "əst̪i kʂeːt̪reː ʋaːri"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+          - { word: "वारि", base: "वारि", reading: "vāri" }
+  - id: "sa-5626"
+    target: "गोशाला"
+    reading: "gośālā"
+    ipa: "ɡoːʃaːlaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    bases:
+      - { word: "गोशाला", base: "गोशाला", reading: "gośālā" }
+    examples:
+      - target: "अस्ति गोशाला तत्र"
+        reading: "asti gośālā tatra"
+        ipa: "əst̪i ɡoːʃaːlaː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गोशाला", base: "गोशाला", reading: "gośālā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति गोशाला क्षेत्रे"
+        reading: "asti gośālā kṣetre"
+        ipa: "əst̪i ɡoːʃaːlaː kʂeːt̪reː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गोशाला", base: "गोशाला", reading: "gośālā" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+  - id: "sa-5627"
+    target: "इन्धनम्"
+    reading: "indhanam"
+    ipa: "ind̪ʱənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "pair", ref: "sa-5628" }
+    bases:
+      - { word: "इन्धनम्", base: "इन्धन", reading: "indhana" }
+    examples:
+      - target: "इन्धनं शुष्कम्"
+        reading: "indhanaṃ śuṣkam"
+        ipa: "ind̪ʱənəm ʃuʂkəm"
+        bases:
+          - { word: "इन्धनं", base: "इन्धन", reading: "indhana" }
+          - { word: "शुष्कम्", base: "शुष्क", reading: "śuṣka" }
+      - target: "इन्धनं गृहे"
+        reading: "indhanaṃ gṛhe"
+        ipa: "ind̪ʱənəm ɡr̩ɦeː"
+        bases:
+          - { word: "इन्धनं", base: "इन्धन", reading: "indhana" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+  - id: "sa-5628"
+    target: "दारु"
+    reading: "dāru"
+    ipa: "d̪aːru"
+    pos: "noun"
+    gender: "n"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "pair", ref: "sa-5627" }
+    bases:
+      - { word: "दारु", base: "दारु", reading: "dāru" }
+    examples:
+      - target: "अस्ति दारु तत्र"
+        reading: "asti dāru tatra"
+        ipa: "əst̪i d̪aːru t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "दारु", base: "दारु", reading: "dāru" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति गृहे दारु"
+        reading: "asti gṛhe dāru"
+        ipa: "əst̪i ɡr̩ɦeː d̪aːru"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "दारु", base: "दारु", reading: "dāru" }
+  - id: "sa-5629"
+    target: "पुष्टिः"
+    reading: "puṣṭiḥ"
+    ipa: "puʂʈih"
+    pos: "noun"
+    gender: "f"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "पुष्टिः", base: "पुष्टि", reading: "puṣṭi" }
+    examples:
+      - target: "अस्ति पुष्टिस् तत्र"
+        reading: "asti puṣṭis tatra"
+        ipa: "əst̪i puʂʈis t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "पुष्टिस्", base: "पुष्टि", reading: "puṣṭi" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति सस्यस्य पुष्टिः"
+        reading: "asti sasyasya puṣṭiḥ"
+        ipa: "əst̪i səsjəsjə puʂʈih"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सस्यस्य", base: "सस्य", reading: "sasya" }
+          - { word: "पुष्टिः", base: "पुष्टि", reading: "puṣṭi" }
+  - id: "sa-5630"
+    target: "सीरः"
+    reading: "sīraḥ"
+    ipa: "siːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5606" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "सीरः", base: "सीर", reading: "sīra" }
+    examples:
+      - target: "अस्ति सीरः क्षेत्रे"
+        reading: "asti sīraḥ kṣetre"
+        ipa: "əst̪i siːrəh kʂeːt̪reː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सीरः", base: "सीर", reading: "sīra" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+      - target: "अस्ति गृहे सीरः"
+        reading: "asti gṛhe sīraḥ"
+        ipa: "əst̪i ɡr̩ɦeː siːrəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "सीरः", base: "सीर", reading: "sīra" }
+  - id: "sa-5631"
+    target: "कोष्ठागारम्"
+    reading: "koṣṭhāgāram"
+    ipa: "koːʂʈʰaːɡaːrəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "कोष्ठागारम्", base: "कोष्ठागार", reading: "koṣṭhāgāra" }
+    examples:
+      - target: "अस्ति कोष्ठागारं गृहे"
+        reading: "asti koṣṭhāgāraṃ gṛhe"
+        ipa: "əst̪i koːʂʈʰaːɡaːrəm ɡr̩ɦeː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "कोष्ठागारं", base: "कोष्ठागार", reading: "koṣṭhāgāra" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+      - target: "अस्ति कोष्ठागारं तत्र"
+        reading: "asti koṣṭhāgāraṃ tatra"
+        ipa: "əst̪i koːʂʈʰaːɡaːrəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "कोष्ठागारं", base: "कोष्ठागार", reading: "koṣṭhāgāra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+  - id: "sa-5632"
+    target: "नीवारः"
+    reading: "nīvāraḥ"
+    ipa: "niːʋaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5601" }
+    bases:
+      - { word: "नीवारः", base: "नीवार", reading: "nīvāra" }
+    examples:
+      - target: "अस्ति नीवारः क्षेत्रे"
+        reading: "asti nīvāraḥ kṣetre"
+        ipa: "əst̪i niːʋaːrəh kʂeːt̪reː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "नीवारः", base: "नीवार", reading: "nīvāra" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+      - target: "अस्ति वने नीवारः"
+        reading: "asti vane nīvāraḥ"
+        ipa: "əst̪i ʋəneː niːʋaːrəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "वने", base: "वन", reading: "vana" }
+          - { word: "नीवारः", base: "नीवार", reading: "nīvāra" }
+  - id: "sa-5633"
+    target: "अलाबुः"
+    reading: "alābuḥ"
+    ipa: "əlaːbuh"
+    pos: "noun"
+    gender: "f"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "अलाबुः", base: "अलाबु", reading: "alābu" }
+    examples:
+      - target: "अलाबुः क्षेत्रे"
+        reading: "alābuḥ kṣetre"
+        ipa: "əlaːbuh kʂeːt̪reː"
+        bases:
+          - { word: "अलाबुः", base: "अलाबु", reading: "alābu" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+      - target: "अलाबुस् तत्र"
+        reading: "alābus tatra"
+        ipa: "əlaːbus t̪ət̪rə"
+        bases:
+          - { word: "अलाबुस्", base: "अलाबु", reading: "alābu" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+  - id: "sa-5634"
+    target: "उत्पत्तिः"
+    reading: "utpattiḥ"
+    ipa: "ut̪pət̪t̪ih"
+    pos: "noun"
+    gender: "f"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+    bases:
+      - { word: "उत्पत्तिः", base: "उत्पत्ति", reading: "utpatti" }
+    examples:
+      - target: "उत्पत्तिः क्षेत्रे"
+        reading: "utpattiḥ kṣetre"
+        ipa: "ut̪pət̪t̪ih kʂeːt̪reː"
+        bases:
+          - { word: "उत्पत्तिः", base: "उत्पत्ति", reading: "utpatti" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+      - target: "उत्पत्तिः पशोः"
+        reading: "utpattiḥ paśoḥ"
+        ipa: "ut̪pət̪t̪ih pəʃoːh"
+        bases:
+          - { word: "उत्पत्तिः", base: "उत्पत्ति", reading: "utpatti" }
+          - { word: "पशोः", base: "पशु", reading: "paśu" }
+  - id: "sa-5635"
+    target: "पाकः"
+    reading: "pākaḥ"
+    ipa: "paːkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+    bases:
+      - { word: "पाकः", base: "पाक", reading: "pāka" }
+    examples:
+      - target: "अस्ति गृहे पाकः"
+        reading: "asti gṛhe pākaḥ"
+        ipa: "əst̪i ɡr̩ɦeː paːkəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "पाकः", base: "पाक", reading: "pāka" }
+      - target: "अस्ति क्षेत्रे पाकः"
+        reading: "asti kṣetre pākaḥ"
+        ipa: "əst̪i kʂeːt̪reː paːkəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+          - { word: "पाकः", base: "पाक", reading: "pāka" }
+  - id: "sa-5636"
+    target: "मुष्टिः"
+    reading: "muṣṭiḥ"
+    ipa: "muʂʈih"
+    pos: "noun"
+    gender: "f"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "मुष्टिः", base: "मुष्टि", reading: "muṣṭi" }
+    examples:
+      - target: "अस्ति मुष्टिस् तत्र"
+        reading: "asti muṣṭis tatra"
+        ipa: "əst̪i muʂʈis t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मुष्टिस्", base: "मुष्टि", reading: "muṣṭi" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "धान्यस्य मुष्टिः"
+        reading: "dhānyasya muṣṭiḥ"
+        ipa: "d̪ʱaːnjəsjə muʂʈih"
+        bases:
+          - { word: "धान्यस्य", base: "धान्य", reading: "dhānya" }
+          - { word: "मुष्टिः", base: "मुष्टि", reading: "muṣṭi" }
+  - id: "sa-5637"
+    target: "वप्रः"
+    reading: "vapraḥ"
+    ipa: "ʋəprəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "वप्रः", base: "वप्र", reading: "vapra" }
+    examples:
+      - target: "अस्ति वप्रस् तत्र"
+        reading: "asti vapras tatra"
+        ipa: "əst̪i ʋəprəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "वप्रस्", base: "वप्र", reading: "vapra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "वप्रः क्षेत्रे"
+        reading: "vapraḥ kṣetre"
+        ipa: "ʋəprəh kʂeːt̪reː"
+        bases:
+          - { word: "वप्रः", base: "वप्र", reading: "vapra" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+  - id: "sa-5638"
+    target: "क्षुपः"
+    reading: "kṣupaḥ"
+    ipa: "kʂupəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "क्षुपः", base: "क्षुप", reading: "kṣupa" }
+    examples:
+      - target: "अस्ति क्षुपस् तत्र"
+        reading: "asti kṣupas tatra"
+        ipa: "əst̪i kʂupəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "क्षुपस्", base: "क्षुप", reading: "kṣupa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति वने क्षुपः"
+        reading: "asti vane kṣupaḥ"
+        ipa: "əst̪i ʋəneː kʂupəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "वने", base: "वन", reading: "vana" }
+          - { word: "क्षुपः", base: "क्षुप", reading: "kṣupa" }
+  - id: "sa-5639"
+    target: "मूलिका"
+    reading: "mūlikā"
+    ipa: "muːlikaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    bases:
+      - { word: "मूलिका", base: "मूलिका", reading: "mūlikā" }
+    examples:
+      - target: "अस्ति मूलिका तत्र"
+        reading: "asti mūlikā tatra"
+        ipa: "əst̪i muːlikaː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मूलिका", base: "मूलिका", reading: "mūlikā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति भूमौ मूलिका"
+        reading: "asti bhūmau mūlikā"
+        ipa: "əst̪i bʱuːməu muːlikaː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "भूमौ", base: "भूमि", reading: "bhūmi" }
+          - { word: "मूलिका", base: "मूलिका", reading: "mūlikā" }
+  - id: "sa-5640"
+    target: "तण्डुलः"
+    reading: "taṇḍulaḥ"
+    ipa: "t̪əɳɖuləh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5601" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "तण्डुलः", base: "तण्डुल", reading: "taṇḍula" }
+    examples:
+      - target: "अस्ति तण्डुलस् तत्र"
+        reading: "asti taṇḍulas tatra"
+        ipa: "əst̪i t̪əɳɖuləs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "तण्डुलस्", base: "तण्डुल", reading: "taṇḍula" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति गृहे तण्डुलः"
+        reading: "asti gṛhe taṇḍulaḥ"
+        ipa: "əst̪i ɡr̩ɦeː t̪əɳɖuləh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "तण्डुलः", base: "तण्डुल", reading: "taṇḍula" }
+  - id: "sa-5641"
+    target: "यवसम्"
+    reading: "yavasam"
+    ipa: "jəʋəsəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "यवसम्", base: "यवस", reading: "yavasa" }
+    examples:
+      - target: "अस्ति यवसं तत्र"
+        reading: "asti yavasaṃ tatra"
+        ipa: "əst̪i jəʋəsəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "यवसं", base: "यवस", reading: "yavasa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति गोशालायां यवसम्"
+        reading: "asti gośālāyāṃ yavasam"
+        ipa: "əst̪i ɡoːʃaːlaːjaːm jəʋəsəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गोशालायां", base: "गोशाला", reading: "gośālā" }
+          - { word: "यवसम्", base: "यवस", reading: "yavasa" }
+  - id: "sa-5642"
+    target: "सर्षपः"
+    reading: "sarṣapaḥ"
+    ipa: "sərʂəpəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "सर्षपः", base: "सर्षप", reading: "sarṣapa" }
+    examples:
+      - target: "अस्ति सर्षपस् तत्र"
+        reading: "asti sarṣapas tatra"
+        ipa: "əst̪i sərʂəpəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सर्षपस्", base: "सर्षप", reading: "sarṣapa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति क्षेत्रे सर्षपः"
+        reading: "asti kṣetre sarṣapaḥ"
+        ipa: "əst̪i kʂeːt̪reː sərʂəpəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+          - { word: "सर्षपः", base: "सर्षप", reading: "sarṣapa" }
+  - id: "sa-5643"
+    target: "वृद्धिः"
+    reading: "vṛddhiḥ"
+    ipa: "ʋr̩d̪d̪ʱih"
+    pos: "noun"
+    gender: "f"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "वृद्धिः", base: "वृद्धि", reading: "vṛddhi" }
+    examples:
+      - target: "अस्ति वृद्धिस् तत्र"
+        reading: "asti vṛddhis tatra"
+        ipa: "əst̪i ʋr̩d̪d̪ʱis t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "वृद्धिस्", base: "वृद्धि", reading: "vṛddhi" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "सस्यस्य वृद्धिः"
+        reading: "sasyasya vṛddhiḥ"
+        ipa: "səsjəsjə ʋr̩d̪d̪ʱih"
+        bases:
+          - { word: "सस्यस्य", base: "सस्य", reading: "sasya" }
+          - { word: "वृद्धिः", base: "वृद्धि", reading: "vṛddhi" }
+  - id: "sa-5644"
+    target: "फलनम्"
+    reading: "phalanam"
+    ipa: "pʰələnəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "फलनम्", base: "फलन", reading: "phalana" }
+    examples:
+      - target: "अस्ति फलनं तत्र"
+        reading: "asti phalanaṃ tatra"
+        ipa: "əst̪i pʰələnəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "फलनं", base: "फलन", reading: "phalana" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "वृक्षे फलनम्"
+        reading: "vṛkṣe phalanam"
+        ipa: "ʋr̩kʂeː pʰələnəm"
+        bases:
+          - { word: "वृक्षे", base: "वृक्ष", reading: "vṛkṣa" }
+          - { word: "फलनम्", base: "फलन", reading: "phalana" }
+  - id: "sa-5645"
+    target: "गोपालः"
+    reading: "gopālaḥ"
+    ipa: "ɡoːpaːləh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+      - { id: "n5", kind: "note" }
+    bases:
+      - { word: "गोपालः", base: "गोपाल", reading: "gopāla" }
+    examples:
+      - target: "अस्ति गोपालस् तत्र"
+        reading: "asti gopālas tatra"
+        ipa: "əst̪i ɡoːpaːləs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गोपालस्", base: "गोपाल", reading: "gopāla" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति गोशालायां गोपालः"
+        reading: "asti gośālāyāṃ gopālaḥ"
+        ipa: "əst̪i ɡoːʃaːlaːjaːm ɡoːpaːləh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गोशालायां", base: "गोशाला", reading: "gośālā" }
+          - { word: "गोपालः", base: "गोपाल", reading: "gopāla" }
+  - id: "sa-5646"
+    target: "वल्कलम्"
+    reading: "valkalam"
+    ipa: "ʋəlkələm"
+    pos: "noun"
+    gender: "n"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "वल्कलम्", base: "वल्कल", reading: "valkala" }
+    examples:
+      - target: "अस्ति वल्कलं तत्र"
+        reading: "asti valkalaṃ tatra"
+        ipa: "əst̪i ʋəlkələm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "वल्कलं", base: "वल्कल", reading: "valkala" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "वृक्षे वल्कलम्"
+        reading: "vṛkṣe valkalam"
+        ipa: "ʋr̩kʂeː ʋəlkələm"
+        bases:
+          - { word: "वृक्षे", base: "वृक्ष", reading: "vṛkṣa" }
+          - { word: "वल्कलम्", base: "वल्कल", reading: "valkala" }
+  - id: "sa-5647"
+    target: "मक्षिका"
+    reading: "makṣikā"
+    ipa: "məkʂikaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+    bases:
+      - { word: "मक्षिका", base: "मक्षिका", reading: "makṣikā" }
+    examples:
+      - target: "अस्ति मक्षिका तत्र"
+        reading: "asti makṣikā tatra"
+        ipa: "əst̪i məkʂikaː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मक्षिका", base: "मक्षिका", reading: "makṣikā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति गोशालायां मक्षिका"
+        reading: "asti gośālāyāṃ makṣikā"
+        ipa: "əst̪i ɡoːʃaːlaːjaːm məkʂikaː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गोशालायां", base: "गोशाला", reading: "gośālā" }
+          - { word: "मक्षिका", base: "मक्षिका", reading: "makṣikā" }
+  - id: "sa-5648"
+    target: "खननम्"
+    reading: "khananam"
+    ipa: "kʰənənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "खननम्", base: "खनन", reading: "khanana" }
+    examples:
+      - target: "अस्ति खननं तत्र"
+        reading: "asti khananaṃ tatra"
+        ipa: "əst̪i kʰənənəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "खननं", base: "खनन", reading: "khanana" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति क्षेत्रे खननम्"
+        reading: "asti kṣetre khananam"
+        ipa: "əst̪i kʂeːt̪reː kʰənənəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+          - { word: "खननम्", base: "खनन", reading: "khanana" }
+  - id: "sa-5649"
+    target: "सेकः"
+    reading: "sekaḥ"
+    ipa: "seːkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "सेकः", base: "सेक", reading: "seka" }
+    examples:
+      - target: "अस्ति सेकस् तत्र"
+        reading: "asti sekas tatra"
+        ipa: "əst̪i seːkəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सेकस्", base: "सेक", reading: "seka" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति क्षेत्रे सेकः"
+        reading: "asti kṣetre sekaḥ"
+        ipa: "əst̪i kʂeːt̪reː seːkəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+          - { word: "सेकः", base: "सेक", reading: "seka" }
+  - id: "sa-5650"
+    target: "शष्पम्"
+    reading: "śaṣpam"
+    ipa: "ʃəʂpəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "शष्पम्", base: "शष्प", reading: "śaṣpa" }
+    examples:
+      - target: "अस्ति शष्पं तत्र"
+        reading: "asti śaṣpaṃ tatra"
+        ipa: "əst̪i ʃəʂpəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "शष्पं", base: "शष्प", reading: "śaṣpa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "शष्पं क्षेत्रे"
+        reading: "śaṣpaṃ kṣetre"
+        ipa: "ʃəʂpəm kʂeːt̪reː"
+        bases:
+          - { word: "शष्पं", base: "शष्प", reading: "śaṣpa" }
+          - { word: "क्षेत्रे", base: "क्षेत्र", reading: "kṣetra" }
+  - id: "sa-5651"
+    target: "कुशः"
+    reading: "kuśaḥ"
+    ipa: "kuʃəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["agriculture"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "कुशः", base: "कुश", reading: "kuśa" }
+    examples:
+      - target: "अस्ति कुशस् तत्र"
+        reading: "asti kuśas tatra"
+        ipa: "əst̪i kuʃəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "कुशस्", base: "कुश", reading: "kuśa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति वने कुशः"
+        reading: "asti vane kuśaḥ"
+        ipa: "əst̪i ʋəneː kuʃəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "वने", base: "वन", reading: "vana" }
+          - { word: "कुशः", base: "कुश", reading: "kuśa" }
