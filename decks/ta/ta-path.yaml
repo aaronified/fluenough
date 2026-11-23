@@ -677,7 +677,8 @@ units:
       - { id: "she-said", text: { "en": "Passing on what someone said on the phone" } }
     reading_passages:
       - { id: "message-relay", text: { "en": "A note passing on what a neighbour said" } }
-  - planned: { id: "ta-news", theme: "news", words: 60 }
+  - decks: ["ta-news", "ta-news-sentences", "*"]
+    words: 60
     listening_passages:
       - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
     reading_passages:
