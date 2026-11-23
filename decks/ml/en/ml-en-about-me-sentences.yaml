@@ -1,0 +1,68 @@
+schema: 1
+id: "ml-en-about-me-sentences"
+kind: "layer"
+core: "ml-about-me-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "About me in sentences"
+description: "Short sentences for introducing yourself: your name, your age, your home town, your job, and where you are from. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-3085":
+    native: "What is your name?"
+    notes:
+      n1: "നിന്റെ (ninṟe), your, comes from നീ (nī), you, with the genitive ന്റെ (nṟe); the stem changes to നിന്റ (ninṟa)."
+    confusables:
+      w1: { why: "എവിടെ (eviṭe) asks a place, not a name." }
+      w2: { why: "എത്ര (etra) asks a number." }
+  "ml-3086":
+    native: "My age is twenty."
+    notes:
+      n1: "വയസ്സ് (vayass), age, is said with its number and no verb."
+    confusables:
+      w1: { why: "പത്തൊമ്പത് (pattompat) is nineteen, a different age." }
+      w2: { why: "നാട് (nāṭ) is a home town, not an age." }
+  "ml-3087":
+    native: "Where is your home town?"
+    notes:
+      n1: "നിന്റെ (ninṟe), your, comes from നീ (nī), you, with the genitive ന്റെ (nṟe); the stem changes to നിന്റ (ninṟa)."
+    confusables:
+      w1: { why: "സ്ഥലം (sthalaṁ) is any place, not one's home town." }
+      w2: { why: "ഇവിടെ (iviṭe) is where one is now." }
+  "ml-3088":
+    native: "What is my job?"
+    notes:
+      n1: "എന്റെ (enṟe), my, comes before the thing it belongs to."
+    confusables:
+      w1: { why: "പേര് (pēr) is a name, not a job." }
+      w2: { why: "എത്ര (etra) asks a number." }
+  "ml-3089":
+    native: "How old are you?"
+    notes:
+      n1: "നിന്റെ (ninṟe), your, comes from നീ (nī), you, with the genitive ന്റെ (nṟe); the stem changes to നിന്റ (ninṟa)."
+    confusables:
+      w1: { why: "എപ്പോൾ (eppōḷ) asks when, not how old." }
+      w2: { why: "എങ്ങനെ (eṅṅane) asks how, not how old." }
+  "ml-3090":
+    native: "Come here."
+    notes:
+      n1: "ഇവിടെ (iviṭe), here, comes before the order വരൂ (varū), come."
+    confusables:
+      w1: { why: "അവിടെ (aviṭe) is there, away from the speaker." }
+      w2: { why: "എവിടെ (eviṭe) is a question word, where." }
+  "ml-3091":
+    native: "Mother is here."
+    bases:
+      "ഉണ്ട്": "is"
+    notes:
+      n1: "ഇവിടെ (iviṭe), here, says where the person is, and ഉണ്ട് (uṇṭ) says she is there."
+    confusables:
+      w1: { why: "അച്ഛൻ (acchaṉ) is the other parent, father." }
+      w2: { why: "അവിടെ (aviṭe) is there, not here." }
+  "ml-3092":
+    native: "My home town is here."
+    notes:
+      n1: "നാട് (nāṭ) means home country or home town, here said for where one comes from."
+    confusables:
+      w1: { why: "സ്ഥലം (sthalaṁ) is any place, not one's home town." }
+      w2: { why: "ജോലി (jōli) is a job, not a home town." }

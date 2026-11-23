@@ -1,0 +1,74 @@
+schema: 1
+id: "ml-en-groceries-sentences"
+kind: "layer"
+core: "ml-groceries-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Groceries in sentences"
+description: "Short sentences at the shop: rice, milk, eggs, sugar, soap, coconut, onion, chilli and turmeric, and fruit at home. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-3032":
+    native: "I need uncooked rice."
+    bases:
+      "വേണം": "need"
+    notes:
+      n1: "എനിക്ക് (enikk) is the form of ഞാൻ (ñāṉ) before the dative ending ക്ക് (kk); the stem changes to എന (ena)."
+      n2: "അരി (ari) is rice before cooking; the cooked rice on a plate is ചോറ് (cōṟ)."
+    confusables:
+      w1: { why: "ചോറ് (cōṟ) is cooked rice, not the raw grain." }
+      w2: { why: "ചായ (cāya) is tea, a drink." }
+  "ml-3033":
+    native: "Is there milk?"
+    notes:
+      n1: "ഉണ്ടോ (uṇṭō) asks whether the shop has the thing."
+    confusables:
+      w1: { why: "തൈര് (tair) is curd, a different dairy food." }
+      w2: { why: "മോര് (mōr) is buttermilk, a different drink." }
+  "ml-3034":
+    native: "I need two eggs."
+    bases:
+      "വേണം": "need"
+    notes:
+      n1: "എനിക്ക് (enikk) is the form of ഞാൻ (ñāṉ) before the dative ending ക്ക് (kk); the stem changes to എന (ena)."
+      n2: "A number before a thing leaves the thing in its plain form: മുട്ട (muṭṭa) stays the same after രണ്ട് (raṇṭ)."
+    confusables:
+      w1: { why: "മൂന്ന് (mūnn) is three, a different count." }
+      w2: { why: "വെണ്ണ (veṇṇa) is butter, a different dairy product." }
+  "ml-3035":
+    native: "Is there no sugar?"
+    notes:
+      n1: "ഇല്ലേ (illē) asks as if the answer is expected to be yes."
+    confusables:
+      w1: { why: "ഉപ്പ് (upp) is salt, a different seasoning." }
+      w2: { why: "കുരുമുളക് (kurumuḷak) is black pepper, a different spice." }
+  "ml-3036":
+    native: "Where is the soap?"
+    notes:
+      n1: "സോപ്പ് (sōpp) is not food, so it is found in a different part of the shop."
+    confusables:
+      w1: { why: "റൊട്ടി (ṟoṭṭi) is bread, food and not soap." }
+      w2: { why: "എപ്പോൾ (eppōḷ) asks a time, not a place." }
+  "ml-3037":
+    native: "Bring the coconut."
+    notes:
+      n1: "കൊണ്ടുവരൂ (koṇṭuvarū) is the order to bring, and the thing comes before it."
+    confusables:
+      w1: { why: "ഉള്ളി (uḷḷi) is onion, a different vegetable." }
+      w2: { why: "ഉരുളക്കിഴങ്ങ് (uruḷakkiḻaṅṅ) is potato, a different vegetable." }
+  "ml-3038":
+    native: "Onion, chilli, turmeric."
+    notes:
+      n1: "കുരുമുളക് (kurumuḷak) (black pepper) ends in മുളക് (muḷak), chilli, but it is a different spice."
+    confusables:
+      w1: { why: "തക്കാളി (takkāḷi) is tomato, a different vegetable." }
+      w2: { why: "കുരുമുളക് (kurumuḷak) is black pepper, a different spice." }
+  "ml-3039":
+    native: "There is fruit here."
+    bases:
+      "ഉണ്ട്": "there is"
+    notes:
+      n1: "പഴം (paḻaṁ) is the general word for fruit; one banana is വാഴപ്പഴം (vāḻappaḻaṁ)."
+    confusables:
+      w1: { why: "വാഴപ്പഴം (vāḻappaḻaṁ) is one fruit, a banana." }
+      w2: { why: "മാങ്ങ (māṅṅa) is one fruit, a mango." }

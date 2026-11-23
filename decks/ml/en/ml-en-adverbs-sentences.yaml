@@ -1,0 +1,70 @@
+schema: 1
+id: "ml-en-adverbs-sentences"
+kind: "layer"
+core: "ml-adverbs-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adverbs in sentences"
+description: "Short sentences with adverbs: always, sometimes, well, quickly, slowly, still, alone and together. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-3064":
+    native: "Always drink water."
+    notes:
+      n1: "എപ്പോഴും (eppōḻuṁ), always, comes before the verb."
+    confusables:
+      w1: { why: "ഒരിക്കലും (orikkaluṁ) is never, the opposite." }
+      w2: { why: "പലപ്പോഴും (palappōḻuṁ) is often, less than always." }
+  "ml-3065":
+    native: "Sit comfortably."
+    notes:
+      n1: "നന്നായി (nannāyi), well, says how one does the action: here, sit comfortably."
+    confusables:
+      w1: { why: "മോശമായി (mōśamāyi) is badly, the opposite." }
+      w2: { why: "വേഗം (vēgaṁ) is quickly, about speed and not comfort." }
+  "ml-3066":
+    native: "Come quickly."
+    notes:
+      n1: "വേഗം (vēgaṁ) says how to come, and the order comes after it."
+    confusables:
+      w1: { why: "സാവധാനം (sāvadhānaṁ) is slowly, the opposite." }
+      w2: { why: "ഉടനെ (uṭane) is at once, about the time and not the speed." }
+  "ml-3067":
+    native: "Eat slowly."
+    notes:
+      n1: "സാവധാനം (sāvadhānaṁ), slowly, comes before the order കഴിക്കൂ (kaḻikkū), eat."
+    confusables:
+      w1: { why: "വേഗം (vēgaṁ) is quickly, the opposite." }
+      w2: { why: "നന്നായി (nannāyi) is well, a different adverb." }
+  "ml-3068":
+    native: "Father comes sometimes."
+    bases:
+      "വരുന്നു": "comes"
+    notes:
+      n1: "ഇടയ്ക്ക് (iṭaykk), sometimes, comes before the verb വരുന്നു (varunnu), comes."
+    confusables:
+      w1: { why: "പലപ്പോഴും (palappōḻuṁ) is often, more than sometimes." }
+      w2: { why: "എപ്പോഴും (eppōḻuṁ) is always, the opposite." }
+  "ml-3069":
+    native: "There is still water."
+    bases:
+      "ഉണ്ട്": "there is"
+    notes:
+      n1: "ഇപ്പോഴും (ippōḻuṁ), still, comes first and means it has not changed."
+    confusables:
+      w1: { why: "ഇതിനകം (itinakaṁ) is already, about something done." }
+      w2: { why: "വീണ്ടും (vīṇṭuṁ) is again, about a repeat." }
+  "ml-3070":
+    native: "Sit alone."
+    notes:
+      n1: "ഒറ്റയ്ക്ക് (oṟṟaykk), alone, says who sits: nobody else."
+    confusables:
+      w1: { why: "ഒരുമിച്ച് (orumicc) is together, the opposite." }
+      w2: { why: "മാത്രം (mātraṁ) is only, a different word." }
+  "ml-3071":
+    native: "Come together."
+    notes:
+      n1: "ഒരുമിച്ച് (orumicc), together, says the people come as one group."
+    confusables:
+      w1: { why: "ഒറ്റയ്ക്ക് (oṟṟaykk) is alone, the opposite." }
+      w2: { why: "എന്നും (ennuṁ) is every day, about time." }

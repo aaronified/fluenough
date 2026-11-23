@@ -1,0 +1,68 @@
+schema: 1
+id: "ml-en-location-sentences"
+kind: "layer"
+core: "ml-location-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places and positions in sentences"
+description: "Short sentences about where things are: inside, outside, near, far, in the middle, in the corner, and where to sit and stand. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-3000":
+    native: "There is water inside."
+    bases:
+      "ഉണ്ട്": "there is"
+    notes:
+      n1: "The place അകത്ത് (akatt) comes first and the verb ഉണ്ട് (uṇṭ) ends the sentence."
+    confusables:
+      w1: { why: "പുറത്ത് (puṟatt) is the opposite place, outside." }
+      w2: { why: "മുകളിൽ (mukaḷil) is a place above, not inside." }
+  "ml-3001":
+    native: "The house is near."
+    notes:
+      n1: "അടുത്ത് (aṭutt) takes ആണ് (āṇ) as a suffix and runs on: അടുത്താണ് (aṭuttāṇ), is near."
+    confusables:
+      w1: { why: "അകലെ (akale) is the opposite: far." }
+      w2: { why: "ഇവിടെ (iviṭe) is a place here, not a distance." }
+  "ml-3002":
+    native: "Sit there."
+    notes:
+      n1: "അവിടെ (aviṭe) is the place away from the speaker, and it comes before the order ഇരിക്കൂ (irikkū)."
+    confusables:
+      w1: { why: "ഇവിടെ (iviṭe) is the place near the speaker." }
+      w2: { why: "താഴെ (tāḻe) is under or down, another place." }
+  "ml-3003":
+    native: "Go outside."
+    notes:
+      n1: "പോകൂ (pōkū) is the order, and പുറത്ത് (puṟatt) says where to go."
+    confusables:
+      w1: { why: "അകത്ത് (akatt) is the opposite place, inside." }
+      w2: { why: "കഴിക്കൂ (kaḻikkū) is a different verb, to eat." }
+  "ml-3004":
+    native: "Look in front."
+    notes:
+      n1: "The place മുന്നിൽ (munnil) comes before the order നോക്കൂ (nōkkū)."
+    confusables:
+      w1: { why: "പിന്നിൽ (pinnil) is the opposite place, behind." }
+      w2: { why: "എതിരെ (etire) is opposite, another place." }
+  "ml-3005":
+    native: "Sit in the corner."
+    notes:
+      n1: "A place in a room, കോണിൽ (kōṇil), comes before the order."
+    confusables:
+      w1: { why: "നടുവിൽ (naṭuvil) is the middle, not a corner." }
+      w2: { why: "വശത്ത് (vaśatt) is at the side, not in the corner." }
+  "ml-3006":
+    native: "Stand in the middle."
+    notes:
+      n1: "നടുവിൽ (naṭuvil) says the middle of a room or a line; നിൽക്കൂ (nilkkū) is the order to stand."
+    confusables:
+      w1: { why: "കോണിൽ (kōṇil) is the corner, not the middle." }
+      w2: { why: "ഇടയിൽ (iṭayil) is between two things." }
+  "ml-3007":
+    native: "Come down."
+    notes:
+      n1: "താഴെ (tāḻe) means down or below, and it comes before the order വരൂ (varū)."
+    confusables:
+      w1: { why: "മുകളിൽ (mukaḷil) is the opposite: above." }
+      w2: { why: "പോകൂ (pōkū) is a different verb, to go." }

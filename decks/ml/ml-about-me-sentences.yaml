@@ -1,0 +1,88 @@
+schema: 1
+id: "ml-about-me-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-3085"
+    target: "നിന്റെ പേര് എന്ത്?"
+    reading: "ninṟe pēr ent?"
+    ipa: "nint̪ɾe peːɾ ent̪"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "നിന്റെ", ref: "ml-0104" }, { word: "പേര്", ref: "ml-0042" }, { word: "എന്ത്", ref: "ml-0032" }]
+    confusables:
+      - { id: "w1", ref: "ml-0033", kind: "word" }
+      - { id: "w2", ref: "ml-0038", kind: "word" }
+  - id: "ml-3086"
+    target: "എന്റെ വയസ്സ് ഇരുപത്."
+    reading: "enṟe vayass irupat."
+    ipa: "ent̪ɾe ʋəjass iɾupat̪"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "വയസ്സ്", ref: "ml-0044" }, { word: "ഇരുപത്", ref: "ml-0067" }]
+    confusables:
+      - { id: "w1", ref: "ml-0066", kind: "word" }
+      - { id: "w2", ref: "ml-0045", kind: "word" }
+  - id: "ml-3087"
+    target: "നിന്റെ നാട് എവിടെ?"
+    reading: "ninṟe nāṭ eviṭe?"
+    ipa: "nint̪ɾe naːʈ eʋiʈe"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "നിന്റെ", ref: "ml-0104" }, { word: "നാട്", ref: "ml-0045" }, { word: "എവിടെ", ref: "ml-0033" }]
+    confusables:
+      - { id: "w1", ref: "ml-0047", kind: "word" }
+      - { id: "w2", ref: "ml-0048", kind: "word" }
+  - id: "ml-3088"
+    target: "എന്റെ ജോലി എന്ത്?"
+    reading: "enṟe jōli ent?"
+    ipa: "ent̪ɾe dʒoːli ent̪"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "ജോലി", ref: "ml-0046" }, { word: "എന്ത്", ref: "ml-0032" }]
+    confusables:
+      - { id: "w1", ref: "ml-0042", kind: "word" }
+      - { id: "w2", ref: "ml-0038", kind: "word" }
+  - id: "ml-3089"
+    target: "നിന്റെ വയസ്സ് എത്ര?"
+    reading: "ninṟe vayass etra?"
+    ipa: "nint̪ɾe ʋəjass et̪ɾa"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "നിന്റെ", ref: "ml-0104" }, { word: "വയസ്സ്", ref: "ml-0044" }, { word: "എത്ര", ref: "ml-0038" }]
+    confusables:
+      - { id: "w1", ref: "ml-0034", kind: "word" }
+      - { id: "w2", ref: "ml-0036", kind: "word" }
+  - id: "ml-3090"
+    target: "ഇവിടെ വരൂ."
+    reading: "iviṭe varū."
+    ipa: "iʋiʈe ʋəɾuː"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "ഇവിടെ", ref: "ml-0048" }, { word: "വരൂ", ref: "ml-0010" }]
+    confusables:
+      - { id: "w1", ref: "ml-0149", kind: "word" }
+      - { id: "w2", ref: "ml-0033", kind: "word" }
+  - id: "ml-3091"
+    target: "അമ്മ ഇവിടെ ഉണ്ട്."
+    reading: "amma iviṭe uṇṭ."
+    ipa: "əmma iʋiʈe uɳʈ"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "അമ്മ", ref: "ml-0071" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+    confusables:
+      - { id: "w1", ref: "ml-0070", kind: "word" }
+      - { id: "w2", ref: "ml-0149", kind: "word" }
+  - id: "ml-3092"
+    target: "എന്റെ നാട് ഇവിടെ."
+    reading: "enṟe nāṭ iviṭe."
+    ipa: "ent̪ɾe naːʈ iʋiʈe"
+    pos: "phrase"
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "നാട്", ref: "ml-0045" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+    confusables:
+      - { id: "w1", ref: "ml-0047", kind: "word" }
+      - { id: "w2", ref: "ml-0046", kind: "word" }

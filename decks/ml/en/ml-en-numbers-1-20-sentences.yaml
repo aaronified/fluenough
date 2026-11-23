@@ -1,0 +1,47 @@
+schema: 1
+id: "ml-en-numbers-1-20-sentences"
+kind: "layer"
+core: "ml-numbers-1-20-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Numbers one to twenty in sentences"
+description: "Short sentences with the numbers from one to twenty: counting, and how many houses there are. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-3080":
+    native: "There are two houses."
+    bases:
+      "ഉണ്ട്": "there is"
+    notes:
+      n1: "A number stands before the thing counted: രണ്ട് (raṇṭ), two, comes before വീട് (vīṭ), house, and ഉണ്ട് (uṇṭ) ends the sentence."
+    confusables:
+      w1: { why: "മൂന്ന് (mūnn) is three, a different count." }
+      w2: { why: "ഒന്ന് (onn) is one, a different count." }
+  "ml-3081":
+    native: "One, two, three."
+    notes:
+      n1: "A counting list has no verb: the numbers are said in order."
+    confusables:
+      w1: { why: "നാല് (nāl) is four, next in the count." }
+      w2: { why: "പത്ത് (patt) is ten, much later in the count." }
+  "ml-3082":
+    native: "Ten, nine, eight."
+    notes:
+      n1: "Counting down, the numbers are said in reverse order."
+    confusables:
+      w1: { why: "ഏഴ് (ēḻ) is seven, next when counting down." }
+      w2: { why: "പതിനൊന്ന് (patinonn) is eleven, before ten." }
+  "ml-3083":
+    native: "Five, six, seven."
+    notes:
+      n1: "A counting list has no verb: the numbers are said in order."
+    confusables:
+      w1: { why: "എട്ട് (eṭṭ) is eight, next in the count." }
+      w2: { why: "നാല് (nāl) is four, before five." }
+  "ml-3084":
+    native: "Eighteen, nineteen, twenty."
+    notes:
+      n1: "The count ends at twenty, ഇരുപത് (irupat), which is the highest number in this unit."
+    confusables:
+      w1: { why: "പതിനേഴ് (patinēḻ) is seventeen, before eighteen." }
+      w2: { why: "പത്ത് (patt) is ten, much lower." }
