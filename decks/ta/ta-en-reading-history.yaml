@@ -1,0 +1,54 @@
+schema: 1
+id: "ta-en-reading-history"
+name: "Tamil reading: history"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short museum card, using the words of history. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-museum-card"
+    title: "A museum card"
+    sentences:
+      - text: "இது ஒரு பழைய நாணயம்."
+        reading: "itu oru paḻaiya nāṇayam."
+        ipa: "it̪u oɾu paɻaija naːɳajam"
+      - text: "இதில் ஒரு ராஜா படம் இருக்கிறது."
+        reading: "itil oru rājā paṭam irukkiṟatu."
+        ipa: "it̪il oɾu ɾaːdʒaː paʈam iɾukkirat̪u"
+      - text: "இங்கே கல்வெட்டும் வாளும் உண்டு."
+        reading: "iṅkē kalveṭṭum vāḷum uṇṭu."
+        ipa: "iŋkeː kalʋeʈʈum ʋaːɭum uɳʈu"
+      - text: "நாணயத்தைத் தொட வேண்டாம்."
+        reading: "nāṇayattait toṭa vēṇṭām."
+        ipa: "naːɳajat̪t̪ait̪ t̪oʈa ʋeːɳʈaːm"
+      - text: "புகைப்படம் எடுக்கலாம்."
+        reading: "pukaippaṭam eṭukkalām."
+        ipa: "pukaippaʈam eʈukkalaːm"
+    questions:
+      - id: "ta-5246"
+        prompt: { "en": "What does the first line say the object is?" }
+        options:
+          - { "en": "An old coin" }
+          - { "en": "A sword" }
+          - { "en": "A palm-leaf manuscript" }
+        answer: 1
+      - id: "ta-5247"
+        prompt: { "en": "What is shown on it?" }
+        options:
+          - { "en": "A picture of a king" }
+          - { "en": "A tower" }
+          - { "en": "A ship" }
+        answer: 1
+      - id: "ta-5248"
+        prompt: { "en": "May visitors touch it?" }
+        options:
+          - { "en": "No" }
+          - { "en": "Yes" }
+          - { "en": "Only children may" }
+        answer: 1
+      - id: "ta-5249"
+        prompt: { "en": "Photographs are allowed." }
+        answer: true

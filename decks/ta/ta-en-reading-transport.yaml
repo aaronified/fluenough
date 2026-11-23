@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-transport"
+name: "Reading: a transport board"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short board of transport: when the bus and the train go, and what there is not. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-bus-board"
+    title: "A bus board"
+    sentences:
+      - text: "பேருந்து காலை மணி ஆறு."
+        reading: "pēruntu kālai maṇi āṟu."
+        ipa: "peːɾunt̪u kaːlai maɳi aːru"
+      - text: "ரயில் மாலை மணி எட்டு."
+        reading: "rayil mālai maṇi eṭṭu."
+        ipa: "ɾajil maːlai maɳi eʈʈu"
+      - text: "ஆட்டோ இருக்கிறது."
+        reading: "āṭṭō irukkiṟatu."
+        ipa: "aːʈʈoː iɾukkirat̪u"
+      - text: "டாக்சி இல்லை."
+        reading: "ṭākci illai."
+        ipa: "ʈaːktʃi illai"
+    questions:
+      - id: "ta-9753"
+        prompt: { en: "When does the bus go?" }
+        options:
+          - { en: "At six in the morning" }
+          - { en: "At six in the evening" }
+          - { en: "At eight at night" }
+        answer: 1
+      - id: "ta-9754"
+        prompt: { en: "Which one is not there?" }
+        options:
+          - { en: "The auto" }
+          - { en: "The taxi" }
+          - { en: "The train" }
+        answer: 2
+      - id: "ta-9755"
+        prompt: { en: "The train goes in the evening." }
+        answer: true

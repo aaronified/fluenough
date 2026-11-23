@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-verbs-3"
+name: "Reading: a diary entry"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short diary entry in the past tense, using the verbs taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-diary-entry"
+    title: "A diary entry"
+    sentences:
+      - text: "இன்று காலை நான் ஆறு மணிக்கு விழித்தேன்."
+        reading: "iṉṟu kālai nāṉ āṟu maṇikku viḻittēṉ."
+        ipa: "inru kaːlai naːn aːru maɳikku ʋiɻit̪t̪eːn"
+      - text: "அம்மா சமைத்தார்."
+        reading: "ammā camaittār."
+        ipa: "ammaː samait̪t̪aːɾ"
+      - text: "மாலையில் நண்பனைச் சந்தித்தேன்."
+        reading: "mālaiyil naṇpaṉaic cantittēṉ."
+        ipa: "maːlaijil naɳpanais sant̪it̪t̪eːn"
+      - text: "நாங்கள் பூங்காவுக்குப் போனோம்."
+        reading: "nāṅkaḷ pūṅkāvukkup pōṉōm."
+        ipa: "naːŋkaɭ puːŋkaːʋukkup poːnoːm"
+    questions:
+      - id: "ta-9938"
+        prompt: { en: "Whom did the writer meet in the evening?" }
+        options:
+          - { en: "A friend" }
+          - { en: "A teacher" }
+          - { en: "A doctor" }
+        answer: 1
+      - id: "ta-9939"
+        prompt: { en: "Where did they go?" }
+        options:
+          - { en: "To the park" }
+          - { en: "To the market" }
+          - { en: "To the temple" }
+        answer: 1
+      - id: "ta-9940"
+        prompt: { en: "The writer's mother cooked." }
+        answer: true

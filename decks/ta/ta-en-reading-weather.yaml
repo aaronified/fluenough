@@ -1,0 +1,47 @@
+schema: 1
+id: "ta-en-reading-weather"
+name: "Reading: a weather message"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short message about the weather, using the weather words taught up to this unit. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-weather-message"
+    title: "A message about the weather"
+    sentences:
+      - text: "இன்று மேகமூட்டம்."
+        reading: "iṉṟu mēkamūṭṭam."
+        ipa: "inru meːkamuːʈʈam"
+      - text: "நாளை காலை மழை பெய்யும்."
+        reading: "nāḷai kālai maḻai peyyum."
+        ipa: "naːɭai kaːlai maɻai pejjum"
+      - text: "மாலையில் வெயில்."
+        reading: "mālaiyil veyil."
+        ipa: "maːlaijil ʋejil"
+      - text: "இரவில் ரொம்ப குளிர்."
+        reading: "iravil rompa kuḷir."
+        ipa: "iɾaʋil ɾompa kuɭiɾ"
+      - text: "குடை எடுத்துப் போ."
+        reading: "kuṭai eṭuttup pō."
+        ipa: "kuʈai eʈut̪t̪up poː"
+    questions:
+      - id: "ta-9903"
+        prompt: { en: "When will it rain?" }
+        options:
+          - { en: "Tomorrow morning" }
+          - { en: "Tomorrow evening" }
+          - { en: "Tomorrow night" }
+        answer: 1
+      - id: "ta-9904"
+        prompt: { en: "What should you take with you?" }
+        options:
+          - { en: "A coat" }
+          - { en: "An umbrella" }
+          - { en: "A hat" }
+        answer: 2
+      - id: "ta-9905"
+        prompt: { en: "It is very cold at night." }
+        answer: true

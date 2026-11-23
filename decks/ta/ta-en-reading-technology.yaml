@@ -1,0 +1,51 @@
+schema: 1
+id: "ta-en-reading-technology"
+name: "Tamil reading: technology"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short set of app instructions, using the words of technology. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "ta-app-instructions"
+    title: "How to use the app"
+    sentences:
+      - text: "ஆப்பைப் பதிவிறக்கம் செய்யுங்கள்."
+        reading: "āppaip pativiṟakkam ceyyuṅkaḷ."
+        ipa: "aːppaip pat̪iʋirakkam sejjuŋkaɭ"
+      - text: "உங்கள் பெயருடன் உள்நுழையுங்கள்."
+        reading: "uṅkaḷ peyaruṭaṉ uḷnuḻaiyuṅkaḷ."
+        ipa: "uŋkaɭ pejaɾuʈan uɭnuɻaijuŋkaɭ"
+      - text: "பிழை வந்தால் மறுதொடக்கம் செய்யுங்கள்."
+        reading: "piḻai vantāl maṟutoṭakkam ceyyuṅkaḷ."
+        ipa: "piɻai ʋant̪aːl marut̪oʈakkam sejjuŋkaɭ"
+      - text: "புதுப்பிப்பு வந்தால் சொடுக்குங்கள்."
+        reading: "putuppippu vantāl coṭukkuṅkaḷ."
+        ipa: "put̪uppippu ʋant̪aːl soʈukkuŋkaɭ"
+      - text: "தனியுரிமை முக்கியம்."
+        reading: "taṉiyurimai mukkiyam."
+        ipa: "t̪anijuɾimai mukkijam"
+    questions:
+      - id: "ta-5226"
+        prompt: { "en": "What should you do first?" }
+        options:
+          - { "en": "Download the app" }
+          - { "en": "Restart the phone" }
+          - { "en": "Click an update" }
+        answer: 1
+      - id: "ta-5227"
+        prompt: { "en": "What should you do if an error comes?" }
+        options:
+          - { "en": "Restart" }
+          - { "en": "Log in again" }
+          - { "en": "Download a video" }
+        answer: 1
+      - id: "ta-5228"
+        prompt: { "en": "What should you click when an update comes?" }
+        options:
+          - { "en": "The update" }
+          - { "en": "The screenshot" }
+          - { "en": "The folder" }
+        answer: 1

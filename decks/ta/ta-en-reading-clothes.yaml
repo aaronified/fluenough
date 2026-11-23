@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-clothes"
+name: "Reading: a clothes shop sign"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short shop sign listing clothes by colour, and one thing that is not there. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-shop-sign"
+    title: "A shop sign"
+    sentences:
+      - text: "சிவப்பு புடவை."
+        reading: "civappu puṭavai."
+        ipa: "siʋappu puʈaʋai"
+      - text: "பச்சை சட்டை."
+        reading: "paccai caṭṭai."
+        ipa: "patʃtʃai saʈʈai"
+      - text: "வெள்ளை தொப்பி."
+        reading: "veḷḷai toppi."
+        ipa: "ʋeɭɭai t̪oppi"
+      - text: "செருப்பு இல்லை."
+        reading: "ceruppu illai."
+        ipa: "seɾuppu illai"
+    questions:
+      - id: "ta-9768"
+        prompt: { en: "What colour is the hat?" }
+        options:
+          - { en: "Red" }
+          - { en: "White" }
+          - { en: "Green" }
+        answer: 2
+      - id: "ta-9769"
+        prompt: { en: "What is not in the shop?" }
+        options:
+          - { en: "Sandals" }
+          - { en: "Hats" }
+          - { en: "Shirts" }
+        answer: 1
+      - id: "ta-9770"
+        prompt: { en: "The shirt is green." }
+        answer: true

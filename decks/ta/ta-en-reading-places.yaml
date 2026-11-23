@@ -1,0 +1,44 @@
+schema: 1
+id: "ta-en-reading-places"
+name: "Reading: map labels"
+kind: "reading"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "Four short labels on a map of a town: what is big, what is near and which way things lie. Not yet checked by a Tamil speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "ta-map-labels"
+    title: "Map labels"
+    sentences:
+      - text: "பள்ளி பெரியது."
+        reading: "paḷḷi periyatu."
+        ipa: "paɭɭi peɾijat̪u"
+      - text: "வங்கி அருகில் பூங்கா இருக்கிறது."
+        reading: "vaṅki arukil pūṅkā irukkiṟatu."
+        ipa: "ʋaŋki aɾukil puːŋkaː iɾukkirat̪u"
+      - text: "கோயில் வடக்கு."
+        reading: "kōyil vaṭakku."
+        ipa: "koːjil ʋaʈakku"
+      - text: "மருத்துவமனை தெற்கு."
+        reading: "maruttuvamaṉai teṟku."
+        ipa: "maɾut̪t̪uʋamanai t̪erku"
+    questions:
+      - id: "ta-9759"
+        prompt: { en: "What is near the bank?" }
+        options:
+          - { en: "The school" }
+          - { en: "The park" }
+          - { en: "The hospital" }
+        answer: 2
+      - id: "ta-9760"
+        prompt: { en: "Which place lies to the north?" }
+        options:
+          - { en: "The temple" }
+          - { en: "The hospital" }
+          - { en: "The school" }
+        answer: 1
+      - id: "ta-9761"
+        prompt: { en: "The hospital lies to the south." }
+        answer: true
