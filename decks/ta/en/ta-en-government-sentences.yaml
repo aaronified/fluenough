@@ -1,0 +1,95 @@
+schema: 1
+id: "ta-en-government-sentences"
+kind: "layer"
+core: "ta-government-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Government in sentences"
+description: "Sentences about government offices, documents, rights and rules, with no claim about any real law or official. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-9060":
+    native: "This is a government office."
+    bases:
+      "அரசாங்க": "government (before a noun); from அரசாங்கம் (aracāṅkam), government"
+    confusables:
+      w1: { why: "துறை (tuṟai), department; field, is a different word." }
+      w2: { why: "காவல்நிலையம் (kāvalnilaiyam), police station, is a different word." }
+      w3: { why: "நகராட்சி (nakarāṭci), municipality; town council, is a different word." }
+  "ta-9061":
+    native: "I am applying for a new licence."
+    bases:
+      "உரிமத்துக்கு": "to the licence; for the licence; from உரிமம் (urimam), licence; permit"
+      "விண்ணப்பிக்கிறேன்": "am applying; from விண்ணப்பி (viṇṇappi), to apply"
+    confusables:
+      w1: { why: "உத்தரவு (uttaravu), order; command; permission, is a different word." }
+      w2: { why: "மனு (maṉu), petition; application, is a different word." }
+      w3: { why: "நோட்டீஸ் (nōṭṭīs), notice, is a different word." }
+  "ta-9062":
+    native: "Please sign this form."
+    bases:
+      "இந்தப்": "this (before a word starting with p); from இந்த (inta), this"
+      "படிவத்தில்": "in the form; from படிவம் (paṭivam), form"
+      "போடுங்கள்": "please put; from போடு (pōṭu), to put; to throw"
+    confusables:
+      w1: { why: "செயலாளர் (ceyalāḷar), secretary, is a different word." }
+      w2: { why: "எழுத்தர் (eḻuttar), clerk, is a different word." }
+  "ta-9063":
+    native: "I need a birth certificate."
+    bases:
+      "எனக்குப்": "to me; for me; from நான் (nāṉ), I; me"
+    confusables:
+      w1: { why: "வருமானவரி (varumāṉavari), income tax, is a different word." }
+      w2: { why: "அடையாளம் (aṭaiyāḷam), identity; mark; sign, is a different word." }
+  "ta-9064":
+    native: "This is against the law."
+    bases:
+      "சட்டத்துக்கு": "to the law; for the law; from சட்டம் (caṭṭam), law; rule"
+      "எதிரானது": "is against; from எதிர் (etir), opposite; against"
+    confusables:
+      w1: { why: "நீதிபதி (nītipati), judge, is a different word." }
+      w2: { why: "தண்டனை (taṇṭaṉai), punishment; sentence, is a different word." }
+      w3: { why: "அபராதம் (aparātam), fine; penalty, is a different word." }
+  "ta-9065":
+    native: "All people have rights."
+    bases:
+      "எல்லா": "all; every"
+      "மக்களுக்கும்": "to the people; for the people; from மக்கள் (makkaḷ), people"
+      "உண்டு": "there is; has"
+    confusables:
+      w1: { why: "கடமை (kaṭamai), duty, is a different word." }
+      w2: { why: "குடியுரிமை (kuṭiyurimai), citizenship, is a different word." }
+      w3: { why: "பொறுப்பு (poṟuppu), responsibility; charge, is a different word." }
+  "ta-9066":
+    native: "Polling at the booth today."
+    bases:
+      "வாக்குச்சாவடியில்": "in the polling booth; from வாக்குச்சாவடி (vākkuccāvaṭi), polling booth"
+    confusables:
+      w1: { why: "வாக்காளர் (vākkāḷar), voter, is a different word." }
+      w2: { why: "ஜனநாயகம் (jaṉanāyakam), democracy, is a different word." }
+  "ta-9067":
+    native: "The government enforces the law."
+    bases:
+      "அரசு": "government; state; kingdom"
+      "சட்டத்தை": "the law; from சட்டம் (caṭṭam), law; rule"
+      "அமல்படுத்துகிறது": "is enforcing; from அமல்படுத்து (amalpaṭuttu), to enforce; to put into effect"
+    confusables:
+      w1: { why: "நிறைவேற்று (niṟaivēṟṟu), to carry out; to fulfil, is a different word." }
+      w2: { why: "நியமி (niyami), to appoint, is a different word." }
+  "ta-9068":
+    native: "The government gives farmers a subsidy."
+    bases:
+      "அரசு": "government; state; kingdom"
+      "விவசாயிகளுக்கு": "to the farmer; for the farmer; from விவசாயி (vivacāyi), farmer"
+      "கொடுக்கிறது": "is giving; from கொடு (koṭu), to give"
+    confusables:
+      w1: { why: "நிதி (niti), fund; finance, is a different word." }
+      w2: { why: "ஓய்வூதியம் (ōyvūtiyam), pension, is a different word." }
+  "ta-9069":
+    native: "I need an explanation."
+    bases:
+      "எனக்கு": "to me; for me; from நான் (nāṉ), I; me"
+    confusables:
+      w1: { why: "நடைமுறை (naṭaimuṟai), procedure; practice, is a different word." }
+      w2: { why: "நடவடிக்கை (naṭavaṭikkai), action; step; measure, is a different word." }
+      w3: { why: "கொள்கை (koḷkai), policy; principle, is a different word." }
