@@ -427,7 +427,8 @@ units:
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences. ta-grammar-negative follows the first unit.
-  - planned: { id: "ta-daily-life", theme: "daily-life", words: 8 }
+  - decks: ["ta-daily-life", "ta-daily-life-sentences", "*"]
+    words: 8
     listening_passages:
       - { id: "a-day", text: { "en": "Someone tells their day, and what they do not do" } }
     reading_passages:
