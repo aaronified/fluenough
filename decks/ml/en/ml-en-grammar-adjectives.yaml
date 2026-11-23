@@ -1,0 +1,25 @@
+schema: 1
+id: "ml-en-grammar-adjectives"
+kind: "layer"
+core: "ml-grammar-adjectives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adjectives: before a noun, and on their own"
+description: "The describing words of the course, before a noun and as the one or the ones that are so. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Adjective forms"
+  slot_name: "form"
+  slots:
+    "before-noun": "before a noun"
+    "one": "the one that is … (-ത് (-t))"
+    "ones": "the ones that are … (-വ (-va))"
+  entries:
+    "nalla": "good"
+    "valiya": "big"
+    "ceriya": "small"
+    "putiya": "new"
+    "pazhaya": "old"
+    "cuduulla": "hot"
+    "thanutta": "cold"
+  notes: "A Malayalam adjective comes before the noun and never changes for gender or number: വലിയ വീട് (valiya vīṭ), a big house, and വലിയ വീടുകൾ (valiya vīṭukaḷ), big houses. To name the thing itself, add -ത് (-t) for one thing: പുതിയത് (putiyat), the new one; for several things, -വ (-va): പുതിയവ (putiyava), the new ones. For a person it is -വൻ (-van), he, and -വൾ (-vaḷ), she, as നല്ലവൻ (nallavaṉ) and നല്ലവൾ (nallavaḷ). Source: English Wikipedia, Malayalam grammar (adjectives); the path of this course (the nouns made from a describing word)."

@@ -19,3 +19,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ml-grammar-al | Are the -ആൽ (-āl) forms (പേനയാൽ, കൈയാൽ, കത്തിയാൽ) used at all in speech, or only in writing, and is കൊണ്ട് (koṇṭ) after the plain noun right? | Sonnet builder | 2026-11-23 |
 | unit-level | ml-grammar-questions | The question forms (വരുമോ, ആണോ, ഉണ്ടോ, വേണോ, വരുന്നില്ലേ) follow English Wiktionary's entry for -ഓ (-ō); is ചായ വേണോ (cāya vēṇō) the usual spoken form of ചായ വേണമോ? | Sonnet builder | 2026-11-23 |
 | unit-level | ml-grammar-sentences | Does a thing that is acted on, such as വാതിൽ (vātil), stay without an ending in speech, while a person takes -എ (-e), as in അമ്മയെ (ammaye)? | Sonnet builder | 2026-11-23 |
+| ml-0766 | ml-grammar-gender-number | Which gender (m, f or n) fits ആൾ (āḷ), a person of either sex, and is ആളുകൾ (āḷukaḷ) its usual plural? | Sonnet builder | 2026-11-23 |
+| ml-0765 | ml-grammar-gender-number | Is മനുഷ്യൻ (manuṣyaṉ) masculine for grammar, and is the plural മനുഷ്യർ (manuṣyar) the one to teach, not മനുഷ്യന്മാർ? | Sonnet builder | 2026-11-23 |
+| unit-level | ml-grammar-adjectives | The nouns made from describing words (വലുത്, ചെറുത്, പുതിയത്, നല്ലവ) were checked only by how often they occur on Malayalam Wikipedia; are they right, and is ചൂടുള്ളവ (cūṭuḷḷava) a real plural? | Sonnet builder | 2026-11-23 |

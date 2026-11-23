@@ -411,7 +411,9 @@ units:
     reading_passages:
       - { id: "route-note", text: { "en": "A note on how to reach a house: past, behind and near" } }
   # ml-grammar-adjectives and ml-grammar-articles join this unit.
-  - planned: { id: "ml-grammar-gender-number", grammar: ["articles", "gender-number", "adjectives"], words: 10 }
+  - decks: ["ml-grammar-gender-number", "ml-grammar-adjectives", "ml-grammar-articles"]
+    words: 10
+    grammar: ["articles", "gender-number", "adjectives"]
     listening_passages:
       - { id: "he-she-it", text: { "en": "Talking about a man, a woman and a thing: the pronoun changes, the verb does not" } }
     reading_passages:
