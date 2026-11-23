@@ -152,7 +152,7 @@ Owner (2026-11-13): "Deck work issues to be updated with the full deck format as
 | Kashmiri | ks | #1173 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
 | Konkani | kok | #1174 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
 | Maithili | mai | #1175 | third list and others (first words only) | no ranked priority | path of 121 units, 1 built; 3 core files |
-| Malayalam | ml | #355 | second list (to A1; Classical Sanskrit to B1) | second-list position 2 | path of 118 units, 1 built; 3 core files |
+| Malayalam | ml | #355 | second list (to A1; Classical Sanskrit to B1) | second-list position 2 | **A1 mark built (2026-11-23)**: path units 1 to 46 built, 952 cards, narrow IPA on 947; B1 and genre decks not started; see [Deck-Work-Queue-ML](Deck-Work-Queue-ML.md) |
 | Manipuri | mni | #1176 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
 | Marathi | mr | #1177 | first list (to B1) | deck priority 4 of the first list, culture priority 5 of 8 | path of 116 units, all built; 180 core decks; 72 sentence and 72 reading decks added 2026-11-16; professional decks built (6 hidden, 54 cards); situations complete (26 new phrase cards); phonetic on 2,949 of 2,949 core cards; culture 1-4 (72 cards), proverbs, multi-word, recommendations, and notes done to the extent of verified sources; audit and plan in [Deck-Work-Queue-MR](Deck-Work-Queue-MR.md) |
 | Nepali | ne | #353 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
