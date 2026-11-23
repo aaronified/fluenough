@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.12.2] - 2026-11-23
+
 - **Faster start.** The app opens straight to your language and loads the others when you pick them.
 
 ## [0.12.1] - 2026-11-22
