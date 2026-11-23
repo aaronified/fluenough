@@ -1,0 +1,438 @@
+schema: 1
+id: "ml-en-body"
+kind: "layer"
+core: "ml-body"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Body"
+description: "Parts of the body: head, face, eyes, ears, nose, mouth, teeth, tongue, neck, shoulder, hand, finger, nail, chest, stomach, back, leg, knee, foot, hair, skin, blood and bone; and the words for pain, fever, cough, cold, medicine, sleep and breath. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0307":
+    native: "head"
+    notes:
+      n1: "head"
+    examples:
+      "എനിക്ക് തല വേദനിക്കുന്നു.":
+        native: "I have a headache."
+        bases:
+          "തല": "head"
+          "വേദനിക്കുന്നു": "hurts"
+      "തല കഴുകൂ.":
+        native: "Wash your head."
+        bases:
+          "തല": "head"
+  "ml-0308":
+    native: "face"
+    notes:
+      n1: "face"
+    examples:
+      "മുഖം കഴുകൂ.":
+        native: "Wash your face."
+        bases:
+          "മുഖം": "face"
+      "എന്റെ മുഖം ഇതാണ്.":
+        native: "This is my face."
+        bases:
+          "മുഖം": "face"
+          "ഇതാണ്": "this is"
+  "ml-0309":
+    native: "eye"
+    notes:
+      n1: "eye"
+    examples:
+      "കണ്ണ് വേദനിക്കുന്നു.":
+        native: "My eye hurts."
+        bases:
+          "കണ്ണ്": "eye"
+          "വേദനിക്കുന്നു": "hurts"
+      "കണ്ണ് തുറക്കൂ.":
+        native: "Open your eyes."
+        bases:
+          "കണ്ണ്": "eye"
+  "ml-0310":
+    native: "ear"
+    notes:
+      n1: "ear"
+    examples:
+      "എന്റെ ചെവി വേദനിക്കുന്നു.":
+        native: "My ear hurts."
+        bases:
+          "ചെവി": "ear"
+          "വേദനിക്കുന്നു": "hurts"
+      "ചെവി പിടിക്കൂ.":
+        native: "Hold your ear."
+        bases:
+          "ചെവി": "ear"
+  "ml-0311":
+    native: "nose"
+    notes:
+      n1: "nose"
+    examples:
+      "മൂക്ക് വേദനിക്കുന്നു.":
+        native: "My nose hurts."
+        bases:
+          "മൂക്ക്": "nose"
+          "വേദനിക്കുന്നു": "hurts"
+      "മൂക്ക് തുടയ്ക്കൂ.":
+        native: "Wipe your nose."
+        bases:
+          "മൂക്ക്": "nose"
+          "തുടയ്ക്കൂ": "wipe"
+  "ml-0312":
+    native: "mouth"
+    notes:
+      n1: "mouth"
+    examples:
+      "വായ തുറക്കൂ.":
+        native: "Open your mouth."
+        bases:
+          "വായ": "mouth"
+      "വായ കഴുകൂ.":
+        native: "Rinse your mouth."
+        bases:
+          "വായ": "mouth"
+  "ml-0313":
+    native: "tooth"
+    notes:
+      n1: "tooth"
+    examples:
+      "എനിക്ക് പല്ല് വേദനിക്കുന്നു.":
+        native: "My tooth hurts."
+        bases:
+          "പല്ല്": "tooth"
+          "വേദനിക്കുന്നു": "hurts"
+      "പല്ല് തേക്കൂ.":
+        native: "Brush your teeth."
+        bases:
+          "പല്ല്": "tooth"
+          "തേക്കൂ": "brush"
+  "ml-0314":
+    native: "tongue"
+    notes:
+      n1: "tongue"
+    examples:
+      "നാവ് കാണിക്കൂ.":
+        native: "Show your tongue."
+        bases:
+          "നാവ്": "tongue"
+      "നാവ് വേദനിക്കുന്നു.":
+        native: "My tongue hurts."
+        bases:
+          "നാവ്": "tongue"
+          "വേദനിക്കുന്നു": "hurts"
+  "ml-0315":
+    native: "neck"
+    notes:
+      n1: "neck"
+    examples:
+      "എനിക്ക് കഴുത്ത് വേദനിക്കുന്നു.":
+        native: "My neck hurts."
+        bases:
+          "കഴുത്ത്": "neck"
+          "വേദനിക്കുന്നു": "hurts"
+      "കഴുത്ത് ചെറുതാണോ?":
+        native: "Is the neck small?"
+        bases:
+          "കഴുത്ത്": "neck"
+          "ചെറുതാണോ": "is ... small"
+  "ml-0316":
+    native: "shoulder"
+    notes:
+      n1: "shoulder"
+    examples:
+      "തോൾ വേദനിക്കുന്നു.":
+        native: "My shoulder hurts."
+        bases:
+          "തോൾ": "shoulder"
+          "വേദനിക്കുന്നു": "hurts"
+      "തോളിൽ തൊടൂ.":
+        native: "Touch the shoulder."
+        bases:
+          "തോളിൽ": "shoulder"
+          "തൊടൂ": "touch"
+  "ml-0317":
+    native: "hand; arm"
+    notes:
+      n1: "hand; arm"
+    examples:
+      "കൈ കഴുകൂ.":
+        native: "Wash your hands."
+        bases:
+          "കൈ": "hand; arm"
+      "എന്റെ കൈ വേദനിക്കുന്നു.":
+        native: "My arm hurts."
+        bases:
+          "കൈ": "hand; arm"
+          "വേദനിക്കുന്നു": "hurts"
+  "ml-0318":
+    native: "finger; toe"
+    notes:
+      n1: "finger; toe"
+    examples:
+      "വിരൽ കാണിക്കൂ.":
+        native: "Show your finger."
+        bases:
+          "വിരൽ": "finger; toe"
+      "ഈ വിരൽ വേദനിക്കുന്നു.":
+        native: "This finger hurts."
+        bases:
+          "ഈ": "this"
+          "വിരൽ": "finger; toe"
+          "വേദനിക്കുന്നു": "hurts"
+  "ml-0319":
+    native: "nail"
+    notes:
+      n1: "nail"
+    examples:
+      "നഖം വെട്ടൂ.":
+        native: "Cut your nails."
+        bases:
+          "നഖം": "nail"
+          "വെട്ടൂ": "cut"
+      "നഖം വൃത്തിയാക്കൂ.":
+        native: "Clean your nails."
+        bases:
+          "നഖം": "nail"
+          "വൃത്തിയാക്കൂ": "clean"
+  "ml-0320":
+    native: "chest"
+    notes:
+      n1: "chest"
+    examples:
+      "നെഞ്ചിൽ വേദനയുണ്ട്":
+        native: "I have chest pain."
+        bases:
+          "നെഞ്ചിൽ": "chest"
+      "നെഞ്ച് വീതിയുള്ളതാണ്.":
+        native: "The chest is wide."
+        bases:
+          "നെഞ്ച്": "chest"
+          "വീതിയുള്ളതാണ്": "is wide"
+  "ml-0321":
+    native: "stomach; belly"
+    notes:
+      n1: "stomach; belly"
+    examples:
+      "വയർ വേദനിക്കുന്നു.":
+        native: "My stomach hurts."
+        bases:
+          "വയർ": "stomach; belly"
+          "വേദനിക്കുന്നു": "hurts"
+      "വയർ നിറഞ്ഞു.":
+        native: "The stomach is full."
+        bases:
+          "വയർ": "stomach; belly"
+          "നിറഞ്ഞു": "became full"
+  "ml-0322":
+    native: "back"
+    notes:
+      n1: "back"
+    examples:
+      "പുറം വേദനിക്കുന്നു.":
+        native: "My back hurts."
+        bases:
+          "പുറം": "back"
+          "വേദനിക്കുന്നു": "hurts"
+      "പുറം തടവൂ.":
+        native: "Rub the back."
+        bases:
+          "പുറം": "back"
+          "തടവൂ": "rub"
+  "ml-0323":
+    native: "leg; foot"
+    notes:
+      n1: "leg; foot"
+    examples:
+      "എന്റെ കാൽ വേദനിക്കുന്നു.":
+        native: "My leg hurts."
+        bases:
+          "കാൽ": "leg; foot"
+          "വേദനിക്കുന്നു": "hurts"
+      "കാൽ കഴുകൂ.":
+        native: "Wash your feet."
+        bases:
+          "കാൽ": "leg; foot"
+  "ml-0324":
+    native: "knee"
+    notes:
+      n1: "knee"
+    examples:
+      "കാൽമുട്ട് വേദനിക്കുന്നു.":
+        native: "My knee hurts."
+        bases:
+          "കാൽമുട്ട്": "knee"
+          "വേദനിക്കുന്നു": "hurts"
+      "കാൽമുട്ടിൽ വേദനയുണ്ട്":
+        native: "I have pain in the knee."
+        bases:
+          "കാൽമുട്ടിൽ": "knee"
+  "ml-0325":
+    native: "foot"
+    notes:
+      n1: "foot"
+    examples:
+      "പാദം കഴുകൂ.":
+        native: "Wash your foot."
+        bases:
+          "പാദം": "foot"
+      "പാദം ചെറുതാണ്.":
+        native: "The foot is small."
+        bases:
+          "പാദം": "foot"
+          "ചെറുതാണ്": "is small"
+  "ml-0326":
+    native: "hair"
+    notes:
+      n1: "hair"
+    examples:
+      "മുടി കഴുകൂ.":
+        native: "Wash your hair."
+        bases:
+          "മുടി": "hair"
+      "മുടി നീളമാണ്.":
+        native: "The hair is long."
+        bases:
+          "മുടി": "hair"
+          "നീളമാണ്": "is long"
+  "ml-0327":
+    native: "skin"
+    notes:
+      n1: "skin"
+    examples:
+      "തൊലി വരണ്ടതാണ്.":
+        native: "The skin is dry."
+        bases:
+          "തൊലി": "skin"
+          "വരണ്ടതാണ്": "is dry"
+      "തൊലി നല്ലതാണ്.":
+        native: "The skin is good."
+        bases:
+          "തൊലി": "skin"
+          "നല്ലതാണ്": "is good"
+  "ml-0328":
+    native: "blood"
+    notes:
+      n1: "blood"
+    examples:
+      "ഡോക്ടർക്ക് രക്തം വേണം.":
+        native: "The doctor needs blood."
+        bases:
+          "രക്തം": "blood"
+          "വേണം": "needs"
+      "രക്തം കുറച്ച് പോയി.":
+        native: "I lost a little blood."
+        bases:
+          "രക്തം": "blood"
+          "കുറച്ച്": "a little"
+          "പോയി": "went; lost"
+  "ml-0329":
+    native: "bone"
+    notes:
+      n1: "bone"
+    examples:
+      "എല്ല് ഒടിഞ്ഞു.":
+        native: "A bone broke."
+        bases:
+          "എല്ല്": "bone"
+          "ഒടിഞ്ഞു": "broke"
+      "എല്ല് വേദനിക്കുന്നു.":
+        native: "My bones hurt."
+        bases:
+          "എല്ല്": "bone"
+          "വേദനിക്കുന്നു": "hurt"
+  "ml-0330":
+    native: "pain"
+    notes:
+      n1: "pain"
+    examples:
+      "വേദന ഉണ്ടോ?":
+        native: "Is there pain?"
+        bases:
+          "വേദന": "pain"
+      "എനിക്ക് വേദനയുണ്ട്":
+        native: "I am in pain."
+        bases:
+          "വേദനയുണ്ട്": "there is pain"
+  "ml-0331":
+    native: "fever"
+    notes:
+      n1: "fever"
+    examples:
+      "എനിക്ക് പനിയുണ്ട്":
+        native: "I have a fever."
+        bases:
+          "പനിയുണ്ട്": "there is fever"
+      "പനി ഉണ്ടോ?":
+        native: "Do you have a fever?"
+        bases:
+          "പനി": "fever"
+  "ml-0332":
+    native: "cough"
+    notes:
+      n1: "cough"
+    examples:
+      "എനിക്ക് ചുമയുണ്ട്":
+        native: "I have a cough."
+        bases:
+          "ചുമയുണ്ട്": "there is cough"
+      "ചുമയ്ക്ക് മരുന്ന് വേണം.":
+        native: "I need medicine for a cough."
+        bases:
+          "ചുമയ്ക്ക്": "for a cough"
+          "വേണം": "need"
+  "ml-0333":
+    native: "cold (illness)"
+    notes:
+      n1: "cold (illness)"
+    examples:
+      "എനിക്ക് ജലദോഷമുണ്ട്":
+        native: "I have a cold."
+        bases:
+          "ജലദോഷമുണ്ട്": "there is a cold"
+      "ജലദോഷത്തിന് ചായ കുടിക്കൂ.":
+        native: "Drink tea for the cold."
+        bases:
+          "ജലദോഷത്തിന്": "for the cold"
+  "ml-0334":
+    native: "medicine"
+    notes:
+      n1: "medicine"
+    examples:
+      "മരുന്ന് കഴിക്കൂ.":
+        native: "Take the medicine."
+        bases:
+          "മരുന്ന്": "medicine"
+      "മരുന്ന് ഇവിടെ ഉണ്ടോ?":
+        native: "Is there medicine here?"
+        bases:
+          "മരുന്ന്": "medicine"
+  "ml-0335":
+    native: "sleep"
+    notes:
+      n1: "sleep"
+    examples:
+      "നല്ല ഉറക്കം വേണം.":
+        native: "I need good sleep."
+        bases:
+          "ഉറക്കം": "sleep"
+          "വേണം": "need"
+      "ഉറക്കം വരുന്നു.":
+        native: "I am getting sleepy."
+        bases:
+          "ഉറക്കം": "sleep"
+          "വരുന്നു": "comes"
+  "ml-0336":
+    native: "breath"
+    notes:
+      n1: "breath"
+    examples:
+      "ശ്വാസം എടുക്കൂ.":
+        native: "Breathe in."
+        bases:
+          "ശ്വാസം": "breath"
+      "ശ്വാസത്തിന് പ്രശ്നമുണ്ട്.":
+        native: "I have trouble breathing."
+        bases:
+          "ശ്വാസത്തിന്": "for breathing"
+          "പ്രശ്നമുണ്ട്": "there is a problem"

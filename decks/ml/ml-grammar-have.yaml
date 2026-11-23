@@ -1,0 +1,21 @@
+schema: 1
+id: "ml-grammar-have"
+part: "core"
+kind: "grammar"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["statement", "negative", "question"]
+  entries:
+    - lemma: "ഉണ്ട്"
+      key: "unda"
+      reading: "uṇṭ"
+      forms:
+        "statement": "ഉണ്ട്"
+        "negative": "ഇല്ല"
+        "question": "ഉണ്ടോ"
+      readings:
+        "statement": "uṇṭ"
+        "negative": "illa"
+        "question": "uṇṭō"

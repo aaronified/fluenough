@@ -1,0 +1,54 @@
+schema: 1
+id: "ml-grammar-inclusive-we"
+part: "core"
+kind: "grammar"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["we", "of-us", "to-us", "us", "with-us"]
+  entries:
+    - lemma: "ഞങ്ങൾ"
+      key: "njangal"
+      reading: "ñaṅṅaḷ"
+      ipa: "ɲəŋŋaɭ"
+      forms:
+        "we": "ഞങ്ങൾ"
+        "of-us": "ഞങ്ങളുടെ"
+        "to-us": "ഞങ്ങൾക്ക്"
+        "us": "ഞങ്ങളെ"
+        "with-us": "ഞങ്ങളോട്"
+      readings:
+        "we": "ñaṅṅaḷ"
+        "of-us": "ñaṅṅaḷuṭe"
+        "to-us": "ñaṅṅaḷkk"
+        "us": "ñaṅṅaḷe"
+        "with-us": "ñaṅṅaḷōṭ"
+      ipas:
+        "we": "ɲəŋŋaɭ"
+        "of-us": "ɲəŋŋəɭuʈe"
+        "to-us": "ɲəŋŋaɭkk"
+        "us": "ɲəŋŋəɭe"
+        "with-us": "ɲəŋŋəɭoːʈ"
+    - lemma: "നമ്മൾ"
+      key: "nammal"
+      reading: "nammaḷ"
+      ipa: "nəmmaɭ"
+      forms:
+        "we": "നമ്മൾ"
+        "of-us": ["നമ്മുടെ", "നമ്മളുടെ"]
+        "to-us": ["നമുക്ക്", "നമ്മൾക്ക്"]
+        "us": ["നമ്മളെ", "നമ്മെ"]
+        "with-us": ["നമ്മളോട്", "നമ്മോട്"]
+      readings:
+        "we": "nammaḷ"
+        "of-us": ["nammuṭe", "nammaḷuṭe"]
+        "to-us": ["namukk", "nammaḷkk"]
+        "us": ["nammaḷe", "namme"]
+        "with-us": ["nammaḷōṭ", "nammōṭ"]
+      ipas:
+        "we": "nəmmaɭ"
+        "of-us": "nəmmuʈe"
+        "to-us": "nəmukk"
+        "us": "nəmməɭe"
+        "with-us": "nəmməɭoːʈ"

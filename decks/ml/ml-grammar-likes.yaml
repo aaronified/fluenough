@@ -1,0 +1,21 @@
+schema: 1
+id: "ml-grammar-likes"
+part: "core"
+kind: "grammar"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["statement", "negative", "question"]
+  entries:
+    - lemma: "ഇഷ്ടം"
+      key: "ishtam"
+      reading: "iṣṭaṁ"
+      forms:
+        "statement": "ഇഷ്ടമാണ്"
+        "negative": "ഇഷ്ടമല്ല"
+        "question": "ഇഷ്ടമാണോ"
+      readings:
+        "statement": "iṣṭamāṇ"
+        "negative": "iṣṭamalla"
+        "question": "iṣṭamāṇō"

@@ -1,0 +1,75 @@
+schema: 1
+id: "ml-grammar-articles"
+part: "core"
+kind: "grammar"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["a", "the"]
+  entries:
+    - lemma: "വീട്"
+      key: "veedu"
+      reading: "vīṭ"
+      ipa: "ʋiːʈ"
+      forms:
+        "a": "ഒരു വീട്"
+        "the": "വീട്"
+      readings:
+        "a": "oru vīṭ"
+        "the": "vīṭ"
+      ipas:
+        "a": "oɾu ʋiːʈ"
+        "the": "ʋiːʈ"
+    - lemma: "പേന"
+      key: "pena"
+      reading: "pēna"
+      ipa: "peːna"
+      forms:
+        "a": "ഒരു പേന"
+        "the": "പേന"
+      readings:
+        "a": "oru pēna"
+        "the": "pēna"
+      ipas:
+        "a": "oɾu peːna"
+        "the": "peːna"
+    - lemma: "കുട്ടി"
+      key: "kutti"
+      reading: "kuṭṭi"
+      ipa: "kuʈʈi"
+      forms:
+        "a": "ഒരു കുട്ടി"
+        "the": "കുട്ടി"
+      readings:
+        "a": "oru kuṭṭi"
+        "the": "kuṭṭi"
+      ipas:
+        "a": "oɾu kuʈʈi"
+        "the": "kuʈʈi"
+    - lemma: "മേശ"
+      key: "mesa"
+      reading: "mēśa"
+      ipa: "meːʃa"
+      forms:
+        "a": "ഒരു മേശ"
+        "the": "മേശ"
+      readings:
+        "a": "oru mēśa"
+        "the": "mēśa"
+      ipas:
+        "a": "oɾu meːʃa"
+        "the": "meːʃa"
+    - lemma: "ആൾ"
+      key: "aal"
+      reading: "āḷ"
+      ipa: "aːɭ"
+      forms:
+        "a": "ഒരാൾ"
+        "the": "ആൾ"
+      readings:
+        "a": "orāḷ"
+        "the": "āḷ"
+      ipas:
+        "a": "oɾaːɭ"
+        "the": "aːɭ"

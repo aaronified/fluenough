@@ -1,0 +1,72 @@
+schema: 1
+id: "ml-en-transport-sentences"
+kind: "layer"
+core: "ml-transport-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Transport in sentences"
+description: "Short sentences about getting around: the bus, the auto, the taxi, the train, the station and the bicycle. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-3056":
+    native: "Where is the bus?"
+    notes:
+      n1: "ബസ് (bas) is the bus, and എവിടെ (eviṭe) asks where it is."
+    confusables:
+      w1: { why: "ഓട്ടോ (ōṭṭō) is an auto-rickshaw, a different vehicle." }
+      w2: { why: "ട്രെയിൻ (ṭreyiṉ) is a train, a different vehicle." }
+  "ml-3057":
+    native: "Do you want an auto?"
+    bases:
+      "വേണോ": "do you want"
+    notes:
+      n1: "ഓട്ടോ (ōṭṭō) is the three-wheeled auto-rickshaw common in towns."
+    confusables:
+      w1: { why: "ടാക്സി (ṭāksi) is a taxi, a car." }
+      w2: { why: "ബസ് (bas) is a bigger vehicle." }
+  "ml-3058":
+    native: "The train is at the station."
+    bases:
+      "ഉണ്ട്": "is there"
+    notes:
+      n1: "The place ending ഇൽ (il), at, comes before ഉണ്ട് (uṇṭ), is there."
+    confusables:
+      w1: { why: "ബസ് (bas) is a bus, a different vehicle." }
+      w2: { why: "വിമാനം (vimānaṁ) is an airplane, a different vehicle." }
+  "ml-3059":
+    native: "I need a bicycle."
+    bases:
+      "വേണം": "need"
+    notes:
+      n1: "എനിക്ക് (enikk) is the form of ഞാൻ (ñāṉ) before the dative ending ക്ക് (kk); the stem changes to എന (ena)."
+    confusables:
+      w1: { why: "ടാക്സി (ṭāksi) is a taxi, not a bicycle." }
+      w2: { why: "ബോട്ട് (bōṭṭ) is a boat, a different vehicle." }
+  "ml-3060":
+    native: "The plane is coming today."
+    notes:
+      n1: "വരുന്നു (varunnu) is the present of വരിക (varika), to come, here used with a plane."
+    confusables:
+      w1: { why: "ട്രെയിൻ (ṭreyiṉ) is a train, a different vehicle." }
+      w2: { why: "സ്റ്റേഷൻ (sṭēṣaṉ) is a place, not a vehicle." }
+  "ml-3061":
+    native: "The boat is far."
+    notes:
+      n1: "The sentence has no verb: അകലെ (akale), far, says where the boat is."
+    confusables:
+      w1: { why: "സൈക്കിൾ (saikkiḷ) is a bicycle, a different vehicle." }
+      w2: { why: "ബസ് (bas) is a bus, a different vehicle." }
+  "ml-3062":
+    native: "Taxi, come quickly."
+    notes:
+      n1: "ടാക്സി (ṭāksi), taxi, is called, and വേഗം (vēgaṁ) asks it to come quickly."
+    confusables:
+      w1: { why: "ഓട്ടോ (ōṭṭō) is an auto-rickshaw, a different vehicle." }
+      w2: { why: "സാവധാനം (sāvadhānaṁ) is slowly, the opposite." }
+  "ml-3063":
+    native: "Where is the station?"
+    notes:
+      n1: "സ്റ്റേഷൻ (sṭēṣaṉ) is the place, and എവിടെ (eviṭe) asks where it is."
+    confusables:
+      w1: { why: "വഴി (vaḻi) is the route, not the place." }
+      w2: { why: "റോഡ് (ṟōḍ) is a road, a different place." }

@@ -1,0 +1,470 @@
+schema: 1
+id: "ml-en-more-verbs"
+kind: "layer"
+core: "ml-more-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "More verbs"
+description: "Commands for everyday help: bring, give, take away, put, keep, say, ask, call, send, wash, bathe, make, run, walk, lie down, get up, start, stop, think, wait, understand, study, do, show, return, close, forget, hide, hold, push and pull. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0153":
+    native: "bring!"
+    notes:
+      n1: "bring!"
+    examples:
+      "വെള്ളം കൊണ്ടുവരൂ.":
+        native: "Bring some water."
+        bases:
+          "കൊണ്ടുവരൂ": "bring!"
+      "ഇവിടെ കൊണ്ടുവരൂ.":
+        native: "Bring it here."
+        bases:
+          "കൊണ്ടുവരൂ": "bring!"
+  "ml-0154":
+    native: "give!"
+    notes:
+      n1: "give!"
+    examples:
+      "അവന് കൊടുക്കൂ.":
+        native: "Give it to him."
+        bases:
+          "കൊടുക്കൂ": "give!"
+      "ഒരു ചായ കൊടുക്കൂ.":
+        native: "Give a tea."
+        bases:
+          "ഒരു": "a"
+          "ചായ": "tea"
+          "കൊടുക്കൂ": "give!"
+  "ml-0155":
+    native: "take away!"
+    notes:
+      n1: "take away!"
+    examples:
+      "ഇത് കൊണ്ടുപോകൂ.":
+        native: "Take this away."
+        bases:
+          "ഇത്": "this"
+          "കൊണ്ടുപോകൂ": "take away!"
+      "വെള്ളം കൊണ്ടുപോകൂ.":
+        native: "Take the water away."
+        bases:
+          "കൊണ്ടുപോകൂ": "take away!"
+  "ml-0156":
+    native: "put!"
+    notes:
+      n1: "put!"
+    examples:
+      "മേശയുടെ മുകളിൽ വയ്ക്കൂ.":
+        native: "Put it on the table."
+        bases:
+          "മേശയുടെ": "the table's"
+          "വയ്ക്കൂ": "put!"
+      "ഇവിടെ വയ്ക്കൂ.":
+        native: "Put it here."
+        bases:
+          "വയ്ക്കൂ": "put!"
+  "ml-0157":
+    native: "keep!"
+    notes:
+      n1: "keep!"
+    examples:
+      "ഇത് സൂക്ഷിക്കൂ.":
+        native: "Keep this."
+        bases:
+          "ഇത്": "this"
+          "സൂക്ഷിക്കൂ": "keep!"
+      "പണം സൂക്ഷിക്കൂ.":
+        native: "Keep the money."
+        bases:
+          "പണം": "money"
+          "സൂക്ഷിക്കൂ": "keep!"
+  "ml-0158":
+    native: "say!; tell!"
+    notes:
+      n1: "say!; tell!"
+    examples:
+      "സത്യം പറയൂ.":
+        native: "Tell the truth."
+        bases:
+          "സത്യം": "truth"
+          "പറയൂ": "say!; tell!"
+      "പതുക്കെ പറയൂ.":
+        native: "Say it slowly."
+        bases:
+          "പതുക്കെ": "slowly"
+          "പറയൂ": "say!; tell!"
+  "ml-0159":
+    native: "ask!"
+    notes:
+      n1: "ask!"
+    examples:
+      "അവനോട് ചോദിക്കൂ.":
+        native: "Ask him."
+        bases:
+          "ചോദിക്കൂ": "ask!"
+      "ഒരു ചോദ്യം ചോദിക്കൂ.":
+        native: "Ask a question."
+        bases:
+          "ഒരു": "a"
+          "ചോദ്യം": "question"
+          "ചോദിക്കൂ": "ask!"
+  "ml-0160":
+    native: "call!"
+    notes:
+      n1: "call!"
+    examples:
+      "അമ്മയെ വിളിക്കൂ.":
+        native: "Call mother."
+        bases:
+          "വിളിക്കൂ": "call!"
+      "എന്നെ വിളിക്കൂ.":
+        native: "Call me."
+        bases:
+          "വിളിക്കൂ": "call!"
+  "ml-0161":
+    native: "send!"
+    notes:
+      n1: "send!"
+    examples:
+      "ഇത് അവന് അയയ്ക്കൂ.":
+        native: "Send this to him."
+        bases:
+          "ഇത്": "this"
+          "അയയ്ക്കൂ": "send!"
+      "ഒരു സന്ദേശം അയയ്ക്കൂ.":
+        native: "Send a message."
+        bases:
+          "ഒരു": "a"
+          "സന്ദേശം": "message"
+          "അയയ്ക്കൂ": "send!"
+  "ml-0162":
+    native: "wash!"
+    notes:
+      n1: "wash!"
+    examples:
+      "കൈ കഴുകൂ.":
+        native: "Wash your hands."
+        bases:
+          "കൈ": "hand"
+          "കഴുകൂ": "wash!"
+      "പാത്രം കഴുകൂ.":
+        native: "Wash the dish."
+        bases:
+          "പാത്രം": "dish"
+          "കഴുകൂ": "wash!"
+  "ml-0163":
+    native: "bathe!"
+    notes:
+      n1: "bathe!"
+    examples:
+      "ഇന്ന് കുളിക്കൂ.":
+        native: "Bathe today."
+        bases:
+          "കുളിക്കൂ": "bathe!"
+      "രാവിലെ കുളിക്കൂ.":
+        native: "Bathe in the morning."
+        bases:
+          "കുളിക്കൂ": "bathe!"
+  "ml-0164":
+    native: "make!"
+    notes:
+      n1: "make!"
+    examples:
+      "ഒരു ചായ ഉണ്ടാക്കൂ.":
+        native: "Make a tea."
+        bases:
+          "ഒരു": "a"
+          "ചായ": "tea"
+          "ഉണ്ടാക്കൂ": "make!"
+      "ഭക്ഷണം ഉണ്ടാക്കൂ.":
+        native: "Make the food."
+        bases:
+          "ഭക്ഷണം": "food"
+          "ഉണ്ടാക്കൂ": "make!"
+  "ml-0165":
+    native: "run!"
+    notes:
+      n1: "run!"
+    examples:
+      "വേഗം ഓടൂ.":
+        native: "Run quickly."
+        bases:
+          "വേഗം": "quickly"
+          "ഓടൂ": "run!"
+      "വീട്ടിലേക്ക് ഓടൂ.":
+        native: "Run home."
+        bases:
+          "ഓടൂ": "run!"
+  "ml-0166":
+    native: "walk!"
+    notes:
+      n1: "walk!"
+    examples:
+      "പതുക്കെ നടക്കൂ.":
+        native: "Walk slowly."
+        bases:
+          "പതുക്കെ": "slowly"
+          "നടക്കൂ": "walk!"
+      "പാർക്കിലേക്ക് നടക്കൂ.":
+        native: "Walk to the park."
+        bases:
+          "പാർക്കിലേക്ക്": "to the park"
+          "നടക്കൂ": "walk!"
+  "ml-0167":
+    native: "lie down!"
+    notes:
+      n1: "lie down!"
+    examples:
+      "കട്ടിലിൽ കിടക്കൂ.":
+        native: "Lie down on the bed."
+        bases:
+          "കട്ടിലിൽ": "on the bed"
+          "കിടക്കൂ": "lie down!"
+      "ഇവിടെ കിടക്കൂ.":
+        native: "Lie down here."
+        bases:
+          "കിടക്കൂ": "lie down!"
+  "ml-0168":
+    native: "get up!"
+    notes:
+      n1: "get up!"
+    examples:
+      "ഇപ്പോൾ എഴുന്നേൽക്കൂ.":
+        native: "Get up now."
+        bases:
+          "എഴുന്നേൽക്കൂ": "get up!"
+      "രാവിലെ എഴുന്നേൽക്കൂ.":
+        native: "Get up in the morning."
+        bases:
+          "എഴുന്നേൽക്കൂ": "get up!"
+  "ml-0169":
+    native: "start!"
+    notes:
+      n1: "start!"
+    examples:
+      "ഇപ്പോൾ തുടങ്ങൂ.":
+        native: "Start now."
+        bases:
+          "തുടങ്ങൂ": "start!"
+      "ജോലി തുടങ്ങൂ.":
+        native: "Start the work."
+        bases:
+          "തുടങ്ങൂ": "start!"
+  "ml-0170":
+    native: "stop!"
+    notes:
+      n1: "stop!"
+    examples:
+      "ഇപ്പോൾ നിർത്തൂ.":
+        native: "Stop now."
+        bases:
+          "നിർത്തൂ": "stop!"
+      "ഒരു നിമിഷം നിർത്തൂ.":
+        native: "Stop for a moment."
+        bases:
+          "ഒരു": "a"
+          "നിമിഷം": "moment"
+          "നിർത്തൂ": "stop!"
+  "ml-0171":
+    native: "laugh!; smile!"
+    notes:
+      n1: "laugh!; smile!"
+    examples:
+      "ഇപ്പോൾ ചിരിക്കൂ.":
+        native: "Laugh now."
+        bases:
+          "ചിരിക്കൂ": "laugh!; smile!"
+      "നന്നായി ചിരിക്കൂ.":
+        native: "Laugh well."
+        bases:
+          "നന്നായി": "well"
+          "ചിരിക്കൂ": "laugh!; smile!"
+  "ml-0172":
+    native: "think!"
+    notes:
+      n1: "think!"
+    examples:
+      "നന്നായി ചിന്തിക്കൂ.":
+        native: "Think well."
+        bases:
+          "നന്നായി": "well"
+          "ചിന്തിക്കൂ": "think!"
+      "വേഗം ചിന്തിക്കൂ.":
+        native: "Think quickly."
+        bases:
+          "വേഗം": "quickly"
+          "ചിന്തിക്കൂ": "think!"
+  "ml-0173":
+    native: "wait!"
+    notes:
+      n1: "wait!"
+    examples:
+      "ഇവിടെ കാത്തിരിക്കൂ.":
+        native: "Wait here."
+        bases:
+          "കാത്തിരിക്കൂ": "wait!"
+      "ഒരു നിമിഷം കാത്തിരിക്കൂ.":
+        native: "Wait a moment."
+        bases:
+          "ഒരു": "a"
+          "നിമിഷം": "moment"
+          "കാത്തിരിക്കൂ": "wait!"
+  "ml-0174":
+    native: "understand!"
+    notes:
+      n1: "understand!"
+    examples:
+      "ഇത് മനസ്സിലാക്കൂ.":
+        native: "Understand this."
+        bases:
+          "ഇത്": "this"
+          "മനസ്സിലാക്കൂ": "understand!"
+      "നന്നായി മനസ്സിലാക്കൂ.":
+        native: "Understand well."
+        bases:
+          "നന്നായി": "well"
+          "മനസ്സിലാക്കൂ": "understand!"
+  "ml-0175":
+    native: "study!; learn!"
+    notes:
+      n1: "study!; learn!"
+    examples:
+      "മലയാളം പഠിക്കൂ.":
+        native: "Study Malayalam."
+        bases:
+          "മലയാളം": "Malayalam"
+          "പഠിക്കൂ": "study!; learn!"
+      "ദിവസവും പഠിക്കൂ.":
+        native: "Study every day."
+        bases:
+          "ദിവസവും": "every day"
+          "പഠിക്കൂ": "study!; learn!"
+  "ml-0176":
+    native: "do!"
+    notes:
+      n1: "do!"
+    examples:
+      "ഇത് ചെയ്യൂ.":
+        native: "Do this."
+        bases:
+          "ഇത്": "this"
+          "ചെയ്യൂ": "do!"
+      "ജോലി ചെയ്യൂ.":
+        native: "Do the work."
+        bases:
+          "ചെയ്യൂ": "do!"
+  "ml-0177":
+    native: "show!"
+    notes:
+      n1: "show!"
+    examples:
+      "എനിക്ക് കാണിക്കൂ.":
+        native: "Show me."
+        bases:
+          "കാണിക്കൂ": "show!"
+      "അത് കാണിക്കൂ.":
+        native: "Show me that."
+        bases:
+          "കാണിക്കൂ": "show!"
+  "ml-0178":
+    native: "give back!"
+    notes:
+      n1: "give back!"
+    examples:
+      "എന്റെ പുസ്തകം തിരിച്ചുതരൂ.":
+        native: "Give my book back."
+        bases:
+          "പുസ്തകം": "book"
+          "തിരിച്ചുതരൂ": "give back!"
+      "എനിക്ക് തിരിച്ചുതരൂ.":
+        native: "Give it back to me."
+        bases:
+          "തിരിച്ചുതരൂ": "give back!"
+  "ml-0179":
+    native: "close!"
+    notes:
+      n1: "close!"
+    examples:
+      "വാതിൽ അടയ്ക്കൂ.":
+        native: "Close the door."
+        bases:
+          "വാതിൽ": "door"
+          "അടയ്ക്കൂ": "close!"
+      "ജനൽ അടയ്ക്കൂ.":
+        native: "Close the window."
+        bases:
+          "ജനൽ": "window"
+          "അടയ്ക്കൂ": "close!"
+  "ml-0180":
+    native: "forget!"
+    notes:
+      n1: "forget!"
+    examples:
+      "അത് മറക്കൂ.":
+        native: "Forget it."
+        bases:
+          "മറക്കൂ": "forget!"
+      "ഞാൻ പറഞ്ഞത് മറക്കൂ.":
+        native: "Forget what I said."
+        bases:
+          "പറഞ്ഞത്": "what"
+          "മറക്കൂ": "forget!"
+  "ml-0181":
+    native: "hide!"
+    notes:
+      n1: "hide!"
+    examples:
+      "ഇവിടെ ഒളിക്കൂ.":
+        native: "Hide here."
+        bases:
+          "ഒളിക്കൂ": "hide!"
+      "വീട്ടിൽ ഒളിക്കൂ.":
+        native: "Hide at home."
+        bases:
+          "ഒളിക്കൂ": "hide!"
+  "ml-0182":
+    native: "hold!; catch!"
+    notes:
+      n1: "hold!; catch!"
+    examples:
+      "ഇത് പിടിക്കൂ.":
+        native: "Hold this."
+        bases:
+          "ഇത്": "this"
+          "പിടിക്കൂ": "hold!; catch!"
+      "എന്റെ കൈ പിടിക്കൂ.":
+        native: "Hold my hand."
+        bases:
+          "കൈ": "hand"
+          "പിടിക്കൂ": "hold!; catch!"
+  "ml-0183":
+    native: "push!"
+    notes:
+      n1: "push!"
+    examples:
+      "വാതിൽ തള്ളൂ.":
+        native: "Push the door."
+        bases:
+          "വാതിൽ": "door"
+          "തള്ളൂ": "push!"
+      "ഇത് തള്ളൂ.":
+        native: "Push this."
+        bases:
+          "ഇത്": "this"
+          "തള്ളൂ": "push!"
+  "ml-0184":
+    native: "pull!"
+    notes:
+      n1: "pull!"
+    examples:
+      "വാതിൽ വലിക്കൂ.":
+        native: "Pull the door."
+        bases:
+          "വാതിൽ": "door"
+          "വലിക്കൂ": "pull!"
+      "ഇത് വലിക്കൂ.":
+        native: "Pull this."
+        bases:
+          "ഇത്": "this"
+          "വലിക്കൂ": "pull!"

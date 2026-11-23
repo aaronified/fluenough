@@ -1,0 +1,49 @@
+schema: 1
+id: "ml-en-grammar-noun-forms"
+kind: "layer"
+core: "ml-grammar-noun-forms"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns: plural, to, in, from, with, of"
+description: "Every noun the course teaches, in its plural and with the endings for the thing acted on, to, of, in, from and with. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "plural": "{meaning}, more than one"
+    "plural-mar": "{meaning}, more than one person (the plural of a few words for people)"
+    "oblique": "{meaning}, the stem before an ending"
+    "e": "{meaning}, the one acted on"
+    "kku": "to, for {meaning}"
+    "nte": "of {meaning}"
+    "il": "in, at, on {meaning}"
+    "ninnu": "from {meaning}"
+    "otu": "with {meaning}"
+rules:
+  "ml-rule-plural":
+    name: "-കൾ (-kaḷ), -ങ്ങൾ (-ṅṅaḷ): more than one"
+    explanation: "{1} makes the plural. After a word in a consonant it brings a vowel u with it: {2}, house, becomes {3}, and {4}, fish, becomes {5}. After a vowel it goes straight on: {6}, child, becomes {7}. A word in -ം (-ṁ) takes {8} in place of it: {9}, book, becomes {10}. A few words change more: {11}, dog, has two plurals, {12} and {13}. Words for what you do not count, such as water, have no plural cell, and a word for a person that takes -മാർ (-māṟ) has its plural in that column. Source: English Wikipedia, Malayalam grammar (number; the declension of the nouns); English Wiktionary's declension tables."
+  "ml-rule-plural-mar":
+    name: "-മാർ (-māṟ): more than one person"
+    explanation: "{1} makes the plural of a few words for people: {2}, mother, becomes {3}. A word in -ൻ (-ṉ) turns it into {4} first: {5}, father, becomes {6}. Other words for people take {7}, as {8}, human being, which becomes {9}, or -കൾ (-kaḷ), as {10}, child, which becomes {11}. A cell is empty for a word for a thing. Source: English Wikipedia, Malayalam grammar (number: -മാർ (-māṟ) and -അർ (-aṟ) are used only by a few nouns for people); English Wiktionary, the entry അമ്മ (amma)."
+  "ml-rule-oblique":
+    name: "Oblique stem: പുസ്തകം (pustakaṁ) to പുസ്തകത്ത് (pustakatt)"
+    explanation: "Before an ending, a word in -ം (-ṁ) changes it to {1}: {2} becomes {3}, so in the book is {4}. The word {5}, house, doubles its last consonant: {6}, so at home is {7}. The cell shows the stem only for words that change; other words use their ordinary form. Source: English Wikipedia, Malayalam grammar (the declension of മരം (maraṁ)); English Wiktionary, the declension table of വീട് (vīṭ)."
+  "ml-rule-e":
+    name: "-എ (-e): the thing acted on"
+    explanation: "{1} marks the person or animal the verb acts on. After a vowel it takes a glide: {2}, mother, becomes {3}; after -ഇ (-i) it is just added: {4}, child, becomes {5}. A man's word in -ൻ (-ṉ) turns the chillu into ന (na): {6} becomes {7}. A thing takes -ഇനെ (-ine) when it is the particular one: {8}, school, becomes {9}; a word in -ം (-ṁ) has the oblique stem first: {10} becomes {11}. A thing you do not count has no cell. Source: English Wikipedia, Malayalam grammar (the accusative; the declension of the nouns)."
+  "ml-rule-kku":
+    name: "-ക്ക് (-kk), -ന് (-n): to, for"
+    explanation: "{1} follows -ഇ (-i) with no change: {3}, child, becomes {4}. After -അ (-a) it takes a glide and is written -യ്ക്ക് (-ykk): {5}, mother, becomes {6}. {2} goes on a word in a consonant: {7}, house, becomes {8}, and on a word in -ം (-ṁ) after the oblique stem: {9} becomes {10}. It means to a person or place, or for someone. Source: English Wikipedia, Malayalam grammar (the dative; the declension of the nouns)."
+  "ml-rule-nte":
+    name: "-ന്റെ (-nṟe), -ഉടെ (-uṭe): of, belonging to"
+    explanation: "{2} follows a word in a vowel and a word for a woman: {3}, mother, becomes {4}. {1} follows a word in a consonant: {5}, house, becomes {6}, and a man's word in -ൻ (-ṉ): {7}, father, becomes {8}. A word in -ം (-ṁ) has the oblique stem first: {9} becomes {10}. Source: English Wikipedia, Malayalam grammar (the genitive; the declension of the nouns)."
+  "ml-rule-il":
+    name: "-ഇൽ (-il): in, at, on"
+    explanation: "{1} is for things and places: {2}, house, becomes {3} with the doubled stem, and {4}, tea, becomes {5}, with a glide. A word in a consonant takes it directly: {6}, bus, becomes {7}. A word in -ം (-ṁ) has the oblique stem: {8} becomes {9}. A person or an animal is not said with {1}: the cell is empty. Source: English Wikipedia, Malayalam grammar (the locative; the declension of the nouns)."
+  "ml-rule-ninnu":
+    name: "നിന്ന് (ninn): from"
+    explanation: "From is the in form with the word {1} after it: {2}, in the house, becomes {3}, from the house, and {4}, in the bus, becomes {5}. Source: English Wiktionary, the entries നിന്ന് (ninn) (postposition) and the declension table of വീട് (vīṭ) (the in form)."
+  "ml-rule-otu":
+    name: "-ഓട് (-ōṭ): with, to"
+    explanation: "{1} means together with, and it is used for people and animals: {2}, mother, becomes {3}, and {4}, father, becomes {5}. After a word for speaking it means to a person. A word in -ഉ (-u) takes a glide first: {6}, cow, becomes {7}. A cell for a thing is empty. Source: English Wikipedia, Malayalam grammar (the sociative; the declension of the nouns)."

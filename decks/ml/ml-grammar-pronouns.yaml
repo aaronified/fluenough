@@ -1,0 +1,88 @@
+schema: 1
+id: "ml-grammar-pronouns"
+part: "core"
+kind: "grammar"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["one", "more"]
+  entries:
+    - lemma: "ഞാൻ"
+      key: "njaan"
+      reading: "ñāṉ"
+      ipa: "ɲaːn"
+      forms:
+        "one": "ഞാൻ"
+        "more": ["ഞങ്ങൾ", "നമ്മൾ"]
+      readings:
+        "one": "ñāṉ"
+        "more": ["ñaṅṅaḷ", "nammaḷ"]
+      ipas:
+        "one": "ɲaːn"
+        "more": "ɲəŋŋaɭ"
+    - lemma: "നീ"
+      key: "nee"
+      reading: "nī"
+      ipa: "niː"
+      forms:
+        "one": "നീ"
+        "more": "നിങ്ങൾ"
+      readings:
+        "one": "nī"
+        "more": "niṅṅaḷ"
+      ipas:
+        "one": "niː"
+        "more": "niŋŋaɭ"
+    - lemma: "നിങ്ങൾ"
+      key: "ningal"
+      reading: "niṅṅaḷ"
+      ipa: "niŋŋaɭ"
+      forms:
+        "one": "നിങ്ങൾ"
+        "more": "നിങ്ങൾ"
+      readings:
+        "one": "niṅṅaḷ"
+        "more": "niṅṅaḷ"
+      ipas:
+        "one": "niŋŋaɭ"
+        "more": "niŋŋaɭ"
+    - lemma: "അവൻ"
+      key: "avan"
+      reading: "avaṉ"
+      ipa: "əʋan"
+      forms:
+        "one": "അവൻ"
+        "more": "അവർ"
+      readings:
+        "one": "avaṉ"
+        "more": "avar"
+      ipas:
+        "one": "əʋan"
+        "more": "əʋaɾ"
+    - lemma: "അവൾ"
+      key: "aval"
+      reading: "avaḷ"
+      ipa: "əʋaɭ"
+      forms:
+        "one": "അവൾ"
+        "more": "അവർ"
+      readings:
+        "one": "avaḷ"
+        "more": "avar"
+      ipas:
+        "one": "əʋaɭ"
+        "more": "əʋaɾ"
+    - lemma: "അത്"
+      key: "athu"
+      reading: "at"
+      ipa: "at̪"
+      forms:
+        "one": "അത്"
+        "more": "അവ"
+      readings:
+        "one": "at"
+        "more": "ava"
+      ipas:
+        "one": "at̪"
+        "more": "əʋa"

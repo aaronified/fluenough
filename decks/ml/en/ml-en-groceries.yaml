@@ -1,0 +1,243 @@
+schema: 1
+id: "ml-en-groceries"
+kind: "layer"
+core: "ml-groceries"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Groceries"
+description: "Things bought at a grocery shop: rice, sugar, oil, milk, eggs, bread, tea powder, curd, fruit, soap, turmeric, chilli, onion, coconut, potato and butter. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0217":
+    native: "rice (uncooked)"
+    notes:
+      n1: "rice (uncooked)"
+    examples:
+      "അരി വേണം.":
+        native: "I need rice."
+        bases:
+          "അരി": "rice (uncooked)"
+          "വേണം": "need"
+      "ഒരു കിലോ അരി.":
+        native: "A kilo of rice."
+        bases:
+          "ഒരു": "a"
+          "കിലോ": "kilo"
+          "അരി": "rice (uncooked)"
+  "ml-0218":
+    native: "sugar"
+    notes:
+      n1: "sugar"
+    examples:
+      "പഞ്ചസാര വേണം.":
+        native: "I need sugar."
+        bases:
+          "പഞ്ചസാര": "sugar"
+          "വേണം": "need"
+      "പഞ്ചസാര ഇല്ല.":
+        native: "There is no sugar."
+        bases:
+          "പഞ്ചസാര": "sugar"
+  "ml-0219":
+    native: "oil"
+    notes:
+      n1: "oil"
+    examples:
+      "എണ്ണ വേണം.":
+        native: "I need oil."
+        bases:
+          "എണ്ണ": "oil"
+          "വേണം": "need"
+      "എണ്ണ ഇവിടെ.":
+        native: "The oil is here."
+        bases:
+          "എണ്ണ": "oil"
+  "ml-0220":
+    native: "milk"
+    notes:
+      n1: "milk"
+    examples:
+      "പാൽ വേണം.":
+        native: "I need milk."
+        bases:
+          "പാൽ": "milk"
+          "വേണം": "need"
+      "ഒരു ലിറ്റർ പാൽ.":
+        native: "A litre of milk."
+        bases:
+          "ഒരു": "a"
+          "ലിറ്റർ": "litre"
+          "പാൽ": "milk"
+  "ml-0221":
+    native: "egg"
+    notes:
+      n1: "egg"
+    examples:
+      "മുട്ട വേണം.":
+        native: "I need eggs."
+        bases:
+          "മുട്ട": "egg"
+          "വേണം": "need"
+      "ആറ് മുട്ട.":
+        native: "Six eggs."
+        bases:
+          "മുട്ട": "egg"
+  "ml-0222":
+    native: "bread (flat)"
+    notes:
+      n1: "bread (flat)"
+    examples:
+      "റൊട്ടി വേണം.":
+        native: "I need bread."
+        bases:
+          "റൊട്ടി": "bread (flat)"
+          "വേണം": "need"
+      "റൊട്ടി എവിടെ?":
+        native: "Where is the bread?"
+        bases:
+          "റൊട്ടി": "bread (flat)"
+  "ml-0223":
+    native: "tea powder"
+    notes:
+      n1: "tea powder"
+    examples:
+      "ചായപ്പൊടി വേണം.":
+        native: "I need tea powder."
+        bases:
+          "ചായപ്പൊടി": "tea powder"
+          "വേണം": "need"
+      "ചായപ്പൊടി ഇല്ല.":
+        native: "There is no tea powder."
+        bases:
+          "ചായപ്പൊടി": "tea powder"
+  "ml-0224":
+    native: "curd; yoghurt"
+    notes:
+      n1: "curd; yoghurt"
+    examples:
+      "തൈര് വേണം.":
+        native: "I need curd."
+        bases:
+          "തൈര്": "curd; yoghurt"
+          "വേണം": "need"
+      "തൈര് ഇവിടെ.":
+        native: "The curd is here."
+        bases:
+          "തൈര്": "curd; yoghurt"
+  "ml-0225":
+    native: "fruit; banana"
+    notes:
+      n1: "fruit; banana"
+    examples:
+      "പഴം വേണം.":
+        native: "I need fruit."
+        bases:
+          "പഴം": "fruit; banana"
+          "വേണം": "need"
+      "ഒരു പഴം.":
+        native: "One banana."
+        bases:
+          "ഒരു": "one"
+          "പഴം": "fruit; banana"
+  "ml-0226":
+    native: "soap"
+    notes:
+      n1: "soap"
+    examples:
+      "സോപ്പ് വേണം.":
+        native: "I need soap."
+        bases:
+          "സോപ്പ്": "soap"
+          "വേണം": "need"
+      "സോപ്പ് ഇവിടെ.":
+        native: "The soap is here."
+        bases:
+          "സോപ്പ്": "soap"
+  "ml-0227":
+    native: "turmeric"
+    notes:
+      n1: "turmeric"
+    examples:
+      "മഞ്ഞൾ വേണം.":
+        native: "I need turmeric."
+        bases:
+          "മഞ്ഞൾ": "turmeric"
+          "വേണം": "need"
+      "മഞ്ഞൾ എവിടെ?":
+        native: "Where is the turmeric?"
+        bases:
+          "മഞ്ഞൾ": "turmeric"
+  "ml-0228":
+    native: "chilli"
+    notes:
+      n1: "chilli"
+    examples:
+      "മുളക് വേണം.":
+        native: "I need chilli."
+        bases:
+          "മുളക്": "chilli"
+          "വേണം": "need"
+      "മുളക് എത്ര?":
+        native: "How many chillies?"
+        bases:
+          "മുളക്": "chilli"
+  "ml-0229":
+    native: "onion"
+    notes:
+      n1: "onion"
+    examples:
+      "ഉള്ളി വേണം.":
+        native: "I need onions."
+        bases:
+          "ഉള്ളി": "onion"
+          "വേണം": "need"
+      "ഒരു കിലോ ഉള്ളി.":
+        native: "A kilo of onions."
+        bases:
+          "ഒരു": "a"
+          "കിലോ": "kilo"
+          "ഉള്ളി": "onion"
+  "ml-0230":
+    native: "coconut"
+    notes:
+      n1: "coconut"
+    examples:
+      "തേങ്ങ വേണം.":
+        native: "I need a coconut."
+        bases:
+          "തേങ്ങ": "coconut"
+          "വേണം": "need"
+      "തേങ്ങ ഇവിടെ.":
+        native: "The coconut is here."
+        bases:
+          "തേങ്ങ": "coconut"
+  "ml-0231":
+    native: "potato"
+    notes:
+      n1: "potato"
+    examples:
+      "ഉരുളക്കിഴങ്ങ് വേണം.":
+        native: "I need potatoes."
+        bases:
+          "ഉരുളക്കിഴങ്ങ്": "potato"
+          "വേണം": "need"
+      "ഒരു കിലോ ഉരുളക്കിഴങ്ങ്.":
+        native: "A kilo of potatoes."
+        bases:
+          "ഒരു": "a"
+          "കിലോ": "kilo"
+          "ഉരുളക്കിഴങ്ങ്": "potato"
+  "ml-0232":
+    native: "butter"
+    notes:
+      n1: "butter"
+    examples:
+      "വെണ്ണ വേണം.":
+        native: "I need butter."
+        bases:
+          "വെണ്ണ": "butter"
+          "വേണം": "need"
+      "വെണ്ണ ഇവിടെ.":
+        native: "The butter is here."
+        bases:
+          "വെണ്ണ": "butter"

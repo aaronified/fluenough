@@ -1,0 +1,121 @@
+schema: 1
+id: "ml-en-transport"
+kind: "layer"
+core: "ml-transport"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Transport"
+description: "Getting around: bus, auto-rickshaw, train, airplane, taxi, bicycle, boat and station. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0252":
+    native: "bus"
+    notes:
+      n1: "bus"
+    examples:
+      "ബസ് വരുന്നു":
+        native: "The bus is coming."
+        bases:
+          "ബസ്": "bus"
+          "വരുന്നു": "is coming"
+      "ബസ് എവിടെ?":
+        native: "Where is the bus?"
+        bases:
+          "ബസ്": "bus"
+  "ml-0253":
+    native: "auto-rickshaw"
+    notes:
+      n1: "auto-rickshaw"
+    examples:
+      "ഓട്ടോ വേണം.":
+        native: "I need an auto-rickshaw."
+        bases:
+          "ഓട്ടോ": "auto-rickshaw"
+          "വേണം": "need"
+      "ഓട്ടോ എത്ര?":
+        native: "How much is the auto-rickshaw?"
+        bases:
+          "ഓട്ടോ": "auto-rickshaw"
+  "ml-0254":
+    native: "train"
+    notes:
+      n1: "train"
+    examples:
+      "ട്രെയിൻ വരുന്നു":
+        native: "The train is coming."
+        bases:
+          "ട്രെയിൻ": "train"
+          "വരുന്നു": "is coming"
+      "ട്രെയിൻ എപ്പോൾ?":
+        native: "When is the train?"
+        bases:
+          "ട്രെയിൻ": "train"
+  "ml-0255":
+    native: "airplane"
+    notes:
+      n1: "airplane"
+    examples:
+      "വിമാനം ഉയരുന്നു":
+        native: "The airplane is taking off."
+        bases:
+          "വിമാനം": "airplane"
+          "ഉയരുന്നു": "is rising"
+      "വിമാനം എവിടെ?":
+        native: "Where is the airplane?"
+        bases:
+          "വിമാനം": "airplane"
+  "ml-0256":
+    native: "taxi"
+    notes:
+      n1: "taxi"
+    examples:
+      "ടാക്സി വേണം.":
+        native: "I need a taxi."
+        bases:
+          "ടാക്സി": "taxi"
+          "വേണം": "need"
+      "ടാക്സി ഇവിടെ.":
+        native: "The taxi is here."
+        bases:
+          "ടാക്സി": "taxi"
+  "ml-0257":
+    native: "bicycle"
+    notes:
+      n1: "bicycle"
+    examples:
+      "സൈക്കിൾ വീട്ടിൽ":
+        native: "The bicycle is at home."
+        bases:
+          "സൈക്കിൾ": "bicycle"
+      "എന്റെ സൈക്കിൾ.":
+        native: "My bicycle."
+        bases:
+          "സൈക്കിൾ": "bicycle"
+  "ml-0258":
+    native: "boat"
+    notes:
+      n1: "boat"
+    examples:
+      "ബോട്ട് വരുന്നു":
+        native: "The boat is coming."
+        bases:
+          "ബോട്ട്": "boat"
+          "വരുന്നു": "is coming"
+      "ബോട്ട് കായലിൽ":
+        native: "The boat is on the lake."
+        bases:
+          "ബോട്ട്": "boat"
+          "കായലിൽ": "on the lake"
+  "ml-0259":
+    native: "station"
+    notes:
+      n1: "station"
+    examples:
+      "സ്റ്റേഷൻ എവിടെ?":
+        native: "Where is the station?"
+        bases:
+          "സ്റ്റേഷൻ": "station"
+      "സ്റ്റേഷൻ അകലെ.":
+        native: "The station is far."
+        bases:
+          "സ്റ്റേഷൻ": "station"

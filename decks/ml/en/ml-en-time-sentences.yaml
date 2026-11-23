@@ -1,0 +1,69 @@
+schema: 1
+id: "ml-en-time-sentences"
+kind: "layer"
+core: "ml-time-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Time in sentences"
+description: "Short sentences about tomorrow, now, the morning and the evening, the clock and time. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-3008":
+    native: "Come tomorrow."
+    notes:
+      n1: "നാളെ (nāḷe) is tomorrow and comes before the order; no word for 'on' is needed."
+    confusables:
+      w1: { why: "ഇന്നലെ (innale) is yesterday, the other day." }
+      w2: { why: "ഇപ്പോൾ (ippōḷ) is now, a time and not a day." }
+  "ml-3009":
+    native: "Sleep now."
+    notes:
+      n1: "ഇപ്പോൾ (ippōḷ) (now) comes first and ഉറങ്ങൂ (uṟaṅṅū) is the order to sleep."
+    confusables:
+      w1: { why: "നാളെ (nāḷe) is a later day, tomorrow." }
+      w2: { why: "ഇന്ന് (inn) is today, a day and not a moment." }
+  "ml-3010":
+    native: "Eat in the morning."
+    notes:
+      n1: "The part of the day, രാവിലെ (rāvile), comes before the order കഴിക്കൂ (kaḻikkū)."
+    confusables:
+      w1: { why: "വൈകുന്നേരം (vaikunnēraṁ) is the evening, another part of the day." }
+      w2: { why: "രാത്രി (rātri) is the night, another part of the day." }
+  "ml-3011":
+    native: "Come in the evening."
+    notes:
+      n1: "The evening, വൈകുന്നേരം (vaikunnēraṁ), comes before the order വരൂ (varū)."
+    confusables:
+      w1: { why: "രാവിലെ (rāvile) is the morning, the other part of the day." }
+      w2: { why: "രാത്രി (rātri) is the night, later than the evening." }
+  "ml-3012":
+    native: "It is two o'clock now."
+    notes:
+      n1: "The time needs no verb: the number രണ്ട് (raṇṭ) comes before മണി (maṇi), o'clock."
+    confusables:
+      w1: { why: "മിനിറ്റ് (miniṟṟ) is a minute, a smaller unit." }
+      w2: { why: "സമയം (samayaṁ) is time in general, not an hour." }
+  "ml-3013":
+    native: "I need ten minutes."
+    bases:
+      "വേണം": "need"
+    notes:
+      n1: "എനിക്ക് (enikk) is the form of ഞാൻ (ñāṉ) before the dative ending ക്ക് (kk); the stem changes to എന (ena)."
+      n2: "വേണം (vēṇaṁ) is needed: the speaker says that they need the time, with the subject given by എനിക്ക് (enikk)."
+    confusables:
+      w1: { why: "മണി (maṇi) is an hour, not a length of time." }
+      w2: { why: "സമയം (samayaṁ) is time in general, not a number of minutes." }
+  "ml-3014":
+    native: "What time is it?"
+    notes:
+      n1: "സമയം (samayaṁ) and എത്ര (etra) ask the time; the answer uses മണി (maṇi), o'clock, and a number."
+    confusables:
+      w1: { why: "എപ്പോൾ (eppōḷ) asks when an event is, not the clock." }
+      w2: { why: "മണി (maṇi) is the answer, not the question." }
+  "ml-3015":
+    native: "Come quickly today."
+    notes:
+      n1: "ഇന്ന് (inn) (today) comes first, then the adverb വേഗം (vēgaṁ), quickly, and the order."
+    confusables:
+      w1: { why: "നാളെ (nāḷe) is tomorrow, the wrong day." }
+      w2: { why: "രാവിലെ (rāvile) is a part of the day, not a day." }

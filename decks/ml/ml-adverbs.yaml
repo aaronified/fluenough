@@ -1,0 +1,757 @@
+schema: 1
+id: "ml-adverbs"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "adverbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0508"
+    target: "ഇടയ്ക്ക്"
+    reading: "iṭaykk"
+    ipa: "iʈajkk"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇടയ്ക്ക് ചായ കുടിക്കും"
+        reading: "iṭaykk cāya kuṭikkuṁ"
+        ipa: "iʈajkk tʃaːja kuʈikkum"
+        bases: [{ word: "ഇടയ്ക്ക്", base: "ഇടയ്ക്ക്", reading: "iṭaykk" }, { word: "ചായ", ref: "ml-0270" }, { word: "കുടിക്കും", ref: "ml-0114" }]
+      - target: "ഇടയ്ക്ക് മഴയുണ്ട്."
+        reading: "iṭaykk maḻayuṇṭ."
+        ipa: "iʈajkk məɻəjuɳʈ"
+        bases: [{ word: "ഇടയ്ക്ക്", base: "ഇടയ്ക്ക്", reading: "iṭaykk" }, { word: "മഴയുണ്ട്", base: "മഴയുണ്ട്", reading: "maḻayuṇṭ" }]
+  - id: "ml-0509"
+    target: "എപ്പോഴും"
+    reading: "eppōḻuṁ"
+    ipa: "eppoːɻum"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അവൻ എപ്പോഴും ജോലി ചെയ്യും"
+        reading: "avaṉ eppōḻuṁ jōli ceyyuṁ"
+        ipa: "əʋan eppoːɻum dʒoːli tʃejjum"
+        bases: [{ word: "അവൻ", ref: "ml-0097" }, { word: "എപ്പോഴും", base: "എപ്പോഴും", reading: "eppōḻuṁ" }, { word: "ജോലി", ref: "ml-0046" }, { word: "ചെയ്യും", ref: "ml-0176" }]
+      - target: "ഞാൻ എപ്പോഴും ഇവിടെ."
+        reading: "ñāṉ eppōḻuṁ iviṭe."
+        ipa: "ɲaːn eppoːɻum iʋiʈe"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "എപ്പോഴും", base: "എപ്പോഴും", reading: "eppōḻuṁ" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0510"
+    target: "ഒരിക്കലും"
+    reading: "orikkaluṁ"
+    ipa: "oɾikkəlum"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഒരിക്കലും വൈകരുത്."
+        reading: "orikkaluṁ vaikarut."
+        ipa: "oɾikkəlum ʋaikəɾut̪"
+        bases: [{ word: "ഒരിക്കലും", base: "ഒരിക്കലും", reading: "orikkaluṁ" }, { word: "വൈകരുത്", base: "വൈകരുത്", reading: "vaikarut" }]
+      - target: "ഞാൻ ഒരിക്കലും മറക്കില്ല"
+        reading: "ñāṉ orikkaluṁ maṟakkilla"
+        ipa: "ɲaːn oɾikkəlum məɾəkkilla"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "ഒരിക്കലും", base: "ഒരിക്കലും", reading: "orikkaluṁ" }, { word: "മറക്കില്ല", ref: "ml-0180" }]
+  - id: "ml-0511"
+    target: "പലപ്പോഴും"
+    reading: "palappōḻuṁ"
+    ipa: "pələppoːɻum"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പലപ്പോഴും വെള്ളം കുടിക്കൂ."
+        reading: "palappōḻuṁ veḷḷaṁ kuṭikkū."
+        ipa: "pələppoːɻum ʋeɭɭam kuʈikkuː"
+        bases: [{ word: "പലപ്പോഴും", base: "പലപ്പോഴും", reading: "palappōḻuṁ" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "കുടിക്കൂ", ref: "ml-0114" }]
+      - target: "അവർ പലപ്പോഴും വരും."
+        reading: "avar palappōḻuṁ varuṁ."
+        ipa: "əʋaɾ pələppoːɻum ʋəɾum"
+        bases: [{ word: "അവർ", base: "അവർ", reading: "avar" }, { word: "പലപ്പോഴും", base: "പലപ്പോഴും", reading: "palappōḻuṁ" }, { word: "വരും", base: "വരും", reading: "varuṁ" }]
+  - id: "ml-0512"
+    target: "വളരെ"
+    reading: "vaḷare"
+    ipa: "ʋəɭəɾe"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വളരെ നല്ലതാണ്."
+        reading: "vaḷare nallatāṇ."
+        ipa: "ʋəɭəɾe nəllət̪aːɳ"
+        bases: [{ word: "വളരെ", base: "വളരെ", reading: "vaḷare" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+      - target: "വളരെ ചൂടാണ്."
+        reading: "vaḷare cūṭāṇ."
+        ipa: "ʋəɭəɾe tʃuːʈaːɳ"
+        bases: [{ word: "വളരെ", base: "വളരെ", reading: "vaḷare" }, { word: "ചൂടാണ്", base: "ചൂടാണ്", reading: "cūṭāṇ" }]
+  - id: "ml-0513"
+    target: "മാത്രം"
+    reading: "mātraṁ"
+    ipa: "maːt̪ɾam"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഒരു ചായ മാത്രം."
+        reading: "oru cāya mātraṁ."
+        ipa: "oɾu tʃaːja maːt̪ɾam"
+        bases: [{ word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "ചായ", ref: "ml-0270" }, { word: "മാത്രം", base: "മാത്രം", reading: "mātraṁ" }]
+      - target: "ഇവിടെ മാത്രം."
+        reading: "iviṭe mātraṁ."
+        ipa: "iʋiʈe maːt̪ɾam"
+        bases: [{ word: "ഇവിടെ", ref: "ml-0048" }, { word: "മാത്രം", base: "മാത്രം", reading: "mātraṁ" }]
+  - id: "ml-0514"
+    target: "ഇപ്പോഴും"
+    reading: "ippōḻuṁ"
+    ipa: "ippoːɻum"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അവൻ ഇപ്പോഴും ഉറങ്ങുന്നു"
+        reading: "avaṉ ippōḻuṁ uṟaṅṅunnu"
+        ipa: "əʋan ippoːɻum uɾəŋŋunnu"
+        bases: [{ word: "അവൻ", ref: "ml-0097" }, { word: "ഇപ്പോഴും", base: "ഇപ്പോഴും", reading: "ippōḻuṁ" }, { word: "ഉറങ്ങുന്നു", ref: "ml-0121" }]
+      - target: "ഞാൻ ഇപ്പോഴും പഠിക്കുന്നു"
+        reading: "ñāṉ ippōḻuṁ paṭhikkunnu"
+        ipa: "ɲaːn ippoːɻum pəʈʰikkunnu"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "ഇപ്പോഴും", base: "ഇപ്പോഴും", reading: "ippōḻuṁ" }, { word: "പഠിക്കുന്നു", ref: "ml-0175" }]
+  - id: "ml-0515"
+    target: "ഇതിനകം"
+    reading: "itinakaṁ"
+    ipa: "it̪inəkam"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഞാൻ ഇതിനകം കഴിച്ചു."
+        reading: "ñāṉ itinakaṁ kaḻiccu."
+        ipa: "ɲaːn it̪inəkam kəɻitʃtʃu"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "ഇതിനകം", base: "ഇതിനകം", reading: "itinakaṁ" }, { word: "കഴിച്ചു", base: "കഴിച്ചു", reading: "kaḻiccu" }]
+      - target: "ഇതിനകം മഴ പെയ്തു."
+        reading: "itinakaṁ maḻa peytu."
+        ipa: "it̪inəkam məɻa pejt̪u"
+        bases: [{ word: "ഇതിനകം", base: "ഇതിനകം", reading: "itinakaṁ" }, { word: "മഴ", base: "മഴ", reading: "maḻa" }, { word: "പെയ്തു", base: "പെയ്തു", reading: "peytu" }]
+  - id: "ml-0516"
+    target: "വീണ്ടും"
+    reading: "vīṇṭuṁ"
+    ipa: "ʋiːɳʈum"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വീണ്ടും പറയൂ."
+        reading: "vīṇṭuṁ paṟayū."
+        ipa: "ʋiːɳʈum pəɾəjuː"
+        bases: [{ word: "വീണ്ടും", base: "വീണ്ടും", reading: "vīṇṭuṁ" }, { word: "പറയൂ", ref: "ml-0158" }]
+      - target: "വീണ്ടും വരൂ."
+        reading: "vīṇṭuṁ varū."
+        ipa: "ʋiːɳʈum ʋəɾuː"
+        bases: [{ word: "വീണ്ടും", base: "വീണ്ടും", reading: "vīṇṭuṁ" }, { word: "വരൂ", ref: "ml-0010" }]
+  - id: "ml-0517"
+    target: "ഒരുമിച്ച്"
+    reading: "orumicc"
+    ipa: "oɾumitʃtʃ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "നമുക്ക് ഒരുമിച്ച് പോകാം"
+        reading: "namukk orumicc pōkāṁ"
+        ipa: "nəmukk oɾumitʃtʃ poːkaːm"
+        bases: [{ word: "നമുക്ക്", base: "നമുക്ക്", reading: "namukk" }, { word: "ഒരുമിച്ച്", base: "ഒരുമിച്ച്", reading: "orumicc" }, { word: "പോകാം", ref: "ml-0112" }]
+      - target: "ഞങ്ങൾ ഒരുമിച്ച് കഴിക്കുന്നു"
+        reading: "ñaṅṅaḷ orumicc kaḻikkunnu"
+        ipa: "ɲəŋŋaɭ oɾumitʃtʃ kəɻikkunnu"
+        bases: [{ word: "ഞങ്ങൾ", ref: "ml-0100" }, { word: "ഒരുമിച്ച്", base: "ഒരുമിച്ച്", reading: "orumicc" }, { word: "കഴിക്കുന്നു", ref: "ml-0113" }]
+  - id: "ml-0518"
+    target: "ഒറ്റയ്ക്ക്"
+    reading: "oṟṟaykk"
+    ipa: "ottajkk"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അവൻ ഒറ്റയ്ക്ക് വരും."
+        reading: "avaṉ oṟṟaykk varuṁ."
+        ipa: "əʋan ottajkk ʋəɾum"
+        bases: [{ word: "അവൻ", ref: "ml-0097" }, { word: "ഒറ്റയ്ക്ക്", base: "ഒറ്റയ്ക്ക്", reading: "oṟṟaykk" }, { word: "വരും", base: "വരും", reading: "varuṁ" }]
+      - target: "ഞാൻ ഒറ്റയ്ക്ക് താമസിക്കുന്നു."
+        reading: "ñāṉ oṟṟaykk tāmasikkunnu."
+        ipa: "ɲaːn ottajkk t̪aːməsikkunnu"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "ഒറ്റയ്ക്ക്", base: "ഒറ്റയ്ക്ക്", reading: "oṟṟaykk" }, { word: "താമസിക്കുന്നു", base: "താമസിക്കുന്നു", reading: "tāmasikkunnu" }]
+  - id: "ml-0519"
+    target: "നന്നായി"
+    reading: "nannāyi"
+    ipa: "nənnaːji"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "നീ നന്നായി പാടുന്നു."
+        reading: "nī nannāyi pāṭunnu."
+        ipa: "niː nənnaːji paːʈunnu"
+        bases: [{ word: "നീ", ref: "ml-0095" }, { word: "നന്നായി", base: "നന്നായി", reading: "nannāyi" }, { word: "പാടുന്നു", base: "പാടുന്നു", reading: "pāṭunnu" }]
+      - target: "നന്നായി കേൾക്കൂ."
+        reading: "nannāyi kēḷkkū."
+        ipa: "nənnaːji keːɭkkuː"
+        bases: [{ word: "നന്നായി", base: "നന്നായി", reading: "nannāyi" }, { word: "കേൾക്കൂ", ref: "ml-0118" }]
+  - id: "ml-0520"
+    target: "മോശമായി"
+    reading: "mōśamāyi"
+    ipa: "moːʃəmaːji"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അവൻ മോശമായി പാടുന്നു."
+        reading: "avaṉ mōśamāyi pāṭunnu."
+        ipa: "əʋan moːʃəmaːji paːʈunnu"
+        bases: [{ word: "അവൻ", ref: "ml-0097" }, { word: "മോശമായി", base: "മോശമായി", reading: "mōśamāyi" }, { word: "പാടുന്നു", base: "പാടുന്നു", reading: "pāṭunnu" }]
+      - target: "ഞാൻ മോശമായി ഉറങ്ങി."
+        reading: "ñāṉ mōśamāyi uṟaṅṅi."
+        ipa: "ɲaːn moːʃəmaːji uɾəŋŋi"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "മോശമായി", base: "മോശമായി", reading: "mōśamāyi" }, { word: "ഉറങ്ങി", base: "ഉറങ്ങി", reading: "uṟaṅṅi" }]
+  - id: "ml-0521"
+    target: "വേഗം"
+    reading: "vēgaṁ"
+    ipa: "ʋeːɡam"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വേഗം വരൂ."
+        reading: "vēgaṁ varū."
+        ipa: "ʋeːɡam ʋəɾuː"
+        bases: [{ word: "വേഗം", base: "വേഗം", reading: "vēgaṁ" }, { word: "വരൂ", ref: "ml-0010" }]
+      - target: "വേഗം പോകൂ."
+        reading: "vēgaṁ pōkū."
+        ipa: "ʋeːɡam poːkuː"
+        bases: [{ word: "വേഗം", base: "വേഗം", reading: "vēgaṁ" }, { word: "പോകൂ", ref: "ml-0112" }]
+  - id: "ml-0522"
+    target: "സാവധാനം"
+    reading: "sāvadhānaṁ"
+    ipa: "saːʋəd̪ʱaːnam"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "സാവധാനം സംസാരിക്കൂ."
+        reading: "sāvadhānaṁ saṁsārikkū."
+        ipa: "saːʋəd̪ʱaːnam səmsaːɾikkuː"
+        bases: [{ word: "സാവധാനം", base: "സാവധാനം", reading: "sāvadhānaṁ" }, { word: "സംസാരിക്കൂ", base: "സംസാരിക്കൂ", reading: "saṁsārikkū" }]
+      - target: "സാവധാനം നടക്കൂ."
+        reading: "sāvadhānaṁ naṭakkū."
+        ipa: "saːʋəd̪ʱaːnam nəʈəkkuː"
+        bases: [{ word: "സാവധാനം", base: "സാവധാനം", reading: "sāvadhānaṁ" }, { word: "നടക്കൂ", ref: "ml-0166" }]
+  - id: "ml-0523"
+    target: "എന്നും"
+    reading: "ennuṁ"
+    ipa: "ennum"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഞാൻ എന്നും ചായ കുടിക്കും"
+        reading: "ñāṉ ennuṁ cāya kuṭikkuṁ"
+        ipa: "ɲaːn ennum tʃaːja kuʈikkum"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "എന്നും", base: "എന്നും", reading: "ennuṁ" }, { word: "ചായ", ref: "ml-0270" }, { word: "കുടിക്കും", ref: "ml-0114" }]
+      - target: "അവൾ എന്നും ഇവിടെ വരും."
+        reading: "avaḷ ennuṁ iviṭe varuṁ."
+        ipa: "əʋaɭ ennum iʋiʈe ʋəɾum"
+        bases: [{ word: "അവൾ", ref: "ml-0098" }, { word: "എന്നും", base: "എന്നും", reading: "ennuṁ" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "വരും", base: "വരും", reading: "varuṁ" }]
+  - id: "ml-0524"
+    target: "ആദ്യം"
+    reading: "ādyaṁ"
+    ipa: "aːd̪jam"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ആദ്യം ചായ കുടിക്കൂ."
+        reading: "ādyaṁ cāya kuṭikkū."
+        ipa: "aːd̪jam tʃaːja kuʈikkuː"
+        bases: [{ word: "ആദ്യം", base: "ആദ്യം", reading: "ādyaṁ" }, { word: "ചായ", ref: "ml-0270" }, { word: "കുടിക്കൂ", ref: "ml-0114" }]
+      - target: "ആദ്യം വെള്ളം, പിന്നെ ഭക്ഷണം."
+        reading: "ādyaṁ veḷḷaṁ, pinne bhakṣaṇaṁ."
+        ipa: "aːd̪jam ʋeɭɭam pinne bʱəkʂəɳam"
+        bases: [{ word: "ആദ്യം", base: "ആദ്യം", reading: "ādyaṁ" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "പിന്നെ", ref: "ml-0525" }, { word: "ഭക്ഷണം", ref: "ml-0260" }]
+  - id: "ml-0525"
+    target: "പിന്നെ"
+    reading: "pinne"
+    ipa: "pinne"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ആദ്യം വെള്ളം, പിന്നെ ഭക്ഷണം."
+        reading: "ādyaṁ veḷḷaṁ, pinne bhakṣaṇaṁ."
+        ipa: "aːd̪jam ʋeɭɭam pinne bʱəkʂəɳam"
+        bases: [{ word: "ആദ്യം", ref: "ml-0524" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "പിന്നെ", base: "പിന്നെ", reading: "pinne" }, { word: "ഭക്ഷണം", ref: "ml-0260" }]
+      - target: "പിന്നെ പോകാം"
+        reading: "pinne pōkāṁ"
+        ipa: "pinne poːkaːm"
+        bases: [{ word: "പിന്നെ", base: "പിന്നെ", reading: "pinne" }, { word: "പോകാം", ref: "ml-0112" }]
+  - id: "ml-0526"
+    target: "ഉടനെ"
+    reading: "uṭane"
+    ipa: "uʈəne"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഉടനെ വരൂ."
+        reading: "uṭane varū."
+        ipa: "uʈəne ʋəɾuː"
+        bases: [{ word: "ഉടനെ", base: "ഉടനെ", reading: "uṭane" }, { word: "വരൂ", ref: "ml-0010" }]
+      - target: "ഞാൻ ഉടനെ തിരിച്ചുവരും."
+        reading: "ñāṉ uṭane tiriccuvaruṁ."
+        ipa: "ɲaːn uʈəne t̪iɾitʃtʃuʋəɾum"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "ഉടനെ", base: "ഉടനെ", reading: "uṭane" }, { word: "തിരിച്ചുവരും", base: "തിരിച്ചുവരും", reading: "tiriccuvaruṁ" }]
+  - id: "ml-0527"
+    target: "പെട്ടെന്ന്"
+    reading: "peṭṭenn"
+    ipa: "peʈʈenn"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പെട്ടെന്ന് മഴ വന്നു."
+        reading: "peṭṭenn maḻa vannu."
+        ipa: "peʈʈenn məɻa ʋənnu"
+        bases: [{ word: "പെട്ടെന്ന്", base: "പെട്ടെന്ന്", reading: "peṭṭenn" }, { word: "മഴ", base: "മഴ", reading: "maḻa" }, { word: "വന്നു", base: "വന്നു", reading: "vannu" }]
+      - target: "പെട്ടെന്ന് ഓടൂ."
+        reading: "peṭṭenn ōṭū."
+        ipa: "peʈʈenn oːʈuː"
+        bases: [{ word: "പെട്ടെന്ന്", base: "പെട്ടെന്ന്", reading: "peṭṭenn" }, { word: "ഓടൂ", ref: "ml-0165" }]
+  - id: "ml-0528"
+    target: "ഏകദേശം"
+    reading: "ēkadēśaṁ"
+    ipa: "eːkəd̪eːʃam"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഏകദേശം പത്ത് മണി."
+        reading: "ēkadēśaṁ patt maṇi."
+        ipa: "eːkəd̪eːʃam pat̪t̪ məɳi"
+        bases: [{ word: "ഏകദേശം", base: "ഏകദേശം", reading: "ēkadēśaṁ" }, { word: "പത്ത്", ref: "ml-0057" }, { word: "മണി", ref: "ml-0135" }]
+      - target: "ഏകദേശം എത്ര?"
+        reading: "ēkadēśaṁ etra?"
+        ipa: "eːkəd̪eːʃam et̪ɾa"
+        bases: [{ word: "ഏകദേശം", base: "ഏകദേശം", reading: "ēkadēśaṁ" }, { word: "എത്ര", ref: "ml-0038" }]
+  - id: "ml-0529"
+    target: "മിക്കവാറും"
+    reading: "mikkavāṟuṁ"
+    ipa: "mikkəʋaːɾum"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മിക്കവാറും ഞാൻ വീട്ടിൽ"
+        reading: "mikkavāṟuṁ ñāṉ vīṭṭil"
+        ipa: "mikkəʋaːɾum ɲaːn ʋiːʈʈil"
+        bases: [{ word: "മിക്കവാറും", base: "മിക്കവാറും", reading: "mikkavāṟuṁ" }, { word: "ഞാൻ", ref: "ml-0003" }, { word: "വീട്ടിൽ", ref: "ml-0009" }]
+      - target: "അവർ മിക്കവാറും വരും."
+        reading: "avar mikkavāṟuṁ varuṁ."
+        ipa: "əʋaɾ mikkəʋaːɾum ʋəɾum"
+        bases: [{ word: "അവർ", base: "അവർ", reading: "avar" }, { word: "മിക്കവാറും", base: "മിക്കവാറും", reading: "mikkavāṟuṁ" }, { word: "വരും", base: "വരും", reading: "varuṁ" }]
+  - id: "ml-0530"
+    target: "തീരെ"
+    reading: "tīre"
+    ipa: "t̪iːɾe"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എനിക്ക് തീരെ ഇഷ്ടമല്ല."
+        reading: "enikk tīre iṣṭamalla."
+        ipa: "enikk t̪iːɾe iʂʈəməlla"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "തീരെ", base: "തീരെ", reading: "tīre" }, { word: "ഇഷ്ടമല്ല", base: "ഇഷ്ടമല്ല", reading: "iṣṭamalla" }]
+      - target: "തീരെ വേണ്ട."
+        reading: "tīre vēṇṭa."
+        ipa: "t̪iːɾe ʋeːɳʈa"
+        bases: [{ word: "തീരെ", base: "തീരെ", reading: "tīre" }, { word: "വേണ്ട", base: "വേണ്ട", reading: "vēṇṭa" }]
+  - id: "ml-0531"
+    target: "ശരിക്കും"
+    reading: "śarikkuṁ"
+    ipa: "ʃəɾikkum"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇത് ശരിക്കും നല്ലതാണ്."
+        reading: "it śarikkuṁ nallatāṇ."
+        ipa: "it̪ ʃəɾikkum nəllət̪aːɳ"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "ശരിക്കും", base: "ശരിക്കും", reading: "śarikkuṁ" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+      - target: "ശരിക്കും?"
+        reading: "śarikkuṁ?"
+        ipa: "ʃəɾikkum"
+        bases: [{ word: "ശരിക്കും", base: "ശരിക്കും", reading: "śarikkuṁ" }]
+  - id: "ml-0532"
+    target: "അതുകൊണ്ട്"
+    reading: "atukoṇṭ"
+    ipa: "ət̪ukoɳʈ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മഴയുണ്ട്, അതുകൊണ്ട് കുട വേണം."
+        reading: "maḻayuṇṭ, atukoṇṭ kuṭa vēṇaṁ."
+        ipa: "məɻəjuɳʈ ət̪ukoɳʈ kuʈa ʋeːɳam"
+        bases: [{ word: "മഴയുണ്ട്", base: "മഴയുണ്ട്", reading: "maḻayuṇṭ" }, { word: "അതുകൊണ്ട്", base: "അതുകൊണ്ട്", reading: "atukoṇṭ" }, { word: "കുട", ref: "ml-0366" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "ഞാൻ ക്ഷീണിച്ചു, അതുകൊണ്ട് ഉറങ്ങും."
+        reading: "ñāṉ kṣīṇiccu, atukoṇṭ uṟaṅṅuṁ."
+        ipa: "ɲaːn kʂiːɳitʃtʃu ət̪ukoɳʈ uɾəŋŋum"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "ക്ഷീണിച്ചു", base: "ക്ഷീണിച്ചു", reading: "kṣīṇiccu" }, { word: "അതുകൊണ്ട്", base: "അതുകൊണ്ട്", reading: "atukoṇṭ" }, { word: "ഉറങ്ങും", base: "ഉറങ്ങും", reading: "uṟaṅṅuṁ" }]
+  - id: "ml-1035"
+    target: "ചിലപ്പോൾ"
+    reading: "cilappōḷ"
+    ipa: "tʃiləppoːɭ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചിലപ്പോൾ വെള്ളം കുടിക്കൂ."
+        reading: "cilappōḷ veḷḷaṁ kuṭikkū."
+        ipa: "tʃiləppoːɭ ʋeɭɭam kuʈikkuː"
+        bases: [{ word: "ചിലപ്പോൾ", base: "ചിലപ്പോൾ", reading: "cilappōḷ" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "കുടിക്കൂ", ref: "ml-0114" }]
+      - target: "ചിലപ്പോൾ വരൂ."
+        reading: "cilappōḷ varū."
+        ipa: "tʃiləppoːɭ ʋəɾuː"
+        bases: [{ word: "ചിലപ്പോൾ", base: "ചിലപ്പോൾ", reading: "cilappōḷ" }, { word: "വരൂ", ref: "ml-0010" }]
+  - id: "ml-1036"
+    target: "ഇനി"
+    reading: "ini"
+    ipa: "ini"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇനി ഇരിക്കൂ."
+        reading: "ini irikkū."
+        ipa: "ini iɾikkuː"
+        bases: [{ word: "ഇനി", base: "ഇനി", reading: "ini" }, { word: "ഇരിക്കൂ", ref: "ml-0115" }]
+      - target: "ഇനി വരൂ."
+        reading: "ini varū."
+        ipa: "ini ʋəɾuː"
+        bases: [{ word: "ഇനി", base: "ഇനി", reading: "ini" }, { word: "വരൂ", ref: "ml-0010" }]
+  - id: "ml-1037"
+    target: "പിന്നീട്"
+    reading: "pinnīṭ"
+    ipa: "pinniːʈ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പിന്നീട് വരൂ."
+        reading: "pinnīṭ varū."
+        ipa: "pinniːʈ ʋəɾuː"
+        bases: [{ word: "പിന്നീട്", base: "പിന്നീട്", reading: "pinnīṭ" }, { word: "വരൂ", ref: "ml-0010" }]
+      - target: "പിന്നീട് കാണൂ."
+        reading: "pinnīṭ kāṇū."
+        ipa: "pinniːʈ kaːɳuː"
+        bases: [{ word: "പിന്നീട്", base: "പിന്നീട്", reading: "pinnīṭ" }, { word: "കാണൂ", ref: "ml-0117" }]
+  - id: "ml-1038"
+    target: "മുമ്പ്"
+    reading: "mump"
+    ipa: "mump"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മുമ്പ് ഇവിടെ ഇരിക്കൂ."
+        reading: "mump iviṭe irikkū."
+        ipa: "mump iʋiʈe iɾikkuː"
+        bases: [{ word: "മുമ്പ്", base: "മുമ്പ്", reading: "mump" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഇരിക്കൂ", ref: "ml-0115" }]
+      - target: "മുമ്പ് വെള്ളം കുടിക്കൂ."
+        reading: "mump veḷḷaṁ kuṭikkū."
+        ipa: "mump ʋeɭɭam kuʈikkuː"
+        bases: [{ word: "മുമ്പ്", base: "മുമ്പ്", reading: "mump" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "കുടിക്കൂ", ref: "ml-0114" }]
+  - id: "ml-1039"
+    target: "നേരത്തെ"
+    reading: "nēratte"
+    ipa: "neːɾət̪t̪e"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "നേരത്തെ വരൂ."
+        reading: "nēratte varū."
+        ipa: "neːɾət̪t̪e ʋəɾuː"
+        bases: [{ word: "നേരത്തെ", base: "നേരത്തെ", reading: "nēratte" }, { word: "വരൂ", ref: "ml-0010" }]
+      - target: "നേരത്തെ ഉറങ്ങൂ."
+        reading: "nēratte uṟaṅṅū."
+        ipa: "neːɾət̪t̪e uɾəŋŋuː"
+        bases: [{ word: "നേരത്തെ", base: "നേരത്തെ", reading: "nēratte" }, { word: "ഉറങ്ങൂ", ref: "ml-0121" }]
+  - id: "ml-1040"
+    target: "പതുക്കെ"
+    reading: "patukke"
+    ipa: "pət̪ukke"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പതുക്കെ വായിക്കൂ."
+        reading: "patukke vāyikkū."
+        ipa: "pət̪ukke ʋaːjikkuː"
+        bases: [{ word: "പതുക്കെ", base: "പതുക്കെ", reading: "patukke" }, { word: "വായിക്കൂ", ref: "ml-0120" }]
+      - target: "പതുക്കെ എഴുതൂ."
+        reading: "patukke eḻutū."
+        ipa: "pət̪ukke eɻut̪uː"
+        bases: [{ word: "പതുക്കെ", base: "പതുക്കെ", reading: "patukke" }, { word: "എഴുതൂ", ref: "ml-0119" }]
+  - id: "ml-1041"
+    target: "മെല്ലെ"
+    reading: "melle"
+    ipa: "melle"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മെല്ലെ കഴിക്കൂ."
+        reading: "melle kaḻikkū."
+        ipa: "melle kəɻikkuː"
+        bases: [{ word: "മെല്ലെ", base: "മെല്ലെ", reading: "melle" }, { word: "കഴിക്കൂ", ref: "ml-0113" }]
+      - target: "മെല്ലെ തുറക്കൂ."
+        reading: "melle tuṟakkū."
+        ipa: "melle t̪uɾəkkuː"
+        bases: [{ word: "മെല്ലെ", base: "മെല്ലെ", reading: "melle" }, { word: "തുറക്കൂ", ref: "ml-0125" }]
+  - id: "ml-1042"
+    target: "അധികം"
+    reading: "adhikaṁ"
+    ipa: "əd̪ʱikam"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അധികം വാങ്ങൂ."
+        reading: "adhikaṁ vāṅṅū."
+        ipa: "əd̪ʱikam ʋaːŋŋuː"
+        bases: [{ word: "അധികം", base: "അധികം", reading: "adhikaṁ" }, { word: "വാങ്ങൂ", ref: "ml-0126" }]
+      - target: "അധികം കുടിക്കൂ."
+        reading: "adhikaṁ kuṭikkū."
+        ipa: "əd̪ʱikam kuʈikkuː"
+        bases: [{ word: "അധികം", base: "അധികം", reading: "adhikaṁ" }, { word: "കുടിക്കൂ", ref: "ml-0114" }]
+  - id: "ml-1043"
+    target: "അങ്ങനെ"
+    reading: "aṅṅane"
+    ipa: "əŋŋəne"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അങ്ങനെ ഇരിക്കൂ."
+        reading: "aṅṅane irikkū."
+        ipa: "əŋŋəne iɾikkuː"
+        bases: [{ word: "അങ്ങനെ", base: "അങ്ങനെ", reading: "aṅṅane" }, { word: "ഇരിക്കൂ", ref: "ml-0115" }]
+      - target: "അങ്ങനെ നോക്കൂ."
+        reading: "aṅṅane nōkkū."
+        ipa: "əŋŋəne noːkkuː"
+        bases: [{ word: "അങ്ങനെ", base: "അങ്ങനെ", reading: "aṅṅane" }, { word: "നോക്കൂ", ref: "ml-0124" }]
+  - id: "ml-1044"
+    target: "ഇങ്ങനെ"
+    reading: "iṅṅane"
+    ipa: "iŋŋəne"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇങ്ങനെ എഴുതൂ."
+        reading: "iṅṅane eḻutū."
+        ipa: "iŋŋəne eɻut̪uː"
+        bases: [{ word: "ഇങ്ങനെ", base: "ഇങ്ങനെ", reading: "iṅṅane" }, { word: "എഴുതൂ", ref: "ml-0119" }]
+      - target: "ഇങ്ങനെ വായിക്കൂ."
+        reading: "iṅṅane vāyikkū."
+        ipa: "iŋŋəne ʋaːjikkuː"
+        bases: [{ word: "ഇങ്ങനെ", base: "ഇങ്ങനെ", reading: "iṅṅane" }, { word: "വായിക്കൂ", ref: "ml-0120" }]
+  - id: "ml-1045"
+    target: "അതുപോലെ"
+    reading: "atupōle"
+    ipa: "ət̪upoːle"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അതുപോലെ നോക്കൂ."
+        reading: "atupōle nōkkū."
+        ipa: "ət̪upoːle noːkkuː"
+        bases: [{ word: "അതുപോലെ", base: "അതുപോലെ", reading: "atupōle" }, { word: "നോക്കൂ", ref: "ml-0124" }]
+      - target: "അതുപോലെ എഴുതൂ."
+        reading: "atupōle eḻutū."
+        ipa: "ət̪upoːle eɻut̪uː"
+        bases: [{ word: "അതുപോലെ", base: "അതുപോലെ", reading: "atupōle" }, { word: "എഴുതൂ", ref: "ml-0119" }]
+  - id: "ml-1046"
+    target: "ഏറെ"
+    reading: "ēṟe"
+    ipa: "eːɾe"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഏറെ വലിയ വീട്."
+        reading: "ēṟe valiya vīṭ."
+        ipa: "eːɾe ʋəlija ʋiːʈ"
+        bases: [{ word: "ഏറെ", base: "ഏറെ", reading: "ēṟe" }, { word: "വലിയ", ref: "ml-0008" }, { word: "വീട്", ref: "ml-0009" }]
+      - target: "ഏറെ നല്ല വീട്."
+        reading: "ēṟe nalla vīṭ."
+        ipa: "eːɾe nəlla ʋiːʈ"
+        bases: [{ word: "ഏറെ", base: "ഏറെ", reading: "ēṟe" }, { word: "നല്ല", ref: "ml-0006" }, { word: "വീട്", ref: "ml-0009" }]
+  - id: "ml-1047"
+    target: "കുറച്ച്"
+    reading: "kuṟacc"
+    ipa: "kuɾatʃtʃ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കുറച്ച് വെള്ളം കുടിക്കൂ."
+        reading: "kuṟacc veḷḷaṁ kuṭikkū."
+        ipa: "kuɾatʃtʃ ʋeɭɭam kuʈikkuː"
+        bases: [{ word: "കുറച്ച്", base: "കുറച്ച്", reading: "kuṟacc" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "കുടിക്കൂ", ref: "ml-0114" }]
+      - target: "കുറച്ച് എഴുതൂ."
+        reading: "kuṟacc eḻutū."
+        ipa: "kuɾatʃtʃ eɻut̪uː"
+        bases: [{ word: "കുറച്ച്", base: "കുറച്ച്", reading: "kuṟacc" }, { word: "എഴുതൂ", ref: "ml-0119" }]
+  - id: "ml-1048"
+    target: "അത്ര"
+    reading: "atra"
+    ipa: "ət̪ɾa"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അത്ര വലിയ വീട്."
+        reading: "atra valiya vīṭ."
+        ipa: "ət̪ɾa ʋəlija ʋiːʈ"
+        bases: [{ word: "അത്ര", base: "അത്ര", reading: "atra" }, { word: "വലിയ", ref: "ml-0008" }, { word: "വീട്", ref: "ml-0009" }]
+      - target: "അത്ര നല്ല വെള്ളം."
+        reading: "atra nalla veḷḷaṁ."
+        ipa: "ət̪ɾa nəlla ʋeɭɭam"
+        bases: [{ word: "അത്ര", base: "അത്ര", reading: "atra" }, { word: "നല്ല", ref: "ml-0006" }, { word: "വെള്ളം", ref: "ml-0005" }]
+  - id: "ml-1049"
+    target: "ഒരിക്കൽ"
+    reading: "orikkal"
+    ipa: "oɾikkal"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഒരിക്കൽ വായിക്കൂ."
+        reading: "orikkal vāyikkū."
+        ipa: "oɾikkal ʋaːjikkuː"
+        bases: [{ word: "ഒരിക്കൽ", base: "ഒരിക്കൽ", reading: "orikkal" }, { word: "വായിക്കൂ", ref: "ml-0120" }]
+      - target: "ഒരിക്കൽ ഇവിടെ വരൂ."
+        reading: "orikkal iviṭe varū."
+        ipa: "oɾikkal iʋiʈe ʋəɾuː"
+        bases: [{ word: "ഒരിക്കൽ", base: "ഒരിക്കൽ", reading: "orikkal" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "വരൂ", ref: "ml-0010" }]
+  - id: "ml-1050"
+    target: "എന്നെന്നും"
+    reading: "ennennuṁ"
+    ipa: "ennennum"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്നെന്നും ഇവിടെ ഇരിക്കൂ."
+        reading: "ennennuṁ iviṭe irikkū."
+        ipa: "ennennum iʋiʈe iɾikkuː"
+        bases: [{ word: "എന്നെന്നും", base: "എന്നെന്നും", reading: "ennennuṁ" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഇരിക്കൂ", ref: "ml-0115" }]
+      - target: "എന്നെന്നും ഇവിടെ വരൂ."
+        reading: "ennennuṁ iviṭe varū."
+        ipa: "ennennum iʋiʈe ʋəɾuː"
+        bases: [{ word: "എന്നെന്നും", base: "എന്നെന്നും", reading: "ennennuṁ" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "വരൂ", ref: "ml-0010" }]
+  - id: "ml-1051"
+    target: "ഒടുവിൽ"
+    reading: "oṭuvil"
+    ipa: "oʈuʋil"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഒടുവിൽ വരൂ."
+        reading: "oṭuvil varū."
+        ipa: "oʈuʋil ʋəɾuː"
+        bases: [{ word: "ഒടുവിൽ", base: "ഒടുവിൽ", reading: "oṭuvil" }, { word: "വരൂ", ref: "ml-0010" }]
+      - target: "ഒടുവിൽ എഴുതൂ."
+        reading: "oṭuvil eḻutū."
+        ipa: "oʈuʋil eɻut̪uː"
+        bases: [{ word: "ഒടുവിൽ", base: "ഒടുവിൽ", reading: "oṭuvil" }, { word: "എഴുതൂ", ref: "ml-0119" }]
+  - id: "ml-1052"
+    target: "ഇടയ്ക്കിടെ"
+    reading: "iṭaykkiṭe"
+    ipa: "iʈəjkkiʈe"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇടയ്ക്കിടെ നോക്കൂ."
+        reading: "iṭaykkiṭe nōkkū."
+        ipa: "iʈəjkkiʈe noːkkuː"
+        bases: [{ word: "ഇടയ്ക്കിടെ", base: "ഇടയ്ക്കിടെ", reading: "iṭaykkiṭe" }, { word: "നോക്കൂ", ref: "ml-0124" }]
+      - target: "ഇടയ്ക്കിടെ എഴുതൂ."
+        reading: "iṭaykkiṭe eḻutū."
+        ipa: "iʈəjkkiʈe eɻut̪uː"
+        bases: [{ word: "ഇടയ്ക്കിടെ", base: "ഇടയ്ക്കിടെ", reading: "iṭaykkiṭe" }, { word: "എഴുതൂ", ref: "ml-0119" }]
+  - id: "ml-1053"
+    target: "വെറുതെ"
+    reading: "veṟute"
+    ipa: "ʋeɾut̪e"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വെറുതെ ഇരിക്കൂ."
+        reading: "veṟute irikkū."
+        ipa: "ʋeɾut̪e iɾikkuː"
+        bases: [{ word: "വെറുതെ", base: "വെറുതെ", reading: "veṟute" }, { word: "ഇരിക്കൂ", ref: "ml-0115" }]
+      - target: "വെറുതെ നോക്കൂ."
+        reading: "veṟute nōkkū."
+        ipa: "ʋeɾut̪e noːkkuː"
+        bases: [{ word: "വെറുതെ", base: "വെറുതെ", reading: "veṟute" }, { word: "നോക്കൂ", ref: "ml-0124" }]

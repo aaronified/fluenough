@@ -1,0 +1,38 @@
+schema: 1
+id: "ml-noun-forms-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0716"
+    target: "മേശ വലിയതാണ്"
+    reading: "mēśa valiyatāṇ"
+    ipa: "meːʃa ʋəlijət̪aːɳ"
+    pos: "phrase"
+    bases: [{ word: "മേശ", ref: "ml-0359" }, { word: "വലിയതാണ്", ref: "ml-0008" }]
+  - id: "ml-0717"
+    target: "പുസ്തകം മേശയുടെ മുകളിൽ."
+    reading: "pustakaṁ mēśayuṭe mukaḷil."
+    ipa: "pust̪əkam meːʃəjuʈe mukəɭil"
+    pos: "phrase"
+    bases: [{ word: "പുസ്തകം", ref: "ml-0356" }, { word: "മേശയുടെ", ref: "ml-0359" }, { word: "മുകളിൽ", ref: "ml-0139" }]
+  - id: "ml-0718"
+    target: "കുട്ടി വരുന്നു."
+    reading: "kuṭṭi varunnu."
+    ipa: "kuʈʈi ʋəɾunnu"
+    pos: "phrase"
+    bases: [{ word: "കുട്ടി", ref: "ml-0082" }, { word: "വരുന്നു", base: "വരുന്നു", reading: "varunnu" }]
+  - id: "ml-0719"
+    target: "കുട്ടികൾ ഇവിടെ."
+    reading: "kuṭṭikaḷ iviṭe."
+    ipa: "kuʈʈikaɭ iʋiʈe"
+    pos: "phrase"
+    bases: [{ word: "കുട്ടികൾ", ref: "ml-0082" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0720"
+    target: "വീട് അകലെ."
+    reading: "vīṭ akale."
+    ipa: "ʋiːʈ əkəle"
+    pos: "phrase"
+    bases: [{ word: "വീട്", ref: "ml-0009" }, { word: "അകലെ", ref: "ml-0144" }]

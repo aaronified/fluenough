@@ -1,0 +1,34 @@
+schema: 1
+id: "ml-en-body-sentences"
+kind: "layer"
+core: "ml-body-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The body in sentences"
+description: "Short sentences about pain, the head, eyes, a leg, medicine and sleep. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0541":
+    native: "I have a headache."
+    bases:
+      "വേദനിക്കുന്നു": "hurts"
+  "ml-0542":
+    native: "Open your eyes."
+  "ml-0543":
+    native: "Show your tongue."
+  "ml-0544":
+    native: "The doctor must see my leg."
+    bases:
+      "കാണണം": "must see"
+  "ml-0545":
+    native: "Take the medicine."
+  "ml-0546":
+    native: "Drink water for the cough."
+  "ml-0547":
+    native: "I need good sleep at night."
+    bases:
+      "വേണം": "need"
+  "ml-0548":
+    native: "My stomach hurts."
+    bases:
+      "വേദനിക്കുന്നു": "hurts"

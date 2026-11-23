@@ -1,0 +1,68 @@
+schema: 1
+id: "ml-en-work-sentences"
+kind: "layer"
+core: "ml-work-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Work in sentences"
+description: "Short sentences about jobs and places of work: teacher, nurse, student, doctor, the hospital, the school and the office. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-3016":
+    native: "Father is a teacher."
+    notes:
+      n1: "അധ്യാപകൻ (adhyāpakaṉ) takes ആണ് (āṇ) as a suffix: അധ്യാപകനാണ് (adhyāpakanāṇ), is a teacher. The word is a man's job word."
+    confusables:
+      w1: { why: "അധ്യാപിക (adhyāpika) is the word for a woman teacher." }
+      w2: { why: "ഡോക്ടർ (ḍōkṭar) is a different job." }
+  "ml-3017":
+    native: "Mother is a nurse."
+    notes:
+      n1: "നഴ്സ് (naḻs) takes ആണ് (āṇ) as a suffix: നഴ്സാണ് (naḻsāṇ), is a nurse."
+    confusables:
+      w1: { why: "ഡോക്ടർ (ḍōkṭar) is another job in a hospital." }
+      w2: { why: "അധ്യാപകൻ (adhyāpakaṉ) is a teacher, a different job." }
+  "ml-3018":
+    native: "I am a student."
+    notes:
+      n1: "വിദ്യാർത്ഥി (vidyārtthi) ends in a vowel, so a glide യ (ya) comes before ആണ് (āṇ): വിദ്യാർത്ഥിയാണ് (vidyārtthiyāṇ), is a student."
+    confusables:
+      w1: { why: "അധ്യാപകൻ (adhyāpakaṉ) is a teacher, a different job." }
+      w2: { why: "സ്കൂൾ (skūḷ) is a place, not a person." }
+  "ml-3019":
+    native: "Where is the hospital?"
+    notes:
+      n1: "ആശുപത്രി (āśupatri) is a place, and എവിടെ (eviṭe) asks where it is."
+    confusables:
+      w1: { why: "സ്കൂൾ (skūḷ) is a different place." }
+      w2: { why: "ഓഫീസ് (ōphīs) is a different place of work." }
+  "ml-3020":
+    native: "Is there a school here?"
+    notes:
+      n1: "ഉണ്ടോ (uṇṭō) asks whether something is there; ഇവിടെ (iviṭe) says here."
+    confusables:
+      w1: { why: "ആശുപത്രി (āśupatri) is a different place." }
+      w2: { why: "ഓഫീസ് (ōphīs) is a different place of work." }
+  "ml-3021":
+    native: "The office is far."
+    notes:
+      n1: "അകലെ (akale) takes ആണ് (āṇ) with a glide യ (ya): അകലെയാണ് (akaleyāṇ), is far."
+    confusables:
+      w1: { why: "ബാങ്ക് (bāṅk) is a different place of work." }
+      w2: { why: "ഫാക്ടറി (phākṭaṟi) is a different place of work." }
+  "ml-3022":
+    native: "The doctor is coming."
+    bases:
+      "വരുന്നു": "is coming"
+    notes:
+      n1: "The present of വരിക (varika) drops its last ക (ka) and takes ുന്നു (unnu): വരുന്നു (varunnu), is coming."
+    confusables:
+      w1: { why: "നഴ്സ് (naḻs) is another job in a hospital." }
+      w2: { why: "അധ്യാപകൻ (adhyāpakaṉ) is a different job." }
+  "ml-3023":
+    native: "How much is the salary?"
+    notes:
+      n1: "എത്ര (etra) asks the amount, here of the pay."
+    confusables:
+      w1: { why: "തൊഴിൽ (toḻil) is work or employment, not the pay." }
+      w2: { why: "ജോലി (jōli) is the job, not the pay." }

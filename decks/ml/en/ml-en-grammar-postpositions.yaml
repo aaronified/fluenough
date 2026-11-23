@@ -1,0 +1,36 @@
+schema: 1
+id: "ml-en-grammar-postpositions"
+kind: "layer"
+core: "ml-grammar-postpositions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Words after the noun: until and with"
+description: "Two words that come after the noun: until, up to and with. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "ml-0759":
+    native: "until; up to; as far as"
+    notes:
+      n1: "A word that comes after the noun and says how far in time or place: നാളെ വരെ (nāḷe vare), until tomorrow, and വീട് വരെ (vīṭ vare), as far as the house. The noun stays in its plain form. Source: English Wiktionary, the entry വരെ (vare) (postposition: till, up to; it usually follows a noun in the nominative case)."
+    examples:
+      "ഞാൻ നാളെ വരെ ഇവിടെ ഉണ്ട്.":
+        native: "I am here until tomorrow."
+        bases:
+          "വരെ": "until; up to"
+      "വീട് വരെ നടക്കാം.":
+        native: "Let us walk as far as the house."
+        bases:
+          "വരെ": "until; up to"
+  "ml-0760":
+    native: "with; along with; together"
+    notes:
+      n1: "A word that comes after the one you are with. After a person it follows the of form: അമ്മയുടെ കൂടെ (ammayuṭe kūṭe), with mother, and എന്റെ കൂടെ (enṟe kūṭe), with me. Another word for the same is ഒപ്പം (oppaṁ). Source: English Wiktionary, the entry കൂടെ (kūṭe) (particle: with, along with, together; synonym ഒപ്പം (oppaṁ))."
+    examples:
+      "ഞാൻ അമ്മയുടെ കൂടെ പോകുന്നു.":
+        native: "I am going with mother."
+        bases:
+          "കൂടെ": "with; along with"
+      "എന്റെ കൂടെ വരൂ.":
+        native: "Come with me."
+        bases:
+          "കൂടെ": "with; along with"

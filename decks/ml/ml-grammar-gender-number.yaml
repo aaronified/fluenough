@@ -1,0 +1,187 @@
+schema: 1
+id: "ml-grammar-gender-number"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ml-0761"
+    target: "ആൺകുട്ടി"
+    reading: "āṇkuṭṭi"
+    ipa: "aːɳkuʈʈi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ആൺകുട്ടി സ്കൂളിലേക്ക് പോകുന്നു."
+        reading: "āṇkuṭṭi skūḷilēkk pōkunnu."
+        ipa: "aːɳkuʈʈi skuːɭileːkk poːkunnu"
+        bases: [{ word: "ആൺകുട്ടി", base: "ആൺകുട്ടി", reading: "āṇkuṭṭi" }, { word: "സ്കൂളിലേക്ക്", ref: "ml-0187" }, { word: "പോകുന്നു", ref: "ml-0112" }]
+      - target: "അവൻ ഒരു ആൺകുട്ടിയാണ്."
+        reading: "avaṉ oru āṇkuṭṭiyāṇ."
+        ipa: "əʋan oɾu aːɳkuʈʈijaːɳ"
+        bases: [{ word: "അവൻ", ref: "ml-0097" }, { word: "ഒരു", ref: "ml-0751" }, { word: "ആൺകുട്ടിയാണ്", base: "ആൺകുട്ടി", reading: "āṇkuṭṭi" }]
+  - id: "ml-0762"
+    target: "പെൺകുട്ടി"
+    reading: "peṇkuṭṭi"
+    ipa: "peɳkuʈʈi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "പെൺകുട്ടി പുസ്തകം വായിക്കുന്നു."
+        reading: "peṇkuṭṭi pustakaṁ vāyikkunnu."
+        ipa: "peɳkuʈʈi pust̪əkam ʋaːjikkunnu"
+        bases: [{ word: "പെൺകുട്ടി", base: "പെൺകുട്ടി", reading: "peṇkuṭṭi" }, { word: "പുസ്തകം", ref: "ml-0356" }, { word: "വായിക്കുന്നു", ref: "ml-0120" }]
+      - target: "അവൾ ഒരു പെൺകുട്ടിയാണ്."
+        reading: "avaḷ oru peṇkuṭṭiyāṇ."
+        ipa: "əʋaɭ oɾu peɳkuʈʈijaːɳ"
+        bases: [{ word: "അവൾ", ref: "ml-0098" }, { word: "ഒരു", ref: "ml-0751" }, { word: "പെൺകുട്ടിയാണ്", base: "പെൺകുട്ടി", reading: "peṇkuṭṭi" }]
+  - id: "ml-0763"
+    target: "പുരുഷൻ"
+    reading: "puruṣaṉ"
+    ipa: "puɾuʂan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ആ പുരുഷൻ എന്റെ അച്ഛനാണ്."
+        reading: "ā puruṣaṉ enṟe acchanāṇ."
+        ipa: "aː puɾuʂan ent̪ɾe ətʃtʃənaːɳ"
+        bases: [{ word: "ആ", ref: "ml-0099" }, { word: "പുരുഷൻ", base: "പുരുഷൻ", reading: "puruṣaṉ" }, { word: "എന്റെ", ref: "ml-0043" }, { word: "അച്ഛനാണ്", ref: "ml-0070" }]
+      - target: "ഒരു പുരുഷൻ കടയിൽ ഉണ്ട്."
+        reading: "oru puruṣaṉ kaṭayil uṇṭ."
+        ipa: "oɾu puɾuʂan kəʈəjil uɳʈ"
+        bases: [{ word: "ഒരു", ref: "ml-0751" }, { word: "പുരുഷൻ", base: "പുരുഷൻ", reading: "puruṣaṉ" }, { word: "കടയിൽ", ref: "ml-0338" }, { word: "ഉണ്ട്", ref: "ml-0753" }]
+  - id: "ml-0764"
+    target: "സ്ത്രീ"
+    reading: "strī"
+    ipa: "st̪ɾiː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ആ സ്ത്രീ എന്റെ അമ്മയാണ്."
+        reading: "ā strī enṟe ammayāṇ."
+        ipa: "aː st̪ɾiː ent̪ɾe əmməjaːɳ"
+        bases: [{ word: "ആ", ref: "ml-0099" }, { word: "സ്ത്രീ", base: "സ്ത്രീ", reading: "strī" }, { word: "എന്റെ", ref: "ml-0043" }, { word: "അമ്മയാണ്", ref: "ml-0071" }]
+      - target: "ഒരു സ്ത്രീ കടയിൽ ഉണ്ട്."
+        reading: "oru strī kaṭayil uṇṭ."
+        ipa: "oɾu st̪ɾiː kəʈəjil uɳʈ"
+        bases: [{ word: "ഒരു", ref: "ml-0751" }, { word: "സ്ത്രീ", base: "സ്ത്രീ", reading: "strī" }, { word: "കടയിൽ", ref: "ml-0338" }, { word: "ഉണ്ട്", ref: "ml-0753" }]
+  - id: "ml-0765"
+    target: "മനുഷ്യൻ"
+    reading: "manuṣyaṉ"
+    ipa: "mənuʂjan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "മനുഷ്യൻ വെള്ളം കുടിക്കുന്നു."
+        reading: "manuṣyaṉ veḷḷaṁ kuṭikkunnu."
+        ipa: "mənuʂjan ʋeɭɭam kuʈikkunnu"
+        bases: [{ word: "മനുഷ്യൻ", base: "മനുഷ്യൻ", reading: "manuṣyaṉ" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "കുടിക്കുന്നു", ref: "ml-0114" }]
+      - target: "മനുഷ്യർ ഇവിടെ ഉണ്ട്."
+        reading: "manuṣyar iviṭe uṇṭ."
+        ipa: "mənuʂjaɾ iʋiʈe uɳʈ"
+        bases: [{ word: "മനുഷ്യർ", base: "മനുഷ്യൻ", reading: "manuṣyaṉ" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", ref: "ml-0753" }]
+  - id: "ml-0766"
+    target: "ആൾ"
+    reading: "āḷ"
+    ipa: "aːɭ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ഒരാൾ ഇവിടെ വരുന്നു."
+        reading: "orāḷ iviṭe varunnu."
+        ipa: "oɾaːɭ iʋiʈe ʋəɾunnu"
+        bases: [{ word: "ഒരാൾ", base: "ആൾ", reading: "āḷ" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "വരുന്നു", ref: "ml-0010" }]
+      - target: "ആൾ വീട്ടിൽ ഇല്ല."
+        reading: "āḷ vīṭṭil illa."
+        ipa: "aːɭ ʋiːʈʈil illa"
+        bases: [{ word: "ആൾ", base: "ആൾ", reading: "āḷ" }, { word: "വീട്ടിൽ", ref: "ml-0009" }, { word: "ഇല്ല", ref: "ml-0002" }]
+  - id: "ml-0769"
+    target: "അവ"
+    reading: "ava"
+    ipa: "əʋa"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "അവ എന്റെ പുസ്തകങ്ങളാണ്."
+        reading: "ava enṟe pustakaṅṅaḷāṇ."
+        ipa: "əʋa ent̪ɾe pust̪əkəŋŋəɭaːɳ"
+        bases: [{ word: "അവ", base: "അവ", reading: "ava" }, { word: "എന്റെ", ref: "ml-0043" }, { word: "പുസ്തകങ്ങളാണ്", ref: "ml-0356" }]
+      - target: "അവ നല്ലതാണ്."
+        reading: "ava nallatāṇ."
+        ipa: "əʋa nəllət̪aːɳ"
+        bases: [{ word: "അവ", base: "അവ", reading: "ava" }, { word: "നല്ലതാണ്", ref: "ml-0006" }]
+  - id: "ml-0770"
+    target: "ഇവ"
+    reading: "iva"
+    ipa: "iʋa"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "ഇവ എന്റെ കുപ്പായങ്ങളാണ്."
+        reading: "iva enṟe kuppāyaṅṅaḷāṇ."
+        ipa: "iʋa ent̪ɾe kuppaːjəŋŋəɭaːɳ"
+        bases: [{ word: "ഇവ", base: "ഇവ", reading: "iva" }, { word: "എന്റെ", ref: "ml-0043" }, { word: "കുപ്പായങ്ങളാണ്", ref: "ml-0414" }]
+      - target: "ഇവ എന്താണ്?"
+        reading: "iva entāṇ?"
+        ipa: "iʋa ent̪aːɳ"
+        bases: [{ word: "ഇവ", base: "ഇവ", reading: "iva" }, { word: "എന്താണ്", ref: "ml-0032" }]
+  - id: "ml-0772"
+    target: "പെണ്ണ്"
+    reading: "peṇṇ"
+    ipa: "peɳɳ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ആ പെണ്ണ് എന്റെ ചേച്ചിയാണ്."
+        reading: "ā peṇṇ enṟe cēcciyāṇ."
+        ipa: "aː peɳɳ ent̪ɾe tʃeːtʃtʃijaːɳ"
+        bases: [{ word: "ആ", ref: "ml-0099" }, { word: "പെണ്ണ്", base: "പെണ്ണ്", reading: "peṇṇ" }, { word: "എന്റെ", ref: "ml-0043" }, { word: "ചേച്ചിയാണ്", ref: "ml-0075" }]
+      - target: "പെണ്ണുങ്ങൾ വീട്ടിൽ ഉണ്ട്."
+        reading: "peṇṇuṅṅaḷ vīṭṭil uṇṭ."
+        ipa: "peɳɳuŋŋaɭ ʋiːʈʈil uɳʈ"
+        bases: [{ word: "പെണ്ണുങ്ങൾ", base: "പെണ്ണ്", reading: "peṇṇ" }, { word: "വീട്ടിൽ", ref: "ml-0009" }, { word: "ഉണ്ട്", ref: "ml-0753" }]
+  - id: "ml-0773"
+    target: "മക്കൾ"
+    reading: "makkaḷ"
+    ipa: "məkkaɭ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "എനിക്ക് രണ്ട് മക്കൾ ഉണ്ട്."
+        reading: "enikk raṇṭ makkaḷ uṇṭ."
+        ipa: "enikk ɾaɳʈ məkkaɭ uɳʈ"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "രണ്ട്", ref: "ml-0049" }, { word: "മക്കൾ", base: "മക്കൾ", reading: "makkaḷ" }, { word: "ഉണ്ട്", ref: "ml-0753" }]
+      - target: "അവളുടെ മക്കൾ ഇവിടെ ഉണ്ട്."
+        reading: "avaḷuṭe makkaḷ iviṭe uṇṭ."
+        ipa: "əʋəɭuʈe məkkaɭ iʋiʈe uɳʈ"
+        bases: [{ word: "അവളുടെ", ref: "ml-0098" }, { word: "മക്കൾ", base: "മക്കൾ", reading: "makkaḷ" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", ref: "ml-0753" }]
+  - id: "ml-0771"
+    kind: "set"
+    members: [{ ref: "ml-0097" }, { ref: "ml-0098" }, { ref: "ml-0099" }, { ref: "ml-1004" }, { ref: "ml-0769" }]
