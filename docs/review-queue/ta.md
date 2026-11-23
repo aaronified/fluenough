@@ -247,3 +247,12 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-8154 | ta-grammar-verb-classes | முற்றுகையிடு (muṟṟukaiyiṭu), to besiege, is built as an -இடு compound (முற்றுகையிட்டான், முற்றுகையிடுவான்); is the stem right? | Sonnet builder | 2026-11-23 |
 
 | ta-8251 | ta-grammar-verb-classes | தோற்று (tōṟṟu) is the linking form of தோல்; its row is built as a verb with தோற்றான், தோற்பான், தோற்கிறான்; is that right? | Sonnet builder | 2026-11-23 |
+| ta-6206 | ta-proverbs-1 | Is the verb form முட்டானால் (muṭṭāṉāl) glossed right as 'if it falls short' (from முட்டு (muṭṭu), shortage)? | Haiku deck worker (ta-kinds1) | 2026-11-23 |
+| ta-6207 | ta-proverbs-1 | Is the sense 'share even a little with guests before eating' right for the proverb மருந்தே ஆயினும் விருந்தோடு உண் (maruntē āyiṉum viruntōṭu uṇ)? | Haiku deck worker (ta-kinds1) | 2026-11-23 |
+| ta-6213 | ta-proverbs-1 | Percival gives no explanation; is the figurative sense (a household's upkeep eats wealth though it never moves) right? | Haiku deck worker (ta-kinds1) | 2026-11-23 |
+| ta-6219 | ta-proverbs-1 | The words அன்றற (aṉṟaṟa) and நின்றற (niṉṟaṟa) are glossed from Percival's English only; can a reviewer confirm the wording? | Haiku deck worker (ta-kinds1) | 2026-11-23 |
+| ta-6220 | ta-proverbs-2 | Both words are single run-together forms glossed from Percival's English ('Pay at once, delay is bad'); can a reviewer confirm the reading and the split? | Haiku deck worker (ta-kinds1) | 2026-11-23 |
+| ta-6224 | ta-proverbs-2 | Is சாதிக்கும் (cātikkum) 'will win over, will master' the right sense here? | Haiku deck worker (ta-kinds1) | 2026-11-23 |
+| ta-6226 | ta-proverbs-2 | கண்டிதம் (kaṇṭitam) is glossed 'cutting off' from the dictionary sense; is that the sense in this proverb? | Haiku deck worker (ta-kinds1) | 2026-11-23 |
+| ta-6251 | ta-proverbs-3 | Percival gives no explanation; is the figurative sense (supply does not grow with demand) right? | Haiku deck worker (ta-kinds1) | 2026-11-23 |
+| ta-6252 | ta-proverbs-3 | Percival gives no explanation; is the figurative sense 'a task that takes great effort' right? | Haiku deck worker (ta-kinds1) | 2026-11-23 |
