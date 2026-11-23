@@ -123,10 +123,7 @@ class DeckSources implements DeckSource, DiskLocated {
   }
 
   @override
-  String? locate(String path) {
-    final source = _owner[path];
-    return source is DiskLocated ? source.locate(path) : null;
-  }
+  String? locate(String path) => locateOn(_owner[path], path);
 }
 
 /// Deck files held in memory, keyed by path. For tests and the gallery.
@@ -1102,9 +1099,8 @@ class DeckCatalog {
       readWatch.elapsedMilliseconds,
       extra: <String, Object?>{'files': paths.length},
     );
-    final from = source;
     for (final path in paths) {
-      final at = defer && from is DiskLocated ? from.locate(path) : null;
+      final at = defer ? locateOn(source, path) : null;
       if (at != null) {
         disk[path] = at;
       } else {
@@ -1114,7 +1110,7 @@ class DeckCatalog {
     final added = this.added;
     if (added != null) {
       for (final path in await added.list()) {
-        final at = defer && added is DiskLocated ? added.locate(path) : null;
+        final at = defer ? locateOn(added, path) : null;
         if (at != null) {
           disk[path] = at;
         } else {
@@ -1127,9 +1123,7 @@ class DeckCatalog {
       try {
         for (final path in await privateStore.list()) {
           try {
-            final at = defer && privateStore is DiskLocated
-                ? privateStore.locate(path)
-                : null;
+            final at = defer ? locateOn(privateStore, path) : null;
             if (at != null) {
               disk[path] = at;
             } else {

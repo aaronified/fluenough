@@ -30,6 +30,15 @@ abstract interface class AddedLanguages {
   Future<String?> languageOf(String path);
 }
 
+/// The language of the added deck at [path] in [store] when it is an
+/// [AddedLanguages] that knows it, as a future, else null. Promotion is done
+/// on a local of type `Object?`, which a store typed as [DeckStore] does not
+/// get.
+Future<String?>? addedLanguageOn(Object? store, String path) {
+  final known = store;
+  return known is AddedLanguages ? known.languageOf(path) : null;
+}
+
 /// [DeckStore] in a directory of the app's own storage, which an update
 /// leaves alone. It keeps `added-index.json` beside the decks: each deck
 /// file's language, a few bytes, so that no deck is read to find it. A deck

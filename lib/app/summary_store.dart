@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import '../core/decks/language_summary.dart';
 import 'deck_catalog.dart';
 
@@ -13,15 +11,15 @@ class SummaryBook {
 
   final Map<String, LanguageSummary> _byCode = <String, LanguageSummary>{};
   Future<void> _tail = Future<void>.value();
-  bool _opened = false;
+  Future<void>? _opening;
 
   /// The summaries' file text as last read or written, for a verify job.
   String? text;
 
   /// Reads the file, once. A file that cannot be read is no summaries.
-  Future<void> open() async {
-    if (_opened) return;
-    _opened = true;
+  Future<void> open() => _opening ??= _read();
+
+  Future<void> _read() async {
     try {
       text = await store.read();
     } on Object {

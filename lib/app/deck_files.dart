@@ -60,6 +60,15 @@ class MemorySnapshotReader implements SnapshotReader {
   String? read() => text;
 }
 
+/// Where the file at catalog [path] is on disk when [from] is a
+/// [DiskLocated] source that has it, else null. Promotion is done on a local
+/// of type `Object?`, which a source or store typed as another interface
+/// does not get.
+String? locateOn(Object? from, String path) {
+  final source = from;
+  return source is DiskLocated ? source.locate(path) : null;
+}
+
 /// A deck source whose files are on disk, so that a worker isolate can read
 /// them by path.
 abstract interface class DiskLocated {

@@ -28,7 +28,7 @@ enum LoadPhase { notLoaded, loading, loaded, failed }
 
 /// A language unit's loading state.
 class LanguageLoad {
-  const LanguageLoad._(this.phase, [this.message]);
+  const LanguageLoad._(this.phase) : message = null;
 
   const LanguageLoad.failed(String this.message) : phase = LoadPhase.failed;
 
@@ -237,9 +237,14 @@ class CatalogSet {
   Future<LanguageCatalog> ensureLoaded(String code) {
     final loaded = _units[code];
     if (loaded != null) return Future<LanguageCatalog>.value(loaded);
-    return _loading[code] ??= _enqueue(() => _load(code)).whenComplete(() {
-      _loading.remove(code);
+    final joined = _loading[code];
+    if (joined != null) return joined;
+    late final Future<LanguageCatalog> next;
+    next = _enqueue(() => _load(code)).whenComplete(() {
+      if (identical(_loading[code], next)) _loading.remove(code);
     });
+    _loading[code] = next;
+    return next;
   }
 
   Future<LanguageCatalog> _load(String code) async {
@@ -325,12 +330,22 @@ class CatalogSet {
       for (final code in wanted)
         code: <String, String>{
           for (final path in layout.byLanguage[code] ?? const <String>[])
-            if (known[path] case final sha?) path: sha,
+            path: ?known[path],
         },
     };
-    final verdicts = await verifier(
+    final checked = await verifier(
       VerifyJob(summaries: summaries?.text, shas: shas, app: app),
     );
+    // A deck the learner added or a private package is not in the download
+    // manifest, so no digest vouches for it: its language is made again.
+    bool local(String code) => (layout.byLanguage[code] ?? const <String>[])
+        .any((path) => layout.from[path] != _From.source);
+    final verdicts = <String, CacheVerdict>{
+      for (final e in checked.entries)
+        e.key: local(e.key)
+            ? const CacheVerdict.mismatch('local decks')
+            : e.value,
+    };
     marks?.record(
       'catalog.verify',
       watch.elapsedMilliseconds,
@@ -395,7 +410,7 @@ class CatalogSet {
     final paths = <String>[...layout.shared, ...?layout.byLanguage[code]];
     for (final path in paths) {
       final store = _store(layout.from[path]!);
-      final at = store is DiskLocated ? store.locate(path) : null;
+      final at = locateOn(store, path);
       if (at != null) {
         disk[path] = at;
         continue;
@@ -414,7 +429,7 @@ class CatalogSet {
       disk: disk.isEmpty ? null : DiskDeckFiles(disk),
       shas: <String, String>{
         for (final path in paths)
-          if (known[path] case final sha?) path: sha,
+          path: ?known[path],
       },
       snapshot: snapshots?.readerFor(code),
       seed: snapshots?.seed,
@@ -506,7 +521,8 @@ class CatalogSet {
 
   Future<String?> _languageOfAdded(DeckStore store, String path) async {
     try {
-      if (store is AddedLanguages) return await store.languageOf(path);
+      final known = addedLanguageOn(store, path);
+      if (known != null) return await known;
       return languageCodeOfDeckText(await store.read(path));
     } on Object catch (e, stack) {
       log?.warning(describeError('The language of $path', e, stack));
