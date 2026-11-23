@@ -549,7 +549,9 @@ units:
       - { id: "pitfalls-heard", text: { "en": "A short exchange that uses pitfalls, after the help unit" } }
     reading_passages:
       - { id: "pitfalls-read", text: { "en": "A short text that uses pitfalls, after the help unit" } }
-  - planned: { id: "ta-grammar-conjunct-verbs", grammar: "conjunct-verbs", words: 3 }
+  - decks: ["ta-grammar-conjunct-verbs", "ta-grammar-conjunct-verbs-forms"]
+    words: 3
+    grammar: ["conjunct-verbs", "conjunct-verbs-forms"]
     listening_passages:
       - { id: "doing-a-favour", text: { "en": "Asking someone to do a favour or make a call" } }
     reading_passages:
@@ -566,7 +568,9 @@ units:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
     reading_passages:
       - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
-  - planned: { id: "ta-grammar-imperatives", grammar: "imperatives" }
+  - decks: ["ta-grammar-imperatives"]
+    words: 0
+    grammar: ["imperative-positive", "imperative-negative", "imperative-lets"]
     listening_passages:
       - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
     reading_passages:

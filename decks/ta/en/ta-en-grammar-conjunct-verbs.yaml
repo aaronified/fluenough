@@ -1,0 +1,52 @@
+schema: 1
+id: "ta-en-grammar-conjunct-verbs"
+kind: "layer"
+core: "ta-grammar-conjunct-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Noun plus verb: doing, becoming and feeling"
+description: "Three verbs that make a verb out of a noun: do, become and feel. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+cards:
+  "ta-0460":
+    native: "to do (spoken); to make a verb out of a noun"
+    notes:
+      "n1": "In speech it takes the place of செய் (cey) after a noun: போன் பண்ணு (pōṉ paṇṇu), to phone, and வேலை பண்ணு (vēlai paṇṇu), to work. The noun and the verb are two words, and the verb takes the usual endings, as in பண்றேன் (paṇṟēṉ), I do it, in speech. Writing prefers செய் (cey): உதவி செய் (utavi cey)."
+    examples:
+      "நான் அம்மாவுக்குப் போன் பண்றேன்.":
+        native: "I am phoning mother."
+        bases:
+          "அம்மாவுக்குப்": "to mother; from அம்மா (ammā), mother"
+          "போன்": "phone"
+          "பண்றேன்": "do; from பண்ணு (paṇṇu), to do"
+      "நீங்கள் எனக்கு உதவி பண்ணுங்கள்.":
+        native: "Please help me."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "பண்ணுங்கள்": "please do; from பண்ணு (paṇṇu), to do"
+  "ta-0461":
+    native: "to become; to happen; to be done"
+    notes:
+      "n1": "With a noun it says someone becomes something: மருத்துவர் ஆனான் (maruttuvar āṉāṉ), he became a doctor. The idiom நேரம் ஆகிறது (nēram ākiṟatu) says that time is passing, that is, it is getting late. The stem changes in the past: ஆனான் (āṉāṉ)."
+    examples:
+      "அவன் மருத்துவர் ஆனான்.":
+        native: "He became a doctor."
+        bases:
+          "ஆனான்": "became; from ஆகு (āku), to become"
+      "நேரம் ஆகிறது.":
+        native: "It is getting late."
+        bases:
+          "ஆகிறது": "is becoming; from ஆகு (āku), to become"
+  "ta-0462":
+    native: "to undergo; to feel (after a noun)"
+    notes:
+      "n1": "After a noun for a feeling it says one has that feeling: பயம் (payam) is fear and பயப்படு (payappaṭu) is to be afraid, with a doubled consonant between the two. The noun may lose its last sound, as பயம் (payam) does here."
+    examples:
+      "குழந்தை பயப்படுகிறது.":
+        native: "The child is afraid."
+        bases:
+          "பயப்படுகிறது": "is afraid; from படு (paṭu), to undergo; to feel"
+      "பயப்படாதீர்கள்.":
+        native: "Please do not be afraid."
+        bases:
+          "பயப்படாதீர்கள்": "please do not be afraid; from படு (paṭu), to undergo; to feel"

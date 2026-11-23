@@ -1,0 +1,148 @@
+schema: 1
+id: "ta-grammar-imperatives"
+part: "core"
+kind: "rules"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ta-0409", "ta-0410", "ta-0412", "ta-0413"]
+  slots: ["friend", "polite", "not-friend", "not-polite", "lets"]
+  rows:
+    - word: "ta-0010"
+      forms: { "friend": "வா", "polite": ["வாங்க", "வாருங்கள்"], "not-friend": "வராதே", "not-polite": ["வராதீங்க", "வராதீர்கள்"], "lets": "வரலாம்" }
+      readings: { "friend": "vā", "polite": ["vāṅka", "vāruṅkaḷ"], "not-friend": "varātē", "not-polite": ["varātīṅka", "varātīrkaḷ"], "lets": "varalām" }
+    - word: "ta-0038"
+      forms: { "friend": "எழு", "polite": ["எழுங்க", "எழுங்கள்"], "not-friend": "எழாதே", "not-polite": ["எழாதீங்க", "எழாதீர்கள்"], "lets": "எழலாம்" }
+      readings: { "friend": "eḻu", "polite": ["eḻuṅka", "eḻuṅkaḷ"], "not-friend": "eḻātē", "not-polite": ["eḻātīṅka", "eḻātīrkaḷ"], "lets": "eḻalām" }
+    - word: "ta-0115"
+      forms: { "friend": "படி", "polite": ["படியுங்க", "படியுங்கள்"], "not-friend": "படிக்காதே", "not-polite": ["படிக்காதீங்க", "படிக்காதீர்கள்"], "lets": "படிக்கலாம்" }
+      readings: { "friend": "paṭi", "polite": ["paṭiyuṅka", "paṭiyuṅkaḷ"], "not-friend": "paṭikkātē", "not-polite": ["paṭikkātīṅka", "paṭikkātīrkaḷ"], "lets": "paṭikkalām" }
+    - word: "ta-0118"
+      forms: { "friend": "போ", "polite": ["போங்க", "போங்கள்"], "not-friend": "போகாதே", "not-polite": ["போகாதீங்க", "போகாதீர்கள்"], "lets": "போகலாம்" }
+      readings: { "friend": "pō", "polite": ["pōṅka", "pōṅkaḷ"], "not-friend": "pōkātē", "not-polite": ["pōkātīṅka", "pōkātīrkaḷ"], "lets": "pōkalām" }
+    - word: "ta-0119"
+      forms: { "friend": "சாப்பிடு", "polite": ["சாப்பிடுங்க", "சாப்பிடுங்கள்"], "not-friend": "சாப்பிடாதே", "not-polite": ["சாப்பிடாதீங்க", "சாப்பிடாதீர்கள்"], "lets": "சாப்பிடலாம்" }
+      readings: { "friend": "cāppiṭu", "polite": ["cāppiṭuṅka", "cāppiṭuṅkaḷ"], "not-friend": "cāppiṭātē", "not-polite": ["cāppiṭātīṅka", "cāppiṭātīrkaḷ"], "lets": "cāppiṭalām" }
+    - word: "ta-0120"
+      forms: { "friend": "குடி", "polite": ["குடியுங்க", "குடியுங்கள்"], "not-friend": "குடிக்காதே", "not-polite": ["குடிக்காதீங்க", "குடிக்காதீர்கள்"], "lets": "குடிக்கலாம்" }
+      readings: { "friend": "kuṭi", "polite": ["kuṭiyuṅka", "kuṭiyuṅkaḷ"], "not-friend": "kuṭikkātē", "not-polite": ["kuṭikkātīṅka", "kuṭikkātīrkaḷ"], "lets": "kuṭikkalām" }
+    - word: "ta-0121"
+      forms: { "friend": "பார்", "polite": ["பாருங்க", "பாருங்கள்"], "not-friend": "பார்க்காதே", "not-polite": ["பார்க்காதீங்க", "பார்க்காதீர்கள்"], "lets": "பார்க்கலாம்" }
+      readings: { "friend": "pār", "polite": ["pāruṅka", "pāruṅkaḷ"], "not-friend": "pārkkātē", "not-polite": ["pārkkātīṅka", "pārkkātīrkaḷ"], "lets": "pārkkalām" }
+    - word: "ta-0122"
+      forms: { "friend": "கேள்", "polite": ["கேளுங்க", "கேளுங்கள்"], "not-friend": "கேட்காதே", "not-polite": ["கேட்காதீங்க", "கேட்காதீர்கள்"], "lets": "கேட்கலாம்" }
+      readings: { "friend": "kēḷ", "polite": ["kēḷuṅka", "kēḷuṅkaḷ"], "not-friend": "kēṭkātē", "not-polite": ["kēṭkātīṅka", "kēṭkātīrkaḷ"], "lets": "kēṭkalām" }
+    - word: "ta-0123"
+      forms: { "friend": "பேசு", "polite": ["பேசுங்க", "பேசுங்கள்"], "not-friend": "பேசாதே", "not-polite": ["பேசாதீங்க", "பேசாதீர்கள்"], "lets": "பேசலாம்" }
+      readings: { "friend": "pēcu", "polite": ["pēcuṅka", "pēcuṅkaḷ"], "not-friend": "pēcātē", "not-polite": ["pēcātīṅka", "pēcātīrkaḷ"], "lets": "pēcalām" }
+    - word: "ta-0124"
+      forms: { "friend": "எழுது", "polite": ["எழுதுங்க", "எழுதுங்கள்"], "not-friend": "எழுதாதே", "not-polite": ["எழுதாதீங்க", "எழுதாதீர்கள்"], "lets": "எழுதலாம்" }
+      readings: { "friend": "eḻutu", "polite": ["eḻutuṅka", "eḻutuṅkaḷ"], "not-friend": "eḻutātē", "not-polite": ["eḻutātīṅka", "eḻutātīrkaḷ"], "lets": "eḻutalām" }
+    - word: "ta-0125"
+      forms: { "friend": "கொடு", "polite": ["கொடுங்க", "கொடுங்கள்"], "not-friend": "கொடுக்காதே", "not-polite": ["கொடுக்காதீங்க", "கொடுக்காதீர்கள்"], "lets": "கொடுக்கலாம்" }
+      readings: { "friend": "koṭu", "polite": ["koṭuṅka", "koṭuṅkaḷ"], "not-friend": "koṭukkātē", "not-polite": ["koṭukkātīṅka", "koṭukkātīrkaḷ"], "lets": "koṭukkalām" }
+    - word: "ta-0126"
+      forms: { "friend": "தூங்கு", "polite": ["தூங்குங்க", "தூங்குங்கள்"], "not-friend": "தூங்காதே", "not-polite": ["தூங்காதீங்க", "தூங்காதீர்கள்"], "lets": "தூங்கலாம்" }
+      readings: { "friend": "tūṅku", "polite": ["tūṅkuṅka", "tūṅkuṅkaḷ"], "not-friend": "tūṅkātē", "not-polite": ["tūṅkātīṅka", "tūṅkātīrkaḷ"], "lets": "tūṅkalām" }
+    - word: "ta-0127"
+      forms: { "friend": "செய்", "polite": ["செய்யுங்க", "செய்யுங்கள்"], "not-friend": "செய்யாதே", "not-polite": ["செய்யாதீங்க", "செய்யாதீர்கள்"], "lets": "செய்யலாம்" }
+      readings: { "friend": "cey", "polite": ["ceyyuṅka", "ceyyuṅkaḷ"], "not-friend": "ceyyātē", "not-polite": ["ceyyātīṅka", "ceyyātīrkaḷ"], "lets": "ceyyalām" }
+    - word: "ta-0128"
+      forms: { "friend": "சமை", "polite": ["சமையுங்க", "சமையுங்கள்"], "not-friend": "சமைக்காதே", "not-polite": ["சமைக்காதீங்க", "சமைக்காதீர்கள்"], "lets": "சமைக்கலாம்" }
+      readings: { "friend": "camai", "polite": ["camaiyuṅka", "camaiyuṅkaḷ"], "not-friend": "camaikkātē", "not-polite": ["camaikkātīṅka", "camaikkātīrkaḷ"], "lets": "camaikkalām" }
+    - word: "ta-0129"
+      forms: { "friend": "வாங்கு", "polite": ["வாங்குங்க", "வாங்குங்கள்"], "not-friend": "வாங்காதே", "not-polite": ["வாங்காதீங்க", "வாங்காதீர்கள்"], "lets": "வாங்கலாம்" }
+      readings: { "friend": "vāṅku", "polite": ["vāṅkuṅka", "vāṅkuṅkaḷ"], "not-friend": "vāṅkātē", "not-polite": ["vāṅkātīṅka", "vāṅkātīrkaḷ"], "lets": "vāṅkalām" }
+    - word: "ta-0184"
+      forms: { "friend": "எடு", "polite": ["எடுங்க", "எடுங்கள்"], "not-friend": "எடுக்காதே", "not-polite": ["எடுக்காதீங்க", "எடுக்காதீர்கள்"], "lets": "எடுக்கலாம்" }
+      readings: { "friend": "eṭu", "polite": ["eṭuṅka", "eṭuṅkaḷ"], "not-friend": "eṭukkātē", "not-polite": ["eṭukkātīṅka", "eṭukkātīrkaḷ"], "lets": "eṭukkalām" }
+    - word: "ta-0185"
+      forms: { "friend": "வை", "polite": ["வையுங்க", "வையுங்கள்"], "not-friend": "வைக்காதே", "not-polite": ["வைக்காதீங்க", "வைக்காதீர்கள்"], "lets": "வைக்கலாம்" }
+      readings: { "friend": "vai", "polite": ["vaiyuṅka", "vaiyuṅkaḷ"], "not-friend": "vaikkātē", "not-polite": ["vaikkātīṅka", "vaikkātīrkaḷ"], "lets": "vaikkalām" }
+    - word: "ta-0186"
+      forms: { "friend": "திற", "polite": ["திறங்க", "திறங்கள்"], "not-friend": "திறக்காதே", "not-polite": ["திறக்காதீங்க", "திறக்காதீர்கள்"], "lets": "திறக்கலாம்" }
+      readings: { "friend": "tiṟa", "polite": ["tiṟaṅka", "tiṟaṅkaḷ"], "not-friend": "tiṟakkātē", "not-polite": ["tiṟakkātīṅka", "tiṟakkātīrkaḷ"], "lets": "tiṟakkalām" }
+    - word: "ta-0187"
+      forms: { "friend": "மூடு", "polite": ["மூடுங்க", "மூடுங்கள்"], "not-friend": "மூடாதே", "not-polite": ["மூடாதீங்க", "மூடாதீர்கள்"], "lets": "மூடலாம்" }
+      readings: { "friend": "mūṭu", "polite": ["mūṭuṅka", "mūṭuṅkaḷ"], "not-friend": "mūṭātē", "not-polite": ["mūṭātīṅka", "mūṭātīrkaḷ"], "lets": "mūṭalām" }
+    - word: "ta-0188"
+      forms: { "friend": "உட்கார்", "polite": ["உட்காருங்க", "உட்காருங்கள்"], "not-friend": "உட்காராதே", "not-polite": ["உட்காராதீங்க", "உட்காராதீர்கள்"], "lets": "உட்காரலாம்" }
+      readings: { "friend": "uṭkār", "polite": ["uṭkāruṅka", "uṭkāruṅkaḷ"], "not-friend": "uṭkārātē", "not-polite": ["uṭkārātīṅka", "uṭkārātīrkaḷ"], "lets": "uṭkāralām" }
+    - word: "ta-0189"
+      forms: { "friend": "நில்", "polite": ["நில்லுங்க", "நில்லுங்கள்"], "not-friend": "நிற்காதே", "not-polite": ["நிற்காதீங்க", "நிற்காதீர்கள்"], "lets": "நிற்கலாம்" }
+      readings: { "friend": "nil", "polite": ["nilluṅka", "nilluṅkaḷ"], "not-friend": "niṟkātē", "not-polite": ["niṟkātīṅka", "niṟkātīrkaḷ"], "lets": "niṟkalām" }
+    - word: "ta-0190"
+      forms: { "friend": "கழுவு", "polite": ["கழுவுங்க", "கழுவுங்கள்"], "not-friend": "கழுவாதே", "not-polite": ["கழுவாதீங்க", "கழுவாதீர்கள்"], "lets": "கழுவலாம்" }
+      readings: { "friend": "kaḻuvu", "polite": ["kaḻuvuṅka", "kaḻuvuṅkaḷ"], "not-friend": "kaḻuvātē", "not-polite": ["kaḻuvātīṅka", "kaḻuvātīrkaḷ"], "lets": "kaḻuvalām" }
+    - word: "ta-0191"
+      forms: { "friend": "விளையாடு", "polite": ["விளையாடுங்க", "விளையாடுங்கள்"], "not-friend": "விளையாடாதே", "not-polite": ["விளையாடாதீங்க", "விளையாடாதீர்கள்"], "lets": "விளையாடலாம்" }
+      readings: { "friend": "viḷaiyāṭu", "polite": ["viḷaiyāṭuṅka", "viḷaiyāṭuṅkaḷ"], "not-friend": "viḷaiyāṭātē", "not-polite": ["viḷaiyāṭātīṅka", "viḷaiyāṭātīrkaḷ"], "lets": "viḷaiyāṭalām" }
+    - word: "ta-1101"
+      forms: { "friend": "குளி", "polite": ["குளியுங்க", "குளியுங்கள்"], "not-friend": "குளிக்காதே", "not-polite": ["குளிக்காதீங்க", "குளிக்காதீர்கள்"], "lets": "குளிக்கலாம்" }
+      readings: { "friend": "kuḷi", "polite": ["kuḷiyuṅka", "kuḷiyuṅkaḷ"], "not-friend": "kuḷikkātē", "not-polite": ["kuḷikkātīṅka", "kuḷikkātīrkaḷ"], "lets": "kuḷikkalām" }
+    - word: "ta-1102"
+      forms: { "friend": "துலக்கு", "polite": ["துலக்குங்க", "துலக்குங்கள்"], "not-friend": "துலக்காதே", "not-polite": ["துலக்காதீங்க", "துலக்காதீர்கள்"], "lets": "துலக்கலாம்" }
+      readings: { "friend": "tulakku", "polite": ["tulakkuṅka", "tulakkuṅkaḷ"], "not-friend": "tulakkātē", "not-polite": ["tulakkātīṅka", "tulakkātīrkaḷ"], "lets": "tulakkalām" }
+    - word: "ta-1103"
+      forms: { "friend": "நட", "polite": ["நடங்க", "நடங்கள்"], "not-friend": "நடக்காதே", "not-polite": ["நடக்காதீங்க", "நடக்காதீர்கள்"], "lets": "நடக்கலாம்" }
+      readings: { "friend": "naṭa", "polite": ["naṭaṅka", "naṭaṅkaḷ"], "not-friend": "naṭakkātē", "not-polite": ["naṭakkātīṅka", "naṭakkātīrkaḷ"], "lets": "naṭakkalām" }
+    - word: "ta-1104"
+      forms: { "friend": "திரும்பு", "polite": ["திரும்புங்க", "திரும்புங்கள்"], "not-friend": "திரும்பாதே", "not-polite": ["திரும்பாதீங்க", "திரும்பாதீர்கள்"], "lets": "திரும்பலாம்" }
+      readings: { "friend": "tirumpu", "polite": ["tirumpuṅka", "tirumpuṅkaḷ"], "not-friend": "tirumpātē", "not-polite": ["tirumpātīṅka", "tirumpātīrkaḷ"], "lets": "tirumpalām" }
+    - word: "ta-1107"
+      forms: { "friend": "தொடங்கு", "polite": ["தொடங்குங்க", "தொடங்குங்கள்"], "not-friend": "தொடங்காதே", "not-polite": ["தொடங்காதீங்க", "தொடங்காதீர்கள்"], "lets": "தொடங்கலாம்" }
+      readings: { "friend": "toṭaṅku", "polite": ["toṭaṅkuṅka", "toṭaṅkuṅkaḷ"], "not-friend": "toṭaṅkātē", "not-polite": ["toṭaṅkātīṅka", "toṭaṅkātīrkaḷ"], "lets": "toṭaṅkalām" }
+    - word: "ta-1801"
+      forms: { "friend": "உதவு", "polite": ["உதவுங்க", "உதவுங்கள்"], "not-friend": "உதவாதே", "not-polite": ["உதவாதீங்க", "உதவாதீர்கள்"], "lets": "உதவலாம்" }
+      readings: { "friend": "utavu", "polite": ["utavuṅka", "utavuṅkaḷ"], "not-friend": "utavātē", "not-polite": ["utavātīṅka", "utavātīrkaḷ"], "lets": "utavalām" }
+    - word: "ta-0450"
+      forms: { "friend": "விடு", "polite": ["விடுங்க", "விடுங்கள்"], "not-friend": "விடாதே", "not-polite": ["விடாதீங்க", "விடாதீர்கள்"], "lets": "விடலாம்" }
+      readings: { "friend": "viṭu", "polite": ["viṭuṅka", "viṭuṅkaḷ"], "not-friend": "viṭātē", "not-polite": ["viṭātīṅka", "viṭātīrkaḷ"], "lets": "viṭalām" }
+    - word: "ta-0451"
+      forms: { "friend": "கொள்", "polite": ["கொள்ளுங்க", "கொள்ளுங்கள்"], "not-friend": "கொள்ளாதே", "not-polite": ["கொள்ளாதீங்க", "கொள்ளாதீர்கள்"], "lets": "கொள்ளலாம்" }
+      readings: { "friend": "koḷ", "polite": ["koḷḷuṅka", "koḷḷuṅkaḷ"], "not-friend": "koḷḷātē", "not-polite": ["koḷḷātīṅka", "koḷḷātīrkaḷ"], "lets": "koḷḷalām" }
+    - word: "ta-0452"
+      forms: { "friend": "போடு", "polite": ["போடுங்க", "போடுங்கள்"], "not-friend": "போடாதே", "not-polite": ["போடாதீங்க", "போடாதீர்கள்"], "lets": "போடலாம்" }
+      readings: { "friend": "pōṭu", "polite": ["pōṭuṅka", "pōṭuṅkaḷ"], "not-friend": "pōṭātē", "not-polite": ["pōṭātīṅka", "pōṭātīrkaḷ"], "lets": "pōṭalām" }
+    - word: "ta-0453"
+      forms: { "friend": "தா", "polite": ["தாங்க", "தாருங்கள்"], "not-friend": "தராதே", "not-polite": ["தராதீங்க", "தராதீர்கள்"], "lets": "தரலாம்" }
+      readings: { "friend": "tā", "polite": ["tāṅka", "tāruṅkaḷ"], "not-friend": "tarātē", "not-polite": ["tarātīṅka", "tarātīrkaḷ"], "lets": "taralām" }
+    - word: "ta-0454"
+      forms: { "friend": "நிறுத்து", "polite": ["நிறுத்துங்க", "நிறுத்துங்கள்"], "not-friend": "நிறுத்தாதே", "not-polite": ["நிறுத்தாதீங்க", "நிறுத்தாதீர்கள்"], "lets": "நிறுத்தலாம்" }
+      readings: { "friend": "niṟuttu", "polite": ["niṟuttuṅka", "niṟuttuṅkaḷ"], "not-friend": "niṟuttātē", "not-polite": ["niṟuttātīṅka", "niṟuttātīrkaḷ"], "lets": "niṟuttalām" }
+    - word: "ta-0455"
+      forms: { "friend": "தள்ளு", "polite": ["தள்ளுங்க", "தள்ளுங்கள்"], "not-friend": "தள்ளாதே", "not-polite": ["தள்ளாதீங்க", "தள்ளாதீர்கள்"], "lets": "தள்ளலாம்" }
+      readings: { "friend": "taḷḷu", "polite": ["taḷḷuṅka", "taḷḷuṅkaḷ"], "not-friend": "taḷḷātē", "not-polite": ["taḷḷātīṅka", "taḷḷātīrkaḷ"], "lets": "taḷḷalām" }
+    - word: "ta-0456"
+      forms: { "friend": "பிடி", "polite": ["பிடியுங்க", "பிடியுங்கள்"], "not-friend": "பிடிக்காதே", "not-polite": ["பிடிக்காதீங்க", "பிடிக்காதீர்கள்"], "lets": "பிடிக்கலாம்" }
+      readings: { "friend": "piṭi", "polite": ["piṭiyuṅka", "piṭiyuṅkaḷ"], "not-friend": "piṭikkātē", "not-polite": ["piṭikkātīṅka", "piṭikkātīrkaḷ"], "lets": "piṭikkalām" }
+    - word: "ta-0457"
+      forms: { "friend": "வீசு", "polite": ["வீசுங்க", "வீசுங்கள்"], "not-friend": "வீசாதே", "not-polite": ["வீசாதீங்க", "வீசாதீர்கள்"], "lets": "வீசலாம்" }
+      readings: { "friend": "vīcu", "polite": ["vīcuṅka", "vīcuṅkaḷ"], "not-friend": "vīcātē", "not-polite": ["vīcātīṅka", "vīcātīrkaḷ"], "lets": "vīcalām" }
+    - word: "ta-0458"
+      forms: { "friend": "தூக்கு", "polite": ["தூக்குங்க", "தூக்குங்கள்"], "not-friend": "தூக்காதே", "not-polite": ["தூக்காதீங்க", "தூக்காதீர்கள்"], "lets": "தூக்கலாம்" }
+      readings: { "friend": "tūkku", "polite": ["tūkkuṅka", "tūkkuṅkaḷ"], "not-friend": "tūkkātē", "not-polite": ["tūkkātīṅka", "tūkkātīrkaḷ"], "lets": "tūkkalām" }
+    - word: "ta-0460"
+      forms: { "friend": "பண்ணு", "polite": ["பண்ணுங்க", "பண்ணுங்கள்"], "not-friend": "பண்ணாதே", "not-polite": ["பண்ணாதீங்க", "பண்ணாதீர்கள்"], "lets": "பண்ணலாம்" }
+      readings: { "friend": "paṇṇu", "polite": ["paṇṇuṅka", "paṇṇuṅkaḷ"], "not-friend": "paṇṇātē", "not-polite": ["paṇṇātīṅka", "paṇṇātīrkaḷ"], "lets": "paṇṇalām" }
+    - word: "ta-0461"
+      forms: { "friend": "ஆகு", "polite": ["ஆகுங்க", "ஆகுங்கள்"], "not-friend": "ஆகாதே", "not-polite": ["ஆகாதீங்க", "ஆகாதீர்கள்"], "lets": "ஆகலாம்" }
+      readings: { "friend": "āku", "polite": ["ākuṅka", "ākuṅkaḷ"], "not-friend": "ākātē", "not-polite": ["ākātīṅka", "ākātīrkaḷ"], "lets": "ākalām" }
+    - word: "ta-0462"
+      forms: { "friend": "படு", "polite": ["படுங்க", "படுங்கள்"], "not-friend": "படாதே", "not-polite": ["படாதீங்க", "படாதீர்கள்"], "lets": "படலாம்" }
+      readings: { "friend": "paṭu", "polite": ["paṭuṅka", "paṭuṅkaḷ"], "not-friend": "paṭātē", "not-polite": ["paṭātīṅka", "paṭātīrkaḷ"], "lets": "paṭalām" }
+rules:
+  - id: "ta-rule-imperative-positive"
+    slots: ["friend", "polite"]
+    words: [{ word: "வா", reading: "vā" }, { word: "சாப்பிடு", reading: "cāppiṭu" }, { word: "சாப்பிடுங்கள்", reading: "cāppiṭuṅkaḷ" }, { word: "போ", reading: "pō" }, { word: "போங்கள்", reading: "pōṅkaḷ" }, { word: "படி", reading: "paṭi" }, { word: "படியுங்கள்", reading: "paṭiyuṅkaḷ" }, { word: "வாருங்கள்", reading: "vāruṅkaḷ" }, { word: "வாங்க", reading: "vāṅka" }, { word: "போங்க", reading: "pōṅka" }]
+  - id: "ta-rule-imperative-negative"
+    slots: ["not-friend", "not-polite"]
+    words: [{ word: "-ஆதே", reading: "-ātē" }, { word: "-ஆதீர்கள்", reading: "-ātīrkaḷ" }, { word: "வராதே", reading: "varātē" }, { word: "வராதீர்கள்", reading: "varātīrkaḷ" }, { word: "வராதீங்க", reading: "varātīṅka" }, { word: "போகாதே", reading: "pōkātē" }, { word: "போகாதீங்க", reading: "pōkātīṅka" }]
+  - id: "ta-rule-imperative-lets"
+    slots: ["lets"]
+    words: [{ word: "-லாம்", reading: "-lām" }, { word: "போகலாம்", reading: "pōkalām" }, { word: "வரலாம்", reading: "varalām" }]

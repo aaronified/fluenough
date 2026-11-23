@@ -117,3 +117,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-2098 | ta-phone | Is கடவுச்சொல் the everyday word for password? | Sonnet builder | 2026-11-23 |
 | ta-2090 | ta-phone | Is போன் வை the usual way to say hang up? | Sonnet builder | 2026-11-23 |
 | ta-2130 | ta-phone | Is பதிலளி natural in speech, or is a spoken word better? | Sonnet builder | 2026-11-23 |
+| ta-0462 | ta-grammar-conjunct-verbs | Is to undergo; to feel the right gloss of படு, and is பயப்படு the form to show first? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0460 | ta-grammar-conjunct-verbs | Are spoken பண்றேன் and the noun plus பண்ணு pattern shown correctly? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0461 | ta-grammar-conjunct-verbs | Is நேரம் ஆகிறது the usual way to say it is getting late? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-imperatives | Check the polite spoken commands (-ங்க), the polite forms of திற and நட, and the negative commands. | Sonnet builder (ta-gram2) | 2026-11-23 |
