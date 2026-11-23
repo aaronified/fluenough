@@ -1,0 +1,201 @@
+schema: 1
+id: "sa-en-time"
+kind: "layer"
+core: "sa-time"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Time and days"
+description: "Time and days in Classical Sanskrit: now, long ago, for a long time, evening and morning, night, dawn, the time of day, the seasons and the rains."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1546":
+    native: "Before; earlier."
+    notes:
+      "n1": "As an adjective पूर्व (pūrva) means eastern or earlier; as a neuter adverb पूर्वम् (pūrvam) means earlier in time."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign."
+    bases:
+      "पूर्वम्": "before"
+    examples:
+      "पूर्वं गृहं नवम्":
+        native: "The house was new before."
+        bases:
+          "पूर्वं": "earlier"
+          "गृहं": "house"
+          "नवम्": "new"
+      "पूर्वं पुराणं पुस्तकम्":
+        native: "An old book from before."
+        bases:
+          "पूर्वं": "earlier"
+          "पुराणं": "old"
+          "पुस्तकम्": "book"
+  "sa-1547":
+    native: "In the evening."
+    notes:
+      "n1": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign."
+    examples:
+      "सायं शीतम्":
+        native: "Cold in the evening."
+        bases:
+          "सायं": "in the evening"
+          "शीतम्": "cold"
+      "सायं पिता सुखी":
+        native: "In the evening the father is happy."
+        bases:
+          "सायं": "in the evening"
+          "पिता": "father"
+          "सुखी": "happy"
+  "sa-1548":
+    native: "In the morning; early."
+    notes:
+      "n1": "Wiktionary lists the adverb प्रातर् (prātar), early in the morning; प्रातः (prātaḥ) is the form it takes at the end of a phrase. Together with सायम् (sāyam), evening, it marks the two ends of the day."
+    bases:
+      "प्रातः": "in the morning"
+    examples:
+      "प्रातः शीतम्":
+        native: "Cold in the morning."
+        bases:
+          "प्रातः": "in the morning"
+          "शीतम्": "cold"
+      "प्रातः पवित्रा गङ्गा":
+        native: "The Ganges in the morning is pure."
+        bases:
+          "प्रातः": "in the morning"
+          "पवित्रा": "pure"
+          "गङ्गा": "Ganges"
+  "sa-1549":
+    native: "At night."
+    notes:
+      "n1": "The locative of रात्रि (rātri), night, used as an adverb."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+      "n3": "Before a consonant the final म् (m) is written ं (ṃ), as in जलं (jalaṃ) from जलम् (jalam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+      "n4": "A final अः (aḥ) before a voiced consonant becomes ओ (o), as in शून्यो (śūnyo) from शून्यः (śūnyaḥ) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114)."
+    bases:
+      "रात्रौ": "at night"
+    examples:
+      "रात्रौ शून्यो मार्गः":
+        native: "The road is empty at night."
+        bases:
+          "रात्रौ": "at night"
+          "शून्यो": "empty"
+          "मार्गः": "road"
+      "रात्रौ जलं शीतम्":
+        native: "The water is cold at night."
+        bases:
+          "रात्रौ": "at night"
+          "जलं": "water"
+          "शीतम्": "cold"
+  "sa-1630":
+    native: "For a long time."
+    notes:
+      "n1": "Wiktionary lists चिरम् (ciram) as an adverb: for a long time, or after a long time; it never changes its form."
+      "n2": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign."
+    examples:
+      "चिरं जानामि":
+        native: "I have known it for a long time."
+        bases:
+          "चिरं": "for a long time"
+          "जानामि": "to know (I know)"
+      "चिरं जानन्ति":
+        native: "They have known it for a long time."
+        bases:
+          "चिरं": "for a long time"
+          "जानन्ति": "to know (they know)"
+  "sa-1631":
+    native: "Now."
+    notes:
+      "n1": "Wiktionary lists अधुना (adhunā) as an adverb meaning at this time, now; it never changes its form."
+    examples:
+      "अधुना जानामि":
+        native: "Now I know."
+        bases:
+          "जानामि": "to know (I know)"
+      "अधुना माता दुःखिनी":
+        native: "Now the mother is sad."
+        bases:
+          "माता": "mother"
+          "दुःखिनी": "sad"
+  "sa-1632":
+    native: "Formerly; of old."
+    notes:
+      "n1": "Wiktionary lists पुरा (purā) as an adverb: before, formerly, of old; it never changes its form."
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in पुस्तकं (pustakaṃ) from पुस्तकम् (pustakam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    examples:
+      "पुरा पुस्तकं नवम्":
+        native: "Formerly the book was new."
+        bases:
+          "पुस्तकं": "book"
+          "नवम्": "new"
+      "पुरा पिता सुखी":
+        native: "Formerly the father was happy."
+        bases:
+          "पिता": "father"
+          "सुखी": "happy"
+  "sa-1633":
+    native: "Season."
+    notes:
+      "n1": "A masculine noun in u, so it is not in the a-stems table; its stem is ऋतु (ṛtu); Wiktionary gives its senses as a fixed point of time and a season of the year."
+    bases:
+      "ऋतुः": "season"
+    examples:
+      "ऋतुः कठिनः":
+        native: "The season is harsh."
+        bases:
+          "ऋतुः": "season"
+          "कठिनः": "harsh"
+      "ऋतुः पवित्रः":
+        native: "The season is sacred."
+        bases:
+          "ऋतुः": "season"
+          "पवित्रः": "sacred"
+  "sa-1634":
+    native: "Night."
+    notes:
+      "n1": "A feminine noun in ā, a word for night beside रात्रि (rātri); it is not in the a-stems table, which covers masculine and neuter nouns."
+    examples:
+      "निशा दीर्घा":
+        native: "The night is long."
+        bases:
+          "दीर्घा": "long"
+      "निशा शीता":
+        native: "The night is cold."
+        bases:
+          "शीता": "cold"
+  "sa-1635":
+    native: "Dawn; morning light."
+    notes:
+      "n1": "A feminine noun in ā: the morning light, or dawn; it is not in the a-stems table, which covers masculine and neuter nouns."
+    examples:
+      "उषा सुन्दरा":
+        native: "The dawn is beautiful."
+        bases:
+          "सुन्दरा": "beautiful"
+      "उषा शीता":
+        native: "The dawn is cold."
+        bases:
+          "शीता": "cold"
+  "sa-1636":
+    native: "Time; the time of day."
+    notes:
+      "n1": "A feminine noun in ā: time, or the time of day; it is not in the a-stems table, which covers masculine and neuter nouns."
+    examples:
+      "का वेला":
+        native: "What time is it?"
+        bases:
+          "का": "who, what (feminine)"
+      "वेला दीर्घा":
+        native: "The time is long."
+        bases:
+          "दीर्घा": "long"
+  "sa-1637":
+    native: "Rain; the rainy season."
+    notes:
+      "n1": "A feminine noun in ā: rain, and in the plural the rains, the rainy season; it is not in the a-stems table, which covers masculine and neuter nouns."
+    examples:
+      "वर्षा सुन्दरा":
+        native: "The rains are beautiful."
+        bases:
+          "सुन्दरा": "beautiful"
+      "वर्षा दीर्घा":
+        native: "The rainy season is long."
+        bases:
+          "दीर्घा": "long"

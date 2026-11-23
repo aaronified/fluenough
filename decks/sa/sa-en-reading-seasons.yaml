@@ -1,0 +1,55 @@
+schema: 1
+id: "sa-en-reading-seasons"
+name: "Reading: seasons"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-seasons-text-1"
+    title: "Spring and summer"
+    theme: "seasons"
+    sentences:
+      - { text: "वसन्ते कोकिलो मधुरं गायति.", reading: "vasante kokilo madhuraṃ gāyati.", ipa: "ʋəsənt̪eː koːkiloː məd̪ʱurəm ɡaːjət̪i" }
+      - { text: "आतपो ग्रीष्मे बहु भवति.", reading: "ātapo grīṣme bahu bhavati.", ipa: "aːt̪əpoː ɡriːʂmeː bəɦu bʱəʋət̪i" }
+      - { text: "छाया ग्रीष्मे शीतला भवति.", reading: "chāyā grīṣme śītalā bhavati.", ipa: "tʃʰaːjaː ɡriːʂmeː ʃiːt̪əlaː bʱəʋət̪i" }
+      - { text: "ग्रीष्मे तापो भवति शिशिरे तुषारः.", reading: "grīṣme tāpo bhavati śiśire tuṣāraḥ.", ipa: "ɡriːʂmeː t̪aːpoː bʱəʋət̪i ʃiʃireː t̪uʂaːrəh" }
+    questions:
+      - id: "sa-3707"
+        prompt: { en: "Which word means 'cuckoo'?" }
+        options: [{ en: "आतपो (ātapo)" }, { en: "कोकिलो (kokilo)" }, { en: "शीतला (śītalā)" }]
+        answer: 2
+      - id: "sa-3708"
+        prompt: { en: "Which season is named in the most sentences?" }
+        options: [{ en: "Summer" }, { en: "Spring" }, { en: "The cool season" }]
+        answer: 1
+      - id: "sa-3709"
+        prompt: { en: "Which word means 'shade'?" }
+        options: [{ en: "आतपो (ātapo)" }, { en: "तापो (tāpo)" }, { en: "छाया (chāyā)" }]
+        answer: 3
+      - id: "sa-3710"
+        prompt: { en: "The cuckoo sings sweetly in summer." }
+        answer: false
+  - id: "sa-seasons-text-2"
+    title: "Winter, the cool season and flowers"
+    theme: "seasons"
+    sentences:
+      - { text: "हेमन्ते पर्वते हिमं पतति.", reading: "hemante parvate himaṃ patati.", ipa: "ɦeːmənt̪eː pərʋət̪eː ɦiməm pət̪ət̪i" }
+      - { text: "शिशिरे शीतलः पवनो भवति.", reading: "śiśire śītalaḥ pavano bhavati.", ipa: "ʃiʃireː ʃiːt̪ələh pəʋənoː bʱəʋət̪i" }
+      - { text: "वसन्ते कानने पुष्पाणि भवन्ति.", reading: "vasante kānane puṣpāṇi bhavanti.", ipa: "ʋəsənt̪eː kaːnəneː puʂpaːɳi bʱəʋənt̪i" }
+      - { text: "पुष्पस्य सुगन्धो मधुरो भवति.", reading: "puṣpasya sugandho madhuro bhavati.", ipa: "puʂpəsjə suɡənd̪ʱoː məd̪ʱuroː bʱəʋət̪i" }
+    questions:
+      - id: "sa-3711"
+        prompt: { en: "How many seasons does the passage name?" }
+        options: [{ en: "Two" }, { en: "Three" }, { en: "Four" }]
+        answer: 2
+      - id: "sa-3712"
+        prompt: { en: "Which word means 'flowers'?" }
+        options: [{ en: "पुष्पाणि (puṣpāṇi)" }, { en: "पुष्पस्य (puṣpasya)" }, { en: "कानने (kānane)" }]
+        answer: 1
+      - id: "sa-3713"
+        prompt: { en: "The cool season is named before spring in the passage." }
+        answer: true

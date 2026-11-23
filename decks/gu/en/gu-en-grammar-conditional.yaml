@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "id": "gu-en-grammar-conditional",
+  "kind": "layer",
+  "core": "gu-grammar-conditional",
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "name": "If ... then: the conditional",
+  "license": "CC-BY-SA-4.0",
+  "description": "Saying if something happens, then something else follows: jo (if) with the future, then to (then). Each verb takes the future form for each person. ગમવું (gamvum̐), to like, is left out: it works with મને (mane) and has no person forms, as in મને ગમશે (mane gamśe). Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "unreviewed"
+  ],
+  "table": {
+    "slot_name": "person",
+    "slots": {
+      "hum": "I (hu)",
+      "tu": "you (informal)",
+      "te": "he, she or it (te)",
+      "ame": "we (ame)",
+      "tame": "you (polite or plural)",
+      "teo": "they (teo)"
+    }
+  },
+  "rules": {
+    "gu-rule-cond-i": {
+      "name": "I",
+      "explanation": "The future with {1} (kariś) for I: jo hu {1}, to ... (if I do, then ...)."
+    },
+    "gu-rule-cond-tu-te": {
+      "name": "You, he, she, they",
+      "explanation": "The future with {1} (karśe) for he, she and they, and with {2} (kariś) for you (informal), which may take either form."
+    },
+    "gu-rule-cond-ame": {
+      "name": "We",
+      "explanation": "The future with {1} (kariśum) for we: if we do, then ..."
+    },
+    "gu-rule-cond-tame": {
+      "name": "You plural or polite",
+      "explanation": "The future with {1} (karśo) for you plural or polite: if you do, then ..."
+    }
+  }
+}

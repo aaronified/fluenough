@@ -1,0 +1,513 @@
+schema: 1
+id: "ps-en-first-words"
+kind: "layer"
+core: "ps-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes and no, the pronouns I, you, he or she, we and they, the numbers one to ten, family, people, and a few everyday words (water, bread, tea, house, good, big, small, here, there, what, who, where). Greetings and thanks are in the phrasebook. Not yet checked by a Pashto speaker: please report any mistake."
+cards:
+  "ps-0101":
+    native: "yes"
+    notes:
+      "n1": "هو (ho) is yes. Like Persian, Pashto has no separate word for I am: the verb ending says it, so زه روغ یم (zə roġ yəm) is I am well."
+    examples:
+      "هو، زه روغ یم.":
+        native: "Yes, I am well."
+        bases:
+          "هو": "yes"
+          "زه": "I"
+          "روغ": "well"
+          "یم": "am"
+      "هو، مننه.":
+        native: "Yes, thank you."
+        bases:
+          "هو": "yes"
+          "مننه": "thank you"
+  "ps-0102":
+    native: "no"
+    notes:
+      "n1": "نه (na) is no and not. Before a verb it makes the verb negative, as in نه پوهېږم (na poheǵəm), I do not know."
+    examples:
+      "نه، مننه.":
+        native: "No, thank you."
+        bases:
+          "نه": "no"
+          "مننه": "thank you"
+      "نه پوهېږم.":
+        native: "I don't know."
+        bases:
+          "نه": "not"
+          "پوهېږم": "I know"
+  "ps-0103":
+    native: "I; me"
+    notes:
+      "n1": "زه (zə) is I. It is often left out, since the verb ending already shows the subject, but it is used to stress I."
+    examples:
+      "زه روغ یم.":
+        native: "I am well."
+        bases:
+          "زه": "I"
+          "روغ": "well"
+          "یم": "am"
+      "زه دلته یم.":
+        native: "I am here."
+        bases:
+          "زه": "I"
+          "دلته": "here"
+          "یم": "am"
+  "ps-0104":
+    native: "you (informal)"
+    notes:
+      "n1": "ته (tə) is you for one person you know well, a child or a friend. For a stranger or an elder, say تاسو (tāso), the polite you."
+    examples:
+      "ته څنګه یې؟":
+        native: "How are you?"
+        bases:
+          "ته": "you"
+          "څنګه": "how"
+          "یې": "are"
+      "ته دلته یې؟":
+        native: "Are you here?"
+        bases:
+          "ته": "you"
+          "دلته": "here"
+          "یې": "are"
+  "ps-0105":
+    native: "he; she"
+    notes:
+      "n1": "هغه (haġa) is he and she alike. It is used for a person out of sight; the verb shows the gender, as in ښه دی (x̌ə day), he is good, and ښه ده (x̌ə da), she is good."
+    examples:
+      "هغه مرسته وکړه.":
+        native: "He helped."
+        bases:
+          "هغه": "he"
+          "مرسته": "help"
+          "وکړه": "did"
+      "هغه ښه دی.":
+        native: "He is good."
+        bases:
+          "هغه": "he"
+          "ښه": "good"
+          "دی": "is"
+  "ps-0106":
+    native: "we; us"
+    notes:
+      "n1": "موږ (muǵ) is we and us. In front of a noun, the owner ending زموږ (zmūǵ) means our: زموږ کور (zmūǵ kor), our house."
+    examples:
+      "زموږ کور.":
+        native: "Our house."
+        bases:
+          "زموږ": "our"
+          "کور": "house"
+      "موږ روغ یو.":
+        native: "We are well."
+        bases:
+          "موږ": "we"
+          "روغ": "well"
+          "یو": "are"
+  "ps-0107":
+    native: "they"
+    notes:
+      "n1": "هغوی (haġuy) is they, the plural of هغه (haġa). The plural form is used for people and things alike."
+    examples:
+      "هغوی دلته دي.":
+        native: "They are here."
+        bases:
+          "هغوی": "they"
+          "دلته": "here"
+          "دي": "are"
+      "هغوی ښه دي.":
+        native: "They are good."
+        bases:
+          "هغوی": "they"
+          "ښه": "good"
+          "دي": "are"
+  "ps-0108":
+    native: "one"
+    notes:
+      "n1": "یو (yaw) is one."
+    examples:
+      "یو، دوه، درې.":
+        native: "One, two, three."
+        bases:
+          "یو": "one"
+          "دوه": "two"
+          "درې": "three"
+      "یو چای، مهرباني وکړئ.":
+        native: "One tea, please."
+        bases:
+          "یو": "one"
+          "چای": "tea"
+          "مهرباني": "kindness"
+          "وکړئ": "do (polite)"
+  "ps-0109":
+    native: "two"
+    notes:
+      "n1": "دوه (dwa) is two."
+    examples:
+      "دوه، درې.":
+        native: "Two, three."
+        bases:
+          "دوه": "two"
+          "درې": "three"
+      "دوه چای، مهرباني وکړئ.":
+        native: "Two teas, please."
+        bases:
+          "دوه": "two"
+          "چای": "tea"
+          "مهرباني": "kindness"
+          "وکړئ": "do (polite)"
+  "ps-0110":
+    native: "three"
+    notes:
+      "n1": "درې (dre) is three."
+    examples:
+      "درې، څلور، پنځه.":
+        native: "Three, four, five."
+        bases:
+          "درې": "three"
+          "څلور": "four"
+          "پنځه": "five"
+      "دوه، درې.":
+        native: "Two, three."
+        bases:
+          "دوه": "two"
+          "درې": "three"
+  "ps-0111":
+    native: "five"
+    notes:
+      "n1": "پنځه (pinźə) is five."
+    examples:
+      "پنځه، لس.":
+        native: "Five, ten."
+        bases:
+          "پنځه": "five"
+          "لس": "ten"
+      "پنځه ډوډۍ، مهرباني وکړئ.":
+        native: "Five breads, please."
+        bases:
+          "پنځه": "five"
+          "ډوډۍ": "bread"
+          "مهرباني": "kindness"
+          "وکړئ": "do (polite)"
+  "ps-0112":
+    native: "ten"
+    notes:
+      "n1": "لس (las) is ten. The phrase یو تر لسو پورې (yaw tar laso pōre) means from one up to ten."
+    examples:
+      "لس، پنځه.":
+        native: "Ten, five."
+        bases:
+          "لس": "ten"
+          "پنځه": "five"
+      "یو تر لسو پورې.":
+        native: "From one up to ten."
+        bases:
+          "یو": "one"
+          "تر": "to"
+          "لسو": "ten"
+          "پورې": "up to"
+  "ps-0113":
+    native: "mother"
+    notes:
+      "n1": "مور (mor) is mother. Adding the owner ending زما (zmā), my, gives زما مور (zmā mor), my mother."
+    examples:
+      "مور ډوډۍ پخوي.":
+        native: "Mother cooks food."
+        bases:
+          "مور": "mother"
+          "ډوډۍ": "food"
+          "پخوي": "cooks"
+      "زما مور.":
+        native: "My mother."
+        bases:
+          "زما": "my"
+          "مور": "mother"
+  "ps-0114":
+    native: "father"
+    notes:
+      "n1": "پلار (plār) is father. Add زما (zmā), my, to say my father: زما پلار (zmā plār)."
+    examples:
+      "زما پلار.":
+        native: "My father."
+        bases:
+          "زما": "my"
+          "پلار": "father"
+      "پلار دلته دی.":
+        native: "Father is here."
+        bases:
+          "پلار": "father"
+          "دلته": "here"
+          "دی": "is"
+  "ps-0115":
+    native: "child"
+    notes:
+      "n1": "ماشوم (māšum) is a child."
+    examples:
+      "دا ماشوم دی.":
+        native: "This is a child."
+        bases:
+          "دا": "this"
+          "ماشوم": "child"
+          "دی": "is"
+      "ماشوم کوچنی دی.":
+        native: "The child is small."
+        bases:
+          "ماشوم": "child"
+          "کوچنی": "small"
+          "دی": "is"
+  "ps-0116":
+    native: "man"
+    notes:
+      "n1": "سړی (saṛay) is a man, an adult male person."
+    examples:
+      "دا سړی دی.":
+        native: "This is a man."
+        bases:
+          "دا": "this"
+          "سړی": "man"
+          "دی": "is"
+      "سړی ښه دی.":
+        native: "The man is good."
+        bases:
+          "سړی": "man"
+          "ښه": "good"
+          "دی": "is"
+  "ps-0117":
+    native: "woman"
+    notes:
+      "n1": "ښځه (x̌əźa) is a woman."
+    examples:
+      "دا ښځه ده.":
+        native: "This is a woman."
+        bases:
+          "دا": "this"
+          "ښځه": "woman"
+          "ده": "is"
+      "ښځه ښه ده.":
+        native: "The woman is good."
+        bases:
+          "ښځه": "woman"
+          "ښه": "good"
+          "ده": "is"
+  "ps-0118":
+    native: "water"
+    notes:
+      "n1": "اوبه (obə) is water."
+    examples:
+      "دا اوبه دي.":
+        native: "This is water."
+        bases:
+          "دا": "this"
+          "اوبه": "water"
+          "دي": "is"
+      "اوبه، مهرباني وکړئ.":
+        native: "Water, please."
+        bases:
+          "اوبه": "water"
+          "مهرباني": "kindness"
+          "وکړئ": "do (polite)"
+  "ps-0119":
+    native: "bread; food"
+    notes:
+      "n1": "ډوډۍ (ḍoḍəy) is bread, and it is also the general word for food or a meal."
+    examples:
+      "ډوډۍ، مهرباني وکړئ.":
+        native: "Bread, please."
+        bases:
+          "ډوډۍ": "bread"
+          "مهرباني": "kindness"
+          "وکړئ": "do (polite)"
+      "دا ډوډۍ ده.":
+        native: "This is bread."
+        bases:
+          "دا": "this"
+          "ډوډۍ": "bread"
+          "ده": "is"
+  "ps-0120":
+    native: "tea"
+    notes:
+      "n1": "چای (čāy) is tea, the drink offered at most visits."
+    examples:
+      "چای، مهرباني وکړئ.":
+        native: "Tea, please."
+        bases:
+          "چای": "tea"
+          "مهرباني": "kindness"
+          "وکړئ": "do (polite)"
+      "دا چای دی.":
+        native: "This is tea."
+        bases:
+          "دا": "this"
+          "چای": "tea"
+          "دی": "is"
+  "ps-0121":
+    native: "house"
+    notes:
+      "n1": "کور (kor) is a house or home."
+    examples:
+      "زموږ کور څلور کوټې لري.":
+        native: "Our house has four rooms."
+        bases:
+          "زموږ": "our"
+          "کور": "house"
+          "څلور": "four"
+          "کوټې": "rooms"
+          "لري": "has"
+      "زما کور کوچنی دی.":
+        native: "My house is small."
+        bases:
+          "زما": "my"
+          "کور": "house"
+          "کوچنی": "small"
+          "دی": "is"
+  "ps-0122":
+    native: "name"
+    notes:
+      "n1": "نوم (num) is name."
+    examples:
+      "زما نوم.":
+        native: "My name."
+        bases:
+          "زما": "my"
+          "نوم": "name"
+      "ستا نوم څه دی؟":
+        native: "What is your name?"
+        bases:
+          "ستا": "your"
+          "نوم": "name"
+          "څه": "what"
+          "دی": "is"
+  "ps-0123":
+    native: "good"
+    notes:
+      "n1": "ښه (x̌ə) is good, fine, well."
+    examples:
+      "ښه دی.":
+        native: "It is good."
+        bases:
+          "ښه": "good"
+          "دی": "is"
+      "کور ښه دی.":
+        native: "The house is good."
+        bases:
+          "کور": "house"
+          "ښه": "good"
+          "دی": "is"
+  "ps-0124":
+    native: "big"
+    notes:
+      "n1": "لوی (loy) is big. It is the opposite of کوچنی (kučnay), small."
+    examples:
+      "کور لوی دی.":
+        native: "The house is big."
+        bases:
+          "کور": "house"
+          "لوی": "big"
+          "دی": "is"
+      "دا لوی دی.":
+        native: "This is big."
+        bases:
+          "دا": "this"
+          "لوی": "big"
+          "دی": "is"
+  "ps-0125":
+    native: "small"
+    notes:
+      "n1": "کوچنی (kučnay) is small. It is the opposite of لوی (loy), big."
+    examples:
+      "دا کوچنی دی.":
+        native: "This is small."
+        bases:
+          "دا": "this"
+          "کوچنی": "small"
+          "دی": "is"
+      "کوچنی کور.":
+        native: "A small house."
+        bases:
+          "کوچنی": "small"
+          "کور": "house"
+  "ps-0126":
+    native: "here"
+    notes:
+      "n1": "دلته (dəlta) is here. Its partner is هلته (halta), there."
+    examples:
+      "زه دلته یم.":
+        native: "I am here."
+        bases:
+          "زه": "I"
+          "دلته": "here"
+          "یم": "am"
+      "اوبه دلته دي.":
+        native: "The water is here."
+        bases:
+          "اوبه": "water"
+          "دلته": "here"
+          "دي": "is"
+  "ps-0127":
+    native: "there"
+    notes:
+      "n1": "هلته (halta) is there, away from the speaker. It is the partner of دلته (dəlta), here."
+    examples:
+      "هلته کور دی.":
+        native: "There is a house."
+        bases:
+          "هلته": "there"
+          "کور": "house"
+          "دی": "is"
+      "هلته ډوډۍ ده.":
+        native: "There is bread."
+        bases:
+          "هلته": "there"
+          "ډوډۍ": "bread"
+          "ده": "is"
+  "ps-0128":
+    native: "what"
+    notes:
+      "n1": "څه (śə) is what. Said alone with a rising tone, څه؟ (śə?) asks What?"
+    examples:
+      "دا څه دی؟":
+        native: "What is this?"
+        bases:
+          "دا": "this"
+          "څه": "what"
+          "دی": "is"
+      "څه؟":
+        native: "What?"
+        bases:
+          "څه": "what"
+  "ps-0129":
+    native: "who"
+    notes:
+      "n1": "څوک (śok) is who. The question هغه څوک دی؟ (haġa śok day?) asks who he is."
+    examples:
+      "هغه څوک دی؟":
+        native: "Who is he?"
+        bases:
+          "هغه": "he"
+          "څوک": "who"
+          "دی": "is"
+      "دلته څوک دی؟":
+        native: "Who is here?"
+        bases:
+          "دلته": "here"
+          "څوک": "who"
+          "دی": "is"
+  "ps-0130":
+    native: "where"
+    notes:
+      "n1": "چېرته (čerta) is where. It is used in questions such as چېرته دی؟ (čerta day?), where is it?"
+    examples:
+      "کور چېرته دی؟":
+        native: "Where is the house?"
+        bases:
+          "کور": "house"
+          "چېرته": "where"
+          "دی": "is"
+      "تشناب چېرته دی؟":
+        native: "Where is the toilet?"
+        bases:
+          "تشناب": "toilet"
+          "چېرته": "where"
+          "دی": "is"

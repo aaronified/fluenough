@@ -1,0 +1,60 @@
+schema: 1
+id: "sa-en-verbs-4-sentences"
+kind: "layer"
+core: "sa-verbs-4-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about more verbs of action"
+description: "Short sentences about more verbs of action, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-6810":
+    native: "Today the cloud rains on the mountain."
+    bases: { "पर्वते": "on the mountain", "वर्षति": "to rain (rains)" }
+    confusables: { "w1": { why: "Rain, not cloud: वृष्टिः (vṛṣṭiḥ) means rain." }, "w2": { why: "Sky, not cloud: आकाशः (ākāśaḥ) means sky." }, "w3": { why: "To flow, not to rain: सृ (sṛ) means to flow." } }
+    notes: { "n1": "पर्वते (parvate) is the locative case of पर्वतः (parvataḥ): on the mountain. वर्षति (varṣati) is the present of वृष् (vṛṣ), with the vowel strengthened: rains." }
+  "sa-6811":
+    native: "In the evening the traveller goes to the city."
+    bases: { "सायं": "in the evening", "नगरं": "city", "व्रजति": "to go (goes)" }
+    confusables: { "w1": { why: "Guest, not traveller: अतिथिः (atithiḥ) means guest." }, "w2": { why: "Capital, not city: राजधानी (rājadhānī) means capital." }, "w3": { why: "To walk, not to go: चल् (cal) means to walk." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. सायम् (sāyam) is written सायं (sāyaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of नगरं (nagaraṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). नगरम् (nagaram) is written नगरं (nagaraṃ), for the same reason, before व्रजति (vrajati).", "n2": "नगरम् (nagaram) is the accusative case of नगरम् (nagaram): where he goes. व्रजति (vrajati) is the present of व्रज् (vraj): goes, walks." }
+  "sa-6812":
+    native: "At night the snake glides out of the anthill."
+    bases: { "सर्पो": "snake", "वल्मीकात्": "out of the anthill", "सर्पति": "to creep (glides)" }
+    confusables: { "w1": { why: "Mongoose, not snake: नकुलः (nakulaḥ) means mongoose." }, "w2": { why: "Lizard, not anthill: गोधा (godhā) means lizard." }, "w3": { why: "To flow, not to glide: सृ (sṛ) means to flow." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. सर्पः (sarpaḥ) is written सर्पो (sarpo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of वल्मीकात् (valmīkāt) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतो रोरप्लुतादप्लुते (ato ror aplutād aplute), in separate words अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)).", "n2": "वल्मीकात् (valmīkāt) is the ablative case of वल्मीकः (valmīkaḥ); the ablative says where from: out of the anthill. सर्पति (sarpati) is the present of सृप् (sṛp): creeps, glides." }
+  "sa-6813":
+    native: "The devotee praises the god in the temple."
+    bases: { "भक्तो": "devotee", "मन्दिरे": "in the temple", "देवं": "god", "स्तौति": "to praise (praises)" }
+    confusables: { "w1": { why: "Priest, not devotee: पुरोहितः (purohitaḥ) means priest." }, "w2": { why: "To blame, not to praise: निन्द् (nind) means to blame." }, "w3": { why: "To worship, not to praise: पूज् (pūj) means to worship." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. भक्तः (bhaktaḥ) is written भक्तो (bhakto) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of मन्दिरे (mandire) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतो रोरप्लुतादप्लुते (ato ror aplutād aplute), in separate words अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). देवम् (devam) is written देवं (devaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of स्तौति (stauti) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "मन्दिरे (mandire) is the locative case of मन्दिरम् (mandiram): in the temple. स्तौति (stauti) is the present of स्तु (stu): praises." }
+  "sa-6814":
+    native: "The boy bathes in the river every day."
+    bases: { "बालको": "boy", "नद्यां": "in the river", "नित्यं": "every day", "स्नाति": "to bathe (bathes)" }
+    confusables: { "w1": { why: "Infant, not boy: शिशुः (śiśuḥ) means infant." }, "w2": { why: "To drink, not to bathe: पा (pā) means to drink." }, "w3": { why: "Lake, not river: सरसी (sarasī) means lake." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. बालकः (bālakaḥ) is written बालको (bālako) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of नद्यां (nadyāṃ) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतो रोरप्लुतादप्लुते (ato ror aplutād aplute), in separate words अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). नद्याम् (nadyām) is written नद्यां (nadyāṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of नित्यं (nityaṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). नित्यम् (nityam) is written नित्यं (nityaṃ), for the same reason, before स्नाति (snāti).", "n2": "नद्याम् (nadyām) is the locative case of नदी (nadī): in the river. स्नाति (snāti) is the present of स्ना (snā): bathes." }
+  "sa-6815":
+    native: "The female student learns Sanskrit at school."
+    bases: { "संस्कृतं": "the Sanskrit language", "विद्यालये": "at school", "शिक्षते": "to learn (learns)" }
+    confusables: { "w1": { why: "Female student or disciple, not student: शिष्या (śiṣyā) means female student or disciple." }, "w2": { why: "Learning, not school: शिक्षा (śikṣā) means learning." }, "w3": { why: "To remember, not to learn: स्मृ (smṛ) means to remember." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. संस्कृतम् (saṃskṛtam) is written संस्कृतं (saṃskṛtaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of छात्रा (chātrā) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "संस्कृतम् (saṃskṛtam) is the accusative case: what she learns. शिक्षते (śikṣate) is in the middle voice: she learns for herself." }
+  "sa-6816":
+    native: "The cowherd tends the cows in the forest."
+    bases: { "गोपालो": "cowherd", "वने": "in the forest", "धेनूः": "cows", "पालयति": "to protect (tends)" }
+    confusables: { "w1": { why: "Farmer, not cowherd: कर्षकः (karṣakaḥ) means farmer." }, "w2": { why: "To protect, not to tend: रक्ष् (rakṣ) means to protect." }, "w3": { why: "Goat, not cow: अजा (ajā) means goat." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. गोपालः (gopālaḥ) is written गोपालो (gopālo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of वने (vane) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतो रोरप्लुतादप्लुते (ato ror aplutād aplute), in separate words अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)).", "n2": "धेनूः (dhenūḥ) is the accusative plural of धेनुः (dhenuḥ): cows. पालयति (pālayati) is the present of पाल् (pāl), a verb of the tenth class: guards, tends." }
+  "sa-6817":
+    native: "The farmer counts the money in the house."
+    bases: { "कृषको": "farmer", "गृहे": "in the house", "धनं": "money", "गणयति": "to count (counts)" }
+    confusables: { "w1": { why: "Cowherd, not farmer: गोपालः (gopālaḥ) means cowherd." }, "w2": { why: "To remember, not to count: स्मृ (smṛ) means to remember." }, "w3": { why: "Wages, not money: वेतनम् (vetanam) means wages." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. कृषकः (kṛṣakaḥ) is written कृषको (kṛṣako) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of गृहे (gṛhe) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतो रोरप्लुतादप्लुते (ato ror aplutād aplute), in separate words अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). धनम् (dhanam) is written धनं (dhanaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of गणयति (gaṇayati) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "गृहे (gṛhe) is the locative case of गृहम् (gṛham): in the house. गणयति (gaṇayati) is the present of गण् (gaṇ), a verb of the tenth class: counts." }
+  "sa-6818":
+    native: "In the evening the children play in the park."
+    bases: { "उद्याने": "in the park", "बालकाः": "children", "खेलन्ति": "to play (play)" }
+    confusables: { "w1": { why: "Garden, not park: वाटिका (vāṭikā) means garden." }, "w2": { why: "To laugh, not to play: हस् (has) means to laugh." }, "w3": { why: "Infant, not child: शिशुः (śiśuḥ) means infant." } }
+    notes: { "n1": "उद्याने (udyāne) is the locative case of उद्यानम् (udyānam): in the park. बालकाः (bālakāḥ) is the nominative plural of बालकः (bālakaḥ): children. खेलन्ति (khelanti) is the third person plural." }
+  "sa-6819":
+    native: "A wicked person always blames a good person."
+    bases: { "साधुं": "good person", "दुर्जनो": "wicked person", "नित्यं": "always", "निन्दति": "to blame (blames)" }
+    confusables: { "w1": { why: "Praise, not blame: स्तुतिः (stutiḥ) means praise." }, "w2": { why: "Friend, not good person: मित्रम् (mitram) means friend." }, "w3": { why: "To worship, not to blame: पूज् (pūj) means to worship." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. साधुम् (sādhum) is written साधुं (sādhuṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of दुर्जनो (durjano) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). दुर्जनः (durjanaḥ) is written दुर्जनो (durjano) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of नित्यं (nityaṃ) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतो रोरप्लुतादप्लुते (ato ror aplutād aplute), in separate words अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). नित्यम् (nityam) is written नित्यं (nityaṃ), for the same reason, before निन्दति (nindati).", "n2": "साधुम् (sādhum) is the accusative case of साधुः (sādhuḥ): whom he blames. The object comes first; the order of the words is free." }

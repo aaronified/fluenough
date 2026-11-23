@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "gu-en-reading-itinerary",
+  "name": "Reading: A two-day trip itinerary",
+  "kind": "reading",
+  "language": {
+    "code": "gu",
+    "iso639_3": "guj",
+    "name": "Gujarati",
+    "script": "gujarati",
+    "tts": "gu-IN",
+    "icon": "ગુ"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this deck, and released under CC BY-SA 4.0",
+  "description": "A two-day trip: a fort, a rest at the hotel, a train and a guide at the station. Written for this deck and released under CC BY-SA 4.0. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "reading",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "gu-itinerary",
+      "title": "Reading: A two-day trip itinerary",
+      "theme": "travel",
+      "sentences": [
+        {
+          "text": "પહેલા દિવસે આપણે કિલ્લો જોઈશું.",
+          "reading": "pahelā divase āpaṇe killo joiśum.",
+          "ipa": "pəɦela d̪iʋəse apəɳe killo dʒoiʃum"
+        },
+        {
+          "text": "બપોરે હોટેલમાં આરામ કરીશું.",
+          "reading": "bapore hoṭelmām̐ ārām kariśum.",
+          "ipa": "bəpore ɦoʈelmã aram kəriʃum"
+        },
+        {
+          "text": "બીજા દિવસે સવારે ટ્રેન પકડીશું.",
+          "reading": "bijā divase savāre ṭren pakaḍiśum.",
+          "ipa": "bidʒa d̪iʋəse səʋare ʈren pəkəɖiʃum"
+        },
+        {
+          "text": "સ્ટેશન પર માર્ગદર્શક મળશે.",
+          "reading": "sṭeśan par mārgdarśak maḷśe.",
+          "ipa": "sʈeʃən pər marɡd̪ərʃək məɭʃe"
+        }
+      ],
+      "questions": [
+        {
+          "id": "gu-3813",
+          "prompt": {
+            "en": "What do they plan to see on the first day?"
+          },
+          "options": [
+            {
+              "en": "The fort"
+            },
+            {
+              "en": "The station"
+            },
+            {
+              "en": "The beach"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "gu-3814",
+          "prompt": {
+            "en": "They will rest at the hotel in the afternoon."
+          },
+          "answer": true
+        },
+        {
+          "id": "gu-3815",
+          "prompt": {
+            "en": "How will they travel on the second day?"
+          },
+          "options": [
+            {
+              "en": "By train"
+            },
+            {
+              "en": "By bus"
+            },
+            {
+              "en": "On foot"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  ]
+}

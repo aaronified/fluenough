@@ -1,0 +1,25 @@
+schema: 1
+id: "hi-en-grammar-noun-forms"
+kind: "layer"
+core: "hi-grammar-noun-forms"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns: more than one, and before a postposition"
+description: "Every noun the course teaches, in its plural and in the forms it takes before a postposition (a word like in, from or to that follows the noun). The forms are written in Devanagari for now; an Urdu learner sees the same forms with their reading. Some nouns have no form in a cell, such as a word for stuff or a month that has no plural; those cells are left out. Not yet checked by a Hindustani speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "pl": "plural"
+    "obl-sg": "singular, before a postposition"
+    "obl-pl": "plural, before a postposition"
+rules:
+  "hi-rule-noun-plural":
+    name: "-ें (-ēm̐), -ाएँ (-āēm̐), -ियाँ (-iyām̐), -े (-ē): more than one"
+    explanation: "A feminine noun that ends in a consonant takes {1} in the plural: {2}, book, becomes {3}. A feminine noun in -ā takes {4}: {5}, language, becomes {6}. A masculine noun in -ā changes to {7}: {8}, room, becomes {9}. A feminine noun in -ī takes {10}: {11}, girl, becomes {12}. Most other masculine nouns do not change: {13}, house, is house and houses alike."
+  "hi-rule-noun-oblique-sg":
+    name: "-े (-ē): singular, before a postposition"
+    explanation: "Before a postposition such as {4}, in, a masculine noun in -ā changes to {1}: {2}, room, becomes {3}, as in {3} {4}. Other nouns do not change: {5}, book, and {6}, house, stay as they are, as in {7}, in the house."
+  "hi-rule-noun-oblique-pl":
+    name: "-ों (-ōm̐), -ियों (-iyōm̐), -ुओं (-uōm̐), -ाओं (-āōm̐): plural, before a postposition"
+    explanation: "Before a postposition such as {9}, from, the plural of nearly every noun ends in {1}: {2}, room, becomes {3}, and {4}, book, becomes {5}. A noun in -ī or -i takes {6}: {7}, girl, becomes {8}. A noun in -ū or -u takes {10}: {11}, potato, becomes {12}. A feminine noun in -ā, and a masculine noun in -ā that does not change in the plural, takes {13}: {14}, language, becomes {15}."

@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-history"
+name: "Reading: history"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-history-text-1"
+    title: "Soldiers and a kingdom"
+    theme: "history"
+    sentences:
+      - { text: "बाणेन शत्रुं सैनिको हन्ति.", reading: "bāṇena śatruṃ sainiko hanti.", ipa: "baːɳeːnə ʃət̪rum səinikoː ɦənt̪i" }
+      - { text: "योद्धा संग्रामे शौर्येण विजयं लभते.", reading: "yoddhā saṃgrāme śauryeṇa vijayaṃ labhate.", ipa: "joːd̪d̪ʱaː səŋɡraːmeː ʃəurjeːɳə ʋidʒəjəm ləbʱət̪eː" }
+      - { text: "शिलालेखे नृपस्य प्रतापं लिखन्ति.", reading: "śilālekhe nṛpasya pratāpaṃ likhanti.", ipa: "ʃilaːleːkʰeː nr̩pəsjə prət̪aːpəm likʰənt̪i" }
+      - { text: "अतीतस्य कथाम् इतिहासः कथयति.", reading: "atītasya kathām itihāsaḥ kathayati.", ipa: "ət̪iːt̪əsjə kət̪ʰaːm it̪iɦaːsəh kət̪ʰəjət̪i" }
+      - { text: "राज्यस्य पतनं शत्रोर् आक्रमणाद् भवति.", reading: "rājyasya patanaṃ śatror ākramaṇād bhavati.", ipa: "raːdʒjəsjə pət̪ənəm ʃət̪roːr aːkrəməɳaːd̪ bʱəʋət̪i" }
+    questions:
+      - id: "sa-6740"
+        prompt: { en: "What does the soldier kill the enemy with?" }
+        options: [{ en: "A sword" }, { en: "An arrow" }, { en: "A mace" }]
+        answer: 2
+      - id: "sa-6741"
+        prompt: { en: "What does a warrior gain through bravery?" }
+        options: [{ en: "Wealth" }, { en: "Fame" }, { en: "Victory" }]
+        answer: 3
+      - id: "sa-6742"
+        prompt: { en: "Which word means 'inscription'?" }
+        options: [{ en: "शिलालेखे (śilālekhe)" }, { en: "प्रतापं (pratāpaṃ)" }, { en: "कथाम् (kathām)" }]
+        answer: 1
+      - id: "sa-6743"
+        prompt: { en: "The fall of a kingdom comes from an enemy's attack." }
+        answer: true
+  - id: "sa-history-text-2"
+    title: "Monastery, fort and market"
+    theme: "history"
+    sentences:
+      - { text: "विहारे शान्ता भिक्षवो वसन्ति.", reading: "vihāre śāntā bhikṣavo vasanti.", ipa: "ʋiɦaːreː ʃaːnt̪aː bʱikʂəʋoː ʋəsənt̪i" }
+      - { text: "कोटं सदा सैनिका रक्षन्ति.", reading: "koṭaṃ sadā sainikā rakṣanti.", ipa: "koːʈəm səd̪aː səinikaː rəkʂənt̪i" }
+      - { text: "हट्टे वणिग् रजतं क्रीणाति.", reading: "haṭṭe vaṇig rajataṃ krīṇāti.", ipa: "ɦəʈʈeː ʋəɳiɡ rədʒət̪əm kriːɳaːt̪i" }
+      - { text: "गजो युद्धे सैनिकस्य सहायो भवति.", reading: "gajo yuddhe sainikasya sahāyo bhavati.", ipa: "ɡədʒoː jud̪d̪ʱeː səinikəsjə səɦaːjoː bʱəʋət̪i" }
+      - { text: "साम्राज्यस्य रक्षां भूपः करोति.", reading: "sāmrājyasya rakṣāṃ bhūpaḥ karoti.", ipa: "saːmraːdʒjəsjə rəkʂaːm bʱuːpəh kəroːt̪i" }
+    questions:
+      - id: "sa-6744"
+        prompt: { en: "Who live in the monastery?" }
+        options: [{ en: "Soldiers" }, { en: "Monks" }, { en: "Merchants" }]
+        answer: 2
+      - id: "sa-6745"
+        prompt: { en: "What does the merchant buy in the market?" }
+        options: [{ en: "Silver" }, { en: "Gold" }, { en: "Copper" }]
+        answer: 1
+      - id: "sa-6746"
+        prompt: { en: "Which word means 'fort'?" }
+        options: [{ en: "सहायो (sahāyo)" }, { en: "रजतं (rajataṃ)" }, { en: "कोटं (koṭaṃ)" }]
+        answer: 3
+      - id: "sa-6747"
+        prompt: { en: "Soldiers never guard the fort." }
+        answer: false

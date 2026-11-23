@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "id": "gu-en-reading-newspaper-feature",
+  "name": "Reading: A newspaper feature with a short interview",
+  "kind": "reading",
+  "language": {
+    "code": "gu",
+    "iso639_3": "guj",
+    "name": "Gujarati",
+    "script": "gujarati",
+    "tts": "gu-IN",
+    "icon": "ગુ"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this deck, and released under CC BY-SA 4.0",
+  "description": "A newspaper feature: a new fair opens in a city garden, and its organiser says what comes next. Written for this deck and released under CC BY-SA 4.0. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "reading",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "gu-newspaper-feature",
+      "title": "Reading: A newspaper feature with a short interview",
+      "theme": "verbs-5",
+      "sentences": [
+        {
+          "text": "ગયા રવિવારે શહેરના બગીચામાં એક નવો મેળો શરૂ થયો.",
+          "reading": "gayā ravivāre śahernā bagicāmām̐ ek navo meḷo śaru thayo.",
+          "ipa": "ɡəja rəʋiʋare ʃəɦerna bəɡitʃamã ek nəʋo meɭo ʃəru t̪ʰəjo"
+        },
+        {
+          "text": "સવારે દસ વાગ્યે લોકો ભેગા થયા, અને પછી મેળો ખૂલ્યો.",
+          "reading": "savāre das vāgye loko bhegā thayā, ane pachi meḷo khulyo.",
+          "ipa": "səʋare d̪əs ʋaɡje loko bʱeɡa t̪ʰəja əne pətʃʰi meɭo kʰuljo"
+        },
+        {
+          "text": "મેળાના આયોજક, શ્રીમતી શાહે, અમારી સાથે વાત કરી.",
+          "reading": "meḷānā āyojak, śrimti śāhe, amāri sāthe vāt kari.",
+          "ipa": "meɭana ajodʒək ʃrimt̪i ʃaɦe əmari sat̪ʰe ʋat̪ kəri"
+        },
+        {
+          "text": "તેમણે કહ્યું કે તૈયારી ઘણી સરળ નહોતી.",
+          "reading": "temṇe kahyum̐ ke taiyāri ghaṇi saraḷ nahoti.",
+          "ipa": "t̪emɳe kəɦjũ ke t̪əijari ɡʱəɳi sərəɭ nəɦot̪i"
+        },
+        {
+          "text": "છેલ્લે, તેમણે કહ્યું કે આવતા વર્ષે મેળો ફરી શરૂ થશે.",
+          "reading": "chelle, temṇe kahyum̐ ke āvtā varśe meḷo phari śaru thaśe.",
+          "ipa": "tʃʰelle t̪emɳe kəɦjũ ke aʋt̪a ʋərʃe meɭo pʰəri ʃəru t̪ʰəʃe"
+        }
+      ],
+      "questions": [
+        {
+          "id": "gu-5209",
+          "prompt": {
+            "en": "When did the fair start?"
+          },
+          "options": [
+            {
+              "en": "Last Sunday"
+            },
+            {
+              "en": "Last Friday"
+            },
+            {
+              "en": "Next Sunday"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "gu-5210",
+          "prompt": {
+            "en": "The fair opened after people gathered."
+          },
+          "answer": true
+        },
+        {
+          "id": "gu-5211",
+          "prompt": {
+            "en": "What did the organiser say will happen next year?"
+          },
+          "options": [
+            {
+              "en": "The fair will start again"
+            },
+            {
+              "en": "The fair will close for good"
+            },
+            {
+              "en": "The fair will move to another city"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-home-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3220"
+    target: "द्वारं नीलं भवति गृहं च पुराणं भवति."
+    reading: "dvāraṃ nīlaṃ bhavati gṛhaṃ ca purāṇaṃ bhavati."
+    ipa: "d̪ʋaːrəm niːləm bʱəʋət̪i ɡr̩ɦəm tʃə puraːɳəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "द्वारं", base: "द्वारम्", reading: "dvāram" }, { word: "नीलं", base: "नीलः", reading: "nīlaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "गृहं", base: "गृहम्", reading: "gṛham" }, { word: "च", ref: "sa-1104" }, { word: "पुराणं", base: "पुराणः", reading: "purāṇaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1749", kind: "word" }, { id: "w2", ref: "sa-1750", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3221"
+    target: "दीपः कुत्र भवति शय्या च कुत्र भवति?"
+    reading: "dīpaḥ kutra bhavati śayyā ca kutra bhavati?"
+    ipa: "d̪iːpəh kut̪rə bʱəʋət̪i ʃəjjaː tʃə kut̪rə bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "दीपः", ref: "sa-1753" }, { word: "कुत्र", ref: "sa-1002" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "शय्या", ref: "sa-1751" }, { word: "च", ref: "sa-1104" }]
+    confusables: [{ id: "w1", ref: "sa-1752", kind: "word" }, { id: "w2", ref: "sa-1755", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3222"
+    target: "कूपे जलं भवति पात्रे च क्षीरं भवति."
+    reading: "kūpe jalaṃ bhavati pātre ca kṣīraṃ bhavati."
+    ipa: "kuːpeː dʒələm bʱəʋət̪i paːt̪reː tʃə kʂiːrəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कूपे", base: "कूपः", reading: "kūpaḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "पात्रे", base: "पात्रम्", reading: "pātram" }, { word: "च", ref: "sa-1104" }, { word: "क्षीरं", base: "क्षीरम्", reading: "kṣīram" }]
+    confusables: [{ id: "w1", ref: "sa-1568", kind: "word" }, { id: "w2", ref: "sa-1735", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }, { id: "n4", kind: "usage" }]
+  - id: "sa-3223"
+    target: "प्रासादो महान् भवति कुटी च सुन्दरा भवति."
+    reading: "prāsādo mahān bhavati kuṭī ca sundarā bhavati."
+    ipa: "praːsaːd̪oː məɦaːn bʱəʋət̪i kuʈiː tʃə sund̪əraː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "प्रासादो", base: "प्रासादः", reading: "prāsādaḥ" }, { word: "महान्", ref: "sa-1522" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "कुटी", ref: "sa-1750" }, { word: "च", ref: "sa-1104" }, { word: "सुन्दरा", base: "सुन्दरः", reading: "sundaraḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1747", kind: "word" }, { id: "w2", ref: "sa-1523", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3224"
+    target: "आसने को भवति शय्यायां च का भवति?"
+    reading: "āsane ko bhavati śayyāyāṃ ca kā bhavati?"
+    ipa: "aːsəneː koː bʱəʋət̪i ʃəjjaːjaːm tʃə kaː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "आसने", base: "आसनम्", reading: "āsanam" }, { word: "को", base: "कः", reading: "kaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "शय्यायां", base: "शय्या", reading: "śayyā" }, { word: "च", ref: "sa-1104" }, { word: "का", ref: "sa-1026" }]
+    confusables: [{ id: "w1", ref: "sa-1010", kind: "word" }, { id: "w2", ref: "sa-1011", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }, { id: "n4", kind: "usage" }]
+  - id: "sa-3225"
+    target: "अङ्गने कुक्कुरो धावति गृहे मार्जारो वसति."
+    reading: "aṅgane kukkuro dhāvati gṛhe mārjāro vasati."
+    ipa: "əŋɡəneː kukkuroː d̪ʱaːʋət̪i ɡr̩ɦeː maːrdʒaːroː ʋəsət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अङ्गने", base: "अङ्गनम्", reading: "aṅganam" }, { word: "कुक्कुरो", base: "कुक्कुरः", reading: "kukkuraḥ" }, { word: "धावति", base: "धाव्", reading: "dhāv" }, { word: "गृहे", base: "गृहम्", reading: "gṛham" }, { word: "मार्जारो", base: "मार्जारः", reading: "mārjāraḥ" }, { word: "वसति", base: "वस्", reading: "vas" }]
+    confusables: [{ id: "w1", ref: "sa-1748", kind: "word" }, { id: "w2", ref: "sa-1750", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3226"
+    target: "गृहे स्तम्भो न भवति प्रासादे स्तम्भो भवति."
+    reading: "gṛhe stambho na bhavati prāsāde stambho bhavati."
+    ipa: "ɡr̩ɦeː st̪əmbʱoː nə bʱəʋət̪i praːsaːd̪eː st̪əmbʱoː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "गृहे", base: "गृहम्", reading: "gṛham" }, { word: "स्तम्भो", base: "स्तम्भः", reading: "stambhaḥ" }, { word: "न", ref: "sa-0026" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "प्रासादे", base: "प्रासादः", reading: "prāsādaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1749", kind: "word" }, { id: "w2", ref: "sa-1750", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3227"
+    target: "कुक्कुरो गृहं रक्षति मार्जारो मूषकं पश्यति."
+    reading: "kukkuro gṛhaṃ rakṣati mārjāro mūṣakaṃ paśyati."
+    ipa: "kukkuroː ɡr̩ɦəm rəkʂət̪i maːrdʒaːroː muːʂəkəm pəʃjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कुक्कुरो", base: "कुक्कुरः", reading: "kukkuraḥ" }, { word: "गृहं", base: "गृहम्", reading: "gṛham" }, { word: "रक्षति", base: "रक्ष्", reading: "rakṣ" }, { word: "मार्जारो", base: "मार्जारः", reading: "mārjāraḥ" }, { word: "मूषकं", base: "मूषकः", reading: "mūṣakaḥ" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+    confusables: [{ id: "w1", ref: "sa-1736", kind: "word" }, { id: "w2", ref: "sa-2020", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3228"
+    target: "पिता द्वारं पश्यति माता च भित्तिं पश्यति."
+    reading: "pitā dvāraṃ paśyati mātā ca bhittiṃ paśyati."
+    ipa: "pit̪aː d̪ʋaːrəm pəʃjət̪i maːt̪aː tʃə bʱit̪t̪im pəʃjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पिता", ref: "sa-1031" }, { word: "द्वारं", base: "द्वारम्", reading: "dvāram" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "माता", ref: "sa-1030" }, { word: "च", ref: "sa-1104" }, { word: "भित्तिं", base: "भित्तिः", reading: "bhittiḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1747", kind: "word" }, { id: "w2", ref: "sa-1757", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3229"
+    target: "अग्रे दीपो भवति पश्चात् पात्रं भवति."
+    reading: "agre dīpo bhavati paścāt pātraṃ bhavati."
+    ipa: "əɡreː d̪iːpoː bʱəʋət̪i pəʃtʃaːt̪ paːt̪rəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अग्रे", ref: "sa-1592" }, { word: "दीपो", base: "दीपः", reading: "dīpaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "पश्चात्", ref: "sa-1585" }, { word: "पात्रं", base: "पात्रम्", reading: "pātram" }]
+    confusables: [{ id: "w1", ref: "sa-1586", kind: "word" }, { id: "w2", ref: "sa-1587", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]

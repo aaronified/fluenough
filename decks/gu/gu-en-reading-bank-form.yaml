@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "gu-en-reading-bank-form",
+  "name": "Reading: A simple bank form",
+  "kind": "reading",
+  "language": {
+    "code": "gu",
+    "iso639_3": "guj",
+    "name": "Gujarati",
+    "script": "gujarati",
+    "tts": "gu-IN",
+    "icon": "ગુ"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this deck, and released under CC BY-SA 4.0",
+  "description": "A simple bank form: your name, address, account number, payment and signature. Written for this deck and released under CC BY-SA 4.0. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "reading",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "gu-bank-form",
+      "title": "Reading: A simple bank form",
+      "theme": "services",
+      "sentences": [
+        {
+          "text": "નામ અને સરનામું લખો.",
+          "reading": "nām ane saranāmum lakho.",
+          "ipa": "nam əne sərənamum ləkʰo"
+        },
+        {
+          "text": "ખાતાનો નંબર અહીં લખો.",
+          "reading": "khātāno nambar ahim̐ lakho.",
+          "ipa": "kʰat̪ano nəmbər əɦĩ ləkʰo"
+        },
+        {
+          "text": "રોકડ કે ચેકથી પૈસા ચૂકવો.",
+          "reading": "rokaḍ ke cekathi paisā cukavo.",
+          "ipa": "rokəɖ ke tʃekət̪ʰi pəisa tʃukəʋo"
+        },
+        {
+          "text": "નીચે સહી કરો.",
+          "reading": "nice sahi karo.",
+          "ipa": "nitʃe səɦi kəro"
+        }
+      ],
+      "questions": [
+        {
+          "id": "gu-3852",
+          "prompt": {
+            "en": "Where do you write the account number?"
+          },
+          "options": [
+            {
+              "en": "Here, on the form"
+            },
+            {
+              "en": "On the back of the card"
+            },
+            {
+              "en": "At the post office"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "gu-3853",
+          "prompt": {
+            "en": "You sign at the bottom of the form."
+          },
+          "answer": true
+        },
+        {
+          "id": "gu-3854",
+          "prompt": {
+            "en": "How can you pay?"
+          },
+          "options": [
+            {
+              "en": "Only by card"
+            },
+            {
+              "en": "By cash or cheque"
+            },
+            {
+              "en": "By post"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  ]
+}

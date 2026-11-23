@@ -1,0 +1,60 @@
+schema: 1
+id: "sa-en-places-sentences"
+kind: "layer"
+core: "sa-places-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about places"
+description: "Short sentences about places, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3230":
+    native: "In the village there are houses and in the city there are palaces."
+    bases: { "ग्रामे": "in the village", "गृहाणि": "houses", "भवन्ति": "to be (they are)", "नगरे": "in the city", "प्रासादा": "palaces" }
+    confusables: { "w1": { why: "Forest, not village: वनम् (vanam) means forest." }, "w2": { why: "Field, not city: क्षेत्रम् (kṣetram) means field." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. प्रासादाः (prāsādāḥ) is written प्रासादा (prāsādā) because a final आः (āḥ) loses its visarga before a voiced consonant, here the start of भवन्ति (bhavanti) (Whitney 177; Aṣṭādhyāyī 8.3.17, भो भगो अघो अपूर्वस्य यः अशि (bho bhago agho apūrvasya yaḥ aśi), with 8.3.19, लोपः शाकल्यस्य (lopaḥ śākalyasya)).", "n2": "ग्रामे (grāme) and नगरे (nagare) are the locative case: it says where.", "n3": "गृहाणि (gṛhāṇi) and प्रासादाः (prāsādāḥ) are plural, so the verb भवन्ति (bhavanti) is plural too." }
+  "sa-3231":
+    native: "In the forest a lion lives and in the village a dog lives."
+    bases: { "वने": "in the forest", "सिंहो": "lion", "वसति": "to dwell (lives)", "ग्रामे": "in the village", "कुक्कुरो": "dog" }
+    confusables: { "w1": { why: "Cave, not forest: गुहा (guhā) means cave." }, "w2": { why: "Tiger, not lion: व्याघ्रः (vyāghraḥ) means tiger." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. सिंहः (siṃhaḥ) is written सिंहो (siṃho) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of वसति (vasati) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). कुक्कुरः (kukkuraḥ) is written कुक्कुरो (kukkuro), for the same reason, before वसति (vasati).", "n2": "वने (vane) and ग्रामे (grāme) are the locative case: it says where." }
+  "sa-3232":
+    native: "The river goes to the sea and carries water."
+    bases: { "सागरं": "sea", "गच्छति": "to go (goes)", "जलं": "water", "वहति": "to carry (carries)" }
+    confusables: { "w1": { why: "Ocean, not sea: समुद्रः (samudraḥ) means ocean." }, "w2": { why: "Lake, not river: सरः (saraḥ) means lake." }, "w3": { why: "To flow, not to go: सृ (sṛ) means to flow." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. सागरम् (sāgaram) is written सागरं (sāgaraṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of गच्छति (gacchati) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). जलम् (jalam) is written जलं (jalaṃ), for the same reason, before च (ca).", "n2": "सागरः (sāgaraḥ) is the sea and समुद्रः (samudraḥ) the ocean: the two are near in sense.", "n3": "सागरम् (sāgaram) is the goal of the verb गच्छति (gacchati): the place one goes to is in the accusative case.", "n4": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3233":
+    native: "On the mountain there is a cave and a lion lives in the cave."
+    bases: { "पर्वते": "on the mountain", "भवति": "to be (is)", "गुहायां": "in the cave", "सिंहो": "lion", "वसति": "to dwell (lives)" }
+    confusables: { "w1": { why: "Forest, not cave: वनम् (vanam) means forest." }, "w2": { why: "Desert, not mountain: मरुः (maruḥ) means desert." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. गुहायाम् (guhāyām) is written गुहायां (guhāyāṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of सिंहः (siṃhaḥ) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). सिंहः (siṃhaḥ) is written सिंहो (siṃho) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of वसति (vasati) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)).", "n2": "पर्वते (parvate) and गुहायाम् (guhāyām) are the locative case: it says where; a word in आ (ā) ends in आयाम् (āyām) there." }
+  "sa-3234":
+    native: "At the market mother buys meat and father buys fish."
+    bases: { "आपणे": "at the market", "मांसं": "meat", "क्रीणाति": "to buy (buys)", "मत्स्यं": "fish" }
+    confusables: { "w1": { why: "Temple, not market: मन्दिरम् (mandiram) means temple." }, "w2": { why: "Vegetable, not meat: शाकः (śākaḥ) means vegetable." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. मांसम् (māṃsam) is written मांसं (māṃsaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of क्रीणाति (krīṇāti) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). मत्स्यम् (matsyam) is written मत्स्यं (matsyaṃ), for the same reason, before क्रीणाति (krīṇāti).", "n2": "आपणे (āpaṇe) is the locative case: it says where the buying happens.", "n3": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3235":
+    native: "The god lives in the temple and father goes there."
+    bases: { "देवो": "god", "मन्दिरे": "in the temple", "वसति": "to dwell (lives)", "गच्छति": "to go (goes)" }
+    confusables: { "w1": { why: "Market, not temple: आपणः (āpaṇaḥ) means market." }, "w2": { why: "Holy place, not temple: तीर्थम् (tīrtham) means holy place." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. देवः (devaḥ) is written देवो (devo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of मन्दिरे (mandire) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)).", "n2": "तत्र (tatra) means there: it points back to the temple.", "n3": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3236":
+    native: "At school the son reads and the daughter sings."
+    bases: { "विद्यालये": "at school", "पठति": "to read (reads)", "गायति": "to sing (sings)" }
+    confusables: { "w1": { why: "Husband, not son: पतिः (patiḥ) means husband." }, "w2": { why: "Daughter, not daughter: पुत्री (putrī) means daughter." } }
+    notes: { "n1": "विद्यालये (vidyālaye) is the locative case: it says where the son reads.", "n2": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3237":
+    native: "The hermitage is in the forest and the holy place is on the river."
+    bases: { "आश्रमो": "hermitage", "वने": "in the forest", "भवति": "to be (is)", "तीर्थं": "holy place", "नद्यां": "on the river" }
+    confusables: { "w1": { why: "Temple, not hermitage: मन्दिरम् (mandiram) means temple." }, "w2": { why: "Lake, not river: सरः (saraḥ) means lake." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. आश्रमः (āśramaḥ) is written आश्रमो (āśramo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of वने (vane) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). तीर्थम् (tīrtham) is written तीर्थं (tīrthaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of नद्याम् (nadyām) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). नद्याम् (nadyām) is written नद्यां (nadyāṃ), for the same reason, before भवति (bhavati). The labial keeps म् (m) in Whitney 213 a, but the anusvāra sign is the usual writing (Whitney 213 i).", "n2": "तीर्थम् (tīrtham) means both a ford and a holy place.", "n3": "वने (vane) and नद्याम् (nadyām) are the locative case: it says where; नद्याम् (nadyām) is the locative of नदी (nadī), a feminine word in ई (ī)." }
+  "sa-3238":
+    native: "In the sea there is an island and in the desert there is no water."
+    bases: { "सागरे": "in the sea", "द्वीपो": "island", "भवति": "to be (is)", "मरौ": "in the desert", "जलं": "water" }
+    confusables: { "w1": { why: "Ocean, not sea: समुद्रः (samudraḥ) means ocean." }, "w2": { why: "Field, not desert: क्षेत्रम् (kṣetram) means field." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. द्वीपः (dvīpaḥ) is written द्वीपो (dvīpo) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of भवति (bhavati) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). जलम् (jalam) is written जलं (jalaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of न (na) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "मरौ (marau) is the locative of मरुः (maruḥ), a word in उ (u): its ending is औ (au), not ए (e)." }
+  "sa-3239":
+    native: "In the garden the peacock dances and in the field the bull runs."
+    bases: { "उद्याने": "in the garden", "मयूरो": "peacock", "नृत्यति": "to dance (dances)", "क्षेत्रे": "in the field", "वृषभो": "bull", "धावति": "to run (runs)" }
+    confusables: { "w1": { why: "Pond, not park: तडागम् (taḍāgam) means pond." }, "w2": { why: "Village, not field: ग्रामः (grāmaḥ) means village." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. मयूरः (mayūraḥ) is written मयूरो (mayūro) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of नृत्यति (nṛtyati) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). वृषभः (vṛṣabhaḥ) is written वृषभो (vṛṣabho), for the same reason, before धावति (dhāvati).", "n2": "उद्याने (udyāne) and क्षेत्रे (kṣetre) are the locative case: it says where." }

@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-law"
+name: "Reading: law"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-law-text-1"
+    title: "Court, oath and thief"
+    theme: "law"
+    sentences:
+      - { text: "न्यायालये परीक्षको न्यायं करोति.", reading: "nyāyālaye parīkṣako nyāyaṃ karoti.", ipa: "njaːjaːləjeː pəriːkʂəkoː njaːjəm kəroːt̪i" }
+      - { text: "साक्षिणी शपथेन सत्यं वदति.", reading: "sākṣiṇī śapathena satyaṃ vadati.", ipa: "saːkʂiɳiː ʃəpət̪ʰeːnə sət̪jəm ʋəd̪ət̪i" }
+      - { text: "पाशेन चौरं सैनिका बध्नन्ति.", reading: "pāśena cauraṃ sainikā badhnanti.", ipa: "paːʃeːnə tʃəurəm səinikaː bəd̪ʱnənt̪i" }
+      - { text: "अधमर्णो धनिकाय धनं ददाति.", reading: "adhamarṇo dhanikāya dhanaṃ dadāti.", ipa: "əd̪ʱəmərɳoː d̪ʱənikaːjə d̪ʱənəm d̪əd̪aːt̪i" }
+      - { text: "अनृतं चोरो न्यायालये वदति.", reading: "anṛtaṃ coro nyāyālaye vadati.", ipa: "ənr̩t̪əm tʃoːroː njaːjaːləjeː ʋəd̪ət̪i" }
+    questions:
+      - id: "sa-6756"
+        prompt: { en: "Where does the judge do justice?" }
+        options: [{ en: "In the assembly" }, { en: "In the court" }, { en: "In the palace" }]
+        answer: 2
+      - id: "sa-6757"
+        prompt: { en: "On what does the woman witness speak the truth?" }
+        options: [{ en: "In secret" }, { en: "On a sacrifice" }, { en: "On oath" }]
+        answer: 3
+      - id: "sa-6758"
+        prompt: { en: "Which word means 'rope'?" }
+        options: [{ en: "पाशेन (pāśena)" }, { en: "चौरं (cauraṃ)" }, { en: "सैनिका (sainikā)" }]
+        answer: 1
+      - id: "sa-6759"
+        prompt: { en: "A thief tells the truth in court." }
+        answer: false
+  - id: "sa-law-text-2"
+    title: "Sin, rule and gain"
+    theme: "law"
+    sentences:
+      - { text: "हिंसा सदा पातकं भवति.", reading: "hiṃsā sadā pātakaṃ bhavati.", ipa: "ɦĩsaː səd̪aː paːt̪əkəm bʱəʋət̪i" }
+      - { text: "सभापतिर् विधानेन निर्णयं करोति.", reading: "sabhāpatir vidhānena nirṇayaṃ karoti.", ipa: "səbʱaːpət̪ir ʋid̪ʱaːneːnə nirɳəjəm kəroːt̪i" }
+      - { text: "द्यूतेन बहु धनं नश्यति.", reading: "dyūtena bahu dhanaṃ naśyati.", ipa: "d̪juːt̪eːnə bəɦu d̪ʱənəm nəʃjət̪i" }
+      - { text: "वणिग् विक्रयेण धनं लभते.", reading: "vaṇig vikrayeṇa dhanaṃ labhate.", ipa: "ʋəɳiɡ ʋikrəjeːɳə d̪ʱənəm ləbʱət̪eː" }
+      - { text: "नृपस्य संहिता विधानं वदति.", reading: "nṛpasya saṃhitā vidhānaṃ vadati.", ipa: "nr̩pəsjə sə̃ɦit̪aː ʋid̪ʱaːnəm ʋəd̪ət̪i" }
+    questions:
+      - id: "sa-6760"
+        prompt: { en: "What is violence, according to the passage?" }
+        options: [{ en: "A sin" }, { en: "A virtue" }, { en: "A fault" }]
+        answer: 1
+      - id: "sa-6761"
+        prompt: { en: "Through what is much wealth lost?" }
+        options: [{ en: "Theft" }, { en: "Gambling" }, { en: "Trade" }]
+        answer: 2
+      - id: "sa-6762"
+        prompt: { en: "Which word means 'merchant'?" }
+        options: [{ en: "विक्रयेण (vikrayeṇa)" }, { en: "धनं (dhanaṃ)" }, { en: "वणिग् (vaṇig)" }]
+        answer: 3
+      - id: "sa-6763"
+        prompt: { en: "The president makes a decision by the rule." }
+        answer: true

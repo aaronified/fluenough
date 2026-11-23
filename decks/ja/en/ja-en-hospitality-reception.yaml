@@ -1,0 +1,53 @@
+schema: 1
+id: "ja-en-hospitality-reception"
+kind: "layer"
+core: "ja-hospitality-reception"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Hospitality: hotel reception"
+license: "CC-BY-SA-4.0"
+description: "Phrases hotel front-desk staff say to a guest: welcome, check-in, the room, breakfast, and goodbye."
+cards:
+  "ja-7521":
+    native: "Welcome. (said to a customer or guest who arrives)"
+    notes: { n1: "いらっしゃいませ (irasshaimase) is the honorific of いらっしゃる (irassharu) (to come) with ませ (mase), a polite command. Staff say it as a guest enters, and the guest does not answer it." }
+    bases: { "いらっしゃいませ": { meaning: "to come, to be (honorific); with ませ (mase), a polite command" } }
+  "ja-7522":
+    native: "May I have the name on the reservation?"
+    notes: { n1: "ご (go) (not お (o)) goes before よやく (yoyaku) because it is a word of Chinese origin. ご (go) and お (o) both make a word more polite." }
+    bases: { "の": { meaning: "(links two nouns, like of)" }, "を": { meaning: "(marks the object)" }, "おねがいします": { meaning: "to request, to ask for (polite)" } }
+  "ja-7523":
+    native: "Please show your passport."
+    notes: { n1: "おみせください (omise kudasai) is the polite request form of みせる (miseru). At Japanese hotels a foreign guest shows a passport at check-in." }
+    bases: { "を": { meaning: "(marks the object)" }, "ください": { meaning: "to give (honorific); with a verb, please do" } }
+  "ja-7524":
+    native: "Check-in is from three o'clock."
+    notes: { n1: "から (kara) marks the starting time: さんじから (sanji kara) is from three o'clock." }
+    bases: { "は": { meaning: "(marks the topic)" }, "さんじ": { meaning: "three o'clock" }, "から": { meaning: "(from; starting at)" }, "です": { meaning: "to be (polite)" } }
+  "ja-7525":
+    native: "Check-out is by eleven o'clock."
+    notes: { n1: "まで (made) marks the end of a period: じゅういちじまで (juuichiji made) is until eleven o'clock. The hours differ from hotel to hotel." }
+    bases: { "は": { meaning: "(marks the topic)" }, "じゅういちじ": { meaning: "eleven o'clock" }, "まで": { meaning: "(until; up to)" }, "です": { meaning: "to be (polite)" } }
+  "ja-7526":
+    native: "Your room is room 310."
+    notes: { n1: "The room number is read as a number plus ごうしつ (goushitsu) (room number): 310 is さんびゃくじゅうごうしつ (sanbyaku juu goushitsu)." }
+    bases: { "は": { meaning: "(marks the topic)" }, "ごうしつ": { meaning: "room number" }, "です": { meaning: "to be (polite)" } }
+  "ja-7527":
+    native: "I will keep your luggage for you."
+    notes: { n1: "おあずかりします (oazukarishimasu) is the humble form of あずかる (azukaru): the staff member lowers their own action." }
+    bases: { "を": { meaning: "(marks the object)" } }
+  "ja-7528":
+    native: "Breakfast is from six to nine."
+    notes: { n1: "Times are given as number plus じ (ji): ろくじ (rokuji) (six o'clock) and くじ (kuji) (nine o'clock; not きゅうじ (kyuuji))." }
+    bases: { "は": { meaning: "(marks the topic)" }, "ろくじ": { meaning: "six o'clock" }, "から": { meaning: "(from; starting at)" }, "くじ": { meaning: "nine o'clock" }, "まで": { meaning: "(until; up to)" }, "です": { meaning: "to be (polite)" } }
+  "ja-7529":
+    native: "Please take your time."
+    notes: { n1: "ごゆっくりどうぞ (goyukkuri douzo) is said when a guest is shown to a room or a seat. It wishes the guest a relaxed stay." }
+    bases: { "ごゆっくり": { meaning: "slowly, at your leisure (polite)" }, "どうぞ": { meaning: "please, go ahead" } }
+  "ja-7530":
+    native: "Please wait a moment."
+    notes: { n1: "しょうしょう (shoushou) is a formal word for a little; it sounds more formal than すこし (sukoshi)." }
+    bases: { "しょうしょう": { meaning: "a little, a moment (formal)" }, "ください": { meaning: "to give (honorific); with a verb, please do" } }
+  "ja-7531":
+    native: "We look forward to welcoming you again."
+    notes: { n1: "おまちしております (omachishite orimasu) is humble (おまちします (omachishimasu) plus おります (orimasu)): the staff speak of their own waiting politely. おこし (okoshi) is the honorific noun for a guest's coming." }
+    bases: { "の": { meaning: "(links two nouns, like of)" }, "おこし": { meaning: "coming, a visit (honorific, from くる (kuru))" }, "を": { meaning: "(marks the object)" }, "おります": { meaning: "to be, to stay (humble)" } }

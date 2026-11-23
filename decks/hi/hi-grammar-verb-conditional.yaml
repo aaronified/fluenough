@@ -1,0 +1,715 @@
+schema: 1
+id: "hi-grammar-verb-conditional"
+part: "core"
+kind: "rules"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["hi-0240", "hi-0273", "hi-0290", "hi-0460"]
+  slots: ["m-sg", "f-sg", "m-pl", "f-pl"]
+  rows:
+    - word: "hi-0441"
+      forms: { "m-sg": "उठता", "f-sg": "उठती", "m-pl": "उठते", "f-pl": ["उठतीं", "उठती"] }
+      readings: { "m-sg": "uṭhtā", "f-sg": "uṭhtī", "m-pl": "uṭhtē", "f-pl": ["uṭhtīm̐", "uṭhtī"] }
+    - word: "hi-0442"
+      forms: { "m-sg": "नहाता", "f-sg": "नहाती", "m-pl": "नहाते", "f-pl": ["नहातीं", "नहाती"] }
+      readings: { "m-sg": "nahātā", "f-sg": "nahātī", "m-pl": "nahātē", "f-pl": ["nahātīm̐", "nahātī"] }
+    - word: "hi-0450"
+      forms: { "m-sg": "सोता", "f-sg": "सोती", "m-pl": "सोते", "f-pl": ["सोतीं", "सोती"] }
+      readings: { "m-sg": "sōtā", "f-sg": "sōtī", "m-pl": "sōtē", "f-pl": ["sōtīm̐", "sōtī"] }
+    - word: "hi-0513"
+      forms: { "m-sg": "सकता", "f-sg": "सकती", "m-pl": "सकते", "f-pl": ["सकतीं", "सकती"] }
+      readings: { "m-sg": "saktā", "f-sg": "saktī", "m-pl": "saktē", "f-pl": ["saktīm̐", "saktī"] }
+    - word: "hi-0602"
+      forms: { "m-sg": "पीता", "f-sg": "पीती", "m-pl": "पीते", "f-pl": ["पीतीं", "पीती"] }
+      readings: { "m-sg": "pītā", "f-sg": "pītī", "m-pl": "pītē", "f-pl": ["pītīm̐", "pītī"] }
+    - word: "hi-0623"
+      forms: { "m-sg": "हंसता", "f-sg": "हंसती", "m-pl": "हंसते", "f-pl": ["हंसतीं", "हंसती"] }
+      readings: { "m-sg": "haṁstā", "f-sg": "haṁstī", "m-pl": "haṁstē", "f-pl": ["haṁstīm̐", "haṁstī"] }
+    - word: "hi-0777"
+      forms: { "m-sg": "जाता", "f-sg": "जाती", "m-pl": "जाते", "f-pl": ["जातीं", "जाती"] }
+      readings: { "m-sg": "jātā", "f-sg": "jātī", "m-pl": "jātē", "f-pl": ["jātīm̐", "jātī"] }
+    - word: "hi-0778"
+      forms: { "m-sg": "आता", "f-sg": "आती", "m-pl": "आते", "f-pl": ["आतीं", "आती"] }
+      readings: { "m-sg": "ātā", "f-sg": "ātī", "m-pl": "ātē", "f-pl": ["ātīm̐", "ātī"] }
+    - word: "hi-0779"
+      forms: { "m-sg": "करता", "f-sg": "करती", "m-pl": "करते", "f-pl": ["करतीं", "करती"] }
+      readings: { "m-sg": "kartā", "f-sg": "kartī", "m-pl": "kartē", "f-pl": ["kartīm̐", "kartī"] }
+    - word: "hi-0780"
+      forms: { "m-sg": "होता", "f-sg": "होती", "m-pl": "होते", "f-pl": ["होतीं", "होती"] }
+      readings: { "m-sg": "hōtā", "f-sg": "hōtī", "m-pl": "hōtē", "f-pl": ["hōtīm̐", "hōtī"] }
+    - word: "hi-0781"
+      forms: { "m-sg": "लिखता", "f-sg": "लिखती", "m-pl": "लिखते", "f-pl": ["लिखतीं", "लिखती"] }
+      readings: { "m-sg": "likhtā", "f-sg": "likhtī", "m-pl": "likhtē", "f-pl": ["likhtīm̐", "likhtī"] }
+    - word: "hi-0782"
+      forms: { "m-sg": "बोलता", "f-sg": "बोलती", "m-pl": "बोलते", "f-pl": ["बोलतीं", "बोलती"] }
+      readings: { "m-sg": "bōltā", "f-sg": "bōltī", "m-pl": "bōltē", "f-pl": ["bōltīm̐", "bōltī"] }
+    - word: "hi-0783"
+      forms: { "m-sg": "सुनता", "f-sg": "सुनती", "m-pl": "सुनते", "f-pl": ["सुनतीं", "सुनती"] }
+      readings: { "m-sg": "suntā", "f-sg": "suntī", "m-pl": "suntē", "f-pl": ["suntīm̐", "suntī"] }
+    - word: "hi-0784"
+      forms: { "m-sg": "देखता", "f-sg": "देखती", "m-pl": "देखते", "f-pl": ["देखतीं", "देखती"] }
+      readings: { "m-sg": "dēkhtā", "f-sg": "dēkhtī", "m-pl": "dēkhtē", "f-pl": ["dēkhtīm̐", "dēkhtī"] }
+    - word: "hi-0785"
+      forms: { "m-sg": "देता", "f-sg": "देती", "m-pl": "देते", "f-pl": ["देतीं", "देती"] }
+      readings: { "m-sg": "dētā", "f-sg": "dētī", "m-pl": "dētē", "f-pl": ["dētīm̐", "dētī"] }
+    - word: "hi-0786"
+      forms: { "m-sg": "लेता", "f-sg": "लेती", "m-pl": "लेते", "f-pl": ["लेतीं", "लेती"] }
+      readings: { "m-sg": "lētā", "f-sg": "lētī", "m-pl": "lētē", "f-pl": ["lētīm̐", "lētī"] }
+    - word: "hi-0787"
+      forms: { "m-sg": "खेलता", "f-sg": "खेलती", "m-pl": "खेलते", "f-pl": ["खेलतीं", "खेलती"] }
+      readings: { "m-sg": "khēltā", "f-sg": "khēltī", "m-pl": "khēltē", "f-pl": ["khēltīm̐", "khēltī"] }
+    - word: "hi-0788"
+      forms: { "m-sg": "बैठता", "f-sg": "बैठती", "m-pl": "बैठते", "f-pl": ["बैठतीं", "बैठती"] }
+      readings: { "m-sg": "baiṭhtā", "f-sg": "baiṭhtī", "m-pl": "baiṭhtē", "f-pl": ["baiṭhtīm̐", "baiṭhtī"] }
+    - word: "hi-0789"
+      forms: { "m-sg": "समझता", "f-sg": "समझती", "m-pl": "समझते", "f-pl": ["समझतीं", "समझती"] }
+      readings: { "m-sg": "samjhtā", "f-sg": "samjhtī", "m-pl": "samjhtē", "f-pl": ["samjhtīm̐", "samjhtī"] }
+    - word: "hi-0790"
+      forms: { "m-sg": "जानता", "f-sg": "जानती", "m-pl": "जानते", "f-pl": ["जानतीं", "जानती"] }
+      readings: { "m-sg": "jāntā", "f-sg": "jāntī", "m-pl": "jāntē", "f-pl": ["jāntīm̐", "jāntī"] }
+    - word: "hi-0791"
+      forms: { "m-sg": "रहता", "f-sg": "रहती", "m-pl": "रहते", "f-pl": ["रहतीं", "रहती"] }
+      readings: { "m-sg": "rahtā", "f-sg": "rahtī", "m-pl": "rahtē", "f-pl": ["rahtīm̐", "rahtī"] }
+    - word: "hi-0792"
+      forms: { "m-sg": "चाहता", "f-sg": "चाहती", "m-pl": "चाहते", "f-pl": ["चाहतीं", "चाहती"] }
+      readings: { "m-sg": "cāhtā", "f-sg": "cāhtī", "m-pl": "cāhtē", "f-pl": ["cāhtīm̐", "cāhtī"] }
+    - word: "hi-0793"
+      forms: { "m-sg": "मिलता", "f-sg": "मिलती", "m-pl": "मिलते", "f-pl": ["मिलतीं", "मिलती"] }
+      readings: { "m-sg": "miltā", "f-sg": "miltī", "m-pl": "miltē", "f-pl": ["miltīm̐", "miltī"] }
+    - word: "hi-0794"
+      forms: { "m-sg": "ख़रीदता", "f-sg": "ख़रीदती", "m-pl": "ख़रीदते", "f-pl": ["ख़रीदतीं", "ख़रीदती"] }
+      readings: { "m-sg": "k͟harīdtā", "f-sg": "k͟harīdtī", "m-pl": "k͟harīdtē", "f-pl": ["k͟harīdtīm̐", "k͟harīdtī"] }
+    - word: "hi-0795"
+      forms: { "m-sg": "बेचता", "f-sg": "बेचती", "m-pl": "बेचते", "f-pl": ["बेचतीं", "बेचती"] }
+      readings: { "m-sg": "bēctā", "f-sg": "bēctī", "m-pl": "bēctē", "f-pl": ["bēctīm̐", "bēctī"] }
+    - word: "hi-0796"
+      forms: { "m-sg": "बताता", "f-sg": "बताती", "m-pl": "बताते", "f-pl": ["बतातीं", "बताती"] }
+      readings: { "m-sg": "batātā", "f-sg": "batātī", "m-pl": "batātē", "f-pl": ["batātīm̐", "batātī"] }
+    - word: "hi-0797"
+      forms: { "m-sg": "भेजता", "f-sg": "भेजती", "m-pl": "भेजते", "f-pl": ["भेजतीं", "भेजती"] }
+      readings: { "m-sg": "bhējtā", "f-sg": "bhējtī", "m-pl": "bhējtē", "f-pl": ["bhējtīm̐", "bhējtī"] }
+    - word: "hi-0798"
+      forms: { "m-sg": "धोता", "f-sg": "धोती", "m-pl": "धोते", "f-pl": ["धोतीं", "धोती"] }
+      readings: { "m-sg": "dhōtā", "f-sg": "dhōtī", "m-pl": "dhōtē", "f-pl": ["dhōtīm̐", "dhōtī"] }
+    - word: "hi-0799"
+      forms: { "m-sg": "पूछता", "f-sg": "पूछती", "m-pl": "पूछते", "f-pl": ["पूछतीं", "पूछती"] }
+      readings: { "m-sg": "pūchtā", "f-sg": "pūchtī", "m-pl": "pūchtē", "f-pl": ["pūchtīm̐", "pūchtī"] }
+    - word: "hi-0800"
+      forms: { "m-sg": "कहता", "f-sg": "कहती", "m-pl": "कहते", "f-pl": ["कहतीं", "कहती"] }
+      readings: { "m-sg": "kahtā", "f-sg": "kahtī", "m-pl": "kahtē", "f-pl": ["kahtīm̐", "kahtī"] }
+    - word: "hi-0801"
+      forms: { "m-sg": "चलता", "f-sg": "चलती", "m-pl": "चलते", "f-pl": ["चलतीं", "चलती"] }
+      readings: { "m-sg": "caltā", "f-sg": "caltī", "m-pl": "caltē", "f-pl": ["caltīm̐", "caltī"] }
+    - word: "hi-0937"
+      forms: { "m-sg": "खोलता", "f-sg": "खोलती", "m-pl": "खोलते", "f-pl": ["खोलतीं", "खोलती"] }
+      readings: { "m-sg": "khōltā", "f-sg": "khōltī", "m-pl": "khōltē", "f-pl": ["khōltīm̐", "khōltī"] }
+    - word: "hi-0938"
+      forms: { "m-sg": "पकाता", "f-sg": "पकाती", "m-pl": "पकाते", "f-pl": ["पकातीं", "पकाती"] }
+      readings: { "m-sg": "pakātā", "f-sg": "pakātī", "m-pl": "pakātē", "f-pl": ["pakātīm̐", "pakātī"] }
+    - word: "hi-0939"
+      forms: { "m-sg": "काटता", "f-sg": "काटती", "m-pl": "काटते", "f-pl": ["काटतीं", "काटती"] }
+      readings: { "m-sg": "kāṭtā", "f-sg": "kāṭtī", "m-pl": "kāṭtē", "f-pl": ["kāṭtīm̐", "kāṭtī"] }
+    - word: "hi-0940"
+      forms: { "m-sg": "उबालता", "f-sg": "उबालती", "m-pl": "उबालते", "f-pl": ["उबालतीं", "उबालती"] }
+      readings: { "m-sg": "ubāltā", "f-sg": "ubāltī", "m-pl": "ubāltē", "f-pl": ["ubāltīm̐", "ubāltī"] }
+    - word: "hi-0941"
+      forms: { "m-sg": "डालता", "f-sg": "डालती", "m-pl": "डालते", "f-pl": ["डालतीं", "डालती"] }
+      readings: { "m-sg": "ḍāltā", "f-sg": "ḍāltī", "m-pl": "ḍāltē", "f-pl": ["ḍāltīm̐", "ḍāltī"] }
+    - word: "hi-0942"
+      forms: { "m-sg": "छानता", "f-sg": "छानती", "m-pl": "छानते", "f-pl": ["छानतीं", "छानती"] }
+      readings: { "m-sg": "chāntā", "f-sg": "chāntī", "m-pl": "chāntē", "f-pl": ["chāntīm̐", "chāntī"] }
+    - word: "hi-0943"
+      forms: { "m-sg": "परोसता", "f-sg": "परोसती", "m-pl": "परोसते", "f-pl": ["परोसतीं", "परोसती"] }
+      readings: { "m-sg": "parōstā", "f-sg": "parōstī", "m-pl": "parōstē", "f-pl": ["parōstīm̐", "parōstī"] }
+    - word: "hi-0944"
+      forms: { "m-sg": "जागता", "f-sg": "जागती", "m-pl": "जागते", "f-pl": ["जागतीं", "जागती"] }
+      readings: { "m-sg": "jāgtā", "f-sg": "jāgtī", "m-pl": "jāgtē", "f-pl": ["jāgtīm̐", "jāgtī"] }
+    - word: "hi-0945"
+      forms: { "m-sg": "भूलता", "f-sg": "भूलती", "m-pl": "भूलते", "f-pl": ["भूलतीं", "भूलती"] }
+      readings: { "m-sg": "bhūltā", "f-sg": "bhūltī", "m-pl": "bhūltē", "f-pl": ["bhūltīm̐", "bhūltī"] }
+    - word: "hi-0946"
+      forms: { "m-sg": "दौड़ता", "f-sg": "दौड़ती", "m-pl": "दौड़ते", "f-pl": ["दौड़तीं", "दौड़ती"] }
+      readings: { "m-sg": "dauṛtā", "f-sg": "dauṛtī", "m-pl": "dauṛtē", "f-pl": ["dauṛtīm̐", "dauṛtī"] }
+    - word: "hi-0947"
+      forms: { "m-sg": "गिरता", "f-sg": "गिरती", "m-pl": "गिरते", "f-pl": ["गिरतीं", "गिरती"] }
+      readings: { "m-sg": "girtā", "f-sg": "girtī", "m-pl": "girtē", "f-pl": ["girtīm̐", "girtī"] }
+    - word: "hi-0948"
+      forms: { "m-sg": "लौटता", "f-sg": "लौटती", "m-pl": "लौटते", "f-pl": ["लौटतीं", "लौटती"] }
+      readings: { "m-sg": "lauṭtā", "f-sg": "lauṭtī", "m-pl": "lauṭtē", "f-pl": ["lauṭtīm̐", "lauṭtī"] }
+    - word: "hi-0949"
+      forms: { "m-sg": "लाता", "f-sg": "लाती", "m-pl": "लाते", "f-pl": ["लातीं", "लाती"] }
+      readings: { "m-sg": "lātā", "f-sg": "lātī", "m-pl": "lātē", "f-pl": ["lātīm̐", "lātī"] }
+    - word: "hi-0950"
+      forms: { "m-sg": "रखता", "f-sg": "रखती", "m-pl": "रखते", "f-pl": ["रखतीं", "रखती"] }
+      readings: { "m-sg": "rakhtā", "f-sg": "rakhtī", "m-pl": "rakhtē", "f-pl": ["rakhtīm̐", "rakhtī"] }
+    - word: "hi-0951"
+      forms: { "m-sg": "छोड़ता", "f-sg": "छोड़ती", "m-pl": "छोड़ते", "f-pl": ["छोड़तीं", "छोड़ती"] }
+      readings: { "m-sg": "chōṛtā", "f-sg": "chōṛtī", "m-pl": "chōṛtē", "f-pl": ["chōṛtīm̐", "chōṛtī"] }
+    - word: "hi-0952"
+      forms: { "m-sg": "सीखता", "f-sg": "सीखती", "m-pl": "सीखते", "f-pl": ["सीखतीं", "सीखती"] }
+      readings: { "m-sg": "sīkhtā", "f-sg": "sīkhtī", "m-pl": "sīkhtē", "f-pl": ["sīkhtīm̐", "sīkhtī"] }
+    - word: "hi-0953"
+      forms: { "m-sg": "सोचता", "f-sg": "सोचती", "m-pl": "सोचते", "f-pl": ["सोचतीं", "सोचती"] }
+      readings: { "m-sg": "sōctā", "f-sg": "sōctī", "m-pl": "sōctē", "f-pl": ["sōctīm̐", "sōctī"] }
+    - word: "hi-0954"
+      forms: { "m-sg": "सिखाता", "f-sg": "सिखाती", "m-pl": "सिखाते", "f-pl": ["सिखातीं", "सिखाती"] }
+      readings: { "m-sg": "sikhātā", "f-sg": "sikhātī", "m-pl": "sikhātē", "f-pl": ["sikhātīm̐", "sikhātī"] }
+    - word: "hi-0955"
+      forms: { "m-sg": "ढूँढता", "f-sg": "ढूँढती", "m-pl": "ढूँढते", "f-pl": ["ढूँढतीं", "ढूँढती"] }
+      readings: { "m-sg": "ḍhūm̐ḍhtā", "f-sg": "ḍhūm̐ḍhtī", "m-pl": "ḍhūm̐ḍhtē", "f-pl": ["ḍhūm̐ḍhtīm̐", "ḍhūm̐ḍhtī"] }
+    - word: "hi-0956"
+      forms: { "m-sg": "जीतता", "f-sg": "जीतती", "m-pl": "जीतते", "f-pl": ["जीततीं", "जीतती"] }
+      readings: { "m-sg": "jīttā", "f-sg": "jīttī", "m-pl": "jīttē", "f-pl": ["jīttīm̐", "jīttī"] }
+    - word: "hi-0957"
+      forms: { "m-sg": "हारता", "f-sg": "हारती", "m-pl": "हारते", "f-pl": ["हारतीं", "हारती"] }
+      readings: { "m-sg": "hārtā", "f-sg": "hārtī", "m-pl": "hārtē", "f-pl": ["hārtīm̐", "hārtī"] }
+    - word: "hi-0958"
+      forms: { "m-sg": "कमाता", "f-sg": "कमाती", "m-pl": "कमाते", "f-pl": ["कमातीं", "कमाती"] }
+      readings: { "m-sg": "kamātā", "f-sg": "kamātī", "m-pl": "kamātē", "f-pl": ["kamātīm̐", "kamātī"] }
+    - word: "hi-0959"
+      forms: { "m-sg": "हँसता", "f-sg": "हँसती", "m-pl": "हँसते", "f-pl": ["हँसतीं", "हँसती"] }
+      readings: { "m-sg": "ham̐stā", "f-sg": "ham̐stī", "m-pl": "ham̐stē", "f-pl": ["ham̐stīm̐", "ham̐stī"] }
+    - word: "hi-0960"
+      forms: { "m-sg": "रोता", "f-sg": "रोती", "m-pl": "रोते", "f-pl": ["रोतीं", "रोती"] }
+      readings: { "m-sg": "rōtā", "f-sg": "rōtī", "m-pl": "rōtē", "f-pl": ["rōtīm̐", "rōtī"] }
+    - word: "hi-0961"
+      forms: { "m-sg": "बुलाता", "f-sg": "बुलाती", "m-pl": "बुलाते", "f-pl": ["बुलातीं", "बुलाती"] }
+      readings: { "m-sg": "bulātā", "f-sg": "bulātī", "m-pl": "bulātē", "f-pl": ["bulātīm̐", "bulātī"] }
+    - word: "hi-1287"
+      forms: { "m-sg": "गरजता", "f-sg": "गरजती", "m-pl": "गरजते", "f-pl": ["गरजतीं", "गरजती"] }
+      readings: { "m-sg": "garjtā", "f-sg": "garjtī", "m-pl": "garjtē", "f-pl": ["garjtīm̐", "garjtī"] }
+    - word: "hi-1292"
+      forms: { "m-sg": "बरसता", "f-sg": "बरसती", "m-pl": "बरसते", "f-pl": ["बरसतीं", "बरसती"] }
+      readings: { "m-sg": "barstā", "f-sg": "barstī", "m-pl": "barstē", "f-pl": ["barstīm̐", "barstī"] }
+    - word: "hi-1293"
+      forms: { "m-sg": "कड़कता", "f-sg": "कड़कती", "m-pl": "कड़कते", "f-pl": ["कड़कतीं", "कड़कती"] }
+      readings: { "m-sg": "kaṛktā", "f-sg": "kaṛktī", "m-pl": "kaṛktē", "f-pl": ["kaṛktīm̐", "kaṛktī"] }
+    - word: "hi-1294"
+      forms: { "m-sg": "चमकता", "f-sg": "चमकती", "m-pl": "चमकते", "f-pl": ["चमकतीं", "चमकती"] }
+      readings: { "m-sg": "camktā", "f-sg": "camktī", "m-pl": "camktē", "f-pl": ["camktīm̐", "camktī"] }
+    - word: "hi-1334"
+      forms: { "m-sg": "मनाता", "f-sg": "मनाती", "m-pl": "मनाते", "f-pl": ["मनातीं", "मनाती"] }
+      readings: { "m-sg": "manātā", "f-sg": "manātī", "m-pl": "manātē", "f-pl": ["manātīm̐", "manātī"] }
+    - word: "hi-1335"
+      forms: { "m-sg": "जलाता", "f-sg": "जलाती", "m-pl": "जलाते", "f-pl": ["जलातीं", "जलाती"] }
+      readings: { "m-sg": "jalātā", "f-sg": "jalātī", "m-pl": "jalātē", "f-pl": ["jalātīm̐", "jalātī"] }
+    - word: "hi-1336"
+      forms: { "m-sg": "बाँटता", "f-sg": "बाँटती", "m-pl": "बाँटते", "f-pl": ["बाँटतीं", "बाँटती"] }
+      readings: { "m-sg": "bām̐ṭatā", "f-sg": "bām̐ṭatī", "m-pl": "bām̐ṭatē", "f-pl": ["bām̐ṭatīm̐", "bām̐ṭatī"] }
+    - word: "hi-1337"
+      forms: { "m-sg": "सजाता", "f-sg": "सजाती", "m-pl": "सजाते", "f-pl": ["सजातीं", "सजाती"] }
+      readings: { "m-sg": "sajātā", "f-sg": "sajātī", "m-pl": "sajātē", "f-pl": ["sajātīm̐", "sajātī"] }
+    - word: "hi-1364"
+      forms: { "m-sg": "बदलता", "f-sg": "बदलती", "m-pl": "बदलते", "f-pl": ["बदलतीं", "बदलती"] }
+      readings: { "m-sg": "badltā", "f-sg": "badltī", "m-pl": "badltē", "f-pl": ["badltīm̐", "badltī"] }
+    - word: "hi-1385"
+      forms: { "m-sg": "तौलता", "f-sg": "तौलती", "m-pl": "तौलते", "f-pl": ["तौलतीं", "तौलती"] }
+      readings: { "m-sg": "taultā", "f-sg": "taultī", "m-pl": "taultē", "f-pl": ["taultīm̐", "taultī"] }
+    - word: "hi-1460"
+      forms: { "m-sg": "खाँसता", "f-sg": "खाँसती", "m-pl": "खाँसते", "f-pl": ["खाँसतीं", "खाँसती"] }
+      readings: { "m-sg": "khām̐satā", "f-sg": "khām̐satī", "m-pl": "khām̐satē", "f-pl": ["khām̐satīm̐", "khām̐satī"] }
+    - word: "hi-1461"
+      forms: { "m-sg": "छींकता", "f-sg": "छींकती", "m-pl": "छींकते", "f-pl": ["छींकतीं", "छींकती"] }
+      readings: { "m-sg": "chīṅkatā", "f-sg": "chīṅkatī", "m-pl": "chīṅkatē", "f-pl": ["chīṅkatīm̐", "chīṅkatī"] }
+    - word: "hi-1462"
+      forms: { "m-sg": "लेटता", "f-sg": "लेटती", "m-pl": "लेटते", "f-pl": ["लेटतीं", "लेटती"] }
+      readings: { "m-sg": "lēṭtā", "f-sg": "lēṭtī", "m-pl": "lēṭtē", "f-pl": ["lēṭtīm̐", "lēṭtī"] }
+    - word: "hi-1463"
+      forms: { "m-sg": "दुखता", "f-sg": "दुखती", "m-pl": "दुखते", "f-pl": ["दुखतीं", "दुखती"] }
+      readings: { "m-sg": "dukhtā", "f-sg": "dukhtī", "m-pl": "dukhtē", "f-pl": ["dukhtīm̐", "dukhtī"] }
+    - word: "hi-1496"
+      forms: { "m-sg": "तलता", "f-sg": "तलती", "m-pl": "तलते", "f-pl": ["तलतीं", "तलती"] }
+      readings: { "m-sg": "taltā", "f-sg": "taltī", "m-pl": "taltē", "f-pl": ["taltīm̐", "taltī"] }
+    - word: "hi-1497"
+      forms: { "m-sg": "भूनता", "f-sg": "भूनती", "m-pl": "भूनते", "f-pl": ["भूनतीं", "भूनती"] }
+      readings: { "m-sg": "bhūntā", "f-sg": "bhūntī", "m-pl": "bhūntē", "f-pl": ["bhūntīm̐", "bhūntī"] }
+    - word: "hi-1498"
+      forms: { "m-sg": "छीलता", "f-sg": "छीलती", "m-pl": "छीलते", "f-pl": ["छीलतीं", "छीलती"] }
+      readings: { "m-sg": "chīltā", "f-sg": "chīltī", "m-pl": "chīltē", "f-pl": ["chīltīm̐", "chīltī"] }
+    - word: "hi-1499"
+      forms: { "m-sg": "पीसता", "f-sg": "पीसती", "m-pl": "पीसते", "f-pl": ["पीसतीं", "पीसती"] }
+      readings: { "m-sg": "pīstā", "f-sg": "pīstī", "m-pl": "pīstē", "f-pl": ["pīstīm̐", "pīstī"] }
+    - word: "hi-1500"
+      forms: { "m-sg": "गूँधता", "f-sg": "गूँधती", "m-pl": "गूँधते", "f-pl": ["गूँधतीं", "गूँधती"] }
+      readings: { "m-sg": "gūm̐dhatā", "f-sg": "gūm̐dhatī", "m-pl": "gūm̐dhatē", "f-pl": ["gūm̐dhatīm̐", "gūm̐dhatī"] }
+    - word: "hi-1501"
+      forms: { "m-sg": "बेलता", "f-sg": "बेलती", "m-pl": "बेलते", "f-pl": ["बेलतीं", "बेलती"] }
+      readings: { "m-sg": "bēltā", "f-sg": "bēltī", "m-pl": "bēltē", "f-pl": ["bēltīm̐", "bēltī"] }
+    - word: "hi-1502"
+      forms: { "m-sg": "बनाता", "f-sg": "बनाती", "m-pl": "बनाते", "f-pl": ["बनातीं", "बनाती"] }
+      readings: { "m-sg": "banātā", "f-sg": "banātī", "m-pl": "banātē", "f-pl": ["banātīm̐", "banātī"] }
+    - word: "hi-1503"
+      forms: { "m-sg": "सेंकता", "f-sg": "सेंकती", "m-pl": "सेंकते", "f-pl": ["सेंकतीं", "सेंकती"] }
+      readings: { "m-sg": "sēṅkatā", "f-sg": "sēṅkatī", "m-pl": "sēṅkatē", "f-pl": ["sēṅkatīm̐", "sēṅkatī"] }
+    - word: "hi-1504"
+      forms: { "m-sg": "मिलाता", "f-sg": "मिलाती", "m-pl": "मिलाते", "f-pl": ["मिलातीं", "मिलाती"] }
+      readings: { "m-sg": "milātā", "f-sg": "milātī", "m-pl": "milātē", "f-pl": ["milātīm̐", "milātī"] }
+    - word: "hi-1601"
+      forms: { "m-sg": "पढ़ाता", "f-sg": "पढ़ाती", "m-pl": "पढ़ाते", "f-pl": ["पढ़ातीं", "पढ़ाती"] }
+      readings: { "m-sg": "paṛhātā", "f-sg": "paṛhātī", "m-pl": "paṛhātē", "f-pl": ["paṛhātīm̐", "paṛhātī"] }
+    - word: "hi-1639"
+      forms: { "m-sg": "गाता", "f-sg": "गाती", "m-pl": "गाते", "f-pl": ["गातीं", "गाती"] }
+      readings: { "m-sg": "gātā", "f-sg": "gātī", "m-pl": "gātē", "f-pl": ["gātīm̐", "gātī"] }
+    - word: "hi-1642"
+      forms: { "m-sg": "नाचता", "f-sg": "नाचती", "m-pl": "नाचते", "f-pl": ["नाचतीं", "नाचती"] }
+      readings: { "m-sg": "nāctā", "f-sg": "nāctī", "m-pl": "nāctē", "f-pl": ["nāctīm̐", "nāctī"] }
+    - word: "hi-1644"
+      forms: { "m-sg": "तैरता", "f-sg": "तैरती", "m-pl": "तैरते", "f-pl": ["तैरतीं", "तैरती"] }
+      readings: { "m-sg": "tairtā", "f-sg": "tairtī", "m-pl": "tairtē", "f-pl": ["tairtīm̐", "tairtī"] }
+    - word: "hi-1661"
+      forms: { "m-sg": "घूमता", "f-sg": "घूमती", "m-pl": "घूमते", "f-pl": ["घूमतीं", "घूमती"] }
+      readings: { "m-sg": "ghūmtā", "f-sg": "ghūmtī", "m-pl": "ghūmtē", "f-pl": ["ghūmtīm̐", "ghūmtī"] }
+    - word: "hi-1662"
+      forms: { "m-sg": "टहलता", "f-sg": "टहलती", "m-pl": "टहलते", "f-pl": ["टहलतीं", "टहलती"] }
+      readings: { "m-sg": "ṭahltā", "f-sg": "ṭahltī", "m-pl": "ṭahltē", "f-pl": ["ṭahltīm̐", "ṭahltī"] }
+    - word: "hi-1725"
+      forms: { "m-sg": "झाड़ता", "f-sg": "झाड़ती", "m-pl": "झाड़ते", "f-pl": ["झाड़तीं", "झाड़ती"] }
+      readings: { "m-sg": "jhāṛtā", "f-sg": "jhāṛtī", "m-pl": "jhāṛtē", "f-pl": ["jhāṛtīm̐", "jhāṛtī"] }
+    - word: "hi-1726"
+      forms: { "m-sg": "पोंछता", "f-sg": "पोंछती", "m-pl": "पोंछते", "f-pl": ["पोंछतीं", "पोंछती"] }
+      readings: { "m-sg": "pōñchatā", "f-sg": "pōñchatī", "m-pl": "pōñchatē", "f-pl": ["pōñchatīm̐", "pōñchatī"] }
+    - word: "hi-1727"
+      forms: { "m-sg": "सुखाता", "f-sg": "सुखाती", "m-pl": "सुखाते", "f-pl": ["सुखातीं", "सुखाती"] }
+      readings: { "m-sg": "sukhātā", "f-sg": "sukhātī", "m-pl": "sukhātē", "f-pl": ["sukhātīm̐", "sukhātī"] }
+    - word: "hi-1728"
+      forms: { "m-sg": "सूखता", "f-sg": "सूखती", "m-pl": "सूखते", "f-pl": ["सूखतीं", "सूखती"] }
+      readings: { "m-sg": "sūkhtā", "f-sg": "sūkhtī", "m-pl": "sūkhtē", "f-pl": ["sūkhtīm̐", "sūkhtī"] }
+    - word: "hi-1729"
+      forms: { "m-sg": "निकालता", "f-sg": "निकालती", "m-pl": "निकालते", "f-pl": ["निकालतीं", "निकालती"] }
+      readings: { "m-sg": "nikāltā", "f-sg": "nikāltī", "m-pl": "nikāltē", "f-pl": ["nikāltīm̐", "nikāltī"] }
+    - word: "hi-1730"
+      forms: { "m-sg": "फेंकता", "f-sg": "फेंकती", "m-pl": "फेंकते", "f-pl": ["फेंकतीं", "फेंकती"] }
+      readings: { "m-sg": "phēṅkatā", "f-sg": "phēṅkatī", "m-pl": "phēṅkatē", "f-pl": ["phēṅkatīm̐", "phēṅkatī"] }
+    - word: "hi-1731"
+      forms: { "m-sg": "उठाता", "f-sg": "उठाती", "m-pl": "उठाते", "f-pl": ["उठातीं", "उठाती"] }
+      readings: { "m-sg": "uṭhātā", "f-sg": "uṭhātī", "m-pl": "uṭhātē", "f-pl": ["uṭhātīm̐", "uṭhātī"] }
+    - word: "hi-1732"
+      forms: { "m-sg": "भरता", "f-sg": "भरती", "m-pl": "भरते", "f-pl": ["भरतीं", "भरती"] }
+      readings: { "m-sg": "bhartā", "f-sg": "bhartī", "m-pl": "bhartē", "f-pl": ["bhartīm̐", "bhartī"] }
+    - word: "hi-1733"
+      forms: { "m-sg": "फैलाता", "f-sg": "फैलाती", "m-pl": "फैलाते", "f-pl": ["फैलातीं", "फैलाती"] }
+      readings: { "m-sg": "phailātā", "f-sg": "phailātī", "m-pl": "phailātē", "f-pl": ["phailātīm̐", "phailātī"] }
+    - word: "hi-1734"
+      forms: { "m-sg": "समेटता", "f-sg": "समेटती", "m-pl": "समेटते", "f-pl": ["समेटतीं", "समेटती"] }
+      readings: { "m-sg": "samēṭtā", "f-sg": "samēṭtī", "m-pl": "samēṭtē", "f-pl": ["samēṭtīm̐", "samēṭtī"] }
+    - word: "hi-1735"
+      forms: { "m-sg": "भीगता", "f-sg": "भीगती", "m-pl": "भीगते", "f-pl": ["भीगतीं", "भीगती"] }
+      readings: { "m-sg": "bhīgtā", "f-sg": "bhīgtī", "m-pl": "bhīgtē", "f-pl": ["bhīgtīm̐", "bhīgtī"] }
+    - word: "hi-1736"
+      forms: { "m-sg": "उतारता", "f-sg": "उतारती", "m-pl": "उतारते", "f-pl": ["उतारतीं", "उतारती"] }
+      readings: { "m-sg": "utārtā", "f-sg": "utārtī", "m-pl": "utārtē", "f-pl": ["utārtīm̐", "utārtī"] }
+    - word: "hi-1737"
+      forms: { "m-sg": "चढ़ाता", "f-sg": "चढ़ाती", "m-pl": "चढ़ाते", "f-pl": ["चढ़ातीं", "चढ़ाती"] }
+      readings: { "m-sg": "caṛhātā", "f-sg": "caṛhātī", "m-pl": "caṛhātē", "f-pl": ["caṛhātīm̐", "caṛhātī"] }
+    - word: "hi-1740"
+      forms: { "m-sg": "टूटता", "f-sg": "टूटती", "m-pl": "टूटते", "f-pl": ["टूटतीं", "टूटती"] }
+      readings: { "m-sg": "ṭūṭtā", "f-sg": "ṭūṭtī", "m-pl": "ṭūṭtē", "f-pl": ["ṭūṭtīm̐", "ṭūṭtī"] }
+    - word: "hi-1779"
+      forms: { "m-sg": "दिखता", "f-sg": "दिखती", "m-pl": "दिखते", "f-pl": ["दिखतीं", "दिखती"] }
+      readings: { "m-sg": "dikhtā", "f-sg": "dikhtī", "m-pl": "dikhtē", "f-pl": ["dikhtīm̐", "dikhtī"] }
+    - word: "hi-1780"
+      forms: { "m-sg": "लगता", "f-sg": "लगती", "m-pl": "लगते", "f-pl": ["लगतीं", "लगती"] }
+      readings: { "m-sg": "lagtā", "f-sg": "lagtī", "m-pl": "lagtē", "f-pl": ["lagtīm̐", "lagtī"] }
+    - word: "hi-1781"
+      forms: { "m-sg": "सजता", "f-sg": "सजती", "m-pl": "सजते", "f-pl": ["सजतीं", "सजती"] }
+      readings: { "m-sg": "sajtā", "f-sg": "sajtī", "m-pl": "sajtē", "f-pl": ["sajtīm̐", "sajtī"] }
+    - word: "hi-1782"
+      forms: { "m-sg": "पहनता", "f-sg": "पहनती", "m-pl": "पहनते", "f-pl": ["पहनतीं", "पहनती"] }
+      readings: { "m-sg": "pahntā", "f-sg": "pahntī", "m-pl": "pahntē", "f-pl": ["pahntīm̐", "pahntī"] }
+    - word: "hi-1783"
+      forms: { "m-sg": "मुस्कुराता", "f-sg": "मुस्कुराती", "m-pl": "मुस्कुराते", "f-pl": ["मुस्कुरातीं", "मुस्कुराती"] }
+      readings: { "m-sg": "muskurātā", "f-sg": "muskurātī", "m-pl": "muskurātē", "f-pl": ["muskurātīm̐", "muskurātī"] }
+    - word: "hi-1785"
+      forms: { "m-sg": "निखरता", "f-sg": "निखरती", "m-pl": "निखरते", "f-pl": ["निखरतीं", "निखरती"] }
+      readings: { "m-sg": "nikhrtā", "f-sg": "nikhrtī", "m-pl": "nikhrtē", "f-pl": ["nikhrtīm̐", "nikhrtī"] }
+    - word: "hi-1795"
+      forms: { "m-sg": "ओढ़ता", "f-sg": "ओढ़ती", "m-pl": "ओढ़ते", "f-pl": ["ओढ़तीं", "ओढ़ती"] }
+      readings: { "m-sg": "ōṛhtā", "f-sg": "ōṛhtī", "m-pl": "ōṛhtē", "f-pl": ["ōṛhtīm̐", "ōṛhtī"] }
+    - word: "hi-1796"
+      forms: { "m-sg": "बिछाता", "f-sg": "बिछाती", "m-pl": "बिछाते", "f-pl": ["बिछातीं", "बिछाती"] }
+      readings: { "m-sg": "bichātā", "f-sg": "bichātī", "m-pl": "bichātē", "f-pl": ["bichātīm̐", "bichātī"] }
+    - word: "hi-1797"
+      forms: { "m-sg": "छूता", "f-sg": "छूती", "m-pl": "छूते", "f-pl": ["छूतीं", "छूती"] }
+      readings: { "m-sg": "chūtā", "f-sg": "chūtī", "m-pl": "chūtē", "f-pl": ["chūtīm̐", "chūtī"] }
+    - word: "hi-1798"
+      forms: { "m-sg": "पकड़ता", "f-sg": "पकड़ती", "m-pl": "पकड़ते", "f-pl": ["पकड़तीं", "पकड़ती"] }
+      readings: { "m-sg": "pakṛtā", "f-sg": "pakṛtī", "m-pl": "pakṛtē", "f-pl": ["pakṛtīm̐", "pakṛtī"] }
+    - word: "hi-1799"
+      forms: { "m-sg": "खींचता", "f-sg": "खींचती", "m-pl": "खींचते", "f-pl": ["खींचतीं", "खींचती"] }
+      readings: { "m-sg": "khīñcatā", "f-sg": "khīñcatī", "m-pl": "khīñcatē", "f-pl": ["khīñcatīm̐", "khīñcatī"] }
+    - word: "hi-1800"
+      forms: { "m-sg": "धकेलता", "f-sg": "धकेलती", "m-pl": "धकेलते", "f-pl": ["धकेलतीं", "धकेलती"] }
+      readings: { "m-sg": "dhakēltā", "f-sg": "dhakēltī", "m-pl": "dhakēltē", "f-pl": ["dhakēltīm̐", "dhakēltī"] }
+    - word: "hi-1801"
+      forms: { "m-sg": "फँसता", "f-sg": "फँसती", "m-pl": "फँसते", "f-pl": ["फँसतीं", "फँसती"] }
+      readings: { "m-sg": "pham̐satā", "f-sg": "pham̐satī", "m-pl": "pham̐satē", "f-pl": ["pham̐satīm̐", "pham̐satī"] }
+    - word: "hi-1802"
+      forms: { "m-sg": "मारता", "f-sg": "मारती", "m-pl": "मारते", "f-pl": ["मारतीं", "मारती"] }
+      readings: { "m-sg": "mārtā", "f-sg": "mārtī", "m-pl": "mārtē", "f-pl": ["mārtīm̐", "mārtī"] }
+    - word: "hi-1803"
+      forms: { "m-sg": "झुकता", "f-sg": "झुकती", "m-pl": "झुकते", "f-pl": ["झुकतीं", "झुकती"] }
+      readings: { "m-sg": "jhuktā", "f-sg": "jhuktī", "m-pl": "jhuktē", "f-pl": ["jhuktīm̐", "jhuktī"] }
+    - word: "hi-1804"
+      forms: { "m-sg": "चलाता", "f-sg": "चलाती", "m-pl": "चलाते", "f-pl": ["चलातीं", "चलाती"] }
+      readings: { "m-sg": "calātā", "f-sg": "calātī", "m-pl": "calātē", "f-pl": ["calātīm̐", "calātī"] }
+    - word: "hi-1805"
+      forms: { "m-sg": "मिटाता", "f-sg": "मिटाती", "m-pl": "मिटाते", "f-pl": ["मिटातीं", "मिटाती"] }
+      readings: { "m-sg": "miṭātā", "f-sg": "miṭātī", "m-pl": "miṭātē", "f-pl": ["miṭātīm̐", "miṭātī"] }
+    - word: "hi-1806"
+      forms: { "m-sg": "खोजता", "f-sg": "खोजती", "m-pl": "खोजते", "f-pl": ["खोजतीं", "खोजती"] }
+      readings: { "m-sg": "khōjtā", "f-sg": "khōjtī", "m-pl": "khōjtē", "f-pl": ["khōjtīm̐", "khōjtī"] }
+    - word: "hi-1807"
+      forms: { "m-sg": "गिनता", "f-sg": "गिनती", "m-pl": "गिनते", "f-pl": ["गिनतीं", "गिनती"] }
+      readings: { "m-sg": "gintā", "f-sg": "gintī", "m-pl": "gintē", "f-pl": ["gintīm̐", "gintī"] }
+    - word: "hi-1808"
+      forms: { "m-sg": "नापता", "f-sg": "नापती", "m-pl": "नापते", "f-pl": ["नापतीं", "नापती"] }
+      readings: { "m-sg": "nāptā", "f-sg": "nāptī", "m-pl": "nāptē", "f-pl": ["nāptīm̐", "nāptī"] }
+    - word: "hi-1809"
+      forms: { "m-sg": "जोड़ता", "f-sg": "जोड़ती", "m-pl": "जोड़ते", "f-pl": ["जोड़तीं", "जोड़ती"] }
+      readings: { "m-sg": "jōṛtā", "f-sg": "jōṛtī", "m-pl": "jōṛtē", "f-pl": ["jōṛtīm̐", "jōṛtī"] }
+    - word: "hi-1810"
+      forms: { "m-sg": "घटाता", "f-sg": "घटाती", "m-pl": "घटाते", "f-pl": ["घटातीं", "घटाती"] }
+      readings: { "m-sg": "ghaṭātā", "f-sg": "ghaṭātī", "m-pl": "ghaṭātē", "f-pl": ["ghaṭātīm̐", "ghaṭātī"] }
+    - word: "hi-1811"
+      forms: { "m-sg": "बाँधता", "f-sg": "बाँधती", "m-pl": "बाँधते", "f-pl": ["बाँधतीं", "बाँधती"] }
+      readings: { "m-sg": "bām̐dhatā", "f-sg": "bām̐dhatī", "m-pl": "bām̐dhatē", "f-pl": ["bām̐dhatīm̐", "bām̐dhatī"] }
+    - word: "hi-1812"
+      forms: { "m-sg": "गिराता", "f-sg": "गिराती", "m-pl": "गिराते", "f-pl": ["गिरातीं", "गिराती"] }
+      readings: { "m-sg": "girātā", "f-sg": "girātī", "m-pl": "girātē", "f-pl": ["girātīm̐", "girātī"] }
+    - word: "hi-1813"
+      forms: { "m-sg": "रोकता", "f-sg": "रोकती", "m-pl": "रोकते", "f-pl": ["रोकतीं", "रोकती"] }
+      readings: { "m-sg": "rōktā", "f-sg": "rōktī", "m-pl": "rōktē", "f-pl": ["rōktīm̐", "rōktī"] }
+    - word: "hi-1814"
+      forms: { "m-sg": "छुपाता", "f-sg": "छुपाती", "m-pl": "छुपाते", "f-pl": ["छुपातीं", "छुपाती"] }
+      readings: { "m-sg": "chupātā", "f-sg": "chupātī", "m-pl": "chupātē", "f-pl": ["chupātīm̐", "chupātī"] }
+    - word: "hi-1815"
+      forms: { "m-sg": "दिखाता", "f-sg": "दिखाती", "m-pl": "दिखाते", "f-pl": ["दिखातीं", "दिखाती"] }
+      readings: { "m-sg": "dikhātā", "f-sg": "dikhātī", "m-pl": "dikhātē", "f-pl": ["dikhātīm̐", "dikhātī"] }
+    - word: "hi-1816"
+      forms: { "m-sg": "चुनता", "f-sg": "चुनती", "m-pl": "चुनते", "f-pl": ["चुनतीं", "चुनती"] }
+      readings: { "m-sg": "cuntā", "f-sg": "cuntī", "m-pl": "cuntē", "f-pl": ["cuntīm̐", "cuntī"] }
+    - word: "hi-1817"
+      forms: { "m-sg": "फोड़ता", "f-sg": "फोड़ती", "m-pl": "फोड़ते", "f-pl": ["फोड़तीं", "फोड़ती"] }
+      readings: { "m-sg": "phōṛtā", "f-sg": "phōṛtī", "m-pl": "phōṛtē", "f-pl": ["phōṛtīm̐", "phōṛtī"] }
+    - word: "hi-1818"
+      forms: { "m-sg": "टपकता", "f-sg": "टपकती", "m-pl": "टपकते", "f-pl": ["टपकतीं", "टपकती"] }
+      readings: { "m-sg": "ṭapktā", "f-sg": "ṭapktī", "m-pl": "ṭapktē", "f-pl": ["ṭapktīm̐", "ṭapktī"] }
+    - word: "hi-1819"
+      forms: { "m-sg": "भागता", "f-sg": "भागती", "m-pl": "भागते", "f-pl": ["भागतीं", "भागती"] }
+      readings: { "m-sg": "bhāgtā", "f-sg": "bhāgtī", "m-pl": "bhāgtē", "f-pl": ["bhāgtīm̐", "bhāgtī"] }
+    - word: "hi-1820"
+      forms: { "m-sg": "चिल्लाता", "f-sg": "चिल्लाती", "m-pl": "चिल्लाते", "f-pl": ["चिल्लातीं", "चिल्लाती"] }
+      readings: { "m-sg": "cillātā", "f-sg": "cillātī", "m-pl": "cillātē", "f-pl": ["cillātīm̐", "cillātī"] }
+    - word: "hi-1821"
+      forms: { "m-sg": "सहता", "f-sg": "सहती", "m-pl": "सहते", "f-pl": ["सहतीं", "सहती"] }
+      readings: { "m-sg": "sahtā", "f-sg": "sahtī", "m-pl": "sahtē", "f-pl": ["sahtīm̐", "sahtī"] }
+    - word: "hi-1822"
+      forms: { "m-sg": "समझाता", "f-sg": "समझाती", "m-pl": "समझाते", "f-pl": ["समझातीं", "समझाती"] }
+      readings: { "m-sg": "samjhātā", "f-sg": "samjhātī", "m-pl": "samjhātē", "f-pl": ["samjhātīm̐", "samjhātī"] }
+    - word: "hi-1823"
+      forms: { "m-sg": "डरता", "f-sg": "डरती", "m-pl": "डरते", "f-pl": ["डरतीं", "डरती"] }
+      readings: { "m-sg": "ḍartā", "f-sg": "ḍartī", "m-pl": "ḍartē", "f-pl": ["ḍartīm̐", "ḍartī"] }
+    - word: "hi-1824"
+      forms: { "m-sg": "सुलझाता", "f-sg": "सुलझाती", "m-pl": "सुलझाते", "f-pl": ["सुलझातीं", "सुलझाती"] }
+      readings: { "m-sg": "suljhātā", "f-sg": "suljhātī", "m-pl": "suljhātē", "f-pl": ["suljhātīm̐", "suljhātī"] }
+    - word: "hi-1825"
+      forms: { "m-sg": "बचाता", "f-sg": "बचाती", "m-pl": "बचाते", "f-pl": ["बचातीं", "बचाती"] }
+      readings: { "m-sg": "bacātā", "f-sg": "bacātī", "m-pl": "bacātē", "f-pl": ["bacātīm̐", "bacātī"] }
+    - word: "hi-1826"
+      forms: { "m-sg": "बचता", "f-sg": "बचती", "m-pl": "बचते", "f-pl": ["बचतीं", "बचती"] }
+      readings: { "m-sg": "bactā", "f-sg": "bactī", "m-pl": "bactē", "f-pl": ["bactīm̐", "bactī"] }
+    - word: "hi-1827"
+      forms: { "m-sg": "पाता", "f-sg": "पाती", "m-pl": "पाते", "f-pl": ["पातीं", "पाती"] }
+      readings: { "m-sg": "pātā", "f-sg": "pātī", "m-pl": "pātē", "f-pl": ["pātīm̐", "pātī"] }
+    - word: "hi-1828"
+      forms: { "m-sg": "दबाता", "f-sg": "दबाती", "m-pl": "दबाते", "f-pl": ["दबातीं", "दबाती"] }
+      readings: { "m-sg": "dabātā", "f-sg": "dabātī", "m-pl": "dabātē", "f-pl": ["dabātīm̐", "dabātī"] }
+    - word: "hi-1829"
+      forms: { "m-sg": "लपेटता", "f-sg": "लपेटती", "m-pl": "लपेटते", "f-pl": ["लपेटतीं", "लपेटती"] }
+      readings: { "m-sg": "lapēṭtā", "f-sg": "lapēṭtī", "m-pl": "lapēṭtē", "f-pl": ["lapēṭtīm̐", "lapēṭtī"] }
+    - word: "hi-1830"
+      forms: { "m-sg": "टाँगता", "f-sg": "टाँगती", "m-pl": "टाँगते", "f-pl": ["टाँगतीं", "टाँगती"] }
+      readings: { "m-sg": "ṭām̐gatā", "f-sg": "ṭām̐gatī", "m-pl": "ṭām̐gatē", "f-pl": ["ṭām̐gatīm̐", "ṭām̐gatī"] }
+    - word: "hi-1831"
+      forms: { "m-sg": "लटकाता", "f-sg": "लटकाती", "m-pl": "लटकाते", "f-pl": ["लटकातीं", "लटकाती"] }
+      readings: { "m-sg": "laṭkātā", "f-sg": "laṭkātī", "m-pl": "laṭkātē", "f-pl": ["laṭkātīm̐", "laṭkātī"] }
+    - word: "hi-1832"
+      forms: { "m-sg": "चिपकाता", "f-sg": "चिपकाती", "m-pl": "चिपकाते", "f-pl": ["चिपकातीं", "चिपकाती"] }
+      readings: { "m-sg": "cipkātā", "f-sg": "cipkātī", "m-pl": "cipkātē", "f-pl": ["cipkātīm̐", "cipkātī"] }
+    - word: "hi-1833"
+      forms: { "m-sg": "बनता", "f-sg": "बनती", "m-pl": "बनते", "f-pl": ["बनतीं", "बनती"] }
+      readings: { "m-sg": "bantā", "f-sg": "bantī", "m-pl": "bantē", "f-pl": ["bantīm̐", "bantī"] }
+    - word: "hi-1834"
+      forms: { "m-sg": "ढकता", "f-sg": "ढकती", "m-pl": "ढकते", "f-pl": ["ढकतीं", "ढकती"] }
+      readings: { "m-sg": "ḍhaktā", "f-sg": "ḍhaktī", "m-pl": "ḍhaktē", "f-pl": ["ḍhaktīm̐", "ḍhaktī"] }
+    - word: "hi-1835"
+      forms: { "m-sg": "खिलाता", "f-sg": "खिलाती", "m-pl": "खिलाते", "f-pl": ["खिलातीं", "खिलाती"] }
+      readings: { "m-sg": "khilātā", "f-sg": "khilātī", "m-pl": "khilātē", "f-pl": ["khilātīm̐", "khilātī"] }
+    - word: "hi-1836"
+      forms: { "m-sg": "पिलाता", "f-sg": "पिलाती", "m-pl": "पिलाते", "f-pl": ["पिलातीं", "पिलाती"] }
+      readings: { "m-sg": "pilātā", "f-sg": "pilātī", "m-pl": "pilātē", "f-pl": ["pilātīm̐", "pilātī"] }
+    - word: "hi-1837"
+      forms: { "m-sg": "जगाता", "f-sg": "जगाती", "m-pl": "जगाते", "f-pl": ["जगातीं", "जगाती"] }
+      readings: { "m-sg": "jagātā", "f-sg": "jagātī", "m-pl": "jagātē", "f-pl": ["jagātīm̐", "jagātī"] }
+    - word: "hi-1838"
+      forms: { "m-sg": "उगाता", "f-sg": "उगाती", "m-pl": "उगाते", "f-pl": ["उगातीं", "उगाती"] }
+      readings: { "m-sg": "ugātā", "f-sg": "ugātī", "m-pl": "ugātē", "f-pl": ["ugātīm̐", "ugātī"] }
+    - word: "hi-1878"
+      forms: { "m-sg": "बजता", "f-sg": "बजती", "m-pl": "बजते", "f-pl": ["बजतीं", "बजती"] }
+      readings: { "m-sg": "bajtā", "f-sg": "bajtī", "m-pl": "bajtē", "f-pl": ["bajtīm̐", "bajtī"] }
+    - word: "hi-1913"
+      forms: { "m-sg": "पहुँचता", "f-sg": "पहुँचती", "m-pl": "पहुँचते", "f-pl": ["पहुँचतीं", "पहुँचती"] }
+      readings: { "m-sg": "pahum̐catā", "f-sg": "pahum̐catī", "m-pl": "pahum̐catē", "f-pl": ["pahum̐catīm̐", "pahum̐catī"] }
+    - word: "hi-1914"
+      forms: { "m-sg": "रुकता", "f-sg": "रुकती", "m-pl": "रुकते", "f-pl": ["रुकतीं", "रुकती"] }
+      readings: { "m-sg": "ruktā", "f-sg": "ruktī", "m-pl": "ruktē", "f-pl": ["ruktīm̐", "ruktī"] }
+    - word: "hi-1915"
+      forms: { "m-sg": "ठहरता", "f-sg": "ठहरती", "m-pl": "ठहरते", "f-pl": ["ठहरतीं", "ठहरती"] }
+      readings: { "m-sg": "ṭhahrtā", "f-sg": "ṭhahrtī", "m-pl": "ṭhahrtē", "f-pl": ["ṭhahrtīm̐", "ṭhahrtī"] }
+    - word: "hi-1916"
+      forms: { "m-sg": "चढ़ता", "f-sg": "चढ़ती", "m-pl": "चढ़ते", "f-pl": ["चढ़तीं", "चढ़ती"] }
+      readings: { "m-sg": "caṛhtā", "f-sg": "caṛhtī", "m-pl": "caṛhtē", "f-pl": ["caṛhtīm̐", "caṛhtī"] }
+    - word: "hi-1917"
+      forms: { "m-sg": "उतरता", "f-sg": "उतरती", "m-pl": "उतरते", "f-pl": ["उतरतीं", "उतरती"] }
+      readings: { "m-sg": "utrtā", "f-sg": "utrtī", "m-pl": "utrtē", "f-pl": ["utrtīm̐", "utrtī"] }
+    - word: "hi-1918"
+      forms: { "m-sg": "छूटता", "f-sg": "छूटती", "m-pl": "छूटते", "f-pl": ["छूटतीं", "छूटती"] }
+      readings: { "m-sg": "chūṭtā", "f-sg": "chūṭtī", "m-pl": "chūṭtē", "f-pl": ["chūṭtīm̐", "chūṭtī"] }
+    - word: "hi-1919"
+      forms: { "m-sg": "खोता", "f-sg": "खोती", "m-pl": "खोते", "f-pl": ["खोतीं", "खोती"] }
+      readings: { "m-sg": "khōtā", "f-sg": "khōtī", "m-pl": "khōtē", "f-pl": ["khōtīm̐", "khōtī"] }
+    - word: "hi-1950"
+      forms: { "m-sg": "उगता", "f-sg": "उगती", "m-pl": "उगते", "f-pl": ["उगतीं", "उगती"] }
+      readings: { "m-sg": "ugtā", "f-sg": "ugtī", "m-pl": "ugtē", "f-pl": ["ugtīm̐", "ugtī"] }
+    - word: "hi-1951"
+      forms: { "m-sg": "बहता", "f-sg": "बहती", "m-pl": "बहते", "f-pl": ["बहतीं", "बहती"] }
+      readings: { "m-sg": "bahtā", "f-sg": "bahtī", "m-pl": "bahtē", "f-pl": ["bahtīm̐", "bahtī"] }
+    - word: "hi-1952"
+      forms: { "m-sg": "खिलता", "f-sg": "खिलती", "m-pl": "खिलते", "f-pl": ["खिलतीं", "खिलती"] }
+      readings: { "m-sg": "khiltā", "f-sg": "khiltī", "m-pl": "khiltē", "f-pl": ["khiltīm̐", "khiltī"] }
+    - word: "hi-1953"
+      forms: { "m-sg": "झड़ता", "f-sg": "झड़ती", "m-pl": "झड़ते", "f-pl": ["झड़तीं", "झड़ती"] }
+      readings: { "m-sg": "jhaṛtā", "f-sg": "jhaṛtī", "m-pl": "jhaṛtē", "f-pl": ["jhaṛtīm̐", "jhaṛtī"] }
+    - word: "hi-1954"
+      forms: { "m-sg": "फैलता", "f-sg": "फैलती", "m-pl": "फैलते", "f-pl": ["फैलतीं", "फैलती"] }
+      readings: { "m-sg": "phailtā", "f-sg": "phailtī", "m-pl": "phailtē", "f-pl": ["phailtīm̐", "phailtī"] }
+    - word: "hi-1955"
+      forms: { "m-sg": "डूबता", "f-sg": "डूबती", "m-pl": "डूबते", "f-pl": ["डूबतीं", "डूबती"] }
+      readings: { "m-sg": "ḍūbtā", "f-sg": "ḍūbtī", "m-pl": "ḍūbtē", "f-pl": ["ḍūbtīm̐", "ḍūbtī"] }
+    - word: "hi-1956"
+      forms: { "m-sg": "उड़ता", "f-sg": "उड़ती", "m-pl": "उड़ते", "f-pl": ["उड़तीं", "उड़ती"] }
+      readings: { "m-sg": "uṛtā", "f-sg": "uṛtī", "m-pl": "uṛtē", "f-pl": ["uṛtīm̐", "uṛtī"] }
+    - word: "hi-1957"
+      forms: { "m-sg": "चहचहाता", "f-sg": "चहचहाती", "m-pl": "चहचहाते", "f-pl": ["चहचहातीं", "चहचहाती"] }
+      readings: { "m-sg": "cahchātā", "f-sg": "cahchātī", "m-pl": "cahchātē", "f-pl": ["cahchātīm̐", "cahchātī"] }
+    - word: "hi-2029"
+      forms: { "m-sg": "सौंपता", "f-sg": "सौंपती", "m-pl": "सौंपते", "f-pl": ["सौंपतीं", "सौंपती"] }
+      readings: { "m-sg": "saumpatā", "f-sg": "saumpatī", "m-pl": "saumpatē", "f-pl": ["saumpatīm̐", "saumpatī"] }
+    - word: "hi-2030"
+      forms: { "m-sg": "निपटाता", "f-sg": "निपटाती", "m-pl": "निपटाते", "f-pl": ["निपटातीं", "निपटाती"] }
+      readings: { "m-sg": "nipṭātā", "f-sg": "nipṭātī", "m-pl": "nipṭātē", "f-pl": ["nipṭātīm̐", "nipṭātī"] }
+    - word: "hi-2031"
+      forms: { "m-sg": "संभालता", "f-sg": "संभालती", "m-pl": "संभालते", "f-pl": ["संभालतीं", "संभालती"] }
+      readings: { "m-sg": "sambhāltā", "f-sg": "sambhāltī", "m-pl": "sambhāltē", "f-pl": ["sambhāltīm̐", "sambhāltī"] }
+    - word: "hi-2091"
+      forms: { "m-sg": "सूजता", "f-sg": "सूजती", "m-pl": "सूजते", "f-pl": ["सूजतीं", "सूजती"] }
+      readings: { "m-sg": "sūjtā", "f-sg": "sūjtī", "m-pl": "sūjtē", "f-pl": ["sūjtīm̐", "sūjtī"] }
+    - word: "hi-2137"
+      forms: { "m-sg": "घबराता", "f-sg": "घबराती", "m-pl": "घबराते", "f-pl": ["घबरातीं", "घबराती"] }
+      readings: { "m-sg": "ghabrātā", "f-sg": "ghabrātī", "m-pl": "ghabrātē", "f-pl": ["ghabrātīm̐", "ghabrātī"] }
+    - word: "hi-2138"
+      forms: { "m-sg": "झुंझलाता", "f-sg": "झुंझलाती", "m-pl": "झुंझलाते", "f-pl": ["झुंझलातीं", "झुंझलाती"] }
+      readings: { "m-sg": "jhuñjhalātā", "f-sg": "jhuñjhalātī", "m-pl": "jhuñjhalātē", "f-pl": ["jhuñjhalātīm̐", "jhuñjhalātī"] }
+    - word: "hi-2139"
+      forms: { "m-sg": "चिढ़ता", "f-sg": "चिढ़ती", "m-pl": "चिढ़ते", "f-pl": ["चिढ़तीं", "चिढ़ती"] }
+      readings: { "m-sg": "ciṛhtā", "f-sg": "ciṛhtī", "m-pl": "ciṛhtē", "f-pl": ["ciṛhtīm̐", "ciṛhtī"] }
+    - word: "hi-2140"
+      forms: { "m-sg": "शर्माता", "f-sg": "शर्माती", "m-pl": "शर्माते", "f-pl": ["शर्मातीं", "शर्माती"] }
+      readings: { "m-sg": "śarmātā", "f-sg": "śarmātī", "m-pl": "śarmātē", "f-pl": ["śarmātīm̐", "śarmātī"] }
+    - word: "hi-2172"
+      forms: { "m-sg": "छपता", "f-sg": "छपती", "m-pl": "छपते", "f-pl": ["छपतीं", "छपती"] }
+      readings: { "m-sg": "chaptā", "f-sg": "chaptī", "m-pl": "chaptē", "f-pl": ["chaptīm̐", "chaptī"] }
+    - word: "hi-2173"
+      forms: { "m-sg": "सुनाता", "f-sg": "सुनाती", "m-pl": "सुनाते", "f-pl": ["सुनातीं", "सुनाती"] }
+      readings: { "m-sg": "sunātā", "f-sg": "sunātī", "m-pl": "sunātē", "f-pl": ["sunātīm̐", "sunātī"] }
+    - word: "hi-2184"
+      forms: { "m-sg": "मानता", "f-sg": "मानती", "m-pl": "मानते", "f-pl": ["मानतीं", "मानती"] }
+      readings: { "m-sg": "māntā", "f-sg": "māntī", "m-pl": "māntē", "f-pl": ["māntīm̐", "māntī"] }
+    - word: "hi-2205"
+      forms: { "m-sg": "सुझाता", "f-sg": "सुझाती", "m-pl": "सुझाते", "f-pl": ["सुझातीं", "सुझाती"] }
+      readings: { "m-sg": "sujhātā", "f-sg": "sujhātī", "m-pl": "sujhātē", "f-pl": ["sujhātīm̐", "sujhātī"] }
+    - word: "hi-2207"
+      forms: { "m-sg": "स्वीकारता", "f-sg": "स्वीकारती", "m-pl": "स्वीकारते", "f-pl": ["स्वीकारतीं", "स्वीकारती"] }
+      readings: { "m-sg": "svīkārtā", "f-sg": "svīkārtī", "m-pl": "svīkārtē", "f-pl": ["svīkārtīm̐", "svīkārtī"] }
+    - word: "hi-2229"
+      forms: { "m-sg": "घुमाता", "f-sg": "घुमाती", "m-pl": "घुमाते", "f-pl": ["घुमातीं", "घुमाती"] }
+      readings: { "m-sg": "ghumātā", "f-sg": "ghumātī", "m-pl": "ghumātē", "f-pl": ["ghumātīm̐", "ghumātī"] }
+    - word: "hi-2581"
+      forms: { "m-sg": "झगड़ता", "f-sg": "झगड़ती", "m-pl": "झगड़ते", "f-pl": ["झगड़तीं", "झगड़ती"] }
+      readings: { "m-sg": "jhagṛtā", "f-sg": "jhagṛtī", "m-pl": "jhagṛtē", "f-pl": ["jhagṛtīm̐", "jhagṛtī"] }
+    - word: "hi-2582"
+      forms: { "m-sg": "रूठता", "f-sg": "रूठती", "m-pl": "रूठते", "f-pl": ["रूठतीं", "रूठती"] }
+      readings: { "m-sg": "rūṭhtā", "f-sg": "rūṭhtī", "m-pl": "rūṭhtē", "f-pl": ["rūṭhtīm̐", "rūṭhtī"] }
+    - word: "hi-2583"
+      forms: { "m-sg": "जुड़ता", "f-sg": "जुड़ती", "m-pl": "जुड़ते", "f-pl": ["जुड़तीं", "जुड़ती"] }
+      readings: { "m-sg": "juṛtā", "f-sg": "juṛtī", "m-pl": "juṛtē", "f-pl": ["juṛtīm̐", "juṛtī"] }
+    - word: "hi-2607"
+      forms: { "m-sg": "बसता", "f-sg": "बसती", "m-pl": "बसते", "f-pl": ["बसतीं", "बसती"] }
+      readings: { "m-sg": "bastā", "f-sg": "bastī", "m-pl": "bastē", "f-pl": ["bastīm̐", "bastī"] }
+    - word: "hi-2614"
+      forms: { "m-sg": "जमता", "f-sg": "जमती", "m-pl": "जमते", "f-pl": ["जमतीं", "जमती"] }
+      readings: { "m-sg": "jamtā", "f-sg": "jamtī", "m-pl": "jamtē", "f-pl": ["jamtīm̐", "jamtī"] }
+    - word: "hi-2615"
+      forms: { "m-sg": "पिघलता", "f-sg": "पिघलती", "m-pl": "पिघलते", "f-pl": ["पिघलतीं", "पिघलती"] }
+      readings: { "m-sg": "pighltā", "f-sg": "pighltī", "m-pl": "pighltē", "f-pl": ["pighltīm̐", "pighltī"] }
+    - word: "hi-2616"
+      forms: { "m-sg": "उबलता", "f-sg": "उबलती", "m-pl": "उबलते", "f-pl": ["उबलतीं", "उबलती"] }
+      readings: { "m-sg": "ubltā", "f-sg": "ubltī", "m-pl": "ubltē", "f-pl": ["ubltīm̐", "ubltī"] }
+    - word: "hi-2617"
+      forms: { "m-sg": "जलता", "f-sg": "जलती", "m-pl": "जलते", "f-pl": ["जलतीं", "जलती"] }
+      readings: { "m-sg": "jaltā", "f-sg": "jaltī", "m-pl": "jaltē", "f-pl": ["jaltīm̐", "jaltī"] }
+    - word: "hi-2618"
+      forms: { "m-sg": "बुझता", "f-sg": "बुझती", "m-pl": "बुझते", "f-pl": ["बुझतीं", "बुझती"] }
+      readings: { "m-sg": "bujhtā", "f-sg": "bujhtī", "m-pl": "bujhtē", "f-pl": ["bujhtīm̐", "bujhtī"] }
+    - word: "hi-2619"
+      forms: { "m-sg": "भटकता", "f-sg": "भटकती", "m-pl": "भटकते", "f-pl": ["भटकतीं", "भटकती"] }
+      readings: { "m-sg": "bhaṭktā", "f-sg": "bhaṭktī", "m-pl": "bhaṭktē", "f-pl": ["bhaṭktīm̐", "bhaṭktī"] }
+    - word: "hi-2620"
+      forms: { "m-sg": "छिपता", "f-sg": "छिपती", "m-pl": "छिपते", "f-pl": ["छिपतीं", "छिपती"] }
+      readings: { "m-sg": "chiptā", "f-sg": "chiptī", "m-pl": "chiptē", "f-pl": ["chiptīm̐", "chiptī"] }
+    - word: "hi-2621"
+      forms: { "m-sg": "कूदता", "f-sg": "कूदती", "m-pl": "कूदते", "f-pl": ["कूदतीं", "कूदती"] }
+      readings: { "m-sg": "kūdtā", "f-sg": "kūdtī", "m-pl": "kūdtē", "f-pl": ["kūdtīm̐", "kūdtī"] }
+    - word: "hi-2622"
+      forms: { "m-sg": "फिसलता", "f-sg": "फिसलती", "m-pl": "फिसलते", "f-pl": ["फिसलतीं", "फिसलती"] }
+      readings: { "m-sg": "phisltā", "f-sg": "phisltī", "m-pl": "phisltē", "f-pl": ["phisltīm̐", "phisltī"] }
+    - word: "hi-2623"
+      forms: { "m-sg": "थामता", "f-sg": "थामती", "m-pl": "थामते", "f-pl": ["थामतीं", "थामती"] }
+      readings: { "m-sg": "thāmtā", "f-sg": "thāmtī", "m-pl": "thāmtē", "f-pl": ["thāmtīm̐", "thāmtī"] }
+    - word: "hi-2624"
+      forms: { "m-sg": "रगड़ता", "f-sg": "रगड़ती", "m-pl": "रगड़ते", "f-pl": ["रगड़तीं", "रगड़ती"] }
+      readings: { "m-sg": "ragṛtā", "f-sg": "ragṛtī", "m-pl": "ragṛtē", "f-pl": ["ragṛtīm̐", "ragṛtī"] }
+    - word: "hi-2625"
+      forms: { "m-sg": "तोड़ता", "f-sg": "तोड़ती", "m-pl": "तोड़ते", "f-pl": ["तोड़तीं", "तोड़ती"] }
+      readings: { "m-sg": "tōṛtā", "f-sg": "tōṛtī", "m-pl": "tōṛtē", "f-pl": ["tōṛtīm̐", "tōṛtī"] }
+    - word: "hi-2626"
+      forms: { "m-sg": "मोड़ता", "f-sg": "मोड़ती", "m-pl": "मोड़ते", "f-pl": ["मोड़तीं", "मोड़ती"] }
+      readings: { "m-sg": "mōṛtā", "f-sg": "mōṛtī", "m-pl": "mōṛtē", "f-pl": ["mōṛtīm̐", "mōṛtī"] }
+    - word: "hi-2627"
+      forms: { "m-sg": "लड़ता", "f-sg": "लड़ती", "m-pl": "लड़ते", "f-pl": ["लड़तीं", "लड़ती"] }
+      readings: { "m-sg": "laṛtā", "f-sg": "laṛtī", "m-pl": "laṛtē", "f-pl": ["laṛtīm̐", "laṛtī"] }
+    - word: "hi-2628"
+      forms: { "m-sg": "सुधारता", "f-sg": "सुधारती", "m-pl": "सुधारते", "f-pl": ["सुधारतीं", "सुधारती"] }
+      readings: { "m-sg": "sudhārtā", "f-sg": "sudhārtī", "m-pl": "sudhārtē", "f-pl": ["sudhārtīm̐", "sudhārtī"] }
+    - word: "hi-2629"
+      forms: { "m-sg": "लगाता", "f-sg": "लगाती", "m-pl": "लगाते", "f-pl": ["लगातीं", "लगाती"] }
+      readings: { "m-sg": "lagātā", "f-sg": "lagātī", "m-pl": "lagātē", "f-pl": ["lagātīm̐", "lagātī"] }
+    - word: "hi-2630"
+      forms: { "m-sg": "लगवाता", "f-sg": "लगवाती", "m-pl": "लगवाते", "f-pl": ["लगवातीं", "लगवाती"] }
+      readings: { "m-sg": "lagvātā", "f-sg": "lagvātī", "m-pl": "lagvātē", "f-pl": ["lagvātīm̐", "lagvātī"] }
+    - word: "hi-2631"
+      forms: { "m-sg": "पहचानता", "f-sg": "पहचानती", "m-pl": "पहचानते", "f-pl": ["पहचानतीं", "पहचानती"] }
+      readings: { "m-sg": "pahcāntā", "f-sg": "pahcāntī", "m-pl": "pahcāntē", "f-pl": ["pahcāntīm̐", "pahcāntī"] }
+    - word: "hi-2632"
+      forms: { "m-sg": "सींचता", "f-sg": "सींचती", "m-pl": "सींचते", "f-pl": ["सींचतीं", "सींचती"] }
+      readings: { "m-sg": "sīñcatā", "f-sg": "sīñcatī", "m-pl": "sīñcatē", "f-pl": ["sīñcatīm̐", "sīñcatī"] }
+    - word: "hi-2633"
+      forms: { "m-sg": "बोता", "f-sg": "बोती", "m-pl": "बोते", "f-pl": ["बोतीं", "बोती"] }
+      readings: { "m-sg": "bōtā", "f-sg": "bōtī", "m-pl": "bōtē", "f-pl": ["bōtīm̐", "bōtī"] }
+    - word: "hi-2634"
+      forms: { "m-sg": "माँगता", "f-sg": "माँगती", "m-pl": "माँगते", "f-pl": ["माँगतीं", "माँगती"] }
+      readings: { "m-sg": "mām̐gatā", "f-sg": "mām̐gatī", "m-pl": "mām̐gatē", "f-pl": ["mām̐gatīm̐", "mām̐gatī"] }
+    - word: "hi-2635"
+      forms: { "m-sg": "निकलता", "f-sg": "निकलती", "m-pl": "निकलते", "f-pl": ["निकलतीं", "निकलती"] }
+      readings: { "m-sg": "nikltā", "f-sg": "nikltī", "m-pl": "nikltē", "f-pl": ["nikltīm̐", "nikltī"] }
+    - word: "hi-2636"
+      forms: { "m-sg": "गाड़ता", "f-sg": "गाड़ती", "m-pl": "गाड़ते", "f-pl": ["गाड़तीं", "गाड़ती"] }
+      readings: { "m-sg": "gāṛtā", "f-sg": "gāṛtī", "m-pl": "gāṛtē", "f-pl": ["gāṛtīm̐", "gāṛtī"] }
+    - word: "hi-2637"
+      forms: { "m-sg": "उड़ाता", "f-sg": "उड़ाती", "m-pl": "उड़ाते", "f-pl": ["उड़ातीं", "उड़ाती"] }
+      readings: { "m-sg": "uṛātā", "f-sg": "uṛātī", "m-pl": "uṛātē", "f-pl": ["uṛātīm̐", "uṛātī"] }
+    - word: "hi-2638"
+      forms: { "m-sg": "हटाता", "f-sg": "हटाती", "m-pl": "हटाते", "f-pl": ["हटातीं", "हटाती"] }
+      readings: { "m-sg": "haṭātā", "f-sg": "haṭātī", "m-pl": "haṭātē", "f-pl": ["haṭātīm̐", "haṭātī"] }
+    - word: "hi-2639"
+      forms: { "m-sg": "निगलता", "f-sg": "निगलती", "m-pl": "निगलते", "f-pl": ["निगलतीं", "निगलती"] }
+      readings: { "m-sg": "nigltā", "f-sg": "nigltī", "m-pl": "nigltē", "f-pl": ["nigltīm̐", "nigltī"] }
+    - word: "hi-2640"
+      forms: { "m-sg": "चबाता", "f-sg": "चबाती", "m-pl": "चबाते", "f-pl": ["चबातीं", "चबाती"] }
+      readings: { "m-sg": "cabātā", "f-sg": "cabātī", "m-pl": "cabātē", "f-pl": ["cabātīm̐", "cabātī"] }
+    - word: "hi-2641"
+      forms: { "m-sg": "निचोड़ता", "f-sg": "निचोड़ती", "m-pl": "निचोड़ते", "f-pl": ["निचोड़तीं", "निचोड़ती"] }
+      readings: { "m-sg": "nicōṛtā", "f-sg": "nicōṛtī", "m-pl": "nicōṛtē", "f-pl": ["nicōṛtīm̐", "nicōṛtī"] }
+    - word: "hi-2642"
+      forms: { "m-sg": "सूँघता", "f-sg": "सूँघती", "m-pl": "सूँघते", "f-pl": ["सूँघतीं", "सूँघती"] }
+      readings: { "m-sg": "sūm̐ghatā", "f-sg": "sūm̐ghatī", "m-pl": "sūm̐ghatē", "f-pl": ["sūm̐ghatīm̐", "sūm̐ghatī"] }
+    - word: "hi-2643"
+      forms: { "m-sg": "चखता", "f-sg": "चखती", "m-pl": "चखते", "f-pl": ["चखतीं", "चखती"] }
+      readings: { "m-sg": "cakhtā", "f-sg": "cakhtī", "m-pl": "cakhtē", "f-pl": ["cakhtīm̐", "cakhtī"] }
+    - word: "hi-2790"
+      forms: { "m-sg": "बढ़ता", "f-sg": "बढ़ती", "m-pl": "बढ़ते", "f-pl": ["बढ़तीं", "बढ़ती"] }
+      readings: { "m-sg": "baṛhtā", "f-sg": "baṛhtī", "m-pl": "baṛhtē", "f-pl": ["baṛhtīm̐", "baṛhtī"] }
+    - word: "hi-2791"
+      forms: { "m-sg": "बढ़ाता", "f-sg": "बढ़ाती", "m-pl": "बढ़ाते", "f-pl": ["बढ़ातीं", "बढ़ाती"] }
+      readings: { "m-sg": "baṛhātā", "f-sg": "baṛhātī", "m-pl": "baṛhātē", "f-pl": ["baṛhātīm̐", "baṛhātī"] }
+    - word: "hi-2792"
+      forms: { "m-sg": "गुज़रता", "f-sg": "गुज़रती", "m-pl": "गुज़रते", "f-pl": ["गुज़रतीं", "गुज़रती"] }
+      readings: { "m-sg": "guzrtā", "f-sg": "guzrtī", "m-pl": "guzrtē", "f-pl": ["guzrtīm̐", "guzrtī"] }
+    - word: "hi-2793"
+      forms: { "m-sg": "झपटता", "f-sg": "झपटती", "m-pl": "झपटते", "f-pl": ["झपटतीं", "झपटती"] }
+      readings: { "m-sg": "jhapṭtā", "f-sg": "jhapṭtī", "m-pl": "jhapṭtē", "f-pl": ["jhapṭtīm̐", "jhapṭtī"] }
+    - word: "hi-2794"
+      forms: { "m-sg": "पलटता", "f-sg": "पलटती", "m-pl": "पलटते", "f-pl": ["पलटतीं", "पलटती"] }
+      readings: { "m-sg": "palṭtā", "f-sg": "palṭtī", "m-pl": "palṭtē", "f-pl": ["palṭtīm̐", "palṭtī"] }
+    - word: "hi-2795"
+      forms: { "m-sg": "सोखता", "f-sg": "सोखती", "m-pl": "सोखते", "f-pl": ["सोखतीं", "सोखती"] }
+      readings: { "m-sg": "sōkhtā", "f-sg": "sōkhtī", "m-pl": "sōkhtē", "f-pl": ["sōkhtīm̐", "sōkhtī"] }
+    - word: "hi-2796"
+      forms: { "m-sg": "बहाता", "f-sg": "बहाती", "m-pl": "बहाते", "f-pl": ["बहातीं", "बहाती"] }
+      readings: { "m-sg": "bahātā", "f-sg": "bahātī", "m-pl": "bahātē", "f-pl": ["bahātīm̐", "bahātī"] }
+    - word: "hi-2797"
+      forms: { "m-sg": "मलता", "f-sg": "मलती", "m-pl": "मलते", "f-pl": ["मलतीं", "मलती"] }
+      readings: { "m-sg": "maltā", "f-sg": "maltī", "m-pl": "maltē", "f-pl": ["maltīm̐", "maltī"] }
+    - word: "hi-2798"
+      forms: { "m-sg": "भिगोता", "f-sg": "भिगोती", "m-pl": "भिगोते", "f-pl": ["भिगोतीं", "भिगोती"] }
+      readings: { "m-sg": "bhigōtā", "f-sg": "bhigōtī", "m-pl": "bhigōtē", "f-pl": ["bhigōtīm̐", "bhigōtī"] }
+    - word: "hi-2799"
+      forms: { "m-sg": "पकड़ाता", "f-sg": "पकड़ाती", "m-pl": "पकड़ाते", "f-pl": ["पकड़ातीं", "पकड़ाती"] }
+      readings: { "m-sg": "pakṛātā", "f-sg": "pakṛātī", "m-pl": "pakṛātē", "f-pl": ["pakṛātīm̐", "pakṛātī"] }
+    - word: "hi-2800"
+      forms: { "m-sg": "खुजलाता", "f-sg": "खुजलाती", "m-pl": "खुजलाते", "f-pl": ["खुजलातीं", "खुजलाती"] }
+      readings: { "m-sg": "khujlātā", "f-sg": "khujlātī", "m-pl": "khujlātē", "f-pl": ["khujlātīm̐", "khujlātī"] }
+    - word: "hi-2801"
+      forms: { "m-sg": "दबोचता", "f-sg": "दबोचती", "m-pl": "दबोचते", "f-pl": ["दबोचतीं", "दबोचती"] }
+      readings: { "m-sg": "dabōctā", "f-sg": "dabōctī", "m-pl": "dabōctē", "f-pl": ["dabōctīm̐", "dabōctī"] }
+    - word: "hi-2803"
+      forms: { "m-sg": "भुनता", "f-sg": "भुनती", "m-pl": "भुनते", "f-pl": ["भुनतीं", "भुनती"] }
+      readings: { "m-sg": "bhuntā", "f-sg": "bhuntī", "m-pl": "bhuntē", "f-pl": ["bhuntīm̐", "bhuntī"] }
+    - word: "hi-2804"
+      forms: { "m-sg": "चमकाता", "f-sg": "चमकाती", "m-pl": "चमकाते", "f-pl": ["चमकातीं", "चमकाती"] }
+      readings: { "m-sg": "camkātā", "f-sg": "camkātī", "m-pl": "camkātē", "f-pl": ["camkātīm̐", "camkātī"] }
+    - word: "hi-2805"
+      forms: { "m-sg": "हिलाता", "f-sg": "हिलाती", "m-pl": "हिलाते", "f-pl": ["हिलातीं", "हिलाती"] }
+      readings: { "m-sg": "hilātā", "f-sg": "hilātī", "m-pl": "hilātē", "f-pl": ["hilātīm̐", "hilātī"] }
+    - word: "hi-2806"
+      forms: { "m-sg": "हिलता", "f-sg": "हिलती", "m-pl": "हिलते", "f-pl": ["हिलतीं", "हिलती"] }
+      readings: { "m-sg": "hiltā", "f-sg": "hiltī", "m-pl": "hiltē", "f-pl": ["hiltīm̐", "hiltī"] }
+    - word: "hi-2807"
+      forms: { "m-sg": "झूलता", "f-sg": "झूलती", "m-pl": "झूलते", "f-pl": ["झूलतीं", "झूलती"] }
+      readings: { "m-sg": "jhūltā", "f-sg": "jhūltī", "m-pl": "jhūltē", "f-pl": ["jhūltīm̐", "jhūltī"] }
+    - word: "hi-2808"
+      forms: { "m-sg": "झूलाता", "f-sg": "झूलाती", "m-pl": "झूलाते", "f-pl": ["झूलातीं", "झूलाती"] }
+      readings: { "m-sg": "jhūlātā", "f-sg": "jhūlātī", "m-pl": "jhūlātē", "f-pl": ["jhūlātīm̐", "jhūlātī"] }
+rules:
+  - id: "hi-rule-conditional-masc"
+    slots: ["m-sg", "m-pl"]
+    words: [{ word: "-ता", reading: "-tā" }, { word: "-ते", reading: "-tē" }, { word: "करना", reading: "karnā" }, { word: "करता", reading: "kartā" }, { word: "करते", reading: "kartē" }, { word: "जाना", reading: "jānā" }, { word: "जाता", reading: "jātā" }]
+  - id: "hi-rule-conditional-fem"
+    slots: ["f-sg", "f-pl"]
+    words: [{ word: "-ती", reading: "-tī" }, { word: "-तीं", reading: "-tīm̐" }, { word: "करना", reading: "karnā" }, { word: "करती", reading: "kartī" }, { word: "करतीं", reading: "kartīm̐" }, { word: "जाना", reading: "jānā" }, { word: "जाती", reading: "jātī" }]

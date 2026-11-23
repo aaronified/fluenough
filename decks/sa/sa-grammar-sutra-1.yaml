@@ -1,0 +1,206 @@
+# Every sūtra number and text was read on the sa.wikisource.org page of the Aṣṭādhyāyī chapter (read 2026-11-17) and checked against the Aṣṭādhyāyī of the GRETIL corpus (the Kāśikā edition of Aryendra Sharma); the unsplit text, the padaccheda with the case and number of each word, and the anuvṛtti and adhikāra come from the data of ashtadhyayi.com (raw.githubusercontent.com/ashtadhyayi-com/data, sutraani/data.txt, read 2026-11-17). Where the sūtra page types a sūtra defectively, the text of the other two sources is used and the sūtra is listed in docs/review-queue/sa.md. The English sense of each sūtra is the course's own plain wording, read against the translation of Śrīśa Chandra Vasu (1891 to 1897, archive.org). Examples are words of the course, or forms Whitney (1889, A Sanskrit Grammar, read in the archive.org text) or Vasu give; the Whitney section of each rule is named in its note, and 'not located' means no section was found in the text read; the readings and the IPA are from tools/transcribe.py (sa).
+schema: 1
+id: "sa-grammar-sutra-1"
+part: "core"
+kind: "grammar"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["sutra", "padaccheda", "anuvrtti", "example"]
+  entries:
+    - lemma: "1.1.1"
+      key: "1-1-1"
+      forms: { "sutra": "वृद्धिरादैच्", "padaccheda": "वृद्धिः आत्-ऐच्", "anuvrtti": null, "example": "नायकः" }
+      readings: { "sutra": "vṛddhirādaic", "padaccheda": "vṛddhiḥ āt-aic", "example": "nāyakaḥ" }
+      ipas: { "sutra": "ʋr̩d̪d̪ʱiraːd̪əitʃ", "padaccheda": "ʋr̩d̪d̪ʱih aːt̪əitʃ", "example": "naːjəkəh" }
+    - lemma: "1.1.2"
+      key: "1-1-2"
+      forms: { "sutra": "अदेङ् गुणः", "padaccheda": "अत्-एङ् गुणः", "anuvrtti": null, "example": "भवति" }
+      readings: { "sutra": "adeṅ guṇaḥ", "padaccheda": "at-eṅ guṇaḥ", "example": "bhavati" }
+      ipas: { "sutra": "əd̪eːŋ ɡuɳəh", "padaccheda": "ət̪eːŋ ɡuɳəh", "example": "bʱəʋət̪i" }
+    - lemma: "1.1.3"
+      key: "1-1-3"
+      forms: { "sutra": "इको गुणवृद्धी", "padaccheda": "इकः गुण-वृद्धी", "anuvrtti": "वृद्धिः गुणः", "example": "नेतृ" }
+      readings: { "sutra": "iko guṇavṛddhī", "padaccheda": "ikaḥ guṇa-vṛddhī", "anuvrtti": "vṛddhiḥ guṇaḥ", "example": "netṛ" }
+      ipas: { "sutra": "ikoː ɡuɳəʋr̩d̪d̪ʱiː", "padaccheda": "ikəh ɡuɳəʋr̩d̪d̪ʱiː", "anuvrtti": "ʋr̩d̪d̪ʱih ɡuɳəh", "example": "neːt̪r̩" }
+    - lemma: "1.1.4"
+      key: "1-1-4"
+      forms: { "sutra": "न धातुलोप आर्धधातुके", "padaccheda": "न धातुलोपे आर्धधातुके", "anuvrtti": "इकः गुण-वृद्धी", "example": null }
+      readings: { "sutra": "na dhātulopa ārdhadhātuke", "padaccheda": "na dhātulope ārdhadhātuke", "anuvrtti": "ikaḥ guṇa-vṛddhī" }
+      ipas: { "sutra": "nə d̪ʱaːt̪uloːpə aːrd̪ʱəd̪ʱaːt̪ukeː", "padaccheda": "nə d̪ʱaːt̪uloːpeː aːrd̪ʱəd̪ʱaːt̪ukeː", "anuvrtti": "ikəh ɡuɳəʋr̩d̪d̪ʱiː" }
+    - lemma: "1.1.5"
+      key: "1-1-5"
+      forms: { "sutra": "क्ङिति च", "padaccheda": "क्ङिति च", "anuvrtti": "इकः गुण-वृद्धी न", "example": "सुनुतः" }
+      readings: { "sutra": "kṅiti ca", "padaccheda": "kṅiti ca", "anuvrtti": "ikaḥ guṇa-vṛddhī na", "example": "sunutaḥ" }
+      ipas: { "sutra": "kŋit̪i tʃə", "padaccheda": "kŋit̪i tʃə", "anuvrtti": "ikəh ɡuɳəʋr̩d̪d̪ʱiː nə", "example": "sunut̪əh" }
+    - lemma: "1.1.7"
+      key: "1-1-7"
+      forms: { "sutra": "हलोऽनन्तराः संयोगः", "padaccheda": "हलः अनन्तराः संयोगः", "anuvrtti": null, "example": "अस्ति" }
+      readings: { "sutra": "halo'nantarāḥ saṃyogaḥ", "padaccheda": "halaḥ anantarāḥ saṃyogaḥ", "example": "asti" }
+      ipas: { "sutra": "ɦəloːnənt̪əraːh sə̃joːɡəh", "padaccheda": "ɦələh ənənt̪əraːh sə̃joːɡəh", "example": "əst̪i" }
+    - lemma: "1.1.8"
+      key: "1-1-8"
+      forms: { "sutra": "मुखनासिकावचनोऽनुनासिकः", "padaccheda": "मुख-नासिका-वचनः अनुनासिकः", "anuvrtti": null, "example": "ङ ञ ण न म" }
+      readings: { "sutra": "mukhanāsikāvacano'nunāsikaḥ", "padaccheda": "mukha-nāsikā-vacanaḥ anunāsikaḥ", "example": "ṅa ña ṇa na ma" }
+      ipas: { "sutra": "mukʰənaːsikaːʋətʃənoːnunaːsikəh", "padaccheda": "mukʰənaːsikaːʋətʃənəh ənunaːsikəh", "example": "ŋə ɲə ɳə nə mə" }
+    - lemma: "1.1.9"
+      key: "1-1-9"
+      forms: { "sutra": "तुल्यास्यप्रयत्नं सवर्णम्", "padaccheda": "तुल्य-आस्य-प्रयत्नम् सवर्णम्", "anuvrtti": null, "example": "अ आ" }
+      readings: { "sutra": "tulyāsyaprayatnaṃ savarṇam", "padaccheda": "tulya-āsya-prayatnam savarṇam", "example": "a ā" }
+      ipas: { "sutra": "t̪uljaːsjəprəjət̪nəm səʋərɳəm", "padaccheda": "t̪uljəaːsjəprəjət̪nəm səʋərɳəm", "example": "ə aː" }
+    - lemma: "1.1.10"
+      key: "1-1-10"
+      forms: { "sutra": "नाज्झलौ", "padaccheda": "न अच्-हलौ", "anuvrtti": "सवर्णम्", "example": null }
+      readings: { "sutra": "nājjhalau", "padaccheda": "na ac-halau", "anuvrtti": "savarṇam" }
+      ipas: { "sutra": "naːdʒdʒʱələu", "padaccheda": "nə ətʃɦələu", "anuvrtti": "səʋərɳəm" }
+    - lemma: "1.1.11"
+      key: "1-1-11"
+      forms: { "sutra": "ईदूदेद्द्विवचनं प्रगृह्यम्", "padaccheda": "ईत्-ऊत्-एत् द्विवचनं प्रगृह्यम्", "anuvrtti": null, "example": "मुनी इमौ" }
+      readings: { "sutra": "īdūdeddvivacanaṃ pragṛhyam", "padaccheda": "īt-ūt-et dvivacanaṃ pragṛhyam", "example": "munī imau" }
+      ipas: { "sutra": "iːd̪uːd̪eːd̪d̪ʋiʋətʃənəm prəɡr̩ɦjəm", "padaccheda": "iːt̪uːt̪eːt̪ d̪ʋiʋətʃənəm prəɡr̩ɦjəm", "example": "muniː iməu" }
+    - lemma: "1.1.23"
+      key: "1-1-23"
+      forms: { "sutra": "बहुगणवतुडति संख्या", "padaccheda": "बहु-गण-वतु-डति संख्या", "anuvrtti": null, "example": "कति" }
+      readings: { "sutra": "bahugaṇavatuḍati saṃkhyā", "padaccheda": "bahu-gaṇa-vatu-ḍati saṃkhyā", "example": "kati" }
+      ipas: { "sutra": "bəɦuɡəɳəʋət̪uɖət̪i səŋkʰjaː", "padaccheda": "bəɦuɡəɳəʋət̪uɖət̪i səŋkʰjaː", "example": "kət̪i" }
+    - lemma: "1.1.27"
+      key: "1-1-27"
+      forms: { "sutra": "सर्वादीनि सर्वनामानि", "padaccheda": "सर्व-आदीनि सर्वनामानि", "anuvrtti": null, "example": "सर्वे" }
+      readings: { "sutra": "sarvādīni sarvanāmāni", "padaccheda": "sarva-ādīni sarvanāmāni", "example": "sarve" }
+      ipas: { "sutra": "sərʋaːd̪iːni sərʋənaːmaːni", "padaccheda": "sərʋəaːd̪iːni sərʋənaːmaːni", "example": "sərʋeː" }
+    - lemma: "1.1.37"
+      key: "1-1-37"
+      forms: { "sutra": "स्वरादिनिपातमव्ययम्", "padaccheda": "स्वरादि-निपातम् अव्ययम्", "anuvrtti": null, "example": "इति" }
+      readings: { "sutra": "svarādinipātamavyayam", "padaccheda": "svarādi-nipātam avyayam", "example": "iti" }
+      ipas: { "sutra": "sʋəraːd̪inipaːt̪əməʋjəjəm", "padaccheda": "sʋəraːd̪inipaːt̪əm əʋjəjəm", "example": "it̪i" }
+    - lemma: "1.1.42"
+      key: "1-1-42"
+      forms: { "sutra": "शि सर्वनामस्थानम्", "padaccheda": "शि सर्वनामस्थानम्", "anuvrtti": null, "example": "फलानि" }
+      readings: { "sutra": "śi sarvanāmasthānam", "padaccheda": "śi sarvanāmasthānam", "example": "phalāni" }
+      ipas: { "sutra": "ʃi sərʋənaːməst̪ʰaːnəm", "padaccheda": "ʃi sərʋənaːməst̪ʰaːnəm", "example": "pʰəlaːni" }
+    - lemma: "1.1.45"
+      key: "1-1-45"
+      forms: { "sutra": "इग्यणः सम्प्रसारणम्", "padaccheda": "इक् यणः सम्प्रसारणम्", "anuvrtti": null, "example": "उक्तः" }
+      readings: { "sutra": "igyaṇaḥ samprasāraṇam", "padaccheda": "ik yaṇaḥ samprasāraṇam", "example": "uktaḥ" }
+      ipas: { "sutra": "iɡjəɳəh səmprəsaːrəɳəm", "padaccheda": "ik jəɳəh səmprəsaːrəɳəm", "example": "ukt̪əh" }
+    - lemma: "1.1.47"
+      key: "1-1-47"
+      forms: { "sutra": "मिदचोऽन्त्यात्परः", "padaccheda": "मित् अचः अन्त्यात् परः", "anuvrtti": null, "example": "फलानि" }
+      readings: { "sutra": "midaco'ntyātparaḥ", "padaccheda": "mit acaḥ antyāt paraḥ", "example": "phalāni" }
+      ipas: { "sutra": "mid̪ətʃoːnt̪jaːt̪pərəh", "padaccheda": "mit̪ ətʃəh ənt̪jaːt̪ pərəh", "example": "pʰəlaːni" }
+    - lemma: "1.1.49"
+      key: "1-1-49"
+      forms: { "sutra": "षष्ठी स्थानेयोगा", "padaccheda": "षष्ठी स्थाने-योगा", "anuvrtti": null, "example": "इको यणचि" }
+      readings: { "sutra": "ṣaṣṭhī sthāneyogā", "padaccheda": "ṣaṣṭhī sthāne-yogā", "example": "iko yaṇaci" }
+      ipas: { "sutra": "ʂəʂʈʰiː st̪ʰaːneːjoːɡaː", "padaccheda": "ʂəʂʈʰiː st̪ʰaːneːjoːɡaː", "example": "ikoː jəɳətʃi" }
+    - lemma: "1.1.50"
+      key: "1-1-50"
+      forms: { "sutra": "स्थानेऽन्तरतमः", "padaccheda": "स्थाने अन्तरतमः", "anuvrtti": null, "example": "मध्वरि" }
+      readings: { "sutra": "sthāne'ntaratamaḥ", "padaccheda": "sthāne antaratamaḥ", "example": "madhvari" }
+      ipas: { "sutra": "st̪ʰaːneːnt̪ərət̪əməh", "padaccheda": "st̪ʰaːneː ənt̪ərət̪əməh", "example": "məd̪ʱʋəri" }
+    - lemma: "1.1.51"
+      key: "1-1-51"
+      forms: { "sutra": "उरण् रपरः", "padaccheda": "उः अण् रपरः", "anuvrtti": "षष्ठी स्थाने", "example": "करोति" }
+      readings: { "sutra": "uraṇ raparaḥ", "padaccheda": "uḥ aṇ raparaḥ", "anuvrtti": "ṣaṣṭhī sthāne", "example": "karoti" }
+      ipas: { "sutra": "urəɳ rəpərəh", "padaccheda": "uh əɳ rəpərəh", "anuvrtti": "ʂəʂʈʰiː st̪ʰaːneː", "example": "kəroːt̪i" }
+    - lemma: "1.1.52"
+      key: "1-1-52"
+      forms: { "sutra": "अलोऽन्त्यस्य", "padaccheda": "अलः अन्त्यस्य", "anuvrtti": "षष्ठी स्थाने", "example": "नेतृ" }
+      readings: { "sutra": "alo'ntyasya", "padaccheda": "alaḥ antyasya", "anuvrtti": "ṣaṣṭhī sthāne", "example": "netṛ" }
+      ipas: { "sutra": "əloːnt̪jəsjə", "padaccheda": "ələh ənt̪jəsjə", "anuvrtti": "ʂəʂʈʰiː st̪ʰaːneː", "example": "neːt̪r̩" }
+    - lemma: "1.1.54"
+      key: "1-1-54"
+      forms: { "sutra": "आदेः परस्य", "padaccheda": "आदेः परस्य", "anuvrtti": "षष्ठी स्थाने अलः", "example": null }
+      readings: { "sutra": "ādeḥ parasya", "padaccheda": "ādeḥ parasya", "anuvrtti": "ṣaṣṭhī sthāne alaḥ" }
+      ipas: { "sutra": "aːd̪eːh pərəsjə", "padaccheda": "aːd̪eːh pərəsjə", "anuvrtti": "ʂəʂʈʰiː st̪ʰaːneː ələh" }
+    - lemma: "1.1.55"
+      key: "1-1-55"
+      forms: { "sutra": "अनेकाल्शित्सर्वस्य", "padaccheda": "अनेकाल्-शित् सर्वस्य", "anuvrtti": "षष्ठी स्थाने", "example": "अवधीत्" }
+      readings: { "sutra": "anekālśitsarvasya", "padaccheda": "anekāl-śit sarvasya", "anuvrtti": "ṣaṣṭhī sthāne", "example": "avadhīt" }
+      ipas: { "sutra": "əneːkaːlʃit̪sərʋəsjə", "padaccheda": "əneːkaːlʃit̪ sərʋəsjə", "anuvrtti": "ʂəʂʈʰiː st̪ʰaːneː", "example": "əʋəd̪ʱiːt̪" }
+    - lemma: "1.1.56"
+      key: "1-1-56"
+      forms: { "sutra": "स्थानिवदादेशोऽनल्विधौ", "padaccheda": "स्थानिवत् आदेशः अनल्विधौ", "anuvrtti": null, "example": null }
+      readings: { "sutra": "sthānivadādeśo'nalvidhau", "padaccheda": "sthānivat ādeśaḥ analvidhau" }
+      ipas: { "sutra": "st̪ʰaːniʋəd̪aːd̪eːʃoːnəlʋid̪ʱəu", "padaccheda": "st̪ʰaːniʋət̪ aːd̪eːʃəh ənəlʋid̪ʱəu" }
+    - lemma: "1.1.60"
+      key: "1-1-60"
+      forms: { "sutra": "अदर्शनं लोपः", "padaccheda": "अदर्शनं लोपः", "anuvrtti": "स्थाने", "example": "राज्ञः" }
+      readings: { "sutra": "adarśanaṃ lopaḥ", "padaccheda": "adarśanaṃ lopaḥ", "anuvrtti": "sthāne", "example": "rājñaḥ" }
+      ipas: { "sutra": "əd̪ərʃənəm loːpəh", "padaccheda": "əd̪ərʃənəm loːpəh", "anuvrtti": "st̪ʰaːneː", "example": "raːdʒɲəh" }
+    - lemma: "1.1.61"
+      key: "1-1-61"
+      forms: { "sutra": "प्रत्ययस्य लुक्श्लुलुपः", "padaccheda": "प्रत्ययस्य लुक्-श्लु-लुपः", "anuvrtti": "अदर्शनं", "example": "जुहोति" }
+      readings: { "sutra": "pratyayasya lukślulupaḥ", "padaccheda": "pratyayasya luk-ślu-lupaḥ", "anuvrtti": "adarśanaṃ", "example": "juhoti" }
+      ipas: { "sutra": "prət̪jəjəsjə lukʃlulupəh", "padaccheda": "prət̪jəjəsjə lukʃlulupəh", "anuvrtti": "əd̪ərʃənəm", "example": "dʒuɦoːt̪i" }
+    - lemma: "1.1.64"
+      key: "1-1-64"
+      forms: { "sutra": "अचोऽन्त्यादि टि", "padaccheda": "अचः अन्त्य-आदि टि", "anuvrtti": null, "example": "राजन्" }
+      readings: { "sutra": "aco'ntyādi ṭi", "padaccheda": "acaḥ antya-ādi ṭi", "example": "rājan" }
+      ipas: { "sutra": "ətʃoːnt̪jaːd̪i ʈi", "padaccheda": "ətʃəh ənt̪jəaːd̪i ʈi", "example": "raːdʒən" }
+    - lemma: "1.1.65"
+      key: "1-1-65"
+      forms: { "sutra": "अलोऽन्त्यात् पूर्व उपधा", "padaccheda": "अलः अन्त्यात् पूर्वः उपधा", "anuvrtti": null, "example": "गम्" }
+      readings: { "sutra": "alo'ntyāt pūrva upadhā", "padaccheda": "alaḥ antyāt pūrvaḥ upadhā", "example": "gam" }
+      ipas: { "sutra": "əloːnt̪jaːt̪ puːrʋə upəd̪ʱaː", "padaccheda": "ələh ənt̪jaːt̪ puːrʋəh upəd̪ʱaː", "example": "ɡəm" }
+    - lemma: "1.1.66"
+      key: "1-1-66"
+      forms: { "sutra": "तस्मिन्निति निर्दिष्टे पूर्वस्य", "padaccheda": "तस्मिन् इति निर्दिष्टे पूर्वस्य", "anuvrtti": null, "example": "इको यणचि" }
+      readings: { "sutra": "tasminniti nirdiṣṭe pūrvasya", "padaccheda": "tasmin iti nirdiṣṭe pūrvasya", "example": "iko yaṇaci" }
+      ipas: { "sutra": "t̪əsminnit̪i nird̪iʂʈeː puːrʋəsjə", "padaccheda": "t̪əsmin it̪i nird̪iʂʈeː puːrʋəsjə", "example": "ikoː jəɳətʃi" }
+    - lemma: "1.1.67"
+      key: "1-1-67"
+      forms: { "sutra": "तस्मादित्युत्तरस्य", "padaccheda": "तस्मात् इति उत्तरस्य", "anuvrtti": "निर्दिष्टे", "example": "आद्गुणः" }
+      readings: { "sutra": "tasmādityuttarasya", "padaccheda": "tasmāt iti uttarasya", "anuvrtti": "nirdiṣṭe", "example": "ādguṇaḥ" }
+      ipas: { "sutra": "t̪əsmaːd̪it̪jut̪t̪ərəsjə", "padaccheda": "t̪əsmaːt̪ it̪i ut̪t̪ərəsjə", "anuvrtti": "nird̪iʂʈeː", "example": "aːd̪ɡuɳəh" }
+    - lemma: "1.1.68"
+      key: "1-1-68"
+      forms: { "sutra": "स्वं रूपं शब्दस्याशब्दसंज्ञा", "padaccheda": "स्वम् रूपम् शब्दस्य अ-शब्दसंज्ञा", "anuvrtti": null, "example": "अग्नि" }
+      readings: { "sutra": "svaṃ rūpaṃ śabdasyāśabdasaṃjñā", "padaccheda": "svam rūpam śabdasya a-śabdasaṃjñā", "example": "agni" }
+      ipas: { "sutra": "sʋəm ruːpəm ʃəbd̪əsjaːʃəbd̪əsəɲdʒɲaː", "padaccheda": "sʋəm ruːpəm ʃəbd̪əsjə əʃəbd̪əsəɲdʒɲaː", "example": "əɡni" }
+    - lemma: "1.1.70"
+      key: "1-1-70"
+      forms: { "sutra": "तपरस्तत्कालस्य", "padaccheda": "तपरः तत्कालस्य", "anuvrtti": "स्वम् रूपम् सवर्णस्य", "example": "अत्" }
+      readings: { "sutra": "taparastatkālasya", "padaccheda": "taparaḥ tatkālasya", "anuvrtti": "svam rūpam savarṇasya", "example": "at" }
+      ipas: { "sutra": "t̪əpərəst̪ət̪kaːləsjə", "padaccheda": "t̪əpərəh t̪ət̪kaːləsjə", "anuvrtti": "sʋəm ruːpəm səʋərɳəsjə", "example": "ət̪" }
+    - lemma: "1.1.71"
+      key: "1-1-71"
+      forms: { "sutra": "आदिरन्त्येन सहेता", "padaccheda": "आदिः अन्त्येन सह इता", "anuvrtti": "स्वम् रूपम्", "example": "इक्" }
+      readings: { "sutra": "ādirantyena sahetā", "padaccheda": "ādiḥ antyena saha itā", "anuvrtti": "svam rūpam", "example": "ik" }
+      ipas: { "sutra": "aːd̪irənt̪jeːnə səɦeːt̪aː", "padaccheda": "aːd̪ih ənt̪jeːnə səɦə it̪aː", "anuvrtti": "sʋəm ruːpəm", "example": "ik" }
+    - lemma: "1.1.72"
+      key: "1-1-72"
+      forms: { "sutra": "येन विधिस्तदन्तस्य", "padaccheda": "येन विधिः तदन्तस्य", "anuvrtti": "स्वम् रूपम्", "example": "जेयम्" }
+      readings: { "sutra": "yena vidhistadantasya", "padaccheda": "yena vidhiḥ tadantasya", "anuvrtti": "svam rūpam", "example": "jeyam" }
+      ipas: { "sutra": "jeːnə ʋid̪ʱist̪əd̪ənt̪əsjə", "padaccheda": "jeːnə ʋid̪ʱih t̪əd̪ənt̪əsjə", "anuvrtti": "sʋəm ruːpəm", "example": "dʒeːjəm" }
+    - lemma: "1.1.73"
+      key: "1-1-73"
+      forms: { "sutra": "वृद्धिर्यस्याचामादिस्तद् वृद्धम्", "padaccheda": "वृद्धिः यस्य अचाम् आदिः तत् वृद्धम्", "anuvrtti": null, "example": "भारतः" }
+      readings: { "sutra": "vṛddhiryasyācāmādistad vṛddham", "padaccheda": "vṛddhiḥ yasya acām ādiḥ tat vṛddham", "example": "bhārataḥ" }
+      ipas: { "sutra": "ʋr̩d̪d̪ʱirjəsjaːtʃaːmaːd̪ist̪əd̪ ʋr̩d̪d̪ʱəm", "padaccheda": "ʋr̩d̪d̪ʱih jəsjə ətʃaːm aːd̪ih t̪ət̪ ʋr̩d̪d̪ʱəm", "example": "bʱaːrət̪əh" }
+    - lemma: "1.2.45"
+      key: "1-2-45"
+      forms: { "sutra": "अर्थवदधातुरप्रत्ययः प्रातिपदिकम्", "padaccheda": "अर्थवत् अधातुः अप्रत्ययः प्रातिपदिकम्", "anuvrtti": null, "example": "राम" }
+      readings: { "sutra": "arthavadadhāturapratyayaḥ prātipadikam", "padaccheda": "arthavat adhātuḥ apratyayaḥ prātipadikam", "example": "rāma" }
+      ipas: { "sutra": "ərt̪ʰəʋəd̪əd̪ʱaːt̪urəprət̪jəjəh praːt̪ipəd̪ikəm", "padaccheda": "ərt̪ʰəʋət̪ əd̪ʱaːt̪uh əprət̪jəjəh praːt̪ipəd̪ikəm", "example": "raːmə" }
+    - lemma: "1.3.1"
+      key: "1-3-1"
+      forms: { "sutra": "भूवादयो धातवः", "padaccheda": "भू-वा-आदयः धातवः", "anuvrtti": null, "example": "भू" }
+      readings: { "sutra": "bhūvādayo dhātavaḥ", "padaccheda": "bhū-vā-ādayaḥ dhātavaḥ", "example": "bhū" }
+      ipas: { "sutra": "bʱuːʋaːd̪əjoː d̪ʱaːt̪əʋəh", "padaccheda": "bʱuːʋaːaːd̪əjəh d̪ʱaːt̪əʋəh", "example": "bʱuː" }
+    - lemma: "1.3.2"
+      key: "1-3-2"
+      forms: { "sutra": "उपदेशेऽजनुनासिक इत्", "padaccheda": "उपदेशे अच् अनुनासिकः इत्", "anuvrtti": null, "example": null }
+      readings: { "sutra": "upadeśe'janunāsika it", "padaccheda": "upadeśe ac anunāsikaḥ it" }
+      ipas: { "sutra": "upəd̪eːʃeːdʒənunaːsikə it̪", "padaccheda": "upəd̪eːʃeː ətʃ ənunaːsikəh it̪" }
+    - lemma: "1.3.3"
+      key: "1-3-3"
+      forms: { "sutra": "हलन्त्यम्", "padaccheda": "हल् अन्त्यम्", "anuvrtti": "उपदेशे इत्", "example": "इक्" }
+      readings: { "sutra": "halantyam", "padaccheda": "hal antyam", "anuvrtti": "upadeśe it", "example": "ik" }
+      ipas: { "sutra": "ɦələnt̪jəm", "padaccheda": "ɦəl ənt̪jəm", "anuvrtti": "upəd̪eːʃeː it̪", "example": "ik" }
+    - lemma: "1.3.9"
+      key: "1-3-9"
+      forms: { "sutra": "तस्य लोपः", "padaccheda": "तस्य लोपः", "anuvrtti": null, "example": "भवति" }
+      readings: { "sutra": "tasya lopaḥ", "padaccheda": "tasya lopaḥ", "example": "bhavati" }
+      ipas: { "sutra": "t̪əsjə loːpəh", "padaccheda": "t̪əsjə loːpəh", "example": "bʱəʋət̪i" }
