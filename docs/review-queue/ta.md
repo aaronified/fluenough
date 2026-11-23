@@ -244,3 +244,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-8089 | ta-arts | கலைஞர் (kalaiñar) is marked gender m or f by its ending (the -ர் form is respectful and can be said of either sex): is the gender right? | ta-words4 | 2026-11-23 |
 | ta-8101 | ta-arts | வாசி (vāci), to play an instrument or to read: is it right to teach both senses on one card? | ta-words4 | 2026-11-23 |
 | ta-8103 | ta-arts | The verb படை (paṭai), to create, has the same spelling as the word for army, which the course cannot teach as a second card: is the meaning and the note enough? | ta-words4 | 2026-11-23 |
+| ta-8154 | ta-grammar-verb-classes | முற்றுகையிடு (muṟṟukaiyiṭu), to besiege, is built as an -இடு compound (முற்றுகையிட்டான், முற்றுகையிடுவான்); is the stem right? | Sonnet builder | 2026-11-23 |
