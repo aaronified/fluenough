@@ -1,0 +1,657 @@
+schema: 1
+id: "ta-en-sports"
+kind: "layer"
+core: "ta-sports"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sports: games, teams, matches and medals"
+description: "Sports: games, teams, matches, scores, medals and cups, and the words of the field, with the verbs of kicking, chasing, jumping and winning. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-8210":
+    native: "volleyball"
+    notes:
+      n1: "Built from கை (kai), hand and பந்து (pantu), ball, a word taught earlier: a ball hit with the hand."
+    examples:
+      "எனக்குக் கைப்பந்து பிடிக்கும்.":
+        native: "I like volleyball."
+        bases:
+          "எனக்குக்": "to me; for me; from நான் (nāṉ), I; me"
+          "கைப்பந்து": "volleyball"
+      "நாங்கள் கைப்பந்து விளையாடுகிறோம்.":
+        native: "We play volleyball."
+        bases:
+          "கைப்பந்து": "volleyball"
+          "விளையாடுகிறோம்": "we play; from விளையாடு (viḷaiyāṭu), to play"
+  "ta-8211":
+    native: "basketball"
+    notes:
+      n1: "Built from கூடை (kūṭai), basket and பந்து (pantu), ball."
+    examples:
+      "எனக்குக் கூடைப்பந்து பிடிக்கும்.":
+        native: "I like basketball."
+        bases:
+          "எனக்குக்": "to me; for me; from நான் (nāṉ), I; me"
+          "கூடைப்பந்து": "basketball"
+      "அவன் கூடைப்பந்து விளையாடுகிறான்.":
+        native: "He plays basketball."
+        bases:
+          "கூடைப்பந்து": "basketball"
+          "விளையாடுகிறான்": "he plays; from விளையாடு (viḷaiyāṭu), to play"
+  "ta-8212":
+    native: "badminton"
+    notes:
+      n1: "Built from இறகு (iṟaku), feather and பந்து (pantu), ball: the shuttlecock."
+    examples:
+      "அவள் இறகுப்பந்து விளையாடுகிறாள்.":
+        native: "She plays badminton."
+        bases:
+          "இறகுப்பந்து": "badminton"
+          "விளையாடுகிறாள்": "she plays; from விளையாடு (viḷaiyāṭu), to play"
+      "எனக்கு இறகுப்பந்து பிடிக்கும்.":
+        native: "I like badminton."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "இறகுப்பந்து": "badminton"
+  "ta-8213":
+    native: "tennis"
+    notes:
+      n1: "A loanword from English tennis."
+    examples:
+      "நான் டென்னிஸ் விளையாடுகிறேன்.":
+        native: "I play tennis."
+        bases:
+          "டென்னிஸ்": "tennis"
+          "விளையாடுகிறேன்": "play; from விளையாடு (viḷaiyāṭu), to play"
+      "டென்னிஸ் போட்டி இன்று.":
+        native: "The tennis match is today."
+        bases:
+          "டென்னிஸ்": "tennis"
+  "ta-8214":
+    native: "hockey"
+    notes:
+      n1: "A loanword from English hockey."
+    examples:
+      "நாங்கள் ஹாக்கி விளையாடுகிறோம்.":
+        native: "We play hockey."
+        bases:
+          "ஹாக்கி": "hockey"
+          "விளையாடுகிறோம்": "we play; from விளையாடு (viḷaiyāṭu), to play"
+      "ஹாக்கி போட்டி இன்று.":
+        native: "The hockey match is today."
+        bases:
+          "ஹாக்கி": "hockey"
+  "ta-8215":
+    native: "kabaddi"
+    notes:
+      n1: "A team game played without a ball; the name is the same in many Indian languages."
+    examples:
+      "அவர்கள் கபடி விளையாடுகிறார்கள்.":
+        native: "They play kabaddi."
+        bases:
+          "கபடி": "kabaddi"
+          "விளையாடுகிறார்கள்": "are playing; from விளையாடு (viḷaiyāṭu), to play"
+      "எனக்குக் கபடி பிடிக்கும்.":
+        native: "I like kabaddi."
+        bases:
+          "எனக்குக்": "to me; for me; from நான் (nāṉ), I; me"
+          "கபடி": "kabaddi"
+  "ta-8216":
+    native: "race; bet"
+    notes:
+      n1: "A race, and also a bet; the context tells which."
+    examples:
+      "இன்று பந்தயம் இருக்கிறது.":
+        native: "There is a race today."
+        bases:
+          "பந்தயம்": "race; bet"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "பந்தயம் எப்போது?":
+        native: "When is the race?"
+        bases:
+          "பந்தயம்": "race; bet"
+  "ta-8217":
+    native: "woman player; woman warrior"
+    notes:
+      n1: "The woman's pair of வீரர் (vīrar), player, a word taught earlier."
+    examples:
+      "அவள் நல்ல வீராங்கனை.":
+        native: "She is a good woman player."
+        bases:
+          "வீராங்கனை": "woman player; woman warrior"
+      "வீராங்கனை மைதானத்தில் இருக்கிறாள்.":
+        native: "The woman player is on the field."
+        bases:
+          "வீராங்கனை": "woman player; woman warrior"
+          "மைதானத்தில்": "on the field; from மைதானம் (maitāṉam), playground; field"
+          "இருக்கிறாள்": "is; from இரு (iru), to be"
+  "ta-8218":
+    native: "coach; trainer"
+    notes:
+      n1: "Built from பயிற்சி (payiṟci), practice and -யாளர் (-yāḷar), the doer."
+    examples:
+      "அவர் எங்கள் பயிற்சியாளர்.":
+        native: "He is our coach."
+        bases:
+          "எங்கள்": "our; from நாங்கள் (nāṅkaḷ), we"
+          "பயிற்சியாளர்": "coach; trainer"
+      "பயிற்சியாளர் இங்கே இருக்கிறார்.":
+        native: "The coach is here."
+        bases:
+          "பயிற்சியாளர்": "coach; trainer"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-8219":
+    native: "referee; umpire; judge"
+    notes:
+      n1: "The person who decides a match; from நடு (naṭu), middle."
+    examples:
+      "நடுவர் மைதானத்தில் இருக்கிறார்.":
+        native: "The referee is on the field."
+        bases:
+          "நடுவர்": "referee; umpire; judge"
+          "மைதானத்தில்": "on the field; from மைதானம் (maitāṉam), playground; field"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+      "நடுவர் நல்லவர்.":
+        native: "The referee is a good man."
+        bases:
+          "நடுவர்": "referee; umpire; judge"
+          "நல்லவர்": "good man (polite); from நல்ல (nalla), good"
+  "ta-8220":
+    native: "stadium; hall"
+    notes:
+      n1: "A short form of அரங்கம் (araṅkam), hall; also a stage in a hall."
+    examples:
+      "அரங்கு பெரியது.":
+        native: "The stadium is big."
+        bases:
+          "அரங்கு": "stadium; hall"
+          "பெரியது": "big; from பெரிய (periya), big"
+      "அரங்கு எங்கே இருக்கிறது?":
+        native: "Where is the stadium?"
+        bases:
+          "அரங்கு": "stadium; hall"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8221":
+    native: "net; web"
+    notes:
+      n1: "The net of a game, a fisherman's net or a spider's web."
+    examples:
+      "வலை எங்கே?":
+        native: "Where is the net?"
+        bases:
+          "வலை": "net; web"
+      "அவன் வலை வாங்குகிறான்.":
+        native: "He buys a net."
+        bases:
+          "வலை": "net; web"
+          "வாங்குகிறான்": "he buys; from வாங்கு (vāṅku), to buy"
+  "ta-8222":
+    native: "goal; stick"
+    notes:
+      n1: "A goal in football and hockey; in speech the English word is used as well."
+    examples:
+      "இது முதல் கோல்.":
+        native: "This is the first goal."
+        bases:
+          "முதல்": "first"
+          "கோல்": "goal; stick"
+      "அவன் கோல் அடிக்கிறான்.":
+        native: "He scores a goal."
+        bases:
+          "கோல்": "goal; stick"
+          "அடிக்கிறான்": "he hits; he scores; from அடி (aṭi), to hit"
+  "ta-8223":
+    native: "point; dot; score"
+    notes:
+      n1: "A point in a game, and also a dot."
+    examples:
+      "அவர்களுக்குப் புள்ளி அதிகம்.":
+        native: "They have more points."
+        bases:
+          "அவர்களுக்குப்": "to them; for them; from அவர்கள் (avarkaḷ), they"
+          "புள்ளி": "point; dot; score"
+      "எத்தனை புள்ளி?":
+        native: "How many points?"
+        bases:
+          "புள்ளி": "point; dot; score"
+  "ta-8224":
+    native: "run (cricket)"
+    notes:
+      n1: "A run in cricket; the plural ரன்கள் (raṉkaḷ), runs is more common."
+    examples:
+      "அவன் ரன் எடுக்கிறான்.":
+        native: "He scores a run."
+        bases:
+          "ரன்": "run (cricket)"
+          "எடுக்கிறான்": "he takes; from எடு (eṭu), to take"
+      "எத்தனை ரன்?":
+        native: "How many runs?"
+        bases:
+          "ரன்": "run (cricket)"
+  "ta-8225":
+    native: "wicket"
+    notes:
+      n1: "A loanword from English wicket."
+    examples:
+      "ஒரு விக்கெட் இருக்கிறது.":
+        native: "There is one wicket."
+        bases:
+          "விக்கெட்": "wicket"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "அவன் விக்கெட் எடுக்கிறான்.":
+        native: "He takes a wicket."
+        bases:
+          "விக்கெட்": "wicket"
+          "எடுக்கிறான்": "he takes; from எடு (eṭu), to take"
+  "ta-8226":
+    native: "medal"
+    notes:
+      n1: "A medal given to a winner."
+    examples:
+      "அவளுக்குப் பதக்கம் கிடைக்கும்.":
+        native: "She will get a medal."
+        bases:
+          "அவளுக்குப்": "to her; for her; from அவள் (avaḷ), she"
+          "பதக்கம்": "medal"
+          "கிடைக்கும்": "will be available; from கிடை (kiṭai), to be available; to be obtained"
+      "இது தங்கப் பதக்கம்.":
+        native: "This is a gold medal."
+        bases:
+          "தங்கப்": "gold (before a word starting with p); from தங்கம் (taṅkam), gold"
+          "பதக்கம்": "medal"
+  "ta-8227":
+    native: "bronze"
+    notes:
+      n1: "A metal, and the third medal."
+    examples:
+      "இது வெண்கலம்.":
+        native: "This is bronze."
+        bases:
+          "வெண்கலம்": "bronze"
+      "வெண்கலப் பதக்கம் எங்கே?":
+        native: "Where is the bronze medal?"
+        bases:
+          "வெண்கலப்": "bronze (before a word starting with p); from வெண்கலம் (veṇkalam), bronze"
+  "ta-8228":
+    native: "cup; trophy"
+    notes:
+      n1: "A cup for drinking and also a trophy for the winner."
+    examples:
+      "இது பெரிய கோப்பை.":
+        native: "This is a big trophy."
+        bases:
+          "கோப்பை": "cup; trophy"
+      "கோப்பை மேசையில் இருக்கிறது.":
+        native: "The cup is on the table."
+        bases:
+          "கோப்பை": "cup; trophy"
+          "மேசையில்": "on the table; from மேசை (mēcai), table"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-8229":
+    native: "Olympics; the Olympic Games"
+    notes:
+      n1: "The Olympic Games; a loanword."
+    examples:
+      "எனக்கு ஒலிம்பிக் பிடிக்கும்.":
+        native: "I like the Olympics."
+        bases:
+          "எனக்கு": "to me; from நான் (nāṉ), I"
+          "ஒலிம்பிக்": "Olympics; the Olympic Games"
+      "ஒலிம்பிக் போட்டி பெரியது.":
+        native: "The Olympic contest is big."
+        bases:
+          "ஒலிம்பிக்": "Olympics; the Olympic Games"
+          "பெரியது": "big; from பெரிய (periya), big"
+  "ta-8230":
+    native: "champion"
+    notes:
+      n1: "A loanword from English champion."
+    examples:
+      "அவர் சாம்பியன்.":
+        native: "He is a champion."
+        bases:
+          "சாம்பியன்": "champion"
+      "அவள் எங்கள் சாம்பியன்.":
+        native: "She is our champion."
+        bases:
+          "எங்கள்": "our; from நாங்கள் (nāṅkaḷ), we"
+          "சாம்பியன்": "champion"
+  "ta-8231":
+    native: "draw; tie; equal"
+    notes:
+      n1: "A match with no winner; also equal."
+    examples:
+      "போட்டி சமன்.":
+        native: "The match is a draw."
+        bases:
+          "சமன்": "draw; tie; equal"
+      "புள்ளி சமன்.":
+        native: "The score is level."
+        bases:
+          "சமன்": "draw; tie; equal"
+  "ta-8232":
+    native: "competitor; contestant"
+    notes:
+      n1: "Built from போட்டி (pōṭṭi), competition and -ஆளர் (-āḷar), the doer."
+    examples:
+      "அவர் நல்ல போட்டியாளர்.":
+        native: "He is a good competitor."
+        bases:
+          "போட்டியாளர்": "competitor; contestant"
+      "போட்டியாளர் இங்கே இருக்கிறார்.":
+        native: "The competitor is here."
+        bases:
+          "போட்டியாளர்": "competitor; contestant"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-8233":
+    native: "athletics; track and field"
+    notes:
+      n1: "Running, jumping and throwing events together."
+    examples:
+      "எனக்குத் தடகளம் பிடிக்கும்.":
+        native: "I like athletics."
+        bases:
+          "எனக்குத்": "to me; from நான் (nāṉ), I"
+          "தடகளம்": "athletics; track and field"
+      "தடகளம் இன்று நடக்கிறது.":
+        native: "The athletics happen today."
+        bases:
+          "தடகளம்": "athletics; track and field"
+          "நடக்கிறது": "happens; from நட (naṭa), to walk; to happen"
+  "ta-8234":
+    native: "rule; fate"
+    notes:
+      n1: "A rule of a game; in other uses it means fate."
+    examples:
+      "இது விளையாட்டு விதி.":
+        native: "This is a rule of the game."
+        bases:
+          "விதி": "rule; fate"
+      "விதி முக்கியம்.":
+        native: "The rule is important."
+        bases:
+          "விதி": "rule; fate"
+          "முக்கியம்": "important"
+  "ta-8235":
+    native: "player"
+    notes:
+      n1: "Built from ஆட்டம் (āṭṭam), game and -க்காரர் (-kkārar), the doer."
+    examples:
+      "அவர் நல்ல ஆட்டக்காரர்.":
+        native: "He is a good player."
+        bases:
+          "ஆட்டக்காரர்": "player"
+      "ஆட்டக்காரர் மைதானத்தில் இருக்கிறார்.":
+        native: "The player is on the field."
+        bases:
+          "ஆட்டக்காரர்": "player"
+          "மைதானத்தில்": "on the field; from மைதானம் (maitāṉam), playground; field"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-8236":
+    native: "first place"
+    notes:
+      n1: "Built from முதல் (mutal), first and இடம் (iṭam), place."
+    examples:
+      "அவளுக்கு முதலிடம் கிடைக்கும்.":
+        native: "She will get first place."
+        bases:
+          "அவளுக்கு": "to her; for her; from அவள் (avaḷ), she"
+          "முதலிடம்": "first place"
+          "கிடைக்கும்": "will be available; from கிடை (kiṭai), to be available; to be obtained"
+      "முதலிடம் யாருக்கு?":
+        native: "Who gets first place?"
+        bases:
+          "முதலிடம்": "first place"
+          "யாருக்கு": "to whom; for whom; from யார் (yār), who"
+  "ta-8237":
+    native: "final match; finals"
+    notes:
+      n1: "Built from இறுதி (iṟuti), end and போட்டி (pōṭṭi), match."
+    examples:
+      "இன்று இறுதிப்போட்டி.":
+        native: "The final is today."
+        bases:
+          "இறுதிப்போட்டி": "final match; finals"
+      "இறுதிப்போட்டி எங்கே?":
+        native: "Where is the final?"
+        bases:
+          "இறுதிப்போட்டி": "final match; finals"
+  "ta-8238":
+    native: "semi-final"
+    notes:
+      n1: "Built from அரை (arai), half and இறுதி (iṟuti), end."
+    examples:
+      "இன்று அரையிறுதி.":
+        native: "The semi-final is today."
+        bases:
+          "அரையிறுதி": "semi-final"
+      "அரையிறுதி எப்போது?":
+        native: "When is the semi-final?"
+        bases:
+          "அரையிறுதி": "semi-final"
+  "ta-8239":
+    native: "world cup"
+    notes:
+      n1: "Built from உலகம் (ulakam), world and கோப்பை (kōppai), cup."
+    examples:
+      "இது உலகக்கோப்பை.":
+        native: "This is the World Cup."
+        bases:
+          "உலகக்கோப்பை": "world cup"
+      "உலகக்கோப்பை எப்போது?":
+        native: "When is the World Cup?"
+        bases:
+          "உலகக்கோப்பை": "world cup"
+  "ta-8240":
+    native: "running race"
+    notes:
+      n1: "Built from ஓட்டம் (ōṭṭam), running and பந்தயம் (pantayam), race."
+    examples:
+      "இன்று ஓட்டப்பந்தயம் இருக்கிறது.":
+        native: "There is a running race today."
+        bases:
+          "ஓட்டப்பந்தயம்": "running race"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "ஓட்டப்பந்தயம் எப்போது?":
+        native: "When is the running race?"
+        bases:
+          "ஓட்டப்பந்தயம்": "running race"
+  "ta-8241":
+    native: "opposing team"
+    notes:
+      n1: "Built from எதிர் (etir), opposite and அணி (aṇi), team."
+    examples:
+      "எதிரணி பலமானது.":
+        native: "The opposing team is strong."
+        bases:
+          "எதிரணி": "opposing team"
+          "பலமானது": "is strong; from பலமான (palamāṉa), strong"
+      "எதிரணி எங்கே?":
+        native: "Where is the opposing team?"
+        bases:
+          "எதிரணி": "opposing team"
+  "ta-8242":
+    native: "strength; power"
+    notes:
+      n1: "Physical or inner strength; வலிமையான (valimaiyāṉa), strong is a word taught earlier."
+    examples:
+      "அவனுக்கு வலிமை அதிகம்.":
+        native: "He has a lot of strength."
+        bases:
+          "அவனுக்கு": "to him; from அவன் (avaṉ), he"
+          "வலிமை": "strength; power"
+      "வலிமை முக்கியம்.":
+        native: "Strength is important."
+        bases:
+          "வலிமை": "strength; power"
+          "முக்கியம்": "important"
+  "ta-8243":
+    native: "shouting; din"
+    notes:
+      n1: "The noise of a crowd."
+    examples:
+      "மைதானத்தில் கூச்சல் இருக்கிறது.":
+        native: "There is shouting on the field."
+        bases:
+          "மைதானத்தில்": "on the field; from மைதானம் (maitāṉam), playground; field"
+          "கூச்சல்": "shouting; din"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "கூச்சல் கேட்கிறது.":
+        native: "Shouting is heard."
+        bases:
+          "கூச்சல்": "shouting; din"
+          "கேட்கிறது": "is heard; from கேள் (kēḷ), to hear; to ask"
+  "ta-8244":
+    native: "jump; leap"
+    notes:
+      n1: "The noun for one jump; it comes from the verb தாவு (tāvu), to leap."
+    examples:
+      "இது நீண்ட தாவல்.":
+        native: "This is a long jump."
+        bases:
+          "நீண்ட": "long"
+          "தாவல்": "jump; leap"
+      "அவன் தாவல் அருமை.":
+        native: "His jump is wonderful."
+        bases:
+          "தாவல்": "jump; leap"
+          "அருமை": "wonderful; excellent"
+  "ta-8245":
+    native: "batter; batsman"
+    notes:
+      n1: "Built from மட்டை (maṭṭai), bat, a word taught earlier, and -ஆளர் (-āḷar), the doer."
+    examples:
+      "அவர் நல்ல மட்டையாளர்.":
+        native: "He is a good batter."
+        bases:
+          "மட்டையாளர்": "batter; batsman"
+      "மட்டையாளர் மைதானத்தில் இருக்கிறார்.":
+        native: "The batter is on the field."
+        bases:
+          "மட்டையாளர்": "batter; batsman"
+          "மைதானத்தில்": "on the field; from மைதானம் (maitāṉam), playground; field"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-8246":
+    native: "to kick"
+    notes:
+      n1: "To kick a ball; the noun உதை (utai) also means a kick."
+    examples:
+      "பந்தை உதை.":
+        native: "Kick the ball."
+        bases:
+          "பந்தை": "the ball; from பந்து (pantu), ball"
+          "உதை": "to kick"
+      "அவன் பந்தை உதைக்கிறான்.":
+        native: "He kicks the ball."
+        bases:
+          "பந்தை": "the ball; from பந்து (pantu), ball"
+          "உதைக்கிறான்": "he kicks; from உதை (utai), to kick"
+  "ta-8247":
+    native: "to chase; to drive away"
+    notes:
+      n1: "To run after someone or something."
+    examples:
+      "பந்தைத் துரத்து.":
+        native: "Chase the ball."
+        bases:
+          "பந்தைத்": "the ball; from பந்து (pantu), ball"
+          "துரத்து": "to chase; to drive away"
+      "அவன் பந்தைத் துரத்துகிறான்.":
+        native: "He chases the ball."
+        bases:
+          "பந்தைத்": "the ball; from பந்து (pantu), ball"
+          "துரத்துகிறான்": "he chases; from துரத்து (turattu), to chase"
+  "ta-8248":
+    native: "to jump over; to cross"
+    notes:
+      n1: "To jump over a bar or cross a line."
+    examples:
+      "எல்லையைத் தாண்டு.":
+        native: "Cross the line."
+        bases:
+          "எல்லையைத்": "the line (object); from எல்லை (ellai), border; limit"
+          "தாண்டு": "to jump over; to cross"
+      "அவள் தடையைத் தாண்டுகிறாள்.":
+        native: "She jumps over the hurdle."
+        bases:
+          "தடையைத்": "the hurdle (object); from தடை (taṭai), ban; hurdle"
+          "தாண்டுகிறாள்": "she jumps over; from தாண்டு (tāṇṭu), to jump over"
+  "ta-8249":
+    native: "to win"
+    notes:
+      n1: "The common spoken verb for to win, from English-influenced speech; வெல் (vel), to win, taught earlier, is the written verb."
+    examples:
+      "நீ ஜெயி.":
+        native: "You win."
+        bases:
+          "ஜெயி": "to win"
+      "நாங்கள் ஜெயிக்கிறோம்.":
+        native: "We win."
+        bases:
+          "ஜெயிக்கிறோம்": "we win; from ஜெயி (jeyi), to win"
+  "ta-8250":
+    native: "to compete"
+    notes:
+      n1: "Built from போட்டி (pōṭṭi), competition and இடு (iṭu), to put."
+    examples:
+      "போட்டியிடு.":
+        native: "Compete."
+        bases:
+          "போட்டியிடு": "to compete"
+      "அவர்கள் போட்டியிடுகிறார்கள்.":
+        native: "They compete."
+        bases:
+          "போட்டியிடுகிறார்கள்": "they compete; from போட்டியிடு (pōṭṭiyiṭu), to compete"
+  "ta-8251":
+    native: "to lose"
+    notes:
+      n1: "The opposite of ஜெயி (jeyi), to win; the noun தோல்வி (tōlvi), defeat is a word taught earlier."
+    examples:
+      "போட்டியில் தோற்று.":
+        native: "Lose in the match."
+        bases:
+          "போட்டியில்": "in the contest; from போட்டி (pōṭṭi), competition; match"
+          "தோற்று": "to lose"
+      "எதிரணி தோற்கிறது.":
+        native: "The opposing team loses."
+        bases:
+          "தோற்கிறது": "loses; from தோற்று (tōṟṟu), to lose"
+  "ta-8252":
+    native: "strong; powerful"
+    notes:
+      n1: "Said of a team, a body or a rope; the noun பலம் (palam), strength is taught earlier."
+    examples:
+      "இது பலமான அணி.":
+        native: "This is a strong team."
+        bases:
+          "பலமான": "strong; powerful"
+      "அவன் பலமானவன்.":
+        native: "He is a strong man."
+        bases:
+          "பலமானவன்": "a strong man; from பலமான (palamāṉa), strong"
+  "ta-8253":
+    native: "active; energetic"
+    notes:
+      n1: "Said of a person who moves quickly and does not tire."
+    examples:
+      "அவள் சுறுசுறுப்பான பெண்.":
+        native: "She is an active girl."
+        bases:
+          "சுறுசுறுப்பான": "active; energetic"
+      "அவன் சுறுசுறுப்பானவன்.":
+        native: "He is an energetic man."
+        bases:
+          "சுறுசுறுப்பானவன்": "an energetic man; from சுறுசுறுப்பான (cuṟucuṟuppāṉa), energetic"
+  "ta-8254":
+    native: "fair; just"
+    notes:
+      n1: "Said of a decision, a price or a person."
+    examples:
+      "இது நியாயமான முடிவு.":
+        native: "This is a fair decision."
+        bases:
+          "நியாயமான": "fair; just"
+      "நடுவர் நியாயமானவர்.":
+        native: "The referee is fair."
+        bases:
+          "நியாயமானவர்": "a fair person; from நியாயமான (niyāyamāṉa), fair"
