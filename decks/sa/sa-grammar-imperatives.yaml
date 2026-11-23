@@ -1,0 +1,678 @@
+# The imperative (lot) of every verb of the course, active (parasmaipada) and middle (atmanepada); the voices a verb takes are those of sa-grammar-atmanepada.
+# Each cell is the first form of the person on the Wiktionary table; where the table lists more than one form (for example bhava and bhavatat) the first is taught.
+schema: 1
+id: "sa-grammar-imperatives"
+part: "core"
+kind: "rules"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+source: "en.wiktionary.org: the imperative block of the Present table on the entry of each verb's present form (the table that also gives the present and the optative), read 2026-11-16; Whitney, Sanskrit Grammar 569, 570, 572 (the imperative) on en.wikisource, read 2026-11-16; Panini, Astadhyayi 3.3.161, 3.3.162, 3.4.85, 3.4.86, 3.4.87, 3.4.89, 3.4.90, 3.4.92, 6.4.101 and 6.4.105 as typed on sa.wikisource.org/wiki/अष्टाध्यायी (the third and the sixth chapter pages), read 2026-11-16; readings from tools/transcribe.py (sa)."
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+  slots: ["p3-sg", "p3-du", "p3-pl", "p2-sg", "p2-du", "p2-pl", "p1-sg", "p1-du", "p1-pl", "m3-sg", "m3-du", "m3-pl", "m2-sg", "m2-du", "m2-pl", "m1-sg", "m1-du", "m1-pl"]
+  rows:
+    - word: "sa-0430"
+      forms: { "p3-sg": "भवतु", "p3-du": "भवताम्", "p3-pl": "भवन्तु", "p2-sg": "भव", "p2-du": "भवतम्", "p2-pl": "भवत", "p1-sg": "भवानि", "p1-du": "भवाव", "p1-pl": "भवाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "bhavatu", "p3-du": "bhavatām", "p3-pl": "bhavantu", "p2-sg": "bhava", "p2-du": "bhavatam", "p2-pl": "bhavata", "p1-sg": "bhavāni", "p1-du": "bhavāva", "p1-pl": "bhavāma" }
+    - word: "sa-0431"
+      forms: { "p3-sg": "गच्छतु", "p3-du": "गच्छताम्", "p3-pl": "गच्छन्तु", "p2-sg": "गच्छ", "p2-du": "गच्छतम्", "p2-pl": "गच्छत", "p1-sg": "गच्छानि", "p1-du": "गच्छाव", "p1-pl": "गच्छाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "gacchatu", "p3-du": "gacchatām", "p3-pl": "gacchantu", "p2-sg": "gaccha", "p2-du": "gacchatam", "p2-pl": "gacchata", "p1-sg": "gacchāni", "p1-du": "gacchāva", "p1-pl": "gacchāma" }
+    - word: "sa-0432"
+      forms: { "p3-sg": "पठतु", "p3-du": "पठताम्", "p3-pl": "पठन्तु", "p2-sg": "पठ", "p2-du": "पठतम्", "p2-pl": "पठत", "p1-sg": "पठानि", "p1-du": "पठाव", "p1-pl": "पठाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "paṭhatu", "p3-du": "paṭhatām", "p3-pl": "paṭhantu", "p2-sg": "paṭha", "p2-du": "paṭhatam", "p2-pl": "paṭhata", "p1-sg": "paṭhāni", "p1-du": "paṭhāva", "p1-pl": "paṭhāma" }
+    - word: "sa-0433"
+      forms: { "p3-sg": "वदतु", "p3-du": "वदताम्", "p3-pl": "वदन्तु", "p2-sg": "वद", "p2-du": "वदतम्", "p2-pl": "वदत", "p1-sg": "वदानि", "p1-du": "वदाव", "p1-pl": "वदाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "vadatu", "p3-du": "vadatām", "p3-pl": "vadantu", "p2-sg": "vada", "p2-du": "vadatam", "p2-pl": "vadata", "p1-sg": "vadāni", "p1-du": "vadāva", "p1-pl": "vadāma" }
+    - word: "sa-0434"
+      forms: { "p3-sg": "पचतु", "p3-du": "पचताम्", "p3-pl": "पचन्तु", "p2-sg": "पच", "p2-du": "पचतम्", "p2-pl": "पचत", "p1-sg": "पचानि", "p1-du": "पचाव", "p1-pl": "पचाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "pacatu", "p3-du": "pacatām", "p3-pl": "pacantu", "p2-sg": "paca", "p2-du": "pacatam", "p2-pl": "pacata", "p1-sg": "pacāni", "p1-du": "pacāva", "p1-pl": "pacāma" }
+    - word: "sa-0435"
+      forms: { "p3-sg": "नयतु", "p3-du": "नयताम्", "p3-pl": "नयन्तु", "p2-sg": "नय", "p2-du": "नयतम्", "p2-pl": "नयत", "p1-sg": "नयानि", "p1-du": "नयाव", "p1-pl": "नयाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "nayatu", "p3-du": "nayatām", "p3-pl": "nayantu", "p2-sg": "naya", "p2-du": "nayatam", "p2-pl": "nayata", "p1-sg": "nayāni", "p1-du": "nayāva", "p1-pl": "nayāma" }
+    - word: "sa-2000"
+      forms: { "p3-sg": "खादतु", "p3-du": "खादताम्", "p3-pl": "खादन्तु", "p2-sg": "खाद", "p2-du": "खादतम्", "p2-pl": "खादत", "p1-sg": "खादानि", "p1-du": "खादाव", "p1-pl": "खादाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "khādatu", "p3-du": "khādatām", "p3-pl": "khādantu", "p2-sg": "khāda", "p2-du": "khādatam", "p2-pl": "khādata", "p1-sg": "khādāni", "p1-du": "khādāva", "p1-pl": "khādāma" }
+    - word: "sa-2001"
+      forms: { "p3-sg": "पिबतु", "p3-du": "पिबताम्", "p3-pl": "पिबन्तु", "p2-sg": "पिब", "p2-du": "पिबतम्", "p2-pl": "पिबत", "p1-sg": "पिबानि", "p1-du": "पिबाव", "p1-pl": "पिबाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "pibatu", "p3-du": "pibatām", "p3-pl": "pibantu", "p2-sg": "piba", "p2-du": "pibatam", "p2-pl": "pibata", "p1-sg": "pibāni", "p1-du": "pibāva", "p1-pl": "pibāma" }
+    - word: "sa-2002"
+      forms: { "p3-sg": "तिष्ठतु", "p3-du": "तिष्ठताम्", "p3-pl": "तिष्ठन्तु", "p2-sg": "तिष्ठ", "p2-du": "तिष्ठतम्", "p2-pl": "तिष्ठत", "p1-sg": "तिष्ठानि", "p1-du": "तिष्ठाव", "p1-pl": "तिष्ठाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "tiṣṭhatu", "p3-du": "tiṣṭhatām", "p3-pl": "tiṣṭhantu", "p2-sg": "tiṣṭha", "p2-du": "tiṣṭhatam", "p2-pl": "tiṣṭhata", "p1-sg": "tiṣṭhāni", "p1-du": "tiṣṭhāva", "p1-pl": "tiṣṭhāma" }
+    - word: "sa-2003"
+      forms: { "p3-sg": "हसतु", "p3-du": "हसताम्", "p3-pl": "हसन्तु", "p2-sg": "हस", "p2-du": "हसतम्", "p2-pl": "हसत", "p1-sg": "हसानि", "p1-du": "हसाव", "p1-pl": "हसाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "hasatu", "p3-du": "hasatām", "p3-pl": "hasantu", "p2-sg": "hasa", "p2-du": "hasatam", "p2-pl": "hasata", "p1-sg": "hasāni", "p1-du": "hasāva", "p1-pl": "hasāma" }
+    - word: "sa-2004"
+      forms: { "p3-sg": "रक्षतु", "p3-du": "रक्षताम्", "p3-pl": "रक्षन्तु", "p2-sg": "रक्ष", "p2-du": "रक्षतम्", "p2-pl": "रक्षत", "p1-sg": "रक्षाणि", "p1-du": "रक्षाव", "p1-pl": "रक्षाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "rakṣatu", "p3-du": "rakṣatām", "p3-pl": "rakṣantu", "p2-sg": "rakṣa", "p2-du": "rakṣatam", "p2-pl": "rakṣata", "p1-sg": "rakṣāṇi", "p1-du": "rakṣāva", "p1-pl": "rakṣāma" }
+    - word: "sa-2005"
+      forms: { "p3-sg": "वसतु", "p3-du": "वसताम्", "p3-pl": "वसन्तु", "p2-sg": "वस", "p2-du": "वसतम्", "p2-pl": "वसत", "p1-sg": "वसानि", "p1-du": "वसाव", "p1-pl": "वसाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "vasatu", "p3-du": "vasatām", "p3-pl": "vasantu", "p2-sg": "vasa", "p2-du": "vasatam", "p2-pl": "vasata", "p1-sg": "vasāni", "p1-du": "vasāva", "p1-pl": "vasāma" }
+    - word: "sa-2006"
+      forms: { "p3-sg": "नमतु", "p3-du": "नमताम्", "p3-pl": "नमन्तु", "p2-sg": "नम", "p2-du": "नमतम्", "p2-pl": "नमत", "p1-sg": "नमानि", "p1-du": "नमाव", "p1-pl": "नमाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "namatu", "p3-du": "namatām", "p3-pl": "namantu", "p2-sg": "nama", "p2-du": "namatam", "p2-pl": "namata", "p1-sg": "namāni", "p1-du": "namāva", "p1-pl": "namāma" }
+    - word: "sa-2007"
+      forms: { "p3-sg": "जयतु", "p3-du": "जयताम्", "p3-pl": "जयन्तु", "p2-sg": "जय", "p2-du": "जयतम्", "p2-pl": "जयत", "p1-sg": "जयानि", "p1-du": "जयाव", "p1-pl": "जयाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "jayatu", "p3-du": "jayatām", "p3-pl": "jayantu", "p2-sg": "jaya", "p2-du": "jayatam", "p2-pl": "jayata", "p1-sg": "jayāni", "p1-du": "jayāva", "p1-pl": "jayāma" }
+    - word: "sa-2008"
+      forms: { "p3-sg": "स्मरतु", "p3-du": "स्मरताम्", "p3-pl": "स्मरन्तु", "p2-sg": "स्मर", "p2-du": "स्मरतम्", "p2-pl": "स्मरत", "p1-sg": "स्मराणि", "p1-du": "स्मराव", "p1-pl": "स्मराम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "smaratu", "p3-du": "smaratām", "p3-pl": "smarantu", "p2-sg": "smara", "p2-du": "smaratam", "p2-pl": "smarata", "p1-sg": "smarāṇi", "p1-du": "smarāva", "p1-pl": "smarāma" }
+    - word: "sa-2009"
+      forms: { "p3-sg": "धावतु", "p3-du": "धावताम्", "p3-pl": "धावन्तु", "p2-sg": "धाव", "p2-du": "धावतम्", "p2-pl": "धावत", "p1-sg": "धावानि", "p1-du": "धावाव", "p1-pl": "धावाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "dhāvatu", "p3-du": "dhāvatām", "p3-pl": "dhāvantu", "p2-sg": "dhāva", "p2-du": "dhāvatam", "p2-pl": "dhāvata", "p1-sg": "dhāvāni", "p1-du": "dhāvāva", "p1-pl": "dhāvāma" }
+    - word: "sa-2010"
+      forms: { "p3-sg": "पततु", "p3-du": "पतताम्", "p3-pl": "पतन्तु", "p2-sg": "पत", "p2-du": "पततम्", "p2-pl": "पतत", "p1-sg": "पतानि", "p1-du": "पताव", "p1-pl": "पताम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "patatu", "p3-du": "patatām", "p3-pl": "patantu", "p2-sg": "pata", "p2-du": "patatam", "p2-pl": "patata", "p1-sg": "patāni", "p1-du": "patāva", "p1-pl": "patāma" }
+    - word: "sa-2011"
+      forms: { "p3-sg": "चलतु", "p3-du": "चलताम्", "p3-pl": "चलन्तु", "p2-sg": "चल", "p2-du": "चलतम्", "p2-pl": "चलत", "p1-sg": "चलानि", "p1-du": "चलाव", "p1-pl": "चलाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "calatu", "p3-du": "calatām", "p3-pl": "calantu", "p2-sg": "cala", "p2-du": "calatam", "p2-pl": "calata", "p1-sg": "calāni", "p1-du": "calāva", "p1-pl": "calāma" }
+    - word: "sa-2012"
+      forms: { "p3-sg": "क्रीडतु", "p3-du": "क्रीडताम्", "p3-pl": "क्रीडन्तु", "p2-sg": "क्रीड", "p2-du": "क्रीडतम्", "p2-pl": "क्रीडत", "p1-sg": "क्रीडानि", "p1-du": "क्रीडाव", "p1-pl": "क्रीडाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "krīḍatu", "p3-du": "krīḍatām", "p3-pl": "krīḍantu", "p2-sg": "krīḍa", "p2-du": "krīḍatam", "p2-pl": "krīḍata", "p1-sg": "krīḍāni", "p1-du": "krīḍāva", "p1-pl": "krīḍāma" }
+    - word: "sa-2013"
+      forms: { "p3-sg": "जीवतु", "p3-du": "जीवताम्", "p3-pl": "जीवन्तु", "p2-sg": "जीव", "p2-du": "जीवतम्", "p2-pl": "जीवत", "p1-sg": "जीवानि", "p1-du": "जीवाव", "p1-pl": "जीवाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "jīvatu", "p3-du": "jīvatām", "p3-pl": "jīvantu", "p2-sg": "jīva", "p2-du": "jīvatam", "p2-pl": "jīvata", "p1-sg": "jīvāni", "p1-du": "jīvāva", "p1-pl": "jīvāma" }
+    - word: "sa-2014"
+      forms: { "p3-sg": "चरतु", "p3-du": "चरताम्", "p3-pl": "चरन्तु", "p2-sg": "चर", "p2-du": "चरतम्", "p2-pl": "चरत", "p1-sg": "चराणि", "p1-du": "चराव", "p1-pl": "चराम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "caratu", "p3-du": "caratām", "p3-pl": "carantu", "p2-sg": "cara", "p2-du": "caratam", "p2-pl": "carata", "p1-sg": "carāṇi", "p1-du": "carāva", "p1-pl": "carāma" }
+    - word: "sa-2015"
+      forms: { "p3-sg": "वहतु", "p3-du": "वहताम्", "p3-pl": "वहन्तु", "p2-sg": "वह", "p2-du": "वहतम्", "p2-pl": "वहत", "p1-sg": "वहानि", "p1-du": "वहाव", "p1-pl": "वहाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "vahatu", "p3-du": "vahatām", "p3-pl": "vahantu", "p2-sg": "vaha", "p2-du": "vahatam", "p2-pl": "vahata", "p1-sg": "vahāni", "p1-du": "vahāva", "p1-pl": "vahāma" }
+    - word: "sa-2016"
+      forms: { "p3-sg": "हरतु", "p3-du": "हरताम्", "p3-pl": "हरन्तु", "p2-sg": "हर", "p2-du": "हरतम्", "p2-pl": "हरत", "p1-sg": "हराणि", "p1-du": "हराव", "p1-pl": "हराम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "haratu", "p3-du": "haratām", "p3-pl": "harantu", "p2-sg": "hara", "p2-du": "haratam", "p2-pl": "harata", "p1-sg": "harāṇi", "p1-du": "harāva", "p1-pl": "harāma" }
+    - word: "sa-2017"
+      forms: { "p3-sg": "सरतु", "p3-du": "सरताम्", "p3-pl": "सरन्तु", "p2-sg": "सर", "p2-du": "सरतम्", "p2-pl": "सरत", "p1-sg": "सराणि", "p1-du": "सराव", "p1-pl": "सराम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "saratu", "p3-du": "saratām", "p3-pl": "sarantu", "p2-sg": "sara", "p2-du": "saratam", "p2-pl": "sarata", "p1-sg": "sarāṇi", "p1-du": "sarāva", "p1-pl": "sarāma" }
+    - word: "sa-2018"
+      forms: { "p3-sg": "गायतु", "p3-du": "गायताम्", "p3-pl": "गायन्तु", "p2-sg": "गाय", "p2-du": "गायतम्", "p2-pl": "गायत", "p1-sg": "गायानि", "p1-du": "गायाव", "p1-pl": "गायाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "gāyatu", "p3-du": "gāyatām", "p3-pl": "gāyantu", "p2-sg": "gāya", "p2-du": "gāyatam", "p2-pl": "gāyata", "p1-sg": "gāyāni", "p1-du": "gāyāva", "p1-pl": "gāyāma" }
+    - word: "sa-2019"
+      forms: { "p3-sg": "तपतु", "p3-du": "तपताम्", "p3-pl": "तपन्तु", "p2-sg": "तप", "p2-du": "तपतम्", "p2-pl": "तपत", "p1-sg": "तपानि", "p1-du": "तपाव", "p1-pl": "तपाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "tapatu", "p3-du": "tapatām", "p3-pl": "tapantu", "p2-sg": "tapa", "p2-du": "tapatam", "p2-pl": "tapata", "p1-sg": "tapāni", "p1-du": "tapāva", "p1-pl": "tapāma" }
+    - word: "sa-2020"
+      forms: { "p3-sg": "धरतु", "p3-du": "धरताम्", "p3-pl": "धरन्तु", "p2-sg": "धर", "p2-du": "धरतम्", "p2-pl": "धरत", "p1-sg": "धराणि", "p1-du": "धराव", "p1-pl": "धराम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "dharatu", "p3-du": "dharatām", "p3-pl": "dharantu", "p2-sg": "dhara", "p2-du": "dharatam", "p2-pl": "dharata", "p1-sg": "dharāṇi", "p1-du": "dharāva", "p1-pl": "dharāma" }
+    - word: "sa-2021"
+      forms: { "p3-sg": "जपतु", "p3-du": "जपताम्", "p3-pl": "जपन्तु", "p2-sg": "जप", "p2-du": "जपतम्", "p2-pl": "जपत", "p1-sg": "जपानि", "p1-du": "जपाव", "p1-pl": "जपाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "japatu", "p3-du": "japatām", "p3-pl": "japantu", "p2-sg": "japa", "p2-du": "japatam", "p2-pl": "japata", "p1-sg": "japāni", "p1-du": "japāva", "p1-pl": "japāma" }
+    - word: "sa-2022"
+      forms: { "p3-sg": "खनतु", "p3-du": "खनताम्", "p3-pl": "खनन्तु", "p2-sg": "खन", "p2-du": "खनतम्", "p2-pl": "खनत", "p1-sg": "खनानि", "p1-du": "खनाव", "p1-pl": "खनाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "khanatu", "p3-du": "khanatām", "p3-pl": "khanantu", "p2-sg": "khana", "p2-du": "khanatam", "p2-pl": "khanata", "p1-sg": "khanāni", "p1-du": "khanāva", "p1-pl": "khanāma" }
+    - word: "sa-2023"
+      forms: { "p3-sg": "ह्वयतु", "p3-du": "ह्वयताम्", "p3-pl": "ह्वयन्तु", "p2-sg": "ह्वय", "p2-du": "ह्वयतम्", "p2-pl": "ह्वयत", "p1-sg": "ह्वयानि", "p1-du": "ह्वयाव", "p1-pl": "ह्वयाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "hvayatu", "p3-du": "hvayatām", "p3-pl": "hvayantu", "p2-sg": "hvaya", "p2-du": "hvayatam", "p2-pl": "hvayata", "p1-sg": "hvayāni", "p1-du": "hvayāva", "p1-pl": "hvayāma" }
+    - word: "sa-2100"
+      forms: { "p3-sg": "क्षरतु", "p3-du": "क्षरताम्", "p3-pl": "क्षरन्तु", "p2-sg": "क्षर", "p2-du": "क्षरतम्", "p2-pl": "क्षरत", "p1-sg": "क्षराणि", "p1-du": "क्षराव", "p1-pl": "क्षराम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "kṣaratu", "p3-du": "kṣaratām", "p3-pl": "kṣarantu", "p2-sg": "kṣara", "p2-du": "kṣaratam", "p2-pl": "kṣarata", "p1-sg": "kṣarāṇi", "p1-du": "kṣarāva", "p1-pl": "kṣarāma" }
+    - word: "sa-2101"
+      forms: { "p3-sg": "रुणद्धु", "p3-du": "रुन्द्धाम्", "p3-pl": "रुन्धन्तु", "p2-sg": "रुन्द्धि", "p2-du": "रुन्द्धम्", "p2-pl": "रुन्द्ध", "p1-sg": "रुणधानि", "p1-du": "रुणधाव", "p1-pl": "रुणधाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "ruṇaddhu", "p3-du": "runddhām", "p3-pl": "rundhantu", "p2-sg": "runddhi", "p2-du": "runddham", "p2-pl": "runddha", "p1-sg": "ruṇadhāni", "p1-du": "ruṇadhāva", "p1-pl": "ruṇadhāma" }
+    - word: "sa-2102"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "लभताम्", "m3-du": "लभेताम्", "m3-pl": "लभन्ताम्", "m2-sg": "लभस्व", "m2-du": "लभेथाम्", "m2-pl": "लभध्वम्", "m1-sg": "लभै", "m1-du": "लभावहै", "m1-pl": "लभामहै" }
+      readings: { "m3-sg": "labhatām", "m3-du": "labhetām", "m3-pl": "labhantām", "m2-sg": "labhasva", "m2-du": "labhethām", "m2-pl": "labhadhvam", "m1-sg": "labhai", "m1-du": "labhāvahai", "m1-pl": "labhāmahai" }
+    - word: "sa-2103"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "वर्तताम्", "m3-du": "वर्तेताम्", "m3-pl": "वर्तन्ताम्", "m2-sg": "वर्तस्व", "m2-du": "वर्तेथाम्", "m2-pl": "वर्तध्वम्", "m1-sg": "वर्तै", "m1-du": "वर्तावहै", "m1-pl": "वर्तामहै" }
+      readings: { "m3-sg": "vartatām", "m3-du": "vartetām", "m3-pl": "vartantām", "m2-sg": "vartasva", "m2-du": "vartethām", "m2-pl": "vartadhvam", "m1-sg": "vartai", "m1-du": "vartāvahai", "m1-pl": "vartāmahai" }
+    - word: "sa-2104"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "ईक्षताम्", "m3-du": "ईक्षेताम्", "m3-pl": "ईक्षन्ताम्", "m2-sg": "ईक्षस्व", "m2-du": "ईक्षेथाम्", "m2-pl": "ईक्षध्वम्", "m1-sg": "ईक्षै", "m1-du": "ईक्षावहै", "m1-pl": "ईक्षामहै" }
+      readings: { "m3-sg": "īkṣatām", "m3-du": "īkṣetām", "m3-pl": "īkṣantām", "m2-sg": "īkṣasva", "m2-du": "īkṣethām", "m2-pl": "īkṣadhvam", "m1-sg": "īkṣai", "m1-du": "īkṣāvahai", "m1-pl": "īkṣāmahai" }
+    - word: "sa-2105"
+      forms: { "p3-sg": "अस्तु", "p3-du": "स्ताम्", "p3-pl": "सन्तु", "p2-sg": "एधि", "p2-du": "स्तम्", "p2-pl": "स्त", "p1-sg": "असानि", "p1-du": "असाव", "p1-pl": "असाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "astu", "p3-du": "stām", "p3-pl": "santu", "p2-sg": "edhi", "p2-du": "stam", "p2-pl": "sta", "p1-sg": "asāni", "p1-du": "asāva", "p1-pl": "asāma" }
+    - word: "sa-2106"
+      forms: { "p3-sg": "रोदितु", "p3-du": "रुदिताम्", "p3-pl": "रुदन्तु", "p2-sg": "रुदिहि", "p2-du": "रुदितम्", "p2-pl": "रुदित", "p1-sg": "रोदानि", "p1-du": "रोदाव", "p1-pl": "रोदाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "roditu", "p3-du": "ruditām", "p3-pl": "rudantu", "p2-sg": "rudihi", "p2-du": "ruditam", "p2-pl": "rudita", "p1-sg": "rodāni", "p1-du": "rodāva", "p1-pl": "rodāma" }
+    - word: "sa-2107"
+      forms: { "p3-sg": "यातु", "p3-du": "याताम्", "p3-pl": "यान्तु", "p2-sg": "याहि", "p2-du": "यातम्", "p2-pl": "यात", "p1-sg": "यानि", "p1-du": "याव", "p1-pl": "याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "yātu", "p3-du": "yātām", "p3-pl": "yāntu", "p2-sg": "yāhi", "p2-du": "yātam", "p2-pl": "yāta", "p1-sg": "yāni", "p1-du": "yāva", "p1-pl": "yāma" }
+    - word: "sa-2108"
+      forms: { "p3-sg": "ब्रवीतु", "p3-du": "ब्रूताम्", "p3-pl": "ब्रुवन्तु", "p2-sg": "ब्रूहि", "p2-du": "ब्रूतम्", "p2-pl": "ब्रूत", "p1-sg": "ब्रवाणि", "p1-du": "ब्रवाव", "p1-pl": "ब्रवाम", "m3-sg": "ब्रूताम्", "m3-du": "ब्रुवाताम्", "m3-pl": "ब्रुवताम्", "m2-sg": "ब्रूष्व", "m2-du": "ब्रुवाथाम्", "m2-pl": "ब्रूध्वम्", "m1-sg": "ब्रवै", "m1-du": "ब्रवावहै", "m1-pl": "ब्रवामहै" }
+      readings: { "p3-sg": "bravītu", "p3-du": "brūtām", "p3-pl": "bruvantu", "p2-sg": "brūhi", "p2-du": "brūtam", "p2-pl": "brūta", "p1-sg": "bravāṇi", "p1-du": "bravāva", "p1-pl": "bravāma", "m3-sg": "brūtām", "m3-du": "bruvātām", "m3-pl": "bruvatām", "m2-sg": "brūṣva", "m2-du": "bruvāthām", "m2-pl": "brūdhvam", "m1-sg": "bravai", "m1-du": "bravāvahai", "m1-pl": "bravāmahai" }
+    - word: "sa-2109"
+      forms: { "p3-sg": "ददातु", "p3-du": "दत्ताम्", "p3-pl": "ददतु", "p2-sg": "देहि", "p2-du": "दत्तम्", "p2-pl": "दत्त", "p1-sg": "ददानि", "p1-du": "ददाव", "p1-pl": "ददाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "dadātu", "p3-du": "dattām", "p3-pl": "dadatu", "p2-sg": "dehi", "p2-du": "dattam", "p2-pl": "datta", "p1-sg": "dadāni", "p1-du": "dadāva", "p1-pl": "dadāma" }
+    - word: "sa-2110"
+      forms: { "p3-sg": "दधातु", "p3-du": "धत्ताम्", "p3-pl": "दधतु", "p2-sg": "धेहि", "p2-du": "धत्तम्", "p2-pl": "धत्त", "p1-sg": "दधानि", "p1-du": "दधाव", "p1-pl": "दधाम", "m3-sg": "धत्ताम्", "m3-du": "दधाताम्", "m3-pl": "दधताम्", "m2-sg": "धत्स्व", "m2-du": "दधाथाम्", "m2-pl": "धद्ध्वम्", "m1-sg": "दधै", "m1-du": "दधावहै", "m1-pl": "दधामहै" }
+      readings: { "p3-sg": "dadhātu", "p3-du": "dhattām", "p3-pl": "dadhatu", "p2-sg": "dhehi", "p2-du": "dhattam", "p2-pl": "dhatta", "p1-sg": "dadhāni", "p1-du": "dadhāva", "p1-pl": "dadhāma", "m3-sg": "dhattām", "m3-du": "dadhātām", "m3-pl": "dadhatām", "m2-sg": "dhatsva", "m2-du": "dadhāthām", "m2-pl": "dhaddhvam", "m1-sg": "dadhai", "m1-du": "dadhāvahai", "m1-pl": "dadhāmahai" }
+    - word: "sa-2111"
+      forms: { "p3-sg": "पश्यतु", "p3-du": "पश्यताम्", "p3-pl": "पश्यन्तु", "p2-sg": "पश्य", "p2-du": "पश्यतम्", "p2-pl": "पश्यत", "p1-sg": "पश्यानि", "p1-du": "पश्याव", "p1-pl": "पश्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "paśyatu", "p3-du": "paśyatām", "p3-pl": "paśyantu", "p2-sg": "paśya", "p2-du": "paśyatam", "p2-pl": "paśyata", "p1-sg": "paśyāni", "p1-du": "paśyāva", "p1-pl": "paśyāma" }
+    - word: "sa-2112"
+      forms: { "p3-sg": "नृत्यतु", "p3-du": "नृत्यताम्", "p3-pl": "नृत्यन्तु", "p2-sg": "नृत्य", "p2-du": "नृत्यतम्", "p2-pl": "नृत्यत", "p1-sg": "नृत्यानि", "p1-du": "नृत्याव", "p1-pl": "नृत्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "nṛtyatu", "p3-du": "nṛtyatām", "p3-pl": "nṛtyantu", "p2-sg": "nṛtya", "p2-du": "nṛtyatam", "p2-pl": "nṛtyata", "p1-sg": "nṛtyāni", "p1-du": "nṛtyāva", "p1-pl": "nṛtyāma" }
+    - word: "sa-2113"
+      forms: { "p3-sg": "शृणोतु", "p3-du": "शृणुताम्", "p3-pl": "शृण्वन्तु", "p2-sg": "शृणु", "p2-du": "शृणुतम्", "p2-pl": "शृणुत", "p1-sg": "शृणवानि", "p1-du": "शृणवाव", "p1-pl": "शृणवाम", "m3-sg": "शृणुताम्", "m3-du": "शृण्वाताम्", "m3-pl": "शृण्वताम्", "m2-sg": "शृणुष्व", "m2-du": "शृण्वाथाम्", "m2-pl": "शृणुध्वम्", "m1-sg": "शृणवै", "m1-du": "शृणवावहै", "m1-pl": "शृणवामहै" }
+      readings: { "p3-sg": "śṛṇotu", "p3-du": "śṛṇutām", "p3-pl": "śṛṇvantu", "p2-sg": "śṛṇu", "p2-du": "śṛṇutam", "p2-pl": "śṛṇuta", "p1-sg": "śṛṇavāni", "p1-du": "śṛṇavāva", "p1-pl": "śṛṇavāma", "m3-sg": "śṛṇutām", "m3-du": "śṛṇvātām", "m3-pl": "śṛṇvatām", "m2-sg": "śṛṇuṣva", "m2-du": "śṛṇvāthām", "m2-pl": "śṛṇudhvam", "m1-sg": "śṛṇavai", "m1-du": "śṛṇavāvahai", "m1-pl": "śṛṇavāmahai" }
+    - word: "sa-2114"
+      forms: { "p3-sg": "लिखतु", "p3-du": "लिखताम्", "p3-pl": "लिखन्तु", "p2-sg": "लिख", "p2-du": "लिखतम्", "p2-pl": "लिखत", "p1-sg": "लिखानि", "p1-du": "लिखाव", "p1-pl": "लिखाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "likhatu", "p3-du": "likhatām", "p3-pl": "likhantu", "p2-sg": "likha", "p2-du": "likhatam", "p2-pl": "likhata", "p1-sg": "likhāni", "p1-du": "likhāva", "p1-pl": "likhāma" }
+    - word: "sa-2115"
+      forms: { "p3-sg": "विशतु", "p3-du": "विशताम्", "p3-pl": "विशन्तु", "p2-sg": "विश", "p2-du": "विशतम्", "p2-pl": "विशत", "p1-sg": "विशानि", "p1-du": "विशाव", "p1-pl": "विशाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "viśatu", "p3-du": "viśatām", "p3-pl": "viśantu", "p2-sg": "viśa", "p2-du": "viśatam", "p2-pl": "viśata", "p1-sg": "viśāni", "p1-du": "viśāva", "p1-pl": "viśāma" }
+    - word: "sa-2116"
+      forms: { "p3-sg": "इच्छतु", "p3-du": "इच्छताम्", "p3-pl": "इच्छन्तु", "p2-sg": "इच्छ", "p2-du": "इच्छतम्", "p2-pl": "इच्छत", "p1-sg": "इच्छानि", "p1-du": "इच्छाव", "p1-pl": "इच्छाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "icchatu", "p3-du": "icchatām", "p3-pl": "icchantu", "p2-sg": "iccha", "p2-du": "icchatam", "p2-pl": "icchata", "p1-sg": "icchāni", "p1-du": "icchāva", "p1-pl": "icchāma" }
+    - word: "sa-2117"
+      forms: { "p3-sg": "तुदतु", "p3-du": "तुदताम्", "p3-pl": "तुदन्तु", "p2-sg": "तुद", "p2-du": "तुदतम्", "p2-pl": "तुदत", "p1-sg": "तुदानि", "p1-du": "तुदाव", "p1-pl": "तुदाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "tudatu", "p3-du": "tudatām", "p3-pl": "tudantu", "p2-sg": "tuda", "p2-du": "tudatam", "p2-pl": "tudata", "p1-sg": "tudāni", "p1-du": "tudāva", "p1-pl": "tudāma" }
+    - word: "sa-2118"
+      forms: { "p3-sg": "करोतु", "p3-du": "कुरुताम्", "p3-pl": "कुर्वन्तु", "p2-sg": "कुरु", "p2-du": "कुरुतम्", "p2-pl": "कुरुत", "p1-sg": "करवाणि", "p1-du": "करवाव", "p1-pl": "करवाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "karotu", "p3-du": "kurutām", "p3-pl": "kurvantu", "p2-sg": "kuru", "p2-du": "kurutam", "p2-pl": "kuruta", "p1-sg": "karavāṇi", "p1-du": "karavāva", "p1-pl": "karavāma" }
+    - word: "sa-2119"
+      forms: { "p3-sg": "जानातु", "p3-du": "जानीताम्", "p3-pl": "जानन्तु", "p2-sg": "जानीहि", "p2-du": "जानीतम्", "p2-pl": "जानीत", "p1-sg": "जानानि", "p1-du": "जानाव", "p1-pl": "जानाम", "m3-sg": "जानीताम्", "m3-du": "जानाताम्", "m3-pl": "जानताम्", "m2-sg": "जानीष्व", "m2-du": "जानाथाम्", "m2-pl": "जानीध्वम्", "m1-sg": "जानै", "m1-du": "जानावहै", "m1-pl": "जानामहै" }
+      readings: { "p3-sg": "jānātu", "p3-du": "jānītām", "p3-pl": "jānantu", "p2-sg": "jānīhi", "p2-du": "jānītam", "p2-pl": "jānīta", "p1-sg": "jānāni", "p1-du": "jānāva", "p1-pl": "jānāma", "m3-sg": "jānītām", "m3-du": "jānātām", "m3-pl": "jānatām", "m2-sg": "jānīṣva", "m2-du": "jānāthām", "m2-pl": "jānīdhvam", "m1-sg": "jānai", "m1-du": "jānāvahai", "m1-pl": "jānāmahai" }
+    - word: "sa-2120"
+      forms: { "p3-sg": "क्रीणातु", "p3-du": "क्रीणीताम्", "p3-pl": "क्रीणन्तु", "p2-sg": "क्रीणीहि", "p2-du": "क्रीणीतम्", "p2-pl": "क्रीणीत", "p1-sg": "क्रीणानि", "p1-du": "क्रीणाव", "p1-pl": "क्रीणाम", "m3-sg": "क्रीणीताम्", "m3-du": "क्रीणाताम्", "m3-pl": "क्रीणताम्", "m2-sg": "क्रीणीष्व", "m2-du": "क्रीणाथाम्", "m2-pl": "क्रीणीध्वम्", "m1-sg": "क्रीणै", "m1-du": "क्रीणावहै", "m1-pl": "क्रीणामहै" }
+      readings: { "p3-sg": "krīṇātu", "p3-du": "krīṇītām", "p3-pl": "krīṇantu", "p2-sg": "krīṇīhi", "p2-du": "krīṇītam", "p2-pl": "krīṇīta", "p1-sg": "krīṇāni", "p1-du": "krīṇāva", "p1-pl": "krīṇāma", "m3-sg": "krīṇītām", "m3-du": "krīṇātām", "m3-pl": "krīṇatām", "m2-sg": "krīṇīṣva", "m2-du": "krīṇāthām", "m2-pl": "krīṇīdhvam", "m1-sg": "krīṇai", "m1-du": "krīṇāvahai", "m1-pl": "krīṇāmahai" }
+    - word: "sa-2121"
+      forms: { "p3-sg": "गृह्णातु", "p3-du": "गृह्णीताम्", "p3-pl": "गृह्णन्तु", "p2-sg": "गृहाण", "p2-du": "गृह्णीतम्", "p2-pl": "गृह्णीत", "p1-sg": "गृह्णानि", "p1-du": "गृह्णाव", "p1-pl": "गृह्णाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "gṛhṇātu", "p3-du": "gṛhṇītām", "p3-pl": "gṛhṇantu", "p2-sg": "gṛhāṇa", "p2-du": "gṛhṇītam", "p2-pl": "gṛhṇīta", "p1-sg": "gṛhṇāni", "p1-du": "gṛhṇāva", "p1-pl": "gṛhṇāma" }
+    - word: "sa-2122"
+      forms: { "p3-sg": "कथयतु", "p3-du": "कथयताम्", "p3-pl": "कथयन्तु", "p2-sg": "कथय", "p2-du": "कथयतम्", "p2-pl": "कथयत", "p1-sg": "कथयानि", "p1-du": "कथयाव", "p1-pl": "कथयाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "kathayatu", "p3-du": "kathayatām", "p3-pl": "kathayantu", "p2-sg": "kathaya", "p2-du": "kathayatam", "p2-pl": "kathayata", "p1-sg": "kathayāni", "p1-du": "kathayāva", "p1-pl": "kathayāma" }
+    - word: "sa-2123"
+      forms: { "p3-sg": "पूजयतु", "p3-du": "पूजयताम्", "p3-pl": "पूजयन्तु", "p2-sg": "पूजय", "p2-du": "पूजयतम्", "p2-pl": "पूजयत", "p1-sg": "पूजयानि", "p1-du": "पूजयाव", "p1-pl": "पूजयाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "pūjayatu", "p3-du": "pūjayatām", "p3-pl": "pūjayantu", "p2-sg": "pūjaya", "p2-du": "pūjayatam", "p2-pl": "pūjayata", "p1-sg": "pūjayāni", "p1-du": "pūjayāva", "p1-pl": "pūjayāma" }
+    - word: "sa-12000"
+      forms: { "p3-sg": "अर्हतु", "p3-du": "अर्हताम्", "p3-pl": "अर्हन्तु", "p2-sg": "अर्ह", "p2-du": "अर्हतम्", "p2-pl": "अर्हत", "p1-sg": "अर्हाणि", "p1-du": "अर्हाव", "p1-pl": "अर्हाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "arhatu", "p3-du": "arhatām", "p3-pl": "arhantu", "p2-sg": "arha", "p2-du": "arhatam", "p2-pl": "arhata", "p1-sg": "arhāṇi", "p1-du": "arhāva", "p1-pl": "arhāma" }
+    - word: "sa-12001"
+      forms: { "p3-sg": "वर्धतु", "p3-du": "वर्धताम्", "p3-pl": "वर्धन्तु", "p2-sg": "वर्ध", "p2-du": "वर्धतम्", "p2-pl": "वर्धत", "p1-sg": "वर्धानि", "p1-du": "वर्धाव", "p1-pl": "वर्धाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "vardhatu", "p3-du": "vardhatām", "p3-pl": "vardhantu", "p2-sg": "vardha", "p2-du": "vardhatam", "p2-pl": "vardhata", "p1-sg": "vardhāni", "p1-du": "vardhāva", "p1-pl": "vardhāma" }
+    - word: "sa-12002"
+      forms: { "p3-sg": "दहतु", "p3-du": "दहताम्", "p3-pl": "दहन्तु", "p2-sg": "दह", "p2-du": "दहतम्", "p2-pl": "दहत", "p1-sg": "दहानि", "p1-du": "दहाव", "p1-pl": "दहाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "dahatu", "p3-du": "dahatām", "p3-pl": "dahantu", "p2-sg": "daha", "p2-du": "dahatam", "p2-pl": "dahata", "p1-sg": "dahāni", "p1-du": "dahāva", "p1-pl": "dahāma" }
+    - word: "sa-12003"
+      forms: { "p3-sg": "भ्रमतु", "p3-du": "भ्रमताम्", "p3-pl": "भ्रमन्तु", "p2-sg": "भ्रम", "p2-du": "भ्रमतम्", "p2-pl": "भ्रमत", "p1-sg": "भ्रमाणि", "p1-du": "भ्रमाव", "p1-pl": "भ्रमाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "bhramatu", "p3-du": "bhramatām", "p3-pl": "bhramantu", "p2-sg": "bhrama", "p2-du": "bhramatam", "p2-pl": "bhramata", "p1-sg": "bhramāṇi", "p1-du": "bhramāva", "p1-pl": "bhramāma" }
+    - word: "sa-12004"
+      forms: { "p3-sg": "गूहतु", "p3-du": "गूहताम्", "p3-pl": "गूहन्तु", "p2-sg": "गूह", "p2-du": "गूहतम्", "p2-pl": "गूहत", "p1-sg": "गूहानि", "p1-du": "गूहाव", "p1-pl": "गूहाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "gūhatu", "p3-du": "gūhatām", "p3-pl": "gūhantu", "p2-sg": "gūha", "p2-du": "gūhatam", "p2-pl": "gūhata", "p1-sg": "gūhāni", "p1-du": "gūhāva", "p1-pl": "gūhāma" }
+    - word: "sa-12005"
+      forms: { "p3-sg": "दशतु", "p3-du": "दशताम्", "p3-pl": "दशन्तु", "p2-sg": "दश", "p2-du": "दशतम्", "p2-pl": "दशत", "p1-sg": "दशानि", "p1-du": "दशाव", "p1-pl": "दशाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "daśatu", "p3-du": "daśatām", "p3-pl": "daśantu", "p2-sg": "daśa", "p2-du": "daśatam", "p2-pl": "daśata", "p1-sg": "daśāni", "p1-du": "daśāva", "p1-pl": "daśāma" }
+    - word: "sa-12006"
+      forms: { "p3-sg": "बोधतु", "p3-du": "बोधताम्", "p3-pl": "बोधन्तु", "p2-sg": "बोध", "p2-du": "बोधतम्", "p2-pl": "बोधत", "p1-sg": "बोधानि", "p1-du": "बोधाव", "p1-pl": "बोधाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "bodhatu", "p3-du": "bodhatām", "p3-pl": "bodhantu", "p2-sg": "bodha", "p2-du": "bodhatam", "p2-pl": "bodhata", "p1-sg": "bodhāni", "p1-du": "bodhāva", "p1-pl": "bodhāma" }
+    - word: "sa-12007"
+      forms: { "p3-sg": "यच्छतु", "p3-du": "यच्छताम्", "p3-pl": "यच्छन्तु", "p2-sg": "यच्छ", "p2-du": "यच्छतम्", "p2-pl": "यच्छत", "p1-sg": "यच्छानि", "p1-du": "यच्छाव", "p1-pl": "यच्छाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "yacchatu", "p3-du": "yacchatām", "p3-pl": "yacchantu", "p2-sg": "yaccha", "p2-du": "yacchatam", "p2-pl": "yacchata", "p1-sg": "yacchāni", "p1-du": "yacchāva", "p1-pl": "yacchāma" }
+    - word: "sa-12008"
+      forms: { "p3-sg": "रोहतु", "p3-du": "रोहताम्", "p3-pl": "रोहन्तु", "p2-sg": "रोह", "p2-du": "रोहतम्", "p2-pl": "रोहत", "p1-sg": "रोहाणि", "p1-du": "रोहाव", "p1-pl": "रोहाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "rohatu", "p3-du": "rohatām", "p3-pl": "rohantu", "p2-sg": "roha", "p2-du": "rohatam", "p2-pl": "rohata", "p1-sg": "rohāṇi", "p1-du": "rohāva", "p1-pl": "rohāma" }
+    - word: "sa-12009"
+      forms: { "p3-sg": "वपतु", "p3-du": "वपताम्", "p3-pl": "वपन्तु", "p2-sg": "वप", "p2-du": "वपतम्", "p2-pl": "वपत", "p1-sg": "वपानि", "p1-du": "वपाव", "p1-pl": "वपाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "vapatu", "p3-du": "vapatām", "p3-pl": "vapantu", "p2-sg": "vapa", "p2-du": "vapatam", "p2-pl": "vapata", "p1-sg": "vapāni", "p1-du": "vapāva", "p1-pl": "vapāma" }
+    - word: "sa-12010"
+      forms: { "p3-sg": "सीदतु", "p3-du": "सीदताम्", "p3-pl": "सीदन्तु", "p2-sg": "सीद", "p2-du": "सीदतम्", "p2-pl": "सीदत", "p1-sg": "सीदानि", "p1-du": "सीदाव", "p1-pl": "सीदाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "sīdatu", "p3-du": "sīdatām", "p3-pl": "sīdantu", "p2-sg": "sīda", "p2-du": "sīdatam", "p2-pl": "sīdata", "p1-sg": "sīdāni", "p1-du": "sīdāva", "p1-pl": "sīdāma" }
+    - word: "sa-12011"
+      forms: { "p3-sg": "स्कन्दतु", "p3-du": "स्कन्दताम्", "p3-pl": "स्कन्दन्तु", "p2-sg": "स्कन्द", "p2-du": "स्कन्दतम्", "p2-pl": "स्कन्दत", "p1-sg": "स्कन्दानि", "p1-du": "स्कन्दाव", "p1-pl": "स्कन्दाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "skandatu", "p3-du": "skandatām", "p3-pl": "skandantu", "p2-sg": "skanda", "p2-du": "skandatam", "p2-pl": "skandata", "p1-sg": "skandāni", "p1-du": "skandāva", "p1-pl": "skandāma" }
+    - word: "sa-12012"
+      forms: { "p3-sg": "ज्वलतु", "p3-du": "ज्वलताम्", "p3-pl": "ज्वलन्तु", "p2-sg": "ज्वल", "p2-du": "ज्वलतम्", "p2-pl": "ज्वलत", "p1-sg": "ज्वलानि", "p1-du": "ज्वलाव", "p1-pl": "ज्वलाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "jvalatu", "p3-du": "jvalatām", "p3-pl": "jvalantu", "p2-sg": "jvala", "p2-du": "jvalatam", "p2-pl": "jvalata", "p1-sg": "jvalāni", "p1-du": "jvalāva", "p1-pl": "jvalāma" }
+    - word: "sa-12013"
+      forms: { "p3-sg": "त्रसतु", "p3-du": "त्रसताम्", "p3-pl": "त्रसन्तु", "p2-sg": "त्रस", "p2-du": "त्रसतम्", "p2-pl": "त्रसत", "p1-sg": "त्रसानि", "p1-du": "त्रसाव", "p1-pl": "त्रसाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "trasatu", "p3-du": "trasatām", "p3-pl": "trasantu", "p2-sg": "trasa", "p2-du": "trasatam", "p2-pl": "trasata", "p1-sg": "trasāni", "p1-du": "trasāva", "p1-pl": "trasāma" }
+    - word: "sa-12014"
+      forms: { "p3-sg": "द्रवतु", "p3-du": "द्रवताम्", "p3-pl": "द्रवन्तु", "p2-sg": "द्रव", "p2-du": "द्रवतम्", "p2-pl": "द्रवत", "p1-sg": "द्रवाणि", "p1-du": "द्रवाव", "p1-pl": "द्रवाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "dravatu", "p3-du": "dravatām", "p3-pl": "dravantu", "p2-sg": "drava", "p2-du": "dravatam", "p2-pl": "dravata", "p1-sg": "dravāṇi", "p1-du": "dravāva", "p1-pl": "dravāma" }
+    - word: "sa-12015"
+      forms: { "p3-sg": "बध्नातु", "p3-du": "बध्नीताम्", "p3-pl": "बध्नन्तु", "p2-sg": "बधान", "p2-du": "बध्नीतम्", "p2-pl": "बध्नीत", "p1-sg": "बध्नानि", "p1-du": "बध्नाव", "p1-pl": "बध्नाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "badhnātu", "p3-du": "badhnītām", "p3-pl": "badhnantu", "p2-sg": "badhāna", "p2-du": "badhnītam", "p2-pl": "badhnīta", "p1-sg": "badhnāni", "p1-du": "badhnāva", "p1-pl": "badhnāma" }
+    - word: "sa-12016"
+      forms: { "p3-sg": "बाधतु", "p3-du": "बाधताम्", "p3-pl": "बाधन्तु", "p2-sg": "बाध", "p2-du": "बाधतम्", "p2-pl": "बाधत", "p1-sg": "बाधानि", "p1-du": "बाधाव", "p1-pl": "बाधाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "bādhatu", "p3-du": "bādhatām", "p3-pl": "bādhantu", "p2-sg": "bādha", "p2-du": "bādhatam", "p2-pl": "bādhata", "p1-sg": "bādhāni", "p1-du": "bādhāva", "p1-pl": "bādhāma" }
+    - word: "sa-12017"
+      forms: { "p3-sg": "भक्षतु", "p3-du": "भक्षताम्", "p3-pl": "भक्षन्तु", "p2-sg": "भक्ष", "p2-du": "भक्षतम्", "p2-pl": "भक्षत", "p1-sg": "भक्षाणि", "p1-du": "भक्षाव", "p1-pl": "भक्षाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "bhakṣatu", "p3-du": "bhakṣatām", "p3-pl": "bhakṣantu", "p2-sg": "bhakṣa", "p2-du": "bhakṣatam", "p2-pl": "bhakṣata", "p1-sg": "bhakṣāṇi", "p1-du": "bhakṣāva", "p1-pl": "bhakṣāma" }
+    - word: "sa-12018"
+      forms: { "p3-sg": "भाषतु", "p3-du": "भाषताम्", "p3-pl": "भाषन्तु", "p2-sg": "भाष", "p2-du": "भाषतम्", "p2-pl": "भाषत", "p1-sg": "भाषाणि", "p1-du": "भाषाव", "p1-pl": "भाषाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "bhāṣatu", "p3-du": "bhāṣatām", "p3-pl": "bhāṣantu", "p2-sg": "bhāṣa", "p2-du": "bhāṣatam", "p2-pl": "bhāṣata", "p1-sg": "bhāṣāṇi", "p1-du": "bhāṣāva", "p1-pl": "bhāṣāma" }
+    - word: "sa-12019"
+      forms: { "p3-sg": "गदतु", "p3-du": "गदताम्", "p3-pl": "गदन्तु", "p2-sg": "गद", "p2-du": "गदतम्", "p2-pl": "गदत", "p1-sg": "गदानि", "p1-du": "गदाव", "p1-pl": "गदाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "gadatu", "p3-du": "gadatām", "p3-pl": "gadantu", "p2-sg": "gada", "p2-du": "gadatam", "p2-pl": "gadata", "p1-sg": "gadāni", "p1-du": "gadāva", "p1-pl": "gadāma" }
+    - word: "sa-12020"
+      forms: { "p3-sg": "स्वपतु", "p3-du": "स्वपताम्", "p3-pl": "स्वपन्तु", "p2-sg": "स्वप", "p2-du": "स्वपतम्", "p2-pl": "स्वपत", "p1-sg": "स्वपानि", "p1-du": "स्वपाव", "p1-pl": "स्वपाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "svapatu", "p3-du": "svapatām", "p3-pl": "svapantu", "p2-sg": "svapa", "p2-du": "svapatam", "p2-pl": "svapata", "p1-sg": "svapāni", "p1-du": "svapāva", "p1-pl": "svapāma" }
+    - word: "sa-12021"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "रमताम्", "m3-du": "रमेताम्", "m3-pl": "रमन्ताम्", "m2-sg": "रमस्व", "m2-du": "रमेथाम्", "m2-pl": "रमध्वम्", "m1-sg": "रमै", "m1-du": "रमावहै", "m1-pl": "रमामहै" }
+      readings: { "m3-sg": "ramatām", "m3-du": "rametām", "m3-pl": "ramantām", "m2-sg": "ramasva", "m2-du": "ramethām", "m2-pl": "ramadhvam", "m1-sg": "ramai", "m1-du": "ramāvahai", "m1-pl": "ramāmahai" }
+    - word: "sa-12022"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "रोचताम्", "m3-du": "रोचेताम्", "m3-pl": "रोचन्ताम्", "m2-sg": "रोचस्व", "m2-du": "रोचेथाम्", "m2-pl": "रोचध्वम्", "m1-sg": "रोचै", "m1-du": "रोचावहै", "m1-pl": "रोचामहै" }
+      readings: { "m3-sg": "rocatām", "m3-du": "rocetām", "m3-pl": "rocantām", "m2-sg": "rocasva", "m2-du": "rocethām", "m2-pl": "rocadhvam", "m1-sg": "rocai", "m1-du": "rocāvahai", "m1-pl": "rocāmahai" }
+    - word: "sa-12023"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "स्तम्भताम्", "m3-du": "स्तम्भेताम्", "m3-pl": "स्तम्भन्ताम्", "m2-sg": "स्तम्भस्व", "m2-du": "स्तम्भेथाम्", "m2-pl": "स्तम्भध्वम्", "m1-sg": "स्तम्भै", "m1-du": "स्तम्भावहै", "m1-pl": "स्तम्भामहै" }
+      readings: { "m3-sg": "stambhatām", "m3-du": "stambhetām", "m3-pl": "stambhantām", "m2-sg": "stambhasva", "m2-du": "stambhethām", "m2-pl": "stambhadhvam", "m1-sg": "stambhai", "m1-du": "stambhāvahai", "m1-pl": "stambhāmahai" }
+    - word: "sa-12024"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "त्वरताम्", "m3-du": "त्वरेताम्", "m3-pl": "त्वरन्ताम्", "m2-sg": "त्वरस्व", "m2-du": "त्वरेथाम्", "m2-pl": "त्वरध्वम्", "m1-sg": "त्वरै", "m1-du": "त्वरावहै", "m1-pl": "त्वरामहै" }
+      readings: { "m3-sg": "tvaratām", "m3-du": "tvaretām", "m3-pl": "tvarantām", "m2-sg": "tvarasva", "m2-du": "tvarethām", "m2-pl": "tvaradhvam", "m1-sg": "tvarai", "m1-du": "tvarāvahai", "m1-pl": "tvarāmahai" }
+    - word: "sa-12025"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "स्मयताम्", "m3-du": "स्मयेताम्", "m3-pl": "स्मयन्ताम्", "m2-sg": "स्मयस्व", "m2-du": "स्मयेथाम्", "m2-pl": "स्मयध्वम्", "m1-sg": "स्मयै", "m1-du": "स्मयावहै", "m1-pl": "स्मयामहै" }
+      readings: { "m3-sg": "smayatām", "m3-du": "smayetām", "m3-pl": "smayantām", "m2-sg": "smayasva", "m2-du": "smayethām", "m2-pl": "smayadhvam", "m1-sg": "smayai", "m1-du": "smayāvahai", "m1-pl": "smayāmahai" }
+    - word: "sa-12026"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "घटताम्", "m3-du": "घटेताम्", "m3-pl": "घटन्ताम्", "m2-sg": "घटस्व", "m2-du": "घटेथाम्", "m2-pl": "घटध्वम्", "m1-sg": "घटै", "m1-du": "घटावहै", "m1-pl": "घटामहै" }
+      readings: { "m3-sg": "ghaṭatām", "m3-du": "ghaṭetām", "m3-pl": "ghaṭantām", "m2-sg": "ghaṭasva", "m2-du": "ghaṭethām", "m2-pl": "ghaṭadhvam", "m1-sg": "ghaṭai", "m1-du": "ghaṭāvahai", "m1-pl": "ghaṭāmahai" }
+    - word: "sa-12027"
+      forms: { "p3-sg": "क्रुध्यतु", "p3-du": "क्रुध्यताम्", "p3-pl": "क्रुध्यन्तु", "p2-sg": "क्रुध्य", "p2-du": "क्रुध्यतम्", "p2-pl": "क्रुध्यत", "p1-sg": "क्रुध्यानि", "p1-du": "क्रुध्याव", "p1-pl": "क्रुध्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "krudhyatu", "p3-du": "krudhyatām", "p3-pl": "krudhyantu", "p2-sg": "krudhya", "p2-du": "krudhyatam", "p2-pl": "krudhyata", "p1-sg": "krudhyāni", "p1-du": "krudhyāva", "p1-pl": "krudhyāma" }
+    - word: "sa-12028"
+      forms: { "p3-sg": "दीव्यतु", "p3-du": "दीव्यताम्", "p3-pl": "दीव्यन्तु", "p2-sg": "दीव्य", "p2-du": "दीव्यतम्", "p2-pl": "दीव्यत", "p1-sg": "दीव्यानि", "p1-du": "दीव्याव", "p1-pl": "दीव्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "dīvyatu", "p3-du": "dīvyatām", "p3-pl": "dīvyantu", "p2-sg": "dīvya", "p2-du": "dīvyatam", "p2-pl": "dīvyata", "p1-sg": "dīvyāni", "p1-du": "dīvyāva", "p1-pl": "dīvyāma" }
+    - word: "sa-12029"
+      forms: { "p3-sg": "लुभ्यतु", "p3-du": "लुभ्यताम्", "p3-pl": "लुभ्यन्तु", "p2-sg": "लुभ्य", "p2-du": "लुभ्यतम्", "p2-pl": "लुभ्यत", "p1-sg": "लुभ्यानि", "p1-du": "लुभ्याव", "p1-pl": "लुभ्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "lubhyatu", "p3-du": "lubhyatām", "p3-pl": "lubhyantu", "p2-sg": "lubhya", "p2-du": "lubhyatam", "p2-pl": "lubhyata", "p1-sg": "lubhyāni", "p1-du": "lubhyāva", "p1-pl": "lubhyāma" }
+    - word: "sa-12030"
+      forms: { "p3-sg": "माद्यतु", "p3-du": "माद्यताम्", "p3-pl": "माद्यन्तु", "p2-sg": "माद्य", "p2-du": "माद्यतम्", "p2-pl": "माद्यत", "p1-sg": "माद्यानि", "p1-du": "माद्याव", "p1-pl": "माद्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "mādyatu", "p3-du": "mādyatām", "p3-pl": "mādyantu", "p2-sg": "mādya", "p2-du": "mādyatam", "p2-pl": "mādyata", "p1-sg": "mādyāni", "p1-du": "mādyāva", "p1-pl": "mādyāma" }
+    - word: "sa-12031"
+      forms: { "p3-sg": "नह्यतु", "p3-du": "नह्यताम्", "p3-pl": "नह्यन्तु", "p2-sg": "नह्य", "p2-du": "नह्यतम्", "p2-pl": "नह्यत", "p1-sg": "नह्यानि", "p1-du": "नह्याव", "p1-pl": "नह्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "nahyatu", "p3-du": "nahyatām", "p3-pl": "nahyantu", "p2-sg": "nahya", "p2-du": "nahyatam", "p2-pl": "nahyata", "p1-sg": "nahyāni", "p1-du": "nahyāva", "p1-pl": "nahyāma" }
+    - word: "sa-12032"
+      forms: { "p3-sg": "नश्यतु", "p3-du": "नश्यताम्", "p3-pl": "नश्यन्तु", "p2-sg": "नश्य", "p2-du": "नश्यतम्", "p2-pl": "नश्यत", "p1-sg": "नश्यानि", "p1-du": "नश्याव", "p1-pl": "नश्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "naśyatu", "p3-du": "naśyatām", "p3-pl": "naśyantu", "p2-sg": "naśya", "p2-du": "naśyatam", "p2-pl": "naśyata", "p1-sg": "naśyāni", "p1-du": "naśyāva", "p1-pl": "naśyāma" }
+    - word: "sa-12033"
+      forms: { "p3-sg": "शाम्यतु", "p3-du": "शाम्यताम्", "p3-pl": "शाम्यन्तु", "p2-sg": "शाम्य", "p2-du": "शाम्यतम्", "p2-pl": "शाम्यत", "p1-sg": "शाम्यानि", "p1-du": "शाम्याव", "p1-pl": "शाम्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "śāmyatu", "p3-du": "śāmyatām", "p3-pl": "śāmyantu", "p2-sg": "śāmya", "p2-du": "śāmyatam", "p2-pl": "śāmyata", "p1-sg": "śāmyāni", "p1-du": "śāmyāva", "p1-pl": "śāmyāma" }
+    - word: "sa-12034"
+      forms: { "p3-sg": "शुष्यतु", "p3-du": "शुष्यताम्", "p3-pl": "शुष्यन्तु", "p2-sg": "शुष्य", "p2-du": "शुष्यतम्", "p2-pl": "शुष्यत", "p1-sg": "शुष्याणि", "p1-du": "शुष्याव", "p1-pl": "शुष्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "śuṣyatu", "p3-du": "śuṣyatām", "p3-pl": "śuṣyantu", "p2-sg": "śuṣya", "p2-du": "śuṣyatam", "p2-pl": "śuṣyata", "p1-sg": "śuṣyāṇi", "p1-du": "śuṣyāva", "p1-pl": "śuṣyāma" }
+    - word: "sa-12035"
+      forms: { "p3-sg": "तुष्यतु", "p3-du": "तुष्यताम्", "p3-pl": "तुष्यन्तु", "p2-sg": "तुष्य", "p2-du": "तुष्यतम्", "p2-pl": "तुष्यत", "p1-sg": "तुष्याणि", "p1-du": "तुष्याव", "p1-pl": "तुष्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "tuṣyatu", "p3-du": "tuṣyatām", "p3-pl": "tuṣyantu", "p2-sg": "tuṣya", "p2-du": "tuṣyatam", "p2-pl": "tuṣyata", "p1-sg": "tuṣyāṇi", "p1-du": "tuṣyāva", "p1-pl": "tuṣyāma" }
+    - word: "sa-12036"
+      forms: { "p3-sg": "दाम्यतु", "p3-du": "दाम्यताम्", "p3-pl": "दाम्यन्तु", "p2-sg": "दाम्य", "p2-du": "दाम्यतम्", "p2-pl": "दाम्यत", "p1-sg": "दाम्यानि", "p1-du": "दाम्याव", "p1-pl": "दाम्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "dāmyatu", "p3-du": "dāmyatām", "p3-pl": "dāmyantu", "p2-sg": "dāmya", "p2-du": "dāmyatam", "p2-pl": "dāmyata", "p1-sg": "dāmyāni", "p1-du": "dāmyāva", "p1-pl": "dāmyāma" }
+    - word: "sa-12037"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "पद्यताम्", "m3-du": "पद्येताम्", "m3-pl": "पद्यन्ताम्", "m2-sg": "पद्यस्व", "m2-du": "पद्येथाम्", "m2-pl": "पद्यध्वम्", "m1-sg": "पद्यै", "m1-du": "पद्यावहै", "m1-pl": "पद्यामहै" }
+      readings: { "m3-sg": "padyatām", "m3-du": "padyetām", "m3-pl": "padyantām", "m2-sg": "padyasva", "m2-du": "padyethām", "m2-pl": "padyadhvam", "m1-sg": "padyai", "m1-du": "padyāvahai", "m1-pl": "padyāmahai" }
+    - word: "sa-12038"
+      forms: { "p3-sg": "मुञ्चतु", "p3-du": "मुञ्चताम्", "p3-pl": "मुञ्चन्तु", "p2-sg": "मुञ्च", "p2-du": "मुञ्चतम्", "p2-pl": "मुञ्चत", "p1-sg": "मुञ्चानि", "p1-du": "मुञ्चाव", "p1-pl": "मुञ्चाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "muñcatu", "p3-du": "muñcatām", "p3-pl": "muñcantu", "p2-sg": "muñca", "p2-du": "muñcatam", "p2-pl": "muñcata", "p1-sg": "muñcāni", "p1-du": "muñcāva", "p1-pl": "muñcāma" }
+    - word: "sa-12039"
+      forms: { "p3-sg": "मिलतु", "p3-du": "मिलताम्", "p3-pl": "मिलन्तु", "p2-sg": "मिल", "p2-du": "मिलतम्", "p2-pl": "मिलत", "p1-sg": "मिलानि", "p1-du": "मिलाव", "p1-pl": "मिलाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "milatu", "p3-du": "milatām", "p3-pl": "milantu", "p2-sg": "mila", "p2-du": "milatam", "p2-pl": "milata", "p1-sg": "milāni", "p1-du": "milāva", "p1-pl": "milāma" }
+    - word: "sa-12040"
+      forms: { "p3-sg": "पृच्छतु", "p3-du": "पृच्छताम्", "p3-pl": "पृच्छन्तु", "p2-sg": "पृच्छ", "p2-du": "पृच्छतम्", "p2-pl": "पृच्छत", "p1-sg": "पृच्छानि", "p1-du": "पृच्छाव", "p1-pl": "पृच्छाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "pṛcchatu", "p3-du": "pṛcchatām", "p3-pl": "pṛcchantu", "p2-sg": "pṛccha", "p2-du": "pṛcchatam", "p2-pl": "pṛcchata", "p1-sg": "pṛcchāni", "p1-du": "pṛcchāva", "p1-pl": "pṛcchāma" }
+    - word: "sa-12041"
+      forms: { "p3-sg": "लिम्पतु", "p3-du": "लिम्पताम्", "p3-pl": "लिम्पन्तु", "p2-sg": "लिम्प", "p2-du": "लिम्पतम्", "p2-pl": "लिम्पत", "p1-sg": "लिम्पानि", "p1-du": "लिम्पाव", "p1-pl": "लिम्पाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "limpatu", "p3-du": "limpatām", "p3-pl": "limpantu", "p2-sg": "limpa", "p2-du": "limpatam", "p2-pl": "limpata", "p1-sg": "limpāni", "p1-du": "limpāva", "p1-pl": "limpāma" }
+    - word: "sa-12042"
+      forms: { "p3-sg": "सृजतु", "p3-du": "सृजताम्", "p3-pl": "सृजन्तु", "p2-sg": "सृज", "p2-du": "सृजतम्", "p2-pl": "सृजत", "p1-sg": "सृजानि", "p1-du": "सृजाव", "p1-pl": "सृजाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "sṛjatu", "p3-du": "sṛjatām", "p3-pl": "sṛjantu", "p2-sg": "sṛja", "p2-du": "sṛjatam", "p2-pl": "sṛjata", "p1-sg": "sṛjāni", "p1-du": "sṛjāva", "p1-pl": "sṛjāma" }
+    - word: "sa-12043"
+      forms: { "p3-sg": "क्षिपतु", "p3-du": "क्षिपताम्", "p3-pl": "क्षिपन्तु", "p2-sg": "क्षिप", "p2-du": "क्षिपतम्", "p2-pl": "क्षिपत", "p1-sg": "क्षिपाणि", "p1-du": "क्षिपाव", "p1-pl": "क्षिपाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "kṣipatu", "p3-du": "kṣipatām", "p3-pl": "kṣipantu", "p2-sg": "kṣipa", "p2-du": "kṣipatam", "p2-pl": "kṣipata", "p1-sg": "kṣipāṇi", "p1-du": "kṣipāva", "p1-pl": "kṣipāma" }
+    - word: "sa-12044"
+      forms: { "p3-sg": "दिशतु", "p3-du": "दिशताम्", "p3-pl": "दिशन्तु", "p2-sg": "दिश", "p2-du": "दिशतम्", "p2-pl": "दिशत", "p1-sg": "दिशानि", "p1-du": "दिशाव", "p1-pl": "दिशाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "diśatu", "p3-du": "diśatām", "p3-pl": "diśantu", "p2-sg": "diśa", "p2-du": "diśatam", "p2-pl": "diśata", "p1-sg": "diśāni", "p1-du": "diśāva", "p1-pl": "diśāma" }
+    - word: "sa-12045"
+      forms: { "p3-sg": "शुम्भतु", "p3-du": "शुम्भताम्", "p3-pl": "शुम्भन्तु", "p2-sg": "शुम्भ", "p2-du": "शुम्भतम्", "p2-pl": "शुम्भत", "p1-sg": "शुम्भानि", "p1-du": "शुम्भाव", "p1-pl": "शुम्भाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "śumbhatu", "p3-du": "śumbhatām", "p3-pl": "śumbhantu", "p2-sg": "śumbha", "p2-du": "śumbhatam", "p2-pl": "śumbhata", "p1-sg": "śumbhāni", "p1-du": "śumbhāva", "p1-pl": "śumbhāma" }
+    - word: "sa-12046"
+      forms: { "p3-sg": "चोरयतु", "p3-du": "चोरयताम्", "p3-pl": "चोरयन्तु", "p2-sg": "चोरय", "p2-du": "चोरयतम्", "p2-pl": "चोरयत", "p1-sg": "चोरयाणि", "p1-du": "चोरयाव", "p1-pl": "चोरयाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "corayatu", "p3-du": "corayatām", "p3-pl": "corayantu", "p2-sg": "coraya", "p2-du": "corayatam", "p2-pl": "corayata", "p1-sg": "corayāṇi", "p1-du": "corayāva", "p1-pl": "corayāma" }
+    - word: "sa-12047"
+      forms: { "p3-sg": "चिन्तयतु", "p3-du": "चिन्तयताम्", "p3-pl": "चिन्तयन्तु", "p2-sg": "चिन्तय", "p2-du": "चिन्तयतम्", "p2-pl": "चिन्तयत", "p1-sg": "चिन्तयानि", "p1-du": "चिन्तयाव", "p1-pl": "चिन्तयाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "cintayatu", "p3-du": "cintayatām", "p3-pl": "cintayantu", "p2-sg": "cintaya", "p2-du": "cintayatam", "p2-pl": "cintayata", "p1-sg": "cintayāni", "p1-du": "cintayāva", "p1-pl": "cintayāma" }
+    - word: "sa-12048"
+      forms: { "p3-sg": "तोलयतु", "p3-du": "तोलयताम्", "p3-pl": "तोलयन्तु", "p2-sg": "तोलय", "p2-du": "तोलयतम्", "p2-pl": "तोलयत", "p1-sg": "तोलयानि", "p1-du": "तोलयाव", "p1-pl": "तोलयाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "tolayatu", "p3-du": "tolayatām", "p3-pl": "tolayantu", "p2-sg": "tolaya", "p2-du": "tolayatam", "p2-pl": "tolayata", "p1-sg": "tolayāni", "p1-du": "tolayāva", "p1-pl": "tolayāma" }
+    - word: "sa-12049"
+      forms: { "p3-sg": "ग्रन्थयतु", "p3-du": "ग्रन्थयताम्", "p3-pl": "ग्रन्थयन्तु", "p2-sg": "ग्रन्थय", "p2-du": "ग्रन्थयतम्", "p2-pl": "ग्रन्थयत", "p1-sg": "ग्रन्थयानि", "p1-du": "ग्रन्थयाव", "p1-pl": "ग्रन्थयाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "granthayatu", "p3-du": "granthayatām", "p3-pl": "granthayantu", "p2-sg": "granthaya", "p2-du": "granthayatam", "p2-pl": "granthayata", "p1-sg": "granthayāni", "p1-du": "granthayāva", "p1-pl": "granthayāma" }
+    - word: "sa-12050"
+      forms: { "p3-sg": "आप्नोतु", "p3-du": "आप्नुताम्", "p3-pl": "आप्नुवन्तु", "p2-sg": "आप्नुहि", "p2-du": "आप्नुतम्", "p2-pl": "आप्नुत", "p1-sg": "आप्नवानि", "p1-du": "आप्नवाव", "p1-pl": "आप्नवाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "āpnotu", "p3-du": "āpnutām", "p3-pl": "āpnuvantu", "p2-sg": "āpnuhi", "p2-du": "āpnutam", "p2-pl": "āpnuta", "p1-sg": "āpnavāni", "p1-du": "āpnavāva", "p1-pl": "āpnavāma" }
+    - word: "sa-12051"
+      forms: { "p3-sg": "शक्नोतु", "p3-du": "शक्नुताम्", "p3-pl": "शक्नुवन्तु", "p2-sg": "शक्नुहि", "p2-du": "शक्नुतम्", "p2-pl": "शक्नुत", "p1-sg": "शक्नवानि", "p1-du": "शक्नवाव", "p1-pl": "शक्नवाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "śaknotu", "p3-du": "śaknutām", "p3-pl": "śaknuvantu", "p2-sg": "śaknuhi", "p2-du": "śaknutam", "p2-pl": "śaknuta", "p1-sg": "śaknavāni", "p1-du": "śaknavāva", "p1-pl": "śaknavāma" }
+    - word: "sa-12052"
+      forms: { "p3-sg": "बिभेतु", "p3-du": "बिभीताम्", "p3-pl": "बिभ्यतु", "p2-sg": "बिभीहि", "p2-du": "बिभीतम्", "p2-pl": "बिभीत", "p1-sg": "बिभयानि", "p1-du": "बिभयाव", "p1-pl": "बिभयाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "bibhetu", "p3-du": "bibhītām", "p3-pl": "bibhyatu", "p2-sg": "bibhīhi", "p2-du": "bibhītam", "p2-pl": "bibhīta", "p1-sg": "bibhayāni", "p1-du": "bibhayāva", "p1-pl": "bibhayāma" }
+    - word: "sa-12053"
+      forms: { "p3-sg": "हन्तु", "p3-du": "हताम्", "p3-pl": "घ्नन्तु", "p2-sg": "जहि", "p2-du": "हतम्", "p2-pl": "हत", "p1-sg": "हनानि", "p1-du": "हनाव", "p1-pl": "हनाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "hantu", "p3-du": "hatām", "p3-pl": "ghnantu", "p2-sg": "jahi", "p2-du": "hatam", "p2-pl": "hata", "p1-sg": "hanāni", "p1-du": "hanāva", "p1-pl": "hanāma" }
+    - word: "sa-12054"
+      forms: { "p3-sg": "श्वसितु", "p3-du": "श्वसिताम्", "p3-pl": "श्वसन्तु", "p2-sg": "श्वसिहि", "p2-du": "श्वसितम्", "p2-pl": "श्वसित", "p1-sg": "श्वसानि", "p1-du": "श्वसाव", "p1-pl": "श्वसाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "śvasitu", "p3-du": "śvasitām", "p3-pl": "śvasantu", "p2-sg": "śvasihi", "p2-du": "śvasitam", "p2-pl": "śvasita", "p1-sg": "śvasāni", "p1-du": "śvasāva", "p1-pl": "śvasāma" }
+    - word: "sa-12055"
+      forms: { "p3-sg": "शास्तु", "p3-du": "शिष्टाम्", "p3-pl": "शासतु", "p2-sg": "शाधि", "p2-du": "शिष्टम्", "p2-pl": "शास्त", "p1-sg": "शासानि", "p1-du": "शासाव", "p1-pl": "शासाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "śāstu", "p3-du": "śiṣṭām", "p3-pl": "śāsatu", "p2-sg": "śādhi", "p2-du": "śiṣṭam", "p2-pl": "śāsta", "p1-sg": "śāsāni", "p1-du": "śāsāva", "p1-pl": "śāsāma" }
+    - word: "sa-12056"
+      forms: { "p3-sg": "भिनत्तु", "p3-du": "भिन्त्ताम्", "p3-pl": "भिन्दन्तु", "p2-sg": "भिन्द्धि", "p2-du": "भिन्त्तम्", "p2-pl": "भिन्त्त", "p1-sg": "भिनदानि", "p1-du": "भिनदाव", "p1-pl": "भिनदाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "bhinattu", "p3-du": "bhinttām", "p3-pl": "bhindantu", "p2-sg": "bhinddhi", "p2-du": "bhinttam", "p2-pl": "bhintta", "p1-sg": "bhinadāni", "p1-du": "bhinadāva", "p1-pl": "bhinadāma" }
+    - word: "sa-12057"
+      forms: { "p3-sg": "भातु", "p3-du": "भाताम्", "p3-pl": "भान्तु", "p2-sg": "भाहि", "p2-du": "भातम्", "p2-pl": "भात", "p1-sg": "भानि", "p1-du": "भाव", "p1-pl": "भाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "bhātu", "p3-du": "bhātām", "p3-pl": "bhāntu", "p2-sg": "bhāhi", "p2-du": "bhātam", "p2-pl": "bhāta", "p1-sg": "bhāni", "p1-du": "bhāva", "p1-pl": "bhāma" }
+    - word: "sa-12058"
+      forms: { "p3-sg": "जिह्रेतु", "p3-du": "जिह्रीताम्", "p3-pl": "जिह्रियतु", "p2-sg": "जिह्रीहि", "p2-du": "जिह्रीतम्", "p2-pl": "जिह्रीत", "p1-sg": "जिह्रयाणि", "p1-du": "जिह्रयाव", "p1-pl": "जिह्रयाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "jihretu", "p3-du": "jihrītām", "p3-pl": "jihriyatu", "p2-sg": "jihrīhi", "p2-du": "jihrītam", "p2-pl": "jihrīta", "p1-sg": "jihrayāṇi", "p1-du": "jihrayāva", "p1-pl": "jihrayāma" }
+    - word: "sa-12059"
+      forms: { "p3-sg": "रञ्जतु", "p3-du": "रञ्जताम्", "p3-pl": "रञ्जन्तु", "p2-sg": "रञ्ज", "p2-du": "रञ्जतम्", "p2-pl": "रञ्जत", "p1-sg": "रञ्जानि", "p1-du": "रञ्जाव", "p1-pl": "रञ्जाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "rañjatu", "p3-du": "rañjatām", "p3-pl": "rañjantu", "p2-sg": "rañja", "p2-du": "rañjatam", "p2-pl": "rañjata", "p1-sg": "rañjāni", "p1-du": "rañjāva", "p1-pl": "rañjāma" }
+    - word: "sa-13000"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "भ्रंशताम्", "m3-du": "भ्रंशेताम्", "m3-pl": "भ्रंशन्ताम्", "m2-sg": "भ्रंशस्व", "m2-du": "भ्रंशेथाम्", "m2-pl": "भ्रंशध्वम्", "m1-sg": "भ्रंशै", "m1-du": "भ्रंशावहै", "m1-pl": "भ्रंशामहै" }
+      readings: { "m3-sg": "bhraṃśatām", "m3-du": "bhraṃśetām", "m3-pl": "bhraṃśantām", "m2-sg": "bhraṃśasva", "m2-du": "bhraṃśethām", "m2-pl": "bhraṃśadhvam", "m1-sg": "bhraṃśai", "m1-du": "bhraṃśāvahai", "m1-pl": "bhraṃśāmahai" }
+    - word: "sa-13001"
+      forms: { "p3-sg": "युनक्तु", "p3-du": "युङ्क्ताम्", "p3-pl": "युञ्जन्तु", "p2-sg": "युङ्ग्धि", "p2-du": "युङ्क्तम्", "p2-pl": "युङ्क्त", "p1-sg": "युनजानि", "p1-du": "युनजाव", "p1-pl": "युनजाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "yunaktu", "p3-du": "yuṅktām", "p3-pl": "yuñjantu", "p2-sg": "yuṅgdhi", "p2-du": "yuṅktam", "p2-pl": "yuṅkta", "p1-sg": "yunajāni", "p1-du": "yunajāva", "p1-pl": "yunajāma" }
+    - word: "sa-13002"
+      forms: { "p3-sg": "राजतु", "p3-du": "राजताम्", "p3-pl": "राजन्तु", "p2-sg": "राज", "p2-du": "राजतम्", "p2-pl": "राजत", "p1-sg": "राजानि", "p1-du": "राजाव", "p1-pl": "राजाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "rājatu", "p3-du": "rājatām", "p3-pl": "rājantu", "p2-sg": "rāja", "p2-du": "rājatam", "p2-pl": "rājata", "p1-sg": "rājāni", "p1-du": "rājāva", "p1-pl": "rājāma" }
+    - word: "sa-13003"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "लज्जताम्", "m3-du": "लज्जेताम्", "m3-pl": "लज्जन्ताम्", "m2-sg": "लज्जस्व", "m2-du": "लज्जेथाम्", "m2-pl": "लज्जध्वम्", "m1-sg": "लज्जै", "m1-du": "लज्जावहै", "m1-pl": "लज्जामहै" }
+      readings: { "m3-sg": "lajjatām", "m3-du": "lajjetām", "m3-pl": "lajjantām", "m2-sg": "lajjasva", "m2-du": "lajjethām", "m2-pl": "lajjadhvam", "m1-sg": "lajjai", "m1-du": "lajjāvahai", "m1-pl": "lajjāmahai" }
+    - word: "sa-13004"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "लम्बताम्", "m3-du": "लम्बेताम्", "m3-pl": "लम्बन्ताम्", "m2-sg": "लम्बस्व", "m2-du": "लम्बेथाम्", "m2-pl": "लम्बध्वम्", "m1-sg": "लम्बै", "m1-du": "लम्बावहै", "m1-pl": "लम्बामहै" }
+      readings: { "m3-sg": "lambatām", "m3-du": "lambetām", "m3-pl": "lambantām", "m2-sg": "lambasva", "m2-du": "lambethām", "m2-pl": "lambadhvam", "m1-sg": "lambai", "m1-du": "lambāvahai", "m1-pl": "lambāmahai" }
+    - word: "sa-13005"
+      forms: { "p3-sg": "वर्षतु", "p3-du": "वर्षताम्", "p3-pl": "वर्षन्तु", "p2-sg": "वर्ष", "p2-du": "वर्षतम्", "p2-pl": "वर्षत", "p1-sg": "वर्षाणि", "p1-du": "वर्षाव", "p1-pl": "वर्षाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "varṣatu", "p3-du": "varṣatām", "p3-pl": "varṣantu", "p2-sg": "varṣa", "p2-du": "varṣatam", "p2-pl": "varṣata", "p1-sg": "varṣāṇi", "p1-du": "varṣāva", "p1-pl": "varṣāma" }
+    - word: "sa-13006"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "व्यथताम्", "m3-du": "व्यथेताम्", "m3-pl": "व्यथन्ताम्", "m2-sg": "व्यथस्व", "m2-du": "व्यथेथाम्", "m2-pl": "व्यथध्वम्", "m1-sg": "व्यथै", "m1-du": "व्यथावहै", "m1-pl": "व्यथामहै" }
+      readings: { "m3-sg": "vyathatām", "m3-du": "vyathetām", "m3-pl": "vyathantām", "m2-sg": "vyathasva", "m2-du": "vyathethām", "m2-pl": "vyathadhvam", "m1-sg": "vyathai", "m1-du": "vyathāvahai", "m1-pl": "vyathāmahai" }
+    - word: "sa-13007"
+      forms: { "p3-sg": "व्रजतु", "p3-du": "व्रजताम्", "p3-pl": "व्रजन्तु", "p2-sg": "व्रज", "p2-du": "व्रजतम्", "p2-pl": "व्रजत", "p1-sg": "व्रजानि", "p1-du": "व्रजाव", "p1-pl": "व्रजाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "vrajatu", "p3-du": "vrajatām", "p3-pl": "vrajantu", "p2-sg": "vraja", "p2-du": "vrajatam", "p2-pl": "vrajata", "p1-sg": "vrajāni", "p1-du": "vrajāva", "p1-pl": "vrajāma" }
+    - word: "sa-13008"
+      forms: { "p3-sg": "शपतु", "p3-du": "शपताम्", "p3-pl": "शपन्तु", "p2-sg": "शप", "p2-du": "शपतम्", "p2-pl": "शपत", "p1-sg": "शपानि", "p1-du": "शपाव", "p1-pl": "शपाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "śapatu", "p3-du": "śapatām", "p3-pl": "śapantu", "p2-sg": "śapa", "p2-du": "śapatam", "p2-pl": "śapata", "p1-sg": "śapāni", "p1-du": "śapāva", "p1-pl": "śapāma" }
+    - word: "sa-13009"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "शेताम्", "m3-du": "शयाताम्", "m3-pl": "शेरताम्", "m2-sg": "शेष्व", "m2-du": "शयाथाम्", "m2-pl": "शेध्वम्", "m1-sg": "शयै", "m1-du": "शयावहै", "m1-pl": "शयामहै" }
+      readings: { "m3-sg": "śetām", "m3-du": "śayātām", "m3-pl": "śeratām", "m2-sg": "śeṣva", "m2-du": "śayāthām", "m2-pl": "śedhvam", "m1-sg": "śayai", "m1-du": "śayāvahai", "m1-pl": "śayāmahai" }
+    - word: "sa-13010"
+      forms: { "p3-sg": "शोचतु", "p3-du": "शोचताम्", "p3-pl": "शोचन्तु", "p2-sg": "शोच", "p2-du": "शोचतम्", "p2-pl": "शोचत", "p1-sg": "शोचानि", "p1-du": "शोचाव", "p1-pl": "शोचाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "śocatu", "p3-du": "śocatām", "p3-pl": "śocantu", "p2-sg": "śoca", "p2-du": "śocatam", "p2-pl": "śocata", "p1-sg": "śocāni", "p1-du": "śocāva", "p1-pl": "śocāma" }
+    - word: "sa-13011"
+      forms: { "p3-sg": "सिञ्चतु", "p3-du": "सिञ्चताम्", "p3-pl": "सिञ्चन्तु", "p2-sg": "सिञ्च", "p2-du": "सिञ्चतम्", "p2-pl": "सिञ्चत", "p1-sg": "सिञ्चानि", "p1-du": "सिञ्चाव", "p1-pl": "सिञ्चाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "siñcatu", "p3-du": "siñcatām", "p3-pl": "siñcantu", "p2-sg": "siñca", "p2-du": "siñcatam", "p2-pl": "siñcata", "p1-sg": "siñcāni", "p1-du": "siñcāva", "p1-pl": "siñcāma" }
+    - word: "sa-13012"
+      forms: { "p3-sg": "सर्पतु", "p3-du": "सर्पताम्", "p3-pl": "सर्पन्तु", "p2-sg": "सर्प", "p2-du": "सर्पतम्", "p2-pl": "सर्पत", "p1-sg": "सर्पाणि", "p1-du": "सर्पाव", "p1-pl": "सर्पाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "sarpatu", "p3-du": "sarpatām", "p3-pl": "sarpantu", "p2-sg": "sarpa", "p2-du": "sarpatam", "p2-pl": "sarpata", "p1-sg": "sarpāṇi", "p1-du": "sarpāva", "p1-pl": "sarpāma" }
+    - word: "sa-13013"
+      forms: { "p3-sg": "स्तौतु", "p3-du": "स्तुताम्", "p3-pl": "स्तुवन्तु", "p2-sg": "स्तुहि", "p2-du": "स्तुतम्", "p2-pl": "स्तुत", "p1-sg": "स्तवानि", "p1-du": "स्तवाव", "p1-pl": "स्तवाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "stautu", "p3-du": "stutām", "p3-pl": "stuvantu", "p2-sg": "stuhi", "p2-du": "stutam", "p2-pl": "stuta", "p1-sg": "stavāni", "p1-du": "stavāva", "p1-pl": "stavāma" }
+    - word: "sa-13014"
+      forms: { "p3-sg": "हिनस्तु", "p3-du": "हिंस्ताम्", "p3-pl": "हिंसन्तु", "p2-sg": "हिन्द्धि", "p2-du": "हिंस्तम्", "p2-pl": "हिंस्त", "p1-sg": "हिनसानि", "p1-du": "हिनसाव", "p1-pl": "हिनसाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "hinastu", "p3-du": "hiṃstām", "p3-pl": "hiṃsantu", "p2-sg": "hinddhi", "p2-du": "hiṃstam", "p2-pl": "hiṃsta", "p1-sg": "hinasāni", "p1-du": "hinasāva", "p1-pl": "hinasāma" }
+    - word: "sa-13015"
+      forms: { "p3-sg": "दुष्यतु", "p3-du": "दुष्यताम्", "p3-pl": "दुष्यन्तु", "p2-sg": "दुष्य", "p2-du": "दुष्यतम्", "p2-pl": "दुष्यत", "p1-sg": "दुष्याणि", "p1-du": "दुष्याव", "p1-pl": "दुष्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "duṣyatu", "p3-du": "duṣyatām", "p3-pl": "duṣyantu", "p2-sg": "duṣya", "p2-du": "duṣyatam", "p2-pl": "duṣyata", "p1-sg": "duṣyāṇi", "p1-du": "duṣyāva", "p1-pl": "duṣyāma" }
+    - word: "sa-13016"
+      forms: { "p3-sg": "वेत्तु", "p3-du": "वित्ताम्", "p3-pl": "विदन्तु", "p2-sg": "विद्धि", "p2-du": "वित्तम्", "p2-pl": "वित्त", "p1-sg": "वेदानि", "p1-du": "वेदाव", "p1-pl": "वेदाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "vettu", "p3-du": "vittām", "p3-pl": "vidantu", "p2-sg": "viddhi", "p2-du": "vittam", "p2-pl": "vitta", "p1-sg": "vedāni", "p1-du": "vedāva", "p1-pl": "vedāma" }
+    - word: "sa-13017"
+      forms: { "p3-sg": "भजतु", "p3-du": "भजताम्", "p3-pl": "भजन्तु", "p2-sg": "भज", "p2-du": "भजतम्", "p2-pl": "भजत", "p1-sg": "भजानि", "p1-du": "भजाव", "p1-pl": "भजाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "bhajatu", "p3-du": "bhajatām", "p3-pl": "bhajantu", "p2-sg": "bhaja", "p2-du": "bhajatam", "p2-pl": "bhajata", "p1-sg": "bhajāni", "p1-du": "bhajāva", "p1-pl": "bhajāma" }
+    - word: "sa-13018"
+      forms: { "p3-sg": "वक्तु", "p3-du": "वक्ताम्", "p3-pl": "वचन्तु", "p2-sg": "वग्धि", "p2-du": "वक्तम्", "p2-pl": "वक्त", "p1-sg": "वचानि", "p1-du": "वचाव", "p1-pl": "वचाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "vaktu", "p3-du": "vaktām", "p3-pl": "vacantu", "p2-sg": "vagdhi", "p2-du": "vaktam", "p2-pl": "vakta", "p1-sg": "vacāni", "p1-du": "vacāva", "p1-pl": "vacāma" }
+    - word: "sa-13019"
+      forms: { "p3-sg": "बिभर्तु", "p3-du": "बिभृताम्", "p3-pl": "बिभ्रतु", "p2-sg": "बिभृहि", "p2-du": "बिभृतम्", "p2-pl": "बिभृत", "p1-sg": "बिभराणि", "p1-du": "बिभराव", "p1-pl": "बिभराम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "bibhartu", "p3-du": "bibhṛtām", "p3-pl": "bibhratu", "p2-sg": "bibhṛhi", "p2-du": "bibhṛtam", "p2-pl": "bibhṛta", "p1-sg": "bibharāṇi", "p1-du": "bibharāva", "p1-pl": "bibharāma" }
+    - word: "sa-13020"
+      forms: { "p3-sg": "द्वेष्टु", "p3-du": "द्विष्टाम्", "p3-pl": "द्विषन्तु", "p2-sg": "द्विड्ढि", "p2-du": "द्विष्टम्", "p2-pl": "द्विष्ट", "p1-sg": "द्वेषाणि", "p1-du": "द्वेषाव", "p1-pl": "द्वेषाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "dveṣṭu", "p3-du": "dviṣṭām", "p3-pl": "dviṣantu", "p2-sg": "dviḍḍhi", "p2-du": "dviṣṭam", "p2-pl": "dviṣṭa", "p1-sg": "dveṣāṇi", "p1-du": "dveṣāva", "p1-pl": "dveṣāma" }
+    - word: "sa-13021"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "म्रियताम्", "m3-du": "म्रियेताम्", "m3-pl": "म्रियन्ताम्", "m2-sg": "म्रियस्व", "m2-du": "म्रियेथाम्", "m2-pl": "म्रियध्वम्", "m1-sg": "म्रियै", "m1-du": "म्रियावहै", "m1-pl": "म्रियामहै" }
+      readings: { "m3-sg": "mriyatām", "m3-du": "mriyetām", "m3-pl": "mriyantām", "m2-sg": "mriyasva", "m2-du": "mriyethām", "m2-pl": "mriyadhvam", "m1-sg": "mriyai", "m1-du": "mriyāvahai", "m1-pl": "mriyāmahai" }
+    - word: "sa-13022"
+      forms: { "p3-sg": "तरतु", "p3-du": "तरताम्", "p3-pl": "तरन्तु", "p2-sg": "तर", "p2-du": "तरतम्", "p2-pl": "तरत", "p1-sg": "तराणि", "p1-du": "तराव", "p1-pl": "तराम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "taratu", "p3-du": "taratām", "p3-pl": "tarantu", "p2-sg": "tara", "p2-du": "taratam", "p2-pl": "tarata", "p1-sg": "tarāṇi", "p1-du": "tarāva", "p1-pl": "tarāma" }
+    - word: "sa-13023"
+      forms: { "p3-sg": "कर्षतु", "p3-du": "कर्षताम्", "p3-pl": "कर्षन्तु", "p2-sg": "कर्ष", "p2-du": "कर्षतम्", "p2-pl": "कर्षत", "p1-sg": "कर्षाणि", "p1-du": "कर्षाव", "p1-pl": "कर्षाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "karṣatu", "p3-du": "karṣatām", "p3-pl": "karṣantu", "p2-sg": "karṣa", "p2-du": "karṣatam", "p2-pl": "karṣata", "p1-sg": "karṣāṇi", "p1-du": "karṣāva", "p1-pl": "karṣāma" }
+    - word: "sa-13024"
+      forms: { "p3-sg": "हृष्यतु", "p3-du": "हृष्यताम्", "p3-pl": "हृष्यन्तु", "p2-sg": "हृष्य", "p2-du": "हृष्यतम्", "p2-pl": "हृष्यत", "p1-sg": "हृष्याणि", "p1-du": "हृष्याव", "p1-pl": "हृष्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "hṛṣyatu", "p3-du": "hṛṣyatām", "p3-pl": "hṛṣyantu", "p2-sg": "hṛṣya", "p2-du": "hṛṣyatam", "p2-pl": "hṛṣyata", "p1-sg": "hṛṣyāṇi", "p1-du": "hṛṣyāva", "p1-pl": "hṛṣyāma" }
+    - word: "sa-13025"
+      forms: { "p3-sg": "मुह्यतु", "p3-du": "मुह्यताम्", "p3-pl": "मुह्यन्तु", "p2-sg": "मुह्य", "p2-du": "मुह्यतम्", "p2-pl": "मुह्यत", "p1-sg": "मुह्यानि", "p1-du": "मुह्याव", "p1-pl": "मुह्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "muhyatu", "p3-du": "muhyatām", "p3-pl": "muhyantu", "p2-sg": "muhya", "p2-du": "muhyatam", "p2-pl": "muhyata", "p1-sg": "muhyāni", "p1-du": "muhyāva", "p1-pl": "muhyāma" }
+    - word: "sa-13026"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "एधताम्", "m3-du": "एधेताम्", "m3-pl": "एधन्ताम्", "m2-sg": "एधस्व", "m2-du": "एधेथाम्", "m2-pl": "एधध्वम्", "m1-sg": "एधै", "m1-du": "एधावहै", "m1-pl": "एधामहै" }
+      readings: { "m3-sg": "edhatām", "m3-du": "edhetām", "m3-pl": "edhantām", "m2-sg": "edhasva", "m2-du": "edhethām", "m2-pl": "edhadhvam", "m1-sg": "edhai", "m1-du": "edhāvahai", "m1-pl": "edhāmahai" }
+    - word: "sa-13027"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "युध्यताम्", "m3-du": "युध्येताम्", "m3-pl": "युध्यन्ताम्", "m2-sg": "युध्यस्व", "m2-du": "युध्येथाम्", "m2-pl": "युध्यध्वम्", "m1-sg": "युध्यै", "m1-du": "युध्यावहै", "m1-pl": "युध्यामहै" }
+      readings: { "m3-sg": "yudhyatām", "m3-du": "yudhyetām", "m3-pl": "yudhyantām", "m2-sg": "yudhyasva", "m2-du": "yudhyethām", "m2-pl": "yudhyadhvam", "m1-sg": "yudhyai", "m1-du": "yudhyāvahai", "m1-pl": "yudhyāmahai" }
+    - word: "sa-13028"
+      forms: { "p3-sg": "पुष्यतु", "p3-du": "पुष्यताम्", "p3-pl": "पुष्यन्तु", "p2-sg": "पुष्य", "p2-du": "पुष्यतम्", "p2-pl": "पुष्यत", "p1-sg": "पुष्याणि", "p1-du": "पुष्याव", "p1-pl": "पुष्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "puṣyatu", "p3-du": "puṣyatām", "p3-pl": "puṣyantu", "p2-sg": "puṣya", "p2-du": "puṣyatam", "p2-pl": "puṣyata", "p1-sg": "puṣyāṇi", "p1-du": "puṣyāva", "p1-pl": "puṣyāma" }
+    - word: "sa-13029"
+      forms: { "p3-sg": "त्यजतु", "p3-du": "त्यजताम्", "p3-pl": "त्यजन्तु", "p2-sg": "त्यज", "p2-du": "त्यजतम्", "p2-pl": "त्यजत", "p1-sg": "त्यजानि", "p1-du": "त्यजाव", "p1-pl": "त्यजाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "tyajatu", "p3-du": "tyajatām", "p3-pl": "tyajantu", "p2-sg": "tyaja", "p2-du": "tyajatam", "p2-pl": "tyajata", "p1-sg": "tyajāni", "p1-du": "tyajāva", "p1-pl": "tyajāma" }
+    - word: "sa-13030"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "वेपताम्", "m3-du": "वेपेताम्", "m3-pl": "वेपन्ताम्", "m2-sg": "वेपस्व", "m2-du": "वेपेथाम्", "m2-pl": "वेपध्वम्", "m1-sg": "वेपै", "m1-du": "वेपावहै", "m1-pl": "वेपामहै" }
+      readings: { "m3-sg": "vepatām", "m3-du": "vepetām", "m3-pl": "vepantām", "m2-sg": "vepasva", "m2-du": "vepethām", "m2-pl": "vepadhvam", "m1-sg": "vepai", "m1-du": "vepāvahai", "m1-pl": "vepāmahai" }
+    - word: "sa-13031"
+      forms: { "p3-sg": "देग्धु", "p3-du": "दिग्धाम्", "p3-pl": "दिहन्तु", "p2-sg": "दिग्धि", "p2-du": "दिग्धम्", "p2-pl": "दिग्ध", "p1-sg": "देहानि", "p1-du": "देहाव", "p1-pl": "देहाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "degdhu", "p3-du": "digdhām", "p3-pl": "dihantu", "p2-sg": "digdhi", "p2-du": "digdham", "p2-pl": "digdha", "p1-sg": "dehāni", "p1-du": "dehāva", "p1-pl": "dehāma" }
+    - word: "sa-13032"
+      forms: { "p3-sg": "स्नातु", "p3-du": "स्नाताम्", "p3-pl": "स्नान्तु", "p2-sg": "स्नाहि", "p2-du": "स्नातम्", "p2-pl": "स्नात", "p1-sg": "स्नानि", "p1-du": "स्नाव", "p1-pl": "स्नाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "snātu", "p3-du": "snātām", "p3-pl": "snāntu", "p2-sg": "snāhi", "p2-du": "snātam", "p2-pl": "snāta", "p1-sg": "snāni", "p1-du": "snāva", "p1-pl": "snāma" }
+    - word: "sa-13033"
+      forms: { "p3-sg": "यजतु", "p3-du": "यजताम्", "p3-pl": "यजन्तु", "p2-sg": "यज", "p2-du": "यजतम्", "p2-pl": "यजत", "p1-sg": "यजानि", "p1-du": "यजाव", "p1-pl": "यजाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "yajatu", "p3-du": "yajatām", "p3-pl": "yajantu", "p2-sg": "yaja", "p2-du": "yajatam", "p2-pl": "yajata", "p1-sg": "yajāni", "p1-du": "yajāva", "p1-pl": "yajāma" }
+    - word: "sa-13034"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "शङ्कताम्", "m3-du": "शङ्केताम्", "m3-pl": "शङ्कन्ताम्", "m2-sg": "शङ्कस्व", "m2-du": "शङ्केथाम्", "m2-pl": "शङ्कध्वम्", "m1-sg": "शङ्कै", "m1-du": "शङ्कावहै", "m1-pl": "शङ्कामहै" }
+      readings: { "m3-sg": "śaṅkatām", "m3-du": "śaṅketām", "m3-pl": "śaṅkantām", "m2-sg": "śaṅkasva", "m2-du": "śaṅkethām", "m2-pl": "śaṅkadhvam", "m1-sg": "śaṅkai", "m1-du": "śaṅkāvahai", "m1-pl": "śaṅkāmahai" }
+    - word: "sa-13035"
+      forms: { "p3-sg": "अर्चतु", "p3-du": "अर्चताम्", "p3-pl": "अर्चन्तु", "p2-sg": "अर्च", "p2-du": "अर्चतम्", "p2-pl": "अर्चत", "p1-sg": "अर्चानि", "p1-du": "अर्चाव", "p1-pl": "अर्चाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "arcatu", "p3-du": "arcatām", "p3-pl": "arcantu", "p2-sg": "arca", "p2-du": "arcatam", "p2-pl": "arcata", "p1-sg": "arcāni", "p1-du": "arcāva", "p1-pl": "arcāma" }
+    - word: "sa-13036"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "च्यवताम्", "m3-du": "च्यवेताम्", "m3-pl": "च्यवन्ताम्", "m2-sg": "च्यवस्व", "m2-du": "च्यवेथाम्", "m2-pl": "च्यवध्वम्", "m1-sg": "च्यवै", "m1-du": "च्यवावहै", "m1-pl": "च्यवामहै" }
+      readings: { "m3-sg": "cyavatām", "m3-du": "cyavetām", "m3-pl": "cyavantām", "m2-sg": "cyavasva", "m2-du": "cyavethām", "m2-pl": "cyavadhvam", "m1-sg": "cyavai", "m1-du": "cyavāvahai", "m1-pl": "cyavāmahai" }
+    - word: "sa-13037"
+      forms: { "p3-sg": "कृन्ततु", "p3-du": "कृन्तताम्", "p3-pl": "कृन्तन्तु", "p2-sg": "कृन्त", "p2-du": "कृन्ततम्", "p2-pl": "कृन्तत", "p1-sg": "कृन्तानि", "p1-du": "कृन्ताव", "p1-pl": "कृन्ताम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "kṛntatu", "p3-du": "kṛntatām", "p3-pl": "kṛntantu", "p2-sg": "kṛnta", "p2-du": "kṛntatam", "p2-pl": "kṛntata", "p1-sg": "kṛntāni", "p1-du": "kṛntāva", "p1-pl": "kṛntāma" }
+    - word: "sa-13038"
+      forms: { "p3-sg": "पुनातु", "p3-du": "पुनीताम्", "p3-pl": "पुनन्तु", "p2-sg": "पुनीहि", "p2-du": "पुनीतम्", "p2-pl": "पुनीत", "p1-sg": "पुनानि", "p1-du": "पुनाव", "p1-pl": "पुनाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "punātu", "p3-du": "punītām", "p3-pl": "punantu", "p2-sg": "punīhi", "p2-du": "punītam", "p2-pl": "punīta", "p1-sg": "punāni", "p1-du": "punāva", "p1-pl": "punāma" }
+    - word: "sa-13039"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "क्षमताम्", "m3-du": "क्षमेताम्", "m3-pl": "क्षमन्ताम्", "m2-sg": "क्षमस्व", "m2-du": "क्षमेथाम्", "m2-pl": "क्षमध्वम्", "m1-sg": "क्षमै", "m1-du": "क्षमावहै", "m1-pl": "क्षमामहै" }
+      readings: { "m3-sg": "kṣamatām", "m3-du": "kṣametām", "m3-pl": "kṣamantām", "m2-sg": "kṣamasva", "m2-du": "kṣamethām", "m2-pl": "kṣamadhvam", "m1-sg": "kṣamai", "m1-du": "kṣamāvahai", "m1-pl": "kṣamāmahai" }
+    - word: "sa-13040"
+      forms: { "p3-sg": "नुदतु", "p3-du": "नुदताम्", "p3-pl": "नुदन्तु", "p2-sg": "नुद", "p2-du": "नुदतम्", "p2-pl": "नुदत", "p1-sg": "नुदानि", "p1-du": "नुदाव", "p1-pl": "नुदाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "nudatu", "p3-du": "nudatām", "p3-pl": "nudantu", "p2-sg": "nuda", "p2-du": "nudatam", "p2-pl": "nudata", "p1-sg": "nudāni", "p1-du": "nudāva", "p1-pl": "nudāma" }
+    - word: "sa-13041"
+      forms: { "p3-sg": "नौतु", "p3-du": "नुताम्", "p3-pl": "नुवन्तु", "p2-sg": "नुहि", "p2-du": "नुतम्", "p2-pl": "नुत", "p1-sg": "नवानि", "p1-du": "नवाव", "p1-pl": "नवाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "nautu", "p3-du": "nutām", "p3-pl": "nuvantu", "p2-sg": "nuhi", "p2-du": "nutam", "p2-pl": "nuta", "p1-sg": "navāni", "p1-du": "navāva", "p1-pl": "navāma" }
+    - word: "sa-13042"
+      forms: { "p3-sg": "मार्ष्टु", "p3-du": "मृष्टाम्", "p3-pl": "मृजन्तु", "p2-sg": "मृड्ढि", "p2-du": "मृष्टम्", "p2-pl": "मृष्ट", "p1-sg": "मार्जानि", "p1-du": "मार्जाव", "p1-pl": "मार्जाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "mārṣṭu", "p3-du": "mṛṣṭām", "p3-pl": "mṛjantu", "p2-sg": "mṛḍḍhi", "p2-du": "mṛṣṭam", "p2-pl": "mṛṣṭa", "p1-sg": "mārjāni", "p1-du": "mārjāva", "p1-pl": "mārjāma" }
+    - word: "sa-13043"
+      forms: { "p3-sg": "स्रवतु", "p3-du": "स्रवताम्", "p3-pl": "स्रवन्तु", "p2-sg": "स्रव", "p2-du": "स्रवतम्", "p2-pl": "स्रवत", "p1-sg": "स्रवाणि", "p1-du": "स्रवाव", "p1-pl": "स्रवाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "sravatu", "p3-du": "sravatām", "p3-pl": "sravantu", "p2-sg": "srava", "p2-du": "sravatam", "p2-pl": "sravata", "p1-sg": "sravāṇi", "p1-du": "sravāva", "p1-pl": "sravāma" }
+    - word: "sa-13044"
+      forms: { "p3-sg": "द्रुह्यतु", "p3-du": "द्रुह्यताम्", "p3-pl": "द्रुह्यन्तु", "p2-sg": "द्रुह्य", "p2-du": "द्रुह्यतम्", "p2-pl": "द्रुह्यत", "p1-sg": "द्रुह्याणि", "p1-du": "द्रुह्याव", "p1-pl": "द्रुह्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "druhyatu", "p3-du": "druhyatām", "p3-pl": "druhyantu", "p2-sg": "druhya", "p2-du": "druhyatam", "p2-pl": "druhyata", "p1-sg": "druhyāṇi", "p1-du": "druhyāva", "p1-pl": "druhyāma" }
+    - word: "sa-13045"
+      forms: { "p3-sg": "वमतु", "p3-du": "वमताम्", "p3-pl": "वमन्तु", "p2-sg": "वम", "p2-du": "वमतम्", "p2-pl": "वमत", "p1-sg": "वमानि", "p1-du": "वमाव", "p1-pl": "वमाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "vamatu", "p3-du": "vamatām", "p3-pl": "vamantu", "p2-sg": "vama", "p2-du": "vamatam", "p2-pl": "vamata", "p1-sg": "vamāni", "p1-du": "vamāva", "p1-pl": "vamāma" }
+    - word: "sa-13046"
+      forms: { "p3-sg": "अत्तु", "p3-du": "अत्ताम्", "p3-pl": "अदन्तु", "p2-sg": "अद्धि", "p2-du": "अत्तम्", "p2-pl": "अत्त", "p1-sg": "अदानि", "p1-du": "अदाव", "p1-pl": "अदाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "attu", "p3-du": "attām", "p3-pl": "adantu", "p2-sg": "addhi", "p2-du": "attam", "p2-pl": "atta", "p1-sg": "adāni", "p1-du": "adāva", "p1-pl": "adāma" }
+    - word: "sa-13047"
+      forms: { "p3-sg": "तक्षतु", "p3-du": "तक्षताम्", "p3-pl": "तक्षन्तु", "p2-sg": "तक्ष", "p2-du": "तक्षतम्", "p2-pl": "तक्षत", "p1-sg": "तक्षाणि", "p1-du": "तक्षाव", "p1-pl": "तक्षाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "takṣatu", "p3-du": "takṣatām", "p3-pl": "takṣantu", "p2-sg": "takṣa", "p2-du": "takṣatam", "p2-pl": "takṣata", "p1-sg": "takṣāṇi", "p1-du": "takṣāva", "p1-pl": "takṣāma" }
+    - word: "sa-13048"
+      forms: { "p3-sg": "श्रयतु", "p3-du": "श्रयताम्", "p3-pl": "श्रयन्तु", "p2-sg": "श्रय", "p2-du": "श्रयतम्", "p2-pl": "श्रयत", "p1-sg": "श्रयाणि", "p1-du": "श्रयाव", "p1-pl": "श्रयाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "śrayatu", "p3-du": "śrayatām", "p3-pl": "śrayantu", "p2-sg": "śraya", "p2-du": "śrayatam", "p2-pl": "śrayata", "p1-sg": "śrayāṇi", "p1-du": "śrayāva", "p1-pl": "śrayāma" }
+    - word: "sa-13049"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "स्वेदताम्", "m3-du": "स्वेदेताम्", "m3-pl": "स्वेदन्ताम्", "m2-sg": "स्वेदस्व", "m2-du": "स्वेदेथाम्", "m2-pl": "स्वेदध्वम्", "m1-sg": "स्वेदै", "m1-du": "स्वेदावहै", "m1-pl": "स्वेदामहै" }
+      readings: { "m3-sg": "svedatām", "m3-du": "svedetām", "m3-pl": "svedantām", "m2-sg": "svedasva", "m2-du": "svedethām", "m2-pl": "svedadhvam", "m1-sg": "svedai", "m1-du": "svedāvahai", "m1-pl": "svedāmahai" }
+    - word: "sa-13050"
+      forms: { "p3-sg": "जुहोतु", "p3-du": "जुहुताम्", "p3-pl": "जुह्वतु", "p2-sg": "जुहुधि", "p2-du": "जुहुतम्", "p2-pl": "जुहुत", "p1-sg": "जुहवानि", "p1-du": "जुहवाव", "p1-pl": "जुहवाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "juhotu", "p3-du": "juhutām", "p3-pl": "juhvatu", "p2-sg": "juhudhi", "p2-du": "juhutam", "p2-pl": "juhuta", "p1-sg": "juhavāni", "p1-du": "juhavāva", "p1-pl": "juhavāma" }
+    - word: "sa-13051"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "ईष्टाम्", "m3-du": "ईशाताम्", "m3-pl": "ईशताम्", "m2-sg": "ईशिष्व", "m2-du": "ईशाथाम्", "m2-pl": "ईशिध्वम्", "m1-sg": "ईशै", "m1-du": "ईशावहै", "m1-pl": "ईशामहै" }
+      readings: { "m3-sg": "īṣṭām", "m3-du": "īśātām", "m3-pl": "īśatām", "m2-sg": "īśiṣva", "m2-du": "īśāthām", "m2-pl": "īśidhvam", "m1-sg": "īśai", "m1-du": "īśāvahai", "m1-pl": "īśāmahai" }
+    - word: "sa-13052"
+      forms: { "p3-sg": "सीव्यतु", "p3-du": "सीव्यताम्", "p3-pl": "सीव्यन्तु", "p2-sg": "सीव्य", "p2-du": "सीव्यतम्", "p2-pl": "सीव्यत", "p1-sg": "सीव्यानि", "p1-du": "सीव्याव", "p1-pl": "सीव्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "sīvyatu", "p3-du": "sīvyatām", "p3-pl": "sīvyantu", "p2-sg": "sīvya", "p2-du": "sīvyatam", "p2-pl": "sīvyata", "p1-sg": "sīvyāni", "p1-du": "sīvyāva", "p1-pl": "sīvyāma" }
+    - word: "sa-13053"
+      forms: { "p3-sg": "चमतु", "p3-du": "चमताम्", "p3-pl": "चमन्तु", "p2-sg": "चम", "p2-du": "चमतम्", "p2-pl": "चमत", "p1-sg": "चमानि", "p1-du": "चमाव", "p1-pl": "चमाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "camatu", "p3-du": "camatām", "p3-pl": "camantu", "p2-sg": "cama", "p2-du": "camatam", "p2-pl": "camata", "p1-sg": "camāni", "p1-du": "camāva", "p1-pl": "camāma" }
+    - word: "sa-13054"
+      forms: { "p3-sg": "रुजतु", "p3-du": "रुजताम्", "p3-pl": "रुजन्तु", "p2-sg": "रुज", "p2-du": "रुजतम्", "p2-pl": "रुजत", "p1-sg": "रुजानि", "p1-du": "रुजाव", "p1-pl": "रुजाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "rujatu", "p3-du": "rujatām", "p3-pl": "rujantu", "p2-sg": "ruja", "p2-du": "rujatam", "p2-pl": "rujata", "p1-sg": "rujāni", "p1-du": "rujāva", "p1-pl": "rujāma" }
+    - word: "sa-13055"
+      forms: { "p3-sg": "स्तृणातु", "p3-du": "स्तृणीताम्", "p3-pl": "स्तृणन्तु", "p2-sg": "स्तृणीहि", "p2-du": "स्तृणीतम्", "p2-pl": "स्तृणीत", "p1-sg": "स्तृणानि", "p1-du": "स्तृणाव", "p1-pl": "स्तृणाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "stṛṇātu", "p3-du": "stṛṇītām", "p3-pl": "stṛṇantu", "p2-sg": "stṛṇīhi", "p2-du": "stṛṇītam", "p2-pl": "stṛṇīta", "p1-sg": "stṛṇāni", "p1-du": "stṛṇāva", "p1-pl": "stṛṇāma" }
+    - word: "sa-13056"
+      forms: { "p3-sg": "लिहतु", "p3-du": "लिहताम्", "p3-pl": "लिहन्तु", "p2-sg": "लिह", "p2-du": "लिहतम्", "p2-pl": "लिहत", "p1-sg": "लिहानि", "p1-du": "लिहाव", "p1-pl": "लिहाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "lihatu", "p3-du": "lihatām", "p3-pl": "lihantu", "p2-sg": "liha", "p2-du": "lihatam", "p2-pl": "lihata", "p1-sg": "lihāni", "p1-du": "lihāva", "p1-pl": "lihāma" }
+    - word: "sa-13057"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "स्पर्धताम्", "m3-du": "स्पर्धेताम्", "m3-pl": "स्पर्धन्ताम्", "m2-sg": "स्पर्धस्व", "m2-du": "स्पर्धेथाम्", "m2-pl": "स्पर्धध्वम्", "m1-sg": "स्पर्धै", "m1-du": "स्पर्धावहै", "m1-pl": "स्पर्धामहै" }
+      readings: { "m3-sg": "spardhatām", "m3-du": "spardhetām", "m3-pl": "spardhantām", "m2-sg": "spardhasva", "m2-du": "spardhethām", "m2-pl": "spardhadhvam", "m1-sg": "spardhai", "m1-du": "spardhāvahai", "m1-pl": "spardhāmahai" }
+    - word: "sa-13058"
+      forms: { "p3-sg": "घर्षतु", "p3-du": "घर्षताम्", "p3-pl": "घर्षन्तु", "p2-sg": "घर्ष", "p2-du": "घर्षतम्", "p2-pl": "घर्षत", "p1-sg": "घर्षाणि", "p1-du": "घर्षाव", "p1-pl": "घर्षाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "gharṣatu", "p3-du": "gharṣatām", "p3-pl": "gharṣantu", "p2-sg": "gharṣa", "p2-du": "gharṣatam", "p2-pl": "gharṣata", "p1-sg": "gharṣāṇi", "p1-du": "gharṣāva", "p1-pl": "gharṣāma" }
+    - word: "sa-13059"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "श्लाघताम्", "m3-du": "श्लाघेताम्", "m3-pl": "श्लाघन्ताम्", "m2-sg": "श्लाघस्व", "m2-du": "श्लाघेथाम्", "m2-pl": "श्लाघध्वम्", "m1-sg": "श्लाघै", "m1-du": "श्लाघावहै", "m1-pl": "श्लाघामहै" }
+      readings: { "m3-sg": "ślāghatām", "m3-du": "ślāghetām", "m3-pl": "ślāghantām", "m2-sg": "ślāghasva", "m2-du": "ślāghethām", "m2-pl": "ślāghadhvam", "m1-sg": "ślāghai", "m1-du": "ślāghāvahai", "m1-pl": "ślāghāmahai" }
+    - word: "sa-13060"
+      forms: { "p3-sg": "स्निह्यतु", "p3-du": "स्निह्यताम्", "p3-pl": "स्निह्यन्तु", "p2-sg": "स्निह्य", "p2-du": "स्निह्यतम्", "p2-pl": "स्निह्यत", "p1-sg": "स्निह्यानि", "p1-du": "स्निह्याव", "p1-pl": "स्निह्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "snihyatu", "p3-du": "snihyatām", "p3-pl": "snihyantu", "p2-sg": "snihya", "p2-du": "snihyatam", "p2-pl": "snihyata", "p1-sg": "snihyāni", "p1-du": "snihyāva", "p1-pl": "snihyāma" }
+    - word: "sa-13061"
+      forms: { "p3-sg": "काङ्क्षतु", "p3-du": "काङ्क्षताम्", "p3-pl": "काङ्क्षन्तु", "p2-sg": "काङ्क्ष", "p2-du": "काङ्क्षतम्", "p2-pl": "काङ्क्षत", "p1-sg": "काङ्क्षाणि", "p1-du": "काङ्क्षाव", "p1-pl": "काङ्क्षाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "kāṅkṣatu", "p3-du": "kāṅkṣatām", "p3-pl": "kāṅkṣantu", "p2-sg": "kāṅkṣa", "p2-du": "kāṅkṣatam", "p2-pl": "kāṅkṣata", "p1-sg": "kāṅkṣāṇi", "p1-du": "kāṅkṣāva", "p1-pl": "kāṅkṣāma" }
+    - word: "sa-13062"
+      forms: { "p3-sg": "गृध्यतु", "p3-du": "गृध्यताम्", "p3-pl": "गृध्यन्तु", "p2-sg": "गृध्य", "p2-du": "गृध्यतम्", "p2-pl": "गृध्यत", "p1-sg": "गृध्यानि", "p1-du": "गृध्याव", "p1-pl": "गृध्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "gṛdhyatu", "p3-du": "gṛdhyatām", "p3-pl": "gṛdhyantu", "p2-sg": "gṛdhya", "p2-du": "gṛdhyatam", "p2-pl": "gṛdhyata", "p1-sg": "gṛdhyāni", "p1-du": "gṛdhyāva", "p1-pl": "gṛdhyāma" }
+    - word: "sa-13063"
+      forms: { "p3-sg": "नेनेक्तु", "p3-du": "नेनिक्ताम्", "p3-pl": "नेनिजतु", "p2-sg": "नेनिग्धि", "p2-du": "नेनिक्तम्", "p2-pl": "नेनिक्त", "p1-sg": "नेनेजानि", "p1-du": "नेनेजाव", "p1-pl": "नेनेजाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "nenektu", "p3-du": "neniktām", "p3-pl": "nenijatu", "p2-sg": "nenigdhi", "p2-du": "neniktam", "p2-pl": "nenikta", "p1-sg": "nenejāni", "p1-du": "nenejāva", "p1-pl": "nenejāma" }
+    - word: "sa-13064"
+      forms: { "p3-sg": "साध्नोतु", "p3-du": "साध्नुताम्", "p3-pl": "साध्नुवन्तु", "p2-sg": "साध्नुहि", "p2-du": "साध्नुतम्", "p2-pl": "साध्नुत", "p1-sg": "साध्नवानि", "p1-du": "साध्नवाव", "p1-pl": "साध्नवाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "sādhnotu", "p3-du": "sādhnutām", "p3-pl": "sādhnuvantu", "p2-sg": "sādhnuhi", "p2-du": "sādhnutam", "p2-pl": "sādhnuta", "p1-sg": "sādhnavāni", "p1-du": "sādhnavāva", "p1-pl": "sādhnavāma" }
+    - word: "sa-13065"
+      forms: { "p3-sg": "पृणक्तु", "p3-du": "पृङ्क्ताम्", "p3-pl": "पृञ्चन्तु", "p2-sg": "पृङ्ग्धि", "p2-du": "पृङ्क्तम्", "p2-pl": "पृङ्क्त", "p1-sg": "पृणचानि", "p1-du": "पृणचाव", "p1-pl": "पृणचाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "pṛṇaktu", "p3-du": "pṛṅktām", "p3-pl": "pṛñcantu", "p2-sg": "pṛṅgdhi", "p2-du": "pṛṅktam", "p2-pl": "pṛṅkta", "p1-sg": "pṛṇacāni", "p1-du": "pṛṇacāva", "p1-pl": "pṛṇacāma" }
+    - word: "sa-13066"
+      forms: { "p3-sg": "अनक्तु", "p3-du": "अङ्क्ताम्", "p3-pl": "अञ्जन्तु", "p2-sg": "अङ्ग्धि", "p2-du": "अङ्क्तम्", "p2-pl": "अङ्क्त", "p1-sg": "अनजानि", "p1-du": "अनजाव", "p1-pl": "अनजाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "anaktu", "p3-du": "aṅktām", "p3-pl": "añjantu", "p2-sg": "aṅgdhi", "p2-du": "aṅktam", "p2-pl": "aṅkta", "p1-sg": "anajāni", "p1-du": "anajāva", "p1-pl": "anajāma" }
+    - word: "sa-13067"
+      forms: { "p3-sg": "पिनष्टु", "p3-du": "पिंष्टाम्", "p3-pl": "पिंषन्तु", "p2-sg": "पिण्ड्ढि", "p2-du": "पिंष्टम्", "p2-pl": "पिंष्ट", "p1-sg": "पिनषाणि", "p1-du": "पिनषाव", "p1-pl": "पिनषाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "pinaṣṭu", "p3-du": "piṃṣṭām", "p3-pl": "piṃṣantu", "p2-sg": "piṇḍḍhi", "p2-du": "piṃṣṭam", "p2-pl": "piṃṣṭa", "p1-sg": "pinaṣāṇi", "p1-du": "pinaṣāva", "p1-pl": "pinaṣāma" }
+    - word: "sa-13068"
+      forms: { "p3-sg": "सनोतु", "p3-du": "सनुताम्", "p3-pl": "सन्वन्तु", "p2-sg": "सनु", "p2-du": "सनुतम्", "p2-pl": "सनुत", "p1-sg": "सनवानि", "p1-du": "सनवाव", "p1-pl": "सनवाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "sanotu", "p3-du": "sanutām", "p3-pl": "sanvantu", "p2-sg": "sanu", "p2-du": "sanutam", "p2-pl": "sanuta", "p1-sg": "sanavāni", "p1-du": "sanavāva", "p1-pl": "sanavāma" }
+    - word: "sa-13069"
+      forms: { "p3-sg": "चुम्बतु", "p3-du": "चुम्बताम्", "p3-pl": "चुम्बन्तु", "p2-sg": "चुम्ब", "p2-du": "चुम्बतम्", "p2-pl": "चुम्बत", "p1-sg": "चुम्बानि", "p1-du": "चुम्बाव", "p1-pl": "चुम्बाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "cumbatu", "p3-du": "cumbatām", "p3-pl": "cumbantu", "p2-sg": "cumba", "p2-du": "cumbatam", "p2-pl": "cumbata", "p1-sg": "cumbāni", "p1-du": "cumbāva", "p1-pl": "cumbāma" }
+    - word: "sa-13070"
+      forms: { "p3-sg": "अञ्चतु", "p3-du": "अञ्चताम्", "p3-pl": "अञ्चन्तु", "p2-sg": "अञ्च", "p2-du": "अञ्चतम्", "p2-pl": "अञ्चत", "p1-sg": "अञ्चानि", "p1-du": "अञ्चाव", "p1-pl": "अञ्चाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "añcatu", "p3-du": "añcatām", "p3-pl": "añcantu", "p2-sg": "añca", "p2-du": "añcatam", "p2-pl": "añcata", "p1-sg": "añcāni", "p1-du": "añcāva", "p1-pl": "añcāma" }
+    - word: "sa-13071"
+      forms: { "p3-sg": "निन्दतु", "p3-du": "निन्दताम्", "p3-pl": "निन्दन्तु", "p2-sg": "निन्द", "p2-du": "निन्दतम्", "p2-pl": "निन्दत", "p1-sg": "निन्दानि", "p1-du": "निन्दाव", "p1-pl": "निन्दाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "nindatu", "p3-du": "nindatām", "p3-pl": "nindantu", "p2-sg": "ninda", "p2-du": "nindatam", "p2-pl": "nindata", "p1-sg": "nindāni", "p1-du": "nindāva", "p1-pl": "nindāma" }
+    - word: "sa-13072"
+      forms: { "p3-sg": "स्वरतु", "p3-du": "स्वरताम्", "p3-pl": "स्वरन्तु", "p2-sg": "स्वर", "p2-du": "स्वरतम्", "p2-pl": "स्वरत", "p1-sg": "स्वराणि", "p1-du": "स्वराव", "p1-pl": "स्वराम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "svaratu", "p3-du": "svaratām", "p3-pl": "svarantu", "p2-sg": "svara", "p2-du": "svaratam", "p2-pl": "svarata", "p1-sg": "svarāṇi", "p1-du": "svarāva", "p1-pl": "svarāma" }
+    - word: "sa-13073"
+      forms: { "p3-sg": "रंहतु", "p3-du": "रंहताम्", "p3-pl": "रंहन्तु", "p2-sg": "रंह", "p2-du": "रंहतम्", "p2-pl": "रंहत", "p1-sg": "रंहाणि", "p1-du": "रंहाव", "p1-pl": "रंहाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "raṃhatu", "p3-du": "raṃhatām", "p3-pl": "raṃhantu", "p2-sg": "raṃha", "p2-du": "raṃhatam", "p2-pl": "raṃhata", "p1-sg": "raṃhāṇi", "p1-du": "raṃhāva", "p1-pl": "raṃhāma" }
+    - word: "sa-13074"
+      forms: { "p3-sg": "तृप्यतु", "p3-du": "तृप्यताम्", "p3-pl": "तृप्यन्तु", "p2-sg": "तृप्य", "p2-du": "तृप्यतम्", "p2-pl": "तृप्यत", "p1-sg": "तृप्याणि", "p1-du": "तृप्याव", "p1-pl": "तृप्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "tṛpyatu", "p3-du": "tṛpyatām", "p3-pl": "tṛpyantu", "p2-sg": "tṛpya", "p2-du": "tṛpyatam", "p2-pl": "tṛpyata", "p1-sg": "tṛpyāṇi", "p1-du": "tṛpyāva", "p1-pl": "tṛpyāma" }
+    - word: "sa-13075"
+      forms: { "p3-sg": "स्फुटतु", "p3-du": "स्फुटताम्", "p3-pl": "स्फुटन्तु", "p2-sg": "स्फुट", "p2-du": "स्फुटतम्", "p2-pl": "स्फुटत", "p1-sg": "स्फुटानि", "p1-du": "स्फुटाव", "p1-pl": "स्फुटाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "sphuṭatu", "p3-du": "sphuṭatām", "p3-pl": "sphuṭantu", "p2-sg": "sphuṭa", "p2-du": "sphuṭatam", "p2-pl": "sphuṭata", "p1-sg": "sphuṭāni", "p1-du": "sphuṭāva", "p1-pl": "sphuṭāma" }
+    - word: "sa-13076"
+      forms: { "p3-sg": "चोदतु", "p3-du": "चोदताम्", "p3-pl": "चोदन्तु", "p2-sg": "चोद", "p2-du": "चोदतम्", "p2-pl": "चोदत", "p1-sg": "चोदानि", "p1-du": "चोदाव", "p1-pl": "चोदाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "codatu", "p3-du": "codatām", "p3-pl": "codantu", "p2-sg": "coda", "p2-du": "codatam", "p2-pl": "codata", "p1-sg": "codāni", "p1-du": "codāva", "p1-pl": "codāma" }
+    - word: "sa-13077"
+      forms: { "p3-sg": "विनक्तु", "p3-du": "विङ्क्ताम्", "p3-pl": "विञ्चन्तु", "p2-sg": "विङ्ग्धि", "p2-du": "विङ्क्तम्", "p2-pl": "विङ्क्त", "p1-sg": "विनचानि", "p1-du": "विनचाव", "p1-pl": "विनचाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "vinaktu", "p3-du": "viṅktām", "p3-pl": "viñcantu", "p2-sg": "viṅgdhi", "p2-du": "viṅktam", "p2-pl": "viṅkta", "p1-sg": "vinacāni", "p1-du": "vinacāva", "p1-pl": "vinacāma" }
+    - word: "sa-13078"
+      forms: { "p3-sg": "तृणेढु", "p3-du": "तृण्ढाम्", "p3-pl": "तृंहन्तु", "p2-sg": "तृण्ढि", "p2-du": "तृण्ढम्", "p2-pl": "तृण्ढ", "p1-sg": "तृणेहानि", "p1-du": "तृणेहाव", "p1-pl": "तृणेहाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "tṛṇeḍhu", "p3-du": "tṛṇḍhām", "p3-pl": "tṛṃhantu", "p2-sg": "tṛṇḍhi", "p2-du": "tṛṇḍham", "p2-pl": "tṛṇḍha", "p1-sg": "tṛṇehāni", "p1-du": "tṛṇehāva", "p1-pl": "tṛṇehāma" }
+    - word: "sa-13079"
+      forms: { "p3-sg": "जागर्तु", "p3-du": "जागृताम्", "p3-pl": "जाग्रतु", "p2-sg": "जागृहि", "p2-du": "जागृतम्", "p2-pl": "जागृत", "p1-sg": "जागराणि", "p1-du": "जागराव", "p1-pl": "जागराम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "jāgartu", "p3-du": "jāgṛtām", "p3-pl": "jāgratu", "p2-sg": "jāgṛhi", "p2-du": "jāgṛtam", "p2-pl": "jāgṛta", "p1-sg": "jāgarāṇi", "p1-du": "jāgarāva", "p1-pl": "jāgarāma" }
+    - word: "sa-13080"
+      forms: { "p3-sg": "पिपर्तु", "p3-du": "पिपृताम्", "p3-pl": "पिप्रतु", "p2-sg": "पिपृहि", "p2-du": "पिपृतम्", "p2-pl": "पिपृत", "p1-sg": "पिपराणि", "p1-du": "पिपराव", "p1-pl": "पिपराम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "pipartu", "p3-du": "pipṛtām", "p3-pl": "pipratu", "p2-sg": "pipṛhi", "p2-du": "pipṛtam", "p2-pl": "pipṛta", "p1-sg": "piparāṇi", "p1-du": "piparāva", "p1-pl": "piparāma" }
+    - word: "sa-13081"
+      forms: { "p3-sg": "गिरतु", "p3-du": "गिरताम्", "p3-pl": "गिरन्तु", "p2-sg": "गिर", "p2-du": "गिरतम्", "p2-pl": "गिरत", "p1-sg": "गिराणि", "p1-du": "गिराव", "p1-pl": "गिराम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "giratu", "p3-du": "giratām", "p3-pl": "girantu", "p2-sg": "gira", "p2-du": "giratam", "p2-pl": "girata", "p1-sg": "girāṇi", "p1-du": "girāva", "p1-pl": "girāma" }
+    - word: "sa-13082"
+      forms: { "p3-sg": "दुनोतु", "p3-du": "दुनुताम्", "p3-pl": "दुन्वन्तु", "p2-sg": "दुनु", "p2-du": "दुनुतम्", "p2-pl": "दुनुत", "p1-sg": "दुनवानि", "p1-du": "दुनवाव", "p1-pl": "दुनवाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "dunotu", "p3-du": "dunutām", "p3-pl": "dunvantu", "p2-sg": "dunu", "p2-du": "dunutam", "p2-pl": "dunuta", "p1-sg": "dunavāni", "p1-du": "dunavāva", "p1-pl": "dunavāma" }
+    - word: "sa-13083"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "काशताम्", "m3-du": "काशेताम्", "m3-pl": "काशन्ताम्", "m2-sg": "काशस्व", "m2-du": "काशेथाम्", "m2-pl": "काशध्वम्", "m1-sg": "काशै", "m1-du": "काशावहै", "m1-pl": "काशामहै" }
+      readings: { "m3-sg": "kāśatām", "m3-du": "kāśetām", "m3-pl": "kāśantām", "m2-sg": "kāśasva", "m2-du": "kāśethām", "m2-pl": "kāśadhvam", "m1-sg": "kāśai", "m1-du": "kāśāvahai", "m1-pl": "kāśāmahai" }
+    - word: "sa-13084"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "कम्पताम्", "m3-du": "कम्पेताम्", "m3-pl": "कम्पन्ताम्", "m2-sg": "कम्पस्व", "m2-du": "कम्पेथाम्", "m2-pl": "कम्पध्वम्", "m1-sg": "कम्पै", "m1-du": "कम्पावहै", "m1-pl": "कम्पामहै" }
+      readings: { "m3-sg": "kampatām", "m3-du": "kampetām", "m3-pl": "kampantām", "m2-sg": "kampasva", "m2-du": "kampethām", "m2-pl": "kampadhvam", "m1-sg": "kampai", "m1-du": "kampāvahai", "m1-pl": "kampāmahai" }
+    - word: "sa-13085"
+      forms: { "p3-sg": "रणतु", "p3-du": "रणताम्", "p3-pl": "रणन्तु", "p2-sg": "रण", "p2-du": "रणतम्", "p2-pl": "रणत", "p1-sg": "रणानि", "p1-du": "रणाव", "p1-pl": "रणाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "raṇatu", "p3-du": "raṇatām", "p3-pl": "raṇantu", "p2-sg": "raṇa", "p2-du": "raṇatam", "p2-pl": "raṇata", "p1-sg": "raṇāni", "p1-du": "raṇāva", "p1-pl": "raṇāma" }
+    - word: "sa-13086"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "क्वथताम्", "m3-du": "क्वथेताम्", "m3-pl": "क्वथन्ताम्", "m2-sg": "क्वथस्व", "m2-du": "क्वथेथाम्", "m2-pl": "क्वथध्वम्", "m1-sg": "क्वथै", "m1-du": "क्वथावहै", "m1-pl": "क्वथामहै" }
+      readings: { "m3-sg": "kvathatām", "m3-du": "kvathetām", "m3-pl": "kvathantām", "m2-sg": "kvathasva", "m2-du": "kvathethām", "m2-pl": "kvathadhvam", "m1-sg": "kvathai", "m1-du": "kvathāvahai", "m1-pl": "kvathāmahai" }
+    - word: "sa-13087"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "त्रपताम्", "m3-du": "त्रपेताम्", "m3-pl": "त्रपन्ताम्", "m2-sg": "त्रपस्व", "m2-du": "त्रपेथाम्", "m2-pl": "त्रपध्वम्", "m1-sg": "त्रपै", "m1-du": "त्रपावहै", "m1-pl": "त्रपामहै" }
+      readings: { "m3-sg": "trapatām", "m3-du": "trapetām", "m3-pl": "trapantām", "m2-sg": "trapasva", "m2-du": "trapethām", "m2-pl": "trapadhvam", "m1-sg": "trapai", "m1-du": "trapāvahai", "m1-pl": "trapāmahai" }
+    - word: "sa-13088"
+      forms: { "p3-sg": "गणयतु", "p3-du": "गणयताम्", "p3-pl": "गणयन्तु", "p2-sg": "गणय", "p2-du": "गणयतम्", "p2-pl": "गणयत", "p1-sg": "गणयानि", "p1-du": "गणयाव", "p1-pl": "गणयाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "gaṇayatu", "p3-du": "gaṇayatām", "p3-pl": "gaṇayantu", "p2-sg": "gaṇaya", "p2-du": "gaṇayatam", "p2-pl": "gaṇayata", "p1-sg": "gaṇayāni", "p1-du": "gaṇayāva", "p1-pl": "gaṇayāma" }
+    - word: "sa-13089"
+      forms: { "p3-sg": "मज्जतु", "p3-du": "मज्जताम्", "p3-pl": "मज्जन्तु", "p2-sg": "मज्ज", "p2-du": "मज्जतम्", "p2-pl": "मज्जत", "p1-sg": "मज्जानि", "p1-du": "मज्जाव", "p1-pl": "मज्जाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "majjatu", "p3-du": "majjatām", "p3-pl": "majjantu", "p2-sg": "majja", "p2-du": "majjatam", "p2-pl": "majjata", "p1-sg": "majjāni", "p1-du": "majjāva", "p1-pl": "majjāma" }
+    - word: "sa-13090"
+      forms: { "p3-sg": "द्रायतु", "p3-du": "द्रायताम्", "p3-pl": "द्रायन्तु", "p2-sg": "द्राय", "p2-du": "द्रायतम्", "p2-pl": "द्रायत", "p1-sg": "द्रायाणि", "p1-du": "द्रायाव", "p1-pl": "द्रायाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "drāyatu", "p3-du": "drāyatām", "p3-pl": "drāyantu", "p2-sg": "drāya", "p2-du": "drāyatam", "p2-pl": "drāyata", "p1-sg": "drāyāṇi", "p1-du": "drāyāva", "p1-pl": "drāyāma" }
+    - word: "sa-13091"
+      forms: { "p3-sg": "खेलतु", "p3-du": "खेलताम्", "p3-pl": "खेलन्तु", "p2-sg": "खेल", "p2-du": "खेलतम्", "p2-pl": "खेलत", "p1-sg": "खेलानि", "p1-du": "खेलाव", "p1-pl": "खेलाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "khelatu", "p3-du": "khelatām", "p3-pl": "khelantu", "p2-sg": "khela", "p2-du": "khelatam", "p2-pl": "khelata", "p1-sg": "khelāni", "p1-du": "khelāva", "p1-pl": "khelāma" }
+    - word: "sa-13092"
+      forms: { "p3-sg": "शिक्षतु", "p3-du": "शिक्षताम्", "p3-pl": "शिक्षन्तु", "p2-sg": "शिक्ष", "p2-du": "शिक्षतम्", "p2-pl": "शिक्षत", "p1-sg": "शिक्षाणि", "p1-du": "शिक्षाव", "p1-pl": "शिक्षाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "śikṣatu", "p3-du": "śikṣatām", "p3-pl": "śikṣantu", "p2-sg": "śikṣa", "p2-du": "śikṣatam", "p2-pl": "śikṣata", "p1-sg": "śikṣāṇi", "p1-du": "śikṣāva", "p1-pl": "śikṣāma" }
+    - word: "sa-13093"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "कासताम्", "m3-du": "कासेताम्", "m3-pl": "कासन्ताम्", "m2-sg": "कासस्व", "m2-du": "कासेथाम्", "m2-pl": "कासध्वम्", "m1-sg": "कासै", "m1-du": "कासावहै", "m1-pl": "कासामहै" }
+      readings: { "m3-sg": "kāsatām", "m3-du": "kāsetām", "m3-pl": "kāsantām", "m2-sg": "kāsasva", "m2-du": "kāsethām", "m2-pl": "kāsadhvam", "m1-sg": "kāsai", "m1-du": "kāsāvahai", "m1-pl": "kāsāmahai" }
+    - word: "sa-13094"
+      forms: { "p3-sg": "बुक्कतु", "p3-du": "बुक्कताम्", "p3-pl": "बुक्कन्तु", "p2-sg": "बुक्क", "p2-du": "बुक्कतम्", "p2-pl": "बुक्कत", "p1-sg": "बुक्कानि", "p1-du": "बुक्काव", "p1-pl": "बुक्काम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "bukkatu", "p3-du": "bukkatām", "p3-pl": "bukkantu", "p2-sg": "bukka", "p2-du": "bukkatam", "p2-pl": "bukkata", "p1-sg": "bukkāni", "p1-du": "bukkāva", "p1-pl": "bukkāma" }
+    - word: "sa-13095"
+      forms: { "p3-sg": "रदतु", "p3-du": "रदताम्", "p3-pl": "रदन्तु", "p2-sg": "रद", "p2-du": "रदतम्", "p2-pl": "रदत", "p1-sg": "रदानि", "p1-du": "रदाव", "p1-pl": "रदाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "radatu", "p3-du": "radatām", "p3-pl": "radantu", "p2-sg": "rada", "p2-du": "radatam", "p2-pl": "radata", "p1-sg": "radāni", "p1-du": "radāva", "p1-pl": "radāma" }
+    - word: "sa-13096"
+      forms: { "p3-sg": "तृष्यतु", "p3-du": "तृष्यताम्", "p3-pl": "तृष्यन्तु", "p2-sg": "तृष्य", "p2-du": "तृष्यतम्", "p2-pl": "तृष्यत", "p1-sg": "तृष्याणि", "p1-du": "तृष्याव", "p1-pl": "तृष्याम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "tṛṣyatu", "p3-du": "tṛṣyatām", "p3-pl": "tṛṣyantu", "p2-sg": "tṛṣya", "p2-du": "tṛṣyatam", "p2-pl": "tṛṣyata", "p1-sg": "tṛṣyāṇi", "p1-du": "tṛṣyāva", "p1-pl": "tṛṣyāma" }
+    - word: "sa-13097"
+      forms: { "p3-sg": "गलतु", "p3-du": "गलताम्", "p3-pl": "गलन्तु", "p2-sg": "गल", "p2-du": "गलतम्", "p2-pl": "गलत", "p1-sg": "गलानि", "p1-du": "गलाव", "p1-pl": "गलाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "galatu", "p3-du": "galatām", "p3-pl": "galantu", "p2-sg": "gala", "p2-du": "galatam", "p2-pl": "galata", "p1-sg": "galāni", "p1-du": "galāva", "p1-pl": "galāma" }
+    - word: "sa-13098"
+      forms: { "p3-sg": null, "p3-du": null, "p3-pl": null, "p2-sg": null, "p2-du": null, "p2-pl": null, "p1-sg": null, "p1-du": null, "p1-pl": null, "m3-sg": "जृम्भताम्", "m3-du": "जृम्भेताम्", "m3-pl": "जृम्भन्ताम्", "m2-sg": "जृम्भस्व", "m2-du": "जृम्भेथाम्", "m2-pl": "जृम्भध्वम्", "m1-sg": "जृम्भै", "m1-du": "जृम्भावहै", "m1-pl": "जृम्भामहै" }
+      readings: { "m3-sg": "jṛmbhatām", "m3-du": "jṛmbhetām", "m3-pl": "jṛmbhantām", "m2-sg": "jṛmbhasva", "m2-du": "jṛmbhethām", "m2-pl": "jṛmbhadhvam", "m1-sg": "jṛmbhai", "m1-du": "jṛmbhāvahai", "m1-pl": "jṛmbhāmahai" }
+    - word: "sa-13099"
+      forms: { "p3-sg": "पालयतु", "p3-du": "पालयताम्", "p3-pl": "पालयन्तु", "p2-sg": "पालय", "p2-du": "पालयतम्", "p2-pl": "पालयत", "p1-sg": "पालयानि", "p1-du": "पालयाव", "p1-pl": "पालयाम", "m3-sg": null, "m3-du": null, "m3-pl": null, "m2-sg": null, "m2-du": null, "m2-pl": null, "m1-sg": null, "m1-du": null, "m1-pl": null }
+      readings: { "p3-sg": "pālayatu", "p3-du": "pālayatām", "p3-pl": "pālayantu", "p2-sg": "pālaya", "p2-du": "pālayatam", "p2-pl": "pālayata", "p1-sg": "pālayāni", "p1-du": "pālayāva", "p1-pl": "pālayāma" }
+rules:
+  - id: "sa-rule-imperative-active-third"
+    slots: ["p3-sg", "p3-du", "p3-pl"]
+    words: [{ word: "लोट् च", reading: "loṭ ca" }, { word: "लोटः लङ्वत्", reading: "loṭaḥ laṅvat" }, { word: "एरुः", reading: "eruḥ" }, { word: "भवतु", reading: "bhavatu" }, { word: "भवताम्", reading: "bhavatām" }, { word: "भवन्तु", reading: "bhavantu" }, { word: "भवति", reading: "bhavati" }]
+  - id: "sa-rule-imperative-active-second"
+    slots: ["p2-sg", "p2-du", "p2-pl"]
+    words: [{ word: "सेर्हि अपित् च", reading: "serhi apit ca" }, { word: "अतः हेः", reading: "ataḥ heḥ" }, { word: "भव", reading: "bhava" }, { word: "पश्य", reading: "paśya" }, { word: "ब्रूहि", reading: "brūhi" }, { word: "जानीहि", reading: "jānīhi" }, { word: "धेहि", reading: "dhehi" }, { word: "देहि", reading: "dehi" }, { word: "कुरु", reading: "kuru" }, { word: "हुझल्भ्यः हेर्धिः", reading: "hujhalbhyaḥ herdhiḥ" }, { word: "रुन्द्धि", reading: "runddhi" }, { word: "भवतम्", reading: "bhavatam" }, { word: "भवत", reading: "bhavata" }, { word: "भवतात्", reading: "bhavatāt" }]
+  - id: "sa-rule-imperative-active-first"
+    slots: ["p1-sg", "p1-du", "p1-pl"]
+    words: [{ word: "भवानि", reading: "bhavāni" }, { word: "भवाव", reading: "bhavāva" }, { word: "भवाम", reading: "bhavāma" }, { word: "मेर्निः", reading: "merniḥ" }, { word: "आट् उत्तमस्य पित् च", reading: "āṭ uttamasya pit ca" }, { word: "पश्यानि", reading: "paśyāni" }, { word: "असानि", reading: "asāni" }, { word: "रुणधानि", reading: "ruṇadhāni" }]
+  - id: "sa-rule-imperative-middle-third"
+    slots: ["m3-sg", "m3-du", "m3-pl"]
+    words: [{ word: "लभताम्", reading: "labhatām" }, { word: "लभेताम्", reading: "labhetām" }, { word: "लभन्ताम्", reading: "labhantām" }, { word: "वर्तताम्", reading: "vartatām" }, { word: "ब्रूताम्", reading: "brūtām" }, { word: "ब्रवीतु", reading: "bravītu" }]
+  - id: "sa-rule-imperative-middle-second"
+    slots: ["m2-sg", "m2-du", "m2-pl"]
+    words: [{ word: "लभस्व", reading: "labhasva" }, { word: "लभेथाम्", reading: "labhethām" }, { word: "लभध्वम्", reading: "labhadhvam" }, { word: "ईक्षस्व", reading: "īkṣasva" }, { word: "जानीष्व", reading: "jānīṣva" }, { word: "जानीहि", reading: "jānīhi" }]
+  - id: "sa-rule-imperative-middle-first"
+    slots: ["m1-sg", "m1-du", "m1-pl"]
+    words: [{ word: "लभै", reading: "labhai" }, { word: "लभावहै", reading: "labhāvahai" }, { word: "लभामहै", reading: "labhāmahai" }, { word: "ब्रवै", reading: "bravai" }]

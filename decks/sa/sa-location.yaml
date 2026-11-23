@@ -1,0 +1,214 @@
+schema: 1
+id: "sa-location"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "location"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-1554"
+    target: "सर्वत्र"
+    reading: "sarvatra"
+    ipa: "sərʋət̪rə"
+    pos: "adv"
+    tags: ["place"]
+    bases: "self"
+    examples:
+      - target: "सर्वत्र जलम्"
+        reading: "sarvatra jalam"
+        ipa: "sərʋət̪rə dʒələm"
+        bases:
+          - { word: "सर्वत्र", base: "सर्वत्र", reading: "sarvatra" }
+          - { word: "जलम्", base: "जल", reading: "jala" }
+      - target: "सर्वत्र पुस्तकानि"
+        reading: "sarvatra pustakāni"
+        ipa: "sərʋət̪rə pust̪əkaːni"
+        bases:
+          - { word: "सर्वत्र", base: "सर्वत्र", reading: "sarvatra" }
+          - { word: "पुस्तकानि", base: "पुस्तक", reading: "pustaka" }
+  - id: "sa-1555"
+    target: "इह"
+    reading: "iha"
+    ipa: "iɦə"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "इह बालः"
+        reading: "iha bālaḥ"
+        ipa: "iɦə baːləh"
+        bases:
+          - { word: "इह", base: "इह", reading: "iha" }
+          - { word: "बालः", base: "बाल", reading: "bāla" }
+      - target: "इह देवाः"
+        reading: "iha devāḥ"
+        ipa: "iɦə d̪eːʋaːh"
+        bases:
+          - { word: "इह", base: "इह", reading: "iha" }
+          - { word: "देवाः", base: "देव", reading: "deva" }
+  - id: "sa-1556"
+    target: "बहिः"
+    reading: "bahiḥ"
+    ipa: "bəɦih"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "बहिः", base: "बहिस्", reading: "bahis" }
+    examples:
+      - target: "गृहाद् बहिः"
+        reading: "gṛhād bahiḥ"
+        ipa: "ɡr̩ɦaːd̪ bəɦih"
+        bases:
+          - { word: "गृहाद्", base: "गृह", reading: "gṛha" }
+          - { word: "बहिः", base: "बहिस्", reading: "bahis" }
+      - target: "बहिर् बालः"
+        reading: "bahir bālaḥ"
+        ipa: "bəɦir baːləh"
+        bases:
+          - { word: "बहिर्", base: "बहिस्", reading: "bahis" }
+          - { word: "बालः", base: "बाल", reading: "bāla" }
+  - id: "sa-1557"
+    target: "अन्तः"
+    reading: "antaḥ"
+    ipa: "ənt̪əh"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "अन्तः", base: "अन्तर्", reading: "antar" }
+    examples:
+      - target: "अन्तर् गृहस्य"
+        reading: "antar gṛhasya"
+        ipa: "ənt̪ər ɡr̩ɦəsjə"
+        bases:
+          - { word: "अन्तर्", base: "अन्तर्", reading: "antar" }
+          - { word: "गृहस्य", base: "गृह", reading: "gṛha" }
+      - target: "अन्तर् जलम्"
+        reading: "antar jalam"
+        ipa: "ənt̪ər dʒələm"
+        bases:
+          - { word: "अन्तर्", base: "अन्तर्", reading: "antar" }
+          - { word: "जलम्", base: "जल", reading: "jala" }
+  - id: "sa-1558"
+    target: "दूरे"
+    reading: "dūre"
+    ipa: "d̪uːreː"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "दूरे", base: "दूर", reading: "dūra" }
+    examples:
+      - target: "दूरे पर्वतः"
+        reading: "dūre parvataḥ"
+        ipa: "d̪uːreː pərʋət̪əh"
+        bases:
+          - { word: "दूरे", base: "दूर", reading: "dūra" }
+          - { word: "पर्वतः", base: "पर्वत", reading: "parvata" }
+      - target: "नदी दूरे"
+        reading: "nadī dūre"
+        ipa: "nəd̪iː d̪uːreː"
+        bases:
+          - { word: "नदी", base: "नदी", reading: "nadī" }
+          - { word: "दूरे", base: "दूर", reading: "dūra" }
+  - id: "sa-1640"
+    target: "अन्यत्र"
+    reading: "anyatra"
+    ipa: "ənjət̪rə"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "अन्यत्र नदी दीर्घा"
+        reading: "anyatra nadī dīrghā"
+        ipa: "ənjət̪rə nəd̪iː d̪iːrɡʱaː"
+        bases:
+          - { word: "नदी", base: "नदी", reading: "nadī" }
+          - { word: "दीर्घा", base: "दीर्घ", reading: "dīrgha" }
+      - target: "अन्यत्र गङ्गा पवित्रा"
+        reading: "anyatra gaṅgā pavitrā"
+        ipa: "ənjət̪rə ɡəŋɡaː pəʋit̪raː"
+        bases:
+          - { word: "गङ्गा", base: "गङ्गा", reading: "gaṅgā" }
+          - { word: "पवित्रा", base: "पवित्र", reading: "pavitra" }
+  - id: "sa-1641"
+    target: "एकत्र"
+    reading: "ekatra"
+    ipa: "eːkət̪rə"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "एकत्र पुस्तकानि सन्ति"
+        reading: "ekatra pustakāni santi"
+        ipa: "eːkət̪rə pust̪əkaːni sənt̪i"
+        bases:
+          - { word: "पुस्तकानि", base: "पुस्तक", reading: "pustaka" }
+          - { word: "सन्ति", base: "अस्", reading: "as" }
+      - target: "एकत्र पुष्पाणि सन्ति"
+        reading: "ekatra puṣpāṇi santi"
+        ipa: "eːkət̪rə puʂpaːɳi sənt̪i"
+        bases:
+          - { word: "पुष्पाणि", base: "पुष्प", reading: "puṣpa" }
+          - { word: "सन्ति", base: "अस्", reading: "as" }
+  - id: "sa-1642"
+    target: "अन्तरा"
+    reading: "antarā"
+    ipa: "ənt̪əraː"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "अन्तरा जलं शीतम्"
+        reading: "antarā jalaṃ śītam"
+        ipa: "ənt̪əraː dʒələm ʃiːt̪əm"
+        bases:
+          - { word: "जलं", base: "जल", reading: "jala" }
+          - { word: "शीतम्", base: "शीत", reading: "śīta" }
+      - target: "अन्तरा गृहं नवम्"
+        reading: "antarā gṛhaṃ navam"
+        ipa: "ənt̪əraː ɡr̩ɦəm nəʋəm"
+        bases:
+          - { word: "गृहं", base: "गृह", reading: "gṛha" }
+          - { word: "नवम्", base: "नव", reading: "nava" }
+  - id: "sa-1643"
+    target: "अधः"
+    reading: "adhaḥ"
+    ipa: "əd̪ʱəh"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "अधः", base: "अधस्", reading: "adhas" }
+    examples:
+      - target: "अधः पुस्तकम्"
+        reading: "adhaḥ pustakam"
+        ipa: "əd̪ʱəh pust̪əkəm"
+        bases:
+          - { word: "अधः", base: "अधस्", reading: "adhas" }
+          - { word: "पुस्तकम्", base: "पुस्तक", reading: "pustaka" }
+      - target: "अधः पात्रम्"
+        reading: "adhaḥ pātram"
+        ipa: "əd̪ʱəh paːt̪rəm"
+        bases:
+          - { word: "अधः", base: "अधस्", reading: "adhas" }
+          - { word: "पात्रम्", base: "पात्र", reading: "pātra" }

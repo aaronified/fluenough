@@ -2,12 +2,14 @@ schema: 1
 id: "tok-everyday-verbs-sentences"
 part: "core"
 kind: "vocab"
-language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", scripts: ["latin", "sitelen_pona"], icon: "Tp" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "tok-0089"
     target: "mi moku e pan."
+    target_scripts:
+      sitelen_pona: "󱤴 󱤶 󱤉 󱥋."
     ipa: "mi ˈmoku e pan"
     pos: "phrase"
     bases:
@@ -20,6 +22,8 @@ cards:
       - { id: "w2", ref: "tok-0081", kind: "word" }
   - id: "tok-0090"
     target: "ona li lape."
+    target_scripts:
+      sitelen_pona: "󱥆 󱤧 󱤢."
     ipa: "ˈona li ˈlape"
     pos: "phrase"
     bases:
@@ -31,6 +35,8 @@ cards:
       - { id: "w2", ref: "tok-0005", kind: "word" }
   - id: "tok-0091"
     target: "sina wile e seme?"
+    target_scripts:
+      sitelen_pona: "󱥞 󱥷 󱤉 󱥙?"
     ipa: "ˈsina ˈwile e ˈseme"
     pos: "phrase"
     bases:
@@ -43,6 +49,8 @@ cards:
       - { id: "w2", ref: "tok-0003", kind: "word" }
   - id: "tok-0092"
     target: "mi lukin e ni."
+    target_scripts:
+      sitelen_pona: "󱤴 󱤮 󱤉 󱥁."
     ipa: "mi ˈlukin e ni"
     pos: "phrase"
     bases:
@@ -55,6 +63,8 @@ cards:
       - { id: "w2", ref: "tok-0007", kind: "word" }
   - id: "tok-0093"
     target: "jan ni li kama."
+    target_scripts:
+      sitelen_pona: "󱤑 󱥁 󱤧 󱤖."
     ipa: "jan ni li ˈkama"
     pos: "phrase"
     bases:
@@ -67,6 +77,8 @@ cards:
       - { id: "w2", ref: "tok-0081", kind: "word" }
   - id: "tok-0094"
     target: "mi jo e ijo ala."
+    target_scripts:
+      sitelen_pona: "󱤴 󱤓 󱤉 󱤌 󱤂."
     ipa: "mi jo e ˈijo ˈala"
     pos: "phrase"
     bases:

@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-opinions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3930"
+    target: "सत्यं सदा बुधो वदति."
+    reading: "satyaṃ sadā budho vadati."
+    ipa: "sət̪jəm səd̪aː bud̪ʱoː ʋəd̪ət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सत्यं", base: "सत्यः", reading: "satyaḥ" }, { word: "सदा", ref: "sa-1086" }, { word: "बुधो", base: "बुधः", reading: "budhaḥ" }, { word: "वदति", base: "वद्", reading: "vad" }]
+    confusables: [{ id: "w1", ref: "sa-7444", kind: "word" }, { id: "w2", ref: "sa-5820", kind: "word" }, { id: "w3", ref: "sa-2108", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3931"
+    target: "मेधिरो मन्त्री नृपाय निश्चयं कथयति."
+    reading: "medhiro mantrī nṛpāya niścayaṃ kathayati."
+    ipa: "meːd̪ʱiroː mənt̪riː nr̩paːjə niʃtʃəjəm kət̪ʰəjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "मेधिरो", base: "मेधिरः", reading: "medhiraḥ" }, { word: "मन्त्री", ref: "sa-5717" }, { word: "नृपाय", base: "नृपः", reading: "nṛpaḥ" }, { word: "निश्चयं", base: "निश्चयः", reading: "niścayaḥ" }, { word: "कथयति", base: "कथ्", reading: "kath" }]
+    confusables: [{ id: "w1", ref: "sa-7433", kind: "word" }, { id: "w2", ref: "sa-7401", kind: "word" }, { id: "w3", ref: "sa-2108", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3932"
+    target: "तर्कम् अज्ञो न जानाति."
+    reading: "tarkam ajño na jānāti."
+    ipa: "t̪ərkəm ədʒɲoː nə dʒaːnaːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "तर्कम्", base: "तर्कः", reading: "tarkaḥ" }, { word: "अज्ञो", base: "अज्ञः", reading: "ajñaḥ" }, { word: "न", ref: "sa-0026" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+    confusables: [{ id: "w1", ref: "sa-7402", kind: "word" }, { id: "w2", ref: "sa-7433", kind: "word" }, { id: "w3", ref: "sa-2008", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3933"
+    target: "सदा साधुः प्रशंसां लभते."
+    reading: "sadā sādhuḥ praśaṃsāṃ labhate."
+    ipa: "səd̪aː saːd̪ʱuh prəʃə̃saːm ləbʱət̪eː"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सदा", ref: "sa-1086" }, { word: "साधुः", ref: "sa-5863" }, { word: "प्रशंसां", base: "प्रशंसा", reading: "praśaṃsā" }, { word: "लभते", base: "लभ्", reading: "labh" }]
+    confusables: [{ id: "w1", ref: "sa-7517", kind: "word" }, { id: "w2", ref: "sa-5820", kind: "word" }, { id: "w3", ref: "sa-2121", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3934"
+    target: "उपमया वाक्यं रम्यं भवति."
+    reading: "upamayā vākyaṃ ramyaṃ bhavati."
+    ipa: "upəməjaː ʋaːkjəm rəmjəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "उपमया", base: "उपमा", reading: "upamā" }, { word: "वाक्यं", base: "वाक्यम्", reading: "vākyam" }, { word: "रम्यं", base: "रम्यः", reading: "ramyaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-7409", kind: "word" }, { id: "w2", ref: "sa-1844", kind: "word" }, { id: "w3", ref: "sa-7421", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3935"
+    target: "पर्वतो नित्यं स्थिरो भवति."
+    reading: "parvato nityaṃ sthiro bhavati."
+    ipa: "pərʋət̪oː nit̪jəm st̪ʰiroː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पर्वतो", base: "पर्वतः", reading: "parvataḥ" }, { word: "नित्यं", base: "नित्यम्", reading: "nityam" }, { word: "स्थिरो", base: "स्थिरः", reading: "sthiraḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-7438", kind: "word" }, { id: "w2", ref: "sa-5017", kind: "word" }, { id: "w3", ref: "sa-7439", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3936"
+    target: "उत्तमं ग्रन्थं पण्डितो नित्यं पठति."
+    reading: "uttamaṃ granthaṃ paṇḍito nityaṃ paṭhati."
+    ipa: "ut̪t̪əməm ɡrənt̪ʰəm pəɳɖit̪oː nit̪jəm pəʈʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "उत्तमं", base: "उत्तमः", reading: "uttamaḥ" }, { word: "ग्रन्थं", base: "ग्रन्थः", reading: "granthaḥ" }, { word: "पण्डितो", base: "पण्डितः", reading: "paṇḍitaḥ" }, { word: "नित्यं", base: "नित्यम्", reading: "nityam" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-7422", kind: "word" }, { id: "w2", ref: "sa-7423", kind: "word" }, { id: "w3", ref: "sa-2114", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3937"
+    target: "संदेहे बुधो विचारं करोति."
+    reading: "saṃdehe budho vicāraṃ karoti."
+    ipa: "sənd̪eːɦeː bud̪ʱoː ʋitʃaːrəm kəroːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "संदेहे", base: "संदेहः", reading: "saṃdehaḥ" }, { word: "बुधो", base: "बुधः", reading: "budhaḥ" }, { word: "विचारं", base: "विचारः", reading: "vicāraḥ" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+    confusables: [{ id: "w1", ref: "sa-7405", kind: "word" }, { id: "w2", ref: "sa-7420", kind: "word" }, { id: "w3", ref: "sa-5742", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3938"
+    target: "विचक्षणो ऽनुभवेन तत्त्वं जानाति."
+    reading: "vicakṣaṇo 'nubhavena tattvaṃ jānāti."
+    ipa: "ʋitʃəkʂəɳoː nubʱəʋeːnə t̪ət̪t̪ʋəm dʒaːnaːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "विचक्षणो", base: "विचक्षणः", reading: "vicakṣaṇaḥ" }, { word: "ऽनुभवेन", base: "अनुभवः", reading: "anubhavaḥ" }, { word: "तत्त्वं", base: "तत्त्वम्", reading: "tattvam" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+    confusables: [{ id: "w1", ref: "sa-7503", kind: "word" }, { id: "w2", ref: "sa-7516", kind: "word" }, { id: "w3", ref: "sa-7434", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3939"
+    target: "सदा विश्वासेन मित्रता वर्धते."
+    reading: "sadā viśvāsena mitratā vardhate."
+    ipa: "səd̪aː ʋiʃʋaːseːnə mit̪rət̪aː ʋərd̪ʱət̪eː"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सदा", ref: "sa-1086" }, { word: "विश्वासेन", base: "विश्वासः", reading: "viśvāsaḥ" }, { word: "मित्रता", ref: "sa-7257" }, { word: "वर्धते", base: "वृध्", reading: "vṛdh" }]
+    confusables: [{ id: "w1", ref: "sa-7253", kind: "word" }, { id: "w2", ref: "sa-7503", kind: "word" }, { id: "w3", ref: "sa-12000", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]

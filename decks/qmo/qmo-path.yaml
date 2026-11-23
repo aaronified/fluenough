@@ -1,0 +1,19 @@
+# The order Morse code is taught in: the six shortest letters, the rest of the
+# alphabet by length, the digits, the punctuation and the procedural signs
+# (ADR-0057). Morse is taught to no level, so the path has no B1 plan.
+#
+# Every qmo deck is listed, by its core id, exactly once. See ADR-0013 and
+# docs/DECK-FORMAT.md.
+schema: 1
+kind: "path"
+id: "qmo-path"
+language: "qmo"
+# No theme decks here, so no unit but the last can end in "*": a deck a learner adds goes in the last unit.
+units:
+  - ["qmo-letters-1"]
+  - ["qmo-letters-2"]
+  - ["qmo-letters-3"]
+  - ["qmo-digits"]
+  - ["qmo-punctuation"]
+  - ["qmo-signs"]
+  - ["*"]

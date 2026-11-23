@@ -1,0 +1,89 @@
+schema: 1
+id: "sa-describing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3080"
+    target: "पिता सुखी भवति भ्राता च दुःखी भवति."
+    reading: "pitā sukhī bhavati bhrātā ca duḥkhī bhavati."
+    ipa: "pit̪aː sukʰiː bʱəʋət̪i bʱraːt̪aː tʃə d̪uhkʰiː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पिता", ref: "sa-1031" }, { word: "सुखी", ref: "sa-1532" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "भ्राता", ref: "sa-1032" }, { word: "च", ref: "sa-1104" }, { word: "दुःखी", ref: "sa-1533" }]
+    confusables: [{ id: "w1", ref: "sa-1033", kind: "word" }, { id: "w2", ref: "sa-0431", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "sa-3081"
+    target: "अश्वः कृष्णो भवति जलं च पवित्रं भवति."
+    reading: "aśvaḥ kṛṣṇo bhavati jalaṃ ca pavitraṃ bhavati."
+    ipa: "əʃʋəh kr̩ʂɳoː bʱəʋət̪i dʒələm tʃə pəʋit̪rəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अश्वः", ref: "sa-0029" }, { word: "कृष्णो", base: "कृष्णः", reading: "kṛṣṇaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "च", ref: "sa-1104" }, { word: "पवित्रं", base: "पवित्रः", reading: "pavitraḥ" }]
+    confusables: [{ id: "w1", ref: "sa-4094", kind: "word" }, { id: "w2", ref: "sa-1516", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3082"
+    target: "जलं शीतं भवति पुस्तकं च नवं भवति."
+    reading: "jalaṃ śītaṃ bhavati pustakaṃ ca navaṃ bhavati."
+    ipa: "dʒələm ʃiːt̪əm bʱəʋət̪i pust̪əkəm tʃə nəʋəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "जलं", base: "जलम्", reading: "jalam" }, { word: "शीतं", base: "शीतः", reading: "śītaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "पुस्तकं", base: "पुस्तकम्", reading: "pustakam" }, { word: "च", ref: "sa-1104" }, { word: "नवं", base: "नवः", reading: "navaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-0024", kind: "word" }, { id: "w2", ref: "sa-1531", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3083"
+    target: "नवं पुस्तकं पठामि पुराणं च पुस्तकं न पठामि."
+    reading: "navaṃ pustakaṃ paṭhāmi purāṇaṃ ca pustakaṃ na paṭhāmi."
+    ipa: "nəʋəm pust̪əkəm pəʈʰaːmi puraːɳəm tʃə pust̪əkəm nə pəʈʰaːmi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "नवं", base: "नवः", reading: "navaḥ" }, { word: "पुस्तकं", base: "पुस्तकम्", reading: "pustakam" }, { word: "पठामि", base: "पठ्", reading: "paṭh" }, { word: "पुराणं", base: "पुराणः", reading: "purāṇaḥ" }, { word: "च", ref: "sa-1104" }, { word: "न", ref: "sa-0026" }]
+    confusables: [{ id: "w1", ref: "sa-1530", kind: "word" }, { id: "w2", ref: "sa-4101", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3084"
+    target: "सा सुखिनी गायति स च सुखी हसति."
+    reading: "sā sukhinī gāyati sa ca sukhī hasati."
+    ipa: "saː sukʰiniː ɡaːjət̪i sə tʃə sukʰiː ɦəsət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सा", ref: "sa-1011" }, { word: "सुखिनी", base: "सुखी", reading: "sukhī" }, { word: "गायति", base: "गै", reading: "gai" }, { word: "स", base: "सः", reading: "saḥ" }, { word: "च", ref: "sa-1104" }, { word: "सुखी", ref: "sa-1532" }, { word: "हसति", base: "हस्", reading: "has" }]
+    confusables: [{ id: "w1", ref: "sa-1012", kind: "word" }, { id: "w2", ref: "sa-2022", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3085"
+    target: "अहं सुखी भवामि त्वं च दुःखी भवसि."
+    reading: "ahaṃ sukhī bhavāmi tvaṃ ca duḥkhī bhavasi."
+    ipa: "əɦəm sukʰiː bʱəʋaːmi t̪ʋəm tʃə d̪uhkʰiː bʱəʋəsi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "सुखी", ref: "sa-1532" }, { word: "भवामि", base: "भू", reading: "bhū" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "च", ref: "sa-1104" }, { word: "दुःखी", ref: "sa-1533" }, { word: "भवसि", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-1010", kind: "word" }, { id: "w2", ref: "sa-0431", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3086"
+    target: "सुखी भ्राता हसति दुःखी च पिता न हसति."
+    reading: "sukhī bhrātā hasati duḥkhī ca pitā na hasati."
+    ipa: "sukʰiː bʱraːt̪aː ɦəsət̪i d̪uhkʰiː tʃə pit̪aː nə ɦəsət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सुखी", ref: "sa-1532" }, { word: "भ्राता", ref: "sa-1032" }, { word: "हसति", base: "हस्", reading: "has" }, { word: "दुःखी", ref: "sa-1533" }, { word: "च", ref: "sa-1104" }, { word: "पिता", ref: "sa-1031" }, { word: "न", ref: "sa-0026" }]
+    confusables: [{ id: "w1", ref: "sa-1033", kind: "word" }, { id: "w2", ref: "sa-2005", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "sa-3087"
+    target: "एष सखा पवित्रो न भवति पिता च पवित्रो भवति."
+    reading: "eṣa sakhā pavitro na bhavati pitā ca pavitro bhavati."
+    ipa: "eːʂə səkʰaː pəʋit̪roː nə bʱəʋət̪i pit̪aː tʃə pəʋit̪roː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "एष", base: "एषः", reading: "eṣaḥ" }, { word: "सखा", ref: "sa-1038" }, { word: "पवित्रो", base: "पवित्रः", reading: "pavitraḥ" }, { word: "न", ref: "sa-0026" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "पिता", ref: "sa-1031" }, { word: "च", ref: "sa-1104" }]
+    confusables: [{ id: "w1", ref: "sa-1017", kind: "word" }, { id: "w2", ref: "sa-1041", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3088"
+    target: "किं पुस्तकं कठिनं भवति?"
+    reading: "kiṃ pustakaṃ kaṭhinaṃ bhavati?"
+    ipa: "kim pust̪əkəm kəʈʰinəm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "किं", base: "किम्", reading: "kim" }, { word: "पुस्तकं", base: "पुस्तकम्", reading: "pustakam" }, { word: "कठिनं", base: "कठिनः", reading: "kaṭhinaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-1001", kind: "word" }, { id: "w2", ref: "sa-4101", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]

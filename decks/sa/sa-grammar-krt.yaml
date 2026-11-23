@@ -1,0 +1,602 @@
+# Primary derivation (krt): the nouns of action and of the doer that the verbs of the course make with ghan, lyut, trc, ktin and nvul.
+# A cell is filled only where en.wiktionary.org has the derived noun (its entry, or the root entry's own list); the empty cells are verbs for which no such noun was found, not verbs that cannot form one.
+# Verbs with no cell at all are in `except`: sa-2011, 2105, 2108, 2111, 2123 (no noun of these five suffixes on the root entry or on an entry read; the root entries of sa-2007, 2021, 2023, 2104 and 2117 list a noun or two and those are cells).
+schema: 1
+id: "sa-grammar-krt"
+part: "core"
+kind: "rules"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+source: "en.wiktionary.org: the entry of each derived noun and the Derived nominal forms list on the root entry of each verb (the root entries as extracted in the kaikki.org Wiktionary dump of 2026-10-30), read 2026-11-17; only a noun whose entry gives the verb and the suffix, or the root's own list, is a cell; Whitney, Sanskrit Grammar 1148, 1150, 1157, 1181 and 1182 on en.wikisource, read 2026-11-17; Panini, Astadhyayi 3.1.133, 3.3.16, 3.3.18, 3.3.94, 3.3.115 and 7.3.52 as typed on sa.wikisource.org/wiki/अष्टाध्यायी (the third and seventh chapter pages), read 2026-11-17; readings from tools/transcribe.py (sa)."
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["sa-2011", "sa-2105", "sa-2108", "sa-2111", "sa-2123", "sa-12000", "sa-12015", "sa-12023", "sa-12030", "sa-12034", "sa-12040", "sa-12046", "sa-12047", "sa-12048", "sa-12049", "sa-13053", "sa-13082", "sa-13089", "sa-13091", "sa-13093", "sa-13094", "sa-13095", "sa-13097", "sa-13098", "sa-13099"]
+  slots: ["ghan", "lyut", "trc", "ktin", "nvul"]
+  rows:
+    - word: "sa-0430"
+      forms: { "ghan": "भाव", "lyut": "भवन", "trc": "भवितृ", "ktin": "भूति", "nvul": null }
+      readings: { "ghan": "bhāva", "lyut": "bhavana", "trc": "bhavitṛ", "ktin": "bhūti" }
+    - word: "sa-0431"
+      forms: { "ghan": null, "lyut": "गमन", "trc": "गन्तृ", "ktin": "गति", "nvul": null }
+      readings: { "lyut": "gamana", "trc": "gantṛ", "ktin": "gati" }
+    - word: "sa-0432"
+      forms: { "ghan": "पाठ", "lyut": "पठन", "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "pāṭha", "lyut": "paṭhana" }
+    - word: "sa-0433"
+      forms: { "ghan": "वाद", "lyut": "वदन", "trc": "वदितृ", "ktin": null, "nvul": "वादक" }
+      readings: { "ghan": "vāda", "lyut": "vadana", "trc": "vaditṛ", "nvul": "vādaka" }
+    - word: "sa-0434"
+      forms: { "ghan": "पाक", "lyut": "पचन", "trc": "पक्तृ", "ktin": "पक्ति", "nvul": "पाचक" }
+      readings: { "ghan": "pāka", "lyut": "pacana", "trc": "paktṛ", "ktin": "pakti", "nvul": "pācaka" }
+    - word: "sa-0435"
+      forms: { "ghan": "नाय", "lyut": "नयन", "trc": "नेतृ", "ktin": "नीति", "nvul": "नायक" }
+      readings: { "ghan": "nāya", "lyut": "nayana", "trc": "netṛ", "ktin": "nīti", "nvul": "nāyaka" }
+    - word: "sa-2000"
+      forms: { "ghan": null, "lyut": "खादन", "trc": null, "ktin": null, "nvul": null }
+      readings: { "lyut": "khādana" }
+    - word: "sa-2001"
+      forms: { "ghan": null, "lyut": "पान", "trc": null, "ktin": "पीति", "nvul": null }
+      readings: { "lyut": "pāna", "ktin": "pīti" }
+    - word: "sa-2002"
+      forms: { "ghan": null, "lyut": "स्थान", "trc": null, "ktin": "स्थिति", "nvul": null }
+      readings: { "lyut": "sthāna", "ktin": "sthiti" }
+    - word: "sa-2003"
+      forms: { "ghan": "हास", "lyut": "हसन", "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "hāsa", "lyut": "hasana" }
+    - word: "sa-2004"
+      forms: { "ghan": null, "lyut": "रक्षण", "trc": null, "ktin": null, "nvul": null }
+      readings: { "lyut": "rakṣaṇa" }
+    - word: "sa-2005"
+      forms: { "ghan": "वास", "lyut": null, "trc": "वसितृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "vāsa", "trc": "vasitṛ" }
+    - word: "sa-2006"
+      forms: { "ghan": null, "lyut": "नमन", "trc": "नन्तृ", "ktin": "नति", "nvul": null }
+      readings: { "lyut": "namana", "trc": "nantṛ", "ktin": "nati" }
+    - word: "sa-2007"
+      forms: { "ghan": null, "lyut": "जयन", "trc": null, "ktin": null, "nvul": null }
+      readings: { "lyut": "jayana" }
+    - word: "sa-2008"
+      forms: { "ghan": "स्मार", "lyut": "स्मरण", "trc": "स्मर्तृ", "ktin": "स्मृति", "nvul": null }
+      readings: { "ghan": "smāra", "lyut": "smaraṇa", "trc": "smartṛ", "ktin": "smṛti" }
+    - word: "sa-2009"
+      forms: { "ghan": "धाव", "lyut": "धावन", "trc": "धावितृ", "ktin": "धौति", "nvul": "धावक" }
+      readings: { "ghan": "dhāva", "lyut": "dhāvana", "trc": "dhāvitṛ", "ktin": "dhauti", "nvul": "dhāvaka" }
+    - word: "sa-2010"
+      forms: { "ghan": "पात", "lyut": "पतन", "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "pāta", "lyut": "patana" }
+    - word: "sa-2012"
+      forms: { "ghan": null, "lyut": "क्रीडन", "trc": null, "ktin": null, "nvul": "क्रीडक" }
+      readings: { "lyut": "krīḍana", "nvul": "krīḍaka" }
+    - word: "sa-2013"
+      forms: { "ghan": null, "lyut": "जीवन", "trc": "जीवितृ", "ktin": null, "nvul": "जीवक" }
+      readings: { "lyut": "jīvana", "trc": "jīvitṛ", "nvul": "jīvaka" }
+    - word: "sa-2014"
+      forms: { "ghan": "चार", "lyut": "चरण", "trc": null, "ktin": null, "nvul": "चारक" }
+      readings: { "ghan": "cāra", "lyut": "caraṇa", "nvul": "cāraka" }
+    - word: "sa-2015"
+      forms: { "ghan": "वाह", "lyut": "वहन", "trc": "वोढृ", "ktin": null, "nvul": "वाहक" }
+      readings: { "ghan": "vāha", "lyut": "vahana", "trc": "voḍhṛ", "nvul": "vāhaka" }
+    - word: "sa-2016"
+      forms: { "ghan": "हार", "lyut": "हरण", "trc": "हर्तृ", "ktin": "हृति", "nvul": "हारक" }
+      readings: { "ghan": "hāra", "lyut": "haraṇa", "trc": "hartṛ", "ktin": "hṛti", "nvul": "hāraka" }
+    - word: "sa-2017"
+      forms: { "ghan": null, "lyut": null, "trc": "सर्तृ", "ktin": "सृति", "nvul": "सारक" }
+      readings: { "trc": "sartṛ", "ktin": "sṛti", "nvul": "sāraka" }
+    - word: "sa-2018"
+      forms: { "ghan": null, "lyut": "गान", "trc": null, "ktin": null, "nvul": null }
+      readings: { "lyut": "gāna" }
+    - word: "sa-2019"
+      forms: { "ghan": "ताप", "lyut": "तपन", "trc": null, "ktin": "तप्ति", "nvul": null }
+      readings: { "ghan": "tāpa", "lyut": "tapana", "ktin": "tapti" }
+    - word: "sa-2020"
+      forms: { "ghan": null, "lyut": "धरण", "trc": "धर्तृ", "ktin": "धृति", "nvul": "धारक" }
+      readings: { "lyut": "dharaṇa", "trc": "dhartṛ", "ktin": "dhṛti", "nvul": "dhāraka" }
+    - word: "sa-2021"
+      forms: { "ghan": null, "lyut": "जपन", "trc": null, "ktin": null, "nvul": "जापक" }
+      readings: { "lyut": "japana", "nvul": "jāpaka" }
+    - word: "sa-2022"
+      forms: { "ghan": null, "lyut": "खनन", "trc": "खनितृ", "ktin": null, "nvul": "खानक" }
+      readings: { "lyut": "khanana", "trc": "khanitṛ", "nvul": "khānaka" }
+    - word: "sa-2023"
+      forms: { "ghan": null, "lyut": "हवन", "trc": "ह्वातृ", "ktin": "हूति", "nvul": null }
+      readings: { "lyut": "havana", "trc": "hvātṛ", "ktin": "hūti" }
+    - word: "sa-2100"
+      forms: { "ghan": null, "lyut": "क्षरण", "trc": null, "ktin": null, "nvul": null }
+      readings: { "lyut": "kṣaraṇa" }
+    - word: "sa-2101"
+      forms: { "ghan": "रोध", "lyut": null, "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "rodha" }
+    - word: "sa-2102"
+      forms: { "ghan": "लाभ", "lyut": null, "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "lābha" }
+    - word: "sa-2103"
+      forms: { "ghan": null, "lyut": "वर्तन", "trc": null, "ktin": "वृत्ति", "nvul": null }
+      readings: { "lyut": "vartana", "ktin": "vṛtti" }
+    - word: "sa-2104"
+      forms: { "ghan": null, "lyut": "ईक्षण", "trc": "ईक्षितृ", "ktin": null, "nvul": "ईक्षक" }
+      readings: { "lyut": "īkṣaṇa", "trc": "īkṣitṛ", "nvul": "īkṣaka" }
+    - word: "sa-2106"
+      forms: { "ghan": "रोद", "lyut": "रोदन", "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "roda", "lyut": "rodana" }
+    - word: "sa-2107"
+      forms: { "ghan": null, "lyut": "यान", "trc": null, "ktin": null, "nvul": null }
+      readings: { "lyut": "yāna" }
+    - word: "sa-2109"
+      forms: { "ghan": null, "lyut": "दान", "trc": "दातृ", "ktin": null, "nvul": null }
+      readings: { "lyut": "dāna", "trc": "dātṛ" }
+    - word: "sa-2110"
+      forms: { "ghan": null, "lyut": null, "trc": "धातृ", "ktin": null, "nvul": null }
+      readings: { "trc": "dhātṛ" }
+    - word: "sa-2112"
+      forms: { "ghan": null, "lyut": "नर्तन", "trc": null, "ktin": "नृत्ति", "nvul": "नर्तक" }
+      readings: { "lyut": "nartana", "ktin": "nṛtti", "nvul": "nartaka" }
+    - word: "sa-2113"
+      forms: { "ghan": "श्राव", "lyut": "श्रवण", "trc": "श्रोतृ", "ktin": "श्रुति", "nvul": "श्रावक" }
+      readings: { "ghan": "śrāva", "lyut": "śravaṇa", "trc": "śrotṛ", "ktin": "śruti", "nvul": "śrāvaka" }
+    - word: "sa-2114"
+      forms: { "ghan": "लेख", "lyut": "लेखन", "trc": null, "ktin": null, "nvul": "लेखक" }
+      readings: { "ghan": "lekha", "lyut": "lekhana", "nvul": "lekhaka" }
+    - word: "sa-2115"
+      forms: { "ghan": "वेश", "lyut": null, "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "veśa" }
+    - word: "sa-2116"
+      forms: { "ghan": null, "lyut": null, "trc": null, "ktin": "इष्टि", "nvul": null }
+      readings: { "ktin": "iṣṭi" }
+    - word: "sa-2117"
+      forms: { "ghan": null, "lyut": "तोदन", "trc": null, "ktin": null, "nvul": null }
+      readings: { "lyut": "todana" }
+    - word: "sa-2118"
+      forms: { "ghan": "कार", "lyut": "करण", "trc": "कर्तृ", "ktin": "कृति", "nvul": "कारक" }
+      readings: { "ghan": "kāra", "lyut": "karaṇa", "trc": "kartṛ", "ktin": "kṛti", "nvul": "kāraka" }
+    - word: "sa-2119"
+      forms: { "ghan": null, "lyut": "ज्ञान", "trc": "ज्ञातृ", "ktin": null, "nvul": null }
+      readings: { "lyut": "jñāna", "trc": "jñātṛ" }
+    - word: "sa-2120"
+      forms: { "ghan": null, "lyut": null, "trc": "क्रेतृ", "ktin": null, "nvul": "क्रायक" }
+      readings: { "trc": "kretṛ", "nvul": "krāyaka" }
+    - word: "sa-2121"
+      forms: { "ghan": "ग्राह", "lyut": "ग्रहण", "trc": "ग्रहीतृ", "ktin": null, "nvul": "ग्राहक" }
+      readings: { "ghan": "grāha", "lyut": "grahaṇa", "trc": "grahītṛ", "nvul": "grāhaka" }
+    - word: "sa-2122"
+      forms: { "ghan": null, "lyut": "कथन", "trc": null, "ktin": null, "nvul": "कथक" }
+      readings: { "lyut": "kathana", "nvul": "kathaka" }
+    - word: "sa-12001"
+      forms: { "ghan": "वर्ध", "lyut": "वर्धन", "trc": "वर्धितृ", "ktin": null, "nvul": "वर्धक" }
+      readings: { "ghan": "vardha", "lyut": "vardhana", "trc": "vardhitṛ", "nvul": "vardhaka" }
+    - word: "sa-12002"
+      forms: { "ghan": "दाह", "lyut": "दहन", "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "dāha", "lyut": "dahana" }
+    - word: "sa-12003"
+      forms: { "ghan": "भ्रम", "lyut": "भ्रमण", "trc": "भ्रमितृ", "ktin": "भ्रान्ति", "nvul": "भ्रामक" }
+      readings: { "ghan": "bhrama", "lyut": "bhramaṇa", "trc": "bhramitṛ", "ktin": "bhrānti", "nvul": "bhrāmaka" }
+    - word: "sa-12004"
+      forms: { "ghan": "गोह", "lyut": "गोहन", "trc": "गूहितृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "goha", "lyut": "gohana", "trc": "gūhitṛ" }
+    - word: "sa-12005"
+      forms: { "ghan": "दंश", "lyut": "दंशन", "trc": null, "ktin": null, "nvul": "दंशक" }
+      readings: { "ghan": "daṃśa", "lyut": "daṃśana", "nvul": "daṃśaka" }
+    - word: "sa-12006"
+      forms: { "ghan": "बोध", "lyut": "बोधन", "trc": null, "ktin": null, "nvul": "बोधक" }
+      readings: { "ghan": "bodha", "lyut": "bodhana", "nvul": "bodhaka" }
+    - word: "sa-12007"
+      forms: { "ghan": "यम", "lyut": "यमन", "trc": "यन्तृ", "ktin": "यति", "nvul": "यमक" }
+      readings: { "ghan": "yama", "lyut": "yamana", "trc": "yantṛ", "ktin": "yati", "nvul": "yamaka" }
+    - word: "sa-12008"
+      forms: { "ghan": "रोह", "lyut": "रोहण", "trc": null, "ktin": null, "nvul": "रोहक" }
+      readings: { "ghan": "roha", "lyut": "rohaṇa", "nvul": "rohaka" }
+    - word: "sa-12009"
+      forms: { "ghan": "वप", "lyut": "वपन", "trc": "वप्तृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "vapa", "lyut": "vapana", "trc": "vaptṛ" }
+    - word: "sa-12010"
+      forms: { "ghan": "सद", "lyut": "सदन", "trc": "सत्तृ", "ktin": "सत्ति", "nvul": null }
+      readings: { "ghan": "sada", "lyut": "sadana", "trc": "sattṛ", "ktin": "satti" }
+    - word: "sa-12011"
+      forms: { "ghan": "स्कन्द", "lyut": null, "trc": "स्कन्त्तृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "skanda", "trc": "skanttṛ" }
+    - word: "sa-12012"
+      forms: { "ghan": "ज्वल", "lyut": "ज्वलन", "trc": "ज्वलितृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "jvala", "lyut": "jvalana", "trc": "jvalitṛ" }
+    - word: "sa-12013"
+      forms: { "ghan": "त्रास", "lyut": "त्रसन", "trc": "त्रसितृ", "ktin": null, "nvul": "त्रासक" }
+      readings: { "ghan": "trāsa", "lyut": "trasana", "trc": "trasitṛ", "nvul": "trāsaka" }
+    - word: "sa-12014"
+      forms: { "ghan": null, "lyut": null, "trc": "द्रोतृ", "ktin": null, "nvul": null }
+      readings: { "trc": "drotṛ" }
+    - word: "sa-12016"
+      forms: { "ghan": null, "lyut": null, "trc": "बाधितृ", "ktin": null, "nvul": null }
+      readings: { "trc": "bādhitṛ" }
+    - word: "sa-12017"
+      forms: { "ghan": "भक्ष", "lyut": "भक्षण", "trc": null, "ktin": null, "nvul": "भक्षक" }
+      readings: { "ghan": "bhakṣa", "lyut": "bhakṣaṇa", "nvul": "bhakṣaka" }
+    - word: "sa-12018"
+      forms: { "ghan": "भाष", "lyut": "भाषण", "trc": "भाषितृ", "ktin": null, "nvul": "भाषक" }
+      readings: { "ghan": "bhāṣa", "lyut": "bhāṣaṇa", "trc": "bhāṣitṛ", "nvul": "bhāṣaka" }
+    - word: "sa-12019"
+      forms: { "ghan": null, "lyut": null, "trc": "गदितृ", "ktin": null, "nvul": null }
+      readings: { "trc": "gaditṛ" }
+    - word: "sa-12020"
+      forms: { "ghan": "स्वाप", "lyut": "स्वपन", "trc": "स्वप्तृ", "ktin": "सुप्ति", "nvul": null }
+      readings: { "ghan": "svāpa", "lyut": "svapana", "trc": "svaptṛ", "ktin": "supti" }
+    - word: "sa-12021"
+      forms: { "ghan": "रम", "lyut": "रमण", "trc": "रन्तृ", "ktin": "रति", "nvul": null }
+      readings: { "ghan": "rama", "lyut": "ramaṇa", "trc": "rantṛ", "ktin": "rati" }
+    - word: "sa-12022"
+      forms: { "ghan": "रोच", "lyut": "रोचन", "trc": "रोचितृ", "ktin": null, "nvul": "रोचक" }
+      readings: { "ghan": "roca", "lyut": "rocana", "trc": "rocitṛ", "nvul": "rocaka" }
+    - word: "sa-12024"
+      forms: { "ghan": "त्वर", "lyut": null, "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "tvara" }
+    - word: "sa-12025"
+      forms: { "ghan": null, "lyut": "स्मयन", "trc": "स्मेतृ", "ktin": null, "nvul": null }
+      readings: { "lyut": "smayana", "trc": "smetṛ" }
+    - word: "sa-12026"
+      forms: { "ghan": "घट", "lyut": "घटन", "trc": "घटितृ", "ktin": null, "nvul": "घटक" }
+      readings: { "ghan": "ghaṭa", "lyut": "ghaṭana", "trc": "ghaṭitṛ", "nvul": "ghaṭaka" }
+    - word: "sa-12027"
+      forms: { "ghan": "क्रोध", "lyut": "क्रोधन", "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "krodha", "lyut": "krodhana" }
+    - word: "sa-12028"
+      forms: { "ghan": null, "lyut": "देवन", "trc": null, "ktin": null, "nvul": "देवक" }
+      readings: { "lyut": "devana", "nvul": "devaka" }
+    - word: "sa-12029"
+      forms: { "ghan": null, "lyut": "लोभन", "trc": null, "ktin": null, "nvul": null }
+      readings: { "lyut": "lobhana" }
+    - word: "sa-12031"
+      forms: { "ghan": "नाह", "lyut": "नहन", "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "nāha", "lyut": "nahana" }
+    - word: "sa-12032"
+      forms: { "ghan": "नाश", "lyut": "नशन", "trc": "नशितृ", "ktin": null, "nvul": "नाशक" }
+      readings: { "ghan": "nāśa", "lyut": "naśana", "trc": "naśitṛ", "nvul": "nāśaka" }
+    - word: "sa-12033"
+      forms: { "ghan": "शम", "lyut": "शमन", "trc": "शमितृ", "ktin": "शान्ति", "nvul": null }
+      readings: { "ghan": "śama", "lyut": "śamana", "trc": "śamitṛ", "ktin": "śānti" }
+    - word: "sa-12035"
+      forms: { "ghan": "तोष", "lyut": "तोषण", "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "toṣa", "lyut": "toṣaṇa" }
+    - word: "sa-12036"
+      forms: { "ghan": null, "lyut": null, "trc": null, "ktin": null, "nvul": "दमक" }
+      readings: { "nvul": "damaka" }
+    - word: "sa-12037"
+      forms: { "ghan": "पद", "lyut": null, "trc": "पत्तृ", "ktin": "पद्धति", "nvul": null }
+      readings: { "ghan": "pada", "trc": "pattṛ", "ktin": "paddhati" }
+    - word: "sa-12038"
+      forms: { "ghan": "मोच", "lyut": "मोचन", "trc": "मोक्तृ", "ktin": "मुक्ति", "nvul": "मोचक" }
+      readings: { "ghan": "moca", "lyut": "mocana", "trc": "moktṛ", "ktin": "mukti", "nvul": "mocaka" }
+    - word: "sa-12039"
+      forms: { "ghan": "मेल", "lyut": "मेलन", "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "mela", "lyut": "melana" }
+    - word: "sa-12041"
+      forms: { "ghan": "लेप", "lyut": "लेपन", "trc": "लेप्तृ", "ktin": null, "nvul": "लेपक" }
+      readings: { "ghan": "lepa", "lyut": "lepana", "trc": "leptṛ", "nvul": "lepaka" }
+    - word: "sa-12042"
+      forms: { "ghan": "सर्ज", "lyut": "सर्जन", "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "sarja", "lyut": "sarjana" }
+    - word: "sa-12043"
+      forms: { "ghan": "क्षेप", "lyut": "क्षेपण", "trc": "क्षेप्तृ", "ktin": "क्षिप्ति", "nvul": "क्षेपक" }
+      readings: { "ghan": "kṣepa", "lyut": "kṣepaṇa", "trc": "kṣeptṛ", "ktin": "kṣipti", "nvul": "kṣepaka" }
+    - word: "sa-12044"
+      forms: { "ghan": null, "lyut": "देशन", "trc": null, "ktin": null, "nvul": "देशक" }
+      readings: { "lyut": "deśana", "nvul": "deśaka" }
+    - word: "sa-12045"
+      forms: { "ghan": "शोभ", "lyut": "शोभन", "trc": "शोभितृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "śobha", "lyut": "śobhana", "trc": "śobhitṛ" }
+    - word: "sa-12050"
+      forms: { "ghan": null, "lyut": "आपन", "trc": "आप्तृ", "ktin": null, "nvul": "आपक" }
+      readings: { "lyut": "āpana", "trc": "āptṛ", "nvul": "āpaka" }
+    - word: "sa-12051"
+      forms: { "ghan": null, "lyut": null, "trc": "शक्तृ", "ktin": "शक्ति", "nvul": null }
+      readings: { "trc": "śaktṛ", "ktin": "śakti" }
+    - word: "sa-12052"
+      forms: { "ghan": null, "lyut": null, "trc": "भेतृ", "ktin": "भीति", "nvul": null }
+      readings: { "trc": "bhetṛ", "ktin": "bhīti" }
+    - word: "sa-12053"
+      forms: { "ghan": "हन", "lyut": "हनन", "trc": "हन्तृ", "ktin": "हति", "nvul": null }
+      readings: { "ghan": "hana", "lyut": "hanana", "trc": "hantṛ", "ktin": "hati" }
+    - word: "sa-12054"
+      forms: { "ghan": "श्वस", "lyut": "श्वसन", "trc": "श्वसितृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "śvasa", "lyut": "śvasana", "trc": "śvasitṛ" }
+    - word: "sa-12055"
+      forms: { "ghan": null, "lyut": null, "trc": "शासितृ", "ktin": "शास्ति", "nvul": null }
+      readings: { "trc": "śāsitṛ", "ktin": "śāsti" }
+    - word: "sa-12056"
+      forms: { "ghan": "भेद", "lyut": "भेदन", "trc": "भेत्तृ", "ktin": "भित्ति", "nvul": "भेदक" }
+      readings: { "ghan": "bheda", "lyut": "bhedana", "trc": "bhettṛ", "ktin": "bhitti", "nvul": "bhedaka" }
+    - word: "sa-12057"
+      forms: { "ghan": null, "lyut": null, "trc": "भातृ", "ktin": "भाति", "nvul": null }
+      readings: { "trc": "bhātṛ", "ktin": "bhāti" }
+    - word: "sa-12058"
+      forms: { "ghan": null, "lyut": null, "trc": "ह्रेतृ", "ktin": "ह्रीति", "nvul": null }
+      readings: { "trc": "hretṛ", "ktin": "hrīti" }
+    - word: "sa-12059"
+      forms: { "ghan": null, "lyut": "रञ्जन", "trc": null, "ktin": null, "nvul": "रञ्जक" }
+      readings: { "lyut": "rañjana", "nvul": "rañjaka" }
+    - word: "sa-13000"
+      forms: { "ghan": "भ्रंश", "lyut": "भ्रंशन", "trc": "भ्रंशितृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "bhraṃśa", "lyut": "bhraṃśana", "trc": "bhraṃśitṛ" }
+    - word: "sa-13001"
+      forms: { "ghan": null, "lyut": "योजन", "trc": "योक्तृ", "ktin": null, "nvul": null }
+      readings: { "lyut": "yojana", "trc": "yoktṛ" }
+    - word: "sa-13002"
+      forms: { "ghan": "राज", "lyut": "राजन", "trc": "राजितृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "rāja", "lyut": "rājana", "trc": "rājitṛ" }
+    - word: "sa-13003"
+      forms: { "ghan": null, "lyut": null, "trc": "लज्जितृ", "ktin": null, "nvul": null }
+      readings: { "trc": "lajjitṛ" }
+    - word: "sa-13004"
+      forms: { "ghan": "लम्ब", "lyut": "लम्बन", "trc": "लम्बितृ", "ktin": null, "nvul": "लम्बक" }
+      readings: { "ghan": "lamba", "lyut": "lambana", "trc": "lambitṛ", "nvul": "lambaka" }
+    - word: "sa-13005"
+      forms: { "ghan": "वर्ष", "lyut": "वर्षण", "trc": "व्रष्टृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "varṣa", "lyut": "varṣaṇa", "trc": "vraṣṭṛ" }
+    - word: "sa-13006"
+      forms: { "ghan": "व्याथ", "lyut": "व्यथन", "trc": "व्यथितृ", "ktin": null, "nvul": "व्यथक" }
+      readings: { "ghan": "vyātha", "lyut": "vyathana", "trc": "vyathitṛ", "nvul": "vyathaka" }
+    - word: "sa-13007"
+      forms: { "ghan": "व्रज", "lyut": "व्रजन", "trc": "व्रजितृ", "ktin": null, "nvul": "व्रजक" }
+      readings: { "ghan": "vraja", "lyut": "vrajana", "trc": "vrajitṛ", "nvul": "vrajaka" }
+    - word: "sa-13008"
+      forms: { "ghan": "शाप", "lyut": "शपन", "trc": "शप्तृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "śāpa", "lyut": "śapana", "trc": "śaptṛ" }
+    - word: "sa-13009"
+      forms: { "ghan": null, "lyut": "शयन", "trc": "शयितृ", "ktin": null, "nvul": null }
+      readings: { "lyut": "śayana", "trc": "śayitṛ" }
+    - word: "sa-13010"
+      forms: { "ghan": "शोच", "lyut": "शोचन", "trc": "शोचितृ", "ktin": "शुक्ति", "nvul": null }
+      readings: { "ghan": "śoca", "lyut": "śocana", "trc": "śocitṛ", "ktin": "śukti" }
+    - word: "sa-13011"
+      forms: { "ghan": null, "lyut": "सेचन", "trc": null, "ktin": "सिक्ति", "nvul": null }
+      readings: { "lyut": "secana", "ktin": "sikti" }
+    - word: "sa-13012"
+      forms: { "ghan": "सर्प", "lyut": null, "trc": "सर्प्तृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "sarpa", "trc": "sarptṛ" }
+    - word: "sa-13013"
+      forms: { "ghan": null, "lyut": "स्तवन", "trc": "स्तोतृ", "ktin": "स्तुति", "nvul": null }
+      readings: { "lyut": "stavana", "trc": "stotṛ", "ktin": "stuti" }
+    - word: "sa-13014"
+      forms: { "ghan": null, "lyut": "हिंसन", "trc": "हिंसितृ", "ktin": null, "nvul": "हिंसक" }
+      readings: { "lyut": "hiṃsana", "trc": "hiṃsitṛ", "nvul": "hiṃsaka" }
+    - word: "sa-13015"
+      forms: { "ghan": "दोष", "lyut": null, "trc": "दोष्टृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "doṣa", "trc": "doṣṭṛ" }
+    - word: "sa-13016"
+      forms: { "ghan": "वेद", "lyut": "वेदन", "trc": "वेदितृ", "ktin": "वित्ति", "nvul": "वेदक" }
+      readings: { "ghan": "veda", "lyut": "vedana", "trc": "veditṛ", "ktin": "vitti", "nvul": "vedaka" }
+    - word: "sa-13017"
+      forms: { "ghan": null, "lyut": "भजन", "trc": "भक्तृ", "ktin": "भक्ति", "nvul": "भाजक" }
+      readings: { "lyut": "bhajana", "trc": "bhaktṛ", "ktin": "bhakti", "nvul": "bhājaka" }
+    - word: "sa-13018"
+      forms: { "ghan": null, "lyut": "वचन", "trc": "वक्तृ", "ktin": null, "nvul": "वाचक" }
+      readings: { "lyut": "vacana", "trc": "vaktṛ", "nvul": "vācaka" }
+    - word: "sa-13019"
+      forms: { "ghan": "भर", "lyut": "भरण", "trc": "भर्तृ", "ktin": "भृति", "nvul": null }
+      readings: { "ghan": "bhara", "lyut": "bharaṇa", "trc": "bhartṛ", "ktin": "bhṛti" }
+    - word: "sa-13020"
+      forms: { "ghan": "द्वेष", "lyut": "द्वेषण", "trc": "द्वेष्टृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "dveṣa", "lyut": "dveṣaṇa", "trc": "dveṣṭṛ" }
+    - word: "sa-13021"
+      forms: { "ghan": "मर", "lyut": "मरण", "trc": "मर्तृ", "ktin": "मृति", "nvul": "मारक" }
+      readings: { "ghan": "mara", "lyut": "maraṇa", "trc": "martṛ", "ktin": "mṛti", "nvul": "māraka" }
+    - word: "sa-13022"
+      forms: { "ghan": "तर", "lyut": "तरण", "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "tara", "lyut": "taraṇa" }
+    - word: "sa-13023"
+      forms: { "ghan": "कर्ष", "lyut": "कर्षण", "trc": "क्रष्टृ", "ktin": null, "nvul": "कर्षक" }
+      readings: { "ghan": "karṣa", "lyut": "karṣaṇa", "trc": "kraṣṭṛ", "nvul": "karṣaka" }
+    - word: "sa-13024"
+      forms: { "ghan": "हर्ष", "lyut": "हर्षण", "trc": "हर्षितृ", "ktin": null, "nvul": "हर्षक" }
+      readings: { "ghan": "harṣa", "lyut": "harṣaṇa", "trc": "harṣitṛ", "nvul": "harṣaka" }
+    - word: "sa-13025"
+      forms: { "ghan": "मोह", "lyut": "मोहन", "trc": null, "ktin": null, "nvul": "मोहक" }
+      readings: { "ghan": "moha", "lyut": "mohana", "nvul": "mohaka" }
+    - word: "sa-13026"
+      forms: { "ghan": null, "lyut": null, "trc": "एधितृ", "ktin": null, "nvul": null }
+      readings: { "trc": "edhitṛ" }
+    - word: "sa-13027"
+      forms: { "ghan": "योध", "lyut": "योधन", "trc": "योद्धृ", "ktin": null, "nvul": "योधक" }
+      readings: { "ghan": "yodha", "lyut": "yodhana", "trc": "yoddhṛ", "nvul": "yodhaka" }
+    - word: "sa-13028"
+      forms: { "ghan": "पोष", "lyut": "पोषण", "trc": "पोषितृ", "ktin": null, "nvul": "पोषक" }
+      readings: { "ghan": "poṣa", "lyut": "poṣaṇa", "trc": "poṣitṛ", "nvul": "poṣaka" }
+    - word: "sa-13029"
+      forms: { "ghan": "त्यज", "lyut": "त्यजन", "trc": "त्यक्तृ", "ktin": null, "nvul": "त्याजक" }
+      readings: { "ghan": "tyaja", "lyut": "tyajana", "trc": "tyaktṛ", "nvul": "tyājaka" }
+    - word: "sa-13030"
+      forms: { "ghan": null, "lyut": "वेपन", "trc": "वेपितृ", "ktin": null, "nvul": null }
+      readings: { "lyut": "vepana", "trc": "vepitṛ" }
+    - word: "sa-13031"
+      forms: { "ghan": "देह", "lyut": "देहन", "trc": "देग्धृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "deha", "lyut": "dehana", "trc": "degdhṛ" }
+    - word: "sa-13032"
+      forms: { "ghan": null, "lyut": null, "trc": "स्नातृ", "ktin": null, "nvul": null }
+      readings: { "trc": "snātṛ" }
+    - word: "sa-13033"
+      forms: { "ghan": "यज", "lyut": null, "trc": "यष्टृ", "ktin": null, "nvul": "याजक" }
+      readings: { "ghan": "yaja", "trc": "yaṣṭṛ", "nvul": "yājaka" }
+    - word: "sa-13034"
+      forms: { "ghan": null, "lyut": null, "trc": "शङ्कितृ", "ktin": null, "nvul": null }
+      readings: { "trc": "śaṅkitṛ" }
+    - word: "sa-13035"
+      forms: { "ghan": null, "lyut": "अर्चन", "trc": null, "ktin": null, "nvul": "अर्चक" }
+      readings: { "lyut": "arcana", "nvul": "arcaka" }
+    - word: "sa-13036"
+      forms: { "ghan": null, "lyut": "च्यवन", "trc": "च्योतृ", "ktin": "च्युति", "nvul": null }
+      readings: { "lyut": "cyavana", "trc": "cyotṛ", "ktin": "cyuti" }
+    - word: "sa-13037"
+      forms: { "ghan": "कर्त", "lyut": "कर्तन", "trc": "कर्तितृ", "ktin": "कृति", "nvul": null }
+      readings: { "ghan": "karta", "lyut": "kartana", "trc": "kartitṛ", "ktin": "kṛti" }
+    - word: "sa-13038"
+      forms: { "ghan": null, "lyut": "पवन", "trc": "पवितृ", "ktin": "पूति", "nvul": null }
+      readings: { "lyut": "pavana", "trc": "pavitṛ", "ktin": "pūti" }
+    - word: "sa-13039"
+      forms: { "ghan": "क्षम", "lyut": null, "trc": null, "ktin": "क्षान्ति", "nvul": null }
+      readings: { "ghan": "kṣama", "ktin": "kṣānti" }
+    - word: "sa-13040"
+      forms: { "ghan": "नोद", "lyut": "नोदन", "trc": "नोत्तृ", "ktin": "नुत्ति", "nvul": "नोदक" }
+      readings: { "ghan": "noda", "lyut": "nodana", "trc": "nottṛ", "ktin": "nutti", "nvul": "nodaka" }
+    - word: "sa-13041"
+      forms: { "ghan": null, "lyut": "नवन", "trc": "नवितृ", "ktin": "नुति", "nvul": null }
+      readings: { "lyut": "navana", "trc": "navitṛ", "ktin": "nuti" }
+    - word: "sa-13042"
+      forms: { "ghan": null, "lyut": "मार्जन", "trc": "मार्ष्टृ", "ktin": null, "nvul": "मार्जक" }
+      readings: { "lyut": "mārjana", "trc": "mārṣṭṛ", "nvul": "mārjaka" }
+    - word: "sa-13043"
+      forms: { "ghan": null, "lyut": null, "trc": "स्रोतृ", "ktin": "स्रुति", "nvul": null }
+      readings: { "trc": "srotṛ", "ktin": "sruti" }
+    - word: "sa-13044"
+      forms: { "ghan": null, "lyut": null, "trc": "द्रोग्धृ", "ktin": null, "nvul": null }
+      readings: { "trc": "drogdhṛ" }
+    - word: "sa-13045"
+      forms: { "ghan": null, "lyut": "वमन", "trc": "वमितृ", "ktin": null, "nvul": null }
+      readings: { "lyut": "vamana", "trc": "vamitṛ" }
+    - word: "sa-13046"
+      forms: { "ghan": "अद", "lyut": "अदन", "trc": "अत्तृ", "ktin": "अत्ति", "nvul": "अदक" }
+      readings: { "ghan": "ada", "lyut": "adana", "trc": "attṛ", "ktin": "atti", "nvul": "adaka" }
+    - word: "sa-13047"
+      forms: { "ghan": "तक्ष", "lyut": "तक्षण", "trc": "तक्षितृ", "ktin": null, "nvul": "तक्षक" }
+      readings: { "ghan": "takṣa", "lyut": "takṣaṇa", "trc": "takṣitṛ", "nvul": "takṣaka" }
+    - word: "sa-13048"
+      forms: { "ghan": null, "lyut": "श्रयण", "trc": "श्रयितृ", "ktin": null, "nvul": null }
+      readings: { "lyut": "śrayaṇa", "trc": "śrayitṛ" }
+    - word: "sa-13049"
+      forms: { "ghan": "स्वेद", "lyut": "स्वेदन", "trc": "स्वेत्तृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "sveda", "lyut": "svedana", "trc": "svettṛ" }
+    - word: "sa-13050"
+      forms: { "ghan": null, "lyut": null, "trc": "होतृ", "ktin": "हुति", "nvul": null }
+      readings: { "trc": "hotṛ", "ktin": "huti" }
+    - word: "sa-13051"
+      forms: { "ghan": "ईश", "lyut": "ईशन", "trc": "ईशितृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "īśa", "lyut": "īśana", "trc": "īśitṛ" }
+    - word: "sa-13052"
+      forms: { "ghan": "सेव", "lyut": "सेवन", "trc": "सेवितृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "seva", "lyut": "sevana", "trc": "sevitṛ" }
+    - word: "sa-13054"
+      forms: { "ghan": null, "lyut": null, "trc": "रोक्तृ", "ktin": null, "nvul": null }
+      readings: { "trc": "roktṛ" }
+    - word: "sa-13055"
+      forms: { "ghan": "स्तर", "lyut": "स्तरण", "trc": "स्तर्तृ", "ktin": "स्तृति", "nvul": null }
+      readings: { "ghan": "stara", "lyut": "staraṇa", "trc": "startṛ", "ktin": "stṛti" }
+    - word: "sa-13056"
+      forms: { "ghan": "लेह", "lyut": "लेहन", "trc": "लेढृ", "ktin": null, "nvul": "लेहक" }
+      readings: { "ghan": "leha", "lyut": "lehana", "trc": "leḍhṛ", "nvul": "lehaka" }
+    - word: "sa-13057"
+      forms: { "ghan": null, "lyut": null, "trc": "स्पर्धितृ", "ktin": null, "nvul": null }
+      readings: { "trc": "spardhitṛ" }
+    - word: "sa-13058"
+      forms: { "ghan": "घर्ष", "lyut": "घर्षण", "trc": "घर्षितृ", "ktin": null, "nvul": "घर्षक" }
+      readings: { "ghan": "gharṣa", "lyut": "gharṣaṇa", "trc": "gharṣitṛ", "nvul": "gharṣaka" }
+    - word: "sa-13059"
+      forms: { "ghan": null, "lyut": "श्लाघन", "trc": "श्लाघितृ", "ktin": null, "nvul": null }
+      readings: { "lyut": "ślāghana", "trc": "ślāghitṛ" }
+    - word: "sa-13060"
+      forms: { "ghan": "स्नेह", "lyut": "स्नेहन", "trc": "स्नेहितृ", "ktin": null, "nvul": "स्नेहक" }
+      readings: { "ghan": "sneha", "lyut": "snehana", "trc": "snehitṛ", "nvul": "snehaka" }
+    - word: "sa-13061"
+      forms: { "ghan": "काङ्क्ष", "lyut": "काङ्क्षण", "trc": "काङ्क्षितृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "kāṅkṣa", "lyut": "kāṅkṣaṇa", "trc": "kāṅkṣitṛ" }
+    - word: "sa-13062"
+      forms: { "ghan": "गर्ध", "lyut": null, "trc": "गर्धितृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "gardha", "trc": "gardhitṛ" }
+    - word: "sa-13063"
+      forms: { "ghan": null, "lyut": "नेजन", "trc": "नेक्तृ", "ktin": null, "nvul": "नेजक" }
+      readings: { "lyut": "nejana", "trc": "nektṛ", "nvul": "nejaka" }
+    - word: "sa-13064"
+      forms: { "ghan": "साध", "lyut": "साधन", "trc": "साद्धृ", "ktin": null, "nvul": "साधक" }
+      readings: { "ghan": "sādha", "lyut": "sādhana", "trc": "sāddhṛ", "nvul": "sādhaka" }
+    - word: "sa-13065"
+      forms: { "ghan": null, "lyut": "पर्चन", "trc": "पर्चितृ", "ktin": null, "nvul": null }
+      readings: { "lyut": "parcana", "trc": "parcitṛ" }
+    - word: "sa-13066"
+      forms: { "ghan": null, "lyut": "अञ्जन", "trc": "अङ्क्तृ", "ktin": null, "nvul": null }
+      readings: { "lyut": "añjana", "trc": "aṅktṛ" }
+    - word: "sa-13067"
+      forms: { "ghan": "पेष", "lyut": "पेषण", "trc": "पेष्टृ", "ktin": null, "nvul": "पेषक" }
+      readings: { "ghan": "peṣa", "lyut": "peṣaṇa", "trc": "peṣṭṛ", "nvul": "peṣaka" }
+    - word: "sa-13068"
+      forms: { "ghan": "सन", "lyut": "सनन", "trc": "सनितृ", "ktin": "साति", "nvul": null }
+      readings: { "ghan": "sana", "lyut": "sanana", "trc": "sanitṛ", "ktin": "sāti" }
+    - word: "sa-13069"
+      forms: { "ghan": "चुम्ब", "lyut": "चुम्बन", "trc": "चुम्बितृ", "ktin": null, "nvul": "चुम्बक" }
+      readings: { "ghan": "cumba", "lyut": "cumbana", "trc": "cumbitṛ", "nvul": "cumbaka" }
+    - word: "sa-13070"
+      forms: { "ghan": "अञ्च", "lyut": "अञ्चन", "trc": "अञ्चितृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "añca", "lyut": "añcana", "trc": "añcitṛ" }
+    - word: "sa-13071"
+      forms: { "ghan": null, "lyut": "निन्दन", "trc": "निन्दितृ", "ktin": null, "nvul": "निन्दक" }
+      readings: { "lyut": "nindana", "trc": "ninditṛ", "nvul": "nindaka" }
+    - word: "sa-13072"
+      forms: { "ghan": "स्वर", "lyut": "स्वरण", "trc": "स्वर्तृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "svara", "lyut": "svaraṇa", "trc": "svartṛ" }
+    - word: "sa-13073"
+      forms: { "ghan": "रंह", "lyut": "रंहण", "trc": "रंहितृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "raṃha", "lyut": "raṃhaṇa", "trc": "raṃhitṛ" }
+    - word: "sa-13074"
+      forms: { "ghan": null, "lyut": null, "trc": "तर्पितृ", "ktin": "तृप्ति", "nvul": null }
+      readings: { "trc": "tarpitṛ", "ktin": "tṛpti" }
+    - word: "sa-13075"
+      forms: { "ghan": "स्फोट", "lyut": "स्फोटन", "trc": "स्फुटितृ", "ktin": null, "nvul": "स्फोटक" }
+      readings: { "ghan": "sphoṭa", "lyut": "sphoṭana", "trc": "sphuṭitṛ", "nvul": "sphoṭaka" }
+    - word: "sa-13076"
+      forms: { "ghan": "चोद", "lyut": "चोदन", "trc": null, "ktin": null, "nvul": "चोदक" }
+      readings: { "ghan": "coda", "lyut": "codana", "nvul": "codaka" }
+    - word: "sa-13077"
+      forms: { "ghan": null, "lyut": null, "trc": "वेक्तृ", "ktin": null, "nvul": null }
+      readings: { "trc": "vektṛ" }
+    - word: "sa-13078"
+      forms: { "ghan": null, "lyut": null, "trc": "तर्हितृ", "ktin": null, "nvul": null }
+      readings: { "trc": "tarhitṛ" }
+    - word: "sa-13079"
+      forms: { "ghan": "जागर", "lyut": "जागरण", "trc": null, "ktin": null, "nvul": "जागरक" }
+      readings: { "ghan": "jāgara", "lyut": "jāgaraṇa", "nvul": "jāgaraka" }
+    - word: "sa-13080"
+      forms: { "ghan": null, "lyut": null, "trc": "परीतृ", "ktin": null, "nvul": null }
+      readings: { "trc": "parītṛ" }
+    - word: "sa-13081"
+      forms: { "ghan": null, "lyut": null, "trc": "गरितृ", "ktin": null, "nvul": null }
+      readings: { "trc": "garitṛ" }
+    - word: "sa-13083"
+      forms: { "ghan": "काश", "lyut": null, "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "kāśa" }
+    - word: "sa-13084"
+      forms: { "ghan": "कम्प", "lyut": "कम्पन", "trc": null, "ktin": null, "nvul": null }
+      readings: { "ghan": "kampa", "lyut": "kampana" }
+    - word: "sa-13085"
+      forms: { "ghan": "रण", "lyut": null, "trc": "रणितृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "raṇa", "trc": "raṇitṛ" }
+    - word: "sa-13086"
+      forms: { "ghan": "क्वाथ", "lyut": "क्वथन", "trc": "क्वथितृ", "ktin": null, "nvul": null }
+      readings: { "ghan": "kvātha", "lyut": "kvathana", "trc": "kvathitṛ" }
+    - word: "sa-13087"
+      forms: { "ghan": null, "lyut": null, "trc": "त्रप्तृ", "ktin": null, "nvul": null }
+      readings: { "trc": "traptṛ" }
+    - word: "sa-13088"
+      forms: { "ghan": "गण", "lyut": "गणन", "trc": null, "ktin": null, "nvul": "गणक" }
+      readings: { "ghan": "gaṇa", "lyut": "gaṇana", "nvul": "gaṇaka" }
+    - word: "sa-13090"
+      forms: { "ghan": null, "lyut": null, "trc": "द्रातृ", "ktin": null, "nvul": null }
+      readings: { "trc": "drātṛ" }
+    - word: "sa-13092"
+      forms: { "ghan": null, "lyut": "शिक्षण", "trc": null, "ktin": null, "nvul": "शिक्षक" }
+      readings: { "lyut": "śikṣaṇa", "nvul": "śikṣaka" }
+    - word: "sa-13096"
+      forms: { "ghan": null, "lyut": null, "trc": "तर्षितृ", "ktin": null, "nvul": null }
+      readings: { "trc": "tarṣitṛ" }
+rules:
+  - id: "sa-rule-krt-ghan"
+    slots: ["ghan"]
+    words: [{ word: "भावे", reading: "bhāve" }, { word: "पदरुजविशस्पृशः घञ्", reading: "padarujaviśaspṛśaḥ ghañ" }, { word: "पठ्", reading: "paṭh" }, { word: "पाठ", reading: "pāṭha" }, { word: "वद्", reading: "vad" }, { word: "वाद", reading: "vāda" }, { word: "पच्", reading: "pac" }, { word: "पाक", reading: "pāka" }, { word: "चजोः कु घ् इत् ण्यतोः", reading: "cajoḥ ku gh it ṇyatoḥ" }, { word: "कृ", reading: "kṛ" }, { word: "कार", reading: "kāra" }, { word: "लिख्", reading: "likh" }, { word: "लेख", reading: "lekha" }]
+  - id: "sa-rule-krt-lyut"
+    slots: ["lyut"]
+    words: [{ word: "ल्युट् च", reading: "lyuṭ ca" }, { word: "भू", reading: "bhū" }, { word: "भवन", reading: "bhavana" }, { word: "गम्", reading: "gam" }, { word: "गमन", reading: "gamana" }, { word: "कृ", reading: "kṛ" }, { word: "करण", reading: "karaṇa" }, { word: "रक्ष्", reading: "rakṣ" }, { word: "रक्षण", reading: "rakṣaṇa" }, { word: "स्मृ", reading: "smṛ" }, { word: "स्मरण", reading: "smaraṇa" }, { word: "हृ", reading: "hṛ" }, { word: "हरण", reading: "haraṇa" }, { word: "स्था", reading: "sthā" }, { word: "स्थान", reading: "sthāna" }, { word: "दा", reading: "dā" }, { word: "दान", reading: "dāna" }, { word: "ज्ञा", reading: "jñā" }, { word: "ज्ञान", reading: "jñāna" }, { word: "गै", reading: "gai" }, { word: "गान", reading: "gāna" }]
+  - id: "sa-rule-krt-trc"
+    slots: ["trc"]
+    words: [{ word: "ण्वुल्तृचौ", reading: "ṇvultṛcau" }, { word: "कृ", reading: "kṛ" }, { word: "कर्तृ", reading: "kartṛ" }, { word: "नी", reading: "nī" }, { word: "नेतृ", reading: "netṛ" }, { word: "श्रु", reading: "śru" }, { word: "श्रोतृ", reading: "śrotṛ" }, { word: "भू", reading: "bhū" }, { word: "भवितृ", reading: "bhavitṛ" }, { word: "ग्रह्", reading: "grah" }, { word: "ग्रहीतृ", reading: "grahītṛ" }, { word: "गम्", reading: "gam" }, { word: "गन्तृ", reading: "gantṛ" }, { word: "दा", reading: "dā" }, { word: "दातृ", reading: "dātṛ" }, { word: "ज्ञा", reading: "jñā" }, { word: "ज्ञातृ", reading: "jñātṛ" }]
+  - id: "sa-rule-krt-ktin"
+    slots: ["ktin"]
+    words: [{ word: "स्त्रियां क्तिन्", reading: "striyāṃ ktin" }, { word: "भू", reading: "bhū" }, { word: "भूति", reading: "bhūti" }, { word: "गम्", reading: "gam" }, { word: "गति", reading: "gati" }, { word: "स्मृ", reading: "smṛ" }, { word: "स्मृति", reading: "smṛti" }, { word: "कृ", reading: "kṛ" }, { word: "कृति", reading: "kṛti" }, { word: "श्रु", reading: "śru" }, { word: "श्रुति", reading: "śruti" }, { word: "स्था", reading: "sthā" }, { word: "स्थिति", reading: "sthiti" }, { word: "पा", reading: "pā" }, { word: "पीति", reading: "pīti" }, { word: "पच्", reading: "pac" }, { word: "पक्ति", reading: "pakti" }]
+  - id: "sa-rule-krt-nvul"
+    slots: ["nvul"]
+    words: [{ word: "ण्वुल्तृचौ", reading: "ṇvultṛcau" }, { word: "वद्", reading: "vad" }, { word: "वादक", reading: "vādaka" }, { word: "पच्", reading: "pac" }, { word: "पाचक", reading: "pācaka" }, { word: "कृ", reading: "kṛ" }, { word: "कारक", reading: "kāraka" }, { word: "नी", reading: "nī" }, { word: "नायक", reading: "nāyaka" }, { word: "ग्रह्", reading: "grah" }, { word: "ग्राहक", reading: "grāhaka" }, { word: "लिख्", reading: "likh" }, { word: "लेखक", reading: "lekhaka" }, { word: "नृत्", reading: "nṛt" }, { word: "नर्तक", reading: "nartaka" }]

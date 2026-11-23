@@ -2,13 +2,15 @@ schema: 1
 id: "tok-first-words"
 part: "core"
 kind: "vocab"
-language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", scripts: ["latin", "sitelen_pona"], icon: "Tp" }
 license: "CC-BY-SA-4.0"
 theme: "first-words"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "tok-0001"
     target: "toki"
+    target_scripts:
+      sitelen_pona: "󱥬"
     ipa: "ˈtoki"
     pos: "noun"
     bases: "self"
@@ -17,14 +19,16 @@ cards:
       - { id: "verb", kind: "usage" }
       - { id: "greet", kind: "usage" }
     examples:
-      - { target: "mi toki pona.", ipa: "mi ˈtoki ˈpona", bases: [{ word: "mi", ref: "tok-0003" }, { word: "pona", ref: "tok-0002" }] }
-      - { target: "sina toki.", ipa: "ˈsina ˈtoki", bases: [{ word: "sina", ref: "tok-0004" }] }
+      - { target: "mi toki pona.", target_scripts: { sitelen_pona: "󱤴 󱥬 󱥔." }, ipa: "mi ˈtoki ˈpona", bases: [{ word: "mi", ref: "tok-0003" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "sina toki.", target_scripts: { sitelen_pona: "󱥞 󱥬." }, ipa: "ˈsina ˈtoki", bases: [{ word: "sina", ref: "tok-0004" }] }
     senses:
       - { id: "talk", pos: "verb" }
     collocations:
       - { id: "pona", ref: "tok-0002" }
   - id: "tok-0002"
     target: "pona"
+    target_scripts:
+      sitelen_pona: "󱥔"
     ipa: "ˈpona"
     pos: "adj"
     bases: "self"
@@ -33,26 +37,30 @@ cards:
       - { id: "use", kind: "usage" }
       - { id: "after", kind: "behaviour" }
     examples:
-      - { target: "mi pona.", ipa: "mi ˈpona", bases: [{ word: "mi", ref: "tok-0003" }] }
-      - { target: "nimi pona.", ipa: "ˈnimi ˈpona", bases: [{ word: "nimi", ref: "tok-0006" }] }
+      - { target: "mi pona.", target_scripts: { sitelen_pona: "󱤴 󱥔." }, ipa: "mi ˈpona", bases: [{ word: "mi", ref: "tok-0003" }] }
+      - { target: "nimi pona.", target_scripts: { sitelen_pona: "󱥂 󱥔." }, ipa: "ˈnimi ˈpona", bases: [{ word: "nimi", ref: "tok-0006" }] }
     senses:
       - { id: "simple", pos: "adj" }
     antonyms:
       - { id: "ike", ref: "tok-0121" }
   - id: "tok-0003"
     target: "mi"
+    target_scripts:
+      sitelen_pona: "󱤴"
     ipa: "mi"
     pos: "pronoun"
     bases: "self"
     notes:
       - { id: "we", kind: "usage" }
     examples:
-      - { target: "mi sona.", ipa: "mi ˈsona", bases: [{ word: "sona", ref: "tok-0007" }] }
-      - { target: "mi pona.", ipa: "mi ˈpona", bases: [{ word: "pona", ref: "tok-0002" }] }
+      - { target: "mi sona.", target_scripts: { sitelen_pona: "󱤴 󱥡." }, ipa: "mi ˈsona", bases: [{ word: "sona", ref: "tok-0007" }] }
+      - { target: "mi pona.", target_scripts: { sitelen_pona: "󱤴 󱥔." }, ipa: "mi ˈpona", bases: [{ word: "pona", ref: "tok-0002" }] }
     antonyms:
       - { id: "sina", ref: "tok-0004" }
   - id: "tok-0004"
     target: "sina"
+    target_scripts:
+      sitelen_pona: "󱥞"
     ipa: "ˈsina"
     pos: "pronoun"
     bases: "self"
@@ -61,32 +69,38 @@ cards:
       - { id: "plural", kind: "usage" }
       - { id: "sound", kind: "pair", ref: "tok-0007" }
     examples:
-      - { target: "sina toki.", ipa: "ˈsina ˈtoki", bases: [{ word: "toki", ref: "tok-0001" }] }
-      - { target: "sina sona.", ipa: "ˈsina ˈsona", bases: [{ word: "sona", ref: "tok-0007" }] }
+      - { target: "sina toki.", target_scripts: { sitelen_pona: "󱥞 󱥬." }, ipa: "ˈsina ˈtoki", bases: [{ word: "toki", ref: "tok-0001" }] }
+      - { target: "sina sona.", target_scripts: { sitelen_pona: "󱥞 󱥡." }, ipa: "ˈsina ˈsona", bases: [{ word: "sona", ref: "tok-0007" }] }
     antonyms:
       - { id: "mi", ref: "tok-0003" }
   - id: "tok-0005"
     target: "ala"
+    target_scripts:
+      sitelen_pona: "󱤂"
     ipa: "ˈala"
     pos: "other"
     bases: "self"
     notes:
       - { id: "after", kind: "behaviour" }
     examples:
-      - { target: "sina pona ala.", ipa: "ˈsina ˈpona ˈala", bases: [{ word: "sina", ref: "tok-0004" }, { word: "pona", ref: "tok-0002" }] }
-      - { target: "mi sona ala.", ipa: "mi ˈsona ˈala", bases: [{ word: "mi", ref: "tok-0003" }, { word: "sona", ref: "tok-0007" }] }
+      - { target: "sina pona ala.", target_scripts: { sitelen_pona: "󱥞 󱥔 󱤂." }, ipa: "ˈsina ˈpona ˈala", bases: [{ word: "sina", ref: "tok-0004" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "mi sona ala.", target_scripts: { sitelen_pona: "󱤴 󱥡 󱤂." }, ipa: "mi ˈsona ˈala", bases: [{ word: "mi", ref: "tok-0003" }, { word: "sona", ref: "tok-0007" }] }
   - id: "tok-0006"
     target: "nimi"
+    target_scripts:
+      sitelen_pona: "󱥂"
     ipa: "ˈnimi"
     pos: "noun"
     bases: "self"
     notes:
       - { id: "name", kind: "usage" }
     examples:
-      - { target: "nimi pona.", ipa: "ˈnimi ˈpona", bases: [{ word: "pona", ref: "tok-0002" }] }
-      - { target: "nimi sina.", ipa: "ˈnimi ˈsina", bases: [{ word: "sina", ref: "tok-0004" }] }
+      - { target: "nimi pona.", target_scripts: { sitelen_pona: "󱥂 󱥔." }, ipa: "ˈnimi ˈpona", bases: [{ word: "pona", ref: "tok-0002" }] }
+      - { target: "nimi sina.", target_scripts: { sitelen_pona: "󱥂 󱥞." }, ipa: "ˈnimi ˈsina", bases: [{ word: "sina", ref: "tok-0004" }] }
   - id: "tok-0007"
     target: "sona"
+    target_scripts:
+      sitelen_pona: "󱥡"
     ipa: "ˈsona"
     pos: "verb"
     bases: "self"
@@ -95,7 +109,7 @@ cards:
       - { id: "noun", kind: "usage" }
       - { id: "sound", kind: "pair", ref: "tok-0004" }
     examples:
-      - { target: "sina sona.", ipa: "ˈsina ˈsona", bases: [{ word: "sina", ref: "tok-0004" }] }
-      - { target: "mi sona toki pona.", ipa: "mi ˈsona ˈtoki ˈpona", bases: [{ word: "mi", ref: "tok-0003" }, { word: "toki", ref: "tok-0001" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "sina sona.", target_scripts: { sitelen_pona: "󱥞 󱥡." }, ipa: "ˈsina ˈsona", bases: [{ word: "sina", ref: "tok-0004" }] }
+      - { target: "mi sona toki pona.", target_scripts: { sitelen_pona: "󱤴 󱥡 󱥬 󱥔." }, ipa: "mi ˈsona ˈtoki ˈpona", bases: [{ word: "mi", ref: "tok-0003" }, { word: "toki", ref: "tok-0001" }, { word: "pona", ref: "tok-0002" }] }
     senses:
       - { id: "knowledge", pos: "noun" }

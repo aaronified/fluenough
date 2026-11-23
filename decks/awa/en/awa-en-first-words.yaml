@@ -1,0 +1,672 @@
+schema: 1
+id: "awa-en-first-words"
+kind: "layer"
+core: "awa-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "The first words of Awadhi: the pronouns, yes and no, the numbers 1 to 10, the family, and the everyday words for food, house, name and time. Not yet checked by an Awadhi speaker: please report any mistake."
+cards:
+  "awa-0101":
+    native: "yes"
+    notes:
+      "n1": "The usual 'yes'."
+    examples:
+      "हाँ, यह पानी आय।":
+        native: "Yes, this is water."
+        bases:
+          "यह": "this"
+          "पानी": "water"
+          "आय": "is"
+  "awa-0102":
+    native: "no; not"
+    notes:
+      "n1": "The negative. Before a verb it means 'not'."
+    examples:
+      "नाहीं, हम आवत नाहीं।":
+        native: "No, I am not coming."
+        bases:
+          "हम": "I"
+          "आवत": "come"
+  "awa-0103":
+    native: "I"
+    notes:
+      "n1": "The first person."
+    examples:
+      "हम डाक्टर आही।":
+        native: "I am a doctor."
+        bases:
+          "हम": "I"
+          "डाक्टर": "doctor"
+          "आही": "am"
+      "हम ठीक हन।":
+        native: "I am fine."
+        bases:
+          "हम": "I"
+          "ठीक": "fine"
+          "हन": "am"
+  "awa-0104":
+    native: "you (to a friend or child)"
+    notes:
+      "n1": "The familiar 'you'. तुम (tum) and आप (āp) are for elders and strangers."
+    examples:
+      "तुइ कहाँ आय?":
+        native: "Where are you?"
+        bases:
+          "तुइ": "you"
+          "कहाँ": "where"
+          "आय": "are"
+      "तुइ बढ़िया आय।":
+        native: "You are well."
+        bases:
+          "तुइ": "you"
+          "बढ़िया": "good"
+          "आय": "are"
+  "awa-0105":
+    native: "he; she"
+    notes:
+      "n1": "One word for both, with the verb showing the difference. Doubtful for Awadhi; see the report."
+    examples:
+      "वह घर मा आय।":
+        native: "He is at home."
+        bases:
+          "वह": "he"
+          "घर": "home"
+          "मा": "in"
+          "आय": "is"
+      "वह डाक्टर आय।":
+        native: "She is a doctor."
+        bases:
+          "वह": "she"
+          "डाक्टर": "doctor"
+          "आय": "is"
+  "awa-0106":
+    native: "we"
+    notes:
+      "n1": "Two words: हम (ham) and लोग (log), people. Used for any group of 'we'."
+    bases:
+      "लोग": "people"
+    examples:
+      "हम लोग घर जाइत हन।":
+        native: "We are going home."
+        bases:
+          "हम": "we"
+          "लोग": "people"
+          "घर": "home"
+          "जाइत": "go"
+          "हन": "are; am"
+      "हम लोग अवधी आही।":
+        native: "We are Awadhi."
+        bases:
+          "हम": "we"
+          "लोग": "people"
+          "अवधी": "Awadhi"
+          "आही": "am"
+  "awa-0107":
+    native: "they"
+    notes:
+      "n1": "The distal plural pronoun. For a group of people."
+    examples:
+      "उइ पढ़त हैं।":
+        native: "They study."
+        bases:
+          "उइ": "they"
+          "पढ़त": "study"
+          "हैं": "are"
+      "उइ नेपाली आहैं।":
+        native: "They are Nepali."
+        bases:
+          "उइ": "they"
+          "नेपाली": "Nepali"
+          "आहैं": "are"
+  "awa-0108":
+    native: "one"
+    notes:
+      "n1": "The number 1."
+    examples:
+      "एक गिलास पानी।":
+        native: "One glass of water."
+        bases:
+          "एक": "one"
+          "गिलास": "glass"
+          "पानी": "water"
+      "एक कप चाय।":
+        native: "One cup of tea."
+        bases:
+          "एक": "one"
+          "कप": "cup"
+          "चाय": "tea"
+  "awa-0109":
+    native: "two"
+    notes:
+      "n1": "The number 2."
+    examples:
+      "दुइ गिलास पानी।":
+        native: "Two glases of water."
+        bases:
+          "दुइ": "two"
+          "गिलास": "glass"
+          "पानी": "water"
+      "दुइ कप चाय।":
+        native: "Two cups of tea."
+        bases:
+          "दुइ": "two"
+          "कप": "cup"
+          "चाय": "tea"
+  "awa-0110":
+    native: "three"
+    notes:
+      "n1": "The number 3."
+    examples:
+      "तीन गिलास पानी।":
+        native: "Three glases of water."
+        bases:
+          "तीन": "three"
+          "गिलास": "glass"
+          "पानी": "water"
+      "तीन कप चाय।":
+        native: "Three cups of tea."
+        bases:
+          "तीन": "three"
+          "कप": "cup"
+          "चाय": "tea"
+  "awa-0111":
+    native: "four"
+    notes:
+      "n1": "The number 4."
+    examples:
+      "चार गिलास पानी।":
+        native: "Four glases of water."
+        bases:
+          "चार": "four"
+          "गिलास": "glass"
+          "पानी": "water"
+      "चार कप चाय।":
+        native: "Four cups of tea."
+        bases:
+          "चार": "four"
+          "कप": "cup"
+          "चाय": "tea"
+  "awa-0112":
+    native: "five"
+    notes:
+      "n1": "The number 5."
+    examples:
+      "पाँच गिलास पानी।":
+        native: "Five glases of water."
+        bases:
+          "पाँच": "five"
+          "गिलास": "glass"
+          "पानी": "water"
+      "पाँच कप चाय।":
+        native: "Five cups of tea."
+        bases:
+          "पाँच": "five"
+          "कप": "cup"
+          "चाय": "tea"
+  "awa-0113":
+    native: "six"
+    notes:
+      "n1": "The number 6."
+    examples:
+      "छह गिलास पानी।":
+        native: "Six glases of water."
+        bases:
+          "छह": "six"
+          "गिलास": "glass"
+          "पानी": "water"
+      "छह कप चाय।":
+        native: "Six cups of tea."
+        bases:
+          "छह": "six"
+          "कप": "cup"
+          "चाय": "tea"
+  "awa-0114":
+    native: "seven"
+    notes:
+      "n1": "The number 7."
+    examples:
+      "सात गिलास पानी।":
+        native: "Seven glases of water."
+        bases:
+          "सात": "seven"
+          "गिलास": "glass"
+          "पानी": "water"
+      "सात कप चाय।":
+        native: "Seven cups of tea."
+        bases:
+          "सात": "seven"
+          "कप": "cup"
+          "चाय": "tea"
+  "awa-0115":
+    native: "eight"
+    notes:
+      "n1": "The number 8."
+    examples:
+      "आठ गिलास पानी।":
+        native: "Eight glases of water."
+        bases:
+          "आठ": "eight"
+          "गिलास": "glass"
+          "पानी": "water"
+      "आठ कप चाय।":
+        native: "Eight cups of tea."
+        bases:
+          "आठ": "eight"
+          "कप": "cup"
+          "चाय": "tea"
+  "awa-0116":
+    native: "nine"
+    notes:
+      "n1": "The number 9."
+    examples:
+      "नौ गिलास पानी।":
+        native: "Nine glases of water."
+        bases:
+          "नौ": "nine"
+          "गिलास": "glass"
+          "पानी": "water"
+      "नौ कप चाय।":
+        native: "Nine cups of tea."
+        bases:
+          "नौ": "nine"
+          "कप": "cup"
+          "चाय": "tea"
+  "awa-0117":
+    native: "ten"
+    notes:
+      "n1": "The number 10."
+    examples:
+      "दस गिलास पानी।":
+        native: "Ten glases of water."
+        bases:
+          "दस": "ten"
+          "गिलास": "glass"
+          "पानी": "water"
+      "दस कप चाय।":
+        native: "Ten cups of tea."
+        bases:
+          "दस": "ten"
+          "कप": "cup"
+          "चाय": "tea"
+  "awa-0118":
+    native: "mother"
+    notes:
+      "n1": "The everyday word for 'mother'."
+    examples:
+      "हमार माई घर मा आय।":
+        native: "My mother is at home."
+        bases:
+          "हमार": "my"
+          "माई": "mother"
+          "घर": "home"
+          "मा": "in"
+          "आय": "is"
+      "माई, पानी देव।":
+        native: "Mum, give water."
+        bases:
+          "माई": "mother"
+          "पानी": "water"
+          "देव": "give"
+  "awa-0119":
+    native: "father"
+    notes:
+      "n1": "The everyday word for 'father'."
+    examples:
+      "हमार बाबू मास्टर आहैं।":
+        native: "My father is a teacher."
+        bases:
+          "हमार": "my"
+          "बाबू": "father"
+          "मास्टर": "teacher"
+          "आहैं": "are"
+      "बाबू, पानी?":
+        native: "Dad, water?"
+        bases:
+          "बाबू": "father"
+          "पानी": "water"
+  "awa-0120":
+    native: "brother"
+    notes:
+      "n1": "Any brother, older or younger."
+    examples:
+      "हमार भाई घर मा आय।":
+        native: "My brother is at home."
+        bases:
+          "हमार": "my"
+          "भाई": "brother"
+          "घर": "home"
+          "मा": "in"
+          "आय": "is"
+      "भाई, आवा!":
+        native: "Brother, come!"
+        bases:
+          "भाई": "brother"
+          "आवा": "come"
+  "awa-0121":
+    native: "sister"
+    notes:
+      "n1": "Any sister, older or younger."
+    examples:
+      "हमार बहिन विद्यार्थी आय।":
+        native: "My sister is a student."
+        bases:
+          "हमार": "my"
+          "बहिन": "sister"
+          "विद्यार्थी": "student"
+          "आय": "is"
+      "बहिन, खाना तैयार आय।":
+        native: "Sister, the food is ready."
+        bases:
+          "बहिन": "sister"
+          "खाना": "food"
+          "तैयार": "ready"
+          "आय": "is"
+  "awa-0122":
+    native: "child"
+    notes:
+      "n1": "A child, a boy in particular."
+    examples:
+      "लरिका खेलत आय।":
+        native: "The child is playing."
+        bases:
+          "लरिका": "child"
+          "खेलत": "play"
+          "आय": "is"
+      "लरिका छोट आय।":
+        native: "The child is small."
+        bases:
+          "लरिका": "child"
+          "छोट": "small"
+          "आय": "is"
+  "awa-0123":
+    native: "man; person"
+    notes:
+      "n1": "A man, or a person of either sex."
+    examples:
+      "वह आदमी नीक आय।":
+        native: "That man is good."
+        bases:
+          "वह": "that"
+          "आदमी": "man"
+          "नीक": "good"
+          "आय": "is"
+      "आदमी घर मा आय।":
+        native: "The man is at home."
+        bases:
+          "आदमी": "man"
+          "घर": "home"
+          "मा": "in"
+          "आय": "is"
+  "awa-0124":
+    native: "woman"
+    notes:
+      "n1": "An adult woman."
+    examples:
+      "वह औरत डाक्टर आय।":
+        native: "That woman is a doctor."
+        bases:
+          "वह": "that"
+          "औरत": "woman"
+          "डाक्टर": "doctor"
+          "आय": "is"
+      "औरत, पानी देव।":
+        native: "Woman, give water."
+        bases:
+          "औरत": "woman"
+          "पानी": "water"
+          "देव": "give"
+  "awa-0125":
+    native: "water"
+    notes:
+      "n1": "The everyday word for water."
+    examples:
+      "हमका पानी चाही।":
+        native: "I need water."
+        bases:
+          "हमका": "to me"
+          "पानी": "water"
+          "चाही": "need"
+      "पानी ठंडा आय।":
+        native: "The water is cold."
+        bases:
+          "पानी": "water"
+          "ठंडा": "cold"
+          "आय": "is"
+  "awa-0126":
+    native: "food; meal"
+    notes:
+      "n1": "Food in general, or a meal. भात (bhāt) is rice."
+    examples:
+      "खाना तैयार आय।":
+        native: "The food is ready."
+        bases:
+          "खाना": "food"
+          "तैयार": "ready"
+          "आय": "is"
+      "हम खाना खाब।":
+        native: "I will eat food."
+        bases:
+          "हम": "I"
+          "खाना": "food"
+          "खाब": "eat"
+  "awa-0127":
+    native: "tea"
+    notes:
+      "n1": "Milk tea is the everyday tea."
+    examples:
+      "चाय गरम आय।":
+        native: "The tea is hot."
+        bases:
+          "चाय": "tea"
+          "गरम": "hot"
+          "आय": "is"
+      "हमका चाय नीक लागत।":
+        native: "I like tea."
+        bases:
+          "हमका": "to me"
+          "चाय": "tea"
+          "नीक": "good"
+          "लागत": "like"
+  "awa-0128":
+    native: "house; home"
+    notes:
+      "n1": "A house, or home."
+    examples:
+      "हमार घर बड़ आय।":
+        native: "My house is big."
+        bases:
+          "हमार": "my"
+          "घर": "house"
+          "बड़": "big"
+          "आय": "is"
+      "घर कहाँ आय?":
+        native: "Where is the house?"
+        bases:
+          "घर": "house"
+          "कहाँ": "where"
+          "आय": "is"
+  "awa-0129":
+    native: "name"
+    notes:
+      "n1": "Your name is आपके (āpke) नाव (nāv)."
+    examples:
+      "आपके नाव का आय?":
+        native: "What is your name?"
+        bases:
+          "आपके": "your"
+          "नाव": "name"
+          "का": "what"
+          "आय": "is"
+      "नाव नीक आय।":
+        native: "The name is good."
+        bases:
+          "नाव": "name"
+          "नीक": "good"
+          "आय": "is"
+  "awa-0130":
+    native: "good; nice"
+    notes:
+      "n1": "Good or nice."
+    examples:
+      "यह नीक आय।":
+        native: "This is good."
+        bases:
+          "यह": "this"
+          "नीक": "good"
+          "आय": "is"
+      "आज मौसम नीक आय।":
+        native: "The weather is good today."
+        bases:
+          "आज": "today"
+          "मौसम": "weather"
+          "नीक": "good"
+          "आय": "is"
+  "awa-0131":
+    native: "big; large"
+    notes:
+      "n1": "Of a thing or a person. छोट (chhoṭ) is 'small'."
+    examples:
+      "घर बड़ा आय।":
+        native: "The house is big."
+        bases:
+          "घर": "house"
+          "बड़ा": "big"
+          "आय": "is"
+      "बड़ा कुकुर।":
+        native: "A big dog."
+        bases:
+          "बड़ा": "big"
+          "कुकुर": "dog"
+  "awa-0132":
+    native: "small; little"
+    notes:
+      "n1": "Of a thing or a person."
+    examples:
+      "लरिका छोट आय।":
+        native: "The child is small."
+        bases:
+          "लरिका": "child"
+          "छोट": "small"
+          "आय": "is"
+      "छोट घर।":
+        native: "A small house."
+        bases:
+          "छोट": "small"
+          "घर": "house"
+  "awa-0133":
+    native: "here"
+    notes:
+      "n1": "The place where the speaker is."
+    examples:
+      "हम हिआँ आही।":
+        native: "I am here."
+        bases:
+          "हम": "I"
+          "हिआँ": "here"
+          "आही": "am"
+      "हिआँ आवा।":
+        native: "Come here."
+        bases:
+          "हिआँ": "here"
+          "आवा": "come"
+  "awa-0134":
+    native: "there"
+    notes:
+      "n1": "A place away from the speaker."
+    examples:
+      "हुआँ पानी आय।":
+        native: "There is water there."
+        bases:
+          "हुआँ": "there"
+          "पानी": "water"
+          "आय": "is"
+      "हुआँ जावा।":
+        native: "Go there."
+        bases:
+          "हुआँ": "there"
+          "जावा": "go"
+  "awa-0135":
+    native: "what"
+    notes:
+      "n1": "Asks 'what?'."
+    examples:
+      "यह का आय?":
+        native: "What is this?"
+        bases:
+          "यह": "this"
+          "का": "what"
+          "आय": "is"
+      "तुइ का खाब?":
+        native: "What will you eat?"
+        bases:
+          "तुइ": "you"
+          "का": "what"
+          "खाब": "eat"
+  "awa-0136":
+    native: "who"
+    notes:
+      "n1": "Asks 'who?'."
+    examples:
+      "यह को आय?":
+        native: "Who is this?"
+        bases:
+          "यह": "this"
+          "को": "who"
+          "आय": "is"
+      "को आवत आय?":
+        native: "Who is coming?"
+        bases:
+          "को": "who"
+          "आवत": "come"
+          "आय": "is"
+  "awa-0137":
+    native: "where"
+    notes:
+      "n1": "Asks about a place."
+    examples:
+      "तुइ कहाँ आय?":
+        native: "Where are you?"
+        bases:
+          "तुइ": "you"
+          "कहाँ": "where"
+          "आय": "are"
+      "घर कहाँ आय?":
+        native: "Where is the house?"
+        bases:
+          "घर": "house"
+          "कहाँ": "where"
+          "आय": "is"
+  "awa-0138":
+    native: "and"
+    notes:
+      "n1": "Joins two nouns: चाय (chāy) अउ (au) पानी (pānī), tea and water."
+    examples:
+      "चाय अउ पानी।":
+        native: "Tea and water."
+        bases:
+          "चाय": "tea"
+          "पानी": "water"
+      "हम अउ तुइ।":
+        native: "You and I."
+        bases:
+          "हम": "I"
+          "तुइ": "you"
+  "awa-0139":
+    native: "today"
+    notes:
+      "n1": "The day you are in now."
+    examples:
+      "आज घाम निकरा।":
+        native: "The sun came out today."
+        bases:
+          "आज": "today"
+          "घाम": "sun"
+          "निकरा": "came out"
+      "आज पानी बरसी।":
+        native: "It will rain today."
+
+        bases:
+          "आज": "today"
+          "पानी": "water"
+          "बरसी": "rain"

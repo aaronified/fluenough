@@ -1,0 +1,20 @@
+schema: 1
+id: "hi-en-grammar-verb-imperative"
+kind: "layer"
+core: "hi-grammar-verb-imperative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs: commands, for three ways of saying you"
+description: "Every verb the course teaches, as a command to the very close you, the familiar you and the respectful you, and as a command not to. The forms are written in Devanagari for now. Not yet checked by a Hindustani speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "command"
+  slots:
+    "tu": "command to you (intimate)"
+    "tum": "command to you (familiar)"
+    "aap": "polite command to you (respectful)"
+    "mat-tum": "do not, to you (familiar)"
+rules:
+  "hi-rule-imperative":
+    name: "-इए (-iē): command"
+    explanation: "A command to {8}, the very close you, is the bare stem; to {9}, the familiar you, it is the stem with the subjunctive ending; to {10}, the respectful you, the stem takes {1}. {2}, to do, gives {3}, {4} and {5}; {11}, to go, gives {12}. A command not to adds {7}, not, before the familiar form: {6}."

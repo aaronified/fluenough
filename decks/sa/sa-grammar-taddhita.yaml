@@ -1,0 +1,113 @@
+# Secondary derivation (taddhita): course words with the word each suffix makes from them. A cell is empty where no derived word of that suffix was found on a page read.
+# The base is the stem of the course word; Wiktionary-checked derivatives are marked in the layer, the others come from Whitney's examples (the Devanagari checked against Whitney's Roman spelling with tools/transcribe.py (sa)).
+schema: 1
+id: "sa-grammar-taddhita"
+part: "core"
+kind: "grammar"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+source: "en.wiktionary.org entries of the derived words (sarada, maruta, parthiva, daivya, mukhya, gavya, vanmaya, ayusmat, himavat, devata, patitva, bhratrtva) and their etymology lines, and of the months paus, magha, phalguna, asvina and vaisakha, read 2026-11-16; Whitney, Sanskrit Grammar 1202 to 1204, 1208, 1210 to 1212, 1215, 1225, 1233, 1235, 1237 and 1239 (secondary derivation, chapter XVII) on en.wikisource, read 2026-11-16; Panini, Astadhyayi 4.1.76, 4.1.83, 4.1.92, 4.2.3, 5.2.94, 5.4.21 and 7.2.117 as typed on sa.wikisource.org/wiki/अष्टाध्यायी (the fourth, fifth and seventh chapter pages), read 2026-11-16; readings and IPA from tools/transcribe.py (sa)."
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["an", "ya", "iya", "ta", "tva", "mat", "maya"]
+  entries:
+    - lemma: "शरद्"
+      key: "sarad"
+      reading: "śarad"
+      ipa: "ʃərəd̪"
+      forms: { "an": "शारद", "ya": null, "iya": null, "ta": null, "tva": null, "mat": null, "maya": null }
+      readings: { "an": "śārada" }
+      ipas: { "an": "ʃaːrəd̪ə" }
+    - lemma: "मरुत्"
+      key: "marut"
+      reading: "marut"
+      ipa: "mərut̪"
+      forms: { "an": "मारुत", "ya": null, "iya": null, "ta": null, "tva": null, "mat": null, "maya": null }
+      readings: { "an": "māruta" }
+      ipas: { "an": "maːrut̪ə" }
+    - lemma: "पृथिवी"
+      key: "prthivi"
+      reading: "pṛthivī"
+      ipa: "pr̩t̪ʰiʋiː"
+      forms: { "an": "पार्थिव", "ya": null, "iya": null, "ta": null, "tva": null, "mat": null, "maya": null }
+      readings: { "an": "pārthiva" }
+      ipas: { "an": "paːrt̪ʰiʋə" }
+    - lemma: "देव"
+      key: "deva"
+      reading: "deva"
+      ipa: "d̪eːʋə"
+      forms: { "an": null, "ya": "दैव्य", "iya": null, "ta": "देवता", "tva": "देवत्व", "mat": null, "maya": null }
+      readings: { "ya": "daivya", "ta": "devatā", "tva": "devatva" }
+      ipas: { "ya": "d̪əiʋjə", "ta": "d̪eːʋət̪aː", "tva": "d̪eːʋət̪ʋə" }
+    - lemma: "मुख"
+      key: "mukha"
+      reading: "mukha"
+      ipa: "mukʰə"
+      forms: { "an": null, "ya": "मुख्य", "iya": null, "ta": null, "tva": null, "mat": null, "maya": null }
+      readings: { "ya": "mukhya" }
+      ipas: { "ya": "mukʰjə" }
+    - lemma: "गो"
+      key: "go"
+      reading: "go"
+      ipa: "ɡoː"
+      forms: { "an": null, "ya": "गव्य", "iya": null, "ta": null, "tva": null, "mat": null, "maya": null }
+      readings: { "ya": "gavya" }
+      ipas: { "ya": "ɡəʋjə" }
+    - lemma: "पर्वत"
+      key: "parvata"
+      reading: "parvata"
+      ipa: "pərʋət̪ə"
+      forms: { "an": null, "ya": null, "iya": "पर्वतीय", "ta": null, "tva": null, "mat": null, "maya": null }
+      readings: { "iya": "parvatīya" }
+      ipas: { "iya": "pərʋət̪iːjə" }
+    - lemma: "वाच्"
+      key: "vac"
+      reading: "vāc"
+      ipa: "ʋaːtʃ"
+      forms: { "an": null, "ya": null, "iya": null, "ta": null, "tva": null, "mat": null, "maya": "वाङ्मय" }
+      readings: { "maya": "vāṅmaya" }
+      ipas: { "maya": "ʋaːŋməjə" }
+    - lemma: "ज्योतिस्"
+      key: "jyotis"
+      reading: "jyotis"
+      ipa: "dʒjoːt̪is"
+      forms: { "an": null, "ya": null, "iya": null, "ta": null, "tva": null, "mat": "ज्योतिष्मत्", "maya": "ज्योतिर्मय" }
+      readings: { "mat": "jyotiṣmat", "maya": "jyotirmaya" }
+      ipas: { "mat": "dʒjoːt̪iʂmət̪", "maya": "dʒjoːt̪irməjə" }
+    - lemma: "आयुस्"
+      key: "ayus"
+      reading: "āyus"
+      ipa: "aːjus"
+      forms: { "an": null, "ya": null, "iya": null, "ta": null, "tva": null, "mat": "आयुष्मत्", "maya": null }
+      readings: { "mat": "āyuṣmat" }
+      ipas: { "mat": "aːjuʂmət̪" }
+    - lemma: "हिम"
+      key: "hima"
+      reading: "hima"
+      ipa: "ɦimə"
+      forms: { "an": null, "ya": null, "iya": null, "ta": null, "tva": null, "mat": "हिमवत्", "maya": null }
+      readings: { "mat": "himavat" }
+      ipas: { "mat": "ɦiməʋət̪" }
+    - lemma: "पति"
+      key: "pati"
+      reading: "pati"
+      ipa: "pət̪i"
+      forms: { "an": null, "ya": null, "iya": null, "ta": null, "tva": "पतित्व", "mat": null, "maya": null }
+      readings: { "tva": "patitva" }
+      ipas: { "tva": "pət̪it̪ʋə" }
+    - lemma: "भ्रातृ"
+      key: "bhratr"
+      reading: "bhrātṛ"
+      ipa: "bʱraːt̪r̩"
+      forms: { "an": null, "ya": null, "iya": null, "ta": null, "tva": "भ्रातृत्व", "mat": null, "maya": null }
+      readings: { "tva": "bhrātṛtva" }
+      ipas: { "tva": "bʱraːt̪r̩t̪ʋə" }
+    - lemma: "बन्धु"
+      key: "bandhu"
+      reading: "bandhu"
+      ipa: "bənd̪ʱu"
+      forms: { "an": null, "ya": null, "iya": null, "ta": "बन्धुता", "tva": null, "mat": null, "maya": null }
+      readings: { "ta": "bandhutā" }
+      ipas: { "ta": "bənd̪ʱut̪aː" }

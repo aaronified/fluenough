@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-weddings-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3980"
+    target: "विवाहे वेद्याम् अग्निर् ज्वलति."
+    reading: "vivāhe vedyām agnir jvalati."
+    ipa: "ʋiʋaːɦeː ʋeːd̪jaːm əɡnir dʒʋələt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "विवाहे", base: "विवाहः", reading: "vivāhaḥ" }, { word: "वेद्याम्", base: "वेदिः", reading: "vediḥ" }, { word: "अग्निर्", base: "अग्निः", reading: "agniḥ" }, { word: "ज्वलति", base: "ज्वल्", reading: "jval" }]
+    confusables: [{ id: "w1", ref: "sa-10329", kind: "word" }, { id: "w2", ref: "sa-10303", kind: "word" }, { id: "w3", ref: "sa-12002", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3981"
+    target: "वरो वरयात्रया कन्याया गृहं गच्छति."
+    reading: "varo varayātrayā kanyāyā gṛhaṃ gacchati."
+    ipa: "ʋəroː ʋərəjaːt̪rəjaː kənjaːjaː ɡr̩ɦəm ɡətʃtʃʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वरो", base: "वरः", reading: "varaḥ" }, { word: "वरयात्रया", base: "वरयात्रा", reading: "varayātrā" }, { word: "कन्याया", base: "कन्या", reading: "kanyā" }, { word: "गृहं", base: "गृहम्", reading: "gṛham" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-10337", kind: "word" }, { id: "w2", ref: "sa-10339", kind: "word" }, { id: "w3", ref: "sa-2011", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3982"
+    target: "कन्यादाने पिता कन्यां ददाति."
+    reading: "kanyādāne pitā kanyāṃ dadāti."
+    ipa: "kənjaːd̪aːneː pit̪aː kənjaːm d̪əd̪aːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कन्यादाने", base: "कन्यादानम्", reading: "kanyādānam" }, { word: "पिता", ref: "sa-1031" }, { word: "कन्यां", base: "कन्या", reading: "kanyā" }, { word: "ददाति", base: "दा", reading: "dā" }]
+    confusables: [{ id: "w1", ref: "sa-10306", kind: "word" }, { id: "w2", ref: "sa-1030", kind: "word" }, { id: "w3", ref: "sa-2016", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3983"
+    target: "वधूर् वरस्य गृहे वसति."
+    reading: "vadhūr varasya gṛhe vasati."
+    ipa: "ʋəd̪ʱuːr ʋərəsjə ɡr̩ɦeː ʋəsət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वधूर्", base: "वधूः", reading: "vadhūḥ" }, { word: "वरस्य", base: "वरः", reading: "varaḥ" }, { word: "गृहे", base: "गृहम्", reading: "gṛham" }, { word: "वसति", base: "वस्", reading: "vas" }]
+    confusables: [{ id: "w1", ref: "sa-10310", kind: "word" }, { id: "w2", ref: "sa-10345", kind: "word" }, { id: "w3", ref: "sa-2002", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3984"
+    target: "पुरोहितो वेद्यां मन्त्रान् पठति."
+    reading: "purohito vedyāṃ mantrān paṭhati."
+    ipa: "puroːɦit̪oː ʋeːd̪jaːm mənt̪raːn pəʈʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पुरोहितो", base: "पुरोहितः", reading: "purohitaḥ" }, { word: "वेद्यां", base: "वेदिः", reading: "vediḥ" }, { word: "मन्त्रान्", base: "मन्त्रः", reading: "mantraḥ" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-5922", kind: "word" }, { id: "w2", ref: "sa-10329", kind: "word" }, { id: "w3", ref: "sa-2113", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3985"
+    target: "माता बालिकायै वलयं ददाति."
+    reading: "mātā bālikāyai valayaṃ dadāti."
+    ipa: "maːt̪aː baːlikaːjəi ʋələjəm d̪əd̪aːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "माता", ref: "sa-1030" }, { word: "बालिकायै", base: "बालिका", reading: "bālikā" }, { word: "वलयं", base: "वलयः", reading: "valayaḥ" }, { word: "ददाति", base: "दा", reading: "dā" }]
+    confusables: [{ id: "w1", ref: "sa-1786", kind: "word" }, { id: "w2", ref: "sa-1034", kind: "word" }, { id: "w3", ref: "sa-2016", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3986"
+    target: "विधवा नित्यं पतिं स्मरति."
+    reading: "vidhavā nityaṃ patiṃ smarati."
+    ipa: "ʋid̪ʱəʋaː nit̪jəm pət̪im smərət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "विधवा", ref: "sa-10308" }, { word: "नित्यं", base: "नित्यम्", reading: "nityam" }, { word: "पतिं", base: "पतिः", reading: "patiḥ" }, { word: "स्मरति", base: "स्मृ", reading: "smṛ" }]
+    confusables: [{ id: "w1", ref: "sa-1043", kind: "word" }, { id: "w2", ref: "sa-1031", kind: "word" }, { id: "w3", ref: "sa-2113", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3987"
+    target: "तरुणो युवतिम् उद्याने पश्यति."
+    reading: "taruṇo yuvatim udyāne paśyati."
+    ipa: "t̪əruɳoː juʋət̪im ud̪jaːneː pəʃjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "तरुणो", base: "तरुणः", reading: "taruṇaḥ" }, { word: "युवतिम्", base: "युवतिः", reading: "yuvatiḥ" }, { word: "उद्याने", base: "उद्यानम्", reading: "udyānam" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+    confusables: [{ id: "w1", ref: "sa-10355", kind: "word" }, { id: "w2", ref: "sa-10336", kind: "word" }, { id: "w3", ref: "sa-2104", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3988"
+    target: "स्नातको गुरवे दक्षिणां ददाति."
+    reading: "snātako gurave dakṣiṇāṃ dadāti."
+    ipa: "snaːt̪əkoː ɡurəʋeː d̪əkʂiɳaːm d̪əd̪aːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "स्नातको", base: "स्नातकः", reading: "snātakaḥ" }, { word: "गुरवे", base: "गुरुः", reading: "guruḥ" }, { word: "दक्षिणां", base: "दक्षिणा", reading: "dakṣiṇā" }, { word: "ददाति", base: "दा", reading: "dā" }]
+    confusables: [{ id: "w1", ref: "sa-1840", kind: "word" }, { id: "w2", ref: "sa-1831", kind: "word" }, { id: "w3", ref: "sa-2016", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3989"
+    target: "गृहपत्नी गृहस्य रक्षां करोति."
+    reading: "gṛhapatnī gṛhasya rakṣāṃ karoti."
+    ipa: "ɡr̩ɦəpət̪niː ɡr̩ɦəsjə rəkʂaːm kəroːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "गृहपत्नी", ref: "sa-10302" }, { word: "गृहस्य", base: "गृहम्", reading: "gṛham" }, { word: "रक्षां", base: "रक्षा", reading: "rakṣā" }, { word: "करोति", base: "कृ", reading: "kṛ" }]
+    confusables: [{ id: "w1", ref: "sa-10338", kind: "word" }, { id: "w2", ref: "sa-10300", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]

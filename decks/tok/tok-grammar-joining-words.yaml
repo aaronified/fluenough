@@ -7,6 +7,7 @@
   "iso639_3": "tok"
   "name": "Toki Pona"
   "script": "latin"
+  "scripts": ["latin", "sitelen_pona"]
   "icon": "Tp"
 "license": "CC-BY-SA-4.0"
 "tags":
@@ -15,6 +16,8 @@
 "cards":
 - "id": "tok-0540"
   "target": "en"
+  "target_scripts":
+    "sitelen_pona": "󱤊"
   "ipa": "en"
   "pos": "particle"
   "bases": "self"
@@ -25,6 +28,8 @@
     "kind": "usage"
   "examples":
   - "target": "mi en sina li pali."
+    "target_scripts":
+      "sitelen_pona": "󱤴 󱤊 󱥞 󱤧 󱥉."
     "ipa": "mi en ˈsina li ˈpali"
     "bases":
     - "word": "mi"
@@ -38,6 +43,8 @@
     - "word": "pali"
       "ref": "tok-0082"
   - "target": "jan en ona li lon."
+    "target_scripts":
+      "sitelen_pona": "󱤑 󱤊 󱥆 󱤧 󱤬."
     "ipa": "jan en ˈona li lon"
     "bases":
     - "word": "jan"
@@ -52,6 +59,8 @@
       "ref": "tok-0046"
 - "id": "tok-0541"
   "target": "taso"
+  "target_scripts":
+    "sitelen_pona": "󱥨"
   "ipa": "ˈtaso"
   "pos": "particle"
   "bases": "self"
@@ -62,6 +71,8 @@
     "kind": "behaviour"
   "examples":
   - "target": "mi wile moku taso."
+    "target_scripts":
+      "sitelen_pona": "󱤴 󱥷 󱤶 󱥨."
     "ipa": "mi ˈwile ˈmoku ˈtaso"
     "bases":
     - "word": "mi"
@@ -73,6 +84,8 @@
     - "word": "taso"
       "base": "taso"
   - "target": "kili li suwi, taso ona li lete."
+    "target_scripts":
+      "sitelen_pona": "󱤚 󱤧 󱥦, 󱥨 󱥆 󱤧 󱤦."
     "ipa": "ˈkili li ˈsuwi ˈtaso ˈona li ˈlete"
     "bases":
     - "word": "kili"

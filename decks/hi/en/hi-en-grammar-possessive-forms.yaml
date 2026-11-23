@@ -1,0 +1,21 @@
+schema: 1
+id: "hi-en-grammar-possessive-forms"
+kind: "layer"
+core: "hi-grammar-possessive-forms"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "My, your, our: with a feminine noun, and before a postposition"
+description: "Every possessive the course teaches (my, your, our and the others), with a feminine noun and with a masculine plural noun or before a postposition. The personal pronouns have their own table. The forms are written in Devanagari for now. Not yet checked by a Hindustani speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "fem": "with a feminine noun"
+    "masc-obl": "with a masculine plural noun, or before a postposition"
+rules:
+  "hi-rule-possessive-fem":
+    name: "-ी (-ī): with a feminine noun"
+    explanation: "A possessive ends in -ā and agrees like an adjective. With a feminine noun the -ā changes to {1}: {2}, my, becomes {3}; {4}, our, becomes {5}, as with {6}, a book."
+  "hi-rule-possessive-masc-obl":
+    name: "-े (-ē): masculine plural, or before a postposition"
+    explanation: "With a masculine plural noun, and before a postposition, the -ā changes to {1}: {2}, my, becomes {3}; {4}, our, becomes {5}, as with {6}, a room."

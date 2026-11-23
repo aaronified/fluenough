@@ -1,0 +1,1722 @@
+schema: 1
+id: "sa-government"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "government"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-5700"
+    target: "राज्यम्"
+    reading: "rājyam"
+    ipa: "raːdʒjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "pair", ref: "sa-5714" }
+    bases:
+      - { word: "राज्यम्", base: "राज्य", reading: "rājya" }
+    examples:
+      - target: "अस्ति राज्यं तत्र"
+        reading: "asti rājyaṃ tatra"
+        ipa: "əst̪i raːdʒjəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "राज्यं", base: "राज्य", reading: "rājya" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "राज्ये नृपः"
+        reading: "rājye nṛpaḥ"
+        ipa: "raːdʒjeː nr̩pəh"
+        bases:
+          - { word: "राज्ये", base: "राज्य", reading: "rājya" }
+          - { word: "नृपः", base: "नृप", reading: "nṛpa" }
+  - id: "sa-5701"
+    target: "सभा"
+    reading: "sabhā"
+    ipa: "səbʱaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5716" }
+    bases:
+      - { word: "सभा", base: "सभा", reading: "sabhā" }
+    examples:
+      - target: "अस्ति सभा तत्र"
+        reading: "asti sabhā tatra"
+        ipa: "əst̪i səbʱaː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सभा", base: "सभा", reading: "sabhā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "सभायां साक्षी"
+        reading: "sabhāyāṃ sākṣī"
+        ipa: "səbʱaːjaːm saːkʂiː"
+        bases:
+          - { word: "सभायां", base: "सभा", reading: "sabhā" }
+          - { word: "साक्षी", base: "साक्षिन्", reading: "sākṣin" }
+  - id: "sa-5702"
+    target: "अमात्यः"
+    reading: "amātyaḥ"
+    ipa: "əmaːt̪jəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "अमात्यः", base: "अमात्य", reading: "amātya" }
+    examples:
+      - target: "अमात्यस् तत्र"
+        reading: "amātyas tatra"
+        ipa: "əmaːt̪jəs t̪ət̪rə"
+        bases:
+          - { word: "अमात्यस्", base: "अमात्य", reading: "amātya" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अमात्यः सुखी"
+        reading: "amātyaḥ sukhī"
+        ipa: "əmaːt̪jəh sukʰiː"
+        bases:
+          - { word: "अमात्यः", base: "अमात्य", reading: "amātya" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhin" }
+  - id: "sa-5703"
+    target: "दूतः"
+    reading: "dūtaḥ"
+    ipa: "d̪uːt̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "दूतः", base: "दूत", reading: "dūta" }
+    examples:
+      - target: "दूतस् तत्र"
+        reading: "dūtas tatra"
+        ipa: "d̪uːt̪əs t̪ət̪rə"
+        bases:
+          - { word: "दूतस्", base: "दूत", reading: "dūta" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति राज्ये दूतः"
+        reading: "asti rājye dūtaḥ"
+        ipa: "əst̪i raːdʒjeː d̪uːt̪əh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "राज्ये", base: "राज्य", reading: "rājya" }
+          - { word: "दूतः", base: "दूत", reading: "dūta" }
+  - id: "sa-5704"
+    target: "नियमः"
+    reading: "niyamaḥ"
+    ipa: "nijəməh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5705" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "नियमः", base: "नियम", reading: "niyama" }
+    examples:
+      - target: "अस्ति नियमस् तत्र"
+        reading: "asti niyamas tatra"
+        ipa: "əst̪i nijəməs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "नियमस्", base: "नियम", reading: "niyama" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति शासने नियमः"
+        reading: "asti śāsane niyamaḥ"
+        ipa: "əst̪i ʃaːsəneː nijəməh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "शासने", base: "शासन", reading: "śāsana" }
+          - { word: "नियमः", base: "नियम", reading: "niyama" }
+  - id: "sa-5705"
+    target: "विधिः"
+    reading: "vidhiḥ"
+    ipa: "ʋid̪ʱih"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5704" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "विधिः", base: "विधि", reading: "vidhi" }
+    examples:
+      - target: "अस्ति विधिस् तत्र"
+        reading: "asti vidhis tatra"
+        ipa: "əst̪i ʋid̪ʱis t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "विधिस्", base: "विधि", reading: "vidhi" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति राज्ये विधिः"
+        reading: "asti rājye vidhiḥ"
+        ipa: "əst̪i raːdʒjeː ʋid̪ʱih"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "राज्ये", base: "राज्य", reading: "rājya" }
+          - { word: "विधिः", base: "विधि", reading: "vidhi" }
+  - id: "sa-5706"
+    target: "युद्धम्"
+    reading: "yuddham"
+    ipa: "jud̪d̪ʱəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "युद्धम्", base: "युद्ध", reading: "yuddha" }
+    examples:
+      - target: "अस्ति युद्धं तत्र"
+        reading: "asti yuddhaṃ tatra"
+        ipa: "əst̪i jud̪d̪ʱəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "युद्धं", base: "युद्ध", reading: "yuddha" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति युद्धं वने"
+        reading: "asti yuddhaṃ vane"
+        ipa: "əst̪i jud̪d̪ʱəm ʋəneː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "युद्धं", base: "युद्ध", reading: "yuddha" }
+          - { word: "वने", base: "वन", reading: "vana" }
+  - id: "sa-5707"
+    target: "शान्तिः"
+    reading: "śāntiḥ"
+    ipa: "ʃaːnt̪ih"
+    pos: "noun"
+    gender: "f"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "शान्तिः", base: "शान्ति", reading: "śānti" }
+    examples:
+      - target: "अस्ति शान्तिस् तत्र"
+        reading: "asti śāntis tatra"
+        ipa: "əst̪i ʃaːnt̪is t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "शान्तिस्", base: "शान्ति", reading: "śānti" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "राज्ये शान्तिः"
+        reading: "rājye śāntiḥ"
+        ipa: "raːdʒjeː ʃaːnt̪ih"
+        bases:
+          - { word: "राज्ये", base: "राज्य", reading: "rājya" }
+          - { word: "शान्तिः", base: "शान्ति", reading: "śānti" }
+  - id: "sa-5708"
+    target: "न्यायः"
+    reading: "nyāyaḥ"
+    ipa: "njaːjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "न्यायः", base: "न्याय", reading: "nyāya" }
+    examples:
+      - target: "अस्ति न्यायस् तत्र"
+        reading: "asti nyāyas tatra"
+        ipa: "əst̪i njaːjəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "न्यायस्", base: "न्याय", reading: "nyāya" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "नृपस्य न्यायः"
+        reading: "nṛpasya nyāyaḥ"
+        ipa: "nr̩pəsjə njaːjəh"
+        bases:
+          - { word: "नृपस्य", base: "नृप", reading: "nṛpa" }
+          - { word: "न्यायः", base: "न्याय", reading: "nyāya" }
+  - id: "sa-5709"
+    target: "लेखः"
+    reading: "lekhaḥ"
+    ipa: "leːkʰəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "लेखः", base: "लेख", reading: "lekha" }
+    examples:
+      - target: "अस्ति लेखस् तत्र"
+        reading: "asti lekhas tatra"
+        ipa: "əst̪i leːkʰəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "लेखस्", base: "लेख", reading: "lekha" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति सभायां लेखः"
+        reading: "asti sabhāyāṃ lekhaḥ"
+        ipa: "əst̪i səbʱaːjaːm leːkʰəh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सभायां", base: "सभा", reading: "sabhā" }
+          - { word: "लेखः", base: "लेख", reading: "lekha" }
+  - id: "sa-5710"
+    target: "आज्ञा"
+    reading: "ājñā"
+    ipa: "aːdʒɲaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "pair", ref: "sa-5711" }
+    bases:
+      - { word: "आज्ञा", base: "आज्ञा", reading: "ājñā" }
+    examples:
+      - target: "आज्ञा तत्र"
+        reading: "ājñā tatra"
+        ipa: "aːdʒɲaː t̪ət̪rə"
+        bases:
+          - { word: "आज्ञा", base: "आज्ञा", reading: "ājñā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "आज्ञा पुरे"
+        reading: "ājñā pure"
+        ipa: "aːdʒɲaː pureː"
+        bases:
+          - { word: "आज्ञा", base: "आज्ञा", reading: "ājñā" }
+          - { word: "पुरे", base: "पुर", reading: "pura" }
+  - id: "sa-5711"
+    target: "आदेशः"
+    reading: "ādeśaḥ"
+    ipa: "aːd̪eːʃəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5710" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "आदेशः", base: "आदेश", reading: "ādeśa" }
+    examples:
+      - target: "आदेशस् तत्र"
+        reading: "ādeśas tatra"
+        ipa: "aːd̪eːʃəs t̪ət̪rə"
+        bases:
+          - { word: "आदेशस्", base: "आदेश", reading: "ādeśa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "आदेशः पुरे"
+        reading: "ādeśaḥ pure"
+        ipa: "aːd̪eːʃəh pureː"
+        bases:
+          - { word: "आदेशः", base: "आदेश", reading: "ādeśa" }
+          - { word: "पुरे", base: "पुर", reading: "pura" }
+  - id: "sa-5712"
+    target: "कर्तव्यम्"
+    reading: "kartavyam"
+    ipa: "kərt̪əʋjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "कर्तव्यम्", base: "कर्तव्य", reading: "kartavya" }
+    examples:
+      - target: "अस्ति कर्तव्यं तत्र"
+        reading: "asti kartavyaṃ tatra"
+        ipa: "əst̪i kərt̪əʋjəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "कर्तव्यं", base: "कर्तव्य", reading: "kartavya" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति प्रजायाः कर्तव्यम्"
+        reading: "asti prajāyāḥ kartavyam"
+        ipa: "əst̪i prədʒaːjaːh kərt̪əʋjəm"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "प्रजायाः", base: "प्रजा", reading: "prajā" }
+          - { word: "कर्तव्यम्", base: "कर्तव्य", reading: "kartavya" }
+  - id: "sa-5713"
+    target: "अधिकारः"
+    reading: "adhikāraḥ"
+    ipa: "əd̪ʱikaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "अधिकारः", base: "अधिकार", reading: "adhikāra" }
+    examples:
+      - target: "अधिकारस् तत्र"
+        reading: "adhikāras tatra"
+        ipa: "əd̪ʱikaːrəs t̪ət̪rə"
+        bases:
+          - { word: "अधिकारस्", base: "अधिकार", reading: "adhikāra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अधिकारः सुगमः"
+        reading: "adhikāraḥ sugamaḥ"
+        ipa: "əd̪ʱikaːrəh suɡəməh"
+        bases:
+          - { word: "अधिकारः", base: "अधिकार", reading: "adhikāra" }
+          - { word: "सुगमः", base: "सुगम", reading: "sugama" }
+  - id: "sa-5714"
+    target: "जनपदः"
+    reading: "janapadaḥ"
+    ipa: "dʒənəpəd̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5700" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "जनपदः", base: "जनपद", reading: "janapada" }
+    examples:
+      - target: "अस्ति जनपदस् तत्र"
+        reading: "asti janapadas tatra"
+        ipa: "əst̪i dʒənəpəd̪əs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "जनपदस्", base: "जनपद", reading: "janapada" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "राज्ये जनपदः"
+        reading: "rājye janapadaḥ"
+        ipa: "raːdʒjeː dʒənəpəd̪əh"
+        bases:
+          - { word: "राज्ये", base: "राज्य", reading: "rājya" }
+          - { word: "जनपदः", base: "जनपद", reading: "janapada" }
+  - id: "sa-5715"
+    target: "प्राकारः"
+    reading: "prākāraḥ"
+    ipa: "praːkaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "प्राकारः", base: "प्राकार", reading: "prākāra" }
+    examples:
+      - target: "अस्ति प्राकारस् तत्र"
+        reading: "asti prākāras tatra"
+        ipa: "əst̪i praːkaːrəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "प्राकारस्", base: "प्राकार", reading: "prākāra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "नगरे प्राकारः"
+        reading: "nagare prākāraḥ"
+        ipa: "nəɡəreː praːkaːrəh"
+        bases:
+          - { word: "नगरे", base: "नगर", reading: "nagara" }
+          - { word: "प्राकारः", base: "प्राकार", reading: "prākāra" }
+  - id: "sa-5716"
+    target: "परिषत्"
+    reading: "pariṣat"
+    ipa: "pəriʂət̪"
+    pos: "noun"
+    gender: "f"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "pair", ref: "sa-5701" }
+    bases:
+      - { word: "परिषत्", base: "परिषद्", reading: "pariṣad" }
+    examples:
+      - target: "अस्ति तत्र परिषत्"
+        reading: "asti tatra pariṣat"
+        ipa: "əst̪i t̪ət̪rə pəriʂət̪"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "परिषत्", base: "परिषद्", reading: "pariṣad" }
+      - target: "सभायां परिषत्"
+        reading: "sabhāyāṃ pariṣat"
+        ipa: "səbʱaːjaːm pəriʂət̪"
+        bases:
+          - { word: "सभायां", base: "सभा", reading: "sabhā" }
+          - { word: "परिषत्", base: "परिषद्", reading: "pariṣad" }
+  - id: "sa-5717"
+    target: "मन्त्री"
+    reading: "mantrī"
+    ipa: "mənt̪riː"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "मन्त्री", base: "मन्त्रिन्", reading: "mantrin" }
+    examples:
+      - target: "अस्ति मन्त्री तत्र"
+        reading: "asti mantrī tatra"
+        ipa: "əst̪i mənt̪riː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मन्त्री", base: "मन्त्रिन्", reading: "mantrin" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "नृपस्य मन्त्री"
+        reading: "nṛpasya mantrī"
+        ipa: "nr̩pəsjə mənt̪riː"
+        bases:
+          - { word: "नृपस्य", base: "नृप", reading: "nṛpa" }
+          - { word: "मन्त्री", base: "मन्त्रिन्", reading: "mantrin" }
+  - id: "sa-5718"
+    target: "नृपः"
+    reading: "nṛpaḥ"
+    ipa: "nr̩pəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "नृपः", base: "नृप", reading: "nṛpa" }
+    examples:
+      - target: "अस्ति नृपस् तत्र"
+        reading: "asti nṛpas tatra"
+        ipa: "əst̪i nr̩pəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "नृपस्", base: "नृप", reading: "nṛpa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "राज्ये नृपः"
+        reading: "rājye nṛpaḥ"
+        ipa: "raːdʒjeː nr̩pəh"
+        bases:
+          - { word: "राज्ये", base: "राज्य", reading: "rājya" }
+          - { word: "नृपः", base: "नृप", reading: "nṛpa" }
+  - id: "sa-5719"
+    target: "वृत्तिः"
+    reading: "vṛttiḥ"
+    ipa: "ʋr̩t̪t̪ih"
+    pos: "noun"
+    gender: "f"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "वृत्तिः", base: "वृत्ति", reading: "vṛtti" }
+    examples:
+      - target: "अस्ति वृत्तिस् तत्र"
+        reading: "asti vṛttis tatra"
+        ipa: "əst̪i ʋr̩t̪t̪is t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "वृत्तिस्", base: "वृत्ति", reading: "vṛtti" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "वृत्तिः प्रजायाः"
+        reading: "vṛttiḥ prajāyāḥ"
+        ipa: "ʋr̩t̪t̪ih prədʒaːjaːh"
+        bases:
+          - { word: "वृत्तिः", base: "वृत्ति", reading: "vṛtti" }
+          - { word: "प्रजायाः", base: "प्रजा", reading: "prajā" }
+  - id: "sa-5720"
+    target: "शासनम्"
+    reading: "śāsanam"
+    ipa: "ʃaːsənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "शासनम्", base: "शासन", reading: "śāsana" }
+    examples:
+      - target: "अस्ति शासनं तत्र"
+        reading: "asti śāsanaṃ tatra"
+        ipa: "əst̪i ʃaːsənəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "शासनं", base: "शासन", reading: "śāsana" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "नृपस्य शासनम्"
+        reading: "nṛpasya śāsanam"
+        ipa: "nr̩pəsjə ʃaːsənəm"
+        bases:
+          - { word: "नृपस्य", base: "नृप", reading: "nṛpa" }
+          - { word: "शासनम्", base: "शासन", reading: "śāsana" }
+  - id: "sa-5721"
+    target: "विचारः"
+    reading: "vicāraḥ"
+    ipa: "ʋitʃaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "विचारः", base: "विचार", reading: "vicāra" }
+    examples:
+      - target: "अस्ति विचारस् तत्र"
+        reading: "asti vicāras tatra"
+        ipa: "əst̪i ʋitʃaːrəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "विचारस्", base: "विचार", reading: "vicāra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "सभायां विचारः"
+        reading: "sabhāyāṃ vicāraḥ"
+        ipa: "səbʱaːjaːm ʋitʃaːrəh"
+        bases:
+          - { word: "सभायां", base: "सभा", reading: "sabhā" }
+          - { word: "विचारः", base: "विचार", reading: "vicāra" }
+  - id: "sa-5722"
+    target: "साक्ष्यम्"
+    reading: "sākṣyam"
+    ipa: "saːkʂjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "साक्ष्यम्", base: "साक्ष्य", reading: "sākṣya" }
+    examples:
+      - target: "अस्ति साक्ष्यं तत्र"
+        reading: "asti sākṣyaṃ tatra"
+        ipa: "əst̪i saːkʂjəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "साक्ष्यं", base: "साक्ष्य", reading: "sākṣya" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "सभायां साक्ष्यम्"
+        reading: "sabhāyāṃ sākṣyam"
+        ipa: "səbʱaːjaːm saːkʂjəm"
+        bases:
+          - { word: "सभायां", base: "सभा", reading: "sabhā" }
+          - { word: "साक्ष्यम्", base: "साक्ष्य", reading: "sākṣya" }
+  - id: "sa-5723"
+    target: "दण्डनीतिः"
+    reading: "daṇḍanītiḥ"
+    ipa: "d̪əɳɖəniːt̪ih"
+    pos: "noun"
+    gender: "f"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "दण्डनीतिः", base: "दण्डनीति", reading: "daṇḍanīti" }
+    examples:
+      - target: "अस्ति दण्डनीतिस् तत्र"
+        reading: "asti daṇḍanītis tatra"
+        ipa: "əst̪i d̪əɳɖəniːt̪is t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "दण्डनीतिस्", base: "दण्डनीति", reading: "daṇḍanīti" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "नृपस्य दण्डनीतिः"
+        reading: "nṛpasya daṇḍanītiḥ"
+        ipa: "nr̩pəsjə d̪əɳɖəniːt̪ih"
+        bases:
+          - { word: "नृपस्य", base: "नृप", reading: "nṛpa" }
+          - { word: "दण्डनीतिः", base: "दण्डनीति", reading: "daṇḍanīti" }
+  - id: "sa-5724"
+    target: "स्वतन्त्रः"
+    reading: "svatantraḥ"
+    ipa: "sʋət̪ənt̪rəh"
+    pos: "adj"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "स्वतन्त्रः", base: "स्वतन्त्र", reading: "svatantra" }
+    examples:
+      - target: "स्वतन्त्रो जनः"
+        reading: "svatantro janaḥ"
+        ipa: "sʋət̪ənt̪roː dʒənəh"
+        bases:
+          - { word: "स्वतन्त्रो", base: "स्वतन्त्र", reading: "svatantra" }
+          - { word: "जनः", base: "जन", reading: "jana" }
+      - target: "राज्यं स्वतन्त्रम्"
+        reading: "rājyaṃ svatantram"
+        ipa: "raːdʒjəm sʋət̪ənt̪rəm"
+        bases:
+          - { word: "राज्यं", base: "राज्य", reading: "rājya" }
+          - { word: "स्वतन्त्रम्", base: "स्वतन्त्र", reading: "svatantra" }
+  - id: "sa-5725"
+    target: "सेना"
+    reading: "senā"
+    ipa: "seːnaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    bases:
+      - { word: "सेना", base: "सेना", reading: "senā" }
+    examples:
+      - target: "अस्ति सेना तत्र"
+        reading: "asti senā tatra"
+        ipa: "əst̪i seːnaː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सेना", base: "सेना", reading: "senā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "राज्ये सेना"
+        reading: "rājye senā"
+        ipa: "raːdʒjeː seːnaː"
+        bases:
+          - { word: "राज्ये", base: "राज्य", reading: "rājya" }
+          - { word: "सेना", base: "सेना", reading: "senā" }
+  - id: "sa-5726"
+    target: "नायकः"
+    reading: "nāyakaḥ"
+    ipa: "naːjəkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "pair", ref: "sa-5729" }
+      - { id: "n5", kind: "note" }
+    bases:
+      - { word: "नायकः", base: "नायक", reading: "nāyaka" }
+    examples:
+      - target: "अस्ति नायकस् तत्र"
+        reading: "asti nāyakas tatra"
+        ipa: "əst̪i naːjəkəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "नायकस्", base: "नायक", reading: "nāyaka" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "सेनायां नायकः"
+        reading: "senāyāṃ nāyakaḥ"
+        ipa: "seːnaːjaːm naːjəkəh"
+        bases:
+          - { word: "सेनायां", base: "सेना", reading: "senā" }
+          - { word: "नायकः", base: "नायक", reading: "nāyaka" }
+  - id: "sa-5727"
+    target: "अधिपतिः"
+    reading: "adhipatiḥ"
+    ipa: "əd̪ʱipət̪ih"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5728" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "अधिपतिः", base: "अधिपति", reading: "adhipati" }
+    examples:
+      - target: "अधिपतिस् तत्र"
+        reading: "adhipatis tatra"
+        ipa: "əd̪ʱipət̪is t̪ət̪rə"
+        bases:
+          - { word: "अधिपतिस्", base: "अधिपति", reading: "adhipati" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अधिपतिः पुरे"
+        reading: "adhipatiḥ pure"
+        ipa: "əd̪ʱipət̪ih pureː"
+        bases:
+          - { word: "अधिपतिः", base: "अधिपति", reading: "adhipati" }
+          - { word: "पुरे", base: "पुर", reading: "pura" }
+  - id: "sa-5728"
+    target: "स्वामी"
+    reading: "svāmī"
+    ipa: "sʋaːmiː"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "pair", ref: "sa-5727" }
+    bases:
+      - { word: "स्वामी", base: "स्वामिन्", reading: "svāmin" }
+    examples:
+      - target: "अस्ति स्वामी तत्र"
+        reading: "asti svāmī tatra"
+        ipa: "əst̪i sʋaːmiː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "स्वामी", base: "स्वामिन्", reading: "svāmin" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "गृहे स्वामी"
+        reading: "gṛhe svāmī"
+        ipa: "ɡr̩ɦeː sʋaːmiː"
+        bases:
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "स्वामी", base: "स्वामिन्", reading: "svāmin" }
+  - id: "sa-5729"
+    target: "मुख्यः"
+    reading: "mukhyaḥ"
+    ipa: "mukʰjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "pair", ref: "sa-5726" }
+      - { id: "n5", kind: "note" }
+    bases:
+      - { word: "मुख्यः", base: "मुख्य", reading: "mukhya" }
+    examples:
+      - target: "अस्ति मुख्यस् तत्र"
+        reading: "asti mukhyas tatra"
+        ipa: "əst̪i mukʰjəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मुख्यस्", base: "मुख्य", reading: "mukhya" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "सभायां मुख्यः"
+        reading: "sabhāyāṃ mukhyaḥ"
+        ipa: "səbʱaːjaːm mukʰjəh"
+        bases:
+          - { word: "सभायां", base: "सभा", reading: "sabhā" }
+          - { word: "मुख्यः", base: "मुख्य", reading: "mukhya" }
+  - id: "sa-5730"
+    target: "अध्यक्षः"
+    reading: "adhyakṣaḥ"
+    ipa: "əd̪ʱjəkʂəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "अध्यक्षः", base: "अध्यक्ष", reading: "adhyakṣa" }
+    examples:
+      - target: "अध्यक्षस् तत्र"
+        reading: "adhyakṣas tatra"
+        ipa: "əd̪ʱjəkʂəs t̪ət̪rə"
+        bases:
+          - { word: "अध्यक्षस्", base: "अध्यक्ष", reading: "adhyakṣa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अध्यक्षः पुरे"
+        reading: "adhyakṣaḥ pure"
+        ipa: "əd̪ʱjəkʂəh pureː"
+        bases:
+          - { word: "अध्यक्षः", base: "अध्यक्ष", reading: "adhyakṣa" }
+          - { word: "पुरे", base: "पुर", reading: "pura" }
+  - id: "sa-5731"
+    target: "राजवंशः"
+    reading: "rājavaṃśaḥ"
+    ipa: "raːdʒəʋə̃ʃəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "राजवंशः", base: "राजवंश", reading: "rājavaṃśa" }
+    examples:
+      - target: "अस्ति राजवंशस् तत्र"
+        reading: "asti rājavaṃśas tatra"
+        ipa: "əst̪i raːdʒəʋə̃ʃəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "राजवंशस्", base: "राजवंश", reading: "rājavaṃśa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "राजवंशस्य राज्यम्"
+        reading: "rājavaṃśasya rājyam"
+        ipa: "raːdʒəʋə̃ʃəsjə raːdʒjəm"
+        bases:
+          - { word: "राजवंशस्य", base: "राजवंश", reading: "rājavaṃśa" }
+          - { word: "राज्यम्", base: "राज्य", reading: "rājya" }
+  - id: "sa-5732"
+    target: "सिंहासनम्"
+    reading: "siṃhāsanam"
+    ipa: "sĩɦaːsənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "सिंहासनम्", base: "सिंहासन", reading: "siṃhāsana" }
+    examples:
+      - target: "अस्ति सिंहासनं तत्र"
+        reading: "asti siṃhāsanaṃ tatra"
+        ipa: "əst̪i sĩɦaːsənəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "सिंहासनं", base: "सिंहासन", reading: "siṃhāsana" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "नृपस्य सिंहासनम्"
+        reading: "nṛpasya siṃhāsanam"
+        ipa: "nr̩pəsjə sĩɦaːsənəm"
+        bases:
+          - { word: "नृपस्य", base: "नृप", reading: "nṛpa" }
+          - { word: "सिंहासनम्", base: "सिंहासन", reading: "siṃhāsana" }
+  - id: "sa-5733"
+    target: "कारागारम्"
+    reading: "kārāgāram"
+    ipa: "kaːraːɡaːrəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "कारागारम्", base: "कारागार", reading: "kārāgāra" }
+    examples:
+      - target: "अस्ति कारागारं तत्र"
+        reading: "asti kārāgāraṃ tatra"
+        ipa: "əst̪i kaːraːɡaːrəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "कारागारं", base: "कारागार", reading: "kārāgāra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "नगरे कारागारम्"
+        reading: "nagare kārāgāram"
+        ipa: "nəɡəreː kaːraːɡaːrəm"
+        bases:
+          - { word: "नगरे", base: "नगर", reading: "nagara" }
+          - { word: "कारागारम्", base: "कारागार", reading: "kārāgāra" }
+  - id: "sa-5734"
+    target: "बन्धनम्"
+    reading: "bandhanam"
+    ipa: "bənd̪ʱənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "बन्धनम्", base: "बन्धन", reading: "bandhana" }
+    examples:
+      - target: "अस्ति बन्धनं तत्र"
+        reading: "asti bandhanaṃ tatra"
+        ipa: "əst̪i bənd̪ʱənəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "बन्धनं", base: "बन्धन", reading: "bandhana" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "कारागारे बन्धनम्"
+        reading: "kārāgāre bandhanam"
+        ipa: "kaːraːɡaːreː bənd̪ʱənəm"
+        bases:
+          - { word: "कारागारे", base: "कारागार", reading: "kārāgāra" }
+          - { word: "बन्धनम्", base: "बन्धन", reading: "bandhana" }
+  - id: "sa-5735"
+    target: "साक्षी"
+    reading: "sākṣī"
+    ipa: "saːkʂiː"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "साक्षी", base: "साक्षिन्", reading: "sākṣin" }
+    examples:
+      - target: "अस्ति साक्षी तत्र"
+        reading: "asti sākṣī tatra"
+        ipa: "əst̪i saːkʂiː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "साक्षी", base: "साक्षिन्", reading: "sākṣin" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "सभायां साक्षी"
+        reading: "sabhāyāṃ sākṣī"
+        ipa: "səbʱaːjaːm saːkʂiː"
+        bases:
+          - { word: "सभायां", base: "सभा", reading: "sabhā" }
+          - { word: "साक्षी", base: "साक्षिन्", reading: "sākṣin" }
+  - id: "sa-5736"
+    target: "क्षत्रियः"
+    reading: "kṣatriyaḥ"
+    ipa: "kʂət̪rijəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Varna_(Hinduism) (Varna (Hinduism), Wikipedia: the four classes and the Purusha hymn)" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "क्षत्रियः", base: "क्षत्रिय", reading: "kṣatriya" }
+    examples:
+      - target: "क्षत्रियस् तत्र"
+        reading: "kṣatriyas tatra"
+        ipa: "kʂət̪rijəs t̪ət̪rə"
+        bases:
+          - { word: "क्षत्रियस्", base: "क्षत्रिय", reading: "kṣatriya" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "राज्ये क्षत्रियः"
+        reading: "rājye kṣatriyaḥ"
+        ipa: "raːdʒjeː kʂət̪rijəh"
+        bases:
+          - { word: "राज्ये", base: "राज्य", reading: "rājya" }
+          - { word: "क्षत्रियः", base: "क्षत्रिय", reading: "kṣatriya" }
+  - id: "sa-5737"
+    target: "वैश्यः"
+    reading: "vaiśyaḥ"
+    ipa: "ʋəiʃjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Varna_(Hinduism) (Varna (Hinduism), Wikipedia: the four classes and the Purusha hymn)" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "वैश्यः", base: "वैश्य", reading: "vaiśya" }
+    examples:
+      - target: "वैश्यस् तत्र"
+        reading: "vaiśyas tatra"
+        ipa: "ʋəiʃjəs t̪ət̪rə"
+        bases:
+          - { word: "वैश्यस्", base: "वैश्य", reading: "vaiśya" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "नगरे वैश्यः"
+        reading: "nagare vaiśyaḥ"
+        ipa: "nəɡəreː ʋəiʃjəh"
+        bases:
+          - { word: "नगरे", base: "नगर", reading: "nagara" }
+          - { word: "वैश्यः", base: "वैश्य", reading: "vaiśya" }
+  - id: "sa-5738"
+    target: "शूद्रः"
+    reading: "śūdraḥ"
+    ipa: "ʃuːd̪rəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "culture", source: "https://en.wikipedia.org/wiki/Varna_(Hinduism) (Varna (Hinduism), Wikipedia: the four classes and the Purusha hymn)" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "शूद्रः", base: "शूद्र", reading: "śūdra" }
+    examples:
+      - target: "शूद्रस् तत्र"
+        reading: "śūdras tatra"
+        ipa: "ʃuːd̪rəs t̪ət̪rə"
+        bases:
+          - { word: "शूद्रस्", base: "शूद्र", reading: "śūdra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "ग्रामे शूद्रः"
+        reading: "grāme śūdraḥ"
+        ipa: "ɡraːmeː ʃuːd̪rəh"
+        bases:
+          - { word: "ग्रामे", base: "ग्राम", reading: "grāma" }
+          - { word: "शूद्रः", base: "शूद्र", reading: "śūdra" }
+  - id: "sa-5739"
+    target: "गणः"
+    reading: "gaṇaḥ"
+    ipa: "ɡəɳəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+      - { id: "n5", kind: "note" }
+    bases:
+      - { word: "गणः", base: "गण", reading: "gaṇa" }
+    examples:
+      - target: "अस्ति गणस् तत्र"
+        reading: "asti gaṇas tatra"
+        ipa: "əst̪i ɡəɳəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "गणस्", base: "गण", reading: "gaṇa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "सभायां गणः"
+        reading: "sabhāyāṃ gaṇaḥ"
+        ipa: "səbʱaːjaːm ɡəɳəh"
+        bases:
+          - { word: "सभायां", base: "सभा", reading: "sabhā" }
+          - { word: "गणः", base: "गण", reading: "gaṇa" }
+  - id: "sa-5740"
+    target: "आचारः"
+    reading: "ācāraḥ"
+    ipa: "aːtʃaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "आचारः", base: "आचार", reading: "ācāra" }
+    examples:
+      - target: "आचारस् तत्र"
+        reading: "ācāras tatra"
+        ipa: "aːtʃaːrəs t̪ət̪rə"
+        bases:
+          - { word: "आचारस्", base: "आचार", reading: "ācāra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "आचारः पुरे"
+        reading: "ācāraḥ pure"
+        ipa: "aːtʃaːrəh pureː"
+        bases:
+          - { word: "आचारः", base: "आचार", reading: "ācāra" }
+          - { word: "पुरे", base: "पुर", reading: "pura" }
+  - id: "sa-5741"
+    target: "प्रमाणम्"
+    reading: "pramāṇam"
+    ipa: "prəmaːɳəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "प्रमाणम्", base: "प्रमाण", reading: "pramāṇa" }
+    examples:
+      - target: "अस्ति प्रमाणं तत्र"
+        reading: "asti pramāṇaṃ tatra"
+        ipa: "əst̪i prəmaːɳəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "प्रमाणं", base: "प्रमाण", reading: "pramāṇa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "सभायां प्रमाणम्"
+        reading: "sabhāyāṃ pramāṇam"
+        ipa: "səbʱaːjaːm prəmaːɳəm"
+        bases:
+          - { word: "सभायां", base: "सभा", reading: "sabhā" }
+          - { word: "प्रमाणम्", base: "प्रमाण", reading: "pramāṇa" }
+  - id: "sa-5742"
+    target: "निर्णयः"
+    reading: "nirṇayaḥ"
+    ipa: "nirɳəjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "निर्णयः", base: "निर्णय", reading: "nirṇaya" }
+    examples:
+      - target: "अस्ति निर्णयस् तत्र"
+        reading: "asti nirṇayas tatra"
+        ipa: "əst̪i nirɳəjəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "निर्णयस्", base: "निर्णय", reading: "nirṇaya" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "सभायां निर्णयः"
+        reading: "sabhāyāṃ nirṇayaḥ"
+        ipa: "səbʱaːjaːm nirɳəjəh"
+        bases:
+          - { word: "सभायां", base: "सभा", reading: "sabhā" }
+          - { word: "निर्णयः", base: "निर्णय", reading: "nirṇaya" }
+  - id: "sa-5743"
+    target: "गुप्तः"
+    reading: "guptaḥ"
+    ipa: "ɡupt̪əh"
+    pos: "adj"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "गुप्तः", base: "गुप्त", reading: "gupta" }
+    examples:
+      - target: "गुप्तश् चोरः"
+        reading: "guptaś coraḥ"
+        ipa: "ɡupt̪əʃ tʃoːrəh"
+        bases:
+          - { word: "गुप्तश्", base: "गुप्त", reading: "gupta" }
+          - { word: "चोरः", base: "चोर", reading: "cora" }
+      - target: "गुप्तं स्थानम्"
+        reading: "guptaṃ sthānam"
+        ipa: "ɡupt̪əm st̪ʰaːnəm"
+        bases:
+          - { word: "गुप्तं", base: "गुप्त", reading: "gupta" }
+          - { word: "स्थानम्", base: "स्थान", reading: "sthāna" }
+  - id: "sa-5744"
+    target: "मित्रम्"
+    reading: "mitram"
+    ipa: "mit̪rəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "मित्रम्", base: "मित्र", reading: "mitra" }
+    examples:
+      - target: "अस्ति मित्रं तत्र"
+        reading: "asti mitraṃ tatra"
+        ipa: "əst̪i mit̪rəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "मित्रं", base: "मित्र", reading: "mitra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "नृपस्य मित्रम्"
+        reading: "nṛpasya mitram"
+        ipa: "nr̩pəsjə mit̪rəm"
+        bases:
+          - { word: "नृपस्य", base: "नृप", reading: "nṛpa" }
+          - { word: "मित्रम्", base: "मित्र", reading: "mitra" }
+  - id: "sa-5745"
+    target: "शत्रुः"
+    reading: "śatruḥ"
+    ipa: "ʃət̪ruh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "शत्रुः", base: "शत्रु", reading: "śatru" }
+    examples:
+      - target: "अस्ति शत्रुस् तत्र"
+        reading: "asti śatrus tatra"
+        ipa: "əst̪i ʃət̪rus t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "शत्रुस्", base: "शत्रु", reading: "śatru" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "राज्ये शत्रुः"
+        reading: "rājye śatruḥ"
+        ipa: "raːdʒjeː ʃət̪ruh"
+        bases:
+          - { word: "राज्ये", base: "राज्य", reading: "rājya" }
+          - { word: "शत्रुः", base: "शत्रु", reading: "śatru" }
+  - id: "sa-5746"
+    target: "चोरः"
+    reading: "coraḥ"
+    ipa: "tʃoːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "चोरः", base: "चोर", reading: "cora" }
+    examples:
+      - target: "अस्ति चोरस् तत्र"
+        reading: "asti coras tatra"
+        ipa: "əst̪i tʃoːrəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "चोरस्", base: "चोर", reading: "cora" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "नगरे चोरः"
+        reading: "nagare coraḥ"
+        ipa: "nəɡəreː tʃoːrəh"
+        bases:
+          - { word: "नगरे", base: "नगर", reading: "nagara" }
+          - { word: "चोरः", base: "चोर", reading: "cora" }
+  - id: "sa-5748"
+    target: "बलवान्"
+    reading: "balavān"
+    ipa: "bələʋaːn"
+    pos: "adj"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "बलवान्", base: "बलवत्", reading: "balavat" }
+    examples:
+      - target: "नृपस् तत्र बलवान्"
+        reading: "nṛpas tatra balavān"
+        ipa: "nr̩pəs t̪ət̪rə bələʋaːn"
+        bases:
+          - { word: "नृपस्", base: "नृप", reading: "nṛpa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "बलवान्", base: "बलवत्", reading: "balavat" }
+      - target: "पुरे बलवान्"
+        reading: "pure balavān"
+        ipa: "pureː bələʋaːn"
+        bases:
+          - { word: "पुरे", base: "पुर", reading: "pura" }
+          - { word: "बलवान्", base: "बलवत्", reading: "balavat" }
+  - id: "sa-5749"
+    target: "दुर्बलः"
+    reading: "durbalaḥ"
+    ipa: "d̪urbələh"
+    pos: "adj"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "दुर्बलः", base: "दुर्बल", reading: "durbala" }
+    examples:
+      - target: "अस्ति दुर्बलस् तत्र"
+        reading: "asti durbalas tatra"
+        ipa: "əst̪i d̪urbələs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "दुर्बलस्", base: "दुर्बल", reading: "durbala" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "दुर्बलः पशुः"
+        reading: "durbalaḥ paśuḥ"
+        ipa: "d̪urbələh pəʃuh"
+        bases:
+          - { word: "दुर्बलः", base: "दुर्बल", reading: "durbala" }
+          - { word: "पशुः", base: "पशु", reading: "paśu" }
+  - id: "sa-5750"
+    target: "सामान्यः"
+    reading: "sāmānyaḥ"
+    ipa: "saːmaːnjəh"
+    pos: "adj"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "सामान्यः", base: "सामान्य", reading: "sāmānya" }
+    examples:
+      - target: "सामान्यस् तत्र नियमः"
+        reading: "sāmānyas tatra niyamaḥ"
+        ipa: "saːmaːnjəs t̪ət̪rə nijəməh"
+        bases:
+          - { word: "सामान्यस्", base: "सामान्य", reading: "sāmānya" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "नियमः", base: "नियम", reading: "niyama" }
+      - target: "नियमः सामान्यः"
+        reading: "niyamaḥ sāmānyaḥ"
+        ipa: "nijəməh saːmaːnjəh"
+        bases:
+          - { word: "नियमः", base: "नियम", reading: "niyama" }
+          - { word: "सामान्यः", base: "सामान्य", reading: "sāmānya" }
+  - id: "sa-5751"
+    target: "नूतनः"
+    reading: "nūtanaḥ"
+    ipa: "nuːt̪ənəh"
+    pos: "adj"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "नूतनः", base: "नूतन", reading: "nūtana" }
+    examples:
+      - target: "नूतनं शासनम्"
+        reading: "nūtanaṃ śāsanam"
+        ipa: "nuːt̪ənəm ʃaːsənəm"
+        bases:
+          - { word: "नूतनं", base: "नूतन", reading: "nūtana" }
+          - { word: "शासनम्", base: "शासन", reading: "śāsana" }
+      - target: "शासनं नूतनम्"
+        reading: "śāsanaṃ nūtanam"
+        ipa: "ʃaːsənəm nuːt̪ənəm"
+        bases:
+          - { word: "शासनं", base: "शासन", reading: "śāsana" }
+          - { word: "नूतनम्", base: "नूतन", reading: "nūtana" }
+  - id: "sa-5752"
+    target: "जीर्णः"
+    reading: "jīrṇaḥ"
+    ipa: "dʒiːrɳəh"
+    pos: "adj"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "जीर्णः", base: "जीर्ण", reading: "jīrṇa" }
+    examples:
+      - target: "जीर्णं शासनम्"
+        reading: "jīrṇaṃ śāsanam"
+        ipa: "dʒiːrɳəm ʃaːsənəm"
+        bases:
+          - { word: "जीर्णं", base: "जीर्ण", reading: "jīrṇa" }
+          - { word: "शासनम्", base: "शासन", reading: "śāsana" }
+      - target: "सिंहासनं जीर्णम्"
+        reading: "siṃhāsanaṃ jīrṇam"
+        ipa: "sĩɦaːsənəm dʒiːrɳəm"
+        bases:
+          - { word: "सिंहासनं", base: "सिंहासन", reading: "siṃhāsana" }
+          - { word: "जीर्णम्", base: "जीर्ण", reading: "jīrṇa" }
+  - id: "sa-5753"
+    target: "विवादः"
+    reading: "vivādaḥ"
+    ipa: "ʋiʋaːd̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "विवादः", base: "विवाद", reading: "vivāda" }
+    examples:
+      - target: "अस्ति विवादस् तत्र"
+        reading: "asti vivādas tatra"
+        ipa: "əst̪i ʋiʋaːd̪əs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "विवादस्", base: "विवाद", reading: "vivāda" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "सभायां विवादः"
+        reading: "sabhāyāṃ vivādaḥ"
+        ipa: "səbʱaːjaːm ʋiʋaːd̪əh"
+        bases:
+          - { word: "सभायां", base: "सभा", reading: "sabhā" }
+          - { word: "विवादः", base: "विवाद", reading: "vivāda" }
+  - id: "sa-5754"
+    target: "उपायः"
+    reading: "upāyaḥ"
+    ipa: "upaːjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "उपायः", base: "उपाय", reading: "upāya" }
+    examples:
+      - target: "उपायस् तत्र"
+        reading: "upāyas tatra"
+        ipa: "upaːjəs t̪ət̪rə"
+        bases:
+          - { word: "उपायस्", base: "उपाय", reading: "upāya" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "उपायः सुगमः"
+        reading: "upāyaḥ sugamaḥ"
+        ipa: "upaːjəh suɡəməh"
+        bases:
+          - { word: "उपायः", base: "उपाय", reading: "upāya" }
+          - { word: "सुगमः", base: "सुगम", reading: "sugama" }
+  - id: "sa-5755"
+    target: "भूपतिः"
+    reading: "bhūpatiḥ"
+    ipa: "bʱuːpət̪ih"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "भूपतिः", base: "भूपति", reading: "bhūpati" }
+    examples:
+      - target: "अस्ति भूपतिस् तत्र"
+        reading: "asti bhūpatis tatra"
+        ipa: "əst̪i bʱuːpət̪is t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "भूपतिस्", base: "भूपति", reading: "bhūpati" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "भूपतिः पुरे"
+        reading: "bhūpatiḥ pure"
+        ipa: "bʱuːpət̪ih pureː"
+        bases:
+          - { word: "भूपतिः", base: "भूपति", reading: "bhūpati" }
+          - { word: "पुरे", base: "पुर", reading: "pura" }
+  - id: "sa-5756"
+    target: "भूपालः"
+    reading: "bhūpālaḥ"
+    ipa: "bʱuːpaːləh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "भूपालः", base: "भूपाल", reading: "bhūpāla" }
+    examples:
+      - target: "भूपालस् तत्र"
+        reading: "bhūpālas tatra"
+        ipa: "bʱuːpaːləs t̪ət̪rə"
+        bases:
+          - { word: "भूपालस्", base: "भूपाल", reading: "bhūpāla" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "अस्ति पुरे भूपालः"
+        reading: "asti pure bhūpālaḥ"
+        ipa: "əst̪i pureː bʱuːpaːləh"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "पुरे", base: "पुर", reading: "pura" }
+          - { word: "भूपालः", base: "भूपाल", reading: "bhūpāla" }
+  - id: "sa-5757"
+    target: "जनता"
+    reading: "janatā"
+    ipa: "dʒənət̪aː"
+    pos: "noun"
+    gender: "f"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    bases:
+      - { word: "जनता", base: "जनता", reading: "janatā" }
+    examples:
+      - target: "अस्ति जनता तत्र"
+        reading: "asti janatā tatra"
+        ipa: "əst̪i dʒənət̪aː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "जनता", base: "जनता", reading: "janatā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "जनता राज्ये"
+        reading: "janatā rājye"
+        ipa: "dʒənət̪aː raːdʒjeː"
+        bases:
+          - { word: "जनता", base: "जनता", reading: "janatā" }
+          - { word: "राज्ये", base: "राज्य", reading: "rājya" }
+  - id: "sa-5758"
+    target: "भाण्डागारम्"
+    reading: "bhāṇḍāgāram"
+    ipa: "bʱaːɳɖaːɡaːrəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "भाण्डागारम्", base: "भाण्डागार", reading: "bhāṇḍāgāra" }
+    examples:
+      - target: "अस्ति भाण्डागारं तत्र"
+        reading: "asti bhāṇḍāgāraṃ tatra"
+        ipa: "əst̪i bʱaːɳɖaːɡaːrəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "भाण्डागारं", base: "भाण्डागार", reading: "bhāṇḍāgāra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "पुरे भाण्डागारम्"
+        reading: "pure bhāṇḍāgāram"
+        ipa: "pureː bʱaːɳɖaːɡaːrəm"
+        bases:
+          - { word: "पुरे", base: "पुर", reading: "pura" }
+          - { word: "भाण्डागारम्", base: "भाण्डागार", reading: "bhāṇḍāgāra" }
+  - id: "sa-5759"
+    target: "बलम्"
+    reading: "balam"
+    ipa: "bələm"
+    pos: "noun"
+    gender: "n"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "बलम्", base: "बल", reading: "bala" }
+    examples:
+      - target: "अस्ति बलं तत्र"
+        reading: "asti balaṃ tatra"
+        ipa: "əst̪i bələm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "बलं", base: "बल", reading: "bala" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "नृपस्य बलम्"
+        reading: "nṛpasya balam"
+        ipa: "nr̩pəsjə bələm"
+        bases:
+          - { word: "नृपस्य", base: "नृप", reading: "nṛpa" }
+          - { word: "बलम्", base: "बल", reading: "bala" }
+  - id: "sa-5760"
+    target: "राष्ट्रम्"
+    reading: "rāṣṭram"
+    ipa: "raːʂʈrəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "usage" }
+    bases:
+      - { word: "राष्ट्रम्", base: "राष्ट्र", reading: "rāṣṭra" }
+    examples:
+      - target: "अस्ति राष्ट्रं तत्र"
+        reading: "asti rāṣṭraṃ tatra"
+        ipa: "əst̪i raːʂʈrəm t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "राष्ट्रं", base: "राष्ट्र", reading: "rāṣṭra" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "राष्ट्रं नृपस्य"
+        reading: "rāṣṭraṃ nṛpasya"
+        ipa: "raːʂʈrəm nr̩pəsjə"
+        bases:
+          - { word: "राष्ट्रं", base: "राष्ट्र", reading: "rāṣṭra" }
+          - { word: "नृपस्य", base: "नृप", reading: "nṛpa" }
+  - id: "sa-5761"
+    target: "रक्षा"
+    reading: "rakṣā"
+    ipa: "rəkʂaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    bases:
+      - { word: "रक्षा", base: "रक्षा", reading: "rakṣā" }
+    examples:
+      - target: "अस्ति रक्षा तत्र"
+        reading: "asti rakṣā tatra"
+        ipa: "əst̪i rəkʂaː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "रक्षा", base: "रक्षा", reading: "rakṣā" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "नृपस्य रक्षा"
+        reading: "nṛpasya rakṣā"
+        ipa: "nr̩pəsjə rəkʂaː"
+        bases:
+          - { word: "नृपस्य", base: "नृप", reading: "nṛpa" }
+          - { word: "रक्षा", base: "रक्षा", reading: "rakṣā" }
+  - id: "sa-5762"
+    target: "पराजयः"
+    reading: "parājayaḥ"
+    ipa: "pəraːdʒəjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "usage" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "पराजयः", base: "पराजय", reading: "parājaya" }
+    examples:
+      - target: "पराजयस् तत्र"
+        reading: "parājayas tatra"
+        ipa: "pəraːdʒəjəs t̪ət̪rə"
+        bases:
+          - { word: "पराजयस्", base: "पराजय", reading: "parājaya" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+      - target: "युद्धे पराजयः"
+        reading: "yuddhe parājayaḥ"
+        ipa: "jud̪d̪ʱeː pəraːdʒəjəh"
+        bases:
+          - { word: "युद्धे", base: "युद्ध", reading: "yuddha" }
+          - { word: "पराजयः", base: "पराजय", reading: "parājaya" }
+  - id: "sa-5763"
+    target: "कोशः"
+    reading: "kośaḥ"
+    ipa: "koːʃəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["government"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
+    bases:
+      - { word: "कोशः", base: "कोश", reading: "kośa" }
+    examples:
+      - target: "नृपस्य कोशः"
+        reading: "nṛpasya kośaḥ"
+        ipa: "nr̩pəsjə koːʃəh"
+        bases:
+          - { word: "नृपस्य", base: "नृप", reading: "nṛpa" }
+          - { word: "कोशः", base: "कोश", reading: "kośa" }
+      - target: "अस्ति कोशस् तत्र"
+        reading: "asti kośas tatra"
+        ipa: "əst̪i koːʃəs t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "कोशस्", base: "कोश", reading: "kośa" }
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }

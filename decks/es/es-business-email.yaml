@@ -1,0 +1,132 @@
+schema: 1
+id: "es-business-email"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+genre: "professional"
+professional: "business"
+hidden: true
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "es-4710"
+    target: "Le escribo para confirmar la reunión."
+    ipa: "le esˈkɾibo ˈpaɾa konfiɾˈmaɾ la rewˈnjon"
+    phonetic: "[le esˈkɾiβo ˈpaɾa koɱfiɾˈmaɾ la rewˈnjon]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4711"
+    target: "Adjunto el documento."
+    ipa: "adˈxunto el dokuˈmento"
+    phonetic: "[aðˈxun̪t̪o el d̪okuˈmen̪t̪o]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "es-4712"
+    target: "Quedo a la espera de su respuesta."
+    ipa: "ˈkedo a la esˈpeɾa de su resˈpwesta"
+    phonetic: "[ˈkeðo a la esˈpeɾa ðe su resˈpwest̪a]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4713"
+    target: "Gracias por su pronta respuesta."
+    ipa: "ˈɡɾaθjas poɾ su ˈpɾonta resˈpwesta"
+    phonetic: "[ˈɡɾaθjas poɾ su ˈpɾon̪t̪a resˈpwest̪a]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4714"
+    target: "Disculpe la demora en responder."
+    ipa: "disˈkulpe la deˈmoɾa en responˈdeɾ"
+    phonetic: "[d̪isˈkulpe la ðeˈmoɾa en respon̪ˈd̪eɾ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4715"
+    target: "¿Podría enviarme la factura?"
+    ipa: "poˈdɾia enˈbjaɾme la fakˈtuɾa"
+    phonetic: "[poˈðɾia emˈbjaɾme la fakˈt̪uɾa]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4716"
+    target: "Perdone, me equivoqué de destinatario."
+    ipa: "peɾˈdone me ekiboˈke de destinaˈtaɾjo"
+    phonetic: "[peɾˈðone me ekiβoˈke ðe ðest̪inaˈt̪aɾjo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4717"
+    target: "Un saludo cordial."
+    ipa: "un saˈludo koɾˈdjal"
+    phonetic: "[un saˈluðo koɾˈðjal]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4718"
+    target: "el asunto"
+    ipa: "el aˈsunto"
+    phonetic: "[el aˈsun̪t̪o]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    modes: ["recognition", "production"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "el", base: "el" }, { word: "asunto", base: "asunto" }]
+    examples:
+      - target: "Escriba un asunto claro."
+        ipa: "esˈkɾiba un aˈsunto ˈklaɾo"
+        bases: [{ word: "Escriba", base: "escribir" }, { word: "un", base: "un" }, { word: "asunto", base: "asunto" }, { word: "claro", base: "claro" }]
+      - target: "El asunto es urgente."
+        ipa: "el aˈsunto es uɾˈxente"
+        bases: [{ word: "El", base: "el" }, { word: "asunto", base: "asunto" }, { word: "es", base: "ser" }, { word: "urgente", base: "urgente" }]
+  - id: "es-4719"
+    target: "el adjunto"
+    ipa: "el adˈxunto"
+    phonetic: "[el aðˈxun̪t̪o]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    modes: ["recognition", "production"]
+    notes: [{ id: "n1", kind: "usage" }]
+    bases: [{ word: "el", base: "el" }, { word: "adjunto", base: "adjunto" }]
+    examples:
+      - target: "Le envío el adjunto con este correo."
+        ipa: "le enˈbio el adˈxunto kon ˈeste koˈreo"
+        bases: [{ word: "Le", base: "le" }, { word: "envío", base: "enviar" }, { word: "el", base: "el" }, { word: "adjunto", base: "adjunto" }, { word: "con", base: "con" }, { word: "este", base: "este" }, { word: "correo", base: "correo" }]
+      - target: "Revise el adjunto antes de responder."
+        ipa: "reˈbise el adˈxunto ˈantes de responˈdeɾ"
+        bases: [{ word: "Revise", base: "revisar" }, { word: "el", base: "el" }, { word: "adjunto", base: "adjunto" }, { word: "antes", base: "antes" }, { word: "de", base: "de" }, { word: "responder", base: "responder" }]
+  - id: "es-4720"
+    target: "la respuesta"
+    ipa: "la resˈpwesta"
+    phonetic: "[la resˈpwest̪a]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    modes: ["recognition", "production"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "la", base: "la" }, { word: "respuesta", base: "respuesta" }]
+    examples:
+      - target: "Espero su respuesta pronto."
+        ipa: "esˈpeɾo su resˈpwesta ˈpɾonto"
+        bases: [{ word: "Espero", base: "esperar" }, { word: "su", base: "su" }, { word: "respuesta", base: "respuesta" }, { word: "pronto", base: "pronto" }]
+      - target: "La respuesta llegó ayer."
+        ipa: "la resˈpwesta ʝeˈɡo aˈʝeɾ"
+        bases: [{ word: "La", base: "la" }, { word: "respuesta", base: "respuesta" }, { word: "llegó", base: "llegar" }, { word: "ayer", base: "ayer" }]
+  - ref: "es-0248"
+  - ref: "es-2246"
+  - ref: "es-1652"
+  - ref: "es-1377"
+  - ref: "es-2226"

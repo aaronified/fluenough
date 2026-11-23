@@ -1,0 +1,687 @@
+schema: 1
+id: "kfy-en-first-words"
+kind: "layer"
+core: "kfy-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "The first words of Kumaoni: the pronouns, yes and no, the numbers 1 to 10, the family, and the everyday words for food, house, name and time. Not yet checked by a Kumaoni speaker: please report any mistake."
+cards:
+  "kfy-0101":
+    native: "yes"
+    notes:
+      "n1": "The usual 'yes'."
+    examples:
+      "हाँ, यो पाणी छ।":
+        native: "Yes, this is water."
+        bases:
+          "हाँ": "yes"
+          "यो": "this"
+          "पाणी": "water"
+          "छ": "is"
+  "kfy-0102":
+    native: "no; not"
+    notes:
+      "n1": "The negative. Before a verb it means 'not'. The Survey's text has 'ni' before verbs (as in 'ni mila', did not find); the verb 'to be' has its own negative, nhātu. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "नि, मैं नि औंल।":
+        native: "No, I am not coming."
+        bases:
+          "नि": "not"
+          "मैं": "I"
+          "औंल": "come"
+  "kfy-0103":
+    native: "I"
+    notes:
+      "n1": "The first person. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "मैं घर में छूं।":
+        native: "I am at home."
+        bases:
+          "मैं": "I"
+          "घर": "house"
+          "में": "in"
+          "छूं": "am"
+      "यो मेरो घर छ।":
+        native: "This is my house."
+        bases:
+          "यो": "this"
+          "मेरो": "my"
+          "घर": "house"
+          "छ": "is"
+  "kfy-0104":
+    native: "you"
+    notes:
+      "n1": "The plural 'you', used as the polite 'you' too. For one person the Survey gives तू (tū). Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "तुम को छा?":
+        native: "Who are you?"
+        bases:
+          "तुम": "you"
+          "को": "who"
+          "छा": "are"
+      "तुम घर में छा।":
+        native: "You are at home."
+        bases:
+          "तुम": "you"
+          "घर": "house"
+          "में": "in"
+          "छा": "are"
+  "kfy-0105":
+    native: "he; she"
+    notes:
+      "n1": "One word for he, she and that; the Survey's demonstratives have no gender. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "उ घर में छ।":
+        native: "He is at home."
+        bases:
+          "उ": "he"
+          "घर": "house"
+          "में": "in"
+          "छ": "is"
+      "उ को छ?":
+        native: "Who is he?"
+        bases:
+          "उ": "he"
+          "को": "who"
+          "छ": "is"
+  "kfy-0106":
+    native: "we"
+    notes:
+      "n1": "The Survey's text has 'ham ... chhu' for 'we are'. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "हम घर में छूं।":
+        native: "We are at home."
+        bases:
+          "हम": "we"
+          "घर": "house"
+          "में": "in"
+          "छूं": "am"
+      "हम को छूं?":
+        native: "Who are we?"
+        bases:
+          "हम": "we"
+          "को": "who"
+          "छूं": "am"
+  "kfy-0107":
+    native: "they"
+    notes:
+      "n1": "The plural of व (wa) for a group."
+    examples:
+      "उं पढ़ना छन।":
+        native: "They study."
+        bases:
+          "उं": "they"
+          "पढ़ना": "study"
+          "छन": "are"
+      "उं नेपाली छन।":
+        native: "They are Nepali."
+        bases:
+          "उं": "they"
+          "नेपाली": "Nepali"
+          "छन": "are"
+  "kfy-0108":
+    native: "one"
+    notes:
+      "n1": "The number one. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "एक घर छ।":
+        native: "There is one house."
+        bases:
+          "एक": "one"
+          "घर": "house"
+          "छ": "is"
+      "यो एक घर छ।":
+        native: "This is one house."
+        bases:
+          "यो": "this"
+          "एक": "one"
+          "घर": "house"
+          "छ": "is"
+  "kfy-0109":
+    native: "two"
+    notes:
+      "n1": "The number 2."
+    examples:
+      "दुइ गिलास पाणी।":
+        native: "Two glases of water."
+        bases:
+          "दुइ": "two"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "दुइ कप चा।":
+        native: "Two cups of tea."
+        bases:
+          "दुइ": "two"
+          "कप": "cup"
+          "चा": "tea"
+  "kfy-0110":
+    native: "three"
+    notes:
+      "n1": "The number 3."
+    examples:
+      "तीन गिलास पाणी।":
+        native: "Three glases of water."
+        bases:
+          "तीन": "three"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "तीन कप चा।":
+        native: "Three cups of tea."
+        bases:
+          "तीन": "three"
+          "कप": "cup"
+          "चा": "tea"
+  "kfy-0111":
+    native: "four"
+    notes:
+      "n1": "The number 4."
+    examples:
+      "चार गिलास पाणी।":
+        native: "Four glases of water."
+        bases:
+          "चार": "four"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "चार कप चा।":
+        native: "Four cups of tea."
+        bases:
+          "चार": "four"
+          "कप": "cup"
+          "चा": "tea"
+  "kfy-0112":
+    native: "five"
+    notes:
+      "n1": "The number 5."
+    examples:
+      "पाँच गिलास पाणी।":
+        native: "Five glases of water."
+        bases:
+          "पाँच": "five"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "पाँच कप चा।":
+        native: "Five cups of tea."
+        bases:
+          "पाँच": "five"
+          "कप": "cup"
+          "चा": "tea"
+  "kfy-0113":
+    native: "six"
+    notes:
+      "n1": "The number 6."
+    examples:
+      "छ गिलास पाणी।":
+        native: "Six glases of water."
+        bases:
+          "छ": "six"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "छ कप चा।":
+        native: "Six cups of tea."
+        bases:
+          "छ": "six"
+          "कप": "cup"
+          "चा": "tea"
+  "kfy-0114":
+    native: "seven"
+    notes:
+      "n1": "The number 7."
+    examples:
+      "सात गिलास पाणी।":
+        native: "Seven glases of water."
+        bases:
+          "सात": "seven"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "सात कप चा।":
+        native: "Seven cups of tea."
+        bases:
+          "सात": "seven"
+          "कप": "cup"
+          "चा": "tea"
+  "kfy-0115":
+    native: "eight"
+    notes:
+      "n1": "The number 8."
+    examples:
+      "आठ गिलास पाणी।":
+        native: "Eight glases of water."
+        bases:
+          "आठ": "eight"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "आठ कप चा।":
+        native: "Eight cups of tea."
+        bases:
+          "आठ": "eight"
+          "कप": "cup"
+          "चा": "tea"
+  "kfy-0116":
+    native: "nine"
+    notes:
+      "n1": "The number 9."
+    examples:
+      "नौ गिलास पाणी।":
+        native: "Nine glases of water."
+        bases:
+          "नौ": "nine"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "नौ कप चा।":
+        native: "Nine cups of tea."
+        bases:
+          "नौ": "nine"
+          "कप": "cup"
+          "चा": "tea"
+  "kfy-0117":
+    native: "ten"
+    notes:
+      "n1": "The number 10."
+    examples:
+      "दस गिलास पाणी।":
+        native: "Ten glases of water."
+        bases:
+          "दस": "ten"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "दस कप चा।":
+        native: "Ten cups of tea."
+        bases:
+          "दस": "ten"
+          "कप": "cup"
+          "चा": "tea"
+  "kfy-0118":
+    native: "mother"
+    notes:
+      "n1": "The Survey gives इजा (ijā) for 'mother'. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "मेरी इजा घर में छ।":
+        native: "My mother is at home."
+        bases:
+          "मेरी": "my"
+          "इजा": "mother"
+          "घर": "house"
+          "में": "in"
+          "छ": "is"
+      "यो मेरी इजा छ।":
+        native: "This is my mother."
+        bases:
+          "यो": "this"
+          "मेरी": "my"
+          "इजा": "mother"
+          "छ": "is"
+  "kfy-0119":
+    native: "father"
+    notes:
+      "n1": "The Survey gives बाब (bāb) for 'father'. Other words for father may be used in families: not checked. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "मेरो बाब घर में छ।":
+        native: "My father is at home."
+        bases:
+          "मेरो": "my"
+          "बाब": "father"
+          "घर": "house"
+          "में": "in"
+          "छ": "is"
+      "यो मेरो बाब छ।":
+        native: "This is my father."
+        bases:
+          "यो": "this"
+          "मेरो": "my"
+          "बाब": "father"
+          "छ": "is"
+  "kfy-0120":
+    native: "brother"
+    notes:
+      "n1": "An older brother. Also used for any young man you respect."
+    examples:
+      "मेरो दाज्यू घर में छ।":
+        native: "My brother is at home."
+        bases:
+          "मेरो": "my"
+          "दाज्यू": "brother"
+          "घर": "home"
+          "में": "at"
+          "छ": "is"
+      "दाज्यू, आ!":
+        native: "Brother, come!"
+        bases:
+          "दाज्यू": "brother"
+          "आ": "come"
+  "kfy-0121":
+    native: "sister"
+    notes:
+      "n1": "Any sister, older or younger."
+    examples:
+      "मेरी बैणी विद्यार्थी छ।":
+        native: "My sister is a student."
+        bases:
+          "मेरी": "my"
+          "बैणी": "sister"
+          "विद्यार्थी": "student"
+          "छ": "is"
+      "बैणी, खाण तैयार छ।":
+        native: "Sister, the food is ready."
+        bases:
+          "बैणी": "sister"
+          "खाण": "food"
+          "तैयार": "ready"
+          "छ": "is"
+  "kfy-0122":
+    native: "child; son"
+    notes:
+      "n1": "The Survey gives chelo (chyolo), a son, and cheli, a daughter. Not yet checked as a word for any child."
+    examples:
+      "च्येला खेलनौ छ।":
+        native: "The child is playing."
+        bases:
+          "च्येला": "child"
+          "खेलनौ": "play"
+          "छ": "is"
+      "च्येला निमाणि छ।":
+        native: "The child is small."
+        bases:
+          "च्येला": "child"
+          "निमाणि": "small"
+          "छ": "is"
+  "kfy-0123":
+    native: "man; person"
+    notes:
+      "n1": "A man, or a person of either sex."
+    examples:
+      "मान्छ घर में छ।":
+        native: "The man is at home."
+        bases:
+          "मान्छ": "man"
+          "घर": "home"
+          "में": "at"
+          "छ": "is"
+      "उ मान्छ अच्छो छ।":
+        native: "That man is good."
+        bases:
+          "उ": "that"
+          "मान्छ": "man"
+          "अच्छो": "good"
+          "छ": "is"
+  "kfy-0124":
+    native: "woman; wife"
+    notes:
+      "n1": "An adult woman. Also a wife."
+    examples:
+      "स्वामणी, पाणी दि।":
+        native: "Woman, give water."
+        bases:
+          "स्वामणी": "woman"
+          "पाणी": "water"
+          "दि": "give"
+      "उ स्वामणी डाक्टर छ।":
+        native: "That woman is a doctor."
+        bases:
+          "उ": "that"
+          "स्वामणी": "woman"
+          "डाक्टर": "doctor"
+          "छ": "is"
+  "kfy-0125":
+    native: "water"
+    notes:
+      "n1": "Water. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "यो पाणी छ।":
+        native: "This is water."
+        bases:
+          "यो": "this"
+          "पाणी": "water"
+          "छ": "is"
+      "घर में पाणी छ।":
+        native: "There is water in the house."
+        bases:
+          "घर": "house"
+          "में": "in"
+          "पाणी": "water"
+          "छ": "is"
+  "kfy-0126":
+    native: "food; meal"
+    notes:
+      "n1": "Food in general, or a meal."
+    examples:
+      "खाण तैयार छ।":
+        native: "The food is ready."
+        bases:
+          "खाण": "food"
+          "तैयार": "ready"
+          "छ": "is"
+      "मैं खाण खानूं।":
+        native: "I will eat food."
+        bases:
+          "मैं": "I"
+          "खाण": "food"
+          "खानूं": "eat"
+  "kfy-0127":
+    native: "tea"
+    notes:
+      "n1": "Milk tea is the everyday tea."
+    examples:
+      "चा गरम छ।":
+        native: "The tea is hot."
+        bases:
+          "चा": "tea"
+          "गरम": "hot"
+          "छ": "is"
+      "मकें चा अच्छो लागें।":
+        native: "I like tea."
+        bases:
+          "मकें": "to me"
+          "चा": "tea"
+          "अच्छो": "good"
+          "लागें": "like"
+  "kfy-0128":
+    native: "house; home"
+    notes:
+      "n1": "'House' and 'home'. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "यो मेरो घर छ।":
+        native: "This is my house."
+        bases:
+          "यो": "this"
+          "मेरो": "my"
+          "घर": "house"
+          "छ": "is"
+      "मैं घर में छूं।":
+        native: "I am at home."
+        bases:
+          "मैं": "I"
+          "घर": "house"
+          "में": "in"
+          "छूं": "am"
+  "kfy-0129":
+    native: "name"
+    notes:
+      "n1": "The Survey gives nau for 'name'. The form नाम (nām) is not attested there. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "तुमर नाम के छ?":
+        native: "What is your name?"
+        bases:
+          "तुमर": "your"
+          "नाम": "name"
+          "के": "what"
+          "छ": "is"
+      "नाम अच्छो छ।":
+        native: "The name is good."
+        bases:
+          "नाम": "name"
+          "अच्छो": "good"
+          "छ": "is"
+  "kfy-0130":
+    native: "good; nice"
+    notes:
+      "n1": "The Survey gives अच्छो (acchho) for 'good'. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "यो अच्छो छ।":
+        native: "This is good."
+        bases:
+          "यो": "this"
+          "अच्छो": "good"
+          "छ": "is"
+      "तुम अच्छो छा।":
+        native: "You are well."
+        bases:
+          "तुम": "you"
+          "अच्छो": "good"
+          "छा": "are"
+  "kfy-0131":
+    native: "big; large"
+    notes:
+      "n1": "The Survey has 'baro chh', he is great. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "उ बड़ो छ।":
+        native: "He is big."
+        bases:
+          "उ": "he"
+          "बड़ो": "big"
+          "छ": "is"
+      "यो घर बड़ो छ।":
+        native: "This house is big."
+        bases:
+          "यो": "this"
+          "घर": "house"
+          "बड़ो": "big"
+          "छ": "is"
+  "kfy-0132":
+    native: "small; little"
+    notes:
+      "n1": "The Survey has a form nano for 'smaller'. The spelling and vowel length are not checked. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "च्येला सानु छ।":
+        native: "The child is small."
+        bases:
+          "च्येला": "child"
+          "सानु": "small"
+          "छ": "is"
+      "सानु घर।":
+        native: "A small house."
+        bases:
+          "सानु": "small"
+          "घर": "house"
+  "kfy-0133":
+    native: "here"
+    notes:
+      "n1": "The Survey gives yā 'here' and wā 'there'; eti is 'hither'. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "मैं या छूं।":
+        native: "I am here."
+        bases:
+          "मैं": "I"
+          "या": "here"
+          "छूं": "am"
+      "तुम या छा।":
+        native: "You are here."
+        bases:
+          "तुम": "you"
+          "या": "here"
+          "छा": "are"
+  "kfy-0134":
+    native: "there"
+    notes:
+      "n1": "The Survey gives wā 'there'. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "उ वा छ।":
+        native: "He is there."
+        bases:
+          "उ": "he"
+          "वा": "there"
+          "छ": "is"
+      "पाणी वा छ।":
+        native: "The water is there."
+        bases:
+          "पाणी": "water"
+          "वा": "there"
+          "छ": "is"
+  "kfy-0135":
+    native: "what"
+    notes:
+      "n1": "'What'. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "यो के छ?":
+        native: "What is this?"
+        bases:
+          "यो": "this"
+          "के": "what"
+          "छ": "is"
+      "उ के छ?":
+        native: "What is that?"
+        bases:
+          "उ": "he"
+          "के": "what"
+          "छ": "is"
+  "kfy-0136":
+    native: "who"
+    notes:
+      "n1": "The Survey has 'tu ko chhai' for 'who are you?'. Not क्वे (kwe), which means 'anyone'. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "तू को छै?":
+        native: "Who are you?"
+        bases:
+          "तू": "you (one person)"
+          "को": "who"
+          "छै": "are"
+      "यो को छ?":
+        native: "Who is this?"
+        bases:
+          "यो": "this"
+          "को": "who"
+          "छ": "is"
+  "kfy-0137":
+    native: "where"
+    notes:
+      "n1": "The Survey has 'ka-bati', from where, so ka is 'where'. The form on its own is not attested there. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "तुम का छा?":
+        native: "Where are you?"
+        bases:
+          "तुम": "you"
+          "का": "where"
+          "छा": "are"
+      "घर का छ?":
+        native: "Where is the house?"
+        bases:
+          "घर": "house"
+          "का": "where"
+          "छ": "is"
+  "kfy-0138":
+    native: "and"
+    notes:
+      "n1": "The Survey says 'aur' is the usual 'and'. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "मैं और तुम।":
+        native: "You and I."
+        bases:
+          "मैं": "I"
+          "और": "and"
+          "तुम": "you"
+      "घर और पाणी।":
+        native: "A house and water."
+        bases:
+          "घर": "house"
+          "और": "and"
+          "पाणी": "water"
+  "kfy-0139":
+    native: "today"
+    notes:
+      "n1": "The Survey has आज (āj) for 'to-day'. Source: Grierson, Linguistic Survey of India, vol. IX part 4 (1916), the Kumauni section."
+    examples:
+      "आज मैं घर में छूं।":
+        native: "I am at home today."
+        bases:
+          "आज": "today"
+          "मैं": "I"
+          "घर": "house"
+          "में": "in"
+          "छूं": "am"
+      "आज यो अच्छो छ।":
+        native: "This is good today."
+        bases:
+          "आज": "today"
+          "यो": "this"
+          "अच्छो": "good"
+          "छ": "is"

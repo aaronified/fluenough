@@ -1,0 +1,82 @@
+# How Devanagari works for Classical Sanskrit: the recurring features a learner
+# from English misses, shown before the first letters and from a script deck's
+# Tips. Sources: Wikipedia, Devanagari and Sanskrit grammar (phonology),
+# read 2026-11-16. See ADR-0016 and wiki/Deck-Format.md.
+schema: 1
+kind: "script"
+part: "core"
+id: "sa-script"
+language: "sa"
+features:
+  - id: "headline"
+    term: "शिरोरेखा"
+    reading: "śirorekhā"
+    ipa: "ʃiroːreːkʰaː"
+    example: "क"
+    letters: ["क", "ग", "त", "न", "म", "ल", "स"]
+  - id: "rows"
+    term: "वर्ग"
+    reading: "varga"
+    ipa: "ʋərɡə"
+    example: "क"
+    letters: ["क", "ख", "ग", "घ", "ङ", "च", "छ", "ज", "झ", "ञ", "ट", "ठ", "ड", "ढ", "ण", "त", "थ", "द", "ध", "न", "प", "फ", "ब", "भ", "म"]
+  - id: "inherent-vowel"
+    example: "क"
+    letters: ["क", "कल", "राम", "गम"]
+  - id: "vowel-signs"
+    term: "मात्रा"
+    reading: "mātrā"
+    ipa: "maːt̪raː"
+    example: "का"
+    letters: ["का", "कि", "की", "कु", "कू", "कृ", "के", "कै", "को", "कौ"]
+  - id: "vocalic"
+    example: "ऋ"
+    letters: ["ऋ", "ॠ", "ऌ", "कृ", "कॢ"]
+  - id: "sibilants"
+    example: "श"
+    letters: ["श", "ष", "स"]
+  - id: "conjuncts"
+    term: "संयोग"
+    reading: "saṃyoga"
+    ipa: "sə̃joːɡə"
+    example: "स्त"
+    letters: ["स्त", "स्थ", "न्त", "द्ध", "ष्ट", "त्त", "क्त", "न्य"]
+  - id: "own-shapes"
+    example: "क्ष"
+    letters: ["क्ष", "ज्ञ", "त्र", "श्र"]
+  - id: "virama"
+    term: "विराम"
+    reading: "virāma"
+    ipa: "ʋiraːmə"
+    example: "क्"
+    letters: ["क्", "त्", "म्"]
+  - id: "anusvara"
+    term: "अनुस्वार"
+    reading: "anusvāra"
+    ipa: "ənusʋaːrə"
+    example: "ं"
+    letters: ["कं", "अहं", "संस्कृतम्", "हिंसा"]
+  - id: "visarga"
+    term: "विसर्ग"
+    reading: "visarga"
+    ipa: "ʋisərɡə"
+    example: "ः"
+    letters: ["रामः", "नमः", "शिवः"]
+  - id: "avagraha"
+    term: "अवग्रह"
+    reading: "avagraha"
+    ipa: "əʋəɡrəɦə"
+    example: "ऽ"
+    letters: ["ऽ", "एकोऽयम्"]
+  - id: "danda"
+    term: "दण्ड"
+    reading: "daṇḍa"
+    ipa: "d̪əɳɖə"
+    example: "।"
+    letters: ["।", "॥"]
+  - id: "no-nukta"
+    example: "क"
+    letters: ["क", "ख", "ग", "ज", "फ"]
+  - id: "digits"
+    example: "४"
+    letters: ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९"]

@@ -1,0 +1,630 @@
+schema: 1
+id: "gu-en-weather"
+kind: "layer"
+core: "gu-weather"
+native: { code: "en", iso639_3: "eng", name: "English" }
+
+name: "Weather"
+license: "CC-BY-SA-4.0"
+description: "The weather: rain, sun, wind, cloud, the seasons and the words for how they feel. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "gu-2000":
+    native: "rain"
+    notes:
+      "n1": "વરસાદ પડે છે (varsād paḍe che) means it is raining: the rain falls, as પડે છે (paḍe che) shows."
+    examples:
+      "વરસાદ પડે છે.":
+        native: "It is raining."
+        bases:
+          "વરસાદ": "rain"
+          "છે": "to be"
+      "આજે ભારે વરસાદ છે.":
+        native: "There is heavy rain today."
+        bases:
+          "વરસાદ": "rain"
+          "છે": "to be"
+  "gu-2001":
+    native: "sunshine; the sun's heat on the ground"
+    notes:
+      "n1": "Not the sun itself, which is સૂરજ (suraj): તડકો (taḍko) is the sunlight that warms or burns."
+    examples:
+      "બહાર બહુ તડકો છે.":
+        native: "There is a lot of sun outside."
+        bases:
+          "બહાર": "outside"
+          "તડકો": "sunshine"
+          "છે": "to be"
+      "તડકામાં ન બેસો.":
+        native: "Do not sit in the sun."
+        bases:
+          "તડકામાં": "sunshine"
+          "ન": "not"
+          "બેસો": "to sit"
+  "gu-2002":
+    native: "the sun"
+    notes:
+      "n1": "The sun in the sky. For the sunshine itself, use તડકો (taḍko)."
+    examples:
+      "સવારે સૂરજ ઊગ્યો.":
+        native: "The sun rose in the morning."
+        bases:
+          "સૂરજ": "sun"
+      "સાંજે સૂરજ આથમ્યો.":
+        native: "The sun set in the evening."
+        bases:
+          "સૂરજ": "sun"
+  "gu-2003":
+    native: "wind"
+    notes:
+      "n1": "Masculine. It is said to blow: પવન ફૂંકાય છે (pavan phuṅkāy che), the wind blows."
+    examples:
+      "ઠંડો પવન ફૂંકાય છે.":
+        native: "A cold wind is blowing."
+        bases:
+          "પવન": "wind"
+          "છે": "to be"
+      "આજે પવન નથી.":
+        native: "There is no wind today."
+        bases:
+          "પવન": "wind"
+          "નથી": "is not"
+  "gu-2004":
+    native: "cloud"
+    notes:
+      "n1": "A cloud in the sky. The word is neuter, so an adjective with it takes the neuter form, as in કાળું વાદળ (kāḷum̐ vādaḷ)."
+    examples:
+      "આકાશમાં વાદળ છે.":
+        native: "There is a cloud in the sky."
+        bases:
+          "વાદળ": "cloud"
+          "છે": "to be"
+      "કાળું વાદળ આવ્યું.":
+        native: "A dark cloud came."
+        bases:
+          "કાળું": "black; dark"
+          "વાદળ": "cloud"
+  "gu-2005":
+    native: "sky"
+    notes:
+      "n1": "The sky, the air above us. For the weather as a whole, use હવામાન (havāmān)."
+    examples:
+      "આકાશ સાફ છે.":
+        native: "The sky is clear."
+        bases:
+          "આકાશ": "sky"
+          "સાફ": "clear"
+          "છે": "to be"
+      "આકાશમાં તારા છે.":
+        native: "There are stars in the sky."
+        bases:
+          "આકાશમાં": "sky"
+          "તારા": "stars"
+          "છે": "to be"
+  "gu-2006":
+    native: "cold (the cold weather)"
+    notes:
+      "n1": "The noun is feminine: મને ઠંડી લાગે છે (mane ṭhaṇḍi lāge che), I feel cold. The adjective is ઠંડો (ṭhaṇḍo)."
+    examples:
+      "આજે બહુ ઠંડી છે.":
+        native: "It is very cold today."
+        bases:
+          "ઠંડી": "cold"
+          "છે": "to be"
+      "શિયાળામાં ઠંડી પડે છે.":
+        native: "In winter it gets cold."
+        bases:
+          "ઠંડી": "cold"
+          "છે": "to be"
+  "gu-2007":
+    native: "heat"
+    notes:
+      "n1": "The heat of the weather or of a day. For a hot thing, use the adjective ગરમ (garam)."
+    examples:
+      "આજે ભારે ગરમી છે.":
+        native: "The heat is strong today."
+        bases:
+          "ગરમી": "heat"
+          "છે": "to be"
+      "ઉનાળામાં ગરમી વધારે છે.":
+        native: "In summer the heat is greater."
+        bases:
+          "ગરમી": "heat"
+          "વધારે": "greater"
+          "છે": "to be"
+  "gu-2008":
+    native: "season"
+    notes:
+      "n1": "A season of the year, such as ઉનાળો (unāḷo), summer, or શિયાળો (śiyāḷo), winter."
+    examples:
+      "આ ઋતુ સારી છે.":
+        native: "This season is good."
+        bases:
+          "આ": "this"
+          "ઋતુ": "season"
+          "સારી": "good"
+          "છે": "to be"
+      "કઈ ઋતુ તમને ગમે છે?":
+        native: "Which season do you like?"
+        bases:
+          "કઈ": "which"
+          "ઋતુ": "season"
+          "ગમે": "to like"
+          "છે": "to be"
+  "gu-2009":
+    native: "weather (the conditions)"
+    notes:
+      "n1": "The weather of a day or a place. For the season, use ઋતુ (rutu); for how the sky looks, use આકાશ (ākāś)."
+    examples:
+      "હવામાન સારું છે.":
+        native: "The weather is good."
+        bases:
+          "હવામાન": "weather"
+          "છે": "to be"
+      "હવામાન કેવું છે?":
+        native: "What is the weather like?"
+        bases:
+          "હવામાન": "weather"
+          "કેવું": "what kind of"
+          "છે": "to be"
+  "gu-2010":
+    native: "temperature"
+    notes:
+      "n1": "How hot or cold it is, as a number on a thermometer."
+    examples:
+      "આજે તાપમાન વધારે છે.":
+        native: "The temperature is high today."
+        bases:
+          "તાપમાન": "temperature"
+          "વધારે": "high"
+          "છે": "to be"
+      "રાત્રે તાપમાન ઓછું થયું.":
+        native: "The temperature fell at night."
+        bases:
+          "તાપમાન": "temperature"
+          "ઓછું": "less"
+          "થયું": "to become"
+  "gu-2011":
+    native: "lightning (the flash in the sky)"
+    notes:
+      "n1": "The same word also means electricity. In the sky it is the flash of lightning."
+    examples:
+      "આકાશમાં વીજળી ચમકી.":
+        native: "Lightning flashed in the sky."
+        bases:
+          "વીજળી": "lightning"
+      "વીજળી પડે ત્યારે ઘરમાં રહો.":
+        native: "When lightning strikes, stay indoors."
+        bases:
+          "વીજળી": "lightning"
+          "ત્યારે": "when"
+          "રહો": "to stay"
+  "gu-2012":
+    native: "thunder"
+    notes:
+      "n1": "The loud sound after lightning. The verb is ગરજવું (garjvum̐), to thunder."
+    examples:
+      "મોટી ગર્જના થઈ.":
+        native: "There was a loud thunder."
+        bases:
+          "મોટી": "loud; big"
+          "ગર્જના": "thunder"
+          "થઈ": "happened"
+      "ગર્જના પછી વરસાદ આવ્યો.":
+        native: "After the thunder, rain came."
+        bases:
+          "ગર્જના": "thunder"
+          "પછી": "after"
+  "gu-2013":
+    native: "storm (a strong wind storm or cyclone)"
+    notes:
+      "n1": "A violent storm with strong wind."
+    examples:
+      "વાવાઝોડું આવ્યું.":
+        native: "A storm came."
+        bases:
+          "વાવાઝોડું": "storm"
+      "દરિયામાં વાવાઝોડું છે.":
+        native: "There is a storm at sea."
+        bases:
+          "દરિયામાં": "sea"
+          "વાવાઝોડું": "storm"
+          "છે": "to be"
+  "gu-2014":
+    native: "fog; mist"
+    notes:
+      "n1": "Fog that hides the road and the view in the early morning. It is neuter."
+    examples:
+      "સવારે ધુમ્મસ હતું.":
+        native: "There was fog in the morning."
+        bases:
+          "ધુમ્મસ": "fog"
+          "હતું": "was"
+      "આજે ધુમ્મસ છે.":
+        native: "There is fog today."
+        bases:
+          "ધુમ્મસ": "fog"
+          "છે": "to be"
+  "gu-2015":
+    native: "ice; snow"
+    notes:
+      "n1": "Frozen water. In cold places it falls as snow, and in a drink it is ice."
+    examples:
+      "પાણીમાં બરફ છે.":
+        native: "There is ice in the water."
+        bases:
+          "બરફ": "ice"
+          "છે": "to be"
+      "ઠંડીમાં બરફ પડે છે.":
+        native: "In the cold, snow falls."
+        bases:
+          "બરફ": "snow"
+          "છે": "to be"
+  "gu-2016":
+    native: "humidity; dampness in the air"
+    notes:
+      "n1": "The water in the air that makes a day feel sticky. It is masculine."
+    examples:
+      "આજે ભેજ બહુ છે.":
+        native: "The humidity is very high today."
+        bases:
+          "ભેજ": "humidity"
+          "છે": "to be"
+      "ચોમાસામાં ભેજ વધારે હોય છે.":
+        native: "In the monsoon the humidity is high."
+        bases:
+          "ભેજ": "humidity"
+          "વધારે": "high"
+          "હોય": "is"
+          "છે": "to be"
+  "gu-2018":
+    native: "a drop (of rain or water)"
+    notes:
+      "n1": "One drop of rain or water. The plural is છાંટા (chāṇṭā)."
+    examples:
+      "વરસાદનો એક છાંટો પડ્યો.":
+        native: "A single drop of rain fell."
+        bases:
+          "છાંટો": "drop"
+      "હાથ પર છાંટો પડ્યો.":
+        native: "A drop fell on the hand."
+        bases:
+          "હાથ": "hand"
+          "પર": "on"
+          "છાંટો": "drop"
+  "gu-2019":
+    native: "season; the weather of a time"
+    notes:
+      "n1": "The weather of a period, such as the rainy or the hot season."
+    examples:
+      "આ મોસમ બહુ સરસ છે.":
+        native: "This season is very nice."
+        bases:
+          "આ": "this"
+          "મોસમ": "season"
+          "સરસ": "nice"
+          "છે": "to be"
+      "મોસમ બદલાઈ ગઈ.":
+        native: "The weather changed."
+        bases:
+          "મોસમ": "season"
+          "બદલાઈ": "to change"
+  "gu-2020":
+    native: "drought"
+    notes:
+      "n1": "A long time with too little rain. It is masculine."
+    examples:
+      "આ વર્ષે દુષ્કાળ પડ્યો.":
+        native: "A drought came this year."
+        bases:
+          "આ": "this"
+          "દુષ્કાળ": "drought"
+      "ગામમાં દુષ્કાળ છે.":
+        native: "There is a drought in the village."
+        bases:
+          "ગામમાં": "village"
+          "દુષ્કાળ": "drought"
+          "છે": "to be"
+  "gu-2021":
+    native: "darkness; the dark"
+    notes:
+      "n1": "When the light goes, in the evening or under clouds. It is neuter."
+    examples:
+      "વરસાદ પહેલાં અંધારું થયું.":
+        native: "It got dark before the rain."
+        bases:
+          "પહેલાં": "before"
+          "અંધારું": "darkness"
+          "થયું": "became"
+      "રાત્રે બહુ અંધારું હોય છે.":
+        native: "At night it is very dark."
+        bases:
+          "અંધારું": "darkness"
+          "હોય": "is"
+          "છે": "to be"
+  "gu-2022":
+    native: "mud"
+    notes:
+      "n1": "Wet earth on the ground after rain. It is masculine."
+    examples:
+      "વરસાદમાં રસ્તા પર કાદવ છે.":
+        native: "There is mud on the road in the rain."
+        bases:
+          "પર": "on"
+          "કાદવ": "mud"
+          "છે": "to be"
+      "પગમાં કાદવ લાગ્યો.":
+        native: "Mud stuck to the foot."
+        bases:
+          "પગમાં": "foot"
+          "કાદવ": "mud"
+          "લાગ્યો": "stuck"
+  "gu-2023":
+    native: "dust"
+    notes:
+      "n1": "The fine dry earth that the wind lifts. It is feminine."
+    examples:
+      "ઘરમાં ધૂળ છે.":
+        native: "There is dust in the house."
+        bases:
+          "ધૂળ": "dust"
+          "છે": "to be"
+      "પવનથી ધૂળ ઊડી.":
+        native: "The wind blew up dust."
+        bases:
+          "ધૂળ": "dust"
+          "ઊડી": "flew up"
+  "gu-2024":
+    native: "shade"
+    notes:
+      "n1": "The cool dark place under a tree or a roof, out of the sun. It is masculine."
+    examples:
+      "ઝાડ નીચે છાંયડો છે.":
+        native: "There is shade under the tree."
+        bases:
+          "ઝાડ": "tree"
+          "છાંયડો": "shade"
+          "છે": "to be"
+      "છાંયડામાં બેસો.":
+        native: "Sit in the shade."
+        bases:
+          "છાંયડામાં": "shade"
+          "બેસો": "sit"
+  "gu-2025":
+    native: "air; breeze"
+    notes:
+      "n1": "The air around us, or a gentle breeze when it moves. It is feminine."
+    examples:
+      "બહાર ઠંડી હવા છે.":
+        native: "There is cool air outside."
+        bases:
+          "બહાર": "outside"
+          "હવા": "air"
+          "છે": "to be"
+      "બારી ખોલો.":
+        native: "Open the window."
+        bases:
+          "ખોલો": "open"
+  "gu-2026":
+    native: "atmosphere; the mood of the air"
+    notes:
+      "n1": "The air and the feel of a place at a time. It is neuter."
+    examples:
+      "અહીંનું વાતાવરણ સરસ છે.":
+        native: "The atmosphere here is nice."
+        bases:
+          "વાતાવરણ": "atmosphere"
+          "સરસ": "nice"
+          "છે": "to be"
+      "વાતાવરણ ઠંડું થયું.":
+        native: "The air turned cool."
+        bases:
+          "વાતાવરણ": "atmosphere"
+          "થયું": "became"
+  "gu-2027":
+    native: "climate"
+    notes:
+      "n1": "The weather of a place over the whole year. It is feminine."
+    examples:
+      "આ શહેરની આબોહવા સારી છે.":
+        native: "The climate of this city is good."
+        bases:
+          "આ": "this"
+          "શહેરની": "city"
+          "આબોહવા": "climate"
+          "સારી": "good"
+          "છે": "to be"
+      "ગુજરાતની આબોહવા ગરમ છે.":
+        native: "Gujarat's climate is hot."
+        bases:
+          "ગુજરાતની": "Gujarat"
+          "આબોહવા": "climate"
+          "છે": "to be"
+  "gu-2028":
+    native: "cold"
+    notes:
+      "n1": "The adjective for a cold thing: પાણી ઠંડું (pāṇi ṭhaṇḍum̐), cold water. It takes the noun's gender: ઠંડી (ṭhaṇḍi) for a feminine noun."
+    examples:
+      "પાણી ઠંડું છે.":
+        native: "The water is cold."
+        bases:
+          "ઠંડું": "cold"
+          "છે": "to be"
+      "ચા ઠંડી છે.":
+        native: "The tea is cold."
+        bases:
+          "ઠંડી": "cold"
+          "છે": "to be"
+  "gu-2029":
+    native: "wet"
+    notes:
+      "n1": "It changes with the noun: ભીનાં (bhinām̐) for plural things such as clothes."
+    examples:
+      "કપડાં ભીનાં છે.":
+        native: "The clothes are wet."
+        bases:
+          "કપડાં": "clothes"
+          "ભીનાં": "wet"
+          "છે": "to be"
+      "હાથ ભીના થયા.":
+        native: "The hands got wet."
+        bases:
+          "હાથ": "hand"
+          "ભીના": "wet"
+          "થયા": "became"
+  "gu-2030":
+    native: "dry"
+    notes:
+      "n1": "The opposite of ભીનો (bhino), wet. It changes with the noun: સૂકું (sukum̐) for a neuter one."
+    examples:
+      "કપડાં સૂકાં છે.":
+        native: "The clothes are dry."
+        bases:
+          "કપડાં": "clothes"
+          "સૂકાં": "dry"
+          "છે": "to be"
+      "ઘાસ સૂકું છે.":
+        native: "The grass is dry."
+        bases:
+          "ઘાસ": "grass"
+          "સૂકું": "dry"
+          "છે": "to be"
+  "gu-2031":
+    native: "light; gentle (of rain or wind)"
+    notes:
+      "n1": "Light in weight, or weak in strength: હળવો વરસાદ (haḷvo varsād) is a light rain. It takes the noun's gender."
+    examples:
+      "હળવો વરસાદ પડે છે.":
+        native: "Light rain falls."
+        bases:
+          "હળવો": "light"
+          "છે": "to be"
+      "આજે પવન હળવો છે.":
+        native: "The wind is light today."
+        bases:
+          "હળવો": "light"
+          "છે": "to be"
+  "gu-2033":
+    native: "to rain; to pour"
+    notes:
+      "n1": "Said of rain falling: આજે વરસાદ વરસે છે (āje varsād varse che), it rains today."
+    examples:
+      "આજે વરસાદ વરસે છે.":
+        native: "Rain is pouring today."
+        bases:
+          "વરસે": "rains"
+          "છે": "to be"
+      "અહીં ખૂબ વરસે છે.":
+        native: "It rains a lot here."
+        bases:
+          "ખૂબ": "a lot"
+          "વરસે": "rains"
+          "છે": "to be"
+  "gu-2034":
+    native: "to fall"
+    notes:
+      "n1": "The same verb says that rain falls, snow falls and a leaf falls. Its past is પડ્યો (paḍyo), fell."
+    examples:
+      "પાંદડું પડ્યું.":
+        native: "A leaf fell."
+        bases:
+          "પાંદડું": "leaf"
+          "પડ્યું": "fell"
+      "છત પરથી પાણી પડે છે.":
+        native: "Water falls from the roof."
+        bases:
+          "છત": "roof"
+          "પરથી": "from"
+          "પડે": "falls"
+          "છે": "to be"
+  "gu-2035":
+    native: "to blow (of wind)"
+    notes:
+      "n1": "Said of the wind only: પવન ફૂંકાય છે (pavan phuṅkāy che), the wind blows."
+    examples:
+      "ઠંડો પવન ફૂંકાય છે.":
+        native: "A cold wind is blowing."
+        bases:
+          "ફૂંકાય": "is blowing"
+          "છે": "to be"
+      "જોરથી પવન ફૂંકાયો.":
+        native: "The wind blew hard."
+        bases:
+          "જોરથી": "force"
+          "ફૂંકાયો": "blew"
+  "gu-2036":
+    native: "to flash; to shine"
+    notes:
+      "n1": "Said of lightning, stars and gold: વીજળી ચમકે છે (vijḷi camke che), lightning flashes."
+    examples:
+      "તારા ચમકે છે.":
+        native: "The stars shine."
+        bases:
+          "તારા": "stars"
+          "ચમકે": "shine"
+          "છે": "to be"
+      "સોનું ચમકે છે.":
+        native: "Gold shines."
+        bases:
+          "સોનું": "gold"
+          "ચમકે": "shines"
+          "છે": "to be"
+  "gu-2037":
+    native: "to thunder; to roar"
+    notes:
+      "n1": "Said of clouds and thunder: વાદળ ગરજે છે (vādaḷ garje che), the clouds thunder."
+    examples:
+      "દૂર વાદળ ગરજે છે.":
+        native: "Far away the clouds thunder."
+        bases:
+          "ગરજે": "thunder"
+          "છે": "to be"
+      "વાદળ ગરજે છે, પણ વરસાદ નથી.":
+        native: "The clouds thunder, but there is no rain."
+        bases:
+          "ગરજે": "thunder"
+          "છે": "to be"
+          "નથી": "is not"
+  "gu-2038":
+    native: "to get wet"
+    notes:
+      "n1": "To become wet in the rain or in water: વરસાદમાં ભીંજાયો (varsādmām̐ bhiñjāyo), I got wet in the rain."
+    examples:
+      "વરસાદમાં હું ભીંજાયો.":
+        native: "I got wet in the rain."
+        bases:
+          "ભીંજાયો": "got wet"
+      "બધા ભીંજાઈ ગયા.":
+        native: "Everyone got wet."
+        bases:
+          "બધા": "everyone"
+          "ભીંજાઈ": "got wet"
+  "gu-2039":
+    native: "to rise (of the sun or moon)"
+    notes:
+      "n1": "Said of the sun and moon coming up: સૂરજ ઊગે છે (suraj uge che), the sun rises."
+    examples:
+      "સવારે સૂરજ ઊગે છે.":
+        native: "In the morning the sun rises."
+        bases:
+          "ઊગે": "rises"
+          "છે": "to be"
+      "ચંદ્ર ઊગ્યો.":
+        native: "The moon rose."
+        bases:
+          "ચંદ્ર": "moon"
+          "ઊગ્યો": "rose"
+  "gu-2040":
+    native: "to set (of the sun or moon)"
+    notes:
+      "n1": "The opposite of ઊગવું (ugvum̐): સૂરજ આથમે છે (suraj āthme che), the sun sets."
+    examples:
+      "સાંજે સૂરજ આથમે છે.":
+        native: "In the evening the sun sets."
+        bases:
+          "આથમે": "sets"
+          "છે": "to be"
+      "સૂરજ આથમ્યો.":
+        native: "The sun set."
+        bases:
+          "આથમ્યો": "set"

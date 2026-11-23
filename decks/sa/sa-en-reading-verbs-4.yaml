@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-reading-verbs-4"
+name: "Reading: verbs-4"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "sa-verbs-4-text-1"
+    title: "Rain, road and temple"
+    theme: "verbs-4"
+    sentences:
+      - { text: "अद्य मेघः पर्वते वर्षति.", reading: "adya meghaḥ parvate varṣati.", ipa: "əd̪jə meːɡʱəh pərʋət̪eː ʋərʂət̪i" }
+      - { text: "यात्री सायं नगरं व्रजति.", reading: "yātrī sāyaṃ nagaraṃ vrajati.", ipa: "jaːt̪riː saːjəm nəɡərəm ʋrədʒət̪i" }
+      - { text: "रात्रौ सर्पो वल्मीकात् सर्पति.", reading: "rātrau sarpo valmīkāt sarpati.", ipa: "raːt̪rəu sərpoː ʋəlmiːkaːt̪ sərpət̪i" }
+      - { text: "भक्तो मन्दिरे देवं स्तौति.", reading: "bhakto mandire devaṃ stauti.", ipa: "bʱəkt̪oː mənd̪ireː d̪eːʋəm st̪əut̪i" }
+      - { text: "बालको नद्यां नित्यं स्नाति.", reading: "bālako nadyāṃ nityaṃ snāti.", ipa: "baːləkoː nəd̪jaːm nit̪jəm snaːt̪i" }
+    questions:
+      - id: "sa-6788"
+        prompt: { en: "Where does the cloud rain?" }
+        options: [{ en: "On the mountain" }, { en: "On the field" }, { en: "On the city" }]
+        answer: 1
+      - id: "sa-6789"
+        prompt: { en: "When does the traveller go to the city?" }
+        options: [{ en: "In the morning" }, { en: "At night" }, { en: "In the evening" }]
+        answer: 3
+      - id: "sa-6790"
+        prompt: { en: "Which word means 'anthill'?" }
+        options: [{ en: "सर्पो (sarpo)" }, { en: "वल्मीकात् (valmīkāt)" }, { en: "देवं (devaṃ)" }]
+        answer: 2
+      - id: "sa-6791"
+        prompt: { en: "The devotee praises the god in the temple." }
+        answer: true
+  - id: "sa-verbs-4-text-2"
+    title: "School, cows and park"
+    theme: "verbs-4"
+    sentences:
+      - { text: "संस्कृतं छात्रा विद्यालये शिक्षते.", reading: "saṃskṛtaṃ chātrā vidyālaye śikṣate.", ipa: "sə̃skr̩t̪əm tʃʰaːt̪raː ʋid̪jaːləjeː ʃikʂət̪eː" }
+      - { text: "गोपालो वने धेनूः पालयति.", reading: "gopālo vane dhenūḥ pālayati.", ipa: "ɡoːpaːloː ʋəneː d̪ʱeːnuːh paːləjət̪i" }
+      - { text: "कृषको गृहे धनं गणयति.", reading: "kṛṣako gṛhe dhanaṃ gaṇayati.", ipa: "kr̩ʂəkoː ɡr̩ɦeː d̪ʱənəm ɡəɳəjət̪i" }
+      - { text: "सायम् उद्याने बालकाः खेलन्ति.", reading: "sāyam udyāne bālakāḥ khelanti.", ipa: "saːjəm ud̪jaːneː baːləkaːh kʰeːlənt̪i" }
+      - { text: "साधुं दुर्जनो नित्यं निन्दति.", reading: "sādhuṃ durjano nityaṃ nindati.", ipa: "saːd̪ʱum d̪urdʒənoː nit̪jəm nind̪ət̪i" }
+    questions:
+      - id: "sa-6792"
+        prompt: { en: "What does the female student learn at school?" }
+        options: [{ en: "Grammar" }, { en: "Sanskrit" }, { en: "Music" }]
+        answer: 2
+      - id: "sa-6793"
+        prompt: { en: "Where does the cowherd tend the cows?" }
+        options: [{ en: "In the field" }, { en: "In the forest" }, { en: "On the shore" }]
+        answer: 2
+      - id: "sa-6794"
+        prompt: { en: "Which word means 'park'?" }
+        options: [{ en: "उद्याने (udyāne)" }, { en: "गृहे (gṛhe)" }, { en: "विद्यालये (vidyālaye)" }]
+        answer: 1
+      - id: "sa-6795"
+        prompt: { en: "The farmer counts the money in the field." }
+        answer: false

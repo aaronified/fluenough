@@ -1,0 +1,398 @@
+# Works a learner of Classical Sanskrit can find and be asked about: two Sanskrit films and the public-domain English books that a reader of the culture decks will want (wiki/Plan-Culture-Sanskrit.md, section 4).
+# Nothing of a work is quoted and no link is given: no link has been checked. The year and the creator of each work are what its English Wikipedia or Wikisource page says (read on 2026-11-20).
+# Not built, for the reasons in docs/review-queue/sa.md: the other films and the newspaper (their makers are living and have no two-page lifespans), and books with no creator years.
+"schema": 1
+"kind": "recommendations"
+"id": "recommendations-sa"
+"language": "sa"
+"license": "CC-BY-SA-4.0"
+"recommendations":
+- "id": "sa-rec-adi-shankaracharya"
+  "medium": "film"
+  "title":
+    "text": "Adi Shankaracharya"
+  "creator":
+  - "sa-g-v-iyer"
+  "year": 1983
+  "level": "B1"
+  "briefing":
+    "en": "A film in Sanskrit about the life and times of Adi Shankaracharya, the Hindu scholar who consolidated the doctrine of Advaita Vedanta. It is the first film in India to be made in Sanskrit."
+  "questions":
+  - "id": "q1"
+    "prompt":
+      "en": "In which language is the film made?"
+    "options":
+      "en":
+      - "Sanskrit"
+      - "Kannada"
+      - "Hindi"
+    "answer": 1
+  - "id": "q2"
+    "prompt":
+      "en": "Whose life and times does the film show?"
+    "options":
+      "en":
+      - "Madhvacharya"
+      - "Adi Shankaracharya"
+      - "Swami Vivekananda"
+    "answer": 2
+  - "id": "q3"
+    "prompt":
+      "en": "What is the film said to be the first of?"
+    "options":
+      "en":
+      - "The first Indian film made in colour"
+      - "The first film in India to be made in Sanskrit"
+      - "The first Indian animated film"
+    "answer": 2
+  - "id": "q4"
+    "prompt":
+      "en": "How many awards did it win at the 31st National Film Awards?"
+    "options":
+      "en":
+      - "Two"
+      - "Four"
+      - "Six"
+    "answer": 2
+  "tags":
+  - "unreviewed"
+- "id": "sa-rec-bhagavad-gita-film"
+  "medium": "film"
+  "title":
+    "text": "Bhagavad Gita"
+  "creator":
+  - "sa-g-v-iyer"
+  "year": 1993
+  "level": "B1"
+  "briefing":
+    "en": "A Sanskrit-language drama film based on the Bhagavad Gita, with a few dialogues in Hindi and Telugu, directed by the maker of Adi Shankaracharya."
+  "questions":
+  - "id": "q1"
+    "prompt":
+      "en": "Which text is the film based on?"
+    "options":
+      "en":
+      - "The Ramayana"
+      - "The Bhagavad Gita"
+      - "The Arthashastra"
+    "answer": 2
+  - "id": "q2"
+    "prompt":
+      "en": "Which languages besides Sanskrit does the film use?"
+    "options":
+      "en":
+      - "Hindi and Telugu"
+      - "Tamil and Malayalam"
+      - "English and Bengali"
+    "answer": 1
+  - "id": "q3"
+    "prompt":
+      "en": "Who directed the film?"
+    "options":
+      "en":
+      - "Satyajit Ray"
+      - "G. V. Iyer"
+      - "Mani Ratnam"
+    "answer": 2
+  - "id": "q4"
+    "prompt":
+      "en": "In which year was it released?"
+    "options":
+      "en":
+      - "1983"
+      - "1993"
+      - "2003"
+    "answer": 2
+  "tags":
+  - "unreviewed"
+- "id": "sa-rec-whitney-sanskrit-grammar"
+  "medium": "book"
+  "script": "latin"
+  "title":
+    "text": "Sanskrit Grammar (Whitney)"
+  "creator":
+  - "sa-william-dwight-whitney"
+  "year": 1889
+  "level": "B1"
+  "briefing":
+    "en": "A description of the Sanskrit language, written in English by an American scholar and dated 1889 on Wikisource. It is in the public domain: find a scan or a library copy and read the sections on sounds and on the verb."
+  "questions":
+  - "id": "q1"
+    "prompt":
+      "en": "Who wrote this grammar?"
+    "options":
+      "en":
+      - "William Dwight Whitney"
+      - "Charles Rockwell Lanman"
+      - "Arthur William Ryder"
+    "answer": 1
+  - "id": "q2"
+    "prompt":
+      "en": "In which year is the edition dated on Wikisource?"
+    "options":
+      "en":
+      - "1889"
+      - "1903"
+      - "1925"
+    "answer": 1
+  - "id": "q3"
+    "prompt":
+      "en": "What does the book describe?"
+    "options":
+      "en":
+      - "The Sanskrit language"
+      - "The Persian language"
+      - "The Pali canon"
+    "answer": 1
+  "tags":
+  - "unreviewed"
+- "id": "sa-rec-lanman-sanskrit-reader"
+  "medium": "book"
+  "script": "latin"
+  "title":
+    "text": "A Sanskrit Reader: Text and Vocabulary Notes"
+  "creator":
+  - "sa-charles-rockwell-lanman"
+  "year": 1903
+  "level": "B1"
+  "briefing":
+    "en": "A reader for learners of Sanskrit, with selected texts and notes. On Wikisource its first selection is the story of Nala and Damayanti from the Mahabharata, and a part of notes follows the texts."
+  "questions":
+  - "id": "q1"
+    "prompt":
+      "en": "Who made this reader?"
+    "options":
+      "en":
+      - "William Dwight Whitney"
+      - "Charles Rockwell Lanman"
+      - "Edwin Arnold"
+    "answer": 2
+  - "id": "q2"
+    "prompt":
+      "en": "Which story is the first selection?"
+    "options":
+      "en":
+      - "The story of Nala and Damayanti"
+      - "The story of Savitri"
+      - "The story of Shakuntala"
+    "answer": 1
+  - "id": "q3"
+    "prompt":
+      "en": "From which epic is the first selection taken?"
+    "options":
+      "en":
+      - "The Ramayana"
+      - "The Panchatantra"
+      - "The Mahabharata"
+    "answer": 3
+  - "id": "q4"
+    "prompt":
+      "en": "In which year is the reader dated on Wikisource?"
+    "options":
+      "en":
+      - "1889"
+      - "1903"
+      - "1915"
+    "answer": 2
+  "tags":
+  - "unreviewed"
+- "id": "sa-rec-arnold-bhagavad-gita"
+  "medium": "book"
+  "script": "latin"
+  "title":
+    "text": "The Bhagavad Gita (Edwin Arnold's translation)"
+  "creator":
+  - "sa-edwin-arnold"
+  "year": 1885
+  "level": "B1"
+  "briefing":
+    "en": "An English translation of the Bhagavad Gita by Edwin Arnold, dated 1885 on Wikisource. Reading it beside the Sanskrit lines of the Gita helps with the verses that the culture decks quote."
+  "questions":
+  - "id": "q1"
+    "prompt":
+      "en": "Who translated this version?"
+    "options":
+      "en":
+      - "Annie Besant"
+      - "Edwin Arnold"
+      - "Arthur William Ryder"
+    "answer": 2
+  - "id": "q2"
+    "prompt":
+      "en": "In which year is this translation dated?"
+    "options":
+      "en":
+      - "1885"
+      - "1895"
+      - "1925"
+    "answer": 1
+  - "id": "q3"
+    "prompt":
+      "en": "Who is named as the author of the Sanskrit original on Wikisource?"
+    "options":
+      "en":
+      - "Vyasa"
+      - "Valmiki"
+      - "Kalidasa"
+    "answer": 1
+  - "id": "q4"
+    "prompt":
+      "en": "Which other translation, of 1895, does the same Wikisource page list?"
+    "options":
+      "en":
+      - "Annie Besant's"
+      - "R. Shamasastry's"
+      - "Charles Lanman's"
+    "answer": 1
+  "tags":
+  - "unreviewed"
+- "id": "sa-rec-ryder-panchatantra"
+  "medium": "book"
+  "script": "latin"
+  "title":
+    "text": "The Panchatantra (Ryder's translation of Purnabhadra's recension)"
+  "creator":
+  - "sa-arthur-william-ryder"
+  "year": 1925
+  "level": "B1"
+  "briefing":
+    "en": "Arthur William Ryder's English translation of the Panchatantra, the collection of fables whose Sanskrit verses fill the Pancatantra cards of the culture and proverbs decks. It follows the recension of the Jain monk Purnabhadra, dated 1199 CE."
+  "questions":
+  - "id": "q1"
+    "prompt":
+      "en": "Who translated this version into English?"
+    "options":
+      "en":
+      - "Arthur William Ryder"
+      - "Edwin Arnold"
+      - "R. Shamasastry"
+    "answer": 1
+  - "id": "q2"
+    "prompt":
+      "en": "Whose recension does the translation follow?"
+    "options":
+      "en":
+      - "Purnabhadra's"
+      - "Narayana's"
+      - "Somadeva's"
+    "answer": 1
+  - "id": "q3"
+    "prompt":
+      "en": "Who is named as the author of the Panchatantra on the Wikisource page?"
+    "options":
+      "en":
+      - "Vishnu Sharma"
+      - "Kalidasa"
+      - "Bhartrihari"
+    "answer": 1
+  - "id": "q4"
+    "prompt":
+      "en": "In which year is this translation dated?"
+    "options":
+      "en":
+      - "1905"
+      - "1925"
+      - "1885"
+    "answer": 2
+  "tags":
+  - "unreviewed"
+- "id": "sa-rec-ryder-little-clay-cart"
+  "medium": "book"
+  "script": "latin"
+  "title":
+    "text": "The Little Clay Cart (Ryder's translation)"
+  "creator":
+  - "sa-arthur-william-ryder"
+  "year": 1905
+  "level": "B1"
+  "briefing":
+    "en": "Arthur William Ryder's English translation of the Sanskrit play Mrcchakatika, dated 1905 and published as volume 9 of the Harvard Oriental Series. The play shows ordinary events and ordinary people instead of a myth with noble heroes."
+  "questions":
+  - "id": "q1"
+    "prompt":
+      "en": "Who is named as the author of the play?"
+    "options":
+      "en":
+      - "Sudraka"
+      - "Kalidasa"
+      - "Bhasa"
+    "answer": 1
+  - "id": "q2"
+    "prompt":
+      "en": "Who translated it?"
+    "options":
+      "en":
+      - "Arthur William Ryder"
+      - "Charles Rockwell Lanman"
+      - "Edwin Arnold"
+    "answer": 1
+  - "id": "q3"
+    "prompt":
+      "en": "In which series was the translation published?"
+    "options":
+      "en":
+      - "The Sacred Books of the East"
+      - "The Harvard Oriental Series"
+      - "The Bombay Sanskrit Series"
+    "answer": 2
+  - "id": "q4"
+    "prompt":
+      "en": "What kind of story does the play tell, according to the Wikisource note?"
+    "options":
+      "en":
+      - "A myth with noble characters"
+      - "Mundane events about everyday people"
+      - "A battle between gods"
+    "answer": 2
+  "tags":
+  - "unreviewed"
+- "id": "sa-rec-shamasastry-arthashastra"
+  "medium": "book"
+  "script": "latin"
+  "title":
+    "text": "Arthashastra (Shamasastry's translation)"
+  "creator":
+  - "sa-r-shamasastry"
+  "year": 1915
+  "level": "B1"
+  "briefing":
+    "en": "R. Shamasastry's English translation of Kautilya's Arthashastra, the treatise on statecraft, printed in Bangalore by the Government Press in 1915. Its books deal with discipline, the duties of officials, law and more."
+  "questions":
+  - "id": "q1"
+    "prompt":
+      "en": "Who is named as the author of the Arthashastra?"
+    "options":
+      "en":
+      - "Kautilya"
+      - "Bharata"
+      - "Panini"
+    "answer": 1
+  - "id": "q2"
+    "prompt":
+      "en": "Who translated this version?"
+    "options":
+      "en":
+      - "R. Shamasastry"
+      - "Arthur William Ryder"
+      - "William Dwight Whitney"
+    "answer": 1
+  - "id": "q3"
+    "prompt":
+      "en": "What is the title of Book I?"
+    "options":
+      "en":
+      - "Concerning Discipline"
+      - "Concerning Law"
+      - "The Removal of Thorns"
+    "answer": 1
+  - "id": "q4"
+    "prompt":
+      "en": "Which press printed this translation in 1915?"
+    "options":
+      "en":
+      - "The Government Press, Bangalore"
+      - "The Harvard University Press"
+      - "The Nirnaya Sagar Press"
+    "answer": 1
+  "tags":
+  - "unreviewed"

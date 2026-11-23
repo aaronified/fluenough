@@ -1,0 +1,142 @@
+# Sources: en.wiktionary.org checked for the Dogri entry only; no phrase could be found there. Wikivoyage unreachable from this session. The yes and no cards are from the first-words deck (Grierson, Linguistic Survey of India). Every other card is doubtful. 17 of 19 cards are doubtful.
+schema: 1
+id: "doi-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "doi", iso639_3: "doi", name: "Dogri", script: "devanagari", tts: "hi-IN", icon: "डो" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "doi-9001"
+    target: "नमस्कार"
+    reading: "namaskār"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "नमस्कार", base: "नमस्कार", reading: "namaskār" }]
+  - id: "doi-9002"
+    target: "फिर मिलगे"
+    reading: "phir milge"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "फिर", base: "फिर", reading: "phir" }, { word: "मिलगे", base: "मिलना", reading: "milge" }]
+  - id: "doi-9003"
+    target: "मेहरबानी करके"
+    reading: "mehrbānī karke"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "मेहरबानी", base: "मेहरबानी", reading: "mehrbānī" }, { word: "करके", base: "करना", reading: "karke" }]
+  - id: "doi-9004"
+    target: "धन्यवाद"
+    reading: "dhanyavād"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "धन्यवाद", base: "धन्यवाद", reading: "dhanyavād" }]
+  - id: "doi-9005"
+    target: "कोई गल्ल नेईं"
+    reading: "koī gall neīṁ"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "कोई", base: "कोई", reading: "koī" }, { word: "गल्ल", base: "गल्ल", reading: "gall" }, { word: "नेईं", ref: "doi-0102" }]
+  - id: "doi-9006"
+    target: "माफ करना"
+    reading: "māf karnā"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "माफ", base: "माफ", reading: "māf" }, { word: "करना", base: "करना", reading: "karnā" }]
+  - id: "doi-9007"
+    target: "सुनो जी"
+    reading: "suno jī"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "सुनो", base: "सुनना", reading: "suno" }, { word: "जी", base: "जी", reading: "jī" }]
+  - id: "doi-9008"
+    target: "हां"
+    reading: "hāṁ"
+    pos: "phrase"
+    tags: ["answer"]
+    phrasebook: true
+    bases: [{ word: "हां", ref: "doi-0101" }]
+  - id: "doi-9009"
+    target: "नेईं"
+    reading: "neīṁ"
+    pos: "phrase"
+    tags: ["answer"]
+    phrasebook: true
+    bases: [{ word: "नेईं", ref: "doi-0102" }]
+  - id: "doi-9010"
+    target: "मिगी समझ नेईं आई"
+    reading: "migī samajh neīṁ āī"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "मिगी", base: "मैं", reading: "migī" }, { word: "समझ", base: "समझ", reading: "samajh" }, { word: "नेईं", ref: "doi-0102" }, { word: "आई", base: "आना", reading: "āī" }]
+  - id: "doi-9011"
+    target: "मिगी डोगरी नेईं आंदी"
+    reading: "migī ḍogrī neīṁ āndī"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "मिगी", base: "मैं", reading: "migī" }, { word: "डोगरी", base: "डोगरी", reading: "ḍogrī" }, { word: "नेईं", ref: "doi-0102" }, { word: "आंदी", base: "आना", reading: "āndī" }]
+  - id: "doi-9012"
+    target: "हौलें बोलो"
+    reading: "haulen bolo"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "हौलें", base: "हौलें", reading: "haulen" }, { word: "बोलो", base: "बोलना", reading: "bolo" }]
+  - id: "doi-9013"
+    target: "तुस अंग्रेजी बोलदे?"
+    reading: "tus aṅgrejī bolde?"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "तुस", ref: "doi-0104" }, { word: "अंग्रेजी", base: "अंग्रेजी", reading: "aṅgrejī" }, { word: "बोलदे", base: "बोलना", reading: "bolde" }]
+  - id: "doi-9014"
+    target: "तुसां दा कीह् हाल ऐ?"
+    reading: "tusāṁ dā kīh hāl ai?"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "तुसां", base: "तुस", reading: "tusāṁ" }, { word: "दा", base: "दा", reading: "dā" }, { word: "कीह्", base: "केह्", reading: "kīh" }, { word: "हाल", base: "हाल", reading: "hāl" }, { word: "ऐ", base: "होना", reading: "ai" }]
+  - id: "doi-9015"
+    target: "मैं ठीक आं"
+    reading: "maiṁ ṭhīk āṁ"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "मैं", ref: "doi-0103" }, { word: "ठीक", base: "ठीक", reading: "ṭhīk" }, { word: "आं", base: "होना", reading: "āṁ" }]
+  - id: "doi-9016"
+    target: "तुसां दा नां की ऐ?"
+    reading: "tusāṁ dā nāṁ kī ai?"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "तुसां", base: "तुस", reading: "tusāṁ" }, { word: "दा", base: "दा", reading: "dā" }, { word: "नां", ref: "doi-0129" }, { word: "की", base: "की", reading: "kī" }, { word: "ऐ", base: "होना", reading: "ai" }]
+  - id: "doi-9017"
+    target: "मेरा नां … ऐ"
+    reading: "merā nāṁ … ai"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "मेरा", base: "मेरा", reading: "merā" }, { word: "नां", ref: "doi-0129" }, { word: "ऐ", base: "होना", reading: "ai" }]
+  - id: "doi-9018"
+    target: "पखाना कित्थें ऐ?"
+    reading: "pakhānā kitthen ai?"
+    pos: "phrase"
+    tags: ["survival", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "पखाना", base: "पखाना", reading: "pakhānā" }, { word: "कित्थें", ref: "doi-0137" }, { word: "ऐ", base: "होना", reading: "ai" }]
+  - id: "doi-9019"
+    target: "बचाओ!"
+    reading: "bachāo!"
+    pos: "phrase"
+    tags: ["survival", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "बचाओ", base: "बचाना", reading: "bachāo" }]

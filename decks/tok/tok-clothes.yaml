@@ -7,6 +7,7 @@
   "iso639_3": "tok"
   "name": "Toki Pona"
   "script": "latin"
+  "scripts": ["latin", "sitelen_pona"]
   "icon": "Tp"
 "license": "CC-BY-SA-4.0"
 "theme": "clothes"
@@ -16,6 +17,8 @@
 "cards":
 - "id": "tok-0420"
   "target": "len"
+  "target_scripts":
+    "sitelen_pona": "󱤥"
   "ipa": "len"
   "pos": "noun"
   "bases": "self"
@@ -26,6 +29,8 @@
     "kind": "note"
   "examples":
   - "target": "mi wile e len pona."
+    "target_scripts":
+      "sitelen_pona": "󱤴 󱥷 󱤉 󱤥 󱥔."
     "ipa": "mi ˈwile e len ˈpona"
     "bases":
     - "word": "mi"
@@ -39,6 +44,8 @@
     - "word": "pona"
       "ref": "tok-0002"
   - "target": "len ni li loje."
+    "target_scripts":
+      "sitelen_pona": "󱤥 󱥁 󱤧 󱤫."
     "ipa": "len ni li ˈloje"
     "bases":
     - "word": "len"
@@ -51,6 +58,8 @@
       "ref": "tok-0422"
 - "id": "tok-0421"
   "target": "kule"
+  "target_scripts":
+    "sitelen_pona": "󱤞"
   "ipa": "ˈkule"
   "pos": "noun"
   "bases": "self"
@@ -61,6 +70,8 @@
     "kind": "behaviour"
   "examples":
   - "target": "kule ni li pona."
+    "target_scripts":
+      "sitelen_pona": "󱤞 󱥁 󱤧 󱥔."
     "ipa": "ˈkule ni li ˈpona"
     "bases":
     - "word": "kule"
@@ -72,6 +83,8 @@
     - "word": "pona"
       "ref": "tok-0002"
   - "target": "kule ona li walo."
+    "target_scripts":
+      "sitelen_pona": "󱤞 󱥆 󱤧 󱥲."
     "ipa": "ˈkule ˈona li ˈwalo"
     "bases":
     - "word": "kule"
@@ -84,6 +97,8 @@
       "ref": "tok-0425"
 - "id": "tok-0422"
   "target": "loje"
+  "target_scripts":
+    "sitelen_pona": "󱤫"
   "ipa": "ˈloje"
   "pos": "adj"
   "bases": "self"
@@ -94,6 +109,8 @@
     "kind": "behaviour"
   "examples":
   - "target": "len loje li lon."
+    "target_scripts":
+      "sitelen_pona": "󱤥 󱤫 󱤧 󱤬."
     "ipa": "len ˈloje li lon"
     "bases":
     - "word": "len"
@@ -105,6 +122,8 @@
     - "word": "lon"
       "ref": "tok-0046"
   - "target": "ilo loje li pona."
+    "target_scripts":
+      "sitelen_pona": "󱤎 󱤫 󱤧 󱥔."
     "ipa": "ˈilo ˈloje li ˈpona"
     "bases":
     - "word": "ilo"
@@ -117,6 +136,8 @@
       "ref": "tok-0002"
 - "id": "tok-0423"
   "target": "jelo"
+  "target_scripts":
+    "sitelen_pona": "󱤒"
   "ipa": "ˈjelo"
   "pos": "adj"
   "bases": "self"
@@ -127,6 +148,8 @@
     "kind": "note"
   "examples":
   - "target": "kili jelo li suwi."
+    "target_scripts":
+      "sitelen_pona": "󱤚 󱤒 󱤧 󱥦."
     "ipa": "ˈkili ˈjelo li ˈsuwi"
     "bases":
     - "word": "kili"
@@ -138,6 +161,8 @@
     - "word": "suwi"
       "ref": "tok-0194"
   - "target": "waso jelo li tawa."
+    "target_scripts":
+      "sitelen_pona": "󱥴 󱤒 󱤧 󱥩."
     "ipa": "ˈwaso ˈjelo li ˈtawa"
     "bases":
     - "word": "waso"
@@ -150,6 +175,8 @@
       "ref": "tok-0088"
 - "id": "tok-0424"
   "target": "laso"
+  "target_scripts":
+    "sitelen_pona": "󱤣"
   "ipa": "ˈlaso"
   "pos": "adj"
   "bases": "self"
@@ -160,6 +187,8 @@
     "kind": "behaviour"
   "examples":
   - "target": "ijo laso li lon."
+    "target_scripts":
+      "sitelen_pona": "󱤌 󱤣 󱤧 󱤬."
     "ipa": "ˈijo ˈlaso li lon"
     "bases":
     - "word": "ijo"
@@ -171,6 +200,8 @@
     - "word": "lon"
       "ref": "tok-0046"
   - "target": "mi wile e len laso."
+    "target_scripts":
+      "sitelen_pona": "󱤴 󱥷 󱤉 󱤥 󱤣."
     "ipa": "mi ˈwile e len ˈlaso"
     "bases":
     - "word": "mi"
@@ -185,6 +216,8 @@
       "base": "laso"
 - "id": "tok-0425"
   "target": "walo"
+  "target_scripts":
+    "sitelen_pona": "󱥲"
   "ipa": "ˈwalo"
   "pos": "adj"
   "bases": "self"
@@ -195,6 +228,8 @@
     "kind": "note"
   "examples":
   - "target": "tomo walo li suli."
+    "target_scripts":
+      "sitelen_pona": "󱥭 󱥲 󱤧 󱥣."
     "ipa": "ˈtomo ˈwalo li ˈsuli"
     "bases":
     - "word": "tomo"
@@ -206,6 +241,8 @@
     - "word": "suli"
       "ref": "tok-0119"
   - "target": "len walo li lon."
+    "target_scripts":
+      "sitelen_pona": "󱤥 󱥲 󱤧 󱤬."
     "ipa": "len ˈwalo li lon"
     "bases":
     - "word": "len"
@@ -218,6 +255,8 @@
       "ref": "tok-0046"
 - "id": "tok-0426"
   "target": "pimeja"
+  "target_scripts":
+    "sitelen_pona": "󱥏"
   "ipa": "ˈpimeja"
   "pos": "adj"
   "bases": "self"
@@ -228,6 +267,8 @@
     "kind": "behaviour"
   "examples":
   - "target": "kili pimeja li pona ala."
+    "target_scripts":
+      "sitelen_pona": "󱤚 󱥏 󱤧 󱥔 󱤂."
     "ipa": "ˈkili ˈpimeja li ˈpona ˈala"
     "bases":
     - "word": "kili"
@@ -241,6 +282,8 @@
     - "word": "ala"
       "ref": "tok-0005"
   - "target": "tenpo pimeja li lon."
+    "target_scripts":
+      "sitelen_pona": "󱥫 󱥏 󱤧 󱤬."
     "ipa": "ˈtenpo ˈpimeja li lon"
     "bases":
     - "word": "tenpo"

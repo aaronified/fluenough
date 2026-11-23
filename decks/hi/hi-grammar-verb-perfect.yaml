@@ -1,0 +1,721 @@
+schema: 1
+id: "hi-grammar-verb-perfect"
+part: "core"
+kind: "rules"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["hi-0240", "hi-0273", "hi-0290", "hi-0460"]
+  slots: ["main-m", "main-f", "tum-m", "tum-f", "vah-m", "vah-f", "ham-m", "ham-f"]
+  rows:
+    - word: "hi-0441"
+      forms: { "main-m": "उठा हूँ", "main-f": "उठी हूँ", "tum-m": "उठे हो", "tum-f": "उठी हो", "vah-m": "उठा है", "vah-f": "उठी है", "ham-m": "उठे हैं", "ham-f": "उठी हैं" }
+      readings: { "main-m": "uṭhā hūm̐", "main-f": "uṭhī hūm̐", "tum-m": "uṭhē hō", "tum-f": "uṭhī hō", "vah-m": "uṭhā hai", "vah-f": "uṭhī hai", "ham-m": "uṭhē haim̐", "ham-f": "uṭhī haim̐" }
+    - word: "hi-0442"
+      forms: { "main-m": "नहाया हूँ", "main-f": "नहाई हूँ", "tum-m": "नहाए हो", "tum-f": "नहाई हो", "vah-m": "नहाया है", "vah-f": "नहाई है", "ham-m": "नहाए हैं", "ham-f": "नहाई हैं" }
+      readings: { "main-m": "nahāyā hūm̐", "main-f": "nahāī hūm̐", "tum-m": "nahāē hō", "tum-f": "nahāī hō", "vah-m": "nahāyā hai", "vah-f": "nahāī hai", "ham-m": "nahāē haim̐", "ham-f": "nahāī haim̐" }
+    - word: "hi-0450"
+      forms: { "main-m": "सोया हूँ", "main-f": "सोई हूँ", "tum-m": "सोए हो", "tum-f": "सोई हो", "vah-m": "सोया है", "vah-f": "सोई है", "ham-m": "सोए हैं", "ham-f": "सोई हैं" }
+      readings: { "main-m": "sōyā hūm̐", "main-f": "sōī hūm̐", "tum-m": "sōē hō", "tum-f": "sōī hō", "vah-m": "sōyā hai", "vah-f": "sōī hai", "ham-m": "sōē haim̐", "ham-f": "sōī haim̐" }
+    - word: "hi-0513"
+      forms: { "main-m": "सका हूँ", "main-f": "सकी हूँ", "tum-m": "सके हो", "tum-f": "सकी हो", "vah-m": "सका है", "vah-f": "सकी है", "ham-m": "सके हैं", "ham-f": "सकी हैं" }
+      readings: { "main-m": "sakā hūm̐", "main-f": "sakī hūm̐", "tum-m": "sakē hō", "tum-f": "sakī hō", "vah-m": "sakā hai", "vah-f": "sakī hai", "ham-m": "sakē haim̐", "ham-f": "sakī haim̐" }
+    - word: "hi-0602"
+      forms: { "main-m": "मैंने पिया है", "main-f": "मैंने पिया है", "tum-m": "तुमने पिया है", "tum-f": "तुमने पिया है", "vah-m": "उसने पिया है", "vah-f": "उसने पिया है", "ham-m": "हमने पिया है", "ham-f": "हमने पिया है" }
+      readings: { "main-m": "mainnē piyā hai", "main-f": "mainnē piyā hai", "tum-m": "tumnē piyā hai", "tum-f": "tumnē piyā hai", "vah-m": "usnē piyā hai", "vah-f": "usnē piyā hai", "ham-m": "hamnē piyā hai", "ham-f": "hamnē piyā hai" }
+    - word: "hi-0623"
+      forms: { "main-m": "हंसा हूँ", "main-f": "हंसी हूँ", "tum-m": "हंसे हो", "tum-f": "हंसी हो", "vah-m": "हंसा है", "vah-f": "हंसी है", "ham-m": "हंसे हैं", "ham-f": "हंसी हैं" }
+      readings: { "main-m": "haṁsā hūm̐", "main-f": "haṁsī hūm̐", "tum-m": "haṁsē hō", "tum-f": "haṁsī hō", "vah-m": "haṁsā hai", "vah-f": "haṁsī hai", "ham-m": "haṁsē haim̐", "ham-f": "haṁsī haim̐" }
+    - word: "hi-0777"
+      forms: { "main-m": "गया हूँ", "main-f": "गई हूँ", "tum-m": "गए हो", "tum-f": "गई हो", "vah-m": "गया है", "vah-f": "गई है", "ham-m": "गए हैं", "ham-f": "गई हैं" }
+      readings: { "main-m": "gayā hūm̐", "main-f": "gaī hūm̐", "tum-m": "gē hō", "tum-f": "gaī hō", "vah-m": "gayā hai", "vah-f": "gaī hai", "ham-m": "gē haim̐", "ham-f": "gaī haim̐" }
+    - word: "hi-0778"
+      forms: { "main-m": "आया हूँ", "main-f": "आई हूँ", "tum-m": "आए हो", "tum-f": "आई हो", "vah-m": "आया है", "vah-f": "आई है", "ham-m": "आए हैं", "ham-f": "आई हैं" }
+      readings: { "main-m": "āyā hūm̐", "main-f": "āī hūm̐", "tum-m": "āē hō", "tum-f": "āī hō", "vah-m": "āyā hai", "vah-f": "āī hai", "ham-m": "āē haim̐", "ham-f": "āī haim̐" }
+    - word: "hi-0779"
+      forms: { "main-m": "मैंने किया है", "main-f": "मैंने किया है", "tum-m": "तुमने किया है", "tum-f": "तुमने किया है", "vah-m": "उसने किया है", "vah-f": "उसने किया है", "ham-m": "हमने किया है", "ham-f": "हमने किया है" }
+      readings: { "main-m": "mainnē kiyā hai", "main-f": "mainnē kiyā hai", "tum-m": "tumnē kiyā hai", "tum-f": "tumnē kiyā hai", "vah-m": "usnē kiyā hai", "vah-f": "usnē kiyā hai", "ham-m": "hamnē kiyā hai", "ham-f": "hamnē kiyā hai" }
+    - word: "hi-0780"
+      forms: { "main-m": "हुआ हूँ", "main-f": "हुई हूँ", "tum-m": "हुए हो", "tum-f": "हुई हो", "vah-m": "हुआ है", "vah-f": "हुई है", "ham-m": "हुए हैं", "ham-f": "हुई हैं" }
+      readings: { "main-m": "huā hūm̐", "main-f": "huī hūm̐", "tum-m": "huē hō", "tum-f": "huī hō", "vah-m": "huā hai", "vah-f": "huī hai", "ham-m": "huē haim̐", "ham-f": "huī haim̐" }
+    - word: "hi-0781"
+      forms: { "main-m": "लिखा हूँ", "main-f": "लिखी हूँ", "tum-m": "लिखे हो", "tum-f": "लिखी हो", "vah-m": "लिखा है", "vah-f": "लिखी है", "ham-m": "लिखे हैं", "ham-f": "लिखी हैं" }
+      readings: { "main-m": "likhā hūm̐", "main-f": "likhī hūm̐", "tum-m": "likhē hō", "tum-f": "likhī hō", "vah-m": "likhā hai", "vah-f": "likhī hai", "ham-m": "likhē haim̐", "ham-f": "likhī haim̐" }
+    - word: "hi-0782"
+      forms: { "main-m": "बोला हूँ", "main-f": "बोली हूँ", "tum-m": "बोले हो", "tum-f": "बोली हो", "vah-m": "बोला है", "vah-f": "बोली है", "ham-m": "बोले हैं", "ham-f": "बोली हैं" }
+      readings: { "main-m": "bōlā hūm̐", "main-f": "bōlī hūm̐", "tum-m": "bōlē hō", "tum-f": "bōlī hō", "vah-m": "bōlā hai", "vah-f": "bōlī hai", "ham-m": "bōlē haim̐", "ham-f": "bōlī haim̐" }
+    - word: "hi-0783"
+      forms: { "main-m": "सुना हूँ", "main-f": "सुनी हूँ", "tum-m": "सुने हो", "tum-f": "सुनी हो", "vah-m": "सुना है", "vah-f": "सुनी है", "ham-m": "सुने हैं", "ham-f": "सुनी हैं" }
+      readings: { "main-m": "sunā hūm̐", "main-f": "sunī hūm̐", "tum-m": "sunē hō", "tum-f": "sunī hō", "vah-m": "sunā hai", "vah-f": "sunī hai", "ham-m": "sunē haim̐", "ham-f": "sunī haim̐" }
+    - word: "hi-0784"
+      forms: { "main-m": "मैंने देखा है", "main-f": "मैंने देखा है", "tum-m": "तुमने देखा है", "tum-f": "तुमने देखा है", "vah-m": "उसने देखा है", "vah-f": "उसने देखा है", "ham-m": "हमने देखा है", "ham-f": "हमने देखा है" }
+      readings: { "main-m": "mainnē dēkhā hai", "main-f": "mainnē dēkhā hai", "tum-m": "tumnē dēkhā hai", "tum-f": "tumnē dēkhā hai", "vah-m": "usnē dēkhā hai", "vah-f": "usnē dēkhā hai", "ham-m": "hamnē dēkhā hai", "ham-f": "hamnē dēkhā hai" }
+    - word: "hi-0785"
+      forms: { "main-m": "मैंने दिया है", "main-f": "मैंने दिया है", "tum-m": "तुमने दिया है", "tum-f": "तुमने दिया है", "vah-m": "उसने दिया है", "vah-f": "उसने दिया है", "ham-m": "हमने दिया है", "ham-f": "हमने दिया है" }
+      readings: { "main-m": "mainnē diyā hai", "main-f": "mainnē diyā hai", "tum-m": "tumnē diyā hai", "tum-f": "tumnē diyā hai", "vah-m": "usnē diyā hai", "vah-f": "usnē diyā hai", "ham-m": "hamnē diyā hai", "ham-f": "hamnē diyā hai" }
+    - word: "hi-0786"
+      forms: { "main-m": "मैंने लिया है", "main-f": "मैंने लिया है", "tum-m": "तुमने लिया है", "tum-f": "तुमने लिया है", "vah-m": "उसने लिया है", "vah-f": "उसने लिया है", "ham-m": "हमने लिया है", "ham-f": "हमने लिया है" }
+      readings: { "main-m": "mainnē liyā hai", "main-f": "mainnē liyā hai", "tum-m": "tumnē liyā hai", "tum-f": "tumnē liyā hai", "vah-m": "usnē liyā hai", "vah-f": "usnē liyā hai", "ham-m": "hamnē liyā hai", "ham-f": "hamnē liyā hai" }
+    - word: "hi-0787"
+      forms: { "main-m": "मैंने खेला है", "main-f": "मैंने खेला है", "tum-m": "तुमने खेला है", "tum-f": "तुमने खेला है", "vah-m": "उसने खेला है", "vah-f": "उसने खेला है", "ham-m": "हमने खेला है", "ham-f": "हमने खेला है" }
+      readings: { "main-m": "mainnē khēlā hai", "main-f": "mainnē khēlā hai", "tum-m": "tumnē khēlā hai", "tum-f": "tumnē khēlā hai", "vah-m": "usnē khēlā hai", "vah-f": "usnē khēlā hai", "ham-m": "hamnē khēlā hai", "ham-f": "hamnē khēlā hai" }
+    - word: "hi-0788"
+      forms: { "main-m": "बैठा हूँ", "main-f": "बैठी हूँ", "tum-m": "बैठे हो", "tum-f": "बैठी हो", "vah-m": "बैठा है", "vah-f": "बैठी है", "ham-m": "बैठे हैं", "ham-f": "बैठी हैं" }
+      readings: { "main-m": "baiṭhā hūm̐", "main-f": "baiṭhī hūm̐", "tum-m": "baiṭhē hō", "tum-f": "baiṭhī hō", "vah-m": "baiṭhā hai", "vah-f": "baiṭhī hai", "ham-m": "baiṭhē haim̐", "ham-f": "baiṭhī haim̐" }
+    - word: "hi-0789"
+      forms: { "main-m": "मैंने समझा है", "main-f": "मैंने समझा है", "tum-m": "तुमने समझा है", "tum-f": "तुमने समझा है", "vah-m": "उसने समझा है", "vah-f": "उसने समझा है", "ham-m": "हमने समझा है", "ham-f": "हमने समझा है" }
+      readings: { "main-m": "mainnē samjhā hai", "main-f": "mainnē samjhā hai", "tum-m": "tumnē samjhā hai", "tum-f": "tumnē samjhā hai", "vah-m": "usnē samjhā hai", "vah-f": "usnē samjhā hai", "ham-m": "hamnē samjhā hai", "ham-f": "hamnē samjhā hai" }
+    - word: "hi-0790"
+      forms: { "main-m": "मैंने जाना है", "main-f": "मैंने जाना है", "tum-m": "तुमने जाना है", "tum-f": "तुमने जाना है", "vah-m": "उसने जाना है", "vah-f": "उसने जाना है", "ham-m": "हमने जाना है", "ham-f": "हमने जाना है" }
+      readings: { "main-m": "mainnē jānā hai", "main-f": "mainnē jānā hai", "tum-m": "tumnē jānā hai", "tum-f": "tumnē jānā hai", "vah-m": "usnē jānā hai", "vah-f": "usnē jānā hai", "ham-m": "hamnē jānā hai", "ham-f": "hamnē jānā hai" }
+    - word: "hi-0791"
+      forms: { "main-m": "रहा हूँ", "main-f": "रही हूँ", "tum-m": "रहे हो", "tum-f": "रही हो", "vah-m": "रहा है", "vah-f": "रही है", "ham-m": "रहे हैं", "ham-f": "रही हैं" }
+      readings: { "main-m": "rahā hūm̐", "main-f": "rahī hūm̐", "tum-m": "rahē hō", "tum-f": "rahī hō", "vah-m": "rahā hai", "vah-f": "rahī hai", "ham-m": "rahē haim̐", "ham-f": "rahī haim̐" }
+    - word: "hi-0792"
+      forms: { "main-m": "मैंने चाहा है", "main-f": "मैंने चाहा है", "tum-m": "तुमने चाहा है", "tum-f": "तुमने चाहा है", "vah-m": "उसने चाहा है", "vah-f": "उसने चाहा है", "ham-m": "हमने चाहा है", "ham-f": "हमने चाहा है" }
+      readings: { "main-m": "mainnē cāhā hai", "main-f": "mainnē cāhā hai", "tum-m": "tumnē cāhā hai", "tum-f": "tumnē cāhā hai", "vah-m": "usnē cāhā hai", "vah-f": "usnē cāhā hai", "ham-m": "hamnē cāhā hai", "ham-f": "hamnē cāhā hai" }
+    - word: "hi-0793"
+      forms: { "main-m": "मिला हूँ", "main-f": "मिली हूँ", "tum-m": "मिले हो", "tum-f": "मिली हो", "vah-m": "मिला है", "vah-f": "मिली है", "ham-m": "मिले हैं", "ham-f": "मिली हैं" }
+      readings: { "main-m": "milā hūm̐", "main-f": "milī hūm̐", "tum-m": "milē hō", "tum-f": "milī hō", "vah-m": "milā hai", "vah-f": "milī hai", "ham-m": "milē haim̐", "ham-f": "milī haim̐" }
+    - word: "hi-0794"
+      forms: { "main-m": "मैंने ख़रीदा है", "main-f": "मैंने ख़रीदा है", "tum-m": "तुमने ख़रीदा है", "tum-f": "तुमने ख़रीदा है", "vah-m": "उसने ख़रीदा है", "vah-f": "उसने ख़रीदा है", "ham-m": "हमने ख़रीदा है", "ham-f": "हमने ख़रीदा है" }
+      readings: { "main-m": "mainnē k͟harīdā hai", "main-f": "mainnē k͟harīdā hai", "tum-m": "tumnē k͟harīdā hai", "tum-f": "tumnē k͟harīdā hai", "vah-m": "usnē k͟harīdā hai", "vah-f": "usnē k͟harīdā hai", "ham-m": "hamnē k͟harīdā hai", "ham-f": "hamnē k͟harīdā hai" }
+    - word: "hi-0795"
+      forms: { "main-m": "मैंने बेचा है", "main-f": "मैंने बेचा है", "tum-m": "तुमने बेचा है", "tum-f": "तुमने बेचा है", "vah-m": "उसने बेचा है", "vah-f": "उसने बेचा है", "ham-m": "हमने बेचा है", "ham-f": "हमने बेचा है" }
+      readings: { "main-m": "mainnē bēcā hai", "main-f": "mainnē bēcā hai", "tum-m": "tumnē bēcā hai", "tum-f": "tumnē bēcā hai", "vah-m": "usnē bēcā hai", "vah-f": "usnē bēcā hai", "ham-m": "hamnē bēcā hai", "ham-f": "hamnē bēcā hai" }
+    - word: "hi-0796"
+      forms: { "main-m": "मैंने बताया है", "main-f": "मैंने बताया है", "tum-m": "तुमने बताया है", "tum-f": "तुमने बताया है", "vah-m": "उसने बताया है", "vah-f": "उसने बताया है", "ham-m": "हमने बताया है", "ham-f": "हमने बताया है" }
+      readings: { "main-m": "mainnē batāyā hai", "main-f": "mainnē batāyā hai", "tum-m": "tumnē batāyā hai", "tum-f": "tumnē batāyā hai", "vah-m": "usnē batāyā hai", "vah-f": "usnē batāyā hai", "ham-m": "hamnē batāyā hai", "ham-f": "hamnē batāyā hai" }
+    - word: "hi-0797"
+      forms: { "main-m": "मैंने भेजा है", "main-f": "मैंने भेजा है", "tum-m": "तुमने भेजा है", "tum-f": "तुमने भेजा है", "vah-m": "उसने भेजा है", "vah-f": "उसने भेजा है", "ham-m": "हमने भेजा है", "ham-f": "हमने भेजा है" }
+      readings: { "main-m": "mainnē bhējā hai", "main-f": "mainnē bhējā hai", "tum-m": "tumnē bhējā hai", "tum-f": "tumnē bhējā hai", "vah-m": "usnē bhējā hai", "vah-f": "usnē bhējā hai", "ham-m": "hamnē bhējā hai", "ham-f": "hamnē bhējā hai" }
+    - word: "hi-0798"
+      forms: { "main-m": "मैंने धोया है", "main-f": "मैंने धोया है", "tum-m": "तुमने धोया है", "tum-f": "तुमने धोया है", "vah-m": "उसने धोया है", "vah-f": "उसने धोया है", "ham-m": "हमने धोया है", "ham-f": "हमने धोया है" }
+      readings: { "main-m": "mainnē dhōyā hai", "main-f": "mainnē dhōyā hai", "tum-m": "tumnē dhōyā hai", "tum-f": "tumnē dhōyā hai", "vah-m": "usnē dhōyā hai", "vah-f": "usnē dhōyā hai", "ham-m": "hamnē dhōyā hai", "ham-f": "hamnē dhōyā hai" }
+    - word: "hi-0799"
+      forms: { "main-m": "मैंने पूछा है", "main-f": "मैंने पूछा है", "tum-m": "तुमने पूछा है", "tum-f": "तुमने पूछा है", "vah-m": "उसने पूछा है", "vah-f": "उसने पूछा है", "ham-m": "हमने पूछा है", "ham-f": "हमने पूछा है" }
+      readings: { "main-m": "mainnē pūchā hai", "main-f": "mainnē pūchā hai", "tum-m": "tumnē pūchā hai", "tum-f": "tumnē pūchā hai", "vah-m": "usnē pūchā hai", "vah-f": "usnē pūchā hai", "ham-m": "hamnē pūchā hai", "ham-f": "hamnē pūchā hai" }
+    - word: "hi-0800"
+      forms: { "main-m": "मैंने कहा है", "main-f": "मैंने कहा है", "tum-m": "तुमने कहा है", "tum-f": "तुमने कहा है", "vah-m": "उसने कहा है", "vah-f": "उसने कहा है", "ham-m": "हमने कहा है", "ham-f": "हमने कहा है" }
+      readings: { "main-m": "mainnē kahā hai", "main-f": "mainnē kahā hai", "tum-m": "tumnē kahā hai", "tum-f": "tumnē kahā hai", "vah-m": "usnē kahā hai", "vah-f": "usnē kahā hai", "ham-m": "hamnē kahā hai", "ham-f": "hamnē kahā hai" }
+    - word: "hi-0801"
+      forms: { "main-m": "चला हूँ", "main-f": "चली हूँ", "tum-m": "चले हो", "tum-f": "चली हो", "vah-m": "चला है", "vah-f": "चली है", "ham-m": "चले हैं", "ham-f": "चली हैं" }
+      readings: { "main-m": "calā hūm̐", "main-f": "calī hūm̐", "tum-m": "calē hō", "tum-f": "calī hō", "vah-m": "calā hai", "vah-f": "calī hai", "ham-m": "calē haim̐", "ham-f": "calī haim̐" }
+    - word: "hi-0937"
+      forms: { "main-m": "मैंने खोला है", "main-f": "मैंने खोला है", "tum-m": "तुमने खोला है", "tum-f": "तुमने खोला है", "vah-m": "उसने खोला है", "vah-f": "उसने खोला है", "ham-m": "हमने खोला है", "ham-f": "हमने खोला है" }
+      readings: { "main-m": "mainnē khōlā hai", "main-f": "mainnē khōlā hai", "tum-m": "tumnē khōlā hai", "tum-f": "tumnē khōlā hai", "vah-m": "usnē khōlā hai", "vah-f": "usnē khōlā hai", "ham-m": "hamnē khōlā hai", "ham-f": "hamnē khōlā hai" }
+    - word: "hi-0938"
+      forms: { "main-m": "मैंने पकाया है", "main-f": "मैंने पकाया है", "tum-m": "तुमने पकाया है", "tum-f": "तुमने पकाया है", "vah-m": "उसने पकाया है", "vah-f": "उसने पकाया है", "ham-m": "हमने पकाया है", "ham-f": "हमने पकाया है" }
+      readings: { "main-m": "mainnē pakāyā hai", "main-f": "mainnē pakāyā hai", "tum-m": "tumnē pakāyā hai", "tum-f": "tumnē pakāyā hai", "vah-m": "usnē pakāyā hai", "vah-f": "usnē pakāyā hai", "ham-m": "hamnē pakāyā hai", "ham-f": "hamnē pakāyā hai" }
+    - word: "hi-0939"
+      forms: { "main-m": "मैंने काटा है", "main-f": "मैंने काटा है", "tum-m": "तुमने काटा है", "tum-f": "तुमने काटा है", "vah-m": "उसने काटा है", "vah-f": "उसने काटा है", "ham-m": "हमने काटा है", "ham-f": "हमने काटा है" }
+      readings: { "main-m": "mainnē kāṭā hai", "main-f": "mainnē kāṭā hai", "tum-m": "tumnē kāṭā hai", "tum-f": "tumnē kāṭā hai", "vah-m": "usnē kāṭā hai", "vah-f": "usnē kāṭā hai", "ham-m": "hamnē kāṭā hai", "ham-f": "hamnē kāṭā hai" }
+    - word: "hi-0940"
+      forms: { "main-m": "मैंने उबाला है", "main-f": "मैंने उबाला है", "tum-m": "तुमने उबाला है", "tum-f": "तुमने उबाला है", "vah-m": "उसने उबाला है", "vah-f": "उसने उबाला है", "ham-m": "हमने उबाला है", "ham-f": "हमने उबाला है" }
+      readings: { "main-m": "mainnē ubālā hai", "main-f": "mainnē ubālā hai", "tum-m": "tumnē ubālā hai", "tum-f": "tumnē ubālā hai", "vah-m": "usnē ubālā hai", "vah-f": "usnē ubālā hai", "ham-m": "hamnē ubālā hai", "ham-f": "hamnē ubālā hai" }
+    - word: "hi-0941"
+      forms: { "main-m": "मैंने डाला है", "main-f": "मैंने डाला है", "tum-m": "तुमने डाला है", "tum-f": "तुमने डाला है", "vah-m": "उसने डाला है", "vah-f": "उसने डाला है", "ham-m": "हमने डाला है", "ham-f": "हमने डाला है" }
+      readings: { "main-m": "mainnē ḍālā hai", "main-f": "mainnē ḍālā hai", "tum-m": "tumnē ḍālā hai", "tum-f": "tumnē ḍālā hai", "vah-m": "usnē ḍālā hai", "vah-f": "usnē ḍālā hai", "ham-m": "hamnē ḍālā hai", "ham-f": "hamnē ḍālā hai" }
+    - word: "hi-0942"
+      forms: { "main-m": "मैंने छाना है", "main-f": "मैंने छाना है", "tum-m": "तुमने छाना है", "tum-f": "तुमने छाना है", "vah-m": "उसने छाना है", "vah-f": "उसने छाना है", "ham-m": "हमने छाना है", "ham-f": "हमने छाना है" }
+      readings: { "main-m": "mainnē chānā hai", "main-f": "mainnē chānā hai", "tum-m": "tumnē chānā hai", "tum-f": "tumnē chānā hai", "vah-m": "usnē chānā hai", "vah-f": "usnē chānā hai", "ham-m": "hamnē chānā hai", "ham-f": "hamnē chānā hai" }
+    - word: "hi-0943"
+      forms: { "main-m": "मैंने परोसा है", "main-f": "मैंने परोसा है", "tum-m": "तुमने परोसा है", "tum-f": "तुमने परोसा है", "vah-m": "उसने परोसा है", "vah-f": "उसने परोसा है", "ham-m": "हमने परोसा है", "ham-f": "हमने परोसा है" }
+      readings: { "main-m": "mainnē parōsā hai", "main-f": "mainnē parōsā hai", "tum-m": "tumnē parōsā hai", "tum-f": "tumnē parōsā hai", "vah-m": "usnē parōsā hai", "vah-f": "usnē parōsā hai", "ham-m": "hamnē parōsā hai", "ham-f": "hamnē parōsā hai" }
+    - word: "hi-0944"
+      forms: { "main-m": "जागा हूँ", "main-f": "जागी हूँ", "tum-m": "जागे हो", "tum-f": "जागी हो", "vah-m": "जागा है", "vah-f": "जागी है", "ham-m": "जागे हैं", "ham-f": "जागी हैं" }
+      readings: { "main-m": "jāgā hūm̐", "main-f": "jāgī hūm̐", "tum-m": "jāgē hō", "tum-f": "jāgī hō", "vah-m": "jāgā hai", "vah-f": "jāgī hai", "ham-m": "jāgē haim̐", "ham-f": "jāgī haim̐" }
+    - word: "hi-0945"
+      forms: { "main-m": "भूला हूँ", "main-f": "भूली हूँ", "tum-m": "भूले हो", "tum-f": "भूली हो", "vah-m": "भूला है", "vah-f": "भूली है", "ham-m": "भूले हैं", "ham-f": "भूली हैं" }
+      readings: { "main-m": "bhūlā hūm̐", "main-f": "bhūlī hūm̐", "tum-m": "bhūlē hō", "tum-f": "bhūlī hō", "vah-m": "bhūlā hai", "vah-f": "bhūlī hai", "ham-m": "bhūlē haim̐", "ham-f": "bhūlī haim̐" }
+    - word: "hi-0946"
+      forms: { "main-m": "दौड़ा हूँ", "main-f": "दौड़ी हूँ", "tum-m": "दौड़े हो", "tum-f": "दौड़ी हो", "vah-m": "दौड़ा है", "vah-f": "दौड़ी है", "ham-m": "दौड़े हैं", "ham-f": "दौड़ी हैं" }
+      readings: { "main-m": "dauṛā hūm̐", "main-f": "dauṛī hūm̐", "tum-m": "dauṛē hō", "tum-f": "dauṛī hō", "vah-m": "dauṛā hai", "vah-f": "dauṛī hai", "ham-m": "dauṛē haim̐", "ham-f": "dauṛī haim̐" }
+    - word: "hi-0947"
+      forms: { "main-m": "गिरा हूँ", "main-f": "गिरी हूँ", "tum-m": "गिरे हो", "tum-f": "गिरी हो", "vah-m": "गिरा है", "vah-f": "गिरी है", "ham-m": "गिरे हैं", "ham-f": "गिरी हैं" }
+      readings: { "main-m": "girā hūm̐", "main-f": "girī hūm̐", "tum-m": "girē hō", "tum-f": "girī hō", "vah-m": "girā hai", "vah-f": "girī hai", "ham-m": "girē haim̐", "ham-f": "girī haim̐" }
+    - word: "hi-0948"
+      forms: { "main-m": "लौटा हूँ", "main-f": "लौटी हूँ", "tum-m": "लौटे हो", "tum-f": "लौटी हो", "vah-m": "लौटा है", "vah-f": "लौटी है", "ham-m": "लौटे हैं", "ham-f": "लौटी हैं" }
+      readings: { "main-m": "lauṭā hūm̐", "main-f": "lauṭī hūm̐", "tum-m": "lauṭē hō", "tum-f": "lauṭī hō", "vah-m": "lauṭā hai", "vah-f": "lauṭī hai", "ham-m": "lauṭē haim̐", "ham-f": "lauṭī haim̐" }
+    - word: "hi-0949"
+      forms: { "main-m": "मैंने लाया है", "main-f": "मैंने लाया है", "tum-m": "तुमने लाया है", "tum-f": "तुमने लाया है", "vah-m": "उसने लाया है", "vah-f": "उसने लाया है", "ham-m": "हमने लाया है", "ham-f": "हमने लाया है" }
+      readings: { "main-m": "mainnē lāyā hai", "main-f": "mainnē lāyā hai", "tum-m": "tumnē lāyā hai", "tum-f": "tumnē lāyā hai", "vah-m": "usnē lāyā hai", "vah-f": "usnē lāyā hai", "ham-m": "hamnē lāyā hai", "ham-f": "hamnē lāyā hai" }
+    - word: "hi-0950"
+      forms: { "main-m": "मैंने रखा है", "main-f": "मैंने रखा है", "tum-m": "तुमने रखा है", "tum-f": "तुमने रखा है", "vah-m": "उसने रखा है", "vah-f": "उसने रखा है", "ham-m": "हमने रखा है", "ham-f": "हमने रखा है" }
+      readings: { "main-m": "mainnē rakhā hai", "main-f": "mainnē rakhā hai", "tum-m": "tumnē rakhā hai", "tum-f": "tumnē rakhā hai", "vah-m": "usnē rakhā hai", "vah-f": "usnē rakhā hai", "ham-m": "hamnē rakhā hai", "ham-f": "hamnē rakhā hai" }
+    - word: "hi-0951"
+      forms: { "main-m": "मैंने छोड़ा है", "main-f": "मैंने छोड़ा है", "tum-m": "तुमने छोड़ा है", "tum-f": "तुमने छोड़ा है", "vah-m": "उसने छोड़ा है", "vah-f": "उसने छोड़ा है", "ham-m": "हमने छोड़ा है", "ham-f": "हमने छोड़ा है" }
+      readings: { "main-m": "mainnē chōṛā hai", "main-f": "mainnē chōṛā hai", "tum-m": "tumnē chōṛā hai", "tum-f": "tumnē chōṛā hai", "vah-m": "usnē chōṛā hai", "vah-f": "usnē chōṛā hai", "ham-m": "hamnē chōṛā hai", "ham-f": "hamnē chōṛā hai" }
+    - word: "hi-0952"
+      forms: { "main-m": "मैंने सीखा है", "main-f": "मैंने सीखा है", "tum-m": "तुमने सीखा है", "tum-f": "तुमने सीखा है", "vah-m": "उसने सीखा है", "vah-f": "उसने सीखा है", "ham-m": "हमने सीखा है", "ham-f": "हमने सीखा है" }
+      readings: { "main-m": "mainnē sīkhā hai", "main-f": "mainnē sīkhā hai", "tum-m": "tumnē sīkhā hai", "tum-f": "tumnē sīkhā hai", "vah-m": "usnē sīkhā hai", "vah-f": "usnē sīkhā hai", "ham-m": "hamnē sīkhā hai", "ham-f": "hamnē sīkhā hai" }
+    - word: "hi-0953"
+      forms: { "main-m": "मैंने सोचा है", "main-f": "मैंने सोचा है", "tum-m": "तुमने सोचा है", "tum-f": "तुमने सोचा है", "vah-m": "उसने सोचा है", "vah-f": "उसने सोचा है", "ham-m": "हमने सोचा है", "ham-f": "हमने सोचा है" }
+      readings: { "main-m": "mainnē sōcā hai", "main-f": "mainnē sōcā hai", "tum-m": "tumnē sōcā hai", "tum-f": "tumnē sōcā hai", "vah-m": "usnē sōcā hai", "vah-f": "usnē sōcā hai", "ham-m": "hamnē sōcā hai", "ham-f": "hamnē sōcā hai" }
+    - word: "hi-0954"
+      forms: { "main-m": "मैंने सिखाया है", "main-f": "मैंने सिखाया है", "tum-m": "तुमने सिखाया है", "tum-f": "तुमने सिखाया है", "vah-m": "उसने सिखाया है", "vah-f": "उसने सिखाया है", "ham-m": "हमने सिखाया है", "ham-f": "हमने सिखाया है" }
+      readings: { "main-m": "mainnē sikhāyā hai", "main-f": "mainnē sikhāyā hai", "tum-m": "tumnē sikhāyā hai", "tum-f": "tumnē sikhāyā hai", "vah-m": "usnē sikhāyā hai", "vah-f": "usnē sikhāyā hai", "ham-m": "hamnē sikhāyā hai", "ham-f": "hamnē sikhāyā hai" }
+    - word: "hi-0955"
+      forms: { "main-m": "मैंने ढूँढा है", "main-f": "मैंने ढूँढा है", "tum-m": "तुमने ढूँढा है", "tum-f": "तुमने ढूँढा है", "vah-m": "उसने ढूँढा है", "vah-f": "उसने ढूँढा है", "ham-m": "हमने ढूँढा है", "ham-f": "हमने ढूँढा है" }
+      readings: { "main-m": "mainnē ḍhūm̐ḍhā hai", "main-f": "mainnē ḍhūm̐ḍhā hai", "tum-m": "tumnē ḍhūm̐ḍhā hai", "tum-f": "tumnē ḍhūm̐ḍhā hai", "vah-m": "usnē ḍhūm̐ḍhā hai", "vah-f": "usnē ḍhūm̐ḍhā hai", "ham-m": "hamnē ḍhūm̐ḍhā hai", "ham-f": "hamnē ḍhūm̐ḍhā hai" }
+    - word: "hi-0956"
+      forms: { "main-m": ["मैंने जीता है", "जीता हूँ"], "main-f": ["मैंने जीता है", "जीती हूँ"], "tum-m": ["तुमने जीता है", "जीते हो"], "tum-f": ["तुमने जीता है", "जीती हो"], "vah-m": ["उसने जीता है", "जीता है"], "vah-f": ["उसने जीता है", "जीती है"], "ham-m": ["हमने जीता है", "जीते हैं"], "ham-f": ["हमने जीता है", "जीती हैं"] }
+      readings: { "main-m": ["mainnē jītā hai", "jītā hūm̐"], "main-f": ["mainnē jītā hai", "jītī hūm̐"], "tum-m": ["tumnē jītā hai", "jītē hō"], "tum-f": ["tumnē jītā hai", "jītī hō"], "vah-m": ["usnē jītā hai", "jītā hai"], "vah-f": ["usnē jītā hai", "jītī hai"], "ham-m": ["hamnē jītā hai", "jītē haim̐"], "ham-f": ["hamnē jītā hai", "jītī haim̐"] }
+    - word: "hi-0957"
+      forms: { "main-m": ["मैंने हारा है", "हारा हूँ"], "main-f": ["मैंने हारा है", "हारी हूँ"], "tum-m": ["तुमने हारा है", "हारे हो"], "tum-f": ["तुमने हारा है", "हारी हो"], "vah-m": ["उसने हारा है", "हारा है"], "vah-f": ["उसने हारा है", "हारी है"], "ham-m": ["हमने हारा है", "हारे हैं"], "ham-f": ["हमने हारा है", "हारी हैं"] }
+      readings: { "main-m": ["mainnē hārā hai", "hārā hūm̐"], "main-f": ["mainnē hārā hai", "hārī hūm̐"], "tum-m": ["tumnē hārā hai", "hārē hō"], "tum-f": ["tumnē hārā hai", "hārī hō"], "vah-m": ["usnē hārā hai", "hārā hai"], "vah-f": ["usnē hārā hai", "hārī hai"], "ham-m": ["hamnē hārā hai", "hārē haim̐"], "ham-f": ["hamnē hārā hai", "hārī haim̐"] }
+    - word: "hi-0958"
+      forms: { "main-m": "मैंने कमाया है", "main-f": "मैंने कमाया है", "tum-m": "तुमने कमाया है", "tum-f": "तुमने कमाया है", "vah-m": "उसने कमाया है", "vah-f": "उसने कमाया है", "ham-m": "हमने कमाया है", "ham-f": "हमने कमाया है" }
+      readings: { "main-m": "mainnē kamāyā hai", "main-f": "mainnē kamāyā hai", "tum-m": "tumnē kamāyā hai", "tum-f": "tumnē kamāyā hai", "vah-m": "usnē kamāyā hai", "vah-f": "usnē kamāyā hai", "ham-m": "hamnē kamāyā hai", "ham-f": "hamnē kamāyā hai" }
+    - word: "hi-0959"
+      forms: { "main-m": "हँसा हूँ", "main-f": "हँसी हूँ", "tum-m": "हँसे हो", "tum-f": "हँसी हो", "vah-m": "हँसा है", "vah-f": "हँसी है", "ham-m": "हँसे हैं", "ham-f": "हँसी हैं" }
+      readings: { "main-m": "ham̐sā hūm̐", "main-f": "ham̐sī hūm̐", "tum-m": "ham̐sē hō", "tum-f": "ham̐sī hō", "vah-m": "ham̐sā hai", "vah-f": "ham̐sī hai", "ham-m": "ham̐sē haim̐", "ham-f": "ham̐sī haim̐" }
+    - word: "hi-0960"
+      forms: { "main-m": "रोया हूँ", "main-f": "रोई हूँ", "tum-m": "रोए हो", "tum-f": "रोई हो", "vah-m": "रोया है", "vah-f": "रोई है", "ham-m": "रोए हैं", "ham-f": "रोई हैं" }
+      readings: { "main-m": "rōyā hūm̐", "main-f": "rōī hūm̐", "tum-m": "rōē hō", "tum-f": "rōī hō", "vah-m": "rōyā hai", "vah-f": "rōī hai", "ham-m": "rōē haim̐", "ham-f": "rōī haim̐" }
+    - word: "hi-0961"
+      forms: { "main-m": "मैंने बुलाया है", "main-f": "मैंने बुलाया है", "tum-m": "तुमने बुलाया है", "tum-f": "तुमने बुलाया है", "vah-m": "उसने बुलाया है", "vah-f": "उसने बुलाया है", "ham-m": "हमने बुलाया है", "ham-f": "हमने बुलाया है" }
+      readings: { "main-m": "mainnē bulāyā hai", "main-f": "mainnē bulāyā hai", "tum-m": "tumnē bulāyā hai", "tum-f": "tumnē bulāyā hai", "vah-m": "usnē bulāyā hai", "vah-f": "usnē bulāyā hai", "ham-m": "hamnē bulāyā hai", "ham-f": "hamnē bulāyā hai" }
+    - word: "hi-1287"
+      forms: { "main-m": "गरजा हूँ", "main-f": "गरजी हूँ", "tum-m": "गरजे हो", "tum-f": "गरजी हो", "vah-m": "गरजा है", "vah-f": "गरजी है", "ham-m": "गरजे हैं", "ham-f": "गरजी हैं" }
+      readings: { "main-m": "garjā hūm̐", "main-f": "garjī hūm̐", "tum-m": "garjē hō", "tum-f": "garjī hō", "vah-m": "garjā hai", "vah-f": "garjī hai", "ham-m": "garjē haim̐", "ham-f": "garjī haim̐" }
+    - word: "hi-1292"
+      forms: { "main-m": "मैंने बरसा है", "main-f": "मैंने बरसा है", "tum-m": "तुमने बरसा है", "tum-f": "तुमने बरसा है", "vah-m": "उसने बरसा है", "vah-f": "उसने बरसा है", "ham-m": "हमने बरसा है", "ham-f": "हमने बरसा है" }
+      readings: { "main-m": "mainnē barsā hai", "main-f": "mainnē barsā hai", "tum-m": "tumnē barsā hai", "tum-f": "tumnē barsā hai", "vah-m": "usnē barsā hai", "vah-f": "usnē barsā hai", "ham-m": "hamnē barsā hai", "ham-f": "hamnē barsā hai" }
+    - word: "hi-1293"
+      forms: { "main-m": "कड़का हूँ", "main-f": "कड़की हूँ", "tum-m": "कड़के हो", "tum-f": "कड़की हो", "vah-m": "कड़का है", "vah-f": "कड़की है", "ham-m": "कड़के हैं", "ham-f": "कड़की हैं" }
+      readings: { "main-m": "kaṛkā hūm̐", "main-f": "kaṛkī hūm̐", "tum-m": "kaṛkē hō", "tum-f": "kaṛkī hō", "vah-m": "kaṛkā hai", "vah-f": "kaṛkī hai", "ham-m": "kaṛkē haim̐", "ham-f": "kaṛkī haim̐" }
+    - word: "hi-1294"
+      forms: { "main-m": "चमका हूँ", "main-f": "चमकी हूँ", "tum-m": "चमके हो", "tum-f": "चमकी हो", "vah-m": "चमका है", "vah-f": "चमकी है", "ham-m": "चमके हैं", "ham-f": "चमकी हैं" }
+      readings: { "main-m": "camkā hūm̐", "main-f": "camkī hūm̐", "tum-m": "camkē hō", "tum-f": "camkī hō", "vah-m": "camkā hai", "vah-f": "camkī hai", "ham-m": "camkē haim̐", "ham-f": "camkī haim̐" }
+    - word: "hi-1334"
+      forms: { "main-m": "मैंने मनाया है", "main-f": "मैंने मनाया है", "tum-m": "तुमने मनाया है", "tum-f": "तुमने मनाया है", "vah-m": "उसने मनाया है", "vah-f": "उसने मनाया है", "ham-m": "हमने मनाया है", "ham-f": "हमने मनाया है" }
+      readings: { "main-m": "mainnē manāyā hai", "main-f": "mainnē manāyā hai", "tum-m": "tumnē manāyā hai", "tum-f": "tumnē manāyā hai", "vah-m": "usnē manāyā hai", "vah-f": "usnē manāyā hai", "ham-m": "hamnē manāyā hai", "ham-f": "hamnē manāyā hai" }
+    - word: "hi-1335"
+      forms: { "main-m": "मैंने जलाया है", "main-f": "मैंने जलाया है", "tum-m": "तुमने जलाया है", "tum-f": "तुमने जलाया है", "vah-m": "उसने जलाया है", "vah-f": "उसने जलाया है", "ham-m": "हमने जलाया है", "ham-f": "हमने जलाया है" }
+      readings: { "main-m": "mainnē jalāyā hai", "main-f": "mainnē jalāyā hai", "tum-m": "tumnē jalāyā hai", "tum-f": "tumnē jalāyā hai", "vah-m": "usnē jalāyā hai", "vah-f": "usnē jalāyā hai", "ham-m": "hamnē jalāyā hai", "ham-f": "hamnē jalāyā hai" }
+    - word: "hi-1336"
+      forms: { "main-m": "मैंने बाँटा है", "main-f": "मैंने बाँटा है", "tum-m": "तुमने बाँटा है", "tum-f": "तुमने बाँटा है", "vah-m": "उसने बाँटा है", "vah-f": "उसने बाँटा है", "ham-m": "हमने बाँटा है", "ham-f": "हमने बाँटा है" }
+      readings: { "main-m": "mainnē bām̐ṭā hai", "main-f": "mainnē bām̐ṭā hai", "tum-m": "tumnē bām̐ṭā hai", "tum-f": "tumnē bām̐ṭā hai", "vah-m": "usnē bām̐ṭā hai", "vah-f": "usnē bām̐ṭā hai", "ham-m": "hamnē bām̐ṭā hai", "ham-f": "hamnē bām̐ṭā hai" }
+    - word: "hi-1337"
+      forms: { "main-m": "मैंने सजाया है", "main-f": "मैंने सजाया है", "tum-m": "तुमने सजाया है", "tum-f": "तुमने सजाया है", "vah-m": "उसने सजाया है", "vah-f": "उसने सजाया है", "ham-m": "हमने सजाया है", "ham-f": "हमने सजाया है" }
+      readings: { "main-m": "mainnē sajāyā hai", "main-f": "mainnē sajāyā hai", "tum-m": "tumnē sajāyā hai", "tum-f": "tumnē sajāyā hai", "vah-m": "usnē sajāyā hai", "vah-f": "usnē sajāyā hai", "ham-m": "hamnē sajāyā hai", "ham-f": "hamnē sajāyā hai" }
+    - word: "hi-1364"
+      forms: { "main-m": ["मैंने बदला है", "बदला हूँ"], "main-f": ["मैंने बदला है", "बदली हूँ"], "tum-m": ["तुमने बदला है", "बदले हो"], "tum-f": ["तुमने बदला है", "बदली हो"], "vah-m": ["उसने बदला है", "बदला है"], "vah-f": ["उसने बदला है", "बदली है"], "ham-m": ["हमने बदला है", "बदले हैं"], "ham-f": ["हमने बदला है", "बदली हैं"] }
+      readings: { "main-m": ["mainnē badlā hai", "badlā hūm̐"], "main-f": ["mainnē badlā hai", "badlī hūm̐"], "tum-m": ["tumnē badlā hai", "badlē hō"], "tum-f": ["tumnē badlā hai", "badlī hō"], "vah-m": ["usnē badlā hai", "badlā hai"], "vah-f": ["usnē badlā hai", "badlī hai"], "ham-m": ["hamnē badlā hai", "badlē haim̐"], "ham-f": ["hamnē badlā hai", "badlī haim̐"] }
+    - word: "hi-1385"
+      forms: { "main-m": "मैंने तौला है", "main-f": "मैंने तौला है", "tum-m": "तुमने तौला है", "tum-f": "तुमने तौला है", "vah-m": "उसने तौला है", "vah-f": "उसने तौला है", "ham-m": "हमने तौला है", "ham-f": "हमने तौला है" }
+      readings: { "main-m": "mainnē taulā hai", "main-f": "mainnē taulā hai", "tum-m": "tumnē taulā hai", "tum-f": "tumnē taulā hai", "vah-m": "usnē taulā hai", "vah-f": "usnē taulā hai", "ham-m": "hamnē taulā hai", "ham-f": "hamnē taulā hai" }
+    - word: "hi-1460"
+      forms: { "main-m": "खाँसा हूँ", "main-f": "खाँसी हूँ", "tum-m": "खाँसे हो", "tum-f": "खाँसी हो", "vah-m": "खाँसा है", "vah-f": "खाँसी है", "ham-m": "खाँसे हैं", "ham-f": "खाँसी हैं" }
+      readings: { "main-m": "khām̐sā hūm̐", "main-f": "khām̐sī hūm̐", "tum-m": "khām̐sē hō", "tum-f": "khām̐sī hō", "vah-m": "khām̐sā hai", "vah-f": "khām̐sī hai", "ham-m": "khām̐sē haim̐", "ham-f": "khām̐sī haim̐" }
+    - word: "hi-1461"
+      forms: { "main-m": ["मैंने छींका है", "छींका हूँ"], "main-f": ["मैंने छींका है", "छींकी हूँ"], "tum-m": ["तुमने छींका है", "छींके हो"], "tum-f": ["तुमने छींका है", "छींकी हो"], "vah-m": ["उसने छींका है", "छींका है"], "vah-f": ["उसने छींका है", "छींकी है"], "ham-m": ["हमने छींका है", "छींके हैं"], "ham-f": ["हमने छींका है", "छींकी हैं"] }
+      readings: { "main-m": ["mainnē chīṅkā hai", "chīṅkā hūm̐"], "main-f": ["mainnē chīṅkā hai", "chīṅkī hūm̐"], "tum-m": ["tumnē chīṅkā hai", "chīṅkē hō"], "tum-f": ["tumnē chīṅkā hai", "chīṅkī hō"], "vah-m": ["usnē chīṅkā hai", "chīṅkā hai"], "vah-f": ["usnē chīṅkā hai", "chīṅkī hai"], "ham-m": ["hamnē chīṅkā hai", "chīṅkē haim̐"], "ham-f": ["hamnē chīṅkā hai", "chīṅkī haim̐"] }
+    - word: "hi-1462"
+      forms: { "main-m": "लेटा हूँ", "main-f": "लेटी हूँ", "tum-m": "लेटे हो", "tum-f": "लेटी हो", "vah-m": "लेटा है", "vah-f": "लेटी है", "ham-m": "लेटे हैं", "ham-f": "लेटी हैं" }
+      readings: { "main-m": "lēṭā hūm̐", "main-f": "lēṭī hūm̐", "tum-m": "lēṭē hō", "tum-f": "lēṭī hō", "vah-m": "lēṭā hai", "vah-f": "lēṭī hai", "ham-m": "lēṭē haim̐", "ham-f": "lēṭī haim̐" }
+    - word: "hi-1463"
+      forms: { "main-m": "दुखा हूँ", "main-f": "दुखी हूँ", "tum-m": "दुखे हो", "tum-f": "दुखी हो", "vah-m": "दुखा है", "vah-f": "दुखी है", "ham-m": "दुखे हैं", "ham-f": "दुखी हैं" }
+      readings: { "main-m": "dukhā hūm̐", "main-f": "dukhī hūm̐", "tum-m": "dukhē hō", "tum-f": "dukhī hō", "vah-m": "dukhā hai", "vah-f": "dukhī hai", "ham-m": "dukhē haim̐", "ham-f": "dukhī haim̐" }
+    - word: "hi-1496"
+      forms: { "main-m": "मैंने तला है", "main-f": "मैंने तला है", "tum-m": "तुमने तला है", "tum-f": "तुमने तला है", "vah-m": "उसने तला है", "vah-f": "उसने तला है", "ham-m": "हमने तला है", "ham-f": "हमने तला है" }
+      readings: { "main-m": "mainnē talā hai", "main-f": "mainnē talā hai", "tum-m": "tumnē talā hai", "tum-f": "tumnē talā hai", "vah-m": "usnē talā hai", "vah-f": "usnē talā hai", "ham-m": "hamnē talā hai", "ham-f": "hamnē talā hai" }
+    - word: "hi-1497"
+      forms: { "main-m": "मैंने भूना है", "main-f": "मैंने भूना है", "tum-m": "तुमने भूना है", "tum-f": "तुमने भूना है", "vah-m": "उसने भूना है", "vah-f": "उसने भूना है", "ham-m": "हमने भूना है", "ham-f": "हमने भूना है" }
+      readings: { "main-m": "mainnē bhūnā hai", "main-f": "mainnē bhūnā hai", "tum-m": "tumnē bhūnā hai", "tum-f": "tumnē bhūnā hai", "vah-m": "usnē bhūnā hai", "vah-f": "usnē bhūnā hai", "ham-m": "hamnē bhūnā hai", "ham-f": "hamnē bhūnā hai" }
+    - word: "hi-1498"
+      forms: { "main-m": "मैंने छीला है", "main-f": "मैंने छीला है", "tum-m": "तुमने छीला है", "tum-f": "तुमने छीला है", "vah-m": "उसने छीला है", "vah-f": "उसने छीला है", "ham-m": "हमने छीला है", "ham-f": "हमने छीला है" }
+      readings: { "main-m": "mainnē chīlā hai", "main-f": "mainnē chīlā hai", "tum-m": "tumnē chīlā hai", "tum-f": "tumnē chīlā hai", "vah-m": "usnē chīlā hai", "vah-f": "usnē chīlā hai", "ham-m": "hamnē chīlā hai", "ham-f": "hamnē chīlā hai" }
+    - word: "hi-1499"
+      forms: { "main-m": "मैंने पीसा है", "main-f": "मैंने पीसा है", "tum-m": "तुमने पीसा है", "tum-f": "तुमने पीसा है", "vah-m": "उसने पीसा है", "vah-f": "उसने पीसा है", "ham-m": "हमने पीसा है", "ham-f": "हमने पीसा है" }
+      readings: { "main-m": "mainnē pīsā hai", "main-f": "mainnē pīsā hai", "tum-m": "tumnē pīsā hai", "tum-f": "tumnē pīsā hai", "vah-m": "usnē pīsā hai", "vah-f": "usnē pīsā hai", "ham-m": "hamnē pīsā hai", "ham-f": "hamnē pīsā hai" }
+    - word: "hi-1500"
+      forms: { "main-m": "मैंने गूँधा है", "main-f": "मैंने गूँधा है", "tum-m": "तुमने गूँधा है", "tum-f": "तुमने गूँधा है", "vah-m": "उसने गूँधा है", "vah-f": "उसने गूँधा है", "ham-m": "हमने गूँधा है", "ham-f": "हमने गूँधा है" }
+      readings: { "main-m": "mainnē gūm̐dhā hai", "main-f": "mainnē gūm̐dhā hai", "tum-m": "tumnē gūm̐dhā hai", "tum-f": "tumnē gūm̐dhā hai", "vah-m": "usnē gūm̐dhā hai", "vah-f": "usnē gūm̐dhā hai", "ham-m": "hamnē gūm̐dhā hai", "ham-f": "hamnē gūm̐dhā hai" }
+    - word: "hi-1501"
+      forms: { "main-m": "मैंने बेला है", "main-f": "मैंने बेला है", "tum-m": "तुमने बेला है", "tum-f": "तुमने बेला है", "vah-m": "उसने बेला है", "vah-f": "उसने बेला है", "ham-m": "हमने बेला है", "ham-f": "हमने बेला है" }
+      readings: { "main-m": "mainnē bēlā hai", "main-f": "mainnē bēlā hai", "tum-m": "tumnē bēlā hai", "tum-f": "tumnē bēlā hai", "vah-m": "usnē bēlā hai", "vah-f": "usnē bēlā hai", "ham-m": "hamnē bēlā hai", "ham-f": "hamnē bēlā hai" }
+    - word: "hi-1502"
+      forms: { "main-m": "मैंने बनाया है", "main-f": "मैंने बनाया है", "tum-m": "तुमने बनाया है", "tum-f": "तुमने बनाया है", "vah-m": "उसने बनाया है", "vah-f": "उसने बनाया है", "ham-m": "हमने बनाया है", "ham-f": "हमने बनाया है" }
+      readings: { "main-m": "mainnē banāyā hai", "main-f": "mainnē banāyā hai", "tum-m": "tumnē banāyā hai", "tum-f": "tumnē banāyā hai", "vah-m": "usnē banāyā hai", "vah-f": "usnē banāyā hai", "ham-m": "hamnē banāyā hai", "ham-f": "hamnē banāyā hai" }
+    - word: "hi-1503"
+      forms: { "main-m": "मैंने सेंका है", "main-f": "मैंने सेंका है", "tum-m": "तुमने सेंका है", "tum-f": "तुमने सेंका है", "vah-m": "उसने सेंका है", "vah-f": "उसने सेंका है", "ham-m": "हमने सेंका है", "ham-f": "हमने सेंका है" }
+      readings: { "main-m": "mainnē sēṅkā hai", "main-f": "mainnē sēṅkā hai", "tum-m": "tumnē sēṅkā hai", "tum-f": "tumnē sēṅkā hai", "vah-m": "usnē sēṅkā hai", "vah-f": "usnē sēṅkā hai", "ham-m": "hamnē sēṅkā hai", "ham-f": "hamnē sēṅkā hai" }
+    - word: "hi-1504"
+      forms: { "main-m": "मैंने मिलाया है", "main-f": "मैंने मिलाया है", "tum-m": "तुमने मिलाया है", "tum-f": "तुमने मिलाया है", "vah-m": "उसने मिलाया है", "vah-f": "उसने मिलाया है", "ham-m": "हमने मिलाया है", "ham-f": "हमने मिलाया है" }
+      readings: { "main-m": "mainnē milāyā hai", "main-f": "mainnē milāyā hai", "tum-m": "tumnē milāyā hai", "tum-f": "tumnē milāyā hai", "vah-m": "usnē milāyā hai", "vah-f": "usnē milāyā hai", "ham-m": "hamnē milāyā hai", "ham-f": "hamnē milāyā hai" }
+    - word: "hi-1601"
+      forms: { "main-m": "मैंने पढ़ाया है", "main-f": "मैंने पढ़ाया है", "tum-m": "तुमने पढ़ाया है", "tum-f": "तुमने पढ़ाया है", "vah-m": "उसने पढ़ाया है", "vah-f": "उसने पढ़ाया है", "ham-m": "हमने पढ़ाया है", "ham-f": "हमने पढ़ाया है" }
+      readings: { "main-m": "mainnē paṛhāyā hai", "main-f": "mainnē paṛhāyā hai", "tum-m": "tumnē paṛhāyā hai", "tum-f": "tumnē paṛhāyā hai", "vah-m": "usnē paṛhāyā hai", "vah-f": "usnē paṛhāyā hai", "ham-m": "hamnē paṛhāyā hai", "ham-f": "hamnē paṛhāyā hai" }
+    - word: "hi-1639"
+      forms: { "main-m": "मैंने गाया है", "main-f": "मैंने गाया है", "tum-m": "तुमने गाया है", "tum-f": "तुमने गाया है", "vah-m": "उसने गाया है", "vah-f": "उसने गाया है", "ham-m": "हमने गाया है", "ham-f": "हमने गाया है" }
+      readings: { "main-m": "mainnē gāyā hai", "main-f": "mainnē gāyā hai", "tum-m": "tumnē gāyā hai", "tum-f": "tumnē gāyā hai", "vah-m": "usnē gāyā hai", "vah-f": "usnē gāyā hai", "ham-m": "hamnē gāyā hai", "ham-f": "hamnē gāyā hai" }
+    - word: "hi-1642"
+      forms: { "main-m": "नाचा हूँ", "main-f": "नाची हूँ", "tum-m": "नाचे हो", "tum-f": "नाची हो", "vah-m": "नाचा है", "vah-f": "नाची है", "ham-m": "नाचे हैं", "ham-f": "नाची हैं" }
+      readings: { "main-m": "nācā hūm̐", "main-f": "nācī hūm̐", "tum-m": "nācē hō", "tum-f": "nācī hō", "vah-m": "nācā hai", "vah-f": "nācī hai", "ham-m": "nācē haim̐", "ham-f": "nācī haim̐" }
+    - word: "hi-1644"
+      forms: { "main-m": "तैरा हूँ", "main-f": "तैरी हूँ", "tum-m": "तैरे हो", "tum-f": "तैरी हो", "vah-m": "तैरा है", "vah-f": "तैरी है", "ham-m": "तैरे हैं", "ham-f": "तैरी हैं" }
+      readings: { "main-m": "tairā hūm̐", "main-f": "tairī hūm̐", "tum-m": "tairē hō", "tum-f": "tairī hō", "vah-m": "tairā hai", "vah-f": "tairī hai", "ham-m": "tairē haim̐", "ham-f": "tairī haim̐" }
+    - word: "hi-1661"
+      forms: { "main-m": "घूमा हूँ", "main-f": "घूमी हूँ", "tum-m": "घूमे हो", "tum-f": "घूमी हो", "vah-m": "घूमा है", "vah-f": "घूमी है", "ham-m": "घूमे हैं", "ham-f": "घूमी हैं" }
+      readings: { "main-m": "ghūmā hūm̐", "main-f": "ghūmī hūm̐", "tum-m": "ghūmē hō", "tum-f": "ghūmī hō", "vah-m": "ghūmā hai", "vah-f": "ghūmī hai", "ham-m": "ghūmē haim̐", "ham-f": "ghūmī haim̐" }
+    - word: "hi-1662"
+      forms: { "main-m": "टहला हूँ", "main-f": "टहली हूँ", "tum-m": "टहले हो", "tum-f": "टहली हो", "vah-m": "टहला है", "vah-f": "टहली है", "ham-m": "टहले हैं", "ham-f": "टहली हैं" }
+      readings: { "main-m": "ṭahlā hūm̐", "main-f": "ṭahlī hūm̐", "tum-m": "ṭahlē hō", "tum-f": "ṭahlī hō", "vah-m": "ṭahlā hai", "vah-f": "ṭahlī hai", "ham-m": "ṭahlē haim̐", "ham-f": "ṭahlī haim̐" }
+    - word: "hi-1725"
+      forms: { "main-m": "मैंने झाड़ा है", "main-f": "मैंने झाड़ा है", "tum-m": "तुमने झाड़ा है", "tum-f": "तुमने झाड़ा है", "vah-m": "उसने झाड़ा है", "vah-f": "उसने झाड़ा है", "ham-m": "हमने झाड़ा है", "ham-f": "हमने झाड़ा है" }
+      readings: { "main-m": "mainnē jhāṛā hai", "main-f": "mainnē jhāṛā hai", "tum-m": "tumnē jhāṛā hai", "tum-f": "tumnē jhāṛā hai", "vah-m": "usnē jhāṛā hai", "vah-f": "usnē jhāṛā hai", "ham-m": "hamnē jhāṛā hai", "ham-f": "hamnē jhāṛā hai" }
+    - word: "hi-1726"
+      forms: { "main-m": "मैंने पोंछा है", "main-f": "मैंने पोंछा है", "tum-m": "तुमने पोंछा है", "tum-f": "तुमने पोंछा है", "vah-m": "उसने पोंछा है", "vah-f": "उसने पोंछा है", "ham-m": "हमने पोंछा है", "ham-f": "हमने पोंछा है" }
+      readings: { "main-m": "mainnē pōñchā hai", "main-f": "mainnē pōñchā hai", "tum-m": "tumnē pōñchā hai", "tum-f": "tumnē pōñchā hai", "vah-m": "usnē pōñchā hai", "vah-f": "usnē pōñchā hai", "ham-m": "hamnē pōñchā hai", "ham-f": "hamnē pōñchā hai" }
+    - word: "hi-1727"
+      forms: { "main-m": "मैंने सुखाया है", "main-f": "मैंने सुखाया है", "tum-m": "तुमने सुखाया है", "tum-f": "तुमने सुखाया है", "vah-m": "उसने सुखाया है", "vah-f": "उसने सुखाया है", "ham-m": "हमने सुखाया है", "ham-f": "हमने सुखाया है" }
+      readings: { "main-m": "mainnē sukhāyā hai", "main-f": "mainnē sukhāyā hai", "tum-m": "tumnē sukhāyā hai", "tum-f": "tumnē sukhāyā hai", "vah-m": "usnē sukhāyā hai", "vah-f": "usnē sukhāyā hai", "ham-m": "hamnē sukhāyā hai", "ham-f": "hamnē sukhāyā hai" }
+    - word: "hi-1728"
+      forms: { "main-m": "सूखा हूँ", "main-f": "सूखी हूँ", "tum-m": "सूखे हो", "tum-f": "सूखी हो", "vah-m": "सूखा है", "vah-f": "सूखी है", "ham-m": "सूखे हैं", "ham-f": "सूखी हैं" }
+      readings: { "main-m": "sūkhā hūm̐", "main-f": "sūkhī hūm̐", "tum-m": "sūkhē hō", "tum-f": "sūkhī hō", "vah-m": "sūkhā hai", "vah-f": "sūkhī hai", "ham-m": "sūkhē haim̐", "ham-f": "sūkhī haim̐" }
+    - word: "hi-1729"
+      forms: { "main-m": "मैंने निकाला है", "main-f": "मैंने निकाला है", "tum-m": "तुमने निकाला है", "tum-f": "तुमने निकाला है", "vah-m": "उसने निकाला है", "vah-f": "उसने निकाला है", "ham-m": "हमने निकाला है", "ham-f": "हमने निकाला है" }
+      readings: { "main-m": "mainnē nikālā hai", "main-f": "mainnē nikālā hai", "tum-m": "tumnē nikālā hai", "tum-f": "tumnē nikālā hai", "vah-m": "usnē nikālā hai", "vah-f": "usnē nikālā hai", "ham-m": "hamnē nikālā hai", "ham-f": "hamnē nikālā hai" }
+    - word: "hi-1730"
+      forms: { "main-m": ["मैंने फेंका है", "फेंका हूँ"], "main-f": ["मैंने फेंका है", "फेंकी हूँ"], "tum-m": ["तुमने फेंका है", "फेंके हो"], "tum-f": ["तुमने फेंका है", "फेंकी हो"], "vah-m": ["उसने फेंका है", "फेंका है"], "vah-f": ["उसने फेंका है", "फेंकी है"], "ham-m": ["हमने फेंका है", "फेंके हैं"], "ham-f": ["हमने फेंका है", "फेंकी हैं"] }
+      readings: { "main-m": ["mainnē phēṅkā hai", "phēṅkā hūm̐"], "main-f": ["mainnē phēṅkā hai", "phēṅkī hūm̐"], "tum-m": ["tumnē phēṅkā hai", "phēṅkē hō"], "tum-f": ["tumnē phēṅkā hai", "phēṅkī hō"], "vah-m": ["usnē phēṅkā hai", "phēṅkā hai"], "vah-f": ["usnē phēṅkā hai", "phēṅkī hai"], "ham-m": ["hamnē phēṅkā hai", "phēṅkē haim̐"], "ham-f": ["hamnē phēṅkā hai", "phēṅkī haim̐"] }
+    - word: "hi-1731"
+      forms: { "main-m": "मैंने उठाया है", "main-f": "मैंने उठाया है", "tum-m": "तुमने उठाया है", "tum-f": "तुमने उठाया है", "vah-m": "उसने उठाया है", "vah-f": "उसने उठाया है", "ham-m": "हमने उठाया है", "ham-f": "हमने उठाया है" }
+      readings: { "main-m": "mainnē uṭhāyā hai", "main-f": "mainnē uṭhāyā hai", "tum-m": "tumnē uṭhāyā hai", "tum-f": "tumnē uṭhāyā hai", "vah-m": "usnē uṭhāyā hai", "vah-f": "usnē uṭhāyā hai", "ham-m": "hamnē uṭhāyā hai", "ham-f": "hamnē uṭhāyā hai" }
+    - word: "hi-1732"
+      forms: { "main-m": ["मैंने भरा है", "भरा हूँ"], "main-f": ["मैंने भरा है", "भरी हूँ"], "tum-m": ["तुमने भरा है", "भरे हो"], "tum-f": ["तुमने भरा है", "भरी हो"], "vah-m": ["उसने भरा है", "भरा है"], "vah-f": ["उसने भरा है", "भरी है"], "ham-m": ["हमने भरा है", "भरे हैं"], "ham-f": ["हमने भरा है", "भरी हैं"] }
+      readings: { "main-m": ["mainnē bharā hai", "bharā hūm̐"], "main-f": ["mainnē bharā hai", "bharī hūm̐"], "tum-m": ["tumnē bharā hai", "bharē hō"], "tum-f": ["tumnē bharā hai", "bharī hō"], "vah-m": ["usnē bharā hai", "bharā hai"], "vah-f": ["usnē bharā hai", "bharī hai"], "ham-m": ["hamnē bharā hai", "bharē haim̐"], "ham-f": ["hamnē bharā hai", "bharī haim̐"] }
+    - word: "hi-1733"
+      forms: { "main-m": "मैंने फैलाया है", "main-f": "मैंने फैलाया है", "tum-m": "तुमने फैलाया है", "tum-f": "तुमने फैलाया है", "vah-m": "उसने फैलाया है", "vah-f": "उसने फैलाया है", "ham-m": "हमने फैलाया है", "ham-f": "हमने फैलाया है" }
+      readings: { "main-m": "mainnē phailāyā hai", "main-f": "mainnē phailāyā hai", "tum-m": "tumnē phailāyā hai", "tum-f": "tumnē phailāyā hai", "vah-m": "usnē phailāyā hai", "vah-f": "usnē phailāyā hai", "ham-m": "hamnē phailāyā hai", "ham-f": "hamnē phailāyā hai" }
+    - word: "hi-1734"
+      forms: { "main-m": "मैंने समेटा है", "main-f": "मैंने समेटा है", "tum-m": "तुमने समेटा है", "tum-f": "तुमने समेटा है", "vah-m": "उसने समेटा है", "vah-f": "उसने समेटा है", "ham-m": "हमने समेटा है", "ham-f": "हमने समेटा है" }
+      readings: { "main-m": "mainnē samēṭā hai", "main-f": "mainnē samēṭā hai", "tum-m": "tumnē samēṭā hai", "tum-f": "tumnē samēṭā hai", "vah-m": "usnē samēṭā hai", "vah-f": "usnē samēṭā hai", "ham-m": "hamnē samēṭā hai", "ham-f": "hamnē samēṭā hai" }
+    - word: "hi-1735"
+      forms: { "main-m": "भीगा हूँ", "main-f": "भीगी हूँ", "tum-m": "भीगे हो", "tum-f": "भीगी हो", "vah-m": "भीगा है", "vah-f": "भीगी है", "ham-m": "भीगे हैं", "ham-f": "भीगी हैं" }
+      readings: { "main-m": "bhīgā hūm̐", "main-f": "bhīgī hūm̐", "tum-m": "bhīgē hō", "tum-f": "bhīgī hō", "vah-m": "bhīgā hai", "vah-f": "bhīgī hai", "ham-m": "bhīgē haim̐", "ham-f": "bhīgī haim̐" }
+    - word: "hi-1736"
+      forms: { "main-m": "मैंने उतारा है", "main-f": "मैंने उतारा है", "tum-m": "तुमने उतारा है", "tum-f": "तुमने उतारा है", "vah-m": "उसने उतारा है", "vah-f": "उसने उतारा है", "ham-m": "हमने उतारा है", "ham-f": "हमने उतारा है" }
+      readings: { "main-m": "mainnē utārā hai", "main-f": "mainnē utārā hai", "tum-m": "tumnē utārā hai", "tum-f": "tumnē utārā hai", "vah-m": "usnē utārā hai", "vah-f": "usnē utārā hai", "ham-m": "hamnē utārā hai", "ham-f": "hamnē utārā hai" }
+    - word: "hi-1737"
+      forms: { "main-m": "मैंने चढ़ाया है", "main-f": "मैंने चढ़ाया है", "tum-m": "तुमने चढ़ाया है", "tum-f": "तुमने चढ़ाया है", "vah-m": "उसने चढ़ाया है", "vah-f": "उसने चढ़ाया है", "ham-m": "हमने चढ़ाया है", "ham-f": "हमने चढ़ाया है" }
+      readings: { "main-m": "mainnē caṛhāyā hai", "main-f": "mainnē caṛhāyā hai", "tum-m": "tumnē caṛhāyā hai", "tum-f": "tumnē caṛhāyā hai", "vah-m": "usnē caṛhāyā hai", "vah-f": "usnē caṛhāyā hai", "ham-m": "hamnē caṛhāyā hai", "ham-f": "hamnē caṛhāyā hai" }
+    - word: "hi-1740"
+      forms: { "main-m": "टूटा हूँ", "main-f": "टूटी हूँ", "tum-m": "टूटे हो", "tum-f": "टूटी हो", "vah-m": "टूटा है", "vah-f": "टूटी है", "ham-m": "टूटे हैं", "ham-f": "टूटी हैं" }
+      readings: { "main-m": "ṭūṭā hūm̐", "main-f": "ṭūṭī hūm̐", "tum-m": "ṭūṭē hō", "tum-f": "ṭūṭī hō", "vah-m": "ṭūṭā hai", "vah-f": "ṭūṭī hai", "ham-m": "ṭūṭē haim̐", "ham-f": "ṭūṭī haim̐" }
+    - word: "hi-1779"
+      forms: { "main-m": "दिखा हूँ", "main-f": "दिखी हूँ", "tum-m": "दिखे हो", "tum-f": "दिखी हो", "vah-m": "दिखा है", "vah-f": "दिखी है", "ham-m": "दिखे हैं", "ham-f": "दिखी हैं" }
+      readings: { "main-m": "dikhā hūm̐", "main-f": "dikhī hūm̐", "tum-m": "dikhē hō", "tum-f": "dikhī hō", "vah-m": "dikhā hai", "vah-f": "dikhī hai", "ham-m": "dikhē haim̐", "ham-f": "dikhī haim̐" }
+    - word: "hi-1780"
+      forms: { "main-m": "लगा हूँ", "main-f": "लगी हूँ", "tum-m": "लगे हो", "tum-f": "लगी हो", "vah-m": "लगा है", "vah-f": "लगी है", "ham-m": "लगे हैं", "ham-f": "लगी हैं" }
+      readings: { "main-m": "lagā hūm̐", "main-f": "lagī hūm̐", "tum-m": "lagē hō", "tum-f": "lagī hō", "vah-m": "lagā hai", "vah-f": "lagī hai", "ham-m": "lagē haim̐", "ham-f": "lagī haim̐" }
+    - word: "hi-1781"
+      forms: { "main-m": ["मैंने सजा है", "सजा हूँ"], "main-f": ["मैंने सजा है", "सजी हूँ"], "tum-m": ["तुमने सजा है", "सजे हो"], "tum-f": ["तुमने सजा है", "सजी हो"], "vah-m": ["उसने सजा है", "सजा है"], "vah-f": ["उसने सजा है", "सजी है"], "ham-m": ["हमने सजा है", "सजे हैं"], "ham-f": ["हमने सजा है", "सजी हैं"] }
+      readings: { "main-m": ["mainnē sajā hai", "sajā hūm̐"], "main-f": ["mainnē sajā hai", "sajī hūm̐"], "tum-m": ["tumnē sajā hai", "sajē hō"], "tum-f": ["tumnē sajā hai", "sajī hō"], "vah-m": ["usnē sajā hai", "sajā hai"], "vah-f": ["usnē sajā hai", "sajī hai"], "ham-m": ["hamnē sajā hai", "sajē haim̐"], "ham-f": ["hamnē sajā hai", "sajī haim̐"] }
+    - word: "hi-1782"
+      forms: { "main-m": "मैंने पहना है", "main-f": "मैंने पहना है", "tum-m": "तुमने पहना है", "tum-f": "तुमने पहना है", "vah-m": "उसने पहना है", "vah-f": "उसने पहना है", "ham-m": "हमने पहना है", "ham-f": "हमने पहना है" }
+      readings: { "main-m": "mainnē pahnā hai", "main-f": "mainnē pahnā hai", "tum-m": "tumnē pahnā hai", "tum-f": "tumnē pahnā hai", "vah-m": "usnē pahnā hai", "vah-f": "usnē pahnā hai", "ham-m": "hamnē pahnā hai", "ham-f": "hamnē pahnā hai" }
+    - word: "hi-1783"
+      forms: { "main-m": "मुस्कुराया हूँ", "main-f": "मुस्कुराई हूँ", "tum-m": "मुस्कुराए हो", "tum-f": "मुस्कुराई हो", "vah-m": "मुस्कुराया है", "vah-f": "मुस्कुराई है", "ham-m": "मुस्कुराए हैं", "ham-f": "मुस्कुराई हैं" }
+      readings: { "main-m": "muskurāyā hūm̐", "main-f": "muskurāī hūm̐", "tum-m": "muskurāē hō", "tum-f": "muskurāī hō", "vah-m": "muskurāyā hai", "vah-f": "muskurāī hai", "ham-m": "muskurāē haim̐", "ham-f": "muskurāī haim̐" }
+    - word: "hi-1785"
+      forms: { "main-m": "निखरा हूँ", "main-f": "निखरी हूँ", "tum-m": "निखरे हो", "tum-f": "निखरी हो", "vah-m": "निखरा है", "vah-f": "निखरी है", "ham-m": "निखरे हैं", "ham-f": "निखरी हैं" }
+      readings: { "main-m": "nikhrā hūm̐", "main-f": "nikhrī hūm̐", "tum-m": "nikhrē hō", "tum-f": "nikhrī hō", "vah-m": "nikhrā hai", "vah-f": "nikhrī hai", "ham-m": "nikhrē haim̐", "ham-f": "nikhrī haim̐" }
+    - word: "hi-1795"
+      forms: { "main-m": "मैंने ओढ़ा है", "main-f": "मैंने ओढ़ा है", "tum-m": "तुमने ओढ़ा है", "tum-f": "तुमने ओढ़ा है", "vah-m": "उसने ओढ़ा है", "vah-f": "उसने ओढ़ा है", "ham-m": "हमने ओढ़ा है", "ham-f": "हमने ओढ़ा है" }
+      readings: { "main-m": "mainnē ōṛhā hai", "main-f": "mainnē ōṛhā hai", "tum-m": "tumnē ōṛhā hai", "tum-f": "tumnē ōṛhā hai", "vah-m": "usnē ōṛhā hai", "vah-f": "usnē ōṛhā hai", "ham-m": "hamnē ōṛhā hai", "ham-f": "hamnē ōṛhā hai" }
+    - word: "hi-1796"
+      forms: { "main-m": "मैंने बिछाया है", "main-f": "मैंने बिछाया है", "tum-m": "तुमने बिछाया है", "tum-f": "तुमने बिछाया है", "vah-m": "उसने बिछाया है", "vah-f": "उसने बिछाया है", "ham-m": "हमने बिछाया है", "ham-f": "हमने बिछाया है" }
+      readings: { "main-m": "mainnē bichāyā hai", "main-f": "mainnē bichāyā hai", "tum-m": "tumnē bichāyā hai", "tum-f": "tumnē bichāyā hai", "vah-m": "usnē bichāyā hai", "vah-f": "usnē bichāyā hai", "ham-m": "hamnē bichāyā hai", "ham-f": "hamnē bichāyā hai" }
+    - word: "hi-1797"
+      forms: { "main-m": "मैंने छुआ है", "main-f": "मैंने छुआ है", "tum-m": "तुमने छुआ है", "tum-f": "तुमने छुआ है", "vah-m": "उसने छुआ है", "vah-f": "उसने छुआ है", "ham-m": "हमने छुआ है", "ham-f": "हमने छुआ है" }
+      readings: { "main-m": "mainnē chuā hai", "main-f": "mainnē chuā hai", "tum-m": "tumnē chuā hai", "tum-f": "tumnē chuā hai", "vah-m": "usnē chuā hai", "vah-f": "usnē chuā hai", "ham-m": "hamnē chuā hai", "ham-f": "hamnē chuā hai" }
+    - word: "hi-1798"
+      forms: { "main-m": "मैंने पकड़ा है", "main-f": "मैंने पकड़ा है", "tum-m": "तुमने पकड़ा है", "tum-f": "तुमने पकड़ा है", "vah-m": "उसने पकड़ा है", "vah-f": "उसने पकड़ा है", "ham-m": "हमने पकड़ा है", "ham-f": "हमने पकड़ा है" }
+      readings: { "main-m": "mainnē pakṛā hai", "main-f": "mainnē pakṛā hai", "tum-m": "tumnē pakṛā hai", "tum-f": "tumnē pakṛā hai", "vah-m": "usnē pakṛā hai", "vah-f": "usnē pakṛā hai", "ham-m": "hamnē pakṛā hai", "ham-f": "hamnē pakṛā hai" }
+    - word: "hi-1799"
+      forms: { "main-m": "मैंने खींचा है", "main-f": "मैंने खींचा है", "tum-m": "तुमने खींचा है", "tum-f": "तुमने खींचा है", "vah-m": "उसने खींचा है", "vah-f": "उसने खींचा है", "ham-m": "हमने खींचा है", "ham-f": "हमने खींचा है" }
+      readings: { "main-m": "mainnē khīñcā hai", "main-f": "mainnē khīñcā hai", "tum-m": "tumnē khīñcā hai", "tum-f": "tumnē khīñcā hai", "vah-m": "usnē khīñcā hai", "vah-f": "usnē khīñcā hai", "ham-m": "hamnē khīñcā hai", "ham-f": "hamnē khīñcā hai" }
+    - word: "hi-1800"
+      forms: { "main-m": "मैंने धकेला है", "main-f": "मैंने धकेला है", "tum-m": "तुमने धकेला है", "tum-f": "तुमने धकेला है", "vah-m": "उसने धकेला है", "vah-f": "उसने धकेला है", "ham-m": "हमने धकेला है", "ham-f": "हमने धकेला है" }
+      readings: { "main-m": "mainnē dhakēlā hai", "main-f": "mainnē dhakēlā hai", "tum-m": "tumnē dhakēlā hai", "tum-f": "tumnē dhakēlā hai", "vah-m": "usnē dhakēlā hai", "vah-f": "usnē dhakēlā hai", "ham-m": "hamnē dhakēlā hai", "ham-f": "hamnē dhakēlā hai" }
+    - word: "hi-1801"
+      forms: { "main-m": "फँसा हूँ", "main-f": "फँसी हूँ", "tum-m": "फँसे हो", "tum-f": "फँसी हो", "vah-m": "फँसा है", "vah-f": "फँसी है", "ham-m": "फँसे हैं", "ham-f": "फँसी हैं" }
+      readings: { "main-m": "pham̐sā hūm̐", "main-f": "pham̐sī hūm̐", "tum-m": "pham̐sē hō", "tum-f": "pham̐sī hō", "vah-m": "pham̐sā hai", "vah-f": "pham̐sī hai", "ham-m": "pham̐sē haim̐", "ham-f": "pham̐sī haim̐" }
+    - word: "hi-1802"
+      forms: { "main-m": "मैंने मारा है", "main-f": "मैंने मारा है", "tum-m": "तुमने मारा है", "tum-f": "तुमने मारा है", "vah-m": "उसने मारा है", "vah-f": "उसने मारा है", "ham-m": "हमने मारा है", "ham-f": "हमने मारा है" }
+      readings: { "main-m": "mainnē mārā hai", "main-f": "mainnē mārā hai", "tum-m": "tumnē mārā hai", "tum-f": "tumnē mārā hai", "vah-m": "usnē mārā hai", "vah-f": "usnē mārā hai", "ham-m": "hamnē mārā hai", "ham-f": "hamnē mārā hai" }
+    - word: "hi-1803"
+      forms: { "main-m": "झुका हूँ", "main-f": "झुकी हूँ", "tum-m": "झुके हो", "tum-f": "झुकी हो", "vah-m": "झुका है", "vah-f": "झुकी है", "ham-m": "झुके हैं", "ham-f": "झुकी हैं" }
+      readings: { "main-m": "jhukā hūm̐", "main-f": "jhukī hūm̐", "tum-m": "jhukē hō", "tum-f": "jhukī hō", "vah-m": "jhukā hai", "vah-f": "jhukī hai", "ham-m": "jhukē haim̐", "ham-f": "jhukī haim̐" }
+    - word: "hi-1804"
+      forms: { "main-m": "मैंने चलाया है", "main-f": "मैंने चलाया है", "tum-m": "तुमने चलाया है", "tum-f": "तुमने चलाया है", "vah-m": "उसने चलाया है", "vah-f": "उसने चलाया है", "ham-m": "हमने चलाया है", "ham-f": "हमने चलाया है" }
+      readings: { "main-m": "mainnē calāyā hai", "main-f": "mainnē calāyā hai", "tum-m": "tumnē calāyā hai", "tum-f": "tumnē calāyā hai", "vah-m": "usnē calāyā hai", "vah-f": "usnē calāyā hai", "ham-m": "hamnē calāyā hai", "ham-f": "hamnē calāyā hai" }
+    - word: "hi-1805"
+      forms: { "main-m": "मैंने मिटाया है", "main-f": "मैंने मिटाया है", "tum-m": "तुमने मिटाया है", "tum-f": "तुमने मिटाया है", "vah-m": "उसने मिटाया है", "vah-f": "उसने मिटाया है", "ham-m": "हमने मिटाया है", "ham-f": "हमने मिटाया है" }
+      readings: { "main-m": "mainnē miṭāyā hai", "main-f": "mainnē miṭāyā hai", "tum-m": "tumnē miṭāyā hai", "tum-f": "tumnē miṭāyā hai", "vah-m": "usnē miṭāyā hai", "vah-f": "usnē miṭāyā hai", "ham-m": "hamnē miṭāyā hai", "ham-f": "hamnē miṭāyā hai" }
+    - word: "hi-1806"
+      forms: { "main-m": "मैंने खोजा है", "main-f": "मैंने खोजा है", "tum-m": "तुमने खोजा है", "tum-f": "तुमने खोजा है", "vah-m": "उसने खोजा है", "vah-f": "उसने खोजा है", "ham-m": "हमने खोजा है", "ham-f": "हमने खोजा है" }
+      readings: { "main-m": "mainnē khōjā hai", "main-f": "mainnē khōjā hai", "tum-m": "tumnē khōjā hai", "tum-f": "tumnē khōjā hai", "vah-m": "usnē khōjā hai", "vah-f": "usnē khōjā hai", "ham-m": "hamnē khōjā hai", "ham-f": "hamnē khōjā hai" }
+    - word: "hi-1807"
+      forms: { "main-m": "मैंने गिना है", "main-f": "मैंने गिना है", "tum-m": "तुमने गिना है", "tum-f": "तुमने गिना है", "vah-m": "उसने गिना है", "vah-f": "उसने गिना है", "ham-m": "हमने गिना है", "ham-f": "हमने गिना है" }
+      readings: { "main-m": "mainnē ginā hai", "main-f": "mainnē ginā hai", "tum-m": "tumnē ginā hai", "tum-f": "tumnē ginā hai", "vah-m": "usnē ginā hai", "vah-f": "usnē ginā hai", "ham-m": "hamnē ginā hai", "ham-f": "hamnē ginā hai" }
+    - word: "hi-1808"
+      forms: { "main-m": "मैंने नापा है", "main-f": "मैंने नापा है", "tum-m": "तुमने नापा है", "tum-f": "तुमने नापा है", "vah-m": "उसने नापा है", "vah-f": "उसने नापा है", "ham-m": "हमने नापा है", "ham-f": "हमने नापा है" }
+      readings: { "main-m": "mainnē nāpā hai", "main-f": "mainnē nāpā hai", "tum-m": "tumnē nāpā hai", "tum-f": "tumnē nāpā hai", "vah-m": "usnē nāpā hai", "vah-f": "usnē nāpā hai", "ham-m": "hamnē nāpā hai", "ham-f": "hamnē nāpā hai" }
+    - word: "hi-1809"
+      forms: { "main-m": "मैंने जोड़ा है", "main-f": "मैंने जोड़ा है", "tum-m": "तुमने जोड़ा है", "tum-f": "तुमने जोड़ा है", "vah-m": "उसने जोड़ा है", "vah-f": "उसने जोड़ा है", "ham-m": "हमने जोड़ा है", "ham-f": "हमने जोड़ा है" }
+      readings: { "main-m": "mainnē jōṛā hai", "main-f": "mainnē jōṛā hai", "tum-m": "tumnē jōṛā hai", "tum-f": "tumnē jōṛā hai", "vah-m": "usnē jōṛā hai", "vah-f": "usnē jōṛā hai", "ham-m": "hamnē jōṛā hai", "ham-f": "hamnē jōṛā hai" }
+    - word: "hi-1810"
+      forms: { "main-m": "मैंने घटाया है", "main-f": "मैंने घटाया है", "tum-m": "तुमने घटाया है", "tum-f": "तुमने घटाया है", "vah-m": "उसने घटाया है", "vah-f": "उसने घटाया है", "ham-m": "हमने घटाया है", "ham-f": "हमने घटाया है" }
+      readings: { "main-m": "mainnē ghaṭāyā hai", "main-f": "mainnē ghaṭāyā hai", "tum-m": "tumnē ghaṭāyā hai", "tum-f": "tumnē ghaṭāyā hai", "vah-m": "usnē ghaṭāyā hai", "vah-f": "usnē ghaṭāyā hai", "ham-m": "hamnē ghaṭāyā hai", "ham-f": "hamnē ghaṭāyā hai" }
+    - word: "hi-1811"
+      forms: { "main-m": "मैंने बाँधा है", "main-f": "मैंने बाँधा है", "tum-m": "तुमने बाँधा है", "tum-f": "तुमने बाँधा है", "vah-m": "उसने बाँधा है", "vah-f": "उसने बाँधा है", "ham-m": "हमने बाँधा है", "ham-f": "हमने बाँधा है" }
+      readings: { "main-m": "mainnē bām̐dhā hai", "main-f": "mainnē bām̐dhā hai", "tum-m": "tumnē bām̐dhā hai", "tum-f": "tumnē bām̐dhā hai", "vah-m": "usnē bām̐dhā hai", "vah-f": "usnē bām̐dhā hai", "ham-m": "hamnē bām̐dhā hai", "ham-f": "hamnē bām̐dhā hai" }
+    - word: "hi-1812"
+      forms: { "main-m": "मैंने गिराया है", "main-f": "मैंने गिराया है", "tum-m": "तुमने गिराया है", "tum-f": "तुमने गिराया है", "vah-m": "उसने गिराया है", "vah-f": "उसने गिराया है", "ham-m": "हमने गिराया है", "ham-f": "हमने गिराया है" }
+      readings: { "main-m": "mainnē girāyā hai", "main-f": "mainnē girāyā hai", "tum-m": "tumnē girāyā hai", "tum-f": "tumnē girāyā hai", "vah-m": "usnē girāyā hai", "vah-f": "usnē girāyā hai", "ham-m": "hamnē girāyā hai", "ham-f": "hamnē girāyā hai" }
+    - word: "hi-1813"
+      forms: { "main-m": "मैंने रोका है", "main-f": "मैंने रोका है", "tum-m": "तुमने रोका है", "tum-f": "तुमने रोका है", "vah-m": "उसने रोका है", "vah-f": "उसने रोका है", "ham-m": "हमने रोका है", "ham-f": "हमने रोका है" }
+      readings: { "main-m": "mainnē rōkā hai", "main-f": "mainnē rōkā hai", "tum-m": "tumnē rōkā hai", "tum-f": "tumnē rōkā hai", "vah-m": "usnē rōkā hai", "vah-f": "usnē rōkā hai", "ham-m": "hamnē rōkā hai", "ham-f": "hamnē rōkā hai" }
+    - word: "hi-1814"
+      forms: { "main-m": "मैंने छुपाया है", "main-f": "मैंने छुपाया है", "tum-m": "तुमने छुपाया है", "tum-f": "तुमने छुपाया है", "vah-m": "उसने छुपाया है", "vah-f": "उसने छुपाया है", "ham-m": "हमने छुपाया है", "ham-f": "हमने छुपाया है" }
+      readings: { "main-m": "mainnē chupāyā hai", "main-f": "mainnē chupāyā hai", "tum-m": "tumnē chupāyā hai", "tum-f": "tumnē chupāyā hai", "vah-m": "usnē chupāyā hai", "vah-f": "usnē chupāyā hai", "ham-m": "hamnē chupāyā hai", "ham-f": "hamnē chupāyā hai" }
+    - word: "hi-1815"
+      forms: { "main-m": "मैंने दिखाया है", "main-f": "मैंने दिखाया है", "tum-m": "तुमने दिखाया है", "tum-f": "तुमने दिखाया है", "vah-m": "उसने दिखाया है", "vah-f": "उसने दिखाया है", "ham-m": "हमने दिखाया है", "ham-f": "हमने दिखाया है" }
+      readings: { "main-m": "mainnē dikhāyā hai", "main-f": "mainnē dikhāyā hai", "tum-m": "tumnē dikhāyā hai", "tum-f": "tumnē dikhāyā hai", "vah-m": "usnē dikhāyā hai", "vah-f": "usnē dikhāyā hai", "ham-m": "hamnē dikhāyā hai", "ham-f": "hamnē dikhāyā hai" }
+    - word: "hi-1816"
+      forms: { "main-m": "मैंने चुना है", "main-f": "मैंने चुना है", "tum-m": "तुमने चुना है", "tum-f": "तुमने चुना है", "vah-m": "उसने चुना है", "vah-f": "उसने चुना है", "ham-m": "हमने चुना है", "ham-f": "हमने चुना है" }
+      readings: { "main-m": "mainnē cunā hai", "main-f": "mainnē cunā hai", "tum-m": "tumnē cunā hai", "tum-f": "tumnē cunā hai", "vah-m": "usnē cunā hai", "vah-f": "usnē cunā hai", "ham-m": "hamnē cunā hai", "ham-f": "hamnē cunā hai" }
+    - word: "hi-1817"
+      forms: { "main-m": "मैंने फोड़ा है", "main-f": "मैंने फोड़ा है", "tum-m": "तुमने फोड़ा है", "tum-f": "तुमने फोड़ा है", "vah-m": "उसने फोड़ा है", "vah-f": "उसने फोड़ा है", "ham-m": "हमने फोड़ा है", "ham-f": "हमने फोड़ा है" }
+      readings: { "main-m": "mainnē phōṛā hai", "main-f": "mainnē phōṛā hai", "tum-m": "tumnē phōṛā hai", "tum-f": "tumnē phōṛā hai", "vah-m": "usnē phōṛā hai", "vah-f": "usnē phōṛā hai", "ham-m": "hamnē phōṛā hai", "ham-f": "hamnē phōṛā hai" }
+    - word: "hi-1818"
+      forms: { "main-m": "टपका हूँ", "main-f": "टपकी हूँ", "tum-m": "टपके हो", "tum-f": "टपकी हो", "vah-m": "टपका है", "vah-f": "टपकी है", "ham-m": "टपके हैं", "ham-f": "टपकी हैं" }
+      readings: { "main-m": "ṭapkā hūm̐", "main-f": "ṭapkī hūm̐", "tum-m": "ṭapkē hō", "tum-f": "ṭapkī hō", "vah-m": "ṭapkā hai", "vah-f": "ṭapkī hai", "ham-m": "ṭapkē haim̐", "ham-f": "ṭapkī haim̐" }
+    - word: "hi-1819"
+      forms: { "main-m": "भागा हूँ", "main-f": "भागी हूँ", "tum-m": "भागे हो", "tum-f": "भागी हो", "vah-m": "भागा है", "vah-f": "भागी है", "ham-m": "भागे हैं", "ham-f": "भागी हैं" }
+      readings: { "main-m": "bhāgā hūm̐", "main-f": "bhāgī hūm̐", "tum-m": "bhāgē hō", "tum-f": "bhāgī hō", "vah-m": "bhāgā hai", "vah-f": "bhāgī hai", "ham-m": "bhāgē haim̐", "ham-f": "bhāgī haim̐" }
+    - word: "hi-1820"
+      forms: { "main-m": "मैंने चिल्लाया है", "main-f": "मैंने चिल्लाया है", "tum-m": "तुमने चिल्लाया है", "tum-f": "तुमने चिल्लाया है", "vah-m": "उसने चिल्लाया है", "vah-f": "उसने चिल्लाया है", "ham-m": "हमने चिल्लाया है", "ham-f": "हमने चिल्लाया है" }
+      readings: { "main-m": "mainnē cillāyā hai", "main-f": "mainnē cillāyā hai", "tum-m": "tumnē cillāyā hai", "tum-f": "tumnē cillāyā hai", "vah-m": "usnē cillāyā hai", "vah-f": "usnē cillāyā hai", "ham-m": "hamnē cillāyā hai", "ham-f": "hamnē cillāyā hai" }
+    - word: "hi-1821"
+      forms: { "main-m": "मैंने सहा है", "main-f": "मैंने सहा है", "tum-m": "तुमने सहा है", "tum-f": "तुमने सहा है", "vah-m": "उसने सहा है", "vah-f": "उसने सहा है", "ham-m": "हमने सहा है", "ham-f": "हमने सहा है" }
+      readings: { "main-m": "mainnē sahā hai", "main-f": "mainnē sahā hai", "tum-m": "tumnē sahā hai", "tum-f": "tumnē sahā hai", "vah-m": "usnē sahā hai", "vah-f": "usnē sahā hai", "ham-m": "hamnē sahā hai", "ham-f": "hamnē sahā hai" }
+    - word: "hi-1822"
+      forms: { "main-m": "मैंने समझाया है", "main-f": "मैंने समझाया है", "tum-m": "तुमने समझाया है", "tum-f": "तुमने समझाया है", "vah-m": "उसने समझाया है", "vah-f": "उसने समझाया है", "ham-m": "हमने समझाया है", "ham-f": "हमने समझाया है" }
+      readings: { "main-m": "mainnē samjhāyā hai", "main-f": "mainnē samjhāyā hai", "tum-m": "tumnē samjhāyā hai", "tum-f": "tumnē samjhāyā hai", "vah-m": "usnē samjhāyā hai", "vah-f": "usnē samjhāyā hai", "ham-m": "hamnē samjhāyā hai", "ham-f": "hamnē samjhāyā hai" }
+    - word: "hi-1823"
+      forms: { "main-m": "डरा हूँ", "main-f": "डरी हूँ", "tum-m": "डरे हो", "tum-f": "डरी हो", "vah-m": "डरा है", "vah-f": "डरी है", "ham-m": "डरे हैं", "ham-f": "डरी हैं" }
+      readings: { "main-m": "ḍarā hūm̐", "main-f": "ḍarī hūm̐", "tum-m": "ḍarē hō", "tum-f": "ḍarī hō", "vah-m": "ḍarā hai", "vah-f": "ḍarī hai", "ham-m": "ḍarē haim̐", "ham-f": "ḍarī haim̐" }
+    - word: "hi-1824"
+      forms: { "main-m": "मैंने सुलझाया है", "main-f": "मैंने सुलझाया है", "tum-m": "तुमने सुलझाया है", "tum-f": "तुमने सुलझाया है", "vah-m": "उसने सुलझाया है", "vah-f": "उसने सुलझाया है", "ham-m": "हमने सुलझाया है", "ham-f": "हमने सुलझाया है" }
+      readings: { "main-m": "mainnē suljhāyā hai", "main-f": "mainnē suljhāyā hai", "tum-m": "tumnē suljhāyā hai", "tum-f": "tumnē suljhāyā hai", "vah-m": "usnē suljhāyā hai", "vah-f": "usnē suljhāyā hai", "ham-m": "hamnē suljhāyā hai", "ham-f": "hamnē suljhāyā hai" }
+    - word: "hi-1825"
+      forms: { "main-m": "मैंने बचाया है", "main-f": "मैंने बचाया है", "tum-m": "तुमने बचाया है", "tum-f": "तुमने बचाया है", "vah-m": "उसने बचाया है", "vah-f": "उसने बचाया है", "ham-m": "हमने बचाया है", "ham-f": "हमने बचाया है" }
+      readings: { "main-m": "mainnē bacāyā hai", "main-f": "mainnē bacāyā hai", "tum-m": "tumnē bacāyā hai", "tum-f": "tumnē bacāyā hai", "vah-m": "usnē bacāyā hai", "vah-f": "usnē bacāyā hai", "ham-m": "hamnē bacāyā hai", "ham-f": "hamnē bacāyā hai" }
+    - word: "hi-1826"
+      forms: { "main-m": "बचा हूँ", "main-f": "बची हूँ", "tum-m": "बचे हो", "tum-f": "बची हो", "vah-m": "बचा है", "vah-f": "बची है", "ham-m": "बचे हैं", "ham-f": "बची हैं" }
+      readings: { "main-m": "bacā hūm̐", "main-f": "bacī hūm̐", "tum-m": "bacē hō", "tum-f": "bacī hō", "vah-m": "bacā hai", "vah-f": "bacī hai", "ham-m": "bacē haim̐", "ham-f": "bacī haim̐" }
+    - word: "hi-1827"
+      forms: { "main-m": "मैंने पाया है", "main-f": "मैंने पाया है", "tum-m": "तुमने पाया है", "tum-f": "तुमने पाया है", "vah-m": "उसने पाया है", "vah-f": "उसने पाया है", "ham-m": "हमने पाया है", "ham-f": "हमने पाया है" }
+      readings: { "main-m": "mainnē pāyā hai", "main-f": "mainnē pāyā hai", "tum-m": "tumnē pāyā hai", "tum-f": "tumnē pāyā hai", "vah-m": "usnē pāyā hai", "vah-f": "usnē pāyā hai", "ham-m": "hamnē pāyā hai", "ham-f": "hamnē pāyā hai" }
+    - word: "hi-1828"
+      forms: { "main-m": "मैंने दबाया है", "main-f": "मैंने दबाया है", "tum-m": "तुमने दबाया है", "tum-f": "तुमने दबाया है", "vah-m": "उसने दबाया है", "vah-f": "उसने दबाया है", "ham-m": "हमने दबाया है", "ham-f": "हमने दबाया है" }
+      readings: { "main-m": "mainnē dabāyā hai", "main-f": "mainnē dabāyā hai", "tum-m": "tumnē dabāyā hai", "tum-f": "tumnē dabāyā hai", "vah-m": "usnē dabāyā hai", "vah-f": "usnē dabāyā hai", "ham-m": "hamnē dabāyā hai", "ham-f": "hamnē dabāyā hai" }
+    - word: "hi-1829"
+      forms: { "main-m": "मैंने लपेटा है", "main-f": "मैंने लपेटा है", "tum-m": "तुमने लपेटा है", "tum-f": "तुमने लपेटा है", "vah-m": "उसने लपेटा है", "vah-f": "उसने लपेटा है", "ham-m": "हमने लपेटा है", "ham-f": "हमने लपेटा है" }
+      readings: { "main-m": "mainnē lapēṭā hai", "main-f": "mainnē lapēṭā hai", "tum-m": "tumnē lapēṭā hai", "tum-f": "tumnē lapēṭā hai", "vah-m": "usnē lapēṭā hai", "vah-f": "usnē lapēṭā hai", "ham-m": "hamnē lapēṭā hai", "ham-f": "hamnē lapēṭā hai" }
+    - word: "hi-1830"
+      forms: { "main-m": "मैंने टाँगा है", "main-f": "मैंने टाँगा है", "tum-m": "तुमने टाँगा है", "tum-f": "तुमने टाँगा है", "vah-m": "उसने टाँगा है", "vah-f": "उसने टाँगा है", "ham-m": "हमने टाँगा है", "ham-f": "हमने टाँगा है" }
+      readings: { "main-m": "mainnē ṭām̐gā hai", "main-f": "mainnē ṭām̐gā hai", "tum-m": "tumnē ṭām̐gā hai", "tum-f": "tumnē ṭām̐gā hai", "vah-m": "usnē ṭām̐gā hai", "vah-f": "usnē ṭām̐gā hai", "ham-m": "hamnē ṭām̐gā hai", "ham-f": "hamnē ṭām̐gā hai" }
+    - word: "hi-1831"
+      forms: { "main-m": "मैंने लटकाया है", "main-f": "मैंने लटकाया है", "tum-m": "तुमने लटकाया है", "tum-f": "तुमने लटकाया है", "vah-m": "उसने लटकाया है", "vah-f": "उसने लटकाया है", "ham-m": "हमने लटकाया है", "ham-f": "हमने लटकाया है" }
+      readings: { "main-m": "mainnē laṭkāyā hai", "main-f": "mainnē laṭkāyā hai", "tum-m": "tumnē laṭkāyā hai", "tum-f": "tumnē laṭkāyā hai", "vah-m": "usnē laṭkāyā hai", "vah-f": "usnē laṭkāyā hai", "ham-m": "hamnē laṭkāyā hai", "ham-f": "hamnē laṭkāyā hai" }
+    - word: "hi-1832"
+      forms: { "main-m": "मैंने चिपकाया है", "main-f": "मैंने चिपकाया है", "tum-m": "तुमने चिपकाया है", "tum-f": "तुमने चिपकाया है", "vah-m": "उसने चिपकाया है", "vah-f": "उसने चिपकाया है", "ham-m": "हमने चिपकाया है", "ham-f": "हमने चिपकाया है" }
+      readings: { "main-m": "mainnē cipkāyā hai", "main-f": "mainnē cipkāyā hai", "tum-m": "tumnē cipkāyā hai", "tum-f": "tumnē cipkāyā hai", "vah-m": "usnē cipkāyā hai", "vah-f": "usnē cipkāyā hai", "ham-m": "hamnē cipkāyā hai", "ham-f": "hamnē cipkāyā hai" }
+    - word: "hi-1833"
+      forms: { "main-m": "मैंने बना है", "main-f": "मैंने बना है", "tum-m": "तुमने बना है", "tum-f": "तुमने बना है", "vah-m": "उसने बना है", "vah-f": "उसने बना है", "ham-m": "हमने बना है", "ham-f": "हमने बना है" }
+      readings: { "main-m": "mainnē banā hai", "main-f": "mainnē banā hai", "tum-m": "tumnē banā hai", "tum-f": "tumnē banā hai", "vah-m": "usnē banā hai", "vah-f": "usnē banā hai", "ham-m": "hamnē banā hai", "ham-f": "hamnē banā hai" }
+    - word: "hi-1834"
+      forms: { "main-m": ["मैंने ढका है", "ढका हूँ"], "main-f": ["मैंने ढका है", "ढकी हूँ"], "tum-m": ["तुमने ढका है", "ढके हो"], "tum-f": ["तुमने ढका है", "ढकी हो"], "vah-m": ["उसने ढका है", "ढका है"], "vah-f": ["उसने ढका है", "ढकी है"], "ham-m": ["हमने ढका है", "ढके हैं"], "ham-f": ["हमने ढका है", "ढकी हैं"] }
+      readings: { "main-m": ["mainnē ḍhakā hai", "ḍhakā hūm̐"], "main-f": ["mainnē ḍhakā hai", "ḍhakī hūm̐"], "tum-m": ["tumnē ḍhakā hai", "ḍhakē hō"], "tum-f": ["tumnē ḍhakā hai", "ḍhakī hō"], "vah-m": ["usnē ḍhakā hai", "ḍhakā hai"], "vah-f": ["usnē ḍhakā hai", "ḍhakī hai"], "ham-m": ["hamnē ḍhakā hai", "ḍhakē haim̐"], "ham-f": ["hamnē ḍhakā hai", "ḍhakī haim̐"] }
+    - word: "hi-1835"
+      forms: { "main-m": "मैंने खिलाया है", "main-f": "मैंने खिलाया है", "tum-m": "तुमने खिलाया है", "tum-f": "तुमने खिलाया है", "vah-m": "उसने खिलाया है", "vah-f": "उसने खिलाया है", "ham-m": "हमने खिलाया है", "ham-f": "हमने खिलाया है" }
+      readings: { "main-m": "mainnē khilāyā hai", "main-f": "mainnē khilāyā hai", "tum-m": "tumnē khilāyā hai", "tum-f": "tumnē khilāyā hai", "vah-m": "usnē khilāyā hai", "vah-f": "usnē khilāyā hai", "ham-m": "hamnē khilāyā hai", "ham-f": "hamnē khilāyā hai" }
+    - word: "hi-1836"
+      forms: { "main-m": "मैंने पिलाया है", "main-f": "मैंने पिलाया है", "tum-m": "तुमने पिलाया है", "tum-f": "तुमने पिलाया है", "vah-m": "उसने पिलाया है", "vah-f": "उसने पिलाया है", "ham-m": "हमने पिलाया है", "ham-f": "हमने पिलाया है" }
+      readings: { "main-m": "mainnē pilāyā hai", "main-f": "mainnē pilāyā hai", "tum-m": "tumnē pilāyā hai", "tum-f": "tumnē pilāyā hai", "vah-m": "usnē pilāyā hai", "vah-f": "usnē pilāyā hai", "ham-m": "hamnē pilāyā hai", "ham-f": "hamnē pilāyā hai" }
+    - word: "hi-1837"
+      forms: { "main-m": "मैंने जगाया है", "main-f": "मैंने जगाया है", "tum-m": "तुमने जगाया है", "tum-f": "तुमने जगाया है", "vah-m": "उसने जगाया है", "vah-f": "उसने जगाया है", "ham-m": "हमने जगाया है", "ham-f": "हमने जगाया है" }
+      readings: { "main-m": "mainnē jagāyā hai", "main-f": "mainnē jagāyā hai", "tum-m": "tumnē jagāyā hai", "tum-f": "tumnē jagāyā hai", "vah-m": "usnē jagāyā hai", "vah-f": "usnē jagāyā hai", "ham-m": "hamnē jagāyā hai", "ham-f": "hamnē jagāyā hai" }
+    - word: "hi-1838"
+      forms: { "main-m": "मैंने उगाया है", "main-f": "मैंने उगाया है", "tum-m": "तुमने उगाया है", "tum-f": "तुमने उगाया है", "vah-m": "उसने उगाया है", "vah-f": "उसने उगाया है", "ham-m": "हमने उगाया है", "ham-f": "हमने उगाया है" }
+      readings: { "main-m": "mainnē ugāyā hai", "main-f": "mainnē ugāyā hai", "tum-m": "tumnē ugāyā hai", "tum-f": "tumnē ugāyā hai", "vah-m": "usnē ugāyā hai", "vah-f": "usnē ugāyā hai", "ham-m": "hamnē ugāyā hai", "ham-f": "hamnē ugāyā hai" }
+    - word: "hi-1878"
+      forms: { "main-m": "बजा हूँ", "main-f": "बजी हूँ", "tum-m": "बजे हो", "tum-f": "बजी हो", "vah-m": "बजा है", "vah-f": "बजी है", "ham-m": "बजे हैं", "ham-f": "बजी हैं" }
+      readings: { "main-m": "bajā hūm̐", "main-f": "bajī hūm̐", "tum-m": "bajē hō", "tum-f": "bajī hō", "vah-m": "bajā hai", "vah-f": "bajī hai", "ham-m": "bajē haim̐", "ham-f": "bajī haim̐" }
+    - word: "hi-1913"
+      forms: { "main-m": "पहुँचा हूँ", "main-f": "पहुँची हूँ", "tum-m": "पहुँचे हो", "tum-f": "पहुँची हो", "vah-m": "पहुँचा है", "vah-f": "पहुँची है", "ham-m": "पहुँचे हैं", "ham-f": "पहुँची हैं" }
+      readings: { "main-m": "pahum̐cā hūm̐", "main-f": "pahum̐cī hūm̐", "tum-m": "pahum̐cē hō", "tum-f": "pahum̐cī hō", "vah-m": "pahum̐cā hai", "vah-f": "pahum̐cī hai", "ham-m": "pahum̐cē haim̐", "ham-f": "pahum̐cī haim̐" }
+    - word: "hi-1914"
+      forms: { "main-m": "रुका हूँ", "main-f": "रुकी हूँ", "tum-m": "रुके हो", "tum-f": "रुकी हो", "vah-m": "रुका है", "vah-f": "रुकी है", "ham-m": "रुके हैं", "ham-f": "रुकी हैं" }
+      readings: { "main-m": "rukā hūm̐", "main-f": "rukī hūm̐", "tum-m": "rukē hō", "tum-f": "rukī hō", "vah-m": "rukā hai", "vah-f": "rukī hai", "ham-m": "rukē haim̐", "ham-f": "rukī haim̐" }
+    - word: "hi-1915"
+      forms: { "main-m": "ठहरा हूँ", "main-f": "ठहरी हूँ", "tum-m": "ठहरे हो", "tum-f": "ठहरी हो", "vah-m": "ठहरा है", "vah-f": "ठहरी है", "ham-m": "ठहरे हैं", "ham-f": "ठहरी हैं" }
+      readings: { "main-m": "ṭhahrā hūm̐", "main-f": "ṭhahrī hūm̐", "tum-m": "ṭhahrē hō", "tum-f": "ṭhahrī hō", "vah-m": "ṭhahrā hai", "vah-f": "ṭhahrī hai", "ham-m": "ṭhahrē haim̐", "ham-f": "ṭhahrī haim̐" }
+    - word: "hi-1916"
+      forms: { "main-m": "चढ़ा हूँ", "main-f": "चढ़ी हूँ", "tum-m": "चढ़े हो", "tum-f": "चढ़ी हो", "vah-m": "चढ़ा है", "vah-f": "चढ़ी है", "ham-m": "चढ़े हैं", "ham-f": "चढ़ी हैं" }
+      readings: { "main-m": "caṛhā hūm̐", "main-f": "caṛhī hūm̐", "tum-m": "caṛhē hō", "tum-f": "caṛhī hō", "vah-m": "caṛhā hai", "vah-f": "caṛhī hai", "ham-m": "caṛhē haim̐", "ham-f": "caṛhī haim̐" }
+    - word: "hi-1917"
+      forms: { "main-m": "उतरा हूँ", "main-f": "उतरी हूँ", "tum-m": "उतरे हो", "tum-f": "उतरी हो", "vah-m": "उतरा है", "vah-f": "उतरी है", "ham-m": "उतरे हैं", "ham-f": "उतरी हैं" }
+      readings: { "main-m": "utrā hūm̐", "main-f": "utrī hūm̐", "tum-m": "utrē hō", "tum-f": "utrī hō", "vah-m": "utrā hai", "vah-f": "utrī hai", "ham-m": "utrē haim̐", "ham-f": "utrī haim̐" }
+    - word: "hi-1918"
+      forms: { "main-m": "छूटा हूँ", "main-f": "छूटी हूँ", "tum-m": "छूटे हो", "tum-f": "छूटी हो", "vah-m": "छूटा है", "vah-f": "छूटी है", "ham-m": "छूटे हैं", "ham-f": "छूटी हैं" }
+      readings: { "main-m": "chūṭā hūm̐", "main-f": "chūṭī hūm̐", "tum-m": "chūṭē hō", "tum-f": "chūṭī hō", "vah-m": "chūṭā hai", "vah-f": "chūṭī hai", "ham-m": "chūṭē haim̐", "ham-f": "chūṭī haim̐" }
+    - word: "hi-1919"
+      forms: { "main-m": "मैंने खोया है", "main-f": "मैंने खोया है", "tum-m": "तुमने खोया है", "tum-f": "तुमने खोया है", "vah-m": "उसने खोया है", "vah-f": "उसने खोया है", "ham-m": "हमने खोया है", "ham-f": "हमने खोया है" }
+      readings: { "main-m": "mainnē khōyā hai", "main-f": "mainnē khōyā hai", "tum-m": "tumnē khōyā hai", "tum-f": "tumnē khōyā hai", "vah-m": "usnē khōyā hai", "vah-f": "usnē khōyā hai", "ham-m": "hamnē khōyā hai", "ham-f": "hamnē khōyā hai" }
+    - word: "hi-1950"
+      forms: { "main-m": "उगा हूँ", "main-f": "उगी हूँ", "tum-m": "उगे हो", "tum-f": "उगी हो", "vah-m": "उगा है", "vah-f": "उगी है", "ham-m": "उगे हैं", "ham-f": "उगी हैं" }
+      readings: { "main-m": "ugā hūm̐", "main-f": "ugī hūm̐", "tum-m": "ugē hō", "tum-f": "ugī hō", "vah-m": "ugā hai", "vah-f": "ugī hai", "ham-m": "ugē haim̐", "ham-f": "ugī haim̐" }
+    - word: "hi-1951"
+      forms: { "main-m": "बहा हूँ", "main-f": "बही हूँ", "tum-m": "बहे हो", "tum-f": "बही हो", "vah-m": "बहा है", "vah-f": "बही है", "ham-m": "बहे हैं", "ham-f": "बही हैं" }
+      readings: { "main-m": "bahā hūm̐", "main-f": "bahī hūm̐", "tum-m": "bahē hō", "tum-f": "bahī hō", "vah-m": "bahā hai", "vah-f": "bahī hai", "ham-m": "bahē haim̐", "ham-f": "bahī haim̐" }
+    - word: "hi-1952"
+      forms: { "main-m": "खिला हूँ", "main-f": "खिली हूँ", "tum-m": "खिले हो", "tum-f": "खिली हो", "vah-m": "खिला है", "vah-f": "खिली है", "ham-m": "खिले हैं", "ham-f": "खिली हैं" }
+      readings: { "main-m": "khilā hūm̐", "main-f": "khilī hūm̐", "tum-m": "khilē hō", "tum-f": "khilī hō", "vah-m": "khilā hai", "vah-f": "khilī hai", "ham-m": "khilē haim̐", "ham-f": "khilī haim̐" }
+    - word: "hi-1953"
+      forms: { "main-m": "झड़ा हूँ", "main-f": "झड़ी हूँ", "tum-m": "झड़े हो", "tum-f": "झड़ी हो", "vah-m": "झड़ा है", "vah-f": "झड़ी है", "ham-m": "झड़े हैं", "ham-f": "झड़ी हैं" }
+      readings: { "main-m": "jhaṛā hūm̐", "main-f": "jhaṛī hūm̐", "tum-m": "jhaṛē hō", "tum-f": "jhaṛī hō", "vah-m": "jhaṛā hai", "vah-f": "jhaṛī hai", "ham-m": "jhaṛē haim̐", "ham-f": "jhaṛī haim̐" }
+    - word: "hi-1954"
+      forms: { "main-m": "फैला हूँ", "main-f": "फैली हूँ", "tum-m": "फैले हो", "tum-f": "फैली हो", "vah-m": "फैला है", "vah-f": "फैली है", "ham-m": "फैले हैं", "ham-f": "फैली हैं" }
+      readings: { "main-m": "phailā hūm̐", "main-f": "phailī hūm̐", "tum-m": "phailē hō", "tum-f": "phailī hō", "vah-m": "phailā hai", "vah-f": "phailī hai", "ham-m": "phailē haim̐", "ham-f": "phailī haim̐" }
+    - word: "hi-1955"
+      forms: { "main-m": "डूबा हूँ", "main-f": "डूबी हूँ", "tum-m": "डूबे हो", "tum-f": "डूबी हो", "vah-m": "डूबा है", "vah-f": "डूबी है", "ham-m": "डूबे हैं", "ham-f": "डूबी हैं" }
+      readings: { "main-m": "ḍūbā hūm̐", "main-f": "ḍūbī hūm̐", "tum-m": "ḍūbē hō", "tum-f": "ḍūbī hō", "vah-m": "ḍūbā hai", "vah-f": "ḍūbī hai", "ham-m": "ḍūbē haim̐", "ham-f": "ḍūbī haim̐" }
+    - word: "hi-1956"
+      forms: { "main-m": "उड़ा हूँ", "main-f": "उड़ी हूँ", "tum-m": "उड़े हो", "tum-f": "उड़ी हो", "vah-m": "उड़ा है", "vah-f": "उड़ी है", "ham-m": "उड़े हैं", "ham-f": "उड़ी हैं" }
+      readings: { "main-m": "uṛā hūm̐", "main-f": "uṛī hūm̐", "tum-m": "uṛē hō", "tum-f": "uṛī hō", "vah-m": "uṛā hai", "vah-f": "uṛī hai", "ham-m": "uṛē haim̐", "ham-f": "uṛī haim̐" }
+    - word: "hi-1957"
+      forms: { "main-m": "चहचहाया हूँ", "main-f": "चहचहाई हूँ", "tum-m": "चहचहाए हो", "tum-f": "चहचहाई हो", "vah-m": "चहचहाया है", "vah-f": "चहचहाई है", "ham-m": "चहचहाए हैं", "ham-f": "चहचहाई हैं" }
+      readings: { "main-m": "cahchāyā hūm̐", "main-f": "cahchāī hūm̐", "tum-m": "cahchāē hō", "tum-f": "cahchāī hō", "vah-m": "cahchāyā hai", "vah-f": "cahchāī hai", "ham-m": "cahchāē haim̐", "ham-f": "cahchāī haim̐" }
+    - word: "hi-2029"
+      forms: { "main-m": "मैंने सौंपा है", "main-f": "मैंने सौंपा है", "tum-m": "तुमने सौंपा है", "tum-f": "तुमने सौंपा है", "vah-m": "उसने सौंपा है", "vah-f": "उसने सौंपा है", "ham-m": "हमने सौंपा है", "ham-f": "हमने सौंपा है" }
+      readings: { "main-m": "mainnē saumpā hai", "main-f": "mainnē saumpā hai", "tum-m": "tumnē saumpā hai", "tum-f": "tumnē saumpā hai", "vah-m": "usnē saumpā hai", "vah-f": "usnē saumpā hai", "ham-m": "hamnē saumpā hai", "ham-f": "hamnē saumpā hai" }
+    - word: "hi-2030"
+      forms: { "main-m": "मैंने निपटाया है", "main-f": "मैंने निपटाया है", "tum-m": "तुमने निपटाया है", "tum-f": "तुमने निपटाया है", "vah-m": "उसने निपटाया है", "vah-f": "उसने निपटाया है", "ham-m": "हमने निपटाया है", "ham-f": "हमने निपटाया है" }
+      readings: { "main-m": "mainnē nipṭāyā hai", "main-f": "mainnē nipṭāyā hai", "tum-m": "tumnē nipṭāyā hai", "tum-f": "tumnē nipṭāyā hai", "vah-m": "usnē nipṭāyā hai", "vah-f": "usnē nipṭāyā hai", "ham-m": "hamnē nipṭāyā hai", "ham-f": "hamnē nipṭāyā hai" }
+    - word: "hi-2031"
+      forms: { "main-m": "मैंने संभाला है", "main-f": "मैंने संभाला है", "tum-m": "तुमने संभाला है", "tum-f": "तुमने संभाला है", "vah-m": "उसने संभाला है", "vah-f": "उसने संभाला है", "ham-m": "हमने संभाला है", "ham-f": "हमने संभाला है" }
+      readings: { "main-m": "mainnē sambhālā hai", "main-f": "mainnē sambhālā hai", "tum-m": "tumnē sambhālā hai", "tum-f": "tumnē sambhālā hai", "vah-m": "usnē sambhālā hai", "vah-f": "usnē sambhālā hai", "ham-m": "hamnē sambhālā hai", "ham-f": "hamnē sambhālā hai" }
+    - word: "hi-2091"
+      forms: { "main-m": "सूजा हूँ", "main-f": "सूजी हूँ", "tum-m": "सूजे हो", "tum-f": "सूजी हो", "vah-m": "सूजा है", "vah-f": "सूजी है", "ham-m": "सूजे हैं", "ham-f": "सूजी हैं" }
+      readings: { "main-m": "sūjā hūm̐", "main-f": "sūjī hūm̐", "tum-m": "sūjē hō", "tum-f": "sūjī hō", "vah-m": "sūjā hai", "vah-f": "sūjī hai", "ham-m": "sūjē haim̐", "ham-f": "sūjī haim̐" }
+    - word: "hi-2137"
+      forms: { "main-m": ["मैंने घबराया है", "घबराया हूँ"], "main-f": ["मैंने घबराया है", "घबराई हूँ"], "tum-m": ["तुमने घबराया है", "घबराए हो"], "tum-f": ["तुमने घबराया है", "घबराई हो"], "vah-m": ["उसने घबराया है", "घबराया है"], "vah-f": ["उसने घबराया है", "घबराई है"], "ham-m": ["हमने घबराया है", "घबराए हैं"], "ham-f": ["हमने घबराया है", "घबराई हैं"] }
+      readings: { "main-m": ["mainnē ghabrāyā hai", "ghabrāyā hūm̐"], "main-f": ["mainnē ghabrāyā hai", "ghabrāī hūm̐"], "tum-m": ["tumnē ghabrāyā hai", "ghabrāē hō"], "tum-f": ["tumnē ghabrāyā hai", "ghabrāī hō"], "vah-m": ["usnē ghabrāyā hai", "ghabrāyā hai"], "vah-f": ["usnē ghabrāyā hai", "ghabrāī hai"], "ham-m": ["hamnē ghabrāyā hai", "ghabrāē haim̐"], "ham-f": ["hamnē ghabrāyā hai", "ghabrāī haim̐"] }
+    - word: "hi-2138"
+      forms: { "main-m": "झुंझलाया हूँ", "main-f": "झुंझलाई हूँ", "tum-m": "झुंझलाए हो", "tum-f": "झुंझलाई हो", "vah-m": "झुंझलाया है", "vah-f": "झुंझलाई है", "ham-m": "झुंझलाए हैं", "ham-f": "झुंझलाई हैं" }
+      readings: { "main-m": "jhuñjhalāyā hūm̐", "main-f": "jhuñjhalāī hūm̐", "tum-m": "jhuñjhalāē hō", "tum-f": "jhuñjhalāī hō", "vah-m": "jhuñjhalāyā hai", "vah-f": "jhuñjhalāī hai", "ham-m": "jhuñjhalāē haim̐", "ham-f": "jhuñjhalāī haim̐" }
+    - word: "hi-2139"
+      forms: { "main-m": "चिढ़ा हूँ", "main-f": "चिढ़ी हूँ", "tum-m": "चिढ़े हो", "tum-f": "चिढ़ी हो", "vah-m": "चिढ़ा है", "vah-f": "चिढ़ी है", "ham-m": "चिढ़े हैं", "ham-f": "चिढ़ी हैं" }
+      readings: { "main-m": "ciṛhā hūm̐", "main-f": "ciṛhī hūm̐", "tum-m": "ciṛhē hō", "tum-f": "ciṛhī hō", "vah-m": "ciṛhā hai", "vah-f": "ciṛhī hai", "ham-m": "ciṛhē haim̐", "ham-f": "ciṛhī haim̐" }
+    - word: "hi-2140"
+      forms: { "main-m": "शर्माया हूँ", "main-f": "शर्माई हूँ", "tum-m": "शर्माए हो", "tum-f": "शर्माई हो", "vah-m": "शर्माया है", "vah-f": "शर्माई है", "ham-m": "शर्माए हैं", "ham-f": "शर्माई हैं" }
+      readings: { "main-m": "śarmāyā hūm̐", "main-f": "śarmāī hūm̐", "tum-m": "śarmāē hō", "tum-f": "śarmāī hō", "vah-m": "śarmāyā hai", "vah-f": "śarmāī hai", "ham-m": "śarmāē haim̐", "ham-f": "śarmāī haim̐" }
+    - word: "hi-2172"
+      forms: { "main-m": "छपा हूँ", "main-f": "छपी हूँ", "tum-m": "छपे हो", "tum-f": "छपी हो", "vah-m": "छपा है", "vah-f": "छपी है", "ham-m": "छपे हैं", "ham-f": "छपी हैं" }
+      readings: { "main-m": "chapā hūm̐", "main-f": "chapī hūm̐", "tum-m": "chapē hō", "tum-f": "chapī hō", "vah-m": "chapā hai", "vah-f": "chapī hai", "ham-m": "chapē haim̐", "ham-f": "chapī haim̐" }
+    - word: "hi-2173"
+      forms: { "main-m": "मैंने सुनाया है", "main-f": "मैंने सुनाया है", "tum-m": "तुमने सुनाया है", "tum-f": "तुमने सुनाया है", "vah-m": "उसने सुनाया है", "vah-f": "उसने सुनाया है", "ham-m": "हमने सुनाया है", "ham-f": "हमने सुनाया है" }
+      readings: { "main-m": "mainnē sunāyā hai", "main-f": "mainnē sunāyā hai", "tum-m": "tumnē sunāyā hai", "tum-f": "tumnē sunāyā hai", "vah-m": "usnē sunāyā hai", "vah-f": "usnē sunāyā hai", "ham-m": "hamnē sunāyā hai", "ham-f": "hamnē sunāyā hai" }
+    - word: "hi-2184"
+      forms: { "main-m": "मैंने माना है", "main-f": "मैंने माना है", "tum-m": "तुमने माना है", "tum-f": "तुमने माना है", "vah-m": "उसने माना है", "vah-f": "उसने माना है", "ham-m": "हमने माना है", "ham-f": "हमने माना है" }
+      readings: { "main-m": "mainnē mānā hai", "main-f": "mainnē mānā hai", "tum-m": "tumnē mānā hai", "tum-f": "tumnē mānā hai", "vah-m": "usnē mānā hai", "vah-f": "usnē mānā hai", "ham-m": "hamnē mānā hai", "ham-f": "hamnē mānā hai" }
+    - word: "hi-2205"
+      forms: { "main-m": "मैंने सुझाया है", "main-f": "मैंने सुझाया है", "tum-m": "तुमने सुझाया है", "tum-f": "तुमने सुझाया है", "vah-m": "उसने सुझाया है", "vah-f": "उसने सुझाया है", "ham-m": "हमने सुझाया है", "ham-f": "हमने सुझाया है" }
+      readings: { "main-m": "mainnē sujhāyā hai", "main-f": "mainnē sujhāyā hai", "tum-m": "tumnē sujhāyā hai", "tum-f": "tumnē sujhāyā hai", "vah-m": "usnē sujhāyā hai", "vah-f": "usnē sujhāyā hai", "ham-m": "hamnē sujhāyā hai", "ham-f": "hamnē sujhāyā hai" }
+    - word: "hi-2207"
+      forms: { "main-m": "मैंने स्वीकारा है", "main-f": "मैंने स्वीकारा है", "tum-m": "तुमने स्वीकारा है", "tum-f": "तुमने स्वीकारा है", "vah-m": "उसने स्वीकारा है", "vah-f": "उसने स्वीकारा है", "ham-m": "हमने स्वीकारा है", "ham-f": "हमने स्वीकारा है" }
+      readings: { "main-m": "mainnē svīkārā hai", "main-f": "mainnē svīkārā hai", "tum-m": "tumnē svīkārā hai", "tum-f": "tumnē svīkārā hai", "vah-m": "usnē svīkārā hai", "vah-f": "usnē svīkārā hai", "ham-m": "hamnē svīkārā hai", "ham-f": "hamnē svīkārā hai" }
+    - word: "hi-2229"
+      forms: { "main-m": "मैंने घुमाया है", "main-f": "मैंने घुमाया है", "tum-m": "तुमने घुमाया है", "tum-f": "तुमने घुमाया है", "vah-m": "उसने घुमाया है", "vah-f": "उसने घुमाया है", "ham-m": "हमने घुमाया है", "ham-f": "हमने घुमाया है" }
+      readings: { "main-m": "mainnē ghumāyā hai", "main-f": "mainnē ghumāyā hai", "tum-m": "tumnē ghumāyā hai", "tum-f": "tumnē ghumāyā hai", "vah-m": "usnē ghumāyā hai", "vah-f": "usnē ghumāyā hai", "ham-m": "hamnē ghumāyā hai", "ham-f": "hamnē ghumāyā hai" }
+    - word: "hi-2581"
+      forms: { "main-m": "झगड़ा हूँ", "main-f": "झगड़ी हूँ", "tum-m": "झगड़े हो", "tum-f": "झगड़ी हो", "vah-m": "झगड़ा है", "vah-f": "झगड़ी है", "ham-m": "झगड़े हैं", "ham-f": "झगड़ी हैं" }
+      readings: { "main-m": "jhagṛā hūm̐", "main-f": "jhagṛī hūm̐", "tum-m": "jhagṛē hō", "tum-f": "jhagṛī hō", "vah-m": "jhagṛā hai", "vah-f": "jhagṛī hai", "ham-m": "jhagṛē haim̐", "ham-f": "jhagṛī haim̐" }
+    - word: "hi-2582"
+      forms: { "main-m": "रूठा हूँ", "main-f": "रूठी हूँ", "tum-m": "रूठे हो", "tum-f": "रूठी हो", "vah-m": "रूठा है", "vah-f": "रूठी है", "ham-m": "रूठे हैं", "ham-f": "रूठी हैं" }
+      readings: { "main-m": "rūṭhā hūm̐", "main-f": "rūṭhī hūm̐", "tum-m": "rūṭhē hō", "tum-f": "rūṭhī hō", "vah-m": "rūṭhā hai", "vah-f": "rūṭhī hai", "ham-m": "rūṭhē haim̐", "ham-f": "rūṭhī haim̐" }
+    - word: "hi-2583"
+      forms: { "main-m": "जुड़ा हूँ", "main-f": "जुड़ी हूँ", "tum-m": "जुड़े हो", "tum-f": "जुड़ी हो", "vah-m": "जुड़ा है", "vah-f": "जुड़ी है", "ham-m": "जुड़े हैं", "ham-f": "जुड़ी हैं" }
+      readings: { "main-m": "juṛā hūm̐", "main-f": "juṛī hūm̐", "tum-m": "juṛē hō", "tum-f": "juṛī hō", "vah-m": "juṛā hai", "vah-f": "juṛī hai", "ham-m": "juṛē haim̐", "ham-f": "juṛī haim̐" }
+    - word: "hi-2607"
+      forms: { "main-m": "बसा हूँ", "main-f": "बसी हूँ", "tum-m": "बसे हो", "tum-f": "बसी हो", "vah-m": "बसा है", "vah-f": "बसी है", "ham-m": "बसे हैं", "ham-f": "बसी हैं" }
+      readings: { "main-m": "basā hūm̐", "main-f": "basī hūm̐", "tum-m": "basē hō", "tum-f": "basī hō", "vah-m": "basā hai", "vah-f": "basī hai", "ham-m": "basē haim̐", "ham-f": "basī haim̐" }
+    - word: "hi-2614"
+      forms: { "main-m": "जमा हूँ", "main-f": "जमी हूँ", "tum-m": "जमे हो", "tum-f": "जमी हो", "vah-m": "जमा है", "vah-f": "जमी है", "ham-m": "जमे हैं", "ham-f": "जमी हैं" }
+      readings: { "main-m": "jamā hūm̐", "main-f": "jamī hūm̐", "tum-m": "jamē hō", "tum-f": "jamī hō", "vah-m": "jamā hai", "vah-f": "jamī hai", "ham-m": "jamē haim̐", "ham-f": "jamī haim̐" }
+    - word: "hi-2615"
+      forms: { "main-m": "पिघला हूँ", "main-f": "पिघली हूँ", "tum-m": "पिघले हो", "tum-f": "पिघली हो", "vah-m": "पिघला है", "vah-f": "पिघली है", "ham-m": "पिघले हैं", "ham-f": "पिघली हैं" }
+      readings: { "main-m": "pighlā hūm̐", "main-f": "pighlī hūm̐", "tum-m": "pighlē hō", "tum-f": "pighlī hō", "vah-m": "pighlā hai", "vah-f": "pighlī hai", "ham-m": "pighlē haim̐", "ham-f": "pighlī haim̐" }
+    - word: "hi-2616"
+      forms: { "main-m": "उबला हूँ", "main-f": "उबली हूँ", "tum-m": "उबले हो", "tum-f": "उबली हो", "vah-m": "उबला है", "vah-f": "उबली है", "ham-m": "उबले हैं", "ham-f": "उबली हैं" }
+      readings: { "main-m": "ublā hūm̐", "main-f": "ublī hūm̐", "tum-m": "ublē hō", "tum-f": "ublī hō", "vah-m": "ublā hai", "vah-f": "ublī hai", "ham-m": "ublē haim̐", "ham-f": "ublī haim̐" }
+    - word: "hi-2617"
+      forms: { "main-m": "जला हूँ", "main-f": "जली हूँ", "tum-m": "जले हो", "tum-f": "जली हो", "vah-m": "जला है", "vah-f": "जली है", "ham-m": "जले हैं", "ham-f": "जली हैं" }
+      readings: { "main-m": "jalā hūm̐", "main-f": "jalī hūm̐", "tum-m": "jalē hō", "tum-f": "jalī hō", "vah-m": "jalā hai", "vah-f": "jalī hai", "ham-m": "jalē haim̐", "ham-f": "jalī haim̐" }
+    - word: "hi-2618"
+      forms: { "main-m": "बुझा हूँ", "main-f": "बुझी हूँ", "tum-m": "बुझे हो", "tum-f": "बुझी हो", "vah-m": "बुझा है", "vah-f": "बुझी है", "ham-m": "बुझे हैं", "ham-f": "बुझी हैं" }
+      readings: { "main-m": "bujhā hūm̐", "main-f": "bujhī hūm̐", "tum-m": "bujhē hō", "tum-f": "bujhī hō", "vah-m": "bujhā hai", "vah-f": "bujhī hai", "ham-m": "bujhē haim̐", "ham-f": "bujhī haim̐" }
+    - word: "hi-2619"
+      forms: { "main-m": "भटका हूँ", "main-f": "भटकी हूँ", "tum-m": "भटके हो", "tum-f": "भटकी हो", "vah-m": "भटका है", "vah-f": "भटकी है", "ham-m": "भटके हैं", "ham-f": "भटकी हैं" }
+      readings: { "main-m": "bhaṭkā hūm̐", "main-f": "bhaṭkī hūm̐", "tum-m": "bhaṭkē hō", "tum-f": "bhaṭkī hō", "vah-m": "bhaṭkā hai", "vah-f": "bhaṭkī hai", "ham-m": "bhaṭkē haim̐", "ham-f": "bhaṭkī haim̐" }
+    - word: "hi-2620"
+      forms: { "main-m": "छिपा हूँ", "main-f": "छिपी हूँ", "tum-m": "छिपे हो", "tum-f": "छिपी हो", "vah-m": "छिपा है", "vah-f": "छिपी है", "ham-m": "छिपे हैं", "ham-f": "छिपी हैं" }
+      readings: { "main-m": "chipā hūm̐", "main-f": "chipī hūm̐", "tum-m": "chipē hō", "tum-f": "chipī hō", "vah-m": "chipā hai", "vah-f": "chipī hai", "ham-m": "chipē haim̐", "ham-f": "chipī haim̐" }
+    - word: "hi-2621"
+      forms: { "main-m": "कूदा हूँ", "main-f": "कूदी हूँ", "tum-m": "कूदे हो", "tum-f": "कूदी हो", "vah-m": "कूदा है", "vah-f": "कूदी है", "ham-m": "कूदे हैं", "ham-f": "कूदी हैं" }
+      readings: { "main-m": "kūdā hūm̐", "main-f": "kūdī hūm̐", "tum-m": "kūdē hō", "tum-f": "kūdī hō", "vah-m": "kūdā hai", "vah-f": "kūdī hai", "ham-m": "kūdē haim̐", "ham-f": "kūdī haim̐" }
+    - word: "hi-2622"
+      forms: { "main-m": "फिसला हूँ", "main-f": "फिसली हूँ", "tum-m": "फिसले हो", "tum-f": "फिसली हो", "vah-m": "फिसला है", "vah-f": "फिसली है", "ham-m": "फिसले हैं", "ham-f": "फिसली हैं" }
+      readings: { "main-m": "phislā hūm̐", "main-f": "phislī hūm̐", "tum-m": "phislē hō", "tum-f": "phislī hō", "vah-m": "phislā hai", "vah-f": "phislī hai", "ham-m": "phislē haim̐", "ham-f": "phislī haim̐" }
+    - word: "hi-2623"
+      forms: { "main-m": "मैंने थामा है", "main-f": "मैंने थामा है", "tum-m": "तुमने थामा है", "tum-f": "तुमने थामा है", "vah-m": "उसने थामा है", "vah-f": "उसने थामा है", "ham-m": "हमने थामा है", "ham-f": "हमने थामा है" }
+      readings: { "main-m": "mainnē thāmā hai", "main-f": "mainnē thāmā hai", "tum-m": "tumnē thāmā hai", "tum-f": "tumnē thāmā hai", "vah-m": "usnē thāmā hai", "vah-f": "usnē thāmā hai", "ham-m": "hamnē thāmā hai", "ham-f": "hamnē thāmā hai" }
+    - word: "hi-2624"
+      forms: { "main-m": "मैंने रगड़ा है", "main-f": "मैंने रगड़ा है", "tum-m": "तुमने रगड़ा है", "tum-f": "तुमने रगड़ा है", "vah-m": "उसने रगड़ा है", "vah-f": "उसने रगड़ा है", "ham-m": "हमने रगड़ा है", "ham-f": "हमने रगड़ा है" }
+      readings: { "main-m": "mainnē ragṛā hai", "main-f": "mainnē ragṛā hai", "tum-m": "tumnē ragṛā hai", "tum-f": "tumnē ragṛā hai", "vah-m": "usnē ragṛā hai", "vah-f": "usnē ragṛā hai", "ham-m": "hamnē ragṛā hai", "ham-f": "hamnē ragṛā hai" }
+    - word: "hi-2625"
+      forms: { "main-m": "मैंने तोड़ा है", "main-f": "मैंने तोड़ा है", "tum-m": "तुमने तोड़ा है", "tum-f": "तुमने तोड़ा है", "vah-m": "उसने तोड़ा है", "vah-f": "उसने तोड़ा है", "ham-m": "हमने तोड़ा है", "ham-f": "हमने तोड़ा है" }
+      readings: { "main-m": "mainnē tōṛā hai", "main-f": "mainnē tōṛā hai", "tum-m": "tumnē tōṛā hai", "tum-f": "tumnē tōṛā hai", "vah-m": "usnē tōṛā hai", "vah-f": "usnē tōṛā hai", "ham-m": "hamnē tōṛā hai", "ham-f": "hamnē tōṛā hai" }
+    - word: "hi-2626"
+      forms: { "main-m": "मैंने मोड़ा है", "main-f": "मैंने मोड़ा है", "tum-m": "तुमने मोड़ा है", "tum-f": "तुमने मोड़ा है", "vah-m": "उसने मोड़ा है", "vah-f": "उसने मोड़ा है", "ham-m": "हमने मोड़ा है", "ham-f": "हमने मोड़ा है" }
+      readings: { "main-m": "mainnē mōṛā hai", "main-f": "mainnē mōṛā hai", "tum-m": "tumnē mōṛā hai", "tum-f": "tumnē mōṛā hai", "vah-m": "usnē mōṛā hai", "vah-f": "usnē mōṛā hai", "ham-m": "hamnē mōṛā hai", "ham-f": "hamnē mōṛā hai" }
+    - word: "hi-2627"
+      forms: { "main-m": ["मैंने लड़ा है", "लड़ा हूँ"], "main-f": ["मैंने लड़ा है", "लड़ी हूँ"], "tum-m": ["तुमने लड़ा है", "लड़े हो"], "tum-f": ["तुमने लड़ा है", "लड़ी हो"], "vah-m": ["उसने लड़ा है", "लड़ा है"], "vah-f": ["उसने लड़ा है", "लड़ी है"], "ham-m": ["हमने लड़ा है", "लड़े हैं"], "ham-f": ["हमने लड़ा है", "लड़ी हैं"] }
+      readings: { "main-m": ["mainnē laṛā hai", "laṛā hūm̐"], "main-f": ["mainnē laṛā hai", "laṛī hūm̐"], "tum-m": ["tumnē laṛā hai", "laṛē hō"], "tum-f": ["tumnē laṛā hai", "laṛī hō"], "vah-m": ["usnē laṛā hai", "laṛā hai"], "vah-f": ["usnē laṛā hai", "laṛī hai"], "ham-m": ["hamnē laṛā hai", "laṛē haim̐"], "ham-f": ["hamnē laṛā hai", "laṛī haim̐"] }
+    - word: "hi-2628"
+      forms: { "main-m": "मैंने सुधारा है", "main-f": "मैंने सुधारा है", "tum-m": "तुमने सुधारा है", "tum-f": "तुमने सुधारा है", "vah-m": "उसने सुधारा है", "vah-f": "उसने सुधारा है", "ham-m": "हमने सुधारा है", "ham-f": "हमने सुधारा है" }
+      readings: { "main-m": "mainnē sudhārā hai", "main-f": "mainnē sudhārā hai", "tum-m": "tumnē sudhārā hai", "tum-f": "tumnē sudhārā hai", "vah-m": "usnē sudhārā hai", "vah-f": "usnē sudhārā hai", "ham-m": "hamnē sudhārā hai", "ham-f": "hamnē sudhārā hai" }
+    - word: "hi-2629"
+      forms: { "main-m": "मैंने लगाया है", "main-f": "मैंने लगाया है", "tum-m": "तुमने लगाया है", "tum-f": "तुमने लगाया है", "vah-m": "उसने लगाया है", "vah-f": "उसने लगाया है", "ham-m": "हमने लगाया है", "ham-f": "हमने लगाया है" }
+      readings: { "main-m": "mainnē lagāyā hai", "main-f": "mainnē lagāyā hai", "tum-m": "tumnē lagāyā hai", "tum-f": "tumnē lagāyā hai", "vah-m": "usnē lagāyā hai", "vah-f": "usnē lagāyā hai", "ham-m": "hamnē lagāyā hai", "ham-f": "hamnē lagāyā hai" }
+    - word: "hi-2630"
+      forms: { "main-m": "मैंने लगवाया है", "main-f": "मैंने लगवाया है", "tum-m": "तुमने लगवाया है", "tum-f": "तुमने लगवाया है", "vah-m": "उसने लगवाया है", "vah-f": "उसने लगवाया है", "ham-m": "हमने लगवाया है", "ham-f": "हमने लगवाया है" }
+      readings: { "main-m": "mainnē lagvāyā hai", "main-f": "mainnē lagvāyā hai", "tum-m": "tumnē lagvāyā hai", "tum-f": "tumnē lagvāyā hai", "vah-m": "usnē lagvāyā hai", "vah-f": "usnē lagvāyā hai", "ham-m": "hamnē lagvāyā hai", "ham-f": "hamnē lagvāyā hai" }
+    - word: "hi-2631"
+      forms: { "main-m": "मैंने पहचाना है", "main-f": "मैंने पहचाना है", "tum-m": "तुमने पहचाना है", "tum-f": "तुमने पहचाना है", "vah-m": "उसने पहचाना है", "vah-f": "उसने पहचाना है", "ham-m": "हमने पहचाना है", "ham-f": "हमने पहचाना है" }
+      readings: { "main-m": "mainnē pahcānā hai", "main-f": "mainnē pahcānā hai", "tum-m": "tumnē pahcānā hai", "tum-f": "tumnē pahcānā hai", "vah-m": "usnē pahcānā hai", "vah-f": "usnē pahcānā hai", "ham-m": "hamnē pahcānā hai", "ham-f": "hamnē pahcānā hai" }
+    - word: "hi-2632"
+      forms: { "main-m": "मैंने सींचा है", "main-f": "मैंने सींचा है", "tum-m": "तुमने सींचा है", "tum-f": "तुमने सींचा है", "vah-m": "उसने सींचा है", "vah-f": "उसने सींचा है", "ham-m": "हमने सींचा है", "ham-f": "हमने सींचा है" }
+      readings: { "main-m": "mainnē sīñcā hai", "main-f": "mainnē sīñcā hai", "tum-m": "tumnē sīñcā hai", "tum-f": "tumnē sīñcā hai", "vah-m": "usnē sīñcā hai", "vah-f": "usnē sīñcā hai", "ham-m": "hamnē sīñcā hai", "ham-f": "hamnē sīñcā hai" }
+    - word: "hi-2633"
+      forms: { "main-m": "मैंने बोया है", "main-f": "मैंने बोया है", "tum-m": "तुमने बोया है", "tum-f": "तुमने बोया है", "vah-m": "उसने बोया है", "vah-f": "उसने बोया है", "ham-m": "हमने बोया है", "ham-f": "हमने बोया है" }
+      readings: { "main-m": "mainnē bōyā hai", "main-f": "mainnē bōyā hai", "tum-m": "tumnē bōyā hai", "tum-f": "tumnē bōyā hai", "vah-m": "usnē bōyā hai", "vah-f": "usnē bōyā hai", "ham-m": "hamnē bōyā hai", "ham-f": "hamnē bōyā hai" }
+    - word: "hi-2634"
+      forms: { "main-m": "मैंने माँगा है", "main-f": "मैंने माँगा है", "tum-m": "तुमने माँगा है", "tum-f": "तुमने माँगा है", "vah-m": "उसने माँगा है", "vah-f": "उसने माँगा है", "ham-m": "हमने माँगा है", "ham-f": "हमने माँगा है" }
+      readings: { "main-m": "mainnē mām̐gā hai", "main-f": "mainnē mām̐gā hai", "tum-m": "tumnē mām̐gā hai", "tum-f": "tumnē mām̐gā hai", "vah-m": "usnē mām̐gā hai", "vah-f": "usnē mām̐gā hai", "ham-m": "hamnē mām̐gā hai", "ham-f": "hamnē mām̐gā hai" }
+    - word: "hi-2635"
+      forms: { "main-m": "निकला हूँ", "main-f": "निकली हूँ", "tum-m": "निकले हो", "tum-f": "निकली हो", "vah-m": "निकला है", "vah-f": "निकली है", "ham-m": "निकले हैं", "ham-f": "निकली हैं" }
+      readings: { "main-m": "niklā hūm̐", "main-f": "niklī hūm̐", "tum-m": "niklē hō", "tum-f": "niklī hō", "vah-m": "niklā hai", "vah-f": "niklī hai", "ham-m": "niklē haim̐", "ham-f": "niklī haim̐" }
+    - word: "hi-2636"
+      forms: { "main-m": "मैंने गाड़ा है", "main-f": "मैंने गाड़ा है", "tum-m": "तुमने गाड़ा है", "tum-f": "तुमने गाड़ा है", "vah-m": "उसने गाड़ा है", "vah-f": "उसने गाड़ा है", "ham-m": "हमने गाड़ा है", "ham-f": "हमने गाड़ा है" }
+      readings: { "main-m": "mainnē gāṛā hai", "main-f": "mainnē gāṛā hai", "tum-m": "tumnē gāṛā hai", "tum-f": "tumnē gāṛā hai", "vah-m": "usnē gāṛā hai", "vah-f": "usnē gāṛā hai", "ham-m": "hamnē gāṛā hai", "ham-f": "hamnē gāṛā hai" }
+    - word: "hi-2637"
+      forms: { "main-m": "मैंने उड़ाया है", "main-f": "मैंने उड़ाया है", "tum-m": "तुमने उड़ाया है", "tum-f": "तुमने उड़ाया है", "vah-m": "उसने उड़ाया है", "vah-f": "उसने उड़ाया है", "ham-m": "हमने उड़ाया है", "ham-f": "हमने उड़ाया है" }
+      readings: { "main-m": "mainnē uṛāyā hai", "main-f": "mainnē uṛāyā hai", "tum-m": "tumnē uṛāyā hai", "tum-f": "tumnē uṛāyā hai", "vah-m": "usnē uṛāyā hai", "vah-f": "usnē uṛāyā hai", "ham-m": "hamnē uṛāyā hai", "ham-f": "hamnē uṛāyā hai" }
+    - word: "hi-2638"
+      forms: { "main-m": "मैंने हटाया है", "main-f": "मैंने हटाया है", "tum-m": "तुमने हटाया है", "tum-f": "तुमने हटाया है", "vah-m": "उसने हटाया है", "vah-f": "उसने हटाया है", "ham-m": "हमने हटाया है", "ham-f": "हमने हटाया है" }
+      readings: { "main-m": "mainnē haṭāyā hai", "main-f": "mainnē haṭāyā hai", "tum-m": "tumnē haṭāyā hai", "tum-f": "tumnē haṭāyā hai", "vah-m": "usnē haṭāyā hai", "vah-f": "usnē haṭāyā hai", "ham-m": "hamnē haṭāyā hai", "ham-f": "hamnē haṭāyā hai" }
+    - word: "hi-2639"
+      forms: { "main-m": "मैंने निगला है", "main-f": "मैंने निगला है", "tum-m": "तुमने निगला है", "tum-f": "तुमने निगला है", "vah-m": "उसने निगला है", "vah-f": "उसने निगला है", "ham-m": "हमने निगला है", "ham-f": "हमने निगला है" }
+      readings: { "main-m": "mainnē niglā hai", "main-f": "mainnē niglā hai", "tum-m": "tumnē niglā hai", "tum-f": "tumnē niglā hai", "vah-m": "usnē niglā hai", "vah-f": "usnē niglā hai", "ham-m": "hamnē niglā hai", "ham-f": "hamnē niglā hai" }
+    - word: "hi-2640"
+      forms: { "main-m": "मैंने चबाया है", "main-f": "मैंने चबाया है", "tum-m": "तुमने चबाया है", "tum-f": "तुमने चबाया है", "vah-m": "उसने चबाया है", "vah-f": "उसने चबाया है", "ham-m": "हमने चबाया है", "ham-f": "हमने चबाया है" }
+      readings: { "main-m": "mainnē cabāyā hai", "main-f": "mainnē cabāyā hai", "tum-m": "tumnē cabāyā hai", "tum-f": "tumnē cabāyā hai", "vah-m": "usnē cabāyā hai", "vah-f": "usnē cabāyā hai", "ham-m": "hamnē cabāyā hai", "ham-f": "hamnē cabāyā hai" }
+    - word: "hi-2641"
+      forms: { "main-m": "मैंने निचोड़ा है", "main-f": "मैंने निचोड़ा है", "tum-m": "तुमने निचोड़ा है", "tum-f": "तुमने निचोड़ा है", "vah-m": "उसने निचोड़ा है", "vah-f": "उसने निचोड़ा है", "ham-m": "हमने निचोड़ा है", "ham-f": "हमने निचोड़ा है" }
+      readings: { "main-m": "mainnē nicōṛā hai", "main-f": "mainnē nicōṛā hai", "tum-m": "tumnē nicōṛā hai", "tum-f": "tumnē nicōṛā hai", "vah-m": "usnē nicōṛā hai", "vah-f": "usnē nicōṛā hai", "ham-m": "hamnē nicōṛā hai", "ham-f": "hamnē nicōṛā hai" }
+    - word: "hi-2642"
+      forms: { "main-m": "मैंने सूँघा है", "main-f": "मैंने सूँघा है", "tum-m": "तुमने सूँघा है", "tum-f": "तुमने सूँघा है", "vah-m": "उसने सूँघा है", "vah-f": "उसने सूँघा है", "ham-m": "हमने सूँघा है", "ham-f": "हमने सूँघा है" }
+      readings: { "main-m": "mainnē sūm̐ghā hai", "main-f": "mainnē sūm̐ghā hai", "tum-m": "tumnē sūm̐ghā hai", "tum-f": "tumnē sūm̐ghā hai", "vah-m": "usnē sūm̐ghā hai", "vah-f": "usnē sūm̐ghā hai", "ham-m": "hamnē sūm̐ghā hai", "ham-f": "hamnē sūm̐ghā hai" }
+    - word: "hi-2643"
+      forms: { "main-m": "मैंने चखा है", "main-f": "मैंने चखा है", "tum-m": "तुमने चखा है", "tum-f": "तुमने चखा है", "vah-m": "उसने चखा है", "vah-f": "उसने चखा है", "ham-m": "हमने चखा है", "ham-f": "हमने चखा है" }
+      readings: { "main-m": "mainnē cakhā hai", "main-f": "mainnē cakhā hai", "tum-m": "tumnē cakhā hai", "tum-f": "tumnē cakhā hai", "vah-m": "usnē cakhā hai", "vah-f": "usnē cakhā hai", "ham-m": "hamnē cakhā hai", "ham-f": "hamnē cakhā hai" }
+    - word: "hi-2790"
+      forms: { "main-m": "बढ़ा हूँ", "main-f": "बढ़ी हूँ", "tum-m": "बढ़े हो", "tum-f": "बढ़ी हो", "vah-m": "बढ़ा है", "vah-f": "बढ़ी है", "ham-m": "बढ़े हैं", "ham-f": "बढ़ी हैं" }
+      readings: { "main-m": "baṛhā hūm̐", "main-f": "baṛhī hūm̐", "tum-m": "baṛhē hō", "tum-f": "baṛhī hō", "vah-m": "baṛhā hai", "vah-f": "baṛhī hai", "ham-m": "baṛhē haim̐", "ham-f": "baṛhī haim̐" }
+    - word: "hi-2791"
+      forms: { "main-m": "मैंने बढ़ाया है", "main-f": "मैंने बढ़ाया है", "tum-m": "तुमने बढ़ाया है", "tum-f": "तुमने बढ़ाया है", "vah-m": "उसने बढ़ाया है", "vah-f": "उसने बढ़ाया है", "ham-m": "हमने बढ़ाया है", "ham-f": "हमने बढ़ाया है" }
+      readings: { "main-m": "mainnē baṛhāyā hai", "main-f": "mainnē baṛhāyā hai", "tum-m": "tumnē baṛhāyā hai", "tum-f": "tumnē baṛhāyā hai", "vah-m": "usnē baṛhāyā hai", "vah-f": "usnē baṛhāyā hai", "ham-m": "hamnē baṛhāyā hai", "ham-f": "hamnē baṛhāyā hai" }
+    - word: "hi-2792"
+      forms: { "main-m": "गुज़रा हूँ", "main-f": "गुज़री हूँ", "tum-m": "गुज़रे हो", "tum-f": "गुज़री हो", "vah-m": "गुज़रा है", "vah-f": "गुज़री है", "ham-m": "गुज़रे हैं", "ham-f": "गुज़री हैं" }
+      readings: { "main-m": "guzrā hūm̐", "main-f": "guzrī hūm̐", "tum-m": "guzrē hō", "tum-f": "guzrī hō", "vah-m": "guzrā hai", "vah-f": "guzrī hai", "ham-m": "guzrē haim̐", "ham-f": "guzrī haim̐" }
+    - word: "hi-2793"
+      forms: { "main-m": ["मैंने झपटा है", "झपटा हूँ"], "main-f": ["मैंने झपटा है", "झपटी हूँ"], "tum-m": ["तुमने झपटा है", "झपटे हो"], "tum-f": ["तुमने झपटा है", "झपटी हो"], "vah-m": ["उसने झपटा है", "झपटा है"], "vah-f": ["उसने झपटा है", "झपटी है"], "ham-m": ["हमने झपटा है", "झपटे हैं"], "ham-f": ["हमने झपटा है", "झपटी हैं"] }
+      readings: { "main-m": ["mainnē jhapṭā hai", "jhapṭā hūm̐"], "main-f": ["mainnē jhapṭā hai", "jhapṭī hūm̐"], "tum-m": ["tumnē jhapṭā hai", "jhapṭē hō"], "tum-f": ["tumnē jhapṭā hai", "jhapṭī hō"], "vah-m": ["usnē jhapṭā hai", "jhapṭā hai"], "vah-f": ["usnē jhapṭā hai", "jhapṭī hai"], "ham-m": ["hamnē jhapṭā hai", "jhapṭē haim̐"], "ham-f": ["hamnē jhapṭā hai", "jhapṭī haim̐"] }
+    - word: "hi-2794"
+      forms: { "main-m": "पलटा हूँ", "main-f": "पलटी हूँ", "tum-m": "पलटे हो", "tum-f": "पलटी हो", "vah-m": "पलटा है", "vah-f": "पलटी है", "ham-m": "पलटे हैं", "ham-f": "पलटी हैं" }
+      readings: { "main-m": "palṭā hūm̐", "main-f": "palṭī hūm̐", "tum-m": "palṭē hō", "tum-f": "palṭī hō", "vah-m": "palṭā hai", "vah-f": "palṭī hai", "ham-m": "palṭē haim̐", "ham-f": "palṭī haim̐" }
+    - word: "hi-2795"
+      forms: { "main-m": "मैंने सोखा है", "main-f": "मैंने सोखा है", "tum-m": "तुमने सोखा है", "tum-f": "तुमने सोखा है", "vah-m": "उसने सोखा है", "vah-f": "उसने सोखा है", "ham-m": "हमने सोखा है", "ham-f": "हमने सोखा है" }
+      readings: { "main-m": "mainnē sōkhā hai", "main-f": "mainnē sōkhā hai", "tum-m": "tumnē sōkhā hai", "tum-f": "tumnē sōkhā hai", "vah-m": "usnē sōkhā hai", "vah-f": "usnē sōkhā hai", "ham-m": "hamnē sōkhā hai", "ham-f": "hamnē sōkhā hai" }
+    - word: "hi-2796"
+      forms: { "main-m": "मैंने बहाया है", "main-f": "मैंने बहाया है", "tum-m": "तुमने बहाया है", "tum-f": "तुमने बहाया है", "vah-m": "उसने बहाया है", "vah-f": "उसने बहाया है", "ham-m": "हमने बहाया है", "ham-f": "हमने बहाया है" }
+      readings: { "main-m": "mainnē bahāyā hai", "main-f": "mainnē bahāyā hai", "tum-m": "tumnē bahāyā hai", "tum-f": "tumnē bahāyā hai", "vah-m": "usnē bahāyā hai", "vah-f": "usnē bahāyā hai", "ham-m": "hamnē bahāyā hai", "ham-f": "hamnē bahāyā hai" }
+    - word: "hi-2797"
+      forms: { "main-m": "मैंने मला है", "main-f": "मैंने मला है", "tum-m": "तुमने मला है", "tum-f": "तुमने मला है", "vah-m": "उसने मला है", "vah-f": "उसने मला है", "ham-m": "हमने मला है", "ham-f": "हमने मला है" }
+      readings: { "main-m": "mainnē malā hai", "main-f": "mainnē malā hai", "tum-m": "tumnē malā hai", "tum-f": "tumnē malā hai", "vah-m": "usnē malā hai", "vah-f": "usnē malā hai", "ham-m": "hamnē malā hai", "ham-f": "hamnē malā hai" }
+    - word: "hi-2798"
+      forms: { "main-m": "मैंने भिगोया है", "main-f": "मैंने भिगोया है", "tum-m": "तुमने भिगोया है", "tum-f": "तुमने भिगोया है", "vah-m": "उसने भिगोया है", "vah-f": "उसने भिगोया है", "ham-m": "हमने भिगोया है", "ham-f": "हमने भिगोया है" }
+      readings: { "main-m": "mainnē bhigōyā hai", "main-f": "mainnē bhigōyā hai", "tum-m": "tumnē bhigōyā hai", "tum-f": "tumnē bhigōyā hai", "vah-m": "usnē bhigōyā hai", "vah-f": "usnē bhigōyā hai", "ham-m": "hamnē bhigōyā hai", "ham-f": "hamnē bhigōyā hai" }
+    - word: "hi-2799"
+      forms: { "main-m": "मैंने पकड़ाया है", "main-f": "मैंने पकड़ाया है", "tum-m": "तुमने पकड़ाया है", "tum-f": "तुमने पकड़ाया है", "vah-m": "उसने पकड़ाया है", "vah-f": "उसने पकड़ाया है", "ham-m": "हमने पकड़ाया है", "ham-f": "हमने पकड़ाया है" }
+      readings: { "main-m": "mainnē pakṛāyā hai", "main-f": "mainnē pakṛāyā hai", "tum-m": "tumnē pakṛāyā hai", "tum-f": "tumnē pakṛāyā hai", "vah-m": "usnē pakṛāyā hai", "vah-f": "usnē pakṛāyā hai", "ham-m": "hamnē pakṛāyā hai", "ham-f": "hamnē pakṛāyā hai" }
+    - word: "hi-2800"
+      forms: { "main-m": "मैंने खुजलाया है", "main-f": "मैंने खुजलाया है", "tum-m": "तुमने खुजलाया है", "tum-f": "तुमने खुजलाया है", "vah-m": "उसने खुजलाया है", "vah-f": "उसने खुजलाया है", "ham-m": "हमने खुजलाया है", "ham-f": "हमने खुजलाया है" }
+      readings: { "main-m": "mainnē khujlāyā hai", "main-f": "mainnē khujlāyā hai", "tum-m": "tumnē khujlāyā hai", "tum-f": "tumnē khujlāyā hai", "vah-m": "usnē khujlāyā hai", "vah-f": "usnē khujlāyā hai", "ham-m": "hamnē khujlāyā hai", "ham-f": "hamnē khujlāyā hai" }
+    - word: "hi-2801"
+      forms: { "main-m": "मैंने दबोचा है", "main-f": "मैंने दबोचा है", "tum-m": "तुमने दबोचा है", "tum-f": "तुमने दबोचा है", "vah-m": "उसने दबोचा है", "vah-f": "उसने दबोचा है", "ham-m": "हमने दबोचा है", "ham-f": "हमने दबोचा है" }
+      readings: { "main-m": "mainnē dabōcā hai", "main-f": "mainnē dabōcā hai", "tum-m": "tumnē dabōcā hai", "tum-f": "tumnē dabōcā hai", "vah-m": "usnē dabōcā hai", "vah-f": "usnē dabōcā hai", "ham-m": "hamnē dabōcā hai", "ham-f": "hamnē dabōcā hai" }
+    - word: "hi-2803"
+      forms: { "main-m": "भुना हूँ", "main-f": "भुनी हूँ", "tum-m": "भुने हो", "tum-f": "भुनी हो", "vah-m": "भुना है", "vah-f": "भुनी है", "ham-m": "भुने हैं", "ham-f": "भुनी हैं" }
+      readings: { "main-m": "bhunā hūm̐", "main-f": "bhunī hūm̐", "tum-m": "bhunē hō", "tum-f": "bhunī hō", "vah-m": "bhunā hai", "vah-f": "bhunī hai", "ham-m": "bhunē haim̐", "ham-f": "bhunī haim̐" }
+    - word: "hi-2804"
+      forms: { "main-m": "मैंने चमकाया है", "main-f": "मैंने चमकाया है", "tum-m": "तुमने चमकाया है", "tum-f": "तुमने चमकाया है", "vah-m": "उसने चमकाया है", "vah-f": "उसने चमकाया है", "ham-m": "हमने चमकाया है", "ham-f": "हमने चमकाया है" }
+      readings: { "main-m": "mainnē camkāyā hai", "main-f": "mainnē camkāyā hai", "tum-m": "tumnē camkāyā hai", "tum-f": "tumnē camkāyā hai", "vah-m": "usnē camkāyā hai", "vah-f": "usnē camkāyā hai", "ham-m": "hamnē camkāyā hai", "ham-f": "hamnē camkāyā hai" }
+    - word: "hi-2805"
+      forms: { "main-m": "मैंने हिलाया है", "main-f": "मैंने हिलाया है", "tum-m": "तुमने हिलाया है", "tum-f": "तुमने हिलाया है", "vah-m": "उसने हिलाया है", "vah-f": "उसने हिलाया है", "ham-m": "हमने हिलाया है", "ham-f": "हमने हिलाया है" }
+      readings: { "main-m": "mainnē hilāyā hai", "main-f": "mainnē hilāyā hai", "tum-m": "tumnē hilāyā hai", "tum-f": "tumnē hilāyā hai", "vah-m": "usnē hilāyā hai", "vah-f": "usnē hilāyā hai", "ham-m": "hamnē hilāyā hai", "ham-f": "hamnē hilāyā hai" }
+    - word: "hi-2806"
+      forms: { "main-m": "हिला हूँ", "main-f": "हिली हूँ", "tum-m": "हिले हो", "tum-f": "हिली हो", "vah-m": "हिला है", "vah-f": "हिली है", "ham-m": "हिले हैं", "ham-f": "हिली हैं" }
+      readings: { "main-m": "hilā hūm̐", "main-f": "hilī hūm̐", "tum-m": "hilē hō", "tum-f": "hilī hō", "vah-m": "hilā hai", "vah-f": "hilī hai", "ham-m": "hilē haim̐", "ham-f": "hilī haim̐" }
+    - word: "hi-2807"
+      forms: { "main-m": "झूला हूँ", "main-f": "झूली हूँ", "tum-m": "झूले हो", "tum-f": "झूली हो", "vah-m": "झूला है", "vah-f": "झूली है", "ham-m": "झूले हैं", "ham-f": "झूली हैं" }
+      readings: { "main-m": "jhūlā hūm̐", "main-f": "jhūlī hūm̐", "tum-m": "jhūlē hō", "tum-f": "jhūlī hō", "vah-m": "jhūlā hai", "vah-f": "jhūlī hai", "ham-m": "jhūlē haim̐", "ham-f": "jhūlī haim̐" }
+    - word: "hi-2808"
+      forms: { "main-m": "मैंने झूलाया है", "main-f": "मैंने झूलाया है", "tum-m": "तुमने झूलाया है", "tum-f": "तुमने झूलाया है", "vah-m": "उसने झूलाया है", "vah-f": "उसने झूलाया है", "ham-m": "हमने झूलाया है", "ham-f": "हमने झूलाया है" }
+      readings: { "main-m": "mainnē jhūlāyā hai", "main-f": "mainnē jhūlāyā hai", "tum-m": "tumnē jhūlāyā hai", "tum-f": "tumnē jhūlāyā hai", "vah-m": "usnē jhūlāyā hai", "vah-f": "usnē jhūlāyā hai", "ham-m": "hamnē jhūlāyā hai", "ham-f": "hamnē jhūlāyā hai" }
+rules:
+  - id: "hi-rule-perfect-first"
+    slots: ["main-m", "main-f"]
+    words: [{ word: "जाना", reading: "jānā" }, { word: "गया हूँ", reading: "gayā hūm̐" }, { word: "गई हूँ", reading: "gaī hūm̐" }, { word: "करना", reading: "karnā" }, { word: "मैंने किया है", reading: "mainnē kiyā hai" }, { word: "मैं", reading: "maim̐" }]
+  - id: "hi-rule-perfect-second"
+    slots: ["tum-m", "tum-f"]
+    words: [{ word: "जाना", reading: "jānā" }, { word: "गए हो", reading: "gē hō" }, { word: "गई हो", reading: "gaī hō" }, { word: "करना", reading: "karnā" }, { word: "तुमने किया है", reading: "tumnē kiyā hai" }, { word: "तुम", reading: "tum" }]
+  - id: "hi-rule-perfect-third"
+    slots: ["vah-m", "vah-f"]
+    words: [{ word: "जाना", reading: "jānā" }, { word: "गया है", reading: "gayā hai" }, { word: "गई है", reading: "gaī hai" }, { word: "करना", reading: "karnā" }, { word: "उसने किया है", reading: "usnē kiyā hai" }, { word: "वह", reading: "vah" }, { word: "तू", reading: "tū" }]
+  - id: "hi-rule-perfect-plural"
+    slots: ["ham-m", "ham-f"]
+    words: [{ word: "जाना", reading: "jānā" }, { word: "गए हैं", reading: "gē haim̐" }, { word: "गई हैं", reading: "gaī haim̐" }, { word: "करना", reading: "karnā" }, { word: "हमने किया है", reading: "hamnē kiyā hai" }, { word: "हम", reading: "ham" }, { word: "आप", reading: "āp" }, { word: "वे", reading: "vē" }]
