@@ -34,7 +34,7 @@ class PathUnitView {
 
 /// Unit [index] of [language]'s path, or null where the path has no such unit.
 PathUnitView? pathUnitView(AppState state, String language, int index) {
-  final catalog = state.catalogView;
+  final catalog = state.catalogOf(language);
   final plan = catalog.languagePaths[language]?.plan;
   if (plan == null || index < 0 || index >= plan.length) return null;
   final unit = plan[index];

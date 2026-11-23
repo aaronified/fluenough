@@ -79,9 +79,10 @@ void main() {
       'scriptGuideKeys',
       'glyph',
       'scriptCount',
+      'ipaSymbols',
       'stamp',
     ]);
-    expect(LanguageSummary.format, 2);
+    expect(LanguageSummary.format, 3);
     final text = jsonEncode(json);
     final back = LanguageSummary.tryFromJson(jsonDecode(text));
     expect(back, isNotNull);

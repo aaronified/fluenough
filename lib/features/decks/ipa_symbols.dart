@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
@@ -15,14 +17,29 @@ import '../drill/sounds_of_word.dart';
 ///
 /// Where the IPA course is not on the phone, a line says so and offers to add
 /// it. Nothing at all for a card with no IPA, or while IPA pronunciations is
-/// off in Settings.
-class IpaSymbols extends StatelessWidget {
+/// off in Settings. A spinner while the IPA course's unit is read, when the
+/// catalog is read one language at a time (ADR-0062).
+class IpaSymbols extends StatefulWidget {
   const IpaSymbols({super.key, required this.card});
 
   final Card card;
 
   @override
+  State<IpaSymbols> createState() => _IpaSymbolsState();
+}
+
+class _IpaSymbolsState extends State<IpaSymbols> {
+  @override
+  void initState() {
+    super.initState();
+    if (widget.card.ipa != null) {
+      unawaited(AppScope.read(context).ensureIpaReady());
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final card = widget.card;
     final ipa = ipaToShow(context, card.ipa, target: card.target);
     if (ipa == null) {
       return const SizedBox.shrink();
@@ -30,6 +47,16 @@ class IpaSymbols extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final state = AppScope.of(context);
+    if (!state.ipaReady) {
+      return Padding(
+        padding: const EdgeInsets.all(16),
+        child: Center(
+          child: CircularProgressIndicator(
+            semanticsLabel: l10n.commonLoadingDecks,
+          ),
+        ),
+      );
+    }
     final text = ipa.replaceAll(RegExp(r'[/\[\]\s.]'), '');
     final symbols = <Card>[...state.soundsOfWord(card)];
     symbols.sort((a, b) => text.indexOf(a.target) - text.indexOf(b.target));

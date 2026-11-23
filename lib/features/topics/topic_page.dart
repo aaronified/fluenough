@@ -402,7 +402,7 @@ class _TopicPageState extends State<TopicPage> {
     final l10n = AppLocalizations.of(context)!;
     final language = widget.request.language;
     final native = state.courseNative(language);
-    final catalog = state.catalogView;
+    final catalog = state.catalogOf(language);
     final rows = <Widget>[];
     for (final core in resolved.decks) {
       DeckEntry? entry;

@@ -209,7 +209,7 @@ Widget _cultureRow(
   final entry = index.deckOfCard(result.row.id);
   if (card == null || entry == null) return const SizedBox.shrink();
   final language = state.languageByCode(index.language) ?? entry.language;
-  final sections = state.catalogView.sections;
+  final sections = state.catalogOf(index.language).sections;
   final kind = sections.searchKind(result.row.kind);
   final kindName = kind == null
       ? result.row.kind
@@ -290,7 +290,7 @@ class _DeckResultRowState extends State<_DeckResultRow> {
     final row = result.row;
     final entry = index.deckEntry(row.id);
     final shelf = index.shelfOf(row.id);
-    final sections = state.catalogView.sections;
+    final sections = state.catalogOf(index.language).sections;
     final spoken = spokenFor(context, state);
     final professional = entry?.deck.professional ?? shelf?.professional;
     final genre = sections.genre(entry?.deck.genre ?? shelf?.genre);

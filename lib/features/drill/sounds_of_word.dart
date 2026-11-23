@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
@@ -15,22 +17,41 @@ import '../downloads/download_page.dart';
 /// learner who is not learning the IPA it first offers to add the course
 /// (owner, 2026-10-16: "Show, offer to add").
 ///
-class SoundsOfWordButton extends StatelessWidget {
+/// The IPA course is a dependency of every language, read when the catalog is
+/// read one language at a time (ADR-0062): the button is shown from the card's
+/// IPA and enabled once the course's unit is read, which the button asks for
+/// when it first shows.
+class SoundsOfWordButton extends StatefulWidget {
   const SoundsOfWordButton({super.key, required this.card});
 
   final Card card;
 
   @override
+  State<SoundsOfWordButton> createState() => _SoundsOfWordButtonState();
+}
+
+class _SoundsOfWordButtonState extends State<SoundsOfWordButton> {
+  @override
+  void initState() {
+    super.initState();
+    if (widget.card.ipa != null) {
+      unawaited(AppScope.read(context).ensureIpaReady());
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final card = widget.card;
     if (card.ipa == null) return const SizedBox.shrink();
-    final language = AppScope.read(context).deckOf(card)?.language;
+    final state = AppScope.of(context);
+    final language = state.deckOf(card)?.language;
     // The IPA's own cards are the sounds already.
     if (language == null || language.isIpa) return const SizedBox.shrink();
     final l10n = AppLocalizations.of(context)!;
     return LabelledIconButton(
       label: l10n.soundsOfWordLabel,
       hint: l10n.soundsOfWordButton,
-      onPressed: () => openSoundsOfWord(context, card),
+      onPressed: state.ipaReady ? () => openSoundsOfWord(context, card) : null,
       icon: const Icon(Icons.graphic_eq),
     );
   }
@@ -83,6 +104,10 @@ Future<bool> _ensureIpaCourse(BuildContext context) async {
 Future<void> openSoundsOfWord(BuildContext context, Card card) async {
   if (!await _ensureIpaCourse(context) || !context.mounted) return;
   final state = AppScope.read(context);
+  // The unit of the IPA course, which a download of it has just put on the
+  // phone, may not be read yet.
+  await state.ensureIpaReady();
+  if (!context.mounted) return;
   final request = state.soundsOfWordRequest(card);
   if (request == null) {
     showAppSnackBar(context, AppLocalizations.of(context)!.soundsOfWordNone);

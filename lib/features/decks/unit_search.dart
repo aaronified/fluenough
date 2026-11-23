@@ -341,7 +341,7 @@ SkillState _skillOf(
 /// "Only this course's").
 List<DeckTheme> courseThemes(AppState state, String language) {
   final used = <String>{
-    for (final entry in state.decks)
+    for (final entry in state.decksOf(language))
       if (entry.language.code == language)
         if (state.themeOf(entry) case final theme?) theme.id,
   };
@@ -563,7 +563,7 @@ List<SearchHit> _collect(
       }
     }
     final native = state.courseNative(code);
-    for (final entry in state.decks) {
+    for (final entry in state.decksOf(code)) {
       if (entry.language.code != code) continue;
       if (!inCourse.contains(entry.id) &&
           statusChip == null &&
@@ -589,7 +589,7 @@ List<SearchHit> _collect(
       }
     }
     final courseDecks = <DeckEntry>[
-      for (final entry in state.decks)
+      for (final entry in state.decksOf(code))
         if (entry.language.code == code &&
             entry.deck.native.code == native &&
             deckAllowed(entry))
@@ -764,7 +764,7 @@ List<SearchSuggestion> searchSuggestions(
   if (out.length < max) {
     final native = state.courseNative(code);
     final counts = <String, int>{};
-    for (final entry in state.decks) {
+    for (final entry in state.decksOf(code)) {
       if (entry.language.code != code || entry.deck.native.code != native) {
         continue;
       }

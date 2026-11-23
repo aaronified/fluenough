@@ -36,7 +36,7 @@ extension CultureListState on AppState {
     try {
       final native = courseNative(language);
       final entries = <DeckEntry>[
-        for (final entry in catalogView.decks)
+        for (final entry in catalogOf(language).decks)
           if (entry.language.code == language &&
               cultureGenres.contains(entry.deck.genre))
             entry,
@@ -80,7 +80,7 @@ extension CultureListState on AppState {
         return words.every(haystack.contains);
       }
 
-      final file = catalogView.creators[language];
+      final file = catalogOf(language).creators[language];
       final spoken = <String>['en', ...settings.spokenLanguages];
       final creatorWords = searchWords(filter.creator ?? '');
       bool byCreator(Iterable<String> ids) {
@@ -139,7 +139,8 @@ extension CultureListState on AppState {
               ]))
             entry,
       ];
-      final works = catalogView.recommendations[language]?.recommendations;
+      final offered = catalogOf(language).recommendations[language];
+      final works = offered?.recommendations;
       return <CultureListSection>[
         if (decks.isNotEmpty) CultureListSection(decks: decks),
         for (final medium in RecommendationMedium.values)

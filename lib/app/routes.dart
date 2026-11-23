@@ -47,6 +47,7 @@ import '../features/stats/leeches_page.dart';
 import '../features/stats/stats_numbers.dart';
 import '../features/summary/summary_page.dart';
 import '../features/topics/topic_page.dart';
+import '../ui/widgets/language_unit_loader.dart';
 import 'app_scope.dart';
 import 'session.dart';
 import 'shell_tab.dart';
@@ -223,20 +224,37 @@ abstract final class AppRoutes {
       releaseNotes => const ReleaseNotesPage(),
       sources => const SourcesPage(),
       appLog => const AppLogPage(),
-      situation when args is SituationRequest => SituationPage(request: args),
-      situationInspect when args is SituationRequest => SituationInspectPage(
-        request: args,
+      situation when args is SituationRequest => _of(
+        args.language,
+        SituationPage(request: args),
       ),
-      topic when args is TopicRequest => TopicPage(request: args),
-      culture when args is String => CultureDeckPage(language: args),
-      cultureItem when args is CultureItemRequest => CultureItemPage(
-        request: args,
+      situationInspect when args is SituationRequest => _of(
+        args.language,
+        SituationInspectPage(request: args),
       ),
-      cultureTimeline when args is CultureTimelineRequest =>
+      topic when args is TopicRequest => _of(
+        args.language,
+        TopicPage(request: args),
+      ),
+      culture when args is String => _of(
+        args,
+        CultureDeckPage(language: args),
+      ),
+      cultureItem when args is CultureItemRequest => _of(
+        args.language,
+        CultureItemPage(request: args),
+      ),
+      cultureTimeline when args is CultureTimelineRequest => _of(
+        args.language,
         CultureTimelinePage(request: args),
-      work when args is WorkRequest => WorkPage(request: args),
-      workQuestions when args is WorkQuestionsRequest => WorkQuestionsPage(
-        request: args,
+      ),
+      work when args is WorkRequest => _of(
+        args.language,
+        WorkPage(request: args),
+      ),
+      workQuestions when args is WorkQuestionsRequest => _of(
+        args.language,
+        WorkQuestionsPage(request: args),
       ),
       scriptGuide when args is String => ScriptGuidePage(guideKey: args),
       profiles => const ProfilesPage(),
@@ -256,6 +274,11 @@ abstract final class AppRoutes {
     if (page == null) return null;
     return MaterialPageRoute<void>(settings: settings, builder: (_) => page);
   }
+
+  /// [page], which reads one language's files, once that language's unit is
+  /// read (ADR-0062): it opens on a spinner for a language not read yet.
+  static Widget _of(String language, Widget page) =>
+      LanguageUnitLoader(language: language, child: page);
 }
 
 /// Typed navigation. Every call uses the nearest [Navigator], so the same
