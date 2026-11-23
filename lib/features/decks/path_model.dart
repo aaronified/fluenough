@@ -155,7 +155,7 @@ String _comingTitle(
   for (final core in cores) {
     final others =
         <DeckEntry>[
-          for (final entry in state.decks)
+          for (final entry in state.decksOf(language))
             if (entry.id == '$language-${entry.deck.native.code}-${bare(core)}')
               entry,
         ]..sort(
@@ -800,7 +800,7 @@ CourseView? courseView(
       for (final entry in unit) entry.id,
   };
   final left = <DeckEntry>[
-    for (final entry in state.decks)
+    for (final entry in state.decksOf(language))
       if (entry.language.code == language && !inCourse.contains(entry.id))
         entry,
   ];

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
@@ -20,7 +22,11 @@ import 'stats_numbers.dart';
 /// Reset and Set aside are appended to [LeechActions], never taken out of the
 /// review log; a card acted on stays listed, dimmed, so the action can be
 /// undone.
-class LeechesPage extends StatelessWidget {
+///
+/// One language at a time (ADR-0062), a language's page reads that language's
+/// unit first, and the list of every language names the languages whose
+/// cards are not read yet and reads one when it is tapped.
+class LeechesPage extends StatefulWidget {
   const LeechesPage({super.key, this.language});
 
   /// The language whose leeches are listed, by code, or null for every
@@ -28,14 +34,30 @@ class LeechesPage extends StatelessWidget {
   final String? language;
 
   @override
+  State<LeechesPage> createState() => _LeechesPageState();
+}
+
+class _LeechesPageState extends State<LeechesPage> {
+  @override
+  void initState() {
+    super.initState();
+    final language = widget.language;
+    if (language != null) {
+      unawaited(AppScope.read(context).ensureLoaded(language));
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final language = widget.language;
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     final actions = LeechActions.of(state.progress);
-    final languageOf = languageLookupOf(state);
+    final languageOf = languageLookupOf(state, language: language);
     final name = <String, String>{
       for (final l in state.languages) l.code: l.name,
     }[language];
+    final reading = language != null && state.isLanguageReading(language);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -47,16 +69,27 @@ class LeechesPage extends StatelessWidget {
         child: ListenableBuilder(
           listenable: Listenable.merge(<Listenable>[state.progress, actions]),
           builder: (context, _) {
+            if (reading) {
+              return const Center(child: CircularProgressIndicator());
+            }
+            final cardOf = cardLookupOf(state, language: language);
             final leeches = <Leech>[
-              for (final leech in findLeeches(
-                state.progress,
-                cardOf: cardLookupOf(state),
-              ))
+              for (final leech in findLeeches(state.progress, cardOf: cardOf))
                 if (language == null ||
                     languageOf(leech.card.deckId) == language)
                   leech,
             ];
-            if (leeches.isEmpty) {
+            // Every language's list: those whose cards are not read yet.
+            final unread = language == null
+                ? unreadLeeches(
+                    state.progress,
+                    cardOf: cardOf,
+                    isUnread: (code) =>
+                        !state.languageLoad(code).isLoaded &&
+                        state.summaryOf(code) != null,
+                  )
+                : const <String, int>{};
+            if (leeches.isEmpty && unread.isEmpty) {
               return EmptyState(
                 icon: Icons.check_circle_outline,
                 title: l10n.leechesEmpty,
@@ -86,6 +119,16 @@ class LeechesPage extends StatelessWidget {
                       child: IncomingBadge(),
                     ),
                   ),
+                for (final entry in unread.entries) ...<Widget>[
+                  const SizedBox(height: 12),
+                  _UnreadLeeches(
+                    name: <String, String>{
+                      for (final l in state.languages) l.code: l.name,
+                    }[entry.key],
+                    code: entry.key,
+                    count: entry.value,
+                  ),
+                ],
                 for (final leech in leeches) ...<Widget>[
                   const SizedBox(height: 12),
                   LeechCard(
@@ -101,6 +144,57 @@ class LeechesPage extends StatelessWidget {
               ],
             );
           },
+        ),
+      ),
+    );
+  }
+}
+
+/// The leeches of a language whose cards are not read yet: how many there
+/// are, and a tap that reads the language so that they are listed.
+class _UnreadLeeches extends StatelessWidget {
+  const _UnreadLeeches({
+    required this.name,
+    required this.code,
+    required this.count,
+  });
+
+  final String? name;
+  final String code;
+  final int count;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    return Material(
+      color: scheme.surfaceContainerLow,
+      borderRadius: BorderRadius.circular(AppRadii.card),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(AppRadii.card),
+        onTap: () => unawaited(AppScope.read(context).ensureLoaded(code)),
+        child: Padding(
+          padding: const EdgeInsetsDirectional.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                l10n.leechesUnread(name ?? code, count),
+                style: theme.textTheme.bodyLarge!.copyWith(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Text(
+                l10n.leechesUnreadOpen,
+                style: theme.textTheme.bodySmall!.copyWith(
+                  fontSize: 13,
+                  color: scheme.onSurfaceVariant,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

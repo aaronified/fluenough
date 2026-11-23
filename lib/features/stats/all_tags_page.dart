@@ -46,11 +46,15 @@ class _AllTagsPageState extends State<AllTagsPage> {
   String? _practisableLanguage;
   int _practisableLog = -1;
   String _practisableLearned = '';
+  Object? _practisableDecks;
 
   Map<String, int> _practisableFor(AppState state, String? language) {
     final log = state.progress.log.length;
     final learned = (state.learningCodes.toList()..sort()).join(',');
+    // The language's decks are another list once its unit is read again.
+    final decks = state.decksKeyOf(language);
     if (_practisable == null ||
+        !identical(_practisableDecks, decks) ||
         _practisableLearned != learned ||
         _practisableLanguage != language ||
         _practisableLog != log) {
@@ -65,6 +69,7 @@ class _AllTagsPageState extends State<AllTagsPage> {
       }
       _practisable = counts;
       _practisableLanguage = language;
+      _practisableDecks = decks;
       _practisableLog = log;
       _practisableLearned = learned;
     }
@@ -114,8 +119,11 @@ class _AllTagsPageState extends State<AllTagsPage> {
               return const Center(child: CircularProgressIndicator());
             }
             // Every tag of the decks learned, answered or not.
+            final decks = language == null
+                ? state.decks
+                : state.decksOf(language);
             final unanswered = <String>{
-              for (final entry in state.decks)
+              for (final entry in decks)
                 if (state.currentProfile.learns(entry.language.code) &&
                     (language == null || entry.language.code == language))
                   for (final card in entry.cards) ...card.tags,

@@ -228,7 +228,9 @@ class ProgressNumbersHolder extends ChangeNotifier {
       version: language == null
           ? progress.version
           : progress.versionOf(language),
-      decks: state.decks,
+      // A language's own decks: another language loading leaves its numbers
+      // as they were.
+      decks: state.decksKeyOf(language),
       day: calendarDay(now),
       native: language == null ? null : state.courseNative(language),
     );
@@ -298,7 +300,7 @@ class ProgressNumbersHolder extends ChangeNotifier {
   ProgressJob? _jobFor(String? language, DateTime now) {
     final state = _state;
     final progress = state.progress;
-    final table = LanguageTable.of(state);
+    final table = LanguageTable.of(state, language: language);
     bool counts(String deckId) {
       final code = table.of(deckId);
       return language == null ? code != null : code == language;
@@ -357,7 +359,7 @@ class ProgressNumbersHolder extends ChangeNotifier {
               mode: progress.parameters.of(code, mode),
           },
       },
-      tags: <CardTags>[for (final code in codes) _tagsOf(state, code)],
+      tags: <CardTags>[for (final code in codes) cardTagsOf(state, code)],
     );
   }
 
@@ -378,18 +380,18 @@ class _Entry {
 final Expando<Map<String, CardTags>> _tagTables =
     Expando<Map<String, CardTags>>('CardTags');
 
-/// The tags of [code]'s cards, indexed once for as long as the catalog's
-/// list is the same one.
-CardTags _tagsOf(AppState state, String code) {
-  final byCode = _tagTables[state.decks] ??= <String, CardTags>{};
+/// The tags of [code]'s cards, indexed once for as long as that language's
+/// list of decks is the same one.
+CardTags cardTagsOf(AppState state, String code) {
+  final byCode = _tagTables[state.decksOf(code)] ??= <String, CardTags>{};
   return byCode[code] ??= _indexTags(state, code);
 }
 
 CardTags _indexTags(AppState state, String code) {
-  final cardOf = cardLookupOf(state);
+  final cardOf = cardLookupOf(state, language: code);
   final listed = <String, List<String>>{};
   final first = <String, List<String>>{};
-  for (final entry in state.decks) {
+  for (final entry in state.decksOf(code)) {
     if (entry.language.code != code) continue;
     for (final card in entry.cards) {
       listed['${entry.id}/${card.id}'] = card.tags;

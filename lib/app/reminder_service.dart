@@ -83,7 +83,8 @@ class ReminderService {
   final bool Function() available;
 
   /// Cards due by the end of each day, today first
-  /// (`AppState.dueForecast`).
+  /// (`AppState.dueForecast`, which counts a language not loaded from the
+  /// log, so that a replan reads no unit).
   final List<int> Function() forecast;
 
   final ReminderWords Function() words;

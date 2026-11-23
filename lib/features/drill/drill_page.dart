@@ -88,7 +88,15 @@ class _DrillPageState extends State<DrillPage> {
     final state = AppScope.read(context);
     // `load` also waits for the voice check, which decides whether
     // listening cards are in the queue. It is safe to call again.
-    _await(state, state.load());
+    _await(state, _ready(state));
+  }
+
+  /// The catalog and the voice check are in, and so are the units the session
+  /// draws on: one language at a time, a language not read yet is read first
+  /// (ADR-0062).
+  Future<void> _ready(AppState state, {bool reload = false}) async {
+    await (reload ? state.reload() : state.load());
+    await state.ensureRequestLoaded(widget.request);
   }
 
   void _await(AppState state, Future<void> loading) {
@@ -105,7 +113,7 @@ class _DrillPageState extends State<DrillPage> {
       _loaded = false;
       _failed = false;
     });
-    _await(state, state.reload());
+    _await(state, _ready(state, reload: true));
   }
 
   void _start(AppState state) {

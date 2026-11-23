@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import '../core/models/card.dart';
+import '../core/models/review_event.dart';
 import '../core/models/rule.dart';
 import '../core/progress/recent_answers.dart'
     show MasteryLevel, ParametersOfReview, RecentAnswers;
@@ -37,35 +38,54 @@ extension UnlockState on AppState {
     () => RecentAnswers(progress.log, parametersOf: _parametersOf),
   );
 
-  /// The gate over every card of the decks.
-  Unlocks get unlocks => derived<Unlocks>(
+  /// The gate over every card of [language]'s decks, and over that language's
+  /// answers alone: it reads the language's unit and the log, and is kept
+  /// until that language's progress, the settings or its unit change, so
+  /// that another language loading leaves it as it was (ADR-0062).
+  Unlocks unlocksFor(String language) => keptFor<Unlocks>(
+    language,
     #unlocks,
-    () => Unlocks(
-      log: progress.log,
-      cards: <Card>[for (final entry in decks) ...entry.cards],
-      parametersOf: _parametersOf,
-    ),
+    () => _unlocksOf(language, progress.log),
   );
 
+  /// The gate for [language] over [log], whole or as it stood at some time.
+  Unlocks _unlocksOf(String language, Iterable<ReviewEvent> log) {
+    final cards = <Card>[for (final entry in decksOf(language)) ...entry.cards];
+    // Only the answers to the language's own cards can matter to its gate.
+    final ids = <String>{for (final card in cards) card.id};
+    return Unlocks(
+      log: <ReviewEvent>[
+        for (final event in log)
+          if (ids.contains(event.cardId)) event,
+      ],
+      cards: cards,
+      parametersOf: (event) => progress.parameters.of(language, event.mode),
+    );
+  }
+
   List<KindedCard> _kindedCards(String language) => <KindedCard>[
-    for (final entry in decks)
-      if (entry.language.code == language)
-        for (final card in entry.cards) (card: card, kind: entry.deck.kind),
+    for (final entry in decksOf(language))
+      for (final card in entry.cards) (card: card, kind: entry.deck.kind),
   ];
 
   /// [language]'s words known, rules known and sentences open, out of what
   /// is taught so far.
-  UnlockCounts unlockCountsFor(String language) => derived<UnlockCounts>((
-    #unlockCounts,
-    language,
-  ), () => unlocks.counts(_kindedCards(language)));
+  UnlockCounts unlockCountsFor(String language) {
+    // Read before the kept value is asked for: a kept value is not worked out
+    // from inside another.
+    final gate = unlocksFor(language);
+    return keptFor<UnlockCounts>(
+      language,
+      #unlockCounts,
+      () => gate.counts(_kindedCards(language)),
+    );
+  }
 
   /// [unlockCountsFor] as they stood before [at]: what a lesson started at
   /// [at] unlocked is what changed since.
-  UnlockCounts unlockCountsBefore(String language, DateTime at) => Unlocks(
-    log: progress.log.where((event) => event.at.isBefore(at)),
-    cards: <Card>[for (final entry in decks) ...entry.cards],
-    parametersOf: _parametersOf,
+  UnlockCounts unlockCountsBefore(String language, DateTime at) => _unlocksOf(
+    language,
+    progress.log.where((event) => event.at.isBefore(at)),
   ).counts(_kindedCards(language));
 
   /// What the lesson that began at [since] unlocked in [language]: the words
@@ -94,10 +114,14 @@ extension UnlockState on AppState {
 
   /// How many words and rules of [language] are taught and not known yet:
   /// what a lesson's size waits on ([lessonRoom]).
-  int inProgressIn(String language) => derived<int>((
-    #inProgress,
-    language,
-  ), () => unlocks.inProgress(_kindedCards(language)));
+  int inProgressIn(String language) {
+    final gate = unlocksFor(language);
+    return keptFor<int>(
+      language,
+      #inProgress,
+      () => gate.inProgress(_kindedCards(language)),
+    );
+  }
 
   /// The rule [id], with the deck that gives it, from the course taught from
   /// the learner's language where it can; null if no deck has it.
@@ -105,7 +129,7 @@ extension UnlockState on AppState {
     final code = languageOfId(id);
     final native = courseNative(code);
     RuleEntry? found;
-    for (final entry in decks) {
+    for (final entry in decksHolding(id)) {
       for (final rule in entry.deck.rules) {
         if (rule.id != id) continue;
         if (entry.deck.native.code == native) return (rule: rule, deck: entry);
@@ -115,18 +139,25 @@ extension UnlockState on AppState {
     return found;
   }
 
-  /// The card [id] from the decks, or null if none has it.
-  Card? cardById(String id) => derived<Map<String, Card>>(#cardsById, () {
-    final byId = <String, Card>{};
-    // Hidden decks a learner added are drilled too (D3), so a card of one
-    // is found as any is.
-    for (final entry in drillDecks) {
-      for (final card in entry.cards) {
-        byId.putIfAbsent(card.id, () => card);
+  /// The card [id] from the decks, or null if none has it. Read one language
+  /// at a time, only the decks of its language, which an id starts with.
+  Card? cardById(String id) {
+    // One language at a time, only the id's language can be loaded; read
+    // whole, every deck is searched as it always was.
+    final language = readsPerLanguage ? languageOfId(id) : '*';
+    return keptFor<Map<String, Card>>(language, #cardsById, () {
+      final byId = <String, Card>{};
+      // Hidden decks a learner added are drilled too (D3), so a card of one
+      // is found as any is.
+      for (final entry in drillDecks) {
+        if (language != '*' && entry.language.code != language) continue;
+        for (final card in entry.cards) {
+          byId.putIfAbsent(card.id, () => card);
+        }
       }
-    }
-    return byId;
-  })[id];
+      return byId;
+    })[id];
+  }
 
   /// What [need] is called: a word as its card writes it, with its reading,
   /// a rule by its name. The id where no deck has it.
@@ -148,7 +179,8 @@ extension UnlockState on AppState {
     final found = ruleOf(id);
     if (found == null) return null;
     final deck = found.deck;
-    if (unlocks.ruleStanding(id).level != MasteryLevel.fresh) {
+    final gate = unlocksFor(deck.language.code);
+    if (gate.ruleStanding(id).level != MasteryLevel.fresh) {
       return DrillRequest.practice(deck.id);
     }
     final lesson = DrillRequest.lesson(
@@ -165,7 +197,7 @@ extension UnlockState on AppState {
     final rule = cell.rule;
     final entry = deckOf(cell);
     if (rule == null || entry == null) return <Card>[cell];
-    final gate = unlocks;
+    final gate = unlocksFor(entry.language.code);
     final words = <String>{rule.word};
     final forms = <Card>[cell];
     for (final other in entry.cards) {

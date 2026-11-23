@@ -41,7 +41,7 @@ PathUnitView? pathUnitView(AppState state, String language, int index) {
   final native = state.courseNative(language);
   final entries = <DeckEntry>[];
   for (final core in unit.decks) {
-    for (final entry in catalog.decks) {
+    for (final entry in state.decksOf(language)) {
       if (entry.language.code != language ||
           (native != null && entry.deck.native.code != native) ||
           coreIdOfDeck(entry) != core) {

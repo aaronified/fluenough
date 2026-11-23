@@ -14,10 +14,11 @@ typedef CardLookup = Card? Function(String cardId, {String? deckId});
 
 final Expando<CardLookup> _lookups = Expando<CardLookup>();
 
-/// A [CardLookup] over [state]'s catalog, indexed once for as long as the
-/// catalog's list is the same one: every screen and rebuild shares it.
-CardLookup cardLookupOf(AppState state) {
-  final decks = state.decks;
+/// A [CardLookup] over [state]'s catalog, or over [language]'s decks alone,
+/// indexed once for as long as that list is the same one: every screen and
+/// rebuild shares it, and another language loading leaves a language's.
+CardLookup cardLookupOf(AppState state, {String? language}) {
+  final decks = language == null ? state.decks : state.decksOf(language);
   return _lookups[decks] ??= _indexCards(decks);
 }
 
@@ -41,13 +42,17 @@ typedef LanguageLookup = String? Function(String deckId);
 class LanguageTable {
   const LanguageTable({required this.byDeck, required this.codes});
 
-  /// A table over [state]'s catalog.
-  factory LanguageTable.of(AppState state) => LanguageTable(
-    byDeck: <String, String>{
-      for (final entry in state.decks) entry.id: entry.language.code,
-    },
-    codes: <String>{for (final language in state.languages) language.code},
-  );
+  /// A table over [state]'s catalog, or over [language]'s decks alone: a deck
+  /// of another language is placed by its id, which names its language.
+  factory LanguageTable.of(AppState state, {String? language}) {
+    final decks = language == null ? state.decks : state.decksOf(language);
+    return LanguageTable(
+      byDeck: <String, String>{
+        for (final entry in decks) entry.id: entry.language.code,
+      },
+      codes: <String>{for (final l in state.languages) l.code},
+    );
+  }
 
   final Map<String, String> byDeck;
   final Set<String> codes;
@@ -62,8 +67,9 @@ class LanguageTable {
   }
 }
 
-/// A [LanguageLookup] over [state]'s catalog.
-LanguageLookup languageLookupOf(AppState state) => LanguageTable.of(state).of;
+/// A [LanguageLookup] over [state]'s catalog, or [language]'s decks alone.
+LanguageLookup languageLookupOf(AppState state, {String? language}) =>
+    LanguageTable.of(state, language: language).of;
 
 /// The time ranges Progress offers.
 enum StatsRange {

@@ -149,7 +149,7 @@ class MasteryPart {
 courseInputsOf(AppState state, String code) {
   final native = state.courseNative(code);
   final entries = <DeckEntry>[
-    for (final e in state.decks)
+    for (final e in state.decksOf(code))
       if (e.language.code == code && e.deck.native.code == native) e,
   ];
   final path = entries.isEmpty ? null : state.pathOf(entries.first);
