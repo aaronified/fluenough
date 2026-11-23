@@ -11,7 +11,6 @@ tags: ["reading", "unreviewed"]
 passages:
   - id: "ta-museum-card"
     title: "A museum card"
-    theme: "history"
     sentences:
       - text: "இது ஒரு பழைய நாணயம்."
         reading: "itu oru paḻaiya nāṇayam."
@@ -30,7 +29,7 @@ passages:
         ipa: "pukaippaʈam eʈukkalaːm"
     questions:
       - id: "ta-5246"
-        prompt: { "en": "What is the object described on the card?" }
+        prompt: { "en": "What does the first line say the object is?" }
         options:
           - { "en": "An old coin" }
           - { "en": "A sword" }
@@ -44,7 +43,7 @@ passages:
           - { "en": "A ship" }
         answer: 1
       - id: "ta-5248"
-        prompt: { "en": "May visitors touch the coin?" }
+        prompt: { "en": "May visitors touch it?" }
         options:
           - { "en": "No" }
           - { "en": "Yes" }
