@@ -156,3 +156,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1311 | ta-illness | Is தடுப்பூசி the everyday word for a vaccination? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1305 | ta-illness | Is எனக்கு வியர்க்கிறது the natural way to say I am sweating? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1300 | ta-illness | Is மயங்கு the everyday verb for fainting, or is another more usual? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| unit-level | ta-workplace | The job words ஊழியர் to தலைவர் are given gender m, as people of either sex take them; check each. | Sonnet builder | 2026-11-23 |
+| ta-2314 | ta-workplace | Is சமையல்காரர் the right word for a cook, and do women use the same form? | Sonnet builder | 2026-11-23 |
+| ta-2317 | ta-workplace | Is gender m right for கணக்காளர், and is the word natural? | Sonnet builder | 2026-11-23 |
+| ta-2350 | ta-workplace | Is கையெழுத்திடு one word, and natural in speech for sign? | Sonnet builder | 2026-11-23 |
+| ta-2353 | ta-workplace | Is அச்சிடு natural in speech, or is a spoken word used for print? | Sonnet builder | 2026-11-23 |

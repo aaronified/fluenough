@@ -626,7 +626,8 @@ units:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - planned: { id: "ta-workplace", theme: "workplace", words: 50 }
+  - decks: ["ta-workplace", "ta-workplace-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
     reading_passages:

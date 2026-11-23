@@ -1,0 +1,98 @@
+schema: 1
+id: "ta-workplace-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-4598"
+    target: "அவர் எங்கள் மேலாளர்."
+    reading: "avar eṅkaḷ mēlāḷar."
+    ipa: "aʋaɾ eŋkaɭ meːlaːɭaɾ"
+    pos: "phrase"
+    bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "எங்கள்", base: "நாங்கள்", reading: "nāṅkaḷ" }, { word: "மேலாளர்", ref: "ta-2308" }]
+    confusables:
+      - { id: "w1", ref: "ta-2309", kind: "word" }
+      - { id: "w2", ref: "ta-2307", kind: "word" }
+  - id: "ta-4599"
+    target: "நாளை நேர்காணல்."
+    reading: "nāḷai nērkāṇal."
+    ipa: "naːɭai neːɾkaːɳal"
+    pos: "phrase"
+    bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "நேர்காணல்", ref: "ta-2324" }]
+    confusables:
+      - { id: "w1", ref: "ta-0484", kind: "word" }
+      - { id: "w2", ref: "ta-0195", kind: "word" }
+  - id: "ta-4600"
+    target: "உன் தொழில் என்ன?"
+    reading: "uṉ toḻil eṉṉa?"
+    ipa: "un t̪oɻil enna"
+    pos: "phrase"
+    bases: [{ word: "உன்", base: "நீ", reading: "nī" }, { word: "தொழில்", ref: "ta-2331" }, { word: "என்ன", ref: "ta-0042" }]
+    confusables:
+      - { id: "w1", ref: "ta-2337", kind: "word" }
+      - { id: "w2", ref: "ta-2323", kind: "word" }
+  - id: "ta-4601"
+    target: "இங்கே கையெழுத்திடு."
+    reading: "iṅkē kaiyeḻuttiṭu."
+    ipa: "iŋkeː kaijeɻut̪t̪iʈu"
+    pos: "phrase"
+    bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "கையெழுத்திடு", ref: "ta-2350" }]
+    confusables:
+      - { id: "w1", ref: "ta-2326", kind: "word" }
+      - { id: "w2", ref: "ta-2327", kind: "word" }
+  - id: "ta-4602"
+    target: "கடிதம் அச்சிடு."
+    reading: "kaṭitam acciṭu."
+    ipa: "kaʈit̪am atʃtʃiʈu"
+    pos: "phrase"
+    bases: [{ word: "கடிதம்", ref: "ta-0487" }, { word: "அச்சிடு", ref: "ta-2353" }]
+    confusables:
+      - { id: "w1", ref: "ta-2354", kind: "word" }
+      - { id: "w2", ref: "ta-2328", kind: "word" }
+  - id: "ta-4603"
+    target: "நான் கூட்டம் நடத்துகிறேன்."
+    reading: "nāṉ kūṭṭam naṭattukiṟēṉ."
+    ipa: "naːn kuːʈʈam naʈat̪t̪ukireːn"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "கூட்டம்", ref: "ta-0195" }, { word: "நடத்துகிறேன்", base: "நடத்து", reading: "naṭattu" }]
+    confusables:
+      - { id: "w1", ref: "ta-2329", kind: "word" }
+      - { id: "w2", ref: "ta-2330", kind: "word" }
+  - id: "ta-4604"
+    target: "வியாபாரம் எப்படி?"
+    reading: "viyāpāram eppaṭi?"
+    ipa: "ʋijaːpaːɾam eppaʈi"
+    pos: "phrase"
+    bases: [{ word: "வியாபாரம்", ref: "ta-1260" }, { word: "எப்படி", ref: "ta-0045" }]
+    confusables:
+      - { id: "w1", ref: "ta-2333", kind: "word" }
+      - { id: "w2", ref: "ta-1220", kind: "word" }
+  - id: "ta-4605"
+    target: "எனக்கு அனுபவம் இல்லை."
+    reading: "eṉakku aṉupavam illai."
+    ipa: "enakku anupaʋam illai"
+    pos: "phrase"
+    bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "அனுபவம்", ref: "ta-2338" }, { word: "இல்லை", ref: "ta-0002" }]
+    confusables:
+      - { id: "w1", ref: "ta-2339", kind: "word" }
+      - { id: "w2", ref: "ta-2340", kind: "word" }
+  - id: "ta-4606"
+    target: "இது பெரிய தொழிற்சாலை."
+    reading: "itu periya toḻiṟcālai."
+    ipa: "it̪u peɾija t̪oɻirsaːlai"
+    pos: "phrase"
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0167" }, { word: "தொழிற்சாலை", ref: "ta-2345" }]
+    confusables:
+      - { id: "w1", ref: "ta-2323", kind: "word" }
+      - { id: "w2", ref: "ta-2341", kind: "word" }
+  - id: "ta-4607"
+    target: "வேலைக்கு விண்ணப்பி."
+    reading: "vēlaikku viṇṇappi."
+    ipa: "ʋeːlaikku ʋiɳɳappi"
+    pos: "phrase"
+    bases: [{ word: "வேலைக்கு", base: "வேலை", reading: "vēlai" }, { word: "விண்ணப்பி", ref: "ta-2349" }]
+    confusables:
+      - { id: "w1", ref: "ta-2324", kind: "word" }
+      - { id: "w2", ref: "ta-0484", kind: "word" }
