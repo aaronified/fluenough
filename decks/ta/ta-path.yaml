@@ -433,12 +433,15 @@ units:
       - { id: "a-day", text: { "en": "Someone tells their day, and what they do not do" } }
     reading_passages:
       - { id: "daily-routine", text: { "en": "A child's daily routine on a chart" } }
-  - planned: { id: "ta-grammar-negative", grammar: "negative" }
+  - decks: ["ta-grammar-negative"]
+    words: 0
+    grammar: ["negative-first", "negative-second", "negative-third", "negative-past"]
     listening_passages:
       - { id: "negative-heard", text: { "en": "A short exchange that uses negative, after the daily life unit" } }
     reading_passages:
       - { id: "negative-read", text: { "en": "A short text that uses negative, after the daily life unit" } }
-  - planned: { id: "ta-weather", theme: "weather", words: 45 }
+  - decks: ["ta-weather", "ta-weather-sentences", "*"]
+    words: 45
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:
@@ -449,7 +452,9 @@ units:
       - { id: "what-i-did", text: { "en": "Saying what you did last week" } }
     reading_passages:
       - { id: "wall-calendar", text: { "en": "A wall calendar with its months and holidays" } }
-  - planned: { id: "ta-grammar-past", grammar: "past" }
+  - decks: ["ta-grammar-past"]
+    words: 0
+    grammar: ["past-first", "past-second", "past-third"]
     listening_passages:
       - { id: "past-heard", text: { "en": "A short exchange that uses past, after the calendar unit" } }
     reading_passages:

@@ -62,6 +62,12 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1102 | ta-daily-life | Is துலக்கு the everyday spoken verb for brushing teeth, or is another verb more usual? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1804 | ta-help | Is பிரச்சினை (not பிரச்சனை) the spelling to teach first? | Sonnet builder | 2026-11-23 |
 | ta-1805 | ta-help | Is போலீஸ் the right spoken form, and the register correct? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-negative | Check the spoken nee, aval and avarkal negatives (மாட்ட, மாட்டா, மாட்டாங்க) and the spoken past negative in -ல (-la). | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-1129 | ta-weather | Is புழுக்கம் the everyday word for sultry, close heat in spoken Tamil? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1120 | ta-weather | Is சூரியன் best given as masculine (m) for a course that uses m, f and n? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1119 | ta-weather | Is the split between வெப்பம் (forecast word) and வெயில் (felt sun) right for everyday speech? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1143 | ta-weather | Is குளிர் அடிக்கிறது a natural way to say it feels cold? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1148 | ta-weather | Is காய்ந்த the right word for a cloth that has dried? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-1816 | ta-school | Is the written word மதிப்பெண் (not மார்க்) the right one to teach first? | Sonnet builder | 2026-11-23 |
 | ta-1813 | ta-school | Is புக் (puk) the right spoken form for a school book? | Sonnet builder | 2026-11-23 |
 | ta-1860 | ta-school | Is கத்துக்கோ (kattukkō) the right spoken form of learn? | Sonnet builder | 2026-11-23 |
@@ -73,3 +79,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1945 | ta-chores | Is பெருக்கு the usual spoken word for sweep in Tamil Nadu? | Sonnet builder | 2026-11-23 |
 | ta-1917 | ta-chores | Is சுத்தம் பண்ணு the right spoken form beside சுத்தம் செய்? | Sonnet builder | 2026-11-23 |
 | ta-1930 | ta-chores | Is இஸ்திரி போடு the natural way to say iron clothes? | Sonnet builder | 2026-11-23 |
+| unit-level | ta-grammar-past | Check the spoken past stems (படிச்ச, பாத்த, செஞ்ச, வச்ச) and the spoken second-person past. | Sonnet builder (ta-gram2) | 2026-11-23 |

@@ -1,0 +1,32 @@
+schema: 1
+id: "ta-en-grammar-past"
+kind: "layer"
+core: "ta-grammar-past"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs before: I did, you did, he did"
+description: "Every verb the course teaches, in the past, for each person, with the common spoken form before the written one. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "naan": "I (did it)"
+    "naankal": "we, not including you"
+    "naam": "we, including you"
+    "nee": "you, to a friend or child"
+    "neenkal": "you, polite or more than one"
+    "avan": "he"
+    "aval": "she"
+    "avar": "he or she, polite"
+    "atu": "it"
+    "avarkal": "they"
+rules:
+  "ta-rule-past-first":
+    name: "-ஏன் (-ēṉ), -ஓம் (-ōm) after the past stem: I did, we did"
+    explanation: "The past puts a past marker after the verb's stem and then the person ending. The marker is not the same for every verb. {3}, to go, takes -ன (-ṉa): {4}. {5}, to study, takes -த்த (-tta): {6}. {7}, to come, takes -ந்த (-nta): {8}. {9}, to eat, takes -ட்ட (-ṭṭa): {10}. {11}, to speak, takes -இன (-iṉa): {12}. After the marker, {1} is I and {2} is we, and {13} and {14}, the two words for we, take the same ending. In speech many verbs that take -த்த (-tta) say -ச்ச (-cca) instead: {15} is how I studied is usually said. The next unit sorts every verb of the course by its marker. Where a cell has two forms, the first is the common spoken form and the second the written one."
+  "ta-rule-past-second":
+    name: "-ஆய் (-āy), -ஈர்கள் (-īrkaḷ): you did"
+    explanation: "{1} is for {3}, a friend or a child, and {2} is for {4}, a person you respect or several people: {5} and {6} are you came, written. In speech the first is the bare past stem, {8}, and the second shortens to {7}."
+  "ta-rule-past-third":
+    name: "-ஆன் (-āṉ), -ஆள் (-āḷ), -ஆர் (-ār), -அது (-atu), -ஆர்கள் (-ārkaḷ): he, she, it, they did"
+    explanation: "{1} is for he, {2} for she, {3} for a respected person of either sex, {4} for it and {5} for they: {6}, {7}, {8}, {9} and {10} are came, said of each. In speech she came is {11}, they came is {12}, and it came is often shortened further. Verbs whose marker is -இன (-iṉa) change for it: {13}, to close, gives {14}, with -இய (-iya), and not {15}. The written forms are in the second form of a cell."
