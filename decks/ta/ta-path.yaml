@@ -753,7 +753,8 @@ units:
       - { id: "rain-and-lakes", text: { "en": "Neighbours talk about the lake and the rain" } }
     reading_passages:
       - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
-  - planned: { id: "ta-agriculture", theme: "agriculture", words: 55 }
+  - decks: ["ta-agriculture", "ta-agriculture-sentences", "*"]
+    words: 55
     listening_passages:
       - { id: "a-farmer-talks", text: { "en": "A farmer talks about the paddy season" } }
     reading_passages:
