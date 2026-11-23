@@ -1,0 +1,718 @@
+schema: 1
+id: "ta-grammar-can-must"
+part: "core"
+kind: "rules"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ta-0409", "ta-0410", "ta-0412", "ta-0413"]
+  slots: ["may", "must", "mustnot", "notneeded"]
+  rows:
+    - word: "ta-0010"
+      forms: { "may": "வரலாம்", "must": ["வரணும்", "வர வேண்டும்"], "mustnot": "வரக்கூடாது", "notneeded": "வர வேண்டாம்" }
+      readings: { "may": "varalām", "must": ["varaṇum", "vara vēṇṭum"], "mustnot": "varakkūṭātu", "notneeded": "vara vēṇṭām" }
+    - word: "ta-0038"
+      forms: { "may": "எழலாம்", "must": ["எழணும்", "எழ வேண்டும்"], "mustnot": "எழக்கூடாது", "notneeded": "எழ வேண்டாம்" }
+      readings: { "may": "eḻalām", "must": ["eḻaṇum", "eḻa vēṇṭum"], "mustnot": "eḻakkūṭātu", "notneeded": "eḻa vēṇṭām" }
+    - word: "ta-0115"
+      forms: { "may": "படிக்கலாம்", "must": ["படிக்கணும்", "படிக்க வேண்டும்"], "mustnot": "படிக்கக்கூடாது", "notneeded": "படிக்க வேண்டாம்" }
+      readings: { "may": "paṭikkalām", "must": ["paṭikkaṇum", "paṭikka vēṇṭum"], "mustnot": "paṭikkakkūṭātu", "notneeded": "paṭikka vēṇṭām" }
+    - word: "ta-0118"
+      forms: { "may": "போகலாம்", "must": ["போகணும்", "போக வேண்டும்"], "mustnot": "போகக்கூடாது", "notneeded": "போக வேண்டாம்" }
+      readings: { "may": "pōkalām", "must": ["pōkaṇum", "pōka vēṇṭum"], "mustnot": "pōkakkūṭātu", "notneeded": "pōka vēṇṭām" }
+    - word: "ta-0119"
+      forms: { "may": "சாப்பிடலாம்", "must": ["சாப்பிடணும்", "சாப்பிட வேண்டும்"], "mustnot": "சாப்பிடக்கூடாது", "notneeded": "சாப்பிட வேண்டாம்" }
+      readings: { "may": "cāppiṭalām", "must": ["cāppiṭaṇum", "cāppiṭa vēṇṭum"], "mustnot": "cāppiṭakkūṭātu", "notneeded": "cāppiṭa vēṇṭām" }
+    - word: "ta-0120"
+      forms: { "may": "குடிக்கலாம்", "must": ["குடிக்கணும்", "குடிக்க வேண்டும்"], "mustnot": "குடிக்கக்கூடாது", "notneeded": "குடிக்க வேண்டாம்" }
+      readings: { "may": "kuṭikkalām", "must": ["kuṭikkaṇum", "kuṭikka vēṇṭum"], "mustnot": "kuṭikkakkūṭātu", "notneeded": "kuṭikka vēṇṭām" }
+    - word: "ta-0121"
+      forms: { "may": "பார்க்கலாம்", "must": ["பார்க்கணும்", "பார்க்க வேண்டும்"], "mustnot": "பார்க்கக்கூடாது", "notneeded": "பார்க்க வேண்டாம்" }
+      readings: { "may": "pārkkalām", "must": ["pārkkaṇum", "pārkka vēṇṭum"], "mustnot": "pārkkakkūṭātu", "notneeded": "pārkka vēṇṭām" }
+    - word: "ta-0122"
+      forms: { "may": "கேட்கலாம்", "must": ["கேட்கணும்", "கேட்க வேண்டும்"], "mustnot": "கேட்கக்கூடாது", "notneeded": "கேட்க வேண்டாம்" }
+      readings: { "may": "kēṭkalām", "must": ["kēṭkaṇum", "kēṭka vēṇṭum"], "mustnot": "kēṭkakkūṭātu", "notneeded": "kēṭka vēṇṭām" }
+    - word: "ta-0123"
+      forms: { "may": "பேசலாம்", "must": ["பேசணும்", "பேச வேண்டும்"], "mustnot": "பேசக்கூடாது", "notneeded": "பேச வேண்டாம்" }
+      readings: { "may": "pēcalām", "must": ["pēcaṇum", "pēca vēṇṭum"], "mustnot": "pēcakkūṭātu", "notneeded": "pēca vēṇṭām" }
+    - word: "ta-0124"
+      forms: { "may": "எழுதலாம்", "must": ["எழுதணும்", "எழுத வேண்டும்"], "mustnot": "எழுதக்கூடாது", "notneeded": "எழுத வேண்டாம்" }
+      readings: { "may": "eḻutalām", "must": ["eḻutaṇum", "eḻuta vēṇṭum"], "mustnot": "eḻutakkūṭātu", "notneeded": "eḻuta vēṇṭām" }
+    - word: "ta-0125"
+      forms: { "may": "கொடுக்கலாம்", "must": ["கொடுக்கணும்", "கொடுக்க வேண்டும்"], "mustnot": "கொடுக்கக்கூடாது", "notneeded": "கொடுக்க வேண்டாம்" }
+      readings: { "may": "koṭukkalām", "must": ["koṭukkaṇum", "koṭukka vēṇṭum"], "mustnot": "koṭukkakkūṭātu", "notneeded": "koṭukka vēṇṭām" }
+    - word: "ta-0126"
+      forms: { "may": "தூங்கலாம்", "must": ["தூங்கணும்", "தூங்க வேண்டும்"], "mustnot": "தூங்கக்கூடாது", "notneeded": "தூங்க வேண்டாம்" }
+      readings: { "may": "tūṅkalām", "must": ["tūṅkaṇum", "tūṅka vēṇṭum"], "mustnot": "tūṅkakkūṭātu", "notneeded": "tūṅka vēṇṭām" }
+    - word: "ta-0127"
+      forms: { "may": "செய்யலாம்", "must": ["செய்யணும்", "செய்ய வேண்டும்"], "mustnot": "செய்யக்கூடாது", "notneeded": "செய்ய வேண்டாம்" }
+      readings: { "may": "ceyyalām", "must": ["ceyyaṇum", "ceyya vēṇṭum"], "mustnot": "ceyyakkūṭātu", "notneeded": "ceyya vēṇṭām" }
+    - word: "ta-0128"
+      forms: { "may": "சமைக்கலாம்", "must": ["சமைக்கணும்", "சமைக்க வேண்டும்"], "mustnot": "சமைக்கக்கூடாது", "notneeded": "சமைக்க வேண்டாம்" }
+      readings: { "may": "camaikkalām", "must": ["camaikkaṇum", "camaikka vēṇṭum"], "mustnot": "camaikkakkūṭātu", "notneeded": "camaikka vēṇṭām" }
+    - word: "ta-0129"
+      forms: { "may": "வாங்கலாம்", "must": ["வாங்கணும்", "வாங்க வேண்டும்"], "mustnot": "வாங்கக்கூடாது", "notneeded": "வாங்க வேண்டாம்" }
+      readings: { "may": "vāṅkalām", "must": ["vāṅkaṇum", "vāṅka vēṇṭum"], "mustnot": "vāṅkakkūṭātu", "notneeded": "vāṅka vēṇṭām" }
+    - word: "ta-0184"
+      forms: { "may": "எடுக்கலாம்", "must": ["எடுக்கணும்", "எடுக்க வேண்டும்"], "mustnot": "எடுக்கக்கூடாது", "notneeded": "எடுக்க வேண்டாம்" }
+      readings: { "may": "eṭukkalām", "must": ["eṭukkaṇum", "eṭukka vēṇṭum"], "mustnot": "eṭukkakkūṭātu", "notneeded": "eṭukka vēṇṭām" }
+    - word: "ta-0185"
+      forms: { "may": "வைக்கலாம்", "must": ["வைக்கணும்", "வைக்க வேண்டும்"], "mustnot": "வைக்கக்கூடாது", "notneeded": "வைக்க வேண்டாம்" }
+      readings: { "may": "vaikkalām", "must": ["vaikkaṇum", "vaikka vēṇṭum"], "mustnot": "vaikkakkūṭātu", "notneeded": "vaikka vēṇṭām" }
+    - word: "ta-0186"
+      forms: { "may": "திறக்கலாம்", "must": ["திறக்கணும்", "திறக்க வேண்டும்"], "mustnot": "திறக்கக்கூடாது", "notneeded": "திறக்க வேண்டாம்" }
+      readings: { "may": "tiṟakkalām", "must": ["tiṟakkaṇum", "tiṟakka vēṇṭum"], "mustnot": "tiṟakkakkūṭātu", "notneeded": "tiṟakka vēṇṭām" }
+    - word: "ta-0187"
+      forms: { "may": "மூடலாம்", "must": ["மூடணும்", "மூட வேண்டும்"], "mustnot": "மூடக்கூடாது", "notneeded": "மூட வேண்டாம்" }
+      readings: { "may": "mūṭalām", "must": ["mūṭaṇum", "mūṭa vēṇṭum"], "mustnot": "mūṭakkūṭātu", "notneeded": "mūṭa vēṇṭām" }
+    - word: "ta-0188"
+      forms: { "may": "உட்காரலாம்", "must": ["உட்காரணும்", "உட்கார வேண்டும்"], "mustnot": "உட்காரக்கூடாது", "notneeded": "உட்கார வேண்டாம்" }
+      readings: { "may": "uṭkāralām", "must": ["uṭkāraṇum", "uṭkāra vēṇṭum"], "mustnot": "uṭkārakkūṭātu", "notneeded": "uṭkāra vēṇṭām" }
+    - word: "ta-0189"
+      forms: { "may": "நிற்கலாம்", "must": ["நிற்கணும்", "நிற்க வேண்டும்"], "mustnot": "நிற்கக்கூடாது", "notneeded": "நிற்க வேண்டாம்" }
+      readings: { "may": "niṟkalām", "must": ["niṟkaṇum", "niṟka vēṇṭum"], "mustnot": "niṟkakkūṭātu", "notneeded": "niṟka vēṇṭām" }
+    - word: "ta-0190"
+      forms: { "may": "கழுவலாம்", "must": ["கழுவணும்", "கழுவ வேண்டும்"], "mustnot": "கழுவக்கூடாது", "notneeded": "கழுவ வேண்டாம்" }
+      readings: { "may": "kaḻuvalām", "must": ["kaḻuvaṇum", "kaḻuva vēṇṭum"], "mustnot": "kaḻuvakkūṭātu", "notneeded": "kaḻuva vēṇṭām" }
+    - word: "ta-0191"
+      forms: { "may": "விளையாடலாம்", "must": ["விளையாடணும்", "விளையாட வேண்டும்"], "mustnot": "விளையாடக்கூடாது", "notneeded": "விளையாட வேண்டாம்" }
+      readings: { "may": "viḷaiyāṭalām", "must": ["viḷaiyāṭaṇum", "viḷaiyāṭa vēṇṭum"], "mustnot": "viḷaiyāṭakkūṭātu", "notneeded": "viḷaiyāṭa vēṇṭām" }
+    - word: "ta-1101"
+      forms: { "may": "குளிக்கலாம்", "must": ["குளிக்கணும்", "குளிக்க வேண்டும்"], "mustnot": "குளிக்கக்கூடாது", "notneeded": "குளிக்க வேண்டாம்" }
+      readings: { "may": "kuḷikkalām", "must": ["kuḷikkaṇum", "kuḷikka vēṇṭum"], "mustnot": "kuḷikkakkūṭātu", "notneeded": "kuḷikka vēṇṭām" }
+    - word: "ta-1102"
+      forms: { "may": "துலக்கலாம்", "must": ["துலக்கணும்", "துலக்க வேண்டும்"], "mustnot": "துலக்கக்கூடாது", "notneeded": "துலக்க வேண்டாம்" }
+      readings: { "may": "tulakkalām", "must": ["tulakkaṇum", "tulakka vēṇṭum"], "mustnot": "tulakkakkūṭātu", "notneeded": "tulakka vēṇṭām" }
+    - word: "ta-1103"
+      forms: { "may": "நடக்கலாம்", "must": ["நடக்கணும்", "நடக்க வேண்டும்"], "mustnot": "நடக்கக்கூடாது", "notneeded": "நடக்க வேண்டாம்" }
+      readings: { "may": "naṭakkalām", "must": ["naṭakkaṇum", "naṭakka vēṇṭum"], "mustnot": "naṭakkakkūṭātu", "notneeded": "naṭakka vēṇṭām" }
+    - word: "ta-1104"
+      forms: { "may": "திரும்பலாம்", "must": ["திரும்பணும்", "திரும்ப வேண்டும்"], "mustnot": "திரும்பக்கூடாது", "notneeded": "திரும்ப வேண்டாம்" }
+      readings: { "may": "tirumpalām", "must": ["tirumpaṇum", "tirumpa vēṇṭum"], "mustnot": "tirumpakkūṭātu", "notneeded": "tirumpa vēṇṭām" }
+    - word: "ta-1107"
+      forms: { "may": "தொடங்கலாம்", "must": ["தொடங்கணும்", "தொடங்க வேண்டும்"], "mustnot": "தொடங்கக்கூடாது", "notneeded": "தொடங்க வேண்டாம்" }
+      readings: { "may": "toṭaṅkalām", "must": ["toṭaṅkaṇum", "toṭaṅka vēṇṭum"], "mustnot": "toṭaṅkakkūṭātu", "notneeded": "toṭaṅka vēṇṭām" }
+    - word: "ta-1801"
+      forms: { "may": "உதவலாம்", "must": ["உதவணும்", "உதவ வேண்டும்"], "mustnot": "உதவக்கூடாது", "notneeded": "உதவ வேண்டாம்" }
+      readings: { "may": "utavalām", "must": ["utavaṇum", "utava vēṇṭum"], "mustnot": "utavakkūṭātu", "notneeded": "utava vēṇṭām" }
+    - word: "ta-0450"
+      forms: { "may": "விடலாம்", "must": ["விடணும்", "விட வேண்டும்"], "mustnot": "விடக்கூடாது", "notneeded": "விட வேண்டாம்" }
+      readings: { "may": "viṭalām", "must": ["viṭaṇum", "viṭa vēṇṭum"], "mustnot": "viṭakkūṭātu", "notneeded": "viṭa vēṇṭām" }
+    - word: "ta-0451"
+      forms: { "may": "கொள்ளலாம்", "must": ["கொள்ளணும்", "கொள்ள வேண்டும்"], "mustnot": "கொள்ளக்கூடாது", "notneeded": "கொள்ள வேண்டாம்" }
+      readings: { "may": "koḷḷalām", "must": ["koḷḷaṇum", "koḷḷa vēṇṭum"], "mustnot": "koḷḷakkūṭātu", "notneeded": "koḷḷa vēṇṭām" }
+    - word: "ta-0452"
+      forms: { "may": "போடலாம்", "must": ["போடணும்", "போட வேண்டும்"], "mustnot": "போடக்கூடாது", "notneeded": "போட வேண்டாம்" }
+      readings: { "may": "pōṭalām", "must": ["pōṭaṇum", "pōṭa vēṇṭum"], "mustnot": "pōṭakkūṭātu", "notneeded": "pōṭa vēṇṭām" }
+    - word: "ta-0453"
+      forms: { "may": "தரலாம்", "must": ["தரணும்", "தர வேண்டும்"], "mustnot": "தரக்கூடாது", "notneeded": "தர வேண்டாம்" }
+      readings: { "may": "taralām", "must": ["taraṇum", "tara vēṇṭum"], "mustnot": "tarakkūṭātu", "notneeded": "tara vēṇṭām" }
+    - word: "ta-0454"
+      forms: { "may": "நிறுத்தலாம்", "must": ["நிறுத்தணும்", "நிறுத்த வேண்டும்"], "mustnot": "நிறுத்தக்கூடாது", "notneeded": "நிறுத்த வேண்டாம்" }
+      readings: { "may": "niṟuttalām", "must": ["niṟuttaṇum", "niṟutta vēṇṭum"], "mustnot": "niṟuttakkūṭātu", "notneeded": "niṟutta vēṇṭām" }
+    - word: "ta-0455"
+      forms: { "may": "தள்ளலாம்", "must": ["தள்ளணும்", "தள்ள வேண்டும்"], "mustnot": "தள்ளக்கூடாது", "notneeded": "தள்ள வேண்டாம்" }
+      readings: { "may": "taḷḷalām", "must": ["taḷḷaṇum", "taḷḷa vēṇṭum"], "mustnot": "taḷḷakkūṭātu", "notneeded": "taḷḷa vēṇṭām" }
+    - word: "ta-0456"
+      forms: { "may": "பிடிக்கலாம்", "must": ["பிடிக்கணும்", "பிடிக்க வேண்டும்"], "mustnot": "பிடிக்கக்கூடாது", "notneeded": "பிடிக்க வேண்டாம்" }
+      readings: { "may": "piṭikkalām", "must": ["piṭikkaṇum", "piṭikka vēṇṭum"], "mustnot": "piṭikkakkūṭātu", "notneeded": "piṭikka vēṇṭām" }
+    - word: "ta-0457"
+      forms: { "may": "வீசலாம்", "must": ["வீசணும்", "வீச வேண்டும்"], "mustnot": "வீசக்கூடாது", "notneeded": "வீச வேண்டாம்" }
+      readings: { "may": "vīcalām", "must": ["vīcaṇum", "vīca vēṇṭum"], "mustnot": "vīcakkūṭātu", "notneeded": "vīca vēṇṭām" }
+    - word: "ta-0458"
+      forms: { "may": "தூக்கலாம்", "must": ["தூக்கணும்", "தூக்க வேண்டும்"], "mustnot": "தூக்கக்கூடாது", "notneeded": "தூக்க வேண்டாம்" }
+      readings: { "may": "tūkkalām", "must": ["tūkkaṇum", "tūkka vēṇṭum"], "mustnot": "tūkkakkūṭātu", "notneeded": "tūkka vēṇṭām" }
+    - word: "ta-0460"
+      forms: { "may": "பண்ணலாம்", "must": ["பண்ணணும்", "பண்ண வேண்டும்"], "mustnot": "பண்ணக்கூடாது", "notneeded": "பண்ண வேண்டாம்" }
+      readings: { "may": "paṇṇalām", "must": ["paṇṇaṇum", "paṇṇa vēṇṭum"], "mustnot": "paṇṇakkūṭātu", "notneeded": "paṇṇa vēṇṭām" }
+    - word: "ta-0461"
+      forms: { "may": "ஆகலாம்", "must": ["ஆகணும்", "ஆக வேண்டும்"], "mustnot": "ஆகக்கூடாது", "notneeded": "ஆக வேண்டாம்" }
+      readings: { "may": "ākalām", "must": ["ākaṇum", "āka vēṇṭum"], "mustnot": "ākakkūṭātu", "notneeded": "āka vēṇṭām" }
+    - word: "ta-0462"
+      forms: { "may": "படலாம்", "must": ["படணும்", "பட வேண்டும்"], "mustnot": "படக்கூடாது", "notneeded": "பட வேண்டாம்" }
+      readings: { "may": "paṭalām", "must": ["paṭaṇum", "paṭa vēṇṭum"], "mustnot": "paṭakkūṭātu", "notneeded": "paṭa vēṇṭām" }
+    - word: "ta-0470"
+      forms: { "may": "செல்லலாம்", "must": ["செல்லணும்", "செல்ல வேண்டும்"], "mustnot": "செல்லக்கூடாது", "notneeded": "செல்ல வேண்டாம்" }
+      readings: { "may": "cellalām", "must": ["cellaṇum", "cella vēṇṭum"], "mustnot": "cellakkūṭātu", "notneeded": "cella vēṇṭām" }
+    - word: "ta-0471"
+      forms: { "may": "உண்ணலாம்", "must": ["உண்ணணும்", "உண்ண வேண்டும்"], "mustnot": "உண்ணக்கூடாது", "notneeded": "உண்ண வேண்டாம்" }
+      readings: { "may": "uṇṇalām", "must": ["uṇṇaṇum", "uṇṇa vēṇṭum"], "mustnot": "uṇṇakkūṭātu", "notneeded": "uṇṇa vēṇṭām" }
+    - word: "ta-0472"
+      forms: { "may": "அருந்தலாம்", "must": ["அருந்தணும்", "அருந்த வேண்டும்"], "mustnot": "அருந்தக்கூடாது", "notneeded": "அருந்த வேண்டாம்" }
+      readings: { "may": "aruntalām", "must": ["aruntaṇum", "arunta vēṇṭum"], "mustnot": "aruntakkūṭātu", "notneeded": "arunta vēṇṭām" }
+    - word: "ta-0473"
+      forms: { "may": "கூறலாம்", "must": ["கூறணும்", "கூற வேண்டும்"], "mustnot": "கூறக்கூடாது", "notneeded": "கூற வேண்டாம்" }
+      readings: { "may": "kūṟalām", "must": ["kūṟaṇum", "kūṟa vēṇṭum"], "mustnot": "kūṟakkūṭātu", "notneeded": "kūṟa vēṇṭām" }
+    - word: "ta-0474"
+      forms: { "may": "தெரிவிக்கலாம்", "must": ["தெரிவிக்கணும்", "தெரிவிக்க வேண்டும்"], "mustnot": "தெரிவிக்கக்கூடாது", "notneeded": "தெரிவிக்க வேண்டாம்" }
+      readings: { "may": "terivikkalām", "must": ["terivikkaṇum", "terivikka vēṇṭum"], "mustnot": "terivikkakkūṭātu", "notneeded": "terivikka vēṇṭām" }
+    - word: "ta-2003"
+      forms: { "may": "உடுத்தலாம்", "must": ["உடுத்தணும்", "உடுத்த வேண்டும்"], "mustnot": "உடுத்தக்கூடாது", "notneeded": "உடுத்த வேண்டாம்" }
+      readings: { "may": "uṭuttalām", "must": ["uṭuttaṇum", "uṭutta vēṇṭum"], "mustnot": "uṭuttakkūṭātu", "notneeded": "uṭutta vēṇṭām" }
+    - word: "ta-2004"
+      forms: { "may": "கழற்றலாம்", "must": ["கழற்றணும்", "கழற்ற வேண்டும்"], "mustnot": "கழற்றக்கூடாது", "notneeded": "கழற்ற வேண்டாம்" }
+      readings: { "may": "kaḻaṟṟalām", "must": ["kaḻaṟṟaṇum", "kaḻaṟṟa vēṇṭum"], "mustnot": "kaḻaṟṟakkūṭātu", "notneeded": "kaḻaṟṟa vēṇṭām" }
+    - word: "ta-2005"
+      forms: { "may": "கட்டலாம்", "must": ["கட்டணும்", "கட்ட வேண்டும்"], "mustnot": "கட்டக்கூடாது", "notneeded": "கட்ட வேண்டாம்" }
+      readings: { "may": "kaṭṭalām", "must": ["kaṭṭaṇum", "kaṭṭa vēṇṭum"], "mustnot": "kaṭṭakkūṭātu", "notneeded": "kaṭṭa vēṇṭām" }
+    - word: "ta-2006"
+      forms: { "may": "சீவலாம்", "must": ["சீவணும்", "சீவ வேண்டும்"], "mustnot": "சீவக்கூடாது", "notneeded": "சீவ வேண்டாம்" }
+      readings: { "may": "cīvalām", "must": ["cīvaṇum", "cīva vēṇṭum"], "mustnot": "cīvakkūṭātu", "notneeded": "cīva vēṇṭām" }
+    - word: "ta-2007"
+      forms: { "may": "அலங்கரிக்கலாம்", "must": ["அலங்கரிக்கணும்", "அலங்கரிக்க வேண்டும்"], "mustnot": "அலங்கரிக்கக்கூடாது", "notneeded": "அலங்கரிக்க வேண்டாம்" }
+      readings: { "may": "alaṅkarikkalām", "must": ["alaṅkarikkaṇum", "alaṅkarikka vēṇṭum"], "mustnot": "alaṅkarikkakkūṭātu", "notneeded": "alaṅkarikka vēṇṭām" }
+    - word: "ta-2008"
+      forms: { "may": "வளரலாம்", "must": ["வளரணும்", "வளர வேண்டும்"], "mustnot": "வளரக்கூடாது", "notneeded": "வளர வேண்டாம்" }
+      readings: { "may": "vaḷaralām", "must": ["vaḷaraṇum", "vaḷara vēṇṭum"], "mustnot": "vaḷarakkūṭātu", "notneeded": "vaḷara vēṇṭām" }
+    - word: "ta-2009"
+      forms: { "may": "பூசலாம்", "must": ["பூசணும்", "பூச வேண்டும்"], "mustnot": "பூசக்கூடாது", "notneeded": "பூச வேண்டாம்" }
+      readings: { "may": "pūcalām", "must": ["pūcaṇum", "pūca vēṇṭum"], "mustnot": "pūcakkūṭātu", "notneeded": "pūca vēṇṭām" }
+    - word: "ta-1945"
+      forms: { "may": "பெருக்கலாம்", "must": ["பெருக்கணும்", "பெருக்க வேண்டும்"], "mustnot": "பெருக்கக்கூடாது", "notneeded": "பெருக்க வேண்டாம்" }
+      readings: { "may": "perukkalām", "must": ["perukkaṇum", "perukka vēṇṭum"], "mustnot": "perukkakkūṭātu", "notneeded": "perukka vēṇṭām" }
+    - word: "ta-1946"
+      forms: { "may": "துடைக்கலாம்", "must": ["துடைக்கணும்", "துடைக்க வேண்டும்"], "mustnot": "துடைக்கக்கூடாது", "notneeded": "துடைக்க வேண்டாம்" }
+      readings: { "may": "tuṭaikkalām", "must": ["tuṭaikkaṇum", "tuṭaikka vēṇṭum"], "mustnot": "tuṭaikkakkūṭātu", "notneeded": "tuṭaikka vēṇṭām" }
+    - word: "ta-1947"
+      forms: { "may": "துவைக்கலாம்", "must": ["துவைக்கணும்", "துவைக்க வேண்டும்"], "mustnot": "துவைக்கக்கூடாது", "notneeded": "துவைக்க வேண்டாம்" }
+      readings: { "may": "tuvaikkalām", "must": ["tuvaikkaṇum", "tuvaikka vēṇṭum"], "mustnot": "tuvaikkakkūṭātu", "notneeded": "tuvaikka vēṇṭām" }
+    - word: "ta-1948"
+      forms: { "may": "மடிக்கலாம்", "must": ["மடிக்கணும்", "மடிக்க வேண்டும்"], "mustnot": "மடிக்கக்கூடாது", "notneeded": "மடிக்க வேண்டாம்" }
+      readings: { "may": "maṭikkalām", "must": ["maṭikkaṇum", "maṭikka vēṇṭum"], "mustnot": "maṭikkakkūṭātu", "notneeded": "maṭikka vēṇṭām" }
+    - word: "ta-1949"
+      forms: { "may": "இழுக்கலாம்", "must": ["இழுக்கணும்", "இழுக்க வேண்டும்"], "mustnot": "இழுக்கக்கூடாது", "notneeded": "இழுக்க வேண்டாம்" }
+      readings: { "may": "iḻukkalām", "must": ["iḻukkaṇum", "iḻukka vēṇṭum"], "mustnot": "iḻukkakkūṭātu", "notneeded": "iḻukka vēṇṭām" }
+    - word: "ta-1951"
+      forms: { "may": "நிரப்பலாம்", "must": ["நிரப்பணும்", "நிரப்ப வேண்டும்"], "mustnot": "நிரப்பக்கூடாது", "notneeded": "நிரப்ப வேண்டாம்" }
+      readings: { "may": "nirappalām", "must": ["nirappaṇum", "nirappa vēṇṭum"], "mustnot": "nirappakkūṭātu", "notneeded": "nirappa vēṇṭām" }
+    - word: "ta-1952"
+      forms: { "may": "ஊற்றலாம்", "must": ["ஊற்றணும்", "ஊற்ற வேண்டும்"], "mustnot": "ஊற்றக்கூடாது", "notneeded": "ஊற்ற வேண்டாம்" }
+      readings: { "may": "ūṟṟalām", "must": ["ūṟṟaṇum", "ūṟṟa vēṇṭum"], "mustnot": "ūṟṟakkūṭātu", "notneeded": "ūṟṟa vēṇṭām" }
+    - word: "ta-1953"
+      forms: { "may": "அணைக்கலாம்", "must": ["அணைக்கணும்", "அணைக்க வேண்டும்"], "mustnot": "அணைக்கக்கூடாது", "notneeded": "அணைக்க வேண்டாம்" }
+      readings: { "may": "aṇaikkalām", "must": ["aṇaikkaṇum", "aṇaikka vēṇṭum"], "mustnot": "aṇaikkakkūṭātu", "notneeded": "aṇaikka vēṇṭām" }
+    - word: "ta-1954"
+      forms: { "may": "ஏற்றலாம்", "must": ["ஏற்றணும்", "ஏற்ற வேண்டும்"], "mustnot": "ஏற்றக்கூடாது", "notneeded": "ஏற்ற வேண்டாம்" }
+      readings: { "may": "ēṟṟalām", "must": ["ēṟṟaṇum", "ēṟṟa vēṇṭum"], "mustnot": "ēṟṟakkūṭātu", "notneeded": "ēṟṟa vēṇṭām" }
+    - word: "ta-1955"
+      forms: { "may": "உலர்த்தலாம்", "must": ["உலர்த்தணும்", "உலர்த்த வேண்டும்"], "mustnot": "உலர்த்தக்கூடாது", "notneeded": "உலர்த்த வேண்டாம்" }
+      readings: { "may": "ularttalām", "must": ["ularttaṇum", "ulartta vēṇṭum"], "mustnot": "ularttakkūṭātu", "notneeded": "ulartta vēṇṭām" }
+    - word: "ta-1956"
+      forms: { "may": "வெட்டலாம்", "must": ["வெட்டணும்", "வெட்ட வேண்டும்"], "mustnot": "வெட்டக்கூடாது", "notneeded": "வெட்ட வேண்டாம்" }
+      readings: { "may": "veṭṭalām", "must": ["veṭṭaṇum", "veṭṭa vēṇṭum"], "mustnot": "veṭṭakkūṭātu", "notneeded": "veṭṭa vēṇṭām" }
+    - word: "ta-1957"
+      forms: { "may": "கலக்கலாம்", "must": ["கலக்கணும்", "கலக்க வேண்டும்"], "mustnot": "கலக்கக்கூடாது", "notneeded": "கலக்க வேண்டாம்" }
+      readings: { "may": "kalakkalām", "must": ["kalakkaṇum", "kalakka vēṇṭum"], "mustnot": "kalakkakkūṭātu", "notneeded": "kalakka vēṇṭām" }
+    - word: "ta-1958"
+      forms: { "may": "தேடலாம்", "must": ["தேடணும்", "தேட வேண்டும்"], "mustnot": "தேடக்கூடாது", "notneeded": "தேட வேண்டாம்" }
+      readings: { "may": "tēṭalām", "must": ["tēṭaṇum", "tēṭa vēṇṭum"], "mustnot": "tēṭakkūṭātu", "notneeded": "tēṭa vēṇṭām" }
+    - word: "ta-1959"
+      forms: { "may": "அடுக்கலாம்", "must": ["அடுக்கணும்", "அடுக்க வேண்டும்"], "mustnot": "அடுக்கக்கூடாது", "notneeded": "அடுக்க வேண்டாம்" }
+      readings: { "may": "aṭukkalām", "must": ["aṭukkaṇum", "aṭukka vēṇṭum"], "mustnot": "aṭukkakkūṭātu", "notneeded": "aṭukka vēṇṭām" }
+    - word: "ta-1961"
+      forms: { "may": "மாற்றலாம்", "must": ["மாற்றணும்", "மாற்ற வேண்டும்"], "mustnot": "மாற்றக்கூடாது", "notneeded": "மாற்ற வேண்டாம்" }
+      readings: { "may": "māṟṟalām", "must": ["māṟṟaṇum", "māṟṟa vēṇṭum"], "mustnot": "māṟṟakkūṭātu", "notneeded": "māṟṟa vēṇṭām" }
+    - word: "ta-1183"
+      forms: { "may": "பொங்கலாம்", "must": ["பொங்கணும்", "பொங்க வேண்டும்"], "mustnot": "பொங்கக்கூடாது", "notneeded": "பொங்க வேண்டாம்" }
+      readings: { "may": "poṅkalām", "must": ["poṅkaṇum", "poṅka vēṇṭum"], "mustnot": "poṅkakkūṭātu", "notneeded": "poṅka vēṇṭām" }
+    - word: "ta-1192"
+      forms: { "may": "கொண்டாடலாம்", "must": ["கொண்டாடணும்", "கொண்டாட வேண்டும்"], "mustnot": "கொண்டாடக்கூடாது", "notneeded": "கொண்டாட வேண்டாம்" }
+      readings: { "may": "koṇṭāṭalām", "must": ["koṇṭāṭaṇum", "koṇṭāṭa vēṇṭum"], "mustnot": "koṇṭāṭakkūṭātu", "notneeded": "koṇṭāṭa vēṇṭām" }
+    - word: "ta-1202"
+      forms: { "may": "வணங்கலாம்", "must": ["வணங்கணும்", "வணங்க வேண்டும்"], "mustnot": "வணங்கக்கூடாது", "notneeded": "வணங்க வேண்டாம்" }
+      readings: { "may": "vaṇaṅkalām", "must": ["vaṇaṅkaṇum", "vaṇaṅka vēṇṭum"], "mustnot": "vaṇaṅkakkūṭātu", "notneeded": "vaṇaṅka vēṇṭām" }
+    - word: "ta-1905"
+      forms: { "may": "பாடலாம்", "must": ["பாடணும்", "பாட வேண்டும்"], "mustnot": "பாடக்கூடாது", "notneeded": "பாட வேண்டாம்" }
+      readings: { "may": "pāṭalām", "must": ["pāṭaṇum", "pāṭa vēṇṭum"], "mustnot": "pāṭakkūṭātu", "notneeded": "pāṭa vēṇṭām" }
+    - word: "ta-1907"
+      forms: { "may": "தீட்டலாம்", "must": ["தீட்டணும்", "தீட்ட வேண்டும்"], "mustnot": "தீட்டக்கூடாது", "notneeded": "தீட்ட வேண்டாம்" }
+      readings: { "may": "tīṭṭalām", "must": ["tīṭṭaṇum", "tīṭṭa vēṇṭum"], "mustnot": "tīṭṭakkūṭātu", "notneeded": "tīṭṭa vēṇṭām" }
+    - word: "ta-1908"
+      forms: { "may": "ஓடலாம்", "must": ["ஓடணும்", "ஓட வேண்டும்"], "mustnot": "ஓடக்கூடாது", "notneeded": "ஓட வேண்டாம்" }
+      readings: { "may": "ōṭalām", "must": ["ōṭaṇum", "ōṭa vēṇṭum"], "mustnot": "ōṭakkūṭātu", "notneeded": "ōṭa vēṇṭām" }
+    - word: "ta-1909"
+      forms: { "may": "பறக்கலாம்", "must": ["பறக்கணும்", "பறக்க வேண்டும்"], "mustnot": "பறக்கக்கூடாது", "notneeded": "பறக்க வேண்டாம்" }
+      readings: { "may": "paṟakkalām", "must": ["paṟakkaṇum", "paṟakka vēṇṭum"], "mustnot": "paṟakkakkūṭātu", "notneeded": "paṟakka vēṇṭām" }
+    - word: "ta-1910"
+      forms: { "may": "நீந்தலாம்", "must": ["நீந்தணும்", "நீந்த வேண்டும்"], "mustnot": "நீந்தக்கூடாது", "notneeded": "நீந்த வேண்டாம்" }
+      readings: { "may": "nīntalām", "must": ["nīntaṇum", "nīnta vēṇṭum"], "mustnot": "nīntakkūṭātu", "notneeded": "nīnta vēṇṭām" }
+    - word: "ta-1911"
+      forms: { "may": "குதிக்கலாம்", "must": ["குதிக்கணும்", "குதிக்க வேண்டும்"], "mustnot": "குதிக்கக்கூடாது", "notneeded": "குதிக்க வேண்டாம்" }
+      readings: { "may": "kutikkalām", "must": ["kutikkaṇum", "kutikka vēṇṭum"], "mustnot": "kutikkakkūṭātu", "notneeded": "kutikka vēṇṭām" }
+    - word: "ta-1912"
+      forms: { "may": "ஏறலாம்", "must": ["ஏறணும்", "ஏற வேண்டும்"], "mustnot": "ஏறக்கூடாது", "notneeded": "ஏற வேண்டாம்" }
+      readings: { "may": "ēṟalām", "must": ["ēṟaṇum", "ēṟa vēṇṭum"], "mustnot": "ēṟakkūṭātu", "notneeded": "ēṟa vēṇṭām" }
+    - word: "ta-1913"
+      forms: { "may": "சேகரிக்கலாம்", "must": ["சேகரிக்கணும்", "சேகரிக்க வேண்டும்"], "mustnot": "சேகரிக்கக்கூடாது", "notneeded": "சேகரிக்க வேண்டாம்" }
+      readings: { "may": "cēkarikkalām", "must": ["cēkarikkaṇum", "cēkarikka vēṇṭum"], "mustnot": "cēkarikkakkūṭātu", "notneeded": "cēkarikka vēṇṭām" }
+    - word: "ta-1914"
+      forms: { "may": "சிரிக்கலாம்", "must": ["சிரிக்கணும்", "சிரிக்க வேண்டும்"], "mustnot": "சிரிக்கக்கூடாது", "notneeded": "சிரிக்க வேண்டாம்" }
+      readings: { "may": "cirikkalām", "must": ["cirikkaṇum", "cirikka vēṇṭum"], "mustnot": "cirikkakkūṭātu", "notneeded": "cirikka vēṇṭām" }
+    - word: "ta-1915"
+      forms: { "may": "ரசிக்கலாம்", "must": ["ரசிக்கணும்", "ரசிக்க வேண்டும்"], "mustnot": "ரசிக்கக்கூடாது", "notneeded": "ரசிக்க வேண்டாம்" }
+      readings: { "may": "racikkalām", "must": ["racikkaṇum", "racikka vēṇṭum"], "mustnot": "racikkakkūṭātu", "notneeded": "racikka vēṇṭām" }
+    - word: "ta-1916"
+      forms: { "may": "வெல்லலாம்", "must": ["வெல்லணும்", "வெல்ல வேண்டும்"], "mustnot": "வெல்லக்கூடாது", "notneeded": "வெல்ல வேண்டாம்" }
+      readings: { "may": "vellalām", "must": ["vellaṇum", "vella vēṇṭum"], "mustnot": "vellakkūṭātu", "notneeded": "vella vēṇṭām" }
+    - word: "ta-2180"
+      forms: { "may": "ஓட்டலாம்", "must": ["ஓட்டணும்", "ஓட்ட வேண்டும்"], "mustnot": "ஓட்டக்கூடாது", "notneeded": "ஓட்ட வேண்டாம்" }
+      readings: { "may": "ōṭṭalām", "must": ["ōṭṭaṇum", "ōṭṭa vēṇṭum"], "mustnot": "ōṭṭakkūṭātu", "notneeded": "ōṭṭa vēṇṭām" }
+    - word: "ta-2182"
+      forms: { "may": "அடையலாம்", "must": ["அடையணும்", "அடைய வேண்டும்"], "mustnot": "அடையக்கூடாது", "notneeded": "அடைய வேண்டாம்" }
+      readings: { "may": "aṭaiyalām", "must": ["aṭaiyaṇum", "aṭaiya vēṇṭum"], "mustnot": "aṭaiyakkūṭātu", "notneeded": "aṭaiya vēṇṭām" }
+    - word: "ta-2183"
+      forms: { "may": "இறக்கலாம்", "must": ["இறக்கணும்", "இறக்க வேண்டும்"], "mustnot": "இறக்கக்கூடாது", "notneeded": "இறக்க வேண்டாம்" }
+      readings: { "may": "iṟakkalām", "must": ["iṟakkaṇum", "iṟakka vēṇṭum"], "mustnot": "iṟakkakkūṭātu", "notneeded": "iṟakka vēṇṭām" }
+    - word: "ta-2186"
+      forms: { "may": "இயங்கலாம்", "must": ["இயங்கணும்", "இயங்க வேண்டும்"], "mustnot": "இயங்கக்கூடாது", "notneeded": "இயங்க வேண்டாம்" }
+      readings: { "may": "iyaṅkalām", "must": ["iyaṅkaṇum", "iyaṅka vēṇṭum"], "mustnot": "iyaṅkakkūṭātu", "notneeded": "iyaṅka vēṇṭām" }
+    - word: "ta-2191"
+      forms: { "may": "பரிசோதிக்கலாம்", "must": ["பரிசோதிக்கணும்", "பரிசோதிக்க வேண்டும்"], "mustnot": "பரிசோதிக்கக்கூடாது", "notneeded": "பரிசோதிக்க வேண்டாம்" }
+      readings: { "may": "paricōtikkalām", "must": ["paricōtikkaṇum", "paricōtikka vēṇṭum"], "mustnot": "paricōtikkakkūṭātu", "notneeded": "paricōtikka vēṇṭām" }
+    - word: "ta-2241"
+      forms: { "may": "மலரலாம்", "must": ["மலரணும்", "மலர வேண்டும்"], "mustnot": "மலரக்கூடாது", "notneeded": "மலர வேண்டாம்" }
+      readings: { "may": "malaralām", "must": ["malaraṇum", "malara vēṇṭum"], "mustnot": "malarakkūṭātu", "notneeded": "malara vēṇṭām" }
+    - word: "ta-2242"
+      forms: { "may": "உதிரலாம்", "must": ["உதிரணும்", "உதிர வேண்டும்"], "mustnot": "உதிரக்கூடாது", "notneeded": "உதிர வேண்டாம்" }
+      readings: { "may": "utiralām", "must": ["utiraṇum", "utira vēṇṭum"], "mustnot": "utirakkūṭātu", "notneeded": "utira vēṇṭām" }
+    - word: "ta-2243"
+      forms: { "may": "முளைக்கலாம்", "must": ["முளைக்கணும்", "முளைக்க வேண்டும்"], "mustnot": "முளைக்கக்கூடாது", "notneeded": "முளைக்க வேண்டாம்" }
+      readings: { "may": "muḷaikkalām", "must": ["muḷaikkaṇum", "muḷaikka vēṇṭum"], "mustnot": "muḷaikkakkūṭātu", "notneeded": "muḷaikka vēṇṭām" }
+    - word: "ta-2244"
+      forms: { "may": "உருகலாம்", "must": ["உருகணும்", "உருக வேண்டும்"], "mustnot": "உருகக்கூடாது", "notneeded": "உருக வேண்டாம்" }
+      readings: { "may": "urukalām", "must": ["urukaṇum", "uruka vēṇṭum"], "mustnot": "urukakkūṭātu", "notneeded": "uruka vēṇṭām" }
+    - word: "ta-2245"
+      forms: { "may": "உறையலாம்", "must": ["உறையணும்", "உறைய வேண்டும்"], "mustnot": "உறையக்கூடாது", "notneeded": "உறைய வேண்டாம்" }
+      readings: { "may": "uṟaiyalām", "must": ["uṟaiyaṇum", "uṟaiya vēṇṭum"], "mustnot": "uṟaiyakkūṭātu", "notneeded": "uṟaiya vēṇṭām" }
+    - word: "ta-2246"
+      forms: { "may": "ஒழுகலாம்", "must": ["ஒழுகணும்", "ஒழுக வேண்டும்"], "mustnot": "ஒழுகக்கூடாது", "notneeded": "ஒழுக வேண்டாம்" }
+      readings: { "may": "oḻukalām", "must": ["oḻukaṇum", "oḻuka vēṇṭum"], "mustnot": "oḻukakkūṭātu", "notneeded": "oḻuka vēṇṭām" }
+    - word: "ta-2122"
+      forms: { "may": "இணைக்கலாம்", "must": ["இணைக்கணும்", "இணைக்க வேண்டும்"], "mustnot": "இணைக்கக்கூடாது", "notneeded": "இணைக்க வேண்டாம்" }
+      readings: { "may": "iṇaikkalām", "must": ["iṇaikkaṇum", "iṇaikka vēṇṭum"], "mustnot": "iṇaikkakkūṭātu", "notneeded": "iṇaikka vēṇṭām" }
+    - word: "ta-2123"
+      forms: { "may": "துண்டிக்கலாம்", "must": ["துண்டிக்கணும்", "துண்டிக்க வேண்டும்"], "mustnot": "துண்டிக்கக்கூடாது", "notneeded": "துண்டிக்க வேண்டாம்" }
+      readings: { "may": "tuṇṭikkalām", "must": ["tuṇṭikkaṇum", "tuṇṭikka vēṇṭum"], "mustnot": "tuṇṭikkakkūṭātu", "notneeded": "tuṇṭikka vēṇṭām" }
+    - word: "ta-2124"
+      forms: { "may": "நீக்கலாம்", "must": ["நீக்கணும்", "நீக்க வேண்டும்"], "mustnot": "நீக்கக்கூடாது", "notneeded": "நீக்க வேண்டாம்" }
+      readings: { "may": "nīkkalām", "must": ["nīkkaṇum", "nīkka vēṇṭum"], "mustnot": "nīkkakkūṭātu", "notneeded": "nīkka vēṇṭām" }
+    - word: "ta-2125"
+      forms: { "may": "புதுப்பிக்கலாம்", "must": ["புதுப்பிக்கணும்", "புதுப்பிக்க வேண்டும்"], "mustnot": "புதுப்பிக்கக்கூடாது", "notneeded": "புதுப்பிக்க வேண்டாம்" }
+      readings: { "may": "putuppikkalām", "must": ["putuppikkaṇum", "putuppikka vēṇṭum"], "mustnot": "putuppikkakkūṭātu", "notneeded": "putuppikka vēṇṭām" }
+    - word: "ta-2126"
+      forms: { "may": "நிறுவலாம்", "must": ["நிறுவணும்", "நிறுவ வேண்டும்"], "mustnot": "நிறுவக்கூடாது", "notneeded": "நிறுவ வேண்டாம்" }
+      readings: { "may": "niṟuvalām", "must": ["niṟuvaṇum", "niṟuva vēṇṭum"], "mustnot": "niṟuvakkūṭātu", "notneeded": "niṟuva vēṇṭām" }
+    - word: "ta-2128"
+      forms: { "may": "அழுத்தலாம்", "must": ["அழுத்தணும்", "அழுத்த வேண்டும்"], "mustnot": "அழுத்தக்கூடாது", "notneeded": "அழுத்த வேண்டாம்" }
+      readings: { "may": "aḻuttalām", "must": ["aḻuttaṇum", "aḻutta vēṇṭum"], "mustnot": "aḻuttakkūṭātu", "notneeded": "aḻutta vēṇṭām" }
+    - word: "ta-1857"
+      forms: { "may": "புரியலாம்", "must": ["புரியணும்", "புரிய வேண்டும்"], "mustnot": "புரியக்கூடாது", "notneeded": "புரிய வேண்டாம்" }
+      readings: { "may": "puriyalām", "must": ["puriyaṇum", "puriya vēṇṭum"], "mustnot": "puriyakkūṭātu", "notneeded": "puriya vēṇṭām" }
+    - word: "ta-1858"
+      forms: { "may": "மறக்கலாம்", "must": ["மறக்கணும்", "மறக்க வேண்டும்"], "mustnot": "மறக்கக்கூடாது", "notneeded": "மறக்க வேண்டாம்" }
+      readings: { "may": "maṟakkalām", "must": ["maṟakkaṇum", "maṟakka vēṇṭum"], "mustnot": "maṟakkakkūṭātu", "notneeded": "maṟakka vēṇṭām" }
+    - word: "ta-1859"
+      forms: { "may": "நினைக்கலாம்", "must": ["நினைக்கணும்", "நினைக்க வேண்டும்"], "mustnot": "நினைக்கக்கூடாது", "notneeded": "நினைக்க வேண்டாம்" }
+      readings: { "may": "niṉaikkalām", "must": ["niṉaikkaṇum", "niṉaikka vēṇṭum"], "mustnot": "niṉaikkakkūṭātu", "notneeded": "niṉaikka vēṇṭām" }
+    - word: "ta-1242"
+      forms: { "may": "செலுத்தலாம்", "must": ["செலுத்தணும்", "செலுத்த வேண்டும்"], "mustnot": "செலுத்தக்கூடாது", "notneeded": "செலுத்த வேண்டாம்" }
+      readings: { "may": "celuttalām", "must": ["celuttaṇum", "celutta vēṇṭum"], "mustnot": "celuttakkūṭātu", "notneeded": "celutta vēṇṭām" }
+    - word: "ta-1243"
+      forms: { "may": "ஒப்பிடலாம்", "must": ["ஒப்பிடணும்", "ஒப்பிட வேண்டும்"], "mustnot": "ஒப்பிடக்கூடாது", "notneeded": "ஒப்பிட வேண்டாம்" }
+      readings: { "may": "oppiṭalām", "must": ["oppiṭaṇum", "oppiṭa vēṇṭum"], "mustnot": "oppiṭakkūṭātu", "notneeded": "oppiṭa vēṇṭām" }
+    - word: "ta-1244"
+      forms: { "may": "விசாரிக்கலாம்", "must": ["விசாரிக்கணும்", "விசாரிக்க வேண்டும்"], "mustnot": "விசாரிக்கக்கூடாது", "notneeded": "விசாரிக்க வேண்டாம்" }
+      readings: { "may": "vicārikkalām", "must": ["vicārikkaṇum", "vicārikka vēṇṭum"], "mustnot": "vicārikkakkūṭātu", "notneeded": "vicārikka vēṇṭām" }
+    - word: "ta-1245"
+      forms: { "may": "கூட்டலாம்", "must": ["கூட்டணும்", "கூட்ட வேண்டும்"], "mustnot": "கூட்டக்கூடாது", "notneeded": "கூட்ட வேண்டாம்" }
+      readings: { "may": "kūṭṭalām", "must": ["kūṭṭaṇum", "kūṭṭa vēṇṭum"], "mustnot": "kūṭṭakkūṭātu", "notneeded": "kūṭṭa vēṇṭām" }
+    - word: "ta-1246"
+      forms: { "may": "வசூலிக்கலாம்", "must": ["வசூலிக்கணும்", "வசூலிக்க வேண்டும்"], "mustnot": "வசூலிக்கக்கூடாது", "notneeded": "வசூலிக்க வேண்டாம்" }
+      readings: { "may": "vacūlikkalām", "must": ["vacūlikkaṇum", "vacūlikka vēṇṭum"], "mustnot": "vacūlikkakkūṭātu", "notneeded": "vacūlikka vēṇṭām" }
+    - word: "ta-2017"
+      forms: { "may": "சொல்லலாம்", "must": ["சொல்லணும்", "சொல்ல வேண்டும்"], "mustnot": "சொல்லக்கூடாது", "notneeded": "சொல்ல வேண்டாம்" }
+      readings: { "may": "collalām", "must": ["collaṇum", "colla vēṇṭum"], "mustnot": "collakkūṭātu", "notneeded": "colla vēṇṭām" }
+    - word: "ta-2018"
+      forms: { "may": "இருக்கலாம்", "must": ["இருக்கணும்", "இருக்க வேண்டும்"], "mustnot": "இருக்கக்கூடாது", "notneeded": "இருக்க வேண்டாம்" }
+      readings: { "may": "irukkalām", "must": ["irukkaṇum", "irukka vēṇṭum"], "mustnot": "irukkakkūṭātu", "notneeded": "irukka vēṇṭām" }
+    - word: "ta-2019"
+      forms: { "may": "தெரியலாம்", "must": ["தெரியணும்", "தெரிய வேண்டும்"], "mustnot": "தெரியக்கூடாது", "notneeded": "தெரிய வேண்டாம்" }
+      readings: { "may": "teriyalām", "must": ["teriyaṇum", "teriya vēṇṭum"], "mustnot": "teriyakkūṭātu", "notneeded": "teriya vēṇṭām" }
+    - word: "ta-2020"
+      forms: { "may": "தங்கலாம்", "must": ["தங்கணும்", "தங்க வேண்டும்"], "mustnot": "தங்கக்கூடாது", "notneeded": "தங்க வேண்டாம்" }
+      readings: { "may": "taṅkalām", "must": ["taṅkaṇum", "taṅka vēṇṭum"], "mustnot": "taṅkakkūṭātu", "notneeded": "taṅka vēṇṭām" }
+    - word: "ta-2021"
+      forms: { "may": "வாழலாம்", "must": ["வாழணும்", "வாழ வேண்டும்"], "mustnot": "வாழக்கூடாது", "notneeded": "வாழ வேண்டாம்" }
+      readings: { "may": "vāḻalām", "must": ["vāḻaṇum", "vāḻa vēṇṭum"], "mustnot": "vāḻakkūṭātu", "notneeded": "vāḻa vēṇṭām" }
+    - word: "ta-2022"
+      forms: { "may": "இறங்கலாம்", "must": ["இறங்கணும்", "இறங்க வேண்டும்"], "mustnot": "இறங்கக்கூடாது", "notneeded": "இறங்க வேண்டாம்" }
+      readings: { "may": "iṟaṅkalām", "must": ["iṟaṅkaṇum", "iṟaṅka vēṇṭum"], "mustnot": "iṟaṅkakkūṭātu", "notneeded": "iṟaṅka vēṇṭām" }
+    - word: "ta-2024"
+      forms: { "may": "பெறலாம்", "must": ["பெறணும்", "பெற வேண்டும்"], "mustnot": "பெறக்கூடாது", "notneeded": "பெற வேண்டாம்" }
+      readings: { "may": "peṟalām", "must": ["peṟaṇum", "peṟa vēṇṭum"], "mustnot": "peṟakkūṭātu", "notneeded": "peṟa vēṇṭām" }
+    - word: "ta-2025"
+      forms: { "may": "கிடைக்கலாம்", "must": ["கிடைக்கணும்", "கிடைக்க வேண்டும்"], "mustnot": "கிடைக்கக்கூடாது", "notneeded": "கிடைக்க வேண்டாம்" }
+      readings: { "may": "kiṭaikkalām", "must": ["kiṭaikkaṇum", "kiṭaikka vēṇṭum"], "mustnot": "kiṭaikkakkūṭātu", "notneeded": "kiṭaikka vēṇṭām" }
+    - word: "ta-2029"
+      forms: { "may": "அனுப்பலாம்", "must": ["அனுப்பணும்", "அனுப்ப வேண்டும்"], "mustnot": "அனுப்பக்கூடாது", "notneeded": "அனுப்ப வேண்டாம்" }
+      readings: { "may": "aṉuppalām", "must": ["aṉuppaṇum", "aṉuppa vēṇṭum"], "mustnot": "aṉuppakkūṭātu", "notneeded": "aṉuppa vēṇṭām" }
+    - word: "ta-2030"
+      forms: { "may": "கூப்பிடலாம்", "must": ["கூப்பிடணும்", "கூப்பிட வேண்டும்"], "mustnot": "கூப்பிடக்கூடாது", "notneeded": "கூப்பிட வேண்டாம்" }
+      readings: { "may": "kūppiṭalām", "must": ["kūppiṭaṇum", "kūppiṭa vēṇṭum"], "mustnot": "kūppiṭakkūṭātu", "notneeded": "kūppiṭa vēṇṭām" }
+    - word: "ta-2031"
+      forms: { "may": "அழைக்கலாம்", "must": ["அழைக்கணும்", "அழைக்க வேண்டும்"], "mustnot": "அழைக்கக்கூடாது", "notneeded": "அழைக்க வேண்டாம்" }
+      readings: { "may": "aḻaikkalām", "must": ["aḻaikkaṇum", "aḻaikka vēṇṭum"], "mustnot": "aḻaikkakkūṭātu", "notneeded": "aḻaikka vēṇṭām" }
+    - word: "ta-2033"
+      forms: { "may": "சந்திக்கலாம்", "must": ["சந்திக்கணும்", "சந்திக்க வேண்டும்"], "mustnot": "சந்திக்கக்கூடாது", "notneeded": "சந்திக்க வேண்டாம்" }
+      readings: { "may": "cantikkalām", "must": ["cantikkaṇum", "cantikka vēṇṭum"], "mustnot": "cantikkakkūṭātu", "notneeded": "cantikka vēṇṭām" }
+    - word: "ta-2034"
+      forms: { "may": "சேரலாம்", "must": ["சேரணும்", "சேர வேண்டும்"], "mustnot": "சேரக்கூடாது", "notneeded": "சேர வேண்டாம்" }
+      readings: { "may": "cēralām", "must": ["cēraṇum", "cēra vēṇṭum"], "mustnot": "cērakkūṭātu", "notneeded": "cēra vēṇṭām" }
+    - word: "ta-2035"
+      forms: { "may": "பிரியலாம்", "must": ["பிரியணும்", "பிரிய வேண்டும்"], "mustnot": "பிரியக்கூடாது", "notneeded": "பிரிய வேண்டாம்" }
+      readings: { "may": "piriyalām", "must": ["piriyaṇum", "piriya vēṇṭum"], "mustnot": "piriyakkūṭātu", "notneeded": "piriya vēṇṭām" }
+    - word: "ta-2036"
+      forms: { "may": "நம்பலாம்", "must": ["நம்பணும்", "நம்ப வேண்டும்"], "mustnot": "நம்பக்கூடாது", "notneeded": "நம்ப வேண்டாம்" }
+      readings: { "may": "nampalām", "must": ["nampaṇum", "nampa vēṇṭum"], "mustnot": "nampakkūṭātu", "notneeded": "nampa vēṇṭām" }
+    - word: "ta-2038"
+      forms: { "may": "பகிரலாம்", "must": ["பகிரணும்", "பகிர வேண்டும்"], "mustnot": "பகிரக்கூடாது", "notneeded": "பகிர வேண்டாம்" }
+      readings: { "may": "pakiralām", "must": ["pakiraṇum", "pakira vēṇṭum"], "mustnot": "pakirakkūṭātu", "notneeded": "pakira vēṇṭām" }
+    - word: "ta-2039"
+      forms: { "may": "ஒட்டலாம்", "must": ["ஒட்டணும்", "ஒட்ட வேண்டும்"], "mustnot": "ஒட்டக்கூடாது", "notneeded": "ஒட்ட வேண்டாம்" }
+      readings: { "may": "oṭṭalām", "must": ["oṭṭaṇum", "oṭṭa vēṇṭum"], "mustnot": "oṭṭakkūṭātu", "notneeded": "oṭṭa vēṇṭām" }
+    - word: "ta-2040"
+      forms: { "may": "கொட்டலாம்", "must": ["கொட்டணும்", "கொட்ட வேண்டும்"], "mustnot": "கொட்டக்கூடாது", "notneeded": "கொட்ட வேண்டாம்" }
+      readings: { "may": "koṭṭalām", "must": ["koṭṭaṇum", "koṭṭa vēṇṭum"], "mustnot": "koṭṭakkūṭātu", "notneeded": "koṭṭa vēṇṭām" }
+    - word: "ta-2041"
+      forms: { "may": "எரியலாம்", "must": ["எரியணும்", "எரிய வேண்டும்"], "mustnot": "எரியக்கூடாது", "notneeded": "எரிய வேண்டாம்" }
+      readings: { "may": "eriyalām", "must": ["eriyaṇum", "eriya vēṇṭum"], "mustnot": "eriyakkūṭātu", "notneeded": "eriya vēṇṭām" }
+    - word: "ta-2042"
+      forms: { "may": "உருவாக்கலாம்", "must": ["உருவாக்கணும்", "உருவாக்க வேண்டும்"], "mustnot": "உருவாக்கக்கூடாது", "notneeded": "உருவாக்க வேண்டாம்" }
+      readings: { "may": "uruvākkalām", "must": ["uruvākkaṇum", "uruvākka vēṇṭum"], "mustnot": "uruvākkakkūṭātu", "notneeded": "uruvākka vēṇṭām" }
+    - word: "ta-2043"
+      forms: { "may": "திருடலாம்", "must": ["திருடணும்", "திருட வேண்டும்"], "mustnot": "திருடக்கூடாது", "notneeded": "திருட வேண்டாம்" }
+      readings: { "may": "tiruṭalām", "must": ["tiruṭaṇum", "tiruṭa vēṇṭum"], "mustnot": "tiruṭakkūṭātu", "notneeded": "tiruṭa vēṇṭām" }
+    - word: "ta-2044"
+      forms: { "may": "யோசிக்கலாம்", "must": ["யோசிக்கணும்", "யோசிக்க வேண்டும்"], "mustnot": "யோசிக்கக்கூடாது", "notneeded": "யோசிக்க வேண்டாம்" }
+      readings: { "may": "yōcikkalām", "must": ["yōcikkaṇum", "yōcikka vēṇṭum"], "mustnot": "yōcikkakkūṭātu", "notneeded": "yōcikka vēṇṭām" }
+    - word: "ta-2045"
+      forms: { "may": "விரும்பலாம்", "must": ["விரும்பணும்", "விரும்ப வேண்டும்"], "mustnot": "விரும்பக்கூடாது", "notneeded": "விரும்ப வேண்டாம்" }
+      readings: { "may": "virumpalām", "must": ["virumpaṇum", "virumpa vēṇṭum"], "mustnot": "virumpakkūṭātu", "notneeded": "virumpa vēṇṭām" }
+    - word: "ta-2049"
+      forms: { "may": "அழலாம்", "must": ["அழணும்", "அழ வேண்டும்"], "mustnot": "அழக்கூடாது", "notneeded": "அழ வேண்டாம்" }
+      readings: { "may": "aḻalām", "must": ["aḻaṇum", "aḻa vēṇṭum"], "mustnot": "aḻakkūṭātu", "notneeded": "aḻa vēṇṭām" }
+    - word: "ta-2050"
+      forms: { "may": "எண்ணலாம்", "must": ["எண்ணணும்", "எண்ண வேண்டும்"], "mustnot": "எண்ணக்கூடாது", "notneeded": "எண்ண வேண்டாம்" }
+      readings: { "may": "eṇṇalām", "must": ["eṇṇaṇum", "eṇṇa vēṇṭum"], "mustnot": "eṇṇakkūṭātu", "notneeded": "eṇṇa vēṇṭām" }
+    - word: "ta-2051"
+      forms: { "may": "நுழையலாம்", "must": ["நுழையணும்", "நுழைய வேண்டும்"], "mustnot": "நுழையக்கூடாது", "notneeded": "நுழைய வேண்டாம்" }
+      readings: { "may": "nuḻaiyalām", "must": ["nuḻaiyaṇum", "nuḻaiya vēṇṭum"], "mustnot": "nuḻaiyakkūṭātu", "notneeded": "nuḻaiya vēṇṭām" }
+    - word: "ta-2052"
+      forms: { "may": "வெளியேறலாம்", "must": ["வெளியேறணும்", "வெளியேற வேண்டும்"], "mustnot": "வெளியேறக்கூடாது", "notneeded": "வெளியேற வேண்டாம்" }
+      readings: { "may": "veḷiyēṟalām", "must": ["veḷiyēṟaṇum", "veḷiyēṟa vēṇṭum"], "mustnot": "veḷiyēṟakkūṭātu", "notneeded": "veḷiyēṟa vēṇṭām" }
+    - word: "ta-2053"
+      forms: { "may": "கடக்கலாம்", "must": ["கடக்கணும்", "கடக்க வேண்டும்"], "mustnot": "கடக்கக்கூடாது", "notneeded": "கடக்க வேண்டாம்" }
+      readings: { "may": "kaṭakkalām", "must": ["kaṭakkaṇum", "kaṭakka vēṇṭum"], "mustnot": "kaṭakkakkūṭātu", "notneeded": "kaṭakka vēṇṭām" }
+    - word: "ta-2054"
+      forms: { "may": "சுற்றலாம்", "must": ["சுற்றணும்", "சுற்ற வேண்டும்"], "mustnot": "சுற்றக்கூடாது", "notneeded": "சுற்ற வேண்டாம்" }
+      readings: { "may": "cuṟṟalām", "must": ["cuṟṟaṇum", "cuṟṟa vēṇṭum"], "mustnot": "cuṟṟakkūṭātu", "notneeded": "cuṟṟa vēṇṭām" }
+    - word: "ta-2055"
+      forms: { "may": "அமரலாம்", "must": ["அமரணும்", "அமர வேண்டும்"], "mustnot": "அமரக்கூடாது", "notneeded": "அமர வேண்டாம்" }
+      readings: { "may": "amaralām", "must": ["amaraṇum", "amara vēṇṭum"], "mustnot": "amarakkūṭātu", "notneeded": "amara vēṇṭām" }
+    - word: "ta-2056"
+      forms: { "may": "நகரலாம்", "must": ["நகரணும்", "நகர வேண்டும்"], "mustnot": "நகரக்கூடாது", "notneeded": "நகர வேண்டாம்" }
+      readings: { "may": "nakaralām", "must": ["nakaraṇum", "nakara vēṇṭum"], "mustnot": "nakarakkūṭātu", "notneeded": "nakara vēṇṭām" }
+    - word: "ta-2057"
+      forms: { "may": "தொடலாம்", "must": ["தொடணும்", "தொட வேண்டும்"], "mustnot": "தொடக்கூடாது", "notneeded": "தொட வேண்டாம்" }
+      readings: { "may": "toṭalām", "must": ["toṭaṇum", "toṭa vēṇṭum"], "mustnot": "toṭakkūṭātu", "notneeded": "toṭa vēṇṭām" }
+    - word: "ta-2058"
+      forms: { "may": "எறியலாம்", "must": ["எறியணும்", "எறிய வேண்டும்"], "mustnot": "எறியக்கூடாது", "notneeded": "எறிய வேண்டாம்" }
+      readings: { "may": "eṟiyalām", "must": ["eṟiyaṇum", "eṟiya vēṇṭum"], "mustnot": "eṟiyakkūṭātu", "notneeded": "eṟiya vēṇṭām" }
+    - word: "ta-2059"
+      forms: { "may": "மாறலாம்", "must": ["மாறணும்", "மாற வேண்டும்"], "mustnot": "மாறக்கூடாது", "notneeded": "மாற வேண்டாம்" }
+      readings: { "may": "māṟalām", "must": ["māṟaṇum", "māṟa vēṇṭum"], "mustnot": "māṟakkūṭātu", "notneeded": "māṟa vēṇṭām" }
+    - word: "ta-2062"
+      forms: { "may": "தொடரலாம்", "must": ["தொடரணும்", "தொடர வேண்டும்"], "mustnot": "தொடரக்கூடாது", "notneeded": "தொடர வேண்டாம்" }
+      readings: { "may": "toṭaralām", "must": ["toṭaraṇum", "toṭara vēṇṭum"], "mustnot": "toṭarakkūṭātu", "notneeded": "toṭara vēṇṭām" }
+    - word: "ta-2063"
+      forms: { "may": "முயலலாம்", "must": ["முயலணும்", "முயல வேண்டும்"], "mustnot": "முயலக்கூடாது", "notneeded": "முயல வேண்டாம்" }
+      readings: { "may": "muyalalām", "must": ["muyalaṇum", "muyala vēṇṭum"], "mustnot": "muyalakkūṭātu", "notneeded": "muyala vēṇṭām" }
+    - word: "ta-2064"
+      forms: { "may": "சேமிக்கலாம்", "must": ["சேமிக்கணும்", "சேமிக்க வேண்டும்"], "mustnot": "சேமிக்கக்கூடாது", "notneeded": "சேமிக்க வேண்டாம்" }
+      readings: { "may": "cēmikkalām", "must": ["cēmikkaṇum", "cēmikka vēṇṭum"], "mustnot": "cēmikkakkūṭātu", "notneeded": "cēmikka vēṇṭām" }
+    - word: "ta-2065"
+      forms: { "may": "செலவழிக்கலாம்", "must": ["செலவழிக்கணும்", "செலவழிக்க வேண்டும்"], "mustnot": "செலவழிக்கக்கூடாது", "notneeded": "செலவழிக்க வேண்டாம்" }
+      readings: { "may": "celavaḻikkalām", "must": ["celavaḻikkaṇum", "celavaḻikka vēṇṭum"], "mustnot": "celavaḻikkakkūṭātu", "notneeded": "celavaḻikka vēṇṭām" }
+    - word: "ta-2066"
+      forms: { "may": "எழுப்பலாம்", "must": ["எழுப்பணும்", "எழுப்ப வேண்டும்"], "mustnot": "எழுப்பக்கூடாது", "notneeded": "எழுப்ப வேண்டாம்" }
+      readings: { "may": "eḻuppalām", "must": ["eḻuppaṇum", "eḻuppa vēṇṭum"], "mustnot": "eḻuppakkūṭātu", "notneeded": "eḻuppa vēṇṭām" }
+    - word: "ta-2067"
+      forms: { "may": "விழிக்கலாம்", "must": ["விழிக்கணும்", "விழிக்க வேண்டும்"], "mustnot": "விழிக்கக்கூடாது", "notneeded": "விழிக்க வேண்டாம்" }
+      readings: { "may": "viḻikkalām", "must": ["viḻikkaṇum", "viḻikka vēṇṭum"], "mustnot": "viḻikkakkūṭātu", "notneeded": "viḻikka vēṇṭām" }
+    - word: "ta-2068"
+      forms: { "may": "விழலாம்", "must": ["விழணும்", "விழ வேண்டும்"], "mustnot": "விழக்கூடாது", "notneeded": "விழ வேண்டாம்" }
+      readings: { "may": "viḻalām", "must": ["viḻaṇum", "viḻa vēṇṭum"], "mustnot": "viḻakkūṭātu", "notneeded": "viḻa vēṇṭām" }
+    - word: "ta-2070"
+      forms: { "may": "காட்டலாம்", "must": ["காட்டணும்", "காட்ட வேண்டும்"], "mustnot": "காட்டக்கூடாது", "notneeded": "காட்ட வேண்டாம்" }
+      readings: { "may": "kāṭṭalām", "must": ["kāṭṭaṇum", "kāṭṭa vēṇṭum"], "mustnot": "kāṭṭakkūṭātu", "notneeded": "kāṭṭa vēṇṭām" }
+    - word: "ta-2071"
+      forms: { "may": "குனியலாம்", "must": ["குனியணும்", "குனிய வேண்டும்"], "mustnot": "குனியக்கூடாது", "notneeded": "குனிய வேண்டாம்" }
+      readings: { "may": "kuṉiyalām", "must": ["kuṉiyaṇum", "kuṉiya vēṇṭum"], "mustnot": "kuṉiyakkūṭātu", "notneeded": "kuṉiya vēṇṭām" }
+    - word: "ta-2072"
+      forms: { "may": "சாயலாம்", "must": ["சாயணும்", "சாய வேண்டும்"], "mustnot": "சாயக்கூடாது", "notneeded": "சாய வேண்டாம்" }
+      readings: { "may": "cāyalām", "must": ["cāyaṇum", "cāya vēṇṭum"], "mustnot": "cāyakkūṭātu", "notneeded": "cāya vēṇṭām" }
+    - word: "ta-2074"
+      forms: { "may": "சம்பாதிக்கலாம்", "must": ["சம்பாதிக்கணும்", "சம்பாதிக்க வேண்டும்"], "mustnot": "சம்பாதிக்கக்கூடாது", "notneeded": "சம்பாதிக்க வேண்டாம்" }
+      readings: { "may": "campātikkalām", "must": ["campātikkaṇum", "campātikka vēṇṭum"], "mustnot": "campātikkakkūṭātu", "notneeded": "campātikka vēṇṭām" }
+    - word: "ta-2075"
+      forms: { "may": "பழகலாம்", "must": ["பழகணும்", "பழக வேண்டும்"], "mustnot": "பழகக்கூடாது", "notneeded": "பழக வேண்டாம்" }
+      readings: { "may": "paḻakalām", "must": ["paḻakaṇum", "paḻaka vēṇṭum"], "mustnot": "paḻakakkūṭātu", "notneeded": "paḻaka vēṇṭām" }
+    - word: "ta-2076"
+      forms: { "may": "திட்டலாம்", "must": ["திட்டணும்", "திட்ட வேண்டும்"], "mustnot": "திட்டக்கூடாது", "notneeded": "திட்ட வேண்டாம்" }
+      readings: { "may": "tiṭṭalām", "must": ["tiṭṭaṇum", "tiṭṭa vēṇṭum"], "mustnot": "tiṭṭakkūṭātu", "notneeded": "tiṭṭa vēṇṭām" }
+    - word: "ta-2077"
+      forms: { "may": "பாராட்டலாம்", "must": ["பாராட்டணும்", "பாராட்ட வேண்டும்"], "mustnot": "பாராட்டக்கூடாது", "notneeded": "பாராட்ட வேண்டாம்" }
+      readings: { "may": "pārāṭṭalām", "must": ["pārāṭṭaṇum", "pārāṭṭa vēṇṭum"], "mustnot": "pārāṭṭakkūṭātu", "notneeded": "pārāṭṭa vēṇṭām" }
+    - word: "ta-2078"
+      forms: { "may": "நடிக்கலாம்", "must": ["நடிக்கணும்", "நடிக்க வேண்டும்"], "mustnot": "நடிக்கக்கூடாது", "notneeded": "நடிக்க வேண்டாம்" }
+      readings: { "may": "naṭikkalām", "must": ["naṭikkaṇum", "naṭikka vēṇṭum"], "mustnot": "naṭikkakkūṭātu", "notneeded": "naṭikka vēṇṭām" }
+    - word: "ta-2079"
+      forms: { "may": "ஆடலாம்", "must": ["ஆடணும்", "ஆட வேண்டும்"], "mustnot": "ஆடக்கூடாது", "notneeded": "ஆட வேண்டாம்" }
+      readings: { "may": "āṭalām", "must": ["āṭaṇum", "āṭa vēṇṭum"], "mustnot": "āṭakkūṭātu", "notneeded": "āṭa vēṇṭām" }
+    - word: "ta-2080"
+      forms: { "may": "குறையலாம்", "must": ["குறையணும்", "குறைய வேண்டும்"], "mustnot": "குறையக்கூடாது", "notneeded": "குறைய வேண்டாம்" }
+      readings: { "may": "kuṟaiyalām", "must": ["kuṟaiyaṇum", "kuṟaiya vēṇṭum"], "mustnot": "kuṟaiyakkūṭātu", "notneeded": "kuṟaiya vēṇṭām" }
+    - word: "ta-2081"
+      forms: { "may": "அதிகரிக்கலாம்", "must": ["அதிகரிக்கணும்", "அதிகரிக்க வேண்டும்"], "mustnot": "அதிகரிக்கக்கூடாது", "notneeded": "அதிகரிக்க வேண்டாம்" }
+      readings: { "may": "atikarikkalām", "must": ["atikarikkaṇum", "atikarikka vēṇṭum"], "mustnot": "atikarikkakkūṭātu", "notneeded": "atikarikka vēṇṭām" }
+    - word: "ta-2083"
+      forms: { "may": "மன்னிக்கலாம்", "must": ["மன்னிக்கணும்", "மன்னிக்க வேண்டும்"], "mustnot": "மன்னிக்கக்கூடாது", "notneeded": "மன்னிக்க வேண்டாம்" }
+      readings: { "may": "maṉṉikkalām", "must": ["maṉṉikkaṇum", "maṉṉikka vēṇṭum"], "mustnot": "maṉṉikkakkūṭātu", "notneeded": "maṉṉikka vēṇṭām" }
+    - word: "ta-2084"
+      forms: { "may": "ஏமாற்றலாம்", "must": ["ஏமாற்றணும்", "ஏமாற்ற வேண்டும்"], "mustnot": "ஏமாற்றக்கூடாது", "notneeded": "ஏமாற்ற வேண்டாம்" }
+      readings: { "may": "ēmāṟṟalām", "must": ["ēmāṟṟaṇum", "ēmāṟṟa vēṇṭum"], "mustnot": "ēmāṟṟakkūṭātu", "notneeded": "ēmāṟṟa vēṇṭām" }
+    - word: "ta-2085"
+      forms: { "may": "பயன்படுத்தலாம்", "must": ["பயன்படுத்தணும்", "பயன்படுத்த வேண்டும்"], "mustnot": "பயன்படுத்தக்கூடாது", "notneeded": "பயன்படுத்த வேண்டாம்" }
+      readings: { "may": "payaṉpaṭuttalām", "must": ["payaṉpaṭuttaṇum", "payaṉpaṭutta vēṇṭum"], "mustnot": "payaṉpaṭuttakkūṭātu", "notneeded": "payaṉpaṭutta vēṇṭām" }
+    - word: "ta-1141"
+      forms: { "may": "பெய்யலாம்", "must": ["பெய்யணும்", "பெய்ய வேண்டும்"], "mustnot": "பெய்யக்கூடாது", "notneeded": "பெய்ய வேண்டாம்" }
+      readings: { "may": "peyyalām", "must": ["peyyaṇum", "peyya vēṇṭum"], "mustnot": "peyyakkūṭātu", "notneeded": "peyya vēṇṭām" }
+    - word: "ta-1143"
+      forms: { "may": "அடிக்கலாம்", "must": ["அடிக்கணும்", "அடிக்க வேண்டும்"], "mustnot": "அடிக்கக்கூடாது", "notneeded": "அடிக்க வேண்டாம்" }
+      readings: { "may": "aṭikkalām", "must": ["aṭikkaṇum", "aṭikka vēṇṭum"], "mustnot": "aṭikkakkūṭātu", "notneeded": "aṭikka vēṇṭām" }
+    - word: "ta-1144"
+      forms: { "may": "நனையலாம்", "must": ["நனையணும்", "நனைய வேண்டும்"], "mustnot": "நனையக்கூடாது", "notneeded": "நனைய வேண்டாம்" }
+      readings: { "may": "naṉaiyalām", "must": ["naṉaiyaṇum", "naṉaiya vēṇṭum"], "mustnot": "naṉaiyakkūṭātu", "notneeded": "naṉaiya vēṇṭām" }
+    - word: "ta-1145"
+      forms: { "may": "காயலாம்", "must": ["காயணும்", "காய வேண்டும்"], "mustnot": "காயக்கூடாது", "notneeded": "காய வேண்டாம்" }
+      readings: { "may": "kāyalām", "must": ["kāyaṇum", "kāya vēṇṭum"], "mustnot": "kāyakkūṭātu", "notneeded": "kāya vēṇṭām" }
+    - word: "ta-2023"
+      forms: { "may": "தோன்றலாம்", "must": ["தோன்றணும்", "தோன்ற வேண்டும்"], "mustnot": "தோன்றக்கூடாது", "notneeded": "தோன்ற வேண்டாம்" }
+      readings: { "may": "tōṉṟalām", "must": ["tōṉṟaṇum", "tōṉṟa vēṇṭum"], "mustnot": "tōṉṟakkūṭātu", "notneeded": "tōṉṟa vēṇṭām" }
+    - word: "ta-2027"
+      forms: { "may": "கவனிக்கலாம்", "must": ["கவனிக்கணும்", "கவனிக்க வேண்டும்"], "mustnot": "கவனிக்கக்கூடாது", "notneeded": "கவனிக்க வேண்டாம்" }
+      readings: { "may": "kavaṉikkalām", "must": ["kavaṉikkaṇum", "kavaṉikka vēṇṭum"], "mustnot": "kavaṉikkakkūṭātu", "notneeded": "kavaṉikka vēṇṭām" }
+    - word: "ta-2028"
+      forms: { "may": "வருந்தலாம்", "must": ["வருந்தணும்", "வருந்த வேண்டும்"], "mustnot": "வருந்தக்கூடாது", "notneeded": "வருந்த வேண்டாம்" }
+      readings: { "may": "varuntalām", "must": ["varuntaṇum", "varunta vēṇṭum"], "mustnot": "varuntakkūṭātu", "notneeded": "varunta vēṇṭām" }
+    - word: "ta-2061"
+      forms: { "may": "ஊக்குவிக்கலாம்", "must": ["ஊக்குவிக்கணும்", "ஊக்குவிக்க வேண்டும்"], "mustnot": "ஊக்குவிக்கக்கூடாது", "notneeded": "ஊக்குவிக்க வேண்டாம்" }
+      readings: { "may": "ūkkuvikkalām", "must": ["ūkkuvikkaṇum", "ūkkuvikka vēṇṭum"], "mustnot": "ūkkuvikkakkūṭātu", "notneeded": "ūkkuvikka vēṇṭām" }
+    - word: "ta-2082"
+      forms: { "may": "நிரூபிக்கலாம்", "must": ["நிரூபிக்கணும்", "நிரூபிக்க வேண்டும்"], "mustnot": "நிரூபிக்கக்கூடாது", "notneeded": "நிரூபிக்க வேண்டாம்" }
+      readings: { "may": "nirūpikkalām", "must": ["nirūpikkaṇum", "nirūpikka vēṇṭum"], "mustnot": "nirūpikkakkūṭātu", "notneeded": "nirūpikka vēṇṭām" }
+    - word: "ta-1142"
+      forms: { "may": "மறையலாம்", "must": ["மறையணும்", "மறைய வேண்டும்"], "mustnot": "மறையக்கூடாது", "notneeded": "மறைய வேண்டாம்" }
+      readings: { "may": "maṟaiyalām", "must": ["maṟaiyaṇum", "maṟaiya vēṇṭum"], "mustnot": "maṟaiyakkūṭātu", "notneeded": "maṟaiya vēṇṭām" }
+    - word: "ta-1950"
+      forms: { "may": "அலசலாம்", "must": ["அலசணும்", "அலச வேண்டும்"], "mustnot": "அலசக்கூடாது", "notneeded": "அலச வேண்டாம்" }
+      readings: { "may": "alacalām", "must": ["alacaṇum", "alaca vēṇṭum"], "mustnot": "alacakkūṭātu", "notneeded": "alaca vēṇṭām" }
+    - word: "ta-1960"
+      forms: { "may": "பரப்பலாம்", "must": ["பரப்பணும்", "பரப்ப வேண்டும்"], "mustnot": "பரப்பக்கூடாது", "notneeded": "பரப்ப வேண்டாம்" }
+      readings: { "may": "parappalām", "must": ["parappaṇum", "parappa vēṇṭum"], "mustnot": "parappakkūṭātu", "notneeded": "parappa vēṇṭām" }
+    - word: "ta-1146"
+      forms: { "may": "மின்னலாம்", "must": ["மின்னணும்", "மின்ன வேண்டும்"], "mustnot": "மின்னக்கூடாது", "notneeded": "மின்ன வேண்டாம்" }
+      readings: { "may": "miṉṉalām", "must": ["miṉṉaṇum", "miṉṉa vēṇṭum"], "mustnot": "miṉṉakkūṭātu", "notneeded": "miṉṉa vēṇṭām" }
+    - word: "ta-1297"
+      forms: { "may": "இருமலாம்", "must": ["இருமணும்", "இரும வேண்டும்"], "mustnot": "இருமக்கூடாது", "notneeded": "இரும வேண்டாம்" }
+      readings: { "may": "irumalām", "must": ["irumaṇum", "iruma vēṇṭum"], "mustnot": "irumakkūṭātu", "notneeded": "iruma vēṇṭām" }
+    - word: "ta-1298"
+      forms: { "may": "தும்மலாம்", "must": ["தும்மணும்", "தும்ம வேண்டும்"], "mustnot": "தும்மக்கூடாது", "notneeded": "தும்ம வேண்டாம்" }
+      readings: { "may": "tummalām", "must": ["tummaṇum", "tumma vēṇṭum"], "mustnot": "tummakkūṭātu", "notneeded": "tumma vēṇṭām" }
+    - word: "ta-1300"
+      forms: { "may": "மயங்கலாம்", "must": ["மயங்கணும்", "மயங்க வேண்டும்"], "mustnot": "மயங்கக்கூடாது", "notneeded": "மயங்க வேண்டாம்" }
+      readings: { "may": "mayaṅkalām", "must": ["mayaṅkaṇum", "mayaṅka vēṇṭum"], "mustnot": "mayaṅkakkūṭātu", "notneeded": "mayaṅka vēṇṭām" }
+    - word: "ta-1303"
+      forms: { "may": "வீங்கலாம்", "must": ["வீங்கணும்", "வீங்க வேண்டும்"], "mustnot": "வீங்கக்கூடாது", "notneeded": "வீங்க வேண்டாம்" }
+      readings: { "may": "vīṅkalām", "must": ["vīṅkaṇum", "vīṅka vēṇṭum"], "mustnot": "vīṅkakkūṭātu", "notneeded": "vīṅka vēṇṭām" }
+    - word: "ta-1304"
+      forms: { "may": "நடுங்கலாம்", "must": ["நடுங்கணும்", "நடுங்க வேண்டும்"], "mustnot": "நடுங்கக்கூடாது", "notneeded": "நடுங்க வேண்டாம்" }
+      readings: { "may": "naṭuṅkalām", "must": ["naṭuṅkaṇum", "naṭuṅka vēṇṭum"], "mustnot": "naṭuṅkakkūṭātu", "notneeded": "naṭuṅka vēṇṭām" }
+    - word: "ta-1305"
+      forms: { "may": "வியர்க்கலாம்", "must": ["வியர்க்கணும்", "வியர்க்க வேண்டும்"], "mustnot": "வியர்க்கக்கூடாது", "notneeded": "வியர்க்க வேண்டாம்" }
+      readings: { "may": "viyarkkalām", "must": ["viyarkkaṇum", "viyarkka vēṇṭum"], "mustnot": "viyarkkakkūṭātu", "notneeded": "viyarkka vēṇṭām" }
+    - word: "ta-1317"
+      forms: { "may": "பரிமாறலாம்", "must": ["பரிமாறணும்", "பரிமாற வேண்டும்"], "mustnot": "பரிமாறக்கூடாது", "notneeded": "பரிமாற வேண்டாம்" }
+      readings: { "may": "parimāṟalām", "must": ["parimāṟaṇum", "parimāṟa vēṇṭum"], "mustnot": "parimāṟakkūṭātu", "notneeded": "parimāṟa vēṇṭām" }
+    - word: "ta-1346"
+      forms: { "may": "வறுக்கலாம்", "must": ["வறுக்கணும்", "வறுக்க வேண்டும்"], "mustnot": "வறுக்கக்கூடாது", "notneeded": "வறுக்க வேண்டாம்" }
+      readings: { "may": "vaṟukkalām", "must": ["vaṟukkaṇum", "vaṟukka vēṇṭum"], "mustnot": "vaṟukkakkūṭātu", "notneeded": "vaṟukka vēṇṭām" }
+    - word: "ta-1347"
+      forms: { "may": "வதக்கலாம்", "must": ["வதக்கணும்", "வதக்க வேண்டும்"], "mustnot": "வதக்கக்கூடாது", "notneeded": "வதக்க வேண்டாம்" }
+      readings: { "may": "vatakkalām", "must": ["vatakkaṇum", "vatakka vēṇṭum"], "mustnot": "vatakkakkūṭātu", "notneeded": "vatakka vēṇṭām" }
+    - word: "ta-1348"
+      forms: { "may": "கொதிக்கலாம்", "must": ["கொதிக்கணும்", "கொதிக்க வேண்டும்"], "mustnot": "கொதிக்கக்கூடாது", "notneeded": "கொதிக்க வேண்டாம்" }
+      readings: { "may": "kotikkalām", "must": ["kotikkaṇum", "kotikka vēṇṭum"], "mustnot": "kotikkakkūṭātu", "notneeded": "kotikka vēṇṭām" }
+    - word: "ta-1349"
+      forms: { "may": "நறுக்கலாம்", "must": ["நறுக்கணும்", "நறுக்க வேண்டும்"], "mustnot": "நறுக்கக்கூடாது", "notneeded": "நறுக்க வேண்டாம்" }
+      readings: { "may": "naṟukkalām", "must": ["naṟukkaṇum", "naṟukka vēṇṭum"], "mustnot": "naṟukkakkūṭātu", "notneeded": "naṟukka vēṇṭām" }
+    - word: "ta-1350"
+      forms: { "may": "கிளறலாம்", "must": ["கிளறணும்", "கிளற வேண்டும்"], "mustnot": "கிளறக்கூடாது", "notneeded": "கிளற வேண்டாம்" }
+      readings: { "may": "kiḷaṟalām", "must": ["kiḷaṟaṇum", "kiḷaṟa vēṇṭum"], "mustnot": "kiḷaṟakkūṭātu", "notneeded": "kiḷaṟa vēṇṭām" }
+    - word: "ta-1351"
+      forms: { "may": "வேகலாம்", "must": ["வேகணும்", "வேக வேண்டும்"], "mustnot": "வேகக்கூடாது", "notneeded": "வேக வேண்டாம்" }
+      readings: { "may": "vēkalām", "must": ["vēkaṇum", "vēka vēṇṭum"], "mustnot": "vēkakkūṭātu", "notneeded": "vēka vēṇṭām" }
+    - word: "ta-1352"
+      forms: { "may": "பொரிக்கலாம்", "must": ["பொரிக்கணும்", "பொரிக்க வேண்டும்"], "mustnot": "பொரிக்கக்கூடாது", "notneeded": "பொரிக்க வேண்டாம்" }
+      readings: { "may": "porikkalām", "must": ["porikkaṇum", "porikka vēṇṭum"], "mustnot": "porikkakkūṭātu", "notneeded": "porikka vēṇṭām" }
+    - word: "ta-1353"
+      forms: { "may": "அவிக்கலாம்", "must": ["அவிக்கணும்", "அவிக்க வேண்டும்"], "mustnot": "அவிக்கக்கூடாது", "notneeded": "அவிக்க வேண்டாம்" }
+      readings: { "may": "avikkalām", "must": ["avikkaṇum", "avikka vēṇṭum"], "mustnot": "avikkakkūṭātu", "notneeded": "avikka vēṇṭām" }
+    - word: "ta-1354"
+      forms: { "may": "சுடலாம்", "must": ["சுடணும்", "சுட வேண்டும்"], "mustnot": "சுடக்கூடாது", "notneeded": "சுட வேண்டாம்" }
+      readings: { "may": "cuṭalām", "must": ["cuṭaṇum", "cuṭa vēṇṭum"], "mustnot": "cuṭakkūṭātu", "notneeded": "cuṭa vēṇṭām" }
+    - word: "ta-1355"
+      forms: { "may": "தாளிக்கலாம்", "must": ["தாளிக்கணும்", "தாளிக்க வேண்டும்"], "mustnot": "தாளிக்கக்கூடாது", "notneeded": "தாளிக்க வேண்டாம்" }
+      readings: { "may": "tāḷikkalām", "must": ["tāḷikkaṇum", "tāḷikka vēṇṭum"], "mustnot": "tāḷikkakkūṭātu", "notneeded": "tāḷikka vēṇṭām" }
+    - word: "ta-1356"
+      forms: { "may": "பிசையலாம்", "must": ["பிசையணும்", "பிசைய வேண்டும்"], "mustnot": "பிசையக்கூடாது", "notneeded": "பிசைய வேண்டாம்" }
+      readings: { "may": "picaiyalām", "must": ["picaiyaṇum", "picaiya vēṇṭum"], "mustnot": "picaiyakkūṭātu", "notneeded": "picaiya vēṇṭām" }
+    - word: "ta-1357"
+      forms: { "may": "உரிக்கலாம்", "must": ["உரிக்கணும்", "உரிக்க வேண்டும்"], "mustnot": "உரிக்கக்கூடாது", "notneeded": "உரிக்க வேண்டாம்" }
+      readings: { "may": "urikkalām", "must": ["urikkaṇum", "urikka vēṇṭum"], "mustnot": "urikkakkūṭātu", "notneeded": "urikka vēṇṭām" }
+    - word: "ta-1358"
+      forms: { "may": "துருவலாம்", "must": ["துருவணும்", "துருவ வேண்டும்"], "mustnot": "துருவக்கூடாது", "notneeded": "துருவ வேண்டாம்" }
+      readings: { "may": "turuvalām", "must": ["turuvaṇum", "turuva vēṇṭum"], "mustnot": "turuvakkūṭātu", "notneeded": "turuva vēṇṭām" }
+    - word: "ta-2347"
+      forms: { "may": "நடத்தலாம்", "must": ["நடத்தணும்", "நடத்த வேண்டும்"], "mustnot": "நடத்தக்கூடாது", "notneeded": "நடத்த வேண்டாம்" }
+      readings: { "may": "naṭattalām", "must": ["naṭattaṇum", "naṭatta vēṇṭum"], "mustnot": "naṭattakkūṭātu", "notneeded": "naṭatta vēṇṭām" }
+    - word: "ta-2348"
+      forms: { "may": "நிர்வகிக்கலாம்", "must": ["நிர்வகிக்கணும்", "நிர்வகிக்க வேண்டும்"], "mustnot": "நிர்வகிக்கக்கூடாது", "notneeded": "நிர்வகிக்க வேண்டாம்" }
+      readings: { "may": "nirvakikkalām", "must": ["nirvakikkaṇum", "nirvakikka vēṇṭum"], "mustnot": "nirvakikkakkūṭātu", "notneeded": "nirvakikka vēṇṭām" }
+    - word: "ta-2349"
+      forms: { "may": "விண்ணப்பிக்கலாம்", "must": ["விண்ணப்பிக்கணும்", "விண்ணப்பிக்க வேண்டும்"], "mustnot": "விண்ணப்பிக்கக்கூடாது", "notneeded": "விண்ணப்பிக்க வேண்டாம்" }
+      readings: { "may": "viṇṇappikkalām", "must": ["viṇṇappikkaṇum", "viṇṇappikka vēṇṭum"], "mustnot": "viṇṇappikkakkūṭātu", "notneeded": "viṇṇappikka vēṇṭām" }
+    - word: "ta-2356"
+      forms: { "may": "ஒத்துழைக்கலாம்", "must": ["ஒத்துழைக்கணும்", "ஒத்துழைக்க வேண்டும்"], "mustnot": "ஒத்துழைக்கக்கூடாது", "notneeded": "ஒத்துழைக்க வேண்டாம்" }
+      readings: { "may": "ottuḻaikkalām", "must": ["ottuḻaikkaṇum", "ottuḻaikka vēṇṭum"], "mustnot": "ottuḻaikkakkūṭātu", "notneeded": "ottuḻaikka vēṇṭām" }
+    - word: "ta-2026"
+      forms: { "may": "கலந்துகொள்ளலாம்", "must": ["கலந்துகொள்ளணும்", "கலந்துகொள்ள வேண்டும்"], "mustnot": "கலந்துகொள்ளக்கூடாது", "notneeded": "கலந்துகொள்ள வேண்டாம்" }
+      readings: { "may": "kalantukoḷḷalām", "must": ["kalantukoḷḷaṇum", "kalantukoḷḷa vēṇṭum"], "mustnot": "kalantukoḷḷakkūṭātu", "notneeded": "kalantukoḷḷa vēṇṭām" }
+    - word: "ta-2060"
+      forms: { "may": "பெருமைப்படலாம்", "must": ["பெருமைப்படணும்", "பெருமைப்பட வேண்டும்"], "mustnot": "பெருமைப்படக்கூடாது", "notneeded": "பெருமைப்பட வேண்டாம்" }
+      readings: { "may": "perumaippaṭalām", "must": ["perumaippaṭaṇum", "perumaippaṭa vēṇṭum"], "mustnot": "perumaippaṭakkūṭātu", "notneeded": "perumaippaṭa vēṇṭām" }
+    - word: "ta-2185"
+      forms: { "may": "சுற்றித்திரியலாம்", "must": ["சுற்றித்திரியணும்", "சுற்றித்திரிய வேண்டும்"], "mustnot": "சுற்றித்திரியக்கூடாது", "notneeded": "சுற்றித்திரிய வேண்டாம்" }
+      readings: { "may": "cuṟṟittiriyalām", "must": ["cuṟṟittiriyaṇum", "cuṟṟittiriya vēṇṭum"], "mustnot": "cuṟṟittiriyakkūṭātu", "notneeded": "cuṟṟittiriya vēṇṭām" }
+    - word: "ta-1906"
+      forms: { "may": "நடனமாடலாம்", "must": ["நடனமாடணும்", "நடனமாட வேண்டும்"], "mustnot": "நடனமாடக்கூடாது", "notneeded": "நடனமாட வேண்டாம்" }
+      readings: { "may": "naṭaṉamāṭalām", "must": ["naṭaṉamāṭaṇum", "naṭaṉamāṭa vēṇṭum"], "mustnot": "naṭaṉamāṭakkūṭātu", "notneeded": "naṭaṉamāṭa vēṇṭām" }
+    - word: "ta-2181"
+      forms: { "may": "புறப்படலாம்", "must": ["புறப்படணும்", "புறப்பட வேண்டும்"], "mustnot": "புறப்படக்கூடாது", "notneeded": "புறப்பட வேண்டாம்" }
+      readings: { "may": "puṟappaṭalām", "must": ["puṟappaṭaṇum", "puṟappaṭa vēṇṭum"], "mustnot": "puṟappaṭakkūṭātu", "notneeded": "puṟappaṭa vēṇṭām" }
+    - word: "ta-2184"
+      forms: { "may": "வழிதவறலாம்", "must": ["வழிதவறணும்", "வழிதவற வேண்டும்"], "mustnot": "வழிதவறக்கூடாது", "notneeded": "வழிதவற வேண்டாம்" }
+      readings: { "may": "vaḻitavaṟalām", "must": ["vaḻitavaṟaṇum", "vaḻitavaṟa vēṇṭum"], "mustnot": "vaḻitavaṟakkūṭātu", "notneeded": "vaḻitavaṟa vēṇṭām" }
+    - word: "ta-2187"
+      forms: { "may": "வழியனுப்பலாம்", "must": ["வழியனுப்பணும்", "வழியனுப்ப வேண்டும்"], "mustnot": "வழியனுப்பக்கூடாது", "notneeded": "வழியனுப்ப வேண்டாம்" }
+      readings: { "may": "vaḻiyaṉuppalām", "must": ["vaḻiyaṉuppaṇum", "vaḻiyaṉuppa vēṇṭum"], "mustnot": "vaḻiyaṉuppakkūṭātu", "notneeded": "vaḻiyaṉuppa vēṇṭām" }
+    - word: "ta-2188"
+      forms: { "may": "திட்டமிடலாம்", "must": ["திட்டமிடணும்", "திட்டமிட வேண்டும்"], "mustnot": "திட்டமிடக்கூடாது", "notneeded": "திட்டமிட வேண்டாம்" }
+      readings: { "may": "tiṭṭamiṭalām", "must": ["tiṭṭamiṭaṇum", "tiṭṭamiṭa vēṇṭum"], "mustnot": "tiṭṭamiṭakkūṭātu", "notneeded": "tiṭṭamiṭa vēṇṭām" }
+    - word: "ta-2189"
+      forms: { "may": "எடுத்துச்செல்லலாம்", "must": ["எடுத்துச்செல்லணும்", "எடுத்துச்செல்ல வேண்டும்"], "mustnot": "எடுத்துச்செல்லக்கூடாது", "notneeded": "எடுத்துச்செல்ல வேண்டாம்" }
+      readings: { "may": "eṭuttuccellalām", "must": ["eṭuttuccellaṇum", "eṭuttuccella vēṇṭum"], "mustnot": "eṭuttuccellakkūṭātu", "notneeded": "eṭuttuccella vēṇṭām" }
+    - word: "ta-2190"
+      forms: { "may": "சுற்றிப்பார்க்கலாம்", "must": ["சுற்றிப்பார்க்கணும்", "சுற்றிப்பார்க்க வேண்டும்"], "mustnot": "சுற்றிப்பார்க்கக்கூடாது", "notneeded": "சுற்றிப்பார்க்க வேண்டாம்" }
+      readings: { "may": "cuṟṟippārkkalām", "must": ["cuṟṟippārkkaṇum", "cuṟṟippārkka vēṇṭum"], "mustnot": "cuṟṟippārkkakkūṭātu", "notneeded": "cuṟṟippārkka vēṇṭām" }
+    - word: "ta-2121"
+      forms: { "may": "பதிவிறக்கலாம்", "must": ["பதிவிறக்கணும்", "பதிவிறக்க வேண்டும்"], "mustnot": "பதிவிறக்கக்கூடாது", "notneeded": "பதிவிறக்க வேண்டாம்" }
+      readings: { "may": "pativiṟakkalām", "must": ["pativiṟakkaṇum", "pativiṟakka vēṇṭum"], "mustnot": "pativiṟakkakkūṭātu", "notneeded": "pativiṟakka vēṇṭām" }
+    - word: "ta-2127"
+      forms: { "may": "தொடர்புகொள்ளலாம்", "must": ["தொடர்புகொள்ளணும்", "தொடர்புகொள்ள வேண்டும்"], "mustnot": "தொடர்புகொள்ளக்கூடாது", "notneeded": "தொடர்புகொள்ள வேண்டாம்" }
+      readings: { "may": "toṭarpukoḷḷalām", "must": ["toṭarpukoḷḷaṇum", "toṭarpukoḷḷa vēṇṭum"], "mustnot": "toṭarpukoḷḷakkūṭātu", "notneeded": "toṭarpukoḷḷa vēṇṭām" }
+    - word: "ta-2129"
+      forms: { "may": "தவறவிடலாம்", "must": ["தவறவிடணும்", "தவறவிட வேண்டும்"], "mustnot": "தவறவிடக்கூடாது", "notneeded": "தவறவிட வேண்டாம்" }
+      readings: { "may": "tavaṟaviṭalām", "must": ["tavaṟaviṭaṇum", "tavaṟaviṭa vēṇṭum"], "mustnot": "tavaṟaviṭakkūṭātu", "notneeded": "tavaṟaviṭa vēṇṭām" }
+    - word: "ta-2130"
+      forms: { "may": "பதிலளிக்கலாம்", "must": ["பதிலளிக்கணும்", "பதிலளிக்க வேண்டும்"], "mustnot": "பதிலளிக்கக்கூடாது", "notneeded": "பதிலளிக்க வேண்டாம்" }
+      readings: { "may": "patilaḷikkalām", "must": ["patilaḷikkaṇum", "patilaḷikka vēṇṭum"], "mustnot": "patilaḷikkakkūṭātu", "notneeded": "patilaḷikka vēṇṭām" }
+    - word: "ta-2131"
+      forms: { "may": "பதிவேற்றலாம்", "must": ["பதிவேற்றணும்", "பதிவேற்ற வேண்டும்"], "mustnot": "பதிவேற்றக்கூடாது", "notneeded": "பதிவேற்ற வேண்டாம்" }
+      readings: { "may": "pativēṟṟalām", "must": ["pativēṟṟaṇum", "pativēṟṟa vēṇṭum"], "mustnot": "pativēṟṟakkūṭātu", "notneeded": "pativēṟṟa vēṇṭām" }
+    - word: "ta-1860"
+      forms: { "may": "கற்றுக்கொள்ளலாம்", "must": ["கற்றுக்கொள்ளணும்", "கற்றுக்கொள்ள வேண்டும்"], "mustnot": "கற்றுக்கொள்ளக்கூடாது", "notneeded": "கற்றுக்கொள்ள வேண்டாம்" }
+      readings: { "may": "kaṟṟukkoḷḷalām", "must": ["kaṟṟukkoḷḷaṇum", "kaṟṟukkoḷḷa vēṇṭum"], "mustnot": "kaṟṟukkoḷḷakkūṭātu", "notneeded": "kaṟṟukkoḷḷa vēṇṭām" }
+    - word: "ta-1861"
+      forms: { "may": "சொல்லிக்கொடுக்கலாம்", "must": ["சொல்லிக்கொடுக்கணும்", "சொல்லிக்கொடுக்க வேண்டும்"], "mustnot": "சொல்லிக்கொடுக்கக்கூடாது", "notneeded": "சொல்லிக்கொடுக்க வேண்டாம்" }
+      readings: { "may": "collikkoṭukkalām", "must": ["collikkoṭukkaṇum", "collikkoṭukka vēṇṭum"], "mustnot": "collikkoṭukkakkūṭātu", "notneeded": "collikkoṭukka vēṇṭām" }
+    - word: "ta-2032"
+      forms: { "may": "காத்திருக்கலாம்", "must": ["காத்திருக்கணும்", "காத்திருக்க வேண்டும்"], "mustnot": "காத்திருக்கக்கூடாது", "notneeded": "காத்திருக்க வேண்டாம்" }
+      readings: { "may": "kāttirukkalām", "must": ["kāttirukkaṇum", "kāttirukka vēṇṭum"], "mustnot": "kāttirukkakkūṭātu", "notneeded": "kāttirukka vēṇṭām" }
+    - word: "ta-2037"
+      forms: { "may": "ஒப்புக்கொள்ளலாம்", "must": ["ஒப்புக்கொள்ளணும்", "ஒப்புக்கொள்ள வேண்டும்"], "mustnot": "ஒப்புக்கொள்ளக்கூடாது", "notneeded": "ஒப்புக்கொள்ள வேண்டாம்" }
+      readings: { "may": "oppukkoḷḷalām", "must": ["oppukkoḷḷaṇum", "oppukkoḷḷa vēṇṭum"], "mustnot": "oppukkoḷḷakkūṭātu", "notneeded": "oppukkoḷḷa vēṇṭām" }
+    - word: "ta-2046"
+      forms: { "may": "பயப்படலாம்", "must": ["பயப்படணும்", "பயப்பட வேண்டும்"], "mustnot": "பயப்படக்கூடாது", "notneeded": "பயப்பட வேண்டாம்" }
+      readings: { "may": "payappaṭalām", "must": ["payappaṭaṇum", "payappaṭa vēṇṭum"], "mustnot": "payappaṭakkūṭātu", "notneeded": "payappaṭa vēṇṭām" }
+    - word: "ta-2047"
+      forms: { "may": "கவலைப்படலாம்", "must": ["கவலைப்படணும்", "கவலைப்பட வேண்டும்"], "mustnot": "கவலைப்படக்கூடாது", "notneeded": "கவலைப்பட வேண்டாம்" }
+      readings: { "may": "kavalaippaṭalām", "must": ["kavalaippaṭaṇum", "kavalaippaṭa vēṇṭum"], "mustnot": "kavalaippaṭakkūṭātu", "notneeded": "kavalaippaṭa vēṇṭām" }
+    - word: "ta-2048"
+      forms: { "may": "கோபப்படலாம்", "must": ["கோபப்படணும்", "கோபப்பட வேண்டும்"], "mustnot": "கோபப்படக்கூடாது", "notneeded": "கோபப்பட வேண்டாம்" }
+      readings: { "may": "kōpappaṭalām", "must": ["kōpappaṭaṇum", "kōpappaṭa vēṇṭum"], "mustnot": "kōpappaṭakkūṭātu", "notneeded": "kōpappaṭa vēṇṭām" }
+    - word: "ta-2069"
+      forms: { "may": "தேர்ந்தெடுக்கலாம்", "must": ["தேர்ந்தெடுக்கணும்", "தேர்ந்தெடுக்க வேண்டும்"], "mustnot": "தேர்ந்தெடுக்கக்கூடாது", "notneeded": "தேர்ந்தெடுக்க வேண்டாம்" }
+      readings: { "may": "tērnteṭukkalām", "must": ["tērnteṭukkaṇum", "tērnteṭukka vēṇṭum"], "mustnot": "tērnteṭukkakkūṭātu", "notneeded": "tērnteṭukka vēṇṭām" }
+    - word: "ta-2073"
+      forms: { "may": "கண்டுபிடிக்கலாம்", "must": ["கண்டுபிடிக்கணும்", "கண்டுபிடிக்க வேண்டும்"], "mustnot": "கண்டுபிடிக்கக்கூடாது", "notneeded": "கண்டுபிடிக்க வேண்டாம்" }
+      readings: { "may": "kaṇṭupiṭikkalām", "must": ["kaṇṭupiṭikkaṇum", "kaṇṭupiṭikka vēṇṭum"], "mustnot": "kaṇṭupiṭikkakkūṭātu", "notneeded": "kaṇṭupiṭikka vēṇṭām" }
+    - word: "ta-2086"
+      forms: { "may": "சரிபார்க்கலாம்", "must": ["சரிபார்க்கணும்", "சரிபார்க்க வேண்டும்"], "mustnot": "சரிபார்க்கக்கூடாது", "notneeded": "சரிபார்க்க வேண்டாம்" }
+      readings: { "may": "caripārkkalām", "must": ["caripārkkaṇum", "caripārkka vēṇṭum"], "mustnot": "caripārkkakkūṭātu", "notneeded": "caripārkka vēṇṭām" }
+    - word: "ta-1299"
+      forms: { "may": "குணமாகலாம்", "must": ["குணமாகணும்", "குணமாக வேண்டும்"], "mustnot": "குணமாகக்கூடாது", "notneeded": "குணமாக வேண்டாம்" }
+      readings: { "may": "kuṇamākalām", "must": ["kuṇamākaṇum", "kuṇamāka vēṇṭum"], "mustnot": "kuṇamākakkūṭātu", "notneeded": "kuṇamāka vēṇṭām" }
+    - word: "ta-2350"
+      forms: { "may": "கையெழுத்திடலாம்", "must": ["கையெழுத்திடணும்", "கையெழுத்திட வேண்டும்"], "mustnot": "கையெழுத்திடக்கூடாது", "notneeded": "கையெழுத்திட வேண்டாம்" }
+      readings: { "may": "kaiyeḻuttiṭalām", "must": ["kaiyeḻuttiṭaṇum", "kaiyeḻuttiṭa vēṇṭum"], "mustnot": "kaiyeḻuttiṭakkūṭātu", "notneeded": "kaiyeḻuttiṭa vēṇṭām" }
+    - word: "ta-2351"
+      forms: { "may": "ஈடுபடலாம்", "must": ["ஈடுபடணும்", "ஈடுபட வேண்டும்"], "mustnot": "ஈடுபடக்கூடாது", "notneeded": "ஈடுபட வேண்டாம்" }
+      readings: { "may": "īṭupaṭalām", "must": ["īṭupaṭaṇum", "īṭupaṭa vēṇṭum"], "mustnot": "īṭupaṭakkūṭātu", "notneeded": "īṭupaṭa vēṇṭām" }
+    - word: "ta-2352"
+      forms: { "may": "முடிவெடுக்கலாம்", "must": ["முடிவெடுக்கணும்", "முடிவெடுக்க வேண்டும்"], "mustnot": "முடிவெடுக்கக்கூடாது", "notneeded": "முடிவெடுக்க வேண்டாம்" }
+      readings: { "may": "muṭiveṭukkalām", "must": ["muṭiveṭukkaṇum", "muṭiveṭukka vēṇṭum"], "mustnot": "muṭiveṭukkakkūṭātu", "notneeded": "muṭiveṭukka vēṇṭām" }
+    - word: "ta-2353"
+      forms: { "may": "அச்சிடலாம்", "must": ["அச்சிடணும்", "அச்சிட வேண்டும்"], "mustnot": "அச்சிடக்கூடாது", "notneeded": "அச்சிட வேண்டாம்" }
+      readings: { "may": "acciṭalām", "must": ["acciṭaṇum", "acciṭa vēṇṭum"], "mustnot": "acciṭakkūṭātu", "notneeded": "acciṭa vēṇṭām" }
+    - word: "ta-2354"
+      forms: { "may": "நகலெடுக்கலாம்", "must": ["நகலெடுக்கணும்", "நகலெடுக்க வேண்டும்"], "mustnot": "நகலெடுக்கக்கூடாது", "notneeded": "நகலெடுக்க வேண்டாம்" }
+      readings: { "may": "nakaleṭukkalām", "must": ["nakaleṭukkaṇum", "nakaleṭukka vēṇṭum"], "mustnot": "nakaleṭukkakkūṭātu", "notneeded": "nakaleṭukka vēṇṭām" }
+    - word: "ta-2355"
+      forms: { "may": "கணக்கிடலாம்", "must": ["கணக்கிடணும்", "கணக்கிட வேண்டும்"], "mustnot": "கணக்கிடக்கூடாது", "notneeded": "கணக்கிட வேண்டாம்" }
+      readings: { "may": "kaṇakkiṭalām", "must": ["kaṇakkiṭaṇum", "kaṇakkiṭa vēṇṭum"], "mustnot": "kaṇakkiṭakkūṭātu", "notneeded": "kaṇakkiṭa vēṇṭām" }
+rules:
+  - id: "ta-rule-can-may"
+    slots: ["may"]
+    words: [{ word: "-லாம்", reading: "-lām" }, { word: "வா", reading: "vā" }, { word: "வரலாம்", reading: "varalām" }, { word: "வரலாமா", reading: "varalāmā" }]
+  - id: "ta-rule-can-must"
+    slots: ["must"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வர வேண்டும்", reading: "vara vēṇṭum" }, { word: "வரணும்", reading: "varaṇum" }, { word: "எனக்குப் போகணும்", reading: "eṉakkup pōkaṇum" }, { word: "வேண்டும்", reading: "vēṇṭum" }]
+  - id: "ta-rule-can-not"
+    slots: ["mustnot", "notneeded"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வரக்கூடாது", reading: "varakkūṭātu" }, { word: "வர வேண்டாம்", reading: "vara vēṇṭām" }]

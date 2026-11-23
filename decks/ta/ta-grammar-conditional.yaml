@@ -1,0 +1,715 @@
+schema: 1
+id: "ta-grammar-conditional"
+part: "core"
+kind: "rules"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ta-0409", "ta-0410", "ta-0412", "ta-0413"]
+  slots: ["iff", "onlyif", "ifnot"]
+  rows:
+    - word: "ta-0010"
+      forms: { "iff": ["வந்தா", "வந்தால்"], "onlyif": ["வந்தாதான்", "வந்தால்தான்"], "ifnot": ["வராட்டா", "வராவிட்டால்"] }
+      readings: { "iff": ["vantā", "vantāl"], "onlyif": ["vantātāṉ", "vantāltāṉ"], "ifnot": ["varāṭṭā", "varāviṭṭāl"] }
+    - word: "ta-0038"
+      forms: { "iff": ["எழுந்தா", "எழுந்தால்"], "onlyif": ["எழுந்தாதான்", "எழுந்தால்தான்"], "ifnot": ["எழாட்டா", "எழாவிட்டால்"] }
+      readings: { "iff": ["eḻuntā", "eḻuntāl"], "onlyif": ["eḻuntātāṉ", "eḻuntāltāṉ"], "ifnot": ["eḻāṭṭā", "eḻāviṭṭāl"] }
+    - word: "ta-0115"
+      forms: { "iff": ["படிச்சா", "படித்தால்"], "onlyif": ["படிச்சாதான்", "படித்தால்தான்"], "ifnot": ["படிக்காட்டா", "படிக்காவிட்டால்"] }
+      readings: { "iff": ["paṭiccā", "paṭittāl"], "onlyif": ["paṭiccātāṉ", "paṭittāltāṉ"], "ifnot": ["paṭikkāṭṭā", "paṭikkāviṭṭāl"] }
+    - word: "ta-0118"
+      forms: { "iff": ["போனா", "போனால்"], "onlyif": ["போனாதான்", "போனால்தான்"], "ifnot": ["போகாட்டா", "போகாவிட்டால்"] }
+      readings: { "iff": ["pōṉā", "pōṉāl"], "onlyif": ["pōṉātāṉ", "pōṉāltāṉ"], "ifnot": ["pōkāṭṭā", "pōkāviṭṭāl"] }
+    - word: "ta-0119"
+      forms: { "iff": ["சாப்பிட்டா", "சாப்பிட்டால்"], "onlyif": ["சாப்பிட்டாதான்", "சாப்பிட்டால்தான்"], "ifnot": ["சாப்பிடாட்டா", "சாப்பிடாவிட்டால்"] }
+      readings: { "iff": ["cāppiṭṭā", "cāppiṭṭāl"], "onlyif": ["cāppiṭṭātāṉ", "cāppiṭṭāltāṉ"], "ifnot": ["cāppiṭāṭṭā", "cāppiṭāviṭṭāl"] }
+    - word: "ta-0120"
+      forms: { "iff": ["குடிச்சா", "குடித்தால்"], "onlyif": ["குடிச்சாதான்", "குடித்தால்தான்"], "ifnot": ["குடிக்காட்டா", "குடிக்காவிட்டால்"] }
+      readings: { "iff": ["kuṭiccā", "kuṭittāl"], "onlyif": ["kuṭiccātāṉ", "kuṭittāltāṉ"], "ifnot": ["kuṭikkāṭṭā", "kuṭikkāviṭṭāl"] }
+    - word: "ta-0121"
+      forms: { "iff": ["பாத்தா", "பார்த்தால்"], "onlyif": ["பாத்தாதான்", "பார்த்தால்தான்"], "ifnot": ["பார்க்காட்டா", "பார்க்காவிட்டால்"] }
+      readings: { "iff": ["pāttā", "pārttāl"], "onlyif": ["pāttātāṉ", "pārttāltāṉ"], "ifnot": ["pārkkāṭṭā", "pārkkāviṭṭāl"] }
+    - word: "ta-0122"
+      forms: { "iff": ["கேட்டா", "கேட்டால்"], "onlyif": ["கேட்டாதான்", "கேட்டால்தான்"], "ifnot": ["கேட்காட்டா", "கேட்காவிட்டால்"] }
+      readings: { "iff": ["kēṭṭā", "kēṭṭāl"], "onlyif": ["kēṭṭātāṉ", "kēṭṭāltāṉ"], "ifnot": ["kēṭkāṭṭā", "kēṭkāviṭṭāl"] }
+    - word: "ta-0123"
+      forms: { "iff": ["பேசினா", "பேசினால்"], "onlyif": ["பேசினாதான்", "பேசினால்தான்"], "ifnot": ["பேசாட்டா", "பேசாவிட்டால்"] }
+      readings: { "iff": ["pēciṉā", "pēciṉāl"], "onlyif": ["pēciṉātāṉ", "pēciṉāltāṉ"], "ifnot": ["pēcāṭṭā", "pēcāviṭṭāl"] }
+    - word: "ta-0124"
+      forms: { "iff": ["எழுதினா", "எழுதினால்"], "onlyif": ["எழுதினாதான்", "எழுதினால்தான்"], "ifnot": ["எழுதாட்டா", "எழுதாவிட்டால்"] }
+      readings: { "iff": ["eḻutiṉā", "eḻutiṉāl"], "onlyif": ["eḻutiṉātāṉ", "eḻutiṉāltāṉ"], "ifnot": ["eḻutāṭṭā", "eḻutāviṭṭāl"] }
+    - word: "ta-0125"
+      forms: { "iff": ["கொடுத்தா", "கொடுத்தால்"], "onlyif": ["கொடுத்தாதான்", "கொடுத்தால்தான்"], "ifnot": ["கொடுக்காட்டா", "கொடுக்காவிட்டால்"] }
+      readings: { "iff": ["koṭuttā", "koṭuttāl"], "onlyif": ["koṭuttātāṉ", "koṭuttāltāṉ"], "ifnot": ["koṭukkāṭṭā", "koṭukkāviṭṭāl"] }
+    - word: "ta-0126"
+      forms: { "iff": ["தூங்கினா", "தூங்கினால்"], "onlyif": ["தூங்கினாதான்", "தூங்கினால்தான்"], "ifnot": ["தூங்காட்டா", "தூங்காவிட்டால்"] }
+      readings: { "iff": ["tūṅkiṉā", "tūṅkiṉāl"], "onlyif": ["tūṅkiṉātāṉ", "tūṅkiṉāltāṉ"], "ifnot": ["tūṅkāṭṭā", "tūṅkāviṭṭāl"] }
+    - word: "ta-0127"
+      forms: { "iff": ["செஞ்சா", "செய்தால்"], "onlyif": ["செஞ்சாதான்", "செய்தால்தான்"], "ifnot": ["செய்யாட்டா", "செய்யாவிட்டால்"] }
+      readings: { "iff": ["ceñcā", "ceytāl"], "onlyif": ["ceñcātāṉ", "ceytāltāṉ"], "ifnot": ["ceyyāṭṭā", "ceyyāviṭṭāl"] }
+    - word: "ta-0128"
+      forms: { "iff": ["சமைச்சா", "சமைத்தால்"], "onlyif": ["சமைச்சாதான்", "சமைத்தால்தான்"], "ifnot": ["சமைக்காட்டா", "சமைக்காவிட்டால்"] }
+      readings: { "iff": ["camaiccā", "camaittāl"], "onlyif": ["camaiccātāṉ", "camaittāltāṉ"], "ifnot": ["camaikkāṭṭā", "camaikkāviṭṭāl"] }
+    - word: "ta-0129"
+      forms: { "iff": ["வாங்கினா", "வாங்கினால்"], "onlyif": ["வாங்கினாதான்", "வாங்கினால்தான்"], "ifnot": ["வாங்காட்டா", "வாங்காவிட்டால்"] }
+      readings: { "iff": ["vāṅkiṉā", "vāṅkiṉāl"], "onlyif": ["vāṅkiṉātāṉ", "vāṅkiṉāltāṉ"], "ifnot": ["vāṅkāṭṭā", "vāṅkāviṭṭāl"] }
+    - word: "ta-0184"
+      forms: { "iff": ["எடுத்தா", "எடுத்தால்"], "onlyif": ["எடுத்தாதான்", "எடுத்தால்தான்"], "ifnot": ["எடுக்காட்டா", "எடுக்காவிட்டால்"] }
+      readings: { "iff": ["eṭuttā", "eṭuttāl"], "onlyif": ["eṭuttātāṉ", "eṭuttāltāṉ"], "ifnot": ["eṭukkāṭṭā", "eṭukkāviṭṭāl"] }
+    - word: "ta-0185"
+      forms: { "iff": ["வச்சா", "வைத்தால்"], "onlyif": ["வச்சாதான்", "வைத்தால்தான்"], "ifnot": ["வைக்காட்டா", "வைக்காவிட்டால்"] }
+      readings: { "iff": ["vaccā", "vaittāl"], "onlyif": ["vaccātāṉ", "vaittāltāṉ"], "ifnot": ["vaikkāṭṭā", "vaikkāviṭṭāl"] }
+    - word: "ta-0186"
+      forms: { "iff": ["திறந்தா", "திறந்தால்"], "onlyif": ["திறந்தாதான்", "திறந்தால்தான்"], "ifnot": ["திறக்காட்டா", "திறக்காவிட்டால்"] }
+      readings: { "iff": ["tiṟantā", "tiṟantāl"], "onlyif": ["tiṟantātāṉ", "tiṟantāltāṉ"], "ifnot": ["tiṟakkāṭṭā", "tiṟakkāviṭṭāl"] }
+    - word: "ta-0187"
+      forms: { "iff": ["மூடினா", "மூடினால்"], "onlyif": ["மூடினாதான்", "மூடினால்தான்"], "ifnot": ["மூடாட்டா", "மூடாவிட்டால்"] }
+      readings: { "iff": ["mūṭiṉā", "mūṭiṉāl"], "onlyif": ["mūṭiṉātāṉ", "mūṭiṉāltāṉ"], "ifnot": ["mūṭāṭṭā", "mūṭāviṭṭāl"] }
+    - word: "ta-0188"
+      forms: { "iff": ["உட்கார்ந்தா", "உட்கார்ந்தால்"], "onlyif": ["உட்கார்ந்தாதான்", "உட்கார்ந்தால்தான்"], "ifnot": ["உட்காராட்டா", "உட்காராவிட்டால்"] }
+      readings: { "iff": ["uṭkārntā", "uṭkārntāl"], "onlyif": ["uṭkārntātāṉ", "uṭkārntāltāṉ"], "ifnot": ["uṭkārāṭṭā", "uṭkārāviṭṭāl"] }
+    - word: "ta-0189"
+      forms: { "iff": ["நின்றா", "நின்றால்"], "onlyif": ["நின்றாதான்", "நின்றால்தான்"], "ifnot": ["நிற்காட்டா", "நிற்காவிட்டால்"] }
+      readings: { "iff": ["niṉṟā", "niṉṟāl"], "onlyif": ["niṉṟātāṉ", "niṉṟāltāṉ"], "ifnot": ["niṟkāṭṭā", "niṟkāviṭṭāl"] }
+    - word: "ta-0190"
+      forms: { "iff": ["கழுவினா", "கழுவினால்"], "onlyif": ["கழுவினாதான்", "கழுவினால்தான்"], "ifnot": ["கழுவாட்டா", "கழுவாவிட்டால்"] }
+      readings: { "iff": ["kaḻuviṉā", "kaḻuviṉāl"], "onlyif": ["kaḻuviṉātāṉ", "kaḻuviṉāltāṉ"], "ifnot": ["kaḻuvāṭṭā", "kaḻuvāviṭṭāl"] }
+    - word: "ta-0191"
+      forms: { "iff": ["விளையாடினா", "விளையாடினால்"], "onlyif": ["விளையாடினாதான்", "விளையாடினால்தான்"], "ifnot": ["விளையாடாட்டா", "விளையாடாவிட்டால்"] }
+      readings: { "iff": ["viḷaiyāṭiṉā", "viḷaiyāṭiṉāl"], "onlyif": ["viḷaiyāṭiṉātāṉ", "viḷaiyāṭiṉāltāṉ"], "ifnot": ["viḷaiyāṭāṭṭā", "viḷaiyāṭāviṭṭāl"] }
+    - word: "ta-1101"
+      forms: { "iff": ["குளிச்சா", "குளித்தால்"], "onlyif": ["குளிச்சாதான்", "குளித்தால்தான்"], "ifnot": ["குளிக்காட்டா", "குளிக்காவிட்டால்"] }
+      readings: { "iff": ["kuḷiccā", "kuḷittāl"], "onlyif": ["kuḷiccātāṉ", "kuḷittāltāṉ"], "ifnot": ["kuḷikkāṭṭā", "kuḷikkāviṭṭāl"] }
+    - word: "ta-1102"
+      forms: { "iff": ["துலக்கினா", "துலக்கினால்"], "onlyif": ["துலக்கினாதான்", "துலக்கினால்தான்"], "ifnot": ["துலக்காட்டா", "துலக்காவிட்டால்"] }
+      readings: { "iff": ["tulakkiṉā", "tulakkiṉāl"], "onlyif": ["tulakkiṉātāṉ", "tulakkiṉāltāṉ"], "ifnot": ["tulakkāṭṭā", "tulakkāviṭṭāl"] }
+    - word: "ta-1103"
+      forms: { "iff": ["நடந்தா", "நடந்தால்"], "onlyif": ["நடந்தாதான்", "நடந்தால்தான்"], "ifnot": ["நடக்காட்டா", "நடக்காவிட்டால்"] }
+      readings: { "iff": ["naṭantā", "naṭantāl"], "onlyif": ["naṭantātāṉ", "naṭantāltāṉ"], "ifnot": ["naṭakkāṭṭā", "naṭakkāviṭṭāl"] }
+    - word: "ta-1104"
+      forms: { "iff": ["திரும்பினா", "திரும்பினால்"], "onlyif": ["திரும்பினாதான்", "திரும்பினால்தான்"], "ifnot": ["திரும்பாட்டா", "திரும்பாவிட்டால்"] }
+      readings: { "iff": ["tirumpiṉā", "tirumpiṉāl"], "onlyif": ["tirumpiṉātāṉ", "tirumpiṉāltāṉ"], "ifnot": ["tirumpāṭṭā", "tirumpāviṭṭāl"] }
+    - word: "ta-1107"
+      forms: { "iff": ["தொடங்கினா", "தொடங்கினால்"], "onlyif": ["தொடங்கினாதான்", "தொடங்கினால்தான்"], "ifnot": ["தொடங்காட்டா", "தொடங்காவிட்டால்"] }
+      readings: { "iff": ["toṭaṅkiṉā", "toṭaṅkiṉāl"], "onlyif": ["toṭaṅkiṉātāṉ", "toṭaṅkiṉāltāṉ"], "ifnot": ["toṭaṅkāṭṭā", "toṭaṅkāviṭṭāl"] }
+    - word: "ta-1801"
+      forms: { "iff": ["உதவினா", "உதவினால்"], "onlyif": ["உதவினாதான்", "உதவினால்தான்"], "ifnot": ["உதவாட்டா", "உதவாவிட்டால்"] }
+      readings: { "iff": ["utaviṉā", "utaviṉāl"], "onlyif": ["utaviṉātāṉ", "utaviṉāltāṉ"], "ifnot": ["utavāṭṭā", "utavāviṭṭāl"] }
+    - word: "ta-0450"
+      forms: { "iff": ["விட்டா", "விட்டால்"], "onlyif": ["விட்டாதான்", "விட்டால்தான்"], "ifnot": ["விடாட்டா", "விடாவிட்டால்"] }
+      readings: { "iff": ["viṭṭā", "viṭṭāl"], "onlyif": ["viṭṭātāṉ", "viṭṭāltāṉ"], "ifnot": ["viṭāṭṭā", "viṭāviṭṭāl"] }
+    - word: "ta-0451"
+      forms: { "iff": ["கொண்டா", "கொண்டால்"], "onlyif": ["கொண்டாதான்", "கொண்டால்தான்"], "ifnot": ["கொள்ளாட்டா", "கொள்ளாவிட்டால்"] }
+      readings: { "iff": ["koṇṭā", "koṇṭāl"], "onlyif": ["koṇṭātāṉ", "koṇṭāltāṉ"], "ifnot": ["koḷḷāṭṭā", "koḷḷāviṭṭāl"] }
+    - word: "ta-0452"
+      forms: { "iff": ["போட்டா", "போட்டால்"], "onlyif": ["போட்டாதான்", "போட்டால்தான்"], "ifnot": ["போடாட்டா", "போடாவிட்டால்"] }
+      readings: { "iff": ["pōṭṭā", "pōṭṭāl"], "onlyif": ["pōṭṭātāṉ", "pōṭṭāltāṉ"], "ifnot": ["pōṭāṭṭā", "pōṭāviṭṭāl"] }
+    - word: "ta-0453"
+      forms: { "iff": ["தந்தா", "தந்தால்"], "onlyif": ["தந்தாதான்", "தந்தால்தான்"], "ifnot": ["தராட்டா", "தராவிட்டால்"] }
+      readings: { "iff": ["tantā", "tantāl"], "onlyif": ["tantātāṉ", "tantāltāṉ"], "ifnot": ["tarāṭṭā", "tarāviṭṭāl"] }
+    - word: "ta-0454"
+      forms: { "iff": ["நிறுத்தினா", "நிறுத்தினால்"], "onlyif": ["நிறுத்தினாதான்", "நிறுத்தினால்தான்"], "ifnot": ["நிறுத்தாட்டா", "நிறுத்தாவிட்டால்"] }
+      readings: { "iff": ["niṟuttiṉā", "niṟuttiṉāl"], "onlyif": ["niṟuttiṉātāṉ", "niṟuttiṉāltāṉ"], "ifnot": ["niṟuttāṭṭā", "niṟuttāviṭṭāl"] }
+    - word: "ta-0455"
+      forms: { "iff": ["தள்ளினா", "தள்ளினால்"], "onlyif": ["தள்ளினாதான்", "தள்ளினால்தான்"], "ifnot": ["தள்ளாட்டா", "தள்ளாவிட்டால்"] }
+      readings: { "iff": ["taḷḷiṉā", "taḷḷiṉāl"], "onlyif": ["taḷḷiṉātāṉ", "taḷḷiṉāltāṉ"], "ifnot": ["taḷḷāṭṭā", "taḷḷāviṭṭāl"] }
+    - word: "ta-0456"
+      forms: { "iff": ["பிடிச்சா", "பிடித்தால்"], "onlyif": ["பிடிச்சாதான்", "பிடித்தால்தான்"], "ifnot": ["பிடிக்காட்டா", "பிடிக்காவிட்டால்"] }
+      readings: { "iff": ["piṭiccā", "piṭittāl"], "onlyif": ["piṭiccātāṉ", "piṭittāltāṉ"], "ifnot": ["piṭikkāṭṭā", "piṭikkāviṭṭāl"] }
+    - word: "ta-0457"
+      forms: { "iff": ["வீசினா", "வீசினால்"], "onlyif": ["வீசினாதான்", "வீசினால்தான்"], "ifnot": ["வீசாட்டா", "வீசாவிட்டால்"] }
+      readings: { "iff": ["vīciṉā", "vīciṉāl"], "onlyif": ["vīciṉātāṉ", "vīciṉāltāṉ"], "ifnot": ["vīcāṭṭā", "vīcāviṭṭāl"] }
+    - word: "ta-0458"
+      forms: { "iff": ["தூக்கினா", "தூக்கினால்"], "onlyif": ["தூக்கினாதான்", "தூக்கினால்தான்"], "ifnot": ["தூக்காட்டா", "தூக்காவிட்டால்"] }
+      readings: { "iff": ["tūkkiṉā", "tūkkiṉāl"], "onlyif": ["tūkkiṉātāṉ", "tūkkiṉāltāṉ"], "ifnot": ["tūkkāṭṭā", "tūkkāviṭṭāl"] }
+    - word: "ta-0460"
+      forms: { "iff": ["பண்ணினா", "பண்ணினால்"], "onlyif": ["பண்ணினாதான்", "பண்ணினால்தான்"], "ifnot": ["பண்ணாட்டா", "பண்ணாவிட்டால்"] }
+      readings: { "iff": ["paṇṇiṉā", "paṇṇiṉāl"], "onlyif": ["paṇṇiṉātāṉ", "paṇṇiṉāltāṉ"], "ifnot": ["paṇṇāṭṭā", "paṇṇāviṭṭāl"] }
+    - word: "ta-0461"
+      forms: { "iff": ["ஆனா", "ஆனால்"], "onlyif": ["ஆனாதான்", "ஆனால்தான்"], "ifnot": ["ஆகாட்டா", "ஆகாவிட்டால்"] }
+      readings: { "iff": ["āṉā", "āṉāl"], "onlyif": ["āṉātāṉ", "āṉāltāṉ"], "ifnot": ["ākāṭṭā", "ākāviṭṭāl"] }
+    - word: "ta-0462"
+      forms: { "iff": ["பட்டா", "பட்டால்"], "onlyif": ["பட்டாதான்", "பட்டால்தான்"], "ifnot": ["படாட்டா", "படாவிட்டால்"] }
+      readings: { "iff": ["paṭṭā", "paṭṭāl"], "onlyif": ["paṭṭātāṉ", "paṭṭāltāṉ"], "ifnot": ["paṭāṭṭā", "paṭāviṭṭāl"] }
+    - word: "ta-0470"
+      forms: { "iff": ["சென்றா", "சென்றால்"], "onlyif": ["சென்றாதான்", "சென்றால்தான்"], "ifnot": ["செல்லாட்டா", "செல்லாவிட்டால்"] }
+      readings: { "iff": ["ceṉṟā", "ceṉṟāl"], "onlyif": ["ceṉṟātāṉ", "ceṉṟāltāṉ"], "ifnot": ["cellāṭṭā", "cellāviṭṭāl"] }
+    - word: "ta-0471"
+      forms: { "iff": ["உண்டா", "உண்டால்"], "onlyif": ["உண்டாதான்", "உண்டால்தான்"], "ifnot": ["உண்ணாட்டா", "உண்ணாவிட்டால்"] }
+      readings: { "iff": ["uṇṭā", "uṇṭāl"], "onlyif": ["uṇṭātāṉ", "uṇṭāltāṉ"], "ifnot": ["uṇṇāṭṭā", "uṇṇāviṭṭāl"] }
+    - word: "ta-0472"
+      forms: { "iff": ["அருந்தினா", "அருந்தினால்"], "onlyif": ["அருந்தினாதான்", "அருந்தினால்தான்"], "ifnot": ["அருந்தாட்டா", "அருந்தாவிட்டால்"] }
+      readings: { "iff": ["aruntiṉā", "aruntiṉāl"], "onlyif": ["aruntiṉātāṉ", "aruntiṉāltāṉ"], "ifnot": ["aruntāṭṭā", "aruntāviṭṭāl"] }
+    - word: "ta-0473"
+      forms: { "iff": ["கூறினா", "கூறினால்"], "onlyif": ["கூறினாதான்", "கூறினால்தான்"], "ifnot": ["கூறாட்டா", "கூறாவிட்டால்"] }
+      readings: { "iff": ["kūṟiṉā", "kūṟiṉāl"], "onlyif": ["kūṟiṉātāṉ", "kūṟiṉāltāṉ"], "ifnot": ["kūṟāṭṭā", "kūṟāviṭṭāl"] }
+    - word: "ta-0474"
+      forms: { "iff": ["தெரிவித்தா", "தெரிவித்தால்"], "onlyif": ["தெரிவித்தாதான்", "தெரிவித்தால்தான்"], "ifnot": ["தெரிவிக்காட்டா", "தெரிவிக்காவிட்டால்"] }
+      readings: { "iff": ["terivittā", "terivittāl"], "onlyif": ["terivittātāṉ", "terivittāltāṉ"], "ifnot": ["terivikkāṭṭā", "terivikkāviṭṭāl"] }
+    - word: "ta-2003"
+      forms: { "iff": ["உடுத்தினா", "உடுத்தினால்"], "onlyif": ["உடுத்தினாதான்", "உடுத்தினால்தான்"], "ifnot": ["உடுத்தாட்டா", "உடுத்தாவிட்டால்"] }
+      readings: { "iff": ["uṭuttiṉā", "uṭuttiṉāl"], "onlyif": ["uṭuttiṉātāṉ", "uṭuttiṉāltāṉ"], "ifnot": ["uṭuttāṭṭā", "uṭuttāviṭṭāl"] }
+    - word: "ta-2004"
+      forms: { "iff": ["கழற்றினா", "கழற்றினால்"], "onlyif": ["கழற்றினாதான்", "கழற்றினால்தான்"], "ifnot": ["கழற்றாட்டா", "கழற்றாவிட்டால்"] }
+      readings: { "iff": ["kaḻaṟṟiṉā", "kaḻaṟṟiṉāl"], "onlyif": ["kaḻaṟṟiṉātāṉ", "kaḻaṟṟiṉāltāṉ"], "ifnot": ["kaḻaṟṟāṭṭā", "kaḻaṟṟāviṭṭāl"] }
+    - word: "ta-2005"
+      forms: { "iff": ["கட்டினா", "கட்டினால்"], "onlyif": ["கட்டினாதான்", "கட்டினால்தான்"], "ifnot": ["கட்டாட்டா", "கட்டாவிட்டால்"] }
+      readings: { "iff": ["kaṭṭiṉā", "kaṭṭiṉāl"], "onlyif": ["kaṭṭiṉātāṉ", "kaṭṭiṉāltāṉ"], "ifnot": ["kaṭṭāṭṭā", "kaṭṭāviṭṭāl"] }
+    - word: "ta-2006"
+      forms: { "iff": ["சீவினா", "சீவினால்"], "onlyif": ["சீவினாதான்", "சீவினால்தான்"], "ifnot": ["சீவாட்டா", "சீவாவிட்டால்"] }
+      readings: { "iff": ["cīviṉā", "cīviṉāl"], "onlyif": ["cīviṉātāṉ", "cīviṉāltāṉ"], "ifnot": ["cīvāṭṭā", "cīvāviṭṭāl"] }
+    - word: "ta-2007"
+      forms: { "iff": ["அலங்கரித்தா", "அலங்கரித்தால்"], "onlyif": ["அலங்கரித்தாதான்", "அலங்கரித்தால்தான்"], "ifnot": ["அலங்கரிக்காட்டா", "அலங்கரிக்காவிட்டால்"] }
+      readings: { "iff": ["alaṅkarittā", "alaṅkarittāl"], "onlyif": ["alaṅkarittātāṉ", "alaṅkarittāltāṉ"], "ifnot": ["alaṅkarikkāṭṭā", "alaṅkarikkāviṭṭāl"] }
+    - word: "ta-2008"
+      forms: { "iff": ["வளர்ந்தா", "வளர்ந்தால்"], "onlyif": ["வளர்ந்தாதான்", "வளர்ந்தால்தான்"], "ifnot": ["வளராட்டா", "வளராவிட்டால்"] }
+      readings: { "iff": ["vaḷarntā", "vaḷarntāl"], "onlyif": ["vaḷarntātāṉ", "vaḷarntāltāṉ"], "ifnot": ["vaḷarāṭṭā", "vaḷarāviṭṭāl"] }
+    - word: "ta-2009"
+      forms: { "iff": ["பூசினா", "பூசினால்"], "onlyif": ["பூசினாதான்", "பூசினால்தான்"], "ifnot": ["பூசாட்டா", "பூசாவிட்டால்"] }
+      readings: { "iff": ["pūciṉā", "pūciṉāl"], "onlyif": ["pūciṉātāṉ", "pūciṉāltāṉ"], "ifnot": ["pūcāṭṭā", "pūcāviṭṭāl"] }
+    - word: "ta-1945"
+      forms: { "iff": ["பெருக்கினா", "பெருக்கினால்"], "onlyif": ["பெருக்கினாதான்", "பெருக்கினால்தான்"], "ifnot": ["பெருக்காட்டா", "பெருக்காவிட்டால்"] }
+      readings: { "iff": ["perukkiṉā", "perukkiṉāl"], "onlyif": ["perukkiṉātāṉ", "perukkiṉāltāṉ"], "ifnot": ["perukkāṭṭā", "perukkāviṭṭāl"] }
+    - word: "ta-1946"
+      forms: { "iff": ["துடைத்தா", "துடைத்தால்"], "onlyif": ["துடைத்தாதான்", "துடைத்தால்தான்"], "ifnot": ["துடைக்காட்டா", "துடைக்காவிட்டால்"] }
+      readings: { "iff": ["tuṭaittā", "tuṭaittāl"], "onlyif": ["tuṭaittātāṉ", "tuṭaittāltāṉ"], "ifnot": ["tuṭaikkāṭṭā", "tuṭaikkāviṭṭāl"] }
+    - word: "ta-1947"
+      forms: { "iff": ["துவைத்தா", "துவைத்தால்"], "onlyif": ["துவைத்தாதான்", "துவைத்தால்தான்"], "ifnot": ["துவைக்காட்டா", "துவைக்காவிட்டால்"] }
+      readings: { "iff": ["tuvaittā", "tuvaittāl"], "onlyif": ["tuvaittātāṉ", "tuvaittāltāṉ"], "ifnot": ["tuvaikkāṭṭā", "tuvaikkāviṭṭāl"] }
+    - word: "ta-1948"
+      forms: { "iff": ["மடித்தா", "மடித்தால்"], "onlyif": ["மடித்தாதான்", "மடித்தால்தான்"], "ifnot": ["மடிக்காட்டா", "மடிக்காவிட்டால்"] }
+      readings: { "iff": ["maṭittā", "maṭittāl"], "onlyif": ["maṭittātāṉ", "maṭittāltāṉ"], "ifnot": ["maṭikkāṭṭā", "maṭikkāviṭṭāl"] }
+    - word: "ta-1949"
+      forms: { "iff": ["இழுத்தா", "இழுத்தால்"], "onlyif": ["இழுத்தாதான்", "இழுத்தால்தான்"], "ifnot": ["இழுக்காட்டா", "இழுக்காவிட்டால்"] }
+      readings: { "iff": ["iḻuttā", "iḻuttāl"], "onlyif": ["iḻuttātāṉ", "iḻuttāltāṉ"], "ifnot": ["iḻukkāṭṭā", "iḻukkāviṭṭāl"] }
+    - word: "ta-1951"
+      forms: { "iff": ["நிரப்பினா", "நிரப்பினால்"], "onlyif": ["நிரப்பினாதான்", "நிரப்பினால்தான்"], "ifnot": ["நிரப்பாட்டா", "நிரப்பாவிட்டால்"] }
+      readings: { "iff": ["nirappiṉā", "nirappiṉāl"], "onlyif": ["nirappiṉātāṉ", "nirappiṉāltāṉ"], "ifnot": ["nirappāṭṭā", "nirappāviṭṭāl"] }
+    - word: "ta-1952"
+      forms: { "iff": ["ஊற்றினா", "ஊற்றினால்"], "onlyif": ["ஊற்றினாதான்", "ஊற்றினால்தான்"], "ifnot": ["ஊற்றாட்டா", "ஊற்றாவிட்டால்"] }
+      readings: { "iff": ["ūṟṟiṉā", "ūṟṟiṉāl"], "onlyif": ["ūṟṟiṉātāṉ", "ūṟṟiṉāltāṉ"], "ifnot": ["ūṟṟāṭṭā", "ūṟṟāviṭṭāl"] }
+    - word: "ta-1953"
+      forms: { "iff": ["அணைத்தா", "அணைத்தால்"], "onlyif": ["அணைத்தாதான்", "அணைத்தால்தான்"], "ifnot": ["அணைக்காட்டா", "அணைக்காவிட்டால்"] }
+      readings: { "iff": ["aṇaittā", "aṇaittāl"], "onlyif": ["aṇaittātāṉ", "aṇaittāltāṉ"], "ifnot": ["aṇaikkāṭṭā", "aṇaikkāviṭṭāl"] }
+    - word: "ta-1954"
+      forms: { "iff": ["ஏற்றினா", "ஏற்றினால்"], "onlyif": ["ஏற்றினாதான்", "ஏற்றினால்தான்"], "ifnot": ["ஏற்றாட்டா", "ஏற்றாவிட்டால்"] }
+      readings: { "iff": ["ēṟṟiṉā", "ēṟṟiṉāl"], "onlyif": ["ēṟṟiṉātāṉ", "ēṟṟiṉāltāṉ"], "ifnot": ["ēṟṟāṭṭā", "ēṟṟāviṭṭāl"] }
+    - word: "ta-1955"
+      forms: { "iff": ["உலர்த்தினா", "உலர்த்தினால்"], "onlyif": ["உலர்த்தினாதான்", "உலர்த்தினால்தான்"], "ifnot": ["உலர்த்தாட்டா", "உலர்த்தாவிட்டால்"] }
+      readings: { "iff": ["ularttiṉā", "ularttiṉāl"], "onlyif": ["ularttiṉātāṉ", "ularttiṉāltāṉ"], "ifnot": ["ularttāṭṭā", "ularttāviṭṭāl"] }
+    - word: "ta-1956"
+      forms: { "iff": ["வெட்டினா", "வெட்டினால்"], "onlyif": ["வெட்டினாதான்", "வெட்டினால்தான்"], "ifnot": ["வெட்டாட்டா", "வெட்டாவிட்டால்"] }
+      readings: { "iff": ["veṭṭiṉā", "veṭṭiṉāl"], "onlyif": ["veṭṭiṉātāṉ", "veṭṭiṉāltāṉ"], "ifnot": ["veṭṭāṭṭā", "veṭṭāviṭṭāl"] }
+    - word: "ta-1957"
+      forms: { "iff": ["கலக்கினா", "கலக்கினால்"], "onlyif": ["கலக்கினாதான்", "கலக்கினால்தான்"], "ifnot": ["கலக்காட்டா", "கலக்காவிட்டால்"] }
+      readings: { "iff": ["kalakkiṉā", "kalakkiṉāl"], "onlyif": ["kalakkiṉātāṉ", "kalakkiṉāltāṉ"], "ifnot": ["kalakkāṭṭā", "kalakkāviṭṭāl"] }
+    - word: "ta-1958"
+      forms: { "iff": ["தேடினா", "தேடினால்"], "onlyif": ["தேடினாதான்", "தேடினால்தான்"], "ifnot": ["தேடாட்டா", "தேடாவிட்டால்"] }
+      readings: { "iff": ["tēṭiṉā", "tēṭiṉāl"], "onlyif": ["tēṭiṉātāṉ", "tēṭiṉāltāṉ"], "ifnot": ["tēṭāṭṭā", "tēṭāviṭṭāl"] }
+    - word: "ta-1959"
+      forms: { "iff": ["அடுக்கினா", "அடுக்கினால்"], "onlyif": ["அடுக்கினாதான்", "அடுக்கினால்தான்"], "ifnot": ["அடுக்காட்டா", "அடுக்காவிட்டால்"] }
+      readings: { "iff": ["aṭukkiṉā", "aṭukkiṉāl"], "onlyif": ["aṭukkiṉātāṉ", "aṭukkiṉāltāṉ"], "ifnot": ["aṭukkāṭṭā", "aṭukkāviṭṭāl"] }
+    - word: "ta-1961"
+      forms: { "iff": ["மாற்றினா", "மாற்றினால்"], "onlyif": ["மாற்றினாதான்", "மாற்றினால்தான்"], "ifnot": ["மாற்றாட்டா", "மாற்றாவிட்டால்"] }
+      readings: { "iff": ["māṟṟiṉā", "māṟṟiṉāl"], "onlyif": ["māṟṟiṉātāṉ", "māṟṟiṉāltāṉ"], "ifnot": ["māṟṟāṭṭā", "māṟṟāviṭṭāl"] }
+    - word: "ta-1183"
+      forms: { "iff": ["பொங்கினா", "பொங்கினால்"], "onlyif": ["பொங்கினாதான்", "பொங்கினால்தான்"], "ifnot": ["பொங்காட்டா", "பொங்காவிட்டால்"] }
+      readings: { "iff": ["poṅkiṉā", "poṅkiṉāl"], "onlyif": ["poṅkiṉātāṉ", "poṅkiṉāltāṉ"], "ifnot": ["poṅkāṭṭā", "poṅkāviṭṭāl"] }
+    - word: "ta-1192"
+      forms: { "iff": ["கொண்டாடினா", "கொண்டாடினால்"], "onlyif": ["கொண்டாடினாதான்", "கொண்டாடினால்தான்"], "ifnot": ["கொண்டாடாட்டா", "கொண்டாடாவிட்டால்"] }
+      readings: { "iff": ["koṇṭāṭiṉā", "koṇṭāṭiṉāl"], "onlyif": ["koṇṭāṭiṉātāṉ", "koṇṭāṭiṉāltāṉ"], "ifnot": ["koṇṭāṭāṭṭā", "koṇṭāṭāviṭṭāl"] }
+    - word: "ta-1202"
+      forms: { "iff": ["வணங்கினா", "வணங்கினால்"], "onlyif": ["வணங்கினாதான்", "வணங்கினால்தான்"], "ifnot": ["வணங்காட்டா", "வணங்காவிட்டால்"] }
+      readings: { "iff": ["vaṇaṅkiṉā", "vaṇaṅkiṉāl"], "onlyif": ["vaṇaṅkiṉātāṉ", "vaṇaṅkiṉāltāṉ"], "ifnot": ["vaṇaṅkāṭṭā", "vaṇaṅkāviṭṭāl"] }
+    - word: "ta-1905"
+      forms: { "iff": ["பாடினா", "பாடினால்"], "onlyif": ["பாடினாதான்", "பாடினால்தான்"], "ifnot": ["பாடாட்டா", "பாடாவிட்டால்"] }
+      readings: { "iff": ["pāṭiṉā", "pāṭiṉāl"], "onlyif": ["pāṭiṉātāṉ", "pāṭiṉāltāṉ"], "ifnot": ["pāṭāṭṭā", "pāṭāviṭṭāl"] }
+    - word: "ta-1907"
+      forms: { "iff": ["தீட்டினா", "தீட்டினால்"], "onlyif": ["தீட்டினாதான்", "தீட்டினால்தான்"], "ifnot": ["தீட்டாட்டா", "தீட்டாவிட்டால்"] }
+      readings: { "iff": ["tīṭṭiṉā", "tīṭṭiṉāl"], "onlyif": ["tīṭṭiṉātāṉ", "tīṭṭiṉāltāṉ"], "ifnot": ["tīṭṭāṭṭā", "tīṭṭāviṭṭāl"] }
+    - word: "ta-1908"
+      forms: { "iff": ["ஓடினா", "ஓடினால்"], "onlyif": ["ஓடினாதான்", "ஓடினால்தான்"], "ifnot": ["ஓடாட்டா", "ஓடாவிட்டால்"] }
+      readings: { "iff": ["ōṭiṉā", "ōṭiṉāl"], "onlyif": ["ōṭiṉātāṉ", "ōṭiṉāltāṉ"], "ifnot": ["ōṭāṭṭā", "ōṭāviṭṭāl"] }
+    - word: "ta-1909"
+      forms: { "iff": ["பறந்தா", "பறந்தால்"], "onlyif": ["பறந்தாதான்", "பறந்தால்தான்"], "ifnot": ["பறக்காட்டா", "பறக்காவிட்டால்"] }
+      readings: { "iff": ["paṟantā", "paṟantāl"], "onlyif": ["paṟantātāṉ", "paṟantāltāṉ"], "ifnot": ["paṟakkāṭṭā", "paṟakkāviṭṭāl"] }
+    - word: "ta-1910"
+      forms: { "iff": ["நீந்தினா", "நீந்தினால்"], "onlyif": ["நீந்தினாதான்", "நீந்தினால்தான்"], "ifnot": ["நீந்தாட்டா", "நீந்தாவிட்டால்"] }
+      readings: { "iff": ["nīntiṉā", "nīntiṉāl"], "onlyif": ["nīntiṉātāṉ", "nīntiṉāltāṉ"], "ifnot": ["nīntāṭṭā", "nīntāviṭṭāl"] }
+    - word: "ta-1911"
+      forms: { "iff": ["குதித்தா", "குதித்தால்"], "onlyif": ["குதித்தாதான்", "குதித்தால்தான்"], "ifnot": ["குதிக்காட்டா", "குதிக்காவிட்டால்"] }
+      readings: { "iff": ["kutittā", "kutittāl"], "onlyif": ["kutittātāṉ", "kutittāltāṉ"], "ifnot": ["kutikkāṭṭā", "kutikkāviṭṭāl"] }
+    - word: "ta-1912"
+      forms: { "iff": ["ஏறினா", "ஏறினால்"], "onlyif": ["ஏறினாதான்", "ஏறினால்தான்"], "ifnot": ["ஏறாட்டா", "ஏறாவிட்டால்"] }
+      readings: { "iff": ["ēṟiṉā", "ēṟiṉāl"], "onlyif": ["ēṟiṉātāṉ", "ēṟiṉāltāṉ"], "ifnot": ["ēṟāṭṭā", "ēṟāviṭṭāl"] }
+    - word: "ta-1913"
+      forms: { "iff": ["சேகரித்தா", "சேகரித்தால்"], "onlyif": ["சேகரித்தாதான்", "சேகரித்தால்தான்"], "ifnot": ["சேகரிக்காட்டா", "சேகரிக்காவிட்டால்"] }
+      readings: { "iff": ["cēkarittā", "cēkarittāl"], "onlyif": ["cēkarittātāṉ", "cēkarittāltāṉ"], "ifnot": ["cēkarikkāṭṭā", "cēkarikkāviṭṭāl"] }
+    - word: "ta-1914"
+      forms: { "iff": ["சிரித்தா", "சிரித்தால்"], "onlyif": ["சிரித்தாதான்", "சிரித்தால்தான்"], "ifnot": ["சிரிக்காட்டா", "சிரிக்காவிட்டால்"] }
+      readings: { "iff": ["cirittā", "cirittāl"], "onlyif": ["cirittātāṉ", "cirittāltāṉ"], "ifnot": ["cirikkāṭṭā", "cirikkāviṭṭāl"] }
+    - word: "ta-1915"
+      forms: { "iff": ["ரசித்தா", "ரசித்தால்"], "onlyif": ["ரசித்தாதான்", "ரசித்தால்தான்"], "ifnot": ["ரசிக்காட்டா", "ரசிக்காவிட்டால்"] }
+      readings: { "iff": ["racittā", "racittāl"], "onlyif": ["racittātāṉ", "racittāltāṉ"], "ifnot": ["racikkāṭṭā", "racikkāviṭṭāl"] }
+    - word: "ta-1916"
+      forms: { "iff": ["வென்றா", "வென்றால்"], "onlyif": ["வென்றாதான்", "வென்றால்தான்"], "ifnot": ["வெல்லாட்டா", "வெல்லாவிட்டால்"] }
+      readings: { "iff": ["veṉṟā", "veṉṟāl"], "onlyif": ["veṉṟātāṉ", "veṉṟāltāṉ"], "ifnot": ["vellāṭṭā", "vellāviṭṭāl"] }
+    - word: "ta-2180"
+      forms: { "iff": ["ஓட்டினா", "ஓட்டினால்"], "onlyif": ["ஓட்டினாதான்", "ஓட்டினால்தான்"], "ifnot": ["ஓட்டாட்டா", "ஓட்டாவிட்டால்"] }
+      readings: { "iff": ["ōṭṭiṉā", "ōṭṭiṉāl"], "onlyif": ["ōṭṭiṉātāṉ", "ōṭṭiṉāltāṉ"], "ifnot": ["ōṭṭāṭṭā", "ōṭṭāviṭṭāl"] }
+    - word: "ta-2182"
+      forms: { "iff": ["அடைந்தா", "அடைந்தால்"], "onlyif": ["அடைந்தாதான்", "அடைந்தால்தான்"], "ifnot": ["அடையாட்டா", "அடையாவிட்டால்"] }
+      readings: { "iff": ["aṭaintā", "aṭaintāl"], "onlyif": ["aṭaintātāṉ", "aṭaintāltāṉ"], "ifnot": ["aṭaiyāṭṭā", "aṭaiyāviṭṭāl"] }
+    - word: "ta-2183"
+      forms: { "iff": ["இறக்கினா", "இறக்கினால்"], "onlyif": ["இறக்கினாதான்", "இறக்கினால்தான்"], "ifnot": ["இறக்காட்டா", "இறக்காவிட்டால்"] }
+      readings: { "iff": ["iṟakkiṉā", "iṟakkiṉāl"], "onlyif": ["iṟakkiṉātāṉ", "iṟakkiṉāltāṉ"], "ifnot": ["iṟakkāṭṭā", "iṟakkāviṭṭāl"] }
+    - word: "ta-2186"
+      forms: { "iff": ["இயங்கினா", "இயங்கினால்"], "onlyif": ["இயங்கினாதான்", "இயங்கினால்தான்"], "ifnot": ["இயங்காட்டா", "இயங்காவிட்டால்"] }
+      readings: { "iff": ["iyaṅkiṉā", "iyaṅkiṉāl"], "onlyif": ["iyaṅkiṉātāṉ", "iyaṅkiṉāltāṉ"], "ifnot": ["iyaṅkāṭṭā", "iyaṅkāviṭṭāl"] }
+    - word: "ta-2191"
+      forms: { "iff": ["பரிசோதித்தா", "பரிசோதித்தால்"], "onlyif": ["பரிசோதித்தாதான்", "பரிசோதித்தால்தான்"], "ifnot": ["பரிசோதிக்காட்டா", "பரிசோதிக்காவிட்டால்"] }
+      readings: { "iff": ["paricōtittā", "paricōtittāl"], "onlyif": ["paricōtittātāṉ", "paricōtittāltāṉ"], "ifnot": ["paricōtikkāṭṭā", "paricōtikkāviṭṭāl"] }
+    - word: "ta-2241"
+      forms: { "iff": ["மலர்ந்தா", "மலர்ந்தால்"], "onlyif": ["மலர்ந்தாதான்", "மலர்ந்தால்தான்"], "ifnot": ["மலராட்டா", "மலராவிட்டால்"] }
+      readings: { "iff": ["malarntā", "malarntāl"], "onlyif": ["malarntātāṉ", "malarntāltāṉ"], "ifnot": ["malarāṭṭā", "malarāviṭṭāl"] }
+    - word: "ta-2242"
+      forms: { "iff": ["உதிர்ந்தா", "உதிர்ந்தால்"], "onlyif": ["உதிர்ந்தாதான்", "உதிர்ந்தால்தான்"], "ifnot": ["உதிராட்டா", "உதிராவிட்டால்"] }
+      readings: { "iff": ["utirntā", "utirntāl"], "onlyif": ["utirntātāṉ", "utirntāltāṉ"], "ifnot": ["utirāṭṭā", "utirāviṭṭāl"] }
+    - word: "ta-2243"
+      forms: { "iff": ["முளைத்தா", "முளைத்தால்"], "onlyif": ["முளைத்தாதான்", "முளைத்தால்தான்"], "ifnot": ["முளைக்காட்டா", "முளைக்காவிட்டால்"] }
+      readings: { "iff": ["muḷaittā", "muḷaittāl"], "onlyif": ["muḷaittātāṉ", "muḷaittāltāṉ"], "ifnot": ["muḷaikkāṭṭā", "muḷaikkāviṭṭāl"] }
+    - word: "ta-2244"
+      forms: { "iff": ["உருகினா", "உருகினால்"], "onlyif": ["உருகினாதான்", "உருகினால்தான்"], "ifnot": ["உருகாட்டா", "உருகாவிட்டால்"] }
+      readings: { "iff": ["urukiṉā", "urukiṉāl"], "onlyif": ["urukiṉātāṉ", "urukiṉāltāṉ"], "ifnot": ["urukāṭṭā", "urukāviṭṭāl"] }
+    - word: "ta-2245"
+      forms: { "iff": ["உறைந்தா", "உறைந்தால்"], "onlyif": ["உறைந்தாதான்", "உறைந்தால்தான்"], "ifnot": ["உறையாட்டா", "உறையாவிட்டால்"] }
+      readings: { "iff": ["uṟaintā", "uṟaintāl"], "onlyif": ["uṟaintātāṉ", "uṟaintāltāṉ"], "ifnot": ["uṟaiyāṭṭā", "uṟaiyāviṭṭāl"] }
+    - word: "ta-2246"
+      forms: { "iff": ["ஒழுகினா", "ஒழுகினால்"], "onlyif": ["ஒழுகினாதான்", "ஒழுகினால்தான்"], "ifnot": ["ஒழுகாட்டா", "ஒழுகாவிட்டால்"] }
+      readings: { "iff": ["oḻukiṉā", "oḻukiṉāl"], "onlyif": ["oḻukiṉātāṉ", "oḻukiṉāltāṉ"], "ifnot": ["oḻukāṭṭā", "oḻukāviṭṭāl"] }
+    - word: "ta-2122"
+      forms: { "iff": ["இணைத்தா", "இணைத்தால்"], "onlyif": ["இணைத்தாதான்", "இணைத்தால்தான்"], "ifnot": ["இணைக்காட்டா", "இணைக்காவிட்டால்"] }
+      readings: { "iff": ["iṇaittā", "iṇaittāl"], "onlyif": ["iṇaittātāṉ", "iṇaittāltāṉ"], "ifnot": ["iṇaikkāṭṭā", "iṇaikkāviṭṭāl"] }
+    - word: "ta-2123"
+      forms: { "iff": ["துண்டித்தா", "துண்டித்தால்"], "onlyif": ["துண்டித்தாதான்", "துண்டித்தால்தான்"], "ifnot": ["துண்டிக்காட்டா", "துண்டிக்காவிட்டால்"] }
+      readings: { "iff": ["tuṇṭittā", "tuṇṭittāl"], "onlyif": ["tuṇṭittātāṉ", "tuṇṭittāltāṉ"], "ifnot": ["tuṇṭikkāṭṭā", "tuṇṭikkāviṭṭāl"] }
+    - word: "ta-2124"
+      forms: { "iff": ["நீக்கினா", "நீக்கினால்"], "onlyif": ["நீக்கினாதான்", "நீக்கினால்தான்"], "ifnot": ["நீக்காட்டா", "நீக்காவிட்டால்"] }
+      readings: { "iff": ["nīkkiṉā", "nīkkiṉāl"], "onlyif": ["nīkkiṉātāṉ", "nīkkiṉāltāṉ"], "ifnot": ["nīkkāṭṭā", "nīkkāviṭṭāl"] }
+    - word: "ta-2125"
+      forms: { "iff": ["புதுப்பித்தா", "புதுப்பித்தால்"], "onlyif": ["புதுப்பித்தாதான்", "புதுப்பித்தால்தான்"], "ifnot": ["புதுப்பிக்காட்டா", "புதுப்பிக்காவிட்டால்"] }
+      readings: { "iff": ["putuppittā", "putuppittāl"], "onlyif": ["putuppittātāṉ", "putuppittāltāṉ"], "ifnot": ["putuppikkāṭṭā", "putuppikkāviṭṭāl"] }
+    - word: "ta-2126"
+      forms: { "iff": ["நிறுவினா", "நிறுவினால்"], "onlyif": ["நிறுவினாதான்", "நிறுவினால்தான்"], "ifnot": ["நிறுவாட்டா", "நிறுவாவிட்டால்"] }
+      readings: { "iff": ["niṟuviṉā", "niṟuviṉāl"], "onlyif": ["niṟuviṉātāṉ", "niṟuviṉāltāṉ"], "ifnot": ["niṟuvāṭṭā", "niṟuvāviṭṭāl"] }
+    - word: "ta-2128"
+      forms: { "iff": ["அழுத்தினா", "அழுத்தினால்"], "onlyif": ["அழுத்தினாதான்", "அழுத்தினால்தான்"], "ifnot": ["அழுத்தாட்டா", "அழுத்தாவிட்டால்"] }
+      readings: { "iff": ["aḻuttiṉā", "aḻuttiṉāl"], "onlyif": ["aḻuttiṉātāṉ", "aḻuttiṉāltāṉ"], "ifnot": ["aḻuttāṭṭā", "aḻuttāviṭṭāl"] }
+    - word: "ta-1857"
+      forms: { "iff": ["புரிந்தா", "புரிந்தால்"], "onlyif": ["புரிந்தாதான்", "புரிந்தால்தான்"], "ifnot": ["புரியாட்டா", "புரியாவிட்டால்"] }
+      readings: { "iff": ["purintā", "purintāl"], "onlyif": ["purintātāṉ", "purintāltāṉ"], "ifnot": ["puriyāṭṭā", "puriyāviṭṭāl"] }
+    - word: "ta-1858"
+      forms: { "iff": ["மறந்தா", "மறந்தால்"], "onlyif": ["மறந்தாதான்", "மறந்தால்தான்"], "ifnot": ["மறக்காட்டா", "மறக்காவிட்டால்"] }
+      readings: { "iff": ["maṟantā", "maṟantāl"], "onlyif": ["maṟantātāṉ", "maṟantāltāṉ"], "ifnot": ["maṟakkāṭṭā", "maṟakkāviṭṭāl"] }
+    - word: "ta-1859"
+      forms: { "iff": ["நினைத்தா", "நினைத்தால்"], "onlyif": ["நினைத்தாதான்", "நினைத்தால்தான்"], "ifnot": ["நினைக்காட்டா", "நினைக்காவிட்டால்"] }
+      readings: { "iff": ["niṉaittā", "niṉaittāl"], "onlyif": ["niṉaittātāṉ", "niṉaittāltāṉ"], "ifnot": ["niṉaikkāṭṭā", "niṉaikkāviṭṭāl"] }
+    - word: "ta-1242"
+      forms: { "iff": ["செலுத்தினா", "செலுத்தினால்"], "onlyif": ["செலுத்தினாதான்", "செலுத்தினால்தான்"], "ifnot": ["செலுத்தாட்டா", "செலுத்தாவிட்டால்"] }
+      readings: { "iff": ["celuttiṉā", "celuttiṉāl"], "onlyif": ["celuttiṉātāṉ", "celuttiṉāltāṉ"], "ifnot": ["celuttāṭṭā", "celuttāviṭṭāl"] }
+    - word: "ta-1243"
+      forms: { "iff": ["ஒப்பிட்டா", "ஒப்பிட்டால்"], "onlyif": ["ஒப்பிட்டாதான்", "ஒப்பிட்டால்தான்"], "ifnot": ["ஒப்பிடாட்டா", "ஒப்பிடாவிட்டால்"] }
+      readings: { "iff": ["oppiṭṭā", "oppiṭṭāl"], "onlyif": ["oppiṭṭātāṉ", "oppiṭṭāltāṉ"], "ifnot": ["oppiṭāṭṭā", "oppiṭāviṭṭāl"] }
+    - word: "ta-1244"
+      forms: { "iff": ["விசாரித்தா", "விசாரித்தால்"], "onlyif": ["விசாரித்தாதான்", "விசாரித்தால்தான்"], "ifnot": ["விசாரிக்காட்டா", "விசாரிக்காவிட்டால்"] }
+      readings: { "iff": ["vicārittā", "vicārittāl"], "onlyif": ["vicārittātāṉ", "vicārittāltāṉ"], "ifnot": ["vicārikkāṭṭā", "vicārikkāviṭṭāl"] }
+    - word: "ta-1245"
+      forms: { "iff": ["கூட்டினா", "கூட்டினால்"], "onlyif": ["கூட்டினாதான்", "கூட்டினால்தான்"], "ifnot": ["கூட்டாட்டா", "கூட்டாவிட்டால்"] }
+      readings: { "iff": ["kūṭṭiṉā", "kūṭṭiṉāl"], "onlyif": ["kūṭṭiṉātāṉ", "kūṭṭiṉāltāṉ"], "ifnot": ["kūṭṭāṭṭā", "kūṭṭāviṭṭāl"] }
+    - word: "ta-1246"
+      forms: { "iff": ["வசூலித்தா", "வசூலித்தால்"], "onlyif": ["வசூலித்தாதான்", "வசூலித்தால்தான்"], "ifnot": ["வசூலிக்காட்டா", "வசூலிக்காவிட்டால்"] }
+      readings: { "iff": ["vacūlittā", "vacūlittāl"], "onlyif": ["vacūlittātāṉ", "vacūlittāltāṉ"], "ifnot": ["vacūlikkāṭṭā", "vacūlikkāviṭṭāl"] }
+    - word: "ta-2017"
+      forms: { "iff": ["சொன்னா", "சொன்னால்"], "onlyif": ["சொன்னாதான்", "சொன்னால்தான்"], "ifnot": ["சொல்லாட்டா", "சொல்லாவிட்டால்"] }
+      readings: { "iff": ["coṉṉā", "coṉṉāl"], "onlyif": ["coṉṉātāṉ", "coṉṉāltāṉ"], "ifnot": ["collāṭṭā", "collāviṭṭāl"] }
+    - word: "ta-2018"
+      forms: { "iff": ["இருந்தா", "இருந்தால்"], "onlyif": ["இருந்தாதான்", "இருந்தால்தான்"], "ifnot": ["இருக்காட்டா", "இருக்காவிட்டால்"] }
+      readings: { "iff": ["iruntā", "iruntāl"], "onlyif": ["iruntātāṉ", "iruntāltāṉ"], "ifnot": ["irukkāṭṭā", "irukkāviṭṭāl"] }
+    - word: "ta-2019"
+      forms: { "iff": ["தெரிந்தா", "தெரிந்தால்"], "onlyif": ["தெரிந்தாதான்", "தெரிந்தால்தான்"], "ifnot": ["தெரியாட்டா", "தெரியாவிட்டால்"] }
+      readings: { "iff": ["terintā", "terintāl"], "onlyif": ["terintātāṉ", "terintāltāṉ"], "ifnot": ["teriyāṭṭā", "teriyāviṭṭāl"] }
+    - word: "ta-2020"
+      forms: { "iff": ["தங்கினா", "தங்கினால்"], "onlyif": ["தங்கினாதான்", "தங்கினால்தான்"], "ifnot": ["தங்காட்டா", "தங்காவிட்டால்"] }
+      readings: { "iff": ["taṅkiṉā", "taṅkiṉāl"], "onlyif": ["taṅkiṉātāṉ", "taṅkiṉāltāṉ"], "ifnot": ["taṅkāṭṭā", "taṅkāviṭṭāl"] }
+    - word: "ta-2021"
+      forms: { "iff": ["வாழ்ந்தா", "வாழ்ந்தால்"], "onlyif": ["வாழ்ந்தாதான்", "வாழ்ந்தால்தான்"], "ifnot": ["வாழாட்டா", "வாழாவிட்டால்"] }
+      readings: { "iff": ["vāḻntā", "vāḻntāl"], "onlyif": ["vāḻntātāṉ", "vāḻntāltāṉ"], "ifnot": ["vāḻāṭṭā", "vāḻāviṭṭāl"] }
+    - word: "ta-2022"
+      forms: { "iff": ["இறங்கினா", "இறங்கினால்"], "onlyif": ["இறங்கினாதான்", "இறங்கினால்தான்"], "ifnot": ["இறங்காட்டா", "இறங்காவிட்டால்"] }
+      readings: { "iff": ["iṟaṅkiṉā", "iṟaṅkiṉāl"], "onlyif": ["iṟaṅkiṉātāṉ", "iṟaṅkiṉāltāṉ"], "ifnot": ["iṟaṅkāṭṭā", "iṟaṅkāviṭṭāl"] }
+    - word: "ta-2024"
+      forms: { "iff": ["பெற்றா", "பெற்றால்"], "onlyif": ["பெற்றாதான்", "பெற்றால்தான்"], "ifnot": ["பெறாட்டா", "பெறாவிட்டால்"] }
+      readings: { "iff": ["peṟṟā", "peṟṟāl"], "onlyif": ["peṟṟātāṉ", "peṟṟāltāṉ"], "ifnot": ["peṟāṭṭā", "peṟāviṭṭāl"] }
+    - word: "ta-2025"
+      forms: { "iff": ["கிடைத்தா", "கிடைத்தால்"], "onlyif": ["கிடைத்தாதான்", "கிடைத்தால்தான்"], "ifnot": ["கிடைக்காட்டா", "கிடைக்காவிட்டால்"] }
+      readings: { "iff": ["kiṭaittā", "kiṭaittāl"], "onlyif": ["kiṭaittātāṉ", "kiṭaittāltāṉ"], "ifnot": ["kiṭaikkāṭṭā", "kiṭaikkāviṭṭāl"] }
+    - word: "ta-2029"
+      forms: { "iff": ["அனுப்பினா", "அனுப்பினால்"], "onlyif": ["அனுப்பினாதான்", "அனுப்பினால்தான்"], "ifnot": ["அனுப்பாட்டா", "அனுப்பாவிட்டால்"] }
+      readings: { "iff": ["aṉuppiṉā", "aṉuppiṉāl"], "onlyif": ["aṉuppiṉātāṉ", "aṉuppiṉāltāṉ"], "ifnot": ["aṉuppāṭṭā", "aṉuppāviṭṭāl"] }
+    - word: "ta-2030"
+      forms: { "iff": ["கூப்பிட்டா", "கூப்பிட்டால்"], "onlyif": ["கூப்பிட்டாதான்", "கூப்பிட்டால்தான்"], "ifnot": ["கூப்பிடாட்டா", "கூப்பிடாவிட்டால்"] }
+      readings: { "iff": ["kūppiṭṭā", "kūppiṭṭāl"], "onlyif": ["kūppiṭṭātāṉ", "kūppiṭṭāltāṉ"], "ifnot": ["kūppiṭāṭṭā", "kūppiṭāviṭṭāl"] }
+    - word: "ta-2031"
+      forms: { "iff": ["அழைத்தா", "அழைத்தால்"], "onlyif": ["அழைத்தாதான்", "அழைத்தால்தான்"], "ifnot": ["அழைக்காட்டா", "அழைக்காவிட்டால்"] }
+      readings: { "iff": ["aḻaittā", "aḻaittāl"], "onlyif": ["aḻaittātāṉ", "aḻaittāltāṉ"], "ifnot": ["aḻaikkāṭṭā", "aḻaikkāviṭṭāl"] }
+    - word: "ta-2033"
+      forms: { "iff": ["சந்தித்தா", "சந்தித்தால்"], "onlyif": ["சந்தித்தாதான்", "சந்தித்தால்தான்"], "ifnot": ["சந்திக்காட்டா", "சந்திக்காவிட்டால்"] }
+      readings: { "iff": ["cantittā", "cantittāl"], "onlyif": ["cantittātāṉ", "cantittāltāṉ"], "ifnot": ["cantikkāṭṭā", "cantikkāviṭṭāl"] }
+    - word: "ta-2034"
+      forms: { "iff": ["சேர்ந்தா", "சேர்ந்தால்"], "onlyif": ["சேர்ந்தாதான்", "சேர்ந்தால்தான்"], "ifnot": ["சேராட்டா", "சேராவிட்டால்"] }
+      readings: { "iff": ["cērntā", "cērntāl"], "onlyif": ["cērntātāṉ", "cērntāltāṉ"], "ifnot": ["cērāṭṭā", "cērāviṭṭāl"] }
+    - word: "ta-2035"
+      forms: { "iff": ["பிரிந்தா", "பிரிந்தால்"], "onlyif": ["பிரிந்தாதான்", "பிரிந்தால்தான்"], "ifnot": ["பிரியாட்டா", "பிரியாவிட்டால்"] }
+      readings: { "iff": ["pirintā", "pirintāl"], "onlyif": ["pirintātāṉ", "pirintāltāṉ"], "ifnot": ["piriyāṭṭā", "piriyāviṭṭāl"] }
+    - word: "ta-2036"
+      forms: { "iff": ["நம்பினா", "நம்பினால்"], "onlyif": ["நம்பினாதான்", "நம்பினால்தான்"], "ifnot": ["நம்பாட்டா", "நம்பாவிட்டால்"] }
+      readings: { "iff": ["nampiṉā", "nampiṉāl"], "onlyif": ["nampiṉātāṉ", "nampiṉāltāṉ"], "ifnot": ["nampāṭṭā", "nampāviṭṭāl"] }
+    - word: "ta-2038"
+      forms: { "iff": ["பகிர்ந்தா", "பகிர்ந்தால்"], "onlyif": ["பகிர்ந்தாதான்", "பகிர்ந்தால்தான்"], "ifnot": ["பகிராட்டா", "பகிராவிட்டால்"] }
+      readings: { "iff": ["pakirntā", "pakirntāl"], "onlyif": ["pakirntātāṉ", "pakirntāltāṉ"], "ifnot": ["pakirāṭṭā", "pakirāviṭṭāl"] }
+    - word: "ta-2039"
+      forms: { "iff": ["ஒட்டினா", "ஒட்டினால்"], "onlyif": ["ஒட்டினாதான்", "ஒட்டினால்தான்"], "ifnot": ["ஒட்டாட்டா", "ஒட்டாவிட்டால்"] }
+      readings: { "iff": ["oṭṭiṉā", "oṭṭiṉāl"], "onlyif": ["oṭṭiṉātāṉ", "oṭṭiṉāltāṉ"], "ifnot": ["oṭṭāṭṭā", "oṭṭāviṭṭāl"] }
+    - word: "ta-2040"
+      forms: { "iff": ["கொட்டினா", "கொட்டினால்"], "onlyif": ["கொட்டினாதான்", "கொட்டினால்தான்"], "ifnot": ["கொட்டாட்டா", "கொட்டாவிட்டால்"] }
+      readings: { "iff": ["koṭṭiṉā", "koṭṭiṉāl"], "onlyif": ["koṭṭiṉātāṉ", "koṭṭiṉāltāṉ"], "ifnot": ["koṭṭāṭṭā", "koṭṭāviṭṭāl"] }
+    - word: "ta-2041"
+      forms: { "iff": ["எரிந்தா", "எரிந்தால்"], "onlyif": ["எரிந்தாதான்", "எரிந்தால்தான்"], "ifnot": ["எரியாட்டா", "எரியாவிட்டால்"] }
+      readings: { "iff": ["erintā", "erintāl"], "onlyif": ["erintātāṉ", "erintāltāṉ"], "ifnot": ["eriyāṭṭā", "eriyāviṭṭāl"] }
+    - word: "ta-2042"
+      forms: { "iff": ["உருவாக்கினா", "உருவாக்கினால்"], "onlyif": ["உருவாக்கினாதான்", "உருவாக்கினால்தான்"], "ifnot": ["உருவாக்காட்டா", "உருவாக்காவிட்டால்"] }
+      readings: { "iff": ["uruvākkiṉā", "uruvākkiṉāl"], "onlyif": ["uruvākkiṉātāṉ", "uruvākkiṉāltāṉ"], "ifnot": ["uruvākkāṭṭā", "uruvākkāviṭṭāl"] }
+    - word: "ta-2043"
+      forms: { "iff": ["திருடினா", "திருடினால்"], "onlyif": ["திருடினாதான்", "திருடினால்தான்"], "ifnot": ["திருடாட்டா", "திருடாவிட்டால்"] }
+      readings: { "iff": ["tiruṭiṉā", "tiruṭiṉāl"], "onlyif": ["tiruṭiṉātāṉ", "tiruṭiṉāltāṉ"], "ifnot": ["tiruṭāṭṭā", "tiruṭāviṭṭāl"] }
+    - word: "ta-2044"
+      forms: { "iff": ["யோசித்தா", "யோசித்தால்"], "onlyif": ["யோசித்தாதான்", "யோசித்தால்தான்"], "ifnot": ["யோசிக்காட்டா", "யோசிக்காவிட்டால்"] }
+      readings: { "iff": ["yōcittā", "yōcittāl"], "onlyif": ["yōcittātāṉ", "yōcittāltāṉ"], "ifnot": ["yōcikkāṭṭā", "yōcikkāviṭṭāl"] }
+    - word: "ta-2045"
+      forms: { "iff": ["விரும்பினா", "விரும்பினால்"], "onlyif": ["விரும்பினாதான்", "விரும்பினால்தான்"], "ifnot": ["விரும்பாட்டா", "விரும்பாவிட்டால்"] }
+      readings: { "iff": ["virumpiṉā", "virumpiṉāl"], "onlyif": ["virumpiṉātāṉ", "virumpiṉāltāṉ"], "ifnot": ["virumpāṭṭā", "virumpāviṭṭāl"] }
+    - word: "ta-2049"
+      forms: { "iff": ["அழுதா", "அழுதால்"], "onlyif": ["அழுதாதான்", "அழுதால்தான்"], "ifnot": ["அழாட்டா", "அழாவிட்டால்"] }
+      readings: { "iff": ["aḻutā", "aḻutāl"], "onlyif": ["aḻutātāṉ", "aḻutāltāṉ"], "ifnot": ["aḻāṭṭā", "aḻāviṭṭāl"] }
+    - word: "ta-2050"
+      forms: { "iff": ["எண்ணினா", "எண்ணினால்"], "onlyif": ["எண்ணினாதான்", "எண்ணினால்தான்"], "ifnot": ["எண்ணாட்டா", "எண்ணாவிட்டால்"] }
+      readings: { "iff": ["eṇṇiṉā", "eṇṇiṉāl"], "onlyif": ["eṇṇiṉātāṉ", "eṇṇiṉāltāṉ"], "ifnot": ["eṇṇāṭṭā", "eṇṇāviṭṭāl"] }
+    - word: "ta-2051"
+      forms: { "iff": ["நுழைந்தா", "நுழைந்தால்"], "onlyif": ["நுழைந்தாதான்", "நுழைந்தால்தான்"], "ifnot": ["நுழையாட்டா", "நுழையாவிட்டால்"] }
+      readings: { "iff": ["nuḻaintā", "nuḻaintāl"], "onlyif": ["nuḻaintātāṉ", "nuḻaintāltāṉ"], "ifnot": ["nuḻaiyāṭṭā", "nuḻaiyāviṭṭāl"] }
+    - word: "ta-2052"
+      forms: { "iff": ["வெளியேறினா", "வெளியேறினால்"], "onlyif": ["வெளியேறினாதான்", "வெளியேறினால்தான்"], "ifnot": ["வெளியேறாட்டா", "வெளியேறாவிட்டால்"] }
+      readings: { "iff": ["veḷiyēṟiṉā", "veḷiyēṟiṉāl"], "onlyif": ["veḷiyēṟiṉātāṉ", "veḷiyēṟiṉāltāṉ"], "ifnot": ["veḷiyēṟāṭṭā", "veḷiyēṟāviṭṭāl"] }
+    - word: "ta-2053"
+      forms: { "iff": ["கடந்தா", "கடந்தால்"], "onlyif": ["கடந்தாதான்", "கடந்தால்தான்"], "ifnot": ["கடக்காட்டா", "கடக்காவிட்டால்"] }
+      readings: { "iff": ["kaṭantā", "kaṭantāl"], "onlyif": ["kaṭantātāṉ", "kaṭantāltāṉ"], "ifnot": ["kaṭakkāṭṭā", "kaṭakkāviṭṭāl"] }
+    - word: "ta-2054"
+      forms: { "iff": ["சுற்றினா", "சுற்றினால்"], "onlyif": ["சுற்றினாதான்", "சுற்றினால்தான்"], "ifnot": ["சுற்றாட்டா", "சுற்றாவிட்டால்"] }
+      readings: { "iff": ["cuṟṟiṉā", "cuṟṟiṉāl"], "onlyif": ["cuṟṟiṉātāṉ", "cuṟṟiṉāltāṉ"], "ifnot": ["cuṟṟāṭṭā", "cuṟṟāviṭṭāl"] }
+    - word: "ta-2055"
+      forms: { "iff": ["அமர்ந்தா", "அமர்ந்தால்"], "onlyif": ["அமர்ந்தாதான்", "அமர்ந்தால்தான்"], "ifnot": ["அமராட்டா", "அமராவிட்டால்"] }
+      readings: { "iff": ["amarntā", "amarntāl"], "onlyif": ["amarntātāṉ", "amarntāltāṉ"], "ifnot": ["amarāṭṭā", "amarāviṭṭāl"] }
+    - word: "ta-2056"
+      forms: { "iff": ["நகர்ந்தா", "நகர்ந்தால்"], "onlyif": ["நகர்ந்தாதான்", "நகர்ந்தால்தான்"], "ifnot": ["நகராட்டா", "நகராவிட்டால்"] }
+      readings: { "iff": ["nakarntā", "nakarntāl"], "onlyif": ["nakarntātāṉ", "nakarntāltāṉ"], "ifnot": ["nakarāṭṭā", "nakarāviṭṭāl"] }
+    - word: "ta-2057"
+      forms: { "iff": ["தொட்டா", "தொட்டால்"], "onlyif": ["தொட்டாதான்", "தொட்டால்தான்"], "ifnot": ["தொடாட்டா", "தொடாவிட்டால்"] }
+      readings: { "iff": ["toṭṭā", "toṭṭāl"], "onlyif": ["toṭṭātāṉ", "toṭṭāltāṉ"], "ifnot": ["toṭāṭṭā", "toṭāviṭṭāl"] }
+    - word: "ta-2058"
+      forms: { "iff": ["எறிந்தா", "எறிந்தால்"], "onlyif": ["எறிந்தாதான்", "எறிந்தால்தான்"], "ifnot": ["எறியாட்டா", "எறியாவிட்டால்"] }
+      readings: { "iff": ["eṟintā", "eṟintāl"], "onlyif": ["eṟintātāṉ", "eṟintāltāṉ"], "ifnot": ["eṟiyāṭṭā", "eṟiyāviṭṭāl"] }
+    - word: "ta-2059"
+      forms: { "iff": ["மாறினா", "மாறினால்"], "onlyif": ["மாறினாதான்", "மாறினால்தான்"], "ifnot": ["மாறாட்டா", "மாறாவிட்டால்"] }
+      readings: { "iff": ["māṟiṉā", "māṟiṉāl"], "onlyif": ["māṟiṉātāṉ", "māṟiṉāltāṉ"], "ifnot": ["māṟāṭṭā", "māṟāviṭṭāl"] }
+    - word: "ta-2062"
+      forms: { "iff": ["தொடர்ந்தா", "தொடர்ந்தால்"], "onlyif": ["தொடர்ந்தாதான்", "தொடர்ந்தால்தான்"], "ifnot": ["தொடராட்டா", "தொடராவிட்டால்"] }
+      readings: { "iff": ["toṭarntā", "toṭarntāl"], "onlyif": ["toṭarntātāṉ", "toṭarntāltāṉ"], "ifnot": ["toṭarāṭṭā", "toṭarāviṭṭāl"] }
+    - word: "ta-2063"
+      forms: { "iff": ["முயன்றா", "முயன்றால்"], "onlyif": ["முயன்றாதான்", "முயன்றால்தான்"], "ifnot": ["முயலாட்டா", "முயலாவிட்டால்"] }
+      readings: { "iff": ["muyaṉṟā", "muyaṉṟāl"], "onlyif": ["muyaṉṟātāṉ", "muyaṉṟāltāṉ"], "ifnot": ["muyalāṭṭā", "muyalāviṭṭāl"] }
+    - word: "ta-2064"
+      forms: { "iff": ["சேமித்தா", "சேமித்தால்"], "onlyif": ["சேமித்தாதான்", "சேமித்தால்தான்"], "ifnot": ["சேமிக்காட்டா", "சேமிக்காவிட்டால்"] }
+      readings: { "iff": ["cēmittā", "cēmittāl"], "onlyif": ["cēmittātāṉ", "cēmittāltāṉ"], "ifnot": ["cēmikkāṭṭā", "cēmikkāviṭṭāl"] }
+    - word: "ta-2065"
+      forms: { "iff": ["செலவழித்தா", "செலவழித்தால்"], "onlyif": ["செலவழித்தாதான்", "செலவழித்தால்தான்"], "ifnot": ["செலவழிக்காட்டா", "செலவழிக்காவிட்டால்"] }
+      readings: { "iff": ["celavaḻittā", "celavaḻittāl"], "onlyif": ["celavaḻittātāṉ", "celavaḻittāltāṉ"], "ifnot": ["celavaḻikkāṭṭā", "celavaḻikkāviṭṭāl"] }
+    - word: "ta-2066"
+      forms: { "iff": ["எழுப்பினா", "எழுப்பினால்"], "onlyif": ["எழுப்பினாதான்", "எழுப்பினால்தான்"], "ifnot": ["எழுப்பாட்டா", "எழுப்பாவிட்டால்"] }
+      readings: { "iff": ["eḻuppiṉā", "eḻuppiṉāl"], "onlyif": ["eḻuppiṉātāṉ", "eḻuppiṉāltāṉ"], "ifnot": ["eḻuppāṭṭā", "eḻuppāviṭṭāl"] }
+    - word: "ta-2067"
+      forms: { "iff": ["விழித்தா", "விழித்தால்"], "onlyif": ["விழித்தாதான்", "விழித்தால்தான்"], "ifnot": ["விழிக்காட்டா", "விழிக்காவிட்டால்"] }
+      readings: { "iff": ["viḻittā", "viḻittāl"], "onlyif": ["viḻittātāṉ", "viḻittāltāṉ"], "ifnot": ["viḻikkāṭṭā", "viḻikkāviṭṭāl"] }
+    - word: "ta-2068"
+      forms: { "iff": ["விழுந்தா", "விழுந்தால்"], "onlyif": ["விழுந்தாதான்", "விழுந்தால்தான்"], "ifnot": ["விழாட்டா", "விழாவிட்டால்"] }
+      readings: { "iff": ["viḻuntā", "viḻuntāl"], "onlyif": ["viḻuntātāṉ", "viḻuntāltāṉ"], "ifnot": ["viḻāṭṭā", "viḻāviṭṭāl"] }
+    - word: "ta-2070"
+      forms: { "iff": ["காட்டினா", "காட்டினால்"], "onlyif": ["காட்டினாதான்", "காட்டினால்தான்"], "ifnot": ["காட்டாட்டா", "காட்டாவிட்டால்"] }
+      readings: { "iff": ["kāṭṭiṉā", "kāṭṭiṉāl"], "onlyif": ["kāṭṭiṉātāṉ", "kāṭṭiṉāltāṉ"], "ifnot": ["kāṭṭāṭṭā", "kāṭṭāviṭṭāl"] }
+    - word: "ta-2071"
+      forms: { "iff": ["குனிந்தா", "குனிந்தால்"], "onlyif": ["குனிந்தாதான்", "குனிந்தால்தான்"], "ifnot": ["குனியாட்டா", "குனியாவிட்டால்"] }
+      readings: { "iff": ["kuṉintā", "kuṉintāl"], "onlyif": ["kuṉintātāṉ", "kuṉintāltāṉ"], "ifnot": ["kuṉiyāṭṭā", "kuṉiyāviṭṭāl"] }
+    - word: "ta-2072"
+      forms: { "iff": ["சாய்ந்தா", "சாய்ந்தால்"], "onlyif": ["சாய்ந்தாதான்", "சாய்ந்தால்தான்"], "ifnot": ["சாயாட்டா", "சாயாவிட்டால்"] }
+      readings: { "iff": ["cāyntā", "cāyntāl"], "onlyif": ["cāyntātāṉ", "cāyntāltāṉ"], "ifnot": ["cāyāṭṭā", "cāyāviṭṭāl"] }
+    - word: "ta-2074"
+      forms: { "iff": ["சம்பாதித்தா", "சம்பாதித்தால்"], "onlyif": ["சம்பாதித்தாதான்", "சம்பாதித்தால்தான்"], "ifnot": ["சம்பாதிக்காட்டா", "சம்பாதிக்காவிட்டால்"] }
+      readings: { "iff": ["campātittā", "campātittāl"], "onlyif": ["campātittātāṉ", "campātittāltāṉ"], "ifnot": ["campātikkāṭṭā", "campātikkāviṭṭāl"] }
+    - word: "ta-2075"
+      forms: { "iff": ["பழகினா", "பழகினால்"], "onlyif": ["பழகினாதான்", "பழகினால்தான்"], "ifnot": ["பழகாட்டா", "பழகாவிட்டால்"] }
+      readings: { "iff": ["paḻakiṉā", "paḻakiṉāl"], "onlyif": ["paḻakiṉātāṉ", "paḻakiṉāltāṉ"], "ifnot": ["paḻakāṭṭā", "paḻakāviṭṭāl"] }
+    - word: "ta-2076"
+      forms: { "iff": ["திட்டினா", "திட்டினால்"], "onlyif": ["திட்டினாதான்", "திட்டினால்தான்"], "ifnot": ["திட்டாட்டா", "திட்டாவிட்டால்"] }
+      readings: { "iff": ["tiṭṭiṉā", "tiṭṭiṉāl"], "onlyif": ["tiṭṭiṉātāṉ", "tiṭṭiṉāltāṉ"], "ifnot": ["tiṭṭāṭṭā", "tiṭṭāviṭṭāl"] }
+    - word: "ta-2077"
+      forms: { "iff": ["பாராட்டினா", "பாராட்டினால்"], "onlyif": ["பாராட்டினாதான்", "பாராட்டினால்தான்"], "ifnot": ["பாராட்டாட்டா", "பாராட்டாவிட்டால்"] }
+      readings: { "iff": ["pārāṭṭiṉā", "pārāṭṭiṉāl"], "onlyif": ["pārāṭṭiṉātāṉ", "pārāṭṭiṉāltāṉ"], "ifnot": ["pārāṭṭāṭṭā", "pārāṭṭāviṭṭāl"] }
+    - word: "ta-2078"
+      forms: { "iff": ["நடித்தா", "நடித்தால்"], "onlyif": ["நடித்தாதான்", "நடித்தால்தான்"], "ifnot": ["நடிக்காட்டா", "நடிக்காவிட்டால்"] }
+      readings: { "iff": ["naṭittā", "naṭittāl"], "onlyif": ["naṭittātāṉ", "naṭittāltāṉ"], "ifnot": ["naṭikkāṭṭā", "naṭikkāviṭṭāl"] }
+    - word: "ta-2079"
+      forms: { "iff": ["ஆடினா", "ஆடினால்"], "onlyif": ["ஆடினாதான்", "ஆடினால்தான்"], "ifnot": ["ஆடாட்டா", "ஆடாவிட்டால்"] }
+      readings: { "iff": ["āṭiṉā", "āṭiṉāl"], "onlyif": ["āṭiṉātāṉ", "āṭiṉāltāṉ"], "ifnot": ["āṭāṭṭā", "āṭāviṭṭāl"] }
+    - word: "ta-2080"
+      forms: { "iff": ["குறைந்தா", "குறைந்தால்"], "onlyif": ["குறைந்தாதான்", "குறைந்தால்தான்"], "ifnot": ["குறையாட்டா", "குறையாவிட்டால்"] }
+      readings: { "iff": ["kuṟaintā", "kuṟaintāl"], "onlyif": ["kuṟaintātāṉ", "kuṟaintāltāṉ"], "ifnot": ["kuṟaiyāṭṭā", "kuṟaiyāviṭṭāl"] }
+    - word: "ta-2081"
+      forms: { "iff": ["அதிகரித்தா", "அதிகரித்தால்"], "onlyif": ["அதிகரித்தாதான்", "அதிகரித்தால்தான்"], "ifnot": ["அதிகரிக்காட்டா", "அதிகரிக்காவிட்டால்"] }
+      readings: { "iff": ["atikarittā", "atikarittāl"], "onlyif": ["atikarittātāṉ", "atikarittāltāṉ"], "ifnot": ["atikarikkāṭṭā", "atikarikkāviṭṭāl"] }
+    - word: "ta-2083"
+      forms: { "iff": ["மன்னித்தா", "மன்னித்தால்"], "onlyif": ["மன்னித்தாதான்", "மன்னித்தால்தான்"], "ifnot": ["மன்னிக்காட்டா", "மன்னிக்காவிட்டால்"] }
+      readings: { "iff": ["maṉṉittā", "maṉṉittāl"], "onlyif": ["maṉṉittātāṉ", "maṉṉittāltāṉ"], "ifnot": ["maṉṉikkāṭṭā", "maṉṉikkāviṭṭāl"] }
+    - word: "ta-2084"
+      forms: { "iff": ["ஏமாற்றினா", "ஏமாற்றினால்"], "onlyif": ["ஏமாற்றினாதான்", "ஏமாற்றினால்தான்"], "ifnot": ["ஏமாற்றாட்டா", "ஏமாற்றாவிட்டால்"] }
+      readings: { "iff": ["ēmāṟṟiṉā", "ēmāṟṟiṉāl"], "onlyif": ["ēmāṟṟiṉātāṉ", "ēmāṟṟiṉāltāṉ"], "ifnot": ["ēmāṟṟāṭṭā", "ēmāṟṟāviṭṭāl"] }
+    - word: "ta-2085"
+      forms: { "iff": ["பயன்படுத்தினா", "பயன்படுத்தினால்"], "onlyif": ["பயன்படுத்தினாதான்", "பயன்படுத்தினால்தான்"], "ifnot": ["பயன்படுத்தாட்டா", "பயன்படுத்தாவிட்டால்"] }
+      readings: { "iff": ["payaṉpaṭuttiṉā", "payaṉpaṭuttiṉāl"], "onlyif": ["payaṉpaṭuttiṉātāṉ", "payaṉpaṭuttiṉāltāṉ"], "ifnot": ["payaṉpaṭuttāṭṭā", "payaṉpaṭuttāviṭṭāl"] }
+    - word: "ta-1141"
+      forms: { "iff": ["பெய்தா", "பெய்தால்"], "onlyif": ["பெய்தாதான்", "பெய்தால்தான்"], "ifnot": ["பெய்யாட்டா", "பெய்யாவிட்டால்"] }
+      readings: { "iff": ["peytā", "peytāl"], "onlyif": ["peytātāṉ", "peytāltāṉ"], "ifnot": ["peyyāṭṭā", "peyyāviṭṭāl"] }
+    - word: "ta-1143"
+      forms: { "iff": ["அடித்தா", "அடித்தால்"], "onlyif": ["அடித்தாதான்", "அடித்தால்தான்"], "ifnot": ["அடிக்காட்டா", "அடிக்காவிட்டால்"] }
+      readings: { "iff": ["aṭittā", "aṭittāl"], "onlyif": ["aṭittātāṉ", "aṭittāltāṉ"], "ifnot": ["aṭikkāṭṭā", "aṭikkāviṭṭāl"] }
+    - word: "ta-1144"
+      forms: { "iff": ["நனைந்தா", "நனைந்தால்"], "onlyif": ["நனைந்தாதான்", "நனைந்தால்தான்"], "ifnot": ["நனையாட்டா", "நனையாவிட்டால்"] }
+      readings: { "iff": ["naṉaintā", "naṉaintāl"], "onlyif": ["naṉaintātāṉ", "naṉaintāltāṉ"], "ifnot": ["naṉaiyāṭṭā", "naṉaiyāviṭṭāl"] }
+    - word: "ta-1145"
+      forms: { "iff": ["காய்ந்தா", "காய்ந்தால்"], "onlyif": ["காய்ந்தாதான்", "காய்ந்தால்தான்"], "ifnot": ["காயாட்டா", "காயாவிட்டால்"] }
+      readings: { "iff": ["kāyntā", "kāyntāl"], "onlyif": ["kāyntātāṉ", "kāyntāltāṉ"], "ifnot": ["kāyāṭṭā", "kāyāviṭṭāl"] }
+    - word: "ta-2023"
+      forms: { "iff": ["தோன்றினா", "தோன்றினால்"], "onlyif": ["தோன்றினாதான்", "தோன்றினால்தான்"], "ifnot": ["தோன்றாட்டா", "தோன்றாவிட்டால்"] }
+      readings: { "iff": ["tōṉṟiṉā", "tōṉṟiṉāl"], "onlyif": ["tōṉṟiṉātāṉ", "tōṉṟiṉāltāṉ"], "ifnot": ["tōṉṟāṭṭā", "tōṉṟāviṭṭāl"] }
+    - word: "ta-2027"
+      forms: { "iff": ["கவனித்தா", "கவனித்தால்"], "onlyif": ["கவனித்தாதான்", "கவனித்தால்தான்"], "ifnot": ["கவனிக்காட்டா", "கவனிக்காவிட்டால்"] }
+      readings: { "iff": ["kavaṉittā", "kavaṉittāl"], "onlyif": ["kavaṉittātāṉ", "kavaṉittāltāṉ"], "ifnot": ["kavaṉikkāṭṭā", "kavaṉikkāviṭṭāl"] }
+    - word: "ta-2028"
+      forms: { "iff": ["வருந்தினா", "வருந்தினால்"], "onlyif": ["வருந்தினாதான்", "வருந்தினால்தான்"], "ifnot": ["வருந்தாட்டா", "வருந்தாவிட்டால்"] }
+      readings: { "iff": ["varuntiṉā", "varuntiṉāl"], "onlyif": ["varuntiṉātāṉ", "varuntiṉāltāṉ"], "ifnot": ["varuntāṭṭā", "varuntāviṭṭāl"] }
+    - word: "ta-2061"
+      forms: { "iff": ["ஊக்குவித்தா", "ஊக்குவித்தால்"], "onlyif": ["ஊக்குவித்தாதான்", "ஊக்குவித்தால்தான்"], "ifnot": ["ஊக்குவிக்காட்டா", "ஊக்குவிக்காவிட்டால்"] }
+      readings: { "iff": ["ūkkuvittā", "ūkkuvittāl"], "onlyif": ["ūkkuvittātāṉ", "ūkkuvittāltāṉ"], "ifnot": ["ūkkuvikkāṭṭā", "ūkkuvikkāviṭṭāl"] }
+    - word: "ta-2082"
+      forms: { "iff": ["நிரூபித்தா", "நிரூபித்தால்"], "onlyif": ["நிரூபித்தாதான்", "நிரூபித்தால்தான்"], "ifnot": ["நிரூபிக்காட்டா", "நிரூபிக்காவிட்டால்"] }
+      readings: { "iff": ["nirūpittā", "nirūpittāl"], "onlyif": ["nirūpittātāṉ", "nirūpittāltāṉ"], "ifnot": ["nirūpikkāṭṭā", "nirūpikkāviṭṭāl"] }
+    - word: "ta-1142"
+      forms: { "iff": ["மறைந்தா", "மறைந்தால்"], "onlyif": ["மறைந்தாதான்", "மறைந்தால்தான்"], "ifnot": ["மறையாட்டா", "மறையாவிட்டால்"] }
+      readings: { "iff": ["maṟaintā", "maṟaintāl"], "onlyif": ["maṟaintātāṉ", "maṟaintāltāṉ"], "ifnot": ["maṟaiyāṭṭā", "maṟaiyāviṭṭāl"] }
+    - word: "ta-1950"
+      forms: { "iff": ["அலசினா", "அலசினால்"], "onlyif": ["அலசினாதான்", "அலசினால்தான்"], "ifnot": ["அலசாட்டா", "அலசாவிட்டால்"] }
+      readings: { "iff": ["alaciṉā", "alaciṉāl"], "onlyif": ["alaciṉātāṉ", "alaciṉāltāṉ"], "ifnot": ["alacāṭṭā", "alacāviṭṭāl"] }
+    - word: "ta-1960"
+      forms: { "iff": ["பரப்பினா", "பரப்பினால்"], "onlyif": ["பரப்பினாதான்", "பரப்பினால்தான்"], "ifnot": ["பரப்பாட்டா", "பரப்பாவிட்டால்"] }
+      readings: { "iff": ["parappiṉā", "parappiṉāl"], "onlyif": ["parappiṉātāṉ", "parappiṉāltāṉ"], "ifnot": ["parappāṭṭā", "parappāviṭṭāl"] }
+    - word: "ta-1146"
+      forms: { "iff": ["மின்னினா", "மின்னினால்"], "onlyif": ["மின்னினாதான்", "மின்னினால்தான்"], "ifnot": ["மின்னாட்டா", "மின்னாவிட்டால்"] }
+      readings: { "iff": ["miṉṉiṉā", "miṉṉiṉāl"], "onlyif": ["miṉṉiṉātāṉ", "miṉṉiṉāltāṉ"], "ifnot": ["miṉṉāṭṭā", "miṉṉāviṭṭāl"] }
+    - word: "ta-1297"
+      forms: { "iff": ["இருமினா", "இருமினால்"], "onlyif": ["இருமினாதான்", "இருமினால்தான்"], "ifnot": ["இருமாட்டா", "இருமாவிட்டால்"] }
+      readings: { "iff": ["irumiṉā", "irumiṉāl"], "onlyif": ["irumiṉātāṉ", "irumiṉāltāṉ"], "ifnot": ["irumāṭṭā", "irumāviṭṭāl"] }
+    - word: "ta-1298"
+      forms: { "iff": ["தும்மினா", "தும்மினால்"], "onlyif": ["தும்மினாதான்", "தும்மினால்தான்"], "ifnot": ["தும்மாட்டா", "தும்மாவிட்டால்"] }
+      readings: { "iff": ["tummiṉā", "tummiṉāl"], "onlyif": ["tummiṉātāṉ", "tummiṉāltāṉ"], "ifnot": ["tummāṭṭā", "tummāviṭṭāl"] }
+    - word: "ta-1300"
+      forms: { "iff": ["மயங்கினா", "மயங்கினால்"], "onlyif": ["மயங்கினாதான்", "மயங்கினால்தான்"], "ifnot": ["மயங்காட்டா", "மயங்காவிட்டால்"] }
+      readings: { "iff": ["mayaṅkiṉā", "mayaṅkiṉāl"], "onlyif": ["mayaṅkiṉātāṉ", "mayaṅkiṉāltāṉ"], "ifnot": ["mayaṅkāṭṭā", "mayaṅkāviṭṭāl"] }
+    - word: "ta-1303"
+      forms: { "iff": ["வீங்கினா", "வீங்கினால்"], "onlyif": ["வீங்கினாதான்", "வீங்கினால்தான்"], "ifnot": ["வீங்காட்டா", "வீங்காவிட்டால்"] }
+      readings: { "iff": ["vīṅkiṉā", "vīṅkiṉāl"], "onlyif": ["vīṅkiṉātāṉ", "vīṅkiṉāltāṉ"], "ifnot": ["vīṅkāṭṭā", "vīṅkāviṭṭāl"] }
+    - word: "ta-1304"
+      forms: { "iff": ["நடுங்கினா", "நடுங்கினால்"], "onlyif": ["நடுங்கினாதான்", "நடுங்கினால்தான்"], "ifnot": ["நடுங்காட்டா", "நடுங்காவிட்டால்"] }
+      readings: { "iff": ["naṭuṅkiṉā", "naṭuṅkiṉāl"], "onlyif": ["naṭuṅkiṉātāṉ", "naṭuṅkiṉāltāṉ"], "ifnot": ["naṭuṅkāṭṭā", "naṭuṅkāviṭṭāl"] }
+    - word: "ta-1305"
+      forms: { "iff": ["வியர்த்தா", "வியர்த்தால்"], "onlyif": ["வியர்த்தாதான்", "வியர்த்தால்தான்"], "ifnot": ["வியர்க்காட்டா", "வியர்க்காவிட்டால்"] }
+      readings: { "iff": ["viyarttā", "viyarttāl"], "onlyif": ["viyarttātāṉ", "viyarttāltāṉ"], "ifnot": ["viyarkkāṭṭā", "viyarkkāviṭṭāl"] }
+    - word: "ta-1317"
+      forms: { "iff": ["பரிமாறினா", "பரிமாறினால்"], "onlyif": ["பரிமாறினாதான்", "பரிமாறினால்தான்"], "ifnot": ["பரிமாறாட்டா", "பரிமாறாவிட்டால்"] }
+      readings: { "iff": ["parimāṟiṉā", "parimāṟiṉāl"], "onlyif": ["parimāṟiṉātāṉ", "parimāṟiṉāltāṉ"], "ifnot": ["parimāṟāṭṭā", "parimāṟāviṭṭāl"] }
+    - word: "ta-1346"
+      forms: { "iff": ["வறுத்தா", "வறுத்தால்"], "onlyif": ["வறுத்தாதான்", "வறுத்தால்தான்"], "ifnot": ["வறுக்காட்டா", "வறுக்காவிட்டால்"] }
+      readings: { "iff": ["vaṟuttā", "vaṟuttāl"], "onlyif": ["vaṟuttātāṉ", "vaṟuttāltāṉ"], "ifnot": ["vaṟukkāṭṭā", "vaṟukkāviṭṭāl"] }
+    - word: "ta-1347"
+      forms: { "iff": ["வதக்கினா", "வதக்கினால்"], "onlyif": ["வதக்கினாதான்", "வதக்கினால்தான்"], "ifnot": ["வதக்காட்டா", "வதக்காவிட்டால்"] }
+      readings: { "iff": ["vatakkiṉā", "vatakkiṉāl"], "onlyif": ["vatakkiṉātāṉ", "vatakkiṉāltāṉ"], "ifnot": ["vatakkāṭṭā", "vatakkāviṭṭāl"] }
+    - word: "ta-1348"
+      forms: { "iff": ["கொதித்தா", "கொதித்தால்"], "onlyif": ["கொதித்தாதான்", "கொதித்தால்தான்"], "ifnot": ["கொதிக்காட்டா", "கொதிக்காவிட்டால்"] }
+      readings: { "iff": ["kotittā", "kotittāl"], "onlyif": ["kotittātāṉ", "kotittāltāṉ"], "ifnot": ["kotikkāṭṭā", "kotikkāviṭṭāl"] }
+    - word: "ta-1349"
+      forms: { "iff": ["நறுக்கினா", "நறுக்கினால்"], "onlyif": ["நறுக்கினாதான்", "நறுக்கினால்தான்"], "ifnot": ["நறுக்காட்டா", "நறுக்காவிட்டால்"] }
+      readings: { "iff": ["naṟukkiṉā", "naṟukkiṉāl"], "onlyif": ["naṟukkiṉātāṉ", "naṟukkiṉāltāṉ"], "ifnot": ["naṟukkāṭṭā", "naṟukkāviṭṭāl"] }
+    - word: "ta-1350"
+      forms: { "iff": ["கிளறினா", "கிளறினால்"], "onlyif": ["கிளறினாதான்", "கிளறினால்தான்"], "ifnot": ["கிளறாட்டா", "கிளறாவிட்டால்"] }
+      readings: { "iff": ["kiḷaṟiṉā", "kiḷaṟiṉāl"], "onlyif": ["kiḷaṟiṉātāṉ", "kiḷaṟiṉāltāṉ"], "ifnot": ["kiḷaṟāṭṭā", "kiḷaṟāviṭṭāl"] }
+    - word: "ta-1351"
+      forms: { "iff": ["வெந்தா", "வெந்தால்"], "onlyif": ["வெந்தாதான்", "வெந்தால்தான்"], "ifnot": ["வேகாட்டா", "வேகாவிட்டால்"] }
+      readings: { "iff": ["ventā", "ventāl"], "onlyif": ["ventātāṉ", "ventāltāṉ"], "ifnot": ["vēkāṭṭā", "vēkāviṭṭāl"] }
+    - word: "ta-1352"
+      forms: { "iff": ["பொரித்தா", "பொரித்தால்"], "onlyif": ["பொரித்தாதான்", "பொரித்தால்தான்"], "ifnot": ["பொரிக்காட்டா", "பொரிக்காவிட்டால்"] }
+      readings: { "iff": ["porittā", "porittāl"], "onlyif": ["porittātāṉ", "porittāltāṉ"], "ifnot": ["porikkāṭṭā", "porikkāviṭṭāl"] }
+    - word: "ta-1353"
+      forms: { "iff": ["அவித்தா", "அவித்தால்"], "onlyif": ["அவித்தாதான்", "அவித்தால்தான்"], "ifnot": ["அவிக்காட்டா", "அவிக்காவிட்டால்"] }
+      readings: { "iff": ["avittā", "avittāl"], "onlyif": ["avittātāṉ", "avittāltāṉ"], "ifnot": ["avikkāṭṭā", "avikkāviṭṭāl"] }
+    - word: "ta-1354"
+      forms: { "iff": ["சுட்டா", "சுட்டால்"], "onlyif": ["சுட்டாதான்", "சுட்டால்தான்"], "ifnot": ["சுடாட்டா", "சுடாவிட்டால்"] }
+      readings: { "iff": ["cuṭṭā", "cuṭṭāl"], "onlyif": ["cuṭṭātāṉ", "cuṭṭāltāṉ"], "ifnot": ["cuṭāṭṭā", "cuṭāviṭṭāl"] }
+    - word: "ta-1355"
+      forms: { "iff": ["தாளித்தா", "தாளித்தால்"], "onlyif": ["தாளித்தாதான்", "தாளித்தால்தான்"], "ifnot": ["தாளிக்காட்டா", "தாளிக்காவிட்டால்"] }
+      readings: { "iff": ["tāḷittā", "tāḷittāl"], "onlyif": ["tāḷittātāṉ", "tāḷittāltāṉ"], "ifnot": ["tāḷikkāṭṭā", "tāḷikkāviṭṭāl"] }
+    - word: "ta-1356"
+      forms: { "iff": ["பிசைந்தா", "பிசைந்தால்"], "onlyif": ["பிசைந்தாதான்", "பிசைந்தால்தான்"], "ifnot": ["பிசையாட்டா", "பிசையாவிட்டால்"] }
+      readings: { "iff": ["picaintā", "picaintāl"], "onlyif": ["picaintātāṉ", "picaintāltāṉ"], "ifnot": ["picaiyāṭṭā", "picaiyāviṭṭāl"] }
+    - word: "ta-1357"
+      forms: { "iff": ["உரித்தா", "உரித்தால்"], "onlyif": ["உரித்தாதான்", "உரித்தால்தான்"], "ifnot": ["உரிக்காட்டா", "உரிக்காவிட்டால்"] }
+      readings: { "iff": ["urittā", "urittāl"], "onlyif": ["urittātāṉ", "urittāltāṉ"], "ifnot": ["urikkāṭṭā", "urikkāviṭṭāl"] }
+    - word: "ta-1358"
+      forms: { "iff": ["துருவினா", "துருவினால்"], "onlyif": ["துருவினாதான்", "துருவினால்தான்"], "ifnot": ["துருவாட்டா", "துருவாவிட்டால்"] }
+      readings: { "iff": ["turuviṉā", "turuviṉāl"], "onlyif": ["turuviṉātāṉ", "turuviṉāltāṉ"], "ifnot": ["turuvāṭṭā", "turuvāviṭṭāl"] }
+    - word: "ta-2347"
+      forms: { "iff": ["நடத்தினா", "நடத்தினால்"], "onlyif": ["நடத்தினாதான்", "நடத்தினால்தான்"], "ifnot": ["நடத்தாட்டா", "நடத்தாவிட்டால்"] }
+      readings: { "iff": ["naṭattiṉā", "naṭattiṉāl"], "onlyif": ["naṭattiṉātāṉ", "naṭattiṉāltāṉ"], "ifnot": ["naṭattāṭṭā", "naṭattāviṭṭāl"] }
+    - word: "ta-2348"
+      forms: { "iff": ["நிர்வகித்தா", "நிர்வகித்தால்"], "onlyif": ["நிர்வகித்தாதான்", "நிர்வகித்தால்தான்"], "ifnot": ["நிர்வகிக்காட்டா", "நிர்வகிக்காவிட்டால்"] }
+      readings: { "iff": ["nirvakittā", "nirvakittāl"], "onlyif": ["nirvakittātāṉ", "nirvakittāltāṉ"], "ifnot": ["nirvakikkāṭṭā", "nirvakikkāviṭṭāl"] }
+    - word: "ta-2349"
+      forms: { "iff": ["விண்ணப்பித்தா", "விண்ணப்பித்தால்"], "onlyif": ["விண்ணப்பித்தாதான்", "விண்ணப்பித்தால்தான்"], "ifnot": ["விண்ணப்பிக்காட்டா", "விண்ணப்பிக்காவிட்டால்"] }
+      readings: { "iff": ["viṇṇappittā", "viṇṇappittāl"], "onlyif": ["viṇṇappittātāṉ", "viṇṇappittāltāṉ"], "ifnot": ["viṇṇappikkāṭṭā", "viṇṇappikkāviṭṭāl"] }
+    - word: "ta-2356"
+      forms: { "iff": ["ஒத்துழைத்தா", "ஒத்துழைத்தால்"], "onlyif": ["ஒத்துழைத்தாதான்", "ஒத்துழைத்தால்தான்"], "ifnot": ["ஒத்துழைக்காட்டா", "ஒத்துழைக்காவிட்டால்"] }
+      readings: { "iff": ["ottuḻaittā", "ottuḻaittāl"], "onlyif": ["ottuḻaittātāṉ", "ottuḻaittāltāṉ"], "ifnot": ["ottuḻaikkāṭṭā", "ottuḻaikkāviṭṭāl"] }
+    - word: "ta-2026"
+      forms: { "iff": ["கலந்துகொண்டா", "கலந்துகொண்டால்"], "onlyif": ["கலந்துகொண்டாதான்", "கலந்துகொண்டால்தான்"], "ifnot": ["கலந்துகொள்ளாட்டா", "கலந்துகொள்ளாவிட்டால்"] }
+      readings: { "iff": ["kalantukoṇṭā", "kalantukoṇṭāl"], "onlyif": ["kalantukoṇṭātāṉ", "kalantukoṇṭāltāṉ"], "ifnot": ["kalantukoḷḷāṭṭā", "kalantukoḷḷāviṭṭāl"] }
+    - word: "ta-2060"
+      forms: { "iff": ["பெருமைப்பட்டா", "பெருமைப்பட்டால்"], "onlyif": ["பெருமைப்பட்டாதான்", "பெருமைப்பட்டால்தான்"], "ifnot": ["பெருமைப்படாட்டா", "பெருமைப்படாவிட்டால்"] }
+      readings: { "iff": ["perumaippaṭṭā", "perumaippaṭṭāl"], "onlyif": ["perumaippaṭṭātāṉ", "perumaippaṭṭāltāṉ"], "ifnot": ["perumaippaṭāṭṭā", "perumaippaṭāviṭṭāl"] }
+    - word: "ta-2185"
+      forms: { "iff": ["சுற்றித்திரிந்தா", "சுற்றித்திரிந்தால்"], "onlyif": ["சுற்றித்திரிந்தாதான்", "சுற்றித்திரிந்தால்தான்"], "ifnot": ["சுற்றித்திரியாட்டா", "சுற்றித்திரியாவிட்டால்"] }
+      readings: { "iff": ["cuṟṟittirintā", "cuṟṟittirintāl"], "onlyif": ["cuṟṟittirintātāṉ", "cuṟṟittirintāltāṉ"], "ifnot": ["cuṟṟittiriyāṭṭā", "cuṟṟittiriyāviṭṭāl"] }
+    - word: "ta-1906"
+      forms: { "iff": ["நடனமாடினா", "நடனமாடினால்"], "onlyif": ["நடனமாடினாதான்", "நடனமாடினால்தான்"], "ifnot": ["நடனமாடாட்டா", "நடனமாடாவிட்டால்"] }
+      readings: { "iff": ["naṭaṉamāṭiṉā", "naṭaṉamāṭiṉāl"], "onlyif": ["naṭaṉamāṭiṉātāṉ", "naṭaṉamāṭiṉāltāṉ"], "ifnot": ["naṭaṉamāṭāṭṭā", "naṭaṉamāṭāviṭṭāl"] }
+    - word: "ta-2181"
+      forms: { "iff": ["புறப்பட்டா", "புறப்பட்டால்"], "onlyif": ["புறப்பட்டாதான்", "புறப்பட்டால்தான்"], "ifnot": ["புறப்படாட்டா", "புறப்படாவிட்டால்"] }
+      readings: { "iff": ["puṟappaṭṭā", "puṟappaṭṭāl"], "onlyif": ["puṟappaṭṭātāṉ", "puṟappaṭṭāltāṉ"], "ifnot": ["puṟappaṭāṭṭā", "puṟappaṭāviṭṭāl"] }
+    - word: "ta-2184"
+      forms: { "iff": ["வழிதவறினா", "வழிதவறினால்"], "onlyif": ["வழிதவறினாதான்", "வழிதவறினால்தான்"], "ifnot": ["வழிதவறாட்டா", "வழிதவறாவிட்டால்"] }
+      readings: { "iff": ["vaḻitavaṟiṉā", "vaḻitavaṟiṉāl"], "onlyif": ["vaḻitavaṟiṉātāṉ", "vaḻitavaṟiṉāltāṉ"], "ifnot": ["vaḻitavaṟāṭṭā", "vaḻitavaṟāviṭṭāl"] }
+    - word: "ta-2187"
+      forms: { "iff": ["வழியனுப்பினா", "வழியனுப்பினால்"], "onlyif": ["வழியனுப்பினாதான்", "வழியனுப்பினால்தான்"], "ifnot": ["வழியனுப்பாட்டா", "வழியனுப்பாவிட்டால்"] }
+      readings: { "iff": ["vaḻiyaṉuppiṉā", "vaḻiyaṉuppiṉāl"], "onlyif": ["vaḻiyaṉuppiṉātāṉ", "vaḻiyaṉuppiṉāltāṉ"], "ifnot": ["vaḻiyaṉuppāṭṭā", "vaḻiyaṉuppāviṭṭāl"] }
+    - word: "ta-2188"
+      forms: { "iff": ["திட்டமிட்டா", "திட்டமிட்டால்"], "onlyif": ["திட்டமிட்டாதான்", "திட்டமிட்டால்தான்"], "ifnot": ["திட்டமிடாட்டா", "திட்டமிடாவிட்டால்"] }
+      readings: { "iff": ["tiṭṭamiṭṭā", "tiṭṭamiṭṭāl"], "onlyif": ["tiṭṭamiṭṭātāṉ", "tiṭṭamiṭṭāltāṉ"], "ifnot": ["tiṭṭamiṭāṭṭā", "tiṭṭamiṭāviṭṭāl"] }
+    - word: "ta-2189"
+      forms: { "iff": ["எடுத்துச்சென்றா", "எடுத்துச்சென்றால்"], "onlyif": ["எடுத்துச்சென்றாதான்", "எடுத்துச்சென்றால்தான்"], "ifnot": ["எடுத்துச்செல்லாட்டா", "எடுத்துச்செல்லாவிட்டால்"] }
+      readings: { "iff": ["eṭuttucceṉṟā", "eṭuttucceṉṟāl"], "onlyif": ["eṭuttucceṉṟātāṉ", "eṭuttucceṉṟāltāṉ"], "ifnot": ["eṭuttuccellāṭṭā", "eṭuttuccellāviṭṭāl"] }
+    - word: "ta-2190"
+      forms: { "iff": ["சுற்றிப்பாத்தா", "சுற்றிப்பார்த்தால்"], "onlyif": ["சுற்றிப்பாத்தாதான்", "சுற்றிப்பார்த்தால்தான்"], "ifnot": ["சுற்றிப்பார்க்காட்டா", "சுற்றிப்பார்க்காவிட்டால்"] }
+      readings: { "iff": ["cuṟṟippāttā", "cuṟṟippārttāl"], "onlyif": ["cuṟṟippāttātāṉ", "cuṟṟippārttāltāṉ"], "ifnot": ["cuṟṟippārkkāṭṭā", "cuṟṟippārkkāviṭṭāl"] }
+    - word: "ta-2121"
+      forms: { "iff": ["பதிவிறக்கினா", "பதிவிறக்கினால்"], "onlyif": ["பதிவிறக்கினாதான்", "பதிவிறக்கினால்தான்"], "ifnot": ["பதிவிறக்காட்டா", "பதிவிறக்காவிட்டால்"] }
+      readings: { "iff": ["pativiṟakkiṉā", "pativiṟakkiṉāl"], "onlyif": ["pativiṟakkiṉātāṉ", "pativiṟakkiṉāltāṉ"], "ifnot": ["pativiṟakkāṭṭā", "pativiṟakkāviṭṭāl"] }
+    - word: "ta-2127"
+      forms: { "iff": ["தொடர்புகொண்டா", "தொடர்புகொண்டால்"], "onlyif": ["தொடர்புகொண்டாதான்", "தொடர்புகொண்டால்தான்"], "ifnot": ["தொடர்புகொள்ளாட்டா", "தொடர்புகொள்ளாவிட்டால்"] }
+      readings: { "iff": ["toṭarpukoṇṭā", "toṭarpukoṇṭāl"], "onlyif": ["toṭarpukoṇṭātāṉ", "toṭarpukoṇṭāltāṉ"], "ifnot": ["toṭarpukoḷḷāṭṭā", "toṭarpukoḷḷāviṭṭāl"] }
+    - word: "ta-2129"
+      forms: { "iff": ["தவறவிட்டா", "தவறவிட்டால்"], "onlyif": ["தவறவிட்டாதான்", "தவறவிட்டால்தான்"], "ifnot": ["தவறவிடாட்டா", "தவறவிடாவிட்டால்"] }
+      readings: { "iff": ["tavaṟaviṭṭā", "tavaṟaviṭṭāl"], "onlyif": ["tavaṟaviṭṭātāṉ", "tavaṟaviṭṭāltāṉ"], "ifnot": ["tavaṟaviṭāṭṭā", "tavaṟaviṭāviṭṭāl"] }
+    - word: "ta-2130"
+      forms: { "iff": ["பதிலளித்தா", "பதிலளித்தால்"], "onlyif": ["பதிலளித்தாதான்", "பதிலளித்தால்தான்"], "ifnot": ["பதிலளிக்காட்டா", "பதிலளிக்காவிட்டால்"] }
+      readings: { "iff": ["patilaḷittā", "patilaḷittāl"], "onlyif": ["patilaḷittātāṉ", "patilaḷittāltāṉ"], "ifnot": ["patilaḷikkāṭṭā", "patilaḷikkāviṭṭāl"] }
+    - word: "ta-2131"
+      forms: { "iff": ["பதிவேற்றினா", "பதிவேற்றினால்"], "onlyif": ["பதிவேற்றினாதான்", "பதிவேற்றினால்தான்"], "ifnot": ["பதிவேற்றாட்டா", "பதிவேற்றாவிட்டால்"] }
+      readings: { "iff": ["pativēṟṟiṉā", "pativēṟṟiṉāl"], "onlyif": ["pativēṟṟiṉātāṉ", "pativēṟṟiṉāltāṉ"], "ifnot": ["pativēṟṟāṭṭā", "pativēṟṟāviṭṭāl"] }
+    - word: "ta-1860"
+      forms: { "iff": ["கற்றுக்கொண்டா", "கற்றுக்கொண்டால்"], "onlyif": ["கற்றுக்கொண்டாதான்", "கற்றுக்கொண்டால்தான்"], "ifnot": ["கற்றுக்கொள்ளாட்டா", "கற்றுக்கொள்ளாவிட்டால்"] }
+      readings: { "iff": ["kaṟṟukkoṇṭā", "kaṟṟukkoṇṭāl"], "onlyif": ["kaṟṟukkoṇṭātāṉ", "kaṟṟukkoṇṭāltāṉ"], "ifnot": ["kaṟṟukkoḷḷāṭṭā", "kaṟṟukkoḷḷāviṭṭāl"] }
+    - word: "ta-1861"
+      forms: { "iff": ["சொல்லிக்கொடுத்தா", "சொல்லிக்கொடுத்தால்"], "onlyif": ["சொல்லிக்கொடுத்தாதான்", "சொல்லிக்கொடுத்தால்தான்"], "ifnot": ["சொல்லிக்கொடுக்காட்டா", "சொல்லிக்கொடுக்காவிட்டால்"] }
+      readings: { "iff": ["collikkoṭuttā", "collikkoṭuttāl"], "onlyif": ["collikkoṭuttātāṉ", "collikkoṭuttāltāṉ"], "ifnot": ["collikkoṭukkāṭṭā", "collikkoṭukkāviṭṭāl"] }
+    - word: "ta-2032"
+      forms: { "iff": ["காத்திருந்தா", "காத்திருந்தால்"], "onlyif": ["காத்திருந்தாதான்", "காத்திருந்தால்தான்"], "ifnot": ["காத்திருக்காட்டா", "காத்திருக்காவிட்டால்"] }
+      readings: { "iff": ["kāttiruntā", "kāttiruntāl"], "onlyif": ["kāttiruntātāṉ", "kāttiruntāltāṉ"], "ifnot": ["kāttirukkāṭṭā", "kāttirukkāviṭṭāl"] }
+    - word: "ta-2037"
+      forms: { "iff": ["ஒப்புக்கொண்டா", "ஒப்புக்கொண்டால்"], "onlyif": ["ஒப்புக்கொண்டாதான்", "ஒப்புக்கொண்டால்தான்"], "ifnot": ["ஒப்புக்கொள்ளாட்டா", "ஒப்புக்கொள்ளாவிட்டால்"] }
+      readings: { "iff": ["oppukkoṇṭā", "oppukkoṇṭāl"], "onlyif": ["oppukkoṇṭātāṉ", "oppukkoṇṭāltāṉ"], "ifnot": ["oppukkoḷḷāṭṭā", "oppukkoḷḷāviṭṭāl"] }
+    - word: "ta-2046"
+      forms: { "iff": ["பயப்பட்டா", "பயப்பட்டால்"], "onlyif": ["பயப்பட்டாதான்", "பயப்பட்டால்தான்"], "ifnot": ["பயப்படாட்டா", "பயப்படாவிட்டால்"] }
+      readings: { "iff": ["payappaṭṭā", "payappaṭṭāl"], "onlyif": ["payappaṭṭātāṉ", "payappaṭṭāltāṉ"], "ifnot": ["payappaṭāṭṭā", "payappaṭāviṭṭāl"] }
+    - word: "ta-2047"
+      forms: { "iff": ["கவலைப்பட்டா", "கவலைப்பட்டால்"], "onlyif": ["கவலைப்பட்டாதான்", "கவலைப்பட்டால்தான்"], "ifnot": ["கவலைப்படாட்டா", "கவலைப்படாவிட்டால்"] }
+      readings: { "iff": ["kavalaippaṭṭā", "kavalaippaṭṭāl"], "onlyif": ["kavalaippaṭṭātāṉ", "kavalaippaṭṭāltāṉ"], "ifnot": ["kavalaippaṭāṭṭā", "kavalaippaṭāviṭṭāl"] }
+    - word: "ta-2048"
+      forms: { "iff": ["கோபப்பட்டா", "கோபப்பட்டால்"], "onlyif": ["கோபப்பட்டாதான்", "கோபப்பட்டால்தான்"], "ifnot": ["கோபப்படாட்டா", "கோபப்படாவிட்டால்"] }
+      readings: { "iff": ["kōpappaṭṭā", "kōpappaṭṭāl"], "onlyif": ["kōpappaṭṭātāṉ", "kōpappaṭṭāltāṉ"], "ifnot": ["kōpappaṭāṭṭā", "kōpappaṭāviṭṭāl"] }
+    - word: "ta-2069"
+      forms: { "iff": ["தேர்ந்தெடுத்தா", "தேர்ந்தெடுத்தால்"], "onlyif": ["தேர்ந்தெடுத்தாதான்", "தேர்ந்தெடுத்தால்தான்"], "ifnot": ["தேர்ந்தெடுக்காட்டா", "தேர்ந்தெடுக்காவிட்டால்"] }
+      readings: { "iff": ["tērnteṭuttā", "tērnteṭuttāl"], "onlyif": ["tērnteṭuttātāṉ", "tērnteṭuttāltāṉ"], "ifnot": ["tērnteṭukkāṭṭā", "tērnteṭukkāviṭṭāl"] }
+    - word: "ta-2073"
+      forms: { "iff": ["கண்டுபிடிச்சா", "கண்டுபிடித்தால்"], "onlyif": ["கண்டுபிடிச்சாதான்", "கண்டுபிடித்தால்தான்"], "ifnot": ["கண்டுபிடிக்காட்டா", "கண்டுபிடிக்காவிட்டால்"] }
+      readings: { "iff": ["kaṇṭupiṭiccā", "kaṇṭupiṭittāl"], "onlyif": ["kaṇṭupiṭiccātāṉ", "kaṇṭupiṭittāltāṉ"], "ifnot": ["kaṇṭupiṭikkāṭṭā", "kaṇṭupiṭikkāviṭṭāl"] }
+    - word: "ta-2086"
+      forms: { "iff": ["சரிபாத்தா", "சரிபார்த்தால்"], "onlyif": ["சரிபாத்தாதான்", "சரிபார்த்தால்தான்"], "ifnot": ["சரிபார்க்காட்டா", "சரிபார்க்காவிட்டால்"] }
+      readings: { "iff": ["caripāttā", "caripārttāl"], "onlyif": ["caripāttātāṉ", "caripārttāltāṉ"], "ifnot": ["caripārkkāṭṭā", "caripārkkāviṭṭāl"] }
+    - word: "ta-1299"
+      forms: { "iff": ["குணமானா", "குணமானால்"], "onlyif": ["குணமானாதான்", "குணமானால்தான்"], "ifnot": ["குணமாகாட்டா", "குணமாகாவிட்டால்"] }
+      readings: { "iff": ["kuṇamāṉā", "kuṇamāṉāl"], "onlyif": ["kuṇamāṉātāṉ", "kuṇamāṉāltāṉ"], "ifnot": ["kuṇamākāṭṭā", "kuṇamākāviṭṭāl"] }
+    - word: "ta-2350"
+      forms: { "iff": ["கையெழுத்திட்டா", "கையெழுத்திட்டால்"], "onlyif": ["கையெழுத்திட்டாதான்", "கையெழுத்திட்டால்தான்"], "ifnot": ["கையெழுத்திடாட்டா", "கையெழுத்திடாவிட்டால்"] }
+      readings: { "iff": ["kaiyeḻuttiṭṭā", "kaiyeḻuttiṭṭāl"], "onlyif": ["kaiyeḻuttiṭṭātāṉ", "kaiyeḻuttiṭṭāltāṉ"], "ifnot": ["kaiyeḻuttiṭāṭṭā", "kaiyeḻuttiṭāviṭṭāl"] }
+    - word: "ta-2351"
+      forms: { "iff": ["ஈடுபட்டா", "ஈடுபட்டால்"], "onlyif": ["ஈடுபட்டாதான்", "ஈடுபட்டால்தான்"], "ifnot": ["ஈடுபடாட்டா", "ஈடுபடாவிட்டால்"] }
+      readings: { "iff": ["īṭupaṭṭā", "īṭupaṭṭāl"], "onlyif": ["īṭupaṭṭātāṉ", "īṭupaṭṭāltāṉ"], "ifnot": ["īṭupaṭāṭṭā", "īṭupaṭāviṭṭāl"] }
+    - word: "ta-2352"
+      forms: { "iff": ["முடிவெடுத்தா", "முடிவெடுத்தால்"], "onlyif": ["முடிவெடுத்தாதான்", "முடிவெடுத்தால்தான்"], "ifnot": ["முடிவெடுக்காட்டா", "முடிவெடுக்காவிட்டால்"] }
+      readings: { "iff": ["muṭiveṭuttā", "muṭiveṭuttāl"], "onlyif": ["muṭiveṭuttātāṉ", "muṭiveṭuttāltāṉ"], "ifnot": ["muṭiveṭukkāṭṭā", "muṭiveṭukkāviṭṭāl"] }
+    - word: "ta-2353"
+      forms: { "iff": ["அச்சிட்டா", "அச்சிட்டால்"], "onlyif": ["அச்சிட்டாதான்", "அச்சிட்டால்தான்"], "ifnot": ["அச்சிடாட்டா", "அச்சிடாவிட்டால்"] }
+      readings: { "iff": ["acciṭṭā", "acciṭṭāl"], "onlyif": ["acciṭṭātāṉ", "acciṭṭāltāṉ"], "ifnot": ["acciṭāṭṭā", "acciṭāviṭṭāl"] }
+    - word: "ta-2354"
+      forms: { "iff": ["நகலெடுத்தா", "நகலெடுத்தால்"], "onlyif": ["நகலெடுத்தாதான்", "நகலெடுத்தால்தான்"], "ifnot": ["நகலெடுக்காட்டா", "நகலெடுக்காவிட்டால்"] }
+      readings: { "iff": ["nakaleṭuttā", "nakaleṭuttāl"], "onlyif": ["nakaleṭuttātāṉ", "nakaleṭuttāltāṉ"], "ifnot": ["nakaleṭukkāṭṭā", "nakaleṭukkāviṭṭāl"] }
+    - word: "ta-2355"
+      forms: { "iff": ["கணக்கிட்டா", "கணக்கிட்டால்"], "onlyif": ["கணக்கிட்டாதான்", "கணக்கிட்டால்தான்"], "ifnot": ["கணக்கிடாட்டா", "கணக்கிடாவிட்டால்"] }
+      readings: { "iff": ["kaṇakkiṭṭā", "kaṇakkiṭṭāl"], "onlyif": ["kaṇakkiṭṭātāṉ", "kaṇakkiṭṭāltāṉ"], "ifnot": ["kaṇakkiṭāṭṭā", "kaṇakkiṭāviṭṭāl"] }
+rules:
+  - id: "ta-rule-conditional"
+    slots: ["iff", "onlyif"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வந்தா", reading: "vantā" }, { word: "வந்தால்", reading: "vantāl" }, { word: "வந்தாதான்", reading: "vantātāṉ" }]
+  - id: "ta-rule-conditional-not"
+    slots: ["ifnot"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வராட்டா", reading: "varāṭṭā" }, { word: "வராவிட்டால்", reading: "varāviṭṭāl" }]

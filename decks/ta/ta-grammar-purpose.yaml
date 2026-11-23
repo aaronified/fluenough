@@ -1,0 +1,715 @@
+schema: 1
+id: "ta-grammar-purpose"
+part: "core"
+kind: "rules"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ta-0409", "ta-0410", "ta-0412", "ta-0413"]
+  slots: ["to", "sake"]
+  rows:
+    - word: "ta-0010"
+      forms: { "to": ["வர்றதுக்கு", "வருவதற்கு"], "sake": ["வர்றதுக்காக", "வருவதற்காக"] }
+      readings: { "to": ["varṟatukku", "varuvataṟku"], "sake": ["varṟatukkāka", "varuvataṟkāka"] }
+    - word: "ta-0038"
+      forms: { "to": ["எழுகிறதுக்கு", "எழுவதற்கு"], "sake": ["எழுகிறதுக்காக", "எழுவதற்காக"] }
+      readings: { "to": ["eḻukiṟatukku", "eḻuvataṟku"], "sake": ["eḻukiṟatukkāka", "eḻuvataṟkāka"] }
+    - word: "ta-0115"
+      forms: { "to": ["படிக்கிறதுக்கு", "படிப்பதற்கு"], "sake": ["படிக்கிறதுக்காக", "படிப்பதற்காக"] }
+      readings: { "to": ["paṭikkiṟatukku", "paṭippataṟku"], "sake": ["paṭikkiṟatukkāka", "paṭippataṟkāka"] }
+    - word: "ta-0118"
+      forms: { "to": ["போறதுக்கு", "போவதற்கு"], "sake": ["போறதுக்காக", "போவதற்காக"] }
+      readings: { "to": ["pōṟatukku", "pōvataṟku"], "sake": ["pōṟatukkāka", "pōvataṟkāka"] }
+    - word: "ta-0119"
+      forms: { "to": ["சாப்பிடுறதுக்கு", "சாப்பிடுவதற்கு"], "sake": ["சாப்பிடுறதுக்காக", "சாப்பிடுவதற்காக"] }
+      readings: { "to": ["cāppiṭuṟatukku", "cāppiṭuvataṟku"], "sake": ["cāppiṭuṟatukkāka", "cāppiṭuvataṟkāka"] }
+    - word: "ta-0120"
+      forms: { "to": ["குடிக்கிறதுக்கு", "குடிப்பதற்கு"], "sake": ["குடிக்கிறதுக்காக", "குடிப்பதற்காக"] }
+      readings: { "to": ["kuṭikkiṟatukku", "kuṭippataṟku"], "sake": ["kuṭikkiṟatukkāka", "kuṭippataṟkāka"] }
+    - word: "ta-0121"
+      forms: { "to": ["பார்க்கிறதுக்கு", "பார்ப்பதற்கு"], "sake": ["பார்க்கிறதுக்காக", "பார்ப்பதற்காக"] }
+      readings: { "to": ["pārkkiṟatukku", "pārppataṟku"], "sake": ["pārkkiṟatukkāka", "pārppataṟkāka"] }
+    - word: "ta-0122"
+      forms: { "to": ["கேட்கிறதுக்கு", "கேட்பதற்கு"], "sake": ["கேட்கிறதுக்காக", "கேட்பதற்காக"] }
+      readings: { "to": ["kēṭkiṟatukku", "kēṭpataṟku"], "sake": ["kēṭkiṟatukkāka", "kēṭpataṟkāka"] }
+    - word: "ta-0123"
+      forms: { "to": ["பேசுறதுக்கு", "பேசுவதற்கு"], "sake": ["பேசுறதுக்காக", "பேசுவதற்காக"] }
+      readings: { "to": ["pēcuṟatukku", "pēcuvataṟku"], "sake": ["pēcuṟatukkāka", "pēcuvataṟkāka"] }
+    - word: "ta-0124"
+      forms: { "to": ["எழுதுறதுக்கு", "எழுதுவதற்கு"], "sake": ["எழுதுறதுக்காக", "எழுதுவதற்காக"] }
+      readings: { "to": ["eḻutuṟatukku", "eḻutuvataṟku"], "sake": ["eḻutuṟatukkāka", "eḻutuvataṟkāka"] }
+    - word: "ta-0125"
+      forms: { "to": ["கொடுக்கிறதுக்கு", "கொடுப்பதற்கு"], "sake": ["கொடுக்கிறதுக்காக", "கொடுப்பதற்காக"] }
+      readings: { "to": ["koṭukkiṟatukku", "koṭuppataṟku"], "sake": ["koṭukkiṟatukkāka", "koṭuppataṟkāka"] }
+    - word: "ta-0126"
+      forms: { "to": ["தூங்குறதுக்கு", "தூங்குவதற்கு"], "sake": ["தூங்குறதுக்காக", "தூங்குவதற்காக"] }
+      readings: { "to": ["tūṅkuṟatukku", "tūṅkuvataṟku"], "sake": ["tūṅkuṟatukkāka", "tūṅkuvataṟkāka"] }
+    - word: "ta-0127"
+      forms: { "to": ["செய்கிறதுக்கு", "செய்வதற்கு"], "sake": ["செய்கிறதுக்காக", "செய்வதற்காக"] }
+      readings: { "to": ["ceykiṟatukku", "ceyvataṟku"], "sake": ["ceykiṟatukkāka", "ceyvataṟkāka"] }
+    - word: "ta-0128"
+      forms: { "to": ["சமைக்கிறதுக்கு", "சமைப்பதற்கு"], "sake": ["சமைக்கிறதுக்காக", "சமைப்பதற்காக"] }
+      readings: { "to": ["camaikkiṟatukku", "camaippataṟku"], "sake": ["camaikkiṟatukkāka", "camaippataṟkāka"] }
+    - word: "ta-0129"
+      forms: { "to": ["வாங்குறதுக்கு", "வாங்குவதற்கு"], "sake": ["வாங்குறதுக்காக", "வாங்குவதற்காக"] }
+      readings: { "to": ["vāṅkuṟatukku", "vāṅkuvataṟku"], "sake": ["vāṅkuṟatukkāka", "vāṅkuvataṟkāka"] }
+    - word: "ta-0184"
+      forms: { "to": ["எடுக்கிறதுக்கு", "எடுப்பதற்கு"], "sake": ["எடுக்கிறதுக்காக", "எடுப்பதற்காக"] }
+      readings: { "to": ["eṭukkiṟatukku", "eṭuppataṟku"], "sake": ["eṭukkiṟatukkāka", "eṭuppataṟkāka"] }
+    - word: "ta-0185"
+      forms: { "to": ["வைக்கிறதுக்கு", "வைப்பதற்கு"], "sake": ["வைக்கிறதுக்காக", "வைப்பதற்காக"] }
+      readings: { "to": ["vaikkiṟatukku", "vaippataṟku"], "sake": ["vaikkiṟatukkāka", "vaippataṟkāka"] }
+    - word: "ta-0186"
+      forms: { "to": ["திறக்கிறதுக்கு", "திறப்பதற்கு"], "sake": ["திறக்கிறதுக்காக", "திறப்பதற்காக"] }
+      readings: { "to": ["tiṟakkiṟatukku", "tiṟappataṟku"], "sake": ["tiṟakkiṟatukkāka", "tiṟappataṟkāka"] }
+    - word: "ta-0187"
+      forms: { "to": ["மூடுறதுக்கு", "மூடுவதற்கு"], "sake": ["மூடுறதுக்காக", "மூடுவதற்காக"] }
+      readings: { "to": ["mūṭuṟatukku", "mūṭuvataṟku"], "sake": ["mūṭuṟatukkāka", "mūṭuvataṟkāka"] }
+    - word: "ta-0188"
+      forms: { "to": ["உட்காருகிறதுக்கு", "உட்காருவதற்கு"], "sake": ["உட்காருகிறதுக்காக", "உட்காருவதற்காக"] }
+      readings: { "to": ["uṭkārukiṟatukku", "uṭkāruvataṟku"], "sake": ["uṭkārukiṟatukkāka", "uṭkāruvataṟkāka"] }
+    - word: "ta-0189"
+      forms: { "to": ["நிற்கிறதுக்கு", "நிற்பதற்கு"], "sake": ["நிற்கிறதுக்காக", "நிற்பதற்காக"] }
+      readings: { "to": ["niṟkiṟatukku", "niṟpataṟku"], "sake": ["niṟkiṟatukkāka", "niṟpataṟkāka"] }
+    - word: "ta-0190"
+      forms: { "to": ["கழுவுறதுக்கு", "கழுவுவதற்கு"], "sake": ["கழுவுறதுக்காக", "கழுவுவதற்காக"] }
+      readings: { "to": ["kaḻuvuṟatukku", "kaḻuvuvataṟku"], "sake": ["kaḻuvuṟatukkāka", "kaḻuvuvataṟkāka"] }
+    - word: "ta-0191"
+      forms: { "to": ["விளையாடுறதுக்கு", "விளையாடுவதற்கு"], "sake": ["விளையாடுறதுக்காக", "விளையாடுவதற்காக"] }
+      readings: { "to": ["viḷaiyāṭuṟatukku", "viḷaiyāṭuvataṟku"], "sake": ["viḷaiyāṭuṟatukkāka", "viḷaiyāṭuvataṟkāka"] }
+    - word: "ta-1101"
+      forms: { "to": ["குளிக்கிறதுக்கு", "குளிப்பதற்கு"], "sake": ["குளிக்கிறதுக்காக", "குளிப்பதற்காக"] }
+      readings: { "to": ["kuḷikkiṟatukku", "kuḷippataṟku"], "sake": ["kuḷikkiṟatukkāka", "kuḷippataṟkāka"] }
+    - word: "ta-1102"
+      forms: { "to": ["துலக்குகிறதுக்கு", "துலக்குவதற்கு"], "sake": ["துலக்குகிறதுக்காக", "துலக்குவதற்காக"] }
+      readings: { "to": ["tulakkukiṟatukku", "tulakkuvataṟku"], "sake": ["tulakkukiṟatukkāka", "tulakkuvataṟkāka"] }
+    - word: "ta-1103"
+      forms: { "to": ["நடக்கிறதுக்கு", "நடப்பதற்கு"], "sake": ["நடக்கிறதுக்காக", "நடப்பதற்காக"] }
+      readings: { "to": ["naṭakkiṟatukku", "naṭappataṟku"], "sake": ["naṭakkiṟatukkāka", "naṭappataṟkāka"] }
+    - word: "ta-1104"
+      forms: { "to": ["திரும்புகிறதுக்கு", "திரும்புவதற்கு"], "sake": ["திரும்புகிறதுக்காக", "திரும்புவதற்காக"] }
+      readings: { "to": ["tirumpukiṟatukku", "tirumpuvataṟku"], "sake": ["tirumpukiṟatukkāka", "tirumpuvataṟkāka"] }
+    - word: "ta-1107"
+      forms: { "to": ["தொடங்குகிறதுக்கு", "தொடங்குவதற்கு"], "sake": ["தொடங்குகிறதுக்காக", "தொடங்குவதற்காக"] }
+      readings: { "to": ["toṭaṅkukiṟatukku", "toṭaṅkuvataṟku"], "sake": ["toṭaṅkukiṟatukkāka", "toṭaṅkuvataṟkāka"] }
+    - word: "ta-1801"
+      forms: { "to": ["உதவுகிறதுக்கு", "உதவுவதற்கு"], "sake": ["உதவுகிறதுக்காக", "உதவுவதற்காக"] }
+      readings: { "to": ["utavukiṟatukku", "utavuvataṟku"], "sake": ["utavukiṟatukkāka", "utavuvataṟkāka"] }
+    - word: "ta-0450"
+      forms: { "to": ["விடுகிறதுக்கு", "விடுவதற்கு"], "sake": ["விடுகிறதுக்காக", "விடுவதற்காக"] }
+      readings: { "to": ["viṭukiṟatukku", "viṭuvataṟku"], "sake": ["viṭukiṟatukkāka", "viṭuvataṟkāka"] }
+    - word: "ta-0451"
+      forms: { "to": ["கொள்கிறதுக்கு", "கொள்வதற்கு"], "sake": ["கொள்கிறதுக்காக", "கொள்வதற்காக"] }
+      readings: { "to": ["koḷkiṟatukku", "koḷvataṟku"], "sake": ["koḷkiṟatukkāka", "koḷvataṟkāka"] }
+    - word: "ta-0452"
+      forms: { "to": ["போடுகிறதுக்கு", "போடுவதற்கு"], "sake": ["போடுகிறதுக்காக", "போடுவதற்காக"] }
+      readings: { "to": ["pōṭukiṟatukku", "pōṭuvataṟku"], "sake": ["pōṭukiṟatukkāka", "pōṭuvataṟkāka"] }
+    - word: "ta-0453"
+      forms: { "to": ["தருகிறதுக்கு", "தருவதற்கு"], "sake": ["தருகிறதுக்காக", "தருவதற்காக"] }
+      readings: { "to": ["tarukiṟatukku", "taruvataṟku"], "sake": ["tarukiṟatukkāka", "taruvataṟkāka"] }
+    - word: "ta-0454"
+      forms: { "to": ["நிறுத்துகிறதுக்கு", "நிறுத்துவதற்கு"], "sake": ["நிறுத்துகிறதுக்காக", "நிறுத்துவதற்காக"] }
+      readings: { "to": ["niṟuttukiṟatukku", "niṟuttuvataṟku"], "sake": ["niṟuttukiṟatukkāka", "niṟuttuvataṟkāka"] }
+    - word: "ta-0455"
+      forms: { "to": ["தள்ளுகிறதுக்கு", "தள்ளுவதற்கு"], "sake": ["தள்ளுகிறதுக்காக", "தள்ளுவதற்காக"] }
+      readings: { "to": ["taḷḷukiṟatukku", "taḷḷuvataṟku"], "sake": ["taḷḷukiṟatukkāka", "taḷḷuvataṟkāka"] }
+    - word: "ta-0456"
+      forms: { "to": ["பிடிக்கிறதுக்கு", "பிடிப்பதற்கு"], "sake": ["பிடிக்கிறதுக்காக", "பிடிப்பதற்காக"] }
+      readings: { "to": ["piṭikkiṟatukku", "piṭippataṟku"], "sake": ["piṭikkiṟatukkāka", "piṭippataṟkāka"] }
+    - word: "ta-0457"
+      forms: { "to": ["வீசுகிறதுக்கு", "வீசுவதற்கு"], "sake": ["வீசுகிறதுக்காக", "வீசுவதற்காக"] }
+      readings: { "to": ["vīcukiṟatukku", "vīcuvataṟku"], "sake": ["vīcukiṟatukkāka", "vīcuvataṟkāka"] }
+    - word: "ta-0458"
+      forms: { "to": ["தூக்குகிறதுக்கு", "தூக்குவதற்கு"], "sake": ["தூக்குகிறதுக்காக", "தூக்குவதற்காக"] }
+      readings: { "to": ["tūkkukiṟatukku", "tūkkuvataṟku"], "sake": ["tūkkukiṟatukkāka", "tūkkuvataṟkāka"] }
+    - word: "ta-0460"
+      forms: { "to": ["பண்ணுகிறதுக்கு", "பண்ணுவதற்கு"], "sake": ["பண்ணுகிறதுக்காக", "பண்ணுவதற்காக"] }
+      readings: { "to": ["paṇṇukiṟatukku", "paṇṇuvataṟku"], "sake": ["paṇṇukiṟatukkāka", "paṇṇuvataṟkāka"] }
+    - word: "ta-0461"
+      forms: { "to": ["ஆகுகிறதுக்கு", "ஆவதற்கு"], "sake": ["ஆகுகிறதுக்காக", "ஆவதற்காக"] }
+      readings: { "to": ["ākukiṟatukku", "āvataṟku"], "sake": ["ākukiṟatukkāka", "āvataṟkāka"] }
+    - word: "ta-0462"
+      forms: { "to": ["படுகிறதுக்கு", "படுவதற்கு"], "sake": ["படுகிறதுக்காக", "படுவதற்காக"] }
+      readings: { "to": ["paṭukiṟatukku", "paṭuvataṟku"], "sake": ["paṭukiṟatukkāka", "paṭuvataṟkāka"] }
+    - word: "ta-0470"
+      forms: { "to": ["செல்கிறதுக்கு", "செல்வதற்கு"], "sake": ["செல்கிறதுக்காக", "செல்வதற்காக"] }
+      readings: { "to": ["celkiṟatukku", "celvataṟku"], "sake": ["celkiṟatukkāka", "celvataṟkāka"] }
+    - word: "ta-0471"
+      forms: { "to": ["உண்கிறதுக்கு", "உண்பதற்கு"], "sake": ["உண்கிறதுக்காக", "உண்பதற்காக"] }
+      readings: { "to": ["uṇkiṟatukku", "uṇpataṟku"], "sake": ["uṇkiṟatukkāka", "uṇpataṟkāka"] }
+    - word: "ta-0472"
+      forms: { "to": ["அருந்துகிறதுக்கு", "அருந்துவதற்கு"], "sake": ["அருந்துகிறதுக்காக", "அருந்துவதற்காக"] }
+      readings: { "to": ["aruntukiṟatukku", "aruntuvataṟku"], "sake": ["aruntukiṟatukkāka", "aruntuvataṟkāka"] }
+    - word: "ta-0473"
+      forms: { "to": ["கூறுகிறதுக்கு", "கூறுவதற்கு"], "sake": ["கூறுகிறதுக்காக", "கூறுவதற்காக"] }
+      readings: { "to": ["kūṟukiṟatukku", "kūṟuvataṟku"], "sake": ["kūṟukiṟatukkāka", "kūṟuvataṟkāka"] }
+    - word: "ta-0474"
+      forms: { "to": ["தெரிவிக்கிறதுக்கு", "தெரிவிப்பதற்கு"], "sake": ["தெரிவிக்கிறதுக்காக", "தெரிவிப்பதற்காக"] }
+      readings: { "to": ["terivikkiṟatukku", "terivippataṟku"], "sake": ["terivikkiṟatukkāka", "terivippataṟkāka"] }
+    - word: "ta-2003"
+      forms: { "to": ["உடுத்துகிறதுக்கு", "உடுத்துவதற்கு"], "sake": ["உடுத்துகிறதுக்காக", "உடுத்துவதற்காக"] }
+      readings: { "to": ["uṭuttukiṟatukku", "uṭuttuvataṟku"], "sake": ["uṭuttukiṟatukkāka", "uṭuttuvataṟkāka"] }
+    - word: "ta-2004"
+      forms: { "to": ["கழற்றுகிறதுக்கு", "கழற்றுவதற்கு"], "sake": ["கழற்றுகிறதுக்காக", "கழற்றுவதற்காக"] }
+      readings: { "to": ["kaḻaṟṟukiṟatukku", "kaḻaṟṟuvataṟku"], "sake": ["kaḻaṟṟukiṟatukkāka", "kaḻaṟṟuvataṟkāka"] }
+    - word: "ta-2005"
+      forms: { "to": ["கட்டுகிறதுக்கு", "கட்டுவதற்கு"], "sake": ["கட்டுகிறதுக்காக", "கட்டுவதற்காக"] }
+      readings: { "to": ["kaṭṭukiṟatukku", "kaṭṭuvataṟku"], "sake": ["kaṭṭukiṟatukkāka", "kaṭṭuvataṟkāka"] }
+    - word: "ta-2006"
+      forms: { "to": ["சீவுகிறதுக்கு", "சீவுவதற்கு"], "sake": ["சீவுகிறதுக்காக", "சீவுவதற்காக"] }
+      readings: { "to": ["cīvukiṟatukku", "cīvuvataṟku"], "sake": ["cīvukiṟatukkāka", "cīvuvataṟkāka"] }
+    - word: "ta-2007"
+      forms: { "to": ["அலங்கரிக்கிறதுக்கு", "அலங்கரிப்பதற்கு"], "sake": ["அலங்கரிக்கிறதுக்காக", "அலங்கரிப்பதற்காக"] }
+      readings: { "to": ["alaṅkarikkiṟatukku", "alaṅkarippataṟku"], "sake": ["alaṅkarikkiṟatukkāka", "alaṅkarippataṟkāka"] }
+    - word: "ta-2008"
+      forms: { "to": ["வளர்கிறதுக்கு", "வளர்வதற்கு"], "sake": ["வளர்கிறதுக்காக", "வளர்வதற்காக"] }
+      readings: { "to": ["vaḷarkiṟatukku", "vaḷarvataṟku"], "sake": ["vaḷarkiṟatukkāka", "vaḷarvataṟkāka"] }
+    - word: "ta-2009"
+      forms: { "to": ["பூசுகிறதுக்கு", "பூசுவதற்கு"], "sake": ["பூசுகிறதுக்காக", "பூசுவதற்காக"] }
+      readings: { "to": ["pūcukiṟatukku", "pūcuvataṟku"], "sake": ["pūcukiṟatukkāka", "pūcuvataṟkāka"] }
+    - word: "ta-1945"
+      forms: { "to": ["பெருக்குகிறதுக்கு", "பெருக்குவதற்கு"], "sake": ["பெருக்குகிறதுக்காக", "பெருக்குவதற்காக"] }
+      readings: { "to": ["perukkukiṟatukku", "perukkuvataṟku"], "sake": ["perukkukiṟatukkāka", "perukkuvataṟkāka"] }
+    - word: "ta-1946"
+      forms: { "to": ["துடைக்கிறதுக்கு", "துடைப்பதற்கு"], "sake": ["துடைக்கிறதுக்காக", "துடைப்பதற்காக"] }
+      readings: { "to": ["tuṭaikkiṟatukku", "tuṭaippataṟku"], "sake": ["tuṭaikkiṟatukkāka", "tuṭaippataṟkāka"] }
+    - word: "ta-1947"
+      forms: { "to": ["துவைக்கிறதுக்கு", "துவைப்பதற்கு"], "sake": ["துவைக்கிறதுக்காக", "துவைப்பதற்காக"] }
+      readings: { "to": ["tuvaikkiṟatukku", "tuvaippataṟku"], "sake": ["tuvaikkiṟatukkāka", "tuvaippataṟkāka"] }
+    - word: "ta-1948"
+      forms: { "to": ["மடிக்கிறதுக்கு", "மடிப்பதற்கு"], "sake": ["மடிக்கிறதுக்காக", "மடிப்பதற்காக"] }
+      readings: { "to": ["maṭikkiṟatukku", "maṭippataṟku"], "sake": ["maṭikkiṟatukkāka", "maṭippataṟkāka"] }
+    - word: "ta-1949"
+      forms: { "to": ["இழுகிறதுக்கு", "இழுப்பதற்கு"], "sake": ["இழுகிறதுக்காக", "இழுப்பதற்காக"] }
+      readings: { "to": ["iḻukiṟatukku", "iḻuppataṟku"], "sake": ["iḻukiṟatukkāka", "iḻuppataṟkāka"] }
+    - word: "ta-1951"
+      forms: { "to": ["நிரப்புகிறதுக்கு", "நிரப்புவதற்கு"], "sake": ["நிரப்புகிறதுக்காக", "நிரப்புவதற்காக"] }
+      readings: { "to": ["nirappukiṟatukku", "nirappuvataṟku"], "sake": ["nirappukiṟatukkāka", "nirappuvataṟkāka"] }
+    - word: "ta-1952"
+      forms: { "to": ["ஊற்றுகிறதுக்கு", "ஊற்றுவதற்கு"], "sake": ["ஊற்றுகிறதுக்காக", "ஊற்றுவதற்காக"] }
+      readings: { "to": ["ūṟṟukiṟatukku", "ūṟṟuvataṟku"], "sake": ["ūṟṟukiṟatukkāka", "ūṟṟuvataṟkāka"] }
+    - word: "ta-1953"
+      forms: { "to": ["அணைக்கிறதுக்கு", "அணைப்பதற்கு"], "sake": ["அணைக்கிறதுக்காக", "அணைப்பதற்காக"] }
+      readings: { "to": ["aṇaikkiṟatukku", "aṇaippataṟku"], "sake": ["aṇaikkiṟatukkāka", "aṇaippataṟkāka"] }
+    - word: "ta-1954"
+      forms: { "to": ["ஏற்றுகிறதுக்கு", "ஏற்றுவதற்கு"], "sake": ["ஏற்றுகிறதுக்காக", "ஏற்றுவதற்காக"] }
+      readings: { "to": ["ēṟṟukiṟatukku", "ēṟṟuvataṟku"], "sake": ["ēṟṟukiṟatukkāka", "ēṟṟuvataṟkāka"] }
+    - word: "ta-1955"
+      forms: { "to": ["உலர்த்துகிறதுக்கு", "உலர்த்துவதற்கு"], "sake": ["உலர்த்துகிறதுக்காக", "உலர்த்துவதற்காக"] }
+      readings: { "to": ["ularttukiṟatukku", "ularttuvataṟku"], "sake": ["ularttukiṟatukkāka", "ularttuvataṟkāka"] }
+    - word: "ta-1956"
+      forms: { "to": ["வெட்டுகிறதுக்கு", "வெட்டுவதற்கு"], "sake": ["வெட்டுகிறதுக்காக", "வெட்டுவதற்காக"] }
+      readings: { "to": ["veṭṭukiṟatukku", "veṭṭuvataṟku"], "sake": ["veṭṭukiṟatukkāka", "veṭṭuvataṟkāka"] }
+    - word: "ta-1957"
+      forms: { "to": ["கலக்குகிறதுக்கு", "கலக்குவதற்கு"], "sake": ["கலக்குகிறதுக்காக", "கலக்குவதற்காக"] }
+      readings: { "to": ["kalakkukiṟatukku", "kalakkuvataṟku"], "sake": ["kalakkukiṟatukkāka", "kalakkuvataṟkāka"] }
+    - word: "ta-1958"
+      forms: { "to": ["தேடுகிறதுக்கு", "தேடுவதற்கு"], "sake": ["தேடுகிறதுக்காக", "தேடுவதற்காக"] }
+      readings: { "to": ["tēṭukiṟatukku", "tēṭuvataṟku"], "sake": ["tēṭukiṟatukkāka", "tēṭuvataṟkāka"] }
+    - word: "ta-1959"
+      forms: { "to": ["அடுக்குகிறதுக்கு", "அடுக்குவதற்கு"], "sake": ["அடுக்குகிறதுக்காக", "அடுக்குவதற்காக"] }
+      readings: { "to": ["aṭukkukiṟatukku", "aṭukkuvataṟku"], "sake": ["aṭukkukiṟatukkāka", "aṭukkuvataṟkāka"] }
+    - word: "ta-1961"
+      forms: { "to": ["மாற்றுகிறதுக்கு", "மாற்றுவதற்கு"], "sake": ["மாற்றுகிறதுக்காக", "மாற்றுவதற்காக"] }
+      readings: { "to": ["māṟṟukiṟatukku", "māṟṟuvataṟku"], "sake": ["māṟṟukiṟatukkāka", "māṟṟuvataṟkāka"] }
+    - word: "ta-1183"
+      forms: { "to": ["பொங்குகிறதுக்கு", "பொங்குவதற்கு"], "sake": ["பொங்குகிறதுக்காக", "பொங்குவதற்காக"] }
+      readings: { "to": ["poṅkukiṟatukku", "poṅkuvataṟku"], "sake": ["poṅkukiṟatukkāka", "poṅkuvataṟkāka"] }
+    - word: "ta-1192"
+      forms: { "to": ["கொண்டாடுகிறதுக்கு", "கொண்டாடுவதற்கு"], "sake": ["கொண்டாடுகிறதுக்காக", "கொண்டாடுவதற்காக"] }
+      readings: { "to": ["koṇṭāṭukiṟatukku", "koṇṭāṭuvataṟku"], "sake": ["koṇṭāṭukiṟatukkāka", "koṇṭāṭuvataṟkāka"] }
+    - word: "ta-1202"
+      forms: { "to": ["வணங்குகிறதுக்கு", "வணங்குவதற்கு"], "sake": ["வணங்குகிறதுக்காக", "வணங்குவதற்காக"] }
+      readings: { "to": ["vaṇaṅkukiṟatukku", "vaṇaṅkuvataṟku"], "sake": ["vaṇaṅkukiṟatukkāka", "vaṇaṅkuvataṟkāka"] }
+    - word: "ta-1905"
+      forms: { "to": ["பாடுகிறதுக்கு", "பாடுவதற்கு"], "sake": ["பாடுகிறதுக்காக", "பாடுவதற்காக"] }
+      readings: { "to": ["pāṭukiṟatukku", "pāṭuvataṟku"], "sake": ["pāṭukiṟatukkāka", "pāṭuvataṟkāka"] }
+    - word: "ta-1907"
+      forms: { "to": ["தீட்டுகிறதுக்கு", "தீட்டுவதற்கு"], "sake": ["தீட்டுகிறதுக்காக", "தீட்டுவதற்காக"] }
+      readings: { "to": ["tīṭṭukiṟatukku", "tīṭṭuvataṟku"], "sake": ["tīṭṭukiṟatukkāka", "tīṭṭuvataṟkāka"] }
+    - word: "ta-1908"
+      forms: { "to": ["ஓடுகிறதுக்கு", "ஓடுவதற்கு"], "sake": ["ஓடுகிறதுக்காக", "ஓடுவதற்காக"] }
+      readings: { "to": ["ōṭukiṟatukku", "ōṭuvataṟku"], "sake": ["ōṭukiṟatukkāka", "ōṭuvataṟkāka"] }
+    - word: "ta-1909"
+      forms: { "to": ["பறக்கிறதுக்கு", "பறப்பதற்கு"], "sake": ["பறக்கிறதுக்காக", "பறப்பதற்காக"] }
+      readings: { "to": ["paṟakkiṟatukku", "paṟappataṟku"], "sake": ["paṟakkiṟatukkāka", "paṟappataṟkāka"] }
+    - word: "ta-1910"
+      forms: { "to": ["நீந்துகிறதுக்கு", "நீந்துவதற்கு"], "sake": ["நீந்துகிறதுக்காக", "நீந்துவதற்காக"] }
+      readings: { "to": ["nīntukiṟatukku", "nīntuvataṟku"], "sake": ["nīntukiṟatukkāka", "nīntuvataṟkāka"] }
+    - word: "ta-1911"
+      forms: { "to": ["குதிக்கிறதுக்கு", "குதிப்பதற்கு"], "sake": ["குதிக்கிறதுக்காக", "குதிப்பதற்காக"] }
+      readings: { "to": ["kutikkiṟatukku", "kutippataṟku"], "sake": ["kutikkiṟatukkāka", "kutippataṟkāka"] }
+    - word: "ta-1912"
+      forms: { "to": ["ஏறுகிறதுக்கு", "ஏறுவதற்கு"], "sake": ["ஏறுகிறதுக்காக", "ஏறுவதற்காக"] }
+      readings: { "to": ["ēṟukiṟatukku", "ēṟuvataṟku"], "sake": ["ēṟukiṟatukkāka", "ēṟuvataṟkāka"] }
+    - word: "ta-1913"
+      forms: { "to": ["சேகரிக்கிறதுக்கு", "சேகரிப்பதற்கு"], "sake": ["சேகரிக்கிறதுக்காக", "சேகரிப்பதற்காக"] }
+      readings: { "to": ["cēkarikkiṟatukku", "cēkarippataṟku"], "sake": ["cēkarikkiṟatukkāka", "cēkarippataṟkāka"] }
+    - word: "ta-1914"
+      forms: { "to": ["சிரிக்கிறதுக்கு", "சிரிப்பதற்கு"], "sake": ["சிரிக்கிறதுக்காக", "சிரிப்பதற்காக"] }
+      readings: { "to": ["cirikkiṟatukku", "cirippataṟku"], "sake": ["cirikkiṟatukkāka", "cirippataṟkāka"] }
+    - word: "ta-1915"
+      forms: { "to": ["ரசிக்கிறதுக்கு", "ரசிப்பதற்கு"], "sake": ["ரசிக்கிறதுக்காக", "ரசிப்பதற்காக"] }
+      readings: { "to": ["racikkiṟatukku", "racippataṟku"], "sake": ["racikkiṟatukkāka", "racippataṟkāka"] }
+    - word: "ta-1916"
+      forms: { "to": ["வெல்கிறதுக்கு", "வெல்வதற்கு"], "sake": ["வெல்கிறதுக்காக", "வெல்வதற்காக"] }
+      readings: { "to": ["velkiṟatukku", "velvataṟku"], "sake": ["velkiṟatukkāka", "velvataṟkāka"] }
+    - word: "ta-2180"
+      forms: { "to": ["ஓட்டுகிறதுக்கு", "ஓட்டுவதற்கு"], "sake": ["ஓட்டுகிறதுக்காக", "ஓட்டுவதற்காக"] }
+      readings: { "to": ["ōṭṭukiṟatukku", "ōṭṭuvataṟku"], "sake": ["ōṭṭukiṟatukkāka", "ōṭṭuvataṟkāka"] }
+    - word: "ta-2182"
+      forms: { "to": ["அடைகிறதுக்கு", "அடைவதற்கு"], "sake": ["அடைகிறதுக்காக", "அடைவதற்காக"] }
+      readings: { "to": ["aṭaikiṟatukku", "aṭaivataṟku"], "sake": ["aṭaikiṟatukkāka", "aṭaivataṟkāka"] }
+    - word: "ta-2183"
+      forms: { "to": ["இறக்குகிறதுக்கு", "இறக்குவதற்கு"], "sake": ["இறக்குகிறதுக்காக", "இறக்குவதற்காக"] }
+      readings: { "to": ["iṟakkukiṟatukku", "iṟakkuvataṟku"], "sake": ["iṟakkukiṟatukkāka", "iṟakkuvataṟkāka"] }
+    - word: "ta-2186"
+      forms: { "to": ["இயங்குகிறதுக்கு", "இயங்குவதற்கு"], "sake": ["இயங்குகிறதுக்காக", "இயங்குவதற்காக"] }
+      readings: { "to": ["iyaṅkukiṟatukku", "iyaṅkuvataṟku"], "sake": ["iyaṅkukiṟatukkāka", "iyaṅkuvataṟkāka"] }
+    - word: "ta-2191"
+      forms: { "to": ["பரிசோதிக்கிறதுக்கு", "பரிசோதிப்பதற்கு"], "sake": ["பரிசோதிக்கிறதுக்காக", "பரிசோதிப்பதற்காக"] }
+      readings: { "to": ["paricōtikkiṟatukku", "paricōtippataṟku"], "sake": ["paricōtikkiṟatukkāka", "paricōtippataṟkāka"] }
+    - word: "ta-2241"
+      forms: { "to": ["மலர்கிறதுக்கு", "மலர்வதற்கு"], "sake": ["மலர்கிறதுக்காக", "மலர்வதற்காக"] }
+      readings: { "to": ["malarkiṟatukku", "malarvataṟku"], "sake": ["malarkiṟatukkāka", "malarvataṟkāka"] }
+    - word: "ta-2242"
+      forms: { "to": ["உதிர்கிறதுக்கு", "உதிர்வதற்கு"], "sake": ["உதிர்கிறதுக்காக", "உதிர்வதற்காக"] }
+      readings: { "to": ["utirkiṟatukku", "utirvataṟku"], "sake": ["utirkiṟatukkāka", "utirvataṟkāka"] }
+    - word: "ta-2243"
+      forms: { "to": ["முளைக்கிறதுக்கு", "முளைப்பதற்கு"], "sake": ["முளைக்கிறதுக்காக", "முளைப்பதற்காக"] }
+      readings: { "to": ["muḷaikkiṟatukku", "muḷaippataṟku"], "sake": ["muḷaikkiṟatukkāka", "muḷaippataṟkāka"] }
+    - word: "ta-2244"
+      forms: { "to": ["உருகுகிறதுக்கு", "உருகுவதற்கு"], "sake": ["உருகுகிறதுக்காக", "உருகுவதற்காக"] }
+      readings: { "to": ["urukukiṟatukku", "urukuvataṟku"], "sake": ["urukukiṟatukkāka", "urukuvataṟkāka"] }
+    - word: "ta-2245"
+      forms: { "to": ["உறைகிறதுக்கு", "உறைவதற்கு"], "sake": ["உறைகிறதுக்காக", "உறைவதற்காக"] }
+      readings: { "to": ["uṟaikiṟatukku", "uṟaivataṟku"], "sake": ["uṟaikiṟatukkāka", "uṟaivataṟkāka"] }
+    - word: "ta-2246"
+      forms: { "to": ["ஒழுகுகிறதுக்கு", "ஒழுகுவதற்கு"], "sake": ["ஒழுகுகிறதுக்காக", "ஒழுகுவதற்காக"] }
+      readings: { "to": ["oḻukukiṟatukku", "oḻukuvataṟku"], "sake": ["oḻukukiṟatukkāka", "oḻukuvataṟkāka"] }
+    - word: "ta-2122"
+      forms: { "to": ["இணைக்கிறதுக்கு", "இணைப்பதற்கு"], "sake": ["இணைக்கிறதுக்காக", "இணைப்பதற்காக"] }
+      readings: { "to": ["iṇaikkiṟatukku", "iṇaippataṟku"], "sake": ["iṇaikkiṟatukkāka", "iṇaippataṟkāka"] }
+    - word: "ta-2123"
+      forms: { "to": ["துண்டிக்கிறதுக்கு", "துண்டிப்பதற்கு"], "sake": ["துண்டிக்கிறதுக்காக", "துண்டிப்பதற்காக"] }
+      readings: { "to": ["tuṇṭikkiṟatukku", "tuṇṭippataṟku"], "sake": ["tuṇṭikkiṟatukkāka", "tuṇṭippataṟkāka"] }
+    - word: "ta-2124"
+      forms: { "to": ["நீக்குகிறதுக்கு", "நீக்குவதற்கு"], "sake": ["நீக்குகிறதுக்காக", "நீக்குவதற்காக"] }
+      readings: { "to": ["nīkkukiṟatukku", "nīkkuvataṟku"], "sake": ["nīkkukiṟatukkāka", "nīkkuvataṟkāka"] }
+    - word: "ta-2125"
+      forms: { "to": ["புதுப்பிக்கிறதுக்கு", "புதுப்பிப்பதற்கு"], "sake": ["புதுப்பிக்கிறதுக்காக", "புதுப்பிப்பதற்காக"] }
+      readings: { "to": ["putuppikkiṟatukku", "putuppippataṟku"], "sake": ["putuppikkiṟatukkāka", "putuppippataṟkāka"] }
+    - word: "ta-2126"
+      forms: { "to": ["நிறுவுகிறதுக்கு", "நிறுவுவதற்கு"], "sake": ["நிறுவுகிறதுக்காக", "நிறுவுவதற்காக"] }
+      readings: { "to": ["niṟuvukiṟatukku", "niṟuvuvataṟku"], "sake": ["niṟuvukiṟatukkāka", "niṟuvuvataṟkāka"] }
+    - word: "ta-2128"
+      forms: { "to": ["அழுத்துகிறதுக்கு", "அழுத்துவதற்கு"], "sake": ["அழுத்துகிறதுக்காக", "அழுத்துவதற்காக"] }
+      readings: { "to": ["aḻuttukiṟatukku", "aḻuttuvataṟku"], "sake": ["aḻuttukiṟatukkāka", "aḻuttuvataṟkāka"] }
+    - word: "ta-1857"
+      forms: { "to": ["புரிகிறதுக்கு", "புரிவதற்கு"], "sake": ["புரிகிறதுக்காக", "புரிவதற்காக"] }
+      readings: { "to": ["purikiṟatukku", "purivataṟku"], "sake": ["purikiṟatukkāka", "purivataṟkāka"] }
+    - word: "ta-1858"
+      forms: { "to": ["மறக்கிறதுக்கு", "மறப்பதற்கு"], "sake": ["மறக்கிறதுக்காக", "மறப்பதற்காக"] }
+      readings: { "to": ["maṟakkiṟatukku", "maṟappataṟku"], "sake": ["maṟakkiṟatukkāka", "maṟappataṟkāka"] }
+    - word: "ta-1859"
+      forms: { "to": ["நினைக்கிறதுக்கு", "நினைப்பதற்கு"], "sake": ["நினைக்கிறதுக்காக", "நினைப்பதற்காக"] }
+      readings: { "to": ["niṉaikkiṟatukku", "niṉaippataṟku"], "sake": ["niṉaikkiṟatukkāka", "niṉaippataṟkāka"] }
+    - word: "ta-1242"
+      forms: { "to": ["செலுத்துகிறதுக்கு", "செலுத்துவதற்கு"], "sake": ["செலுத்துகிறதுக்காக", "செலுத்துவதற்காக"] }
+      readings: { "to": ["celuttukiṟatukku", "celuttuvataṟku"], "sake": ["celuttukiṟatukkāka", "celuttuvataṟkāka"] }
+    - word: "ta-1243"
+      forms: { "to": ["ஒப்பிடுகிறதுக்கு", "ஒப்பிடுவதற்கு"], "sake": ["ஒப்பிடுகிறதுக்காக", "ஒப்பிடுவதற்காக"] }
+      readings: { "to": ["oppiṭukiṟatukku", "oppiṭuvataṟku"], "sake": ["oppiṭukiṟatukkāka", "oppiṭuvataṟkāka"] }
+    - word: "ta-1244"
+      forms: { "to": ["விசாரிக்கிறதுக்கு", "விசாரிப்பதற்கு"], "sake": ["விசாரிக்கிறதுக்காக", "விசாரிப்பதற்காக"] }
+      readings: { "to": ["vicārikkiṟatukku", "vicārippataṟku"], "sake": ["vicārikkiṟatukkāka", "vicārippataṟkāka"] }
+    - word: "ta-1245"
+      forms: { "to": ["கூட்டுகிறதுக்கு", "கூட்டுவதற்கு"], "sake": ["கூட்டுகிறதுக்காக", "கூட்டுவதற்காக"] }
+      readings: { "to": ["kūṭṭukiṟatukku", "kūṭṭuvataṟku"], "sake": ["kūṭṭukiṟatukkāka", "kūṭṭuvataṟkāka"] }
+    - word: "ta-1246"
+      forms: { "to": ["வசூலிக்கிறதுக்கு", "வசூலிப்பதற்கு"], "sake": ["வசூலிக்கிறதுக்காக", "வசூலிப்பதற்காக"] }
+      readings: { "to": ["vacūlikkiṟatukku", "vacūlippataṟku"], "sake": ["vacūlikkiṟatukkāka", "vacūlippataṟkāka"] }
+    - word: "ta-2017"
+      forms: { "to": ["சொல்கிறதுக்கு", "சொல்வதற்கு"], "sake": ["சொல்கிறதுக்காக", "சொல்வதற்காக"] }
+      readings: { "to": ["colkiṟatukku", "colvataṟku"], "sake": ["colkiṟatukkāka", "colvataṟkāka"] }
+    - word: "ta-2018"
+      forms: { "to": ["இருகிறதுக்கு", "இருப்பதற்கு"], "sake": ["இருகிறதுக்காக", "இருப்பதற்காக"] }
+      readings: { "to": ["irukiṟatukku", "iruppataṟku"], "sake": ["irukiṟatukkāka", "iruppataṟkāka"] }
+    - word: "ta-2019"
+      forms: { "to": ["தெரிகிறதுக்கு", "தெரிவதற்கு"], "sake": ["தெரிகிறதுக்காக", "தெரிவதற்காக"] }
+      readings: { "to": ["terikiṟatukku", "terivataṟku"], "sake": ["terikiṟatukkāka", "terivataṟkāka"] }
+    - word: "ta-2020"
+      forms: { "to": ["தங்குகிறதுக்கு", "தங்குவதற்கு"], "sake": ["தங்குகிறதுக்காக", "தங்குவதற்காக"] }
+      readings: { "to": ["taṅkukiṟatukku", "taṅkuvataṟku"], "sake": ["taṅkukiṟatukkāka", "taṅkuvataṟkāka"] }
+    - word: "ta-2021"
+      forms: { "to": ["வாழ்கிறதுக்கு", "வாழ்வதற்கு"], "sake": ["வாழ்கிறதுக்காக", "வாழ்வதற்காக"] }
+      readings: { "to": ["vāḻkiṟatukku", "vāḻvataṟku"], "sake": ["vāḻkiṟatukkāka", "vāḻvataṟkāka"] }
+    - word: "ta-2022"
+      forms: { "to": ["இறங்குகிறதுக்கு", "இறங்குவதற்கு"], "sake": ["இறங்குகிறதுக்காக", "இறங்குவதற்காக"] }
+      readings: { "to": ["iṟaṅkukiṟatukku", "iṟaṅkuvataṟku"], "sake": ["iṟaṅkukiṟatukkāka", "iṟaṅkuvataṟkāka"] }
+    - word: "ta-2024"
+      forms: { "to": ["பெறுகிறதுக்கு", "பெறுவதற்கு"], "sake": ["பெறுகிறதுக்காக", "பெறுவதற்காக"] }
+      readings: { "to": ["peṟukiṟatukku", "peṟuvataṟku"], "sake": ["peṟukiṟatukkāka", "peṟuvataṟkāka"] }
+    - word: "ta-2025"
+      forms: { "to": ["கிடைக்கிறதுக்கு", "கிடைப்பதற்கு"], "sake": ["கிடைக்கிறதுக்காக", "கிடைப்பதற்காக"] }
+      readings: { "to": ["kiṭaikkiṟatukku", "kiṭaippataṟku"], "sake": ["kiṭaikkiṟatukkāka", "kiṭaippataṟkāka"] }
+    - word: "ta-2029"
+      forms: { "to": ["அனுப்புகிறதுக்கு", "அனுப்புவதற்கு"], "sake": ["அனுப்புகிறதுக்காக", "அனுப்புவதற்காக"] }
+      readings: { "to": ["aṉuppukiṟatukku", "aṉuppuvataṟku"], "sake": ["aṉuppukiṟatukkāka", "aṉuppuvataṟkāka"] }
+    - word: "ta-2030"
+      forms: { "to": ["கூப்பிடுகிறதுக்கு", "கூப்பிடுவதற்கு"], "sake": ["கூப்பிடுகிறதுக்காக", "கூப்பிடுவதற்காக"] }
+      readings: { "to": ["kūppiṭukiṟatukku", "kūppiṭuvataṟku"], "sake": ["kūppiṭukiṟatukkāka", "kūppiṭuvataṟkāka"] }
+    - word: "ta-2031"
+      forms: { "to": ["அழைக்கிறதுக்கு", "அழைப்பதற்கு"], "sake": ["அழைக்கிறதுக்காக", "அழைப்பதற்காக"] }
+      readings: { "to": ["aḻaikkiṟatukku", "aḻaippataṟku"], "sake": ["aḻaikkiṟatukkāka", "aḻaippataṟkāka"] }
+    - word: "ta-2033"
+      forms: { "to": ["சந்திக்கிறதுக்கு", "சந்திப்பதற்கு"], "sake": ["சந்திக்கிறதுக்காக", "சந்திப்பதற்காக"] }
+      readings: { "to": ["cantikkiṟatukku", "cantippataṟku"], "sake": ["cantikkiṟatukkāka", "cantippataṟkāka"] }
+    - word: "ta-2034"
+      forms: { "to": ["சேர்கிறதுக்கு", "சேர்வதற்கு"], "sake": ["சேர்கிறதுக்காக", "சேர்வதற்காக"] }
+      readings: { "to": ["cērkiṟatukku", "cērvataṟku"], "sake": ["cērkiṟatukkāka", "cērvataṟkāka"] }
+    - word: "ta-2035"
+      forms: { "to": ["பிரிகிறதுக்கு", "பிரிவதற்கு"], "sake": ["பிரிகிறதுக்காக", "பிரிவதற்காக"] }
+      readings: { "to": ["pirikiṟatukku", "pirivataṟku"], "sake": ["pirikiṟatukkāka", "pirivataṟkāka"] }
+    - word: "ta-2036"
+      forms: { "to": ["நம்புகிறதுக்கு", "நம்புவதற்கு"], "sake": ["நம்புகிறதுக்காக", "நம்புவதற்காக"] }
+      readings: { "to": ["nampukiṟatukku", "nampuvataṟku"], "sake": ["nampukiṟatukkāka", "nampuvataṟkāka"] }
+    - word: "ta-2038"
+      forms: { "to": ["பகிர்கிறதுக்கு", "பகிர்வதற்கு"], "sake": ["பகிர்கிறதுக்காக", "பகிர்வதற்காக"] }
+      readings: { "to": ["pakirkiṟatukku", "pakirvataṟku"], "sake": ["pakirkiṟatukkāka", "pakirvataṟkāka"] }
+    - word: "ta-2039"
+      forms: { "to": ["ஒட்டுகிறதுக்கு", "ஒட்டுவதற்கு"], "sake": ["ஒட்டுகிறதுக்காக", "ஒட்டுவதற்காக"] }
+      readings: { "to": ["oṭṭukiṟatukku", "oṭṭuvataṟku"], "sake": ["oṭṭukiṟatukkāka", "oṭṭuvataṟkāka"] }
+    - word: "ta-2040"
+      forms: { "to": ["கொட்டுகிறதுக்கு", "கொட்டுவதற்கு"], "sake": ["கொட்டுகிறதுக்காக", "கொட்டுவதற்காக"] }
+      readings: { "to": ["koṭṭukiṟatukku", "koṭṭuvataṟku"], "sake": ["koṭṭukiṟatukkāka", "koṭṭuvataṟkāka"] }
+    - word: "ta-2041"
+      forms: { "to": ["எரிகிறதுக்கு", "எரிவதற்கு"], "sake": ["எரிகிறதுக்காக", "எரிவதற்காக"] }
+      readings: { "to": ["erikiṟatukku", "erivataṟku"], "sake": ["erikiṟatukkāka", "erivataṟkāka"] }
+    - word: "ta-2042"
+      forms: { "to": ["உருவாக்குகிறதுக்கு", "உருவாக்குவதற்கு"], "sake": ["உருவாக்குகிறதுக்காக", "உருவாக்குவதற்காக"] }
+      readings: { "to": ["uruvākkukiṟatukku", "uruvākkuvataṟku"], "sake": ["uruvākkukiṟatukkāka", "uruvākkuvataṟkāka"] }
+    - word: "ta-2043"
+      forms: { "to": ["திருடுகிறதுக்கு", "திருடுவதற்கு"], "sake": ["திருடுகிறதுக்காக", "திருடுவதற்காக"] }
+      readings: { "to": ["tiruṭukiṟatukku", "tiruṭuvataṟku"], "sake": ["tiruṭukiṟatukkāka", "tiruṭuvataṟkāka"] }
+    - word: "ta-2044"
+      forms: { "to": ["யோசிக்கிறதுக்கு", "யோசிப்பதற்கு"], "sake": ["யோசிக்கிறதுக்காக", "யோசிப்பதற்காக"] }
+      readings: { "to": ["yōcikkiṟatukku", "yōcippataṟku"], "sake": ["yōcikkiṟatukkāka", "yōcippataṟkāka"] }
+    - word: "ta-2045"
+      forms: { "to": ["விரும்புகிறதுக்கு", "விரும்புவதற்கு"], "sake": ["விரும்புகிறதுக்காக", "விரும்புவதற்காக"] }
+      readings: { "to": ["virumpukiṟatukku", "virumpuvataṟku"], "sake": ["virumpukiṟatukkāka", "virumpuvataṟkāka"] }
+    - word: "ta-2049"
+      forms: { "to": ["அழுகிறதுக்கு", "அழுவதற்கு"], "sake": ["அழுகிறதுக்காக", "அழுவதற்காக"] }
+      readings: { "to": ["aḻukiṟatukku", "aḻuvataṟku"], "sake": ["aḻukiṟatukkāka", "aḻuvataṟkāka"] }
+    - word: "ta-2050"
+      forms: { "to": ["எண்ணுகிறதுக்கு", "எண்ணுவதற்கு"], "sake": ["எண்ணுகிறதுக்காக", "எண்ணுவதற்காக"] }
+      readings: { "to": ["eṇṇukiṟatukku", "eṇṇuvataṟku"], "sake": ["eṇṇukiṟatukkāka", "eṇṇuvataṟkāka"] }
+    - word: "ta-2051"
+      forms: { "to": ["நுழைகிறதுக்கு", "நுழைவதற்கு"], "sake": ["நுழைகிறதுக்காக", "நுழைவதற்காக"] }
+      readings: { "to": ["nuḻaikiṟatukku", "nuḻaivataṟku"], "sake": ["nuḻaikiṟatukkāka", "nuḻaivataṟkāka"] }
+    - word: "ta-2052"
+      forms: { "to": ["வெளியேறுகிறதுக்கு", "வெளியேறுவதற்கு"], "sake": ["வெளியேறுகிறதுக்காக", "வெளியேறுவதற்காக"] }
+      readings: { "to": ["veḷiyēṟukiṟatukku", "veḷiyēṟuvataṟku"], "sake": ["veḷiyēṟukiṟatukkāka", "veḷiyēṟuvataṟkāka"] }
+    - word: "ta-2053"
+      forms: { "to": ["கடக்கிறதுக்கு", "கடப்பதற்கு"], "sake": ["கடக்கிறதுக்காக", "கடப்பதற்காக"] }
+      readings: { "to": ["kaṭakkiṟatukku", "kaṭappataṟku"], "sake": ["kaṭakkiṟatukkāka", "kaṭappataṟkāka"] }
+    - word: "ta-2054"
+      forms: { "to": ["சுற்றுகிறதுக்கு", "சுற்றுவதற்கு"], "sake": ["சுற்றுகிறதுக்காக", "சுற்றுவதற்காக"] }
+      readings: { "to": ["cuṟṟukiṟatukku", "cuṟṟuvataṟku"], "sake": ["cuṟṟukiṟatukkāka", "cuṟṟuvataṟkāka"] }
+    - word: "ta-2055"
+      forms: { "to": ["அமர்கிறதுக்கு", "அமர்வதற்கு"], "sake": ["அமர்கிறதுக்காக", "அமர்வதற்காக"] }
+      readings: { "to": ["amarkiṟatukku", "amarvataṟku"], "sake": ["amarkiṟatukkāka", "amarvataṟkāka"] }
+    - word: "ta-2056"
+      forms: { "to": ["நகர்கிறதுக்கு", "நகர்வதற்கு"], "sake": ["நகர்கிறதுக்காக", "நகர்வதற்காக"] }
+      readings: { "to": ["nakarkiṟatukku", "nakarvataṟku"], "sake": ["nakarkiṟatukkāka", "nakarvataṟkāka"] }
+    - word: "ta-2057"
+      forms: { "to": ["தொடுகிறதுக்கு", "தொடுவதற்கு"], "sake": ["தொடுகிறதுக்காக", "தொடுவதற்காக"] }
+      readings: { "to": ["toṭukiṟatukku", "toṭuvataṟku"], "sake": ["toṭukiṟatukkāka", "toṭuvataṟkāka"] }
+    - word: "ta-2058"
+      forms: { "to": ["எறிகிறதுக்கு", "எறிவதற்கு"], "sake": ["எறிகிறதுக்காக", "எறிவதற்காக"] }
+      readings: { "to": ["eṟikiṟatukku", "eṟivataṟku"], "sake": ["eṟikiṟatukkāka", "eṟivataṟkāka"] }
+    - word: "ta-2059"
+      forms: { "to": ["மாறுகிறதுக்கு", "மாறுவதற்கு"], "sake": ["மாறுகிறதுக்காக", "மாறுவதற்காக"] }
+      readings: { "to": ["māṟukiṟatukku", "māṟuvataṟku"], "sake": ["māṟukiṟatukkāka", "māṟuvataṟkāka"] }
+    - word: "ta-2062"
+      forms: { "to": ["தொடர்கிறதுக்கு", "தொடர்வதற்கு"], "sake": ["தொடர்கிறதுக்காக", "தொடர்வதற்காக"] }
+      readings: { "to": ["toṭarkiṟatukku", "toṭarvataṟku"], "sake": ["toṭarkiṟatukkāka", "toṭarvataṟkāka"] }
+    - word: "ta-2063"
+      forms: { "to": ["முயல்கிறதுக்கு", "முயல்வதற்கு"], "sake": ["முயல்கிறதுக்காக", "முயல்வதற்காக"] }
+      readings: { "to": ["muyalkiṟatukku", "muyalvataṟku"], "sake": ["muyalkiṟatukkāka", "muyalvataṟkāka"] }
+    - word: "ta-2064"
+      forms: { "to": ["சேமிக்கிறதுக்கு", "சேமிப்பதற்கு"], "sake": ["சேமிக்கிறதுக்காக", "சேமிப்பதற்காக"] }
+      readings: { "to": ["cēmikkiṟatukku", "cēmippataṟku"], "sake": ["cēmikkiṟatukkāka", "cēmippataṟkāka"] }
+    - word: "ta-2065"
+      forms: { "to": ["செலவழிக்கிறதுக்கு", "செலவழிப்பதற்கு"], "sake": ["செலவழிக்கிறதுக்காக", "செலவழிப்பதற்காக"] }
+      readings: { "to": ["celavaḻikkiṟatukku", "celavaḻippataṟku"], "sake": ["celavaḻikkiṟatukkāka", "celavaḻippataṟkāka"] }
+    - word: "ta-2066"
+      forms: { "to": ["எழுப்புகிறதுக்கு", "எழுப்புவதற்கு"], "sake": ["எழுப்புகிறதுக்காக", "எழுப்புவதற்காக"] }
+      readings: { "to": ["eḻuppukiṟatukku", "eḻuppuvataṟku"], "sake": ["eḻuppukiṟatukkāka", "eḻuppuvataṟkāka"] }
+    - word: "ta-2067"
+      forms: { "to": ["விழிக்கிறதுக்கு", "விழிப்பதற்கு"], "sake": ["விழிக்கிறதுக்காக", "விழிப்பதற்காக"] }
+      readings: { "to": ["viḻikkiṟatukku", "viḻippataṟku"], "sake": ["viḻikkiṟatukkāka", "viḻippataṟkāka"] }
+    - word: "ta-2068"
+      forms: { "to": ["விழுகிறதுக்கு", "விழுவதற்கு"], "sake": ["விழுகிறதுக்காக", "விழுவதற்காக"] }
+      readings: { "to": ["viḻukiṟatukku", "viḻuvataṟku"], "sake": ["viḻukiṟatukkāka", "viḻuvataṟkāka"] }
+    - word: "ta-2070"
+      forms: { "to": ["காட்டுகிறதுக்கு", "காட்டுவதற்கு"], "sake": ["காட்டுகிறதுக்காக", "காட்டுவதற்காக"] }
+      readings: { "to": ["kāṭṭukiṟatukku", "kāṭṭuvataṟku"], "sake": ["kāṭṭukiṟatukkāka", "kāṭṭuvataṟkāka"] }
+    - word: "ta-2071"
+      forms: { "to": ["குனிகிறதுக்கு", "குனிவதற்கு"], "sake": ["குனிகிறதுக்காக", "குனிவதற்காக"] }
+      readings: { "to": ["kuṉikiṟatukku", "kuṉivataṟku"], "sake": ["kuṉikiṟatukkāka", "kuṉivataṟkāka"] }
+    - word: "ta-2072"
+      forms: { "to": ["சாய்கிறதுக்கு", "சாய்வதற்கு"], "sake": ["சாய்கிறதுக்காக", "சாய்வதற்காக"] }
+      readings: { "to": ["cāykiṟatukku", "cāyvataṟku"], "sake": ["cāykiṟatukkāka", "cāyvataṟkāka"] }
+    - word: "ta-2074"
+      forms: { "to": ["சம்பாதிக்கிறதுக்கு", "சம்பாதிப்பதற்கு"], "sake": ["சம்பாதிக்கிறதுக்காக", "சம்பாதிப்பதற்காக"] }
+      readings: { "to": ["campātikkiṟatukku", "campātippataṟku"], "sake": ["campātikkiṟatukkāka", "campātippataṟkāka"] }
+    - word: "ta-2075"
+      forms: { "to": ["பழகுகிறதுக்கு", "பழகுவதற்கு"], "sake": ["பழகுகிறதுக்காக", "பழகுவதற்காக"] }
+      readings: { "to": ["paḻakukiṟatukku", "paḻakuvataṟku"], "sake": ["paḻakukiṟatukkāka", "paḻakuvataṟkāka"] }
+    - word: "ta-2076"
+      forms: { "to": ["திட்டுகிறதுக்கு", "திட்டுவதற்கு"], "sake": ["திட்டுகிறதுக்காக", "திட்டுவதற்காக"] }
+      readings: { "to": ["tiṭṭukiṟatukku", "tiṭṭuvataṟku"], "sake": ["tiṭṭukiṟatukkāka", "tiṭṭuvataṟkāka"] }
+    - word: "ta-2077"
+      forms: { "to": ["பாராட்டுகிறதுக்கு", "பாராட்டுவதற்கு"], "sake": ["பாராட்டுகிறதுக்காக", "பாராட்டுவதற்காக"] }
+      readings: { "to": ["pārāṭṭukiṟatukku", "pārāṭṭuvataṟku"], "sake": ["pārāṭṭukiṟatukkāka", "pārāṭṭuvataṟkāka"] }
+    - word: "ta-2078"
+      forms: { "to": ["நடிக்கிறதுக்கு", "நடிப்பதற்கு"], "sake": ["நடிக்கிறதுக்காக", "நடிப்பதற்காக"] }
+      readings: { "to": ["naṭikkiṟatukku", "naṭippataṟku"], "sake": ["naṭikkiṟatukkāka", "naṭippataṟkāka"] }
+    - word: "ta-2079"
+      forms: { "to": ["ஆடுகிறதுக்கு", "ஆடுவதற்கு"], "sake": ["ஆடுகிறதுக்காக", "ஆடுவதற்காக"] }
+      readings: { "to": ["āṭukiṟatukku", "āṭuvataṟku"], "sake": ["āṭukiṟatukkāka", "āṭuvataṟkāka"] }
+    - word: "ta-2080"
+      forms: { "to": ["குறைகிறதுக்கு", "குறைவதற்கு"], "sake": ["குறைகிறதுக்காக", "குறைவதற்காக"] }
+      readings: { "to": ["kuṟaikiṟatukku", "kuṟaivataṟku"], "sake": ["kuṟaikiṟatukkāka", "kuṟaivataṟkāka"] }
+    - word: "ta-2081"
+      forms: { "to": ["அதிகரிக்கிறதுக்கு", "அதிகரிப்பதற்கு"], "sake": ["அதிகரிக்கிறதுக்காக", "அதிகரிப்பதற்காக"] }
+      readings: { "to": ["atikarikkiṟatukku", "atikarippataṟku"], "sake": ["atikarikkiṟatukkāka", "atikarippataṟkāka"] }
+    - word: "ta-2083"
+      forms: { "to": ["மன்னிக்கிறதுக்கு", "மன்னிப்பதற்கு"], "sake": ["மன்னிக்கிறதுக்காக", "மன்னிப்பதற்காக"] }
+      readings: { "to": ["maṉṉikkiṟatukku", "maṉṉippataṟku"], "sake": ["maṉṉikkiṟatukkāka", "maṉṉippataṟkāka"] }
+    - word: "ta-2084"
+      forms: { "to": ["ஏமாற்றுகிறதுக்கு", "ஏமாற்றுவதற்கு"], "sake": ["ஏமாற்றுகிறதுக்காக", "ஏமாற்றுவதற்காக"] }
+      readings: { "to": ["ēmāṟṟukiṟatukku", "ēmāṟṟuvataṟku"], "sake": ["ēmāṟṟukiṟatukkāka", "ēmāṟṟuvataṟkāka"] }
+    - word: "ta-2085"
+      forms: { "to": ["பயன்படுத்துகிறதுக்கு", "பயன்படுத்துவதற்கு"], "sake": ["பயன்படுத்துகிறதுக்காக", "பயன்படுத்துவதற்காக"] }
+      readings: { "to": ["payaṉpaṭuttukiṟatukku", "payaṉpaṭuttuvataṟku"], "sake": ["payaṉpaṭuttukiṟatukkāka", "payaṉpaṭuttuvataṟkāka"] }
+    - word: "ta-1141"
+      forms: { "to": ["பெய்கிறதுக்கு", "பெய்வதற்கு"], "sake": ["பெய்கிறதுக்காக", "பெய்வதற்காக"] }
+      readings: { "to": ["peykiṟatukku", "peyvataṟku"], "sake": ["peykiṟatukkāka", "peyvataṟkāka"] }
+    - word: "ta-1143"
+      forms: { "to": ["அடிக்கிறதுக்கு", "அடிப்பதற்கு"], "sake": ["அடிக்கிறதுக்காக", "அடிப்பதற்காக"] }
+      readings: { "to": ["aṭikkiṟatukku", "aṭippataṟku"], "sake": ["aṭikkiṟatukkāka", "aṭippataṟkāka"] }
+    - word: "ta-1144"
+      forms: { "to": ["நனைகிறதுக்கு", "நனைவதற்கு"], "sake": ["நனைகிறதுக்காக", "நனைவதற்காக"] }
+      readings: { "to": ["naṉaikiṟatukku", "naṉaivataṟku"], "sake": ["naṉaikiṟatukkāka", "naṉaivataṟkāka"] }
+    - word: "ta-1145"
+      forms: { "to": ["காய்கிறதுக்கு", "காய்வதற்கு"], "sake": ["காய்கிறதுக்காக", "காய்வதற்காக"] }
+      readings: { "to": ["kāykiṟatukku", "kāyvataṟku"], "sake": ["kāykiṟatukkāka", "kāyvataṟkāka"] }
+    - word: "ta-2023"
+      forms: { "to": ["தோன்றுகிறதுக்கு", "தோன்றுவதற்கு"], "sake": ["தோன்றுகிறதுக்காக", "தோன்றுவதற்காக"] }
+      readings: { "to": ["tōṉṟukiṟatukku", "tōṉṟuvataṟku"], "sake": ["tōṉṟukiṟatukkāka", "tōṉṟuvataṟkāka"] }
+    - word: "ta-2027"
+      forms: { "to": ["கவனிக்கிறதுக்கு", "கவனிப்பதற்கு"], "sake": ["கவனிக்கிறதுக்காக", "கவனிப்பதற்காக"] }
+      readings: { "to": ["kavaṉikkiṟatukku", "kavaṉippataṟku"], "sake": ["kavaṉikkiṟatukkāka", "kavaṉippataṟkāka"] }
+    - word: "ta-2028"
+      forms: { "to": ["வருந்துகிறதுக்கு", "வருந்துவதற்கு"], "sake": ["வருந்துகிறதுக்காக", "வருந்துவதற்காக"] }
+      readings: { "to": ["varuntukiṟatukku", "varuntuvataṟku"], "sake": ["varuntukiṟatukkāka", "varuntuvataṟkāka"] }
+    - word: "ta-2061"
+      forms: { "to": ["ஊக்குவிக்கிறதுக்கு", "ஊக்குவிப்பதற்கு"], "sake": ["ஊக்குவிக்கிறதுக்காக", "ஊக்குவிப்பதற்காக"] }
+      readings: { "to": ["ūkkuvikkiṟatukku", "ūkkuvippataṟku"], "sake": ["ūkkuvikkiṟatukkāka", "ūkkuvippataṟkāka"] }
+    - word: "ta-2082"
+      forms: { "to": ["நிரூபிக்கிறதுக்கு", "நிரூபிப்பதற்கு"], "sake": ["நிரூபிக்கிறதுக்காக", "நிரூபிப்பதற்காக"] }
+      readings: { "to": ["nirūpikkiṟatukku", "nirūpippataṟku"], "sake": ["nirūpikkiṟatukkāka", "nirūpippataṟkāka"] }
+    - word: "ta-1142"
+      forms: { "to": ["மறைகிறதுக்கு", "மறைவதற்கு"], "sake": ["மறைகிறதுக்காக", "மறைவதற்காக"] }
+      readings: { "to": ["maṟaikiṟatukku", "maṟaivataṟku"], "sake": ["maṟaikiṟatukkāka", "maṟaivataṟkāka"] }
+    - word: "ta-1950"
+      forms: { "to": ["அலசுகிறதுக்கு", "அலசுவதற்கு"], "sake": ["அலசுகிறதுக்காக", "அலசுவதற்காக"] }
+      readings: { "to": ["alacukiṟatukku", "alacuvataṟku"], "sake": ["alacukiṟatukkāka", "alacuvataṟkāka"] }
+    - word: "ta-1960"
+      forms: { "to": ["பரப்புகிறதுக்கு", "பரப்புவதற்கு"], "sake": ["பரப்புகிறதுக்காக", "பரப்புவதற்காக"] }
+      readings: { "to": ["parappukiṟatukku", "parappuvataṟku"], "sake": ["parappukiṟatukkāka", "parappuvataṟkāka"] }
+    - word: "ta-1146"
+      forms: { "to": ["மின்னுகிறதுக்கு", "மின்னுவதற்கு"], "sake": ["மின்னுகிறதுக்காக", "மின்னுவதற்காக"] }
+      readings: { "to": ["miṉṉukiṟatukku", "miṉṉuvataṟku"], "sake": ["miṉṉukiṟatukkāka", "miṉṉuvataṟkāka"] }
+    - word: "ta-1297"
+      forms: { "to": ["இருமுகிறதுக்கு", "இருமுவதற்கு"], "sake": ["இருமுகிறதுக்காக", "இருமுவதற்காக"] }
+      readings: { "to": ["irumukiṟatukku", "irumuvataṟku"], "sake": ["irumukiṟatukkāka", "irumuvataṟkāka"] }
+    - word: "ta-1298"
+      forms: { "to": ["தும்முகிறதுக்கு", "தும்முவதற்கு"], "sake": ["தும்முகிறதுக்காக", "தும்முவதற்காக"] }
+      readings: { "to": ["tummukiṟatukku", "tummuvataṟku"], "sake": ["tummukiṟatukkāka", "tummuvataṟkāka"] }
+    - word: "ta-1300"
+      forms: { "to": ["மயங்குகிறதுக்கு", "மயங்குவதற்கு"], "sake": ["மயங்குகிறதுக்காக", "மயங்குவதற்காக"] }
+      readings: { "to": ["mayaṅkukiṟatukku", "mayaṅkuvataṟku"], "sake": ["mayaṅkukiṟatukkāka", "mayaṅkuvataṟkāka"] }
+    - word: "ta-1303"
+      forms: { "to": ["வீங்குகிறதுக்கு", "வீங்குவதற்கு"], "sake": ["வீங்குகிறதுக்காக", "வீங்குவதற்காக"] }
+      readings: { "to": ["vīṅkukiṟatukku", "vīṅkuvataṟku"], "sake": ["vīṅkukiṟatukkāka", "vīṅkuvataṟkāka"] }
+    - word: "ta-1304"
+      forms: { "to": ["நடுங்குகிறதுக்கு", "நடுங்குவதற்கு"], "sake": ["நடுங்குகிறதுக்காக", "நடுங்குவதற்காக"] }
+      readings: { "to": ["naṭuṅkukiṟatukku", "naṭuṅkuvataṟku"], "sake": ["naṭuṅkukiṟatukkāka", "naṭuṅkuvataṟkāka"] }
+    - word: "ta-1305"
+      forms: { "to": ["வியர்க்கிறதுக்கு", "வியர்ப்பதற்கு"], "sake": ["வியர்க்கிறதுக்காக", "வியர்ப்பதற்காக"] }
+      readings: { "to": ["viyarkkiṟatukku", "viyarppataṟku"], "sake": ["viyarkkiṟatukkāka", "viyarppataṟkāka"] }
+    - word: "ta-1317"
+      forms: { "to": ["பரிமாறுகிறதுக்கு", "பரிமாறுவதற்கு"], "sake": ["பரிமாறுகிறதுக்காக", "பரிமாறுவதற்காக"] }
+      readings: { "to": ["parimāṟukiṟatukku", "parimāṟuvataṟku"], "sake": ["parimāṟukiṟatukkāka", "parimāṟuvataṟkāka"] }
+    - word: "ta-1346"
+      forms: { "to": ["வறுகிறதுக்கு", "வறுப்பதற்கு"], "sake": ["வறுகிறதுக்காக", "வறுப்பதற்காக"] }
+      readings: { "to": ["vaṟukiṟatukku", "vaṟuppataṟku"], "sake": ["vaṟukiṟatukkāka", "vaṟuppataṟkāka"] }
+    - word: "ta-1347"
+      forms: { "to": ["வதக்குகிறதுக்கு", "வதக்குவதற்கு"], "sake": ["வதக்குகிறதுக்காக", "வதக்குவதற்காக"] }
+      readings: { "to": ["vatakkukiṟatukku", "vatakkuvataṟku"], "sake": ["vatakkukiṟatukkāka", "vatakkuvataṟkāka"] }
+    - word: "ta-1348"
+      forms: { "to": ["கொதிக்கிறதுக்கு", "கொதிப்பதற்கு"], "sake": ["கொதிக்கிறதுக்காக", "கொதிப்பதற்காக"] }
+      readings: { "to": ["kotikkiṟatukku", "kotippataṟku"], "sake": ["kotikkiṟatukkāka", "kotippataṟkāka"] }
+    - word: "ta-1349"
+      forms: { "to": ["நறுக்குகிறதுக்கு", "நறுக்குவதற்கு"], "sake": ["நறுக்குகிறதுக்காக", "நறுக்குவதற்காக"] }
+      readings: { "to": ["naṟukkukiṟatukku", "naṟukkuvataṟku"], "sake": ["naṟukkukiṟatukkāka", "naṟukkuvataṟkāka"] }
+    - word: "ta-1350"
+      forms: { "to": ["கிளறுகிறதுக்கு", "கிளறுவதற்கு"], "sake": ["கிளறுகிறதுக்காக", "கிளறுவதற்காக"] }
+      readings: { "to": ["kiḷaṟukiṟatukku", "kiḷaṟuvataṟku"], "sake": ["kiḷaṟukiṟatukkāka", "kiḷaṟuvataṟkāka"] }
+    - word: "ta-1351"
+      forms: { "to": ["வேகுகிறதுக்கு", "வேகுவதற்கு"], "sake": ["வேகுகிறதுக்காக", "வேகுவதற்காக"] }
+      readings: { "to": ["vēkukiṟatukku", "vēkuvataṟku"], "sake": ["vēkukiṟatukkāka", "vēkuvataṟkāka"] }
+    - word: "ta-1352"
+      forms: { "to": ["பொரிக்கிறதுக்கு", "பொரிப்பதற்கு"], "sake": ["பொரிக்கிறதுக்காக", "பொரிப்பதற்காக"] }
+      readings: { "to": ["porikkiṟatukku", "porippataṟku"], "sake": ["porikkiṟatukkāka", "porippataṟkāka"] }
+    - word: "ta-1353"
+      forms: { "to": ["அவிக்கிறதுக்கு", "அவிப்பதற்கு"], "sake": ["அவிக்கிறதுக்காக", "அவிப்பதற்காக"] }
+      readings: { "to": ["avikkiṟatukku", "avippataṟku"], "sake": ["avikkiṟatukkāka", "avippataṟkāka"] }
+    - word: "ta-1354"
+      forms: { "to": ["சுடுகிறதுக்கு", "சுடுவதற்கு"], "sake": ["சுடுகிறதுக்காக", "சுடுவதற்காக"] }
+      readings: { "to": ["cuṭukiṟatukku", "cuṭuvataṟku"], "sake": ["cuṭukiṟatukkāka", "cuṭuvataṟkāka"] }
+    - word: "ta-1355"
+      forms: { "to": ["தாளிக்கிறதுக்கு", "தாளிப்பதற்கு"], "sake": ["தாளிக்கிறதுக்காக", "தாளிப்பதற்காக"] }
+      readings: { "to": ["tāḷikkiṟatukku", "tāḷippataṟku"], "sake": ["tāḷikkiṟatukkāka", "tāḷippataṟkāka"] }
+    - word: "ta-1356"
+      forms: { "to": ["பிசைகிறதுக்கு", "பிசைவதற்கு"], "sake": ["பிசைகிறதுக்காக", "பிசைவதற்காக"] }
+      readings: { "to": ["picaikiṟatukku", "picaivataṟku"], "sake": ["picaikiṟatukkāka", "picaivataṟkāka"] }
+    - word: "ta-1357"
+      forms: { "to": ["உரிக்கிறதுக்கு", "உரிப்பதற்கு"], "sake": ["உரிக்கிறதுக்காக", "உரிப்பதற்காக"] }
+      readings: { "to": ["urikkiṟatukku", "urippataṟku"], "sake": ["urikkiṟatukkāka", "urippataṟkāka"] }
+    - word: "ta-1358"
+      forms: { "to": ["துருவுகிறதுக்கு", "துருவுவதற்கு"], "sake": ["துருவுகிறதுக்காக", "துருவுவதற்காக"] }
+      readings: { "to": ["turuvukiṟatukku", "turuvuvataṟku"], "sake": ["turuvukiṟatukkāka", "turuvuvataṟkāka"] }
+    - word: "ta-2347"
+      forms: { "to": ["நடத்துகிறதுக்கு", "நடத்துவதற்கு"], "sake": ["நடத்துகிறதுக்காக", "நடத்துவதற்காக"] }
+      readings: { "to": ["naṭattukiṟatukku", "naṭattuvataṟku"], "sake": ["naṭattukiṟatukkāka", "naṭattuvataṟkāka"] }
+    - word: "ta-2348"
+      forms: { "to": ["நிர்வகிக்கிறதுக்கு", "நிர்வகிப்பதற்கு"], "sake": ["நிர்வகிக்கிறதுக்காக", "நிர்வகிப்பதற்காக"] }
+      readings: { "to": ["nirvakikkiṟatukku", "nirvakippataṟku"], "sake": ["nirvakikkiṟatukkāka", "nirvakippataṟkāka"] }
+    - word: "ta-2349"
+      forms: { "to": ["விண்ணப்பிக்கிறதுக்கு", "விண்ணப்பிப்பதற்கு"], "sake": ["விண்ணப்பிக்கிறதுக்காக", "விண்ணப்பிப்பதற்காக"] }
+      readings: { "to": ["viṇṇappikkiṟatukku", "viṇṇappippataṟku"], "sake": ["viṇṇappikkiṟatukkāka", "viṇṇappippataṟkāka"] }
+    - word: "ta-2356"
+      forms: { "to": ["ஒத்துழைக்கிறதுக்கு", "ஒத்துழைப்பதற்கு"], "sake": ["ஒத்துழைக்கிறதுக்காக", "ஒத்துழைப்பதற்காக"] }
+      readings: { "to": ["ottuḻaikkiṟatukku", "ottuḻaippataṟku"], "sake": ["ottuḻaikkiṟatukkāka", "ottuḻaippataṟkāka"] }
+    - word: "ta-2026"
+      forms: { "to": ["கலந்துகொள்கிறதுக்கு", "கலந்துகொள்வதற்கு"], "sake": ["கலந்துகொள்கிறதுக்காக", "கலந்துகொள்வதற்காக"] }
+      readings: { "to": ["kalantukoḷkiṟatukku", "kalantukoḷvataṟku"], "sake": ["kalantukoḷkiṟatukkāka", "kalantukoḷvataṟkāka"] }
+    - word: "ta-2060"
+      forms: { "to": ["பெருமைப்படுகிறதுக்கு", "பெருமைப்படுவதற்கு"], "sake": ["பெருமைப்படுகிறதுக்காக", "பெருமைப்படுவதற்காக"] }
+      readings: { "to": ["perumaippaṭukiṟatukku", "perumaippaṭuvataṟku"], "sake": ["perumaippaṭukiṟatukkāka", "perumaippaṭuvataṟkāka"] }
+    - word: "ta-2185"
+      forms: { "to": ["சுற்றித்திரிகிறதுக்கு", "சுற்றித்திரிவதற்கு"], "sake": ["சுற்றித்திரிகிறதுக்காக", "சுற்றித்திரிவதற்காக"] }
+      readings: { "to": ["cuṟṟittirikiṟatukku", "cuṟṟittirivataṟku"], "sake": ["cuṟṟittirikiṟatukkāka", "cuṟṟittirivataṟkāka"] }
+    - word: "ta-1906"
+      forms: { "to": ["நடனமாடுகிறதுக்கு", "நடனமாடுவதற்கு"], "sake": ["நடனமாடுகிறதுக்காக", "நடனமாடுவதற்காக"] }
+      readings: { "to": ["naṭaṉamāṭukiṟatukku", "naṭaṉamāṭuvataṟku"], "sake": ["naṭaṉamāṭukiṟatukkāka", "naṭaṉamāṭuvataṟkāka"] }
+    - word: "ta-2181"
+      forms: { "to": ["புறப்படுகிறதுக்கு", "புறப்படுவதற்கு"], "sake": ["புறப்படுகிறதுக்காக", "புறப்படுவதற்காக"] }
+      readings: { "to": ["puṟappaṭukiṟatukku", "puṟappaṭuvataṟku"], "sake": ["puṟappaṭukiṟatukkāka", "puṟappaṭuvataṟkāka"] }
+    - word: "ta-2184"
+      forms: { "to": ["வழிதவறுகிறதுக்கு", "வழிதவறுவதற்கு"], "sake": ["வழிதவறுகிறதுக்காக", "வழிதவறுவதற்காக"] }
+      readings: { "to": ["vaḻitavaṟukiṟatukku", "vaḻitavaṟuvataṟku"], "sake": ["vaḻitavaṟukiṟatukkāka", "vaḻitavaṟuvataṟkāka"] }
+    - word: "ta-2187"
+      forms: { "to": ["வழியனுப்புகிறதுக்கு", "வழியனுப்புவதற்கு"], "sake": ["வழியனுப்புகிறதுக்காக", "வழியனுப்புவதற்காக"] }
+      readings: { "to": ["vaḻiyaṉuppukiṟatukku", "vaḻiyaṉuppuvataṟku"], "sake": ["vaḻiyaṉuppukiṟatukkāka", "vaḻiyaṉuppuvataṟkāka"] }
+    - word: "ta-2188"
+      forms: { "to": ["திட்டமிடுகிறதுக்கு", "திட்டமிடுவதற்கு"], "sake": ["திட்டமிடுகிறதுக்காக", "திட்டமிடுவதற்காக"] }
+      readings: { "to": ["tiṭṭamiṭukiṟatukku", "tiṭṭamiṭuvataṟku"], "sake": ["tiṭṭamiṭukiṟatukkāka", "tiṭṭamiṭuvataṟkāka"] }
+    - word: "ta-2189"
+      forms: { "to": ["எடுத்துச்செல்கிறதுக்கு", "எடுத்துச்செல்வதற்கு"], "sake": ["எடுத்துச்செல்கிறதுக்காக", "எடுத்துச்செல்வதற்காக"] }
+      readings: { "to": ["eṭuttuccelkiṟatukku", "eṭuttuccelvataṟku"], "sake": ["eṭuttuccelkiṟatukkāka", "eṭuttuccelvataṟkāka"] }
+    - word: "ta-2190"
+      forms: { "to": ["சுற்றிப்பார்க்கிறதுக்கு", "சுற்றிப்பார்ப்பதற்கு"], "sake": ["சுற்றிப்பார்க்கிறதுக்காக", "சுற்றிப்பார்ப்பதற்காக"] }
+      readings: { "to": ["cuṟṟippārkkiṟatukku", "cuṟṟippārppataṟku"], "sake": ["cuṟṟippārkkiṟatukkāka", "cuṟṟippārppataṟkāka"] }
+    - word: "ta-2121"
+      forms: { "to": ["பதிவிறக்குகிறதுக்கு", "பதிவிறக்குவதற்கு"], "sake": ["பதிவிறக்குகிறதுக்காக", "பதிவிறக்குவதற்காக"] }
+      readings: { "to": ["pativiṟakkukiṟatukku", "pativiṟakkuvataṟku"], "sake": ["pativiṟakkukiṟatukkāka", "pativiṟakkuvataṟkāka"] }
+    - word: "ta-2127"
+      forms: { "to": ["தொடர்புகொள்கிறதுக்கு", "தொடர்புகொள்வதற்கு"], "sake": ["தொடர்புகொள்கிறதுக்காக", "தொடர்புகொள்வதற்காக"] }
+      readings: { "to": ["toṭarpukoḷkiṟatukku", "toṭarpukoḷvataṟku"], "sake": ["toṭarpukoḷkiṟatukkāka", "toṭarpukoḷvataṟkāka"] }
+    - word: "ta-2129"
+      forms: { "to": ["தவறவிடுகிறதுக்கு", "தவறவிடுவதற்கு"], "sake": ["தவறவிடுகிறதுக்காக", "தவறவிடுவதற்காக"] }
+      readings: { "to": ["tavaṟaviṭukiṟatukku", "tavaṟaviṭuvataṟku"], "sake": ["tavaṟaviṭukiṟatukkāka", "tavaṟaviṭuvataṟkāka"] }
+    - word: "ta-2130"
+      forms: { "to": ["பதிலளிக்கிறதுக்கு", "பதிலளிப்பதற்கு"], "sake": ["பதிலளிக்கிறதுக்காக", "பதிலளிப்பதற்காக"] }
+      readings: { "to": ["patilaḷikkiṟatukku", "patilaḷippataṟku"], "sake": ["patilaḷikkiṟatukkāka", "patilaḷippataṟkāka"] }
+    - word: "ta-2131"
+      forms: { "to": ["பதிவேற்றுகிறதுக்கு", "பதிவேற்றுவதற்கு"], "sake": ["பதிவேற்றுகிறதுக்காக", "பதிவேற்றுவதற்காக"] }
+      readings: { "to": ["pativēṟṟukiṟatukku", "pativēṟṟuvataṟku"], "sake": ["pativēṟṟukiṟatukkāka", "pativēṟṟuvataṟkāka"] }
+    - word: "ta-1860"
+      forms: { "to": ["கற்றுக்கொள்கிறதுக்கு", "கற்றுக்கொள்வதற்கு"], "sake": ["கற்றுக்கொள்கிறதுக்காக", "கற்றுக்கொள்வதற்காக"] }
+      readings: { "to": ["kaṟṟukkoḷkiṟatukku", "kaṟṟukkoḷvataṟku"], "sake": ["kaṟṟukkoḷkiṟatukkāka", "kaṟṟukkoḷvataṟkāka"] }
+    - word: "ta-1861"
+      forms: { "to": ["சொல்லிக்கொடுக்கிறதுக்கு", "சொல்லிக்கொடுப்பதற்கு"], "sake": ["சொல்லிக்கொடுக்கிறதுக்காக", "சொல்லிக்கொடுப்பதற்காக"] }
+      readings: { "to": ["collikkoṭukkiṟatukku", "collikkoṭuppataṟku"], "sake": ["collikkoṭukkiṟatukkāka", "collikkoṭuppataṟkāka"] }
+    - word: "ta-2032"
+      forms: { "to": ["காத்திருகிறதுக்கு", "காத்திருப்பதற்கு"], "sake": ["காத்திருகிறதுக்காக", "காத்திருப்பதற்காக"] }
+      readings: { "to": ["kāttirukiṟatukku", "kāttiruppataṟku"], "sake": ["kāttirukiṟatukkāka", "kāttiruppataṟkāka"] }
+    - word: "ta-2037"
+      forms: { "to": ["ஒப்புக்கொள்கிறதுக்கு", "ஒப்புக்கொள்வதற்கு"], "sake": ["ஒப்புக்கொள்கிறதுக்காக", "ஒப்புக்கொள்வதற்காக"] }
+      readings: { "to": ["oppukkoḷkiṟatukku", "oppukkoḷvataṟku"], "sake": ["oppukkoḷkiṟatukkāka", "oppukkoḷvataṟkāka"] }
+    - word: "ta-2046"
+      forms: { "to": ["பயப்படுகிறதுக்கு", "பயப்படுவதற்கு"], "sake": ["பயப்படுகிறதுக்காக", "பயப்படுவதற்காக"] }
+      readings: { "to": ["payappaṭukiṟatukku", "payappaṭuvataṟku"], "sake": ["payappaṭukiṟatukkāka", "payappaṭuvataṟkāka"] }
+    - word: "ta-2047"
+      forms: { "to": ["கவலைப்படுகிறதுக்கு", "கவலைப்படுவதற்கு"], "sake": ["கவலைப்படுகிறதுக்காக", "கவலைப்படுவதற்காக"] }
+      readings: { "to": ["kavalaippaṭukiṟatukku", "kavalaippaṭuvataṟku"], "sake": ["kavalaippaṭukiṟatukkāka", "kavalaippaṭuvataṟkāka"] }
+    - word: "ta-2048"
+      forms: { "to": ["கோபப்படுகிறதுக்கு", "கோபப்படுவதற்கு"], "sake": ["கோபப்படுகிறதுக்காக", "கோபப்படுவதற்காக"] }
+      readings: { "to": ["kōpappaṭukiṟatukku", "kōpappaṭuvataṟku"], "sake": ["kōpappaṭukiṟatukkāka", "kōpappaṭuvataṟkāka"] }
+    - word: "ta-2069"
+      forms: { "to": ["தேர்ந்தெடுக்கிறதுக்கு", "தேர்ந்தெடுப்பதற்கு"], "sake": ["தேர்ந்தெடுக்கிறதுக்காக", "தேர்ந்தெடுப்பதற்காக"] }
+      readings: { "to": ["tērnteṭukkiṟatukku", "tērnteṭuppataṟku"], "sake": ["tērnteṭukkiṟatukkāka", "tērnteṭuppataṟkāka"] }
+    - word: "ta-2073"
+      forms: { "to": ["கண்டுபிடிக்கிறதுக்கு", "கண்டுபிடிப்பதற்கு"], "sake": ["கண்டுபிடிக்கிறதுக்காக", "கண்டுபிடிப்பதற்காக"] }
+      readings: { "to": ["kaṇṭupiṭikkiṟatukku", "kaṇṭupiṭippataṟku"], "sake": ["kaṇṭupiṭikkiṟatukkāka", "kaṇṭupiṭippataṟkāka"] }
+    - word: "ta-2086"
+      forms: { "to": ["சரிபார்க்கிறதுக்கு", "சரிபார்ப்பதற்கு"], "sake": ["சரிபார்க்கிறதுக்காக", "சரிபார்ப்பதற்காக"] }
+      readings: { "to": ["caripārkkiṟatukku", "caripārppataṟku"], "sake": ["caripārkkiṟatukkāka", "caripārppataṟkāka"] }
+    - word: "ta-1299"
+      forms: { "to": ["குணமாகுகிறதுக்கு", "குணமாவதற்கு"], "sake": ["குணமாகுகிறதுக்காக", "குணமாவதற்காக"] }
+      readings: { "to": ["kuṇamākukiṟatukku", "kuṇamāvataṟku"], "sake": ["kuṇamākukiṟatukkāka", "kuṇamāvataṟkāka"] }
+    - word: "ta-2350"
+      forms: { "to": ["கையெழுத்திடுகிறதுக்கு", "கையெழுத்திடுவதற்கு"], "sake": ["கையெழுத்திடுகிறதுக்காக", "கையெழுத்திடுவதற்காக"] }
+      readings: { "to": ["kaiyeḻuttiṭukiṟatukku", "kaiyeḻuttiṭuvataṟku"], "sake": ["kaiyeḻuttiṭukiṟatukkāka", "kaiyeḻuttiṭuvataṟkāka"] }
+    - word: "ta-2351"
+      forms: { "to": ["ஈடுபடுகிறதுக்கு", "ஈடுபடுவதற்கு"], "sake": ["ஈடுபடுகிறதுக்காக", "ஈடுபடுவதற்காக"] }
+      readings: { "to": ["īṭupaṭukiṟatukku", "īṭupaṭuvataṟku"], "sake": ["īṭupaṭukiṟatukkāka", "īṭupaṭuvataṟkāka"] }
+    - word: "ta-2352"
+      forms: { "to": ["முடிவெடுக்கிறதுக்கு", "முடிவெடுப்பதற்கு"], "sake": ["முடிவெடுக்கிறதுக்காக", "முடிவெடுப்பதற்காக"] }
+      readings: { "to": ["muṭiveṭukkiṟatukku", "muṭiveṭuppataṟku"], "sake": ["muṭiveṭukkiṟatukkāka", "muṭiveṭuppataṟkāka"] }
+    - word: "ta-2353"
+      forms: { "to": ["அச்சிடுகிறதுக்கு", "அச்சிடுவதற்கு"], "sake": ["அச்சிடுகிறதுக்காக", "அச்சிடுவதற்காக"] }
+      readings: { "to": ["acciṭukiṟatukku", "acciṭuvataṟku"], "sake": ["acciṭukiṟatukkāka", "acciṭuvataṟkāka"] }
+    - word: "ta-2354"
+      forms: { "to": ["நகலெடுக்கிறதுக்கு", "நகலெடுப்பதற்கு"], "sake": ["நகலெடுக்கிறதுக்காக", "நகலெடுப்பதற்காக"] }
+      readings: { "to": ["nakaleṭukkiṟatukku", "nakaleṭuppataṟku"], "sake": ["nakaleṭukkiṟatukkāka", "nakaleṭuppataṟkāka"] }
+    - word: "ta-2355"
+      forms: { "to": ["கணக்கிடுகிறதுக்கு", "கணக்கிடுவதற்கு"], "sake": ["கணக்கிடுகிறதுக்காக", "கணக்கிடுவதற்காக"] }
+      readings: { "to": ["kaṇakkiṭukiṟatukku", "kaṇakkiṭuvataṟku"], "sake": ["kaṇakkiṭukiṟatukkāka", "kaṇakkiṭuvataṟkāka"] }
+rules:
+  - id: "ta-rule-purpose"
+    slots: ["to"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வர்றதுக்கு", reading: "varṟatukku" }, { word: "வருவதற்கு", reading: "varuvataṟku" }, { word: "சாப்பிடப் போறேன்", reading: "cāppiṭap pōṟēṉ" }]
+  - id: "ta-rule-purpose-sake"
+    slots: ["sake"]
+    words: [{ word: "வா", reading: "vā" }, { word: "வர்றதுக்காக", reading: "varṟatukkāka" }, { word: "வருவதற்காக", reading: "varuvataṟkāka" }, { word: "வர்றதுக்கு", reading: "varṟatukku" }]
