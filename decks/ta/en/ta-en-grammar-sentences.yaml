@@ -1,0 +1,18 @@
+schema: 1
+id: "ta-en-grammar-sentences"
+kind: "layer"
+core: "ta-grammar-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Word order: doer, thing, verb"
+description: "Building a sentence in Tamil: the doer first, the thing next and the verb last. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Word order"
+  slot_name: "part"
+  entries:
+    "kuti": "to drink"
+    "capp": "to eat"
+    "vaanku": "to buy"
+    "moodu": "to close"
+  notes: "The verb comes last: doer, thing, verb, so நான் காபி குடிக்கிறேன் (nāṉ kāpi kuṭikkiṟēṉ) is, word for word, 'I coffee drink'. The verb ends in the person of the doer. A particular thing takes -ஐ (-ai), as கதவை (katavai) (door, the one acted on), while a thing in general does not, as காபி (kāpi). A word that describes comes before the word it describes, as in நல்ல சாம்பார் (nalla cāmpār). Source: English Wikipedia, Tamil grammar (word order and the accusative -ai)."

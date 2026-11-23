@@ -1,0 +1,146 @@
+schema: 1
+id: "ta-en-grammar-conjunctions"
+kind: "layer"
+core: "ta-grammar-conjunctions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Joining words"
+description: "But, or, and, so, because: joining words and sentences. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "ta-0400":
+    native: "but"
+    notes:
+      "n1": "Starts the second part of a contrast, after a comma: it says the opposite or a limit to the first part. It is the common word for but in speech and in writing."
+    examples:
+      "நான் வருகிறேன், ஆனால் நேரம் இல்லை.":
+        native: "I am coming, but there is no time."
+        bases:
+          "வருகிறேன்": "am coming; from வா (vā), to come"
+          "ஆனால்": "but"
+      "இது நல்லது, ஆனால் விலை அதிகம்.":
+        native: "This is good, but the price is high."
+        bases:
+          "ஆனால்": "but"
+  "ta-0401":
+    native: "or"
+    notes:
+      "n1": "Joins two choices, placed between them: தேநீர் அல்லது காபி (tēnīr allatu kāpi), tea or coffee. Say it before the second choice only."
+    examples:
+      "தேநீர் அல்லது காபி வேண்டும்.":
+        native: "I want tea or coffee."
+        bases:
+          "அல்லது": "or"
+          "வேண்டும்": "is wanted; need"
+      "இன்று அல்லது நாளை போகலாம்.":
+        native: "We can go today or tomorrow."
+        bases:
+          "அல்லது": "or"
+          "போகலாம்": "can go; from போ (pō), to go"
+  "ta-0402":
+    native: "and (formal)"
+    notes:
+      "n1": "A formal, written word for and, used between nouns, as in notices and news. Spoken Tamil avoids it and puts the ending -உம் (-um) on each noun instead: அம்மாவும் (ammāvum) அப்பாவும் (appāvum), mother and father. Source: English Wiktionary, the entry for this word (formal register; speech uses the ending)."
+    examples:
+      "அரிசி மற்றும் பருப்பு வேண்டும்.":
+        native: "Rice and dal are needed."
+        bases:
+          "மற்றும்": "and (formal)"
+          "வேண்டும்": "is wanted; need"
+      "என் அம்மா மற்றும் அப்பா வீட்டில் இருக்கிறார்கள்.":
+        native: "My mother and father are at home."
+        bases:
+          "என்": "my; from நான் (nāṉ), I"
+          "மற்றும்": "and (formal)"
+          "வீட்டில்": "at home; from வீடு (vīṭu), house"
+          "இருக்கிறார்கள்": "are; from இரு (iru), to be"
+  "ta-0403":
+    native: "so; that is why"
+    alt_native: ["therefore"]
+    notes:
+      "n1": "Starts the result, after the reason has been given: the reason, a comma, then அதனால் (ataṉāl) and the result. It is the usual word for so in speech."
+    examples:
+      "இன்று நேரம் இல்லை, அதனால் நாளை வருகிறேன்.":
+        native: "There is no time today, so I will come tomorrow."
+        bases:
+          "அதனால்": "so"
+          "வருகிறேன்": "come; from வா (vā), to come"
+      "குழந்தை தூங்குகிறது, அதனால் மெதுவாகப் பேசுங்கள்.":
+        native: "The child is sleeping, so please speak slowly."
+        bases:
+          "தூங்குகிறது": "is sleeping; from தூங்கு (tūṅku), to sleep"
+          "அதனால்": "so"
+          "மெதுவாகப்": "slowly; from மெதுவாக (metuvāka), None"
+          "பேசுங்கள்": "please speak; from பேசு (pēcu), to speak"
+  "ta-0404":
+    native: "because"
+    alt_native: ["since"]
+    notes:
+      "n1": "Introduces the reason, which comes after the statement it explains. In speech it is shortened to ஏன்னா (ēṉṉā). It is made of ஏன் (ēṉ), why, and என்றால் (eṉṟāl), if it is said so. Source: English Wiktionary, the entry for this word."
+    examples:
+      "நான் சந்தைக்குப் போகிறேன், ஏனென்றால் காய்கறி வேண்டும்.":
+        native: "I am going to the market because I need vegetables."
+        bases:
+          "சந்தைக்குப்": "to the market; from சந்தை (cantai), market"
+          "போகிறேன்": "am going; from போ (pō), to go"
+          "ஏனென்றால்": "because"
+          "வேண்டும்": "is wanted; need"
+      "நான் வீட்டில் இருக்கிறேன், ஏனென்றால் இன்று ஓய்வு.":
+        native: "I am at home because today is a rest day."
+        bases:
+          "வீட்டில்": "at home; from வீடு (vīṭu), house"
+          "இருக்கிறேன்": "am; from இரு (iru), to be"
+          "ஏனென்றால்": "because"
+  "ta-0405":
+    native: "then; later; and then"
+    notes:
+      "n1": "Joins two actions in order, or ends a talk for now: அப்புறம் பேசலாம் (appuṟam pēcalām), let us talk later. It is also a postposition meaning after, and speech shortens it to அப்பறோம் (appaṟōm) or அப்றோம் (apṟōm). Source: English Wiktionary, the entry for this word (spoken forms)."
+    examples:
+      "நாங்கள் சாப்பிடுகிறோம், அப்புறம் போகிறோம்.":
+        native: "We eat, and then we go."
+        bases:
+          "சாப்பிடுகிறோம்": "eat; from சாப்பிடு (cāppiṭu), to eat"
+          "அப்புறம்": "then"
+          "போகிறோம்": "go; from போ (pō), to go"
+      "அப்புறம் பேசலாம்.":
+        native: "Let us talk later."
+        bases:
+          "அப்புறம்": "later"
+          "பேசலாம்": "can talk; let us talk; from பேசு (pēcu), to speak"
+  "ta-0406":
+    native: "that is; that is to say"
+    alt_native: ["namely"]
+    notes:
+      "n1": "Introduces an explanation or a list that says the same thing in other words, after a comma. Source: English Wiktionary, the entry for this word (that is, namely)."
+    examples:
+      "நாங்கள் மூன்று பேர், அதாவது அம்மா, அப்பா, நான்.":
+        native: "We are three people, that is mother, father and I."
+        bases:
+          "பேர்": "people"
+          "அதாவது": "that is"
+      "ஒரு லட்சம், அதாவது நூறு ஆயிரம்.":
+        native: "One lakh, that is a hundred thousand."
+        bases:
+          "ஒரு": "one; a"
+          "அதாவது": "that is"
+  "ta-0407":
+    native: "but still; even so"
+    alt_native: ["however"]
+    notes:
+      "n1": "Stronger than ஆனால் (āṉāl): it says that the second part is true in spite of the first. It starts the second part, after a comma."
+    examples:
+      "வீடு சின்னது, ஆனாலும் அழகானது.":
+        native: "The house is small, but still beautiful."
+        bases:
+          "சின்னது": "is small; from சின்ன (ciṉṉa), small"
+          "ஆனாலும்": "but still"
+          "அழகானது": "is beautiful; from அழகான (aḻakāṉa), beautiful"
+      "நேரம் இல்லை, ஆனாலும் வருகிறேன்.":
+        native: "There is no time, but I am coming anyway."
+        bases:
+          "ஆனாலும்": "but still"
+          "வருகிறேன்": "am coming; from வா (vā), to come"
+
+  "ta-0408":
+    native: "Joining words: but, or, and, so, because, then, that is, but still"
+    explanation: "The words that join parts of a sentence: but ஆனால் (āṉāl), or அல்லது (allatu), and (formal) மற்றும் (maṟṟum), so அதனால் (ataṉāl), because ஏனென்றால் (ēṉeṉṟāl), then அப்புறம் (appuṟam), that is அதாவது (atāvatu) and but still ஆனாலும் (āṉālum). In speech, and is the ending -உம் (-um) on each noun."

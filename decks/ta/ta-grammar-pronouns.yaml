@@ -1,0 +1,52 @@
+schema: 1
+id: "ta-grammar-pronouns"
+part: "core"
+kind: "grammar"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["one person", "more than one"]
+  entries:
+    - lemma: "நான்"
+      key: "naan"
+      reading: "nāṉ"
+      ipa: "naːn"
+      forms: { "one person": "நான்", "more than one": ["நாங்கள்", "நாம்"] }
+      readings: { "one person": "nāṉ", "more than one": ["nāṅkaḷ", "nām"] }
+      ipas: { "one person": "naːn", "more than one": "naːŋkaɭ" }
+    - lemma: "நீ"
+      key: "nee"
+      reading: "nī"
+      ipa: "niː"
+      forms: { "one person": "நீ", "more than one": "நீங்கள்" }
+      readings: { "one person": "nī", "more than one": "nīṅkaḷ" }
+      ipas: { "one person": "niː", "more than one": "niːŋkaɭ" }
+    - lemma: "நீங்கள்"
+      key: "neengal"
+      reading: "nīṅkaḷ"
+      ipa: "niːŋkaɭ"
+      forms: { "one person": "நீங்கள்", "more than one": "நீங்கள்" }
+      readings: { "one person": "nīṅkaḷ", "more than one": "nīṅkaḷ" }
+      ipas: { "one person": "niːŋkaɭ", "more than one": "niːŋkaɭ" }
+    - lemma: "அவன்"
+      key: "avan"
+      reading: "avaṉ"
+      ipa: "aʋan"
+      forms: { "one person": "அவன்", "more than one": "அவர்கள்" }
+      readings: { "one person": "avaṉ", "more than one": "avarkaḷ" }
+      ipas: { "one person": "aʋan", "more than one": "aʋaɾkaɭ" }
+    - lemma: "அவள்"
+      key: "aval"
+      reading: "avaḷ"
+      ipa: "aʋaɭ"
+      forms: { "one person": "அவள்", "more than one": "அவர்கள்" }
+      readings: { "one person": "avaḷ", "more than one": "avarkaḷ" }
+      ipas: { "one person": "aʋaɭ", "more than one": "aʋaɾkaɭ" }
+    - lemma: "அவர்"
+      key: "avar"
+      reading: "avar"
+      ipa: "aʋaɾ"
+      forms: { "one person": "அவர்", "more than one": "அவர்கள்" }
+      readings: { "one person": "avar", "more than one": "avarkaḷ" }
+      ipas: { "one person": "aʋaɾ", "more than one": "aʋaɾkaɭ" }

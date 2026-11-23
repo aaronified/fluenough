@@ -1,0 +1,166 @@
+schema: 1
+id: "ta-grammar-differences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ta-0414"
+    target: "வீட்டில்"
+    reading: "vīṭṭil"
+    ipa: "ʋiːʈʈil"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "நான் வீட்டில் இருக்கிறேன்."
+        reading: "nāṉ vīṭṭil irukkiṟēṉ."
+        ipa: "naːn ʋiːʈʈil iɾukkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "வீட்டில்", base: "வீட்டில்", reading: "vīṭṭil" }, { word: "இருக்கிறேன்", base: "இரு", reading: "iru" }]
+      - target: "அம்மா வீட்டில் இல்லை."
+        reading: "ammā vīṭṭil illai."
+        ipa: "ammaː ʋiːʈʈil illai"
+        bases: [{ word: "அம்மா", ref: "ta-0072" }, { word: "வீட்டில்", base: "வீட்டில்", reading: "vīṭṭil" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-0415"
+    target: "பள்ளிக்கு"
+    reading: "paḷḷikku"
+    ipa: "paɭɭikku"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "நான் பள்ளிக்குப் போகிறேன்."
+        reading: "nāṉ paḷḷikkup pōkiṟēṉ."
+        ipa: "naːn paɭɭikkup poːkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பள்ளிக்குப்", base: "பள்ளி", reading: "paḷḷi" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+      - target: "குழந்தை பள்ளிக்குப் போகிறது."
+        reading: "kuḻantai paḷḷikkup pōkiṟatu."
+        ipa: "kuɻant̪ai paɭɭikkup poːkirat̪u"
+        bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "பள்ளிக்குப்", base: "பள்ளி", reading: "paḷḷi" }, { word: "போகிறது", base: "போ", reading: "pō" }]
+  - id: "ta-0416"
+    target: "அம்மாவோடு"
+    reading: "ammāvōṭu"
+    ipa: "ammaːʋoːʈu"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "நான் அம்மாவோடு போகிறேன்."
+        reading: "nāṉ ammāvōṭu pōkiṟēṉ."
+        ipa: "naːn ammaːʋoːʈu poːkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "அம்மாவோடு", base: "அம்மாவோடு", reading: "ammāvōṭu" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+      - target: "அவள் அம்மாவோடு இருக்கிறாள்."
+        reading: "avaḷ ammāvōṭu irukkiṟāḷ."
+        ipa: "aʋaɭ ammaːʋoːʈu iɾukkiraːɭ"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "அம்மாவோடு", base: "அம்மாவோடு", reading: "ammāvōṭu" }, { word: "இருக்கிறாள்", base: "இரு", reading: "iru" }]
+  - id: "ta-0417"
+    target: "தமிழில்"
+    reading: "tamiḻil"
+    ipa: "t̪amiɻil"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "தமிழில் பேசுங்கள்."
+        reading: "tamiḻil pēcuṅkaḷ."
+        ipa: "t̪amiɻil peːsuŋkaɭ"
+        bases: [{ word: "தமிழில்", base: "தமிழில்", reading: "tamiḻil" }, { word: "பேசுங்கள்", base: "பேசு", reading: "pēcu" }]
+      - target: "இது தமிழில் என்ன?"
+        reading: "itu tamiḻil eṉṉa?"
+        ipa: "it̪u t̪amiɻil enna"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "தமிழில்", base: "தமிழில்", reading: "tamiḻil" }, { word: "என்ன", ref: "ta-0042" }]
+  - id: "ta-0418"
+    target: "வாருங்கள்"
+    reading: "vāruṅkaḷ"
+    ipa: "ʋaːɾuŋkaɭ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே வாருங்கள்."
+        reading: "iṅkē vāruṅkaḷ."
+        ipa: "iŋkeː ʋaːɾuŋkaɭ"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "வாருங்கள்", base: "வா", reading: "vā" }]
+      - target: "நீங்கள் நாளை வாருங்கள்."
+        reading: "nīṅkaḷ nāḷai vāruṅkaḷ."
+        ipa: "niːŋkaɭ naːɭai ʋaːɾuŋkaɭ"
+        bases: [{ word: "நீங்கள்", ref: "ta-0004" }, { word: "நாளை", ref: "ta-0133" }, { word: "வாருங்கள்", base: "வா", reading: "vā" }]
+  - id: "ta-0419"
+    target: "ஒரு"
+    reading: "oru"
+    ipa: "oɾu"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு ஒரு தேநீர் வேண்டும்."
+        reading: "eṉakku oru tēnīr vēṇṭum."
+        ipa: "enakku oɾu t̪eːniːɾ ʋeːɳʈum"
+        bases: [{ word: "எனக்கு", base: "நான்", reading: "nāṉ" }, { word: "ஒரு", base: "ஒரு", reading: "oru" }, { word: "தேநீர்", ref: "ta-0246" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]
+      - target: "ஒரு குழந்தை வீட்டில் இருக்கிறது."
+        reading: "oru kuḻantai vīṭṭil irukkiṟatu."
+        ipa: "oɾu kuɻant̪ai ʋiːʈʈil iɾukkirat̪u"
+        bases: [{ word: "ஒரு", base: "ஒரு", reading: "oru" }, { word: "குழந்தை", ref: "ta-0084" }, { word: "வீட்டில்", base: "வீட்டில்", reading: "vīṭṭil" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-0420"
+    target: "நான் சாதம் சாப்பிடுகிறேன்."
+    reading: "nāṉ cātam cāppiṭukiṟēṉ."
+    ipa: "naːn saːt̪am saːppiʈukireːn"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சாதம்", ref: "ta-0247" }, { word: "சாப்பிடுகிறேன்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+  - id: "ta-0421"
+    target: "அவர் மருத்துவர்."
+    reading: "avar maruttuvar."
+    ipa: "aʋaɾ maɾut̪t̪uʋaɾ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "மருத்துவர்", ref: "ta-0199" }]
+  - id: "ta-0422"
+    target: "அவன் வந்தான்."
+    reading: "avaṉ vantāṉ."
+    ipa: "aʋan ʋant̪aːn"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "வந்தான்", base: "வா", reading: "vā" }]
+  - id: "ta-0423"
+    target: "அவள் வந்தாள்."
+    reading: "avaḷ vantāḷ."
+    ipa: "aʋaɭ ʋant̪aːɭ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "வந்தாள்", base: "வா", reading: "vā" }]
+  - id: "ta-0424"
+    target: "அது வந்தது."
+    reading: "atu vantatu."
+    ipa: "at̪u ʋant̪at̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "அது", ref: "ta-0061" }, { word: "வந்தது", base: "வா", reading: "vā" }]
+  - id: "ta-0425"
+    target: "எனக்குக் கார் இருக்கிறது."
+    reading: "eṉakkuk kār irukkiṟatu."
+    ipa: "enakkuk kaːɾ iɾukkirat̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "எனக்குக்", base: "நான்", reading: "nāṉ" }, { word: "கார்", ref: "ta-0243" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-0426"
+    target: "இது வீடா?"
+    reading: "itu vīṭā?"
+    ipa: "it̪u ʋiːʈaː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "வீடா", base: "வீடு", reading: "vīṭu" }]

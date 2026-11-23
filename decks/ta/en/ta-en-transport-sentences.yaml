@@ -1,0 +1,65 @@
+schema: 1
+id: "ta-en-transport-sentences"
+kind: "layer"
+core: "ta-transport-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Getting around in sentences"
+description: "Eight short sentences about buses, autos, taxis, trains, bicycles and cars: when, by which vehicle, the fare and whether one is there. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-3058":
+    native: "When is the bus?"
+    confusables:
+      w1: { why: "எங்கே (eṅkē), where, asks a place." }
+      w2: { why: "ஏன் (ēṉ), why, asks a reason." }
+  "ta-3059":
+    native: "Is there an auto rickshaw?"
+    notes:
+      n1: "ஆட்டோ (āṭṭō), auto rickshaw, is a borrowed word, written as it is said."
+    bases:
+      "இருக்கிறதா": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "டாக்சி (ṭākci), taxi, is a different vehicle." }
+      w2: { why: "ரயில் (rayil), train, is a different vehicle." }
+  "ta-3060":
+    native: "I go by bicycle."
+    notes:
+      n1: "-இல் (-il) on a vehicle means by it: சைக்கிளில் (caikkiḷil), by bicycle."
+      n2: "போறேன் (pōṟēṉ) is the spoken form of போகிறேன் (pōkiṟēṉ), I go."
+    confusables:
+      w1: { why: "கார் (kār), car, is a different vehicle." }
+      w2: { why: "ரயில் (rayil), train, is a different vehicle." }
+  "ta-3061":
+    native: "Go by bus."
+    notes:
+      n1: "-இல் (-il) on a vehicle means by it, as in பேருந்தில் (pēruntil), by bus."
+    confusables:
+      w1: { why: "ஆட்டோ (āṭṭō), auto rickshaw, is a different vehicle." }
+      w2: { why: "ரயில் (rayil), train, is a different vehicle." }
+  "ta-3062":
+    native: "Is the train here?"
+    bases:
+      "இருக்கிறதா": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "பேருந்து (pēruntu), bus, is a different vehicle." }
+      w2: { why: "சைக்கிள் (caikkiḷ), bicycle, is a different vehicle." }
+  "ta-3063":
+    native: "I will buy a car."
+    notes:
+      n1: "வாங்குவேன் (vāṅkuvēṉ), I will buy, is the future of வாங்கு (vāṅku), to buy."
+    confusables:
+      w1: { why: "சைக்கிள் (caikkiḷ), bicycle, is a different vehicle." }
+      w2: { why: "டாக்சி (ṭākci), taxi, is a different vehicle." }
+  "ta-3064":
+    native: "How much is the taxi?"
+    confusables:
+      w1: { why: "எத்தனை (ettaṉai), how many, counts things." }
+      w2: { why: "எப்போது (eppōtu), when, asks a time." }
+  "ta-3065":
+    native: "The bicycle is old."
+    notes:
+      n1: "பழையது (paḻaiyatu), it is old, is the neuter form of பழைய (paḻaiya), old, as பெரியது (periyatu) is of பெரிய (periya)."
+    confusables:
+      w1: { why: "புதிய (putiya), new, is the opposite." }
+      w2: { why: "பெரிய (periya), big, is a different quality." }

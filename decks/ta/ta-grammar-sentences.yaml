@@ -1,0 +1,38 @@
+schema: 1
+id: "ta-grammar-sentences"
+part: "core"
+kind: "grammar"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["doer", "thing", "verb", "whole sentence"]
+  entries:
+    - lemma: "குடி"
+      key: "kuti"
+      reading: "kuṭi"
+      ipa: "kuʈi"
+      forms: { "doer": "நான்", "thing": "காபி", "verb": "குடிக்கிறேன்", "whole sentence": "நான் காபி குடிக்கிறேன்" }
+      readings: { "doer": "nāṉ", "thing": "kāpi", "verb": "kuṭikkiṟēṉ", "whole sentence": "nāṉ kāpi kuṭikkiṟēṉ" }
+      ipas: { "doer": "naːn", "thing": "kaːpi", "verb": "kuʈikkireːn", "whole sentence": "naːn kaːpi kuʈikkireːn" }
+    - lemma: "சாப்பிடு"
+      key: "capp"
+      reading: "cāppiṭu"
+      ipa: "saːppiʈu"
+      forms: { "doer": "நாங்கள்", "thing": "தோசை", "verb": "சாப்பிடுகிறோம்", "whole sentence": "நாங்கள் தோசை சாப்பிடுகிறோம்" }
+      readings: { "doer": "nāṅkaḷ", "thing": "tōcai", "verb": "cāppiṭukiṟōm", "whole sentence": "nāṅkaḷ tōcai cāppiṭukiṟōm" }
+      ipas: { "doer": "naːŋkaɭ", "thing": "t̪oːsai", "verb": "saːppiʈukiroːm", "whole sentence": "naːŋkaɭ t̪oːsai saːppiʈukiroːm" }
+    - lemma: "வாங்கு"
+      key: "vaanku"
+      reading: "vāṅku"
+      ipa: "ʋaːŋku"
+      forms: { "doer": "அவள்", "thing": "புடவை", "verb": "வாங்குகிறாள்", "whole sentence": "அவள் புடவை வாங்குகிறாள்" }
+      readings: { "doer": "avaḷ", "thing": "puṭavai", "verb": "vāṅkukiṟāḷ", "whole sentence": "avaḷ puṭavai vāṅkukiṟāḷ" }
+      ipas: { "doer": "aʋaɭ", "thing": "puʈaʋai", "verb": "ʋaːŋkukiraːɭ", "whole sentence": "aʋaɭ puʈaʋai ʋaːŋkukiraːɭ" }
+    - lemma: "மூடு"
+      key: "moodu"
+      reading: "mūṭu"
+      ipa: "muːʈu"
+      forms: { "doer": "அவன்", "thing": "கதவை", "verb": "மூடுகிறான்", "whole sentence": "அவன் கதவை மூடுகிறான்" }
+      readings: { "doer": "avaṉ", "thing": "katavai", "verb": "mūṭukiṟāṉ", "whole sentence": "avaṉ katavai mūṭukiṟāṉ" }
+      ipas: { "doer": "aʋan", "thing": "kat̪aʋai", "verb": "muːʈukiraːn", "whole sentence": "aʋan kat̪aʋai muːʈukiraːn" }

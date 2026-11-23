@@ -1,0 +1,64 @@
+schema: 1
+id: "ta-en-numbers-big-sentences"
+kind: "layer"
+core: "ta-numbers-big-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Big numbers in sentences"
+description: "Eight short sentences with the big number words: hundreds, thousands, a lakh and a crore, with enough, too much and give. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-3026":
+    native: "The salary is a thousand."
+    notes:
+      n1: "ஆயிரம் (āyiram), a thousand, is one of the big number words; லட்சம் (laṭcam), a lakh, is the next step up."
+    confusables:
+      w1: { why: "லட்சம் (laṭcam), a lakh, is one hundred thousand." }
+      w2: { why: "நூறு (nūṟu), a hundred, is a tenth of a thousand." }
+  "ta-3027":
+    native: "Not five hundred."
+    notes:
+      n1: "After a number, இல்லை (illai) says that the number is not the right one: ஐநூறு (ainūṟu) இல்லை (illai), not five hundred."
+    confusables:
+      w1: { why: "ஆயிரம் (āyiram), a thousand, is a different amount." }
+      w2: { why: "நூறு (nūṟu), a hundred, is a different amount." }
+  "ta-3028":
+    native: "A hundred is enough."
+    notes:
+      n1: "போதும் (pōtum), enough, ends the sentence with no verb: நூறு (nūṟu) போதும் (pōtum), a hundred is enough."
+    confusables:
+      w1: { why: "அதிகம் (atikam), too much, is the opposite." }
+      w2: { why: "கொஞ்சம் (koñcam), a little, is less." }
+  "ta-3029":
+    native: "Asks how many, and the answer is a hundred."
+    notes:
+      n1: "எத்தனை (ettaṉai), how many, counts things; the answer is the number alone."
+    confusables:
+      w1: { why: "எவ்வளவு (evvaḷavu), how much, asks an amount, not a count." }
+      w2: { why: "எப்போது (eppōtu), when, asks a time." }
+  "ta-3030":
+    native: "Give forty."
+    notes:
+      n1: "கொடு (koṭu), to give, said to a seller, means give me, with the me left out; the polite form is கொடுங்கள் (koṭuṅkaḷ), please give."
+    confusables:
+      w1: { why: "ஐம்பது (aimpatu), fifty, is a different number." }
+      w2: { why: "அறுபது (aṟupatu), sixty, is a different number." }
+  "ta-3031":
+    native: "Not a lakh."
+    notes:
+      n1: "லட்சம் (laṭcam), a lakh, is one hundred thousand; கோடி (kōṭi), a crore, is ten million."
+    confusables:
+      w1: { why: "கோடி (kōṭi), a crore, is ten million." }
+      w2: { why: "ஆயிரம் (āyiram), a thousand, is a different amount." }
+  "ta-3032":
+    native: "Two hundred is too much."
+    notes:
+      n1: "அதிகம் (atikam), much, more or too much, shows here that the number is more than wanted."
+    confusables:
+      w1: { why: "போதும் (pōtum), enough, is the opposite." }
+      w2: { why: "குறைவு (kuṟaivu), a small amount, is the opposite." }
+  "ta-3033":
+    native: "Give eighty."
+    confusables:
+      w1: { why: "எழுபது (eḻupatu), seventy, is a different number." }
+      w2: { why: "தொண்ணூறு (toṇṇūṟu), ninety, is a different number." }

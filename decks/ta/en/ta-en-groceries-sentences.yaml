@@ -1,0 +1,62 @@
+schema: 1
+id: "ta-en-groceries-sentences"
+kind: "layer"
+core: "ta-groceries-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Groceries in sentences"
+description: "Eight short sentences about rice, eggs, fruit, oil, sugar and salt, with how much, where and buy. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-3034":
+    native: "How much rice?"
+    notes:
+      n1: "அரிசி (arici), rice, is the uncooked grain; cooked rice is சாதம் (cātam)."
+    confusables:
+      w1: { why: "பருப்பு (paruppu), lentils, is a different grocery." }
+      w2: { why: "உப்பு (uppu), salt, is a different grocery." }
+  "ta-3035":
+    native: "Eggs are good."
+    confusables:
+      w1: { why: "இறைச்சி (iṟaicci), meat, is a different food." }
+      w2: { why: "பழம் (paḻam), fruit, is a different food." }
+  "ta-3036":
+    native: "Buy fruit."
+    notes:
+      n1: "வாங்கு (vāṅku), buy, is a plain order to a friend; to a shopkeeper say வாங்குங்கள் (vāṅkuṅkaḷ), please buy."
+    confusables:
+      w1: { why: "காய்கறி (kāykaṟi), vegetables, is a different food." }
+      w2: { why: "அரிசி (arici), rice, is a different food." }
+  "ta-3037":
+    native: "There is no oil."
+    confusables:
+      w1: { why: "சர்க்கரை (carkkarai), sugar, is a different grocery." }
+      w2: { why: "உப்பு (uppu), salt, is a different grocery." }
+  "ta-3038":
+    native: "The vegetables are here."
+    notes:
+      n1: "The place comes before the verb: இங்கே (iṅkē), here, is said before இருக்கிறது (irukkiṟatu), it is."
+    bases:
+      "இருக்கிறது": "is; from இரு (iru), to be"
+    confusables:
+      w1: { why: "பழம் (paḻam), fruit, is a different food." }
+      w2: { why: "முட்டை (muṭṭai), egg, is a different food." }
+  "ta-3039":
+    native: "Where is the sugar?"
+    notes:
+      n1: "எங்கே (eṅkē), where, differs from இங்கே (iṅkē), here, by one letter: எங்கே (eṅkē) asks and இங்கே (iṅkē) answers."
+    confusables:
+      w1: { why: "யார் (yār), who, asks about a person." }
+      w2: { why: "என்ன (eṉṉa), what, asks what a thing is, not where it is." }
+  "ta-3040":
+    native: "Buy two eggs."
+    notes:
+      n1: "After a number the noun is said bare, with no plural ending here: இரண்டு (iraṇṭu) முட்டை (muṭṭai), two eggs."
+    confusables:
+      w1: { why: "மூன்று (mūṉṟu), three, is a different number." }
+      w2: { why: "பத்து (pattu), ten, is a different number." }
+  "ta-3041":
+    native: "Salt, sugar, oil."
+    confusables:
+      w1: { why: "காய்கறி (kāykaṟi), vegetables, is not in the list." }
+      w2: { why: "இறைச்சி (iṟaicci), meat, is not in the list." }

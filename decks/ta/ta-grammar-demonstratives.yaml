@@ -1,0 +1,52 @@
+schema: 1
+id: "ta-grammar-demonstratives"
+part: "core"
+kind: "grammar"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["near: this, here (இ-)", "far: that, there (அ-)", "question: which, where (எ-)"]
+  entries:
+    - lemma: "இந்த"
+      key: "anta"
+      reading: "inta"
+      ipa: "int̪a"
+      forms: { "near: this, here (இ-)": "இந்த", "far: that, there (அ-)": "அந்த", "question: which, where (எ-)": "எந்த" }
+      readings: { "near: this, here (இ-)": "inta", "far: that, there (அ-)": "anta", "question: which, where (எ-)": "enta" }
+      ipas: { "near: this, here (இ-)": "int̪a", "far: that, there (அ-)": "ant̪a", "question: which, where (எ-)": "ent̪a" }
+    - lemma: "இது"
+      key: "atu"
+      reading: "itu"
+      ipa: "it̪u"
+      forms: { "near: this, here (இ-)": "இது", "far: that, there (அ-)": "அது", "question: which, where (எ-)": "எது" }
+      readings: { "near: this, here (இ-)": "itu", "far: that, there (அ-)": "atu", "question: which, where (எ-)": "etu" }
+      ipas: { "near: this, here (இ-)": "it̪u", "far: that, there (அ-)": "at̪u", "question: which, where (எ-)": "et̪u" }
+    - lemma: "இங்கே"
+      key: "inkae"
+      reading: "iṅkē"
+      ipa: "iŋkeː"
+      forms: { "near: this, here (இ-)": "இங்கே", "far: that, there (அ-)": "அங்கே", "question: which, where (எ-)": "எங்கே" }
+      readings: { "near: this, here (இ-)": "iṅkē", "far: that, there (அ-)": "aṅkē", "question: which, where (எ-)": "eṅkē" }
+      ipas: { "near: this, here (இ-)": "iŋkeː", "far: that, there (அ-)": "aŋkeː", "question: which, where (எ-)": "eŋkeː" }
+    - lemma: "இப்படி"
+      key: "appati"
+      reading: "ippaṭi"
+      ipa: "ippaʈi"
+      forms: { "near: this, here (இ-)": "இப்படி", "far: that, there (அ-)": "அப்படி", "question: which, where (எ-)": "எப்படி" }
+      readings: { "near: this, here (இ-)": "ippaṭi", "far: that, there (அ-)": "appaṭi", "question: which, where (எ-)": "eppaṭi" }
+      ipas: { "near: this, here (இ-)": "ippaʈi", "far: that, there (அ-)": "appaʈi", "question: which, where (எ-)": "eppaʈi" }
+    - lemma: "இவ்வளவு"
+      key: "avvalavu"
+      reading: "ivvaḷavu"
+      ipa: "iʋʋaɭaʋu"
+      forms: { "near: this, here (இ-)": "இவ்வளவு", "far: that, there (அ-)": "அவ்வளவு", "question: which, where (எ-)": "எவ்வளவு" }
+      readings: { "near: this, here (இ-)": "ivvaḷavu", "far: that, there (அ-)": "avvaḷavu", "question: which, where (எ-)": "evvaḷavu" }
+      ipas: { "near: this, here (இ-)": "iʋʋaɭaʋu", "far: that, there (அ-)": "aʋʋaɭaʋu", "question: which, where (எ-)": "eʋʋaɭaʋu" }
+    - lemma: "இப்போது"
+      key: "appotu"
+      reading: "ippōtu"
+      ipa: "ippoːt̪u"
+      forms: { "near: this, here (இ-)": "இப்போது", "far: that, there (அ-)": "அப்போது", "question: which, where (எ-)": "எப்போது" }
+      readings: { "near: this, here (இ-)": "ippōtu", "far: that, there (அ-)": "appōtu", "question: which, where (எ-)": "eppōtu" }
+      ipas: { "near: this, here (இ-)": "ippoːt̪u", "far: that, there (அ-)": "appoːt̪u", "question: which, where (எ-)": "eppoːt̪u" }

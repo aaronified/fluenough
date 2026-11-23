@@ -1,0 +1,20 @@
+schema: 1
+id: "ta-en-grammar-pronouns"
+kind: "layer"
+core: "ta-grammar-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns: one and more than one"
+description: "I, you, he and she, for one person and for more than one. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Personal pronouns"
+  slot_name: "number"
+  entries:
+    "naan": "I"
+    "nee": "you, to a friend or a child"
+    "neengal": "you, polite"
+    "avan": "he"
+    "aval": "she"
+    "avar": "he or she, polite"
+  notes: "Tamil has two plural forms of நான் (nāṉ): நாம் (nām) includes the person you speak to and நாங்கள் (nāṅkaḷ) leaves them out. நீங்கள் (nīṅkaḷ) is you for several people and also for one person you respect; நீ (nī) is for a friend or a child. அவன் (avaṉ) is a man and அவள் (avaḷ) a woman; அவர் (avar) is a respected person of either sex, and அவர்கள் (avarkaḷ) is all of them in the plural. Source: English Wikipedia, Tamil grammar, Pronouns."
