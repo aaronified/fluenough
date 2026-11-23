@@ -1,0 +1,134 @@
+schema: 1
+id: "ml-en-grammar-conjunctions"
+kind: "layer"
+core: "ml-grammar-conjunctions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Joining words"
+description: "And, but, or, because, so, if, then and even so: joining words and sentences. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "ml-0739":
+    native: "and; also"
+    notes:
+      n1: "The ending -ഉം (-uṁ) means and or also. Malayalam puts it on every thing joined, not between them: അമ്മയും അച്ഛനും (ammayuṁ acchanuṁ), mother and father. After a vowel it takes a glide, as അമ്മ (amma) becomes അമ്മയും (ammayuṁ). After a word in a consonant it joins directly: അച്ഛൻ (acchaṉ) becomes അച്ഛനും (acchanuṁ). A word in -ം (-ṁ) drops it and takes -വും (-vuṁ): പുസ്തകം (pustakaṁ) becomes പുസ്തകവും (pustakavuṁ). Source: English Wiktionary, the entry ഉം (uṁ) (conjunction: and)."
+    examples:
+      "അമ്മയും അച്ഛനും ഇവിടെ ഉണ്ട്.":
+        native: "Mother and father are here."
+        bases:
+          "ഉണ്ട്": "there is; is here"
+      "ചായയും കാപ്പിയും വേണം.":
+        native: "I want tea and coffee."
+        bases:
+          "വേണം": "is wanted; need"
+  "ml-0740":
+    native: "but"
+    notes:
+      n1: "Starts the second part of a contrast, after a comma: it says the opposite of the first part or a limit to it. It is the common word for but in speech and in writing. Source: English Wiktionary, the entry പക്ഷേ (pakṣē) (conjunction: but)."
+    examples:
+      "ഞാൻ വരും, പക്ഷേ എനിക്ക് സമയം ഇല്ല.":
+        native: "I will come, but I have no time."
+        bases:
+          "വരും": "will come; from വരിക (varika), to come"
+          "പക്ഷേ": "but"
+      "വീട് വലുതാണ്, പക്ഷേ പഴയതാണ്.":
+        native: "The house is big, but it is old."
+        bases:
+          "പക്ഷേ": "but"
+  "ml-0741":
+    native: "or; otherwise"
+    notes:
+      n1: "Joins two choices and goes before the second: ചായ അല്ലെങ്കിൽ കാപ്പി (cāya alleṅkil kāppi), tea or coffee. It is made of അല്ല (alla), is not, and എങ്കിൽ (eṅkil), if, so it also means if not or otherwise. A more formal word for or is അഥവാ (athavā). Source: English Wiktionary, the entry അല്ലെങ്കിൽ (alleṅkil) (or, if not)."
+    examples:
+      "ചായ അല്ലെങ്കിൽ കാപ്പി വേണം.":
+        native: "I want tea or coffee."
+        bases:
+          "അല്ലെങ്കിൽ": "or"
+          "വേണം": "is wanted; need"
+      "ഇന്ന് അല്ലെങ്കിൽ നാളെ വരാം.":
+        native: "I can come today or tomorrow."
+        bases:
+          "അല്ലെങ്കിൽ": "or"
+          "വരാം": "can come; from വരിക (varika), to come"
+  "ml-0742":
+    native: "because; reason"
+    notes:
+      n1: "Gives the reason and starts the second part: ഞാൻ വരുന്നില്ല, കാരണം എനിക്ക് പനി ഉണ്ട് (ñāṉ varunnilla, kāraṇaṁ enikk pani uṇṭ), I am not coming because I have a fever. The same word is the noun reason. It was borrowed from Sanskrit. Source: English Wiktionary, the entry കാരണം (kāraṇaṁ) (conjunction: because)."
+    examples:
+      "ഞാൻ വരുന്നില്ല, കാരണം എനിക്ക് പനി ഉണ്ട്.":
+        native: "I am not coming, because I have a fever."
+        bases:
+          "വരുന്നില്ല": "am not coming; from വരിക (varika), to come"
+          "കാരണം": "because"
+          "ഉണ്ട്": "there is; have"
+      "കാരണം എനിക്ക് വിശക്കുന്നു.":
+        native: "Because I am hungry."
+        bases:
+          "കാരണം": "because"
+          "വിശക്കുന്നു": "is hungry; from വിശക്കുക (viśakkuka), to be hungry"
+  "ml-0743":
+    native: "if; in that case"
+    notes:
+      n1: "Joins a condition to its result: നിങ്ങൾ വരുമെങ്കിൽ ഞാനും വരാം (niṅṅaḷ varumeṅkil ñānuṁ varāṁ), if you come, I will come too. It sticks to the verb as the ending -എങ്കിൽ (-eṅkil), so വരും (varuṁ) becomes വരുമെങ്കിൽ (varumeṅkil). On its own at the start of a sentence it means in that case. Source: English Wiktionary, the entry എങ്കിൽ (eṅkil) (if; if so, in that case)."
+    examples:
+      "നിങ്ങൾ വരുമെങ്കിൽ ഞാനും വരാം.":
+        native: "If you come, I will come too."
+        bases:
+          "വരുമെങ്കിൽ": "if will come; from വരിക (varika), to come, with -എങ്കിൽ (-eṅkil)"
+          "വരാം": "can come; from വരിക (varika), to come"
+      "ശരി, എങ്കിൽ പോകാം.":
+        native: "All right, then let us go."
+        bases:
+          "എങ്കിൽ": "if; in that case"
+          "പോകാം": "let us go; from പോകുക (pōkuka), to go"
+  "ml-0744":
+    native: "then; in that case; but"
+    notes:
+      n1: "In speech it most often means well then, in that case: എന്നാൽ ശരി (ennāl śari), well then, all right. In writing it can also mean but. It is made of എന്ന് (enn), that, and the ending -ആൽ (-āl), so it is the same -ആൽ (-āl) as in the instrumental ending. Source: English Wiktionary, the entry എന്നാൽ (ennāl) (if that is the case; but)."
+    examples:
+      "എന്നാൽ ശരി, നാളെ കാണാം.":
+        native: "Well then, all right, see you tomorrow."
+        bases:
+          "എന്നാൽ": "well then; in that case"
+          "കാണാം": "let us see; from കാണുക (kāṇuka), to see"
+      "എന്നാൽ ഞാൻ പോകട്ടെ.":
+        native: "Well then, let me go."
+        bases:
+          "എന്നാൽ": "well then; in that case"
+          "പോകട്ടെ": "let me go; from പോകുക (pōkuka), to go"
+  "ml-0745":
+    native: "besides; and also"
+    notes:
+      n1: "Adds one more thing and usually starts a new sentence: ചായ വേണം. കൂടാതെ ഒരു പഴവും വേണം. (cāya vēṇaṁ. kūṭāte oru paḻavuṁ vēṇaṁ.) It means and also, in addition. The same word can also mean without, so a learner reads the sentence to tell which. Source: English Wiktionary, the entry കൂടാതെ (kūṭāte) (conjunction: and also; adverb: without)."
+    examples:
+      "ചായ വേണം. കൂടാതെ ഒരു പഴവും വേണം.":
+        native: "I want tea. Also, I want a fruit."
+        bases:
+          "വേണം": "is wanted; need"
+          "കൂടാതെ": "besides; and also"
+          "ഒരു": "a; one"
+      "അരി വേണം. കൂടാതെ പാലും വേണം.":
+        native: "I want rice. Also, I want milk."
+        bases:
+          "വേണം": "is wanted; need"
+          "കൂടാതെ": "besides; and also"
+  "ml-0746":
+    native: "even so; still; nevertheless"
+    notes:
+      n1: "Says that something is still true in spite of what was just said: മഴ പെയ്യുന്നു. എങ്കിലും ഞാൻ പോകും. (maḻa peyyunnu. eṅkiluṁ ñāṉ pōkuṁ.), it is raining; even so I will go. Source: English Wiktionary, the entry എങ്കിലും (eṅkiluṁ) (nevertheless)."
+    examples:
+      "മഴ പെയ്യുന്നു. എങ്കിലും ഞാൻ പോകും.":
+        native: "It is raining. Even so, I will go."
+        bases:
+          "മഴ": "rain"
+          "പെയ്യുന്നു": "is raining; from പെയ്യുക (peyyuka), to rain"
+          "എങ്കിലും": "even so; still"
+          "പോകും": "will go; from പോകുക (pōkuka), to go"
+      "വില കൂടുതലാണ്. എങ്കിലും ഇത് നല്ലതാണ്.":
+        native: "The price is high. Even so, this is good."
+        bases:
+          "എങ്കിലും": "even so; still"
+          "ഇത്": "this"
+  "ml-0747":
+    native: "Joining words: and, but, or, because, so, if, then, besides, even so"
+    explanation: "The words that join parts of a sentence: and -ഉം (-uṁ), but പക്ഷേ (pakṣē), or അല്ലെങ്കിൽ (alleṅkil), because കാരണം (kāraṇaṁ), so അതുകൊണ്ട് (atukoṇṭ), if എങ്കിൽ (eṅkil), well then എന്നാൽ (ennāl), besides കൂടാതെ (kūṭāte) and even so എങ്കിലും (eṅkiluṁ). In speech, and is the ending -ഉം (-uṁ) on each thing joined."
