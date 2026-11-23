@@ -83,6 +83,16 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1917 | ta-chores | Is சுத்தம் பண்ணு the right spoken form beside சுத்தம் செய்? | Sonnet builder | 2026-11-23 |
 | ta-1930 | ta-chores | Is இஸ்திரி போடு the natural way to say iron clothes? | Sonnet builder | 2026-11-23 |
 | unit-level | ta-grammar-past | Check the spoken past stems (படிச்ச, பாத்த, செஞ்ச, வச்ச) and the spoken second-person past. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-1179 | ta-festivals | Is பாயசம் the usual spoken name, or is பாயாசம் more common? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1199 | ta-festivals | Is ரம்ஜான் the everyday spoken name for Ramzan and the festival at its end? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1187 | ta-festivals | Is கடவுள் best marked masculine (m), given the respectful verb it takes? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1197 | ta-festivals | Are உறவினர் and விருந்தினர் best marked masculine (m), given the respectful verb they take? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1188 | ta-festivals | Is the split between சாமி (everyday) and கடவுள் (general) right? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1176 | ta-festivals | Is மெழுகுவர்த்தி the everyday word for a candle? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1180 | ta-festivals | Is குங்குமம் correctly glossed as the red powder for worship and the forehead mark? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1168 | ta-festivals | Is the split between பண்டிகை (home), திருவிழா (temple) and விழா (function) right? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1194 | ta-festivals | Is the temple offering of a coconut right for this card, and is தேங்காய் the usual word? | ta-words1 (Sonnet builder) | 2026-11-23 |
+| ta-1193 | ta-festivals | Is வாணவேடிக்கை natural in speech, or is it more written than பட்டாசு? | ta-words1 (Sonnet builder) | 2026-11-23 |
 | ta-2013 | ta-appearance | Is குண்டான too rude for a person, and is a gentler word better to teach? | Sonnet builder | 2026-11-23 |
 | ta-2005 | ta-appearance | Is புடவை கட்டு the usual verb for wearing a sari beside உடுத்து? | Sonnet builder | 2026-11-23 |
 | ta-2000 | ta-appearance | Is பாவாடை the right everyday word for a skirt? | Sonnet builder | 2026-11-23 |
@@ -96,3 +106,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-2025 | ta-verbs-3 | Are the கிடை examples natural for something being available? | Sonnet builder | 2026-11-23 |
 | ta-2082 | ta-verbs-3 | Is the verb வாழ்த்து natural beside the noun வாழ்த்து? | Sonnet builder | 2026-11-23 |
 | ta-2085 | ta-verbs-3 | Is யூஸ் பண்ணு (yūs paṇṇu) the usual spoken form of use? | Sonnet builder | 2026-11-23 |
+| ta-0451 | ta-grammar-compound-verbs | Is எடுத்துக்கோங்க the usual spoken polite form of the helper கொள்? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0453 | ta-grammar-compound-verbs | Is தா (to me or us) versus கொடு (to others) stated correctly? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| ta-0452 | ta-grammar-compound-verbs | Are put, throw and put on the right senses of போடு to teach together? | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-comparison | Check the comparison pattern (X-ஐ விட adjective-து), the word எல்லாவற்றையும், and the doubling after விட and மிக. | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-irregular | Check the stems given for come, go, do, give, stand, sit and listen, and the spoken நிக்கிறேன் and தர்றேன். | Sonnet builder (ta-gram2) | 2026-11-23 |
+| unit-level | ta-grammar-pitfalls | Check the seven pairs and their sentences, especially அல்ல versus இல்லை and கொடு versus தா. | Sonnet builder (ta-gram2) | 2026-11-23 |

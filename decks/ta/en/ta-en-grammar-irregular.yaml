@@ -1,0 +1,21 @@
+schema: 1
+id: "ta-en-grammar-irregular"
+kind: "layer"
+core: "ta-grammar-irregular"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs that change their stem"
+description: "Seven common verbs whose stem changes: come, go, do, give, stand, sit and listen, with I now, I did, I will, the command and I will not. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  name: "Changing stems"
+  slot_name: "form"
+  entries:
+    "vaa": "to come"
+    "po": "to go"
+    "cey": "to do; to make"
+    "taa": "to give (to me or us)"
+    "nil": "to stand; to stop"
+    "utkar": "to sit"
+    "kel": "to listen; to ask"
+  notes: "These verbs change their stem, so learn the forms together. வா (vā), to come, uses the stem வரு (varu) now and later, வந் (van) in the past, and வா (vā) only in the command; தா (tā), to give, does the same with தரு (taru) and தந் (tan). போ (pō), to go, keeps its stem and takes போன (pōṉa) in the past, but its infinitive is போக (pōka), which the negative and the other forms use. செய் (cey), to do, is செய்த (ceyta) in writing and செஞ்ச (ceñca) in speech. நில் (nil), to stand, becomes நிற் (niṟ) and நின் (niṉ). கேள் (kēḷ), to listen, becomes கேட் (kēṭ). உட்கார் (uṭkār), to sit, adds a vowel before the present ending: உட்காருகிறேன் (uṭkārukiṟēṉ). Where a cell has two forms the first is the common spoken one. Not yet checked by a Tamil speaker: please report any mistake."
