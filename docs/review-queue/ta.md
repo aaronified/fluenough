@@ -19,3 +19,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-1005 | ta-script-vowels | Only one example for ஊ (long oo): can a reviewer suggest a second common word? | Haiku deck worker (ta-script) | 2026-11-23 |
 | ta-1010 | ta-script-vowels | Only one example for ஓ (long o): can a reviewer suggest a second common word? | Haiku deck worker (ta-script) | 2026-11-23 |
 | unit-level | ta-script-vowels | The vowel readings and broad IPA come from tools/transcribe.py; the English sound words in the notes ('but', 'put', 'sit', 'pet', 'kite', 'cow') are the builder's. Does a reviewer agree with them? | Haiku deck worker (ta-script) | 2026-11-23 |
+| ta-1022 | ta-script-vowel-signs | No word of the course uses the sign ௌ (au) and the card has no example: can a reviewer suggest a common word? | Haiku deck worker (ta-script) | 2026-11-23 |
+| ta-1023 | ta-script-vowel-signs | The pulli card shows the bare consonant க் (k), with reading 'k' and IPA 'k': is that right for a dead consonant? | Haiku deck worker (ta-script) | 2026-11-23 |
+| ta-1024 | ta-script-vowel-signs | The aytam ஃ has the tool's reading 'ḵ' and IPA 'x' (a known engine limit): is the broad IPA right, and can a reviewer give an everyday word that uses it? | Haiku deck worker (ta-script) | 2026-11-23 |
+| unit-level | ta-script-vowel-signs | The sign notes say 'makes the consonant a long aa' and so on, and each sign card's examples are existing words; does a reviewer agree with the sign notes? | Haiku deck worker (ta-script) | 2026-11-23 |
