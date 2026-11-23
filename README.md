@@ -223,7 +223,7 @@ below is written from `decks/index.json` each time the decks change.
 | Magahi | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Maithili | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Malay | Austronesian | Malayo-Polynesian | Latin | in progress |
-| Malayalam | Dravidian | South | Malayalam | in progress |
+| Malayalam | Dravidian | South | Malayalam | A1 |
 | Mandarin Chinese | Sino-Tibetan | Sinitic | Simplified Hanzi, Traditional Hanzi | B1 |
 | Manipuri | Sino-Tibetan | Tibeto-Burman | Eastern Nagari, Meitei Mayek | in progress |
 | Marathi | Indo-European | Indo-Aryan | Devanagari | B1 |
@@ -252,14 +252,14 @@ below is written from `decks/index.json` each time the decks change.
 | Sumerian | Isolate | — | Cuneiform | in progress |
 | Swahili | Niger-Congo | Bantu | Latin | in progress |
 | Swedish | Indo-European | Germanic | Latin | in progress |
-| Tamil | Dravidian | South | Tamil | in progress |
+| Tamil | Dravidian | South | Tamil | B1 |
 | Telugu | Dravidian | South-Central | Telugu | B1 |
 | Thai | Kra-Dai | Tai | Thai | in progress |
 | Toki Pona | Constructed | None | Latin, Sitelen pona | B1 |
 | Tulu | Dravidian | South | Kannada | in progress |
 | Turkish | Turkic | Oghuz | Latin | in progress |
 | Ukrainian | Indo-European | Slavic | Cyrillic | in progress |
-| Vedic Sanskrit | Indo-European | Indo-Aryan | Devanagari | in progress |
+| Vedic Sanskrit | Indo-European | Indo-Aryan | Devanagari | A1 |
 | Vietnamese | Austroasiatic | Vietic | Latin | in progress |
 | Yiddish | Indo-European | Germanic | Hebrew | in progress |
 <!-- languages:end -->
