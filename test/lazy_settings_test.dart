@@ -59,35 +59,21 @@ String _sung(String file) =>
 /// of its own, a French deck, and the culture world's `zz`, whose creator's
 /// picture is public domain.
 Map<String, String> _files() => <String, String>{
-  'decks/es/es-en-words.yaml': _deck(
-    'es-en-words',
-    _esLang,
-    <String>[
-      _card('es-0001', 'grosería', ', tags: [offensive]'),
-      _card('es-0002', 'hola', _sung('hola') + _example),
-      _card('es-0003', 'adiós', _ranked),
-      _card('es-0004', 'gracias'),
-    ],
-    'source: "Wiktionary"\n',
-  ),
-  'decks/es/es-en-more.yaml': _deck(
-    'es-en-more',
-    _esLang,
-    <String>[_card('es-0101', 'mesa', _sung('mesa'))],
-    'source: "Libro de prueba"\n',
-  ),
-  'decks/es/es-en-slang.yaml': _deck(
-    'es-en-slang',
-    _esLang,
-    <String>[_card('es-0201', 'chungo')],
-    'tags: [offensive, rated]\nsource: "Libro de jerga"\n',
-  ),
-  'decks/fr/fr-en-words.yaml': _deck(
-    'fr-en-words',
-    _frLang,
-    <String>[_card('fr-0001', 'bonjour')],
-    'source: "Livre de test"\n',
-  ),
+  'decks/es/es-en-words.yaml': _deck('es-en-words', _esLang, <String>[
+    _card('es-0001', 'grosería', ', tags: [offensive]'),
+    _card('es-0002', 'hola', _sung('hola') + _example),
+    _card('es-0003', 'adiós', _ranked),
+    _card('es-0004', 'gracias'),
+  ], 'source: "Wiktionary"\n'),
+  'decks/es/es-en-more.yaml': _deck('es-en-more', _esLang, <String>[
+    _card('es-0101', 'mesa', _sung('mesa')),
+  ], 'source: "Libro de prueba"\n'),
+  'decks/es/es-en-slang.yaml': _deck('es-en-slang', _esLang, <String>[
+    _card('es-0201', 'chungo'),
+  ], 'tags: [offensive, rated]\nsource: "Libro de jerga"\n'),
+  'decks/fr/fr-en-words.yaml': _deck('fr-en-words', _frLang, <String>[
+    _card('fr-0001', 'bonjour'),
+  ], 'source: "Livre de test"\n'),
   ...cultureWorld(),
   'decks/creators/zz.yaml': cultureCreators.replaceFirst(
     'licence: "CC-BY-4.0"',
