@@ -1,0 +1,220 @@
+# Unit 44 (ko-grammar-future). Sources read: en.wiktionary.org entries -을 것이다 (will / intention and supposition; 거예요 is the colloquial form; the contrast with -겠-; the example 저는 내일 시험 공부 할 거예요) and -을까 / -ㄹ까 (the question 'should we ...?'; 음악이나 들을까요?),
+# the conjugation table of every verb (its future determiner -을/-ㄹ, e.g. 먹을, 갈, is copied from it) and en.wikipedia.org 'Korean verbs' (the attributive future ending -을/-ㄹ).
+schema: 1
+id: "ko-grammar-eulkkayo"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["kka", "kkayo", "we"]
+  entries:
+    - lemma: "먹다"
+      key: "meokda"
+      reading: "meokda"
+      ipa: "mʌkt͈a"
+      forms:
+        "kka": "먹을까"
+        "kkayo": "먹을까요"
+        "we": "우리 먹을까요"
+      readings:
+        "kka": "meogeulkka"
+        "kkayo": "meogeulkkayo"
+        "we": "uri meogeulkkayo"
+      ipas:
+        "kka": "mʌkɯlk͈a"
+        "kkayo": "mʌkɯlk͈ajo"
+        "we": "uɾi mʌkɯlk͈ajo"
+    - lemma: "마시다"
+      key: "masida"
+      reading: "masida"
+      ipa: "masita"
+      forms:
+        "kka": "마실까"
+        "kkayo": "마실까요"
+        "we": "우리 마실까요"
+      readings:
+        "kka": "masilkka"
+        "kkayo": "masilkkayo"
+        "we": "uri masilkkayo"
+      ipas:
+        "kka": "masilk͈a"
+        "kkayo": "masilk͈ajo"
+        "we": "uɾi masilk͈ajo"
+    - lemma: "가다"
+      key: "gada"
+      reading: "gada"
+      ipa: "kata"
+      forms:
+        "kka": "갈까"
+        "kkayo": "갈까요"
+        "we": "우리 갈까요"
+      readings:
+        "kka": "galkka"
+        "kkayo": "galkkayo"
+        "we": "uri galkkayo"
+      ipas:
+        "kka": "kalk͈a"
+        "kkayo": "kalk͈ajo"
+        "we": "uɾi kalk͈ajo"
+    - lemma: "보다"
+      key: "boda"
+      reading: "boda"
+      ipa: "pota"
+      forms:
+        "kka": "볼까"
+        "kkayo": "볼까요"
+        "we": "우리 볼까요"
+      readings:
+        "kka": "bolkka"
+        "kkayo": "bolkkayo"
+        "we": "uri bolkkayo"
+      ipas:
+        "kka": "polk͈a"
+        "kkayo": "polk͈ajo"
+        "we": "uɾi polk͈ajo"
+    - lemma: "사다"
+      key: "sada"
+      reading: "sada"
+      ipa: "sata"
+      forms:
+        "kka": "살까"
+        "kkayo": "살까요"
+        "we": "우리 살까요"
+      readings:
+        "kka": "salkka"
+        "kkayo": "salkkayo"
+        "we": "uri salkkayo"
+      ipas:
+        "kka": "salk͈a"
+        "kkayo": "salk͈ajo"
+        "we": "uɾi salk͈ajo"
+    - lemma: "만나다"
+      key: "mannada"
+      reading: "mannada"
+      ipa: "mannata"
+      forms:
+        "kka": "만날까"
+        "kkayo": "만날까요"
+        "we": "우리 만날까요"
+      readings:
+        "kka": "mannalkka"
+        "kkayo": "mannalkkayo"
+        "we": "uri mannalkkayo"
+      ipas:
+        "kka": "mannalk͈a"
+        "kkayo": "mannalk͈ajo"
+        "we": "uɾi mannalk͈ajo"
+    - lemma: "읽다"
+      key: "ikda"
+      reading: "ikda"
+      ipa: "ikt͈a"
+      forms:
+        "kka": "읽을까"
+        "kkayo": "읽을까요"
+        "we": "우리 읽을까요"
+      readings:
+        "kka": "ilgeulkka"
+        "kkayo": "ilgeulkkayo"
+        "we": "uri ilgeulkkayo"
+      ipas:
+        "kka": "ilkɯlk͈a"
+        "kkayo": "ilkɯlk͈ajo"
+        "we": "uɾi ilkɯlk͈ajo"
+    - lemma: "쉬다"
+      key: "swida"
+      reading: "swida"
+      ipa: "swita"
+      forms:
+        "kka": "쉴까"
+        "kkayo": "쉴까요"
+        "we": "우리 쉴까요"
+      readings:
+        "kka": "swilkka"
+        "kkayo": "swilkkayo"
+        "we": "uri swilkkayo"
+      ipas:
+        "kka": "swilk͈a"
+        "kkayo": "swilk͈ajo"
+        "we": "uɾi swilk͈ajo"
+    - lemma: "공부하다"
+      key: "gongbuhada"
+      reading: "gongbuhada"
+      ipa: "koŋpuhata"
+      forms:
+        "kka": "공부할까"
+        "kkayo": "공부할까요"
+        "we": "우리 공부할까요"
+      readings:
+        "kka": "gongbuhalkka"
+        "kkayo": "gongbuhalkkayo"
+        "we": "uri gongbuhalkkayo"
+      ipas:
+        "kka": "koŋpuhalk͈a"
+        "kkayo": "koŋpuhalk͈ajo"
+        "we": "uɾi koŋpuhalk͈ajo"
+    - lemma: "기다리다"
+      key: "gidarida"
+      reading: "gidarida"
+      ipa: "kitaɾita"
+      forms:
+        "kka": "기다릴까"
+        "kkayo": "기다릴까요"
+        "we": "우리 기다릴까요"
+      readings:
+        "kka": "gidarilkka"
+        "kkayo": "gidarilkkayo"
+        "we": "uri gidarilkkayo"
+      ipas:
+        "kka": "kitaɾilk͈a"
+        "kkayo": "kitaɾilk͈ajo"
+        "we": "uɾi kitaɾilk͈ajo"
+    - lemma: "앉다"
+      key: "anda"
+      reading: "anda"
+      ipa: "anta"
+      forms:
+        "kka": "앉을까"
+        "kkayo": "앉을까요"
+        "we": "우리 앉을까요"
+      readings:
+        "kka": "anjeulkka"
+        "kkayo": "anjeulkkayo"
+        "we": "uri anjeulkkayo"
+      ipas:
+        "kka": "antɕɯlk͈a"
+        "kkayo": "antɕɯlk͈ajo"
+        "we": "uɾi antɕɯlk͈ajo"
+    - lemma: "자다"
+      key: "jada"
+      reading: "jada"
+      ipa: "tɕata"
+      forms:
+        "kka": "잘까"
+        "kkayo": "잘까요"
+        "we": "우리 잘까요"
+      readings:
+        "kka": "jalkka"
+        "kkayo": "jalkkayo"
+        "we": "uri jalkkayo"
+      ipas:
+        "kka": "tɕalk͈a"
+        "kkayo": "tɕalk͈ajo"
+        "we": "uɾi tɕalk͈ajo"
+    - lemma: "있다"
+      key: "itda"
+      reading: "itda"
+      ipa: "itt͈a"
+      forms:
+        "kka": "있을까"
+        "kkayo": "있을까요"
+        "we": "우리 있을까요"
+      readings:
+        "kka": "isseulkka"
+        "kkayo": "isseulkkayo"
+        "we": "uri isseulkkayo"
+      ipas:
+        "kka": "is͈ɯlk͈a"
+        "kkayo": "is͈ɯlk͈ajo"
+        "we": "uɾi is͈ɯlk͈ajo"

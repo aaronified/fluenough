@@ -1,0 +1,116 @@
+# Unit 22 (ko-grammar-topic-subject). Sources read: en.wikipedia.org 'Korean postpositions' (-은/는: topic particle, 은 after a consonant and 는 after a vowel; -이/가: subject particle) and 'Korean grammar' (case and informational clitics),
+# en.wiktionary.org pages -은, -는, -이, -가 (the topic uses, the double subject note), 좋다 (the sense 'likeable'). Forms built by rule from each noun's last letter and checked with tools/transcribe.py ko.
+schema: 1
+id: "ko-grammar-particle-eun-neun"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["topic", "where"]
+  entries:
+    - lemma: "학교"
+      key: "hakgyo"
+      reading: "hakgyo"
+      ipa: "hakk͈jo"
+      forms:
+        "topic": "학교는"
+        "where": "학교는 어디예요"
+      readings:
+        "topic": "hakgyoneun"
+        "where": "hakgyoneun eodiyeyo"
+      ipas:
+        "topic": "hakk͈jonɯn"
+        "where": "hakk͈jonɯn ʌtijejo"
+    - lemma: "카페"
+      key: "kape"
+      reading: "kape"
+      ipa: "kʰapʰe"
+      forms:
+        "topic": "카페는"
+        "where": "카페는 어디예요"
+      readings:
+        "topic": "kapeneun"
+        "where": "kapeneun eodiyeyo"
+      ipas:
+        "topic": "kʰapʰenɯn"
+        "where": "kʰapʰenɯn ʌtijejo"
+    - lemma: "마트"
+      key: "mateu"
+      reading: "mateu"
+      ipa: "matʰɯ"
+      forms:
+        "topic": "마트는"
+        "where": "마트는 어디예요"
+      readings:
+        "topic": "mateuneun"
+        "where": "mateuneun eodiyeyo"
+      ipas:
+        "topic": "matʰɯnɯn"
+        "where": "matʰɯnɯn ʌtijejo"
+    - lemma: "친구"
+      key: "chingu"
+      reading: "chingu"
+      ipa: "tɕʰinku"
+      forms:
+        "topic": "친구는"
+        "where": "친구는 어디예요"
+      readings:
+        "topic": "chinguneun"
+        "where": "chinguneun eodiyeyo"
+      ipas:
+        "topic": "tɕʰinkunɯn"
+        "where": "tɕʰinkunɯn ʌtijejo"
+    - lemma: "선생님"
+      key: "seonsaengnim"
+      reading: "seonsaengnim"
+      ipa: "sʌnseŋnim"
+      forms:
+        "topic": "선생님은"
+        "where": "선생님은 어디예요"
+      readings:
+        "topic": "seonsaengnimeun"
+        "where": "seonsaengnimeun eodiyeyo"
+      ipas:
+        "topic": "sʌnseŋnimɯn"
+        "where": "sʌnseŋnimɯn ʌtijejo"
+    - lemma: "은행"
+      key: "eunhaeng"
+      reading: "eunhaeng"
+      ipa: "ɯnheŋ"
+      forms:
+        "topic": "은행은"
+        "where": "은행은 어디예요"
+      readings:
+        "topic": "eunhaengeun"
+        "where": "eunhaengeun eodiyeyo"
+      ipas:
+        "topic": "ɯnheŋɯn"
+        "where": "ɯnheŋɯn ʌtijejo"
+    - lemma: "병원"
+      key: "byeongwon"
+      reading: "byeongwon"
+      ipa: "pjʌŋwʌn"
+      forms:
+        "topic": "병원은"
+        "where": "병원은 어디예요"
+      readings:
+        "topic": "byeongwoneun"
+        "where": "byeongwoneun eodiyeyo"
+      ipas:
+        "topic": "pjʌŋwʌnɯn"
+        "where": "pjʌŋwʌnɯn ʌtijejo"
+    - lemma: "화장실"
+      key: "hwajangsil"
+      reading: "hwajangsil"
+      ipa: "hwatɕaŋsil"
+      forms:
+        "topic": "화장실은"
+        "where": "화장실은 어디예요"
+      readings:
+        "topic": "hwajangsireun"
+        "where": "hwajangsireun eodiyeyo"
+      ipas:
+        "topic": "hwatɕaŋsiɾɯn"
+        "where": "hwatɕaŋsiɾɯn ʌtijejo"

@@ -1,0 +1,25 @@
+schema: 1
+id: "ko-en-grammar-particle-eul-reul"
+kind: "layer"
+core: "ko-grammar-particle-eul-reul"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "을 (eul) and 를 (reul): the object particle"
+description: "Eight nouns with the object particle 을 (eul) or 를 (reul), and the same noun as the object of a polite verb. Sources: the en.wikipedia.org pages 'Korean postpositions' and 'Korean grammar', and the en.wiktionary.org entries -을 (-eul) and -를 (-reul); each verb form is copied from the entry's conjugation table. Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The object particle 을 (eul) / 를 (reul)"
+  slot_name: "form"
+  slots:
+    "object": "the noun with 을 (eul) or 를 (reul)"
+    "sentence": "'I (do something to) the noun': 저는 (jeoneun), the noun with 을 (eul) or 를 (reul), and the polite verb"
+  entries:
+    "mul": "water: I drink water"
+    "keopi": "coffee: I drink coffee"
+    "ramyeon": "instant noodles: I eat instant noodles"
+    "sagwa": "apple: I eat an apple"
+    "chingu": "friend: I meet a friend"
+    "seonsaengnim": "teacher: I meet the teacher"
+    "jip": "home: I clean the house"
+    "tellebijeon": "television: I watch television"
+  notes: "-을 (-eul) and -를 (-reul) are one particle in two shapes: -을 (-eul) after a noun that ends in a consonant and -를 (-reul) after a noun that ends in a vowel (Wikipedia, Korean postpositions). It marks the direct object, the thing the verb acts on: 물을 (mureul) 마셔요 (masyeoyo), 'I drink water'. It is joined to the noun, and the verb comes last: Korean puts the subject first and the verb at the end (Wikipedia, Korean grammar). The verbs here are in the polite style, taught in the next unit: 마시다 (masida) is 마셔요 (masyeoyo), 먹다 (meokda) is 먹어요 (meogeoyo), 보다 (boda) is 봐요 (bwayo), 만나다 (mannada) is 만나요 (mannayo), and a verb in -하다 (-hada) is 청소해요 (cheongsohaeyo). Each form is copied from Wiktionary's conjugation table of the verb. Wiktionary notes that verbs of motion can take a direct object and that a particle is often dropped in speech when the role is clear. The topic particle -은 (-eun) or -는 (-neun) can replace -을 (-eul) or -를 (-reul), as Wikipedia's grammar article says."
