@@ -222,7 +222,8 @@ units:
       - { id: "how-is-it", text: { "en": "A friend asks about your new room: big, quiet, clean" } }
     reading_passages:
       - { id: "postcard-from-busan", text: { "en": "A short postcard from Busan: the weather, the food, the sea" } }
-  - planned: { id: "ko-time", theme: "time", words: 25 }
+  - decks: ["ko-time", "ko-time-sentences", "*"]
+    words: 25
     listening_passages:
       - { id: "what-time-is-it", text: { "en": "Asking and telling the time: native numbers for the hours, Sino-Korean for the minutes" } }
     reading_passages:

@@ -65,3 +65,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ko-1548 | about-me | 있다: the candidate list gives adj, the Wiktionary index gives verb; carded as verb. Check the part of speech. | KO-W1 (Haiku) | 2026-11-26 |
 | ko-1549 | about-me | 없다 is carded as adj (from the candidate list): check the part of speech. | KO-W1 (Haiku) | 2026-11-26 |
 | ko-1550 | about-me | 아니다 is carded as adj: check the part of speech and the note on 아니에요. | KO-W1 (Haiku) | 2026-11-26 |
+| ko-1942 | time | 어제: only one example, in the present tense: check whether a second natural sentence is possible. | KO-W1 (Haiku) | 2026-11-26 |
+| ko-1944 | time | 그저께: no example written: check the note and whether a natural sentence is possible. | KO-W1 (Haiku) | 2026-11-26 |
+| ko-1950 | time | 새벽: the early-hours sense comes from the Wiktionary gloss: check the note. | KO-W1 (Haiku) | 2026-11-26 |
+| ko-1956 | time | 작년: no example written (the past tense is not taught yet): check the note. | KO-W1 (Haiku) | 2026-11-26 |
+| ko-1963 | time | 시 is a bound noun (Wiktionary tag dependent): check the note and the two examples. | KO-W1 (Haiku) | 2026-11-26 |
