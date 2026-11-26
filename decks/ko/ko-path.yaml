@@ -298,17 +298,20 @@ units:
       - { id: "at-the-convenience-store", text: { "en": "Buying a few things at a convenience store: words from English as Korean says them" } }
     reading_passages:
       - { id: "convenience-store-flyer", text: { "en": "A convenience store's flyer of new products" } }
-  - planned: { id: "ko-market", theme: "market", words: 40 }
+  - decks: ["ko-market", "ko-market-sentences", "*"]
+    words: 40
     listening_passages:
       - { id: "at-the-traditional-market", text: { "en": "Buying fruit and vegetables at a traditional market" } }
     reading_passages:
       - { id: "market-price-board", text: { "en": "A price board at a market" } }
-  - planned: { id: "ko-groceries", theme: "groceries", words: 40 }
+  - decks: ["ko-groceries", "ko-groceries-sentences", "*"]
+    words: 40
     listening_passages:
       - { id: "shopping-list-aloud", text: { "en": "Two people go through a shopping list at a supermarket" } }
     reading_passages:
       - { id: "shopping-list", text: { "en": "A handwritten shopping list" } }
-  - planned: { id: "ko-food", theme: "food", words: 60 }
+  - decks: ["ko-food", "ko-food-sentences", "*"]
+    words: 60
     listening_passages:
       - { id: "ordering-a-meal", text: { "en": "Choosing a meal at a small restaurant: bibimbap, kimchi stew, rice" } }
     reading_passages:
@@ -343,7 +346,8 @@ units:
       - { id: "walk-to-the-station", text: { "en": "A neighbour names the places you pass on the way to the station" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Signs along a street: post office, bank, hospital, pharmacy" } }
-  - planned: { id: "ko-home", theme: "home", words: 40 }
+  - decks: ["ko-home", "ko-home-sentences", "*"]
+    words: 40
     listening_passages:
       - { id: "an-apartment-tour", text: { "en": "A tour of a small apartment, room by room" } }
     reading_passages:
