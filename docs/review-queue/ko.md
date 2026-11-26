@@ -79,6 +79,15 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ko-2277 | ko-numbers-big | 기수사 (gisusa) and 수사 (susa) are grammar terms for number words, and they have no examples. Should metalanguage cards like these be on a vocabulary unit at all? | KO-W5 Haiku worker | 2026-11-26 |
 | ko-2343 | ko-loanwords | 휴대폰 (hyudaepon) is marked colloquial by Wiktionary, and its note gives the compound of 휴대 (hyudae) and 폰 (pon). Please check the register and the note. | KO-W5 Haiku worker | 2026-11-26 |
 | ko-2364 | ko-loanwords | 드라마 (deurama) is given only as 'drama' from Wiktionary, and its note says no other sense is claimed. In Korean use, does it mean a TV drama series, and should the card say so? | KO-W5 Haiku worker | 2026-11-26 |
+| ko-2664 | ko-transport | Is 열차 (yeolcha) a more formal or written word for train than 기차 (gicha), or the same plain word? The note says only that both mean train. | KO-W6 Haiku worker | 2026-11-26 |
+| ko-2677 | ko-transport | The first gloss of 내리다 (naerida) is to come down; the card teaches its second sense, get off. The example 역에서 내려요 uses the particle 에서 (eseo), which no earlier unit teaches. Is the gloss and the particle acceptable? | KO-W6 Haiku worker | 2026-11-26 |
+| ko-2675 | ko-transport | The only example, 언제 탑승해요? (eonje tapseunghaeyo), is a natural question, and the noun 탑승 (tapseung) is rare on its own. Is this card needed at A1? | KO-W6 Haiku worker | 2026-11-26 |
+| ko-2832 | ko-body | The dump tags a later sense of 가슴 (gaseum) as informal. Is the usage note enough, or should the informal sense be left out of the course? | KO-W6 Haiku worker | 2026-11-26 |
+| ko-2839 | ko-body | The dump tags a later sense of 이 (i) as tooth as rare. Is the tooth sense right for A1, or should 치아 (chia) carry the teaching alone? | KO-W6 Haiku worker | 2026-11-26 |
+| ko-2846 | ko-body | Is 위 (wi) as stomach the right card for A1? The sense above, a different word, is not carded here, and the vowel letter ㅟ (wi) is in the compound vowels deck. | KO-W6 Haiku worker | 2026-11-26 |
+| ko-2849 | ko-body | The word 두통 (dutong) was added from the extras list, not the candidate table. Is it a word a learner should meet when telling a doctor where it hurts? | KO-W6 Haiku worker | 2026-11-26 |
+| ko-2850 | ko-body | The word 배탈 (baetal) was added from the extras list, not the candidate table. Is it a word a learner should meet when telling a doctor where it hurts? | KO-W6 Haiku worker | 2026-11-26 |
+| ko-3064 | ko-help | The emergency numbers 112 and 119 are not on any card: no cited page was read for them, so they are left out. Should the reading passage name them, with a cited source? | KO-W6 Haiku worker | 2026-11-26 |
 | ko-1710 | adverbs | Usage note: 가끔 and 때때로 both mean sometimes. Please check the nuance note. | KO-W2 | 2026-11-26 |
 | ko-1711 | adverbs | Usage note: 때때로 and 가끔 are treated as interchangeable. Please check. | KO-W2 | 2026-11-26 |
 | ko-1713 | adverbs | Usage note: 절대 with 안 means never. Please check the register. | KO-W2 | 2026-11-26 |
