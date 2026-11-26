@@ -55,3 +55,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ko-2030 | location | Usage note: 건너편 and 맞은편 both mean the opposite side. Please check the nuance. | KO-W2 | 2026-11-26 |
 | ko-2034 | location | Usage note: 거기 is 'there, near the listener'. Please check. | KO-W2 | 2026-11-26 |
 | ko-2033 | location | Usage note on 여기 and 거기. Please check. | KO-W2 | 2026-11-26 |
+| ko-1463 | numbers-1-20 | 넷: check the homograph note (the counter form 네 sounds like 네, yes). | KO-W1 (Haiku) | 2026-11-26 |
+| ko-1470 | numbers-1-20 | 열하나: check the nominal sense and the note on the counter form 열한. | KO-W1 (Haiku) | 2026-11-26 |
+| ko-1480 | numbers-1-20 | 스무 is pos "other" with no example: check the part of speech and the note. | KO-W1 (Haiku) | 2026-11-26 |
+| ko-1481 | numbers-1-20 | Sino-Korean one to twenty (ko-1481 to ko-1496), 영 and 공 have no examples yet: the counters and nouns they need are taught in later units. | KO-W1 (Haiku) | 2026-11-26 |
+| ko-1498 | numbers-1-20 | 공: check the homograph note with ball and the 010 reading. | KO-W1 (Haiku) | 2026-11-26 |
+| ko-1499 | numbers-1-20 | Sino-Korean set card not built: 이 (2), 사 (4), 오 (5) and 팔 (8) collide with existing cards (ko-0023, ko-0136, ko-0124, ko-0045). Check how the set should be made. | KO-W1 (Haiku) | 2026-11-26 |
