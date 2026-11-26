@@ -23,8 +23,6 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
-    examples:
-      - { target: "ᱮᱯ ᱫᱚ ᱯᱩᱨᱟᱹ ᱯᱚᱞᱟ ᱜᱭᱟ ᱾", reading: "ep do̠ purā po̠la gya.", ipa: "ep dɔ puraː pɔla ɡja", source: "Wiktionary" }
   - id: "sat-1626"
     target: "ᱛᱤᱧ ᱡᱷᱚᱜ"
     reading: "tiñ jho̠k'"
@@ -32,7 +30,4 @@ cards:
     pos: "adv"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
-    examples:
-      - { target: "ᱚᱱᱟ ᱫᱚ ᱛᱤᱧ ᱡᱷᱚᱜ?", reading: "o̠na do̠ tiñ jho̠k'?", ipa: "ɔna dɔ tiɲ dʒʱɔk", source: "Wiktionary" }
-      - { target: "ᱤᱧ ᱛᱤᱧ ᱡᱷᱚᱜ ᱤᱧ ᱦᱟᱹᱡᱩᱜᱼᱟ ᱟᱠᱚ ᱤᱧ ᱦᱚᱦᱚ ᱟ ᱠᱚᱣᱟ ᱾", reading: "iñ tiñ jho̠k' iñ hājuk'a ako̠ iñ ho̠ho̠ a ko̠wa.", ipa: "iɲ tiɲ dʒʱɔk iɲ haːdʒuka akɔ iɲ hɔhɔ a kɔwa", source: "Wiktionary" }
+    bases: [{ word: "ᱛᱤᱧ", base: "ᱛᱤᱧ", reading: "tiñ" }, { word: "ᱡᱷᱚᱜ", base: "ᱡᱷᱚᱜ", reading: "jho̠k'" }]
