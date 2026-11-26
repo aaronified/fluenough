@@ -272,7 +272,9 @@ units:
       - { id: "who-does-what-where", text: { "en": "Saying what you eat, where you go and where you do it" } }
     reading_passages:
       - { id: "diary-lines", text: { "en": "A few diary lines: where I ate, what I bought, where I went" } }
-  - planned: { id: "ko-grammar-haeyo-present", grammar: ["haeyo-present", "verb-stems"] }
+  - decks: ["ko-grammar-haeyo-present", "ko-grammar-verb-stems"]
+    words: 0
+    grammar: ["haeyo-present", "verb-stems"]
     listening_passages:
       - { id: "what-do-you-do-on-sundays", text: { "en": "Saying politely what you do on Sundays: the endings ayo, eoyo and haeyo" } }
     reading_passages:
