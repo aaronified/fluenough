@@ -396,7 +396,9 @@ units:
       - { id: "an-apartment-tour", text: { "en": "A tour of a small apartment, room by room" } }
     reading_passages:
       - { id: "apartment-advert", text: { "en": "A short advert for a one-room flat to rent" } }
-  - planned: { id: "ko-grammar-requests", grammar: ["euseyo-polite", "a-juseyo"] }
+  - decks: ["ko-grammar-euseyo-polite", "ko-grammar-a-juseyo"]
+    words: 0
+    grammar: ["euseyo-polite", "a-juseyo"]
     listening_passages:
       - { id: "please-wait-here", text: { "en": "Asking someone politely to sit, wait and give: anjeuseyo, gidaryeo juseyo" } }
     reading_passages:
