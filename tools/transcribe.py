@@ -2086,19 +2086,81 @@ _HG_NASAL = {"ㄱ": "ㅇ", "ㄷ": "ㄴ", "ㅂ": "ㅁ"}
 _HG_INITIAL_ROM = dict(zip(_HG_INITIAL_JAMO, _HG_INITIAL)) | {"ㅍ": "p"}
 
 
+# Broad phonemic IPA of Standard (Seoul) Korean, written beside the reading.
+# Sources, read 2026-11-26: Wikipedia "Korean phonology" (phoneme inventory,
+# fortition after obstruents, nasalisation, lateralisation, vowels) and
+# Wiktionary Module:ko-pron (which writes tense stops with the ͈ mark and the
+# glides j w ɰ). Conventions, one only:
+#  - phonemic, no brackets, no syllable dots; words separated by single spaces
+#    as in the reading; punctuation is dropped;
+#  - stops and affricates, three ways: plain k t p tɕ, tense k͈ t͈ p͈ t͈ɕ (the
+#    combining ͈ U+0348, as Wikipedia writes them), aspirated kʰ tʰ pʰ tɕʰ;
+#    sibilants s and s͈; ㅎ h. Voicing between sonorants ([ɡ d b dʑ]), [ɕ]
+#    before i and j, and the ㅎ allophones are narrow detail and not written;
+#  - ㄹ is ɾ before a vowel and l at the end of a syllable, ll when two meet
+#    (신라 is silla, as the reading has it);
+#  - ㅇ at the end of a syllable is ŋ; the unreleased finals [k̚ t̚ p̚] are
+#    written as the plain phonemes k t p (broad), as is every coda;
+#  - vowels: a ʌ o u ɯ i; ㅐ and ㅔ are both e (the Seoul merger Wikipedia
+#    gives, [e̞]); ㅚ ㅙ ㅞ are we, ㅟ is wi (Wikipedia: mostly diphthongs now);
+#    ㅢ is ɰi, and i after a consonant (Wikipedia: merges into [i]); the glides
+#    are j and w (ㅑ ja, ㅕ jʌ, ㅘ wa, ㅝ wʌ ...);
+#  - the sound changes of the reading apply (liaison, nasalisation, ㄹ's
+#    changes, ㅎ's aspiration, cluster reduction), and an obstruent coda
+#    (k t p) tenses a plain ㄱ ㄷ ㅂ ㅅ ㅈ that follows it, in the same word
+#    (학교 hakk͈jo; Wikipedia: "/kt/ is pronounced [k̚t͈]"; ㅅ and ㅈ are in its
+#    realisation table, not its prose). The reading does not write tensing.
+# NOT handled (no source read, or not a letter-by-letter rule): tensing after
+# a verb stem's ㄴ ㅁ (신다) and in compounds or after a Sino-Korean ㄹ
+# (발달); ㄷ ㅌ + 이 palatalisation (같이 → 가치); ㅎ weakening between vowels;
+# word-initial ㄹ said n or dropped (native) vs ɾ (loans); ㅢ as the particle
+# "of" said e; ㅈ ㅉ ㅊ + glide (져 is tɕʌ, written tɕjʌ here); vowel length;
+# ㄼ ㄺ ㄿ's second letter before a vowel-less suffix in particular words.
+_HG_IPA_ONSET = {"ㄱ": "k", "ㄲ": "k͈", "ㄴ": "n", "ㄷ": "t", "ㄸ": "t͈",
+                 "ㄹ": "ɾ", "ㅁ": "m", "ㅂ": "p", "ㅃ": "p͈", "ㅅ": "s",
+                 "ㅆ": "s͈", "ㅇ": "", "ㅈ": "tɕ", "ㅉ": "t͈ɕ", "ㅊ": "tɕʰ",
+                 "ㅋ": "kʰ", "ㅌ": "tʰ", "ㅍ": "pʰ", "ㅎ": "h"}
+_HG_IPA_CODA = {"ㄱ": "k", "ㄴ": "n", "ㄷ": "t", "ㄹ": "l", "ㅁ": "m",
+                "ㅂ": "p", "ㅇ": "ŋ", "ㅎ": "", "": ""}
+_HG_IPA_TENSE = {"ㄱ": "ㄲ", "ㄷ": "ㄸ", "ㅂ": "ㅃ", "ㅅ": "ㅆ", "ㅈ": "ㅉ"}
+# In _HG_VOWEL's order (ㅏ ㅐ ㅑ ㅒ ㅓ ㅔ ㅕ ㅖ ㅗ ㅘ ㅙ ㅚ ㅛ ㅜ ㅝ ㅞ ㅟ ㅠ ㅡ ㅢ ㅣ).
+_HG_IPA_VOWEL = ["a", "e", "ja", "je", "ʌ", "e", "jʌ", "je", "o", "wa", "we",
+                 "we", "jo", "u", "wʌ", "we", "wi", "ju", "ɯ", "ɰi", "i"]
+
+
+def _hg_coda_said(final: str) -> str:
+    """The one consonant letter a (possibly double) final letter is said as at
+    the end of a syllable, by the same choices the reading makes."""
+    parts = _HG_PARTS.get(final, final)
+    if len(parts) == 2 and parts != "ㄹㅁ":
+        parts = parts[0] if parts[0] != "ㄹ" or parts[1] in "ㅅㅌㅎ" else (
+            "ㄱ" if parts == "ㄹㄱ" else "ㄹ" if parts == "ㄹㅂ" else "ㅂ")
+    elif parts == "ㄹㅁ":
+        parts = "ㅁ"
+    return _HG_SAID.get(parts, parts)
+
+
 def _hangul_word(word: str) -> str:
-    """One word's Revised Romanization, with the sound changes between its
-    syllables: liaison (`한국어` hangugeo), nasalisation (`학문` hangmun),
+    """One word's Revised Romanization (see _hangul_word_both)."""
+    return _hangul_word_both(word)[0]
+
+
+def _hangul_word_both(word: str) -> tuple[str, str]:
+    """A word's Revised Romanization and broad IPA, with the sound changes
+    between its syllables: liaison (`한국어` hangugeo), nasalisation (`학문` hangmun),
     ㄹ's changes (`신라` silla, `종로` jongno) and ㅎ's (`좋다` jota). Tensing
     is not written, as the standard has it."""
     syl = []   # [initial jamo, vowel romanised, final jamo(s) or ""]
+    vow = []   # each syllable's vowel index into _HG_VOWEL, None for others
     for ch in word:
         n = ord(ch) - 0xAC00
         if 0 <= n < 11172:
             syl.append([_HG_INITIAL_JAMO[n // 588],
                         _HG_VOWEL[n % 588 // 28], _HG_FINAL[n % 28]])
+            vow.append(n % 588 // 28)
         else:
             syl.append([None, ch, ""])
+            vow.append(None)
     for k in range(len(syl) - 1):
         a, b = syl[k], syl[k + 1]
         if a[0] is None or b[0] is None or not a[2]:
@@ -2148,18 +2210,35 @@ def _hangul_word(word: str) -> str:
             b[0] = "ㄹ"
         a[2] = coda
     out = []
+    ipa = []
     for k, (init, vowel, final) in enumerate(syl):
         if init is None:
             out.append(vowel)
+            if not unicodedata.category(vowel).startswith("P"):
+                ipa.append(vowel)
             continue
         rom = _HG_INITIAL_ROM[init]
-        if init == "ㄹ" and k and syl[k - 1][2] == "ㄹ":
+        after_l = bool(k and syl[k - 1][2] == "ㄹ")
+        if init == "ㄹ" and after_l:
             rom = "l"
         out.append(rom + vowel)
         for jamo in _HG_PARTS.get(final, final):
             jamo = _HG_SAID.get(jamo, jamo)
             out.append(_HG_CODA_ROM.get(jamo, ""))
-    return "".join(out)
+        # The IPA: tense a plain onset after an obstruent coda of the
+        # syllable before, ㄹㄹ is ll, ㅢ after a consonant is i.
+        onset = init
+        prev_coda = (_hg_coda_said(syl[k - 1][2])
+                     if k and syl[k - 1][0] is not None else "")
+        if prev_coda in ("ㄱ", "ㄷ", "ㅂ") and onset in _HG_IPA_TENSE:
+            onset = _HG_IPA_TENSE[onset]
+        sound = _HG_IPA_ONSET[onset]
+        if onset == "ㄹ" and after_l:
+            sound = "l"
+        v = vow[k]
+        vsound = "i" if v == 19 and onset != "ㅇ" else _HG_IPA_VOWEL[v]
+        ipa.append(sound + vsound + _HG_IPA_CODA[_hg_coda_said(final)])
+    return "".join(out), "".join(ipa)
 
 
 def korean(text: str) -> Transcription:
@@ -2168,8 +2247,9 @@ def korean(text: str) -> Transcription:
     if any(ord(c) > 0x7F and not 0xAC00 <= ord(c) <= 0xD7A3
            and not unicodedata.category(c).startswith("P") for c in text):
         raise CannotRead(text)
-    words = [_hangul_word(w) for w in text.split(" ")]
-    return Transcription(" ".join(words), "", True)
+    both = [_hangul_word_both(w) for w in text.split(" ")]
+    return Transcription(" ".join(r for r, _ in both),
+                         " ".join(i for _, i in both if i), True)
 
 
 # --- Mandarin ----------------------------------------------------------------
