@@ -41,4 +41,16 @@ Ids (never reused, ascending inside a task): script `sat-1000..1299`, grammar wo
 
 ## 4. Progress
 
-2026-11-26: audit done, this page written. SAT-110 and SAT-050 started.
+2026-11-26: audit done, this page written.
+
+Merged, each with CI green and one Sonnet review: #1735 (SAT-110: `santali()` engine and registry entry, on main); #1736 on decks-live (`sat-script-letters`, 24 word units with 392 cards, 5 grammar units, path entries, `docs/review-queue/sat.md` with 47 rows).
+
+| Unit | State |
+|---|---|
+| 1 to 7, 10 to 14, 16 to 32, 34 (except 33) | built; most word units are under their planned size because the Wiktionary Santali extract has about 460 usable words against 690 planned (pronouns 14 of 36, family 5 of 27, adverbs 3 of 54, quantities 9 of 33, food 26 of 69, things 21 of 42, home 11 of 21, places 29 of 46); no card is written from memory |
+| 8 `sat-script-signs` | not built: the engine cannot read a lone mark and Wiktionary gives no digit names |
+| 9 `sat-script-other-scripts` | not built: no read source for Devanagari, Bengali or Latin spellings |
+| 33 `sat-clothes` | not built: the extract has no garment words |
+| Narrow IPA (SAT-160) | PR on `decks/sat-phonetics-wave1` |
+
+Lessons: a note's `source` naming Wiktionary must be that page only; an example's every word needs a `bases` entry (so Wiktionary example sentences were dropped from cards whose other words are not taught); a path `grammar` topic must equal a deck `sat-grammar-<topic>` (units 2 and 7 carry none).
