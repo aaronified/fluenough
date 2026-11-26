@@ -117,6 +117,7 @@ alphabet:
   - "ko-hangul-vowels"
   - "ko-hangul-consonants"
   - "ko-hangul-compound-vowels"
+  - "ko-hangul-batchim"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
@@ -166,7 +167,8 @@ units:
       - { id: "ae-and-e", text: { "en": "The compound vowels, and the pairs most speakers no longer tell apart: ae and e, oe and we" } }
     reading_passages:
       - { id: "menu-words", text: { "en": "Words on a cafe menu with compound vowels: coffee, tea, water" } }
-  - planned: { id: "ko-hangul-batchim", grammar: "script-hangul-batchim", words: 0 }
+  - decks: ["ko-hangul-batchim"]
+    words: 0
     listening_passages:
       - { id: "final-consonants", text: { "en": "The seven sounds a final consonant can have, and how one links into a following vowel: hangugeo" } }
     reading_passages:
@@ -193,17 +195,20 @@ units:
       - { id: "self-introduction", text: { "en": "A self-introduction on the first day at a language school" } }
     reading_passages:
       - { id: "registration-card", text: { "en": "A registration card: name, age, country, job" } }
-  - planned: { id: "ko-everyday-verbs", theme: "everyday-verbs", words: 35 }
+  - decks: ["ko-everyday-verbs", "ko-everyday-verbs-sentences"]
+    words: 35
     listening_passages:
       - { id: "a-morning-at-home", text: { "en": "A mother says what each person in the house does in the morning" } }
     reading_passages:
       - { id: "note-on-the-fridge", text: { "en": "A note on the fridge: what to eat, what to drink, when to come home" } }
-  - planned: { id: "ko-adverbs", theme: "adverbs", words: 30 }
+  - decks: ["ko-adverbs", "ko-adverbs-sentences"]
+    words: 30
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "ko-quantities", theme: "quantities", words: 20 }
+  - decks: ["ko-quantities", "ko-quantities-sentences"]
+    words: 20
     listening_passages:
       - { id: "how-many-do-you-want", text: { "en": "Asking how much and how many at a bakery" } }
     reading_passages:
@@ -219,7 +224,8 @@ units:
       - { id: "what-time-is-it", text: { "en": "Asking and telling the time: native numbers for the hours, Sino-Korean for the minutes" } }
     reading_passages:
       - { id: "shop-hours", text: { "en": "The opening hours on a shop door" } }
-  - planned: { id: "ko-location", theme: "location", words: 15 }
+  - decks: ["ko-location", "ko-location-sentences"]
+    words: 15
     listening_passages:
       - { id: "where-is-my-key", text: { "en": "Looking for a key: on, under, in, next to" } }
     reading_passages:
