@@ -201,12 +201,14 @@ units:
       - { id: "a-morning-at-home", text: { "en": "A mother says what each person in the house does in the morning" } }
     reading_passages:
       - { id: "note-on-the-fridge", text: { "en": "A note on the fridge: what to eat, what to drink, when to come home" } }
-  - planned: { id: "ko-adverbs", theme: "adverbs", words: 30 }
+  - decks: ["ko-adverbs", "ko-adverbs-sentences"]
+    words: 30
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "ko-quantities", theme: "quantities", words: 20 }
+  - decks: ["ko-quantities", "ko-quantities-sentences"]
+    words: 20
     listening_passages:
       - { id: "how-many-do-you-want", text: { "en": "Asking how much and how many at a bakery" } }
     reading_passages:
@@ -221,7 +223,8 @@ units:
       - { id: "what-time-is-it", text: { "en": "Asking and telling the time: native numbers for the hours, Sino-Korean for the minutes" } }
     reading_passages:
       - { id: "shop-hours", text: { "en": "The opening hours on a shop door" } }
-  - planned: { id: "ko-location", theme: "location", words: 15 }
+  - decks: ["ko-location", "ko-location-sentences"]
+    words: 15
     listening_passages:
       - { id: "where-is-my-key", text: { "en": "Looking for a key: on, under, in, next to" } }
     reading_passages:
