@@ -305,3 +305,21 @@
     # guard.
     name: "Standard Malayalam; no Wiktionary form is taken (rules only)"
     untagged: false
+
+"sat":
+  dump: "Santali"
+  variety:
+    # Measured on the kaikki.org Santali dump (read 2026-11-26, 989 headwords):
+    # 554 sound forms, all with no note and no tag, 545 of them narrow `[ ]`.
+    # They write the glottalised stops in another convention than the course's
+    # broad `ipa`: an ejective ʼ after ᱜ ᱫ ᱵ ᱡ (93 forms, [dak̚ʔ], [metʼ]), an
+    # unreleased ̚ and a glottal ʔ (13 and 21 forms), tie-barred t͡ʃ d͡ʒ, and
+    # the letter-name forms ([cʼ~ɟ], [kʼ~ɡ]). Only 29% of the headwords have a
+    # sound at all. So no Wiktionary form is taken (untagged: false, no notes,
+    # no tags): nothing is imported, and every Santali card will get its
+    # narrow form from decks/sat/sat-phonetics.yaml, in one convention (as
+    # Tamil and Malayalam). The broad `ipa` and the reading come from
+    # `santali()` in tools/transcribe.py. Flip `untagged` to true only with a
+    # `normalise` list for ʼ, ̚, ʔ and the tie bars and an `agree` guard.
+    name: "Standard Santali; no Wiktionary form is taken (rules only)"
+    untagged: false
