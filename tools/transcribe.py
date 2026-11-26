@@ -2121,7 +2121,7 @@ _HG_IPA_ONSET = {"ㄱ": "k", "ㄲ": "k͈", "ㄴ": "n", "ㄷ": "t", "ㄸ": "t͈",
                  "ㅆ": "s͈", "ㅇ": "", "ㅈ": "tɕ", "ㅉ": "t͈ɕ", "ㅊ": "tɕʰ",
                  "ㅋ": "kʰ", "ㅌ": "tʰ", "ㅍ": "pʰ", "ㅎ": "h"}
 _HG_IPA_CODA = {"ㄱ": "k", "ㄴ": "n", "ㄷ": "t", "ㄹ": "l", "ㅁ": "m",
-                "ㅂ": "p", "ㅇ": "ŋ", "": ""}
+                "ㅂ": "p", "ㅇ": "ŋ", "ㅎ": "", "": ""}
 _HG_IPA_TENSE = {"ㄱ": "ㄲ", "ㄷ": "ㄸ", "ㅂ": "ㅃ", "ㅅ": "ㅆ", "ㅈ": "ㅉ"}
 # In _HG_VOWEL's order (ㅏ ㅐ ㅑ ㅒ ㅓ ㅔ ㅕ ㅖ ㅗ ㅘ ㅙ ㅚ ㅛ ㅜ ㅝ ㅞ ㅟ ㅠ ㅡ ㅢ ㅣ).
 _HG_IPA_VOWEL = ["a", "e", "ja", "je", "ʌ", "e", "jʌ", "je", "o", "wa", "we",
@@ -2146,8 +2146,8 @@ def _hangul_word(word: str) -> str:
 
 
 def _hangul_word_both(word: str) -> tuple[str, str]:
-    """One word's Revised Romanization and broad IPA, with the sound changes between its
-    syllables: liaison (`한국어` hangugeo), nasalisation (`학문` hangmun),
+    """A word's Revised Romanization and broad IPA, with the sound changes
+    between its syllables: liaison (`한국어` hangugeo), nasalisation (`학문` hangmun),
     ㄹ's changes (`신라` silla, `종로` jongno) and ㅎ's (`좋다` jota). Tensing
     is not written, as the standard has it."""
     syl = []   # [initial jamo, vowel romanised, final jamo(s) or ""]
@@ -2249,7 +2249,7 @@ def korean(text: str) -> Transcription:
         raise CannotRead(text)
     both = [_hangul_word_both(w) for w in text.split(" ")]
     return Transcription(" ".join(r for r, _ in both),
-                         " ".join(i for _, i in both), True)
+                         " ".join(i for _, i in both if i), True)
 
 
 # --- Mandarin ----------------------------------------------------------------

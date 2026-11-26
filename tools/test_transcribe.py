@@ -532,6 +532,24 @@ class NewLanguagesTest(unittest.TestCase):
             with self.subTest(hangul):
                 self.assertEqual(transcribe(hangul, "ko").ipa, ipa)
 
+    def test_hangul_final_h_is_silent_alone_and_before_a_space(self) -> None:
+        for hangul, reading, ipa in (
+            ("좋", "jo", "tɕo"),
+            ("좋 다", "jo da", "tɕo ta"),
+        ):
+            with self.subTest(hangul):
+                t = transcribe(hangul, "ko")
+                self.assertEqual((t.reading, t.ipa), (reading, ipa))
+
+    def test_hangul_punctuation_only_token_leaves_no_extra_space(self) -> None:
+        for hangul, ipa in (
+            ("한 - 국", "han kuk"),
+            ("한국 ?", "hankuk"),
+            ("한국 ... 어", "hankuk ʌ"),
+        ):
+            with self.subTest(hangul):
+                self.assertEqual(transcribe(hangul, "ko").ipa, ipa)
+
     def test_hangul_reading_is_unchanged_by_the_ipa(self) -> None:
         for hangul, reading in (
             ("학교", "hakgyo"),
