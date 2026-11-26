@@ -233,7 +233,9 @@ units:
   # 5. Rules as forms, practised on the words known: how syllables change
   # each other, the copula and the particles first, then the polite
   # present, negation, existence, the demonstratives and more particles.
-  - planned: { id: "ko-grammar-sound-changes-1", grammar: ["liaison", "nasalisation"] }
+  - decks: ["ko-grammar-liaison", "ko-grammar-nasalisation"]
+    words: 0
+    grammar: ["liaison", "nasalisation"]
     listening_passages:
       - { id: "said-not-spelled", text: { "en": "Words said otherwise than spelled: a final consonant moving on (meogeoyo), and k, t, p turning nasal before n and m (gamsahamnida, hangnyeon)" } }
     reading_passages:
