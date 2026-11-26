@@ -51,6 +51,10 @@ Merged, each with CI green and one Sonnet review: #1735 (SAT-110: `santali()` en
 | 8 `sat-script-signs` | not built: the engine cannot read a lone mark and Wiktionary gives no digit names |
 | 9 `sat-script-other-scripts` | not built: no read source for Devanagari, Bengali or Latin spellings |
 | 33 `sat-clothes` | not built: the extract has no garment words |
-| Narrow IPA (SAT-160) | PR on `decks/sat-phonetics-wave1` |
+| Narrow IPA (SAT-160) | merged, #1737: `sat-phonetics.yaml` with 7 rules, `phonetic` on 500 cards; open for a phonetician: checked-final stops (engine must mark them), ᱦ as h or ʔ, aspiration marks, o̠/ɛ in older broad `ipa`; rerun `derive_phonetic.py sat --bracket-unchanged --write` after any later card |
+
+## 5. Final state, 2026-11-26
+
+A1 stops here by the owner's order. Left for the owner: Santali speaker review (`docs/review-queue/sat.md`, 47 rows), sources for units 8, 9 and 33, more words (a read dictionary beyond the Wiktionary extract), `#1650` (not touched). Branches `decks/sat-a1-wave1` and `decks/sat-phonetics-wave1` are left for the owner to delete.
 
 Lessons: a note's `source` naming Wiktionary must be that page only; an example's every word needs a `bases` entry (so Wiktionary example sentences were dropped from cards whose other words are not taught); a path `grammar` topic must equal a deck `sat-grammar-<topic>` (units 2 and 7 carry none).
