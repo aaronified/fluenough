@@ -1,0 +1,27 @@
+schema: 1
+id: "sat-en-grammar-postpositions"
+kind: "layer"
+core: "sat-grammar-postpositions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "In, by, with, towards, from, at and of: the endings after a noun"
+description: "Santali puts the small word after the noun, and writes it joined on. Eight endings on four nouns, from Wiktionary's Santali declension tables, Skrefsrud (1873) and Wikipedia. Not yet checked by a Santali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Endings after a noun"
+  slot_name: "ending"
+  slots:
+    "in": "in, on or at: -ᱨᱮ (-re)"
+    "by": "by, with or into: -ᱛᱮ (-te)"
+    "with": "together with: -ᱥᱟᱶ (-saw̃)"
+    "towards": "towards: -ᱥᱮᱱ (-sen)"
+    "from": "from: -ᱠᱷᱚᱱ (-kho̠n)"
+    "at": "at, to or near (a person or place): -ᱴᱷᱮᱱ (-ṭhen)"
+    "of-living": "of, before a living thing: -ᱨᱮᱱ (-ren)"
+    "of-thing": "of, before a thing: -ᱟᱜ (-ak')"
+  entries:
+    "forest": "forest"
+    "mountain": "mountain"
+    "river": "river"
+    "child": "child"
+  notes: "Santali puts the small word after the noun and writes it joined on: ᱵᱤᱨ (bir), forest, becomes ᱵᱤᱨᱨᱮ (birre), in the forest. The noun itself does not change (Skrefsrud, 1873). After the two or the many marker the ending comes last: ᱦᱚᱱᱠᱤᱱᱨᱮ (ho̠nkinre), in the two children. Some endings have a second spelling, a checked c' in place of the n, and both are accepted: ᱥᱮᱱ (sen) or ᱥᱮᱡ (sec'), towards; ᱠᱷᱚᱱ (kho̠n) or ᱠᱷᱚᱡ (kho̠c'), from; ᱴᱷᱮᱱ (ṭhen) or ᱴᱷᱮᱡ (ṭhec'), at. Which of-ending to use depends on the thing owned, not the owner: ᱨᱮᱱ (ren) before a living thing, ᱟᱜ (ak') or ᱨᱮᱭᱟᱜ (reyak') before a thing (Skrefsrud, 1873; Wiktionary). Wiktionary also lists ᱥᱟᱞᱟᱜ (salak'), with or along with, as a word of its own."
