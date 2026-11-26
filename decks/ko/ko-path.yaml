@@ -173,7 +173,8 @@ units:
       - { id: "final-consonants", text: { "en": "The seven sounds a final consonant can have, and how one links into a following vowel: hangugeo" } }
     reading_passages:
       - { id: "street-names", text: { "en": "Street and station names with final consonants" } }
-  - planned: { id: "ko-pronouns", theme: "pronouns", words: 20 }
+  - decks: ["ko-pronouns", "ko-pronouns-sentences"]
+    words: 13
     listening_passages:
       - { id: "who-is-that", text: { "en": "Pointing out who is who in a group photo: I, the humble I, this person, that person" } }
     reading_passages:
@@ -280,12 +281,14 @@ units:
       - { id: "office-hours-note", text: { "en": "A note on office hours and who is in, from when to when" } }
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
-  - planned: { id: "ko-work", theme: "work", words: 35 }
+  - decks: ["ko-work", "ko-work-sentences"]
+    words: 31
     listening_passages:
       - { id: "what-is-your-job", text: { "en": "Two people ask each other what they do for a living" } }
     reading_passages:
       - { id: "job-card", text: { "en": "A business card and a short job description" } }
-  - planned: { id: "ko-numbers-big", theme: "numbers-big", words: 35 }
+  - decks: ["ko-numbers-big"]
+    words: 19
     listening_passages:
       - { id: "prices-and-years", text: { "en": "Hearing prices in won, years and phone numbers, counted in ten thousands (man)" } }
     reading_passages:
@@ -295,7 +298,8 @@ units:
       - { id: "two-coffees-three-people", text: { "en": "Ordering for a group: two coffees, three people, one bottle, with han, du, se and ne before a counter" } }
     reading_passages:
       - { id: "order-slip", text: { "en": "An order slip with counted items" } }
-  - planned: { id: "ko-loanwords", theme: "loanwords", words: 30 }
+  - decks: ["ko-loanwords", "ko-loanwords-sentences"]
+    words: 28
     listening_passages:
       - { id: "at-the-convenience-store", text: { "en": "Buying a few things at a convenience store: words from English as Korean says them" } }
     reading_passages:
