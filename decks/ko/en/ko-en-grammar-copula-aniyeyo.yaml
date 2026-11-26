@@ -1,0 +1,24 @@
+schema: 1
+id: "ko-en-grammar-copula-aniyeyo"
+kind: "layer"
+core: "ko-grammar-copula-aniyeyo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "아니에요 (anieyo): am not, is not and are not"
+description: "Seven nouns with the polite negative copula, and the same noun in a sentence about yourself. Sources: the en.wiktionary.org entry 아니다 (anida) (usage notes: written after a space, its complement takes -이 (-i) or -가 (-ga); the polite form 아니에요 (anieyo)) and the en.wikipedia.org page 'Korean grammar' (copulative verbs). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The negative copula, polite style"
+  slot_name: "sentence"
+  slots:
+    "not": "the noun with 이 (i) or 가 (ga) and 아니에요 (anieyo)"
+    "i-am-not": "I am not (the noun): 저는 (jeoneun) and the noun with 아니에요 (anieyo)"
+  entries:
+    "haksaeng": "a student"
+    "seonsaengnim": "a teacher"
+    "gyosunim": "a professor"
+    "hoesawon": "an office worker"
+    "uisa": "a doctor"
+    "chingu": "a friend"
+    "yeoja": "a woman"
+  notes: "아니다 (anida) is the negative copula, 'to not be (something)'. Its polite form is 아니에요 (anieyo). Unlike -이다 (-ida), it is a word of its own and is written after a space. The noun in front of it, the thing you are not, takes the particle -이 (-i) after a consonant and -가 (-ga) after a vowel: 학생이 아니에요 (haksaengi anieyo), 의사가 아니에요 (uisaga anieyo). Wiktionary's 아니다 (anida) entry notes that this is one of only two words, with 되다 (doeda), whose complement is marked this way. The answer 'no' is 아니요 (aniyo), a different word from 아니에요 (anieyo), 'is not'."

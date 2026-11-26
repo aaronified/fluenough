@@ -251,7 +251,9 @@ units:
       - { id: "said-not-spelled", text: { "en": "Words said otherwise than spelled: a final consonant moving on (meogeoyo), and k, t, p turning nasal before n and m (gamsahamnida, hangnyeon)" } }
     reading_passages:
       - { id: "spelling-and-sound", text: { "en": "A short list of words with their spelling and how they are said, side by side" } }
-  - planned: { id: "ko-grammar-copula", grammar: ["copula-ieyo", "copula-aniyeyo"] }
+  - decks: ["ko-grammar-copula-ieyo", "ko-grammar-copula-aniyeyo"]
+    words: 0
+    grammar: ["copula-ieyo", "copula-aniyeyo"]
     listening_passages:
       - { id: "i-am-a-student", text: { "en": "Saying who and what you are, and are not: a student, not a teacher" } }
     reading_passages:
