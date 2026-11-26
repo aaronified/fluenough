@@ -77,10 +77,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ko-2270 | ko-numbers-big | The vague numbers 수백 (subaek), 수천 (sucheon), 수십 (susip) and 수백만 (subaengman) are taught with the prefix 수 (su). Please confirm the note that 수 (su) gives a vague number. | KO-W5 Haiku worker | 2026-11-26 |
 | ko-2274 | ko-numbers-big | 퍼센트 (peosenteu) is borrowed from English 'percent', and 백분율 (baekbunyul) is the Sino-Korean word for a percentage (Wiktionary). Please confirm which word a learner should use. | KO-W5 Haiku worker | 2026-11-26 |
 | ko-2277 | ko-numbers-big | 기수사 (gisusa) and 수사 (susa) are grammar terms for number words, and they have no examples. Should metalanguage cards like these be on a vocabulary unit at all? | KO-W5 Haiku worker | 2026-11-26 |
-| ko-2341 | ko-loanwords | 텔레비전 (tellebijeon) is marked formal by Wiktionary. Please check the register and whether a more everyday word should be taught alongside it. | KO-W5 Haiku worker | 2026-11-26 |
 | ko-2343 | ko-loanwords | 휴대폰 (hyudaepon) is marked colloquial by Wiktionary, and its note gives the compound of 휴대 (hyudae) and 폰 (pon). Please check the register and the note. | KO-W5 Haiku worker | 2026-11-26 |
 | ko-2364 | ko-loanwords | 드라마 (deurama) is given only as 'drama' from Wiktionary, and its note says no other sense is claimed. In Korean use, does it mean a TV drama series, and should the card say so? | KO-W5 Haiku worker | 2026-11-26 |
-| ko-2344 | ko-loanwords | 카페 (kape) is borrowed from French 'café' (Wiktionary), and its note compares 커피 (keopi). Please confirm the note and the example 카페 좋아요 (kape joayo)? | KO-W5 Haiku worker | 2026-11-26 |
 | ko-1710 | adverbs | Usage note: 가끔 and 때때로 both mean sometimes. Please check the nuance note. | KO-W2 | 2026-11-26 |
 | ko-1711 | adverbs | Usage note: 때때로 and 가끔 are treated as interchangeable. Please check. | KO-W2 | 2026-11-26 |
 | ko-1713 | adverbs | Usage note: 절대 with 안 means never. Please check the register. | KO-W2 | 2026-11-26 |
