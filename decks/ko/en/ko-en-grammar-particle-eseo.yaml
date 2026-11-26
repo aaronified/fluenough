@@ -1,0 +1,25 @@
+schema: 1
+id: "ko-en-grammar-particle-eseo"
+kind: "layer"
+core: "ko-grammar-particle-eseo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "에서 (eseo): at and from"
+description: "Seven places with the particle 에서 (eseo), and the same place in the sentence 'I do something at (the place)'. Sources: the en.wikipedia.org page 'Korean postpositions' and the en.wiktionary.org entry -에서 (-eseo) (movement from, range from, 'in, inside, at, on'); each verb is copied from its conjugation table. Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The particle 에서 (eseo)"
+  slot_name: "form"
+  slots:
+    "place": "the place with 에서 (eseo)"
+    "do": "'I do something at (the place)': 저는 (jeoneun), the place with 에서 (eseo) and the polite verb"
+  entries:
+    "hakgyo": "at school: I study at school"
+    "jip": "at home: I sleep at home"
+    "gongwon": "at the park: I rest at the park"
+    "sijang": "at the market: I buy at the market"
+    "sikdang": "at the restaurant: I eat at the restaurant"
+    "doseogwan": "at the library: I read at the library"
+    "hoesa": "at the company: I work at the company"
+    "kape": "at the cafe: I drink at the cafe"
+  notes: "-에서 (-eseo) is the same after every noun. With a verb of doing it marks the place where the action happens: 학교에서 (hakgyoeseo) 공부해요 (gongbuhaeyo), 'I study at school' (Wiktionary: 'in, inside, at, on'; Wikipedia: 'at' with an action verb that is not about motion). With a verb of coming or going it marks where the movement starts, 'from': Wiktionary's example is 어디에서 (eodieseo) 왔어요 (wasseoyo), 'where do you come from?', where 왔어요 (wasseoyo) is the polite past of 오다 (oda), a later unit. It also marks the start of a range, as in 1에서 (1-eseo), 'from 1'. Like -에 (-e), it is used only for things that are not alive. Compare 집에 (jibe) 가요 (gayo), 'I go home', with 집에서 (jibeseo) 자요 (jayo), 'I sleep at home': -에 (-e) for where you go, -에서 (-eseo) for where you do it. Each polite verb is copied from Wiktionary's conjugation table."

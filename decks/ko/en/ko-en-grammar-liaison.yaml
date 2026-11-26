@@ -1,0 +1,24 @@
+schema: 1
+id: "ko-en-grammar-liaison"
+kind: "layer"
+core: "ko-grammar-liaison"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Liaison: a final consonant moves to the next syllable"
+description: "Five nouns that end in a consonant, each with the particles 이 (i), 은 (eun), 을 (eul) and 에 (e), written the way they sound. When a syllable ends in a consonant and the next one starts with the silent ㅇ (ieung), the consonant is said at the start of the next syllable. Sources: the en.wikipedia.org page 'Korean phonology' and the en.wiktionary.org pages for 한국어 (hangugeo) ('Phonetic hangul' 한구거 (hangugeo)), 직업 (jigeop), 영어 (yeongeo) and the conjugation table of 먹다 (meokda). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Liaison before a vowel"
+  slot_name: "particle"
+  slots:
+    "i": "with 이 (i): said as"
+    "eun": "with 은 (eun): said as"
+    "eul": "with 을 (eul): said as"
+    "e": "with 에 (e): said as"
+  entries:
+    "mul": "water"
+    "ireum": "name"
+    "saram": "a person"
+    "jigeop": "a job"
+    "hanguk": "Korea"
+  notes: "When a syllable ends in a consonant and the next syllable starts with the silent ㅇ (ieung), the consonant is said at the start of that next syllable, and the spelling does not change. 물 (mul), water, with 이 (i) is spelled 물이 (muri) but said 무리 (muri); 한국어 (hangugeo), the Korean language, is said 한구거 (hangugeo) (Wiktionary's 'Phonetic hangul' for the word). So 직업이 (jigeobi) is said 지거비 (jigeobi): the final ㅂ (b) of 직업 (jigeop) lands on the particle. This is why every particle after a consonant sounds like part of the noun, and why the readings in this course show it: 사람이 (sarami), not 'saram i'. The same thing happens when a verb stem that ends in a consonant meets an ending that starts with a vowel: 먹어요 (meogeoyo) is said 머거요 (meogeoyo), as the Revised Romanization in Wiktionary's conjugation table of 먹다 (meokda) shows. A final ㅇ (ng) never moves: 영어 (yeongeo), English, is said 영어 (yeongeo) with the ng kept at the end of the first syllable, as Wiktionary gives it."

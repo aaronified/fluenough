@@ -1,0 +1,140 @@
+# Unit 26 (ko-grammar-isseoyo). Sources read: en.wikipedia.org 'Korean grammar' (copulative and existential verbs: 있다 'there is', 없다 'there isn't', the honorific 계시다) and 'Korean verbs' (existential verbs conjugate like action verbs; negation by a suppletive negative form),
+# en.wiktionary.org entries 있다 and 없다 (senses, the example 전 은행 계좌가 없어요, the conjugation tables from which the polite forms 있어요 and 없어요 are copied), 안 (inherently negative verbs such as 없다).
+schema: 1
+id: "ko-grammar-eopseoyo"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["none", "question", "have-not"]
+  entries:
+    - lemma: "친구"
+      key: "chingu"
+      reading: "chingu"
+      ipa: "tɕʰinku"
+      forms:
+        "none": "친구가 없어요"
+        "question": "친구가 없어요?"
+        "have-not": "저는 친구가 없어요"
+      readings:
+        "none": "chinguga eopseoyo"
+        "question": "chinguga eopseoyo?"
+        "have-not": "jeoneun chinguga eopseoyo"
+      ipas:
+        "none": "tɕʰinkuka ʌps͈ʌjo"
+        "question": "tɕʰinkuka ʌps͈ʌjo"
+        "have-not": "tɕʌnɯn tɕʰinkuka ʌps͈ʌjo"
+    - lemma: "가족"
+      key: "gajok"
+      reading: "gajok"
+      ipa: "katɕok"
+      forms:
+        "none": "가족이 없어요"
+        "question": "가족이 없어요?"
+        "have-not": "저는 가족이 없어요"
+      readings:
+        "none": "gajogi eopseoyo"
+        "question": "gajogi eopseoyo?"
+        "have-not": "jeoneun gajogi eopseoyo"
+      ipas:
+        "none": "katɕoki ʌps͈ʌjo"
+        "question": "katɕoki ʌps͈ʌjo"
+        "have-not": "tɕʌnɯn katɕoki ʌps͈ʌjo"
+    - lemma: "돈"
+      key: "don"
+      reading: "don"
+      ipa: "ton"
+      forms:
+        "none": "돈이 없어요"
+        "question": "돈이 없어요?"
+        "have-not": "저는 돈이 없어요"
+      readings:
+        "none": "doni eopseoyo"
+        "question": "doni eopseoyo?"
+        "have-not": "jeoneun doni eopseoyo"
+      ipas:
+        "none": "toni ʌps͈ʌjo"
+        "question": "toni ʌps͈ʌjo"
+        "have-not": "tɕʌnɯn toni ʌps͈ʌjo"
+    - lemma: "시간"
+      key: "sigan"
+      reading: "sigan"
+      ipa: "sikan"
+      forms:
+        "none": "시간이 없어요"
+        "question": "시간이 없어요?"
+        "have-not": "저는 시간이 없어요"
+      readings:
+        "none": "sigani eopseoyo"
+        "question": "sigani eopseoyo?"
+        "have-not": "jeoneun sigani eopseoyo"
+      ipas:
+        "none": "sikani ʌps͈ʌjo"
+        "question": "sikani ʌps͈ʌjo"
+        "have-not": "tɕʌnɯn sikani ʌps͈ʌjo"
+    - lemma: "자동차"
+      key: "jadongcha"
+      reading: "jadongcha"
+      ipa: "tɕatoŋtɕʰa"
+      forms:
+        "none": "자동차가 없어요"
+        "question": "자동차가 없어요?"
+        "have-not": "저는 자동차가 없어요"
+      readings:
+        "none": "jadongchaga eopseoyo"
+        "question": "jadongchaga eopseoyo?"
+        "have-not": "jeoneun jadongchaga eopseoyo"
+      ipas:
+        "none": "tɕatoŋtɕʰaka ʌps͈ʌjo"
+        "question": "tɕatoŋtɕʰaka ʌps͈ʌjo"
+        "have-not": "tɕʌnɯn tɕatoŋtɕʰaka ʌps͈ʌjo"
+    - lemma: "컴퓨터"
+      key: "keompyuteo"
+      reading: "keompyuteo"
+      ipa: "kʰʌmpʰjutʰʌ"
+      forms:
+        "none": "컴퓨터가 없어요"
+        "question": "컴퓨터가 없어요?"
+        "have-not": "저는 컴퓨터가 없어요"
+      readings:
+        "none": "keompyuteoga eopseoyo"
+        "question": "keompyuteoga eopseoyo?"
+        "have-not": "jeoneun keompyuteoga eopseoyo"
+      ipas:
+        "none": "kʰʌmpʰjutʰʌka ʌps͈ʌjo"
+        "question": "kʰʌmpʰjutʰʌka ʌps͈ʌjo"
+        "have-not": "tɕʌnɯn kʰʌmpʰjutʰʌka ʌps͈ʌjo"
+    - lemma: "휴대폰"
+      key: "hyudaepon"
+      reading: "hyudaepon"
+      ipa: "hjutepʰon"
+      forms:
+        "none": "휴대폰이 없어요"
+        "question": "휴대폰이 없어요?"
+        "have-not": "저는 휴대폰이 없어요"
+      readings:
+        "none": "hyudaeponi eopseoyo"
+        "question": "hyudaeponi eopseoyo?"
+        "have-not": "jeoneun hyudaeponi eopseoyo"
+      ipas:
+        "none": "hjutepʰoni ʌps͈ʌjo"
+        "question": "hjutepʰoni ʌps͈ʌjo"
+        "have-not": "tɕʌnɯn hjutepʰoni ʌps͈ʌjo"
+    - lemma: "열쇠"
+      key: "yeolsoe"
+      reading: "yeolsoe"
+      ipa: "jʌlswe"
+      forms:
+        "none": "열쇠가 없어요"
+        "question": "열쇠가 없어요?"
+        "have-not": "저는 열쇠가 없어요"
+      readings:
+        "none": "yeolsoega eopseoyo"
+        "question": "yeolsoega eopseoyo?"
+        "have-not": "jeoneun yeolsoega eopseoyo"
+      ipas:
+        "none": "jʌlsweka ʌps͈ʌjo"
+        "question": "jʌlsweka ʌps͈ʌjo"
+        "have-not": "tɕʌnɯn jʌlsweka ʌps͈ʌjo"

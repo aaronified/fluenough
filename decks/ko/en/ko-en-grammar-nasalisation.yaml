@@ -1,0 +1,24 @@
+schema: 1
+id: "ko-en-grammar-nasalisation"
+kind: "layer"
+core: "ko-grammar-nasalisation"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nasalisation: k, t and p before n and m"
+description: "Eight words where a final ㄱ (g), ㄷ (d) or ㅂ (b) is said as a nasal because a nasal consonant follows, written the way they sound. Sources: the en.wikipedia.org page 'Korean phonology' (obstruents become nasal stops before nasals: 한국말 (hangungmal) is said 한궁말 (hangungmal)), the en.wiktionary.org entries 한국말 (hangungmal), 학년 (hangnyeon), 작년 (jangnyeon), 십만 (simman) and 감사합니다 (gamsahamnida) ('Phonetic hangul'), and the conjugation tables of 먹다 (meokda), 읽다 (ikda) and 있다 (itda). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Nasalisation"
+  slot_name: "sound"
+  slots:
+    "said": "said as"
+  entries:
+    "hangungmal": "the Korean language"
+    "hangnyeon": "a school year, a grade"
+    "jangnyeon": "last year"
+    "simman": "a hundred thousand"
+    "gamsahamnida": "thank you (formal)"
+    "meongneun": "eating, that someone eats"
+    "inneun": "that exists, that is there"
+    "ingneun": "reading, that someone reads"
+  notes: "A consonant that is closed at the end of a syllable becomes a nasal when the next syllable starts with ㄴ (n) or ㅁ (m): ㄱ (g) is said ㅇ (ng), ㄷ (d) is said ㄴ (n), and ㅂ (b) is said ㅁ (m). Only the sound changes, never the spelling, and the place in the mouth stays the same: velar to velar, tongue-tip to tongue-tip, lips to lips (Wikipedia, Korean phonology). 한국말 (hangungmal) is spelled with ㄱ (g) but said 한궁말 (hangungmal); 학년 (hangnyeon) is said 항년 (hangnyeon); 십만 (simman) is said 심만 (simman). The ending -는 (-neun) after a verb stem does the same: 먹는 (meongneun) is said 멍는 (meongneun), and 있는 (inneun), whose final ㅆ (ss) is said as ㄷ (d) at the end of a syllable, is said 인는 (inneun). The greeting 감사합니다 (gamsahamnida) is spelled with ㅂ (b) before ㄴ (n) and said 감사함니다 (gamsahamnida). Wiktionary's Revised Romanization of these words already shows the nasal."

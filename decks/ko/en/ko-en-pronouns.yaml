@@ -1,0 +1,150 @@
+schema: 1
+id: "ko-en-pronouns"
+kind: "layer"
+core: "ko-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns"
+license: "CC-BY-SA-4.0"
+description: "Pronouns and people words: we, this and that, here and there, people, and the polite words for a person. Not yet checked by a Korean speaker: please report any mistake."
+tags: ["beginner", "unreviewed"]
+"cards":
+  "ko-1300":
+    "native": "we, us"
+    "notes":
+      "n1": "우리 (uri) is 'we', you and the listener or others with you. Before a noun it means 'our', as in 우리 집 (uri jip), our home."
+    "examples":
+      "우리는 학생이에요.":
+        "native": "We are students."
+        "bases":
+          "우리는": "we, with the topic particle 는 (neun)"
+          "학생이에요": "student, with the polite copula 이에요 (ieyo)"
+      "우리 선생님이에요.":
+        "native": "This is our teacher."
+        "bases":
+          "우리": "our, before a noun"
+          "선생님이에요": "teacher, with the polite copula 이에요 (ieyo)"
+  "ko-1301":
+    "native": "we, us (polite and humble)"
+    "notes":
+      "n1": "저희 (jeohui) is the polite, humble form of 우리 (uri), 'we'. Use it for your own group when speaking to a customer or to someone you respect."
+    "examples":
+      "저희는 학생이에요.":
+        "native": "We are students."
+        "bases":
+          "저희는": "we, humble, with the topic particle 는 (neun)"
+          "학생이에요": "student, with the polite copula 이에요 (ieyo)"
+      "저희는 괜찮아요.":
+        "native": "We are fine."
+        "bases":
+          "저희는": "we, humble, with the topic particle 는 (neun)"
+          "괜찮아요": "fine, with the polite ending 아요 (ayo)"
+  "ko-1302":
+    "native": "this (a thing near the speaker)"
+    "notes":
+      "n1": "이것 (igeot) is 'this' for a thing near you. The spoken short form is 이거 (igeo), as in 이거 얼마예요 (igeo eolmayeyo), how much is this, in the phrasebook."
+    "examples":
+      "이것은 물이에요.":
+        "native": "This is water."
+        "bases":
+          "이것은": "this, with the topic particle 은 (eun)"
+          "물이에요": "water, with the polite copula 이에요 (ieyo)"
+      "이것 주세요.":
+        "native": "This one, please."
+        "bases":
+          "이것": "this one"
+          "주세요": "give, with the polite request 세요 (seyo)"
+  "ko-1303":
+    "native": "that (a thing near the listener)"
+    "notes":
+      "n1": "그것 (geugeot) is 'that' for a thing near the listener, or one just mentioned."
+    "examples":
+      "그것은 커피예요.":
+        "native": "That is coffee."
+        "bases":
+          "그것은": "that, with the topic particle 은 (eun)"
+          "커피예요": "coffee, with the polite copula 예요 (yeyo)"
+      "그것 괜찮아요?":
+        "native": "Is that OK?"
+        "bases":
+          "그것": "that"
+          "괜찮아요": "OK, with the polite ending 아요 (ayo)"
+  "ko-1304":
+    "native": "that over there (far from both of you)"
+    "examples":
+      "저것은 뭐예요?":
+        "native": "What is that over there?"
+        "bases":
+          "저것은": "that over there, with the topic particle 은 (eun)"
+      "저것 좋아요?":
+        "native": "Is that over there good?"
+        "bases":
+          "저것": "that over there"
+  "ko-1307":
+    "native": "over there"
+    "examples":
+      "저기 좋아요.":
+        "native": "It is good over there."
+        "bases":
+          "저기": "over there"
+      "저기는 어디예요?":
+        "native": "Where is over there?"
+        "bases":
+          "저기는": "over there, with the topic particle 는 (neun)"
+  "ko-1309":
+    "native": "people, polite counter for people; a polite word for a person"
+    "notes":
+      "n1": "분 (bun) is the polite counter for people, and a polite word for a person. Ordinary speech counts people with 명 (myeong), and uses 사람 (saram) for a person."
+    "examples":
+      "그 분은 의사예요.":
+        "native": "That person is a doctor."
+        "bases":
+          "분은": "person, polite, with the topic particle 은 (eun)"
+          "의사예요": "doctor, with the polite copula 예요 (yeyo)"
+      "이 분은 선생님이에요.":
+        "native": "This person is a teacher."
+        "bases":
+          "분은": "person, polite, with the topic particle 은 (eun)"
+          "선생님이에요": "teacher, with the polite copula 이에요 (ieyo)"
+  "ko-1310":
+    "native": "this person (polite); he or she"
+    "notes":
+      "n1": "이분 (ibun) is the polite word for 'this person', for someone you respect. It is the polite form of 이 사람 (i saram), this person."
+    "examples":
+      "이분이 선생님이에요.":
+        "native": "This person is the teacher."
+        "bases":
+          "이분이": "this person, polite, with the subject particle 이 (i)"
+          "선생님이에요": "teacher, with the polite copula 이에요 (ieyo)"
+      "이분은 의사예요?":
+        "native": "Is this person a doctor?"
+        "bases":
+          "이분은": "this person, polite, with the topic particle 은 (eun)"
+          "의사예요": "doctor, with the polite copula 예요 (yeyo)"
+  "ko-1311":
+    "native": "that person (polite); he or she"
+    "notes":
+      "n1": "그분 (geubun) is the polite word for 'that person', near the listener or just mentioned. It is the polite form of 그 사람 (geu saram), that person."
+    "examples":
+      "그분은 누구예요?":
+        "native": "Who is that person?"
+        "bases":
+          "그분은": "that person, polite, with the topic particle 은 (eun)"
+      "그분은 선생님이에요.":
+        "native": "That person is the teacher."
+        "bases":
+          "그분은": "that person, polite, with the topic particle 은 (eun)"
+          "선생님이에요": "teacher, with the polite copula 이에요 (ieyo)"
+  "ko-1312":
+    "native": "that person over there (polite); he or she"
+    "notes":
+      "n1": "저분 (jeobun) is the polite word for 'that person over there'. It is the polite form of 저 사람 (jeo saram), that person over there."
+    "examples":
+      "저분은 누구예요?":
+        "native": "Who is that person over there?"
+        "bases":
+          "저분은": "that person over there, polite, with the topic particle 은 (eun)"
+      "저분은 교수님이에요.":
+        "native": "That person over there is a professor."
+        "bases":
+          "저분은": "that person over there, polite, with the topic particle 은 (eun)"
+          "교수님이에요": "professor, with the polite copula 이에요 (ieyo)"

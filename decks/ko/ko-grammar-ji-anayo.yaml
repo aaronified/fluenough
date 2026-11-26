@@ -1,0 +1,188 @@
+# Unit 25 (ko-grammar-negation). Sources read: en.wiktionary.org entries 안 (the adverb 'not': 안 먹어; 않다 negates the whole clause and has a more formal connotation; 사과만 안 먹어 / 사과만 먹지 않아), 않다 (auxiliary adjective used with -지; its polite form 않아요), -지,
+# en.wikipedia.org 'Korean verbs' (negation: the negative adverb 안 in front of the verb; 못 is a separate word) and the conjugation table of every word used (the polite form is copied from it).
+schema: 1
+id: "ko-grammar-ji-anayo"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["stem-ji", "negative", "i-not"]
+  entries:
+    - lemma: "먹다"
+      key: "meokda"
+      reading: "meokda"
+      ipa: "mʌkt͈a"
+      forms:
+        "stem-ji": "먹지"
+        "negative": "먹지 않아요"
+        "i-not": "저는 먹지 않아요"
+      readings:
+        "stem-ji": "meokji"
+        "negative": "meokji anayo"
+        "i-not": "jeoneun meokji anayo"
+      ipas:
+        "stem-ji": "mʌkt͈ɕi"
+        "negative": "mʌkt͈ɕi anajo"
+        "i-not": "tɕʌnɯn mʌkt͈ɕi anajo"
+    - lemma: "가다"
+      key: "gada"
+      reading: "gada"
+      ipa: "kata"
+      forms:
+        "stem-ji": "가지"
+        "negative": "가지 않아요"
+        "i-not": "저는 가지 않아요"
+      readings:
+        "stem-ji": "gaji"
+        "negative": "gaji anayo"
+        "i-not": "jeoneun gaji anayo"
+      ipas:
+        "stem-ji": "katɕi"
+        "negative": "katɕi anajo"
+        "i-not": "tɕʌnɯn katɕi anajo"
+    - lemma: "보다"
+      key: "boda"
+      reading: "boda"
+      ipa: "pota"
+      forms:
+        "stem-ji": "보지"
+        "negative": "보지 않아요"
+        "i-not": "저는 보지 않아요"
+      readings:
+        "stem-ji": "boji"
+        "negative": "boji anayo"
+        "i-not": "jeoneun boji anayo"
+      ipas:
+        "stem-ji": "potɕi"
+        "negative": "potɕi anajo"
+        "i-not": "tɕʌnɯn potɕi anajo"
+    - lemma: "마시다"
+      key: "masida"
+      reading: "masida"
+      ipa: "masita"
+      forms:
+        "stem-ji": "마시지"
+        "negative": "마시지 않아요"
+        "i-not": "저는 마시지 않아요"
+      readings:
+        "stem-ji": "masiji"
+        "negative": "masiji anayo"
+        "i-not": "jeoneun masiji anayo"
+      ipas:
+        "stem-ji": "masitɕi"
+        "negative": "masitɕi anajo"
+        "i-not": "tɕʌnɯn masitɕi anajo"
+    - lemma: "읽다"
+      key: "ikda"
+      reading: "ikda"
+      ipa: "ikt͈a"
+      forms:
+        "stem-ji": "읽지"
+        "negative": "읽지 않아요"
+        "i-not": "저는 읽지 않아요"
+      readings:
+        "stem-ji": "ikji"
+        "negative": "ikji anayo"
+        "i-not": "jeoneun ikji anayo"
+      ipas:
+        "stem-ji": "ikt͈ɕi"
+        "negative": "ikt͈ɕi anajo"
+        "i-not": "tɕʌnɯn ikt͈ɕi anajo"
+    - lemma: "공부하다"
+      key: "gongbuhada"
+      reading: "gongbuhada"
+      ipa: "koŋpuhata"
+      forms:
+        "stem-ji": "공부하지"
+        "negative": "공부하지 않아요"
+        "i-not": "저는 공부하지 않아요"
+      readings:
+        "stem-ji": "gongbuhaji"
+        "negative": "gongbuhaji anayo"
+        "i-not": "jeoneun gongbuhaji anayo"
+      ipas:
+        "stem-ji": "koŋpuhatɕi"
+        "negative": "koŋpuhatɕi anajo"
+        "i-not": "tɕʌnɯn koŋpuhatɕi anajo"
+    - lemma: "일하다"
+      key: "ilhada"
+      reading: "ilhada"
+      ipa: "ilhata"
+      forms:
+        "stem-ji": "일하지"
+        "negative": "일하지 않아요"
+        "i-not": "저는 일하지 않아요"
+      readings:
+        "stem-ji": "ilhaji"
+        "negative": "ilhaji anayo"
+        "i-not": "jeoneun ilhaji anayo"
+      ipas:
+        "stem-ji": "ilhatɕi"
+        "negative": "ilhatɕi anajo"
+        "i-not": "tɕʌnɯn ilhatɕi anajo"
+    - lemma: "좋다"
+      key: "jota"
+      reading: "jota"
+      ipa: "tɕotʰa"
+      forms:
+        "stem-ji": "좋지"
+        "negative": "좋지 않아요"
+        "i-not": "저는 좋지 않아요"
+      readings:
+        "stem-ji": "jochi"
+        "negative": "jochi anayo"
+        "i-not": "jeoneun jochi anayo"
+      ipas:
+        "stem-ji": "tɕotɕʰi"
+        "negative": "tɕotɕʰi anajo"
+        "i-not": "tɕʌnɯn tɕotɕʰi anajo"
+    - lemma: "비싸다"
+      key: "bissada"
+      reading: "bissada"
+      ipa: "pis͈ata"
+      forms:
+        "stem-ji": "비싸지"
+        "negative": "비싸지 않아요"
+        "i-not": "저는 비싸지 않아요"
+      readings:
+        "stem-ji": "bissaji"
+        "negative": "bissaji anayo"
+        "i-not": "jeoneun bissaji anayo"
+      ipas:
+        "stem-ji": "pis͈atɕi"
+        "negative": "pis͈atɕi anajo"
+        "i-not": "tɕʌnɯn pis͈atɕi anajo"
+    - lemma: "작다"
+      key: "jakda"
+      reading: "jakda"
+      ipa: "tɕakt͈a"
+      forms:
+        "stem-ji": "작지"
+        "negative": "작지 않아요"
+        "i-not": "저는 작지 않아요"
+      readings:
+        "stem-ji": "jakji"
+        "negative": "jakji anayo"
+        "i-not": "jeoneun jakji anayo"
+      ipas:
+        "stem-ji": "tɕakt͈ɕi"
+        "negative": "tɕakt͈ɕi anajo"
+        "i-not": "tɕʌnɯn tɕakt͈ɕi anajo"
+    - lemma: "많다"
+      key: "manta"
+      reading: "manta"
+      ipa: "mantʰa"
+      forms:
+        "stem-ji": "많지"
+        "negative": "많지 않아요"
+        "i-not": "저는 많지 않아요"
+      readings:
+        "stem-ji": "manchi"
+        "negative": "manchi anayo"
+        "i-not": "jeoneun manchi anayo"
+      ipas:
+        "stem-ji": "mantɕʰi"
+        "negative": "mantɕʰi anajo"
+        "i-not": "tɕʌnɯn mantɕʰi anajo"

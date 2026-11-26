@@ -1,0 +1,24 @@
+schema: 1
+id: "ko-en-grammar-particle-do"
+kind: "layer"
+core: "ko-grammar-particle-do"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "도 (do): also and too"
+description: "Seven words with the particle 도 (do), and the same word in '(the word) is good too'. Sources: the en.wikipedia.org pages 'Korean postpositions' and 'Korean grammar' and the en.wiktionary.org entry -도 (-do). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The particle 도 (do)"
+  slot_name: "form"
+  slots:
+    "also": "the word with 도 (do)"
+    "good": "'(The word) is good too': the word with 도 (do) and 좋아요 (joayo)"
+  entries:
+    "jeo": "I"
+    "chingu": "the friend"
+    "gajok": "the family"
+    "mul": "water"
+    "keopi": "coffee"
+    "don": "money"
+    "sigan": "time"
+  notes: "-도 (-do) means 'also' or 'too' (Wiktionary: 'as well, too, also'), and it is the same after every word, a consonant or a vowel: 저도 (jeodo), me too, 친구도 (chingudo), the friend too. It is joined to the word with no space. Wiktionary's own example is 나도 (nado), 'me too!'. -도 (-do) replaces the subject particle -이 (-i) or -가 (-ga) and the object particle -을 (-eul) or -를 (-reul), as the topic particle does: Wikipedia's grammar article says the topic and additive markers take the place of those case markers instead of following them. With a negative it means 'not even' or 'neither': Wiktionary's example is 하나도 (hanado) 없어 (eopseo), 'there isn't even one'."

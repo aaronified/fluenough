@@ -1,0 +1,91 @@
+schema: 1
+id: "ko-en-numbers-big"
+kind: "layer"
+core: "ko-numbers-big"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Tens and big numbers"
+license: "CC-BY-SA-4.0"
+description: "Big numbers in Korean: one hundred, one thousand and ten thousand (man), and the groups above ten thousand, from hundred million to trillion, with the vague numbers and the words for percent and numerals. Not yet checked by a Korean speaker: please report any mistake."
+tags: ["beginner", "unreviewed"]
+"cards":
+  "ko-2260":
+    "native": "hundred"
+    "notes":
+      "n1": "백 (baek) is one hundred. It is a Sino-Korean number. Bigger numbers are built from it with a number before it, as in 이백 (ibaek), two hundred."
+  "ko-2261":
+    "native": "thousand"
+    "notes":
+      "n1": "천 (cheon) is one thousand. It is a Sino-Korean number, like 백 (baek)."
+  "ko-2262":
+    "native": "ten thousand"
+    "notes":
+      "n1": "Korean counts big numbers in groups of ten thousand, 만 (man): 100,000 is 십만 (simman), and 1,000,000 is 백만 (baengman)."
+      "n2": "The particle 만 (man), 'only', is a different word with the same reading."
+  "ko-2263":
+    "native": "hundred million"
+    "notes":
+      "n1": "억 (eok) is a hundred million, 100,000,000. Counting goes by 만 (man), so 억 (eok) is ten thousand times ten thousand."
+  "ko-2264":
+    "native": "trillion, a million million"
+    "notes":
+      "n1": "조 (jo) is a trillion, 1,000,000,000,000. Each group is ten thousand times the one before: 만 (man), then 억 (eok), then 조 (jo)."
+  "ko-2265":
+    "native": "billion, ten hundred million"
+    "notes":
+      "n1": "십억 (sibeok) is one billion, 1,000,000,000: 십 (sip), ten, times 억 (eok), a hundred million."
+  "ko-2266":
+    "native": "million"
+    "notes":
+      "n1": "백만 (baengman) is one million: 백 (baek), a hundred, times 만 (man), ten thousand."
+  "ko-2267":
+    "native": "ten million"
+    "notes":
+      "n1": "천만 (cheonman) is ten million: 천 (cheon), a thousand, times 만 (man), ten thousand."
+  "ko-2268":
+    "native": "fifty thousand"
+    "notes":
+      "n1": "오만 (oman) is fifty thousand: 오 (o), five, times 만 (man), ten thousand."
+  "ko-2269":
+    "native": "one hundred thousand"
+    "notes":
+      "n1": "십만 (simman) is one hundred thousand: 십 (sip), ten, times 만 (man), ten thousand."
+  "ko-2270":
+    "native": "hundreds"
+    "notes":
+      "n1": "수 (su) before 백 (baek) makes a vague number: 수백 (subaek), hundreds, several hundred."
+  "ko-2271":
+    "native": "many thousands"
+    "notes":
+      "n1": "수 (su) before 천 (cheon) makes a vague number: 수천 (sucheon), many thousands."
+  "ko-2272":
+    "native": "scores, dozens"
+    "notes":
+      "n1": "수 (su) before 십 (sip), ten, makes a vague number: 수십 (susip), dozens."
+  "ko-2273":
+    "native": "millions"
+    "notes":
+      "n1": "수 (su) before 백만 (baengman), a million, makes a vague number: 수백만 (subaengman), millions."
+  "ko-2274":
+    "native": "percent, a part per hundred"
+    "notes":
+      "n1": "퍼센트 (peosenteu) is borrowed from English 'percent' (Wiktionary). Its Sino-Korean word is 백분율 (baekbunyul)."
+  "ko-2275":
+    "native": "percentage"
+    "notes":
+      "n1": "백분율 (baekbunyul) is the Sino-Korean word for a percentage, a rate per hundred (Wiktionary)."
+  "ko-2276":
+    "native": "numeral, a figure such as 1 or 9"
+    "examples":
+      "숫자가 괜찮아요?":
+        "native": "Is the number OK?"
+        "bases":
+          "숫자가": "number, with the subject particle 가 (ga)"
+          "괜찮아요": "OK, with the polite ending 아요 (ayo)"
+  "ko-2277":
+    "native": "cardinal number, a grammar term"
+    "notes":
+      "n1": "기수사 (gisusa) is a grammar term for the cardinal numbers, one, two, three, which count how many. It is short for 기본 수사 (gibon susa), basic number words (Wiktionary)."
+  "ko-2278":
+    "native": "number word, numeral, a grammar term"
+    "notes":
+      "n1": "수사 (susa) is a grammar term for number words, such as 백 (baek) and 천 (cheon). 기수사 (gisusa) is one kind of it."

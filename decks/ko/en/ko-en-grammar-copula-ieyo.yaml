@@ -1,0 +1,24 @@
+schema: 1
+id: "ko-en-grammar-copula-ieyo"
+kind: "layer"
+core: "ko-grammar-copula-ieyo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "이에요 (ieyo) and 예요 (yeyo): am, is and are"
+description: "Seven nouns with the polite copula, and the same noun in a sentence about yourself. Sources: the en.wiktionary.org entry -이다 (-ida) (the conjugation table, the usage notes on -에요 (-eyo)) and the en.wikipedia.org page 'Korean grammar' (copulative verbs). Not for adjectives or verbs: a describing word takes its own ending. Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The copula, polite style"
+  slot_name: "sentence"
+  slots:
+    "copula": "the noun with 이에요 (ieyo) or 예요 (yeyo)"
+    "i-am": "I am (the noun): 저는 (jeoneun) and the noun with the copula"
+  entries:
+    "haksaeng": "a student"
+    "seonsaengnim": "a teacher"
+    "gyosunim": "a professor"
+    "hoesawon": "an office worker"
+    "uisa": "a doctor"
+    "chingu": "a friend"
+    "yeoja": "a woman"
+  notes: "이다 (ida) is the verb 'to be' between two nouns: A is B. In the polite style it is -이에요 (-ieyo) after a noun that ends in a consonant and -예요 (-yeyo) after a noun that ends in a vowel, where the 이 (i) drops out: 학생이에요 (haksaengieyo), 의사예요 (uisayeyo) (Wiktionary, -이다 (-ida)). It is written joined to the noun with no space, and one form serves for I am, you are, he is and they are, so the pronoun is often left out. The question has the same form with a question mark: 학생이에요 (haksaengieyo)? asks 'are you a student?' (Wiktionary's table gives the same polite form for the statement and the question). Wiktionary adds that after a vowel the ending is often said -에요 (-eyo) instead of -예요 (-yeyo); this deck keeps the standard spelling -예요 (-yeyo). The copula only joins nouns: 'the room is big' uses an adjective, which takes its own ending in a later unit."

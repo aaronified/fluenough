@@ -1,0 +1,24 @@
+schema: 1
+id: "ko-en-grammar-particle-ege"
+kind: "layer"
+core: "ko-grammar-particle-ege"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "에게 (ege): to a person"
+description: "Six people with 에게 (ege), with the casual 한테 (hante), and 'I call (the person)'. Sources: the en.wikipedia.org page 'Korean postpositions' (에게 (ege) the literary dative, 한테 (hante) the colloquial one, 께 (kke) the honorific one) and the en.wiktionary.org entry -에게 (-ege) (example 엄마에게 전화를 했습니다 (eommaege jeonhwareul haetseumnida)); 전화해요 (jeonhwahaeyo) is copied from the table of 전화하다 (jeonhwahada). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The particle 에게 (ege)"
+  slot_name: "form"
+  slots:
+    "ege": "'to (the person)': the word with 에게 (ege)"
+    "hante": "'to (the person)', casual: the word with 한테 (hante)"
+    "call": "'I call (the person)': 저는 (jeoneun), the word with 에게 (ege) and 전화해요 (jeonhwahaeyo)"
+  entries:
+    "chingu": "the friend: I call the person"
+    "seonsaengnim": "the teacher: I call the person"
+    "eomma": "mum: I call the person"
+    "appa": "dad: I call the person"
+    "gajok": "the family: I call the person"
+    "dongsaeng": "a younger brother or sister: I call the person"
+  notes: "-에게 (-ege) marks the person who receives something or is the goal of an action, 'to': 엄마에게 (eommaege) 전화를 (jeonhwareul) 했습니다 (haetseumnida), 'I called my mother' (Wiktionary). Wikipedia says -에게 (-ege) is the literary form and -한테 (-hante) the colloquial one, and both mean the same; -께 (-kke) is the honorific form for a person one respects, as in 선생님께 (seonsaengnimkke), to the teacher. They are used only with people and animals; for a thing or a place the particle is -에 (-e) (Wiktionary). They are the same after a consonant or a vowel. 전화해요 (jeonhwahaeyo) is the polite form of 전화하다 (jeonhwahada), to call, copied from Wiktionary's conjugation table."
