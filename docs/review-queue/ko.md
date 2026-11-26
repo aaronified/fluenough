@@ -6,7 +6,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 |---|---|---|---|---|
 | ko-2434 | market (ko-2420 to ko-2458) | 계산 is glossed in the dictionary as calculation; the card teaches the payment at a till. Is this the everyday sense? | KO-W4 Haiku builder | 2026-11-26 |
 | ko-2440 | market (ko-2420 to ko-2458) | 손님 is tagged honorific, euphemistic and historical in the dictionary; the card gives it as the everyday word for a customer. Is that right? | KO-W4 Haiku builder | 2026-11-26 |
-| ko-2429 | market (ko-2420 to ko-2458) | The dictionary tags 팔다 as irregular (ㄹ); the card gives the regular polite form 팔아요. Please check the polite form. | KO-W4 Haiku builder | 2026-11-26 |
 | ko-2439 | market (ko-2420 to ko-2458) | 바겐세일 is glossed as a bargain sale; the note says the dictionary treats it as a kind of 세일. Is the note right? | KO-W4 Haiku builder | 2026-11-26 |
 | ko-2515 | groceries (ko-2500 to ko-2536) | The 고추장 gloss is a long dictionary definition; the card says a red chilli paste made from chilli, glutinous rice, soybean powder and salt. Please check the description. | KO-W4 Haiku builder | 2026-11-26 |
 | ko-2521 | groceries (ko-2500 to ko-2536) | The dictionary tags 고구마 with an Internet sense; the card teaches the vegetable. Please confirm. | KO-W4 Haiku builder | 2026-11-26 |
@@ -17,7 +16,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ko-2604 | food (ko-2580 to ko-2637) | The dump tags 달다 as irregular (ㄹ); the card gives the regular polite form 달아요. Please check. | KO-W4 Haiku builder | 2026-11-26 |
 | ko-2605 | food (ko-2580 to ko-2637) | The card gives the polite form 셔요 for 시다. Please check the contracted form. | KO-W4 Haiku builder | 2026-11-26 |
 | ko-2606 | food (ko-2580 to ko-2637) | 쓰다 has other senses (to write, to use); the card teaches only the taste sense and gives 써요 as its polite form. Please check. | KO-W4 Haiku builder | 2026-11-26 |
-| ko-2614 | food (ko-2580 to ko-2637) | The dictionary also gives a figurative sense for 뜨겁다; the card teaches temperature only. Please check. | KO-W4 Haiku builder | 2026-11-26 |
 | ko-2616 | food (ko-2580 to ko-2637) | The card says 굽다 changes its stem in 구워요 (ㅂ irregular); the dump does not tag it. Please check. | KO-W4 Haiku builder | 2026-11-26 |
 | ko-2622 | food (ko-2580 to ko-2637) | The dump tags 썰다 as irregular (ㄹ); the card gives the regular polite form 썰어요. Please check. | KO-W4 Haiku builder | 2026-11-26 |
 | ko-3008 | home (ko-2980 to ko-3019) | The dictionary gives urinal and bedpan senses for 변기; the card says toilet bowl. Please check the gloss. | KO-W4 Haiku builder | 2026-11-26 |
@@ -45,7 +43,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ko-2752 | 18 directions | 횡단보도 is tagged as used in South Korea: is it the usual word for a crosswalk? | KO-W3 | 2026-11-26 |
 | ko-2901 | 20 places | 병원 has a tag (South-Korean, broadly): is it the usual word for hospital? | KO-W3 | 2026-11-26 |
 | ko-2935 | 20 places | 우체국 is tagged as used in South Korea: is it the usual word for post office? | KO-W3 | 2026-11-26 |
-| ko-2938 | 20 places | 길 has a figurative sense in the dictionary: is 'road, way' (길) the everyday sense for this card? | KO-W3 | 2026-11-26 |
 | ko-1620 | everyday-verbs | Wiktionary tags one sense of 먹다 vulgar; only the everyday 'eat' sense is used. Please confirm the card. | KO-W2 | 2026-11-26 |
 | ko-1624 | everyday-verbs | Wiktionary tags one sense of 가다 vulgar (to orgasm); only 'to go' is used. Please confirm. | KO-W2 | 2026-11-26 |
 | ko-1628 | everyday-verbs | Wiktionary tags the euphemistic and auxiliary senses; the everyday 'see, look at' sense is used. Please confirm. | KO-W2 | 2026-11-26 |
@@ -70,7 +67,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ko-2195 | ko-work | 미용사 (miyongsa) is glossed as 'beautician' (Wiktionary: one who does hair styling, manicures and other beauty treatments). Is a shorter English gloss better for the card? | KO-W5 Haiku worker | 2026-11-26 |
 | ko-2199 | ko-work | 출근 (chulgeun) and 퇴근 (toegeun) are taught as nouns that take 하다 (hada) for a verb (출근해요 (chulgeunhaeyo), 퇴근해요 (toegeunhaeyo)). Please check that the example sentences 출근해요 (chulgeunhaeyo)? and 퇴근해요 (toegeunhaeyo)? are natural. | KO-W5 Haiku worker | 2026-11-26 |
 | ko-2202 | ko-work | 일하다 (ilhada) is a 하다 (hada) verb, with the example 저는 일해요 (jeoneun ilhaeyo). Please confirm the note on 하다 (hada) verbs and the example. | KO-W5 Haiku worker | 2026-11-26 |
-| ko-2207 | ko-work | The example 저는 아르바이트이에요 (jeoneun areubaiteuieyo) uses the copula, because 아르바이트 (areubaiteu) ends in a consonant. Would a native speaker use a verb such as 해요 (haeyo) instead? Please check the natural phrasing. | KO-W5 Haiku worker | 2026-11-26 |
+| ko-2207 | ko-work | The example 저는 아르바이트를 해요. uses 하다, and the word 아르바이트 (areubaiteu) ends in a vowel, so the earlier 이에요 example was wrong. Is 아르바이트 the usual word for a part-time job, and is the gloss right? | KO-W5 Haiku worker | 2026-11-26 |
 | ko-2204 | ko-work | 사장 (sajang) is taught with the note that 사장님 (sajangnim) is the polite form used to address a boss. Please confirm the note. | KO-W5 Haiku worker | 2026-11-26 |
 | ko-2262 | ko-numbers-big | 만 (man) is ten thousand. The note says it is also the particle 만 (man), meaning 'only', a different word with the same reading. Please confirm the note and whether it belongs on the card. | KO-W5 Haiku worker | 2026-11-26 |
 | ko-2266 | ko-numbers-big | 백만 (baengman), 천만 (cheonman), 오만 (oman) and 십만 (simman) are built from their parts (백 (baek) times 만 (man), 천 (cheon) times 만 (man), 오 (o) times 만 (man), 십 (sip) times 만 (man)). Their notes say how each is built. Please check the building and the readings; 십만 (simman) is read simman. | KO-W5 Haiku worker | 2026-11-26 |
@@ -125,3 +122,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | counters (ko-grammar-counters) | Counters read only on Wikipedia's list and not on their own page (일 for days, 주, 달, 장, 대, 벌, 송이) were left out of the deck. Please say which to add next. | KO-S1 Sonnet coder | 2026-11-26 |
 | unit-level | particle-ui (ko-grammar-particle-ui) | Wiktionary says 의 is commonly said 에 as a particle, while the reading follows the spelling (ui). Please say whether the reading should show 에 in everyday speech. | KO-S1 Sonnet coder | 2026-11-26 |
 | unit-level | requests (ko-grammar-euseyo-polite) | The sentences with 선생님은 and an honorific verb (선생님은 쉬세요, 선생님은 입으세요) are built from tables, not from examples. Please check they sound natural. | KO-S1 Sonnet coder | 2026-11-26 |
+| ko-3020 | 21 home | 책 (chaek), book, is glossed from Wiktionary (book). Is it the everyday word for a book, and is the note right that the word is written 책 from the Sino-Korean 冊? | KO-W3 | 2026-11-26 |
+| ko-1874 | 7 describing | 친절하다 (chinjeolhada), be kind, friendly, is glossed from Wiktionary (to be kind, to be cordial). Is 친절해요 the everyday form for a person who is kind? | KO-W3 | 2026-11-26 |
+| ko-1891 | 7 describing | Dedupe: 아프다 also had a card in body (ko-2848), removed; the other duplicates removed in this pass were 뜨겁다, 차갑다, 비싸다 (food, market), 사다, 팔다 (market), 걷다, 타다 (transport), 경찰서, 병원, 약국, 도와주다, 모르다 (help), 마트, 주차장, 역, 공항, 길 (places). Each kept card is the one listed under its id in this row set: 1891, 1867, 1868, 1873, 1632, 1633, 1639, 1652, 2924, 2901, 2922, 2109, 2100, 2423, 2685, 2671, 2670, 2692. Please confirm each kept card is the sense a learner needs. | KO-W3 | 2026-11-26 |

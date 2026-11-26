@@ -90,7 +90,7 @@ cards:
         ipa: "matʰɯesʌ sajo"
         bases:
           - { word: "마트에서", base: "마트", reading: "mateu" }
-          - { word: "사요", ref: "ko-2428" }
+          - { word: "사요", ref: "ko-1632" }
   - id: "ko-2424"
     target: "봉지"
     reading: "bongji"
@@ -174,72 +174,6 @@ cards:
         bases:
           - { word: "저는", ref: "ko-0022" }
           - { word: "쇼핑해요", base: "쇼핑하다", reading: "syopinghada" }
-  - id: "ko-2428"
-    target: "사다"
-    reading: "sada"
-    ipa: "sata"
-    pos: "verb"
-    notes:
-      - { id: "n1", kind: "note" }
-    bases: "self"
-    examples:
-      - target: "이거 사요."
-        reading: "igeo sayo."
-        ipa: "ikʌ sajo"
-        bases:
-          - { word: "이거", base: "이거", reading: "igeo" }
-          - { word: "사요", base: "사다", reading: "sada" }
-      - target: "빵을 사요."
-        reading: "ppangeul sayo."
-        ipa: "p͈aŋɯl sajo"
-        bases:
-          - { word: "빵을", ref: "ko-0041" }
-          - { word: "사요", base: "사다", reading: "sada" }
-  - id: "ko-2429"
-    target: "팔다"
-    reading: "palda"
-    ipa: "pʰalta"
-    pos: "verb"
-    notes:
-      - { id: "n1", kind: "usage" }
-    bases: "self"
-    examples:
-      - target: "마트는 채소를 팔아요."
-        reading: "mateuneun chaesoreul parayo."
-        ipa: "matʰɯnɯn tɕʰesoɾɯl pʰaɾajo"
-        bases:
-          - { word: "마트는", ref: "ko-2423" }
-          - { word: "채소를", base: "채소", reading: "chaeso" }
-          - { word: "팔아요", base: "팔다", reading: "palda" }
-      - target: "이 가게는 빵을 팔아요."
-        reading: "i gageneun ppangeul parayo."
-        ipa: "i kakenɯn p͈aŋɯl pʰaɾajo"
-        bases:
-          - { word: "이", ref: "ko-0129" }
-          - { word: "가게는", ref: "ko-2421" }
-          - { word: "빵을", ref: "ko-0041" }
-          - { word: "팔아요", base: "팔다", reading: "palda" }
-  - id: "ko-2430"
-    target: "비싸다"
-    reading: "bissada"
-    ipa: "pis͈ata"
-    pos: "adj"
-    notes:
-      - { id: "n1", kind: "note" }
-    bases: "self"
-    examples:
-      - target: "이거 비싸요."
-        reading: "igeo bissayo."
-        ipa: "ikʌ pis͈ajo"
-        bases:
-          - { word: "이거", base: "이거", reading: "igeo" }
-          - { word: "비싸요", base: "비싸다", reading: "bissada" }
-      - target: "마트는 비싸요."
-        reading: "mateuneun bissayo."
-        ipa: "matʰɯnɯn pis͈ajo"
-        bases:
-          - { word: "마트는", ref: "ko-2423" }
-          - { word: "비싸요", base: "비싸다", reading: "bissada" }
   - id: "ko-2431"
     target: "돈"
     reading: "don"
@@ -822,4 +756,4 @@ cards:
         ipa: "kakjʌki pis͈ajo"
         bases:
           - { word: "가격이", base: "가격", reading: "gagyeok" }
-          - { word: "비싸요", ref: "ko-2430" }
+          - { word: "비싸요", ref: "ko-1873" }
