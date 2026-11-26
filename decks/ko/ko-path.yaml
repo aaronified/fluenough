@@ -286,7 +286,9 @@ units:
       - { id: "i-dont-eat-meat", text: { "en": "Saying what you do not do, in the short form with an and the long form with ji anayo" } }
     reading_passages:
       - { id: "diet-card", text: { "en": "A card a diner gives a restaurant: what they do not eat" } }
-  - planned: { id: "ko-grammar-isseoyo", grammar: ["isseoyo", "eopseoyo"] }
+  - decks: ["ko-grammar-isseoyo", "ko-grammar-eopseoyo"]
+    words: 0
+    grammar: ["isseoyo", "eopseoyo"]
     listening_passages:
       - { id: "is-there-a-bank", text: { "en": "Asking whether there is a bank nearby, and saying what you have and do not have" } }
     reading_passages:
