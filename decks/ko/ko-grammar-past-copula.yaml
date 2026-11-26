@@ -1,0 +1,140 @@
+# Unit 36 (ko-grammar-past). Sources read: en.wikipedia.org 'Korean verbs' (the past suffix -았/-었 after the infinitive and its contractions: 가 is 갔, 오 is 왔, 하 is 했; the polite suffix 요) and 'Korean grammar',
+# en.wiktionary.org: the conjugation table of every verb used (the informal polite past is copied from it), the entries -이다 and 아니다 (copula past forms -이었어요, -였어요, 아니었어요) and example sentences on 하다, 신, 나라 and 내 (…이었다, …였다) read in the kaikki.org Korean extract.
+schema: 1
+id: "ko-grammar-past-copula"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["was", "was-not", "i-was"]
+  entries:
+    - lemma: "학생"
+      key: "haksaeng"
+      reading: "haksaeng"
+      ipa: "haks͈eŋ"
+      forms:
+        "was": "학생이었어요"
+        "was-not": "학생이 아니었어요"
+        "i-was": "저는 학생이었어요"
+      readings:
+        "was": "haksaengieosseoyo"
+        "was-not": "haksaengi anieosseoyo"
+        "i-was": "jeoneun haksaengieosseoyo"
+      ipas:
+        "was": "haks͈eŋiʌs͈ʌjo"
+        "was-not": "haks͈eŋi aniʌs͈ʌjo"
+        "i-was": "tɕʌnɯn haks͈eŋiʌs͈ʌjo"
+    - lemma: "선생님"
+      key: "seonsaengnim"
+      reading: "seonsaengnim"
+      ipa: "sʌnseŋnim"
+      forms:
+        "was": "선생님이었어요"
+        "was-not": "선생님이 아니었어요"
+        "i-was": "저는 선생님이었어요"
+      readings:
+        "was": "seonsaengnimieosseoyo"
+        "was-not": "seonsaengnimi anieosseoyo"
+        "i-was": "jeoneun seonsaengnimieosseoyo"
+      ipas:
+        "was": "sʌnseŋnimiʌs͈ʌjo"
+        "was-not": "sʌnseŋnimi aniʌs͈ʌjo"
+        "i-was": "tɕʌnɯn sʌnseŋnimiʌs͈ʌjo"
+    - lemma: "교수님"
+      key: "gyosunim"
+      reading: "gyosunim"
+      ipa: "kjosunim"
+      forms:
+        "was": "교수님이었어요"
+        "was-not": "교수님이 아니었어요"
+        "i-was": "저는 교수님이었어요"
+      readings:
+        "was": "gyosunimieosseoyo"
+        "was-not": "gyosunimi anieosseoyo"
+        "i-was": "jeoneun gyosunimieosseoyo"
+      ipas:
+        "was": "kjosunimiʌs͈ʌjo"
+        "was-not": "kjosunimi aniʌs͈ʌjo"
+        "i-was": "tɕʌnɯn kjosunimiʌs͈ʌjo"
+    - lemma: "회사원"
+      key: "hoesawon"
+      reading: "hoesawon"
+      ipa: "hwesawʌn"
+      forms:
+        "was": "회사원이었어요"
+        "was-not": "회사원이 아니었어요"
+        "i-was": "저는 회사원이었어요"
+      readings:
+        "was": "hoesawonieosseoyo"
+        "was-not": "hoesawoni anieosseoyo"
+        "i-was": "jeoneun hoesawonieosseoyo"
+      ipas:
+        "was": "hwesawʌniʌs͈ʌjo"
+        "was-not": "hwesawʌni aniʌs͈ʌjo"
+        "i-was": "tɕʌnɯn hwesawʌniʌs͈ʌjo"
+    - lemma: "의사"
+      key: "uisa"
+      reading: "uisa"
+      ipa: "ɰisa"
+      forms:
+        "was": "의사였어요"
+        "was-not": "의사가 아니었어요"
+        "i-was": "저는 의사였어요"
+      readings:
+        "was": "uisayeosseoyo"
+        "was-not": "uisaga anieosseoyo"
+        "i-was": "jeoneun uisayeosseoyo"
+      ipas:
+        "was": "ɰisajʌs͈ʌjo"
+        "was-not": "ɰisaka aniʌs͈ʌjo"
+        "i-was": "tɕʌnɯn ɰisajʌs͈ʌjo"
+    - lemma: "친구"
+      key: "chingu"
+      reading: "chingu"
+      ipa: "tɕʰinku"
+      forms:
+        "was": "친구였어요"
+        "was-not": "친구가 아니었어요"
+        "i-was": "저는 친구였어요"
+      readings:
+        "was": "chinguyeosseoyo"
+        "was-not": "chinguga anieosseoyo"
+        "i-was": "jeoneun chinguyeosseoyo"
+      ipas:
+        "was": "tɕʰinkujʌs͈ʌjo"
+        "was-not": "tɕʰinkuka aniʌs͈ʌjo"
+        "i-was": "tɕʌnɯn tɕʰinkujʌs͈ʌjo"
+    - lemma: "가수"
+      key: "gasu"
+      reading: "gasu"
+      ipa: "kasu"
+      forms:
+        "was": "가수였어요"
+        "was-not": "가수가 아니었어요"
+        "i-was": "저는 가수였어요"
+      readings:
+        "was": "gasuyeosseoyo"
+        "was-not": "gasuga anieosseoyo"
+        "i-was": "jeoneun gasuyeosseoyo"
+      ipas:
+        "was": "kasujʌs͈ʌjo"
+        "was-not": "kasuka aniʌs͈ʌjo"
+        "i-was": "tɕʌnɯn kasujʌs͈ʌjo"
+    - lemma: "사장님"
+      key: "sajangnim"
+      reading: "sajangnim"
+      ipa: "satɕaŋnim"
+      forms:
+        "was": "사장님이었어요"
+        "was-not": "사장님이 아니었어요"
+        "i-was": "저는 사장님이었어요"
+      readings:
+        "was": "sajangnimieosseoyo"
+        "was-not": "sajangnimi anieosseoyo"
+        "i-was": "jeoneun sajangnimieosseoyo"
+      ipas:
+        "was": "satɕaŋnimiʌs͈ʌjo"
+        "was-not": "satɕaŋnimi aniʌs͈ʌjo"
+        "i-was": "tɕʌnɯn satɕaŋnimiʌs͈ʌjo"

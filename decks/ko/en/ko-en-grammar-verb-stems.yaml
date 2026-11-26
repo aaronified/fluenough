@@ -1,0 +1,31 @@
+schema: 1
+id: "ko-en-grammar-verb-stems"
+kind: "layer"
+core: "ko-grammar-verb-stems"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verb stems and the infinitive"
+description: "Thirteen verbs split into dictionary form, stem, infinitive and polite present. Sources: the en.wikipedia.org page 'Korean verbs' (citation form ending in -다 (-da), the bound stem, the infinitive -어 (-eo)/-아 (-a) and its contractions) and the en.wiktionary.org conjugation table and headword line of each verb (infinitive and informal polite copied from them). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "From the dictionary form to the polite present"
+  slot_name: "step"
+  slots:
+    "stem": "the stem: the dictionary form without -다 (-da)"
+    "infinitive": "the infinitive: the stem with -아 (-a) or -어 (-eo)"
+    "polite": "the polite present: the infinitive with 요 (yo)"
+  entries:
+    "meokda": "to eat"
+    "ikda": "to read"
+    "anda": "to sit"
+    "ipda": "to wear (clothes)"
+    "gada": "to go"
+    "oda": "to come"
+    "boda": "to see, to watch"
+    "sada": "to buy"
+    "masida": "to drink"
+    "swida": "to rest"
+    "gidarida": "to wait for"
+    "gongbuhada": "to study"
+    "ireonada": "to get up"
+  notes: "A Korean dictionary lists a verb in the citation form that ends in -다 (-da): 먹다 (meokda), to eat. Take -다 (-da) off and you have the stem, 먹 (meok). A stem is bound: it never stands alone, only with an ending (Wikipedia, Korean verbs). Wiktionary calls a stem that ends in a consonant a consonant stem (먹 (meok), 읽 (ilk), 앉 (ant), 입 (ip)) and one that ends in a vowel a vowel stem (가 (ga), 오 (o), 마시 (masi)). Add -아 (-a) (after ㅏ (a) or ㅗ (o)) or -어 (-eo) and you have the infinitive: 먹어 (meogeo), 앉아 (anja). After a vowel stem the two vowels may merge: 가 (ga) + 아 (a) is 가 (ga), 오 (o) + 아 (a) is 와 (wa), 보 (bo) + 아 (a) is 봐 (bwa), 마시 (masi) + 어 (eo) is 마셔 (masyeo), 기다리 (gidari) + 어 (eo) is 기다려 (gidaryeo); 쉬어 (swieo) and 일어나 (ireona) do not change. A verb in -하다 (-hada) gives -해 (-hae). The infinitive is the base of the polite present, which adds 요 (yo): 먹어요 (meogeoyo), 가요 (gayo), 와요 (wayo). Wiktionary lists the infinitive of 보다 (boda) as 봐 (bwa) or 보아 (boa), and of 마시다 (masida) as 마셔 (masyeo) or 마시어 (masieo); the table's polite form is the one given here. None of these verbs changes its stem apart from the joining."

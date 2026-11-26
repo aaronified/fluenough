@@ -1,0 +1,220 @@
+# Unit 24 (ko-grammar-haeyo-present). Sources read: en.wikipedia.org 'Korean verbs' (the infinitive 어/아 by vowel harmony and its contractions, the politeness suffix 요, 해요체), 'Korean grammar' and 'Korean honorifics' (the informal polite 해요 form),
+# and the en.wiktionary.org conjugation table of every verb used (infinitive, informal polite 해요체 and stem class are copied from it).
+schema: 1
+id: "ko-grammar-verb-stems"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["stem", "infinitive", "polite"]
+  entries:
+    - lemma: "먹다"
+      key: "meokda"
+      reading: "meokda"
+      ipa: "mʌkt͈a"
+      forms:
+        "stem": "먹"
+        "infinitive": "먹어"
+        "polite": "먹어요"
+      readings:
+        "stem": "meok"
+        "infinitive": "meogeo"
+        "polite": "meogeoyo"
+      ipas:
+        "stem": "mʌk"
+        "infinitive": "mʌkʌ"
+        "polite": "mʌkʌjo"
+    - lemma: "읽다"
+      key: "ikda"
+      reading: "ikda"
+      ipa: "ikt͈a"
+      forms:
+        "stem": "읽"
+        "infinitive": "읽어"
+        "polite": "읽어요"
+      readings:
+        "stem": "ilk"
+        "infinitive": "ilgeo"
+        "polite": "ilgeoyo"
+      ipas:
+        "stem": "ik"
+        "infinitive": "ilkʌ"
+        "polite": "ilkʌjo"
+    - lemma: "앉다"
+      key: "anda"
+      reading: "anda"
+      ipa: "anta"
+      forms:
+        "stem": "앉"
+        "infinitive": "앉아"
+        "polite": "앉아요"
+      readings:
+        "stem": "ant"
+        "infinitive": "anja"
+        "polite": "anjayo"
+      ipas:
+        "stem": "an"
+        "infinitive": "antɕa"
+        "polite": "antɕajo"
+    - lemma: "입다"
+      key: "ipda"
+      reading: "ipda"
+      ipa: "ipt͈a"
+      forms:
+        "stem": "입"
+        "infinitive": "입어"
+        "polite": "입어요"
+      readings:
+        "stem": "ip"
+        "infinitive": "ibeo"
+        "polite": "ibeoyo"
+      ipas:
+        "stem": "ip"
+        "infinitive": "ipʌ"
+        "polite": "ipʌjo"
+    - lemma: "가다"
+      key: "gada"
+      reading: "gada"
+      ipa: "kata"
+      forms:
+        "stem": "가"
+        "infinitive": "가"
+        "polite": "가요"
+      readings:
+        "stem": "ga"
+        "infinitive": "ga"
+        "polite": "gayo"
+      ipas:
+        "stem": "ka"
+        "infinitive": "ka"
+        "polite": "kajo"
+    - lemma: "오다"
+      key: "oda"
+      reading: "oda"
+      ipa: "ota"
+      forms:
+        "stem": "오"
+        "infinitive": "와"
+        "polite": "와요"
+      readings:
+        "stem": "o"
+        "infinitive": "wa"
+        "polite": "wayo"
+      ipas:
+        "stem": "o"
+        "infinitive": "wa"
+        "polite": "wajo"
+    - lemma: "보다"
+      key: "boda"
+      reading: "boda"
+      ipa: "pota"
+      forms:
+        "stem": "보"
+        "infinitive": "봐"
+        "polite": "봐요"
+      readings:
+        "stem": "bo"
+        "infinitive": "bwa"
+        "polite": "bwayo"
+      ipas:
+        "stem": "po"
+        "infinitive": "pwa"
+        "polite": "pwajo"
+    - lemma: "사다"
+      key: "sada"
+      reading: "sada"
+      ipa: "sata"
+      forms:
+        "stem": "사"
+        "infinitive": "사"
+        "polite": "사요"
+      readings:
+        "stem": "sa"
+        "infinitive": "sa"
+        "polite": "sayo"
+      ipas:
+        "stem": "sa"
+        "infinitive": "sa"
+        "polite": "sajo"
+    - lemma: "마시다"
+      key: "masida"
+      reading: "masida"
+      ipa: "masita"
+      forms:
+        "stem": "마시"
+        "infinitive": "마셔"
+        "polite": "마셔요"
+      readings:
+        "stem": "masi"
+        "infinitive": "masyeo"
+        "polite": "masyeoyo"
+      ipas:
+        "stem": "masi"
+        "infinitive": "masjʌ"
+        "polite": "masjʌjo"
+    - lemma: "쉬다"
+      key: "swida"
+      reading: "swida"
+      ipa: "swita"
+      forms:
+        "stem": "쉬"
+        "infinitive": "쉬어"
+        "polite": "쉬어요"
+      readings:
+        "stem": "swi"
+        "infinitive": "swieo"
+        "polite": "swieoyo"
+      ipas:
+        "stem": "swi"
+        "infinitive": "swiʌ"
+        "polite": "swiʌjo"
+    - lemma: "기다리다"
+      key: "gidarida"
+      reading: "gidarida"
+      ipa: "kitaɾita"
+      forms:
+        "stem": "기다리"
+        "infinitive": "기다려"
+        "polite": "기다려요"
+      readings:
+        "stem": "gidari"
+        "infinitive": "gidaryeo"
+        "polite": "gidaryeoyo"
+      ipas:
+        "stem": "kitaɾi"
+        "infinitive": "kitaɾjʌ"
+        "polite": "kitaɾjʌjo"
+    - lemma: "공부하다"
+      key: "gongbuhada"
+      reading: "gongbuhada"
+      ipa: "koŋpuhata"
+      forms:
+        "stem": "공부하"
+        "infinitive": "공부해"
+        "polite": "공부해요"
+      readings:
+        "stem": "gongbuha"
+        "infinitive": "gongbuhae"
+        "polite": "gongbuhaeyo"
+      ipas:
+        "stem": "koŋpuha"
+        "infinitive": "koŋpuhe"
+        "polite": "koŋpuhejo"
+    - lemma: "일어나다"
+      key: "ireonada"
+      reading: "ireonada"
+      ipa: "iɾʌnata"
+      forms:
+        "stem": "일어나"
+        "infinitive": "일어나"
+        "polite": "일어나요"
+      readings:
+        "stem": "ireona"
+        "infinitive": "ireona"
+        "polite": "ireonayo"
+      ipas:
+        "stem": "iɾʌna"
+        "infinitive": "iɾʌna"
+        "polite": "iɾʌnajo"

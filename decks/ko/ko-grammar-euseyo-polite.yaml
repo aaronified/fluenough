@@ -1,0 +1,233 @@
+# Unit 43 (ko-grammar-requests). Sources read: en.wiktionary.org entries -으세요 / -세요 (honorific informal polite: declarative, interrogative, imperative; -세요 after a vowel and ㄹ; 마세요; 안녕하세요), 주다 (auxiliary after the infinitive: 도와주세요 'please help'),
+# the honorific tables of each verb (…으세요, …세요 copied from them), and 드시다, 주무시다, 계시다 (their own tables); en.wikipedia.org 'Korean honorifics' (honorific suffix -시/-으시; suppletive 있다 -> 계시다, 먹다/마시다 -> 드시다) and 'Korean verbs' (자다 -> 주무시다).
+schema: 1
+id: "ko-grammar-euseyo-polite"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["euseyo", "teacher"]
+  entries:
+    - lemma: "앉다"
+      key: "anda"
+      reading: "anda"
+      ipa: "anta"
+      forms:
+        "euseyo": "앉으세요"
+        "teacher": "선생님은 앉으세요"
+      readings:
+        "euseyo": "anjeuseyo"
+        "teacher": "seonsaengnimeun anjeuseyo"
+      ipas:
+        "euseyo": "antɕɯsejo"
+        "teacher": "sʌnseŋnimɯn antɕɯsejo"
+    - lemma: "읽다"
+      key: "ikda"
+      reading: "ikda"
+      ipa: "ikt͈a"
+      forms:
+        "euseyo": "읽으세요"
+        "teacher": "선생님은 읽으세요"
+      readings:
+        "euseyo": "ilgeuseyo"
+        "teacher": "seonsaengnimeun ilgeuseyo"
+      ipas:
+        "euseyo": "ilkɯsejo"
+        "teacher": "sʌnseŋnimɯn ilkɯsejo"
+    - lemma: "입다"
+      key: "ipda"
+      reading: "ipda"
+      ipa: "ipt͈a"
+      forms:
+        "euseyo": "입으세요"
+        "teacher": "선생님은 입으세요"
+      readings:
+        "euseyo": "ibeuseyo"
+        "teacher": "seonsaengnimeun ibeuseyo"
+      ipas:
+        "euseyo": "ipɯsejo"
+        "teacher": "sʌnseŋnimɯn ipɯsejo"
+    - lemma: "찾다"
+      key: "chatda"
+      reading: "chatda"
+      ipa: "tɕʰatt͈a"
+      forms:
+        "euseyo": "찾으세요"
+        "teacher": "선생님은 찾으세요"
+      readings:
+        "euseyo": "chajeuseyo"
+        "teacher": "seonsaengnimeun chajeuseyo"
+      ipas:
+        "euseyo": "tɕʰatɕɯsejo"
+        "teacher": "sʌnseŋnimɯn tɕʰatɕɯsejo"
+    - lemma: "가다"
+      key: "gada"
+      reading: "gada"
+      ipa: "kata"
+      forms:
+        "euseyo": "가세요"
+        "teacher": "선생님은 가세요"
+      readings:
+        "euseyo": "gaseyo"
+        "teacher": "seonsaengnimeun gaseyo"
+      ipas:
+        "euseyo": "kasejo"
+        "teacher": "sʌnseŋnimɯn kasejo"
+    - lemma: "오다"
+      key: "oda"
+      reading: "oda"
+      ipa: "ota"
+      forms:
+        "euseyo": "오세요"
+        "teacher": "선생님은 오세요"
+      readings:
+        "euseyo": "oseyo"
+        "teacher": "seonsaengnimeun oseyo"
+      ipas:
+        "euseyo": "osejo"
+        "teacher": "sʌnseŋnimɯn osejo"
+    - lemma: "보다"
+      key: "boda"
+      reading: "boda"
+      ipa: "pota"
+      forms:
+        "euseyo": "보세요"
+        "teacher": "선생님은 보세요"
+      readings:
+        "euseyo": "boseyo"
+        "teacher": "seonsaengnimeun boseyo"
+      ipas:
+        "euseyo": "posejo"
+        "teacher": "sʌnseŋnimɯn posejo"
+    - lemma: "사다"
+      key: "sada"
+      reading: "sada"
+      ipa: "sata"
+      forms:
+        "euseyo": "사세요"
+        "teacher": "선생님은 사세요"
+      readings:
+        "euseyo": "saseyo"
+        "teacher": "seonsaengnimeun saseyo"
+      ipas:
+        "euseyo": "sasejo"
+        "teacher": "sʌnseŋnimɯn sasejo"
+    - lemma: "쉬다"
+      key: "swida"
+      reading: "swida"
+      ipa: "swita"
+      forms:
+        "euseyo": "쉬세요"
+        "teacher": "선생님은 쉬세요"
+      readings:
+        "euseyo": "swiseyo"
+        "teacher": "seonsaengnimeun swiseyo"
+      ipas:
+        "euseyo": "swisejo"
+        "teacher": "sʌnseŋnimɯn swisejo"
+    - lemma: "기다리다"
+      key: "gidarida"
+      reading: "gidarida"
+      ipa: "kitaɾita"
+      forms:
+        "euseyo": "기다리세요"
+        "teacher": "선생님은 기다리세요"
+      readings:
+        "euseyo": "gidariseyo"
+        "teacher": "seonsaengnimeun gidariseyo"
+      ipas:
+        "euseyo": "kitaɾisejo"
+        "teacher": "sʌnseŋnimɯn kitaɾisejo"
+    - lemma: "만나다"
+      key: "mannada"
+      reading: "mannada"
+      ipa: "mannata"
+      forms:
+        "euseyo": "만나세요"
+        "teacher": "선생님은 만나세요"
+      readings:
+        "euseyo": "mannaseyo"
+        "teacher": "seonsaengnimeun mannaseyo"
+      ipas:
+        "euseyo": "mannasejo"
+        "teacher": "sʌnseŋnimɯn mannasejo"
+    - lemma: "공부하다"
+      key: "gongbuhada"
+      reading: "gongbuhada"
+      ipa: "koŋpuhata"
+      forms:
+        "euseyo": "공부하세요"
+        "teacher": "선생님은 공부하세요"
+      readings:
+        "euseyo": "gongbuhaseyo"
+        "teacher": "seonsaengnimeun gongbuhaseyo"
+      ipas:
+        "euseyo": "koŋpuhasejo"
+        "teacher": "sʌnseŋnimɯn koŋpuhasejo"
+    - lemma: "주다"
+      key: "juda"
+      reading: "juda"
+      ipa: "tɕuta"
+      forms:
+        "euseyo": "주세요"
+        "teacher": "선생님은 주세요"
+      readings:
+        "euseyo": "juseyo"
+        "teacher": "seonsaengnimeun juseyo"
+      ipas:
+        "euseyo": "tɕusejo"
+        "teacher": "sʌnseŋnimɯn tɕusejo"
+    - lemma: "먹다"
+      key: "meokda"
+      reading: "meokda"
+      ipa: "mʌkt͈a"
+      forms:
+        "euseyo": "드세요"
+        "teacher": "선생님은 드세요"
+      readings:
+        "euseyo": "deuseyo"
+        "teacher": "seonsaengnimeun deuseyo"
+      ipas:
+        "euseyo": "tɯsejo"
+        "teacher": "sʌnseŋnimɯn tɯsejo"
+    - lemma: "마시다"
+      key: "masida"
+      reading: "masida"
+      ipa: "masita"
+      forms:
+        "euseyo": "드세요"
+        "teacher": "선생님은 드세요"
+      readings:
+        "euseyo": "deuseyo"
+        "teacher": "seonsaengnimeun deuseyo"
+      ipas:
+        "euseyo": "tɯsejo"
+        "teacher": "sʌnseŋnimɯn tɯsejo"
+    - lemma: "자다"
+      key: "jada"
+      reading: "jada"
+      ipa: "tɕata"
+      forms:
+        "euseyo": "주무세요"
+        "teacher": "선생님은 주무세요"
+      readings:
+        "euseyo": "jumuseyo"
+        "teacher": "seonsaengnimeun jumuseyo"
+      ipas:
+        "euseyo": "tɕumusejo"
+        "teacher": "sʌnseŋnimɯn tɕumusejo"
+    - lemma: "있다"
+      key: "itda"
+      reading: "itda"
+      ipa: "itt͈a"
+      forms:
+        "euseyo": "계세요"
+        "teacher": "선생님은 계세요"
+      readings:
+        "euseyo": "gyeseyo"
+        "teacher": "seonsaengnimeun gyeseyo"
+      ipas:
+        "euseyo": "kjesejo"
+        "teacher": "sʌnseŋnimɯn kjesejo"

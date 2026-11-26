@@ -1,0 +1,108 @@
+# Unit 28 (ko-grammar-more-particles). Sources read: en.wikipedia.org 'Korean postpositions' (도, 의, 와/과/랑, 하고, 부터, 까지, 에게/한테, 께) and 'Korean grammar' (case and informational clitics; the topic and additive markers override 이/가 and 을/를),
+# en.wiktionary.org entries -도, -의, -하고, -부터, -까지, -에게 (senses and usage notes) and the conjugation table of 전화하다 and 가다 for the polite verbs. Forms are built by rule and checked against tools/transcribe.py ko.
+schema: 1
+id: "ko-grammar-particle-ege"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["ege", "hante", "call"]
+  entries:
+    - lemma: "친구"
+      key: "chingu"
+      reading: "chingu"
+      ipa: "tɕʰinku"
+      forms:
+        "ege": "친구에게"
+        "hante": "친구한테"
+        "call": "저는 친구에게 전화해요"
+      readings:
+        "ege": "chinguege"
+        "hante": "chinguhante"
+        "call": "jeoneun chinguege jeonhwahaeyo"
+      ipas:
+        "ege": "tɕʰinkueke"
+        "hante": "tɕʰinkuhantʰe"
+        "call": "tɕʌnɯn tɕʰinkueke tɕʌnhwahejo"
+    - lemma: "선생님"
+      key: "seonsaengnim"
+      reading: "seonsaengnim"
+      ipa: "sʌnseŋnim"
+      forms:
+        "ege": "선생님에게"
+        "hante": "선생님한테"
+        "call": "저는 선생님에게 전화해요"
+      readings:
+        "ege": "seonsaengnimege"
+        "hante": "seonsaengnimhante"
+        "call": "jeoneun seonsaengnimege jeonhwahaeyo"
+      ipas:
+        "ege": "sʌnseŋnimeke"
+        "hante": "sʌnseŋnimhantʰe"
+        "call": "tɕʌnɯn sʌnseŋnimeke tɕʌnhwahejo"
+    - lemma: "엄마"
+      key: "eomma"
+      reading: "eomma"
+      ipa: "ʌmma"
+      forms:
+        "ege": "엄마에게"
+        "hante": "엄마한테"
+        "call": "저는 엄마에게 전화해요"
+      readings:
+        "ege": "eommaege"
+        "hante": "eommahante"
+        "call": "jeoneun eommaege jeonhwahaeyo"
+      ipas:
+        "ege": "ʌmmaeke"
+        "hante": "ʌmmahantʰe"
+        "call": "tɕʌnɯn ʌmmaeke tɕʌnhwahejo"
+    - lemma: "아빠"
+      key: "appa"
+      reading: "appa"
+      ipa: "ap͈a"
+      forms:
+        "ege": "아빠에게"
+        "hante": "아빠한테"
+        "call": "저는 아빠에게 전화해요"
+      readings:
+        "ege": "appaege"
+        "hante": "appahante"
+        "call": "jeoneun appaege jeonhwahaeyo"
+      ipas:
+        "ege": "ap͈aeke"
+        "hante": "ap͈ahantʰe"
+        "call": "tɕʌnɯn ap͈aeke tɕʌnhwahejo"
+    - lemma: "가족"
+      key: "gajok"
+      reading: "gajok"
+      ipa: "katɕok"
+      forms:
+        "ege": "가족에게"
+        "hante": "가족한테"
+        "call": "저는 가족에게 전화해요"
+      readings:
+        "ege": "gajogege"
+        "hante": "gajokante"
+        "call": "jeoneun gajogege jeonhwahaeyo"
+      ipas:
+        "ege": "katɕokeke"
+        "hante": "katɕokʰantʰe"
+        "call": "tɕʌnɯn katɕokeke tɕʌnhwahejo"
+    - lemma: "동생"
+      key: "dongsaeng"
+      reading: "dongsaeng"
+      ipa: "toŋseŋ"
+      forms:
+        "ege": "동생에게"
+        "hante": "동생한테"
+        "call": "저는 동생에게 전화해요"
+      readings:
+        "ege": "dongsaengege"
+        "hante": "dongsaenghante"
+        "call": "jeoneun dongsaengege jeonhwahaeyo"
+      ipas:
+        "ege": "toŋseŋeke"
+        "hante": "toŋseŋhantʰe"
+        "call": "tɕʌnɯn toŋseŋeke tɕʌnhwahejo"
