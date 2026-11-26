@@ -1,0 +1,130 @@
+schema: 1
+id: "sat-pronouns"
+part: "core"
+kind: "vocab"
+language: { code: "sat", iso639_3: "sat", name: "Santali", script: "ol_chiki", icon: "ᱥ" }
+license: "CC-BY-SA-4.0"
+theme: "pronouns"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sat-1307"
+    target: "ᱟᱹᱞᱤᱧ"
+    reading: "āliñ"
+    ipa: "aːliɲ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-1308"
+    target: "ᱟᱵᱚ"
+    reading: "abo̠"
+    ipa: "abɔ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-1309"
+    target: "ᱟᱵᱮᱱ"
+    reading: "aben"
+    ipa: "aben"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-1310"
+    target: "ᱟᱯᱮ"
+    reading: "ape"
+    ipa: "ape"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-1311"
+    target: "ᱵᱟᱱᱟᱨ"
+    reading: "banar"
+    ipa: "banar"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-1312"
+    target: "ᱡᱚᱛᱚ"
+    reading: "jo̠to̠"
+    ipa: "dʒɔtɔ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-1313"
+    target: "ᱡᱷᱚᱛᱚ ᱦᱚᱲ ᱠᱚ"
+    reading: "jho̠to̠ ho̠ṛ ko̠"
+    ipa: "dʒʱɔtɔ hɔɽ kɔ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "ᱡᱷᱚᱛᱚ", base: "ᱡᱷᱚᱛᱚ", reading: "jho̠to̠" }
+      - { word: "ᱦᱚᱲ", base: "ᱦᱚᱲ", reading: "ho̠ṛ" }
+      - { word: "ᱠᱚ", base: "ᱠᱚ", reading: "ko̠" }
+  - id: "sat-1314"
+    target: "ᱡᱟᱦᱟᱸᱭ"
+    reading: "jahãy"
+    ipa: "dʒahãj"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-1315"
+    target: "ᱡᱟᱦᱟᱸ"
+    reading: "jahã"
+    ipa: "dʒahã"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-1316"
+    target: "ᱮᱴᱟᱜᱼᱤᱡ"
+    reading: "eṭak'ic'"
+    ipa: "eʈakitʃ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: [{ word: "ᱮᱴᱟᱜᱼᱤᱡ", base: "ᱮᱴᱟᱜ", reading: "eṭak'" }]
+  - id: "sat-1317"
+    target: "ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ"
+    reading: "cet' hõ̠ baṅ"
+    ipa: "tʃet hɔ̃ baŋ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "ᱪᱮᱫ", ref: "sat-0135" }
+      - { word: "ᱦᱚᱸ", base: "ᱦᱚᱸ", reading: "hõ̠" }
+      - { word: "ᱵᱟᱝ", ref: "sat-9006" }
+  - id: "sat-1318"
+    target: "ᱚᱠᱚᱭ ᱦᱚᱸ ᱵᱟᱠᱚ"
+    reading: "o̠ko̠y hõ̠ bako̠"
+    ipa: "ɔkɔj hɔ̃ bakɔ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "ᱚᱠᱚᱭ", ref: "sat-0133" }
+      - { word: "ᱦᱚᱸ", base: "ᱦᱚᱸ", reading: "hõ̠" }
+      - { word: "ᱵᱟᱠᱚ", base: "ᱵᱟᱠᱚ", reading: "bako̠" }
+  - id: "sat-1319"
+    target: "ᱟᱹᱰᱤ"
+    reading: "āḍi"
+    ipa: "aːɖi"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+  - id: "sat-1320"
+    target: "ᱜᱳᱴᱟ"
+    reading: "goṭa"
+    ipa: "ɡoʈa"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
