@@ -1005,6 +1005,67 @@ class TamilTest(unittest.TestCase):
         self.assertEqual(transcribe("மஞ்சள்", "ta").ipa, "maɲtʃaɭ")
 
 
+class SantaliTest(unittest.TestCase):
+    """Santali (sat): Ol Chiki is an alphabet, read letter for letter. Letter
+    values are Wiktionary's; the cards' hand-written readings are checked
+    against the engine (the ones that differ are queued for a speaker)."""
+
+    # Cards of decks/sat on decks-live whose reading and broad `ipa` the
+    # letters give (the decks' ʧ is written tʃ, as in the other courses).
+    WORDS = (
+        ("ᱦᱮᱸ", "hẽ", "hẽ"),
+        ("ᱤᱧ", "iñ", "iɲ"),
+        ("ᱟᱢ", "am", "am"),
+        ("ᱟᱡ", "ac'", "atʃ"),
+        ("ᱢᱤᱫ", "mit'", "mit"),
+        ("ᱫᱟᱜ", "dak'", "dak"),
+        ("ᱡᱚᱢᱟᱜ", "jo̠mak'", "dʒɔmak"),
+        ("ᱨᱩᱴᱤ", "ruṭi", "ruʈi"),
+        ("ᱪᱮᱫ", "cet'", "tʃet"),
+        ("ᱚᱲᱟᱜ", "o̠ṛak'", "ɔɽak"),
+        ("ᱧᱩᱛᱩᱢ", "ñutum", "ɲutum"),
+        ("ᱢᱟᱨᱟᱝ", "maraṅ", "maraŋ"),
+    )
+
+    def test_deck_words_are_read_from_their_letters(self) -> None:
+        for word, reading, ipa in self.WORDS:
+            with self.subTest(word):
+                t = transcribe(word, "sat")
+                self.assertEqual((t.reading, t.ipa), (reading, ipa))
+
+    def test_voiced_stops_are_checked_at_the_end_of_a_word_only(self) -> None:
+        self.assertEqual(transcribe("ᱵᱩᱜᱤ", "sat").reading, "bugi")
+        self.assertEqual(transcribe("ᱵᱟᱜ", "sat").reading, "bak'")
+        self.assertEqual(transcribe("ᱵᱟᱜ", "sat").ipa, "bak")
+        # ᱼ keeps the checked sound inside a word; ᱽ keeps it plain at the end.
+        self.assertEqual(transcribe("ᱵᱟᱜᱼᱛᱮ", "sat").reading, "bak'te")
+        self.assertEqual(transcribe("ᱵᱟᱜᱽ", "sat").reading, "bag")
+
+    def test_marks_nasalise_and_lengthen_the_vowel_before_them(self) -> None:
+        self.assertEqual(transcribe("ᱟᱹ", "sat").ipa, "aː")
+        self.assertEqual(transcribe("ᱟᱹ", "sat").reading, "ā")
+        self.assertEqual(transcribe("ᱟᱸ", "sat").ipa, "ã")
+        both = transcribe("ᱟᱺ", "sat")
+        self.assertEqual((both.reading, both.ipa), ("ā̃", "ãː"))
+
+    def test_oh_aspirates_the_stop_before_it(self) -> None:
+        self.assertEqual(transcribe("ᱵᱷᱟ", "sat").ipa, "bʱa")
+        self.assertEqual(transcribe("ᱠᱷᱟ", "sat").ipa, "kʰa")
+        self.assertEqual(transcribe("ᱠᱷᱟ", "sat").reading, "kha")
+
+    def test_a_digit_is_the_digit_and_has_no_ipa(self) -> None:
+        t = transcribe("᱑᱒", "sat")
+        self.assertEqual((t.reading, t.ipa), ("12", ""))
+        self.assertTrue(t.notes)
+        self.assertEqual(transcribe("ᱥᱳ᱾", "sat").reading, "so.")
+
+    def test_a_mark_with_nothing_to_attach_to_cannot_be_read(self) -> None:
+        for bad in ("ᱸ", "ᱛᱸ", "ᱼ", "ᱟᱽ", "abc"):
+            with self.subTest(bad):
+                with self.assertRaises(CannotRead):
+                    transcribe(bad, "sat")
+
+
 class SanskritTest(unittest.TestCase):
     """Classical Sanskrit (sa): IAST letters and broad IPA, from the
     Devanagari alone; every inherent a is said (no Hindi schwa deletion)."""

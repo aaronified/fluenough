@@ -829,6 +829,8 @@ def transcribe(text: str, lang: str, hint: str | None = None
         return malayalam(text, hint)
     if lang == "ta":
         return tamil(text)
+    if lang == "sat":
+        return santali(text)
     if lang in ("sa", "vsn"):
         return sanskrit(text, lang)
     if (lang, text) in WORDS:
@@ -2546,6 +2548,137 @@ def tamil(text: str) -> Transcription:
     return Transcription(
         _tidy("".join(iso)),
         unicodedata.normalize("NFC", " ".join("".join(ipa).split())), True)
+
+
+# --- Santali (Ol Chiki) ------------------------------------------------------
+
+# Ol Chiki (U+1C50-1C7F) is an alphabet, not an abugida: every letter is a
+# consonant or a vowel, there is no inherent vowel, and a word is read letter
+# for letter. Letter values are Wiktionary's Santali letter pages (the sound
+# of each letter and its Latin name: lô, ôt, ôk', iñ, eṛ, ...), and the marks
+# are the glosses of Wiktionary's mark pages; none is guessed. Readings are
+# Latin letters based on ISO 15919, as the Santali cards write them:
+#  - ᱚ (LA) is ô, written o̠ (o and U+0320) and said [ɔ]; ᱳ is o [o]; ᱮ is e
+#    [e]; ᱟ ᱤ ᱩ are a i u;
+#  - ᱸ (mu ttuddag) nasalises the vowel before it (a tilde: hẽ); ᱹ (gahla
+#    ttuddag) and ᱻ (relaa) extend it (a macron: ā, [aː]); ᱺ (mu-gahla
+#    ttuddag) does both (ā̃);
+#  - ᱜ ᱫ ᱵ ᱡ are g d b j, but at the end of a word (or with ᱼ phaarkaa) they
+#    are the checked stops k' t' p' c', said [k t p tʃ], the glottal stop
+#    written ' as the cards do (dak', mit', ac'); ᱽ (ahad) keeps the plain
+#    value at the end of a word;
+#  - ᱷ after a stop is its aspiration (bh dh kh), [ʱ] after a voiced stop and
+#    [ʰ] after a voiceless one; ᱪ is c [tʃ], ᱡ is j [dʒ], ᱝ is ṅ, ᱧ is ñ,
+#    ᱬ is ṇ, ᱰ is ḍ, ᱴ is ṭ, ᱲ is ṛ [ɽ], ᱭ is y [j], ᱶ is w̃;
+#  - a digit is read as the digit and has no IPA: Wiktionary gives no name for
+#    any digit; ᱾ and ᱿ are written as a full stop.
+SAT_VOWELS = {
+    "ᱚ": ("o̠", "ɔ"), "ᱟ": ("a", "a"), "ᱤ": ("i", "i"),
+    "ᱩ": ("u", "u"), "ᱮ": ("e", "e"), "ᱳ": ("o", "o")}
+SAT_CONSONANTS = {
+    "ᱛ": ("t", "t"), "ᱝ": ("ṅ", "ŋ"), "ᱞ": ("l", "l"), "ᱠ": ("k", "k"),
+    "ᱢ": ("m", "m"), "ᱣ": ("w", "w"), "ᱥ": ("s", "s"), "ᱦ": ("h", "h"),
+    "ᱧ": ("ñ", "ɲ"), "ᱨ": ("r", "r"), "ᱪ": ("c", "tʃ"), "ᱬ": ("ṇ", "ɳ"),
+    "ᱭ": ("y", "j"), "ᱯ": ("p", "p"), "ᱰ": ("ḍ", "ɖ"), "ᱱ": ("n", "n"),
+    "ᱲ": ("ṛ", "ɽ"), "ᱴ": ("ṭ", "ʈ"), "ᱶ": ("w̃", "w̃"), "ᱷ": ("h", "ʰ")}
+# ᱜ ᱫ ᱵ ᱡ: (plain reading, checked reading, plain IPA, checked IPA).
+SAT_CHECKABLE = {
+    "ᱜ": ("g", "k'", "ɡ", "k"), "ᱫ": ("d", "t'", "d", "t"),
+    "ᱵ": ("b", "p'", "b", "p"), "ᱡ": ("j", "c'", "dʒ", "tʃ")}
+SAT_VOICED = set(SAT_CHECKABLE) | {"ᱰ"}
+SAT_ASPIRABLE = SAT_VOICED | {"ᱠ", "ᱛ", "ᱯ", "ᱪ", "ᱴ"}
+SAT_NASAL, SAT_LONG, SAT_NASAL_LONG, SAT_RELAA = "ᱸ", "ᱹ", "ᱺ", "ᱻ"
+SAT_PHAARKAA, SAT_AHAD = "ᱼ", "ᱽ"
+SAT_STOPS = {"᱾": ".", "᱿": "."}
+
+
+def santali(text: str) -> Transcription:
+    """[text]'s reading and broad IPA, by Ol Chiki's letters. The narrow IPA
+    (the `phonetic` field) is not made here. Raises CannotRead on a letter
+    or mark out of place (a mark with nothing to attach to)."""
+    out_iso: list[str] = []
+    out_ipa: list[str] = []
+    notes: list[str] = []
+    for word in unicodedata.normalize("NFC", text).split():
+        iso, ipa, digits = _santali_word(word)
+        out_iso.append(iso)
+        if ipa:
+            out_ipa.append(ipa)
+        if digits and not notes:
+            notes.append("a digit is read as the digit; Wiktionary gives no "
+                         "name for it, so it has no IPA")
+    return Transcription(_tidy(" ".join(out_iso)),
+                         unicodedata.normalize("NFC", " ".join(out_ipa)),
+                         True, notes)
+
+
+def _santali_word(word: str) -> tuple[str, str, bool]:
+    # Pass one: letters and marks to units. A unit is a list:
+    # [kind, letter, long, nasal, mode]; kind V vowel, C consonant, D digit,
+    # P punctuation; mode is "", "keep" (ᱼ) or "plain" (ᱽ).
+    units: list[list] = []
+    for c in word:
+        prev = units[-1] if units else None
+        if c in SAT_VOWELS:
+            units.append(["V", c, False, False, ""])
+        elif c in SAT_CONSONANTS or c in SAT_CHECKABLE:
+            units.append(["C", c, False, False, ""])
+        elif c in (SAT_NASAL, SAT_LONG, SAT_NASAL_LONG, SAT_RELAA):
+            if prev is None or prev[0] != "V":
+                raise CannotRead(f"{c!r} must follow an Ol Chiki vowel")
+            if c in (SAT_NASAL, SAT_NASAL_LONG):
+                prev[3] = True
+            if c != SAT_NASAL:
+                prev[2] = True
+        elif c in (SAT_PHAARKAA, SAT_AHAD):
+            if prev is None or prev[0] != "C" or prev[1] not in SAT_CHECKABLE:
+                raise CannotRead(f"{c!r} must follow ᱜ, ᱫ, ᱵ or ᱡ")
+            prev[4] = "keep" if c == SAT_PHAARKAA else "plain"
+        elif 0x1C50 <= ord(c) <= 0x1C59:
+            units.append(["D", str(ord(c) - 0x1C50), False, False, ""])
+        elif c in SAT_STOPS:
+            units.append(["P", SAT_STOPS[c], False, False, ""])
+        elif c in ".,?!;:'\"()-":
+            units.append(["P", c, False, False, ""])
+        else:
+            raise CannotRead(f"cannot read {c!r} as Santali")
+    # Pass two: render.
+    iso: list[str] = []
+    ipa: list[str] = []
+    for k, (kind, c, long, nasal, mode) in enumerate(units):
+        prev = units[k - 1] if k > 0 else None
+        nxt = units[k + 1] if k + 1 < len(units) else None
+        if kind == "V":
+            i_iso, i_ipa = SAT_VOWELS[c]
+            if long:
+                i_iso += "̄"
+            if nasal:
+                i_iso += "̃"
+                i_ipa += "̃"
+            if long:
+                i_ipa += "ː"
+            iso.append(i_iso)
+            ipa.append(i_ipa)
+        elif kind == "C" and c in SAT_CHECKABLE:
+            p_iso, c_iso, p_ipa, c_ipa = SAT_CHECKABLE[c]
+            final = nxt is None or nxt[0] in ("P", "D")
+            if mode == "keep" or (final and mode != "plain"):
+                iso.append(c_iso)
+                ipa.append(c_ipa)
+            else:
+                iso.append(p_iso)
+                ipa.append(p_ipa)
+        elif kind == "C":
+            i_iso, i_ipa = SAT_CONSONANTS[c]
+            if c == "ᱷ" and prev is not None and prev[0] == "C" and \
+                    prev[1] in SAT_ASPIRABLE:
+                i_ipa = "ʱ" if prev[1] in SAT_VOICED else "ʰ"
+            iso.append(i_iso)
+            ipa.append(i_ipa)
+        else:
+            iso.append(c)
+    digits = any(u[0] == "D" for u in units)
+    return "".join(iso), "".join(ipa), digits
 
 
 # --- Classical Sanskrit ------------------------------------------------------
