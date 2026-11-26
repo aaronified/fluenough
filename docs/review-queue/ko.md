@@ -14,3 +14,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ko-1639 | everyday-verbs | Stem note: 걷다 (geotda) changes ㄷ to ㄹ before 어 (걸어요). Please confirm the note; no example is given. | KO-W2 | 2026-11-26 |
 | ko-1645 | everyday-verbs | Stem note: 부르다 (bureuda) changes 르 to ㄹㄹ before 어 (불러요). Please confirm the note; no example is given. | KO-W2 | 2026-11-26 |
 | ko-1649 | everyday-verbs | Stem note: 알다 (alda) drops ㄹ before ㄴ and ㅂ (아는, 압니다). Please confirm the note; no example is given. | KO-W2 | 2026-11-26 |
+| ko-1000 | ko-hangul-batchim | The syllable 악 (ak) is a sound illustration with no gloss: is it a word a learner meets, or should a common word with final ㄱ be given instead? | KO-000 Haiku worker | 2026-11-26 |
+| ko-1006 | ko-hangul-batchim | The syllable 앙 (ang) is a sound illustration with no gloss: is it a word a learner meets, or should a common word with final ㅇ be given instead? | KO-000 Haiku worker | 2026-11-26 |
+| ko-1002 | ko-hangul-batchim | The syllable 앋 (at) is a sound illustration with no gloss, and it is not a word: is a common word with final ㄷ (d, t) better, and should the note say so? | KO-000 Haiku worker | 2026-11-26 |
