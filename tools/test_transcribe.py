@@ -515,6 +515,33 @@ class NewLanguagesTest(unittest.TestCase):
             with self.subTest(hangul):
                 self.assertEqual(transcribe(hangul, "ko").reading, reading)
 
+    def test_hangul_ipa_is_broad_phonemic_with_the_same_sound_changes(self) -> None:
+        for hangul, ipa in (
+            ("한국어", "hankukʌ"),           # liaison
+            ("감사합니다", "kamsahamnita"),   # ㅂ before ㄴ is m
+            ("좋다", "tɕotʰa"),              # ㅎ aspirates the ㄷ
+            ("학교", "hakk͈jo"),              # tensing after an obstruent coda
+            ("먹다", "mʌkt͈a"),
+            ("신라", "silla"),               # ㄹㄹ
+            ("종로", "tɕoŋno"),
+            ("괜찮아요", "kwentɕʰanajo"),    # ㅐ is e, ㅊ aspirated, glide j
+            ("위", "wi"),
+            ("희망", "himaŋ"),               # ㅢ after a consonant is i
+            ("안녕하세요 커피", "annjʌŋhasejo kʰʌpʰi"),
+        ):
+            with self.subTest(hangul):
+                self.assertEqual(transcribe(hangul, "ko").ipa, ipa)
+
+    def test_hangul_reading_is_unchanged_by_the_ipa(self) -> None:
+        for hangul, reading in (
+            ("학교", "hakgyo"),
+            ("먹다", "meokda"),
+            ("닭", "dalk"),
+            ("안녕하세요 커피", "annyeonghaseyo keopi"),
+        ):
+            with self.subTest(hangul):
+                self.assertEqual(transcribe(hangul, "ko").reading, reading)
+
     def test_mandarin_is_the_hint_and_nothing_without_one(self) -> None:
         self.assertEqual(
             transcribe("你好", "zh", "nǐ hǎo").reading, "nǐ hǎo")

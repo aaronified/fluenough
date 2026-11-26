@@ -322,3 +322,19 @@
     # `normalise` list for ʼ, ̚, ʔ and the tie bars and an `agree` guard.
     name: "Standard Santali; no Wiktionary form is taken (rules only)"
     untagged: false
+
+"ko":
+  dump: "Korean"
+  variety:
+    # Measured on the kaikki.org Korean dump (read 2026-11-26, 57810 headwords):
+    # 50007 sound forms, 49971 of them narrow `[ ]` and 36 broad `/ /`, only 63
+    # with no note and no tag. They are narrow in a convention the course's
+    # broad `ipa` does not use: the unreleased ̚ (10157 forms), the tense mark
+    # ͈ (9960), tie-barred t͡ɕ (16205 forms), the stress mark ˈ (9052), and
+    # allophones such as ʌ̹, a̠ and sʰ. So no Wiktionary form is taken
+    # (untagged: false, no notes, no tags): nothing is imported, and the broad
+    # `ipa` and the reading come from `korean()` in tools/transcribe.py. Flip
+    # `untagged` to true only with a `normalise` list for ̚, ͡, ˈ and the
+    # vowel diacritics and an `agree` guard.
+    name: "Standard (Seoul) Korean; no Wiktionary form is taken (rules only)"
+    untagged: false
