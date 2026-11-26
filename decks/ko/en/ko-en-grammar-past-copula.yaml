@@ -1,0 +1,26 @@
+schema: 1
+id: "ko-en-grammar-past-copula"
+kind: "layer"
+core: "ko-grammar-past-copula"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "이었어요 (ieosseoyo), 였어요 (yeosseoyo) and 아니었어요 (anieosseoyo): was and was not"
+description: "Eight nouns with the past of the copula, the negative past, and 'I was (the noun)'. Sources: the en.wiktionary.org entries -이다 (-ida) (past -이었어요 (-ieosseoyo), -였어요 (-yeosseoyo)) and 아니다 (anida) (past 아니었어요 (anieosseoyo)), and example sentences on Wiktionary (만화책이었다 (manhwachaegieotda), 신이었다 (sinieotda), 황제였다 (hwangjeyeotda), 교사였다 (gyosayeotda)). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The copula in the past"
+  slot_name: "sentence"
+  slots:
+    "was": "'was (the noun)': the noun with 이었어요 (ieosseoyo) or 였어요 (yeosseoyo)"
+    "was-not": "'was not (the noun)': the noun with 이 (i) or 가 (ga) and 아니었어요 (anieosseoyo)"
+    "i-was": "'I was (the noun)': 저는 (jeoneun) and the noun with 이었어요 (ieosseoyo) or 였어요 (yeosseoyo)"
+  entries:
+    "haksaeng": "a student"
+    "seonsaengnim": "a teacher"
+    "gyosunim": "a professor"
+    "hoesawon": "an office worker"
+    "uisa": "a doctor"
+    "chingu": "a friend"
+    "gasu": "a singer"
+    "sajangnim": "a boss"
+  notes: "The past of the copula 이다 (ida) adds the past marker: -이었어요 (-ieosseoyo) after a noun that ends in a consonant and -였어요 (-yeosseoyo) after a noun that ends in a vowel, where the 이 (i) drops out and joins with the past marker. Wiktionary's table gives both forms for -이다 (-ida), and its examples show the split: 만화책이었다 (manhwachaegieotda) and 신이었다 (sinieotda), after a consonant, but 황제였다 (hwangjeyeotda) and 교사였다 (gyosayeotda), after a vowel. The past of the negative copula is the single form 아니었어요 (anieosseoyo), and, as in the present, the noun in front of it takes -이 (-i) or -가 (-ga): 학생이 아니었어요 (haksaengi anieosseoyo). All three are the polite style, the same for every person, and the subject is often left out."

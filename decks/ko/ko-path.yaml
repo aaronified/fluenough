@@ -352,7 +352,9 @@ units:
       - { id: "ordering-a-meal", text: { "en": "Choosing a meal at a small restaurant: bibimbap, kimchi stew, rice" } }
     reading_passages:
       - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
-  - planned: { id: "ko-grammar-past", grammar: ["past-haeyo", "past-copula"] }
+  - decks: ["ko-grammar-past-haeyo", "ko-grammar-past-copula"]
+    words: 0
+    grammar: ["past-haeyo", "past-copula"]
     listening_passages:
       - { id: "what-did-you-eat", text: { "en": "Saying politely what you ate and did yesterday, and what you were" } }
     reading_passages:
