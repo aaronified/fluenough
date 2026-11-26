@@ -61,3 +61,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ko-1481 | numbers-1-20 | Sino-Korean one to twenty (ko-1481 to ko-1496), 영 and 공 have no examples yet: the counters and nouns they need are taught in later units. | KO-W1 (Haiku) | 2026-11-26 |
 | ko-1498 | numbers-1-20 | 공: check the homograph note with ball and the 010 reading. | KO-W1 (Haiku) | 2026-11-26 |
 | ko-1499 | numbers-1-20 | Sino-Korean set card not built: 이 (2), 사 (4), 오 (5) and 팔 (8) collide with existing cards (ko-0023, ko-0136, ko-0124, ko-0045). Check how the set should be made. | KO-W1 (Haiku) | 2026-11-26 |
+| ko-1547 | about-me | 살다: check the irregular note (final consonant drops before some endings). | KO-W1 (Haiku) | 2026-11-26 |
+| ko-1548 | about-me | 있다: the candidate list gives adj, the Wiktionary index gives verb; carded as verb. Check the part of speech. | KO-W1 (Haiku) | 2026-11-26 |
+| ko-1549 | about-me | 없다 is carded as adj (from the candidate list): check the part of speech. | KO-W1 (Haiku) | 2026-11-26 |
+| ko-1550 | about-me | 아니다 is carded as adj: check the part of speech and the note on 아니에요. | KO-W1 (Haiku) | 2026-11-26 |
