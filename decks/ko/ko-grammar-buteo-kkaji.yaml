@@ -1,0 +1,92 @@
+# Unit 28 (ko-grammar-more-particles). Sources read: en.wikipedia.org 'Korean postpositions' (도, 의, 와/과/랑, 하고, 부터, 까지, 에게/한테, 께) and 'Korean grammar' (case and informational clitics; the topic and additive markers override 이/가 and 을/를),
+# en.wiktionary.org entries -도, -의, -하고, -부터, -까지, -에게 (senses and usage notes) and the conjugation table of 전화하다 and 가다 for the polite verbs. Forms are built by rule and checked against tools/transcribe.py ko.
+schema: 1
+id: "ko-grammar-buteo-kkaji"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["from", "until", "range"]
+  entries:
+    - lemma: "아침"
+      key: "achim"
+      reading: "achim"
+      ipa: "atɕʰim"
+      forms:
+        "from": "아침부터"
+        "until": "아침까지"
+        "range": "아침부터 저녁까지"
+      readings:
+        "from": "achimbuteo"
+        "until": "achimkkaji"
+        "range": "achimbuteo jeonyeokkkaji"
+      ipas:
+        "from": "atɕʰimputʰʌ"
+        "until": "atɕʰimk͈atɕi"
+        "range": "atɕʰimputʰʌ tɕʌnjʌkk͈atɕi"
+    - lemma: "오늘"
+      key: "oneul"
+      reading: "oneul"
+      ipa: "onɯl"
+      forms:
+        "from": "오늘부터"
+        "until": "오늘까지"
+        "range": "오늘부터 내일까지"
+      readings:
+        "from": "oneulbuteo"
+        "until": "oneulkkaji"
+        "range": "oneulbuteo naeilkkaji"
+      ipas:
+        "from": "onɯlputʰʌ"
+        "until": "onɯlk͈atɕi"
+        "range": "onɯlputʰʌ neilk͈atɕi"
+    - lemma: "어제"
+      key: "eoje"
+      reading: "eoje"
+      ipa: "ʌtɕe"
+      forms:
+        "from": "어제부터"
+        "until": "어제까지"
+        "range": "어제부터 오늘까지"
+      readings:
+        "from": "eojebuteo"
+        "until": "eojekkaji"
+        "range": "eojebuteo oneulkkaji"
+      ipas:
+        "from": "ʌtɕeputʰʌ"
+        "until": "ʌtɕek͈atɕi"
+        "range": "ʌtɕeputʰʌ onɯlk͈atɕi"
+    - lemma: "오전"
+      key: "ojeon"
+      reading: "ojeon"
+      ipa: "otɕʌn"
+      forms:
+        "from": "오전부터"
+        "until": "오전까지"
+        "range": "오전부터 오후까지"
+      readings:
+        "from": "ojeonbuteo"
+        "until": "ojeonkkaji"
+        "range": "ojeonbuteo ohukkaji"
+      ipas:
+        "from": "otɕʌnputʰʌ"
+        "until": "otɕʌnk͈atɕi"
+        "range": "otɕʌnputʰʌ ohuk͈atɕi"
+    - lemma: "지금"
+      key: "jigeum"
+      reading: "jigeum"
+      ipa: "tɕikɯm"
+      forms:
+        "from": "지금부터"
+        "until": "지금까지"
+        "range": "지금부터 내일까지"
+      readings:
+        "from": "jigeumbuteo"
+        "until": "jigeumkkaji"
+        "range": "jigeumbuteo naeilkkaji"
+      ipas:
+        "from": "tɕikɯmputʰʌ"
+        "until": "tɕikɯmk͈atɕi"
+        "range": "tɕikɯmputʰʌ neilk͈atɕi"

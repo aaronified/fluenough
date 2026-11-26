@@ -1,0 +1,24 @@
+schema: 1
+id: "ko-en-grammar-particle-hago"
+kind: "layer"
+core: "ko-grammar-particle-hago"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "하고 (hago): and and with"
+description: "Six people with the particle 하고 (hago), 'and me', and 'I go with (the person)'. Sources: the en.wikipedia.org page 'Korean postpositions' (와 (wa)/과 (gwa), 랑 (rang), 하고 (hago)) and the en.wiktionary.org entry -하고 (-hago) (colloquial: 'and', 'with'); 가요 (gayo) is copied from the table of 가다 (gada). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The particle 하고 (hago)"
+  slot_name: "form"
+  slots:
+    "noun": "the word with 하고 (hago)"
+    "and-me": "'(the word) and I': the word with 하고 (hago) and 저 (jeo)"
+    "go-with": "'I go with (the word)': 저는 (jeoneun), the word with 하고 (hago) and 가요 (gayo)"
+  entries:
+    "chingu": "the friend: and me, with the person"
+    "gajok": "the family: and me, with the person"
+    "seonsaengnim": "the teacher: and me, with the person"
+    "eomma": "mum: and me, with the person"
+    "appa": "dad: and me, with the person"
+    "eonni": "an older sister (of a woman): and me, with the person"
+  notes: "-하고 (-hago) means 'and' between two nouns and 'with' for company: 친구하고 (chinguhago) 저 (jeo) is 'my friend and I', and 저는 (jeoneun) 친구하고 (chinguhago) 가요 (gayo) is 'I go with a friend'. Wiktionary's examples are 이거하고 (igeohago) 저거만 (jeogeoman) 샀어 (sasseo), 'I just bought this and that', and 'it's fun if you go with your boyfriend'. It is the same after every word and is joined to the word. Wiktionary marks it colloquial. Wikipedia lists the others for 'and' and 'with': 와 (wa) after a vowel and 과 (gwa) after a consonant, the literary form, and 랑 (rang), the colloquial form. 가요 (gayo) is copied from Wiktionary's table for 가다 (gada)."
