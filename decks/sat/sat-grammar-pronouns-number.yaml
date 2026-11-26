@@ -1,0 +1,136 @@
+schema: 1
+id: "sat-grammar-pronouns-number"
+part: "core"
+kind: "grammar"
+language: { code: "sat", iso639_3: "sat", name: "Santali", script: "ol_chiki", icon: "ᱥ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["singular", "dual", "plural"]
+  entries:
+    - lemma: "ᱤᱧ"
+      key: "i-we-excl"
+      reading: "iñ"
+      ipa: "iɲ"
+      forms:
+        "singular": "ᱤᱧ"
+        "dual": "ᱟᱹᱞᱤᱧ"
+        "plural": "ᱟᱞᱮ"
+      readings:
+        "singular": "iñ"
+        "dual": "āliñ"
+        "plural": "ale"
+      ipas:
+        "singular": "iɲ"
+        "dual": "aːliɲ"
+        "plural": "ale"
+    - lemma: "ᱟᱞᱟᱝ"
+      key: "we-incl"
+      reading: "alaṅ"
+      ipa: "alaŋ"
+      forms:
+        "singular": null
+        "dual": "ᱟᱞᱟᱝ"
+        "plural": "ᱟᱵᱚ"
+      readings:
+        "dual": "alaṅ"
+        "plural": "abo̠"
+      ipas:
+        "dual": "alaŋ"
+        "plural": "abɔ"
+    - lemma: "ᱟᱢ"
+      key: "you"
+      reading: "am"
+      ipa: "am"
+      forms:
+        "singular": "ᱟᱢ"
+        "dual": "ᱟᱵᱮᱱ"
+        "plural": "ᱟᱯᱮ"
+      readings:
+        "singular": "am"
+        "dual": "aben"
+        "plural": "ape"
+      ipas:
+        "singular": "am"
+        "dual": "aben"
+        "plural": "ape"
+    - lemma: "ᱟᱡ"
+      key: "he-she"
+      reading: "ac'"
+      ipa: "atʃ"
+      forms:
+        "singular": "ᱟᱡ"
+        "dual": "ᱟᱹᱠᱤᱱ"
+        "plural": "ᱟᱠᱳ"
+      readings:
+        "singular": "ac'"
+        "dual": "ākin"
+        "plural": "ako"
+      ipas:
+        "singular": "atʃ"
+        "dual": "aːkin"
+        "plural": "ako"
+    - lemma: "ᱩᱱᱤ"
+      key: "that-one"
+      reading: "uni"
+      ipa: "uni"
+      forms:
+        "singular": "ᱩᱱᱤ"
+        "dual": "ᱳᱱᱠᱤᱱ"
+        "plural": "ᱳᱱᱠᱳ"
+      readings:
+        "singular": "uni"
+        "dual": "onkin"
+        "plural": "onko"
+      ipas:
+        "singular": "uni"
+        "dual": "onkin"
+        "plural": "onko"
+    - lemma: "ᱦᱚᱱ"
+      key: "child"
+      reading: "ho̠n"
+      ipa: "hɔn"
+      forms:
+        "singular": "ᱦᱚᱱ"
+        "dual": "ᱦᱚᱱᱠᱤᱱ"
+        "plural": "ᱦᱚᱱᱠᱚ"
+      readings:
+        "singular": "ho̠n"
+        "dual": "ho̠nkin"
+        "plural": "ho̠nko̠"
+      ipas:
+        "singular": "hɔn"
+        "dual": "hɔnkin"
+        "plural": "hɔnkɔ"
+    - lemma: "ᱛᱤ"
+      key: "hand"
+      reading: "ti"
+      ipa: "ti"
+      forms:
+        "singular": "ᱛᱤ"
+        "dual": "ᱛᱤᱠᱤᱱ"
+        "plural": "ᱛᱤᱠᱚ"
+      readings:
+        "singular": "ti"
+        "dual": "tikin"
+        "plural": "tiko̠"
+      ipas:
+        "singular": "ti"
+        "dual": "tikin"
+        "plural": "tikɔ"
+    - lemma: "ᱢᱮᱫ"
+      key: "eye"
+      reading: "met'"
+      ipa: "met"
+      forms:
+        "singular": "ᱢᱮᱫ"
+        "dual": "ᱢᱮᱫᱠᱤᱱ"
+        "plural": "ᱢᱮᱫᱠᱚ"
+      readings:
+        "singular": "met'"
+        "dual": "medkin"
+        "plural": "medko̠"
+      ipas:
+        "singular": "met"
+        "dual": "medkin"
+        "plural": "medkɔ"

@@ -1,0 +1,101 @@
+schema: 1
+id: "sat-en-grammar-verb-endings"
+kind: "layer"
+core: "sat-grammar-verb-endings"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verb endings: who does it, and when"
+description: "The endings a Santali verb takes: one for the doer (I, you, he or she, in one, two or many) and one for the time. Eleven endings and five short sentences from Wiktionary's examples. Taken from Wikipedia and Wiktionary. Not yet checked by a Santali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "sat-0600":
+    native: "ending: I (the doer)"
+    notes:
+      "n1": "The first-person singular verb ending: it says the doer is I. Wikipedia's table also lists a longer form, -iñ."
+  "sat-0601":
+    native: "ending: you, one person (the doer)"
+    notes:
+      "n1": "The second-person singular verb ending: the doer is you, one person."
+  "sat-0602":
+    native: "ending: he or she (the doer)"
+    notes:
+      "n1": "The third-person singular verb ending: the doer is he or she."
+  "sat-0603":
+    native: "ending: we two, not counting you (the doer)"
+    notes:
+      "n1": "The ending for we two when the person spoken to is left out; it goes with ᱟᱹᱞᱤᱧ (āliñ). Wiktionary: first-person dual suffix; Wikipedia: exclusive."
+  "sat-0604":
+    native: "ending: you two (the doer)"
+    notes:
+      "n1": "The ending for you two; it goes with ᱟᱵᱮᱱ (aben)."
+  "sat-0605":
+    native: "ending: they two (the doer)"
+    notes:
+      "n1": "The ending for they two. It is the same word as the dual marker on nouns, ᱠᱤᱱ (kin), two."
+  "sat-0606":
+    native: "ending: we, not counting you (the doer)"
+    notes:
+      "n1": "The ending for we all when the person spoken to is left out; it goes with ᱟᱞᱮ (ale). Wiktionary: first-person plural suffix; Wikipedia: exclusive."
+  "sat-0607":
+    native: "ending: you, more than two (the doer)"
+    notes:
+      "n1": "The ending for you, more than two; it goes with ᱟᱯᱮ (ape). It is spelled like ᱯᱮ (pe), three, which is a different word."
+  "sat-0608":
+    native: "ending: they, many (the doer); also the plural marker on nouns"
+    notes:
+      "n1": "The ending for they, more than two. Wiktionary calls ᱠᱚ (ko̠) the plural marker: on a noun it means more than two, as in ᱦᱚᱱᱠᱚ (ho̠nko̠), children, and next to a verb it is the doer."
+  "sat-0609":
+    native: "ending: is doing it (now)"
+    notes:
+      "n1": "A present ending: -ᱮᱫ (-et') says the action is going on. Wiktionary: a general incomplete present suffix. Wikipedia lists it as the active present progressive, -et'."
+  "sat-0610":
+    native: "ending: did it (past)"
+    notes:
+      "n1": "A past ending: -ᱠᱮᱫ (-ket') says the action is done. Wiktionary: a recent past suffix; Wikipedia lists it as the active aorist, -ket'. These active endings go with verbs that do something to something."
+  "sat-0611":
+    native: "ending: did it, earlier (past)"
+    notes:
+      "n1": "An earlier past ending: -ᱞᱮᱫ (-let'). Wiktionary: an anterior past suffix; Wikipedia: the active anterior, -let'. For a verb with no thing acted on, Santali uses another set of endings, the middle ones: -en for the aorist and -len for the anterior (Wikipedia)."
+  "sat-0612":
+    native: "It was raining."
+    notes:
+      "n1": "Here the ending ᱮᱫ (et') is written as a word of its own, followed by ᱛᱟᱦᱮᱸᱡ (tahẽc'), which Wiktionary says introduces the incomplete past: was raining. Wiktionary's own example for ᱫᱟᱜ (dak'), to rain."
+    bases:
+      "ᱫᱟᱜ": "to rain; rain"
+      "ᱮᱫ": "ending: is doing it"
+      "ᱛᱟᱦᱮᱸᱡ": "introduces the incomplete past"
+  "sat-0613":
+    native: "He runs."
+    notes:
+      "n1": "The verb ᱫᱟᱹᱲ (dāṛ), run, comes first and what follows it says who and when. Compare ᱩᱱᱤ ᱫᱟᱹᱲ ᱠᱮᱜᱼᱟᱭ (uni dāṛ kek'ay), he ran: the verb is the same and only the ending after it changes. Both are Wiktionary's examples."
+    bases:
+      "ᱩᱱᱤ": "he; she"
+      "ᱫᱟᱹᱲ": "to run"
+      "ᱟᱭ": "present ending: he or she does it"
+  "sat-0614":
+    native: "He ran."
+    notes:
+      "n1": "The past of ᱩᱱᱤ ᱫᱟᱹᱲ ᱟᱭ (uni dāṛ ay), he runs: the same verb ᱫᱟᱹᱲ (dāṛ) with a past ending after it. Wiktionary's example."
+    bases:
+      "ᱩᱱᱤ": "he; she"
+      "ᱫᱟᱹᱲ": "to run"
+      "ᱠᱮᱜᱼᱟᱭ": "past ending: he or she did it"
+  "sat-0615":
+    native: "The cup broke."
+    notes:
+      "n1": "Nobody does the breaking: the cup simply breaks. Such a verb takes a middle ending: ᱮᱱᱟ (ena) is the middle past, -en, with the closing -a (Wikipedia). Compare ᱩᱱᱤ ᱢᱤᱫᱴᱟᱹᱝ ᱡᱷᱚᱨᱠᱟ ᱦᱚᱸ ᱨᱟᱹᱯᱩᱫ ᱠᱮᱜᱼᱟᱭ (uni midṭāṅ jho̠rka hõ̠ rāput' kek'ay), she broke a window too: the same verb ᱨᱟᱹᱯᱩᱫ (rāput'), with a doer."
+    bases:
+      "ᱠᱚᱯ": "cup"
+      "ᱨᱟᱹᱯᱩᱫ": "to break"
+      "ᱮᱱᱟ": "middle past ending"
+  "sat-0616":
+    native: "She broke a window too."
+    notes:
+      "n1": "Someone breaks something, so the verb takes an active past ending after it. Wikipedia: active endings are for verbs that act on a thing, middle endings for verbs that do not. Compare ᱠᱚᱯ ᱨᱟᱹᱯᱩᱫ ᱮᱱᱟ (ko̠p rāput' ena), the cup broke."
+    bases:
+      "ᱩᱱᱤ": "he; she"
+      "ᱢᱤᱫᱴᱟᱹᱝ": "a"
+      "ᱡᱷᱚᱨᱠᱟ": "window"
+      "ᱦᱚᱸ": "too; as well"
+      "ᱨᱟᱹᱯᱩᱫ": "to break"
+      "ᱠᱮᱜᱼᱟᱭ": "past ending: he or she did it"

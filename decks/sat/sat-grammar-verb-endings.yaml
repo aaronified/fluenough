@@ -1,0 +1,149 @@
+schema: 1
+id: "sat-grammar-verb-endings"
+part: "core"
+kind: "vocab"
+language: { code: "sat", iso639_3: "sat", name: "Santali", script: "ol_chiki", icon: "ᱥ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "sat-0600"
+    target: "-ᱧ"
+    reading: "-ñ"
+    ipa: "ɲ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Santali_language" }
+    bases: "self"
+  - id: "sat-0601"
+    target: "-ᱢ"
+    reading: "-m"
+    ipa: "m"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Santali_language" }
+    bases: "self"
+  - id: "sat-0602"
+    target: "-ᱮ"
+    reading: "-e"
+    ipa: "e"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Santali_language" }
+    bases: "self"
+  - id: "sat-0603"
+    target: "-ᱞᱤᱧ"
+    reading: "-liñ"
+    ipa: "liɲ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Santali_language" }
+    bases: "self"
+  - id: "sat-0604"
+    target: "-ᱵᱮᱱ"
+    reading: "-ben"
+    ipa: "ben"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Santali_language" }
+    bases: "self"
+  - id: "sat-0605"
+    target: "-ᱠᱤᱱ"
+    reading: "-kin"
+    ipa: "kin"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Santali_language" }
+    bases: "self"
+  - id: "sat-0606"
+    target: "-ᱞᱮ"
+    reading: "-le"
+    ipa: "le"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Santali_language" }
+    bases: "self"
+  - id: "sat-0607"
+    target: "-ᱯᱮ"
+    reading: "-pe"
+    ipa: "pe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Santali_language" }
+    bases: "self"
+  - id: "sat-0608"
+    target: "ᱠᱚ"
+    reading: "ko̠"
+    ipa: "kɔ"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Santali_language" }
+    bases: "self"
+  - id: "sat-0609"
+    target: "-ᱮᱫ"
+    reading: "-et'"
+    ipa: "et"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Santali_language" }
+    bases: "self"
+  - id: "sat-0610"
+    target: "-ᱠᱮᱫ"
+    reading: "-ket'"
+    ipa: "ket"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Santali_language" }
+    bases: "self"
+  - id: "sat-0611"
+    target: "-ᱞᱮᱫ"
+    reading: "-let'"
+    ipa: "let"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Santali_language" }
+    bases: "self"
+  - id: "sat-0612"
+    target: "ᱫᱟᱜ ᱮᱫ ᱛᱟᱦᱮᱸᱡ"
+    reading: "dak' et' tahẽc'"
+    ipa: "dak et tahẽtʃ"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%E1%B1%AB%E1%B1%9F%E1%B1%9C" }
+    bases: [{ word: "ᱫᱟᱜ", base: "ᱫᱟᱜ", reading: "dak'" }, { word: "ᱮᱫ", base: "ᱮᱫ", reading: "et'" }, { word: "ᱛᱟᱦᱮᱸᱡ", base: "ᱛᱟᱦᱮᱸᱡ", reading: "tahẽc'" }]
+  - id: "sat-0613"
+    target: "ᱩᱱᱤ ᱫᱟᱹᱲ ᱟᱭ"
+    reading: "uni dāṛ ay"
+    ipa: "uni daːɽ aj"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%E1%B1%AB%E1%B1%9F%E1%B1%B9%E1%B1%B2" }
+    bases: [{ word: "ᱩᱱᱤ", base: "ᱩᱱᱤ", reading: "uni" }, { word: "ᱫᱟᱹᱲ", base: "ᱫᱟᱹᱲ", reading: "dāṛ" }, { word: "ᱟᱭ", base: "ᱟᱭ", reading: "ay" }]
+  - id: "sat-0614"
+    target: "ᱩᱱᱤ ᱫᱟᱹᱲ ᱠᱮᱜᱼᱟᱭ"
+    reading: "uni dāṛ kek'ay"
+    ipa: "uni daːɽ kekaj"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/%E1%B1%AB%E1%B1%9F%E1%B1%B9%E1%B1%B2" }
+    bases: [{ word: "ᱩᱱᱤ", base: "ᱩᱱᱤ", reading: "uni" }, { word: "ᱫᱟᱹᱲ", base: "ᱫᱟᱹᱲ", reading: "dāṛ" }, { word: "ᱠᱮᱜᱼᱟᱭ", base: "ᱠᱮᱜᱼᱟᱭ", reading: "kek'ay" }]
+  - id: "sat-0615"
+    target: "ᱠᱚᱯ ᱨᱟᱹᱯᱩᱫ ᱮᱱᱟ"
+    reading: "ko̠p rāput' ena"
+    ipa: "kɔp raːput ena"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Santali_language" }
+    bases: [{ word: "ᱠᱚᱯ", base: "ᱠᱚᱯ", reading: "ko̠p" }, { word: "ᱨᱟᱹᱯᱩᱫ", base: "ᱨᱟᱹᱯᱩᱫ", reading: "rāput'" }, { word: "ᱮᱱᱟ", base: "ᱮᱱᱟ", reading: "ena" }]
+  - id: "sat-0616"
+    target: "ᱩᱱᱤ ᱢᱤᱫᱴᱟᱹᱝ ᱡᱷᱚᱨᱠᱟ ᱦᱚᱸ ᱨᱟᱹᱯᱩᱫ ᱠᱮᱜᱼᱟᱭ"
+    reading: "uni midṭāṅ jho̠rka hõ̠ rāput' kek'ay"
+    ipa: "uni midʈaːŋ dʒʱɔrka hɔ̃ raːput kekaj"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wikipedia.org/wiki/Santali_language" }
+    bases: [{ word: "ᱩᱱᱤ", base: "ᱩᱱᱤ", reading: "uni" }, { word: "ᱢᱤᱫᱴᱟᱹᱝ", base: "ᱢᱤᱫᱴᱟᱹᱝ", reading: "midṭāṅ" }, { word: "ᱡᱷᱚᱨᱠᱟ", base: "ᱡᱷᱚᱨᱠᱟ", reading: "jho̠rka" }, { word: "ᱦᱚᱸ", base: "ᱦᱚᱸ", reading: "hõ̠" }, { word: "ᱨᱟᱹᱯᱩᱫ", base: "ᱨᱟᱹᱯᱩᱫ", reading: "rāput'" }, { word: "ᱠᱮᱜᱼᱟᱭ", base: "ᱠᱮᱜᱼᱟᱭ", reading: "kek'ay" }]

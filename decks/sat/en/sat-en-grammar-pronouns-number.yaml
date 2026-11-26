@@ -1,0 +1,26 @@
+schema: 1
+id: "sat-en-grammar-pronouns-number"
+kind: "layer"
+core: "sat-grammar-pronouns-number"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "One, two or many, and the two kinds of we"
+description: "Santali has a dual number for two, and two words for we: one that counts the listener in and one that leaves the listener out. The pronouns and three nouns. Taken from Wikipedia, Skrefsrud (1873) and Wiktionary. Not yet checked by a Santali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Singular, dual and plural"
+  slot_name: "number"
+  slots:
+    "singular": "one (singular)"
+    "dual": "two (dual)"
+    "plural": "three or more (plural)"
+  entries:
+    "i-we-excl": "I; we, not counting the person spoken to"
+    "we-incl": "we, counting the person spoken to"
+    "you": "you"
+    "he-she": "he or she, already mentioned"
+    "that-one": "he, she or that one"
+    "child": "child"
+    "hand": "hand"
+    "eye": "eye"
+  notes: "One, two or more: Santali counts three numbers. A noun adds ᱠᱤᱱ (kin) for two and ᱠᱚ (ko̠) for more than two: ᱦᱚᱱ (ho̠n), child, ᱦᱚᱱᱠᱤᱱ (ho̠nkin), two children, ᱦᱚᱱᱠᱚ (ho̠nko̠), children. We comes in two kinds. ᱤᱧ (iñ) grows into ᱟᱹᱞᱤᱧ (āliñ) (we two) and ᱟᱞᱮ (ale) (we all) when the person spoken to is left out, and into ᱟᱞᱟᱝ (alaṅ) (we two) and ᱟᱵᱚ (abo̠) (we all) when that person is counted in. Santali has no word for he and she apart: ᱟᱡ (ac'), with ᱟᱹᱠᱤᱱ (ākin) and ᱟᱠᱳ (ako), points back to someone just named; ᱩᱱᱤ (uni), with ᱳᱱᱠᱤᱱ (onkin) and ᱳᱱᱠᱳ (onko), points to someone there. The dual is also a way to show respect. In the old family custom a son-in-law or daughter-in-law and their parents-in-law and older relatives speak to each other in the dual, and the answer comes in the dual too, even to one person (Skrefsrud, 1873). Today it is used more widely to honour a senior or unfamiliar person (Wikipedia)."

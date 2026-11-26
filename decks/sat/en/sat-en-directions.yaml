@@ -1,0 +1,56 @@
+schema: 1
+id: "sat-en-directions"
+kind: "layer"
+core: "sat-directions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Directions"
+description: "Directions: west, east, right, north, south, left, straight and direction. Not yet checked by a Santali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sat-2200":
+    native: "west"
+    wiktionary: true
+    notes:
+      "n1": "Source: the Wiktionary Santali entry for ᱯᱟᱪᱮ (pace), which gives only the meaning."
+  "sat-2201":
+    native: "east"
+    wiktionary: true
+    notes:
+      "n1": "Source: the Wiktionary Santali entry for ᱥᱟᱢᱟᱝ (samaṅ), which gives only the meaning."
+  "sat-2202":
+    native: "right"
+    wiktionary: true
+    dictionary:
+      senses: ["north"]
+      source: "https://en.wiktionary.org/wiki/ᱮᱛᱚᱢ"
+    notes:
+      "n1": "Wiktionary also gives the sense 'north' for ᱮᱛᱚᱢ (eto̠m); the word for north on its own is ᱩᱛᱟᱹᱨ (utār)."
+  "sat-2203":
+    native: "north"
+    wiktionary: true
+    notes:
+      "n1": "Derived from Indo-Aryan, ultimately from Sanskrit 'uttara' (north)."
+  "sat-2204":
+    native: "south"
+    wiktionary: true
+    notes:
+      "n1": "Source: the Wiktionary Santali entry for ᱠᱚᱧᱮ (ko̠ñe), which gives only the meaning."
+  "sat-2205":
+    native: "left"
+    wiktionary: true
+    notes:
+      "n1": "Source: the Wiktionary Santali entry for ᱞᱮᱸᱜᱟ (lẽga), which gives only the meaning."
+  "sat-2206":
+    native: "direction; side; quarter"
+    wiktionary: true
+    dictionary:
+      senses: ["towards (used as a particle)"]
+      source: "https://en.wiktionary.org/wiki/ᱥᱮᱱ"
+    notes:
+      "n1": "Wiktionary gives 'direction, side, quarter' for ᱥᱮᱱ (sen). The same spelling is also a particle meaning 'towards'."
+  "sat-2207":
+    native: "straight"
+    wiktionary: true
+    notes:
+      "n1": "Source: the Wiktionary Santali entry for ᱥᱟᱸᱣᱟᱸᱨ (sãwãr), which gives only the meaning."
