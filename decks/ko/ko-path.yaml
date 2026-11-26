@@ -371,7 +371,9 @@ units:
       - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told" } }
     reading_passages:
       - { id: "simple-map", text: { "en": "A simple map with a route in words" } }
-  - planned: { id: "ko-grammar-want", grammar: "go-sipeoyo" }
+  - decks: ["ko-grammar-go-sipeoyo"]
+    words: 0
+    grammar: ["go-sipeoyo"]
     listening_passages:
       - { id: "i-want-to-go", text: { "en": "Saying where you want to go and what you want to eat" } }
     reading_passages:

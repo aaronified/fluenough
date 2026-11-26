@@ -1,0 +1,172 @@
+# Unit 39 (ko-grammar-want, topic go-sipeoyo). Sources read: en.wiktionary.org entries 싶다 (to want after -고; it can only take a verb; the polite form 싶어요 is copied from its conjugation table; examples 공원에 정말 가고 싶다), -고 (attached to the verb stem; 'used for the main verb to join it to certain auxiliaries'), -이 (the object of desire with 싶다),
+# en.wikipedia.org 'Korean grammar' (supporting verbs: -고 싶다 'to want to do') and the conjugation table of each verb (stems are checked against it).
+schema: 1
+id: "ko-grammar-go-sipeoyo"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["go", "want", "i-want"]
+  entries:
+    - lemma: "먹다"
+      key: "meokda"
+      reading: "meokda"
+      ipa: "mʌkt͈a"
+      forms:
+        "go": "먹고"
+        "want": "먹고 싶어요"
+        "i-want": "저는 먹고 싶어요"
+      readings:
+        "go": "meokgo"
+        "want": "meokgo sipeoyo"
+        "i-want": "jeoneun meokgo sipeoyo"
+      ipas:
+        "go": "mʌkk͈o"
+        "want": "mʌkk͈o sipʰʌjo"
+        "i-want": "tɕʌnɯn mʌkk͈o sipʰʌjo"
+    - lemma: "마시다"
+      key: "masida"
+      reading: "masida"
+      ipa: "masita"
+      forms:
+        "go": "마시고"
+        "want": "마시고 싶어요"
+        "i-want": "저는 마시고 싶어요"
+      readings:
+        "go": "masigo"
+        "want": "masigo sipeoyo"
+        "i-want": "jeoneun masigo sipeoyo"
+      ipas:
+        "go": "masiko"
+        "want": "masiko sipʰʌjo"
+        "i-want": "tɕʌnɯn masiko sipʰʌjo"
+    - lemma: "가다"
+      key: "gada"
+      reading: "gada"
+      ipa: "kata"
+      forms:
+        "go": "가고"
+        "want": "가고 싶어요"
+        "i-want": "저는 가고 싶어요"
+      readings:
+        "go": "gago"
+        "want": "gago sipeoyo"
+        "i-want": "jeoneun gago sipeoyo"
+      ipas:
+        "go": "kako"
+        "want": "kako sipʰʌjo"
+        "i-want": "tɕʌnɯn kako sipʰʌjo"
+    - lemma: "보다"
+      key: "boda"
+      reading: "boda"
+      ipa: "pota"
+      forms:
+        "go": "보고"
+        "want": "보고 싶어요"
+        "i-want": "저는 보고 싶어요"
+      readings:
+        "go": "bogo"
+        "want": "bogo sipeoyo"
+        "i-want": "jeoneun bogo sipeoyo"
+      ipas:
+        "go": "poko"
+        "want": "poko sipʰʌjo"
+        "i-want": "tɕʌnɯn poko sipʰʌjo"
+    - lemma: "사다"
+      key: "sada"
+      reading: "sada"
+      ipa: "sata"
+      forms:
+        "go": "사고"
+        "want": "사고 싶어요"
+        "i-want": "저는 사고 싶어요"
+      readings:
+        "go": "sago"
+        "want": "sago sipeoyo"
+        "i-want": "jeoneun sago sipeoyo"
+      ipas:
+        "go": "sako"
+        "want": "sako sipʰʌjo"
+        "i-want": "tɕʌnɯn sako sipʰʌjo"
+    - lemma: "자다"
+      key: "jada"
+      reading: "jada"
+      ipa: "tɕata"
+      forms:
+        "go": "자고"
+        "want": "자고 싶어요"
+        "i-want": "저는 자고 싶어요"
+      readings:
+        "go": "jago"
+        "want": "jago sipeoyo"
+        "i-want": "jeoneun jago sipeoyo"
+      ipas:
+        "go": "tɕako"
+        "want": "tɕako sipʰʌjo"
+        "i-want": "tɕʌnɯn tɕako sipʰʌjo"
+    - lemma: "읽다"
+      key: "ikda"
+      reading: "ikda"
+      ipa: "ikt͈a"
+      forms:
+        "go": "읽고"
+        "want": "읽고 싶어요"
+        "i-want": "저는 읽고 싶어요"
+      readings:
+        "go": "ikgo"
+        "want": "ikgo sipeoyo"
+        "i-want": "jeoneun ikgo sipeoyo"
+      ipas:
+        "go": "ikk͈o"
+        "want": "ikk͈o sipʰʌjo"
+        "i-want": "tɕʌnɯn ikk͈o sipʰʌjo"
+    - lemma: "쉬다"
+      key: "swida"
+      reading: "swida"
+      ipa: "swita"
+      forms:
+        "go": "쉬고"
+        "want": "쉬고 싶어요"
+        "i-want": "저는 쉬고 싶어요"
+      readings:
+        "go": "swigo"
+        "want": "swigo sipeoyo"
+        "i-want": "jeoneun swigo sipeoyo"
+      ipas:
+        "go": "swiko"
+        "want": "swiko sipʰʌjo"
+        "i-want": "tɕʌnɯn swiko sipʰʌjo"
+    - lemma: "만나다"
+      key: "mannada"
+      reading: "mannada"
+      ipa: "mannata"
+      forms:
+        "go": "만나고"
+        "want": "만나고 싶어요"
+        "i-want": "저는 만나고 싶어요"
+      readings:
+        "go": "mannago"
+        "want": "mannago sipeoyo"
+        "i-want": "jeoneun mannago sipeoyo"
+      ipas:
+        "go": "mannako"
+        "want": "mannako sipʰʌjo"
+        "i-want": "tɕʌnɯn mannako sipʰʌjo"
+    - lemma: "공부하다"
+      key: "gongbuhada"
+      reading: "gongbuhada"
+      ipa: "koŋpuhata"
+      forms:
+        "go": "공부하고"
+        "want": "공부하고 싶어요"
+        "i-want": "저는 공부하고 싶어요"
+      readings:
+        "go": "gongbuhago"
+        "want": "gongbuhago sipeoyo"
+        "i-want": "jeoneun gongbuhago sipeoyo"
+      ipas:
+        "go": "koŋpuhako"
+        "want": "koŋpuhako sipʰʌjo"
+        "i-want": "tɕʌnɯn koŋpuhako sipʰʌjo"
