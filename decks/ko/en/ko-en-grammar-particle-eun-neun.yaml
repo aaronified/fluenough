@@ -1,0 +1,25 @@
+schema: 1
+id: "ko-en-grammar-particle-eun-neun"
+kind: "layer"
+core: "ko-grammar-particle-eun-neun"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "은 (eun) and 는 (neun): the topic particle"
+description: "Eight nouns with the topic particle 은 (eun) or 는 (neun), and the same noun in the question 'where is it?'. Sources: the en.wikipedia.org pages 'Korean postpositions' and 'Korean grammar', and the en.wiktionary.org entries -은 (-eun) and -는 (-neun). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The topic particle 은 (eun) / 는 (neun)"
+  slot_name: "form"
+  slots:
+    "topic": "the noun with 은 (eun) or 는 (neun)"
+    "where": "'Where is (the noun)?': the noun with 은 (eun) or 는 (neun) and 어디예요 (eodiyeyo)"
+  entries:
+    "hakgyo": "the school"
+    "kape": "the cafe"
+    "mateu": "the shop"
+    "chingu": "the friend"
+    "seonsaengnim": "the teacher"
+    "eunhaeng": "the bank"
+    "byeongwon": "the hospital"
+    "hwajangsil": "the restroom"
+  notes: "-은 (-eun) and -는 (-neun) are one particle in two shapes: -은 (-eun) after a noun that ends in a consonant, -는 (-neun) after a noun that ends in a vowel (Wikipedia, Korean postpositions). It marks the topic, the thing the sentence is about, and the rest of the sentence says something about it: 학교는 (hakgyoneun) 어디예요 (eodiyeyo) is 'as for the school, where is it?'. It is joined to the noun with no space, and it needs no word in English: it is not 'the'. Wiktionary lists its main uses: a topic already known to both people, a general fact, the question 'what about ...?', and contrast, as in 'she has friends (친구는 (chinguneun)) but no best friend'. The pronoun 저 (jeo), 'I', takes it as 저는 (jeoneun). Wikipedia's grammar article adds that the topic particle takes the place of the subject particle 이 (i) or 가 (ga) and of the object particle 을 (eul) or 를 (reul); it does not stand after them."
