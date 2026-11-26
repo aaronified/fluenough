@@ -321,7 +321,9 @@ units:
       - { id: "prices-and-years", text: { "en": "Hearing prices in won, years and phone numbers, counted in ten thousands (man)" } }
     reading_passages:
       - { id: "price-tags", text: { "en": "Price tags and a bus-route number board" } }
-  - planned: { id: "ko-grammar-counters", grammar: ["counters", "native-number-forms"] }
+  - decks: ["ko-grammar-counters", "ko-grammar-native-number-forms"]
+    words: 0
+    grammar: ["counters", "native-number-forms"]
     listening_passages:
       - { id: "two-coffees-three-people", text: { "en": "Ordering for a group: two coffees, three people, one bottle, with han, du, se and ne before a counter" } }
     reading_passages:

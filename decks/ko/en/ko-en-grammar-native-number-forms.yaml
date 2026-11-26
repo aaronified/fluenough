@@ -1,0 +1,25 @@
+schema: 1
+id: "ko-en-grammar-native-number-forms"
+kind: "layer"
+core: "ko-grammar-native-number-forms"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Native numbers before a counter: 한 (han), 두 (du), 세 (se), 네 (ne), 스무 (seumu)"
+description: "Seven native numbers as they are said alone and in front of a counter. Sources: the en.wikipedia.org page 'Korean numerals' (the attributive forms of native Korean cardinals, with the table of 1, 2, 3, 4 and 20 and the examples 한 번 (han beon), 두 개 (du gae), 세 시 (se si), 네 명 (ne myeong), 스무 마리 (seumu mari)). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Native numbers in front of a counter"
+  slot_name: "form"
+  slots:
+    "before": "the form used before a counter"
+    "gae": "'(number) things': the number and 개 (gae)"
+    "myeong": "'(number) people': the number and 명 (myeong)"
+  entries:
+    "hana": "one"
+    "dul": "two"
+    "set": "three"
+    "net": "four"
+    "daseot": "five"
+    "yeol": "ten"
+    "seumul": "twenty"
+  notes: "When a native number stands alone it is 하나 (hana), 둘 (dul), 셋 (set), 넷 (net) and 스물 (seumul). In front of a counter, the four lowest and twenty lose their last letter: 한 (han), 두 (du), 세 (se), 네 (ne) and 스무 (seumu) (Wikipedia: they are formed 'by dropping the last letter'). Wikipedia's examples: 한 번 (han beon), once; 두 개 (du gae), two things; 세 시 (se si), three o'clock; 네 명 (ne myeong), four people; 스무 마리 (seumu mari), twenty animals. Five, six and the rest do not change: 다섯 개 (daseot gae), 열 명 (yeol myeong). Before some counters three and four have other forms: 석 달 (seok dal), three months, and 넉 잔 (neok jan), four cups (Wikipedia). The number alone is for counting out loud and for answering how many; before a counter, always the short form. Wikipedia builds the teens from the tens and the ones: ten and five is 열다섯 (yeoldaseot). Sino-Korean numbers keep their shape before a counter, apart from a few month names such as 유월 (yuwol), June, and 시월 (siwol), October."
