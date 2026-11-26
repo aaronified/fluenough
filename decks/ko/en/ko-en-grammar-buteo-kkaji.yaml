@@ -1,0 +1,23 @@
+schema: 1
+id: "ko-en-grammar-buteo-kkaji"
+kind: "layer"
+core: "ko-grammar-buteo-kkaji"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "부터 (buteo) and 까지 (kkaji): from and until"
+description: "Five time words with 부터 (buteo), from, and 까지 (kkaji), until, and the two together in a range. Sources: the en.wikipedia.org page 'Korean postpositions' and the en.wiktionary.org entries -부터 (-buteo) and -까지 (-kkaji). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The particles 부터 (buteo) and 까지 (kkaji)"
+  slot_name: "form"
+  slots:
+    "from": "'from (the word)': the word with 부터 (buteo)"
+    "until": "'until (the word)': the word with 까지 (kkaji)"
+    "range": "'from (the word) until (a later word)': 부터 (buteo) and 까지 (kkaji)"
+  entries:
+    "achim": "the morning: from morning until evening"
+    "oneul": "today: from today until tomorrow"
+    "eoje": "yesterday: from yesterday until today"
+    "ojeon": "a.m.: from the morning (a.m.) until the afternoon (p.m.)"
+    "jigeum": "now: from now until tomorrow"
+  notes: "-부터 (-buteo) shows where or when something starts, 'from', and -까지 (-kkaji) shows where or when it goes up to, 'until' or 'up to' (Wikipedia: egressive and terminative). Both are the same after a consonant or a vowel and are joined to the word. Together they make a range: 아침부터 (achimbuteo) 저녁까지 (jeonyeokkkaji), 'from morning until evening'. Wiktionary's examples are 한 시부터 (han sibuteo) 늦게까지 (neutgekkaji), 'from one o'clock until late', and 부산에서 (busaneseo) 서울까지 (seoulkkaji), 'from Busan to Seoul', where a place is marked with -에서 (-eseo) for the start. -부터 (-buteo) can also come after -에서 (-eseo) in the sense 'from', and it can mean 'first': 손부터 (sonbuteo) 씻고 (ssitgo) 먹어요 (meogeoyo), 'wash your hands, then eat'. -까지 (-kkaji) can also show how far a degree goes."

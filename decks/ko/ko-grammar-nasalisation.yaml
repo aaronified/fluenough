@@ -1,0 +1,93 @@
+# Unit 20 (ko-grammar-sound-changes-1). Sources read: en.wikipedia.org 'Korean phonology' (consonant assimilation: obstruents become nasals before nasals),
+# en.wiktionary.org pages 한국어, 한국말, 학년, 작년, 십만, 감사합니다, 직업, 영어 (pronunciation: 'Phonetic hangul') and the conjugation tables of 먹다, 읽다, 있다 (their Revised Romanization of 먹는, 읽는, 있는).
+# Respelled forms of noun + particle are rule-derived and checked against tools/transcribe.py: the reading of the respelling equals the reading of the spelling.
+schema: 1
+id: "ko-grammar-nasalisation"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["said"]
+  entries:
+    - lemma: "한국말"
+      key: "hangungmal"
+      reading: "hangungmal"
+      ipa: "hankuŋmal"
+      forms:
+        "said": "한궁말"
+      readings:
+        "said": "hangungmal"
+      ipas:
+        "said": "hankuŋmal"
+    - lemma: "학년"
+      key: "hangnyeon"
+      reading: "hangnyeon"
+      ipa: "haŋnjʌn"
+      forms:
+        "said": "항년"
+      readings:
+        "said": "hangnyeon"
+      ipas:
+        "said": "haŋnjʌn"
+    - lemma: "작년"
+      key: "jangnyeon"
+      reading: "jangnyeon"
+      ipa: "tɕaŋnjʌn"
+      forms:
+        "said": "장년"
+      readings:
+        "said": "jangnyeon"
+      ipas:
+        "said": "tɕaŋnjʌn"
+    - lemma: "십만"
+      key: "simman"
+      reading: "simman"
+      ipa: "simman"
+      forms:
+        "said": "심만"
+      readings:
+        "said": "simman"
+      ipas:
+        "said": "simman"
+    - lemma: "감사합니다"
+      key: "gamsahamnida"
+      reading: "gamsahamnida"
+      ipa: "kamsahamnita"
+      forms:
+        "said": "감사함니다"
+      readings:
+        "said": "gamsahamnida"
+      ipas:
+        "said": "kamsahamnita"
+    - lemma: "먹는"
+      key: "meongneun"
+      reading: "meongneun"
+      ipa: "mʌŋnɯn"
+      forms:
+        "said": "멍는"
+      readings:
+        "said": "meongneun"
+      ipas:
+        "said": "mʌŋnɯn"
+    - lemma: "있는"
+      key: "inneun"
+      reading: "inneun"
+      ipa: "innɯn"
+      forms:
+        "said": "인는"
+      readings:
+        "said": "inneun"
+      ipas:
+        "said": "innɯn"
+    - lemma: "읽는"
+      key: "ingneun"
+      reading: "ingneun"
+      ipa: "iŋnɯn"
+      forms:
+        "said": "잉는"
+      readings:
+        "said": "ingneun"
+      ipas:
+        "said": "iŋnɯn"

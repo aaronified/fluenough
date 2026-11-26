@@ -1,0 +1,108 @@
+# Unit 20 (ko-grammar-sound-changes-1). Sources read: en.wikipedia.org 'Korean phonology' (consonant assimilation: obstruents become nasals before nasals),
+# en.wiktionary.org pages 한국어, 한국말, 학년, 작년, 십만, 감사합니다, 직업, 영어 (pronunciation: 'Phonetic hangul') and the conjugation tables of 먹다, 읽다, 있다 (their Revised Romanization of 먹는, 읽는, 있는).
+# Respelled forms of noun + particle are rule-derived and checked against tools/transcribe.py: the reading of the respelling equals the reading of the spelling.
+schema: 1
+id: "ko-grammar-liaison"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["i", "eun", "eul", "e"]
+  entries:
+    - lemma: "물"
+      key: "mul"
+      reading: "mul"
+      ipa: "mul"
+      forms:
+        "i": "무리"
+        "eun": "무른"
+        "eul": "무를"
+        "e": "무레"
+      readings:
+        "i": "muri"
+        "eun": "mureun"
+        "eul": "mureul"
+        "e": "mure"
+      ipas:
+        "i": "muɾi"
+        "eun": "muɾɯn"
+        "eul": "muɾɯl"
+        "e": "muɾe"
+    - lemma: "이름"
+      key: "ireum"
+      reading: "ireum"
+      ipa: "iɾɯm"
+      forms:
+        "i": "이르미"
+        "eun": "이르믄"
+        "eul": "이르믈"
+        "e": "이르메"
+      readings:
+        "i": "ireumi"
+        "eun": "ireumeun"
+        "eul": "ireumeul"
+        "e": "ireume"
+      ipas:
+        "i": "iɾɯmi"
+        "eun": "iɾɯmɯn"
+        "eul": "iɾɯmɯl"
+        "e": "iɾɯme"
+    - lemma: "사람"
+      key: "saram"
+      reading: "saram"
+      ipa: "saɾam"
+      forms:
+        "i": "사라미"
+        "eun": "사라믄"
+        "eul": "사라믈"
+        "e": "사라메"
+      readings:
+        "i": "sarami"
+        "eun": "sarameun"
+        "eul": "sarameul"
+        "e": "sarame"
+      ipas:
+        "i": "saɾami"
+        "eun": "saɾamɯn"
+        "eul": "saɾamɯl"
+        "e": "saɾame"
+    - lemma: "직업"
+      key: "jigeop"
+      reading: "jigeop"
+      ipa: "tɕikʌp"
+      forms:
+        "i": "지거비"
+        "eun": "지거븐"
+        "eul": "지거블"
+        "e": "지거베"
+      readings:
+        "i": "jigeobi"
+        "eun": "jigeobeun"
+        "eul": "jigeobeul"
+        "e": "jigeobe"
+      ipas:
+        "i": "tɕikʌpi"
+        "eun": "tɕikʌpɯn"
+        "eul": "tɕikʌpɯl"
+        "e": "tɕikʌpe"
+    - lemma: "한국"
+      key: "hanguk"
+      reading: "hanguk"
+      ipa: "hankuk"
+      forms:
+        "i": "한구기"
+        "eun": "한구근"
+        "eul": "한구글"
+        "e": "한구게"
+      readings:
+        "i": "hangugi"
+        "eun": "hangugeun"
+        "eul": "hangugeul"
+        "e": "hanguge"
+      ipas:
+        "i": "hankuki"
+        "eun": "hankukɯn"
+        "eul": "hankukɯl"
+        "e": "hankuke"

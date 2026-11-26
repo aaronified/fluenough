@@ -1,0 +1,204 @@
+# Unit 43 (ko-grammar-requests). Sources read: en.wiktionary.org entries -으세요 / -세요 (honorific informal polite: declarative, interrogative, imperative; -세요 after a vowel and ㄹ; 마세요; 안녕하세요), 주다 (auxiliary after the infinitive: 도와주세요 'please help'),
+# the honorific tables of each verb (…으세요, …세요 copied from them), and 드시다, 주무시다, 계시다 (their own tables); en.wikipedia.org 'Korean honorifics' (honorific suffix -시/-으시; suppletive 있다 -> 계시다, 먹다/마시다 -> 드시다) and 'Korean verbs' (자다 -> 주무시다).
+schema: 1
+id: "ko-grammar-a-juseyo"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["inf", "request", "again"]
+  entries:
+    - lemma: "기다리다"
+      key: "gidarida"
+      reading: "gidarida"
+      ipa: "kitaɾita"
+      forms:
+        "inf": "기다려"
+        "request": "기다려 주세요"
+        "again": "다시 기다려 주세요"
+      readings:
+        "inf": "gidaryeo"
+        "request": "gidaryeo juseyo"
+        "again": "dasi gidaryeo juseyo"
+      ipas:
+        "inf": "kitaɾjʌ"
+        "request": "kitaɾjʌ tɕusejo"
+        "again": "tasi kitaɾjʌ tɕusejo"
+    - lemma: "보다"
+      key: "boda"
+      reading: "boda"
+      ipa: "pota"
+      forms:
+        "inf": "봐"
+        "request": "봐 주세요"
+        "again": "다시 봐 주세요"
+      readings:
+        "inf": "bwa"
+        "request": "bwa juseyo"
+        "again": "dasi bwa juseyo"
+      ipas:
+        "inf": "pwa"
+        "request": "pwa tɕusejo"
+        "again": "tasi pwa tɕusejo"
+    - lemma: "말하다"
+      key: "malhada"
+      reading: "malhada"
+      ipa: "malhata"
+      forms:
+        "inf": "말해"
+        "request": "말해 주세요"
+        "again": "다시 말해 주세요"
+      readings:
+        "inf": "malhae"
+        "request": "malhae juseyo"
+        "again": "dasi malhae juseyo"
+      ipas:
+        "inf": "malhe"
+        "request": "malhe tɕusejo"
+        "again": "tasi malhe tɕusejo"
+    - lemma: "읽다"
+      key: "ikda"
+      reading: "ikda"
+      ipa: "ikt͈a"
+      forms:
+        "inf": "읽어"
+        "request": "읽어 주세요"
+        "again": "다시 읽어 주세요"
+      readings:
+        "inf": "ilgeo"
+        "request": "ilgeo juseyo"
+        "again": "dasi ilgeo juseyo"
+      ipas:
+        "inf": "ilkʌ"
+        "request": "ilkʌ tɕusejo"
+        "again": "tasi ilkʌ tɕusejo"
+    - lemma: "사다"
+      key: "sada"
+      reading: "sada"
+      ipa: "sata"
+      forms:
+        "inf": "사"
+        "request": "사 주세요"
+        "again": "다시 사 주세요"
+      readings:
+        "inf": "sa"
+        "request": "sa juseyo"
+        "again": "dasi sa juseyo"
+      ipas:
+        "inf": "sa"
+        "request": "sa tɕusejo"
+        "again": "tasi sa tɕusejo"
+    - lemma: "닫다"
+      key: "datda"
+      reading: "datda"
+      ipa: "tatt͈a"
+      forms:
+        "inf": "닫아"
+        "request": "닫아 주세요"
+        "again": "다시 닫아 주세요"
+      readings:
+        "inf": "dada"
+        "request": "dada juseyo"
+        "again": "dasi dada juseyo"
+      ipas:
+        "inf": "tata"
+        "request": "tata tɕusejo"
+        "again": "tasi tata tɕusejo"
+    - lemma: "찾다"
+      key: "chatda"
+      reading: "chatda"
+      ipa: "tɕʰatt͈a"
+      forms:
+        "inf": "찾아"
+        "request": "찾아 주세요"
+        "again": "다시 찾아 주세요"
+      readings:
+        "inf": "chaja"
+        "request": "chaja juseyo"
+        "again": "dasi chaja juseyo"
+      ipas:
+        "inf": "tɕʰatɕa"
+        "request": "tɕʰatɕa tɕusejo"
+        "again": "tasi tɕʰatɕa tɕusejo"
+    - lemma: "전화하다"
+      key: "jeonhwahada"
+      reading: "jeonhwahada"
+      ipa: "tɕʌnhwahata"
+      forms:
+        "inf": "전화해"
+        "request": "전화해 주세요"
+        "again": "다시 전화해 주세요"
+      readings:
+        "inf": "jeonhwahae"
+        "request": "jeonhwahae juseyo"
+        "again": "dasi jeonhwahae juseyo"
+      ipas:
+        "inf": "tɕʌnhwahe"
+        "request": "tɕʌnhwahe tɕusejo"
+        "again": "tasi tɕʌnhwahe tɕusejo"
+    - lemma: "계산하다"
+      key: "gyesanhada"
+      reading: "gyesanhada"
+      ipa: "kjesanhata"
+      forms:
+        "inf": "계산해"
+        "request": "계산해 주세요"
+        "again": "다시 계산해 주세요"
+      readings:
+        "inf": "gyesanhae"
+        "request": "gyesanhae juseyo"
+        "again": "dasi gyesanhae juseyo"
+      ipas:
+        "inf": "kjesanhe"
+        "request": "kjesanhe tɕusejo"
+        "again": "tasi kjesanhe tɕusejo"
+    - lemma: "오다"
+      key: "oda"
+      reading: "oda"
+      ipa: "ota"
+      forms:
+        "inf": "와"
+        "request": "와 주세요"
+        "again": "다시 와 주세요"
+      readings:
+        "inf": "wa"
+        "request": "wa juseyo"
+        "again": "dasi wa juseyo"
+      ipas:
+        "inf": "wa"
+        "request": "wa tɕusejo"
+        "again": "tasi wa tɕusejo"
+    - lemma: "가다"
+      key: "gada"
+      reading: "gada"
+      ipa: "kata"
+      forms:
+        "inf": "가"
+        "request": "가 주세요"
+        "again": "다시 가 주세요"
+      readings:
+        "inf": "ga"
+        "request": "ga juseyo"
+        "again": "dasi ga juseyo"
+      ipas:
+        "inf": "ka"
+        "request": "ka tɕusejo"
+        "again": "tasi ka tɕusejo"
+    - lemma: "주문하다"
+      key: "jumunhada"
+      reading: "jumunhada"
+      ipa: "tɕumunhata"
+      forms:
+        "inf": "주문해"
+        "request": "주문해 주세요"
+        "again": "다시 주문해 주세요"
+      readings:
+        "inf": "jumunhae"
+        "request": "jumunhae juseyo"
+        "again": "dasi jumunhae juseyo"
+      ipas:
+        "inf": "tɕumunhe"
+        "request": "tɕumunhe tɕusejo"
+        "again": "tasi tɕumunhe tɕusejo"

@@ -1,0 +1,26 @@
+schema: 1
+id: "ko-en-grammar-particle-e"
+kind: "layer"
+core: "ko-grammar-particle-e"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "에 (e): to, at and in"
+description: "Six places and three times of day with the particle 에 (e), and the same word in the sentence 'I go to (the place)' or 'I go in (the time)'. Sources: the en.wikipedia.org page 'Korean postpositions' and the en.wiktionary.org entry -에 (-e); 가요 (gayo) is copied from the conjugation table of 가다 (gada). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The particle 에 (e)"
+  slot_name: "form"
+  slots:
+    "noun": "the noun with 에 (e)"
+    "go": "'I go to or at (the noun)': 저는 (jeoneun), the noun with 에 (e) and 가요 (gayo)"
+  entries:
+    "hakgyo": "to school: I go to school"
+    "eunhaeng": "to the bank: I go to the bank"
+    "byeongwon": "to the hospital: I go to the hospital"
+    "sijang": "to the market: I go to the market"
+    "gongwon": "to the park: I go to the park"
+    "gonghang": "to the airport: I go to the airport"
+    "achim": "in the morning: I go in the morning"
+    "jeonyeok": "in the evening: I go in the evening"
+    "ohu": "in the afternoon: I go in the afternoon"
+  notes: "-에 (-e) is the same after every noun, a consonant or a vowel. Wiktionary gives its main uses: the direction or destination of movement, 학교에 (hakgyoe) 가요 (gayo), 'I go to school'; a point in time, 아침에 (achime), 'in the morning'; and the place where something is, 집에 (jibe) 있어요 (isseoyo), 'is at home'. Wikipedia describes it as the particle for time or place. Wiktionary adds that -에 (-e) is used only with nouns for things that are not alive; for a person or an animal, -에게 (-ege) or -한테 (-hante) is used instead (a later unit). A place of movement or existence takes -에 (-e); the place where an action is done takes -에서 (-eseo), which is the next lesson. 가요 (gayo) is the polite form of 가다 (gada), 'to go', copied from Wiktionary's conjugation table."
