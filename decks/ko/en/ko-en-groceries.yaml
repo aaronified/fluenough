@@ -1,0 +1,559 @@
+schema: 1
+id: "ko-en-groceries"
+kind: "layer"
+core: "ko-groceries"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Groceries"
+license: "CC-BY-SA-4.0"
+description: "Thirty-seven words for groceries: vegetables, fruit, meat, eggs, staples and seasonings. Not yet checked by a Korean speaker: please report any mistake."
+tags: ["beginner", "unreviewed"]
+cards:
+  "ko-2500":
+    native: "vegetable"
+    notes:
+      "n1": "채소 (chaeso) is the general word for vegetables; 과일 (gwail) is fruit."
+    examples:
+      "채소가 싸요.":
+        native: "The vegetables are cheap."
+        bases:
+          "채소가": "vegetable, with the subject particle 가 (ga)"
+      "채소가 많아요.":
+        native: "There are many vegetables."
+        bases:
+          "채소가": "vegetable, with the subject particle 가 (ga)"
+          "많아요": "to be many, polite"
+  "ko-2501":
+    native: "fruit"
+    notes:
+      "n1": "과일 (gwail) is fruit, and 채소 (chaeso) is vegetables."
+    examples:
+      "과일이 좋아요.":
+        native: "The fruit is good."
+        bases:
+          "과일이": "fruit, with the subject particle 이 (i)"
+          "좋아요": "to be good, polite"
+      "과일이 비싸요.":
+        native: "The fruit is expensive."
+        bases:
+          "과일이": "fruit, with the subject particle 이 (i)"
+          "비싸요": "to be expensive, polite"
+  "ko-2502":
+    native: "meat"
+    notes:
+      "n1": "고기 (gogi) is meat in general. The kinds are 닭고기 (dakgogi) (chicken), 돼지고기 (dwaejigogi) (pork) and 쇠고기 (soegogi) (beef)."
+    examples:
+      "고기가 있어요?":
+        native: "Is there meat?"
+        bases:
+          "고기가": "meat, with the subject particle 가 (ga)"
+          "있어요": "to have, polite"
+      "고기가 좋아요.":
+        native: "The meat is good."
+        bases:
+          "고기가": "meat, with the subject particle 가 (ga)"
+          "좋아요": "to be good, polite"
+  "ko-2503":
+    native: "fish, as food"
+    notes:
+      "n1": "생선 (saengseon) is fish as food, the kind you buy and cook."
+    examples:
+      "생선이 좋아요.":
+        native: "The fish is good."
+        bases:
+          "생선이": "fish, with the subject particle 이 (i)"
+          "좋아요": "to be good, polite"
+      "생선이 비싸요.":
+        native: "The fish is expensive."
+        bases:
+          "생선이": "fish, with the subject particle 이 (i)"
+          "비싸요": "to be expensive, polite"
+  "ko-2504":
+    native: "chicken, the meat"
+    notes:
+      "n1": "닭고기 (dakgogi) is chicken meat; 닭 (dalk) is the bird itself."
+    examples:
+      "닭고기가 있어요?":
+        native: "Is there chicken?"
+        bases:
+          "닭고기가": "chicken, with the subject particle 가 (ga)"
+          "있어요": "to have, polite"
+      "닭고기가 싸요.":
+        native: "The chicken is cheap."
+        bases:
+          "닭고기가": "chicken, with the subject particle 가 (ga)"
+  "ko-2505":
+    native: "pork"
+    notes:
+      "n1": "돼지고기 (dwaejigogi) is pork, the meat of a pig."
+    examples:
+      "돼지고기가 좋아요.":
+        native: "The pork is good."
+        bases:
+          "돼지고기가": "pork, with the subject particle 가 (ga)"
+          "좋아요": "to be good, polite"
+      "돼지고기가 많아요.":
+        native: "There is a lot of pork."
+        bases:
+          "돼지고기가": "pork, with the subject particle 가 (ga)"
+          "많아요": "to be many, polite"
+  "ko-2506":
+    native: "beef"
+    notes:
+      "n1": "쇠고기 (soegogi) is beef, the meat of a cow."
+    examples:
+      "쇠고기가 비싸요.":
+        native: "The beef is expensive."
+        bases:
+          "쇠고기가": "beef, with the subject particle 가 (ga)"
+          "비싸요": "to be expensive, polite"
+      "쇠고기가 좋아요.":
+        native: "The beef is good."
+        bases:
+          "쇠고기가": "beef, with the subject particle 가 (ga)"
+          "좋아요": "to be good, polite"
+  "ko-2507":
+    native: "egg, a hen's egg"
+    notes:
+      "n1": "달걀 (dalgyal) is the everyday native word for a hen's egg; 계란 (gyeran) is the Sino-Korean word for the same thing."
+    examples:
+      "달걀이 있어요?":
+        native: "Do you have eggs?"
+        bases:
+          "달걀이": "egg, with the subject particle 이 (i)"
+          "있어요": "to have, polite"
+      "달걀이 싸요.":
+        native: "The eggs are cheap."
+        bases:
+          "달걀이": "egg, with the subject particle 이 (i)"
+  "ko-2508":
+    native: "egg, a chicken egg"
+    notes:
+      "n1": "계란 (gyeran) is the Sino-Korean word for a chicken egg; 달걀 (dalgyal) is the native word for the same thing."
+    examples:
+      "계란이 많아요.":
+        native: "There are many eggs."
+        bases:
+          "계란이": "egg, with the subject particle 이 (i)"
+          "많아요": "to be many, polite"
+      "계란이 좋아요.":
+        native: "The eggs are good."
+        bases:
+          "계란이": "egg, with the subject particle 이 (i)"
+          "좋아요": "to be good, polite"
+  "ko-2509":
+    native: "milk"
+    notes:
+      "n1": "우유 (uyu) is cow's milk, which is drunk and used in cooking."
+    examples:
+      "우유를 마셔요.":
+        native: "I drink milk."
+        bases:
+          "우유를": "milk, with the object particle 를 (reul)"
+          "마셔요": "to drink, polite"
+      "우유가 있어요?":
+        native: "Is there milk?"
+        bases:
+          "우유가": "milk, with the subject particle 가 (ga)"
+          "있어요": "to have, polite"
+  "ko-2510":
+    native: "uncooked rice"
+    notes:
+      "n1": "쌀 (ssal) is uncooked rice, the grain you buy; cooked rice has another word."
+    examples:
+      "쌀이 많아요.":
+        native: "There is a lot of rice."
+        bases:
+          "쌀이": "rice, with the subject particle 이 (i)"
+          "많아요": "to be many, polite"
+      "쌀을 사요.":
+        native: "I buy rice."
+        bases:
+          "쌀을": "rice, with the object particle 을 (eul)"
+          "사요": "to buy, polite"
+  "ko-2511":
+    native: "salt"
+    notes:
+      "n1": "소금 (sogeum) is salt, a basic seasoning."
+    examples:
+      "소금이 있어요?":
+        native: "Is there salt?"
+        bases:
+          "소금이": "salt, with the subject particle 이 (i)"
+          "있어요": "to have, polite"
+      "소금을 주세요.":
+        native: "Please give me salt."
+        bases:
+          "소금을": "salt, with the object particle 을 (eul)"
+          "주세요": "to give, polite request"
+  "ko-2512":
+    native: "sugar"
+    notes:
+      "n1": "설탕 (seoltang) is sugar."
+    examples:
+      "설탕이 있어요?":
+        native: "Is there sugar?"
+        bases:
+          "설탕이": "sugar, with the subject particle 이 (i)"
+          "있어요": "to have, polite"
+      "설탕을 주세요.":
+        native: "Please give me sugar."
+        bases:
+          "설탕을": "sugar, with the object particle 을 (eul)"
+          "주세요": "to give, polite request"
+  "ko-2513":
+    native: "soy sauce"
+    notes:
+      "n1": "간장 (ganjang) is soy sauce, a basic seasoning in Korean cooking."
+    examples:
+      "간장이 있어요?":
+        native: "Is there soy sauce?"
+        bases:
+          "간장이": "soy sauce, with the subject particle 이 (i)"
+          "있어요": "to have, polite"
+      "간장을 주세요.":
+        native: "Please give me soy sauce."
+        bases:
+          "간장을": "soy sauce, with the object particle 을 (eul)"
+          "주세요": "to give, polite request"
+  "ko-2514":
+    native: "soybean paste"
+    notes:
+      "n1": "된장 (doenjang) is a fermented soybean paste, used in soups and stews."
+    examples:
+      "된장이 있어요?":
+        native: "Is there soybean paste?"
+        bases:
+          "된장이": "soybean paste, with the subject particle 이 (i)"
+          "있어요": "to have, polite"
+      "된장을 주세요.":
+        native: "Please give me soybean paste."
+        bases:
+          "된장을": "soybean paste, with the object particle 을 (eul)"
+          "주세요": "to give, polite request"
+  "ko-2515":
+    native: "gochujang, red chilli paste"
+    notes:
+      "n1": "고추장 (gochujang) is a fermented red chilli paste, made from chilli powder, glutinous rice powder, fermented soybean powder and salt."
+    examples:
+      "고추장이 있어요?":
+        native: "Is there gochujang?"
+        bases:
+          "고추장이": "gochujang, with the subject particle 이 (i)"
+          "있어요": "to have, polite"
+      "고추장을 주세요.":
+        native: "Please give me gochujang."
+        bases:
+          "고추장을": "gochujang, with the object particle 을 (eul)"
+          "주세요": "to give, polite request"
+  "ko-2516":
+    native: "vinegar"
+    notes:
+      "n1": "식초 (sikcho) is vinegar."
+    examples:
+      "식초가 있어요?":
+        native: "Is there vinegar?"
+        bases:
+          "식초가": "vinegar, with the subject particle 가 (ga)"
+          "있어요": "to have, polite"
+      "식초를 주세요.":
+        native: "Please give me vinegar."
+        bases:
+          "식초를": "vinegar, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2517":
+    native: "sesame oil"
+    notes:
+      "n1": "참기름 (chamgireum) is sesame oil, used for its nutty smell and taste."
+    examples:
+      "참기름이 있어요?":
+        native: "Is there sesame oil?"
+        bases:
+          "참기름이": "sesame oil, with the subject particle 이 (i)"
+          "있어요": "to have, polite"
+      "참기름을 주세요.":
+        native: "Please give me sesame oil."
+        bases:
+          "참기름을": "sesame oil, with the object particle 을 (eul)"
+          "주세요": "to give, polite request"
+  "ko-2518":
+    native: "onion"
+    notes:
+      "n1": "양파 (yangpa) is onion."
+    examples:
+      "양파가 많아요.":
+        native: "There are many onions."
+        bases:
+          "양파가": "onion, with the subject particle 가 (ga)"
+          "많아요": "to be many, polite"
+      "양파를 주세요.":
+        native: "Please give me onions."
+        bases:
+          "양파를": "onion, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2519":
+    native: "garlic"
+    notes:
+      "n1": "마늘 (maneul) is garlic."
+    examples:
+      "마늘이 있어요?":
+        native: "Is there garlic?"
+        bases:
+          "마늘이": "garlic, with the subject particle 이 (i)"
+          "있어요": "to have, polite"
+      "마늘을 주세요.":
+        native: "Please give me garlic."
+        bases:
+          "마늘을": "garlic, with the object particle 을 (eul)"
+          "주세요": "to give, polite request"
+  "ko-2520":
+    native: "potato"
+    notes:
+      "n1": "감자 (gamja) is potato."
+    examples:
+      "감자가 많아요.":
+        native: "There are many potatoes."
+        bases:
+          "감자가": "potato, with the subject particle 가 (ga)"
+          "많아요": "to be many, polite"
+      "감자가 싸요.":
+        native: "The potatoes are cheap."
+        bases:
+          "감자가": "potato, with the subject particle 가 (ga)"
+  "ko-2521":
+    native: "sweet potato"
+    notes:
+      "n1": "고구마 (goguma) is sweet potato. The dictionary tags one sense of the word as Internet usage; the vegetable is the sense used here."
+    examples:
+      "고구마가 좋아요.":
+        native: "The sweet potato is good."
+        bases:
+          "고구마가": "sweet potato, with the subject particle 가 (ga)"
+          "좋아요": "to be good, polite"
+      "고구마를 주세요.":
+        native: "Please give me sweet potatoes."
+        bases:
+          "고구마를": "sweet potato, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2522":
+    native: "carrot"
+    notes:
+      "n1": "당근 (danggeun) is carrot."
+    examples:
+      "당근이 있어요?":
+        native: "Is there carrot?"
+        bases:
+          "당근이": "carrot, with the subject particle 이 (i)"
+          "있어요": "to have, polite"
+      "당근이 싸요.":
+        native: "The carrots are cheap."
+        bases:
+          "당근이": "carrot, with the subject particle 이 (i)"
+  "ko-2523":
+    native: "napa cabbage"
+    notes:
+      "n1": "배추 (baechu) is napa cabbage, the main vegetable of kimchi."
+    examples:
+      "배추가 많아요.":
+        native: "There is a lot of napa cabbage."
+        bases:
+          "배추가": "napa cabbage, with the subject particle 가 (ga)"
+          "많아요": "to be many, polite"
+      "배추를 주세요.":
+        native: "Please give me napa cabbage."
+        bases:
+          "배추를": "napa cabbage, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2524":
+    native: "Korean radish"
+    notes:
+      "n1": "무 (mu) is the Korean radish, a kind of daikon."
+    examples:
+      "무가 있어요?":
+        native: "Is there radish?"
+        bases:
+          "무가": "radish, with the subject particle 가 (ga)"
+          "있어요": "to have, polite"
+      "무를 주세요.":
+        native: "Please give me radish."
+        bases:
+          "무를": "radish, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2525":
+    native: "spinach"
+    notes:
+      "n1": "시금치 (sigeumchi) is spinach."
+    examples:
+      "시금치가 있어요?":
+        native: "Is there spinach?"
+        bases:
+          "시금치가": "spinach, with the subject particle 가 (ga)"
+          "있어요": "to have, polite"
+      "시금치를 주세요.":
+        native: "Please give me spinach."
+        bases:
+          "시금치를": "spinach, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2526":
+    native: "lettuce"
+    notes:
+      "n1": "상추 (sangchu) is lettuce, often eaten wrapped around rice and meat."
+    examples:
+      "상추가 많아요.":
+        native: "There is a lot of lettuce."
+        bases:
+          "상추가": "lettuce, with the subject particle 가 (ga)"
+          "많아요": "to be many, polite"
+      "상추를 주세요.":
+        native: "Please give me lettuce."
+        bases:
+          "상추를": "lettuce, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2527":
+    native: "cucumber"
+    notes:
+      "n1": "오이 (oi) is cucumber."
+    examples:
+      "오이가 있어요?":
+        native: "Is there cucumber?"
+        bases:
+          "오이가": "cucumber, with the subject particle 가 (ga)"
+          "있어요": "to have, polite"
+      "오이를 주세요.":
+        native: "Please give me cucumber."
+        bases:
+          "오이를": "cucumber, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2528":
+    native: "tomato"
+    notes:
+      "n1": "토마토 (tomato) is a loanword from English \"tomato\"."
+    examples:
+      "토마토가 좋아요.":
+        native: "The tomato is good."
+        bases:
+          "토마토가": "tomato, with the subject particle 가 (ga)"
+          "좋아요": "to be good, polite"
+      "토마토를 주세요.":
+        native: "Please give me tomatoes."
+        bases:
+          "토마토를": "tomato, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2529":
+    native: "mushroom"
+    notes:
+      "n1": "버섯 (beoseot) is a mushroom, the fruiting body of a fungus."
+    examples:
+      "버섯이 있어요?":
+        native: "Are there mushrooms?"
+        bases:
+          "버섯이": "mushroom, with the subject particle 이 (i)"
+          "있어요": "to have, polite"
+      "버섯을 주세요.":
+        native: "Please give me mushrooms."
+        bases:
+          "버섯을": "mushroom, with the object particle 을 (eul)"
+          "주세요": "to give, polite request"
+  "ko-2530":
+    native: "tofu"
+    notes:
+      "n1": "두부 (dubu) is tofu, bean curd."
+    examples:
+      "두부가 있어요?":
+        native: "Is there tofu?"
+        bases:
+          "두부가": "tofu, with the subject particle 가 (ga)"
+          "있어요": "to have, polite"
+      "두부를 주세요.":
+        native: "Please give me tofu."
+        bases:
+          "두부를": "tofu, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2531":
+    native: "instant noodles"
+    notes:
+      "n1": "라면 (ramyeon) is instant noodles, a word borrowed from Japanese."
+    examples:
+      "라면이 있어요?":
+        native: "Is there instant noodles?"
+        bases:
+          "라면이": "instant noodles, with the subject particle 이 (i)"
+          "있어요": "to have, polite"
+      "라면을 주세요.":
+        native: "Please give me instant noodles."
+        bases:
+          "라면을": "instant noodles, with the object particle 을 (eul)"
+          "주세요": "to give, polite request"
+  "ko-2532":
+    native: "apple"
+    notes:
+      "n1": "사과 (sagwa) is an apple."
+    examples:
+      "사과가 좋아요.":
+        native: "The apple is good."
+        bases:
+          "사과가": "apple, with the subject particle 가 (ga)"
+          "좋아요": "to be good, polite"
+      "사과를 주세요.":
+        native: "Please give me apples."
+        bases:
+          "사과를": "apple, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2533":
+    native: "banana"
+    notes:
+      "n1": "바나나 (banana) is a loanword from English \"banana\"."
+    examples:
+      "바나나가 싸요.":
+        native: "The bananas are cheap."
+        bases:
+          "바나나가": "banana, with the subject particle 가 (ga)"
+      "바나나를 주세요.":
+        native: "Please give me bananas."
+        bases:
+          "바나나를": "banana, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2534":
+    native: "strawberry"
+    notes:
+      "n1": "딸기 (ttalgi) is strawberry."
+    examples:
+      "딸기가 많아요.":
+        native: "There are many strawberries."
+        bases:
+          "딸기가": "strawberry, with the subject particle 가 (ga)"
+          "많아요": "to be many, polite"
+      "딸기를 주세요.":
+        native: "Please give me strawberries."
+        bases:
+          "딸기를": "strawberry, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2535":
+    native: "grape"
+    notes:
+      "n1": "포도 (podo) is grape, the fruit."
+    examples:
+      "포도가 있어요?":
+        native: "Are there grapes?"
+        bases:
+          "포도가": "grape, with the subject particle 가 (ga)"
+          "있어요": "to have, polite"
+      "포도를 주세요.":
+        native: "Please give me grapes."
+        bases:
+          "포도를": "grape, with the object particle 를 (reul)"
+          "주세요": "to give, polite request"
+  "ko-2536":
+    native: "watermelon"
+    notes:
+      "n1": "수박 (subak) is watermelon."
+    examples:
+      "수박이 좋아요.":
+        native: "The watermelon is good."
+        bases:
+          "수박이": "watermelon, with the subject particle 이 (i)"
+          "좋아요": "to be good, polite"
+      "수박을 주세요.":
+        native: "Please give me watermelon."
+        bases:
+          "수박을": "watermelon, with the object particle 을 (eul)"
+          "주세요": "to give, polite request"
