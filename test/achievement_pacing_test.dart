@@ -108,20 +108,10 @@ const Map<String, int> _bengaliGrammar = <String, int>{
   'rep': 174,
 };
 
-AchievementFacts _hindustani() => _shape(
-  114,
-  43,
-  71,
-  words: _hindustaniWords,
-  grammar: _hindustaniGrammar,
-);
-AchievementFacts _bengali() => _shape(
-  187,
-  60,
-  109,
-  words: _bengaliWords,
-  grammar: _bengaliGrammar,
-);
+AchievementFacts _hindustani() =>
+    _shape(114, 43, 71, words: _hindustaniWords, grammar: _hindustaniGrammar);
+AchievementFacts _bengali() =>
+    _shape(187, 60, 109, words: _bengaliWords, grammar: _bengaliGrammar);
 
 /// The positions, sorted.
 List<int> _sorted(Map<String, int> placed) => placed.values.toList()..sort();

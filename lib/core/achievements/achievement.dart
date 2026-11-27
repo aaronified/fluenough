@@ -227,9 +227,7 @@ class AchievementResult {
 class AchievementReport {
   AchievementReport(List<AchievementResult> results)
     : results = List<AchievementResult>.unmodifiable(results),
-      _byId = <String, AchievementResult>{
-        for (final r in results) r.def.id: r,
-      };
+      _byId = <String, AchievementResult>{for (final r in results) r.def.id: r};
 
   /// In the catalogue's order: by position on the path, then the others.
   final List<AchievementResult> results;

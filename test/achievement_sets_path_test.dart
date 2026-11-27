@@ -107,7 +107,7 @@ void main() {
       );
       _refuses(
         '  - {id: a, kind: word, decks: [hi-family]}\n'
-        '  - {id: a, kind: word, decks: [hi-family]}\n',
+            '  - {id: a, kind: word, decks: [hi-family]}\n',
         '"a" is listed twice',
       );
       _refuses(
