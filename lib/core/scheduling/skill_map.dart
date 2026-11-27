@@ -106,6 +106,7 @@ class SkillMap {
       DrillMode.production || DrillMode.listening || DrillMode.grammar
           when asked == Ask.chooseWord ||
               asked == Ask.rearrange ||
+              asked == Ask.cloze ||
               asked == Ask.hearAndChoose ||
               asked == Ask.chooseForm =>
         DrillMode.readScript,
