@@ -109,11 +109,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.10.0
 
-2 approved open issues.
-
-**Bugs**
-
-- [#1012](https://github.com/aaronified/fluenough/issues/1012) Check the web app (PWA): installability, offline, and core flows
+1 approved open issue.
 
 **Enhancements**
 
