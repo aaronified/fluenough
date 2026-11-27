@@ -128,6 +128,7 @@ enum Feature {
     Feature.localBackup,
     Feature.localRestore,
     Feature.importFile,
+    Feature.importUrl,
     Feature.deckTemplates,
     Feature.privateExport,
     Feature.privateDownload,

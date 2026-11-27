@@ -39,6 +39,7 @@ import 'app/wallpaper_colours.dart';
 import 'core/haptics/system_haptic_engine.dart';
 import 'core/review/review_problems.dart';
 import 'core/decks/deck_fetch.dart';
+import 'core/decks/deck_link.dart';
 import 'core/network/network_probe.dart';
 import 'core/sound/system_sound_check.dart';
 import 'core/speech/asr/on_device_speech_engine.dart';
@@ -214,6 +215,7 @@ Future<void> main() async {
     // The Find my level question banks, made once per language and deck set.
     bankStore: FileBlobStore(Directory('${files.path}/placement-banks')),
     deckDownloads: deckDownloads,
+    deckLinks: HttpDeckLinkFetcher(),
     progress: storage.progress,
     synonymLoader: loadSynonymSets,
     settings: storage.settings,

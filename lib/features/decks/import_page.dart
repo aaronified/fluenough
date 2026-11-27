@@ -1,9 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/deck_import.dart';
 import '../../app/features.dart';
 import '../../core/data/deck_parser.dart';
+import '../../core/decks/deck_link.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
@@ -80,9 +83,10 @@ Future<void> saveDeckTemplate(BuildContext context) async {
 ///
 /// Design screens `import` and `import-error`. A file is added (#22): the
 /// page offers the template, checks the chosen file (`checkAddedDeck`), and
-/// shows what is wrong with it or adds it. The other sources are incoming
-/// (#22, #23, and a new issue for spreadsheets): dimmed with their badges,
-/// the link field and the button disabled.
+/// shows what is wrong with it or adds it. So is a link (#22): the page
+/// downloads the file at an https address and checks it the same way. The
+/// spreadsheet source is incoming (a new issue): dimmed with its badge and
+/// its button disabled.
 class ImportPage extends StatefulWidget {
   const ImportPage({
     super.key,
@@ -116,6 +120,10 @@ class _ImportPageState extends State<ImportPage> {
   DeckCheck? _check;
   bool _adding = false;
 
+  /// Whether a linked deck is downloading, and why the last link failed.
+  bool _fetching = false;
+  String? _linkProblem;
+
   @override
   void dispose() {
     _url.dispose();
@@ -127,7 +135,12 @@ class _ImportPageState extends State<ImportPage> {
         AppScope.read(context).features.isIncoming(source.feature)) {
       return;
     }
-    setState(() => _source = source);
+    setState(() {
+      _source = source;
+      _picked = null;
+      _check = null;
+      _linkProblem = null;
+    });
   }
 
   Future<void> _saveTemplate() => saveDeckTemplate(context);
@@ -150,6 +163,81 @@ class _ImportPageState extends State<ImportPage> {
       _check = state.checkDeck(file.text, file.name);
     });
   }
+
+  /// Downloads the deck at the address in the link field and checks it as a
+  /// picked file is checked: the same errors, the same Replace prompt.
+  Future<void> _fetchLink() async {
+    if (_fetching || _adding) return;
+    final l10n = AppLocalizations.of(context)!;
+    final state = AppScope.read(context);
+    final parsed = parseDeckLink(_url.text);
+    final uri = parsed.uri;
+    if (uri == null) {
+      final why = parsed.failure ?? LinkFailure.notALink;
+      setState(() {
+        _picked = null;
+        _check = null;
+        _linkProblem = _linkText(l10n, why);
+      });
+      return;
+    }
+    setState(() {
+      _fetching = true;
+      _picked = null;
+      _check = null;
+      _linkProblem = null;
+    });
+    final fetched = await _downloadDeck(state.deckLinks, uri);
+    if (!mounted) return;
+    final text = fetched.text;
+    if (text == null) {
+      final failure = fetched.failure ?? LinkFailure.badReply;
+      final cause = fetched.cause;
+      state.log.warning(
+        'Deck link not fetched: ${failure.name}'
+        '${cause == null ? '' : ' ($cause)'}',
+      );
+      setState(() {
+        _fetching = false;
+        _linkProblem = _linkText(l10n, failure);
+      });
+      return;
+    }
+    final name = deckLinkName(uri);
+    setState(() {
+      _fetching = false;
+      _picked = (name: name, text: text);
+      _check = state.checkDeck(text, name);
+    });
+  }
+
+  /// [fetcher]'s answer for [uri]. A fetcher never throws; if one does, the
+  /// link counts as unreachable.
+  static Future<LinkFetched> _downloadDeck(
+    DeckLinkFetcher fetcher,
+    Uri uri,
+  ) async {
+    try {
+      return await fetcher.fetch(uri);
+    } on Exception catch (e) {
+      return LinkFetched.failed(
+        LinkFailure.offline,
+        cause: e.runtimeType.toString(),
+      );
+    }
+  }
+
+  /// What a failed link means to the learner.
+  static String _linkText(AppLocalizations l10n, LinkFailure f) => switch (f) {
+    LinkFailure.notALink => l10n.importLinkNotALink,
+    LinkFailure.notHttps => l10n.importLinkNotHttps,
+    LinkFailure.offline => l10n.importLinkOffline,
+    LinkFailure.notFound => l10n.importLinkNotFound,
+    LinkFailure.refused => l10n.importLinkRefused,
+    LinkFailure.tooLarge => l10n.importLinkTooLarge,
+    LinkFailure.notText => l10n.importLinkNotText,
+    LinkFailure.badReply => l10n.importLinkBadReply,
+  };
 
   Future<void> _add(DeckAccepted check) async {
     final l10n = AppLocalizations.of(context)!;
@@ -174,7 +262,7 @@ class _ImportPageState extends State<ImportPage> {
     final l10n = AppLocalizations.of(context)!;
     final error = widget.error;
     final goLabel = _source == ImportSource.url
-        ? l10n.importFetch
+        ? (_fetching ? l10n.importFetching : l10n.importFetch)
         : l10n.importChoose;
     return Scaffold(
       appBar: AppBar(title: Text(l10n.importTitle)),
@@ -210,10 +298,7 @@ class _ImportPageState extends State<ImportPage> {
               style: FilledButton.styleFrom(
                 minimumSize: const Size.fromHeight(AppSizes.primaryButton),
               ),
-              // Fetching a link is #22's too; only a file runs yet.
-              onPressed: _source == ImportSource.file && !_adding
-                  ? _pick
-                  : null,
+              onPressed: _go,
               icon: const Icon(Icons.download, size: 22),
               label: Text(goLabel),
             ),
@@ -230,8 +315,21 @@ class _ImportPageState extends State<ImportPage> {
     );
   }
 
+  /// What the main button does, or null while it cannot.
+  VoidCallback? get _go {
+    if (_adding || _fetching) return null;
+    return switch (_source) {
+      ImportSource.file => _pick,
+      ImportSource.url => _fetchLink,
+      ImportSource.csv => null,
+    };
+  }
+
   /// What the chosen file's check found, or null before one is chosen.
   Widget? _outcome(AppLocalizations l10n) {
+    if (_linkProblem case final problem?) {
+      return ImportErrorCard(detail: problem);
+    }
     final name = _picked?.name ?? '';
     return switch (_check) {
       null => null,
@@ -317,6 +415,8 @@ class _ImportPageState extends State<ImportPage> {
                     keyboardType: TextInputType.url,
                     autocorrect: false,
                     textDirection: TextDirection.ltr,
+                    textInputAction: TextInputAction.go,
+                    onSubmitted: (_) => unawaited(_fetchLink()),
                     decoration: InputDecoration(
                       hintText: l10n.importLinkHint,
                       hintTextDirection: TextDirection.ltr,

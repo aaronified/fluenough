@@ -58,6 +58,7 @@ import '../core/scheduling/lesson.dart';
 import '../core/scheduling/lesson_sets.dart';
 import 'added_decks.dart';
 import '../core/decks/deck_index.dart';
+import '../core/decks/deck_link.dart';
 import 'app_log.dart';
 import 'recommendation_progress.dart';
 import 'recommendation_questions.dart';
@@ -218,6 +219,7 @@ class AppState extends ChangeNotifier {
     this._backupStore,
     this._recommendationMarks,
     this.deckFiles = const PickerDeckFiles(),
+    this.deckLinks = const NullDeckLinkFetcher(),
     this.links = const LauncherLinks(),
     this.systemSettings = const NullSystemSettings(),
     WebInstall? webInstall,
@@ -404,6 +406,7 @@ class AppState extends ChangeNotifier {
     BackupStore? backupStore,
     RecommendationMarkStore? recommendationMarks,
     DeckFiles deckFiles = const PickerDeckFiles(),
+    DeckLinkFetcher deckLinks = const NullDeckLinkFetcher(),
     DeckStore? addedDecks,
     PrivateStore? privateStore,
     LinkOpener? links,
@@ -455,6 +458,7 @@ class AppState extends ChangeNotifier {
       backupStore: backupStore ?? MemoryBackupStore(),
       recommendationMarks: recommendationMarks,
       deckFiles: deckFiles,
+      deckLinks: deckLinks,
       links: links ?? FixedLinks(),
       systemSettings: systemSettings,
       webInstall: webInstall,
@@ -567,6 +571,9 @@ class AppState extends ChangeNotifier {
 
   /// Where a deck to add is read from, and its template saved to (#22).
   final DeckFiles deckFiles;
+
+  /// Where a deck linked by address is downloaded from (#22).
+  final DeckLinkFetcher deckLinks;
 
   /// Opens links in the browser, or the app that handles them.
   final LinkOpener links;
