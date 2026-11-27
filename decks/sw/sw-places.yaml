@@ -1,0 +1,470 @@
+schema: 1
+id: "sw-places"
+part: "core"
+kind: "vocab"
+language: { code: "sw", iso639_3: "swh", name: "Swahili", script: "latin", tts: "sw-KE", icon: "Sw" }
+license: "CC-BY-SA-4.0"
+theme: "places"
+tags: ["unreviewed"]
+
+cards:
+  - id: "sw-2700"
+    target: "mji"
+    ipa: "ˈmdʒi"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni mji.", ipa: "ˈhapa ni ˈmdʒi", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "mji", base: "mji" }] }
+      - { target: "Ninapenda mji.", ipa: "ninaˈpenda ˈmdʒi", bases: [{ word: "Ninapenda", base: "penda" }, { word: "mji", base: "mji" }] }
+  - id: "sw-2701"
+    target: "kijiji"
+    ipa: "kiˈdʒidʒi"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni kijiji.", ipa: "ˈhapa ni kiˈdʒidʒi", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "kijiji", base: "kijiji" }] }
+      - { target: "Ninapenda kijiji.", ipa: "ninaˈpenda kiˈdʒidʒi", bases: [{ word: "Ninapenda", base: "penda" }, { word: "kijiji", base: "kijiji" }] }
+  - id: "sw-2702"
+    target: "jiji"
+    ipa: "ˈdʒidʒi"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni jiji.", ipa: "ˈhapa ni ˈdʒidʒi", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "jiji", base: "jiji" }] }
+      - { target: "Ninapenda jiji.", ipa: "ninaˈpenda ˈdʒidʒi", bases: [{ word: "Ninapenda", base: "penda" }, { word: "jiji", base: "jiji" }] }
+  - id: "sw-2703"
+    target: "soko"
+    ipa: "ˈsoko"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni soko.", ipa: "ˈhapa ni ˈsoko", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "soko", base: "soko" }] }
+      - { target: "Ninapenda soko.", ipa: "ninaˈpenda ˈsoko", bases: [{ word: "Ninapenda", base: "penda" }, { word: "soko", base: "soko" }] }
+  - id: "sw-2704"
+    target: "duka"
+    ipa: "ˈduka"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni duka.", ipa: "ˈhapa ni ˈduka", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "duka", base: "duka" }] }
+      - { target: "Ninapenda duka.", ipa: "ninaˈpenda ˈduka", bases: [{ word: "Ninapenda", base: "penda" }, { word: "duka", base: "duka" }] }
+  - id: "sw-2705"
+    target: "hospitali"
+    ipa: "hospiˈtali"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni hospitali.", ipa: "ˈhapa ni hospiˈtali", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "hospitali", base: "hospitali" }] }
+      - { target: "Ninapenda hospitali.", ipa: "ninaˈpenda hospiˈtali", bases: [{ word: "Ninapenda", base: "penda" }, { word: "hospitali", base: "hospitali" }] }
+  - id: "sw-2706"
+    target: "zahanati"
+    ipa: "zahaˈnati"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni zahanati.", ipa: "ˈhapa ni zahaˈnati", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "zahanati", base: "zahanati" }] }
+      - { target: "Ninapenda zahanati.", ipa: "ninaˈpenda zahaˈnati", bases: [{ word: "Ninapenda", base: "penda" }, { word: "zahanati", base: "zahanati" }] }
+  - id: "sw-2707"
+    target: "shule"
+    ipa: "ˈʃule"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni shule.", ipa: "ˈhapa ni ˈʃule", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "shule", base: "shule" }] }
+      - { target: "Ninapenda shule.", ipa: "ninaˈpenda ˈʃule", bases: [{ word: "Ninapenda", base: "penda" }, { word: "shule", base: "shule" }] }
+  - id: "sw-2708"
+    target: "kanisa"
+    ipa: "kaˈnisa"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni kanisa.", ipa: "ˈhapa ni kaˈnisa", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "kanisa", base: "kanisa" }] }
+      - { target: "Ninapenda kanisa.", ipa: "ninaˈpenda kaˈnisa", bases: [{ word: "Ninapenda", base: "penda" }, { word: "kanisa", base: "kanisa" }] }
+  - id: "sw-2709"
+    target: "msikiti"
+    ipa: "msiˈkiti"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni msikiti.", ipa: "ˈhapa ni msiˈkiti", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "msikiti", base: "msikiti" }] }
+      - { target: "Ninapenda msikiti.", ipa: "ninaˈpenda msiˈkiti", bases: [{ word: "Ninapenda", base: "penda" }, { word: "msikiti", base: "msikiti" }] }
+  - id: "sw-2710"
+    target: "hekalu"
+    ipa: "heˈkalu"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni hekalu.", ipa: "ˈhapa ni heˈkalu", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "hekalu", base: "hekalu" }] }
+      - { target: "Ninapenda hekalu.", ipa: "ninaˈpenda heˈkalu", bases: [{ word: "Ninapenda", base: "penda" }, { word: "hekalu", base: "hekalu" }] }
+  - id: "sw-2711"
+    target: "benki"
+    ipa: "ˈbenki"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni benki.", ipa: "ˈhapa ni ˈbenki", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "benki", base: "benki" }] }
+      - { target: "Ninapenda benki.", ipa: "ninaˈpenda ˈbenki", bases: [{ word: "Ninapenda", base: "penda" }, { word: "benki", base: "benki" }] }
+  - id: "sw-2712"
+    target: "posta"
+    ipa: "ˈposta"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni posta.", ipa: "ˈhapa ni ˈposta", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "posta", base: "posta" }] }
+      - { target: "Ninapenda posta.", ipa: "ninaˈpenda ˈposta", bases: [{ word: "Ninapenda", base: "penda" }, { word: "posta", base: "posta" }] }
+  - id: "sw-2713"
+    target: "hoteli"
+    ipa: "hoˈteli"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni hoteli.", ipa: "ˈhapa ni hoˈteli", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "hoteli", base: "hoteli" }] }
+      - { target: "Ninapenda hoteli.", ipa: "ninaˈpenda hoˈteli", bases: [{ word: "Ninapenda", base: "penda" }, { word: "hoteli", base: "hoteli" }] }
+  - id: "sw-2714"
+    target: "mkahawa"
+    ipa: "mkaˈhawa"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni mkahawa.", ipa: "ˈhapa ni mkaˈhawa", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "mkahawa", base: "mkahawa" }] }
+      - { target: "Ninapenda mkahawa.", ipa: "ninaˈpenda mkaˈhawa", bases: [{ word: "Ninapenda", base: "penda" }, { word: "mkahawa", base: "mkahawa" }] }
+  - id: "sw-2715"
+    target: "baa"
+    ipa: "ˈbaa"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni baa.", ipa: "ˈhapa ni ˈbaa", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "baa", base: "baa" }] }
+      - { target: "Ninapenda baa.", ipa: "ninaˈpenda ˈbaa", bases: [{ word: "Ninapenda", base: "penda" }, { word: "baa", base: "baa" }] }
+  - id: "sw-2716"
+    target: "bustani"
+    ipa: "buˈstani"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni bustani.", ipa: "ˈhapa ni buˈstani", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "bustani", base: "bustani" }] }
+      - { target: "Ninapenda bustani.", ipa: "ninaˈpenda buˈstani", bases: [{ word: "Ninapenda", base: "penda" }, { word: "bustani", base: "bustani" }] }
+  - id: "sw-2717"
+    target: "pwani"
+    ipa: "ˈpwani"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni pwani.", ipa: "ˈhapa ni ˈpwani", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "pwani", base: "pwani" }] }
+      - { target: "Ninapenda pwani.", ipa: "ninaˈpenda ˈpwani", bases: [{ word: "Ninapenda", base: "penda" }, { word: "pwani", base: "pwani" }] }
+  - id: "sw-2718"
+    target: "bahari"
+    ipa: "baˈhaɾi"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni bahari.", ipa: "ˈhapa ni baˈhaɾi", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "bahari", base: "bahari" }] }
+      - { target: "Ninapenda bahari.", ipa: "ninaˈpenda baˈhaɾi", bases: [{ word: "Ninapenda", base: "penda" }, { word: "bahari", base: "bahari" }] }
+  - id: "sw-2719"
+    target: "ziwa"
+    ipa: "ˈziwa"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni ziwa.", ipa: "ˈhapa ni ˈziwa", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "ziwa", base: "ziwa" }] }
+      - { target: "Ninapenda ziwa.", ipa: "ninaˈpenda ˈziwa", bases: [{ word: "Ninapenda", base: "penda" }, { word: "ziwa", base: "ziwa" }] }
+  - id: "sw-2720"
+    target: "mto"
+    ipa: "ˈmto"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni mto.", ipa: "ˈhapa ni ˈmto", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "mto", base: "mto" }] }
+      - { target: "Ninapenda mto.", ipa: "ninaˈpenda ˈmto", bases: [{ word: "Ninapenda", base: "penda" }, { word: "mto", base: "mto" }] }
+  - id: "sw-2721"
+    target: "mlima"
+    ipa: "mˈlima"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni mlima.", ipa: "ˈhapa ni mˈlima", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "mlima", base: "mlima" }] }
+      - { target: "Ninapenda mlima.", ipa: "ninaˈpenda mˈlima", bases: [{ word: "Ninapenda", base: "penda" }, { word: "mlima", base: "mlima" }] }
+  - id: "sw-2722"
+    target: "msitu"
+    ipa: "mˈsitu"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni msitu.", ipa: "ˈhapa ni mˈsitu", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "msitu", base: "msitu" }] }
+      - { target: "Ninapenda msitu.", ipa: "ninaˈpenda mˈsitu", bases: [{ word: "Ninapenda", base: "penda" }, { word: "msitu", base: "msitu" }] }
+  - id: "sw-2723"
+    target: "pori"
+    ipa: "ˈpoɾi"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni pori.", ipa: "ˈhapa ni ˈpoɾi", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "pori", base: "pori" }] }
+      - { target: "Ninapenda pori.", ipa: "ninaˈpenda ˈpoɾi", bases: [{ word: "Ninapenda", base: "penda" }, { word: "pori", base: "pori" }] }
+  - id: "sw-2724"
+    target: "shamba"
+    ipa: "ˈʃamba"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni shamba.", ipa: "ˈhapa ni ˈʃamba", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "shamba", base: "shamba" }] }
+      - { target: "Ninapenda shamba.", ipa: "ninaˈpenda ˈʃamba", bases: [{ word: "Ninapenda", base: "penda" }, { word: "shamba", base: "shamba" }] }
+  - id: "sw-2725"
+    target: "kisiwa"
+    ipa: "kiˈsiwa"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni kisiwa.", ipa: "ˈhapa ni kiˈsiwa", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "kisiwa", base: "kisiwa" }] }
+      - { target: "Ninapenda kisiwa.", ipa: "ninaˈpenda kiˈsiwa", bases: [{ word: "Ninapenda", base: "penda" }, { word: "kisiwa", base: "kisiwa" }] }
+  - id: "sw-2726"
+    target: "jangwa"
+    ipa: "ˈdʒaŋɡwa"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni jangwa.", ipa: "ˈhapa ni ˈdʒaŋɡwa", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "jangwa", base: "jangwa" }] }
+      - { target: "Ninapenda jangwa.", ipa: "ninaˈpenda ˈdʒaŋɡwa", bases: [{ word: "Ninapenda", base: "penda" }, { word: "jangwa", base: "jangwa" }] }
+  - id: "sw-2727"
+    target: "bonde"
+    ipa: "ˈbonde"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni bonde.", ipa: "ˈhapa ni ˈbonde", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "bonde", base: "bonde" }] }
+      - { target: "Ninapenda bonde.", ipa: "ninaˈpenda ˈbonde", bases: [{ word: "Ninapenda", base: "penda" }, { word: "bonde", base: "bonde" }] }
+  - id: "sw-2728"
+    target: "daraja"
+    ipa: "daˈɾadʒa"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni daraja.", ipa: "ˈhapa ni daˈɾadʒa", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "daraja", base: "daraja" }] }
+      - { target: "Ninapenda daraja.", ipa: "ninaˈpenda daˈɾadʒa", bases: [{ word: "Ninapenda", base: "penda" }, { word: "daraja", base: "daraja" }] }
+  - id: "sw-2729"
+    target: "mnara"
+    ipa: "mˈnaɾa"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni mnara.", ipa: "ˈhapa ni mˈnaɾa", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "mnara", base: "mnara" }] }
+      - { target: "Ninapenda mnara.", ipa: "ninaˈpenda mˈnaɾa", bases: [{ word: "Ninapenda", base: "penda" }, { word: "mnara", base: "mnara" }] }
+  - id: "sw-2730"
+    target: "maktaba"
+    ipa: "maˈktaba"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni maktaba.", ipa: "ˈhapa ni maˈktaba", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "maktaba", base: "maktaba" }] }
+      - { target: "Ninapenda maktaba.", ipa: "ninaˈpenda maˈktaba", bases: [{ word: "Ninapenda", base: "penda" }, { word: "maktaba", base: "maktaba" }] }
+  - id: "sw-2731"
+    target: "gereza"
+    ipa: "ɡeˈɾeza"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni gereza.", ipa: "ˈhapa ni ɡeˈɾeza", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "gereza", base: "gereza" }] }
+      - { target: "Ninapenda gereza.", ipa: "ninaˈpenda ɡeˈɾeza", bases: [{ word: "Ninapenda", base: "penda" }, { word: "gereza", base: "gereza" }] }
+  - id: "sw-2732"
+    target: "mahakama"
+    ipa: "mahaˈkama"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni mahakama.", ipa: "ˈhapa ni mahaˈkama", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "mahakama", base: "mahakama" }] }
+      - { target: "Ninapenda mahakama.", ipa: "ninaˈpenda mahaˈkama", bases: [{ word: "Ninapenda", base: "penda" }, { word: "mahakama", base: "mahakama" }] }
+  - id: "sw-2733"
+    target: "kiwanda"
+    ipa: "kiˈwanda"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni kiwanda.", ipa: "ˈhapa ni kiˈwanda", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "kiwanda", base: "kiwanda" }] }
+      - { target: "Ninapenda kiwanda.", ipa: "ninaˈpenda kiˈwanda", bases: [{ word: "Ninapenda", base: "penda" }, { word: "kiwanda", base: "kiwanda" }] }
+  - id: "sw-2734"
+    target: "kambi"
+    ipa: "ˈkambi"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni kambi.", ipa: "ˈhapa ni ˈkambi", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "kambi", base: "kambi" }] }
+      - { target: "Ninapenda kambi.", ipa: "ninaˈpenda ˈkambi", bases: [{ word: "Ninapenda", base: "penda" }, { word: "kambi", base: "kambi" }] }
+  - id: "sw-2735"
+    target: "mbuga"
+    ipa: "ˈmbuɡa"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni mbuga.", ipa: "ˈhapa ni ˈmbuɡa", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "mbuga", base: "mbuga" }] }
+      - { target: "Ninapenda mbuga.", ipa: "ninaˈpenda ˈmbuɡa", bases: [{ word: "Ninapenda", base: "penda" }, { word: "mbuga", base: "mbuga" }] }
+  - id: "sw-2736"
+    target: "pango"
+    ipa: "ˈpaŋɡo"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni pango.", ipa: "ˈhapa ni ˈpaŋɡo", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "pango", base: "pango" }] }
+      - { target: "Ninapenda pango.", ipa: "ninaˈpenda ˈpaŋɡo", bases: [{ word: "Ninapenda", base: "penda" }, { word: "pango", base: "pango" }] }
+  - id: "sw-2737"
+    target: "uwanja"
+    ipa: "uˈwandʒa"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni uwanja.", ipa: "ˈhapa ni uˈwandʒa", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "uwanja", base: "uwanja" }] }
+      - { target: "Ninapenda uwanja.", ipa: "ninaˈpenda uˈwandʒa", bases: [{ word: "Ninapenda", base: "penda" }, { word: "uwanja", base: "uwanja" }] }
+  - id: "sw-2738"
+    target: "stesheni"
+    ipa: "steˈʃeni"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni stesheni.", ipa: "ˈhapa ni steˈʃeni", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "stesheni", base: "stesheni" }] }
+      - { target: "Ninapenda stesheni.", ipa: "ninaˈpenda steˈʃeni", bases: [{ word: "Ninapenda", base: "penda" }, { word: "stesheni", base: "stesheni" }] }
+  - id: "sw-2739"
+    target: "bandari"
+    ipa: "baˈndaɾi"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni bandari.", ipa: "ˈhapa ni baˈndaɾi", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "bandari", base: "bandari" }] }
+      - { target: "Ninapenda bandari.", ipa: "ninaˈpenda baˈndaɾi", bases: [{ word: "Ninapenda", base: "penda" }, { word: "bandari", base: "bandari" }] }
+  - id: "sw-2740"
+    target: "kituo"
+    ipa: "kiˈtuo"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni kituo.", ipa: "ˈhapa ni kiˈtuo", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "kituo", base: "kituo" }] }
+      - { target: "Ninapenda kituo.", ipa: "ninaˈpenda kiˈtuo", bases: [{ word: "Ninapenda", base: "penda" }, { word: "kituo", base: "kituo" }] }
+  - id: "sw-2741"
+    target: "chuo"
+    ipa: "ˈtʃuo"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni chuo.", ipa: "ˈhapa ni ˈtʃuo", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "chuo", base: "chuo" }] }
+      - { target: "Ninapenda chuo.", ipa: "ninaˈpenda ˈtʃuo", bases: [{ word: "Ninapenda", base: "penda" }, { word: "chuo", base: "chuo" }] }
+  - id: "sw-2742"
+    target: "jengo"
+    ipa: "ˈdʒeŋɡo"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni jengo.", ipa: "ˈhapa ni ˈdʒeŋɡo", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "jengo", base: "jengo" }] }
+      - { target: "Ninapenda jengo.", ipa: "ninaˈpenda ˈdʒeŋɡo", bases: [{ word: "Ninapenda", base: "penda" }, { word: "jengo", base: "jengo" }] }
+  - id: "sw-2743"
+    target: "dunia"
+    ipa: "duˈnia"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni dunia.", ipa: "ˈhapa ni duˈnia", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "dunia", base: "dunia" }] }
+      - { target: "Ninapenda dunia.", ipa: "ninaˈpenda duˈnia", bases: [{ word: "Ninapenda", base: "penda" }, { word: "dunia", base: "dunia" }] }
+  - id: "sw-2744"
+    target: "kibanda"
+    ipa: "kiˈbanda"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni kibanda.", ipa: "ˈhapa ni kiˈbanda", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "kibanda", base: "kibanda" }] }
+      - { target: "Ninapenda kibanda.", ipa: "ninaˈpenda kiˈbanda", bases: [{ word: "Ninapenda", base: "penda" }, { word: "kibanda", base: "kibanda" }] }
+  - id: "sw-2745"
+    target: "ghala"
+    ipa: "ˈɣala"
+    pos: "noun"
+    tags: ["place"]
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - { target: "Hapa ni ghala.", ipa: "ˈhapa ni ˈɣala", bases: [{ word: "Hapa", base: "hapa" }, { word: "ni", base: "ni" }, { word: "ghala", base: "ghala" }] }
+      - { target: "Ninapenda ghala.", ipa: "ninaˈpenda ˈɣala", bases: [{ word: "Ninapenda", base: "penda" }, { word: "ghala", base: "ghala" }] }

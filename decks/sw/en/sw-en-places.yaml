@@ -1,0 +1,763 @@
+schema: 1
+id: "sw-en-places"
+kind: "layer"
+core: "sw-places"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places"
+description: "Places in town and the countryside: shop, school, hospital, market, lake, river, mountain and more. Only the words that could be sourced are here. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "sw-2700":
+    native: "town or village"
+    notes:
+      "n1": "Noun class 3/4: mji, miji."
+      "n2": "Meaning used: town or village (sense 1 of the entry)."
+    examples:
+      "Hapa ni mji.":
+        native: "Here is a town or village."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "mji": "town or village"
+      "Ninapenda mji.":
+        native: "I like the town or village."
+        bases:
+          "Ninapenda": "to like"
+          "mji": "town or village"
+  "sw-2701":
+    native: "village"
+    notes:
+      "n1": "Noun class 7/8: kijiji, vijiji."
+    examples:
+      "Hapa ni kijiji.":
+        native: "Here is a village."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "kijiji": "village"
+      "Ninapenda kijiji.":
+        native: "I like the village."
+        bases:
+          "Ninapenda": "to like"
+          "kijiji": "village"
+  "sw-2702":
+    native: "city"
+    notes:
+      "n1": "Noun class 5/6: jiji, majiji."
+    examples:
+      "Hapa ni jiji.":
+        native: "Here is a city."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "jiji": "city"
+      "Ninapenda jiji.":
+        native: "I like the city."
+        bases:
+          "Ninapenda": "to like"
+          "jiji": "city"
+  "sw-2703":
+    native: "market"
+    notes:
+      "n1": "Noun class 5/6: soko, masoko."
+    examples:
+      "Hapa ni soko.":
+        native: "Here is a market."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "soko": "market"
+      "Ninapenda soko.":
+        native: "I like the market."
+        bases:
+          "Ninapenda": "to like"
+          "soko": "market"
+  "sw-2704":
+    native: "shop"
+    notes:
+      "n1": "Noun class 5/6: duka, maduka."
+    examples:
+      "Hapa ni duka.":
+        native: "Here is a shop."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "duka": "shop"
+      "Ninapenda duka.":
+        native: "I like the shop."
+        bases:
+          "Ninapenda": "to like"
+          "duka": "shop"
+  "sw-2705":
+    native: "hospital"
+    notes:
+      "n1": "Noun class 9/10: hospitali, hospitali. Plural: hospitali class X or mahospitali class VI, as the entry gives it."
+    examples:
+      "Hapa ni hospitali.":
+        native: "Here is a hospital."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "hospitali": "hospital"
+      "Ninapenda hospitali.":
+        native: "I like the hospital."
+        bases:
+          "Ninapenda": "to like"
+          "hospitali": "hospital"
+  "sw-2706":
+    native: "dispensary"
+    notes:
+      "n1": "Noun class 9/10: zahanati, zahanati."
+    examples:
+      "Hapa ni zahanati.":
+        native: "Here is a dispensary."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "zahanati": "dispensary"
+      "Ninapenda zahanati.":
+        native: "I like the dispensary."
+        bases:
+          "Ninapenda": "to like"
+          "zahanati": "dispensary"
+  "sw-2707":
+    native: "school"
+    notes:
+      "n1": "Noun class 9/10: shule, shule."
+    examples:
+      "Hapa ni shule.":
+        native: "Here is a school."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "shule": "school"
+      "Ninapenda shule.":
+        native: "I like the school."
+        bases:
+          "Ninapenda": "to like"
+          "shule": "school"
+  "sw-2708":
+    native: "church"
+    notes:
+      "n1": "Noun class 5/6: kanisa, makanisa."
+    examples:
+      "Hapa ni kanisa.":
+        native: "Here is a church."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "kanisa": "church"
+      "Ninapenda kanisa.":
+        native: "I like the church."
+        bases:
+          "Ninapenda": "to like"
+          "kanisa": "church"
+  "sw-2709":
+    native: "mosque"
+    notes:
+      "n1": "Noun class 3/4: msikiti, misikiti."
+    examples:
+      "Hapa ni msikiti.":
+        native: "Here is a mosque."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "msikiti": "mosque"
+      "Ninapenda msikiti.":
+        native: "I like the mosque."
+        bases:
+          "Ninapenda": "to like"
+          "msikiti": "mosque"
+  "sw-2710":
+    native: "temple"
+    notes:
+      "n1": "Noun class 5/6: hekalu, mahekalu."
+    examples:
+      "Hapa ni hekalu.":
+        native: "Here is a temple."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "hekalu": "temple"
+      "Ninapenda hekalu.":
+        native: "I like the temple."
+        bases:
+          "Ninapenda": "to like"
+          "hekalu": "temple"
+  "sw-2711":
+    native: "bank"
+    notes:
+      "n1": "Noun class is given as 5 or 9 in the entry: benki. Plural: mabenki class VI or benki class X, as the entry gives it."
+    examples:
+      "Hapa ni benki.":
+        native: "Here is a bank."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "benki": "bank"
+      "Ninapenda benki.":
+        native: "I like the bank."
+        bases:
+          "Ninapenda": "to like"
+          "benki": "bank"
+  "sw-2712":
+    native: "post office"
+    notes:
+      "n1": "Noun class 9/10: posta, posta."
+    examples:
+      "Hapa ni posta.":
+        native: "Here is a post office."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "posta": "post office"
+      "Ninapenda posta.":
+        native: "I like the post office."
+        bases:
+          "Ninapenda": "to like"
+          "posta": "post office"
+  "sw-2713":
+    native: "hotel"
+    notes:
+      "n1": "Noun class 9/10: hoteli, hoteli. Plural: hoteli class X or mahoteli class VI, as the entry gives it."
+    examples:
+      "Hapa ni hoteli.":
+        native: "Here is a hotel."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "hoteli": "hotel"
+      "Ninapenda hoteli.":
+        native: "I like the hotel."
+        bases:
+          "Ninapenda": "to like"
+          "hoteli": "hotel"
+  "sw-2714":
+    native: "café"
+    notes:
+      "n1": "Noun class 3/4: mkahawa, mikahawa."
+      "n2": "Meaning used: café (sense 2 of the entry). A1-relevant sense is sense 2 of 3 (sense 1 not the A1 meaning)."
+    examples:
+      "Hapa ni mkahawa.":
+        native: "Here is a café."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "mkahawa": "café"
+      "Ninapenda mkahawa.":
+        native: "I like the café."
+        bases:
+          "Ninapenda": "to like"
+          "mkahawa": "café"
+  "sw-2715":
+    native: "bar"
+    notes:
+      "n1": "Noun class 9/10: baa, baa."
+    examples:
+      "Hapa ni baa.":
+        native: "Here is a bar."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "baa": "bar"
+      "Ninapenda baa.":
+        native: "I like the bar."
+        bases:
+          "Ninapenda": "to like"
+          "baa": "bar"
+  "sw-2716":
+    native: "garden"
+    notes:
+      "n1": "Noun class 9/10: bustani, bustani."
+    examples:
+      "Hapa ni bustani.":
+        native: "Here is a garden."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "bustani": "garden"
+      "Ninapenda bustani.":
+        native: "I like the garden."
+        bases:
+          "Ninapenda": "to like"
+          "bustani": "garden"
+  "sw-2717":
+    native: "coast or shore"
+    notes:
+      "n1": "Noun class 16: pwani. No plural in the entry."
+    examples:
+      "Hapa ni pwani.":
+        native: "Here is a coast or shore."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "pwani": "coast or shore"
+      "Ninapenda pwani.":
+        native: "I like the coast or shore."
+        bases:
+          "Ninapenda": "to like"
+          "pwani": "coast or shore"
+  "sw-2718":
+    native: "sea or ocean"
+    notes:
+      "n1": "Noun class 9/10: bahari, bahari."
+    examples:
+      "Hapa ni bahari.":
+        native: "Here is a sea or ocean."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "bahari": "sea or ocean"
+      "Ninapenda bahari.":
+        native: "I like the sea or ocean."
+        bases:
+          "Ninapenda": "to like"
+          "bahari": "sea or ocean"
+  "sw-2719":
+    native: "lake"
+    notes:
+      "n1": "Noun class 5/6: ziwa, maziwa."
+    examples:
+      "Hapa ni ziwa.":
+        native: "Here is a lake."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "ziwa": "lake"
+      "Ninapenda ziwa.":
+        native: "I like the lake."
+        bases:
+          "Ninapenda": "to like"
+          "ziwa": "lake"
+  "sw-2720":
+    native: "river"
+    notes:
+      "n1": "Noun class 3/4: mto, mito."
+      "n2": "Meaning used: river (sense 1 of the entry)."
+    examples:
+      "Hapa ni mto.":
+        native: "Here is a river."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "mto": "river"
+      "Ninapenda mto.":
+        native: "I like the river."
+        bases:
+          "Ninapenda": "to like"
+          "mto": "river"
+  "sw-2721":
+    native: "hill or mountain"
+    notes:
+      "n1": "Noun class 3/4: mlima, milima."
+      "n2": "Meaning used: hill or mountain (sense 1 of the entry)."
+    examples:
+      "Hapa ni mlima.":
+        native: "Here is a hill or mountain."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "mlima": "hill or mountain"
+      "Ninapenda mlima.":
+        native: "I like the hill or mountain."
+        bases:
+          "Ninapenda": "to like"
+          "mlima": "hill or mountain"
+  "sw-2722":
+    native: "jungle or forest"
+    notes:
+      "n1": "Noun class 3/4: msitu, misitu."
+    examples:
+      "Hapa ni msitu.":
+        native: "Here is a jungle or forest."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "msitu": "jungle or forest"
+      "Ninapenda msitu.":
+        native: "I like the jungle or forest."
+        bases:
+          "Ninapenda": "to like"
+          "msitu": "jungle or forest"
+  "sw-2723":
+    native: "wilderness"
+    notes:
+      "n1": "Noun class 5/6: pori, mapori."
+    examples:
+      "Hapa ni pori.":
+        native: "Here is a wilderness."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "pori": "wilderness"
+      "Ninapenda pori.":
+        native: "I like the wilderness."
+        bases:
+          "Ninapenda": "to like"
+          "pori": "wilderness"
+  "sw-2724":
+    native: "garden or farm"
+    notes:
+      "n1": "Noun class 5/6: shamba, mashamba."
+      "n2": "Meaning used: garden or farm (sense 1 of the entry)."
+    examples:
+      "Hapa ni shamba.":
+        native: "Here is a garden or farm."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "shamba": "garden or farm"
+      "Ninapenda shamba.":
+        native: "I like the garden or farm."
+        bases:
+          "Ninapenda": "to like"
+          "shamba": "garden or farm"
+  "sw-2725":
+    native: "island"
+    notes:
+      "n1": "Noun class 7/8: kisiwa, visiwa."
+    examples:
+      "Hapa ni kisiwa.":
+        native: "Here is an island."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "kisiwa": "island"
+      "Ninapenda kisiwa.":
+        native: "I like the island."
+        bases:
+          "Ninapenda": "to like"
+          "kisiwa": "island"
+  "sw-2726":
+    native: "desert"
+    notes:
+      "n1": "Noun class 5/6: jangwa, majangwa."
+    examples:
+      "Hapa ni jangwa.":
+        native: "Here is a desert."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "jangwa": "desert"
+      "Ninapenda jangwa.":
+        native: "I like the desert."
+        bases:
+          "Ninapenda": "to like"
+          "jangwa": "desert"
+  "sw-2727":
+    native: "valley"
+    notes:
+      "n1": "Noun class 5/6: bonde, mabonde."
+    examples:
+      "Hapa ni bonde.":
+        native: "Here is a valley."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "bonde": "valley"
+      "Ninapenda bonde.":
+        native: "I like the valley."
+        bases:
+          "Ninapenda": "to like"
+          "bonde": "valley"
+  "sw-2728":
+    native: "bridge"
+    notes:
+      "n1": "Noun class 5/6: daraja, madaraja."
+      "n2": "Meaning used: bridge (sense 1 of the entry)."
+    examples:
+      "Hapa ni daraja.":
+        native: "Here is a bridge."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "daraja": "bridge"
+      "Ninapenda daraja.":
+        native: "I like the bridge."
+        bases:
+          "Ninapenda": "to like"
+          "daraja": "bridge"
+  "sw-2729":
+    native: "tower"
+    notes:
+      "n1": "Noun class 3/4: mnara, minara."
+      "n2": "Meaning used: tower (sense 1 of the entry)."
+    examples:
+      "Hapa ni mnara.":
+        native: "Here is a tower."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "mnara": "tower"
+      "Ninapenda mnara.":
+        native: "I like the tower."
+        bases:
+          "Ninapenda": "to like"
+          "mnara": "tower"
+  "sw-2730":
+    native: "library"
+    notes:
+      "n1": "Noun class 9/10: maktaba, maktaba."
+    examples:
+      "Hapa ni maktaba.":
+        native: "Here is a library."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "maktaba": "library"
+      "Ninapenda maktaba.":
+        native: "I like the library."
+        bases:
+          "Ninapenda": "to like"
+          "maktaba": "library"
+  "sw-2731":
+    native: "prison or jail"
+    notes:
+      "n1": "Noun class 5/6: gereza, magereza."
+    examples:
+      "Hapa ni gereza.":
+        native: "Here is a prison or jail."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "gereza": "prison or jail"
+      "Ninapenda gereza.":
+        native: "I like the prison or jail."
+        bases:
+          "Ninapenda": "to like"
+          "gereza": "prison or jail"
+  "sw-2732":
+    native: "court"
+    notes:
+      "n1": "Noun class 9/10: mahakama, mahakama."
+      "n2": "Meaning used: court (sense 1 of the entry)."
+    examples:
+      "Hapa ni mahakama.":
+        native: "Here is a court."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "mahakama": "court"
+      "Ninapenda mahakama.":
+        native: "I like the court."
+        bases:
+          "Ninapenda": "to like"
+          "mahakama": "court"
+  "sw-2733":
+    native: "factory or workshop"
+    notes:
+      "n1": "Noun class 7/8: kiwanda, viwanda."
+      "n2": "Meaning used: factory or workshop (sense 2 of the entry). A1-relevant sense is sense 2 of 4 (sense 1 not the A1 meaning)."
+    examples:
+      "Hapa ni kiwanda.":
+        native: "Here is a factory or workshop."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "kiwanda": "factory or workshop"
+      "Ninapenda kiwanda.":
+        native: "I like the factory or workshop."
+        bases:
+          "Ninapenda": "to like"
+          "kiwanda": "factory or workshop"
+  "sw-2734":
+    native: "camp"
+    notes:
+      "n1": "Noun class 9/10: kambi, kambi."
+    examples:
+      "Hapa ni kambi.":
+        native: "Here is a camp."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "kambi": "camp"
+      "Ninapenda kambi.":
+        native: "I like the camp."
+        bases:
+          "Ninapenda": "to like"
+          "kambi": "camp"
+  "sw-2735":
+    native: "park"
+    notes:
+      "n1": "Noun class 9/10: mbuga, mbuga."
+      "n2": "Meaning used: park (sense 1 of the entry)."
+    examples:
+      "Hapa ni mbuga.":
+        native: "Here is a park."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "mbuga": "park"
+      "Ninapenda mbuga.":
+        native: "I like the park."
+        bases:
+          "Ninapenda": "to like"
+          "mbuga": "park"
+  "sw-2736":
+    native: "cave"
+    notes:
+      "n1": "Noun class 5/6: pango, mapango."
+    examples:
+      "Hapa ni pango.":
+        native: "Here is a cave."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "pango": "cave"
+      "Ninapenda pango.":
+        native: "I like the cave."
+        bases:
+          "Ninapenda": "to like"
+          "pango": "cave"
+  "sw-2737":
+    native: "area"
+    notes:
+      "n1": "Noun class 11/10: uwanja, nyanja."
+      "n2": "Meaning used: area (sense 1 of the entry)."
+    examples:
+      "Hapa ni uwanja.":
+        native: "Here is an area."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "uwanja": "area"
+      "Ninapenda uwanja.":
+        native: "I like the area."
+        bases:
+          "Ninapenda": "to like"
+          "uwanja": "area"
+  "sw-2738":
+    native: "station"
+    notes:
+      "n1": "Noun class 9/10: stesheni, stesheni."
+      "n2": "Meaning used: station (sense 1 of the entry)."
+    examples:
+      "Hapa ni stesheni.":
+        native: "Here is a station."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "stesheni": "station"
+      "Ninapenda stesheni.":
+        native: "I like the station."
+        bases:
+          "Ninapenda": "to like"
+          "stesheni": "station"
+  "sw-2739":
+    native: "port or harbor"
+    notes:
+      "n1": "Noun class 9/10: bandari, bandari."
+    examples:
+      "Hapa ni bandari.":
+        native: "Here is a port or harbor."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "bandari": "port or harbor"
+      "Ninapenda bandari.":
+        native: "I like the port or harbor."
+        bases:
+          "Ninapenda": "to like"
+          "bandari": "port or harbor"
+  "sw-2740":
+    native: "station or camp"
+    notes:
+      "n1": "Noun class 7/8: kituo, vituo."
+      "n2": "Meaning used: station or camp (sense 1 of the entry)."
+    examples:
+      "Hapa ni kituo.":
+        native: "Here is a station or camp."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "kituo": "station or camp"
+      "Ninapenda kituo.":
+        native: "I like the station or camp."
+        bases:
+          "Ninapenda": "to like"
+          "kituo": "station or camp"
+  "sw-2741":
+    native: "college"
+    notes:
+      "n1": "Noun class 7/8: chuo, vyuo."
+      "n2": "Meaning used: college (sense 2 of the entry). A1-relevant sense is sense 2 of 4 (sense 1 not the A1 meaning)."
+    examples:
+      "Hapa ni chuo.":
+        native: "Here is a college."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "chuo": "college"
+      "Ninapenda chuo.":
+        native: "I like the college."
+        bases:
+          "Ninapenda": "to like"
+          "chuo": "college"
+  "sw-2742":
+    native: "building"
+    notes:
+      "n1": "Noun class 5/6: jengo, majengo."
+    examples:
+      "Hapa ni jengo.":
+        native: "Here is a building."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "jengo": "building"
+      "Ninapenda jengo.":
+        native: "I like the building."
+        bases:
+          "Ninapenda": "to like"
+          "jengo": "building"
+  "sw-2743":
+    native: "Earth"
+    notes:
+      "n1": "Noun class 9/10: dunia, dunia."
+      "n2": "Meaning used: Earth (sense 1 of the entry)."
+    examples:
+      "Hapa ni dunia.":
+        native: "Here is the Earth."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "dunia": "Earth"
+      "Ninapenda dunia.":
+        native: "I like the Earth."
+        bases:
+          "Ninapenda": "to like"
+          "dunia": "Earth"
+  "sw-2744":
+    native: "hut or shed"
+    notes:
+      "n1": "Noun class 7/8: kibanda, vibanda."
+      "n2": "Meaning used: hut or shed (sense 1 of the entry)."
+    examples:
+      "Hapa ni kibanda.":
+        native: "Here is a hut or shed."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "kibanda": "hut or shed"
+      "Ninapenda kibanda.":
+        native: "I like the hut or shed."
+        bases:
+          "Ninapenda": "to like"
+          "kibanda": "hut or shed"
+  "sw-2745":
+    native: "pantry or storeroom"
+    notes:
+      "n1": "Noun class 5/6: ghala, maghala."
+    examples:
+      "Hapa ni ghala.":
+        native: "Here is a pantry or storeroom."
+        bases:
+          "Hapa": "here"
+          "ni": "is"
+          "ghala": "pantry or storeroom"
+      "Ninapenda ghala.":
+        native: "I like the pantry or storeroom."
+        bases:
+          "Ninapenda": "to like"
+          "ghala": "pantry or storeroom"

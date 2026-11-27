@@ -1,0 +1,439 @@
+schema: 1
+id: "sw-describing"
+part: "core"
+kind: "vocab"
+language: { code: "sw", iso639_3: "swh", name: "Swahili", script: "latin", tts: "sw-KE", icon: "Sw" }
+license: "CC-BY-SA-4.0"
+theme: "describing"
+tags: ["unreviewed"]
+
+cards:
+  - id: "sw-1860"
+    target: "zuri"
+    ipa: "ˈzuɾi"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mtu ni mzuri.", ipa: "ˈmtu ni mˈzuɾi", bases: [{ word: "Mtu", base: "mtu" }, { word: "ni", base: "ni" }, { word: "mzuri", base: "zuri" }] }
+      - { target: "Nyumba ni nzuri.", ipa: "ˈɲumba ni ˈnzuɾi", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "zuri" }] }
+  - id: "sw-1861"
+    target: "baya"
+    ipa: "ˈbaja"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mtu ni mbaya.", ipa: "ˈmtu ni ˈmbaja", bases: [{ word: "Mtu", base: "mtu" }, { word: "ni", base: "ni" }, { word: "mbaya", base: "baya" }] }
+      - { target: "Nyumba ni mbaya.", ipa: "ˈɲumba ni ˈmbaja", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "ni", base: "ni" }, { word: "mbaya", base: "baya" }] }
+  - id: "sw-1862"
+    target: "kubwa"
+    ipa: "ˈkubwa"
+    pos: "adj"
+    tags: ["size"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mtu ni mkubwa.", ipa: "ˈmtu ni mˈkubwa", bases: [{ word: "Mtu", base: "mtu" }, { word: "ni", base: "ni" }, { word: "mkubwa", base: "kubwa" }] }
+      - { target: "Nyumba ni kubwa.", ipa: "ˈɲumba ni ˈkubwa", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "ni", base: "ni" }, { word: "kubwa", base: "kubwa" }] }
+  - id: "sw-1863"
+    target: "dogo"
+    ipa: "ˈdoɡo"
+    pos: "adj"
+    tags: ["size"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mtu ni mdogo.", ipa: "ˈmtu ni mˈdoɡo", bases: [{ word: "Mtu", base: "mtu" }, { word: "ni", base: "ni" }, { word: "mdogo", base: "dogo" }] }
+      - { target: "Nyumba ni ndogo.", ipa: "ˈɲumba ni ˈndoɡo", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "ni", base: "ni" }, { word: "ndogo", base: "dogo" }] }
+  - id: "sw-1864"
+    target: "refu"
+    ipa: "ˈɾefu"
+    pos: "adj"
+    tags: ["size"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mtu ni mrefu.", ipa: "ˈmtu ni mˈɾefu", bases: [{ word: "Mtu", base: "mtu" }, { word: "ni", base: "ni" }, { word: "mrefu", base: "refu" }] }
+      - { target: "Mto ni mrefu.", ipa: "ˈmto ni mˈɾefu", bases: [{ word: "Mto", base: "mto" }, { word: "ni", base: "ni" }, { word: "mrefu", base: "refu" }] }
+  - id: "sw-1865"
+    target: "fupi"
+    ipa: "ˈfupi"
+    pos: "adj"
+    tags: ["size"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mtu ni mfupi.", ipa: "ˈmtu ni mˈfupi", bases: [{ word: "Mtu", base: "mtu" }, { word: "ni", base: "ni" }, { word: "mfupi", base: "fupi" }] }
+      - { target: "Mlango ni mfupi.", ipa: "mˈlaŋɡo ni mˈfupi", bases: [{ word: "Mlango", base: "mlango" }, { word: "ni", base: "ni" }, { word: "mfupi", base: "fupi" }] }
+  - id: "sw-1866"
+    target: "pana"
+    ipa: "ˈpana"
+    pos: "adj"
+    tags: ["size"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mlango ni mpana.", ipa: "mˈlaŋɡo ni mˈpana", bases: [{ word: "Mlango", base: "mlango" }, { word: "ni", base: "ni" }, { word: "mpana", base: "pana" }] }
+      - { target: "Mto ni mpana.", ipa: "ˈmto ni mˈpana", bases: [{ word: "Mto", base: "mto" }, { word: "ni", base: "ni" }, { word: "mpana", base: "pana" }] }
+  - id: "sw-1867"
+    target: "embamba"
+    ipa: "eˈmbamba"
+    pos: "adj"
+    tags: ["size"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mlango ni mwembamba.", ipa: "mˈlaŋɡo ni mweˈmbamba", bases: [{ word: "Mlango", base: "mlango" }, { word: "ni", base: "ni" }, { word: "mwembamba", base: "embamba" }] }
+      - { target: "Mto ni mwembamba.", ipa: "ˈmto ni mweˈmbamba", bases: [{ word: "Mto", base: "mto" }, { word: "ni", base: "ni" }, { word: "mwembamba", base: "embamba" }] }
+  - id: "sw-1868"
+    target: "nene"
+    ipa: "ˈnene"
+    pos: "adj"
+    tags: ["body"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mtu ni mnene.", ipa: "ˈmtu ni mˈnene", bases: [{ word: "Mtu", base: "mtu" }, { word: "ni", base: "ni" }, { word: "mnene", base: "nene" }] }
+      - { target: "Mimi ni mnene.", ipa: "ˈmimi ni mˈnene", bases: [{ word: "Mimi", base: "mimi" }, { word: "ni", base: "ni" }, { word: "mnene", base: "nene" }] }
+  - id: "sw-1869"
+    target: "zito"
+    ipa: "ˈzito"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mzigo ni mzito.", ipa: "mˈziɡo ni mˈzito", bases: [{ word: "Mzigo", base: "mzigo" }, { word: "ni", base: "ni" }, { word: "mzito", base: "zito" }] }
+      - { target: "Nguo ni nzito.", ipa: "ˈŋɡuo ni ˈnzito", bases: [{ word: "Nguo", base: "nguo" }, { word: "ni", base: "ni" }, { word: "nzito", base: "zito" }] }
+  - id: "sw-1870"
+    target: "epesi"
+    ipa: "eˈpesi"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mzigo ni mwepesi.", ipa: "mˈziɡo ni mweˈpesi", bases: [{ word: "Mzigo", base: "mzigo" }, { word: "ni", base: "ni" }, { word: "mwepesi", base: "epesi" }] }
+      - { target: "Nguo ni nyepesi.", ipa: "ˈŋɡuo ni ɲeˈpesi", bases: [{ word: "Nguo", base: "nguo" }, { word: "ni", base: "ni" }, { word: "nyepesi", base: "epesi" }] }
+  - id: "sw-1871"
+    target: "pya"
+    ipa: "pja"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nyumba ni mpya.", ipa: "ˈɲumba ni ˈmpja", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "ni", base: "ni" }, { word: "mpya", base: "pya" }] }
+      - { target: "Mlango ni mpya.", ipa: "mˈlaŋɡo ni ˈmpja", bases: [{ word: "Mlango", base: "mlango" }, { word: "ni", base: "ni" }, { word: "mpya", base: "pya" }] }
+  - id: "sw-1872"
+    target: "zee"
+    ipa: "ˈzee"
+    pos: "adj"
+    tags: ["age"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mtu ni mzee.", ipa: "ˈmtu ni mˈzee", bases: [{ word: "Mtu", base: "mtu" }, { word: "ni", base: "ni" }, { word: "mzee", base: "zee" }] }
+      - { target: "Babu ni mzee.", ipa: "ˈbabu ni mˈzee", bases: [{ word: "Babu", base: "babu" }, { word: "ni", base: "ni" }, { word: "mzee", base: "zee" }] }
+  - id: "sw-1873"
+    target: "changa"
+    ipa: "ˈtʃaŋɡa"
+    pos: "adj"
+    tags: ["age"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mtu ni mchanga.", ipa: "ˈmtu ni mˈtʃaŋɡa", bases: [{ word: "Mtu", base: "mtu" }, { word: "ni", base: "ni" }, { word: "mchanga", base: "changa" }] }
+      - { target: "Mti ni mchanga.", ipa: "ˈmti ni mˈtʃaŋɡa", bases: [{ word: "Mti", base: "mti" }, { word: "ni", base: "ni" }, { word: "mchanga", base: "changa" }] }
+  - id: "sw-1874"
+    target: "tamu"
+    ipa: "ˈtamu"
+    pos: "adj"
+    tags: ["taste"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Maziwa ni matamu.", ipa: "maˈziwa ni maˈtamu", bases: [{ word: "Maziwa", base: "maziwa" }, { word: "ni", base: "ni" }, { word: "matamu", base: "tamu" }] }
+      - { target: "Mikate ni mitamu.", ipa: "miˈkate ni miˈtamu", bases: [{ word: "Mikate", base: "mkate" }, { word: "ni", base: "ni" }, { word: "mitamu", base: "tamu" }] }
+  - id: "sw-1875"
+    target: "safi"
+    ipa: "ˈsafi"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nyumba ni safi.", ipa: "ˈɲumba ni ˈsafi", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "ni", base: "ni" }, { word: "safi", base: "safi" }] }
+      - { target: "Nguo ni safi.", ipa: "ˈŋɡuo ni ˈsafi", bases: [{ word: "Nguo", base: "nguo" }, { word: "ni", base: "ni" }, { word: "safi", base: "safi" }] }
+  - id: "sw-1876"
+    target: "chafu"
+    ipa: "ˈtʃafu"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Maji ni machafu.", ipa: "ˈmadʒi ni maˈtʃafu", bases: [{ word: "Maji", base: "maji" }, { word: "ni", base: "ni" }, { word: "machafu", base: "chafu" }] }
+      - { target: "Mikono ni michafu.", ipa: "miˈkono ni miˈtʃafu", bases: [{ word: "Mikono", base: "mkono" }, { word: "ni", base: "ni" }, { word: "michafu", base: "chafu" }] }
+  - id: "sw-1877"
+    target: "gumu"
+    ipa: "ˈɡumu"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kazi ni ngumu.", ipa: "ˈkazi ni ˈŋɡumu", bases: [{ word: "Kazi", base: "kazi" }, { word: "ni", base: "ni" }, { word: "ngumu", base: "gumu" }] }
+      - { target: "Mtihani ni mgumu.", ipa: "mtiˈhani ni mˈɡumu", bases: [{ word: "Mtihani", base: "mtihani" }, { word: "ni", base: "ni" }, { word: "mgumu", base: "gumu" }] }
+  - id: "sw-1878"
+    target: "laini"
+    ipa: "laˈini"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ngozi ni laini.", ipa: "ˈŋɡozi ni laˈini", bases: [{ word: "Ngozi", base: "ngozi" }, { word: "ni", base: "ni" }, { word: "laini", base: "laini" }] }
+      - { target: "Nguo ni laini.", ipa: "ˈŋɡuo ni laˈini", bases: [{ word: "Nguo", base: "nguo" }, { word: "ni", base: "ni" }, { word: "laini", base: "laini" }] }
+  - id: "sw-1879"
+    target: "ekundu"
+    ipa: "eˈkundu"
+    pos: "adj"
+    tags: ["colour"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nguo ni nyekundu.", ipa: "ˈŋɡuo ni ɲeˈkundu", bases: [{ word: "Nguo", base: "nguo" }, { word: "ni", base: "ni" }, { word: "nyekundu", base: "ekundu" }] }
+      - { target: "Mlango ni mwekundu.", ipa: "mˈlaŋɡo ni mweˈkundu", bases: [{ word: "Mlango", base: "mlango" }, { word: "ni", base: "ni" }, { word: "mwekundu", base: "ekundu" }] }
+  - id: "sw-1880"
+    target: "eupe"
+    ipa: "eˈupe"
+    pos: "adj"
+    tags: ["colour"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nguo ni nyeupe.", ipa: "ˈŋɡuo ni ɲeˈupe", bases: [{ word: "Nguo", base: "nguo" }, { word: "ni", base: "ni" }, { word: "nyeupe", base: "eupe" }] }
+      - { target: "Mlango ni mweupe.", ipa: "mˈlaŋɡo ni mweˈupe", bases: [{ word: "Mlango", base: "mlango" }, { word: "ni", base: "ni" }, { word: "mweupe", base: "eupe" }] }
+  - id: "sw-1881"
+    target: "eusi"
+    ipa: "eˈusi"
+    pos: "adj"
+    tags: ["colour"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nguo ni nyeusi.", ipa: "ˈŋɡuo ni ɲeˈusi", bases: [{ word: "Nguo", base: "nguo" }, { word: "ni", base: "ni" }, { word: "nyeusi", base: "eusi" }] }
+      - { target: "Mlango ni mweusi.", ipa: "mˈlaŋɡo ni mweˈusi", bases: [{ word: "Mlango", base: "mlango" }, { word: "ni", base: "ni" }, { word: "mweusi", base: "eusi" }] }
+  - id: "sw-1882"
+    target: "kijani"
+    ipa: "kiˈdʒani"
+    pos: "adj"
+    tags: ["colour"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nyumba ni kijani.", ipa: "ˈɲumba ni kiˈdʒani", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "ni", base: "ni" }, { word: "kijani", base: "kijani" }] }
+      - { target: "Mti ni kijani.", ipa: "ˈmti ni kiˈdʒani", bases: [{ word: "Mti", base: "mti" }, { word: "ni", base: "ni" }, { word: "kijani", base: "kijani" }] }
+  - id: "sw-1883"
+    target: "bluu"
+    ipa: "ˈbluu"
+    pos: "adj"
+    tags: ["colour"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nguo ni bluu.", ipa: "ˈŋɡuo ni ˈbluu", bases: [{ word: "Nguo", base: "nguo" }, { word: "ni", base: "ni" }, { word: "bluu", base: "bluu" }] }
+      - { target: "Anga ni bluu.", ipa: "ˈaŋɡa ni ˈbluu", bases: [{ word: "Anga", base: "anga" }, { word: "ni", base: "ni" }, { word: "bluu", base: "bluu" }] }
+  - id: "sw-1884"
+    target: "njano"
+    ipa: "ˈndʒano"
+    pos: "adj"
+    tags: ["colour"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ndizi ni njano.", ipa: "ˈndizi ni ˈndʒano", bases: [{ word: "Ndizi", base: "ndizi" }, { word: "ni", base: "ni" }, { word: "njano", base: "njano" }] }
+      - { target: "Nguo ni njano.", ipa: "ˈŋɡuo ni ˈndʒano", bases: [{ word: "Nguo", base: "nguo" }, { word: "ni", base: "ni" }, { word: "njano", base: "njano" }] }
+  - id: "sw-1885"
+    target: "kahawia"
+    ipa: "kahaˈwia"
+    pos: "adj"
+    tags: ["colour"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nguo ni kahawia.", ipa: "ˈŋɡuo ni kahaˈwia", bases: [{ word: "Nguo", base: "nguo" }, { word: "ni", base: "ni" }, { word: "kahawia", base: "kahawia" }] }
+      - { target: "Mti ni kahawia.", ipa: "ˈmti ni kahaˈwia", bases: [{ word: "Mti", base: "mti" }, { word: "ni", base: "ni" }, { word: "kahawia", base: "kahawia" }] }
+  - id: "sw-1886"
+    target: "zambarau"
+    ipa: "zambaˈɾau"
+    pos: "adj"
+    tags: ["colour"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nguo ni zambarau.", ipa: "ˈŋɡuo ni zambaˈɾau", bases: [{ word: "Nguo", base: "nguo" }, { word: "ni", base: "ni" }, { word: "zambarau", base: "zambarau" }] }
+      - { target: "Anga ni zambarau.", ipa: "ˈaŋɡa ni zambaˈɾau", bases: [{ word: "Anga", base: "anga" }, { word: "ni", base: "ni" }, { word: "zambarau", base: "zambarau" }] }
+  - id: "sw-1887"
+    target: "baridi"
+    ipa: "baˈɾidi"
+    pos: "adj"
+    tags: ["temperature"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Chai ni baridi.", ipa: "ˈtʃai ni baˈɾidi", bases: [{ word: "Chai", base: "chai" }, { word: "ni", base: "ni" }, { word: "baridi", base: "baridi" }] }
+      - { target: "Maji ni baridi.", ipa: "ˈmadʒi ni baˈɾidi", bases: [{ word: "Maji", base: "maji" }, { word: "ni", base: "ni" }, { word: "baridi", base: "baridi" }] }
+  - id: "sw-1888"
+    target: "kavu"
+    ipa: "ˈkavu"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mkate ni mkavu.", ipa: "mˈkate ni mˈkavu", bases: [{ word: "Mkate", base: "mkate" }, { word: "ni", base: "ni" }, { word: "mkavu", base: "kavu" }] }
+      - { target: "Mto ni mkavu.", ipa: "ˈmto ni mˈkavu", bases: [{ word: "Mto", base: "mto" }, { word: "ni", base: "ni" }, { word: "mkavu", base: "kavu" }] }
+  - id: "sw-1890"
+    target: "wazi"
+    ipa: "ˈwazi"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mlango ni wazi.", ipa: "mˈlaŋɡo ni ˈwazi", bases: [{ word: "Mlango", base: "mlango" }, { word: "ni", base: "ni" }, { word: "wazi", base: "wazi" }] }
+      - { target: "Anga ni wazi.", ipa: "ˈaŋɡa ni ˈwazi", bases: [{ word: "Anga", base: "anga" }, { word: "ni", base: "ni" }, { word: "wazi", base: "wazi" }] }
+  - id: "sw-1891"
+    target: "tajiri"
+    ipa: "taˈdʒiɾi"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mtu ni tajiri.", ipa: "ˈmtu ni taˈdʒiɾi", bases: [{ word: "Mtu", base: "mtu" }, { word: "ni", base: "ni" }, { word: "tajiri", base: "tajiri" }] }
+      - { target: "Nchi ni tajiri.", ipa: "ˈntʃi ni taˈdʒiɾi", bases: [{ word: "Nchi", base: "nchi" }, { word: "ni", base: "ni" }, { word: "tajiri", base: "tajiri" }] }
+  - id: "sw-1892"
+    target: "maskini"
+    ipa: "maˈskini"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mtu ni maskini.", ipa: "ˈmtu ni maˈskini", bases: [{ word: "Mtu", base: "mtu" }, { word: "ni", base: "ni" }, { word: "maskini", base: "maskini" }] }
+      - { target: "Nchi ni maskini.", ipa: "ˈntʃi ni maˈskini", bases: [{ word: "Nchi", base: "nchi" }, { word: "ni", base: "ni" }, { word: "maskini", base: "maskini" }] }
+  - id: "sw-1893"
+    target: "hodari"
+    ipa: "hoˈdaɾi"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mtu ni hodari.", ipa: "ˈmtu ni hoˈdaɾi", bases: [{ word: "Mtu", base: "mtu" }, { word: "ni", base: "ni" }, { word: "hodari", base: "hodari" }] }
+      - { target: "Mtoto ni hodari.", ipa: "mˈtoto ni hoˈdaɾi", bases: [{ word: "Mtoto", base: "mtoto" }, { word: "ni", base: "ni" }, { word: "hodari", base: "hodari" }] }
+  - id: "sw-1894"
+    target: "changamfu"
+    ipa: "tʃaˈŋɡamfu"
+    pos: "adj"
+    tags: ["feeling"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mtu ni mchangamfu.", ipa: "ˈmtu ni mtʃaˈŋɡamfu", bases: [{ word: "Mtu", base: "mtu" }, { word: "ni", base: "ni" }, { word: "mchangamfu", base: "changamfu" }] }
+      - { target: "Mimi ni mchangamfu.", ipa: "ˈmimi ni mtʃaˈŋɡamfu", bases: [{ word: "Mimi", base: "mimi" }, { word: "ni", base: "ni" }, { word: "mchangamfu", base: "changamfu" }] }
+  - id: "sw-1897"
+    target: "kali"
+    ipa: "ˈkali"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kisu ni kikali.", ipa: "ˈkisu ni kiˈkali", bases: [{ word: "Kisu", base: "kisu" }, { word: "ni", base: "ni" }, { word: "kikali", base: "kali" }] }
+      - { target: "Mwiba ni mkali.", ipa: "ˈmwiba ni mˈkali", bases: [{ word: "Mwiba", base: "mwiba" }, { word: "ni", base: "ni" }, { word: "mkali", base: "kali" }] }
+  - id: "sw-1899"
+    target: "rangi"
+    ipa: "ˈɾaŋɡi"
+    pos: "noun"
+    tags: ["colour"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninapenda rangi.", ipa: "ninaˈpenda ˈɾaŋɡi", bases: [{ word: "Ninapenda", base: "penda" }, { word: "rangi", base: "rangi" }] }
+      - { target: "Rangi ni nzuri.", ipa: "ˈɾaŋɡi ni ˈnzuɾi", bases: [{ word: "Rangi", base: "rangi" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "zuri" }] }
+  - id: "sw-1900"
+    target: "furaha"
+    ipa: "fuˈɾaha"
+    pos: "noun"
+    tags: ["feeling"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninapenda furaha.", ipa: "ninaˈpenda fuˈɾaha", bases: [{ word: "Ninapenda", base: "penda" }, { word: "furaha", base: "furaha" }] }
+      - { target: "Furaha ni nzuri.", ipa: "fuˈɾaha ni ˈnzuɾi", bases: [{ word: "Furaha", base: "furaha" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "zuri" }] }
+  - id: "sw-1901"
+    target: "huzuni"
+    ipa: "huˈzuni"
+    pos: "noun"
+    tags: ["feeling"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninahisi huzuni.", ipa: "ninaˈhisi huˈzuni", bases: [{ word: "Ninahisi", base: "hisi" }, { word: "huzuni", base: "huzuni" }] }
+      - { target: "Huzuni ni mbaya.", ipa: "huˈzuni ni ˈmbaja", bases: [{ word: "Huzuni", base: "huzuni" }, { word: "ni", base: "ni" }, { word: "mbaya", base: "baya" }] }
+  - id: "sw-1902"
+    target: "hasira"
+    ipa: "haˈsiɾa"
+    pos: "noun"
+    tags: ["feeling"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninahisi hasira.", ipa: "ninaˈhisi haˈsiɾa", bases: [{ word: "Ninahisi", base: "hisi" }, { word: "hasira", base: "hasira" }] }
+      - { target: "Hasira ni mbaya.", ipa: "haˈsiɾa ni ˈmbaja", bases: [{ word: "Hasira", base: "hasira" }, { word: "ni", base: "ni" }, { word: "mbaya", base: "baya" }] }

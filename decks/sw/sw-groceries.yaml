@@ -1,0 +1,197 @@
+schema: 1
+id: "sw-groceries"
+part: "core"
+kind: "vocab"
+language: { code: "sw", iso639_3: "swh", name: "Swahili", script: "latin", tts: "sw-KE", icon: "Sw" }
+license: "CC-BY-SA-4.0"
+theme: "groceries"
+tags: ["unreviewed"]
+
+cards:
+  - id: "sw-2350"
+    target: "sukari"
+    ipa: "suˈkaɾi"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka sukari.", ipa: "ninaˈtaka suˈkaɾi", bases: [{ word: "Ninataka", base: "taka" }, { word: "sukari", base: "sukari" }] }
+      - { target: "Ninapenda sukari.", ipa: "ninaˈpenda suˈkaɾi", bases: [{ word: "Ninapenda", base: "penda" }, { word: "sukari", base: "sukari" }] }
+  - id: "sw-2351"
+    target: "chumvi"
+    ipa: "ˈtʃumvi"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka chumvi.", ipa: "ninaˈtaka ˈtʃumvi", bases: [{ word: "Ninataka", base: "taka" }, { word: "chumvi", base: "chumvi" }] }
+      - { target: "Ninapenda chumvi.", ipa: "ninaˈpenda ˈtʃumvi", bases: [{ word: "Ninapenda", base: "penda" }, { word: "chumvi", base: "chumvi" }] }
+  - id: "sw-2352"
+    target: "unga"
+    ipa: "ˈuŋɡa"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka unga.", ipa: "ninaˈtaka ˈuŋɡa", bases: [{ word: "Ninataka", base: "taka" }, { word: "unga", base: "unga" }] }
+      - { target: "Ninapenda unga.", ipa: "ninaˈpenda ˈuŋɡa", bases: [{ word: "Ninapenda", base: "penda" }, { word: "unga", base: "unga" }] }
+  - id: "sw-2353"
+    target: "mafuta"
+    ipa: "maˈfuta"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka mafuta.", ipa: "ninaˈtaka maˈfuta", bases: [{ word: "Ninataka", base: "taka" }, { word: "mafuta", base: "mafuta" }] }
+      - { target: "Mafuta ni mazuri.", ipa: "maˈfuta ni maˈzuɾi", bases: [{ word: "Mafuta", base: "mafuta" }, { word: "ni", base: "ni" }, { word: "mazuri", base: "zuri" }] }
+  - id: "sw-2354"
+    target: "mchele"
+    ipa: "mˈtʃele"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka mchele.", ipa: "ninaˈtaka mˈtʃele", bases: [{ word: "Ninataka", base: "taka" }, { word: "mchele", base: "mchele" }] }
+      - { target: "Mchele ni mzuri.", ipa: "mˈtʃele ni mˈzuɾi", bases: [{ word: "Mchele", base: "mchele" }, { word: "ni", base: "ni" }, { word: "mzuri", base: "zuri" }] }
+  - id: "sw-2355"
+    target: "maharage"
+    ipa: "mahaˈɾaɡe"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka maharage.", ipa: "ninaˈtaka mahaˈɾaɡe", bases: [{ word: "Ninataka", base: "taka" }, { word: "maharage", base: "maharage" }] }
+      - { target: "Maharage ni mazuri.", ipa: "mahaˈɾaɡe ni maˈzuɾi", bases: [{ word: "Maharage", base: "maharage" }, { word: "ni", base: "ni" }, { word: "mazuri", base: "zuri" }] }
+  - id: "sw-2356"
+    target: "siagi"
+    ipa: "siˈaɡi"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka siagi.", ipa: "ninaˈtaka siˈaɡi", bases: [{ word: "Ninataka", base: "taka" }, { word: "siagi", base: "siagi" }] }
+      - { target: "Ninapenda siagi.", ipa: "ninaˈpenda siˈaɡi", bases: [{ word: "Ninapenda", base: "penda" }, { word: "siagi", base: "siagi" }] }
+  - id: "sw-2357"
+    target: "mkate"
+    ipa: "mˈkate"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka mkate.", ipa: "ninaˈtaka mˈkate", bases: [{ word: "Ninataka", base: "taka" }, { word: "mkate", base: "mkate" }] }
+      - { target: "Mkate ni mzuri.", ipa: "mˈkate ni mˈzuɾi", bases: [{ word: "Mkate", base: "mkate" }, { word: "ni", base: "ni" }, { word: "mzuri", base: "zuri" }] }
+  - id: "sw-2358"
+    target: "maziwa"
+    ipa: "maˈziwa"
+    pos: "noun"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka maziwa.", ipa: "ninaˈtaka maˈziwa", bases: [{ word: "Ninataka", base: "taka" }, { word: "maziwa", base: "maziwa" }] }
+      - { target: "Maziwa ni mazuri.", ipa: "maˈziwa ni maˈzuɾi", bases: [{ word: "Maziwa", base: "maziwa" }, { word: "ni", base: "ni" }, { word: "mazuri", base: "zuri" }] }
+  - id: "sw-2359"
+    target: "yai"
+    ipa: "ˈjai"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka yai.", ipa: "ninaˈtaka ˈjai", bases: [{ word: "Ninataka", base: "taka" }, { word: "yai", base: "yai" }] }
+      - { target: "Ninapenda yai.", ipa: "ninaˈpenda ˈjai", bases: [{ word: "Ninapenda", base: "penda" }, { word: "yai", base: "yai" }] }
+  - id: "sw-2360"
+    target: "chai"
+    ipa: "ˈtʃai"
+    pos: "noun"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka chai.", ipa: "ninaˈtaka ˈtʃai", bases: [{ word: "Ninataka", base: "taka" }, { word: "chai", base: "chai" }] }
+      - { target: "Chai ni nzuri.", ipa: "ˈtʃai ni ˈnzuɾi", bases: [{ word: "Chai", base: "chai" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "zuri" }] }
+  - id: "sw-2361"
+    target: "kahawa"
+    ipa: "kaˈhawa"
+    pos: "noun"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka kahawa.", ipa: "ninaˈtaka kaˈhawa", bases: [{ word: "Ninataka", base: "taka" }, { word: "kahawa", base: "kahawa" }] }
+      - { target: "Kahawa ni nzuri.", ipa: "kaˈhawa ni ˈnzuɾi", bases: [{ word: "Kahawa", base: "kahawa" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "zuri" }] }
+  - id: "sw-2362"
+    target: "jibini"
+    ipa: "dʒiˈbini"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninapenda jibini.", ipa: "ninaˈpenda dʒiˈbini", bases: [{ word: "Ninapenda", base: "penda" }, { word: "jibini", base: "jibini" }] }
+      - { target: "Jibini ni nzuri.", ipa: "dʒiˈbini ni ˈnzuɾi", bases: [{ word: "Jibini", base: "jibini" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "zuri" }] }
+  - id: "sw-2363"
+    target: "kilo"
+    ipa: "ˈkilo"
+    pos: "noun"
+    tags: ["measure"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka kilo.", ipa: "ninaˈtaka ˈkilo", bases: [{ word: "Ninataka", base: "taka" }, { word: "kilo", base: "kilo" }] }
+      - { target: "Ninataka kilo mbili.", ipa: "ninaˈtaka ˈkilo ˈmbili", bases: [{ word: "Ninataka", base: "taka" }, { word: "kilo", base: "kilo" }, { word: "mbili", base: "wili" }] }
+  - id: "sw-2364"
+    target: "lita"
+    ipa: "ˈlita"
+    pos: "noun"
+    tags: ["measure"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka lita.", ipa: "ninaˈtaka ˈlita", bases: [{ word: "Ninataka", base: "taka" }, { word: "lita", base: "lita" }] }
+      - { target: "Ninataka lita mbili.", ipa: "ninaˈtaka ˈlita ˈmbili", bases: [{ word: "Ninataka", base: "taka" }, { word: "lita", base: "lita" }, { word: "mbili", base: "wili" }] }
+  - id: "sw-2365"
+    target: "pakiti"
+    ipa: "paˈkiti"
+    pos: "noun"
+    tags: ["measure"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka pakiti.", ipa: "ninaˈtaka paˈkiti", bases: [{ word: "Ninataka", base: "taka" }, { word: "pakiti", base: "pakiti" }] }
+      - { target: "Ninataka pakiti mbili.", ipa: "ninaˈtaka paˈkiti ˈmbili", bases: [{ word: "Ninataka", base: "taka" }, { word: "pakiti", base: "pakiti" }, { word: "mbili", base: "wili" }] }
+  - id: "sw-2366"
+    target: "kopo"
+    ipa: "ˈkopo"
+    pos: "noun"
+    tags: ["measure"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka kopo.", ipa: "ninaˈtaka ˈkopo", bases: [{ word: "Ninataka", base: "taka" }, { word: "kopo", base: "kopo" }] }
+      - { target: "Ninataka makopo.", ipa: "ninaˈtaka maˈkopo", bases: [{ word: "Ninataka", base: "taka" }, { word: "makopo", base: "kopo" }] }

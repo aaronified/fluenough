@@ -1,0 +1,208 @@
+schema: 1
+id: "sw-en-questions"
+kind: "layer"
+core: "sw-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions"
+description: "Twelve words for asking: where, when, how, how many, which, why, and the small words that answer or soften a question. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sw-1300":
+    native: "what; which"
+    notes:
+      "n1": "Gani asks which or what, and it follows its noun: chai gani is which tea. It is invariable, so it does not change for the noun's class."
+    examples:
+      "Unataka chai gani?":
+        native: "Which tea do you want?"
+        bases:
+          "Unataka": "you want"
+          "chai": "tea"
+          "gani": "which"
+      "Leo ni siku gani?":
+        native: "What day is today?"
+        bases:
+          "Leo": "today"
+          "ni": "is"
+          "siku": "day"
+          "gani": "which"
+  "sw-1301":
+    native: "where"
+    notes:
+      "n1": "Wapi is where. It comes at the end of the question, as in uko wapi? (where are you?). Uko is you are, at a place."
+    examples:
+      "Uko wapi?":
+        native: "Where are you?"
+        bases:
+          "Uko": "you are (at a place)"
+          "wapi": "where"
+      "Unakwenda wapi?":
+        native: "Where are you going?"
+        bases:
+          "Unakwenda": "you are going"
+          "wapi": "where"
+  "sw-1302":
+    native: "when"
+    notes:
+      "n1": "Lini is when. It comes at the end of the question: unakuja lini? is when are you coming? Unakuja is you come, with the na- present marker."
+    examples:
+      "Unakuja lini?":
+        native: "When are you coming?"
+        bases:
+          "Unakuja": "you are coming"
+          "lini": "when"
+      "Utarudi lini?":
+        native: "When will you return?"
+        bases:
+          "Utarudi": "you will return"
+          "lini": "when"
+  "sw-1303":
+    native: "how"
+    notes:
+      "n1": "Vipi is how. In greetings, mambo vipi? asks how things are, and vipi on its own asks how it is."
+    examples:
+      "Mambo vipi?":
+        native: "How are things?"
+        bases:
+          "Mambo": "things; matters"
+          "vipi": "how"
+      "Vipi, rafiki?":
+        native: "How are you, friend?"
+        bases:
+          "Vipi": "how"
+          "rafiki": "friend"
+  "sw-1304":
+    native: "how many"
+    notes:
+      "n1": "Ngapi is how many. It takes the class of its noun: watoto wangapi is how many children, with wa- for class II. Saa ngapi is what time it is."
+    examples:
+      "Una watoto wangapi?":
+        native: "How many children do you have?"
+        bases:
+          "Una": "you have"
+          "watoto": "children"
+          "wangapi": "how many"
+      "Ni saa ngapi?":
+        native: "What time is it?"
+        bases:
+          "Ni": "is"
+          "saa": "hour; clock"
+          "ngapi": "how many"
+  "sw-1305":
+    native: "well?; now?"
+    notes:
+      "n1": "Je is a small word that calls attention to a question or a reply. It can open a question too, as in je, unataka chai?"
+    examples:
+      "Je, unataka chai?":
+        native: "Do you want tea?"
+        bases:
+          "Je": "well? now?"
+          "unataka": "you want"
+          "chai": "tea"
+      "Je, ni kweli?":
+        native: "Is it true?"
+        bases:
+          "Je": "well? now?"
+          "ni": "is"
+          "kweli": "truth"
+  "sw-1306":
+    native: "why"
+    notes:
+      "n1": "Kwani asks why. The same word also links a reason, as in for or because, so it is a good word to learn with a question mark."
+    examples:
+      "Hapana, kwani?":
+        native: "No, why?"
+        bases:
+          "Hapana": "no"
+          "kwani": "why"
+      "Kwani wewe ni mgeni?":
+        native: "Why, are you a foreigner?"
+        bases:
+          "Kwani": "why"
+          "wewe": "you"
+          "ni": "are"
+          "mgeni": "foreigner"
+  "sw-1307":
+    native: "reason; motive"
+    notes:
+      "n1": "Sababu is class IX, with the plural sababu in class X (also the same word). Hii ni sababu nzuri: the class IX adjective nzuri agrees with it, as in the first words."
+    examples:
+      "Sababu ni nini?":
+        native: "What is the reason?"
+        bases:
+          "Sababu": "reason"
+          "ni": "is"
+          "nini": "what"
+      "Hii ni sababu nzuri.":
+        native: "This is a good reason."
+        bases:
+          "Hii": "this"
+          "ni": "is"
+          "sababu": "reason"
+          "nzuri": "good"
+  "sw-1308":
+    native: "okay"
+    notes:
+      "n1": "Sawa is the everyday word for okay. It answers a request or shows you have understood."
+    examples:
+      "Sawa, asante.":
+        native: "Okay, thank you."
+        bases:
+          "Sawa": "okay"
+          "asante": "thanks"
+      "Sawa, nimeelewa.":
+        native: "Okay, I understand."
+        bases:
+          "Sawa": "okay"
+          "nimeelewa": "I understand (I have understood)"
+  "sw-1309":
+    native: "perhaps"
+    notes:
+      "n1": "Labda is perhaps. It can stand at the front of the sentence, as in labda kesho, perhaps tomorrow."
+    examples:
+      "Labda kesho.":
+        native: "Perhaps tomorrow."
+        bases:
+          "Labda": "perhaps"
+          "kesho": "tomorrow"
+      "Labda ninataka chai.":
+        native: "Perhaps I want tea."
+        bases:
+          "Labda": "perhaps"
+          "ninataka": "I want"
+          "chai": "tea"
+  "sw-1310":
+    native: "really; true"
+    notes:
+      "n1": "Kweli means true or really. Ni kweli is it is true. The word can also start a sentence, as in kweli, mimi ni mwalimu."
+    examples:
+      "Ni kweli.":
+        native: "It is true."
+        bases:
+          "Ni": "is"
+          "kweli": "true"
+      "Kweli, mimi ni mwalimu.":
+        native: "Really, I am a teacher."
+        bases:
+          "Kweli": "really"
+          "mimi": "I"
+          "ni": "am"
+          "mwalimu": "teacher"
+  "sw-1311":
+    native: "I don't know"
+    notes:
+      "n1": "Sijui is I don't know. It is the verb jua, to know, made negative with si-, so it means I do not know. Sijui jina lake is I don't know his name."
+    examples:
+      "Sijui.":
+        native: "I don't know."
+        bases:
+          "Sijui": "I do not know"
+      "Sijui jina lake.":
+        native: "I don't know his name."
+        bases:
+          "Sijui": "I do not know"
+          "jina": "name"
+          "lake": "his; her"
+  "sw-1312":
+    native: "Question words: six to ask with"
+    explanation: "Swahili asks with these words in place of the answer: gani (which), wapi (where), lini (when), vipi (how), ngapi (how many) and kwani (why). Nani (who) and nini (what) come in the pronouns unit."

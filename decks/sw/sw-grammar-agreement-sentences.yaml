@@ -1,0 +1,72 @@
+schema: 1
+id: "sw-grammar-agreement-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sw", iso639_3: "swh", name: "Swahili", script: "latin", tts: "sw-KE", icon: "Sw" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "sw-0500"
+    target: "kitabu cha mtoto"
+    ipa: "kiˈtabu tʃa mˈtoto"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/-a" }
+    bases: [{ word: "kitabu", base: "kitabu" }, { word: "cha", base: "-a" }, { word: "mtoto", base: "mtoto" }]
+  - id: "sw-0501"
+    target: "nyumbani kwangu"
+    ipa: "ɲuˈmbani ˈkwaŋɡu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/kw-" }
+    bases: [{ word: "nyumbani", base: "nyumba" }, { word: "kwangu", base: "-angu" }]
+  - id: "sw-0502"
+    target: "baadhi ya watu"
+    ipa: "baˈaði ja ˈwatu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/baadhi" }
+    bases: [{ word: "baadhi", base: "baadhi" }, { word: "ya", base: "-a" }, { word: "watu", base: "mtu" }]
+  - id: "sw-0503"
+    target: "mwaka mwingine"
+    ipa: "ˈmwaka mwiˈŋɡine"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/mw-" }
+    bases: [{ word: "mwaka", base: "mwaka" }, { word: "mwingine", base: "-ingine" }]
+  - id: "sw-0504"
+    target: "Kitabu changu ni kizuri."
+    ipa: "kiˈtabu ˈtʃaŋɡu ni kiˈzuɾi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Swahili_noun_classes" }
+    bases: [{ word: "Kitabu", base: "kitabu" }, { word: "changu", base: "-angu" }, { word: "ni", base: "ni" }, { word: "kizuri", base: "-zuri" }]
+  - id: "sw-0505"
+    target: "Nyumba yangu ni nzuri."
+    ipa: "ˈɲumba ˈjaŋɡu ni ˈnzuɾi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Swahili_noun_classes" }
+    bases: [{ word: "Nyumba", base: "nyumba" }, { word: "yangu", base: "-angu" }, { word: "ni", base: "ni" }, { word: "nzuri", base: "-zuri" }]
+  - id: "sw-0506"
+    target: "Vitabu vyangu ni vizuri."
+    ipa: "viˈtabu ˈvjaŋɡu ni viˈzuɾi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Swahili_noun_classes" }
+    bases: [{ word: "Vitabu", base: "kitabu" }, { word: "vyangu", base: "-angu" }, { word: "ni", base: "ni" }, { word: "vizuri", base: "-zuri" }]
+  - id: "sw-0507"
+    target: "Mti wake ni mrefu."
+    ipa: "ˈmti ˈwake ni mˈɾefu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/Appendix:Swahili_noun_classes" }
+    bases: [{ word: "Mti", base: "mti" }, { word: "wake", base: "-ake" }, { word: "ni", base: "ni" }, { word: "mrefu", base: "-refu" }]

@@ -1,0 +1,145 @@
+schema: 1
+id: "sw-questions"
+part: "core"
+kind: "vocab"
+language: { code: "sw", iso639_3: "swh", name: "Swahili", script: "latin", tts: "sw-KE", icon: "Sw" }
+license: "CC-BY-SA-4.0"
+theme: "questions"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "sw-1300"
+    target: "gani"
+    ipa: "ˈɡani"
+    pos: "adj"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Unataka chai gani?", ipa: "unaˈtaka ˈtʃai ˈɡani", bases: [{ word: "Unataka", base: "taka" }, { word: "chai", base: "chai" }, { word: "gani", base: "gani" }] }
+      - { target: "Leo ni siku gani?", ipa: "ˈleo ni ˈsiku ˈɡani", bases: [{ word: "Leo", base: "leo" }, { word: "ni", base: "ni" }, { word: "siku", base: "siku" }, { word: "gani", base: "gani" }] }
+  - id: "sw-1301"
+    target: "wapi"
+    ipa: "ˈwapi"
+    pos: "adv"
+    tags: ["question", "place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Uko wapi?", ipa: "ˈuko ˈwapi", bases: [{ word: "Uko", base: "kuwa" }, { word: "wapi", base: "wapi" }] }
+      - { target: "Unakwenda wapi?", ipa: "unaˈkwenda ˈwapi", bases: [{ word: "Unakwenda", base: "kwenda" }, { word: "wapi", base: "wapi" }] }
+  - id: "sw-1302"
+    target: "lini"
+    ipa: "ˈlini"
+    pos: "adv"
+    tags: ["question", "time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Unakuja lini?", ipa: "unaˈkudʒa ˈlini", bases: [{ word: "Unakuja", base: "kuja" }, { word: "lini", base: "lini" }] }
+      - { target: "Utarudi lini?", ipa: "utaˈɾudi ˈlini", bases: [{ word: "Utarudi", base: "rudi" }, { word: "lini", base: "lini" }] }
+  - id: "sw-1303"
+    target: "vipi"
+    ipa: "ˈvipi"
+    pos: "adv"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mambo vipi?", ipa: "ˈmambo ˈvipi", bases: [{ word: "Mambo", base: "mambo" }, { word: "vipi", base: "vipi" }] }
+      - { target: "Vipi, rafiki?", ipa: "ˈvipi ɾaˈfiki", bases: [{ word: "Vipi", base: "vipi" }, { word: "rafiki", base: "rafiki" }] }
+  - id: "sw-1304"
+    target: "ngapi"
+    ipa: "ˈŋɡapi"
+    pos: "adj"
+    tags: ["question", "number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Una watoto wangapi?", ipa: "ˈuna waˈtoto waˈŋɡapi", bases: [{ word: "Una", base: "na" }, { word: "watoto", base: "mtoto" }, { word: "wangapi", base: "ngapi" }] }
+      - { target: "Ni saa ngapi?", ipa: "ni ˈsaa ˈŋɡapi", bases: [{ word: "Ni", base: "ni" }, { word: "saa", base: "saa" }, { word: "ngapi", base: "ngapi" }] }
+  - id: "sw-1305"
+    target: "je"
+    ipa: "dʒe"
+    pos: "particle"
+    tags: ["question", "particle"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je, ni kweli?", ipa: "dʒe ni ˈkweli", bases: [{ word: "Je", base: "je" }, { word: "ni", base: "ni" }, { word: "kweli", base: "kweli" }] }
+      - { target: "Je, unataka chai?", ipa: "dʒe unaˈtaka ˈtʃai", bases: [{ word: "Je", base: "je" }, { word: "unataka", base: "taka" }, { word: "chai", base: "chai" }] }
+  - id: "sw-1306"
+    target: "kwani"
+    ipa: "ˈkwani"
+    pos: "adv"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hapana, kwani?", ipa: "haˈpana ˈkwani", bases: [{ word: "Hapana", base: "hapana" }, { word: "kwani", base: "kwani" }] }
+      - { target: "Kwani wewe ni mgeni?", ipa: "ˈkwani ˈwewe ni mˈɡeni", bases: [{ word: "Kwani", base: "kwani" }, { word: "wewe", base: "wewe" }, { word: "ni", base: "ni" }, { word: "mgeni", base: "mgeni" }] }
+  - id: "sw-1307"
+    target: "sababu"
+    ipa: "saˈbabu"
+    pos: "noun"
+    tags: ["noun", "class-ix"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sababu ni nini?", ipa: "saˈbabu ni ˈnini", bases: [{ word: "Sababu", base: "sababu" }, { word: "ni", base: "ni" }, { word: "nini", base: "nini" }] }
+      - { target: "Hii ni sababu nzuri.", ipa: "ˈhii ni saˈbabu ˈnzuɾi", bases: [{ word: "Hii", base: "hii" }, { word: "ni", base: "ni" }, { word: "sababu", base: "sababu" }, { word: "nzuri", base: "nzuri" }] }
+  - id: "sw-1308"
+    target: "sawa"
+    ipa: "ˈsawa"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sawa, asante.", ipa: "ˈsawa aˈsante", bases: [{ word: "Sawa", base: "sawa" }, { word: "asante", base: "asante" }] }
+      - { target: "Sawa, nimeelewa.", ipa: "ˈsawa nimeeˈlewa", bases: [{ word: "Sawa", base: "sawa" }, { word: "nimeelewa", base: "elewa" }] }
+  - id: "sw-1309"
+    target: "labda"
+    ipa: "ˈlabda"
+    pos: "adv"
+    tags: ["doubt"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Labda kesho.", ipa: "ˈlabda ˈkeʃo", bases: [{ word: "Labda", base: "labda" }, { word: "kesho", base: "kesho" }] }
+      - { target: "Labda ninataka chai.", ipa: "ˈlabda ninaˈtaka ˈtʃai", bases: [{ word: "Labda", base: "labda" }, { word: "ninataka", base: "taka" }, { word: "chai", base: "chai" }] }
+  - id: "sw-1310"
+    target: "kweli"
+    ipa: "ˈkweli"
+    pos: "adv"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ni kweli.", ipa: "ni ˈkweli", bases: [{ word: "Ni", base: "ni" }, { word: "kweli", base: "kweli" }] }
+      - { target: "Kweli, mimi ni mwalimu.", ipa: "ˈkweli ˈmimi ni mwaˈlimu", bases: [{ word: "Kweli", base: "kweli" }, { word: "mimi", base: "mimi" }, { word: "ni", base: "ni" }, { word: "mwalimu", base: "mwalimu" }] }
+  - id: "sw-1311"
+    target: "sijui"
+    ipa: "siˈdʒui"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sijui.", ipa: "siˈdʒui", bases: [{ word: "Sijui", base: "jua" }] }
+      - { target: "Sijui jina lake.", ipa: "siˈdʒui ˈdʒina ˈlake", bases: [{ word: "Sijui", base: "jua" }, { word: "jina", base: "jina" }, { word: "lake", base: "-ake" }] }
+  - id: "sw-1312"
+    kind: "set"
+    members: [{ ref: "sw-1300" }, { ref: "sw-1301" }, { ref: "sw-1302" }, { ref: "sw-1303" }, { ref: "sw-1304" }, { ref: "sw-1306" }]

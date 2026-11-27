@@ -1,0 +1,635 @@
+schema: 1
+id: "sw-en-quantities"
+kind: "layer"
+core: "sw-quantities"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Quantities"
+description: "Words for amounts and quantities: a little, half, a quarter, many, few, all, other, one, and the owner. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "sw-1790":
+    native: "each, every"
+    notes:
+      "n1": "Determiner, placed before the noun it counts."
+    examples:
+      "Kila siku ninataka chai.":
+        native: "Every day I want tea."
+        bases:
+          "Kila": "each"
+          "siku": "day"
+          "ninataka": "I want"
+          "chai": "tea"
+      "Ninapenda kula kila siku.":
+        native: "I like to eat every day."
+        bases:
+          "Ninapenda": "I like"
+          "kula": "to eat"
+          "kila": "each"
+          "siku": "day"
+  "sw-1791":
+    native: "a little, a bit, slightly, little"
+    notes:
+      "n1": "Also an adjective: small (kidogo agrees with class VII, as in kiasi kidogo)."
+    examples:
+      "Ninataka maji kidogo.":
+        native: "I want a little water."
+        bases:
+          "Ninataka": "I want"
+          "maji": "water"
+          "kidogo": "a little"
+      "Ninapenda kula kidogo.":
+        native: "I like to eat a little."
+        bases:
+          "Ninapenda": "I like"
+          "kula": "to eat"
+          "kidogo": "a little"
+  "sw-1792":
+    native: "half"
+    notes:
+      "n1": "Class 9/10 (n-/n-): nusu, nusu. Plural nusu, class 10. Used with ya before the noun it divides."
+    examples:
+      "Hii ni nusu.":
+        native: "This is half."
+        bases:
+          "Hii": "this"
+          "ni": "is, am, are"
+          "nusu": "half"
+      "Ninataka nusu ya mkate.":
+        native: "I want half of the bread."
+        bases:
+          "Ninataka": "I want"
+          "nusu": "half"
+          "ya": "of"
+          "mkate": "bread"
+  "sw-1793":
+    native: "one-fourth; a quarter"
+    notes:
+      "n1": "Class 9/10 (n-/n-): robo, robo. Plural robo, class 10. Used with ya before the noun it divides."
+    examples:
+      "Hii ni robo.":
+        native: "This is a quarter."
+        bases:
+          "Hii": "this"
+          "ni": "is, am, are"
+          "robo": "one-fourth"
+      "Ninataka robo ya maji.":
+        native: "I want a quarter of the water."
+        bases:
+          "Ninataka": "I want"
+          "robo": "one-fourth"
+          "ya": "of"
+          "maji": "water"
+  "sw-1794":
+    native: "more, most"
+    notes:
+      "n1": "Also a noun (an increase), class 9/10. Placed after the word it compares."
+    examples:
+      "Ninataka zaidi.":
+        native: "I want more."
+        bases:
+          "Ninataka": "I want"
+          "zaidi": "more"
+      "Ninapenda chai zaidi.":
+        native: "I like tea more."
+        bases:
+          "Ninapenda": "I like"
+          "chai": "tea"
+          "zaidi": "more"
+  "sw-1795":
+    native: "amount, measure, quantity"
+    notes:
+      "n1": "Class 7/8 (ki-/vi-): kiasi, viasi. Plural viasi, class 8. Also means price and cartridge."
+    examples:
+      "Ninataka kiasi.":
+        native: "I want an amount."
+        bases:
+          "Ninataka": "I want"
+          "kiasi": "amount"
+      "Ninataka kiasi tu.":
+        native: "I want only an amount."
+        bases:
+          "Ninataka": "I want"
+          "kiasi": "amount"
+          "tu": "only"
+  "sw-1796":
+    native: "sum, total"
+    notes:
+      "n1": "Class 9/10 (n-/n-): jumla, jumla. Plural jumla, class 10. Also means wholesale. Also an adverb: in total."
+    examples:
+      "Hii ni jumla.":
+        native: "This is the total."
+        bases:
+          "Hii": "this"
+          "ni": "is, am, are"
+          "jumla": "sum"
+      "Ninataka jumla ya pesa.":
+        native: "I want the total of the money."
+        bases:
+          "Ninataka": "I want"
+          "jumla": "sum"
+          "ya": "of"
+          "pesa": "money"
+  "sw-1797":
+    native: "number"
+    notes:
+      "n1": "Class 9/10 (n-/n-): idadi, idadi. Plural idadi, class 10. Also means total (amount)."
+    examples:
+      "Hii ni idadi.":
+        native: "This is the number."
+        bases:
+          "Hii": "this"
+          "ni": "is, am, are"
+          "idadi": "number"
+      "Ninataka idadi ya watu.":
+        native: "I want the number of people."
+        bases:
+          "Ninataka": "I want"
+          "idadi": "number"
+          "ya": "of"
+          "watu": "people"
+  "sw-1798":
+    native: "complete, entire"
+    notes:
+      "n1": "Invariable adjective: it does not change for noun class. Also means o'clock, on the dot."
+    examples:
+      "Hiki ni kitabu kamili.":
+        native: "This is a complete book."
+        bases:
+          "Hiki": "this"
+          "ni": "is, am, are"
+          "kitabu": "book"
+          "kamili": "complete"
+      "Ninataka chakula kamili.":
+        native: "I want a complete meal."
+        bases:
+          "Ninataka": "I want"
+          "chakula": "food"
+          "kamili": "complete"
+  "sw-1799":
+    native: "abundant"
+    notes:
+      "n1": "Invariable adjective: it does not change for noun class."
+    examples:
+      "Maji ni tele.":
+        native: "Water is abundant."
+        bases:
+          "Maji": "water"
+          "ni": "is, am, are"
+          "tele": "abundant"
+      "Chakula ni tele.":
+        native: "Food is abundant."
+        bases:
+          "Chakula": "food"
+          "ni": "is, am, are"
+          "tele": "abundant"
+  "sw-1800":
+    native: "part, portion, some"
+    notes:
+      "n1": "Class 9/10 (n-/n-): baadhi, baadhi. Plural baadhi, class 10. Used with ya before the noun."
+    examples:
+      "Baadhi ya watu wanapenda chai.":
+        native: "Some people like tea."
+        bases:
+          "Baadhi": "part"
+          "ya": "of"
+          "watu": "people"
+          "wanapenda": "they like"
+          "chai": "tea"
+      "Ninataka baadhi ya maji.":
+        native: "I want some of the water."
+        bases:
+          "Ninataka": "I want"
+          "baadhi": "part"
+          "ya": "of"
+          "maji": "water"
+  "sw-1801":
+    native: "several (used following a noun)"
+    notes:
+      "n1": "Determiner, placed after the noun it counts. Also an adjective (various, some)."
+    examples:
+      "Ninataka vitabu kadhaa.":
+        native: "I want several books."
+        bases:
+          "Ninataka": "I want"
+          "vitabu": "books"
+          "kadhaa": "several"
+      "Ninataka mikate kadhaa.":
+        native: "I want several loaves of bread."
+        bases:
+          "Ninataka": "I want"
+          "mikate": "loaves of bread"
+          "kadhaa": "several"
+  "sw-1802":
+    native: "all, every (form for classes I, III and XI)"
+    bases:
+      "wote": { meaning: "all, every (the -ote word)" }
+    notes:
+      "n1": "Form of -ote (all). Agrees with noun class I (m-), class III (m-) and class XI (u-). The same word also takes class II (wa-)."
+    examples:
+      "Watu wote wanapenda chai.":
+        native: "All people like tea."
+        bases:
+          "Watu": "people"
+          "wote": "all"
+          "wanapenda": "they like"
+          "chai": "tea"
+      "Ninapenda watu wote.":
+        native: "I like all the people."
+        bases:
+          "Ninapenda": "I like"
+          "watu": "people"
+          "wote": "all"
+  "sw-1803":
+    native: "all, every (form for classes IV, VI and IX)"
+    bases:
+      "yote": { meaning: "all, every (the -ote word)" }
+    notes:
+      "n1": "Form of -ote (all). Agrees with noun class IV (mi-), class VI (ma-) and class IX (n-)."
+    examples:
+      "Maji yote ni tele.":
+        native: "All the water is abundant."
+        bases:
+          "Maji": "water"
+          "yote": "all"
+          "ni": "is, am, are"
+          "tele": "abundant"
+      "Ninapenda mikate yote.":
+        native: "I like all the loaves."
+        bases:
+          "Ninapenda": "I like"
+          "mikate": "loaves of bread"
+          "yote": "all"
+  "sw-1804":
+    native: "all, every (form for class V)"
+    bases:
+      "lote": { meaning: "all, every (the -ote word)" }
+    notes:
+      "n1": "Form of -ote (all). Agrees with noun class V (ji-)."
+    examples:
+      "Ninataka jambo lote.":
+        native: "I want the whole matter."
+        bases:
+          "Ninataka": "I want"
+          "jambo": "matter"
+          "lote": "all"
+      "Ninapenda jambo lote.":
+        native: "I like the whole matter."
+        bases:
+          "Ninapenda": "I like"
+          "jambo": "matter"
+          "lote": "all"
+  "sw-1805":
+    native: "all, every (form for class X)"
+    bases:
+      "zote": { meaning: "all, every (the -ote word)" }
+    notes:
+      "n1": "Form of -ote (all). Agrees with noun class X (n-)."
+    examples:
+      "Nyumba zote ni kubwa.":
+        native: "All the houses are big."
+        bases:
+          "Nyumba": "house"
+          "zote": "all"
+          "ni": "is, am, are"
+          "kubwa": "big"
+      "Ninapenda shule zote.":
+        native: "I like all the schools."
+        bases:
+          "Ninapenda": "I like"
+          "shule": "school"
+          "zote": "all"
+  "sw-1806":
+    native: "all, every (form for class VIII)"
+    bases:
+      "vyote": { meaning: "all, every (the -ote word)" }
+    notes:
+      "n1": "Form of -ote (all). Agrees with noun class VIII (vi-)."
+    examples:
+      "Ninataka vitabu vyote.":
+        native: "I want all the books."
+        bases:
+          "Ninataka": "I want"
+          "vitabu": "books"
+          "vyote": "all"
+      "Ninapenda vyakula vyote.":
+        native: "I like all the foods."
+        bases:
+          "Ninapenda": "I like"
+          "vyakula": "foods"
+          "vyote": "all"
+  "sw-1807":
+    native: "many (form for class II)"
+    bases:
+      "wengi": { meaning: "many" }
+    notes:
+      "n1": "Form of -ingi (many). Agrees with noun class II (wa-)."
+    examples:
+      "Watu wengi wanapenda chai.":
+        native: "Many people like tea."
+        bases:
+          "Watu": "people"
+          "wengi": "many"
+          "wanapenda": "they like"
+          "chai": "tea"
+      "Watoto wengi wanapenda maji.":
+        native: "Many children like water."
+        bases:
+          "Watoto": "children"
+          "wengi": "many"
+          "wanapenda": "they like"
+          "maji": "water"
+  "sw-1808":
+    native: "many (form for classes IX and X)"
+    bases:
+      "nyingi": { meaning: "many" }
+    notes:
+      "n1": "Form of -ingi (many). Agrees with noun class IX/X (n-)."
+    examples:
+      "Nyumba nyingi ni kubwa.":
+        native: "Many houses are big."
+        bases:
+          "Nyumba": "house"
+          "nyingi": "many"
+          "ni": "is, am, are"
+          "kubwa": "big"
+      "Shule nyingi ni kubwa.":
+        native: "Many schools are big."
+        bases:
+          "Shule": "school"
+          "nyingi": "many"
+          "ni": "is, am, are"
+          "kubwa": "big"
+  "sw-1809":
+    native: "many (form for class VI)"
+    bases:
+      "mengi": { meaning: "many" }
+    notes:
+      "n1": "Form of -ingi (many). Agrees with noun class VI (ma-)."
+    examples:
+      "Maji mengi ni tele.":
+        native: "A lot of water is abundant."
+        bases:
+          "Maji": "water"
+          "mengi": "many"
+          "ni": "is, am, are"
+          "tele": "abundant"
+      "Ninataka maji mengi.":
+        native: "I want a lot of water."
+        bases:
+          "Ninataka": "I want"
+          "maji": "water"
+          "mengi": "many"
+  "sw-1810":
+    native: "many (form for class IV)"
+    bases:
+      "mingi": { meaning: "many" }
+    notes:
+      "n1": "Form of -ingi (many). Agrees with noun class IV (mi-)."
+    examples:
+      "Ninataka mikate mingi.":
+        native: "I want many loaves."
+        bases:
+          "Ninataka": "I want"
+          "mikate": "loaves of bread"
+          "mingi": "many"
+      "Ninapenda mikate mingi sana.":
+        native: "I like very many loaves."
+        bases:
+          "Ninapenda": "I like"
+          "mikate": "loaves of bread"
+          "mingi": "many"
+          "sana": "very much"
+  "sw-1811":
+    native: "few"
+    notes:
+      "n1": "Declinable adjective: few. Its class forms are wachache, machache and vichache."
+    examples:
+      "Nyumba chache ni kubwa.":
+        native: "Few houses are big."
+        bases:
+          "Nyumba": "house"
+          "chache": "few"
+          "ni": "is, am, are"
+          "kubwa": "big"
+      "Shule chache ni kubwa.":
+        native: "Few schools are big."
+        bases:
+          "Shule": "school"
+          "chache": "few"
+          "ni": "is, am, are"
+          "kubwa": "big"
+  "sw-1812":
+    native: "few (form for class II)"
+    bases:
+      "wachache": { meaning: "few" }
+    notes:
+      "n1": "Form of -chache (few). Agrees with noun class II (wa-)."
+    examples:
+      "Watu wachache wanapenda chai.":
+        native: "Few people like tea."
+        bases:
+          "Watu": "people"
+          "wachache": "few"
+          "wanapenda": "they like"
+          "chai": "tea"
+      "Watoto wachache wanapenda maji.":
+        native: "Few children like water."
+        bases:
+          "Watoto": "children"
+          "wachache": "few"
+          "wanapenda": "they like"
+          "maji": "water"
+  "sw-1813":
+    native: "few (form for class VI)"
+    bases:
+      "machache": { meaning: "few" }
+    notes:
+      "n1": "Form of -chache (few). Agrees with noun class VI (ma-)."
+    examples:
+      "Ninataka maji machache.":
+        native: "I want a little water."
+        bases:
+          "Ninataka": "I want"
+          "maji": "water"
+          "machache": "few"
+      "Ninapenda maji machache.":
+        native: "I like a little water."
+        bases:
+          "Ninapenda": "I like"
+          "maji": "water"
+          "machache": "few"
+  "sw-1814":
+    native: "few (form for class VIII)"
+    bases:
+      "vichache": { meaning: "few" }
+    notes:
+      "n1": "Form of -chache (few). Agrees with noun class VIII (vi-)."
+    examples:
+      "Ninataka vitabu vichache.":
+        native: "I want a few books."
+        bases:
+          "Ninataka": "I want"
+          "vitabu": "books"
+          "vichache": "few"
+      "Ninapenda vitabu vichache.":
+        native: "I like a few books."
+        bases:
+          "Ninapenda": "I like"
+          "vitabu": "books"
+          "vichache": "few"
+  "sw-1815":
+    native: "another, other (form for classes I, III and XI)"
+    bases:
+      "mwingine": { meaning: "other, another" }
+    notes:
+      "n1": "Form of -ingine (other). Agrees with noun class I (m-), class III (m-) and class XI (u-)."
+    examples:
+      "Mtu mwingine anataka chai.":
+        native: "Another person wants tea."
+        bases:
+          "Mtu": "person"
+          "mwingine": "another"
+          "anataka": "he or she wants"
+          "chai": "tea"
+      "Mtu mwingine anapenda maji.":
+        native: "Another person likes water."
+        bases:
+          "Mtu": "person"
+          "mwingine": "another"
+          "anapenda": "he or she likes"
+          "maji": "water"
+  "sw-1816":
+    native: "other, another (form for classes IX and X)"
+    bases:
+      "nyingine": { meaning: "other, another" }
+    notes:
+      "n1": "Form of -ingine (other). Agrees with noun class IX/X (n-)."
+    examples:
+      "Nyumba nyingine ni kubwa.":
+        native: "Another house is big."
+        bases:
+          "Nyumba": "house"
+          "nyingine": "other"
+          "ni": "is, am, are"
+          "kubwa": "big"
+      "Shule nyingine ni kubwa.":
+        native: "Another school is big."
+        bases:
+          "Shule": "school"
+          "nyingine": "other"
+          "ni": "is, am, are"
+          "kubwa": "big"
+  "sw-1817":
+    native: "other, another (form for class VII)"
+    bases:
+      "kingine": { meaning: "other, another" }
+    notes:
+      "n1": "Form of -ingine (other). Agrees with noun class VII (ki-)."
+    examples:
+      "Ninataka kitabu kingine.":
+        native: "I want another book."
+        bases:
+          "Ninataka": "I want"
+          "kitabu": "book"
+          "kingine": "other"
+      "Ninapenda chakula kingine.":
+        native: "I like another food."
+        bases:
+          "Ninapenda": "I like"
+          "chakula": "food"
+          "kingine": "other"
+  "sw-1818":
+    native: "others (form for class II)"
+    bases:
+      "wengine": { meaning: "other, another" }
+    notes:
+      "n1": "Form of -ingine (other). Agrees with noun class II (wa-)."
+    examples:
+      "Watu wengine wanapenda chai.":
+        native: "Other people like tea."
+        bases:
+          "Watu": "people"
+          "wengine": "others"
+          "wanapenda": "they like"
+          "chai": "tea"
+      "Watoto wengine wanataka maji.":
+        native: "Other children want water."
+        bases:
+          "Watoto": "children"
+          "wengine": "others"
+          "wanataka": "they want"
+          "maji": "water"
+  "sw-1819":
+    native: "few, scarce, rare, little"
+    notes:
+      "n1": "Invariable adjective: it does not change for noun class."
+    examples:
+      "Maji ni haba.":
+        native: "Water is scarce."
+        bases:
+          "Maji": "water"
+          "ni": "is, am, are"
+          "haba": "few"
+      "Chakula ni haba.":
+        native: "Food is scarce."
+        bases:
+          "Chakula": "food"
+          "ni": "is, am, are"
+          "haba": "few"
+  "sw-1820":
+    native: "deficient"
+    notes:
+      "n1": "Invariable adjective: it does not change for noun class."
+    examples:
+      "Pesa ni pungufu.":
+        native: "The money is short."
+        bases:
+          "Pesa": "money"
+          "ni": "is, am, are"
+          "pungufu": "deficient"
+      "Chakula ni pungufu.":
+        native: "The food is short."
+        bases:
+          "Chakula": "food"
+          "ni": "is, am, are"
+          "pungufu": "deficient"
+  "sw-1821":
+    native: "one (form for classes I, III and XI)"
+    bases:
+      "mmoja": { meaning: "one" }
+    notes:
+      "n1": "Form of -moja (one). Agrees with noun class I (m-), class III (m-) and class XI (u-)."
+    examples:
+      "Mtu mmoja anataka chai.":
+        native: "One person wants tea."
+        bases:
+          "Mtu": "person"
+          "mmoja": "one"
+          "anataka": "he or she wants"
+          "chai": "tea"
+      "Mtoto mmoja anapenda maji.":
+        native: "One child likes water."
+        bases:
+          "Mtoto": "child"
+          "mmoja": "one"
+          "anapenda": "he or she likes"
+          "maji": "water"
+  "sw-1822":
+    native: "owner (one who owns)"
+    notes:
+      "n1": "Class 1/2 (m-/wa-): mwenyewe, wenyewe. Plural wenyewe, class 2 (wa-)."
+    examples:
+      "Yeye ni mwenyewe.":
+        native: "He is the owner."
+        bases:
+          "Yeye": "he or she"
+          "ni": "is, am, are"
+          "mwenyewe": "owner"
+      "Mwenyewe anataka chai.":
+        native: "The owner wants tea."
+        bases:
+          "Mwenyewe": "owner"
+          "anataka": "he or she wants"
+          "chai": "tea"

@@ -1,0 +1,670 @@
+schema: 1
+id: "sw-en-describing"
+kind: "layer"
+core: "sw-describing"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Describing"
+description: "Words for describing people and things: size, shape, quality, colour, age, taste, temperature and feelings. Each adjective shows its class agreement in its examples. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "sw-1860":
+    native: "good; kind"
+    notes:
+      "n1": "Stem -zuri. It takes the class prefix of its noun: mzuri with mtu (class 1), nzuri with nyumba (class 9)."
+    examples:
+      "Mtu ni mzuri.":
+        native: "A person is good."
+        bases:
+          "Mtu": "person"
+          "ni": "is; am"
+          "mzuri": "good"
+      "Nyumba ni nzuri.":
+        native: "The house is good."
+        bases:
+          "Nyumba": "house"
+          "ni": "is; am"
+          "nzuri": "good"
+  "sw-1861":
+    native: "bad; evil; wicked"
+    notes:
+      "n1": "Stem -baya. The class 1 and class 9 forms are both mbaya: mtu is class 1, nyumba is class 9."
+    examples:
+      "Mtu ni mbaya.":
+        native: "A person is bad."
+        bases:
+          "Mtu": "person"
+          "ni": "is; am"
+          "mbaya": "bad"
+      "Nyumba ni mbaya.":
+        native: "The house is bad."
+        bases:
+          "Nyumba": "house"
+          "ni": "is; am"
+          "mbaya": "bad"
+  "sw-1862":
+    native: "big; large; loud"
+    notes:
+      "n1": "Stem -kubwa. Class 1 gives mkubwa (mtu); class 9 nyumba takes kubwa with no change."
+    examples:
+      "Mtu ni mkubwa.":
+        native: "A person is big."
+        bases:
+          "Mtu": "person"
+          "ni": "is; am"
+          "mkubwa": "big"
+      "Nyumba ni kubwa.":
+        native: "The house is big."
+        bases:
+          "Nyumba": "house"
+          "ni": "is; am"
+          "kubwa": "big"
+  "sw-1863":
+    native: "small"
+    notes:
+      "n1": "Stem -dogo. It takes the class prefix of its noun: mdogo with mtu (class 1), ndogo with nyumba (class 9)."
+    examples:
+      "Mtu ni mdogo.":
+        native: "A person is small."
+        bases:
+          "Mtu": "person"
+          "ni": "is; am"
+          "mdogo": "small"
+      "Nyumba ni ndogo.":
+        native: "The house is small."
+        bases:
+          "Nyumba": "house"
+          "ni": "is; am"
+          "ndogo": "small"
+  "sw-1864":
+    native: "long; tall; high"
+    notes:
+      "n1": "Stem -refu. It takes the class prefix of its noun: mrefu with mtu and mto (class 1 and class 3), ndefu in class 9."
+    examples:
+      "Mtu ni mrefu.":
+        native: "A person is tall."
+        bases:
+          "Mtu": "person"
+          "ni": "is; am"
+          "mrefu": "tall"
+      "Mto ni mrefu.":
+        native: "The river is long."
+        bases:
+          "Mto": "river"
+          "ni": "is; am"
+          "mrefu": "long"
+  "sw-1865":
+    native: "short"
+    notes:
+      "n1": "Stem -fupi. It takes the class prefix of its noun: mfupi with mtu (class 1) and mlango (class 3)."
+    examples:
+      "Mtu ni mfupi.":
+        native: "A person is short."
+        bases:
+          "Mtu": "person"
+          "ni": "is; am"
+          "mfupi": "short"
+      "Mlango ni mfupi.":
+        native: "The door is short."
+        bases:
+          "Mlango": "door"
+          "ni": "is; am"
+          "mfupi": "short"
+  "sw-1866":
+    native: "wide"
+    notes:
+      "n1": "Stem -pana. It takes the class prefix of its noun: mpana with mlango and mto (class 3)."
+    examples:
+      "Mlango ni mpana.":
+        native: "The door is wide."
+        bases:
+          "Mlango": "door"
+          "ni": "is; am"
+          "mpana": "wide"
+      "Mto ni mpana.":
+        native: "The river is wide."
+        bases:
+          "Mto": "river"
+          "ni": "is; am"
+          "mpana": "wide"
+  "sw-1867":
+    native: "narrow"
+    notes:
+      "n1": "Stem -embamba. The class 3 form is mwembamba, used here with mlango and mto."
+    examples:
+      "Mlango ni mwembamba.":
+        native: "The door is narrow."
+        bases:
+          "Mlango": "door"
+          "ni": "is; am"
+          "mwembamba": "narrow"
+      "Mto ni mwembamba.":
+        native: "The river is narrow."
+        bases:
+          "Mto": "river"
+          "ni": "is; am"
+          "mwembamba": "narrow"
+  "sw-1868":
+    native: "fat"
+    notes:
+      "n1": "Stem -nene. Class 1 form: mnene, as for mtu and mimi."
+    examples:
+      "Mtu ni mnene.":
+        native: "A person is fat."
+        bases:
+          "Mtu": "person"
+          "ni": "is; am"
+          "mnene": "fat"
+      "Mimi ni mnene.":
+        native: "I am fat."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "mnene": "fat"
+  "sw-1869":
+    native: "heavy"
+    notes:
+      "n1": "Stem -zito. It takes the class prefix of its noun: mzito with mzigo (class 3), nzito with nguo (class 9)."
+    examples:
+      "Mzigo ni mzito.":
+        native: "The load is heavy."
+        bases:
+          "Mzigo": "load"
+          "ni": "is; am"
+          "mzito": "heavy"
+      "Nguo ni nzito.":
+        native: "The cloth is heavy."
+        bases:
+          "Nguo": "cloth"
+          "ni": "is; am"
+          "nzito": "heavy"
+  "sw-1870":
+    native: "light, not heavy"
+    notes:
+      "n1": "Stem -epesi. It takes the class prefix of its noun: mwepesi with mzigo (class 3), nyepesi with nguo (class 9)."
+    examples:
+      "Mzigo ni mwepesi.":
+        native: "The load is light."
+        bases:
+          "Mzigo": "load"
+          "ni": "is; am"
+          "mwepesi": "light"
+      "Nguo ni nyepesi.":
+        native: "The cloth is light."
+        bases:
+          "Nguo": "cloth"
+          "ni": "is; am"
+          "nyepesi": "light"
+  "sw-1871":
+    native: "new, fresh or recent"
+    notes:
+      "n1": "Stem -pya. The form mpya is used with nyumba (class 9) and mlango (class 3)."
+    examples:
+      "Nyumba ni mpya.":
+        native: "The house is new."
+        bases:
+          "Nyumba": "house"
+          "ni": "is; am"
+          "mpya": "new"
+      "Mlango ni mpya.":
+        native: "The door is new."
+        bases:
+          "Mlango": "door"
+          "ni": "is; am"
+          "mpya": "new"
+  "sw-1872":
+    native: "old"
+    notes:
+      "n1": "Stem -zee. Class 1 and class 3 form: mzee, used with mtu and mlango."
+    examples:
+      "Mtu ni mzee.":
+        native: "The person is old."
+        bases:
+          "Mtu": "person"
+          "ni": "is; am"
+          "mzee": "old"
+      "Babu ni mzee.":
+        native: "The grandfather is old."
+        bases:
+          "Babu": "grandfather"
+          "ni": "is; am"
+          "mzee": "old"
+  "sw-1873":
+    native: "young; early in life or growth"
+    notes:
+      "n1": "Stem -changa. The class 1 and class 3 form is mchanga: mtu and mti."
+    examples:
+      "Mtu ni mchanga.":
+        native: "A person is young."
+        bases:
+          "Mtu": "person"
+          "ni": "is; am"
+          "mchanga": "young"
+      "Mti ni mchanga.":
+        native: "The tree is young."
+        bases:
+          "Mti": "tree"
+          "ni": "is; am"
+          "mchanga": "young"
+  "sw-1874":
+    native: "sweet, with a pleasant taste"
+    notes:
+      "n1": "Stem -tamu. The class 6 form is matamu (maziwa) and the class 4 form is mitamu (mikate)."
+    examples:
+      "Maziwa ni matamu.":
+        native: "Milk is sweet."
+        bases:
+          "Maziwa": "milk"
+          "ni": "is; am"
+          "matamu": "sweet"
+      "Mikate ni mitamu.":
+        native: "The breads are sweet."
+        bases:
+          "Mikate": "bread"
+          "ni": "is; am"
+          "mitamu": "sweet"
+  "sw-1875":
+    native: "clean, not dirty"
+    notes:
+      "n1": "Invariable in the entry: safi is used the same way with nyumba and nguo."
+    examples:
+      "Nyumba ni safi.":
+        native: "The house is clean."
+        bases:
+          "Nyumba": "house"
+          "ni": "is; am"
+          "safi": "clean"
+      "Nguo ni safi.":
+        native: "The cloth is clean."
+        bases:
+          "Nguo": "cloth"
+          "ni": "is; am"
+          "safi": "clean"
+  "sw-1876":
+    native: "dirty or filthy"
+    notes:
+      "n1": "Stem -chafu. The class 6 form is machafu (maji) and the class 4 form is michafu (mikono)."
+    examples:
+      "Maji ni machafu.":
+        native: "The water is dirty."
+        bases:
+          "Maji": "water"
+          "ni": "is; am"
+          "machafu": "dirty"
+      "Mikono ni michafu.":
+        native: "The hands are dirty."
+        bases:
+          "Mikono": "hand"
+          "ni": "is; am"
+          "michafu": "dirty"
+  "sw-1877":
+    native: "hard or tough"
+    notes:
+      "n1": "Stem -gumu. It takes the class prefix of its noun: ngumu with kazi (class 9), mgumu with mtihani (class 3)."
+    examples:
+      "Kazi ni ngumu.":
+        native: "The work is hard."
+        bases:
+          "Kazi": "work"
+          "ni": "is; am"
+          "ngumu": "hard"
+      "Mtihani ni mgumu.":
+        native: "The exam is hard."
+        bases:
+          "Mtihani": "exam"
+          "ni": "is; am"
+          "mgumu": "hard"
+  "sw-1878":
+    native: "smooth or soft, not rough"
+    notes:
+      "n1": "Invariable in the entry: laini is used the same way with ngozi and nguo."
+    examples:
+      "Ngozi ni laini.":
+        native: "The skin is soft."
+        bases:
+          "Ngozi": "skin"
+          "ni": "is; am"
+          "laini": "soft"
+      "Nguo ni laini.":
+        native: "The cloth is soft."
+        bases:
+          "Nguo": "cloth"
+          "ni": "is; am"
+          "laini": "soft"
+  "sw-1879":
+    native: "red"
+    notes:
+      "n1": "Stem -ekundu. It takes the class prefix of its noun: nyekundu with nguo (class 9), mwekundu with mlango (class 3)."
+    examples:
+      "Nguo ni nyekundu.":
+        native: "The cloth is red."
+        bases:
+          "Nguo": "cloth"
+          "ni": "is; am"
+          "nyekundu": "red"
+      "Mlango ni mwekundu.":
+        native: "The door is red."
+        bases:
+          "Mlango": "door"
+          "ni": "is; am"
+          "mwekundu": "red"
+  "sw-1880":
+    native: "white"
+    notes:
+      "n1": "Stem -eupe. It takes the class prefix of its noun: nyeupe with nguo (class 9), mweupe with mlango (class 3)."
+    examples:
+      "Nguo ni nyeupe.":
+        native: "The cloth is white."
+        bases:
+          "Nguo": "cloth"
+          "ni": "is; am"
+          "nyeupe": "white"
+      "Mlango ni mweupe.":
+        native: "The door is white."
+        bases:
+          "Mlango": "door"
+          "ni": "is; am"
+          "mweupe": "white"
+  "sw-1881":
+    native: "black"
+    notes:
+      "n1": "Stem -eusi. It takes the class prefix of its noun: nyeusi with nguo (class 9), mweusi with mlango (class 3)."
+    examples:
+      "Nguo ni nyeusi.":
+        native: "The cloth is black."
+        bases:
+          "Nguo": "cloth"
+          "ni": "is; am"
+          "nyeusi": "black"
+      "Mlango ni mweusi.":
+        native: "The door is black."
+        bases:
+          "Mlango": "door"
+          "ni": "is; am"
+          "mweusi": "black"
+  "sw-1882":
+    native: "green"
+    notes:
+      "n1": "Invariable in the entry: kijani is the same with nyumba and mti."
+    examples:
+      "Nyumba ni kijani.":
+        native: "The house is green."
+        bases:
+          "Nyumba": "house"
+          "ni": "is; am"
+          "kijani": "green"
+      "Mti ni kijani.":
+        native: "The tree is green."
+        bases:
+          "Mti": "tree"
+          "ni": "is; am"
+          "kijani": "green"
+  "sw-1883":
+    native: "blue"
+    notes:
+      "n1": "Invariable in the entry: bluu is the same with nguo and anga."
+    examples:
+      "Nguo ni bluu.":
+        native: "The cloth is blue."
+        bases:
+          "Nguo": "cloth"
+          "ni": "is; am"
+          "bluu": "blue"
+      "Anga ni bluu.":
+        native: "The sky is blue."
+        bases:
+          "Anga": "sky"
+          "ni": "is; am"
+          "bluu": "blue"
+  "sw-1884":
+    native: "yellow"
+    notes:
+      "n1": "Invariable in the entry: njano is the same with ndizi and nguo."
+    examples:
+      "Ndizi ni njano.":
+        native: "The banana is yellow."
+        bases:
+          "Ndizi": "banana"
+          "ni": "is; am"
+          "njano": "yellow"
+      "Nguo ni njano.":
+        native: "The cloth is yellow."
+        bases:
+          "Nguo": "cloth"
+          "ni": "is; am"
+          "njano": "yellow"
+  "sw-1885":
+    native: "brown or yellowish-brown"
+    notes:
+      "n1": "Invariable in the entry: kahawia is the same with nguo and mti."
+    examples:
+      "Nguo ni kahawia.":
+        native: "The cloth is brown."
+        bases:
+          "Nguo": "cloth"
+          "ni": "is; am"
+          "kahawia": "brown"
+      "Mti ni kahawia.":
+        native: "The tree is brown."
+        bases:
+          "Mti": "tree"
+          "ni": "is; am"
+          "kahawia": "brown"
+  "sw-1886":
+    native: "purple"
+    notes:
+      "n1": "Invariable in the entry: zambarau is the same with nguo and anga."
+    examples:
+      "Nguo ni zambarau.":
+        native: "The cloth is purple."
+        bases:
+          "Nguo": "cloth"
+          "ni": "is; am"
+          "zambarau": "purple"
+      "Anga ni zambarau.":
+        native: "The sky is purple."
+        bases:
+          "Anga": "sky"
+          "ni": "is; am"
+          "zambarau": "purple"
+  "sw-1887":
+    native: "cold"
+    notes:
+      "n1": "Invariable in the entry: baridi is the same with chai and maji. The noun baridi (cold weather) is a separate entry."
+    examples:
+      "Chai ni baridi.":
+        native: "The tea is cold."
+        bases:
+          "Chai": "tea"
+          "ni": "is; am"
+          "baridi": "cold"
+      "Maji ni baridi.":
+        native: "The water is cold."
+        bases:
+          "Maji": "water"
+          "ni": "is; am"
+          "baridi": "cold"
+  "sw-1888":
+    native: "dry"
+    notes:
+      "n1": "Stem -kavu. The class 3 form is mkavu: mkate and mto."
+    examples:
+      "Mkate ni mkavu.":
+        native: "The bread is dry."
+        bases:
+          "Mkate": "bread"
+          "ni": "is; am"
+          "mkavu": "dry"
+      "Mto ni mkavu.":
+        native: "The river is dry."
+        bases:
+          "Mto": "river"
+          "ni": "is; am"
+          "mkavu": "dry"
+  "sw-1890":
+    native: "open or clear"
+    notes:
+      "n1": "Invariable in the entry: wazi is the same with mlango and anga."
+    examples:
+      "Mlango ni wazi.":
+        native: "The door is open."
+        bases:
+          "Mlango": "door"
+          "ni": "is; am"
+          "wazi": "open"
+      "Anga ni wazi.":
+        native: "The sky is clear."
+        bases:
+          "Anga": "sky"
+          "ni": "is; am"
+          "wazi": "clear"
+  "sw-1891":
+    native: "rich, having wealth"
+    notes:
+      "n1": "Invariable in the entry: tajiri is the same with mtu and nchi."
+    examples:
+      "Mtu ni tajiri.":
+        native: "A person is rich."
+        bases:
+          "Mtu": "person"
+          "ni": "is; am"
+          "tajiri": "rich"
+      "Nchi ni tajiri.":
+        native: "The country is rich."
+        bases:
+          "Nchi": "country"
+          "ni": "is; am"
+          "tajiri": "rich"
+  "sw-1892":
+    native: "poor, with no possessions or money"
+    notes:
+      "n1": "Invariable in the entry: maskini is the same with mtu and nchi."
+    examples:
+      "Mtu ni maskini.":
+        native: "A person is poor."
+        bases:
+          "Mtu": "person"
+          "ni": "is; am"
+          "maskini": "poor"
+      "Nchi ni maskini.":
+        native: "The country is poor."
+        bases:
+          "Nchi": "country"
+          "ni": "is; am"
+          "maskini": "poor"
+  "sw-1893":
+    native: "brave or energetic"
+    notes:
+      "n1": "Invariable in the entry: hodari is the same with mtu and mtoto."
+    examples:
+      "Mtu ni hodari.":
+        native: "A person is brave."
+        bases:
+          "Mtu": "person"
+          "ni": "is; am"
+          "hodari": "brave"
+      "Mtoto ni hodari.":
+        native: "The child is brave."
+        bases:
+          "Mtoto": "child"
+          "ni": "is; am"
+          "hodari": "brave"
+  "sw-1894":
+    native: "cheerful, good-humoured and joyful"
+    notes:
+      "n1": "Stem -changamfu. The class 1 form is mchangamfu, used with mtu and with mimi."
+    examples:
+      "Mtu ni mchangamfu.":
+        native: "A person is cheerful."
+        bases:
+          "Mtu": "person"
+          "ni": "is; am"
+          "mchangamfu": "cheerful"
+      "Mimi ni mchangamfu.":
+        native: "I am cheerful."
+        bases:
+          "Mimi": "I"
+          "ni": "is; am"
+          "mchangamfu": "cheerful"
+  "sw-1897":
+    native: "sharp"
+    notes:
+      "n1": "Stem -kali. It takes the class prefix of its noun: kikali with kisu (class 7), mkali with mwiba (class 3)."
+    examples:
+      "Kisu ni kikali.":
+        native: "The knife is sharp."
+        bases:
+          "Kisu": "knife"
+          "ni": "is; am"
+          "kikali": "sharp"
+      "Mwiba ni mkali.":
+        native: "The thorn is sharp."
+        bases:
+          "Mwiba": "thorn"
+          "ni": "is; am"
+          "mkali": "sharp"
+  "sw-1899":
+    native: "colour, or a pigment"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). Plural rangi, class X."
+    examples:
+      "Ninapenda rangi.":
+        native: "I like colour."
+        bases:
+          "Ninapenda": "to like (I like)"
+          "rangi": "colour"
+      "Rangi ni nzuri.":
+        native: "The colour is good."
+        bases:
+          "Rangi": "colour"
+          "ni": "is; am"
+          "nzuri": "good"
+  "sw-1900":
+    native: "joy, a feeling of happiness"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). It has no plural."
+    examples:
+      "Ninapenda furaha.":
+        native: "I like joy."
+        bases:
+          "Ninapenda": "to like (I like)"
+          "furaha": "joy"
+      "Furaha ni nzuri.":
+        native: "Joy is good."
+        bases:
+          "Furaha": "joy"
+          "ni": "is; am"
+          "nzuri": "good"
+  "sw-1901":
+    native: "sadness, grief or sorrow"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). It has no plural."
+    examples:
+      "Ninahisi huzuni.":
+        native: "I feel sadness."
+        bases:
+          "Ninahisi": "to feel (I feel)"
+          "huzuni": "sadness"
+      "Huzuni ni mbaya.":
+        native: "Sadness is bad."
+        bases:
+          "Huzuni": "sadness"
+          "ni": "is; am"
+          "mbaya": "bad"
+  "sw-1902":
+    native: "anger or rage"
+    notes:
+      "n1": "Noun class IX (class 9, no prefix). Plural hasira, class X."
+    examples:
+      "Ninahisi hasira.":
+        native: "I feel anger."
+        bases:
+          "Ninahisi": "to feel (I feel)"
+          "hasira": "anger"
+      "Hasira ni mbaya.":
+        native: "Anger is bad."
+        bases:
+          "Hasira": "anger"
+          "ni": "is; am"
+          "mbaya": "bad"

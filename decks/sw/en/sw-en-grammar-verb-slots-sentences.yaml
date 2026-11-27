@@ -1,0 +1,73 @@
+schema: 1
+id: "sw-en-grammar-verb-slots-sentences"
+kind: "layer"
+core: "sw-grammar-verb-slots-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verb slots in sentences"
+description: "Ten short sentences that show the slots of the verb, the object and not. Eight are Wiktionary examples and two are written from the table. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "sw-0600":
+    native: "I like you."
+    notes:
+      "n1": "Four slots in one word: ni- (I) + -na- (now) + -ku- (you, the object) + -penda (like). Wiktionary's -ku- entry gives this sentence."
+    bases:
+      "Ninakupenda": "I like you"
+  "sw-0601":
+    native: "They like me."
+    notes:
+      "n1": "wa- (they) + -na- (now) + -ni- (me, the object) + -penda (like). Wiktionary's -ni- entry gives this sentence."
+    bases:
+      "Wananipenda": "they like me"
+  "sw-0602":
+    native: "I did not read it."
+    notes:
+      "n1": "si- (I do not) + -ku- (the negative past) + -ki- (it) + -soma (read). Wiktionary's -ku- entry gives this sentence."
+    bases:
+      "Sikukisoma": "I did not read it"
+  "sw-0603":
+    native: "I will not read it."
+    notes:
+      "n1": "si- (I do not) + -ta- (the future, kept in the negative) + -ki- (it) + -soma (read). Wiktionary's -ta- entry gives this sentence."
+    bases:
+      "Sitakisoma": "I will not read it"
+  "sw-0604":
+    native: "They ate."
+    notes:
+      "n1": "wa- (they) + -li- (the past) + -kula (eat; the stem keeps its ku). Wiktionary's -li- entry gives this sentence."
+    bases:
+      "Walikula": "they ate"
+  "sw-0605":
+    native: "They will go."
+    notes:
+      "n1": "wa- (they) + -ta- (the future) + -kwenda (go; the stem keeps its ku, here as kw). Wiktionary's -ta- entry gives this sentence."
+    bases:
+      "Watakwenda": "they will go"
+  "sw-0606":
+    native: "I read and wrote."
+    notes:
+      "n1": "ni- (I) + -li- (the past) + -soma (read). After na, the second verb is an infinitive and the subject and tense are not repeated: kuandika. Wiktionary's ku- entry gives this sentence."
+    bases:
+      "Nilisoma": "I read"
+      "na": "and"
+      "kuandika": "to write"
+  "sw-0607":
+    native: "I don't know."
+    notes:
+      "n1": "si- (I do not) + -jui, the negative present of -jua, know: no tense marker, and the stem ends in -i. Wiktionary's -i entry gives this word."
+    bases:
+      "Sijui": "I do not know"
+  "sw-0608":
+    native: "The children read."
+    notes:
+      "n1": "Written from the verb table: watoto is class II, so the subject is wa-, and -li- makes the past: walisoma. Not a Wiktionary example."
+    bases:
+      "Watoto": "children"
+      "walisoma": "they read"
+  "sw-0609":
+    native: "We did not read."
+    notes:
+      "n1": "Written from the verb table: hatu- (we do not) + -ku- (the negative past) + -soma (read). Not a Wiktionary example."
+    bases:
+      "Hatukusoma": "we did not read"
