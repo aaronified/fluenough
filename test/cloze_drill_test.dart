@@ -321,8 +321,23 @@ void main() {
           ),
         ),
         state: state,
+        settle: false,
       );
+      // Wait, capped, for the screen; never for the frames to settle.
+      for (var i = 0; i < 40; i++) {
+        if (find.byType(ClozeDrill).evaluate().isNotEmpty) break;
+        await tester.runAsync(
+          () => Future<void>.delayed(const Duration(milliseconds: 50)),
+        );
+        await tester.pump();
+      }
       return state;
+    }
+
+    Future<void> tap(WidgetTester tester, String word) async {
+      await tester.tap(find.text(word));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
     }
 
     testWidgets('shows the meaning, the sentence with a gap and the words', (
@@ -343,8 +358,7 @@ void main() {
       tester,
     ) async {
       final state = await pump(tester);
-      await tester.tap(find.text('perro'));
-      await tester.pumpAndSettle();
+      await tap(tester, 'perro');
       expect(find.text(l10nOf(tester).feedbackCorrect), findsOneWidget);
       expect(find.text('yo tengo un perro'), findsOneWidget);
       expect(find.text(ClozeDrill.blank), findsNothing);
@@ -355,8 +369,7 @@ void main() {
       tester,
     ) async {
       final state = await pump(tester);
-      await tester.tap(find.text('gato'));
-      await tester.pumpAndSettle();
+      await tap(tester, 'gato');
       final l10n = l10nOf(tester);
       expect(find.text(l10n.feedbackWrong), findsOneWidget);
       expect(find.text(l10n.feedbackAnswer('perro')), findsOneWidget);

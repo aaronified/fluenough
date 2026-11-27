@@ -228,7 +228,7 @@ void main() {
     test('are not words that mean what the answer means', () {
       final cards = <Card>[
         ..._cards.values,
-        Card(
+        const Card(
           id: 'es-chucho',
           deckId: 'es-words',
           target: 'chucho',
@@ -276,7 +276,7 @@ void main() {
       _hindi('hi-7', 'एक', 'ek', 'adj'),
       _hindi('hi-8', 'है', 'hai', 'verb'),
     ];
-    final sentence = Card(
+    const sentence = Card(
       id: 'hi-s1',
       deckId: 'hi-sentences',
       target: 'मेरे पास एक कुत्ता है।',
@@ -349,13 +349,13 @@ void main() {
       target: 'Yo tengo un perro.',
       native: 'I have a dog.',
     );
-    final perro = Card(
+    const perro = Card(
       id: 'es-perro',
       deckId: 'es-words',
       target: 'perro',
       native: 'native es-perro',
       pos: 'noun',
-      examples: const <CardExample>[example],
+      examples: <CardExample>[example],
     );
 
     test('a word is asked as a cloze on its own word in its example', () {
@@ -376,22 +376,22 @@ void main() {
     test('but not on an example that does not hold the card\'s word, or '
         'holds too few known words', () {
       final bank = _bank();
-      final gato = Card(
+      const gato = Card(
         id: 'es-gato',
         deckId: 'es-words',
         target: 'gato',
         native: 'native es-gato',
         pos: 'noun',
-        examples: const <CardExample>[example],
+        examples: <CardExample>[example],
       );
       expect(bank.canAsk(gato), isFalse);
-      final casa = Card(
+      const casa = Card(
         id: 'es-casa',
         deckId: 'es-words',
         target: 'casa',
         native: 'native es-casa',
         pos: 'noun',
-        examples: const <CardExample>[
+        examples: <CardExample>[
           CardExample(target: 'Una casa.', native: 'A house.'),
         ],
       );
@@ -400,13 +400,13 @@ void main() {
 
     test('an example in another language is no sentence of this one', () {
       final bank = _bank();
-      final sound = Card(
+      const sound = Card(
         id: 'es-perro',
         deckId: 'es-words',
         target: 'perro',
         native: 'native es-perro',
         pos: 'noun',
-        examples: const <CardExample>[
+        examples: <CardExample>[
           CardExample(
             target: 'Yo tengo un perro.',
             native: 'I have a dog.',
