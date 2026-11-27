@@ -257,4 +257,47 @@ ids are permanent. Facts are not drilled and never enter `reviews`.
   `<language>/<fact id>` and when it was shown, since they are small, per
   profile and read as the screen draws.
 
+## Home-screen widget
+
+An Android widget (#108, small, 2 by 1 cells) shows the shown language's name,
+the cards due and the streak, and a tap opens the app. The owner chose the
+`home_widget` package for it (2026-11-27, pinned to 0.10.0, an exception to
+rule 6 recorded in `pubspec.yaml`).
+
+- **The numbers** are `AppState.homeWidgetSummary`: the shown language's
+  decks only, counted from the log as the reminder's forecast is
+  (`progress.dueByDay` with `_countsAsDue`), and the streak the Today page
+  counts. They are a count of reviews due, so they can differ from the
+  session Today builds, which also adds new skills of words already taught.
+  `lib/core/widget/home_widget_summary.dart` (pure Dart) turns them into the
+  text the widget draws; the words are the `homeWidget*` tokens of
+  `app_en.arb`, in the phone's language.
+- **The service** is `HomeWidgetService` (`lib/app/home_widget_service.dart`).
+  It stores the text again 10 seconds after progress or the shown language
+  last changed (a session, an import and a restore all change progress), and
+  at once when the app is left or opened. A failure goes to the app log and
+  is never thrown. It does nothing where the gateway says it is not
+  supported: the web build, iOS and the desktop use `NullHomeWidgetGateway`,
+  and `Feature.homeWidget` is off in the browser.
+- **The gateway** is `HomeWidgetGateway`, an interface (ADR-0007), so tests
+  need no plugin. `lib/app/plugin_home_widget_gateway.dart` wraps
+  `home_widget` and only `lib/main.dart` imports it, on Android.
+- **No polling.** The widget draws from stored text and never runs the app.
+  The app stores the lines for the day it counted and for the next day, with
+  the day. The phone draws the widget again a minute into each of the next
+  two days (`HomeWidget.scheduleWidgetUpdates`, inexact, restored after a
+  reboot by the plugin's receiver); drawn the next day it shows the second
+  lines, and later than that only "Open the app to update".
+- **The native part** is `tools/android_templates/widget/`: the provider
+  `DueWidgetProvider.kt`, a layout, the appwidget-provider file, colours
+  (light, dark and from Android 12 the phone's own) and the picker's
+  description. `android/` is generated (rule 4), so `tools/brand_android.py`
+  copies them in after every `flutter create` (CI, the release workflow, a
+  first checkout) and adds the manifest's two `<receiver>` entries, each only
+  if absent, so running it twice changes nothing. Change the widget in the
+  templates, never in `android/`.
+- **Not checked without a phone:** how it looks at 1.4x text and in a
+  right-to-left language, and the screen-reader sentence. The widget is not
+  yet drawn in medium size or with a Start button (the issue's second size).
+
 See also: [Contributing](Contributing) · [Home](Home)
