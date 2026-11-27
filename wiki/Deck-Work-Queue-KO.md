@@ -46,3 +46,16 @@ Ids (never reused, ascending inside a task; highest in use `ko-0158`): script `k
 ## 4. Progress
 
 2026-11-26: audit done, this page written.
+
+Merged, each with CI green and one Sonnet review: #1738 (KO-110: `korean()` returns a broad `ipa`, `ko` registered rules-only, on main); #1739 on decks-live (batchim script deck, 23 word units with sentences decks, 30 grammar decks for the 14 grammar units, broad `ipa` on the 140 existing cards with 6 reading typo fixes, `docs/review-queue/ko.md`, `loanwords` theme); #1749 on decks-live (`ko-phonetics.yaml`, 26 rules, `phonetic` on 993 cards).
+
+## 5. Final state, 2026-11-27
+
+A1 stops here by the owner's order: path units 1 to 45 are all written (45 of 45); 995 cards in `decks/ko`, about 790 of them word cards, 30 grammar decks, `ipa` and `phonetic` on 993. Word units are under their planned sizes where the Wiktionary extract, duplicate cards across units or untaught example words limited them (pronouns 10 of 20, work 24 of 35, loanwords 21 of 30, numbers-big 19 of 35); no card is written from memory.
+
+Left for the owner and later work:
+
+- Korean speaker review of `docs/review-queue/ko.md`; a Korean phonetician for the narrow rules (ㅎ allophones, aspirated initial ㅅ, ɐ for ㅏ).
+- Engine gap in `tools/transcribe.py` (a main PR): a coda ㅅ ㅆ ㅈ ㅊ ㅌ ㅍ ㄲ ㅋ before ㅎ is written as plain k/t/p + h in the broad `ipa` (따뜻하다); 값 reads `gapt`, 색깔 `saekkkal`; ㄼ in 밟다. The narrow rule repairs the narrow form only.
+- Built decks (`ko-first-words` and others) still use 좋다, 뜨겁다, 차갑다 and similar as plain bases though they are now cards; the Sino-Korean 이, 사, 오, 팔 are not taught as number cards (they collide with existing syllable cards), so 십오 and 십팔 lack their unit digits; 어제, 두세, 한두 and the Sino numerals 일 to 이십 have no examples (no counters or past tense taught yet); 112 and 119 emergency numbers need a read source.
+- No facts file, no genre decks, no A2/B1 (not in scope).
