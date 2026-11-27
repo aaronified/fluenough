@@ -357,3 +357,23 @@
     # a `normalise` list for those differences and an `agree` guard.
     name: "Standard Swahili; no Wiktionary form is taken (rules only)"
     untagged: false
+
+"it":
+  dump: "Italian"
+  variety:
+    # Measured on the kaikki.org Italian dump (read 2026-11-27, 114,267 sound
+    # forms): 114,215 are broad `/ /` phonemic forms and only 50 are narrow
+    # `[ ]`. Those 50 are regional or connected speech (Rome, central Italy,
+    # Sicily, Tuscan gorgia, prevocalic `non`, `ah` and `bah` as [h]), with
+    # allophones such as d̞ ɾ ʔ ĩ̯ and a length mark, so none of them is the
+    # standard. Their only overlap with the course is a handful of words, and
+    # they disagree with the broad `ipa` on sounds, not on convention. So no
+    # Wiktionary form is taken (untagged: false, no notes, no tags): nothing is
+    # imported, and every Italian card gets its narrow form from
+    # decks/it/it-phonetics.yaml, in one convention (as Tamil, Malayalam,
+    # Swahili and Santali). The broad `ipa` comes from `italian_ipa()` in
+    # tools/transcribe.py. Flip `untagged` to true only with a `normalise`
+    # list and an `agree` guard, and only if Wiktionary gains standard narrow
+    # forms.
+    name: "Standard Italian; no Wiktionary form is taken (rules only)"
+    untagged: false

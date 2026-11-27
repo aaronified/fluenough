@@ -819,6 +819,8 @@ def transcribe(text: str, lang: str, hint: str | None = None
         return Transcription(text, french_ipa(text), True)
     if lang == "sw":
         return Transcription(text, swahili_ipa(text), True)
+    if lang == "it":
+        return _italian(text, hint)
     if lang == "ja":
         return japanese(text)
     if lang == "ko":
@@ -2006,6 +2008,398 @@ def _sw_word(w: str) -> str:
         return "".join(ph)
     start = nuc[-3] + 1 if len(nuc) > 2 else 0
     return "".join(ph[:start]) + "ˈ" + "".join(ph[start:])
+
+
+# --- Italian -----------------------------------------------------------------
+
+# Standard Italian, broad, as the decks write it: ˈ before the stressed
+# syllable of a word of two syllables or more (as for Spanish), ɛ ɔ for the
+# open mid vowels, doubled letters doubled in IPA (ˈnɔtte, ˈɡrattsje), the
+# sounds that are long between vowels written long (ʎʎ ɲɲ ʃʃ, and tts for
+# -zione), s between vowels z, and i and u before a vowel, or after a, e or o,
+# the glides j and w. An s before a consonant closes the syllable before it
+# (stuˈdɛn.te, mos.ˈtra.to), as Wiktionary divides.
+#
+# What the letters show: the consonants and their doubling, the glides, the
+# stress of a word with a written accent (always the last vowel) and the
+# default stress on the second to last syllable. What they do not show, and
+# Italian spelling leaves to the reader's lexicon: which words are stressed
+# on the third to last syllable (`tavolo`), whether a stressed e or o is open
+# or closed (`bene` ɛ, `sera` e), whether a z is ts or dz, whether an i or u
+# before a vowel is a glide (`storia`) or a syllable (`farmacìa`), and the
+# voicing of an s between vowels that begins a word's second part
+# (`buonasera`, which the engine writes with z). The engine settles the
+# stress, the openness and the z in four ways, and no more:
+#  1. a written accent is believed, and a *hint* (the text with its words
+#     marked as a dictionary marks them: `tàvolo`, `bène`, `farmacìa`) gives
+#     the stress and the openness of words that have none: è ò for open, é ó
+#     for closed, à ì ù for the stressed vowel of any other. A hint is used
+#     only if, with its accents removed, it is the text;
+#  2. a few endings that fix the stress or the openness of nearly every word
+#     with them: _IT_ANTEPENULT (-bile, -ico, -issimo, ...), -ai/-ei/-oi
+#     stressed last, _IT_OPEN_E and _IT_OPEN_O, e after j and o after w, the
+#     ri- and -logia kinds of hiatus, and _IT_DZ for z;
+#  3. _IT_MARKS, a short table of very frequent words that follow no rule,
+#     which is read as a hint is (and _IT_PENULT, the frequent exceptions to
+#     the -ico, -ile endings);
+#  4. otherwise penultimate stress, a closed e or o and ts.
+# Measured against the 85,616 single words of Wiktionary's Italian entries
+# that have one untagged broad form (read 2026-11-27, kaikki.org; mostly
+# rare, derived and learned words): 69.8 percent are read exactly as
+# Wiktionary writes them, 8.6 percent differ only in where the stress is,
+# 14.5 only in a vowel's openness, 0.8 only in the voicing of an s or z, and
+# 6.5 in something else (mostly i or u as a syllable or a glide, and loan
+# words). On 153 words of everyday vocabulary, 138 are exact. A card whose
+# broad `ipa` the engine misreads is given a hint.
+#
+# Sources: Wikipedia "Italian phonology"; Wiktionary "Appendix:Italian
+# pronunciation" and its entries' pronunciations (the measurement above).
+_IT_ACCENTS = {"à": ("a", ""), "è": ("e", "ɛ"), "é": ("e", "e"),
+               "ì": ("i", ""), "í": ("i", ""), "ò": ("o", "ɔ"),
+               "ó": ("o", "o"), "ù": ("u", ""), "ú": ("u", "")}
+_IT_PUNCT = set(".,?!;:\"“”«»()…-–—")
+_IT_STOPS = "pbtdkɡfv"
+# Very frequent words that no rule reads, as the dictionary marks them
+# (read exactly as a hint is): open vowels, a stress the suffixes miss.
+_IT_MARKS = {
+    "ho": "hò", "no": "nò", "bene": "bène", "sempre": "sèmpre",
+    "tempo": "tèmpo", "ecco": "ècco", "vecchio": "vècchio",
+    "vecchia": "vècchia", "vecchi": "vècchi", "vecchie": "vècchie",
+    "poco": "pòco", "cosa": "còsa", "cose": "còse", "porta": "pòrta",
+    "forte": "fòrte", "volta": "vòlta", "gente": "gènte", "cento": "cènto",
+    "venti": "vènti", "trenta": "trènta", "sette": "sètte", "terra": "tèrra",
+    "devo": "dèvo", "deve": "dève", "devi": "dèvi", "oggi": "òggi",
+    "adesso": "adèsso", "presto": "prèsto", "albergo": "albèrgo",
+    "essere": "èssere", "poi": "pòi", "sei": "sèi", "lei": "lèi",
+    "tavolo": "tàvolo", "numero": "nùmero", "camera": "càmera",
+    "sabato": "sàbato", "perdere": "pèrdere", "prendere": "prèndere",
+    "mezzo": "mèzzo", "mezza": "mèzza", "io": "ìo", "idea": "idèa",
+    "costa": "còsta", "costo": "còsto", "studente": "studènte",
+    "notte": "nòtte", "otto": "òtto", "nove": "nòve", "treno": "trèno",
+    "aereo": "aèreo", "sedia": "sèdia", "finestra": "finèstra",
+    "troppo": "tròppo", "donna": "dònna", "occhio": "òcchio",
+    "testa": "tèsta", "prego": "prègo", "spagnolo": "spagnòlo",
+    "parola": "paròla", "parole": "paròle", "leggere": "lèggere",
+    "scrivere": "scrìvere", "piccolo": "pìccolo", "piccola": "pìccola",
+    "macchina": "màcchina", "farmacia": "farmacìa",
+    "telefono": "telèfono", "zucchero": "zùcchero",
+}
+# z is dz in these (zero, mezzo, pranzo, azzurro, -izzare); every other z
+# is ts. Measured on Wiktionary's entries; the rest of the dz words need
+# a hint-free respelling the engine does not have.
+_IT_DZ = re.compile(r"^zer|^zeb|^zon|^zain|^zanz|mezz|pranz|azzurr|romanz|"
+                    r"izz(?=ar|az|at|abil|ant|and|er)")
+# A word beginning ri- and a vowel keeps both vowels (riabbellire, riesplorare:
+# 561 of 563 such words of six letters or more in Wiktionary); one that ends
+# in one of these has a stressed i before its last vowel (-logia, -eria:
+# farmacologia, macelleria). The rare exceptions (riempire, materia) need a
+# hint.
+_IT_HIATUS_END = re.compile(r"(?:logi|grafi|foni|nomi|eri|si|mi)[ae]$")
+
+
+def italian_ipa(text: str, hint: str | None = None) -> str:
+    """Standard Italian, broad. [hint] is the text with each word marked as a
+    dictionary marks it (see the section header); it is used only if, with its
+    accents removed, it is the text. Raises CannotRead for a letter Italian
+    spelling does not use."""
+    text = unicodedata.normalize("NFC", text.lower())
+    for c in text:
+        if c.isspace() or c in _IT_PUNCT or c in "'’":
+            continue
+        if not ("a" <= c <= "z") and c not in _IT_ACCENTS:
+            raise CannotRead(f"not an Italian letter: {c!r}")
+    words = [w for w in re.split(r"[\s\-–—]+", text) if w]
+    hints = _it_hint_words(words, hint)
+    out = []
+    for k, raw in enumerate(words):
+        out.append(_it_word(raw, hints[k] if hints else ""))
+    return " ".join(w for w in out if w)
+
+
+def _it_hint_words(words: list[str], hint: str | None) -> list[str]:
+    """The hint's words if they are the text's words with stress marks, else
+    none."""
+    if not hint:
+        return []
+    hints = [w for w in re.split(r"[\s\-–—]+",
+                                 unicodedata.normalize("NFC", hint.lower()))
+             if w]
+    if len(hints) != len(words) or any(
+            _it_plain(h) != _it_plain(w) for h, w in zip(hints, words)):
+        return []
+    return hints
+
+
+def _italian(text: str, hint: str | None) -> Transcription:
+    ipa = italian_ipa(text, hint)
+    words = [w for w in re.split(r"[\s\-–—]+",
+                                 unicodedata.normalize("NFC", text.lower()))
+             if w]
+    fitted = not hint or bool(_it_hint_words(words, hint))
+    return Transcription(text, ipa, fitted)
+
+
+def _it_plain(word: str) -> str:
+    """A word without its stress marks and punctuation, to compare a hint."""
+    word = "".join(c for c in word if c not in _IT_PUNCT)
+    return "".join(_IT_ACCENTS[c][0] if c in _IT_ACCENTS else c
+                   for c in word)
+
+
+def _it_word(raw: str, hint: str) -> str:
+    # Elision (dov'è, l'acqua) is one word: the stress is the host's.
+    word = "".join(c for c in raw if c not in _IT_PUNCT and c not in "'’")
+    marked = "".join(c for c in hint if c not in _IT_PUNCT and c not in "'’")
+    if not word:
+        return ""
+    plain = _it_plain(word)
+    if not marked and plain in _IT_MARKS and \
+            not any(c in _IT_ACCENTS for c in word):
+        marked = _IT_MARKS[plain]
+    # The letters, with each vowel's accent: the word's own, else the hint's.
+    src = marked if marked and any(c in _IT_ACCENTS for c in marked) else word
+    s = _it_plain(src)
+    acc: dict[int, str] = {}        # index -> quality ('' for a, i, u)
+    for i, c in enumerate(src):
+        if c in _IT_ACCENTS:
+            acc[i] = _IT_ACCENTS[c][1]
+    # A word that is only a consonant, a glide and a vowel (`mio`, `zio`,
+    # `dio`, `tua`) has its i or u as a syllable.
+    if not acc and re.fullmatch(r"[^aeiouqgh][iu][aeiou]", s):
+        acc[1] = ""
+    syll: set[int] = set()          # an i or u that is a syllable, unstressed
+    if not acc and len(s) > 5:
+        if re.match(r"ri[aeiou]", s):
+            syll.add(1)
+        elif _IT_HIATUS_END.search(s):
+            acc[len(s) - 2] = ""
+    toks = _it_tokens(s, acc, syll)
+    return _it_stress(toks, s, acc)
+
+
+def _it_vowel(s: str, i: int) -> bool:
+    return 0 <= i < len(s) and s[i] in "aeiou"
+
+
+def _it_tokens(s: str, acc: dict[int, str],
+               syll: set[int] = frozenset()) -> list[list]:
+    """The word's sounds as [phoneme, kind, letter index]. Kind V is a
+    syllable's vowel, v the second vowel of a diphthong (ai, au), G a glide
+    and C a consonant."""
+    n = len(s)
+    toks: list[list] = []
+    dz_at = {j for m in _IT_DZ.finditer(s) for j in range(m.start(), m.end())
+             if s[j] == "z"}
+
+    def add(ph: str, kind: str, idx: int) -> None:
+        toks.append([ph, kind, idx])
+
+    def after_vowel() -> bool:
+        return bool(toks) and toks[-1][1] in ("V", "v", "G")
+
+    def silent_i(j: int) -> bool:
+        # The i of ci, gi, sci, gli before a vowel only marks the sound.
+        return j < n and s[j] == "i" and _it_vowel(s, j + 1) and j not in acc
+
+    i = 0
+    while i < n:
+        c = s[i]
+        nx = s[i + 1] if i + 1 < n else ""
+        dbl = nx == c and c in "bcdfgklmnprstvz"
+        k = i + 2 if dbl else i + 1          # the letter after the sound
+        kc = s[k] if k < n else ""
+        if c in "aeiou":
+            if c in "iu" and _it_vowel(s, i + 1) and i not in acc and \
+                    i not in syll:
+                add("j" if c == "i" else "w", "G", i)
+            elif c + nx in _IT_FALLING and i + 1 not in acc and \
+                    not _it_vowel(s, i + 2):
+                add(c, "V", i)
+                add("j" if nx == "i" else "w", "v", i + 1)
+                i += 1
+            else:
+                add(c, "V", i)
+        elif c == "h":
+            pass
+        elif c in "cg" and silent_i(k):
+            soft = "tʃ" if c == "c" else "dʒ"
+            if dbl:
+                add("t" if c == "c" else "d", "C", i)
+            add(soft, "C", i)
+            i = k
+        elif c in "cg" and kc in "ei":
+            soft = "tʃ" if c == "c" else "dʒ"
+            if dbl:
+                add("t" if c == "c" else "d", "C", i)
+            add(soft, "C", i)
+            i = k - 1
+        elif c in "cg":
+            hard = "k" if c == "c" else "ɡ"
+            if kc == "h":
+                k += 1
+            elif c == "g" and kc == "n" and not dbl:
+                # gn: one long sound between vowels, `bagno`.
+                if after_vowel():
+                    add("ɲ", "C", i)
+                add("ɲ", "C", i)
+                i = k
+                i += 1
+                continue
+            elif c == "g" and kc == "l" and not dbl and \
+                    k + 1 < n and s[k + 1] == "i":
+                # gli: ʎ, long between vowels; the i is silent before a vowel.
+                if after_vowel():
+                    add("ʎ", "C", i)
+                add("ʎ", "C", i)
+                i = k + 1 if silent_i(k + 1) else k
+                i += 1
+                continue
+            add(hard, "C", i)
+            if dbl:
+                add(hard, "C", i)
+            i = k - 1
+        elif c == "q":
+            add("k", "C", i)
+        elif c == "s":
+            if nx == "c" and s[i + 2:i + 3] in ("e", "i"):
+                # sce, sci: one long ʃ between vowels; sci before a vowel
+                # has a silent i.
+                if after_vowel():
+                    add("ʃ", "C", i)
+                add("ʃ", "C", i)
+                i += 1
+                if silent_i(i + 1):
+                    i += 1
+            elif nx == "c" and s[i + 2:i + 3] == "h":
+                add("s", "C", i)
+                add("k", "C", i)
+                i += 2
+            elif dbl:
+                add("s", "C", i)
+                add("s", "C", i)
+                i += 1
+            elif nx and nx in "bdglmnrv" or \
+                    (after_vowel() and _it_vowel(s, i + 1)):
+                add("z", "C", i)
+            else:
+                add("s", "C", i)
+        elif c == "z":
+            voiced = i in dz_at
+            ph = "dz" if voiced else "ts"
+            stop = "d" if voiced else "t"
+            if dbl:
+                add(stop, "C", i)
+                i += 1
+            elif after_vowel() and nx == "i" and _it_vowel(s, i + 2):
+                add(stop, "C", i)        # -zione, -zia: long, `ɡrattsje`
+            add(ph, "C", i)
+        elif c in "bdfklmnprtv":
+            add(c, "C", i)
+            if dbl:
+                add(c, "C", i)
+                i += 1
+        elif c in "jy":
+            add("j", "G", i)
+        elif c == "w":
+            add("w", "G", i)
+        elif c == "x":
+            add("k", "C", i)
+            add("s", "C", i)
+        else:
+            raise CannotRead(f"not an Italian letter: {c!r}")
+        i += 1
+    return toks
+
+
+# Falling diphthongs, one syllable: ai ei oi au eu (the i or u is j or w).
+_IT_FALLING = {"ai", "ei", "oi", "au", "eu"}
+# Words of three syllables or more that end in one of these are stressed on
+# the third to last syllable (measured on Wiktionary's Italian entries: each
+# is right for 85 to 100 percent of the words, `-bile` and `-issimo` for all).
+# Words of two syllables or more that end in -ai, -ei or -oi are stressed on
+# that last syllable instead (vorrei, farai).
+_IT_ANTEPENULT = ("bile", "bili", "ico", "ica", "ici", "iche", "ile",
+                  "evole", "evoli", "issimo", "issima", "issimi", "issime",
+                  "imo", "ono")
+# The frequent words those suffixes get wrong: stressed on the second to
+# last syllable.
+_IT_PENULT = {"amico", "amica", "amici", "amiche", "nemico", "nemica",
+              "nemici", "nemiche", "antico", "antica", "antici", "antiche",
+              "fatica", "gentile", "sottile", "civile", "aprile", "fucile"}
+# A stressed e or o is closed unless the word's end says otherwise: these
+# are the endings (after the stressed vowel) measured to be open in at least
+# 90 percent of the words, and e after j and o after w. About two thirds of
+# the stressed e and three quarters of the stressed o of Wiktionary's entries
+# come out right; the rest need a hint or a line in _IT_MARKS.
+_IT_OPEN_E = re.compile(r"(ll[aeio]|nz[ae]|bbe|ic[oaei]|iche)$")
+_IT_OPEN_O = re.compile(r"(ri[oa]|ic[oaei]|iche|cco|ma)$")
+
+
+def _it_pick_stress(toks: list[list], s: str, acc: dict[int, str]) -> int:
+    """The index in [toks] of the stressed vowel."""
+    nuclei = [k for k, t in enumerate(toks) if t[1] == "V"]
+    for k in nuclei:
+        if toks[k][2] in acc:
+            return k
+    if not acc and len(nuclei) > 1 and toks[-1][1] == "v" and \
+            toks[-2][1] == "V" and s.endswith(("ai", "ei", "oi")):
+        return nuclei[-1]       # vorrei, farai: 98 percent of the -ai, -oi
+    if len(nuclei) > 2 and s not in _IT_PENULT and \
+            s.endswith(_IT_ANTEPENULT):
+        return nuclei[-3]
+    return nuclei[-2] if len(nuclei) > 1 else nuclei[-1]
+
+
+def _it_stress(toks: list[list], s: str, acc: dict[int, str]) -> str:
+    nuclei = [k for k, t in enumerate(toks) if t[1] == "V"]
+    if not nuclei:
+        raise CannotRead(f"no vowel to read: {s!r}")
+    stressed = _it_pick_stress(toks, s, acc)
+    for k in nuclei:
+        t = toks[k]
+        if t[0] in "eo":
+            if t[2] in acc and acc[t[2]]:
+                t[0] = acc[t[2]]
+            elif k == stressed and not acc:
+                glide = toks[k - 1][0] if k and toks[k - 1][1] == "G" else ""
+                t[0] = _it_openness(s, t[0], t[2], glide)
+    if len(nuclei) < 2:
+        return "".join(t[0] for t in toks)
+    # The mark goes before the stressed syllable's onset: a glide, then the
+    # consonants that can begin a syllable (a single one, or a stop with l or
+    # r after it; an s closes the syllable before it, as Wiktionary divides
+    # `stuˈdɛn.te`, `mos.ˈtra.to`), a doubled one split between the two.
+    pos = stressed
+    if pos > 0 and toks[pos - 1][1] == "G":
+        pos -= 1
+    if pos > 0 and toks[pos - 1][1] == "C":
+        pos -= 1
+        while pos > 0 and toks[pos - 1][1] == "C" and \
+                _it_joins(toks[pos - 1][0], toks[pos][0]):
+            pos -= 1
+    if not any(t[1] in ("V", "v") for t in toks[:pos]):
+        pos = 0             # a word's first s and consonant: `ˈskuzi`
+    out = [t[0] for t in toks]
+    out.insert(pos, "ˈ")
+    return "".join(out)
+
+
+def _it_joins(first: str, second: str) -> bool:
+    """Whether [first] and [second], two consonants before a vowel, begin
+    the same syllable."""
+    if first == second:
+        return False
+    return first in _IT_STOPS and second in ("l", "r")
+
+
+def _it_openness(s: str, vowel: str, idx: int, glide: str) -> str:
+    rest = s[idx + 1:]
+    if vowel == "e":
+        if glide == "j" or _IT_OPEN_E.search(rest):
+            return "ɛ"
+    elif glide == "w" or _IT_OPEN_O.search(rest):
+        return "ɔ"
+    return vowel
 
 
 # --- Japanese, Korean, Mandarin and Toki Pona (#612) -------------------------
