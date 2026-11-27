@@ -131,12 +131,11 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 2 · B1 plans
 
-3 approved open issues.
+2 approved open issues.
 
 **Other**
 
 - [#413](https://github.com/aaronified/fluenough/issues/413) Plan: a phrasebook, then words, then rules, then sentences
-- [#419](https://github.com/aaronified/fluenough/issues/419) Words, rules, sentences: Telugu content
 - [#420](https://github.com/aaronified/fluenough/issues/420) Words, rules, sentences: content for the other courses
 
 ### 3 · Deck downloads
@@ -249,10 +248,8 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#352](https://github.com/aaronified/fluenough/issues/352) New course: Odia
 - [#353](https://github.com/aaronified/fluenough/issues/353) New course: Nepali
 - [#355](https://github.com/aaronified/fluenough/issues/355) New course: Malayalam
-- [#356](https://github.com/aaronified/fluenough/issues/356) New course: Sanskrit
 - [#357](https://github.com/aaronified/fluenough/issues/357) New course: Portuguese
 - [#358](https://github.com/aaronified/fluenough/issues/358) New course: Italian
-- [#359](https://github.com/aaronified/fluenough/issues/359) New course: French
 - [#360](https://github.com/aaronified/fluenough/issues/360) New course: Catalan
 - [#361](https://github.com/aaronified/fluenough/issues/361) New course: German
 - [#362](https://github.com/aaronified/fluenough/issues/362) New course: Swedish
@@ -269,13 +266,14 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#373](https://github.com/aaronified/fluenough/issues/373) New course: Irish
 - [#374](https://github.com/aaronified/fluenough/issues/374) New course: Arabic
 - [#375](https://github.com/aaronified/fluenough/issues/375) New course: Hebrew
-- [#376](https://github.com/aaronified/fluenough/issues/376) New course: Mandarin
 - [#377](https://github.com/aaronified/fluenough/issues/377) New course: Cantonese
-- [#378](https://github.com/aaronified/fluenough/issues/378) New course: Japanese
 - [#379](https://github.com/aaronified/fluenough/issues/379) New course: Korean
 - [#380](https://github.com/aaronified/fluenough/issues/380) New course: Vietnamese
 - [#381](https://github.com/aaronified/fluenough/issues/381) New course: Thai
 - [#382](https://github.com/aaronified/fluenough/issues/382) New course: Filipino
+- [#383](https://github.com/aaronified/fluenough/issues/383) New course: Malay
+- [#384](https://github.com/aaronified/fluenough/issues/384) New course: Swahili
+- [#385](https://github.com/aaronified/fluenough/issues/385) New course: Hausa
 - [#386](https://github.com/aaronified/fluenough/issues/386) New course: Somali
 - [#387](https://github.com/aaronified/fluenough/issues/387) New course: Quechua
 - [#388](https://github.com/aaronified/fluenough/issues/388) New course: Esperanto
@@ -286,9 +284,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#959](https://github.com/aaronified/fluenough/issues/959) Paths and starter decks (first words and phrases) for every planned language
 - [#1103](https://github.com/aaronified/fluenough/issues/1103) Play Store release: paid colour themes, pure black and wallpaper colours (free on GitHub)
 - [#1132](https://github.com/aaronified/fluenough/issues/1132) Placement: make the sentence fill-in (F28) pass the audit so it can be asked
-- [#1166](https://github.com/aaronified/fluenough/issues/1166) Language: Bengali: full deck format
-- [#1167](https://github.com/aaronified/fluenough/issues/1167) Language: Hindustani: full deck format
-- [#1168](https://github.com/aaronified/fluenough/issues/1168) Language: Assamese: full deck format
 - [#1169](https://github.com/aaronified/fluenough/issues/1169) Language: Bodo: full deck format
 - [#1170](https://github.com/aaronified/fluenough/issues/1170) Language: Dogri: full deck format
 - [#1173](https://github.com/aaronified/fluenough/issues/1173) Language: Kashmiri: full deck format
