@@ -316,6 +316,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 A plan with no tracking issue is flagged.
 
 - [achievements, quietly](https://github.com/aaronified/fluenough/wiki/Plan-Achievements) (Written 2026-10-05), tracks #223
+- [achievements pacing, the approved decisions and the plots](https://github.com/aaronified/fluenough/wiki/Plan-Achievements-Pacing) (Written 2026-11-27), **no tracking issue**
 - [an AI conversation partner, within what the learner knows](https://github.com/aaronified/fluenough/wiki/Plan-Ai-Conversation) (Written 2026-10-05), tracks #219
 - [hands-free audio drills](https://github.com/aaronified/fluenough/wiki/Plan-Audio-Drills) (Written 2026-10-05), tracks #224
 - [a B1 plan in every path](https://github.com/aaronified/fluenough/wiki/Plan-B1-Plans) (Written 2026-10-06), **no tracking issue**
