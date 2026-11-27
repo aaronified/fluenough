@@ -1,0 +1,989 @@
+schema: 1
+id: "sw-en-adverbs"
+kind: "layer"
+core: "sw-adverbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adverbs and linking words"
+description: "Adverbs of time, manner and degree, and the linking words of simple sentences: and, or, but, if, because of time and place. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "sw-1720":
+    native: "a lot, (very) much"
+    notes:
+      "n1": "Also means: too; very, extremely."
+    examples:
+      "Ninapenda chai sana.":
+        native: "I like tea very much."
+        bases:
+          "Ninapenda": "I like"
+          "chai": "tea"
+          "sana": "very much"
+      "Ninataka kula sana.":
+        native: "I want to eat a lot."
+        bases:
+          "Ninataka": "I want"
+          "kula": "to eat"
+          "sana": "very much"
+  "sw-1721":
+    native: "also"
+    notes:
+      "n1": "Also means: all, used with -ote for emphasis."
+    examples:
+      "Mimi pia ninataka maji.":
+        native: "I also want water."
+        bases:
+          "Mimi": "I"
+          "pia": "also"
+          "ninataka": "I want"
+          "maji": "water"
+      "Wewe pia unataka chai.":
+        native: "You also want tea."
+        bases:
+          "Wewe": "you"
+          "pia": "also"
+          "unataka": "you want"
+          "chai": "tea"
+  "sw-1722":
+    native: "again"
+    notes:
+      "n1": "Also means: moreover; again, anymore."
+    examples:
+      "Ninataka kuja tena.":
+        native: "I want to come again."
+        bases:
+          "Ninataka": "I want"
+          "kuja": "to come"
+          "tena": "again"
+      "Ninataka kusoma tena.":
+        native: "I want to read again."
+        bases:
+          "Ninataka": "I want"
+          "kusoma": "to read"
+          "tena": "again"
+  "sw-1723":
+    native: "still"
+    notes:
+      "n1": "Also means: not yet."
+    examples:
+      "Ninataka kula bado.":
+        native: "I still want to eat."
+        bases:
+          "Ninataka": "I want"
+          "kula": "to eat"
+          "bado": "still"
+      "Ninataka kusoma bado.":
+        native: "I still want to read."
+        bases:
+          "Ninataka": "I want"
+          "kusoma": "to read"
+          "bado": "still"
+  "sw-1724":
+    native: "always, permanently, continually"
+    notes:
+      "n1": "Adverb, placed after the verb it describes."
+    examples:
+      "Ninapenda chai daima.":
+        native: "I always like tea."
+        bases:
+          "Ninapenda": "I like"
+          "chai": "tea"
+          "daima": "always"
+      "Ninataka kunywa maji daima.":
+        native: "I always want to drink water."
+        bases:
+          "Ninataka": "I want"
+          "kunywa": "to drink"
+          "maji": "water"
+          "daima": "always"
+  "sw-1725":
+    native: "ever, never"
+    notes:
+      "n1": "Also means: at all. Used with si- in a negative sentence."
+    examples:
+      "Sipendi kamwe.":
+        native: "I never like it."
+        bases:
+          "Sipendi": "I do not like"
+          "kamwe": "ever"
+      "Sitaki kamwe.":
+        native: "I never want it."
+        bases:
+          "Sitaki": "I do not want"
+          "kamwe": "ever"
+  "sw-1726":
+    native: "slowly"
+    notes:
+      "n1": "Also means: carefully."
+    examples:
+      "Ninataka kula polepole.":
+        native: "I want to eat slowly."
+        bases:
+          "Ninataka": "I want"
+          "kula": "to eat"
+          "polepole": "slowly"
+      "Ninapenda kutembea polepole.":
+        native: "I like to walk slowly."
+        bases:
+          "Ninapenda": "I like"
+          "kutembea": "to walk"
+          "polepole": "slowly"
+  "sw-1727":
+    native: "quickly"
+    notes:
+      "n1": "The same word is a noun (speed, haste) and an adjective (fast)."
+    examples:
+      "Ninataka kukimbia haraka.":
+        native: "I want to run quickly."
+        bases:
+          "Ninataka": "I want"
+          "kukimbia": "to run"
+          "haraka": "quickly"
+      "Ninapenda kula haraka.":
+        native: "I like to eat quickly."
+        bases:
+          "Ninapenda": "I like"
+          "kula": "to eat"
+          "haraka": "quickly"
+  "sw-1728":
+    native: "quickly"
+    notes:
+      "n1": "Adverb, placed after the verb it describes."
+    examples:
+      "Ninataka kuja upesi.":
+        native: "I want to come quickly."
+        bases:
+          "Ninataka": "I want"
+          "kuja": "to come"
+          "upesi": "quickly"
+      "Ninataka kwenda upesi.":
+        native: "I want to go quickly."
+        bases:
+          "Ninataka": "I want"
+          "kwenda": "to walk"
+          "upesi": "quickly"
+  "sw-1729":
+    native: "together"
+    notes:
+      "n1": "Adverb, placed after the verb it describes."
+    examples:
+      "Ninataka kwenda pamoja.":
+        native: "I want to go together."
+        bases:
+          "Ninataka": "I want"
+          "kwenda": "to walk"
+          "pamoja": "together"
+      "Ninapenda kula pamoja.":
+        native: "I like to eat together."
+        bases:
+          "Ninapenda": "I like"
+          "kula": "to eat"
+          "pamoja": "together"
+  "sw-1730":
+    native: "sometimes"
+    notes:
+      "n1": "Adverb, placed at the start of a clause."
+    examples:
+      "Pengine ninataka chai.":
+        native: "Sometimes I want tea."
+        bases:
+          "Pengine": "sometimes"
+          "ninataka": "I want"
+          "chai": "tea"
+      "Pengine ninapenda kusoma.":
+        native: "Sometimes I like to read."
+        bases:
+          "Pengine": "sometimes"
+          "ninapenda": "I like"
+          "kusoma": "to read"
+  "sw-1731":
+    native: "wholly, entirely, completely, absolutely, utterly"
+    notes:
+      "n1": "Also means: at all, not at all, never."
+    examples:
+      "Sipendi kabisa.":
+        native: "I do not like it at all."
+        bases:
+          "Sipendi": "I do not like"
+          "kabisa": "wholly"
+      "Sitaki kabisa.":
+        native: "I do not want it at all."
+        bases:
+          "Sitaki": "I do not want"
+          "kabisa": "wholly"
+  "sw-1732":
+    native: "only"
+    notes:
+      "n1": "Adverb, placed after the word it limits."
+    examples:
+      "Ninataka maji tu.":
+        native: "I want only water."
+        bases:
+          "Ninataka": "I want"
+          "maji": "water"
+          "tu": "only"
+      "Ninapenda chai tu.":
+        native: "I like only tea."
+        bases:
+          "Ninapenda": "I like"
+          "chai": "tea"
+          "tu": "only"
+  "sw-1733":
+    native: "until"
+    notes:
+      "n1": "Also means: even; in order that. This card teaches the sense until."
+    examples:
+      "Ninataka kusoma hata jioni.":
+        native: "I want to read until evening."
+        bases:
+          "Ninataka": "I want"
+          "kusoma": "to read"
+          "hata": "until"
+          "jioni": "evening"
+      "Ninataka kula hata usiku.":
+        native: "I want to eat until night."
+        bases:
+          "Ninataka": "I want"
+          "kula": "to eat"
+          "hata": "until"
+          "usiku": "night"
+  "sw-1734":
+    native: "exactly"
+    notes:
+      "n1": "Also means: especially."
+    examples:
+      "Hii hasa ni shule.":
+        native: "This is exactly the school."
+        bases:
+          "Hii": "this"
+          "hasa": "exactly"
+          "ni": "is, am, are"
+          "shule": "school"
+      "Hii hasa ni chai.":
+        native: "This is exactly tea."
+        bases:
+          "Hii": "this"
+          "hasa": "exactly"
+          "ni": "is, am, are"
+          "chai": "tea"
+  "sw-1735":
+    native: "at least, if nothing else"
+    notes:
+      "n1": "Adverb, placed after the word it limits."
+    examples:
+      "Ninataka chai angalau.":
+        native: "I want at least tea."
+        bases:
+          "Ninataka": "I want"
+          "chai": "tea"
+          "angalau": "at least"
+      "Ninataka kula angalau.":
+        native: "I want to eat at least."
+        bases:
+          "Ninataka": "I want"
+          "kula": "to eat"
+          "angalau": "at least"
+  "sw-1736":
+    native: "later; afterwards; then"
+    notes:
+      "n1": "Adverb, joins actions in order."
+    examples:
+      "Ninataka kula halafu kulala.":
+        native: "I want to eat, then sleep."
+        bases:
+          "Ninataka": "I want"
+          "kula": "to eat"
+          "halafu": "later"
+          "kulala": "to sleep"
+      "Ninataka kusoma halafu kwenda shule.":
+        native: "I want to read, then go to school."
+        bases:
+          "Ninataka": "I want"
+          "kusoma": "to read"
+          "halafu": "later"
+          "kwenda": "to walk"
+          "shule": "school"
+  "sw-1737":
+    native: "then, subsequently, afterwards"
+    notes:
+      "n1": "Adverb, joins actions in order."
+    examples:
+      "Ninataka kula kisha kulala.":
+        native: "I want to eat, then sleep."
+        bases:
+          "Ninataka": "I want"
+          "kula": "to eat"
+          "kisha": "then"
+          "kulala": "to sleep"
+      "Ninataka kusoma kisha kwenda shule.":
+        native: "I want to read, then go to school."
+        bases:
+          "Ninataka": "I want"
+          "kusoma": "to read"
+          "kisha": "then"
+          "kwenda": "to walk"
+          "shule": "school"
+  "sw-1738":
+    native: "before (previously)"
+    notes:
+      "n1": "Adverb, used on its own or after a verb."
+    examples:
+      "Ninataka kusoma kabla.":
+        native: "I want to read before."
+        bases:
+          "Ninataka": "I want"
+          "kusoma": "to read"
+          "kabla": "before"
+      "Ninataka kula kabla.":
+        native: "I want to eat before."
+        bases:
+          "Ninataka": "I want"
+          "kula": "to eat"
+          "kabla": "before"
+  "sw-1739":
+    native: "again; afresh"
+    notes:
+      "n1": "The same word is a noun (newness, novelty)."
+    examples:
+      "Ninataka kuandika upya.":
+        native: "I want to write again."
+        bases:
+          "Ninataka": "I want"
+          "kuandika": "to write"
+          "upya": "again"
+      "Ninataka kusoma upya.":
+        native: "I want to read again."
+        bases:
+          "Ninataka": "I want"
+          "kusoma": "to read"
+          "upya": "again"
+  "sw-1740":
+    native: "very, much"
+    notes:
+      "n1": "Also means: too much, excessively."
+    examples:
+      "Ninapenda chai mno.":
+        native: "I like tea very much."
+        bases:
+          "Ninapenda": "I like"
+          "chai": "tea"
+          "mno": "very"
+      "Ninataka maji mno.":
+        native: "I want a lot of water."
+        bases:
+          "Ninataka": "I want"
+          "maji": "water"
+          "mno": "very"
+  "sw-1741":
+    native: "well, properly"
+    notes:
+      "n1": "Also an adjective and an interjection (good, okay)."
+    examples:
+      "Ninataka kuandika vyema.":
+        native: "I want to write well."
+        bases:
+          "Ninataka": "I want"
+          "kuandika": "to write"
+          "vyema": "well"
+      "Ninapenda kupika vyema.":
+        native: "I like to cook well."
+        bases:
+          "Ninapenda": "I like"
+          "kupika": "to cook"
+          "vyema": "well"
+  "sw-1742":
+    native: "carefully, slowly"
+    notes:
+      "n1": "The same word is a noun (pattern, method)."
+    examples:
+      "Ninataka kutembea taratibu.":
+        native: "I want to walk carefully."
+        bases:
+          "Ninataka": "I want"
+          "kutembea": "to walk"
+          "taratibu": "carefully"
+      "Ninapenda kula taratibu.":
+        native: "I like to eat slowly."
+        bases:
+          "Ninapenda": "I like"
+          "kula": "to eat"
+          "taratibu": "carefully"
+  "sw-1743":
+    native: "suddenly"
+    notes:
+      "n1": "Also an adjective (sudden)."
+    examples:
+      "Ninataka kukimbia ghafla.":
+        native: "I want to run suddenly."
+        bases:
+          "Ninataka": "I want"
+          "kukimbia": "to run"
+          "ghafla": "suddenly"
+      "Ninataka kuja ghafla.":
+        native: "I want to come suddenly."
+        bases:
+          "Ninataka": "I want"
+          "kuja": "to come"
+          "ghafla": "suddenly"
+  "sw-1744":
+    native: "equally; the same"
+    notes:
+      "n1": "Also an interjection (okay, all right) and a phrase (it is all good)."
+    examples:
+      "Mimi na wewe ni sawasawa.":
+        native: "You and I are equal."
+        bases:
+          "Mimi": "I"
+          "na": "and"
+          "wewe": "you"
+          "ni": "is, am, are"
+          "sawasawa": "equally"
+      "Sisi ni sawasawa.":
+        native: "We are equal."
+        bases:
+          "Sisi": "we"
+          "ni": "is, am, are"
+          "sawasawa": "equally"
+  "sw-1745":
+    native: "in vain; pointlessly; fruitlessly"
+    notes:
+      "n1": "The same word is an adjective (free, without payment)."
+    examples:
+      "Ninafanya kazi bure.":
+        native: "I work in vain."
+        bases:
+          "Ninafanya": "I do"
+          "kazi": "work"
+          "bure": "in vain"
+      "Ninataka kusoma bure.":
+        native: "I want to read in vain."
+        bases:
+          "Ninataka": "I want"
+          "kusoma": "to read"
+          "bure": "in vain"
+  "sw-1746":
+    native: "also, likewise"
+    notes:
+      "n1": "Also an adjective, from the class forms of -ileile."
+    examples:
+      "Mimi vilevile ninataka chai.":
+        native: "I also want tea."
+        bases:
+          "Mimi": "I"
+          "vilevile": "also"
+          "ninataka": "I want"
+          "chai": "tea"
+      "Wewe vilevile unapenda chai.":
+        native: "You also like tea."
+        bases:
+          "Wewe": "you"
+          "vilevile": "also"
+          "unapenda": "you like"
+          "chai": "tea"
+  "sw-1747":
+    native: "thus, so"
+    notes:
+      "n1": "Also means: yes."
+    examples:
+      "Ninataka kula hivyo.":
+        native: "I want to eat like that."
+        bases:
+          "Ninataka": "I want"
+          "kula": "to eat"
+          "hivyo": "thus"
+      "Ninafanya kazi hivyo.":
+        native: "I work like that."
+        bases:
+          "Ninafanya": "I do"
+          "kazi": "work"
+          "hivyo": "thus"
+  "sw-1748":
+    native: "however, on the contrary"
+    notes:
+      "n1": "Also a conjunction (but instead) and a noun (earring)."
+    examples:
+      "Ninataka chai, bali ninataka maji.":
+        native: "I want tea, however I want water."
+        bases:
+          "Ninataka": "I want"
+          "chai": "tea"
+          "bali": "however"
+          "maji": "water"
+      "Sipendi chai, bali ninapenda maji.":
+        native: "I do not like tea; on the contrary, I like water."
+        bases:
+          "Sipendi": "I do not like"
+          "chai": "tea"
+          "bali": "however"
+          "ninapenda": "I like"
+          "maji": "water"
+  "sw-1749":
+    native: "though; although; albeit; notwithstanding"
+    notes:
+      "n1": "Also a verb form (though it is) and a conjunction."
+    examples:
+      "Ingawa ninapenda chai, ninataka maji.":
+        native: "Although I like tea, I want water."
+        bases:
+          "Ingawa": "though"
+          "ninapenda": "I like"
+          "chai": "tea"
+          "ninataka": "I want"
+          "maji": "water"
+      "Ingawa ni mwalimu, ninapenda kusoma.":
+        native: "Although I am a teacher, I like to read."
+        bases:
+          "Ingawa": "though"
+          "ni": "is, am, are"
+          "mwalimu": "teacher"
+          "ninapenda": "I like"
+          "kusoma": "to read"
+  "sw-1750":
+    native: "recently"
+    notes:
+      "n1": "Also means: soon."
+    examples:
+      "Nimekula karibuni.":
+        native: "I have eaten recently."
+        bases:
+          "Nimekula": "I have eaten"
+          "karibuni": "recently"
+      "Nimesoma karibuni.":
+        native: "I have studied recently."
+        bases:
+          "Nimesoma": "I have studied"
+          "karibuni": "recently"
+  "sw-1751":
+    native: "anywhere; wherever"
+    notes:
+      "n1": "Also means: everywhere."
+    examples:
+      "Ninataka kwenda popote.":
+        native: "I want to go anywhere."
+        bases:
+          "Ninataka": "I want"
+          "kwenda": "to walk"
+          "popote": "anywhere"
+      "Ninapenda kusoma popote.":
+        native: "I like to read everywhere."
+        bases:
+          "Ninapenda": "I like"
+          "kusoma": "to read"
+          "popote": "anywhere"
+  "sw-1752":
+    native: "but"
+    notes:
+      "n1": "Conjunction, joins two clauses."
+    examples:
+      "Ninapenda chai lakini ninataka maji.":
+        native: "I like tea but I want water."
+        bases:
+          "Ninapenda": "I like"
+          "chai": "tea"
+          "lakini": "but"
+          "ninataka": "I want"
+          "maji": "water"
+      "Ninataka kusoma lakini ninataka kula.":
+        native: "I want to read but I want to eat."
+        bases:
+          "Ninataka": "I want"
+          "kusoma": "to read"
+          "lakini": "but"
+          "kula": "to eat"
+  "sw-1753":
+    native: "or"
+    notes:
+      "n1": "Conjunction, joins two choices."
+    examples:
+      "Chai au maji?":
+        native: "Tea or water?"
+        bases:
+          "Chai": "tea"
+          "au": "or"
+          "maji": "water"
+      "Ninataka kula au kunywa.":
+        native: "I want to eat or drink."
+        bases:
+          "Ninataka": "I want"
+          "kula": "to eat"
+          "au": "or"
+          "kunywa": "to drink"
+  "sw-1754":
+    native: "or"
+    notes:
+      "n1": "Conjunction, joins two choices."
+    examples:
+      "Ninataka chai ama maji.":
+        native: "I want tea or water."
+        bases:
+          "Ninataka": "I want"
+          "chai": "tea"
+          "ama": "or"
+          "maji": "water"
+      "Ninataka kwenda ama kukaa.":
+        native: "I want to go or to sit."
+        bases:
+          "Ninataka": "I want"
+          "kwenda": "to walk"
+          "ama": "or"
+          "kukaa": "to sit"
+  "sw-1755":
+    native: "and"
+    notes:
+      "n1": "Conjunction, used after a negative verb (sipendi chai wala maji: I do not like tea or water)."
+    examples:
+      "Sipendi chai wala maji.":
+        native: "I do not like tea or water."
+        bases:
+          "Sipendi": "I do not like"
+          "chai": "tea"
+          "wala": "and"
+          "maji": "water"
+      "Sitaki kula wala kunywa.":
+        native: "I do not want to eat or drink."
+        bases:
+          "Sitaki": "I do not want"
+          "kula": "to eat"
+          "wala": "and"
+          "kunywa": "to drink"
+  "sw-1756":
+    native: "except"
+    notes:
+      "n1": "Conjunction, joins a negative clause with an exception."
+    examples:
+      "Sitaki kitu ila maji.":
+        native: "I want nothing except water."
+        bases:
+          "Sitaki": "I do not want"
+          "kitu": "thing"
+          "ila": "except"
+          "maji": "water"
+      "Ninapenda kila chakula ila maji.":
+        native: "I like every food except water."
+        bases:
+          "Ninapenda": "I like"
+          "kila": "each"
+          "chakula": "food"
+          "ila": "except"
+          "maji": "water"
+  "sw-1757":
+    native: "as"
+    notes:
+      "n1": "Also means: if; and is a preposition (like, as)."
+    examples:
+      "Ninapenda kula kama wewe.":
+        native: "I like to eat as you do."
+        bases:
+          "Ninapenda": "I like"
+          "kula": "to eat"
+          "kama": "as"
+          "wewe": "you"
+      "Ninafanya kazi kama mimi.":
+        native: "I work as I do."
+        bases:
+          "Ninafanya": "I do"
+          "kazi": "work"
+          "kama": "as"
+          "mimi": "I"
+  "sw-1758":
+    native: "that (connecting a clause)"
+    notes:
+      "n1": "Connects a clause to the verb of saying or knowing."
+    examples:
+      "Ninasema kwamba wewe ni mwalimu.":
+        native: "I say that you are a teacher."
+        bases:
+          "Ninasema": "I say"
+          "kwamba": "that"
+          "wewe": "you"
+          "ni": "is, am, are"
+          "mwalimu": "teacher"
+      "Ninasema kwamba mimi ni mwalimu.":
+        native: "I say that I am a teacher."
+        bases:
+          "Ninasema": "I say"
+          "kwamba": "that"
+          "mimi": "I"
+          "ni": "is, am, are"
+          "mwalimu": "teacher"
+  "sw-1759":
+    native: "in order that, so that"
+    notes:
+      "n1": "Conjunction, takes a verb in the subjunctive after it."
+    examples:
+      "Ninafanya kazi ili nipate pesa.":
+        native: "I work so that I can get money."
+        bases:
+          "Ninafanya": "I do"
+          "kazi": "work"
+          "ili": "in order that"
+          "nipate": "I get"
+          "pesa": "money"
+      "Ninasoma ili nipate kazi.":
+        native: "I study so that I can get work."
+        bases:
+          "Ninasoma": "I study"
+          "ili": "in order that"
+          "nipate": "I get"
+          "kazi": "work"
+  "sw-1760":
+    native: "if"
+    notes:
+      "n1": "Conjunction, joins a condition to its result."
+    examples:
+      "Ikiwa wewe unataka, ninataka pia.":
+        native: "If you want, I want too."
+        bases:
+          "Ikiwa": "if"
+          "wewe": "you"
+          "unataka": "you want"
+          "ninataka": "I want"
+          "pia": "also"
+      "Ikiwa wewe unapenda chai, mimi ninapenda pia.":
+        native: "If you like tea, I like it too."
+        bases:
+          "Ikiwa": "if"
+          "wewe": "you"
+          "unapenda": "you like"
+          "chai": "tea"
+          "mimi": "I"
+          "ninapenda": "I like"
+          "pia": "also"
+  "sw-1761":
+    native: "while (during the same time that)"
+    notes:
+      "n1": "Conjunction, joins two actions done at the same time."
+    examples:
+      "Ninasoma huku ninakunywa chai.":
+        native: "I study while drinking tea."
+        bases:
+          "Ninasoma": "I study"
+          "huku": "while"
+          "ninakunywa": "I drink"
+          "chai": "tea"
+      "Ninacheka huku ninacheza.":
+        native: "I laugh while I play."
+        bases:
+          "Ninacheka": "I laugh"
+          "huku": "while"
+          "ninacheza": "I play"
+  "sw-1762":
+    native: "after (later than)"
+    notes:
+      "n1": "Used as baada ya, with ya before the noun or verb."
+    examples:
+      "Baada ya kula, ninataka kulala.":
+        native: "After eating, I want to sleep."
+        bases:
+          "Baada": "after"
+          "ya": "of"
+          "kula": "to eat"
+          "ninataka": "I want"
+          "kulala": "to sleep"
+      "Baada ya kusoma, ninataka kula.":
+        native: "After reading, I want to eat."
+        bases:
+          "Baada": "after"
+          "ya": "of"
+          "kusoma": "to read"
+          "ninataka": "I want"
+          "kula": "to eat"
+  "sw-1763":
+    native: "since"
+    notes:
+      "n1": "Comes before a noun of time."
+    examples:
+      "Ninasoma tangu asubuhi.":
+        native: "I study since morning."
+        bases:
+          "Ninasoma": "I study"
+          "tangu": "since"
+          "asubuhi": "morning"
+      "Ninapenda chai tangu asubuhi.":
+        native: "I have liked tea since morning."
+        bases:
+          "Ninapenda": "I like"
+          "chai": "tea"
+          "tangu": "since"
+          "asubuhi": "morning"
+  "sw-1764":
+    native: "without"
+    notes:
+      "n1": "Comes before a noun or a verb infinitive."
+    examples:
+      "Ninataka kula bila kunywa.":
+        native: "I want to eat without drinking."
+        bases:
+          "Ninataka": "I want"
+          "kula": "to eat"
+          "bila": "without"
+          "kunywa": "to drink"
+      "Ninataka kusoma bila kula.":
+        native: "I want to read without eating."
+        bases:
+          "Ninataka": "I want"
+          "kusoma": "to read"
+          "bila": "without"
+          "kula": "to eat"
+  "sw-1765":
+    native: "in"
+    notes:
+      "n1": "Also means: on, upon; out of; off."
+    examples:
+      "Ninasoma katika shule.":
+        native: "I study at school."
+        bases:
+          "Ninasoma": "I study"
+          "katika": "in"
+          "shule": "school"
+      "Ninafanya kazi katika soko.":
+        native: "I work in the market."
+        bases:
+          "Ninafanya": "I do"
+          "kazi": "work"
+          "katika": "in"
+          "soko": "market"
+  "sw-1766":
+    native: "until, up to, till (both space and time)"
+    notes:
+      "n1": "Comes before a noun of place or time."
+    examples:
+      "Ninataka kusoma hadi jioni.":
+        native: "I want to read until evening."
+        bases:
+          "Ninataka": "I want"
+          "kusoma": "to read"
+          "hadi": "until"
+          "jioni": "evening"
+      "Ninataka kula hadi usiku.":
+        native: "I want to eat until night."
+        bases:
+          "Ninataka": "I want"
+          "kula": "to eat"
+          "hadi": "until"
+          "usiku": "night"
+  "sw-1767":
+    native: "in other words; that is; namely"
+    notes:
+      "n1": "Also an interjection (er, so, well)."
+    examples:
+      "Ni kitu, yaani maji.":
+        native: "It is a thing, that is, water."
+        bases:
+          "Ni": "is, am, are"
+          "kitu": "thing"
+          "yaani": "in other words"
+          "maji": "water"
+      "Ninapenda chai, yaani ninataka chai.":
+        native: "I like tea, that is, I want tea."
+        bases:
+          "Ninapenda": "I like"
+          "chai": "tea"
+          "yaani": "in other words"
+          "ninataka": "I want"
+  "sw-1768":
+    native: "regular, ordinary, normal"
+    notes:
+      "n1": "Invariable adjective: it does not change for noun class. Also a noun (a habit)."
+    examples:
+      "Hii ni kawaida.":
+        native: "This is normal."
+        bases:
+          "Hii": "this"
+          "ni": "is, am, are"
+          "kawaida": "regular"
+      "Maji ni kawaida.":
+        native: "Water is ordinary."
+        bases:
+          "Maji": "water"
+          "ni": "is, am, are"
+          "kawaida": "regular"
+  "sw-1769":
+    native: "finally, at last; in the end"
+    notes:
+      "n1": "Adverb, placed at the start of a clause."
+    examples:
+      "Hatimaye ninataka kula.":
+        native: "Finally I want to eat."
+        bases:
+          "Hatimaye": "finally"
+          "ninataka": "I want"
+          "kula": "to eat"
+      "Hatimaye ninataka kulala.":
+        native: "Finally I want to sleep."
+        bases:
+          "Hatimaye": "finally"
+          "ninataka": "I want"
+          "kulala": "to sleep"
+  "sw-1770":
+    native: "finally"
+    notes:
+      "n1": "Adverb, placed at the start of a clause."
+    examples:
+      "Mwishowe ninataka kulala.":
+        native: "Finally I want to sleep."
+        bases:
+          "Mwishowe": "finally"
+          "ninataka": "I want"
+          "kulala": "to sleep"
+      "Mwishowe ninataka kwenda.":
+        native: "Finally I want to go."
+        bases:
+          "Mwishowe": "finally"
+          "ninataka": "I want"
+          "kwenda": "to walk"
+  "sw-1771":
+    native: "before, prior, firstly"
+    notes:
+      "n1": "Also an adjective (first, initial) and a noun (origin, beginning)."
+    examples:
+      "Awali ninataka kula.":
+        native: "First I want to eat."
+        bases:
+          "Awali": "before"
+          "ninataka": "I want"
+          "kula": "to eat"
+      "Awali ninapenda chai.":
+        native: "At first I like tea."
+        bases:
+          "Awali": "before"
+          "ninapenda": "I like"
+          "chai": "tea"
+  "sw-1772":
+    native: "ready, done, prepared"
+    notes:
+      "n1": "Invariable adjective: it does not change for noun class."
+    examples:
+      "Chakula ni tayari.":
+        native: "The food is ready."
+        bases:
+          "Chakula": "food"
+          "ni": "is, am, are"
+          "tayari": "ready"
+      "Mimi ni tayari.":
+        native: "I am ready."
+        bases:
+          "Mimi": "I"
+          "ni": "is, am, are"
+          "tayari": "ready"
+  "sw-1773":
+    native: "than (used to form comparisons)"
+    notes:
+      "n1": "Comes after the first thing in a comparison, before the second."
+    examples:
+      "Ninapenda chai kuliko maji.":
+        native: "I like tea more than water."
+        bases:
+          "Ninapenda": "I like"
+          "chai": "tea"
+          "kuliko": "than"
+          "maji": "water"
+      "Nyumba ni kubwa kuliko shule.":
+        native: "The house is bigger than the school."
+        bases:
+          "Nyumba": "house"
+          "ni": "is, am, are"
+          "kubwa": "big"
+          "kuliko": "than"
+          "shule": "school"
