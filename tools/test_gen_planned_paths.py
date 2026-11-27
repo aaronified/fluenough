@@ -206,6 +206,49 @@ class OnlyTheNamedLanguages(unittest.TestCase):
         self.assertEqual(gp.LANGS["sat"]["script"], "ol_chiki")
 
 
+class KeepingAchievementSets(unittest.TestCase):
+    """A path's hand-chosen `achievement_sets` survives a regeneration."""
+
+    BLOCK = (
+        "achievement_sets:\n"
+        '  - { id: "pronouns", kind: word, decks: ["af-pronouns"] }\n'
+        '  - id: "past-tense"\n'
+        "    kind: grammar\n"
+        '    decks: ["af-past", "af-read"]\n'
+    )
+
+    def written(self) -> str:
+        return gp.render("af").replace("\nunits:\n", "\n" + self.BLOCK + "units:\n", 1)
+
+    def test_the_block_is_found_with_its_list(self) -> None:
+        self.assertEqual(gp.achievement_sets_block(self.written()), self.BLOCK)
+        self.assertIsNone(gp.achievement_sets_block(gp.render("af")))
+
+    def test_a_forced_rewrite_keeps_the_sets_once(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "decks" / "af" / "af-path.yaml"
+            path.parent.mkdir(parents=True)
+            # An older rendering, so that the rewrite changes the file.
+            path.write_text("# stale\n" + self.written(), encoding="utf-8")
+            self.assertEqual(gp.main(["--root", tmp, "--only", "af", "--force"]), 0)
+            text = path.read_text("utf-8")
+            self.assertEqual(text, self.written())
+            self.assertEqual(text.count("achievement_sets:"), 1)
+            if yaml is not None:
+                sets = yaml.safe_load(text)["achievement_sets"]
+                self.assertEqual([s["id"] for s in sets], ["pronouns", "past-tense"])
+
+    def test_a_path_without_sets_is_rendered_as_before(self) -> None:
+        new = gp.render("af")
+        self.assertEqual(gp.keep_achievement_sets("schema: 1\nunits:\n", new), new)
+
+    def test_a_block_ends_before_the_next_key(self) -> None:
+        text = "id: x\nachievement_sets:\n  - id: a\n\n# note\nunits:\n"
+        self.assertEqual(
+            gp.achievement_sets_block(text), "achievement_sets:\n  - id: a\n"
+        )
+
+
 class SignLanguages(unittest.TestCase):
     """The sign languages (ADR-0056): no sounds, and a path that opens with the
     SignWriting explainer."""

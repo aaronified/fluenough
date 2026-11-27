@@ -24,7 +24,9 @@ for living languages and `levels` for the ancient and reconstructed ones.
 `--only CODES` (comma-separated) writes or checks just the named languages,
 and never overwrites a path file that already exists unless `--force` is
 given: a new course's plan is made in one safe step, without touching the
-hand-edited paths of the others. A code that is a `WIRED` course is wired
+hand-edited paths of the others. A path's `achievement_sets` key (the sets
+the Achievements count, chosen by hand) is kept when its file is rewritten.
+A code that is a `WIRED` course is wired
 only when named. `--check --only X` cannot report drift for a path file
 that exists: it is left alone, so it counts as no difference. Pure Python 3 standard library.
 """
@@ -1141,6 +1143,41 @@ def render(code: str) -> str:
 
 
 # --------------------------------------------------------------------------
+# Keeping a hand-chosen achievement_sets key (#322)
+# --------------------------------------------------------------------------
+def achievement_sets_block(text: str) -> str | None:
+    """The `achievement_sets:` key of a path file with its list, as written,
+    or None when the file has none. The key is chosen by hand, once, in the
+    path file (decision 7 of the achievements mockup), so a regenerated path
+    must carry it over."""
+    lines = text.splitlines(keepends=True)
+    for start, line in enumerate(lines):
+        if not line.startswith("achievement_sets:"):
+            continue
+        end = start + 1
+        while end < len(lines) and (not lines[end].strip() or lines[end][0] in " \t#-"):
+            end += 1
+        # Blank lines and unindented comments after the list head the next key.
+        while end > start + 1 and (not lines[end - 1].strip() or lines[end - 1][0] == "#"):
+            end -= 1
+        block = "".join(lines[start:end])
+        return block if block.endswith("\n") else block + "\n"
+    return None
+
+
+def keep_achievement_sets(old: str, new: str) -> str:
+    """[new], a freshly rendered path, with the `achievement_sets` key of
+    [old], the file it replaces, put before its `units:`. Unchanged when
+    [old] has none, or [new] already has one."""
+    block = achievement_sets_block(old)
+    if block is None or achievement_sets_block(new) is not None:
+        return new
+    marker = "\nunits:\n"
+    at = new.index(marker) + 1
+    return new[:at] + block + new[at:]
+
+
+# --------------------------------------------------------------------------
 # Wiring unit 1 of the courses that already have a full all-planned path
 # --------------------------------------------------------------------------
 def wire_unit_one(code: str, text: str) -> str:
@@ -1187,6 +1224,8 @@ def main(argv: list[str] | None = None) -> int:
         if only is not None and path.exists() and not args.force:
             print(f"{code}: {path.name} exists, left alone (--force rewrites it)")
             continue
+        if path.exists():
+            text = keep_achievement_sets(path.read_text(encoding="utf-8"), text)
         if not path.exists() or path.read_text(encoding="utf-8") != text:
             stale += 1
             if not args.check:
