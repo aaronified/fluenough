@@ -2836,6 +2836,42 @@
   "@importFetch": {
     "description": "Button that downloads and validates a linked deck."
   },
+  "importFetching": "Fetching…",
+  "@importFetching": {
+    "description": "Button label while a linked deck is downloading."
+  },
+  "importLinkNotALink": "That isn’t a web link. Paste a link that starts with https://",
+  "@importLinkNotALink": {
+    "description": "Why a deck link was refused: what was typed is not a web address."
+  },
+  "importLinkNotHttps": "Only secure links, starting with https://, can be used.",
+  "@importLinkNotHttps": {
+    "description": "Why a deck link was refused: it, or a redirect from it, is not https."
+  },
+  "importLinkOffline": "The link couldn’t be reached. Check your connection and try again.",
+  "@importLinkOffline": {
+    "description": "Why a deck link failed: no network, a broken connection or a timeout."
+  },
+  "importLinkNotFound": "Nothing was found at that link.",
+  "@importLinkNotFound": {
+    "description": "Why a deck link failed: the site answered not found."
+  },
+  "importLinkRefused": "The site refused the request, or is too busy. Try again later.",
+  "@importLinkRefused": {
+    "description": "Why a deck link failed: the site answered forbidden, unauthorised or too many requests."
+  },
+  "importLinkTooLarge": "That file is too large to be a deck.",
+  "@importLinkTooLarge": {
+    "description": "Why a deck link failed: the reply is larger than a deck may be."
+  },
+  "importLinkNotText": "The file at that link isn’t text, so it can’t be a deck.",
+  "@importLinkNotText": {
+    "description": "Why a deck link failed: the reply is not readable text."
+  },
+  "importLinkBadReply": "The site answered with an error, so the deck couldn’t be downloaded.",
+  "@importLinkBadReply": {
+    "description": "Why a deck link failed: another error, or too many redirects."
+  },
   "importChoose": "Choose file",
   "@importChoose": {
     "description": "Button that picks a file to import."

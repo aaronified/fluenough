@@ -22,6 +22,7 @@ import 'app/stored_downloaded_decks.dart';
 import 'app/web_install.dart';
 import 'app/web_platform.dart';
 import 'app/web_deck_fetcher.dart';
+import 'core/decks/deck_link.dart';
 import 'app/web_frame.dart';
 import 'core/scheduling/skill_fit.dart';
 import 'core/sound/system_sound_check.dart';
@@ -72,6 +73,7 @@ Future<void> main() async {
             onProblem: (problem) => log.warning('Culture images: $problem'),
           ),
         ),
+        deckLinks: HttpDeckLinkFetcher(),
         progress: storage.progress,
         synonymLoader: loadSynonymSets,
         settings: storage.settings,

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Add a deck from a link.** On Add a deck, From a link downloads a deck file from a secure https link, checks it as it checks a file from your phone, and asks before it replaces a deck you added before.
+
 ## [0.12.2] - 2026-11-23
 
 - **Faster start.** The app opens straight to your language and loads the others when you pick them.
