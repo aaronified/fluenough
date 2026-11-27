@@ -186,7 +186,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#232](https://github.com/aaronified/fluenough/issues/232) Plan: Play Protect and developer verification
 - [#234](https://github.com/aaronified/fluenough/issues/234) Plan: word-order tiles without giveaways, and with extra tiles
 - [#285](https://github.com/aaronified/fluenough/issues/285) Research and standards: owner decisions before building
-- [#286](https://github.com/aaronified/fluenough/issues/286) Research and standards: the citations file and parser
 - [#287](https://github.com/aaronified/fluenough/issues/287) Research and standards: the page, in place of Sources
 - [#288](https://github.com/aaronified/fluenough/issues/288) Research and standards: the README section, kept in step
 - [#289](https://github.com/aaronified/fluenough/issues/289) Research and standards: check every citation
