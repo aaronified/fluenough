@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Grammar mistakes explained.** When a wrong grammar answer is another form of the same word, such as the "we" form for "you all", or the dictionary form, the feedback now says which form you gave.
 - **Add a deck from a link.** On Add a deck, From a link downloads a deck file from a secure https link, checks it as it checks a file from your phone, and asks before it replaces a deck you added before.
 
 ## [0.12.2] - 2026-11-23
