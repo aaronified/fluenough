@@ -1405,7 +1405,12 @@ class DrillSession extends ChangeNotifier {
     // learner's answers moved on since the queue was made) is asked its usual
     // way.
     if (item.ask == Ask.cloze && cloze == null) {
-      return item.card.rearranges ? Ask.rearrange : Ask.own;
+      final card = item.card;
+      if (card.rearranges) return Ask.rearrange;
+      // Where the language is not typed, production is chosen.
+      return !_state.isTyped(card) && _state.canChoose(card, Ask.chooseWord)
+          ? Ask.chooseWord
+          : Ask.own;
     }
     return item.mode == DrillMode.grammarUnderstood &&
             item.ask == Ask.own &&

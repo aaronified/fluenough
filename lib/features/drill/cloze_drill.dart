@@ -151,7 +151,7 @@ class ClozeDrill extends StatelessWidget {
                         kind: FeedbackKind.wrong,
                         title: l10n.feedbackWrong,
                         detail: l10n.feedbackAnswer(view.answer),
-                        quotes: <String>[if (writing != null) sentence],
+                        quotes: <String>[if (writing != null) view.answer],
                         language: writing,
                       )),
     );
