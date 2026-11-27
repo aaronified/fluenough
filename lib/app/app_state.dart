@@ -4118,6 +4118,7 @@ class AppState extends ChangeNotifier {
       final language = deckOf(item.card)?.language;
       return language != null && canSpeak(language);
     },
+    canCloze: (item) => canCloze(item.card),
   );
 
   // ---------------------------------------------------------------------------

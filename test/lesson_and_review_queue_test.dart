@@ -235,6 +235,9 @@ Future<void> finishLesson(WidgetTester tester) async {
           session.match(entry, entry);
         }
         session.next();
+      case Ask.cloze:
+        session.pickCloze(session.clozeView!.answer);
+        session.next();
       case Ask.rearrange:
         final words = tilesOf(
           session.rearrangesReading ? card.reading! : card.target,

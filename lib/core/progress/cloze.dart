@@ -367,35 +367,44 @@ class ClozeBank {
   }
 
   /// Whether [card] can be asked as a cloze now: one of its sentences has a
-  /// gap to offer and enough known words to choose among. Kept until the
-  /// bank is made again, which is when the learner's answers change.
+  /// gap to offer and enough other known words of its kind to choose among,
+  /// as [make] finds. Kept until the bank is made again, which is when the
+  /// learner's answers change.
   bool canAsk(Card card) => _asked.putIfAbsent(card.id, () {
+    final random = math.Random(0);
     for (final (source, only) in sourcesOf(card)) {
-      if (gapsIn(source, only: only).isNotEmpty) return true;
+      for (final gap in gapsIn(source, only: only)) {
+        final wrong = _distractorsFor(source, gap, random);
+        if (wrong.length >= kClozeMinOptions - 1) return true;
+      }
     }
     return false;
   });
 
   /// The cloze of one of [card]'s sentences, drawn with [random]; null where
   /// it has no sentence with a gap and at least two other known words to
-  /// offer with it. The gap is a word shown as it stands in the sentence, as
-  /// the card teaches it, where the sentence has one: an inflected word is
-  /// a gap only when it is the only kind there is.
+  /// offer with it. A gap is a word as its card teaches it, where the
+  /// sentence has one: an inflected word, whose look would tell it apart from
+  /// the dictionary forms offered with it, is a gap only when no other is.
   Cloze? make(Card card, {required math.Random random}) {
     final sources = List<(ClozeSource, String?)>.of(sourcesOf(card));
     sources.shuffle(random);
     for (final (source, only) in sources) {
       final gaps = gapsIn(source, only: only);
-      if (gaps.isEmpty) continue;
       final plain = <ClozeGap>[
         for (final gap in gaps)
           if (_isPlain(source, gap)) gap,
-      ];
-      final pool = plain.isEmpty ? gaps : plain;
-      final gap = pool[random.nextInt(pool.length)];
-      final distractors = _distractorsFor(source, gap, random);
-      if (distractors.length < kClozeMinOptions - 1) continue;
-      return Cloze(source: source, gap: gap, distractors: distractors);
+      ]..shuffle(random);
+      final inflected = <ClozeGap>[
+        for (final gap in gaps)
+          if (!_isPlain(source, gap)) gap,
+      ]..shuffle(random);
+      for (final gap in <ClozeGap>[...plain, ...inflected]) {
+        final distractors = _distractorsFor(source, gap, random);
+        if (distractors.length >= kClozeMinOptions - 1) {
+          return Cloze(source: source, gap: gap, distractors: distractors);
+        }
+      }
     }
     return null;
   }

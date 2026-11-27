@@ -20,6 +20,7 @@ import '../../ui/widgets/snack.dart';
 import '../script/script_guide_page.dart';
 import '../summary/summary_page.dart';
 import 'choice_drill.dart';
+import 'cloze_drill.dart';
 import 'drill_preset.dart';
 import 'drill_session.dart';
 import 'grammar_drill.dart';
@@ -404,6 +405,11 @@ class _DrillPageState extends State<DrillPage> {
         onClose: _close,
       ),
       _ when session.ask == Ask.matchPairs => MatchDrill(
+        key: ValueKey<int>(session.position),
+        session: session,
+        onClose: _close,
+      ),
+      _ when session.ask == Ask.cloze => ClozeDrill(
         key: ValueKey<int>(session.position),
         session: session,
         onClose: _close,

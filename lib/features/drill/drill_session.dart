@@ -21,6 +21,7 @@ import '../../core/models/drill_mode.dart';
 import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
 import '../../core/network/network_probe.dart';
+import '../../core/progress/cloze.dart';
 import '../../core/scheduling/daily_timer.dart';
 import '../../core/scheduling/look_alike_options.dart';
 import '../../core/scheduling/picture_choice.dart';
@@ -84,6 +85,29 @@ class _Held {
   final Ask asked;
 }
 
+/// The cloze of the current item (#321), made once when it is first asked
+/// for, and as it is shown: [cloze] is null where the item has none to offer,
+/// so that it is asked its usual way.
+class _ClozeRun {
+  _ClozeRun(this.cloze, this.first);
+
+  /// The sentence, its gap and the wrong words.
+  final Cloze? cloze;
+
+  /// The question in the language's first script: what is shown where the
+  /// learner's script or Latin letters cannot show it. Non-null with [cloze].
+  final ClozeView? first;
+
+  /// The question as shown in the script and letters chosen, and which that
+  /// was ([viewKey]), so that the words keep their places until the learner
+  /// switches.
+  ClozeView? view;
+  String? viewKey;
+
+  /// The word the learner chose, once they have.
+  String? picked;
+}
+
 /// One card as the learner left it: kept so that a swipe back shows it
 /// again, read-only (#509, phase 0). Only the parts a drill draws from.
 class _Frame {
@@ -105,6 +129,7 @@ class _Frame {
     required this.retried,
     required this.retries,
     required this.showingPassage,
+    required this.clozeRun,
   });
 
   final int index;
@@ -124,6 +149,7 @@ class _Frame {
   final TypedAnswer? retried;
   final int retries;
   final bool showingPassage;
+  final _ClozeRun? clozeRun;
 }
 
 /// How a typed answer is typed: in the language's own script, or in Latin
@@ -349,6 +375,7 @@ class DrillSession extends ChangeNotifier {
     retried: _retried,
     retries: _retries,
     showingPassage: _showingPassage,
+    clozeRun: _clozeRun,
   );
 
   void _restore(_Frame frame) {
@@ -375,6 +402,7 @@ class DrillSession extends ChangeNotifier {
     _retried = frame.retried;
     _retries = frame.retries;
     _showingPassage = frame.showingPassage;
+    _clozeRun = frame.clozeRun;
     _unheard = null;
     _networkWhy = null;
     _selfFailure = null;
@@ -774,6 +802,7 @@ class DrillSession extends ChangeNotifier {
         item.mode == DrillMode.recognition ||
         question != null ||
         ask.chooses ||
+        ask == Ask.cloze ||
         ask == Ask.matchPairs) {
       return;
     }
@@ -1370,18 +1399,130 @@ class DrillSession extends ChangeNotifier {
   /// How the current item is asked. Grammar understood is only ever
   /// asked by choosing the meaning (DECK-FORMAT.md, Rules decks), whatever
   /// built the item, where the card's forms allow it ([chooseFormMeaningType]).
-  Ask get ask =>
-      item.mode == DrillMode.grammarUnderstood &&
-          item.ask == Ask.own &&
-          chooseFormMeaningType.eligible(
-            item,
-            QuestionContext(
-              canChoose: (_) => true,
-              siblingsOf: _state.siblingsOf,
-            ),
-          )
-      ? Ask.chooseFormMeaning
-      : item.ask;
+  Ask get ask {
+    // A cloze with no sentence and known word to leave out after all (the
+    // learner's answers moved on since the queue was made) is asked its usual
+    // way.
+    if (item.ask == Ask.cloze && cloze == null) {
+      return item.card.rearranges ? Ask.rearrange : Ask.own;
+    }
+    return item.mode == DrillMode.grammarUnderstood &&
+            item.ask == Ask.own &&
+            chooseFormMeaningType.eligible(
+              item,
+              QuestionContext(
+                canChoose: (_) => true,
+                siblingsOf: _state.siblingsOf,
+              ),
+            )
+        ? Ask.chooseFormMeaning
+        : item.ask;
+  }
+
+  /// The cloze of the current item, made when it is first asked for, or null
+  /// where it is not asked as one, or has no sentence with a gap to offer.
+  Cloze? get cloze => _run?.cloze;
+
+  _ClozeRun? _clozeRun;
+
+  _ClozeRun? get _run {
+    if (item.ask != Ask.cloze) return null;
+    return _clozeRun ??= _makeCloze();
+  }
+
+  _ClozeRun _makeCloze() {
+    try {
+      final made = _state.clozeFor(item.card, random: _random);
+      final first = made?.view(
+        firstScript: deck.language.script,
+        random: _random,
+      );
+      if (made != null && first != null) return _ClozeRun(made, first);
+    } on Object catch (error, stack) {
+      _state.log.error(
+        describeError('Cloze of ${item.card.id} left out', error, stack),
+      );
+    }
+    return _ClozeRun(null, null);
+  }
+
+  /// The current cloze as shown, in the script the learner writes in or in
+  /// Latin letters, as the Script / Latin letters choice says (as the word
+  /// order drill's tiles are): the language's first script where the
+  /// sentence cannot be shown so. Null when there is no cloze.
+  ClozeView? get clozeView {
+    final run = _run;
+    final made = run?.cloze;
+    if (run == null || made == null) return null;
+    final reading = transliterating;
+    final script = inputScript;
+    final key = '$reading|$script';
+    if (run.viewKey != key) {
+      run.viewKey = key;
+      var shown = made.view(
+        firstScript: deck.language.script,
+        random: _random,
+        script: script,
+        reading: reading,
+      );
+      // Latin letters the sentence cannot show: its script.
+      if (shown == null && reading) {
+        shown = made.view(
+          firstScript: deck.language.script,
+          random: _random,
+          script: script,
+        );
+      }
+      run.view = shown;
+    }
+    return run.view ?? run.first;
+  }
+
+  /// Whether the learner can switch the cloze between scripts and Latin
+  /// letters: they write in more than one script, or the sentence has a
+  /// reading to show.
+  bool get clozeSwitchable {
+    final made = cloze;
+    if (made == null) return false;
+    final reading = made.source.reading;
+    final hasReading =
+        reading != null &&
+        wordSpans(reading).length == made.source.spans.length;
+    return (canTransliterate && hasReading) || writeScripts.length > 1;
+  }
+
+  /// The word the learner chose on the current cloze, once they have.
+  String? get clozePicked => _run?.picked;
+
+  /// Chooses [option], a word of [clozeView]'s options, and records it at
+  /// once: Hard (3) if it is the word that fills the gap, as every right
+  /// choice in Write is ([scheduledChoiceGrade], ADR-0034), else 1. Graded by
+  /// the exact word, nothing nearer.
+  void pickCloze(String option) {
+    if (readOnly) return;
+    final view = clozeView;
+    final run = _run;
+    if (ask != Ask.cloze ||
+        view == null ||
+        run == null ||
+        _phase != DrillPhase.prompt ||
+        !view.options.contains(option)) {
+      return;
+    }
+    final right = view.isRight(option);
+    final grade = right ? scheduledChoiceGrade : AnswerOutcome.wrong.toGrade();
+    run.picked = option;
+    _answer = TypedAnswer(
+      typed: option,
+      graded: right
+          ? GradedAnswer(AnswerOutcome.exact, matched: option)
+          : const GradedAnswer(AnswerOutcome.wrong, matched: null),
+      grade: grade,
+    );
+    _record(grade, answerGiven: option);
+    _phase = DrillPhase.feedback;
+    notifyListeners();
+  }
 
   /// How many options a choice question offers at most.
   static const int optionCount = 4;
@@ -1794,7 +1935,12 @@ class DrillSession extends ChangeNotifier {
       return null;
     }
     final String script;
-    if (ask == Ask.rearrange) {
+    if (ask == Ask.cloze) {
+      // Chosen among words in the script, or in Latin letters.
+      final view = clozeView;
+      if (view == null || view.reading) return null;
+      script = view.script;
+    } else if (ask == Ask.rearrange) {
       if (rearrangesReading) return null;
       script = inputLanguage.script;
     } else if (ask == Ask.own && _typedModes.contains(mode)) {
@@ -1952,6 +2098,7 @@ class DrillSession extends ChangeNotifier {
     _missed.clear();
     _tiles = null;
     _placed.clear();
+    _clozeRun = null;
     _hearing = false;
     _unheard = null;
     _networkWhy = null;
