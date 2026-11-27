@@ -209,8 +209,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#320](https://github.com/aaronified/fluenough/issues/320) Sentence building: unlocking, the drill and grading
 - [#321](https://github.com/aaronified/fluenough/issues/321) Sentence building: cloze
 - [#322](https://github.com/aaronified/fluenough/issues/322) Achievements: rules over the log
-- [#323](https://github.com/aaronified/fluenough/issues/323) Achievements: summary, Progress grid and badges
-- [#324](https://github.com/aaronified/fluenough/issues/324) Achievements: level badges from the B1 marks
 - [#325](https://github.com/aaronified/fluenough/issues/325) Audio drills: the audio service, controls and queue
 - [#326](https://github.com/aaronified/fluenough/issues/326) Audio drills: grading by the recogniser and the screen-off fallback
 - [#328](https://github.com/aaronified/fluenough/issues/328) Explain mistakes: rules a card can name
