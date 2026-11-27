@@ -1,0 +1,357 @@
+schema: 1
+id: "sw-quantities"
+part: "core"
+kind: "vocab"
+language: { code: "sw", iso639_3: "swh", name: "Swahili", script: "latin", tts: "sw-KE", icon: "Sw" }
+license: "CC-BY-SA-4.0"
+theme: "quantities"
+tags: ["unreviewed"]
+
+cards:
+  - id: "sw-1790"
+    target: "kila"
+    ipa: "ˈkila"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kila siku ninataka chai.", ipa: "ˈkila ˈsiku ninaˈtaka ˈtʃai", bases: [{ word: "Kila", base: "kila" }, { word: "siku", base: "siku" }, { word: "ninataka", base: "taka" }, { word: "chai", base: "chai" }] }
+      - { target: "Ninapenda kula kila siku.", ipa: "ninaˈpenda ˈkula ˈkila ˈsiku", bases: [{ word: "Ninapenda", base: "penda" }, { word: "kula", base: "kula" }, { word: "kila", base: "kila" }, { word: "siku", base: "siku" }] }
+  - id: "sw-1791"
+    target: "kidogo"
+    ipa: "kiˈdoɡo"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka maji kidogo.", ipa: "ninaˈtaka ˈmadʒi kiˈdoɡo", bases: [{ word: "Ninataka", base: "taka" }, { word: "maji", base: "maji" }, { word: "kidogo", base: "kidogo" }] }
+      - { target: "Ninapenda kula kidogo.", ipa: "ninaˈpenda ˈkula kiˈdoɡo", bases: [{ word: "Ninapenda", base: "penda" }, { word: "kula", base: "kula" }, { word: "kidogo", base: "kidogo" }] }
+  - id: "sw-1792"
+    target: "nusu"
+    ipa: "ˈnusu"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hii ni nusu.", ipa: "ˈhii ni ˈnusu", bases: [{ word: "Hii", base: "hii" }, { word: "ni", base: "ni" }, { word: "nusu", base: "nusu" }] }
+      - { target: "Ninataka nusu ya mkate.", ipa: "ninaˈtaka ˈnusu ja mˈkate", bases: [{ word: "Ninataka", base: "taka" }, { word: "nusu", base: "nusu" }, { word: "ya", base: "a" }, { word: "mkate", base: "mkate" }] }
+  - id: "sw-1793"
+    target: "robo"
+    ipa: "ˈɾobo"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hii ni robo.", ipa: "ˈhii ni ˈɾobo", bases: [{ word: "Hii", base: "hii" }, { word: "ni", base: "ni" }, { word: "robo", base: "robo" }] }
+      - { target: "Ninataka robo ya maji.", ipa: "ninaˈtaka ˈɾobo ja ˈmadʒi", bases: [{ word: "Ninataka", base: "taka" }, { word: "robo", base: "robo" }, { word: "ya", base: "a" }, { word: "maji", base: "maji" }] }
+  - id: "sw-1794"
+    target: "zaidi"
+    ipa: "zaˈidi"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka zaidi.", ipa: "ninaˈtaka zaˈidi", bases: [{ word: "Ninataka", base: "taka" }, { word: "zaidi", base: "zaidi" }] }
+      - { target: "Ninapenda chai zaidi.", ipa: "ninaˈpenda ˈtʃai zaˈidi", bases: [{ word: "Ninapenda", base: "penda" }, { word: "chai", base: "chai" }, { word: "zaidi", base: "zaidi" }] }
+  - id: "sw-1795"
+    target: "kiasi"
+    ipa: "kiˈasi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka kiasi.", ipa: "ninaˈtaka kiˈasi", bases: [{ word: "Ninataka", base: "taka" }, { word: "kiasi", base: "kiasi" }] }
+      - { target: "Ninataka kiasi tu.", ipa: "ninaˈtaka kiˈasi tu", bases: [{ word: "Ninataka", base: "taka" }, { word: "kiasi", base: "kiasi" }, { word: "tu", base: "tu" }] }
+  - id: "sw-1796"
+    target: "jumla"
+    ipa: "ˈdʒumla"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hii ni jumla.", ipa: "ˈhii ni ˈdʒumla", bases: [{ word: "Hii", base: "hii" }, { word: "ni", base: "ni" }, { word: "jumla", base: "jumla" }] }
+      - { target: "Ninataka jumla ya pesa.", ipa: "ninaˈtaka ˈdʒumla ja ˈpesa", bases: [{ word: "Ninataka", base: "taka" }, { word: "jumla", base: "jumla" }, { word: "ya", base: "a" }, { word: "pesa", base: "pesa" }] }
+  - id: "sw-1797"
+    target: "idadi"
+    ipa: "iˈdadi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hii ni idadi.", ipa: "ˈhii ni iˈdadi", bases: [{ word: "Hii", base: "hii" }, { word: "ni", base: "ni" }, { word: "idadi", base: "idadi" }] }
+      - { target: "Ninataka idadi ya watu.", ipa: "ninaˈtaka iˈdadi ja ˈwatu", bases: [{ word: "Ninataka", base: "taka" }, { word: "idadi", base: "idadi" }, { word: "ya", base: "a" }, { word: "watu", base: "mtu" }] }
+  - id: "sw-1798"
+    target: "kamili"
+    ipa: "kaˈmili"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hii ni kitabu kamili.", ipa: "ˈhii ni kiˈtabu kaˈmili", bases: [{ word: "Hii", base: "hii" }, { word: "ni", base: "ni" }, { word: "kitabu", base: "kitabu" }, { word: "kamili", base: "kamili" }] }
+      - { target: "Ninataka chakula kamili.", ipa: "ninaˈtaka tʃaˈkula kaˈmili", bases: [{ word: "Ninataka", base: "taka" }, { word: "chakula", base: "chakula" }, { word: "kamili", base: "kamili" }] }
+  - id: "sw-1799"
+    target: "tele"
+    ipa: "ˈtele"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Maji ni tele.", ipa: "ˈmadʒi ni ˈtele", bases: [{ word: "Maji", base: "maji" }, { word: "ni", base: "ni" }, { word: "tele", base: "tele" }] }
+      - { target: "Chakula ni tele.", ipa: "tʃaˈkula ni ˈtele", bases: [{ word: "Chakula", base: "chakula" }, { word: "ni", base: "ni" }, { word: "tele", base: "tele" }] }
+  - id: "sw-1800"
+    target: "baadhi"
+    ipa: "baˈaði"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Baadhi ya watu wanapenda chai.", ipa: "baˈaði ja ˈwatu wanaˈpenda ˈtʃai", bases: [{ word: "Baadhi", base: "baadhi" }, { word: "ya", base: "a" }, { word: "watu", base: "mtu" }, { word: "wanapenda", base: "penda" }, { word: "chai", base: "chai" }] }
+      - { target: "Ninataka baadhi ya maji.", ipa: "ninaˈtaka baˈaði ja ˈmadʒi", bases: [{ word: "Ninataka", base: "taka" }, { word: "baadhi", base: "baadhi" }, { word: "ya", base: "a" }, { word: "maji", base: "maji" }] }
+  - id: "sw-1801"
+    target: "kadhaa"
+    ipa: "kaˈðaa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ninataka vitabu kadhaa.", ipa: "ninaˈtaka viˈtabu kaˈðaa", bases: [{ word: "Ninataka", base: "taka" }, { word: "vitabu", base: "kitabu" }, { word: "kadhaa", base: "kadhaa" }] }
+      - { target: "Ninataka mikate kadhaa.", ipa: "ninaˈtaka miˈkate kaˈðaa", bases: [{ word: "Ninataka", base: "taka" }, { word: "mikate", base: "mkate" }, { word: "kadhaa", base: "kadhaa" }] }
+  - id: "sw-1802"
+    target: "wote"
+    ipa: "ˈwote"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "wote", base: "ote" }
+    examples:
+      - { target: "Watu wote wanapenda chai.", ipa: "ˈwatu ˈwote wanaˈpenda ˈtʃai", bases: [{ word: "Watu", base: "mtu" }, { word: "wote", base: "wote" }, { word: "wanapenda", base: "penda" }, { word: "chai", base: "chai" }] }
+      - { target: "Ninapenda watu wote.", ipa: "ninaˈpenda ˈwatu ˈwote", bases: [{ word: "Ninapenda", base: "penda" }, { word: "watu", base: "mtu" }, { word: "wote", base: "wote" }] }
+  - id: "sw-1803"
+    target: "yote"
+    ipa: "ˈjote"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "yote", base: "ote" }
+    examples:
+      - { target: "Maji yote ni tele.", ipa: "ˈmadʒi ˈjote ni ˈtele", bases: [{ word: "Maji", base: "maji" }, { word: "yote", base: "yote" }, { word: "ni", base: "ni" }, { word: "tele", base: "tele" }] }
+      - { target: "Ninapenda mikate yote.", ipa: "ninaˈpenda miˈkate ˈjote", bases: [{ word: "Ninapenda", base: "penda" }, { word: "mikate", base: "mkate" }, { word: "yote", base: "yote" }] }
+  - id: "sw-1804"
+    target: "lote"
+    ipa: "ˈlote"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "lote", base: "ote" }
+    examples:
+      - { target: "Ninataka jambo lote.", ipa: "ninaˈtaka ˈdʒambo ˈlote", bases: [{ word: "Ninataka", base: "taka" }, { word: "jambo", base: "jambo" }, { word: "lote", base: "lote" }] }
+      - { target: "Ninapenda jambo lote.", ipa: "ninaˈpenda ˈdʒambo ˈlote", bases: [{ word: "Ninapenda", base: "penda" }, { word: "jambo", base: "jambo" }, { word: "lote", base: "lote" }] }
+  - id: "sw-1805"
+    target: "zote"
+    ipa: "ˈzote"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "zote", base: "ote" }
+    examples:
+      - { target: "Nyumba zote ni kubwa.", ipa: "ˈɲumba ˈzote ni ˈkubwa", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "zote", base: "zote" }, { word: "ni", base: "ni" }, { word: "kubwa", base: "kubwa" }] }
+      - { target: "Ninapenda shule zote.", ipa: "ninaˈpenda ˈʃule ˈzote", bases: [{ word: "Ninapenda", base: "penda" }, { word: "shule", base: "shule" }, { word: "zote", base: "zote" }] }
+  - id: "sw-1806"
+    target: "vyote"
+    ipa: "ˈvjote"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "vyote", base: "ote" }
+    examples:
+      - { target: "Ninataka vitabu vyote.", ipa: "ninaˈtaka viˈtabu ˈvjote", bases: [{ word: "Ninataka", base: "taka" }, { word: "vitabu", base: "kitabu" }, { word: "vyote", base: "vyote" }] }
+      - { target: "Ninapenda vyakula vyote.", ipa: "ninaˈpenda vjaˈkula ˈvjote", bases: [{ word: "Ninapenda", base: "penda" }, { word: "vyakula", base: "chakula" }, { word: "vyote", base: "vyote" }] }
+  - id: "sw-1807"
+    target: "wengi"
+    ipa: "ˈweŋɡi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "wengi", base: "ingi" }
+    examples:
+      - { target: "Watu wengi wanapenda chai.", ipa: "ˈwatu ˈweŋɡi wanaˈpenda ˈtʃai", bases: [{ word: "Watu", base: "mtu" }, { word: "wengi", base: "wengi" }, { word: "wanapenda", base: "penda" }, { word: "chai", base: "chai" }] }
+      - { target: "Watoto wengi wanapenda maji.", ipa: "waˈtoto ˈweŋɡi wanaˈpenda ˈmadʒi", bases: [{ word: "Watoto", base: "mtoto" }, { word: "wengi", base: "wengi" }, { word: "wanapenda", base: "penda" }, { word: "maji", base: "maji" }] }
+  - id: "sw-1808"
+    target: "nyingi"
+    ipa: "ˈɲiŋɡi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "nyingi", base: "ingi" }
+    examples:
+      - { target: "Nyumba nyingi ni kubwa.", ipa: "ˈɲumba ˈɲiŋɡi ni ˈkubwa", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "nyingi", base: "nyingi" }, { word: "ni", base: "ni" }, { word: "kubwa", base: "kubwa" }] }
+      - { target: "Shule nyingi ni kubwa.", ipa: "ˈʃule ˈɲiŋɡi ni ˈkubwa", bases: [{ word: "Shule", base: "shule" }, { word: "nyingi", base: "nyingi" }, { word: "ni", base: "ni" }, { word: "kubwa", base: "kubwa" }] }
+  - id: "sw-1809"
+    target: "mengi"
+    ipa: "ˈmeŋɡi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "mengi", base: "ingi" }
+    examples:
+      - { target: "Maji mengi ni tele.", ipa: "ˈmadʒi ˈmeŋɡi ni ˈtele", bases: [{ word: "Maji", base: "maji" }, { word: "mengi", base: "mengi" }, { word: "ni", base: "ni" }, { word: "tele", base: "tele" }] }
+      - { target: "Ninataka maji mengi.", ipa: "ninaˈtaka ˈmadʒi ˈmeŋɡi", bases: [{ word: "Ninataka", base: "taka" }, { word: "maji", base: "maji" }, { word: "mengi", base: "mengi" }] }
+  - id: "sw-1810"
+    target: "mingi"
+    ipa: "ˈmiŋɡi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "mingi", base: "ingi" }
+    examples:
+      - { target: "Ninataka mikate mingi.", ipa: "ninaˈtaka miˈkate ˈmiŋɡi", bases: [{ word: "Ninataka", base: "taka" }, { word: "mikate", base: "mkate" }, { word: "mingi", base: "mingi" }] }
+      - { target: "Ninapenda mikate mingi sana.", ipa: "ninaˈpenda miˈkate ˈmiŋɡi ˈsana", bases: [{ word: "Ninapenda", base: "penda" }, { word: "mikate", base: "mkate" }, { word: "mingi", base: "mingi" }, { word: "sana", base: "sana" }] }
+  - id: "sw-1811"
+    target: "chache"
+    ipa: "ˈtʃatʃe"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nyumba chache ni kubwa.", ipa: "ˈɲumba ˈtʃatʃe ni ˈkubwa", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "chache", base: "chache" }, { word: "ni", base: "ni" }, { word: "kubwa", base: "kubwa" }] }
+      - { target: "Shule chache ni kubwa.", ipa: "ˈʃule ˈtʃatʃe ni ˈkubwa", bases: [{ word: "Shule", base: "shule" }, { word: "chache", base: "chache" }, { word: "ni", base: "ni" }, { word: "kubwa", base: "kubwa" }] }
+  - id: "sw-1812"
+    target: "wachache"
+    ipa: "waˈtʃatʃe"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "wachache", base: "chache" }
+    examples:
+      - { target: "Watu wachache wanapenda chai.", ipa: "ˈwatu waˈtʃatʃe wanaˈpenda ˈtʃai", bases: [{ word: "Watu", base: "mtu" }, { word: "wachache", base: "wachache" }, { word: "wanapenda", base: "penda" }, { word: "chai", base: "chai" }] }
+      - { target: "Watoto wachache wanapenda maji.", ipa: "waˈtoto waˈtʃatʃe wanaˈpenda ˈmadʒi", bases: [{ word: "Watoto", base: "mtoto" }, { word: "wachache", base: "wachache" }, { word: "wanapenda", base: "penda" }, { word: "maji", base: "maji" }] }
+  - id: "sw-1813"
+    target: "machache"
+    ipa: "maˈtʃatʃe"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "machache", base: "chache" }
+    examples:
+      - { target: "Ninataka maji machache.", ipa: "ninaˈtaka ˈmadʒi maˈtʃatʃe", bases: [{ word: "Ninataka", base: "taka" }, { word: "maji", base: "maji" }, { word: "machache", base: "machache" }] }
+      - { target: "Ninapenda maji machache.", ipa: "ninaˈpenda ˈmadʒi maˈtʃatʃe", bases: [{ word: "Ninapenda", base: "penda" }, { word: "maji", base: "maji" }, { word: "machache", base: "machache" }] }
+  - id: "sw-1814"
+    target: "vichache"
+    ipa: "viˈtʃatʃe"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "vichache", base: "chache" }
+    examples:
+      - { target: "Ninataka vitabu vichache.", ipa: "ninaˈtaka viˈtabu viˈtʃatʃe", bases: [{ word: "Ninataka", base: "taka" }, { word: "vitabu", base: "kitabu" }, { word: "vichache", base: "vichache" }] }
+      - { target: "Ninapenda vitabu vichache.", ipa: "ninaˈpenda viˈtabu viˈtʃatʃe", bases: [{ word: "Ninapenda", base: "penda" }, { word: "vitabu", base: "kitabu" }, { word: "vichache", base: "vichache" }] }
+  - id: "sw-1815"
+    target: "mwingine"
+    ipa: "mwiˈŋɡine"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "mwingine", base: "ingine" }
+    examples:
+      - { target: "Mtu mwingine anataka chai.", ipa: "ˈmtu mwiˈŋɡine anaˈtaka ˈtʃai", bases: [{ word: "Mtu", base: "mtu" }, { word: "mwingine", base: "mwingine" }, { word: "anataka", base: "taka" }, { word: "chai", base: "chai" }] }
+      - { target: "Mtu mwingine anapenda maji.", ipa: "ˈmtu mwiˈŋɡine anaˈpenda ˈmadʒi", bases: [{ word: "Mtu", base: "mtu" }, { word: "mwingine", base: "mwingine" }, { word: "anapenda", base: "penda" }, { word: "maji", base: "maji" }] }
+  - id: "sw-1816"
+    target: "nyingine"
+    ipa: "ɲiˈŋɡine"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "nyingine", base: "ingine" }
+    examples:
+      - { target: "Nyumba nyingine ni kubwa.", ipa: "ˈɲumba ɲiˈŋɡine ni ˈkubwa", bases: [{ word: "Nyumba", base: "nyumba" }, { word: "nyingine", base: "nyingine" }, { word: "ni", base: "ni" }, { word: "kubwa", base: "kubwa" }] }
+      - { target: "Shule nyingine ni kubwa.", ipa: "ˈʃule ɲiˈŋɡine ni ˈkubwa", bases: [{ word: "Shule", base: "shule" }, { word: "nyingine", base: "nyingine" }, { word: "ni", base: "ni" }, { word: "kubwa", base: "kubwa" }] }
+  - id: "sw-1817"
+    target: "kingine"
+    ipa: "kiˈŋɡine"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "kingine", base: "ingine" }
+    examples:
+      - { target: "Ninataka kitabu kingine.", ipa: "ninaˈtaka kiˈtabu kiˈŋɡine", bases: [{ word: "Ninataka", base: "taka" }, { word: "kitabu", base: "kitabu" }, { word: "kingine", base: "kingine" }] }
+      - { target: "Ninapenda chakula kingine.", ipa: "ninaˈpenda tʃaˈkula kiˈŋɡine", bases: [{ word: "Ninapenda", base: "penda" }, { word: "chakula", base: "chakula" }, { word: "kingine", base: "kingine" }] }
+  - id: "sw-1818"
+    target: "wengine"
+    ipa: "weˈŋɡine"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "wengine", base: "ingine" }
+    examples:
+      - { target: "Watu wengine wanapenda chai.", ipa: "ˈwatu weˈŋɡine wanaˈpenda ˈtʃai", bases: [{ word: "Watu", base: "mtu" }, { word: "wengine", base: "wengine" }, { word: "wanapenda", base: "penda" }, { word: "chai", base: "chai" }] }
+      - { target: "Watoto wengine wanataka maji.", ipa: "waˈtoto weˈŋɡine wanaˈtaka ˈmadʒi", bases: [{ word: "Watoto", base: "mtoto" }, { word: "wengine", base: "wengine" }, { word: "wanataka", base: "taka" }, { word: "maji", base: "maji" }] }
+  - id: "sw-1819"
+    target: "haba"
+    ipa: "ˈhaba"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Maji ni haba.", ipa: "ˈmadʒi ni ˈhaba", bases: [{ word: "Maji", base: "maji" }, { word: "ni", base: "ni" }, { word: "haba", base: "haba" }] }
+      - { target: "Chakula ni haba.", ipa: "tʃaˈkula ni ˈhaba", bases: [{ word: "Chakula", base: "chakula" }, { word: "ni", base: "ni" }, { word: "haba", base: "haba" }] }
+  - id: "sw-1820"
+    target: "pungufu"
+    ipa: "puˈŋɡufu"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Pesa ni pungufu.", ipa: "ˈpesa ni puˈŋɡufu", bases: [{ word: "Pesa", base: "pesa" }, { word: "ni", base: "ni" }, { word: "pungufu", base: "pungufu" }] }
+      - { target: "Chakula ni pungufu.", ipa: "tʃaˈkula ni puˈŋɡufu", bases: [{ word: "Chakula", base: "chakula" }, { word: "ni", base: "ni" }, { word: "pungufu", base: "pungufu" }] }
+  - id: "sw-1821"
+    target: "mmoja"
+    ipa: "mˈmodʒa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "mmoja", base: "moja" }
+    examples:
+      - { target: "Mtu mmoja anataka chai.", ipa: "ˈmtu mˈmodʒa anaˈtaka ˈtʃai", bases: [{ word: "Mtu", base: "mtu" }, { word: "mmoja", base: "mmoja" }, { word: "anataka", base: "taka" }, { word: "chai", base: "chai" }] }
+      - { target: "Mtoto mmoja anapenda maji.", ipa: "mˈtoto mˈmodʒa anaˈpenda ˈmadʒi", bases: [{ word: "Mtoto", base: "mtoto" }, { word: "mmoja", base: "mmoja" }, { word: "anapenda", base: "penda" }, { word: "maji", base: "maji" }] }
+  - id: "sw-1822"
+    target: "mwenyewe"
+    ipa: "mweˈɲewe"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Yeye ni mwenyewe.", ipa: "ˈjeje ni mweˈɲewe", bases: [{ word: "Yeye", base: "yeye" }, { word: "ni", base: "ni" }, { word: "mwenyewe", base: "mwenyewe" }] }
+      - { target: "Mwenyewe anataka chai.", ipa: "mweˈɲewe anaˈtaka ˈtʃai", bases: [{ word: "Mwenyewe", base: "mwenyewe" }, { word: "anataka", base: "taka" }, { word: "chai", base: "chai" }] }
