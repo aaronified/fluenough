@@ -1,0 +1,395 @@
+schema: 1
+id: "sw-more-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "sw", iso639_3: "swh", name: "Swahili", script: "latin", tts: "sw-KE", icon: "Sw" }
+license: "CC-BY-SA-4.0"
+theme: "more-verbs"
+tags: ["unreviewed"]
+
+cards:
+  - id: "sw-2070"
+    target: "kuwa na"
+    ipa: "ˈkuwa na"
+    pos: "verb"
+    tags: ["have"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi nina chai.", ipa: "ˈmimi ˈnina ˈtʃai", bases: [{ word: "Mimi", base: "mimi" }, { word: "nina", base: "wa na" }, { word: "chai", base: "chai" }] }
+      - { target: "Wewe una kitabu.", ipa: "ˈwewe ˈuna kiˈtabu", bases: [{ word: "Wewe", base: "wewe" }, { word: "una", base: "wa na" }, { word: "kitabu", base: "kitabu" }] }
+  - id: "sw-2071"
+    target: "kusikiliza"
+    ipa: "kusikiˈliza"
+    pos: "verb"
+    tags: ["listen"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninasikiliza.", ipa: "ˈmimi ninasikiˈliza", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninasikiliza", base: "sikiliza" }] }
+      - { target: "Wewe unasikiliza.", ipa: "ˈwewe unasikiˈliza", bases: [{ word: "Wewe", base: "wewe" }, { word: "unasikiliza", base: "sikiliza" }] }
+  - id: "sw-2072"
+    target: "kutazama"
+    ipa: "kutaˈzama"
+    pos: "verb"
+    tags: ["look"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninatazama.", ipa: "ˈmimi ninataˈzama", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninatazama", base: "tazama" }] }
+      - { target: "Wewe unatazama.", ipa: "ˈwewe unataˈzama", bases: [{ word: "Wewe", base: "wewe" }, { word: "unatazama", base: "tazama" }] }
+  - id: "sw-2073"
+    target: "kurudi"
+    ipa: "kuˈɾudi"
+    pos: "verb"
+    tags: ["move"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninarudi.", ipa: "ˈmimi ninaˈɾudi", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninarudi", base: "rudi" }] }
+      - { target: "Wewe unarudi.", ipa: "ˈwewe unaˈɾudi", bases: [{ word: "Wewe", base: "wewe" }, { word: "unarudi", base: "rudi" }] }
+  - id: "sw-2074"
+    target: "kufika"
+    ipa: "kuˈfika"
+    pos: "verb"
+    tags: ["move"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninafika.", ipa: "ˈmimi ninaˈfika", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninafika", base: "fika" }] }
+      - { target: "Wewe unafika.", ipa: "ˈwewe unaˈfika", bases: [{ word: "Wewe", base: "wewe" }, { word: "unafika", base: "fika" }] }
+  - id: "sw-2075"
+    target: "kumaliza"
+    ipa: "kumaˈliza"
+    pos: "verb"
+    tags: ["finish"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninamaliza.", ipa: "ˈmimi ninamaˈliza", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninamaliza", base: "maliza" }] }
+      - { target: "Wewe unamaliza.", ipa: "ˈwewe unamaˈliza", bases: [{ word: "Wewe", base: "wewe" }, { word: "unamaliza", base: "maliza" }] }
+  - id: "sw-2076"
+    target: "kusubiri"
+    ipa: "kusuˈbiɾi"
+    pos: "verb"
+    tags: ["wait"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninasubiri.", ipa: "ˈmimi ninasuˈbiɾi", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninasubiri", base: "subiri" }] }
+      - { target: "Wewe unasubiri.", ipa: "ˈwewe unasuˈbiɾi", bases: [{ word: "Wewe", base: "wewe" }, { word: "unasubiri", base: "subiri" }] }
+  - id: "sw-2077"
+    target: "kusaidia"
+    ipa: "kusaiˈdia"
+    pos: "verb"
+    tags: ["help"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninasaidia.", ipa: "ˈmimi ninasaiˈdia", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninasaidia", base: "saidia" }] }
+      - { target: "Wewe unasaidia.", ipa: "ˈwewe unasaiˈdia", bases: [{ word: "Wewe", base: "wewe" }, { word: "unasaidia", base: "saidia" }] }
+  - id: "sw-2078"
+    target: "kujibu"
+    ipa: "kuˈdʒibu"
+    pos: "verb"
+    tags: ["talk"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninajibu.", ipa: "ˈmimi ninaˈdʒibu", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninajibu", base: "jibu" }] }
+      - { target: "Wewe unajibu.", ipa: "ˈwewe unaˈdʒibu", bases: [{ word: "Wewe", base: "wewe" }, { word: "unajibu", base: "jibu" }] }
+  - id: "sw-2079"
+    target: "kuuliza"
+    ipa: "kuuˈliza"
+    pos: "verb"
+    tags: ["talk"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninauliza.", ipa: "ˈmimi ninauˈliza", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninauliza", base: "uliza" }] }
+      - { target: "Wewe unauliza.", ipa: "ˈwewe unauˈliza", bases: [{ word: "Wewe", base: "wewe" }, { word: "unauliza", base: "uliza" }] }
+  - id: "sw-2080"
+    target: "kueleza"
+    ipa: "kueˈleza"
+    pos: "verb"
+    tags: ["talk"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninaeleza.", ipa: "ˈmimi ninaeˈleza", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninaeleza", base: "eleza" }] }
+      - { target: "Wewe unaeleza.", ipa: "ˈwewe unaeˈleza", bases: [{ word: "Wewe", base: "wewe" }, { word: "unaeleza", base: "eleza" }] }
+  - id: "sw-2081"
+    target: "kuelewa"
+    ipa: "kueˈlewa"
+    pos: "verb"
+    tags: ["mind"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninaelewa.", ipa: "ˈmimi ninaeˈlewa", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninaelewa", base: "elewa" }] }
+      - { target: "Wewe unaelewa.", ipa: "ˈwewe unaeˈlewa", bases: [{ word: "Wewe", base: "wewe" }, { word: "unaelewa", base: "elewa" }] }
+  - id: "sw-2082"
+    target: "kukumbuka"
+    ipa: "kukuˈmbuka"
+    pos: "verb"
+    tags: ["mind"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninakumbuka.", ipa: "ˈmimi ninakuˈmbuka", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninakumbuka", base: "kumbuka" }] }
+      - { target: "Wewe unakumbuka.", ipa: "ˈwewe unakuˈmbuka", bases: [{ word: "Wewe", base: "wewe" }, { word: "unakumbuka", base: "kumbuka" }] }
+  - id: "sw-2083"
+    target: "kusahau"
+    ipa: "kusaˈhau"
+    pos: "verb"
+    tags: ["mind"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninasahau.", ipa: "ˈmimi ninasaˈhau", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninasahau", base: "sahau" }] }
+      - { target: "Wewe unasahau.", ipa: "ˈwewe unasaˈhau", bases: [{ word: "Wewe", base: "wewe" }, { word: "unasahau", base: "sahau" }] }
+  - id: "sw-2084"
+    target: "kufikiri"
+    ipa: "kufiˈkiɾi"
+    pos: "verb"
+    tags: ["mind"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninafikiri.", ipa: "ˈmimi ninafiˈkiɾi", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninafikiri", base: "fikiri" }] }
+      - { target: "Wewe unafikiri.", ipa: "ˈwewe unafiˈkiɾi", bases: [{ word: "Wewe", base: "wewe" }, { word: "unafikiri", base: "fikiri" }] }
+  - id: "sw-2085"
+    target: "kushika"
+    ipa: "kuˈʃika"
+    pos: "verb"
+    tags: ["hands"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninashika.", ipa: "ˈmimi ninaˈʃika", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninashika", base: "shika" }] }
+      - { target: "Wewe unashika.", ipa: "ˈwewe unaˈʃika", bases: [{ word: "Wewe", base: "wewe" }, { word: "unashika", base: "shika" }] }
+  - id: "sw-2086"
+    target: "kuruka"
+    ipa: "kuˈɾuka"
+    pos: "verb"
+    tags: ["move"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninaruka.", ipa: "ˈmimi ninaˈɾuka", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninaruka", base: "ruka" }] }
+      - { target: "Wewe unaruka.", ipa: "ˈwewe unaˈɾuka", bases: [{ word: "Wewe", base: "wewe" }, { word: "unaruka", base: "ruka" }] }
+  - id: "sw-2087"
+    target: "kusafisha"
+    ipa: "kusaˈfiʃa"
+    pos: "verb"
+    tags: ["clean"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninasafisha.", ipa: "ˈmimi ninasaˈfiʃa", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninasafisha", base: "safisha" }] }
+      - { target: "Wewe unasafisha.", ipa: "ˈwewe unasaˈfiʃa", bases: [{ word: "Wewe", base: "wewe" }, { word: "unasafisha", base: "safisha" }] }
+  - id: "sw-2088"
+    target: "kuosha"
+    ipa: "kuˈoʃa"
+    pos: "verb"
+    tags: ["clean"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninaosha.", ipa: "ˈmimi ninaˈoʃa", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninaosha", base: "osha" }] }
+      - { target: "Wewe unaosha.", ipa: "ˈwewe unaˈoʃa", bases: [{ word: "Wewe", base: "wewe" }, { word: "unaosha", base: "osha" }] }
+  - id: "sw-2089"
+    target: "kuvaa"
+    ipa: "kuˈvaa"
+    pos: "verb"
+    tags: ["clothes"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninavaa.", ipa: "ˈmimi ninaˈvaa", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninavaa", base: "vaa" }] }
+      - { target: "Wewe unavaa.", ipa: "ˈwewe unaˈvaa", bases: [{ word: "Wewe", base: "wewe" }, { word: "unavaa", base: "vaa" }] }
+  - id: "sw-2090"
+    target: "kuoga"
+    ipa: "kuˈoɡa"
+    pos: "verb"
+    tags: ["clean"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninaoga.", ipa: "ˈmimi ninaˈoɡa", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninaoga", base: "oga" }] }
+      - { target: "Wewe unaoga.", ipa: "ˈwewe unaˈoɡa", bases: [{ word: "Wewe", base: "wewe" }, { word: "unaoga", base: "oga" }] }
+  - id: "sw-2091"
+    target: "kusali"
+    ipa: "kuˈsali"
+    pos: "verb"
+    tags: ["faith"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninasali.", ipa: "ˈmimi ninaˈsali", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninasali", base: "sali" }] }
+      - { target: "Wewe unasali.", ipa: "ˈwewe unaˈsali", bases: [{ word: "Wewe", base: "wewe" }, { word: "unasali", base: "sali" }] }
+  - id: "sw-2092"
+    target: "kufundisha"
+    ipa: "kufuˈndiʃa"
+    pos: "verb"
+    tags: ["teach"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninafundisha.", ipa: "ˈmimi ninafuˈndiʃa", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninafundisha", base: "fundisha" }] }
+      - { target: "Wewe unafundisha.", ipa: "ˈwewe unafuˈndiʃa", bases: [{ word: "Wewe", base: "wewe" }, { word: "unafundisha", base: "fundisha" }] }
+  - id: "sw-2093"
+    target: "kukopa"
+    ipa: "kuˈkopa"
+    pos: "verb"
+    tags: ["money"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninakopa.", ipa: "ˈmimi ninaˈkopa", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninakopa", base: "kopa" }] }
+      - { target: "Wewe unakopa.", ipa: "ˈwewe unaˈkopa", bases: [{ word: "Wewe", base: "wewe" }, { word: "unakopa", base: "kopa" }] }
+  - id: "sw-2094"
+    target: "kupumzika"
+    ipa: "kupuˈmzika"
+    pos: "verb"
+    tags: ["rest"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninapumzika.", ipa: "ˈmimi ninapuˈmzika", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninapumzika", base: "pumzika" }] }
+      - { target: "Wewe unapumzika.", ipa: "ˈwewe unapuˈmzika", bases: [{ word: "Wewe", base: "wewe" }, { word: "unapumzika", base: "pumzika" }] }
+  - id: "sw-2095"
+    target: "kutafuta"
+    ipa: "kutaˈfuta"
+    pos: "verb"
+    tags: ["search"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninatafuta.", ipa: "ˈmimi ninataˈfuta", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninatafuta", base: "tafuta" }] }
+      - { target: "Wewe unatafuta.", ipa: "ˈwewe unataˈfuta", bases: [{ word: "Wewe", base: "wewe" }, { word: "unatafuta", base: "tafuta" }] }
+  - id: "sw-2096"
+    target: "kupeleka"
+    ipa: "kupeˈleka"
+    pos: "verb"
+    tags: ["move"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninapeleka.", ipa: "ˈmimi ninapeˈleka", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninapeleka", base: "peleka" }] }
+      - { target: "Wewe unapeleka.", ipa: "ˈwewe unapeˈleka", bases: [{ word: "Wewe", base: "wewe" }, { word: "unapeleka", base: "peleka" }] }
+  - id: "sw-2097"
+    target: "kusafiri"
+    ipa: "kusaˈfiɾi"
+    pos: "verb"
+    tags: ["travel"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninasafiri.", ipa: "ˈmimi ninasaˈfiɾi", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninasafiri", base: "safiri" }] }
+      - { target: "Wewe unasafiri.", ipa: "ˈwewe unasaˈfiɾi", bases: [{ word: "Wewe", base: "wewe" }, { word: "unasafiri", base: "safiri" }] }
+  - id: "sw-2098"
+    target: "kuendesha"
+    ipa: "kueˈndeʃa"
+    pos: "verb"
+    tags: ["travel"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninaendesha.", ipa: "ˈmimi ninaeˈndeʃa", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninaendesha", base: "endesha" }] }
+      - { target: "Wewe unaendesha.", ipa: "ˈwewe unaeˈndeʃa", bases: [{ word: "Wewe", base: "wewe" }, { word: "unaendesha", base: "endesha" }] }
+  - id: "sw-2099"
+    target: "kuzungumza"
+    ipa: "kuzuˈŋɡumza"
+    pos: "verb"
+    tags: ["talk"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninazungumza.", ipa: "ˈmimi ninazuˈŋɡumza", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninazungumza", base: "zungumza" }] }
+      - { target: "Wewe unazungumza.", ipa: "ˈwewe unazuˈŋɡumza", bases: [{ word: "Wewe", base: "wewe" }, { word: "unazungumza", base: "zungumza" }] }
+  - id: "sw-2100"
+    target: "kupiga"
+    ipa: "kuˈpiɡa"
+    pos: "verb"
+    tags: ["hands"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninapiga.", ipa: "ˈmimi ninaˈpiɡa", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninapiga", base: "piga" }] }
+      - { target: "Wewe unapiga.", ipa: "ˈwewe unaˈpiɡa", bases: [{ word: "Wewe", base: "wewe" }, { word: "unapiga", base: "piga" }] }
+  - id: "sw-2101"
+    target: "kukata"
+    ipa: "kuˈkata"
+    pos: "verb"
+    tags: ["hands"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninakata.", ipa: "ˈmimi ninaˈkata", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninakata", base: "kata" }] }
+      - { target: "Wewe unakata.", ipa: "ˈwewe unaˈkata", bases: [{ word: "Wewe", base: "wewe" }, { word: "unakata", base: "kata" }] }
+  - id: "sw-2102"
+    target: "kuogopa"
+    ipa: "kuoˈɡopa"
+    pos: "verb"
+    tags: ["feeling"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninaogopa.", ipa: "ˈmimi ninaoˈɡopa", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninaogopa", base: "ogopa" }] }
+      - { target: "Wewe unaogopa.", ipa: "ˈwewe unaoˈɡopa", bases: [{ word: "Wewe", base: "wewe" }, { word: "unaogopa", base: "ogopa" }] }
+  - id: "sw-2103"
+    target: "kushinda"
+    ipa: "kuˈʃinda"
+    pos: "verb"
+    tags: ["win"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninashinda.", ipa: "ˈmimi ninaˈʃinda", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninashinda", base: "shinda" }] }
+      - { target: "Wewe unashinda.", ipa: "ˈwewe unaˈʃinda", bases: [{ word: "Wewe", base: "wewe" }, { word: "unashinda", base: "shinda" }] }
+  - id: "sw-2104"
+    target: "kufa"
+    ipa: "ˈkufa"
+    pos: "verb"
+    tags: ["life"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mimi ninafa.", ipa: "ˈmimi niˈnafa", bases: [{ word: "Mimi", base: "mimi" }, { word: "ninafa", base: "fa" }] }
+      - { target: "Wewe unafa.", ipa: "ˈwewe uˈnafa", bases: [{ word: "Wewe", base: "wewe" }, { word: "unafa", base: "fa" }] }
