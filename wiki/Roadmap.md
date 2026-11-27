@@ -149,7 +149,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 ## Approved, not scheduled
 
 - [#169](https://github.com/aaronified/fluenough/issues/169) Lessons that start from songs and films learners already know
-- [#170](https://github.com/aaronified/fluenough/issues/170) Bengali: start the course with Ekla Chalo Re
 - [#411](https://github.com/aaronified/fluenough/issues/411) Shareable progress image or summary, built from the review log
 - [#520](https://github.com/aaronified/fluenough/issues/520) Regional flavours: a deck per language after A2, noting major regional variations
 - [#579](https://github.com/aaronified/fluenough/issues/579) Sign languages: a deck format and drills built on images and video
@@ -167,7 +166,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1136](https://github.com/aaronified/fluenough/issues/1136) Phrasal and multi-word verb decks, levelled, in the languages that have them
 - [#1139](https://github.com/aaronified/fluenough/issues/1139) Professional decks: targeted situations for academia, engineering, computer science, medicine, archaeology and other travelling professions (hidden from the main screen, found by search)
 - [#1143](https://github.com/aaronified/fluenough/issues/1143) English Braille as a script of English, not a separate course (the IPA stays separate)
-- [#1146](https://github.com/aaronified/fluenough/issues/1146) Japanese: about 1000 kanji by B1 (deferred)
 - [#1158](https://github.com/aaronified/fluenough/issues/1158) Offline speech recognisers for every priority language (Indic, European, East Asian)
 - [#1221](https://github.com/aaronified/fluenough/issues/1221) IPA keyboard: follow-ups before it is switched on
 - [#1235](https://github.com/aaronified/fluenough/issues/1235) topic_chars tool: robustness follow-ups and the marks/combos decision
@@ -179,7 +177,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#33](https://github.com/aaronified/fluenough/issues/33) Right-to-left: check on a device with a real Urdu deck
 - [#34](https://github.com/aaronified/fluenough/issues/34) Complex script rendering: Nastaliq, conjuncts, matras
 - [#46](https://github.com/aaronified/fluenough/issues/46) Let the user choose the interface language, with translations in plain txt files
-- [#58](https://github.com/aaronified/fluenough/issues/58) Review the unreviewed Hindi and Bengali grammar decks
 - [#99](https://github.com/aaronified/fluenough/issues/99) Culture decks: beyond the basics (tracking)
 - [#101](https://github.com/aaronified/fluenough/issues/101) Culture deck: local mythology and folklore
 - [#102](https://github.com/aaronified/fluenough/issues/102) Culture deck: cuisine
