@@ -15,6 +15,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/expressive_shape.dart';
 import '../../ui/widgets/mode_pill.dart';
 import '../../ui/widgets/stat_tile.dart';
+import '../achievements/achievement_announcement.dart';
 
 /// The end of a session: a pill per skill with its right answers, the streak, what is due tomorrow.
 ///
@@ -127,6 +128,11 @@ class SummaryPage extends StatelessWidget {
                       const SizedBox(height: 24),
                       _Unlocked(unlocked: unlocked),
                     ],
+                    if (finished != null && result.total > 0)
+                      AchievementAnnouncement(
+                        language: finished.code,
+                        since: result.startedAt,
+                      ),
                     const SizedBox(height: 24),
                     Text(
                       l10n.summaryNextDue(state.dueTomorrow()),

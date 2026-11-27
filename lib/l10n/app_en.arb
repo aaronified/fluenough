@@ -18207,5 +18207,753 @@
   "hintExpand": "Expand",
   "@hintExpand": {"description": "Tooltip of the button that opens a group of Reviews to send."},
   "hintCollapse": "Collapse",
-  "@hintCollapse": {"description": "Tooltip of the button that closes a group of Reviews to send."}
+  "@hintCollapse": {"description": "Tooltip of the button that closes a group of Reviews to send."},
+  "achvTitle": "Badges",
+  "@achvTitle": {
+    "description": "Title of the page of badges, opened from the latest-badge line on Progress."
+  },
+  "achvTabsSemantics": "Badge categories",
+  "@achvTabsSemantics": {
+    "description": "Screen-reader label of the tab row of the badges page."
+  },
+  "achvTabLevels": "Levels",
+  "@achvTabLevels": {
+    "description": "Tab of the badges page: the A1, A2 and B1 level badges and the word counts."
+  },
+  "achvTabSkills": "Skills",
+  "@achvTabSkills": {
+    "description": "Tab of the badges page: a Start and a Master badge for each skill."
+  },
+  "achvTabSets": "Sets",
+  "@achvTabSets": {
+    "description": "Tab of the badges page: badges for knowing every card of a set of words or a grammar table."
+  },
+  "achvTabOther": "Other",
+  "@achvTabOther": {
+    "description": "Tab of the badges page: first lesson, days in a row and answer counts."
+  },
+  "achvGroupLevels": "Levels",
+  "@achvGroupLevels": {
+    "description": "Heading over the A1, A2 and B1 badges."
+  },
+  "achvGroupWords": "Words",
+  "@achvGroupWords": {
+    "description": "Heading over the word-count badges (100, 500, 1,000, 2,500 words)."
+  },
+  "achvGroupWordSets": "Word sets",
+  "@achvGroupWordSets": {
+    "description": "Heading over the badges of sets of related words, such as Family."
+  },
+  "achvGroupGrammarTables": "Grammar tables",
+  "@achvGroupGrammarTables": {
+    "description": "Heading over the badges of grammar tables, such as the past tense."
+  },
+  "achvGroupFirsts": "Firsts",
+  "@achvGroupFirsts": {
+    "description": "Heading over the first-lesson badge."
+  },
+  "achvGroupEveryLanguage": "For every language",
+  "@achvGroupEveryLanguage": {
+    "description": "Heading over the badges that count the whole app, not one language: days in a row and answers."
+  },
+  "achvGroupInARow": "In a row",
+  "@achvGroupInARow": {
+    "description": "Heading over the days-in-a-row badges."
+  },
+  "achvGroupAnswers": "Answers",
+  "@achvGroupAnswers": {
+    "description": "Heading over the answer-count badges."
+  },
+  "achvSkillsIntro": "Each skill has a first step and a high bar.",
+  "@achvSkillsIntro": {
+    "description": "Line at the top of the Skills tab of the badges page."
+  },
+  "achvSkillsIntroScript": "Each skill has a first step and a high bar. Read and Write are for the {script} script.",
+  "@achvSkillsIntroScript": {
+    "description": "Line at the top of the Skills tab for a language with a script to read and write.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "achvSetsIntro": "Know every card of a set of related words or rules.",
+  "@achvSetsIntro": {
+    "description": "Line at the top of the Sets tab of the badges page."
+  },
+  "achvSetsEmpty": "No sets are chosen for this course yet.",
+  "@achvSetsEmpty": {
+    "description": "Shown on the Sets tab when the course has no sets to master yet."
+  },
+  "achvNone": "No badges for this course yet.",
+  "@achvNone": {
+    "description": "Shown on the badges page when the course has no badges yet, such as when its decks are not loaded."
+  },
+  "achvStart": "Start",
+  "@achvStart": {
+    "description": "Name of the badge for the first real step of a skill."
+  },
+  "achvMaster": "Master",
+  "@achvMaster": {
+    "description": "Name of the badge for the high bar of a skill."
+  },
+  "achvSkillFull": "{skill} · {part}",
+  "@achvSkillFull": {
+    "description": "Full name of a skill badge: the skill, then Start or Master.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Read"
+      },
+      "part": {
+        "type": "String",
+        "example": "Master"
+      }
+    }
+  },
+  "achvWords": "{count} words",
+  "@achvWords": {
+    "description": "Name of a word-count badge.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "1,000"
+      }
+    }
+  },
+  "achvFirstLesson": "First lesson",
+  "@achvFirstLesson": {
+    "description": "Name of the badge for finishing the first lesson of a language."
+  },
+  "achvDays": "{count} days",
+  "@achvDays": {
+    "description": "Name of a days-in-a-row badge.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "7"
+      }
+    }
+  },
+  "achvAnswersName": "{count} answers",
+  "@achvAnswersName": {
+    "description": "Name of an answer-count badge.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "1,000"
+      }
+    }
+  },
+  "achvLocked": "Locked",
+  "@achvLocked": {
+    "description": "Status under a badge that cannot be earned yet."
+  },
+  "achvNotInPlan": "Not part of your plan",
+  "@achvNotInPlan": {
+    "description": "Status under the badges of a skill the learner marked Leave."
+  },
+  "achvProgressOf": "{have} of {need}",
+  "@achvProgressOf": {
+    "description": "Status under a badge in progress: how far it has got.",
+    "placeholders": {
+      "have": {
+        "type": "String",
+        "example": "312"
+      },
+      "need": {
+        "type": "String",
+        "example": "500"
+      }
+    }
+  },
+  "achvSemEarned": "{name}: earned {date}",
+  "@achvSemEarned": {
+    "description": "Screen-reader label of an earned badge.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "100 words"
+      },
+      "date": {
+        "type": "String",
+        "example": "14 Oct 2026"
+      }
+    }
+  },
+  "achvSemProgress": "{name}: in progress, {status}",
+  "@achvSemProgress": {
+    "description": "Screen-reader label of a badge in progress.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "500 words"
+      },
+      "status": {
+        "type": "String",
+        "example": "312 of 500"
+      }
+    }
+  },
+  "achvSemLocked": "{name}: locked. {how}",
+  "@achvSemLocked": {
+    "description": "Screen-reader label of a locked badge, with how to earn it.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "B1"
+      },
+      "how": {
+        "type": "String",
+        "example": "Know every card on the path up to the B1 mark."
+      }
+    }
+  },
+  "achvSemLeft": "{name}: not part of your plan",
+  "@achvSemLeft": {
+    "description": "Screen-reader label of a badge of a skill the learner marked Leave.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Read \u00b7 Start"
+      }
+    }
+  },
+  "achvHowLevel": "Know every card on the path up to the {level} mark.",
+  "@achvHowLevel": {
+    "description": "How to earn a level badge.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "achvHowWords": "Know {count} words in this language.",
+  "@achvHowWords": {
+    "description": "How to earn a word-count badge.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "500"
+      }
+    }
+  },
+  "achvHowHearStart": "Hear and answer 10 audio cards.",
+  "@achvHowHearStart": {
+    "description": "How to earn the Hear Start badge."
+  },
+  "achvHowSpeakStart": "Say an answer aloud and have it heard.",
+  "@achvHowSpeakStart": {
+    "description": "How to earn the Speak Start badge."
+  },
+  "achvHowReadStart": "Know your first 5 letters of the script.",
+  "@achvHowReadStart": {
+    "description": "How to earn the Read Start badge."
+  },
+  "achvHowWriteStart": "Write your first 5 letters.",
+  "@achvHowWriteStart": {
+    "description": "How to earn the Write Start badge."
+  },
+  "achvHowGestureStart": "Recognise and make 10 signs.",
+  "@achvHowGestureStart": {
+    "description": "How to earn the Gestures Start badge of a sign language."
+  },
+  "achvHowHearMaster": "Know every listening card up to the A2 mark.",
+  "@achvHowHearMaster": {
+    "description": "How to earn the Hear Master badge."
+  },
+  "achvHowSpeakMaster": "Know every speaking card up to the A2 mark.",
+  "@achvHowSpeakMaster": {
+    "description": "How to earn the Speak Master badge."
+  },
+  "achvHowReadMaster": "Know every script and reading card up to the A1 mark.",
+  "@achvHowReadMaster": {
+    "description": "How to earn the Read Master badge."
+  },
+  "achvHowWriteMaster": "Know every writing card up to the A1 mark.",
+  "@achvHowWriteMaster": {
+    "description": "How to earn the Write Master badge."
+  },
+  "achvHowGestureMaster": "Know every gesture card up to the A2 mark.",
+  "@achvHowGestureMaster": {
+    "description": "How to earn the Gestures Master badge of a sign language."
+  },
+  "achvHowSet": "Know every card of {name}.",
+  "@achvHowSet": {
+    "description": "How to earn a set badge.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "family words"
+      }
+    }
+  },
+  "achvHowFirstLesson": "Finish a lesson.",
+  "@achvHowFirstLesson": {
+    "description": "How to earn the first-lesson badge."
+  },
+  "achvHowDays": "Review on {count} days in a row.",
+  "@achvHowDays": {
+    "description": "How to earn a days-in-a-row badge.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "7"
+      }
+    }
+  },
+  "achvHowAnswers": "Give {count} answers in all.",
+  "@achvHowAnswers": {
+    "description": "How to earn an answer-count badge.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "1,000"
+      }
+    }
+  },
+  "achvEarnedOn": "Earned {date}.",
+  "@achvEarnedOn": {
+    "description": "Line of an earned badge sheet: the day the badge was first earned.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "14 Oct 2026"
+      }
+    }
+  },
+  "achvCardsKnown": "{have} of {need} known.",
+  "@achvCardsKnown": {
+    "description": "Line of a badge sheet in progress: cards known so far.",
+    "placeholders": {
+      "have": {
+        "type": "String",
+        "example": "11"
+      },
+      "need": {
+        "type": "String",
+        "example": "16"
+      }
+    }
+  },
+  "achvWordsKnown": "{have} of {need} words known.",
+  "@achvWordsKnown": {
+    "description": "Line of a word-count badge sheet in progress.",
+    "placeholders": {
+      "have": {
+        "type": "String",
+        "example": "312"
+      },
+      "need": {
+        "type": "String",
+        "example": "500"
+      }
+    }
+  },
+  "achvWordsWait": "It fills as you review, and waits if you take a break.",
+  "@achvWordsWait": {
+    "description": "Note on a word-count badge sheet in progress."
+  },
+  "achvMasterWait": "A Master badge asks for a settled skill, so it waits if you take a break.",
+  "@achvMasterWait": {
+    "description": "Note on a Master badge sheet in progress."
+  },
+  "achvSetRule": "A card counts once you know it, the same rule as your level.",
+  "@achvSetRule": {
+    "description": "Note on a set badge sheet."
+  },
+  "achvStillToKnow": "{count, plural, =1{Still to know: 1 card} other{Still to know: {count} cards}}",
+  "@achvStillToKnow": {
+    "description": "Heading over the cards a badge still asks the learner to know.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "17"
+      }
+    }
+  },
+  "achvNextCards": "The next ones:",
+  "@achvNextCards": {
+    "description": "Line over the first few cards a badge still asks for."
+  },
+  "achvFewWords": "A few of your words",
+  "@achvFewWords": {
+    "description": "Heading over some of the words the learner knew when they earned a word-count badge."
+  },
+  "achvSheetWordSet": "Word set",
+  "@achvSheetWordSet": {
+    "description": "Kind of a set badge on its sheet."
+  },
+  "achvSheetGrammarTable": "Grammar table",
+  "@achvSheetGrammarTable": {
+    "description": "Kind of a set badge on its sheet."
+  },
+  "achvLevelFirst": "{level} comes first.",
+  "@achvLevelFirst": {
+    "description": "Line of a locked level sheet: the level to earn before this one.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A2"
+      }
+    }
+  },
+  "achvLearning": "Learning",
+  "@achvLearning": {
+    "description": "Mark of a card the learner has started and does not know yet."
+  },
+  "achvLevelsTitle": "{language} levels",
+  "@achvLevelsTitle": {
+    "description": "Title of the levels sheet.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "achvLevelsFollow": "Level badges follow the marks on the path.",
+  "@achvLevelsFollow": {
+    "description": "Line under the title of the levels sheet."
+  },
+  "achvNextLevel": "Next: {level}",
+  "@achvNextLevel": {
+    "description": "Heading over the bar of the next level on the levels sheet.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A2"
+      }
+    }
+  },
+  "achvLevelCards": "{have} of {need} cards up to the {level} mark are known.",
+  "@achvLevelCards": {
+    "description": "Line under the bar of the next level.",
+    "placeholders": {
+      "have": {
+        "type": "String",
+        "example": "41"
+      },
+      "need": {
+        "type": "String",
+        "example": "62"
+      },
+      "level": {
+        "type": "String",
+        "example": "A2"
+      }
+    }
+  },
+  "achvLevelRule": "A card counts once you know it, so a level can wait while words are still settling.",
+  "@achvLevelRule": {
+    "description": "Note on the levels sheet."
+  },
+  "achvSubline": "{language} · {date}",
+  "@achvSubline": {
+    "description": "Second line of the latest-badge line on Progress: the language and the day.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      },
+      "date": {
+        "type": "String",
+        "example": "14 Oct 2026"
+      }
+    }
+  },
+  "achvRecentSemantics": "Latest badge, {name}, {date}. Opens Badges.",
+  "@achvRecentSemantics": {
+    "description": "Screen-reader label of the latest-badge line on Progress.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "100 words"
+      },
+      "date": {
+        "type": "String",
+        "example": "14 Oct 2026"
+      }
+    }
+  },
+  "achvNewBadge": "New badge",
+  "@achvNewBadge": {
+    "description": "Small heading of the card that announces a badge earned in the session."
+  },
+  "achvMore": "and {count} more · See all",
+  "@achvMore": {
+    "description": "Button under the announced badges when more were earned.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "2"
+      }
+    }
+  },
+  "achvSeeOnProgress": "See on Progress",
+  "@achvSeeOnProgress": {
+    "description": "Button on the session summary that opens the badges."
+  },
+  "achvPastFound": "{count, plural, =1{We found 1 achievement in your past reviews. It is dated when you first met it.} other{We found {count} achievements in your past reviews. Each is dated when you first met it.}}",
+  "@achvPastFound": {
+    "description": "Text of the one quiet card the first summary shows for badges earned by past reviews.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "6"
+      }
+    }
+  },
+  "achvSeeThem": "See them",
+  "@achvSeeThem": {
+    "description": "Button of the past-reviews card: opens the badges."
+  },
+  "achvDoneLevel": "You know every card up to the {level} mark.",
+  "@achvDoneLevel": {
+    "description": "Line of a new level badge on the summary.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "achvDoneWords": "You now know {count} words.",
+  "@achvDoneWords": {
+    "description": "Line of a new word-count badge on the summary.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "100"
+      }
+    }
+  },
+  "achvDoneSet": "You now know all {count} cards of {name}.",
+  "@achvDoneSet": {
+    "description": "Line of a new set badge on the summary.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "16"
+      },
+      "name": {
+        "type": "String",
+        "example": "family words"
+      }
+    }
+  },
+  "achvDoneDays": "You reviewed on {count} days in a row.",
+  "@achvDoneDays": {
+    "description": "Line of a new days-in-a-row badge on the summary.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "7"
+      }
+    }
+  },
+  "achvDoneAnswers": "You have given {count} answers.",
+  "@achvDoneAnswers": {
+    "description": "Line of a new answer-count badge on the summary.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "1,000"
+      }
+    }
+  },
+  "achvDoneFirstLesson": "You finished your first lesson.",
+  "@achvDoneFirstLesson": {
+    "description": "Line of the new first-lesson badge on the summary."
+  },
+  "achvNewSemantics": "New badge: {name}. {line}",
+  "@achvNewSemantics": {
+    "description": "Screen-reader label of an announced badge.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "100 words"
+      },
+      "line": {
+        "type": "String",
+        "example": "You now know 100 words."
+      }
+    }
+  },
+  "achvSetPronouns": "Pronouns",
+  "@achvSetPronouns": {
+    "description": "Short name of the set badge \"Pronouns and people words\", under its icon."
+  },
+  "achvSetPronounsFull": "Pronouns and people words",
+  "@achvSetPronounsFull": {
+    "description": "Full name of the set badge \"Pronouns and people words\", on its sheet."
+  },
+  "achvSetFamily": "Family",
+  "@achvSetFamily": {
+    "description": "Short name of the set badge \"Family words\", under its icon."
+  },
+  "achvSetFamilyFull": "Family words",
+  "@achvSetFamilyFull": {
+    "description": "Full name of the set badge \"Family words\", on its sheet."
+  },
+  "achvSetNumbers120": "Numbers",
+  "@achvSetNumbers120": {
+    "description": "Short name of the set badge \"Numbers 1-20\", under its icon."
+  },
+  "achvSetNumbers120Full": "Numbers 1-20",
+  "@achvSetNumbers120Full": {
+    "description": "Full name of the set badge \"Numbers 1-20\", on its sheet."
+  },
+  "achvSetFood": "Food",
+  "@achvSetFood": {
+    "description": "Short name of the set badge \"Food and drink\", under its icon."
+  },
+  "achvSetFoodFull": "Food and drink",
+  "@achvSetFoodFull": {
+    "description": "Full name of the set badge \"Food and drink\", on its sheet."
+  },
+  "achvSetFestivals": "Festivals",
+  "@achvSetFestivals": {
+    "description": "Short name of the set badge \"Festivals and celebrations\", under its icon."
+  },
+  "achvSetFestivalsFull": "Festivals and celebrations",
+  "@achvSetFestivalsFull": {
+    "description": "Full name of the set badge \"Festivals and celebrations\", on its sheet."
+  },
+  "achvSetNouns": "Noun forms",
+  "@achvSetNouns": {
+    "description": "Short name of the set badge \"Nouns and postpositions\", under its icon."
+  },
+  "achvSetNounsFull": "Nouns and postpositions",
+  "@achvSetNounsFull": {
+    "description": "Full name of the set badge \"Nouns and postpositions\", on its sheet."
+  },
+  "achvSetPast": "Past tense",
+  "@achvSetPast": {
+    "description": "Short name of the set badge \"The past tense table\", under its icon."
+  },
+  "achvSetPastFull": "The past tense table",
+  "@achvSetPastFull": {
+    "description": "Full name of the set badge \"The past tense table\", on its sheet."
+  },
+  "achvSetFuture": "Future tense",
+  "@achvSetFuture": {
+    "description": "Short name of the set badge \"The future tense table\", under its icon."
+  },
+  "achvSetFutureFull": "The future tense table",
+  "@achvSetFutureFull": {
+    "description": "Full name of the set badge \"The future tense table\", on its sheet."
+  },
+  "achvSetRelative": "Relative clauses",
+  "@achvSetRelative": {
+    "description": "Short name of the set badge \"Relative clauses\", under its icon."
+  },
+  "achvSetRelativeFull": "Relative clauses",
+  "@achvSetRelativeFull": {
+    "description": "Full name of the set badge \"Relative clauses\", on its sheet."
+  },
+  "achvSetConditional": "If clauses",
+  "@achvSetConditional": {
+    "description": "Short name of the set badge \"Conditional clauses\", under its icon."
+  },
+  "achvSetConditionalFull": "Conditional clauses",
+  "@achvSetConditionalFull": {
+    "description": "Full name of the set badge \"Conditional clauses\", on its sheet."
+  },
+  "achvSetPurpose": "Purpose",
+  "@achvSetPurpose": {
+    "description": "Short name of the set badge \"Purpose clauses\", under its icon."
+  },
+  "achvSetPurposeFull": "Purpose clauses",
+  "@achvSetPurposeFull": {
+    "description": "Full name of the set badge \"Purpose clauses\", on its sheet."
+  },
+  "achvSetCausative": "Causative",
+  "@achvSetCausative": {
+    "description": "Short name of the set badge \"Causative verbs\", under its icon."
+  },
+  "achvSetCausativeFull": "Causative verbs",
+  "@achvSetCausativeFull": {
+    "description": "Full name of the set badge \"Causative verbs\", on its sheet."
+  },
+  "achvSetIndefinite": "Indefinites",
+  "@achvSetIndefinite": {
+    "description": "Short name of the set badge \"Indefinite words\", under its icon."
+  },
+  "achvSetIndefiniteFull": "Indefinite words",
+  "@achvSetIndefiniteFull": {
+    "description": "Full name of the set badge \"Indefinite words\", on its sheet."
+  },
+  "achvSetPassive": "Passive",
+  "@achvSetPassive": {
+    "description": "Short name of the set badge \"The passive\", under its icon."
+  },
+  "achvSetPassiveFull": "The passive",
+  "@achvSetPassiveFull": {
+    "description": "Full name of the set badge \"The passive\", on its sheet."
+  },
+  "achvSetCompoundVerbs": "Compound verbs",
+  "@achvSetCompoundVerbs": {
+    "description": "Short name of the set badge \"Compound verbs\", under its icon."
+  },
+  "achvSetCompoundVerbsFull": "Compound verbs",
+  "@achvSetCompoundVerbsFull": {
+    "description": "Full name of the set badge \"Compound verbs\", on its sheet."
+  },
+  "achvSetComparison": "Comparing",
+  "@achvSetComparison": {
+    "description": "Short name of the set badge \"Comparison\", under its icon."
+  },
+  "achvSetComparisonFull": "Comparison",
+  "@achvSetComparisonFull": {
+    "description": "Full name of the set badge \"Comparison\", on its sheet."
+  },
+  "achvSetImperatives": "Commands",
+  "@achvSetImperatives": {
+    "description": "Short name of the set badge \"Imperatives\", under its icon."
+  },
+  "achvSetImperativesFull": "Imperatives",
+  "@achvSetImperativesFull": {
+    "description": "Full name of the set badge \"Imperatives\", on its sheet."
+  },
+  "achvSetBeforeAfter": "Before, after",
+  "@achvSetBeforeAfter": {
+    "description": "Short name of the set badge \"Before and after\", under its icon."
+  },
+  "achvSetBeforeAfterFull": "Before and after",
+  "@achvSetBeforeAfterFull": {
+    "description": "Full name of the set badge \"Before and after\", on its sheet."
+  },
+  "achvSetConcessive": "Even if",
+  "@achvSetConcessive": {
+    "description": "Short name of the set badge \"Concessive clauses\", under its icon."
+  },
+  "achvSetConcessiveFull": "Concessive clauses",
+  "@achvSetConcessiveFull": {
+    "description": "Full name of the set badge \"Concessive clauses\", on its sheet."
+  },
+  "achvSetReportedSpeech": "Reported speech",
+  "@achvSetReportedSpeech": {
+    "description": "Short name of the set badge \"Reported speech\", under its icon."
+  },
+  "achvSetReportedSpeechFull": "Reported speech",
+  "@achvSetReportedSpeechFull": {
+    "description": "Full name of the set badge \"Reported speech\", on its sheet."
+  },
+  "achvSkillHeading": "{skill} · {script}",
+  "@achvSkillHeading": {
+    "description": "Heading over a skill's badges on the Skills tab for Read and Write: the skill and the script it is for.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Read"
+      },
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  }
 }

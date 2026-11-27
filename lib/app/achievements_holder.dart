@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:isolate';
 
 import 'package:flutter/foundation.dart';
@@ -5,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import '../core/achievements/achievement.dart';
 import '../core/achievements/achievement_evaluator.dart';
 import '../core/achievements/achievement_facts.dart';
+import '../core/achievements/achievement_news.dart';
 import '../core/data/course_path.dart';
 import '../core/languages/language_skills.dart';
 import '../core/models/card.dart';
@@ -14,6 +16,10 @@ import '../core/models/review_event.dart';
 import '../core/scheduling/fsrs.dart';
 import 'app_state.dart';
 import 'deck_catalog.dart';
+
+/// The scope the app-wide badges (streaks, answer counts) are kept under in
+/// the settings, beside the language codes of the course badges.
+const String kAppAchievements = '*';
 
 /// What the achievements of one language need worked out (#322), as plain
 /// data: it crosses to an isolate, which copies it as it is sent, so it holds
@@ -25,6 +31,7 @@ class AchievementJob {
     required this.facts,
     required this.log,
     required this.parameters,
+    this.earnedBefore = const <String, DateTime>{},
   });
 
   /// The language counted, or null for the app-wide badges alone.
@@ -41,6 +48,10 @@ class AchievementJob {
   /// The parameters that schedule each mode in [language], so that "known"
   /// here is Progress's known.
   final Map<DrillMode, List<double>> parameters;
+
+  /// The badges already earned and when, from what the app kept (#323): they
+  /// stay earned even if a deck has grown since, so that none is ever lost.
+  final Map<String, DateTime> earnedBefore;
 }
 
 /// Works out [job]'s report. Pure: no state, no Flutter, so that
@@ -52,6 +63,7 @@ AchievementReport computeAchievements(AchievementJob job) {
     log: job.log,
     facts: job.facts,
     parametersOf: parametersOf,
+    earnedBefore: job.earnedBefore,
   );
 }
 
@@ -86,6 +98,12 @@ Future<AchievementReport> achievementsInIsolate(AchievementJob job) async {
 /// cards on the UI isolate except the one pass that copies the log into the
 /// job, and the facts, built once for as long as the language's decks are the
 /// same ones.
+///
+/// **Rate limit (#323).** Nothing here listens to the review log: a report is
+/// worked out only when a screen asks for it with [of], and the screens that
+/// ask are the Progress badges (once opened, and visible) and the session
+/// summary (the end of a session), never a lesson or a drill. So an answer
+/// costs nothing here, and a session costs at most one job per language.
 class AchievementsHolder extends ChangeNotifier {
   AchievementsHolder({
     required this._state,
@@ -103,17 +121,7 @@ class AchievementsHolder extends ChangeNotifier {
   /// as worked out last, or null before the first time. Asking starts
   /// working them out again if what they come from has changed.
   AchievementReport? of(String? language) {
-    final state = _state;
-    final progress = state.progress;
-    final key = (
-      progress: progress,
-      version: progress.version,
-      decks: language == null ? null : state.decksKeyOf(language),
-      native: language == null ? null : state.courseNative(language),
-      skills: language == null
-          ? null
-          : '${state.settings.languageSkillsOf(language)}',
-    );
+    final key = _keyOf(language);
     final entry = _entries[language ?? ''] ??= _Entry();
     if (entry.key == key) return entry.value;
     if (entry.running != null) {
@@ -123,14 +131,65 @@ class AchievementsHolder extends ChangeNotifier {
     }
     final job = _jobFor(language);
     if (_inPlace) {
+      final report = computeAchievements(job);
       entry
-        ..value = computeAchievements(job)
+        ..value = report
         ..key = key;
+      // Not while a widget builds: saving notifies the settings' listeners.
+      scheduleMicrotask(() => _remember(language, report));
       return entry.value;
     }
     entry.running = key;
     _work(language, entry, key, job);
     return entry.value;
+  }
+
+  /// What the report of [language] is worked out from, as it is now: a
+  /// report is current when it was worked out from this.
+  Object _keyOf(String? language) {
+    final state = _state;
+    final progress = state.progress;
+    return (
+      progress: progress,
+      version: progress.version,
+      decks: language == null ? null : state.decksKeyOf(language),
+      native: language == null ? null : state.courseNative(language),
+      skills: language == null
+          ? null
+          : '${state.settings.languageSkillsOf(language)}',
+    );
+  }
+
+  /// [of], but only a report worked out from what is there now, else null
+  /// (the summary of a session waits for the one that counts its answers).
+  AchievementReport? currentOf(String language) {
+    final report = of(language);
+    return _entries[language]?.key == _keyOf(language) ? report : null;
+  }
+
+  /// What the summary of a session that began at [since] announces for
+  /// [language] (#323): the badges earned since the learner last looked, which
+  /// the holder knows from what the settings keep as seen. Null until the
+  /// report is back. The badges already earned when the learner is first
+  /// looked at are the past reviews' (decision 4). Null until the report
+  /// worked out from this session's answers is back.
+  AchievementNews? newsFor(String language, {required DateTime since}) {
+    final report = currentOf(language);
+    if (report == null) return null;
+    final settings = _state.settings;
+    return AchievementNews.of(
+      report,
+      seenCourse: settings.achievementsSeenOf(language),
+      seenApp: settings.achievementsSeenOf(kAppAchievements),
+      since: since,
+    );
+  }
+
+  /// Records that [news] was shown, so that it is not announced again.
+  void markSeen(String language, AchievementNews news) {
+    final settings = _state.settings;
+    settings.markAchievementsSeen(language, news.courseIds);
+    settings.markAchievementsSeen(kAppAchievements, news.appIds);
   }
 
   Future<void> _work(
@@ -145,6 +204,7 @@ class AchievementsHolder extends ChangeNotifier {
       entry
         ..value = report
         ..key = key;
+      _remember(language, report);
     } catch (error, stack) {
       FlutterError.reportError(
         FlutterErrorDetails(
@@ -167,10 +227,33 @@ class AchievementsHolder extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Keeps the badges [report] shows as earned, with their dates, in the
+  /// settings, which the profile's database holds (#323): the next run is
+  /// given them as `earnedBefore`, so that no badge is lost when a deck grows
+  /// or the app restarts. The review log is never touched.
+  void _remember(String? language, AchievementReport report) {
+    if (_disposed) return;
+    final course = <String, DateTime>{};
+    final app = <String, DateTime>{};
+    for (final result in report.results) {
+      final at = result.earnedAt;
+      if (!result.isEarned || at == null) continue;
+      (result.def.isAppWide ? app : course)[result.def.id] = at;
+    }
+    final settings = _state.settings;
+    settings.rememberAchievements(kAppAchievements, app);
+    if (language != null) settings.rememberAchievements(language, course);
+  }
+
   AchievementJob _jobFor(String? language) {
     final progress = _state.progress;
+    final settings = _state.settings;
     return AchievementJob(
       language: language,
+      earnedBefore: <String, DateTime>{
+        ...settings.achievementsEarnedOf(kAppAchievements),
+        if (language != null) ...settings.achievementsEarnedOf(language),
+      },
       facts: language == null ? null : achievementFactsOf(_state, language),
       log: <ReviewEvent>[...progress.log.answered],
       parameters: <DrillMode, List<double>>{

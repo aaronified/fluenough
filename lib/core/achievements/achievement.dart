@@ -54,6 +54,13 @@ const List<int> kStreakTargets = <int>[3, 7, 30, 100, 365];
 /// The answer counts (decision 2).
 const List<int> kAnswerTargets = <int>[1000, 10000];
 
+/// How many cards a badge's sheet lists (the cards still to know, or the
+/// words known first).
+const int kShownCards = 3;
+
+/// How many of the first words known an earned word count lists.
+const int kShownWords = 5;
+
 /// Letters a Read or Write Start asks for.
 const int kLettersForStart = 5;
 
@@ -197,6 +204,7 @@ class AchievementResult {
     required this.need,
     this.earnedAt,
     this.earnable = true,
+    this.cards = const <String>[],
   });
 
   final AchievementDef def;
@@ -216,6 +224,12 @@ class AchievementResult {
   /// False for a skill the learner marked Leave (decision 11): shown dimmed,
   /// never earned.
   final bool earnable;
+
+  /// A few card ids the badge's sheet shows: for a badge that asks every
+  /// card of a bar (a level, a Master, a set), up to [kShownCards] of the
+  /// cards still to know, in path order; for an earned word count, the first
+  /// words known. Empty otherwise.
+  final List<String> cards;
 
   /// [have] over [need], 0 to 1.
   double get fraction => need <= 0 ? 0 : math.min(1.0, have / need);
