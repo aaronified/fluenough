@@ -276,9 +276,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#380](https://github.com/aaronified/fluenough/issues/380) New course: Vietnamese
 - [#381](https://github.com/aaronified/fluenough/issues/381) New course: Thai
 - [#382](https://github.com/aaronified/fluenough/issues/382) New course: Filipino
-- [#383](https://github.com/aaronified/fluenough/issues/383) New course: Malay
-- [#384](https://github.com/aaronified/fluenough/issues/384) New course: Swahili
-- [#385](https://github.com/aaronified/fluenough/issues/385) New course: Hausa
 - [#386](https://github.com/aaronified/fluenough/issues/386) New course: Somali
 - [#387](https://github.com/aaronified/fluenough/issues/387) New course: Quechua
 - [#388](https://github.com/aaronified/fluenough/issues/388) New course: Esperanto
@@ -294,13 +291,10 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1168](https://github.com/aaronified/fluenough/issues/1168) Language: Assamese: full deck format
 - [#1169](https://github.com/aaronified/fluenough/issues/1169) Language: Bodo: full deck format
 - [#1170](https://github.com/aaronified/fluenough/issues/1170) Language: Dogri: full deck format
-- [#1171](https://github.com/aaronified/fluenough/issues/1171) Language: Gujarati: full deck format
-- [#1172](https://github.com/aaronified/fluenough/issues/1172) Language: Kannada: full deck format
 - [#1173](https://github.com/aaronified/fluenough/issues/1173) Language: Kashmiri: full deck format
 - [#1174](https://github.com/aaronified/fluenough/issues/1174) Language: Konkani: full deck format
 - [#1175](https://github.com/aaronified/fluenough/issues/1175) Language: Maithili: full deck format
 - [#1176](https://github.com/aaronified/fluenough/issues/1176) Language: Manipuri: full deck format
-- [#1177](https://github.com/aaronified/fluenough/issues/1177) Language: Marathi: full deck format
 - [#1178](https://github.com/aaronified/fluenough/issues/1178) Language: Santali: full deck format
 - [#1179](https://github.com/aaronified/fluenough/issues/1179) Language: Sindhi: full deck format
 - [#1180](https://github.com/aaronified/fluenough/issues/1180) Language: Bhojpuri: full deck format
@@ -315,7 +309,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1189](https://github.com/aaronified/fluenough/issues/1189) Language: Mizo: full deck format
 - [#1190](https://github.com/aaronified/fluenough/issues/1190) Language: Khasi: full deck format
 - [#1191](https://github.com/aaronified/fluenough/issues/1191) Language: Goan Konkani: full deck format
-- [#1192](https://github.com/aaronified/fluenough/issues/1192) Language: Spanish: full deck format
 - [#1193](https://github.com/aaronified/fluenough/issues/1193) Language: Toki Pona: full deck format
 - [#1194](https://github.com/aaronified/fluenough/issues/1194) Language: Lojban: full deck format
 - [#1195](https://github.com/aaronified/fluenough/issues/1195) Language: Interslavic: full deck format
@@ -339,9 +332,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1213](https://github.com/aaronified/fluenough/issues/1213) Language: Pali: full deck format
 - [#1214](https://github.com/aaronified/fluenough/issues/1214) Language: Aramaic (Imperial): full deck format
 - [#1215](https://github.com/aaronified/fluenough/issues/1215) Language: Ashokan Prakrit: full deck format
-- [#1244](https://github.com/aaronified/fluenough/issues/1244) Spanish: more clean sentences so Find my level can ask sentence picks again
-- [#1245](https://github.com/aaronified/fluenough/issues/1245) Hindustani: more clean sentences so Find my level can ask sentence picks
-- [#1369](https://github.com/aaronified/fluenough/issues/1369) Spanish narrow IPA rules: five gaps found reviewing the first whole-course run
 
 ## Plans
 
