@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.13.0] - 2026-11-27
+
 - **Home-screen widget.** On Android you can add a small widget to your home screen that shows the cards due in your language and your streak, and opens the app when you tap it.
 - **Fill in the missing word.** Sentence reviews sometimes show the meaning and the sentence with one word you know left out, and you tap the missing word from a few.
 - **Grammar mistakes explained.** When a wrong grammar answer is another form of the same word, such as the "we" form for "you all", or the dictionary form, the feedback now says which form you gave.
