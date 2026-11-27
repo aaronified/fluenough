@@ -1,0 +1,80 @@
+schema: 1
+id: "sw-grammar-present-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sw", iso639_3: "swh", name: "Swahili", script: "latin", tts: "sw-KE", icon: "Sw" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "sw-0700"
+    target: "Wanakula."
+    ipa: "wanaˈkula"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/-na-" }
+    bases: [{ word: "Wanakula", base: "la" }]
+  - id: "sw-0701"
+    target: "Unatuona."
+    ipa: "unatuˈona"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/-tu-" }
+    bases: [{ word: "Unatuona", base: "ona" }]
+  - id: "sw-0702"
+    target: "Inakuwa baridi."
+    ipa: "inaˈkuwa baˈɾidi"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/-na-" }
+    bases: [{ word: "Inakuwa", base: "kuwa" }, { word: "baridi", base: "baridi" }]
+  - id: "sw-0703"
+    target: "Tupo shuleni."
+    ipa: "ˈtupo ʃuˈleni"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/wapo" }
+    bases: [{ word: "Tupo", base: "-wapo" }, { word: "shuleni", base: "shule" }]
+  - id: "sw-0704"
+    target: "Watu wamo chumbani."
+    ipa: "ˈwatu ˈwamo tʃuˈmbani"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/wamo" }
+    bases: [{ word: "Watu", base: "mtu" }, { word: "wamo", base: "-wamo" }, { word: "chumbani", base: "chumba" }]
+  - id: "sw-0705"
+    target: "Wewe ni mwalimu."
+    ipa: "ˈwewe ni mwaˈlimu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/ni" }
+    bases: [{ word: "Wewe", base: "wewe" }, { word: "ni", base: "ni" }, { word: "mwalimu", base: "mwalimu" }]
+  - id: "sw-0706"
+    target: "Mimi si mwalimu."
+    ipa: "ˈmimi si mwaˈlimu"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/si" }
+    bases: [{ word: "Mimi", base: "mimi" }, { word: "si", base: "si" }, { word: "mwalimu", base: "mwalimu" }]
+  - id: "sw-0707"
+    target: "Sisi tunakula."
+    ipa: "ˈsisi tunaˈkula"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/-na-" }
+    bases: [{ word: "Sisi", base: "sisi" }, { word: "tunakula", base: "la" }]
+  - id: "sw-0708"
+    target: "Mtoto analala."
+    ipa: "mˈtoto anaˈlala"
+    pos: "phrase"
+    tags: ["grammar"]
+    notes:
+      - { id: "n1", kind: "note", source: "https://en.wiktionary.org/wiki/-na-" }
+    bases: [{ word: "Mtoto", base: "mtoto" }, { word: "analala", base: "lala" }]

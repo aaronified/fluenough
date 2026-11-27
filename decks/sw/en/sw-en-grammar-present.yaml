@@ -1,0 +1,35 @@
+schema: 1
+id: "sw-en-grammar-present"
+kind: "layer"
+core: "sw-grammar-present"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The present tense and to be"
+description: "Ten everyday verbs in the present for six persons, and the three ways to say to be: ni, si and -po. Taken from the verb entries and the entries for ni, si and -wapo on Wiktionary. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The present tense, and the verb to be"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "i": "I"
+    "you": "you (one person)"
+    "he-she": "he or she"
+    "we": "we"
+    "you-pl": "you (more than one)"
+    "they": "they"
+  entries:
+    "la-present": "to eat; now: subject + na + stem"
+    "nywa-present": "to drink; now: subject + na + stem"
+    "enda-present": "to go; to walk; now: subject + na + stem"
+    "soma-present": "to read; now: subject + na + stem"
+    "andika-present": "to write; now: subject + na + stem"
+    "lala-present": "to sleep; now: subject + na + stem"
+    "ona-present": "to see; now: subject + na + stem"
+    "kaa-present": "to sit; to stay; now: subject + na + stem"
+    "sema-present": "to say; to speak; now: subject + na + stem"
+    "penda-present": "to love; to like; now: subject + na + stem"
+    "be-ni": "to be (am, is, are): the same ni for every person"
+    "be-si": "to be not (am not, is not, are not): the same si for every person"
+    "be-po": "to be at a place (am there, is there): the place is known to both"
+  notes: "The present is built from the subject, -na- and the verb: ni-na-soma, I read or I am reading. The subjects are ni- (I), u- (you), a- (he or she), tu- (we), m- (you, many) and wa- (they). A short stem keeps its ku after -na-: ninakula, ninakunywa, ninakwenda (ku before e becomes kw). Other stems take it bare: ninasoma, ninaona. The verb to be is not built this way. Ni is is, am and are for every person, and si is the same for is not, am not and are not: mimi ni, wao si. To say that someone is at a place both of you know, use -po with the subject: nipo, upo, yupo, tupo, mpo, wapo (yupo is the form for he or she). For something done as a habit, Swahili puts hu- in place of the subject and the tense: hula, husoma. Sources: Wiktionary's entries for each verb, the entry for the marker -na-, and the entries for ni, si and -wapo."
