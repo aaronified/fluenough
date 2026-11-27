@@ -1,0 +1,31 @@
+schema: 1
+id: "ko-en-grammar-eul-geoyeyo"
+kind: "layer"
+core: "ko-grammar-eul-geoyeyo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "-을 거예요 (-eul geoyeyo) and -ㄹ 거예요 (-l geoyeyo): will and probably"
+description: "Thirteen verbs with the future ending and 거예요 (geoyeyo), and the sentence 'I will ... tomorrow'. Sources: the en.wiktionary.org entry -을 것이다 (-eul geosida) and the conjugation table of each verb (the future form -을 (-eul) or -ㄹ (-l) is copied from it), and the en.wikipedia.org page 'Korean verbs'. Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The future: will and probably"
+  slot_name: "form"
+  slots:
+    "det": "the stem with -을 (-eul) or -ㄹ (-l)"
+    "will": "'(someone) will ...': the stem with -을 (-eul) or -ㄹ (-l), then 거예요 (geoyeyo)"
+    "tomorrow": "'I will ... tomorrow': 저는 (jeoneun), 내일 (naeil) and the future"
+  entries:
+    "meokda": "to eat"
+    "masida": "to drink"
+    "gada": "to go"
+    "boda": "to see, to watch"
+    "sada": "to buy"
+    "mannada": "to meet"
+    "ikda": "to read"
+    "swida": "to rest"
+    "gongbuhada": "to study"
+    "gidarida": "to wait for"
+    "anda": "to sit"
+    "jada": "to sleep"
+    "itda": "to be (there)"
+  notes: "The future takes the stem and adds the ending -을 (-eul) after a consonant or -ㄹ (-l) after a vowel; the ㄹ (l) is written under the last syllable of the stem: 먹다 (meokda) gives 먹을 (meogeul), 가다 (gada) gives 갈 (gal), 마시다 (masida) gives 마실 (masil). Then comes 거예요 (geoyeyo), polite: 먹을 거예요 (meogeul geoyeyo), 'I will eat'. 거예요 (geoyeyo) is 것 (geot), 'thing', joined with the polite copula 이에요 (ieyo); Wiktionary gives the full form as -을 것이다 (-eul geosida) and says that colloquially 거예요 (geoyeyo) is said and written 거에요 (geoeyo), which is prescriptively a misspelling. It expresses what the speaker intends to do, as Wiktionary's example 저는 내일 시험 공부할 거예요 (jeoneun naeil siheom gongbuhal geoyeyo), 'I'm going to study for the exams tomorrow', and also what the speaker supposes is so: 아기가 울었을 거예요 (agiga ureosseul geoyeyo) in Wiktionary is 'it's probably the baby who cried'. Wiktionary contrasts it with the ending -겠- (-get-), which gives a guess from what the speaker sees or feels at that moment, while -을 것이다 (-eul geosida) rests on outside information. Wikipedia lists the same -을 (-eul) and -ㄹ (-l) as the future attributive ending, as in 먹을 밥 (meogeul bap), 'rice to be eaten'. The future determiner of every verb is copied from Wiktionary's conjugation table."

@@ -1,0 +1,30 @@
+schema: 1
+id: "ko-en-grammar-an-negation"
+kind: "layer"
+core: "ko-grammar-an-negation"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "안 (an): the short negative"
+description: "Twelve verbs and adjectives made negative with 안 (an) in front of the polite form. Sources: the en.wiktionary.org entries 안 (an) and 않다 (anta), the en.wikipedia.org page 'Korean verbs' and the conjugation table of each word, from which the polite form is copied. Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The short negative with 안 (an)"
+  slot_name: "form"
+  slots:
+    "positive": "the polite present"
+    "negative": "the negative: 안 (an) before the polite present"
+    "i-not": "'I do not ...': 저는 (jeoneun), 안 (an) and the polite present"
+  entries:
+    "gada": "to go"
+    "oda": "to come"
+    "meokda": "to eat"
+    "masida": "to drink"
+    "boda": "to see, to watch"
+    "sada": "to buy"
+    "ikda": "to read"
+    "jada": "to sleep"
+    "jota": "to be good"
+    "bissada": "to be expensive"
+    "jakda": "to be small"
+    "masitda": "to be tasty, to be delicious"
+  notes: "To negate a verb or an adjective, put the adverb 안 (an), 'not', in front of it and leave the verb as it was: 먹어요 (meogeoyo) becomes 안 먹어요 (an meogeoyo), 'I do not eat' (Wiktionary's example is 안 먹어 (an meogeo), 'I won't eat'). It is a separate word, written with a space, and it stands right before the verb. Wikipedia's 'Korean verbs' article describes it as the more common of the two negative words; the other, 못 (mot), says that someone cannot, and is a later unit. 안 (an) negates only the verb or adjective that follows it, and works the same for verbs and describing words: 좋아요 (joayo), good, becomes 안 좋아요 (an joayo), not good. The other way to negate is the long form -지 않아요 (-ji anayo), which is the next lesson; Wiktionary says it has a more formal connotation. The stem does not change in any of these words. Each polite form is copied from Wiktionary's conjugation table."

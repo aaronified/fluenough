@@ -1,0 +1,118 @@
+schema: 1
+id: "ko-food-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ko-4640"
+    target: "찌개가 매워요?"
+    reading: "jjigaega maewoyo?"
+    ipa: "t͈ɕikeka mewʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "찌개가", ref: "ko-2583" }
+      - { word: "매워요", ref: "ko-2603" }
+    confusables:
+      - { id: "w1", ref: "ko-2582", kind: "word" }
+      - { id: "w2", ref: "ko-2599", kind: "word" }
+  - id: "ko-4641"
+    target: "맛이 어때요?"
+    reading: "masi eottaeyo?"
+    ipa: "masi ʌt͈ejo"
+    pos: "phrase"
+    bases:
+      - { word: "맛이", ref: "ko-2600" }
+      - { word: "어때요", base: "어떻다", reading: "eotteota" }
+    confusables:
+      - { id: "w1", ref: "ko-2626", kind: "word" }
+      - { id: "w2", ref: "ko-2580", kind: "word" }
+  - id: "ko-4642"
+    target: "떡볶이가 뜨거워요."
+    reading: "tteokbokkiga tteugeowoyo."
+    ipa: "t͈ʌkp͈ok͈ika t͈ɯkʌwʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "떡볶이가", ref: "ko-2587" }
+      - { word: "뜨거워요", ref: "ko-1867" }
+    confusables:
+      - { id: "w1", ref: "ko-2585", kind: "word" }
+      - { id: "w2", ref: "ko-2586", kind: "word" }
+  - id: "ko-4643"
+    target: "국이 싱거워요."
+    reading: "gugi singgeowoyo."
+    ipa: "kuki siŋkʌwʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "국이", ref: "ko-2582" }
+      - { word: "싱거워요", ref: "ko-2602" }
+    confusables:
+      - { id: "w1", ref: "ko-2601", kind: "word" }
+      - { id: "w2", ref: "ko-2604", kind: "word" }
+  - id: "ko-4644"
+    target: "두부가 부드러워요."
+    reading: "dubuga budeureowoyo."
+    ipa: "tupuka putɯɾʌwʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "두부가", base: "두부", reading: "dubu" }
+      - { word: "부드러워요", ref: "ko-2611" }
+    confusables:
+      - { id: "w1", ref: "ko-2612", kind: "word" }
+      - { id: "w2", ref: "ko-2608", kind: "word" }
+  - id: "ko-4645"
+    target: "고기를 구워요."
+    reading: "gogireul guwoyo."
+    ipa: "kokiɾɯl kuwʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "고기를", base: "고기", reading: "gogi" }
+      - { word: "구워요", ref: "ko-2616" }
+    confusables:
+      - { id: "w1", ref: "ko-2617", kind: "word" }
+      - { id: "w2", ref: "ko-2619", kind: "word" }
+  - id: "ko-4646"
+    target: "샐러드가 차가워요."
+    reading: "saelleodeuga chagawoyo."
+    ipa: "sellʌtɯka tɕʰakawʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "샐러드가", ref: "ko-2597" }
+      - { word: "차가워요", ref: "ko-1868" }
+    confusables:
+      - { id: "w1", ref: "ko-2598", kind: "word" }
+      - { id: "w2", ref: "ko-2582", kind: "word" }
+  - id: "ko-4647"
+    target: "음료가 달아요?"
+    reading: "eumnyoga darayo?"
+    ipa: "ɯmnjoka taɾajo"
+    pos: "phrase"
+    bases:
+      - { word: "음료가", ref: "ko-2637" }
+      - { word: "달아요", ref: "ko-2604" }
+    confusables:
+      - { id: "w1", ref: "ko-2633", kind: "word" }
+      - { id: "w2", ref: "ko-2610", kind: "word" }
+  - id: "ko-4648"
+    target: "찌개를 끓여요."
+    reading: "jjigaereul kkeulyeoyo."
+    ipa: "t͈ɕikeɾɯl k͈ɯljʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "찌개를", ref: "ko-2583" }
+      - { word: "끓여요", ref: "ko-2618" }
+    confusables:
+      - { id: "w1", ref: "ko-2582", kind: "word" }
+      - { id: "w2", ref: "ko-2620", kind: "word" }
+  - id: "ko-4649"
+    target: "감자를 쪄요."
+    reading: "gamjareul jjyeoyo."
+    ipa: "kamtɕaɾɯl t͈ɕjʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "감자를", base: "감자", reading: "gamja" }
+      - { word: "쪄요", ref: "ko-2621" }
+    confusables:
+      - { id: "w1", ref: "ko-2620", kind: "word" }
+      - { id: "w2", ref: "ko-2619", kind: "word" }

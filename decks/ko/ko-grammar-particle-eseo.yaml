@@ -1,0 +1,116 @@
+# Unit 23 (ko-grammar-object-place). Sources read: en.wikipedia.org 'Korean postpositions' (을/를 object, 에 time and place, 에서 'from' and 'at'), 'Korean grammar' (case clitics, verb-final order),
+# en.wiktionary.org pages -을, -를, -에, -에서 (uses and usage notes) and the conjugation tables of each verb used (the polite form is copied from the table). Particle forms built by rule from each noun's last letter.
+schema: 1
+id: "ko-grammar-particle-eseo"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["place", "do"]
+  entries:
+    - lemma: "학교"
+      key: "hakgyo"
+      reading: "hakgyo"
+      ipa: "hakk͈jo"
+      forms:
+        "place": "학교에서"
+        "do": "저는 학교에서 공부해요"
+      readings:
+        "place": "hakgyoeseo"
+        "do": "jeoneun hakgyoeseo gongbuhaeyo"
+      ipas:
+        "place": "hakk͈joesʌ"
+        "do": "tɕʌnɯn hakk͈joesʌ koŋpuhejo"
+    - lemma: "집"
+      key: "jip"
+      reading: "jip"
+      ipa: "tɕip"
+      forms:
+        "place": "집에서"
+        "do": "저는 집에서 자요"
+      readings:
+        "place": "jibeseo"
+        "do": "jeoneun jibeseo jayo"
+      ipas:
+        "place": "tɕipesʌ"
+        "do": "tɕʌnɯn tɕipesʌ tɕajo"
+    - lemma: "공원"
+      key: "gongwon"
+      reading: "gongwon"
+      ipa: "koŋwʌn"
+      forms:
+        "place": "공원에서"
+        "do": "저는 공원에서 쉬어요"
+      readings:
+        "place": "gongwoneseo"
+        "do": "jeoneun gongwoneseo swieoyo"
+      ipas:
+        "place": "koŋwʌnesʌ"
+        "do": "tɕʌnɯn koŋwʌnesʌ swiʌjo"
+    - lemma: "시장"
+      key: "sijang"
+      reading: "sijang"
+      ipa: "sitɕaŋ"
+      forms:
+        "place": "시장에서"
+        "do": "저는 시장에서 사요"
+      readings:
+        "place": "sijangeseo"
+        "do": "jeoneun sijangeseo sayo"
+      ipas:
+        "place": "sitɕaŋesʌ"
+        "do": "tɕʌnɯn sitɕaŋesʌ sajo"
+    - lemma: "식당"
+      key: "sikdang"
+      reading: "sikdang"
+      ipa: "sikt͈aŋ"
+      forms:
+        "place": "식당에서"
+        "do": "저는 식당에서 먹어요"
+      readings:
+        "place": "sikdangeseo"
+        "do": "jeoneun sikdangeseo meogeoyo"
+      ipas:
+        "place": "sikt͈aŋesʌ"
+        "do": "tɕʌnɯn sikt͈aŋesʌ mʌkʌjo"
+    - lemma: "도서관"
+      key: "doseogwan"
+      reading: "doseogwan"
+      ipa: "tosʌkwan"
+      forms:
+        "place": "도서관에서"
+        "do": "저는 도서관에서 읽어요"
+      readings:
+        "place": "doseogwaneseo"
+        "do": "jeoneun doseogwaneseo ilgeoyo"
+      ipas:
+        "place": "tosʌkwanesʌ"
+        "do": "tɕʌnɯn tosʌkwanesʌ ilkʌjo"
+    - lemma: "회사"
+      key: "hoesa"
+      reading: "hoesa"
+      ipa: "hwesa"
+      forms:
+        "place": "회사에서"
+        "do": "저는 회사에서 일해요"
+      readings:
+        "place": "hoesaeseo"
+        "do": "jeoneun hoesaeseo ilhaeyo"
+      ipas:
+        "place": "hwesaesʌ"
+        "do": "tɕʌnɯn hwesaesʌ ilhejo"
+    - lemma: "카페"
+      key: "kape"
+      reading: "kape"
+      ipa: "kʰapʰe"
+      forms:
+        "place": "카페에서"
+        "do": "저는 카페에서 마셔요"
+      readings:
+        "place": "kapeeseo"
+        "do": "jeoneun kapeeseo masyeoyo"
+      ipas:
+        "place": "kʰapʰeesʌ"
+        "do": "tɕʌnɯn kʰapʰeesʌ masjʌjo"

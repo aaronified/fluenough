@@ -1,0 +1,100 @@
+# Unit 27 (ko-grammar-demonstratives, topic i-geu-jeo). Sources read: the 'Korean demonstratives' table shown on the en.wiktionary.org entries 이거, 이것, 저기 and 여기 (determiner, human, object, place columns for 이, 그, 저, 어느),
+# and the en.wiktionary.org entries 이, 그, 저 (proximal, mesial, distal; used as a determiner only in speech), 이것 (contractions 이건, 이게, 이걸) and 이거 (spoken, not formal writing).
+schema: 1
+id: "ko-grammar-i-geu-jeo"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["det", "thing", "casual", "person", "place"]
+  entries:
+    - lemma: "이"
+      key: "i"
+      reading: "i"
+      ipa: "i"
+      forms:
+        "det": "이 사람"
+        "thing": "이것"
+        "casual": "이거"
+        "person": "이분"
+        "place": "여기"
+      readings:
+        "det": "i saram"
+        "thing": "igeot"
+        "casual": "igeo"
+        "person": "ibun"
+        "place": "yeogi"
+      ipas:
+        "det": "i saɾam"
+        "thing": "ikʌt"
+        "casual": "ikʌ"
+        "person": "ipun"
+        "place": "jʌki"
+    - lemma: "그"
+      key: "geu"
+      reading: "geu"
+      ipa: "kɯ"
+      forms:
+        "det": "그 사람"
+        "thing": "그것"
+        "casual": "그거"
+        "person": "그분"
+        "place": "거기"
+      readings:
+        "det": "geu saram"
+        "thing": "geugeot"
+        "casual": "geugeo"
+        "person": "geubun"
+        "place": "geogi"
+      ipas:
+        "det": "kɯ saɾam"
+        "thing": "kɯkʌt"
+        "casual": "kɯkʌ"
+        "person": "kɯpun"
+        "place": "kʌki"
+    - lemma: "저"
+      key: "jeo"
+      reading: "jeo"
+      ipa: "tɕʌ"
+      forms:
+        "det": "저 사람"
+        "thing": "저것"
+        "casual": "저거"
+        "person": "저분"
+        "place": "저기"
+      readings:
+        "det": "jeo saram"
+        "thing": "jeogeot"
+        "casual": "jeogeo"
+        "person": "jeobun"
+        "place": "jeogi"
+      ipas:
+        "det": "tɕʌ saɾam"
+        "thing": "tɕʌkʌt"
+        "casual": "tɕʌkʌ"
+        "person": "tɕʌpun"
+        "place": "tɕʌki"
+    - lemma: "어느"
+      key: "eoneu"
+      reading: "eoneu"
+      ipa: "ʌnɯ"
+      forms:
+        "det": "어느 사람"
+        "thing": "어느 것"
+        "casual": "어느 거"
+        "person": "어느 분"
+        "place": "어디"
+      readings:
+        "det": "eoneu saram"
+        "thing": "eoneu geot"
+        "casual": "eoneu geo"
+        "person": "eoneu bun"
+        "place": "eodi"
+      ipas:
+        "det": "ʌnɯ saɾam"
+        "thing": "ʌnɯ kʌt"
+        "casual": "ʌnɯ kʌ"
+        "person": "ʌnɯ pun"
+        "place": "ʌti"

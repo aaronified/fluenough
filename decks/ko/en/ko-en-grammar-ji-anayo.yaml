@@ -1,0 +1,29 @@
+schema: 1
+id: "ko-en-grammar-ji-anayo"
+kind: "layer"
+core: "ko-grammar-ji-anayo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "-지 않아요 (-ji anayo): the long negative"
+description: "Eleven verbs and adjectives made negative with the stem, 지 (ji) and 않아요 (anayo). Sources: the en.wiktionary.org entries 않다 (anta) (its conjugation table gives 않아요 (anayo)), 안 (an) and -지 (-ji), and the en.wikipedia.org page 'Korean grammar' (the supporting verb with -지 (-ji)). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The long negative with -지 않아요 (-ji anayo)"
+  slot_name: "form"
+  slots:
+    "stem-ji": "the stem with 지 (ji)"
+    "negative": "the long negative: the stem with 지 (ji) and 않아요 (anayo)"
+    "i-not": "'I do not ...': 저는 (jeoneun) and the long negative"
+  entries:
+    "meokda": "to eat"
+    "gada": "to go"
+    "boda": "to see, to watch"
+    "masida": "to drink"
+    "ikda": "to read"
+    "gongbuhada": "to study"
+    "ilhada": "to work"
+    "jota": "to be good"
+    "bissada": "to be expensive"
+    "jakda": "to be small"
+    "manta": "to be many, to be a lot"
+  notes: "The long negative takes the stem of the verb, adds -지 (-ji), and then the polite form of the helping adjective 않다 (anta): 먹지 (meokji) 않아요 (anayo), 'I do not eat'. 않다 (anta) is the one that changes; the main verb stays as the stem plus -지 (-ji), so 공부하지 (gongbuhaji) 않아요 (anayo) and 좋지 (jochi) 않아요 (anayo) are both built the same way. It has the same meaning as 안 (an) before the verb, but Wiktionary's entry for 안 (an) says it has a more formal connotation and that it negates the whole clause, where 안 (an) negates only the verb: 'only apples' is 사과만 안 먹어 (sagwaman an meogeo) when apples are the one thing not eaten, and 사과만 먹지 않아 (sagwaman meokji ana) when not eating only apples. 않다 (anta) comes from 아니하다 (anihada). The polite form 않아요 (anayo) is copied from the conjugation table of 않다 (anta)."

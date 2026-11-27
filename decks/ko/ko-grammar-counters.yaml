@@ -1,0 +1,181 @@
+# Unit 31 (ko-grammar-counters). Sources read: en.wikipedia.org 'Korean numerals' (native and Sino-Korean sets, the attributive forms 한, 두, 세, 네, 스무 before counters, 석 and 넉, which system goes with which counter, 시 with native numerals and 분 with Sino-Korean, 6월 = 유월 and 10월 = 시월) and 'Korean count word' (the list of count words),
+# en.wiktionary.org entries 개, 명, 마리, 권, 잔, 병, 살, 시, 번 (native numerals) and 원, 층, 분, 월 (Sino-Korean numerals): each counter's sense and its numeral system were read on its entry.
+schema: 1
+id: "ko-grammar-counters"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["three", "five"]
+  entries:
+    - lemma: "개"
+      key: "gae"
+      reading: "gae"
+      ipa: "ke"
+      forms:
+        "three": "세 개"
+        "five": "다섯 개"
+      readings:
+        "three": "se gae"
+        "five": "daseot gae"
+      ipas:
+        "three": "se ke"
+        "five": "tasʌt ke"
+    - lemma: "명"
+      key: "myeong"
+      reading: "myeong"
+      ipa: "mjʌŋ"
+      forms:
+        "three": "세 명"
+        "five": "다섯 명"
+      readings:
+        "three": "se myeong"
+        "five": "daseot myeong"
+      ipas:
+        "three": "se mjʌŋ"
+        "five": "tasʌt mjʌŋ"
+    - lemma: "마리"
+      key: "mari"
+      reading: "mari"
+      ipa: "maɾi"
+      forms:
+        "three": "세 마리"
+        "five": "다섯 마리"
+      readings:
+        "three": "se mari"
+        "five": "daseot mari"
+      ipas:
+        "three": "se maɾi"
+        "five": "tasʌt maɾi"
+    - lemma: "권"
+      key: "gwon"
+      reading: "gwon"
+      ipa: "kwʌn"
+      forms:
+        "three": "세 권"
+        "five": "다섯 권"
+      readings:
+        "three": "se gwon"
+        "five": "daseot gwon"
+      ipas:
+        "three": "se kwʌn"
+        "five": "tasʌt kwʌn"
+    - lemma: "잔"
+      key: "jan"
+      reading: "jan"
+      ipa: "tɕan"
+      forms:
+        "three": "세 잔"
+        "five": "다섯 잔"
+      readings:
+        "three": "se jan"
+        "five": "daseot jan"
+      ipas:
+        "three": "se tɕan"
+        "five": "tasʌt tɕan"
+    - lemma: "병"
+      key: "byeong"
+      reading: "byeong"
+      ipa: "pjʌŋ"
+      forms:
+        "three": "세 병"
+        "five": "다섯 병"
+      readings:
+        "three": "se byeong"
+        "five": "daseot byeong"
+      ipas:
+        "three": "se pjʌŋ"
+        "five": "tasʌt pjʌŋ"
+    - lemma: "살"
+      key: "sal"
+      reading: "sal"
+      ipa: "sal"
+      forms:
+        "three": "세 살"
+        "five": "다섯 살"
+      readings:
+        "three": "se sal"
+        "five": "daseot sal"
+      ipas:
+        "three": "se sal"
+        "five": "tasʌt sal"
+    - lemma: "시"
+      key: "si"
+      reading: "si"
+      ipa: "si"
+      forms:
+        "three": ["세 시", "세시"]
+        "five": ["다섯 시", "다섯시"]
+      readings:
+        "three": ["se si", "sesi"]
+        "five": ["daseot si", "daseotsi"]
+      ipas:
+        "three": "se si"
+        "five": "tasʌt si"
+    - lemma: "번"
+      key: "beon"
+      reading: "beon"
+      ipa: "pʌn"
+      forms:
+        "three": ["세 번", "세번"]
+        "five": ["다섯 번", "다섯번"]
+      readings:
+        "three": ["se beon", "sebeon"]
+        "five": ["daseot beon", "daseotbeon"]
+      ipas:
+        "three": "se pʌn"
+        "five": "tasʌt pʌn"
+    - lemma: "원"
+      key: "won"
+      reading: "won"
+      ipa: "wʌn"
+      forms:
+        "three": "삼 원"
+        "five": "오 원"
+      readings:
+        "three": "sam won"
+        "five": "o won"
+      ipas:
+        "three": "sam wʌn"
+        "five": "o wʌn"
+    - lemma: "층"
+      key: "cheung"
+      reading: "cheung"
+      ipa: "tɕʰɯŋ"
+      forms:
+        "three": "삼 층"
+        "five": "오 층"
+      readings:
+        "three": "sam cheung"
+        "five": "o cheung"
+      ipas:
+        "three": "sam tɕʰɯŋ"
+        "five": "o tɕʰɯŋ"
+    - lemma: "분"
+      key: "bun"
+      reading: "bun"
+      ipa: "pun"
+      forms:
+        "three": "삼 분"
+        "five": "오 분"
+      readings:
+        "three": "sam bun"
+        "five": "o bun"
+      ipas:
+        "three": "sam pun"
+        "five": "o pun"
+    - lemma: "월"
+      key: "wol"
+      reading: "wol"
+      ipa: "wʌl"
+      forms:
+        "three": "삼월"
+        "five": "오월"
+      readings:
+        "three": "samwol"
+        "five": "owol"
+      ipas:
+        "three": "samwʌl"
+        "five": "owʌl"

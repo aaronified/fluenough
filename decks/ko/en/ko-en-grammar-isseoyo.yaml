@@ -1,0 +1,26 @@
+schema: 1
+id: "ko-en-grammar-isseoyo"
+kind: "layer"
+core: "ko-grammar-isseoyo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "있어요 (isseoyo): there is and I have"
+description: "Eight nouns in 'there is (a noun)', the question, and 'I have (a noun)'. Sources: the en.wikipedia.org pages 'Korean grammar' and 'Korean verbs' and the en.wiktionary.org entry 있다 (itda) (its conjugation table gives 있어요 (isseoyo)). Not yet checked by a Korean speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "'There is' and 'to have' with 있어요 (isseoyo)"
+  slot_name: "sentence"
+  slots:
+    "exists": "'There is (the noun)': the noun with 이 (i) or 가 (ga) and 있어요 (isseoyo)"
+    "question": "'Is there (the noun)?': the same with a question mark"
+    "have": "'I have (the noun)': 저는 (jeoneun), the noun with 이 (i) or 가 (ga) and 있어요 (isseoyo)"
+  entries:
+    "chingu": "a friend"
+    "gajok": "a family"
+    "don": "money"
+    "sigan": "time"
+    "jadongcha": "a car"
+    "keompyuteo": "a computer"
+    "hyudaepon": "a mobile phone"
+    "yeolsoe": "a key"
+  notes: "있다 (itda) says that something exists, is somewhere, or belongs to someone (Wikipedia, Korean grammar). Its polite form is 있어요 (isseoyo), copied from Wiktionary's table for 있다 (itda). The thing that exists or is owned takes the subject particle -이 (-i) or -가 (-ga): 친구가 (chinguga) 있어요 (isseoyo), 'there is a friend' or 'I have a friend'. With 저는 (jeoneun) in front, the same sentence says who has it: 저는 (jeoneun) 시간이 (sigani) 있어요 (isseoyo), 'I have time'. Wikipedia's grammar article counts a being's possession among the things 있다 (itda) says, so the person is the topic and the thing is the subject. The question has the same form with a question mark. Wikipedia's grammar article notes that the honorific form of 있다 (itda) is 계시다 (gyesida), used for a person one respects, as in 안녕히 계세요 (annyeonghi gyeseyo), goodbye to the one who stays. 있다 (itda) is a verb: Wikipedia says existential verbs conjugate like action verbs, and its opposite, 없다 (eopda), is the next lesson."

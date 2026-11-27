@@ -1,0 +1,90 @@
+# Unit 28 (ko-grammar-more-particles). Sources read: en.wikipedia.org 'Korean postpositions' (도, 의, 와/과/랑, 하고, 부터, 까지, 에게/한테, 께) and 'Korean grammar' (case and informational clitics; the topic and additive markers override 이/가 and 을/를),
+# en.wiktionary.org entries -도, -의, -하고, -부터, -까지, -에게 (senses and usage notes) and the conjugation table of 전화하다 and 가다 for the polite verbs. Forms are built by rule and checked against tools/transcribe.py ko.
+schema: 1
+id: "ko-grammar-particle-ui"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["of", "name"]
+  entries:
+    - lemma: "친구"
+      key: "chingu"
+      reading: "chingu"
+      ipa: "tɕʰinku"
+      forms:
+        "of": "친구의"
+        "name": "친구의 이름"
+      readings:
+        "of": "chinguui"
+        "name": "chinguui ireum"
+      ipas:
+        "of": "tɕʰinkuɰi"
+        "name": "tɕʰinkuɰi iɾɯm"
+    - lemma: "선생님"
+      key: "seonsaengnim"
+      reading: "seonsaengnim"
+      ipa: "sʌnseŋnim"
+      forms:
+        "of": "선생님의"
+        "name": "선생님의 이름"
+      readings:
+        "of": "seonsaengnimui"
+        "name": "seonsaengnimui ireum"
+      ipas:
+        "of": "sʌnseŋnimi"
+        "name": "sʌnseŋnimi iɾɯm"
+    - lemma: "학생"
+      key: "haksaeng"
+      reading: "haksaeng"
+      ipa: "haks͈eŋ"
+      forms:
+        "of": "학생의"
+        "name": "학생의 이름"
+      readings:
+        "of": "haksaengui"
+        "name": "haksaengui ireum"
+      ipas:
+        "of": "haks͈eŋɰi"
+        "name": "haks͈eŋɰi iɾɯm"
+    - lemma: "의사"
+      key: "uisa"
+      reading: "uisa"
+      ipa: "ɰisa"
+      forms:
+        "of": "의사의"
+        "name": "의사의 이름"
+      readings:
+        "of": "uisaui"
+        "name": "uisaui ireum"
+      ipas:
+        "of": "ɰisaɰi"
+        "name": "ɰisaɰi iɾɯm"
+    - lemma: "사장님"
+      key: "sajangnim"
+      reading: "sajangnim"
+      ipa: "satɕaŋnim"
+      forms:
+        "of": "사장님의"
+        "name": "사장님의 이름"
+      readings:
+        "of": "sajangnimui"
+        "name": "sajangnimui ireum"
+      ipas:
+        "of": "satɕaŋnimi"
+        "name": "satɕaŋnimi iɾɯm"
+    - lemma: "교수님"
+      key: "gyosunim"
+      reading: "gyosunim"
+      ipa: "kjosunim"
+      forms:
+        "of": "교수님의"
+        "name": "교수님의 이름"
+      readings:
+        "of": "gyosunimui"
+        "name": "gyosunimui ireum"
+      ipas:
+        "of": "kjosunimi"
+        "name": "kjosunimi iɾɯm"

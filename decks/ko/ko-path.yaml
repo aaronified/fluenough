@@ -117,6 +117,7 @@ alphabet:
   - "ko-hangul-vowels"
   - "ko-hangul-consonants"
   - "ko-hangul-compound-vowels"
+  - "ko-hangul-batchim"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
@@ -166,64 +167,76 @@ units:
       - { id: "ae-and-e", text: { "en": "The compound vowels, and the pairs most speakers no longer tell apart: ae and e, oe and we" } }
     reading_passages:
       - { id: "menu-words", text: { "en": "Words on a cafe menu with compound vowels: coffee, tea, water" } }
-  - planned: { id: "ko-hangul-batchim", grammar: "script-hangul-batchim", words: 0 }
+  - decks: ["ko-hangul-batchim"]
+    words: 0
     listening_passages:
       - { id: "final-consonants", text: { "en": "The seven sounds a final consonant can have, and how one links into a following vowel: hangugeo" } }
     reading_passages:
       - { id: "street-names", text: { "en": "Street and station names with final consonants" } }
-  - planned: { id: "ko-pronouns", theme: "pronouns", words: 20 }
+  - decks: ["ko-pronouns", "ko-pronouns-sentences"]
+    words: 10
     listening_passages:
       - { id: "who-is-that", text: { "en": "Pointing out who is who in a group photo: I, the humble I, this person, that person" } }
     reading_passages:
       - { id: "class-photo-caption", text: { "en": "A caption under a class photo naming each person" } }
-  - planned: { id: "ko-family", theme: "family", words: 35 }
+  - decks: ["ko-family", "ko-family-sentences", "*"]
+    words: 35
     listening_passages:
       - { id: "older-brother-older-sister", text: { "en": "Naming your older brother and sister, which depends on whether you are a man or a woman: hyeong, oppa, nuna, eonni" } }
     reading_passages:
       - { id: "family-introduction", text: { "en": "A short self-introduction naming the family" } }
-  - planned: { id: "ko-numbers-1-20", theme: "numbers-1-20", words: 25 }
+  - decks: ["ko-numbers-1-20", "ko-numbers-1-20-sentences", "*"]
+    words: 25
     listening_passages:
       - { id: "two-ways-to-count", text: { "en": "Counting from one to ten twice: hana, dul, set and il, i, sam" } }
     reading_passages:
       - { id: "locker-numbers", text: { "en": "Locker numbers at a subway station" } }
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - planned: { id: "ko-about-me", theme: "about-me", words: 20 }
+  - decks: ["ko-about-me", "ko-about-me-sentences", "*"]
+    words: 20
     listening_passages:
       - { id: "self-introduction", text: { "en": "A self-introduction on the first day at a language school" } }
     reading_passages:
       - { id: "registration-card", text: { "en": "A registration card: name, age, country, job" } }
-  - planned: { id: "ko-everyday-verbs", theme: "everyday-verbs", words: 35 }
+  - decks: ["ko-everyday-verbs", "ko-everyday-verbs-sentences"]
+    words: 35
     listening_passages:
       - { id: "a-morning-at-home", text: { "en": "A mother says what each person in the house does in the morning" } }
     reading_passages:
       - { id: "note-on-the-fridge", text: { "en": "A note on the fridge: what to eat, what to drink, when to come home" } }
-  - planned: { id: "ko-adverbs", theme: "adverbs", words: 30 }
+  - decks: ["ko-adverbs", "ko-adverbs-sentences"]
+    words: 30
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "ko-quantities", theme: "quantities", words: 20 }
+  - decks: ["ko-quantities", "ko-quantities-sentences"]
+    words: 20
     listening_passages:
       - { id: "how-many-do-you-want", text: { "en": "Asking how much and how many at a bakery" } }
     reading_passages:
       - { id: "recipe-amounts", text: { "en": "The amounts on a recipe card" } }
-  - planned: { id: "ko-describing", theme: "describing", words: 35 }
+  - decks: ["ko-describing", "ko-describing-sentences"]
+    words: 35
     listening_passages:
       - { id: "how-is-it", text: { "en": "A friend asks about your new room: big, quiet, clean" } }
     reading_passages:
       - { id: "postcard-from-busan", text: { "en": "A short postcard from Busan: the weather, the food, the sea" } }
-  - planned: { id: "ko-time", theme: "time", words: 25 }
+  - decks: ["ko-time", "ko-time-sentences", "*"]
+    words: 25
     listening_passages:
       - { id: "what-time-is-it", text: { "en": "Asking and telling the time: native numbers for the hours, Sino-Korean for the minutes" } }
     reading_passages:
       - { id: "shop-hours", text: { "en": "The opening hours on a shop door" } }
-  - planned: { id: "ko-location", theme: "location", words: 15 }
+  - decks: ["ko-location", "ko-location-sentences"]
+    words: 15
     listening_passages:
       - { id: "where-is-my-key", text: { "en": "Looking for a key: on, under, in, next to" } }
     reading_passages:
       - { id: "room-layout", text: { "en": "A note saying where things are in a room" } }
-  - planned: { id: "ko-more-verbs", theme: "more-verbs", words: 30 }
+  - decks: ["ko-more-verbs", "ko-more-verbs-sentences"]
+    words: 30
     listening_passages:
       - { id: "weekend-chores", text: { "en": "Someone lists what they will do this weekend" } }
     reading_passages:
@@ -231,134 +244,174 @@ units:
   # 5. Rules as forms, practised on the words known: how syllables change
   # each other, the copula and the particles first, then the polite
   # present, negation, existence, the demonstratives and more particles.
-  - planned: { id: "ko-grammar-sound-changes-1", grammar: ["liaison", "nasalisation"] }
+  - decks: ["ko-grammar-liaison", "ko-grammar-nasalisation"]
+    words: 0
+    grammar: ["liaison", "nasalisation"]
     listening_passages:
       - { id: "said-not-spelled", text: { "en": "Words said otherwise than spelled: a final consonant moving on (meogeoyo), and k, t, p turning nasal before n and m (gamsahamnida, hangnyeon)" } }
     reading_passages:
       - { id: "spelling-and-sound", text: { "en": "A short list of words with their spelling and how they are said, side by side" } }
-  - planned: { id: "ko-grammar-copula", grammar: ["copula-ieyo", "copula-aniyeyo"] }
+  - decks: ["ko-grammar-copula-ieyo", "ko-grammar-copula-aniyeyo"]
+    words: 0
+    grammar: ["copula-ieyo", "copula-aniyeyo"]
     listening_passages:
       - { id: "i-am-a-student", text: { "en": "Saying who and what you are, and are not: a student, not a teacher" } }
     reading_passages:
       - { id: "profile-card", text: { "en": "A profile card: what each person is and is not" } }
-  - planned: { id: "ko-grammar-topic-subject", grammar: ["particle-eun-neun", "particle-i-ga"] }
+  - decks: ["ko-grammar-particle-eun-neun", "ko-grammar-particle-i-ga"]
+    words: 0
+    grammar: ["particle-eun-neun", "particle-i-ga"]
     listening_passages:
       - { id: "as-for-me", text: { "en": "Saying what you are talking about and who does it: eun and neun, i and ga, after a consonant and after a vowel" } }
     reading_passages:
       - { id: "introductions-board", text: { "en": "A class board where each pupil writes one line about themselves" } }
-  - planned: { id: "ko-grammar-object-place", grammar: ["particle-eul-reul", "particle-e", "particle-eseo"] }
+  - decks: ["ko-grammar-particle-eul-reul", "ko-grammar-particle-e", "ko-grammar-particle-eseo"]
+    words: 0
+    grammar: ["particle-eul-reul", "particle-e", "particle-eseo"]
     listening_passages:
       - { id: "who-does-what-where", text: { "en": "Saying what you eat, where you go and where you do it" } }
     reading_passages:
       - { id: "diary-lines", text: { "en": "A few diary lines: where I ate, what I bought, where I went" } }
-  - planned: { id: "ko-grammar-haeyo-present", grammar: ["haeyo-present", "verb-stems"] }
+  - decks: ["ko-grammar-haeyo-present", "ko-grammar-verb-stems"]
+    words: 0
+    grammar: ["haeyo-present", "verb-stems"]
     listening_passages:
       - { id: "what-do-you-do-on-sundays", text: { "en": "Saying politely what you do on Sundays: the endings ayo, eoyo and haeyo" } }
     reading_passages:
       - { id: "weekly-routine", text: { "en": "A weekly routine written in polite forms" } }
-  - planned: { id: "ko-grammar-negation", grammar: ["an-negation", "ji-anayo"] }
+  - decks: ["ko-grammar-an-negation", "ko-grammar-ji-anayo"]
+    words: 0
+    grammar: ["an-negation", "ji-anayo"]
     listening_passages:
       - { id: "i-dont-eat-meat", text: { "en": "Saying what you do not do, in the short form with an and the long form with ji anayo" } }
     reading_passages:
       - { id: "diet-card", text: { "en": "A card a diner gives a restaurant: what they do not eat" } }
-  - planned: { id: "ko-grammar-isseoyo", grammar: ["isseoyo", "eopseoyo"] }
+  - decks: ["ko-grammar-isseoyo", "ko-grammar-eopseoyo"]
+    words: 0
+    grammar: ["isseoyo", "eopseoyo"]
     listening_passages:
       - { id: "is-there-a-bank", text: { "en": "Asking whether there is a bank nearby, and saying what you have and do not have" } }
     reading_passages:
       - { id: "floor-guide", text: { "en": "A floor guide in a department store: what is on each floor" } }
-  - planned: { id: "ko-grammar-demonstratives", grammar: "i-geu-jeo" }
+  - decks: ["ko-grammar-i-geu-jeo"]
+    words: 0
+    grammar: ["i-geu-jeo"]
     listening_passages:
       - { id: "this-one-that-one", text: { "en": "Pointing at things in a shop: this, that, that over there, which" } }
     reading_passages:
       - { id: "shop-labels", text: { "en": "Labels in a shop window pointing at its goods" } }
-  - planned: { id: "ko-grammar-more-particles", grammar: ["particle-do", "particle-ui", "particle-hago", "buteo-kkaji", "particle-ege"] }
+  - decks: ["ko-grammar-particle-do", "ko-grammar-particle-ui", "ko-grammar-particle-hago", "ko-grammar-buteo-kkaji", "ko-grammar-particle-ege"]
+    words: 0
+    grammar: ["particle-do", "particle-ui", "particle-hago", "buteo-kkaji", "particle-ege"]
     listening_passages:
       - { id: "from-nine-to-six", text: { "en": "Saying from when to when, with whom, whose, to whom, and 'too'" } }
     reading_passages:
       - { id: "office-hours-note", text: { "en": "A note on office hours and who is in, from when to when" } }
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
-  - planned: { id: "ko-work", theme: "work", words: 35 }
+  - decks: ["ko-work", "ko-work-sentences"]
+    words: 24
     listening_passages:
       - { id: "what-is-your-job", text: { "en": "Two people ask each other what they do for a living" } }
     reading_passages:
       - { id: "job-card", text: { "en": "A business card and a short job description" } }
-  - planned: { id: "ko-numbers-big", theme: "numbers-big", words: 35 }
+  - decks: ["ko-numbers-big"]
+    words: 19
     listening_passages:
       - { id: "prices-and-years", text: { "en": "Hearing prices in won, years and phone numbers, counted in ten thousands (man)" } }
     reading_passages:
       - { id: "price-tags", text: { "en": "Price tags and a bus-route number board" } }
-  - planned: { id: "ko-grammar-counters", grammar: ["counters", "native-number-forms"] }
+  - decks: ["ko-grammar-counters", "ko-grammar-native-number-forms"]
+    words: 0
+    grammar: ["counters", "native-number-forms"]
     listening_passages:
       - { id: "two-coffees-three-people", text: { "en": "Ordering for a group: two coffees, three people, one bottle, with han, du, se and ne before a counter" } }
     reading_passages:
       - { id: "order-slip", text: { "en": "An order slip with counted items" } }
-  - planned: { id: "ko-loanwords", theme: "loanwords", words: 30 }
+  - decks: ["ko-loanwords", "ko-loanwords-sentences"]
+    words: 21
     listening_passages:
       - { id: "at-the-convenience-store", text: { "en": "Buying a few things at a convenience store: words from English as Korean says them" } }
     reading_passages:
       - { id: "convenience-store-flyer", text: { "en": "A convenience store's flyer of new products" } }
-  - planned: { id: "ko-market", theme: "market", words: 40 }
+  - decks: ["ko-market", "ko-market-sentences", "*"]
+    words: 36
     listening_passages:
       - { id: "at-the-traditional-market", text: { "en": "Buying fruit and vegetables at a traditional market" } }
     reading_passages:
       - { id: "market-price-board", text: { "en": "A price board at a market" } }
-  - planned: { id: "ko-groceries", theme: "groceries", words: 40 }
+  - decks: ["ko-groceries", "ko-groceries-sentences", "*"]
+    words: 40
     listening_passages:
       - { id: "shopping-list-aloud", text: { "en": "Two people go through a shopping list at a supermarket" } }
     reading_passages:
       - { id: "shopping-list", text: { "en": "A handwritten shopping list" } }
-  - planned: { id: "ko-food", theme: "food", words: 60 }
+  - decks: ["ko-food", "ko-food-sentences", "*"]
+    words: 56
     listening_passages:
       - { id: "ordering-a-meal", text: { "en": "Choosing a meal at a small restaurant: bibimbap, kimchi stew, rice" } }
     reading_passages:
       - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
-  - planned: { id: "ko-grammar-past", grammar: ["past-haeyo", "past-copula"] }
+  - decks: ["ko-grammar-past-haeyo", "ko-grammar-past-copula"]
+    words: 0
+    grammar: ["past-haeyo", "past-copula"]
     listening_passages:
       - { id: "what-did-you-eat", text: { "en": "Saying politely what you ate and did yesterday, and what you were" } }
     reading_passages:
       - { id: "yesterday-note", text: { "en": "A short note about yesterday, in polite past forms" } }
-  - planned: { id: "ko-transport", theme: "transport", words: 35 }
+  - decks: ["ko-transport", "ko-transport-sentences"]
+    words: 32
     listening_passages:
       - { id: "which-line", text: { "en": "Asking which subway line goes to the city hall, and where to change" } }
     reading_passages:
       - { id: "subway-map", text: { "en": "A subway map's line and station names" } }
-  - planned: { id: "ko-directions", theme: "directions", words: 30 }
+  - decks: ["ko-directions", "ko-directions-sentences"]
+    words: 30
     listening_passages:
       - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told" } }
     reading_passages:
       - { id: "simple-map", text: { "en": "A simple map with a route in words" } }
-  - planned: { id: "ko-grammar-want", grammar: "go-sipeoyo" }
+  - decks: ["ko-grammar-go-sipeoyo"]
+    words: 0
+    grammar: ["go-sipeoyo"]
     listening_passages:
       - { id: "i-want-to-go", text: { "en": "Saying where you want to go and what you want to eat" } }
     reading_passages:
       - { id: "wish-list", text: { "en": "A wish list for a trip" } }
-  - planned: { id: "ko-body", theme: "body", words: 30 }
+  - decks: ["ko-body", "ko-body-sentences"]
+    words: 30
     listening_passages:
       - { id: "where-it-hurts", text: { "en": "Telling a doctor where it hurts" } }
     reading_passages:
       - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
-  - planned: { id: "ko-places", theme: "places", words: 40 }
+  - decks: ["ko-places", "ko-places-sentences"]
+    words: 35
     listening_passages:
       - { id: "walk-to-the-station", text: { "en": "A neighbour names the places you pass on the way to the station" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Signs along a street: post office, bank, hospital, pharmacy" } }
-  - planned: { id: "ko-home", theme: "home", words: 40 }
+  - decks: ["ko-home", "ko-home-sentences", "*"]
+    words: 41
     listening_passages:
       - { id: "an-apartment-tour", text: { "en": "A tour of a small apartment, room by room" } }
     reading_passages:
       - { id: "apartment-advert", text: { "en": "A short advert for a one-room flat to rent" } }
-  - planned: { id: "ko-grammar-requests", grammar: ["euseyo-polite", "a-juseyo"] }
+  - decks: ["ko-grammar-euseyo-polite", "ko-grammar-a-juseyo"]
+    words: 0
+    grammar: ["euseyo-polite", "a-juseyo"]
     listening_passages:
       - { id: "please-wait-here", text: { "en": "Asking someone politely to sit, wait and give: anjeuseyo, gidaryeo juseyo" } }
     reading_passages:
       - { id: "request-signs", text: { "en": "Signs that ask: please take off your shoes, please line up" } }
-  - planned: { id: "ko-grammar-future", grammar: ["eul-geoyeyo", "eulkkayo"] }
+  - decks: ["ko-grammar-eul-geoyeyo", "ko-grammar-eulkkayo"]
+    words: 0
+    grammar: ["eul-geoyeyo", "eulkkayo"]
     listening_passages:
       - { id: "shall-we-go", text: { "en": "Saying what you will do at the weekend, and asking a friend shall we go" } }
     reading_passages:
       - { id: "invitation-message", text: { "en": "A message inviting a friend out on Saturday" } }
-  - planned: { id: "ko-help", theme: "help", words: 25 }
+  - decks: ["ko-help", "ko-help-sentences"]
+    words: 19
     listening_passages:
       - { id: "lost-in-the-city", text: { "en": "Asking for help when lost" } }
     reading_passages:

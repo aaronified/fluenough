@@ -1,0 +1,1185 @@
+schema: 1
+id: "ko-food"
+part: "core"
+kind: "vocab"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+theme: "food"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ko-2580"
+    target: "음식"
+    reading: "eumsik"
+    ipa: "ɯmsik"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "음식이 좋아요."
+        reading: "eumsigi joayo."
+        ipa: "ɯmsiki tɕoajo"
+        bases:
+          - { word: "음식이", base: "음식", reading: "eumsik" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "음식이 많아요."
+        reading: "eumsigi manayo."
+        ipa: "ɯmsiki manajo"
+        bases:
+          - { word: "음식이", base: "음식", reading: "eumsik" }
+          - { word: "많아요", base: "많다", reading: "manta" }
+  - id: "ko-2581"
+    target: "요리"
+    reading: "yori"
+    ipa: "joɾi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "요리가 좋아요."
+        reading: "yoriga joayo."
+        ipa: "joɾika tɕoajo"
+        bases:
+          - { word: "요리가", base: "요리", reading: "yori" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "요리를 해요."
+        reading: "yorireul haeyo."
+        ipa: "joɾiɾɯl hejo"
+        bases:
+          - { word: "요리를", base: "요리", reading: "yori" }
+          - { word: "해요", base: "하다", reading: "hada" }
+  - id: "ko-2582"
+    target: "국"
+    reading: "guk"
+    ipa: "kuk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "국이 뜨거워요."
+        reading: "gugi tteugeowoyo."
+        ipa: "kuki t͈ɯkʌwʌjo"
+        bases:
+          - { word: "국이", base: "국", reading: "guk" }
+          - { word: "뜨거워요", ref: "ko-1867" }
+      - target: "국이 좋아요."
+        reading: "gugi joayo."
+        ipa: "kuki tɕoajo"
+        bases:
+          - { word: "국이", base: "국", reading: "guk" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-2583"
+    target: "찌개"
+    reading: "jjigae"
+    ipa: "t͈ɕike"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "찌개가 뜨거워요."
+        reading: "jjigaega tteugeowoyo."
+        ipa: "t͈ɕikeka t͈ɯkʌwʌjo"
+        bases:
+          - { word: "찌개가", base: "찌개", reading: "jjigae" }
+          - { word: "뜨거워요", ref: "ko-1867" }
+      - target: "찌개가 좋아요."
+        reading: "jjigaega joayo."
+        ipa: "t͈ɕikeka tɕoajo"
+        bases:
+          - { word: "찌개가", base: "찌개", reading: "jjigae" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-2584"
+    target: "반찬"
+    reading: "banchan"
+    ipa: "pantɕʰan"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "반찬이 많아요."
+        reading: "banchani manayo."
+        ipa: "pantɕʰani manajo"
+        bases:
+          - { word: "반찬이", base: "반찬", reading: "banchan" }
+          - { word: "많아요", base: "많다", reading: "manta" }
+      - target: "반찬이 좋아요."
+        reading: "banchani joayo."
+        ipa: "pantɕʰani tɕoajo"
+        bases:
+          - { word: "반찬이", base: "반찬", reading: "banchan" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-2585"
+    target: "비빔밥"
+    reading: "bibimbap"
+    ipa: "pipimpap"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "비빔밥이 좋아요."
+        reading: "bibimbabi joayo."
+        ipa: "pipimpapi tɕoajo"
+        bases:
+          - { word: "비빔밥이", base: "비빔밥", reading: "bibimbap" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "비빔밥을 주세요."
+        reading: "bibimbabeul juseyo."
+        ipa: "pipimpapɯl tɕusejo"
+        bases:
+          - { word: "비빔밥을", base: "비빔밥", reading: "bibimbap" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-2586"
+    target: "김밥"
+    reading: "gimbap"
+    ipa: "kimpap"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "김밥이 좋아요."
+        reading: "gimbabi joayo."
+        ipa: "kimpapi tɕoajo"
+        bases:
+          - { word: "김밥이", base: "김밥", reading: "gimbap" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "김밥을 주세요."
+        reading: "gimbabeul juseyo."
+        ipa: "kimpapɯl tɕusejo"
+        bases:
+          - { word: "김밥을", base: "김밥", reading: "gimbap" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-2587"
+    target: "떡볶이"
+    reading: "tteokbokki"
+    ipa: "t͈ʌkp͈ok͈i"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "떡볶이가 뜨거워요."
+        reading: "tteokbokkiga tteugeowoyo."
+        ipa: "t͈ʌkp͈ok͈ika t͈ɯkʌwʌjo"
+        bases:
+          - { word: "떡볶이가", base: "떡볶이", reading: "tteokbokki" }
+          - { word: "뜨거워요", ref: "ko-1867" }
+      - target: "떡볶이를 주세요."
+        reading: "tteokbokkireul juseyo."
+        ipa: "t͈ʌkp͈ok͈iɾɯl tɕusejo"
+        bases:
+          - { word: "떡볶이를", base: "떡볶이", reading: "tteokbokki" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-2588"
+    target: "냉면"
+    reading: "naengmyeon"
+    ipa: "neŋmjʌn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "냉면이 차가워요."
+        reading: "naengmyeoni chagawoyo."
+        ipa: "neŋmjʌni tɕʰakawʌjo"
+        bases:
+          - { word: "냉면이", base: "냉면", reading: "naengmyeon" }
+          - { word: "차가워요", ref: "ko-1868" }
+      - target: "냉면을 주세요."
+        reading: "naengmyeoneul juseyo."
+        ipa: "neŋmjʌnɯl tɕusejo"
+        bases:
+          - { word: "냉면을", base: "냉면", reading: "naengmyeon" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-2589"
+    target: "불고기"
+    reading: "bulgogi"
+    ipa: "pulkoki"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "불고기가 좋아요."
+        reading: "bulgogiga joayo."
+        ipa: "pulkokika tɕoajo"
+        bases:
+          - { word: "불고기가", base: "불고기", reading: "bulgogi" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "불고기를 주세요."
+        reading: "bulgogireul juseyo."
+        ipa: "pulkokiɾɯl tɕusejo"
+        bases:
+          - { word: "불고기를", base: "불고기", reading: "bulgogi" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-2590"
+    target: "삼겹살"
+    reading: "samgyeopsal"
+    ipa: "samkjʌps͈al"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "삼겹살이 좋아요."
+        reading: "samgyeopsari joayo."
+        ipa: "samkjʌps͈aɾi tɕoajo"
+        bases:
+          - { word: "삼겹살이", base: "삼겹살", reading: "samgyeopsal" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "삼겹살을 주세요."
+        reading: "samgyeopsareul juseyo."
+        ipa: "samkjʌps͈aɾɯl tɕusejo"
+        bases:
+          - { word: "삼겹살을", base: "삼겹살", reading: "samgyeopsal" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-2591"
+    target: "닭갈비"
+    reading: "dakgalbi"
+    ipa: "takk͈alpi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "닭갈비가 뜨거워요."
+        reading: "dakgalbiga tteugeowoyo."
+        ipa: "takk͈alpika t͈ɯkʌwʌjo"
+        bases:
+          - { word: "닭갈비가", base: "닭갈비", reading: "dakgalbi" }
+          - { word: "뜨거워요", ref: "ko-1867" }
+      - target: "닭갈비를 주세요."
+        reading: "dakgalbireul juseyo."
+        ipa: "takk͈alpiɾɯl tɕusejo"
+        bases:
+          - { word: "닭갈비를", base: "닭갈비", reading: "dakgalbi" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-2592"
+    target: "치킨"
+    reading: "chikin"
+    ipa: "tɕʰikʰin"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "치킨이 좋아요."
+        reading: "chikini joayo."
+        ipa: "tɕʰikʰini tɕoajo"
+        bases:
+          - { word: "치킨이", base: "치킨", reading: "chikin" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "치킨을 주세요."
+        reading: "chikineul juseyo."
+        ipa: "tɕʰikʰinɯl tɕusejo"
+        bases:
+          - { word: "치킨을", base: "치킨", reading: "chikin" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-2593"
+    target: "피자"
+    reading: "pija"
+    ipa: "pʰitɕa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "피자가 좋아요."
+        reading: "pijaga joayo."
+        ipa: "pʰitɕaka tɕoajo"
+        bases:
+          - { word: "피자가", base: "피자", reading: "pija" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "피자를 주세요."
+        reading: "pijareul juseyo."
+        ipa: "pʰitɕaɾɯl tɕusejo"
+        bases:
+          - { word: "피자를", base: "피자", reading: "pija" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-2594"
+    target: "햄버거"
+    reading: "haembeogeo"
+    ipa: "hempʌkʌ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "햄버거가 뜨거워요."
+        reading: "haembeogeoga tteugeowoyo."
+        ipa: "hempʌkʌka t͈ɯkʌwʌjo"
+        bases:
+          - { word: "햄버거가", base: "햄버거", reading: "haembeogeo" }
+          - { word: "뜨거워요", ref: "ko-1867" }
+      - target: "햄버거를 주세요."
+        reading: "haembeogeoreul juseyo."
+        ipa: "hempʌkʌɾɯl tɕusejo"
+        bases:
+          - { word: "햄버거를", base: "햄버거", reading: "haembeogeo" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-2595"
+    target: "샌드위치"
+    reading: "saendeuwichi"
+    ipa: "sentɯwitɕʰi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "샌드위치가 좋아요."
+        reading: "saendeuwichiga joayo."
+        ipa: "sentɯwitɕʰika tɕoajo"
+        bases:
+          - { word: "샌드위치가", base: "샌드위치", reading: "saendeuwichi" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "샌드위치를 주세요."
+        reading: "saendeuwichireul juseyo."
+        ipa: "sentɯwitɕʰiɾɯl tɕusejo"
+        bases:
+          - { word: "샌드위치를", base: "샌드위치", reading: "saendeuwichi" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-2596"
+    target: "스파게티"
+    reading: "seupageti"
+    ipa: "sɯpʰaketʰi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "스파게티가 뜨거워요."
+        reading: "seupagetiga tteugeowoyo."
+        ipa: "sɯpʰaketʰika t͈ɯkʌwʌjo"
+        bases:
+          - { word: "스파게티가", base: "스파게티", reading: "seupageti" }
+          - { word: "뜨거워요", ref: "ko-1867" }
+      - target: "스파게티를 주세요."
+        reading: "seupagetireul juseyo."
+        ipa: "sɯpʰaketʰiɾɯl tɕusejo"
+        bases:
+          - { word: "스파게티를", base: "스파게티", reading: "seupageti" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-2597"
+    target: "샐러드"
+    reading: "saelleodeu"
+    ipa: "sellʌtɯ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "샐러드가 차가워요."
+        reading: "saelleodeuga chagawoyo."
+        ipa: "sellʌtɯka tɕʰakawʌjo"
+        bases:
+          - { word: "샐러드가", base: "샐러드", reading: "saelleodeu" }
+          - { word: "차가워요", ref: "ko-1868" }
+      - target: "샐러드를 주세요."
+        reading: "saelleodeureul juseyo."
+        ipa: "sellʌtɯɾɯl tɕusejo"
+        bases:
+          - { word: "샐러드를", base: "샐러드", reading: "saelleodeu" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-2598"
+    target: "수프"
+    reading: "supeu"
+    ipa: "supʰɯ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "수프가 뜨거워요."
+        reading: "supeuga tteugeowoyo."
+        ipa: "supʰɯka t͈ɯkʌwʌjo"
+        bases:
+          - { word: "수프가", base: "수프", reading: "supeu" }
+          - { word: "뜨거워요", ref: "ko-1867" }
+      - target: "수프를 주세요."
+        reading: "supeureul juseyo."
+        ipa: "supʰɯɾɯl tɕusejo"
+        bases:
+          - { word: "수프를", base: "수프", reading: "supeu" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-2599"
+    target: "국물"
+    reading: "gungmul"
+    ipa: "kuŋmul"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "국물이 뜨거워요."
+        reading: "gungmuri tteugeowoyo."
+        ipa: "kuŋmuɾi t͈ɯkʌwʌjo"
+        bases:
+          - { word: "국물이", base: "국물", reading: "gungmul" }
+          - { word: "뜨거워요", ref: "ko-1867" }
+      - target: "국물이 많아요."
+        reading: "gungmuri manayo."
+        ipa: "kuŋmuɾi manajo"
+        bases:
+          - { word: "국물이", base: "국물", reading: "gungmul" }
+          - { word: "많아요", base: "많다", reading: "manta" }
+  - id: "ko-2600"
+    target: "맛"
+    reading: "mat"
+    ipa: "mat"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "맛이 좋아요."
+        reading: "masi joayo."
+        ipa: "masi tɕoajo"
+        bases:
+          - { word: "맛이", base: "맛", reading: "mat" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "맛이 어때요?"
+        reading: "masi eottaeyo?"
+        ipa: "masi ʌt͈ejo"
+        bases:
+          - { word: "맛이", base: "맛", reading: "mat" }
+          - { word: "어때요", base: "어떻다", reading: "eotteota" }
+  - id: "ko-2601"
+    target: "짜다"
+    reading: "jjada"
+    ipa: "t͈ɕata"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "국이 짜요."
+        reading: "gugi jjayo."
+        ipa: "kuki t͈ɕajo"
+        bases:
+          - { word: "국이", ref: "ko-2582" }
+          - { word: "짜요", base: "짜다", reading: "jjada" }
+      - target: "찌개가 짜요."
+        reading: "jjigaega jjayo."
+        ipa: "t͈ɕikeka t͈ɕajo"
+        bases:
+          - { word: "찌개가", ref: "ko-2583" }
+          - { word: "짜요", base: "짜다", reading: "jjada" }
+  - id: "ko-2602"
+    target: "싱겁다"
+    reading: "singgeopda"
+    ipa: "siŋkʌpt͈a"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "국이 싱거워요."
+        reading: "gugi singgeowoyo."
+        ipa: "kuki siŋkʌwʌjo"
+        bases:
+          - { word: "국이", ref: "ko-2582" }
+          - { word: "싱거워요", base: "싱겁다", reading: "singgeopda" }
+      - target: "찌개가 싱거워요."
+        reading: "jjigaega singgeowoyo."
+        ipa: "t͈ɕikeka siŋkʌwʌjo"
+        bases:
+          - { word: "찌개가", ref: "ko-2583" }
+          - { word: "싱거워요", base: "싱겁다", reading: "singgeopda" }
+  - id: "ko-2603"
+    target: "맵다"
+    reading: "maepda"
+    ipa: "mept͈a"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "떡볶이가 매워요."
+        reading: "tteokbokkiga maewoyo."
+        ipa: "t͈ʌkp͈ok͈ika mewʌjo"
+        bases:
+          - { word: "떡볶이가", ref: "ko-2587" }
+          - { word: "매워요", base: "맵다", reading: "maepda" }
+      - target: "찌개가 매워요."
+        reading: "jjigaega maewoyo."
+        ipa: "t͈ɕikeka mewʌjo"
+        bases:
+          - { word: "찌개가", ref: "ko-2583" }
+          - { word: "매워요", base: "맵다", reading: "maepda" }
+  - id: "ko-2604"
+    target: "달다"
+    reading: "dalda"
+    ipa: "talta"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "수박이 달아요."
+        reading: "subagi darayo."
+        ipa: "supaki taɾajo"
+        bases:
+          - { word: "수박이", base: "수박", reading: "subak" }
+          - { word: "달아요", base: "달다", reading: "dalda" }
+      - target: "음료가 달아요."
+        reading: "eumnyoga darayo."
+        ipa: "ɯmnjoka taɾajo"
+        bases:
+          - { word: "음료가", ref: "ko-2637" }
+          - { word: "달아요", base: "달다", reading: "dalda" }
+  - id: "ko-2605"
+    target: "시다"
+    reading: "sida"
+    ipa: "sita"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "식초가 셔요."
+        reading: "sikchoga syeoyo."
+        ipa: "siktɕʰoka sjʌjo"
+        bases:
+          - { word: "식초가", base: "식초", reading: "sikcho" }
+          - { word: "셔요", base: "시다", reading: "sida" }
+      - target: "과일이 셔요?"
+        reading: "gwairi syeoyo?"
+        ipa: "kwaiɾi sjʌjo"
+        bases:
+          - { word: "과일이", base: "과일", reading: "gwail" }
+          - { word: "셔요", base: "시다", reading: "sida" }
+  - id: "ko-2606"
+    target: "쓰다"
+    reading: "sseuda"
+    ipa: "s͈ɯta"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "커피가 써요."
+        reading: "keopiga sseoyo."
+        ipa: "kʰʌpʰika s͈ʌjo"
+        bases:
+          - { word: "커피가", ref: "ko-0028" }
+          - { word: "써요", base: "쓰다", reading: "sseuda" }
+      - target: "맛이 써요."
+        reading: "masi sseoyo."
+        ipa: "masi s͈ʌjo"
+        bases:
+          - { word: "맛이", ref: "ko-2600" }
+          - { word: "써요", base: "쓰다", reading: "sseuda" }
+  - id: "ko-2607"
+    target: "고소하다"
+    reading: "gosohada"
+    ipa: "kosohata"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "참기름이 고소해요."
+        reading: "chamgireumi gosohaeyo."
+        ipa: "tɕʰamkiɾɯmi kosohejo"
+        bases:
+          - { word: "참기름이", base: "참기름", reading: "chamgireum" }
+          - { word: "고소해요", base: "고소하다", reading: "gosohada" }
+      - target: "고기가 고소해요."
+        reading: "gogiga gosohaeyo."
+        ipa: "kokika kosohejo"
+        bases:
+          - { word: "고기가", base: "고기", reading: "gogi" }
+          - { word: "고소해요", base: "고소하다", reading: "gosohada" }
+  - id: "ko-2608"
+    target: "느끼하다"
+    reading: "neukkihada"
+    ipa: "nɯk͈ihata"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "삼겹살이 느끼해요."
+        reading: "samgyeopsari neukkihaeyo."
+        ipa: "samkjʌps͈aɾi nɯk͈ihejo"
+        bases:
+          - { word: "삼겹살이", ref: "ko-2590" }
+          - { word: "느끼해요", base: "느끼하다", reading: "neukkihada" }
+      - target: "음식이 느끼해요."
+        reading: "eumsigi neukkihaeyo."
+        ipa: "ɯmsiki nɯk͈ihejo"
+        bases:
+          - { word: "음식이", ref: "ko-2580" }
+          - { word: "느끼해요", base: "느끼하다", reading: "neukkihada" }
+  - id: "ko-2609"
+    target: "새콤하다"
+    reading: "saekomhada"
+    ipa: "sekʰomhata"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "과일이 새콤해요."
+        reading: "gwairi saekomhaeyo."
+        ipa: "kwaiɾi sekʰomhejo"
+        bases:
+          - { word: "과일이", base: "과일", reading: "gwail" }
+          - { word: "새콤해요", base: "새콤하다", reading: "saekomhada" }
+      - target: "식초가 새콤해요."
+        reading: "sikchoga saekomhaeyo."
+        ipa: "siktɕʰoka sekʰomhejo"
+        bases:
+          - { word: "식초가", base: "식초", reading: "sikcho" }
+          - { word: "새콤해요", base: "새콤하다", reading: "saekomhada" }
+  - id: "ko-2610"
+    target: "달콤하다"
+    reading: "dalkomhada"
+    ipa: "talkʰomhata"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "디저트가 달콤해요."
+        reading: "dijeoteuga dalkomhaeyo."
+        ipa: "titɕʌtʰɯka talkʰomhejo"
+        bases:
+          - { word: "디저트가", ref: "ko-2633" }
+          - { word: "달콤해요", base: "달콤하다", reading: "dalkomhada" }
+      - target: "포도가 달콤해요."
+        reading: "podoga dalkomhaeyo."
+        ipa: "pʰotoka talkʰomhejo"
+        bases:
+          - { word: "포도가", base: "포도", reading: "podo" }
+          - { word: "달콤해요", base: "달콤하다", reading: "dalkomhada" }
+  - id: "ko-2611"
+    target: "부드럽다"
+    reading: "budeureopda"
+    ipa: "putɯɾʌpt͈a"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "두부가 부드러워요."
+        reading: "dubuga budeureowoyo."
+        ipa: "tupuka putɯɾʌwʌjo"
+        bases:
+          - { word: "두부가", base: "두부", reading: "dubu" }
+          - { word: "부드러워요", base: "부드럽다", reading: "budeureopda" }
+      - target: "고기가 부드러워요."
+        reading: "gogiga budeureowoyo."
+        ipa: "kokika putɯɾʌwʌjo"
+        bases:
+          - { word: "고기가", base: "고기", reading: "gogi" }
+          - { word: "부드러워요", base: "부드럽다", reading: "budeureopda" }
+  - id: "ko-2612"
+    target: "쫄깃하다"
+    reading: "jjolgithada"
+    ipa: "t͈ɕolkithata"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "떡볶이가 쫄깃해요."
+        reading: "tteokbokkiga jjolgithaeyo."
+        ipa: "t͈ʌkp͈ok͈ika t͈ɕolkithejo"
+        bases:
+          - { word: "떡볶이가", ref: "ko-2587" }
+          - { word: "쫄깃해요", base: "쫄깃하다", reading: "jjolgithada" }
+      - target: "라면이 쫄깃해요."
+        reading: "ramyeoni jjolgithaeyo."
+        ipa: "ɾamjʌni t͈ɕolkithejo"
+        bases:
+          - { word: "라면이", base: "라면", reading: "ramyeon" }
+          - { word: "쫄깃해요", base: "쫄깃하다", reading: "jjolgithada" }
+  - id: "ko-2613"
+    target: "매콤하다"
+    reading: "maekomhada"
+    ipa: "mekʰomhata"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "찌개가 매콤해요."
+        reading: "jjigaega maekomhaeyo."
+        ipa: "t͈ɕikeka mekʰomhejo"
+        bases:
+          - { word: "찌개가", ref: "ko-2583" }
+          - { word: "매콤해요", base: "매콤하다", reading: "maekomhada" }
+      - target: "떡볶이가 매콤해요."
+        reading: "tteokbokkiga maekomhaeyo."
+        ipa: "t͈ʌkp͈ok͈ika mekʰomhejo"
+        bases:
+          - { word: "떡볶이가", ref: "ko-2587" }
+          - { word: "매콤해요", base: "매콤하다", reading: "maekomhada" }
+  - id: "ko-2616"
+    target: "굽다"
+    reading: "gupda"
+    ipa: "kupt͈a"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "고기를 구워요."
+        reading: "gogireul guwoyo."
+        ipa: "kokiɾɯl kuwʌjo"
+        bases:
+          - { word: "고기를", base: "고기", reading: "gogi" }
+          - { word: "구워요", base: "굽다", reading: "gupda" }
+      - target: "빵을 구워요."
+        reading: "ppangeul guwoyo."
+        ipa: "p͈aŋɯl kuwʌjo"
+        bases:
+          - { word: "빵을", ref: "ko-0041" }
+          - { word: "구워요", base: "굽다", reading: "gupda" }
+  - id: "ko-2617"
+    target: "볶다"
+    reading: "bokda"
+    ipa: "pokt͈a"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "양파를 볶아요."
+        reading: "yangpareul bokkayo."
+        ipa: "jaŋpʰaɾɯl pok͈ajo"
+        bases:
+          - { word: "양파를", base: "양파", reading: "yangpa" }
+          - { word: "볶아요", base: "볶다", reading: "bokda" }
+      - target: "마늘을 볶아요."
+        reading: "maneureul bokkayo."
+        ipa: "manɯɾɯl pok͈ajo"
+        bases:
+          - { word: "마늘을", base: "마늘", reading: "maneul" }
+          - { word: "볶아요", base: "볶다", reading: "bokda" }
+  - id: "ko-2618"
+    target: "끓이다"
+    reading: "kkeulida"
+    ipa: "k͈ɯlita"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "국을 끓여요."
+        reading: "gugeul kkeulyeoyo."
+        ipa: "kukɯl k͈ɯljʌjo"
+        bases:
+          - { word: "국을", ref: "ko-2582" }
+          - { word: "끓여요", base: "끓이다", reading: "kkeulida" }
+      - target: "찌개를 끓여요."
+        reading: "jjigaereul kkeulyeoyo."
+        ipa: "t͈ɕikeɾɯl k͈ɯljʌjo"
+        bases:
+          - { word: "찌개를", ref: "ko-2583" }
+          - { word: "끓여요", base: "끓이다", reading: "kkeulida" }
+  - id: "ko-2619"
+    target: "튀기다"
+    reading: "twigida"
+    ipa: "tʰwikita"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "치킨을 튀겨요."
+        reading: "chikineul twigyeoyo."
+        ipa: "tɕʰikʰinɯl tʰwikjʌjo"
+        bases:
+          - { word: "치킨을", ref: "ko-2592" }
+          - { word: "튀겨요", base: "튀기다", reading: "twigida" }
+      - target: "감자를 튀겨요."
+        reading: "gamjareul twigyeoyo."
+        ipa: "kamtɕaɾɯl tʰwikjʌjo"
+        bases:
+          - { word: "감자를", base: "감자", reading: "gamja" }
+          - { word: "튀겨요", base: "튀기다", reading: "twigida" }
+  - id: "ko-2620"
+    target: "삶다"
+    reading: "samda"
+    ipa: "samta"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "달걀을 삶아요."
+        reading: "dalgyareul salmayo."
+        ipa: "talkjaɾɯl salmajo"
+        bases:
+          - { word: "달걀을", base: "달걀", reading: "dalgyal" }
+          - { word: "삶아요", base: "삶다", reading: "samda" }
+      - target: "감자를 삶아요."
+        reading: "gamjareul salmayo."
+        ipa: "kamtɕaɾɯl salmajo"
+        bases:
+          - { word: "감자를", base: "감자", reading: "gamja" }
+          - { word: "삶아요", base: "삶다", reading: "samda" }
+  - id: "ko-2621"
+    target: "찌다"
+    reading: "jjida"
+    ipa: "t͈ɕita"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "고구마를 쪄요."
+        reading: "gogumareul jjyeoyo."
+        ipa: "kokumaɾɯl t͈ɕjʌjo"
+        bases:
+          - { word: "고구마를", base: "고구마", reading: "goguma" }
+          - { word: "쪄요", base: "찌다", reading: "jjida" }
+      - target: "감자를 쪄요."
+        reading: "gamjareul jjyeoyo."
+        ipa: "kamtɕaɾɯl t͈ɕjʌjo"
+        bases:
+          - { word: "감자를", base: "감자", reading: "gamja" }
+          - { word: "쪄요", base: "찌다", reading: "jjida" }
+  - id: "ko-2622"
+    target: "썰다"
+    reading: "sseolda"
+    ipa: "s͈ʌlta"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "양파를 썰어요."
+        reading: "yangpareul sseoreoyo."
+        ipa: "jaŋpʰaɾɯl s͈ʌɾʌjo"
+        bases:
+          - { word: "양파를", base: "양파", reading: "yangpa" }
+          - { word: "썰어요", base: "썰다", reading: "sseolda" }
+      - target: "배추를 썰어요."
+        reading: "baechureul sseoreoyo."
+        ipa: "petɕʰuɾɯl s͈ʌɾʌjo"
+        bases:
+          - { word: "배추를", base: "배추", reading: "baechu" }
+          - { word: "썰어요", base: "썰다", reading: "sseolda" }
+  - id: "ko-2623"
+    target: "자르다"
+    reading: "jareuda"
+    ipa: "tɕaɾɯta"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "무를 잘라요."
+        reading: "mureul jallayo."
+        ipa: "muɾɯl tɕallajo"
+        bases:
+          - { word: "무를", base: "무", reading: "mu" }
+          - { word: "잘라요", base: "자르다", reading: "jareuda" }
+      - target: "고기를 잘라요."
+        reading: "gogireul jallayo."
+        ipa: "kokiɾɯl tɕallajo"
+        bases:
+          - { word: "고기를", base: "고기", reading: "gogi" }
+          - { word: "잘라요", base: "자르다", reading: "jareuda" }
+  - id: "ko-2624"
+    target: "섞다"
+    reading: "seokda"
+    ipa: "sʌkt͈a"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "양념을 섞어요."
+        reading: "yangnyeomeul seokkeoyo."
+        ipa: "jaŋnjʌmɯl sʌk͈ʌjo"
+        bases:
+          - { word: "양념을", ref: "ko-2627" }
+          - { word: "섞어요", base: "섞다", reading: "seokda" }
+      - target: "비빔밥을 섞어요."
+        reading: "bibimbabeul seokkeoyo."
+        ipa: "pipimpapɯl sʌk͈ʌjo"
+        bases:
+          - { word: "비빔밥을", ref: "ko-2585" }
+          - { word: "섞어요", base: "섞다", reading: "seokda" }
+  - id: "ko-2625"
+    target: "무치다"
+    reading: "muchida"
+    ipa: "mutɕʰita"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "상추를 무쳐요."
+        reading: "sangchureul muchyeoyo."
+        ipa: "saŋtɕʰuɾɯl mutɕʰjʌjo"
+        bases:
+          - { word: "상추를", base: "상추", reading: "sangchu" }
+          - { word: "무쳐요", base: "무치다", reading: "muchida" }
+      - target: "오이를 무쳐요."
+        reading: "oireul muchyeoyo."
+        ipa: "oiɾɯl mutɕʰjʌjo"
+        bases:
+          - { word: "오이를", base: "오이", reading: "oi" }
+          - { word: "무쳐요", base: "무치다", reading: "muchida" }
+  - id: "ko-2626"
+    target: "맛보다"
+    reading: "matboda"
+    ipa: "matp͈ota"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "국을 맛봐요."
+        reading: "gugeul matbwayo."
+        ipa: "kukɯl matp͈wajo"
+        bases:
+          - { word: "국을", ref: "ko-2582" }
+          - { word: "맛봐요", base: "맛보다", reading: "matboda" }
+      - target: "음식을 맛봐요."
+        reading: "eumsigeul matbwayo."
+        ipa: "ɯmsikɯl matp͈wajo"
+        bases:
+          - { word: "음식을", ref: "ko-2580" }
+          - { word: "맛봐요", base: "맛보다", reading: "matboda" }
+  - id: "ko-2627"
+    target: "양념"
+    reading: "yangnyeom"
+    ipa: "jaŋnjʌm"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "양념이 많아요."
+        reading: "yangnyeomi manayo."
+        ipa: "jaŋnjʌmi manajo"
+        bases:
+          - { word: "양념이", base: "양념", reading: "yangnyeom" }
+          - { word: "많아요", base: "많다", reading: "manta" }
+      - target: "양념이 좋아요."
+        reading: "yangnyeomi joayo."
+        ipa: "jaŋnjʌmi tɕoajo"
+        bases:
+          - { word: "양념이", base: "양념", reading: "yangnyeom" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-2628"
+    target: "재료"
+    reading: "jaeryo"
+    ipa: "tɕeɾjo"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "재료가 많아요."
+        reading: "jaeryoga manayo."
+        ipa: "tɕeɾjoka manajo"
+        bases:
+          - { word: "재료가", base: "재료", reading: "jaeryo" }
+          - { word: "많아요", base: "많다", reading: "manta" }
+      - target: "재료가 있어요?"
+        reading: "jaeryoga isseoyo?"
+        ipa: "tɕeɾjoka is͈ʌjo"
+        bases:
+          - { word: "재료가", base: "재료", reading: "jaeryo" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-2629"
+    target: "요리사"
+    reading: "yorisa"
+    ipa: "joɾisa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "요리사가 친절해요."
+        reading: "yorisaga chinjeolhaeyo."
+        ipa: "joɾisaka tɕʰintɕʌlhejo"
+        bases:
+          - { word: "요리사가", base: "요리사", reading: "yorisa" }
+          - { word: "친절해요", base: "친절하다", reading: "chinjeolhada" }
+      - target: "요리사가 있어요?"
+        reading: "yorisaga isseoyo?"
+        ipa: "joɾisaka is͈ʌjo"
+        bases:
+          - { word: "요리사가", base: "요리사", reading: "yorisa" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-2630"
+    target: "식사"
+    reading: "siksa"
+    ipa: "siks͈a"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "식사가 좋아요."
+        reading: "siksaga joayo."
+        ipa: "siks͈aka tɕoajo"
+        bases:
+          - { word: "식사가", base: "식사", reading: "siksa" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "식사를 해요."
+        reading: "siksareul haeyo."
+        ipa: "siks͈aɾɯl hejo"
+        bases:
+          - { word: "식사를", base: "식사", reading: "siksa" }
+          - { word: "해요", base: "하다", reading: "hada" }
+  - id: "ko-2631"
+    target: "점심"
+    reading: "jeomsim"
+    ipa: "tɕʌmsim"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "점심을 먹어요."
+        reading: "jeomsimeul meogeoyo."
+        ipa: "tɕʌmsimɯl mʌkʌjo"
+        bases:
+          - { word: "점심을", base: "점심", reading: "jeomsim" }
+          - { word: "먹어요", base: "먹다", reading: "meokda" }
+      - target: "점심이 좋아요."
+        reading: "jeomsimi joayo."
+        ipa: "tɕʌmsimi tɕoajo"
+        bases:
+          - { word: "점심이", base: "점심", reading: "jeomsim" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-2632"
+    target: "간식"
+    reading: "gansik"
+    ipa: "kansik"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "간식이 있어요?"
+        reading: "gansigi isseoyo?"
+        ipa: "kansiki is͈ʌjo"
+        bases:
+          - { word: "간식이", base: "간식", reading: "gansik" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "간식을 먹어요."
+        reading: "gansigeul meogeoyo."
+        ipa: "kansikɯl mʌkʌjo"
+        bases:
+          - { word: "간식을", base: "간식", reading: "gansik" }
+          - { word: "먹어요", base: "먹다", reading: "meokda" }
+  - id: "ko-2633"
+    target: "디저트"
+    reading: "dijeoteu"
+    ipa: "titɕʌtʰɯ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "디저트가 있어요?"
+        reading: "dijeoteuga isseoyo?"
+        ipa: "titɕʌtʰɯka is͈ʌjo"
+        bases:
+          - { word: "디저트가", base: "디저트", reading: "dijeoteu" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "디저트가 달콤해요."
+        reading: "dijeoteuga dalkomhaeyo."
+        ipa: "titɕʌtʰɯka talkʰomhejo"
+        bases:
+          - { word: "디저트가", base: "디저트", reading: "dijeoteu" }
+          - { word: "달콤해요", ref: "ko-2610" }
+  - id: "ko-2634"
+    target: "후식"
+    reading: "husik"
+    ipa: "husik"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "후식이 좋아요."
+        reading: "husigi joayo."
+        ipa: "husiki tɕoajo"
+        bases:
+          - { word: "후식이", base: "후식", reading: "husik" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "후식을 먹어요."
+        reading: "husigeul meogeoyo."
+        ipa: "husikɯl mʌkʌjo"
+        bases:
+          - { word: "후식을", base: "후식", reading: "husik" }
+          - { word: "먹어요", base: "먹다", reading: "meokda" }
+  - id: "ko-2635"
+    target: "안주"
+    reading: "anju"
+    ipa: "antɕu"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "안주가 좋아요."
+        reading: "anjuga joayo."
+        ipa: "antɕuka tɕoajo"
+        bases:
+          - { word: "안주가", base: "안주", reading: "anju" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "안주를 먹어요."
+        reading: "anjureul meogeoyo."
+        ipa: "antɕuɾɯl mʌkʌjo"
+        bases:
+          - { word: "안주를", base: "안주", reading: "anju" }
+          - { word: "먹어요", base: "먹다", reading: "meokda" }
+  - id: "ko-2636"
+    target: "메뉴"
+    reading: "menyu"
+    ipa: "menju"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "메뉴가 있어요?"
+        reading: "menyuga isseoyo?"
+        ipa: "menjuka is͈ʌjo"
+        bases:
+          - { word: "메뉴가", base: "메뉴", reading: "menyu" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "메뉴를 주세요."
+        reading: "menyureul juseyo."
+        ipa: "menjuɾɯl tɕusejo"
+        bases:
+          - { word: "메뉴를", base: "메뉴", reading: "menyu" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-2637"
+    target: "음료"
+    reading: "eumnyo"
+    ipa: "ɯmnjo"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "음료가 있어요?"
+        reading: "eumnyoga isseoyo?"
+        ipa: "ɯmnjoka is͈ʌjo"
+        bases:
+          - { word: "음료가", base: "음료", reading: "eumnyo" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "음료를 주세요."
+        reading: "eumnyoreul juseyo."
+        ipa: "ɯmnjoɾɯl tɕusejo"
+        bases:
+          - { word: "음료를", base: "음료", reading: "eumnyo" }
+          - { word: "주세요", base: "주다", reading: "juda" }

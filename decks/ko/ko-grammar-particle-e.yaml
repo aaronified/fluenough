@@ -1,0 +1,129 @@
+# Unit 23 (ko-grammar-object-place). Sources read: en.wikipedia.org 'Korean postpositions' (을/를 object, 에 time and place, 에서 'from' and 'at'), 'Korean grammar' (case clitics, verb-final order),
+# en.wiktionary.org pages -을, -를, -에, -에서 (uses and usage notes) and the conjugation tables of each verb used (the polite form is copied from the table). Particle forms built by rule from each noun's last letter.
+schema: 1
+id: "ko-grammar-particle-e"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["noun", "go"]
+  entries:
+    - lemma: "학교"
+      key: "hakgyo"
+      reading: "hakgyo"
+      ipa: "hakk͈jo"
+      forms:
+        "noun": "학교에"
+        "go": "저는 학교에 가요"
+      readings:
+        "noun": "hakgyoe"
+        "go": "jeoneun hakgyoe gayo"
+      ipas:
+        "noun": "hakk͈joe"
+        "go": "tɕʌnɯn hakk͈joe kajo"
+    - lemma: "은행"
+      key: "eunhaeng"
+      reading: "eunhaeng"
+      ipa: "ɯnheŋ"
+      forms:
+        "noun": "은행에"
+        "go": "저는 은행에 가요"
+      readings:
+        "noun": "eunhaenge"
+        "go": "jeoneun eunhaenge gayo"
+      ipas:
+        "noun": "ɯnheŋe"
+        "go": "tɕʌnɯn ɯnheŋe kajo"
+    - lemma: "병원"
+      key: "byeongwon"
+      reading: "byeongwon"
+      ipa: "pjʌŋwʌn"
+      forms:
+        "noun": "병원에"
+        "go": "저는 병원에 가요"
+      readings:
+        "noun": "byeongwone"
+        "go": "jeoneun byeongwone gayo"
+      ipas:
+        "noun": "pjʌŋwʌne"
+        "go": "tɕʌnɯn pjʌŋwʌne kajo"
+    - lemma: "시장"
+      key: "sijang"
+      reading: "sijang"
+      ipa: "sitɕaŋ"
+      forms:
+        "noun": "시장에"
+        "go": "저는 시장에 가요"
+      readings:
+        "noun": "sijange"
+        "go": "jeoneun sijange gayo"
+      ipas:
+        "noun": "sitɕaŋe"
+        "go": "tɕʌnɯn sitɕaŋe kajo"
+    - lemma: "공원"
+      key: "gongwon"
+      reading: "gongwon"
+      ipa: "koŋwʌn"
+      forms:
+        "noun": "공원에"
+        "go": "저는 공원에 가요"
+      readings:
+        "noun": "gongwone"
+        "go": "jeoneun gongwone gayo"
+      ipas:
+        "noun": "koŋwʌne"
+        "go": "tɕʌnɯn koŋwʌne kajo"
+    - lemma: "공항"
+      key: "gonghang"
+      reading: "gonghang"
+      ipa: "koŋhaŋ"
+      forms:
+        "noun": "공항에"
+        "go": "저는 공항에 가요"
+      readings:
+        "noun": "gonghange"
+        "go": "jeoneun gonghange gayo"
+      ipas:
+        "noun": "koŋhaŋe"
+        "go": "tɕʌnɯn koŋhaŋe kajo"
+    - lemma: "아침"
+      key: "achim"
+      reading: "achim"
+      ipa: "atɕʰim"
+      forms:
+        "noun": "아침에"
+        "go": "저는 아침에 가요"
+      readings:
+        "noun": "achime"
+        "go": "jeoneun achime gayo"
+      ipas:
+        "noun": "atɕʰime"
+        "go": "tɕʌnɯn atɕʰime kajo"
+    - lemma: "저녁"
+      key: "jeonyeok"
+      reading: "jeonyeok"
+      ipa: "tɕʌnjʌk"
+      forms:
+        "noun": "저녁에"
+        "go": "저는 저녁에 가요"
+      readings:
+        "noun": "jeonyeoge"
+        "go": "jeoneun jeonyeoge gayo"
+      ipas:
+        "noun": "tɕʌnjʌke"
+        "go": "tɕʌnɯn tɕʌnjʌke kajo"
+    - lemma: "오후"
+      key: "ohu"
+      reading: "ohu"
+      ipa: "ohu"
+      forms:
+        "noun": "오후에"
+        "go": "저는 오후에 가요"
+      readings:
+        "noun": "ohue"
+        "go": "jeoneun ohue gayo"
+      ipas:
+        "noun": "ohue"
+        "go": "tɕʌnɯn ohue kajo"

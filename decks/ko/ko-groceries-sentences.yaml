@@ -1,0 +1,107 @@
+schema: 1
+id: "ko-groceries-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ko-4600"
+    target: "과일이 싸요?"
+    reading: "gwairi ssayo?"
+    ipa: "kwaiɾi s͈ajo"
+    pos: "phrase"
+    bases:
+      - { word: "과일이", ref: "ko-2501" }
+      - { word: "싸요", ref: "ko-0039" }
+    confusables:
+      - { id: "w1", ref: "ko-2500", kind: "word" }
+      - { id: "w2", ref: "ko-2534", kind: "word" }
+  - id: "ko-4601"
+    target: "우유를 마셔요."
+    reading: "uyureul masyeoyo."
+    ipa: "ujuɾɯl masjʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "우유를", ref: "ko-2509" }
+      - { word: "마셔요", base: "마시다", reading: "masida" }
+    confusables:
+      - { id: "w1", ref: "ko-2510", kind: "word" }
+      - { id: "w2", ref: "ko-2508", kind: "word" }
+  - id: "ko-4602"
+    target: "빵을 사요."
+    reading: "ppangeul sayo."
+    ipa: "p͈aŋɯl sajo"
+    pos: "phrase"
+    bases:
+      - { word: "빵을", ref: "ko-0041" }
+      - { word: "사요", base: "사다", reading: "sada" }
+    confusables:
+      - { id: "w1", ref: "ko-2531", kind: "word" }
+      - { id: "w2", ref: "ko-2530", kind: "word" }
+  - id: "ko-4603"
+    target: "달걀이 있어요?"
+    reading: "dalgyari isseoyo?"
+    ipa: "talkjaɾi is͈ʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "달걀이", ref: "ko-2507" }
+      - { word: "있어요", base: "있다", reading: "itda" }
+    confusables:
+      - { id: "w1", ref: "ko-2508", kind: "word" }
+      - { id: "w2", ref: "ko-2502", kind: "word" }
+  - id: "ko-4604"
+    target: "고기가 비싸요."
+    reading: "gogiga bissayo."
+    ipa: "kokika pis͈ajo"
+    pos: "phrase"
+    bases:
+      - { word: "고기가", ref: "ko-2502" }
+      - { word: "비싸요", base: "비싸다", reading: "bissada" }
+    confusables:
+      - { id: "w1", ref: "ko-2503", kind: "word" }
+      - { id: "w2", ref: "ko-2504", kind: "word" }
+  - id: "ko-4605"
+    target: "간장이 있어요?"
+    reading: "ganjangi isseoyo?"
+    ipa: "kantɕaŋi is͈ʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "간장이", ref: "ko-2513" }
+      - { word: "있어요", base: "있다", reading: "itda" }
+    confusables:
+      - { id: "w1", ref: "ko-2516", kind: "word" }
+      - { id: "w2", ref: "ko-2517", kind: "word" }
+  - id: "ko-4606"
+    target: "양파를 주세요."
+    reading: "yangpareul juseyo."
+    ipa: "jaŋpʰaɾɯl tɕusejo"
+    pos: "phrase"
+    bases:
+      - { word: "양파를", ref: "ko-2518" }
+      - { word: "주세요", base: "주다", reading: "juda" }
+    confusables:
+      - { id: "w1", ref: "ko-2519", kind: "word" }
+      - { id: "w2", ref: "ko-2520", kind: "word" }
+  - id: "ko-4607"
+    target: "수박이 좋아요."
+    reading: "subagi joayo."
+    ipa: "supaki tɕoajo"
+    pos: "phrase"
+    bases:
+      - { word: "수박이", ref: "ko-2536" }
+      - { word: "좋아요", base: "좋다", reading: "jota" }
+    confusables:
+      - { id: "w1", ref: "ko-2535", kind: "word" }
+      - { id: "w2", ref: "ko-2534", kind: "word" }
+  - id: "ko-4608"
+    target: "쌀이 많아요."
+    reading: "ssari manayo."
+    ipa: "s͈aɾi manajo"
+    pos: "phrase"
+    bases:
+      - { word: "쌀이", ref: "ko-2510" }
+      - { word: "많아요", base: "많다", reading: "manta" }
+    confusables:
+      - { id: "w1", ref: "ko-2512", kind: "word" }
+      - { id: "w2", ref: "ko-2511", kind: "word" }

@@ -1,0 +1,885 @@
+schema: 1
+id: "ko-home"
+part: "core"
+kind: "vocab"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+theme: "home"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ko-2980"
+    target: "집"
+    reading: "jip"
+    ipa: "tɕip"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "집이 좋아요."
+        reading: "jibi joayo."
+        ipa: "tɕipi tɕoajo"
+        bases:
+          - { word: "집이", base: "집", reading: "jip" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "집에 있어요."
+        reading: "jibe isseoyo."
+        ipa: "tɕipe is͈ʌjo"
+        bases:
+          - { word: "집에", base: "집", reading: "jip" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-2981"
+    target: "거실"
+    reading: "geosil"
+    ipa: "kʌsil"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "거실이 좋아요."
+        reading: "geosiri joayo."
+        ipa: "kʌsiɾi tɕoajo"
+        bases:
+          - { word: "거실이", base: "거실", reading: "geosil" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "거실에 있어요."
+        reading: "geosire isseoyo."
+        ipa: "kʌsiɾe is͈ʌjo"
+        bases:
+          - { word: "거실에", base: "거실", reading: "geosil" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-2982"
+    target: "부엌"
+    reading: "bueok"
+    ipa: "puʌk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "부엌이 좋아요."
+        reading: "bueoki joayo."
+        ipa: "puʌkʰi tɕoajo"
+        bases:
+          - { word: "부엌이", base: "부엌", reading: "bueok" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "부엌에 있어요."
+        reading: "bueoke isseoyo."
+        ipa: "puʌkʰe is͈ʌjo"
+        bases:
+          - { word: "부엌에", base: "부엌", reading: "bueok" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-2983"
+    target: "욕실"
+    reading: "yoksil"
+    ipa: "joks͈il"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "욕실이 있어요?"
+        reading: "yoksiri isseoyo?"
+        ipa: "joks͈iɾi is͈ʌjo"
+        bases:
+          - { word: "욕실이", base: "욕실", reading: "yoksil" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "욕실에 있어요."
+        reading: "yoksire isseoyo."
+        ipa: "joks͈iɾe is͈ʌjo"
+        bases:
+          - { word: "욕실에", base: "욕실", reading: "yoksil" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-2984"
+    target: "침실"
+    reading: "chimsil"
+    ipa: "tɕʰimsil"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "침실이 좋아요."
+        reading: "chimsiri joayo."
+        ipa: "tɕʰimsiɾi tɕoajo"
+        bases:
+          - { word: "침실이", base: "침실", reading: "chimsil" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "침실에 있어요."
+        reading: "chimsire isseoyo."
+        ipa: "tɕʰimsiɾe is͈ʌjo"
+        bases:
+          - { word: "침실에", base: "침실", reading: "chimsil" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-2985"
+    target: "문"
+    reading: "mun"
+    ipa: "mun"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "문이 있어요?"
+        reading: "muni isseoyo?"
+        ipa: "muni is͈ʌjo"
+        bases:
+          - { word: "문이", base: "문", reading: "mun" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "문이 좋아요."
+        reading: "muni joayo."
+        ipa: "muni tɕoajo"
+        bases:
+          - { word: "문이", base: "문", reading: "mun" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-2986"
+    target: "창문"
+    reading: "changmun"
+    ipa: "tɕʰaŋmun"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "창문이 있어요."
+        reading: "changmuni isseoyo."
+        ipa: "tɕʰaŋmuni is͈ʌjo"
+        bases:
+          - { word: "창문이", base: "창문", reading: "changmun" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "창문이 좋아요."
+        reading: "changmuni joayo."
+        ipa: "tɕʰaŋmuni tɕoajo"
+        bases:
+          - { word: "창문이", base: "창문", reading: "changmun" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-2987"
+    target: "침대"
+    reading: "chimdae"
+    ipa: "tɕʰimte"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "침대가 있어요?"
+        reading: "chimdaega isseoyo?"
+        ipa: "tɕʰimteka is͈ʌjo"
+        bases:
+          - { word: "침대가", base: "침대", reading: "chimdae" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "침대가 좋아요."
+        reading: "chimdaega joayo."
+        ipa: "tɕʰimteka tɕoajo"
+        bases:
+          - { word: "침대가", base: "침대", reading: "chimdae" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-2988"
+    target: "식탁"
+    reading: "siktak"
+    ipa: "siktʰak"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "식탁이 좋아요."
+        reading: "siktagi joayo."
+        ipa: "siktʰaki tɕoajo"
+        bases:
+          - { word: "식탁이", base: "식탁", reading: "siktak" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "식탁에 있어요."
+        reading: "siktage isseoyo."
+        ipa: "siktʰake is͈ʌjo"
+        bases:
+          - { word: "식탁에", base: "식탁", reading: "siktak" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-2989"
+    target: "책상"
+    reading: "chaeksang"
+    ipa: "tɕʰeks͈aŋ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "책상이 있어요?"
+        reading: "chaeksangi isseoyo?"
+        ipa: "tɕʰeks͈aŋi is͈ʌjo"
+        bases:
+          - { word: "책상이", base: "책상", reading: "chaeksang" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "책상에 책이 있어요."
+        reading: "chaeksange chaegi isseoyo."
+        ipa: "tɕʰeks͈aŋe tɕʰeki is͈ʌjo"
+        bases:
+          - { word: "책상에", base: "책상", reading: "chaeksang" }
+          - { word: "책이", base: "책", reading: "chaek" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-2990"
+    target: "의자"
+    reading: "uija"
+    ipa: "ɰitɕa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "의자가 있어요?"
+        reading: "uijaga isseoyo?"
+        ipa: "ɰitɕaka is͈ʌjo"
+        bases:
+          - { word: "의자가", base: "의자", reading: "uija" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "의자에 있어요."
+        reading: "uijae isseoyo."
+        ipa: "ɰitɕae is͈ʌjo"
+        bases:
+          - { word: "의자에", base: "의자", reading: "uija" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-2991"
+    target: "소파"
+    reading: "sopa"
+    ipa: "sopʰa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "소파가 좋아요."
+        reading: "sopaga joayo."
+        ipa: "sopʰaka tɕoajo"
+        bases:
+          - { word: "소파가", base: "소파", reading: "sopa" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+      - target: "소파에 있어요."
+        reading: "sopae isseoyo."
+        ipa: "sopʰae is͈ʌjo"
+        bases:
+          - { word: "소파에", base: "소파", reading: "sopa" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-2992"
+    target: "냉장고"
+    reading: "naengjanggo"
+    ipa: "neŋtɕaŋko"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "냉장고가 있어요?"
+        reading: "naengjanggoga isseoyo?"
+        ipa: "neŋtɕaŋkoka is͈ʌjo"
+        bases:
+          - { word: "냉장고가", base: "냉장고", reading: "naengjanggo" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "냉장고에 물이 있어요."
+        reading: "naengjanggoe muri isseoyo."
+        ipa: "neŋtɕaŋkoe muɾi is͈ʌjo"
+        bases:
+          - { word: "냉장고에", base: "냉장고", reading: "naengjanggo" }
+          - { word: "물이", ref: "ko-0027" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-2993"
+    target: "세탁기"
+    reading: "setakgi"
+    ipa: "setʰakk͈i"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "세탁기가 있어요?"
+        reading: "setakgiga isseoyo?"
+        ipa: "setʰakk͈ika is͈ʌjo"
+        bases:
+          - { word: "세탁기가", base: "세탁기", reading: "setakgi" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "세탁기가 좋아요."
+        reading: "setakgiga joayo."
+        ipa: "setʰakk͈ika tɕoajo"
+        bases:
+          - { word: "세탁기가", base: "세탁기", reading: "setakgi" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-2994"
+    target: "텔레비전"
+    reading: "tellebijeon"
+    ipa: "tʰellepitɕʌn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "텔레비전이 있어요?"
+        reading: "tellebijeoni isseoyo?"
+        ipa: "tʰellepitɕʌni is͈ʌjo"
+        bases:
+          - { word: "텔레비전이", base: "텔레비전", reading: "tellebijeon" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "텔레비전이 좋아요."
+        reading: "tellebijeoni joayo."
+        ipa: "tʰellepitɕʌni tɕoajo"
+        bases:
+          - { word: "텔레비전이", base: "텔레비전", reading: "tellebijeon" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-2995"
+    target: "에어컨"
+    reading: "eeokeon"
+    ipa: "eʌkʰʌn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "에어컨이 있어요?"
+        reading: "eeokeoni isseoyo?"
+        ipa: "eʌkʰʌni is͈ʌjo"
+        bases:
+          - { word: "에어컨이", base: "에어컨", reading: "eeokeon" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "에어컨이 좋아요."
+        reading: "eeokeoni joayo."
+        ipa: "eʌkʰʌni tɕoajo"
+        bases:
+          - { word: "에어컨이", base: "에어컨", reading: "eeokeon" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-2996"
+    target: "천장"
+    reading: "cheonjang"
+    ipa: "tɕʰʌntɕaŋ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "천장에 있어요."
+        reading: "cheonjange isseoyo."
+        ipa: "tɕʰʌntɕaŋe is͈ʌjo"
+        bases:
+          - { word: "천장에", base: "천장", reading: "cheonjang" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "천장이 좋아요."
+        reading: "cheonjangi joayo."
+        ipa: "tɕʰʌntɕaŋi tɕoajo"
+        bases:
+          - { word: "천장이", base: "천장", reading: "cheonjang" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-2997"
+    target: "계단"
+    reading: "gyedan"
+    ipa: "kjetan"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "계단이 있어요?"
+        reading: "gyedani isseoyo?"
+        ipa: "kjetani is͈ʌjo"
+        bases:
+          - { word: "계단이", base: "계단", reading: "gyedan" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "계단에 있어요."
+        reading: "gyedane isseoyo."
+        ipa: "kjetane is͈ʌjo"
+        bases:
+          - { word: "계단에", base: "계단", reading: "gyedan" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-2998"
+    target: "현관"
+    reading: "hyeongwan"
+    ipa: "hjʌnkwan"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "현관에 있어요."
+        reading: "hyeongwane isseoyo."
+        ipa: "hjʌnkwane is͈ʌjo"
+        bases:
+          - { word: "현관에", base: "현관", reading: "hyeongwan" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "현관이 좋아요."
+        reading: "hyeongwani joayo."
+        ipa: "hjʌnkwani tɕoajo"
+        bases:
+          - { word: "현관이", base: "현관", reading: "hyeongwan" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-2999"
+    target: "아파트"
+    reading: "apateu"
+    ipa: "apʰatʰɯ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "아파트에 있어요."
+        reading: "apateue isseoyo."
+        ipa: "apʰatʰɯe is͈ʌjo"
+        bases:
+          - { word: "아파트에", base: "아파트", reading: "apateu" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "아파트가 좋아요."
+        reading: "apateuga joayo."
+        ipa: "apʰatʰɯka tɕoajo"
+        bases:
+          - { word: "아파트가", base: "아파트", reading: "apateu" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-3000"
+    target: "옷장"
+    reading: "otjang"
+    ipa: "ott͈ɕaŋ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "옷장이 있어요?"
+        reading: "otjangi isseoyo?"
+        ipa: "ott͈ɕaŋi is͈ʌjo"
+        bases:
+          - { word: "옷장이", base: "옷장", reading: "otjang" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "옷장이 좋아요."
+        reading: "otjangi joayo."
+        ipa: "ott͈ɕaŋi tɕoajo"
+        bases:
+          - { word: "옷장이", base: "옷장", reading: "otjang" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-3001"
+    target: "책장"
+    reading: "chaekjang"
+    ipa: "tɕʰekt͈ɕaŋ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "책장이 있어요?"
+        reading: "chaekjangi isseoyo?"
+        ipa: "tɕʰekt͈ɕaŋi is͈ʌjo"
+        bases:
+          - { word: "책장이", base: "책장", reading: "chaekjang" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "책장에 책이 있어요."
+        reading: "chaekjange chaegi isseoyo."
+        ipa: "tɕʰekt͈ɕaŋe tɕʰeki is͈ʌjo"
+        bases:
+          - { word: "책장에", base: "책장", reading: "chaekjang" }
+          - { word: "책이", base: "책", reading: "chaek" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-3002"
+    target: "이불"
+    reading: "ibul"
+    ipa: "ipul"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "이불이 있어요?"
+        reading: "iburi isseoyo?"
+        ipa: "ipuɾi is͈ʌjo"
+        bases:
+          - { word: "이불이", base: "이불", reading: "ibul" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "침대에 이불이 있어요."
+        reading: "chimdaee iburi isseoyo."
+        ipa: "tɕʰimtee ipuɾi is͈ʌjo"
+        bases:
+          - { word: "침대에", ref: "ko-2987" }
+          - { word: "이불이", base: "이불", reading: "ibul" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-3003"
+    target: "베개"
+    reading: "begae"
+    ipa: "peke"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "베개가 있어요?"
+        reading: "begaega isseoyo?"
+        ipa: "pekeka is͈ʌjo"
+        bases:
+          - { word: "베개가", base: "베개", reading: "begae" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "베개가 좋아요."
+        reading: "begaega joayo."
+        ipa: "pekeka tɕoajo"
+        bases:
+          - { word: "베개가", base: "베개", reading: "begae" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-3004"
+    target: "전등"
+    reading: "jeondeung"
+    ipa: "tɕʌntɯŋ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "전등이 있어요?"
+        reading: "jeondeungi isseoyo?"
+        ipa: "tɕʌntɯŋi is͈ʌjo"
+        bases:
+          - { word: "전등이", base: "전등", reading: "jeondeung" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "전등이 좋아요."
+        reading: "jeondeungi joayo."
+        ipa: "tɕʌntɯŋi tɕoajo"
+        bases:
+          - { word: "전등이", base: "전등", reading: "jeondeung" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-3005"
+    target: "커튼"
+    reading: "keoteun"
+    ipa: "kʰʌtʰɯn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "커튼이 있어요?"
+        reading: "keoteuni isseoyo?"
+        ipa: "kʰʌtʰɯni is͈ʌjo"
+        bases:
+          - { word: "커튼이", base: "커튼", reading: "keoteun" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "창문에 커튼이 있어요."
+        reading: "changmune keoteuni isseoyo."
+        ipa: "tɕʰaŋmune kʰʌtʰɯni is͈ʌjo"
+        bases:
+          - { word: "창문에", ref: "ko-2986" }
+          - { word: "커튼이", base: "커튼", reading: "keoteun" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-3006"
+    target: "샤워"
+    reading: "syawo"
+    ipa: "sjawʌ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "샤워를 해요."
+        reading: "syaworeul haeyo."
+        ipa: "sjawʌɾɯl hejo"
+        bases:
+          - { word: "샤워를", base: "샤워", reading: "syawo" }
+          - { word: "해요", base: "하다", reading: "hada" }
+      - target: "샤워가 좋아요."
+        reading: "syawoga joayo."
+        ipa: "sjawʌka tɕoajo"
+        bases:
+          - { word: "샤워가", base: "샤워", reading: "syawo" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-3007"
+    target: "세면대"
+    reading: "semyeondae"
+    ipa: "semjʌnte"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "세면대가 있어요?"
+        reading: "semyeondaega isseoyo?"
+        ipa: "semjʌnteka is͈ʌjo"
+        bases:
+          - { word: "세면대가", base: "세면대", reading: "semyeondae" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "세면대에 물이 있어요."
+        reading: "semyeondaee muri isseoyo."
+        ipa: "semjʌntee muɾi is͈ʌjo"
+        bases:
+          - { word: "세면대에", base: "세면대", reading: "semyeondae" }
+          - { word: "물이", ref: "ko-0027" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-3008"
+    target: "변기"
+    reading: "byeongi"
+    ipa: "pjʌnki"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "변기가 있어요?"
+        reading: "byeongiga isseoyo?"
+        ipa: "pjʌnkika is͈ʌjo"
+        bases:
+          - { word: "변기가", base: "변기", reading: "byeongi" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "변기에 물이 있어요."
+        reading: "byeongie muri isseoyo."
+        ipa: "pjʌnkie muɾi is͈ʌjo"
+        bases:
+          - { word: "변기에", base: "변기", reading: "byeongi" }
+          - { word: "물이", ref: "ko-0027" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-3009"
+    target: "수건"
+    reading: "sugeon"
+    ipa: "sukʌn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "수건이 있어요?"
+        reading: "sugeoni isseoyo?"
+        ipa: "sukʌni is͈ʌjo"
+        bases:
+          - { word: "수건이", base: "수건", reading: "sugeon" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "수건을 주세요."
+        reading: "sugeoneul juseyo."
+        ipa: "sukʌnɯl tɕusejo"
+        bases:
+          - { word: "수건을", base: "수건", reading: "sugeon" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-3010"
+    target: "열쇠"
+    reading: "yeolsoe"
+    ipa: "jʌlswe"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "열쇠가 있어요?"
+        reading: "yeolsoega isseoyo?"
+        ipa: "jʌlsweka is͈ʌjo"
+        bases:
+          - { word: "열쇠가", base: "열쇠", reading: "yeolsoe" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "열쇠를 주세요."
+        reading: "yeolsoereul juseyo."
+        ipa: "jʌlsweɾɯl tɕusejo"
+        bases:
+          - { word: "열쇠를", base: "열쇠", reading: "yeolsoe" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-3011"
+    target: "냄비"
+    reading: "naembi"
+    ipa: "nempi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "냄비가 있어요?"
+        reading: "naembiga isseoyo?"
+        ipa: "nempika is͈ʌjo"
+        bases:
+          - { word: "냄비가", base: "냄비", reading: "naembi" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "냄비에 물이 있어요."
+        reading: "naembie muri isseoyo."
+        ipa: "nempie muɾi is͈ʌjo"
+        bases:
+          - { word: "냄비에", base: "냄비", reading: "naembi" }
+          - { word: "물이", ref: "ko-0027" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-3012"
+    target: "접시"
+    reading: "jeopsi"
+    ipa: "tɕʌps͈i"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "접시가 있어요?"
+        reading: "jeopsiga isseoyo?"
+        ipa: "tɕʌps͈ika is͈ʌjo"
+        bases:
+          - { word: "접시가", base: "접시", reading: "jeopsi" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "접시를 주세요."
+        reading: "jeopsireul juseyo."
+        ipa: "tɕʌps͈iɾɯl tɕusejo"
+        bases:
+          - { word: "접시를", base: "접시", reading: "jeopsi" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-3013"
+    target: "컵"
+    reading: "keop"
+    ipa: "kʰʌp"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "컵이 있어요?"
+        reading: "keobi isseoyo?"
+        ipa: "kʰʌpi is͈ʌjo"
+        bases:
+          - { word: "컵이", base: "컵", reading: "keop" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "컵을 주세요."
+        reading: "keobeul juseyo."
+        ipa: "kʰʌpɯl tɕusejo"
+        bases:
+          - { word: "컵을", base: "컵", reading: "keop" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-3014"
+    target: "숟가락"
+    reading: "sutgarak"
+    ipa: "sutk͈aɾak"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "숟가락이 있어요?"
+        reading: "sutgaragi isseoyo?"
+        ipa: "sutk͈aɾaki is͈ʌjo"
+        bases:
+          - { word: "숟가락이", base: "숟가락", reading: "sutgarak" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "숟가락을 주세요."
+        reading: "sutgarageul juseyo."
+        ipa: "sutk͈aɾakɯl tɕusejo"
+        bases:
+          - { word: "숟가락을", base: "숟가락", reading: "sutgarak" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-3015"
+    target: "젓가락"
+    reading: "jeotgarak"
+    ipa: "tɕʌtk͈aɾak"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "젓가락이 있어요?"
+        reading: "jeotgaragi isseoyo?"
+        ipa: "tɕʌtk͈aɾaki is͈ʌjo"
+        bases:
+          - { word: "젓가락이", base: "젓가락", reading: "jeotgarak" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "젓가락을 주세요."
+        reading: "jeotgarageul juseyo."
+        ipa: "tɕʌtk͈aɾakɯl tɕusejo"
+        bases:
+          - { word: "젓가락을", base: "젓가락", reading: "jeotgarak" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-3016"
+    target: "포크"
+    reading: "pokeu"
+    ipa: "pʰokʰɯ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "포크가 있어요?"
+        reading: "pokeuga isseoyo?"
+        ipa: "pʰokʰɯka is͈ʌjo"
+        bases:
+          - { word: "포크가", base: "포크", reading: "pokeu" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "포크를 주세요."
+        reading: "pokeureul juseyo."
+        ipa: "pʰokʰɯɾɯl tɕusejo"
+        bases:
+          - { word: "포크를", base: "포크", reading: "pokeu" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-3017"
+    target: "수저"
+    reading: "sujeo"
+    ipa: "sutɕʌ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "수저가 있어요?"
+        reading: "sujeoga isseoyo?"
+        ipa: "sutɕʌka is͈ʌjo"
+        bases:
+          - { word: "수저가", base: "수저", reading: "sujeo" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "수저를 주세요."
+        reading: "sujeoreul juseyo."
+        ipa: "sutɕʌɾɯl tɕusejo"
+        bases:
+          - { word: "수저를", base: "수저", reading: "sujeo" }
+          - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-3018"
+    target: "오븐"
+    reading: "obeun"
+    ipa: "opɯn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "오븐이 있어요?"
+        reading: "obeuni isseoyo?"
+        ipa: "opɯni is͈ʌjo"
+        bases:
+          - { word: "오븐이", base: "오븐", reading: "obeun" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "오븐이 좋아요."
+        reading: "obeuni joayo."
+        ipa: "opɯni tɕoajo"
+        bases:
+          - { word: "오븐이", base: "오븐", reading: "obeun" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - id: "ko-3019"
+    target: "청소기"
+    reading: "cheongsogi"
+    ipa: "tɕʰʌŋsoki"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "청소기가 있어요?"
+        reading: "cheongsogiga isseoyo?"
+        ipa: "tɕʰʌŋsokika is͈ʌjo"
+        bases:
+          - { word: "청소기가", base: "청소기", reading: "cheongsogi" }
+          - { word: "있어요", base: "있다", reading: "itda" }
+      - target: "청소기가 좋아요."
+        reading: "cheongsogiga joayo."
+        ipa: "tɕʰʌŋsokika tɕoajo"
+        bases:
+          - { word: "청소기가", base: "청소기", reading: "cheongsogi" }
+          - { word: "좋아요", base: "좋다", reading: "jota" }
+  - "id": "ko-3020"
+    "target": "책"
+    "reading": "chaek"
+    "ipa": "tɕʰek"
+    "pos": "noun"
+    "notes":
+      - "id": "n1"
+        "kind": "note"
+    "bases": "self"
+    "examples":
+      - "target": "이 책이 좋아요."
+        "reading": "i chaegi joayo."
+        "ipa": "i tɕʰeki tɕoajo"
+        "bases":
+          - "word": "책이"
+            "base": "책"
+            "reading": "chaek"
+          - "word": "좋아요"
+            "ref": "ko-1862"
+      - "target": "책이 있어요?"
+        "reading": "chaegi isseoyo?"
+        "ipa": "tɕʰeki is͈ʌjo"
+        "bases":
+          - "word": "책이"
+            "base": "책"
+            "reading": "chaek"
+          - "word": "있어요"
+            "ref": "ko-1548"

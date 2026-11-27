@@ -1,0 +1,103 @@
+# Unit 21 (ko-grammar-copula). Sources read: en.wiktionary.org pages -이다 (the copula: polite -이에요 / -예요, the 이 dropping after a vowel, written joined to the noun) and 아니다 (the negative copula: written after a space, its complement takes -이 or -가, polite 아니에요), and en.wikipedia.org 'Korean grammar' (copulative verbs).
+# Forms are built by rule from each noun's last letter and checked against the engine (tools/transcribe.py ko).
+schema: 1
+id: "ko-grammar-copula-ieyo"
+part: "core"
+kind: "grammar"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["copula", "i-am"]
+  entries:
+    - lemma: "학생"
+      key: "haksaeng"
+      reading: "haksaeng"
+      ipa: "haks͈eŋ"
+      forms:
+        "copula": "학생이에요"
+        "i-am": "저는 학생이에요"
+      readings:
+        "copula": "haksaengieyo"
+        "i-am": "jeoneun haksaengieyo"
+      ipas:
+        "copula": "haks͈eŋiejo"
+        "i-am": "tɕʌnɯn haks͈eŋiejo"
+    - lemma: "선생님"
+      key: "seonsaengnim"
+      reading: "seonsaengnim"
+      ipa: "sʌnseŋnim"
+      forms:
+        "copula": "선생님이에요"
+        "i-am": "저는 선생님이에요"
+      readings:
+        "copula": "seonsaengnimieyo"
+        "i-am": "jeoneun seonsaengnimieyo"
+      ipas:
+        "copula": "sʌnseŋnimiejo"
+        "i-am": "tɕʌnɯn sʌnseŋnimiejo"
+    - lemma: "교수님"
+      key: "gyosunim"
+      reading: "gyosunim"
+      ipa: "kjosunim"
+      forms:
+        "copula": "교수님이에요"
+        "i-am": "저는 교수님이에요"
+      readings:
+        "copula": "gyosunimieyo"
+        "i-am": "jeoneun gyosunimieyo"
+      ipas:
+        "copula": "kjosunimiejo"
+        "i-am": "tɕʌnɯn kjosunimiejo"
+    - lemma: "회사원"
+      key: "hoesawon"
+      reading: "hoesawon"
+      ipa: "hwesawʌn"
+      forms:
+        "copula": "회사원이에요"
+        "i-am": "저는 회사원이에요"
+      readings:
+        "copula": "hoesawonieyo"
+        "i-am": "jeoneun hoesawonieyo"
+      ipas:
+        "copula": "hwesawʌniejo"
+        "i-am": "tɕʌnɯn hwesawʌniejo"
+    - lemma: "의사"
+      key: "uisa"
+      reading: "uisa"
+      ipa: "ɰisa"
+      forms:
+        "copula": "의사예요"
+        "i-am": "저는 의사예요"
+      readings:
+        "copula": "uisayeyo"
+        "i-am": "jeoneun uisayeyo"
+      ipas:
+        "copula": "ɰisajejo"
+        "i-am": "tɕʌnɯn ɰisajejo"
+    - lemma: "친구"
+      key: "chingu"
+      reading: "chingu"
+      ipa: "tɕʰinku"
+      forms:
+        "copula": "친구예요"
+        "i-am": "저는 친구예요"
+      readings:
+        "copula": "chinguyeyo"
+        "i-am": "jeoneun chinguyeyo"
+      ipas:
+        "copula": "tɕʰinkujejo"
+        "i-am": "tɕʌnɯn tɕʰinkujejo"
+    - lemma: "여자"
+      key: "yeoja"
+      reading: "yeoja"
+      ipa: "jʌtɕa"
+      forms:
+        "copula": "여자예요"
+        "i-am": "저는 여자예요"
+      readings:
+        "copula": "yeojayeyo"
+        "i-am": "jeoneun yeojayeyo"
+      ipas:
+        "copula": "jʌtɕajejo"
+        "i-am": "tɕʌnɯn jʌtɕajejo"

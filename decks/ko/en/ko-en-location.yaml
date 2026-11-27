@@ -1,0 +1,155 @@
+schema: 1
+id: "ko-en-location"
+kind: "layer"
+core: "ko-location"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Where things are"
+license: "CC-BY-SA-4.0"
+description: "Fifteen words for where things are: on, under, inside, beside, the middle, and here and there. Not yet checked by a Korean speaker: please report any mistake."
+tags: ["beginner", "unreviewed"]
+cards:
+  "ko-2020":
+    "native": "below, under"
+    "examples":
+      "이거 아래 있어요?":
+        "native": "Is it under this?"
+        "bases":
+          "이거": "this one"
+          "아래": "below, under"
+          "있어요": "to be here, to have (polite)"
+      "위에 있어요?":
+        "native": "Is it above?"
+        "bases":
+          "있어요": "to be here, to have (polite)"
+  "ko-2021":
+    "native": "inside"
+    "notes":
+      "n1": "안 (an) is inside and 밖 (bak) is outside; both take 에 (e) before 있어요 (isseoyo)."
+    "examples":
+      "방 안에 있어요.":
+        "native": "It is inside the room."
+        "bases":
+          "안에": "inside, with the place particle 에 (e)"
+          "있어요": "to be here, to have (polite)"
+  "ko-2022":
+    "native": "outside"
+    "examples":
+      "방 밖에 있어요.":
+        "native": "It is outside the room."
+        "bases":
+          "밖에": "outside, with the place particle 에 (e)"
+          "있어요": "to be here, to have (polite)"
+  "ko-2023":
+    "native": "side, next to"
+    "examples":
+      "이거 옆에 있어요?":
+        "native": "Is it next to this?"
+        "bases":
+          "이거": "this one"
+          "옆에": "next to, with the place particle 에 (e)"
+          "있어요": "to be here, to have (polite)"
+  "ko-2024":
+    "native": "back, behind"
+    "examples":
+      "이거 뒤에 있어요.":
+        "native": "It is behind this."
+        "bases":
+          "이거": "this one"
+          "뒤에": "behind, with the place particle 에 (e)"
+          "있어요": "to be here, to have (polite)"
+  "ko-2025":
+    "native": "middle"
+    "examples":
+      "방 가운데에 있어요.":
+        "native": "It is in the middle of the room."
+        "bases":
+          "가운데에": "middle, with the place particle 에 (e)"
+          "있어요": "to be here, to have (polite)"
+  "ko-2026":
+    "native": "between"
+    "notes":
+      "n1": "사이 (sai) is the space between two things; 가운데 (gaunde) is the middle of one thing."
+    "examples":
+      "선생님은 방에 있어요?":
+        "native": "Is the teacher in the room?"
+        "bases":
+          "있어요": "be, exist, polite form"
+  "ko-2027":
+    "native": "nearby area"
+    "examples":
+      "학교 근처에 있어요.":
+        "native": "It is near the school."
+        "bases":
+          "학교": "school"
+          "근처에": "nearby area, with the place particle 에 (e)"
+          "있어요": "to be here, to have (polite)"
+  "ko-2028":
+    "native": "vicinity"
+    "examples":
+      "방 부근에 있어요.":
+        "native": "It is near the room."
+        "bases":
+          "부근에": "vicinity, with the place particle 에 (e)"
+          "있어요": "to be here, to have (polite)"
+  "ko-2029":
+    "native": "the opposite side"
+    "notes":
+      "n1": "맞은편 (majeunpyeon) and 건너편 (geonneopyeon) both mean the opposite side."
+    "examples":
+      "학교 맞은편에 있어요.":
+        "native": "It is across from the school."
+        "bases":
+          "학교": "school"
+          "맞은편에": "opposite side, with the place particle 에 (e)"
+          "있어요": "to be here, to have (polite)"
+  "ko-2030":
+    "native": "the other side"
+    "notes":
+      "n1": "건너편 (geonneopyeon) and 맞은편 (majeunpyeon) both mean the opposite side."
+    "examples":
+      "학교 건너편에 있어요.":
+        "native": "It is on the other side of the school."
+        "bases":
+          "학교": "school"
+          "건너편에": "other side, with the place particle 에 (e)"
+          "있어요": "to be here, to have (polite)"
+  "ko-2031":
+    "native": "left side"
+    "examples":
+      "왼쪽에 있어요?":
+        "native": "Is it on the left?"
+        "bases":
+          "왼쪽에": "left side, with the place particle 에 (e)"
+          "있어요": "to be here, to have (polite)"
+  "ko-2032":
+    "native": "right side"
+    "examples":
+      "오른쪽에 있어요.":
+        "native": "It is on the right."
+        "bases":
+          "오른쪽에": "right side, with the place particle 에 (e)"
+          "있어요": "to be here, to have (polite)"
+  "ko-2033":
+    "native": "here"
+    "notes":
+      "n1": "여기 (yeogi) is here and 거기 (geogi) is there, near the listener."
+    "examples":
+      "여기 있어요.":
+        "native": "It is here."
+        "bases":
+          "여기": "here"
+          "있어요": "to be here, to have (polite)"
+      "어디 있어요?":
+        "native": "Where is it?"
+        "bases":
+          "있어요": "to be here, to have (polite)"
+  "ko-2034":
+    "native": "there"
+    "notes":
+      "n1": "거기 (geogi) is there, near the listener, and 여기 (yeogi) is here."
+    "examples":
+      "거기 있어요?":
+        "native": "Is it there?"
+        "bases":
+          "거기": "there"
+          "있어요": "to be here, to have (polite)"

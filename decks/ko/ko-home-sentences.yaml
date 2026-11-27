@@ -1,0 +1,135 @@
+schema: 1
+id: "ko-home-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ko-4840"
+    target: "방에 침대가 있어요."
+    reading: "bange chimdaega isseoyo."
+    ipa: "paŋe tɕʰimteka is͈ʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "방에", ref: "ko-0040" }
+      - { word: "침대가", ref: "ko-2987" }
+      - { word: "있어요", base: "있다", reading: "itda" }
+    confusables:
+      - { id: "w1", ref: "ko-2984", kind: "word" }
+      - { id: "w2", ref: "ko-2981", kind: "word" }
+  - id: "ko-4841"
+    target: "식탁에 빵이 있어요?"
+    reading: "siktage ppangi isseoyo?"
+    ipa: "siktʰake p͈aŋi is͈ʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "식탁에", ref: "ko-2988" }
+      - { word: "빵이", ref: "ko-0041" }
+      - { word: "있어요", base: "있다", reading: "itda" }
+    confusables:
+      - { id: "w1", ref: "ko-2989", kind: "word" }
+      - { id: "w2", ref: "ko-2990", kind: "word" }
+  - id: "ko-4842"
+    target: "부엌에 냄비가 있어요."
+    reading: "bueoke naembiga isseoyo."
+    ipa: "puʌkʰe nempika is͈ʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "부엌에", ref: "ko-2982" }
+      - { word: "냄비가", ref: "ko-3011" }
+      - { word: "있어요", base: "있다", reading: "itda" }
+    confusables:
+      - { id: "w1", ref: "ko-3012", kind: "word" }
+      - { id: "w2", ref: "ko-3013", kind: "word" }
+  - id: "ko-4843"
+    target: "창문이 있어요?"
+    reading: "changmuni isseoyo?"
+    ipa: "tɕʰaŋmuni is͈ʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "창문이", ref: "ko-2986" }
+      - { word: "있어요", base: "있다", reading: "itda" }
+    confusables:
+      - { id: "w1", ref: "ko-2985", kind: "word" }
+      - { id: "w2", ref: "ko-3005", kind: "word" }
+  - id: "ko-4844"
+    target: "현관에 있어요."
+    reading: "hyeongwane isseoyo."
+    ipa: "hjʌnkwane is͈ʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "현관에", ref: "ko-2998" }
+      - { word: "있어요", base: "있다", reading: "itda" }
+    confusables:
+      - { id: "w1", ref: "ko-2985", kind: "word" }
+      - { id: "w2", ref: "ko-2997", kind: "word" }
+  - id: "ko-4845"
+    target: "욕실에 수건이 있어요?"
+    reading: "yoksire sugeoni isseoyo?"
+    ipa: "joks͈iɾe sukʌni is͈ʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "욕실에", ref: "ko-2983" }
+      - { word: "수건이", ref: "ko-3009" }
+      - { word: "있어요", base: "있다", reading: "itda" }
+    confusables:
+      - { id: "w1", ref: "ko-3007", kind: "word" }
+      - { id: "w2", ref: "ko-3008", kind: "word" }
+  - id: "ko-4846"
+    target: "냉장고에 우유가 있어요?"
+    reading: "naengjanggoe uyuga isseoyo?"
+    ipa: "neŋtɕaŋkoe ujuka is͈ʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "냉장고에", ref: "ko-2992" }
+      - { word: "우유가", base: "우유", reading: "uyu" }
+      - { word: "있어요", base: "있다", reading: "itda" }
+    confusables:
+      - { id: "w1", ref: "ko-3018", kind: "word" }
+      - { id: "w2", ref: "ko-2993", kind: "word" }
+  - id: "ko-4847"
+    target: "텔레비전이 좋아요."
+    reading: "tellebijeoni joayo."
+    ipa: "tʰellepitɕʌni tɕoajo"
+    pos: "phrase"
+    bases:
+      - { word: "텔레비전이", ref: "ko-2994" }
+      - { word: "좋아요", base: "좋다", reading: "jota" }
+    confusables:
+      - { id: "w1", ref: "ko-2995", kind: "word" }
+      - { id: "w2", ref: "ko-3004", kind: "word" }
+  - id: "ko-4848"
+    target: "책상에 책이 있어요."
+    reading: "chaeksange chaegi isseoyo."
+    ipa: "tɕʰeks͈aŋe tɕʰeki is͈ʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "책상에", ref: "ko-2989" }
+      - { word: "책이", base: "책", reading: "chaek" }
+      - { word: "있어요", base: "있다", reading: "itda" }
+    confusables:
+      - { id: "w1", ref: "ko-3001", kind: "word" }
+      - { id: "w2", ref: "ko-2988", kind: "word" }
+  - id: "ko-4849"
+    target: "샤워를 해요."
+    reading: "syaworeul haeyo."
+    ipa: "sjawʌɾɯl hejo"
+    pos: "phrase"
+    bases:
+      - { word: "샤워를", ref: "ko-3006" }
+      - { word: "해요", base: "하다", reading: "hada" }
+    confusables:
+      - { id: "w1", ref: "ko-3007", kind: "word" }
+      - { id: "w2", ref: "ko-3008", kind: "word" }
+  - id: "ko-4850"
+    target: "집에 있어요."
+    reading: "jibe isseoyo."
+    ipa: "tɕipe is͈ʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "집에", ref: "ko-2980" }
+      - { word: "있어요", base: "있다", reading: "itda" }
+    confusables:
+      - { id: "w1", ref: "ko-2984", kind: "word" }
+      - { id: "w2", ref: "ko-2999", kind: "word" }

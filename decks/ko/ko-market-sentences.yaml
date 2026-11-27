@@ -1,0 +1,132 @@
+schema: 1
+id: "ko-market-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ko-4560"
+    target: "시장에서 뭐 사요?"
+    reading: "sijangeseo mwo sayo?"
+    ipa: "sitɕaŋesʌ mwʌ sajo"
+    pos: "phrase"
+    bases:
+      - { word: "시장에서", ref: "ko-2420" }
+      - { word: "뭐", ref: "ko-0061" }
+      - { word: "사요", ref: "ko-1632" }
+    confusables:
+      - { id: "w1", ref: "ko-2421", kind: "word" }
+      - { id: "w2", ref: "ko-2423", kind: "word" }
+  - id: "ko-4561"
+    target: "값이 얼마예요?"
+    reading: "gapsi eolmayeyo?"
+    ipa: "kaps͈i ʌlmajejo"
+    pos: "phrase"
+    bases:
+      - { word: "값이", ref: "ko-2457" }
+      - { word: "얼마예요", ref: "ko-0073" }
+    confusables:
+      - { id: "w1", ref: "ko-2446", kind: "word" }
+      - { id: "w2", ref: "ko-2449", kind: "word" }
+  - id: "ko-4562"
+    target: "현금이 있어요?"
+    reading: "hyeongeumi isseoyo?"
+    ipa: "hjʌnkɯmi is͈ʌjo"
+    pos: "phrase"
+    bases:
+      - { word: "현금이", ref: "ko-2432" }
+      - { word: "있어요", base: "있다", reading: "itda" }
+    confusables:
+      - { id: "w1", ref: "ko-2433", kind: "word" }
+      - { id: "w2", ref: "ko-2431", kind: "word" }
+  - id: "ko-4563"
+    target: "영수증 주세요."
+    reading: "yeongsujeung juseyo."
+    ipa: "jʌŋsutɕɯŋ tɕusejo"
+    pos: "phrase"
+    bases:
+      - { word: "영수증", ref: "ko-2435" }
+      - { word: "주세요", base: "주다", reading: "juda" }
+    confusables:
+      - { id: "w1", ref: "ko-2424", kind: "word" }
+      - { id: "w2", ref: "ko-2434", kind: "word" }
+  - id: "ko-4564"
+    target: "가게에 손님이 많아요."
+    reading: "gagee sonnimi manayo."
+    ipa: "kakee sonnimi manajo"
+    pos: "phrase"
+    bases:
+      - { word: "가게에", ref: "ko-2421" }
+      - { word: "손님이", ref: "ko-2440" }
+      - { word: "많아요", base: "많다", reading: "manta" }
+    confusables:
+      - { id: "w1", ref: "ko-2442", kind: "word" }
+      - { id: "w2", ref: "ko-2443", kind: "word" }
+  - id: "ko-4565"
+    target: "할인이 많아요?"
+    reading: "harini manayo?"
+    ipa: "haɾini manajo"
+    pos: "phrase"
+    bases:
+      - { word: "할인이", ref: "ko-2436" }
+      - { word: "많아요", base: "많다", reading: "manta" }
+    confusables:
+      - { id: "w1", ref: "ko-2438", kind: "word" }
+      - { id: "w2", ref: "ko-2439", kind: "word" }
+  - id: "ko-4566"
+    target: "주인은 친절해요."
+    reading: "juineun chinjeolhaeyo."
+    ipa: "tɕuinɯn tɕʰintɕʌlhejo"
+    pos: "phrase"
+    bases:
+      - { word: "주인은", ref: "ko-2441" }
+      - { word: "친절해요", base: "친절하다", reading: "chinjeolhada" }
+    confusables:
+      - { id: "w1", ref: "ko-2442", kind: "word" }
+      - { id: "w2", ref: "ko-2444", kind: "word" }
+  - id: "ko-4567"
+    target: "사이즈가 좋아요?"
+    reading: "saijeuga joayo?"
+    ipa: "saitɕɯka tɕoajo"
+    pos: "phrase"
+    bases:
+      - { word: "사이즈가", ref: "ko-2448" }
+      - { word: "좋아요", base: "좋다", reading: "jota" }
+    confusables:
+      - { id: "w1", ref: "ko-2449", kind: "word" }
+      - { id: "w2", ref: "ko-2450", kind: "word" }
+  - id: "ko-4568"
+    target: "장사가 잘 돼요."
+    reading: "jangsaga jal dwaeyo."
+    ipa: "tɕaŋsaka tɕal twejo"
+    pos: "phrase"
+    bases:
+      - { word: "장사가", ref: "ko-2456" }
+      - { word: "잘", base: "잘", reading: "jal" }
+      - { word: "돼요", base: "되다", reading: "doeda" }
+    confusables:
+      - { id: "w1", ref: "ko-2421", kind: "word" }
+      - { id: "w2", ref: "ko-2445", kind: "word" }
+  - id: "ko-4569"
+    target: "배달이 돼요?"
+    reading: "baedari dwaeyo?"
+    ipa: "petaɾi twejo"
+    pos: "phrase"
+    bases:
+      - { word: "배달이", ref: "ko-2454" }
+      - { word: "돼요", base: "되다", reading: "doeda" }
+    confusables:
+      - { id: "w1", ref: "ko-2453", kind: "word" }
+      - { id: "w2", ref: "ko-2451", kind: "word" }
+  - id: "ko-4570"
+    target: "환불이 돼요?"
+    reading: "hwanburi dwaeyo?"
+    ipa: "hwanpuɾi twejo"
+    pos: "phrase"
+    bases:
+      - { word: "환불이", ref: "ko-2452" }
+      - { word: "돼요", base: "되다", reading: "doeda" }
+    confusables:
+      - { id: "w1", ref: "ko-2451", kind: "word" }
+      - { id: "w2", ref: "ko-2436", kind: "word" }
