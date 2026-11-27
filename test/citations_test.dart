@@ -84,10 +84,11 @@ void main() {
   group('parseCitations', () {
     test('reads the groups and entries in the file order', () {
       final library = parseCitations(_fixture);
-      expect(
-        library.groups.map((g) => g.id),
-        const <String>['standards', 'spacing', 'scale'],
-      );
+      expect(library.groups.map((g) => g.id), const <String>[
+        'standards',
+        'spacing',
+        'scale',
+      ]);
       expect(library.all.length, 3);
       final standards = library.group('standards')!;
       expect(standards.kind, CitationKind.standard);
@@ -203,10 +204,10 @@ void main() {
       final shown = library.visibleWhen((feature) => feature == 'situations');
       expect(shown.groups.length, 3);
       final hidden = library.visibleWhen((feature) => false);
-      expect(
-        hidden.groups.map((g) => g.id),
-        const <String>['standards', 'spacing'],
-      );
+      expect(hidden.groups.map((g) => g.id), const <String>[
+        'standards',
+        'spacing',
+      ]);
     });
 
     test('visibleCitations asks the feature registry', () {
