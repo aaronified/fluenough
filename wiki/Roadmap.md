@@ -197,7 +197,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#214](https://github.com/aaronified/fluenough/issues/214) Plan: a Research and standards page, with the sources
 - [#215](https://github.com/aaronified/fluenough/issues/215) Plan: books, films and songs you bring, with questions on them
 - [#216](https://github.com/aaronified/fluenough/issues/216) Plan: a path for every language, by family
-- [#218](https://github.com/aaronified/fluenough/issues/218) Plan: Fluenough on the web, installable
 - [#219](https://github.com/aaronified/fluenough/issues/219) Plan: conversation practice with an AI, within what you know
 - [#220](https://github.com/aaronified/fluenough/issues/220) Plan: read your own text, and make cards from it
 - [#221](https://github.com/aaronified/fluenough/issues/221) Plan: readings made in the app
@@ -428,6 +427,6 @@ A plan with no tracking issue is flagged.
 - [Vedic accent marks, and one Devanagari engine for Vedic and Classical Sanskrit](https://github.com/aaronified/fluenough/wiki/Plan-Vedic-Engine), **no tracking issue**
 - [the Vedic Sanskrit reading path](https://github.com/aaronified/fluenough/wiki/Plan-Vedic-Path), **no tracking issue**
 - [Vedic Sanskrit A1 word lists, sourced](https://github.com/aaronified/fluenough/wiki/Plan-Vedic-Words), **no tracking issue**
-- [Fluenough on the web, as a PWA on GitHub Pages](https://github.com/aaronified/fluenough/wiki/Plan-Web-Pwa), tracks #218
+- [Fluenough on the web, as a PWA on GitHub Pages](https://github.com/aaronified/fluenough/wiki/Plan-Web-Pwa), **no tracking issue**
 - [word-order tiles without giveaways, and with extra tiles](https://github.com/aaronified/fluenough/wiki/Plan-Word-Order-Tiles) (Written 2026-10-05), tracks #234
 - [a phrasebook, then words, then rules, then sentences](https://github.com/aaronified/fluenough/wiki/Plan-Words-Rules-Sentences) (Written 2026-10-07), tracks #413
