@@ -40,6 +40,20 @@ REQUIRED_STANDARDS = {
 }
 
 
+class _StrictLoader(yaml.SafeLoader):
+    """SafeLoader that refuses a mapping key given twice, as the app's YAML
+    reader does."""
+
+    def construct_mapping(self, node, deep=False):
+        seen = set()
+        for key_node, _ in node.value:
+            key = self.construct_object(key_node, deep=True)
+            if key in seen:
+                raise yaml.YAMLError(f'duplicate key "{key}"')
+            seen.add(key)
+        return super().construct_mapping(node, deep)
+
+
 def _text(node: dict, key: str, where: str, errors: list[str],
           pattern: re.Pattern | None = None, required: bool = False):
     """The trimmed text at key, or None; a problem is added to errors."""
@@ -117,7 +131,7 @@ def check(text: str) -> list[str]:
     """Every problem in a citations file's text; empty when it is sound."""
     errors: list[str] = []
     try:
-        root = yaml.safe_load(text)
+        root = yaml.load(text, Loader=_StrictLoader)
     except yaml.YAMLError as e:
         return [f"citations: not YAML: {e}"]
     if not isinstance(root, dict):

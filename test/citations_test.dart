@@ -151,7 +151,7 @@ void main() {
     test('a standard without an issuer is refused', () {
       expect(
         () => parseCitations(
-          _edited('issuer: "Council of Europe"', 'year: "2002"'),
+          _edited('        issuer: "Council of Europe"\n', ''),
         ),
         _refusedWith('issuer is missing'),
       );

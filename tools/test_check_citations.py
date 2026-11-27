@@ -90,6 +90,11 @@ def test_a_standard_needs_an_issuer():
     assert any("issuer is missing" in p for p in problems)
 
 
+def test_a_key_given_twice_is_refused():
+    problems = c.check(swap('year: "2001"', 'year: "2001"\n        year: "2002"'))
+    assert any("duplicate key" in p for p in problems)
+
+
 def test_an_unknown_key_is_named():
     problems = c.check(swap('title: "CEFR"', 'title: "CEFR"\n        doi: "x"'))
     assert any('unknown key "doi"' in p for p in problems)
