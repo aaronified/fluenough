@@ -444,13 +444,14 @@ class ClozeBank {
           card,
     ]..shuffle(random);
     final length = answer.runes.length;
-    final ranked = <(int, int, Card)>[
-      for (final (i, card) in others.indexed)
-        ((clozeKey(card.target).runes.length - length).abs(), i, card),
-    ]..sort((a, b) {
-      final byLength = a.$1.compareTo(b.$1);
-      return byLength != 0 ? byLength : a.$2.compareTo(b.$2);
-    });
+    final ranked =
+        <(int, int, Card)>[
+          for (final (i, card) in others.indexed)
+            ((clozeKey(card.target).runes.length - length).abs(), i, card),
+        ]..sort((a, b) {
+          final byLength = a.$1.compareTo(b.$1);
+          return byLength != 0 ? byLength : a.$2.compareTo(b.$2);
+        });
     final seen = <String>{answer};
     return <Card>[
       for (final (_, _, card) in ranked)
