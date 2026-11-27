@@ -18,8 +18,8 @@
 ///    [kPacingTenthCapacity] unlocks. A set's natural position is its last
 ///    unit plus a review lag; if that tenth is full it slides to the nearest
 ///    tenth with room, later first. Word sets are placed before grammar
-///    tables. Sets stop when the course holds its target count, so a short
-///    path picks fewer sets.
+///    tables. Sets stop when the course holds its target count; a path that
+///    cannot hold all its sets picks fewer, spread along the path.
 library;
 
 import 'dart:math' as math;
@@ -73,15 +73,30 @@ int pacingLag(int units) {
   return math.max(kPacingMinGap, share);
 }
 
-/// How many unlocks the course holds: its plan over the target gap.
+/// How many unlocks the course holds at most: its plan over the target gap,
+/// and one more, so that a plan of about 3.5% gaps keeps every chosen set.
 int pacingTarget(int units) {
   final gap = math.max(kPacingShortGap, kPacingGapShare * units);
-  return (units / gap).ceil();
+  return (units / gap).ceil() + 1;
 }
 
 /// The tenth of the course unit [position] falls in, 0 to 9.
 int pacingTenth(int position, int units) =>
     math.min(9, (position - 1) * 10 ~/ units);
+
+/// The ids of [count] of [sets], spread evenly along the path by their
+/// natural unit, for a course that cannot hold them all.
+Set<String> _spread(List<PaceItem> sets, int count) {
+  final byUnit = List<PaceItem>.of(sets)
+    ..sort((a, b) {
+      final order = a.natural.compareTo(b.natural);
+      return order != 0 ? order : a.id.compareTo(b.id);
+    });
+  return <String>{
+    for (var i = 0; i < count; i++)
+      byUnit[(2 * i + 1) * byUnit.length ~/ (2 * count)].id,
+  };
+}
 
 /// Places [items], in priority order, on a plan of [units] units. Returns the
 /// position of each item that has one; a set that finds no room is left out.
@@ -115,8 +130,14 @@ Map<String, int> placeOnPath(int units, List<PaceItem> items) {
     tally[pacingTenth(p, units)]++;
   }
   final target = pacingTarget(units);
-  for (final item in items) {
-    if (item.mode != PaceMode.sliding) continue;
+  final sets = <PaceItem>[
+    for (final item in items)
+      if (item.mode == PaceMode.sliding) item,
+  ];
+  final budget = math.max(0, target - placed.length);
+  final keep = sets.length > budget ? _spread(sets, budget) : null;
+  for (final item in sets) {
+    if (keep != null && !keep.contains(item.id)) continue;
     if (placed.length >= target) break;
     final natural = math.min(math.max(item.natural, 1), units);
     final home = pacingTenth(natural, units);
@@ -137,7 +158,7 @@ Map<String, int> placeOnPath(int units, List<PaceItem> items) {
         final dc = (c - natural).abs();
         final db = (best - natural).abs();
         // The nearest to its natural unit; the later one on a tie.
-        if (dc < db || dc == db) best = c;
+        if (dc <= db) best = c;
       }
       if (best == null) continue;
       placed[item.id] = best;

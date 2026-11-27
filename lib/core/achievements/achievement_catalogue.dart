@@ -97,7 +97,8 @@ List<SkillKey> _inOrder(List<SkillKey> skills, List<SkillKind> order) {
 /// those not on the path (the first lesson) last.
 List<AchievementDef> courseAchievementDefs(AchievementFacts facts) {
   final marks = facts.marks;
-  final plan = facts.hasPlan ? facts.units : 0;
+  // The plan is the units up to the B1 mark; a path with none has no timeline.
+  final plan = marks[Milestone.b1] ?? 0;
   final a1 = marks[Milestone.a1];
   final a2 = marks[Milestone.a2];
   final lag = plan == 0 ? 0 : pacingLag(plan);
@@ -107,7 +108,7 @@ List<AchievementDef> courseAchievementDefs(AchievementFacts facts) {
   for (final level in Milestone.values) {
     final at = marks[level];
     if (at == null) continue;
-    final def = AchievementDef.level(level);
+    final def = AchievementDef.forLevel(level);
     levelDefs.add(def);
     items.add(PaceItem(def.id, at, PaceMode.fixed));
   }
@@ -201,7 +202,7 @@ int _byPosition(AchievementDef a, AchievementDef b) {
 AchievementDef _withPosition(AchievementDef def, int position) {
   switch (def.kind) {
     case AchievementKind.level:
-      return AchievementDef.level(def.level!, position: position);
+      return AchievementDef.forLevel(def.level!, position: position);
     case AchievementKind.wordCount:
       return AchievementDef.words(def.target, position: position);
     case AchievementKind.skillStart:

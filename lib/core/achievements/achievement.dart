@@ -77,7 +77,7 @@ class AchievementDef {
   });
 
   /// A level badge, earned when every card up to its mark has been known.
-  factory AchievementDef.level(Milestone level, {int? position}) =>
+  factory AchievementDef.forLevel(Milestone level, {int? position}) =>
       AchievementDef._(
         id: 'level-${level.name}',
         kind: AchievementKind.level,
