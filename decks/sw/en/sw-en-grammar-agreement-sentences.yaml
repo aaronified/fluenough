@@ -1,0 +1,76 @@
+schema: 1
+id: "sw-en-grammar-agreement-sentences"
+kind: "layer"
+core: "sw-grammar-agreement-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Agreement in phrases"
+description: "Eight short phrases in which the possessive, the linking word and the describing word take the class of the noun. Four are Wiktionary examples and four are written from the table. Not yet checked by a Swahili speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "sw-0500":
+    native: "the child's book"
+    notes:
+      "n1": "kitabu is class VII, so the word for of takes the class: cha, not ya or wa. Wiktionary's -a entry gives this phrase (as child's book)."
+    bases:
+      "kitabu": "book"
+      "cha": "of"
+      "mtoto": "child"
+  "sw-0501":
+    native: "at my home"
+    notes:
+      "n1": "nyumbani is a place word, class XVII, so my is kwangu: the prefix kw- agrees with the place. Wiktionary's kw- entry gives this phrase."
+    bases:
+      "nyumbani": "at home; in the house"
+      "kwangu": "my (with a place)"
+  "sw-0502":
+    native: "some of the people"
+    notes:
+      "n1": "watu is class II, the plural of mtu. Here of is ya, the form that goes with baadhi, which is a class IX noun meaning part or portion. Wiktionary's baadhi entry gives this phrase."
+    bases:
+      "baadhi": "some; part"
+      "ya": "of"
+      "watu": "people"
+  "sw-0503":
+    native: "another year"
+    notes:
+      "n1": "mwaka is class III. A stem that begins with a vowel takes mw- here: mwingine. Wiktionary's mw- entry gives this phrase."
+    bases:
+      "mwaka": "year"
+      "mwingine": "other; another"
+  "sw-0504":
+    native: "My book is good."
+    notes:
+      "n1": "Written from the table: kitabu is class VII, so my is changu (from -angu) and good is kizuri (from -zuri). Not a Wiktionary example."
+    bases:
+      "Kitabu": "book"
+      "changu": "my (with kitabu)"
+      "ni": "is; are"
+      "kizuri": "good; nice (with kitabu)"
+  "sw-0505":
+    native: "My house is good."
+    notes:
+      "n1": "Written from the table: nyumba is class IX, so my is yangu and good is nzuri. Not a Wiktionary example."
+    bases:
+      "Nyumba": "house"
+      "yangu": "my (with nyumba)"
+      "ni": "is; are"
+      "nzuri": "good; nice (with nyumba)"
+  "sw-0506":
+    native: "My books are good."
+    notes:
+      "n1": "Written from the table: vitabu is class VIII, so my is vyangu and good is vizuri. Not a Wiktionary example."
+    bases:
+      "Vitabu": "books"
+      "vyangu": "my (with vitabu)"
+      "ni": "is; are"
+      "vizuri": "good; nice (with vitabu)"
+  "sw-0507":
+    native: "His tree is tall."
+    notes:
+      "n1": "Written from the table: mti is class III, so his is wake (from -ake) and tall is mrefu (from -refu). Not a Wiktionary example."
+    bases:
+      "Mti": "tree"
+      "wake": "his; her (with mti)"
+      "ni": "is; are"
+      "mrefu": "tall; long (with mti)"
