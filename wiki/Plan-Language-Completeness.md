@@ -215,7 +215,7 @@ Owner (2026-11-13): "Deck work issues to be updated with the full deck format as
 | Indonesian | id | #1199 | third list (first words only) | third-list position 1 | no path or decks yet (language entry only) |
 | Persian | fa | #1200 | third list (first words only) | third-list position 2 | no path or decks yet (language entry only) |
 | Pashto | ps | #1201 | third list (first words only) | third-list position 3 | no path or decks yet (language entry only) |
-| Swahili | sw | #384 | second list (to A1; Classical Sanskrit to B1) | second-list position 5 | path of 84 units, 1 built; 3 core files |
+| Swahili | sw | #384 | second list (to A1; Classical Sanskrit to B1) | second-list position 5 | A1 done (2026-11-27, owner: A1 only): path of 84 units, units 1 to 31 built (25 word units, 5 grammar units, 716 path words, 771 cards with narrow IPA from rules); units 32 to 84 planned; no genre decks, no facts file; speaker review in `docs/review-queue/sw.md` (see [Deck-Work-Queue-SW](Deck-Work-Queue-SW.md)) |
 | Hausa | ha | #385 | third list and others (first words only) | no ranked priority | path of 83 units, 1 built; 3 core files |
 | Somali | so | #386 | third list and others (first words only) | no ranked priority | path of 82 units, 1 built; 3 core files |
 | Quechua | qu | #387 | third list and others (first words only) | no ranked priority | path of 82 units, 1 built; 3 core files |
