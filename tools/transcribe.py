@@ -817,6 +817,8 @@ def transcribe(text: str, lang: str, hint: str | None = None
         return Transcription(text, spanish_ipa(text), True)
     if lang == "fr":
         return Transcription(text, french_ipa(text), True)
+    if lang == "sw":
+        return Transcription(text, swahili_ipa(text), True)
     if lang == "ja":
         return japanese(text)
     if lang == "ko":
@@ -1926,6 +1928,84 @@ def _fr_u(full: str, i: int, pron_vowel) -> str:
         return "y" if cluster else "ɥ"
     return "y"
 
+
+
+# --- Swahili -----------------------------------------------------------------
+
+# Standard Swahili (Kiswahili sanifu) is written as it is said, so its broad
+# IPA is read from the spelling. Five vowels, none long (a doubled vowel is
+# two vowels, `hii`), stress on the second to last syllable of a word of two
+# or more, marked with ˈ as for Spanish. A syllable is a vowel or a syllabic
+# nasal at the start of a word (`m` in `mtu`, `n` in `nchi`), which counts for stress but is written
+# as a plain m or n, as the repo's other engines do not mark syllabic nasals.
+_SW_DIGRAPHS = {"ch": "tʃ", "sh": "ʃ", "ny": "ɲ", "dh": "ð", "th": "θ",
+                "gh": "ɣ", "kh": "x"}
+_SW_SINGLE = {"j": "dʒ", "r": "ɾ", "y": "j", "g": "ɡ"}
+_SW_PLAIN = set("bdfhklmnpstvwz")
+_SW_PUNCT = set(".,?!;:\"“”()…")
+# Letters after which a written m or n is part of a prenasalised consonant
+# or a glide rather than a syllable of its own.
+_SW_PRENASAL = {"m": "bvw", "n": "dgjzy"}
+
+
+def swahili_ipa(text: str) -> str:
+    """Standard Swahili, broad, with the stress marked on words of two
+    syllables or more. Raises CannotRead for a letter, digit or sign that
+    Swahili spelling does not use."""
+    for c in text:
+        if c.isspace() or c in _SW_PUNCT or c in "'’-":
+            continue
+        if not ("a" <= c.lower() <= "z") or c.lower() in "qx":
+            raise CannotRead(f"not a Swahili letter: {c!r}")
+    words = []
+    for raw in re.split(r"[\s-]+", text.lower()):
+        raw = "".join(c for c in raw if c not in _SW_PUNCT)
+        if raw.strip("'’"):
+            words.append(_sw_word(raw))
+    return " ".join(w for w in words if w)
+
+
+def _sw_word(w: str) -> str:
+    ph: list[str] = []          # phonemes
+    nuc: list[int] = []         # indexes of syllable nuclei
+    i = 0
+    while i < len(w):
+        c = w[i]
+        two = w[i:i + 2]
+        nxt = w[i + 1] if i + 1 < len(w) else ""
+        if c in "aeiou":
+            nuc.append(len(ph))
+            ph.append(c)
+        elif c in "'’":
+            pass                # only ever the tail of ng', read below
+        elif c == "n" and nxt == "g":
+            if w[i + 2:i + 3] in ("'", "’"):
+                ph.append("ŋ")
+                i += 2
+            else:
+                ph.append("ŋɡ")
+                i += 1
+        elif two in _SW_DIGRAPHS:
+            ph.append(_SW_DIGRAPHS[two])
+            i += 1
+        elif c == "n" and nxt == "j":
+            ph.append("ndʒ")
+            i += 1
+        elif c == "c":
+            raise CannotRead("c is only written in ch")
+        elif c in _SW_SINGLE or c in _SW_PLAIN:
+            if c in "mn" and i == 0 and nxt and nxt not in "aeiou'’" and \
+                    nxt not in _SW_PRENASAL[c] and \
+                    not (c == "n" and w[i + 1:i + 3] in ("g'", "g’")):
+                nuc.append(len(ph))     # syllabic nasal: mtu, nchi
+            ph.append(_SW_SINGLE.get(c, c))
+        else:
+            raise CannotRead(f"not a Swahili letter: {c!r}")
+        i += 1
+    if len(nuc) < 2:
+        return "".join(ph)
+    start = nuc[-3] + 1 if len(nuc) > 2 else 0
+    return "".join(ph[:start]) + "ˈ" + "".join(ph[start:])
 
 
 # --- Japanese, Korean, Mandarin and Toki Pona (#612) -------------------------

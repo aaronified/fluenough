@@ -8,7 +8,8 @@ from pathlib import Path
 
 import transcribe_decks
 import validate_decks
-from transcribe import BLOCKS, CannotRead, french_ipa, spanish_ipa, transcribe
+from transcribe import (BLOCKS, CannotRead, french_ipa, spanish_ipa,
+                        swahili_ipa, transcribe)
 
 
 class ReadingTest(unittest.TestCase):
@@ -740,6 +741,38 @@ class SpanishCqTest(unittest.TestCase):
         self.assertEqual(spanish_ipa("que"), "ke")
         self.assertEqual(spanish_ipa("quiero"), "ˈkjeɾo")
         self.assertEqual(spanish_ipa("Bécquer"), transcribe("Bécquer", "es").ipa)
+
+
+class SwahiliTest(unittest.TestCase):
+    def test_consonant_digraphs_and_prenasalised(self):
+        self.assertEqual(swahili_ipa("chai"), "ˈtʃai")
+        self.assertEqual(swahili_ipa("ngoma"), "ˈŋɡoma")
+        self.assertEqual(swahili_ipa("ng'ombe"), "ˈŋombe")
+        self.assertEqual(swahili_ipa("nyumba"), "ˈɲumba")
+        self.assertEqual(swahili_ipa("shule"), "ˈʃule")
+        self.assertEqual(swahili_ipa("jambo"), "ˈdʒambo")
+
+    def test_glide_and_nasal_before_consonant(self):
+        self.assertEqual(swahili_ipa("mwalimu"), "mwaˈlimu")
+        self.assertEqual(swahili_ipa("mbili"), "ˈmbili")
+        # A word-initial m before another consonant is a syllable.
+        self.assertEqual(swahili_ipa("mtu"), "ˈmtu")
+
+    def test_stress_is_penultimate_and_vowels_stay_apart(self):
+        self.assertEqual(swahili_ipa("asante"), "aˈsante")
+        self.assertEqual(swahili_ipa("hii"), "ˈhii")
+        self.assertEqual(swahili_ipa("kiswahili"), "kiswaˈhili")
+        self.assertEqual(swahili_ipa("na"), "na")
+
+    def test_dispatch_and_punctuation(self):
+        t = transcribe("Habari yako?", "sw")
+        self.assertEqual(t.ipa, "haˈbaɾi ˈjako")
+        self.assertTrue(t.fitted)
+
+    def test_other_scripts_and_digits_cannot_be_read(self):
+        for bad in ("café", "a1", "ಕನ್ನಡ"):
+            with self.assertRaises(CannotRead):
+                swahili_ipa(bad)
 
 
 class MalayalamTest(unittest.TestCase):
