@@ -59,9 +59,10 @@ void main() {
     });
 
     test('the asked cell is not named when it spells the same', () {
-      // era is right for yo, so nothing to explain; for él it names yo only.
+      // era is right for yo, so nothing to explain; for nosotros, which has
+      // no form, it names yo and él.
       expect(_read('era', 'yo', _alike), isNull);
-      expect(_read('era', 'él', _alike)?.slots, <String>['yo']);
+      expect(_read('era', 'nosotros', _alike)?.slots, <String>['yo', 'él']);
     });
 
     test('a form of the asked cell, or its alternative, is no mistake', () {
